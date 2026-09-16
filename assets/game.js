@@ -1969,6 +1969,17 @@ const XART=(function(){
   }
   X._src['dlg_rect_0914']='assets/game/dialogue_0914/frame.png';
   for(const k of ['ship','ball','leap','charge','reticle','boomerang_body','boomerang_hammer'])X._src['hammer_'+k]='assets/game/stage5_hammer/'+k+'.png';
+  const _archRoot='assets/game/stage5_archmage_0916/';
+  for(const k of ['master','idle','twirl_throw','ship_transform','spiked_ball','chaingun_detach_fire','chaingun_break_enrage','dual_uzi_assault','spell_raise','death','effects','hammer','hammer_spin','heat_meter','chaingun_icons'])X._src['arch_'+k]=_archRoot+k+'.png';
+  for(let i=1;i<=5;i++)X._src['micon_chaingun_'+i]=_archRoot+'chaingun_icon_'+i+'.png';
+  X._src.fx_ground_strikes_0916='assets/game/shared_targeting_0916/elemental_ground_strikes.png';
+  const _yloRoot='assets/game/yuri_lightning_orb_0916/';
+  for(let i=1;i<=5;i++){
+    X._src['micon_lightningorb_'+i]=_yloRoot+'lightning_orb_icon_'+i+'.png';
+    X._src['ylo_orb_'+i]=_yloRoot+'lightning_orb_'+i+'.png';
+    X._src['ylo_bolt_'+i]=_yloRoot+'lightning_bolt_'+i+'.png';
+  }
+  X._src.fx_ground_target_reticle='assets/game/stage5_hammer/reticle.png';
   X._src['s4_chase_0915']='assets/game/stage4_highway_0915.png';
   X._src['pause_button_0915']='assets/game/ui/pause_0915/button.png';
   X._src['mode_life_up_0915']='assets/game/ui/pickups_0915/life_up_wings.png';
@@ -3133,7 +3144,7 @@ function debugEquip(slot, opts){
   /* a debug grant is a grant: it has to write the HELD variant too, or the slot keeps whatever
      the last pickup put there and the debug key silently does half its job (drop 0814a).
      `opts.variant` lets a key ask for a specific one; otherwise take the dispenser's answer. */
-  if(!run.wvars) run.wvars=[null,null,null,null,null,null,null];
+  if(!run.wvars) run.wvars=WEAPONS.map(()=>null);
   run.wvars[slot] = (opts && opts.variant) ||
                     ((opts && opts.forceIce) ? 'icebreath' : null) ||
                     ((opts && opts.forceFire) ? 'fireorb' : null) ||
@@ -5225,6 +5236,8 @@ function drawStage2(dt){
   _groundPublish(srcY);
   ctx.drawImage(img,0,srcY,VW,VH,0,0,VW,VH);
   updateDrawClouds(dt);
+  /* Stage 2 owns a permanently oppressive lava grade. Charge sequences add another pass. */
+  ctx.fillStyle='rgba(2,3,9,.18)';ctx.fillRect(0,0,VW,VH);
   return true;
 }
 function drawStage3(dt){
@@ -5760,6 +5773,8 @@ function weaponDisplayName(w, opt){
 function weaponIconKey(w, lv, opt){
   if(typeof spaceWeaponsActive==='function' && spaceWeaponsActive()) return spaceWeaponIconKey();
   if(w===6)return 'micon_lasermist_'+clamp(lv||1,1,5);
+  if(w===7)return 'micon_chaingun_'+clamp(lv||1,1,5);
+  if(w===8)return 'micon_lightningorb_'+clamp(lv||1,1,5);
   const base = ({0:'mg',1:'spread',2:'missile',3:'laser',4:'firewall',5:'iceorb'})[w] || 'mg';
   const _pk = (typeof _pilotKey==='function') ? _pilotKey() : '';
   /* Maverick owns a separate five-tier laser family. The pickup, HUD and equipped plate all ask
@@ -5943,7 +5958,7 @@ function drawHUDCustomImg(){
     else { ctx.save(); ctx.shadowColor='#ffae6a'; ctx.shadowBlur=4; ctx.fillStyle='#ffae6a'; ctx.font='bold 16px "BOFmil", monospace'; ctx.fillText('x'+run.bombs,cx[3],vy); ctx.restore(); }
   }
   const wt=({0:'mg',1:'spread',2:'missile',3:'laser',4:'firewall',5:'iceorb',6:'lasermist'})[run.weapon]||'mg', wlv=spaceWeaponsActive()?spaceWeaponLevel():clamp(run.wlevel||1,1,(typeof colePilot==='function'&&colePilot())?8:5);
-  const wIcon=((typeof weaponIconKey==='function')?weaponIconKey(run.weapon,wlv):('pw_'+wt+'_'+wlv)), wglow=spaceWeaponsActive()?(run.spaceWeapon===0?SPACE_LASER_COL[Math.max(1,wlv)-1]:'#a45bff'):(({0:'#ff5a5a',1:'#b06bff',2:'#6bd06b',3:'#7fe0ff',4:'#ff7a2a',5:'#77cfff',6:'#54e8ff'})[run.weapon]||'#fff');
+  const wIcon=((typeof weaponIconKey==='function')?weaponIconKey(run.weapon,wlv):('pw_'+wt+'_'+wlv)), wglow=spaceWeaponsActive()?(run.spaceWeapon===0?SPACE_LASER_COL[Math.max(1,wlv)-1]:'#a45bff'):(({0:'#ff5a5a',1:'#b06bff',2:'#6bd06b',3:'#7fe0ff',4:'#ff7a2a',5:'#77cfff',6:'#54e8ff',7:'#ff6a32',8:'#66e8ff'})[run.weapon]||'#fff');
   /* ⚠ THE ICONS LIVE IN BOFX.icons, AND THERE IS ALREADY A FUNCTION FOR THEM (drop 0810r).
      Mike: "I see your using a basic graphic for fireball icon, Im assuming yuo lost the icons."
 
@@ -6082,7 +6097,7 @@ function drawHUDStrip(g){
   if(run.bombs<=4){ let bx=cx[3]-(run.bombs-1)*8; for(let i=0;i<run.bombs;i++){ g.fillStyle='#15181d'; _circG(g,bx,vy+1,3.7); g.fillStyle='#ffd36b'; _circG(g,bx,vy-0.4,1.2); g.fillStyle='#ff9a3a'; g.fillRect(bx-0.8,vy-3.2,1.6,1.5); bx+=16; } }
   else { g.fillStyle='#ffae6a'; g.font='bold 16px monospace'; g.fillText('x'+run.bombs,cx[3],vy); }
   const wt=({0:'mg',1:'spread',2:'missile',3:'laser',4:'firewall',5:'iceorb',6:'lasermist'})[run.weapon]||'mg', wlv=spaceWeaponsActive()?spaceWeaponLevel():clamp(run.wlevel||1,1,(typeof colePilot==='function'&&colePilot())?8:5);
-  const wIcon=((typeof weaponIconKey==='function')?weaponIconKey(run.weapon,wlv):('pw_'+wt+'_'+wlv)), wglow=spaceWeaponsActive()?(run.spaceWeapon===0?SPACE_LASER_COL[Math.max(1,wlv)-1]:'#a45bff'):(({0:'#ff5a5a',1:'#b06bff',2:'#6bd06b',3:'#7fe0ff',4:'#ff7a2a',5:'#77cfff',6:'#54e8ff'})[run.weapon]||'#fff');
+  const wIcon=((typeof weaponIconKey==='function')?weaponIconKey(run.weapon,wlv):('pw_'+wt+'_'+wlv)), wglow=spaceWeaponsActive()?(run.spaceWeapon===0?SPACE_LASER_COL[Math.max(1,wlv)-1]:'#a45bff'):(({0:'#ff5a5a',1:'#b06bff',2:'#6bd06b',3:'#7fe0ff',4:'#ff7a2a',5:'#77cfff',6:'#54e8ff',7:'#ff6a32',8:'#66e8ff'})[run.weapon]||'#fff');
   if(ASSETS.has(wIcon)){ const f=ASSETS.frames[wIcon], ss=Math.min(30/f[2],24/f[3]), dw=f[2]*ss, dh=f[3]*ss;
     g.save(); g.shadowColor=wglow; g.shadowBlur=8; g.drawImage(ASSETS.img,f[0],f[1],f[2],f[3],Math.round(cx[4]-dw/2),Math.round(HUDH*0.46-dh/2),dw,dh); g.restore(); }
   else { g.fillStyle=wglow; g.font='bold 11px monospace'; g.fillText('L'+wlv,cx[4],vy-2); }
@@ -6161,15 +6176,27 @@ function _chargeTimerRail(row, frac){
 function barRows(){
   const r={};
   let n=0;
+  if(typeof run!=='undefined'&&run&&run.weapon===7)r.chaingun=n++;
   if((typeof chargeAvailable==='function') && chargeAvailable()) r.charge=n++;
   if((typeof somersaultAvailable==='function') && somersaultAvailable()) r.somersault=n++;
   r.roll=n;
   return r;
 }
+function _chaingunHeatBar(row){
+  const W=112,H=8,x=(typeof PLAY!=='undefined'?PLAY.x:0)+10,y=(typeof PLAY!=='undefined'?(PLAY.y+PLAY.h):VH)-16-row*18;
+  const heat=clamp(run._chainHeat||0,0,1),cut=.72,over=(run._chainOverheat||0)>0;
+  ctx.globalAlpha=.96;ctx.fillStyle='rgba(5,8,14,.88)';ctx.fillRect(x-3,y-3,W+6,H+16);
+  ctx.strokeStyle='#52657c';ctx.strokeRect(x-2,y-2,W+4,H+4);ctx.fillStyle='#101722';ctx.fillRect(x,y,W,H);
+  const fw=Math.round(W*heat),nw=Math.min(fw,Math.round(W*cut));ctx.fillStyle=over?'#ff3028':'#36aaff';ctx.fillRect(x,y,nw,H);
+  if(fw>nw){ctx.fillStyle='#ff3b20';ctx.fillRect(x+nw,y,fw-nw,H);}
+  const ax=x+Math.round(W*cut);ctx.fillStyle='#ffcf48';ctx.beginPath();ctx.moveTo(ax-4,y-7);ctx.lineTo(ax+4,y-7);ctx.lineTo(ax,y-2);ctx.fill();
+  ctx.font='bold 7px "BOFmil", monospace';ctx.textBaseline='alphabetic';ctx.textAlign='left';ctx.fillStyle='#9bd8ff';ctx.fillText('NORMAL',x,y+15);ctx.fillStyle=over&&Math.sin(stateT*18)>0?'#fff':'#ff6652';ctx.fillText('OVERHEAT!',ax+3,y+15);
+}
 function drawRollCharge(){
   if(typeof player==='undefined' || !player) return;
   const R=barRows();
   ctx.save();
+  if(R.chaingun!=null)_chaingunHeatBar(R.chaingun);
   if(R.charge!=null){
     _chargeBar('CHARGE', (typeof chargeLevel==='function')?chargeLevel():0, R.charge);
     if(typeof special!=='undefined' && special && special.dur)
@@ -6314,7 +6341,7 @@ function drawHUDCustomLegacy(){
   const wt=({0:'mg',1:'spread',2:'missile',3:'laser',4:'firewall',5:'iceorb',6:'lasermist'})[run.weapon]||'mg';
   const wname=spaceWeaponsActive()?spaceWeaponName():(({0:'MACHINE GUN',1:'SPREAD FIRE',2:'MISSILE',3:'LASER',4:'FLAMETHROWER',5:'ICE ORB',6:'LASER MIST'})[run.weapon]||'');
   const wlv=spaceWeaponsActive()?spaceWeaponLevel():clamp(run.wlevel||1,1,(typeof colePilot==='function'&&colePilot())?8:5);
-  const wglow=spaceWeaponsActive()?(run.spaceWeapon===0?SPACE_LASER_COL[Math.max(1,wlv)-1]:'#a45bff'):(({0:'#ff5a5a',1:'#b06bff',2:'#6bd06b',3:'#7fe0ff',4:'#ff7a2a',5:'#77cfff',6:'#54e8ff'})[run.weapon]||'#fff');
+  const wglow=spaceWeaponsActive()?(run.spaceWeapon===0?SPACE_LASER_COL[Math.max(1,wlv)-1]:'#a45bff'):(({0:'#ff5a5a',1:'#b06bff',2:'#6bd06b',3:'#7fe0ff',4:'#ff7a2a',5:'#77cfff',6:'#54e8ff',7:'#ff6a32',8:'#66e8ff'})[run.weapon]||'#fff');
   hudPanel(VW-152,5,146,36);
   const mx=VW-130, my=23;
   ctx.fillStyle='#0c0f15'; hudSlot(mx-16,8,32,30,5);
@@ -7619,7 +7646,7 @@ try{ const h=localStorage.getItem('bof_hi'); if(h) highScore=parseInt(h); }catch
 
 /* run state */
 const run = {
-  stage:1, score:0, lives:3, bombs:2, missileTier:'standard', missileUpgrade:null, _missileWaveSerial:0, contUsed:0, contBonus:0, weapon:0, wlevel:1, wlevels:[1,1,1,1,1,1,1],
+  stage:1, score:0, lives:3, bombs:2, missileTier:'standard', missileUpgrade:null, _missileWaveSerial:0, contUsed:0, contBonus:0, weapon:0, wlevel:1, wlevels:[1,1,1,1,1,1,1,1,1],
   speed:0, speedT:0, speedLevel:0, shield:0, power:0, distance:0, pilot:'axel',
   spaceMode:false,spaceWeapon:0,spaceLevels:[1,1,1],gravityShipReady:false,
 };
@@ -7637,7 +7664,7 @@ function bonusModesUnlockFromCampaign(){
   try{localStorage.setItem(BONUS_MODE_UNLOCK_KEY,'1');}catch(_bonusWrite){}
   return true;
 }
-const WEAPONS=['MACHINE GUN','SPREAD FIRE','MISSILES','LASER','FLAMETHROWER','ICE ORB','LASER MIST'];
+const WEAPONS=['MACHINE GUN','SPREAD FIRE','MISSILES','LASER','FLAMETHROWER','ICE ORB','LASER MIST','CHAINGUN','LIGHTNING ORB'];
 /* Persistent account/profile achievement registry. Triggers and presentation live in their
    own checklist items; this layer owns stable ids, points, one-time unlocks and future Steam ids. */
 const ACHIEVEMENT_STORE_KEY='bof_achievements_v1',ACHIEVEMENT_STORE_VERSION=1;
@@ -7737,7 +7764,7 @@ function achievementRunComplete(){
    ⚠ AND BOTH RAMP WITH LEVEL: "each lvl up makes machinegun and spread fire just a little faster
    by like 5%." Applied as 0.95^(level-1), so L1 is the base and L5 lands ~18.5% faster - a ramp
    the player feels across a run without the top level becoming a different weapon. */
-const WEAPON_CADENCE={0:0.164,1:0.164,2:0.18,3:0.107,4:0.42};
+const WEAPON_CADENCE={0:0.164,1:0.164,2:0.18,3:0.107,4:0.42,7:0.18,8:0.38};
 const WEAPON_LVL_RAMP={0:1,1:1};        // which weapons get the 5%-per-level cadence ramp
 
 /* ============================================================
@@ -7792,7 +7819,7 @@ let coopP1Index=0;
 const run2 = {
   score:0, lives:3, bombs:2, missileTier:'standard', missileUpgrade:null, _missileWaveSerial:0, weapon:0, wlevel:1, wlevels:WEAPONS.map(()=>1),
   speed:0, speedT:0, speedLevel:0, shield:0, power:0, pilot:'decker', missileLevel:0,
-  wvars:WEAPONS.map(()=>null),
+  wvars:WEAPONS.map(()=>null),_chainHeat:0,_chainRev:0,_chainOverheat:0,
 };
 /* P2's pilot modifiers. A SECOND table rather than swapping PILOTMOD around the two update
    passes: both ships are in the air at the same time, and a single table that has to be correct
@@ -7817,6 +7844,45 @@ function laserMistUnlock(){
   run._wbag=[];
   if(typeof arcadeBanner==='function')arcadeBanner('LASER MIST UNLOCKED');
   if(Audio&&Audio.SFX&&(Audio.SFX.laserMistUnlock||Audio.SFX.powerup))(Audio.SFX.laserMistUnlock||Audio.SFX.powerup)();
+  return true;
+}
+const CHAINGUN_UNLOCK_KEY='bof_chaingun_unlocked';
+let chaingunUnlocked=false;
+try{chaingunUnlocked=localStorage.getItem(CHAINGUN_UNLOCK_KEY)==='1';}catch(_cgRead){}
+function chaingunIsUnlocked(){return !!chaingunUnlocked;}
+function chaingunUnlock(){
+  if(chaingunUnlocked)return false;
+  chaingunUnlocked=true;try{localStorage.setItem(CHAINGUN_UNLOCK_KEY,'1');}catch(_cgWrite){}
+  run._wbag=[];if(!run.wlevels)run.wlevels=WEAPONS.map(()=>0);run.wlevels[7]=Math.max(1,run.wlevels[7]||0);run.weapon=7;run.wlevel=run.wlevels[7];run._chainHeat=0;run._chainRev=0;run._chainOverheat=0;
+  if(typeof arcadeBanner==='function')arcadeBanner('CHAINGUN UNLOCKED!');
+  if(Audio&&Audio.SFX)(Audio.SFX.weapon||Audio.SFX.powerup||function(){})();
+  return true;
+}
+const YURI_LIGHTNING_ORB_UNLOCK_KEY='bof_yuri_lightning_orb_unlocked';
+let yuriLightningOrbUnlocked=false;
+try{yuriLightningOrbUnlocked=localStorage.getItem(YURI_LIGHTNING_ORB_UNLOCK_KEY)==='1';}catch(_yloRead){}
+function yuriLightningOrbIsUnlocked(){return !!yuriLightningOrbUnlocked;}
+function yuriLightningOrbWarm(){
+  if(typeof XART==='undefined'||!XART._touch)return;
+  for(let i=1;i<=5;i++){XART._touch('micon_lightningorb_'+i);XART._touch('ylo_orb_'+i);XART._touch('ylo_bolt_'+i);}
+}
+/* Stage 4 awards this weapon only when Yuri is one of the pilots who won the fight. The account
+   flag makes it part of Yuri's future crate pool; another pilot can never equip or roll it. */
+function yuriLightningOrbGrantStage4(){
+  const seats=[run];if(typeof coopActive==='function'&&coopActive()&&typeof run2!=='undefined')seats.push(run2);
+  let yuriWon=false;
+  for(const R of seats){
+    if(!R||String(R.pilot||'').toLowerCase()!=='yuri')continue;
+    yuriWon=true;if(!R.wlevels)R.wlevels=WEAPONS.map(()=>0);while(R.wlevels.length<WEAPONS.length)R.wlevels.push(0);
+    if(!R.wvars)R.wvars=WEAPONS.map(()=>null);while(R.wvars.length<WEAPONS.length)R.wvars.push(null);
+    R.wlevels[8]=Math.max(1,R.wlevels[8]||0);R.wvars[8]='lightningorb';R.weapon=8;R.wlevel=R.wlevels[8];R._wbag=[];
+  }
+  if(!yuriWon)return false;
+  const fresh=!yuriLightningOrbUnlocked;yuriLightningOrbUnlocked=true;
+  try{localStorage.setItem(YURI_LIGHTNING_ORB_UNLOCK_KEY,'1');}catch(_yloWrite){}
+  yuriLightningOrbWarm();
+  if(typeof arcadeBanner==='function')arcadeBanner(fresh?'YURI LIGHTNING ORB UNLOCKED!':'LIGHTNING ORB EQUIPPED');
+  if(Audio&&Audio.SFX)(Audio.SFX.chainShoot||Audio.SFX.weapon||Audio.SFX.powerup||function(){})();
   return true;
 }
 /* MISSILE AND SPECIAL ATTRIBUTION (drop 0807o). Mike asked the stats screen for missiles fired
@@ -8572,7 +8638,7 @@ player2.x = VW/2 + 40;      // offset so the two do not start inside one another
    becomes shared, so one player picking up a weapon hands it to both, or one player's death
    spends the other's life. */
 const SEAT_RUN_FIELDS = ['score','lives','bombs','missileTier','missileUpgrade','_missileWaveSerial','weapon','wlevel','wlevels','speed','speedT',
-  'speedLevel','shield','power','pilot','missileLevel','retinaScan','wvars','dkT','sonicT','_mslCd'];
+  'speedLevel','shield','power','pilot','missileLevel','retinaScan','wvars','dkT','sonicT','_mslCd','_chainHeat','_chainRev','_chainOverheat'];
 
 let _seat = 1;              // which seat `player` and `run` are currently pointing at
 let _seatSave = null;
@@ -24855,6 +24921,7 @@ function _weaponCadence(){
      tracking run cannot resolve a difference smaller than about 2x and will invent ones that are
      not there. Second pass, from the pinned medians 21/26/30/35/34/42/41, targets ~30s. */
   if(run.weapon===6)return Math.max(.29,.55-clamp(run.wlevel||1,1,5)*.055);
+  if(run.weapon===7){const r=clamp(run._chainRev||0,0,1);return Math.max(.045,.18-r*.135);}
   {
     const _c=WEAPON_CADENCE[run.weapon];
     if(_c!=null && WEAPON_LVL_RAMP[run.weapon]){
@@ -25983,8 +26050,8 @@ function spaceModeStage(num){
        state to Laser Cannon; only Laser/Shadow may own the fire button now. */
     run.spaceWeapon=(run.spaceWeapon===1)?1:0;
     run._spaceVolleyCd=0.28;
-    run.weapon=0; run.wlevel=spaceWeaponLevel(); run.wlevels=[0,0,0,0,0,0,0];
-    run.wvars=[null,null,null,null,null,null,null]; run.missileLevel=0; run._mslCd=0;
+    run.weapon=0; run.wlevel=spaceWeaponLevel(); run.wlevels=WEAPONS.map(()=>0);
+    run.wvars=WEAPONS.map(()=>null); run.missileLevel=0; run._mslCd=0;
     spaceLaserMuzzleWarm();
     /* The Shadow Orb is the one held space weapon. Prepare its loop as the space loadout is
        installed, not on the first trigger frame, so Stage 5 and the bonus route never begin a
@@ -26379,6 +26446,74 @@ function spaceBulletTick(b,dt){
   return false;
 }
 
+function chaingunPlayerFire(lv){
+  if((run._chainOverheat||0)>0)return;
+  lv=clamp(lv||1,1,5);const streams=1+Math.floor(lv/2),hot=clamp(run._chainHeat||0,0,1);
+  for(let i=0;i<streams;i++){
+    const off=(i-(streams-1)/2)*(7+lv),a=-Math.PI/2+(i-(streams-1)/2)*.018;
+    pBullets.push({x:player.x+off,y:player.y-15,vx:Math.cos(a)*(10.5+lv*.35),vy:Math.sin(a)*(10.5+lv*.35),w:5+lv*.45,h:15+lv,dmg:2+Math.floor(lv*.75),kind:'mg',lv:hot>.72?5:lv,_chaingun:true});
+  }
+  player._mgMuzT=.075;player._mgMuzLv=hot>.72?5:Math.max(1,lv);player._chainMuzzle=.10;
+  shake=Math.max(shake,.5+lv*.15);(Audio.SFX.heavyMachineGun||Audio.SFX.machineGun||Audio.SFX.shoot)();
+}
+function chaingunHeatTick(dt,firing){
+  run._chainHeat=clamp(run._chainHeat||0,0,1);run._chainRev=clamp(run._chainRev||0,0,1);run._chainOverheat=Math.max(0,run._chainOverheat||0);
+  if(run.weapon!==7){run._chainRev=Math.max(0,run._chainRev-dt*1.2);run._chainHeat=Math.max(0,run._chainHeat-dt*.28);return;}
+  if(run._chainOverheat>0){run._chainOverheat=Math.max(0,run._chainOverheat-dt);run._chainHeat=run._chainOverheat/5;run._chainRev=0;return;}
+  if(firing){run._chainRev=Math.min(1,run._chainRev+dt*.72);run._chainHeat=Math.min(1,run._chainHeat+dt*(.075+.105*run._chainRev));
+    if(run._chainHeat>=1){run._chainHeat=1;run._chainOverheat=5;run._chainRev=0;shake=Math.max(shake,5);if(Audio.SFX)(Audio.SFX.steam||Audio.SFX.shieldBreakCombat||Audio.SFX.hit)();}}
+  else{run._chainRev=Math.max(0,run._chainRev-dt*.85);run._chainHeat=Math.max(0,run._chainHeat-dt*.16);}
+}
+
+/* ============================================================
+   YURI LIGHTNING ORB — STAGE-4 VICTORY WEAPON
+
+   The orb is the carrier and every fork is a real projectile. Higher tiers release more bolts,
+   widen the fan, travel faster and gain limited piercing. This remains separate from Yuri's
+   special: activating chain lightning still temporarily owns the trigger through pShoot's
+   existing special gate.
+   ============================================================ */
+function yuriLightningOrbRelease(b){
+  if(!b||b._released)return;b._released=true;
+  const lv=clamp(b.lv||1,1,5),n=lv+1,spread=.16+lv*.055,spd=8.0+lv*.34;
+  for(let i=0;i<n;i++){
+    const a=-Math.PI/2+(i-(n-1)/2)*spread;
+    pBullets.push({kind:'yuriLightningBolt',x:b.x,y:b.y,vx:Math.cos(a)*spd,vy:Math.sin(a)*spd,
+      w:9+lv,h:25+lv*3,dmg:1.2+lv*.48,lv:lv,t:0,life:1.55,ang:a,art:1+(i%5),pierce:lv>=4,_hit:[]});
+  }
+  zaps.push({x1:b.x-8,y1:b.y,x2:b.x+8,y2:b.y,t:.11});
+  if(Audio&&Audio.SFX)(Audio.SFX.chainShoot||Audio.SFX.laser||Audio.SFX.shoot)();
+}
+function yuriLightningOrbFire(lv){
+  if((typeof _pilotKey==='function'&&_pilotKey()!=='yuri')||!yuriLightningOrbIsUnlocked())return false;
+  lv=clamp(lv||1,1,5);let live=0;for(const q of pBullets)if(q&&!q.dead&&q.kind==='yuriLightningOrb')live++;
+  if(live>=2+Math.floor(lv/3))return false;
+  pBullets.push({kind:'yuriLightningOrb',x:player.x,y:player.y-18,vx:0,vy:-(5.0+lv*.25),w:22+lv*3,h:22+lv*3,
+    dmg:2.4+lv*.72,lv:lv,t:0,life:2.2,_released:false,_hit:[],pierce:true});
+  player._mgMuzT=.09;player._mgMuzLv=Math.max(1,lv);shake=Math.max(shake,.7+lv*.12);
+  if(Audio&&Audio.SFX)(Audio.SFX.chainShoot||Audio.SFX.laser||Audio.SFX.shoot)();
+  return true;
+}
+function yuriLightningOrbTick(b,dt){
+  if(!b||(b.kind!=='yuriLightningOrb'&&b.kind!=='yuriLightningBolt'))return false;
+  b.t=(b.t||0)+dt;b.life-=dt;const f=Math.min(1.5,dt*60);b.x+=(b.vx||0)*f;b.y+=(b.vy||0)*f;
+  if(b.kind==='yuriLightningOrb'&&!b._released&&b.t>=.14)yuriLightningOrbRelease(b);
+  const hitOnce=(target,damage,fn)=>{
+    if(b._hit.indexOf(target)>=0)return false;b._hit.push(target);fn(damage);zaps.push({x1:b.x,y1:b.y,x2:target.x||b.x,y2:(target._drawY!=null?target._drawY:target.y)||b.y,t:.10});
+    if(!b.pierce||b.kind==='yuriLightningOrb'&&b._hit.length>=2+Math.floor(b.lv/2))b.dead=true;return true;
+  };
+  for(const e of enemies){if(e.dead)continue;if(Math.abs(e.x-b.x)<(e.w+b.w)/2&&Math.abs(e.y-b.y)<(e.h+b.h)/2){hitOnce(e,b.dmg,d=>hitEnemy(e,d));if(b.dead)break;}}
+  if(!b.dead&&boss&&bossActive&&!boss.dead&&bossHitTest(b.x,b.y))hitOnce(boss,b.dmg,d=>{_lastHitX=b.x;_lastHitY=b.y;hitBoss(d);});
+  if(!b.dead&&typeof subBoss!=='undefined'&&subBoss&&subBossActive&&!subBoss.dead&&!subBoss.enter){
+    const sy=subBoss._drawY!=null?subBoss._drawY:subBoss.y,sw=subBoss._drawW||subBoss.w,sh=subBoss._drawH||subBoss.h;
+    if(Math.abs(subBoss.x-b.x)<(sw+b.w)/2&&Math.abs(sy-b.y)<(sh+b.h)/2)hitOnce(subBoss,b.dmg,d=>hitSubBoss(d,b.x,b.y));
+  }
+  if(!b.dead)for(const c of powerups){if(c.dead||!['crate','capsule','scrate','mcrate','hqspacebox'].includes(c.kind))continue;
+    if(Math.abs(c.x-b.x)<(c.w+b.w)/2&&Math.abs(c.y-b.y)<(c.h+b.h)/2&&hitOnce(c,b.dmg,d=>{c.hp=(c.hp||5)-d;c.flash=.12;if(c.hp<=0){c.dead=true;breakContainer(c);}}))break;}
+  const W=(typeof worldWidth==='function')?worldWidth():VW;if(b.life<=0||b.y<-70||b.x<-70||b.x>W+70)b.dead=true;
+  return true;
+}
+
 function pShoot(){
   const w=run.weapon, lv=run.wlevel; const _sn0=pBullets.length;
   /* SONIC BOOM REPLACES THE PRIMARY WHILE IT LASTS (drop 0805i). It is a shockwave weapon,
@@ -26537,6 +26672,10 @@ function pShoot(){
     /* light the muzzle for this weapon too (drop 0809n) - the draw picks the authored
        PlayerWeapons frame by weapon id; before this only mg and spread ever set the timer */
     player._mgMuzT=0.07; player._mgMuzLv=Math.max(1,Math.min(8,lv||1));
+  } else if(w===8){ // YURI LIGHTNING ORB — Stage-4 victory reward, independent spreading bolts
+    yuriLightningOrbFire(lv);
+  } else if(w===7){ // CHAINGUN — Stage-5 victory reward, accelerating rotary fire
+    chaingunPlayerFire(lv);
   } else if(w===6){ // LASER MIST — Stage-9 victory reward, three lanes and two real split beats
     laserMistFire(lv);
   } else if(w===5){ // ICE ORB — D2 frozen-orb: spins upward, sprays shards, pierces; one orb at a time (two at lv5)
@@ -26959,6 +27098,11 @@ function spawnContainer(type){
          crates remain the three Gravity Mode systems, so the reward cannot replace them. */
       if(typeof laserMistIsUnlocked==='function'&&laserMistIsUnlocked()&&
          !(typeof spaceWeaponsActive==='function'&&spaceWeaponsActive()))_pool.push(6);
+      if(typeof chaingunIsUnlocked==='function'&&chaingunIsUnlocked()&&
+         !(typeof spaceWeaponsActive==='function'&&spaceWeaponsActive()))_pool.push(7);
+      if(typeof yuriLightningOrbIsUnlocked==='function'&&yuriLightningOrbIsUnlocked()&&
+         typeof _pilotKey==='function'&&_pilotKey()==='yuri'&&
+         !(typeof spaceWeaponsActive==='function'&&spaceWeaponsActive()))_pool.push(8);
       for(let _i=_pool.length-1;_i>=0;_i--)if((_pool[_i]===4||_pool[_i]===5)&&
          typeof weaponVariant==='function'&&weaponVariant(_pool[_i])===null)_pool.splice(_i,1);
       if(run.stage===3 && _pool.indexOf(5)>=0) _pool.push(5);      // the fire orb is the stage-3 event
@@ -27191,6 +27335,9 @@ function applyPowerup(p){
         run.wlevel=spaceWeaponLevel();
         Audio.SFX.weapon();break;
       }
+      if(_wt===8&&((typeof _pilotKey==='function'&&_pilotKey()!=='yuri')||!yuriLightningOrbIsUnlocked())){
+        if(Audio.SFX&&Audio.SFX.hit)Audio.SFX.hit();break;
+      }
       if(_wt===2){ // MISSILES is no longer a swappable weapon -> level up the auto-missiles instead
         run.missileLevel=clamp((run.missileLevel||0)+1,0,5);
         achievementWeaponMax(2,run.missileLevel);
@@ -27206,7 +27353,7 @@ function applyPowerup(p){
          this was the only place it could have been kept. Without it every surface downstream
          had to guess from pilot+stage, and all three of Mike's weapon reports are that guess
          being wrong in a different way. Recorded here, read via heldVariant everywhere else. */
-      if(!run.wvars) run.wvars=[null,null,null,null,null,null,null];
+      if(!run.wvars) run.wvars=WEAPONS.map(()=>null);
       run.wvars[_wt] = p.wvar || ((typeof weaponVariant==='function')?weaponVariant(_wt):null);
       /* Debug weapon keys are temporary grants, not sticky palette switches. A real pickup owns
          the slot from this frame forward and clears every override that could redraw it. */
@@ -29812,7 +29959,7 @@ function startRun(fromStage=1){
     run2.wvars = WEAPONS.map(()=>null);
     run2.speed = 0; run2.speedT = 0; run2.speedLevel = 0;
     run2.shield = 0; run2.power = 0; run2.missileLevel = 0;
-    run2.dkT = 0; run2.sonicT = 0; run2._mslCd = 0;
+    run2.dkT = 0; run2.sonicT = 0; run2._mslCd = 0;run2._chainHeat=0;run2._chainRev=0;run2._chainOverheat=0;
     /* P2's pilot modifiers, kept beside P1's PILOTMOD rather than swapped into it — two ships
        with different speed and fire bonuses need both tables live at once. */
     PILOTMOD2 = _P2 ? {spd:_P2.spd||0, fire:_P2.fire||0, range:_P2.range||0, tint:_P2.tint} : null;
@@ -29828,11 +29975,11 @@ function startRun(fromStage=1){
      a Cole sonic test left run.sonicT set and the Lizzie block that ran after it fired
      nothing at all, because pShoot returned on the sonic branch before reaching the mount. */
   run.sonicT=0; run._sonicCd=0; run._lzCd=0;player._retinaScan=null;player2._retinaScan=null;
-  run._lifeCombatT=0; run._lifeThreat=0; run._threatBuild=0;
+  run._lifeCombatT=0; run._lifeThreat=0; run._threatBuild=0;run._chainHeat=0;run._chainRev=0;run._chainOverheat=0;
   if(typeof hqSeen!=='undefined') hqSeen={};      // a fresh run plays the HQ scenes again
   if(typeof sonicTrail!=='undefined') sonicTrail.length=0;
   if(typeof lzMount!=='undefined') lzMount=null;
-  run.weapon=0; run.wlevel=0; run.wlevels=[0,0,0,0,0,0,0]; run.wvars=[null,null,null,null,null,null,null]; run.speed=0; run.speedT=0; run.speedLevel=0; run.shield=0; run.power=0; run.missileLevel=0; run._mslCd=0;
+  run.weapon=0; run.wlevel=0; run.wlevels=WEAPONS.map(()=>0); run.wvars=WEAPONS.map(()=>null); run.speed=0; run.speedT=0; run.speedLevel=0; run.shield=0; run.power=0; run.missileLevel=0; run._mslCd=0;
   run.spaceMode=false;run.spaceWeapon=0;run.spaceLevels=[1,1,1];run.gravityShipReady=false;run._groundLoadout=null;run._spaceShadowCharge=0;run._spaceShadowHeld=false;run._spaceVolleyCd=0;   // Gravity ship is earned visibly in Stage 5 and retained for Stage 9
   if(run.mode==='arcade'){ beginStage(fromStage); }
   else {
@@ -30568,7 +30715,7 @@ function freezerL3Begin(){
      separated from the flamethrower this beat handed him a weapon that came out as frost, on
      the ice level, contradicting its own narration. Stated here rather than left to the
      dispenser default so the story beat cannot drift if that table changes. */
-  if(!run.wvars) run.wvars=[null,null,null,null,null,null,null];
+  if(!run.wvars) run.wvars=WEAPONS.map(()=>null);
   run.wvars[4]='flamethrower';
   _frzNarr = { i:0, t:0, hold:2.6, done:false };
 }
@@ -30625,6 +30772,7 @@ function beginStage(num){
   try{ if(typeof bossBarWarm==='function') bossBarWarm(num); }catch(e){}   // the pack's gauge art, before any warning can show it (0910b)
   curStage=STAGES[num-1];
   playerLocks=[]; _lockBeepT=0;   // a retina never follows the player into the next stage (0912)
+  if(typeof groundTargetingReset==='function')groundTargetingReset(); // shared ground warnings never cross stage boundaries
   try{ for(let _ri=0;_ri<4;_ri++){ XART.rdy('retm_'+_ri); XART.rdy('retmb_'+_ri); } }catch(_rw){}
   /* the secret is SPENT once it is entered, so the map is not stuck on stage 9 forever (0822ad) */
   if(num===9 && run.mode==='campaign' && typeof campaign!=='undefined') campaign.bonusUnlocked=0;
@@ -31268,7 +31416,9 @@ function updatePlay(dt){
   if(!specialActive('yuri')) zaps.length=0;   // hard-clear the instant Yuri's chain is no longer active
   _newWeaponTick(dt);                    // sonic trail + Lizzie's mount (drop 0805i)
   if(typeof thawTick==='function') thawTick(dt);
-  updateRetina(dt);for(const s of seatList())withSeat(s,()=>retinaScanTick(dt)); updatePlayerLocks(dt); updateSmokeTrails(dt);
+  updateRetina(dt);for(const s of seatList())withSeat(s,()=>retinaScanTick(dt)); updatePlayerLocks(dt);
+  if(typeof groundTargetingTick==='function')groundTargetingTick(dt);
+  updateSmokeTrails(dt);
   updateMissileRush(dt);
   for(const ni of nukeImpacts) ni.t+=dt;
   if(nukeImpacts.length) nukeImpacts=nukeImpacts.filter(ni=>ni.t<ni.dur);
@@ -31295,7 +31445,7 @@ function updatePlay(dt){
       if(Input.tap(_k)){
         const _lv=_tier[_k];
         run.weapon=0;
-        if(!run.wlevels) run.wlevels=[0,0,0,0,0,0,0];
+        if(!run.wlevels) run.wlevels=WEAPONS.map(()=>0);
         run.wlevels[0]=_lv; run.wlevel=_lv;
         if(typeof coleFuse!=='undefined') coleFuse=0;      // drop any part-built fusion charge
         if(Audio&&Audio.SFX&&Audio.SFX.select) Audio.SFX.select();
@@ -31400,6 +31550,7 @@ function updatePlay(dt){
     player.fireCd-=dt; if(player._mgMuzT>0)player._mgMuzT-=dt;
     if(player._spaceMuzzle>0)player._spaceMuzzle=Math.max(0,player._spaceMuzzle-dt);
     const firing = !_rolling && !(typeof s7WardenCinematic==='function'&&s7WardenCinematic()) && Input.hold(_seat,'fire');   // no shooting mid-roll/cinematic
+    if(typeof chaingunHeatTick==='function')chaingunHeatTick(dt,firing);
     /* ============================================================
        TAP vs HOLD ON A CHARGE WEAPON (drop 0805r)
 
@@ -32442,6 +32593,7 @@ function updatePlay(dt){
     if(b._shieldIgnoreT>0){ b._shieldIgnoreT-=dt; if(b._shieldIgnoreT<=0) b._shieldIgnore=null; }
     if(typeof spaceBulletTick==='function'&&spaceBulletTick(b,dt)) continue;
     if(typeof laserMistTick==='function'&&laserMistTick(b,dt)) continue;
+    if(typeof yuriLightningOrbTick==='function'&&yuriLightningOrbTick(b,dt)) continue;
     /* A Maverick volley launches one lance at a time. Held lances stay at the muzzle and cannot
        move, draw or collide until their authored release beat arrives. */
     if(b.kind==='mavlaser' && b._launchDelay>0){
@@ -33973,11 +34125,11 @@ function playerHit(){
   /* DEATH DROPS YOU TO THE MACHINE GUN (Mike, 0903: "keeping weapons when I die" is a bug).
      Codex's build kept the equipped weapon's identity and only powered its level down; Mike
      overruled that. Weapon 0 at level 1, every bank at 1, variants cleared. */
-  run.weapon=0;run.wlevels=[0,0,0,0,0,0,0];run.wlevel=0;run.power=0;manualMissileResetOnDeath(run);   // 0, not 1: 'all other weapons when you acquire them are lvl 1 first' - a pickup adds one
-  if(run.wvars) run.wvars=[null,null,null,null,null,null,null];
+  run.weapon=0;run.wlevels=WEAPONS.map(()=>0);run.wlevel=0;run.power=0;manualMissileResetOnDeath(run);   // 0, not 1: 'all other weapons when you acquire them are lvl 1 first' - a pickup adds one
+  if(run.wvars) run.wvars=WEAPONS.map(()=>null);
   run.spaceWeapon=(run.spaceWeapon===1)?1:0;run.spaceLevels=[0,1,1];run._spaceVolleyCd=0;   // laser to LEVEL 0 (Mike, 0903)
   if(run._groundLoadout){
-    run._groundLoadout.wlevel=1;run._groundLoadout.wlevels=[1,1,1,1,1,1,1];
+    run._groundLoadout.wlevel=1;run._groundLoadout.wlevels=WEAPONS.map(()=>1);
     run._groundLoadout.missileLevel=1;
   }
   if(typeof spaceShadowCancel==='function')spaceShadowCancel();
@@ -34013,7 +34165,13 @@ function triggerVictory(){
 function bossHitTest(x,y){
   if(!boss) return false;
   if(boss.kind==='damkeeper'&&boss._ovIntro&&!boss._ovIntro.done)return false;
-  if(boss._hammer){if(boss._noHit||boss.dead)return false;const r=boss._hammer.state==='ball'?46:66;return dist2(x,y,boss.x,boss.y)<r*r;}
+  if(boss._hammer){
+    if(boss._noHit||boss.dead)return false;const h=boss._hammer;boss._hammerModuleHit=null;
+    const T=h.throw,hammerX=T?T.x:boss.x-54,hammerY=T?T.y:boss.y+8;
+    if(!h.hammerDestroyed&&dist2(x,y,hammerX,hammerY)<34*34){boss._hammerModuleHit='hammer';return true;}
+    if(h.mode!=='hammer'&&!h.chainDestroyed&&dist2(x,y,boss.x,boss.y-52)<40*40){boss._hammerModuleHit='chaingun';return true;}
+    const r=h.state==='ball'?54:72;return dist2(x,y,boss.x,boss.y)<r*r;
+  }
   if(boss._furnace && typeof furnaceHitTest==='function') return furnaceHitTest(boss,x,y);
   if(boss._s7warden&&boss._s7warden.noHit)return false;
   if(boss._ship==='stormsovereign'&&boss._s4war){
@@ -34413,6 +34571,71 @@ function hammerGroundReticleDraw(im,x,y,w,alpha){
   ctx.save();ctx.globalAlpha=alpha==null?1:alpha;ctx.imageSmoothingEnabled=false;
   ctx.drawImage(im,x-w/2,y-hh/2,w,hh);ctx.restore();return true;
 }
+
+
+/* ============================================================================
+   SHARED GROUND TARGETING SYSTEM (0916)
+   Engine rule for every enemy and boss: a perspective floor reticle tracks in
+   green, commits in yellow, flashes red, then releases an authored ground attack.
+   Call groundTargetingSpawn(), groundTargetingPattern(), or groundTargetingLine().
+   The warning clock and the damaging clock are deliberately separate.
+   ============================================================================ */
+const GROUND_TARGETING_PRESETS=Object.freeze({
+  lava:{row:0,warn:1.20,active:.72,radius:38,size:122,sound:'flameThrowerStart',shake:7},
+  glacial:{row:1,warn:1.10,active:.68,radius:31,size:118,sound:'iceBreathStart',shake:6},
+  lightning:{row:2,warn:.88,active:.52,radius:24,size:132,sound:'lightning',shake:9},
+  water:{row:3,warn:1.18,active:.74,radius:42,size:126,sound:'waterSplash',shake:7}
+});
+let groundTargetingFx=[];
+function groundTargetingReset(){groundTargetingFx.length=0;}
+function groundTargetingPreset(kind){return GROUND_TARGETING_PRESETS[kind]||GROUND_TARGETING_PRESETS.lightning;}
+function groundTargetingSpawn(opts){
+  opts=opts||{};const kind=opts.kind||'lightning',P=groundTargetingPreset(kind),warn=Math.max(.12,opts.warn==null?P.warn:+opts.warn);
+  const q={kind,row:P.row,x:opts.x==null?player.x:+opts.x,y:opts.y==null?PLAY.y+PLAY.h-34:+opts.y,
+    t:0,warn,active:Math.max(.12,opts.active==null?P.active:+opts.active),radius:Math.max(6,opts.radius==null?P.radius:+opts.radius),
+    size:Math.max(24,opts.size==null?P.size:+opts.size),delay:Math.max(0,opts.delay||0),track:opts.track!==false,trackFor:clamp(opts.trackFor==null ? .56 : +opts.trackFor,0,1),
+    speed:Math.max(0,opts.speed==null?190:+opts.speed),targetSeat:opts.targetSeat||1,owner:opts.owner||null,
+    hitSeats:Object.create(null),impact:false,dead:false,lane:opts.lane!==false,damage:opts.damage==null?1:+opts.damage,onImpact:opts.onImpact||null,
+    sound:opts.sound||P.sound,shake:opts.shake==null?P.shake:+opts.shake};
+  groundTargetingFx.push(q);XART.rdy('fx_ground_strikes_0916');XART.rdy('fx_ground_target_reticle');return q;
+}
+function groundTargetingPattern(kind,points,opts){return (points||[]).map((p,i)=>groundTargetingSpawn(Object.assign({},opts,p,{kind,delay:(opts&&opts.stagger||0)*i})));}
+function groundTargetingLine(kind,count,opts){
+  opts=opts||{};count=Math.max(1,count|0);const left=opts.left==null?camLeftX()+42:+opts.left,right=opts.right==null?camRightX()-42:+opts.right,pts=[];
+  for(let i=0;i<count;i++)pts.push({x:count===1?(left+right)/2:lerp(left,right,i/(count-1)),y:opts.y});
+  return groundTargetingPattern(kind,pts,opts);
+}
+function groundTargetingCancel(owner){for(const q of groundTargetingFx)if(!owner||q.owner===owner)q.dead=true;}
+function groundTargetingPhase(q){return clamp(q.t/q.warn,0,1);}
+function groundTargetingTargetX(q){let x=q.x;for(const s of seatList())if(s===q.targetSeat)withSeat(s,()=>{if(!player.dead)x=player.x;});return x;}
+function groundTargetingStrikePlayers(q){
+  for(const s of seatList())withSeat(s,()=>{if(player.dead||q.hitSeats[s])return;const laneHit=Math.abs(player.x-q.x)<=q.radius&&(q.lane||Math.abs(player.y-q.y)<=Math.max(32,q.radius*.9));if(laneHit){q.hitSeats[s]=1;playerHit();}});
+}
+function groundTargetingTick(dt){
+  for(const q of groundTargetingFx){if(q.dead)continue;q.t+=dt;
+    if(q.delay>0){q.delay-=dt;q.t=0;continue;}
+    if(q.t<q.warn&&q.track&&q.t<q.warn*q.trackFor){const tx=groundTargetingTargetX(q);q.x+=clamp(tx-q.x,-q.speed*dt,q.speed*dt);}
+    if(!q.impact&&q.t>=q.warn){q.impact=true;shake=Math.max(shake,q.shake);const snd=Audio&&Audio.SFX&&(Audio.SFX[q.sound]||Audio.SFX.bossPhase||Audio.SFX.hit);if(snd)snd();if(q.onImpact)try{q.onImpact(q);}catch(_gti){}}
+    if(q.impact&&q.t>=q.warn+.08&&q.t<=q.warn+q.active*.78)groundTargetingStrikePlayers(q);
+    if(q.t>=q.warn+q.active)q.dead=true;
+  }
+  groundTargetingFx=groundTargetingFx.filter(q=>!q.dead);
+}
+function groundTargetReticleDraw(x,y,w,progress,alpha){
+  progress=clamp(progress||0,0,1);const tint=progress<.5?null:progress<.78?'yellow':'red';
+  const im=hammerFrame('reticle',0,tint)||((typeof XART!=='undefined'&&XART.rdy('fx_ground_target_reticle'))?XART.get('fx_ground_target_reticle'):null);
+  if(!im)return false;const pulse=.92+.08*Math.sin((stateT||0)*24),hh=w*im.height/Math.max(1,im.width);
+  ctx.save();ctx.globalAlpha=(alpha==null?1:alpha)*(progress>.78?.72+.28*Math.abs(Math.sin((stateT||0)*32)):1);ctx.imageSmoothingEnabled=false;
+  ctx.translate(x,y);ctx.scale(pulse,1);ctx.drawImage(im,-w/2,-hh/2,w,hh);ctx.restore();return true;
+}
+function groundTargetingDraw(){
+  const atlas=(typeof XART!=='undefined'&&XART.rdy('fx_ground_strikes_0916'))?XART.get('fx_ground_strikes_0916'):null;
+  for(const q of groundTargetingFx){if(q.delay>0)continue;if(!q.impact){groundTargetReticleDraw(q.x,q.y,q.size,groundTargetingPhase(q),.78);continue;}
+    const u=clamp((q.t-q.warn)/q.active,0,.999),frame=Math.min(3,Math.floor(u*4));
+    ctx.save();ctx.globalCompositeOperation='lighter';ctx.globalAlpha=1;ctx.fillStyle='rgba(0,0,0,.22)';ctx.beginPath();ctx.ellipse(q.x,q.y+7,q.size*.31,q.size*.085,0,0,TAU);ctx.fill();
+    if(atlas){ctx.imageSmoothingEnabled=false;ctx.drawImage(atlas,frame*128,q.row*128,128,128,q.x-q.size/2,q.y-q.size,q.size,q.size);}ctx.restore();
+  }
+}
 function hammerBoomerangSpinDraw(b){
   const h=b._hammer,g=hammerGripPoint(b),k=clamp(h.t/HAMMER_SPIN_TIME,0,1);
   combatWarningDraw(b,{x:h.throwX,y:b.y-24,ex:h.throwX,ey:VH,progress:k,width:42});
@@ -34460,6 +34683,109 @@ function hammerBossDraw(b){
   ctx.restore();
 }
 
+
+/* ============================================================================
+   CHROME HAMMER ARCHMAGE — SpriteCook production controller (0916)
+   The old prototype remains above as design history. These declarations are the active runtime:
+   one canonical art family, destructible hammer/chaingun modules, difficulty-owned attacks,
+   player weapon unlock and the shared charge-atmosphere rule.
+   ============================================================================ */
+const ARCH_FRAMES={idle:12,twirl_throw:16,ship_transform:16,spiked_ball:16,chaingun_detach_fire:16,chaingun_break_enrage:16,dual_uzi_assault:16,spell_raise:12,death:16,hammer_spin:8};
+const archTintCache=new Map();
+function hammerArchFrame(key,frame,tint){
+  if(!XART.rdy('arch_'+key))return null;const im=XART.get('arch_'+key),n=ARCH_FRAMES[key]||1,f=clamp(frame|0,0,n-1),w=im.width/n,h=im.height,id=key+':'+f+':'+(tint||'');
+  if(!tint)return{im,sx:f*w,sy:0,sw:w,sh:h};if(archTintCache.has(id))return archTintCache.get(id);
+  const c=document.createElement('canvas');c.width=w;c.height=h;const g=c.getContext('2d');g.drawImage(im,f*w,0,w,h,0,0,w,h);const d=g.getImageData(0,0,w,h);
+  for(let i=0;i<d.data.length;i+=4){if(!d.data[i+3])continue;const l=d.data[i]*.22+d.data[i+1]*.70+d.data[i+2]*.08,co=tint==='red'?[1.8,.18,.16]:tint==='white'?[2.5,2.5,2.5]:[.2,.75,1.9];d.data[i]=Math.min(255,l*co[0]);d.data[i+1]=Math.min(255,l*co[1]);d.data[i+2]=Math.min(255,l*co[2]);}g.putImageData(d,0,0);const q={im:c,sx:0,sy:0,sw:w,sh:h};archTintCache.set(id,q);return q;
+}
+function archBlit(key,frame,x,y,h,tint,rot){const q=hammerArchFrame(key,frame,tint);if(!q)return false;const w=h*q.sw/q.sh;ctx.save();ctx.translate(x,y);if(rot)ctx.rotate(rot);ctx.imageSmoothingEnabled=false;ctx.drawImage(q.im,q.sx,q.sy,q.sw,q.sh,-w/2,-h/2,w,h);ctx.restore();return true;}
+function hammerBossInit(b){
+  b.name='CHROME HAMMER ARCHMAGE';b.w=158;b.h=176;b.y=VH+145;b.ty=VH*.34;
+  const mul=(DIFF&&DIFF.eHp)||1;b._hammer={state:'flyby',t:0,cycle:0,attackCycle:0,rage:0,shotCd:.4,angle:0,vx:0,vy:0,mode:'hammer',hammerHP:Math.ceil(70*mul),hammerMax:Math.ceil(70*mul),chainHP:Math.ceil(95*mul),chainMax:Math.ceil(95*mul),hammerDestroyed:false,chainDestroyed:false,bombs:[],pillars:[],hitCd:0};
+  b._noHit=true;b.enter=true;for(const k of Object.keys(ARCH_FRAMES))XART.rdy('arch_'+k);XART.rdy('arch_effects');XART.rdy('hammer_reticle');
+}
+function hammerState(b,state){const h=b._hammer;h.state=state;h.t=0;h.ox=b.x;h.oy=b.y;}
+function hammerHard(){return diffKey==='hard'||diffKey==='furious';}
+function hammerFurious(){return diffKey==='furious';}
+function hammerGripPoint(b){return{x:b.x-48,y:b.y-10};}
+function hammerEnergyBomb(x,y,a,speed){hammerLaser(x,y,a,speed||3.6);}
+function hammerBossModuleBreak(b,which){const h=b._hammer;explode(which==='hammer'?b.x-54:b.x,which==='hammer'?b.y+8:b.y-52,70,which==='hammer'?'blue':'red');shake=Math.max(shake,10);(Audio.SFX.expBig||Audio.SFX.hit)();
+  if(which==='hammer'){h.hammerDestroyed=true;h.mode='chaingun';h.throw=null;hammerState(b,'chaingun_draw');}
+  else{h.chainDestroyed=true;if(hammerHard()){h.mode='enraged';hammerState(b,'enrage');}else{h.mode='core';hammerState(b,'core_orbit');}}
+}
+function hammerBossDamage(b,dmg){
+  const h=b._hammer;if(b._noHit)return 0;const hit=b._hammerModuleHit;b._hammerModuleHit=null;
+  if(hit==='hammer'&&!h.hammerDestroyed){h.hammerHP-=dmg;if(h.hammerHP<=0)hammerBossModuleBreak(b,'hammer');return 0;}
+  if(hit==='chaingun'&&!h.chainDestroyed){h.chainHP-=dmg;if(h.chainHP<=0)hammerBossModuleBreak(b,'chaingun');return 0;}
+  if(h.state==='ball'){
+    if(_dmgBullet&&_dmgBullet.kind==='gmiss'){let dx=b.x-_dmgBullet.x,dy=b.y-_dmgBullet.y,m=Math.hypot(dx,dy)||1;h.vx=dx/m*210;h.vy=dy/m*210;h.rage=0;return dmg;}
+    h.rage=3;return dmg*.15;
+  }
+  return h.state==='shield'?dmg*.25:dmg;
+}
+function hammerBossChaingunFire(b){const h=b._hammer,a=aimPlayer(b.x,b.y+8),spread=.055*(h.chainHeat||0);for(const o of [-12,12])eMG(b.x+o,b.y+10,a+rnd(-spread,spread),5.2,'#ffd0a0');h.chainHeat=Math.min(1,(h.chainHeat||0)+.035);h.shotCd=lerp(.16,.055,h.chainHeat);if(h.chainHeat>=1)hammerState(b,'chain_cool');}
+function hammerBossUziFire(b,spin){const h=b._hammer,base=spin?h.t*8:aimPlayer(b.x,b.y+10);for(const o of [-20,20])hammerLaser(b.x+o,b.y+8,base+(o<0?-.045:.045),5.4);h.shotCd=.09;}
+function hammerSpellStart(b){const h=b._hammer,n=3+((Math.random()*3)|0);h.spellTargets=[];for(let i=0;i<n;i++)h.spellTargets.push({x:clamp(player.x+(i-(n-1)/2)*72,camLeftX()+30,camRightX()-30),locked:false});hammerState(b,'spell');}
+function hammerBossTick(b,dt){
+  const h=b._hammer;h.t+=dt;h.shotCd-=dt;h.hitCd=Math.max(0,(h.hitCd||0)-dt);const homeX=(camLeftX()+camRightX())/2,homeY=VH*.34,fur=hammerFurious(),hp=b.hp/(b.maxhp||1);
+  if(h.mode==='hammer'&&!h.hammerDestroyed&&hp<=.5&&!['flyby','return','unfold','spin','throw'].includes(h.state)){h.mode='chaingun';hammerState(b,'chaingun_draw');}
+  if(h.state==='flyby'){b.x=homeX;b.y-=650*dt;if(b.y<-b.h){b.y=-b.h;hammerState(b,'return');}}
+  else if(h.state==='return'){b.y=Math.min(homeY,b.y+235*dt);if(b.y===homeY)hammerState(b,'unfold');}
+  else if(h.state==='unfold'){if(h.t>=2){b._noHit=false;b.enter=false;hammerState(b,'hammer');}}
+  else if(h.state==='hammer'){
+    b.x+=clamp(homeX-b.x,-110*dt,110*dt);b.y+=clamp(homeY-b.y,-110*dt,110*dt);
+    if(h.t>(fur?.78:1.55)){if(fur&&h.attackCycle%4===3)hammerSpellStart(b);else if((h.attackCycle&1)===0)hammerBoomerangStart(b);else{hammerTarget(b);hammerState(b,'warn');}}
+  }else if(h.state==='spin'){const k=clamp(h.t/HAMMER_SPIN_TIME,0,1);h.spinAngle+=dt*(15+42*k);combatWarningTick(b,'chrome-hammer-boomerang',h.t,HAMMER_SPIN_TIME);if(h.t>=HAMMER_SPIN_TIME)hammerBoomerangRelease(b);}
+  else if(h.state==='throw'){hammerBoomerangTick(b,dt);}
+  else if(h.state==='warn'){const warn=fur?.58:1.2;combatWarningTick(b,'chrome-hammer-leap',Math.min(h.t,warn),warn);if(h.t>=warn){hammerState(b,'leap');(Audio.SFX.enemyShoot||function(){})();}}
+  else if(h.state==='leap'||h.state==='back'){const dur=fur?.27:.52,p=clamp(h.t/dur,0,1),q=p*p*(3-2*p);b.x=lerp(h.ox,h.tx,q);b.y=lerp(h.oy,h.ty,q);if(p>=1){if(h.state==='leap'){shake=Math.max(shake,11);explode(b.x,b.y+32,70,'blue');for(let i=0;i<8;i++)hammerEnergyBomb(b.x,b.y,TAU*i/8,3.5);hammerState(b,'recover');}else{h.attackCycle++;hammerState(b,'shield');}}}
+  else if(h.state==='recover'){if(h.t>(fur?.34:.7)){if(!h.follow&&Math.random()<.55){h.follow=true;hammerTarget(b);hammerState(b,'warn');}else{h.follow=false;h.tx=homeX;h.ty=homeY;hammerState(b,'back');}}}
+  else if(h.state==='shield'){if(h.t>1.0)hammerState(b,'curl');}
+  else if(h.state==='curl'){if(h.t>1.25){h.rage=0;h.vx=150*(Math.random()<.5?-1:1);h.vy=165;h.shotCd=.7;hammerState(b,'ball');}}
+  else if(h.state==='ball'){const sp=h.rage>0?2.25:1,rad=54;b.x+=h.vx*dt*sp;b.y+=h.vy*dt*sp;h.angle+=dt*(h.rage>0?16:8);const l=camLeftX()+rad,r=camRightX()-rad,t=PLAY.y+rad,bt=PLAY.y+PLAY.h-rad;if(b.x<l){b.x=l;h.vx=Math.abs(h.vx);}if(b.x>r){b.x=r;h.vx=-Math.abs(h.vx);}if(b.y<t){b.y=t;h.vy=Math.abs(h.vy);}if(b.y>bt){b.y=bt;h.vy=-Math.abs(h.vy);}if(h.rage>0&&h.shotCd<=0){h.shotCd=.62;for(let i=0;i<8;i++)hammerEnergyBomb(b.x,b.y,TAU*i/8,4.5);}if(h.t>=15)hammerState(b,'uncurl');}
+  else if(h.state==='uncurl'){if(h.t>1.25){h.attackCycle++;hammerState(b,'hammer');}}
+  else if(h.state==='chaingun_draw'){b.x+=clamp(homeX-b.x,-100*dt,100*dt);b.y+=clamp(homeY-b.y,-100*dt,100*dt);if(h.t>2){h.chainHeat=0;h.shotCd=.2;hammerState(b,'chaingun');}}
+  else if(h.state==='chaingun'){b.x+=clamp(player.x-b.x,-135*dt,135*dt);if(h.shotCd<=0)hammerBossChaingunFire(b);if(h.t>6.5){h.chainHeat=1;hammerState(b,'chain_cool');}}
+  else if(h.state==='chain_cool'){h.chainHeat=Math.max(0,1-h.t/2.3);if(h.t>2.3){if(fur&&Math.random()<.5)hammerSpellStart(b);else hammerState(b,'chaingun');}}
+  else if(h.state==='enrage'){if(h.t>2.15){h.shotCd=.1;hammerState(b,'uzi');}}
+  else if(h.state==='uzi'){b.x+=clamp((h.t%1.2<.6?camLeftX()+85:camRightX()-85)-b.x,-420*dt,420*dt);if(h.shotCd<=0)hammerBossUziFire(b,h.t>2.5);if(h.t>4.4)hammerState(b,'mega_charge');}
+  else if(h.state==='mega_charge'){combatWarningTick(b,'archmage-fused-wave',h.t,1.65);if(h.t>1.65){h.beamHit=false;h.shotCd=.25;hammerState(b,'mega_beam');}}
+  else if(h.state==='mega_beam'){if(h.shotCd<=0){h.shotCd=.22;const side=Math.random()<.5?-1:1;hammerEnergyBomb(b.x+side*48,b.y+18,Math.PI/2+side*rnd(.18,.55),3.5);}const p=h.t/7,w=VW*.5*Math.min(1,p/.18,(1-p)/.18);if(w>0&&Math.abs(player.x-b.x)<w*.48&&!player.dead&&h.hitCd<=0){h.hitCd=.8;playerHit();}if(h.t>=7){if(fur)hammerSpellStart(b);else hammerState(b,'uzi');}}
+  else if(h.state==='spell'){for(const q of h.spellTargets){if(h.t<1.75)q.x+=clamp(player.x-q.x,-110*dt,110*dt);else q.locked=true;}if(h.t>=2.35){h.pillars=h.spellTargets.map(q=>({x:q.x,t:0}));hammerState(b,'spell_blast');}}
+  else if(h.state==='spell_blast'){for(const q of h.pillars)q.t+=dt;if(h.t<1.05&&!player.dead&&h.hitCd<=0)for(const q of h.pillars)if(Math.abs(player.x-q.x)<22){player._hammerEvap=.01;h.hitCd=2;playerHit();break;}if(h.t>1.35)hammerState(b,h.mode==='hammer'?'hammer':h.mode==='chaingun'?'chaingun':'uzi');}
+  for(const p of powerups){if(p.kind==='missilepack')p.kind='missilepack10';if(p._pack==='missilepack')p._pack='missilepack10';}
+}
+function hammerBoomerangTick(b,dt){
+  const h=b._hammer,T=h.throw;if(!T)return false;T.t+=dt;T.angle+=dt*30;T.trail.unshift({x:T.x,y:T.y,angle:T.angle});if(T.trail.length>7)T.trail.length=7;T.bombCd=(T.bombCd||0)-dt;
+  if(T.phase==='out'){const furious=hammerFurious(),dur=furious?3.8:HAMMER_OUT_TIME;if(furious){const wantX=clamp(player.x,camLeftX()+40,camRightX()-40),wantY=clamp(player.y,PLAY.y+50,PLAY.y+PLAY.h-45);T.x+=clamp(wantX-T.x,-245*dt,245*dt);T.y+=clamp(wantY-T.y,-245*dt,245*dt);if(T.bombCd<=0){T.bombCd=.32;const a=aimPlayer(T.x,T.y);for(const d of [-.22,0,.22])hammerEnergyBomb(T.x,T.y,a+d,3.9);}}else{const p=clamp(T.t/dur,0,1),q=1-(1-p)*(1-p);T.x=lerp(T.ox,T.laneX,q)+Math.sin(p*Math.PI)*T.side*16;T.y=lerp(T.oy,T.turnY,p);}if(T.t>=dur){T.phase='return';T.t=0;if(Audio.SFX.hammerMagnet)Audio.SFX.hammerMagnet();}}
+  else{const g=hammerGripPoint(b),dx=g.x-T.x,dy=g.y-T.y,d=Math.hypot(dx,dy)||1,step=Math.min(d,HAMMER_RETURN_SPEED*dt);T.x+=dx/d*step;T.y+=dy/d*step;if(d<=16){h.throw=null;h.attackCycle++;hammerState(b,'hammer');if(Audio.SFX.hammerCatch)Audio.SFX.hammerCatch();return true;}}
+  hammerBoomerangHit(T,dt);return true;
+}
+function hammerBossAtmosphereDraw(b){const h=b._hammer,s=h.state,charged=['mega_charge','mega_beam','spell','spell_blast','enrage'].includes(s);if(!charged)return;const k=s==='mega_beam'?1:clamp(h.t/1.5,0,1);ctx.fillStyle='rgba(1,3,12,'+(.34+.34*k)+')';ctx.fillRect(0,0,VW,VH);ctx.save();ctx.globalCompositeOperation='lighter';ctx.strokeStyle=s==='enrage'?'#ff2538':'#5ccfff';ctx.lineWidth=1.5;for(let n=0;n<4;n++){let x=(n*197+(stateT||0)*310)%VW;ctx.beginPath();ctx.moveTo(x,0);for(let y=0;y<VH;y+=28)ctx.lineTo(x+rnd(-16,16),y);ctx.stroke();}ctx.restore();}
+function hammerModuleBars(b){const h=b._hammer;if(b.enter||b.dead)return;ctx.save();ctx.font='bold 7px "BOFmil", monospace';ctx.textAlign='center';for(const q of [{name:'HAMMER',v:h.hammerHP,m:h.hammerMax,x:b.x-53,y:b.y+58,dead:h.hammerDestroyed},{name:'CHAINGUN',v:h.chainHP,m:h.chainMax,x:b.x,y:b.y-92,dead:h.chainDestroyed}]){if(q.dead)continue;ctx.fillStyle='rgba(0,0,0,.75)';ctx.fillRect(q.x-28,q.y,56,5);ctx.fillStyle=q.name==='HAMMER'?'#6edfff':'#ff703c';ctx.fillRect(q.x-27,q.y+1,54*clamp(q.v/q.m,0,1),3);ctx.fillStyle='#e8f4ff';ctx.fillText(q.name,q.x,q.y-2);}ctx.restore();}
+function hammerBossDraw(b){
+  const h=b._hammer;hammerBossAtmosphereDraw(b);
+  if(b.dead){const f=Math.min(15,Math.floor((b.dying||0)*3.1));archBlit('death',f,b.x,b.y,210,null,0);return;}
+  if(h.state==='spell'||h.state==='spell_blast'){const ri=hammerFrame('reticle',0);for(const q of h.state==='spell'?h.spellTargets:h.pillars){hammerGroundReticleDraw(ri,q.x,PLAY.y+PLAY.h-35,128,.65+.35*Math.sin((stateT||0)*24));if(h.state==='spell_blast'){ctx.save();ctx.globalCompositeOperation='lighter';const grad=ctx.createLinearGradient(0,PLAY.y+PLAY.h,0,PLAY.y);grad.addColorStop(0,'#fff');grad.addColorStop(.18,'#4fdcff');grad.addColorStop(1,'rgba(80,80,255,0)');ctx.fillStyle=grad;ctx.fillRect(q.x-22,PLAY.y,44,PLAY.h);ctx.restore();}}}
+  let key='idle',f=Math.floor(h.t*8)%12,tint=b.flash>0?'white':null,rot=0,z=206;
+  if(['flyby','return'].includes(h.state)){key='ship_transform';f=15;z=192;}else if(h.state==='unfold'){key='ship_transform';f=15-Math.min(15,Math.floor(h.t/2*16));}
+  else if(h.state==='spin'){key='twirl_throw';f=Math.min(13,Math.floor(clamp(h.t/HAMMER_SPIN_TIME,0,1)*14));}
+  else if(h.state==='throw'){key='twirl_throw';f=15;if(h.throw){for(let i=h.throw.trail.length-1;i>=1;i--)archBlit('hammer_spin',(Math.floor(h.throw.trail[i].angle/TAU*8)&7),h.throw.trail[i].x,h.throw.trail[i].y,118,null,h.throw.trail[i].angle);archBlit('hammer_spin',(Math.floor(h.throw.angle/TAU*8)&7),h.throw.x,h.throw.y,128,null,h.throw.angle);}}
+  else if(['curl','ball','uncurl'].includes(h.state)){key='spiked_ball';f=h.state==='ball'?15:Math.min(15,Math.floor(h.t/1.25*16));if(h.state==='uncurl')f=15-f;rot=h.state==='ball'?h.angle:0;z=154;tint=h.rage>0?'red':tint;}
+  else if(['chaingun_draw','chaingun','chain_cool'].includes(h.state)){key='chaingun_detach_fire';f=h.state==='chaingun_draw'?Math.min(15,Math.floor(h.t/2*16)):8+(Math.floor(h.t*(4+12*(h.chainHeat||0)))%8);}
+  else if(h.state==='enrage'){key='chaingun_break_enrage';f=Math.min(15,Math.floor(h.t/2.15*16));tint=h.t>1.2?'red':tint;}
+  else if(['uzi','mega_charge','mega_beam'].includes(h.state)){key='dual_uzi_assault';f=h.state==='uzi'?Math.floor(h.t*12)%12:12+Math.min(3,Math.floor(h.t*4)%4);tint=h.mode==='enraged'?'red':tint;}
+  else if(h.state==='spell'||h.state==='spell_blast'){key='spell_raise';f=Math.min(11,Math.floor(h.t*8)%12);tint='red';}
+  archBlit(key,f,b.x,b.y,z,tint,rot);
+  if(h.state==='warn'){const k=clamp(h.t/(hammerFurious()?.58:1.2),0,1);combatWarningDraw(b,{x:b.x,y:b.y,ex:h.tx,ey:h.ty,progress:k,width:96});hammerGroundReticleDraw(hammerFrame('reticle',0,h.t<.4?null:h.t<.8?'yellow':'red'),h.tx,h.ty,126,.7+.3*Math.sin(h.t*30));}
+  if(h.state==='mega_beam'){const p=h.t/7,w=VW*.5*Math.max(0,Math.min(1,p/.18,(1-p)/.18));if(w>0){const y=b.y+40,g=ctx.createLinearGradient(b.x-w/2,0,b.x+w/2,0);g.addColorStop(0,'rgba(40,80,255,0)');g.addColorStop(.22,'#217dff');g.addColorStop(.48,'#fff');g.addColorStop(.52,'#fff');g.addColorStop(.78,'#217dff');g.addColorStop(1,'rgba(40,80,255,0)');ctx.save();ctx.globalCompositeOperation='lighter';ctx.fillStyle=g;ctx.fillRect(b.x-w/2,y,w,VH-y);ctx.restore();}}
+  hammerModuleBars(b);
+}
+function hammerBossDeathTick(b,dt){b.dying+=dt;const h=b._hammer,T=b.dying;if(!h.deathRings&&T>.18){h.deathRings=true;for(let r=0;r<2;r++)for(const a of [0,Math.PI/2,Math.PI/4,-Math.PI/4])_smokeRings.push({x:b.x,y:b.y,t:-r*.42,life:1.7,size:190+r*35,angle:a,flat:.35,still:true,front:true});}
+  h.deathCd=(h.deathCd||0)-dt;if(T<6.4&&h.deathCd<=0){h.deathCd=Math.max(.055,.32-T*.045);explode(b.x+rnd(-70,70),b.y+rnd(-78,78),rnd(34,76),'blue');if(((T*4)|0)!==h.deathCry){h.deathCry=(T*4)|0;(Audio.SFX.bossRoar||Audio.SFX.expBig||function(){})();}}
+  whiteBlast=T<5.25?0:T<5.8?(T-5.25)/.55:T<6.35?1:Math.max(0,1-(T-6.35)/1.1);shake=Math.max(shake,T<6.4?8+T:0);
+}
+
 function stage4DefeatStart(b){
   b._cinDeath={stage:4,originY:b.y,ring:false,blast:false,cd:0,explosions:0};
   b._s4Airborne=false;b._noHit=true;
@@ -34501,6 +34827,8 @@ function bossDie(){
   /* Only the actual Stage-9 boss death grants Laser Mist. Entering the stage, seeing the boss,
      or exhausting continues on it never touches this flag. */
   if(run.stage===9&&typeof laserMistUnlock==='function')laserMistUnlock();
+  if(run.stage===5&&boss&&boss._hammer&&typeof chaingunUnlock==='function')chaingunUnlock();
+  if(run.stage===4&&typeof yuriLightningOrbGrantStage4==='function')yuriLightningOrbGrantStage4();
   /* the debrief names the boss you just beat, and by then the object is gone - so the name is
      taken here, at the one moment it is certainly correct, rather than re-derived from a kind. */
   try{ if(boss&&boss.name) run._lastBossName=String(boss.name); }catch(_bn){}
@@ -34898,7 +35226,7 @@ function updateOverlordX(b, dt){
 
 function updateBoss(dt){
   const b=boss;
-  if(b._hammer&&!b.dead){b.t+=dt;b.flash=Math.max(0,b.flash-dt);hammerBossTick(b,dt);return;}
+  if(b._hammer){b.t+=dt;b.flash=Math.max(0,b.flash-dt);if(b.dead)hammerBossDeathTick(b,dt);else hammerBossTick(b,dt);return;}
   b.t+=dt; if(!b.dead) b.rotor+=dt*30;
   if(!b.dead&&b.kind==='damkeeper'&&b._ovIntro&&typeof overlordIntroTick==='function'&&overlordIntroTick(b,dt))return;
   if(b._firing>0) b._firing-=dt;
@@ -36965,6 +37293,12 @@ function gravityModeDrawShip(drawX,drawY,drawSize,planeH){
 }
 
 function drawPlayer(){
+  if(player._hammerEvap){
+    player._hammerEvap+=(_lastDt||1/60);const q=clamp(player._hammerEvap/1.05,0,1);
+    ctx.save();ctx.globalAlpha=1-q*.92;ctx.filter='brightness('+(2+q*5)+') saturate(2)';_drawPlayerCore();ctx.filter='none';
+    ctx.globalCompositeOperation='lighter';for(let i=0;i<14;i++){const a=i/14*TAU+(stateT||0)*2,r=8+q*34;ctx.fillStyle=i&1?'#65eaff':'#ffffff';ctx.fillRect(player.x+Math.cos(a)*r-1,player.y+Math.sin(a)*r-q*70,2,4+q*12);}ctx.restore();
+    if(q>=1)player._hammerEvap=0;return;
+  }
   /* Cinematics sometimes redraw the live world but own the ship pose themselves.  Keep the
      player alive (so the death banner and death-only effects stay off) while suppressing only
      the ordinary gameplay sprite. */
@@ -43854,6 +44188,15 @@ function drawBullets(){
   ctx.shadowBlur=0;   // never inherit a shadow from an upstream draw: it silently blurs every bullet
   // player
   for(const b of pBullets){
+    if(b.kind==='yuriLightningOrb'||b.kind==='yuriLightningBolt'){
+      const lv=clamp(b.lv||1,1,5),orb=b.kind==='yuriLightningOrb',key=orb?'ylo_orb_'+lv:'ylo_bolt_'+clamp(b.art||lv,1,5);
+      ctx.save();ctx.translate(b.x,b.y);if(!orb)ctx.rotate((b.ang==null?Math.atan2(b.vy,b.vx):b.ang)+Math.PI/2);
+      ctx.globalCompositeOperation='lighter';ctx.imageSmoothingEnabled=false;ctx.shadowColor=orb?'#8d7dff':'#43dfff';ctx.shadowBlur=10+lv*2;
+      const pulse=.92+.08*Math.sin((b.t||0)*24+lv),d=orb?(28+lv*4)*pulse:(34+lv*4);
+      if(typeof XART!=='undefined'&&XART.rdy(key))ctx.drawImage(XART.get(key),-d/2,-d/2,d,d);
+      else{ctx.strokeStyle='#dfffff';ctx.lineWidth=orb?3:2;ctx.beginPath();if(orb)ctx.arc(0,0,d*.24,0,TAU);else{ctx.moveTo(0,-d*.42);ctx.lineTo(-d*.12,-d*.08);ctx.lineTo(d*.08,d*.04);ctx.lineTo(0,d*.42);}ctx.stroke();}
+      ctx.restore();continue;
+    }
     if(b.kind==='lasermist'){laserMistDraw(b);continue;}
     if(b.kind==='spaceHelperBeam'){
       const a=Math.atan2(b.vy,b.vx)+Math.PI/2;ctx.save();ctx.translate(b.x,b.y);ctx.rotate(a);ctx.globalCompositeOperation='lighter';ctx.shadowColor='#58eaff';ctx.shadowBlur=10;
@@ -57406,9 +57749,9 @@ function campApply(s){
   run.contUsed=Math.max(0,s.contUsed|0);run.contBonus=Math.max(0,s.contBonus|0);
   run.weapon=s.weapon||0; run.wlevel=s.wlevel||1;
   if(Array.isArray(s.wlevels)) run.wlevels=s.wlevels.slice();
-  while(run.wlevels.length<7)run.wlevels.push(0);
-  run.wvars = Array.isArray(s.wvars) ? s.wvars.slice() : [null,null,null,null,null,null,null];
-  while(run.wvars.length<7)run.wvars.push(null);
+  while(run.wlevels.length<WEAPONS.length)run.wlevels.push(0);
+  run.wvars = Array.isArray(s.wvars) ? s.wvars.slice() : WEAPONS.map(()=>null);
+  while(run.wvars.length<WEAPONS.length)run.wvars.push(null);
   if(typeof s.pilotIndex==='number') pilotIndex=s.pilotIndex;
   if(s.diff) diffKey=s.diff;
   DIFF=difficultyForRun(run.mode,diffKey);
@@ -65245,6 +65588,7 @@ function drawWorld(dt){
   drawZaps();
   drawNukeImpacts();
   drawSmokeTrails(); drawRetina(); drawRetinaScans(); drawPlayerLocks();
+  if(typeof groundTargetingDraw==='function')groundTargetingDraw();
   /* ⚠ THE UI THAT USED TO DRAW HERE IS NOW BELOW THE restore() (Mike, 0819) — see the block after
      it. These are SCREEN-space panels that were being drawn inside the camera transform. */
   drawBullets();
@@ -65277,6 +65621,11 @@ function drawWorld(dt){
     if(player.out) return;
     drawPlayer();
   });
+  if(run.weapon===7){
+    if((run._chainOverheat||0)>0){ctx.save();ctx.fillStyle='rgba(255,18,12,'+(.08+.07*(.5+.5*Math.sin((stateT||0)*16)))+')';ctx.fillRect(0,0,VW,VH);ctx.restore();}
+    if(player._chainMuzzle>0){player._chainMuzzle=Math.max(0,player._chainMuzzle-dt);ctx.save();ctx.translate(player.x,player.y-27);ctx.globalCompositeOperation='lighter';ctx.fillStyle=(run._chainHeat||0)>.72?'#ff4028':'#8de8ff';ctx.beginPath();ctx.moveTo(-8,8);ctx.lineTo(0,-18-rnd(0,8));ctx.lineTo(8,8);ctx.fill();ctx.restore();}
+    if((run._chainOverheat||0)>0)for(let i=0;i<2;i++)particles.push({x:player.x+rnd(-8,8),y:player.y-8,vx:rnd(-.25,.25),vy:rnd(-1.3,-.6),life:.5,t:0,r:rnd(1.5,3),color:'#d8e4e8'});
+  }
   drawSpaceArmoryHelpers();
   overlordIntroOverflightDraw();
   stage4OverflightDraw();

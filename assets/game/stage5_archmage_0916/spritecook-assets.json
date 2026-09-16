@@ -1,0 +1,23 @@
+{
+  "source_reference": "08e7e321-a675-4ece-b1b0-1862d6d6d132",
+  "master": "21a44343-fcec-48f9-be76-d0aa623c7bd2",
+  "idle": "935f74f1-8bf9-47a3-9e28-ba02721d96c7",
+  "twirl_throw": "622c9e4f-8323-439e-976e-1f9d5f74514b",
+  "ship_transform": "d310f74a-b2f8-46d8-946f-68026dcb1d51",
+  "spiked_ball": "2ba47ecd-62c3-46ad-85bb-6ec9fb10cb4d",
+  "chaingun_detach_fire": "b9c13374-4bca-4689-8814-324d43adabea",
+  "chaingun_break_enrage": "b6cae2f8-8c0f-412d-a6ff-cf2fa1445b46",
+  "dual_uzi_assault": "28c544d4-349d-431c-ba9c-202d2d029921",
+  "spell_raise": "028fc651-737e-4113-82ce-bf5854e90c49",
+  "death": "47574dde-2e4d-4c9a-9225-9a4c3875f886",
+  "effects": "9b92b17b-8068-451c-b863-c65945a9ee18",
+  "hammer": "44b3067a-36e3-46a0-9ae1-3e40c9ebe4da",
+  "hammer_spin": "7cdef71f-b734-4fd7-9482-4966cf6a58be",
+  "chaingun_icons": "9f8de0bf-b652-4e73-b215-244b2ef79559",
+  "heat_meter": "a9510db0-f682-4230-b348-0f4d5649f0aa",
+  "layout": {
+    "animations": "horizontal frames",
+    "effects": "4x4 cells",
+    "chaingun_icons": "five normalized 64x64 exports"
+  }
+}

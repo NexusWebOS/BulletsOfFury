@@ -1,0 +1,19 @@
+{
+  "source_asset": "b0e14f96-2092-4655-b6b0-5fcd32fcfe6c",
+  "background_removed_asset": "83b8874e-d43e-5382-9f09-44f4271db50e",
+  "file": "elemental_ground_strikes.png",
+  "layout": {
+    "columns": 4,
+    "rows": 4,
+    "cell": [
+      128,
+      128
+    ]
+  },
+  "rows": {
+    "0": "lava",
+    "1": "glacial",
+    "2": "lightning",
+    "3": "water"
+  }
+}

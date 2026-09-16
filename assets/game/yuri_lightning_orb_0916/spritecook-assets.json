@@ -1,0 +1,35 @@
+{
+  "feature": "Yuri Lightning Orb weapon",
+  "slot": 8,
+  "spritecook_project_id": "2c3854b7-1347-4a35-a64b-f775b4e1e035",
+  "source_assets": {
+    "icon_strip": "9f62eae5-b72c-4375-812a-46ab4b9741af",
+    "icon_strip_transparent": "596bc4f9-06d6-51cd-ba2e-059c1d317cd4",
+    "combat_sheet": "609ffed6-31da-4feb-b56d-008f7361e785",
+    "combat_sheet_transparent": "ebc0eccd-4da6-5678-ac36-3bdf84f534ac"
+  },
+  "runtime_files": {
+    "icons": [
+      "lightning_orb_icon_1.png",
+      "lightning_orb_icon_2.png",
+      "lightning_orb_icon_3.png",
+      "lightning_orb_icon_4.png",
+      "lightning_orb_icon_5.png"
+    ],
+    "orbs": [
+      "lightning_orb_1.png",
+      "lightning_orb_2.png",
+      "lightning_orb_3.png",
+      "lightning_orb_4.png",
+      "lightning_orb_5.png"
+    ],
+    "bolts": [
+      "lightning_bolt_1.png",
+      "lightning_bolt_2.png",
+      "lightning_bolt_3.png",
+      "lightning_bolt_4.png",
+      "lightning_bolt_5.png"
+    ]
+  },
+  "notes": "Combat sheet supplied two orb poses per tier. The intact second row is normalized as the runtime orb; runtime pulse/glow provides animation. Bolts are separate sprites and rotate to their own spread vectors."
+}
