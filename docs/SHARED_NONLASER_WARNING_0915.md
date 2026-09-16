@@ -89,3 +89,7 @@ The third Vile form now commits all nine original solar-wheel angles before a 0.
 ## Stage 8 FURIOUS DEATH straight-missile follow-up
 
 The final Vile form now commits all four original vertical missile lanes before a 0.58-second shared warning. Its missile budget, four hull offsets, armored-gunship muzzles and 0.78-second total cadence remain intact. The missiles remain shootable and straight, with no Retina or homing grant after Stage 1. Chromium passes 16/16 and focused section 347 passes 9/9. See [STAGE8_VILE_MISSILE_SALVO_WARNING_0916.md](STAGE8_VILE_MISSILE_SALVO_WARNING_0916.md).
+
+## Stage 6 Doomsday Carrier twin-cyclone follow-up
+
+The Doomsday Carrier Mk II now commits the exact six paths from its twin rotary batteries before a 0.62-second shared warning. The left and right hardpoints retain their mirrored three-lane offsets, authored cyclone rounds, base speed, muzzle reels and phase-specific total cadences. The warning origins follow the moving hull while the six aim angles cannot chase a late dodge. Chromium passes 16/16 and focused section 348 passes 10/10. See [STAGE6_CARRIER_CYCLONE_FAN_WARNING_0916.md](STAGE6_CARRIER_CYCLONE_FAN_WARNING_0916.md).

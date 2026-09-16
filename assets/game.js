@@ -21495,6 +21495,36 @@ function carrierMegaShot(b,p,a,sp,kind,opts){
   opts=opts||{};const q=eShootT(p.x,p.y,a,sp,kind,opts);q._boss=true;
   if(opts.accel){q._s6Accel=opts.accel;q._s6Max=opts.max||sp*1.8;}return q;
 }
+/* The carrier's opening twin rotary rake used to aim and release six 4.1-speed cyclone tracers in
+   the same frame.  Keep the exact two batteries, mirrored offsets and cooldown, but commit the six
+   angles at the start of a short shared warning so a late dodge is useful and cannot bend the fan. */
+function carrierCycloneFanPaths(b,F){
+  if(!b||!F)return [];const len=Math.max(VH,worldWidth())*1.35;
+  return F.lanes.map(q=>{const p=shipBossMount(b,q.slot);return{x:p.x,y:p.y,a:q.a,slot:q.slot,ex:p.x+Math.cos(q.a)*len,ey:p.y+Math.sin(q.a)*len};});
+}
+function carrierCycloneFanStart(b){
+  const M=b&&b._mega;if(!M||M.cycloneFan)return false;const phase=M.phase|0,tell=.62,cooldown=phase===2?1.12:1.35,lanes=[];
+  for(const row of [['MG_L',-1],['MG_R',1]]){const p=shipBossMount(b,row[0]),a=aimPlayer(p.x,p.y);for(const o of [-.15,0,.15])lanes.push({slot:row[0],a:a+o*row[1]});}
+  M.cycloneFan={t:0,tell:tell,cooldown:cooldown,id:'stage6-carrier-cyclone-fan',lanes:lanes,released:false,finish:0};M.cd=cooldown;
+  combatWarningTick(b,'stage6-carrier-cyclone-fan',0,tell,true);
+  if(Audio.SFX&&(Audio.SFX.bossWeaponCharge||Audio.SFX.crackle))(Audio.SFX.bossWeaponCharge||Audio.SFX.crackle)();
+  return true;
+}
+function carrierCycloneFanTick(b,dt){
+  const M=b&&b._mega,F=M&&M.cycloneFan;if(!F)return false;F.t+=dt;combatWarningTick(b,F.id,Math.min(F.t,F.tell),F.tell);
+  if(!F.released&&F.t>=F.tell){F.released=true;F.finish=F.t+Math.max(.14,F.cooldown-F.tell);const paths=carrierCycloneFanPaths(b,F);
+    for(let i=0;i<paths.length;i++){const p=paths[i];carrierMegaShot(b,p,p.a,4.1,'s6cyclone',{silent:(i%3)!==1});}
+    carrierMegaMuzzle(b,'MG_L','s6mb_cyclonemuzzle',.92);carrierMegaMuzzle(b,'MG_R','s6mb_cyclonemuzzle',.92);
+    if(Audio.SFX&&(Audio.SFX.enemyBossCannon||Audio.SFX.spaceVolleyLaunch))(Audio.SFX.enemyBossCannon||Audio.SFX.spaceVolleyLaunch)();
+  }
+  if(F.released&&F.t>=F.finish){M.cycloneFan=null;M.cd=.02;return false;}return true;
+}
+function carrierCycloneFanDraw(b,front){
+  const M=b&&b._mega,F=M&&M.cycloneFan;if(!F||F.released)return false;const paths=carrierCycloneFanPaths(b,F),k=clamp(F.t/F.tell,0,1);
+  if(!front)for(const p of paths)combatWarningDraw(b,{x:p.x,y:p.y,ex:p.ex,ey:p.ey,progress:k,width:25,fieldOnly:true});
+  else combatWarningDraw(b,{x:b.x,y:b.y,ex:b.x,ey:VH,progress:k,alertOnly:true,alertX:b.x,alertY:54});
+  return true;
+}
 /* THUNDERHEAD is owned by the Mk II controller.  The earlier signature lived in the generic
    boss switch, but this carrier returns through its _ship controller before that switch can run.
    Eight lightning LANES are warned first; two neighbouring lanes are always empty and the safe
@@ -21627,6 +21657,7 @@ function carrierMegaTick(b,dt){
     if(phase===1)carrierThunderheadStart(b);
   }
   if(carrierThunderheadTick(b,dt))return;
+  if(carrierCycloneFanTick(b,dt))return;
   /* The launch/cannon reels own their beat.  Pausing this clock during either keeps the mega
      arsenal forceful without stacking an unreadable attack on top of the existing bay mechanic. */
   if(b._cn||(b._lc&&b._lc.playing))return;
@@ -21640,9 +21671,7 @@ function carrierMegaTick(b,dt){
     /* PHASES 1 AND 3 (Mike's numbering): shield UP, the bays working. Twin rotary batteries rake
        converging cyclone lanes between warheads. Phase 3 is the same siege with the player already
        a bay up, so it presses slightly harder. */
-    const ML=shipBossMount(b,'MG_L'),MR=shipBossMount(b,'MG_R');
-    for(const row of [[ML,-1],[MR,1]]){const a=aimPlayer(row[0].x,row[0].y);for(const o of [-.15,0,.15])carrierMegaShot(b,row[0],a+o*row[1],4.1,'s6cyclone',{silent:o!==0});}
-    carrierMegaMuzzle(b,'MG_L','s6mb_cyclonemuzzle',.92);carrierMegaMuzzle(b,'MG_R','s6mb_cyclonemuzzle',.92);M.cd=(M.phase===2?1.12:1.35);
+    carrierCycloneFanStart(b);return;
   }else if(M.phase===1||M.phase===3){
     /* PHASES 2 AND 4: shield DOWN, the turrets going off, and the prism lance. Phase 4 widens the
        turret volley to a SPREAD and brings the lance in faster - Mike: "spread fire turret fire,
@@ -21718,7 +21747,8 @@ function carrierMegaTick(b,dt){
   if(Audio.SFX&&(Audio.SFX.enemyBossCannon||Audio.SFX.spaceVolleyLaunch))(Audio.SFX.enemyBossCannon||Audio.SFX.spaceVolleyLaunch)();
 }
 function carrierMegaDrawUnder(b){
-  const M=b&&b._mega;if(!M||M.phase<1||typeof XART==='undefined')return;
+  const M=b&&b._mega;if(!M||typeof XART==='undefined')return;
+  carrierCycloneFanDraw(b,false);if(M.phase<1)return;
   carrierThunderheadDraw(b,false);
   const cy=(b._drawY!=null?b._drawY:b.y),fi=Math.floor(M.t*12)%6,key='s6mb_stormlink_'+fi;if(!XART.rdy(key))return;
   const im=XART.get(key);ctx.save();ctx.globalCompositeOperation='lighter';ctx.globalAlpha=.78;
@@ -21727,12 +21757,13 @@ function carrierMegaDrawUnder(b){
   ctx.restore();
 }
 function carrierMegaDrawOver(b){
-  const M=b&&b._mega;if(!M||M.phase<1||typeof XART==='undefined')return;const fi=Math.floor(M.t*11)%8,key='s6mb_stormnode_'+fi;
+  const M=b&&b._mega;if(!M||typeof XART==='undefined')return;
+  if(M.phase<1){carrierCycloneFanDraw(b,true);return;}const fi=Math.floor(M.t*11)%8,key='s6mb_stormnode_'+fi;
   for(const n of M.nodes){const p=carrierMegaNodePos(b,n);if(n.dead){ctx.save();ctx.fillStyle='#1a2630';ctx.beginPath();ctx.arc(p.x,p.y,15,0,TAU);ctx.fill();ctx.restore();continue;}
     if(XART.rdy(key)){ctx.save();ctx.globalCompositeOperation='lighter';ctx.drawImage(XART.get(key),p.x-34,p.y-34,68,68);ctx.restore();}
     const r=clamp(n.hp/n.maxhp,0,1);ctx.fillStyle='#06111c';ctx.fillRect(p.x-21,p.y+26,42,4);ctx.fillStyle='#54e8ff';ctx.fillRect(p.x-20,p.y+27,40*r,2);
   }
-  carrierThunderheadDraw(b,true);
+  carrierThunderheadDraw(b,true);carrierCycloneFanDraw(b,true);
 }
 function carrierBayBox(b, side){
   const f=CARRIER_BAY[side]; if(!f) return null;

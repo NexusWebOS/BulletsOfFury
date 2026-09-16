@@ -13405,16 +13405,16 @@ console.log("=== 269. Stage-6 storm fleet and Doomsday mega boss ===");
   var _mega269=JSON.parse(vm.runInContext("(function(){run.stage=6;curStage=STAGES[5];player.x=250;player.y=500;eBullets.length=0;_navalFlashes.length=0;"
     +"var b={_ship:'doomsdaycarriermk2',x:VW/2,y:120,_drawY:120,w:640,h:320,hp:1000,maxhp:1000,flash:0,dead:false};carrierInit(b);carrierMegaInit(b);b._lc.playing=false;"
     +"function beat(frac,n){b.hp=b.maxhp*frac;b._mega.cd=0;var at=eBullets.length;for(var i=0;i<n;i++)carrierMegaTick(b,.12);return eBullets.slice(at).map(function(q){return q.kind;});}"
-    +"var p0=beat(.90,2),p1=beat(.70,10),p2=beat(.45,24),p3=beat(.20,48),node=b._mega.nodes[0],pos=carrierMegaNodePos(b,node),hit=carrierMegaNodeAt(b,pos.x,pos.y)===node;"
-    +"carrierMegaNodeDamage(b,node,99);var first=node.hp===1&&!node.dead;carrierMegaNodeDamage(b,node,99);return JSON.stringify({p:[p0,p1,p2,p3],phase:b._mega.phase,nodes:b._mega.nodes.length,hit:hit,first:first,dead:node.dead,fl:_navalFlashes.length});})()",ctxv));
+    +"var p0=beat(.90,2),c0=!!b._mega.cycloneFan,p1=beat(.70,10),p2=beat(.45,24),p3=beat(.20,48),node=b._mega.nodes[0],pos=carrierMegaNodePos(b,node),hit=carrierMegaNodeAt(b,pos.x,pos.y)===node;"
+    +"carrierMegaNodeDamage(b,node,99);var first=node.hp===1&&!node.dead;carrierMegaNodeDamage(b,node,99);return JSON.stringify({p:[p0,p1,p2,p3],c0:c0,phase:b._mega.phase,nodes:b._mega.nodes.length,hit:hit,first:first,dead:node.dead,fl:_navalFlashes.length});})()",ctxv));
   ok(_mega269.nodes===4&&_mega269.hit&&_mega269.first&&_mega269.dead,
      'the mega boss fields four independently hittable nodes with a first-impact survival window');
   /* ⚠ THESE TWO PINNED THE OLD FOUR-PHASE, HEALTH-DRIVEN FIGHT and failed the moment Mike's six
      landed (0905o). Read before fixed, per CLAUDE.md: they described a structure he replaced, so
      they are repointed onto what he actually specified rather than reverted. The health bands are
      gone as the DRIVER - what matters now is that the ladder advances on EVENTS. */
-  ok(_mega269.p[0].indexOf('s6cyclone')>=0,
-     'the carrier opens on shield-up cyclone rakes between warheads');
+  ok(_mega269.c0&&_mega269.p[0].indexOf('s6cyclone')<0,
+     'the carrier opens its shield-up cyclone rake through a committed shared warning');
   var _lad269=JSON.parse(vm.runInContext("(function(){run.stage=6;curStage=STAGES[5];player.x=250;player.y=500;"
     +"var b={_ship:'doomsdaycarriermk2',x:VW/2,y:120,_drawY:120,w:640,h:320,hp:1000,maxhp:1000,flash:0,dead:false};"
     +"carrierInit(b);carrierMegaInit(b);b._lc.playing=false;var seen=[];"
@@ -15681,6 +15681,7 @@ require('./test_stage8_vile_crescent_wall_warning_0916.cjs')(vm,ctxv,ok);
 require('./test_stage8_vile_aimed_fan_warning_0916.cjs')(vm,ctxv,ok);
 require('./test_stage8_vile_solar_wheel_warning_0916.cjs')(vm,ctxv,ok);
 require('./test_stage8_vile_missile_salvo_warning_0916.cjs')(vm,ctxv,ok);
+require('./test_stage6_carrier_cyclone_fan_warning_0916.cjs')(vm,ctxv,ok);
 
 console.log('\n============================================');
 if (errors.length) { console.log('FAILED — ' + errors.length + ' error(s):'); errors.forEach(e => console.log('  ' + e)); process.exit(1); }
