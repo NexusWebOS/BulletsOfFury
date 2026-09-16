@@ -14172,7 +14172,11 @@ console.log("=== 278. lizzie B-42 alternate costume ===");
   ok(vm.runInContext("!!(XART._src && XART._src['cinship_axel_2'])", ctxv), 'and that cutout is registered');
 
   /* ---- HELP ---- */
-  ok(vm.runInContext("TITLE_ITEMS.length===6 && TITLE_ITEMS[3]==='HELP'", ctxv), 'HELP is the fourth title button');
+  /* ⚠ REPOINTED (0916, ACH-02 adds AWARDS). This required TITLE_ITEMS.length===6 - the COUNT - while
+     its own name only claims HELP's position, so a button Mike asked for failed an assertion about a
+     different button. The claim is the position; the length belongs to the layout, which derives it. */
+  ok(vm.runInContext("TITLE_ITEMS[3]==='HELP'", ctxv), 'HELP is the fourth title button');
+  ok(vm.runInContext("TITLE_ITEMS.length>=6", ctxv), 'and the menu is at least the six it had');
   ok(vm.runInContext('MENU_KEYS.length===TITLE_ITEMS.length', ctxv), 'and every title item has a plate');
   /* ⚠ FOUR PLACES KNEW THIS MENU WAS FIVE LONG: two wrap sites in handleTitleInput, the art draw
      loop and the mouse hit-test. Fixing only the wraps left the sixth button invisible AND
@@ -15712,6 +15716,7 @@ require('./test_pilot_deploy_pad_0916.cjs')(vm,ctxv,ok);
 require('./test_unlock_announcements_0916.cjs')(vm,ctxv,ok);
 require('./test_escape_arrows_0916.cjs')(vm,ctxv,ok);
 require('./test_gauge_shield_0916.cjs')(vm,ctxv,ok);
+require('./test_awards_0916.cjs')(vm,ctxv,ok);
 
 console.log('\n============================================');
 if (errors.length) { console.log('FAILED — ' + errors.length + ' error(s):'); errors.forEach(e => console.log('  ' + e)); process.exit(1); }

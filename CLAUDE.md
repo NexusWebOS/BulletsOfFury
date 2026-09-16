@@ -4684,3 +4684,32 @@ Measure the family before applying a rule written for a different one.
 family's HEIGHT and keep the aspect - one tier was re-picked because it returned wider than its
 siblings and would have drawn out of family.
 `chaingun_badges_0916.py`. Probe 66/0, suite 4,627 ok / 57 fail, no new names.
+
+## 0916 - ACH-02: the awards gallery, the unlock toast, and a dispatch that could have quit the game
+
+The achievement registry has been complete since 0915 - 66 definitions, awards, points, persistence,
+Steam keys - and **NOTHING DREW ANY OF IT**. `achievementUnlock` set a variable and dispatched a
+`bof-achievement` window event that nothing listened to: a player could earn 1,630 points and never
+be told once. A system that is fully built and has no surface is indistinguishable from one that
+does not exist.
+
+⚠ **THE TITLE DISPATCH WAS `if(m===0) .. else { tryExit(); }`** - index equality with a fallback -
+so INSERTING a row before CREDITS would have repointed every row below it and made one of them QUIT
+THE GAME. It is keyed by the label now, and an unrecognised row does nothing. `TITLE_ITEMS` and
+`MENU_KEYS` were already one measured layout (0916), so a seventh button needed no geometry change.
+⚠ **THE TOAST IS A QUEUE, NOT A SLOT** - a stage clear can award SEVEN at once (0915 measured it),
+and one slot shows the last and silently drops six. It is drawn AFTER `drawScene` from the loop's one
+call, so it appears over any screen and cannot be painted over by the screen that earned it.
+⚠ **AND ITS MOTION CANNOT BE MEASURED AS LIT PIXELS IN A BAND**: the title screen fills the bottom
+band with its own art, so "the topmost lit row" is 0 on every frame whatever the toast does - the
+first cut of the probe reported no movement on a build where it moves its full height. Trap the
+PANEL BLIT and read its destination y (502 -> 478).
+⚠ **THE ACHIEVEMENT STORE IS localStorage AND PERSISTS** - a probe arm must clear it or the second
+run measures a build where everything is already unlocked and nothing can fire.
+⚠ **AND THE GENERATED BUTTON WAS REJECTED BY THE SCREENSHOT, NOT BY A CHECK.** A clean plate with
+gold lettering and nothing else read as a flat bar beside neighbours that each carry an emblem panel
+and an inset scene. Ask for the COMPOSITION, not just the subject and the style.
+Two assertions failed and were REPOINTED: `HELP is the fourth title button` pinned the menu's COUNT
+while claiming only HELP's position, and my own pin matched the COMMENT explaining its own fix
+(section 47, self-inflicted - strip comments in every toString() assertion).
+`probe_awards_0916.py` 22/0. Suite 4,647 ok / 57 fail, no new names. `docs/AWARDS_0916.md`, §364.

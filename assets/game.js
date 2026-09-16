@@ -2026,6 +2026,10 @@ const XART=(function(){
      interior magenta - and the 3,650px pink rim converted to a black edge, never deleted, per the
      standing halo rule. nbl_logo on ui_menu_1 stays as the decode fallback. */
   X._src['nbl_logo_0916']='assets/game/ui/logo_0916/bof_logo.png';
+  /* the seventh title button (ACH-02). Generated against the authored buttons as a style
+     reference, the same route btn_help took in 0912a, and kept as a loose file rather than an
+     atlas edit - manifest.js is GENERATED. */
+  X._src['btn_awards']='assets/game/ui/awards_0916/btn_awards.png';
   /* the escape arrow for the Stage-4 giant strike (S4-16). ONE plate, drawn mirrored on the left,
      because a flipped pair is what Mike asked for and two files would be two things to keep in
      step. Pointing RIGHT as authored. */
@@ -7340,7 +7344,9 @@ const GS = { BOOT:'boot', LOADING:'loading', TITLE:'title', DIFF:'diff', PILOT:'
      pilot select and every stage. Mike's opener is its own state. */
   OPENER:'opener',
   /* the controls reference Mike asked for as a sixth title button (0912) */
-  HELP:'help' };
+  HELP:'help',
+  /* the awards gallery, the seventh (ACH-02) */
+  AWARDS:'awards' };
 let state = GS.BOOT;
 /* ============================================================
    DEBUG SWITCHBOARD (drop 0724do)
@@ -7769,6 +7775,8 @@ function achievementUnlock(id,meta){
   let clean=null;if(meta&&typeof meta==='object')try{clean=JSON.parse(JSON.stringify(meta));}catch(_achMeta){}
   const rec={at:Date.now()};if(clean)rec.meta=clean;achievementState.unlocked[id]=rec;
   const persisted=achievementSave();achievementLastUnlock={id,title:d.title,points:d.points,steamKey:d.steamKey,persisted};
+  /* ACH-02: the award says so on screen. Queued, because a stage clear can award several at once. */
+  try{ if(typeof achToastPush==='function') achToastPush(achievementLastUnlock); }catch(_achToast){}
   achievementSteamQueue.push({id,steamKey:d.steamKey});
   try{if(typeof window!=='undefined'&&typeof window.dispatchEvent==='function'&&typeof CustomEvent==='function')window.dispatchEvent(new CustomEvent('bof-achievement',{detail:achievementLastUnlock}));}catch(_achEvent){}
   return true;
@@ -47208,6 +47216,7 @@ function drawScene(dt){
     case GS.ATTRACT: return drawAttract(dt);
     case GS.OPENER:  return drawOpener(dt);
     case GS.HELP:    return drawHelp(dt);
+    case GS.AWARDS:  return drawAwards(dt);
     case GS.CUTSCENE: return drawCutsceneState(dt);
     case GS.LOADING: return drawLoading(dt);
     case GS.TITLE:   return drawTitle(dt);
@@ -60182,8 +60191,21 @@ function drawStaticPlayer(){
    the cursor with `%5` in two places; adding a row without those would have made the last item
    unreachable from below and produced a cursor that skips - the exact symptom 0801r spent a drop
    chasing. Driven off TITLE_ITEMS.length now, so a seventh button is one edit. */
-const TITLE_ITEMS=['NEW GAME','PASSWORD','OPTIONS','HELP','CREDITS','EXIT GAME'];
-const MENU_KEYS=['btn_newgame','btn_password','btn_options','btn_help','btn_credits','btn_exit'];
+const TITLE_ITEMS=['NEW GAME','PASSWORD','OPTIONS','HELP','AWARDS','CREDITS','EXIT GAME'];
+const MENU_KEYS=['btn_newgame','btn_password','btn_options','btn_help','btn_awards','btn_credits','btn_exit'];
+/* ⚠ THE DISPATCH IS KEYED BY NAME, NOT BY INDEX (ACH-02). It was a ladder of `m===0 .. m===4`
+   with `else { tryExit(); }` at the end, so INSERTING a row silently repointed every entry below it
+   and the fallback turned whatever landed last into EXIT GAME. Adding AWARDS before CREDITS is
+   exactly that insert. Keyed by the label, a new row can only do what its own case says. */
+const TITLE_ACTION={
+  'NEW GAME': function(){ setState(GS.MODESEL); modeIndex=1; menuIndex=1; },
+  'PASSWORD': function(){ setState(GS.PASSWORD); pwInput=''; },
+  'OPTIONS':  function(){ setState(GS.OPTIONS); menuIndex=0; },
+  'HELP':     function(){ setState(GS.HELP); helpPage=0; helpT=0; },
+  'AWARDS':   function(){ setState(GS.AWARDS); awardsOpen(); },
+  'CREDITS':  function(){ setState('credits'); },
+  'EXIT GAME':function(){ tryExit(); }
+};
 /* SPACING (drop 0801bu). Five title buttons: gap 58 -> 66 gives each one clear
    air without pushing the last past the copyright line. */
 /* six buttons: gap 66 -> 56 and the stack starts higher, so the last one still clears the
@@ -60299,12 +60321,123 @@ function drawTitle(dt){
      when a broken bind is what stops you reaching options. */
   if(menuFlash>0) menuFlash-=dt;
   if(titlePending!=null && menuFlash<=0){ const m=titlePending; titlePending=null; menuFlashIdx=-1;
-    if(m===0){ setState(GS.MODESEL); modeIndex=1; menuIndex=1; }   // NEW GAME -> mode select (boot-05)
-    else if(m===1){ setState(GS.PASSWORD); pwInput=''; }
-    else if(m===2){ setState(GS.OPTIONS); menuIndex=0; }
-    else if(m===3){ setState(GS.HELP); helpPage=0; helpT=0; }
-    else if(m===4){ setState('credits'); }
-    else { tryExit(); } }
+    const act=TITLE_ACTION[TITLE_ITEMS[m]];
+    if(act) act();
+    /* ⚠ NO `else { tryExit() }`. An unrecognised row used to quit the game; now it does nothing,
+       which is a visible bug rather than a destructive one. */ }
+}
+/* ============================================================
+   THE AWARDS GALLERY, AND THE UNLOCK TOAST (ACH-02)
+
+   The registry has been complete since 0915 - 66 definitions, the awards, the points, the
+   persistence - and NOTHING DREW ANY OF IT. `achievementUnlock` set `achievementLastUnlock` and
+   dispatched a window event that nothing listened to, so a player could earn 1,630 points and
+   never be told once. This is the surface for it.
+
+   ⚠ THE LIST IS SORTED BY FAMILY AND THEN BY POINTS, NOT BY OBJECT KEY ORDER. `ACHIEVEMENT_DEFS`
+   is built pilot-by-pilot then stage-by-stage, so the raw order interleaves 100-point campaign
+   clears with 10-point stage clears and reads as noise.
+   ⚠ AND A LOCKED ROW STILL SHOWS ITS TITLE. Hiding them would make the gallery useless as a list
+   of things to go and do, which is the only reason to have one. ============================================================ */
+const AWARDS_VIEW=8;
+let awards={rows:[],scroll:0,t:0,md:false};
+function awardsRows(){
+  const L=(typeof achievementList==='function')?achievementList():[];
+  const fam=['campaign_clear','run_no_continue','boss_difficulty','boss_speed','stage_nodeath','stage_nomissile','stage_clear','weapon_max'];
+  return L.slice().sort(function(a,b){
+    const fa=fam.indexOf(a.family||''), fb=fam.indexOf(b.family||'');
+    if(fa!==fb) return (fa<0?99:fa)-(fb<0?99:fb);
+    if(a.points!==b.points) return b.points-a.points;
+    return String(a.title).localeCompare(String(b.title));
+  });
+}
+function awardsOpen(){ awards={rows:awardsRows(),scroll:0,t:0,md:!!(Input&&Input.mouse&&Input.mouse.down)};
+  try{ if(typeof XART!=='undefined'){ XART.rdy('statpanel_full_0916'); if(XART._touch) XART._touch('statpanel_full_0916'); } }catch(_aw){} }
+function drawAwards(dt){
+  const A=awards; A.t+=dt;
+  if(typeof scrollSpaceBG==='function') scrollSpaceBG(dt); else { ctx.fillStyle='#0a0c14'; ctx.fillRect(0,0,VW,VH); }
+  const art=(typeof curFontArt==='function')?curFontArt():null;
+  const total=A.rows.length, got=A.rows.filter(function(r){return r.unlocked;}).length;
+  const pts=(typeof achievementPoints==='function')?achievementPoints():0;
+  let maxp=0; for(const r of A.rows) maxp+=r.points|0;
+  if(art && typeof stageText==='function'){
+    stageText(art,'AWARDS',VW/2,26,20,'#ffd24a',0.9,1,0.08);
+    stageText(art,got+' OF '+total+'   '+pts+' PTS',VW/2,48,11,'#9fd6ff',0.8,1,0.06);
+  }
+  /* the rows, on the debrief plate's own authored strip - the same piece the unlock page uses */
+  const pl=(typeof XART!=='undefined' && XART.rdy('statpanel_full_0916')) ? XART.get('statpanel_full_0916') : null;
+  const x0=18, w=VW-36, y0=64, rowH=(VH-104)/AWARDS_VIEW, rh=rowH*0.86;
+  const maxScroll=Math.max(0,total-AWARDS_VIEW);
+  A.scroll=clamp(A.scroll|0,0,maxScroll);
+  for(let k=0;k<AWARDS_VIEW;k++){
+    const r=A.rows[k+A.scroll]; if(!r) break;
+    const ry=y0+k*rowH;
+    ctx.save();
+    if(pl && typeof unlockPanel==='function') unlockPanel(pl,UNLOCK_ART.strip,x0,ry,w,rh,true);
+    else { ctx.fillStyle='#16161f'; ctx.fillRect(x0,ry,w,rh); ctx.strokeStyle='#705848'; ctx.lineWidth=1; ctx.strokeRect(x0+0.5,ry+0.5,w-1,rh-1); }
+    ctx.restore();
+    if(!art) continue;
+    const pad=w*0.035, lh=Math.min(rh*0.46,11);
+    /* ⚠ A LOCKED ROW IS DIMMED, NEVER BLANKED - the gallery is a list of things to go and do */
+    const col=r.unlocked?'#8de23a':'#6a7180';
+    const nm=String(r.title).toUpperCase();
+    const room=w-pad*2-44;
+    const fh=(typeof stageFitH==='function')?stageFitH(art,nm,room,lh,8,0.06):lh;
+    stageText(art,nm,x0+pad+((typeof stageWidth==='function')?stageWidth(art,nm,fh,0.06):0)/2,ry+rh/2,fh,col,0.85,1,0.06);
+    const p=String(r.points);
+    stageText(art,p,x0+w-pad-((typeof stageWidth==='function')?stageWidth(art,p,fh,0.06):0)/2,ry+rh/2,fh,r.unlocked?'#ffd24a':'#5a6170',0.85,1,0.06);
+  }
+  /* the scroll affordance: drawn triangles, because this face has no arrow glyphs */
+  if(maxScroll>0){
+    const ax=VW-12, tw=8, th=7;
+    ctx.save(); ctx.fillStyle='#9fd6ff';
+    if(A.scroll>0){ ctx.beginPath(); ctx.moveTo(ax-tw/2,y0+th); ctx.lineTo(ax+tw/2,y0+th); ctx.lineTo(ax,y0); ctx.closePath(); ctx.fill(); }
+    if(A.scroll<maxScroll){ const by=y0+AWARDS_VIEW*rowH; ctx.beginPath(); ctx.moveTo(ax-tw/2,by-th); ctx.lineTo(ax+tw/2,by-th); ctx.lineTo(ax,by); ctx.closePath(); ctx.fill(); }
+    ctx.restore();
+  }
+  if(typeof controlHintRow==='function') controlHintRow([['pad_b','BACK']],VH-14,VW/2,VW-24);
+  /* input: up/down scroll, B/back leaves. Each read ONCE - menuUp/menuDown consume their tap. */
+  const up=(Input.menuUp?Input.menuUp():false), dn=(Input.menuDown?Input.menuDown():false);
+  if(dn) A.scroll=Math.min(maxScroll,A.scroll+1);
+  else if(up) A.scroll=Math.max(0,A.scroll-1);
+  if(Input.menuBack&&Input.menuBack()){ setState(GS.TITLE); menuIndex=TITLE_ITEMS.indexOf('AWARDS'); }
+}
+/* ---- the unlock toast -------------------------------------------------------
+   ⚠ IT IS A QUEUE, NOT A SLOT. A stage clear can award seven at once (0915 measured exactly
+   that), and one slot would show the last one and silently drop six. */
+const ACH_TOAST={rise:0.34, hold:2.4, fall:0.55, w:300, h:26};
+let achToasts=[];
+function achToastPush(t){ if(t) achToasts.push({title:String(t.title||''), points:t.points|0, t:0}); }
+function achToastTick(dt){
+  if(!achToasts.length || typeof ctx==='undefined') return false;
+  const T=achToasts[0], D=ACH_TOAST, life=D.rise+D.hold+D.fall;
+  T.t+=Math.max(0,dt||0);
+  if(T.t>=life){ achToasts.shift(); return true; }
+  /* slides UP into place, holds, then slides back DOWN as it fades */
+  let k=1, a=1;
+  if(T.t<D.rise) k=T.t/D.rise;
+  else if(T.t>D.rise+D.hold){ const f=(T.t-D.rise-D.hold)/D.fall; k=1-f; a=1-f; }
+  const ease=k<0?0:(k>1?1:(k*k*(3-2*k)));
+  const w=Math.min(D.w,VW-24), h=D.h;
+  /* ⚠ IT RESTS ABOVE THE CONTROL HINT ROW, NOT ON IT. At a bottom of VH-8 the plate sat straight
+     over the MENU / SELECT / START line on every menu screen - seen in the first capture, invisible
+     to every counter. VH-26 leaves that row readable and still reads as "bottom of the screen". */
+  const x=Math.round((VW-w)/2), y=Math.round(VH-26-h*ease);
+  const pl=(typeof XART!=='undefined' && XART.rdy('statpanel_full_0916')) ? XART.get('statpanel_full_0916') : null;
+  ctx.save(); ctx.globalAlpha=a;
+  if(pl && typeof unlockPanel==='function') unlockPanel(pl,UNLOCK_ART.strip,x,y,w,h,true);
+  else { ctx.fillStyle='#16161f'; ctx.fillRect(x,y,w,h); ctx.strokeStyle='#705848'; ctx.lineWidth=1; ctx.strokeRect(x+0.5,y+0.5,w-1,h-1); }
+  const art=(typeof curFontArt==='function')?curFontArt():null;
+  if(art && typeof stageText==='function'){
+    const nm=('AWARD  '+T.title).toUpperCase(), pts='+'+T.points;
+    const pad=w*0.04, pw=(typeof stageWidth==='function')?stageWidth(art,pts,9,0.06):0;
+    const room=w-pad*2-pw-8;
+    const fh=(typeof stageFitH==='function')?stageFitH(art,nm,room,h*0.46,8,0.06):9;
+    stageText(art,nm,x+pad+((typeof stageWidth==='function')?stageWidth(art,nm,fh,0.06):0)/2,y+h/2,fh,'#ffd24a',0.9,a,0.06);
+    stageText(art,pts,x+w-pad-pw/2,y+h/2,9,'#8de23a',0.9,a,0.06);
+  }
+  ctx.restore();
+  return true;
 }
 function drawMenuButton(cx,cy,w,h,label,sel,icon){
   const x=cx-w/2,y=cy-h/2;
@@ -69533,7 +69666,10 @@ function loop(now){
   }catch(_inErr){}
   try{
     if(state==='exited'){ drawExited(); }
-    else { drawScene(dt); drawEncounterClocks(); menuControlFooter(); controlHintShellTick(); }
+    else { drawScene(dt); drawEncounterClocks(); menuControlFooter(); controlHintShellTick();
+           /* ⚠ AFTER the scene, so the toast is never painted over by the screen that earned it -
+              the trap 0905h records for the warning sign the boss hull covered every frame. */
+           try{ achToastTick(dt); }catch(_achT){} }
   }catch(_frameErr){
     if((typeof DBG!=='undefined' && DBG.verbose) || !loop._reported){ loop._reported=true; try{ console.error('draw error in state', state, _frameErr); }catch(e){} }
     /* ⚠⚠ AND SAY SO ON THE SCREEN (0916). This catch is why a broken draw looks like a finished

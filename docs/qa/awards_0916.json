@@ -1,0 +1,149 @@
+{
+ "drop": "0916 ACH-02 awards gallery + unlock toast",
+ "context": "the registry has been complete since 0915 (66 definitions, awards, points, persistence) and nothing drew any of it: achievementUnlock set a variable and dispatched a window event nothing listened to",
+ "toast": {
+  "shape": "rises, holds ~2.4s, slides down as it fades, carrying AWARD <title> and +points",
+  "queue": "a QUEUE not a slot - a stage clear can award seven at once and one slot would drop six",
+  "placement": "drawn after drawScene from the loop, so it appears over any screen and cannot be painted over by the screen that earned it",
+  "height": "rests above the control hint row; at its first height it sat over MENU/SELECT/START on every menu screen"
+ },
+ "gallery": {
+  "button": "a seventh title button, AWARDS",
+  "rows": 66,
+  "view": 8,
+  "sort": "family then points - the raw ACHIEVEMENT_DEFS order interleaves 100-point campaign clears with 10-point stage clears",
+  "locked": "dimmed, never hidden - the gallery is a list of things to go and do",
+  "scroll": "UP/DOWN with DRAWN arrows, because this face has no arrow glyphs"
+ },
+ "dispatch": "keyed by NAME. It was if(m===0)..else{tryExit()}, so inserting AWARDS before CREDITS would have repointed every row below it and made one quit the game. An unrecognised row now does nothing.",
+ "art": "generated against two authored buttons uploaded as a style reference (the btn_help route). The first pass was rejected by the SCREENSHOT - a clean plate with no emblem or scene read as a flat bar beside its neighbours.",
+ "probe": "_BUILD_SOURCE/probe_awards_0916.py",
+ "probe_result": {
+  "ok": 22,
+  "fail": 0,
+  "page_errors": 0,
+  "console_errors": 0,
+  "toast_travel": "panel dest y 502 -> 478, its full height"
+ },
+ "probe_faults_fixed": [
+  "read the toast's motion as the topmost lit row in the bottom band - the title screen fills that band, so it was 0 every frame on a build where the toast moves 24px; the panel blit is trapped instead",
+  "the achievement store is localStorage and persists: every arm clears it or the second run measures a build where everything is unlocked"
+ ],
+ "checks": [
+  {
+   "pass": true,
+   "label": "the title carries a seventh button (['NEW GAME', 'PASSWORD', 'OPTIONS', 'HELP', 'AWARDS', 'CREDITS', 'EXIT GAME'])"
+  },
+  {
+   "pass": true,
+   "label": "every item has a plate (7 keys for 7 items)"
+  },
+  {
+   "pass": true,
+   "label": "and every item has its OWN action - the dispatch is keyed by name"
+  },
+  {
+   "pass": true,
+   "label": "the AWARDS plate decoded"
+  },
+  {
+   "pass": true,
+   "label": "choosing AWARDS opens the gallery (state awards)"
+  },
+  {
+   "pass": true,
+   "label": "it lists every definition (66)"
+  },
+  {
+   "pass": true,
+   "label": "eight at a time (8)"
+  },
+  {
+   "pass": true,
+   "label": "sorted by family, the big ones first (campaign_clear)"
+  },
+  {
+   "pass": true,
+   "label": "locked rows are listed, not hidden (66 locked)"
+  },
+  {
+   "pass": true,
+   "label": "DOWN scrolls the gallery (1)"
+  },
+  {
+   "pass": true,
+   "label": "and clamps at the end (58 of 58)"
+  },
+  {
+   "pass": true,
+   "label": "BACK returns to the title (title)"
+  },
+  {
+   "pass": true,
+   "label": "with the cursor left on AWARDS"
+  },
+  {
+   "pass": true,
+   "label": "an unlock queues a toast"
+  },
+  {
+   "pass": true,
+   "label": "the toast panel is blitted every frame it is up (7 frames)"
+  },
+  {
+   "pass": true,
+   "label": "and it RISES into place (panel y 484 -> 460)"
+  },
+  {
+   "pass": true,
+   "label": "by its own height, not a pixel or two (24.0 px of travel)"
+  },
+  {
+   "pass": true,
+   "label": "it leaves on its own"
+  },
+  {
+   "pass": true,
+   "label": "and stops drawing entirely once it has"
+  },
+  {
+   "pass": true,
+   "label": "three unlocks at once queue three toasts"
+  },
+  {
+   "pass": true,
+   "label": "and they play through in order"
+  },
+  {
+   "pass": true,
+   "label": "no page or console errors (0)"
+  }
+ ],
+ "assertions_repointed": [
+  "HELP is the fourth title button - pinned TITLE_ITEMS.length===6, the COUNT, while its name claims only the position",
+  "my own no-tryExit pin matched the COMMENT explaining the fix (section 47 self-inflicted); both source pins strip comments now"
+ ],
+ "suite": {
+  "command": "node _BUILD_SOURCE/test_fl.js",
+  "ok": 4647,
+  "fail": 57,
+  "exit": 1,
+  "final_summary_reached": true,
+  "section": "364 (18/18)",
+  "baseline": {
+   "worktree": "97265703",
+   "ok": 4552,
+   "fail": 57
+  },
+  "failure_names_new": [],
+  "failure_names_repaired": [],
+  "note": "names compared with numbers masked"
+ },
+ "proofs": [
+  "docs/proofs/awards_0916/01_title.png",
+  "docs/proofs/awards_0916/02_gallery.png",
+  "docs/proofs/awards_0916/03_gallery_end.png",
+  "docs/proofs/awards_0916/04_toast.png",
+  "docs/proofs/awards_0916/05_button_v2.png"
+ ]
+}
