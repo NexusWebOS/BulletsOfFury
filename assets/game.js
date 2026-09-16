@@ -60826,7 +60826,7 @@ function drawPilot(dt){
        button on a screen that is otherwise finished. The skip still happens; the same press now
        carries straight on into confirmPilot, which is idempotent and refuses a locked pilot. */
     if(pilotInputReady && typeof Input!=='undefined' && pcard && !pcard.done && typeof pcSkip==='function'
-       && (Input.tap('fire')||Input.tap('enter')||Input.tap(' '))){
+       && pilotConfirmPressed()){
       pcSkip();
       if(!coopActive() && typeof confirmPilot==='function' && !isPilotLocked(PILOTS[pilotIndex])) confirmPilot();
     }
@@ -61145,7 +61145,17 @@ function drawPilot(dt){
      of this menu." menuBack already carries 'k' as of drop 0801bv, and the
      Input.menuBack() call further down handles the exit — so the on-screen
      button and its hit test are simply gone rather than hidden. */
-  if(pilotRot>0) return; // lock during spin
+  /* ⚠⚠ THE CONFIRM USED TO SIT BELOW THE SPIN LOCK, AND BELOW THE MOUSE BLOCK (Mike, 0916: "Im on
+     controller but that shouldnt matter" - it does). `pilotRot` is set to 1 by every roster step
+     and only decays while the screen is idle, so any pad that keeps nudging the roster - a stick
+     resting near the threshold, a hat that chatters - re-arms the lock before the decay finishes
+     and the deploy press can never be READ. On a keyboard you have to be actively holding a
+     direction to see it; on a pad it can be the resting state of the stick.
+     So the deploy is answered first, and the lock now guards only the things that move the
+     cursor. A press that lands mid-spin deploys the pilot under the cursor, which is the one the
+     card is showing. */
+  if(pilotConfirmPressed()){ if(locked){ Audio.SFX.hit(); pilotFlash=1; } else confirmPilot(); }
+  if(pilotRot>0) return; // lock during spin — cursor moves only
   if(Input.menuRight()) startPilotRot(1);
   if(Input.menuLeft()) startPilotRot(-1);
   /* ⚠ THE COSTUME PICK. Mike: "an alternate costume pick if we use the password bomber" -
@@ -61191,7 +61201,6 @@ function drawPilot(dt){
     }
   }
   drawPilot._md=Input.mouse.down;
-  if(Input.tap('enter') || keybind.fire.some(k=>Input.tap(k))||Input.menuStart()){ if(locked){ Audio.SFX.hit(); pilotFlash=1; } else confirmPilot(); }
   if(Input.menuBack()){
     /* In co-op, back from P2's pass hands the roster BACK to P1 rather than dropping both
        players out to difficulty — losing a partner's confirmed pick because you wanted to change
@@ -61207,8 +61216,30 @@ function drawPilot(dt){
     setState(GS.DIFF);
   }
 }
+/* ⚠ ANY FACE BUTTON DEPLOYS (Mike, 0916). The old test was `keybind.fire` plus enter and start,
+   i.e. pad_b0 and pad_b7 - and a pad only reports the letter on its shell through a mapping the
+   browser guesses. A six-button pad can deliver its A as b2 or b5, so the player presses the
+   button marked A and the game sees a button it has no row for. Every face and shoulder except
+   B (b1, the standard cancel) and SELECT (b8) now confirms here; this screen has nothing else
+   for them to do, and being unable to leave it is far worse than a spare button working. */
+const PILOT_GO_PAD=['pad_b0','pad_b2','pad_b3','pad_b4','pad_b5','pad_b6','pad_b7','pad_b9'];
+function pilotConfirmPressed(){
+  if(typeof Input==='undefined') return false;
+  if(Input.tap('enter')||Input.tap(' ')) return true;
+  try{ if(keybind.fire.some(function(k){ return !/^mouse\d/.test(k) && Input.tap(k); })) return true; }catch(_){}
+  for(const k of PILOT_GO_PAD) if(Input.tap(k)) return true;
+  try{ if(Input.menuStart()) return true; }catch(_){}
+  return false;
+}
 function confirmPilot(){
-  if(pilotPending!=null||pilotRot>0||isPilotLocked(PILOTS[pilotIndex]))return;
+  if(pilotPending!=null||isPilotLocked(PILOTS[pilotIndex]))return;
+  /* ⚠ THIS USED TO REFUSE WHILE `pilotRot>0`, WHICH IS THE OTHER HALF OF THE PAD LOCK-OUT. The
+     spin is cosmetic - `pilotIndex` is already the pilot being moved TO, and the card is already
+     showing them - but a pad that keeps stepping the roster holds pilotRot at 1, so the deploy
+     was refused here even after being read. Reproduced with a synthetic stick oscillating across
+     the deadzone: the press landed, this returned, and the screen could not be left. The spin is
+     snapped to its end instead, so the pilot you see is the pilot you get. */
+  if(pilotRot>0){ pilotRot=0; pilotFrom=pilotIndex; }
   if(typeof warmPlayerAtlases==='function') warmPlayerAtlases();
   /* The slide-away and GOOD LUCK panel buy roughly two seconds. Spend them decoding the prologue
      now so a fresh campaign never opens on black while the large HQ plates arrive. */
