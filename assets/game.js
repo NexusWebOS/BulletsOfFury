@@ -34702,7 +34702,7 @@ function hammerArchFrame(key,frame,tint){
   const c=document.createElement('canvas');c.width=w;c.height=h;const g=c.getContext('2d');g.drawImage(im,f*w,0,w,h,0,0,w,h);const d=g.getImageData(0,0,w,h);
   for(let i=0;i<d.data.length;i+=4){if(!d.data[i+3])continue;const l=d.data[i]*.22+d.data[i+1]*.70+d.data[i+2]*.08,co=tint==='red'?[1.8,.18,.16]:tint==='white'?[2.5,2.5,2.5]:[.2,.75,1.9];d.data[i]=Math.min(255,l*co[0]);d.data[i+1]=Math.min(255,l*co[1]);d.data[i+2]=Math.min(255,l*co[2]);}g.putImageData(d,0,0);const q={im:c,sx:0,sy:0,sw:w,sh:h};archTintCache.set(id,q);return q;
 }
-function archBlit(key,frame,x,y,h,tint,rot){const q=hammerArchFrame(key,frame,tint);if(!q)return false;const w=h*q.sw/q.sh;ctx.save();ctx.translate(x,y);if(rot)ctx.rotate(rot);ctx.imageSmoothingEnabled=false;ctx.drawImage(q.im,q.sx,q.sy,q.sw,q.sh,-w/2,-h/2,w,h);ctx.restore();return true;}
+function archBlit(key,frame,x,y,h,tint,rot,alpha){const q=hammerArchFrame(key,frame,tint);if(!q)return false;const w=h*q.sw/q.sh;ctx.save();ctx.globalAlpha=alpha==null?1:alpha;ctx.translate(x,y);if(rot)ctx.rotate(rot);ctx.imageSmoothingEnabled=false;ctx.drawImage(q.im,q.sx,q.sy,q.sw,q.sh,-w/2,-h/2,w,h);ctx.restore();return true;}
 function hammerBossInit(b){
   b.name='CHROME HAMMER ARCHMAGE';b.w=158;b.h=176;b.y=VH+145;b.ty=VH*.34;
   const mul=(DIFF&&DIFF.eHp)||1;b._hammer={state:'flyby',t:0,cycle:0,attackCycle:0,rage:0,shotCd:.4,angle:0,vx:0,vy:0,mode:'hammer',hammerHP:Math.ceil(70*mul),hammerMax:Math.ceil(70*mul),chainHP:Math.ceil(95*mul),chainMax:Math.ceil(95*mul),hammerDestroyed:false,chainDestroyed:false,bombs:[],pillars:[],hitCd:0};
@@ -34773,8 +34773,25 @@ function hammerBossDraw(b){
   if(h.state==='spell'||h.state==='spell_blast'){const ri=hammerFrame('reticle',0);for(const q of h.state==='spell'?h.spellTargets:h.pillars){hammerGroundReticleDraw(ri,q.x,PLAY.y+PLAY.h-35,128,.65+.35*Math.sin((stateT||0)*24));if(h.state==='spell_blast'){ctx.save();ctx.globalCompositeOperation='lighter';const grad=ctx.createLinearGradient(0,PLAY.y+PLAY.h,0,PLAY.y);grad.addColorStop(0,'#fff');grad.addColorStop(.18,'#4fdcff');grad.addColorStop(1,'rgba(80,80,255,0)');ctx.fillStyle=grad;ctx.fillRect(q.x-22,PLAY.y,44,PLAY.h);ctx.restore();}}}
   let key='idle',f=Math.floor(h.t*8)%12,tint=b.flash>0?'white':null,rot=0,z=206;
   if(['flyby','return'].includes(h.state)){key='ship_transform';f=15;z=192;}else if(h.state==='unfold'){key='ship_transform';f=15-Math.min(15,Math.floor(h.t/2*16));}
-  else if(h.state==='spin'){key='twirl_throw';f=Math.min(13,Math.floor(clamp(h.t/HAMMER_SPIN_TIME,0,1)*14));}
-  else if(h.state==='throw'){key='twirl_throw';f=15;if(h.throw){for(let i=h.throw.trail.length-1;i>=1;i--)archBlit('hammer_spin',(Math.floor(h.throw.trail[i].angle/TAU*8)&7),h.throw.trail[i].x,h.throw.trail[i].y,118,null,h.throw.trail[i].angle);archBlit('hammer_spin',(Math.floor(h.throw.angle/TAU*8)&7),h.throw.x,h.throw.y,128,null,h.throw.angle);}}
+  else if(h.state==='spin'){
+    /* The Archmage art upgrade used its authored one-hand twirl reel, but accidentally bypassed
+       the committed lane and floor reticle that the detachable-hammer controller already owns.
+       Keep the warning behind the boss, then let the authored body/hammer reel read over it. */
+    const k=clamp(h.t/HAMMER_SPIN_TIME,0,1),g=hammerGripPoint(b);
+    combatWarningDraw(b,{x:g.x,y:g.y,ex:h.throwX,ey:VH,progress:k,width:42,alertX:b.x+76,alertY:b.y-82});
+    const ri=hammerFrame('reticle',0,k<1/3?null:k<2/3?'yellow':'red');
+    if(ri)hammerGroundReticleDraw(ri,h.throwX,h.throwY,122,.72+.28*Math.sin(h.t*28));
+    key='twirl_throw';f=Math.min(13,Math.floor(k*14));
+  }
+  else if(h.state==='throw'){
+    key='twirl_throw';f=15;
+    if(h.throw){
+      /* The active weapon stays solid. Sparse, faint authored frames show its path without
+         reading as a chain of additional hammers or extra collision objects. */
+      for(let i=h.throw.trail.length-1;i>=1;i-=2){const q=h.throw.trail[i],a=Math.min(.22,.05+(h.throw.trail.length-i)*.04);archBlit('hammer_spin',(Math.floor(q.angle/TAU*8)&7),q.x,q.y,118,null,q.angle,a);}
+      archBlit('hammer_spin',(Math.floor(h.throw.angle/TAU*8)&7),h.throw.x,h.throw.y,128,null,h.throw.angle,1);
+    }
+  }
   else if(['curl','ball','uncurl'].includes(h.state)){key='spiked_ball';f=h.state==='ball'?15:Math.min(15,Math.floor(h.t/1.25*16));if(h.state==='uncurl')f=15-f;rot=h.state==='ball'?h.angle:0;z=154;tint=h.rage>0?'red':tint;}
   else if(['chaingun_draw','chaingun','chain_cool'].includes(h.state)){key='chaingun_detach_fire';f=h.state==='chaingun_draw'?Math.min(15,Math.floor(h.t/2*16)):8+(Math.floor(h.t*(4+12*(h.chainHeat||0)))%8);}
   else if(h.state==='enrage'){key='chaingun_break_enrage';f=Math.min(15,Math.floor(h.t/2.15*16));tint=h.t>1.2?'red':tint;}

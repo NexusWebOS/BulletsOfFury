@@ -4315,3 +4315,6 @@ ENG-02 advances: every Tidal Sovereign cascade row commits its two-column openin
 
 ## 2026-09-16 Stage-6 Thunderhead shared row warnings
 ENG-02 advances: every live Thunderhead row on the Doomsday Carrier Mk II now uses a committed 0.66-second shared green/yellow/red warning over its exact six dangerous columns and two-column opening. Focused 12/12, Chromium 19/19 with zero errors, and post-rebase full suite 4,359 passes with the established 56-name baseline; incoming `02f38a6b` removed the intermittent Stage-1 sand-tank failure and Thunderhead added no new names. ENG-02 remains partial. See docs/STAGE6_THUNDERHEAD_WARNING_0916.md.
+
+## 2026-09-16 active Archmage boomerang visual repair
+SPACE-23 remains complete against the current Chrome Hammer Archmage controller. The Archmage art merge had preserved mechanics but bypassed the shared warning draw; the active authored one-hand twirl now restores its committed green/yellow/red lane and floor reticle. The alert clears the CHAINGUN label, and the outbound/return reel uses one solid hammer plus three faint authored motion echoes instead of six opaque clones. Focused sections 304e and 342 pass 12/12 and 6/6. Chromium passes 19/19 with zero errors. Full suite: 4,364 passes, the established 56 failures plus the known intermittent sand-tank fixture. See docs/ARCHMAGE_BOOMERANG_VISUAL_0916.md.

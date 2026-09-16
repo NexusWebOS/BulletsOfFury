@@ -12,7 +12,7 @@ Detailed specifications: [original request ledger](OVERNIGHT_REQUESTS_0914.md). 
 
 ## Current batch and next work
 
-Just verified: all four live Stage-6 Thunderhead rows with committed two-column openings and 0.66-second shared warnings [Proof](STAGE6_THUNDERHEAD_WARNING_0916.md).
+Just verified: active Stage-5 Chrome Hammer Archmage boomerang warning, authored one-hand twirl, cleaned motion echoes and verified magnetic catch [Proof](ARCHMAGE_BOOMERANG_VISUAL_0916.md).
 
 Work in ascending workOrder, an estimate of implementation plus verification difficulty. Respect prerequisites and skip externally blocked items while continuing ready work. Re-rank when investigation changes the estimate; retain IDs and explain the change.
 
@@ -52,7 +52,7 @@ Mike selected furyship_somersault_13.png and approved image_gen for its replacem
 ### Shared combat, warnings and targeting
 
 - [x] **ENG-01 · Complete** — Shared laser-family warning: three-second green/yellow/red FOV charge with overhead alert. [Evidence](qa/shared_laser_warnings_0914.json).
-- [ ] **ENG-02 · Partial** — Migrate all dangerous non-laser boss/miniboss attacks to the shared warning rule. Covered families now include the Stage-6 Thunderhead, Stage-9 Event Horizon, independent Warp Sentinel radial/aimed volleys, and every row of the Tidal Sovereign cascade; remaining encounter families need review. [Evidence](SHARED_NONLASER_WARNING_0915.md).
+- [ ] **ENG-02 · Partial** — Migrate all dangerous non-laser boss/miniboss attacks to the shared warning rule. Covered families now include the Stage-5 Chrome Hammer Archmage vertical boomerang, Stage-6 Thunderhead, Stage-9 Event Horizon, independent Warp Sentinel radial/aimed volleys, and every row of the Tidal Sovereign cascade; remaining encounter families need review. [Evidence](SHARED_NONLASER_WARNING_0915.md).
 - [x] **ENG-03 · Complete** — Shared bounded horizontal glide/follow integrated and verified in Frost Cruiser and Jungle chopper; later Warden choreography remains S4-06. [Evidence](MOVEMENT_BATCH_0914.md).
 - [x] **ENG-04 · Complete** — Player flamethrower: 25% smaller draw and collision footprint, Fire Orb palette, nozzle remains connected. [Evidence](READABLE_ATTACKS_0914.md).
 - [x] **ENG-05 · Complete** — No default enemy dies to a single hit: consistent damage accounting across ordinary enemies, pieces, shields and high-damage weapons. [Evidence](NO_ONE_SHOT_RULE_0915.md).
@@ -158,7 +158,7 @@ Mike selected furyship_somersault_13.png and approved image_gen for its replacem
 - [x] **SPACE-20 · Complete** — Easy/Normal Stage 5 replacement: harmless bottom flyby, top return and unfold; retain Xenoregent without assigning it to Stage 6/9. [Evidence](BOSS_BATCH_0915.md).
 - [x] **SPACE-21 · Complete** — 15-second bouncing spiked ball; ordinary fire enrages into faster laser volleys, manual missiles knock back; x10/x20 supplies only. [Evidence](BOSS_BATCH_0915.md).
 - [x] **SPACE-22 · Complete** — Hammer leap attacks with a depth-projected green/yellow/red ground-floor target marker, upward charge scan, return leap or follow-up strike. [Evidence](GROUND_RETICLE_0915.md).
-- [x] **SPACE-23 · Complete** — Chrome Hammer one-hand boomerang: rapidly spin and charge the hammer, throw it vertically down a committed player lane, then visibly retract it to the raised hand at medium magnetic speed with sounds. [Evidence](CHROME_HAMMER_BOOMERANG_0915.md).
+- [x] **SPACE-23 · Complete** — Chrome Hammer Archmage one-hand boomerang: rapidly spin and charge the authored hammer, warn its committed vertical player lane, throw it downfield, turn below the playfield, then visibly retract it to the raised hand at medium magnetic speed with sounds. [Evidence](ARCHMAGE_BOOMERANG_VISUAL_0916.md).
 - [x] **SPACE-24 · Complete** — Fury HQ Space Division crate with a three-reward RNG bag: autonomous helper orb, Akimbo projectile upgrade, and proximity mine with splash plus authored shrapnel. [Evidence](SPACE_ARMORY_0915.md).
 
 ### Manual missile tiers and supplies

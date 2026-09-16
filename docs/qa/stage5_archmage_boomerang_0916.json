@@ -1,0 +1,338 @@
+{
+  "checks": [
+    {
+      "pass": true,
+      "label": "native Stage-5 boss route opens in Chromium"
+    },
+    {
+      "pass": true,
+      "label": "active Easy/Normal Stage-5 replacement starts the Archmage one-hand spin"
+    },
+    {
+      "pass": true,
+      "label": "spin, vertical throw and medium magnetic return retain approved timing"
+    },
+    {
+      "pass": true,
+      "label": "authored Archmage twirl, detached hammer, reticle and shared warning art decode"
+    },
+    {
+      "pass": true,
+      "label": "green charge shows the authored one-hand twirl and shared lane warning"
+    },
+    {
+      "pass": true,
+      "label": "yellow warning remains committed after the player dodges"
+    },
+    {
+      "pass": true,
+      "label": "red warning preserves the promised vertical release lane"
+    },
+    {
+      "pass": true,
+      "label": "detached authored hammer descends rapidly through the warned lane"
+    },
+    {
+      "pass": true,
+      "label": "the boomerang turns below the playfield instead of vanishing"
+    },
+    {
+      "pass": true,
+      "label": "return visibly homes toward the raised hand at the capped medium magnetic speed"
+    },
+    {
+      "pass": true,
+      "label": "hammer reaches the hand and completes a hard catch without teleport reset"
+    },
+    {
+      "pass": true,
+      "label": "archmage_boomerang_01_green is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "archmage_boomerang_02_yellow is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "archmage_boomerang_03_red is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "archmage_boomerang_04_outbound is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "archmage_boomerang_05_bottom_turn is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "archmage_boomerang_06_magnetic_return is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "archmage_boomerang_07_catch is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "zero Chromium page, console or game-loop errors"
+    }
+  ],
+  "errors": [],
+  "fight": {
+    "ok": true,
+    "name": "XENO REGENT",
+    "kind": "xenoregent",
+    "pilot": "yuri",
+    "state": "play"
+  },
+  "setup": {
+    "name": "CHROME HAMMER ARCHMAGE",
+    "state": "spin",
+    "lane": 326,
+    "floor": 392,
+    "spin": 1.55,
+    "out": 0.7,
+    "returnSpeed": 315,
+    "grip": {
+      "x": 192,
+      "y": 158
+    },
+    "vh": 512
+  },
+  "green": {
+    "state": "spin",
+    "t": 0.18,
+    "lane": 326,
+    "floor": 392,
+    "throw": null,
+    "warning": {
+      "t": 0.18,
+      "warm": 1.55,
+      "released": false
+    },
+    "gets": [
+      "bg_stage05_loop",
+      "bmfx_fov_green_tall",
+      "bmfx_alert_green_danger",
+      "hammer_reticle",
+      "arch_twirl_throw",
+      "fx_ground_strikes_0916",
+      "fury_thrusters_04",
+      "alert_up",
+      "ngm_space_atlas",
+      "nequipbox",
+      "bmbar_fill_seg",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss"
+    ],
+    "grip": {
+      "x": 192,
+      "y": 158
+    }
+  },
+  "yellow": {
+    "state": "spin",
+    "t": 0.8,
+    "lane": 326,
+    "floor": 392,
+    "throw": null,
+    "warning": {
+      "t": 0.8,
+      "warm": 1.55,
+      "released": false
+    },
+    "gets": [
+      "bg_stage05_loop",
+      "bmfx_fov_yellow_tall",
+      "bmfx_alert_yellow_danger",
+      "hammer_reticle",
+      "arch_twirl_throw",
+      "fx_ground_strikes_0916",
+      "fury_thrusters_04",
+      "alert_up",
+      "nequipbox",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss"
+    ],
+    "grip": {
+      "x": 192,
+      "y": 158
+    }
+  },
+  "red": {
+    "state": "spin",
+    "t": 1.4,
+    "lane": 326,
+    "floor": 392,
+    "throw": null,
+    "warning": {
+      "t": 1.4,
+      "warm": 1.55,
+      "released": false
+    },
+    "gets": [
+      "bg_stage05_loop",
+      "bmfx_fov_red_tall",
+      "bmfx_alert_red_danger",
+      "hammer_reticle",
+      "arch_twirl_throw",
+      "fx_ground_strikes_0916",
+      "fury_thrusters_04",
+      "alert_up",
+      "nequipbox",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss"
+    ],
+    "grip": {
+      "x": 192,
+      "y": 158
+    }
+  },
+  "outbound": {
+    "state": "throw",
+    "t": 0.2,
+    "lane": 326,
+    "floor": 392,
+    "throw": {
+      "x": 270.141956780713,
+      "y": 263.14285714285717,
+      "phase": "out",
+      "t": 0.2,
+      "angle": 7
+    },
+    "warning": {
+      "t": 1.56,
+      "warm": 1.55,
+      "released": true
+    },
+    "gets": [
+      "bg_stage05_loop",
+      "arch_hammer_spin",
+      "arch_twirl_throw",
+      "fx_ground_strikes_0916",
+      "fury_thrusters_04",
+      "alert_up",
+      "nequipbox",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss"
+    ],
+    "grip": {
+      "x": 192,
+      "y": 158
+    }
+  },
+  "turn": {
+    "state": "throw",
+    "t": 0.7000000000000001,
+    "lane": 326,
+    "floor": 392,
+    "throw": {
+      "x": 326,
+      "y": 526,
+      "phase": "return",
+      "t": 0,
+      "angle": 22
+    },
+    "warning": {
+      "t": 1.56,
+      "warm": 1.55,
+      "released": true
+    },
+    "gets": [
+      "bg_stage05_loop",
+      "arch_hammer_spin",
+      "arch_twirl_throw",
+      "fx_ground_strikes_0916",
+      "fury_thrusters_04",
+      "alert_up",
+      "nequipbox",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss"
+    ],
+    "grip": {
+      "x": 192,
+      "y": 158
+    }
+  },
+  "return": {
+    "state": {
+      "state": "throw",
+      "t": 1.05,
+      "lane": 326,
+      "floor": 392,
+      "throw": {
+        "x": 288.27762485324206,
+        "y": 422.4042234775603,
+        "phase": "return",
+        "t": 0.35,
+        "angle": 32.5
+      },
+      "warning": {
+        "t": 1.56,
+        "warm": 1.55,
+        "released": true
+      },
+      "gets": [
+        "bg_stage05_loop",
+        "arch_hammer_spin",
+        "arch_twirl_throw",
+        "fx_ground_strikes_0916",
+        "fury_thrusters_04",
+        "alert_up",
+        "nequipbox",
+        "bmbar_frame_boss",
+        "bmbar_tab_boss"
+      ],
+      "grip": {
+        "x": 192,
+        "y": 158
+      }
+    },
+    "before": {
+      "x": 326,
+      "y": 526,
+      "d": 391.6375875730009
+    },
+    "after": {
+      "x": 288.27762485324206,
+      "y": 422.4042234775603,
+      "d": 281.3875875730009
+    },
+    "moved": 110.25000000000003
+  },
+  "catch": {
+    "state": "hammer",
+    "t": 0,
+    "lane": 326,
+    "floor": 392,
+    "throw": null,
+    "warning": {
+      "t": 1.56,
+      "warm": 1.55,
+      "released": true
+    },
+    "gets": [
+      "bg_stage05_loop",
+      "arch_idle",
+      "fx_ground_strikes_0916",
+      "fury_thrusters_04",
+      "alert_up",
+      "nequipbox",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss"
+    ],
+    "grip": {
+      "x": 192,
+      "y": 158
+    }
+  },
+  "shots": [
+    "_shots\\stage5_archmage_boomerang_0916\\archmage_boomerang_01_green.png",
+    "_shots\\stage5_archmage_boomerang_0916\\archmage_boomerang_02_yellow.png",
+    "_shots\\stage5_archmage_boomerang_0916\\archmage_boomerang_03_red.png",
+    "_shots\\stage5_archmage_boomerang_0916\\archmage_boomerang_04_outbound.png",
+    "_shots\\stage5_archmage_boomerang_0916\\archmage_boomerang_05_bottom_turn.png",
+    "_shots\\stage5_archmage_boomerang_0916\\archmage_boomerang_06_magnetic_return.png",
+    "_shots\\stage5_archmage_boomerang_0916\\archmage_boomerang_07_catch.png"
+  ]
+}

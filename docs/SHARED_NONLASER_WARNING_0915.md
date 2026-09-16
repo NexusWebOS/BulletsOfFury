@@ -65,3 +65,7 @@ All four Tidal Cascade rows now commit a two-column opening, preview the other s
 ## Stage 6 Thunderhead follow-up
 
 All four live Doomsday Carrier Mk II Thunderhead rows now commit their two-column opening, preview the other six exact release columns through shared green/yellow/red fields, then move the opening one column for the next warned row. Chromium passes 19/19 and focused section 341 passes 12/12. See [STAGE6_THUNDERHEAD_WARNING_0916.md](STAGE6_THUNDERHEAD_WARNING_0916.md).
+
+## Stage 5 Archmage boomerang follow-up
+
+The active Chrome Hammer Archmage one-hand twirl now preserves the boomerang controller's committed vertical lane and floor reticle through the shared green/yellow/red warning. The alert is placed beside the boss to clear its destructible-module labels. Chromium passes 19/19 and focused active-render section 342 passes 6/6. See [ARCHMAGE_BOOMERANG_VISUAL_0916.md](ARCHMAGE_BOOMERANG_VISUAL_0916.md).

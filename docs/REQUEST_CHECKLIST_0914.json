@@ -97,7 +97,7 @@
       "id": "ENG-02",
       "group": "Shared combat, warnings and targeting",
       "status": "partial",
-      "request": "Migrate all dangerous non-laser boss/miniboss attacks to the shared warning rule. Covered families now include the Stage-6 Thunderhead, Stage-9 Event Horizon, independent Warp Sentinel radial/aimed volleys, and every row of the Tidal Sovereign cascade; remaining encounter families need review.",
+      "request": "Migrate all dangerous non-laser boss/miniboss attacks to the shared warning rule. Covered families now include the Stage-5 Chrome Hammer Archmage vertical boomerang, Stage-6 Thunderhead, Stage-9 Event Horizon, independent Warp Sentinel radial/aimed volleys, and every row of the Tidal Sovereign cascade; remaining encounter families need review.",
       "evidence": "SHARED_NONLASER_WARNING_0915.md",
       "dependency": "",
       "workOrder": 53,
@@ -1469,8 +1469,8 @@
       "id": "SPACE-23",
       "group": "Stages 5-9: space and encounter cleanup",
       "status": "complete",
-      "request": "Chrome Hammer one-hand boomerang: rapidly spin and charge the hammer, throw it vertically down a committed player lane, then visibly retract it to the raised hand at medium magnetic speed with sounds.",
-      "evidence": "CHROME_HAMMER_BOOMERANG_0915.md",
+      "request": "Chrome Hammer Archmage one-hand boomerang: rapidly spin and charge the authored hammer, warn its committed vertical player lane, throw it downfield, turn below the playfield, then visibly retract it to the raised hand at medium magnetic speed with sounds.",
+      "evidence": "ARCHMAGE_BOOMERANG_VISUAL_0916.md",
       "dependency": ""
     },
     {
@@ -1492,7 +1492,7 @@
   ],
   "queuePolicy": "Work in ascending workOrder, an estimate of implementation plus verification difficulty. Respect prerequisites and skip externally blocked items while continuing ready work. Re-rank when investigation changes the estimate; retain IDs and explain the change.",
   "latestBatch": {
-    "description": "all four live Stage-6 Thunderhead rows with committed two-column openings and 0.66-second shared warnings",
-    "evidence": "STAGE6_THUNDERHEAD_WARNING_0916.md"
+    "description": "active Stage-5 Chrome Hammer Archmage boomerang warning, authored one-hand twirl, cleaned motion echoes and verified magnetic catch",
+    "evidence": "ARCHMAGE_BOOMERANG_VISUAL_0916.md"
   }
 }

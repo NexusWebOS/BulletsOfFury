@@ -562,3 +562,9 @@ Chrome Hammer now has its one-hand vertical boomerang, Hard/Furious difficulty a
 
 - ENG-02 advances: all four live Doomsday Carrier Mk II Thunderhead rows now own a 0.66-second shared green/yellow/red warning. Six fields match the twelve released projectiles while two adjacent columns remain open; the opening moves one column only after release.
 - Fields render behind the giant carrier and its storm nodes; the matching alert remains visible above them and below the boss gauge. Focused 12/12, Chromium 19/19 with zero errors, full suite 4,359 passes with the established 56-name baseline after rebasing onto `02f38a6b`; that incoming build removed the intermittent Stage-1 sand-tank failure and Thunderhead added no new names. Evidence: docs/STAGE6_THUNDERHEAD_WARNING_0916.md. Tally remains 128 complete / 7 partial / 16 pending.
+
+## Codex update — 2026-09-16: active Archmage boomerang repair
+
+- The current Chrome Hammer Archmage again shows the committed green/yellow/red lane and floor reticle during its authored one-hand twirl. The alert no longer overlaps the CHAINGUN module label.
+- The detached authored hammer descends vertically, turns below the screen, returns at the capped medium magnetic speed and catches in the raised hand. One solid weapon plus three faint motion echoes replaces the accidental row of opaque hammer clones.
+- Focused 12/12 mechanics and 6/6 active-render checks; Chromium 19/19 with zero errors; full suite 4,364 passes with the established 56 failures plus the intermittent Stage-1 sand-tank fixture. Evidence: docs/ARCHMAGE_BOOMERANG_VISUAL_0916.md. Tally remains 128 complete / 7 partial / 16 pending.
