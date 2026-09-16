@@ -82,40 +82,54 @@ clipped by the panel edge. It is the same on every stage that has a page (2, 4, 
 predates this drop, and it is the debrief plate's own layout, so it is Mike's call: either the
 sentence gets shorter or `stageWrapCen` gets the row count `stageWrapCount` can already give it.
 
-## 5. The layout (Mike, later the same day, twice)
+## 5. The layout (Mike, three passes)
 
-> "we dont need to have multiple listed weapon unlocks like that, at most we might unlock 3 at once
-> like Freezer. you can list 4 at once, but use square boxes plus rectangle text next to them."
+> "you can list 4 at once, but use square boxes plus rectangle text next to them."
 
 then, on the first cut:
 
 > "should be 4 large boxes for th weapon icons, 4 rectangle boxes next to the large boxes. re-do"
 
-⚠ **THE FIRST CUT BORROWED THE DEBRIEF'S STAT BAYS, AND A STAT BAY IS A THIN STRIP.** At 0.0526 of
-the plate, a square the height of one is the height of a text row - so the "box" read as an icon
-with a border rather than as a box, which is exactly what he sent back. **Four LARGE boxes need
-vertical room the eight thin bays do not have.**
+then, with a crop of the plate's own rank box and word strip:
 
-So the page lays out its OWN rows now. `UNLOCK_ROWS` takes the whole middle of the plate - the stat
-block plus the score/rank strip under it, none of which this page has another use for - and divides
-it into **four rows**: a **square icon box** at the row's height, and a **rectangle** beside it
-holding the name. `UNLOCK_MAX = 4` is the cap and the row count, one number. All four sockets draw
-whether or not there is a weapon in them, because four is the layout.
+> "I meant 4 of these like this. and stretch to fill icons inside the box"
 
-⚠ **THE PANELS MUST BE OPAQUE, AND THE EMPTY ONES TOO.** The plate's thin bays are BAKED under
-these rows. Drawing an unused socket at 0.55 alpha let two columns of old rails show straight
-through every empty box - worse than either layout on its own. The well is solid and only the RAIL
-dims, so an unused slot reads as an unlit socket. The gaps are small for the same reason: at the
-first spacing there were bronze nubs of the old bays between every row.
+**The row is the plate's OWN box and strip, blitted four times.** Not drawn, not approximated: the
+RANK bay (`0.5220,0.6466,0.1111,0.1579`) and its word strip (`0.6667,0.6880,0.2453,0.0677`) are cut
+straight out of `statpanel_full_0916` and repeated down the page, so the rounded corners, the bronze
+rail, the grey bezel and the panel's own shading are the art's and cannot drift from it. Same idea
+as 0912e building the boss tab out of the bar's own bands. `UNLOCK_ART` names those two fractions
+beside `SC_SLOTS_FULL`'s, so the row layout and the debrief cannot disagree about where the art is.
 
-Both panels are drawn in the PLATE'S OWN socket colours rather than invented ones - measured off
-`stat_panel_full.png` at a stat bay AND at the rank bay, identical on the two: a bronze rail at
-**rgb(112,88,72)** around a **rgb(22,22,32)** well, with the plate's own lighter bevel line inside
-the rail, which is what stops a drawn panel reading as a hole punched in the art.
+⚠ **THE STRIP IS 3-SLICED AND THE BOX IS NOT.** The strip's source is 6.5:1 and a row's rectangle is
+nearer 8:1, so a straight stretch pulls its rounded end caps into ovals — the caps are blitted at
+their own scale and only the middle stretches. The box is drawn at its **source aspect (1.24)**
+rather than forced square: distorting a bevel is what this repo's art rules exist to prevent, and a
+box at the row's full height is large either way.
+
+⚠ **THE ICON IS STRETCHED TO FILL THE BOX, AND `iconBlit` CANNOT DO THAT ON ITS OWN.** It takes a
+HEIGHT and derives the width from the art's aspect, and with three art stores behind it that aspect
+is not knowable from the call site. It is **measured**: one draw at alpha 0 off-screen returns the
+width the icon *would* take at this height, and the real draw runs under a horizontal scale that
+turns that into the box's width.
+
+⚠ **EVERY SOCKET IS OPAQUE, FILLED OR NOT — and this took two goes.** The plate's thin stat bays are
+BAKED underneath these rows. At 0.55 alpha, and again at 0.62, an unused socket showed two columns
+of old rails straight through itself: worse than either layout alone. An empty slot is the same
+panel with nothing in it. The gaps between rows are small for the same reason.
+
+### What each pass got wrong, since all three were found by rendering
+
+1. **Borrowed the debrief's stat bays.** A stat bay is 0.0526 of the plate — a thin strip — so a
+   square at its height is the height of a text row, and the "box" read as an icon with a border.
+2. **Drew its own panels.** Flat fill and a stroked rail: it read as a hole punched in the art next
+   to the authored bays it sat between.
+3. **Dimmed the empty sockets.** Twice, at two different alphas, with the baked bays showing through
+   both times.
 
 The rows cover the score bay, so **LOOK FOR THEM IN THE FIELD moved to the sign-off strip and the
-CONTINUE prompt to the footer** - 0814b's lesson that two strings at one y read as garbage, not as
-two lines.
+CONTINUE prompt to the footer** — 0814b's lesson that two strings at one y read as garbage rather
+than as two lines.
 
-Proofs: `docs/proofs/unlocks_0916/03_four_rows.png` (four rows, the case that had to be looked at)
-and `02_stage9_lasermist.png` (one weapon in four sockets).
+Proofs: `docs/proofs/unlocks_0916/03_four_rows.png` (four rows) and `02_stage9_lasermist.png` (one
+weapon in four sockets).

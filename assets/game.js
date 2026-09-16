@@ -68983,6 +68983,28 @@ const UNLOCK_MAX=4;
    gap 0.13 there were bronze nubs between every row and a sliver of bay between each box and its
    rectangle. Rendered, not reasoned about. */
 const UNLOCK_ROWS={ x:0.0818, y:0.3609, w:0.8364, h:0.3948, gap:0.055 };
+/* ⚠ THE ROW IS THE PLATE'S OWN BOX AND STRIP, BLITTED FOUR TIMES (Mike, 0916, with a crop of
+   them: "I meant 4 of these like this"). Not drawn, not approximated - the RANK bay and its word
+   strip are cut straight out of statpanel_full_0916 and repeated, so the rounded corners, the
+   bronze rail, the grey bezel and the panel's own shading are the art's and cannot drift from it.
+   Same idea as 0912e building the boss tab from the bar's own bands.
+   These are the fractions SC_SLOTS_FULL already carries for `rank` and `rankword`; they are named
+   here so the row layout and the debrief cannot disagree about where the art is. */
+const UNLOCK_ART={ box:[0.5220,0.6466,0.1111,0.1579], strip:[0.6667,0.6880,0.2453,0.0677] };
+/* ⚠ THE STRIP IS 3-SLICED, THE BOX IS NOT. The strip's source is 6.5:1 and a row's rectangle is
+   nearer 8:1, so a straight stretch would pull its rounded end caps into ovals; the caps are blitted
+   at their own scale and only the middle is stretched. The box is drawn at its SOURCE aspect (1.24)
+   rather than forced square, because distorting a bevel is exactly what this repo's art rules are
+   there to prevent - and a box at the row's full height is large either way. */
+function unlockPanel(img, src, dx, dy, dw, dh, slice){
+  const NW=img.naturalWidth||img.width, NH=img.naturalHeight||img.height;
+  const sx=src[0]*NW, sy=src[1]*NH, sw=src[2]*NW, sh=src[3]*NH;
+  if(!slice){ ctx.drawImage(img, sx,sy,sw,sh, dx,dy,dw,dh); return; }
+  const cap=Math.max(2, Math.round(sw*0.14)), dcap=Math.min(dw*0.35, cap*(dh/sh));
+  ctx.drawImage(img, sx,        sy, cap,        sh, dx,          dy, dcap,          dh);
+  ctx.drawImage(img, sx+cap,    sy, sw-cap*2,   sh, dx+dcap,     dy, dw-dcap*2,     dh);
+  ctx.drawImage(img, sx+sw-cap, sy, cap,        sh, dx+dw-dcap,  dy, dcap,          dh);
+}
 function unlockRowsFor(stage, pk){
   const T=SC_UNLOCKS[stage|0]; if(!T) return [];
   const rows=(pk && T[pk]) ? T[pk] : (T.all||[]);
@@ -69044,33 +69066,51 @@ function drawUnlocks(dt){
        is the layout, and an announcement of one weapon into one lit box of four reads better than
        one box floating in the middle of a plate. */
     const R0=UNLOCK_ROWS, RX=P[0]+P[2]*R0.x, RY=P[1]+P[3]*R0.y, RW=P[2]*R0.w, RH=P[3]*R0.h;
-    const pitch=RH/UNLOCK_MAX, rh=pitch*(1-R0.gap), box=rh, gapx=RW*0.010;
+    const pitch=RH/UNLOCK_MAX, rh=pitch*(1-R0.gap), gapx=RW*0.012;
+    const pl=(typeof XART!=='undefined' && XART.rdy('statpanel_full_0916')) ? XART.get('statpanel_full_0916') : null;
+    const pNW=pl?(pl.naturalWidth||pl.width):1, pNH=pl?(pl.naturalHeight||pl.height):1;
+    /* the box keeps the authored piece's own aspect, so its bevel is never distorted */
+    const boxAsp=(UNLOCK_ART.box[2]*pNW)/(UNLOCK_ART.box[3]*pNH);
+    const box=pl?rh*boxAsp:rh;
     for(let i=0;i<UNLOCK_MAX;i++){
       const r=U.rows[i]||null, ry=RY+pitch*i, a=r?A(0.55+i*0.45):A(0.30);
       if(a<=0) continue;
       const rx2=RX+box+gapx, rw2=RW-box-gapx;
-      /* ⚠ THE FILL IS OPAQUE EVEN ON AN EMPTY SLOT. Drawing the whole panel at 0.55 let the
-         plate's baked thin bays show straight THROUGH the three empty sockets - two columns of
-         old rails inside every new one, which is worse than either layout alone. The well is
-         solid and only the RAIL dims, so an unused slot reads as an unlit socket. */
-      ctx.save(); ctx.globalAlpha=a;
-      const lw2=Math.max(1,rh*0.055);
-      ctx.fillStyle='#16161f';
-      ctx.fillRect(RX,ry,box,rh); ctx.fillRect(rx2,ry,rw2,rh);
-      ctx.globalAlpha=a*(r?1:0.45);
-      ctx.strokeStyle='#705848'; ctx.lineWidth=lw2;
-      ctx.strokeRect(RX+lw2/2,ry+lw2/2,box-lw2,rh-lw2);
-      ctx.strokeRect(rx2+lw2/2,ry+lw2/2,rw2-lw2,rh-lw2);
-      /* the plate's own top bevel: one lighter line inside the rail, which is what stops a drawn
-         panel reading as a flat hole punched in the art */
-      ctx.strokeStyle='rgba(150,158,168,0.55)'; ctx.lineWidth=Math.max(1,lw2*0.5);
-      ctx.beginPath(); ctx.moveTo(RX+lw2,ry+lw2); ctx.lineTo(RX+box-lw2,ry+lw2);
-      ctx.moveTo(rx2+lw2,ry+lw2); ctx.lineTo(rx2+rw2-lw2,ry+lw2); ctx.stroke();
+      ctx.save();
+      /* ⚠ OPAQUE EVEN ON AN EMPTY SLOT. The plate's thin stat bays are BAKED under these rows, so
+         a socket drawn at part alpha shows two columns of old rails through itself - worse than
+         either layout alone. An unused slot is the same panel, only dimmer. */
+      /* and at FULL alpha, filled or not: at 0.62 the baked bays read straight through an unused
+         socket as a second set of rails. An empty slot is the same panel with nothing in it. */
+      ctx.globalAlpha=a;
+      ctx.imageSmoothingEnabled=true;
+      if(pl){
+        unlockPanel(pl, UNLOCK_ART.box,   RX,  ry, box, rh, false);
+        unlockPanel(pl, UNLOCK_ART.strip, rx2, ry, rw2, rh, true);
+      }else{
+        /* the plate has not decoded yet - a flat socket, so the page is never blank */
+        const lw2=Math.max(1,rh*0.055);
+        ctx.fillStyle='#16161f'; ctx.fillRect(RX,ry,box,rh); ctx.fillRect(rx2,ry,rw2,rh);
+        ctx.strokeStyle='#705848'; ctx.lineWidth=lw2;
+        ctx.strokeRect(RX+lw2/2,ry+lw2/2,box-lw2,rh-lw2);
+        ctx.strokeRect(rx2+lw2/2,ry+lw2/2,rw2-lw2,rh-lw2);
+      }
       ctx.restore();
       if(!r) continue;
-      if(typeof iconBlit==='function'){ ctx.save(); ctx.globalAlpha=a; iconBlit(ctx,r[1],RX+box/2,ry+rh/2,box*0.78,true); ctx.restore(); }
+      /* ⚠ THE ICON FILLS THE BOX (Mike: "stretch to fill icons inside the box"). iconBlit takes a
+         HEIGHT and derives its width from the art's aspect, so it cannot stretch on its own - and
+         the three art stores make the aspect unknowable from here. It is measured instead: one
+         draw at alpha 0 returns the width it WOULD take at this height, and the real draw runs
+         under a horizontal scale that turns that into the box's width. */
+      if(typeof iconBlit==='function'){
+        const ih=rh*0.86, cxp=RX+box/2, cyp=ry+rh/2;
+        ctx.save(); ctx.globalAlpha=0; const w0=iconBlit(ctx,r[1],-9999,-9999,ih,true)||0; ctx.restore();
+        const want=box*0.86, sxk=(w0>0.5)?(want/w0):1;
+        ctx.save(); ctx.globalAlpha=a; ctx.translate(cxp,cyp); ctx.scale(sxk,1);
+        iconBlit(ctx,r[1],0,0,ih,true); ctx.restore();
+      }
       const full=r[0], shown=full.slice(0, Math.max(0,Math.round((t-(0.55+i*0.45))*22)));
-      const pad=rw2*0.05, room=rw2-pad*2;
+      const pad=rw2*0.055, room=rw2-pad*2;
       const lH=(typeof stageFitH==='function')?stageFitH(art,full,room,rh*0.52,9,0.06):rh*0.45;
       const lw=(typeof stageWidth==='function')?stageWidth(art,full,lH,0.06):0;
       stageText(art,shown,rx2+pad+lw/2,ry+rh/2,lH,'#8de23a',0.85,a,0.06);

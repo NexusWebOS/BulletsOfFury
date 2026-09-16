@@ -81,11 +81,11 @@
   },
   {
    "pass": true,
-   "label": "the page asked iconBlit for micon_lasermist_3 (18 frames)"
+   "label": "the page asked iconBlit for micon_lasermist_3 (36 frames)"
   },
   {
    "pass": true,
-   "label": "and it blitted from the laser mist atlas, not the icon sheet (18 of 18)"
+   "label": "and it blitted from the laser mist atlas, not the icon sheet (36 of 36)"
   },
   {
    "pass": true,
@@ -101,7 +101,7 @@
   },
   {
    "pass": true,
-   "label": "the lightning orb icon blits (17 frames)"
+   "label": "the lightning orb icon blits (34 frames)"
   },
   {
    "pass": true,
@@ -151,11 +151,15 @@
  ],
  "not_changed": "the briefing line wraps to three rows and its third row is clipped by the brief bay on every stage that has a page; pre-existing, flagged for Mike.",
  "layout": {
-  "request": "Mike, 0916: \"you can list 4 at once, but use square boxes plus rectangle text next to them\" then \"should be 4 large boxes for th weapon icons, 4 rectangle boxes next to the large boxes. re-do\"",
-  "first_cut": "borrowed the debrief stat bays (0.0526 of the plate each), so the square came out the height of a text row - sent back",
-  "now": "UNLOCK_ROWS owns the middle of the plate (0.3948 of its height) and divides it into four rows: a square icon box at the row height plus a rectangle beside it. UNLOCK_MAX=4 is the cap and the row count.",
-  "opacity": "the panels are opaque, including the empty sockets - at 0.55 alpha the plate\u2019s baked thin bays showed through every unused box; only the rail dims now",
-  "colours": "measured off stat_panel_full.png at a stat bay and the rank bay: bronze rail rgb(112,88,72), well rgb(22,22,32), plate bevel inside the rail",
-  "moved": "LOOK FOR THEM IN THE FIELD to the sign-off strip, CONTINUE to the footer, because the rows now cover the score bay"
+  "request": "Mike, 0916, over three passes: \"you can list 4 at once, but use square boxes plus rectangle text next to them\" / \"should be 4 large boxes for th weapon icons, 4 rectangle boxes next to the large boxes. re-do\" / with a crop of the plate\u2019s rank box and word strip: \"I meant 4 of these like this. and stretch to fill icons inside the box\"",
+  "now": "the row is the PLATE'S OWN box and strip, blitted four times - the RANK bay (0.5220,0.6466,0.1111,0.1579) and its word strip (0.6667,0.6880,0.2453,0.0677) cut out of statpanel_full_0916 and repeated, named in UNLOCK_ART so the rows and the debrief cannot disagree about where the art is",
+  "slicing": "the strip is 3-sliced (6.5:1 source into a ~8:1 row would pull its rounded caps into ovals); the box keeps its source aspect 1.24 rather than being forced square",
+  "icon": "stretched to fill the box. iconBlit takes a HEIGHT and derives width from the art's aspect, and three art stores make that unknowable at the call site - so one draw at alpha 0 off-screen returns the width it would take and the real draw runs under a horizontal scale",
+  "opacity": "every socket is opaque, filled or not - missed twice (0.55, then 0.62), and both times the plate's baked thin bays read through the empty sockets as a second set of rails",
+  "cuts_rejected": [
+   "borrowed the debrief stat bays (0.0526 of the plate) so the box was a text row tall",
+   "drew its own flat panels, which read as holes punched in the art beside the authored bays"
+  ],
+  "moved": "LOOK FOR THEM IN THE FIELD to the sign-off strip, CONTINUE to the footer, because the rows cover the score bay"
  }
 }

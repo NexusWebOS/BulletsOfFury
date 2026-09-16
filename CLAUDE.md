@@ -4570,15 +4570,21 @@ out of the canvas with `getImageData`; a source assertion that the code passes a
 a build that drew the word somewhere else. 25/0, 0 errors. Suite 4,598 ok / 56 fail, no new names.
 `docs/BOSS_GAUGES_0916.md`, section 363.
 
-**Also 0916 - the unlock page's layout, and a first cut he sent back.** Mike: *"you can list 4 at once,
-but use square boxes plus rectangle text next to them"*, then *"should be 4 LARGE boxes for th weapon
-icons, 4 rectangle boxes next to the large boxes. re-do"*.
-⚠ **THE FIRST CUT BORROWED THE DEBRIEF'S STAT BAYS AND A STAT BAY IS A THIN STRIP** - 0.0526 of the
-plate - so a square at its height is the height of a TEXT ROW and read as an icon with a border. Four
-large boxes need vertical room the eight thin bays do not have. `UNLOCK_ROWS` owns the middle of the
-plate (the stat block plus the score/rank strip, neither of which this page uses) and divides it into
-four rows of square box + rectangle; `UNLOCK_MAX=4` is the cap AND the row count.
-⚠ **AND THE PANELS MUST BE OPAQUE, THE EMPTY ONES INCLUDED.** The plate's bays are BAKED underneath, so
-an unused socket drawn at 0.55 alpha showed two columns of old rails through every empty box - worse
-than either layout alone. The well is solid; only the rail dims. Colours are the PLATE'S OWN, measured
-at both a stat bay and the rank bay: bronze rail rgb(112,88,72), well rgb(22,22,32), identical on the two.
+**Also 0916 - the unlock page's rows, and THREE cuts before it was right.** Mike: *"you can list 4
+at once, but use square boxes plus rectangle text next to them"*, then *"should be 4 LARGE boxes ...
+re-do"*, then, with a crop of the plate's own rank box and word strip, *"I meant 4 of these like this.
+and stretch to fill icons inside the box"*.
+⚠ **THE ANSWER WAS THE PLATE'S OWN ART, BLITTED FOUR TIMES** - the RANK bay and its word strip cut
+out of `statpanel_full_0916` and repeated, so corners, rail, bezel and shading are the art's. Cut 1
+borrowed the debrief's STAT BAYS, which are 0.0526 of the plate - a square at that height is the
+height of a TEXT ROW, so the box read as an icon with a border. Cut 2 drew its own flat panels, which
+read as holes punched in the art beside the authored bays around them.
+⚠ **THE STRIP IS 3-SLICED, THE BOX IS NOT.** 6.5:1 stretched into 8:1 pulls the rounded caps into
+ovals; the caps blit at their own scale and only the middle stretches. The box keeps its SOURCE aspect
+(1.24) rather than being forced square - distorting a bevel is what the art rules exist to prevent.
+⚠ **`iconBlit` CANNOT STRETCH, SO THE WIDTH IS MEASURED.** It takes a HEIGHT and derives width from
+the art's aspect, and three art stores make that unknowable at the call site: one draw at alpha 0
+off-screen returns the width it WOULD take, and the real draw runs under a horizontal scale.
+⚠ **AND EVERY SOCKET MUST BE OPAQUE, FILLED OR NOT - MISSED TWICE, AT 0.55 AND AT 0.62.** The plate's
+thin bays are BAKED under these rows, so a dimmed empty socket shows two columns of old rails through
+itself. All three faults were found by RENDERING the page; none of them moved a number.

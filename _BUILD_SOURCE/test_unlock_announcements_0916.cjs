@@ -53,7 +53,26 @@ module.exports=function testUnlockAnnouncements(vm,ctxv,ok){
   const du=vm.runInContext('drawUnlocks.toString()',ctxv).replace(/\/\*[\s\S]*?\*\//g,'').replace(/\/\/.*/g,'');
   ok(/UNLOCK_ROWS/.test(du), 'the draw reads that region');
   ok(/i<UNLOCK_MAX/.test(du), 'and draws all four sockets, filled or not');
-  ok(/box\s*=\s*rh/.test(du.replace(/\s+/g,' ')) || /box=rh/.test(du.replace(/\s+/g,'')),
-     'the icon box is SQUARE at the row height - a large box, not a bay-tall one');
   ok(!/slots\[i\*2\]/.test(du), 'it no longer borrows the thin stat bays');
+
+  /* ⚠ THIS PIN USED TO REQUIRE `box=rh`, A SQUARE. Mike overruled it in the same breath as
+     asking for the plate's own art: "I meant 4 of these like this" - and the piece he cropped is
+     1.24:1. Forcing it square would distort an authored bevel, which is what the art rules exist
+     to prevent, so the pin now defends the ART's aspect rather than the shape the last cut had.
+     (CLAUDE.md: when an assertion fails after a deliberate change, read it before fixing code.) */
+  ok(vm.runInContext('typeof UNLOCK_ART==="object"&&UNLOCK_ART.box.length===4&&UNLOCK_ART.strip.length===4',ctxv),
+     'the row is built from the plate\'s own box and strip rects');
+  const slots=vm.runInContext('JSON.stringify([SC_SLOTS_FULL.rank,SC_SLOTS_FULL.rankword])',ctxv);
+  ok(slots===vm.runInContext('JSON.stringify([UNLOCK_ART.box,UNLOCK_ART.strip])',ctxv),
+     'and they are the RANK bay and its word strip, so the rows and the debrief cannot disagree');
+  ok(/unlockPanel\(pl/.test(du), 'the panels are BLITTED from the plate, not drawn');
+  ok(/boxAsp/.test(du) && /rh\*boxAsp/.test(du.replace(/\s+/g,'')),
+     'the box is the row height at the authored aspect - large, and never a distorted bevel');
+  const up=vm.runInContext('unlockPanel.toString()',ctxv);
+  ok(/slice/.test(up) && (up.match(/drawImage/g)||[]).length>=4,
+     'the strip is 3-sliced so its rounded caps are not stretched into ovals');
+  ok(/globalAlpha=0/.test(du.replace(/\s+/g,'')) && /scale\(sxk,1\)/.test(du.replace(/\s+/g,'')),
+     'the icon is STRETCHED to fill the box, its width measured by a draw at alpha 0');
+  ok(!/a\*\(r\?1:0\./.test(du.replace(/\s+/g,'')),
+     'and every socket is opaque - a dimmed one shows the baked bays through itself');
 };
