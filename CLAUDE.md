@@ -4330,3 +4330,6 @@ ENG-02 advances: RAVENOUS ASCENDANT commits five needle trajectories through a 0
 
 ## 2026-09-16 Stage-8 ABYSSAL LEVIATHAN solar-wheel warning
 ENG-02 advances: ABYSSAL LEVIATHAN commits the original nine solar-wheel angles before a 0.62-second shared green/yellow/red warning. The 0.19-radian rotation step, equal spoke spacing, authored solar rounds, speed 2.45, center hardpoint, muzzle and 0.95-second total cadence remain intact. Focused section 346 passes 8/8, Chromium passes 16/16 with zero errors, and the full suite reaches 4,402 passes with the established 56 failures plus the intermittent Stage-1 sand-tank fixture. ENG-02 remains partial. See docs/STAGE8_VILE_SOLAR_WHEEL_WARNING_0916.md.
+
+## 2026-09-16 Stage-8 FURIOUS DEATH straight-missile warning
+ENG-02 advances: FURIOUS DEATH commits the original four vertical missile columns before a 0.58-second shared green/yellow/red warning. The missile budget, hull offsets, armored-gunship muzzles and 0.78-second cadence remain intact. Missiles remain shootable and straight with no Retina or homing state, preserving the post-Stage-1 rule. Focused section 347 passes 9/9, Chromium passes 16/16 with zero errors, and the full suite reaches 4,412 passes with the exact established 56-name failure baseline. ENG-02 remains partial. See docs/STAGE8_VILE_MISSILE_SALVO_WARNING_0916.md.

@@ -1,0 +1,467 @@
+{
+  "checks": [
+    {
+      "pass": true,
+      "label": "native Stage-8 boss route opens in Chromium"
+    },
+    {
+      "pass": true,
+      "label": "the live final form commits its four straight missile lanes"
+    },
+    {
+      "pass": true,
+      "label": "authored final form, missile, muzzle and warning art decode before capture"
+    },
+    {
+      "pass": true,
+      "label": "green previews all four committed missile lanes"
+    },
+    {
+      "pass": true,
+      "label": "green uses shared field and alert art"
+    },
+    {
+      "pass": true,
+      "label": "yellow ignores late player movement"
+    },
+    {
+      "pass": true,
+      "label": "yellow uses shared field and alert art"
+    },
+    {
+      "pass": true,
+      "label": "red preserves all four promised lanes"
+    },
+    {
+      "pass": true,
+      "label": "red uses shared field and alert art"
+    },
+    {
+      "pass": true,
+      "label": "four authored missiles release only after the full warning"
+    },
+    {
+      "pass": true,
+      "label": "all four missiles remain straight and Retina-free after Stage 1"
+    },
+    {
+      "pass": true,
+      "label": "vile_missile_01_green is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "vile_missile_02_yellow is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "vile_missile_03_red is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "vile_missile_04_release is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "zero Chromium page, console or game-loop errors"
+    }
+  ],
+  "errors": [],
+  "fight": {
+    "ok": true,
+    "name": "BLACK COCOON",
+    "kind": "vileexistence",
+    "pilot": "yuri",
+    "state": "play"
+  },
+  "setup": {
+    "name": "FURIOUS DEATH",
+    "offsets": [
+      -0.3,
+      -0.1,
+      0.1,
+      0.3
+    ],
+    "paths": [
+      {
+        "x": 161.664,
+        "y": 213.11360000000002,
+        "a": 1.5707963267948966,
+        "fx": -0.3
+      },
+      {
+        "x": 213.888,
+        "y": 213.11360000000002,
+        "a": 1.5707963267948966,
+        "fx": -0.1
+      },
+      {
+        "x": 266.112,
+        "y": 213.11360000000002,
+        "a": 1.5707963267948966,
+        "fx": 0.1
+      },
+      {
+        "x": 318.336,
+        "y": 213.11360000000002,
+        "a": 1.5707963267948966,
+        "fx": 0.3
+      }
+    ],
+    "tell": 0.58,
+    "cooldown": 0.78
+  },
+  "green": {
+    "name": "FURIOUS DEATH",
+    "offsets": [
+      -0.3,
+      -0.1,
+      0.1,
+      0.3
+    ],
+    "paths": [
+      {
+        "x": 161.664,
+        "y": 213.11360000000002,
+        "a": 1.5707963267948966,
+        "fx": -0.3
+      },
+      {
+        "x": 213.888,
+        "y": 213.11360000000002,
+        "a": 1.5707963267948966,
+        "fx": -0.1
+      },
+      {
+        "x": 266.112,
+        "y": 213.11360000000002,
+        "a": 1.5707963267948966,
+        "fx": 0.1
+      },
+      {
+        "x": 318.336,
+        "y": 213.11360000000002,
+        "a": 1.5707963267948966,
+        "fx": 0.3
+      }
+    ],
+    "released": false,
+    "warn": {
+      "t": 0.1,
+      "warm": 0.58,
+      "released": false
+    },
+    "shots": [],
+    "locks": 0,
+    "gets": [
+      "nst8_sky_crimson",
+      "nl6c_rain_cloud_2",
+      "nl6c_heavy_rain_cloud_0",
+      "nl6c_rain_cloud_3",
+      "nl6c_rain_cloud_4",
+      "nl6c_heavy_rain_cloud_3",
+      "nl6c_heavy_rain_cloud_4",
+      "nl6c_heavy_rain_cloud_2",
+      "nl8c_lg_4",
+      "nl8c_lg_5",
+      "nl8c_lg_3",
+      "nl8c_rim_3",
+      "nl8c_rim_0",
+      "nl8c_prop_10",
+      "nl8c_prop_7",
+      "nl8c_prop_0",
+      "nl8c_prop_1",
+      "nl8c_prop_4",
+      "s8rift_11",
+      "s8rift_15",
+      "s8rift_3",
+      "bmfx_fov_green_tall",
+      "s8symboss_form_3",
+      "bmfx_alert_green_danger",
+      "fx_ground_strikes_0916",
+      "alert_up",
+      "nequipbox",
+      "bof_player_weapon_special_icons_atlas",
+      "bmbar_fill_seg",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss"
+    ]
+  },
+  "yellow": {
+    "name": "FURIOUS DEATH",
+    "offsets": [
+      -0.3,
+      -0.1,
+      0.1,
+      0.3
+    ],
+    "paths": [
+      {
+        "x": 161.664,
+        "y": 213.11360000000002,
+        "a": 1.5707963267948966,
+        "fx": -0.3
+      },
+      {
+        "x": 213.888,
+        "y": 213.11360000000002,
+        "a": 1.5707963267948966,
+        "fx": -0.1
+      },
+      {
+        "x": 266.112,
+        "y": 213.11360000000002,
+        "a": 1.5707963267948966,
+        "fx": 0.1
+      },
+      {
+        "x": 318.336,
+        "y": 213.11360000000002,
+        "a": 1.5707963267948966,
+        "fx": 0.3
+      }
+    ],
+    "released": false,
+    "warn": {
+      "t": 0.38,
+      "warm": 0.58,
+      "released": false
+    },
+    "shots": [],
+    "locks": 0,
+    "gets": [
+      "nst8_sky_crimson",
+      "nl6c_rain_cloud_2",
+      "nl6c_heavy_rain_cloud_0",
+      "nl6c_rain_cloud_3",
+      "nl6c_rain_cloud_4",
+      "nl6c_heavy_rain_cloud_3",
+      "nl6c_heavy_rain_cloud_4",
+      "nl6c_heavy_rain_cloud_2",
+      "nl8c_lg_4",
+      "nl8c_lg_5",
+      "nl8c_lg_3",
+      "nl8c_rim_3",
+      "nl8c_rim_0",
+      "nl8c_prop_10",
+      "nl8c_prop_7",
+      "nl8c_prop_0",
+      "nl8c_prop_1",
+      "nl8c_prop_4",
+      "s8rift_11",
+      "s8rift_15",
+      "s8rift_3",
+      "bmfx_fov_yellow_tall",
+      "s8symboss_form_3",
+      "bmfx_alert_yellow_danger",
+      "fx_ground_strikes_0916",
+      "alert_up",
+      "nequipbox",
+      "bof_player_weapon_special_icons_atlas",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss"
+    ]
+  },
+  "red": {
+    "name": "FURIOUS DEATH",
+    "offsets": [
+      -0.3,
+      -0.1,
+      0.1,
+      0.3
+    ],
+    "paths": [
+      {
+        "x": 161.664,
+        "y": 213.11360000000002,
+        "a": 1.5707963267948966,
+        "fx": -0.3
+      },
+      {
+        "x": 213.888,
+        "y": 213.11360000000002,
+        "a": 1.5707963267948966,
+        "fx": -0.1
+      },
+      {
+        "x": 266.112,
+        "y": 213.11360000000002,
+        "a": 1.5707963267948966,
+        "fx": 0.1
+      },
+      {
+        "x": 318.336,
+        "y": 213.11360000000002,
+        "a": 1.5707963267948966,
+        "fx": 0.3
+      }
+    ],
+    "released": false,
+    "warn": {
+      "t": 0.53,
+      "warm": 0.58,
+      "released": false
+    },
+    "shots": [],
+    "locks": 0,
+    "gets": [
+      "nst8_sky_crimson",
+      "nl6c_rain_cloud_2",
+      "nl6c_heavy_rain_cloud_0",
+      "nl6c_rain_cloud_3",
+      "nl6c_rain_cloud_4",
+      "nl6c_heavy_rain_cloud_3",
+      "nl6c_heavy_rain_cloud_4",
+      "nl6c_heavy_rain_cloud_2",
+      "nl8c_lg_4",
+      "nl8c_lg_5",
+      "nl8c_lg_3",
+      "nl8c_rim_3",
+      "nl8c_rim_0",
+      "nl8c_prop_10",
+      "nl8c_prop_7",
+      "nl8c_prop_0",
+      "nl8c_prop_1",
+      "nl8c_prop_4",
+      "s8rift_11",
+      "s8rift_15",
+      "s8rift_3",
+      "bmfx_fov_red_tall",
+      "s8symboss_form_3",
+      "bmfx_alert_red_danger",
+      "fx_ground_strikes_0916",
+      "alert_up",
+      "nequipbox",
+      "bof_player_weapon_special_icons_atlas",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss"
+    ]
+  },
+  "release": {
+    "name": "FURIOUS DEATH",
+    "offsets": [
+      -0.3,
+      -0.1,
+      0.1,
+      0.3
+    ],
+    "paths": [
+      {
+        "x": 161.664,
+        "y": 213.11360000000002,
+        "a": 1.5707963267948966,
+        "fx": -0.3
+      },
+      {
+        "x": 213.888,
+        "y": 213.11360000000002,
+        "a": 1.5707963267948966,
+        "fx": -0.1
+      },
+      {
+        "x": 266.112,
+        "y": 213.11360000000002,
+        "a": 1.5707963267948966,
+        "fx": 0.1
+      },
+      {
+        "x": 318.336,
+        "y": 213.11360000000002,
+        "a": 1.5707963267948966,
+        "fx": 0.3
+      }
+    ],
+    "released": true,
+    "warn": {
+      "t": 0.58,
+      "warm": 0.58,
+      "released": true
+    },
+    "shots": [
+      {
+        "kind": "emissile",
+        "x": 161.664,
+        "y": 213.11360000000002,
+        "vx": 0,
+        "vy": 2.3,
+        "homing": false,
+        "lock": false
+      },
+      {
+        "kind": "emissile",
+        "x": 213.888,
+        "y": 213.11360000000002,
+        "vx": 0,
+        "vy": 2.3,
+        "homing": false,
+        "lock": false
+      },
+      {
+        "kind": "emissile",
+        "x": 266.112,
+        "y": 213.11360000000002,
+        "vx": 0,
+        "vy": 2.3,
+        "homing": false,
+        "lock": false
+      },
+      {
+        "kind": "emissile",
+        "x": 318.336,
+        "y": 213.11360000000002,
+        "vx": 0,
+        "vy": 2.3,
+        "homing": false,
+        "lock": false
+      }
+    ],
+    "locks": 0,
+    "gets": [
+      "nst8_sky_crimson",
+      "nl6c_rain_cloud_2",
+      "nl6c_heavy_rain_cloud_0",
+      "nl6c_rain_cloud_3",
+      "nl6c_rain_cloud_4",
+      "nl6c_heavy_rain_cloud_3",
+      "nl6c_heavy_rain_cloud_4",
+      "nl6c_heavy_rain_cloud_2",
+      "nl8c_lg_4",
+      "nl8c_lg_5",
+      "nl8c_lg_3",
+      "nl8c_rim_3",
+      "nl8c_rim_0",
+      "nl8c_prop_10",
+      "nl8c_prop_7",
+      "nl8c_prop_0",
+      "nl8c_prop_1",
+      "nl8c_prop_4",
+      "s8rift_11",
+      "s8rift_15",
+      "s8rift_3",
+      "s8nf_armored_gunship_muzzle_0",
+      "s8symboss_form_3",
+      "fx_ground_strikes_0916",
+      "waf_rocket_0",
+      "alert_up",
+      "nequipbox",
+      "bof_player_weapon_special_icons_atlas",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss"
+    ]
+  },
+  "shots": [
+    "_shots\\stage8_vile_missile_salvo_warning_0916\\vile_missile_01_green.png",
+    "_shots\\stage8_vile_missile_salvo_warning_0916\\vile_missile_02_yellow.png",
+    "_shots\\stage8_vile_missile_salvo_warning_0916\\vile_missile_03_red.png",
+    "_shots\\stage8_vile_missile_salvo_warning_0916\\vile_missile_04_release.png"
+  ],
+  "verification": {
+    "focused": "section 347: 9/9",
+    "fullSuite": {
+      "passing": 4412,
+      "failures": 56,
+      "failureNames": "exact established 56-name baseline; no new names"
+    },
+    "chromium": "16/16",
+    "pixelReview": "four native 960x1024 frames inspected"
+  }
+}

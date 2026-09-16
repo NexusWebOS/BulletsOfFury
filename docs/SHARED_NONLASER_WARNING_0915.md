@@ -85,3 +85,7 @@ RAVENOUS ASCENDANT now commits its five needle paths before a 0.62-second shared
 ## Stage 8 ABYSSAL LEVIATHAN solar-wheel follow-up
 
 The third Vile form now commits all nine original solar-wheel angles before a 0.62-second shared warning. It retains the original 0.19-radian rotation step, equal spoke spacing, center hardpoint, authored solar rounds, speed 2.45, muzzle and 0.95-second total cadence. Chromium passes 16/16 and focused section 346 passes 8/8. See [STAGE8_VILE_SOLAR_WHEEL_WARNING_0916.md](STAGE8_VILE_SOLAR_WHEEL_WARNING_0916.md).
+
+## Stage 8 FURIOUS DEATH straight-missile follow-up
+
+The final Vile form now commits all four original vertical missile lanes before a 0.58-second shared warning. Its missile budget, four hull offsets, armored-gunship muzzles and 0.78-second total cadence remain intact. The missiles remain shootable and straight, with no Retina or homing grant after Stage 1. Chromium passes 16/16 and focused section 347 passes 9/9. See [STAGE8_VILE_MISSILE_SALVO_WARNING_0916.md](STAGE8_VILE_MISSILE_SALVO_WARNING_0916.md).

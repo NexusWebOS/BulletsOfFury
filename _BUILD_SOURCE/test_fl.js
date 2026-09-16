@@ -15680,6 +15680,7 @@ require('./test_stage7_dredger_mine_warning_0916.cjs')(vm,ctxv,ok);
 require('./test_stage8_vile_crescent_wall_warning_0916.cjs')(vm,ctxv,ok);
 require('./test_stage8_vile_aimed_fan_warning_0916.cjs')(vm,ctxv,ok);
 require('./test_stage8_vile_solar_wheel_warning_0916.cjs')(vm,ctxv,ok);
+require('./test_stage8_vile_missile_salvo_warning_0916.cjs')(vm,ctxv,ok);
 
 console.log('\n============================================');
 if (errors.length) { console.log('FAILED — ' + errors.length + ' error(s):'); errors.forEach(e => console.log('  ' + e)); process.exit(1); }
