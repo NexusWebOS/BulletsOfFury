@@ -568,3 +568,8 @@ Chrome Hammer now has its one-hand vertical boomerang, Hard/Furious difficulty a
 - The current Chrome Hammer Archmage again shows the committed green/yellow/red lane and floor reticle during its authored one-hand twirl. The alert no longer overlaps the CHAINGUN module label.
 - The detached authored hammer descends vertically, turns below the screen, returns at the capped medium magnetic speed and catches in the raised hand. One solid weapon plus three faint motion echoes replaces the accidental row of opaque hammer clones.
 - Focused 12/12 mechanics and 6/6 active-render checks; Chromium 19/19 with zero errors; full suite 4,364 passes with the established 56 failures plus the intermittent Stage-1 sand-tank fixture. Evidence: docs/ARCHMAGE_BOOMERANG_VISUAL_0916.md. Tally remains 128 complete / 7 partial / 16 pending.
+
+## Codex update — 2026-09-16: Stage-7 DUAL SCOOP DREDGER minefield warning
+
+- ENG-02 advances: the live Stage-7 miniboss now commits one of six columns as safe, previews the five dangerous mine trajectories through a 0.86-second shared green/yellow/red warning, and releases the original five slow mines only after red. The old attack required a nonexistent third Dredger phase; it now runs every fourth attack in the real damaged phase.
+- The opening cannot chase late player movement. Fields remain below the authored hull and the matching alert remains above it. Focused 10/10, Chromium 16/16 with zero errors, and full suite 4,375 passes with the exact established 56-name failure baseline. Evidence: docs/STAGE7_DREDGER_MINE_WARNING_0916.md. Tally remains 128 complete / 7 partial / 16 pending.

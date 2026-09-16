@@ -1,0 +1,378 @@
+{
+  "checks": [
+    {
+      "pass": true,
+      "label": "native Stage-7 miniboss route opens in Chromium"
+    },
+    {
+      "pass": true,
+      "label": "live Dredger commits one of six lanes for a 0.86-second warning"
+    },
+    {
+      "pass": true,
+      "label": "authored Dredger and green/yellow/red warning art decode before capture"
+    },
+    {
+      "pass": true,
+      "label": "green previews five dangerous paths and one safe lane"
+    },
+    {
+      "pass": true,
+      "label": "green uses shared field and alert art"
+    },
+    {
+      "pass": true,
+      "label": "yellow keeps the opening fixed after the player crosses the arena"
+    },
+    {
+      "pass": true,
+      "label": "yellow uses shared field and alert art"
+    },
+    {
+      "pass": true,
+      "label": "red preserves the promised opening until release"
+    },
+    {
+      "pass": true,
+      "label": "red uses shared field and alert art"
+    },
+    {
+      "pass": true,
+      "label": "exactly the five mines launch down the five previewed trajectories"
+    },
+    {
+      "pass": true,
+      "label": "shared warning closes when the Dredger releases the minefield"
+    },
+    {
+      "pass": true,
+      "label": "dredger_mines_01_green is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "dredger_mines_02_yellow is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "dredger_mines_03_red is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "dredger_mines_04_release is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "zero Chromium page, console or game-loop errors"
+    }
+  ],
+  "errors": [],
+  "fight": {
+    "ok": true,
+    "name": "DUAL SCOOP DREDGER",
+    "kind": "dualscoopdredger",
+    "pilot": "yuri",
+    "state": "play"
+  },
+  "setup": {
+    "name": "DUAL SCOOP DREDGER",
+    "hull": "s7atk_dual_scoop_dredger_0",
+    "gap": 4,
+    "warn": 0.86,
+    "cols": 6,
+    "world": 680,
+    "camera": 100,
+    "center": 340,
+    "playerX": 510
+  },
+  "green": {
+    "gap": 4,
+    "released": false,
+    "warning": {
+      "t": 0.1,
+      "warm": 0.86,
+      "released": false
+    },
+    "shots": [],
+    "mount": {
+      "x": 340,
+      "y": 217.2
+    },
+    "targets": [
+      {
+        "x": 56.666666666666664,
+        "y": 307.2,
+        "index": 0
+      },
+      {
+        "x": 170,
+        "y": 307.2,
+        "index": 1
+      },
+      {
+        "x": 283.3333333333333,
+        "y": 307.2,
+        "index": 2
+      },
+      {
+        "x": 396.6666666666667,
+        "y": 307.2,
+        "index": 3
+      },
+      {
+        "x": 623.3333333333334,
+        "y": 307.2,
+        "index": 5
+      }
+    ],
+    "gets": [
+      "nwl_sludge_0",
+      "nwl_sludge_1",
+      "nwl_sludge_2",
+      "nwl_sludge_3",
+      "nst7_master_v3",
+      "bmbar_fill_orange",
+      "bmbar_frame_mini",
+      "bmbar_tab_mini",
+      "bmfx_fov_green_tall",
+      "s7atk_dual_scoop_dredger_0",
+      "bmfx_alert_green_danger",
+      "fx_ground_strikes_0916",
+      "enemy_approaching",
+      "nequipbox",
+      "bof_player_weapon_special_icons_atlas"
+    ]
+  },
+  "yellow": {
+    "gap": 4,
+    "released": false,
+    "warning": {
+      "t": 0.44,
+      "warm": 0.86,
+      "released": false
+    },
+    "shots": [],
+    "mount": {
+      "x": 340,
+      "y": 217.2
+    },
+    "targets": [
+      {
+        "x": 56.666666666666664,
+        "y": 307.2,
+        "index": 0
+      },
+      {
+        "x": 170,
+        "y": 307.2,
+        "index": 1
+      },
+      {
+        "x": 283.3333333333333,
+        "y": 307.2,
+        "index": 2
+      },
+      {
+        "x": 396.6666666666667,
+        "y": 307.2,
+        "index": 3
+      },
+      {
+        "x": 623.3333333333334,
+        "y": 307.2,
+        "index": 5
+      }
+    ],
+    "gets": [
+      "nwl_sludge_0",
+      "nwl_sludge_1",
+      "nwl_sludge_2",
+      "nwl_sludge_3",
+      "nst7_master_v3",
+      "bmbar_frame_mini",
+      "bmbar_tab_mini",
+      "bmfx_fov_yellow_tall",
+      "s7atk_dual_scoop_dredger_0",
+      "bmfx_alert_yellow_danger",
+      "nsd_chim_0",
+      "nsd_chim_3",
+      "nsd_chim_6",
+      "nxp_dense_1",
+      "fx_ground_strikes_0916",
+      "enemy_approaching",
+      "nequipbox",
+      "bof_player_weapon_special_icons_atlas"
+    ]
+  },
+  "red": {
+    "gap": 4,
+    "released": false,
+    "warning": {
+      "t": 0.78,
+      "warm": 0.86,
+      "released": false
+    },
+    "shots": [],
+    "mount": {
+      "x": 340,
+      "y": 217.2
+    },
+    "targets": [
+      {
+        "x": 56.666666666666664,
+        "y": 307.2,
+        "index": 0
+      },
+      {
+        "x": 170,
+        "y": 307.2,
+        "index": 1
+      },
+      {
+        "x": 283.3333333333333,
+        "y": 307.2,
+        "index": 2
+      },
+      {
+        "x": 396.6666666666667,
+        "y": 307.2,
+        "index": 3
+      },
+      {
+        "x": 623.3333333333334,
+        "y": 307.2,
+        "index": 5
+      }
+    ],
+    "gets": [
+      "nwl_sludge_0",
+      "nwl_sludge_1",
+      "nwl_sludge_2",
+      "nwl_sludge_3",
+      "nst7_master_v3",
+      "bmbar_frame_mini",
+      "bmbar_tab_mini",
+      "bmfx_fov_red_tall",
+      "s7atk_dual_scoop_dredger_0",
+      "bmfx_alert_red_danger",
+      "nsd_chim_0",
+      "nsd_chim_3",
+      "nsd_chim_6",
+      "nxp_dense_1",
+      "fx_ground_strikes_0916",
+      "enemy_approaching",
+      "nequipbox",
+      "bof_player_weapon_special_icons_atlas"
+    ]
+  },
+  "release": {
+    "gap": 4,
+    "released": true,
+    "warning": {
+      "t": 0.86,
+      "warm": 0.86,
+      "released": true
+    },
+    "shots": [
+      {
+        "kind": "s7wardenMine",
+        "x": 340,
+        "y": 217.2,
+        "vx": -1.4278427343620037,
+        "vy": 0.45355004503263646
+      },
+      {
+        "kind": "s7wardenMine",
+        "x": 340,
+        "y": 217.2,
+        "vx": -1.3240436503115534,
+        "vy": 0.7009642854590578
+      },
+      {
+        "kind": "s7wardenMine",
+        "x": 340,
+        "y": 217.2,
+        "vx": -0.7982322607957386,
+        "vy": 1.2677806494991135
+      },
+      {
+        "kind": "s7wardenMine",
+        "x": 340,
+        "y": 217.2,
+        "vx": 0.7982322607957385,
+        "vy": 1.2677806494991137
+      },
+      {
+        "kind": "s7wardenMine",
+        "x": 340,
+        "y": 217.2,
+        "vx": 1.4278427343620037,
+        "vy": 0.45355004503263646
+      }
+    ],
+    "mount": {
+      "x": 340,
+      "y": 217.2
+    },
+    "targets": [
+      {
+        "x": 56.666666666666664,
+        "y": 307.2,
+        "index": 0
+      },
+      {
+        "x": 170,
+        "y": 307.2,
+        "index": 1
+      },
+      {
+        "x": 283.3333333333333,
+        "y": 307.2,
+        "index": 2
+      },
+      {
+        "x": 396.6666666666667,
+        "y": 307.2,
+        "index": 3
+      },
+      {
+        "x": 623.3333333333334,
+        "y": 307.2,
+        "index": 5
+      }
+    ],
+    "gets": [
+      "nwl_sludge_0",
+      "nwl_sludge_1",
+      "nwl_sludge_2",
+      "nwl_sludge_3",
+      "nst7_master_v3",
+      "bmbar_frame_mini",
+      "bmbar_tab_mini",
+      "s7atk_dual_scoop_dredger_0",
+      "nsd_chim_0",
+      "nsd_chim_3",
+      "nsd_chim_6",
+      "nxp_dense_2",
+      "fx_ground_strikes_0916",
+      "enemy_approaching",
+      "nequipbox",
+      "bof_player_weapon_special_icons_atlas"
+    ]
+  },
+  "shots": [
+    "_shots\\stage7_dredger_mine_warning_0916\\dredger_mines_01_green.png",
+    "_shots\\stage7_dredger_mine_warning_0916\\dredger_mines_02_yellow.png",
+    "_shots\\stage7_dredger_mine_warning_0916\\dredger_mines_03_red.png",
+    "_shots\\stage7_dredger_mine_warning_0916\\dredger_mines_04_release.png"
+  ],
+  "verification": {
+    "focused": "section 343: 10/10",
+    "fullSuite": {
+      "passing": 4375,
+      "failures": 56,
+      "failureNames": "exact established 56-name baseline"
+    },
+    "chromium": "16/16",
+    "pixelReview": "four native 960x1024 frames inspected"
+  }
+}

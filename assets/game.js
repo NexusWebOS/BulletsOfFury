@@ -14421,6 +14421,7 @@ function shipBossActionProfile(b, pat){
 function shipBossQueueAttack(b){
   const D=b&&b._ship?SHIPBOSS[b._ship]:null; if(!D||b.dead||b.enter) return false;
   if(b._s7Flood){b.fireCd=Math.max(b.fireCd||0,.22);return false;}
+  if(b._s7DredgerMine){b.fireCd=Math.max(b.fireCd||0,.22);return false;}
   if(b._mwAttack||b._irRoll||b._irPass){b.fireCd=Math.max(b.fireCd||0,.18);return false;}
   if(b._s3boss&&(b._s3boss.volley||b._s3boss.charge||b._s3boss.cannonSeq)){
     /* A delayed Stage-3 volley is one authored action. Never let the next cooldown overwrite its
@@ -17237,6 +17238,7 @@ function shipBossManoeuvre(b, dt){
   if(b._s3boss && typeof stage3BossTick==='function'&&stage3BossTick(b,dt))return true;
   if(b._s7Flood)sludgeFloodTick(b,dt);
   if(b._s7Rosette)sludgeRosetteTick(b,dt);
+  if(b._s7DredgerMine)s7DredgerMineTick(b,dt);
   if(b._s9Cascade)tidalCascadeTick(b,dt);
   /* the carrier's reel runs on the FRAME clock, not the volley beat - the round leaves on the
      animation frame that shows it clearing the bay. See carrierTick. */
@@ -20168,13 +20170,43 @@ function sludgeRosetteDraw(b){
   }
   ctx.restore();
 }
+const S7_DREDGER_MINE_WARN=.86;
+function s7DredgerMineTargets(M){
+  if(!M||!Number.isFinite(M.gap))return [];
+  return Array.from({length:M.cols},(_,i)=>i).filter(i=>i!==M.gap).map(i=>({x:(i+.5)*M.width/M.cols,y:VH*.60,index:i}));
+}
+function s7DredgerMineStart(b){
+  if(!b||b._s7DredgerMine)return false;
+  const cols=6,W=worldWidth(),gap=clamp(Math.floor(player.x/(W/cols)),0,cols-1);
+  b._s7DredgerMine={t:0,warn:S7_DREDGER_MINE_WARN,cols:cols,gap:gap,width:W,released:false,finish:0};
+  b.fireCd=Math.max(b.fireCd||0,S7_DREDGER_MINE_WARN+.58);
+  combatWarningTick(b,'stage7-dredger-minefield',0,S7_DREDGER_MINE_WARN,true);
+  return true;
+}
+function s7DredgerMineTick(b,dt){
+  const M=b&&b._s7DredgerMine;if(!M)return false;M.t+=dt;
+  combatWarningTick(b,'stage7-dredger-minefield',Math.min(M.t,M.warn),M.warn);
+  if(!M.released&&M.t>=M.warn){
+    M.released=true;M.finish=M.t+.45;const C=shipBossMount(b,'C'),targets=s7DredgerMineTargets(M);
+    for(let i=0;i<targets.length;i++){const q=targets[i],a=Math.atan2(q.y-C.y,q.x-C.x);s7WardenShot(b,'C',a,1.08,'mine',{silent:i>0});}
+    shipBossMuzzleStart(b,['C'],{fam:'nfx_toxicleviathan_mflash',n:6,life:.26,hpx:68});
+    shake=Math.max(shake,6);
+  }
+  if(M.released&&M.t>=M.finish){b._s7DredgerMine=null;b.fireCd=.56;return false;}
+  return true;
+}
+function s7DredgerMineDraw(b,front){
+  const M=b&&b._s7DredgerMine;if(!M||M.released)return false;
+  const C=shipBossMount(b,'C'),k=clamp(M.t/M.warn,0,1),targets=s7DredgerMineTargets(M);
+  if(!front)for(const q of targets)combatWarningDraw(b,{x:C.x,y:C.y,ex:q.x,ey:q.y,progress:k,width:22,fieldOnly:true});
+  else combatWarningDraw(b,{x:C.x,y:C.y,ex:C.x,ey:VH,progress:k,alertOnly:true,alertX:b.x,alertY:52});
+  return true;
+}
 function s7DredgerAttack(b,step){
   const ph=shipBossPhase(b),L=shipBossMount(b,'L'),R=shipBossMount(b,'R'),C=shipBossMount(b,'C');
-  b._sbPat=ph>=2?'s7portalmines':(ph?'s7spore':'s7dredge');
-  if(ph>=2&&step%4===0){const cols=6,gap=clamp(Math.floor(player.x/(worldWidth()/cols)),0,cols-1);
-    for(let i=0;i<cols;i++){if(i===gap)continue;const tx=(i+.5)*worldWidth()/cols,a=Math.atan2(VH*.60-C.y,tx-C.x);
-      s7WardenShot(b,'C',a,1.08,'mine',{silent:i>0});}
-    shipBossMuzzleStart(b,['C'],{fam:'nfx_toxicleviathan_mflash',n:6,life:.26,hpx:68});b.fireCd=1.42;
+  b._sbPat=ph&&step%4===0?'s7portalmines':(ph?'s7spore':'s7dredge');
+  if(b._s7DredgerMine){b.fireCd=.24;return;}
+  if(ph&&step%4===0){s7DredgerMineStart(b);return;
   }else if(!ph){const slot=(step&1)?L:R,a=aimPlayer(slot.x,slot.y);for(const o of [-.18,0,.18])s7BossShot(slot.x,slot.y,a+o,2.85,'s7sludge',{silent:o!==0});
     shipBossMuzzleStart(b,[(step&1)?'L':'R'],{fam:'nfx_toxicleviathan_mflash',n:6,life:.18,hpx:48});b.fireCd=.92;
   }else if(step%3){for(const o of [.16,.31,.47]){s7BossShot(L.x,L.y,Math.PI/2+o,2.75,'s7acid',{silent:true});s7BossShot(R.x,R.y,Math.PI/2-o,2.75,'s7acid',{silent:true});}
@@ -22148,6 +22180,7 @@ function shipBossDraw(b){
   if(b._herald && typeof heraldDeathDraw==='function') return heraldDeathDraw(b);
   if(b._s7warden&&typeof s7WardenDraw==='function')return s7WardenDraw(b);
   if(typeof XART==='undefined' || !XART.rdy(D.key)){
+    if(b._s7DredgerMine)s7DredgerMineDraw(b,false);
     /* ⚠ NEVER FALL THROUGH TO NOTHING. Returning false here sent the draw down a chain of
        early-returns for _gen / _mech / _sx / modular / mega, and a ship boss is none of those " so
        the frame drew no boss at all while the health bar sat at the top of the screen. An
@@ -22169,6 +22202,7 @@ function shipBossDraw(b){
     if((b._ship==='magmaward'||b._ship==='infernoreaver')&&typeof reaverOrbDraw==='function')reaverOrbDraw(b);
     if(b._s4war&&typeof stage4WarfareDrawOver==='function')stage4WarfareDrawOver(b);
     shipBossMuzzleDraw(b);
+    if(b._s7DredgerMine)s7DredgerMineDraw(b,true);
     if(b._s9Cascade)tidalCascadeDraw(b,true);
     return true;
   }
@@ -22188,6 +22222,7 @@ function shipBossDraw(b){
   if(jcShip(b)&&typeof jungleCruiserDrawUnder==='function')jungleCruiserDrawUnder(b);
   if(b._s7Flood)sludgeFloodDraw(b);
   if(b._s7Rosette)sludgeRosetteDraw(b);
+  if(b._s7DredgerMine)s7DredgerMineDraw(b,false);
   if(b._s9Cascade)tidalCascadeDraw(b,false);
   if(b._ship==='doomsdaycarriermk2') carrierMegaDrawUnder(b);
   /* A supplied damaged plate is a HULL STATE, never an impact effect. The old renderer never read
@@ -22277,6 +22312,7 @@ function shipBossDraw(b){
   }
   if(b._ship==='doomsdaycarriermk2')carrierStatusDraw(b);
   shipBossMuzzleDraw(b);
+  if(b._s7DredgerMine)s7DredgerMineDraw(b,true);
   if(b._s9Cascade)tidalCascadeDraw(b,true);
   return true;
 }

@@ -69,3 +69,7 @@ All four live Doomsday Carrier Mk II Thunderhead rows now commit their two-colum
 ## Stage 5 Archmage boomerang follow-up
 
 The active Chrome Hammer Archmage one-hand twirl now preserves the boomerang controller's committed vertical lane and floor reticle through the shared green/yellow/red warning. The alert is placed beside the boss to clear its destructible-module labels. Chromium passes 19/19 and focused active-render section 342 passes 6/6. See [ARCHMAGE_BOOMERANG_VISUAL_0916.md](ARCHMAGE_BOOMERANG_VISUAL_0916.md).
+
+## Stage 7 DUAL SCOOP DREDGER minefield follow-up
+
+The live Stage-7 miniboss now commits one safe column before its late-phase mine attack, previews the other five exact trajectories through a 0.86-second shared green/yellow/red warning, and releases the original five slow mines only after red. Late player movement cannot relocate the opening. Chromium passes 16/16 and focused section 343 passes 10/10. See [STAGE7_DREDGER_MINE_WARNING_0916.md](STAGE7_DREDGER_MINE_WARNING_0916.md).
