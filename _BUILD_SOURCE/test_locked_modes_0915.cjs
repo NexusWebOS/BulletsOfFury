@@ -21,7 +21,10 @@ module.exports=function(vm,ctxv,ok){
   })()`,ctxv));
   for(const k of Object.keys(gate))ok(gate[k],'bonus mode gate: '+k);
   ok(vm.runInContext(`triggerVictory.toString().includes('bonusModesUnlockFromCampaign()')`,ctxv),'campaign victory path owns the persistent unlock');
-  ok(vm.runInContext(`drawModeSelect.toString().includes('modeLockDraw(rect)')&&drawModeSelect.toString().includes('MODE DEVELOPMENT IN PROGRESS')`,ctxv),'mode menu draws the exact lock layer and honest post-unlock readiness');
+  /* 0916: Mike removed the caption under every plate - a permanent label teaches nothing and
+     crowds the art - so both refusal strings now live in modeLockedDeny, which arms the big
+     typed banner the press actually answers. The lock layer itself is unchanged. */
+  ok(vm.runInContext(`drawModeSelect.toString().includes('modeLockDraw(rect)')&&modeLockedDeny.toString().includes('MODE DEVELOPMENT IN PROGRESS')&&modeLockedDeny.toString().includes('CLEAR CAMPAIGN TO UNLOCK')&&drawModeSelect.toString().includes('modeDenyDraw(dt)')`,ctxv),'mode menu draws the exact lock layer and answers a locked press with the typed banner');
   const denial=JSON.parse(vm.runInContext(`(function(){var n=0,save=Audio.SFX.blocked;try{Audio.SFX.blocked=function(){n++;};bonusModesUnlocked=false;modeLockedDeny(MODE_ITEMS[3]);return JSON.stringify({sound:n===1,text:drawModeSelect._deny.text});}finally{Audio.SFX.blocked=save;}})()`,ctxv));
   ok(denial.sound&&denial.text==='CLEAR CAMPAIGN TO UNLOCK','locked confirmation emits an alert and explains the gate');
 };

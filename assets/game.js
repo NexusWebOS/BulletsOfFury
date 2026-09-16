@@ -2001,7 +2001,11 @@ const XART=(function(){
   for(const [_key,_file] of Object.entries({
     input_mouse_neutral_0915:'mouse_neutral.png',input_mouse_left_0915:'mouse_left_click.png',
     input_mouse_right_0915:'mouse_right_click.png',input_mouse_wheel_0915:'mouse_wheel.png',
-    input_key_space_0915:'key_spacebar.png',input_key_r_0915:'key_r.png'
+    input_key_space_0915:'key_spacebar.png',input_key_r_0915:'key_r.png',
+    /* the WASD cluster the HELP page's MOUSE + KEY row needs (Mike, 0916). There was no letter-key
+       art at all before this - only SPACE and R - so the keyboard half of that row was drawing a
+       D-pad. Generated to the same gunmetal keycap language as the mouse prompts. */
+    input_key_wasd_0916:'key_wasd.png'
   })) X._src[_key]=_inputPromptRoot+_file;
   /* Generated mode plates use a source crop because the generator baked a checkerboard beyond
      their beveled frames. The exact Nexus II chain plate is clipped over the same silhouette. */
@@ -4535,7 +4539,7 @@ function controlHintRow(items,y=VH-20,cx=VW/2,maxW=VW-24,h=24){
 }
 function drawHintBar(items){controlHintRow(items);}
 function menuControlFooter(){
-  if(state===GS.TITLE) controlHintRow([['pad_dpad','MENU'],['pad_a','SELECT'],['pad_start','SELECT']],VH-30);
+  if(state===GS.TITLE) controlHintRow([['pad_dpad','MENU'],['pad_a','SELECT'],['pad_start','SELECT']],VH-36);
   else if(state===GS.DIFF) controlHintRow([['pad_dpad','DIFFICULTY'],['pad_a','SELECT'],['pad_b','BACK']]);
   else if((state===GS.OPTIONS||(state==='paused'&&playPause&&playPause.mode==='options'))&&!rebindAction) controlHintRow([['pad_dpad','ADJUST'],['pad_a','SELECT'],['pad_b','CANCEL']]);
   else if(state===GS.PASSWORD) controlHintRow([['pad_dpad','KEYPAD'],['pad_a','SELECT'],['pad_b','BACK']]);
@@ -4545,7 +4549,7 @@ function controlHintShellTick(){
   if(controlHintShellTick.done)return;
   const box=document.getElementById('hint');
   if(!box||typeof box.replaceChildren!=='function')return;
-  const items=[['pad_dpad','MOVE'],['pad_a','FIRE / SELECT'],['pad_b','MISSILE / BACK'],['pad_c','RETINA'],['pad_y','CHARGE'],['pad_start','PAUSE / MENU']];
+  const items=[['pad_dpad','MOVE'],['pad_a','FIRE / SELECT'],['pad_b','MISSILE / BACK'],['pad_y','RETINA'],['pad_x','CHARGE'],['pad_start','PAUSE / MENU']];
   if(items.some(([key])=>!XART.rdy(key)))return;
   box.replaceChildren();
   for(const [key,label] of items){
@@ -6893,7 +6897,7 @@ const Audio = (()=>{
 
    ⚠ CHARGE IS A BIND, NOT A LITERAL 'h'. He named the key, but a hardcoded letter is an action
    the rebind screen cannot reach and the second seat cannot have. See CTRL_ACTS, which it joins. */
-const KEYBIND_DEFAULT={up:['w','arrowup','pad_up'],down:['s','arrowdown','pad_down'],left:['a','arrowleft','pad_left'],right:['d','arrowright','pad_right'],fire:['j','mouse0','pad_b0','pad_b7'],bomb:['k','mouse2','pad_b1','pad_b6'],retina:['c',' ','mouse3','pad_b2'],charge:['h','mouse4','pad_b3'],start:['enter','p','pad_b9']};
+const KEYBIND_DEFAULT={up:['w','arrowup','pad_up'],down:['s','arrowdown','pad_down'],left:['a','arrowleft','pad_left'],right:['d','arrowright','pad_right'],fire:['j','mouse0','pad_b0','pad_b7'],bomb:['k','mouse2','pad_b1','pad_b6'],retina:['c',' ','mouse3','pad_b3'],charge:['h','mouse4','pad_b2'],start:['enter','p','pad_b9']};
 /* KEYBINDS MUST BE VALIDATED, NOT JUST FILLED IN (drop 0724dl).
 
    Mike's readout said it all: `state title, kd40 ku41, last shift, menu 0`. Forty keypresses
@@ -6937,9 +6941,9 @@ const KEY_UNBINDABLE = ['shift','control','alt','meta','capslock','contextmenu',
    ============================================================ */
 const KEYBIND2_DEFAULT={
   up:['t','pad2_up'], down:['g','pad2_down'], left:['f','pad2_left'], right:['h','pad2_right'],
-  fire:['v','pad2_b0','pad2_b7'], bomb:['b','pad2_b1','pad2_b6'], retina:['n','pad2_b2'],
+  fire:['v','pad2_b0','pad2_b7'], bomb:['b','pad2_b1','pad2_b6'], retina:['n','pad2_b3'],
   /* seat 2 gets CHARGE too - an action only P1 can reach is one that vanishes in co-op */
-  charge:['m','pad2_b3'],
+  charge:['m','pad2_b2'],
   /* P2 gets START on the pad only. The options screen builds a row per CTRL_ACTS for BOTH
      seats, so leaving this out would draw P2 a PAUSE row with nothing bound to it. */
   start:['pad2_b9'],
@@ -31701,7 +31705,9 @@ function updatePlay(dt){
     if(player.out) return false;         // this seat has spent every life; it is a spectator now
     if(!player.dead){
     // double-tap left/right -> barrel roll (before normal movement so a roll can start this frame)
-    if(Input.tapSeat(_seat,'retina')||(_seat===1&&Input.tap('l'))){retinaScanClear();cycleLock();}
+    let _wheelLock=false;
+    if(_seat===1){ const _m=Input.mouse; if(_m&&_m.wheel){ _m.wheel=0; _wheelLock=true; } }
+    if(Input.tapSeat(_seat,'retina')||(_seat===1&&Input.tap('l'))||_wheelLock){retinaScanClear();cycleLock();}
     retinaScanInput();
     const _nowT=performance.now()/1000;
     if(Input.tapSeat(_seat,'left')){ if(_nowT-player._tapL<=BR_WINDOW) startRoll(-1); player._tapL=_nowT; player._tapR=-9; }
@@ -47169,24 +47175,30 @@ const _opnSil={};
 
 /* Front-facing authored cutouts, paired with their own cinematic aircraft.
    These are transparent figures, so their silhouettes retain heads and limbs. */
-function openerPairKeys(pk){ return [pk+'_body_0',OPN_SIL_KEY(pk)]; }
+function openerPairKeys(pk){ return [pk+'_body_0',OPN_SHIP_KEY(pk)]; }
 function openerPairsReady(keys){
   let ready=true;
   for(const pk of keys)for(const key of openerPairKeys(pk))if(!XART.rdy(key))ready=false;
   return ready;
 }
+/* ⚠ LIT, NOT SILHOUETTED (Mike, 0916: "they may all be lit up"). The authored plates are drawn at
+   full colour over their own tinted glow; the black cut-out is kept only as the halo underneath,
+   which is what keeps a dark hull off a dark starfield. */
 function openerPair(pk,cx,cy,pairW,pairH,alpha){
   const P=PILOTS.find(p=>p.key===pk),keys=openerPairKeys(pk);
   ctx.save();ctx.globalAlpha=alpha;
   for(let i=0;i<keys.length;i++){
-    const key=keys[i],sil=openerSil(key);if(!sil)continue;
-    const maxW=pairW*(i?.53:.35),maxH=pairH*(i?.80:1);
-    const scale=Math.min(maxW/sil.width,maxH/sil.height),w=sil.width*scale,h=sil.height*scale;
-    const x=cx+pairW*(i?.22:-.30)-w/2,y=cy-h/2;
-    ctx.shadowColor=P?P.tint:'#ffae48';ctx.shadowBlur=18;
-    ctx.drawImage(sil,x,y,w,h);ctx.shadowBlur=0;
-    // A trace of the authored colors makes the paired identities readable in the dark.
-    const im=XART.get(key);if(im){ctx.globalAlpha=alpha*.22;ctx.drawImage(im,x,y,w,h);ctx.globalAlpha=alpha;}
+    const key=keys[i],im=(typeof XART!=='undefined'&&XART.rdy(key))?XART.get(key):null;
+    if(!im||!im.naturalWidth)continue;
+    const maxW=pairW*(i?.42:.35),maxH=pairH*(i?.86:1);
+    const scale=Math.min(maxW/im.naturalWidth,maxH/im.naturalHeight);
+    const w=im.naturalWidth*scale,h=im.naturalHeight*scale;
+    const x=cx+pairW*(i?.24:-.30)-w/2,y=cy-h/2;
+    const sil=openerSil(key);
+    if(sil){ ctx.globalAlpha=alpha*0.55; ctx.drawImage(sil,x+2,y+3,w,h); ctx.globalAlpha=alpha; }
+    ctx.shadowColor=P?P.tint:'#ffae48';ctx.shadowBlur=20;
+    ctx.drawImage(im,x,y,w,h);
+    ctx.shadowBlur=0;
   }
   ctx.restore();
   if(P)opnText(P.name,cx,cy+pairH/2+24,14,P.tint,alpha);
@@ -47225,6 +47237,11 @@ function openerToTitle(){
    This is the CLAUDE.md render-it rule doing its job: the key existed, the load succeeded, rdy()
    was true and the picture was wrong. */
 const OPN_SIL_KEY=function(pk){ return pk==='lizzie'?'ship_lizzie_pv2':'cinship_'+pk+'_2'; };   // 02_front_left_3q, native cutout
+/* ⚠ THE OPENER FLIES THE LEVEL PLATE NOW (Mike, 0916: "use straight facing up frames of each
+   pilots ships"). `ship_<pilot>` is the nose-north hull every stage draws - the same frame the
+   player sees in play - where `cinship_*_2` is a front three-quarter cutout that points at the
+   camera. Lizzie resolves through BOFX.ships like the rest, so her costume follows automatically. */
+const OPN_SHIP_KEY=function(pk){ return 'ship_'+pk; };
 /* a true silhouette, cut from the authored plate rather than drawn. ⚠ rdy() is false on its FIRST
    call - that call is what starts the load - so a miss is not cached and the next frame re-asks. */
 function openerSil(key){
@@ -47256,13 +47273,27 @@ function opnText(str, cx, cy, size, col, a){
     msgText(str, cx, cy, H, col||'#ffe082', 0, a, 0.10);
   }
 }
+/* THE GAME'S OWN STARFIELD (Mike, 0916: "use a starry background we have"), which is stage 9's
+   seamless 1024px tile - not a drawn gradient. It scrolls down slowly and the spotlight stays as a
+   vignette over it, so the lit hulls still have somewhere dark to sit. */
+function opnStars(t){
+  const key='nst9_starfield';
+  if(typeof XART==='undefined'||!XART.rdy(key)) return false;
+  const im=XART.get(key); if(!im.naturalWidth) return false;
+  const w=VW, h=Math.max(1,Math.round(im.naturalHeight*(VW/im.naturalWidth)));
+  const off=((t*26)%h+h)%h;
+  for(let y=-off;y<VH;y+=h) ctx.drawImage(im,0,0,im.naturalWidth,im.naturalHeight,0,Math.round(y),w,h);
+  return true;
+}
 /* spotlight + rushing speed-lines: the bed every card sits on, so cuts read as one piece */
 function opnBackdrop(t, warm){
+  ctx.fillStyle='#03040c'; ctx.fillRect(0,0,VW,VH);
+  const stars=opnStars(t);
   const g=ctx.createRadialGradient(VW/2, VH*0.42, 20, VW/2, VH*0.42, VH*0.78);
-  g.addColorStop(0, warm?'#2a1508':'#141a28');
-  g.addColorStop(1, '#000000');
+  if(stars){ g.addColorStop(0,'rgba(0,0,0,0)'); g.addColorStop(1, warm?'rgba(26,8,2,0.72)':'rgba(2,3,12,0.78)'); }
+  else { g.addColorStop(0, warm?'#2a1508':'#141a28'); g.addColorStop(1, '#000000'); }
   ctx.fillStyle=g; ctx.fillRect(0,0,VW,VH);
-  ctx.save(); ctx.globalAlpha=0.5;
+  ctx.save(); ctx.globalAlpha=stars?0.22:0.5;
   for(let i=0;i<26;i++){
     const s=(i*97)%VW, y=((i*53)+ (t*(120+ (i%5)*70)))%VH;
     ctx.fillStyle=(i%3)?'#3a4a68':'#5a3a20';
@@ -47270,10 +47301,24 @@ function opnBackdrop(t, warm){
   }
   ctx.restore();
 }
-/* letterbox bars: the single cheapest thing that says "trailer" rather than "menu" */
+/* letterbox bars: the single cheapest thing that says "trailer" rather than "menu".
+   ⚠ RED, AND SHADED IN STEPS (Mike, 0916: "colored bars like red with 16-bit shading"). A canvas
+   gradient would band smoothly across 256 levels, which is the one thing a 16-bit console could
+   not do - the ramp is five flat bands, darkest at the screen edge, with a lit rule and a black
+   keyline on the inside edge where it meets the picture. */
+const OPN_BAR_RAMP=['#2a0407','#4a080d','#6b0f15','#8d151d','#b01d26'];
 function opnBars(a){
   const h=Math.round(VH*0.085*clamp(a,0,1));
-  ctx.fillStyle='#000'; ctx.fillRect(0,0,VW,h); ctx.fillRect(0,VH-h,VW,h);
+  if(h<=0) return;
+  const nb=OPN_BAR_RAMP.length, step=h/nb;
+  for(let i=0;i<nb;i++){
+    const y0=Math.round(i*step), y1=Math.round((i+1)*step);
+    ctx.fillStyle=OPN_BAR_RAMP[i];
+    ctx.fillRect(0, y0, VW, y1-y0);                       // top bar: dark at the edge, lit inward
+    ctx.fillRect(0, VH-y1, VW, y1-y0);                    // bottom bar: mirrored
+  }
+  ctx.fillStyle='#e04a52'; ctx.fillRect(0,h-2,VW,1); ctx.fillRect(0,VH-h+1,VW,1);
+  ctx.fillStyle='#120204'; ctx.fillRect(0,h-1,VW,1); ctx.fillRect(0,VH-h,VW,1);
 }
 
 /* ---- beat: one pilot's silhouette sliding across a spotlight ---- */
@@ -57820,10 +57865,39 @@ function modeLockDraw(rect){
   ctx.save();modePanelPath(rect.x,rect.y,rect.w,rect.h);ctx.clip();ctx.imageSmoothingEnabled=false;
   ctx.drawImage(im,rect.x+(rect.w-w)/2,rect.y+(rect.h-h)/2,w,h);ctx.restore();return true;
 }
+/* ⚠ THE REFUSAL IS THE LOUDEST THING ON THE SCREEN NOW (Mike, 0916: "use one of our error sounds
+   if locked and display Clear Campaign to Unlock letter by letter Top of the screen, large
+   letters ... Players are dumb but not THAT dumb"). The small red caption under every locked plate
+   is gone with it - a permanent label under a plate teaches nothing and crowds the art; a banner
+   that types itself out when you press the button is the answer to the press. */
+const MODE_DENY_CPS=26, MODE_DENY_HOLD=1.30, MODE_DENY_OUT=0.42;
 function modeLockedDeny(it){
-  drawModeSelect._deny={t:1.05,text:modeItemUnlocked(it)?'MODE DEVELOPMENT IN PROGRESS':'CLEAR CAMPAIGN TO UNLOCK'};
+  const txt=modeItemUnlocked(it)?'MODE DEVELOPMENT IN PROGRESS':'CLEAR CAMPAIGN TO UNLOCK';
+  drawModeSelect._deny={t:0, text:txt, shown:0};
+  /* `blocked` is the engine's one purpose-built refusal cue; the klaxon is the fallback if a build
+     ever drops it. Both already carry their own retrigger gates. */
   const s=Audio&&Audio.SFX&&(Audio.SFX.blocked||Audio.SFX.alertDanger||Audio.SFX.dangerAlert||Audio.SFX.blip);
   if(s)s();
+}
+function modeDenyDraw(dt){
+  const D=drawModeSelect._deny; if(!D) return;
+  D.t+=dt;
+  const typed=D.text.length/MODE_DENY_CPS;
+  if(D.t>typed+MODE_DENY_HOLD+MODE_DENY_OUT){ drawModeSelect._deny=null; return; }
+  const shown=D.text.slice(0, Math.max(1, Math.round(D.t*MODE_DENY_CPS)));
+  const fade=D.t>typed+MODE_DENY_HOLD ? Math.max(0,1-(D.t-typed-MODE_DENY_HOLD)/MODE_DENY_OUT) : 1;
+  const pulse=0.72+0.28*Math.sin(D.t*9);
+  /* the authored stage face, shrunk to fit the field rather than clipped - the letters are the
+     point, so the WHOLE string is measured and the reveal draws a prefix at that size */
+  const art=(typeof curFontArt==='function')?curFontArt():null;
+  if(art && typeof stageText==='function'){
+    const H=(typeof stageFitH==='function')?stageFitH(art,D.text,VW-28,26,11,0.10):22;
+    stageText(art, shown, VW/2, 60, H, '#ff5a5a', 0.70+0.25*pulse, fade, 0.10, 1);   // clears SELECT MODE
+  } else {
+    ctx.save(); ctx.textAlign='center'; ctx.globalAlpha=fade;
+    ctx.font='bold 22px "BOFmil", monospace'; ctx.lineWidth=1; ctx.strokeStyle='#120204';
+    ctx.strokeText(shown,VW/2,60); ctx.fillStyle='#ff6a6a'; ctx.fillText(shown,VW/2,60); ctx.restore();
+  }
 }
 function drawModeSelect(dt){
   if(!drawCanonBackdrop('nbt_5',0.58)){ ctx.fillStyle='#0a0408'; ctx.fillRect(0,0,VW,VH); }
@@ -57840,24 +57914,16 @@ function drawModeSelect(dt){
     if(rect){
       if(!unlocked)modeLockDraw(rect);
       if(sel)menuSelMark(VW/2,y,pw/2,'#ff2a2a');
-      ctx.save();ctx.textAlign='center';ctx.font='8px "BOFmil", monospace';
-      ctx.fillStyle=!unlocked?'#ff7b7b':(open?(sel?'#b9c9e8':'#8290aa'):'#d2a36a');
-      ctx.fillText(!unlocked?'CLEAR CAMPAIGN TO UNLOCK':(open?it.sub:'MODE DEVELOPMENT IN PROGRESS'),VW/2,rect.y+rect.h+5);
-      ctx.restore();
       if(sel)drawModeSelect._selRect=rect;
     }else{
       ctx.save();ctx.globalAlpha=unlocked?1:.55;ctx.fillStyle=sel?'rgba(20,26,40,.9)':'rgba(8,10,18,.78)';
       ctx.fillRect(VW/2-135,y-27,270,54);ctx.strokeStyle=sel?'#ffd75a':'#3a4258';ctx.strokeRect(VW/2-135,y-27,270,54);
       ctx.textAlign='center';ctx.fillStyle=sel?menuSelWhite():'#dfe6f2';ctx.font='bold 15px "BOFmil", monospace';ctx.fillText(it.name,VW/2,y-3);
-      ctx.font='8px "BOFmil", monospace';ctx.fillStyle=unlocked?'#8fa0bd':'#ff7b7b';ctx.fillText(unlocked?it.sub:'CLEAR CAMPAIGN TO UNLOCK',VW/2,y+15);
       if(sel)menuSelMark(VW/2,y,135,'#ff2a2a');ctx.restore();
       if(sel)drawModeSelect._selRect={x:VW/2-135,y:y-27,w:270,h:54,key:null};
     }
   }
-  if(drawModeSelect._deny&&drawModeSelect._deny.t>0){
-    drawModeSelect._deny.t-=dt;ctx.save();ctx.textAlign='center';ctx.font='bold 9px "BOFmil", monospace';
-    ctx.fillStyle='#ffeb7a';ctx.shadowColor='#ff2a2a';ctx.shadowBlur=8;ctx.fillText(drawModeSelect._deny.text,VW/2,478);ctx.restore();
-  }
+  modeDenyDraw(dt);
   drawHintBar([['pad_dpad','SELECT'],['pad_a','CONFIRM'],['pad_b','BACK']]);
   /* ⚠ 'up' IS NOT A KEY NAME (drop 0822af). keyName() returns e.key.toLowerCase(), so the arrow
      key is 'arrowup' — Input.tap('up') has never matched anything. These menus therefore moved
@@ -58174,6 +58240,30 @@ function campCanContinue(){
  if(campSession)return true;
  try{const name=localStorage.getItem('bof_autosave_latest');if(!/^Autosav0[123][.]json$/.test(name||''))return false;const data=JSON.parse(localStorage.getItem(name)||'null');if(data&&data.v===CAMP_SAVE_VER&&data.mode==='campaign'){campSession=data;return true;}}catch(_){}
  return false;
+}
+/* ⚠⚠ THESE SIX WERE DELETED BY 45174735 AND EVERY CONSUMER SURVIVED IT, WHICH IS THE WHOLE
+   LOCK-UP. assets/game.js is "use strict", so `campHubIndex=...` in the mode-select confirm
+   (drawModeSelect's _modeGo) is a THROW, not an implicit global - and that callback runs from
+   selFlashTick, which is the one call in loop() that sits OUTSIDE the frame try/catch. The throw
+   escapes past requestAnimationFrame(loop) and the rAF chain dies: no error on screen, no dropped
+   state, the canvas simply holds its last frame for ever. The loop's own comment predicted it.
+   And because `setState(GS.CAMPHUB)` is on the far side of the throw, the state never changed -
+   so the frozen picture is whatever was being drawn, which on the pilot screen mid-confirm is a
+   header, the hints and an empty roster area. That is Mike's photograph exactly.
+   Restored from 45174735^ unchanged; campCanContinue, campAnySaved and campHubSay all survived
+   the deletion, so nothing here is a rewrite. */
+const CAMPHUB_ITEMS=[
+  {key:'btn_newgame',  label:'NEW GAME',  act:'new'},
+  {key:'btn_continue', label:'CONTINUE',  act:'continue'},
+  {key:'btn_load',     label:'LOAD GAME', act:'load'},
+  {key:'btn_save',     label:'SAVE GAME', act:'save'},
+];
+let campHubIndex=0, campPick=null, campHubMsg='', campHubMsgT=0;
+function campHubEnabled(act){
+  if(act==='continue') return campCanContinue();
+  if(act==='load')     return campAnySaved();
+  if(act==='save')     return campCanContinue();   // nothing to write until a campaign is under way
+  return true;
 }
 function campHubSay(m){ campHubMsg=m; campHubMsgT=2.2; }
 /* SPACING IS DERIVED, NOT GUESSED. These buttons are 1085x293, so at width W each one
@@ -59959,18 +60049,51 @@ const MENU_KEYS=['btn_newgame','btn_password','btn_options','btn_help','btn_cred
 /* six buttons: gap 66 -> 56 and the stack starts higher, so the last one still clears the
    copyright line that 0801bu sized the original five against */
 const TMENU_Y0=158, TMENU_GAP=56, TMENU_W=330;
+/* ONE LAYOUT, MEASURED FROM THE ART (Mike, 0916: "scale all buttons to not overlap each other,
+   especially help"). TMENU_GAP was a literal 56 while each plate draws at TMENU_W's own aspect,
+   about 62 tall, so every row sat six pixels inside the one above it and the pointer bands
+   overlapped with it. Three places carried this menu's geometry and 0912 only corrected the count
+   in them. They all read this now: the plate scales until six rows plus their air fit between the
+   INSERT COIN line and the control hints, and the stack centres in whatever room is left. */
+const TMENU_TOP=126, TMENU_BOT=VH-54, TMENU_AIR=4;
+function titleMenuLayout(){
+  const nb=TITLE_ITEMS.length;
+  let ar=62/330;                      // the plates' authored aspect, used until one decodes
+  for(const k of MENU_KEYS){ if(XART.rdy(k)){ const im=XART.get(k); if(im.naturalWidth>0){ ar=im.naturalHeight/im.naturalWidth; break; } } }
+  let w=TMENU_W, h=w*ar;
+  const room=TMENU_BOT-TMENU_TOP;
+  if(nb*h+(nb-1)*TMENU_AIR > room){ h=(room-TMENU_AIR*(nb-1))/nb; w=h/ar; }
+  const pitch=h+TMENU_AIR, span=(nb-1)*pitch+h;
+  return {w:w, h:h, pitch:pitch, y0:TMENU_TOP+h/2+Math.max(0,(room-span)/2)};
+}
+/* A COVER IMAGE THAT ACTUALLY MOVES. XART.cover paints one fitted copy, so every screen built on it
+   is a still. Tiles alternate mirrored, which is what lets a painted scene loop with no seam: each
+   copy's right edge meets its own reflection. */
+function scrollCoverBG(key,dt,speed){
+  if(!XART.rdy(key)) return false;
+  const im=XART.get(key); if(!im.naturalWidth) return false;
+  const dw=Math.max(1,Math.round(im.naturalWidth*(VH/im.naturalHeight)));
+  _menuScrollX=(_menuScrollX + dt*(speed==null?12:speed)) % (dw*2);
+  for(let x=-_menuScrollX, i=0; x<VW; x+=dw, i++){
+    ctx.save();
+    if((i&1)===1){ ctx.translate(Math.round(x)+dw,0); ctx.scale(-1,1); ctx.drawImage(im,0,0,im.naturalWidth,im.naturalHeight,0,0,dw,VH); }
+    else ctx.drawImage(im,0,0,im.naturalWidth,im.naturalHeight,Math.round(x),0,dw,VH);
+    ctx.restore();
+  }
+  return true;
+}
 let _menuScrollX=0;
 function drawTitle(dt){
   if(typeof uiFontWarm==='function') uiFontWarm();   // earliest menu: start the face here, not at stage 1
   if(ASSETS.rdy(ASSETS.starplanets)){
     // SCROLLING PLANETS backdrop — left, medium speed, tiled
     const im=ASSETS.starplanets, dw=Math.round(im.naturalWidth*(VH/im.naturalHeight));
-    _menuScrollX=(_menuScrollX + dt*36) % dw;
+    _menuScrollX=(_menuScrollX + dt*12) % dw;      // Mike 0916: "slightly slow"
     for(let x=-_menuScrollX; x<VW; x+=dw){ ctx.drawImage(im,0,0,im.naturalWidth,im.naturalHeight, Math.round(x),0, dw,VH); }
     for(const s of starField){ s.x=((s.x - s.z*0.6*dt*60)%VW+VW)%VW; ctx.fillStyle=s.z>1?'#cfe2ff':'#4455aa'; ctx.fillRect(s.x|0,s.y|0,2,2); }
     const g=ctx.createLinearGradient(0,0,0,VH); g.addColorStop(0,'rgba(6,5,14,0.45)'); g.addColorStop(0.34,'rgba(6,5,14,0.10)'); g.addColorStop(1,'rgba(6,5,14,0.55)');
     ctx.fillStyle=g; ctx.fillRect(0,0,VW,VH);
-  } else if(XART.rdy('bootimage')){ XART.cover('bootimage');
+  } else if(scrollCoverBG('bootimage',dt,12)){
     const g=ctx.createLinearGradient(0,0,0,VH); g.addColorStop(0,'rgba(6,5,14,0.6)'); g.addColorStop(0.32,'rgba(6,5,14,0.12)'); g.addColorStop(1,'rgba(6,5,14,0.55)');
     ctx.fillStyle=g; ctx.fillRect(0,0,VW,VH);
   } else { ctx.fillStyle='#080611'; ctx.fillRect(0,0,VW,VH);
@@ -59990,25 +60113,33 @@ function drawTitle(dt){
     const _s2=pilotFont(2);
     if(_s2 && typeof stageText==='function'){
       ctx.save();
-      ctx.shadowColor='#ffcf3a'; ctx.shadowBlur=12+_pulse*22;   // glowing gold, pulsing
+      /* the glow was 12-34px of gold bloom, which washed the glyphs out to near-white over a bright
+         backdrop - the ring Mike asked for cannot read under that, so the bloom is halved */
+      ctx.shadowColor='#ffcf3a'; ctx.shadowBlur=5+_pulse*9;   // glowing gold, pulsing
       // gold tint over the stage-2 font glyphs; brightness flashes with the pulse
-      const _tint=_pulse>0.5?'#fff2c0':'#ffcf3a';
-      stageText(_s2, '- INSERT COIN -', _cx, _cy, 26, _tint, 0.35+0.45*_pulse, 0.7+0.3*_pulse, 0.10);
+      const _tint=_pulse>0.5?'#ffdf72':'#ffb41e';
+      /* ⚠ THE GLYPHS WERE DRAWN SEMI-TRANSPARENT (alpha 0.7-1.0 pulsing), so the backdrop showed
+         THROUGH the lettering - that, not the missing edge, is why it read as a ghost over the
+         jungle. Opaque now; the flash lives in the tint strength and the ring holds the edge. */
+      stageText(_s2, '- INSERT COIN -', _cx, _cy, 26, _tint, 0.55+0.35*_pulse, 1, 0.10, 1);   // 1px black ring (Mike 0916)
       ctx.restore();
     } else {
       // font not loaded yet: browser-font gold fallback (still raised + flashing)
       ctx.save(); ctx.textAlign='center'; ctx.textBaseline='alphabetic';
       ctx.font='bold 22px "Arial Black",Impact,sans-serif';
       ctx.shadowColor='#ffcf3a'; ctx.shadowBlur=14+_pulse*20;
-      ctx.lineWidth=4; ctx.strokeStyle='rgba(40,20,0,0.9)'; ctx.strokeText('- INSERT COIN -',_cx,_cy);
+      ctx.lineWidth=1; ctx.strokeStyle='#05070c'; ctx.strokeText('- INSERT COIN -',_cx,_cy);
       const _gy=_cy-18, _g=ctx.createLinearGradient(0,_gy,0,_cy+4);
       _g.addColorStop(0, _pulse>0.5?'#fff6c8':'#ffe082'); _g.addColorStop(0.5,'#ffd23a'); _g.addColorStop(1,'#c8901a');
       ctx.globalAlpha=0.6+0.4*_pulse; ctx.fillStyle=_g; ctx.fillText('- INSERT COIN -',_cx,_cy);
       ctx.restore();
     }
   }
+  /* THE COPYRIGHT AND THE F1 LINE WERE BOTH DRAWN AT VH-6, one on top of the other - that smear in
+     Mike's photo is two strings, not a broken font. The copyright owns the very bottom line now,
+     in his wording, and F1 sits on its own line above it. */
   ctx.fillStyle='rgba(210,216,226,0.85)'; ctx.font='8px "BOFmil", monospace'; ctx.textAlign='center';
-  ctx.fillText('COPYRIGHT 2026 COLEFORGE STUDIOS',VW/2,VH-6);
+  ctx.fillText('COPYRIGHT 2026 COLEFORGE PRODUCTIONS',VW/2,VH-4);
   drawDebugButton(dt);   // top-right, only once UP UP DOWN DOWN A B C is in (0910a)
   handleTitleInput();
   /* HARD RESET, ALWAYS AVAILABLE (drop 0724dm).
@@ -60022,10 +60153,10 @@ function drawTitle(dt){
   }
   {
     const _rl='F1 = RESET CONTROLS';
-    ctx.save(); ctx.textAlign='center'; ctx.font='10px "BOFmil", monospace';
-    ctx.fillStyle='#7f8aa0'; ctx.fillText(_rl, VW/2, VH-6);
+    ctx.save(); ctx.textAlign='center'; ctx.font='9px "BOFmil", monospace';
+    ctx.fillStyle='#7f8aa0'; ctx.fillText(_rl, VW/2, VH-15);
     const m=Input.mouse;
-    if(m && m.down && m.y>VH-18 && Math.abs(m.x-VW/2)<90 && !drawTitle._rdown){
+    if(m && m.down && m.y>VH-23 && m.y<VH-8 && Math.abs(m.x-VW/2)<90 && !drawTitle._rdown){
       drawTitle._rdown=true;
       try{ bofStorageResetKeepSaves(); }catch(e){}
       try{ location.reload(); }catch(e){}
@@ -60066,16 +60197,20 @@ function drawMenuIcon(icon,cx,cy){
 }
 function drawMenuButtons(dt){
   if(!XART.rdy('btn_newgame')){
-    for(let i=0;i<TITLE_ITEMS.length;i++) drawMenuButton(VW/2, TMENU_Y0+i*TMENU_GAP, 250, 40, TITLE_ITEMS[i], i===menuIndex, ['ship','lock','gear','help','star','door'][i]);
+    const L0=titleMenuLayout();
+    for(let i=0;i<TITLE_ITEMS.length;i++) drawMenuButton(VW/2, L0.y0+i*L0.pitch, Math.min(250,L0.w), Math.min(40,L0.h), TITLE_ITEMS[i], i===menuIndex, ['ship','lock','gear','help','star','door'][i]);
     return;
   }
   /* ⚠ MENU_KEYS.length, NOT 5. Adding HELP fixed the two wrap sites in handleTitleInput and the
      sixth button still did not appear, because the DRAW loop and the mouse hit-test carried their
      own copies of the count. Four places knew how long this menu was. Photograph caught it. */
+  const L=titleMenuLayout();
   for(let i=0;i<MENU_KEYS.length;i++){
     const im=XART.get(MENU_KEYS[i]); if(!XART.rdy(MENU_KEYS[i])) continue;
-    const sel=(i===menuIndex), w=sel?TMENU_W*1.04:TMENU_W, h=w*(im.naturalHeight/im.naturalWidth);
-    const cx=VW/2, cy=TMENU_Y0+i*TMENU_GAP;
+    /* the selected row still grows, but only into its own air - 1.04 of a plate that already
+       overlapped its neighbours is what buried HELP between OPTIONS and CREDITS */
+    const sel=(i===menuIndex), w=sel?L.w*1.03:L.w, h=w*(im.naturalHeight/im.naturalWidth);
+    const cx=VW/2, cy=L.y0+i*L.pitch;
     ctx.save(); if(sel){ ctx.shadowColor='#ffd24a'; ctx.shadowBlur=18; } else ctx.globalAlpha=0.9;
     ctx.drawImage(im, cx-w/2, cy-h/2, w, h); ctx.restore();
     if(menuFlashIdx===i && menuFlash>0) flashImg(im, cx-w/2, cy-h/2, w, h, clamp(menuFlash/0.2,0,1)*0.92);
@@ -60153,11 +60288,12 @@ function _handleTitleInputRest(){
   // hover only steals selection when the mouse actually MOVED this frame (keyboard/pad nav isn't overridden)
   const moved=Input.consumeMouseMoved();
   const my=Input.mouse.y;
-  for(let i=0;i<TITLE_ITEMS.length;i++){ const cy=TMENU_Y0+i*TMENU_GAP;
+  const LH=titleMenuLayout();
+  for(let i=0;i<TITLE_ITEMS.length;i++){ const cy=LH.y0+i*LH.pitch;
     /* The x test required the pointer within 165px of centre. Mike's readout put his pointer at
        x=471 on a 480-wide field, so every click missed on x alone. The rows read as full-width
        bands on screen, so the hit box now matches what the player sees. */
-    if(Math.abs(my-cy)<TMENU_GAP*0.46){
+    if(Math.abs(my-cy)<LH.pitch*0.5){
       if(moved && Input.mouse.inside) menuIndex=i;
       if(Input.mouse.down && !handleTitleInput._md){ menuIndex=i; chooseTitle(); } } }
   handleTitleInput._md=Input.mouse.down;
@@ -63277,37 +63413,53 @@ function helpKeyCap(glyph, act, cx, cy, h, caption){
   helpLabel(helpBind(act,1), cx, cy+h*0.62+(caption?26:12), 11, '#9fb4c8');
 }
 
+/* ⚠ THE SCHEME IS DRAWN AS A SIX-BUTTON GENESIS PAD (Mike, 0916: "please display my controller
+   scheme like a 6 button sega genesis controller"). The atlas has carried the whole face set -
+   pad_a pad_b pad_c on the bottom row, pad_x pad_y pad_z on the top - since the help sheet landed,
+   and only four of the six were ever drawn. A face with nothing on it is shown dimmed with a dash
+   rather than hidden, because a six-button pad with three buttons on it is not this controller.
+   ⚠ AND THE LETTERS FOLLOW THE BINDS, NOT THE OTHER WAY AROUND: charge is on X (his call) and the
+   retina moved to Y, so the two faces printed here are the two the pad actually sends. */
+const HELP_FACES_TOP=[['pad_x','charge','CHARGE'],['pad_y','retina','RETINA'],['pad_z',null,'-']];
+const HELP_FACES_BOT=[['pad_a','fire','FIRE'],['pad_b','bomb','MISSILE'],['pad_c',null,'-']];
 function helpPageControls(){
-  const cy0=VH*0.24;
-  helpLabel('MOVE', VW*0.22, cy0-48, 12, '#ffd36b');
-  helpGlyph('pad_dpad', VW*0.22, cy0, 68);
-  helpLabel('WASD / ARROWS', VW*0.22, cy0+50, 11, '#9fb4c8');
-  helpLabel('STICK / D-PAD', VW*0.22, cy0+63, 11, '#5f7288');
+  helpLabel('CONTROLLER', VW/2, VH*0.172, 13, '#ffd36b');   // clears the page name at y 54
 
-  /* the three action caps, in the arcade A / B / C order the cabinet uses */
-  /* ⚠ ONE BIND PER CAP. At this column width two ran into the neighbouring cap's label and the
-     three read as one run-on string - "J / L-CLICK K / R-CLICK C / SPACE". The full list for every
-     action is on the MOUSE lines below and in OPTIONS; the caps just need the primary key. */
-  const bx=VW*0.62, by=cy0-14, gap=VW*0.165;
-  helpKeyCap('pad_a', 'fire',   bx-gap, by, 40, 'FIRE');
-  helpKeyCap('pad_b', 'bomb',   bx,     by, 40, 'MISSILE');
-  helpKeyCap('pad_c', 'retina', bx+gap, by, 40, 'RETINA / C');
+  const padY=VH*0.295;
+  helpGlyph('pad_dpad', VW*0.19, padY, 62);
+  helpLabel('MOVE', VW*0.19, padY+46, 12, '#ffd36b');
 
-  const y2=VH*0.52;
-  helpKeyCap('pad_y',     'charge', VW*0.29, y2, 40, 'CHARGE');
-  helpGlyph('pad_start',  VW*0.66, y2, 30);
-  helpLabel('PAUSE', VW*0.66, y2+31, 12, '#ffd36b');
-  helpLabel(helpBind('start',1), VW*0.66, y2+45, 11, '#9fb4c8');
+  /* the six faces, in the pad's own two rows */
+  /* the faces climb to the right, which is the arc a Genesis pad actually has - three in a row at
+     one height is an arcade panel, not this controller */
+  const fx=[VW*0.52, VW*0.68, VW*0.84], arc=[0,-5,-11], topY=padY-26, botY=padY+20;
+  for(let i=0;i<3;i++){
+    const t=HELP_FACES_TOP[i], b=HELP_FACES_BOT[i], dy=arc[i];
+    helpGlyph(t[0], fx[i], topY+dy, 28, t[1]?1:0.35);
+    helpLabel(t[2], fx[i], topY+dy-20, 11, t[1]?'#ffd36b':'#4a5568');
+    helpGlyph(b[0], fx[i], botY+dy, 28, b[1]?1:0.35);
+    helpLabel(b[2], fx[i], botY+dy+22, 11, b[1]?'#ffd36b':'#4a5568');
+  }
+  helpGlyph('pad_start', VW*0.19, padY+74, 26);
+  helpLabel('PAUSE', VW*0.19, padY+96, 11, '#9fb4c8');
 
-  /* Authored mouse prompts replace the old L-CLICK/R-CLICK text. Neutral, pressed and wheel
-     silhouettes stay readable at the same small UI scale as the cabinet-button atlas. */
-  const y3=VH*0.725,mousePrompts=[
-    ['input_mouse_neutral_0915','POINTER'],['input_mouse_left_0915','FIRE'],
-    ['input_mouse_right_0915','MISSILE'],['input_mouse_wheel_0915','WHEEL']
-  ];
-  helpLabel('MOUSE', VW/2, y3-8, 13, '#ffd36b');
-  mousePrompts.forEach((q,i)=>{const x=VW*(.17+i*.22);helpGlyph(q[0],x,y3+23,40);helpLabel(q[1],x,y3+52,11,i===1||i===2?'#ff796d':'#9fb4c8');});
-  helpLabel('KEYS - MOUSE - PAD ALL LIVE AT ONCE', VW/2, y3+70, 11, '#5f7288');
+  /* MOUSE + KEY. ⚠ The wheel prompt used to say WHEEL and the wheel did nothing in play - it was
+     read in exactly one place in the file, the OPTIONS list scroll. It cycles the retina lock now
+     (Mike, 0916: "Make wheel lock on"), so the prompt finally describes a live control. */
+  helpLabel('MOUSE + KEY', VW/2, VH*0.535, 13, '#ffd36b');
+  const ky=VH*0.645;
+  if(!helpGlyph('input_key_wasd_0916', VW*0.19, ky, 66)) helpGlyph('pad_dpad', VW*0.19, ky, 52, 0.8);
+  helpLabel('MOVE', VW*0.19, ky+42, 11, '#9fb4c8');
+  const mouse=[['input_mouse_left_0915','FIRE','#ff796d'],
+               ['input_mouse_right_0915','MISSILE','#ff796d'],
+               ['input_mouse_wheel_0915','LOCK ON','#9fd6ff']];
+  mouse.forEach(function(q,i){ const x=VW*(0.45+i*0.19); helpGlyph(q[0],x,ky,40); helpLabel(q[1],x,ky+40,11,q[2]); });
+
+  /* the live bind table, one line, read off keybind so a rebind shows here immediately */
+  const row=VH*0.815;
+  helpLabel('FIRE '+helpBind('fire',1)+'   MISSILE '+helpBind('bomb',1), VW/2, row, 11, '#9fb4c8');
+  helpLabel('RETINA '+helpBind('retina',1)+'   CHARGE '+helpBind('charge',1)+'   PAUSE '+helpBind('start',1), VW/2, row+15, 11, '#9fb4c8');
+  helpLabel('KEYS - MOUSE - PAD ALL LIVE AT ONCE', VW/2, row+34, 11, '#5f7288');
 }
 
 function helpPageMoves(){
@@ -68720,8 +68872,15 @@ function loop(now){
     ctx.fillText('menu '+(typeof menuIndex!=='undefined'?menuIndex:'-')+'   PHOTOGRAPH THIS', 6, 36);
     ctx.restore();
   }
-  if(typeof selFlashTick==='function') selFlashTick(dt);
-  if(typeof selFlashDraw==='function') selFlashDraw();
+  /* ⚠ INSIDE A GUARD, BECAUSE THIS IS THE ONE CALL THAT CAN STOP THE GAME. selFlash defers a
+     menu's action into a callback that runs from here - outside the frame try/catch above - so an
+     exception in any menu action used to escape past the reschedule at the bottom of loop() and
+     freeze the canvas with no message. A menu that refuses one press is recoverable; a dead rAF
+     chain is not. */
+  try{ if(typeof selFlashTick==='function') selFlashTick(dt); }
+  catch(_selErr){ try{ console.error('selFlash tick error', _selErr); }catch(_){} }
+  try{ if(typeof selFlashDraw==='function') selFlashDraw(); }
+  catch(_selErr2){ try{ console.error('selFlash draw error', _selErr2); }catch(_){} }
   if(hudctx){ hudctx.clearRect(0,0,VW,HUDH); if(state===GS.PLAY||state==='paused'){ if(typeof drawHUDStrip==='function') drawHUDStrip(hudctx); } }
   try{ debugRecFrame(); }catch(_recFrame){}   // the clip takes hud + equip + play, in that order (0910d)
   /* SUSTAINED SFX BEDS (drop 0730a). Held weapons keep their loop alive by calling loopOn every
@@ -68767,11 +68926,20 @@ if(window.BOFA && BOFA.music){
        peaks at 0.0, against -16.1..-16.6 / -2.2..-3.0). A global music slider cannot fix one hot track,
        so they were GAIN-matched on encode to the boss-track mean - volume only, dynamics untouched -
        at the house format, 112k CBR 44.1 kHz stereo, from Mike's original WAVs. */
-  BOFA.music.mini2='assets/game/music/fireboss.mp3';
-  BOFA.music.boss2='assets/game/music/bossfight3.mp3';
-  BOFA.music.boss4='assets/game/music/cowboyfromhell.mp3';
-  BOFA.music.unused_fire='assets/game/music/unused_fire.mp3';
-  BOFA.music.unused_fire2='assets/game/music/unused_fire.mp3';
+  /* Stage 1's boss theme is bossfight3 (Mike, 0916: "replace stage 1's boss music with bossfight3").
+     It stays registered on boss2 as well, so both stage bosses share it until stage 2 gets its own.
+     Stage 1 has no mini1, so its miniboss falls back to boss1 and changes with it. */
+  /* Stage 1 (Mike, 0916): the boss fights to minderaser, the miniboss to fireboss. minderaser came in as
+     a 48k WAV in music/newboss and was encoded to the house format - 112k CBR 44.1 kHz stereo - and
+     gain-matched to the boss-track mean, -4.8 dB, volume only: -11.5 dB mean / 0.0 peak became -16.8 / -4.3,
+     against boss1/3/5 at -16.1..-16.6 mean. mini1 IS NEW; before this, stage 1's miniboss fell back to boss1. */
+  BOFA.music.boss1='assets/game/music/boss1_minderaser.mp3';
+  BOFA.music.mini1='assets/game/music/miniboss_fireboss.mp3';
+  BOFA.music.mini2='assets/game/music/miniboss_fireboss.mp3';
+  BOFA.music.boss2='assets/game/music/boss2_bossfight3.mp3';
+  BOFA.music.boss4='assets/game/music/boss4_cowboyfromhell.mp3';
+  BOFA.music.unused_fire='assets/game/music/unused_boss2_magma_colossus.mp3';
+  BOFA.music.unused_fire2='assets/game/music/unused_boss2_magma_colossus.mp3';
 }
 if(window.BOFA && BOFA.sfx){
   Object.assign(BOFA.sfx, {

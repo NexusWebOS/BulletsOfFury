@@ -4373,3 +4373,59 @@ The Chrome Hammer Archmage's Easy/Normal post-chaingun route no longer stalls in
 - The shieldless Stage-2 miniboss again runs its intended Inferno Reaver controller. The stable `magmaward` slot no longer dispatches into the retired Magma Ward shield/fire controller; its five-station laser pass and rolling-flamethrower finale now advance and render on the live identity. The Furnace Tyrant retains its real boss shield.
 - ENG-02 advances: the nine-round shotgun commits seven center lanes plus two wing escorts before a 0.6888-second shared green/yellow/red warning. Late movement cannot redirect the fan; warning origins stay on the live hardpoints and release uses the authored Inferno shotgun family.
 - Focused section 359 passes 16/16; Chromium passes 18/18 with zero errors; full suite reaches 4,547 passes / 56 failures, repairing the former Magma Ward opening-fan baseline name. The remaining failures are the reduced 55-name established set plus the intermittent Stage-1 sand-tank fixture. Evidence: docs/STAGE2_REAVER_SHARED_WARNING_0916.md. Tally remains 128 complete / 7 partial / 16 pending.
+
+## 0916 — a deleted declaration block froze the whole game, and the front end Mike asked for
+
+⚠⚠ **`45174735` DELETED SIX CAMPAIGN-HUB DECLARATIONS AND EVERY CONSUMER SURVIVED IT — THAT IS THE
+"game locks up after selecting a pilot".** `CAMPHUB_ITEMS`, `campHubIndex`, `campPick`,
+`campHubMsg`, `campHubMsgT` and `campHubEnabled` were referenced 41 times and declared nowhere.
+game.js is `"use strict"`, so `campHubIndex=...` in `drawModeSelect`'s confirm is a **throw**, not
+an implicit global — and that callback runs from `selFlashTick`, **the one call in `loop()` that
+was outside the frame try/catch**. The exception escaped past `requestAnimationFrame(loop)` and the
+rAF chain died: no error on screen, no state change, the canvas holding its last painted frame for
+ever. The loop's own comment predicted exactly this. Restored verbatim from `45174735^`
+(`campCanContinue`, `campAnySaved` and `campHubSay` survived — do not duplicate them), and
+`selFlashTick`/`selFlashDraw` are now guarded, so a menu action can refuse a press but can never
+again stop the game.
+⚠ **AND IT READS AS A PILOT-SCREEN BUG BECAUSE OF WHERE THE FREEZE LANDS.** `drawPilot` suppresses
+the roster while `pilotPending` is set (61017), so a frame frozen during the post-confirm slide is
+a header, the hint row and an empty roster area — which is the screen Mike photographed. The pilot
+code is innocent; anything that had passed through SELECT MODE -> CAMPAIGN was already dead.
+⚠ **A STATE READ CANNOT FIND THIS.** `state` never changes, no draw error is logged (the throw is
+upstream of the guard) and the last frame still looks like a live screen. Watch `pageerror` AND a
+frame counter: the tell is frames stopping, not state.
+
+**The front end (Mike, 0916).** Title: the backdrop scrolls (`scrollCoverBG` tiles the boot image
+mirrored so a painted scene loops with no seam — `XART.cover` paints ONE fitted copy, so every
+screen built on it is a still); `titleMenuLayout()` measures the plate and the draw, the fallback
+row and the hit test all read it (TMENU_GAP was a literal 56 against art that draws ~62 tall, so
+every row sat six pixels inside the one above it); INSERT COIN carries `stageText`'s 1px ring and
+is **opaque** — it was drawn at alpha 0.7-1.0, so the jungle showed THROUGH the letters, which is
+what read as a ghost. ⚠ **The copyright and the F1 line were both drawn at `VH-6`** — that smear is
+two strings, not a broken font.
+**Opener:** the pairs are the pilot body and `ship_<pilot>`, the nose-north LEVEL plate, drawn lit
+with the cut-out kept only as the halo under them; the bed is stage 9's own starfield tile; the
+letterbox bars are five flat red bands (a canvas gradient bands smoothly across 256 levels, which
+is the one thing the era could not do).
+**HELP:** the scheme is the six-button pad — `pad_a/b/c` and `pad_x/y/z` have all been on
+`ui_help` since it landed and only four were ever drawn. **CHARGE is on X and the retina moved to
+Y** (`pad_b2`/`pad_b3` swapped in both seats' defaults; the shell strip and the caps follow).
+⚠ An existing player's saved `bof_keys` keeps the old pair — `keybindValidate` only repairs
+missing entries. "RETINA / C" printed the keyboard bind twice: the caption said C and `helpBind`
+drew C under it. ⚠ **The wheel was captured and read by exactly one thing in the file, the OPTIONS
+scroll**, while this page advertised it; it cycles the retina lock now. New art
+`input_key_wasd_0916` — there was no letter-key art at all before, only SPACE and R.
+**SELECT MODE:** the caption under every plate is gone (both the art path and the no-art fallback
+carried one) and a locked press answers with `blocked` plus a typed banner across the top.
+**Music:** stage 1's boss is `boss1_minderaser.mp3` (the WAV from `music/newboss`, encoded at the
+house 112k CBR 44.1k and gain-matched −4.8 dB to the boss-track mean: −11.5/0.0 became −16.8/−4.3)
+and `mini1` is new, so the stage-1 miniboss no longer inherits the boss key. Four files renamed to
+say what they are; both `manifest.js` and the code-owned block were repointed in the same write.
+**Yuri's avatar** is a NEW portrait composited into an AUTHORED frame — the nine plates are not
+pixel-identical, so no shared frame can be extracted; the donor's accents were hue-rotated to his
+red OUTSIDE the portrait window, leaving the jacket alone.
+
+Suite **57 fail**: the 56 established names plus the intermittent sand-tank fixture. Two assertions
+failed on today's deliberate changes and were repointed rather than worked around — §281's title
+pin now reads "one measured layout, read by both", and `test_locked_modes_0915.cjs` now looks for
+the refusal text in `modeLockedDeny` and the banner call in `drawModeSelect`.

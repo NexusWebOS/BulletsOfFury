@@ -14168,9 +14168,14 @@ console.log("=== 278. lizzie B-42 alternate costume ===");
      loop and the mouse hit-test. Fixing only the wraps left the sixth button invisible AND
      unclickable, which a code read did not catch and a screenshot did. */
   var _s281=fs.readFileSync(path.join(ROOT,'assets/game.js'),'utf8');
+  /* 0916: the pitch is no longer a literal either - the plates overlapped because TMENU_GAP was
+     56 against art that draws ~62 tall. titleMenuLayout() measures the plate and both the draw
+     and the hit test read it, so the rule is now 'one layout, read by both' rather than 'count
+     the table in each'. Still the same defect being defended: two places knowing the geometry. */
   ok(_s281.indexOf('for(let i=0;i<MENU_KEYS.length;i++)')>0
-     && _s281.indexOf('for(let i=0;i<TITLE_ITEMS.length;i++){ const cy=TMENU_Y0')>0,
-     'the title draw loop and the mouse hit-test both count the table, not a literal 5');
+     && _s281.indexOf('function titleMenuLayout()')>0
+     && (_s281.match(/titleMenuLayout\(\)/g)||[]).length>=4,
+     'the title draw loop and the mouse hit-test both read one measured layout, not a literal');
   ok(vm.runInContext("!!(BOFX.cells && BOFX.cells['btn_help'])", ctxv), 'the HELP plate is registered');
   ok(fs.existsSync(path.join(ROOT,'assets/game/atlas/ui_help.png')), 'the help atlas ships');
   ['pad_a','pad_b','pad_c','pad_x','pad_y','pad_z','pad_start','pad_select','pad_dpad','pad_stick'].forEach(function(k){
