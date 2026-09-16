@@ -67638,6 +67638,14 @@ const SC_SEGS = 24;                    // segments in a full bar
    L takes the floor that F used to hold. The thresholds keep the old S..D bands and add one band
    at each end. */
 const SC_RANK_NAME={F:'FURIOUS',S:'SPECTACULAR',A:'AWESOME',B:'BETTER',C:'CARELESS',D:'SELF-DESTRUCTIVE',L:'LOSER'};
+/* ⚠ MEASURED OFF EACH BADGE, NOT PICKED (Mike, 0916: "the font color should match each rank/badge
+   color"). Every plate's own face colour: the opaque pixels are binned by hue, the dominant bin's
+   median saturation and value are taken, and the value is floored so the word still reads on a
+   dark bay - a badge's metal is darker than text on it can afford to be. Re-generate a badge and
+   this is re-measured rather than re-guessed, the same rule the bays follow.
+   The word is drawn through stageText's tint, which composites in 'color' - hue and saturation
+   from here, LUMINANCE from the authored face - so the lettering keeps its own shading. */
+const SC_RANK_TINT={F:'#b70f00',S:'#f9c600',A:'#e5e5ef',B:'#cc6731',C:'#5b8db7',D:'#b7a59a',L:'#8f93b7'};
 function scRank(pct){
   return pct>=0.97?'F' : pct>=0.90?'S' : pct>=0.80?'A' : pct>=0.66?'B' : pct>=0.50?'C' : pct>=0.34?'D' : 'L';
 }
@@ -68412,7 +68420,7 @@ function scConceptBody(R, px, py, pw, ph, t, dt, art, F){
           ctx.save(); ctx.imageSmoothingEnabled=false;
           ctx.drawImage(im, Math.round(x0+(bw-bw*k)/2), Math.round(cy-bh*k/2), Math.round(bw*k), Math.round(bh*k));
           ctx.restore();
-          if(word) stageText(art, word, x0+bw+b[2]*0.012+ww/2, cy+wh*0.06, wh, null, null, 1, 0.06);
+          if(word) stageText(art, word, x0+bw+b[2]*0.012+ww/2, cy+wh*0.06, wh, SC_RANK_TINT[_rk]||null, SC_RANK_TINT[_rk]?0.92:null, 1, 0.06);
         }
         else scPairLift(art,rLab,rVal,_rx,cy,H,1,SP,SPV,0.45,1);
       }
