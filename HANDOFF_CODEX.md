@@ -628,3 +628,8 @@ Chrome Hammer now has its one-hand vertical boomerang, Hard/Furious difficulty a
 
 - ENG-02 advances: the Last Run cluster fan now commits its six original mirrored paths before a 0.62-second shared green/yellow/red warning. Origins follow the continuously sliding side mounts while the angles stay locked and the middle escape wedge remains open.
 - The three paths per side, authored `s6cluster` bomblets, speed 3.35, twin muzzles, single release cue and 1.18-second total cadence remain intact. Phase transitions cancel a pending cluster warning. Focused 11/11 and Chromium 16/16 pass with zero errors. The full suite reaches 4,484 passes with the established 56 failures plus the intermittent Stage-1 sand-tank fixture; no new name. Evidence: docs/STAGE6_CARRIER_CLUSTER_WARNING_0916.md. Tally remains 128 complete / 7 partial / 16 pending.
+
+## Codex update — 2026-09-16: Stage-6 Doomsday Carrier chrome-flak warning
+
+- ENG-02 advances: the Last Run chrome-flak pair now commits both shell paths before a 0.62-second shared green/yellow/red warning. Origins follow the continuously sliding lower-inner hardpoints while the angles stay locked.
+- The previously unreachable outer `-18°/+18°` pair now alternates with the inner `+10°/-10°` pair. Authored shells and burst reel, speed 3.75, 0.64-second fuse, five fragments per shell, twin muzzles and 1.08-second total cadence remain intact. Focused 13/13 and Chromium 19/19 pass with zero errors. The full suite reaches 4,497 passes with the established 56 failures plus the intermittent Stage-1 sand-tank fixture; no new name. Evidence: docs/STAGE6_CARRIER_FLAK_WARNING_0916.md. Tally remains 128 complete / 7 partial / 16 pending.

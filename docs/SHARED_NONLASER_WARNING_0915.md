@@ -113,3 +113,7 @@ Both Last Run omega-bomb variants now commit their center corridor before a 0.66
 ## Stage 6 Doomsday Carrier mirrored cluster-fan follow-up
 
 The Last Run cluster fan now commits all six mirrored paths before a 0.62-second shared warning. Origins follow the moving left and right mounts while the three angles on each side remain fixed and preserve the open center escape wedge. Authored cluster bomblets, speed, muzzles, one release sound and total cadence remain intact, and phase transitions cancel a pending warning. Chromium passes 16/16 and focused section 354 passes 11/11. See [STAGE6_CARRIER_CLUSTER_WARNING_0916.md](STAGE6_CARRIER_CLUSTER_WARNING_0916.md).
+
+## Stage 6 Doomsday Carrier chrome-flak follow-up
+
+The Last Run chrome-flak pair now commits both shell paths before a 0.62-second shared warning. Origins follow the moving lower-inner hardpoints while the angles remain fixed. The unreachable outer `-18°/+18°` pair is restored and alternates with the inner `+10°/-10°` pair. Authored shell and burst art, speed, 0.64-second fuse, five fragments per shell, muzzles and total cadence remain intact. Chromium passes 19/19 and focused section 355 passes 13/13. See [STAGE6_CARRIER_FLAK_WARNING_0916.md](STAGE6_CARRIER_FLAK_WARNING_0916.md).

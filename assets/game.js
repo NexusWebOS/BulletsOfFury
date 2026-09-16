@@ -21630,6 +21630,27 @@ function carrierClusterFanDraw(b,front){
   const M=b&&b._mega,F=M&&M.clusterFan;if(!F||F.released)return false;const paths=carrierClusterFanPaths(b,F),k=clamp(F.t/F.tell,0,1);
   if(!front)for(const p of paths)combatWarningDraw(b,{x:p.x,y:p.y,ex:p.ex,ey:p.ey,progress:k,width:23,fieldOnly:true});else combatWarningDraw(b,{x:b.x,y:b.y,ex:b.x,ey:VH,progress:k,alertOnly:true,alertX:b.x,alertY:54});return true;
 }
+/* Chrome flak alternates the authored outer and inner angle pairs. Commit each shell corridor
+   before launch; the 0.64-second visible fuse remains the readable cue for its five-way airburst. */
+function carrierFlakFanPaths(b,F){
+  if(!b||!F)return [];const len=Math.max(VH,worldWidth())*1.35;return F.lanes.map(q=>{const p=carrierHP(b,q.slot);return{x:p.x,y:p.y,a:q.a,slot:q.slot,ex:p.x+Math.cos(q.a)*len,ey:p.y+Math.sin(q.a)*len};});
+}
+function carrierFlakFanStart(b){
+  const M=b&&b._mega;if(!M||M.flakFan)return false;const tell=.62,cooldown=1.08,pair=M.flakPair|0;
+  const specs=pair?[{deg:10,slot:'lower_left_inner'},{deg:-10,slot:'lower_right_inner'}]:[{deg:-18,slot:'lower_left_inner'},{deg:18,slot:'lower_right_inner'}];
+  M.flakPair=pair?0:1;M.flakFan={t:0,tell:tell,cooldown:cooldown,pair:pair,id:'stage6-carrier-chrome-flak',lanes:specs.map(q=>({slot:q.slot,a:Math.PI/2+q.deg*Math.PI/180})),released:false,finish:0};M.cd=cooldown;
+  combatWarningTick(b,'stage6-carrier-chrome-flak',0,tell,true);if(Audio.SFX&&(Audio.SFX.bossWeaponCharge||Audio.SFX.crackle))(Audio.SFX.bossWeaponCharge||Audio.SFX.crackle)();return true;
+}
+function carrierFlakFanTick(b,dt){
+  const M=b&&b._mega,F=M&&M.flakFan;if(!F)return false;F.t+=dt;combatWarningTick(b,F.id,Math.min(F.t,F.tell),F.tell);
+  if(!F.released&&F.t>=F.tell){F.released=true;F.finish=F.t+Math.max(.14,F.cooldown-F.tell);const paths=carrierFlakFanPaths(b,F);for(let i=0;i<paths.length;i++){const p=paths[i],q=carrierMegaShot(b,p,p.a,3.75,'s6flak',{silent:i>0});if(q)q._flakFuse=CARRIER_FLAK_FUSE;}
+    carrierMegaMuzzle(b,'MG_L','s6mb_cyclonemuzzle',.90);carrierMegaMuzzle(b,'MG_R','s6mb_cyclonemuzzle',.90);if(Audio.SFX&&(Audio.SFX.enemyBossCannon||Audio.SFX.spaceVolleyLaunch))(Audio.SFX.enemyBossCannon||Audio.SFX.spaceVolleyLaunch)();}
+  if(F.released&&F.t>=F.finish){M.flakFan=null;M.cd=.02;return false;}return true;
+}
+function carrierFlakFanDraw(b,front){
+  const M=b&&b._mega,F=M&&M.flakFan;if(!F||F.released)return false;const paths=carrierFlakFanPaths(b,F),k=clamp(F.t/F.tell,0,1);
+  if(!front)for(const p of paths)combatWarningDraw(b,{x:p.x,y:p.y,ex:p.ex,ey:p.ey,progress:k,width:25,fieldOnly:true});else combatWarningDraw(b,{x:b.x,y:b.y,ex:b.x,ey:VH,progress:k,alertOnly:true,alertX:b.x,alertY:54});return true;
+}
 /* THUNDERHEAD is owned by the Mk II controller.  The earlier signature lived in the generic
    boss switch, but this carrier returns through its _ship controller before that switch can run.
    Eight lightning LANES are warned first; two neighbouring lanes are always empty and the safe
@@ -21751,7 +21772,7 @@ function carrierMegaTick(b,dt){
      the playfield, which is the moment the fight is meant to become desperate. */
   b._megaBeam = (phase>=5) ? 1 : 0;   // the quarter-screen cannon belongs to the LAST RUN now
   if(phase!==M.phase){
-    for(const q of [M.cycloneFan,M.nodeFan,M.prismFan,M.gravityFan,M.omegaBomb,M.clusterFan])if(q)combatWarningTick(b,q.id,q.tell,q.tell,true);M.cycloneFan=null;M.nodeFan=null;M.prismFan=null;M.gravityFan=null;M.omegaBomb=null;M.clusterFan=null;
+    for(const q of [M.cycloneFan,M.nodeFan,M.prismFan,M.gravityFan,M.omegaBomb,M.clusterFan,M.flakFan])if(q)combatWarningTick(b,q.id,q.tell,q.tell,true);M.cycloneFan=null;M.nodeFan=null;M.prismFan=null;M.gravityFan=null;M.omegaBomb=null;M.clusterFan=null;M.flakFan=null;
     M.phase=phase;M.shown=phase;M.cd=.55;M.step=0;b.flash=Math.max(b.flash||0,.36);
     /* ⚠ PHASES 1 AND 3 (1-BASED) ARE 'SHIELD UP'. Entering phase 2 after a bay falls has to RESTORE
        the field, or the alternation Mike described never happens - it broke in phase 1 and would
@@ -21774,6 +21795,7 @@ function carrierMegaTick(b,dt){
   if(carrierGravityFanTick(b,dt))return;
   if(carrierOmegaTick(b,dt))return;
   if(carrierClusterFanTick(b,dt))return;
+  if(carrierFlakFanTick(b,dt))return;
   /* The launch/cannon reels own their beat.  Pausing this clock during either keeps the mega
      arsenal forceful without stacking an unreadable attack on top of the existing bay mechanic. */
   if(b._cn||(b._lc&&b._lc.playing))return;
@@ -21812,13 +21834,7 @@ function carrierMegaTick(b,dt){
     }else if(M.step%4===2){
       /* CHROME FLAK FAN, to the pack's own geometry: alternating lower INNER pods, the four
          authored launch angles, and a fuse that turns each shell into a five-way fan. */
-      const _fa=[[-18,'lower_left_inner'],[18,'lower_right_inner'],[10,'lower_left_inner'],[-10,'lower_right_inner']];
-      for(let _i=0;_i<2;_i++){
-        const row=_fa[(M.step+_i)%4], pt=carrierHP(b,row[1]);
-        const q=carrierMegaShot(b,pt,Math.PI/2+row[0]*Math.PI/180,3.75,'s6flak',{silent:_i>0});
-        if(q) q._flakFuse=CARRIER_FLAK_FUSE;
-      }
-      carrierMegaMuzzle(b,'MG_L','s6mb_cyclonemuzzle',.90);carrierMegaMuzzle(b,'MG_R','s6mb_cyclonemuzzle',.90);M.cd=1.08;
+      carrierFlakFanStart(b);return;
     }else{
       /* ⚠ PHASE 6, THE LAST RUN (0905o). Mike: "he fires off laser beams FAST and constantly
          slides and we have to dodge the laser beams and shoot to destroy him. then it dies."
@@ -21838,7 +21854,7 @@ function carrierMegaTick(b,dt){
 }
 function carrierMegaDrawUnder(b){
   const M=b&&b._mega;if(!M||typeof XART==='undefined')return;
-  carrierCycloneFanDraw(b,false);carrierNodeFanDraw(b,false);carrierPrismFanDraw(b,false);carrierGravityFanDraw(b,false);carrierOmegaDraw(b,false);carrierClusterFanDraw(b,false);if(M.phase<1)return;
+  carrierCycloneFanDraw(b,false);carrierNodeFanDraw(b,false);carrierPrismFanDraw(b,false);carrierGravityFanDraw(b,false);carrierOmegaDraw(b,false);carrierClusterFanDraw(b,false);carrierFlakFanDraw(b,false);if(M.phase<1)return;
   carrierThunderheadDraw(b,false);
   const cy=(b._drawY!=null?b._drawY:b.y),fi=Math.floor(M.t*12)%6,key='s6mb_stormlink_'+fi;if(!XART.rdy(key))return;
   const im=XART.get(key);ctx.save();ctx.globalCompositeOperation='lighter';ctx.globalAlpha=.78;
@@ -21853,7 +21869,7 @@ function carrierMegaDrawOver(b){
     if(XART.rdy(key)){ctx.save();ctx.globalCompositeOperation='lighter';ctx.drawImage(XART.get(key),p.x-34,p.y-34,68,68);ctx.restore();}
     const r=clamp(n.hp/n.maxhp,0,1);ctx.fillStyle='#06111c';ctx.fillRect(p.x-21,p.y+26,42,4);ctx.fillStyle='#54e8ff';ctx.fillRect(p.x-20,p.y+27,40*r,2);
   }
-  carrierThunderheadDraw(b,true);carrierCycloneFanDraw(b,true);carrierNodeFanDraw(b,true);carrierPrismFanDraw(b,true);carrierGravityFanDraw(b,true);carrierOmegaDraw(b,true);carrierClusterFanDraw(b,true);
+  carrierThunderheadDraw(b,true);carrierCycloneFanDraw(b,true);carrierNodeFanDraw(b,true);carrierPrismFanDraw(b,true);carrierGravityFanDraw(b,true);carrierOmegaDraw(b,true);carrierClusterFanDraw(b,true);carrierFlakFanDraw(b,true);
 }
 function carrierBayBox(b, side){
   const f=CARRIER_BAY[side]; if(!f) return null;

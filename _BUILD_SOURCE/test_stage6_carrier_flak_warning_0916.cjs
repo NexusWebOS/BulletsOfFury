@@ -1,0 +1,15 @@
+module.exports=function testStage6CarrierFlakWarning(vm,ctxv,ok){
+  console.log('=== 355. Stage-6 Carrier chrome-flak warning ===');
+  const result=JSON.parse(vm.runInContext(`(function(){
+    const save={boss,player,run:{...run},camX,curStage,eBullets,charge:Audio.SFX.bossWeaponCharge,cannon:Audio.SFX.enemyBossCannon};const o={};
+    try{Audio.SFX.bossWeaponCharge=()=>{};Audio.SFX.enemyBossCannon=()=>{};camX=0;curStage=STAGES[5];run.stage=6;eBullets=[];player={x:340,y:440,dead:false,invuln:999,_hx:9,_hy:10};boss=null;spawnBoss('doomsdaycarriermk2');boss.enter=false;boss.x=340;boss.y=146;boss._drawY=146;carrierInit(boss);carrierMegaInit(boss);boss._mega.phase=5;boss._mega.step=1;boss._mega.cd=0;boss._mega.t=0;boss._mega.flakPair=0;boss.hp=boss.maxhp*.20;boss._lc.playing=false;boss._cn=null;boss._combatWarnings={};
+      carrierMegaTick(boss,.01);const F=boss._mega.flakFan,angles=F.lanes.map(q=>q.a);o.start=!!F&&F.tell===.62&&F.cooldown===1.08&&F.lanes.length===2&&eBullets.length===0;o.outerPair=F.pair===0&&angles[0]<Math.PI/2&&angles[1]>Math.PI/2;
+      carrierFlakFanTick(boss,.12);let B=boss._combatWarnings[F.id];o.green=l23FovPhase(B.t/B.warm)==='green';boss.x+=34;carrierFlakFanTick(boss,.27);B=boss._combatWarnings[F.id];const moved=carrierFlakFanPaths(boss,F);o.yellow=l23FovPhase(B.t/B.warm)==='yellow'&&F.lanes.every((q,i)=>q.a===angles[i])&&moved[0].x!==340;
+      carrierFlakFanTick(boss,.18);B=boss._combatWarnings[F.id];o.red=l23FovPhase(B.t/B.warm)==='red'&&eBullets.length===0;carrierFlakFanTick(boss,.06);const shells=eBullets.filter(q=>q.kind==='s6flak');o.release=B.released&&shells.length===2&&shells.every((q,i)=>q.spd===3.75&&q._flakFuse===CARRIER_FLAK_FUSE&&Math.abs(q.ang-angles[i])<.000001);
+      carrierFlakTick(.65);o.airburst=eBullets.filter(q=>q.kind==='s6flak').length===0&&eBullets.filter(q=>q.kind==='s6cluster').length===10;
+      carrierFlakFanTick(boss,1);o.cleanup=!boss._mega.flakFan;carrierFlakFanStart(boss);const G=boss._mega.flakFan;o.alternate=G.pair===1&&G.lanes[0].a>Math.PI/2&&G.lanes[1].a<Math.PI/2;carrierFlakFanTick(boss,2);
+      boss._mega.phase=4;boss.hp=boss.maxhp*.32;carrierFlakFanStart(boss);const H=boss._mega.flakFan,hid=H.id;boss.hp=boss.maxhp*.20;carrierMegaTick(boss,.01);o.phaseCancel=boss._mega.phase===5&&!boss._mega.flakFan&&boss._combatWarnings[hid].released;
+      const draw=carrierFlakFanDraw.toString();o.shared=draw.includes('fieldOnly:true')&&draw.includes('alertOnly:true');o.layered=carrierMegaDrawUnder.toString().includes('carrierFlakFanDraw(b,false)')&&carrierMegaDrawOver.toString().includes('carrierFlakFanDraw(b,true)');o.integrated=carrierMegaTick.toString().includes('carrierFlakFanTick')&&carrierMegaTick.toString().includes('carrierFlakFanStart');return JSON.stringify(o);
+    }finally{boss=save.boss;player=save.player;Object.assign(run,save.run);camX=save.camX;curStage=save.curStage;eBullets=save.eBullets;Audio.SFX.bossWeaponCharge=save.charge;Audio.SFX.enemyBossCannon=save.cannon;}
+  })()`,ctxv));for(const k of Object.keys(result))ok(result[k],'Carrier flak warning: '+k);
+};
