@@ -11090,10 +11090,17 @@ console.log("=== 217. stats alignment + menu pointers ===");
     }
     return null;
   }
+  /* 0916: a screen may hand its pointer work to ONE named helper and still take a pointer. The
+     title does - drawTitle calls handleTitleInput, whose _handleTitleInputRest owns the row hit
+     test - so removing the title's F1 click strip took the last m.down out of drawTitle's own
+     body and this read as "the title lost its mouse", which it had not. The helper is named. */
+  var _mouseHelpers={drawTitle:['_handleTitleInputRest']};
   var _dead=[];
   for(var _s=0;_s<_screens.length;_s++){
     var _b=bodyOf(_screens[_s]);
     if(_b===null){ _dead.push(_screens[_s]+'(NOT FOUND)'); continue; }
+    var _hs=_mouseHelpers[_screens[_s]]||[];
+    for(var _h=0;_h<_hs.length;_h++){ var _hb=bodyOf(_hs[_h]); if(_hb) _b+=String.fromCharCode(10)+_hb; }
     if(!/\bm\.down\b|mouse\.down|menuMouseList/.test(_b)) _dead.push(_screens[_s]);
   }
   ok(_dead.length===0, 'all '+_screens.length+' menu screens take a pointer'+(_dead.length?(' — dead: '+_dead.join(', ')):''));
