@@ -1,0 +1,418 @@
+{
+  "checks": [
+    {
+      "pass": true,
+      "label": "native Stage-8 boss route opens in Chromium"
+    },
+    {
+      "pass": true,
+      "label": "the live first form commits its original crescent columns and safe opening"
+    },
+    {
+      "pass": true,
+      "label": "authored first form, crescent projectile, muzzle and warning art decode before capture"
+    },
+    {
+      "pass": true,
+      "label": "green previews every dangerous column and the original safe opening"
+    },
+    {
+      "pass": true,
+      "label": "green uses shared field and alert art"
+    },
+    {
+      "pass": true,
+      "label": "yellow ignores later boss-clock and player movement"
+    },
+    {
+      "pass": true,
+      "label": "yellow uses shared field and alert art"
+    },
+    {
+      "pass": true,
+      "label": "red preserves the promised opening until release"
+    },
+    {
+      "pass": true,
+      "label": "red uses shared field and alert art"
+    },
+    {
+      "pass": true,
+      "label": "the unchanged crescent wall releases only from the previewed columns"
+    },
+    {
+      "pass": true,
+      "label": "every released crescent follows its exact vertical preview"
+    },
+    {
+      "pass": true,
+      "label": "vile_wall_01_green is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "vile_wall_02_yellow is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "vile_wall_03_red is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "vile_wall_04_release is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "zero Chromium page, console or game-loop errors"
+    }
+  ],
+  "errors": [],
+  "fight": {
+    "ok": true,
+    "name": "BLACK COCOON",
+    "kind": "vileexistence",
+    "pilot": "yuri",
+    "state": "play"
+  },
+  "setup": {
+    "name": "BLACK COCOON",
+    "gap": 340,
+    "columns": [
+      30,
+      76,
+      122,
+      168,
+      214,
+      260,
+      444,
+      490,
+      536,
+      582,
+      628
+    ],
+    "warn": 0.72,
+    "world": 680
+  },
+  "green": {
+    "gap": 340,
+    "columns": [
+      30,
+      76,
+      122,
+      168,
+      214,
+      260,
+      444,
+      490,
+      536,
+      582,
+      628
+    ],
+    "released": false,
+    "warn": {
+      "t": 0.1,
+      "warm": 0.72,
+      "released": false
+    },
+    "shots": [],
+    "gets": [
+      "nst8_sky_crimson",
+      "nl6c_rain_cloud_2",
+      "nl6c_heavy_rain_cloud_0",
+      "nl6c_rain_cloud_3",
+      "nl6c_rain_cloud_4",
+      "nl6c_heavy_rain_cloud_3",
+      "nl6c_heavy_rain_cloud_4",
+      "nl6c_heavy_rain_cloud_2",
+      "nl8c_lg_5",
+      "nl8c_lg_2",
+      "nl8c_lg_3",
+      "nl8c_rim_3",
+      "nl8c_rim_1",
+      "nl8c_prop_0",
+      "nl8c_prop_2",
+      "nl8c_prop_10",
+      "nl8c_prop_9",
+      "nl8c_prop_3",
+      "nl8c_prop_7",
+      "s8rift_4",
+      "s8rift_3",
+      "s8rift_6",
+      "s8rift_8",
+      "bmfx_fov_green_tall",
+      "s8symboss_form_0",
+      "bmfx_alert_green_danger",
+      "fx_ground_strikes_0916",
+      "alert_up",
+      "nequipbox",
+      "bof_player_weapon_special_icons_atlas",
+      "bmbar_fill_seg",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss"
+    ]
+  },
+  "yellow": {
+    "gap": 340,
+    "columns": [
+      30,
+      76,
+      122,
+      168,
+      214,
+      260,
+      444,
+      490,
+      536,
+      582,
+      628
+    ],
+    "released": false,
+    "warn": {
+      "t": 0.37,
+      "warm": 0.72,
+      "released": false
+    },
+    "shots": [],
+    "gets": [
+      "nst8_sky_crimson",
+      "nl6c_rain_cloud_2",
+      "nl6c_heavy_rain_cloud_0",
+      "nl6c_rain_cloud_3",
+      "nl6c_rain_cloud_4",
+      "nl6c_heavy_rain_cloud_3",
+      "nl6c_heavy_rain_cloud_4",
+      "nl6c_heavy_rain_cloud_2",
+      "nl8c_lg_5",
+      "nl8c_lg_2",
+      "nl8c_lg_3",
+      "nl8c_rim_3",
+      "nl8c_rim_1",
+      "nl8c_prop_0",
+      "nl8c_prop_2",
+      "nl8c_prop_10",
+      "nl8c_prop_9",
+      "nl8c_prop_3",
+      "nl8c_prop_7",
+      "s8rift_4",
+      "s8rift_3",
+      "s8rift_6",
+      "s8rift_8",
+      "bmfx_fov_yellow_tall",
+      "s8symboss_form_0",
+      "bmfx_alert_yellow_danger",
+      "fx_ground_strikes_0916",
+      "alert_up",
+      "nequipbox",
+      "bof_player_weapon_special_icons_atlas",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss"
+    ]
+  },
+  "red": {
+    "gap": 340,
+    "columns": [
+      30,
+      76,
+      122,
+      168,
+      214,
+      260,
+      444,
+      490,
+      536,
+      582,
+      628
+    ],
+    "released": false,
+    "warn": {
+      "t": 0.64,
+      "warm": 0.72,
+      "released": false
+    },
+    "shots": [],
+    "gets": [
+      "nst8_sky_crimson",
+      "nl6c_rain_cloud_2",
+      "nl6c_heavy_rain_cloud_0",
+      "nl6c_rain_cloud_3",
+      "nl6c_rain_cloud_4",
+      "nl6c_heavy_rain_cloud_3",
+      "nl6c_heavy_rain_cloud_4",
+      "nl6c_heavy_rain_cloud_2",
+      "nl8c_lg_5",
+      "nl8c_lg_2",
+      "nl8c_lg_3",
+      "nl8c_rim_3",
+      "nl8c_rim_1",
+      "nl8c_prop_0",
+      "nl8c_prop_2",
+      "nl8c_prop_10",
+      "nl8c_prop_9",
+      "nl8c_prop_3",
+      "nl8c_prop_7",
+      "s8rift_4",
+      "s8rift_3",
+      "s8rift_6",
+      "s8rift_8",
+      "bmfx_fov_red_tall",
+      "s8symboss_form_0",
+      "bmfx_alert_red_danger",
+      "fx_ground_strikes_0916",
+      "alert_up",
+      "nequipbox",
+      "bof_player_weapon_special_icons_atlas",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss"
+    ]
+  },
+  "release": {
+    "gap": 340,
+    "columns": [
+      30,
+      76,
+      122,
+      168,
+      214,
+      260,
+      444,
+      490,
+      536,
+      582,
+      628
+    ],
+    "released": true,
+    "warn": {
+      "t": 0.72,
+      "warm": 0.72,
+      "released": true
+    },
+    "shots": [
+      {
+        "kind": "s8nf_crescent",
+        "x": 30,
+        "y": 195.9104,
+        "vx": 1.97192367361262e-16,
+        "vy": 3.22039575
+      },
+      {
+        "kind": "s8nf_crescent",
+        "x": 76,
+        "y": 195.9104,
+        "vx": 1.97192367361262e-16,
+        "vy": 3.22039575
+      },
+      {
+        "kind": "s8nf_crescent",
+        "x": 122,
+        "y": 195.9104,
+        "vx": 1.97192367361262e-16,
+        "vy": 3.22039575
+      },
+      {
+        "kind": "s8nf_crescent",
+        "x": 168,
+        "y": 195.9104,
+        "vx": 1.97192367361262e-16,
+        "vy": 3.22039575
+      },
+      {
+        "kind": "s8nf_crescent",
+        "x": 214,
+        "y": 195.9104,
+        "vx": 1.97192367361262e-16,
+        "vy": 3.22039575
+      },
+      {
+        "kind": "s8nf_crescent",
+        "x": 260,
+        "y": 195.9104,
+        "vx": 1.97192367361262e-16,
+        "vy": 3.22039575
+      },
+      {
+        "kind": "s8nf_crescent",
+        "x": 444,
+        "y": 195.9104,
+        "vx": 1.97192367361262e-16,
+        "vy": 3.22039575
+      },
+      {
+        "kind": "s8nf_crescent",
+        "x": 490,
+        "y": 195.9104,
+        "vx": 1.97192367361262e-16,
+        "vy": 3.22039575
+      },
+      {
+        "kind": "s8nf_crescent",
+        "x": 536,
+        "y": 195.9104,
+        "vx": 1.97192367361262e-16,
+        "vy": 3.22039575
+      },
+      {
+        "kind": "s8nf_crescent",
+        "x": 582,
+        "y": 195.9104,
+        "vx": 1.97192367361262e-16,
+        "vy": 3.22039575
+      },
+      {
+        "kind": "s8nf_crescent",
+        "x": 628,
+        "y": 195.9104,
+        "vx": 1.97192367361262e-16,
+        "vy": 3.22039575
+      }
+    ],
+    "gets": [
+      "nst8_sky_crimson",
+      "nl6c_rain_cloud_2",
+      "nl6c_heavy_rain_cloud_0",
+      "nl6c_rain_cloud_3",
+      "nl6c_rain_cloud_4",
+      "nl6c_heavy_rain_cloud_3",
+      "nl6c_heavy_rain_cloud_4",
+      "nl6c_heavy_rain_cloud_2",
+      "nl8c_lg_5",
+      "nl8c_lg_2",
+      "nl8c_lg_3",
+      "nl8c_rim_3",
+      "nl8c_rim_1",
+      "nl8c_prop_0",
+      "nl8c_prop_2",
+      "nl8c_prop_10",
+      "nl8c_prop_9",
+      "nl8c_prop_3",
+      "nl8c_prop_7",
+      "s8rift_4",
+      "s8rift_3",
+      "s8rift_6",
+      "s8rift_8",
+      "s8nf_stealth_crescent_muzzle_0",
+      "s8symboss_form_0",
+      "fx_ground_strikes_0916",
+      "s8nf_stealth_crescent_projectile_0",
+      "alert_up",
+      "nequipbox",
+      "bof_player_weapon_special_icons_atlas",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss"
+    ]
+  },
+  "shots": [
+    "_shots\\stage8_vile_crescent_wall_warning_0916\\vile_wall_01_green.png",
+    "_shots\\stage8_vile_crescent_wall_warning_0916\\vile_wall_02_yellow.png",
+    "_shots\\stage8_vile_crescent_wall_warning_0916\\vile_wall_03_red.png",
+    "_shots\\stage8_vile_crescent_wall_warning_0916\\vile_wall_04_release.png"
+  ],
+  "verification": {
+    "focused": "section 344: 10/10",
+    "fullSuite": {
+      "passing": 4384,
+      "failures": 57,
+      "failureNames": "established 56-name baseline plus intermittent Stage-1 sand-tank fixture"
+    },
+    "chromium": "16/16",
+    "pixelReview": "four native 960x1024 frames inspected"
+  }
+}

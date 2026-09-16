@@ -20,7 +20,7 @@ Completed entries are excluded. The list below contains every unfinished item ex
 4. **ACH-02 · Pending** — Achievement menu/button and bottom-center unlock notification that slides/fades downward. Dependency: SpriteCook.
 5. **ACH-06 · Partial** — Entire game without spending a continue: 1000 points plus a generated trophy avatar. Award trigger is complete; SpriteCook trophy avatar remains. Dependency: SpriteCook.
 6. **ENG-15 · Pending** — HUD incoming-lock indicator above Equipped: gray idle, red flashing and distance-accelerated beeps until evasion or hit. Dependency: SpriteCook.
-7. **ENG-02 · Partial** — Migrate all dangerous non-laser boss/miniboss attacks to the shared warning rule. Covered families now include the Stage-5 Chrome Hammer Archmage vertical boomerang, Stage-6 Thunderhead, Stage-7 DUAL SCOOP DREDGER minefield, Stage-9 Event Horizon, independent Warp Sentinel radial/aimed volleys, and every row of the Tidal Sovereign cascade; remaining encounter families need review.
+7. **ENG-02 · Partial** — Migrate all dangerous non-laser boss/miniboss attacks to the shared warning rule. Covered families now include the Stage-5 Chrome Hammer Archmage vertical boomerang, Stage-6 Thunderhead, Stage-7 DUAL SCOOP DREDGER minefield, Stage-8 BLACK COCOON crescent wall, Stage-9 Event Horizon, independent Warp Sentinel radial/aimed volleys, and every row of the Tidal Sovereign cascade; remaining encounter families need review.
 
 ## Complex encounter choreography
 

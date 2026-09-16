@@ -573,3 +573,8 @@ Chrome Hammer now has its one-hand vertical boomerang, Hard/Furious difficulty a
 
 - ENG-02 advances: the live Stage-7 miniboss now commits one of six columns as safe, previews the five dangerous mine trajectories through a 0.86-second shared green/yellow/red warning, and releases the original five slow mines only after red. The old attack required a nonexistent third Dredger phase; it now runs every fourth attack in the real damaged phase.
 - The opening cannot chase late player movement. Fields remain below the authored hull and the matching alert remains above it. Focused 10/10, Chromium 16/16 with zero errors, and full suite 4,375 passes with the exact established 56-name failure baseline. Evidence: docs/STAGE7_DREDGER_MINE_WARNING_0916.md. Tally remains 128 complete / 7 partial / 16 pending.
+
+## Codex update — 2026-09-16: Stage-8 BLACK COCOON crescent-wall warning
+
+- ENG-02 advances: the opening Stage-8 form now commits its original wide center corridor and previews all eleven dangerous crescent columns through a 0.72-second shared green/yellow/red warning. Later boss-clock changes and player movement cannot shift the promised opening.
+- The original eleven purple crescents, speed, muzzle and 1.35-second cadence remain intact. Focused 10/10, Chromium 16/16 with zero errors, and full suite 4,384 passes with the established 56 failures plus the intermittent Stage-1 sand-tank fixture. Evidence: docs/STAGE8_VILE_CRESCENT_WALL_WARNING_0916.md. Tally remains 128 complete / 7 partial / 16 pending.

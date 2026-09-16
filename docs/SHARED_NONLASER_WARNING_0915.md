@@ -73,3 +73,7 @@ The active Chrome Hammer Archmage one-hand twirl now preserves the boomerang con
 ## Stage 7 DUAL SCOOP DREDGER minefield follow-up
 
 The live Stage-7 miniboss now commits one safe column before its late-phase mine attack, previews the other five exact trajectories through a 0.86-second shared green/yellow/red warning, and releases the original five slow mines only after red. Late player movement cannot relocate the opening. Chromium passes 16/16 and focused section 343 passes 10/10. See [STAGE7_DREDGER_MINE_WARNING_0916.md](STAGE7_DREDGER_MINE_WARNING_0916.md).
+
+## Stage 8 BLACK COCOON crescent-wall follow-up
+
+The opening Vile form now commits its original wide center corridor and previews all eleven dangerous crescent columns through a 0.72-second shared green/yellow/red warning. Boss-clock changes and late player movement cannot move the opening; the original eleven authored crescents release only after red. Chromium passes 16/16 and focused section 344 passes 10/10. See [STAGE8_VILE_CRESCENT_WALL_WARNING_0916.md](STAGE8_VILE_CRESCENT_WALL_WARNING_0916.md).
