@@ -1,0 +1,375 @@
+{
+  "checks": [
+    {
+      "pass": true,
+      "label": "native Stage-6 boss route opens in Chromium"
+    },
+    {
+      "pass": true,
+      "label": "live Carrier commits both gravity-mine corridors"
+    },
+    {
+      "pass": true,
+      "label": "authored Carrier, gravity mine, muzzle and warning art decode before capture"
+    },
+    {
+      "pass": true,
+      "label": "green previews both committed gravity-mine paths"
+    },
+    {
+      "pass": true,
+      "label": "green uses shared field and alert art"
+    },
+    {
+      "pass": true,
+      "label": "yellow follows the moving mounts without changing committed angles"
+    },
+    {
+      "pass": true,
+      "label": "yellow uses shared field and alert art"
+    },
+    {
+      "pass": true,
+      "label": "red preserves both promised paths until release"
+    },
+    {
+      "pass": true,
+      "label": "red uses shared field and alert art"
+    },
+    {
+      "pass": true,
+      "label": "exactly two gravity mines release after the full warning"
+    },
+    {
+      "pass": true,
+      "label": "the original slow accelerating mine behavior is preserved"
+    },
+    {
+      "pass": true,
+      "label": "carrier_gravity_01_green is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "carrier_gravity_02_yellow is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "carrier_gravity_03_red is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "carrier_gravity_04_release is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "zero Chromium page, console or game-loop errors"
+    }
+  ],
+  "errors": [],
+  "fight": {
+    "ok": true,
+    "name": "DOOMSDAY CARRIER MK II",
+    "kind": "doomsdaycarriermk2",
+    "pilot": "yuri",
+    "state": "play"
+  },
+  "setup": {
+    "name": "DOOMSDAY CARRIER MK II",
+    "hull": "nsb_dcarrmk2_closed",
+    "tell": 0.72,
+    "cooldown": 1.72,
+    "angles": [
+      1.3707963267948966,
+      1.7707963267948965
+    ],
+    "slots": [
+      "L",
+      "R"
+    ],
+    "world": 680,
+    "camera": 100,
+    "center": 340
+  },
+  "green": {
+    "angles": [
+      1.3707963267948966,
+      1.7707963267948965
+    ],
+    "slots": [
+      "L",
+      "R"
+    ],
+    "paths": [
+      {
+        "x": 167.008,
+        "y": 230,
+        "a": 1.3707963267948966,
+        "slot": "L",
+        "ex": 349.38644566986625,
+        "ey": 1129.7011184582598
+      },
+      {
+        "x": 512.992,
+        "y": 230,
+        "a": 1.7707963267948965,
+        "slot": "R",
+        "ex": 330.61355433013387,
+        "ey": 1129.7011184582598
+      }
+    ],
+    "released": false,
+    "warn": {
+      "t": 0.12,
+      "warm": 0.72,
+      "released": false
+    },
+    "shots": [],
+    "gets": [
+      "stage6_blue_master",
+      "nl6c_low_rolling_bank_0",
+      "nl6c_low_rolling_bank_2",
+      "nl6c_low_rolling_bank_1",
+      "nl6c_rain_cloud_0",
+      "nl6c_rain_cloud_1",
+      "nl6c_low_rolling_bank_5",
+      "nl6c_low_rolling_bank_4",
+      "bmfx_fov_green_tall",
+      "s6mb_stormlink_0",
+      "nsb_dcarrmk2_closed",
+      "bmfx_alert_green_danger",
+      "nsd_chim_0",
+      "nsd_chim_3",
+      "fx_ground_strikes_0916",
+      "alert_up",
+      "nequipbox",
+      "bof_player_weapon_special_icons_atlas",
+      "bmbar_fill_seg",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss"
+    ]
+  },
+  "yellow": {
+    "angles": [
+      1.3707963267948966,
+      1.7707963267948965
+    ],
+    "slots": [
+      "L",
+      "R"
+    ],
+    "paths": [
+      {
+        "x": 201.008,
+        "y": 230,
+        "a": 1.3707963267948966,
+        "slot": "L",
+        "ex": 383.38644566986625,
+        "ey": 1129.7011184582598
+      },
+      {
+        "x": 546.992,
+        "y": 230,
+        "a": 1.7707963267948965,
+        "slot": "R",
+        "ex": 364.61355433013387,
+        "ey": 1129.7011184582598
+      }
+    ],
+    "released": false,
+    "warn": {
+      "t": 0.33,
+      "warm": 0.72,
+      "released": false
+    },
+    "shots": [],
+    "gets": [
+      "stage6_blue_master",
+      "nst6_neoncity",
+      "nl6c_low_rolling_bank_0",
+      "nl6c_low_rolling_bank_2",
+      "nl6c_low_rolling_bank_1",
+      "nl6c_rain_cloud_0",
+      "nl6c_rain_cloud_1",
+      "nl6c_rain_cloud_2",
+      "nl6c_low_rolling_bank_5",
+      "nl6c_low_rolling_bank_4",
+      "nl6c_heavy_rain_cloud_0",
+      "nl6c_heavy_rain_cloud_3",
+      "nl6c_heavy_rain_cloud_4",
+      "nl6c_heavy_rain_cloud_2",
+      "nl6c_heavy_rain_cloud_1",
+      "bmfx_fov_yellow_tall",
+      "s6mb_stormlink_0",
+      "nsb_dcarrmk2_closed",
+      "bmfx_alert_yellow_danger",
+      "nsd_chim_0",
+      "nsd_chim_3",
+      "fx_ground_strikes_0916",
+      "alert_up",
+      "nequipbox",
+      "bof_player_weapon_special_icons_atlas",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss"
+    ]
+  },
+  "red": {
+    "angles": [
+      1.3707963267948966,
+      1.7707963267948965
+    ],
+    "slots": [
+      "L",
+      "R"
+    ],
+    "paths": [
+      {
+        "x": 201.008,
+        "y": 230,
+        "a": 1.3707963267948966,
+        "slot": "L",
+        "ex": 383.38644566986625,
+        "ey": 1129.7011184582598
+      },
+      {
+        "x": 546.992,
+        "y": 230,
+        "a": 1.7707963267948965,
+        "slot": "R",
+        "ex": 364.61355433013387,
+        "ey": 1129.7011184582598
+      }
+    ],
+    "released": false,
+    "warn": {
+      "t": 0.65,
+      "warm": 0.72,
+      "released": false
+    },
+    "shots": [],
+    "gets": [
+      "stage6_blue_master",
+      "nst6_neoncity",
+      "nl6c_low_rolling_bank_0",
+      "nl6c_low_rolling_bank_2",
+      "nl6c_low_rolling_bank_1",
+      "nl6c_rain_cloud_0",
+      "nl6c_rain_cloud_1",
+      "nl6c_rain_cloud_2",
+      "nl6c_low_rolling_bank_5",
+      "nl6c_low_rolling_bank_4",
+      "nl6c_heavy_rain_cloud_0",
+      "nl6c_heavy_rain_cloud_3",
+      "nl6c_heavy_rain_cloud_4",
+      "nl6c_heavy_rain_cloud_2",
+      "nl6c_heavy_rain_cloud_1",
+      "bmfx_fov_red_tall",
+      "s6mb_stormlink_0",
+      "nsb_dcarrmk2_closed",
+      "bmfx_alert_red_danger",
+      "nsd_chim_0",
+      "nsd_chim_3",
+      "fx_ground_strikes_0916",
+      "alert_up",
+      "nequipbox",
+      "bof_player_weapon_special_icons_atlas",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss"
+    ]
+  },
+  "release": {
+    "angles": [
+      1.3707963267948966,
+      1.7707963267948965
+    ],
+    "slots": [
+      "L",
+      "R"
+    ],
+    "paths": [
+      {
+        "x": 201.008,
+        "y": 230,
+        "a": 1.3707963267948966,
+        "slot": "L",
+        "ex": 383.38644566986625,
+        "ey": 1129.7011184582598
+      },
+      {
+        "x": 546.992,
+        "y": 230,
+        "a": 1.7707963267948965,
+        "slot": "R",
+        "ex": 364.61355433013387,
+        "ey": 1129.7011184582598
+      }
+    ],
+    "released": true,
+    "warn": {
+      "t": 0.72,
+      "warm": 0.72,
+      "released": true
+    },
+    "shots": [
+      {
+        "kind": "s6gravity",
+        "x": 201.008,
+        "y": 230,
+        "spd": 1.35,
+        "ang": 1.3707963267948966,
+        "accel": 0.16,
+        "max": 2.15
+      },
+      {
+        "kind": "s6gravity",
+        "x": 546.992,
+        "y": 230,
+        "spd": 1.35,
+        "ang": 1.7707963267948965,
+        "accel": 0.16,
+        "max": 2.15
+      }
+    ],
+    "gets": [
+      "stage6_blue_master",
+      "nst6_neoncity",
+      "nl6c_low_rolling_bank_0",
+      "nl6c_low_rolling_bank_2",
+      "nl6c_low_rolling_bank_1",
+      "nl6c_rain_cloud_0",
+      "nl6c_rain_cloud_1",
+      "nl6c_rain_cloud_2",
+      "nl6c_low_rolling_bank_5",
+      "nl6c_low_rolling_bank_4",
+      "nl6c_heavy_rain_cloud_0",
+      "nl6c_heavy_rain_cloud_3",
+      "nl6c_heavy_rain_cloud_4",
+      "nl6c_heavy_rain_cloud_2",
+      "nl6c_heavy_rain_cloud_1",
+      "s6mb_prismmuzzle_0",
+      "s6mb_stormlink_0",
+      "nsb_dcarrmk2_closed",
+      "nsd_chim_0",
+      "nsd_chim_3",
+      "fx_ground_strikes_0916",
+      "s6mb_gravityripple_0",
+      "s6mb_gravitymine_0",
+      "alert_up",
+      "nequipbox",
+      "bof_player_weapon_special_icons_atlas",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss"
+    ]
+  },
+  "shots": [
+    "_shots\\stage6_carrier_gravity_mine_warning_0916\\carrier_gravity_01_green.png",
+    "_shots\\stage6_carrier_gravity_mine_warning_0916\\carrier_gravity_02_yellow.png",
+    "_shots\\stage6_carrier_gravity_mine_warning_0916\\carrier_gravity_03_red.png",
+    "_shots\\stage6_carrier_gravity_mine_warning_0916\\carrier_gravity_04_release.png"
+  ],
+  "suite": {
+    "passing": 4455,
+    "failures": 57,
+    "failureNames": "established 56-name baseline plus intermittent Stage-1 sand-tank fixture; no new names",
+    "focused": "section 351: 11/11"
+  }
+}

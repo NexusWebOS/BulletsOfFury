@@ -101,3 +101,7 @@ Both shield-down Carrier phases now commit the alternating storm-node pair and a
 ## Stage 6 Doomsday Carrier prism-crossfire follow-up
 
 The Carrier's Phase 5 four-barrel prism crossfire now commits all four upper-hardpoint paths before a 0.62-second shared warning. Origins follow the hull while the alternating outward/inward angles remain fixed. Authored prism rounds, speed, muzzles, sound and total cadence remain intact, and a phase transition cancels any pending crossfire. Chromium passes 16/16 and focused section 350 passes 12/12. See [STAGE6_CARRIER_PRISM_CROSSFIRE_WARNING_0916.md](STAGE6_CARRIER_PRISM_CROSSFIRE_WARNING_0916.md).
+
+## Stage 6 Doomsday Carrier gravity-mine follow-up
+
+The Carrier's Phase 5 paired gravity mines now commit their two crossing paths before a 0.72-second shared warning. Origins follow the left and right mounts while both angles remain fixed. Authored gravity mines, slow acceleration, capped speed, scale, muzzles, sound and total cadence remain intact, and phase transitions cancel a pending warning. Chromium passes 16/16 and focused section 351 passes 11/11. See [STAGE6_CARRIER_GRAVITY_MINE_WARNING_0916.md](STAGE6_CARRIER_GRAVITY_MINE_WARNING_0916.md).
