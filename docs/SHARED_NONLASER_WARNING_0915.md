@@ -125,3 +125,7 @@ The crippled Warden now commits a complete rail group before a 0.58-second share
 ## Stage 5 Chrome Hammer Archmage spiked-ball follow-up
 
 The Archmage now commits its spiked-ball launch direction and exact first wall impact before a 1.25-second shared green/yellow/red warning. The corridor and first bounce remain fixed through player-driven camera movement; later reflections retain the original dynamic screen bounds. Authored ball art, base velocity, duration, missile knockback and rage behavior remain intact. Chromium passes 18/18 and focused section 357 passes 10/10. See [ARCHMAGE_SPIKED_BALL_WARNING_0916.md](ARCHMAGE_SPIKED_BALL_WARNING_0916.md).
+
+## Stage 5 Archmage fused mega-wave follow-up
+
+The restored Easy/Normal post-chaingun form now previews the complete fused mega-wave damage corridor through the shared green/yellow/red system for 1.65 seconds. The beam remains harmless until red completes. The same batch repairs the missing `core_orbit` controller with authored blue core effects and prevents destroyed module targets from returning. Chromium passes 22/22 and focused section 358 passes 10/10. See [ARCHMAGE_CORE_RECOVERY_0916.md](ARCHMAGE_CORE_RECOVERY_0916.md).

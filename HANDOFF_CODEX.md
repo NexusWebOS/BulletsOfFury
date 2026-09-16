@@ -643,3 +643,9 @@ Chrome Hammer now has its one-hand vertical boomerang, Hard/Furious difficulty a
 
 - ENG-02 advances: the Chrome Hammer Archmage now commits its spiked-ball launch direction and exact first wall impact before a 1.25-second shared green/yellow/red corridor. Player and camera movement cannot shift the promise after the curl begins.
 - The first reflection uses the committed bounds, then the original dynamic reflections resume. Authored ball art, `150/165` base velocity, 15-second duration, missile knockback and weapon-triggered rage remain intact. Focused 10/10 and Chromium 18/18 pass with zero errors. The full suite reaches 4,521 passes with the exact established 56-name baseline and no new name. Evidence: docs/ARCHMAGE_SPIKED_BALL_WARNING_0916.md. Tally remains 128 complete / 7 partial / 16 pending.
+
+## Codex update — 2026-09-16: Stage-5 Archmage core recovery
+
+- Easy/Normal no longer freezes after the Archmage chaingun breaks. A 2.15-second authored blue core conversion returns the boss to its anchor and releases into the dual-Uzi/mega-wave loop.
+- Both obsolete module targets retire at the final break, so invisible hammer hits cannot resurrect the destroyed chaingun phase. The fused mega-wave now shows the shared green/yellow/red corridor for its exact damage width before release.
+- Focused section 358 passes 10/10; Chromium passes 22/22 with zero errors; full suite reaches 4,530 passes and the established 56 failures plus the intermittent Stage-1 sand-tank fixture. Evidence: docs/ARCHMAGE_CORE_RECOVERY_0916.md. Tally remains 128 complete / 7 partial / 16 pending.

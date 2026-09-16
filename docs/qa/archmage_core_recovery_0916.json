@@ -1,0 +1,350 @@
+{
+  "checks": [
+    {
+      "pass": true,
+      "label": "native Stage-5 boss route opens in Chromium"
+    },
+    {
+      "pass": true,
+      "label": "destroying the Normal chaingun enters the live core-recovery phase and retires obsolete module targets"
+    },
+    {
+      "pass": true,
+      "label": "authored break, core-effect and dual-Uzi art decode before capture"
+    },
+    {
+      "pass": true,
+      "label": "the break frame uses the authored body reel and core-effect atlas"
+    },
+    {
+      "pass": true,
+      "label": "the visible core orbit accelerates while the boss returns to its fighting anchor"
+    },
+    {
+      "pass": true,
+      "label": "the authored cores keep orbiting through the late convergence instead of freezing"
+    },
+    {
+      "pass": true,
+      "label": "the finite transition releases into the authored dual-Uzi final form"
+    },
+    {
+      "pass": true,
+      "label": "the Normal final-form loop reaches a green shared mega-wave warning"
+    },
+    {
+      "pass": true,
+      "label": "the mega-wave corridor advances to yellow before release"
+    },
+    {
+      "pass": true,
+      "label": "the mega-wave corridor reaches red while the attack is still harmless"
+    },
+    {
+      "pass": true,
+      "label": "the final form releases its mega beam only after the red warning"
+    },
+    {
+      "pass": true,
+      "label": "the Normal final form loops back into dual-Uzi pressure instead of stalling"
+    },
+    {
+      "pass": true,
+      "label": "archmage_core_01_break is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "archmage_core_02_orbit is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "archmage_core_03_converge is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "archmage_core_04_uzi_release is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "archmage_core_05_green is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "archmage_core_06_yellow is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "archmage_core_07_red is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "archmage_core_08_mega_beam is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "archmage_core_09_loop is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "zero Chromium page, console or game-loop errors"
+    }
+  ],
+  "errors": [],
+  "fight": {
+    "ok": true,
+    "name": "XENO REGENT",
+    "kind": "xenoregent",
+    "pilot": "yuri",
+    "state": "play"
+  },
+  "setup": {
+    "name": "CHROME HAMMER ARCHMAGE",
+    "state": "core_orbit",
+    "mode": "core",
+    "chainDestroyed": true,
+    "hammerDestroyed": true,
+    "x": 104,
+    "y": 286
+  },
+  "frames": [
+    {
+      "state": "core_orbit",
+      "t": 0.08,
+      "mode": "core",
+      "coreAngle": 0.3438139534883721,
+      "x": 116,
+      "y": 274,
+      "shotCd": 0.32,
+      "warn": null,
+      "gets": [
+        "bg_stage05_loop",
+        "arch_chaingun_break_enrage",
+        "arch_effects",
+        "fx_ground_strikes_0916",
+        "fury_thrusters_04",
+        "nxp_white_0",
+        "nx_small_0",
+        "alert_up",
+        "ngm_space_atlas",
+        "nequipbox",
+        "bmbar_fill_seg",
+        "bmbar_frame_boss",
+        "bmbar_tab_boss"
+      ]
+    },
+    {
+      "state": "core_orbit",
+      "t": 0.7999999999999999,
+      "mode": "core",
+      "coreAngle": 5.36706976744186,
+      "x": 224,
+      "y": 174.08,
+      "shotCd": -0.39999999999999997,
+      "warn": null,
+      "gets": [
+        "bg_stage05_loop",
+        "arch_chaingun_break_enrage",
+        "arch_effects",
+        "fx_ground_strikes_0916",
+        "fury_thrusters_04",
+        "nxp_white_0",
+        "nx_small_0",
+        "alert_up",
+        "nequipbox",
+        "bmbar_frame_boss",
+        "bmbar_tab_boss"
+      ]
+    },
+    {
+      "state": "core_orbit",
+      "t": 1.58,
+      "mode": "core",
+      "coreAngle": 13.072744186046512,
+      "x": 267.072,
+      "y": 174.08,
+      "shotCd": -1.18,
+      "warn": null,
+      "gets": [
+        "bg_stage05_loop",
+        "arch_chaingun_break_enrage",
+        "arch_effects",
+        "fx_ground_strikes_0916",
+        "fury_thrusters_04",
+        "nxp_white_0",
+        "nx_small_0",
+        "alert_up",
+        "nequipbox",
+        "bmbar_frame_boss",
+        "bmbar_tab_boss"
+      ]
+    },
+    {
+      "state": "uzi",
+      "t": 0,
+      "mode": "core",
+      "coreAngle": 20.51274418604651,
+      "x": 278.22335999999996,
+      "y": 174.08,
+      "shotCd": 0.18,
+      "warn": null,
+      "gets": [
+        "bg_stage05_loop",
+        "arch_dual_uzi_assault",
+        "fx_ground_strikes_0916",
+        "fury_thrusters_04",
+        "nxp_white_0",
+        "nx_small_0",
+        "alert_up",
+        "nequipbox",
+        "bmbar_frame_boss",
+        "bmbar_tab_boss"
+      ]
+    },
+    {
+      "state": "mega_charge",
+      "t": 0.25,
+      "mode": "core",
+      "coreAngle": 20.51274418604651,
+      "x": 286.62335999999993,
+      "y": 174.08,
+      "shotCd": 0.22999999999999998,
+      "warn": {
+        "t": 0.25,
+        "warm": 1.65,
+        "released": false
+      },
+      "gets": [
+        "bg_stage05_loop",
+        "bmfx_fov_green_tall",
+        "bmfx_alert_green_danger",
+        "arch_dual_uzi_assault",
+        "fx_ground_strikes_0916",
+        "fury_thrusters_04",
+        "nxp_white_0",
+        "nx_small_0",
+        "alert_up",
+        "nequipbox",
+        "bmbar_frame_boss",
+        "bmbar_tab_boss"
+      ]
+    },
+    {
+      "state": "mega_charge",
+      "t": 0.8,
+      "mode": "core",
+      "coreAngle": 20.51274418604651,
+      "x": 286.62335999999993,
+      "y": 174.08,
+      "shotCd": -0.32000000000000006,
+      "warn": {
+        "t": 0.8,
+        "warm": 1.65,
+        "released": false
+      },
+      "gets": [
+        "bg_stage05_loop",
+        "bmfx_fov_yellow_tall",
+        "bmfx_alert_yellow_danger",
+        "arch_dual_uzi_assault",
+        "fx_ground_strikes_0916",
+        "fury_thrusters_04",
+        "nxp_white_0",
+        "nx_small_0",
+        "alert_up",
+        "nequipbox",
+        "bmbar_frame_boss",
+        "bmbar_tab_boss"
+      ]
+    },
+    {
+      "state": "mega_charge",
+      "t": 1.25,
+      "mode": "core",
+      "coreAngle": 20.51274418604651,
+      "x": 286.62335999999993,
+      "y": 174.08,
+      "shotCd": -0.77,
+      "warn": {
+        "t": 1.25,
+        "warm": 1.65,
+        "released": false
+      },
+      "gets": [
+        "bg_stage05_loop",
+        "bmfx_fov_red_tall",
+        "arch_dual_uzi_assault",
+        "fx_ground_strikes_0916",
+        "fury_thrusters_04",
+        "nxp_white_0",
+        "nx_small_0",
+        "alert_up",
+        "nequipbox",
+        "bmbar_frame_boss",
+        "bmbar_tab_boss"
+      ]
+    },
+    {
+      "state": "mega_beam",
+      "t": 0,
+      "mode": "core",
+      "coreAngle": 20.51274418604651,
+      "x": 286.62335999999993,
+      "y": 174.08,
+      "shotCd": 0.25,
+      "warn": {
+        "t": 1.67,
+        "warm": 1.65,
+        "released": true
+      },
+      "gets": [
+        "bg_stage05_loop",
+        "arch_dual_uzi_assault",
+        "fx_ground_strikes_0916",
+        "fury_thrusters_04",
+        "nxp_white_0",
+        "nx_small_0",
+        "alert_up",
+        "nequipbox",
+        "bmbar_frame_boss",
+        "bmbar_tab_boss"
+      ]
+    },
+    {
+      "state": "uzi",
+      "t": 0,
+      "mode": "core",
+      "coreAngle": 20.51274418604651,
+      "x": 286.62335999999993,
+      "y": 174.08,
+      "shotCd": 0.23,
+      "warn": {
+        "t": 1.67,
+        "warm": 1.65,
+        "released": true
+      },
+      "gets": [
+        "bg_stage05_loop",
+        "arch_dual_uzi_assault",
+        "fx_ground_strikes_0916",
+        "fury_thrusters_04",
+        "nxp_white_0",
+        "nx_small_0",
+        "alert_up",
+        "nequipbox",
+        "bmbar_frame_boss",
+        "bmbar_tab_boss"
+      ]
+    }
+  ],
+  "shots": [
+    "_shots\\archmage_core_recovery_0916\\archmage_core_01_break.png",
+    "_shots\\archmage_core_recovery_0916\\archmage_core_02_orbit.png",
+    "_shots\\archmage_core_recovery_0916\\archmage_core_03_converge.png",
+    "_shots\\archmage_core_recovery_0916\\archmage_core_04_uzi_release.png",
+    "_shots\\archmage_core_recovery_0916\\archmage_core_05_green.png",
+    "_shots\\archmage_core_recovery_0916\\archmage_core_06_yellow.png",
+    "_shots\\archmage_core_recovery_0916\\archmage_core_07_red.png",
+    "_shots\\archmage_core_recovery_0916\\archmage_core_08_mega_beam.png",
+    "_shots\\archmage_core_recovery_0916\\archmage_core_09_loop.png"
+  ]
+}

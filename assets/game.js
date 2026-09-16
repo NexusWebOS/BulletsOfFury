@@ -34895,6 +34895,10 @@ function hammerArchFrame(key,frame,tint){
   for(let i=0;i<d.data.length;i+=4){if(!d.data[i+3])continue;const l=d.data[i]*.22+d.data[i+1]*.70+d.data[i+2]*.08,co=tint==='red'?[1.8,.18,.16]:tint==='white'?[2.5,2.5,2.5]:[.2,.75,1.9];d.data[i]=Math.min(255,l*co[0]);d.data[i+1]=Math.min(255,l*co[1]);d.data[i+2]=Math.min(255,l*co[2]);}g.putImageData(d,0,0);const q={im:c,sx:0,sy:0,sw:w,sh:h};archTintCache.set(id,q);return q;
 }
 function archBlit(key,frame,x,y,h,tint,rot,alpha){const q=hammerArchFrame(key,frame,tint);if(!q)return false;const w=h*q.sw/q.sh;ctx.save();ctx.globalAlpha=alpha==null?1:alpha;ctx.translate(x,y);if(rot)ctx.rotate(rot);ctx.imageSmoothingEnabled=false;ctx.drawImage(q.im,q.sx,q.sy,q.sw,q.sh,-w/2,-h/2,w,h);ctx.restore();return true;}
+function archEffectBlit(cell,x,y,size,rot,alpha){
+  if(!XART.rdy('arch_effects'))return false;const im=XART.get('arch_effects'),cols=4,rows=4,cw=im.width/cols,ch=im.height/rows,c=clamp(cell|0,0,cols*rows-1),sx=(c%cols)*cw,sy=((c/cols)|0)*ch;
+  ctx.save();ctx.globalAlpha=alpha==null?1:alpha;ctx.globalCompositeOperation='lighter';ctx.translate(x,y);if(rot)ctx.rotate(rot);ctx.imageSmoothingEnabled=false;ctx.drawImage(im,sx,sy,cw,ch,-size/2,-size/2,size,size);ctx.restore();return true;
+}
 function hammerBossInit(b){
   b.name='CHROME HAMMER ARCHMAGE';b.w=158;b.h=176;b.y=VH+145;b.ty=VH*.34;
   const mul=(DIFF&&DIFF.eHp)||1;b._hammer={state:'flyby',t:0,cycle:0,attackCycle:0,rage:0,shotCd:.4,angle:0,vx:0,vy:0,mode:'hammer',hammerHP:Math.ceil(70*mul),hammerMax:Math.ceil(70*mul),chainHP:Math.ceil(95*mul),chainMax:Math.ceil(95*mul),hammerDestroyed:false,chainDestroyed:false,bombs:[],pillars:[],hitCd:0};
@@ -34920,7 +34924,7 @@ function hammerGripPoint(b){return{x:b.x-48,y:b.y-10};}
 function hammerEnergyBomb(x,y,a,speed){hammerLaser(x,y,a,speed||3.6);}
 function hammerBossModuleBreak(b,which){const h=b._hammer;explode(which==='hammer'?b.x-54:b.x,which==='hammer'?b.y+8:b.y-52,70,which==='hammer'?'blue':'red');shake=Math.max(shake,10);(Audio.SFX.expBig||Audio.SFX.hit)();
   if(which==='hammer'){h.hammerDestroyed=true;h.mode='chaingun';h.throw=null;hammerState(b,'chaingun_draw');}
-  else{h.chainDestroyed=true;if(hammerHard()){h.mode='enraged';hammerState(b,'enrage');}else{h.mode='core';hammerState(b,'core_orbit');}}
+  else{h.chainDestroyed=true;h.hammerDestroyed=true;h.throw=null;if(hammerHard()){h.mode='enraged';hammerState(b,'enrage');}else{h.mode='core';h.coreAngle=0;hammerState(b,'core_orbit');const cue=Audio.SFX.bossWeaponCharge||Audio.SFX.crackle||Audio.SFX.bossPhase;if(cue)cue();}}
 }
 function hammerBossDamage(b,dmg){
   const h=b._hammer;if(b._noHit)return 0;const hit=b._hammerModuleHit;b._hammerModuleHit=null;
@@ -34961,6 +34965,10 @@ function hammerBossTick(b,dt){
   else if(h.state==='chaingun_draw'){b.x+=clamp(homeX-b.x,-100*dt,100*dt);b.y+=clamp(homeY-b.y,-100*dt,100*dt);if(h.t>2){h.chainHeat=0;h.shotCd=.2;hammerState(b,'chaingun');}}
   else if(h.state==='chaingun'){b.x+=clamp(player.x-b.x,-135*dt,135*dt);if(h.shotCd<=0)hammerBossChaingunFire(b);if(h.t>6.5){h.chainHeat=1;hammerState(b,'chain_cool');}}
   else if(h.state==='chain_cool'){h.chainHeat=Math.max(0,1-h.t/2.3);if(h.t>2.3){if(fur&&Math.random()<.5)hammerSpellStart(b);else hammerState(b,'chaingun');}}
+  else if(h.state==='core_orbit'){
+    const k=clamp(h.t/2.15,0,1);b.x+=clamp(homeX-b.x,-150*dt,150*dt);b.y+=clamp(homeY-b.y,-150*dt,150*dt);h.coreAngle=(h.coreAngle||0)+dt*(4+8*k);
+    if(h.t>=2.15){h.shotCd=.18;hammerState(b,'uzi');const cue=Audio.SFX.bossPhase||Audio.SFX.enemyShoot;if(cue)cue();}
+  }
   else if(h.state==='enrage'){if(h.t>2.15){h.shotCd=.1;hammerState(b,'uzi');}}
   else if(h.state==='uzi'){b.x+=clamp((h.t%1.2<.6?camLeftX()+85:camRightX()-85)-b.x,-420*dt,420*dt);if(h.shotCd<=0)hammerBossUziFire(b,h.t>2.5);if(h.t>4.4)hammerState(b,'mega_charge');}
   else if(h.state==='mega_charge'){combatWarningTick(b,'archmage-fused-wave',h.t,1.65);if(h.t>1.65){h.beamHit=false;h.shotCd=.25;hammerState(b,'mega_beam');}}
@@ -34975,10 +34983,11 @@ function hammerBoomerangTick(b,dt){
   else{const g=hammerGripPoint(b),dx=g.x-T.x,dy=g.y-T.y,d=Math.hypot(dx,dy)||1,step=Math.min(d,HAMMER_RETURN_SPEED*dt);T.x+=dx/d*step;T.y+=dy/d*step;if(d<=16){h.throw=null;h.attackCycle++;hammerState(b,'hammer');if(Audio.SFX.hammerCatch)Audio.SFX.hammerCatch();return true;}}
   hammerBoomerangHit(T,dt);return true;
 }
-function hammerBossAtmosphereDraw(b){const h=b._hammer,s=h.state,charged=['mega_charge','mega_beam','spell','spell_blast','enrage'].includes(s);if(!charged)return;const k=s==='mega_beam'?1:clamp(h.t/1.5,0,1);ctx.fillStyle='rgba(1,3,12,'+(.34+.34*k)+')';ctx.fillRect(0,0,VW,VH);ctx.save();ctx.globalCompositeOperation='lighter';ctx.strokeStyle=s==='enrage'?'#ff2538':'#5ccfff';ctx.lineWidth=1.5;for(let n=0;n<4;n++){let x=(n*197+(stateT||0)*310)%VW;ctx.beginPath();ctx.moveTo(x,0);for(let y=0;y<VH;y+=28)ctx.lineTo(x+rnd(-16,16),y);ctx.stroke();}ctx.restore();}
+function hammerBossAtmosphereDraw(b){const h=b._hammer,s=h.state,charged=['core_orbit','mega_charge','mega_beam','spell','spell_blast','enrage'].includes(s);if(!charged)return;const k=s==='mega_beam'?1:clamp(h.t/1.5,0,1);ctx.fillStyle='rgba(1,3,12,'+(.34+.34*k)+')';ctx.fillRect(0,0,VW,VH);ctx.save();ctx.globalCompositeOperation='lighter';ctx.strokeStyle=s==='enrage'?'#ff2538':'#5ccfff';ctx.lineWidth=1.5;for(let n=0;n<4;n++){let x=(n*197+(stateT||0)*310)%VW;ctx.beginPath();ctx.moveTo(x,0);for(let y=0;y<VH;y+=28)ctx.lineTo(x+rnd(-16,16),y);ctx.stroke();}ctx.restore();}
 function hammerModuleBars(b){const h=b._hammer;if(b.enter||b.dead)return;ctx.save();ctx.font='bold 7px "BOFmil", monospace';ctx.textAlign='center';for(const q of [{name:'HAMMER',v:h.hammerHP,m:h.hammerMax,x:b.x-53,y:b.y+58,dead:h.hammerDestroyed},{name:'CHAINGUN',v:h.chainHP,m:h.chainMax,x:b.x,y:b.y-92,dead:h.chainDestroyed}]){if(q.dead)continue;ctx.fillStyle='rgba(0,0,0,.75)';ctx.fillRect(q.x-28,q.y,56,5);ctx.fillStyle=q.name==='HAMMER'?'#6edfff':'#ff703c';ctx.fillRect(q.x-27,q.y+1,54*clamp(q.v/q.m,0,1),3);ctx.fillStyle='#e8f4ff';ctx.fillText(q.name,q.x,q.y-2);}ctx.restore();}
 function hammerBossDraw(b){
   const h=b._hammer;hammerBossAtmosphereDraw(b);
+  if(h.state==='mega_charge'){const k=clamp(h.t/1.65,0,1);combatWarningDraw(b,{x:b.x,y:b.y+36,ex:b.x,ey:VH,progress:k,width:VW*.24,alertX:b.x+78,alertY:b.y-78});}
   if(h.state==='curl'&&h.ballWarn){const p=hammerBallLaunchPath(b),k=clamp(h.t/HAMMER_BALL_WARN,0,1);combatWarningDraw(b,{x:p.x,y:p.y,ex:p.ex,ey:p.ey,progress:k,width:112,alertX:b.x-p.dir*86,alertY:b.y-76});}
   if(b.dead){const f=Math.min(15,Math.floor((b.dying||0)*3.1));archBlit('death',f,b.x,b.y,210,null,0);return;}
   if(h.state==='spell'||h.state==='spell_blast'){const ri=hammerFrame('reticle',0);for(const q of h.state==='spell'?h.spellTargets:h.pillars){hammerGroundReticleDraw(ri,q.x,PLAY.y+PLAY.h-35,128,.65+.35*Math.sin((stateT||0)*24));if(h.state==='spell_blast'){ctx.save();ctx.globalCompositeOperation='lighter';const grad=ctx.createLinearGradient(0,PLAY.y+PLAY.h,0,PLAY.y);grad.addColorStop(0,'#fff');grad.addColorStop(.18,'#4fdcff');grad.addColorStop(1,'rgba(80,80,255,0)');ctx.fillStyle=grad;ctx.fillRect(q.x-22,PLAY.y,44,PLAY.h);ctx.restore();}}}
@@ -35005,10 +35014,16 @@ function hammerBossDraw(b){
   }
   else if(['curl','ball','uncurl'].includes(h.state)){key='spiked_ball';f=h.state==='ball'?15:Math.min(15,Math.floor(h.t/1.25*16));if(h.state==='uncurl')f=15-f;rot=h.state==='ball'?h.angle:0;z=154;tint=h.rage>0?'red':tint;}
   else if(['chaingun_draw','chaingun','chain_cool'].includes(h.state)){key='chaingun_detach_fire';f=h.state==='chaingun_draw'?Math.min(15,Math.floor(h.t/2*16)):8+(Math.floor(h.t*(4+12*(h.chainHeat||0)))%8);}
+  else if(h.state==='core_orbit'){const k=clamp(h.t/2.15,0,1);key='chaingun_break_enrage';f=Math.min(11,Math.floor(k*12));tint='blue';}
   else if(h.state==='enrage'){key='chaingun_break_enrage';f=Math.min(15,Math.floor(h.t/2.15*16));tint=h.t>1.2?'red':tint;}
   else if(['uzi','mega_charge','mega_beam'].includes(h.state)){key='dual_uzi_assault';f=h.state==='uzi'?Math.floor(h.t*12)%12:12+Math.min(3,Math.floor(h.t*4)%4);tint=h.mode==='enraged'?'red':tint;}
   else if(h.state==='spell'||h.state==='spell_blast'){key='spell_raise';f=Math.min(11,Math.floor(h.t*8)%12);tint='red';}
   archBlit(key,f,b.x,b.y,z,tint,rot);
+  if(h.state==='core_orbit'){
+    const k=clamp(h.t/2.15,0,1),a=h.coreAngle||0,r=lerp(78,34,k),sz=lerp(34,54,k);
+    const cells=[0,3,4];for(let i=0;i<3;i++){const q=a+i*TAU/3;archEffectBlit(cells[i],b.x+Math.cos(q)*r,b.y+Math.sin(q)*r*.48,sz,q,.72+.2*k);}
+    archEffectBlit(6,b.x,b.y-9,lerp(32,68,k),a,.55+.35*k);
+  }
   if(h.state==='warn'){const k=clamp(h.t/(hammerFurious()?.58:1.2),0,1);combatWarningDraw(b,{x:b.x,y:b.y,ex:h.tx,ey:h.ty,progress:k,width:96});hammerGroundReticleDraw(hammerFrame('reticle',0,h.t<.4?null:h.t<.8?'yellow':'red'),h.tx,h.ty,126,.7+.3*Math.sin(h.t*30));}
   if(h.state==='mega_beam'){const p=h.t/7,w=VW*.5*Math.max(0,Math.min(1,p/.18,(1-p)/.18));if(w>0){const y=b.y+40,g=ctx.createLinearGradient(b.x-w/2,0,b.x+w/2,0);g.addColorStop(0,'rgba(40,80,255,0)');g.addColorStop(.22,'#217dff');g.addColorStop(.48,'#fff');g.addColorStop(.52,'#fff');g.addColorStop(.78,'#217dff');g.addColorStop(1,'rgba(40,80,255,0)');ctx.save();ctx.globalCompositeOperation='lighter';ctx.fillStyle=g;ctx.fillRect(b.x-w/2,y,w,VH-y);ctx.restore();}}
   hammerModuleBars(b);

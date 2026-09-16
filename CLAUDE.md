@@ -4363,3 +4363,7 @@ ENG-02 advances: the Warden's cripple phase commits a complete rail group before
 
 ## 2026-09-16 Stage-5 Chrome Hammer Archmage spiked-ball warning
 ENG-02 advances: the Archmage commits its spiked-ball launch direction and exact first wall impact before a 1.25-second shared green/yellow/red warning. The warning and first bounce remain fixed through player-driven camera movement, then the original dynamic edge reflections resume. Authored `spiked_ball` art, `150/165` base velocity, 15-second duration, missile knockback and weapon-triggered rage remain intact; interrupted curls cancel their pending warning. Focused section 357 passes 10/10, Chromium passes 18/18 with zero errors, and the full suite reaches 4,521 passes with the exact established 56-name baseline. ENG-02 remains partial. See docs/ARCHMAGE_SPIKED_BALL_WARNING_0916.md.
+
+## 2026-09-16 Stage-5 Archmage core recovery
+
+The Chrome Hammer Archmage's Easy/Normal post-chaingun route no longer stalls in the previously unimplemented `core_orbit` state. It now runs a finite authored blue core convergence into the existing dual-Uzi/mega-wave loop, retires both old module targets, and gives the fused mega-wave a 1.65-second shared green/yellow/red corridor before damage. Hard/Furious retain their red enrage branch. Focused section 358 passes 10/10; Chromium passes 22/22 with zero errors; full suite reaches 4,530 passes and 57 failures, the established 56 plus the intermittent Stage-1 sand-tank fixture. See docs/ARCHMAGE_CORE_RECOVERY_0916.md.

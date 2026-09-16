@@ -15691,6 +15691,7 @@ require('./test_stage6_carrier_cluster_warning_0916.cjs')(vm,ctxv,ok);
 require('./test_stage6_carrier_flak_warning_0916.cjs')(vm,ctxv,ok);
 require('./test_stage7_warden_cripple_rail_warning_0916.cjs')(vm,ctxv,ok);
 require('./test_archmage_spiked_ball_warning_0916.cjs')(vm,ctxv,ok);
+require('./test_archmage_core_recovery_0916.cjs')(vm,ctxv,ok);
 
 console.log('\n============================================');
 if (errors.length) { console.log('FAILED — ' + errors.length + ' error(s):'); errors.forEach(e => console.log('  ' + e)); process.exit(1); }
