@@ -649,3 +649,9 @@ Chrome Hammer now has its one-hand vertical boomerang, Hard/Furious difficulty a
 - Easy/Normal no longer freezes after the Archmage chaingun breaks. A 2.15-second authored blue core conversion returns the boss to its anchor and releases into the dual-Uzi/mega-wave loop.
 - Both obsolete module targets retire at the final break, so invisible hammer hits cannot resurrect the destroyed chaingun phase. The fused mega-wave now shows the shared green/yellow/red corridor for its exact damage width before release.
 - Focused section 358 passes 10/10; Chromium passes 22/22 with zero errors; full suite reaches 4,530 passes and the established 56 failures plus the intermittent Stage-1 sand-tank fixture. Evidence: docs/ARCHMAGE_CORE_RECOVERY_0916.md. Tally remains 128 complete / 7 partial / 16 pending.
+
+## Codex update — 2026-09-16: Stage-2 Inferno Reaver role and shared shotgun warning
+
+- The shieldless Stage-2 miniboss again runs its intended Inferno Reaver controller. The stable `magmaward` slot no longer dispatches into the retired Magma Ward shield/fire controller; its five-station laser pass and rolling-flamethrower finale now advance and render on the live identity. The Furnace Tyrant retains its real boss shield.
+- ENG-02 advances: the nine-round shotgun commits seven center lanes plus two wing escorts before a 0.6888-second shared green/yellow/red warning. Late movement cannot redirect the fan; warning origins stay on the live hardpoints and release uses the authored Inferno shotgun family.
+- Focused section 359 passes 16/16; Chromium passes 18/18 with zero errors; full suite reaches 4,547 passes / 56 failures, repairing the former Magma Ward opening-fan baseline name. The remaining failures are the reduced 55-name established set plus the intermittent Stage-1 sand-tank fixture. Evidence: docs/STAGE2_REAVER_SHARED_WARNING_0916.md. Tally remains 128 complete / 7 partial / 16 pending.

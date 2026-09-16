@@ -129,3 +129,7 @@ The Archmage now commits its spiked-ball launch direction and exact first wall i
 ## Stage 5 Archmage fused mega-wave follow-up
 
 The restored Easy/Normal post-chaingun form now previews the complete fused mega-wave damage corridor through the shared green/yellow/red system for 1.65 seconds. The beam remains harmless until red completes. The same batch repairs the missing `core_orbit` controller with authored blue core effects and prevents destroyed module targets from returning. Chromium passes 22/22 and focused section 358 passes 10/10. See [ARCHMAGE_CORE_RECOVERY_0916.md](ARCHMAGE_CORE_RECOVERY_0916.md).
+
+## Stage 2 Inferno Reaver shotgun follow-up
+
+The shieldless Stage 2 miniboss now reaches its intended Inferno Reaver controller after the earlier body/role swap. Its five-station laser pass and rolling-flamethrower finale tick on the stable `magmaward` slot, while the Furnace Tyrant alone retains the Stage 2 boss shield. The Reaver's nine-round shotgun commits seven center lanes and two wing escorts before a 0.6888-second shared green/yellow/red warning; origins follow the live hardpoints while all angles stay fixed against late movement. Chromium passes 18/18 and focused section 359 passes 16/16. See [STAGE2_REAVER_SHARED_WARNING_0916.md](STAGE2_REAVER_SHARED_WARNING_0916.md).

@@ -14117,7 +14117,9 @@ function shipBossInit(b, kind){
   if(kind==='xenoregent'&&typeof xenoRegentInit==='function')xenoRegentInit(b);
   if(kind==='sludgeemperor'&&typeof s7WardenInit==='function')s7WardenInit(b);
   if(kind==='blacksteel'&&run.stage===6&&typeof stage6MiniInit==='function')stage6MiniInit(b);
-  if((kind==='magmaward'||kind==='infernoreaver') && typeof magmaWardBarrierInit==='function')magmaWardBarrierInit(b);
+  /* The 0905 role swap moved the shielded Magma Ward into the `infernoreaver` end-boss slot.
+     The demoted Inferno Reaver in `magmaward` is a fighter and explicitly has no shield. */
+  if(kind==='infernoreaver' && typeof magmaWardBarrierInit==='function')magmaWardBarrierInit(b);
   if(kind==='infernoreaver' && typeof furnaceInit==='function') furnaceInit(b);   // the FURNACE TYRANT owns stage 2 (0912t)
   return true;
 }
@@ -14351,7 +14353,8 @@ const SHIP_ACTION_PROFILE={
   magmafireball:{tell:0.18,recover:0.14,kick:8,shake:3},
   magmafireshield:{tell:0.16,recover:0.13,kick:6,shake:2},
   infernogate:{tell:0.34,recover:0.22,kick:7,shake:2},
-  infernoburst:{tell:0.25,recover:0.18,kick:5,shake:2},
+  /* The Reaver's nine-round shotgun owns a complete green/yellow/red FOV read. */
+  infernoburst:{tell:0.84,recover:0.18,kick:5,shake:2},
   infernostorm:{tell:0.42,recover:0.27,kick:9,shake:3},
   stormmg:{tell:0.14,recover:0.16,kick:3,shake:1},
   stormbolts:{tell:0.28,recover:0.22,kick:6,shake:2},
@@ -14418,6 +14421,31 @@ function shipBossActionProfile(b, pat){
   const k=(D&&D.mini)?0.82:1;
   return {tell:src.tell*k,recover:src.recover*k,kick:src.kick*k,shake:src.shake};
 }
+/* Shared warning adapter for ordinary ship-boss volleys. Dedicated directors already own their
+   warnings; this covers dangerous one-beat patterns that still release through shipBossAttack. */
+function shipBossActionWarningStart(b,A){
+  if(!b||!A||b._ship!=='magmaward'||A.pat!=='infernoburst')return;
+  const paths=[];
+  for(const o of [-.39,-.26,-.13,0,.13,.26,.39])paths.push({slot:'C',a:Math.PI/2-o});
+  paths.push({slot:'L',a:Math.PI/2+.49},{slot:'R',a:Math.PI/2-.49});
+  A.warning={id:'stage2-reaver-shotgun-fan',paths:paths};
+  combatWarningTick(b,A.warning.id,0,A.tell,true);
+}
+function shipBossActionWarningTick(b,A){
+  if(!b||!A||!A.warning)return;
+  combatWarningTick(b,A.warning.id,Math.min(A.t,A.tell),A.tell);
+}
+function shipBossActionWarningCancel(b,A){
+  if(b&&A&&A.warning)combatWarningTick(b,A.warning.id,A.tell,A.tell,true);
+}
+function shipBossActionWarningDraw(b,front){
+  const A=b&&b._sba,W=A&&A.warning;if(!W||A.fired)return false;
+  const k=clamp(A.t/Math.max(.01,A.tell),0,1),len=Math.max(VW,VH)*1.25;
+  if(!front){
+    for(const q of W.paths){const p=shipBossMount(b,q.slot);combatWarningDraw(b,{x:p.x,y:p.y,ex:p.x+Math.cos(q.a)*len,ey:p.y+Math.sin(q.a)*len,progress:k,width:18,fieldOnly:true});}
+  }else combatWarningDraw(b,{x:b.x,y:b.y,ex:b.x,ey:VH,progress:k,alertOnly:true,alertX:b.x,alertY:48});
+  return true;
+}
 function shipBossQueueAttack(b){
   const D=b&&b._ship?SHIPBOSS[b._ship]:null; if(!D||b.dead||b.enter) return false;
   if(b._s7Flood){b.fireCd=Math.max(b.fireCd||0,.22);return false;}
@@ -14433,6 +14461,7 @@ function shipBossQueueAttack(b){
   if(b._sba) return false;
   const pat=shipBossCurrentPattern(b), A=shipBossActionProfile(b,pat);
   b._sba={pat:pat,t:0,tell:A.tell,recover:A.recover,kick:A.kick,shake:A.shake,fired:false};
+  shipBossActionWarningStart(b,b._sba);
   b.fireCd=Math.max(b.fireCd||0,A.tell+A.recover+0.04);
   /* The Jungle Cruiser owns a green wind telegraph; other ships use their registered boss reel. */
   if(jcShip(b)){
@@ -14454,6 +14483,7 @@ function shipBossActionTick(b,dt){
   const ph=shipBossPhase(b);
   if(b._sbaPhase==null) b._sbaPhase=ph;
   else if(ph!==b._sbaPhase){
+    shipBossActionWarningCancel(b,b._sba);
     b._sbaPhase=ph; b._sbPhase=ph; b._sbStep=0; b._sba=null;
     b._sbaPhaseT=0.72; b.fireCd=Math.max(b.fireCd||0,0.52);
     if(typeof Audio!=='undefined'&&Audio.SFX&&Audio.SFX.bossPhase) Audio.SFX.bossPhase();
@@ -14469,6 +14499,7 @@ function shipBossActionTick(b,dt){
   b._sbaBank=lerp(b._sbaBank||0,target,Math.min(1,dt*7));
   const A=b._sba; if(!A) return;
   A.t+=dt;
+  shipBossActionWarningTick(b,A);
   if(!A.fired&&A.t>=A.tell){
     A.fired=true; b._sbaKick=1;
     shipBossAttack(b);                         // the actual authored volley, unchanged
@@ -17187,7 +17218,7 @@ function stage6MiniDrawOver(b){
 function shipBossManoeuvre(b, dt){
   if(!b || !b._ship || b.dead || b.enter) return false;
   shipBossMuzzleTick(b, dt);
-  if((b._ship==='magmaward'||b._ship==='infernoreaver')&&typeof magmaWardBarrierTick==='function')magmaWardBarrierTick(b,dt);
+  if(b._mwBarrier&&typeof magmaWardBarrierTick==='function')magmaWardBarrierTick(b,dt);
   if(b._furnace && typeof furnaceTick==='function'){
     /* ⚠ MIKE'S BOSS MODE SCENES STILL OWN THE HULL WHILE A TRACK IS LIVE (0911a). The first cut returned
        here before sceneDirectorTick ever ran, so an authored scene on the stage-2 boss moved nothing,
@@ -17232,8 +17263,8 @@ function shipBossManoeuvre(b, dt){
     magmaWardTick(b,dt);
     if(b._mwAttack&&b._mwAttack.ownsMove)return true;
   }
-  if(b._ship==='infernoreaver'&&b._irPass){infernoReaverPassTick(b,dt);if(b._irPass)return true;}
-  if(b._ship==='infernoreaver'&&b._irRoll){infernoReaverRollTick(b,dt);if(b._irRoll)return true;}
+  if(b._ship==='magmaward'&&b._irPass){infernoReaverPassTick(b,dt);if(b._irPass)return true;}
+  if(b._ship==='magmaward'&&b._irRoll){infernoReaverRollTick(b,dt);if(b._irRoll)return true;}
   if(b._stormMg) stormMgTick(b, dt);
   if(b._s3boss && typeof stage3BossTick==='function'&&stage3BossTick(b,dt))return true;
   if(b._s7Flood)sludgeFloodTick(b,dt);
@@ -21145,7 +21176,7 @@ function shipBossAttack(b){
   /* and it TIGHTENS as it goes: -18% cooldown per phase, floored so the last phase is still
      readable rather than a wall of bullets. */
   const cdMul = Math.max(0.55, 1 - ph*0.18);
-  if(b._ship==='magmaward'){
+  if(pat==='magmaflame'||pat==='magmaflamelaser'||pat==='magmafireball'||pat==='magmafireshield'){
     magmaWardStartAttack(b,pat,step,cdMul);
     return;
   }
@@ -22354,7 +22385,9 @@ function shipBossDraw(b){
     ctx.lineTo(w*0.42, -h*0.10); ctx.closePath();
     ctx.fill(); ctx.stroke();
     ctx.restore(); ctx.globalAlpha=1;
-    if((b._ship==='magmaward'||b._ship==='infernoreaver')&&typeof magmaWardBarrierDraw==='function')magmaWardBarrierDraw(b);
+    if(b._sba&&b._sba.warning)shipBossActionWarningDraw(b,false);
+    if(b._mwBarrier&&typeof magmaWardBarrierDraw==='function')magmaWardBarrierDraw(b);
+    if(b._sba&&b._sba.warning)shipBossActionWarningDraw(b,true);
     if((b._ship==='magmaward'||b._ship==='infernoreaver')&&typeof reaverOrbDraw==='function')reaverOrbDraw(b);
     if(b._s4war&&typeof stage4WarfareDrawOver==='function')stage4WarfareDrawOver(b);
     shipBossMuzzleDraw(b);
@@ -22371,10 +22404,11 @@ function shipBossDraw(b){
      — it is an overlay on top of finished work, and it reads as one. If a themed hull is wanted,
      the plate gets themed and imported, not tinted here. */
   /* the rake draws UNDER the hull, so the spokes read as coming out of the ship */
+  if(b._sba&&b._sba.warning)shipBossActionWarningDraw(b,false);
   if(b._brk && typeof beamRakeDraw==='function') beamRakeDraw(b);
   if(b._s3boss&&b._s3boss.furyFeint&&typeof stage3FuryFeintDraw==='function')stage3FuryFeintDraw(b);
   if(b._l23Beam&&typeof l23BossBeamDraw==='function')l23BossBeamDraw(b);
-  if(b._ship==='infernoreaver'&&b._irRoll&&typeof infernoReaverRollDraw==='function')infernoReaverRollDraw(b);
+  if(b._ship==='magmaward'&&b._irRoll&&typeof infernoReaverRollDraw==='function')infernoReaverRollDraw(b);
   if(jcShip(b)&&typeof jungleCruiserDrawUnder==='function')jungleCruiserDrawUnder(b);
   if(b._s7Flood)sludgeFloodDraw(b);
   if(b._s7Rosette)sludgeRosetteDraw(b);
@@ -22449,12 +22483,13 @@ function shipBossDraw(b){
   if(jcShip(b)&&typeof jungleCruiserDrawOver==='function')jungleCruiserDrawOver(b,_ak,w,h,cy,P);
   if(b._ship==='magmaward')magmaWardDrawOver(b);
   if((b._ship==='magmaward'||b._ship==='infernoreaver')&&typeof reaverOrbDraw==='function')reaverOrbDraw(b);
-  if((b._ship==='magmaward'||b._ship==='infernoreaver')&&typeof magmaWardBarrierDraw==='function')magmaWardBarrierDraw(b);
+  if(b._mwBarrier&&typeof magmaWardBarrierDraw==='function')magmaWardBarrierDraw(b);
   if(b._s4war&&typeof stage4WarfareDrawOver==='function')stage4WarfareDrawOver(b);
   if(b._xenoRig&&typeof xenoRegentDrawOver==='function')xenoRegentDrawOver(b);
   if(b._s6mini&&typeof stage6MiniDrawOver==='function')stage6MiniDrawOver(b);
   if(b._ship==='doomsdaycarriermk2') carrierMegaDrawOver(b);
   if(b._ship==='doomsdaycarriermk2')carrierShieldDraw(b);
+  if(b._sba&&b._sba.warning)shipBossActionWarningDraw(b,true);
   /* The Mk-II pack includes a dedicated nine-frame beam. The 640x480 cannon reel performs the
      hull, while this continuous column carries the laser visibly from its centre emitter through
      the player lane; using the supplied beam is what makes the collision above readable. */

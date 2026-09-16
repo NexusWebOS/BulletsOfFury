@@ -1,0 +1,483 @@
+{
+  "checks": [
+    {
+      "pass": true,
+      "label": "native Stage-2 miniboss route opens in Chromium"
+    },
+    {
+      "pass": true,
+      "label": "the live demoted Reaver is shieldless and never enters the retired Magma Ward controller"
+    },
+    {
+      "pass": true,
+      "label": "the live opener advances into a three-second shared left-cannon laser warning"
+    },
+    {
+      "pass": true,
+      "label": "Reaver hull, laser, shotgun and shared warning art decode before capture"
+    },
+    {
+      "pass": true,
+      "label": "the repaired opening pass visibly begins with a harmless shared laser field"
+    },
+    {
+      "pass": true,
+      "label": "the live shotgun commits nine warned trajectories with a readable delay"
+    },
+    {
+      "pass": true,
+      "label": "green previews all nine lanes while the weapon is harmless"
+    },
+    {
+      "pass": true,
+      "label": "yellow preserves the committed fan after a late player move"
+    },
+    {
+      "pass": true,
+      "label": "red preserves all promised paths without releasing early"
+    },
+    {
+      "pass": true,
+      "label": "nine rounds release only after the red warning completes"
+    },
+    {
+      "pass": true,
+      "label": "every released round uses the authored Inferno shotgun projectile family"
+    },
+    {
+      "pass": true,
+      "label": "all nine projectiles follow the exact trajectories shown by the warning"
+    },
+    {
+      "pass": true,
+      "label": "reaver_00_laser_pass is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "reaver_01_green is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "reaver_02_yellow is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "reaver_03_red is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "reaver_04_release is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "zero Chromium page, console or game-loop errors"
+    }
+  ],
+  "errors": [],
+  "fight": {
+    "ok": true,
+    "name": "INFERNO REAVER",
+    "kind": "magmaward",
+    "pilot": "yuri",
+    "state": "play"
+  },
+  "setup": {
+    "name": "INFERNO REAVER",
+    "ship": "magmaward",
+    "shield": false,
+    "old": false,
+    "pass": true,
+    "slot": "L",
+    "warm": 3
+  },
+  "arm": {
+    "pat": "infernoburst",
+    "tell": 0.6888,
+    "paths": [
+      1.9607963267948967,
+      1.8307963267948966,
+      1.7007963267948965,
+      1.5707963267948966,
+      1.4407963267948967,
+      1.3107963267948965,
+      1.1807963267948964,
+      2.0607963267948968,
+      1.0807963267948966
+    ]
+  },
+  "frames": [
+    {
+      "name": "INFERNO REAVER",
+      "shield": false,
+      "pass": true,
+      "beam": {
+        "slot": "L",
+        "t": 0,
+        "warm": 3,
+        "released": false
+      },
+      "attack": null,
+      "warn": null,
+      "shots": [],
+      "gets": [
+        "nlq3_lava_0",
+        "nlq3_lava_1",
+        "nlq3_lava_2",
+        "nlq3_lava_3",
+        "nlq3_lava_4",
+        "nlq3_lava_5",
+        "nlq3_lava_6",
+        "nlq3_lava_7",
+        "nst2_master",
+        "nl6c_rain_cloud_3",
+        "nl6c_rain_cloud_4",
+        "nl6c_heavy_rain_cloud_1",
+        "nl6c_rain_cloud_0",
+        "nl6c_heavy_rain_cloud_2",
+        "nl6c_heavy_rain_cloud_4",
+        "bmbar_fill_orange",
+        "bmbar_frame_mini",
+        "bmbar_tab_mini",
+        "l23fx_inferno_laser_0",
+        "bmfx_fov_green_tall",
+        "nsb_inferno_reaver",
+        "bmfx_alert_green_danger",
+        "fx_ground_strikes_0916",
+        "enemy_approaching",
+        "nequipbox",
+        "bof_player_weapon_special_icons_atlas"
+      ]
+    },
+    {
+      "name": "INFERNO REAVER",
+      "shield": false,
+      "pass": false,
+      "beam": null,
+      "attack": {
+        "pat": "infernoburst",
+        "t": 0.13776,
+        "tell": 0.6888,
+        "fired": false,
+        "paths": [
+          1.9607963267948967,
+          1.8307963267948966,
+          1.7007963267948965,
+          1.5707963267948966,
+          1.4407963267948967,
+          1.3107963267948965,
+          1.1807963267948964,
+          2.0607963267948968,
+          1.0807963267948966
+        ]
+      },
+      "warn": {
+        "t": 0.13776,
+        "warm": 0.6888,
+        "released": false,
+        "phase": "green"
+      },
+      "shots": [],
+      "gets": [
+        "nlq3_lava_0",
+        "nlq3_lava_1",
+        "nlq3_lava_2",
+        "nlq3_lava_3",
+        "nlq3_lava_4",
+        "nlq3_lava_5",
+        "nlq3_lava_6",
+        "nlq3_lava_7",
+        "nst2_master",
+        "nl6c_rain_cloud_3",
+        "nl6c_rain_cloud_4",
+        "nl6c_heavy_rain_cloud_1",
+        "nl6c_rain_cloud_0",
+        "nl6c_heavy_rain_cloud_2",
+        "nl6c_heavy_rain_cloud_4",
+        "bmbar_fill_orange",
+        "bmbar_frame_mini",
+        "bmbar_tab_mini",
+        "bmbar_fill_grey",
+        "bmfx_fov_green_tall",
+        "nsb_inferno_reaver",
+        "bmfx_alert_green_danger",
+        "bfx_magma_m_0",
+        "nsd_chim_0",
+        "nsd_chim_3",
+        "fx_ground_strikes_0916",
+        "enemy_approaching",
+        "nequipbox",
+        "bof_player_weapon_special_icons_atlas"
+      ]
+    },
+    {
+      "name": "INFERNO REAVER",
+      "shield": false,
+      "pass": false,
+      "beam": null,
+      "attack": {
+        "pat": "infernoburst",
+        "t": 0.3444,
+        "tell": 0.6888,
+        "fired": false,
+        "paths": [
+          1.9607963267948967,
+          1.8307963267948966,
+          1.7007963267948965,
+          1.5707963267948966,
+          1.4407963267948967,
+          1.3107963267948965,
+          1.1807963267948964,
+          2.0607963267948968,
+          1.0807963267948966
+        ]
+      },
+      "warn": {
+        "t": 0.3444,
+        "warm": 0.6888,
+        "released": false,
+        "phase": "yellow"
+      },
+      "shots": [],
+      "gets": [
+        "nlq3_lava_0",
+        "nlq3_lava_1",
+        "nlq3_lava_2",
+        "nlq3_lava_3",
+        "nlq3_lava_4",
+        "nlq3_lava_5",
+        "nlq3_lava_6",
+        "nlq3_lava_7",
+        "nst2_master",
+        "nl6c_rain_cloud_3",
+        "nl6c_rain_cloud_4",
+        "nl6c_heavy_rain_cloud_1",
+        "nl6c_rain_cloud_0",
+        "nl6c_heavy_rain_cloud_2",
+        "nl6c_heavy_rain_cloud_4",
+        "bmbar_fill_orange",
+        "bmbar_frame_mini",
+        "bmbar_tab_mini",
+        "bmbar_fill_grey",
+        "bmfx_fov_yellow_tall",
+        "nsb_inferno_reaver",
+        "bmfx_alert_yellow_danger",
+        "bfx_magma_m_0",
+        "nsd_chim_0",
+        "nsd_chim_3",
+        "fx_ground_strikes_0916",
+        "enemy_approaching",
+        "nequipbox",
+        "bof_player_weapon_special_icons_atlas"
+      ]
+    },
+    {
+      "name": "INFERNO REAVER",
+      "shield": false,
+      "pass": false,
+      "beam": null,
+      "attack": {
+        "pat": "infernoburst",
+        "t": 0.55104,
+        "tell": 0.6888,
+        "fired": false,
+        "paths": [
+          1.9607963267948967,
+          1.8307963267948966,
+          1.7007963267948965,
+          1.5707963267948966,
+          1.4407963267948967,
+          1.3107963267948965,
+          1.1807963267948964,
+          2.0607963267948968,
+          1.0807963267948966
+        ]
+      },
+      "warn": {
+        "t": 0.55104,
+        "warm": 0.6888,
+        "released": false,
+        "phase": "red"
+      },
+      "shots": [],
+      "gets": [
+        "nlq3_lava_0",
+        "nlq3_lava_1",
+        "nlq3_lava_2",
+        "nlq3_lava_3",
+        "nlq3_lava_4",
+        "nlq3_lava_5",
+        "nlq3_lava_6",
+        "nlq3_lava_7",
+        "nst2_master",
+        "nl6c_rain_cloud_3",
+        "nl6c_rain_cloud_4",
+        "nl6c_heavy_rain_cloud_1",
+        "nl6c_rain_cloud_0",
+        "nl6c_heavy_rain_cloud_2",
+        "nl6c_heavy_rain_cloud_4",
+        "bmbar_fill_orange",
+        "bmbar_frame_mini",
+        "bmbar_tab_mini",
+        "bmbar_fill_grey",
+        "bmfx_fov_red_tall",
+        "nsb_inferno_reaver",
+        "bfx_magma_m_0",
+        "nsd_chim_0",
+        "nsd_chim_3",
+        "fx_ground_strikes_0916",
+        "enemy_approaching",
+        "nequipbox",
+        "bof_player_weapon_special_icons_atlas"
+      ]
+    },
+    {
+      "name": "INFERNO REAVER",
+      "shield": false,
+      "pass": false,
+      "beam": null,
+      "attack": {
+        "pat": "infernoburst",
+        "t": 0.695688,
+        "tell": 0.6888,
+        "fired": true,
+        "paths": [
+          1.9607963267948967,
+          1.8307963267948966,
+          1.7007963267948965,
+          1.5707963267948966,
+          1.4407963267948967,
+          1.3107963267948965,
+          1.1807963267948964,
+          2.0607963267948968,
+          1.0807963267948966
+        ]
+      },
+      "warn": {
+        "t": 0.6888,
+        "warm": 0.6888,
+        "released": true,
+        "phase": "red"
+      },
+      "shots": [
+        {
+          "kind": "magma",
+          "fx": "inferno_shotgun",
+          "x": 240,
+          "y": 194.46,
+          "a": 1.9607963267948967
+        },
+        {
+          "kind": "magma",
+          "fx": "inferno_shotgun",
+          "x": 240,
+          "y": 194.46,
+          "a": 1.8307963267948966
+        },
+        {
+          "kind": "magma",
+          "fx": "inferno_shotgun",
+          "x": 240,
+          "y": 194.46,
+          "a": 1.7007963267948967
+        },
+        {
+          "kind": "magma",
+          "fx": "inferno_shotgun",
+          "x": 240,
+          "y": 194.46,
+          "a": 1.5707963267948966
+        },
+        {
+          "kind": "magma",
+          "fx": "inferno_shotgun",
+          "x": 240,
+          "y": 194.46,
+          "a": 1.4407963267948967
+        },
+        {
+          "kind": "magma",
+          "fx": "inferno_shotgun",
+          "x": 240,
+          "y": 194.46,
+          "a": 1.3107963267948965
+        },
+        {
+          "kind": "magma",
+          "fx": "inferno_shotgun",
+          "x": 240,
+          "y": 194.46,
+          "a": 1.1807963267948967
+        },
+        {
+          "kind": "magma",
+          "fx": "inferno_shotgun",
+          "x": 169.16,
+          "y": 170.892,
+          "a": 2.0607963267948968
+        },
+        {
+          "kind": "magma",
+          "fx": "inferno_shotgun",
+          "x": 310.84000000000003,
+          "y": 170.892,
+          "a": 1.0807963267948966
+        }
+      ],
+      "gets": [
+        "nlq3_lava_0",
+        "nlq3_lava_1",
+        "nlq3_lava_2",
+        "nlq3_lava_3",
+        "nlq3_lava_4",
+        "nlq3_lava_5",
+        "nlq3_lava_6",
+        "nlq3_lava_7",
+        "nst2_master",
+        "nl6c_rain_cloud_3",
+        "nl6c_rain_cloud_4",
+        "nl6c_heavy_rain_cloud_1",
+        "nl6c_rain_cloud_0",
+        "nl6c_heavy_rain_cloud_2",
+        "nl6c_heavy_rain_cloud_4",
+        "bmbar_fill_orange",
+        "bmbar_frame_mini",
+        "bmbar_tab_mini",
+        "bmbar_fill_grey",
+        "nsb_inferno_reaver",
+        "bfx_magma_m_0",
+        "nsd_chim_0",
+        "nsd_chim_3",
+        "fx_ground_strikes_0916",
+        "l23fx_inferno_shotgun_0",
+        "enemy_approaching",
+        "nequipbox",
+        "bof_player_weapon_special_icons_atlas"
+      ]
+    }
+  ],
+  "shots": [
+    "_shots\\stage2_reaver_shared_warning_0916\\reaver_00_laser_pass.png",
+    "_shots\\stage2_reaver_shared_warning_0916\\reaver_01_green.png",
+    "_shots\\stage2_reaver_shared_warning_0916\\reaver_02_yellow.png",
+    "_shots\\stage2_reaver_shared_warning_0916\\reaver_03_red.png",
+    "_shots\\stage2_reaver_shared_warning_0916\\reaver_04_release.png"
+  ],
+  "contact": "_shots\\stage2_reaver_shared_warning_0916\\reaver_warning_contact.png",
+  "focused": {
+    "section": 359,
+    "passed": 16,
+    "failed": 0
+  },
+  "fullSuite": {
+    "passed": 4547,
+    "failed": 56,
+    "exitCode": 1,
+    "failureSet": "55 established names plus the known intermittent Stage-1 sand-tank fixture; the former Magma Ward opening-fan assertion is repaired",
+    "log": "_shots/stage2_reaver_full_final_0916.log"
+  },
+  "syntax": {
+    "assets/game.js": true,
+    "_BUILD_SOURCE/test_fl.js": true,
+    "_BUILD_SOURCE/test_stage2_reaver_shared_warning_0916.cjs": true
+  }
+}

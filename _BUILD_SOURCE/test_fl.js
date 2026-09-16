@@ -13142,15 +13142,15 @@ console.log("=== 266. moving muzzle hardpoints and Stage-2 volcanic overhaul ===
      'ground units own fissures, furnace breath, jaw slugs, safe-gap mines and slam shockwaves');
 
   var _boss266=JSON.parse(vm.runInContext("(function(){run.stage=2;curStage=STAGES[1];player.x=260;player.y=500;eBullets.length=0;"
-    +"var m={_ship:'magmaward',x:240,y:120,_drawY:120,w:210,h:216,hp:240,maxhp:240,_sbStep:0,_sbPhase:0};"
-    +"var L=shipBossMount(m,'L');shipBossAttack(m);var mini=eBullets.map(function(q){return {x:q.x,y:q.y,k:q.kind};});"
+    +"var m={_ship:'magmaward',x:240,y:120,_drawY:120,w:200,h:200,hp:240,maxhp:240,_sbStep:0,_sbPhase:0,dead:false,enter:false};"
+    +"shipBossAttack(m);infernoReaverPassTick(m,.73);infernoReaverPassTick(m,.01);infernoReaverPassTick(m,.01);var mini={pass:!!m._irPass,old:!!m._mwAttack,shield:!!m._mwBarrier,beam:m._l23Beam&&m._l23Beam.slots[0],bullets:eBullets.length};"
     +"var r={_ship:'infernoreaver',x:240,y:120,_drawY:120,w:210,h:216,hp:100,maxhp:100,_sbStep:0,_sbPhase:0};"
     +"var pats=[100,75,55,35,15].map(function(h){r.hp=h;return shipBossCurrentPattern(r);});"
     +"var q2={_ship:'magmaward',x:240,y:120,_drawY:120,w:200,h:200,hp:100,maxhp:100,_sbStep:0,_sbPhase:0};"
     +"var mpats=[100,75,55,35,15].map(function(h){q2.hp=h;return shipBossCurrentPattern(q2);});"
-    +"return JSON.stringify({mini:mini,L:L,muzzle:m._smz&&m._smz.slots,pats:pats,mpats:mpats});})()",ctxv));
-  ok(_boss266.mini.length===5&&_boss266.mini.every(function(q){return q.k==='magma'&&Math.abs(q.x-_boss266.L.x)<0.001&&Math.abs(q.y-_boss266.L.y)<0.001;})&&_boss266.muzzle[0]==='L',
-     'Magma Ward telegraphs and releases its opening fan from the same measured left cannon');
+    +"return JSON.stringify({mini:mini,pats:pats,mpats:mpats});})()",ctxv));
+  ok(_boss266.mini.pass&&!_boss266.mini.old&&!_boss266.mini.shield&&_boss266.mini.beam==='L'&&_boss266.mini.bullets===0,
+     'the demoted Inferno Reaver enters its measured left-cannon laser pass without the retired Magma Ward shield or controller');
   /* ⚠ THE STAGE-2 ROLES SWAPPED (0905). Mike: "Stage 2 miniboss should actaully be the boss, boss
      should be the mini boss." Following stage 3's 0830 precedent the runtime IDS DID NOT MOVE -
      `infernoreaver` is still the end-stage slot and `magmaward` still the mid-stage one - so this
@@ -15692,6 +15692,7 @@ require('./test_stage6_carrier_flak_warning_0916.cjs')(vm,ctxv,ok);
 require('./test_stage7_warden_cripple_rail_warning_0916.cjs')(vm,ctxv,ok);
 require('./test_archmage_spiked_ball_warning_0916.cjs')(vm,ctxv,ok);
 require('./test_archmage_core_recovery_0916.cjs')(vm,ctxv,ok);
+require('./test_stage2_reaver_shared_warning_0916.cjs')(vm,ctxv,ok);
 
 console.log('\n============================================');
 if (errors.length) { console.log('FAILED — ' + errors.length + ' error(s):'); errors.forEach(e => console.log('  ' + e)); process.exit(1); }
