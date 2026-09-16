@@ -1,0 +1,320 @@
+{
+  "checks": [
+    {
+      "pass": true,
+      "label": "native Stage-9 boss route opens in Chromium"
+    },
+    {
+      "pass": true,
+      "label": "live Tidal Sovereign commits a 0.62-second first row"
+    },
+    {
+      "pass": true,
+      "label": "authored Sovereign and green/yellow/red warning art decode before capture"
+    },
+    {
+      "pass": true,
+      "label": "green previews six lanes and preserves the two-column opening"
+    },
+    {
+      "pass": true,
+      "label": "green uses shared field and alert art"
+    },
+    {
+      "pass": true,
+      "label": "yellow does not chase late player movement"
+    },
+    {
+      "pass": true,
+      "label": "yellow uses shared field and alert art"
+    },
+    {
+      "pass": true,
+      "label": "red preserves the committed opening until release"
+    },
+    {
+      "pass": true,
+      "label": "red uses shared field and alert art"
+    },
+    {
+      "pass": true,
+      "label": "exactly the six previewed columns release after the full warning"
+    },
+    {
+      "pass": true,
+      "label": "first shared warning records release and arms row two"
+    },
+    {
+      "pass": true,
+      "label": "next row visibly moves the promised opening by one column"
+    },
+    {
+      "pass": true,
+      "label": "the next row restarts the shared warning at green"
+    },
+    {
+      "pass": true,
+      "label": "tidal_cascade_01_green is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "tidal_cascade_02_yellow is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "tidal_cascade_03_red is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "tidal_cascade_04_release is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "tidal_cascade_05_next_row_green is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "zero Chromium page, console or game-loop errors"
+    }
+  ],
+  "errors": [],
+  "fight": {
+    "ok": true,
+    "name": "WARP SENTINELS",
+    "kind": "tidalfusion",
+    "pilot": "yuri",
+    "state": "play"
+  },
+  "setup": {
+    "name": "TIDAL SOVEREIGN",
+    "gap": 5,
+    "rowTell": 0.62,
+    "next": 0.62,
+    "cols": 8
+  },
+  "green": {
+    "wave": 0,
+    "gap": 5,
+    "warnAt": 0,
+    "next": 0.62,
+    "rowTell": 0.62,
+    "shots": [],
+    "warnings": {
+      "stage9-tidal-cascade-0": {
+        "t": 0.1,
+        "warm": 0.62,
+        "released": false
+      }
+    },
+    "gets": [
+      "nst9_starfield",
+      "bmfx_fov_green_tall",
+      "ns9_tidal_intact",
+      "bmfx_alert_green_danger",
+      "fury_thrusters_04",
+      "alert_up",
+      "ngm_space_atlas",
+      "nequipbox",
+      "bmbar_fill_seg",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss"
+    ]
+  },
+  "yellow": {
+    "wave": 0,
+    "gap": 5,
+    "warnAt": 0,
+    "next": 0.62,
+    "rowTell": 0.62,
+    "shots": [],
+    "warnings": {
+      "stage9-tidal-cascade-0": {
+        "t": 0.31,
+        "warm": 0.62,
+        "released": false
+      }
+    },
+    "gets": [
+      "nst9_starfield",
+      "bmfx_fov_yellow_tall",
+      "ns9_tidal_intact",
+      "bmfx_alert_yellow_danger",
+      "fury_thrusters_04",
+      "alert_up",
+      "nequipbox",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss"
+    ]
+  },
+  "red": {
+    "wave": 0,
+    "gap": 5,
+    "warnAt": 0,
+    "next": 0.62,
+    "rowTell": 0.62,
+    "shots": [],
+    "warnings": {
+      "stage9-tidal-cascade-0": {
+        "t": 0.558,
+        "warm": 0.62,
+        "released": false
+      }
+    },
+    "gets": [
+      "nst9_starfield",
+      "bmfx_fov_red_tall",
+      "ns9_tidal_intact",
+      "bmfx_alert_red_danger",
+      "fury_thrusters_04",
+      "alert_up",
+      "nequipbox",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss"
+    ]
+  },
+  "release": {
+    "wave": 1,
+    "gap": 6,
+    "warnAt": 0.63,
+    "next": 1.25,
+    "rowTell": 0.62,
+    "shots": [
+      {
+        "x": 30,
+        "y": 227.04000000000002,
+        "vx": 1.283026034389745e-16,
+        "vy": 2.0953405264
+      },
+      {
+        "x": 90,
+        "y": 209.04000000000002,
+        "vx": 1.283026034389745e-16,
+        "vy": 2.0953405264
+      },
+      {
+        "x": 150,
+        "y": 227.04000000000002,
+        "vx": 1.283026034389745e-16,
+        "vy": 2.0953405264
+      },
+      {
+        "x": 210,
+        "y": 209.04000000000002,
+        "vx": 1.283026034389745e-16,
+        "vy": 2.0953405264
+      },
+      {
+        "x": 270,
+        "y": 227.04000000000002,
+        "vx": 1.283026034389745e-16,
+        "vy": 2.0953405264
+      },
+      {
+        "x": 450,
+        "y": 209.04000000000002,
+        "vx": 1.283026034389745e-16,
+        "vy": 2.0953405264
+      }
+    ],
+    "warnings": {
+      "stage9-tidal-cascade-0": {
+        "t": 0.62,
+        "warm": 0.62,
+        "released": true
+      },
+      "stage9-tidal-cascade-1": {
+        "t": 0,
+        "warm": 0.62,
+        "released": false
+      }
+    },
+    "gets": [
+      "nst9_starfield",
+      "bmfx_fov_green_tall",
+      "ns9_tidal_intact",
+      "bfx_cyclone_m_0",
+      "bmfx_alert_green_danger",
+      "fury_thrusters_04",
+      "alert_up",
+      "nequipbox",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss"
+    ]
+  },
+  "next": {
+    "wave": 1,
+    "gap": 6,
+    "warnAt": 0.63,
+    "next": 1.25,
+    "rowTell": 0.62,
+    "shots": [
+      {
+        "x": 30,
+        "y": 227.04000000000002,
+        "vx": 1.283026034389745e-16,
+        "vy": 2.0953405264
+      },
+      {
+        "x": 90,
+        "y": 209.04000000000002,
+        "vx": 1.283026034389745e-16,
+        "vy": 2.0953405264
+      },
+      {
+        "x": 150,
+        "y": 227.04000000000002,
+        "vx": 1.283026034389745e-16,
+        "vy": 2.0953405264
+      },
+      {
+        "x": 210,
+        "y": 209.04000000000002,
+        "vx": 1.283026034389745e-16,
+        "vy": 2.0953405264
+      },
+      {
+        "x": 270,
+        "y": 227.04000000000002,
+        "vx": 1.283026034389745e-16,
+        "vy": 2.0953405264
+      },
+      {
+        "x": 450,
+        "y": 209.04000000000002,
+        "vx": 1.283026034389745e-16,
+        "vy": 2.0953405264
+      }
+    ],
+    "warnings": {
+      "stage9-tidal-cascade-0": {
+        "t": 0.62,
+        "warm": 0.62,
+        "released": true
+      },
+      "stage9-tidal-cascade-1": {
+        "t": 0.09999999999999998,
+        "warm": 0.62,
+        "released": false
+      }
+    },
+    "gets": [
+      "nst9_starfield",
+      "bmfx_fov_green_tall",
+      "ns9_tidal_intact",
+      "bfx_cyclone_m_0",
+      "bmfx_alert_green_danger",
+      "fury_thrusters_04",
+      "alert_up",
+      "nequipbox",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss"
+    ]
+  },
+  "shots": [
+    "_shots\\stage9_tidal_cascade_warning_0915\\tidal_cascade_01_green.png",
+    "_shots\\stage9_tidal_cascade_warning_0915\\tidal_cascade_02_yellow.png",
+    "_shots\\stage9_tidal_cascade_warning_0915\\tidal_cascade_03_red.png",
+    "_shots\\stage9_tidal_cascade_warning_0915\\tidal_cascade_04_release.png",
+    "_shots\\stage9_tidal_cascade_warning_0915\\tidal_cascade_05_next_row_green.png"
+  ]
+}

@@ -57,3 +57,7 @@ The Chrome Hammer leap/slam now projects the shared green/yellow/red FOV and ove
 ## Toxic Portal Warden rail follow-up
 
 The Stage-7 Toxic Portal Warden now commits its rail aim and safe-side gap when the 0.86-second charge begins. Five shared green/yellow/red fields preview the five spear paths and one matching alert renders in front of the giant hull. Chromium 15/15 and focused section 335 7/7 pass. See [STAGE7_WARDEN_SHARED_RAIL_WARNING_0915.md](STAGE7_WARDEN_SHARED_RAIL_WARNING_0915.md).
+
+## Tidal Sovereign cascade follow-up
+
+All four Tidal Cascade rows now commit a two-column opening, preview the other six exact release columns through a 0.62-second shared green/yellow/red warning, then move the opening by one column for the next warned row. Fields render behind the authored hull and the alert remains visible above it. Chromium 19/19 and focused section 340 9/9 pass. See [STAGE9_TIDAL_CASCADE_WARNING_0916.md](STAGE9_TIDAL_CASCADE_WARNING_0916.md).

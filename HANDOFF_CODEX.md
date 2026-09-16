@@ -552,3 +552,8 @@ Chrome Hammer now has its one-hand vertical boomerang, Hard/Furious difficulty a
 ## Codex update — 2026-09-15: winged Life Up
 
 - Life Up now uses a cache-safe 1520x882 transparent edit with broad symmetrical gunmetal/red jet wings and orange vents. The central `1UP` badge and Continue Up remain unchanged. Focused 7/7 and native Chromium gameplay-scale proof pass with zero errors. Evidence: docs/LIFE_UP_WINGS_0915.md. Tally remains 126 complete / 7 partial / 16 pending.
+
+## Codex update — 2026-09-16: Stage-9 Tidal Cascade row warnings
+
+- ENG-02 advances: all four Tidal Sovereign cascade rows now commit their two-column opening before a 0.62-second shared green/yellow/red warning. Six fields match the six released columns exactly; the opening moves one column only after release and cannot chase late movement.
+- Fields render behind the authored Sovereign and the matching alert renders above it. Focused 9/9, Chromium 19/19 with zero errors, full suite exact 57-name baseline after rebasing the incoming GitHub batches. Evidence: docs/STAGE9_TIDAL_CASCADE_WARNING_0916.md. Tally remains 128 complete / 7 partial / 16 pending.

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-15",
+  "updated": "2026-09-16",
   "scope": "Consolidated requests in this conversation; superseded variants folded into the latest request. Rows count deliverables, not effort or percent of development time.",
   "items": [
     {
@@ -97,7 +97,7 @@
       "id": "ENG-02",
       "group": "Shared combat, warnings and targeting",
       "status": "partial",
-      "request": "Migrate all dangerous non-laser boss/miniboss attacks to the shared warning rule. Covered families now include the Stage-9 Event Horizon and independent Warp Sentinel radial/aimed volleys; remaining encounter families need review.",
+      "request": "Migrate all dangerous non-laser boss/miniboss attacks to the shared warning rule. Covered families now include the Stage-9 Event Horizon, independent Warp Sentinel radial/aimed volleys, and every row of the Tidal Sovereign cascade; remaining encounter families need review.",
       "evidence": "SHARED_NONLASER_WARNING_0915.md",
       "dependency": "",
       "workOrder": 53,
@@ -1492,7 +1492,7 @@
   ],
   "queuePolicy": "Work in ascending workOrder, an estimate of implementation plus verification difficulty. Respect prerequisites and skip externally blocked items while continuing ready work. Re-rank when investigation changes the estimate; retain IDs and explain the change.",
   "latestBatch": {
-    "description": "Chrome Hammer depth-projected ground-floor target reticle",
-    "evidence": "GROUND_RETICLE_0915.md"
+    "description": "all four Stage-9 Tidal Sovereign cascade rows with committed moving gaps and 0.62-second shared warnings",
+    "evidence": "STAGE9_TIDAL_CASCADE_WARNING_0916.md"
   }
 }

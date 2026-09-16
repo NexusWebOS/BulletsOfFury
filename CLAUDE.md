@@ -4309,3 +4309,6 @@ MSL-06 and MSL-07 complete. Authored waves offer Super from wave two, then Ultra
 
 ## 2026-09-15 winged Life Up
 Life Up now uses `life_up_wings.png`, a cache-safe transparent edit with symmetrical armored jet wings. The central `1UP` badge and Continue Up remain unchanged. Focused 7/7 and native Chromium proof pass with zero errors. Tally remains 126 complete / 7 partial / 16 pending. See docs/LIFE_UP_WINGS_0915.md.
+
+## 2026-09-16 Stage-9 Tidal Cascade shared row warnings
+ENG-02 advances: every Tidal Sovereign cascade row commits its two-column opening, previews the other six exact release columns through a 0.62-second shared green/yellow/red warning, and moves the opening one column only after release. Fields render behind the authored hull and the alert remains visible above it. Focused 9/9, Chromium 19/19 zero errors, full suite exact 57-name baseline after rebasing the incoming GitHub batches. Tally remains 128 complete / 7 partial / 16 pending. See docs/STAGE9_TIDAL_CASCADE_WARNING_0916.md.
