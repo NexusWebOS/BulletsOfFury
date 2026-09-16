@@ -578,3 +578,8 @@ Chrome Hammer now has its one-hand vertical boomerang, Hard/Furious difficulty a
 
 - ENG-02 advances: the opening Stage-8 form now commits its original wide center corridor and previews all eleven dangerous crescent columns through a 0.72-second shared green/yellow/red warning. Later boss-clock changes and player movement cannot shift the promised opening.
 - The original eleven purple crescents, speed, muzzle and 1.35-second cadence remain intact. Focused 10/10, Chromium 16/16 with zero errors, and full suite 4,384 passes with the established 56 failures plus the intermittent Stage-1 sand-tank fixture. Evidence: docs/STAGE8_VILE_CRESCENT_WALL_WARNING_0916.md. Tally remains 128 complete / 7 partial / 16 pending.
+
+## Codex update — 2026-09-16: Stage-8 Vile aimed-fan warnings
+
+- ENG-02 advances: RAVENOUS ASCENDANT commits its five needle paths before a 0.62-second shared green/yellow/red warning, and FURIOUS DEATH commits its seven gunship paths before a 0.58-second warning. Late player movement cannot redirect either fan.
+- The original projectiles, speeds, alternating physical hardpoints, muzzles and total cooldowns remain intact. The second form's even-step homing pair keeps the Retina rule and now begins its lock with the warned fan's release. Focused 10/10, Chromium 23/23 with zero errors, and full suite 4,395 passes with the exact established 56 failures. Evidence: docs/STAGE8_VILE_AIMED_FAN_WARNING_0916.md. Tally remains 128 complete / 7 partial / 16 pending.

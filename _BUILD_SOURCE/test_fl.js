@@ -14482,6 +14482,7 @@ console.log("=== 278. lizzie B-42 alternate costume ===");
 
   ['enemyVolley', 'shipBossAttack', 'vileAttack', 'updateModularBoss'].forEach(function (f) {
     var body = _fn285(f);
+    if(f==='vileAttack') body += _fn285('vileAimedFanTick');
     var calls = (body.match(/eMissileHoming\(/g) || []).length;
     ok(calls > 0 && /enemyLockOn\(/.test(body),
        f + ' fires its homing salvo THROUGH the lock (' + calls + ' eMissileHoming calls) - the header rule');
@@ -15677,6 +15678,7 @@ require('./test_stage6_thunderhead_warning_0916.cjs')(vm,ctxv,ok);
 require('./test_archmage_boomerang_visual_0916.cjs')(vm,ctxv,ok);
 require('./test_stage7_dredger_mine_warning_0916.cjs')(vm,ctxv,ok);
 require('./test_stage8_vile_crescent_wall_warning_0916.cjs')(vm,ctxv,ok);
+require('./test_stage8_vile_aimed_fan_warning_0916.cjs')(vm,ctxv,ok);
 
 console.log('\n============================================');
 if (errors.length) { console.log('FAILED — ' + errors.length + ' error(s):'); errors.forEach(e => console.log('  ' + e)); process.exit(1); }

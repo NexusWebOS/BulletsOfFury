@@ -1,0 +1,12 @@
+const fs=require('fs'),path=require('path'),R=path.resolve(__dirname,'..');
+const shot=path.join(R,'_shots','stage8_vile_aimed_fan_warning_0916','results.json');
+const qa=path.join(R,'docs','qa','stage8_vile_aimed_fan_warning_0916.json');
+const result=JSON.parse(fs.readFileSync(shot,'utf8'));
+result.verification={focused:'section 345: 10/10',fullSuite:{passing:4395,failures:56,failureNames:'exact established 56-name baseline; no new names'},chromium:'23/23',pixelReview:'six native 960x1024 frames inspected'};
+fs.writeFileSync(qa,JSON.stringify(result,null,2)+'\n','utf8');
+const checklist=path.join(R,'docs','REQUEST_CHECKLIST_0914.json'),data=JSON.parse(fs.readFileSync(checklist,'utf8'));
+const item=data.items.find(x=>x.id==='ENG-02');if(!item)throw new Error('ENG-02 missing');
+item.request='Migrate all dangerous non-laser boss/miniboss attacks to the shared warning rule. Covered families now include the Stage-5 Chrome Hammer Archmage vertical boomerang, Stage-6 Thunderhead, Stage-7 DUAL SCOOP DREDGER minefield, Stage-8 BLACK COCOON crescent wall, RAVENOUS ASCENDANT five-needle fan, FURIOUS DEATH seven-gunship fan, Stage-9 Event Horizon, independent Warp Sentinel radial/aimed volleys, and every row of the Tidal Sovereign cascade; remaining encounter families need review.';
+data.updated='2026-09-16';data.latestBatch={description:'Stage-8 RAVENOUS ASCENDANT five-needle and FURIOUS DEATH seven-gunship committed aimed-fan warnings',evidence:'STAGE8_VILE_AIMED_FAN_WARNING_0916.md'};
+fs.writeFileSync(checklist,(JSON.stringify(data,null,2)+'\n').replace(/\n/g,'\r\n'),'utf8');
+console.log('UPDATED_STAGE8_VILE_AIMED_FAN_EVIDENCE_0916');

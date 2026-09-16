@@ -1,0 +1,779 @@
+{
+  "checks": [
+    {
+      "pass": true,
+      "label": "native Stage-8 boss route opens in Chromium"
+    },
+    {
+      "pass": true,
+      "label": "the live second form commits its five needle paths"
+    },
+    {
+      "pass": true,
+      "label": "both authored forms, projectiles, muzzles and warning art decode before capture"
+    },
+    {
+      "pass": true,
+      "label": "green previews all five committed needle lanes"
+    },
+    {
+      "pass": true,
+      "label": "needle green uses shared field and alert art"
+    },
+    {
+      "pass": true,
+      "label": "yellow ignores a late player move"
+    },
+    {
+      "pass": true,
+      "label": "needle yellow uses shared field and alert art"
+    },
+    {
+      "pass": true,
+      "label": "red preserves the five promised needle paths"
+    },
+    {
+      "pass": true,
+      "label": "needle red uses shared field and alert art"
+    },
+    {
+      "pass": true,
+      "label": "five authored needles release only after the full warning"
+    },
+    {
+      "pass": true,
+      "label": "all five needles follow their previewed paths"
+    },
+    {
+      "pass": true,
+      "label": "the live final form commits its seven gunship paths"
+    },
+    {
+      "pass": true,
+      "label": "final-form yellow previews seven committed lanes"
+    },
+    {
+      "pass": true,
+      "label": "gunship yellow uses shared field and alert art"
+    },
+    {
+      "pass": true,
+      "label": "seven authored gunship rounds release only after warning"
+    },
+    {
+      "pass": true,
+      "label": "all seven gunship rounds follow their previewed paths"
+    },
+    {
+      "pass": true,
+      "label": "vile_needle_01_green is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "vile_needle_02_yellow is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "vile_needle_03_red is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "vile_needle_04_release is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "vile_gunship_05_yellow is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "vile_gunship_06_release is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "zero Chromium page, console or game-loop errors"
+    }
+  ],
+  "errors": [],
+  "fight": {
+    "ok": true,
+    "name": "BLACK COCOON",
+    "kind": "vileexistence",
+    "pilot": "yuri",
+    "state": "play"
+  },
+  "needleSetup": {
+    "name": "RAVENOUS ASCENDANT",
+    "kind": "needle",
+    "aims": [
+      0.8482562373634575,
+      0.9482562373634574,
+      1.0482562373634574,
+      1.1482562373634575,
+      1.2482562373634574
+    ],
+    "paths": [
+      {
+        "x": 180.5568,
+        "y": 199.4432,
+        "a": 0.8482562373634575
+      },
+      {
+        "x": 299.4432,
+        "y": 199.4432,
+        "a": 0.9482562373634574
+      },
+      {
+        "x": 180.5568,
+        "y": 199.4432,
+        "a": 1.0482562373634574
+      },
+      {
+        "x": 299.4432,
+        "y": 199.4432,
+        "a": 1.1482562373634575
+      },
+      {
+        "x": 180.5568,
+        "y": 199.4432,
+        "a": 1.2482562373634574
+      }
+    ]
+  },
+  "needleGreen": {
+    "name": "RAVENOUS ASCENDANT",
+    "kind": "needle",
+    "aims": [
+      0.8482562373634575,
+      0.9482562373634574,
+      1.0482562373634574,
+      1.1482562373634575,
+      1.2482562373634574
+    ],
+    "paths": [
+      {
+        "x": 180.5568,
+        "y": 199.4432,
+        "a": 0.8482562373634575
+      },
+      {
+        "x": 299.4432,
+        "y": 199.4432,
+        "a": 0.9482562373634574
+      },
+      {
+        "x": 180.5568,
+        "y": 199.4432,
+        "a": 1.0482562373634574
+      },
+      {
+        "x": 299.4432,
+        "y": 199.4432,
+        "a": 1.1482562373634575
+      },
+      {
+        "x": 180.5568,
+        "y": 199.4432,
+        "a": 1.2482562373634574
+      }
+    ],
+    "released": false,
+    "warn": {
+      "t": 0.1,
+      "warm": 0.62,
+      "released": false
+    },
+    "shots": [],
+    "locks": 0,
+    "gets": [
+      "nst8_sky_crimson",
+      "nl6c_rain_cloud_2",
+      "nl6c_heavy_rain_cloud_0",
+      "nl6c_rain_cloud_3",
+      "nl6c_rain_cloud_4",
+      "nl6c_heavy_rain_cloud_3",
+      "nl6c_heavy_rain_cloud_4",
+      "nl6c_heavy_rain_cloud_2",
+      "nl8c_lg_3",
+      "nl8c_lg_5",
+      "nl8c_rim_0",
+      "nl8c_rim_3",
+      "nl8c_prop_3",
+      "nl8c_prop_4",
+      "nl8c_prop_0",
+      "nl8c_prop_6",
+      "nl8c_prop_10",
+      "s8rift_13",
+      "s8rift_7",
+      "s8rift_11",
+      "s8rift_3",
+      "bmfx_fov_green_tall",
+      "s8symboss_form_1",
+      "bmfx_alert_green_danger",
+      "fx_ground_strikes_0916",
+      "alert_up",
+      "nequipbox",
+      "bof_player_weapon_special_icons_atlas",
+      "bmbar_fill_seg",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss"
+    ]
+  },
+  "needleYellow": {
+    "name": "RAVENOUS ASCENDANT",
+    "kind": "needle",
+    "aims": [
+      0.8482562373634575,
+      0.9482562373634574,
+      1.0482562373634574,
+      1.1482562373634575,
+      1.2482562373634574
+    ],
+    "paths": [
+      {
+        "x": 180.5568,
+        "y": 199.4432,
+        "a": 0.8482562373634575
+      },
+      {
+        "x": 299.4432,
+        "y": 199.4432,
+        "a": 0.9482562373634574
+      },
+      {
+        "x": 180.5568,
+        "y": 199.4432,
+        "a": 1.0482562373634574
+      },
+      {
+        "x": 299.4432,
+        "y": 199.4432,
+        "a": 1.1482562373634575
+      },
+      {
+        "x": 180.5568,
+        "y": 199.4432,
+        "a": 1.2482562373634574
+      }
+    ],
+    "released": false,
+    "warn": {
+      "t": 0.4,
+      "warm": 0.62,
+      "released": false
+    },
+    "shots": [],
+    "locks": 0,
+    "gets": [
+      "nst8_sky_crimson",
+      "nl6c_rain_cloud_2",
+      "nl6c_heavy_rain_cloud_0",
+      "nl6c_rain_cloud_3",
+      "nl6c_rain_cloud_4",
+      "nl6c_heavy_rain_cloud_3",
+      "nl6c_heavy_rain_cloud_4",
+      "nl6c_heavy_rain_cloud_2",
+      "nl8c_lg_3",
+      "nl8c_lg_5",
+      "nl8c_rim_0",
+      "nl8c_rim_3",
+      "nl8c_prop_3",
+      "nl8c_prop_4",
+      "nl8c_prop_0",
+      "nl8c_prop_6",
+      "nl8c_prop_10",
+      "s8rift_13",
+      "s8rift_7",
+      "s8rift_11",
+      "s8rift_3",
+      "bmfx_fov_yellow_tall",
+      "s8symboss_form_1",
+      "bmfx_alert_yellow_danger",
+      "fx_ground_strikes_0916",
+      "alert_up",
+      "nequipbox",
+      "bof_player_weapon_special_icons_atlas",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss"
+    ]
+  },
+  "needleRed": {
+    "name": "RAVENOUS ASCENDANT",
+    "kind": "needle",
+    "aims": [
+      0.8482562373634575,
+      0.9482562373634574,
+      1.0482562373634574,
+      1.1482562373634575,
+      1.2482562373634574
+    ],
+    "paths": [
+      {
+        "x": 180.5568,
+        "y": 199.4432,
+        "a": 0.8482562373634575
+      },
+      {
+        "x": 299.4432,
+        "y": 199.4432,
+        "a": 0.9482562373634574
+      },
+      {
+        "x": 180.5568,
+        "y": 199.4432,
+        "a": 1.0482562373634574
+      },
+      {
+        "x": 299.4432,
+        "y": 199.4432,
+        "a": 1.1482562373634575
+      },
+      {
+        "x": 180.5568,
+        "y": 199.4432,
+        "a": 1.2482562373634574
+      }
+    ],
+    "released": false,
+    "warn": {
+      "t": 0.57,
+      "warm": 0.62,
+      "released": false
+    },
+    "shots": [],
+    "locks": 0,
+    "gets": [
+      "nst8_sky_crimson",
+      "nl6c_rain_cloud_2",
+      "nl6c_heavy_rain_cloud_0",
+      "nl6c_rain_cloud_3",
+      "nl6c_rain_cloud_4",
+      "nl6c_heavy_rain_cloud_3",
+      "nl6c_heavy_rain_cloud_4",
+      "nl6c_heavy_rain_cloud_2",
+      "nl8c_lg_3",
+      "nl8c_lg_5",
+      "nl8c_rim_0",
+      "nl8c_rim_3",
+      "nl8c_prop_3",
+      "nl8c_prop_4",
+      "nl8c_prop_0",
+      "nl8c_prop_6",
+      "nl8c_prop_10",
+      "s8rift_13",
+      "s8rift_7",
+      "s8rift_11",
+      "s8rift_3",
+      "bmfx_fov_red_tall",
+      "s8symboss_form_1",
+      "bmfx_alert_red_danger",
+      "fx_ground_strikes_0916",
+      "alert_up",
+      "nequipbox",
+      "bof_player_weapon_special_icons_atlas",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss"
+    ]
+  },
+  "needleRelease": {
+    "name": "RAVENOUS ASCENDANT",
+    "kind": "needle",
+    "aims": [
+      0.8482562373634575,
+      0.9482562373634574,
+      1.0482562373634574,
+      1.1482562373634575,
+      1.2482562373634574
+    ],
+    "paths": [
+      {
+        "x": 180.5568,
+        "y": 199.4432,
+        "a": 0.8482562373634575
+      },
+      {
+        "x": 299.4432,
+        "y": 199.4432,
+        "a": 0.9482562373634574
+      },
+      {
+        "x": 180.5568,
+        "y": 199.4432,
+        "a": 1.0482562373634574
+      },
+      {
+        "x": 299.4432,
+        "y": 199.4432,
+        "a": 1.1482562373634575
+      },
+      {
+        "x": 180.5568,
+        "y": 199.4432,
+        "a": 1.2482562373634574
+      }
+    ],
+    "released": true,
+    "warn": {
+      "t": 0.62,
+      "warm": 0.62,
+      "released": true
+    },
+    "shots": [
+      {
+        "kind": "s8nf_needle",
+        "x": 180.5568,
+        "y": 199.4432,
+        "a": 0.8482562373634576
+      },
+      {
+        "kind": "s8nf_needle",
+        "x": 299.4432,
+        "y": 199.4432,
+        "a": 0.9482562373634574
+      },
+      {
+        "kind": "s8nf_needle",
+        "x": 180.5568,
+        "y": 199.4432,
+        "a": 1.0482562373634574
+      },
+      {
+        "kind": "s8nf_needle",
+        "x": 299.4432,
+        "y": 199.4432,
+        "a": 1.1482562373634575
+      },
+      {
+        "kind": "s8nf_needle",
+        "x": 180.5568,
+        "y": 199.4432,
+        "a": 1.2482562373634574
+      }
+    ],
+    "locks": 0,
+    "gets": [
+      "nst8_sky_crimson",
+      "nl6c_rain_cloud_2",
+      "nl6c_heavy_rain_cloud_0",
+      "nl6c_rain_cloud_3",
+      "nl6c_rain_cloud_4",
+      "nl6c_heavy_rain_cloud_3",
+      "nl6c_heavy_rain_cloud_4",
+      "nl6c_heavy_rain_cloud_2",
+      "nl8c_lg_3",
+      "nl8c_lg_5",
+      "nl8c_rim_0",
+      "nl8c_rim_3",
+      "nl8c_prop_3",
+      "nl8c_prop_4",
+      "nl8c_prop_0",
+      "nl8c_prop_6",
+      "nl8c_prop_10",
+      "s8rift_13",
+      "s8rift_7",
+      "s8rift_11",
+      "s8rift_3",
+      "s8nf_needle_interceptor_muzzle_0",
+      "s8symboss_form_1",
+      "fx_ground_strikes_0916",
+      "s8nf_needle_interceptor_projectile_0",
+      "alert_up",
+      "nequipbox",
+      "bof_player_weapon_special_icons_atlas",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss"
+    ]
+  },
+  "gunSetup": {
+    "name": "FURIOUS DEATH",
+    "kind": "gunship",
+    "aims": [
+      0.9054682223352458,
+      0.9904682223352458,
+      1.0754682223352459,
+      1.1604682223352458,
+      1.2454682223352458,
+      1.3304682223352458,
+      1.415468222335246
+    ],
+    "paths": [
+      {
+        "x": 328.7808,
+        "y": 205.28,
+        "a": 0.9054682223352458
+      },
+      {
+        "x": 151.2192,
+        "y": 205.28,
+        "a": 0.9904682223352458
+      },
+      {
+        "x": 328.7808,
+        "y": 205.28,
+        "a": 1.0754682223352459
+      },
+      {
+        "x": 151.2192,
+        "y": 205.28,
+        "a": 1.1604682223352458
+      },
+      {
+        "x": 328.7808,
+        "y": 205.28,
+        "a": 1.2454682223352458
+      },
+      {
+        "x": 151.2192,
+        "y": 205.28,
+        "a": 1.3304682223352458
+      },
+      {
+        "x": 328.7808,
+        "y": 205.28,
+        "a": 1.415468222335246
+      }
+    ]
+  },
+  "gunYellow": {
+    "name": "FURIOUS DEATH",
+    "kind": "gunship",
+    "aims": [
+      0.9054682223352458,
+      0.9904682223352458,
+      1.0754682223352459,
+      1.1604682223352458,
+      1.2454682223352458,
+      1.3304682223352458,
+      1.415468222335246
+    ],
+    "paths": [
+      {
+        "x": 328.7808,
+        "y": 205.28,
+        "a": 0.9054682223352458
+      },
+      {
+        "x": 151.2192,
+        "y": 205.28,
+        "a": 0.9904682223352458
+      },
+      {
+        "x": 328.7808,
+        "y": 205.28,
+        "a": 1.0754682223352459
+      },
+      {
+        "x": 151.2192,
+        "y": 205.28,
+        "a": 1.1604682223352458
+      },
+      {
+        "x": 328.7808,
+        "y": 205.28,
+        "a": 1.2454682223352458
+      },
+      {
+        "x": 151.2192,
+        "y": 205.28,
+        "a": 1.3304682223352458
+      },
+      {
+        "x": 328.7808,
+        "y": 205.28,
+        "a": 1.415468222335246
+      }
+    ],
+    "released": false,
+    "warn": {
+      "t": 0.3,
+      "warm": 0.58,
+      "released": false
+    },
+    "shots": [],
+    "locks": 0,
+    "gets": [
+      "nst8_sky_crimson",
+      "nl6c_rain_cloud_2",
+      "nl6c_heavy_rain_cloud_0",
+      "nl6c_rain_cloud_3",
+      "nl6c_rain_cloud_4",
+      "nl6c_heavy_rain_cloud_3",
+      "nl6c_heavy_rain_cloud_4",
+      "nl6c_heavy_rain_cloud_2",
+      "nl8c_lg_3",
+      "nl8c_lg_5",
+      "nl8c_rim_0",
+      "nl8c_rim_3",
+      "nl8c_prop_3",
+      "nl8c_prop_4",
+      "nl8c_prop_0",
+      "nl8c_prop_6",
+      "nl8c_prop_10",
+      "s8rift_13",
+      "s8rift_7",
+      "s8rift_11",
+      "s8rift_3",
+      "s8nf_needle_interceptor_muzzle_0",
+      "bmfx_fov_yellow_tall",
+      "s8symboss_form_3",
+      "bmfx_alert_yellow_danger",
+      "fx_ground_strikes_0916",
+      "alert_up",
+      "nequipbox",
+      "bof_player_weapon_special_icons_atlas",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss"
+    ]
+  },
+  "gunRelease": {
+    "name": "FURIOUS DEATH",
+    "kind": "gunship",
+    "aims": [
+      0.9054682223352458,
+      0.9904682223352458,
+      1.0754682223352459,
+      1.1604682223352458,
+      1.2454682223352458,
+      1.3304682223352458,
+      1.415468222335246
+    ],
+    "paths": [
+      {
+        "x": 328.7808,
+        "y": 205.28,
+        "a": 0.9054682223352458
+      },
+      {
+        "x": 151.2192,
+        "y": 205.28,
+        "a": 0.9904682223352458
+      },
+      {
+        "x": 328.7808,
+        "y": 205.28,
+        "a": 1.0754682223352459
+      },
+      {
+        "x": 151.2192,
+        "y": 205.28,
+        "a": 1.1604682223352458
+      },
+      {
+        "x": 328.7808,
+        "y": 205.28,
+        "a": 1.2454682223352458
+      },
+      {
+        "x": 151.2192,
+        "y": 205.28,
+        "a": 1.3304682223352458
+      },
+      {
+        "x": 328.7808,
+        "y": 205.28,
+        "a": 1.415468222335246
+      }
+    ],
+    "released": true,
+    "warn": {
+      "t": 0.58,
+      "warm": 0.58,
+      "released": true
+    },
+    "shots": [
+      {
+        "kind": "s8nf_gunship",
+        "x": 328.7808,
+        "y": 205.28,
+        "a": 0.9054682223352457
+      },
+      {
+        "kind": "s8nf_gunship",
+        "x": 151.2192,
+        "y": 205.28,
+        "a": 0.9904682223352457
+      },
+      {
+        "kind": "s8nf_gunship",
+        "x": 328.7808,
+        "y": 205.28,
+        "a": 1.0754682223352459
+      },
+      {
+        "kind": "s8nf_gunship",
+        "x": 151.2192,
+        "y": 205.28,
+        "a": 1.1604682223352458
+      },
+      {
+        "kind": "s8nf_gunship",
+        "x": 328.7808,
+        "y": 205.28,
+        "a": 1.2454682223352458
+      },
+      {
+        "kind": "s8nf_gunship",
+        "x": 151.2192,
+        "y": 205.28,
+        "a": 1.3304682223352458
+      },
+      {
+        "kind": "s8nf_gunship",
+        "x": 328.7808,
+        "y": 205.28,
+        "a": 1.415468222335246
+      }
+    ],
+    "locks": 0,
+    "gets": [
+      "nst8_sky_crimson",
+      "nl6c_rain_cloud_2",
+      "nl6c_heavy_rain_cloud_0",
+      "nl6c_rain_cloud_3",
+      "nl6c_rain_cloud_4",
+      "nl6c_heavy_rain_cloud_3",
+      "nl6c_heavy_rain_cloud_4",
+      "nl6c_heavy_rain_cloud_2",
+      "nl8c_lg_3",
+      "nl8c_lg_5",
+      "nl8c_rim_0",
+      "nl8c_rim_3",
+      "nl8c_prop_3",
+      "nl8c_prop_4",
+      "nl8c_prop_0",
+      "nl8c_prop_6",
+      "nl8c_prop_10",
+      "s8rift_13",
+      "s8rift_7",
+      "s8rift_11",
+      "s8rift_3",
+      "s8nf_needle_interceptor_muzzle_0",
+      "s8nf_armored_gunship_muzzle_0",
+      "s8symboss_form_3",
+      "fx_ground_strikes_0916",
+      "s8nf_armored_gunship_projectile_0",
+      "alert_up",
+      "nequipbox",
+      "bof_player_weapon_special_icons_atlas",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss"
+    ]
+  },
+  "shots": [
+    "_shots\\stage8_vile_aimed_fan_warning_0916\\vile_needle_01_green.png",
+    "_shots\\stage8_vile_aimed_fan_warning_0916\\vile_needle_02_yellow.png",
+    "_shots\\stage8_vile_aimed_fan_warning_0916\\vile_needle_03_red.png",
+    "_shots\\stage8_vile_aimed_fan_warning_0916\\vile_needle_04_release.png",
+    "_shots\\stage8_vile_aimed_fan_warning_0916\\vile_gunship_05_yellow.png",
+    "_shots\\stage8_vile_aimed_fan_warning_0916\\vile_gunship_06_release.png"
+  ],
+  "verification": {
+    "focused": "section 345: 10/10",
+    "fullSuite": {
+      "passing": 4395,
+      "failures": 56,
+      "failureNames": "exact established 56-name baseline; no new names"
+    },
+    "chromium": "23/23",
+    "pixelReview": "six native 960x1024 frames inspected"
+  }
+}

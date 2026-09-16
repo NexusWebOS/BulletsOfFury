@@ -35302,6 +35302,7 @@ function updateBoss(dt){
   if(!b._ship && (b._brk || b._brkCd>0) && typeof beamRakeTick==='function') beamRakeTick(b, dt);
   if(b._vile&&b._annihilation)vileAnnihilationTick(b,dt);
   if(b._vile&&b._vileWall)vileCrescentWallTick(b,dt);
+  if(b._vile&&b._vileFan)vileAimedFanTick(b,dt);
   /* MECH BOSSES (drop 0730u) own their own assembly and limb motion. While the mech is still
      building itself the fight is gated: it does not shoot, and it takes no damage, exactly like
      the modular entrance below. */
@@ -53024,26 +53025,46 @@ function vileCrescentWallDraw(b,front){
   else combatWarningDraw(b,{x:b.x,y:y,ex:b.x,ey:VH+40,progress:k,alertOnly:true,alertX:b.x,alertY:54});
   return true;
 }
+function vileAimedFanPaths(b,V){
+  if(!b||!V)return [];const left=vileHardpoint(b,V.left,V.oy),right=vileHardpoint(b,V.right,V.oy);
+  return V.entries.map(e=>({x:e.side==='R'?right.x:left.x,y:e.side==='R'?right.y:left.y,a:e.a}));
+}
+function vileAimedFanStart(b,kind,step){
+  if(!b||b._vileFan)return false;const gun=kind==='gunship',y=b.y+b.h*.28,a0=aimPlayer(b.x,y),from=gun?-3:-2,to=gun?3:2,spread=gun?.085:.10;
+  const entries=[];for(let k=from;k<=to;k++)entries.push({side:(k&1)?'R':'L',a:a0+k*spread});
+  const tell=gun?.58:.62,cooldown=gun?.78:1.05,id=gun?'stage8-vile-gunship-fan':'stage8-vile-needle-fan';
+  b._vileFan={t:0,tell:tell,cooldown:cooldown,kind:kind,id:id,left:gun?-.34:-.27,right:gun?.34:.27,oy:gun?.25:.27,entries:entries,released:false,finish:0,homing:!gun&&(step%2)===0,missileOy:y-b.y};
+  b.fireCd=cooldown;combatWarningTick(b,id,0,tell,true);
+  if(Audio.SFX&&(Audio.SFX.bossWeaponCharge||Audio.SFX.enemyBossCannon))(Audio.SFX.bossWeaponCharge||Audio.SFX.enemyBossCannon)();
+  return true;
+}
+function vileAimedFanTick(b,dt){
+  const V=b&&b._vileFan;if(!V)return false;V.t+=dt;combatWarningTick(b,V.id,Math.min(V.t,V.tell),V.tell);
+  if(!V.released&&V.t>=V.tell){
+    V.released=true;V.finish=V.t+Math.max(.14,V.cooldown-V.tell);const paths=vileAimedFanPaths(b,V),gun=V.kind==='gunship';
+    for(let i=0;i<paths.length;i++){const p=paths[i];vileAnnihilationShot(p.x,p.y,p.a,gun?4.25:3.65,gun?'s8nf_gunship':'s8nf_needle',{silent:i>0});}
+    if(gun){vileMuzzle(b,-.34,.25,'armored_gunship',1.02,.15);vileMuzzle(b,.34,.25,'armored_gunship',1.02,.15);}
+    else{vileMuzzle(b,-.27,.27,'needle_interceptor',.92,.15);vileMuzzle(b,.27,.27,'needle_interceptor',.92,.15);}
+    if(V.homing&&typeof eMissileHoming==='function')enemyLockOn(b,.55,{fire:function(){eMissileHoming(b.x-b.w*.26,b.y+V.missileOy,-1);eMissileHoming(b.x+b.w*.26,b.y+V.missileOy,1);}});
+    if(typeof Audio!=='undefined'&&Audio.SFX&&Audio.SFX.enemyShoot)Audio.SFX.enemyShoot();
+  }
+  if(V.released&&V.t>=V.finish){b._vileFan=null;return false;}return true;
+}
+function vileAimedFanDraw(b,front){
+  const V=b&&b._vileFan;if(!V||V.released)return false;const paths=vileAimedFanPaths(b,V),k=clamp(V.t/V.tell,0,1);
+  if(!front)for(const p of paths)combatWarningDraw(b,{x:p.x,y:p.y,ex:p.x+Math.cos(p.a)*700,ey:p.y+Math.sin(p.a)*700,progress:k,width:V.kind==='gunship'?18:16,fieldOnly:true});
+  else combatWarningDraw(b,{x:b.x,y:b.y,ex:b.x,ey:VH,progress:k,alertOnly:true,alertX:b.x,alertY:54});
+  return true;
+}
 function vileAttack(b){
   const f=b._vForm|0, y=b.y+b.h*0.28;
   const step=(b._vAtk=(b._vAtk|0)+1);
   if(b._annihilation){b.fireCd=.22;return;}
   if(b._vileWall){b.fireCd=.22;return;}
+  if(b._vileFan){b.fireCd=.22;return;}
   if(f===3&&!b._annihilationUsed){vileAnnihilationStart(b);return;}
   if(f===0){vileCrescentWallStart(b);return;
-  } else if(f===1){
-    const a0=aimPlayer(b.x,y);
-    const lp=vileHardpoint(b,-.27,.27),rp=vileHardpoint(b,.27,.27);
-    for(let k=-2;k<=2;k++)vileAnnihilationShot(k&1?rp.x:lp.x,k&1?rp.y:lp.y,a0+k*.10,3.65,'s8nf_needle',{silent:k!==-2});
-    vileMuzzle(b,-.27,.27,'needle_interceptor',.92,.15);vileMuzzle(b,.27,.27,'needle_interceptor',.92,.15);
-    if((step%2)===0 && typeof eMissileHoming==='function'){
-      const _oy=y-b.y;   // THE RETINA LOCK (0912)
-      enemyLockOn(b, 0.55, {fire:function(){
-        eMissileHoming(b.x-b.w*0.26, b.y+_oy, -1);
-        eMissileHoming(b.x+b.w*0.26, b.y+_oy,  1);
-      }});
-    }
-    b.fireCd=1.05;
+  } else if(f===1){vileAimedFanStart(b,'needle',step);return;
   } else if(f===2){
     if(!b._brk && (step%3)===0 && typeof beamRakeStart==='function'){
       beamRakeStart(b, 4, (Math.random()<0.5?-1:1)*0.62, 5.0);
@@ -53060,12 +53081,7 @@ function vileAttack(b){
       vileMuzzle(b,0,.28,'armored_gunship',1.30,.26);
     } else if((step%3)===0 && typeof eMissile==='function'){
       for(const fx of [-0.30,-0.10,0.10,0.30]){eMissile(b.x+b.w*fx,y);vileMuzzle(b,fx,.28,'armored_gunship',.82,.14);}
-    } else {
-      const a0=aimPlayer(b.x,y);
-      const lp=vileHardpoint(b,-.34,.25),rp=vileHardpoint(b,.34,.25);
-      for(let k=-3;k<=3;k++)vileAnnihilationShot(k&1?rp.x:lp.x,k&1?rp.y:lp.y,a0+k*.085,4.25,'s8nf_gunship',{silent:k!==-3});
-      vileMuzzle(b,-.34,.25,'armored_gunship',1.02,.15);vileMuzzle(b,.34,.25,'armored_gunship',1.02,.15);
-    }
+    } else {vileAimedFanStart(b,'gunship',step);return;}
     b.fireCd=0.78;
   }
   if(typeof Audio!=='undefined' && Audio.SFX && Audio.SFX.enemyShoot) Audio.SFX.enemyShoot();
@@ -53119,7 +53135,7 @@ function vileAnnihilationDraw(b,front){
   return true;
 }
 function vileBuildForm(b, idx){
-  const F=VILE_FORMS[idx];b._vileWall=null;
+  const F=VILE_FORMS[idx];b._vileWall=null;b._vileFan=null;
   /* Equal phase pools are mandatory: one form is precisely 25% of the full
      encounter, while its attack vocabulary—not a larger life bar—escalates. */
   const phaseHp=b._vPhaseHp||Math.ceil(b._vBase/VILE_FORMS.length);
@@ -57129,6 +57145,7 @@ function drawModularBoss(b){
   if(b._vile&&b._morphT!=null)return;
   if(b._annihilation&&typeof vileAnnihilationDraw==='function')vileAnnihilationDraw(b,false);
   if(b._vileWall&&typeof vileCrescentWallDraw==='function')vileCrescentWallDraw(b,false);
+  if(b._vileFan&&typeof vileAimedFanDraw==='function')vileAimedFanDraw(b,false);
   if(b._impT!=null && typeof vileImplosionDraw==='function'){ vileImplosionDraw(b); }
   // ANIMATED BASE (VILE EXISTENCE): the form's idle/attack reel replaces the intact layers.
   // Its silhouette is pixel-identical to the composited clean components, so undamaged parts
@@ -57153,7 +57170,7 @@ function drawModularBoss(b){
   /* The new symbiote forms are complete authored silhouettes. Their modular
      parts exist solely as five independently hittable HP regions; attempting
      to paint the former component plates over them causes seams and mutations. */
-  if(b._vile&&_animK&&_animK.indexOf('s8symboss_form_')===0){if(b._annihilation&&typeof vileAnnihilationDraw==='function')vileAnnihilationDraw(b,true);if(b._vileWall&&typeof vileCrescentWallDraw==='function')vileCrescentWallDraw(b,true);return;}
+  if(b._vile&&_animK&&_animK.indexOf('s8symboss_form_')===0){if(b._annihilation&&typeof vileAnnihilationDraw==='function')vileAnnihilationDraw(b,true);if(b._vileWall&&typeof vileCrescentWallDraw==='function')vileCrescentWallDraw(b,true);if(b._vileFan&&typeof vileAimedFanDraw==='function')vileAimedFanDraw(b,true);return;}
   if(b._be && typeof bossEntryPowerDraw==='function' && _animK){
     bossEntryPowerDraw(b, _animK, b.x-b.w/2, b.y-b.h/2, b.w, b.h);
   }
