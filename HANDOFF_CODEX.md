@@ -603,3 +603,8 @@ Chrome Hammer now has its one-hand vertical boomerang, Hard/Furious difficulty a
 
 - ENG-02 advances: both shield-down phases now commit the alternating storm-node pair and its six- or ten-lane fan before a 0.62-second shared green/yellow/red warning. The fields follow each live node while aim and pair parity remain locked against late movement.
 - Destroying a warned node disarms only its lanes. Phase transitions cancel stale Carrier fan warnings, and the original offsets, speeds, total cadences and central prism-lance beat remain intact. Focused 11/11 and Chromium 16/16 pass with zero errors. The full suite reaches 4,432 passes and the established 56 failures plus the intermittent Stage-1 sand-tank fixture, with no new name. Evidence: docs/STAGE6_CARRIER_NODE_FAN_WARNING_0916.md. Tally remains 128 complete / 7 partial / 16 pending.
+
+## Codex update — 2026-09-16: Stage-6 Doomsday Carrier prism-crossfire warning
+
+- ENG-02 advances: Phase 5 now commits the four authored upper-barrel paths before a 0.62-second shared green/yellow/red warning. The origins follow the moving hull while the alternating outward/inward angles remain locked.
+- The original `s6prism` rounds, speed 4.3, muzzle reels, cannon sound and 1.25-second total cadence remain intact. Phase transitions cancel stale crossfire warnings. Focused 12/12 and Chromium 16/16 pass with zero errors. The full suite reaches 4,443 passes with the established 56 failures plus the previously documented intermittent Stage-1 sand-tank and road-tank fixtures; no new name. Evidence: docs/STAGE6_CARRIER_PRISM_CROSSFIRE_WARNING_0916.md. Tally remains 128 complete / 7 partial / 16 pending.

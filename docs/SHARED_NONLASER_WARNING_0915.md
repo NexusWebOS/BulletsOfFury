@@ -97,3 +97,7 @@ The Doomsday Carrier Mk II now commits the exact six paths from its twin rotary 
 ## Stage 6 Doomsday Carrier storm-node follow-up
 
 Both shield-down Carrier phases now commit the alternating storm-node pair and all six or ten original fan paths before a 0.62-second shared warning. The paths stay anchored to moving nodes while their aim angles and parity remain committed. Destroying a warned node disarms only its lanes, and phase changes cancel stale fan warnings. Original speeds, offsets, cadences and the central prism-lance beat remain intact. Chromium passes 16/16 and focused section 349 passes 11/11. See [STAGE6_CARRIER_NODE_FAN_WARNING_0916.md](STAGE6_CARRIER_NODE_FAN_WARNING_0916.md).
+
+## Stage 6 Doomsday Carrier prism-crossfire follow-up
+
+The Carrier's Phase 5 four-barrel prism crossfire now commits all four upper-hardpoint paths before a 0.62-second shared warning. Origins follow the hull while the alternating outward/inward angles remain fixed. Authored prism rounds, speed, muzzles, sound and total cadence remain intact, and a phase transition cancels any pending crossfire. Chromium passes 16/16 and focused section 350 passes 12/12. See [STAGE6_CARRIER_PRISM_CROSSFIRE_WARNING_0916.md](STAGE6_CARRIER_PRISM_CROSSFIRE_WARNING_0916.md).
