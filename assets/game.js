@@ -2013,6 +2013,10 @@ const XART=(function(){
   })) X._src[_key]=_inputPromptRoot+_file;
   /* Generated mode plates use a source crop because the generator baked a checkerboard beyond
      their beveled frames. The exact Nexus II chain plate is clipped over the same silhouette. */
+  /* the debrief plate (Mike, 0916: "we need to generate a new stat screen"). Authored as ONE
+     plate with its bays cut into it, so the screen is art rather than a frame with text floated
+     over it - which is what the 9-sliced statscreen had become. */
+  X._src['statpanel_0916']='assets/game/ui/debrief_0916/stat_panel.png';
   X._src['mode_boss_rush_0915']='assets/game/ui/modes_0915/boss_rush.png';
   X._src['mode_time_attack_0915']='assets/game/ui/modes_0915/time_attack.png';
   X._src['mode_lock_nexus_0915']='assets/game/ui/modes_0915/nexus_chains.webp';
@@ -6501,10 +6505,24 @@ function _setCinematicViewport(on){
     if(window.__bofFit)window.__bofFit();else fitCanvas();
   }catch(_cinemaView){}
 }
-window.__bofResizeCinematic=function(){
-  try{if(state===GS.PILOT){_setPilotViewport();return;}if(state===GS.CUTSCENE||state===GS.CAMPAIGNINTRO||state===GS.VICTORY||
-         state===GS.STAGECLEAR)_setCinematicViewport(true);}catch(_cinResize){}
-};
+/* ⚠⚠ A RESIZE MAY NOT TOUCH THE CANVAS WHILE A FRAME IS BEING DRAWN. Assigning cv.width or
+   cv.height CLEARS the bitmap - 0913a records that trap for the launch hand-off - and a resize
+   event can land BETWEEN two draws of the same frame. What survives is whatever happened to be
+   drawn after the clear: a title and a hint row over an empty field, which is a screen that looks
+   finished and answers nothing. A browser that emits resize repeatedly (a scrollbar settling, a
+   window manager animating, a phone rotating) can hold a screen in that state indefinitely.
+   The event now only RECORDS that the viewport is stale; the loop applies it at the top of the
+   next frame, before anything is drawn. */
+let _viewportDirty=false;
+function applyPendingViewport(){
+  if(!_viewportDirty) return;
+  _viewportDirty=false;
+  try{
+    if(state===GS.PILOT){ _setPilotViewport(); return; }
+    if(state===GS.CUTSCENE||state===GS.CAMPAIGNINTRO||state===GS.VICTORY||state===GS.STAGECLEAR) _setCinematicViewport(true);
+  }catch(_cinResize){}
+}
+window.__bofResizeCinematic=function(){ _viewportDirty=true; };
 window.addEventListener('resize',window.__bofResizeCinematic);
 
 /* ---- RNG / math helpers ---- */
@@ -68118,6 +68136,24 @@ const SC_SLOTS = {
   score  :[0.0905,0.7449,0.8177,0.0930],
   signoff:[0.1409,0.8941,0.7169,0.0580],
 };
+/* ⚠ MEASURED OFF THE PLATE ITSELF, NOT LAID OUT BY EYE (0916). The bays were found by flooding
+   the plate's dark recesses and taking each region's box as a fraction of the whole art
+   (_BUILD_SOURCE has the measurement in the drop notes): title banner, portrait bay, briefing
+   bay, six slots in two columns, the score bar and the sign-off strip. So the text lands IN the
+   bays the artist drew rather than near them, and a re-generated plate is re-measured rather
+   than re-tuned. */
+const SC_SLOTS_0916 = {
+  title  :[0.1809,0.0823,0.6382,0.0698],
+  pilot  :[0.1362,0.1945,0.2114,0.2170],
+  brief  :[0.3963,0.1945,0.4797,0.2269],
+  stats  :[[0.1240,0.4539,0.3618,0.0673],[0.5163,0.4539,0.3598,0.0673],
+           [0.1240,0.5461,0.3618,0.0698],[0.5163,0.5461,0.3598,0.0698],
+           [0.1240,0.6409,0.3618,0.0698],[0.5163,0.6409,0.3598,0.0698]],
+  score  :[0.1260,0.7382,0.7480,0.0698],
+  signoff:[0.1260,0.8354,0.7480,0.0648],
+};
+function scPlateOn(){ return !!(typeof XART!=='undefined' && XART.rdy('statpanel_0916') && !(typeof coopActive==='function' && coopActive())); }
+function scSlots(){ return scPlateOn() ? SC_SLOTS_0916 : SC_SLOTS; }
 /* the plate's fitted rect on screen, and a bay resolved inside it */
 function scPanelRect(){
   const AW=1448, AH=1086;                       // the authored aspect, kept whatever the plate ships at
@@ -68137,6 +68173,9 @@ function scPanelRect(){
      is the defect the 0807n note describes from the other direction. */
   const _fr=(typeof drawStageClear!=='undefined') && drawStageClear._rect;
   if(_fr){
+    /* the authored plate's bays are fractions of the WHOLE art, so it takes the rect as it is;
+       the 9-sliced frame needs its measured interior inset instead */
+    if(scPlateOn()) return [_fr[0], _fr[1], _fr[2], _fr[3]];
     const IL=0.046, IR=0.951, IT=0.086, IB=0.907;
     return [_fr[0]+_fr[2]*IL, _fr[1]+_fr[3]*IT, _fr[2]*(IR-IL), _fr[3]*(IB-IT)];
   }
@@ -68166,14 +68205,14 @@ function scConceptBody(R, px, py, pw, ph, t, dt, art, F){
 
   /* ---- 1. TITLE ---- */
   {
-    const b=scBay(P,SC_SLOTS.title), s='STAGE '+run.stage+' COMPLETE!';
+    const b=scBay(P,scSlots().title), s='STAGE '+run.stage+' COMPLETE!';
     const H=scFit(art,s,b[2]*0.90,b[3]*0.66,ph2*0.018,0.08);
     scCen(art,s,b[0]+b[2]/2,b[1]+b[3]/2,H,null,0,A(0.20),0.08);
   }
 
   /* ---- 2. THE PILOT BAY - "Pilot face goes in here, centered." ---- */
   {
-    const b=scBay(P,SC_SLOTS.pilot);
+    const b=scBay(P,scSlots().pilot);
     /* ⚠ THE FACE FILLS THE BAY. Mike's mock labels this bay "Pilot face goes in here, centered"
        and nothing else - the first cut reserved a strip under it for a name label, which shrank
        the portrait to about half the bay for a word the sign-off line already says ("GREAT JOB,
@@ -68191,7 +68230,7 @@ function scConceptBody(R, px, py, pw, ph, t, dt, art, F){
 
   /* ---- 3. THE BRIEF ---- */
   {
-    const b=scBay(P,SC_SLOTS.brief);
+    const b=scBay(P,scSlots().brief);
     const nx=(typeof STAGES!=='undefined')?STAGES[(run.stage|0)]:null;
     const bossNm=(run._lastBossName||scBossName((curStage&&curStage.boss)||'')||'ENEMY COMMAND');
     const lines=['BOSS DEFEATED = '+bossNm];
@@ -68220,9 +68259,9 @@ function scConceptBody(R, px, py, pw, ph, t, dt, art, F){
     if(drawStageClear._segT>=0.16){ drawStageClear._segT=0; drawStageClear._row++;
       if(Audio.SFX.statTick) Audio.SFX.statTick(); }
   }
-  for(let i=0;i<SC_CONCEPT.length && i<SC_SLOTS.stats.length;i++){
+  for(let i=0;i<SC_CONCEPT.length && i<scSlots().stats.length;i++){
     if(i>drawStageClear._row) break;
-    const row=SC_CONCEPT[i], b=scBay(P,SC_SLOTS.stats[i]);
+    const row=SC_CONCEPT[i], b=scBay(P,scSlots().stats[i]);
     const app=Math.min(1,(drawStageClear._row-i)+0.35);
     const frac=Math.max(0,Math.min(1,row.val(S)))*Math.min(1,app*1.6);
     /* inset so his cyan rim stays visible - the fill sits IN the recess, it does not replace it */
@@ -68234,7 +68273,7 @@ function scConceptBody(R, px, py, pw, ph, t, dt, art, F){
 
   /* ---- 5. SCORE / CLEAR TIME / RANK ---- */
   {
-    const b=scBay(P,SC_SLOTS.score);
+    const b=scBay(P,scSlots().score);
     if(t>0.95){
       const tgt=(run.score|0)+Math.round(R.bonus*Math.min(1,(t-0.95)/0.9));
       if(drawStageClear._scoreShown<tgt){
@@ -68288,7 +68327,7 @@ function scConceptBody(R, px, py, pw, ph, t, dt, art, F){
 
   /* ---- 6. THE SIGN-OFF ---- */
   if(drawStageClear._stamp>0){
-    const b=scBay(P,SC_SLOTS.signoff);
+    const b=scBay(P,scSlots().signoff);
     const nx=(typeof STAGES!=='undefined')?STAGES[(run.stage|0)]:null;
     const who=String(run.pilot||'PILOT').toUpperCase();
     const msg = nx
@@ -68388,7 +68427,23 @@ function drawStageClear(dt){
      score row, sign-off - which is why the SC_SLOTS fractions map onto either one. The art is
      NOT deleted: it stays registered at X._src['statpanel_cf'] as the backup plate for Cole's
      dialogue window, per the same instruction. */
-  if(XART.rdy('statscreen')){
+  if(scPlateOn()){
+    /* ONE PLATE, CONTAIN-FITTED. Stretching it would pull the corner brackets and the LED strips
+       out of shape, which is the same reason the old concept plate was letterboxed. */
+    const im=XART.get('statpanel_0916');
+    const IW=im.naturalWidth, IH=im.naturalHeight;
+    /* ⚠ THE PLATE LEAVES THE BOTTOM BAND ALONE. PASSWORD and the CONTINUE prompt are drawn under
+       the panel, so a plate fitted to the full height pushes them off the screen - which is what
+       the first cut did. 0.88 of the height keeps them on it. */
+    const k=Math.min(pw/IW, (ph*0.88)/IH), w=IW*k, h=IH*k;
+    const slide=1-Math.pow(1-Math.min(1,t/0.32),3);
+    const x=px+(pw-w)/2, y=py+(ph*0.88-h)/2-(1-slide)*40;
+    ctx.save(); ctx.globalAlpha=slide; ctx.imageSmoothingEnabled=false;
+    ctx.drawImage(im, x, y, w, h);
+    ctx.restore();
+    px=x; py=y; pw=w; ph=h;                 // the bays are fractions of the plate, so publish ITS rect
+  }
+  else if(XART.rdy('statscreen')){
     const im=XART.get('statscreen');
     const IW=im.naturalWidth, IH=im.naturalHeight;
     const ML=264/1496, MR=270/1496, MT=171/980, MB=171/980;      // measured margins
@@ -68851,6 +68906,7 @@ function drawFrameError(st, err){
   ctx.restore();
 }
 function loop(now){
+  applyPendingViewport();      // a pending resize lands here, before any draw - never mid-frame
   if(Input.pollGamepad) Input.pollGamepad();
   const rawDt=(now-last)/1000;let dt=rawDt; last=now;
   /* CLAMP BOTH ENDS (drop 0724df). This was Math.min(dt,0.05) with NO lower bound, so a single

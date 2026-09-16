@@ -5274,15 +5274,18 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
      constants of a layout drawn in CODE. Mike supplied a finished plate with every bay authored
      into it, so nothing is positioned against the viewport OR against a computed panel: every bay
      is a MEASURED fraction of his plate, resolved through one accessor. */
+  /* 0916: the bays now come from whichever plate is drawn - the authored 0916 debrief plate when
+     it is up, the old table otherwise - so the read goes through scSlots() rather than naming one
+     table. The property being defended is unchanged: rows are fractions of the PANEL. */
   ok(/function scPanelRect\(\)/.test(_g5) && /function scBay\(R,f\)/.test(_g5) &&
-     /scBay\(P,SC_SLOTS\.stats\[i\]\)/.test(_g5),
+     /scBay\(P,scSlots\(\)\.stats\[i\]\)/.test(_g5) && /function scSlots\(\)/.test(_g5),
      'stat rows are positioned against the PANEL, not the viewport');
   ok(/const SC_SLOTS = \{/.test(_g5) && /statpanel_cf/.test(_g5),
      "and every bay is a measured fraction of Mike's own plate rather than a drawn box");
   ok(/rowsX=_ci\[0\]; rowsW=_ci\[1\]/.test(_g5),
      'and the shared password block is handed that same panel-relative column');
   /* the portrait is centred in the LEFT COLUMN now, which is itself panel-relative (drop 0807o) */
-  ok(/scBay\(P,SC_SLOTS\.pilot\)/.test(_g5) &&
+  ok(/scBay\(P,scSlots\(\)\.pilot\)/.test(_g5) &&
      /b\[0\]\+\(b\[2\]-w\)\/2, b\[1\]\+\(b\[3\]-h\)\/2/.test(_g5),
      'and so is the portrait, so neither can drift off the frame at another size');
   ok(_g5.indexOf('const inx=x+w*0.035')>0 && _g5.indexOf('ctx.clip();')>0,
