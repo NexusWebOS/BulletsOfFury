@@ -4,7 +4,7 @@
  "rule": "SC_UNLOCKS announces where bossDie grants: stage 4 LIGHTNING ORB (yuri), stage 5 CHAINGUN, stage 9 LASER MIST. Stage 2 no longer names the lightning orb.",
  "probe": "_BUILD_SOURCE/probe_unlocks_0916.py",
  "probe_result": {
-  "ok": 29,
+  "ok": 51,
   "fail": 0,
   "page_errors": 0,
   "console_errors": 0,
@@ -117,11 +117,99 @@
   },
   {
    "pass": true,
-   "label": "the cap and the layout are one number (UNLOCK_MAX)"
+   "label": "four rows are visible at once (UNLOCK_VIEW)"
   },
   {
    "pass": true,
    "label": "Freezer's row set is within the cap"
+  },
+  {
+   "pass": true,
+   "label": "a list of 1 draws 1 row (1)"
+  },
+  {
+   "pass": true,
+   "label": "every row of 1 carries its name (1 inked)"
+  },
+  {
+   "pass": true,
+   "label": "and every name is CENTRED in its strip (worst 1.5 px off, n=1)"
+  },
+  {
+   "pass": true,
+   "label": "the stage-clear message fits its bay with n=1 (0 gold px below it against the plate's own 0)"
+  },
+  {
+   "pass": true,
+   "label": "a list of 2 draws 2 rows (2)"
+  },
+  {
+   "pass": true,
+   "label": "every row of 2 carries its name (2 inked)"
+  },
+  {
+   "pass": true,
+   "label": "and every name is CENTRED in its strip (worst 4.0 px off, n=2)"
+  },
+  {
+   "pass": true,
+   "label": "the stage-clear message fits its bay with n=2 (0 gold px below it against the plate's own 0)"
+  },
+  {
+   "pass": true,
+   "label": "a list of 3 draws 3 rows (3)"
+  },
+  {
+   "pass": true,
+   "label": "every row of 3 carries its name (3 inked)"
+  },
+  {
+   "pass": true,
+   "label": "and every name is CENTRED in its strip (worst 4.0 px off, n=3)"
+  },
+  {
+   "pass": true,
+   "label": "the stage-clear message fits its bay with n=3 (0 gold px below it against the plate's own 0)"
+  },
+  {
+   "pass": true,
+   "label": "a list of 4 draws 4 rows (4)"
+  },
+  {
+   "pass": true,
+   "label": "every row of 4 carries its name (4 inked)"
+  },
+  {
+   "pass": true,
+   "label": "and every name is CENTRED in its strip (worst 8.0 px off, n=4)"
+  },
+  {
+   "pass": true,
+   "label": "the stage-clear message fits its bay with n=4 (0 gold px below it against the plate's own 0)"
+  },
+  {
+   "pass": true,
+   "label": "a list of six shows four at a time (4)"
+  },
+  {
+   "pass": true,
+   "label": "starting at the top (scroll 0)"
+  },
+  {
+   "pass": true,
+   "label": "DOWN scrolls the section (scroll 2)"
+  },
+  {
+   "pass": true,
+   "label": "still four rows after scrolling (4)"
+  },
+  {
+   "pass": true,
+   "label": "and the top row changed (['micon_fireorb_3'] -> ['micon_thermoshock_3'])"
+  },
+  {
+   "pass": true,
+   "label": "the scroll clamps at the end (2)"
   },
   {
    "pass": true,
@@ -130,11 +218,11 @@
  ],
  "suite": {
   "command": "node _BUILD_SOURCE/test_fl.js",
-  "ok": 4602,
+  "ok": 4615,
   "fail": 57,
   "exit": 1,
   "final_summary_reached": true,
-  "section": "361 (21/21)",
+  "section": "361 (30/30)",
   "baseline": {
    "worktree": "97265703",
    "ok": 4552,
@@ -145,9 +233,10 @@
   "note": "names compared with numbers masked; identical both sides"
  },
  "proofs": [
-  "docs/proofs/unlocks_0916/01_stage4_lightningorb.png",
-  "docs/proofs/unlocks_0916/02_stage9_lasermist.png",
-  "docs/proofs/unlocks_0916/03_four_rows.png"
+  "docs/proofs/unlocks_0916/03_four_rows.png",
+  "docs/proofs/unlocks_0916/04_one_row.png",
+  "docs/proofs/unlocks_0916/05_scrolled.png",
+  "docs/proofs/unlocks_0916/02_stage9_lasermist.png"
  ],
  "not_changed": "the briefing line wraps to three rows and its third row is clipped by the brief bay on every stage that has a page; pre-existing, flagged for Mike.",
  "layout": {
@@ -160,6 +249,19 @@
    "borrowed the debrief stat bays (0.0526 of the plate) so the box was a text row tall",
    "drew its own flat panels, which read as holes punched in the art beside the authored bays"
   ],
-  "moved": "LOOK FOR THEM IN THE FIELD to the sign-off strip, CONTINUE to the footer, because the rows cover the score bay"
- }
+  "moved": "LOOK FOR THEM IN THE FIELD to the sign-off strip, CONTINUE to the footer, because the rows cover the score bay",
+  "scrollable": {
+   "request": "Mike, 0916: \"Now make it to where you can scroll, show just 1, just 2, just 3, etc. make it a flexible scrollable section ... and center all texts, make them fit about the stage 2 clear message.\"",
+   "view_vs_cap": "UNLOCK_VIEW=4 rows visible, UNLOCK_MAX=8 the most a stage may announce; the block is centred and the pitch fixed, so one unlock is one row at the same box size as one of four",
+   "scroll": "UP/DOWN, clamped, with two DRAWN triangles (25B2/25BC are absent from this face and a missing glyph draws a space)",
+   "input": "menuUp/menuDown are each read once into locals before either is acted on - they consume their tap",
+   "centring": "names centred on the FULL string so the typewriter does not walk them sideways; measured ink centre within 8px of the strip centre (glyph side-bearing accounts for it)",
+   "brief": "fitted by stageWrapCount row count, not just stageFitH width, then centred in its bay - it sets in two lines and 0 gold px fall below the bay against a control of 0"
+  }
+ },
+ "probe_faults_fixed": [
+  "awaited requestAnimationFrame on a page that traps rAF - the evaluate hung for ever",
+  "chunked the page-background plate blit as a panel, so every row was one slot off and it reported a constant 222px off-centre on centred text",
+  "counted gold pixels below the brief bay with no control and reported 948 on a frame where the message fits; it now compares against the same band at t~0"
+ ]
 }

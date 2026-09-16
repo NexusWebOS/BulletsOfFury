@@ -82,54 +82,82 @@ clipped by the panel edge. It is the same on every stage that has a page (2, 4, 
 predates this drop, and it is the debrief plate's own layout, so it is Mike's call: either the
 sentence gets shorter or `stageWrapCen` gets the row count `stageWrapCount` can already give it.
 
-## 5. The layout (Mike, three passes)
+## 5. The rows, over four passes
 
 > "you can list 4 at once, but use square boxes plus rectangle text next to them."
-
-then, on the first cut:
-
 > "should be 4 large boxes for th weapon icons, 4 rectangle boxes next to the large boxes. re-do"
+> *(with a crop of the plate's rank box and word strip)* "I meant 4 of these like this. and stretch
+> to fill icons inside the box"
+> "Now make it to where you can scroll, show just 1, just 2, just 3, etc. make it a flexible
+> scrollable section. this si perfect otherwise. and center all texts, make them fit about the
+> stage 2 clear message."
 
-then, with a crop of the plate's own rank box and word strip:
+### What it is now
 
-> "I meant 4 of these like this. and stretch to fill icons inside the box"
+**The row is the plate's OWN box and strip, blitted.** The RANK bay
+(`0.5220,0.6466,0.1111,0.1579`) and its word strip (`0.6667,0.6880,0.2453,0.0677`) are cut straight
+out of `statpanel_full_0916` and repeated, so the corners, the bronze rail, the bezel and the
+shading are the art's. `UNLOCK_ART` names those fractions and the suite asserts they are the same
+rects `SC_SLOTS_FULL` carries, so the rows and the debrief cannot disagree about where the art is.
 
-**The row is the plate's OWN box and strip, blitted four times.** Not drawn, not approximated: the
-RANK bay (`0.5220,0.6466,0.1111,0.1579`) and its word strip (`0.6667,0.6880,0.2453,0.0677`) are cut
-straight out of `statpanel_full_0916` and repeated down the page, so the rounded corners, the bronze
-rail, the grey bezel and the panel's own shading are the art's and cannot drift from it. Same idea
-as 0912e building the boss tab out of the bar's own bands. `UNLOCK_ART` names those two fractions
-beside `SC_SLOTS_FULL`'s, so the row layout and the debrief cannot disagree about where the art is.
+**The section is flexible and scrolls.** Two numbers, meaning different things:
 
-⚠ **THE STRIP IS 3-SLICED AND THE BOX IS NOT.** The strip's source is 6.5:1 and a row's rectangle is
-nearer 8:1, so a straight stretch pulls its rounded end caps into ovals — the caps are blitted at
-their own scale and only the middle stretches. The box is drawn at its **source aspect (1.24)**
-rather than forced square: distorting a bevel is what this repo's art rules exist to prevent, and a
-box at the row's full height is large either way.
+| | |
+|---|---|
+| `UNLOCK_VIEW = 4` | rows visible at once — the section scrolls past this |
+| `UNLOCK_MAX = 8` | the most a single stage may announce at all |
 
-⚠ **THE ICON IS STRETCHED TO FILL THE BOX, AND `iconBlit` CANNOT DO THAT ON ITS OWN.** It takes a
-HEIGHT and derives the width from the art's aspect, and with three art stores behind it that aspect
-is not knowable from the call site. It is **measured**: one draw at alpha 0 off-screen returns the
-width the icon *would* take at this height, and the real draw runs under a horizontal scale that
-turns that into the box's width.
+One unlock is **one row**, two is two, and the block is **centred in the region**. ⚠ The pitch is
+fixed rather than sized to the count: sizing rows to the list would draw a single unlock at four
+times the size of one in a list of four — the same art at two scales on two runs of the same stage.
+Past four rows, UP/DOWN scroll and two drawn triangles say there is more. ⚠ They are **drawn, not
+lettered**: CLAUDE.md records that `25B2`/`25BC` are absent from this face and a missing glyph draws
+a **space**, so an arrow written as text is an invisible affordance.
 
-⚠ **EVERY SOCKET IS OPAQUE, FILLED OR NOT — and this took two goes.** The plate's thin stat bays are
-BAKED underneath these rows. At 0.55 alpha, and again at 0.62, an unused socket showed two columns
-of old rails straight through itself: worse than either layout alone. An empty slot is the same
-panel with nothing in it. The gaps between rows are small for the same reason.
+⚠ **UP and DOWN are each read exactly once, into locals, before either is acted on** — `menuUp`/
+`menuDown` CONSUME their tap, the trap this file records as `menuLeft()||menuRight()` always
+resolving to +1.
 
-### What each pass got wrong, since all three were found by rendering
+**Every text is centred**, and the name is centred on the **whole** string: centring the typed
+prefix would walk the word sideways as it types, so the block is placed from the full string's
+width and the letters fill it left to right.
 
-1. **Borrowed the debrief's stat bays.** A stat bay is 0.0526 of the plate — a thin strip — so a
-   square at its height is the height of a text row, and the "box" read as an icon with a border.
-2. **Drew its own panels.** Flat fill and a stroked rail: it read as a hole punched in the art next
-   to the authored bays it sat between.
-3. **Dimmed the empty sockets.** Twice, at two different alphas, with the baked bays showing through
-   both times.
+**The stage-clear message fits its bay.** It wrapped to three rows and the third sat below the bay,
+so `CRATES.` was clipped on every stage that has a page. ⚠ `stageFitH` only solves the **width** of
+one line; `stageWrapCount` gives the row count at a size without drawing, which is the half that was
+missing — the same pairing 0811q needed for the cutscene box. The size is stepped down until the
+block fits, then centred in the bay. It now sets in two lines.
 
-The rows cover the score bay, so **LOOK FOR THEM IN THE FIELD moved to the sign-off strip and the
-CONTINUE prompt to the footer** — 0814b's lesson that two strings at one y read as garbage rather
-than as two lines.
+**The icon fills its box.** ⚠ `iconBlit` takes a HEIGHT and derives width from the art's aspect, and
+three art stores make that unknowable at the call site — so the width is measured: one draw at
+alpha 0 off-screen returns what the icon would take, and the real draw runs under a horizontal
+scale. The strip is 3-sliced (6.5:1 source into a ~8:1 row would pull its caps into ovals); the box
+keeps its authored 1.24 aspect rather than being forced square.
 
-Proofs: `docs/proofs/unlocks_0916/03_four_rows.png` (four rows) and `02_stage9_lasermist.png` (one
-weapon in four sockets).
+### What each rejected cut got wrong — all four found by RENDERING, none moved a number
+
+1. **Borrowed the debrief's stat bays.** A bay is 0.0526 of the plate, so a square at its height is
+   a text row tall and the "box" read as an icon with a border.
+2. **Drew its own flat panels.** They read as holes punched in the art beside the authored bays.
+3. **Dimmed the empty sockets** — twice, at 0.55 and 0.62. The plate's bays are BAKED underneath, so
+   a part-alpha socket shows two columns of old rails through itself.
+4. **Drew four sockets always.** Replaced: one unlock is one row.
+
+### Three probe faults, also worth keeping
+
+- **It awaited `requestAnimationFrame` on a page that TRAPS rAF** (`shoot.TRAP_RAF` parks the
+  callback), so the evaluate hung for ever. Record during a manual `loop()` step.
+- **It chunked the page-background plate blit as a panel.** The background is drawn from the same
+  image as every panel cut out of it, so every row came out one slot off and it reported a constant
+  **222px "off centre"** on text that is dead centre.
+- **It counted "gold pixels below the bay" with no control** and reported 948 on a frame where the
+  message plainly fits — that band contains the plate's own warm metal. It now measures the same
+  band at t≈0, before the brief fades in, and compares.
+
+And one **assertion was repointed rather than worked around**: it required `i<UNLOCK_MAX` — four
+sockets drawn whether or not they held a weapon — which is exactly the behaviour Mike replaced.
+
+Measured: `probe_unlocks_0916.py` **51 ok / 0 fail** in real Chromium, 0 page or console errors,
+covering 1, 2, 3 and 4 rows, a 6-row list scrolling and clamping, the name's ink centre in every
+strip, and the brief against its control. Proofs: `03_four_rows.png`, `04_one_row.png`,
+`05_scrolled.png`, `02_stage9_lasermist.png`.

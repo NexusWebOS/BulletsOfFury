@@ -52,7 +52,30 @@ module.exports=function testUnlockAnnouncements(vm,ctxv,ok){
      vm.runInContext('UNLOCK_ROWS.h',ctxv) + ')');
   const du=vm.runInContext('drawUnlocks.toString()',ctxv).replace(/\/\*[\s\S]*?\*\//g,'').replace(/\/\/.*/g,'');
   ok(/UNLOCK_ROWS/.test(du), 'the draw reads that region');
-  ok(/i<UNLOCK_MAX/.test(du), 'and draws all four sockets, filled or not');
+  /* ⚠ REPOINTED (Mike, 0916: "make it a flexible scrollable section ... show just 1, just 2, just
+     3"). This required `i<UNLOCK_MAX` - four sockets drawn whether or not they held a weapon - and
+     that is the behaviour he replaced: one unlock is now ONE row. The section draws what it has and
+     scrolls past UNLOCK_VIEW. */
+  ok(vm.runInContext('UNLOCK_VIEW===4 && UNLOCK_MAX>=UNLOCK_VIEW',ctxv),
+     'four rows are VISIBLE and the table may carry more (view ' + vm.runInContext('UNLOCK_VIEW',ctxv) +
+     ', cap ' + vm.runInContext('UNLOCK_MAX',ctxv) + ')');
+  ok(/k<view/.test(du.replace(/\s+/g,'')) && /U\.scroll/.test(du),
+     'it draws only the rows it has, from the scroll offset');
+  ok(/RH-pitch\*view/.test(du.replace(/\s+/g,'')),
+     'and centres the block, so one unlock is one row in the middle rather than a quarter-height box');
+  ok(/scroll:0/.test(vm.runInContext('unlocksStart.toString()',ctxv).replace(/\s+/g,'')),
+     'the page starts at the top of its list');
+  /* ⚠ menuUp/menuDown CONSUME their tap, so both must be read before either is acted on - the
+     trap CLAUDE.md records as `menuLeft()||menuRight()` always resolving to +1. */
+  const inp=du.replace(/\s+/g,'');
+  ok(/_mUp=\(Input\.menuUp\?/.test(inp) && /_mDn=\(Input\.menuDown\?/.test(inp),
+     'up and down are each read exactly once, into locals');
+  ok(inp.indexOf('_mDn=(Input.menuDown') < inp.indexOf('if(_maxS>0)'),
+     'and both are read BEFORE either is acted on');
+  /* the brief fits its bay: stageFitH solves one line's WIDTH, stageWrapCount gives the row count */
+  ok(/stageWrapCount/.test(du), 'the stage-clear message is fitted by row COUNT, not just by width');
+  ok(/rx2\+rw2\/2-fw\/2\+sw\/2/.test(du.replace(/\s+/g,'')),
+     'the name is centred on the whole string, so the typewriter does not walk it sideways');
   ok(!/slots\[i\*2\]/.test(du), 'it no longer borrows the thin stat bays');
 
   /* ⚠ THIS PIN USED TO REQUIRE `box=rh`, A SQUARE. Mike overruled it in the same breath as

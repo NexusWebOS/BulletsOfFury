@@ -4570,21 +4570,31 @@ out of the canvas with `getImageData`; a source assertion that the code passes a
 a build that drew the word somewhere else. 25/0, 0 errors. Suite 4,598 ok / 56 fail, no new names.
 `docs/BOSS_GAUGES_0916.md`, section 363.
 
-**Also 0916 - the unlock page's rows, and THREE cuts before it was right.** Mike: *"you can list 4
-at once, but use square boxes plus rectangle text next to them"*, then *"should be 4 LARGE boxes ...
-re-do"*, then, with a crop of the plate's own rank box and word strip, *"I meant 4 of these like this.
-and stretch to fill icons inside the box"*.
-⚠ **THE ANSWER WAS THE PLATE'S OWN ART, BLITTED FOUR TIMES** - the RANK bay and its word strip cut
-out of `statpanel_full_0916` and repeated, so corners, rail, bezel and shading are the art's. Cut 1
-borrowed the debrief's STAT BAYS, which are 0.0526 of the plate - a square at that height is the
-height of a TEXT ROW, so the box read as an icon with a border. Cut 2 drew its own flat panels, which
-read as holes punched in the art beside the authored bays around them.
-⚠ **THE STRIP IS 3-SLICED, THE BOX IS NOT.** 6.5:1 stretched into 8:1 pulls the rounded caps into
-ovals; the caps blit at their own scale and only the middle stretches. The box keeps its SOURCE aspect
-(1.24) rather than being forced square - distorting a bevel is what the art rules exist to prevent.
-⚠ **`iconBlit` CANNOT STRETCH, SO THE WIDTH IS MEASURED.** It takes a HEIGHT and derives width from
+**Also 0916 - the unlock page's rows, and FOUR cuts before it was right.** *"use square boxes plus
+rectangle text next to them"* -> *"should be 4 LARGE boxes ... re-do"* -> (with a crop of the plate's
+own rank box and word strip) *"I meant 4 of these like this. and stretch to fill icons inside the box"*
+-> *"make it a flexible scrollable section ... show just 1, just 2, just 3 ... center all texts, make
+them fit about the stage 2 clear message."*
+⚠ **THE ANSWER WAS THE PLATE'S OWN ART, BLITTED** - the RANK bay and its word strip cut out of
+`statpanel_full_0916` and repeated. Cut 1 borrowed the debrief's STAT BAYS, which are 0.0526 of the
+plate, so a square at that height is a TEXT ROW tall. Cut 2 drew flat panels, which read as holes
+punched in the art. Cut 3 dimmed the empty sockets (twice, 0.55 then 0.62) and the BAKED bays showed
+through them. Cut 4 drew four sockets always; one unlock is ONE row now.
+⚠ **VIEW AND CAP ARE TWO NUMBERS.** `UNLOCK_VIEW` 4 is what is on screen, `UNLOCK_MAX` 8 is what a
+stage may announce; the section scrolls between them and the pitch is FIXED with the block centred -
+sizing rows to the count would draw one unlock at four times the size of one in a list of four.
+⚠ **THE SCROLL ARROWS ARE DRAWN, NOT LETTERED** - 25B2/25BC are absent from this face and a missing
+glyph draws a SPACE, so an arrow written as text is an invisible affordance.
+⚠ **`stageFitH` SOLVES A LINE'S WIDTH; `stageWrapCount` GIVES THE ROW COUNT** - the stage-clear
+message wrapped to three rows and the third sat BELOW its bay, clipping CRATES. on every stage with a
+page. Fitted by row count and centred, it sets in two lines. Same pairing 0811q needed for the
+cutscene box.
+⚠ **`iconBlit` CANNOT STRETCH, SO THE WIDTH IS MEASURED** - it takes a HEIGHT and derives width from
 the art's aspect, and three art stores make that unknowable at the call site: one draw at alpha 0
 off-screen returns the width it WOULD take, and the real draw runs under a horizontal scale.
-⚠ **AND EVERY SOCKET MUST BE OPAQUE, FILLED OR NOT - MISSED TWICE, AT 0.55 AND AT 0.62.** The plate's
-thin bays are BAKED under these rows, so a dimmed empty socket shows two columns of old rails through
-itself. All three faults were found by RENDERING the page; none of them moved a number.
+⚠ **AND THREE PROBE FAULTS, ALL WORTH KEEPING.** It awaited `requestAnimationFrame` on a page that
+TRAPS rAF and hung for ever; it chunked the page-BACKGROUND plate blit as a panel (same source image
+as every panel cut from it), putting every row one slot out and reporting a constant **222px off
+centre** on text that is dead centre; and it counted "gold pixels below the bay" with NO CONTROL,
+reporting 948 where the plate's own warm metal lives. Every fault in the page AND in the probe was
+found by rendering it; not one of them moved a number.

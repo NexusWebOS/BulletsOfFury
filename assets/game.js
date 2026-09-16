@@ -68965,10 +68965,15 @@ const SC_UNLOCKS = {
   5: { all:[['CHAINGUN','micon_chaingun_3']] },
   9: { all:[['LASER MIST','micon_lasermist_3']] },
 };
-/* ⚠ FOUR IS THE MOST THAT CAN EVER BE ANNOUNCED (Mike, 0916): "we dont need to have multiple
-   listed weapon unlocks like that, at most we might unlock 3 at once like Freezer. you can list 4
-   at once". The page lays out FOUR rows in one column, so the cap and the layout are one number. */
-const UNLOCK_MAX=4;
+/* ⚠ FOUR AT ONCE MEANS FOUR ON SCREEN, NOT FOUR IN THE WORLD (Mike, 0916: "make it a flexible
+   scrollable section", after "you can list 4 at once"). So there are two numbers, and they mean
+   different things:
+     UNLOCK_VIEW  how many rows are VISIBLE - the section scrolls past this
+     UNLOCK_MAX   how many a single stage may announce at all, the sanity cap on the table
+   The section sizes itself to what it is given: one unlock is ONE row, two is two. Rows are a
+   fixed height and the block is centred in the region, so a box is the same size whether the page
+   is showing one weapon or four. */
+const UNLOCK_VIEW=4, UNLOCK_MAX=8;
 /* ⚠ THE PAGE LAYS OUT ITS OWN FOUR ROWS - IT DOES NOT BORROW THE DEBRIEF'S STAT BAYS (Mike, 0916:
    "should be 4 large boxes for th weapon icons, 4 rectangle boxes next to the large boxes").
    The first cut drew a square inside each stat bay, and a stat bay is a THIN strip - 0.0526 of the
@@ -69012,7 +69017,7 @@ function unlockRowsFor(stage, pk){
 }
 let unlocks=null;
 function unlocksStart(rows, onDone){
-  unlocks={rows:rows, onDone:onDone||null, t:0, md:!!(Input&&Input.mouse&&Input.mouse.down)};
+  unlocks={rows:rows, onDone:onDone||null, t:0, scroll:0, md:!!(Input&&Input.mouse&&Input.mouse.down)};
   for(const r of rows){ try{ if(typeof XART!=='undefined') XART.rdy(r[1]); }catch(_){ } }   // start the decodes
   /* the LASER MIST icon is NOT on nia_icons. iconBlit routes micon_lasermist_* to
      laserMistAtlasBlit, which reads its own sheet, so touching the icon key above starts
@@ -69052,10 +69057,29 @@ function drawUnlocks(dt){
         ctx.save(); ctx.globalAlpha=A(0.15); ctx.drawImage(im,b[0]+(b[2]-w)/2,b[1]+(b[3]-h)/2,w,h); ctx.restore(); }
     }catch(_){ }
     /* briefing bay: what happened */
+    /* ⚠ THE BRIEF IS FITTED TO ITS BAY'S HEIGHT, NOT JUST ITS WIDTH (Mike, 0916: "make them fit
+       about the stage 2 clear message"). It wrapped to three rows and the third sat BELOW the bay,
+       so CRATES. was clipped by the panel edge on every stage that has a page. stageFitH only
+       solves the WIDTH of one line; stageWrapCount gives the row count at a size without drawing,
+       which is the half that was missing - the same pairing 0811q needed for the cutscene box.
+       The block is then centred in the bay rather than started at a fixed fraction of it. */
     b=bay(S.brief);
     const msg='STAGE '+(run.stage|0)+' CLEARED. YOUR ARSENAL GROWS - THE FOLLOWING WILL NOW DROP FROM SUPPLY CRATES.';
-    const mH=Math.max(9,Math.min(b[3]*0.26, (typeof stageFitH==='function')?stageFitH(art,msg,b[2]*0.90*2.2,b[3]*0.26,9,0.05):12));
-    if(typeof stageWrapCen==='function') stageWrapCen(art,msg,b[0]+b[2]/2,b[1]+b[3]*0.36,mH,b[2]*0.90,1.35,A(0.25),0.05,'#ffd24a',0.6);
+    const mW=b[2]*0.94, mLine=1.30;
+    let mH=b[3]*0.30;
+    if(typeof stageWrapCount==='function'){
+      for(let g=0; g<14 && mH>8; g++){
+        const rows=stageWrapCount(art,msg,mH,mW,0.05);
+        if(rows*mH*mLine <= b[3]*0.94) break;
+        mH*=0.92;
+      }
+    }
+    mH=Math.max(8,mH);
+    if(typeof stageWrapCen==='function'){
+      const rows=(typeof stageWrapCount==='function')?stageWrapCount(art,msg,mH,mW,0.05):3;
+      const blk=rows*mH*mLine, top=b[1]+(b[3]-blk)/2+mH*0.55;
+      stageWrapCen(art,msg,b[0]+b[2]/2,top,mH,mW,mLine,A(0.25),0.05,'#ffd24a',0.6);
+    }
     /* the unlocks themselves, one per slot, typed in */
     /* ⚠ FOUR LARGE ICON BOXES, EACH WITH ITS OWN RECTANGLE BESIDE IT (Mike, 0916): "should be 4
        large boxes for th weapon icons, 4 rectangle boxes next to the large boxes."
@@ -69066,14 +69090,24 @@ function drawUnlocks(dt){
        is the layout, and an announcement of one weapon into one lit box of four reads better than
        one box floating in the middle of a plate. */
     const R0=UNLOCK_ROWS, RX=P[0]+P[2]*R0.x, RY=P[1]+P[3]*R0.y, RW=P[2]*R0.w, RH=P[3]*R0.h;
-    const pitch=RH/UNLOCK_MAX, rh=pitch*(1-R0.gap), gapx=RW*0.012;
+    /* ⚠ THE PITCH IS FIXED AND THE BLOCK IS CENTRED. Sizing the rows to the COUNT would make a
+       single unlock a box four times the size of one in a list of four - the same art at two
+       scales on two runs of the same stage. One unlock is one row, centred. */
+    const nRows=U.rows.length, view=Math.min(nRows,UNLOCK_VIEW);
+    const maxScroll=Math.max(0,nRows-UNLOCK_VIEW);
+    U.scroll=clamp(U.scroll||0,0,maxScroll);
+    const pitch=RH/UNLOCK_VIEW, rh=pitch*(1-R0.gap), gapx=RW*0.012;
+    const oy=RY+(RH-pitch*view)/2;
     const pl=(typeof XART!=='undefined' && XART.rdy('statpanel_full_0916')) ? XART.get('statpanel_full_0916') : null;
     const pNW=pl?(pl.naturalWidth||pl.width):1, pNH=pl?(pl.naturalHeight||pl.height):1;
     /* the box keeps the authored piece's own aspect, so its bevel is never distorted */
     const boxAsp=(UNLOCK_ART.box[2]*pNW)/(UNLOCK_ART.box[3]*pNH);
     const box=pl?rh*boxAsp:rh;
-    for(let i=0;i<UNLOCK_MAX;i++){
-      const r=U.rows[i]||null, ry=RY+pitch*i, a=r?A(0.55+i*0.45):A(0.30);
+    for(let k=0;k<view;k++){
+      const i=k+U.scroll, r=U.rows[i]||null, ry=oy+pitch*k;
+      /* a row scrolled into view later is past its own reveal delay, so the delay is capped at the
+         last visible slot rather than growing with the list */
+      const a=r?A(0.55+Math.min(i,UNLOCK_VIEW-1)*0.45):0;
       if(a<=0) continue;
       const rx2=RX+box+gapx, rw2=RW-box-gapx;
       ctx.save();
@@ -69109,11 +69143,27 @@ function drawUnlocks(dt){
         ctx.save(); ctx.globalAlpha=a; ctx.translate(cxp,cyp); ctx.scale(sxk,1);
         iconBlit(ctx,r[1],0,0,ih,true); ctx.restore();
       }
-      const full=r[0], shown=full.slice(0, Math.max(0,Math.round((t-(0.55+i*0.45))*22)));
+      /* ⚠ CENTRED, AND CENTRED ON THE WHOLE NAME (Mike, 0916: "center all texts"). Centring the
+         typed PREFIX would walk the word sideways as it types; the block is placed from the full
+         string's width and the letters fill it left to right, so it lands centred and never moves. */
+      const full=r[0], shown=full.slice(0, Math.max(0,Math.round((t-(0.55+Math.min(i,UNLOCK_VIEW-1)*0.45))*22)));
       const pad=rw2*0.055, room=rw2-pad*2;
       const lH=(typeof stageFitH==='function')?stageFitH(art,full,room,rh*0.52,9,0.06):rh*0.45;
-      const lw=(typeof stageWidth==='function')?stageWidth(art,full,lH,0.06):0;
-      stageText(art,shown,rx2+pad+lw/2,ry+rh/2,lH,'#8de23a',0.85,a,0.06);
+      const fw=(typeof stageWidth==='function')?stageWidth(art,full,lH,0.06):0;
+      const sw=(typeof stageWidth==='function')?stageWidth(art,shown,lH,0.06):0;
+      stageText(art,shown,rx2+rw2/2-fw/2+sw/2,ry+rh/2,lH,'#8de23a',0.85,a,0.06);
+    }
+    /* ⚠ THE SECTION SAYS WHEN THERE IS MORE (Mike: "flexible scrollable section"). Two small
+       drawn triangles - NOT glyphs: CLAUDE.md records that 25B2/25BC are absent from this face and
+       a missing glyph draws a SPACE, so an arrow written as text is an invisible affordance. */
+    if(maxScroll>0){
+      const ax=RX+RW+P[2]*0.012, tw2=P[2]*0.012, th2=P[3]*0.016;
+      ctx.save(); ctx.fillStyle='#9fd6ff';
+      if(U.scroll>0){ ctx.globalAlpha=0.85; ctx.beginPath();
+        ctx.moveTo(ax,RY+th2); ctx.lineTo(ax+tw2,RY+th2); ctx.lineTo(ax+tw2/2,RY); ctx.closePath(); ctx.fill(); }
+      if(U.scroll<maxScroll){ ctx.globalAlpha=0.85; ctx.beginPath();
+        ctx.moveTo(ax,RY+RH-th2); ctx.lineTo(ax+tw2,RY+RH-th2); ctx.lineTo(ax+tw2/2,RY+RH); ctx.closePath(); ctx.fill(); }
+      ctx.restore();
     }
     /* ⚠ THE INSTRUCTION MOVED OUT OF THE SCORE BAY - the four rows now cover it. It goes in the
        sign-off strip, and the CONTINUE prompt goes in the footer, so nothing is drawn twice in one
@@ -69124,9 +69174,18 @@ function drawUnlocks(dt){
     b=bay(S.footer);
     if(goA>0 && Math.floor(t*2)%2) controlHintRow([['pad_a','CONTINUE']],b[1]+b[3]*0.55,W/2,W-24);
   }
+  /* ⚠ UP/DOWN SCROLL THE SECTION, AND EACH IS READ EXACTLY ONCE. Input.menuUp/menuDown CONSUME
+     their tap (CLAUDE.md records `menuLeft()||menuRight()` always resolving to +1 for this reason),
+     so both are read into locals before either is acted on. */
+  const _mUp=(Input.menuUp?Input.menuUp():false), _mDn=(Input.menuDown?Input.menuDown():false);
+  const _maxS=Math.max(0,U.rows.length-UNLOCK_VIEW);
+  if(_maxS>0){
+    if(_mDn) U.scroll=Math.min(_maxS,(U.scroll||0)+1);
+    else if(_mUp) U.scroll=Math.max(0,(U.scroll||0)-1);
+  }
   /* exit: any press once the rows are in, click included */
   const click=Input.mouse.down&&!U.md; U.md=!!Input.mouse.down;
-  const ready=t>0.55+U.rows.length*0.45+0.2;
+  const ready=t>0.55+Math.min(U.rows.length,UNLOCK_VIEW)*0.45+0.2;
   if(ready && (click||Input.tap('enter')||keybind.fire.some(function(k){return Input.tap(k);})||Input.menuStart())){
     Input.mouse.down=false;
     const done=U.onDone; unlocks=null;
