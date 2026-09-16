@@ -64597,7 +64597,8 @@ function stageText(art,text,cx,cy,H,tintC,tintA,alpha,spacingMul,outline){
       continue;
     }
     const gb=glyphBox(g.art,g.f,H,ch);
-    const gw=g.dbl?gb.w*g.sw:gb.w;
+    /* a square mark takes its width from the height of one of its own bars */
+    const gw=g.sq ? Math.max(1, gb.h*(g.sh||COLON_T)) : (g.dbl?gb.w*g.sw:gb.w);
     const pre=(FONT_KERN_PRE[ch]||0)*H;
     items.push([g.art,g.f,gw,gb,g.dbl?1:0,g.sh,pre]); total+=gw+sp+pre;
   }
@@ -64692,8 +64693,13 @@ function stageGlyph(art, ch){
     if(h) return {art:h.art, f:h.f, dbl:1, sw:EQ_W, sh:EQ_T};
   }
   if(ch===':'){
+    /* ⚠ AND IT IS SQUARE (Mike, 0916: "not =, use semicolon" - the mark was rendering as an
+       EQUALS). COLON_W widened the period 2.85x while COLON_T only raised it as far, so each dot
+       came out as a horizontal BAR and two stacked bars are an equals sign. `sq` tells stageText
+       to give the mark the same width as its own bar height, which is what makes a dot a dot at
+       every size. The 0904ak stacking - one frame, ringed as a pair - is untouched. */
     const d=stageGlyph(art,'.');                 // two periods, same machinery
-    if(d) return {art:d.art, f:d.f, dbl:1, sw:COLON_W, sh:COLON_T};
+    if(d) return {art:d.art, f:d.f, dbl:1, sw:COLON_W, sh:COLON_T, sq:1};
   }
   let nm=art&&art.font&&art.font[ch];
   if(nm && art.frames && art.frames[nm]) return {art:art, f:art.frames[nm]};
@@ -67564,7 +67570,10 @@ function stageTextMixed(prim, fb, text, cx, cy, H, fbTint, alpha, sm){
     if(tint) drawFrameTinted(a.img,f,x,cy-H/2+gb.dy,w,gb.h,tint,1.0,alpha); else drawFrameTinted(a.img,f,x,cy-H/2+gb.dy,w,gb.h,null,null,alpha);
     x+=w+sp; }
 }
-function fmtTime(s){ s=Math.max(0,Math.round(s)); const m=Math.floor(s/60), ss=s%60; return m+':'+String(ss).padStart(2,'0'); }
+/* ⚠ BOTH HALVES PADDED (Mike, 0916: "time should be xx:xx as some levels could take 10 minutes
+   or more"). A bare minute made the reading jump width as it crossed 10:00, and on a centred
+   panel a value that changes width moves everything around it. */
+function fmtTime(s){ s=Math.max(0,Math.round(s)); const m=Math.floor(s/60), ss=s%60; return String(m).padStart(2,'0')+':'+String(ss).padStart(2,'0'); }
 /* ============================================================
    STAGE CLEAR — REBUILT FROM SCRATCH (drop 0807m)
 
