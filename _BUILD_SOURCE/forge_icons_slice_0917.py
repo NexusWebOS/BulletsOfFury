@@ -38,12 +38,14 @@ def runs(mask_line):
         elif not v and start is not None: out.append((start, i)); start = None
     return out
 
-def find_cells(im):
-    """the nine content boxes, from the sheet's own gutters"""
+def find_cells(im, thr=WHITE):
+    """the nine content boxes, from the sheet's own gutters. `thr` is the background floor: the tier-V
+    sheets carry a faint glow around every frame that tints the gutters, so their rows only separate
+    at a lower floor (the glow is near-white, the ink is not)."""
     W, H = im.size
     px = im.load()
     def is_bg(x, y):
-        r, g, b = px[x, y][:3]; return r >= WHITE and g >= WHITE and b >= WHITE
+        r, g, b = px[x, y][:3]; return r >= thr and g >= thr and b >= thr
     colInk = [any(not is_bg(x, y) for y in range(0, H, 2)) for x in range(W)]
     rowInk = [any(not is_bg(x, y) for x in range(0, W, 2)) for y in range(H)]
     cols = [r for r in runs(colInk) if r[1] - r[0] > W * 0.12]

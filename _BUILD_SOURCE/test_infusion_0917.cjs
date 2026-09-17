@@ -85,8 +85,8 @@ module.exports=function testInfusion(vm,ctxv,ok){
   /* FUSION: a level-3 element replaced by a different one detonates once (probe_fusion_0917.py 9/0) */
   ok(vm.runInContext("infusionFusionName('fire','ice')==='THERMAL SHOCK'&&infusionFusionName('ice','fire')==='THERMAL SHOCK'&&infusionFusionName('toxic','kinetic')==='FUSION'",ctxv),
      'fusion pairs are named both ways round; an unnamed pair is a plain FUSION');
-  ok(vm.runInContext("(function(){var s=String(infusionGrant);return s.indexOf('(run.infusion.lv|0)>=INFUSION_MAX')>=0&&s.indexOf('infusionFusion(run.infusion.elem, elem)')>=0;})()",ctxv),
-     'the fusion fires from infusionGrant only when a LEVEL-3 element is replaced by a different one');
+  ok(vm.runInContext("(function(){var s=String(infusionGrant);return s.indexOf('(run.infusion.lv|0)>=INFUSION_PICKUP_MAX')>=0&&s.indexOf('infusionFusion(run.infusion.elem, elem)')>=0&&INFUSION_PICKUP_MAX===3;})()",ctxv),
+     'the fusion fires from infusionGrant only when a LEVEL-3 (the pickup ceiling, INFUSION_PICKUP_MAX) element is replaced by a different one');
 
   ok(vm.runInContext("(function(){var s=String(_newWeaponTick);return s.indexOf('_voidBeam')>=0&&s.indexOf(\"b._inf==='dark'\")>=0;})()",ctxv),
      'the VOID BEAM: a dark beam draws hostiles toward its column from the one enemy loop (carrier probe 14/0)');

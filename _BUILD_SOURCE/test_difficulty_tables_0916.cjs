@@ -73,8 +73,9 @@ module.exports=function testDifficultyTables(vm,ctxv,ok){
      'the vault is a state with a screen');
   ok(vm.runInContext("String(drawScene).indexOf('GS.VAULT')>=0",ctxv),
      'and the dispatcher routes it');
-  ok(vm.runInContext("(function(){vaultOpen();return vault.rows.length===furiousShopIds().length;})()",ctxv),
-     'it lists every catalogue row, none hidden');
+  /* 0917: the VAULT gained two rows of its own around the catalogue - EXCHANGE SCORE first, THE ARMORY last */
+  ok(vm.runInContext("(function(){vaultOpen();return vault.rows.length===furiousShopIds().length+2&&vault.rows[0].exchange===true&&vault.rows[vault.rows.length-1].armory===true&&furiousShopIds().every(function(id){return vault.rows.some(function(r){return r.id===id;});});})()",ctxv),
+     'it lists every catalogue row, none hidden, between the EXCHANGE row and THE ARMORY row (0917)');
 
   /* ⚠ A ROW THAT CANNOT DELIVER MUST NOT SELL. Taking the points for a video that does not exist
      is worse than not listing it: the player is out the points with nothing to show, and the refund
