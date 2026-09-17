@@ -36,8 +36,9 @@ baseline were byte-identical on every full run (the two documented order-depende
 - The NEW GAME + plate is wider than its family (5.23 against 3.4–4.5), so it reads shorter than
   its neighbours at the shared width. One SpriteCook job if you want it taller.
 - The giant beam's muzzle orb scales with the beam and gets large at level 3.
-- Infusion drop rate is 5.5% of kill drops × `dropMul`, biased per stage (`INFUSION_STAGE_BIAS`);
-  water needs the stage-9 signal, dark needs NEW GAME +. Tune there.
+- Infusion drop rate is `INFUSION_DROP_P` (0.14) of kill drops × `dropMul` — behind the 18% kill-drop
+  gate that is about one infusion per 40 kills; it was one per 100 at first and the sweep showed it.
+  Biased per stage (`INFUSION_STAGE_BIAS`); water needs the stage-9 signal, dark needs NEW GAME +.
 - `EVADE_DIFF` / `BOSS_DENY_DIFF` numbers are first guesses: 0.30/0.55/0.80 and 0.50/0.75/1.0 for
   HARD/FURIOUS/INSANITY.
 

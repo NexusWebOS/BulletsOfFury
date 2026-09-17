@@ -59,7 +59,9 @@ space weapons are live. The probe drives it: **400 kill drops on stage 5 yield z
 pickups; 600 on stage 2 yield 41.** Water opens on the same signal LASER MIST already opens on
 (`laserMistIsUnlocked`, i.e. a real stage-9 boss kill); dark matter on `run.ngplus`.
 
-The drop is a **kill drop**, beside the bomb / shield / life roll — 5.5% × `dropMul`, biased by
+The drop is a **kill drop**, beside the bomb / shield / life roll — `INFUSION_DROP_P` (0.14) × `dropMul`
+inside `dropPowerup`, which itself sits behind killEnemy's 18% drop gate (⚠ at the first 0.055 that
+was about one infusion per 100 kills, measured 2 in 300 on HARD — too rare to be felt), biased by
 stage (fire on 2, ice on 3, lightning on 4 and 6, toxic on 7, prism on 8) but never locked, so every
 element stays reachable anywhere it is eligible.
 

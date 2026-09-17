@@ -7893,6 +7893,10 @@ const INFUSIONS=Object.freeze({
   dark:     {name:'DARK MATTER',body:'#5a2a8a', glow:'#b46cff', el:null,    named:{3:'VOID'},    gate:'ngplus'}
 });
 const INFUSION_MAX=3;
+/* the roll INSIDE dropPowerup, which itself sits behind killEnemy's 18% drop gate: at 0.055 an infusion
+   landed about once per 100 kills (measured 2 in 300 on HARD) - too rare to be felt. 0.14 is about one
+   per 40 kills, a few per stage. (0917) */
+const INFUSION_DROP_P=0.14;
 /* the ORB is a carrier too (Mike: "the water combinations after level 9 where we can now create water orb") -
    the orb weapon's wheel and its shards ride the element like any other round */
 const INFUSION_CARRIERS={mg:1,spread:1,beam:1,missile:1,orb:1,shard:1};
@@ -27948,7 +27952,7 @@ function continueRewardCollect(p){
 function dropPowerup(x,y,forceKind){
   let kind=forceKind;
   /* an INFUSION drops beside the ordinary loot, on eligible stages only (never 5 or 9) */
-  if(!kind && typeof infusionEligible==='function' && infusionEligible() && Math.random()<0.055*DIFF.dropMul){
+  if(!kind && typeof infusionEligible==='function' && infusionEligible() && Math.random()<INFUSION_DROP_P*DIFF.dropMul){
     const el=infusionRoll(); if(el){
       powerups.push({x,y,vy:1.0,t:0,kind:'infuse',elem:el,w:20,h:20,bob:rnd(0,TAU)});
       try{ if(typeof stageStats!=='undefined' && stageStats.pickupsSeen!=null) stageStats.pickupsSeen++; }catch(_pq2){}
