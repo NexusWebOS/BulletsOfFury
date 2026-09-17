@@ -5143,3 +5143,14 @@ Mike's overnight brief: elemental combinations on the orbs, lasers, missiles and
 - **WARM THE BOLT ART AT GRANT.** `XART.rdy` is false on its first call, so the first god's wrath of a run drew sixteen bolts through the thin fallback. The synchronous probe still cannot decode it; the proof shows the white-out and the struck hostiles.
 - **A VARIATION CAN BAKE THE PROMPT'S OWN WORDS INTO THE ART** (k1: `FLAME`, `ICE CRYSTAL`) - the 0916 medal-sheet trap again. Read before slicing.
 - **ARCADE KILL POINTS** (`killFeedback`): `+N` floaters through `stageText`, pop then settle, hotter colour and BIG at 1000+; `probe_killpoints_0917.py` 10/0. ENG-05 means a 9999 hit does not kill a fresh hull - a probe kill is two hits BY DESIGN.
+
+## 0917 - NEW GAME +, the other carriers, CHROMIUM
+
+**NEW GAME +** is the sixth mode row: the CAMPAIGN structure with `run.ngplus` set, and that flag is read by `infusionGateOpen('dark')` and nothing else. Unlocked by the final-clear signal BOSS RUSH uses, but PLAYABLE (`BONUS_MODE_PLAYABLE.ngplus`). `docs/NGPLUS_0917.md`, section 368, `probe_ngplus_0917.py` 15/0.
+- **HIDDEN, NOT LOCKED, AND THAT IS ONE LIST.** `modeList()` is read by the cursor, the draw loop and the mouse hit test; a hidden row is absent from all three at once (the INSANITY / `diffList()` shape). Assigned on EVERY branch of the confirm like `coopOn`, cleared by a password start, carried by the campaign save.
+- **SIX ROWS DO NOT FIT AT THE FIVE-ROW PITCH.** The mode plates run 3.37-5.23 in aspect, so a literal pitch either overlaps the tall ones or spills under the hint bar (first cut: last plate bottom at 518 on a 512 field). `modeRows()` lays them out from their OWN heights and the WIDTH gives when the stack cannot fit, never the gaps. Five rows keep the 0915 literal layout.
+- **107 SWALLOWED DRAW ERRORS ON A 14/15 GREEN RUN.** The mouse hit test still read `gap` after the draw stopped declaring it - a ReferenceError inside the state draw's try/catch, invisible to every assertion. The probe's error COUNT caught it; nothing else could.
+- Two 0915 pins repointed, not worked around: the mode-order string is a PREFIX now, and the crop pin names the two 0915 placeholder rows instead of "everything after CO-OP".
+- **A BRIGHTNESS THRESHOLD CANNOT CROP A DARK FRAME** - it cut the plate's gunmetal rails off as "background". Crop by difference from the plate's own corner colour.
+
+**Carriers and CHROMIUM** (`docs/INFUSIONS_0917.md` §7): the beam and missiles wear the element through `xartPalette`; ⚠ **the beam is ONE object reused across shots**, so a once-only stamp left it wearing its first element - restamped per frame. CHROMIUM (`chromeMirror`) turns enemy rounds near the impact into the player's own; L3 MIRROR SHELL turns the screen on a kill; shards wear `_inf:'chrome'` and carry `_mirror` so they never mirror again. Soaked targets killed by fire/lightning raise that element's geyser. Probes 7/0 and 10/0.

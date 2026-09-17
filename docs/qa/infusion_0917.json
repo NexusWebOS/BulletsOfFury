@@ -24,7 +24,8 @@
     "toxic",
     "kinetic",
     "water",
-    "dark"
+    "dark",
+    "chrome"
   ],
   "gates": {
     "stages": [
@@ -41,5 +42,7 @@
     "docs/proofs/infusion_0917/02_gods_wrath.png",
     "docs/proofs/infusion_0917_icons.png"
   ],
-  "doc": "docs/INFUSIONS_0917.md"
+  "doc": "docs/INFUSIONS_0917.md",
+  "chrome": "0917 later: CHROMIUM mirrors enemy rounds near the impact back up the screen; L3 MIRROR SHELL on a kill mirrors the whole screen. Cross-element geysers: a soaked kill by fire/lightning raises that geyser. probe_chrome_0917.py",
+  "carriers": "the beam (persistent object, restamped each frame) and the missiles wear the element via xartPalette; probe_infusion_carriers_0917.py 7/0"
 }

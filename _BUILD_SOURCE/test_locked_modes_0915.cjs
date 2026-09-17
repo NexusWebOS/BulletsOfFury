@@ -2,8 +2,9 @@ const fs=require('fs'),path=require('path');
 module.exports=function(vm,ctxv,ok){
   console.log('=== 310. Locked bonus mode presentation and gate ===');
   const roster=JSON.parse(vm.runInContext(`JSON.stringify(MODE_ITEMS.map(x=>({name:x.name,mode:x.mode,pill:x.pill,crop:x.crop||null,requiresFinalClear:!!x.requiresFinalClear})))`,ctxv));
-  ok(roster.map(x=>x.name).join('|')==='CAMPAIGN|ARCADE|CO-OP|BOSS RUSH|TIME ATTACK','mode order includes Boss Rush and Time Attack after Co-op');
-  ok(roster.slice(3).every(x=>x.requiresFinalClear&&x.crop&&x.crop.join(',')==='0,80,2125,555'),'bonus plates use the checker-free authored source crop');
+  /* 0917: NEW GAME + is the sixth row (hidden until the final clear); this pins the 0915 ORDER as a prefix */
+  ok(roster.map(x=>x.name).join('|').indexOf('CAMPAIGN|ARCADE|CO-OP|BOSS RUSH|TIME ATTACK')===0,'mode order includes Boss Rush and Time Attack after Co-op');
+  ok(roster.filter(x=>x.mode==='bossrush'||x.mode==='timeattack').every(x=>x.requiresFinalClear&&x.crop&&x.crop.join(',')==='0,80,2125,555'),'bonus plates use the checker-free authored source crop');
   for(const file of ['boss_rush.png','time_attack.png','nexus_chains.webp'])ok(fs.existsSync(path.join(__dirname,'..','assets','game','ui','modes_0915',file)),'mode asset exists: '+file);
   const gate=JSON.parse(vm.runInContext(`(function(){
     var save={mode:run.mode,stage:run.stage,unlocked:bonusModesUnlocked,set:localStorage.setItem};var out={};

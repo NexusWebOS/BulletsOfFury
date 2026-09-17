@@ -67,7 +67,7 @@ def main():
         pg.evaluate("() => { stageTimer = 5; }")
 
         # ---------- the table and the gates ----------
-        ok(pg.evaluate("() => Object.keys(INFUSIONS).length === 8"), 'eight elements in the table')
+        ok(pg.evaluate("() => Object.keys(INFUSIONS).length === 9"), 'nine elements in the table (chromium joined later on 0917)')
         ok(pg.evaluate("() => infusionEligible()"), 'stage 2 is eligible')
         pool = pg.evaluate("() => infusionPool()")
         ok('water' not in pool and 'dark' not in pool, 'water and dark matter are gated off until earned (%s)' % pool)

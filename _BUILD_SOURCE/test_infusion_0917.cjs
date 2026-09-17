@@ -12,9 +12,9 @@ module.exports=function testInfusion(vm,ctxv,ok){
      live hit path, asserted on the TARGET. This section pins the table, the gates and the seams that
      have to hold for that to keep being true. */
 
-  ok(vm.runInContext("typeof INFUSIONS==='object'&&Object.keys(INFUSIONS).length===8",ctxv),
-     'eight elements in the table');
-  ok(vm.runInContext("['fire','ice','lightning','prism','toxic','kinetic','water','dark'].every(function(k){return INFUSIONS[k]&&INFUSIONS[k].body&&INFUSIONS[k].glow;})",ctxv),
+  ok(vm.runInContext("typeof INFUSIONS==='object'&&Object.keys(INFUSIONS).length===9",ctxv),
+     'nine elements in the table (chromium joined on 0917)');
+  ok(vm.runInContext("['fire','ice','lightning','prism','toxic','kinetic','water','dark','chrome'].every(function(k){return INFUSIONS[k]&&INFUSIONS[k].body&&INFUSIONS[k].glow;})",ctxv),
      'each with a body colour for the round and a glow for its halo');
   ok(vm.runInContext("INFUSIONS.fire.el==='fire'&&INFUSIONS.ice.el==='ice'",ctxv),
      'fire and ice carry the ELEMENT, so the existing 2x / absorb rules apply to an infused round');
@@ -33,6 +33,10 @@ module.exports=function testInfusion(vm,ctxv,ok){
   ok(src.indexOf('_burn')>=0&&src.indexOf('DK_BURN_TIME')>=0, 'fire is the incendiary shotgun\'s own burn');
   ok(src.indexOf('_frozen')>=0, 'ice stacks the ice weapon\'s own freeze counter');
   ok(src.indexOf('chainZap(')>=0, 'lightning is Yuri\'s own arc');
+  ok(src.indexOf('chromeMirror(')>=0 && String(vm.runInContext('String(chromeMirror)',ctxv)).indexOf('eBullets')>=0,
+     'chromium mirrors ENEMY rounds (reads eBullets) back as the player\'s own');
+  ok(/_soaked>0 && e\.hp<=0[^\n]*geyserSpawn\(e\.x,e\.y,b\._inf\)/.test(src),
+     'a soaked kill by fire or lightning raises THAT element\'s geyser (Mike\'s fire / water / lightning geysers)');
 
   /* ⚠ THE HOOK MUST NOT RE-ENTER ITSELF. chainZap calls hitEnemy while _dmgBullet is still the
      infused round; without the busy flag a lightning hit arcs, the arc hits, the hit arcs again. */
@@ -51,8 +55,8 @@ module.exports=function testInfusion(vm,ctxv,ok){
   /* the round wears it */
   ok(vm.runInContext("String(p87Draw).indexOf('inf')>=0&&String(p87Body).indexOf('INFUSIONS')>=0",ctxv),
      'an infused round goes through the pack with its element\'s palette');
-  ok(vm.runInContext("['fire','ice','lightning','prism','toxic','kinetic','water','dark'].every(function(e){return /infusion_0917/.test(String(XART._src['inf_'+e]||''));})",ctxv),
-     'all eight badges registered as loose files');
+  ok(vm.runInContext("['fire','ice','lightning','prism','toxic','kinetic','water','dark','chrome'].every(function(e){return /infusion_0917/.test(String(XART._src['inf_'+e]||''));})",ctxv),
+     'all nine badges registered as loose files');
 
   /* death drops the element with the gun - the reset line that zeroes the weapon zeroes this too */
   ok(vm.runInContext("(function(){var src=require_src();var i=src.indexOf('manualMissileResetOnDeath(run);');return i>=0&&src.slice(i,i+400).indexOf('run.infusion=null')>=0;})()",ctxv),

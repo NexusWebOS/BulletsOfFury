@@ -2041,7 +2041,7 @@ const XART=(function(){
   /* the eight infusion badges (0917), one sheet sliced on its own alpha gutters so they share a ring
      and a bevel. ⚠ THE FIRST VARIATION BAKED THE PROMPT'S OWN WORDS INTO THE BADGES ("FLAME",
      "ICE CRYSTAL"...) - the 0916 medal-sheet trap, read before slicing, the other variation shipped. */
-  for(const _e of ['fire','ice','lightning','prism','toxic','kinetic','water','dark'])
+  for(const _e of ['fire','ice','lightning','prism','toxic','kinetic','water','dark','chrome'])
     X._src['inf_'+_e]='assets/game/ui/infusion_0917/inf_'+_e+'.png';
   /* THE WHOLE TITLE MENU, REGENERATED AS ONE SHEET (Mike, 0916: "Regenerate all my other buttons
      here to match the current style of Bullets of Fury and proper reference of ships and pilots
@@ -2090,6 +2090,9 @@ const XART=(function(){
   }
   X._src['mode_boss_rush_0915']='assets/game/ui/modes_0915/boss_rush.png';
   X._src['mode_time_attack_0915']='assets/game/ui/modes_0915/time_attack.png';
+  /* NEW GAME + (0917) - unlocked by the same final-clear signal as the bonus modes; the one mode
+     in which DARK MATTER infusions can drop (infusionGateOpen). */
+  X._src['mode_ngplus_0917']='assets/game/ui/modes_0917/new_game_plus.png';
   X._src['mode_lock_nexus_0915']='assets/game/ui/modes_0915/nexus_chains.webp';
   for(const _f of ['ocean','bar','btn_save','btn_load','btn_exit']) X._src['cm2_'+_f]='assets/game/campaign_map_v2/'+_f+'.png';
   /* LASER MIST REWARD ATLAS (0902). One decoded sheet owns the five pickup plates, twenty
@@ -7788,7 +7791,7 @@ const run = {
 const BONUS_MODE_UNLOCK_KEY='bof_bonus_modes_v1';
 let bonusModesUnlocked=false;
 try{bonusModesUnlocked=localStorage.getItem(BONUS_MODE_UNLOCK_KEY)==='1';}catch(_bonusRead){}
-const BONUS_MODE_PLAYABLE=Object.freeze({bossrush:false,timeattack:false});
+const BONUS_MODE_PLAYABLE=Object.freeze({bossrush:false,timeattack:false,ngplus:true});
 function bonusModesAreUnlocked(){return !!bonusModesUnlocked;}
 function bonusModesUnlockFromCampaign(){
   if(bonusModesUnlocked||run.mode!=='campaign'||run.stage!==CAMPAIGN_STAGES)return false;
@@ -7866,6 +7869,9 @@ const INFUSIONS=Object.freeze({
   prism:    {name:'PRISM',      body:'#e0b3ff', glow:'#ffffff', el:null,    named:{2:'LUMINAIRE',3:'PRISM WAVE'}},
   toxic:    {name:'TOXIC',      body:'#8de23a', glow:'#3aff5a', el:null,    named:{3:'ERADICATION'}},
   kinetic:  {name:'KINETIC',    body:'#dfe8ff', glow:'#8ab4ff', el:null,    named:{3:'SONIC WAVE'}},
+  /* chromium (Mike: "chromium energy upgrades"): a hit MIRRORS enemy rounds near the impact back up
+     the screen as the player's own; level 3 MIRROR SHELL turns every round on screen on a kill */
+  chrome:   {name:'CHROMIUM',   body:'#d6e2ee', glow:'#ffffff', el:null,    named:{2:'CHROME BURST',3:'MIRROR SHELL'}},
   /* gated: water opens once the last stage has been beaten (the same signal that opens LASER
      MIST); dark matter is New Game + only */
   water:    {name:'TIDAL',      body:'#3fa7ff', glow:'#7fe0ff', el:'water', named:{3:'GEYSER'},  gate:'water'},
@@ -7874,7 +7880,7 @@ const INFUSIONS=Object.freeze({
 const INFUSION_MAX=3;
 const INFUSION_CARRIERS={mg:1,spread:1,beam:1,missile:1};
 /* which elements a stage tends to drop - a bias, never a lock, so every element stays reachable */
-const INFUSION_STAGE_BIAS={1:'kinetic',2:'fire',3:'ice',4:'lightning',6:'lightning',7:'toxic',8:'prism'};
+const INFUSION_STAGE_BIAS={1:'kinetic',2:'fire',3:'ice',4:'lightning',6:'chrome',7:'toxic',8:'prism'};
 function infusionEligible(){
   if(typeof spaceWeaponsActive==='function' && spaceWeaponsActive()) return false;
   const st=(run&&run.stage)|0;
@@ -7943,6 +7949,9 @@ function infusionOnHit(e,b,dmg){
   const lv=(run.infusion&&run.infusion.elem===b._inf)?(run.infusion.lv|0):1;
   _infBusy=true;
   try{
+    /* the geysers Mike named - fire, water, lightning: water's own at level 3, and a SOAKED target
+       killed by fire or lightning raises that element's column (steam, or a charged plume) */
+    if(e._soaked>0 && e.hp<=0 && lv>=2 && (b._inf==='fire'||b._inf==='lightning')) geyserSpawn(e.x,e.y,b._inf);
     if(b._inf==='fire'){
       e._burn=Math.max(e._burn||0, DK_BURN_TIME*(0.7+0.3*lv));
       if(lv>=3 && !b._burst){ b._burst=1; explode(e.x,e.y,22,'red','fireball');
@@ -7976,7 +7985,10 @@ function infusionOnHit(e,b,dmg){
     } else if(b._inf==='water'){
       e._soaked=2.5;                                   /* a soaked unit takes lightning harder */
       e.vy*=0.7;
-      if(lv>=3 && e.hp<=0) geyserSpawn(e.x,e.y,'water');
+      if(e.hp<=0 && (lv>=3 || (lv===2 && Math.random()<0.35))) geyserSpawn(e.x,e.y,'water');
+    } else if(b._inf==='chrome' && !b._mirror){
+      const kill=(e.hp<=0), R=(lv>=3&&kill)?9999:(38+16*lv);
+      const n=chromeMirror(e.x,e.y,R,lv); if(n) e._chromeFlash=0.16;
     } else if(b._inf==='dark'){
       for(const o of enemies){ if(o===e||o.dead||o._dyingT!=null) continue;
         const d=Math.hypot(o.x-e.x,o.y-e.y); if(d>1&&d<90){ o.x+=(e.x-o.x)/d*3.5; o.y+=(e.y-o.y)/d*3.5; } }
@@ -8011,6 +8023,22 @@ function geyserTick(dt){
       if(chance(0.9)) particles.push({x:g.x+rnd(-8,8),y:g.y-rnd(0,g.h),vx:rnd(-0.5,0.5),vy:rnd(-3,-1),life:rnd(0.2,0.45),t:0,r:rnd(1.5,3),color:chance(0.4)?'#ffffff':col}); }
   }
   geysers=geysers.filter(g=>g.t<g.life+0.2);
+}
+/* CHROMIUM's mirror: every live enemy round within R of (x,y) dies where it is and a bright shard
+   leaves that point straight up the screen as the player's own round. Returns the count. Rounds
+   that cannot be reflected (beams, lock-bound missiles that are already dead) are left alone. */
+function chromeMirror(x,y,R,lv){
+  let n=0; const R2=R*R;
+  for(const q of eBullets){ if(!q||q.dead||q.kind==='beam'||q._beam) continue;
+    if(dist2(q.x,q.y,x,y)>R2) continue;
+    q.dead=true; n++;
+    const sp=7+lv;
+    /* the shard wears the chrome palette (_inf) but is marked _mirror so it can never mirror again */
+    pBullets.push({x:q.x,y:q.y,vx:0,vy:-sp,w:4,h:10,dmg:Math.max(2,2+lv),kind:'spread',lv:1,t:0,_inf:'chrome',_child:true,_mirror:true,seat:1});
+    if(n<=24) particles.push({x:q.x,y:q.y,vx:0,vy:0,t:0,life:0.22,r:7,flashring:true,color:'#ffffff'});
+    if(n>=(lv>=3?400:12)) break; }
+  if(n){ particles.push({x,y,vx:0,vy:0,t:0,life:.3,r:10+4*lv,flashring:true,color:'#d6e2ee'}); }
+  return n;
 }
 /* the void (dark matter at level 3): a point that pulls and eats for a moment */
 let voids=[];
@@ -30696,7 +30724,7 @@ function startRun(fromStage=1){
      drawPassword definitions and the outcome must not depend on which one wins at runtime.
      Starting anywhere but stage 1 can only have come from a password, and a password jumps
      straight into that level. Campaign gets its own save/load and its own separate codes. */
-  if(fromStage>1 && typeof run!=='undefined' && run) run.mode='arcade';
+  if(fromStage>1 && typeof run!=='undefined' && run){ run.mode='arcade'; run.ngplus=false; }
   DIFF=difficultyForRun(run.mode,diffKey);
   run.lives=DIFF.startLives; run.missileTier='standard'; run.missileUpgrade=null; run._missileWaveSerial=0; run.bombs=clampManualMissiles(DIFF.startBombs);
   run.retinaScan=false;run2.retinaScan=false;
@@ -33356,7 +33384,9 @@ function updatePlay(dt){
     _dmgBullet=b;
     /* the infusion rides the round: stamped once, the first frame it is live. `_inf===null` on a
        shard means "already decided, none", so a prism shard never re-splits. */
-    if(b._inf===undefined){
+    /* ⚠ THE BEAM IS ONE OBJECT REUSED ACROSS SHOTS (pShoot finds it in pBullets and re-arms it), so a
+       once-only stamp would leave it wearing the element it was born with after a new pickup. */
+    if(b._inf===undefined||b.kind==='beam'){
       b._inf=(typeof infusionActive==='function'&&infusionActive()&&infusionCarrier(b)&&!b._enemyReflected)?run.infusion.elem:null;
       if(b._inf==='fire') b._el='fire'; else if(b._inf==='ice') b._el='ice';
     }
@@ -45093,6 +45123,19 @@ function p87Pose(ang){
   }
   return {rc:best.rc, res:ang-best.a};
 }
+/* an infused missile: the pilot's own missile plate through xartPalette (hue/sat from the element,
+   luminosity from the plate) under a soft halo in the element's glow. Returns false while the swap
+   cannot be built so the caller's normal draw runs - never a missing missile. */
+function infusionMissileDraw(key,b,ang){
+  const I=(typeof INFUSIONS!=='undefined')?INFUSIONS[b._inf]:null; if(!I) return false;
+  const pal=(typeof xartPalette==='function')?xartPalette(key,I.body):null; if(!pal) return false;
+  const im=XART.get(key), hq=11, s2=hq/Math.max(1,im.naturalHeight), w=im.naturalWidth*s2, h=hq;
+  ctx.save(); ctx.translate(b.x,b.y); ctx.rotate(ang);
+  ctx.globalCompositeOperation='lighter'; ctx.globalAlpha=0.28+0.10*Math.sin((b.t||0)*22);
+  ctx.fillStyle=I.glow; ctx.beginPath(); ctx.ellipse(0,0,w*0.9,h*0.75,0,0,Math.PI*2); ctx.fill();
+  ctx.globalCompositeOperation='source-over'; ctx.globalAlpha=1; ctx.shadowBlur=0;
+  ctx.drawImage(pal,-w/2,-h/2,w,h); ctx.restore(); return true;
+}
 function drawBullets(){
   ctx.shadowBlur=0;   // never inherit a shadow from an upstream draw: it silently blurs every bullet
   // player
@@ -45725,7 +45768,9 @@ function drawBullets(){
            ⚠ AND IT IS ONLY THE TWO THAT MEASURE WEAK. The other three are Mike's own colours and
            read fine; swapping all five to a scheme of my choosing would be redesigning his
            weapon rather than fixing what he pointed at. ============================================ */
-        const _lhue=({3:'#25c94a', 4:'#ffc21a'})[lv];
+        /* an INFUSED beam wears its element's body colour at every tier - the same 'color' swap, so
+           the authored shading and the six-frame animation survive (0917) */
+        const _lhue=(b._inf&&typeof INFUSIONS!=='undefined'&&INFUSIONS[b._inf])?INFUSIONS[b._inf].body:({3:'#25c94a', 4:'#ffc21a'})[lv];
         const _pal=_lhue && typeof xartPalette==='function' ? xartPalette(_nb,_lhue) : null;
         const im=_pal || XART.get(_nb);
         ctx.shadowBlur=0;
@@ -46213,6 +46258,7 @@ function drawBullets(){
         ctx.fillStyle='#ffd36b'; ctx.globalAlpha=0.62+0.30*_mp;
         ctx.beginPath(); ctx.moveTo(-14,-2.4); ctx.lineTo(-14,2.4); ctx.lineTo(-19-4*_mp,0); ctx.closePath(); ctx.fill();
         ctx.restore();
+        if(b._inf&&typeof infusionMissileDraw==='function'&&infusionMissileDraw(_mk,b,_fa)) continue;
         if(drawMfx(_mk, b.x, b.y, _fa, 11, null, 1, wcol)) continue;
       }
       /* ONE FRAME, FIXED SIZE. This walked mfx_hom_0_5 through _9 AND grew the sprite by 7px a
@@ -58330,9 +58376,18 @@ const MODE_ITEMS=[
   {name:'CO-OP',       sub:'TWO PILOTS',                         mode:'coop',       open:true, pill:'nms_coop'},
   {name:'BOSS RUSH',   sub:'THE FURY GAUNTLET',                  mode:'bossrush',   open:true, pill:'mode_boss_rush_0915', crop:[0,80,2125,555], requiresFinalClear:true},
   {name:'TIME ATTACK', sub:'RACE EVERY SECOND',                  mode:'timeattack', open:true, pill:'mode_time_attack_0915',crop:[0,80,2125,555], requiresFinalClear:true},
+  /* NEW GAME + (Mike, 0917: "Dark Matter ... can be only be used in New Game +, a new button you will
+     create and unlock/make visible after we beat the campaign on any difficulty"). It is the CAMPAIGN
+     structure with run.ngplus set - the flag is read by infusionGateOpen('dark') and by nothing else,
+     so the mode changes what can DROP, never what the stages are. Hidden, not merely locked, until the
+     final clear: an invisible button cannot be a spoiler. */
+  {name:'NEW GAME +',  sub:'DARK MATTER UNLOCKED',               mode:'ngplus',     open:true, pill:'mode_ngplus_0917', requiresFinalClear:true, hiddenUntilUnlocked:true},
   /* Versus remains intentionally absent. Its old art is retained for a possible sequel. */
 ];
 function modeItemUnlocked(it){return !(it&&it.requiresFinalClear)||bonusModesAreUnlocked();}
+/* ONE list, read by the cursor, the draw loop and the mouse hit test - a hidden row is absent from
+   all three at once (the INSANITY lesson: 'you cannot select it' is three claims, so make it one fact). */
+function modeList(){return MODE_ITEMS.filter(it=>!(it.hiddenUntilUnlocked&&!modeItemUnlocked(it)));}
 function modeItemOpen(it){
   if(!it||!it.open||!modeItemUnlocked(it))return false;
   return !it.requiresFinalClear||!!BONUS_MODE_PLAYABLE[it.mode];
@@ -58526,6 +58581,25 @@ function modePanelDraw(it,cx,cy,pw,locked){
   else ctx.drawImage(im,x,y,pw,ph);
   ctx.restore();return{x,y,w:pw,h:ph,key:crop?null:it.pill};
 }
+/* row centres for the mode list: the 0915 literal layout for five, measured heights for more */
+function modeRows(list){
+  const n=list.length;
+  if(n<=5) return list.map((it,i)=>({y:92+i*82, h:0, pw:270}));
+  const TOP=66, BOT=470, G=6;
+  const ars=list.map(it=>{
+    if(typeof XART==='undefined'||!it.pill||!XART.rdy(it.pill)) return 4.2;
+    const im=XART.get(it.pill), c=it.crop||null;
+    return c?(c[2]/c[3]):((im.naturalWidth||1)/(im.naturalHeight||1));
+  });
+  /* the plates keep their width unless the stack cannot fit - then the WIDTH gives, never the gaps,
+     so six rows are six whole plates a little smaller rather than five plates and an overlap */
+  const inv=ars.reduce((a,ar)=>a+1/ar,0);
+  const pw=Math.min(270, (BOT-TOP-G*(n-1))/inv);
+  const hs=ars.map(ar=>pw/ar);
+  const total=hs.reduce((a,b)=>a+b,0)+G*(n-1);
+  let y=TOP+Math.max(0,(BOT-TOP-total)/2);
+  return hs.map(h=>{ const r={y:y+h/2, h, pw}; y+=h+G; return r; });
+}
 function modeLockDraw(rect){
   if(!rect||typeof XART==='undefined'||!XART.rdy('mode_lock_nexus_0915'))return false;
   const im=XART.get('mode_lock_nexus_0915'),w=rect.w*1.02,h=w*((im.naturalHeight||614)/(im.naturalWidth||1100));
@@ -58570,11 +58644,15 @@ function drawModeSelect(dt){
   if(!drawCanonBackdrop('nbt_5',0.58)){ ctx.fillStyle='#0a0408'; ctx.fillRect(0,0,VW,VH); }
   if(typeof bofTitle==='function') bofTitle('SELECT MODE',VW/2,22,16);
   else { ctx.fillStyle='#f2f5ff'; ctx.font='bold 18px "BOFmil", monospace'; ctx.textAlign='center'; ctx.fillText('SELECT MODE',VW/2,30); }
-  /* Five evenly spaced authored mode plates fit the 480x512 field without touching the hint bar. */
-  const y0=92, gap=82;
-  for(let i=0;i<MODE_ITEMS.length;i++){
-    const it=MODE_ITEMS[i],sel=(i===modeIndex),y=y0+i*gap;
-    const unlocked=modeItemUnlocked(it),open=modeItemOpen(it),pw=sel?292:270;
+  /* The authored mode plates fit the 480x512 field without touching the hint bar. Five rows keep the
+     0915 pitch; with NEW GAME + on screen (six) the rows are laid out from the plates' OWN heights -
+     the family runs 3.4 to 5.2 wide-to-tall, so one literal pitch either overlaps the tall plates or
+     wastes the field. A plate not yet decoded takes the family's median height for this frame. */
+  const _ML=modeList(), _rows=modeRows(_ML);
+  drawModeSelect._rows=_rows;
+  for(let i=0;i<_ML.length;i++){
+    const it=_ML[i],sel=(i===modeIndex),y=_rows[i].y;
+    const unlocked=modeItemUnlocked(it),open=modeItemOpen(it),pw=_rows[i].pw*(sel?292/270:1);
     ctx.save();if(sel&&open){ctx.shadowColor='#ffd75a';ctx.shadowBlur=16;}
     const rect=modePanelDraw(it,VW/2,y,pw,!unlocked);
     ctx.restore();
@@ -58598,13 +58676,14 @@ function drawModeSelect(dt){
      "I cannot move up with my controller at all or my keyboard... my keyboard yes, w a s d."
      menuUp/menuDown read keybind.up/.down, which is ['w','arrowup','pad_up'] by default, so one
      call covers the key, the arrow, the pad AND whatever the player rebinds it to. */
-  if(Input.menuUp()){ modeIndex=(modeIndex+MODE_ITEMS.length-1)%MODE_ITEMS.length; if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); }
-  if(Input.menuDown()){ modeIndex=(modeIndex+1)%MODE_ITEMS.length; if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); }
+  if(modeIndex>=_ML.length) modeIndex=0;
+  if(Input.menuUp()){ modeIndex=(modeIndex+_ML.length-1)%_ML.length; if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); }
+  if(Input.menuDown()){ modeIndex=(modeIndex+1)%_ML.length; if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); }
   /* ONE ACTIVATION PATH, shared by the keyboard and the mouse (drop 0812a). Duplicating this
      block for the pointer is how the two drift apart — campaign's hub branch is the sort of
      thing that gets fixed in one copy and not the other. */
   const _modeGo=function(){
-    const it=MODE_ITEMS[modeIndex];
+    const it=modeList()[modeIndex];
     if(modeItemOpen(it)){
       // flash white, THEN move on — same as every other confirmed selection in the engine
       const _m=it.mode;
@@ -58617,9 +58696,12 @@ function drawModeSelect(dt){
            cleared when the player backs out to pick CAMPAIGN or ARCADE instead; leaving a stale
            true here is how you get a second ship in a solo run. */
         coopOn = (_m==='coop');
-        run.mode = (_m==='coop') ? 'arcade' : _m;
+        /* NEW GAME + is the campaign with the dark-matter gate open. Assigned on every branch, like
+           coopOn above and for the same reason: a stale true is a Dark Matter drop in a plain run. */
+        run.ngplus = (_m==='ngplus');
+        run.mode = (_m==='coop') ? 'arcade' : (_m==='ngplus') ? 'campaign' : _m;
         if(coopOn) coopPick=0;                    // P1 is always the one who picks first
-        if(_m==='campaign'){ campHubIndex=campCanContinue()?1:0; campPick=null; setState(GS.CAMPHUB); }
+        if(_m==='campaign'||_m==='ngplus'){ campHubIndex=campCanContinue()?1:0; campPick=null; setState(GS.CAMPHUB); }
         else setState(GS.DIFF);
       }, null, drawModeSelect._selRect||null);
     }
@@ -58644,10 +58726,13 @@ function drawModeSelect(dt){
      from the art, so a pill whose plate has a different aspect cannot make the clickable area
      disagree with what is drawn. */
   {
-    const m=Input.mouse, halfW=162, halfH=gap*0.42;
+    /* the hit test reads the SAME rows the draw laid out (modeRows), so a sixth row or a plate
+       with a different height is hit where it is drawn */
+    const m=Input.mouse, halfW=162;
     let hov=-1;
-    for(let i=0;i<MODE_ITEMS.length;i++){
-      if(Math.abs(m.x-VW/2)<halfW && Math.abs(m.y-(y0+i*gap))<halfH){ hov=i; break; }
+    for(let i=0;i<_ML.length;i++){
+      const halfH=_rows[i].h?_rows[i].h*0.5:34;
+      if(Math.abs(m.x-VW/2)<halfW && Math.abs(m.y-_rows[i].y)<halfH){ hov=i; break; }
     }
     /* only a REAL cursor movement re-selects, or a mouse resting over row 2 would fight every
        arrow-key press the player makes */
@@ -58822,7 +58907,7 @@ const campSlotKey=i=>'bof_campaign_slot'+i;
 function campSnapshot(){
   return { v:CAMP_SAVE_VER, t:Date.now(),
     pilot:run.pilot, pilotIndex:(typeof pilotIndex==='number'?pilotIndex:0), diff:diffKey,
-    stage:run.stage, score:run.score, lives:run.lives, bombs:clampManualMissiles(run.bombs),missileTier:manualMissileSpec(run.missileTier).id,
+    stage:run.stage, score:run.score, lives:run.lives, ngplus:!!run.ngplus, bombs:clampManualMissiles(run.bombs),missileTier:manualMissileSpec(run.missileTier).id,
     missileUpgrade:run.missileUpgrade?Object.assign({},run.missileUpgrade):null,missileWaveSerial:run._missileWaveSerial||0,retinaScan:!!run.retinaScan,
     contUsed:Math.max(0,run.contUsed|0),contBonus:Math.max(0,run.contBonus|0),
     weapon:run.weapon, wlevel:run.wlevel, wlevels:(run.wlevels||[]).slice(),
@@ -58845,7 +58930,7 @@ function campSnapshot(){
 /* A slot written by an older build must never half-apply — version out, or nothing. */
 function campApply(s){
   if(!s || s.v!==CAMP_SAVE_VER) return false;
-  run.mode='campaign';run._missileBonus=null;
+  run.mode='campaign';run._missileBonus=null;run.ngplus=!!s.ngplus;
   run.pilot=s.pilot||run.pilot;
   run.stage=clamp(s.stage||1,1,9);
   run.score=s.score||0;

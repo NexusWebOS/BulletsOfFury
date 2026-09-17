@@ -122,9 +122,32 @@ Suite section 367. Proofs: `docs/proofs/infusion_0917/01_fire_rounds.png`, `02_g
 
 ---
 
-## 7. Still to come on this brief
+## 7. Later the same night: the other carriers, CHROMIUM, and the cross-element geysers
+
+**The beam and the missiles wear the element now.** The beam goes through the same `xartPalette`
+swap its tier colours already use (`INFUSIONS[elem].body` at every tier); an infused missile is the
+pilot's own missile plate through `xartPalette` under a soft halo in the element's glow
+(`infusionMissileDraw`, falling through to the normal draw while the swap cannot be built).
+⚠ **THE BEAM IS ONE OBJECT REUSED ACROSS SHOTS** - `pShoot` finds it in `pBullets` and re-arms it -
+so the once-only `_inf` stamp left it wearing the element it was born with after a new pickup. It is
+restamped every frame. `probe_infusion_carriers_0917.py` 7/0: the plate swaps identified by KEY and
+by the element's body colour, a second pickup re-stamps the same beam, and the control (no infusion)
+swaps nothing.
+
+**CHROMIUM** (*"chromium energy upgrades"*) is the ninth element: a hit MIRRORS every enemy round
+within `38+16*lv` px of the impact - the round dies where it is and a bright shard leaves that point
+straight up the screen as the player's own (`chromeMirror`). Level 3 **MIRROR SHELL** turns the
+whole screen on a kill. Shards wear the chrome palette (`_inf:'chrome'`) and are marked `_mirror` so
+they can never mirror again. Stage 6's bias moved from lightning to chrome (the neon city). Badge
+generated against the prism badge as the reference; the variation with the family's hex ring shipped.
+
+**The geysers Mike named** - fire, water, lightning: water's own at level 3 (and 35% at level 2), and
+a **soaked** target (water has hit it) killed by fire or lightning raises THAT element's column.
+`probe_chrome_0917.py` 10/0, with a DRY-target control that raises none.
+
+## 8. Still to come on this brief
 
 Water and dark are wired and gated but have not been driven in play (their gates are closed on a
 fresh profile). The **geyser attacks** exist as a mechanism (`geyserSpawn` — fire, water, lightning)
 and fire from water L3 kills; a geyser *weapon* is not built. **Chromium energy** is not built. The
-laser beam and missiles carry the on-hit effects but not yet the palette. **New Game +** is next.
+laser beam and missiles now carry the palette (§7). **New Game +** is built (`docs/NGPLUS_0917.md`).
