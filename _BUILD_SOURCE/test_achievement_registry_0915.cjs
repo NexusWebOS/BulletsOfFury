@@ -12,9 +12,9 @@ module.exports=function(vm,ctxv,ok){
       achievementState=achievementEmpty();achievementLastUnlock=null;achievementSteamQueue=[];
 
       const defs=achievementList(),ids=defs.map(d=>d.id),steam=defs.map(d=>d.steamKey);
-      o.definitionCount=defs.length===66;
-      o.uniqueIds=new Set(ids).size===66;
-      o.uniqueSteamKeys=steam.every(Boolean)&&new Set(steam).size===66;
+      o.definitionCount=defs.length===75;
+      o.uniqueIds=new Set(ids).size===75;
+      o.uniqueSteamKeys=steam.every(Boolean)&&new Set(steam).size===75;
       o.campaignFamily=defs.filter(d=>d.family==='campaign_clear').length===9&&
         defs.filter(d=>d.family==='campaign_clear').every(d=>d.points===100&&d.title.indexOf('Campaign Clear - ')===0);
       o.stageFamilies=defs.filter(d=>d.family==='stage_clear').length===9&&

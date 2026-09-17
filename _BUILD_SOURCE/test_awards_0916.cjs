@@ -1,6 +1,6 @@
 module.exports=function testAwards(vm,ctxv,ok){
   console.log('=== 364. the awards gallery and the unlock toast (ACH-02) ===');
-  /* The registry has been complete since 0915 - 66 definitions, the awards, the points, the
+  /* The registry has been complete since 0915 - 66 definitions (75 since 0917), the awards, the points, the
      persistence - and NOTHING DREW ANY OF IT: achievementUnlock set a variable and dispatched a
      window event nothing listened to, so a player could earn 1,630 points and never be told once.
      Driven end to end by probe_awards_0916.py (22/0). */
@@ -35,7 +35,7 @@ module.exports=function testAwards(vm,ctxv,ok){
   const rows=vm.runInContext('awardsRows()',ctxv);
   ok(rows.length===Object.keys(vm.runInContext('ACHIEVEMENT_DEFS',ctxv)).length,
      'it lists every definition ('+rows.length+')');
-  ok(rows.length===66, 'which is 66');
+  ok(rows.length===75, 'which is 75 - nine STAGE THOROUGH rows joined the 66 on 0917');
   /* ⚠ SORTED, because ACHIEVEMENT_DEFS is built pilot-then-stage and its raw order interleaves
      100-point campaign clears with 10-point stage clears and reads as noise */
   ok(rows[0].family==='campaign_clear'&&rows[0].points>=rows[rows.length-1].points,

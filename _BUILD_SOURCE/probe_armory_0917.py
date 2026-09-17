@@ -7,8 +7,8 @@ other pilots, and your Score Points in-game ... You use your high score points t
 Points. All icons here should get their level 1-5 upgrade generated variants, and upgraded projectiles."
 
 The chain, every input a real key tap:
-  a HARD run ends -> GAME OVER prints the BANKED line (score x difficulty x new-pilot)
-  the VAULT's EXCHANGE row buys Furious Points from that credit
+  a LEVEL ends -> computeStageResults converts that level's own score at 1,000 : 1, the remainder
+  carries, and run.score is untouched; the RUN end banks nothing and the VAULT has no EXCHANGE row
   THE ARMORY (last vault row): tabs per weapon, rows per element, FIRE buys the next level, the badge
   on the row changes to the level's own plate, a short balance is refused with the shortfall named
   the Forge: combining the bought element opens the weapon at the OWNED level and the box wears the
@@ -56,28 +56,58 @@ def main():
         print('  keys:', json.dumps(keys))
         for _ in range(4): step(8); pg.wait_for_timeout(300)
 
-        # ---- 1. the run ends: GAME OVER banks the score ----
+        # ---- 1. THE LEVEL ENDS: its own score becomes FURIOUS POINTS ----
+        # Mike, 0917: "At the end of each level, your Maintain your 'Score Points' as a high score
+        # record keeper, but at the end of each level, your 'points' convert into FP".
+        # Driven through computeStageResults, the real STAGE CLEAR path, not through the conversion
+        # function itself - the claim is about WHERE it happens as much as what it does.
+        pg.evaluate("""() => { run.stage=2; run.score=9400; run._fpLevelDone=false; stageStats.scoreStart=2000;
+          window.__scoreBefore=run.score; computeStageResults(); }""")
+        step(4)
+        L = pg.evaluate("() => ({fp:furiousConverted(), bal:furiousBalance(), carry:furiousCarry(), score:run.score, before:window.__scoreBefore, n:(achievementState.fp&&achievementState.fp.levels.length)|0, e:run._fpLevel})")
+        print('  level 2 end:', json.dumps(L))
+        # [!] ASSERTED ON WHAT WAS CONVERTED, NOT ON THE BALANCE. The stage clear that drives this also
+        # AWARDS achievements, and since Mike's "achievement points are also tied to this" those land in
+        # the same balance - so a balance assertion here would be measuring the awards as well.
+        ok(L['fp'] == 7, "a 7,400-point level converts to 7 FURIOUS PTS at 1,000:1 (%s)" % L['fp'])
+        ok(L['bal'] >= 7, 'and those points are in the spendable balance (%s, awards included)' % L['bal'])
+        ok(L['score'] == L['before'] == 9400, 'and THE SCORE IS NEVER SPENT - it stays the high-score record (%s)' % L['score'])
+        ok(L['carry'] == 400, 'the 400 remainder CARRIES to the next level rather than evaporating (%s)' % L['carry'])
+        ok(L['n'] == 1 and L['e'] and L['e']['stage'] == 2, 'the ledger holds ONE entry, for the level that earned it')
+        # the next level converts again, and the carry pays out in it
+        pg.evaluate("() => { beginStage(3); run.score=9400+700; stageStats.scoreStart=9400; computeStageResults(); }")
+        step(4)
+        C = pg.evaluate("() => ({fp:furiousConverted(), carry:furiousCarry(), n:achievementState.fp.levels.length})")
+        ok(C['fp'] == 8 and C['carry'] == 100, 'the next level converts again and the carry pays out: 400 + 700 = 1 more point (%s)' % json.dumps(C))
+        ok(C['n'] == 2 and pg.evaluate("() => achievementState.fp.levels.reduce((a,b)=>a+b.fp,0)===furiousConverted()"),
+           'what has been converted is the SUM of the per-level entries, never a stored counter')
+
+        # ---- 1b. the RUN end banks nothing any more, and says nothing about it ----
         pg.evaluate("() => { run.score=120000; run.lives=0; triggerGameOver(); }")
         step(90)
-        B = pg.evaluate("() => run._banked")
         ok(pg.evaluate("() => state==='gameover'"), 'GAME OVER is up')
-        ok(B and B['credit'] == 270000 and B['dm'] == 1.5 and B['pm'] == 1.5, 'a 120,000 HARD run on a fresh Cole banks 270,000 credit (x1.5 x1.5): %s' % json.dumps(B))
-        ok(pg.evaluate("() => scoreBankCredit()===270000 && furiousBalance()===0"), 'the credit is in the bank; the balance is still 0 until exchanged')
-        shot('01_gameover_banked')
-        # the BANKED line is drawn: trap fillText
-        n = pg.evaluate("() => { let n=0; const f=ctx.fillText; ctx.fillText=function(t){ if(/^BANKED/.test(String(t))) n++; return f.apply(this,arguments); }; for(let i=0;i<3;i++) window.__step(1); ctx.fillText=f; return n; }")
-        ok(n >= 3, 'the GAME OVER screen prints the BANKED line every frame (%d of 3)' % n)
+        nb = pg.evaluate("() => { let n=0; const f=ctx.fillText; ctx.fillText=function(t){ if(/BANKED/.test(String(t))) n++; return f.apply(this,arguments); }; for(let i=0;i<3;i++) window.__step(1); ctx.fillText=f; return n; }")
+        ok(nb == 0, 'and it prints NO BANKED line - the run end is not where points come from any more (%d)' % nb)
+        ok(pg.evaluate("() => furiousConverted()===8"), 'a 120,000-point run ending converts nothing: only a LEVEL converts')
+        shot('01_gameover_no_bank')
 
-        # ---- 2. the VAULT exchanges it ----
-        pg.evaluate("() => { setState(GS.VAULT); vaultOpen(); }")
+        # ---- 2. the VAULT has no EXCHANGE row, and THE ARMORY is its last ----
+        # seeded the only way there is now: a level that scored 1,200,000, which is one rung of the
+        # upgrade ladder (1,000) plus change - so the buy below succeeds and the NEXT one, at 1,250,
+        # is honestly short, which is what the refusal act needs.
+        # [!] THE COMBINATIONS ARE EARNED FROM A BOSS (Mike, 0917) - the ARMORY only sells their LEVELS,
+        # so the two pairs this probe buys levels for are granted the way the pickup grants them.
+        # probe_bossdrop_0917.py is what proves the boss actually leaves one.
+        pg.evaluate("""() => { achievementState=achievementEmpty(); furiousConvertLevel(1, 1200000);
+          forgeComboGrant('lightning',3); forgeComboGrant('fire',0);
+          setState(GS.VAULT); vaultOpen(); }""")
         step(30); pg.wait_for_timeout(500); step(10)
-        ok(pg.evaluate("() => vault.rows[0].exchange===true && vault.i===0"), 'the VAULT opens on the EXCHANGE row')
-        shot('02_vault_exchange')
-        tap(keys['fire'])
-        ok(pg.evaluate("() => furiousBalance()===270 && scoreBankCredit()===0"), 'FIRE on EXCHANGE buys 270 FURIOUS PTS and empties the credit')
-        ok('270' in pg.evaluate("() => vault.msg"), 'and the screen says so: %r' % pg.evaluate("() => vault.msg"))
-        tap(keys['fire'])
-        ok(pg.evaluate("() => furiousBalance()===270") and 'NOTHING' in pg.evaluate("() => vault.msg"), 'a second press with nothing banked is refused with words')
+        V = pg.evaluate("() => ({n:vault.rows.length, cat:furiousShopIds().length, ex:vault.rows.filter(r=>r.exchange).length, last:!!vault.rows[vault.rows.length-1].armory, bal:furiousBalance()})")
+        print('  vault:', json.dumps(V))
+        ok(V['ex'] == 0, 'the VAULT has NO EXCHANGE row - the conversion is automatic, so there is nothing to press (%d)' % V['ex'])
+        ok(V['n'] == V['cat'] + 1 and V['last'], 'it is the catalogue, then THE ARMORY last')
+        ok(V['bal'] == 1200, 'and the balance the sub-header shows is what the levels converted (%d)' % V['bal'])
+        shot('02_vault_no_exchange')
         # DOWN to THE ARMORY (the last row) and open it
         rows = pg.evaluate("() => vault.rows.length")
         for _ in range(rows - 1): tap('s', 2, 3)
@@ -98,7 +128,7 @@ def main():
         k0 = pg.evaluate("() => window.__keys")
         ok(k0.get('micon_forge_lightning_3', 0) >= 10 and not k0.get('micon_forge_lightning_3_2'), 'the TESLA BEAM row wears the level-I badge before the buy (%s)' % json.dumps(k0))
         tap(keys['fire'])
-        ok(pg.evaluate("() => forgeOwnedLevel('lightning',3)===2 && furiousBalance()===270-FORGE_LEVEL_COST[2]"), 'FIRE buys TESLA BEAM level II and the price leaves the balance')
+        ok(pg.evaluate("() => forgeOwnedLevel('lightning',3)===2 && furiousBalance()===1200-1000"), 'FIRE buys TESLA BEAM level II at the first rung (1,000) and the price leaves the balance')
         pg.evaluate("() => { window.__keys={}; for(let i=0;i<10;i++) window.__step(1); }")
         k1 = pg.evaluate("() => window.__keys")
         ok(k1.get('micon_forge_lightning_3_2', 0) >= 10, 'and the row now wears the level-II badge, by KEY (%s)' % json.dumps(k1))
@@ -110,7 +140,7 @@ def main():
         ok(pg.evaluate("() => state==='vault'"), 'BACK returns to the VAULT')
 
         # ---- 4. the Forge opens the weapon at the owned level; RETINA opens the Armory and BACK returns ----
-        pg.evaluate("() => { setState(GS.PLAY); run.forge={}; run.forgeElems={}; run.loadout=null; run.weapon=3; run.wlevel=1; forgeDiscover('lightning'); forgeStart(function(){ setState(GS.TITLE); }); }")
+        pg.evaluate("() => { setState(GS.PLAY); run.forge={}; run.forgeElems={}; run.loadout=null; run.weapon=3; run.wlevel=1; forgeStart(function(){ setState(GS.TITLE); }); }")
         step(50); pg.wait_for_timeout(400); step(10)
         ok(pg.evaluate("() => state==='forge'"), 'the Forge is up')
         # walk to the laser slot and combine (list -> keep -> element -> FIRE)
@@ -134,7 +164,7 @@ def main():
             pg.evaluate("([k]) => BOSSMODE.hold(k,false)", [fire])
             return pg.evaluate("() => pBullets.filter(b=>b.kind==='mg'&&!b._child).map(b=>({w:b.w,h:b.h,dmg:b.dmg,inf:b._inf||null,sc:!!b._infScaled}))")
         bare = rounds(20)
-        pg.evaluate("() => { for(let l=2;l<=5;l++) achievementState.owned[forgeLevelId('fire',0,l)]={at:1,cost:0}; run.forgeCombos=2; forgeDiscover('fire'); forgeCombine(0,'fire'); }")
+        pg.evaluate("() => { for(let l=2;l<=5;l++) achievementState.owned[forgeLevelId('fire',0,l)]={at:1,cost:0}; run.forgeCombos=2; forgeCombine(0,'fire'); }")
         ok(pg.evaluate("() => run.forge[0].lv===5 && run.infusion.lv===5"), 'with fire I..V owned, combining fire on the MG holds it at level V')
         five = rounds(20)
         print('  bare:', json.dumps(bare[:2]), ' level V:', json.dumps(five[:2]))

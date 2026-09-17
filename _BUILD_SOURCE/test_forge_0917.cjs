@@ -41,6 +41,11 @@ module.exports=function testForge(vm,ctxv,ok){
 
   /* ---- the rules, in the vm ---- */
   R("run.forge={}; run.forgeElems={}; run.loadout=null; run.forgeCombos=2; run.forgeRespecs=2; run.weapon=0; run.infusion=null; run.ngplus=false;");
+  /* A COMBINATION IS EARNED FROM A BOSS (Mike, 0917), so the pairs this block is about are
+     granted first - and one it is NOT given proves the gate is real rather than absent. */
+  R("var __ownBefore=achievementState.owned; achievementState.owned={}; forgeComboGrant('fire',0); forgeComboGrant('ice',0);");
+  ok(R("forgeCombine(0,'toxic')==='locked' && !run.forge[0]"),
+     'a combination that has not been earned is refused, and forges nothing');
   ok(R("forgeCombine(0,'fire')==='ok' && run.forge[0].elem==='fire' && run.forge[0].lv===1 && run.forgeCombos===1"),
      'forgeCombine forges the weapon at level 1 and spends a combine');
   ok(R("run.infusion && run.infusion.elem==='fire' && run.infusion.lv===1"),
@@ -58,16 +63,27 @@ module.exports=function testForge(vm,ctxv,ok){
   ok(R("forgeCombine(0,'dark')==='unknown'"), 'a gated element refuses while its gate is shut (dark needs NEW GAME +)');
   ok(R("forgeRespec(0)==='ok' && !run.forge[0] && run.forgeRespecs===1 && !run.infusion && weaponDisplayName(0)==='MACHINE GUN'"),
      'forgeRespec removes the element, spends a re-spec, clears the held element and restores the bare name');
+  R("achievementState.owned=__ownBefore;");   /* the profile is left as this section found it */
   ok(R("forgeRespec(0)==='bare'"), 'a bare weapon has nothing to re-spec');
   R("run.forge={}; run.forgeRespecs=0; run.forge[3]={elem:'lightning',lv:1};");
   ok(R("forgeRespec(3)==='spent' && run.forge[3]"), 'a re-spec with none left is refused and changes nothing');
 
-  /* ---- discovery ---- */
-  R("run.forgeElems={};");
-  ok(R("forgeDiscovered().length===0"), 'nothing is discovered on a fresh run');
-  R("forgeDiscover('lightning'); forgeDiscover('fire'); forgeDiscover('dark');");
+  /* ---- what may be combined, and where it comes from (0917) ---- */
+  R("run.forgeElems={}; var __ownD=achievementState.owned; achievementState.owned={};");
+  ok(R("forgeDiscovered().length===0"), 'nothing is combinable on a fresh profile');
+  /* [!] SEEING AN ELEMENT IN THE FIELD GRANTS NOTHING SINCE 0917 (Mike: "you dont unlock all
+     these weapon combination upgrades ... they drop from the boss"). It used to license that
+     element on all nine slots at once, which is exactly what he ruled out. */
+  R("forgeDiscover('toxic');");
+  ok(R("forgeDiscovered().indexOf('toxic')<0"),
+     'an element merely SEEN in the field is not combinable - only an earned pair is');
+  R("forgeComboGrant('lightning',0); forgeComboGrant('fire',3); forgeComboGrant('dark',0);");
   ok(R("JSON.stringify(forgeDiscovered())==='[\"fire\",\"lightning\"]'"),
-     'forgeDiscovered() is in table order and hides a discovered element whose gate is shut');
+     'forgeDiscovered() is in table order and hides an EARNED element whose gate is shut (dark needs NEW GAME +)');
+  /* and a pair is a pair: the element is on the slot it was earned for, and on no other */
+  ok(R("forgeElemsFor(0).indexOf('lightning')>=0 && forgeElemsFor(3).indexOf('lightning')<0"),
+     'forgeElemsFor answers per SLOT - lightning was earned for the machine gun, not for the laser');
+  R("achievementState.owned=__ownD;");
   var ap=strip(R("String(applyPowerup)"));
   ok(/case 'infuse':[\s\S]{0,200}forgeDiscover\(p\.elem\)/.test(ap), 'collecting an infuse pickup calls forgeDiscover - discovery is the real pickup path');
 

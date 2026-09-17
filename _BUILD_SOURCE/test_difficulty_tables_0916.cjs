@@ -61,8 +61,11 @@ module.exports=function testDifficultyTables(vm,ctxv,ok){
      the moment anything writes one without the other. */
   ok(vm.runInContext("(function(){var src=String(furiousSpent);return src.indexOf('owned')>=0;})()",ctxv),
      'what has been spent is summed from what is owned');
-  ok(vm.runInContext("furiousBalance()===achievementPoints()-furiousSpent()",ctxv),
-     'and the balance is earned minus spent by construction');
+  /* 0917: the LEVELS convert into the same pool ("At the end of each level ... your points convert
+     into FP"), so the balance carries both incomes. Achievement points stayed in it on Mike's own
+     word that day: "Achievement points are also tied to this." */
+  ok(vm.runInContext("furiousBalance()===achievementPoints()+furiousConverted()-furiousSpent()",ctxv),
+     'and the balance is both incomes minus spent, by construction');
 
   /* ---- THE FURIOUS VAULT: the screen that makes any of this reachable (0916) ---- */
   /* ⚠ UNTIL THIS SCREEN EXISTED NOTHING COULD BE BOUGHT AT ALL. The ledger, the prices and the
@@ -73,9 +76,10 @@ module.exports=function testDifficultyTables(vm,ctxv,ok){
      'the vault is a state with a screen');
   ok(vm.runInContext("String(drawScene).indexOf('GS.VAULT')>=0",ctxv),
      'and the dispatcher routes it');
-  /* 0917: the VAULT gained two rows of its own around the catalogue - EXCHANGE SCORE first, THE ARMORY last */
-  ok(vm.runInContext("(function(){vaultOpen();return vault.rows.length===furiousShopIds().length+2&&vault.rows[0].exchange===true&&vault.rows[vault.rows.length-1].armory===true&&furiousShopIds().every(function(id){return vault.rows.some(function(r){return r.id===id;});});})()",ctxv),
-     'it lists every catalogue row, none hidden, between the EXCHANGE row and THE ARMORY row (0917)');
+  /* 0917: the VAULT gained THE ARMORY at the end. The EXCHANGE row went with the bank - the score
+     converts automatically at the end of every level now, so there is nothing there to press. */
+  ok(vm.runInContext("(function(){vaultOpen();return vault.rows.length===furiousShopIds().length+1&&!vault.rows.some(function(r){return r.exchange;})&&vault.rows[vault.rows.length-1].armory===true&&furiousShopIds().every(function(id){return vault.rows.some(function(r){return r.id===id;});});})()",ctxv),
+     'it lists every catalogue row, none hidden, with THE ARMORY last and no EXCHANGE row (0917)');
 
   /* ⚠ A ROW THAT CANNOT DELIVER MUST NOT SELL. Taking the points for a video that does not exist
      is worse than not listing it: the player is out the points with nothing to show, and the refund

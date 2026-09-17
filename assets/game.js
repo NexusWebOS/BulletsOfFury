@@ -8123,11 +8123,20 @@ function forgeName(w){
   return (T && T[w]) ? T[w] : (INFUSIONS[f.elem].name+' '+((typeof WEAPONS!=='undefined'&&WEAPONS[w])||'WEAPON'));
 }
 function forgeCanTake(w){ return FORGE_WEAPONS.indexOf(w|0)>=0; }
-/* an element is DISCOVERED when one of its pickups is collected in play */
+/* an element is SEEN when one of its pickups is collected in play. ⚠ SINCE 0917 THIS GRANTS
+   NOTHING - it used to license that element on all nine slots at once, which is exactly the
+   "you dont unlock all these weapon combination upgrades" Mike ruled out. The Forge uses it only
+   to show an element it can name; forgeElemsFor(w) is what may actually be combined. */
 function forgeDiscover(elem){ if(run && INFUSIONS[elem]){ if(!run.forgeElems) run.forgeElems={}; run.forgeElems[elem]=1; } }
+/* every element combinable on ANY slot right now - the union of the owned pairs, which is what a
+   screen asking "is there anything to do here" needs. */
+/* ⚠ IN TABLE ORDER, not in the order the profile happens to store them - the element strip is
+   drawn from this and a list that reorders itself as combinations are earned would move the
+   cursor under the player's thumb. */
 function forgeDiscovered(){
-  if(!run || !run.forgeElems) return [];
-  return Object.keys(INFUSIONS).filter(function(e){ return run.forgeElems[e] && infusionGateOpen(e); });
+  const own={};
+  for(const c of forgeCombosOwned()) own[c.elem]=1;
+  return Object.keys(INFUSIONS).filter(function(e){ return own[e] && infusionGateOpen(e); });
 }
 /* the permanent element ASSERTS itself on the held weapon. A pickup of the same element in play can
    still level it further for the stage; a different element still fuses. This only writes when the
@@ -8149,6 +8158,9 @@ function forgeCombine(w, elem){
   if(!run) return 'norun';
   if(!forgeCanTake(w)) return 'cannot';
   if(!INFUSIONS[elem] || !infusionGateOpen(elem)) return 'unknown';
+  /* ⚠ THE PAIR HAS TO HAVE BEEN EARNED. This is Mike's whole rule: a combination comes off a boss,
+     so an element you have merely SEEN cannot be welded onto a slot you never won it for (0917). */
+  if(typeof forgeComboOwned==='function' && !forgeComboOwned(elem,w)) return 'locked';
   if((run.forgeCombos|0)<=0) return 'spent';
   if(!run.forge) run.forge={};
   const f=run.forge[w];
@@ -8354,7 +8366,13 @@ function furiousSellable(id){const it=FURIOUS_SHOP[id];if(!it)return false;
   if(it.kind==='media')return !!it.media; return !it.pending;}
 function furiousShopIds(){return Object.keys(FURIOUS_SHOP);}
 function furiousSpent(){let n=0;for(const id of Object.keys(achievementState.owned||{})){const q=achievementState.owned[id];n+=Number.isFinite(q&&q.cost)?q.cost:((FURIOUS_SHOP[id]||{}).cost|0);}return n;}
-function furiousBalance(){return achievementPoints()+((typeof furiousExchanged==='function')?furiousExchanged():0)-furiousSpent();}
+/* THE POOL IS BOTH INCOMES (Mike, 0917: "Achievement points are also tied to this"). His earlier
+   "these are not to be purchased through the achievement system" is about the SHOP - the awards
+   gallery sells nothing, the Vault and the Armory do - and that is unchanged. What an award pays
+   and what a level converts land in the same balance, and the price ladder is sized against them:
+   a first Stage 1 clear pays 10 + 200 + 100 + 200 = 510 in awards, or 1,010 with the FURIOUS boss,
+   against a first upgrade of 1,000. */
+function furiousBalance(){return achievementPoints()+((typeof furiousConverted==='function')?furiousConverted():0)-furiousSpent();}
 function furiousOwned(id){return !!(achievementState.owned&&achievementState.owned[id]);}
 /* returns 'ok' | 'owned' | 'poor' | 'unknown' - a word, not a boolean, because the screen has to
    say WHICH of the three happened and a false cannot carry that */
@@ -8372,74 +8390,167 @@ function furiousBuy(id){
   return 'ok';
 }
 /* ============================================================
-   THE SCORE EXCHANGE and THE ARMORY (Mike, 0917)
-   "Furious Points are the answer to incentivise playing the game on higher difficulties and other
-    pilots, and your Score Points in-game. Yes, the high-score points now become useful instead of a
-    show off. You use your high score points to purchase Furious Points."
+   FURIOUS POINTS and THE ARMORY (Mike, 0917)
+   "1000 score points is the equivilent of 1 Furious Point for conversion. At the end of each level,
+    your Maintain your 'Score Points' as a high score record keeper, but at the end of each level, your
+    'points' convert into FP = Furious Points. Thats how to make this balanced to start off."
+   and: "These are not to be purchased through the achievement system."
 
-   Every run that ENDS - game over or victory - deposits its score into the profile's SCORE BANK as
-   CREDIT, weighted by the difficulty it was flown on (SCORE_BANK_DIFF) and by whether that pilot has
-   banked a run before (SCORE_BANK_NEW_PILOT: the first run on each pilot pays half again - that is
-   the "other pilots" half of the brief). The VAULT's EXCHANGE row turns credit into Furious Points at
-   SCORE_BANK_RATE. Credit below one point's worth stays in the bank for the next run.
+   THE SCORE IS THE SOURCE AND IT IS NEVER SPENT. At the end of every level the level's OWN score - this
+   stage's delta, plus the second seat in co-op - converts at a flat 1,000 : 1, the remainder carries to
+   the next level, and `run.score` itself is untouched because it is the high-score record. A harder run
+   earns more because it SCORES more; there is no second difficulty dial to tune.
 
-   ⚠ THE BANK IS A LEDGER, NOT A COUNTER (0916's rule for the shop, applied again): what has been
-   EXCHANGED is the sum of the exchange entries, and the balance is points + exchanged - spent. Two
-   numbers describing one fact would drift the first time a save was interrupted between them.
+   ⚠ ACHIEVEMENT POINTS ARE NOT A CURRENCY. They are a record of what has been done. `furiousBalance`
+   is CONVERTED - SPENT, and the awards gallery still shows its own total beside it.
 
-   THE ARMORY sells the Forge's LEVELS. Level 1 of any weapon x element is earned in play - discover
-   the element, combine it in the Forge - and levels 2..5 are bought here, per weapon x element,
-   persistently (FORGE_LEVEL_COST). A forged weapon opens at its OWNED level; a repeat combine in the
-   Forge still lifts it one more for the run, and a pickup in the field never lifts past the pickup
-   ceiling (INFUSION_PICKUP_MAX), so the paid levels are the only road to IV and V.
+   THE ARMORY sells the Forge's LEVELS II..V with those points, per weapon x element, persistently
+   (forgeUpgradeCost, one rising ladder). ⚠ It does NOT sell the combinations themselves - those are earned from the boss
+   at the end of each level (see forgeBossDrop).
 
    ⚠ ONE UPGRADE PER WEAPON TYPE, BY CONSTRUCTION. run.forge is keyed by SLOT - a slot holds one
-   {elem, lv} and forgeCombine REPLACES it - and the loadout can never carry a slot twice
-   (forgePick swaps). So "you may only equip 1 machine gun upgrade type, 1 laser upgrade type ..." is
-   the shape of the data, not a check that could be forgotten. Section 372 pins it.
+   {elem, lv} and forgeCombine REPLACES it - and the loadout can never carry a slot twice (forgePick
+   swaps). So "you may only equip 1 machine gun upgrade type, 1 laser upgrade type ..." is the shape of
+   the data, not a check that could be forgotten. Section 372 pins it.
    ============================================================ */
-const SCORE_BANK_RATE=1000;                                   /* 1 FURIOUS PT per 1,000 weighted score */
-const SCORE_BANK_DIFF=Object.freeze({easy:0.5, normal:1.0, hard:1.5, furious:2.0, insanity:3.0});
-const SCORE_BANK_NEW_PILOT=1.5;
-const FORGE_LEVEL_COST=Object.freeze({2:150, 3:300, 4:600, 5:1000});
+/* 1,000 SCORE = 1 FURIOUS POINT, CONVERTED AT THE END OF EVERY LEVEL (Mike, 0917). Flat: no difficulty
+   or pilot weighting in the rate - a harder run earns more because it SCORES more, which is the same
+   incentive without a second dial to tune. */
+const FURIOUS_SCORE_RATE=1000;
+/* ONE LADDER FOR EVERY UPGRADE (Mike, 0917: "start with each upgrade at about 1000 ... the points
+   to unlock your next weapon type or upgrade goes up by 25%"). The price is a function of how many
+   you have BOUGHT, not of which rung you are buying - so the tenth weapon's level II costs what the
+   ladder is up to, and never the 150 a per-level table would have charged for ever. */
+const FORGE_UPGRADE_BASE=1000, FORGE_UPGRADE_STEP=1.25, FORGE_UPGRADE_ROUND=10;
 const FORGE_LEVEL_ID_RE=/^forge_[a-z]+_[0-9]_L[2-9]$/;
-function scoreBank(){ if(!achievementState.bank) achievementState.bank={credit:0,runs:0,pilots:{},exchanges:[],last:null}; return achievementState.bank; }
-function scoreBankCredit(){ return (achievementState.bank&&achievementState.bank.credit)|0; }
-function scoreBankQuote(){ return Math.floor(scoreBankCredit()/SCORE_BANK_RATE); }
-function scoreBankDeposit(score,dk,pk){
-  score=Math.max(0,score|0); if(!score) return null;
-  const B=scoreBank(), dm=SCORE_BANK_DIFF[dk]||1, first=!(B.pilots[pk]|0), pm=first?SCORE_BANK_NEW_PILOT:1;
-  const credit=Math.round(score*dm*pm);
-  B.credit=(B.credit|0)+credit; if(pk) B.pilots[pk]=(B.pilots[pk]|0)+1; B.runs=(B.runs|0)+1;
-  B.last={score:score,diff:dk,pilot:pk,dm:dm,pm:pm,credit:credit,at:Date.now()};
-  achievementSave();
-  return B.last;
+function furiousLedger(){ if(!achievementState.fp) achievementState.fp={carry:0,levels:[]}; return achievementState.fp; }
+/* the SUM of the per-level entries - never a stored counter (0916's rule) */
+function furiousConverted(){ let n=0; const L=achievementState.fp; if(L&&L.levels) for(const e of L.levels) n+=e.fp|0; return n; }
+function furiousCarry(){ return (achievementState.fp&&achievementState.fp.carry)|0; }
+/* the level's OWN score -> points. The remainder carries; run.score is never touched, because it is the
+   high-score record. Returns the entry, or null when the level scored nothing. */
+function furiousConvertLevel(stage,score){
+  score=Math.max(0,score|0);
+  const L=furiousLedger(), pool=(L.carry|0)+score;
+  const fp=Math.floor(pool/FURIOUS_SCORE_RATE);
+  L.carry=pool-fp*FURIOUS_SCORE_RATE;
+  if(!fp && !score) return null;
+  const e={stage:stage|0, score:score, fp:fp, at:Date.now()};
+  L.levels.push(e); achievementSave();
+  return e;
 }
-/* one deposit per run, whichever end it reaches first */
-function scoreBankDepositRun(){
-  if(!run||run._bankedOnce) return run?run._banked:null;
-  run._bankedOnce=true;
-  const total=(run.score|0)+((typeof coopOn!=='undefined'&&coopOn&&typeof run2!=='undefined'&&run2)?(run2.score|0):0);
-  run._banked=scoreBankDeposit(total,diffKey,run.pilot);
-  return run._banked;
-}
-function furiousExchanged(){ let n=0; const B=achievementState.bank; if(B&&B.exchanges) for(const x of B.exchanges) n+=x.fp|0; return n; }
-/* returns the points bought, or 'empty' */
-function scoreBankExchange(){
-  const fp=scoreBankQuote(); if(fp<=0) return 'empty';
-  const B=scoreBank(), used=fp*SCORE_BANK_RATE;
-  B.credit=(B.credit|0)-used; B.exchanges.push({at:Date.now(),credit:used,fp:fp});
-  achievementSave();
-  return fp;
+/* one conversion per level, whichever end of the stage reaches it first */
+function furiousConvertStage(){
+  if(!run||run._fpLevelDone) return run?run._fpLevel:null;
+  run._fpLevelDone=true;
+  let d=(run.score|0)-((stageStats&&stageStats.scoreStart)|0);
+  if(typeof coopActive==='function'&&coopActive()&&typeof run2!=='undefined'&&run2)
+    d+=(run2.score|0)-((typeof stageStats2!=='undefined'&&stageStats2&&stageStats2.scoreStart)|0);
+  run._fpLevel=furiousConvertLevel(run.stage, d);
+  return run._fpLevel;
 }
 function forgeLevelId(elem,w,lv){ return 'forge_'+elem+'_'+(w|0)+'_L'+(lv|0); }
+/* ============================================================
+   THE COMBINATION IS EARNED FROM THE BOSS (Mike, 0917)
+   "you dont unlock all these weapon combination upgrades. Your going to make powerup upgrade's for
+    these new weapon types that drop from the boss when they die at each level, and thats how we gain
+    new combinations and such."
+   One id per ELEMENT x SLOT, in the profile beside the Armory's levels, written with no `cost` so a
+   free reward can never advance the price ladder or read as spending.
+   ============================================================ */
+const FORGE_COMBO_ID_RE=/^forge_[a-z]+_[0-9]_C$/;
+function forgeComboId(elem,w){ return 'forge_'+elem+'_'+(w|0)+'_C'; }
+function forgeComboOwned(elem,w){ return !!(INFUSIONS[elem] && forgeCanTake(w) && furiousOwned(forgeComboId(elem,w))); }
+function forgeComboGrant(elem,w){
+  if(!INFUSIONS[elem] || !forgeCanTake(w)) return 'unknown';
+  const id=forgeComboId(elem,w);
+  if(furiousOwned(id)) return 'owned';
+  if(!achievementState.owned) achievementState.owned={};
+  achievementState.owned[id]={at:Date.now()};   /* no cost: it was not bought */
+  achievementSave();
+  return 'ok';
+}
+function forgeCombosOwned(){
+  const out=[]; const O=achievementState.owned||{};
+  for(const id of Object.keys(O)){ if(!FORGE_COMBO_ID_RE.test(id)) continue;
+    const m=/^forge_([a-z]+)_([0-9])_C$/.exec(id); if(!m) continue;
+    if(!INFUSIONS[m[1]] || !forgeCanTake(+m[2])) continue;
+    out.push({elem:m[1], w:+m[2]}); }
+  return out;
+}
+/* what a slot may be combined with TODAY: owned, and past whatever gate the element carries */
+function forgeElemsFor(w){
+  if(!forgeCanTake(w)) return [];
+  return Object.keys(INFUSIONS).filter(function(e){ return forgeComboOwned(e,w) && infusionGateOpen(e); });
+}
+/* every pair that could still be given. The weapon side is the UNLOCKED pool, never the whole table -
+   a combination for a weapon the pilot cannot hold is a reward you cannot look at. */
+function forgeComboCandidates(){
+  const pool=(typeof crateWeaponPool==='function')?crateWeaponPool(true):FORGE_WEAPONS.slice();
+  const ws=FORGE_WEAPONS.filter(function(w){ return pool.indexOf(w)>=0; });
+  const out=[];
+  for(const e of Object.keys(INFUSIONS)){
+    if(!infusionGateOpen(e)) continue;
+    for(const w of ws) if(!forgeComboOwned(e,w)) out.push({elem:e, w:w});
+  }
+  return out;
+}
+/* the boss's pick. Biased toward the stage's own element and toward the weapon in the player's hands,
+   so the drop reads as belonging to the fight that paid for it rather than as a lottery ticket. */
+function forgeComboRoll(){
+  const C=forgeComboCandidates(); if(!C.length) return null;
+  const bias=INFUSION_STAGE_BIAS[(run&&run.stage)|0]||null, held=(run&&run.weapon)|0;
+  const pref=C.filter(function(c){ return c.elem===bias && c.w===held; });
+  if(pref.length && Math.random()<0.50) return pref[(Math.random()*pref.length)|0];
+  const be=C.filter(function(c){ return c.elem===bias; });
+  if(be.length && Math.random()<0.55) return be[(Math.random()*be.length)|0];
+  const bw=C.filter(function(c){ return c.w===held; });
+  if(bw.length && Math.random()<0.40) return bw[(Math.random()*bw.length)|0];
+  return C[(Math.random()*C.length)|0];
+}
+/* ⚠ GUARANTEED, ONE PER BOSS - see this patch's header. Returns the pickup, or null when every
+   combination the player could use is already owned. */
+function forgeBossDrop(x,y){
+  if(typeof powerups==='undefined') return null;
+  const c=forgeComboRoll(); if(!c) return null;
+  /* ⚠ CLAMPED INTO THE PLAYFIELD, because a boss's own y is not where it is drawn: the stage-1
+     helicopter reports 618.6 on a 512-tall field, so the first build spawned this reward below the
+     screen and the cull killed it on frame one. Measured, not reasoned about. */
+  const _lo=(typeof camLeftX==='function')?camLeftX()+22:22, _hi=(typeof camRightX==='function')?camRightX()-22:VW-22;
+  x=clamp(Number.isFinite(x)?x:VW/2, Math.min(_lo,_hi), Math.max(_lo,_hi));
+  y=clamp(Number.isFinite(y)?y:VH*0.35, 40, VH*0.52);
+  const P={x:x, y:y, vy:0.85, t:0, kind:'forgecombo', elem:c.elem, fw:c.w, w:24, h:24, bob:rnd(0,TAU),
+           _fcHold:VH*0.58};   /* it descends to here and then WAITS - see this patch's header */
+  powerups.push(P);
+  try{ if(typeof stageStats!=='undefined' && stageStats.pickupsSeen!=null) stageStats.pickupsSeen++; }catch(_fb){}
+  try{ if(typeof XART!=='undefined'){ XART.rdy('inf_'+c.elem); if(typeof weaponIconKey==='function') XART.rdy(weaponIconKey(c.w,1,{bare:1})); } }catch(_fb2){}
+  return P;
+}
+function forgeComboName(elem,w){
+  const T=FORGE_NAMES[elem];
+  return (T && T[w]) ? T[w] : (((INFUSIONS[elem]||{}).name||'')+' '+((typeof WEAPONS!=='undefined'&&WEAPONS[w])||'WEAPON'));
+}
 function forgeOwnedLevel(elem,w){ let lv=1; while(lv<INFUSION_MAX && furiousOwned(forgeLevelId(elem,w,lv+1))) lv++; return lv; }
-function forgeLevelCost(elem,w){ const lv=forgeOwnedLevel(elem,w); return lv>=INFUSION_MAX?0:(FORGE_LEVEL_COST[lv+1]|0); }
+/* ⚠ ONLY A PAID PURCHASE ADVANCES THE LADDER. A combination earned from a boss costs nothing, so
+   counting it would make a REWARD raise the price of everything else. `cost` is written by
+   furiousBuy and by nothing else, which is what separates the two. */
+function forgeUpgradesBought(){ let n=0; const O=achievementState.owned||{};
+  for(const id of Object.keys(O)) if(FORGE_LEVEL_ID_RE.test(id) && (O[id].cost|0)>0) n++;
+  return n; }
+function forgeUpgradeCost(n){
+  n=(n==null)?forgeUpgradesBought():Math.max(0,n|0);
+  const raw=FORGE_UPGRADE_BASE*Math.pow(FORGE_UPGRADE_STEP,n);
+  return Math.round(raw/FORGE_UPGRADE_ROUND)*FORGE_UPGRADE_ROUND;
+}
+function forgeLevelCost(elem,w){ const lv=forgeOwnedLevel(elem,w); return lv>=INFUSION_MAX?0:forgeUpgradeCost(); }
 /* 'ok' | 'maxed' | 'poor' | 'unknown' - a word, for the same reason furiousBuy returns one */
 function forgeLevelBuy(elem,w){
   if(!INFUSIONS[elem]||!forgeCanTake(w)) return 'unknown';
+  /* ⚠ A LEVEL OF A COMBINATION YOU DO NOT OWN IS AN UNDELIVERABLE SALE. The Vault's own rule
+     (0916): a row that cannot deliver must not take the points. */
+  if(typeof forgeComboOwned==='function' && !forgeComboOwned(elem,w)) return 'locked';
   const lv=forgeOwnedLevel(elem,w); if(lv>=INFUSION_MAX) return 'maxed';
-  const cost=FORGE_LEVEL_COST[lv+1]|0;
+  const cost=forgeUpgradeCost();
   if(furiousBalance()<cost) return 'poor';
   if(!achievementState.owned) achievementState.owned={};
   achievementState.owned[forgeLevelId(elem,w,lv+1)]={at:Date.now(),cost:cost};
@@ -8456,6 +8567,10 @@ const ACHIEVEMENT_DEFS=Object.freeze((function(){
     add('stage_clear_'+n,'Stage '+n+' Clear',10,'BOF_STAGE_'+n+'_CLEAR',{family:'stage_clear',stage:n});
     add('stage_nodeath_'+n,'Stage '+n+' No Death',200,'BOF_STAGE_'+n+'_NO_DEATH',{family:'stage_nodeath',stage:n});
     add('stage_nomissile_'+n,'Stage '+n+' Missile Discipline',100,'BOF_STAGE_'+n+'_NO_MISSILE',{family:'stage_nomissile',stage:n});
+    /* Mike, 0917: "earning a set amount of points thats 75% of what you could accuimalate if you
+       were to kill all enemies, collect as many items, powerups etc." The ceiling is measured from
+       the stage itself (stageStats.scoreMax), never from a table that a wave re-tune would rot. */
+    add('stage_score_'+n,'Stage '+n+' Thorough',200,'BOF_STAGE_'+n+'_SCORE',{family:'stage_score',stage:n});
     add('boss_hard_'+n,'Stage '+n+' Hard Boss Victory',200,'BOF_BOSS_'+n+'_HARD',{family:'boss_difficulty',stage:n,difficulty:'hard'});
     add('boss_furious_'+n,'Stage '+n+' Furious Boss Victory',500,'BOF_BOSS_'+n+'_FURIOUS',{family:'boss_difficulty',stage:n,difficulty:'furious'});
   }
@@ -8480,10 +8595,19 @@ function achievementNormalize(v){
      room for a new field would silently DELETE every achievement every existing player has earned.
      An absent `owned` reads as {} and the save is upgraded the next time anything is bought. */
   if(v.owned&&typeof v.owned==='object')
-    for(const id of Object.keys(v.owned)){ if(!FURIOUS_SHOP[id] && !FORGE_LEVEL_ID_RE.test(id)) continue; const q=v.owned[id]||{};
+    for(const id of Object.keys(v.owned)){
+      if(!FURIOUS_SHOP[id] && !FORGE_LEVEL_ID_RE.test(id) && !FORGE_COMBO_ID_RE.test(id)) continue;
+      const q=v.owned[id]||{};
+      /* ⚠ A COMBINATION CARRIES NO `cost` AND MUST NOT GAIN ONE HERE. Defaulting it to 0 would be
+         harmless; defaulting it to a shop price would charge the player for a boss drop. */
+      if(FORGE_COMBO_ID_RE.test(id)){ out.owned[id]={at:Number.isFinite(q.at)?q.at:0}; continue; }
       out.owned[id]={at:Number.isFinite(q.at)?q.at:0,cost:Number.isFinite(q.cost)?q.cost:((FURIOUS_SHOP[id]||{}).cost|0)}; }
   /* THE SCORE BANK (0917) rides the same store, for the same reason `owned` does: one profile, one
      save, and a version bump would delete every award. Each field is re-typed on the way in. */
+  if(v.fp&&typeof v.fp==='object'){
+    out.fp={carry:Math.max(0,v.fp.carry|0),levels:[]};
+    if(Array.isArray(v.fp.levels)) for(const e of v.fp.levels){ if(e&&Number.isFinite(e.fp)) out.fp.levels.push({stage:e.stage|0,score:e.score|0,fp:e.fp|0,at:e.at|0}); }
+  }
   if(v.bank&&typeof v.bank==='object'){
     const b=v.bank; out.bank={credit:Math.max(0,b.credit|0),runs:b.runs|0,pilots:{},exchanges:[],last:(b.last&&typeof b.last==='object')?b.last:null};
     if(b.pilots&&typeof b.pilots==='object') for(const k of Object.keys(b.pilots)) out.bank.pilots[k]=b.pilots[k]|0;
@@ -8497,7 +8621,7 @@ function achievementSave(){try{localStorage.setItem(ACHIEVEMENT_STORE_KEY,JSON.s
 function achievementReload(){achievementState=achievementLoad();achievementLastUnlock=null;return achievementProfileSnapshot();}
 function achievementDefinition(id){return ACHIEVEMENT_DEFS[id]||null;}
 function achievementPoints(){let n=0;for(const id of Object.keys(achievementState.unlocked))if(ACHIEVEMENT_DEFS[id])n+=ACHIEVEMENT_DEFS[id].points;return n;}
-function achievementProfileSnapshot(){return JSON.parse(JSON.stringify({version:achievementState.version,points:achievementPoints(),spent:furiousSpent(),exchanged:(typeof furiousExchanged==='function')?furiousExchanged():0,bank:achievementState.bank||null,balance:furiousBalance(),unlocked:achievementState.unlocked,owned:achievementState.owned||{}}));}
+function achievementProfileSnapshot(){return JSON.parse(JSON.stringify({version:achievementState.version,points:achievementPoints(),spent:furiousSpent(),converted:(typeof furiousConverted==='function')?furiousConverted():0,fp:achievementState.fp||null,balance:furiousBalance(),unlocked:achievementState.unlocked,owned:achievementState.owned||{}}));}
 function achievementUnlocked(id){return !!achievementState.unlocked[id];}
 function achievementUnlock(id,meta){
   const d=achievementDefinition(id);if(!d||achievementUnlocked(id))return false;
@@ -8566,6 +8690,15 @@ function achievementStageComplete(stage,one,two){
   /* Mike did not attach a difficulty floor to missile discipline. In co-op neither seat may
      launch a manual missile; one shared profile earns one shared stage award. */
   if(stats.every(s=>s&&!(s.missiles>0)))grant('stage_nomissile_'+stage);
+  /* THOROUGH: this level's own score against what this level offered (Mike's 75%). The delta is
+     the same quantity furiousConvertStage converts, and in co-op both seats' work counts toward
+     one shared profile award - the same rule the other stage rows already follow. */
+  {
+    let got=0, offer=0;
+    if(one){ got+=(run.score|0)-((one.scoreStart)|0); offer+=(one.scoreMax)|0; }
+    if(two && typeof run2!=='undefined' && run2){ got+=(run2.score|0)-((two.scoreStart)|0); offer+=(two.scoreMax)|0; }
+    if(offer>0 && got>=offer*STAGE_SCORE_SHARE) grant('stage_score_'+stage);
+  }
   return earned;
 }
 function achievementEncounterDefeat(unit,role){
@@ -8747,7 +8880,11 @@ function yuriLightningOrbGrantStage4(){
    was missing, the measurement was. `pickups`/`pickupsSeen` and the per-weapon damage tally
    `wpn` are those measurements, taken at the same chokepoints the existing stats use so a new
    pickup kind or a new weapon is counted by existing code. */
-let stageStats={kills:0,shots:0,hits:0,livesStart:3,scoreStart:0,spawned:0,deaths:0,missiles:0,dmgDealt:0,dmgTaken:0,
+/* WHAT THE STAGE PUT ON THE FIELD (0917) - the denominator of the THOROUGH award. Accumulated as
+   things appear, so it re-derives itself for any roster, difficulty or wave change. */
+const STAGE_SCORE_SHARE=0.75;
+function stageScoreOffer(n){ try{ if(typeof stageStats!=='undefined' && stageStats.scoreMax!=null) stageStats.scoreMax+=Math.max(0,n|0); }catch(_ss){} }
+let stageStats={kills:0,shots:0,hits:0,livesStart:3,scoreStart:0,spawned:0,deaths:0,missiles:0,dmgDealt:0,dmgTaken:0,scoreMax:0,
                 mslHits:0, spShots:0, spHits:0, spDmg:0, pickups:0, pickupsSeen:0, wpn:{},
                 /* 0916: the debrief's two new slots. contStart is the RUN's continue count when the
                    stage began, so the row reports what THIS stage cost rather than the whole run. */
@@ -8775,7 +8912,7 @@ let _dmgBullet=null;               // the live player round, for directional ene
    lands, which outside a window is seat 1. That is the first cut, and it is recorded here so
    nobody measures "P2's bombs never count" as a mystery.
    ============================================================ */
-let stageStats2={kills:0,shots:0,hits:0,livesStart:3,scoreStart:0,spawned:0,deaths:0,missiles:0,dmgDealt:0,dmgTaken:0, pickups:0, pickupsSeen:0, wpn:{},
+let stageStats2={kills:0,shots:0,hits:0,livesStart:3,scoreStart:0,spawned:0,deaths:0,missiles:0,dmgDealt:0,dmgTaken:0,scoreMax:0, pickups:0, pickupsSeen:0, wpn:{},
                  mslHits:0, spShots:0, spHits:0, spDmg:0};
 let _shooter=1, _shooterSave=null;
 function shooterSet(seat){
@@ -9831,6 +9968,79 @@ function sonicImpact(x,y,p){
   weaponFeedbackSound('colePressureImpact',.55+.35*(p||0));
 }
 
+/* ============================================================
+   STYLISH! (Mike, 0917)
+   "Somersalting, or barrel rolling before a projectile would've impacted you grants you a 'Stylish!'
+    award of 500 points that appears letter by letter and glows before fading away letter by letter."
+   ============================================================ */
+const STYLISH_SCORE=500, STYLISH_IN=0.42, STYLISH_HOLD=0.70, STYLISH_OUT=0.42;
+let stylish=null;
+function stylishManoeuvre(){ return (typeof player!=='undefined'&&player) ? (player.roll||player.somer||null) : null; }
+/* ⚠ ONE PER MANOEUVRE - see this patch's header. The flag rides the roll/somersault object, so it is
+   gone the moment that object is, and the next one can earn again. */
+function stylishAward(){
+  const m=stylishManoeuvre(); if(!m || m._styl) return false;
+  m._styl=true;
+  if(run) run.score=(run.score|0)+STYLISH_SCORE;
+  /* ⚠ NO WORLD COORDINATE GOES IN HERE. The award is drawn in SCREEN space (stylishDraw escapes
+     the world transform), so seeding it from player.x - a WORLD x - would put it up to a camera's
+     width off the screen's centre on a wide stage. This file records that confusion five times over;
+     the award simply has a place on the screen and keeps it. */
+  stylish={t:0, x:VW/2, y:VH*0.34, n:0};
+  try{ (Audio.SFX.arcBarrelRoll||Audio.SFX.select||function(){})(); }catch(_sa){}
+  return true;
+}
+/* a round that overlaps the hitbox while the manoeuvre's i-frames are up is a round that WOULD have
+   impacted - that is the whole claim, and it is why this is called in front of the loop's own
+   `invuln>0` return rather than after it. */
+function stylishCheck(b){
+  if(!b || b.dead || typeof player==='undefined' || !player || player.dead) return false;
+  if(!stylishManoeuvre()) return false;
+  const _hx=(player._hx!=null?player._hx:9), _hy=(player._hy!=null?player._hy:10);
+  if(Math.abs(b.x-player.x)>=(_hx+(b.w||6)*0.15) || Math.abs(b.y-player.y)>=(_hy+(b.h||6)*0.15)) return false;
+  return stylishAward();
+}
+function stylishTick(dt){
+  if(!stylish) return;
+  stylish.t+=dt;
+  if(stylish.t>=STYLISH_IN+STYLISH_HOLD+STYLISH_OUT) stylish=null;
+}
+/* typed in, held glowing, then erased from the front - the same order it arrived in */
+function stylishDraw(){
+  if(!stylish) return;
+  const W='STYLISH', n=W.length, t=stylish.t;
+  let shown=n, gone=0;
+  if(t<STYLISH_IN) shown=Math.min(n, Math.floor((t/STYLISH_IN)*n)+1);
+  else if(t>=STYLISH_IN+STYLISH_HOLD) gone=Math.min(n, Math.floor(((t-STYLISH_IN-STYLISH_HOLD)/STYLISH_OUT)*n)+1);
+  if(gone>=n) return;
+  const art=(typeof curFontArt==='function')?curFontArt():null;
+  const H=22, glow=0.55+0.45*Math.sin(t*9.0);
+  const txt=W.slice(gone, shown);
+  if(!txt) return;
+  ctx.save();
+  /* the same escape the pickup banner uses - the camera translate AND the 0819 zoom */
+  if(typeof worldXformEscape==='function'){ try{ worldXformEscape(); }catch(_sw){} }
+  ctx.textAlign='center';
+  /* the glow is a second pass at a larger size and low alpha, never shadowBlur: 0916ab measured what
+     a per-draw blur costs, and this draws every frame it is up. */
+  if(art && typeof stageText==='function'){
+    /* ⚠ THE GLOW IS OFFSET COPIES AT THE SAME SIZE, NOT ONE LARGER COPY. A 1.14x pass centred on the
+       same point puts every glyph's edge somewhere different from its core, so it reads as GHOSTING -
+       the word looks doubled rather than lit. Rendered and looked at before it was changed. */
+    for(const d of [[-2,0],[2,0],[0,-2],[0,2]])
+      stageText(art, txt, stylish.x+d[0], stylish.y+d[1], H, '#ffd45a', 0.85, 0.20*glow, 0.06);
+    stageText(art, txt, stylish.x, stylish.y, H, '#fff6d0', 0.85, 1, 0.06);
+    if(t>=STYLISH_IN && gone===0) stageText(art, '+'+STYLISH_SCORE, stylish.x, stylish.y+H*1.15, H*0.62, '#ff8a3a', 0.85, 1, 0.06);
+  } else {
+    ctx.globalAlpha=0.30*glow; ctx.fillStyle='#ffd45a'; ctx.font='bold '+Math.round(H)+'px "BOFmil", monospace';
+    for(const d of [[-2,0],[2,0],[0,-2],[0,2]]) ctx.fillText(txt, stylish.x+d[0], stylish.y+d[1]);
+    ctx.globalAlpha=1; ctx.fillStyle='#fff6d0'; ctx.font='bold '+Math.round(H)+'px "BOFmil", monospace';
+    ctx.fillText(txt, stylish.x, stylish.y);
+    if(t>=STYLISH_IN && gone===0){ ctx.fillStyle='#ff8a3a'; ctx.font='bold '+Math.round(H*0.62)+'px "BOFmil", monospace'; ctx.fillText('+'+STYLISH_SCORE, stylish.x, stylish.y+H*1.15); }
+  }
+  ctx.restore();
+  ctx.textAlign='left';
+}
 function chargeAvailable(){
   if(typeof player==='undefined' || !player || player.dead) return false;
   if(typeof specialActive!=='function' || !specialActive(CHG_PILOT)) return false;
@@ -11661,6 +11871,7 @@ function spawnArsenalMini(slug){
   e._dr.ent = ENTRY_DUR;        // no entrance sweep: it arrives, it does not strafe past
   e._dr.entry = 0.9;            // a beat on screen before its first tell
   enemies.push(e);
+  if(typeof stageScoreOffer==='function') stageScoreOffer(e.score||0);
   if(typeof stageStats!=='undefined') stageStats.spawned++;
   return e;
 }
@@ -11855,6 +12066,7 @@ function spawnEnemy(type, x, y, opt={}){
              fireCd:9, fireRate:9, t:0, pattern:opt.pattern||'sine', score:420, shoots:false};
     droneInit(e, type);
     enemies.push(e);
+    if(typeof stageScoreOffer==='function') stageScoreOffer(e.score||0);
     return e;
   }
   const base = {
@@ -12861,6 +13073,7 @@ const SHIPS=[];
      so capacity and field footprint are computed from the actual unit that enters the array. */
   if(typeof enemyShieldAutoEquip==='function')enemyShieldAutoEquip(c);
   enemies.push(c);
+  if(typeof stageScoreOffer==='function') stageScoreOffer(c.score||0);
   return c;
 }
 
@@ -28315,6 +28528,7 @@ function dropPowerup(x,y,forceKind,noInfuse){
     else {const r=Math.random();kind=r<.62?'bomb':(r<.9?'shield':'life');}
   }
   powerups.push({x,y,vy:1.1,t:0,kind,w:18,h:18,bob:rnd(0,TAU)});
+  if(typeof stageScoreOffer==='function' && typeof PICKUP_SCORE==='number') stageScoreOffer(PICKUP_SCORE);
   try{ if(typeof stageStats!=='undefined' && stageStats.pickupsSeen!=null) stageStats.pickupsSeen++; }catch(_pq){}
 }
 /* THE CRATE POOL, IN ONE PLACE (0917). It used to be built inline in spawnContainer, and the Forge
@@ -28494,7 +28708,13 @@ function scWeaponKey(){
   const w=(typeof run!=='undefined')?(run.weapon|0):0;
   return (typeof WEAPONS!=='undefined' && WEAPONS[w]) ? WEAPONS[w] : 'MACHINE GUN';
 }
+/* WHAT A PICKUP IS WORTH (Mike, 0917: "Collecting items, powerups and special abilities also gives
+   you points like 250 each"). Scored HERE rather than at the touch collision, because that one
+   excludes the crate, the capsule and the missile boxes by name and they reach this function by
+   other routes - the old 50 was paid on some collections and not others. */
+const PICKUP_SCORE=250;
 function applyPowerup(p){
+  if(run) run.score=(run.score|0)+PICKUP_SCORE;
   if(p.kind==='retinascan'){run.retinaScan=true;if(typeof arcadeBanner==='function')arcadeBanner('RETINA SCAN UPGRADE');if(Audio.SFX.select)Audio.SFX.select();return;}
   if(p.kind==='missilepack2')p=Object.assign({},p,{kind:'missilepack'});
   /* ⚠ COUNTED BEFORE THE KIND IS REWRITTEN. The lines below REPLACE `p` when it is a container -
@@ -28619,6 +28839,17 @@ function applyPowerup(p){
       if(typeof arcadeBanner==='function') arcadeBanner(arcWeaponAnnounce(_wt, run.wlevel, p.wvar?{fixed:p.wvar}:null));
       Audio.SFX.weapon(); break;
     }
+    case 'forgecombo': {
+      const _fc=(typeof forgeComboGrant==='function')?forgeComboGrant(p.elem,p.fw):'unknown';
+      if(_fc==='ok'){
+        if(typeof arcadeBanner==='function') arcadeBanner('NEW COMBINATION  -  '+forgeComboName(p.elem,p.fw));
+        else floatText(p.x,p.y,'NEW COMBINATION','#ffd45a');
+        /* it can be welded on at the next Forge; the round in hand is not changed here */
+        if(typeof forgeDiscover==='function') forgeDiscover(p.elem);
+        try{ Audio.SFX.life&&Audio.SFX.life(); }catch(_fg1){}
+      } else { floatText(p.x,p.y,'+'+PICKUP_SCORE,'#ffd45a'); }   /* already owned, or nothing to give:
+        applyPowerup's own PICKUP_SCORE has paid for it and the float just says so */
+      break; }
     case 'infuse':
       if(typeof forgeDiscover==='function') forgeDiscover(p.elem);   /* it can be forged from now on (0917) */
       if(typeof infusionGrant==='function') infusionGrant(p.elem);
@@ -32129,13 +32360,15 @@ function beginStage(num){
      mslHits / spShots / spHits / spDmg and missed this, so every field was undefined the moment a
      stage began — the four new rows would have read 0 forever. Caught by asserting the fields
      exist at RUNTIME rather than just in the source. */
-  stageStats={kills:0,shots:0,hits:0,livesStart:run.lives,scoreStart:run.score,spawned:0,deaths:0,missiles:0,
+  if(run) run._fpLevelDone=false;   /* a new level may convert again (0917) */
+  stylish=null;
+  stageStats={kills:0,shots:0,hits:0,livesStart:run.lives,scoreStart:run.score,spawned:0,deaths:0,missiles:0,scoreMax:0,
               dmgDealt:0,dmgTaken:0, mslHits:0, spShots:0, spHits:0, spDmg:0, pickups:0, pickupsSeen:0, wpn:{},
               contStart:(run.contUsed|0), upgrades:0};
   /* P2's accumulator starts the stage alongside P1's. `spawned` is a STAGE fact, not a seat one -
      both rows show the same denominator - so it is mirrored onto seat 2 wherever seat 1 writes it
      (see the stamp in updatePlay) rather than counted twice. */
-  stageStats2={kills:0,shots:0,hits:0,livesStart:run2.lives,scoreStart:run2.score,spawned:0,deaths:0,missiles:0,
+  stageStats2={kills:0,shots:0,hits:0,livesStart:run2.lives,scoreStart:run2.score,spawned:0,deaths:0,missiles:0,scoreMax:0,
                dmgDealt:0,dmgTaken:0, mslHits:0, spShots:0, spHits:0, spDmg:0, pickups:0, pickupsSeen:0, wpn:{}};
   _shooter=1; _shooterSave=null;
   if(typeof drawStageClear!=='undefined'){ drawStageClear._init=false; drawStageClear._rsnd=false; for(const _k in drawStageClear){ if(/^_(l|c)\d/.test(_k)) delete drawStageClear[_k]; } }
@@ -34884,6 +35117,9 @@ function updatePlay(dt){
        bullet speed, on every stage, and looking like a difficulty bug rather than a loop bug. */
     for(const _s of seatList()){
       if(withSeat(_s, function(){
+      /* ⚠ BEFORE THE i-FRAME RETURN, ON PURPOSE. A roll and a somersault spare you by setting
+         `invuln`, so the round that would have hit you is only visible on this side of it (0917). */
+      if(typeof stylishCheck==='function' && stylishCheck(b)) { /* the dodge is scored; the round flies on */ }
       if(player.dead || player.invuln>0) return false;
       const _hx=(player._hx!=null?player._hx:9), _hy=(player._hy!=null?player._hy:10);
       if(b._hammerLaser ? hammerLaserHit(b,targetShip(b.x,b.y),_hx,_hy) : b._frostNoseLaser ? frostNoseLaserHit(b,targetShip(b.x,b.y),_hx,_hy) :
@@ -34951,9 +35187,22 @@ function updatePlay(dt){
 
   // ---- powerups ----
   for(const p of powerups){
+    /* ⚠ THE BOSS REWARD WAITS. Everything else falls past the player and is gone; this one is the
+       only thing a whole boss fight paid for, and it arrives while the screen is still detonating.
+       It settles at its hover line and then closes on the player, so it cannot be lost to a timer. */
+    if(p._fcHold!=null){
+      p.t+=dt;
+      if(p.y<p._fcHold) p.y=Math.min(p._fcHold, p.y+p.vy);
+      else { p.vy=0;
+        const _T=(typeof targetShip==='function')?targetShip(p.x,p.y):player;
+        if(_T && !_T.dead){ const dx=_T.x-p.x, dy=_T.y-p.y, d=Math.hypot(dx,dy);
+          if(d>1){ const sp=Math.min(2.2, 0.45+d*0.012); p.x+=dx/d*sp; p.y+=dy/d*sp; } } }
+      if(p.flash>0) p.flash-=dt;
+    } else {
     p.t+=dt; p.y+=p.vy; p.x+=Math.sin(p.t*3+p.bob)*0.4;
+    }
     if(p._looseMissile&&p.t<.55){p.x+=p._scatterVx*dt*Math.max(0,1-p.t/.55);p.x=clamp(p.x,camLeftX()+12,camRightX()-12);}
-    if(p.flash>0) p.flash-=dt;
+    if(p._fcHold==null && p.flash>0) p.flash-=dt;
     /* WHOEVER TOUCHES IT, GETS IT - and gets it alone. `applyPowerup` and the 50 points both
        land inside the seat window, so an orb upgrades the weapon of the player who flew into it
        and credits their score, not their partner's. Seat 1 is tested first, so a genuine dead
@@ -34962,11 +35211,14 @@ function updatePlay(dt){
       if(withSeat(_s, function(){
         if(p._missileSeat&&p._missileSeat!==_s)return false;
         if(/^missileupbox_/.test(p.kind||'')&&!manualMissileUpgradeCanSpawn(p.kind.slice('missileupbox_'.length),run))return false;
-        if(!player.dead && p.kind!=='crate' && p.kind!=='capsule' && p.kind!=='scrate' && p.kind!=='mcrate' && p.kind!=='hqspacebox' && dist2(p.x,p.y,player.x,player.y)<22*22){ applyPowerup(p); run.score+=50; return true; }
+        if(!player.dead && p.kind!=='crate' && p.kind!=='capsule' && p.kind!=='scrate' && p.kind!=='mcrate' && p.kind!=='hqspacebox' && dist2(p.x,p.y,player.x,player.y)<22*22){ applyPowerup(p); return true; }   /* applyPowerup scores it - PICKUP_SCORE (0917) */
         return false;
       })) { p.dead=true; break; }
     }
-    if(p.y>VH+20) p.dead=true;
+    /* ⚠ THE BOSS REWARD IS EXEMPT FROM THE BOTTOM CULL. It holds inside the field and never
+       reaches this, but a rig that spawns it low would otherwise delete a guaranteed reward. */
+    if(p.y>VH+20 && p._fcHold==null) p.dead=true;
+    if(p._fcHold!=null) p.y=clamp(p.y, 24, VH-24);
   }
   powerups=powerups.filter(p=>!p.dead);
 
@@ -35488,13 +35740,11 @@ function playerHit(){
 
 function triggerGameOver(){
   if(run.stage===9&&run.mode!=='arcade'&&!bossDefeated&&typeof riftFallbackStart==='function'){riftFallbackStart();return;}
-  if(typeof scoreBankDepositRun==='function') scoreBankDepositRun();   /* the score becomes bank credit (0917) */
   setState(GS.GAMEOVER); Audio.stopMusic(); Audio.SFX.gameover();
   if(run.score>=highScore){ highScore=run.score; try{localStorage.setItem('bof_hi',highScore);}catch(e){} } }
 function triggerVictory(){
   bonusModesUnlockFromCampaign();
   achievementRunComplete();
-  if(typeof scoreBankDepositRun==='function') scoreBankDepositRun();
   drawVictory._t=0; drawVictory._scroll=0; drawVictory._sfx={}; drawVictory._md=!!Input.mouse.down;
   drawVictory._ready=run.mode==='arcade';
   if(run.mode!=='arcade'&&typeof victoryEndingWarm==='function')victoryEndingWarm();
@@ -36235,7 +36485,13 @@ function bossDie(){
   /* One authored boss-class origin blast, sized from the boss frame. The longer cook-off below
      adds waves, but it no longer begins with the old generic fxBurst placeholder. */
   if(!boss._cinDeath&&typeof unitDeathFX==='function') unitDeathFX(boss,'boss',(curStage&&curStage.bg==='ice')?'blue':'red');
-  run.score+=5000*run.stage; eBullets.length=0;
+  run.score+=5000*run.stage;
+  if(typeof stageScoreOffer==='function') stageScoreOffer(5000*run.stage);   /* the boss bonus is on offer too (0917) */
+  eBullets.length=0;
+  /* THE COMBINATION POWERUP (Mike, 0917: "drop from the boss when they die at each level, and
+     thats how we gain new combinations"). Dropped where the boss died, before the cook-off
+     detonates the field, so it is visible for the whole of the death sequence. */
+  if(typeof forgeBossDrop==='function') try{ forgeBossDrop(boss.x, (boss._drawY!=null?boss._drawY:boss.y)); }catch(_fbd){}
   /* THE STAGE END. Every enemy still alive when the boss dies was detonated at a FIXED 38px —
      a 20px turret and a 58px hauler produced identical blasts, which is exactly the mismatched
      mess Mike keeps seeing at the end of a level. Route them through the SAME class death every
@@ -37360,6 +37616,7 @@ function updateEffects(dt){
   }
   particles=particles.filter(p=>!p.dead);
   if(typeof tickScorches==='function') tickScorches(dt);
+  if(typeof stylishTick==='function') stylishTick(dt);
   for(const f of floaters){ f.t+=dt; if(f.score){ f.y+=(f.vy||-38)*dt; f.vy=(f.vy||-38)*(1-1.8*dt); } else f.y-=0.5; if(f.t>=f.life)f.dead=true; }
   floaters=floaters.filter(f=>!f.dead);
   if(typeof arcadeBannerTick==='function') arcadeBannerTick(dt);   // the pickup announcement
@@ -47444,6 +47701,31 @@ function drawPowerups(){
     if(p.kind==='crate'){ drawCrate(p.x,yb,p.t,p.flash||0); continue; }
     if(p.kind==='scrate'){ drawScrate(p.x,yb,p.t,p.flash||0); continue; }
     if(p.kind==='mcrate'){ drawMcrate(p.x,yb,p.t,p.flash||0); continue; }
+    if(p.kind==='forgecombo'){
+      /* the ELEMENT badge with the WEAPON's own icon inside it - the two halves of the pair, so
+         what is on the ground says which combination it is rather than just "an upgrade" */
+      const I=(typeof INFUSIONS!=='undefined'&&INFUSIONS[p.elem])||null;
+      const col=I?I.glow:'#ffd45a';
+      ctx.save(); ctx.translate(p.x, yb+Math.sin((p.bob||0)+performance.now()/300)*2.8);
+      ctx.shadowColor=col; ctx.shadowBlur=18;
+      let drew=null;
+      if(typeof iconBlit==='function'){ try{ drew=iconBlit(ctx,'inf_'+p.elem,0,0,PICKUP_BOX*1.25,true); }catch(_fcb){ drew=null; } }
+      if(drew==null){ ctx.rotate(Math.PI/4); ctx.fillStyle=I?I.body:'#888'; ctx.fillRect(-11,-11,22,22);
+        ctx.strokeStyle='#101018'; ctx.lineWidth=2; ctx.strokeRect(-11,-11,22,22); ctx.rotate(-Math.PI/4); }
+      ctx.shadowBlur=0;
+      /* ⚠ THE WEAPON ICON IS AN INSET, NOT AN OVERLAY. Centred on the element badge it sat on the
+         badge's own artwork and both halves read as one smudge - looked at, not guessed. Tucked into
+         the lower right it reads as "this element, for this weapon", which is what the pair IS. */
+      if(typeof iconBlit==='function' && typeof weaponIconKey==='function'){
+        try{ const _wk=weaponIconKey(p.fw,1,{bare:1});
+          if(_wk){ const _z=PICKUP_BOX*0.46, _o=PICKUP_BOX*0.36;
+            ctx.save(); ctx.fillStyle='rgba(8,10,16,0.78)';
+            ctx.beginPath(); ctx.arc(_o,_o,_z*0.56,0,TAU); ctx.fill();
+            iconBlit(ctx,_wk,_o,_o,_z,true); ctx.restore(); } }catch(_fcw){}
+      }
+      ctx.restore();
+      continue;
+    }
     if(p.kind==='infuse'){
       const I=(typeof INFUSIONS!=='undefined'&&INFUSIONS[p.elem])||null;
       const col=I?I.glow:'#ffffff';
@@ -47953,6 +48235,7 @@ function _drawEffectsInner(){
     ctx.font='bold 10px "BOFmil", monospace'; ctx.fillText(f.txt,f.x,f.y); ctx.globalAlpha=1; }
   /* the pickup announcement, over the field and in screen space (drop 0811m) */
   if(typeof drawArcadeBanner==='function') drawArcadeBanner();
+  if(typeof stylishDraw==='function') stylishDraw();
   // sprite animations (e.g. tank destruction frames)
   if(typeof rbShardsDraw==='function') rbShardsDraw();   // rollerball shrapnel, over the field
   for(const sa of sprAnims){
@@ -61669,7 +61952,10 @@ function awardsView(){
 }
 function awardsRows(){
   const L=(typeof achievementList==='function')?achievementList():[];
-  const fam=['campaign_clear','run_no_continue','boss_difficulty','boss_speed','stage_nodeath','stage_nomissile','stage_clear','weapon_max'];
+  /* ⚠ A NEW FAMILY MUST BE RANKED HERE. An unlisted one sorts to 99, i.e. below every ranked
+     family whatever it is worth - which put the 200-point STAGE THOROUGH row under the 20-point
+     weapon rows and broke the gallery's own "the first row is worth at least the last" rule. */
+  const fam=['campaign_clear','run_no_continue','boss_difficulty','boss_speed','stage_nodeath','stage_score','stage_nomissile','stage_clear','weapon_max'];
   return L.slice().sort(function(a,b){
     const fa=fam.indexOf(a.family||''), fb=fam.indexOf(b.family||'');
     if(fa!==fb) return (fa<0?99:fa)-(fb<0?99:fb);
@@ -61698,9 +61984,9 @@ function awardsOpen(){ awards={rows:awardsRows(),scroll:0,t:0,tab:0,fv:{},md:!!(
 const VAULT_VIEW=6;
 let vault=null;
 function vaultRows(){
-  const credit=scoreBankCredit(), fp=scoreBankQuote();
-  const rows=[{id:'__exchange',exchange:true,name:'EXCHANGE SCORE  -  '+credit+' CREDIT',cost:0,kind:'exchange',owned:false,pending:null,
-               blurb:fp>0?('BUY '+fp+' FURIOUS PTS AT '+SCORE_BANK_RATE+' CREDIT EACH'):('EVERY RUN BANKS ITS SCORE - HARDER FLIES PAY MORE')}];
+  /* ⚠ NO EXCHANGE ROW (0917). The conversion is automatic at the end of every level, so there is
+     nothing here to press - the balance in the sub-header is the whole story. */
+  const rows=[];
   for(const id of furiousShopIds()){
     const it=FURIOUS_SHOP[id];
     rows.push({id:id,name:it.name,cost:it.cost|0,kind:it.kind,blurb:it.blurb||'',
@@ -61720,12 +62006,6 @@ function vaultSay(m){ if(!vault) return; vault.msg=m; vault.msgT=2.2; }
 function vaultBuy(){
   if(!vault) return null;
   const r=vault.rows[vault.i]; if(!r) return null;
-  if(r.exchange){
-    const fp=scoreBankExchange();
-    if(fp==='empty'){ vaultSay('NOTHING TO EXCHANGE - FINISH A RUN FIRST'); try{ Audio.SFX.blocked&&Audio.SFX.blocked(); }catch(_ve1){} }
-    else { vaultSay('+'+fp+' FURIOUS PTS'); try{ Audio.SFX.select&&Audio.SFX.select(); }catch(_ve2){} }
-    vault.rows=vaultRows(); return fp==='empty'?'empty':'exchange';
-  }
   if(r.armory){ armoryOpen('vault'); setState(GS.ARMORY); return 'armory'; }
   const res=furiousBuy(r.id);
   if(res==='ok'){ vaultSay('UNLOCKED - '+r.name); try{ Audio.SFX.select&&Audio.SFX.select(); }catch(_v1){} }
@@ -61784,7 +62064,7 @@ function drawVault(dt){
       stageText(art,sub,x0+pad+((typeof stageWidth==='function')?stageWidth(art,sub,sh,0.06):0)/2,ry+rh*0.70,sh,'#7f8899',0.8,1,0.06);
     }
     if(!r.owned && !r.pending && !r.armory){
-      const pt=r.exchange?('+'+scoreBankQuote()):String(r.cost);
+      const pt=String(r.cost);
       stageText(art,pt,x0+w-pad-((typeof stageWidth==='function')?stageWidth(art,pt,fh,0.06):0)/2,ry+rh/2,fh,bal>=r.cost?'#ffd24a':'#b06a6a',0.85,1,0.06);
     }
   }
@@ -61824,7 +62104,12 @@ function armorySay(m){ if(armory){ armory.msg=m; armory.msgT=2.2; } }
 function armoryRows(w){
   return Object.keys(INFUSIONS).map(function(e){
     const lv=forgeOwnedLevel(e,w);
-    return {elem:e,w:w,name:(FORGE_NAMES[e]&&FORGE_NAMES[e][w])||(INFUSIONS[e].name+' '+WEAPONS[w]),lv:lv,cost:forgeLevelCost(e,w),
+    /* `earned` is Mike's 0917 rule on the row: the COMBINATION comes off a boss, the LEVELS are
+       what this screen sells. A row that has not been earned shows no price, because there is
+       nothing here to buy for it yet. */
+    const earned=(typeof forgeComboOwned==='function')?forgeComboOwned(e,w):true;
+    return {elem:e,w:w,name:(FORGE_NAMES[e]&&FORGE_NAMES[e][w])||(INFUSIONS[e].name+' '+WEAPONS[w]),lv:lv,
+            cost:earned?forgeLevelCost(e,w):0,earned:earned,
             open:infusionGateOpen(e),gate:INFUSIONS[e].gate||null};
   });
 }
@@ -61832,10 +62117,12 @@ function armoryBuy(){
   const A=armory; if(!A) return null;
   const w=FORGE_WEAPONS[A.tab|0], r=armoryRows(w)[A.i|0]; if(!r) return null;
   if(!r.open){ armorySay(r.gate==='ngplus'?'DARK MATTER OPENS IN NEW GAME +':'TIDAL OPENS AFTER STAGE 9'); try{ Audio.SFX.blocked&&Audio.SFX.blocked(); }catch(_ab0){} return 'gated'; }
+  if(!r.earned){ armorySay('EARN '+String(r.name).toUpperCase()+' FROM A BOSS FIRST'); try{ Audio.SFX.blocked&&Audio.SFX.blocked(); }catch(_ab3){} return 'locked'; }
   const res=forgeLevelBuy(r.elem,w);
   if(res==='ok'){ armorySay(r.name+'  -  LEVEL '+forgeOwnedLevel(r.elem,w)); try{ Audio.SFX.select&&Audio.SFX.select(); }catch(_ab1){} }
   else if(res==='maxed') armorySay(r.name+' IS AT LEVEL '+INFUSION_MAX);
   else if(res==='poor') armorySay('NEED '+Math.max(0,r.cost-furiousBalance())+' MORE FURIOUS PTS');
+  else if(res==='locked') armorySay('EARN '+String(r.name).toUpperCase()+' FROM A BOSS FIRST');
   else armorySay('NOT AVAILABLE');
   if(res!=='ok'){ try{ Audio.SFX.blocked&&Audio.SFX.blocked(); }catch(_ab2){} }
   return res;
@@ -61880,7 +62167,7 @@ function drawArmory(dt){
     ctx.restore();
     /* the badge at the level owned - the same key weaponIconKey answers once the weapon is forged */
     const ik='micon_forge_'+r.elem+'_'+w+(r.lv>1?'_'+r.lv:''), ih=rh*0.82, ix=x0+wdt*0.012+ih/2, iy=ry+rh/2;
-    ctx.save(); ctx.globalAlpha=r.open?1:0.35;
+    ctx.save(); ctx.globalAlpha=(r.open&&r.earned)?1:0.35;
     /* ⚠ THE LAST FALLBACK IS THE WEAPON'S OWN TIER ICON, AND IT IS NOT OPTIONAL. Both branches used to
        build a micon_forge_* key, and those plates exist only for the six slots whose sheets were
        generated - so every row on the FLAME, MIST and BOLT tabs drew a hole while the weapon's own icon
@@ -61894,14 +62181,16 @@ function drawArmory(dt){
     ctx.restore();
     if(!art) continue;
     const pad=wdt*0.035+ih, lh=Math.min(rh*0.40,10);
-    const col=!r.open?'#6a7180':(r.lv>=INFUSION_MAX?'#8de23a':(bal>=r.cost?'#ffd24a':'#b06a6a'));
+    const col=(!r.open||!r.earned)?'#6a7180':(r.lv>=INFUSION_MAX?'#8de23a':(bal>=r.cost?'#ffd24a':'#b06a6a'));
     const nm=String(r.name).toUpperCase(), room=wdt-pad*2-60;
     const fh=(typeof stageFitH==='function')?stageFitH(art,nm,room,lh,7,0.06):lh;
     stageText(art,nm,x0+pad+((typeof stageWidth==='function')?stageWidth(art,nm,fh,0.06):0)/2,ry+rh*0.34,fh,col,0.85,1,0.06);
-    const sub=!r.open?(r.gate==='ngplus'?'NEW GAME + ONLY':'AFTER STAGE 9'):('LEVEL '+r.lv+(r.lv>=INFUSION_MAX?'  -  MAX':('  -  NEXT: LEVEL '+(r.lv+1))));
+    const sub=!r.open?(r.gate==='ngplus'?'NEW GAME + ONLY':'AFTER STAGE 9')
+            : !r.earned?'BOSS DROP'
+            : ('LEVEL '+r.lv+(r.lv>=INFUSION_MAX?'  -  MAX':('  -  NEXT: LEVEL '+(r.lv+1))));
     const sh=(typeof stageFitH==='function')?stageFitH(art,sub,room,lh*0.85,6,0.06):lh*0.85;
     stageText(art,sub,x0+pad+((typeof stageWidth==='function')?stageWidth(art,sub,sh,0.06):0)/2,ry+rh*0.70,sh,'#7f8899',0.8,1,0.06);
-    if(r.open && r.lv<INFUSION_MAX){ const pt=String(r.cost);
+    if(r.open && r.earned && r.lv<INFUSION_MAX){ const pt=String(r.cost);
       stageText(art,pt,x0+wdt-wdt*0.04-((typeof stageWidth==='function')?stageWidth(art,pt,fh,0.06):0)/2,ry+rh/2,fh,bal>=r.cost?'#ffd24a':'#b06a6a',0.85,1,0.06); }
   }
   if(maxScroll>0){
@@ -65138,7 +65427,7 @@ window.BOFDEBUG=(function(){
         out.push({i:-1, err:String(e).slice(0,160)});
       }
       enemies.length=0;
-      for(const e of e0) enemies.push(e);
+      for(const e of e0){ enemies.push(e); if(typeof stageScoreOffer==='function') stageScoreOffer(e.score||0); }
       run.stage=s0; if(c0) curStage=c0;
       return out;
     },
@@ -69639,6 +69928,7 @@ function computeStageResults(){
   const coop=(typeof coopActive==='function' && coopActive());
   const two=coop ? scSheet(stageStats2, run2, run2.pilot) : null;
   achievementStageComplete(run.stage,stageStats,coop?stageStats2:null);
+  if(typeof furiousConvertStage==='function') furiousConvertStage();   /* the level's score becomes FP (0917) */
   drawStageClear._res={
     rows:one.rows, pct:one.pct, rank:one.rank, bonus:one.bonus, face:one.face,
     pw:scNextPassword(),
@@ -71149,10 +71439,14 @@ function drawForge(dt){
   const P=[0,0,W,H], S=SC_SLOTS_FULL, bay=function(f){ return [P[0]+P[2]*f[0], P[1]+P[3]*f[1], P[2]*f[2], P[3]*f[3]]; };
   const art=(typeof curFontArt==='function')?curFontArt():null;
   const A=function(d){ return Math.max(0,Math.min(1,(t-d)/0.35)); };
-  const load=run.loadout||[], disc=forgeDiscovered();
+  const load=run.loadout||[];
   F.sel=clamp(F.sel|0,0,Math.max(0,load.length-1));
-  F.esel=clamp(F.esel|0,0,Math.max(0,disc.length-1));
   const selW=load.length?load[F.sel]:null;
+  /* ⚠ THE ELEMENTS BELONG TO THE SLOT, NOT TO THE PROFILE (0917). A combination is earned per
+     element x weapon, so a global list would offer the laser's FIRE on the machine gun and then be
+     refused by forgeCombine - a list whose contents the screen behind it will not accept. */
+  const disc=(selW!=null && typeof forgeElemsFor==='function') ? forgeElemsFor(selW) : [];
+  F.esel=clamp(F.esel|0,0,Math.max(0,disc.length-1));
   if(art && typeof stageText==='function'){
     let b=bay(S.title);
     const tH=(typeof stageFitH==='function')?stageFitH(art,'THE FORGE',b[2]*0.90,b[3]*0.62,10,0.08):b[3]*0.5;
@@ -71166,7 +71460,9 @@ function drawForge(dt){
     }catch(_){ }
     /* the brief bay: the allowance, then the line that says what the cursor is on */
     b=bay(S.brief);
-    const l1='COMBINE  X'+(run.forgeCombos|0)+'      RE-SPEC  X'+(run.forgeRespecs|0)+'      LOADOUT  '+load.length+' OF '+FORGE_LOADOUT_MAX;
+    /* the level's own conversion, said where the player is standing when it happens (0917) */
+    const _fpL=(run._fpLevel&&run._fpLevel.fp>0)?('      FURIOUS  +'+run._fpLevel.fp):'';
+    const l1='COMBINE  X'+(run.forgeCombos|0)+'      RE-SPEC  X'+(run.forgeRespecs|0)+'      LOADOUT  '+load.length+' OF '+FORGE_LOADOUT_MAX+_fpL;
     const h1=Math.min(13,(typeof stageFitH==='function')?stageFitH(art,l1,b[2]*0.94,b[3]*0.42,8,0.06):11);
     stageText(art,l1,b[0]+b[2]/2,b[1]+b[3]*0.30,h1,'#9fd6ff',0.8,A(0.20),0.06);
     let l2, l2c='#ffd24a';
@@ -71177,7 +71473,7 @@ function drawForge(dt){
     else if(selW==null) l2='NOTHING UNLOCKED';
     else if(!forgeCanTake(selW)) l2=WEAPONS[selW]+' CANNOT TAKE AN ELEMENT';
     else if(forgeEntry(selW)){ const f=forgeEntry(selW); l2=forgeName(selW)+'   -   '+INFUSIONS[f.elem].name+' LEVEL '+f.lv+'   -   FIRE ADDS, CHARGE RE-SPECS'; }
-    else if(!disc.length) l2='NO ELEMENTS DISCOVERED YET - COLLECT THEM IN THE FIELD';
+    else if(!disc.length) l2='NO COMBINATIONS FOR THIS WEAPON YET - THEY DROP FROM BOSSES';
     else if((run.forgeCombos|0)<=0) l2='NO COMBINES LEFT THIS STAGE';
     else l2='FIRE: COMBINE THE '+WEAPONS[selW]+' WITH AN ELEMENT';
     const h2=Math.min(12,(typeof stageFitH==='function')?stageFitH(art,l2,b[2]*0.94,b[3]*0.40,7,0.06):10);
@@ -71252,7 +71548,7 @@ function drawForge(dt){
     }
     /* sign-off: what is discovered; footer: the controls */
     b=bay(S.signoff);
-    const so=disc.length ? ('DISCOVERED: '+disc.map(function(e){ return INFUSIONS[e].name; }).join('  -  ')) : 'ELEMENTS APPEAR HERE AS YOU COLLECT THEM';
+    const so=disc.length ? ('EARNED FOR THIS WEAPON: '+disc.map(function(e){ return INFUSIONS[e].name; }).join('  -  ')) : 'BEAT A BOSS TO EARN A COMBINATION FOR THIS WEAPON';
     const soH=Math.min(11,(typeof stageFitH==='function')?stageFitH(art,so,b[2]*0.96,b[3]*0.60,6,0.06):10);
     stageText(art,so,b[0]+b[2]/2,b[1]+b[3]*0.55,soH,'#9fd6ff',0.8,A(1.0),0.06);
     b=bay(S.footer);
@@ -71285,7 +71581,7 @@ function drawForge(dt){
       if(selW==null) forgeSay('NOTHING TO SELECT','blocked');
       else if(FORGE_FIXED[selW]){
         if(!forgeCanTake(selW)) forgeSay('MISSILES STAY MISSILES','blocked');
-        else if(!disc.length) forgeSay('MISSILES STAY MISSILES - NO ELEMENTS DISCOVERED YET','blocked');
+        else if(!disc.length) forgeSay('MISSILES STAY MISSILES - NO COMBINATION EARNED YET','blocked');
         else if((run.forgeCombos|0)<=0) forgeSay('MISSILES STAY MISSILES - NO COMBINES LEFT','blocked');
         else { forgeSay('MISSILES STAY MISSILES - PICK AN ELEMENT','blip'); F.row=1; const f=forgeEntry(selW); if(f) F.esel=Math.max(0,disc.indexOf(f.elem)); }
       }
@@ -71320,7 +71616,7 @@ function drawForge(dt){
           /* a weapon that COULD take an element but has no combine left says so, rather than the
              list simply closing - a silent return reads as a button that did nothing */
           if(forgeCanTake(w) && disc.length && (run.forgeCombos|0)<=0) forgeSay('NO COMBINES LEFT THIS STAGE','blocked');
-          else if(forgeCanTake(w) && !disc.length) forgeSay('NO ELEMENTS DISCOVERED YET','blocked');
+          else if(forgeCanTake(w) && !disc.length) forgeSay('NO COMBINATION FOR THIS WEAPON YET - BEAT A BOSS','blocked');
           else if(r==='same') blip(); }
       }
     }
@@ -71330,6 +71626,7 @@ function drawForge(dt){
     else if(mB){ F.row=0; blip(); }
     else if(fire||click||enter){
       const el=disc[F.esel], r=forgeCombine(selW, el);
+      if(r==='locked') forgeSay('THAT COMBINATION HAS NOT BEEN EARNED YET','blocked');
       if(r==='ok'){ const f=forgeEntry(selW); forgeSay(forgeName(selW)+'   LEVEL '+f.lv+'   -   COMBINES LEFT: '+(run.forgeCombos|0),'powerup'); F.row=0; }
       else if(r==='maxed') forgeSay(forgeName(selW)+' IS ALREADY AT LEVEL '+INFUSION_MAX,'blocked');
       else if(r==='spent'){ forgeSay('NO COMBINES LEFT THIS STAGE','blocked'); F.row=0; }
@@ -71346,9 +71643,6 @@ function drawGameOver(dt){
   msgText('GAME OVER',VW/2,VH/2-20,32,null,0,1,0.10);
   ctx.fillStyle='#ffd36b'; ctx.font='bold 13px "BOFmil", monospace'; ctx.fillText('SCORE  '+pad(run.score,8),VW/2,VH/2+10);
   ctx.fillStyle='#9aa0aa'; ctx.font='10px "BOFmil", monospace'; ctx.fillText('HIGH  '+pad(highScore,8),VW/2,VH/2+28);
-  /* the run's score just became bank credit - say so, with the weighting that made it (0917) */
-  if(run._banked&&run._banked.credit>0){ const B=run._banked; ctx.fillStyle='#8de23a'; ctx.font='bold 9px "BOFmil", monospace';
-    ctx.fillText('BANKED  '+pad(B.credit,8)+'  X'+B.dm+' '+String(B.diff||'').toUpperCase()+(B.pm>1?'  NEW PILOT X'+B.pm:''),VW/2,VH/2+44); }
   /* THE AUTHORED GAME OVER (drop 0801ax). The doc bands these by how far the player got — stages
      1-3, 4-5, 6-7, 8, bonus — because dying early and dying at the finale should not read the
      same. Typed on so it lands after the score rather than competing with it. */

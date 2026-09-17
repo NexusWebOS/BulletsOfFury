@@ -3521,42 +3521,78 @@ it has been, with its one deliberate red now GREEN and nothing replacing it.
 Tools: `_BUILD_SOURCE/flame_mask_0912n.py` (the detector, with its own proof render),
 `_BUILD_SOURCE/bake_ship_glow_0912n.py` (the bake; refuses to run twice, since it appends).
 Backups: `_BUILD_SOURCE/_backups/ships_pre0912n/` and `manifest.js.pre0912n`.
-
-## 0912q — the retina lock is a HEADER RULE
-
-Mike: *"when bosses want to fire homing missiles on you, target a retina on the player and make it
-flash and beep with the retina noise and beep rapidly as they are about to fire off and then the
-missiles come at us the retina stays locked until we either barrel roll to shake it off, dodge at the
-last second, somersalt or shoot down the missiles. this should be a header rule for most enemies and
-mini bosses and bosses."*
-
-**Any unit that fires homing missiles goes through `enemyLockOn(src, delay, {fire})`.** A lock is
-`arming` (the `retm_` retina on the player, shrinking, flashing on the beep) → `locked` (missiles
-away, `retmb_` solid, its rounds STEER) → `broken` (a barrel roll, somersault or charge dash STARTED
-after the lock) or `released` (every missile it launched is dead or culled). A locked round inside
-`LOCK_COMMIT_PX` freezes its heading for good — that is the last-second dodge. `_lockLaunch` tags
-whatever the fire callback pushed, so a caller never has to know the rule exists. Salvos routed
-through it: `enemyVolley` salvo, `shipBossAttack` mslhome, `vileAttack`, `updateModularBoss` racks,
-the helicopter's phase-3 pair and re-entry rockets, the mauler and every racer phase.
-
-⚠⚠ **IT SUPERSEDES TWO RULINGS, EACH FOR LOCK-BOUND MISSILES ONLY.** 0813a's silent lock (the
-complaint was a triple-beep PER LOCK stacking into a siren) and 0819e's *no homing past the
-helicopter*. Rounds with no lock still fly the vector they launched on, and §230 now counts the two
-populations apart so it still proves that.
-⚠ **THE SIREN CANNOT COME BACK BY CONSTRUCTION.** `Audio.SFX.retinaLockBeep` has exactly ONE caller —
-the scheduler in `updatePlayerLocks`, rescheduled off the SOONEST pending launch — and a unit that
-is still arming queues further launches on the retina it already holds. §21's old "≥3 simultaneous
-locks" assertion pinned the stack itself and now counts launches on one retina.
-⚠ **THE EVASION IS AN EDGE.** A lock placed mid-roll is not broken by that roll, or every lock landing
-in the 5 s roll window would evaporate on frame one.
-⚠ **`ovReticleVolley` WAS A SECOND PUSHER OF THE OLD LOCK SHAPE** (`{delay,fired,_visualOnly}`), found
-only because the suite crashed on `L.launches is not iterable` at section 20 — rule 3's zero-failure
-crash, caught by the COUNT (179). Grep for `playerLocks.push` before changing the lock object again.
-⚠ **The helicopter's own `homing` torpedoes keep their authored steering while locked**; the lock
-only decides when they stop (`!b._committed` now gates the homing block too).
-
-Sound: `retinaCharge` once at acquire (TAME min 0.80), `retinaLockBeep` = `nsp_console_beep.mp3`
-(TAME min 0.045). `probe_retina_lock_0912q.py` 26/26 — every clause driven in real Chromium, including
+
+
+## 0912q — the retina lock is a HEADER RULE
+
+
+
+Mike: *"when bosses want to fire homing missiles on you, target a retina on the player and make it
+
+flash and beep with the retina noise and beep rapidly as they are about to fire off and then the
+
+missiles come at us the retina stays locked until we either barrel roll to shake it off, dodge at the
+
+last second, somersalt or shoot down the missiles. this should be a header rule for most enemies and
+
+mini bosses and bosses."*
+
+
+
+**Any unit that fires homing missiles goes through `enemyLockOn(src, delay, {fire})`.** A lock is
+
+`arming` (the `retm_` retina on the player, shrinking, flashing on the beep) → `locked` (missiles
+
+away, `retmb_` solid, its rounds STEER) → `broken` (a barrel roll, somersault or charge dash STARTED
+
+after the lock) or `released` (every missile it launched is dead or culled). A locked round inside
+
+`LOCK_COMMIT_PX` freezes its heading for good — that is the last-second dodge. `_lockLaunch` tags
+
+whatever the fire callback pushed, so a caller never has to know the rule exists. Salvos routed
+
+through it: `enemyVolley` salvo, `shipBossAttack` mslhome, `vileAttack`, `updateModularBoss` racks,
+
+the helicopter's phase-3 pair and re-entry rockets, the mauler and every racer phase.
+
+
+
+⚠⚠ **IT SUPERSEDES TWO RULINGS, EACH FOR LOCK-BOUND MISSILES ONLY.** 0813a's silent lock (the
+
+complaint was a triple-beep PER LOCK stacking into a siren) and 0819e's *no homing past the
+
+helicopter*. Rounds with no lock still fly the vector they launched on, and §230 now counts the two
+
+populations apart so it still proves that.
+
+⚠ **THE SIREN CANNOT COME BACK BY CONSTRUCTION.** `Audio.SFX.retinaLockBeep` has exactly ONE caller —
+
+the scheduler in `updatePlayerLocks`, rescheduled off the SOONEST pending launch — and a unit that
+
+is still arming queues further launches on the retina it already holds. §21's old "≥3 simultaneous
+
+locks" assertion pinned the stack itself and now counts launches on one retina.
+
+⚠ **THE EVASION IS AN EDGE.** A lock placed mid-roll is not broken by that roll, or every lock landing
+
+in the 5 s roll window would evaporate on frame one.
+
+⚠ **`ovReticleVolley` WAS A SECOND PUSHER OF THE OLD LOCK SHAPE** (`{delay,fired,_visualOnly}`), found
+
+only because the suite crashed on `L.launches is not iterable` at section 20 — rule 3's zero-failure
+
+crash, caught by the COUNT (179). Grep for `playerLocks.push` before changing the lock object again.
+
+⚠ **The helicopter's own `homing` torpedoes keep their authored steering while locked**; the lock
+
+only decides when they stop (`!b._committed` now gates the homing block too).
+
+
+
+Sound: `retinaCharge` once at acquire (TAME min 0.80), `retinaLockBeep` = `nsp_console_beep.mp3`
+
+(TAME min 0.045). `probe_retina_lock_0912q.py` 26/26 — every clause driven in real Chromium, including
+
 a real player round shooting the missile down. Suite §285.
 
 ## 0912r/s — the Razorback is stage 1's miniboss; the Jungle Cruiser goes to stage 3 in ice; ALTBOSS3
@@ -5172,3 +5208,83 @@ Three more of Mike's named combinations, all riding the infusion system rather t
 ⚠⚠ **CORRECTION TO THE 0917 INFUSION NOTE ABOVE: "WARM THE BOLT ART AT GRANT" WAS NOT THE CAUSE OF THE INVISIBLE WRATH BOLTS.** `probe_wrath_0917.py` waited for the reel in real time and still recorded ZERO bolt blits. `updatePlay` hard-clears `zaps` every frame unless Yuri's special is live (`if(!specialActive('yuri')) zaps.length=0`), so every infusion lightning arc and every GODS WRATH bolt died the frame it was born, for every pilot but Yuri mid-special - the damage and the white-out were real, the picture never had bolts. Infusion zaps carry `_inf` and only Yuri's untagged zaps are cleared now: 72 bolt-art asks in the wrath frame. **A "not decoded yet" explanation is a hypothesis until the reel is proven decoded and the sprite is still missing** - this file's own "a key-counting probe is not a pixel probe", one level up.
 
 **0917 - the arcade kill chain.** `killChainStep()` on the STAGE clock (`stageTimer`, never `performance.now`): kills within 1.2s chain x2..x9 on the floater and pay a quarter of the kill per step. ⚠ A probe that reads `run.score` after chained kills measures the kills' own points AND the bonus - subtract the kills before asserting the bonus (it read 950 for a 150 bonus and looked like a wild multiplier).
+
+**0917 - the playtest sweep (`probe_playtest_0917.py`): three probe faults worth keeping.** (1) ONE `evaluate` PER FRAME COST EIGHT MINUTES A STAGE - each round trip renders a software frame; pilot and step run inside one evaluate per 60-frame chunk, with a real pause between chunks for decode. (2) A COUNTER ACCUMULATED AT THE SOURCE IS CUMULATIVE ACROSS STAGES unless reset - stage 4's one infusion drop "appeared" in the stage-5 and stage-9 no-drop controls. (3) JUMPING STAGE 8 -> 9 THROUGH `SETUP` ON ONE PAGE LEFT STAGE 9 WITH 0 ROUNDS AND 0 KILLS while stage 9 alone scored 45 - state a real warp entry never carries. One fresh page per stage. And a `python` writing to a redirected file is BLOCK-BUFFERED - `python -u`, or the log is empty until exit. The sweep's one real finding: the infusion roll behind the 18% kill-drop gate was one pickup per 100 kills.
+
+**0917 — a stage the infusion system could not reach, behind a green assertion.** `infusionEligible()` refused any stage whose `curStage.bg` is `'space'`; **three** stages wear that backdrop and only 5 and 9 hand out the space guns, so stage 8 — ordinary weapons, space wallpaper — dropped nothing for a ninth of the campaign, and the prism bias `INFUSION_STAGE_BIAS` reserves for stage 8 could never fire. ⚠ **The suite's own eligibility assertion passed throughout: it moved `run.stage` and left `curStage` alone, so the branch it was written to cover never ran.** Rule 2 of this file one level in — a green suite proves state, and a *stale* piece of state proves nothing at all; when an assertion covers a branch, set every variable that branch reads. The gate is the WEAPON SET (`spaceWeaponsActive`) plus the explicit 5/9 now, never the wallpaper. ⚠ And `drops > 0` over ~150 kills was a COIN FLIP DRESSED AS A PROOF (1 in 44 per eligible kill: zero one night in twenty) — it drew zero, and chasing that "flake" is what found the real bug. A rare event is measured at its source (`probe_infusion_rate_0917.py`: 4,000 real `dropPowerup` calls a stage, 0 → 513 on stage 8), never re-rolled in a playtest. ⚠ **THIRD TIME "WHAT COUNTS AS SPACE" HAS DISAGREED WITH ITSELF IN THIS FILE** — 0913a's hull asking `gravityMode` while the weapons asked `run.spaceMode`, then the same pair again at `_drawPlayerCore`, now the backdrop standing in for the weapon set. `spaceWeaponsActive()` is the one answer; audited 0917, and the other two `bg === 'space'` reads (the spacecraft explosion kind, the starfield) are genuinely about the wallpaper and are correct.
+
+⚠⚠ **0917 - TWO PROBABILITIES MULTIPLIED WHERE THE CODE READ AS ONE, AND RAISING THE VISIBLE ONE DID NOTHING.** The infusion drop was a roll inside `dropPowerup`, which the two ordinary death paths only reach through their own `chance(0.18*DIFF.dropMul)` loot gate - so the real rate was 0.171 x 0.133 = **2.3% per drop-eligible kill**, and the nine-stage playtest measured **0 infusions across 229 kills** on the build where the constant had just been raised 0.055 -> 0.14. `killDrop(e)` is one funnel for both paths and rolls the infusion on its own, so `INFUSION_DROP_P` is now the rate it claims to be. **When a tuning constant does not move the outcome, find the OTHER gate between it and the event** - and measure the chain (kills -> dropOk -> dropPowerup calls -> pushes), not the endpoint. Measured 120s of real play per stage: 129 kills, 84 dropOk, 18 calls, 2 infusions.
+⚠ **AND `dropOk` IS NOT A PROPERTY OF "AN ENEMY"** - over the same window stage 1 gave 50 drop-eligible kills of 50, stage 2 gave 28 of 43 and stage 3 only **6 of 36**. Any per-kill drop rate reads three different ways on three stages; size it against the stage that offers the fewest.
+
+## 0917 - the economy Mike actually asked for, and a guaranteed reward nobody could catch
+
+Two messages replaced the run-end score bank: 1,000 score = 1 FURIOUS PT converted at the end of
+EVERY level with the remainder carrying; achievement points land in the same balance; a pickup is
+250 and a STYLISH dodge 500; one upgrade ladder from 1,000 at x1.25; and combinations are earned
+from bosses, not discovered in the field. Full writeup: `docs/FORGE_ECONOMY_0917.md`.
+
+**THE COMBINATION COMES OFF THE BOSS.** A combination is ELEMENT x WEAPON SLOT - fire on the machine
+gun is a different thing from fire on the laser - and it lives in the profile beside the Armory's
+levels as `forge_<elem>_<slot>_C`, written with NO `cost`. The Armory sells only the LEVELS of a pair
+you already own; an unearned row is dim, says BOSS DROP and shows no price.
+⚠ **A FIELD PICKUP USED TO LICENSE AN ELEMENT ON ALL NINE SLOTS AT ONCE** - one crate on stage 1
+opening nine combinations, which is exactly the "you dont unlock all these weapon combination
+upgrades" he ruled out. `forgeDiscover` still records what has been SEEN and grants nothing;
+`forgeElemsFor(w)` is what may be combined, and the Forge's element strip is now per SLOT (a global
+list would offer what the screen behind it refuses).
+
+⚠⚠ **"THE PICKUP EXISTS" AND "THE PICKUP IS CATCHABLE" ARE DIFFERENT CLAIMS, AND THE FIRST ONE
+PASSED FOR TWENTY MINUTES WHILE THE REWARD WAS UNOBTAINABLE.** The drop was spawned at `boss.y`, and
+the stage-1 helicopter reports **618.6 on a 512-tall playfield** - its DRAWN position is `boss._drawY`
+- so the cull killed it on the frame it was born. Measured: **0 frames alive**. Every assertion about
+it was green: it existed, it named an unowned pair, it was at the boss's position. The probe that
+found it asks how long the thing stays reachable. It now spawns clamped into the field, descends to a
+hover line and then closes on the player: collected at frame 107 of a fight that stays in PLAY until
+346. ⚠ And that probe's own first cut could not tell COLLECTED from CULLED - both leave `powerups` -
+so it reads the profile to say which.
+
+⚠ **A REWARD MUST NOT ADVANCE A PRICE LADDER.** The ladder counts purchases that carry a `cost`,
+which `furiousBuy` writes and nothing else does, so earning a combination cannot raise the price of
+everything else. And each purchase records the price it PAID, so re-tuning the base or the step later
+cannot re-price what an existing profile already bought.
+
+⚠ **THE STYLISH AWARD IS MEASURABLE BECAUSE THE MANOEUVRE'S I-FRAMES ARE WHAT SPARE YOU.** A roll
+and a somersault both set `player.invuln`, and the enemy-bullet loop returns on `invuln>0` BEFORE it
+tests the hitbox - so "a projectile that would've impacted you" is exactly a round overlapping the
+hitbox during those frames, and the check has to sit IN FRONT of that return. Gated on a live
+manoeuvre, so ordinary post-hit i-frames pay nothing. One award per manoeuvre (flagged on the
+manoeuvre object) - a roll through twenty rounds would otherwise pay more than the level converts.
+⚠ **Its glow is offset copies at the SAME SIZE**: a 1.14x pass centred on the same point puts every
+glyph's edge somewhere different from its core and reads as ghosting, which only the render showed.
+⚠ **And it is drawn through `worldXformEscape`** - the first cut passed `player.x`, a WORLD x, into
+a screen-space draw. Sixth time in this file.
+
+⚠ **THE PICKUP SCORE MOVED INTO `applyPowerup`.** The old 50 was written at the one touch collision
+that awards it, and that collision excludes the crate, the capsule and the missile boxes BY NAME
+while those reach `applyPowerup` from elsewhere - so some collections paid and some did not.
+
+⚠ **A TRIPLE-QUOTED PYTHON ANCHOR CANNOT END IN A QUOTE CHARACTER**, and several of these .cjs
+lines do; build those anchors from pieces. ⚠ And an apostrophe inside a single-quoted JS assertion
+message is a syntax error - this face has no usable apostrophe anyway (0912b).
+
+Probes: `probe_bossdrop_0917.py` 34/0, `probe_armory_0917.py` 32/0, `probe_dropreach_0917.py` (the
+reachability window), all real Chromium with 0 page or console errors. Proof frames in
+`docs/proofs/bossdrop_0917/`. Suite section 372.
+
+⚠ **THE INCOME MODEL ASSUMED AN ACHIEVEMENT THAT DID NOT EXIST.** Mike listed what a player earns on
+Level 1 - "finishing on insanity, hard, normal, easy, defeating the level without dying and earning a
+set amount of points thats 75% of what you could accuimalate if you were to kill all enemies, collect
+as many items, powerups etc." - and the registry had no score award at all, while his whole "1-4
+achievements on Level 1, therefore price an upgrade at 1000" argument rests on one. `stage_score_<n>`
+(STAGE N THOROUGH, 200 pts, nine rows) is it; definitions 66 -> 75.
+⚠ **ITS CEILING IS MEASURED FROM THE STAGE, NEVER HAND-WRITTEN.** `stageStats.scoreMax` accumulates
+what the stage actually put on the field - every enemy's own score at spawn, every pickup at
+PICKUP_SCORE as it appears, the boss bonus - so a wave re-tune cannot rot it. A table of per-stage
+ceilings would go wrong SILENTLY, the award quietly becoming trivial or impossible. Measured on a real
+30 s of stage 1: 19 units, 8 pickups, ceiling 9,240.
+⚠ **AND IT IS HOOKED AT `enemies.push`, NOT BESIDE `stageStats.spawned++`** - the drone path
+increments that counter before its object exists, so the counter is not a safe hook for anything that
+needs `e.score`. Same family as this file's first standing rule about spawnEnemy's several exits.
+⚠ **A CEILING OF ZERO MUST AWARD NOTHING**: `got >= 0 * 0.75` is TRUE, so a debug jump or an empty
+fixture would hand out a free award on a score of zero. `probe_thorough_0917.py` (12/0) drives that arm
+deliberately, along with 74% / exactly 75% / 99%, and a fat score carried in from an earlier level.
