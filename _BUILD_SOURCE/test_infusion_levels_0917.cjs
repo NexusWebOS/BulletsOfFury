@@ -23,7 +23,10 @@ module.exports=function testInfusionLevels(vm,ctxv,ok){
   ok(aura.indexOf('shadowBlur')<0, 'the aura never touches shadowBlur - a baked plate, blitted at an integer origin (0916ab)');
   ok(/createRadialGradient/.test(aura) && /_infGlowCache\[k\]=c/.test(aura), 'the glow is a radial gradient baked ONCE per element x level x size and cached');
   ok(/globalCompositeOperation='lighter'/.test(aura), 'and it composites additively - never a flood (palette/luminance, not overlay)');
-  ok(/if\(b\.kind==='beam'\)/.test(aura) && /infusionColumnPlate\(b\._inf,lv,ww\)/.test(aura) && !/fillRect\(b\.x/.test(aura), 'the beam gets a soft-edged element column plate under the authored beam - never a flat fillRect slab');
+  /* ⚠ this named the LINE, not the rule, and the next drop edited that line (the flame joined the column
+     path). The claim is that a COLUMN weapon takes the column plate and nobody paints a flat slab. */
+  ok(/b\.kind==='beam'/.test(aura) && /b\.kind==='flame'/.test(aura) && /infusionColumnPlate\(b\._inf,lv,ww\)/.test(aura) && !/fillRect\(b\.x/.test(aura),
+     'the COLUMN weapons - the beam and the flame - take a soft-edged element column plate, never a flat fillRect slab');
   ok(/lv>=5/.test(aura) && /moveTo\(b\.x-f,b\.y\)/.test(aura), 'level V adds the four-point core flare');
   /* a plate really comes back, at a size that follows the level */
   ok(R("(function(){ try{ var a=infusionGlowPlate('fire',2,10), b=infusionGlowPlate('fire',5,10), c=infusionGlowPlate('fire',2,10); return !!a&&!!b&&a===c&&a.width===22; }catch(e){ return 'nocanvas'; } })()")!==false,

@@ -15,16 +15,26 @@ module.exports=function testForge(vm,ctxv,ok){
   /* ---- the allowance and the cap are one number each ---- */
   ok(R("FORGE_COMBOS_PER_STAGE===2 && FORGE_RESPECS_PER_STAGE===2 && FORGE_LOADOUT_MAX===6"),
      '2 combines, 2 re-specs, a 6-weapon loadout - his three numbers, one constant each');
-  /* ---- only carriers can be forged, and the muzzles say which those are ---- */
-  ok(R("JSON.stringify(FORGE_WEAPONS)==='[0,1,2,3,5,7]'"),
-     'FORGE_WEAPONS is mg / spread / missiles / laser / orb / chaingun - the slots whose rounds are carriers');
-  ok(R("!forgeCanTake(4) && !forgeCanTake(6) && !forgeCanTake(8)"),
-     'flamethrower, laser mist and the lightning orb CANNOT take an element (their rounds are not carriers)');
+  /* ---- only carriers can be forged, and the muzzles say which those are ----
+     ⚠ THESE TWO PINS DEFENDED A LIMITATION, NOT A RULE (repointed 0917). They asserted six slots and
+     that 4 / 6 / 8 could NOT be forged, on a reading taken from the KIND table rather than from the
+     muzzles. Mike's own equip rule names those three as an upgrade type of their own - "1 flamethrower/
+     ice breath/ other types upgrade" - and measured, all three push real rounds into pBullets and damage
+     through hitEnemy while _dmgBullet still names them. So the durable claim is the one below: every
+     forgeable slot's round kind is a CARRIER, derived from the muzzle, never a hand-written list. */
+  ok(R("JSON.stringify(FORGE_WEAPONS)==='[0,1,2,3,4,5,6,7,8]'"),
+     'FORGE_WEAPONS is every weapon slot - Mike names nine upgrade types, one per weapon');
+  ok(R("FORGE_WEAPONS.every(function(w){ return forgeCanTake(w); }) && !forgeCanTake(99)"),
+     'forgeCanTake answers for each of them, and refuses a slot that does not exist');
+  ok(R("(function(){ var M={0:'mg',1:'spread',2:'missile',3:'beam',4:'flame',5:'orb',6:'lasermist',7:'mg',8:'yuriLightningOrb'};        return FORGE_WEAPONS.every(function(w){ return !!INFUSION_CARRIERS[M[w]]; }); })()"),
+     'and every forgeable slot fires a round kind that is an INFUSION CARRIER - the reason each one qualifies');
+  var ff=strip(R("String(flameFire)"));
+  ok(/kind:\s*'flame'/.test(ff), 'the flamethrower pushes kind flame into pBullets - which is why it reaches the same on-hit hook');
   var cg=strip(R("String(chaingunPlayerFire)"));
   ok(/kind:\s*'mg'/.test(cg), 'the chaingun pushes kind mg, which is why it is forgeable');
   /* ---- every element x forgeable weapon has a NAME ---- */
   ok(R("Object.keys(INFUSIONS).every(function(e){ return FORGE_NAMES[e] && FORGE_WEAPONS.every(function(w){ return typeof FORGE_NAMES[e][w]==='string' && FORGE_NAMES[e][w].length>2; }); })"),
-     'FORGE_NAMES covers all nine elements x all six forgeable weapons');
+     'FORGE_NAMES covers all nine elements x all NINE forgeable weapons (0917)');
   ok(R("FORGE_NAMES.fire[0]==='INCENDIARY SLUGS'"), "Mike's own example is the first row: machine gun + fire = INCENDIARY SLUGS");
   ok(R("Object.keys(INFUSIONS).every(function(e){ return FORGE_WEAPONS.every(function(w){ return FORGE_NAMES[e][w].indexOf(\"'\")<0; }); })"),
      'no forged name carries an apostrophe (this face has no usable one at UI size - LIZZIE,S)');
@@ -42,7 +52,9 @@ module.exports=function testForge(vm,ctxv,ok){
   R("run.forgeCombos=1;");
   ok(R("forgeCombine(0,'ice')==='ok' && run.forge[0].elem==='ice' && run.forge[0].lv===1"),
      'a DIFFERENT element replaces the forged one at level 1 (it takes over)');
-  ok(R("forgeCombine(4,'fire')==='cannot'"), 'the flamethrower refuses with cannot');
+  /* ⚠ slot 4 WAS this assertion's "cannot" case and is forgeable since 0917 - a slot that does not exist
+     is the honest refusal now (the flamethrower's own row is proved by probe_forge_noncarriers_0917.py). */
+  ok(R("forgeCombine(99,'fire')==='cannot'"), 'a weapon slot that does not exist refuses with cannot');
   ok(R("forgeCombine(0,'dark')==='unknown'"), 'a gated element refuses while its gate is shut (dark needs NEW GAME +)');
   ok(R("forgeRespec(0)==='ok' && !run.forge[0] && run.forgeRespecs===1 && !run.infusion && weaponDisplayName(0)==='MACHINE GUN'"),
      'forgeRespec removes the element, spends a re-spec, clears the held element and restores the bare name');

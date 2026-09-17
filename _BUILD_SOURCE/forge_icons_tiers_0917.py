@@ -19,7 +19,7 @@ import forge_icons_slice_0917 as S
 
 ROOT = S.ROOT; OUT = S.OUT; ELEMS = S.ELEMS; FAMILY_H = S.FAMILY_H
 D = os.path.join(ROOT, 'docs', 'proofs', 'forge_icons_0917')
-SHEETS = {0: ('gen_mg', 'mg'), 1: ('gen_spread', 'sp'), 2: ('gen_missile', 'ms'), 3: ('gen_laser', 'lz'), 5: ('gen_orb', 'orb'), 7: ('gen_cg', 'cg')}
+SHEETS = {0: ('gen_mg', 'mg'), 1: ('gen_spread', 'sp'), 2: ('gen_missile', 'ms'), 3: ('gen_laser', 'lz'), 4: ('gen_flame', 'fl'), 5: ('gen_orb', 'orb'), 6: ('gen_mist', 'mi'), 7: ('gen_cg', 'cg'), 8: ('gen_bolt', 'bo')}
 
 def slice_sheet(path, slot, tier):
     im = Image.open(path).convert('RGB')

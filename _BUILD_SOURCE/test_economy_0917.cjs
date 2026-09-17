@@ -44,7 +44,10 @@ module.exports=function testEconomy(vm,ctxv,ok){
   ok(R("forgeLevelBuy('fire',0)==='ok' && forgeOwnedLevel('fire',0)===3"), 'level III next');
   ok(R("forgeLevelBuy('fire',0)==='poor' && forgeOwnedLevel('fire',0)===3"), 'level IV is refused as poor when the balance is short, and nothing changes');
   ok(R("forgeOwnedLevel('fire',1)===1 && forgeOwnedLevel('ice',0)===1"), 'the levels are per WEAPON x ELEMENT - NAPALM FAN and CRYO SLUGS are untouched');
-  ok(R("forgeLevelBuy('fire',4)==='unknown' && forgeLevelBuy('bogus',0)==='unknown'"), 'a weapon that cannot take an element, or an element that does not exist, is unknown');
+  /* ⚠ slot 4 USED TO BE THE "cannot take an element" case here and is forgeable since 0917 (Mike's
+     equip rule names the flamethrower / ice breath as an upgrade type); a slot that does not exist is
+     the honest unknown now. */
+  ok(R("forgeLevelBuy('fire',99)==='unknown' && forgeLevelBuy('bogus',0)==='unknown'"), 'a weapon slot that does not exist, or an element that does not exist, is unknown');
   R("scoreBankDeposit(5000000,'insanity','falva'); scoreBankExchange();");
   ok(R("forgeLevelBuy('fire',0)==='ok' && forgeLevelBuy('fire',0)==='ok' && forgeOwnedLevel('fire',0)===5 && forgeLevelBuy('fire',0)==='maxed'"),
      'IV, then V, then maxed');
@@ -81,7 +84,7 @@ module.exports=function testEconomy(vm,ctxv,ok){
   ok(/armoryOpen\('forge'\)/.test(strip(R("String(drawForge)"))), 'the Forge opens the Armory (RETINA) and it returns to the Forge');
   ok(/_il>INFUSION_PICKUP_MAX/.test(strip(R("String(updatePlay)"))) && /b\.kind!=='beam'/.test(strip(R("String(updatePlay)"))),
      'above the pickup ceiling the round is scaled at its stamp site, and the reused beam is left alone');
-  ok(R("Object.keys(INFUSIONS).every(function(e){ return [0,1,2,3,5,7].every(function(w){ return [2,3,4,5].every(function(l){ return !!XART._src['micon_forge_'+e+'_'+w+'_'+l]; }); }); })"),
-     'every level II..V badge is registered for every element x forgeable weapon (216 keys)');
+  ok(R("Object.keys(INFUSIONS).every(function(e){ return FORGE_WEAPONS.every(function(w){ return [2,3,4,5].every(function(l){ return !!XART._src['micon_forge_'+e+'_'+w+'_'+l]; }); }); })"),
+     'every level II..V badge is registered for EVERY element x forgeable weapon - all nine slots (324 keys of the 405-badge set)');
   R("achievementState=__asSave; run.forge={}; run.infusion=null; run._bankedOnce=false; run._banked=null;");
 };

@@ -131,3 +131,47 @@ Measured (`probe_infusion_levels_0917.py` 12/0, real trigger, real Chromium): IN
 aura plate widths 0/22/26/34/46, trail sparks per 60 frames 0/82/153/206/266; TESLA BEAM I..V - column
 blits 0/60/120/120/120 (II one plate, III+ two), sparks 0/0/0/34/44. Card:
 `docs/proofs/infusion_levels_0917/levels_card.png`.
+
+## All nine weapon types (0917, later still)
+
+Mike's equip rule named nine upgrade types: *"1 machine gun upgrade type, 1 laser upgrade type, 1 orb
+upgrade type, 1 spread upgrade, 1 missile upgrade, 1 flamethrower/ice breath/ other types upgrade."*
+The last clause was the one thing still open - the flamethrower / ice breath (slot 4), laser mist (6)
+and Yuri's lightning orb (8) were listed as CANNOT TAKE AN ELEMENT.
+
+⚠ **That reason was read off the KIND table, not off the muzzles, and it was wrong.** Measured:
+
+| slot | pushes | reaches the hook |
+|---|---|---|
+| 4 flamethrower / ice breath | `{kind:'flame', pierce:true}` into `pBullets` | the loop's flame branch calls `hitEnemy` with `_dmgBullet` set, throttled by `FLAME_TICK`'s ledger - one element hit per enemy per tick, not per frame |
+| 6 laser mist | `{kind:'lasermist'}` | `laserMistTick` is called FROM the bullet loop and calls `hitEnemy`; the lance dies on its hit |
+| 8 lightning orb | `{kind:'yuriLightningOrb'}` / `Bolt` | `yuriLightningOrbTick` likewise, through `hitOnce`, once per target |
+
+So all three already reached `infusionOnHit` through the ONE hook the Forge was built on. `FORGE_WEAPONS`
+is `[0..8]` now, `INFUSION_CARRIERS` names their kinds, and every element x new slot has a name
+(BLAST FURNACE, EMBER MIST, MAGMA SPHERE ...). What they do NOT take is the palette swap - each has its
+own authored draw - so the element rides them as the aura, the trail and the on-hit effect.
+
+- ⚠ **The flame is a COLUMN, not a round.** Its `h` is `flameReach(lv)` (200+px), so the round aura plate
+  would have sized off that and painted a blob the height of the screen. It takes the beam's column path.
+- ⚠ **And the stamp must not overwrite the flame's own `_el`.** `flameFire` re-asserts it every weapon beat
+  and `elementMultiplier` reads it, so a FLAMETHROWER forged with ICE stays a fire weapon that also
+  chills - measured `_el fire, _inf ice`.
+- ⚠ **THE ARMORY'S NEW TABS DREW NOTHING, AND THE GUARDS HID IT.** Both of its row branches built a
+  `micon_forge_*` key and those plates existed only for the six slots whose sheets were generated:
+  measured 0 lit px against the weapon's own working icon at 2349 / 1759 / 2101. `weaponIconKey` takes
+  `{bare:1}` now so the row can ask the ONE resolver for the tier icon instead of rebuilding that logic.
+- ⚠ **And `micon_lasermist_*` is not on `nia_icons`** - `iconBlit` routes it to the mist's own atlas, which
+  returns null until that sheet is warmed. Touching the icon key starts nothing. Both screens warm it.
+  (My own probe hit this first and reported a working icon as 0 px.)
+- ⚠ **Three suite pins DEFENDED THE LIMITATION** (`FORGE_WEAPONS==='[0,1,2,3,5,7]'`, `!forgeCanTake(4)`,
+  `forgeCombine(4,'fire')==='cannot'`) and one more named a LINE the drop then edited (373's beam regex).
+  All repointed with the reason, to the durable claim: every forgeable slot's round kind is a CARRIER.
+
+**The badge set is complete: 9 elements x 9 weapons x 5 levels = 405.** The three new sheets were
+generated against the authored badge strip like the rest, their tiers II-V by `edit_asset_id`.
+Cards: `docs/proofs/forge_icons_0917/slot{4,6,8}_tiers.png`.
+
+Proof: `probe_forge_noncarriers_0917.py` 21/0 (each slot's rounds carry the element and the level, the
+element's own touch lands through the shared hook, the flame takes the column aura and keeps its own
+element), `probe_forge_icons_0917.py` 16/0, `probe_armory_0917.py` 27/0.

@@ -1977,7 +1977,7 @@ const XART=(function(){
      the loose-file cache, so they could not share a tier icon's key. weaponIconKey prefers them
      for a forged slot. */
   for(const _fe of ['fire','ice','lightning','prism','toxic','kinetic','chrome','water','dark'])
-    for(const _fs of [0,1,2,3,5,7]){ X._src['micon_forge_'+_fe+'_'+_fs]='assets/game/ui/forge_0917/micon_forge_'+_fe+'_'+_fs+'.png';
+    for(const _fs of [0,1,2,3,4,5,6,7,8]){ X._src['micon_forge_'+_fe+'_'+_fs]='assets/game/ui/forge_0917/micon_forge_'+_fe+'_'+_fs+'.png';
       for(let _fl=2;_fl<=5;_fl++) X._src['micon_forge_'+_fe+'_'+_fs+'_'+_fl]='assets/game/ui/forge_0917/micon_forge_'+_fe+'_'+_fs+'_'+_fl+'.png'; }
   X._src.fx_ground_strikes_0916='assets/game/shared_targeting_0916/elemental_ground_strikes.png';
   const _yloRoot='assets/game/yuri_lightning_orb_0916/';
@@ -5894,7 +5894,9 @@ function weaponIconKey(w, lv, opt){
   if(typeof spaceWeaponsActive==='function' && spaceWeaponsActive()) return spaceWeaponIconKey();
   /* a FORGED slot wears its element's badge on every surface - the Forge boxes, the HUD, the EQUIPPED
      box, the falling crate (0917). Registered-or-nothing: an unregistered plate keeps the tier icon. */
-  if(typeof forgeEntry==='function'){ const _fe=forgeEntry(w); if(_fe && _fe.elem && XART._src){
+  /* `{bare:1}` asks for the weapon's OWN tier icon, forge or no forge - the ARMORY needs that for a row
+     whose element is not the one currently forged on the slot (0917). */
+  if(!(opt && opt.bare) && typeof forgeEntry==='function'){ const _fe=forgeEntry(w); if(_fe && _fe.elem && XART._src){
     const _fk='micon_forge_'+_fe.elem+'_'+w, _fl=_fe.lv|0;
     if(_fl>1 && XART._src[_fk+'_'+_fl]) return _fk+'_'+_fl;      /* the level's own badge (II..V), when its plate landed */
     if(XART._src[_fk]) return _fk; } }
@@ -7918,7 +7920,15 @@ const INFUSION_PICKUP_MAX=3;        /* a pickup in the field never lifts an elem
 const INFUSION_DROP_P=0.05;
 /* the ORB is a carrier too (Mike: "the water combinations after level 9 where we can now create water orb") -
    the orb weapon's wheel and its shards ride the element like any other round */
-const INFUSION_CARRIERS={mg:1,spread:1,beam:1,missile:1,orb:1,shard:1};
+/* ⚠ READ OFF THE MUZZLES, NOT OFF A MEMORY (0917). The first cut of this table listed six kinds and
+   the Forge told the player that the flamethrower, laser mist and the lightning orb 'CANNOT TAKE AN
+   ELEMENT'. All three push real rounds into pBullets and all three damage through hitEnemy while
+   `_dmgBullet` still names them, so they reach infusionOnHit through the same one hook - the flame on
+   its FLAME_TICK ledger, the mist and the bolt once per target. Mike's own equip rule names them:
+   "1 flamethrower/ice breath/ other types upgrade". They take the element as the aura, the trail and
+   the on-hit effect; each has its own authored draw, so none of them takes the palette swap. */
+const INFUSION_CARRIERS={mg:1,spread:1,beam:1,missile:1,orb:1,shard:1,
+                         flame:1,lasermist:1,yuriLightningOrb:1,yuriLightningBolt:1};
 /* which elements a stage tends to drop - a bias, never a lock, so every element stays reachable */
 const INFUSION_STAGE_BIAS={1:'kinetic',2:'fire',3:'ice',4:'lightning',6:'chrome',7:'toxic',8:'prism'};
 function infusionEligible(){
@@ -8022,9 +8032,12 @@ function infusionColumnPlate(elem,lv,w){
 function infusionAuraDraw(b){
   const lv=clamp(b._infLv|0,2,INFUSION_MAX), I=INFUSIONS[b._inf]; if(!I) return;
   const pulse=0.86+0.14*Math.sin((b.t||0)*22+(b.x|0));
-  if(b.kind==='beam'){
-    /* the element COLUMN under the authored beam, widening with the level; the authored plate draws over it */
+  if(b.kind==='beam'||b.kind==='flame'){
+    /* the element COLUMN under the authored beam or flame, widening with the level; the authored plate
+       draws over it. ⚠ THE FLAME IS A COLUMN AND ITS h IS flameReach(lv) - 200+px - so the round plate
+       would size off that and paint a blob the height of the screen (0917). */
     const top=(b.top!=null?b.top:PLAY.y), bot=(b.bot!=null?b.bot:(player.y-14)), bw=Math.max(6,b.w||14);
+    if(!(Math.abs(bot-top)>1)) return;
     const ww=bw*(1.5+0.45*(lv-2))*pulse, a=INF_AURA_ALPHA[lv]*0.7, y0=Math.min(top,bot), hh=Math.abs(bot-top);
     /* ⚠ A SOFT-EDGED PLATE, NEVER A FLAT fillRect: a flat slab beside the authored beam reads as an overlay,
        which is the one thing this file's palette rule forbids. The plate is a horizontal gradient baked once
@@ -8084,19 +8097,24 @@ function infusionAuraDraw(b){
    ELEMENT rather than silently allowed.
    ============================================================ */
 const FORGE_COMBOS_PER_STAGE=2, FORGE_RESPECS_PER_STAGE=2, FORGE_LOADOUT_MAX=6;
-const FORGE_WEAPONS=Object.freeze([0,1,2,3,5,7]);
+/* 0917: 4 (flamethrower / ice breath), 6 (laser mist) and 8 (the lightning orb) joined once their
+   rounds were measured to be carriers - Mike's equip rule names them as an upgrade type of their own. */
+const FORGE_WEAPONS=Object.freeze([0,1,2,3,4,5,6,7,8]);
+/* the ARMORY's tab strip gets nine columns now, so a tab wears a SHORT name; the box under the Forge's
+   own loadout still uses the full one (WEAPONS / weaponDisplayName). */
+const FORGE_TAB_NAME=Object.freeze({0:'MG',1:'SPREAD',2:'MISSILE',3:'LASER',4:'FLAME',5:'ORB',6:'MIST',7:'CHAIN',8:'BOLT'});
 /* the forged weapon's NAME - element x slot. Mike's own example is the first row:
    "machine gun now becomes incendary slugs". A pair with no row falls back to ELEMENT + WEAPON. */
 const FORGE_NAMES=Object.freeze({
-  fire:     {0:'INCENDIARY SLUGS', 1:'NAPALM FAN',    2:'HELLFIRE RACK',  3:'INFERNO BEAM',   5:'MAGMA ORB',    7:'INFERNO GATLING'},
-  ice:      {0:'CRYO SLUGS',       1:'SHARD FAN',     2:'FROSTBITE RACK', 3:'CRYO BEAM',      5:'GLACIER ORB',  7:'HAIL GATLING'},
-  lightning:{0:'VOLT SLUGS',       1:'ARC FAN',       2:'STORM RACK',     3:'TESLA BEAM',     5:'THUNDER ORB',  7:'STORM GATLING'},
-  prism:    {0:'PRISM SLUGS',      1:'SPECTRUM FAN',  2:'PRISM RACK',     3:'LUMINAIRE BEAM', 5:'PRISM ORB',    7:'PRISM GATLING'},
-  toxic:    {0:'VENOM SLUGS',      1:'ACID FAN',      2:'BLIGHT RACK',    3:'DECAY BEAM',     5:'PLAGUE ORB',   7:'VENOM GATLING'},
-  kinetic:  {0:'SONIC SLUGS',      1:'SHOCK FAN',     2:'IMPACT RACK',    3:'GIANT BEAM',     5:'KINETIC ORB',  7:'HAMMER GATLING'},
-  chrome:   {0:'MIRROR SLUGS',     1:'CHROME FAN',    2:'MIRROR RACK',    3:'CHROME BEAM',    5:'MIRROR ORB',   7:'CHROME GATLING'},
-  water:    {0:'TIDAL SLUGS',      1:'GEYSER FAN',    2:'TORRENT RACK',   3:'HYDRO BEAM',     5:'WATER ORB',    7:'TORRENT GATLING'},
-  dark:     {0:'VOID SLUGS',       1:'VOID FAN',      2:'VOID RACK',      3:'VOID BEAM',      5:'VOID ORB',     7:'VOID GATLING'}
+  fire:     {0:'INCENDIARY SLUGS', 1:'NAPALM FAN',    2:'HELLFIRE RACK',  3:'INFERNO BEAM',   5:'MAGMA ORB',    7:'INFERNO GATLING', 4:'BLAST FURNACE', 6:'EMBER MIST',  8:'MAGMA SPHERE'},
+  ice:      {0:'CRYO SLUGS',       1:'SHARD FAN',     2:'FROSTBITE RACK', 3:'CRYO BEAM',      5:'GLACIER ORB',  7:'HAIL GATLING', 4:'ABSOLUTE ZERO', 6:'FROST MIST',  8:'HAIL SPHERE'},
+  lightning:{0:'VOLT SLUGS',       1:'ARC FAN',       2:'STORM RACK',     3:'TESLA BEAM',     5:'THUNDER ORB',  7:'STORM GATLING', 4:'PLASMA JET',    6:'STORM MIST',  8:'TESLA SPHERE'},
+  prism:    {0:'PRISM SLUGS',      1:'SPECTRUM FAN',  2:'PRISM RACK',     3:'LUMINAIRE BEAM', 5:'PRISM ORB',    7:'PRISM GATLING', 4:'SPECTRUM JET',  6:'PRISM MIST',  8:'PRISM SPHERE'},
+  toxic:    {0:'VENOM SLUGS',      1:'ACID FAN',      2:'BLIGHT RACK',    3:'DECAY BEAM',     5:'PLAGUE ORB',   7:'VENOM GATLING', 4:'VENOM JET',     6:'BLIGHT MIST', 8:'PLAGUE SPHERE'},
+  kinetic:  {0:'SONIC SLUGS',      1:'SHOCK FAN',     2:'IMPACT RACK',    3:'GIANT BEAM',     5:'KINETIC ORB',  7:'HAMMER GATLING', 4:'PRESSURE JET',  6:'SHOCK MIST',  8:'IMPACT SPHERE'},
+  chrome:   {0:'MIRROR SLUGS',     1:'CHROME FAN',    2:'MIRROR RACK',    3:'CHROME BEAM',    5:'MIRROR ORB',   7:'CHROME GATLING', 4:'CHROME JET',    6:'MIRROR MIST', 8:'MIRROR SPHERE'},
+  water:    {0:'TIDAL SLUGS',      1:'GEYSER FAN',    2:'TORRENT RACK',   3:'HYDRO BEAM',     5:'WATER ORB',    7:'TORRENT GATLING', 4:'STEAM JET',     6:'TIDAL MIST',  8:'GEYSER SPHERE'},
+  dark:     {0:'VOID SLUGS',       1:'VOID FAN',      2:'VOID RACK',      3:'VOID BEAM',      5:'VOID ORB',     7:'VOID GATLING', 4:'VOID JET',      6:'VOID MIST',   8:'VOID SPHERE'}
 });
 function forgeEntry(w){ return (run && run.forge && run.forge[w]) ? run.forge[w] : null; }
 function forgeName(w){
@@ -33872,7 +33890,9 @@ function updatePlay(dt){
     if(b._inf===undefined||b.kind==='beam'){
       b._inf=(typeof infusionActive==='function'&&infusionActive()&&infusionCarrier(b)&&!b._enemyReflected)?run.infusion.elem:null;
       b._infLv=b._inf?(run.infusion.lv|0):0;   /* the LEVEL rides the round too (0917): the aura and the trail read it */
-      if(b._inf==='fire') b._el='fire'; else if(b._inf==='ice') b._el='ice';
+      /* ⚠ NEVER ON THE FLAME: flameFire re-asserts _el every weapon beat and elementMultiplier reads
+         it, so a FLAMETHROWER forged with ice must stay a fire weapon that also chills (0917). */
+      if(b.kind!=='flame'){ if(b._inf==='fire') b._el='fire'; else if(b._inf==='ice') b._el='ice'; }
       /* THE ARMORY'S LEVELS RIDE THE ROUND (0917): above the pickup ceiling every level grows the round and
          its damage a step - a change you can measure, not a colour. The beam is one reused object that sets
          its own width every shot (kinetic reads beam.w), so it is left alone. */
@@ -61794,7 +61814,11 @@ let armory=null;
 function armoryOpen(back){
   armory={tab:0,i:0,scroll:0,t:0,msg:'',msgT:0,back:back||'vault'};
   try{ if(typeof XART!=='undefined'){ XART.rdy('statpanel_full_0916');
-    for(const e of Object.keys(INFUSIONS)) for(const w of FORGE_WEAPONS) for(let l=1;l<=INFUSION_MAX;l++) XART.rdy('micon_forge_'+e+'_'+w+(l>1?'_'+l:'')); } }catch(_ao){}
+    for(const e of Object.keys(INFUSIONS)) for(const w of FORGE_WEAPONS) for(let l=1;l<=INFUSION_MAX;l++) XART.rdy('micon_forge_'+e+'_'+w+(l>1?'_'+l:''));
+    /* ⚠ micon_lasermist_* IS NOT ON nia_icons - iconBlit routes it to the mist's own atlas, which stays
+       null until that sheet is warmed. Touching the icon key starts nothing (0916's unlock page). */
+    for(let l=1;l<=5;l++){ XART.rdy('micon_firewall_'+l); XART.rdy('micon_icebreath_'+l); XART.rdy('micon_lightningorb_'+l); XART.rdy('micon_lasermist_'+l); }
+    if(typeof laserMistWarm==='function') laserMistWarm(); } }catch(_ao){}
 }
 function armorySay(m){ if(armory){ armory.msg=m; armory.msgT=2.2; } }
 function armoryRows(w){
@@ -61836,7 +61860,7 @@ function drawArmory(dt){
     const on=(i===A.tab), bx=tx0+i*tw;
     ctx.save(); ctx.fillStyle=on?'rgba(255,210,74,0.16)':'rgba(16,18,26,0.55)'; ctx.fillRect(bx+1,tabY,tw-2,tabH);
     ctx.strokeStyle=on?'#ffd24a':'#3c4354'; ctx.lineWidth=1; ctx.strokeRect(bx+1.5,tabY+0.5,tw-3,tabH-1); ctx.restore();
-    if(art){ const lb=String(WEAPONS[FORGE_WEAPONS[i]]||'').toUpperCase();
+    if(art){ const lb=String(FORGE_TAB_NAME[FORGE_WEAPONS[i]]||WEAPONS[FORGE_WEAPONS[i]]||'').toUpperCase();
       const fh=(typeof stageFitH==='function')?stageFitH(art,lb,tw-8,8,6,0.06):8;
       stageText(art,lb,bx+tw/2,tabY+tabH/2,fh,on?'#ffd24a':'#7f8899',0.85,1,0.06); }
   }
@@ -61857,7 +61881,16 @@ function drawArmory(dt){
     /* the badge at the level owned - the same key weaponIconKey answers once the weapon is forged */
     const ik='micon_forge_'+r.elem+'_'+w+(r.lv>1?'_'+r.lv:''), ih=rh*0.82, ix=x0+wdt*0.012+ih/2, iy=ry+rh/2;
     ctx.save(); ctx.globalAlpha=r.open?1:0.35;
-    if(typeof iconBlit==='function'){ if(XART.rdy(ik)) iconBlit(ctx,ik,ix,iy,ih,true); else if(XART.rdy('micon_forge_'+r.elem+'_'+w)) iconBlit(ctx,'micon_forge_'+r.elem+'_'+w,ix,iy,ih,true); }
+    /* ⚠ THE LAST FALLBACK IS THE WEAPON'S OWN TIER ICON, AND IT IS NOT OPTIONAL. Both branches used to
+       build a micon_forge_* key, and those plates exist only for the six slots whose sheets were
+       generated - so every row on the FLAME, MIST and BOLT tabs drew a hole while the weapon's own icon
+       sat there working (measured: 0 lit px against 2349 / 1759 / 2101). */
+    if(typeof iconBlit==='function'){
+      const _bk=(typeof weaponIconKey==='function')?weaponIconKey(w,Math.max(1,Math.min(5,r.lv|0)),{bare:1}):null;
+      if(XART.rdy(ik)) iconBlit(ctx,ik,ix,iy,ih,true);
+      else if(XART.rdy('micon_forge_'+r.elem+'_'+w)) iconBlit(ctx,'micon_forge_'+r.elem+'_'+w,ix,iy,ih,true);
+      else if(_bk) iconBlit(ctx,_bk,ix,iy,ih,true);
+    }
     ctx.restore();
     if(!art) continue;
     const pad=wdt*0.035+ih, lh=Math.min(rh*0.40,10);
@@ -71031,6 +71064,8 @@ function drawUnlocks(dt){
 const FORGE_ROWS={ box:{x:0.0818, y:0.3300, w:0.8364, h:0.2450}, elems:{x:0.0818, y:0.5720, w:0.8364, h:0.2400} };
 let forge=null;
 function forgeStart(onDone){
+  /* the loadout can hold the LASER MIST, whose icon needs its own sheet warmed or the box is a hole (0917) */
+  try{ if(typeof laserMistWarm==='function') laserMistWarm(); for(let _l=1;_l<=5;_l++) XART.rdy('micon_lasermist_'+_l); }catch(_fw){}
   if(!run.forge) run.forge={};
   if(!run.forgeElems) run.forgeElems={};
   run.forgeCombos=FORGE_COMBOS_PER_STAGE; run.forgeRespecs=FORGE_RESPECS_PER_STAGE;
