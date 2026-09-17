@@ -165,6 +165,18 @@
         g.save(); g.shadowColor='#ffb24a'; g.shadowBlur=6;
         try { if(typeof iconBlit==='function') drew = iconBlit(g, ik, cx, cy, H*0.56, true); }
         catch(e){ drew = null; }
+        /* THE INFUSION BADGE (0917): the element riding the held weapon, top-right of the icon,
+           with its level as pips. A layer on the gun, drawn as a layer on the icon. */
+        try{ if(typeof infusionActive==='function' && infusionActive() && typeof INFUSIONS!=='undefined'){
+          var I=INFUSIONS[run.infusion.elem], bx=cx+H*0.22, by=cy-H*0.22, bs=H*0.22;
+          g.save(); g.shadowColor=I.glow; g.shadowBlur=8;
+          var bd=null; try{ bd=iconBlit(g,'inf_'+run.infusion.elem,bx,by,bs,true); }catch(e2){ bd=null; }
+          if(bd==null){ g.translate(bx,by); g.rotate(Math.PI/4); g.fillStyle=I.body; g.fillRect(-bs/2,-bs/2,bs,bs);
+            g.fillStyle='#fff'; g.globalAlpha=0.85; g.fillRect(-bs/5,-bs/5,bs*0.4,bs*0.4); g.globalAlpha=1;
+            g.strokeStyle='#101018'; g.lineWidth=1.5; g.strokeRect(-bs/2,-bs/2,bs,bs); g.rotate(-Math.PI/4); g.translate(-bx,-by); }
+          g.shadowBlur=0; g.fillStyle=I.glow;
+          for(var pi=0; pi<(run.infusion.lv|0); pi++){ g.fillRect(bx+bs*0.7+pi*4, by-bs*0.5+pi*0, 3, 3); }
+          g.restore(); } }catch(e3){}
         if(drew==null){
           var alt = (wt==='iceorb') ? 'ice' : wt;
           var cands = [alt+'_icon_'+wlv, alt+'_icon_1', alt+'_icon'];

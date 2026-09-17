@@ -1,0 +1,45 @@
+{
+  "drop": "0917",
+  "subject": "weapon infusions - the combination system",
+  "probe": {
+    "file": "_BUILD_SOURCE/probe_infusion_0917.py",
+    "ok": 31,
+    "fail": 0,
+    "errors": 0
+  },
+  "suite": {
+    "file": "_BUILD_SOURCE/test_fl.js",
+    "ok": 4712,
+    "fail": 57,
+    "section": 367,
+    "baseline": "9f64e731 4,647-4,648 / 56-57",
+    "new_failure_names": [],
+    "note": "57th name is the documented order-dependent sand-tank fixture, reproduced on the unmodified baseline"
+  },
+  "elements": [
+    "fire",
+    "ice",
+    "lightning",
+    "prism",
+    "toxic",
+    "kinetic",
+    "water",
+    "dark"
+  ],
+  "gates": {
+    "stages": [
+      5,
+      9
+    ],
+    "space_bg": true,
+    "water": "laserMistIsUnlocked",
+    "dark": "run.ngplus"
+  },
+  "art": "assets/game/ui/infusion_0917/inf_<elem>.png (SpriteCook k2 sheet; k1 baked prompt words and was rejected)",
+  "proofs": [
+    "docs/proofs/infusion_0917/01_fire_rounds.png",
+    "docs/proofs/infusion_0917/02_gods_wrath.png",
+    "docs/proofs/infusion_0917_icons.png"
+  ],
+  "doc": "docs/INFUSIONS_0917.md"
+}

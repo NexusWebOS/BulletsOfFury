@@ -5132,3 +5132,14 @@ usable apostrophe at UI size**, `LIZZIE'S` renders as `LIZZIE,S`. Reworded witho
 key press: refused while poor with the shortfall named, refused on a pending row with the balance
 untouched, then bought - the points leaving and INSANITY appearing on the difficulty screen as a
 result. Suite **4,695 ok / 57 fail**, section 366 27/27, no new failure names.
+
+## 0917 - infusions: the element rides the round, and one hook fires it
+
+Mike's overnight brief: elemental combinations on the orbs, lasers, missiles and pellet weapons, off on stages 5 and 9. `INFUSIONS` (fire/ice/lightning/prism/toxic/kinetic/water/dark) layers an element on whatever CARRIER is held - it is not a weapon slot. Stamped once as `b._inf` the first frame the round is live, fired from ONE hook in `_hitEnemyCore` where `_dmgBullet` already names the round. Three levels; level 3 is the NAMED combination (FIREBURST, GLACIAL STRIKE, GODS WRATH, PRISM WAVE, ERADICATION, SONIC WAVE, GEYSER, VOID). Death clears it with the gun. Water opens on `laserMistIsUnlocked`, dark on `run.ngplus`. `docs/INFUSIONS_0917.md`, section 367, `probe_infusion_0917.py` 31/0.
+- **EVERY EFFECT REUSES A MECHANISM THE GAME ALREADY HAD** - fire is `dkBurnTick`'s `_burn`, ice stacks `_frozen`, lightning IS `chainZap`. A second burn beside the first is the 0810q two-flags-one-name bug.
+- **THE ON-HIT HOOK MUST NOT RE-ENTER ITSELF.** `chainZap` calls `hitEnemy` while `_dmgBullet` is still the infused round; without `_infBusy` a lightning hit arcs, the arc hits, the hit arcs again. Guarded, released in `finally`.
+- **PRISM SHARDS SPAWNED AT THE TARGET WERE EATEN BY IT THE SAME FRAME** - the probe counted ZERO shards on a build pushing five. They start past the target along the round's heading now, stamped `_inf:null` so they never split again.
+- **THREE PROBE FAULTS, ALL MINE:** the target drones were SHOOTING the pilot, so the pickup test ran on a corpse and the death test passed on an infusion never granted (`shoots=false`, `player.dead=false`); a 12-frame window for a round that arrives on frame ~12; and demanding every `p87Body` call be fire when the MUZZLE FLASH legitimately draws through it with none.
+- **WARM THE BOLT ART AT GRANT.** `XART.rdy` is false on its first call, so the first god's wrath of a run drew sixteen bolts through the thin fallback. The synchronous probe still cannot decode it; the proof shows the white-out and the struck hostiles.
+- **A VARIATION CAN BAKE THE PROMPT'S OWN WORDS INTO THE ART** (k1: `FLAME`, `ICE CRYSTAL`) - the 0916 medal-sheet trap again. Read before slicing.
+- **ARCADE KILL POINTS** (`killFeedback`): `+N` floaters through `stageText`, pop then settle, hotter colour and BIG at 1000+; `probe_killpoints_0917.py` 10/0. ENG-05 means a 9999 hit does not kill a fresh hull - a probe kill is two hits BY DESIGN.

@@ -2038,6 +2038,11 @@ const XART=(function(){
      under those names would be silently ignored and the screen would go on drawing the old plates. */
   for(const _d of ['easy','normal','hard','furious','insanity'])
     X._src['diff_'+_d+'_0916']='assets/game/ui/diff_0916/diff_'+_d+'.png';
+  /* the eight infusion badges (0917), one sheet sliced on its own alpha gutters so they share a ring
+     and a bevel. ⚠ THE FIRST VARIATION BAKED THE PROMPT'S OWN WORDS INTO THE BADGES ("FLAME",
+     "ICE CRYSTAL"...) - the 0916 medal-sheet trap, read before slicing, the other variation shipped. */
+  for(const _e of ['fire','ice','lightning','prism','toxic','kinetic','water','dark'])
+    X._src['inf_'+_e]='assets/game/ui/infusion_0917/inf_'+_e+'.png';
   /* THE WHOLE TITLE MENU, REGENERATED AS ONE SHEET (Mike, 0916: "Regenerate all my other buttons
      here to match the current style of Bullets of Fury and proper reference of ships and pilots
      please. The help button also is too large compared to the rest.").
@@ -7829,6 +7834,197 @@ const FURIOUS_SHOP=Object.freeze({
   vault_coleforge:{name:'COLEFORGE - THE OTHER GAMES',cost:400,kind:'media',media:null,
                  blurb:'EVERYTHING ELSE IN THE FORGE.',pending:'AWAITING FOOTAGE FROM MIKE'}
 });
+/* ============================================================
+   WEAPON INFUSIONS - the combination system (Mike, 0917)
+   "toy around with being able to toy around with the orbs, lasers, missiles and pellet based
+   weapons. Combinations could be incendiary bullets, lightning bullets, ice bullets or lasers or
+   missiles. This does not apply to level 5 or level 9, space levels are in-eligible."
+
+   An INFUSION is an element layered on whatever CARRIER the pilot is holding - the machine gun,
+   the spread, the laser, the chaingun, the missiles. It rides the round as `b._inf` and fires
+   from ONE hook inside _hitEnemyCore, where `_dmgBullet` already names the live round. It is not
+   a weapon slot: it never changes what you are holding, it changes what the round does when it
+   lands, and what it looks like on the way.
+
+   \u26a0 EVERY EFFECT REUSES A MECHANISM THE GAME ALREADY HAS. Fire sets `e._burn`, which is the
+   incendiary shotgun's own burn (dkBurnTick); ice stacks `e._frozen`, the ice weapon's own freeze
+   counter (three shatters); lightning is chainZap, Yuri's own arc. A second burn system beside the
+   first is how a codebase ends up with two flags sharing one name (0810q).
+
+   \u26a0 THE ON-HIT HOOK MUST NOT RE-ENTER ITSELF. chainZap calls hitEnemy on the arc's target
+   while `_dmgBullet` is STILL the infused round, so without `_infBusy` a lightning hit would arc,
+   the arc would hit, the hit would arc again - a chain that only stops when the hitset runs out.
+
+   Three levels per element. Picking the same element again raises it; a different element
+   replaces it at level 1. Level 3 is the NAMED combination from Mike's list. Death clears it, the
+   same way death drops the gun.
+   ============================================================ */
+const INFUSIONS=Object.freeze({
+  fire:     {name:'INCENDIARY', body:'#ff6a1e', glow:'#ff3b1e', el:'fire',  named:{3:'FIREBURST'}},
+  ice:      {name:'GLACIAL',    body:'#9fdcff', glow:'#4fc3ff', el:'ice',   named:{3:'GLACIAL STRIKE'}},
+  lightning:{name:'VOLTAIC',    body:'#ffe03a', glow:'#fff29a', el:null,    named:{3:'GODS WRATH'}},
+  prism:    {name:'PRISM',      body:'#e0b3ff', glow:'#ffffff', el:null,    named:{2:'LUMINAIRE',3:'PRISM WAVE'}},
+  toxic:    {name:'TOXIC',      body:'#8de23a', glow:'#3aff5a', el:null,    named:{3:'ERADICATION'}},
+  kinetic:  {name:'KINETIC',    body:'#dfe8ff', glow:'#8ab4ff', el:null,    named:{3:'SONIC WAVE'}},
+  /* gated: water opens once the last stage has been beaten (the same signal that opens LASER
+     MIST); dark matter is New Game + only */
+  water:    {name:'TIDAL',      body:'#3fa7ff', glow:'#7fe0ff', el:'water', named:{3:'GEYSER'},  gate:'water'},
+  dark:     {name:'DARK MATTER',body:'#5a2a8a', glow:'#b46cff', el:null,    named:{3:'VOID'},    gate:'ngplus'}
+});
+const INFUSION_MAX=3;
+const INFUSION_CARRIERS={mg:1,spread:1,beam:1,missile:1};
+/* which elements a stage tends to drop - a bias, never a lock, so every element stays reachable */
+const INFUSION_STAGE_BIAS={1:'kinetic',2:'fire',3:'ice',4:'lightning',6:'lightning',7:'toxic',8:'prism'};
+function infusionEligible(){
+  if(typeof spaceWeaponsActive==='function' && spaceWeaponsActive()) return false;
+  const st=(run&&run.stage)|0;
+  if(st===5||st===9) return false;
+  if(typeof curStage!=='undefined' && curStage && curStage.bg==='space') return false;
+  return true;
+}
+function infusionGateOpen(elem){
+  const g=(INFUSIONS[elem]||{}).gate;
+  if(!g) return true;
+  if(g==='water') return (typeof laserMistIsUnlocked==='function'&&laserMistIsUnlocked());
+  if(g==='ngplus') return !!(run&&run.ngplus);
+  return false;
+}
+function infusionPool(){ return Object.keys(INFUSIONS).filter(infusionGateOpen); }
+function infusionRoll(){
+  const pool=infusionPool(); if(!pool.length) return null;
+  const bias=INFUSION_STAGE_BIAS[(run&&run.stage)|0];
+  if(bias && pool.indexOf(bias)>=0 && Math.random()<0.45) return bias;
+  return pool[(Math.random()*pool.length)|0];
+}
+function infusionActive(){ return !!(run&&run.infusion&&INFUSIONS[run.infusion.elem]); }
+function infusionCarrier(b){ return !!(b && INFUSION_CARRIERS[b.kind]); }
+function infusionLabel(elem,lv){
+  const I=INFUSIONS[elem]; if(!I) return '';
+  const nm=(I.named&&I.named[lv])||null;
+  return nm ? nm : (I.name+' '+(elem==='fire'||elem==='ice'||elem==='lightning'||elem==='kinetic'?'ROUNDS':'SHOT'));
+}
+let wrathFlash=0;
+function infusionGrant(elem){
+  if(!INFUSIONS[elem]) return null;
+  /* ⚠ THE BOLT ART IS WARMED HERE, NOT WHEN THE FIRST BOLT IS DRAWN. XART.rdy is false on its
+     first call and that call is what starts the load, so the first god's wrath of a run drew every
+     bolt through the thin fallback line - sixteen zaps in the state and nothing readable on screen. */
+  if(elem==='lightning'&&typeof XART!=='undefined'){ try{ XART.rdy('chain_bolt_0'); XART.rdy('nchp_0'); for(let i=1;i<9;i++) XART.rdy('chain_bolt_'+i); }catch(_w){} }
+  if(!run.infusion || run.infusion.elem!==elem) run.infusion={elem:elem,lv:1,hits:0};
+  else run.infusion.lv=Math.min(INFUSION_MAX,(run.infusion.lv|0)+1);
+  const lv=run.infusion.lv;
+  const txt=infusionLabel(elem,lv)+(INFUSIONS[elem].named&&INFUSIONS[elem].named[lv]?'!':' L'+lv);
+  if(typeof arcadeBanner==='function') arcadeBanner(txt);
+  try{ Audio.SFX.powerup&&Audio.SFX.powerup(); }catch(_ig){}
+  return run.infusion;
+}
+function infusionClear(){ if(run) run.infusion=null; }
+let _infBusy=false;
+/* the god's-wrath burst: every hostile on screen struck from the sky at once, and several large
+   blasts - Mike: "Massive lightning burst across the entire screen with several large lightning
+   based explosive effects" */
+function godsWrath(x,y){
+  const L=camLeftX(), R=camRightX(); let n=0;
+  for(const e of enemies){ if(e.dead||e._dyingT!=null) continue; if(e.x<L-20||e.x>R+20) continue;
+    zaps.push({x1:e.x+rnd(-30,30),y1:-10,x2:e.x,y2:e.y,t:0.26}); e._zapFlash=0.3;
+    hitEnemy(e, 14); n++; }
+  for(let i=0;i<5;i++){ const bx=rnd(L+40,R-40), by=rnd(60,VH-120);
+    zaps.push({x1:bx+rnd(-40,40),y1:-10,x2:bx,y2:by,t:0.3});
+    explode(bx,by,rnd(26,40),'blue','fireball'); }
+  shake=Math.max(shake||0,10); wrathFlash=0.42;              /* the sky goes white for a beat */
+  try{ (Audio.SFX.chainShoot||Audio.SFX.shoot)(); }catch(_gw){}
+  if(typeof floatText==='function') floatText(x,y-30,'GODS WRATH','#ffe03a');
+  return n;
+}
+/* the element's touch, applied once per hit - `lv` scales it, `b` is the live round */
+function infusionOnHit(e,b,dmg){
+  if(_infBusy||!e||!b||!b._inf) return;
+  const I=INFUSIONS[b._inf]; if(!I) return;
+  const lv=(run.infusion&&run.infusion.elem===b._inf)?(run.infusion.lv|0):1;
+  _infBusy=true;
+  try{
+    if(b._inf==='fire'){
+      e._burn=Math.max(e._burn||0, DK_BURN_TIME*(0.7+0.3*lv));
+      if(lv>=3 && !b._burst){ b._burst=1; explode(e.x,e.y,22,'red','fireball');
+        for(const o of enemies){ if(o===e||o.dead||o._dyingT!=null) continue;
+          if(dist2(o.x,o.y,e.x,e.y)<64*64){ hitEnemy(o, Math.max(2,dmg*0.5)); o._burn=Math.max(o._burn||0,DK_BURN_TIME*0.7); } } }
+    } else if(b._inf==='ice'){
+      e.vx*=0.55; e.vy*=0.55; e._frzFlash=0.14;
+      e._infHits=(e._infHits|0)+1;
+      const every = lv>=3?1:(lv===2?2:3);
+      if(e._infHits%every===0){ e._frozen=(e._frozen||0)+1; }
+    } else if(b._inf==='lightning'){
+      e._zapFlash=0.2;
+      chainZap(e.x,e.y, lv-1, [e]);
+      if(lv>=3 && e.hp<=0 && Math.random()<0.14) godsWrath(e.x,e.y);
+    } else if(b._inf==='prism'){
+      if(!b._split){ b._split=1;
+        const n = lv>=3?5:(lv===2?3:2), a0=Math.atan2(b.vy||-1,b.vx||0);
+        /* ⚠ THE SHARDS START ON THE FAR SIDE OF THE TARGET, NOT ON IT. Spawned at (e.x,e.y)
+           they sat inside the hitbox that had just been struck and were eaten by it the same frame -
+           the probe counted zero shards in flight on a build that was pushing five. Refraction
+           continues PAST the thing it hit, which is also where the shards belong. */
+        const push=(Math.max(e.w||20,e.h||20)/2)+8;
+        for(let i=0;i<n;i++){ const a=a0+(i-(n-1)/2)*0.42;
+          pBullets.push({x:e.x+Math.cos(a0)*push,y:e.y+Math.sin(a0)*push,vx:Math.cos(a)*6.5,vy:Math.sin(a)*6.5,w:4,h:9,dmg:Math.max(1,Math.round(dmg*0.4)),
+                         kind:'spread',lv:1,t:0,_inf:null,_child:true,_prism:true}); } }
+    } else if(b._inf==='toxic'){
+      e._poison=Math.max(e._poison||0, 2.2+0.6*lv); e._poisonLv=lv;
+    } else if(b._inf==='kinetic'){
+      const kb=4+3*lv; e.y-=kb; e.x+=(e.x>=b.x?1:-1)*kb*0.35;
+      if(lv>=3 && (b._kin=(b._kin|0)+1)===1){ particles.push({x:e.x,y:e.y,vx:0,vy:0,t:0,life:.35,r:14,flashring:true,color:'#8ab4ff'}); }
+    } else if(b._inf==='water'){
+      e._soaked=2.5;                                   /* a soaked unit takes lightning harder */
+      e.vy*=0.7;
+      if(lv>=3 && e.hp<=0) geyserSpawn(e.x,e.y,'water');
+    } else if(b._inf==='dark'){
+      for(const o of enemies){ if(o===e||o.dead||o._dyingT!=null) continue;
+        const d=Math.hypot(o.x-e.x,o.y-e.y); if(d>1&&d<90){ o.x+=(e.x-o.x)/d*3.5; o.y+=(e.y-o.y)/d*3.5; } }
+      if(lv>=3 && e.hp<=0) voidSpawn(e.x,e.y);
+    }
+  } finally { _infBusy=false; }
+}
+/* poison ticks beside the burn, from the same enemy loop; a poisoned kill at ERADICATION spreads */
+function poisonTick(e,dt){
+  if(!e||!(e._poison>0)) return;
+  e._poison-=dt; e._poisonTick=(e._poisonTick||0)-dt;
+  if(e._poisonTick<=0){ e._poisonTick=0.4;
+    const was=e.hp; hitEnemy(e, 2);
+    if(chance(0.7)) particles.push({x:e.x+rnd(-e.w*0.3,e.w*0.3),y:e.y+rnd(-e.h*0.3,e.h*0.3),vx:rnd(-0.3,0.3),vy:rnd(-0.9,-0.2),life:rnd(0.3,0.6),t:0,r:rnd(1.2,2.4),color:chance(0.5)?'#8de23a':'#3aff5a'});
+    if((e._poisonLv|0)>=3 && was>0 && (e.hp<=0||e._dyingT!=null)){
+      for(const o of enemies){ if(o===e||o.dead||o._dyingT!=null||o._poison>0) continue;
+        if(dist2(o.x,o.y,e.x,e.y)<80*80){ o._poison=2.2; o._poisonLv=(e._poisonLv|0); break; } } }
+  }
+}
+/* the geyser (Mike: "Fire, Water and Lightning geyser type effects") - a column that rises from a
+   point and hurts what passes over it for a moment */
+let geysers=[];
+function geyserSpawn(x,y,kind){ geysers.push({x,y,kind:kind||'water',t:0,life:1.1,h:0}); }
+function geyserTick(dt){
+  if(!geysers.length) return;
+  for(const g of geysers){ g.t+=dt; g.h=Math.min(150, g.h+520*dt);
+    if(g.t<g.life){ for(const e of enemies){ if(e.dead||e._dyingT!=null) continue;
+      if(Math.abs(e.x-g.x)<18 && e.y<g.y && e.y>g.y-g.h){ e._geyT=(e._geyT||0)-dt; if(e._geyT<=0){ e._geyT=0.16;
+        if(g.kind==='fire') e._burn=Math.max(e._burn||0,DK_BURN_TIME*0.6);
+        hitEnemy(e, g.kind==='lightning'?4:3); } } }
+      const col=g.kind==='fire'?'#ff6a1e':g.kind==='lightning'?'#ffe03a':'#7fe0ff';
+      if(chance(0.9)) particles.push({x:g.x+rnd(-8,8),y:g.y-rnd(0,g.h),vx:rnd(-0.5,0.5),vy:rnd(-3,-1),life:rnd(0.2,0.45),t:0,r:rnd(1.5,3),color:chance(0.4)?'#ffffff':col}); }
+  }
+  geysers=geysers.filter(g=>g.t<g.life+0.2);
+}
+/* the void (dark matter at level 3): a point that pulls and eats for a moment */
+let voids=[];
+function voidSpawn(x,y){ voids.push({x,y,t:0,life:1.3}); }
+function voidTick(dt){
+  if(!voids.length) return;
+  for(const v of voids){ v.t+=dt;
+    for(const e of enemies){ if(e.dead||e._dyingT!=null) continue; const d=Math.hypot(e.x-v.x,e.y-v.y);
+      if(d<110&&d>1){ e.x+=(v.x-e.x)/d*2.2; e.y+=(v.y-e.y)/d*2.2; }
+      if(d<34){ e._voidT=(e._voidT||0)-dt; if(e._voidT<=0){ e._voidT=0.2; hitEnemy(e,5); } } }
+    if(chance(0.8)){ const a=rnd(0,TAU), r=rnd(20,60); particles.push({x:v.x+Math.cos(a)*r,y:v.y+Math.sin(a)*r,vx:-Math.cos(a)*2.2,vy:-Math.sin(a)*2.2,life:0.35,t:0,r:rnd(1,2.5),color:chance(0.5)?'#b46cff':'#2a0a4a'}); }
+  }
+  voids=voids.filter(v=>v.t<v.life);
+}
 /* an item is for sale only when it can actually deliver what it sells */
 function furiousSellable(id){const it=FURIOUS_SHOP[id];if(!it)return false;
   if(it.kind==='media')return !!it.media; return !it.pending;}
@@ -27616,6 +27812,12 @@ function continueRewardCollect(p){
 }
 function dropPowerup(x,y,forceKind){
   let kind=forceKind;
+  /* an INFUSION drops beside the ordinary loot, on eligible stages only (never 5 or 9) */
+  if(!kind && typeof infusionEligible==='function' && infusionEligible() && Math.random()<0.055*DIFF.dropMul){
+    const el=infusionRoll(); if(el){
+      powerups.push({x,y,vy:1.0,t:0,kind:'infuse',elem:el,w:20,h:20,bob:rnd(0,TAU)});
+      try{ if(typeof stageStats!=='undefined' && stageStats.pickupsSeen!=null) stageStats.pickupsSeen++; }catch(_pq2){}
+      return; } }
   if(!kind){
     // Original death drops: 6.2% ammo, 2.8% shield, 1% life. Independent
     // bonus intervals preserve the original grants and each other's probability.
@@ -27918,6 +28120,9 @@ function applyPowerup(p){
       if(typeof arcadeBanner==='function') arcadeBanner(arcWeaponAnnounce(_wt, run.wlevel, p.wvar?{fixed:p.wvar}:null));
       Audio.SFX.weapon(); break;
     }
+    case 'infuse':
+      if(typeof infusionGrant==='function') infusionGrant(p.elem);
+      break;
     case 'bomb':
       /* THIS CAPPED AT 9 AND ROBBED THE PLAYER (found in drop 0801km). The pack cases
          beside it clamp to 99, this one clamped to 9 — so holding 20 missiles and
@@ -28245,7 +28450,9 @@ function startSpecial(){
 function _newWeaponTick(dt){
   if(typeof dkTick==='function') dkTick(dt);
   if(typeof enemies!=='undefined' && typeof dkBurnTick==='function'){
-    for(const e of enemies) if(e && e._burn>0) dkBurnTick(e, dt);
+    for(const e of enemies){ if(e && e._burn>0) dkBurnTick(e, dt); if(e && e._poison>0) poisonTick(e, dt); if(e && e._soaked>0) e._soaked-=dt; }
+    if(typeof geyserTick==='function') geyserTick(dt);
+    if(typeof voidTick==='function') voidTick(dt);
   }
   /* the charge is driven off the RAW trigger, exactly like falvaChargeTick, so it does not
      depend on the cadence block ever running */
@@ -33147,6 +33354,12 @@ function updatePlay(dt){
   for(const b of pBullets){
     _dmgSrc = (b.kind==='missile') ? 'missile' : (_SPECIAL_KINDS[b.kind] ? 'special' : null);
     _dmgBullet=b;
+    /* the infusion rides the round: stamped once, the first frame it is live. `_inf===null` on a
+       shard means "already decided, none", so a prism shard never re-splits. */
+    if(b._inf===undefined){
+      b._inf=(typeof infusionActive==='function'&&infusionActive()&&infusionCarrier(b)&&!b._enemyReflected)?run.infusion.elem:null;
+      if(b._inf==='fire') b._el='fire'; else if(b._inf==='ice') b._el='ice';
+    }
     shooterSet(b.seat||1);           // hits, kills and score from this round land on its pilot (drop 0903p)
     if(b._shieldIgnoreT>0){ b._shieldIgnoreT-=dt; if(b._shieldIgnoreT<=0) b._shieldIgnore=null; }
     if(typeof spaceBulletTick==='function'&&spaceBulletTick(b,dt)) continue;
@@ -34496,6 +34709,9 @@ function _hitEnemyCore(e,dmg){
   const _elem=(typeof elementalDamageResult==='function')?elementalDamageResult(e,'enemy',_dmgBullet,dmg,e.x,e.y):{dmg:dmg,reaction:null};
   dmg=_elem.dmg;const _elemHit=_elem.reaction;
   if(typeof enemyShieldIntercept==='function' && enemyShieldIntercept(e,dmg,_dmgBullet)) return true;
+  /* KINETIC hits harder on the way in; a soaked unit takes lightning harder (0917 infusions) */
+  if(_dmgBullet&&_dmgBullet._inf==='kinetic'&&run.infusion) dmg*=1+0.15*(run.infusion.lv|0);
+  if(_dmgBullet&&_dmgBullet._inf==='lightning'&&e._soaked>0) dmg*=1.35;
   dmg=enemyPoolDamage(e,'hp',dmg,'hull','maxhp'); e.flash=0.12; weaponHitSfx('normal');
   if(typeof stageStats!=='undefined'){
     stageStats.dmgDealt+=dmg;
@@ -34522,6 +34738,8 @@ function _hitEnemyCore(e,dmg){
                     key: hard ? 'nwp_kin_metal_impact' : 'nwp_kin_hit_spark',
                     size: hard ? 22 : 17, rot: rnd(0,6.28) });
   }
+  /* the element's touch, once per hit, from the one place every player hit already lands */
+  if(_dmgBullet&&_dmgBullet._inf&&typeof infusionOnHit==='function') infusionOnHit(e,_dmgBullet,dmg);
   if(e.hp<=0) killEnemy(e);
 }
 function killEnemy(e){
@@ -34684,6 +34902,7 @@ function playerHit(){
      Codex's build kept the equipped weapon's identity and only powered its level down; Mike
      overruled that. Weapon 0 at level 1, every bank at 1, variants cleared. */
   run.weapon=0;run.wlevels=WEAPONS.map(()=>0);run.wlevel=0;run.power=0;manualMissileResetOnDeath(run);   // 0, not 1: 'all other weapons when you acquire them are lvl 1 first' - a pickup adds one
+  run.infusion=null;                                                     /* the element goes with the gun (0917) */
   if(run.wvars) run.wvars=WEAPONS.map(()=>null);
   run.spaceWeapon=(run.spaceWeapon===1)?1:0;run.spaceLevels=[0,1,1];run._spaceVolleyCd=0;   // laser to LEVEL 0 (Mike, 0903)
   if(run._groundLoadout){
@@ -44819,16 +45038,19 @@ function wlvGlow(lv){ return WLV_GLOW[clamp(lv|0||1,1,8)] || WLV_GLOW[1]; }
    fill has no hue to give, so white and black both come out GREY and the level reads as "dull",
    not as white or black. xartPalette already carries the two special cases (multiply for black, a
    colour+screen pass for white); this exists so callers cannot accidentally route around them. */
-function p87Body(lv){
+function p87Body(lv,inf){
+  /* an INFUSED round wears its element, whatever tier it is - the tier still shows in the count */
+  if(inf&&typeof INFUSIONS!=='undefined'&&INFUSIONS[inf]) return xartPalette(P87_SHEET, INFUSIONS[inf].body) || (XART.rdy(P87_SHEET)?XART.get(P87_SHEET):null);
   const m=WLV_BODY[clamp(lv|0||1,1,8)];
   if(m===null || m===undefined) return XART.rdy(P87_SHEET) ? XART.get(P87_SHEET) : null;
   return xartPalette(P87_SHEET, m) || (XART.rdy(P87_SHEET) ? XART.get(P87_SHEET) : null);
 }
 /* one cell of the pack, drawn at `h` tall with its body on (x,y) and rotated to `ang`.
    Returns false if the sheet has not decoded, so every caller keeps its existing fallback. */
-function p87Draw(rc, x, y, ang, h, lv, glow, alpha){
+function p87Draw(rc, x, y, ang, h, lv, glow, alpha, inf){
   if(typeof XART==='undefined' || !XART.rdy(P87_SHEET)) return false;
-  const src=p87Body(lv); if(!src) return false;
+  if(inf&&typeof INFUSIONS!=='undefined'&&INFUSIONS[inf]) glow=INFUSIONS[inf].glow;
+  const src=p87Body(lv,inf); if(!src) return false;
   const sx=rc[1]*P87_CELL, sy=rc[0]*P87_CELL;
   ctx.save();
   ctx.translate(x,y);
@@ -45841,8 +46063,10 @@ function drawBullets(){
          rounds merge into one unbroken bar. 48 is about a quarter of the fuselage width, which is
          where the capsule reads as a capsule. */
       const _cLv=b.lv||1;
-      if(_cLv<=5 && mgcfDraw(b,_cLv)) continue;
-      if(p87Draw(p87RoundFrame(b), b.x, b.y, 0, 44+clamp(b.lv||1,1,8)*1.6, b.lv, wlvGlow(b.lv), 1)) continue;
+      /* an infused round skips the 0825 plate and goes through the pack, which is the path that
+         can wear a palette - the element must be visible in flight, not only on impact */
+      if(!b._inf && _cLv<=5 && mgcfDraw(b,_cLv)) continue;
+      if(p87Draw(p87RoundFrame(b), b.x, b.y, 0, 44+clamp(b.lv||1,1,8)*1.6, b.lv, wlvGlow(b.lv), 1, b._inf)) continue;
       if(_cLv>=6){
         const _ck = (_cLv>=7) ? 'pmgc_7' : 'pmgc_6';
         if(typeof XART!=='undefined' && XART.rdy(_ck)){
@@ -45900,7 +46124,7 @@ function drawBullets(){
          spun to an arbitrary angle: nearest pose, then rotate by the residual only. First in the
          chain for the same reason as the machine gun above. */
       { const _a=Math.atan2(b.vy,b.vx), _p=p87Pose(_a);
-        if(p87Draw(_p.rc, b.x, b.y, _p.res, 36+clamp(b.lv||1,1,8)*1.4, b.lv, wlvGlow(b.lv), 1)) continue; }
+        if(p87Draw(_p.rc, b.x, b.y, _p.res, 36+clamp(b.lv||1,1,8)*1.4, b.lv, wlvGlow(b.lv), 1, b._inf)) continue; }
       const _spLv=clamp((b.lv||1)-1,0,4);
       /* MACHINE GUN PELLETS (drop 0801bg). Mike: "the spread fire is supposed to
          be more graphical and use our machine gun bullets."
@@ -46568,6 +46792,22 @@ function drawPowerups(){
     if(p.kind==='crate'){ drawCrate(p.x,yb,p.t,p.flash||0); continue; }
     if(p.kind==='scrate'){ drawScrate(p.x,yb,p.t,p.flash||0); continue; }
     if(p.kind==='mcrate'){ drawMcrate(p.x,yb,p.t,p.flash||0); continue; }
+    if(p.kind==='infuse'){
+      const I=(typeof INFUSIONS!=='undefined'&&INFUSIONS[p.elem])||null;
+      const col=I?I.glow:'#ffffff';
+      ctx.save(); ctx.translate(p.x, yb+Math.sin((p.bob||0)+performance.now()/360)*2.4);
+      ctx.shadowColor=col; ctx.shadowBlur=16;
+      let drew=null;
+      if(typeof iconBlit==='function'){ try{ drew=iconBlit(ctx,'inf_'+p.elem,0,0,PICKUP_BOX,true); }catch(_ib){ drew=null; } }
+      if(drew==null){
+        /* the badge until its icon lands: a diamond in the element's colour with a lit core */
+        ctx.rotate(Math.PI/4); ctx.fillStyle=I?I.body:'#888'; ctx.fillRect(-9,-9,18,18);
+        ctx.fillStyle='#ffffff'; ctx.globalAlpha=0.85; ctx.fillRect(-4,-4,8,8); ctx.globalAlpha=1;
+        ctx.strokeStyle='#101018'; ctx.lineWidth=2; ctx.strokeRect(-9,-9,18,18);
+      }
+      ctx.restore();
+      continue;
+    }
     if(p.kind==='sonicbox' || p.kind==='lzmgbox' || p.kind==='dkshotbox'){
       /* ⚠ dkshotbox HAD NO DRAW BRANCH AT ALL (drop 0811m). Mike: "Deckers Shotgun icon and
          powerup has not appeared for me yet, so I dont know if this is working or not."
@@ -67051,6 +67291,9 @@ function drawWorld(dt){
   if(typeof allyUpdate==='function') allyUpdate(dt);                 // spared-rival wingman
   if(typeof allyDraw==='function') allyDraw();
   drawZaps();
+  /* god's wrath: a white-out that decays fast, over the field but under the HUD */
+  if(wrathFlash>0){ wrathFlash-=dt; ctx.save(); ctx.setTransform(1,0,0,1,0,0);
+    ctx.globalAlpha=clamp(wrathFlash/0.42,0,1)*0.55; ctx.fillStyle='#e8f4ff'; ctx.fillRect(0,0,ctx.canvas.width,ctx.canvas.height); ctx.restore(); }
   drawNukeImpacts();
   drawSmokeTrails(); drawRetina(); drawRetinaScans(); drawPlayerLocks();
   if(typeof groundTargetingDraw==='function')groundTargetingDraw();
