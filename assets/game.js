@@ -45223,7 +45223,7 @@ function wlvGlow(lv){ return WLV_GLOW[clamp(lv|0||1,1,8)] || WLV_GLOW[1]; }
    colour+screen pass for white); this exists so callers cannot accidentally route around them. */
 function p87Body(lv,inf){
   /* an INFUSED round wears its element, whatever tier it is - the tier still shows in the count */
-  if(inf&&typeof INFUSIONS!=='undefined'&&INFUSIONS[inf]) return xartPalette(P87_SHEET, INFUSIONS[inf].body) || (XART.rdy(P87_SHEET)?XART.get(P87_SHEET):null);
+  if(inf&&typeof INFUSIONS!=='undefined'&&INFUSIONS[inf]) return infPal(P87_SHEET, INFUSIONS[inf].body) || (XART.rdy(P87_SHEET)?XART.get(P87_SHEET):null);
   const m=WLV_BODY[clamp(lv|0||1,1,8)];
   if(m===null || m===undefined) return XART.rdy(P87_SHEET) ? XART.get(P87_SHEET) : null;
   return xartPalette(P87_SHEET, m) || (XART.rdy(P87_SHEET) ? XART.get(P87_SHEET) : null);
@@ -45281,13 +45281,69 @@ function p87Pose(ang){
    cannot be built so the caller's normal draw runs - never a missing missile. */
 function infusionMissileDraw(key,b,ang){
   const I=(typeof INFUSIONS!=='undefined')?INFUSIONS[b._inf]:null; if(!I) return false;
-  const pal=(typeof xartPalette==='function')?xartPalette(key,I.body):null; if(!pal) return false;
+  const pal=infPal(key,I.body); if(!pal) return false;
   const im=XART.get(key), hq=11, s2=hq/Math.max(1,im.naturalHeight), w=im.naturalWidth*s2, h=hq;
   ctx.save(); ctx.translate(b.x,b.y); ctx.rotate(ang);
   ctx.globalCompositeOperation='lighter'; ctx.globalAlpha=0.28+0.10*Math.sin((b.t||0)*22);
   ctx.fillStyle=I.glow; ctx.beginPath(); ctx.ellipse(0,0,w*0.9,h*0.75,0,0,Math.PI*2); ctx.fill();
   ctx.globalCompositeOperation='source-over'; ctx.globalAlpha=1; ctx.shadowBlur=0;
   ctx.drawImage(pal,-w/2,-h/2,w,h); ctx.restore(); return true;
+}
+/* ============================================================
+   THE LASER'S MUZZLE IS AUTHORED ART, NOT TWO CIRCLES (0917)
+
+   Mike, with a shot of the giant beam: "we need generated laser muzzle's for the pilots, that
+   looks bad." What he photographed was `ctx.arc` x2 under a shadowBlur - a white disc and a
+   tinted disc - which 0811w ungated as the honest stopgap after finding that the v2.2 branch
+   asked for `nlz_<lv>_m0..5` and the manifest holds ZERO of them at all five levels.
+
+   ⚠ NOTHING NEEDED GENERATING: `nwp_lfi_laser_start` IS a laser origin flare, authored, on the
+   player-weapons sheet, and drawn by NOTHING. Rendered before it was trusted (rule 1):
+   71x172, a crystalline blue burst around a white-hot core. `nwp_lfi_laser_hit` is its impact
+   starburst, also unused. Searching the existing art first is the standing rule and it paid here.
+
+   ⚠ AND THE PLATE HAS NEVER BEEN CLEANED, *BECAUSE* NOTHING DREW IT - its chroma key left a
+   violet spill all round the burst. Converted to a BLACK EDGE, never deleted (standing rule).
+   The test is `r > g` AND `b > g` by a margin: this plate's own body is cyan-to-white, where
+   green is never the lowest channel, so the art cannot be eaten by it.
+
+   ⚠ THE SIZE IS CAPPED, AND THAT IS THE OTHER HALF OF HIS COMPLAINT. The old orb's radius was
+   `bw*0.9`, and `bw` is `14+lv*4` multiplied by up to 2.5 by a KINETIC infusion - so the giant
+   beam drew a 153px dinner plate over the ship. The flare scales with the beam and then stops.
+   ============================================================ */
+const LZ_MUZ_KEY='nwp_lfi_laser_start';
+const _lzMuz={};
+function laserMuzzleArt(hex){
+  if(typeof XART==='undefined' || !XART.rdy(LZ_MUZ_KEY)) return null;
+  const src=XART.get(LZ_MUZ_KEY); if(!src) return null;
+  const w=src.naturalWidth||src.width, h=src.naturalHeight||src.height;
+  if(!w || !h) return null;
+  let base=_lzMuz._clean;
+  if(!base){
+    base=document.createElement('canvas'); base.width=w; base.height=h;
+    const bx=base.getContext('2d'); bx.drawImage(src,0,0);
+    try{
+      const d=bx.getImageData(0,0,w,h), p=d.data;
+      for(let i=0;i<p.length;i+=4){
+        if(p[i+3]<8) continue;
+        const r=p[i], g=p[i+1], bl=p[i+2];
+        if(r>g+18 && bl>g+28){ const v=Math.min(r,g,bl)*0.30; p[i]=v; p[i+1]=v; p[i+2]=v; }
+      }
+      bx.putImageData(d,0,0);
+    }catch(_lzc){}
+    _lzMuz._clean=base;
+  }
+  if(!hex) return base;
+  const ck='c'+hex;
+  if(_lzMuz[ck]) return _lzMuz[ck];
+  /* palette swap, luminosity from the plate - the house rule. An overlay would flatten the
+     white-hot core into the tint, which is the exact failure the font's E->B bug came from. */
+  const c=document.createElement('canvas'); c.width=w; c.height=h;
+  const x=c.getContext('2d');
+  x.drawImage(base,0,0);
+  x.globalCompositeOperation='color'; x.fillStyle=hex; x.fillRect(0,0,w,h);
+  x.globalCompositeOperation='destination-in'; x.drawImage(base,0,0);
+  _lzMuz[ck]=c; return c;
 }
 function drawBullets(){
   ctx.shadowBlur=0;   // never inherit a shadow from an upstream draw: it silently blurs every bullet
@@ -45774,7 +45830,7 @@ function drawBullets(){
       const _oi=(b._inf&&b._inf!=='ice'&&typeof INFUSIONS!=='undefined')?INFUSIONS[b._inf]:null;
       ctx.save(); ctx.translate(b.x,b.y); ctx.rotate(b.spin||0); ctx.shadowColor=_oi?_oi.glow:'#bfe8ff'; ctx.shadowBlur=14;
       if(typeof XART!=='undefined' && XART.rdy('fx0825_ice_orb')){
-        const im=(_oi&&typeof xartPalette==='function'&&xartPalette('fx0825_ice_orb',_oi.body))||XART.get('fx0825_ice_orb'), s=(b.w*2.0)/Math.max(im.naturalWidth,im.naturalHeight);
+        const im=(_oi&&infPal('fx0825_ice_orb',_oi.body))||XART.get('fx0825_ice_orb'), s=(b.w*2.0)/Math.max(im.naturalWidth,im.naturalHeight);
         ctx.drawImage(im,-im.naturalWidth*s/2,-im.naturalHeight*s/2,im.naturalWidth*s,im.naturalHeight*s);
         ctx.restore(); continue;
       }
@@ -45928,7 +45984,7 @@ function drawBullets(){
         /* an INFUSED beam wears its element's body colour at every tier - the same 'color' swap, so
            the authored shading and the six-frame animation survive (0917) */
         const _lhue=(b._inf&&typeof INFUSIONS!=='undefined'&&INFUSIONS[b._inf])?INFUSIONS[b._inf].body:({3:'#25c94a', 4:'#ffc21a'})[lv];
-        const _pal=_lhue && typeof xartPalette==='function' ? xartPalette(_nb,_lhue) : null;
+        const _pal=infPal(_nb,_lhue);
         const im=_pal || XART.get(_nb);
         ctx.shadowBlur=0;
         ctx.globalAlpha=0.97;
@@ -45998,9 +46054,18 @@ function drawBullets(){
          manifest at ZERO of the five levels, and this orb was switched off whenever that branch
          ran. Between them the live laser fired out of nothing. This is drawn code that already
          existed, not a new placeholder; it only ever needed to be allowed to run. */
-      ctx.globalAlpha=1; ctx.shadowColor=glow; ctx.shadowBlur=14;
-      ctx.fillStyle='#eaffff'; ctx.beginPath(); ctx.arc(b.x, bot, bw*0.9*(1+0.12*Math.sin(now/70)), 0, TAU); ctx.fill();
-      ctx.globalAlpha=0.75; ctx.fillStyle=col; ctx.beginPath(); ctx.arc(b.x, bot, bw*0.55, 0, TAU); ctx.fill();
+      const _mz=laserMuzzleArt(col);
+      if(_mz){
+        /* scales with the beam and then STOPS - a kinetic giant beam used to draw a 153px disc */
+        const _mw=clamp(bw*1.35, 20, 46)*(1+0.06*Math.sin(now/70));
+        const _mh=_mw*(_mz.height/_mz.width);
+        ctx.globalAlpha=1; ctx.shadowColor=glow; ctx.shadowBlur=8;
+        ctx.drawImage(_mz, b.x-_mw/2, bot-_mh*0.5, _mw, _mh);
+      } else {
+        ctx.globalAlpha=1; ctx.shadowColor=glow; ctx.shadowBlur=14;
+        ctx.fillStyle='#eaffff'; ctx.beginPath(); ctx.arc(b.x, bot, bw*0.9*(1+0.12*Math.sin(now/70)), 0, TAU); ctx.fill();
+        ctx.globalAlpha=0.75; ctx.fillStyle=col; ctx.beginPath(); ctx.arc(b.x, bot, bw*0.55, 0, TAU); ctx.fill();
+      }
       ctx.restore();
       continue;
     }
@@ -47717,6 +47782,51 @@ let bootStars=[]; for(let i=0;i<60;i++) bootStars.push({x:rnd(0,VW),y:rnd(0,VH),
    Re-masked with destination-in because the blends spread past the art's own alpha.
    Cached per key+mode; these are redrawn every frame. */
 const _palCache={};
+/* ============================================================
+   AN ACHROMATIC INFUSION CANNOT BE PAINTED WITH A HUE SWAP (0917)
+
+   `xartPalette(key, hex)` composites in `'color'`: hue and saturation from the fill, luminosity
+   from the plate. A fill with no saturation has no hue to donate, so it DESATURATES the plate
+   instead of painting it - which CLAUDE.md already records from 0812d ("WHITE AND BLACK MUST NOT
+   USE THE HUE SWAP ... both come out the same grey").
+
+   Two of the nine elements are exactly that: KINETIC #dfe8ff (sat 0.125) and CHROME #d6e2ee
+   (sat 0.101). So a kinetic giant beam was drawing the green laser plate desaturated to a slate
+   slab - found only because replacing the laser's procedural muzzle orb stopped a 153px disc
+   covering it. Everything else in the table sits at 0.45 or above, so the 0.22 threshold is the
+   empty band between two populations rather than a number someone picked.
+
+   ⚠ AND `xartPalette`'s OWN `'white'` MODE IS THE WRONG ANSWER HERE, WHICH THE RENDER SAID AND
+   THE NUMBERS DID NOT. It lifts with `screen` over the whole canvas, and the laser plate carries
+   speckle debris in its margins - lifted, that debris reads as a pale BOX around the beam. It is
+   right for a UI panel and wrong for a sprite with a ragged edge.
+
+   What works is to give the fill the saturation it is missing and keep the ordinary hue swap, so
+   these two elements travel the exact same path as the other seven: KINETIC becomes a pale
+   periwinkle and CHROME a pale steel blue - both still read as what they are, and the plate's own
+   alpha is untouched because nothing is screened over it.
+   ============================================================ */
+function infPalHex(hex){
+  const m=/^#?([0-9a-fA-F]{6})$/.exec(String(hex||''));
+  if(!m) return hex;
+  const n=parseInt(m[1],16);
+  let r=(n>>16&255)/255, g=(n>>8&255)/255, b=(n&255)/255;
+  const mx=Math.max(r,g,b), mn=Math.min(r,g,b), d=mx-mn, sat=mx?d/mx:0;
+  if(sat>=0.22 || d<=0) return hex;      // saturated enough to donate a hue, or a true neutral
+  let h;                                  // hue in degrees, from the channel that leads
+  if(mx===r) h=((g-b)/d)%6; else if(mx===g) h=(b-r)/d+2; else h=(r-g)/d+4;
+  h*=60; if(h<0) h+=360;
+  const S=0.35, C=mx*S, X=C*(1-Math.abs(((h/60)%2)-1)), M=mx-C;
+  const seg=Math.floor(h/60)%6;
+  const t=[[C,X,0],[X,C,0],[0,C,X],[0,X,C],[X,0,C],[C,0,X]][seg];
+  r=t[0]+M; g=t[1]+M; b=t[2]+M;
+  const hx=v=>('0'+Math.round(clamp(v,0,1)*255).toString(16)).slice(-2);
+  return '#'+hx(r)+hx(g)+hx(b);
+}
+function infPal(key, hex){
+  if(!hex || typeof xartPalette!=='function') return null;
+  return xartPalette(key, infPalHex(hex));
+}
 function xartPalette(key, mode){
   if(!mode) return null;
   const ck=key+'|'+mode;

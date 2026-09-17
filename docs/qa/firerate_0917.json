@@ -1,0 +1,60 @@
+{
+  "seconds": 4.0,
+  "rows": [
+    {
+      "w": 0,
+      "name": "MACHINE GUN",
+      "counts": true,
+      "rounds_per_beat": 3,
+      "table_cadence": 0.1558,
+      "engine_cadence": 0.1558,
+      "beats_per_sec": 6.42,
+      "held_rounds_per_sec": 18.0,
+      "forced_rounds_per_sec": 180.0
+    },
+    {
+      "w": 1,
+      "name": "SPREAD",
+      "counts": true,
+      "rounds_per_beat": 4,
+      "table_cadence": 0.1558,
+      "engine_cadence": 0.1558,
+      "beats_per_sec": 6.42,
+      "held_rounds_per_sec": 24.0,
+      "forced_rounds_per_sec": 240.0
+    },
+    {
+      "w": 3,
+      "name": "LASER",
+      "counts": false,
+      "rounds_per_beat": 0,
+      "table_cadence": 0.107,
+      "engine_cadence": 0.107,
+      "beats_per_sec": 9.35,
+      "held_rounds_per_sec": 0.2,
+      "forced_rounds_per_sec": 0.2
+    },
+    {
+      "w": 7,
+      "name": "CHAINGUN",
+      "counts": true,
+      "rounds_per_beat": 2,
+      "table_cadence": 0.18,
+      "engine_cadence": 0.0562,
+      "beats_per_sec": 17.8,
+      "held_rounds_per_sec": 32.5,
+      "forced_rounds_per_sec": 120.0
+    },
+    {
+      "w": 8,
+      "name": "LIGHTNING ORB",
+      "counts": false,
+      "rounds_per_beat": 0,
+      "table_cadence": 0.38,
+      "engine_cadence": 0.38,
+      "beats_per_sec": 2.63,
+      "held_rounds_per_sec": 0.0,
+      "forced_rounds_per_sec": 0.0
+    }
+  ]
+}
