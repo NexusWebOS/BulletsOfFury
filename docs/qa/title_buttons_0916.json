@@ -1,0 +1,256 @@
+{
+  "drop": "0916 title buttons",
+  "request": "Regenerate all my other buttons here to match the current style of Bullets of Fury and proper reference of ships and pilots please. The help button also is too large compared to the rest.",
+  "diagnosis": {
+    "claim": "'too large' was an ASPECT problem, not a size one",
+    "why": "titleMenuLayout measures ONE width for the menu and takes each row's height from its own plate, so a plate whose native aspect differs is drawn taller than its neighbours at the same width",
+    "measured_before": {
+      "authored_bars": {
+        "size": "1090x222-233",
+        "aspect_range": [
+          4.68,
+          4.91
+        ]
+      },
+      "btn_help": {
+        "size": "446x112",
+        "aspect": 3.98,
+        "drawn_taller_than_family_pct": 23
+      },
+      "btn_achievements_0916_alone": {
+        "aspect": 5.17,
+        "note": "would have become the next odd one out"
+      }
+    },
+    "measured_after": {
+      "aspects": [
+        5.739,
+        5.739,
+        5.754,
+        5.754,
+        5.838,
+        5.838,
+        5.925
+      ],
+      "spread": 0.186,
+      "spread_pct_of_mean": 3.2,
+      "previous_family_spread": 0.93
+    }
+  },
+  "sheet_selection": {
+    "candidates": [
+      "b7a",
+      "b7b"
+    ],
+    "b7a": {
+      "alpha_zero_px": 9423,
+      "of_px": 262144,
+      "islands": 1,
+      "verdict": "background never cut out; bars joined by painted backdrop, unsliceable"
+    },
+    "b7b": {
+      "alpha_zero_px": 82024,
+      "of_px": 262144,
+      "islands": 7,
+      "row_gutters": 7,
+      "verdict": "shipped"
+    },
+    "trap": "the proof render composites each cut onto a dark card, which is correct for colour and CANNOT show that a plate has no alpha; the alpha histogram answered in one line"
+  },
+  "cuts": [
+    {
+      "name": "newgame",
+      "size": "396x69",
+      "aspect": 5.74,
+      "scene": "jungle river and hangar, green jet emblem"
+    },
+    {
+      "name": "password",
+      "size": "396x69",
+      "aspect": 5.74,
+      "scene": "volcano, padlock emblem"
+    },
+    {
+      "name": "options",
+      "size": "397x69",
+      "aspect": 5.75,
+      "scene": "ice field, gear emblem"
+    },
+    {
+      "name": "help",
+      "size": "397x69",
+      "aspect": 5.75,
+      "scene": "circuit board, question mark emblem"
+    },
+    {
+      "name": "achievements",
+      "size": "397x68",
+      "aspect": 5.84,
+      "scene": "laurels and medal, trophy emblem"
+    },
+    {
+      "name": "credits",
+      "size": "397x68",
+      "aspect": 5.84,
+      "scene": "neon city, star emblem"
+    },
+    {
+      "name": "exit",
+      "size": "397x67",
+      "aspect": 5.93,
+      "scene": "burning runway, door emblem"
+    }
+  ],
+  "keys": {
+    "shipped_as": "btn_<name>_0916",
+    "why_new_keys": "btn_newgame and friends are ATLAS CELLS and cells are checked BEFORE the loose-file cache (0912m); a loose file under the same key would be silently ignored",
+    "registered_in": "the code-owned XART._src block in assets/game.js (manifest.js is GENERATED)",
+    "atlas_rows": "untouched - CAMP_PAUSE_BTN and CAMPHUB_ITEMS still draw them"
+  },
+  "bugs_fixed_in_passing": [
+    {
+      "site": "drawMenuButtons pre-decode gate",
+      "was": "XART.rdy('btn_newgame')",
+      "now": "XART.rdy(MENU_KEYS[0])",
+      "why": "a written-out key tests a plate the title no longer draws - true for ever, so the fallback could never run"
+    },
+    {
+      "site": "drawMenuButtons fallback icons",
+      "was": "inline six-entry array against a seven-row menu",
+      "now": "TITLE_ICONS, asserted the same length as TITLE_ITEMS",
+      "why": "EXIT GAME drew with icon undefined - 0912a's 'four places knew the menu length', one button over"
+    },
+    {
+      "site": "titleMenuLayout pre-decode aspect",
+      "was": "62/330",
+      "now": "68/397",
+      "why": "the new sheet's own aspect"
+    }
+  ],
+  "probe": {
+    "file": "_BUILD_SOURCE/probe_title_0916.py",
+    "result": "16 ok / 0 fail",
+    "page_errors": 0,
+    "console_errors": 0,
+    "method": "real Chromium, real decode wait, TRAP_RAF, blits identified by KEY off the wrapped context instance",
+    "measurements": {
+      "plates_decoded": 7,
+      "plates_blitted": 7,
+      "blit_order_matches_MENU_KEYS": true,
+      "unselected_drawn_heights": [
+        42.62,
+        43.25,
+        43.25,
+        43.89,
+        43.89,
+        44.0
+      ],
+      "drawn_height_spread_px": 1.38,
+      "row_pitch_px": [
+        48.0,
+        48.0,
+        48.0,
+        48.0,
+        48.0,
+        48.0
+      ],
+      "rows_overlapping_the_row_beneath": 0,
+      "achievements_row_still_opens_gallery": "state === 'achievements'"
+    },
+    "own_faults_found_and_kept_as_notes": [
+      "stepped TWO frames and measured row pitch across both, so the wrap between frames read as a -288px gap on a correct menu",
+      "asserted 'every row draws at one measured box', which the layout does not claim - it fixes the width and gives each plate its own height, so the honest claim is 'not stretched'",
+      "the busted arm was placed after the state change, so it measured a screen the menu is not on - caught by its own control"
+    ],
+    "busted_arm": {
+      "what": "MENU_KEYS[0] repointed at a key nothing registers - exactly what a failed decode looks like to the gate",
+      "why": "the pre-decode fallback has never been exercised by a green run, and it is where the seventh row drew with no icon",
+      "busted": {
+        "fallback_rows": 7,
+        "icons": [
+          "ship",
+          "lock",
+          "gear",
+          "help",
+          "medal",
+          "star",
+          "door"
+        ],
+        "on_the_code_this_replaces": "EXIT GAME -> <undefined>"
+      },
+      "control": "restoring the key puts the seven plates straight back (7 blits)",
+      "own_fault": "first placed after the probe had navigated to ACHIEVEMENTS, so drawMenuButtons no longer ran - 0 fallback rows, indistinguishable from a broken fallback. The CONTROL (0 blits with the key restored) is what said the title simply was not being drawn."
+    }
+  },
+  "assertions_repointed": [
+    {
+      "file": "_BUILD_SOURCE/probe_help_0912a.py",
+      "was": "pinned the whole six-row menu list while claiming only HELP's position",
+      "now": "items.index('HELP')==3 under OPTIONS"
+    },
+    {
+      "file": "_BUILD_SOURCE/test_awards_0916.cjs",
+      "was": "btn_achievements key and bare filename",
+      "now": "btn_achievements_0916 and a title_0916/ path pin"
+    }
+  ],
+  "suite_section": 365,
+  "proofs": [
+    "docs/proofs/awards_0916/13_title_buttons.png",
+    "docs/proofs/awards_0916/15_title_seven.png",
+    "docs/proofs/awards_0916/16_awards_from_title.png"
+  ],
+  "seen_in_proof_not_fixed": "the in-canvas control hint row draws the D-pad glyph over its own label, so MENU reads as MEWII; pre-existing 0914 control-hints work, Mike's call",
+  "line_endings": {
+    "assets/game.js": "LF",
+    "_BUILD_SOURCE/test_fl.js": "CRLF"
+  },
+  "suite": {
+    "command": "node _BUILD_SOURCE/test_fl.js",
+    "baseline_worktree": "9f64e731 (clean git worktree at HEAD)",
+    "runs": [
+      {
+        "tree": "baseline",
+        "ok": 4648,
+        "fail": 56,
+        "sand_tank_fixture": "pass"
+      },
+      {
+        "tree": "baseline",
+        "ok": 4648,
+        "fail": 56,
+        "sand_tank_fixture": "pass"
+      },
+      {
+        "tree": "baseline",
+        "ok": 4647,
+        "fail": 57,
+        "sand_tank_fixture": "FAIL"
+      },
+      {
+        "tree": "mine",
+        "ok": 4656,
+        "fail": 57,
+        "sand_tank_fixture": "FAIL"
+      },
+      {
+        "tree": "mine",
+        "ok": 4656,
+        "fail": 57,
+        "sand_tank_fixture": "FAIL"
+      }
+    ],
+    "assertions_added": 9,
+    "ok_delta": "4647 -> 4656 = +9, exactly section 365",
+    "failure_names_new": [],
+    "failure_names_repaired": [],
+    "note": "names compared with numbers masked; the run-3 pair has IDENTICAL failure sets",
+    "sand_tank_investigation": {
+      "why_it_was_chased": "it passed on the baseline and failed on my tree TWICE, which is not convincing as a flake",
+      "mechanism_check": "git diff of assets/game.js touches 0 lines matching random|spawn|wave|enemies|mapScroll",
+      "fixture_shape": "runs 6000 frames of live stage-1 play and records only enemies.slice(-4)[0] per waveIdx increment, off an UNSEEDED wave plan - so which unit it records is order-sensitive",
+      "settled_by": "a THIRD baseline run, with zero code changes, FAILED it - the flake reproduced on an unmodified tree",
+      "measured_rate": "baseline 2 pass / 1 fail, my tree 0 pass / 3 fail, across five full runs this session"
+    }
+  }
+}

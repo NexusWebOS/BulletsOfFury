@@ -1,0 +1,133 @@
+{
+  "drop": "0916ab",
+  "title": "The space stages were one shadowBlur, and it was the player's own laser",
+  "date": "2026-09-16",
+  "environment": {
+    "browser": "headless Chromium via playwright",
+    "gpu": false,
+    "note": "Software rasterisation. Absolute milliseconds are inflated against a GPU machine; the RATIOS within a run are what transfer."
+  },
+
+  "cause": {
+    "file": "assets/game.js",
+    "site": "drawBullets, the b.kind==='spaceLaser' arm",
+    "was": "ctx.shadowBlur=7 set per round, with the pulse blitted under it",
+    "blurredDrawsPerFrame": {"stage9": 138.3, "stage1": 0.8},
+    "why_space_only": "spaceLaser is the player's weapon on stages 5 and 9 only; no other stage draws it."
+  },
+
+  "confirmation_by_suppression": {
+    "tool": "_BUILD_SOURCE/probe_shadowblur_0916.py",
+    "method": "same scene twice, identical except ctx.shadowBlur made a no-op",
+    "stage9": {"shipped_fps": [1.3, 1.4, 1.5], "suppressed_fps": [54.1, 55.4, 55.5], "swing": "36-41x"},
+    "stage1_control": {"shipped_fps": 55.6, "suppressed_fps": 55.8, "swing": "1.0x"}
+  },
+
+  "segment_timing_before": {
+    "tool": "_BUILD_SOURCE/probe_segments_0916.py",
+    "method": "forced getImageData(0,0,1,1) flush after each draw phase",
+    "stage9_ms_per_frame": {
+      "drawBullets": 663.36,
+      "drawMfx": 290.36,
+      "drawBG": 3.10,
+      "drawLevelMaster": 2.90,
+      "drawEnemy": 2.11,
+      "drawS9Void": 2.09
+    },
+    "finding": "the starfield, l5FieldDraw, l5RocksDraw, drawS9Void and the warp-drive layer are all innocent"
+  },
+
+  "segment_timing_after": {
+    "stage9_ms_per_frame": {
+      "drawBullets": 10.13,
+      "drawEffects": 3.13,
+      "drawMfx": 3.03,
+      "drawEnemy": 2.47,
+      "drawBG": 1.92,
+      "drawS9Void": 1.76
+    }
+  },
+
+  "ab_interleaved": {
+    "tool": "_BUILD_SOURCE/probe_lasarab_0916.py",
+    "method": "one browser session, arms alternated every 4s, order flipped each round, windows with <20 live laser rounds excluded",
+    "why": "sequential runs drift on this machine - the same build gave 43.5 then 34.3 fps minutes apart, control stage ranged 34.8-56.5",
+    "stage9": {"old_median_fps": 8.9, "old_range": [2.0, 9.5], "new_median_fps": 59.7, "new_range": [57.8, 59.8], "ratio": 6.7},
+    "stage5": {"old_median_fps": 7.8, "old_range": [3.1, 27.5], "new_median_fps": 58.7, "new_range": [58.2, 60.0], "ratio": 7.6},
+    "note": "the new arm draws MORE rounds per window (282-410 vs 98-307) because running faster spawns more, so the comparison is conservative; it sits on the 60fps cap"
+  },
+
+  "pixels": {
+    "tool": "_BUILD_SOURCE/probe_laserpixels_0916.py",
+    "comparisons": 160,
+    "axes": "5 levels x 2 pulses x 4 destination colours x 4 sub-pixel offsets",
+    "worst_delta_opaque_destination": 19,
+    "worst_delta_transparent_destination": 255,
+    "transparent_explanation": "getImageData returns UNPREMULTIPLIED colour, so a one-unit alpha difference in the faintest fringe reads as a 255-unit colour difference. The game never draws the playfield onto nothing; scored separately.",
+    "pulse_is_identical": true,
+    "pulse_reason": "drawImage(lp,_ldx,_ldy,_lw,_lh) is the same call with the same arguments as before; only the halo comes off a plate",
+    "proof": "docs/proofs/space_laser_0916/ (before, after, and the difference amplified 12x)"
+  },
+
+  "rejected_designs": [
+    {"design": "bake shadow AND sprite into one plate, blit at a float origin", "worst_delta_opaque": 163, "why_rejected": "blitting a pre-scaled plate at a fractional origin resamples the pulse a second time and softens its edge"},
+    {"design": "same, with the sub-pixel phase baked in", "worst_delta_opaque": 39, "why_rejected": "storing the composite 8-bit premultiplied and re-compositing it quantises the result"},
+    {"design": "bake only the halo; draw the pulse with the original call", "worst_delta_opaque": 19, "why_accepted": "the sprite's own draw is untouched, so only the soft halo carries any quantisation"}
+  ],
+
+  "pad": {
+    "tool": "_BUILD_SOURCE/probe_halopad_0916.py",
+    "measured_max_reach_px": 8,
+    "chosen": 10,
+    "first_cut": 20,
+    "saving": "plate for a 14x20 pulse goes 54x60 -> 34x40, 58% less fill per round",
+    "reverified": "pixel probe re-run after the change, same 19/255 - nothing clipped"
+  },
+
+  "cache_size": {
+    "tool": "_BUILD_SOURCE/probe_lasersizes_0916.py",
+    "distinct_key_colour_size_combos_observed": 2,
+    "rounds_sampled": 1350,
+    "reason": "b.h is a constant 26 in play",
+    "ceiling": "5 levels x 2 pulses x 16 sub-pixel phases = 160 small canvases"
+  },
+
+  "wrong_answers_on_the_way": [
+    {
+      "claim": "A.blit is 82% of the frame",
+      "evidence_for": "CPU profile charged it 622 ms/frame; a direct timing trap measured 229 ms per call, worst 756 ms",
+      "why_wrong": "Canvas2D rasterisation is deferred; the flush is charged to whichever call triggers it. A micro-benchmark measured that exact blit at 0.005 ms.",
+      "lesson": "two independent instruments agreed and both were wrong; force the flush while measuring"
+    },
+    {
+      "claim": "the shadowBlur write COUNT is the cost",
+      "evidence_against": "stage 9 wrote it 167 times/frame at 1.4 fps; stage 1 wrote it 135 times/frame at 55.6 fps",
+      "why_wrong": "stage 1's writes are almost all zeros (resets); the price is the blur radius and the area under it"
+    },
+    {
+      "claim": "the 1024x9383 ASSETS master is too tall to blit efficiently",
+      "why_wrong": "benchmarked at three source heights: 0.005-0.037 ms per blit, all fine"
+    }
+  ],
+
+  "suite": {
+    "baseline_built_by": "removing only this drop's two hunks from the working tree, then restoring",
+    "baseline": {"ok": 4687, "fail": 57},
+    "with_fix": {"ok": 4687, "fail": 57},
+    "failure_names": "byte-identical between the two runs",
+    "reached_final_summary": true
+  },
+
+  "diff_scope": {
+    "shadowBlur_lines_removed": 1,
+    "shadowBlur_sites_remaining": 237,
+    "files_changed_by_this_drop": ["assets/game.js"],
+    "line_endings": {"game.js": "LF preserved, 0 CRLF"}
+  },
+
+  "open": [
+    "drawBullets is still the biggest single segment at 10.1 ms/frame; the other 237 shadowBlur sites are unexamined",
+    "the absolute fps are software rasterisation - Mike's GPU machine never saw 1.4 fps; the ratio is what transfers",
+    "NOT MINE, FLAGGED: _BUILD_SOURCE/test_fl.js lines 14175-14178 carry bare LF in a CRLF file, from the uncommitted 0916 ACH-02 title work. CLAUDE.md names this hazard; left alone because it is someone else's in-progress edit."
+  ]
+}

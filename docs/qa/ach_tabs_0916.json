@@ -1,0 +1,77 @@
+{
+  "drop": "0916 achievement tabs and filters (ACH-09)",
+  "request": "allow me to have a tab system and filter system to view our achievements by type, enemy, player, completion etc.",
+  "tabs": [
+    {"key": "all", "label": "ALL", "values": "none"},
+    {"key": "type", "label": "TYPE", "values": "the 8 families, derived from the rows"},
+    {"key": "enemy", "label": "ENEMY", "values": "stages 1-9, offered only for rows won against a unit"},
+    {"key": "pilot", "label": "PILOT", "values": "the 9 pilots, from the definition's own pilot plus the unlock meta"},
+    {"key": "status", "label": "STATUS", "values": "unlocked / locked"}
+  ],
+  "controls": {"left_right": "tab", "fire": "cycle the value in this tab", "up_down": "scroll", "back": "leave"},
+  "design_rules": [
+    {"rule": "every tab's values are DERIVED from the rows, never hand-listed",
+     "why": "_selfPat, the edge-pin exemption list and the enemy-separation list were each a hand-written list that went stale the moment something new arrived, and each cost a drop",
+     "effect": "a family added later appears in TYPE on its own; a family with no rows cannot appear at all",
+     "asserted": "no family present in achievementList() may be missing from the tab"},
+    {"rule": "ENEMY is the encounter axis, not every row carrying a stage",
+     "why": "clearing stage 4 without dying is about the STAGE; beating its boss on Furious is about the BOSS - offering both would make ENEMY a second copy of STAGE CLEAR"},
+    {"rule": "the header counts the FILTERED set",
+     "why": "'0 OF 66' over four rows is a lie about the thing on screen; the POINTS stay the profile total because that is a score, not a count"},
+    {"rule": "an empty filter says NOTHING HERE YET",
+     "why": "a blank panel reads as broken"}
+  ],
+  "data_faults_found": [
+    {"what": "the four stage-1 speed awards carried no `stage` field",
+     "detail": "their ids and titles say 'Stage 1' (stage1_boss_under_60 and friends) but their defs held only {family, role, seconds}, so ENEMY showed stage 1 its 2 boss_difficulty rows and none of its 4 speed rows",
+     "verdict": "the filter was right and the data was short a field",
+     "fix": "stage:1 added to all four; stage 1 now shows 6",
+     "found_by": "reading the probe's own numbers - nothing failed, the tab worked exactly as written"},
+    {"what": "60 of the 66 grants never recorded who was flying",
+     "detail": "the only pilot in the system was the `pilot` field on the nine campaign-clear DEFINITIONS; achievementRunComplete put pilot in its meta but achievementStageComplete, achievementEncounterDefeat and achievementWeaponMax built their meta inline with only mode/difficulty/stage",
+     "consequence": "a PILOT tab over that data could only ever show one row per pilot",
+     "fix": "achievementMeta(extra) is the single funnel - pilot, co-op second seat, mode, difficulty - and all three grant sites go through it",
+     "limitation": "unlocks already in a player's localStorage have no pilot, so a pre-0916 save shows the PILOT tab its campaign-clear rows and nothing else; that is the stored data, not the filter, and the tab does not pretend otherwise"}
+  ],
+  "probe": {
+    "file": "_BUILD_SOURCE/probe_awards_0916.py",
+    "result": "38 ok / 0 fail",
+    "page_errors": 0,
+    "console_errors": 0,
+    "method": "real Chromium, real key taps",
+    "load_bearing_assertion": {
+      "what": "one press moves EXACTLY one tab",
+      "why": "Input.menuLeft/menuRight CONSUME their tap, and CLAUDE.md's worked example of getting it wrong - d = menuLeft() ? -1 : 1 - is always +1 because the second call was eaten by the first. A probe that only checked 'the tab changed' would pass on that bug.",
+      "measured": "RIGHT 0 -> 1, LEFT 1 -> 0"
+    },
+    "measurements": {
+      "tabs": ["ALL", "TYPE", "ENEMY", "PILOT", "STATUS"],
+      "type_values": 8,
+      "type_first_value_rows": 18,
+      "fire_cycles": "BOSS DIFFICULTY -> BOSS SPEED",
+      "enemy_stage1_rows": 6,
+      "enemy_stage1_families": ["boss_difficulty", "boss_speed"],
+      "status_split": "UNLOCKED 0 + LOCKED 66 = 66",
+      "empty_filter_message": "NOTHING HERE YET",
+      "scroll_resets_on_tab_change": true
+    }
+  },
+  "suite": {
+    "result": "4,669 ok / 56 fail",
+    "baseline": "4,647 ok / 56 fail at a clean worktree on 9f64e731",
+    "assertions_added": 11,
+    "failure_names_new": [],
+    "failure_names_repaired": [],
+    "section": 364
+  },
+  "proofs": [
+    "docs/proofs/awards_0916/05_tabs.png",
+    "docs/proofs/awards_0916/06_tab_type.png"
+  ],
+  "still_open_on_the_ACH_brief": [
+    "the Furious Points vault - dev videos, interviews, BOF2 sneak peeks",
+    "Bunny mode for Falva",
+    "Bombshell mode for Lizzie",
+    "INSANITY - the fifth difficulty, invisible and unselectable until bought with points, with its own generated button"
+  ]
+}

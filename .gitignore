@@ -36,3 +36,15 @@ assets/game/ships_sliced/
 .secrets.json
 _BUILD_SOURCE/.secrets.json
 *.key
+
+# marketing video masters and their scratch frames (docs/marketing_0916/, drop 0916).
+# 767 MB of captured clips + 297 MB of rendered reels + 247 MB of extracted thumbnail frames.
+# Every byte is REGENERABLE in one command from the shipped game -- capture_batch_0916.py for
+# the clips, make_reel_0916.py / make_short_0916.py for the reels, make_thumbs_0916.py for the
+# frames -- so putting 1.3 GB of h264 in the history buys nothing and costs every future clone.
+# The PLAYBOOK, the channel art and the finished thumbnails are NOT ignored: those are the
+# things actually uploaded, they are small, and a regenerated avatar that differs by a pixel
+# from the one already on the channel is worse than a committed file.
+docs/marketing_*/clips/
+docs/marketing_*/video/
+docs/marketing_*/social/thumbs/_frames/

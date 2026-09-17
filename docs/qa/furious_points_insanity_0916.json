@@ -1,0 +1,334 @@
+{
+  "drop": "0916 Furious Points ledger + INSANITY (the fifth difficulty)",
+  "request": "an Achievement Pts currency system as \"Furious\" pts ... Insanity - a 5th difficulty and 5th difficulty button you should generate. it will not show up unless you unlock it via achievement points, so its an invisible button you cant even select until this condition is met, then it becomes visible and selectable.",
+  "ledger": {
+    "spent": "DERIVED - summed from the owned rows, never stored as a counter",
+    "why": "two numbers describing one fact drift apart the moment anything writes one without the other (an interrupted save, an item removed from the shop, a hand-edited profile), and then the balance is wrong for ever with nothing to compare it against",
+    "balance": "achievementPoints() - furiousSpent()",
+    "price_recorded_per_purchase": "so re-pricing an item later cannot retroactively change what an existing player has left",
+    "buy_returns": "a word - ok / owned / poor / unknown - not a boolean, because the screen has to say WHICH happened",
+    "store_version": {
+      "bumped": false,
+      "why": "achievementNormalize returns an EMPTY store when the version does not match, so bumping it to make room for `owned` would have silently DELETED every achievement every existing player has earned. An absent `owned` reads as {}."
+    },
+    "shop": {
+      "insanity_mode": {
+        "cost": 2000,
+        "kind": "difficulty"
+      },
+      "falva_bunny": {
+        "cost": 600,
+        "kind": "costume",
+        "art": "not yet"
+      },
+      "lizzie_bombshell": {
+        "cost": 600,
+        "kind": "costume",
+        "art": "not yet"
+      }
+    }
+  },
+  "insanity": {
+    "row": {
+      "ebSpeed": 1.85,
+      "eFire": 2.15,
+      "eHp": 1.55,
+      "density": 1.75,
+      "startLives": 1,
+      "startBombs": 0,
+      "dropMul": 0.65,
+      "continues": 0,
+      "contLives": 1
+    },
+    "visibility": "ABSENT from diffList() until owned, not drawn-and-disabled",
+    "why_absent_not_disabled": "'you cannot select it' is three claims - the cursor, the mouse hit test, and the function that turns the cursor index into a difficulty key. This repo has shipped a menu where FOUR places knew the row count and one was missed. One list closes all three doors."
+  },
+  "bugs_found_in_passing": [
+    {
+      "what": "three per-difficulty tables would have made INSANITY the EASIEST setting in the game",
+      "tables": [
+        "FODDER_DIFF (read as [k] || 1)",
+        "DRONE_TELL (falls back to .normal by name)",
+        "DRONE_RECOVER (falls back to .normal by name)"
+      ],
+      "effect": "the hardest difficulty would get NORMAL's numbers: fodder 1.0 against HARD's 1.15 and FURIOUS's 1.60, and a 0.55s tell against HARD's 0.46s",
+      "silent": "none of the three throws, none logs, the run just plays wrong",
+      "fix": "insanity rows added (1.85 / 0.37 / 0.42)",
+      "durable_fix": "suite section 366 asserts EVERY key in DIFFS has a row in EVERY per-difficulty table, so the next difficulty cannot be half-added",
+      "found_by": "a grep for DIFF while chasing something else - nothing failed"
+    },
+    {
+      "what": "achievementNormalOrHigher was a hand-written list of 'the hard ones'",
+      "effect": "INSANITY would have earned no stage-clear or no-death award at all",
+      "fix": "derived from DIFF_ORDER via difficultyRank"
+    },
+    {
+      "what": "the boss award grant was an equality ladder",
+      "detail": "diffKey==='hard' / ==='furious', so an INSANITY boss kill granted NOTHING - harder than Furious and worth less than Easy",
+      "fix": "ranked; a difficulty above the top earns at least what the one below it does",
+      "judgement": "granting the FURIOUS row rather than inventing new awards is Claude's call and the conservative half of it; whether INSANITY gets awards of its own is Mike's"
+    },
+    {
+      "what": "DIFF_KEYS / DIFF_IMG / DIFF_DESC were three parallel arrays",
+      "fix": "one keyed DIFF_META table - the lesson the title menu taught, where a six-entry icon list against a seven-row menu left EXIT GAME with no icon"
+    }
+  ],
+  "button": {
+    "generated": "as a stack of THREE, not alone",
+    "why": "asked for one bar it returned 7.7-8.2:1 against a family that runs 3.49-4.32, and the screen draws every row at one WIDTH - so a thin plate is a thin button",
+    "result_aspects": [
+      3.55,
+      3.4,
+      3.52,
+      3.43,
+      3.49,
+      3.43
+    ],
+    "chosen": "221x65, aspect 3.40",
+    "steel_too_bright": {
+      "measured_before": {
+        "grey_median": 0.443,
+        "p90": 0.992
+      },
+      "family": {
+        "grey_median": "0.208-0.263",
+        "p90": "0.62-0.78"
+      },
+      "fix": "low-saturation pixels only x0.62 - the violet lamps, cracks and lettering carry saturation and are untouched",
+      "measured_after": {
+        "grey_median": 0.275,
+        "p90": 0.616
+      },
+      "original_kept_as": "assets/game/ui/diff_0916/diff_insanity.bright.png"
+    },
+    "key": "diff_insanity, a loose file under a key no atlas cell owns (diff_easy..diff_furious are cells on ui_menu_1)",
+    "credits_spent": 60,
+    "balance_after": 4295,
+    "superseded_by": "face_ladder - the earlier single INSANITY pick (j1_b2) and its steel-darkening were replaced by Mike choosing j2_b1"
+  },
+  "faults_the_screenshot_found_after_the_probe_was_green": [
+    {
+      "what": "the rules line ran off the screen",
+      "detail": "'NO CONTINUES / NOTHING HELD BACK' at the fixed 15px was wider than the viewport, so it rendered centred with its first six characters off the left edge: 'TINUES / NOTHING HELD BACK'",
+      "fix": "shorter string (the line above already says 0 CONTINUES) AND the line is now fitted with stageFitH, so the next long one cannot do it again",
+      "note": "24 assertions were green while that was on screen"
+    },
+    {
+      "what": "the plate's steel brightness",
+      "note": "also invisible to every assertion"
+    }
+  ],
+  "probe": {
+    "file": "_BUILD_SOURCE/probe_insanity_0916.py",
+    "result": "24 ok / 0 fail",
+    "page_errors": 0,
+    "console_errors": 0,
+    "asserted_on": "the BALANCE, not the return value - furiousBuy returning 'ok' says what the function decided, not that the points left",
+    "own_fault": {
+      "what": "reported a bug that did not exist",
+      "detail": "read DIFF immediately after pickDiff and printed lives 4 / continues -1 / name NORMAL, i.e. 'picking INSANITY plays Normal'",
+      "truth": "pickDiff sets diffKey; DIFF is assigned when the RUN starts, at two other call sites",
+      "fix": "read the key from the pick and the tuning from difficultyForRun"
+    },
+    "measurements": {
+      "earned": "2,120 pts over 16 awards through the real unlock path",
+      "locked_list": [
+        "easy",
+        "normal",
+        "hard",
+        "furious"
+      ],
+      "forced_index_past_end": "picks furious, not insanity",
+      "purchase": "2120 - 2000 = 120",
+      "second_purchase": "refused, costs nothing",
+      "unlocked_list": [
+        "easy",
+        "normal",
+        "hard",
+        "furious",
+        "insanity"
+      ],
+      "picked": {
+        "key": "insanity",
+        "lives": 1,
+        "continues": 0
+      },
+      "plate_aspects": {
+        "diff_easy": 3.49,
+        "diff_normal": 3.58,
+        "diff_hard": 3.58,
+        "diff_furious": 4.32,
+        "diff_insanity": 3.4
+      },
+      "survives_reload": true
+    }
+  },
+  "suite": {
+    "result": "4,695 ok / 57 fail",
+    "baseline": "4,647 ok / 56-57 at a clean worktree on 9f64e731",
+    "section": 366,
+    "section_366": "27/27",
+    "failure_names_new": [],
+    "failure_names_repaired": [],
+    "note": "the one name over the baseline's best run is the documented stage-1 sand-tank fixture, which the baseline reproduces with zero code changes"
+  },
+  "proofs": [
+    "docs/proofs/insanity_0916/01_locked.png",
+    "docs/proofs/insanity_0916/02_unlocked.png",
+    "docs/proofs/insanity_0916/03_family.png"
+  ],
+  "still_open": [
+    "Bunny mode (Falva) and Bombshell mode (Lizzie) have shop rows and prices and buy correctly - what they lack is the costume art",
+    "the vault of dev media - videos, interviews, BOF2 sneak peeks",
+    "a screen to spend points on: today a purchase can only be made from code"
+  ],
+  "face_ladder": {
+    "request": "I LOVE that Insanity Logo. Can you also remake our other difficulty options please ... I would like each to feature Faces that go from Normal to Under Pressure to Furious to Insanity's Death ... use this one for Insanity btw",
+    "ladder": [
+      {
+        "k": "easy",
+        "aspect": 4.39
+      },
+      {
+        "k": "normal",
+        "aspect": 4.35
+      },
+      {
+        "k": "hard",
+        "aspect": 4.35
+      },
+      {
+        "k": "furious",
+        "aspect": 4.24
+      },
+      {
+        "k": "insanity",
+        "aspect": 3.43,
+        "note": "Mike's own pick, shipped unmodified"
+      }
+    ],
+    "brightness_decision": "his INSANITY pick measures grey median 0.824 against the old family's 0.208-0.263. Darkening it to match was right while INSANITY was a fifth plate joining four; it is wrong now that he approved this one and asked for the other four to be remade in its image, so the FAMILY moves to the new look and his plate ships unmodified",
+    "keys": "all five as loose files under diff_<key>_0916 - diff_easy..diff_furious are cells on ui_menu_1 and cells win over the loose-file cache",
+    "aspect_spread": 0.84,
+    "aspect_spread_of_the_plates_this_replaces": 0.83,
+    "generated_as": "one 4-bar stacked sheet, so the four share construction; the bar COUNT sets the aspect",
+    "revision": {
+      "request": "Cool, but they should all be different styling in representation off their difficulty much like Insanity is. Including faces. Insanity remains as is.",
+      "what_was_wrong": "the first cut was ONE plate recoloured four times - same frame, same dark panel, same pose, only the hue and the eyebrows moved. INSANITY was the only one whose MATERIAL said what it was.",
+      "now": [
+        {
+          "k": "easy",
+          "frame": "polished chrome, undamaged",
+          "panel": "sunlit sky, clouds, green horizon",
+          "face": "grinning, helmet tilted back",
+          "lamps": "green"
+        },
+        {
+          "k": "normal",
+          "frame": "olive drab, stencilled",
+          "panel": "steel grid, blue radar sweep, readouts",
+          "face": "composed, visor down",
+          "lamps": "blue"
+        },
+        {
+          "k": "hard",
+          "frame": "battered gunmetal, hazard stripes",
+          "panel": "scorched gouged plating, sparks from a torn seam",
+          "face": "teeth clenched, sweating, cut cheek",
+          "lamps": "amber"
+        },
+        {
+          "k": "furious",
+          "frame": "half molten, glowing at the joins",
+          "panel": "splitting open over lava, embers rising",
+          "face": "screaming, veins out, helmet cracked",
+          "lamps": "red-white"
+        },
+        {
+          "k": "insanity",
+          "note": "untouched, as asked"
+        }
+      ],
+      "shared": "only the SKELETON - riveted frame, square emblem panel at the left, a lamp slot at each end, one word on a central panel",
+      "plates": "492x112-116, aspects 4.24-4.39",
+      "aspect_spread_with_insanity": 0.96
+    },
+    "pilot_casting": {
+      "request": "To make it funnier, use Falva for the Easy person, use Freezer for the Normal Person, Use Axel for the Hard Person and Use Cole in the Furious way ... based on our pilots faces you should snippet and use as references",
+      "cast": [
+        {
+          "difficulty": "EASY",
+          "pilot": "falva",
+          "portrait": "port_falva_laugh"
+        },
+        {
+          "difficulty": "NORMAL",
+          "pilot": "freezer",
+          "portrait": "port_freezer_idle"
+        },
+        {
+          "difficulty": "HARD",
+          "pilot": "axel",
+          "portrait": "port_axel_crash"
+        },
+        {
+          "difficulty": "FURIOUS",
+          "pilot": "cole",
+          "portrait": "port_cole_anger"
+        }
+      ],
+      "how": "the four authored portraits were cut out, assembled into a strip and UPLOADED as the generation reference, as asked",
+      "why_those_emotions": "all seven emotions were rendered for all four pilots first - Axel's `crash` reads as RATTLED where `anger` would have doubled Cole's roar one row up",
+      "plates": "483x111-112, aspects 4.31-4.35",
+      "aspect_spread_with_insanity": 0.92,
+      "known_drift": "Axel's hair comes back lighter than his portrait, which is dark; the aviators carry the identification"
+    },
+    "corrections": {
+      "request": "ensure all avatars face to the right, and Cole should appear like a mix of this. We need an actual face view of Freezer not cut off, and Axel should be grinning like this",
+      "fixed": {
+        "orientation": "all four heads turned to a three-quarter view facing RIGHT, toward their own word",
+        "framing": "the whole head inside its panel with margin on four sides - nothing clipped by the frame",
+        "freezer": "source changed to the portrait showing his ENTIRE face, and the panel no longer crops it",
+        "axel": "port_axel_crash -> port_axel_smile, a broad open grin with teeth",
+        "cole": "crossed with a demonic berserker - eyes burning as solid orange-white furnaces, skin scorched, smoke off him - still recognisably Cole",
+        "insanity": "untouched"
+      },
+      "insight": "'not cut off' was a PANEL problem as well as a portrait one: the reference crop took 62% of the portrait height and already lost Freezer's jaw, then the generation cropped what it was given. The new strip takes 70% from the very top AND the prompt demands the whole skull inside the panel with margin.",
+      "selection": "of three candidate sheets, the one that ships is the only one whose four heads are all complete and centred; the other two clip at the right edge, which is the fault being fixed",
+      "plates": "502-507 x 112-114, aspects 4.40-4.53",
+      "aspect_spread_with_insanity": 1.1,
+      "flagged": "INSANITY now draws about 32% taller than HARD at the same width"
+    }
+  },
+  "vault": {
+    "why": "until this screen existed nothing could be bought at all - the ledger and the INSANITY unlock were provably correct and furiousBuy had no caller outside code. A system with no surface is indistinguishable from one that was never built (the same hole ACH-02 found in the achievement registry).",
+    "reached_from": "the achievements gallery, on its own button (CHARGE/X) - CONFIRM already cycles the filter there",
+    "rows": 7,
+    "media_rows": [
+      "vault_making_of",
+      "vault_interview",
+      "vault_bof2",
+      "vault_coleforge"
+    ],
+    "pending_rule": "a row that cannot deliver is refused BEFORE the points are checked - selling a video that does not exist leaves the player out the points with nothing to show, and the refund path is exactly the bookkeeping the derived balance exists to avoid",
+    "to_enable_a_row": "fill its `media` field",
+    "refusals": {
+      "owned": "ALREADY UNLOCKED",
+      "poor": "NEED <n> MORE FURIOUS PTS",
+      "pending": "the row's own pending line"
+    },
+    "screenshot_faults": [
+      {
+        "what": "the status line was hidden behind the achievement toast",
+        "detail": "drawn at VH-34, where the 200x54 lower-left toast card sits; 36 assertions were green while the words explaining a refusal were invisible",
+        "fix": "it takes the sub-header now"
+      },
+      {
+        "what": "AWAITING MIKE'S FOOTAGE hit the documented apostrophe defect",
+        "detail": "0912b: this face has no usable apostrophe at UI size - LIZZIE'S renders as LIZZIE,S",
+        "fix": "reworded to AWAITING FOOTAGE FROM MIKE"
+      }
+    ],
+    "probe": "36 ok / 0 fail, including a purchase made entirely through the UI with a real key press"
+  }
+}

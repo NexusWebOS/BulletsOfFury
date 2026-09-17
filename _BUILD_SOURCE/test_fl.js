@@ -15717,6 +15717,8 @@ require('./test_unlock_announcements_0916.cjs')(vm,ctxv,ok);
 require('./test_escape_arrows_0916.cjs')(vm,ctxv,ok);
 require('./test_gauge_shield_0916.cjs')(vm,ctxv,ok);
 require('./test_awards_0916.cjs')(vm,ctxv,ok);
+require('./test_title_buttons_0916.cjs')(vm,ctxv,ok);
+require('./test_difficulty_tables_0916.cjs')(vm,ctxv,ok);
 
 console.log('\n============================================');
 if (errors.length) { console.log('FAILED — ' + errors.length + ' error(s):'); errors.forEach(e => console.log('  ' + e)); process.exit(1); }

@@ -108,11 +108,11 @@ def main():
         ok(len(T['keys']) == len(T['items']), 'every item has a plate (%d keys for %d items)' % (len(T['keys']), len(T['items'])))
         ok(sorted(T['acts']) == sorted(T['items']), 'and every item has its OWN action - the dispatch is keyed by name')
         for _ in range(40):
-            pg.evaluate("() => XART.rdy('btn_achievements')")
-            if pg.evaluate("() => XART.rdy('btn_achievements')"):
+            pg.evaluate("() => XART.rdy('btn_achievements_0916')")
+            if pg.evaluate("() => XART.rdy('btn_achievements_0916')"):
                 break
             pg.wait_for_timeout(80)
-        ok(pg.evaluate("() => XART.rdy('btn_achievements')"), 'the AWARDS plate decoded')
+        ok(pg.evaluate("() => XART.rdy('btn_achievements_0916')"), 'the AWARDS plate decoded')
         pg.evaluate(STEP, [6])
         shot(pg, '01_title.png')
 
@@ -129,6 +129,20 @@ def main():
         ok(G['view'] == 8, 'eight at a time (%d)' % G['view'])
         ok(G['fams'][0] == 'campaign_clear', 'sorted by family, the big ones first (%s)' % G['fams'][0])
         ok(G['locked'] > 0, 'locked rows are listed, not hidden (%d locked)' % G['locked'])
+        # ⚠ THE PLAQUES ARE LAZY: XART.rdy is false on its first call, so a screenshot taken the
+        # moment the gallery opens shows rows with no medal on a build where the medals are fine.
+        for _ in range(40):
+            if pg.evaluate("() => awards.rows.slice(0,8).every(r => !r.plaque || XART.rdy(r.plaque))"):
+                break
+            pg.wait_for_timeout(80)
+        pg.evaluate(STEP, [4])
+        PQ = pg.evaluate("""() => {
+          const keys = {};
+          awards.rows.forEach(r => { const k = r.plaque || achPlaqueKey(r); keys[k] = (keys[k]|0) + 1; });
+          return {keys: keys, ready: Object.keys(keys).filter(k => XART.rdy(k)).length};
+        }""")
+        ok(len(PQ['keys']) >= 8, 'the 66 awards resolve to a family plaque each (%d distinct)' % len(PQ['keys']))
+        ok(PQ['ready'] == len(PQ['keys']), 'and every plaque decoded (%d of %d)' % (PQ['ready'], len(PQ['keys'])))
         shot(pg, '02_gallery.png')
 
         # the list scrolls and clamps
@@ -197,6 +211,91 @@ def main():
         # the first cut asserted against its own impatience
         pg.evaluate(STEP, [260])
         ok(pg.evaluate("() => achToasts.length < 3"), 'and they play through in order')
+
+        # ---- ACH tabs and filters (Mike, 0916: "a tab system and filter system to view our
+        # achievements by type, enemy, player, completion etc.") -------------------------------
+        pg.evaluate("""() => { try { localStorage.removeItem(ACHIEVEMENT_STORE_KEY); } catch(e) {}
+                               achievementReload(); achToasts.length = 0;
+                               setState(GS.ACHIEVEMENTS); awardsOpen(); }""")
+        pg.evaluate(STEP, [2])
+        tabs = pg.evaluate("() => AWARDS_TABS.map(t => t.label)")
+        print('  tabs:', tabs)
+        ok(tabs == ['ALL', 'TYPE', 'ENEMY', 'PILOT', 'STATUS'],
+           'the gallery carries a tab per axis Mike named: %s' % tabs)
+
+        def tap(action, fallback):
+            pg.evaluate("""(a) => { const k = (keybind[a[0]] && keybind[a[0]][0]) || a[1];
+                                    Input.keys[k] = false; Input.injectTap(k); }""", [action, fallback])
+            pg.evaluate(STEP, [2])
+
+        # ⚠ ONE PRESS MUST MOVE EXACTLY ONE TAB. Input.menuLeft/menuRight CONSUME their tap, and
+        # CLAUDE.md's worked example of getting that wrong - `d = menuLeft() ? -1 : 1` - moves the
+        # wrong way or twice. A probe that only checked "the tab changed" would pass on that bug.
+        start = pg.evaluate("() => awards.tab")
+        tap('right', 'right')
+        one = pg.evaluate("() => awards.tab")
+        ok(one == start + 1, 'RIGHT moves exactly ONE tab (%s -> %s), not two and not back' % (start, one))
+        tap('left', 'left')
+        back = pg.evaluate("() => awards.tab")
+        ok(back == start, 'and LEFT comes straight back (%s)' % back)
+
+        # TYPE: the filter cycles, and the rows it shows all match it
+        pg.evaluate("() => { awards.tab = 1; awards.fv = {}; }")
+        pg.evaluate(STEP, [2])
+        v0 = pg.evaluate("() => { const v = awardsView(); return {label:v.label, n:v.rows.length, val:v.val, vals:v.vals.length}; }")
+        print('  TYPE first value:', v0)
+        ok(v0['vals'] >= 6, 'TYPE offers a value per family, derived from the rows (%d)' % v0['vals'])
+        ok(v0['n'] > 0 and pg.evaluate("() => awardsView().rows.every(r => (r.family||'other') === awardsView().val)"),
+           'and every row it shows belongs to that family (%s, %d rows)' % (v0['label'], v0['n']))
+        tap('fire', 'j')
+        v1 = pg.evaluate("() => { const v = awardsView(); return {label:v.label, n:v.rows.length}; }")
+        ok(v1['label'] != v0['label'], 'FIRE cycles to the next value (%s -> %s)' % (v0['label'], v1['label']))
+
+        # ⚠ THE HEADER COUNT MUST BE OF THE FILTERED SET. "2 OF 66" over four rows is a lie about
+        # the thing on screen, and it is the kind of thing only a read-back catches.
+        shown = pg.evaluate("() => awardsView().rows.length")
+        ok(shown == v1['n'], 'the list length and the header agree (%d)' % shown)
+
+        # ENEMY is the encounter axis, NOT every row that carries a stage
+        pg.evaluate("() => { awards.tab = 2; awards.fv = {}; }")
+        pg.evaluate(STEP, [2])
+        en = pg.evaluate("""() => { const v = awardsView();
+            return {label:v.label, n:v.rows.length, fams:[...new Set(v.rows.map(r=>r.family))]}; }""")
+        print('  ENEMY first value:', en)
+        ok(sorted(en['fams']) == ['boss_difficulty', 'boss_speed'] or en['fams'] == ['boss_difficulty'],
+           'ENEMY shows only rows won against a unit, not STAGE CLEAR again (%s)' % en['fams'])
+
+        # STATUS splits the set in two and the two halves add up
+        pg.evaluate("() => { awards.tab = 4; awards.fv = {}; }")
+        pg.evaluate(STEP, [2])
+        a1 = pg.evaluate("() => ({label: awardsView().label, n: awardsView().rows.length})")
+        tap('fire', 'j')
+        a2 = pg.evaluate("() => ({label: awardsView().label, n: awardsView().rows.length})")
+        alln = pg.evaluate("() => awards.rows.length")
+        ok(a1['n'] + a2['n'] == alln,
+           'STATUS splits the gallery exactly in two (%s %d + %s %d = %d)'
+           % (a1['label'], a1['n'], a2['label'], a2['n'], alln))
+
+        # an empty filter is a legitimate answer and has to say so rather than drawing a blank
+        pg.evaluate("""() => { awards.tab = 4;
+            const v = awardsView(); const k = AWARDS_TABS[4].key;
+            // land on whichever of UNLOCKED/LOCKED is empty on a wiped profile
+            while (awardsView().rows.length) { awards.fv[k] = (awards.fv[k]|0) + 1; }
+        }""")
+        pg.evaluate(STEP, [2])
+        ok(pg.evaluate("() => awardsView().rows.length === 0"), 'a filter CAN come back empty')
+        ok('NOTHING HERE YET' in pg.evaluate("() => String(drawAwards)"),
+           'and the screen says so instead of drawing an empty panel')
+
+        # changing tab resets the scroll - row 9 of the old list means nothing in the new one
+        pg.evaluate("() => { awards.tab = 0; awards.fv = {}; awards.scroll = 5; }")
+        tap('right', 'right')
+        ok(pg.evaluate("() => awards.scroll") == 0, 'changing tab resets the scroll')
+
+        shot(pg, '05_tabs.png')
+        pg.evaluate("() => { awards.tab = 1; awards.fv = {}; awards.scroll = 0; }")
+        pg.evaluate(STEP, [2])
+        shot(pg, '06_tab_type.png')
 
         ok(not errs, 'no page or console errors (%d)' % len(errs))
         for e in errs[:6]:

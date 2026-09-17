@@ -1,0 +1,328 @@
+{
+  "stage": 9,
+  "fps": 1.3213001388172905,
+  "rows": [
+    {
+      "fn": "A.blit  [game.js:1679]",
+      "samples": 11454,
+      "pct": 82.20770831838082,
+      "ms_total": 7466.074291822822,
+      "ms_per_frame": 622.1728576519018,
+      "native": [
+        "drawImage 100%"
+      ]
+    },
+    {
+      "fn": "(program)",
+      "samples": 1427,
+      "pct": 10.241871815115195,
+      "ms_total": 930.163088391057,
+      "ms_per_frame": 77.51359069925475,
+      "native": []
+    },
+    {
+      "fn": "_genCell  [game.js:2697]",
+      "samples": 257,
+      "pct": 1.8445417354482165,
+      "ms_total": 167.5206122750537,
+      "ms_per_frame": 13.960051022921142,
+      "native": [
+        "drawImage 98%",
+        "getContext 2%"
+      ]
+    },
+    {
+      "fn": "(idle)",
+      "samples": 247,
+      "pct": 1.7727696834852509,
+      "ms_total": 161.00230051337846,
+      "ms_per_frame": 13.416858376114872,
+      "native": []
+    },
+    {
+      "fn": "xartTint  [game.js:39646]",
+      "samples": 233,
+      "pct": 1.672288810737099,
+      "ms_total": 151.87666404703313,
+      "ms_per_frame": 12.656388670586095,
+      "native": [
+        "drawImage 98%",
+        "getContext 1%"
+      ]
+    },
+    {
+      "fn": "_drawEffectsInner  [game.js:46620]",
+      "samples": 162,
+      "pct": 1.162707241800043,
+      "ms_total": 105.59665053913892,
+      "ms_per_frame": 8.799720878261576,
+      "native": [
+        "drawImage 95%",
+        "fillText 2%"
+      ]
+    },
+    {
+      "fn": "A._audioCtx  [game.js:70617]",
+      "samples": 32,
+      "pct": 0.22967056628149,
+      "ms_total": 20.858597637360774,
+      "ms_per_frame": 1.7382164697800644,
+      "native": []
+    },
+    {
+      "fn": "drawBullets  [game.js:44686]",
+      "samples": 26,
+      "pct": 0.1866073351037106,
+      "ms_total": 16.94761058035563,
+      "ms_per_frame": 1.4123008816963025,
+      "native": [
+        "drawImage 62%",
+        "ctx.drawImage 12%"
+      ]
+    },
+    {
+      "fn": "A.play  [game.js:70668]",
+      "samples": 12,
+      "pct": 0.08612646235555875,
+      "ms_total": 7.82197411401029,
+      "ms_per_frame": 0.6518311761675242,
+      "native": [
+        "play 33%"
+      ]
+    },
+    {
+      "fn": "(garbage collector)",
+      "samples": 12,
+      "pct": 0.08612646235555875,
+      "ms_total": 7.82197411401029,
+      "ms_per_frame": 0.6518311761675242,
+      "native": []
+    },
+    {
+      "fn": "drawDeathDebris  [game.js:52593]",
+      "samples": 5,
+      "pct": 0.035886025981482814,
+      "ms_total": 3.259155880837621,
+      "ms_per_frame": 0.27159632340313505,
+      "native": [
+        "drawImage 80%",
+        "rotate 20%"
+      ]
+    },
+    {
+      "fn": "pollGamepad  [game.js:7219]",
+      "samples": 3,
+      "pct": 0.021531615588889687,
+      "ms_total": 1.9554935285025725,
+      "ms_per_frame": 0.16295779404188104,
+      "native": [
+        "getGamepads 67%"
+      ]
+    },
+    {
+      "fn": "updatePlay  [game.js:31823]",
+      "samples": 3,
+      "pct": 0.021531615588889687,
+      "ms_total": 1.9554935285025725,
+      "ms_per_frame": 0.16295779404188104,
+      "native": []
+    },
+    {
+      "fn": "drawEffects  [game.js:46614]",
+      "samples": 3,
+      "pct": 0.021531615588889687,
+      "ms_total": 1.9554935285025725,
+      "ms_per_frame": 0.16295779404188104,
+      "native": []
+    },
+    {
+      "fn": "s9VoidTick  [game.js:51809]",
+      "samples": 2,
+      "pct": 0.014354410392593124,
+      "ms_total": 1.3036623523350483,
+      "ms_per_frame": 0.10863852936125402,
+      "native": []
+    },
+    {
+      "fn": "enemyShotSfx  [game.js:27167]",
+      "samples": 2,
+      "pct": 0.014354410392593124,
+      "ms_total": 1.3036623523350483,
+      "ms_per_frame": 0.10863852936125402,
+      "native": []
+    }
+  ],
+  "control": {
+    "stage": 3,
+    "fps": 43.924108550710194,
+    "rows": [
+      {
+        "fn": "(program)",
+        "samples": 10536,
+        "pct": 74.89869908296012,
+        "ms_total": 6155.715223618676,
+        "ms_per_frame": 17.051842724705473,
+        "native": []
+      },
+      {
+        "fn": "drawFrameTinted  [game.js:64545]",
+        "samples": 482,
+        "pct": 3.4264590886471886,
+        "ms_total": 281.611117861067,
+        "ms_per_frame": 0.7800861990611274,
+        "native": [
+          "drawImage 65%",
+          "clearRect 12%",
+          "ctx.drawImage 3%"
+        ]
+      },
+      {
+        "fn": "_drawEffectsInner  [game.js:46620]",
+        "samples": 382,
+        "pct": 2.715575460297149,
+        "ms_total": 223.1855747363643,
+        "ms_per_frame": 0.618242589297408,
+        "native": [
+          "drawImage 64%",
+          "save 9%",
+          "ctx.drawImage 5%"
+        ]
+      },
+      {
+        "fn": "(idle)",
+        "samples": 295,
+        "pct": 2.0971067036326154,
+        "ms_total": 172.35535221787296,
+        "ms_per_frame": 0.4774386488029722,
+        "native": []
+      },
+      {
+        "fn": "xartTint  [game.js:39646]",
+        "samples": 268,
+        "pct": 1.9051681239781049,
+        "ms_total": 156.58045557420323,
+        "ms_per_frame": 0.43374087416676793,
+        "native": [
+          "drawImage 90%",
+          "createElement 0%",
+          "getContext 0%"
+        ]
+      },
+      {
+        "fn": "bakeGlow  [game.js:39759]",
+        "samples": 240,
+        "pct": 1.7061207080400937,
+        "ms_total": 140.22130349928648,
+        "ms_per_frame": 0.38842466343292653,
+        "native": [
+          "drawImage 100%"
+        ]
+      },
+      {
+        "fn": "drawS3Ice  [game.js:51069]",
+        "samples": 190,
+        "pct": 1.3506788938650742,
+        "ms_total": 111.00853193693511,
+        "ms_per_frame": 0.3075028585510668,
+        "native": [
+          "drawImage 97%",
+          "save 1%",
+          "ctx.drawImage 1%"
+        ]
+      },
+      {
+        "fn": "drawMfx  [game.js:39816]",
+        "samples": 171,
+        "pct": 1.2156110044785668,
+        "ms_total": 99.9076787432416,
+        "ms_per_frame": 0.2767525726959601,
+        "native": [
+          "drawImage 55%",
+          "ctx.drawImage 11%",
+          "save 11%"
+        ]
+      },
+      {
+        "fn": "updatePlay  [game.js:31823]",
+        "samples": 111,
+        "pct": 0.7890808274685434,
+        "ms_total": 64.85235286841998,
+        "ms_per_frame": 0.17964640683772848,
+        "native": []
+      },
+      {
+        "fn": "droneDraw  [game.js:10417]",
+        "samples": 89,
+        "pct": 0.6326864292315348,
+        "ms_total": 51.9987333809854,
+        "ms_per_frame": 0.14404081268971025,
+        "native": [
+          "drawImage 58%",
+          "restore 7%",
+          "ctx.drawImage 6%"
+        ]
+      },
+      {
+        "fn": "loop  [game.js:69813]",
+        "samples": 80,
+        "pct": 0.5687069026800313,
+        "ms_total": 46.74043449976216,
+        "ms_per_frame": 0.12947488781097552,
+        "native": [
+          "clearRect 4%",
+          "requestAnimationFrame 2%"
+        ]
+      },
+      {
+        "fn": "X._touch  [game.js:2785]",
+        "samples": 77,
+        "pct": 0.5473803938295301,
+        "ms_total": 44.98766820602108,
+        "ms_per_frame": 0.12461957951806392,
+        "native": []
+      },
+      {
+        "fn": "A.play  [game.js:70668]",
+        "samples": 67,
+        "pct": 0.4762920309945262,
+        "ms_total": 39.14511389355081,
+        "ms_per_frame": 0.10843521854169198,
+        "native": [
+          "play 21%",
+          "now 1%"
+        ]
+      },
+      {
+        "fn": "(garbage collector)",
+        "samples": 57,
+        "pct": 0.4052036681595223,
+        "ms_total": 33.30255958108054,
+        "ms_per_frame": 0.09225085756532005,
+        "native": []
+      },
+      {
+        "fn": "stage3DroneShotDraw  [game.js:42754]",
+        "samples": 46,
+        "pct": 0.327006469041018,
+        "ms_total": 26.87574983736324,
+        "ms_per_frame": 0.07444806049131092,
+        "native": [
+          "drawImage 59%",
+          "ctx.drawImage 15%",
+          "clip 4%"
+        ]
+      },
+      {
+        "fn": "drawAnimTerrain  [game.js:3231]",
+        "samples": 45,
+        "pct": 0.3198976327575176,
+        "ms_total": 26.29149440611621,
+        "ms_per_frame": 0.07282962439367371,
+        "native": [
+          "drawImage 58%",
+          "ctx.drawImage 31%"
+        ]
+      }
+    ]
+  }
+}

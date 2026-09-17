@@ -40,10 +40,12 @@ def main():
         pg.wait_for_timeout(800)
 
         items=pg.evaluate("() => window.__BOFHELP().items")
-        ok(items==['NEW GAME','PASSWORD','OPTIONS','HELP','CREDITS','EXIT GAME'],
-           'HELP is the fourth title button: %s' % items)
+        # REPOINTED: this pinned the whole six-row menu while claiming only HELP's position, so
+        # ACHIEVEMENTS landing in 0916 failed it on a build where HELP is exactly where it belongs.
+        ok(items.index('HELP')==3 and items.index('OPTIONS')==2,
+           'HELP is the fourth title button, under OPTIONS: %s' % items)
         ok(pg.evaluate("() => window.__BOFHELP().btnArt"),
-           'its plate (btn_help) is registered and decoded, matching the menu family')
+           'its plate (btn_help_0916) is registered and decoded, matching the menu family')
         pg.screenshot(path=os.path.join(a.out,'00_title.png'))
 
         # ⚠ the wrap, both ways - a literal 5 would strand the sixth item

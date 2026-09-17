@@ -1,0 +1,295 @@
+{
+  "drop": "0916 title marquee lights and lettering",
+  "request": "in each marquee, the lights should be palette swapped to different colors on the left and right sides of the button. New Game - Neon Green, Enter Password - Neon Orange, Options - Neon Blue. Help - Neon pink - Achievements - Neon Red - Credits - Neon Black, also palette swap Star to Black. Exit Game - White Light. You also palette swap the text in each button to match the color of the lights. Options may need another generation as Ice has nothing to do with Options.",
+  "assignments": [
+    {
+      "button": "NEW GAME",
+      "light": "Neon Green",
+      "target_hue": 0.312,
+      "measured_lamp_hue": 0.293,
+      "measured_text_hue": 0.313
+    },
+    {
+      "button": "ENTER PASSWORD",
+      "light": "Neon Orange",
+      "target_hue": 0.055,
+      "measured_lamp_hue": 0.047,
+      "measured_text_hue": 0.056
+    },
+    {
+      "button": "OPTIONS",
+      "light": "Neon Blue",
+      "target_hue": 0.578,
+      "measured_lamp_hue": 0.56,
+      "measured_text_hue": 0.576,
+      "scene": "regenerated"
+    },
+    {
+      "button": "HELP",
+      "light": "Neon Pink",
+      "target_hue": 0.905,
+      "measured_lamp_hue": 0.877,
+      "measured_text_hue": 0.907
+    },
+    {
+      "button": "ACHIEVEMENTS",
+      "light": "Neon Red",
+      "target_hue": 0.985,
+      "measured_lamp_hue": 0.956,
+      "measured_text_hue": 0.986
+    },
+    {
+      "button": "CREDITS",
+      "light": "Neon Brown",
+      "target_hue": 0.072,
+      "measured_lamp_hue": 0.076,
+      "measured_text_hue": 0.07,
+      "brightest_lamp_px": 0.33,
+      "was": 0.73,
+      "text_value": 0.46,
+      "text_was": 0.79,
+      "star": "602 px browned",
+      "note": "first built as Neon Black to the original list, changed on Mike's follow-up"
+    },
+    {
+      "button": "EXIT GAME",
+      "light": "White Light",
+      "mode": "desaturate and lift",
+      "lamp_saturation": 0.06,
+      "was": 0.66,
+      "text_saturation": 0.04,
+      "text_value": 1.0
+    }
+  ],
+  "masks": {
+    "lamps": {
+      "method": "the lit bounding box inside each end's bezel - geometry, not a saturation cut",
+      "why": "the bezel zone's saturation histogram has NO empty band: bin 0 holds 716-986 px of grey metal, bin 9 holds 575-748 px of lit tube, and the bins between hold 150-270 px each of spill",
+      "trap_avoided": "0907u - five colour detectors, each breaking the ship the last one fixed"
+    },
+    "letters": {
+      "method": "gold components sharing one baseline; the band is the MEDIAN of the letter-sized components",
+      "why": "a gold colour mask alone swallowed the sunset sky on NEW GAME (1692 px), the trophy and medals on ACHIEVEMENTS, the star on CREDITS and the fire on EXIT GAME",
+      "measured_bands": {
+        "letters": "y0 22-23 / y1 44-45 on every plate",
+        "sky": "y11-48",
+        "medal": "y32-52",
+        "trophy": "y20-39",
+        "star": "y14-48",
+        "fire": "y34-51"
+      },
+      "glyph_counts": {
+        "NEW GAME": 7,
+        "ENTER PASSWORD": 13,
+        "OPTIONS": 7,
+        "HELP": 4,
+        "ACHIEVEMENTS": 12,
+        "CREDITS": 7,
+        "EXIT GAME": 8
+      },
+      "rejected_discriminator": "boundary darkness - letters 0.41-0.95 vs sky 0.30 and medal 0.19, but CREDITS' star reads 0.24 against its own dimmest letter at 0.41; kept only as a tie-break"
+    }
+  },
+  "faults_found_by_rendering": [
+    {
+      "what": "a LINEAR saturation weight gave mid-tones the wrong hue",
+      "detail": "rotating by dh*s sent a pale gold highlight at s=0.30 only 30% of the way - aiming HELP at pink (+0.79) landed those pixels on 0.36, which is GREEN, so the word came out violet and ACHIEVEMENTS came out magenta",
+      "rule": "a partial hue rotation is not a paler target, it is a DIFFERENT COLOUR",
+      "fix": "text rotates whole; the lamp uses a sharpened ramp"
+    },
+    {
+      "what": "the Credits star went black down the left and stayed gold down the right",
+      "detail": "its own bevel splits it into two components (n=174 at x27-45, n=51 at x46-61) and only 'the tall one' was taken",
+      "fix": "union every component in the emblem panel; the lamp (n=88 at x6-11, also gold) is excluded by geometry"
+    },
+    {
+      "what": "a blacked lamp sat in a fully lit socket",
+      "detail": "crushing only the coloured pixels left the brightest bezel pixel at 0.47 against 0.78 - a dim tube in a bright housing does not read as 'off'",
+      "fix": "dim the whole box; 0.31 against 0.71"
+    },
+    {
+      "what": "the +0.72 cold cast turned the star and lettering PLUM",
+      "detail": "a violet star is not 'Star to Black'",
+      "fix": "cast is the lamp's only; the star and text are crushed neutral"
+    },
+    {
+      "what": "a weighted luminance drop left the brown tube looking gold",
+      "detail": "the saturation weight spares low-saturation pixels on purpose - but a neon tube's WHITE-HOT CORE is low-saturation too, so the brightest lamp pixels went 1.00 to only 0.58-0.74 and the lamp still read amber while the medians said it had moved",
+      "fix": "an unconditional dim across the tube; brown is dark by definition and has no white-hot core to protect. 0.33 against 0.73"
+    }
+  ],
+  "options_regeneration": {
+    "why": "Mike: Ice has nothing to do with Options",
+    "single_bar_attempts": [
+      {
+        "id": "o1",
+        "size": "362x79",
+        "aspect": 4.582
+      },
+      {
+        "id": "o2",
+        "size": "367x88",
+        "aspect": 4.17
+      },
+      {
+        "id": "o3",
+        "size": "502x43",
+        "aspect": 11.674
+      }
+    ],
+    "why_rejected": "titleMenuLayout draws every row at one width and takes height from the plate, so a 4.58 bar draws 27% TALLER than its neighbours - the exact defect this family was regenerated to fix, one drop later",
+    "the_lever": "the BAR COUNT sets the aspect, not the prompt: 3 bars in a square canvas gave 3.56-4.46, 7 bars gives ~5.8 because the bars divide the canvas",
+    "solution": "regenerate the SEVEN-bar sheet with only the OPTIONS scene changed, and take only that bar",
+    "result": {
+      "bar": "397x70",
+      "aspect": 5.671,
+      "sheet_bars": "396x69 / 397x69 / 397x68 / 397x67 - the shipped family's dimensions exactly"
+    },
+    "family_spread_after": 0.254,
+    "old_plate_kept_as": "assets/game/ui/title_0916/btn_options.ice.png",
+    "credits_spent": 84,
+    "balance_after": 5205
+  },
+  "palette_check": {
+    "rule": "count opaque colours before and after - a halved palette is the signature of a range-exchange shredder (0906o)",
+    "ratios": {
+      "newgame": 1.02,
+      "password": 1.02,
+      "options": 1.05,
+      "help": 1.03,
+      "achievements": 1.03,
+      "credits": 0.99,
+      "exit": 0.87
+    },
+    "note": "the one below 1.0 is EXIT GAME, which collapses chroma by definition - that is a desaturation, not a shredder"
+  },
+  "probe": {
+    "file": "_BUILD_SOURCE/probe_title_0916.py",
+    "result": "40 ok / 0 fail",
+    "page_errors": 0,
+    "console_errors": 0,
+    "method": "real Chromium; every colour read off the canvas XART hands the title, measured on the pixels that CHANGED (live plate diffed against the un-recoloured source on disk)",
+    "own_fault": {
+      "what": "the first cut sampled 'saturated bright pixels in the bezel' and failed FOUR assertions on a correct build",
+      "why": "CREDITS is Neon Black and EXIT GAME is White Light, so neither lamp HAS saturation - the sample came back empty and the probe printed value -1.000, which reads as 'the lamp is gone' rather than 'I asked the wrong question'; and the 431 and 553 'letter' pixels it found on those two were the city lights and the runway fire",
+      "fix": "diff against the source on disk, so the scene cannot contaminate the mask and a colourless lamp is still findable"
+    },
+    "changed_px": {
+      "newgame": [
+        1103,
+        2236
+      ],
+      "password": [
+        552,
+        3706
+      ],
+      "options": [
+        1557,
+        1980
+      ],
+      "help": [
+        1280,
+        931
+      ],
+      "achievements": [
+        1169,
+        3367
+      ],
+      "credits": [
+        2360,
+        2437
+      ],
+      "exit": [
+        1714,
+        2072
+      ]
+    }
+  },
+  "registration": {
+    "keys": "btn_<name>_0916 now point at btn_<name>_lit.png",
+    "why": "the sheet's own cuts stay un-recoloured on disk, so the swap is one path from a revert AND the builder always re-runs from a clean source - a script that consumes its own output is not idempotent (0907u)"
+  },
+  "flagged_not_changed": "superseded: Credits is brown now, which reads far better on the night-city scene than the black build did",
+  "proofs": [
+    "docs/proofs/awards_0916/19_lights.png",
+    "docs/proofs/awards_0916/20_credits_black.png",
+    "docs/proofs/awards_0916/22_options_new.png",
+    "docs/proofs/awards_0916/23_black_and_white.png",
+    "docs/proofs/awards_0916/15_title_seven.png"
+  ],
+  "suite": {
+    "command": "node _BUILD_SOURCE/test_fl.js",
+    "baseline_worktree": "9f64e731 (clean git worktree at HEAD)",
+    "result": "4,658 ok / 56 fail",
+    "baseline": "4,647 ok / 56 fail",
+    "assertions_added": 10,
+    "failure_names_new": [],
+    "failure_names_repaired": [],
+    "note": "after the brown revision; failure set IDENTICAL to the best baseline run, names compared with numbers masked",
+    "nondeterminism": {
+      "observed_band": "56-57 on BOTH trees",
+      "two_order_dependent_fixtures_alternate": [
+        "stage 1: the sand tanks spawn - records only enemies.slice(-4)[0] per waveIdx increment off an unseeded plan",
+        "a second lance may destroy the wounded 3-drone column - runs 200 frames of live updatePlay, so whether the second lance connects in time moves with the run"
+      ],
+      "runs": [
+        {
+          "tree": "baseline",
+          "fail": 56,
+          "sand": "pass",
+          "lance": "pass"
+        },
+        {
+          "tree": "baseline",
+          "fail": 56,
+          "sand": "pass",
+          "lance": "pass"
+        },
+        {
+          "tree": "baseline",
+          "fail": 57,
+          "sand": "FAIL",
+          "lance": "pass"
+        },
+        {
+          "tree": "mine",
+          "fail": 57,
+          "sand": "FAIL",
+          "lance": "pass"
+        },
+        {
+          "tree": "mine",
+          "fail": 57,
+          "sand": "FAIL",
+          "lance": "pass"
+        },
+        {
+          "tree": "mine",
+          "fail": 57,
+          "sand": "FAIL",
+          "lance": "pass"
+        },
+        {
+          "tree": "mine",
+          "fail": 57,
+          "sand": "pass",
+          "lance": "FAIL"
+        },
+        {
+          "tree": "mine",
+          "fail": 56,
+          "sand": "pass",
+          "lance": "pass"
+        }
+      ],
+      "mechanism_check": "git diff of assets/game.js matches 0 lines against random|spawnEnemy|waveIdx|updatePlay|pShoot|drone|lance|enemies - the diff is the registration strings, MENU_KEYS, TITLE_ICONS, drawMenuButtons, titleMenuLayout's pre-decode aspect and the help readout"
+    },
+    "section_365": "10/10"
+  },
+  "brown_revision": {
+    "request": "make credits neon brown instead with the star, text and light",
+    "why_hue_is_not_enough": "brown is DARK ORANGE, not its own hue, and these plates' lamps are already amber at 0.100 against a 0.072 target - a 0.028 rotation is nothing",
+    "vacuity_guard": "measured absolutely (the probe's first cut) a |hue-0.072|<0.055 check PASSES on the untouched plate, i.e. cannot fail; the diff mask stops that, and the LUMINANCE drop carries the assertion",
+    "palette_ratio": 0.99
+  }
+}

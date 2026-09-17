@@ -4713,3 +4713,422 @@ Two assertions failed and were REPOINTED: `HELP is the fourth title button` pinn
 while claiming only HELP's position, and my own pin matched the COMMENT explaining its own fix
 (section 47, self-inflicted - strip comments in every toString() assertion).
 `probe_awards_0916.py` 22/0. Suite 4,647 ok / 57 fail, no new names. `docs/AWARDS_0916.md`, §364.
+
+## 0916 - the title buttons are one generated sheet, and "too large" was an ASPECT
+
+Mike: *"Regenerate all my other buttons here to match the current style of Bullets of Fury and
+proper reference of ships and pilots please. The help button also is too large compared to the
+rest."*
+
+⚠⚠ **NOTHING ABOUT `btn_help` WAS BIG - IT WAS THE WRONG SHAPE, AND NO SIZE CHANGE COULD HAVE FIXED
+IT.** `titleMenuLayout` measures ONE width for the whole menu and takes each row's height from its
+own plate (`h = w * naturalHeight/naturalWidth`). Measured: the authored bars are 1090x222-233, i.e.
+**4.68-4.91:1**, and `btn_help` is **446x112 = 3.98:1** - 19% squatter, so at the menu's common
+width it drew **~23% taller** than every bar around it. A plate with the family's aspect is the only
+fix, which means regenerating the family.
+⚠ **AND THE ACHIEVEMENTS BAR WAS ABOUT TO BE THE SAME BUG ONE BUTTON OVER.** It was generated alone
+for ACH-02 at 5.17; a six-bar replacement came back at 6.11-6.27, which would have made the newest
+button the odd one out. Seven bars cut from ONE job share an aspect by construction: **5.739-5.925,
+a 0.186 spread** on the live canvas, against the shipped family's 0.93.
+
+⚠ **THE BETTER-LOOKING SHEET COULD NOT BE CUT, AND MY OWN PROOF RENDER HID THAT.** Of two correctly
+lettered candidates, the one with the richer scenes had **9,423 alpha-0 px of 262,144 and ONE
+connected island** - its background was never cut out, so the bars are joined by painted backdrop.
+The other has 82,024 and seven clean row gutters. The `--check` card composites each cut onto a dark
+background, which is right for colour (0906v) and **cannot show you that a plate has no alpha**; the
+alpha histogram answered in one line. The shipped sheet's scenes turn out to run the game's own
+stage order anyway - jungle and hangar, volcano, ice, circuitry, trophy, neon city, burning runway.
+
+⚠ **THEY SHIP UNDER `btn_<name>_0916`.** `btn_newgame` and friends are ATLAS CELLS and cells are
+checked BEFORE the loose-file cache (0912m), so a loose file under the same key is silently ignored
+and the title goes on drawing the old plates with nothing failing. Registered in the CODE-OWNED
+`XART._src` block; the atlas rows stay for `CAMP_PAUSE_BTN` and `CAMPHUB_ITEMS`, which draw their own.
+
+⚠ **0912a's "FOUR PLACES KNEW THE TITLE MENU WAS FIVE LONG" WAS ONE PLACE SHORT.** The pre-decode
+fallback's icon list was an inline SIX-entry array against a seven-row menu, so **EXIT GAME drew
+with `icon` undefined** - it is `TITLE_ICONS` now, asserted the same length as `TITLE_ITEMS`. And
+the gate above it read `XART.rdy('btn_newgame')`, a written-out key: with the menu repointed that
+tests a plate the title no longer draws, so it is true for ever and the fallback can never run. It
+reads `MENU_KEYS[0]`.
+
+⚠ **THE PROBE FAILED THREE ASSERTIONS ON ITS FIRST RUN AND THE GAME WAS RIGHT BOTH TIMES.** It
+stepped TWO frames and measured row pitch across the lot, so the wrap from the last row of one frame
+to the first row of the next came out as **-288px** - a row apparently flying off the top of a menu
+that is fine. And it asserted "every row draws at one measured box", which the layout does not
+claim: it fixes the WIDTH and gives each plate its own height, so the honest quantity - and the one
+Mike was actually looking at - is **not stretched**, max-minus-min 1.38px across the seven.
+
+Two assertions repointed rather than worked around: `probe_help_0912a.py` pinned the whole six-row
+menu while claiming only *"HELP is the fourth title button"*, so ACHIEVEMENTS failed it on a build
+where HELP is exactly where it belongs; and `test_awards_0916.cjs`'s registration pin now names
+`title_0916/`.
+
+Seen in the proof and NOT fixed: the in-canvas control hint row draws the D-pad glyph over its own
+label, so MENU reads as **MEWII** (the strip below the canvas is correct). That is the 0914 control
+hints work, and which of the two moves is Mike's call.
+
+`probe_title_0916.py` 16/0, 0 page or console errors - seven plates decoded, seven blitted in
+MENU_KEYS order identified by KEY, pitch 48.0 x6 exactly even, 0 rows overlapping - **with a
+busted arm on the fallback**, which no green run had ever reached: `MENU_KEYS[0]` repointed at an
+unregistered key draws all seven rows with icons, and reports `EXIT GAME -> <undefined>` on the
+code this replaces. ⚠ That arm first sat AFTER the probe navigated away, so `drawMenuButtons`
+never ran and it read 0 rows - indistinguishable from a broken fallback. **Its CONTROL is what
+said otherwise** (0 blits with the key restored = the title is not being drawn at all).
+`docs/TITLE_BUTTONS_0916.md`, `docs/qa/title_buttons_0916.json`, suite section 365.
+Suite **4,656 ok / 57 fail** against a clean worktree at `9f64e731`'s 4,647 / 57 - +9, exactly
+section 365, with IDENTICAL failure names.
+⚠ **AND THE SAND-TANK FIXTURE WAS CHASED RATHER THAN WAVED AWAY AS "THE KNOWN FLAKE", BECAUSE
+THE EVIDENCE DID NOT SUPPORT THAT.** It passed on the baseline and failed on my tree TWICE - which
+is what a regression looks like. What settled it: `git diff assets/game.js` touches **zero** lines
+matching `random|spawn|wave|enemies|mapScroll`; the fixture records only `enemies.slice(-4)[0]` per
+`waveIdx` increment off an UNSEEDED plan, so which unit it sees is spawn-order dependent (its own
+passes print 2302 then 2296); and **a THIRD baseline run, with nothing changed, failed it**.
+Measured this session: baseline 2 pass / 1 fail, mine 0 pass / 3 fail over five full runs. **A 2-2
+split is not evidence either way** - the third run is what made it evidence.
+
+## 0916 - the marquee lights, and a partial hue rotation is a DIFFERENT COLOUR
+
+Mike: *"in each marquee, the lights should be palette swapped to different colors on the left and
+right sides of the button ... You also palette swap the text in each button to match the color of
+the lights. Options may need another generation as Ice has nothing to do with Options."*
+
+Green / orange / blue / pink / red / black / white, lamps AND lettering, plus the CREDITS star.
+
+⚠⚠ **A LINEAR SATURATION WEIGHT GAVE MID-TONES THE WRONG HUE, AND ONLY THE RENDER SAW IT.** Rotating
+by `dh * s` sends a pale gold highlight at s=0.30 only 30% of the way: aiming HELP's lettering at
+pink (+0.79) landed those pixels on **0.36, which is GREEN**, and the word came out violet.
+ACHIEVEMENTS came out magenta the same way. **A partial hue rotation is not a paler version of the
+target - it is a different colour**, which is the one thing a weight must never do. The weight was
+there for a good reason (grey bezel metal must not gain colour) and it was applied to the wrong
+thing: text rotates WHOLE, the lamp uses a sharpened ramp. Every number in the build was green
+before and after; the picture is what separated them.
+
+⚠ **NEITHER MASK IS A THRESHOLD, BECAUSE NEITHER COULD BE.** The bezel's saturation histogram has
+**no empty band** - 716-986 px of grey metal in bin 0, 575-748 px of lit tube in bin 9, and 150-270
+px in every bin between - so the lamps are bounded GEOMETRICALLY (the lit box inside each end's
+bezel). And a gold colour mask for the lettering swallowed the sunset SKY on NEW GAME (1,692 px),
+the trophy and medals on ACHIEVEMENTS, the star on CREDITS and the fire on EXIT GAME. What separates
+a word from a painted scene is that **every glyph sits on the SAME TWO ROWS**: letters land at
+y0 22-23 / y1 44-45 on all seven plates, against the sky at y11-48, the medal y32-52, the trophy
+y20-39, the star y14-48, the fire y34-51. The band is the MEDIAN of the letter-sized components, so
+a regenerated plate classifies itself - which the new OPTIONS plate then did, at 7 glyphs.
+
+⚠ **BLACK AND WHITE CANNOT BE A ROTATION, AND A BLACK LAMP TAKES ITS HOUSING WITH IT.** Crushing
+only the coloured pixels left the socket's lit metal at full brightness: the brightest pixel in the
+bezel measured **0.47 against 0.78**, a dim tube in a bright socket, which does not read as "off" at
+all. Dimming the whole box gives 0.31 against 0.71. ⚠ And the cold cast that makes the tube still
+read as a tube turned the STAR and the LETTERING **plum** - a violet star is not "Star to Black", so
+the cast is the lamp's only and those are crushed neutral. ⚠ The star also came out black down the
+left and gold down the right, because its own bevel splits it into two components (n=174 at x27-45,
+n=51 at x46-61) and I took "the tall one"; the third component in that panel, n=88 at x6-11, is the
+LAMP, gold like everything else, excluded by geometry rather than by a size rule that needs retuning.
+
+⚠⚠ **OPTIONS: A SINGLE-BAR GENERATION CANNOT MATCH THE FAMILY, AND SHIPPING ONE WOULD HAVE
+REINTRODUCED THE EXACT BUG HE REPORTED LAST DROP.** Three good console scenes came back at **4.58,
+4.17 and 11.67** against a family at 5.74-5.93 - and `titleMenuLayout` draws every row at one width
+and takes height from the plate, so a 4.58 bar draws **27% taller** than its neighbours, which is
+`btn_help` all over again one drop later. **The lever is the BAR COUNT, not the prompt**: three bars
+in a square canvas come back at 3.56-4.46, seven bars give ~5.8, because the bars divide the canvas.
+Regenerating the SEVEN-bar sheet with only the OPTIONS scene changed returned 396x69 / 397x69 /
+397x68 / 397x67 - the shipped family's dimensions exactly - and only that one bar was taken. Family
+spread 0.254. The ice plate is kept as `btn_options.ice.png`.
+
+⚠ **AND THE PROBE FAILED FOUR ASSERTIONS ON A CORRECT BUILD BY ASKING THE WRONG QUESTION.** It
+sampled "saturated bright pixels in the bezel" - but CREDITS is Neon Black and EXIT GAME is White
+Light, so neither lamp HAS saturation: the sample came back EMPTY and it printed value **-1.000**,
+which reads as "the lamp is gone" rather than "that metric cannot see this". The 431 and 553
+"letter" pixels it did find on those two were the CITY LIGHTS and the RUNWAY FIRE, in the same band
+and never meant to change. It diffs the live plate against the un-recoloured source on disk now, so
+the mask is exactly what the builder touched, the scene cannot contaminate it, and a colourless lamp
+is still findable. **A metric that returns empty is not a measurement of zero.**
+
+The recoloured plates ship as `btn_<name>_lit.png` and the keys point there; the sheet's own cuts
+stay un-recoloured so the builder always re-runs from a clean source (0907u: a script that consumes
+its own output is not idempotent). Palette counts 0.84-1.05 - the two below 1.0 are the black and
+the white, which collapse chroma by definition.
+
+⚠ **AND THEN CREDITS BECAME NEON BROWN** (*"make credits neon brown instead with the star, text
+and light"*), which is a harder colour than it sounds. **BROWN IS NOT ITS OWN HUE - IT IS DARK
+ORANGE - AND THESE LAMPS WERE ALREADY AMBER**: the plates measure 0.100 against a brown target of
+0.072, a rotation of 0.028, i.e. nothing. Hue alone leaves the bar as generated with every number
+still green; the LUMINANCE is what makes brown read as brown.
+⚠ **AND THE WEIGHTED DROP ALONE LEFT THE TUBE LOOKING GOLD.** The saturation weight spares
+low-saturation pixels on purpose - that is what keeps the grey bezel grey - but a neon tube's
+**white-hot core is low-saturation too**, so it kept nearly all its brightness: brightest lamp
+pixels went 1.00 -> only **0.58-0.74** and the lamp still read amber at a glance while the medians
+said it had moved. A brown lamp has no white-hot core to protect, so an unconditional dim brings
+the whole tube down: **0.33 against 0.73**, lettering 0.46 against the gold's 0.79.
+⚠ **AND A HUE ASSERTION HERE WOULD HAVE BEEN VACUOUS.** Measured absolutely - which is how this
+probe's first cut worked - `|hue - 0.072| < 0.055` **passes on the untouched plate**. The diff mask
+stops that by construction, and the luminance drop is what carries the assertion. The black build's
+legibility worry is moot: brown reads far better on the night city, and the palette ratio went 0.84
+-> 0.99.
+
+`probe_title_0916.py` **40/0**, 0 errors, every colour read off the canvas the game serves. Suite
+**4,658 ok / 56 fail** against a clean worktree at `9f64e731`'s 4,647 / 56 - the failure sets are
+IDENTICAL. ⚠ The band is **56-57 on BOTH trees**, and over eight runs this session the extra name
+was always one of two order-dependent fixtures and never both - the stage-1 sand tanks, and "a
+second lance may destroy the wounded 3-drone column", which runs 200 frames of live `updatePlay`.
+The baseline reproduces the first with zero code changes.
+`docs/TITLE_LIGHTS_0916.md`, `docs/qa/title_lights_0916.json`, suite section 365.
+
+## 0916 - the achievement tabs, and a filter that was right about data that was wrong
+
+Mike: *"allow me to have a tab system and filter system to view our achievements by type, enemy,
+player, completion etc."* Five tabs - ALL / TYPE / ENEMY / PILOT / STATUS - LEFT/RIGHT between them,
+FIRE to cycle the value inside one.
+
+⚠ **EVERY TAB'S VALUES ARE DERIVED FROM THE ROWS, NEVER HAND-LISTED.** This file's own history is the
+argument: `_selfPat`, the edge-pin exemption list and the enemy-separation list were each a
+hand-written list that went stale the moment something new arrived, and each cost a drop. Deriving
+means a family added later appears in TYPE on its own, and a family with no rows cannot appear at
+all. The suite asserts the stronger direction too: no family present in `achievementList()` may be
+missing from the tab.
+
+⚠ **"ENEMY" IS THE ENCOUNTER AXIS, NOT EVERY ROW THAT CARRIES A STAGE.** Clearing stage 4 without
+dying is about the STAGE; beating its boss on Furious is about the BOSS. Offering every row with a
+`stage` field would have made ENEMY a second copy of STAGE CLEAR.
+
+⚠ **AND THE FOUR STAGE-1 SPEED AWARDS HAD NO `stage` FIELD AT ALL.** `stage1_boss_under_60` and its
+three siblings say "Stage 1" in their ids AND their titles, and their definitions carried only
+`{family, role, seconds}` - so the ENEMY tab showed stage 1 its two boss_difficulty rows and none of
+its four speed rows. **The filter was right and the data was short a field.** Found by reading the
+probe's own printed numbers; nothing failed, because the tab did exactly what it was written to do.
+
+⚠⚠ **"BY PLAYER" NEEDED A FIX IN THE GRANT PATH, NOT IN THE FILTER: 60 OF THE 66 GRANTS NEVER
+RECORDED WHO WAS FLYING.** The only pilot anywhere in this system was the `pilot` field on the NINE
+campaign-clear DEFINITIONS. `achievementRunComplete` already put `pilot` in its unlock meta, but
+`achievementStageComplete`, `achievementEncounterDefeat` and `achievementWeaponMax` built their meta
+inline with mode/difficulty/stage only - so a PILOT tab over that data could only ever have shown one
+row per pilot, and it would have looked like a working filter. `achievementMeta(extra)` is the single
+funnel now (pilot, the co-op second seat, mode, difficulty) and all three go through it, so a grant
+added later carries it for free. ⚠ **It cannot rewrite history**: unlocks already in a player's
+localStorage have no pilot, so a pre-0916 save shows PILOT its campaign-clear rows and nothing else.
+That is the stored data, not the filter, and the tab does not pretend otherwise.
+
+⚠ **THE LOAD-BEARING PROBE ASSERTION IS THAT ONE PRESS MOVES EXACTLY ONE TAB.** `Input.menuLeft` and
+`menuRight` CONSUME their tap, and this file already records the worked example of getting it wrong
+(`d = menuLeft() ? -1 : 1` is always +1, because the second call was eaten by the first). **A probe
+that only checked "the tab changed" would pass on that bug**, so it checks `start+1` exactly and that
+LEFT comes straight back.
+
+Two more the design had to get right: the header counts the FILTERED set (a "0 OF 66" over four rows
+is a lie about what is on screen - the POINTS stay the profile total, because that is a score and not
+a count), and an empty filter says NOTHING HERE YET rather than drawing a blank panel, which reads as
+broken.
+
+`probe_awards_0916.py` **38/0**, 0 errors, real key taps. Suite **4,669 ok / 56 fail** against a clean
+worktree at `9f64e731`'s 4,647 / 56 - failure set IDENTICAL. `docs/ACH_TABS_0916.md`,
+`docs/qa/ach_tabs_0916.json`, section 364.
+
+**Still open on the ACH brief:** the Furious Points VAULT (dev videos, interviews, BOF2 sneak peeks),
+Bunny mode for Falva, Bombshell mode for Lizzie, and INSANITY - the fifth difficulty, invisible and
+unselectable until bought with points, with its own generated button.
+
+## 0916 - Furious Points, INSANITY, and three tables that would have made it the EASIEST setting
+
+Mike's ACH brief: the *"Furious"* points currency, and *"Insanity - a 5th difficulty and 5th
+difficulty button you should generate. it will not show up unless you unlock it via achievement
+points, so its an invisible button you cant even select until this condition is met."*
+
+⚠⚠ **THREE HAND-WRITTEN PER-DIFFICULTY TABLES HAD NO INSANITY ROW, AND ALL THREE FALL BACK TO
+NORMAL.** `FODDER_DIFF` is read as `FODDER_DIFF[k] || 1`; `DRONE_TELL` and `DRONE_RECOVER` fall back
+to `.normal` BY NAME. So the hardest difficulty in the game would have shipped with **softer fodder
+than HARD** (1.0 against 1.15, against FURIOUS's 1.60) and **longer warnings than HARD** (0.55s tell
+against 0.46s). Nothing throws, nothing logs, the run just plays wrong. `achievementNormalOrHigher`
+was the same shape - a hand-written list of "the hard ones" - so an INSANITY run would have earned
+**no stage award at all**. ⚠ **And the boss grant was an EQUALITY ladder** (`diffKey==='furious'`),
+so an INSANITY boss kill granted **nothing**: harder than Furious and worth less than Easy. Ranked
+now (`difficultyRank`). **The durable fix is not that I remembered** - section 366 asserts EVERY key
+in `DIFFS` has a row in EVERY per-difficulty table (`FODDER_DIFF`, `DRONE_TELL`, `DRONE_RECOVER`,
+`ARCADE_STOCK`, `DIFF_META`), so the next difficulty cannot be half-added. Found by a grep while
+chasing something else; nothing failed.
+
+⚠ **`DIFF_KEYS` / `DIFF_IMG` / `DIFF_DESC` WERE THREE PARALLEL ARRAYS** and are one keyed
+`DIFF_META` now - the lesson the title menu taught hours earlier, where a six-entry icon list against
+a seven-row menu left EXIT GAME drawing with `icon` undefined.
+
+⚠ **WHAT HAS BEEN SPENT IS DERIVED FROM WHAT IS OWNED, NEVER STORED AS A COUNTER.** Two numbers
+describing one fact drift apart the moment anything writes one without the other - an interrupted
+save, an item removed from the shop later, a hand-edited profile - and then the balance is wrong for
+ever with nothing to check it against. Each purchase also records **the price it actually paid**, so
+re-pricing an item cannot retroactively change an existing player's balance. `furiousBuy` returns a
+WORD (`ok`/`owned`/`poor`/`unknown`), not a boolean, because the screen has to say which happened.
+⚠ **`owned` WAS ADDED WITHOUT BUMPING `ACHIEVEMENT_STORE_VERSION`, DELIBERATELY:**
+`achievementNormalize` returns an EMPTY store on a version mismatch, so bumping it to make room for a
+new field would have **silently deleted every achievement every existing player has earned**.
+
+⚠ **"YOU CANNOT SELECT IT" IS THREE CLAIMS, NOT ONE** - the cursor, the mouse hit test, and the
+function that turns the cursor index into a key. INSANITY is simply not in the list the screen walks
+(`diffList()`), and all four sites read that one list, so one fact closes three doors instead of
+three guards that each have to remember. The probe drives all three, including forcing the index past
+the last row and reading what `pickDiff` assigns (it gets FURIOUS).
+
+⚠ **THE BUTTON HAD TO BE GENERATED AS A STACK OF THREE.** Asked for one bar it came back at
+**7.7-8.2:1** against a family that runs 3.49-4.32, and the difficulty screen draws every row at one
+WIDTH - a thin plate is a thin button. Three bars dividing a square canvas land at 3.40-3.55 by
+construction. Same lever the OPTIONS bar needed the same day: **it is the bar COUNT that sets the
+aspect, not the prompt.** ⚠ Its steel also came back **twice as bright as the family's** - grey
+median 0.443 against 0.208-0.263, p90 0.992 against 0.62-0.78 - darkened x0.62 on the
+low-saturation pixels only, so the violet lamps and lettering are untouched.
+
+⚠ **AND THE SCREENSHOT FOUND TWO THINGS 24 GREEN ASSERTIONS DID NOT.** The rules line
+`NO CONTINUES / NOTHING HELD BACK` was wider than the viewport at its fixed 15px, so it drew centred
+with its first six characters **off the left edge**: `TINUES / NOTHING HELD BACK`. Shorter string AND
+`stageFitH` now, so the next long one cannot repeat it. The plate's brightness was the other.
+⚠ **The probe's own first run reported a bug that did not exist** - it read `DIFF` immediately after
+`pickDiff` and printed *lives 4 / continues -1 / name NORMAL*, i.e. "picking INSANITY plays Normal".
+`pickDiff` sets `diffKey`; **`DIFF` is assigned when the RUN starts**, at two other call sites.
+
+`probe_insanity_0916.py` **24/0**, 0 errors, asserted on the BALANCE rather than on what `furiousBuy`
+returned. Suite **4,685 ok / 57 fail**, section 366 17/17, no new failure names (the one over the
+baseline's best run is the documented sand-tank fixture, which the baseline reproduces unmodified).
+`docs/FURIOUS_POINTS_INSANITY_0916.md`, `docs/qa/furious_points_insanity_0916.json`.
+
+**Still open:** BUNNY (Falva) and BOMBSHELL (Lizzie) have shop rows at 600 and buy correctly - what
+they lack is the costume ART. The VAULT of dev media, and a SCREEN to spend points on: today a
+purchase can only be made from code.
+
+⚠ **AND THEN MIKE PICKED A DIFFERENT PLATE AND ASKED FOR THE WHOLE LADDER TO MATCH IT** - *"I LOVE
+that Insanity Logo. Can you also remake our other difficulty options ... Faces that go from Normal to
+Under Pressure to Furious to Insanity's Death ... use this one for Insanity btw."* One pilot, five
+states: calm -> composed -> gritted -> enraged -> skull, keeping the family's green/blue/orange/red/
+violet code. **His pick's steel measures grey median 0.824 against the old plates' 0.208-0.263, and
+it ships UNMODIFIED.** Darkening my own earlier pick to match the old family was right while INSANITY
+was one new plate joining four; it is wrong once he approves that look and asks for the other four to
+be remade in its image - the FAMILY moves, not the plate. All five now ship as loose files under
+`diff_<key>_0916`, because `diff_easy`..`diff_furious` are CELLS and a cell beats the loose-file
+cache. Aspects 4.17-4.27 plus INSANITY's 3.43, a 0.84 spread - what the shipped family already had.
+⚠ **A FOUR-BAR REQUEST SAYING "LEAVE MARGIN AT THE SIDES" COLLAPSED THE CROP TO 46x46 AND 94x94**,
+unusable at a 210px draw; dropping that clause and reusing the phrasing that had worked gave 196 and
+200.
+⚠⚠ **AND THAT FIRST CUT WAS ONE PLATE RECOLOURED FOUR TIMES, WHICH IS EXACTLY WHAT MIKE CAUGHT:**
+*"they should all be different styling in representation off their difficulty much like Insanity is.
+Including faces."* All four shared a frame, a dark panel and a pose - only the hue and the eyebrows
+moved - while INSANITY was the only one whose MATERIAL said what it was. **Asking for one construction
+with per-bar colours gets you a colour swap; asking for a shared SKELETON and per-bar MATERIALS gets
+you a family.** The skeleton is the riveted frame, the square emblem panel, a lamp slot at each end
+and one word; everything else is per-difficulty - chrome and clear sky, olive drab with a radar
+sweep, hazard-striped gunmetal gouged and sparking, then a half-molten frame over lava.
+⚠ **AND THEN HE CAST THEM WITH OUR OWN PILOTS** - *"use Falva for the Easy person, use Freezer
+for the Normal Person, Use Axel for the Hard Person and Use Cole in the Furious way ... based on our
+pilots faces you should snippet and use as references."* The faces are the pilots' OWN authored
+portraits, cut out of `port_<pilot>_<emotion>`, assembled into a strip and uploaded as the
+generation reference. **Rendering all seven emotions for all four pilots FIRST is what cast them**:
+Axel's `crash` reads as RATTLED, where his `anger` would have doubled Cole's roar one row up, and
+Falva's `laugh` is the only one of hers that reads at emblem size.
+⚠ **AND "NOT CUT OFF" WAS A PANEL PROBLEM AS WELL AS A PORTRAIT ONE.** Mike: *"ensure all
+avatars face to the right ... We need an actual face view of Freezer not cut off, and Axel should be
+grinning."* The reference crop had taken 62% of the portrait's height - which already lost Freezer's
+jaw - and then the generation cropped what it was given, so **both ends had to move**: the strip now
+takes 70% from the very top AND the prompt demands the whole skull inside the panel with margin on
+four sides. Of three candidate sheets the one that shipped is the only one whose four heads are ALL
+complete and centred; the other two clip at the right edge, which is the exact fault being fixed.
+Axel moved `crash` -> `smile` for the grin, and Cole is crossed with a demonic berserker (eyes as
+solid orange-white furnaces, scorched skin, smoke) while staying recognisably Cole.
+⚠ **THE FAMILY'S ASPECT SPREAD IS NOW 1.10** (4.40-4.53 against INSANITY's 3.43), so INSANITY draws
+~32% taller than HARD at the same width. That is the defect this whole ladder started from, tolerated
+here because the plate is Mike's own pick and he has kept it twice - **flagged with the number every
+time rather than quietly accepted.** Suite **4,687 ok / 57 fail**, no new failure names.
+
+## 0916ab - the space stages were ONE shadowBlur, and it was the player's own laser
+
+Mike's brief was "profile why the two SPACE stages are dramatically slower than every other stage".
+They were - stage 9 ordinary play 1.1 fps against stage 3's 56.5 - and **the space rendering path
+had nothing to do with it**. Full writeup: `docs/SPACE_LASER_GLOW_0916.md`.
+
+`drawBullets`' `spaceLaser` arm set `ctx.shadowBlur=7` and blitted the pulse under it, ONCE PER
+ROUND ON SCREEN. Stage 9 measured **138 shadow-blurred draws a frame**; stage 1 measured about one.
+spaceLaser is the player's weapon on stages 5 and 9 ONLY, which is the whole of "the space stages".
+The halo is baked into a small cached plate now (`spaceLaserGlowCanvas`) and the pulse is drawn by
+the same call it always was. Interleaved A/B in one session, windows with >=20 live rounds:
+stage 9 **8.9 -> 59.7 fps**, stage 5 **7.8 -> 58.7**, both now sitting on the 60 cap. `drawBullets`
+went **663.4 -> 10.1 ms/frame**. Suite 4,687 ok / 57 fail against a baseline built by removing only
+this drop's two hunks: failure names byte-identical.
+
+⚠⚠ **A CPU PROFILE AND A DIRECT STOPWATCH AGREED ON THE WRONG FUNCTION, AND THE MICRO-BENCHMARK
+SETTLED IT.** Both charged ~82% of the frame to `A.blit` - the profile 622 ms/frame, a timing trap
+around the call 229 ms per call, worst 756. That exact blit, that exact rect, out of that exact
+1024x9383 master, benchmarks at **0.005 ms**. Canvas2D rasterisation is DEFERRED: calls are recorded
+and flushed later, and the flush is charged to whichever call triggers it. `A.blit` was where the
+bill was PAID, not where it was INCURRED. Neither a sampling profiler nor a stopwatch can see that
+distinction, which is why two independent instruments agreed and both were wrong. **Force the flush
+while measuring** - `ctx.getImageData(0,0,1,1)` after each draw phase, which cannot be reordered past
+queued work. `_BUILD_SOURCE/probe_segments_0916.py` does that and named `drawBullets` in one run:
+663 ms against `drawBG`'s 3.1, which is also how the starfield, `l5FieldDraw`, `l5RocksDraw`,
+`drawS9Void` and the 0912v warp-drive layer were all exonerated in the same run.
+
+⚠ **THE shadowBlur WRITE COUNT IS NOT THE COST.** Stage 9 wrote it 167 times a frame at 1.4 fps;
+stage 1 with the laser equipped wrote it 135 times a frame at 55.6. Nearly the same count, forty
+times the cost - stage 1's writes are almost all ZEROS (resets), and a shadow's price is the blur
+radius and the area under it. Trace the value and the site, never the call count.
+
+⚠ **SEQUENTIAL fps RUNS ON THIS MACHINE DRIFT AND WILL INVENT A RESULT.** The same build gave 43.5
+then 34.3 fps minutes apart; the control stage ranged 34.8-56.5 across one session. Both code paths
+ship (the per-round blur is the fallback when `spaceLaserGlowCanvas` returns null), so the A/B runs
+INSIDE one browser session, alternating arms every 4s with the order flipped each round -
+`probe_lasarab_0916.py`. ⚠ **And it excludes windows with no rounds alive**: a per-round cost reads
+as free whenever the screen is empty, and the first run reported the old path at 0.7, 8.2, 8.7 and
+then **60.0** fps, that last window having zero laser rounds in it.
+
+⚠ **BAKE ONLY THE SHADOW, NOT THE SPRITE WITH IT - THE PIXEL PROBE REFUSED TWO CUTS FIRST.**
+Shadow+sprite in one plate blitted at a float origin measured **163/255** worst delta (a second
+resample softening the pulse's edge); with the sub-pixel phase baked in, still **39/255** (storing
+the composite 8-bit premultiplied and re-compositing quantises it). Under `'lighter'` the two draws
+ADD and addition is associative, so halo-then-pulse reproduces the one shadowed draw while leaving
+`drawImage(lp,...)` byte-identical: **19/255**, confined to the halo and the pulse's edge column.
+⚠ **And the sub-pixel phase must still be baked into the halo** (quantised to a quarter pixel) with
+the blit landing on an INTEGER origin, or the halo drifts off a pulse that moves in fractional steps.
+⚠ **`SPACE_LASER_GLOW_PAD` IS MEASURED, NOT A RULE OF THUMB** - the pad is pure fill rate at 138
+blits a frame. `probe_halopad_0916.py` bakes each plate with a 60px pad and finds the outermost lit
+pixel: the halo reaches at most **8 px**. 20 (the first guess) cost 58% more fill than 10.
+⚠ **AND THE PIXEL PROBE'S TRANSPARENT-DESTINATION ROW READS 255/255 AND IS AN ARTEFACT** -
+`getImageData` returns UNPREMULTIPLIED colour, so a one-unit alpha difference in the faintest fringe
+reconstructs as a 255-unit colour difference. The game never draws the playfield onto nothing; score
+opaque destinations separately or the change looks twenty times worse than it is.
+
+⚠ **`window.ASSETS` IS UNDEFINED WHILE BARE `ASSETS` WORKS** - a module-scope `const` is in the
+global LEXICAL environment, not on `window`. Same trap this file already records for `Snd`/`Snd.TAME`.
+The first trap on `A.blit` installed nothing and reported it silently.
+⚠ **`ctx.drawImage` IS WRAPPED TWICE (0724dq, 0724dr) AND BOTH WRAPPERS ARE game.js FRAMES**, so the
+nearest-game.js-ancestor of every blit in the game is a wrapper and a profile ranks `ctx.drawImage`
+at 70% while naming nobody. Walk through them.
+⚠ **`scratchpad/miniprof.py`, which this file names as the profiling route, IS GONE** - scratchpad/
+is gitignored, so it never survived its own session. Rebuilt as `_BUILD_SOURCE/profile_space_0916.py`
+and committed.
+
+**Open:** `drawBullets` is still the largest single segment at 10.1 ms/frame and the other **237**
+`shadowBlur` sites are unexamined; a stage with a different weapon mix could have its own. And the
+absolute numbers are software rasterisation - a GPU machine never saw 1.4 fps, so it is the RATIO
+that transfers, not the milliseconds.
+
+## 0916 - the FURIOUS VAULT, and a system with no surface
+
+⚠⚠ **THE LEDGER, THE PRICES AND THE INSANITY UNLOCK WERE ALL PROVABLY CORRECT AND A REAL PLAYER
+COULD REACH NONE OF THEM**, because `furiousBuy` had no caller outside code. **A system with no
+surface is indistinguishable from one that was never built** - the same hole ACH-02 found in the
+achievement registry, where 66 awards with full persistence drew nothing. `GS.VAULT` is that
+surface: every catalogue row, the balance in the sub-header, the price shown only on rows that can
+actually be paid for. Reached from the gallery on its OWN button (CHARGE), because CONFIRM already
+cycles the filter there and one button doing two jobs is a shape this file keeps being bitten by.
+
+⚠ **A ROW THAT CANNOT DELIVER IS REFUSED BEFORE THE POINTS ARE CHECKED.** The four vault rows
+(the making-of, the interview, the BOF2 peek, the other ColeForge games) carry `media:null` and the
+two costumes carry `pending`, so `furiousBuy` returns `pending` and the screen prints what the row
+is waiting for. Selling a video that does not exist leaves the player out the points with nothing
+to show, and the refund path is exactly the bookkeeping the DERIVED balance exists to avoid. Each
+row becomes buyable by filling one field. And every refusal has its OWN words - `NEED 2000 MORE
+FURIOUS PTS` names the shortfall - because "it did not work" is the least useful thing a shop can
+say.
+
+⚠ **TWO FAULTS THE SCREENSHOT FOUND WITH 36 ASSERTIONS GREEN.** The status line was drawn at
+`VH-34`, where the **achievement toast** - a 200x54 card pinned to the lower-left corner since
+ACH-02 - sat straight on top of it, so the words explaining a refusal were invisible; it takes the
+sub-header now, where neither the toast nor the hint row can reach it. And the rows read
+`AWAITING MIKE'S FOOTAGE`, hitting the 0912b defect this file already records - **this face has no
+usable apostrophe at UI size**, `LIZZIE'S` renders as `LIZZIE,S`. Reworded without one.
+
+`probe_insanity_0916.py` **36/0**, including a purchase made entirely through the UI with a real
+key press: refused while poor with the shortfall named, refused on a pending row with the balance
+untouched, then bought - the points leaving and INSANITY appearing on the difficulty screen as a
+result. Suite **4,695 ok / 57 fail**, section 366 27/27, no new failure names.

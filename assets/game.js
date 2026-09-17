@@ -2026,10 +2026,42 @@ const XART=(function(){
      interior magenta - and the 3,650px pink rim converted to a black edge, never deleted, per the
      standing halo rule. nbl_logo on ui_menu_1 stays as the decode fallback. */
   X._src['nbl_logo_0916']='assets/game/ui/logo_0916/bof_logo.png';
-  /* the seventh title button (ACH-02). Generated against the authored buttons as a style
-     reference, the same route btn_help took in 0912a, and kept as a loose file rather than an
-     atlas edit - manifest.js is GENERATED. */
-  X._src['btn_achievements']='assets/game/ui/awards_0916/btn_achievements.png';
+  /* the fifth difficulty's plate (Mike, 0916: "Insanity - a 5th difficulty and 5th difficulty button
+     you should generate"). A LOOSE FILE under a key no atlas cell owns - diff_easy..diff_furious are
+     cells on ui_menu_1, and cells are checked before the loose-file cache (0912m).
+     ⚠ GENERATED AS A STACK OF THREE, NOT ALONE. Asked for one bar it came back at 7.7-8.2:1
+     against a family that runs 3.49-4.32, and the difficulty screen draws every row at one WIDTH -
+     so a thin plate draws a thin button. Three bars dividing a square canvas land at 3.40-3.55 by
+     construction; the same lever the 0916 OPTIONS bar needed. */
+  /* ⚠ ALL FIVE SHIP AS LOOSE FILES UNDER _0916 KEYS. diff_easy..diff_furious are CELLS on
+     ui_menu_1 and cells are checked before the loose-file cache (0912m), so a loose file registered
+     under those names would be silently ignored and the screen would go on drawing the old plates. */
+  for(const _d of ['easy','normal','hard','furious','insanity'])
+    X._src['diff_'+_d+'_0916']='assets/game/ui/diff_0916/diff_'+_d+'.png';
+  /* THE WHOLE TITLE MENU, REGENERATED AS ONE SHEET (Mike, 0916: "Regenerate all my other buttons
+     here to match the current style of Bullets of Fury and proper reference of ships and pilots
+     please. The help button also is too large compared to the rest.").
+     "Too large" was an ASPECT problem: titleMenuLayout measures ONE w x h off the first plate that
+     decodes and draws every row at it, so btn_help's 446x112 = 3.98:1 was stretched 20% taller than
+     the 4.7-4.9:1 bars around it. Seven bars cut from ONE generated sheet share an aspect by
+     construction - measured 5.74 to 5.93, a 0.19 spread where the shipped family spanned 0.9.
+     They ship under NEW keys because btn_newgame and friends are ATLAS CELLS and cells are checked
+     BEFORE the loose-file cache (0912m), so a loose file under the same key would be ignored; the
+     atlas rows stay for the pause menu and the campaign hub, which use their own. */
+  /* ⚠ THE REGISTRATION POINTS AT THE `_lit` CUT, NOT THE SHEET'S OWN (Mike, 0916: "in each
+     marquee, the lights should be palette swapped to different colors on the left and right sides
+     of the button ... You also palette swap the text in each button to match the color of the
+     lights"). `btn_<name>.png` stays on disk as the un-recoloured plate, so the swap is one path
+     away from being reverted and `title_lights_0916.py` can always be re-run from a clean source
+     rather than from its own output - a script that consumes its own output is not idempotent
+     (0907u, where exactly that made a plate worse on every run). */
+  for(const _b of ['newgame','password','options','help','achievements','credits','exit'])
+    X._src['btn_'+_b+'_0916']='assets/game/ui/title_0916/btn_'+_b+'_lit.png';
+  /* the achievement plaques: nine medals generated as ONE sheet and sliced on its own alpha
+     gutters, so they share a light source and a bevel weight by construction (ach_plaques_0916.py) */
+  for(const _p of ['campaign_clear','stage_clear','stage_nodeath','stage_nomissile','boss_hard',
+                   'boss_furious','boss_speed','weapon_max','run_no_continue'])
+    X._src['ach_plq_'+_p]='assets/game/ui/awards_0916/ach_'+_p+'.png';
   /* the escape arrow for the Stage-4 giant strike (S4-16). ONE plate, drawn mirrored on the left,
      because a flipped pair is what Mike asked for and two files would be two things to keep in
      step. Pointing RIGHT as authored. */
@@ -4474,9 +4506,18 @@ function drawScorches(){
    Tanks, turrets, bunkers and ships mark the terrain; aircraft do not. */
 const SCORCH_GROUND={tank:1,htank:1,jungletank:1,mgturret:1,rockturret:1,turret:1,microturret:1,
                      turdrone:1,boat:1,naval:1,stationship:1,bunker:1};
+/* ARCADE KILL POINTS (Mike, 0917: "wiring up text for when you kill enemies of how many points you
+   gained per kill arcade style with our font"). The kill already pushed a floater - in canvas
+   BOFmil at 10px, without a plus sign, drifting half a pixel a frame: it read as a damage number in
+   the wrong face. A score floater is now tagged and drawn through the STAGE font with a pop, and
+   the colour steps with the value so a big kill reads as a big kill from across the screen. */
+function killScoreColour(sc){ return sc>=1000?'#ff8a3a':sc>=300?'#ffd24a':'#f2f5ff'; }
 function killFeedback(e, sc){
   if(!e) return;
-  if(sc>0 && typeof floatText==='function') floatText(e.x, e.y-16, String(sc), '#ffe07a');
+  if(sc>0 && typeof floatText==='function'){
+    floaters.push({x:e.x, y:e.y-14, txt:'+'+sc, color:killScoreColour(sc), t:0, life:0.95, score:true,
+                   vy:-38, big:sc>=1000});
+  }
   const ground = SCORCH_GROUND[e.type] || e._bunker || e._tur;
   if(ground && typeof addScorch==='function'){
     addScorch(e.x, e.y, Math.max(18, (Math.max(e.w||20, e.h||20))*1.15));
@@ -7346,7 +7387,9 @@ const GS = { BOOT:'boot', LOADING:'loading', TITLE:'title', DIFF:'diff', PILOT:'
   /* the controls reference Mike asked for as a sixth title button (0912) */
   HELP:'help',
   /* the achievements gallery, the seventh (ACH-02) */
-  ACHIEVEMENTS:'achievements' };
+  ACHIEVEMENTS:'achievements',
+  /* where Furious Points are spent (ACH, 0916) */
+  VAULT:'vault' };
 let state = GS.BOOT;
 /* ============================================================
    DEBUG SWITCHBOARD (drop 0724do)
@@ -7447,7 +7490,13 @@ const FODDER_BAND = {            // [lightest, heaviest] shots-to-kill at NORMAL
 /* Hard is exactly +15% over Normal for ordinary enemy hulls. Shield energy is derived from
    the scaled hull in enemyShieldAutoEquip, so it receives the same run-wide bonus in Campaign
    and Arcade. Boss/miniboss DIFF.eHp remains encounter-owned. */
-const FODDER_DIFF = { easy:0.65, normal:1.0, hard:1.15, furious:1.60 };
+/* \u26a0 A PER-DIFFICULTY MAP THAT FALLS BACK TO NORMAL MAKES A NEW DIFFICULTY THE EASIEST ONE.
+   INSANITY landed with no row here and `|| 1` handed it NORMAL's 1.0 - softer fodder than HARD's
+   1.15 and far softer than FURIOUS's 1.60, on the hardest setting in the game. The same was true of
+   DRONE_TELL and DRONE_RECOVER, which both fall back to `.normal` explicitly. None of the three
+   throws, none logs, and the run just plays wrong. Suite section 366 now asserts that EVERY key in
+   DIFFS has a row in every one of these tables, so the next difficulty cannot be half-added. */
+const FODDER_DIFF = { easy:0.65, normal:1.0, hard:1.15, furious:1.60, insanity:1.85 };
 const PLAYER_REF_DMG = 2;        // base MG pellet: _bdmg = 2 + floor(lv/2), so 2 at L0/L1
 function fodderShots(baseHp, stage, dkey){
   const band = FODDER_BAND[stage] || FODDER_BAND[8];
@@ -7497,12 +7546,21 @@ const DIFFS = {
      and manueverability detection." ebSpeed/eFire sit ~20% over HARD, inside that band.
      1 life, 1 continue, and that continue gives back exactly 1 life. */
   furious:{name:'FURIOUS',ebSpeed:1.60, eFire:1.85, eHp:1.30, density:1.50, startLives:1, startBombs:1, dropMul:0.80, continues:1,  contLives:1},
+  /* INSANITY (Mike, 0916): "a 5th difficulty ... it will not show up unless you unlock it via
+     achievement points, so its an invisible button you cant even select until this condition is
+     met, then it becomes visible and selectable."
+     One life, NO continues, and the same ~15-20% step over its predecessor that FURIOUS takes over
+     HARD - the band this table has used since 0905. It is bought from FURIOUS_SHOP, never granted. */
+  insanity:{name:'INSANITY',ebSpeed:1.85,eFire:2.15,eHp:1.55,density:1.75,startLives:1,startBombs:0,dropMul:0.65,continues:0,contLives:1},
 };
 let diffKey='normal';
 let DIFF = DIFFS.normal;
 /* Mike 0914: Arcade credits belong to the entire run. A continue restores the
    selected starting stock. Keep campaign/co-op tuning separate and never mutate DIFFS. */
-const ARCADE_STOCK = {easy:{lives:7,continues:7},normal:{lives:5,continues:5},hard:{lives:3,continues:3},furious:{lives:3,continues:1}};
+const ARCADE_STOCK = {easy:{lives:7,continues:7},normal:{lives:5,continues:5},hard:{lives:3,continues:3},furious:{lives:3,continues:1},
+  /* arcade INSANITY keeps furious's coin stock and takes its continues to zero - the point of the
+     mode is that there is no second go */
+  insanity:{lives:3,continues:0}};
 function difficultyForRun(mode,key){
   const base=DIFFS[key]||DIFFS.normal,stock=ARCADE_STOCK[key]||ARCADE_STOCK.normal;
   return mode==='arcade'?Object.assign({},base,{startLives:stock.lives,contLives:stock.lives,continues:stock.continues}):base;
@@ -7737,6 +7795,62 @@ const WEAPONS=['MACHINE GUN','SPREAD FIRE','MISSILES','LASER','FLAMETHROWER','IC
 /* Persistent account/profile achievement registry. Triggers and presentation live in their
    own checklist items; this layer owns stable ids, points, one-time unlocks and future Steam ids. */
 const ACHIEVEMENT_STORE_KEY='bof_achievements_v1',ACHIEVEMENT_STORE_VERSION=1;
+/* ---- FURIOUS POINTS: the spend side (Mike, 0916) -------------------------------------------
+   "We also should have an Achievement Pts currency system as \"Furious\" pts that unlock secret
+   behind the scenes development stuff ... Also be able to unlock fun and cute stuff like Bunny mode
+   for Falva, \"Bombshell\" mode for Lizzie, Insanity - a 5th difficulty."
+
+   \u26a0 WHAT YOU HAVE SPENT IS DERIVED FROM WHAT YOU OWN, NEVER STORED AS A COUNTER. Two numbers
+   that describe one fact drift apart the moment anything writes one without the other - a save
+   interrupted between the two, a shop item removed later, a hand-edited profile - and then the
+   balance is wrong for ever with nothing to compare it against. Summing the owned rows means the
+   balance cannot disagree with the list of things it paid for.
+   \u26a0 AND EACH PURCHASE RECORDS THE PRICE IT ACTUALLY PAID, so re-pricing an item later cannot
+   retroactively change what an existing player has left. */
+const FURIOUS_SHOP=Object.freeze({
+  insanity_mode:{name:'INSANITY DIFFICULTY',cost:2000,kind:'difficulty',
+                 blurb:'A FIFTH DIFFICULTY. NO CONTINUES.'},
+  falva_bunny:  {name:'BUNNY MODE - FALVA',cost:600,kind:'costume',pilot:'falva',
+                 blurb:'FALVA, WITH EARS.',pending:'THE COSTUME ART IS NOT DRAWN YET'},
+  lizzie_bombshell:{name:'BOMBSHELL MODE - LIZZIE',cost:600,kind:'costume',pilot:'lizzie',
+                 blurb:'LIZZIE, DRESSED TO DETONATE.',pending:'THE COSTUME ART IS NOT DRAWN YET'},
+  /* \u26a0 THE VAULT ROWS CARRY `media:null` AND THE SCREEN SAYS SO. Mike asked for "secret behind
+     the scenes development stuff, video interviews about me, the development of the game, sneak
+     peeks of bof2 and other coleforge games" - none of which exists as a file yet. A row that can be
+     BOUGHT and then plays nothing is worse than a row that says what it is waiting for, so the
+     screen refuses to sell an item whose `media` is still null and prints its `pending` line
+     instead. When Mike drops a file in, the row becomes buyable by filling one field. */
+  vault_making_of:{name:'THE MAKING OF BULLETS OF FURY',cost:400,kind:'media',media:null,
+                 blurb:'BEHIND THE SCENES.',pending:'AWAITING FOOTAGE FROM MIKE'},
+  vault_interview:{name:'INTERVIEW - MIKE "FORGEMASTER" COLE',cost:400,kind:'media',media:null,
+                 blurb:'THE MAN WHO BUILT IT.',pending:'AWAITING FOOTAGE FROM MIKE'},
+  vault_bof2:   {name:'BOF2 SNEAK PEEK',cost:800,kind:'media',media:null,
+                 blurb:'WHAT COMES NEXT.',pending:'AWAITING FOOTAGE FROM MIKE'},
+  vault_coleforge:{name:'COLEFORGE - THE OTHER GAMES',cost:400,kind:'media',media:null,
+                 blurb:'EVERYTHING ELSE IN THE FORGE.',pending:'AWAITING FOOTAGE FROM MIKE'}
+});
+/* an item is for sale only when it can actually deliver what it sells */
+function furiousSellable(id){const it=FURIOUS_SHOP[id];if(!it)return false;
+  if(it.kind==='media')return !!it.media; return !it.pending;}
+function furiousShopIds(){return Object.keys(FURIOUS_SHOP);}
+function furiousSpent(){let n=0;for(const id of Object.keys(achievementState.owned||{})){const q=achievementState.owned[id];n+=Number.isFinite(q&&q.cost)?q.cost:((FURIOUS_SHOP[id]||{}).cost|0);}return n;}
+function furiousBalance(){return achievementPoints()-furiousSpent();}
+function furiousOwned(id){return !!(achievementState.owned&&achievementState.owned[id]);}
+/* returns 'ok' | 'owned' | 'poor' | 'unknown' - a word, not a boolean, because the screen has to
+   say WHICH of the three happened and a false cannot carry that */
+function furiousBuy(id){
+  const it=FURIOUS_SHOP[id]; if(!it) return 'unknown';
+  if(furiousOwned(id)) return 'owned';
+  /* \u26a0 REFUSED BEFORE THE POINTS ARE CHECKED, NOT AFTER. Selling something that cannot be
+     delivered is worse than not listing it: the player is out the points and has nothing to show,
+     and the refund path is exactly the kind of bookkeeping the derived balance exists to avoid. */
+  if(!furiousSellable(id)) return 'pending';
+  if(furiousBalance()<(it.cost|0)) return 'poor';
+  if(!achievementState.owned) achievementState.owned={};
+  achievementState.owned[id]={at:Date.now(),cost:it.cost|0};
+  achievementSave();
+  return 'ok';
+}
 const ACHIEVEMENT_WEAPON_KEYS=Object.freeze(['machine_gun','spread_fire','missiles','laser','flamethrower','ice_orb','laser_mist']);
 const ACHIEVEMENT_DEFS=Object.freeze((function(){
   const d={},add=(id,title,points,steamKey,extra)=>{d[id]=Object.freeze(Object.assign({id,title,points,steamKey},extra||{}));};
@@ -7750,16 +7864,27 @@ const ACHIEVEMENT_DEFS=Object.freeze((function(){
   }
   ACHIEVEMENT_WEAPON_KEYS.forEach((w,i)=>add('weapon_max_'+w,WEAPONS[i]+' Level 5',20,'BOF_WEAPON_MAX_'+w.toUpperCase(),{family:'weapon_max',weapon:i}));
   add('run_no_continue','No Continue Campaign',1000,'BOF_RUN_NO_CONTINUE',{family:'run_no_continue',reward:'trophy_avatar_no_continue'});
-  add('stage1_miniboss_under_120','Stage 1 Miniboss Under 2:00',200,'BOF_STAGE1_MINI_UNDER_120',{family:'boss_speed',role:'miniboss',seconds:120});
-  add('stage1_miniboss_under_60','Stage 1 Miniboss Under 1:00',500,'BOF_STAGE1_MINI_UNDER_60',{family:'boss_speed',role:'miniboss',seconds:60});
-  add('stage1_boss_under_120','Stage 1 Boss Under 2:00',200,'BOF_STAGE1_BOSS_UNDER_120',{family:'boss_speed',role:'boss',seconds:120});
-  add('stage1_boss_under_60','Stage 1 Boss Under 1:00',500,'BOF_STAGE1_BOSS_UNDER_60',{family:'boss_speed',role:'boss',seconds:60});
+  /* ⚠ THESE FOUR CARRY `stage:1` BECAUSE THEY ARE ABOUT A STAGE-1 UNIT AND NOTHING SAID SO.
+     Their ids and titles say "Stage 1" and their defs did not, so the 0916 ENEMY tab - which groups
+     the rows won against a unit by the stage that unit belongs to - could see the two boss_difficulty
+     rows for stage 1 and none of these. The filter was right; the data was short a field. */
+  add('stage1_miniboss_under_120','Stage 1 Miniboss Under 2:00',200,'BOF_STAGE1_MINI_UNDER_120',{family:'boss_speed',role:'miniboss',seconds:120,stage:1});
+  add('stage1_miniboss_under_60','Stage 1 Miniboss Under 1:00',500,'BOF_STAGE1_MINI_UNDER_60',{family:'boss_speed',role:'miniboss',seconds:60,stage:1});
+  add('stage1_boss_under_120','Stage 1 Boss Under 2:00',200,'BOF_STAGE1_BOSS_UNDER_120',{family:'boss_speed',role:'boss',seconds:120,stage:1});
+  add('stage1_boss_under_60','Stage 1 Boss Under 1:00',500,'BOF_STAGE1_BOSS_UNDER_60',{family:'boss_speed',role:'boss',seconds:60,stage:1});
   return d;
 })());
-function achievementEmpty(){return{version:ACHIEVEMENT_STORE_VERSION,unlocked:{}};}
+function achievementEmpty(){return{version:ACHIEVEMENT_STORE_VERSION,unlocked:{},owned:{}};}
 function achievementNormalize(v){
   const out=achievementEmpty();if(!v||v.version!==ACHIEVEMENT_STORE_VERSION||!v.unlocked||typeof v.unlocked!=='object')return out;
   for(const id of Object.keys(v.unlocked)){if(!ACHIEVEMENT_DEFS[id])continue;const q=v.unlocked[id]||{};out.unlocked[id]={at:Number.isFinite(q.at)?q.at:0};if(q.meta&&typeof q.meta==='object')out.unlocked[id].meta=q.meta;}
+  /* \u26a0 `owned` IS ADDED WITHOUT BUMPING ACHIEVEMENT_STORE_VERSION, AND THAT IS DELIBERATE. The
+     line above returns an EMPTY store whenever the version does not match, so bumping it to make
+     room for a new field would silently DELETE every achievement every existing player has earned.
+     An absent `owned` reads as {} and the save is upgraded the next time anything is bought. */
+  if(v.owned&&typeof v.owned==='object')
+    for(const id of Object.keys(v.owned)){ if(!FURIOUS_SHOP[id]) continue; const q=v.owned[id]||{};
+      out.owned[id]={at:Number.isFinite(q.at)?q.at:0,cost:Number.isFinite(q.cost)?q.cost:(FURIOUS_SHOP[id].cost|0)}; }
   return out;
 }
 function achievementLoad(){try{return achievementNormalize(JSON.parse(localStorage.getItem(ACHIEVEMENT_STORE_KEY)||'null'));}catch(_achRead){return achievementEmpty();}}
@@ -7768,25 +7893,67 @@ function achievementSave(){try{localStorage.setItem(ACHIEVEMENT_STORE_KEY,JSON.s
 function achievementReload(){achievementState=achievementLoad();achievementLastUnlock=null;return achievementProfileSnapshot();}
 function achievementDefinition(id){return ACHIEVEMENT_DEFS[id]||null;}
 function achievementPoints(){let n=0;for(const id of Object.keys(achievementState.unlocked))if(ACHIEVEMENT_DEFS[id])n+=ACHIEVEMENT_DEFS[id].points;return n;}
-function achievementProfileSnapshot(){return JSON.parse(JSON.stringify({version:achievementState.version,points:achievementPoints(),unlocked:achievementState.unlocked}));}
+function achievementProfileSnapshot(){return JSON.parse(JSON.stringify({version:achievementState.version,points:achievementPoints(),spent:furiousSpent(),balance:furiousBalance(),unlocked:achievementState.unlocked,owned:achievementState.owned||{}}));}
 function achievementUnlocked(id){return !!achievementState.unlocked[id];}
 function achievementUnlock(id,meta){
   const d=achievementDefinition(id);if(!d||achievementUnlocked(id))return false;
   let clean=null;if(meta&&typeof meta==='object')try{clean=JSON.parse(JSON.stringify(meta));}catch(_achMeta){}
   const rec={at:Date.now()};if(clean)rec.meta=clean;achievementState.unlocked[id]=rec;
-  const persisted=achievementSave();achievementLastUnlock={id,title:d.title,points:d.points,steamKey:d.steamKey,persisted};
+  const persisted=achievementSave();
+  achievementLastUnlock={id,title:d.title,points:d.points,steamKey:d.steamKey,persisted,plaque:achPlaqueKey(d)};
+  try{ if(typeof XART!=='undefined'&&achievementLastUnlock.plaque) XART.rdy(achievementLastUnlock.plaque); }catch(_achW){}
   /* ACH-02: the award says so on screen. Queued, because a stage clear can award several at once. */
   try{ if(typeof achToastPush==='function') achToastPush(achievementLastUnlock); }catch(_achToast){}
   achievementSteamQueue.push({id,steamKey:d.steamKey});
   try{if(typeof window!=='undefined'&&typeof window.dispatchEvent==='function'&&typeof CustomEvent==='function')window.dispatchEvent(new CustomEvent('bof-achievement',{detail:achievementLastUnlock}));}catch(_achEvent){}
   return true;
 }
-function achievementList(){return Object.keys(ACHIEVEMENT_DEFS).map(id=>Object.assign({},ACHIEVEMENT_DEFS[id],{unlocked:achievementUnlocked(id),unlockedAt:achievementState.unlocked[id]?achievementState.unlocked[id].at:null}));}
-function achievementNormalOrHigher(){return diffKey==='normal'||diffKey==='hard'||diffKey==='furious';}
+/* \u26a0 THE PLAQUE IS CHOSEN BY FAMILY, AND boss_difficulty SPLITS ON ITS OWN FIELD (Mike, 0916:
+   "now get us the proper icons for each achievement unlocked"). Nine medals cover 66 awards because
+   the families ARE the kinds of thing you can do - clearing a stage, clearing it untouched, beating
+   a boss on Hard, beating one fast. A per-award plaque would be 66 pictures of eight ideas. */
+function achPlaqueKey(d){
+  if(!d) return null;
+  const f=d.family||'';
+  if(f==='boss_difficulty') return 'ach_plq_boss_'+(d.difficulty==='furious'?'furious':'hard');
+  if(f==='campaign_clear'||f==='stage_clear'||f==='stage_nodeath'||f==='stage_nomissile'||
+     f==='boss_speed'||f==='weapon_max'||f==='run_no_continue') return 'ach_plq_'+f;
+  return 'ach_plq_stage_clear';
+}
+function achPlaqueDraw(T,x,y,s){
+  const k=(T&&T.plaque)||null;
+  if(!k||typeof XART==='undefined'||!XART.rdy(k)) return false;
+  const im=XART.get(k); if(!im) return false;
+  const m=s*0.94, ox=x+(s-m)/2, oy=y+(s-m)/2;
+  ctx.drawImage(im,ox,oy,m,m);
+  return true;
+}
+function achievementList(){return Object.keys(ACHIEVEMENT_DEFS).map(id=>Object.assign({},ACHIEVEMENT_DEFS[id],{unlocked:achievementUnlocked(id),unlockedAt:achievementState.unlocked[id]?achievementState.unlocked[id].at:null,meta:achievementState.unlocked[id]&&achievementState.unlocked[id].meta?achievementState.unlocked[id].meta:null}));}
+/* \u26a0 EVERY GRANT RECORDS WHO WAS FLYING, AND ONLY ONE OF THEM USED TO (ACH tabs, 0916). Mike
+   asked to view the gallery "by ... player", and the only pilot anywhere in this system was the
+   `pilot` field on the nine campaign-clear DEFINITIONS - so a pilot filter could only ever have
+   shown one row per pilot. `achievementRunComplete` already put `pilot` in its meta; the stage,
+   encounter and weapon grants did not, and they are 60 of the 66. One funnel now builds the meta so
+   a grant added later carries it for free.
+   \u26a0 AND IT CANNOT REWRITE HISTORY: unlocks already in a player's localStorage have no pilot in
+   them, so the PILOT tab shows a pre-0916 save its campaign-clear rows and nothing else. That is a
+   real limitation of the data, not of the filter, and the tab says EARNED rather than pretending. */
+function achievementMeta(extra){
+  const m={mode:(run&&run.mode)||'campaign',difficulty:diffKey};
+  if(run&&run.pilot) m.pilot=run.pilot;
+  if(run&&run.coop&&run.pilot2) m.pilot2=run.pilot2;
+  return Object.assign(m,extra||{});
+}
+/* \u26a0 A LIST OF "THE HARD ONES" GOES STALE THE MOMENT A HARDER ONE ARRIVES, AND THIS ONE DID:
+   INSANITY would have earned NO stage-clear or no-death award at all, on the hardest difficulty in
+   the game, because it was not in the list. It is derived from the table's own order now. */
+const DIFF_ORDER=['easy','normal','hard','furious','insanity'];
+function difficultyRank(k){const i=DIFF_ORDER.indexOf(k||diffKey);return i<0?1:i;}
+function achievementNormalOrHigher(){return difficultyRank(diffKey)>=DIFF_ORDER.indexOf('normal');}
 function achievementStageComplete(stage,one,two){
   stage=stage|0;if(stage<1||stage>9)return[];
   const earned=[],stats=[one];if(two)stats.push(two);
-  const meta={mode:run.mode||'campaign',difficulty:diffKey,stage};
+  const meta=achievementMeta({stage});
   const grant=id=>{if(achievementUnlock(id,meta))earned.push(id);};
   if(achievementNormalOrHigher()){
     grant('stage_clear_'+stage);
@@ -7799,11 +7966,17 @@ function achievementStageComplete(stage,one,two){
 }
 function achievementEncounterDefeat(unit,role){
   if(!unit||unit._achievementAwarded)return[];unit._achievementAwarded=true;
-  const stage=run.stage|0,earned=[],meta={mode:run.mode||'campaign',difficulty:diffKey,stage,role};
+  const stage=run.stage|0,earned=[],meta=achievementMeta({stage,role});
   const grant=id=>{if(achievementUnlock(id,meta))earned.push(id);};
   if(role==='boss'&&stage>=1&&stage<=9){
-    if(diffKey==='hard')grant('boss_hard_'+stage);
-    else if(diffKey==='furious')grant('boss_furious_'+stage);
+    /* \u26a0 AN EQUALITY LADDER LEAVES THE HARDEST DIFFICULTY WITH NOTHING. `diffKey==='furious'`
+       meant an INSANITY boss kill granted no award whatever - harder than Furious and worth less
+       than Easy. Ranked, so a difficulty added above the top earns at least what the one below it
+       does. Whether INSANITY eventually gets awards OF ITS OWN is Mike's call; granting the FURIOUS
+       row is mine, and it is the conservative half of that decision. */
+    const rk=difficultyRank(diffKey);
+    if(rk>=difficultyRank('furious'))grant('boss_furious_'+stage);
+    else if(rk>=difficultyRank('hard'))grant('boss_hard_'+stage);
   }
   if(stage===1&&(role==='boss'||role==='miniboss')){
     const seconds=unit._fightClock&&Number.isFinite(unit._fightClock.seconds)?unit._fightClock.seconds:null;
@@ -7818,7 +7991,7 @@ function achievementEncounterDefeat(unit,role){
 }
 function achievementWeaponMax(weapon,level){
   weapon=weapon|0;if(level<5||!ACHIEVEMENT_WEAPON_KEYS[weapon])return false;
-  return achievementUnlock('weapon_max_'+ACHIEVEMENT_WEAPON_KEYS[weapon],{mode:run.mode||'campaign',difficulty:diffKey,weapon});
+  return achievementUnlock('weapon_max_'+ACHIEVEMENT_WEAPON_KEYS[weapon],achievementMeta({weapon}));
 }
 function achievementRunComplete(){
   const earned=[],meta={mode:run.mode||'campaign',difficulty:diffKey,pilot:run.pilot};
@@ -9834,8 +10007,10 @@ function droneGlow(slug){
    DIFFICULTY COMPRESSES THE TELL, NOT THE DAMAGE. The attack keeps its shape at every setting, so
    what the player learns on normal still applies on furious. Nothing here scales bullet counts.
    ============================================================ */
-const DRONE_TELL    = {easy:0.70, normal:0.55, hard:0.46, furious:0.40};
-const DRONE_RECOVER = {easy:0.85, normal:0.68, hard:0.55, furious:0.45};
+/* insanity sits just above the floors below - FURIOUS is already close to them, and the floors are
+   "not suggestions": below ~0.35s a tell is a surprise rather than a warning */
+const DRONE_TELL    = {easy:0.70, normal:0.55, hard:0.46, furious:0.40, insanity:0.37};
+const DRONE_RECOVER = {easy:0.85, normal:0.68, hard:0.55, furious:0.45, insanity:0.42};
 /* Floors, not suggestions. Below ~0.35s a tell is a surprise rather than a warning, and below
    ~0.4s of recover the unit is never punishable and the fight is pure attrition. */
 const DRONE_TELL_FLOOR = 0.35, DRONE_RECOVER_FLOOR = 0.40;
@@ -36401,7 +36576,7 @@ function updateEffects(dt){
   }
   particles=particles.filter(p=>!p.dead);
   if(typeof tickScorches==='function') tickScorches(dt);
-  for(const f of floaters){ f.t+=dt; f.y-=0.5; if(f.t>=f.life)f.dead=true; }
+  for(const f of floaters){ f.t+=dt; if(f.score){ f.y+=(f.vy||-38)*dt; f.vy=(f.vy||-38)*(1-1.8*dt); } else f.y-=0.5; if(f.t>=f.life)f.dead=true; }
   floaters=floaters.filter(f=>!f.dead);
   if(typeof arcadeBannerTick==='function') arcadeBannerTick(dt);   // the pickup announcement
   if(typeof rbShardsUpdate==='function') rbShardsUpdate(dt);   // rollerball shrapnel
@@ -37226,6 +37401,80 @@ function spaceLaserPulseCanvas(key){
   const g=c.getContext('2d');if(!g)return null;g.imageSmoothingEnabled=false;
   g.drawImage(src,sx,0,c.width,c.height,0,0,c.width,c.height);
   _spaceLaserPulseCache[key]=c;return c;
+}
+/* ⚠⚠ THE SPACE LASER'S GLOW IS BAKED ONCE, NOT RE-BLURRED PER ROUND (drop 0916ab).
+   THIS IS THE WHOLE OF "THE SPACE STAGES RUN AT 1-3 FPS".
+
+   drawBullets' spaceLaser arm set `ctx.shadowBlur=7` and blitted the pulse under it, once per
+   round. Measured on stage 9 in real Chromium: **138 shadow-blurred draws per frame**, against
+   about ONE per frame on stage 1 (a missile pickup). Suppressing `ctx.shadowBlur` entirely took
+   stage 9 from **1.5 fps to 54.1 fps** — a 36x swing — with every other draw on the stage
+   unchanged. The space background was never involved: with a forced flush per segment,
+   `drawBG` measured 3.1 ms/frame while `drawBullets` measured 663 ms.
+
+   This is the Magma Ward again, exactly (see the atlas section): fireballs under `shadowBlur=10`
+   and `'lighter'`, ~32 a frame, 78 ms → 2.6 ms once the glow was baked per reel frame and size.
+   That note ends by naming `drawBullets` as the next target. It was.
+
+   ⚠ THE BAKE COMPOSITES UNDER 'lighter' TOO, AND THAT IS LOAD-BEARING, NOT TIDINESS.
+   The shipped draw adds the shadow to the destination and then adds the sprite. Baking with the
+   default 'source-over' would paint the sprite OVER its own shadow instead of adding to it, and
+   every round would come back dimmer in its core. Under 'lighter' from a transparent canvas the
+   plate holds (shadow + sprite), and addition is associative — dest+(shadow+sprite) is the same
+   as (dest+shadow)+sprite — including the clamp at 255, because every term is non-negative.
+
+   ⚠ THE CACHE IS KEYED ON THE EXACT FLOAT SIZE, NOT A ROUNDED ONE. Quantising `_lh` would move
+   every pulse by up to half a pixel, and the art is Mike's. Measured on stage 9: the game draws
+   **2 distinct (key | colour | w x h) combinations** over 1,350 rounds, because `b.h` is a
+   constant 26, so exactness costs nothing. Five levels x two pulses is ten plates at the ceiling.
+
+   ⚠⚠ ONLY THE SHADOW IS BAKED. THE PULSE ITSELF IS STILL DRAWN BY THE ORIGINAL CALL.
+   Two earlier cuts baked the shadow AND the sprite into one plate, and the pixel comparison
+   refused both. Baking the composite means storing it 8-bit premultiplied and compositing that,
+   which quantises the result; and blitting a pre-scaled plate at a fractional origin resamples
+   the pulse a SECOND time, which softens its edge. Measured over 160 comparisons (5 levels x 2
+   pulses x 4 backgrounds x 4 sub-pixel offsets): worst single-channel delta 163/255 for the
+   naive bake, still 39/255 once the sub-pixel phase was baked in.
+
+   So the split is: the blurred halo comes off a cached plate, and `drawImage(lp, ...)` for the
+   pulse is the SAME CALL WITH THE SAME ARGUMENTS as before. Under `lighter` the two draws add,
+   and addition is associative, so dest+halo+pulse is what the one shadowed draw produced. The
+   bright, sharp, load-bearing part of the sprite is therefore byte-identical by construction,
+   and only the soft halo carries any quantisation at all.
+
+   ⚠ THE SUB-PIXEL PHASE IS STILL BAKED INTO THE HALO, quantised to a quarter pixel, because the
+   halo has to stay registered with a pulse that moves in fractional steps. 16 phases x 10 plates
+   is 160 small canvases; `b.h` is a constant 26 in play, so the size axis contributes 1.
+
+   ⚠ THE SPRITE IS PUSHED OFF THE PLATE AND ONLY ITS SHADOW LANDS ON IT - `shadowOffsetX` moves
+   the shadow back. Erasing the sprite afterwards with 'destination-out' would also erase the
+   halo everywhere the two overlap, which is exactly the part that sits under the pulse. */
+const _spaceLaserGlowCache=Object.create(null);
+const SPACE_LASER_GLOW_BLUR=7;      // the value the shipped draw used; do not change it here
+/* ⚠ THE PAD IS MEASURED, NOT A RULE OF THUMB, BECAUSE IT IS PURE FILL RATE.
+   Every round blits a (lw+2*PAD) x (lh+2*PAD) plate under 'lighter', 138 times a frame, so a
+   generous pad is measurable waste - and a mean one CLIPS the glow, which is an art change.
+   `probe_halopad_0916.py` bakes each of the ten plates with a 60px pad and finds the outermost
+   pixel carrying any alpha: the halo reaches at most **8 px** past the sprite on any side, on
+   any level or pulse. 10 leaves a pixel for the sub-pixel phase and a pixel of margin, and
+   takes the plate for a 14x20 pulse from 54x60 down to 34x40 - 58% less fill per round. */
+const SPACE_LASER_GLOW_PAD=10;
+const SPACE_LASER_GLOW_PHASE=4;     // sub-pixel phases per axis; 4 => quarter-pixel buckets
+function spaceLaserGlowCanvas(key,col,lw,lh,px,py){
+  const ck=key+'|'+col+'|'+lw.toFixed(2)+'x'+lh.toFixed(2)+'|'+px+','+py;
+  const hit=_spaceLaserGlowCache[ck];
+  if(hit!==undefined)return hit;
+  const lp=spaceLaserPulseCanvas(key);
+  if(!lp)return(_spaceLaserGlowCache[ck]=null);
+  let c;try{c=document.createElement('canvas');}catch(e){return(_spaceLaserGlowCache[ck]=null);}
+  const P=SPACE_LASER_GLOW_PAD,fx=px/SPACE_LASER_GLOW_PHASE,fy=py/SPACE_LASER_GLOW_PHASE;
+  c.width=Math.ceil(lw)+P*2+1;c.height=Math.ceil(lh)+P*2+1;
+  const g=c.getContext('2d');
+  if(!g)return(_spaceLaserGlowCache[ck]=null);
+  const OFF=c.width+8;    // far enough left that the pulse misses the plate entirely
+  g.shadowColor=col;g.shadowBlur=SPACE_LASER_GLOW_BLUR;g.shadowOffsetX=OFF;
+  g.drawImage(lp,P+fx-OFF,P+fy,lw,lh);
+  _spaceLaserGlowCache[ck]=c;return c;
 }
 function spaceLaserMuzzleDraw(g,lv,frame,x,y,size){
   const fam=SPACE_LASER_MUZZLE[clamp((lv|0)-1,0,4)],key=fam+'_'+clamp(frame|0,0,3);
@@ -44647,9 +44896,26 @@ function drawBullets(){
       if(b._launchDelay>0)continue;
       const key='laser_'+clamp(b.lv||1,1,5)+'_pulse_'+(((b.pulse||0)&1)?'short':'long');
       const _lp=spaceLaserPulseCanvas(key),_lh=clamp((b.h||24)*0.72,20,30),_lw=_lp?_lh*(_lp.width/_lp.height):_lh*0.55;
-      ctx.save();ctx.globalCompositeOperation='lighter';ctx.shadowColor=SPACE_LASER_COL[clamp((b.lv||1)-1,0,4)];ctx.shadowBlur=7;
+      const _lc=SPACE_LASER_COL[clamp((b.lv||1)-1,0,4)];
+      /* THE GLOW COMES OFF A BAKED PLATE — see spaceLaserGlowCanvas. 138 shadowBlur'd draws a
+         frame was the entire reason stages 5 and 9 ran at 1-3 fps. */
+      const _ldx=b.x-_lw/2,_ldy=b.y-_lh/2;
+      const _lix=Math.floor(_ldx),_liy=Math.floor(_ldy);
+      const _lpx=Math.round((_ldx-_lix)*SPACE_LASER_GLOW_PHASE)%SPACE_LASER_GLOW_PHASE;
+      const _lpy=Math.round((_ldy-_liy)*SPACE_LASER_GLOW_PHASE)%SPACE_LASER_GLOW_PHASE;
+      const _lg=_lp?spaceLaserGlowCanvas(key,_lc,_lw,_lh,_lpx,_lpy):null;
+      ctx.save();ctx.globalCompositeOperation='lighter';
       /* Preserve the cleaned approved pulse's aspect ratio; never stretch it into a substitute. */
-      if(_lp)ctx.drawImage(_lp,b.x-_lw/2,b.y-_lh/2,_lw,_lh);
+      if(_lg){
+        /* the halo, off a cached plate, at an INTEGER origin so it is a straight copy */
+        ctx.drawImage(_lg,_lix-SPACE_LASER_GLOW_PAD,_liy-SPACE_LASER_GLOW_PAD);
+        /* then the pulse, byte-for-byte the call the shipped draw made */
+        ctx.drawImage(_lp,_ldx,_ldy,_lw,_lh);
+      }else if(_lp){
+        /* fallback for a context that refused a scratch canvas: the original per-round blur */
+        ctx.shadowColor=_lc;ctx.shadowBlur=SPACE_LASER_GLOW_BLUR;
+        ctx.drawImage(_lp,_ldx,_ldy,_lw,_lh);
+      }
       ctx.restore();continue;
     }
     if(b.kind==='spaceVolleySeed'){
@@ -46780,7 +47046,18 @@ function _drawEffectsInner(){
   }
   // floaters
   ctx.textAlign='center';
-  for(const f of floaters){ ctx.globalAlpha=clamp(1-f.t/f.life,0,1); ctx.fillStyle=f.color;
+  for(const f of floaters){
+    if(f.score){
+      /* the stage face, with an arcade pop: 1.6x on the first frames, settling to 1 by 0.18s */
+      const art=(typeof curFontArt==='function')?curFontArt():null;
+      const k=clamp(f.t/0.18,0,1), pop=1+0.6*(1-k)*(1-k);
+      const fade=f.t<f.life*0.55?1:clamp(1-(f.t-f.life*0.55)/(f.life*0.45),0,1);
+      const H=(f.big?13:10)*pop;
+      if(art && typeof stageText==='function') stageText(art,f.txt,f.x,f.y,H,f.color,0.85,fade,0.06);
+      else { ctx.globalAlpha=fade; ctx.fillStyle=f.color; ctx.font='bold '+Math.round(H)+'px "BOFmil", monospace'; ctx.textAlign='center'; ctx.fillText(f.txt,f.x,f.y); ctx.globalAlpha=1; ctx.textAlign='left'; }
+      continue;
+    }
+    ctx.globalAlpha=clamp(1-f.t/f.life,0,1); ctx.fillStyle=f.color;
     ctx.font='bold 10px "BOFmil", monospace'; ctx.fillText(f.txt,f.x,f.y); ctx.globalAlpha=1; }
   /* the pickup announcement, over the field and in screen space (drop 0811m) */
   if(typeof drawArcadeBanner==='function') drawArcadeBanner();
@@ -47217,6 +47494,7 @@ function drawScene(dt){
     case GS.OPENER:  return drawOpener(dt);
     case GS.HELP:    return drawHelp(dt);
     case GS.ACHIEVEMENTS: return drawAwards(dt);
+    case GS.VAULT:        return drawVault(dt);
     case GS.CUTSCENE: return drawCutsceneState(dt);
     case GS.LOADING: return drawLoading(dt);
     case GS.TITLE:   return drawTitle(dt);
@@ -47661,7 +47939,7 @@ if(typeof window!=='undefined'){
   window.__BOFHELP=function(){
     return {items:TITLE_ITEMS.slice(), idx:menuIndex, page:helpPage,
             pageName:HELP_PAGES[helpPage]||'?',
-            btnArt:(typeof XART!=='undefined' && XART.rdy('btn_help')),
+            btnArt:(typeof XART!=='undefined' && XART.rdy('btn_help_0916')),
             widest:_helpWidest, field:VW-28,
             labels:{fire:helpBind('fire',3), bomb:helpBind('bomb',3),
                     retina:helpBind('retina',4), charge:helpBind('charge',3),
@@ -60192,7 +60470,9 @@ function drawStaticPlayer(){
    unreachable from below and produced a cursor that skips - the exact symptom 0801r spent a drop
    chasing. Driven off TITLE_ITEMS.length now, so a seventh button is one edit. */
 const TITLE_ITEMS=['NEW GAME','PASSWORD','OPTIONS','HELP','ACHIEVEMENTS','CREDITS','EXIT GAME'];
-const MENU_KEYS=['btn_newgame','btn_password','btn_options','btn_help','btn_achievements','btn_credits','btn_exit'];
+/* one icon per TITLE_ITEM, for the pre-decode fallback rows only - asserted the same length */
+const TITLE_ICONS=['ship','lock','gear','help','medal','star','door'];
+const MENU_KEYS=['btn_newgame_0916','btn_password_0916','btn_options_0916','btn_help_0916','btn_achievements_0916','btn_credits_0916','btn_exit_0916'];
 /* ⚠ THE DISPATCH IS KEYED BY NAME, NOT BY INDEX (ACH-02). It was a ladder of `m===0 .. m===4`
    with `else { tryExit(); }` at the end, so INSERTING a row silently repointed every entry below it
    and the fallback turned whatever landed last into EXIT GAME. Adding AWARDS before CREDITS is
@@ -60220,7 +60500,7 @@ const TMENU_Y0=158, TMENU_GAP=56, TMENU_W=330;
 const TMENU_TOP=126, TMENU_BOT=VH-54, TMENU_AIR=4;
 function titleMenuLayout(){
   const nb=TITLE_ITEMS.length;
-  let ar=62/330;                      // the plates' authored aspect, used until one decodes
+  let ar=68/397;                      // the 0916 sheet's own aspect, used until one decodes
   for(const k of MENU_KEYS){ if(XART.rdy(k)){ const im=XART.get(k); if(im.naturalWidth>0){ ar=im.naturalHeight/im.naturalWidth; break; } } }
   let w=TMENU_W, h=w*ar;
   const room=TMENU_BOT-TMENU_TOP;
@@ -60341,6 +60621,67 @@ function drawTitle(dt){
    of things to go and do, which is the only reason to have one. ============================================================ */
 const AWARDS_VIEW=8;
 let awards={rows:[],scroll:0,t:0,md:false};
+/* ---- ACH tabs and filters (Mike, 0916: "allow me to have a tab system and filter system to view
+   our achievements by type, enemy, player, completion etc.") ----------------------------------
+   \u26a0 EVERY TAB'S VALUES ARE DERIVED FROM THE ROWS, NEVER HAND-LISTED. This file's own history is
+   why: `_selfPat`, the edge-pin exemption list and the enemy-separation list were all hand-written
+   lists that went stale the moment something new arrived, and each cost a drop. Deriving means an
+   achievement family added later appears in the TYPE tab on its own, and a family with no rows
+   cannot appear at all. */
+const AWARDS_TABS=[
+  {key:'all',    label:'ALL'},
+  {key:'type',   label:'TYPE'},
+  {key:'enemy',  label:'ENEMY'},
+  {key:'pilot',  label:'PILOT'},
+  {key:'status', label:'STATUS'}
+];
+const AWARDS_FAM_LABEL={campaign_clear:'CAMPAIGN CLEAR',stage_clear:'STAGE CLEAR',
+  stage_nodeath:'NO DEATH',stage_nomissile:'MISSILE DISCIPLINE',boss_difficulty:'BOSS DIFFICULTY',
+  boss_speed:'BOSS SPEED',weapon_max:'WEAPON MAX',run_no_continue:'NO CONTINUE'};
+function awardsFamLabel(f){ return AWARDS_FAM_LABEL[f]||String(f||'OTHER').replace(/_/g,' ').toUpperCase(); }
+/* the pilots a row can be attributed to: its definition's own pilot, plus whoever was flying when
+   it was earned (either co-op seat) */
+function awardsRowPilots(r){
+  const out=[];
+  if(r.pilot) out.push(r.pilot);
+  if(r.meta&&r.meta.pilot&&out.indexOf(r.meta.pilot)<0) out.push(r.meta.pilot);
+  if(r.meta&&r.meta.pilot2&&out.indexOf(r.meta.pilot2)<0) out.push(r.meta.pilot2);
+  return out;
+}
+/* \u26a0 "ENEMY" IS THE ENCOUNTER AXIS, NOT EVERY ROW THAT HAPPENS TO CARRY A STAGE. Beating stage 4
+   without dying is an achievement about the STAGE; beating its boss on Furious is one about the
+   BOSS. Only the families that are won against a unit are offered here, so the tab answers the
+   question Mike asked rather than duplicating STAGE CLEAR under another name. */
+function awardsIsEnemyRow(r){ return r.family==='boss_difficulty'||r.family==='boss_speed'; }
+function awardsTabValues(tab,rows){
+  const seen=[],push=(v,label)=>{ if(v==null) return; if(!seen.some(q=>q.v===v)) seen.push({v,label}); };
+  if(tab==='type') for(const r of rows) push(r.family||'other',awardsFamLabel(r.family));
+  else if(tab==='enemy') for(const r of rows){ if(awardsIsEnemyRow(r)&&r.stage) push(r.stage,'STAGE '+r.stage); }
+  else if(tab==='pilot') for(const r of rows) for(const p of awardsRowPilots(r)) push(p,awardsPilotName(p));
+  else if(tab==='status'){ push('done','UNLOCKED'); push('todo','LOCKED'); }
+  if(tab==='enemy'||tab==='type') seen.sort((a,b)=>(a.v>b.v?1:a.v<b.v?-1:0));
+  return seen;
+}
+function awardsPilotName(k){
+  try{ const p=PILOTS.filter(q=>q.key===k)[0]; if(p&&p.name) return String(p.name).toUpperCase(); }catch(_ap){}
+  return String(k||'').toUpperCase();
+}
+function awardsMatch(r,tab,val){
+  if(tab==='all'||val==null) return true;
+  if(tab==='type') return (r.family||'other')===val;
+  if(tab==='enemy') return awardsIsEnemyRow(r)&&r.stage===val;
+  if(tab==='pilot') return awardsRowPilots(r).indexOf(val)>=0;
+  if(tab==='status') return val==='done'?!!r.unlocked:!r.unlocked;
+  return true;
+}
+function awardsView(){
+  const A=awards,t=AWARDS_TABS[A.tab||0]||AWARDS_TABS[0];
+  const vals=awardsTabValues(t.key,A.rows);
+  const vi=vals.length?((A.fv[t.key]|0)%vals.length+vals.length)%vals.length:0;
+  const val=vals.length?vals[vi].v:null;
+  return {tab:t,vals,vi,val,label:vals.length?vals[vi].label:null,
+          rows:A.rows.filter(r=>awardsMatch(r,t.key,val))};
+}
 function awardsRows(){
   const L=(typeof achievementList==='function')?achievementList():[];
   const fam=['campaign_clear','run_no_continue','boss_difficulty','boss_speed','stage_nodeath','stage_nomissile','stage_clear','weapon_max'];
@@ -60351,33 +60692,181 @@ function awardsRows(){
     return String(a.title).localeCompare(String(b.title));
   });
 }
-function awardsOpen(){ awards={rows:awardsRows(),scroll:0,t:0,md:!!(Input&&Input.mouse&&Input.mouse.down)};
-  try{ if(typeof XART!=='undefined'){ XART.rdy('statpanel_full_0916'); if(XART._touch) XART._touch('statpanel_full_0916'); } }catch(_aw){} }
+function awardsOpen(){ awards={rows:awardsRows(),scroll:0,t:0,tab:0,fv:{},md:!!(Input&&Input.mouse&&Input.mouse.down)};
+  /* \u26a0 EVERY PLAQUE IS WARMED HERE. XART.rdy is false on its FIRST call and that call is what
+     starts the load, so a medal first asked for as its row scrolls into view is a hole for a frame. */
+  try{ if(typeof XART!=='undefined'){ XART.rdy('statpanel_full_0916'); if(XART._touch) XART._touch('statpanel_full_0916');
+    for(const r of awards.rows){ const k=achPlaqueKey(r); r.plaque=k; if(k){ XART.rdy(k); if(XART._touch) XART._touch(k); } } } }catch(_aw){} }
+/* ============================================================
+   THE FURIOUS VAULT - where the points are spent (Mike, 0916)
+   "an Achievement Pts currency system as \"Furious\" pts that unlock secret behind the scenes
+   development stuff, video interviews about me, the development of the game, sneak peeks of bof2
+   and other coleforge games and more bonus and easter egg features. Also be able to unlock fun and
+   cute stuff like Bunny mode for Falva, \"Bombshell\" mode for Lizzie, Insanity - a 5th difficulty."
+
+   \u26a0 UNTIL THIS SCREEN EXISTED NOTHING COULD BE BOUGHT AT ALL. The ledger, the prices and the
+   INSANITY unlock all worked and were all provably correct - and a real player had no way to reach
+   any of it, because `furiousBuy` could only be called from code. A system with no surface is
+   indistinguishable from one that was never built, which is the same hole ACH-02 found in the
+   achievement registry.
+   ============================================================ */
+const VAULT_VIEW=6;
+let vault=null;
+function vaultRows(){
+  return furiousShopIds().map(function(id){
+    const it=FURIOUS_SHOP[id];
+    return {id:id,name:it.name,cost:it.cost|0,kind:it.kind,blurb:it.blurb||'',
+            pending:furiousSellable(id)?null:(it.pending||'NOT AVAILABLE YET'),
+            owned:furiousOwned(id)};
+  });
+}
+function vaultOpen(){
+  vault={rows:vaultRows(),i:0,scroll:0,t:0,msg:'',msgT:0};
+  try{ if(typeof XART!=='undefined'){ XART.rdy('statpanel_full_0916'); if(XART._touch) XART._touch('statpanel_full_0916'); } }catch(_vw){}
+}
+function vaultSay(m){ if(!vault) return; vault.msg=m; vault.msgT=2.2; }
+/* the one place a purchase is made from the UI - every refusal has its own words, because
+   "it did not work" is the least useful thing a shop can say */
+function vaultBuy(){
+  if(!vault) return null;
+  const r=vault.rows[vault.i]; if(!r) return null;
+  const res=furiousBuy(r.id);
+  if(res==='ok'){ vaultSay('UNLOCKED - '+r.name); try{ Audio.SFX.select&&Audio.SFX.select(); }catch(_v1){} }
+  else if(res==='owned') vaultSay('ALREADY UNLOCKED');
+  else if(res==='pending') vaultSay(r.pending||'NOT AVAILABLE YET');
+  else if(res==='poor') vaultSay('NEED '+Math.max(0,r.cost-furiousBalance())+' MORE FURIOUS PTS');
+  else vaultSay('NOT AVAILABLE');
+  if(res!=='ok'){ try{ Audio.SFX.blocked&&Audio.SFX.blocked(); }catch(_v2){} }
+  vault.rows=vaultRows();
+  return res;
+}
+function drawVault(dt){
+  const V=vault||(vaultOpen(),vault); V.t+=dt; if(V.msgT>0) V.msgT-=dt;
+  if(typeof scrollSpaceBG==='function') scrollSpaceBG(dt); else { ctx.fillStyle='#0a0c14'; ctx.fillRect(0,0,VW,VH); }
+  const art=(typeof curFontArt==='function')?curFontArt():null;
+  const bal=furiousBalance();
+  if(art && typeof stageText==='function'){
+    stageText(art,'FURIOUS VAULT',VW/2,24,18,'#ffd24a',0.9,1,0.08);
+    /* \u26a0 THE STATUS LINE TAKES THE SUB-HEADER, IT DOES NOT GET ITS OWN ROW AT THE BOTTOM. The
+       first cut drew it at VH-34 and the ACHIEVEMENT TOAST - a 200x54 card pinned to the lower-left
+       corner since ACH-02 - sat straight on top of it, so the words explaining a refusal were
+       invisible while twelve assertions about them were green. Up here it can collide with neither
+       the toast nor the hint row, and the balance is the cheapest thing to hide for two seconds. */
+    const head=(V.msgT>0&&V.msg)?String(V.msg).toUpperCase():(bal+' FURIOUS PTS');
+    const hc=(V.msgT>0&&V.msg)?'#ffd24a':'#8de23a';
+    const hh=(typeof stageFitH==='function')?stageFitH(art,head,VW-40,11,7,0.06):11;
+    stageText(art,head,VW/2,44,hh,hc,0.85,1,0.06);
+  }
+  const pl=(typeof XART!=='undefined' && XART.rdy('statpanel_full_0916')) ? XART.get('statpanel_full_0916') : null;
+  const x0=18, w=VW-36, y0=62, rowH=(VH-y0-52)/VAULT_VIEW, rh=rowH*0.88;
+  const maxScroll=Math.max(0,V.rows.length-VAULT_VIEW);
+  V.i=clamp(V.i|0,0,Math.max(0,V.rows.length-1));
+  if(V.i<V.scroll) V.scroll=V.i; else if(V.i>=V.scroll+VAULT_VIEW) V.scroll=V.i-VAULT_VIEW+1;
+  V.scroll=clamp(V.scroll|0,0,maxScroll);
+  for(let k=0;k<VAULT_VIEW;k++){
+    const r=V.rows[k+V.scroll]; if(!r) break;
+    const ry=y0+k*rowH, sel=((k+V.scroll)===V.i);
+    ctx.save();
+    if(pl && typeof unlockPanel==='function') unlockPanel(pl,UNLOCK_ART.strip,x0,ry,w,rh,true);
+    else { ctx.fillStyle='#16161f'; ctx.fillRect(x0,ry,w,rh); ctx.strokeStyle='#705848'; ctx.lineWidth=1; ctx.strokeRect(x0+0.5,ry+0.5,w-1,rh-1); }
+    if(sel){ ctx.strokeStyle='#ffd24a'; ctx.lineWidth=2; ctx.strokeRect(x0+1,ry+1,w-2,rh-2); }
+    ctx.restore();
+    if(!art) continue;
+    /* \u26a0 THREE STATES, THREE COLOURS, AND THE PRICE IS ONLY SHOWN WHEN IT IS PAYABLE.
+       An OWNED row showing its cost reads as "buy it again"; a PENDING row showing a cost reads as
+       "you are short", which is a lie about why it is refusing. */
+    const pad=w*0.04, lh=Math.min(rh*0.38,10);
+    const col=r.owned?'#8de23a':(r.pending?'#6a7180':(bal>=r.cost?'#ffd24a':'#b06a6a'));
+    const nm=String(r.name).toUpperCase();
+    const room=w-pad*2-72;
+    const fh=(typeof stageFitH==='function')?stageFitH(art,nm,room,lh,7,0.06):lh;
+    stageText(art,nm,x0+pad+((typeof stageWidth==='function')?stageWidth(art,nm,fh,0.06):0)/2,ry+rh*0.34,fh,col,0.85,1,0.06);
+    const sub=r.owned?'OWNED':(r.pending?String(r.pending):String(r.blurb||''));
+    if(sub){
+      const sh=(typeof stageFitH==='function')?stageFitH(art,sub,room,lh*0.85,7,0.06):lh*0.85;
+      stageText(art,sub,x0+pad+((typeof stageWidth==='function')?stageWidth(art,sub,sh,0.06):0)/2,ry+rh*0.70,sh,'#7f8899',0.8,1,0.06);
+    }
+    if(!r.owned && !r.pending){
+      const pt=String(r.cost);
+      stageText(art,pt,x0+w-pad-((typeof stageWidth==='function')?stageWidth(art,pt,fh,0.06):0)/2,ry+rh/2,fh,bal>=r.cost?'#ffd24a':'#b06a6a',0.85,1,0.06);
+    }
+  }
+  if(maxScroll>0){
+    const ax=VW-12, tw=8, th=7;
+    ctx.save(); ctx.fillStyle='#9fd6ff';
+    if(V.scroll>0){ ctx.beginPath(); ctx.moveTo(ax-tw/2,y0+th); ctx.lineTo(ax+tw/2,y0+th); ctx.lineTo(ax,y0); ctx.closePath(); ctx.fill(); }
+    if(V.scroll<maxScroll){ const by=y0+VAULT_VIEW*rowH; ctx.beginPath(); ctx.moveTo(ax-tw/2,by-th); ctx.lineTo(ax+tw/2,by-th); ctx.lineTo(ax,by); ctx.closePath(); ctx.fill(); }
+    ctx.restore();
+  }
+  if(typeof controlHintRow==='function')
+    controlHintRow([['pad_dpad','SELECT'],['pad_a','UNLOCK'],['pad_b','BACK']],VH-14,VW/2,VW-24);
+  /* each read ONCE - these consume their tap */
+  const up=(Input.menuUp?Input.menuUp():false), dn=(Input.menuDown?Input.menuDown():false);
+  const go=(Input.menuConfirm?Input.menuConfirm():false);
+  if(dn){ V.i=Math.min(V.rows.length-1,V.i+1); try{ Audio.SFX.blip&&Audio.SFX.blip(); }catch(_v3){} }
+  else if(up){ V.i=Math.max(0,V.i-1); try{ Audio.SFX.blip&&Audio.SFX.blip(); }catch(_v4){} }
+  if(go) vaultBuy();
+  if(Input.menuBack&&Input.menuBack()){ setState(GS.ACHIEVEMENTS); if(typeof awardsOpen==='function') awardsOpen(); }
+}
 function drawAwards(dt){
   const A=awards; A.t+=dt;
   if(typeof scrollSpaceBG==='function') scrollSpaceBG(dt); else { ctx.fillStyle='#0a0c14'; ctx.fillRect(0,0,VW,VH); }
   const art=(typeof curFontArt==='function')?curFontArt():null;
-  const total=A.rows.length, got=A.rows.filter(function(r){return r.unlocked;}).length;
+  const V=awardsView(), view=V.rows;
+  const total=view.length, got=view.filter(function(r){return r.unlocked;}).length;
   const pts=(typeof achievementPoints==='function')?achievementPoints():0;
-  let maxp=0; for(const r of A.rows) maxp+=r.points|0;
   if(art && typeof stageText==='function'){
-    stageText(art,'ACHIEVEMENTS',VW/2,26,20,'#ffd24a',0.9,1,0.08);
-    stageText(art,got+' OF '+total+'   '+pts+' PTS',VW/2,48,11,'#9fd6ff',0.8,1,0.06);
+    stageText(art,'ACHIEVEMENTS',VW/2,22,18,'#ffd24a',0.9,1,0.08);
+    /* \u26a0 THE COUNT IS OF WHAT IS ON SCREEN, NOT OF EVERYTHING. A filter that says "2 OF 66"
+       while showing four rows is lying about the thing the player is looking at; the POINTS stay
+       the profile total, because that is a score and not a count. */
+    const sub=got+' OF '+total+'   '+pts+' PTS';
+    stageText(art,sub,VW/2,40,10,'#9fd6ff',0.8,1,0.06);
+  }
+  /* ---- the tab strip ---- */
+  const tabY=56, tabH=13, tx0=18, tw=(VW-36)/AWARDS_TABS.length;
+  for(let i=0;i<AWARDS_TABS.length;i++){
+    const on=(i===(A.tab|0)), bx=tx0+i*tw;
+    ctx.save();
+    ctx.fillStyle=on?'rgba(255,210,74,0.16)':'rgba(16,18,26,0.55)';
+    ctx.fillRect(bx+1,tabY,tw-2,tabH);
+    ctx.strokeStyle=on?'#ffd24a':'#3c4354'; ctx.lineWidth=1;
+    ctx.strokeRect(bx+1.5,tabY+0.5,tw-3,tabH-1);
+    ctx.restore();
+    if(art){
+      const lb=AWARDS_TABS[i].label;
+      const fh=(typeof stageFitH==='function')?stageFitH(art,lb,tw-8,8,7,0.06):8;
+      stageText(art,lb,bx+tw/2,tabY+tabH/2,fh,on?'#ffd24a':'#7f8899',0.85,1,0.06);
+    }
+  }
+  /* the active filter value, under its own tab - ALL has none, and says so by having none */
+  if(art && V.label){
+    const lb=V.label+(V.vals.length>1?'  ('+(V.vi+1)+'/'+V.vals.length+')':'');
+    const fh=(typeof stageFitH==='function')?stageFitH(art,lb,VW-40,9,7,0.06):9;
+    stageText(art,lb,VW/2,tabY+tabH+9,fh,'#8de23a',0.85,1,0.06);
   }
   /* the rows, on the debrief plate's own authored strip - the same piece the unlock page uses */
   const pl=(typeof XART!=='undefined' && XART.rdy('statpanel_full_0916')) ? XART.get('statpanel_full_0916') : null;
-  const x0=18, w=VW-36, y0=64, rowH=(VH-104)/AWARDS_VIEW, rh=rowH*0.86;
+  const x0=18, w=VW-36, y0=V.label?84:76, rowH=(VH-y0-40)/AWARDS_VIEW, rh=rowH*0.86;
   const maxScroll=Math.max(0,total-AWARDS_VIEW);
   A.scroll=clamp(A.scroll|0,0,maxScroll);
+  /* an empty filter is a legitimate answer, and it has to SAY so - a blank panel reads as broken */
+  if(!total && art){
+    stageText(art,'NOTHING HERE YET',VW/2,y0+40,12,'#6a7180',0.85,1,0.06);
+  }
   for(let k=0;k<AWARDS_VIEW;k++){
-    const r=A.rows[k+A.scroll]; if(!r) break;
+    const r=view[k+A.scroll]; if(!r) break;
     const ry=y0+k*rowH;
     ctx.save();
     if(pl && typeof unlockPanel==='function') unlockPanel(pl,UNLOCK_ART.strip,x0,ry,w,rh,true);
     else { ctx.fillStyle='#16161f'; ctx.fillRect(x0,ry,w,rh); ctx.strokeStyle='#705848'; ctx.lineWidth=1; ctx.strokeRect(x0+0.5,ry+0.5,w-1,rh-1); }
     ctx.restore();
+    /* the row wears its own medal, at the row's height */
+    const ps=rh*0.78, px2=x0+w*0.012, py2=ry+(rh-ps)/2;
+    if(r.plaque===undefined) r.plaque=achPlaqueKey(r);
+    if(typeof achPlaqueDraw==='function'){ ctx.save(); if(!r.unlocked) ctx.globalAlpha=0.45; achPlaqueDraw(r,px2,py2,ps); ctx.restore(); }
     if(!art) continue;
-    const pad=w*0.035, lh=Math.min(rh*0.46,11);
+    const pad=w*0.035+ps, lh=Math.min(rh*0.46,11);
     /* ⚠ A LOCKED ROW IS DIMMED, NEVER BLANKED - the gallery is a list of things to go and do */
     const col=r.unlocked?'#8de23a':'#6a7180';
     const nm=String(r.title).toUpperCase();
@@ -60395,19 +60884,39 @@ function drawAwards(dt){
     if(A.scroll<maxScroll){ const by=y0+AWARDS_VIEW*rowH; ctx.beginPath(); ctx.moveTo(ax-tw/2,by-th); ctx.lineTo(ax+tw/2,by-th); ctx.lineTo(ax,by); ctx.closePath(); ctx.fill(); }
     ctx.restore();
   }
-  if(typeof controlHintRow==='function') controlHintRow([['pad_b','BACK']],VH-14,VW/2,VW-24);
-  /* input: up/down scroll, B/back leaves. Each read ONCE - menuUp/menuDown consume their tap. */
+  if(typeof controlHintRow==='function')
+    controlHintRow([['pad_dpad','TAB / SCROLL'],['pad_a','FILTER'],['pad_x','VAULT'],['pad_b','BACK']],VH-14,VW/2,VW-24);
+  /* \u26a0 EVERY ONE OF THESE IS READ EXACTLY ONCE INTO A LOCAL, BECAUSE THEY CONSUME THEIR TAP.
+     CLAUDE.md records the worked example: `if(menuLeft()||menuRight()){ d=menuLeft()?-1:1 }` is
+     ALWAYS +1, because the second menuLeft() has already been eaten by the first. */
   const up=(Input.menuUp?Input.menuUp():false), dn=(Input.menuDown?Input.menuDown():false);
+  const lf=(Input.menuLeft?Input.menuLeft():false), rt=(Input.menuRight?Input.menuRight():false);
+  const go=(Input.menuConfirm?Input.menuConfirm():false);
   if(dn) A.scroll=Math.min(maxScroll,A.scroll+1);
   else if(up) A.scroll=Math.max(0,A.scroll-1);
+  if(lf||rt){
+    A.tab=(((A.tab|0)+(rt?1:-1))%AWARDS_TABS.length+AWARDS_TABS.length)%AWARDS_TABS.length;
+    A.scroll=0;                 /* a new tab is a new list; row 9 of the old one means nothing */
+    try{ Audio.SFX.blip&&Audio.SFX.blip(); }catch(_aw1){}
+  } else if(go && V.vals.length){
+    const k=AWARDS_TABS[A.tab|0].key;
+    A.fv[k]=((A.fv[k]|0)+1)%V.vals.length;
+    A.scroll=0;
+    try{ Audio.SFX.blip&&Audio.SFX.blip(); }catch(_aw2){}
+  }
+  /* \u26a0 THE VAULT IS ON ITS OWN BUTTON, NOT ON CONFIRM. Confirm already cycles the filter on this
+     screen, and one button doing two jobs is the shape this file has been bitten by repeatedly. */
+  if(Input.tapAny&&keybind&&keybind.charge&&Input.tapAny(keybind.charge)){
+    setState(GS.VAULT); vaultOpen();
+  }
   if(Input.menuBack&&Input.menuBack()){ setState(GS.TITLE); menuIndex=TITLE_ITEMS.indexOf('ACHIEVEMENTS'); }
 }
 /* ---- the unlock toast -------------------------------------------------------
    ⚠ IT IS A QUEUE, NOT A SLOT. A stage clear can award seven at once (0915 measured exactly
    that), and one slot would show the last one and silently drop six. */
-const ACH_TOAST={slide:0.30, hold:3.2, out:0.45, w:196, h:46, pad:8};
+const ACH_TOAST={slide:0.30, hold:3.2, out:0.45, w:200, h:54, pad:8};
 let achToasts=[];
-function achToastPush(t){ if(t) achToasts.push({title:String(t.title||''), points:t.points|0, t:0}); }
+function achToastPush(t){ if(t) achToasts.push({title:String(t.title||''), points:t.points|0, plaque:t.plaque||null, t:0}); }
 /* \u26a0 THE CARD SLIDES IN FROM THE LEFT EDGE AND SITS IN THE LOWER-LEFT CORNER (Mike, 0916: "should
    pop up in the lower left corner when we unlock achievements in-game or in-menu, and should act
    like a steam/xbox 360 achievement system"). The first cut was a centred strip along the bottom,
@@ -60429,25 +60938,33 @@ function achToastTick(dt){
   ctx.save(); ctx.globalAlpha=a;
   if(pl && typeof unlockPanel==='function') unlockPanel(pl,UNLOCK_ART.strip,x,y,w,h,true);
   else { ctx.fillStyle='#16161f'; ctx.fillRect(x,y,w,h); ctx.strokeStyle='#705848'; ctx.lineWidth=1; ctx.strokeRect(x+0.5,y+0.5,w-1,h-1); }
-  /* the plaque socket, left - the art for it lands with the plaques; the box is its home either way */
-  const bs=h*0.66, bx=x+h*0.17, by=y+(h-bs)/2;
+  /* \u26a0 THE PLAQUE BOX SITS TOP-LEFT AND ITS POINTS SIT UNDER IT (Mike, 0916: "the +10 Furious
+     Pt's should appear below the box so it looks clean"). With all three lines stacked in the text
+     column the card read as a paragraph; the score belongs to the medal, so it goes under the
+     medal and the two text lines get the whole right-hand column. */
+  const bs=h*0.60, bx=x+h*0.13, by=y+h*0.10;
   ctx.fillStyle='#16161f'; ctx.fillRect(bx,by,bs,bs);
   ctx.strokeStyle='#705848'; ctx.lineWidth=Math.max(1,bs*0.07); ctx.strokeRect(bx+ctx.lineWidth/2,by+ctx.lineWidth/2,bs-ctx.lineWidth,bs-ctx.lineWidth);
   if(typeof achPlaqueDraw==='function') achPlaqueDraw(T, bx, by, bs);
   const art=(typeof curFontArt==='function')?curFontArt():null;
   if(art && typeof stageText==='function'){
-    const tx=bx+bs+h*0.16, room=x+w-tx-h*0.16;
+    const tx=bx+bs+h*0.14, room=x+w-tx-h*0.12;
     const t1='ACHIEVEMENT UNLOCKED', t2=String(T.title).toUpperCase();
-    const h1=(typeof stageFitH==='function')?stageFitH(art,t1,room,h*0.26,7,0.06):8;
+    const h1=(typeof stageFitH==='function')?stageFitH(art,t1,room,h*0.22,7,0.06):8;
     const h2=(typeof stageFitH==='function')?stageFitH(art,t2,room,h*0.30,7,0.06):9;
     const w1=(typeof stageWidth==='function')?stageWidth(art,t1,h1,0.06):0;
     const w2=(typeof stageWidth==='function')?stageWidth(art,t2,h2,0.06):0;
-    stageText(art,t1,tx+w1/2,y+h*0.32,h1,'#9fd6ff',0.85,a,0.06);
-    stageText(art,t2,tx+w2/2,y+h*0.60,h2,'#ffd24a',0.9,a,0.06);
+    stageText(art,t1,tx+w1/2,y+h*0.30,h1,'#9fd6ff',0.85,a,0.06);
+    stageText(art,t2,tx+w2/2,y+h*0.58,h2,'#ffd24a',0.9,a,0.06);
+    /* ⚠ UNDER THE BOX, CENTRED ON IT - BUT CLAMPED INSIDE THE CARD. "+10 FURIOUS" is wider than the
+       medal it belongs to, so centring it on the box alone hangs it off the card's left edge and
+       over the screen behind. It is fitted to the box's own width first and then its left edge is
+       held at the card's inner margin. */
     const p='+'+T.points+' FURIOUS';
-    const hp=(typeof stageFitH==='function')?stageFitH(art,p,room,h*0.22,7,0.06):7;
-    const wp=(typeof stageWidth==='function')?stageWidth(art,p,hp,0.06):0;
-    stageText(art,p,tx+wp/2,y+h*0.84,hp,'#8de23a',0.85,a,0.06);
+    const hp=Math.max(7,Math.min(h*0.16,(typeof stageFitH==='function')?stageFitH(art,p,bs*1.9,h*0.16,7,0.05):7));
+    const wp=(typeof stageWidth==='function')?stageWidth(art,p,hp,0.05):0;
+    const pcx=Math.max(x+h*0.10+wp/2, bx+bs/2);
+    stageText(art,p,pcx,by+bs+hp*0.80,hp,'#8de23a',0.9,a,0.05);
   }
   ctx.restore();
   return true;
@@ -60472,12 +60989,18 @@ function drawMenuIcon(icon,cx,cy){
   else if(icon==='lock'){ px(cx-6,cy-2,12,10,'#dfe3ea'); ctx.strokeStyle='#dfe3ea';ctx.lineWidth=2;ctx.beginPath();ctx.arc(cx,cy-3,4,Math.PI,0);ctx.stroke(); px(cx-1,cy+1,2,4,'#26282c'); }
   else if(icon==='gear'){ ctx.fillStyle='#dfe3ea'; for(let a=0;a<8;a++){const an=a*TAU/8;px(cx+Math.cos(an)*7-1.5,cy+Math.sin(an)*7-1.5,3,3,'#dfe3ea');} circle(cx,cy,5); ctx.fillStyle='#26282c';circle(cx,cy,2); }
   else if(icon==='door'){ px(cx-6,cy-7,9,15,'#dfe3ea'); px(cx-4,cy-5,5,11,'#26282c'); px(cx+2,cy-1,2,2,'#dfe3ea'); ctx.strokeStyle='#dfe3ea';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(cx+3,cy+1);ctx.lineTo(cx+8,cy+1);ctx.stroke(); }
+  else if(icon==='medal'){ ctx.strokeStyle='#dfe3ea';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(cx-4,cy-8);ctx.lineTo(cx-1,cy-2);ctx.moveTo(cx+4,cy-8);ctx.lineTo(cx+1,cy-2);ctx.stroke(); ctx.fillStyle='#dfe3ea';circle(cx,cy+3,5); ctx.fillStyle='#26282c';circle(cx,cy+3,2); }
   else if(icon==='star'){ ctx.fillStyle='#dfe3ea'; ctx.beginPath(); for(let k=0;k<5;k++){ const a=-Math.PI/2+k*TAU/5, a2=a+TAU/10; ctx.lineTo(cx+Math.cos(a)*7,cy+Math.sin(a)*7); ctx.lineTo(cx+Math.cos(a2)*3,cy+Math.sin(a2)*3); } ctx.closePath(); ctx.fill(); }
 }
 function drawMenuButtons(dt){
-  if(!XART.rdy('btn_newgame')){
+  /* the pre-decode fallback. Gate on MENU_KEYS[0], not on a key name written out - the menu was
+     repointed onto the 0916 sheet and a hard-coded 'btn_newgame' would test a plate the title no
+     longer draws, which is true for ever and keeps the real art off the screen for no reason.
+     TITLE_ICONS is a fifth place that knew how long this menu was: it had SIX entries against
+     seven rows, so EXIT GAME drew with icon undefined - the 0912a bug one button over. */
+  if(!XART.rdy(MENU_KEYS[0])){
     const L0=titleMenuLayout();
-    for(let i=0;i<TITLE_ITEMS.length;i++) drawMenuButton(VW/2, L0.y0+i*L0.pitch, Math.min(250,L0.w), Math.min(40,L0.h), TITLE_ITEMS[i], i===menuIndex, ['ship','lock','gear','help','star','door'][i]);
+    for(let i=0;i<TITLE_ITEMS.length;i++) drawMenuButton(VW/2, L0.y0+i*L0.pitch, Math.min(250,L0.w), Math.min(40,L0.h), TITLE_ITEMS[i], i===menuIndex, TITLE_ICONS[i]);
     return;
   }
   /* ⚠ MENU_KEYS.length, NOT 5. Adding HELP fixed the two wrap sites in handleTitleInput and the
@@ -60582,13 +61105,33 @@ function chooseTitle(){ if(titlePending!=null) return; Audio.SFX.select(); menuF
 function tryExit(){ Audio.stopMusic(); state='exited'; }
 
 /* DIFFICULTY select */
-const DIFF_KEYS=['easy','normal','hard','furious'];
-const DIFF_IMG=['diff_easy','diff_normal','diff_hard','diff_furious'];
-const DIFF_DESC=['SLOWER ENEMIES / MORE DROPS','STANDARD FURY','FASTER / TOUGHER / FEWER DROPS','RELENTLESS / NO MERCY'];
+const DIFF_KEYS=['easy','normal','hard','furious','insanity'];
+/* \u26a0 ONE ROW PER DIFFICULTY, KEYED - NOT THREE PARALLEL ARRAYS. The title menu had exactly this
+   shape (TITLE_ITEMS / MENU_KEYS / an inline icon list) and the icon list was one entry short, so
+   the last row drew with no icon. Three arrays that must stay the same length are three chances to
+   be wrong; one keyed table cannot slip. */
+/* Mike, 0916: "Can you also remake our other difficulty options please ... I would like each to
+   feature Faces that go from Normal to Under Pressure to Furious to Insanity's Death." One pilot,
+   five states: calm -> composed -> gritted -> enraged -> skull, green/blue/orange/red/violet. */
+const DIFF_META={
+  easy:    {img:'diff_easy_0916',    desc:'SLOWER ENEMIES / MORE DROPS'},
+  normal:  {img:'diff_normal_0916',  desc:'STANDARD FURY'},
+  hard:    {img:'diff_hard_0916',    desc:'FASTER / TOUGHER / FEWER DROPS'},
+  furious: {img:'diff_furious_0916', desc:'RELENTLESS / NO MERCY'},
+  insanity:{img:'diff_insanity_0916',desc:'NOTHING HELD BACK'}
+};
+/* \u26a0 INSANITY IS ABSENT FROM THE LIST UNTIL IT IS BOUGHT, NOT DRAWN-AND-DISABLED (Mike, 0916:
+   "it will not show up unless you unlock it via achievement points, so its an invisible button you
+   cant even select until this condition is met"). Absent means the cursor cannot land on it, the
+   mouse cannot hit it and `pickDiff` cannot name it - three separate ways in, closed by one fact
+   instead of by three guards that each have to remember. */
+function diffLocked(k){ return k==='insanity' && !(typeof furiousOwned==='function' && furiousOwned('insanity_mode')); }
+function diffList(){ return DIFF_KEYS.filter(function(k){ return !diffLocked(k); }); }
 function difficultyDescription(i){
-  i=clamp(i,0,DIFF_KEYS.length-1);const d=difficultyForRun(run.mode,DIFF_KEYS[i]);
+  const L=diffList(); i=clamp(i,0,L.length-1); const k=L[i], d=difficultyForRun(run.mode,k);
   return d.startLives+' '+(d.startLives===1?'LIFE':'LIVES')+' \u00B7 '+
-    (d.continues<0?'UNLIMITED CONTINUES':d.continues+' '+(d.continues===1?'CONTINUE':'CONTINUES'))+' \u00B7 '+DIFF_DESC[i];
+    (d.continues<0?'UNLIMITED CONTINUES':d.continues+' '+(d.continues===1?'CONTINUE':'CONTINUES'))+' \u00B7 '+
+    ((DIFF_META[k]||{}).desc||'');
 }
 function scrollSpaceBG(dt){
   if(ASSETS.rdy(ASSETS.starplanets)){
@@ -60607,12 +61150,17 @@ function drawDiff(dt){
   /* SPACING (drop 0801bu). Was 112/68 - four rows ending at y=316 with 120px of
      dead space beneath before the rules text at VH-72. Re-centred and opened up
      so the block reads as a deliberate column. */
-  const startY=124, gap=84, w0=210, N=DIFF_KEYS.length;
-  const have = XART.rdy('diff_easy');
+  const L=diffList(), N=L.length;
+  /* the block is re-centred on however many rows there are - a fifth row at the four-row pitch
+     would run into the rules text at the bottom */
+  const gap=Math.min(84,(VH-196)/Math.max(1,N)), w0=210, startY=(VH-56)/2-((N-1)*gap)/2;
+  const have = XART.rdy((DIFF_META[L[0]]||{}).img||'diff_easy_0916');
   for(let i=0;i<N;i++){
     const cy=startY+i*gap, sel=(i===menuIndex);
     if(have){
-      const im=XART.get(DIFF_IMG[i]); const w=sel?w0*1.05:w0, h=w*(im.naturalHeight/im.naturalWidth);
+      const ik=(DIFF_META[L[i]]||{}).img||'diff_normal';
+      const im=XART.rdy(ik)?XART.get(ik):XART.get('diff_normal_0916');
+      const w=sel?w0*1.05:w0, h=w*(im.naturalHeight/im.naturalWidth);
       ctx.save(); if(sel){ctx.shadowColor='#ffdf73';ctx.shadowBlur=15;}else ctx.globalAlpha=0.84;
       ctx.drawImage(im,VW/2-w/2,cy-h/2,w,h); ctx.restore();
       /* CURSOR (drop 0801ba). This screen was the only menu with no selector at
@@ -60627,7 +61175,7 @@ function drawDiff(dt){
       if(diffPending===i&&diffFlash>0) flashImg(im,VW/2-w/2,cy-h/2,w,h,clamp(diffFlash/0.2,0,1)*0.92);
       // (no small text under the buttons)
     } else {
-      drawMenuButton(VW/2,cy,240,40,DIFFS[DIFF_KEYS[i]].name,sel,null);
+      drawMenuButton(VW/2,cy,240,40,DIFFS[L[i]].name,sel,null);
       if(sel && typeof drawSelArrow==='function'){
         drawSelArrow(VW/2-138, cy, 22, false, 'g');
         drawSelArrow(VW/2+138, cy, 22, true, 'g');
@@ -60639,7 +61187,15 @@ function drawDiff(dt){
     const parts=desc.split(' \u00B7 ');
     const uf=pilotFont(1);
     let yy=VH-48-(parts.length-1)*20;
-    for(const line of parts){ if(uf && typeof stageText==='function'){ stageText(uf,line,VW/2,yy,15,null,null,1,0.08); } else { ctx.textAlign='center'; ctx.fillStyle='#eaf2ff'; ctx.font='13px "BOFmil", monospace'; ctx.fillText(line,VW/2,yy); } yy+=20; }
+    /* ⚠ SHRINK TO FIT, BECAUSE A LONG LINE RUNS OFF THE EDGE RATHER THAN WRAPPING. INSANITY's
+       first description was 'NO CONTINUES / NOTHING HELD BACK' and at the fixed 15px it was wider
+       than the screen: the render showed 'TINUES / NOTHING HELD BACK', centred, with its first six
+       characters off the left edge. The string is shorter now AND the line is fitted, so the next
+       long one cannot do it again - 0912b's floor-and-fit, one screen over. */
+    for(const line of parts){ if(uf && typeof stageText==='function'){
+        const fh=(typeof stageFitH==='function')?stageFitH(uf,line,VW-24,15,9,0.08):15;
+        stageText(uf,line,VW/2,yy,fh,null,null,1,0.08);
+      } else { ctx.textAlign='center'; ctx.fillStyle='#eaf2ff'; ctx.font='13px "BOFmil", monospace'; ctx.fillText(line,VW/2,yy); } yy+=20; }
   }
   if(diffFlash>0) diffFlash-=dt;
   if(diffPending!=null && diffFlash<=0){ const m=diffPending; diffPending=null; menuIndex=m; pickDiff(); return; }
@@ -60655,7 +61211,7 @@ function drawDiff(dt){
   if(backButton()){ setState(GS.TITLE); menuIndex=0; Audio.SFX.select(); }
 }
 function confirmDiff(){ if(diffPending!=null)return; Audio.SFX.select(); diffPending=menuIndex; diffFlash=0.2; }
-function pickDiff(){ diffKey=DIFF_KEYS[menuIndex]; Audio.SFX.select();
+function pickDiff(){ const L=diffList(); diffKey=L[clamp(menuIndex,0,L.length-1)]; Audio.SFX.select();
   /* MUSIC CROSSES OVER HERE (drop 0724cg), not when the map forms. Choosing a difficulty is the
      moment the player commits, so the menu track fades and the campaign track comes up UNDER the
      boot sequence — by the time the map appears it is already playing rather than starting
