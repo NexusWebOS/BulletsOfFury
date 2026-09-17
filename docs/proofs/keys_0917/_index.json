@@ -1,16 +1,65 @@
 [
   {
-    "key": "nlz_3_b0",
+    "key": "inf_fire",
     "ok": true,
-    "w": 64,
-    "h": 320,
-    "opaque": 12797
+    "w": 56,
+    "h": 65,
+    "opaque": 2832
   },
   {
-    "key": "nlz_3_b2",
+    "key": "inf_ice",
     "ok": true,
-    "w": 64,
-    "h": 320,
-    "opaque": 12797
+    "w": 53,
+    "h": 65,
+    "opaque": 2700
+  },
+  {
+    "key": "inf_lightning",
+    "ok": true,
+    "w": 53,
+    "h": 65,
+    "opaque": 2700
+  },
+  {
+    "key": "inf_prism",
+    "ok": true,
+    "w": 56,
+    "h": 65,
+    "opaque": 2829
+  },
+  {
+    "key": "inf_toxic",
+    "ok": true,
+    "w": 54,
+    "h": 65,
+    "opaque": 2788
+  },
+  {
+    "key": "inf_kinetic",
+    "ok": true,
+    "w": 53,
+    "h": 65,
+    "opaque": 2737
+  },
+  {
+    "key": "inf_chrome",
+    "ok": true,
+    "w": 57,
+    "h": 65,
+    "opaque": 2978
+  },
+  {
+    "key": "inf_water",
+    "ok": true,
+    "w": 53,
+    "h": 65,
+    "opaque": 2742
+  },
+  {
+    "key": "inf_dark",
+    "ok": true,
+    "w": 55,
+    "h": 65,
+    "opaque": 2827
   }
 ]

@@ -1,0 +1,122 @@
+{
+  "infusions": {
+    "fire": {
+      "name": "INCENDIARY",
+      "body": "#ff6a1e",
+      "glow": "#ff3b1e",
+      "el": "fire",
+      "named": {
+        "3": "FIREBURST"
+      }
+    },
+    "ice": {
+      "name": "GLACIAL",
+      "body": "#9fdcff",
+      "glow": "#4fc3ff",
+      "el": "ice",
+      "named": {
+        "3": "GLACIAL STRIKE"
+      }
+    },
+    "lightning": {
+      "name": "VOLTAIC",
+      "body": "#ffe03a",
+      "glow": "#fff29a",
+      "el": null,
+      "named": {
+        "3": "GODS WRATH"
+      }
+    },
+    "prism": {
+      "name": "PRISM",
+      "body": "#e0b3ff",
+      "glow": "#ffffff",
+      "el": null,
+      "named": {
+        "2": "LUMINAIRE",
+        "3": "PRISM WAVE"
+      }
+    },
+    "toxic": {
+      "name": "TOXIC",
+      "body": "#8de23a",
+      "glow": "#3aff5a",
+      "el": null,
+      "named": {
+        "3": "ERADICATION"
+      }
+    },
+    "kinetic": {
+      "name": "KINETIC",
+      "body": "#dfe8ff",
+      "glow": "#8ab4ff",
+      "el": null,
+      "named": {
+        "3": "SONIC WAVE"
+      }
+    },
+    "chrome": {
+      "name": "CHROMIUM",
+      "body": "#d6e2ee",
+      "glow": "#ffffff",
+      "el": null,
+      "named": {
+        "2": "CHROME BURST",
+        "3": "MIRROR SHELL"
+      }
+    },
+    "water": {
+      "name": "TIDAL",
+      "body": "#3fa7ff",
+      "glow": "#7fe0ff",
+      "el": "water",
+      "named": {
+        "3": "GEYSER"
+      },
+      "gate": "water"
+    },
+    "dark": {
+      "name": "DARK MATTER",
+      "body": "#5a2a8a",
+      "glow": "#b46cff",
+      "el": null,
+      "named": {
+        "3": "VOID"
+      },
+      "gate": "ngplus"
+    }
+  },
+  "carriers": [
+    "mg",
+    "spread",
+    "beam",
+    "missile",
+    "orb",
+    "shard"
+  ],
+  "fusions": {
+    "fire+ice": "THERMAL SHOCK",
+    "fire+toxic": "NAPALM",
+    "lightning+water": "HYDRO VOLT",
+    "lightning+prism": "SPECTRUM",
+    "fire+kinetic": "SHOCKWAVE INFERNO",
+    "dark+prism": "EVENT HORIZON",
+    "chrome+lightning": "TESLA MIRROR",
+    "ice+water": "FLASH FREEZE",
+    "ice+kinetic": "AVALANCHE",
+    "toxic+water": "ACID RAIN",
+    "dark+fire": "BLACK SUN",
+    "chrome+prism": "KALEIDOSCOPE"
+  },
+  "bias": {
+    "1": "kinetic",
+    "2": "fire",
+    "3": "ice",
+    "4": "lightning",
+    "6": "chrome",
+    "7": "toxic",
+    "8": "prism"
+  },
+  "dropP": 0.05,
+  "maxLv": 3
+}

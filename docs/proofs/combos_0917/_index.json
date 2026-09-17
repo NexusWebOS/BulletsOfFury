@@ -1,0 +1,20 @@
+{
+  "elements": [
+    "fire",
+    "ice",
+    "lightning",
+    "prism",
+    "toxic",
+    "kinetic",
+    "chrome",
+    "water",
+    "dark"
+  ],
+  "carriers": [
+    "MACHINE GUN",
+    "SPREAD",
+    "LASER",
+    "MISSILES",
+    "ORB"
+  ]
+}
