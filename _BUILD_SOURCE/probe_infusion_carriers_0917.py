@@ -88,6 +88,42 @@ def main():
         asks4 = pg.evaluate("() => window.__pal.filter(p => p[0]===%r)" % mk)
         ok(len(asks4) == 0, 'CONTROL: with no infusion the missile plate is not swapped (%d)' % len(asks4))
 
+        # ---- the orb (the WATER ORB) ---------------------------------------------------------------
+        pg.evaluate("() => { XART.rdy('fx0825_ice_orb'); }")
+        pg.wait_for_function("() => XART.rdy('fx0825_ice_orb')", timeout=20000)
+        wb = pg.evaluate("() => INFUSIONS.water.body")
+        pg.evaluate("() => { run.infusion=null; infusionGrant('water'); pBullets.length=0; run.weapon=5; run.wlevels[5]=2; run.wlevel=2; if(run.wvars) run.wvars[5]=null; window.__pal=[]; player.fireCd=0; pShoot(); }")
+        pg.evaluate(sh.STEP, [2])
+        orb = pg.evaluate("() => { const b=pBullets.find(q=>q.kind==='orb'); return b?{inf:b._inf, w:b.w}:null; }")
+        asks5 = pg.evaluate("() => window.__pal.filter(p => p[0]==='fx0825_ice_orb').map(p=>p[1])")
+        ok(orb and orb['inf'] == 'water', 'the ORB is a carrier: a live orb carries WATER (%s)' % orb)
+        ok(wb in asks5, 'and the authored ice wheel is palette-swapped to tidal blue - the WATER ORB (%s)' % sorted(set(asks5)))
+        shot(pg, '09_water_orb.png')
+        pg.evaluate("() => { run.infusion=null; pBullets.length=0; window.__pal=[]; player.fireCd=0; pShoot(); }")
+        pg.evaluate(sh.STEP, [2])
+        asks6 = pg.evaluate("() => window.__pal.filter(p => p[0]==='fx0825_ice_orb').length")
+        ok(asks6 == 0, 'CONTROL: the plain orb is the authored plate, no swap (%d)' % asks6)
+
+        # ---- the chaingun (Mike: "the chaingun combinations after level 5") ------------------------
+        pg.evaluate("() => { window.__p87=[]; const o=p87Body; window.__p87o=o; p87Body=function(lv,inf){ window.__p87.push(inf||null); return o(lv,inf); }; }")
+        pg.evaluate("() => { run.infusion=null; infusionGrant('toxic'); pBullets.length=0; run.weapon=7; run.wlevels[7]=2; run.wlevel=2; run.stage=6; if(typeof chaingunUnlock==='function') try{ chaingunUnlock(); }catch(e){} player.fireCd=0; pShoot(); }")
+        pg.evaluate(sh.STEP, [2])
+        cg = pg.evaluate("() => { const b=pBullets.find(q=>q.kind==='mg'||q._chaingun); return b?{inf:b._inf, kind:b.kind, cg:!!b._chaingun}:null; }")
+        p87 = pg.evaluate("() => window.__p87.filter(x=>x==='toxic').length")
+        ok(cg and cg['inf'] == 'toxic', 'a CHAINGUN round carries the infusion (%s)' % cg)
+        ok(p87 >= 1, 'and it draws through the pack with the TOXIC palette (%d p87Body calls with toxic)' % p87)
+        pg.evaluate("() => { p87Body = window.__p87o; }")
+        shot(pg, '11_toxic_chaingun.png')
+
+        # ---- the VOID BEAM: dark on the laser pulls hostiles toward the column ---------------------
+        def pull(elem):
+            pg.evaluate("(el) => { for(const e of enemies) e.dead=true; for(const b of pBullets) b.dead=true; pBullets.length=0; run.infusion=null; infusionGrant(el); infusionGrant(el); run.weapon=3; run.wlevels[3]=2; run.wlevel=2; player.fireCd=0; pShoot(); const e=spawnEnemy('drone',{x:player.x+80,y:200}); e.x=player.x+80; e.y=200; e.shoots=false; e.hp=900; e.vx=0; e.vy=0; window.__e=e; }", elem)
+            return pg.evaluate("() => { const e=window.__e, x0=e.x-player.x; for(let i=0;i<30;i++){ player.fireCd=0; pShoot(); updatePlay(1/60); } return [Math.round(x0), Math.round(e.x-player.x)]; }")
+        pg.evaluate("() => { run.stage=2; }")             # the chaingun case set run.stage=6 without loading the stage
+        pd = pull('dark'); pg.evaluate(sh.STEP, [1]); shot(pg, '14_void_beam.png'); pf = pull('fire')
+        ok(pd[1] < pd[0] - 15, 'the VOID BEAM: a DARK beam draws a hostile 80px off its column inward (%s)' % pd)
+        ok(abs(pf[1] - pf[0]) < 2, 'CONTROL: a FIRE beam does not (%s)' % pf)
+
         pg.evaluate("() => { xartPalette = window.__palOrig; }")
         ok(not errs, 'no page or console errors (%d)' % len(errs))
         for e in errs[:6]: print('    !', e)

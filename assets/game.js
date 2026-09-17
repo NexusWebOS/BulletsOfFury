@@ -7878,7 +7878,9 @@ const INFUSIONS=Object.freeze({
   dark:     {name:'DARK MATTER',body:'#5a2a8a', glow:'#b46cff', el:null,    named:{3:'VOID'},    gate:'ngplus'}
 });
 const INFUSION_MAX=3;
-const INFUSION_CARRIERS={mg:1,spread:1,beam:1,missile:1};
+/* the ORB is a carrier too (Mike: "the water combinations after level 9 where we can now create water orb") -
+   the orb weapon's wheel and its shards ride the element like any other round */
+const INFUSION_CARRIERS={mg:1,spread:1,beam:1,missile:1,orb:1,shard:1};
 /* which elements a stage tends to drop - a bias, never a lock, so every element stays reachable */
 const INFUSION_STAGE_BIAS={1:'kinetic',2:'fire',3:'ice',4:'lightning',6:'chrome',7:'toxic',8:'prism'};
 function infusionEligible(){
@@ -7916,6 +7918,10 @@ function infusionGrant(elem){
      first call and that call is what starts the load, so the first god's wrath of a run drew every
      bolt through the thin fallback line - sixteen zaps in the state and nothing readable on screen. */
   if(elem==='lightning'&&typeof XART!=='undefined'){ try{ XART.rdy('chain_bolt_0'); XART.rdy('nchp_0'); for(let i=1;i<9;i++) XART.rdy('chain_bolt_'+i); }catch(_w){} }
+  /* FUSION (0917, "surprise me with some fun upgrades"): a level-3 element replaced by a DIFFERENT one
+     does not go quietly - the pair detonates once across the screen (infusionFusion) before the new
+     element takes the gun at level 1. Picking the same element again still just caps. */
+  if(run.infusion && run.infusion.elem!==elem && (run.infusion.lv|0)>=INFUSION_MAX && typeof infusionFusion==='function') infusionFusion(run.infusion.elem, elem);
   if(!run.infusion || run.infusion.elem!==elem) run.infusion={elem:elem,lv:1,hits:0};
   else run.infusion.lv=Math.min(INFUSION_MAX,(run.infusion.lv|0)+1);
   const lv=run.infusion.lv;
@@ -7932,14 +7938,44 @@ let _infBusy=false;
 function godsWrath(x,y){
   const L=camLeftX(), R=camRightX(); let n=0;
   for(const e of enemies){ if(e.dead||e._dyingT!=null) continue; if(e.x<L-20||e.x>R+20) continue;
-    zaps.push({x1:e.x+rnd(-30,30),y1:-10,x2:e.x,y2:e.y,t:0.26}); e._zapFlash=0.3;
+    zaps.push({x1:e.x+rnd(-30,30),y1:-10,x2:e.x,y2:e.y,t:0.26,_inf:true}); e._zapFlash=0.3;
     hitEnemy(e, 14); n++; }
   for(let i=0;i<5;i++){ const bx=rnd(L+40,R-40), by=rnd(60,VH-120);
-    zaps.push({x1:bx+rnd(-40,40),y1:-10,x2:bx,y2:by,t:0.3});
+    zaps.push({x1:bx+rnd(-40,40),y1:-10,x2:bx,y2:by,t:0.3,_inf:true});
     explode(bx,by,rnd(26,40),'blue','fireball'); }
   shake=Math.max(shake||0,10); wrathFlash=0.42;              /* the sky goes white for a beat */
   try{ (Audio.SFX.chainShoot||Audio.SFX.shoot)(); }catch(_gw){}
   if(typeof floatText==='function') floatText(x,y-30,'GODS WRATH','#ffe03a');
+  return n;
+}
+/* the named pairs; any other pair is a plain FUSION. Keyed both ways at lookup. */
+const INFUSION_FUSIONS=Object.freeze({
+  'fire+ice':'THERMAL SHOCK', 'fire+toxic':'NAPALM', 'lightning+water':'HYDRO VOLT', 'lightning+prism':'SPECTRUM',
+  'fire+kinetic':'SHOCKWAVE INFERNO', 'dark+prism':'EVENT HORIZON', 'chrome+lightning':'TESLA MIRROR', 'ice+water':'FLASH FREEZE',
+  'ice+kinetic':'AVALANCHE', 'toxic+water':'ACID RAIN', 'dark+fire':'BLACK SUN', 'chrome+prism':'KALEIDOSCOPE'
+});
+function infusionFusionName(a,b){ return INFUSION_FUSIONS[a+'+'+b]||INFUSION_FUSIONS[b+'+'+a]||'FUSION'; }
+/* the detonation: every hostile on screen takes the burst and BOTH elements' touch, with the
+   new element's colour on the blasts. Returns the number struck. */
+function infusionFusion(a,b){
+  const A=INFUSIONS[a], B=INFUSIONS[b]; if(!A||!B) return 0;
+  const L=camLeftX(), R=camRightX(); let n=0;
+  const touch=(e,el)=>{
+    if(el==='fire') e._burn=Math.max(e._burn||0, DK_BURN_TIME);
+    else if(el==='ice'){ e._frozen=(e._frozen||0)+1; e.vx*=0.4; e.vy*=0.4; }
+    else if(el==='toxic'){ e._poison=Math.max(e._poison||0,3.0); e._poisonLv=2; }
+    else if(el==='water') e._soaked=3.0;
+    else if(el==='lightning') e._zapFlash=0.3;
+  };
+  for(const e of enemies){ if(e.dead||e._dyingT!=null) continue; if(e.x<L-20||e.x>R+20) continue;
+    touch(e,a); touch(e,b); hitEnemy(e, 30); n++;
+    explode(e.x,e.y,rnd(22,34),b==='fire'||b==='toxic'?'red':'blue','fireball'); }
+  if(b==='chrome'||a==='chrome') chromeMirror((L+R)/2, VH/2, 9999, 3);
+  wrathFlash=Math.max(wrathFlash||0,0.3); shake=Math.max(shake||0,9);
+  run._fusionN=(run._fusionN|0)+1;
+  if(typeof floatText==='function') floatText(player.x,player.y-40,infusionFusionName(a,b),B.glow);
+  if(typeof arcadeBanner==='function') arcadeBanner(infusionFusionName(a,b)+'!');
+  try{ (Audio.SFX.bossPhase||Audio.SFX.powerup)(); }catch(_f){}
   return n;
 }
 /* the element's touch, applied once per hit - `lv` scales it, `b` is the live round */
@@ -10235,6 +10271,55 @@ function droneGlow(slug){
    "not suggestions": below ~0.35s a tell is a surprise rather than a warning */
 const DRONE_TELL    = {easy:0.70, normal:0.55, hard:0.46, furious:0.40, insanity:0.37};
 const DRONE_RECOVER = {easy:0.85, normal:0.68, hard:0.55, furious:0.45, insanity:0.42};
+/* INCOMING-FIRE EVASION for ordinary air units (0917, Mike: "continue improving my boss and enemy
+   AI"). The droids (DROID_EVADE_R) and the Elite X aces already read the player's rounds and roll
+   out of the lane; nothing else did, so every plain jet flew straight into the first burst. This
+   is the share of threat reads a unit COMMITS to on each difficulty - easy and normal never do,
+   so the stages Mike has tuned play exactly as before. Every key of DIFFS has a row (section 366). */
+const EVADE_DIFF = {easy:0, normal:0, hard:0.30, furious:0.55, insanity:0.80};
+/* BOSS DENIAL (0917). The ship-boss denial patterns - the ember wall's doorway, the lance's safe
+   lane, the siege broadside's first half - pick on a fixed beat, so a player who learns the beat
+   can stand still. On HARD and up a share of those picks are made AGAINST where the player is
+   sitting: the doorway opens on the far side, the safe lane is never the player's, the bank falls
+   on the player's half first. The SHAPE of every pattern is untouched (0811s: what the player
+   learned still applies) - only which beat comes next. Easy and normal keep the authored beat. */
+const BOSS_DENY_DIFF = {easy:0, normal:0, hard:0.50, furious:0.75, insanity:1.0};
+function bossDenies(){ const p=BOSS_DENY_DIFF[(typeof diffKey==='string')?diffKey:'normal']||0; return p>0 && Math.random()<p; }
+/* which of n equal lanes across the world the player is in */
+function playerLane(n){ const W=(typeof worldWidth==='function')?worldWidth():VW; return Math.floor(clamp((player.x||0)/W,0,0.999)*n); }
+const EVADE_R = 96, EVADE_T = 0.30, EVADE_SPD = 150;
+function enemyEvadeEligible(e){
+  if(!e || e.dead || e._dyingT!=null) return false;
+  if(e._droid || e._vkind==='tank' || e.inPlace || /^xelite_/.test(String(e.type||''))) return false;
+  if(typeof isSetPiece==='function' && isSetPiece(e)) return false;
+  return typeof isJetEnemy==='function' && isJetEnemy(e);
+}
+function enemyEvadeTick(e, dt){
+  const p = EVADE_DIFF[(typeof diffKey==='string')?diffKey:'normal'] || 0;
+  if(e._evCd>0) e._evCd-=dt;
+  if(e._evT>0){
+    e._evT-=dt;
+    e.x += e._evDir*EVADE_SPD*dt;
+    e.x = clamp(e.x, 16, worldWidth()-16);
+    if(e._evT<=0) e._evCd = rnd(1.1, 2.0);
+    return;
+  }
+  if(!p || e._evCd>0 || !enemyEvadeEligible(e)) return;
+  /* threat read: a player round below it, rising, inside its lane */
+  for(const b of pBullets){
+    if(!b || b.dead || b.kind==='beam' || b._child) continue;
+    const dx=b.x-e.x, dy=b.y-e.y;
+    if(dy>0 && dy<EVADE_R && (b.vy||0)<0 && Math.abs(dx)<(e.w||24)*1.2){
+      e._evCd = rnd(0.5, 0.9);                       /* a read costs a beat whether it commits or not */
+      if(Math.random()<p){
+        e._evT=EVADE_T; e._evDir=(dx>0?-1:1);        /* away from the round's side */
+        if(e.x<70) e._evDir=1; else if(e.x>worldWidth()-70) e._evDir=-1;
+        e._evN=(e._evN|0)+1;
+      }
+      break;
+    }
+  }
+}
 /* Floors, not suggestions. Below ~0.35s a tell is a surprise rather than a warning, and below
    ~0.4s of recover the unit is never punishable and the fight is pure attrition. */
 const DRONE_TELL_FLOOR = 0.35, DRONE_RECOVER_FLOOR = 0.40;
@@ -21766,14 +21851,16 @@ function shipBossAttack(b){
     infernoReaverRollStart(b,step);b.fireCd=5.6*Math.max(.55,cdMul);return;
   } else if(pat==='ember'){
     /* a WALL with one gap, and the gap walks — the whole attack is "get to the gap in time" */
-    const cols=9, gap=((step*3)%cols);
+    const cols=9; let gap=((step*3)%cols);
+    if(bossDenies()){ gap=(playerLane(cols)+Math.floor(cols/2))%cols; b._denied='ember'; }   /* the doorway opens opposite the player */
     for(let i=0;i<cols;i++){
       if(i===gap || i===((gap+1)%cols)) continue;      // a two-column doorway, always reachable
       _shipShot(W*(i+0.5)/cols, y, 0, 1.9, 13,b);
     }
   } else if(pat==='lance'){
     /* three lanes; two fire, one is safe, and which one is safe rotates on a readable beat */
-    const safe=step%3;
+    let safe=step%3;
+    if(bossDenies()){ const pl=playerLane(3); safe=(pl+1+(step%2))%3; b._denied='lance'; }     /* never the lane the player is in */
     for(let l=0;l<3;l++){
       if(l===safe) continue;
       const lx=W*(l+0.5)/3;
@@ -21790,7 +21877,8 @@ function shipBossAttack(b){
     }
   } else if(pat==='siege'){
     /* broadside: a dense bank down one half, then the other. You must cross on the beat. */
-    const left=(step%2)===0;
+    let left=(step%2)===0;
+    if(bossDenies()){ left=(playerLane(2)===0); b._denied='siege'; }                          /* the bank falls on the player's half first */
     for(let i=0;i<6;i++){
       const fx=left ? W*(0.06+i*0.075) : W*(0.94-i*0.075);
       _shipShot(fx, y, 0, 2.0, 12,b);
@@ -27439,6 +27527,10 @@ function pShoot(){
         if(typeof Snd!=='undefined'&&Snd&&Snd.loopOn)Snd.loopOn('laserBeamLoop',0.90);
       }
       beam.dmg=dmg; beam.lv=lv; beam.life=0.15; beam.w=14+lv*4;
+      /* GIANT BEAM (0917, Mike: "giant laser beams like the fireboss has"): a KINETIC infusion on the laser
+         widens the column - x1.5 / x2.0 / x2.5 at levels 1-3 - and the hit test reads the same beam.w, so the
+         wider beam burns a wider lane. Level 3 is the fire boss's own scale (SONIC WAVE on the laser). */
+      if(typeof infusionActive==='function' && infusionActive() && run.infusion.elem==='kinetic') beam.w*=1+0.5*(run.infusion.lv|0);
     } else {
       /* Exact Maverick progression: 3 purple, 4 blue, 5 green, 6 black/silver,
          then 7 full-charge blue/purple helix lances. Every tier homes. */
@@ -28478,7 +28570,14 @@ function startSpecial(){
 function _newWeaponTick(dt){
   if(typeof dkTick==='function') dkTick(dt);
   if(typeof enemies!=='undefined' && typeof dkBurnTick==='function'){
-    for(const e of enemies){ if(e && e._burn>0) dkBurnTick(e, dt); if(e && e._poison>0) poisonTick(e, dt); if(e && e._soaked>0) e._soaked-=dt; }
+    /* VOID BEAM (0917, Mike: "Dark Matter ... Void like weaponry"): a DARK infusion on the laser bends the
+       field - every hostile within reach of the live column is drawn toward it, harder by level, so the
+       beam gathers what it burns. One lookup per frame, not per enemy. */
+    let _voidBeam=null; if(typeof infusionActive==='function'&&infusionActive()&&run.infusion.elem==='dark'){ for(const b of pBullets){ if(b.kind==='beam'&&!b.dead&&b._inf==='dark'){ _voidBeam=b; break; } } }
+    for(const e of enemies){ if(e && e._burn>0) dkBurnTick(e, dt); if(e && e._poison>0) poisonTick(e, dt); if(e && e._soaked>0) e._soaked-=dt; if(e) enemyEvadeTick(e, dt);
+      if(_voidBeam && e && !e.dead && e._dyingT==null && !(typeof isSetPiece==='function'&&isSetPiece(e)) && e._vkind!=='tank'){
+        const dx=_voidBeam.x-e.x, R=90+30*(run.infusion.lv|0);
+        if(Math.abs(dx)>4 && Math.abs(dx)<R && e.y<(_voidBeam.bot!=null?_voidBeam.bot:player.y)){ e.x+=Math.sign(dx)*Math.min(Math.abs(dx),(40+25*(run.infusion.lv|0))*dt); e._voidPull=0.1; } } }
     if(typeof geyserTick==='function') geyserTick(dt);
     if(typeof voidTick==='function') voidTick(dt);
   }
@@ -30376,7 +30475,9 @@ function chainZap(x,y,depth,hitset,dirx,diry){
     if(score>bestScore){ bestScore=score; best=e; }
   }
   if(!best) return;
-  zaps.push({x1:x,y1:y,x2:best.x,y2:best.y,t:0.18});
+  /* a zap raised from an INFUSION hit (the on-hit hook holds _infBusy) is tagged so the per-frame
+  hard-clear below - Yuri's own - does not delete it the frame it is born (0917) */
+  zaps.push({x1:x,y1:y,x2:best.x,y2:best.y,t:0.18,_inf:!!_infBusy});
   hitEnemy(best, 3+_lv*2); hitset.push(best);          // per-link damage scales with level
   best._zapFlash=0.20;                                  // struck by lightning -> white/yellow pop
   weaponHitSfx('normal');
@@ -32204,7 +32305,11 @@ function updatePlay(dt){
   // chain-lightning visuals ALWAYS tick down + clear (even after the special ends, so bolts never freeze mid-air)
   for(const z of zaps) z.t-=dt;
   zaps=zaps.filter(z=>z.t>0);
-  if(!specialActive('yuri')) zaps.length=0;   // hard-clear the instant Yuri's chain is no longer active
+  /* ⚠ THIS HARD-CLEAR DELETED EVERY INFUSION BOLT THE FRAME IT WAS BORN (0917). The lightning
+     infusion's arcs and GODS WRATH's sixteen bolts went through chainZap / zaps and were culled here
+     before drawZaps ever ran - for every pilot but Yuri mid-special. It read as 'the bolt art has not
+     decoded'. Only Yuri's own (untagged) zaps are hard-cleared now. */
+  if(!specialActive('yuri')) zaps=zaps.filter(z=>z._inf);   // hard-clear Yuri's chain the instant it is no longer active
   _newWeaponTick(dt);                    // sonic trail + Lizzie's mount (drop 0805i)
   if(typeof thawTick==='function') thawTick(dt);
   updateRetina(dt);for(const s of seatList())withSeat(s,()=>retinaScanTick(dt)); updatePlayerLocks(dt);
@@ -33389,6 +33494,12 @@ function updatePlay(dt){
     if(b._inf===undefined||b.kind==='beam'){
       b._inf=(typeof infusionActive==='function'&&infusionActive()&&infusionCarrier(b)&&!b._enemyReflected)?run.infusion.elem:null;
       if(b._inf==='fire') b._el='fire'; else if(b._inf==='ice') b._el='ice';
+      /* SONIC WAVE (kinetic level 3, Mike: "sonic wave based upgrades"): every 24th kinetic round from
+         the mg / spread / chaingun also releases Cole's own half-charge sonic wave through sonicRelease -
+         the authored piercing wave, not a new projectile. Counted on ROUNDS, so the cadence follows the
+         gun's, never the wall clock. (0917) */
+      if(b._inf==='kinetic' && (b.kind==='mg'||b.kind==='spread') && !b._child && run.infusion && (run.infusion.lv|0)>=3
+         && typeof sonicRelease==='function' && ((run._kinN=(run._kinN|0)+1)%24===0)) sonicRelease(0.45);
     }
     shooterSet(b.seat||1);           // hits, kills and score from this round land on its pilot (drop 0903p)
     if(b._shieldIgnoreT>0){ b._shieldIgnoreT-=dt; if(b._shieldIgnoreT<=0) b._shieldIgnore=null; }
@@ -45615,9 +45726,13 @@ function drawBullets(){
       /* Approved 0825 orb: one complete authored wheel, physically rotated through 360 degrees
          by b.spin. The old nio_ fallback changed internal frames while barely rotating the hull,
          which read as pulsing rather than spinning. */
-      ctx.save(); ctx.translate(b.x,b.y); ctx.rotate(b.spin||0); ctx.shadowColor='#bfe8ff'; ctx.shadowBlur=14;
+      /* an INFUSED orb wears the element: the authored ice wheel through xartPalette (hue/sat from the
+         element, luminosity from the plate) - a WATER ORB is that wheel in tidal blue, a toxic one in slime
+         green. Ice stays the authored plate. (0917) */
+      const _oi=(b._inf&&b._inf!=='ice'&&typeof INFUSIONS!=='undefined')?INFUSIONS[b._inf]:null;
+      ctx.save(); ctx.translate(b.x,b.y); ctx.rotate(b.spin||0); ctx.shadowColor=_oi?_oi.glow:'#bfe8ff'; ctx.shadowBlur=14;
       if(typeof XART!=='undefined' && XART.rdy('fx0825_ice_orb')){
-        const im=XART.get('fx0825_ice_orb'), s=(b.w*2.0)/Math.max(im.naturalWidth,im.naturalHeight);
+        const im=(_oi&&typeof xartPalette==='function'&&xartPalette('fx0825_ice_orb',_oi.body))||XART.get('fx0825_ice_orb'), s=(b.w*2.0)/Math.max(im.naturalWidth,im.naturalHeight);
         ctx.drawImage(im,-im.naturalWidth*s/2,-im.naturalHeight*s/2,im.naturalWidth*s,im.naturalHeight*s);
         ctx.restore(); continue;
       }

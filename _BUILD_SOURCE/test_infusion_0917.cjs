@@ -58,6 +58,33 @@ module.exports=function testInfusion(vm,ctxv,ok){
   ok(vm.runInContext("['fire','ice','lightning','prism','toxic','kinetic','water','dark','chrome'].every(function(e){return /infusion_0917/.test(String(XART._src['inf_'+e]||''));})",ctxv),
      'all nine badges registered as loose files');
 
+  ok(vm.runInContext("INFUSION_CARRIERS.orb===1&&INFUSION_CARRIERS.shard===1&&INFUSION_CARRIERS.beam===1&&INFUSION_CARRIERS.missile===1",ctxv),
+     'the orb and its shards are carriers beside the mg, spread, beam and missiles (the WATER ORB)');
+  ok(vm.runInContext("(function(){var s=String(drawBullets);return s.indexOf(\"xartPalette('fx0825_ice_orb',_oi.body)\")>=0;})()",ctxv),
+     'an infused orb is the authored ice wheel through xartPalette - a palette swap, never an overlay');
+  /* the GIANT BEAM: kinetic on the laser widens the column, and the hit test reads the same width */
+  ok(vm.runInContext("(function(){var s=String(pShoot);return s.indexOf(\"elem==='kinetic') beam.w*=1+0.5*\")>=0;})()",ctxv),
+     'KINETIC on the laser widens beam.w x1.5/x2.0/x2.5 - the giant beam (probe_giantbeam_0917.py 7/0)');
+
+  ok(vm.runInContext("(function(){var s=require_src();return s.indexOf(\"(run._kinN=(run._kinN|0)+1)%24===0)) sonicRelease(0.45)\")>=0;})()",ctxv),
+     'KINETIC L3 on the mg / spread releases the sonic wave of Cole every 24th ROUND (counted on rounds, never the wall clock)');
+
+  /* ⚠ THE PER-FRAME ZAP HARD-CLEAR MUST KEEP INFUSION BOLTS. `if(!specialActive('yuri')) zaps.length=0`
+     deleted every lightning arc and every GODS WRATH bolt the frame it was born, for every pilot but Yuri. */
+  ok(vm.runInContext("(function(){var s=require_src();return s.indexOf(\"if(!specialActive('yuri')) zaps=zaps.filter(z=>z._inf);\")>=0 && s.indexOf('zaps.length=0;   // hard-clear')<0;})()",ctxv),
+     'the per-frame zap hard-clear keeps INFUSION bolts (tagged _inf) and clears only the zaps of Yuri');
+  ok(vm.runInContext("String(godsWrath).indexOf('_inf:true')>=0 && String(chainZap).indexOf('_inf:!!_infBusy')>=0",ctxv),
+     'godsWrath and an infusion chainZap tag their zaps');
+
+  /* FUSION: a level-3 element replaced by a different one detonates once (probe_fusion_0917.py 9/0) */
+  ok(vm.runInContext("infusionFusionName('fire','ice')==='THERMAL SHOCK'&&infusionFusionName('ice','fire')==='THERMAL SHOCK'&&infusionFusionName('toxic','kinetic')==='FUSION'",ctxv),
+     'fusion pairs are named both ways round; an unnamed pair is a plain FUSION');
+  ok(vm.runInContext("(function(){var s=String(infusionGrant);return s.indexOf('(run.infusion.lv|0)>=INFUSION_MAX')>=0&&s.indexOf('infusionFusion(run.infusion.elem, elem)')>=0;})()",ctxv),
+     'the fusion fires from infusionGrant only when a LEVEL-3 element is replaced by a different one');
+
+  ok(vm.runInContext("(function(){var s=String(_newWeaponTick);return s.indexOf('_voidBeam')>=0&&s.indexOf(\"b._inf==='dark'\")>=0;})()",ctxv),
+     'the VOID BEAM: a dark beam draws hostiles toward its column from the one enemy loop (carrier probe 14/0)');
+
   /* death drops the element with the gun - the reset line that zeroes the weapon zeroes this too */
   ok(vm.runInContext("(function(){var src=require_src();var i=src.indexOf('manualMissileResetOnDeath(run);');return i>=0&&src.slice(i,i+400).indexOf('run.infusion=null')>=0;})()",ctxv),
      'death clears the infusion on the same line that drops the gun');

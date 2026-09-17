@@ -112,10 +112,18 @@ corpse. The prism window was 12 frames and the round reaches the target on frame
 trace demanded every `p87Body` call be `fire` when the **muzzle flash** legitimately draws through
 it with none.
 
-⚠ **THE BOLT ART IS WARMED AT GRANT, NOT AT THE FIRST BOLT.** `XART.rdy` is false on its first call,
-so the first god's wrath of a run was drawing sixteen bolts through the thin fallback line. Warmed
-in `infusionGrant('lightning')`. The probe's synchronous burst still cannot give it decode time —
-the proof frame shows the white-out and the struck hostiles, and real play will show the bolts.
+⚠ **THE BOLT ART IS WARMED AT GRANT, NOT AT THE FIRST BOLT** — `XART.rdy` is false on its first
+call. ⚠⚠ **BUT THAT WAS NOT WHY THE BOLTS WERE INVISIBLE, AND THE DIAGNOSIS ABOVE WAS WRONG** (found
+later the same night by `probe_wrath_0917.py`, which waited for the reel in real time and STILL
+recorded zero bolt blits). `updatePlay` hard-clears the zap list every frame unless Yuri's special
+is live — `if(!specialActive('yuri')) zaps.length=0` — so every lightning arc and every one of the
+wrath's sixteen bolts was deleted the frame it was born, for every pilot but Yuri mid-special. The
+white-out and the damage were real; the picture never had the bolts in it. Infusion zaps are tagged
+`_inf` now (chainZap tags while `_infBusy`, godsWrath tags its own) and only Yuri's untagged zaps
+are hard-cleared. Measured: **72 bolt-art asks** in the frame that draws the wrath, 0 before
+(`docs/proofs/infusion_0917/12_gods_wrath_bolts.png`). **A "not decoded yet" explanation for a
+missing sprite is a hypothesis, not a finding, until the reel is proven decoded and the sprite is
+still missing.**
 
 Suite section 367. Proofs: `docs/proofs/infusion_0917/01_fire_rounds.png`, `02_gods_wrath.png`,
 `docs/proofs/infusion_0917_icons.png`.
@@ -144,6 +152,40 @@ generated against the prism badge as the reference; the variation with the famil
 **The geysers Mike named** - fire, water, lightning: water's own at level 3 (and 35% at level 2), and
 a **soaked** target (water has hit it) killed by fire or lightning raises THAT element's column.
 `probe_chrome_0917.py` 10/0, with a DRY-target control that raises none.
+
+**The water orb** (*"the water combinations after level 9 where we can now create water orb"*): the
+orb weapon's wheel and its shards are carriers now (`INFUSION_CARRIERS.orb/shard`), and an infused
+orb is the authored 0825 ice wheel through `xartPalette` in the element's body colour - tidal blue
+for water, slime green for toxic - with the halo in the element's glow. Ice keeps the authored
+plate. Measured in the carrier probe (10/0): a live orb carries `water` and the wheel is asked for in
+`#3fa7ff`; the plain orb asks for no swap.
+
+**The giant beam** (*"giant laser beams like the fireboss has"*): a KINETIC infusion on the laser
+widens `beam.w` x1.5 / x2.0 / x2.5 by level, and because the draw and the hit test both read
+`beam.w`, the wider column burns a wider lane. `probe_giantbeam_0917.py` 7/0: the object, the blit
+(88px against 35.2 at level 3, off the context's own `drawImage`) and a unit 38px off the centre
+line missed by the plain beam and burned by the giant one.
+
+**The sonic wave** (*"sonic wave based upgrades"*): KINETIC level 3 on the machine gun or spread
+also releases Cole's own half-charge sonic wave (`sonicRelease(0.45)` - the authored piercing wave,
+not a new projectile) every 24th round. Counted on ROUNDS at the stamp site, so the cadence follows
+the gun's and a probe can reproduce it: 7 waves from 180 rounds, none at level 2.
+
+**FUSION** (*"surprise me with some fun upgrades"*): a level-3 element replaced by a DIFFERENT
+pickup does not go quietly - the pair detonates once across the screen before the new element takes
+the gun at level 1. Every on-screen hostile takes 30 and BOTH elements' touch (burn + freeze stack
+for fire+ice), the blasts wear the new element's colour, and a chrome pair mirrors the whole
+screen. Named by the pair in `INFUSION_FUSIONS` - THERMAL SHOCK, NAPALM, HYDRO VOLT, SPECTRUM,
+SHOCKWAVE INFERNO, EVENT HORIZON, TESLA MIRROR, FLASH FREEZE, AVALANCHE, ACID RAIN, BLACK SUN,
+KALEIDOSCOPE - and a plain FUSION otherwise. The same element again still just caps; a level-2
+element traded away fuses nothing, so the fusion is the reward for holding a named combination and
+choosing to trade it. `probe_fusion_0917.py` 9/0.
+
+**The void beam** (*"Dark Matter ... Void like weaponry"*): DARK on the laser bends the field -
+every hostile within `90+30*lv` px of the live column is drawn toward it at `40+25*lv` px/s, so the
+beam gathers what it burns. One lookup per frame in the enemy loop; tanks and set pieces are not
+moved. Carrier probe: a drone 80px off the column is at 37px after half a second; a fire beam moves
+it nothing.
 
 ## 8. Still to come on this brief
 

@@ -10,7 +10,7 @@ module.exports=function testDifficultyTables(vm,ctxv,ok){
      the shape that goes stale: `_selfPat`, the edge-pin exemption list, the enemy-separation list.
      The durable fix is not remembering - it is this assertion. */
   var keys=vm.runInContext("Object.keys(DIFFS)",ctxv);
-  var tables=['FODDER_DIFF','DRONE_TELL','DRONE_RECOVER','ARCADE_STOCK','DIFF_META'];
+  var tables=['FODDER_DIFF','DRONE_TELL','DRONE_RECOVER','ARCADE_STOCK','DIFF_META','EVADE_DIFF','BOSS_DENY_DIFF'];
   tables.forEach(function(t){
     var missing=vm.runInContext("Object.keys(DIFFS).filter(function(k){return "+t+"[k]==null;})",ctxv);
     ok(missing.length===0, t+' has a row for every difficulty'+(missing.length?' (missing '+missing.join(',')+')':''));

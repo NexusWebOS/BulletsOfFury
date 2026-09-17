@@ -1,0 +1,40 @@
+{
+  "drop": "0917",
+  "subject": "enemy AI: incoming-fire evasion and boss denial",
+  "probes": {
+    "probe_evade_0917.py": "11/0",
+    "probe_bossdeny_0917.py": "8/0"
+  },
+  "tables": {
+    "EVADE_DIFF": {
+      "easy": 0,
+      "normal": 0,
+      "hard": 0.3,
+      "furious": 0.55,
+      "insanity": 0.8
+    },
+    "BOSS_DENY_DIFF": {
+      "easy": 0,
+      "normal": 0,
+      "hard": 0.5,
+      "furious": 0.75,
+      "insanity": 1.0
+    }
+  },
+  "measured_sidestep_px_over_14_frames": {
+    "s1jetdelta": -27.9,
+    "s1jetbomber": -27.9,
+    "strafer": -22.2,
+    "topgun": -20.4,
+    "s1jetDelta_stage4": -27.9,
+    "mdrone": -32.5,
+    "s1jetDeltaB_stage6": -27.8,
+    "drone_stage2": -27.5
+  },
+  "suite_section": 369,
+  "doc": "docs/ENEMY_EVADE_0917.md",
+  "proofs": [
+    "docs/proofs/evade_0917/01_insanity_sidestep.png",
+    "docs/proofs/evade_0917/02_lance_denied.png"
+  ]
+}
