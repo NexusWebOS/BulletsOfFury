@@ -7974,6 +7974,77 @@ function infusionGrant(elem){
   return run.infusion;
 }
 function infusionClear(){ if(run) run.infusion=null; }
+/* ============================================================
+   THE LEVEL'S LOOK (Mike, 0917): "like our previous level 1-5 variants, they should appear upgraded per
+   each level even in this new bullet elemental form or laser upgrade form. Just for extra graphical
+   effect."
+
+   Level I is the element's palette on the authored round (0917, unchanged). From II the round carries an
+   additive GLOW PLATE in the element's glow colour - a radial gradient BAKED ONCE per element x level x
+   size into a scratch canvas and blitted at an integer origin, which is the 0916ab discipline: the space
+   stages ran at 1.4 fps on 138 shadowBlur'd draws a frame, and a baked halo is the same pixels at 60. III
+   adds a wider faint halo, IV brightens, V adds a pulsing four-point core flare. The BEAM gets an additive
+   element column under the authored plate that widens with the level. The TRAIL sparks are spawned from
+   the update loop (see the stamp site), never from here.
+   ============================================================ */
+const INF_TRAIL_P=Object.freeze([0,0,0.22,0.36,0.52,0.70]);       /* trail spark chance per frame, by level */
+const INF_BEAM_SPARK_P=Object.freeze([0,0,0,0,0.45,0.75]);        /* beam crackle chance per frame, by level */
+const INF_TRAIL_CAP=520;
+const INF_AURA_ALPHA=Object.freeze([0,0,0.40,0.52,0.64,0.76]);
+const INF_AURA_SCALE=Object.freeze([0,0,1.7,2.1,2.5,2.9]);   /* plate radius as a share of the round's size */
+const _infGlowCache={};
+function infusionGlowPlate(elem,lv,r){
+  const I=INFUSIONS[elem]; if(!I) return null;
+  r=Math.max(4,Math.round(r/2)*2); lv=clamp(lv|0,2,INFUSION_MAX);
+  const k=elem+'|'+lv+'|'+r; let c=_infGlowCache[k]; if(c) return c;
+  const d=r*2+2; c=document.createElement('canvas'); c.width=d; c.height=d;
+  const g=c.getContext('2d'); if(!g) return null;
+  const grd=g.createRadialGradient(r+1,r+1,0,r+1,r+1,r);
+  grd.addColorStop(0,I.glow||'#ffffff'); grd.addColorStop(0.35,I.body||I.glow||'#ffffff'); grd.addColorStop(1,'rgba(0,0,0,0)');
+  g.fillStyle=grd; g.fillRect(0,0,d,d);
+  /* the wider faint halo from III: a second, softer ring baked into the same plate */
+  if(lv>=3){ const g2=g.createRadialGradient(r+1,r+1,r*0.55,r+1,r+1,r); g2.addColorStop(0,'rgba(0,0,0,0)'); g2.addColorStop(0.6,I.glow||'#ffffff'); g2.addColorStop(1,'rgba(0,0,0,0)');
+    g.globalAlpha=0.22+0.06*(lv-3); g.fillStyle=g2; g.fillRect(0,0,d,d); g.globalAlpha=1; }
+  _infGlowCache[k]=c; return c;
+}
+function _infRgba(hex,a){ const h=String(hex||'#ffffff').replace('#',''); const n=parseInt(h.length===3?h.split('').map(c=>c+c).join(''):h,16); return 'rgba('+((n>>16)&255)+','+((n>>8)&255)+','+(n&255)+','+a+')'; }
+const _infColCache={};
+function infusionColumnPlate(elem,lv,w){
+  const I=INFUSIONS[elem]; if(!I) return null;
+  w=Math.max(6,Math.round(w/4)*4); lv=clamp(lv|0,2,INFUSION_MAX);
+  const k=elem+'|'+lv+'|'+w; let c=_infColCache[k]; if(c) return c;
+  c=document.createElement('canvas'); c.width=w; c.height=8; const g=c.getContext('2d'); if(!g) return null;
+  const grd=g.createLinearGradient(0,0,w,0);
+  grd.addColorStop(0,_infRgba(I.glow,0)); grd.addColorStop(0.5,_infRgba(I.glow,1)); grd.addColorStop(1,_infRgba(I.glow,0));
+  g.fillStyle=grd; g.fillRect(0,0,w,8);
+  _infColCache[k]=c; return c;
+}
+function infusionAuraDraw(b){
+  const lv=clamp(b._infLv|0,2,INFUSION_MAX), I=INFUSIONS[b._inf]; if(!I) return;
+  const pulse=0.86+0.14*Math.sin((b.t||0)*22+(b.x|0));
+  if(b.kind==='beam'){
+    /* the element COLUMN under the authored beam, widening with the level; the authored plate draws over it */
+    const top=(b.top!=null?b.top:PLAY.y), bot=(b.bot!=null?b.bot:(player.y-14)), bw=Math.max(6,b.w||14);
+    const ww=bw*(1.5+0.45*(lv-2))*pulse, a=INF_AURA_ALPHA[lv]*0.7, y0=Math.min(top,bot), hh=Math.abs(bot-top);
+    /* ⚠ A SOFT-EDGED PLATE, NEVER A FLAT fillRect: a flat slab beside the authored beam reads as an overlay,
+       which is the one thing this file's palette rule forbids. The plate is a horizontal gradient baked once
+       per element x level x width and stretched down the column. */
+    const cp=infusionColumnPlate(b._inf,lv,ww); if(!cp) return;
+    ctx.save(); ctx.globalCompositeOperation='lighter'; ctx.globalAlpha=a;
+    ctx.drawImage(cp,Math.round(b.x-cp.width/2),y0,cp.width,hh);
+    if(lv>=3){ const cp2=infusionColumnPlate(b._inf,lv,ww*1.9); if(cp2){ ctx.globalAlpha=a*0.45; ctx.drawImage(cp2,Math.round(b.x-cp2.width/2),y0,cp2.width,hh); } }
+    ctx.restore(); return;
+  }
+  const sz=Math.max(b.w||6,b.h||10), r=sz*INF_AURA_SCALE[lv]*0.5;
+  const pl=infusionGlowPlate(b._inf,lv,r); if(!pl) return;
+  const ox=Math.round(b.x-pl.width/2), oy=Math.round(b.y-pl.height/2);
+  ctx.save(); ctx.globalCompositeOperation='lighter'; ctx.globalAlpha=INF_AURA_ALPHA[lv]*pulse;
+  ctx.drawImage(pl,ox,oy);
+  if(lv>=5){   /* the core flare: a four-point star, pulsing */
+    const f=(sz*0.9+2)*(0.7+0.3*Math.sin((b.t||0)*30)); ctx.globalAlpha=0.7*pulse; ctx.strokeStyle='#ffffff'; ctx.lineWidth=2;
+    ctx.beginPath(); ctx.moveTo(b.x-f,b.y); ctx.lineTo(b.x+f,b.y); ctx.moveTo(b.x,b.y-f); ctx.lineTo(b.x,b.y+f); ctx.stroke(); }
+  ctx.restore();
+}
 
 /* ============================================================
    THE FORGE (Mike, 0917) - the screen between the debrief and the next stage
@@ -33800,6 +33871,7 @@ function updatePlay(dt){
        once-only stamp would leave it wearing the element it was born with after a new pickup. */
     if(b._inf===undefined||b.kind==='beam'){
       b._inf=(typeof infusionActive==='function'&&infusionActive()&&infusionCarrier(b)&&!b._enemyReflected)?run.infusion.elem:null;
+      b._infLv=b._inf?(run.infusion.lv|0):0;   /* the LEVEL rides the round too (0917): the aura and the trail read it */
       if(b._inf==='fire') b._el='fire'; else if(b._inf==='ice') b._el='ice';
       /* THE ARMORY'S LEVELS RIDE THE ROUND (0917): above the pickup ceiling every level grows the round and
          its damage a step - a change you can measure, not a colour. The beam is one reused object that sets
@@ -33812,6 +33884,18 @@ function updatePlay(dt){
          gun's, never the wall clock. (0917) */
       if(b._inf==='kinetic' && (b.kind==='mg'||b.kind==='spread') && !b._child && run.infusion && (run.infusion.lv|0)>=3
          && typeof sonicRelease==='function' && ((run._kinN=(run._kinN|0)+1)%24===0)) sonicRelease(0.45);
+    }
+    /* THE LEVEL'S TRAIL (0917, Mike: "they should appear upgraded per each level"): element sparks
+       behind every carrier from level II, denser each level; the beam crackles along its column from IV.
+       Spawned HERE, from the update, so a paused or re-drawn frame never doubles it. Capped. */
+    if(b._inf && (b._infLv|0)>=2 && !b._child && !b.dead && particles.length<INF_TRAIL_CAP){
+      const _tl=INFUSIONS[b._inf]; if(_tl){
+        if(b.kind==='beam'){
+          if((b._infLv|0)>=4 && Math.random()<INF_BEAM_SPARK_P[b._infLv|0]){ const _bt=(b.top!=null?b.top:0), _bb=(b.bot!=null?b.bot:player.y-14), _bw=Math.max(6,b.w||14);
+            particles.push({x:b.x+rnd(-_bw*0.5,_bw*0.5),y:rnd(Math.min(_bt,_bb),Math.max(_bt,_bb)),vx:rnd(-1.4,1.4),vy:rnd(-0.8,0.8),t:0,life:rnd(0.14,0.26),r:rnd(1.2,2.2),color:chance(0.5)?_tl.glow:'#ffffff',_infTrail:1}); }
+        } else if(Math.random()<INF_TRAIL_P[b._infLv|0]){
+          particles.push({x:b.x+rnd(-2,2),y:b.y+rnd(-2,2),vx:-(b.vx||0)*0.12+rnd(-0.35,0.35),vy:-(b.vy||0)*0.12+rnd(-0.35,0.35),t:0,life:rnd(0.2,0.4),r:rnd(1.4,1.8+0.5*(b._infLv|0)),color:chance(0.5)?_tl.body:(chance(0.5)?_tl.glow:'#ffffff'),_infTrail:1}); }
+      }
     }
     shooterSet(b.seat||1);           // hits, kills and score from this round land on its pilot (drop 0903p)
     if(b._shieldIgnoreT>0){ b._shieldIgnoreT-=dt; if(b._shieldIgnoreT<=0) b._shieldIgnore=null; }
@@ -45627,6 +45711,8 @@ function drawBullets(){
   ctx.shadowBlur=0;   // never inherit a shadow from an upstream draw: it silently blurs every bullet
   // player
   for(const b of pBullets){
+    /* THE LEVEL'S AURA (0917) - under the round, before any kind branch, so every carrier gets it */
+    if(b._inf && (b._infLv|0)>=2 && !(b._launchDelay>0) && typeof infusionAuraDraw==='function') infusionAuraDraw(b);
     if(b.kind==='yuriLightningOrb'||b.kind==='yuriLightningBolt'){
       const lv=clamp(b.lv||1,1,5),orb=b.kind==='yuriLightningOrb',key=orb?'ylo_orb_'+lv:'ylo_bolt_'+clamp(b.art||lv,1,5);
       ctx.save();ctx.translate(b.x,b.y);if(!orb)ctx.rotate((b.ang==null?Math.atan2(b.vy,b.vx):b.ang)+Math.PI/2);

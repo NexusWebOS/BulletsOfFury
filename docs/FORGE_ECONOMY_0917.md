@@ -101,3 +101,33 @@ slicer read the sheet as 3x1 - the rows only separate at a lower background floo
 - Whether level I should ALSO cost points (today it is free once discovered, so the Forge is playable on
   a first run).
 - An upgrade path for the three non-carriers (flamethrower / ice breath, laser mist, lightning orb).
+
+## The level's look (0917, later): the round appears upgraded per level
+
+Mike: *"like our previous level 1-5 variants, they should appear upgraded per each level even in this
+new bullet elemental form or laser upgrade form. Just for extra graphical effect."*
+
+Level I is the element palette on the authored round, unchanged. From II every carrier round wears an
+additive **glow plate** in its element's glow colour - a radial gradient baked once per element x level
+x size (`infusionGlowPlate`, cached) and blitted `'lighter'` at an integer origin; III adds a wider
+faint halo baked into the same plate; IV brightens and grows again; V adds a pulsing four-point core
+flare. A **trail of element sparks** follows every round from II, denser each level (`INF_TRAIL_P`,
+spawned from the UPDATE loop, tagged `_infTrail`, capped at `INF_TRAIL_CAP`). The **beam** wears a
+soft-edged element **column plate** under the authored beam (`infusionColumnPlate`, a horizontal
+gradient stretched down the column) that widens with the level, a second wider plate from III, and
+sparks crackle along it from IV. The level rides the round as `b._infLv`, stamped beside `b._inf`.
+
+- ⚠ **Never `shadowBlur`** - 0916ab measured 138 blurred draws a frame at 1.4 fps; every layer here is
+  a baked plate or a particle. Section 373 pins that the aura's source never names it.
+- ⚠ **Never a flat `fillRect` beside the beam** - the first cut's column was a flat slab and read as
+  an overlay, the one thing the palette rule forbids; the gradient plate replaced it.
+- ⚠ **A particle's `t` advances inside the step that spawned it**, so a probe counting `t===0` after the
+  step counted ZERO on a build spawning 266 in 60 frames. Mark each spark seen instead.
+- ⚠ **My first insertion put the trail block INSIDE the stamp `if` and closed it early**, leaving the
+  kinetic SONIC WAVE trigger inside an `if(false){}` - dead, with `node --check` green. Read the block
+  you are inserting into to its closing brace, not to the line you anchored on.
+
+Measured (`probe_infusion_levels_0917.py` 12/0, real trigger, real Chromium): INCENDIARY SLUGS I..V -
+aura plate widths 0/22/26/34/46, trail sparks per 60 frames 0/82/153/206/266; TESLA BEAM I..V - column
+blits 0/60/120/120/120 (II one plate, III+ two), sparks 0/0/0/34/44. Card:
+`docs/proofs/infusion_levels_0917/levels_card.png`.
