@@ -85,6 +85,12 @@ module.exports=function testInfusion(vm,ctxv,ok){
   ok(vm.runInContext("(function(){var s=String(_newWeaponTick);return s.indexOf('_voidBeam')>=0&&s.indexOf(\"b._inf==='dark'\")>=0;})()",ctxv),
      'the VOID BEAM: a dark beam draws hostiles toward its column from the one enemy loop (carrier probe 14/0)');
 
+  /* ARCADE KILL CHAIN: kills within KILL_CHAIN_T of each other on the STAGE clock (probe_killpoints_0917.py) */
+  ok(vm.runInContext("(function(){var s=String(killChainStep);return KILL_CHAIN_T===1.2&&s.indexOf('stageTimer')>=0&&s.indexOf('performance.now')<0;})()",ctxv),
+     'the kill chain runs on the STAGE clock, never the wall clock');
+  ok(vm.runInContext("(function(){var s=String(killFeedback);return s.indexOf('killChainStep()')>=0&&s.indexOf(\"' x'+chain\")>=0;})()",ctxv),
+     'and the floater carries the multiplier');
+
   /* death drops the element with the gun - the reset line that zeroes the weapon zeroes this too */
   ok(vm.runInContext("(function(){var src=require_src();var i=src.indexOf('manualMissileResetOnDeath(run);');return i>=0&&src.slice(i,i+400).indexOf('run.infusion=null')>=0;})()",ctxv),
      'death clears the infusion on the same line that drops the gun');

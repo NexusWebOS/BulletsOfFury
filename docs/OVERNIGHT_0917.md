@@ -23,7 +23,7 @@ baseline were byte-identical on every full run (the two documented order-depende
 4. **FUSION** — hold a level-3 element and pick a different one: THERMAL SHOCK, NAPALM, HYDRO VOLT,
    TESLA MIRROR ... the screen detonates once, then the new element takes the gun.
 5. **Kill points** — every kill floats `+N` in the stage face, pops, and settles; 1,000+ is bigger
-   and hotter.
+   and hotter. Kills within 1.2s chain: `+150 x3`, a quarter of the kill paid per chain step.
 6. **HARD and up only:** ordinary jets sidestep your rounds (`EVADE_DIFF`), and the ship-boss lane
    patterns pick AGAINST where you are sitting (`BOSS_DENY_DIFF`). EASY/NORMAL are untouched.
    (`docs/ENEMY_EVADE_0917.md`)

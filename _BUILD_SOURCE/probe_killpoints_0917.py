@@ -87,6 +87,17 @@ def main():
 
         pg.evaluate(sh.STEP, [70])
         ok(pg.evaluate("() => floaters.filter(f => f.score).length") == 0, 'and they leave on their own')
+
+        # ---- the KILL CHAIN (0917): kills within 1.2s of stage time multiply ----------------------------
+        ch = pg.evaluate("""() => { floaters.length=0; run._lastKillT=null; run._chain=0; const s0=run.score|0; stageTimer=10;
+            const k=(x)=>{ const e=spawnEnemy('drone',{x:x,y:260}); e.x=x; e.y=260; e.score=200; hitEnemy(e,9999); hitEnemy(e,9999); };
+            k(200); stageTimer=10.5; k(240); stageTimer=11.0; k(280);
+            const a=floaters.filter(f=>f.score).map(f=>f.txt);
+            stageTimer=14.0; k(320);     // 3s later: the chain breaks
+            return {txt:a, last: floaters.filter(f=>f.score).slice(-1)[0].txt, chain: run._chain, bonus: (run.score|0)-s0}; }""")
+        ok(ch['txt'] == ['+200', '+200 x2', '+200 x3'], 'three kills 0.5s apart on the STAGE clock chain x2, x3 (%s)' % ch['txt'])
+        ok(ch['last'] == '+200' and ch['chain'] == 1, 'a kill 3s later breaks the chain (%s)' % ch['last'])
+        ok(ch['bonus'] - 4*200 == 50 + 100, 'the chain pays a quarter of the kill per step on top of the four kills themselves: 50 + 100 (%d - 800)' % ch['bonus'])
         pg.evaluate("() => { stageText = window.__stOrig; }")
         ok(not errs, 'no page or console errors (%d)' % len(errs))
         for e in errs[:6]: print('    !', e)

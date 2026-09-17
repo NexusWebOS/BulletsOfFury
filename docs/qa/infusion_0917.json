@@ -58,5 +58,6 @@
     "probe_fusion_0917.py": "9/0"
   },
   "fusion": "a level-3 element replaced by a different one detonates across the screen with both elements' touch, named by the pair (INFUSION_FUSIONS); probe_fusion_0917.py 9/0",
-  "void_beam": "dark on the laser pulls hostiles within 90+30*lv px toward the column (40+25*lv px/s); carrier probe 14/0"
+  "void_beam": "dark on the laser pulls hostiles within 90+30*lv px toward the column (40+25*lv px/s); carrier probe 14/0",
+  "kill_chain": "kills within 1.2s of stage time chain x2..x9 on the floater and pay a quarter of the kill per step; probe_killpoints_0917.py 13/0"
 }

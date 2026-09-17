@@ -4520,11 +4520,26 @@ const SCORCH_GROUND={tank:1,htank:1,jungletank:1,mgturret:1,rockturret:1,turret:
    the wrong face. A score floater is now tagged and drawn through the STAGE font with a pop, and
    the colour steps with the value so a big kill reads as a big kill from across the screen. */
 function killScoreColour(sc){ return sc>=1000?'#ff8a3a':sc>=300?'#ffd24a':'#f2f5ff'; }
+/* ARCADE KILL CHAIN (0917): kills within KILL_CHAIN_T of each other on the STAGE clock build a
+   multiplier that rides the floater ('+150 x3') and pays a bonus of a quarter of the kill per chain
+   step. The stage clock, never the wall clock, so a probe reproduces it and a pause does not break
+   a chain. */
+const KILL_CHAIN_T=1.2, KILL_CHAIN_MAX=9;
+function killChainStep(){
+  const t=(typeof stageTimer==='number')?stageTimer:0;
+  if(run._lastKillT!=null && (t-run._lastKillT)>=0 && (t-run._lastKillT)<KILL_CHAIN_T) run._chain=Math.min(KILL_CHAIN_MAX,(run._chain|0)+1);
+  else run._chain=1;
+  run._lastKillT=t;
+  return run._chain;
+}
 function killFeedback(e, sc){
   if(!e) return;
   if(sc>0 && typeof floatText==='function'){
-    floaters.push({x:e.x, y:e.y-14, txt:'+'+sc, color:killScoreColour(sc), t:0, life:0.95, score:true,
-                   vy:-38, big:sc>=1000});
+    const chain=killChainStep();
+    const bonus=chain>1?Math.round(sc*0.25*(chain-1)):0;
+    if(bonus>0 && run){ run.score=(run.score|0)+bonus; }
+    floaters.push({x:e.x, y:e.y-14, txt:'+'+sc+(chain>1?' x'+chain:''), color:chain>=3?'#ff8a3a':killScoreColour(sc), t:0, life:0.95+(chain>1?0.15:0), score:true,
+                   vy:-38, big:sc>=1000||chain>=4, chain});
   }
   const ground = SCORCH_GROUND[e.type] || e._bunker || e._tur;
   if(ground && typeof addScorch==='function'){
