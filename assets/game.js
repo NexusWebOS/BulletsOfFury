@@ -7893,20 +7893,27 @@ const INFUSIONS=Object.freeze({
   dark:     {name:'DARK MATTER',body:'#5a2a8a', glow:'#b46cff', el:null,    named:{3:'VOID'},    gate:'ngplus'}
 });
 const INFUSION_MAX=3;
-/* the roll INSIDE dropPowerup, which itself sits behind killEnemy's 18% drop gate: at 0.055 an infusion
-   landed about once per 100 kills (measured 2 in 300 on HARD) - too rare to be felt. 0.14 is about one
-   per 40 kills, a few per stage. (0917) */
-const INFUSION_DROP_P=0.14;
+/* ⚠ THE CHANCE AN ELIGIBLE KILL DROPS AN INFUSION - ONE NUMBER, AND IT MEANS WHAT IT SAYS (0917).
+   It used to be a roll INSIDE dropPowerup, which the two ordinary death paths only reach through their
+   own 18% loot gate: 0.171 x 0.133 = 2.3% per drop-eligible kill, one per ~44, and the nine-stage sweep
+   measured ZERO infusions across 229 kills. The roll is made at the kill site now (killDrop), so this is
+   the real rate and the infusion never competes with ammo / shield / life for the same 18%. */
+const INFUSION_DROP_P=0.05;
 /* the ORB is a carrier too (Mike: "the water combinations after level 9 where we can now create water orb") -
    the orb weapon's wheel and its shards ride the element like any other round */
 const INFUSION_CARRIERS={mg:1,spread:1,beam:1,missile:1,orb:1,shard:1};
 /* which elements a stage tends to drop - a bias, never a lock, so every element stays reachable */
 const INFUSION_STAGE_BIAS={1:'kinetic',2:'fire',3:'ice',4:'lightning',6:'chrome',7:'toxic',8:'prism'};
 function infusionEligible(){
+  /* ⚠ A `bg==='space'` CATCH-ALL HERE SILENTLY DELETED STAGE 8's INFUSIONS (measured 0917 by
+     probe_infusion_rate_0917.py: 0 pickups in 4,000 dropPowerup calls on stage 8 against ~530 on
+     every eligible stage). Only 5 and 9 hand the player the space guns - `spaceWeaponsActive` says
+     so itself - but three stages carry the space BACKDROP, and stage 8 is an ordinary-weapon stage
+     wearing it. INFUSION_STAGE_BIAS even reserves prism for stage 8, so the bias entry could never
+     once fire. The rule is the WEAPON SET, never the wallpaper. */
   if(typeof spaceWeaponsActive==='function' && spaceWeaponsActive()) return false;
   const st=(run&&run.stage)|0;
   if(st===5||st===9) return false;
-  if(typeof curStage!=='undefined' && curStage && curStage.bg==='space') return false;
   return true;
 }
 function infusionGateOpen(elem){
@@ -27949,14 +27956,30 @@ function continueRewardCollect(p){
   if(Audio.SFX&&Audio.SFX.life)Audio.SFX.life();else if(Audio.SFX&&Audio.SFX.powerup)Audio.SFX.powerup();
   return run.contBonus;
 }
-function dropPowerup(x,y,forceKind){
+/* ONE KILL-DROP FUNNEL (0917). Both ordinary death paths roll here, so the infusion's chance is one
+   readable number (INFUSION_DROP_P, per drop-eligible kill) and the ordinary 18% ammo/shield/life gate
+   underneath it is untouched. The turret collapse keeps its own unconditional drop. */
+function killDrop(e){
+  if(!e || !e.dropOk || typeof dropPowerup!=='function') return;
+  if(typeof infusionEligible==='function' && infusionEligible() && Math.random()<INFUSION_DROP_P*DIFF.dropMul){
+    dropPowerup(e.x,e.y,'infuse'); return; }
+  if(chance(0.18*DIFF.dropMul)) dropPowerup(e.x,e.y,null,true);
+}
+function dropPowerup(x,y,forceKind,noInfuse){
   let kind=forceKind;
-  /* an INFUSION drops beside the ordinary loot, on eligible stages only (never 5 or 9) */
-  if(!kind && typeof infusionEligible==='function' && infusionEligible() && Math.random()<INFUSION_DROP_P*DIFF.dropMul){
-    const el=infusionRoll(); if(el){
-      powerups.push({x,y,vy:1.0,t:0,kind:'infuse',elem:el,w:20,h:20,bob:rnd(0,TAU)});
-      try{ if(typeof stageStats!=='undefined' && stageStats.pickupsSeen!=null) stageStats.pickupsSeen++; }catch(_pq2){}
-      return; } }
+  /* An INFUSION drops beside the ordinary loot, on eligible stages only (never 5 or 9). `'infuse'`
+     arriving as a forced kind is killDrop's own roll having already passed; `noInfuse` is killDrop
+     saying it rolled and missed, so this cannot roll a second time for the same kill. Any other
+     caller (the turret collapse, a scripted drop) still gets the inline roll. */
+  if(kind==='infuse' || (!kind && !noInfuse && typeof infusionEligible==='function' && infusionEligible() && Math.random()<INFUSION_DROP_P*DIFF.dropMul)){
+    if(typeof infusionEligible==='function' && infusionEligible()){
+      const el=(typeof infusionRoll==='function')?infusionRoll():null;
+      if(el){
+        powerups.push({x,y,vy:1.0,t:0,kind:'infuse',elem:el,w:20,h:20,bob:rnd(0,TAU)});
+        try{ if(typeof stageStats!=='undefined' && stageStats.pickupsSeen!=null) stageStats.pickupsSeen++; }catch(_pq2){}
+        return; } }
+    if(kind==='infuse') return;    /* asked for an infusion and none can be made: drop nothing rather
+                                      than an unnamed 'infuse' pickup with no element on it */ }
   if(!kind){
     // Original death drops: 6.2% ammo, 2.8% shield, 1% life. Independent
     // bonus intervals preserve the original grants and each other's probability.
@@ -34986,7 +35009,7 @@ function killEnemy(e){
     if(typeof e._frozen==='number' && e._frozen>0 && typeof iceShatter==='function'){ iceShatter(e); }
     else if(typeof disintegrate==='function') disintegrate(e);
     shake=Math.max(shake, e.w>30?4:1.5);
-    if(e.dropOk && chance(0.18*DIFF.dropMul)) dropPowerup(e.x,e.y);
+    killDrop(e);
     return;   // stays visible in 'death' frame; removed by the dying ticker
   }
   e.dead=true;
@@ -35009,7 +35032,7 @@ function killEnemy(e){
   disintegrate(e);
   shake=Math.max(shake, e.w>30?4:1.5);
   // drops
-  if(e.dropOk && chance(0.18*DIFF.dropMul)) dropPowerup(e.x,e.y);
+  killDrop(e);
 }
 
 function playerHit(){

@@ -1,0 +1,80 @@
+{
+  "drop": "0917 infusion drop rate, per stage",
+  "request": "the playtest sweep drew 0 infusions; is the roll wrong, the gate wrong, or the night unlucky?",
+  "method": "4,000 real dropPowerup calls per stage in Chromium, HARD, after SETUP entered the stage",
+  "expected_per_4000": 190.0,
+  "stages": {
+    "1": {
+      "bg": "jungle",
+      "space": false,
+      "elig": true,
+      "dropMul": 0.95,
+      "inf": 191,
+      "bias": "kinetic"
+    },
+    "2": {
+      "bg": "volcano",
+      "space": false,
+      "elig": true,
+      "dropMul": 0.95,
+      "inf": 198,
+      "bias": "fire"
+    },
+    "3": {
+      "bg": "ice",
+      "space": false,
+      "elig": true,
+      "dropMul": 0.95,
+      "inf": 210,
+      "bias": "ice"
+    },
+    "4": {
+      "bg": "sky",
+      "space": false,
+      "elig": true,
+      "dropMul": 0.95,
+      "inf": 182,
+      "bias": "lightning"
+    },
+    "5": {
+      "bg": "space",
+      "space": true,
+      "elig": false,
+      "dropMul": 0.95,
+      "inf": 0,
+      "bias": null
+    },
+    "6": {
+      "bg": "sky",
+      "space": false,
+      "elig": true,
+      "dropMul": 0.95,
+      "inf": 190,
+      "bias": "chrome"
+    },
+    "7": {
+      "bg": "sewer",
+      "space": false,
+      "elig": true,
+      "dropMul": 0.95,
+      "inf": 180,
+      "bias": "toxic"
+    },
+    "8": {
+      "bg": "space",
+      "space": false,
+      "elig": true,
+      "dropMul": 0.95,
+      "inf": 192,
+      "bias": "prism"
+    },
+    "9": {
+      "bg": "space",
+      "space": true,
+      "elig": false,
+      "dropMul": 0.95,
+      "inf": 0,
+      "bias": null
+    }
+  }
+}

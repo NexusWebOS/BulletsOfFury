@@ -19,9 +19,15 @@ module.exports=function testInfusion(vm,ctxv,ok){
   ok(vm.runInContext("INFUSIONS.fire.el==='fire'&&INFUSIONS.ice.el==='ice'",ctxv),
      'fire and ice carry the ELEMENT, so the existing 2x / absorb rules apply to an infused round');
 
-  /* ⚠ THE GATES ARE STAGE RULES, NOT A LIST OF STAGES. run.stage 5 and 9 and any space stage. */
-  ok(vm.runInContext("(function(){var s=run.stage;var r=[];for(var i=1;i<=9;i++){run.stage=i;r.push(infusionEligible());}run.stage=s;return r[4]===false&&r[8]===false&&r[0]&&r[1]&&r[2]&&r[3]&&r[5]&&r[6]&&r[7];})()",ctxv),
-     'stages 5 and 9 are ineligible, every other stage is');
+  /* ⚠ THE GATE IS THE WEAPON SET, NOT THE WALLPAPER - AND THIS ASSERTION USED TO PASS WHILE THE
+     GAME DISAGREED. It moved `run.stage` alone, so the `curStage.bg==='space'` branch it was meant
+     to cover never ran and stage 8 read eligible here while the real stage 8 dropped nothing
+     (probe_infusion_rate_0917.py: 0 pickups in 4,000 calls). curStage MOVES WITH run.stage now.
+     Three stages wear the space backdrop; only 5 and 9 hand out the space guns. */
+  ok(vm.runInContext("(function(){var s=run.stage,c=curStage;var r=[];for(var i=1;i<=9;i++){run.stage=i;curStage=STAGES[i-1];r.push(infusionEligible());}run.stage=s;curStage=c;return r[4]===false&&r[8]===false&&r[0]&&r[1]&&r[2]&&r[3]&&r[5]&&r[6]&&r[7];})()",ctxv),
+     'stages 5 and 9 are ineligible, every other stage is - with curStage set, so stage 8 (bg space, ordinary guns) counts');
+  ok(vm.runInContext("(function(){var s=run.stage,c=curStage;run.stage=8;curStage=STAGES[7];var r=curStage.bg==='space'&&!spaceWeaponsActive()&&infusionEligible()&&INFUSION_STAGE_BIAS[8]==='prism';run.stage=s;curStage=c;return r;})()",ctxv),
+     'stage 8 keeps the prism bias INFUSION_STAGE_BIAS reserves for it - a bias on an ineligible stage can never fire');
   ok(vm.runInContext("infusionPool().indexOf('water')<0&&infusionPool().indexOf('dark')<0",ctxv),
      'water and dark matter are gated off until earned');
   ok(vm.runInContext("(function(){var s=String(infusionGateOpen);return s.indexOf('laserMistIsUnlocked')>=0&&s.indexOf('ngplus')>=0;})()",ctxv),
@@ -90,6 +96,17 @@ module.exports=function testInfusion(vm,ctxv,ok){
      'the kill chain runs on the STAGE clock, never the wall clock');
   ok(vm.runInContext("(function(){var s=String(killFeedback);return s.indexOf('killChainStep()')>=0&&s.indexOf(\"' x'+chain\")>=0;})()",ctxv),
      'and the floater carries the multiplier');
+
+  /* ⚠ THE DROP ROLL IS MADE AT THE KILL SITE, NOT INSIDE dropPowerup. Behind the ordinary 18% loot
+     gate the infusion landed 2.4% of drop-eligible kills - one per ~44 - and a nine-stage sweep
+     measured ZERO across 229 kills. killDrop gives it its own roll, so INFUSION_DROP_P is the real
+     per-eligible-kill rate and an infusion never competes with ammo / shield / life. */
+  ok(vm.runInContext("(function(){var s=String(killDrop);return s.indexOf('INFUSION_DROP_P')>=0&&s.indexOf(\"dropPowerup(e.x,e.y,'infuse')\")>=0&&s.indexOf('chance(0.18*DIFF.dropMul)')>=0;})()",ctxv),
+     'killDrop rolls the infusion on its own, then the unchanged 18% loot gate underneath it');
+  ok(vm.runInContext("(function(){var src=require_src();return src.indexOf('if(e.dropOk && chance(0.18*DIFF.dropMul)) dropPowerup(e.x,e.y);')<0;})()",ctxv),
+     'and both ordinary death paths go through that one funnel');
+  ok(vm.runInContext("(function(){var n0=powerups.length;dropPowerup(10,10,'infuse');var p=powerups[powerups.length-1];var got=powerups.length>n0&&p.kind==='infuse'&&!!p.elem;powerups.length=n0;return got;})()",ctxv),
+     "a forced 'infuse' drop always carries an element - never a pickup with nothing on it");
 
   /* death drops the element with the gun - the reset line that zeroes the weapon zeroes this too */
   ok(vm.runInContext("(function(){var src=require_src();var i=src.indexOf('manualMissileResetOnDeath(run);');return i>=0&&src.slice(i,i+400).indexOf('run.infusion=null')>=0;})()",ctxv),

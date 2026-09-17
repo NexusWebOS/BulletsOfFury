@@ -54,16 +54,39 @@ arc hits, the hit arcs again, and it only stops when the hitset runs out. Guarde
 
 ## 3. Eligibility is a rule, not a list
 
-`infusionEligible()` refuses stage 5, stage 9, any stage whose `bg` is `space`, and any time the
-space weapons are live. The probe drives it: **400 kill drops on stage 5 yield zero infusion
-pickups; 600 on stage 2 yield 41.** Water opens on the same signal LASER MIST already opens on
-(`laserMistIsUnlocked`, i.e. a real stage-9 boss kill); dark matter on `run.ngplus`.
+`infusionEligible()` refuses stage 5, stage 9, and any time the space weapons are live. The probe
+drives it: **400 kill drops on stage 5 yield zero infusion pickups; 600 on stage 2 yield 41.** Water
+opens on the same signal LASER MIST already opens on (`laserMistIsUnlocked`, i.e. a real stage-9 boss
+kill); dark matter on `run.ngplus`.
 
-The drop is a **kill drop**, beside the bomb / shield / life roll — `INFUSION_DROP_P` (0.14) × `dropMul`
-inside `dropPowerup`, which itself sits behind killEnemy's 18% drop gate (⚠ at the first 0.055 that
-was about one infusion per 100 kills, measured 2 in 300 on HARD — too rare to be felt), biased by
-stage (fire on 2, ice on 3, lightning on 4 and 6, toxic on 7, prism on 8) but never locked, so every
-element stays reachable anywhere it is eligible.
+> ⚠ **The `bg === 'space'` clause this doc described on the first pass DELETED STAGE 8's INFUSIONS
+> in silence** (fixed 0917, after the sweep). Three stages wear the space backdrop; only 5 and 9 hand
+> out the space guns, and stage 8 is an ordinary-weapon stage under space wallpaper — so nothing could
+> ever drop there, and the prism bias `INFUSION_STAGE_BIAS` reserves for stage 8 could never once
+> fire. `probe_infusion_rate_0917.py` measures it per stage: **0 pickups in 4,000 `dropPowerup` calls
+> on stage 8 before the fix, 513 after, against ~530 expected and 478–577 on every other eligible
+> stage; stages 5 and 9 stay at 0.** The rule is the WEAPON SET, never the wallpaper.
+> (⚠ Those figures are the pre-`killDrop` build, where the inline roll was 0.14: re-run after the
+> refactor the same probe reads **192 on stage 8 against ~190 expected**, 180–204 elsewhere, 0 on
+> 5 and 9. The *shape* of the finding — stage 8 at zero, every other eligible stage on the curve —
+> is what the numbers are there to carry, and it survives the constant moving.)
+
+The drop is a **kill drop**, rolled at the kill site by `killDrop(e)` — `INFUSION_DROP_P` (0.05) ×
+`dropMul` per **drop-eligible kill**, with the ordinary 18% ammo / shield / life gate unchanged
+underneath it. Biased by stage (fire on 2, ice on 3, lightning on 4, chromium on 6, toxic on 7,
+prism on 8) but never locked, so every element stays reachable anywhere it is eligible.
+
+⚠⚠ **IT WAS A ROLL INSIDE `dropPowerup`, WHICH THE ORDINARY DEATH PATHS ONLY REACH THROUGH THEIR OWN
+18% GATE.** So the real rate was 0.171 × 0.133 = **2.3% per drop-eligible kill, one per ~44** — and
+the nine-stage sweep measured **zero infusions across 229 kills** on the build where the constant had
+just been *raised*. Measured directly over 120 s of real play per stage: 129 kills, 84 drop-eligible,
+**18 `dropPowerup` calls, 2 infusions**. Two numbers multiplied where the code read as one, and the
+tuning knob was not the rate — it was which gate the roll sat behind. `killDrop` is the one funnel
+both ordinary death paths use now; a `'infuse'` forced kind means that roll already passed, and
+`noInfuse` means it was made and missed, so one kill can never roll twice.
+
+⚠ **AND A FORCED `'infuse'` WITH AN EMPTY POOL MUST DROP NOTHING** — falling through would push a
+pickup with `kind:'infuse'` and no `elem`, which draws as a hole and grants nothing.
 
 ---
 

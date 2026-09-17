@@ -60,5 +60,5 @@
   "fusion": "a level-3 element replaced by a different one detonates across the screen with both elements' touch, named by the pair (INFUSION_FUSIONS); probe_fusion_0917.py 9/0",
   "void_beam": "dark on the laser pulls hostiles within 90+30*lv px toward the column (40+25*lv px/s); carrier probe 14/0",
   "kill_chain": "kills within 1.2s of stage time chain x2..x9 on the floater and pay a quarter of the kill per step; probe_killpoints_0917.py 13/0",
-  "drop_rate": "INFUSION_DROP_P 0.14 inside dropPowerup behind the 18% kill-drop gate (~1 per 40 kills); was 0.055 = ~1 per 100 kills, measured 2 in 300 on HARD"
+  "drop_rate": "INFUSION_DROP_P 0.05 per drop-eligible kill, rolled by killDrop at the kill site. Was a roll inside dropPowerup behind the ordinary 18% loot gate = 2.3% real (one per ~44); the nine-stage sweep measured 0 infusions across 229 kills. Measured 120s/stage: 129 kills, 84 dropOk, 18 dropPowerup calls, 2 infusions."
 }
