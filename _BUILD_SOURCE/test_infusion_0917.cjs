@@ -66,8 +66,8 @@ module.exports=function testInfusion(vm,ctxv,ok){
 
   ok(vm.runInContext("INFUSION_CARRIERS.orb===1&&INFUSION_CARRIERS.shard===1&&INFUSION_CARRIERS.beam===1&&INFUSION_CARRIERS.missile===1",ctxv),
      'the orb and its shards are carriers beside the mg, spread, beam and missiles (the WATER ORB)');
-  ok(vm.runInContext("(function(){var s=String(drawBullets);return s.indexOf(\"xartPalette('fx0825_ice_orb',_oi.body)\")>=0;})()",ctxv),
-     'an infused orb is the authored ice wheel through xartPalette - a palette swap, never an overlay');
+  ok(vm.runInContext("(function(){var s=String(drawBullets);return s.indexOf(\"infPal('fx0825_ice_orb',_oi.body)\")>=0;})()",ctxv),
+     'an infused orb is the authored ice wheel through infPal (xartPalette with the achromatic fix) - a palette swap, never an overlay');
   /* the GIANT BEAM: kinetic on the laser widens the column, and the hit test reads the same width */
   ok(vm.runInContext("(function(){var s=String(pShoot);return s.indexOf(\"elem==='kinetic') beam.w*=1+0.5*\")>=0;})()",ctxv),
      'KINETIC on the laser widens beam.w x1.5/x2.0/x2.5 - the giant beam (probe_giantbeam_0917.py 7/0)');
@@ -105,7 +105,7 @@ module.exports=function testInfusion(vm,ctxv,ok){
      'killDrop rolls the infusion on its own, then the unchanged 18% loot gate underneath it');
   ok(vm.runInContext("(function(){var src=require_src();return src.indexOf('if(e.dropOk && chance(0.18*DIFF.dropMul)) dropPowerup(e.x,e.y);')<0;})()",ctxv),
      'and both ordinary death paths go through that one funnel');
-  ok(vm.runInContext("(function(){var n0=powerups.length;dropPowerup(10,10,'infuse');var p=powerups[powerups.length-1];var got=powerups.length>n0&&p.kind==='infuse'&&!!p.elem;powerups.length=n0;return got;})()",ctxv),
+  ok(vm.runInContext("(function(){var st=run.stage;run.stage=1;var n0=powerups.length;dropPowerup(10,10,'infuse');run.stage=st;var p=powerups[powerups.length-1];var got=powerups.length>n0&&p.kind==='infuse'&&!!p.elem;powerups.length=n0;return got;})()",ctxv),
      "a forced 'infuse' drop always carries an element - never a pickup with nothing on it");
 
   /* death drops the element with the gun - the reset line that zeroes the weapon zeroes this too */

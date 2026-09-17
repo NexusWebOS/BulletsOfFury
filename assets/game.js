@@ -5876,6 +5876,9 @@ function heldVariant(w){
 /* the display name, from the same table the icon uses - this is the fix for the mismatch */
 function weaponDisplayName(w, opt){
   if(typeof spaceWeaponsActive==='function' && spaceWeaponsActive()) return spaceWeaponName();
+  /* a FORGED weapon carries its forged name everywhere the bare name went - the HUD, the pickup
+     banner, the debrief's WEAPON OF CHOICE (Mike: "machine gun now becomes incendary slugs") */
+  if(typeof forgeName==='function'){ const fn=forgeName(w); if(fn) return fn; }
   const v = opt ? weaponVariant(w, opt) : heldVariant(w);
   if(v && WVAR_NAME[v]) return WVAR_NAME[v];
   return (typeof WEAPONS!=='undefined' && WEAPONS[w]) ? WEAPONS[w] : 'WEAPON';
@@ -6597,8 +6600,8 @@ function _setCinematicViewport(on){
          cinematics keep the browser aspect: their art is a photograph of a scene, not a panel. */
       /* the debrief plate is 477x266; the viewport takes ITS aspect so the art fills the screen
          with nothing showing around it and nothing stretched */
-      const ar=(state===GS.STAGECLEAR||state===GS.UNLOCKS) ? (477/266) : Math.max(.85,window.innerWidth/Math.max(1,window.innerHeight));
-      CINEMA_VW=(state===GS.STAGECLEAR||state===GS.UNLOCKS) ? Math.round(VH*ar) : Math.max(640,Math.round(VH*ar));
+      const ar=(state===GS.STAGECLEAR||state===GS.UNLOCKS||state===GS.FORGE) ? (477/266) : Math.max(.85,window.innerWidth/Math.max(1,window.innerHeight));
+      CINEMA_VW=(state===GS.STAGECLEAR||state===GS.UNLOCKS||state===GS.FORGE) ? Math.round(VH*ar) : Math.max(640,Math.round(VH*ar));
       if(cv.width!==CINEMA_VW*SS||cv.height!==VH*SS){cv.width=CINEMA_VW*SS;cv.height=VH*SS;}
       document.body.classList.add('cinematic-full');
     }else{
@@ -6624,7 +6627,7 @@ function applyPendingViewport(){
   _viewportDirty=false;
   try{
     if(state===GS.PILOT){ _setPilotViewport(); return; }
-    if(state===GS.CUTSCENE||state===GS.CAMPAIGNINTRO||state===GS.VICTORY||state===GS.STAGECLEAR||state===GS.UNLOCKS) _setCinematicViewport(true);
+    if(state===GS.CUTSCENE||state===GS.CAMPAIGNINTRO||state===GS.VICTORY||state===GS.STAGECLEAR||state===GS.UNLOCKS||state===GS.FORGE) _setCinematicViewport(true);
   }catch(_cinResize){}
 }
 window.__bofResizeCinematic=function(){ _viewportDirty=true; };
@@ -7400,7 +7403,7 @@ function uiBlipRep(){
 }
 const GS = { BOOT:'boot', LOADING:'loading', TITLE:'title', DIFF:'diff', PILOT:'pilot',
   PASSWORD:'password', CREDITS:'credits', OPTIONS:'options', INTRO:'intro', LAUNCH:'launch',
-  PLAY:'play', GAMEOVER:'gameover', VICTORY:'victory', STAGECLEAR:'stageclear', UNLOCKS:'unlocks', CONTINUE:'continue', RIFTFALLBACK:'riftfallback', RIVAL:'rival', FLYOVER:'flyover', WARPENTRY:'warpentry', STAGESEL:'stagesel', MODESEL:'modesel', CAMPHUB:'camphub', CAMPAIGNINTRO:'campaignintro', ATTRACT:'attract', OUTBOUND:'outbound', OPENING:'opening', CUTSCENE:'cutscene',
+  PLAY:'play', GAMEOVER:'gameover', VICTORY:'victory', STAGECLEAR:'stageclear', UNLOCKS:'unlocks', FORGE:'forge', CONTINUE:'continue', RIFTFALLBACK:'riftfallback', RIVAL:'rival', FLYOVER:'flyover', WARPENTRY:'warpentry', STAGESEL:'stagesel', MODESEL:'modesel', CAMPHUB:'camphub', CAMPAIGNINTRO:'campaignintro', ATTRACT:'attract', OUTBOUND:'outbound', OPENING:'opening', CUTSCENE:'cutscene',
   /* the co-op wing muster: both chosen pilots side by side before deploy (drop 0902f) */
   COOPROSTER:'cooproster',
   /* ⚠ 'opener' AND NOT 'intro'. GS.INTRO is the STAGE card that precedes GS.LAUNCH and has been
@@ -7957,6 +7960,132 @@ function infusionGrant(elem){
   return run.infusion;
 }
 function infusionClear(){ if(run) run.infusion=null; }
+
+/* ============================================================
+   THE FORGE (Mike, 0917) - the screen between the debrief and the next stage
+
+   "I wanted to see the in between stage screen of weapons being unlocked, weapons being combined,
+    etc. how this system and set works before your next level. You should be allowed 2 combinations
+    in between each level, and this upgrade permanently takes over your weapon style until you reset
+    it via re-spec, which unlocks the next level as you get 2 re-specs per level completion.
+    Additionally, as you unlock more weapon types or are about to go to level 2, we should limit the
+    amount of weapon types that can spawn to 6 per level, and make the player select their "loadout"
+    including their new upgraded weapon type replacing the weapon type it was I.E machine gun now
+    becomes incendary slugs/machine gun."
+
+   Three things, all on `run`:
+     run.forge      {slot: {elem, lv}}  the PERMANENT element on a weapon. It is asserted every time
+                                        that weapon is equipped, at every stage start and after a
+                                        death (forgeApply) - so it is what "permanently takes over
+                                        your weapon style" means, and only forgeRespec removes it.
+     run.forgeElems {elem: 1}           what the player has DISCOVERED - an element only enters the
+                                        Forge once one of its pickups has been collected in play.
+     run.loadout    [slot...]           the weapon types that may DROP this stage, at most
+                                        FORGE_LOADOUT_MAX. spawnContainer's crate bag is filtered by
+                                        it. While six or fewer are unlocked it is simply all of them.
+   run.forgeCombos / run.forgeRespecs are set to the per-stage allowance when the Forge opens.
+
+   ⚠ NOTHING NEW IS INVENTED FOR THE ROUND ITSELF. A forged weapon runs through the existing
+   infusion system - forgeApply writes run.infusion, and the stamp, the palette, the on-hit effect,
+   the EQUIPPED badge and the level-3 names are all the 0917 machinery unchanged. The Forge is a
+   surface and a rule set over that system, which is the same relationship the awards gallery has
+   to the achievement registry.
+
+   ⚠ ONLY WEAPONS WHOSE ROUNDS ARE INFUSION CARRIERS CAN BE FORGED. `INFUSION_CARRIERS` is keyed by
+   round KIND: mg / spread / beam / missile / orb / shard. Read off the muzzles: the chaingun pushes
+   kind 'mg' (a carrier), laser mist pushes 'lasermist' and the lightning orb 'yuriLightningBolt'
+   (not carriers), and the flamethrower never enters pBullets at all. Forging one of those three
+   would rename a weapon whose rounds then show nothing - so they are listed as CANNOT TAKE AN
+   ELEMENT rather than silently allowed.
+   ============================================================ */
+const FORGE_COMBOS_PER_STAGE=2, FORGE_RESPECS_PER_STAGE=2, FORGE_LOADOUT_MAX=6;
+const FORGE_WEAPONS=Object.freeze([0,1,2,3,5,7]);
+/* the forged weapon's NAME - element x slot. Mike's own example is the first row:
+   "machine gun now becomes incendary slugs". A pair with no row falls back to ELEMENT + WEAPON. */
+const FORGE_NAMES=Object.freeze({
+  fire:     {0:'INCENDIARY SLUGS', 1:'NAPALM FAN',    2:'HELLFIRE RACK',  3:'INFERNO BEAM',   5:'MAGMA ORB',    7:'INFERNO GATLING'},
+  ice:      {0:'CRYO SLUGS',       1:'SHARD FAN',     2:'FROSTBITE RACK', 3:'CRYO BEAM',      5:'GLACIER ORB',  7:'HAIL GATLING'},
+  lightning:{0:'VOLT SLUGS',       1:'ARC FAN',       2:'STORM RACK',     3:'TESLA BEAM',     5:'THUNDER ORB',  7:'STORM GATLING'},
+  prism:    {0:'PRISM SLUGS',      1:'SPECTRUM FAN',  2:'PRISM RACK',     3:'LUMINAIRE BEAM', 5:'PRISM ORB',    7:'PRISM GATLING'},
+  toxic:    {0:'VENOM SLUGS',      1:'ACID FAN',      2:'BLIGHT RACK',    3:'DECAY BEAM',     5:'PLAGUE ORB',   7:'VENOM GATLING'},
+  kinetic:  {0:'SONIC SLUGS',      1:'SHOCK FAN',     2:'IMPACT RACK',    3:'GIANT BEAM',     5:'KINETIC ORB',  7:'HAMMER GATLING'},
+  chrome:   {0:'MIRROR SLUGS',     1:'CHROME FAN',    2:'MIRROR RACK',    3:'CHROME BEAM',    5:'MIRROR ORB',   7:'CHROME GATLING'},
+  water:    {0:'TIDAL SLUGS',      1:'GEYSER FAN',    2:'TORRENT RACK',   3:'HYDRO BEAM',     5:'WATER ORB',    7:'TORRENT GATLING'},
+  dark:     {0:'VOID SLUGS',       1:'VOID FAN',      2:'VOID RACK',      3:'VOID BEAM',      5:'VOID ORB',     7:'VOID GATLING'}
+});
+function forgeEntry(w){ return (run && run.forge && run.forge[w]) ? run.forge[w] : null; }
+function forgeName(w){
+  const f=forgeEntry(w); if(!f || !INFUSIONS[f.elem]) return null;
+  const T=FORGE_NAMES[f.elem];
+  return (T && T[w]) ? T[w] : (INFUSIONS[f.elem].name+' '+((typeof WEAPONS!=='undefined'&&WEAPONS[w])||'WEAPON'));
+}
+function forgeCanTake(w){ return FORGE_WEAPONS.indexOf(w|0)>=0; }
+/* an element is DISCOVERED when one of its pickups is collected in play */
+function forgeDiscover(elem){ if(run && INFUSIONS[elem]){ if(!run.forgeElems) run.forgeElems={}; run.forgeElems[elem]=1; } }
+function forgeDiscovered(){
+  if(!run || !run.forgeElems) return [];
+  return Object.keys(INFUSIONS).filter(function(e){ return run.forgeElems[e] && infusionGateOpen(e); });
+}
+/* the permanent element ASSERTS itself on the held weapon. A pickup of the same element in play can
+   still level it further for the stage; a different element still fuses. This only writes when the
+   held weapon is forged and its element is not already at least this strong - it never takes
+   anything away, so an in-play boost survives a weapon swap and back. */
+function forgeApply(){
+  if(!run) return false;
+  const f=forgeEntry(run.weapon|0); if(!f) return false;
+  const cur=run.infusion;
+  if(cur && cur.elem===f.elem && (cur.lv|0)>=(f.lv|0)) return false;
+  run.infusion={elem:f.elem, lv:Math.max(1,Math.min(INFUSION_MAX,f.lv|0)), hits:0};
+  if(f.elem==='lightning' && typeof XART!=='undefined'){ try{ XART.rdy('chain_bolt_0'); XART.rdy('nchp_0'); }catch(_fa){} }
+  return true;
+}
+/* one combine: the same element again LEVELS the weapon (L1 -> L2 -> L3, the named one); a
+   different element REPLACES it at L1 - that is "permanently takes over", and a re-spec is how
+   you get the bare weapon back. Returns a WORD so the screen can say what happened. */
+function forgeCombine(w, elem){
+  if(!run) return 'norun';
+  if(!forgeCanTake(w)) return 'cannot';
+  if(!INFUSIONS[elem] || !infusionGateOpen(elem)) return 'unknown';
+  if((run.forgeCombos|0)<=0) return 'spent';
+  if(!run.forge) run.forge={};
+  const f=run.forge[w];
+  if(f && f.elem===elem){ if((f.lv|0)>=INFUSION_MAX) return 'maxed'; f.lv=(f.lv|0)+1; }
+  else run.forge[w]={elem:elem, lv:1};
+  run.forgeCombos=(run.forgeCombos|0)-1;
+  if((run.weapon|0)===w){ run.infusion=null; forgeApply(); }
+  return 'ok';
+}
+function forgeRespec(w){
+  if(!run || !run.forge || !run.forge[w]) return 'bare';
+  if((run.forgeRespecs|0)<=0) return 'spent';
+  delete run.forge[w];
+  run.forgeRespecs=(run.forgeRespecs|0)-1;
+  if((run.weapon|0)===w && run.infusion) run.infusion=null;
+  return 'ok';
+}
+/* the loadout is the crate bag's pool, capped. While the pool fits, the loadout IS the pool, so a
+   player with five weapons never has to "choose" five. Once it does not fit, what was chosen last
+   stage is kept where it is still unlocked and the rest is filled in slot order. */
+function forgeLoadoutSync(){
+  if(!run) return [];
+  const pool=(typeof crateWeaponPool==='function')?crateWeaponPool(true):[0,1,2,3,4,5];
+  if(pool.length<=FORGE_LOADOUT_MAX){ run.loadout=pool.slice(); return run.loadout; }
+  const keep=(run.loadout||[]).filter(function(w){ return pool.indexOf(w)>=0; });
+  for(let i=0;i<pool.length && keep.length<FORGE_LOADOUT_MAX;i++) if(keep.indexOf(pool[i])<0) keep.push(pool[i]);
+  run.loadout=keep.slice(0,FORGE_LOADOUT_MAX);
+  return run.loadout;
+}
+/* the screen opens only when there is something to do on it: an element to combine, a weapon to
+   re-spec, or more weapons unlocked than the loadout holds. An empty page teaches mashing (the
+   concept note said so, and the unlock page already skips itself the same way). */
+function forgeVisible(){
+  if(!run) return false;
+  if(typeof spaceWeaponsActive==='function' && spaceWeaponsActive()) return false;
+  if(forgeDiscovered().length) return true;
+  if(run.forge && Object.keys(run.forge).length) return true;
+  const pool=(typeof crateWeaponPool==='function')?crateWeaponPool(true):[];
+  return pool.length>FORGE_LOADOUT_MAX;
+}
 let _infBusy=false;
 /* the god's-wrath burst: every hostile on screen struck from the sky at once, and several large
    blasts - Mike: "Massive lightning burst across the entire screen with several large lightning
@@ -27992,6 +28121,33 @@ function dropPowerup(x,y,forceKind,noInfuse){
   powerups.push({x,y,vy:1.1,t:0,kind,w:18,h:18,bob:rnd(0,TAU)});
   try{ if(typeof stageStats!=='undefined' && stageStats.pickupsSeen!=null) stageStats.pickupsSeen++; }catch(_pq){}
 }
+/* THE CRATE POOL, IN ONE PLACE (0917). It used to be built inline in spawnContainer, and the Forge
+   needs the same answer to two questions - what is UNLOCKED (the loadout picker's list) and what
+   may DROP (the bag) - so it is one function with one flag. `unfiltered` returns the unlocked set;
+   without it the loadout is applied, which is Mike's "limit the amount of weapon types that can
+   spawn to 6 per level".
+   [!] THE BAG HAS TO RESPECT THE SAME RULES AS THE ICON (drop 0812l). Mike withholds the flame
+   slot from Freezer on stage 3 - "disable ice breath ... for him" - and weaponVariant returns null
+   for exactly that case, so a slot with no variant is simply not in the pool. Driven from the table
+   rather than hand-listed, so stage 3 cannot drop a weapon whose icon and name have nothing to show.
+   Laser Mist joins ordinary ground-weapon RNG only after a real Stage-9 boss kill. Space crates
+   remain the three Gravity Mode systems, so the reward cannot replace them. */
+function crateWeaponPool(unfiltered){
+  const _pool=[0,1,2,3,4,5];
+  const _space=(typeof spaceWeaponsActive==='function'&&spaceWeaponsActive());
+  if(typeof laserMistIsUnlocked==='function'&&laserMistIsUnlocked()&&!_space)_pool.push(6);
+  if(typeof chaingunIsUnlocked==='function'&&chaingunIsUnlocked()&&!_space)_pool.push(7);
+  if(typeof yuriLightningOrbIsUnlocked==='function'&&yuriLightningOrbIsUnlocked()&&
+     typeof _pilotKey==='function'&&_pilotKey()==='yuri'&&!_space)_pool.push(8);
+  for(let _i=_pool.length-1;_i>=0;_i--)if((_pool[_i]===4||_pool[_i]===5)&&
+     typeof weaponVariant==='function'&&weaponVariant(_pool[_i])===null)_pool.splice(_i,1);
+  if(unfiltered) return _pool;
+  if(run && Array.isArray(run.loadout) && run.loadout.length){
+    const kept=_pool.filter(function(w){ return run.loadout.indexOf(w)>=0; });
+    if(kept.length) return kept;
+  }
+  return _pool;
+}
 function spawnContainer(type){
   const x=rnd(40,VW-40);
   if(type==='crate'){ 
@@ -28005,23 +28161,7 @@ function spawnContainer(type){
        rather than by removing it. Putting 5 in the bag TWICE guarantees two
        fireballs across a run instead of leaving it to the shuffle. */
     if(!run._wbag || !run._wbag.length){
-      /* [!] THE BAG HAS TO RESPECT THE SAME RULES AS THE ICON (drop 0812l). Mike withholds the
-         flame slot from Freezer on stage 3 - "disable ice breath ... for him" - and weaponVariant
-         returns null for exactly that case, so a slot with no variant is simply not in the bag.
-         Driven from the table rather than hand-listed, so stage 3 cannot drop a weapon whose icon
-         and name have nothing to show. */
-      const _pool=[0,1,2,3,4,5];
-      /* Laser Mist joins ordinary ground-weapon RNG only after a real Stage-9 boss kill. Space
-         crates remain the three Gravity Mode systems, so the reward cannot replace them. */
-      if(typeof laserMistIsUnlocked==='function'&&laserMistIsUnlocked()&&
-         !(typeof spaceWeaponsActive==='function'&&spaceWeaponsActive()))_pool.push(6);
-      if(typeof chaingunIsUnlocked==='function'&&chaingunIsUnlocked()&&
-         !(typeof spaceWeaponsActive==='function'&&spaceWeaponsActive()))_pool.push(7);
-      if(typeof yuriLightningOrbIsUnlocked==='function'&&yuriLightningOrbIsUnlocked()&&
-         typeof _pilotKey==='function'&&_pilotKey()==='yuri'&&
-         !(typeof spaceWeaponsActive==='function'&&spaceWeaponsActive()))_pool.push(8);
-      for(let _i=_pool.length-1;_i>=0;_i--)if((_pool[_i]===4||_pool[_i]===5)&&
-         typeof weaponVariant==='function'&&weaponVariant(_pool[_i])===null)_pool.splice(_i,1);
+      const _pool=crateWeaponPool();
       if(run.stage===3 && _pool.indexOf(5)>=0) _pool.push(5);      // the fire orb is the stage-3 event
       run._wbag = _pool; for(let i=run._wbag.length-1;i>0;i--){ const j=(Math.random()*(i+1))|0; const t=run._wbag[i]; run._wbag[i]=run._wbag[j]; run._wbag[j]=t; } }
     const _wt0=run._wbag.pop();
@@ -28264,6 +28404,7 @@ function applyPowerup(p){
       // First time acquiring this weapon (level 0/undefined) -> level 1. Otherwise level up.
       const _cur=(run.wlevels[_wt]|0);
       run.weapon=_wt; run.wlevels[_wt]=clamp(_cur+1,1,5); run.wlevel=run.wlevels[_wt];
+      if(typeof forgeApply==='function') forgeApply();          /* a forged weapon brings its element (0917) */
       if(run.wlevels[_wt]>_cur && typeof stageStats!=='undefined') stageStats.upgrades=(stageStats.upgrades|0)+1;   // 0916: counted for the debrief
       achievementWeaponMax(_wt,run.wlevel);
       /* ⚠ THE PICKUP'S BAKED VARIANT WAS READ FOR THE BANNER AND THEN THROWN AWAY (drop 0814a).
@@ -28283,6 +28424,7 @@ function applyPowerup(p){
       Audio.SFX.weapon(); break;
     }
     case 'infuse':
+      if(typeof forgeDiscover==='function') forgeDiscover(p.elem);   /* it can be forged from now on (0917) */
       if(typeof infusionGrant==='function') infusionGrant(p.elem);
       break;
     case 'bomb':
@@ -30874,6 +31016,7 @@ function startRun(fromStage=1){
   run.contUsed=0; run.contBonus=0;   // spent credits and earned Continue Ups reset per run
   run._s5Resume=null;run._s5ResumeArm=0;run._s5GateOut=0;run._s9taken=0;run._l78Entry=0;
   run._missileBonus=null;
+  run.forge={}; run.forgeElems={}; run.loadout=null; run.forgeCombos=0; run.forgeRespecs=0;   // the Forge (0917)
   /* ---- P2's half of a co-op run (drop 0902f) ----------------------------------------------
      Mike's call: SEPARATE lives and SEPARATE scores. So P2 gets its own full allowance off the
      same difficulty rather than a share of P1's — a shared pool lets one player end the other's
@@ -31704,6 +31847,9 @@ function beginStage(num){
   try{ if(typeof warmStage==='function') warmStage(arguments[0]); }catch(e){}
   try{ if(typeof bossBarWarm==='function') bossBarWarm(num); }catch(e){}   // the pack's gauge art, before any warning can show it (0910b)
   curStage=STAGES[num-1];
+  /* the loadout this stage may drop, and the held weapon's permanent element (the Forge, 0917).
+     The bag is rebuilt so the stage draws from THIS loadout, not last stage's leftovers. */
+  try{ if(typeof forgeLoadoutSync==='function') forgeLoadoutSync(); run._wbag=[]; if(typeof forgeApply==='function') forgeApply(); }catch(_fg){}
   playerLocks=[]; _lockBeepT=0;   // a retina never follows the player into the next stage (0912)
   if(typeof groundTargetingReset==='function')groundTargetingReset(); // shared ground warnings never cross stage boundaries
   try{ for(let _ri=0;_ri<4;_ri++){ XART.rdy('retm_'+_ri); XART.rdy('retmb_'+_ri); } }catch(_rw){}
@@ -31957,7 +32103,7 @@ function _hudShow(on, divider){
 }
 function _hudStateWants(s){
   return s===GS.PLAY || s==='paused' || s===GS.LAUNCH || s===GS.WARPENTRY || s===GS.OUTBOUND ||
-         s===GS.INTRO || s===GS.STAGECLEAR || s===GS.UNLOCKS || s===GS.RIVAL;
+         s===GS.INTRO || s===GS.STAGECLEAR || s===GS.UNLOCKS || s===GS.FORGE || s===GS.RIVAL;
 }
 let _pauseMusicVol=null;
 function _pausePresentation(on){
@@ -31990,7 +32136,7 @@ function setState(s){
      card is a full-screen presentation moment, not a gameplay frame with furniture around it. */
   if(s===GS.PILOT)_setPilotViewport();
   else _setCinematicViewport(s===GS.CUTSCENE || s===GS.CAMPAIGNINTRO || s===GS.VICTORY ||
-                        s===GS.STAGECLEAR || s===GS.UNLOCKS);   // the unlock page shares the debrief's plate and aspect
+                        s===GS.STAGECLEAR || s===GS.UNLOCKS || s===GS.FORGE);   // the unlock page and the Forge share the debrief's plate and aspect
   /* The final results card is useful decode time. Start the ending plates here so a player who
      advances immediately never reaches the first line of the finale before its HQ background and
      selected straight-rear aircraft are drawable. The bonus stage returns to the campaign map and
@@ -35086,6 +35232,7 @@ function playerHit(){
      overruled that. Weapon 0 at level 1, every bank at 1, variants cleared. */
   run.weapon=0;run.wlevels=WEAPONS.map(()=>0);run.wlevel=0;run.power=0;manualMissileResetOnDeath(run);   // 0, not 1: 'all other weapons when you acquire them are lvl 1 first' - a pickup adds one
   run.infusion=null;                                                     /* the element goes with the gun (0917) */
+  if(typeof forgeApply==='function') forgeApply();                       /* ...unless it was FORGED on (0917) */
   if(run.wvars) run.wvars=WEAPONS.map(()=>null);
   run.spaceWeapon=(run.spaceWeapon===1)?1:0;run.spaceLevels=[0,1,1];run._spaceVolleyCd=0;   // laser to LEVEL 0 (Mike, 0903)
   if(run._groundLoadout){
@@ -48065,6 +48212,7 @@ function drawScene(dt){
     case 'paused':   playPauseWorldDraw(); return drawPaused(dt);
     case GS.STAGECLEAR: return drawStageClear(dt);
     case GS.UNLOCKS:    return drawUnlocks(dt);
+    case GS.FORGE:      return drawForge(dt);
     case GS.GAMEOVER:return drawGameOver(dt);
     case GS.CONTINUE: return drawContinue(dt);
     case GS.RIFTFALLBACK:return drawRiftFallback(dt);
@@ -59184,6 +59332,10 @@ function campSnapshot(){
        exactly the pre-0814a behaviour. Bumping would have invalidated every existing save to
        add an optional field. */
     wvars:(run.wvars||[]).slice(),
+    /* the Forge (0917): the permanent elements, what has been discovered, and the loadout. Optional
+       fields; CAMP_SAVE_VER is deliberately NOT bumped (an older slot simply has none). */
+    forge:Object.assign({},run.forge||{}), forgeElems:Object.assign({},run.forgeElems||{}),
+    loadout:Array.isArray(run.loadout)?run.loadout.slice():null,
     unlockedMax:campaign.unlockedMax||1, rank:Object.assign({},campaign.rank||{}),
     /* ⚠ PASSWORD UNLOCKS RIDE THE SAVE, AND NOTHING ELSE (Mike, 0909: "if the player loads his
        campaign data and had unlocked her ship or Cole as those are the only passwords currently,
@@ -59209,6 +59361,9 @@ function campApply(s){
   while(run.wlevels.length<WEAPONS.length)run.wlevels.push(0);
   run.wvars = Array.isArray(s.wvars) ? s.wvars.slice() : WEAPONS.map(()=>null);
   while(run.wvars.length<WEAPONS.length)run.wvars.push(null);
+  run.forge=(s.forge&&typeof s.forge==='object')?Object.assign({},s.forge):{};
+  run.forgeElems=(s.forgeElems&&typeof s.forgeElems==='object')?Object.assign({},s.forgeElems):{};
+  run.loadout=Array.isArray(s.loadout)?s.loadout.slice():null;
   if(typeof s.pilotIndex==='number') pilotIndex=s.pilotIndex;
   if(s.diff) diffKey=s.diff;
   DIFF=difficultyForRun(run.mode,diffKey);
@@ -70167,9 +70322,14 @@ function drawStageClear(dt){
       /* THE UNLOCK SCREEN SITS BETWEEN THE DEBRIEF AND THE EXIT (Mike, 0916). Everything the exit
          used to do is scLeaveStage(R) now, so it can run from here OR from the unlock screen's own
          CONTINUE, and no branch of it moved. */
+      /* THE FORGE SITS AFTER THE UNLOCK PAGE (0917): debrief -> unlocks -> forge -> next stage, the
+         order the concept note wrote down. Each page runs the next from its own CONTINUE, and the
+         exit itself is still the one function. */
       const _R=R, _un=unlockRowsFor(run.stage|0, (typeof _pilotKey==='function')?_pilotKey():'');
-      if(_un.length && !drawStageClear._unShown){ drawStageClear._unShown=true; unlocksStart(_un, function(){ drawStageClear._unShown=false; scLeaveStage(_R); }); }
-      else { drawStageClear._unShown=false; scLeaveStage(_R); }
+      const _leave=function(){ drawStageClear._unShown=false; scLeaveStage(_R); };
+      const _forgeThen=function(){ if(typeof forgeVisible==='function' && forgeVisible()) forgeStart(_leave); else _leave(); };
+      if(_un.length && !drawStageClear._unShown){ drawStageClear._unShown=true; unlocksStart(_un, _forgeThen); }
+      else if(!drawStageClear._unShown){ drawStageClear._unShown=true; _forgeThen(); }
     }
   }
 }
@@ -70513,6 +70673,218 @@ function drawUnlocks(dt){
     Input.mouse.down=false;
     const done=U.onDone; unlocks=null;
     if(done) done(); else setState(GS.TITLE);
+  }
+}
+
+/* ============================================================
+   THE FORGE - the screen (0917)
+
+   Debrief plate, debrief language: the six LOADOUT boxes are the plate's own RANK bay cut and
+   repeated (the construction Mike approved for the unlock page after four cuts), the element row
+   sits on the plate's own word strip, and every string goes through the stage face.
+
+   Layout is data (FORGE_ROWS) so a bespoke plate later is a constant change, not a rewrite.
+   ============================================================ */
+/* ⚠ THE ELEMENT STRIP COVERS EVERY BAKED BAY UNDER IT. The plate carries its stat bays, score bay
+   and rank bay as PAINT (y 0.5639-0.6203 and 0.6466-0.8045), and a strip sized only to the badges
+   left the bottom stat pair peeking out above it and the rank bay's foot below - two stray boxes on
+   the first screenshot. Same trap the unlock page hit: an opaque panel under a row has to be at
+   least as tall as the paint it is standing on. */
+const FORGE_ROWS={ box:{x:0.0818, y:0.3300, w:0.8364, h:0.2450}, elems:{x:0.0818, y:0.5720, w:0.8364, h:0.2400} };
+let forge=null;
+function forgeStart(onDone){
+  if(!run.forge) run.forge={};
+  if(!run.forgeElems) run.forgeElems={};
+  run.forgeCombos=FORGE_COMBOS_PER_STAGE; run.forgeRespecs=FORGE_RESPECS_PER_STAGE;
+  const load=forgeLoadoutSync();
+  forge={onDone:onDone||null, t:0, row:0, sel:0, esel:0, msg:'', msgT:0, md:!!(Input&&Input.mouse&&Input.mouse.down),
+         pool:(typeof crateWeaponPool==='function')?crateWeaponPool(true):load.slice()};
+  try{ if(typeof XART!=='undefined'){ Object.keys(INFUSIONS).forEach(function(e){ XART.rdy('inf_'+e); }); XART.rdy('statpanel_full_0916'); } }catch(_fs){}
+  try{ if(Audio.SFX && Audio.SFX.life) Audio.SFX.life(); }catch(_fs2){}
+  setState(GS.FORGE);
+}
+function forgeSay(txt, sfx){
+  if(!forge) return; forge.msg=txt; forge.msgT=2.2;
+  try{ if(sfx && Audio.SFX && Audio.SFX[sfx]) Audio.SFX[sfx](); }catch(_){ }
+}
+function drawForge(dt){
+  const F=forge;
+  const W=(typeof cutsceneViewWidth==='function')?cutsceneViewWidth():VW, H=VH;
+  ctx.fillStyle='#000'; ctx.fillRect(0,0,W,H);
+  if(!F){ setState(GS.TITLE); return; }
+  F.t+=dt; const t=F.t; if(F.msgT>0) F.msgT-=dt;
+  const fade=Math.min(1,t/0.45);
+  const plate=(typeof XART!=='undefined' && XART.rdy('statpanel_full_0916')) ? XART.get('statpanel_full_0916') : null;
+  ctx.save(); ctx.globalAlpha=fade;
+  if(plate){ ctx.imageSmoothingEnabled=false; ctx.drawImage(plate,0,0,W,H); }
+  else { ctx.fillStyle='#14171f'; ctx.fillRect(0,0,W,H); }
+  ctx.restore();
+  const P=[0,0,W,H], S=SC_SLOTS_FULL, bay=function(f){ return [P[0]+P[2]*f[0], P[1]+P[3]*f[1], P[2]*f[2], P[3]*f[3]]; };
+  const art=(typeof curFontArt==='function')?curFontArt():null;
+  const A=function(d){ return Math.max(0,Math.min(1,(t-d)/0.35)); };
+  const load=run.loadout||[], disc=forgeDiscovered();
+  F.sel=clamp(F.sel|0,0,Math.max(0,load.length-1));
+  F.esel=clamp(F.esel|0,0,Math.max(0,disc.length-1));
+  const selW=load.length?load[F.sel]:null;
+  if(art && typeof stageText==='function'){
+    let b=bay(S.title);
+    const tH=(typeof stageFitH==='function')?stageFitH(art,'THE FORGE',b[2]*0.90,b[3]*0.62,10,0.08):b[3]*0.5;
+    stageText(art,'THE FORGE',b[0]+b[2]/2,b[1]+b[3]*0.55,tH,'#ffd24a',0.9,A(0.10),0.08);
+    b=bay(S.pilot);
+    try{
+      const pk=(typeof _pilotKey==='function')?_pilotKey():'axel';
+      const pkey=(typeof scPortrait==='function')?scPortrait(pk,'A'):null;
+      if(pkey && XART.rdy(pkey)){ const im=XART.get(pkey), k=Math.min(b[2]*0.88/im.naturalWidth,b[3]*0.88/im.naturalHeight), w=im.naturalWidth*k, h=im.naturalHeight*k;
+        ctx.save(); ctx.globalAlpha=A(0.15); ctx.drawImage(im,b[0]+(b[2]-w)/2,b[1]+(b[3]-h)/2,w,h); ctx.restore(); }
+    }catch(_){ }
+    /* the brief bay: the allowance, then the line that says what the cursor is on */
+    b=bay(S.brief);
+    const l1='COMBINE  X'+(run.forgeCombos|0)+'      RE-SPEC  X'+(run.forgeRespecs|0)+'      LOADOUT  '+load.length+' OF '+FORGE_LOADOUT_MAX;
+    const h1=Math.min(13,(typeof stageFitH==='function')?stageFitH(art,l1,b[2]*0.94,b[3]*0.42,8,0.06):11);
+    stageText(art,l1,b[0]+b[2]/2,b[1]+b[3]*0.30,h1,'#9fd6ff',0.8,A(0.20),0.06);
+    let l2, l2c='#ffd24a';
+    if(F.msgT>0 && F.msg){ l2=F.msg; l2c='#ffffff'; }
+    else if(F.row===1){ const el=disc[F.esel]; const nm=(FORGE_NAMES[el]&&FORGE_NAMES[el][selW])||(INFUSIONS[el].name+' '+WEAPONS[selW]);
+      l2=WEAPONS[selW]+'  +  '+INFUSIONS[el].name+'   =   '+nm; }
+    else if(selW==null) l2='NOTHING UNLOCKED';
+    else if(!forgeCanTake(selW)) l2=WEAPONS[selW]+' CANNOT TAKE AN ELEMENT';
+    else if(forgeEntry(selW)){ const f=forgeEntry(selW); l2=forgeName(selW)+'   -   '+INFUSIONS[f.elem].name+' LEVEL '+f.lv+'   -   FIRE ADDS, CHARGE RE-SPECS'; }
+    else if(!disc.length) l2='NO ELEMENTS DISCOVERED YET - COLLECT THEM IN THE FIELD';
+    else if((run.forgeCombos|0)<=0) l2='NO COMBINES LEFT THIS STAGE';
+    else l2='FIRE: COMBINE THE '+WEAPONS[selW]+' WITH AN ELEMENT';
+    const h2=Math.min(12,(typeof stageFitH==='function')?stageFitH(art,l2,b[2]*0.94,b[3]*0.40,7,0.06):10);
+    stageText(art,l2,b[0]+b[2]/2,b[1]+b[3]*0.74,h2,l2c,0.8,A(0.25),0.06);
+    /* ---- the six LOADOUT boxes ---- */
+    const R0=FORGE_ROWS.box, RX=P[0]+P[2]*R0.x, RY=P[1]+P[3]*R0.y, RW=P[2]*R0.w, RH=P[3]*R0.h;
+    const pl=plate, pNW=pl?(pl.naturalWidth||pl.width):1, pNH=pl?(pl.naturalHeight||pl.height):1;
+    const boxAsp=(UNLOCK_ART.box[2]*pNW)/(UNLOCK_ART.box[3]*pNH);
+    const n=FORGE_LOADOUT_MAX, gap=RW*0.014;
+    let bw=(RW-gap*(n-1))/n, bh=bw/boxAsp;
+    const nameH=Math.max(8,Math.min(11,RH*0.11));
+    if(bh+nameH*1.9>RH){ bh=RH-nameH*1.9; bw=bh*boxAsp; }
+    const ox=RX+(RW-(bw*n+gap*(n-1)))/2;
+    for(let i=0;i<n;i++){
+      const w=(i<load.length)?load[i]:null, bx=ox+i*(bw+gap), a=A(0.40+i*0.09);
+      if(a<=0) continue;
+      ctx.save(); ctx.globalAlpha=a; ctx.imageSmoothingEnabled=true;
+      if(pl) unlockPanel(pl, UNLOCK_ART.box, bx, RY, bw, bh, false);
+      else { ctx.fillStyle='#16161f'; ctx.fillRect(bx,RY,bw,bh); ctx.strokeStyle='#705848'; ctx.lineWidth=2; ctx.strokeRect(bx+1,RY+1,bw-2,bh-2); }
+      ctx.restore();
+      if(w==null) continue;
+      /* the weapon icon, stretched to the box the way the unlock page does it */
+      if(typeof iconBlit==='function' && typeof weaponIconKey==='function'){
+        const key=weaponIconKey(w, Math.max(1,(run.wlevels&&run.wlevels[w])|0));
+        const ih=bh*0.78, cxp=bx+bw/2, cyp=RY+bh/2;
+        ctx.save(); ctx.globalAlpha=0; const w0=iconBlit(ctx,key,-9999,-9999,ih,true)||0; ctx.restore();
+        const want=bw*0.70, sxk=(w0>0.5)?Math.min(1.35,want/w0):1;
+        ctx.save(); ctx.globalAlpha=a; ctx.translate(cxp,cyp); ctx.scale(sxk,1); iconBlit(ctx,key,0,0,ih,true); ctx.restore();
+        /* a forged weapon wears its element badge in the box's corner, with its level */
+        const f=forgeEntry(w);
+        if(f && XART.rdy('inf_'+f.elem)){
+          const eh=bh*0.34;
+          ctx.save(); ctx.globalAlpha=a; iconBlit(ctx,'inf_'+f.elem,bx+bw-eh*0.62,RY+eh*0.62,eh,true); ctx.restore();
+          stageText(art,'L'+f.lv,bx+bw-eh*0.62,RY+eh*1.22,Math.max(7,eh*0.32),'#ffffff',0.8,a,0.06);
+        }
+      }
+      /* the name beneath: the forged name if it has one */
+      const nm=(typeof weaponDisplayName==='function')?weaponDisplayName(w):WEAPONS[w];
+      const nh=Math.min(nameH,(typeof stageFitH==='function')?stageFitH(art,nm,bw*1.02,nameH,6,0.05):nameH);
+      const f2=forgeEntry(w);
+      stageText(art,nm,bx+bw/2,RY+bh+nameH*0.95,nh,f2?INFUSIONS[f2.elem].body:'#c8d2e2',0.8,a,0.05);
+      /* the cursor: a drawn frame, the same amber as the plate's rails */
+      if(i===F.sel){
+        const pulse=0.55+0.45*Math.sin(t*6);
+        ctx.save(); ctx.globalAlpha=a*(F.row===0?pulse:0.35); ctx.strokeStyle='#ffd24a'; ctx.lineWidth=Math.max(2,bw*0.03);
+        ctx.strokeRect(bx-2,RY-2,bw+4,bh+4); ctx.restore();
+      }
+    }
+    /* ---- the element row, on the plate's own strip so the baked bays never show through ---- */
+    const E0=FORGE_ROWS.elems, EX=P[0]+P[2]*E0.x, EY=P[1]+P[3]*E0.y, EW=P[2]*E0.w, EH=P[3]*E0.h;
+    const ea=A(0.95);
+    if(ea>0){
+      ctx.save(); ctx.globalAlpha=ea; ctx.imageSmoothingEnabled=true;
+      if(pl) unlockPanel(pl, UNLOCK_ART.strip, EX, EY, EW, EH, true);
+      else { ctx.fillStyle='#16161f'; ctx.fillRect(EX,EY,EW,EH); }
+      ctx.restore();
+      const keys=Object.keys(INFUSIONS), eh=EH*0.70, egap=EW*0.012;
+      let ew=eh*0.86; let tot=keys.length*ew+(keys.length-1)*egap;
+      if(tot>EW*0.92){ ew=(EW*0.92-(keys.length-1)*egap)/keys.length; tot=keys.length*ew+(keys.length-1)*egap; }
+      const ex0=EX+(EW-tot)/2, ecy=EY+EH*0.50;
+      for(let i=0;i<keys.length;i++){
+        const el=keys[i], known=disc.indexOf(el)>=0, ecx=ex0+i*(ew+egap)+ew/2;
+        if(!XART.rdy('inf_'+el)) continue;
+        ctx.save(); ctx.globalAlpha=ea*(known?1:0.18); iconBlit(ctx,'inf_'+el,ecx,ecy,eh,true); ctx.restore();
+        if(F.row===1 && disc[F.esel]===el){
+          const pulse=0.55+0.45*Math.sin(t*6);
+          ctx.save(); ctx.globalAlpha=ea*pulse; ctx.strokeStyle=INFUSIONS[el].glow||'#ffffff'; ctx.lineWidth=Math.max(2,ew*0.06);
+          ctx.strokeRect(ecx-ew/2-3,ecy-eh/2-3,ew+6,eh+6); ctx.restore();
+        }
+      }
+    }
+    /* sign-off: what is discovered; footer: the controls */
+    b=bay(S.signoff);
+    const so=disc.length ? ('DISCOVERED: '+disc.map(function(e){ return INFUSIONS[e].name; }).join('  -  ')) : 'ELEMENTS APPEAR HERE AS YOU COLLECT THEM';
+    const soH=Math.min(11,(typeof stageFitH==='function')?stageFitH(art,so,b[2]*0.96,b[3]*0.60,6,0.06):10);
+    stageText(art,so,b[0]+b[2]/2,b[1]+b[3]*0.55,soH,'#9fd6ff',0.8,A(1.0),0.06);
+    b=bay(S.footer);
+    if(A(1.0)>0){
+      const hints=(F.row===1)?[['pad_a','PICK'],['pad_b','BACK']]
+                 :[['pad_a','COMBINE'],['pad_x','RE-SPEC'],['pad_start','CONTINUE']];
+      controlHintRow(hints,b[1]+b[3]*0.55,W/2,W-24);
+    }
+  }
+  /* ---- input. EVERY consuming reader is read ONCE into a local (CLAUDE.md: menuLeft()||menuRight()
+     always resolves to +1 because the second call was eaten by the first). ---- */
+  const mL=(Input.menuLeft?Input.menuLeft():false), mR=(Input.menuRight?Input.menuRight():false);
+  const mU=(Input.menuUp?Input.menuUp():false), mD=(Input.menuDown?Input.menuDown():false);
+  const mB=(Input.menuBack?Input.menuBack():false), mS=(Input.menuStart?Input.menuStart():false);
+  const fire=(keybind.fire||[]).filter(function(k){ return !/^mouse/.test(k); }).some(function(k){ return Input.tap(k); });
+  const charge=(keybind.charge||[]).some(function(k){ return Input.tap(k); });
+  const click=Input.mouse.down&&!F.md; F.md=!!Input.mouse.down;
+  const enter=Input.tap('enter');
+  const ready=t>0.6;
+  if(!ready) return;
+  const blip=function(){ try{ Audio.SFX.blip&&Audio.SFX.blip(); }catch(_){ } };
+  if(F.row===0){
+    if(mL && load.length){ F.sel=(F.sel-1+load.length)%load.length; blip(); }
+    else if(mR && load.length){ F.sel=(F.sel+1)%load.length; blip(); }
+    else if((mU||mD) && load.length){
+      /* swap this slot for a weapon that is unlocked but not in the loadout - only when there are
+         more unlocked than the loadout holds, which is the only time a choice exists */
+      const out=F.pool.filter(function(w){ return load.indexOf(w)<0; });
+      if(out.length){ const cur=load[F.sel]; const k=out.indexOf(cur); const nx=out[(mD? (k+1) : (k-1+out.length+1))%out.length]; load[F.sel]=nx; run.loadout=load; run._wbag=[]; forgeSay('LOADOUT: '+(weaponDisplayName(nx)),'blip'); }
+      else forgeSay('EVERYTHING UNLOCKED IS ALREADY IN THE LOADOUT','blocked');
+    }
+    else if(fire||click){
+      if(selW==null) forgeSay('NOTHING TO COMBINE','blocked');
+      else if(!forgeCanTake(selW)) forgeSay(WEAPONS[selW]+' CANNOT TAKE AN ELEMENT','blocked');
+      else if(!disc.length) forgeSay('NO ELEMENTS DISCOVERED YET','blocked');
+      else if((run.forgeCombos|0)<=0) forgeSay('NO COMBINES LEFT THIS STAGE','blocked');
+      else { F.row=1; const f=forgeEntry(selW); if(f) F.esel=Math.max(0,disc.indexOf(f.elem)); blip(); }
+    }
+    else if(charge){
+      if(selW==null || !forgeEntry(selW)) forgeSay('NOTHING TO RE-SPEC','blocked');
+      else { const r=forgeRespec(selW);
+        if(r==='ok') forgeSay(WEAPONS[selW]+' RESTORED - RE-SPECS LEFT: '+(run.forgeRespecs|0),'powerup');
+        else if(r==='spent') forgeSay('NO RE-SPECS LEFT THIS STAGE','blocked'); }
+    }
+    else if(mS||enter){
+      Input.mouse.down=false;
+      run._wbag=[];
+      const done=F.onDone; forge=null;
+      if(done) done(); else setState(GS.TITLE);
+    }
+  } else {
+    if(mL && disc.length){ F.esel=(F.esel-1+disc.length)%disc.length; blip(); }
+    else if(mR && disc.length){ F.esel=(F.esel+1)%disc.length; blip(); }
+    else if(mB){ F.row=0; blip(); }
+    else if(fire||click||enter){
+      const el=disc[F.esel], r=forgeCombine(selW, el);
+      if(r==='ok'){ const f=forgeEntry(selW); forgeSay(forgeName(selW)+'   LEVEL '+f.lv+'   -   COMBINES LEFT: '+(run.forgeCombos|0),'powerup'); F.row=0; }
+      else if(r==='maxed') forgeSay(forgeName(selW)+' IS ALREADY AT LEVEL '+INFUSION_MAX,'blocked');
+      else if(r==='spent'){ forgeSay('NO COMBINES LEFT THIS STAGE','blocked'); F.row=0; }
+      else { forgeSay('THAT CANNOT BE COMBINED','blocked'); F.row=0; }
+    }
   }
 }
 

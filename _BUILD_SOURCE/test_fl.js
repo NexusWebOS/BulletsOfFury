@@ -15722,6 +15722,7 @@ require('./test_difficulty_tables_0916.cjs')(vm,ctxv,ok);
 require('./test_infusion_0917.cjs')(vm,ctxv,ok);
 require('./test_ngplus_0917.cjs')(vm,ctxv,ok);
 require('./test_evade_0917.cjs')(vm,ctxv,ok);
+require('./test_forge_0917.cjs')(vm,ctxv,ok);
 
 console.log('\n============================================');
 if (errors.length) { console.log('FAILED — ' + errors.length + ' error(s):'); errors.forEach(e => console.log('  ' + e)); process.exit(1); }
