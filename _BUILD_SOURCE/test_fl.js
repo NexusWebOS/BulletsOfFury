@@ -15218,8 +15218,11 @@ console.log('=== 297. Razorback and Tempest weapon geometry; Cole impact sound =
   vm.runInContext("var oldSound298=weaponFeedbackSound,sounds298=[];weaponFeedbackSound=function(n,v){sounds298.push([n,v]);return true;};sonicCharge(SONIC_MAX,true);",ctxv);
   ok(vm.runInContext("pBullets.length===0&&run._sonicChg===SONIC_MAX",ctxv),'held Sonic Boom remains a charge with no duplicate projectile');
   vm.runInContext("sonicCharge(0,false);var wave298=pBullets[0];",ctxv);
-  ok(vm.runInContext("pBullets.length===1&&wave298.pierce&&wave298.dmg===14&&Math.abs(wave298.life-1.024)<1e-9",ctxv),'full pressure feedback preserves the one piercing wave, damage and finite range');
-  ok(vm.runInContext("sounds298.filter(e=>e[0]==='colePressureRelease').length===1&&sounds298.find(e=>e[0]==='colePressureRelease')[1]===1",ctxv),'full pressure release receives one full-strength sound');
+  /* 0917 (Mike: "work like a deadly sonic sound attack"): SONIC_DMG 7 -> 11, so a full charge is round(11*2.0)=22; pinned to the constant so the RULE (0.6 + 1.4p of SONIC_DMG) is what this checks */
+  ok(vm.runInContext("pBullets.length===1&&wave298.pierce&&wave298.dmg===Math.round(SONIC_DMG*2)&&wave298.dmg===22&&Math.abs(wave298.life-1.024)<1e-9",ctxv),'full pressure feedback preserves the one piercing wave, damage (22 at SONIC_DMG 11) and finite range');
+  /* 0917: the release now carries TWO cues - the dedicated coleSonicFull at full strength (the cue that was built and never called before), with the pressure-release feedback under it at a reduced bed (.35+.25p = .6 on a full charge) */
+  ok(vm.runInContext("sounds298.filter(e=>e[0]==='colePressureRelease').length===1&&Math.abs(sounds298.find(e=>e[0]==='colePressureRelease')[1]-0.6)<1e-9",ctxv),'full pressure release receives one pressure-release bed at .6 under the boom');
+  ok(vm.runInContext("sounds298.filter(e=>e[0]==='coleSonicFull').length===1&&Math.abs(sounds298.find(e=>e[0]==='coleSonicFull')[1]-1)<1e-9&&!sounds298.some(e=>e[0]==='coleSonicHalf')",ctxv),'and exactly one full-strength coleSonicFull - the deadly boom cue (0917), never the half cue on a full charge');
   ok(vm.runInContext("sonicFrontGeometry(wave298).w>sonicFrontGeometry({w:34,_p:.2}).w&&sonicFrontGeometry(wave298).h>sonicFrontGeometry({_p:.2}).h",ctxv),'the visible sonic front now reflects charge strength');
   vm.runInContext("var time298=wave298.t;sonicDrawFront(wave298);sonicDrawFront(wave298);",ctxv);
   ok(vm.runInContext("wave298.t===time298",ctxv),'drawing a pressure front cannot accelerate its animation or lifetime');
@@ -15723,6 +15726,7 @@ require('./test_infusion_0917.cjs')(vm,ctxv,ok);
 require('./test_ngplus_0917.cjs')(vm,ctxv,ok);
 require('./test_evade_0917.cjs')(vm,ctxv,ok);
 require('./test_forge_0917.cjs')(vm,ctxv,ok);
+require('./test_sonic_0917.cjs')(vm,ctxv,ok);
 
 console.log('\n============================================');
 if (errors.length) { console.log('FAILED — ' + errors.length + ' error(s):'); errors.forEach(e => console.log('  ' + e)); process.exit(1); }

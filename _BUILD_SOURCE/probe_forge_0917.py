@@ -126,7 +126,8 @@ def main():
         ok(pg.evaluate("() => forge.sel") == 0, 'and back on the MACHINE GUN')
 
         # ---- combine MG + fire ------------------------------------------------------------------
-        tap('j'); ok(pg.evaluate("() => forge.row") == 1, 'FIRE on a weapon opens the element row')
+        tap('j'); ok(pg.evaluate("() => forge.row") == 2, 'FIRE on a slot opens the weapon PICKER first')
+        tap('j'); ok(pg.evaluate("() => forge.row") == 1, 'FIRE on the slot-s own weapon goes on to the element row')
         ok(pg.evaluate("() => forgeDiscovered()[forge.esel]") == 'fire', 'the element cursor starts on FIRE')
         shot('forge_02_pick_element')
         tap('j')
@@ -141,13 +142,14 @@ def main():
         # ---- combine LASER + lightning, then the third combine is refused ----------------------------
         tap('d'); tap('d'); tap('d')
         ok(pg.evaluate("() => run.loadout[forge.sel]") == 3, 'three RIGHT presses land on the LASER')
-        tap('j'); tap('d')
+        tap('j'); tap('j'); tap('d')
         ok(pg.evaluate("() => forgeDiscovered()[forge.esel]") == 'lightning', 'RIGHT on the element row picks LIGHTNING')
         tap('j')
         R2 = pg.evaluate("() => ({f:run.forge[3]||null, c:run.forgeCombos, nm:weaponDisplayName(3)})")
         ok(R2['f'] and R2['f']['elem'] == 'lightning' and R2['nm'] == 'TESLA BEAM', 'the laser is FORGED lightning: TESLA BEAM (%s)' % R2['nm'])
         ok(R2['c'] == 0, 'both combines spent')
         step(20); shot('forge_04_tesla_beam')
+        tap('j')
         tap('j')
         ok(pg.evaluate("() => forge.row") == 0 and 'NO COMBINES' in pg.evaluate("() => forge.msg"),
            'a THIRD combine is refused and says why: %r' % pg.evaluate("() => forge.msg"))
@@ -158,13 +160,45 @@ def main():
         ok(R3['f'] is None and R3['nm'] == 'LASER' and R3['r'] == 1, 'CHARGE re-specs the laser back to LASER, one re-spec left (%s)' % json.dumps(R3))
         step(20); shot('forge_05_respec')
 
-        # ---- swap a loadout slot ----------------------------------------------------------------------
+        # ---- the PICKER: selecting a slot opens a scrollable weapon list, one ding per row -------------
+        # Mike: "when I select a weapon slot, should become like a scrollable list I can select and
+        # ding's with each icon. Missiles is a slot that remains Missiles and will never not be missiles"
+        tap('d'); tap('d'); tap('d')                       # back to slot 4 (the LASER, sel 3)
+        pg.evaluate("() => { window.__blips=0; const b=Audio.SFX.blip; Audio.SFX.blip=function(){ window.__blips++; return b&&b.apply(this,arguments); }; }")
+        tap('j')
+        ok(pg.evaluate("() => forge.row") == 2, 'FIRE on a slot opens the weapon PICKER (row 2)')
+        ok(pg.evaluate("() => forge.pool[forge.psel]===run.loadout[forge.sel]"), 'the list opens on the weapon already in that slot')
+        b0 = pg.evaluate("() => window.__blips|0")
+        tap('s'); p1 = pg.evaluate("() => forge.psel"); tap('s'); p2 = pg.evaluate("() => forge.psel"); tap('w'); p3 = pg.evaluate("() => forge.psel")
+        b1 = pg.evaluate("() => window.__blips|0")
+        ok(p2 == p1 + 1 and p3 == p1, 'DOWN, DOWN, UP move the list cursor exactly +1, +1, -1 (%s)' % str((p1, p2, p3)))
+        ok(b1 - b0 >= 3, 'and each move DINGS (%d blips for 3 moves)' % (b1 - b0))
+        step(20); shot('forge_06_picker')
+        # pick LASER MIST (slot 6), which is unlocked but not in the loadout
+        pg.evaluate("() => { forge.psel = forge.pool.indexOf(6); }")
+        sel_pick = pg.evaluate("() => forge.sel")   # the pick lands in the SELECTED slot, wherever the cursor is
         before = pg.evaluate("() => run.loadout.slice()")
-        tap('s')
+        tap('j')
         after = pg.evaluate("() => run.loadout.slice()")
-        ok(after != before and len(after) == 6 and len(set(after)) == 6 and after[3] in F['pool'] and after[3] not in before,
-           'DOWN swaps the slot for a weapon that was unlocked but NOT in the loadout (%s -> %s)' % (before, after))
-        step(20); shot('forge_06_loadout_swap')
+        ok(after[sel_pick] == 6 and 6 not in before and len(set(after)) == 6 and 2 in after,
+           'FIRE puts the picked weapon in the slot, no duplicates, missiles still in the loadout (%s -> %s)' % (before, after))
+        ok(pg.evaluate("() => forge.row") == 0, 'LASER MIST cannot take an element, so it returns to the boxes (no element row)')
+        # the MISSILES slot never opens the picker
+        mi = pg.evaluate("() => run.loadout.indexOf(2)")
+        pg.evaluate("([i]) => { forge.sel = i; }", [mi])
+        tap('j')
+        ok(pg.evaluate("() => forge.row") != 2 and 'MISSILES STAY MISSILES' in pg.evaluate("() => forge.msg"),
+           'FIRE on the MISSILES slot refuses the picker and says so: %r' % pg.evaluate("() => forge.msg"))
+        pg.evaluate("() => { forge.row = 0; forge.sel = 0; }")
+        # swap: pick a weapon that sits in ANOTHER slot and the two trade places
+        pg.evaluate("() => { forge.sel = 1; }")
+        tap('j'); pg.evaluate("() => { forge.psel = forge.pool.indexOf(run.loadout[4]); }")
+        b4 = pg.evaluate("() => run.loadout[4]"); b1w = pg.evaluate("() => run.loadout[1]")
+        tap('j'); pg.evaluate("() => { forge.row = 0; }")
+        ok(pg.evaluate("([a,b]) => run.loadout[1]===a && run.loadout[4]===b", [b4, b1w]), 'picking a weapon that sits in another slot SWAPS the two slots')
+        pg.evaluate("() => { forge.sel = 0; }")
+        # ---- (the old UP/DOWN cycling is retired; the picker above is the loadout choice) ----------------
+        step(10)
 
         # ---- the save carries it ----------------------------------------------------------------------
         snap = pg.evaluate("() => { const s=campSnapshot(); return {forge:s.forge, elems:s.forgeElems, load:s.loadout}; }")

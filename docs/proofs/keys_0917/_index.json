@@ -1,65 +1,85 @@
 [
   {
-    "key": "inf_fire",
+    "key": "rzb_sonic_wave",
     "ok": true,
-    "w": 56,
-    "h": 65,
-    "opaque": 2832
+    "w": 256,
+    "h": 256,
+    "opaque": 22925
   },
   {
-    "key": "inf_ice",
+    "key": "rzb_sonic_ring",
     "ok": true,
-    "w": 53,
-    "h": 65,
-    "opaque": 2700
+    "w": 256,
+    "h": 256,
+    "opaque": 18119
   },
   {
-    "key": "inf_lightning",
+    "key": "rzb_sonic_charge",
     "ok": true,
-    "w": 53,
-    "h": 65,
-    "opaque": 2700
+    "w": 256,
+    "h": 256,
+    "opaque": 25662
   },
   {
-    "key": "inf_prism",
+    "key": "rzb_sonic_impact",
     "ok": true,
-    "w": 56,
-    "h": 65,
-    "opaque": 2829
+    "w": 256,
+    "h": 256,
+    "opaque": 30288
   },
   {
-    "key": "inf_toxic",
+    "key": "rzb_sonic_bullet",
     "ok": true,
-    "w": 54,
-    "h": 65,
-    "opaque": 2788
+    "w": 256,
+    "h": 256,
+    "opaque": 14223
   },
   {
-    "key": "inf_kinetic",
+    "key": "nsw_dist_2",
     "ok": true,
-    "w": 53,
-    "h": 65,
-    "opaque": 2737
+    "w": 128,
+    "h": 128,
+    "opaque": 4540
   },
   {
-    "key": "inf_chrome",
+    "key": "nsw_circ_2",
     "ok": true,
-    "w": 57,
-    "h": 65,
-    "opaque": 2978
+    "w": 128,
+    "h": 128,
+    "opaque": 6098
   },
   {
-    "key": "inf_water",
+    "key": "nsw_ring_3",
     "ok": true,
-    "w": 53,
-    "h": 65,
-    "opaque": 2742
+    "w": 96,
+    "h": 96,
+    "opaque": 2687
   },
   {
-    "key": "inf_dark",
+    "key": "micon_mg_3",
+    "ok": false
+  },
+  {
+    "key": "micon_spread_3",
+    "ok": false
+  },
+  {
+    "key": "micon_missile_3",
+    "ok": false
+  },
+  {
+    "key": "micon_laser_3",
+    "ok": false
+  },
+  {
+    "key": "micon_iceorb_3",
+    "ok": false
+  },
+  {
+    "key": "micon_chaingun_3",
     "ok": true,
-    "w": 55,
-    "h": 65,
-    "opaque": 2827
+    "w": 96,
+    "h": 112,
+    "opaque": 8529
   }
 ]

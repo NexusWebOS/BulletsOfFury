@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
 """
-capture_forge_0917.py - THE FORGE ON FILM: discover, clear the stage, combine, re-spec, load out,
+capture_forge_0917.py - THE FORGE ON FILM: discover, clear the stage, pick, combine, re-spec, load out,
 and fly the forged gun into the next level.
 
 Mike, 0917: "I wanted to see the in between stage screen of weapons being unlocked, weapons being
-combined, etc. how this system and set works before your next level."
+combined, etc. how this system and set works before your next level." Then: "the forge, when I
+select a weapon slot, should become like a scrollable list I can select and ding's with each icon.
+Missiles is a slot that remains Missiles and will never not be missiles ... I also need to see how
+this combination system would work in action via menus."
 
 One continuous recording, every input a REAL KEY TAP through the game's bind table:
 
@@ -12,12 +15,14 @@ One continuous recording, every input a REAL KEY TAP through the game's bind tab
              element is DISCOVERED for the Forge
   boss     - the Overlord-X dies, the death set-piece and flyover play
   debrief  - STAGE 1 COMPLETE, the real numbers
-  THE FORGE- FIRE on the machine gun -> the element row -> FIRE on INCENDIARY:
-               MACHINE GUN becomes INCENDIARY SLUGS, badge in the box
-             -> the LASER + VOLTAIC = TESLA BEAM
+  THE FORGE- FIRE on the machine gun slot -> the WEAPON LIST opens (the picker), one ding per row
+             -> FIRE keeps the machine gun -> the element row -> FIRE on INCENDIARY:
+               MACHINE GUN becomes INCENDIARY SLUGS, the forged badge in the box
+             -> the LASER: list -> keep -> VOLTAIC = TESLA BEAM
              -> a third combine is REFUSED (two per stage)
              -> CHARGE re-specs the laser back
-             -> DOWN swaps a loadout slot (eight unlocked, six may drop)
+             -> the MISSILES slot refuses the list: MISSILES STAY MISSILES
+             -> a slot's list scrolled to a weapon that is NOT flying, FIRE puts it in the slot
              -> START continues
   stage 2  - the machine gun is INCENDIARY SLUGS from the first frame: the badge in the EQUIPPED
              box, the name, and fire on every round - permanent, no pickup needed
@@ -26,6 +31,9 @@ One continuous recording, every input a REAL KEY TAP through the game's bind tab
 fires once per FRAME (10x, probe_firerate_0917.py).
 ⚠ ONLY THE REEL'S OWN PICKUPS MAY EXIST - the live stage's kills drop their own infusions (stage
 1's bias is kinetic) and one walked into the last reel's captions.
+⚠ THE PICKER GRAMMAR (0917): FIRE on a box opens the list (row 2); UP/DOWN scroll it; FIRE picks
+the highlighted weapon into the slot and, if it can take an element and a combine is left, goes on
+to the element row (row 1); BACK closes the list. The old "FIRE -> element row" is one press short.
 """
 import os, sys, base64, subprocess, json
 ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
@@ -116,6 +124,8 @@ def main():
           dropPowerup = function(){ if(!window.__allowDrop) return; return dp.apply(this, arguments); };
           XART.rdy('statpanel_full_0916'); XART.rdy('nwp_lfi_laser_start'); XART.rdy('chain_bolt_0');
           for(const e of Object.keys(INFUSIONS)) XART.rdy('inf_'+e);
+          /* the forged badges, so the box shows the real plate the moment a weapon is forged */
+          for(const e of Object.keys(INFUSIONS)) for(const s of [0,1,2,3,5,7]) XART.rdy('micon_forge_'+e+'_'+s);
         }""")
         for _ in range(8):
             pg.evaluate(sh.STEP, [8]); pg.wait_for_timeout(440)
@@ -138,13 +148,21 @@ def main():
             pg.evaluate("([k]) => BOSSMODE.hold(k,false)", [k])
             run_for(settle, False)
         def cap(caption):
-            st = pg.evaluate("() => ({s:state, inf:run.infusion?run.infusion.elem+' L'+(run.infusion.lv|0):'none', f:JSON.stringify(run.forge||{})})")
-            print('  %5.1fs  %-62s [%s | %s | forge %s]' % (t[0], caption, st['s'], st['inf'], st['f']), flush=True)
-            log.append({'t': round(t[0], 1), 'caption': caption, 'state': st['s'], 'infusion': st['inf'], 'forge': st['f']})
+            st = pg.evaluate("() => ({s:state, inf:run.infusion?run.infusion.elem+' L'+(run.infusion.lv|0):'none', f:JSON.stringify(run.forge||{}), row:(typeof forge!=='undefined'&&forge)?forge.row:null, sel:(typeof forge!=='undefined'&&forge)?forge.sel:null, load:JSON.stringify(run.loadout||null), msg:(typeof forge!=='undefined'&&forge)?String(forge.msg||''):''})")
+            print('  %5.1fs  %-62s [%s | %s | forge %s | row %s sel %s | load %s | %r]' % (t[0], caption, st['s'], st['inf'], st['f'], st['row'], st['sel'], st['load'], st['msg']), flush=True)
+            log.append({'t': round(t[0], 1), 'caption': caption, 'state': st['s'], 'infusion': st['inf'], 'forge': st['f'], 'row': st['row'], 'sel': st['sel'], 'loadout': st['load'], 'msg': st['msg']})
         def until(pred, cap_s):
             for _ in range(int(cap_s * FPS)):
                 if pg.evaluate(pred): return True
                 run_for(1.0 / FPS)
+            return False
+        def sel_to(w):
+            """walk the box cursor LEFT/RIGHT until the slot holding weapon w is selected (real taps)"""
+            for _ in range(8):
+                cur = pg.evaluate("() => run.loadout[forge.sel]")
+                if cur == w: return True
+                i = pg.evaluate("([w]) => run.loadout.indexOf(w)", [w]); s = pg.evaluate("() => forge.sel")
+                tap('d' if i > s else 'a', 2, 0.45)
             return False
 
         # ---- stage 1: fight, discover two elements ---------------------------------------------
@@ -163,22 +181,35 @@ def main():
         # ⚠ TAP UNTIL THE STATE CHANGES, NEVER A BLIND SECOND PRESS. After 5.5s the debrief is
         # already fully revealed, so ONE press exits it and opens the Forge - and the first cut's
         # unconditional second press was then the Forge's own CONTINUE, which left it before a
-        # single frame of it was filmed. The reel showed stage 2's launch where the Forge should
-        # have been; forgeVisible() was true the whole time (measured at the debrief).
+        # single frame of it was filmed.
         for _ in range(8):
             tap('enter', 2, 0.6)
             if pg.evaluate("() => state==='forge'"): break
             run_for(1.6)
         # ---- THE FORGE --------------------------------------------------------------------------
-        cap('THE FORGE - six loadout boxes, nine elements, two discovered'); run_for(3.2)
-        tap('j', 2, 1.4);             cap('FIRE on the MACHINE GUN - pick an element')
+        cap('THE FORGE - six loadout boxes, nine elements, two discovered'); run_for(3.0)
+        sel_to(0)
+        tap('j', 2, 1.4);             cap('FIRE on the MACHINE GUN slot - the WEAPON LIST opens')
+        tap('s', 2, 0.55); tap('s', 2, 0.55); tap('w', 2, 0.55); tap('w', 2, 0.9)
+        cap('UP / DOWN scroll the list - a ding on every row')
+        tap('j', 2, 1.3);             cap('FIRE keeps the machine gun - now pick an ELEMENT')
         tap('j', 2, 1.6);             cap('INCENDIARY SLUGS - the machine gun is forged, level 1'); run_for(1.6)
-        tap('d', 2, 0.5); tap('d', 2, 0.5); tap('d', 2, 0.8); cap('over to the LASER')
-        tap('j', 2, 1.0); tap('d', 2, 1.0); cap('VOLTAIC for the laser')
+        sel_to(3);                    cap('over to the LASER')
+        tap('j', 2, 1.0);             cap('its list opens on the LASER')
+        tap('j', 2, 0.9); tap('d', 2, 1.0); cap('VOLTAIC for the laser')
         tap('j', 2, 1.6);             cap('TESLA BEAM - both combines spent'); run_for(1.4)
-        tap('j', 2, 1.8);             cap('a THIRD combine - refused, two per stage')
+        tap('j', 2, 0.8); tap('j', 2, 1.8); cap('a THIRD combine - refused, two per stage')
         tap('h', 2, 1.8);             cap('CHARGE: re-spec the laser - it is a LASER again')
-        tap('s', 2, 1.8);             cap('DOWN: swap this loadout slot - eight unlocked, six may drop')
+        sel_to(2)
+        tap('j', 2, 2.0);             cap('the MISSILES slot: MISSILES STAY MISSILES - no list')
+        sel_to(pg.evaluate("() => run.loadout[5]"))
+        tap('j', 2, 1.0);             cap('the last slot: its list holds every unlocked weapon')
+        # scroll until the highlighted weapon is one that is NOT flying (eight unlocked, six fly)
+        for _ in range(9):
+            if pg.evaluate("() => run.loadout.indexOf(forge.pool[forge.psel])<0"): break
+            tap('s', 2, 0.55)
+        cap('DOWN to a weapon that is not in the loadout')
+        tap('j', 2, 1.8);             cap('FIRE: it takes the slot - six fly, the rest wait in the hangar')
         run_for(1.2)
         tap('enter', 2, 0.4);         cap('START: continue to stage 2')
         # ---- stage 2: the forged gun from the first frame ---------------------------------------
@@ -187,7 +218,7 @@ def main():
         pg.evaluate("([k]) => BOSSMODE.hold(k, true)", [key])
         cap('STAGE 2 - INCENDIARY SLUGS from the first shot, no pickup needed'); run_for(5.5)
         pg.evaluate("([k]) => BOSSMODE.hold(k, false)", [key])
-        fin = pg.evaluate("() => ({w:run.weapon, nm:weaponDisplayName(run.weapon), inf:run.infusion?run.infusion.elem+':'+run.infusion.lv:null, pool:crateWeaponPool(), tagged:pBullets.filter(b=>b._inf==='fire').length})")
+        fin = pg.evaluate("() => ({w:run.weapon, nm:weaponDisplayName(run.weapon), icon:weaponIconKey(run.weapon, run.wlevel||1), inf:run.infusion?run.infusion.elem+':'+run.infusion.lv:null, pool:crateWeaponPool(), tagged:pBullets.filter(b=>b._inf==='fire').length})")
         print('  final:', json.dumps(fin), flush=True)
         print('  captured %d frames, %d errors' % (n[0], len(errs)), flush=True)
         for e in errs[:6]: print('   !', e[:200])

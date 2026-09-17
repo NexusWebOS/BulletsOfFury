@@ -1972,6 +1972,12 @@ const XART=(function(){
   const _archRoot='assets/game/stage5_archmage_0916/';
   for(const k of ['master','idle','twirl_throw','ship_transform','spiked_ball','chaingun_detach_fire','chaingun_break_enrage','dual_uzi_assault','spell_raise','death','effects','hammer','hammer_spin','heat_meter','chaingun_icons'])X._src['arch_'+k]=_archRoot+k+'.png';
   for(let i=1;i<=5;i++)X._src['micon_chaingun_'+i]=_archRoot+'chaingun_icon_'+i+'.png';
+  /* THE FORGE'S OWN ICONS (0917): one badge per element x forgeable slot, generated against the
+     authored badge strip (docs/proofs/forge_icons_0917). Loose files under NEW keys - a cell beats
+     the loose-file cache, so they could not share a tier icon's key. weaponIconKey prefers them
+     for a forged slot. */
+  for(const _fe of ['fire','ice','lightning','prism','toxic','kinetic','chrome','water','dark'])
+    for(const _fs of [0,1,2,3,5,7]) X._src['micon_forge_'+_fe+'_'+_fs]='assets/game/ui/forge_0917/micon_forge_'+_fe+'_'+_fs+'.png';
   X._src.fx_ground_strikes_0916='assets/game/shared_targeting_0916/elemental_ground_strikes.png';
   const _yloRoot='assets/game/yuri_lightning_orb_0916/';
   for(let i=1;i<=5;i++){
@@ -5885,6 +5891,9 @@ function weaponDisplayName(w, opt){
 }
 function weaponIconKey(w, lv, opt){
   if(typeof spaceWeaponsActive==='function' && spaceWeaponsActive()) return spaceWeaponIconKey();
+  /* a FORGED slot wears its element's badge on every surface - the Forge boxes, the HUD, the EQUIPPED
+     box, the falling crate (0917). Registered-or-nothing: an unregistered plate keeps the tier icon. */
+  if(typeof forgeEntry==='function'){ const _fe=forgeEntry(w); if(_fe && _fe.elem && XART._src && XART._src['micon_forge_'+_fe.elem+'_'+w]) return 'micon_forge_'+_fe.elem+'_'+w; }
   if(w===6)return 'micon_lasermist_'+clamp(lv||1,1,5);
   if(w===7)return 'micon_chaingun_'+clamp(lv||1,1,5);
   if(w===8)return 'micon_lightningorb_'+clamp(lv||1,1,5);
@@ -8071,6 +8080,8 @@ function forgeLoadoutSync(){
   const pool=(typeof crateWeaponPool==='function')?crateWeaponPool(true):[0,1,2,3,4,5];
   if(pool.length<=FORGE_LOADOUT_MAX){ run.loadout=pool.slice(); return run.loadout; }
   const keep=(run.loadout||[]).filter(function(w){ return pool.indexOf(w)>=0; });
+  /* the FIXED slots (missiles) are in every loadout that can hold them, whatever was chosen */
+  for(const fw in FORGE_FIXED){ const f=+fw; if(pool.indexOf(f)>=0 && keep.indexOf(f)<0) keep.unshift(f); }
   for(let i=0;i<pool.length && keep.length<FORGE_LOADOUT_MAX;i++) if(keep.indexOf(pool[i])<0) keep.push(pool[i]);
   run.loadout=keep.slice(0,FORGE_LOADOUT_MAX);
   return run.loadout;
@@ -9595,7 +9606,8 @@ function weaponFeedbackWarm(pilot){
     ['jchg_0','jchg_1','jchg_2','jchg_3','jwb_ball','jwb_ball_hot','jwb_link','jwb_burst','ndr_dambreaker_bottomthruster_0','ndr_dambreaker_bottomthruster_1','ndr_dambreaker_bottomthruster_2','ndr_dambreaker_bottomthruster_3'];
   if(typeof XART!=='undefined')for(const key of keys)XART.rdy(key);
   if(typeof XART!=='undefined')XART.rdy('ship_'+pilot);
-  if(typeof Snd!=='undefined'&&Snd&&Snd.prepare)Snd.prepare(pilot==='cole'?['colePressureStart','colePressureLoop','colePressureRelease','colePressureImpact']:
+  if(pilot==='cole' && typeof XART!=='undefined'){ try{ XART.rdy('rzb_sonic_wave'); XART.rdy('rzb_sonic_ring'); }catch(_sw){} }   /* the boom's plates (0917) */
+  if(typeof Snd!=='undefined'&&Snd&&Snd.prepare)Snd.prepare(pilot==='cole'?['colePressureStart','colePressureLoop','colePressureRelease','colePressureImpact','coleSonicFull','coleSonicHalf']:
     ['juggernautChargeStart','juggernautChargeLoop','juggernautRamLaunch','juggernautRamLoop','juggernautRamStop','juggernautRamImpact','juggernautChains','juggernautWreckHit','juggernautWreckBlock']);
   if(typeof Snd!=='undefined'&&Snd&&Snd.loopPrepare)for(const name of pilot==='cole'?['colePressureLoop']:['juggernautChains','juggernautChargeLoop','juggernautRamLoop'])Snd.loopPrepare(name);
 }
@@ -9626,9 +9638,15 @@ function sonicFrontGeometry(b){
 }
 function sonicDrawFront(b){
   const g=sonicFrontGeometry(b),p=clamp(b._p||0,0,1);
-  weaponFeedbackArt('nsw_dist_'+g.frame,b.x,b.y,g.w,g.h,g.alpha,0,true);
-  // A dim circular pressure edge gives the crescent thickness without hiding targets.
-  weaponFeedbackArt('nsw_ring_3',b.x,b.y+4,g.w*.90,g.h*1.35,.20+.15*p,0,true);
+  /* THE FRONT IS THE RAZORBACK'S AUTHORED SONIC WAVE (0917) - rzb_sonic_wave, a green pressure arc
+     with a white-hot leading edge, already Cole's green. Its bright edge is authored at the BOTTOM
+     because the tank fires it DOWN at the player; rotated a half turn it leads upward, which is the
+     one derivation that is exact for a symmetric plate. Drawn additively over the distortion frames
+     so the crackle underneath still animates. */
+  weaponFeedbackArt('nsw_dist_'+g.frame,b.x,b.y,g.w,g.h,g.alpha*.7,0,true);
+  const pulse=1+.06*Math.sin((b.t||0)*40);
+  if(!weaponFeedbackArt('rzb_sonic_wave',b.x,b.y-2,g.w*1.9*pulse,g.w*1.9*pulse*.62,(.62+.30*p),Math.PI,true))
+    weaponFeedbackArt('nsw_ring_3',b.x,b.y+4,g.w*.90,g.h*1.35,.20+.15*p,0,true);
 }
 function sonicImpact(x,y,p){
   sonicTrail.push({x:x,y:y,t:0,dur:.30,circ:true,p:p,hit:true});
@@ -29944,7 +29962,7 @@ function updateRetina(dt){
    a faster pea-shooter. ============================================================ */
 const SONIC_SPD = 9.2;              // fast — it is a shockwave, not a shell
 const SONIC_CD  = 0.34;
-const SONIC_DMG = 7;
+const SONIC_DMG = 11;               /* 7 -> 11 (0917, 'deadly'): a full charge is 26, a tap 7 */
 const SONIC_LIFE= 1.6;
 let sonicTrail=[];                  // parked distortion plates, fading where the wave passed
 
@@ -30039,11 +30057,17 @@ function sonicRelease(p){
                  life:SONIC_LIFE*(0.14+p*0.50),      // <-- the fall-short
                  _p:p, pierce:true, dead:false});
   sonicTrail.push({x:player.x, y:player.y-14, t:0, dur:0.26+p*0.18, circ:true, p:p});
-  shake=Math.max(shake, 2+p*7);
-  if(Audio&&Audio.SFX){
-    const S=Audio.SFX, fn=S.coleSonicBoom||(p>=0.98?(S.sonicBoomFull||S.sonicWave||S.laser):(S.sonicBoomHalf||S.sonicWave||S.laser));
-    weaponFeedbackSound('colePressureRelease',.60+.40*p);
-  }
+  /* THE DEADLY SONIC BOOM (Mike, 0917: "feel/sound and work like a deadly sonic sound attack").
+     ⚠ THE RELEASE SOUND WAS BUILT INTO A LOCAL CALLED fn AND NEVER CALLED - coleSonicBoom has been
+     registered, TAME-gated and silent since it landed; only the generic pressure-release feedback
+     ever played. Now: the dedicated cue by charge (full / half, both new, both through the gate),
+     the feedback cue underneath it, a shake that scales with the charge, and a pressure RING off the
+     hull (the Razorback's authored sonic ring, rzb_sonic_ring - already in the game, drawn by the
+     one unit that has a sonic hammer). */
+  sonicTrail.push({x:player.x, y:player.y-14, t:0, dur:0.34+p*0.26, boom:true, p:p});
+  shake=Math.max(shake, 4+p*11);
+  weaponFeedbackSound(p>=0.98?'coleSonicFull':'coleSonicHalf', .72+.28*p);
+  weaponFeedbackSound('colePressureRelease',.35+.25*p);
 }
 /* ONE OWNER FOR THE SHOT (drop 0805v). pShoot still calls this, but it must NOT fire: the
    release path in sonicCharge already handles BOTH cases — a short hold releases at the armed
@@ -30098,6 +30122,12 @@ function sonicDraw(){
   }
   for(const s of sonicTrail){
     const u=clamp(s.t/s.dur,0,1),fi=Math.min(3,Math.floor(u*4));
+    if(s.boom){   /* the release ring: one authored plate, growing off the hull and fading (0917) */
+      const pb=clamp(s.p||0,0,1), wb=(70+70*pb)*(0.35+u*1.15);
+      if(!weaponFeedbackArt('rzb_sonic_ring',s.x,s.y,wb,wb,(.75+.2*pb)*(1-u)*(1-u),0,true))
+        weaponFeedbackArt('nsw_ring_3',s.x,s.y,wb,wb,.5*(1-u),0,true);
+      continue;
+    }
     const key=s.imp?'ndk_imp_'+fi:s.circ?'nsw_circ_'+fi:'nsw_dist_'+fi;
     const p=clamp(s.p||0,0,1),w=s.imp?46*(.8+u*.5):s.circ?(s.hit?38:50)*(1+p*.65)*(.7+u*.65):(s.w||48)*(1+u*.22);
     const h=s.imp||s.circ?w:18+12*p;
@@ -34264,7 +34294,12 @@ function updatePlay(dt){
         if(pierce){
           if(!b._hit) b._hit=[];
           if(b._hit.indexOf(e)<0){ hitEnemy(e,b.dmg); if(typeof stageStats!=='undefined')stageStats.hits++; b._hit.push(e);
-            if(b.kind==='sonic')sonicImpact(b.x,e.y,b._p);
+            if(b.kind==='sonic'){ sonicImpact(b.x,e.y,b._p);
+              /* a pressure wave SHOVES what it passes through (0917, 'work like a deadly sonic
+                 attack'): ordinary hulls are thrown back up the screen by the charge; set-pieces,
+                 grounded units and anything a pattern pins are left where they are */
+              if(!e._dyingT && !(typeof isSetPiece==='function'&&isSetPiece(e)) && !(typeof tankDrivable==='function'&&e._vkind==='tank')){
+                e.y-=6+14*clamp(b._p||0,0,1); e.flash=Math.max(e.flash||0,0.16); } }
             if(chance(0.6)) particles.push({x:b.x,y:e.y,vx:0,vy:0,life:0.12,t:0,r:b.kind==='fire'?7:4,color:b.kind==='fire'?'#ffd36b':'#eafcff',flashring:true}); }
         } else {
           const _shielded=hitEnemy(e,b.dmg); stageStats.hits++;
@@ -70707,6 +70742,60 @@ function forgeSay(txt, sfx){
   if(!forge) return; forge.msg=txt; forge.msgT=2.2;
   try{ if(sfx && Audio.SFX && Audio.SFX[sfx]) Audio.SFX[sfx](); }catch(_){ }
 }
+/* THE WEAPON PICKER (Mike, 0917): "when I select a weapon slot, should become like a scrollable list
+   I can select and ding's with each icon. Missiles is a slot that remains Missiles and will never
+   not be missiles."
+   FIRE on a loadout box opens this list over the element strip - every unlocked weapon, the slot's
+   current one highlighted, a blip on every move. FIRE on a row puts that weapon in the slot (if it
+   already sits in another slot the two SWAP, so the loadout never holds a weapon twice) and then, if
+   it can take an element and a combine is left, flows straight on to the element row. The MISSILES
+   slot never opens the picker: it is missiles, always (FORGE_FIXED). */
+const FORGE_FIXED=Object.freeze({2:1});
+const FORGE_PICK_VIEW=4;
+function forgePickerDraw(F, art, EX, EY, EW, EH, ea, t){
+  const list=F.pool, n=list.length; if(!n) return;
+  F.psel=clamp(F.psel|0,0,n-1);
+  const view=Math.min(n,FORGE_PICK_VIEW), maxS=Math.max(0,n-view);
+  F.pscroll=clamp(Math.min(F.pscroll|0, F.psel), F.psel-view+1, maxS); F.pscroll=clamp(F.pscroll,0,maxS);
+  const rowH=(EH*0.92)/view, x0=EX+EW*0.06, w0=EW*0.88, y0=EY+EH*0.04;
+  const load=run.loadout||[];
+  for(let k=0;k<view;k++){
+    const i=k+F.pscroll, w=list[i], ry=y0+k*rowH, cy=ry+rowH/2;
+    const inLoad=load.indexOf(w), isCur=(load[F.sel]===w), isSel=(i===F.psel);
+    ctx.save(); ctx.globalAlpha=ea*(isSel?0.9:0.55); ctx.fillStyle=isSel?'#2a2416':'#14141c';
+    ctx.fillRect(x0,ry+2,w0,rowH-4); ctx.restore();
+    if(typeof iconBlit==='function' && typeof weaponIconKey==='function'){
+      const key=weaponIconKey(w, Math.max(1,(run.wlevels&&run.wlevels[w])|0));
+      ctx.save(); ctx.globalAlpha=ea; iconBlit(ctx,key,x0+rowH*0.62,cy,rowH*0.84,true); ctx.restore();
+    }
+    const nm=(typeof weaponDisplayName==='function')?weaponDisplayName(w):WEAPONS[w];
+    const tag=isCur?'  -  IN THIS SLOT':(inLoad>=0?'  -  IN SLOT '+(inLoad+1):'');
+    const line=nm+tag;
+    const lh=Math.min(rowH*0.42,(typeof stageFitH==='function')?stageFitH(art,line,w0-rowH*1.5,rowH*0.42,7,0.05):rowH*0.4);
+    const fw=(typeof stageWidth==='function')?stageWidth(art,line,lh,0.05):0;
+    stageText(art,line,x0+rowH*1.25+fw/2,cy,lh,isSel?'#ffd24a':(inLoad>=0?'#9fd6ff':'#c8d2e2'),0.8,ea,0.05);
+    if(isSel){ const pulse=0.55+0.45*Math.sin(t*6);
+      ctx.save(); ctx.globalAlpha=ea*pulse; ctx.strokeStyle='#ffd24a'; ctx.lineWidth=Math.max(2,rowH*0.05);
+      ctx.strokeRect(x0+1,ry+3,w0-2,rowH-6); ctx.restore(); }
+  }
+  /* drawn scroll arrows - never glyphs (25B2/25BC are absent from this face and draw a SPACE) */
+  const ax=EX+EW*0.955, tw2=EW*0.014, th2=EH*0.09;
+  ctx.save(); ctx.fillStyle='#9fd6ff';
+  if(F.pscroll>0){ ctx.globalAlpha=ea*0.85; ctx.beginPath(); ctx.moveTo(ax,EY+EH*0.16); ctx.lineTo(ax+tw2,EY+EH*0.16); ctx.lineTo(ax+tw2/2,EY+EH*0.16-th2); ctx.closePath(); ctx.fill(); }
+  if(F.pscroll<maxS){ ctx.globalAlpha=ea*0.85; ctx.beginPath(); ctx.moveTo(ax,EY+EH*0.84); ctx.lineTo(ax+tw2,EY+EH*0.84); ctx.lineTo(ax+tw2/2,EY+EH*0.84+th2); ctx.closePath(); ctx.fill(); }
+  ctx.restore();
+}
+/* put weapon w into loadout slot i; if w already sits in another slot the two swap. Returns a WORD. */
+function forgePick(i, w){
+  const load=run.loadout||[]; if(i<0||i>=load.length) return 'noslot';
+  if(FORGE_FIXED[load[i]]) return 'fixed';
+  if(FORGE_FIXED[w] && load.indexOf(w)>=0 && load.indexOf(w)!==i) return 'fixedelsewhere';
+  const j=load.indexOf(w);
+  if(j===i) return 'same';
+  if(j>=0){ load[j]=load[i]; }
+  load[i]=w; run.loadout=load; run._wbag=[];
+  return 'ok';
+}
 function drawForge(dt){
   const F=forge;
   const W=(typeof cutsceneViewWidth==='function')?cutsceneViewWidth():VW, H=VH;
@@ -70746,6 +70835,7 @@ function drawForge(dt){
     if(F.msgT>0 && F.msg){ l2=F.msg; l2c='#ffffff'; }
     else if(F.row===1){ const el=disc[F.esel]; const nm=(FORGE_NAMES[el]&&FORGE_NAMES[el][selW])||(INFUSIONS[el].name+' '+WEAPONS[selW]);
       l2=WEAPONS[selW]+'  +  '+INFUSIONS[el].name+'   =   '+nm; }
+    else if(F.row===2) l2='SLOT '+(F.sel+1)+':  UP / DOWN SCROLL   -   FIRE PICKS   -   BACK KEEPS '+WEAPONS[selW];
     else if(selW==null) l2='NOTHING UNLOCKED';
     else if(!forgeCanTake(selW)) l2=WEAPONS[selW]+' CANNOT TAKE AN ELEMENT';
     else if(forgeEntry(selW)){ const f=forgeEntry(selW); l2=forgeName(selW)+'   -   '+INFUSIONS[f.elem].name+' LEVEL '+f.lv+'   -   FIRE ADDS, CHARGE RE-SPECS'; }
@@ -70806,11 +70896,12 @@ function drawForge(dt){
       if(pl) unlockPanel(pl, UNLOCK_ART.strip, EX, EY, EW, EH, true);
       else { ctx.fillStyle='#16161f'; ctx.fillRect(EX,EY,EW,EH); }
       ctx.restore();
+      if(F.row===2) forgePickerDraw(F, art, EX, EY, EW, EH, ea, t);
       const keys=Object.keys(INFUSIONS), eh=EH*0.70, egap=EW*0.012;
       let ew=eh*0.86; let tot=keys.length*ew+(keys.length-1)*egap;
       if(tot>EW*0.92){ ew=(EW*0.92-(keys.length-1)*egap)/keys.length; tot=keys.length*ew+(keys.length-1)*egap; }
       const ex0=EX+(EW-tot)/2, ecy=EY+EH*0.50;
-      for(let i=0;i<keys.length;i++){
+      for(let i=0;i<keys.length && F.row!==2;i++){
         const el=keys[i], known=disc.indexOf(el)>=0, ecx=ex0+i*(ew+egap)+ew/2;
         if(!XART.rdy('inf_'+el)) continue;
         ctx.save(); ctx.globalAlpha=ea*(known?1:0.18); iconBlit(ctx,'inf_'+el,ecx,ecy,eh,true); ctx.restore();
@@ -70828,8 +70919,9 @@ function drawForge(dt){
     stageText(art,so,b[0]+b[2]/2,b[1]+b[3]*0.55,soH,'#9fd6ff',0.8,A(1.0),0.06);
     b=bay(S.footer);
     if(A(1.0)>0){
-      const hints=(F.row===1)?[['pad_a','PICK'],['pad_b','BACK']]
-                 :[['pad_a','COMBINE'],['pad_x','RE-SPEC'],['pad_start','CONTINUE']];
+      const hints=(F.row===1)?[['pad_a','PICK ELEMENT'],['pad_b','BACK']]
+                 :(F.row===2)?[['pad_dpad','SCROLL'],['pad_a','SELECT'],['pad_b','BACK']]
+                 :[['pad_a','SELECT SLOT'],['pad_x','RE-SPEC'],['pad_start','CONTINUE']];
       controlHintRow(hints,b[1]+b[3]*0.55,W/2,W-24);
     }
   }
@@ -70848,19 +70940,17 @@ function drawForge(dt){
   if(F.row===0){
     if(mL && load.length){ F.sel=(F.sel-1+load.length)%load.length; blip(); }
     else if(mR && load.length){ F.sel=(F.sel+1)%load.length; blip(); }
-    else if((mU||mD) && load.length){
-      /* swap this slot for a weapon that is unlocked but not in the loadout - only when there are
-         more unlocked than the loadout holds, which is the only time a choice exists */
-      const out=F.pool.filter(function(w){ return load.indexOf(w)<0; });
-      if(out.length){ const cur=load[F.sel]; const k=out.indexOf(cur); const nx=out[(mD? (k+1) : (k-1+out.length+1))%out.length]; load[F.sel]=nx; run.loadout=load; run._wbag=[]; forgeSay('LOADOUT: '+(weaponDisplayName(nx)),'blip'); }
-      else forgeSay('EVERYTHING UNLOCKED IS ALREADY IN THE LOADOUT','blocked');
-    }
-    else if(fire||click){
-      if(selW==null) forgeSay('NOTHING TO COMBINE','blocked');
-      else if(!forgeCanTake(selW)) forgeSay(WEAPONS[selW]+' CANNOT TAKE AN ELEMENT','blocked');
-      else if(!disc.length) forgeSay('NO ELEMENTS DISCOVERED YET','blocked');
-      else if((run.forgeCombos|0)<=0) forgeSay('NO COMBINES LEFT THIS STAGE','blocked');
-      else { F.row=1; const f=forgeEntry(selW); if(f) F.esel=Math.max(0,disc.indexOf(f.elem)); blip(); }
+    else if((fire||click||mU||mD) && load.length){
+      /* selecting a slot opens the scrollable weapon list - except the MISSILES slot, which is
+         missiles for ever and goes straight to its element row */
+      if(selW==null) forgeSay('NOTHING TO SELECT','blocked');
+      else if(FORGE_FIXED[selW]){
+        if(!forgeCanTake(selW)) forgeSay('MISSILES STAY MISSILES','blocked');
+        else if(!disc.length) forgeSay('MISSILES STAY MISSILES - NO ELEMENTS DISCOVERED YET','blocked');
+        else if((run.forgeCombos|0)<=0) forgeSay('MISSILES STAY MISSILES - NO COMBINES LEFT','blocked');
+        else { forgeSay('MISSILES STAY MISSILES - PICK AN ELEMENT','blip'); F.row=1; const f=forgeEntry(selW); if(f) F.esel=Math.max(0,disc.indexOf(f.elem)); }
+      }
+      else { F.row=2; F.psel=Math.max(0,F.pool.indexOf(selW)); F.pscroll=0; blip(); }
     }
     else if(charge){
       if(selW==null || !forgeEntry(selW)) forgeSay('NOTHING TO RE-SPEC','blocked');
@@ -70873,6 +70963,26 @@ function drawForge(dt){
       run._wbag=[];
       const done=F.onDone; forge=null;
       if(done) done(); else setState(GS.TITLE);
+    }
+  } else if(F.row===2){
+    const n=F.pool.length;
+    if(mU && n){ F.psel=(F.psel-1+n)%n; blip(); }          /* a ding on every row */
+    else if(mD && n){ F.psel=(F.psel+1)%n; blip(); }
+    else if(mB){ F.row=0; blip(); }
+    else if(fire||click||enter){
+      const w=F.pool[F.psel], r=forgePick(F.sel, w);
+      if(r==='fixedelsewhere'){ forgeSay('MISSILES STAY IN THEIR OWN SLOT','blocked'); }
+      else {
+        if(r==='ok') forgeSay('SLOT '+(F.sel+1)+':  '+(weaponDisplayName(w)),'powerup');
+        /* then straight on to the element row if this weapon can take one and a combine is left */
+        if(forgeCanTake(w) && disc.length && (run.forgeCombos|0)>0){ F.row=1; const f=forgeEntry(w); F.esel=f?Math.max(0,disc.indexOf(f.elem)):0; }
+        else { F.row=0;
+          /* a weapon that COULD take an element but has no combine left says so, rather than the
+             list simply closing - a silent return reads as a button that did nothing */
+          if(forgeCanTake(w) && disc.length && (run.forgeCombos|0)<=0) forgeSay('NO COMBINES LEFT THIS STAGE','blocked');
+          else if(forgeCanTake(w) && !disc.length) forgeSay('NO ELEMENTS DISCOVERED YET','blocked');
+          else if(r==='same') blip(); }
+      }
     }
   } else {
     if(mL && disc.length){ F.esel=(F.esel-1+disc.length)%disc.length; blip(); }
@@ -71387,6 +71497,11 @@ if(window.BOFA && BOFA.sfx){
     laserMistBloom:'assets/game/sounds/laser_mist_bloom_0913.wav',
     laserMistImpact:'assets/game/sounds/laser_mist_impact_0913.wav',
     coleSonicBoom:'assets/game/sounds/reviewed_cole_sonic_release.wav',
+    /* THE DEADLY SONIC BOOM (Mike, 0917): two cues, one family, generated through the gated sheet
+       _BUILD_SOURCE/sfx/sonic.json - the first pair was refused as pure bass (0.016 above 2 kHz), the
+       shipped pair peaks 1% / 24% in with 0.89 of its energy above 2 kHz. Full charge / half charge. */
+    coleSonicFull:'assets/game/sounds/cole_sonic_full.wav',
+    coleSonicHalf:'assets/game/sounds/cole_sonic_half.wav',
     sonicChargeStart:'assets/game/sounds/reviewed_cole_sonic_charge_start.wav',
     sonicChargeLoop:'assets/game/sounds/reviewed_cole_sonic_charge_loop.wav',
     laserBeamStart:'assets/game/sounds/reviewed_player_laser_beam_start.wav',
@@ -71878,6 +71993,8 @@ const Snd=(function(){
     laserMistBloom:{g:0.62,lp:6500,min:0.06},
     laserMistImpact:{g:0.6,lp:6500,min:0.1},
     coleSonicBoom:       {g:0.72, min:0.16},
+    coleSonicFull:       {g:0.84, min:0.30},
+    coleSonicHalf:       {g:0.70, min:0.16},
     sonicChargeStart:    {g:0.62, lp:6200, min:0.35},
     sonicChargeLoop:     {g:0.50, lp:5600},
     /* Held weapons are foreground voices. The reviewed laser body measures roughly -21 dBFS;

@@ -1,0 +1,35 @@
+{
+  "_note": [
+    "COLE'S SONIC BOOM. Mike, 2026-09-17: 'I also need Cole's Sonic Wave/Boom to be upgraded and",
+    "feel/sound and work like a deadly sonic sound attack.'",
+    "",
+    "Measured before writing a prompt: sonicRelease() builds its own sound function (coleSonicBoom /",
+    "sonicBoomFull / sonicBoomHalf) into a local called fn and NEVER CALLS IT - only the generic",
+    "colePressureRelease feedback plays. The dedicated release has been registered, TAME-gated and",
+    "silent since it landed. That is half of 'does not feel deadly' before any new sample.",
+    "",
+    "SECOND CUT. The first pair was REFUSED by the gate as pure bass (0.016 and 0.006 of energy above",
+    "2 kHz against 0.08) even with the crack named first - 'sonic boom' and 'sub-bass thump' pulled",
+    "the whole render down, and the half cue also swelled in (transient at 48%). So the subject is",
+    "now a SHRILL sonic screech - a bright, glassy, piercing thing - with the thump demoted to a",
+    "short afterthought and sub-bass forbidden outright. Both class 'impact'."
+  ],
+  "sounds": [
+    {
+      "key": "cole_sonic_full",
+      "class": "impact",
+      "seconds": 1.4,
+      "max_seconds": 1.0,
+      "influence": 0.85,
+      "prompt": "Piercing high-frequency sonic screech weapon blast. Starts INSTANTLY with a bright shrill glassy metallic crack, like a whip crack fused with a shattering high-pitched resonant ring - sharp treble first, then a very short mid punch and a fast metallic zing decay. Bright and cutting, NO sub-bass, no rumble, no silence before the hit, no reverb, no music. Retro 16-bit arcade shoot-em-up sound effect."
+    },
+    {
+      "key": "cole_sonic_half",
+      "class": "impact",
+      "seconds": 0.9,
+      "max_seconds": 0.6,
+      "influence": 0.85,
+      "prompt": "Short shrill sonic pulse weapon shot. An instant bright glassy click-crack on the very first millisecond, high-pitched and cutting, then a brief descending metallic zip. Treble-forward, NO sub-bass, no rumble, no silence before the hit, no reverb, no music. Retro 16-bit arcade shoot-em-up video game sound effect, tight."
+    }
+  ]
+}

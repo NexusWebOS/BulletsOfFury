@@ -79,9 +79,11 @@ plate's word strip, every string goes through the stage face. Layout is data (`F
 bespoke plate later is a constant change. `docs/marketing_0916/forge_concept_a.png` remains the
 concept plate.
 
-Controls: LEFT/RIGHT walk the boxes · UP/DOWN swap the slot's weapon · FIRE combine (opens the
-element row; FIRE again picks, BACK cancels) · CHARGE re-spec · START continue. A click acts as FIRE
-on the current selection.
+Controls (0917, second cut): LEFT/RIGHT walk the boxes · FIRE / UP / DOWN on a box open the WEAPON
+LIST for that slot (UP/DOWN scroll it with a ding per row, FIRE picks the highlighted weapon into the
+slot and goes on to the element row when it can take one and a combine is left, BACK keeps what was
+there) · on the element row LEFT/RIGHT pick, FIRE combines, BACK cancels · CHARGE re-spec · START
+continue. A click acts as FIRE on the current selection. The MISSILES slot never opens the list.
 
 ## Three things this build settled, none of them by reading
 
@@ -106,3 +108,54 @@ on the current selection.
 - Whether an in-play pickup of a *different* element should be allowed to displace a forged one for the
   rest of the stage (it does today, as a temporary fusion), or whether the forge should be exclusive.
 - The concept plate (`forge_concept_a.png`) as a bespoke background instead of the debrief plate.
+
+## Second cut (0917, later the same day): the picker, the forged badges, the deadly boom
+
+Mike: *"the forge, when I select a weapon slot, should become like a scrollable list I can select
+and ding's with each icon. Missiles is a slot that remains Missiles and will never not be missiles. I
+wanted weapon icons of each type after being upgraded with our element type, generate those. I also
+need Cole's Sonic Wave/Boom to be upgraded and feel/sound and work like a deadly sonic sound attack."*
+
+**The picker** (`forgePickerDraw` / `forgePick`, `F.row===2`). Selecting a box opens a scrollable
+list of every unlocked weapon - icon, name, and where it sits (`IN THIS SLOT` / `IN SLOT n`) - four
+rows in view (`FORGE_PICK_VIEW`), drawn scroll arrows (the face has no triangle glyph; a lettered arrow
+is an invisible affordance). A pick into a slot that already holds another weapon SWAPS the two, so the
+loadout can never carry a duplicate. `FORGE_FIXED={2:1}`: missiles are in every loadout and their box
+refuses the list (`MISSILES STAY MISSILES`), going straight to the element row when an element can
+be combined. A weapon that could take an element but has no combine left says `NO COMBINES LEFT THIS
+STAGE` rather than the list silently closing - a silent return reads as a button that did nothing.
+
+**The forged badges** are 54 generated plates, `assets/game/ui/forge_0917/micon_forge_<elem>_<slot>.png`
+(9 elements x slots 0/1/2/3/5/7), one 3x3 sheet per weapon generated against the authored badge strip
+(`docs/proofs/forge_icons_0917/ref_*.png`, uploaded as the reference asset) with a STRICT prompt - every
+cell the same frame, the same emblem, the same `I` tag, only the element changing. `weaponIconKey`
+answers `micon_forge_<elem>_<w>` for a forged slot on every surface - the Forge boxes, the picker, the
+HUD, the EQUIPPED box, the falling crate - and only when the plate is registered, so a missing sheet
+keeps the tier icon instead of drawing a hole.
+- ⚠ **The RAW render is what gets cut** (`forge_icons_slice_0917.py`): the pixel_url is a 200px downscale
+  of nine badges. The raw is on WHITE, so cells come from the sheet's own gutters, the white is punched
+  by a flood from each cell's BORDER (a global sweep pinholes the chrome and ice badges), and the
+  surviving rim fringe is converted to a dark edge, never deleted.
+- ⚠ **Two of the first three MG sheets lost the gun** - the emblem drifted into a generic crystal or the
+  tag vanished on half the cells. "Every cell contains the SAME ... emblem, never omit it" in the prompt
+  is what held; read every cell before slicing.
+- ⚠ **The reference strip's frame colour leaks**: the orb's first sheet came back with the reference
+  badge's GREEN frame on every cell (it is a tier-3 badge, and tier 3 is green). The second variation
+  keyed the frame to the element; pick by frame, not just by emblem.
+- ⚠ **The chaingun is the EIGHTH weapon and `forgeLoadoutSync` fills six in pool order**, so a probe
+  that forges slot 7 and expects a box for it measures 0 blits on a build that draws it perfectly. Put
+  it in the loadout first.
+
+**Cole's boom** (`probe_sonic_0917.py` 12/0, suite section 371): the dedicated release cue used to be
+built into a local and NEVER CALLED; a full charge now asks for `coleSonicFull` and a partial for
+`coleSonicHalf` (two new gated cues, `_BUILD_SOURCE/sfx/sonic.json`, TAME rows with retrigger gates).
+The wavefront is the Razorback's authored pressure arc `rzb_sonic_wave` rotated to lead upward, a
+release ring (`rzb_sonic_ring`) grows off the hull, `SONIC_DMG` 7 -> 11 (a full charge is 26), the
+camera kicks with the charge, and the wave SHOVES ordinary hulls back up the screen as it pierces
+(`e.y -= 6 + 14 x charge`). Set-pieces and tanks are not shoved.
+- ⚠ A prompt whose subject is inherently low-frequency comes back as pure bass and the generator's
+  impact gate refuses it; naming the bright transient first is what passed both cues (0912j's lesson,
+  reproduced).
+
+Probes: `probe_forge_0917.py` 40/0, `probe_forge_icons_0917.py` 16/0, `probe_sonic_0917.py` 12/0.
+Reel: `_shots/forge_0917/BulletsOfFury_Forge_0917.mp4` (`capture_forge_0917.py`, the picker grammar).
