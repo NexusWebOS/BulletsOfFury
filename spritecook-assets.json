@@ -119,6 +119,11 @@
       "asset_id": "74fafde9-9458-4486-9919-3b5a9c5d64a2",
       "sha12": "4661445373eb",
       "label": "Campaign map v2 (0912v) first cloud sheet - SUPERSEDED, not shipped (its 3px grain read chunky beside the islands)"
+    },
+    {
+      "asset_id": "642971c5-25e9-413f-9d30-357171c472ac",
+      "sha12": "a85d5ab995b2",
+      "label": "Solo campaign cockpit frame"
     }
   ]
 }

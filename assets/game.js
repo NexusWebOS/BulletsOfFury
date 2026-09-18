@@ -2187,6 +2187,8 @@ const XART=(function(){
   X._src['cinbg_hq_beach']='assets/game/cinematic_campaign/exteriors_generated_official/02_fury_hq_beach_approach_official_generated.png';
   X._src['cinbg_hq_gate']='assets/game/cinematic_campaign/exteriors_generated_official/03_fury_hq_jungle_gate_official_generated.png';
   X._src['cinbg_jungle']='assets/game/cinematic_level_approaches/stage01_rumble_in_the_jungle_approach.png';
+  X._src['cinbg_hq_warroom']='assets/game/cinematic_backgrounds/fury_hq/04_strategic_war_room.png';
+  X._src['cin_cockpit_frame']='assets/game/cinematic_campaign/solo_cockpit_frame.png';
   /* ENDING CINEMATIC (0902). Keep these code-owned like the other cinematic plates: manifest.js
      is generated and must not be the only place that knows the finale exists. The two creature
      files are true RGBA cutouts; the HQ and satellite dish remain RGB background masters. */
@@ -39685,7 +39687,7 @@ function gravityModeDrawShip(drawX,drawY,drawSize,planeH){
     if(typeof dlgBox==='function')dlgBox({who:'FURY HQ',tint:'#ffb347',full,shown,fade,portrait:false,
       /* Keep the dispatch above the aircraft.  The bottom slot masks the incoming side/bottom
          pieces and makes the first transformation beat look empty even though it is running. */
-      pw:Math.min(VW-20,460),ph:Math.min(138,Math.round(VH*0.26)),x:10,y:10,screenSpace:false});
+      pw:Math.round(VW*.76),ph:Math.min(128,Math.round(VH*.25)),x:Math.round(VW*.12),y:12,screenSpace:false});
   }
   if(!newFury&&phase==='pixelglow')gravityWhite(clamp((gravityMode.t/GRAVITY_PIXEL_DUR-0.44)/0.56,0,1)*0.58);
   else if(!newFury&&phase==='whiteout') gravityWhite(0.58+0.42*clamp(gravityMode.t/GRAVITY_WHITE_DUR,0,1));
@@ -41204,14 +41206,17 @@ function dlgBox(o){
       ? commPortrait(_pk, _talking?'talk':(o.emo||'idle')) : null);
   const _hasPort=!!(_portK && typeof XART!=='undefined' && XART.rdy(_portK));
 
-  const PAD=10;
-  const pw=Math.min(VW-PAD*2, o.pw || (VW-20));
+  const PAD=10, inPlay=(typeof state!=='undefined' && state===GS.PLAY);
+  const dialogueViewW=(typeof state!=='undefined' && state===GS.CAMPAIGNINTRO)?cutsceneViewWidth():VW;
+  const pw=Math.min(dialogueViewW-PAD*2, o.pw || (inPlay?Math.round(VW*.76):dialogueViewW-20));
   const column=pw-32-(_hasPort?74:0);
   const needed=msgBlockLayout(full,column,1000,14,14,1.3).height+52;
-  const ph=Math.min(Math.round(VH*.43),Math.max(o.ph||Math.round(pw*.28),needed));
-  const x=(o.x!=null) ? o.x : PAD;
-  const hudClearance=(typeof state!=='undefined' && state===GS.PLAY)?76:PAD;
-  const y=(o.y!=null) ? o.y : (VH-ph-hudClearance);
+  const ph=Math.min(Math.round(VH*(inPlay?.29:.43)),Math.max(o.ph||Math.round(pw*.28),needed));
+  const x=(o.x!=null) ? o.x : Math.round((dialogueViewW-pw)/2);
+  const lowerY=VH-ph-155;
+  const playerInLowerBand=inPlay && typeof player!=='undefined' && player &&
+    player.y>lowerY-20 && player.y<lowerY+ph+24;
+  const y=(o.y!=null) ? o.y : (inPlay?(playerInLowerBand?54:lowerY):(VH-ph-PAD));
 
   /* drawPanel already tries XART itself and returns false only when the plate has not decoded,
      so the fallback here is for that one case and nothing else. */
@@ -50813,70 +50818,75 @@ function hqEnd(){
   if(d) d(); else setState(GS.CAMPHUB);
 }
 
-/* fire the scene for a boundary if it has one and has not played this run */
+/* Group HQ scenes remain archived, while live campaign boundaries pass through.
+   The selected pilot narrates Stage 1's return flight in campaignIntro. */
 function hqTrigger(when, stage, onDone){
-  if(!run || run.mode!=='campaign'){ if(onDone) onDone(); return false; }
-  const id = HQ_AT[when] && HQ_AT[when][stage];
-  /* ⚠ STAGE 1 IS THE ONE BOUNDARY THAT HAS BOTH, AND THEY GO IN NARRATIVE ORDER. The per-pilot
-     opening is the flight home after the attack and it ENDS at HQ; the ensemble scene is the
-     briefing in that room. Playing the briefing first would have the team discussing an arrival
-     that has not happened yet. So: opening -> briefing -> stage. */
-  if(when==='pre' && stage===1){
-    const pk=(typeof _pilotKey==='function')?_pilotKey():String(run.pilot||'axel');
-    const oid='OPEN_'+pk;
-    const briefing=()=>{ if(id && !hqSeen[id]) hqPlay(id,onDone); else if(onDone) onDone(); };
-    if(!hqSeen[oid] && typeof PILOT_OPENINGS!=='undefined' && PILOT_OPENINGS[pk])
-      return hqPlayPilot(pk, briefing);
-    briefing(); return true;
-  }
-  if(!id || hqSeen[id]){ if(onDone) onDone(); return false; }
-  return hqPlay(id, onDone);
+  if(onDone)onDone();
+  return false;
 }
 
+/* The campaign opens on the chosen pilot's flight home. All art is composed at runtime:
+   top-down aircraft, individual front pose, SpriteCook cockpit, and the authored dialogue frame.
+   The diagonal clip is the comic cut; no group plates or pseudo aircraft are involved. */
 const CAMPAIGN_INTRO_BEATS=[
-  {at:0.0,to:3.5,key:'cinbg_hq_aerial',pan:.30,head:'FURY HQ - EARTH DIVISION',
-   body:"Hidden off the coast, FURY HQ is home to Earth's strongest elite pilots."},
-  {at:3.5,to:6.8,key:'cinbg_hq_beach',pan:.30,head:'THE HIDDEN FORTRESS',
-   body:'Mercenaries, former militia and specialists without official affiliation were chosen for one reason: defend the globe.'},
-  {at:6.8,to:10.1,key:'cinbg_hq_gate',pan:.48,head:'THE LAST LINE OF RESISTANCE',
-   body:'The United States government formed FURY for secret and covert missions - and to fight back if an enemy ever seized control.'},
-  {at:10.1,to:13.6,key:'cinintro_team',pan:.50,head:'NINE PILOTS. ONE MISSION.',
-   body:'Different histories and different loyalties, united against every known and unknown threat to our world.'},
-  {at:13.6,to:17.0,key:'cinintro_command',pan:.50,head:'THEN, WITHOUT WARNING...',
-   body:'One night beneath the darkened sky, a digital virus began spreading through every network it touched.'},
-  {at:17.0,to:20.6,key:'cut_furyhq_command_center',pan:.50,head:'SYSTEMS COMPROMISED',virus:true,
-   body:'Vehicles. Aircraft. Automobiles. Entire defense systems turned hostile, moving as though they possessed minds of their own.'},
-  {at:20.6,to:24.6,key:null,head:'ONE FINAL DISPATCH',virus:true,
-   body:'With no explanation and one last call for help, the team launched to learn what happened, why it happened - and who did this.'}
+  {at:0,to:3.0,bg:'cinbg_hq_aerial',who:'FURY HQ',
+   text:'Earth Division was built to stop threats the world was never meant to see.'},
+  {at:3.0,to:6.3,bg:'cinbg_hq_warroom',who:'FURY HQ',
+   text:'At 02:17, our defense grid turned against us. The fleet scattered. Every return route went dark.'},
+  {at:6.3,to:9.7,comic:true,who:'FURY HQ',
+   text:'All pilots, report. The Jungle Corridor is the only path back to Fury HQ. Stay below the hostile radar.'},
+  {at:9.7,to:13.1,comic:true,who:'PILOT',pilotLine:'report'},
+  {at:13.1,to:16.4,comic:true,who:'FURY HQ',
+   text:'You are our only signal. Fight through the jungle and get home. We will keep the lights on.'},
+  {at:16.4,to:19.7,comic:true,who:'PILOT',pilotLine:'resolve'}
 ];
-const CAMPAIGN_INTRO_FINALE=24.6, CAMPAIGN_INTRO_DONE=28.7;
+const CAMPAIGN_SOLO_LINES={
+  axel:{report:'HQ, Axel here. My wing is gone. I am flying solo over the jungle coast.',
+        resolve:'Keep the lights on, HQ. I am bringing this ship home.'},
+  decker:{report:'HQ, Decker. My cloak is holding, but the grid knows my route. Jungle ahead.',
+          resolve:'I can beat their sensors. Get the runway ready for me.'},
+  maverick:{report:'HQ, Maverick. My contract did not mention an army of hacked machines.',
+            resolve:'Never mind the contract. I am coming back for my people.'},
+  freezer:{report:'HQ, Freezer. I lost Axel in the blackout. I am taking the jungle alone.',
+           resolve:'Tell him I am still flying. I will break through.'},
+  juggernaut:{report:'HQ, Juggernaut here. No wingman, no backup, and a whole jungle in my way.',
+              resolve:'Good. Tell the jungle to get out of my way.'},
+  yuri:{report:'HQ, Yuri. My instruments are dead, but I can follow the jungle river home.',
+        resolve:'I will find the corridor. I will find all of you.'},
+  lizzie:{report:'HQ, Lizzie. Falva is off my scope. I am flying the jungle route alone.',
+          resolve:'I will clear the way. She can follow the trail I leave.'},
+  falva:{report:'HQ, Falva. Lizzie is out of range. I am alone above the jungle.',
+         resolve:'I know these skies. I am coming home, and I will find her.'},
+  cole:{report:'HQ, Cole. Command is dark. I am staying airborne through the jungle.',
+        resolve:'Hold that signal. Earth Division is not finished yet.'}
+};
+const CAMPAIGN_INTRO_FINALE=19.7, CAMPAIGN_INTRO_DONE=23.1;
 let campaignIntro=null, campaignIntroPilot=null;
 function campaignIntroPickPilot(){
   if(campaignIntroPilot)return campaignIntroPilot;
-  const pool=(typeof PILOTS!=='undefined'&&PILOTS.length)?PILOTS.map(p=>p.key):['axel'];
-  campaignIntroPilot=pool[(Math.random()*pool.length)|0]||'axel';return campaignIntroPilot;
+  campaignIntroPilot=(typeof PILOTS!=='undefined'&&PILOTS[pilotIndex])?PILOTS[pilotIndex].key:((run&&run.pilot)||'axel');
+  return campaignIntroPilot;
 }
 function campaignIntroKeys(){
-  return ['cinbg_hq_aerial','cinbg_hq_beach','cinbg_hq_gate','cinintro_team','cinintro_command',
-          'cut_furyhq_command_center',cinShipKey(campaignIntroPickPilot(),1),
-          'mgcf_1_0','mgcf_1_1','mgcf_1_2','mgcf_1_3','mgcf_1_4','mgcf_1_5'];
+  const pk=campaignIntroPickPilot();
+  return ['cinbg_hq_aerial','cinbg_hq_warroom','cinbg_jungle','cin_cockpit_frame',
+          'pose_'+pk+'_0',cinShipKey(pk,1),'dlg_window','dlg_'+pk];
 }
 function campaignIntroWarm(){
   if(typeof XART==='undefined')return false;
-  for(const k of campaignIntroKeys()){
-    if(XART._touch&&XART._src&&XART._src[k])XART._touch(k);else XART.rdy(k);
-  }
+  for(const k of campaignIntroKeys())XART.rdy(k);
   if(typeof bmfReady==='function')bmfReady('dialogue');
   return true;
 }
 function campaignIntroReady(){
-  if(typeof XART==='undefined'||typeof bmfReady!=='function'||!bmfReady('dialogue'))return false;
-  for(const k of campaignIntroKeys())if(!XART.rdy(k))return false;
-  return true;
+  return typeof XART!=='undefined' && XART.rdy('cinbg_jungle') &&
+    XART.rdy('cinbg_hq_aerial') && XART.rdy('cin_cockpit_frame') &&
+    typeof bmfReady==='function' && bmfReady('dialogue');
 }
 function campaignIntroStart(onDone){
+  campaignIntroPilot=run.pilot||campaignIntroPilot;
   campaignIntroWarm();
-  campaignIntro={t:0,onDone:onDone||null,pilot:campaignIntroPickPilot(),shotSoundN:0,ready:false,finished:false,md:!!Input.mouse.down};
+  campaignIntro={t:0,onDone:onDone||null,pilot:campaignIntroPickPilot(),ready:false,finished:false,md:!!Input.mouse.down};
   try{if(Audio&&Audio.startMusic)Audio.startMusic('cinematics');}catch(_ciMusic){}
   setState(GS.CAMPAIGNINTRO);return true;
 }
@@ -50886,82 +50896,77 @@ function campaignIntroFinish(){
   try{if(Audio&&Audio.fadeOutMusic)Audio.fadeOutMusic(.30);else if(Audio&&Audio.stopMusic)Audio.stopMusic();}catch(_ciMusic){}
   if(done)done();else openStageSelect(1,{boot:true});
 }
-function campaignIntroVisual(B,t,W,H,alpha){
-  ctx.save();ctx.globalAlpha=alpha==null?1:alpha;
-  if(B&&B.key)cinCover(B.key,W,H,(B.pan==null?.5:B.pan)+Math.sin(t*.18)*.025);
-  else cinBackdrop('darksky',t,W,H);
-  if(B&&B.virus){
-    /* A digital takeover, not a flat red filter: broken scan rows, offset data blocks and hostile
-       silhouettes make the archive itself look compromised. */
-    ctx.globalCompositeOperation='screen';
-    for(let i=0;i<18;i++){
-      const y=(i*37+Math.floor(t*83))%H,h=1+(i%3),x=(i*91+Math.floor(t*127))%Math.max(1,W-90);
-      ctx.globalAlpha=(alpha==null?1:alpha)*(.10+(i%4)*.035);ctx.fillStyle=i%2?'#ff2b35':'#42d9ff';ctx.fillRect(x,y,54+(i%5)*21,h);
-    }
-    ctx.globalCompositeOperation='source-over';ctx.globalAlpha=alpha==null?1:alpha;
-    for(let i=0;i<3;i++)cinHostile(W*(.22+i*.28),H*(.22+(i%2)*.12),H*.16,i===1,.28+.08*i,Math.sin(t+i)*.08);
+function campaignIntroCockpit(pilot,W,H,t){
+  const x=W*.77,y=H*.385,sz=Math.min(H*.59,W*.33);
+  if(XART.rdy('cin_cockpit_frame')){
+    const frame=XART.get('cin_cockpit_frame');
+    ctx.drawImage(frame,x-sz*.5,y-sz*.5,sz,sz);
   }
-  ctx.restore();
+  const key='pose_'+pilot+'_0';
+  if(XART.rdy(key)){
+    const im=XART.get(key),iw=im.naturalWidth||im.width,ih=im.naturalHeight||im.height;
+    const srcH=Math.round(ih*.56),portraitH=sz*.79,portraitW=portraitH*iw/srcH;
+    ctx.drawImage(im,0,0,iw,srcH,x-portraitW*.5,y-sz*.31+Math.sin(t*2)*2,portraitW,portraitH);
+  }
+  if(XART.rdy('cin_cockpit_frame')){
+    const frame=XART.get('cin_cockpit_frame'),fw=frame.naturalWidth||frame.width,fh=frame.naturalHeight||frame.height;
+    const sy=Math.round(fh*.69);
+    ctx.drawImage(frame,0,sy,fw,fh-sy,x-sz*.5,y-sz*.5+sz*sy/fh,sz,sz*(fh-sy)/fh);
+  }
 }
-function campaignIntroCaption(B,W,H,alpha){
-  if(!B||typeof msgFaceBig!=='function'||!msgFaceBig())return;
-  const x=W*.055,w=W*.89,h=H*.235,y=H-h-20;
-  ctx.save();ctx.globalAlpha=alpha;
-  const g=ctx.createLinearGradient(0,y-34,0,H);g.addColorStop(0,'rgba(0,0,0,0)');g.addColorStop(.26,'rgba(0,0,0,.78)');g.addColorStop(1,'rgba(0,0,0,.95)');
-  ctx.fillStyle=g;ctx.fillRect(0,y-34,W,H-y+34);
-  const hh=Math.max(13,Math.round(H*.035));
-  msgTextLeft(B.head,x,y+hh,hh,'#ffe082',1,alpha,.055,1);
-  msgDrawBlock({text:B.body,x:x,y:y+hh+10,w:w,h:h-hh-12,maxH:Math.max(12,Math.round(H*.030)),minH:8,
-    lineMul:1.34,spacing:.052,color:DIALOGUE_BODY_COLOR,tintA:1,alpha:alpha,outline:1});
-  ctx.restore();msgFaceUse(null);
+function campaignIntroVisual(B,C,t,W,H){
+  ctx.fillStyle='#050b12';ctx.fillRect(0,0,W,H);
+  if(!B.comic){cinCover(B.bg,W,H,.4+Math.sin(t*.2)*.02);return;}
+  cinCover('cinbg_jungle',W,H,.5+Math.sin(t*.3)*.025);
+  cinDrawShip(C.pilot,1,W*.38+Math.sin(t*1.6)*W*.025,H*.43+Math.cos(t*1.3)*H*.015,H*.27,false,1,0);
+  ctx.save();
+  ctx.beginPath();ctx.moveTo(W*.61,0);ctx.lineTo(W,0);ctx.lineTo(W,H);ctx.lineTo(W*.43,H);ctx.closePath();ctx.clip();
+  cinCover('cinbg_hq_warroom',W,H,.58);
+  ctx.fillStyle='rgba(2,8,18,.44)';ctx.fillRect(0,0,W,H);
+  campaignIntroCockpit(C.pilot,W,H,t);
+  ctx.restore();
+  ctx.save();ctx.strokeStyle='#d7e7f7';ctx.lineWidth=4;
+  ctx.beginPath();ctx.moveTo(W*.61,0);ctx.lineTo(W*.43,H);ctx.stroke();
+  ctx.strokeStyle='#101922';ctx.lineWidth=2;
+  ctx.beginPath();ctx.moveTo(W*.61-5,0);ctx.lineTo(W*.43-5,H);ctx.stroke();ctx.restore();
+}
+function campaignIntroCaption(B,C,W,H,alpha){
+  const pilot=PILOTS.find(p=>p.key===C.pilot),name=pilot?pilot.name:C.pilot.toUpperCase();
+  const who=B.who==='PILOT'?name:B.who;
+  const voice=CAMPAIGN_SOLO_LINES[C.pilot]||CAMPAIGN_SOLO_LINES.axel;
+  const line=B.pilotLine?voice[B.pilotLine]:B.text;
+  dlgBox({who,portrait:false,full:line,shown:line,fade:alpha,
+    tint:B.who==='PILOT'?(pilot?pilot.tint:'#dce7ff'):'#5fd3ff',
+    pw:Math.min(W*.76,740),ph:Math.min(H*.26,128),
+    x:Math.round((W-Math.min(W*.76,740))/2),y:Math.round(H*.70),screenSpace:false});
 }
 function campaignIntroFinale(C,t,W,H){
   const q=t-CAMPAIGN_INTRO_FINALE;
-  cinBackdrop('darksky',q,W,H);
-  ctx.save();ctx.fillStyle='rgba(0,0,0,.34)';ctx.fillRect(0,0,W,H);ctx.restore();
+  cinCover('cinbg_jungle',W,H,.5);
+  const u=clamp(q/2.4,0,1);
+  cinDrawShip(C.pilot,1,W*.5,H*(.8-.55*u),H*(.31-.16*u),false,1,0);
+  ctx.fillStyle='rgba(0,0,0,.42)';ctx.fillRect(0,0,W,H);
   msgFaceUse('dialogue');
-  const a=clamp(q/.34,0,1);
-  msgText('WELCOME TO',W/2,H*.28,Math.max(15,H*.038),'#dce7ff',1,a,.07);
-  msgText('BULLETS OF FURY!',W/2,H*.39,Math.max(27,H*.070),'#ffe082',1,a,.045);
+  msgText('BULLETS OF FURY',W/2,H*.36,Math.max(28,H*.071),'#ffe082',1,clamp(q/.3,0,1),.05);
+  msgText('ONE PILOT. ONE WAY HOME.',W/2,H*.46,Math.max(14,H*.032),'#f3f7ff',1,clamp((q-.45)/.4,0,1),.06);
+  msgText('STAGE 1 - THE JUNGLE CORRIDOR',W/2,H*.56,Math.max(12,H*.026),'#9fe2b8',1,clamp((q-.9)/.4,0,1),.06);
   msgFaceUse(null);
-  const fireAt=.62,step=.13,speed=W*.91;
-  while(C.shotSoundN<7&&q>=fireAt+C.shotSoundN*step){
-    C.shotSoundN++;
-    try{const s=Audio&&Audio.SFX&&(Audio.SFX.machineGun||Audio.SFX.enemyMachineGunLight||Audio.SFX.shoot);if(s)s();}catch(_ciShot){}
-  }
-  for(let i=0;i<7;i++){
-    const age=q-(fireAt+i*step);if(age<0||age>1.32)continue;
-    const x=-30+age*speed,y=H*(.57+(i-3)*.012);
-    drawMfx('mgcf_1_'+(i%6),x,y,Math.PI/2,30,null,1,'#ffb52a','#ff6a1a');
-  }
-  const fly=clamp((q-1.18)/1.45,0,1),fe=fly*fly*(3-2*fly);
-  if(q>=1.08&&fly<1)cinDrawShip(C.pilot,1,lerp(-H*.24,W+H*.24,fe),H*.62,H*.34,false,1,Math.PI/2);
-  const out=clamp((q-3.18)/.72,0,1);if(out>0){ctx.fillStyle='rgba(0,0,0,'+out.toFixed(3)+')';ctx.fillRect(0,0,W,H);}
 }
 function drawCampaignIntro(dt){
   const C=campaignIntro,W=cutsceneViewWidth(),H=VH;
   ctx.fillStyle='#000';ctx.fillRect(0,0,W,H);
-  /* NO SOFTLOCK THROUGH THIS SCREEN (0903). Two ways it could hold the player for ever:
-     (1) C null - campaignIntroFinish early-returns on a null C, so the old line called a
-         no-op and came back next frame to do it again. Now it LEAVES: straight to the map.
-     (2) art never ready - the cover was drawn with no input exit, so a stalled decode was a
-         wall. After 2.5s any button skips it, exactly as the finished scene already allows. */
-  if(!C){ campaignIntro=null; campaignIntroPilot=null; if(typeof openStageSelect==='function') openStageSelect(1,{boot:true}); else setState(GS.CAMPHUB); return; }
-  if(!C.ready){C.ready=campaignIntroReady();if(!C.ready){campaignIntroWarm();cinCover('cinbg_hq_aerial',W,H,.30);
-    if(stateT>2.5 && ((Input.mouse.down&&!C.md)||(typeof anyTap==='function'&&anyTap()))){ Input.mouse.down=false; campaignIntroFinish(); }
-    C.md=!!Input.mouse.down; return;}}
+  if(!C){if(typeof openStageSelect==='function')openStageSelect(1,{boot:true});else setState(GS.CAMPHUB);return;}
+  if(!C.ready){C.ready=campaignIntroReady();if(!C.ready){campaignIntroWarm();cinCover('cinbg_hq_aerial',W,H,.4);
+    if(stateT>2.5 && ((Input.mouse.down&&!C.md)||(typeof anyTap==='function'&&anyTap())))campaignIntroFinish();
+    C.md=!!Input.mouse.down;return;}}
   C.t+=dt;const t=C.t;
   if(t<CAMPAIGN_INTRO_FINALE){
     let i=CAMPAIGN_INTRO_BEATS.findIndex(b=>t>=b.at&&t<b.to);if(i<0)i=CAMPAIGN_INTRO_BEATS.length-1;
-    const B=CAMPAIGN_INTRO_BEATS[i],local=t-B.at,fade=.42;
-    campaignIntroVisual(B,local,W,H,1);
-    if(B.to-t<fade&&i+1<CAMPAIGN_INTRO_BEATS.length){
-      const na=clamp((t-(B.to-fade))/fade,0,1);campaignIntroVisual(CAMPAIGN_INTRO_BEATS[i+1],0,W,H,na);
-    }
-    const ca=Math.min(clamp(local/.28,0,1),clamp((B.to-t)/.32,0,1));campaignIntroCaption(B,W,H,ca);
-    const fi=clamp(1-t/.42,0,1);if(fi>0){ctx.fillStyle='rgba(0,0,0,'+fi.toFixed(3)+')';ctx.fillRect(0,0,W,H);}
+    const B=CAMPAIGN_INTRO_BEATS[i],local=t-B.at;
+    campaignIntroVisual(B,C,local,W,H);
+    campaignIntroCaption(B,C,W,H,Math.min(clamp(local/.25,0,1),clamp((B.to-t)/.25,0,1)));
   }else campaignIntroFinale(C,t,W,H);
-  msgFaceUse('dialogue');if(Math.floor(t*2)%2)controlHintRow([['pad_start','SKIP']],H-20,W/2,W-24);msgFaceUse(null);
+  msgFaceUse('dialogue');controlHintRow([['pad_start','SKIP']],H-20,W/2,W-24);msgFaceUse(null);
   const click=Input.mouse.down&&!C.md;C.md=!!Input.mouse.down;
   if(stateT>.35&&(click||(typeof anyTap==='function'&&anyTap()))){Input.mouse.down=false;campaignIntroFinish();return;}
   if(t>=CAMPAIGN_INTRO_DONE)campaignIntroFinish();
@@ -63786,77 +63791,15 @@ function drawPilot(dt){
   if(pilotRot>0 && pilotPending==null){ pilotRot=Math.max(0,pilotRot-dt/0.34); }
   const showIdx=(pilotRot>0.5)?pilotFrom:pilotIndex;
   const P=PILOTS[showIdx];
-  const revealCopy=pcScreenCopy(P);
-  /* PILOT CARD (drop 0801j). Mike: "Your going to have us select each pilot, where the card pops
-     up, and the text all forms letter by 1 letter, stat bar by star like a Mega Man X menu
-     screen." The card restarts whenever the selection changes, so scrolling the roster replays
-     the reveal for whoever you land on. */
-  if(typeof pcStart==='function'){
-    if(drawPilot._pcFor!==P.key){ drawPilot._pcFor=P.key; pcStart(P.key); }
-    pcard.textTotal=revealCopy.reduce((n,s)=>n+s.length,0);
-    if(typeof pcUpdate==='function') pcUpdate(dt);
-    // any input skips the flourish rather than making the player wait it out
-    /* ORDER MATTERS (drop 0801bk). Mike: "pressing enter should work."
-
-       tap() CONSUMES the key. With the taps written first, JavaScript evaluated
-       them left-to-right BEFORE `!pcard.done` was ever tested — so Enter was
-       swallowed here on every single frame, finished reveal or not, and never
-       reached Input.menuConfirm() further down. Enter could not select a pilot
-       at all. Guard on the state first; only reach for the key when a skip is
-       actually possible. */
-    /* ⚠ ONE PRESS DEPLOYS (Mike, 0916: "I still cannot get past the pilot select screen"). This
-       used to consume the press as a SKIP and require a second one to select - so the first thing
-       a player does on this screen produced no visible answer at all, which reads as a dead
-       button on a screen that is otherwise finished. The skip still happens; the same press now
-       carries straight on into confirmPilot, which is idempotent and refuses a locked pilot. */
-    if(pilotInputReady && typeof Input!=='undefined' && pcard && !pcard.done && typeof pcSkip==='function'
-       && pilotConfirmPressed()){
-      pcSkip();
-      if(!coopActive() && typeof confirmPilot==='function' && !isPilotLocked(PILOTS[pilotIndex])) confirmPilot();
-    }
-  }
+  const locked=isPilotLocked(P);
   drawPilotBG(P.tint);
-  /* the reveal (typed text + stat bars + special) is drawn AFTER the shell, over the same rect —
-     see the pcDraw call further down, which now receives cardRect. */
-  // title and pilot name use that pilot's corrected stage face.
-  const t2=pilotFont(2);
-  const _pilotFace=pilotFont(P.font)||t2;
-  /* ⚠ THE WASH HOLDS THE TITLE NEUTRAL, AND 0.25 WAS TUNED AGAINST A DIFFERENT FACE (0903).
-     The heading borrows the selected pilot's alphabet, so its colour used to come from that stage's
-     CARD art — all of them muted stone. The authored v3 faces are SATURATED (stage 5 is purple,
-     stage 2 orange), so at 0.25 the screen title turned purple over Juggernaut's gold card.
-     `drawFrameTinted` composites in 'color', taking hue and saturation from the fill and luminosity
-     from the plate — and white has no saturation to give, so raising this DESATURATES rather than
-     paints: the letterforms and the metal texture survive intact and every pilot's title reads the
-     same. Measured across the three extremes (purple/olive/orange) at 0.25/0.55/0.85/1.00:
-     docs/proofs/fonts_v3_0903/_tintsweep.png. The pilot's own colour stays on their NAME below. */
-  if(_pilotFace && typeof stageText==='function'){ stageText(_pilotFace,'CHOOSE YOUR PILOT!',VW/2,42,22,'#f2f5ff',0.85,1,0.06); }
-  else if(typeof msgText==='function'){ msgText('CHOOSE YOUR PILOT!',VW/2,42,22,'#f2f5ff',0,1,0.06); }
-  else { ctx.textAlign='center'; outlineText('CHOOSE YOUR PILOT!',VW/2,46,'#f2f5ff','#12151a',3); }
-  // one card, centred, with a horizontal scale (rotation) transition between pilots
-  const locked = isPilotLocked(P);
-  /* THE OLD CARDS ARE GONE (drop 0801s). Mike: "you have to remove the old cars."
-
-     card_<pilot> is the pre-CF_PilotCardSystem art with the name, callsign, bio and stat values
-     BAKED IN. The new shell + runtime reveal draws all of that itself, so both were rendering the
-     same information twice — the old one flat behind, the new one typing out on top.
-
-     The old block is not simply deleted, because it owned three things the screen still needs:
-     the horizontal-scale rotation between pilots, the slide-away on select, and the locked flash.
-     Those stay; only the SOURCE changes, to the new shell (pcard_<pilot>) and the LOCKED shell.
-     cardRect is still published for the hit-testing below. */
-  /* ============================ THE COMPOSED SCREEN ============================
-     Replaces the single baked pcard_<pilot> plate. Everything below is drawn from parts the
-     game already owns, so nothing here needs new art per pilot. Layout, top to bottom:
-
-         a standing pilot on the left, their ship spinning on the right of the info column,
-         name / callsign / affiliation, the bio wrapped to its own column, the special, the
-         stat bars, and the nine-across roster underneath.
-
-     ⚠ THE ROTATION AND SLIDE-AWAY TRANSITIONS ARE KEPT. The old block owned three behaviours the
-     screen still needs - the horizontal scale between pilots, the slide on select, and the locked
-     flash - and losing them was the easy mistake here. cardRect is still published, because the
-     input tail below hit-tests against it. */
+  const titleFace=pilotFont(P.font)||pilotFont(2);
+  if(titleFace && typeof stageText==='function')
+    stageText(titleFace,'CHOOSE YOUR PILOT!',VW/2,42,22,'#f2f5ff',.85,1,.06);
+  else if(typeof msgText==='function')
+    msgText('CHOOSE YOUR PILOT!',VW/2,42,22,'#f2f5ff',0,1,.06);
+  /* The selected card contains only the full-body pilot and the rotating ship.
+     The roster below remains the navigation control for all nine pilots. */
   let cardRect=null;
   {
     /* ⚠ PY CLEARS THE TITLE. At 40 the panel's top edge cut straight through "CHOOSE YOUR
@@ -63875,174 +63818,19 @@ function drawPilot(dt){
     ctx.translate(PX+PW/2+slideX, PY+PH/2); ctx.scale(sx,1); ctx.translate(-(PX+PW/2), -(PY+PH/2));
 
     psPanelBox(PX,PY,PW,PH,P.tint,true);
-    const BX=PX+6, BY=PY+6, BW=Math.min(220,Math.max(136,PW*.25)), BH=PH-12;          // the standing-pilot bay
-    psPanelBox(BX,BY,BW,BH,P.tint,false);
+    const gap=10, bayW=(PW-18-gap)/2, BY=PY+6, BH=PH-12;
+    const BX=PX+6, SHX=BX+bayW+gap;
+    psPanelBox(BX,BY,bayW,BH,P.tint,false);
+    psPanelBox(SHX,BY,bayW,BH,P.tint,false);
     if(locked){
-      const f=(typeof uiFontArt==='function')?uiFontArt():null;
-      if(f && typeof stageText==='function') stageText(f,'?',BX+BW/2,BY+BH*0.58,72,'#6c7789',0.9,1,0.10);
-    } else {
+      if(typeof msgText==='function')msgText('LOCKED',BX+bayW/2,BY+BH*.52,18,'#8a93a6',1,1,.08);
+      if(typeof msgText==='function')msgText('PASSWORD REQUIRED',SHX+bayW/2,BY+BH*.52,10,'#ffe98a',1,1,.08);
+    }else{
       const body=psBodyKey(P.key);
-      if(body) psBlitFit(body, BX+BW/2, BY+BH*0.52, BW-14, BH-18, 1);
-      else {
-        /* THE DECODE WINDOW, NOT A MISSING PILOT. Every one of the nine has a standing figure
-           now, so this branch is only reached on the frames before the atlas arrives - XART.rdy
-           is false on its FIRST call because that call is what starts the load. The portrait is
-           already warm from the roster below, so a bust holds the bay for those frames.
-
-           ⚠ IT CARRIED A 'NO FIELD PHOTO' CAPTION AND THAT WAS WRONG TWICE OVER: it was a
-           label for a permanent gap that no longer exists, and on a decode frame it would blink
-           on and straight back off. A fallback should be quiet. */
-        psBlitFit('port_'+P.key+'_idle', BX+BW/2, BY+BH*0.44, BW-16, BH*0.68, 1);
-      }
+      psBlitFit(body||'port_'+P.key+'_idle',BX+bayW/2,BY+BH*.51,bayW-16,BH-18,1);
+      psBlitFit(psShipKey(P.key,spin),SHX+bayW/2,BY+BH*.54,bayW-18,BH*.79,1);
+      pilotNameDraw(P.name,PX+PW/2,PY+25,19,P.tint,1);
     }
-
-    const IX=BX+BW+10, IW=(PX+PW)-IX-6;                 // the info column
-    /* ⚠ THE SHIP BAY IS SIZED FROM WHAT MIKE ASKED FOR, AND IT CLOSES A DEAD BAND.
-       "spin our ships horizontally" makes the hull a FEATURE of this screen, and the first
-       cut gave it 86x78 in a 460-wide panel - smaller than the roster thumbnails below it.
-       Rendering all nine showed the cost twice over: the ship was too small to read the
-       roll on, and the wide bio column it left behind wrapped every bio to two lines, so
-       ~50px of the panel between the bio and SPECIAL was empty on every pilot. Widening the
-       bay narrows the bio column, which fills the top, and the bay itself fills the right -
-       one number fixing both halves of the same empty space. */
-    const SHW=Math.min(196,Math.max(126,IW*.30)), SHH=Math.min(150,PH-122), SHX=IX+IW-SHW, SHY=PY+30;
-    if(!locked){
-      psPanelBox(SHX, SHY, SHW, SHH, P.tint, false);
-      psBlitFit(psShipKey(P.key, spin), SHX+SHW/2, SHY+SHH/2, SHW-12, SHH-14, 1);
-    }
-
-    const face=_pilotFace;
-    if(face && typeof stageText==='function'){
-      /* stageText centres on the x it is given, so a left-aligned name needs half its own
-         width added. Measuring it rather than nudging by eye keeps every pilot's name on the
-         same left rail whatever their alphabet's widths are. */
-      const nm=locked?'LOCKED':P.name;
-      const nw=(typeof stageWidth==='function')?stageWidth(face,nm,22,0.07):0;
-      if(locked)stageText(face,nm,IX+IW/2,PY+26,22,'#8a93a6',1,1,.07);
-      else {
-        const shown=pcRevealText(revealCopy,0);
-        if(shown){
-          // Clip the complete name plate: its center and cached artwork never shift per letter.
-          ctx.save(); ctx.beginPath();
-          ctx.rect(IX-2,PY+8,bmfMeasure('dialogue',shown,22)+8,38); ctx.clip();
-          pilotNameDraw(nm,IX+2+bmfMeasure('dialogue',nm,22)/2,PY+26,22,P.tint,1);
-          ctx.restore();
-        }
-      }
-    }
-    if(typeof msgFaceUse==='function') msgFaceUse('dialogue');
-    const M=(typeof BOFX!=='undefined'&&BOFX.pilotcard)?(BOFX.pilotcard[P.key]||{}):{};
-    if(!locked && typeof msgTextLeft==='function'){
-      /* ⚠ THE FACTION EMBLEM LEADS THE SUBTITLE ROW, AND THE TEXT MOVES OUT OF ITS WAY.
-         Mike, 0906: "there affiliation symbols should be regenerated and used on the cards."
-         It sits before the callsign because that row already reads left-to-right as
-         who-you-are then who-you-fly-for, so the badge belongs at its head - and because the
-         RIGHT of this row is where the ship bay starts, and a badge there would collide with
-         it the moment a pilot has a long affiliation.
-         The indent is CONDITIONAL on the emblem resolving: XART.rdy is false on its first
-         call, so a fixed indent would leave the subtitle shunted right with nothing in the
-         gap for the frames before the badge decodes. */
-      const sub=(M.callsign?('"'+M.callsign+'"'):'')+(M.affil?('   '+M.affil.toUpperCase()):'');
-      const _ek=affilEmblemKey(M.affil);
-      const _sx=IX+2+(_ek?20:0);
-      if(_ek) psBlitFit(_ek, IX+2+8, PY+40, 17, 17, 1);
-      if(sub) msgTextLeft(pcRevealText(revealCopy,1), _sx, PY+44, 9, '#9fb0c6', 0.9, 1, 0.10, 0);
-      /* ⚠ THE BIO FLOWS AND THE BLOCKS BELOW IT FOLLOW - NO FIXED Y. Nine pilots have nine
-         different bio lengths, so a hard-coded SPECIAL row is either crowded or stranded, and
-         at the old column width it was stranded on all nine. bioBot is where the text actually
-         ENDED, and everything under it is placed from that. */
-      const bio=(M.desc||P.role||'');
-      let bioBot=PY+64;
-      if(bio && typeof msgWrap==='function'){
-        const colW=IW-SHW-12;
-        const rows=msgWrap(bio, colW, 9, 0.10)||[];
-        const nr=Math.min(rows.length, 6);
-        const bioVisible=pcRevealText(revealCopy,2).length;
-        let bioOffset=0;
-        for(let r=0;r<nr;r++){
-          // Wrap the complete biography, then reveal within its fixed rows.
-          const at=bio.indexOf(rows[r],bioOffset);
-          if(at>=0) bioOffset=at;
-          const shown=rows[r].slice(0,Math.max(0,bioVisible-bioOffset));
-          msgTextLeft(shown, IX+2, PY+64+r*12, 9, '#d6dee9', 0.85, 1, 0.10, 0);
-          bioOffset+=rows[r].length;
-        }
-        bioBot=PY+64+nr*12;
-      }
-      const SP=(typeof pcSpecial==='function')?pcSpecial(P.key):null;
-      /* the stat bars, from game data - see the pcStats note about what these used to show.
-         ⚠ THE BLOCK IS ANCHORED TO THE PANEL'S FOOT, NOT TO THE SPECIAL ROW, so the slack a
-         short bio leaves is shared between the two gaps instead of piling up under the bars.
-         It still takes the LOWER of the two, so a six-line bio pushes the bars down rather
-         than drawing them through itself. And it must clear the ship bay, because the bars
-         span the full info column while the text above them does not. */
-      const st=(typeof pcStats==='function')?pcStats(P.key):[];
-      /* ⚠ THE ROW COUNT IS NOT THE SAME FOR EVERY PILOT, AND ANCHORING ALONE OVERFLOWS.
-         pcStats returns THREE rows for most pilots and FIVE for Lizzie (she carries BOMB POWER
-         and DEFENSE), so a fixed pitch anchored to the panel foot ran her last row 10px past
-         the frame and printed DEFENSE across the roster below. Found by rendering all nine -
-         it is invisible on the eight pilots you would check first, which is CLAUDE.md's
-         "render the SET, not the complaint" in one screenshot.
-         So the pitch is SOLVED against the space that is left rather than assumed: it opens to
-         SPITCH when there is room and closes to fit when there is not, and the block is only
-         pushed down onto the foot in the first case. */
-      const SPITCH=22, stN=Math.min(st.length,5);
-      const stCeil=Math.max(bioBot+40, SHY+SHH+14);   // earliest the bars may begin
-      const stBase=PY+PH-14;                          // the last bar's row, inside the frame
-      const stPitch=(stN>1)?Math.min(SPITCH,(stBase-stCeil)/(stN-1)):SPITCH;
-      const stTop=Math.max(stCeil, stBase-(stN-1)*stPitch);
-      /* ⚠ SPECIAL IS THE STAT BLOCK'S HEADING, SO IT IS PLACED FROM THE BLOCK, NOT FROM THE
-         BIO. Flowed after the bio it came out stranded in open panel 48px above the bars it
-         belongs to, reading as a third floating element rather than as their title. Pinned
-         26px over the first bar, it groups; the slack then falls between the DESCRIPTION and
-         the STATS, which is the one place a gap says something. */
-      const spY=Math.max(bioBot+16, stTop-26);
-      if(SP && SP.name) msgTextLeft(pcRevealText(revealCopy,3), IX+2, spY, 10, P.tint, 1, 1, 0.10, 0);
-      for(let s=0;s<stN;s++){
-        const yy=Math.round(stTop+s*stPitch);
-        msgTextLeft(pcRevealText(revealCopy,4+s), IX+2, yy, 8, '#8fa0b6', 0.9, 1, 0.10, 0);
-        const bx=IX+92, bw=IW-96, seg=Math.max(1,Math.round(bw/PC_MAX_SEG));
-        ctx.save();
-        for(let g=0;g<PC_MAX_SEG;g++){
-          ctx.fillStyle = (g<pcVisibleSegments(s,st[s].val)) ? P.tint : 'rgba(90,104,126,0.35)';
-          ctx.fillRect(bx+g*seg, yy-6, Math.max(1,seg-1), 10);
-        }
-        ctx.restore();
-      }
-    }
-    /* ⚠ THE COSTUME PROMPT ONLY EXISTS FOR SOMEONE WHO HAS EARNED IT. Shown under the ship
-       bay, on Lizzie, only once BOMBER has been entered - so it is a reward that announces
-       itself rather than a control nobody can use, and the other eight cards are untouched.
-       Placed at the FOOT of the ship bay because that is the thing it changes; a hint at the
-       bottom of the panel would sit under the stat bars and read as being about them. */
-    if(!locked && lizzieSkinUnlocked && P.key==='lizzie' && typeof msgText==='function'){
-      /* ⚠ LETTERS ONLY - THE ARROW GLYPHS DO NOT EXIST IN THIS FACE. The first cut read
-         'B-42 BOMBER \u25B2\u25BC STOCK' and would have drawn TWO SPACES where the arrows are:
-         checked the glyph map and 25C0/25B6 are mapped, 25B2/25BC are not, and a missing glyph
-         in this engine draws a space rather than failing. That is the stage-card alphabet bug
-         from 0903 ('CHOO E YOUR PILOT') arriving from the punctuation side, and it is why the
-         other prompts on this screen are letters and spaces. The wording also says what the
-         press will DO rather than naming the current state twice. */
-      /* ⚠ AND IT GOES INSIDE THE BAY, BECAUSE THERE IS NO ROOM UNDER IT. Rendered first at
-         SHY+SHH+11 with the full sentence: it ran THROUGH the SPEED bar (the bay's foot is 208
-         and the first bar's top is 216) and ~38px past the panel's right edge, because a
-         27-character line at size 8 is wider than the 126px bay it was centred on. Lizzie is
-         also the five-stat pilot, so she has the least room under the bay of anyone - the one
-         card this could collide on is the only card it appears on.
-         Short form, inside the frame, on the 7px of padding psBlitFit leaves below the hull. */
-      msgText(lizzieSkinOn?'UP: STOCK':'UP: B-42',
-              SHX+SHW/2, SHY+SHH-6, 7, lizzieSkinOn?'#ffc21a':'#9fb0c6', 0.95, 1, 0.10);
-    }
-    if(locked && typeof msgText==='function'){
-      /* the empty column read as a bug rather than as a secret. The hover prompt below only
-         appears with a mouse over the panel, which is no use on a pad. */
-      /* centred on the INFO COLUMN's full width and dropped below where the ship box sits for
-         an unlocked pilot - at PY+92 the line ran under that frame and read as overlapping UI. */
-      msgText('THIS PILOT IS LOCKED', IX+IW/2, PY+124, 11, '#8a93a6', 0.9, 1, 0.10);
-      if(Math.sin(performance.now()/240)>-0.3)
-        msgText('ENTER HIS PASSWORD TO UNLOCK', IX+IW/2, PY+146, 10, '#ffe98a', 1, 1, 0.10);
-    }
-    if(typeof msgFaceUse==='function') msgFaceUse(null);
     if(locked && pilotFlash>0){
       ctx.save(); ctx.globalAlpha=Math.min(1,pilotFlash)*0.42; ctx.fillStyle='#ffffff';
       ctx.fillRect(PX,PY,PW,PH); ctx.restore();
@@ -64094,36 +63882,26 @@ function drawPilot(dt){
              coopPick===0?'#4aa8ff':'#ff5a3c', (P&&P.font)||1, 1);
   }
   // ---- input ----
-  if(pilotComm!=null){ pilotCommT+=dt; drawPilotComm(PILOTS[pilotComm], pilotCommT);
-    if(pilotCommT>=1.95){ pilotComm=null; pilotCommT=0; pilotPending=null; pilotSlide=0;
-      /* ---- CO-OP: THE SCREEN IS RUN TWICE (drop 0902f) ----------------------------------
-         P1's "GOOD LUCK, PILOT!" no longer deploys the run — it hands the roster to P2. The
-         handover happens HERE, at the end of the comm, rather than at confirmPilot, so the
-         second player gets the same full beat the first one did: card, slide, comm, then their
-         turn. Cutting P2 straight to the roster would have read as P1's selection being
-         rejected. */
+  if(pilotPending!=null){
+    pilotSlide+=dt/.42;
+    if(pilotSlide>=1){
+      pilotPending=null;pilotSlide=0;
       if(coopActive() && coopPick===0){
-        coopP1Index = pilotIndex;
-        coopPick = 1;
-        /* Open P2 on somebody else. Landing on P1's pick and requiring a nudge off it is how two
-           players end up flying the same pilot by accident — and with `pcard` keyed on the pilot,
-           an unchanged index would not even replay the reveal, so the screen would look frozen
-           on the handover. */
-        pilotIndex = (coopP1Index+1) % PILOTS.length;
-        if(isPilotLocked(PILOTS[pilotIndex])) pilotIndex = (pilotIndex+1) % PILOTS.length;
-        drawPilot._entered=false; drawPilot._pcFor=null; pilotRot=0; pilotFrom=pilotIndex;
-        if(Audio.SFX && Audio.SFX.selectpilot) Audio.SFX.selectpilot();
+        coopP1Index=pilotIndex;coopPick=1;
+        pilotIndex=(coopP1Index+1)%PILOTS.length;
+        if(isPilotLocked(PILOTS[pilotIndex]))pilotIndex=(pilotIndex+1)%PILOTS.length;
+        drawPilot._entered=false;drawPilot._pcFor=null;pilotRot=0;pilotFrom=pilotIndex;
         return;
       }
       if(coopActive() && coopPick===1){
-        p2Index = pilotIndex;
-        pilotIndex = coopP1Index;              // P1's cursor is theirs again
-        coopPick = 2;                          // both locked in
-        setState(GS.COOPROSTER);
-        return;
+        p2Index=pilotIndex;pilotIndex=coopP1Index;coopPick=2;
+        setState(GS.COOPROSTER);return;
       }
-      const _ps=(typeof PENDING_STAGE!=='undefined'&&PENDING_STAGE)||1; startRun(_ps); if(typeof PENDING_STAGE!=='undefined')PENDING_STAGE=1; } return; }
-  if(pilotPending!=null){ pilotSlide+=dt/0.5; if(pilotSlide>=1){ pilotComm=pilotIndex; pilotCommT=0; if(Audio.SFX&&Audio.SFX.goodluck)Audio.SFX.goodluck(); } return; }
+      const _ps=(typeof PENDING_STAGE!=='undefined'&&PENDING_STAGE)||1;
+      startRun(_ps);if(typeof PENDING_STAGE!=='undefined')PENDING_STAGE=1;
+    }
+    return;
+  }
   if(!pilotInputReady) return;
   /* NO BACK BUTTON (drop 0801bw). Mike: "remove the back button. k gets you out
      of this menu." menuBack already carries 'k' as of drop 0801bv, and the
@@ -64225,8 +64003,7 @@ function confirmPilot(){
      snapped to its end instead, so the pilot you see is the pilot you get. */
   if(pilotRot>0){ pilotRot=0; pilotFrom=pilotIndex; }
   if(typeof warmPlayerAtlases==='function') warmPlayerAtlases();
-  /* The slide-away and GOOD LUCK panel buy roughly two seconds. Spend them decoding the prologue
-     now so a fresh campaign never opens on black while the large HQ plates arrive. */
+  /* Warm the selected pilot's solo prologue during the slide-away. */
   if(run&&run.mode==='campaign'&&typeof campaignIntroWarm==='function')campaignIntroWarm();
   Audio.SFX.select(); pilotPending=pilotIndex; pilotSlide=0.0001;
 }
@@ -68409,7 +68186,7 @@ function furyIntroClouds(S){
 function furyIntroDialogue(G){
  if(!G||G.narrative===false||G.phase==='active'||G.dialogueT<=G.dialogueDelay)return;
  const full=G.line||'',shown=G.phase==='drift'?full.slice(0,Math.max(0,Math.floor((G.dialogueT-G.dialogueDelay)*GRAVITY_DIALOGUE_CPS))):full;
- dlgBox({who:'FURY HQ',tint:'#ffb347',full,shown,fade:clamp((G.dialogueT-G.dialogueDelay)/.28,0,1),portrait:false,pw:Math.min(VW-20,460),ph:Math.min(138,Math.round(VH*.26)),x:10,y:10,screenSpace:false});
+ dlgBox({who:'FURY HQ',tint:'#ffb347',full,shown,fade:clamp((G.dialogueT-G.dialogueDelay)/.28,0,1),portrait:false,pw:Math.round(VW*.76),ph:Math.min(128,Math.round(VH*.25)),x:Math.round(VW*.12),y:12,screenSpace:false});
 }
 function furyIntroDraw(dt){
  let S=drawLaunch._furyIntro;
@@ -73174,7 +72951,18 @@ function victorySprite(key,x,y,h,alpha,rot,shadow){
   ctx.drawImage(im,-w/2,-h/2,w,h);ctx.restore();return true;
 }
 function victoryCaption(head,body,W,H,alpha){
-  if(typeof campaignIntroCaption==='function')campaignIntroCaption({head:head,body:body},W,H,alpha==null?1:alpha);
+  const fade=alpha==null?1:alpha;
+  if(fade<=0)return;
+  ctx.save();ctx.globalAlpha=fade;
+  const y=H*.72,h=H*.23,x=W*.055,w=W*.89;
+  const g=ctx.createLinearGradient(0,y-28,0,H);
+  g.addColorStop(0,'rgba(0,0,0,0)');g.addColorStop(.3,'rgba(0,0,0,.78)');g.addColorStop(1,'rgba(0,0,0,.94)');
+  ctx.fillStyle=g;ctx.fillRect(0,y-28,W,H-y+28);
+  msgFaceUse('dialogue');
+  msgTextLeft(head,x,y+22,Math.max(13,Math.round(H*.035)),'#ffe082',1,1,.055,1);
+  msgDrawBlock({text:body,x:x,y:y+32,w:w,h:h-36,maxH:Math.max(12,Math.round(H*.03)),
+    minH:8,lineMul:1.34,spacing:.052,color:DIALOGUE_BODY_COLOR,tintA:1,alpha:1,outline:1});
+  msgFaceUse(null);ctx.restore();
 }
 function victoryRestoration(t,W,H,pk){
   if(!cinCover('cinend_hq_restored',W,H,.47+.025*Math.sin(t*.16)))cinBackdrop('sky',t,W,H);
