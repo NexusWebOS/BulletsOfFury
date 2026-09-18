@@ -43888,6 +43888,7 @@ function playPauseWorldDraw(){
 }
 const PAUSE_BUTTON_RECT=[81, 410, 862, 201];
 /* Preserve the authored metal endcaps; only the empty center stretches to fit. */
+const PAUSE_LABEL_DY=-2;   // the pause plate's dark well sits 2px above its centre (measured, 0918e)
 function playPauseButtonArt(cx,cy,w,h,selected){
   if(!XART.rdy('pause_button_0915'))return false;
   const im=XART.get('pause_button_0915'),r=PAUSE_BUTTON_RECT;
@@ -43928,7 +43929,10 @@ function playPauseDraw(dt){
       octFill(VW/2-w/2,y-h/2,w,h,7,selected?'#133623':'#141b19');
       ctx.strokeStyle=selected?'#2aff5a':'#3c5550';ctx.lineWidth=selected?2:1;ctx.strokeRect(VW/2-w/2+4,y-h/2+3,w-8,h-6);
     }
-    campText(PLAY_PAUSE_ROWS[i],VW/2,y+4,12,selected?'#dfffe9':'#a0b2a8');
+    /* 0918e (Mike: "center the text"): the label sat at y+4 - 6px under the plate's dark well (measured on the
+       live canvas: well rows 28..48 of a 34px plate centred at 40, i.e. well centre = plate centre - 2) with its
+       feet on the bottom rail. stageText's cy is the centre of the cap box, so the well centre is the answer. */
+    campText(PLAY_PAUSE_ROWS[i],VW/2,y+PAUSE_LABEL_DY,12,selected?'#dfffe9':'#a0b2a8');
     if(selected)menuSelMark(VW/2,y,w/2,'green');ctx.restore();
     if(k===1&&m.inside&&Math.abs(m.x-VW/2)<=w/2&&Math.abs(m.y-y)<h/2){
       if(Input.consumeMouseMoved())P.sel=i;
