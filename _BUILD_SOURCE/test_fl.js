@@ -720,7 +720,11 @@ console.log('\n=== 17. level environment pack (6 masters + liquid) ===');
   /* ⚠ THIS PINNED THE Mk I AND MIKE REPLACED IT (0822y). "holy shit god no. delete this boss,
      well use the MK2 variant instead." So it now pins the RULE — stage 6 fields a Doomsday
      Carrier — and the Mk II specifically, rather than a name that was already superseded. */
-  ok(vm.runInContext("STAGES[5].boss", ctxv) === 'doomsdaycarriermk2', 'stage 6 boss = DOOMSDAY CARRIER MK II');
+  /* ⚠ AND MIKE REPLACED IT AGAIN (0918): stage 6's boss is the WARHIVE CARRIER + NIGHTWING ACE. The Mk II is
+     kept whole and still spawns by kind - that half of the old pin is what is worth keeping. */
+  ok(vm.runInContext("STAGES[5].boss", ctxv) === 'warhive', 'stage 6 boss = WARHIVE CARRIER (0918)');
+  ok(vm.runInContext("(function(){ var o=boss; spawnBoss('doomsdaycarriermk2'); var k=boss&&boss._ship; boss=o; bossActive=false; return k; })()", ctxv) === 'doomsdaycarriermk2',
+     'the DOOMSDAY CARRIER MK II is kept and still spawns by kind');
   /* ⚠ BOFX[key] IS NOT THE TEST. In the page it reads false even for nsb_siege_ember, which has
      been registered for weeks - so it says nothing about whether art resolves. The manifest TEXT is
      what was actually edited and what lets XART find a loose plate at all, so check that. */
@@ -3956,6 +3960,10 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
        seconds clears the longest entrance with margin. */
     vm.runInContext("eBullets.length=0; for(var f=0;f<60*20;f++){ updateBoss(1/60); }", ctxv);
     _sig[st]=vm.runInContext("eBullets.length", ctxv);
+    /* THE WARHIVE'S ATTACK IS ITS ESCORTS (0918, Mike's spec): on Normal the carrier fires nothing itself - it
+       launches six ELITEX fighters that shoot through the ENEMY loop, which this fixture does not run. Count the
+       launches as its output; a carrier that stops launching reads 0 and fails here like any silent boss. */
+    if(_sig[st]===0 && vm.runInContext("!!(boss&&boss._whv)", ctxv)) _sig[st]=vm.runInContext("boss._whv.launched", ctxv);
   });
   var _silent=Object.keys(_sig).filter(function(k){ return _sig[k]===0; });
   ok(_silent.length===0, 'EVERY stage boss fires through the real update path'+(_silent.length?(' — SILENT: stages '+_silent.join(',')):' (bullets: '+JSON.stringify(_sig)+')'));

@@ -22,6 +22,11 @@ if(typeof window!=='undefined' && window.BOFX && BOFX.img){
      deliberately NOT shipped: they ARE this game's nxp_barrage_0..7, which the rig asks XART for instead. */
   for(const _tl of ['hull','hull_damaged','beam','charge','bolt','needle']) BOFX.img['tlv_'+_tl]='assets/game/bosses/tempest/tlv_'+_tl+'.png';
   for(const _tl of ['hull','hull_damaged']) BOFX.img['tlvb_'+_tl]='assets/game/bosses/tempest/tlvb_'+_tl+'.png';
+  /* the WARHIVE CARRIER + NIGHTWING ACE (0918) - SpriteCook plates, palette-locked; see warhiveInit */
+  for(const [_wk,_wf] of [['whv_closed','carrier_closed'],['whv_open','carrier_open'],['whv_broken','carrier_broken'],['whv_fan','carrier_fan'],
+    ['whv_twreck','carrier_thruster_wreck'],['whv_ace','ace_top'],['whv_ace_belly','ace_belly'],['whv_ace_dmg','ace_damaged'],
+    ['xelite_hivewing_idle','elite_jet'],['xelite_hivewing_fire','elite_jet'],['xelite_hivewing_death','elite_jet'],['xelite_hivewing','elite_jet']]) BOFX.img[_wk]='assets/game/bosses/skycarrier/'+_wf+'.png';
+  for(let i=0;i<8;i++){ BOFX.img['whv_ace_br'+i]='assets/game/bosses/skycarrier/ace_br'+i+'.png'; BOFX.img['whv_ace_so'+i]='assets/game/bosses/skycarrier/ace_so'+i+'.png'; }
 }
 
 const VW = 480, VH = 512;                 // internal virtual resolution (camera window)
@@ -6007,6 +6012,7 @@ function weaponLegacyName(w, lv){
 function bossHealthVisible(b){
   if(!b||b.dead)return false;
   if(b._s7FinalNoBar)return false;
+  if(b._whv&&b._whv.mode!=='ace')return false;   // Mike 0918: the carrier shows no HP bar
   if(b.kind==='damkeeper'&&b._ovIntro&&!b._ovIntro.done)return b._ovIntro.phase!=='approach'&&b._ovIntro.phase!=='whip';
   const F=b._s9fusion;
   return !(F&&F.phase!=='tidal');
@@ -10604,7 +10610,7 @@ const STAGES = [
    /* STAGE 6 (drop 0801cf): leviathan's sectional code is not in the registered
       nsx_ set — it drew nothing, measured. STORM SOVEREIGN is the pack's stage-6
       boss. */
-   length:56, boss:'doomsdaycarriermk2'},   // Mk II from 0822; 'doomsdaycarrier' restores the old fight
+   length:56, boss:'warhive'},   // 0918: the WARHIVE CARRIER + NIGHTWING ACE. 'doomsdaycarriermk2' restores the Mk II fight (kept whole, still spawnable by kind)
   {n:7, name:'STAGE 7', sub:'NOT ANOTHER SEWER LEVEL',  bg:'sewer',  music:'stage7mus',
    /* STAGE 7 (drop 0801cf): cesspool drew no art at all — 0 image blits, purely
       procedural shapes. TOXIC LEVIATHAN is the pack's stage-7 boss. */
@@ -12630,7 +12636,7 @@ const SHIPS=[];
       break;
     }
     case 'xelite_furytalon': case 'xelite_razorback': case 'xelite_tempest': case 'xelite_emberwing': case 'xelite_glacierlance':
-    case 'xelite_voidreaver': case 'xelite_ironserpent': case 'xelite_solarwarden': case 'xelite_nighthammer': {
+    case 'xelite_voidreaver': case 'xelite_ironserpent': case 'xelite_solarwarden': case 'xelite_nighthammer': case 'xelite_hivewing': {
       const K=type.slice(7), X=ELITEX[K];
       /* ABSOLUTE hp, like the minibosses: EHP() is the fodder shots-to-kill model and capped every elite at 12 */
       c.w=X.w; c.h=X.h; c.hp=c._maxhp=Math.ceil(X.hp*((typeof DIFF!=='undefined'&&DIFF.eHp)||1)); c.score=X.score;
@@ -23857,6 +23863,7 @@ function spawnBoss(kind){
        shipBossInit itself was never the problem - probed directly it sets w/h/name correctly.
        Two spawners, two switches; a kind must be registered in the one that matches its ROLE. */
     case 'chromehammer': hammerBossInit(b); break;
+    case 'warhive': warhiveInit(b); break;
     case 'tidalfusion': s9FusionBossInit(b,hpBase); break;
     case 'infernoreaver': case 'cryospear': case 'voidbat':
     case 'tidalsovereign': case 'warpsentinel':   // stage 9's bonus pair (0822ab)
@@ -30261,6 +30268,7 @@ function retinaBossTargets(b){
     sectional=true;const sc=(b.w||196)/384;
     for(const c of b._qlCan)if(!c.dead&&c.hb){const state=()=>({x:b.x+(c.hb[0]+c.hb[2]/2-192)*sc,y:b.y+(c.hb[1]+c.hb[3]/2-192)*sc,hp:c.hp,dead:c.dead});a.push(retinaImpactTarget(b,c.id,'laser turret',state,c.hb[2]*sc,c.hb[3]*sc));}
   }
+  if(b._whv&&b._whv.mode==='carrier'){sectional=true;warhiveRetinaTargets(b,a);}
   const F=b._s7warden&&b._s7warden.final;
   if(F&&F.phase==='stun'){
     sectional=true;for(const c of F.cores)if(!c.dead){const state=()=>{const q=s7WardenCorePos(b,c.side);return{x:q.x,y:q.y,hp:c.hp,dead:c.dead};};a.push(retinaImpactTarget(b,'core '+c.side,'toxic core',state,54,54));}
@@ -33471,6 +33479,7 @@ function updatePlay(dt){
           if(curStage.boss){
             spawnBoss(curStage.boss);
             if(run.stage===1&&boss&&boss.kind==='damkeeper')Audio.stopMusic();
+            else if(boss&&boss._whv){}   // 0918: the Warhive keeps the stage music; its ace starts the boss track
             else Audio.startMusic('boss'+run.stage);
           }
           else { bossDefeated=true; stageEnding=0; }   // no boss authored yet (Stage 6): clear the level directly
@@ -35877,6 +35886,7 @@ function triggerVictory(){
 function bossHitTest(x,y){
   if(!boss) return false;
   if(boss.kind==='damkeeper'&&boss._ovIntro&&!boss._ovIntro.done)return false;
+  if(boss._whv)return warhiveHitTest(boss,x,y);
   if(boss._hammer){
     if(boss._noHit||boss.dead)return false;const h=boss._hammer;boss._hammerModuleHit=null;
     const T=h.throw,hammerX=T?T.x:boss.x-54,hammerY=T?T.y:boss.y+8;
@@ -35930,6 +35940,7 @@ function hitBoss(dmg){
   const _elem=(typeof elementalDamageResult==='function')?elementalDamageResult(boss,'boss',_dmgBullet,dmg,_lastHitX,_lastHitY):{dmg:dmg,reaction:null};
   dmg=_elem.dmg;const _elemHit=_elem.reaction;
   if(boss._hammer){dmg=hammerBossDamage(boss,dmg);if(dmg<=0)return;}
+  if(boss._whv){dmg=warhiveDamage(boss,dmg);if(dmg<=0)return;}
   if(boss._s4war&&boss._noHit&&!boss._s4CoreHit)return;
   markHit(boss);   // 0912y: before any shield, barrier or part router can swallow the hit
   if(boss._s7warden&&typeof s7WardenHit==='function'){
@@ -36993,9 +37004,483 @@ function updateOverlordX(b, dt){
   }
 }
 
+/* ============================================================
+   THE WARHIVE CARRIER + THE NIGHTWING ACE - stage 6's boss (0918)
+
+   Mike, 0918: "A giant jet carrier comes down on screen with massive thruster noise. It does not
+   cut into the boss music and shows no HP bar. It opens its bay door and about 6 elite black
+   fighter jets come out. It raises backwards while closing the door and goes off screen until
+   the jets are defeated, then comes back ... repeats this until both spinning thrusters are
+   destroyed ... smoke and fire effects anchored to the modular pieces, slow -> mid -> fast ->
+   massive blow up. As the carrier goes down and blows up, a super-elite blue-black fighter jet
+   emerges and becomes the boss. It mirrors the player's kit."  Hard adds 8 jets, +25% part HP,
+   thruster cannons (energy balls, 3-spreads, a beam a third of the screen wide), and on the ace
+   a charge dash, a helper orb at 50% and the 25% south-dash / criss-cross / inverted shadowing.
+
+   ONE PLATE, NOT A SPLIT. The carrier is one authored plate (closed / open / broken door) with
+   the two turbine fans drawn spinning in their own nacelles, and a wrecked-nacelle plate drawn
+   over a nacelle when it dies. Nothing comes off; the objectives are hit regions on the plate,
+   the same shape as the Doomsday Carrier's bays that Mike asked for.
+
+   Art: assets/game/bosses/skycarrier/ (SpriteCook 0918, palette-locked, dither off). The escort
+   is a NEW ELITEX row, 'hivewing', so it inherits the aces' shield, strafe, roll and volley.
+   The ace's barrel roll and somersault are derived from its authored TOP and BELLY views by
+   foreshortening between them - generate the views, derive the rotation (0906y).
+   ============================================================ */
+const WHV_S=0.9;                                   // plate draw scale: 512x288 -> 461x259
+const WHV_PLATE={w:512,h:288};
+const WHV_NAC={L:{x:-169.5,y:-10},R:{x:169.5,y:-10}};   // hub offsets in PLATE px (measured off carrier_closed)
+const WHV_FAN_R=24, WHV_POD_R=37;                   // fan disc and nacelle pod radius, plate px
+const WHV_DOOR={x:0,y:45,w:83,h:82};               // hazard frame, plate px, centre-relative
+const WHV_HOME_Y=142, WHV_AWAY_Y=-230;   // 142: the plate's top edge clears the screen top (118 clipped it, seen in the proof)
+const WHV_ACE_S=0.46;                               // 200x204 ace plate -> ~92px
+const WHV_ZONE={y0:74,y1:232};                      // the ace's own airspace: it never leaves it by choice
+function whvHard(){ return typeof diffKey!=='undefined'&&(diffKey==='hard'||diffKey==='furious'); }
+function whvSfx(n,v){ try{ if(Audio.SFX&&Audio.SFX[n]){ Audio.SFX[n](); return; } if(typeof Snd!=='undefined'&&Snd&&Snd.play)Snd.play(n,v==null?1:v); }catch(_e){} }
+function whvLoop(n,v){ try{ if(typeof Snd!=='undefined'&&Snd&&Snd.loopOn)Snd.loopOn(n,v); }catch(_e){} }
+function whvArt(k){ return typeof XART!=='undefined'&&XART.rdy(k)?XART.get(k):null; }
+function whvWarm(){
+  if(typeof XART==='undefined')return;
+  const ks=['whv_closed','whv_open','whv_broken','whv_fan','whv_twreck','whv_ace','whv_ace_belly','whv_ace_dmg','xelite_hivewing_idle','fllaser_0'];
+  for(let i=0;i<8;i++){ks.push('whv_ace_br'+i,'whv_ace_so'+i,'florb_'+i,'nxp_upward_'+i,'nsd_chim_'+i);}
+  for(const k of ks){ try{ XART.rdy(k); if(XART._touch)XART._touch(k); }catch(_w){} }
+}
+function whvP(b,px,py){ const W=b._whv; return {x:W.cx+px*WHV_S, y:W.cy+py*WHV_S}; }
+function whvOnScreen(b){ const W=b._whv; return W.cy>40; }
+
+function warhiveInit(b){
+  const hard=whvHard(), fur=typeof diffKey!=='undefined'&&diffKey==='furious', easy=typeof diffKey!=='undefined'&&diffKey==='easy';
+  const tMax=Math.round(520*(easy?0.8:1)*(hard?1.25:1)*(fur?1.08:1));
+  b.name='WARHIVE CARRIER'; b.enter=false; b._noHit=false;
+  b.w=WHV_PLATE.w*WHV_S; b.h=WHV_PLATE.h*WHV_S;
+  b._whv={mode:'carrier', st:'descend', t:0, hard:hard, fur:fur, cycle:0,
+    cx:(typeof camLeftX==='function'?camLeftX():0)+VW/2, cy:WHV_AWAY_Y, y0:WHV_AWAY_Y,
+    parts:{L:{hp:tMax,max:tMax,dead:false,fl:0}, R:{hp:tMax,max:tMax,dead:false,fl:0}, door:{hp:Math.round(tMax/2),max:Math.round(tMax/2),dead:false,fl:0}},
+    doorOpen:false, fanA:0, fanV:0, jets:[], launched:0, jetN:hard?8:6, launchCd:0,
+    shots:[], can:{cd:2.2, i:0, seq:null}, beam:null, deadT:0, fx:[], ace:null};
+  b.x=b._whv.cx; b.y=b._whv.cy;
+  whvWarm();
+}
+/* ---------- carrier ---------- */
+function whvPartPos(b,id){ return id==='door'?whvP(b,WHV_DOOR.x,WHV_DOOR.y):whvP(b,WHV_NAC[id].x,WHV_NAC[id].y); }
+function whvJetsAlive(W){
+  W.jets=W.jets.filter(e=>e&&!e.dead&&e._dyingT==null&&enemies.indexOf(e)>=0);
+  return W.jets.length;
+}
+function whvLaunchJet(b){
+  const W=b._whv, d=whvPartPos(b,'door'), i=W.launched++;
+  const e=spawnEnemy('xelite_hivewing', d.x+((i%3)-1)*14, d.y+6, {});
+  if(!e)return;
+  e._et=i*1.37; e.dropOk=(W.launched===W.jetN); e._whvEscort=true; e.vy=0;
+  W.jets.push(e);
+  if(typeof fxBurst==='function')fxBurst(d.x,d.y+10,26,{color:'#9fd8ff',rings:1,sparks:6});
+  whvSfx('launch',.8); shake=Math.max(shake,3);
+}
+function whvPartDamage(b,id,dmg){
+  const W=b._whv, p=W.parts[id]; if(!p||p.dead)return 0;
+  p.hp-=dmg; p.fl=0.14;
+  if(p.hp<=0){
+    p.hp=0; p.dead=true; const q=whvPartPos(b,id), big=id==='door'?70:96;
+    for(let k=0;k<6;k++) explode(q.x+rnd(-34,34),q.y+rnd(-30,30),rnd(big*.5,big),'red',null,'nxp_barrage');
+    if(typeof spawnShockRing==='function'){spawnShockRing(q.x,q.y,big*1.3,'fire');spawnShockRing(q.x,q.y,big*.8,'fire');}
+    if(typeof fxBurst==='function')fxBurst(q.x,q.y,big,{color:'#ffb040',rings:2,chunks:10,sparks:14});
+    shake=Math.max(shake,14); flashScreen=Math.max(flashScreen||0,.35); whvSfx('expBig');
+    if(id==='door'){ W.doorOpen=true; }
+    if(typeof floatText==='function')floatText(q.x,q.y-20,id==='door'?'BAY DOOR DOWN':'THRUSTER DOWN','#ffcf5a');
+  }
+  return dmg;
+}
+function whvCarrierHitPart(b,x,y){
+  const W=b._whv; if(W.mode!=='carrier'||!whvOnScreen(b))return null;
+  for(const id of ['L','R']){ const p=W.parts[id]; if(p.dead)continue; const q=whvPartPos(b,id), r=WHV_POD_R*WHV_S;
+    if(dist2(x,y,q.x,q.y)<r*r)return id; }
+  const D=W.parts.door; if(!D.dead){ const q=whvPartPos(b,'door');
+    if(Math.abs(x-q.x)<WHV_DOOR.w*WHV_S*.5&&Math.abs(y-q.y)<WHV_DOOR.h*WHV_S*.5)return 'door'; }
+  /* the armoured hull: a flattened diamond around the body, so rounds over the wings stop on it */
+  const dx=Math.abs(x-W.cx)/(WHV_PLATE.w*WHV_S*.49), dy=Math.abs(y-W.cy)/(WHV_PLATE.h*WHV_S*.47);
+  return (dx+dy*0.8<1.02 && dy<1)?'hull':null;
+}
+/* Hard: the thrusters turn into cannons whenever the door is open on screen. */
+function whvCannonTick(b,dt){
+  const W=b._whv, C=W.can, live=['L','R'].filter(s=>!W.parts[s].dead);
+  if(!W.hard||!live.length||W.st==='descend'||W.st==='retreat'||W.st==='away')return;
+  if(W.beam)return;
+  if(C.seq){
+    const S=C.seq; S.t+=dt;
+    while(S.shots.length&&S.shots[0].at<=S.t){ const s=S.shots.shift(), q=whvPartPos(b,S.side);
+      const a=Math.atan2(player.y-q.y,player.x-q.x)+s.off;
+      W.shots.push({x:q.x,y:q.y+14,vx:Math.cos(a)*s.sp,vy:Math.sin(a)*s.sp,r:13,t:0,kind:'ball'});
+      whvSfx('laserShot',.7);
+    }
+    if(!S.shots.length)C.seq=null;
+    return;
+  }
+  C.cd-=dt*(DIFF.eFire||1); if(C.cd>0)return;
+  const side=live[C.i%live.length], pat=['flurry','spread','beam'][C.i%3]; C.i++;
+  if(pat==='beam'){ const q=whvPartPos(b,side);
+    W.beam={side:side, t:0, warn:1.55, fire:1.25, w:VW/3}; whvSfx('beamCharge'); C.cd=2.4; return; }
+  const shots=[];
+  if(pat==='flurry'){ for(let k=0;k<5;k++)shots.push({at:k*.2,off:rnd(-.05,.05),sp:3.1}); C.cd=2.1; }
+  else { for(let r=0;r<2;r++)for(const o of [-.32,0,.32])shots.push({at:r*.5,off:o,sp:2.9}); C.cd=2.0; }
+  C.seq={side:side,t:0,shots:shots};
+}
+function whvBeamTick(b,dt){
+  const W=b._whv, B=W.beam; if(!B)return;
+  if(W.parts[B.side].dead){ W.beam=null; return; }
+  B.t+=dt; const q=whvPartPos(b,B.side);
+  if(B.t<B.warn){ if(typeof combatWarningTick==='function')combatWarningTick(b,'whvbeam',B.t,B.warn); return; }
+  if(!B.sfx){ B.sfx=true; whvSfx('laserShot'); shake=Math.max(shake,6); }
+  if(Math.abs(player.x-q.x)<B.w*.5-6 && player.y>q.y) playerHit();
+  if(B.t>B.warn+B.fire)W.beam=null;
+}
+function whvShotsTick(b,dt){
+  const W=b._whv, k=dt*60;
+  for(let i=W.shots.length-1;i>=0;i--){ const s=W.shots[i]; s.t+=dt;
+    s.x+=s.vx*k; s.y+=s.vy*k;
+    if(s.kind==='bolt'){ if(Math.abs(s.x-player.x)<6&&Math.abs(s.y-player.y)<16)playerHit(); }
+    else if(dist2(s.x,s.y,player.x,player.y)<(s.r+5)*(s.r+5))playerHit();
+    if(s.y>VH+40||s.y<-60||s.x<camLeftX()-60||s.x>camRightX()+60)W.shots.splice(i,1);
+  }
+}
+function whvCarrierTick(b,dt){
+  const W=b._whv; W.t+=dt;
+  const tx=clamp((typeof camLeftX==='function'?camLeftX():0)+VW/2, WHV_PLATE.w*WHV_S*.5-40, worldWidth()-WHV_PLATE.w*WHV_S*.5+40);
+  W.cx+=clamp(tx-W.cx,-40*dt,40*dt);
+  const moving=W.st==='descend'||W.st==='retreat';
+  W.fanV+=((moving?16:9)-W.fanV)*Math.min(1,dt*1.5); W.fanA+=W.fanV*dt;
+  if(moving&&!(W.parts.L.dead&&W.parts.R.dead)){ whvLoop('thruster',1); whvLoop('amb_void',.9); shake=Math.max(shake,W.st==='descend'?2.2:1.4); }
+  const ez=u=>1-Math.pow(1-clamp(u,0,1),3);
+  if(W.st==='descend'){ W.cy=W.y0+(WHV_HOME_Y-W.y0)*ez(W.t/2.6);
+    if(W.t>=2.6){ W.st='open'; W.t=0; W.cy=WHV_HOME_Y; } }
+  else if(W.st==='open'){ if(W.t>=.35&&!W.doorOpen){ W.doorOpen=true; whvSfx('dash'); shake=Math.max(shake,4);
+      const d=whvPartPos(b,'door'); if(typeof fxBurst==='function')fxBurst(d.x,d.y,30,{color:'#cfe6ff',rings:1}); }
+    if(W.t>=.75){ W.st='launch'; W.t=0; W.launched=0; W.launchCd=0; } }
+  else if(W.st==='launch'){ W.launchCd-=dt;
+    if(W.launchCd<=0&&W.launched<W.jetN){ whvLaunchJet(b); W.launchCd=W.hard?.5:.42; }
+    if(W.launched>=W.jetN){ W.st='hold'; W.t=0; } }
+  else if(W.st==='hold'){ if(W.t>=(W.hard?5.2:3.6)){ W.st='retreat'; W.t=0; W.y0=W.cy;
+      if(!W.parts.door.dead){ W.doorOpen=false; whvSfx('dash'); } W.beam=null; W.can.seq=null; } }
+  else if(W.st==='retreat'){ W.cy=W.y0+(WHV_AWAY_Y-W.y0)*Math.pow(clamp(W.t/2.3,0,1),2);
+    if(W.t>=2.3){ W.st='away'; W.t=0; } }
+  else if(W.st==='away'){ W.cy=WHV_AWAY_Y;
+    if(whvJetsAlive(W)===0&&W.t>1.2 || W.t>45){ W.st='descend'; W.t=0; W.y0=WHV_AWAY_Y; W.cycle++; } }
+  whvCannonTick(b,dt); whvBeamTick(b,dt);
+  for(const id in W.parts){ const p=W.parts[id]; p.fl=Math.max(0,p.fl-dt); }
+  b.x=W.cx; b.y=W.cy;
+  if(W.parts.L.dead&&W.parts.R.dead)whvDeathStart(b);
+}
+/* ---------- the carrier's fall, and the ace coming out of it ---------- */
+function whvDeathStart(b){
+  const W=b._whv; W.mode='death'; W.t=0; W.beam=null; W.can.seq=null; W.dy=0;
+  for(const e of W.jets.slice()) if(e&&!e.dead&&e._dyingT==null&&typeof killEnemy==='function')killEnemy(e);
+  whvSfx('bossRoar'); shake=Math.max(shake,12);
+}
+function whvDeathTick(b,dt){
+  const W=b._whv; W.t+=dt; const T=W.t;
+  W.dy+=dt*(18+T*14); b.x=W.cx; b.y=W.cy+W.dy;
+  W.boomCd=(W.boomCd||0)-dt;
+  if(T<4.0&&W.boomCd<=0){ W.boomCd=Math.max(.05,.26-T*.05);
+    explode(W.cx+rnd(-200,200)*WHV_S,W.cy+W.dy+rnd(-110,110)*WHV_S,rnd(34,80),'red',null,BOSS_COMBO[(Math.random()*BOSS_COMBO.length)|0]);
+    if(Math.random()<.35)whvSfx('expBig'); }
+  shake=Math.max(shake,T<4?6+T*2:0);
+  if(T>1.5&&!W.parts.door.dead){ whvPartDamage(b,'door',99999); }
+  if(T>2.4&&!W.ace)whvAceSpawn(b);
+  if(T>3.6&&!W.finalBlast){ W.finalBlast=true;
+    for(let k=0;k<9;k++)explode(W.cx+rnd(-220,220)*WHV_S,W.cy+W.dy+rnd(-120,120)*WHV_S,rnd(70,120),'red',null,'nxp_dense');
+    if(typeof spawnShockRing==='function')for(const r of [150,230,320])spawnShockRing(W.cx,W.cy+W.dy,r,'fire');
+    flashScreen=Math.max(flashScreen||0,.8); whvSfx('expBig'); whvSfx('bossRoar'); }
+  if(W.ace)whvAceTick(b,dt);
+  if(T>4.4&&W.ace&&W.ace.st!=='emerge'){ W.mode='ace'; b.x=W.ace.x; b.y=W.ace.y; }
+}
+/* ---------- the NIGHTWING ACE ---------- */
+function whvAceSpawn(b){
+  const W=b._whv, d=whvPartPos(b,'door');
+  W.ace={x:d.x,y:d.y+W.dy,vx:0,vy:0,t:0,st:'emerge',roll:null,somer:null,dash:null,rollCd:1.2,somerCd:3,gunCd:1.2,mslCd:4.5,dashCd:7,
+    rng:{ox:0,oy:0,t:0}, orb:null, desp:null, inverted:false, invSomerCd:4, pvx:0, ppx:player.x, trail:[]};
+  b.w=86; b.h=88; b.hp=b.maxhp; b.dmgState=0; b.name='NIGHTWING ACE';
+  if(typeof Audio!=='undefined'&&Audio.startMusic)Audio.startMusic('boss'+run.stage);
+  whvSfx('launch'); whvSfx('helixBurst');
+  if(typeof fxBurst==='function')fxBurst(d.x,d.y+W.dy,44,{color:'#5a8cff',rings:2,sparks:16});
+}
+function whvAceInvuln(A){ return !!(A.roll||A.somer||A.st==='emerge'||(A.desp&&(A.desp.st==='south'||A.desp.st==='re'))); }
+function whvAceFireMissiles(b,n){
+  for(let i=0;i<n;i++){
+    enemyLockOn(b, 1.0+i*.24, {fire:function(){
+      const A=b._whv&&b._whv.ace; if(!A||b.dead)return;
+      const side=i%2?1:-1, x=A.x+side*24, y=A.y+8, a=Math.PI/2+side*.35;
+      eBullets.push({x:x,y:y,vx:Math.cos(a)*3.1,vy:Math.sin(a)*3.1,ang:a,w:11,h:18,kind:'emissile',hp:1,_shootable:true,spd:3.1,_accel:.03,_maxspd:5.2,t:0,_bright:true});
+      whvSfx('missile',.8);
+    }});
+  }
+}
+function whvAceGuns(b,A,spread){
+  for(const s of [-1,1]){ const a=Math.PI/2+(spread||0)*s;
+    if(typeof eShoot==='function')eShoot(A.x+s*9,A.y+30,a,6.2,'mg'); }
+  if(spread){ if(typeof eShoot==='function')eShoot(A.x,A.y+32,Math.PI/2,6.2,'mg'); }
+  whvSfx('enemyShoot',.6);
+}
+function whvAceTick(b,dt){
+  const W=b._whv, A=W.ace; A.t+=dt;
+  const L=camLeftX()+52, R=camRightX()-52, hard=W.hard, hr=b.hp/b.maxhp;
+  A.pvx=A.pvx*.8+((player.x-A.ppx)/Math.max(dt,1e-3))*.2; A.ppx=player.x;
+  A.rollCd-=dt; A.somerCd-=dt; A.gunCd-=dt; A.mslCd-=dt; A.dashCd-=dt;
+  if(A.st==='emerge'){ A.y+=dt*(A.t<.5?420:120); A.vx=0;
+    if(A.t>1.1){ A.st='fight'; } b.x=A.x; b.y=A.y; return; }
+  /* evasive reels - the same manoeuvres the player has, with the same windows */
+  if(A.roll){ A.roll.t+=dt; const u=clamp(A.roll.t/.46,0,1); A.x=A.roll.x0+A.roll.dir*150*(1-(1-u)*(1-u)); if(u>=1)A.roll=null; }
+  if(A.somer){ A.somer.t+=dt; const u=clamp(A.somer.t/.62,0,1); A.y=A.somer.y0+Math.sin(u*Math.PI)*70; if(u>=1)A.somer=null; }
+  /* Hard: 50% helper orb, 25% desperation */
+  if(hard&&hr<=.5&&!A.orb){ A.orb={a:0,cd:1.2}; whvSfx('helixCharge'); }
+  if(hard&&hr<=.25&&!A.desp){ A.desp={st:'warn',t:0,pass:0}; A.dash=null; }
+  if(A.desp&&A.desp.st!=='done'){ whvAceDesperation(b,A,dt); }
+  else if(A.dash){ whvAceDashTick(b,A,dt); }
+  else if(!A.roll&&!A.somer){ whvAceFly(b,A,dt,L,R); whvAceDecide(b,A,dt); }
+  A.x=clamp(A.x,camLeftX()-140,camRightX()+140);
+  if(A.orb){ A.orb.a+=dt*2.6; A.orb.cd-=dt; const o={x:A.x+Math.cos(A.orb.a)*54,y:A.y+Math.sin(A.orb.a)*54};
+    A.orb.x=o.x; A.orb.y=o.y;
+    if(A.orb.cd<=0){ A.orb.cd=W.fur?.7:.9;
+      for(let i=0;i<5;i++){ const a=Math.PI/2+(i-2)*.26; W.shots.push({x:o.x,y:o.y+8,vx:Math.cos(a)*5.6,vy:Math.sin(a)*5.6,t:0,kind:'bolt',a:a}); }
+      whvSfx('laser',.6); } }
+  A.trail.push({x:A.x,y:A.y,t:0}); if(A.trail.length>10)A.trail.shift(); for(const p of A.trail)p.t+=dt;
+  b.x=A.x; b.y=A.y;
+  const ratio=b.hp/b.maxhp; b.dmgState=ratio>.75?0:ratio>.5?1:ratio>.25?2:3;
+}
+function whvAceFly(b,A,dt,L,R){
+  const W=b._whv;
+  A.rng.t-=dt; if(A.rng.t<=0){ A.rng.t=rnd(1.1,2.3); A.rng.ox=rnd(-95,95); A.rng.oy=rnd(-30,40); }
+  /* part input (the player's own velocity, led), part position (an orbit around the player's
+     column), part RNG (a new offset every 1-2s). The mix is what keeps it readable AND unpredictable. */
+  let tx, ty;
+  if(A.inverted){ tx=player.x+A.rng.ox*.25; ty=WHV_ZONE.y0+34+Math.sin(A.t*1.4)*18; }
+  else { tx=player.x+A.pvx*.32+Math.sin(A.t*.85)*110+A.rng.ox; ty=(WHV_ZONE.y0+WHV_ZONE.y1)/2+Math.sin(A.t*1.1)*42+A.rng.oy; }
+  tx=clamp(tx,L,R); ty=clamp(ty,WHV_ZONE.y0,WHV_ZONE.y1);
+  const top=(A.inverted?240:210)*(W.fur?1.12:1), ax=clamp((tx-A.x)*3.2,-top,top)-A.vx, ay=clamp((ty-A.y)*2.6,-150,150)-A.vy;
+  A.vx+=ax*Math.min(1,dt*4); A.vy+=ay*Math.min(1,dt*4);
+  A.x+=A.vx*dt; A.y+=A.vy*dt;
+}
+function whvAceDecide(b,A,dt){
+  const W=b._whv, hard=W.hard;
+  /* dodge: a player round climbing into the hull -> barrel roll away from it (the RNG keeps it beatable) */
+  if(A.rollCd<=0){
+    for(const s of pBullets){ if(s.dead||!(s.vy<0))continue;
+      if(s.y>A.y&&s.y-A.y<120&&Math.abs(s.x-A.x)<40){
+        A.rollCd=hard?1.7:2.4;
+        if(Math.random()<(hard?.8:.6)){ A.roll={t:0,dir:s.x<A.x?1:-1,x0:A.x}; whvSfx('dash',.7); }
+        break; } } }
+  /* somersault out of a missile or a Retina lock on it */
+  if(A.somerCd<=0){
+    let threat=(typeof retina!=='undefined'&&retina&&retina.phase==='locked'&&retina.target===b);
+    for(const s of pBullets){ if(!s.dead&&s.kind==='gmiss'&&dist2(s.x,s.y,A.x,A.y)<150*150){threat=true;break;} }
+    if(threat){ A.somerCd=hard?4.2:5.5; A.somer={t:0,y0:A.y}; whvSfx('dash',.8); return; } }
+  if(A.gunCd<=0&&Math.abs(player.x-A.x)<46){ A.gunCd=(A.inverted?.7:1.05)/(DIFF.eFire||1);
+    if(A.inverted)whvAceGuns(b,A,.22); else { whvAceGuns(b,A,0); A.burst=3; A.burstT=.09; } }
+  if(A.burst>0){ A.burstT-=dt; if(A.burstT<=0){ A.burst--; A.burstT=.09; whvAceGuns(b,A,0); } }
+  if(A.mslCd<=0){ A.mslCd=rnd(6,8)/(DIFF.eFire||1); whvAceFireMissiles(b,hard?4:2); }
+  if(hard&&A.dashCd<=0&&!A.inverted){ A.dashCd=rnd(8,10); A.dash={st:'warn',t:0,x0:A.x,y0:A.y}; }
+  if(A.inverted){ A.invSomerCd-=dt; if(A.invSomerCd<=0){ A.invSomerCd=rnd(3.5,5); A.somer={t:0,y0:A.y}; } }
+}
+/* Hard: the charge dash - Juggernaut's ram, with the shared green/yellow/red lane first */
+function whvAceDashTick(b,A,dt){
+  const D=A.dash; D.t+=dt;
+  if(D.st==='warn'){ const warn=.95;
+    if(D.t<warn*.6){ D.ang=Math.atan2(player.y-A.y,player.x-A.x); }
+    if(typeof combatWarningTick==='function')combatWarningTick(b,'whvdash',D.t,warn);
+    D.ex=A.x+Math.cos(D.ang)*520; D.ey=A.y+Math.sin(D.ang)*520;
+    if(D.t>=warn){ D.st='go'; D.t=0; D.sx=A.x; D.sy=A.y; whvSfx('launch'); if(typeof spawnShockRing==='function')spawnShockRing(A.x,A.y,60,'fire'); }
+    return; }
+  if(D.st==='go'){ const u=clamp(D.t/.42,0,1), dist=440*(1-(1-u)*(1-u));
+    A.x=D.sx+Math.cos(D.ang)*dist; A.y=D.sy+Math.sin(D.ang)*dist; shake=Math.max(shake,3);
+    if(u>=1){ D.st='back'; D.t=0; D.bx=A.x; D.by=A.y; } return; }
+  if(D.st==='back'){ const u=clamp(D.t/1.1,0,1), e=u*u*(3-2*u), ty=(WHV_ZONE.y0+WHV_ZONE.y1)/2;
+    A.x=D.bx+(clamp(player.x,camLeftX()+60,camRightX()-60)-D.bx)*e*.5; A.y=D.by+(ty-D.by)*e;
+    if(u>=1){ A.dash=null; A.vx=A.vy=0; } }
+}
+/* Hard, 25%: charge off the bottom, three wobbling criss-cross passes, then back in and inverted */
+function whvAceDesperation(b,A,dt){
+  const P=A.desp; P.t+=dt;
+  if(P.st==='warn'){ const warn=.8;
+    if(typeof combatWarningTick==='function')combatWarningTick(b,'whvdesp',P.t,warn);
+    P.ex=A.x; P.ey=VH+60;
+    if(P.t>=warn){ P.st='south'; P.t=0; P.y0=A.y; whvSfx('launch'); whvSfx('bossRoar'); } return; }
+  if(P.st==='south'){ A.y=P.y0+(VH+180-P.y0)*clamp(P.t/.55,0,1)*clamp(P.t/.55,0,1);
+    if(P.t>=.75){ P.st='cross'; P.t=0; P.pass=0; P.side=Math.random()<.5?-1:1; whvCrossPlan(A,P); } return; }
+  if(P.st==='cross'){
+    if(P.t<P.lead){ if(typeof combatWarningTick==='function')combatWarningTick(b,'whvcross'+P.pass,P.t,P.lead,true);
+      A.x=P.x0; A.y=P.y0; return; }
+    const u=(P.t-P.lead)/P.dur;
+    A.x=P.x0+(P.x1-P.x0)*u; A.y=P.y0+(P.y1-P.y0)*u+Math.sin(u*Math.PI*5)*34;
+    if(u>=1){ P.pass++; P.t=0; P.side=-P.side; if(P.pass>=3){ P.st='re'; P.t=0; A.x=clamp(player.x,camLeftX()+60,camRightX()-60); A.y=-80; } else whvCrossPlan(A,P); }
+    return; }
+  if(P.st==='re'){ A.y=-80+(WHV_ZONE.y0+40+80)*Math.min(1,P.t/.9);
+    if(P.t>=.9){ P.st='done'; A.inverted=true; A.somer={t:0,y0:A.y}; A.vx=A.vy=0; if(typeof floatText==='function')floatText(A.x,A.y-40,'INVERTED','#7fa8ff'); } }
+}
+function whvCrossPlan(A,P){
+  const L=camLeftX(), R=camRightX(), s=P.side;
+  P.x0=s<0?L-120:R+120; P.x1=s<0?R+120:L-120;
+  P.y0=rnd(170,300); P.y1=clamp(player.y+rnd(-40,40),220,VH-40);
+  P.lead=.62; P.dur=.95; P.t=0;
+}
+function whvAceDeathTick(b,dt){
+  const W=b._whv, A=W.ace; b.dying+=dt; const T=b.dying;
+  /* the player's own death, mirrored: a spin-out with the fire ANCHORED to the hull, then the crash */
+  A.spin=(A.spin||0)+dt*(9+T*6); A.x+=Math.sin(T*3)*40*dt; A.y+=dt*(30+T*40);
+  A.fxCd=(A.fxCd||0)-dt;
+  if(T<2.4&&A.fxCd<=0){ A.fxCd=.07; explode(A.x+rnd(-18,18),A.y+rnd(-18,18),rnd(18,34),'blue',null,'nxp_barrage'); }
+  if(T>=2.4&&!A.crash){ A.crash=true;
+    for(let k=0;k<7;k++)explode(A.x+rnd(-40,40),A.y+rnd(-40,40),rnd(50,90),'blue',null,'nxp_dense');
+    if(typeof spawnShockRing==='function')for(const r of [90,160,240])spawnShockRing(A.x,A.y,r,'fire');
+    whvSfx('expBig'); whvSfx('bossRoar'); }
+  whiteBlast=T<3.4?0:T<3.9?(T-3.4)/.5:T<4.4?1:Math.max(0,1-(T-4.4)/1.1);
+  shake=Math.max(shake,T<2.6?5+T*2:0);
+  b.x=A.x; b.y=A.y;
+}
+function warhiveTick(b,dt){
+  b.t+=dt; b.flash=Math.max(0,(b.flash||0)-dt);
+  const W=b._whv;
+  if(b.dead){ if(W.ace)whvAceDeathTick(b,dt); W.shots.length=0; return; }
+  whvShotsTick(b,dt);
+  if(W.mode==='carrier')whvCarrierTick(b,dt);
+  else if(W.mode==='death')whvDeathTick(b,dt);
+  else whvAceTick(b,dt);
+}
+function warhiveHitTest(b,x,y){
+  const W=b._whv; b._whvHit=null;
+  if(b.dead)return false;
+  if(W.mode==='carrier'){ const id=whvCarrierHitPart(b,x,y); b._whvHit=id; return !!id; }
+  if(W.mode==='death'||!W.ace||whvAceInvuln(W.ace))return false;
+  const A=W.ace; return Math.abs(x-A.x)<34&&Math.abs(y-A.y)<40;
+}
+function warhiveDamage(b,dmg){
+  const W=b._whv;
+  if(W.mode==='ace')return dmg;
+  if(W.mode!=='carrier')return 0;
+  let id=b._whvHit;
+  if(!id&&_lastHitX!=null)id=whvCarrierHitPart(b,_lastHitX,_lastHitY);
+  b._whvHit=null;
+  if(id==='L'||id==='R'||id==='door'){ markHit(b); if(typeof weaponHitSfx==='function')weaponHitSfx('normal'); whvPartDamage(b,id,dmg);
+    if(typeof stageStats!=='undefined')stageStats.dmgDealt+=dmg; }
+  else { if(typeof weaponHitSfx==='function')weaponHitSfx('armor'); }
+  return 0;
+}
+function warhiveRetinaTargets(b,a){
+  const W=b._whv;
+  if(W.mode!=='carrier'||!whvOnScreen(b))return;
+  for(const id of ['L','R','door']){ if(W.parts[id].dead)continue;
+    const state=()=>{const q=whvPartPos(b,id);return{x:q.x,y:q.y,hp:W.parts[id].hp,dead:W.parts[id].dead||W.mode!=='carrier'||!whvOnScreen(b)};};
+    a.push(retinaImpactTarget(b,'whv '+id,id==='door'?'bay door':'thruster',state,id==='door'?70:64,id==='door'?70:64)); }
+}
+/* ---------- draw ---------- */
+function whvSprite(k,x,y,w,h,a,alpha,add){
+  const im=whvArt(k); if(!im)return false;
+  ctx.save(); ctx.translate(x,y); if(a)ctx.rotate(a); if(alpha!=null)ctx.globalAlpha=clamp(alpha,0,1);
+  if(add)ctx.globalCompositeOperation='lighter'; ctx.imageSmoothingEnabled=false;
+  ctx.drawImage(im,-w/2,-h/2,w,h); ctx.restore(); return true;
+}
+function whvPartFx(b,q,ratio,dead,scale,seed){
+  /* slow -> mid -> fast, then the wreck burns: the fire and smoke ride the part every frame */
+  if(ratio>.75&&!dead)return;
+  const t=(b.t||0)+seed, lvl=dead?4:ratio>.5?1:ratio>.25?2:3, n=[0,1,1,2,3][lvl], rate=[0,.55,.9,1.4,1.2][lvl];
+  for(let i=0;i<n;i++){
+    const u=(t*rate+i/n)%1, sz=(14+lvl*7)*scale*(1+u*.9), ox=(i-(n-1)/2)*10*scale;
+    weaponFeedbackArt('nsd_chim_'+((Math.floor(t*9)+i*3)%8),q.x+ox+u*6,q.y-6-u*(26+lvl*8)*scale,sz,null,.62*(1-u),0,false);
+  }
+  if(lvl>=2){ const f=(Math.floor(t*12)+seed*3)%8, fs=(lvl===2?14:lvl===3?22:30)*scale;
+    weaponFeedbackArt('nxp_upward_'+(f|0),q.x,q.y-fs*.25,fs,null,.9,0,false);
+    if(lvl>=3&&Math.random()<dt60()*.06)explode(q.x+rnd(-14,14),q.y+rnd(-12,12),rnd(10,18),'red',null,'nxp_barrage',null,null,true); }
+}
+function dt60(){ return (typeof _lastDt!=='undefined'&&_lastDt)?_lastDt*60:1; }
+function whvDrawCarrier(b){
+  const W=b._whv, cx=W.cx, cy=W.cy+(W.dy||0), s=WHV_S, pw=WHV_PLATE.w*s, ph=WHV_PLATE.h*s;
+  if(cy<-ph)return;
+  const key=W.parts.door.dead?'whv_broken':(W.doorOpen?'whv_open':'whv_closed');
+  let alpha=1;
+  if(W.mode==='death')alpha=W.t<3.6?1:Math.max(0,1-(W.t-3.6)/.8);
+  if(alpha<=0)return;
+  ctx.save(); ctx.globalAlpha=alpha;
+  if(!whvSprite(key,cx,cy,pw,ph,0,alpha)){ ctx.restore(); return; }
+  /* the fans spin inside their own nacelles; a dead one is covered by the wrecked-nacelle plate */
+  for(const id of ['L','R']){ const p=W.parts[id], q={x:cx+WHV_NAC[id].x*s,y:cy+WHV_NAC[id].y*s};
+    if(!p.dead){ const d=WHV_FAN_R*2.05*s; whvSprite('whv_fan',q.x,q.y,d,d,(id==='L'?1:-1)*W.fanA,alpha);
+      if(p.fl>0){ whvSprite('whv_fan',q.x,q.y,d,d,(id==='L'?1:-1)*W.fanA,p.fl*5,true); } }
+    else { const d=WHV_POD_R*2.1*s; whvSprite('whv_twreck',q.x,q.y,d,d,0,alpha); } }
+  /* a hit on the door flashes the door, not the whole ship */
+  const D=W.parts.door; if(D.fl>0&&!D.dead){ const q={x:cx,y:cy+WHV_DOOR.y*s}, c=xartPalette(key,'white');
+    if(c){ ctx.save(); ctx.beginPath(); ctx.rect(q.x-WHV_DOOR.w*s/2,q.y-WHV_DOOR.h*s/2,WHV_DOOR.w*s,WHV_DOOR.h*s); ctx.clip();
+      ctx.globalAlpha=D.fl*4*alpha; ctx.imageSmoothingEnabled=false; ctx.drawImage(c,cx-pw/2,cy-ph/2,pw,ph); ctx.restore(); } }
+  /* Hard: the thruster cannon charge glows in the fan before a volley or the beam */
+  if(W.hard&&W.mode==='carrier'){
+    const B=W.beam, seqSide=W.can.seq&&W.can.seq.side;
+    for(const id of ['L','R']){ if(W.parts[id].dead)continue; const q={x:cx+WHV_NAC[id].x*s,y:cy+WHV_NAC[id].y*s};
+      const k=(B&&B.side===id)?clamp(B.t/B.warn,0,1):(seqSide===id?.6:0);
+      if(k>0){ const d=18+k*40, c=xartPalette('florb_'+(Math.floor((b.t||0)*16)%8),'#3ad0ff');
+        if(c){ ctx.save(); ctx.translate(q.x,q.y+6); ctx.rotate((b.t||0)*5); ctx.globalAlpha=.55+k*.45; ctx.globalCompositeOperation='lighter'; ctx.drawImage(c,-d/2,-d/2,d,d); ctx.restore(); } } } }
+  for(const id of ['L','R','door']){ const p=W.parts[id]; whvPartFx(b,whvPartPos(b,id),p.hp/p.max,p.dead,id==='door'?.9:1.15,id==='L'?0:id==='R'?1.7:3.1); }
+  ctx.restore();
+  /* the escorts that are still inside the plate's footprint draw OVER it - they launch from the bay */
+  for(const e of W.jets) if(e&&!e.dead&&e.y<cy+ph*.55&&typeof drawEnemy==='function'){ try{ drawEnemy(e); }catch(_de){} }
+}
+function whvDrawShots(b){
+  const W=b._whv, now=b.t||0;
+  const orb=xartPalette('florb_'+(Math.floor(now*14)%8),'#3ad0ff'), orbB=xartPalette('florb_'+(Math.floor(now*14)%8),'#5a7cff');
+  const las=xartPalette('fllaser_0','#5a7cff');
+  for(const s of W.shots){
+    if(s.kind==='bolt'){ if(las){ ctx.save(); ctx.translate(s.x,s.y); ctx.rotate(s.a-Math.PI/2); ctx.globalCompositeOperation='lighter'; ctx.imageSmoothingEnabled=false;
+        ctx.drawImage(las,-4,-11,8,22); ctx.restore(); } continue; }
+    if(orb){ const d=s.r*2.6; ctx.save(); ctx.translate(s.x,s.y); ctx.rotate(now*6+s.t*3); ctx.globalCompositeOperation='lighter'; ctx.imageSmoothingEnabled=false;
+      ctx.drawImage(orb,-d/2,-d/2,d,d); ctx.globalAlpha=.55; ctx.drawImage(orb,-d*.32,-d*.32,d*.64,d*.64); ctx.restore(); }
+  }
+  const B=W.beam; if(B&&!W.parts[B.side].dead){ const q=whvPartPos(b,B.side);
+    if(B.t<B.warn){ if(typeof combatWarningDraw==='function')combatWarningDraw(b,{x:q.x,y:q.y+14,ex:q.x,ey:VH+40,progress:B.t/B.warn,width:B.w}); }
+    else if(las){ const u=B.t-B.warn, open=clamp(u/.12,0,1)*clamp((B.fire-u)/.18,0,1), w=B.w*open, h=VH-q.y+40;
+      ctx.save(); ctx.globalCompositeOperation='lighter'; ctx.imageSmoothingEnabled=false;
+      const c2=xartPalette('fllaser_0','#3ad0ff');
+      ctx.globalAlpha=.75; ctx.drawImage(c2||las,q.x-w/2,q.y+10,w,h);
+      ctx.globalAlpha=.9; ctx.drawImage(xartPalette('fllaser_0','white')||las,q.x-w*.18,q.y+10,w*.36,h);
+      ctx.restore(); } }
+  const A=W.ace;
+  if(A&&A.orb&&orbB){ const d=26+Math.sin(now*8)*2; ctx.save(); ctx.translate(A.orb.x,A.orb.y); ctx.rotate(now*4); ctx.globalCompositeOperation='lighter'; ctx.drawImage(orbB,-d/2,-d/2,d,d); ctx.restore(); }
+}
+function whvAceKey(b,A){
+  if(A.somer){ const f=clamp(Math.floor(A.somer.t/.62*8),0,7); return 'whv_ace_so'+f; }
+  if(A.roll){ const f=clamp(Math.floor(A.roll.t/.46*8),0,7); return 'whv_ace_br'+(A.roll.dir>0?f:(8-f)%8); }
+  if(A.inverted)return 'whv_ace_belly';
+  if(Math.abs(A.vx)>150)return 'whv_ace_br'+(A.vx>0?1:7);
+  return (b.hp/b.maxhp<.5)?'whv_ace_dmg':'whv_ace';
+}
+function whvDrawAce(b){
+  const W=b._whv, A=W.ace; if(!A)return;
+  const w=200*WHV_ACE_S, h=204*WHV_ACE_S;
+  /* warnings: the dash lane and the desperation lanes */
+  if(A.dash&&A.dash.st==='warn'&&typeof combatWarningDraw==='function')combatWarningDraw(b,{x:A.x,y:A.y,ex:A.dash.ex,ey:A.dash.ey,progress:A.dash.t/.95,width:70});
+  const P=A.desp;
+  if(P&&P.st==='warn'&&typeof combatWarningDraw==='function')combatWarningDraw(b,{x:A.x,y:A.y,ex:A.x,ey:VH+60,progress:P.t/.8,width:70});
+  if(P&&P.st==='cross'&&P.t<P.lead&&typeof combatWarningDraw==='function')combatWarningDraw(b,{x:P.x0,y:P.y0,ex:P.x1,ey:P.y1,progress:P.t/P.lead,width:60,fieldOnly:true});
+  if(P&&P.st==='cross'&&P.t<P.lead)return;
+  const k=b.dead?'whv_ace':whvAceKey(b,A);
+  /* afterimages on the dash and the criss-cross, like the player's ram */
+  if((A.dash&&A.dash.st==='go')||(P&&P.st==='cross')){ const c=xartPalette('whv_ace','#3a6cff');
+    if(c)for(let i=0;i<A.trail.length-1;i+=2){ const p=A.trail[i]; ctx.save(); ctx.globalAlpha=.1+.25*i/A.trail.length; ctx.globalCompositeOperation='lighter';
+      ctx.drawImage(c,p.x-w/2,p.y-h/2,w,h); ctx.restore(); } }
+  const rot=b.dead?(A.spin||0):0;
+  whvSprite(k,A.x,A.y,w,h,rot,1);
+  if(b.flash>0&&!b.dead){ const c=xartPalette(k,'white'); if(c){ ctx.save(); ctx.translate(A.x,A.y); ctx.globalAlpha=Math.min(1,b.flash*4); ctx.imageSmoothingEnabled=false; ctx.drawImage(c,-w/2,-h/2,w,h); ctx.restore(); } }
+  /* engine glow at the two nozzles (the plate's own blue, pumped) */
+  if(!b.dead&&!A.inverted&&!A.somer){ const f=(Math.floor((b.t||0)*14))%8;
+    const c=xartPalette('florb_'+f,'#5a8cff'), d=12+Math.sin((b.t||0)*30)*2;   // Falva's orb is PINK: palette it, never blit it raw
+    if(c)for(const s of [-1,1]){ ctx.save(); ctx.globalAlpha=.8; ctx.globalCompositeOperation='lighter'; ctx.drawImage(c,A.x+s*10-d/2,A.y-h*.43-d/2,d,d); ctx.restore(); } }
+  if(!b.dead)for(const [q,r] of [[{x:A.x-18,y:A.y-6},b.hp/b.maxhp]])whvPartFx(b,q,r,false,.8,5);
+}
+function warhiveDraw(b){
+  const W=b._whv;
+  if(W.mode!=='ace')whvDrawCarrier(b);
+  whvDrawShots(b);
+  if(W.ace)whvDrawAce(b);
+}
+
 function updateBoss(dt){
   const b=boss;
   if(b._hammer){b.t+=dt;b.flash=Math.max(0,b.flash-dt);if(b.dead)hammerBossDeathTick(b,dt);else hammerBossTick(b,dt);return;}
+  if(b._whv){warhiveTick(b,dt);return;}
   b.t+=dt; if(!b.dead) b.rotor+=dt*30;
   if(!b.dead&&b.kind==='damkeeper'&&b._ovIntro&&typeof overlordIntroTick==='function'&&overlordIntroTick(b,dt))return;
   if(b._firing>0) b._firing-=dt;
@@ -39541,6 +40026,7 @@ const ENEMY_ART={
      can use in the later levels like 5, 6 and 8 ... beefy, stay on screen till they die, have shields
      and are some of the smartest and best in class fighters'. One cell each; idle/fire/death alias it. */
   xelite_furytalon:'xelite_furytalon', xelite_razorback:'xelite_razorback', xelite_tempest:'xelite_tempest', xelite_emberwing:'xelite_emberwing', xelite_glacierlance:'xelite_glacierlance', xelite_voidreaver:'xelite_voidreaver', xelite_ironserpent:'xelite_ironserpent', xelite_solarwarden:'xelite_solarwarden', xelite_nighthammer:'xelite_nighthammer',
+  xelite_hivewing:'xelite_hivewing',   // the Warhive's escort (0918), a new SpriteCook fighter - NOT a recolour
   jet1:'air_air1', jet2:'air_air2', jet3:'air_air5', jet4:'air_air6', jet5:'air_air7',
   drone1:'air_air9', drone2:'air_air10', drone3:'air_air11', drone4:'air_air12',
   // mini-boss craft (level 4 surprise) — huge canvas
@@ -40903,7 +41389,7 @@ function drawBoss(){
   const _b = boss;
   if(_b&&_b.kind==='damkeeper'&&_b._ovAirborne)return;
   if(_b&&_b.dead&&_b._cinDeath&&_b._cinDeath.stage===4){stage4DefeatDraw(_b);return;}
-  _bossFade = (_b && _b.dead) ? bossDeathAlpha(_b.dying || 0) : 1;
+  _bossFade = (_b && _b.dead) ? (_b._whv ? ((_b.dying||0)<2.45?1:0) : bossDeathAlpha(_b.dying || 0)) : 1;
   if(_bossFade <= 0) return;                 // gone: the explosion has the screen to itself now
   if(_bossFade >= 1){drawBossInner();encounterDamageOverlay(_b,false);return;}
   ctx.save();
@@ -40917,6 +41403,7 @@ function drawBoss(){
 }
 function drawBossInner(){
   if(boss&&boss._hammer){hammerBossDraw(boss);return;}
+  if(boss&&boss._whv){warhiveDraw(boss);return;}
   /* the rake draws under the hull, and like the tick it has to reach the non-ship paths too */
   if(boss && !boss._ship && boss._brk && typeof beamRakeDraw==='function') beamRakeDraw(boss);
   /* Attack-owned warning draws happen below the owning hull, using their simulation clocks. */
@@ -52163,6 +52650,8 @@ const ELITEX = {
   ironserpent: {hp:150, w:50, h:50, score:3600, band:0.36, spd:110, shield:'hex',     sh:0.40, vol:2, gap:0.18, cd:[0.8,1.2], kind:'dart'},
   solarwarden: {hp:210, w:56, h:56, score:5000, band:0.28, spd:64,  shield:'gold',    sh:0.65, vol:4, gap:0.08, cd:[1.2,1.7], kind:'xorb_solar'},
   nighthammer: {hp:220, w:60, h:60, score:5200, band:0.24, spd:58,  shield:'prism',   sh:0.60, vol:5, gap:0.05, cd:[1.4,1.9], kind:'xorb_antimatter'},
+  /* the WARHIVE's launched escorts (0918): lighter than a stage ace - six to eight come out of one bay */
+  hivewing:    {hp:52,  w:56, h:62, score:1400, band:0.58, spd:96,  shield:'crimson', sh:0.35, vol:3, gap:0.12, cd:[1.3,1.9], kind:'dart'},
 };
 function elitexTick(e, dt){
   const K=e._elx, X=ELITEX[K]; if(!X) return;
@@ -64363,7 +64852,7 @@ function debugOpen(){
   debugMenu.msgT=0; drawDebugMenu._md=true; setState(GS.DEBUG);
 }
 /* ---- the fight list: one entry per authored slot, straight off STAGES and SUBBOSS ------------ */
-const DEBUG_BOSS_NAMES={razorback:'RAZORBACK SIEGE TANK', tempestleviathan:'TEMPEST LEVIATHAN', tempestbrothers:'TEMPEST LEVIATHAN BROTHERS', damkeeper:'JUNGLE OVERLORD-X', vileexistence:'BLACK COCOON', tidalfusion:'WARP SENTINELS',
+const DEBUG_BOSS_NAMES={warhive:'WARHIVE CARRIER', razorback:'RAZORBACK SIEGE TANK', tempestleviathan:'TEMPEST LEVIATHAN', tempestbrothers:'TEMPEST LEVIATHAN BROTHERS', damkeeper:'JUNGLE OVERLORD-X', vileexistence:'BLACK COCOON', tidalfusion:'WARP SENTINELS',
   voidhorizon:'EVENT HORIZON', chaosharrier:'CHAOS HARRIER', quadlaser:'QUAD-LASER GUNSHIP', hellwing:'HELLWING DEATH CARRIER',
   dreadnought:'HELLFIRE GUNSHIP', wargod:'THE WAR GOD', spider:'ARACHNON MK-IX', leviathan:'LEVIATHAN CORE',
   ironrev:'IRON REVENANT', cesspool:'CESSPOOL LEVIATHAN', unitybreaker:'UNITY BREAKER', magmacolossus:'MAGMA COLOSSUS'};

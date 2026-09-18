@@ -5519,3 +5519,31 @@ Mike: "my A/J button doesnt press in the menu's even when I map it." Keyboard J 
 Note binds still reset every load (`BOOT_DEFAULT_SETTINGS`) and an OPTIONS rebind only sticks after APPLY.
 `probe_menu_confirm_0918f.py` 9/0 (a stubbed `navigator.getGamepads` read by the game's own pollGamepad: keyboard J,
 pad b0, a pad whose A is b2/b5, b1 remapped onto FIRE confirming, B/Escape/K still backing out, 0 errors).
+**`assets/data/FORGE_TEMPLATES_0916.json`** + `docs/forge_0916/inventory_sheet.png` are the weapon
+icon and projectile inventory for any weapon UI (Mike: *"use our in-game projectiles for these so we
+dont waste credits"*). Every key was RENDERED through `iconBlit` in real Chromium and measured
+there, with its store and size. ⚠ `micon_lasermist_*` does not resolve through `iconBlit` - it has
+its own path, `laserMistAtlasBlit` - so slot 6 draws nothing unless a UI calls that. ⚠ And the
+first pass reported 15 keys missing that are all fine: `XART.rdy` is false on its FIRST call, so a
+catalogue has to touch every key, WAIT, and then measure.
+
+## 0918 - the WARHIVE CARRIER + NIGHTWING ACE is stage 6's boss
+
+Mike's spec is verbatim in `docs/WARHIVE_BOSS_0918.md`, beside the build notes. `STAGES` stage 6 `boss:'warhive'`; the
+Doomsday Carrier Mk II is kept whole and still spawns by kind. The rig is `warhive*`/`whv*` just above `updateBoss`. It is
+hooked the same way as the Chrome Hammer, in 9 places, listed in the doc. The art is new SpriteCook art in
+`assets/game/bosses/skycarrier/`. The escort is a new `ELITEX.hivewing` row.
+Mike on the first escort pick: *"no, that was cole's ship recolored"* - `xelite_razorback` IS Cole's hull recoloured, so never
+reach for it as "a black jet".
+⚠ **THE CARRIER IS ONE PLATE, NOT A SPLIT.** The door states are `edit_asset_id` edits of the closed plate (IoU 0.994). The fans spin
+inside their nacelles, and a wrecked-nacelle plate is drawn over a dead one. Its objectives are hit regions on the plate, the same shape as the Mk II's
+bays that Mike asked for.
+⚠ **THE ESCORTS DRAW UNDER THE BOSS** (enemies draw before `drawBoss`), so `whvDrawCarrier` redraws any escort still inside the
+plate's footprint. Without that, a jet launching from the bay is invisible until it clears the hull.
+⚠ **FALVA'S `florb_` IS PINK.** Any other owner must `xartPalette` it, never blit it raw. Two raw blits shipped pink glows in the
+first proof.
+⚠ **A PROBE ROUND WITH `kind:'mg'` NEVER REACHES `bossHitTest`.** Push `{x,y,vx:0,vy:0,w:4,h:8,dmg,t:0}` - the Tempest probe's shape.
+⚠ **`Audio.cur` IS NULL HEADLESS.** Record `Audio.startMusic` calls instead.
+§85's 'every boss fires' counts the Warhive's LAUNCHES: on Normal its attack is the escorts, which fire through the enemy loop that
+the fixture does not run. `probe_warhive_0918.py --diff normal|hard`: 19/19 and 24/24, with 0 errors. Suite: 57 names, identical to
+the HEAD baseline.
