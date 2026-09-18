@@ -7383,14 +7383,25 @@ const Input = (()=>{
      whatever is under the cursor. If a left click also counted as "confirm the highlighted item",
      one click would do two things: activate the button you aimed at AND the row the keyboard
      cursor happened to be on. Gameplay keeps the click; menus keep their own semantics. */
-  function menuConfirm(){ return menuStart()||tap(' ')||tapAny(keybind.fire.filter(k=>!/^mouse\d/.test(k)))||tap('pad_b0')||tap('pad_b9'); }
+  function menuConfirm(){ return menuStart()||tap(' ')||tapAny(keybind.fire.filter(k=>!/^mouse\d/.test(k)))||tap('pad_b0')||tap('pad_b9')||menuFaceTap(); }
+  /* ⚠ THE A BUTTON IS NOT ALWAYS pad_b0 (Mike, 0918: "my A/J button doesnt press in the menus even when I map
+     it"). A six-button or non-standard pad reports the button printed A as b2 or b5 - bound to CHARGE and RETINA
+     here, which no menu reads - so A did nothing on every menu but Pilot Select (which already accepted any face
+     button, 0916). Menus now accept every face/shoulder button that is not a BACK button; screens that give
+     charge/retina their own job (the Forge) read their own binds and never call this. */
+  const MENU_FACE_PADS=['pad_b0','pad_b2','pad_b3','pad_b4','pad_b5','pad_b7'];
+  function menuFaceTap(){ const back=(keybind.bomb||[]); let hit=false; for(const k of MENU_FACE_PADS){ if(back.indexOf(k)<0 && tap(k)) hit=true; } return hit; }
   /* START IS ITS OWN CAMPAIGN-MAP COMMAND (0826). It deliberately excludes FIRE/A so the
      selected stage can still be deployed with the assigned fire button while Enter or the
      controller Start button opens the save/load/exit menu. */
   function menuStart(){ return tapAny((keybind.start||['enter']).filter(k=>!/^mouse\d/.test(k)))||tap('pad_b9'); }
   /* B is the cabinet's missile/back action. Respect its remapped keyboard/controller
      bindings, but leave mouse clicks to each screen's own hit testing. Backspace edits text. */
-  function menuBack(){ return tapAny((keybind.bomb||[]).filter(k=>!/^mouse\d/.test(k)&&k!=='backspace'))||tap('pad_b1')||tap('escape'); }
+  /* ⚠ A BUTTON BOUND TO FIRE IS NEVER BACK (0918). menuBack runs before the screen (menuBackTick), so a button
+     that sat in both lists - the hardcoded pad_b1, or a pad button the player remapped onto FIRE while it was
+     still on BOMB - was consumed as BACK and the confirm never saw it: A "does not press". FIRE wins. */
+  function menuBack(){ const fire=keybind.fire||[], ok=k=>fire.indexOf(k)<0;
+    return tapAny((keybind.bomb||[]).filter(k=>!/^mouse\d/.test(k)&&k!=='backspace'&&ok(k)))||(ok('pad_b1')&&tap('pad_b1'))||(ok('escape')&&tap('escape')); }
   function consumeMouseMoved(){ const m=mouse.moved; mouse.moved=false; return m; }
   /* ⚠ A CLICK SYNTHESISES THE CONFIRM THE KEYBOARD PATH ALREADY HANDLES (drop 0812b).
      Five menu screens were pointer-dead, and each one's activation is a different block —
@@ -7400,7 +7411,7 @@ const Input = (()=>{
      instead means the pointer runs the SAME line the keyboard runs, so there is only ever one
      activation path per screen to get right. */
   function injectTap(name){ pressed[name]=true; }
-  return {keys,mouse,down,tap,clearTaps,pollGamepad,tapAny,menuUp,menuDown,menuLeft,menuRight,menuConfirm,menuStart,menuBack,consumeMouseMoved,injectTap,
+  return {keys,mouse,down,tap,clearTaps,pollGamepad,tapAny,menuUp,menuDown,menuLeft,menuRight,menuConfirm,menuFaceTap,menuStart,menuBack,consumeMouseMoved,injectTap,
     get gamepadConnected(){return gpConnected;},
     get up(){return keybind.up.some(k=>down(k));},
     get dn(){return keybind.down.some(k=>down(k));},
@@ -59778,7 +59789,7 @@ function drawModeSelect(dt){
     }
     else modeLockedDeny(it);
   };
-  if(stateT>0.3 && (Input.tap('enter')||keybind.fire.some(k=>Input.tap(k))||Input.menuStart())) _modeGo();
+  if(stateT>0.3 && (Input.tap('enter')||keybind.fire.some(k=>Input.tap(k))||Input.menuStart()||Input.menuFaceTap())) _modeGo();
   /* ============================================================
      ⚠ THE MOUSE STOPPED WORKING ONE SCREEN INTO THE GAME (drop 0812a).
 
@@ -60199,7 +60210,7 @@ function campHubInput(){
   const n=CAMPHUB_ITEMS.length;
   if(Input.menuUp()){ campHubIndex=(campHubIndex+n-1)%n; if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); }        // 0822af: was tap('up'), a dead key name
   if(Input.menuDown()){ campHubIndex=(campHubIndex+1)%n; if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); }
-  if(stateT>0.25 && (Input.tap('enter')||keybind.fire.some(k=>Input.tap(k))||Input.menuStart())){
+  if(stateT>0.25 && (Input.tap('enter')||keybind.fire.some(k=>Input.tap(k))||Input.menuStart()||Input.menuFaceTap())){
     const it=CAMPHUB_ITEMS[campHubIndex];
     if(!campHubEnabled(it.act)){ if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip();
       campHubSay(it.act==='continue'?'NO CAMPAIGN IN PROGRESS':it.act==='load'?'NO SAVED GAMES':'START A CAMPAIGN FIRST'); return; }
@@ -60214,7 +60225,7 @@ function campHubInput(){
 function campSlotInput(){
   if(Input.menuUp()){ campHubIndex=(campHubIndex+CAMP_SLOTS-1)%CAMP_SLOTS; if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); }   // 0822af
   if(Input.menuDown()){ campHubIndex=(campHubIndex+1)%CAMP_SLOTS; if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); }
-  if(stateT>0.25 && (Input.tap('enter')||keybind.fire.some(k=>Input.tap(k))||Input.menuStart())){
+  if(stateT>0.25 && (Input.tap('enter')||keybind.fire.some(k=>Input.tap(k))||Input.menuStart()||Input.menuFaceTap())){
     const i=campHubIndex, mode=campPick;
     if(mode==='load' && !campSlotUsed(i)){ if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); campHubSay('THAT SLOT IS EMPTY'); return; }
     selFlash(function(){
@@ -61833,7 +61844,7 @@ function _drawStageSelectInner(dt){
       }
       _drawStageSelectInner._md=m.down;
     }
-    if(stateT>0.4 && (Input.tap('enter')||keybind.fire.some(k=>Input.tap(k))||Input.menuStart())){
+    if(stateT>0.4 && (Input.tap('enter')||keybind.fire.some(k=>Input.tap(k))||Input.menuStart()||Input.menuFaceTap())){
       if(sselCursor<=_hi){   // can't deploy to a locked level
         /* WHITE FLASH -> ZOOM IN ON THE FLAG + "GOOD LUCK" -> stage card. It used to cut straight
            to beginStage with nothing in between. */
@@ -63783,7 +63794,7 @@ function drawCoopRoster(dt){
   controlHintRow([['pad_a','DEPLOY'],['pad_b','BACK']]);
 
   if(typeof Input==='undefined') return;
-  if(Input.tap('enter') || keybind.fire.some(k=>Input.tap(k))||Input.menuStart()){
+  if(Input.tap('enter') || keybind.fire.some(k=>Input.tap(k))||Input.menuStart()||Input.menuFaceTap()){
     selFlash(function(){
       const _ps=(typeof PENDING_STAGE!=='undefined'&&PENDING_STAGE)||1;
       startRun(_ps);
@@ -66175,8 +66186,8 @@ function drawOptions(dt){
     if(Input.menuLeft()) adjustVol(selRow.k,-1/SEG);
     if(Input.menuRight()) adjustVol(selRow.k, 1/SEG);
   }
-  if(!rebindAction && selRow && selRow.t==='ctrl' && (Input.tap('enter')||keybind.fire.some(k=>Input.tap(k))||Input.menuStart())){ rebindAction=selRow.act; rebindWho=(selRow.who||1); Audio.SFX.blip(); }
-  if(!rebindAction && selRow && selRow.t==='reset' && (Input.tap('enter')||keybind.fire.some(k=>Input.tap(k))||Input.menuStart())){ optResetControls(); }
+  if(!rebindAction && selRow && selRow.t==='ctrl' && (Input.tap('enter')||keybind.fire.some(k=>Input.tap(k))||Input.menuStart()||Input.menuFaceTap())){ rebindAction=selRow.act; rebindWho=(selRow.who||1); Audio.SFX.blip(); }
+  if(!rebindAction && selRow && selRow.t==='reset' && (Input.tap('enter')||keybind.fire.some(k=>Input.tap(k))||Input.menuStart()||Input.menuFaceTap())){ optResetControls(); }
   /* on the buttons: left/right picks between them, confirm presses the one you are on */
   if(!rebindAction && onBtn){
     if(Input.menuLeft()  && btnIdx>0){ optSelIdx--; if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); }
@@ -66305,6 +66316,11 @@ function drawOptions(dt){
         // pad buttons get APPENDED (keep kb defaults); a normal key REPLACES the primary kb key but keeps pad binds
         if(isPad(k)){ if(cur.indexOf(k)<0) _kb[rebindAction]=cur.concat([k]); }
         else { const pads=cur.filter(isPad); _kb[rebindAction]=[k].concat(pads); }
+        /* ⚠ A KEY LIVES ON ONE ACTION (0918). A pad button used to be APPENDED here and left on the action it
+           came from, so mapping the pad's A onto FIRE while it was still BOMB/BACK kept it on both - and menuBack
+           runs first, so A still went BACK. It is taken off every other action that has something else left. */
+        for(const _a in _kb){ if(_a===rebindAction || _a==='__fixed' || !Array.isArray(_kb[_a])) continue;
+          const _i=_kb[_a].indexOf(k); if(_i>=0 && _kb[_a].length>1) _kb[_a].splice(_i,1); }
       }
       rebindAction=null; rebindWho=1; Audio.SFX.select(); break; } } }
   const _cDef={x:wx,y:VH-72,w:(ww-16)/2,h:30}, _aDef={x:wx+(ww-16)/2+16,y:VH-72,w:(ww-16)/2,h:30};
@@ -67403,7 +67419,7 @@ function drawIntro(dt){
   // (torch/skull card FX removed per Mike)
   ctx.restore();
   if(t>=CD){ proceedIntro(); }
-  if(t>0.7 && t<CD && (Input.tap('enter')||keybind.fire.some(k=>Input.tap(k))||Input.menuStart())){ stateT=CD-0.001; }
+  if(t>0.7 && t<CD && (Input.tap('enter')||keybind.fire.some(k=>Input.tap(k))||Input.menuStart()||Input.menuFaceTap())){ stateT=CD-0.001; }
 }
 
 /* legacy procedural intro (stages without master art) */
@@ -67425,7 +67441,7 @@ function drawIntroLegacy(dt){
     if(stateT>0.7 && fade>0.5 && Math.floor(stateT*2)%2){ ctx.fillStyle='#dfe7f2'; ctx.font='bold 10px "BOFmil", monospace'; ctx.textAlign='center'; controlHintRow([['pad_a','CONTINUE']],VH*.42+bh/2+22); }
     if(stateT>0.3 && !drawIntro._snd){ drawIntro._snd=true; Audio.SFX.select(); }
     if(stateT>3.0){ proceed(); }
-    else if(stateT>0.6 && (Input.tap('enter')||keybind.fire.some(k=>Input.tap(k))||Input.menuStart())){ proceed(); }
+    else if(stateT>0.6 && (Input.tap('enter')||keybind.fire.some(k=>Input.tap(k))||Input.menuStart()||Input.menuFaceTap())){ proceed(); }
     return;
   }
   // ---- fallback: legacy procedural banner ----
@@ -67443,7 +67459,7 @@ function drawIntroLegacy(dt){
   ctx.restore();
   if(t>0.6 && !drawIntro._snd){ drawIntro._snd=true; Audio.SFX.select(); }
   if(t>2.6){ proceed(); }
-  if(t>1.0 && (Input.tap('enter')||keybind.fire.some(k=>Input.tap(k))||Input.menuStart())){ proceed(); }
+  if(t>1.0 && (Input.tap('enter')||keybind.fire.some(k=>Input.tap(k))||Input.menuStart()||Input.menuFaceTap())){ proceed(); }
 }
 /* ===== SIGNATURE LAUNCH CINEMATIC ===== */
 const LAUNCH_TERR=['terr_grass','terr_desert','terr_ice','terr_road','terr_war'];
@@ -69253,7 +69269,7 @@ function drawRivalSeq(dt){
       if(rival.dlgT>0.45){
         ctx.save(); ctx.globalAlpha=0.5+0.5*Math.sin(rival.dlgT*4); ctx.textAlign='center'; ctx.fillStyle='#cfd6e0'; ctx.font='9px "BOFmil", monospace';
         controlHintRow([['pad_a',rival.dlgIdx<rival.script.length-1?'NEXT':'CONTINUE']],VH*.34-24); ctx.restore();
-        if(Input.tap('enter')||keybind.fire.some(k=>Input.tap(k))||Input.menuStart()){
+        if(Input.tap('enter')||keybind.fire.some(k=>Input.tap(k))||Input.menuStart()||Input.menuFaceTap()){
           if(!typeRevealDone(rival, line.text)){ rival._twChars=line.text.length; Audio.SFX.blip(); }   // 1st press: reveal all
           else {
             Audio.SFX.blip();
@@ -69373,7 +69389,7 @@ function drawRivalEnding(dt){
     if(rival.dlgT>0.45){
       ctx.save(); ctx.globalAlpha=0.5+0.5*Math.sin(rival.dlgT*4); ctx.textAlign='center'; ctx.fillStyle='#cfd6e0'; ctx.font='9px "BOFmil", monospace';
       controlHintRow([['pad_a',rival.dlgIdx<lines.length-1?'NEXT':'CONTINUE']],VH*.34-24); ctx.restore();
-      if(Input.tap('enter')||keybind.fire.some(k=>Input.tap(k))||Input.menuStart()){
+      if(Input.tap('enter')||keybind.fire.some(k=>Input.tap(k))||Input.menuStart()||Input.menuFaceTap()){
         Audio.SFX.blip();
         if(rival.dlgIdx<lines.length-1){ rival.dlgIdx++; rival.dlgT=0; }
         else {
@@ -69394,7 +69410,7 @@ function drawRivalEnding(dt){
     if(rival.dlgT>0.45){
       ctx.save(); ctx.globalAlpha=0.5+0.5*Math.sin(rival.dlgT*4); ctx.textAlign='center'; ctx.fillStyle='#cfd6e0'; ctx.font='9px "BOFmil", monospace';
       controlHintRow([['pad_a',rival.dlgIdx<lines.length-1?'NEXT':'CONTINUE']],VH*.34-24); ctx.restore();
-      if(Input.tap('enter')||keybind.fire.some(k=>Input.tap(k))||Input.menuStart()){
+      if(Input.tap('enter')||keybind.fire.some(k=>Input.tap(k))||Input.menuStart()||Input.menuFaceTap()){
         Audio.SFX.blip();
         if(rival.dlgIdx<lines.length-1){ rival.dlgIdx++; rival.dlgT=0; }
         else {
@@ -69450,7 +69466,7 @@ function drawRivalEnding(dt){
     if(frac>=1 && rival.t>1.6){
       ctx.save(); ctx.globalAlpha=0.5+0.5*Math.sin(rival.t*4); ctx.textAlign='center'; ctx.fillStyle='#cfd6e0'; ctx.font='9px "BOFmil", monospace';
       controlHintRow([['pad_a','CONTINUE']],VH*.46+30); ctx.restore();
-      if(Input.tap('enter')||keybind.fire.some(k=>Input.tap(k))||Input.menuStart()){ Audio.SFX.select(); rival=null; beginStage(3); }
+      if(Input.tap('enter')||keybind.fire.some(k=>Input.tap(k))||Input.menuStart()||Input.menuFaceTap()){ Audio.SFX.select(); rival=null; beginStage(3); }
     }
     return;
   }
@@ -71124,7 +71140,7 @@ function drawStageClear(dt){
   if(Input.mouse.down && !drawStageClear._md) Input.injectTap('enter');
   drawStageClear._md=Input.mouse.down;
   /* any input SKIPS the flourish rather than making the player sit through it */
-  if(Input.tap('enter') || keybind.fire.some(k=>Input.tap(k))||Input.menuStart()){
+  if(Input.tap('enter') || keybind.fire.some(k=>Input.tap(k))||Input.menuStart()||Input.menuFaceTap()){
     if(!ready){
       R.rows.forEach(function(r){ r._shown=r.segs; });
       drawStageClear._row=R.rows.length;
@@ -72182,7 +72198,7 @@ function drawForging(dt){
   const mB=(Input.menuBack?Input.menuBack():false), mS=(Input.menuStart?Input.menuStart():false);
   const fire=(keybind.fire||[]).filter(function(k){ return !/^mouse/.test(k); }).some(function(k){ return Input.tap(k); });
   const click=Input.mouse.down&&!FG.md; FG.md=!!Input.mouse.down;
-  const go=fire||click||mS||Input.tap('enter');
+  const go=fire||click||mS||Input.tap('enter')||Input.menuFaceTap();
   if(!product){
     if(go && t>0.4 && FG.doneT<0){ FG.t=Math.max(FG.t,FORGE_WELD_T0+FORGE_WELD_T); }        /* a press finishes the weld */
     else if(FG.doneT>=0 && (t-FG.doneT>FORGE_PRODUCT_WAIT || (go && t-FG.doneT>0.3))){ FG.productT=t; setState(GS.FORGED); }
@@ -72430,7 +72446,7 @@ function drawPowers(dt){
   const fire=(keybind.fire||[]).filter(function(k){ return !/^mouse/.test(k); }).some(function(k){ return Input.tap(k); });
   const mS=(Input.menuStart?Input.menuStart():false);
   const click=Input.mouse.down&&!PS.md; PS.md=!!Input.mouse.down;
-  if(ready && (fire||click||mS||Input.tap('enter'))){
+  if(ready && (fire||click||mS||Input.tap('enter')||Input.menuFaceTap())){
     Input.mouse.down=false; fsx('blip');
     const done=PS.onDone; powersScr=null;
     if(done) done(); else setState(GS.TITLE);
@@ -74178,7 +74194,7 @@ function drawContinue(dt){
     else {ctx.textAlign='center';ctx.fillStyle='#eaf2ff';ctx.font='13px "BOFmil", monospace';ctx.fillText(label,VW/2,VH*.84);}
   }
   if(stateT>0.3 && Math.floor(stateT*2)%2){ ctx.textAlign='center'; ctx.fillStyle='#cfd6e0'; ctx.font='bold 11px "BOFmil", monospace'; controlHintRow([['pad_a','CONTINUE']],VH*.74); }
-  if(stateT>0.3 && (Input.tap('enter')||keybind.fire.some(k=>Input.tap(k))||Input.menuStart()||Input.mouse.down)){
+  if(stateT>0.3 && (Input.tap('enter')||keybind.fire.some(k=>Input.tap(k))||Input.menuStart()||Input.menuFaceTap()||Input.mouse.down)){
     // Campaign keeps its rift limit; Arcade spends one shared bank across every stage.
     const _capNow = continueCap();
     if(_capNow>=0 && (run.contUsed||0)>=_capNow){

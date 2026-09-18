@@ -5500,3 +5500,22 @@ key only while the opener is on a still beat, never during a gameplay cut.
 ⚠ **THE BROWSER PANE'S `key` ACTION NAMED "Return" SENDS AN EMPTY `e.key`** - the game ignores it and it reads as a
 dead menu. Use "Enter". And the pane runs the game at ~22 fps; read `state` with javascript_tool rather than
 trusting a screenshot taken between frames.
+
+## 0918f - the A / J button confirms every menu, whatever the pad reports and however it is mapped
+
+Mike: "my A/J button doesnt press in the menu's even when I map it." Keyboard J already confirmed on a fresh load
+(measured), so the fault was the PAD, three ways:
+1. **A six-button / non-standard pad reports A as b2 or b5** - bound to CHARGE and RETINA, which no menu reads.
+   Only Pilot Select accepted any face button (0916). `Input.menuFaceTap()` - every face/shoulder button that is not
+   a BACK button - is now part of `menuConfirm` AND of the 16 screens that hand-roll `enter || fire || start`
+   (mode select, camp hub, slots, stage select, co-op roster, options, intro, rival, stage clear, continue) plus
+   Forging and Powers Gained. The Forge is excluded on purpose: it gives CHARGE and RETINA their own jobs.
+   ⚠ **GREP FOR THE HAND-ROLLED CONFIRM, NOT JUST `menuConfirm`** - fixing menuConfirm alone left mode select, the
+   very next screen after the title, deaf to the same button (the probe caught it).
+2. **menuBack ran first and ate buttons bound to FIRE** - it hard-taps pad_b1 and Escape and reads the BOMB binds,
+   so a pad whose A is b1 went BACK. FIRE now wins: menuBack skips anything on the fire list.
+3. **A rebind APPENDED a pad button and left it on the action it came from**, so mapping A onto FIRE while it was
+   still BOMB kept it on both. A rebound key/button now leaves every other action that has another binding.
+Note binds still reset every load (`BOOT_DEFAULT_SETTINGS`) and an OPTIONS rebind only sticks after APPLY.
+`probe_menu_confirm_0918f.py` 9/0 (a stubbed `navigator.getGamepads` read by the game's own pollGamepad: keyboard J,
+pad b0, a pad whose A is b2/b5, b1 remapped onto FIRE confirming, B/Escape/K still backing out, 0 errors).
