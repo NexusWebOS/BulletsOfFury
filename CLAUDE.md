@@ -5547,3 +5547,24 @@ first proof.
 §85's 'every boss fires' counts the Warhive's LAUNCHES: on Normal its attack is the escorts, which fire through the enemy loop that
 the fixture does not run. `probe_warhive_0918.py --diff normal|hard`: 19/19 and 24/24, with 0 errors. Suite: 57 names, identical to
 the HEAD baseline.
+
+## 0918 - the combat sounds were silent on file://, and the explosions were cut to 40% on 0914
+
+Mike: *"what happened to all my sounds?! my explosions and enemy and projectiles are practically gone!"*
+⚠⚠ **A file:// PAGE MUST NEVER ROUTE A MEDIA ELEMENT THROUGH WEBAUDIO.** `Snd._shape` sends every TAME row with an `lp`
+through `createMediaElementSource`; local media is cross-origin to the AudioContext, so that source outputs ZEROS while
+`currentTime` keeps advancing - explosions, every enemy round and missiles played in SILENCE while the unfiltered player
+gun was fine. Measured with an AnalyserNode on the graph: peak **0.000 on file://** against 0.08-0.25 over http for the
+same keys. `_shape` now returns false on `file:` (native playback, TAME level and gate kept, only the filter skipped).
+The per-key `native:true` rows (0914's pickups, "can advance currentTime while outputting silence") were patches over
+this one cause.
+⚠ **AND 0914 (`45174735`) GAVE `expBig`/`expSmall` THEIR FIRST TAME ROW** - g 0.40 behind a 4.6 kHz lowpass and
+`_shape`'s -6 dB shelf, with a 0.20 s gate that dropped 15 of 23 explosions in a measured 20 s of stage 1. Before it they
+had no row and played at full level. Native again at g 0.80 / 0.74, gates 0.07 / 0.04.
+⚠ **A STATE AUDIT CANNOT SEE EITHER FAULT** - a wrap on `Snd.play` counted identical calls, plays and volumes on the
+0916 and current builds, and `played:true` on every silent file:// sound. Only tapping the output did.
+⚠ **THREE PROBE ARTEFACTS ON THE WAY:** `a.load()` before a play RESETS the element (reads currentTime 0 on a sound that
+plays); a sample played seconds after boot can still be cold (only slot 0 of each 3-slot pool preloads - slots 1 and 2
+load on first play, measured 50-125 ms, fine); and the FIRST media play of a page takes 265-642 ms on either build
+(the device waking up - the menu blips always do that before combat).
+`probe_sfx_output_0918.py`: 31/0 on the fix, **9 fail on the pre-fix build** (the busted arm). Suite 56 names = baseline.

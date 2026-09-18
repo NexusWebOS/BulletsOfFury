@@ -74185,8 +74185,13 @@ const Snd=(function(){
     grenadeHit:      {g:0.58, lp:4600, min:0.18},
     fireOrbImpact:   {g:0.54, lp:5400, min:0.12},
     iceOrbImpact:    {g:0.54, lp:6000, min:0.12},
-    expBig:          {g:0.40, lp:4600, min:0.20}, // measured death bursts previously clipped when overlapping
-    expSmall:        {g:0.55, lp:5200, min:0.06},
+    /* Mike 0918: "what happened to all my sounds?! my explosions and enemy and projectiles are practically gone!"
+       0914 gave these their first row - g 0.40 behind a 4.6 kHz lowpass AND the -6 dB high shelf _shape adds - so
+       every kill lost ~70% of its level and its crack; before that they had no row and played at full level. Native
+       again (no filter), at a level that still leaves headroom for stacked blasts, with a short gate instead of the
+       0.20 s one that dropped 15 of 23 in a measured 20 s of stage 1. */
+    expBig:          {g:0.80, native:true, min:0.07},
+    expSmall:        {g:0.74, native:true, min:0.04},
     boom:            {g:0.62, lp:4400, min:0.45},
     nuclearDetonate: {g:0.66, lp:4200, min:0.12}, // distinct Cole impacts must not lose the middle boom
     nuclearLaunch:   {g:0.58, lp:4800, min:0.35},
@@ -74437,6 +74442,13 @@ const Snd=(function(){
   };
   A._shape=function(a,name,cfg){
     if(cfg.native || !cfg.lp || A._bad[name]) return false;
+    /* ⚠ A file:// PAGE MUST NEVER ROUTE A MEDIA ELEMENT THROUGH WEBAUDIO (Mike 0918, sounds "practically gone").
+       Local media is cross-origin to the AudioContext, so createMediaElementSource outputs ZEROS while currentTime
+       keeps advancing - every sample with an `lp` row (explosions, every enemy round, missiles) played in silence
+       while the unfiltered player gun was fine. Measured: peak 0.000 on file:// against 0.17-0.25 over http for
+       the same six keys. The per-key `native:true` rows (pickups, 0914) were patches over this one cause.
+       Native keeps the TAME level and gate; only the filter is skipped where it cannot work. */
+    if(typeof location!=='undefined' && location.protocol==='file:') return false;
     if(a._bofNode) return true;
     const ctxA=A._audioCtx();
     if(!ctxA || ctxA.state!=='running'){ try{ if(ctxA&&ctxA.resume) ctxA.resume(); }catch(e){} return false; }
