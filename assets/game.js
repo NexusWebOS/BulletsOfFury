@@ -71789,7 +71789,12 @@ function forgeStart(onDone){
   const load=forgeLoadoutSync();
   forge={onDone:onDone||null, t:0, row:0, sel:0, esel:0, msg:'', msgT:0, md:!!(Input&&Input.mouse&&Input.mouse.down),
          pool:(typeof crateWeaponPool==='function')?crateWeaponPool(true):load.slice()};
-  try{ if(typeof XART!=='undefined'){ Object.keys(INFUSIONS).forEach(function(e){ XART.rdy('inf_'+e); }); XART.rdy('forge_loadout_0918'); } }catch(_fs){}
+  try{ if(typeof XART!=='undefined'){
+    Object.keys(INFUSIONS).forEach(function(e){ XART.rdy('inf_'+e); });
+    XART.rdy('forge_loadout_0918'); XART.rdy('forge_chamber_0917b');
+    load.forEach(function(w){ XART.rdy(weaponIconKey(w,Math.max(1,(run.wlevels&&run.wlevels[w])|0),{bare:1}));
+      const f=forgeEntry(w); if(f) XART.rdy(forgeBadgeKey(f.elem,w,f.lv)); });
+  } }catch(_fs){}
   try{ if(Audio.SFX && Audio.SFX.life) Audio.SFX.life(); }catch(_fs2){}
   setState(GS.FORGE);
 }
@@ -71877,6 +71882,7 @@ function drawForge(dt){
     stageText(art,msg,W/2,EY+EH*.50,Math.min(13,stageFitH(art,msg,EW*.92,13,7,.05)),F.msgT>0?'#fff':'#9fd6ff',.82,A(.3),.05);
   }
   if(art){const rs='X'+(run.forgeRespecs|0);stageText(art,rs,W*.705,H*.883,13,'#ffd24a',.9,A(.25),.05);}
+  if(F.row===1 && selW!=null && disc.length) forgeRecipeDraw(F,selW,disc,dt,W,H,art);
   /* ---- input. EVERY consuming reader is read ONCE into a local (CLAUDE.md: menuLeft()||menuRight()
      always resolves to +1 because the second call was eaten by the first). ---- */
   const mL=(Input.menuLeft?Input.menuLeft():false), mR=(Input.menuRight?Input.menuRight():false);
@@ -72003,7 +72009,7 @@ function forgeBadgeKey(e,w,l){ return 'micon_forge_'+e+'_'+(w|0)+((l|0)>1?'_'+(l
 function forgeSlotKey(w){
   const f=forgeEntry(w);
   if(f && XART.rdy(forgeBadgeKey(f.elem,w,f.lv))) return forgeBadgeKey(f.elem,w,f.lv);
-  return weaponIconKey(w, Math.max(1,(run.wlevels&&run.wlevels[w])|0));
+  return weaponIconKey(w, Math.max(1,(run.wlevels&&run.wlevels[w])|0), {bare:1});
 }
 /* draw an icon STRETCHED to a width, the way the unlock page does it: iconBlit only takes a height, so
    one invisible draw measures the width it would take and the real one runs under a horizontal scale */
@@ -72086,6 +72092,48 @@ function forgeHexPointer(key,cx,cy,h,col){
    level, and the level cannot reach it. Rounds move by their own velocity (the stage's collision loop
    is not run - there is nothing here to hit); the beam and the flame are anchored to the ship the way
    that loop anchors them. */
+/* The element row is a real recipe view: source, element, proposed output and actual rounds.
+   The chamber art is the same one used for the weld, so what the player confirms is what appears. */
+function forgeRecipeDraw(F,w,disc,dt,W,H,art){
+  const elem=disc[F.esel], forms=forgeFormsFor(w), owned=forms[elem];
+  const lv=owned?Math.min(INFUSION_MAX,(owned.lv|0)+1):
+    Math.max(1,(typeof forgeOwnedLevel==='function'?forgeOwnedLevel(elem,w):1));
+  const I=INFUSIONS[elem], C=FORGE_CHAMBER;
+  const plate=XART.rdy('forge_chamber_0917b')?XART.get('forge_chamber_0917b'):null;
+  if(plate){ ctx.save(); ctx.imageSmoothingEnabled=false; ctx.drawImage(plate,0,0,W,H); ctx.restore(); }
+  const bare=weaponIconKey(w,Math.max(1,(run.wlevels&&run.wlevels[w])|0),{bare:1});
+  const result=forgeBadgeKey(elem,w,lv);
+  XART.rdy(bare); XART.rdy('inf_'+elem); XART.rdy(result);
+  const hw=frc(C.hexW,W,H), he=frc(C.hexE,W,H), ho=frc(C.hexOut,W,H);
+  forgeIconFit(bare,hw[0]+hw[2]/2,hw[1]+hw[3]/2,hw[3]*.82,hw[2]*.85,1);
+  forgeIconFit('inf_'+elem,he[0]+he[2]/2,he[1]+he[3]/2,he[3]*.82,he[2]*.85,1);
+  forgeIconFit(result,ho[0]+ho[2]/2,ho[1]+ho[3]/2,ho[3]*.86,ho[2]*.9,1);
+  const view=frc(C.view,W,H), vin=[view[0]+5,view[1]+5,view[2]-10,view[3]-10];
+  const id=w+'|'+elem+'|'+lv;
+  if(F.previewId!==id){ F.previewId=id; F.preview=forgePreviewNew(w,elem,lv); }
+  forgePreviewTick(F.preview,vin[2],vin[3],dt);
+  forgePreviewDraw(F.preview,vin[0],vin[1],vin[2],vin[3]);
+  if(art){
+    const title=forgeComboName(elem,w), T=frc(C.title,W,H);
+    const th=Math.min(12,stageFitH(art,title,T[2]*.95,12,7,.06));
+    stageText(art,title,T[0]+T[2]/2,T[1]+T[3]/2,th,I.body,.9,1,.06);
+    const B=frc(C.bar,W,H), label=WEAPONS[w]+' + '+I.name+'  =  LEVEL '+(FORGE_ROMAN[lv]||lv);
+    const bh=Math.min(10,stageFitH(art,label,B[2]*.91,10,7,.06));
+    stageText(art,label,B[0]+B[2]/2,B[1]+B[3]/2,bh,'#e5f4ff',.9,1,.06);
+    if(F.preview.err) stageText(art,'PREVIEW UNAVAILABLE',view[0]+view[2]/2,view[1]+view[3]*.5,8,'#ff9c7d',.9,1,.05);
+  }
+  /* Five physical bays on the plate; scroll the unlocked elements through those bays. */
+  const first=clamp(F.esel-2,0,Math.max(0,disc.length-C.slots.length));
+  for(let i=0;i<C.slots.length;i++){
+    const e=disc[first+i]; if(!e) continue;
+    XART.rdy('inf_'+e);
+    const r=frc(C.slots[i],W,H), cx=r[0]+r[2]/2, cy=r[1]+r[3]/2, selected=(first+i===F.esel);
+    forgeIconFit('inf_'+e,cx,cy,r[3]*.82,r[2]*.70,selected?1:.48);
+    if(selected) forgeHexPointer('inf_'+e,cx,cy,r[3]*.82,INFUSIONS[e].glow);
+  }
+  if(art && F.msgT>0) stageText(art,F.msg,W*.50,H*.94,Math.min(10,stageFitH(art,F.msg,W*.70,10,7,.05)),'#ffffff',.9,1,.05);
+  controlHintRow([['pad_b','BACK'],['pad_a','FORGE']],H*.968,W/2,W-24);
+}
 function forgePreviewNew(w,elem,lv){ return {w:w|0, elem:elem, lv:lv|0, bullets:[], parts:[], cd:0.45, t:0, fired:0, err:null}; }
 function forgePreviewSwap(P,VWp,VHp,fn){
   /* ⚠ 0917d: THE STAGE'S TARGET LISTS ARE SWAPPED OUT TOO. The preview now runs a weapon's OWN tick where it
@@ -72157,7 +72205,7 @@ function forgingStart(o){
   forging={w:o.w|0, elem:o.elem, lv:Math.max(1,o.lv|0), t:0, pct:-1, doneT:-1, flash:0, sparks:[], arcs:null, arcT:0,
            preview:null, md:!!(Input&&Input.mouse&&Input.mouse.down)};
   try{ ['forge_chamber_0917b','inf_'+o.elem,forgeBadgeKey(o.elem,o.w,o.lv),'ship_'+_pilotKey(),_selKey('y')].forEach(function(k){ XART.rdy(k); });
-       XART.rdy(weaponIconKey(o.w, Math.max(1,(run.wlevels&&run.wlevels[o.w])|0))); }catch(_w){ }
+       XART.rdy(weaponIconKey(o.w, Math.max(1,(run.wlevels&&run.wlevels[o.w])|0), {bare:1})); }catch(_w){ }
   setState(GS.FORGING);
 }
 function forgingLeave(toLoadout){
@@ -72209,7 +72257,7 @@ function drawForging(dt){
   /* the two inputs, seated in their sockets; they shiver as the weld takes them */
   const jit=welding?p*2.2:0;
   const inA=product?0.30:(FG.doneT>=0?Math.max(0.30,1-(t-FG.doneT)*1.6):Math.min(1,t/0.45));
-  const wKey=weaponIconKey(FG.w, Math.max(1,(run.wlevels&&run.wlevels[FG.w])|0));
+  const wKey=weaponIconKey(FG.w, Math.max(1,(run.wlevels&&run.wlevels[FG.w])|0), {bare:1});
   forgeIconFit(wKey, cW[0]+(Math.random()*2-1)*jit, cW[1]+(Math.random()*2-1)*jit, hw[3]*0.80, 0, inA*fade);
   forgeIconFit('inf_'+FG.elem, cE[0]+(Math.random()*2-1)*jit, cE[1]+(Math.random()*2-1)*jit, he[3]*0.80, 0, inA*fade);
 
