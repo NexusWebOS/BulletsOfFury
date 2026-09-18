@@ -185,9 +185,9 @@ def main():
         tap('k'); step(3)
         tap('s'); step(3)
         ok(st()['focus'] == 'map', 'DOWN comes back to the map', st()['focus'])
-        tap('enter'); step(3)
+        tap('p'); step(3)            # 0917d: Start is P / the controller's START; Enter is confirm on the map
         ok(st()['focus'] == 'bar', 'Start climbs to the bar too', st()['focus'])
-        tap('enter'); step(3)
+        tap('p'); step(3)
         ok(st()['focus'] == 'map', 'and Start again comes back down', st()['focus'])
         tap('w'); step(3); tap('k'); step(3)
         ok(st()['focus'] == 'map', 'BACK also comes down off the bar', st()['focus'])

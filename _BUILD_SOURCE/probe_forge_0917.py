@@ -81,27 +81,25 @@ def main():
         mode = pg.evaluate("() => run.mode")
         print('  run.mode', mode, '| pool', pg.evaluate("() => crateWeaponPool(true)"))
 
-        # ---- discovery through the REAL pickup path -------------------------------------------
-        pg.evaluate("""() => {
-          const roll=infusionRoll; infusionRoll=function(){ return 'fire'; };
-          try{ dropPowerup(player.x, player.y-120, 'infuse'); } finally { infusionRoll=roll; }
-          window.__fly=function(){ const p=powerups.filter(q=>!q.dead&&q.kind==='infuse')[0];
-            if(p){ player.x+=(p.x-player.x)*0.3; player.y+=(p.y+24-player.y)*0.25; } };
-        }""")
-        for _ in range(90):
-            pg.evaluate("() => { window.__fly(); window.__step(1); }")
-            if pg.evaluate("() => !!(run.forgeElems&&run.forgeElems.fire)"): break
-        ok(pg.evaluate("() => !!(run.forgeElems&&run.forgeElems.fire)"),
-           'collecting a real INFUSE pickup DISCOVERS its element for the Forge (run.forgeElems.fire)')
-        pg.evaluate("() => { forgeDiscover('lightning'); run.infusion=null; }")
+        # ---- the combinations are EARNED FROM BOSSES (0917 economy) -------------------------------------
+        # This probe used to discover elements through a field INFUSE pickup. Since 32f4eac4 a pickup grants
+        # nothing and since 0917b none reach the field at all; the boss drop is proven by probe_bossdrop_0917.
+        # Here the two pairs are granted through the SAME function that drop calls, so the Forge is tested
+        # on a known profile rather than on whichever pair a random boss drop happens to hand over.
+        pg.evaluate("() => { forgeComboGrant('fire',0); forgeComboGrant('lightning',3); run.infusion=null; }")
         ok(pg.evaluate("() => JSON.stringify(forgeDiscovered())") == '["fire","lightning"]',
-           'forgeDiscovered() lists them in table order: fire, lightning')
+           'forgeDiscovered() lists the earned elements in table order: fire, lightning')
+        ok(pg.evaluate("() => JSON.stringify(forgeElemsFor(0))+JSON.stringify(forgeElemsFor(3))") == '["fire"]["lightning"]',
+           'and each is earned for ITS slot only: fire on the MG, lightning on the laser')
         ok(pg.evaluate("() => forgeVisible()"), 'forgeVisible() - there is something to do, so the screen will open')
 
         # ---- the boss dies, the debrief runs, CONTINUE opens the Forge ----------------------------
         pg.evaluate("() => { enemies.length=0; spawnBoss(curStage.boss); }")
         step(30)
         pg.evaluate("() => { boss.hp=0; bossDie(); }")
+        # the boss's own guaranteed drop would add a RANDOM pair to the profile - taken off the field so the
+        # element lists below are the two granted above (probe_bossdrop_0917 owns the drop itself)
+        pg.evaluate("() => { const _kd=forgeBossDrop; forgeBossDrop=function(){ return null; }; setTimeout(function(){ forgeBossDrop=_kd; }, 60000); powerups=powerups.filter(function(q){ return q.kind!=='forgecombo'; }); }")
         ok(until("() => state==='stageclear'", 260), 'the boss death runs through to the debrief (state stageclear)')
         step(80)
         tap('enter', 20); step(60)
@@ -126,8 +124,15 @@ def main():
         ok(pg.evaluate("() => forge.sel") == 0, 'and back on the MACHINE GUN')
 
         # ---- combine MG + fire ------------------------------------------------------------------
-        tap('j'); ok(pg.evaluate("() => forge.row") == 2, 'FIRE on a slot opens the weapon PICKER first')
-        tap('j'); ok(pg.evaluate("() => forge.row") == 1, 'FIRE on the slot-s own weapon goes on to the element row')
+        # 0917b: a slot opens its ELEMENT row directly (the weapon list moved to the LOADOUT screen), and a
+        # combine opens THE FORGING -> THE PRODUCT; BACK on the product returns to the Forge.
+        def weld_back():
+            ok(pg.evaluate("() => state") == 'forging', 'the combine opens THE FORGING')
+            step(300)
+            ok(pg.evaluate("() => state") == 'forged', 'the weld runs 0-100% and the PRODUCT comes up')
+            step(30); tap('escape', 10)
+            ok(pg.evaluate("() => state") == 'forge', 'BACK on the product returns to the Forge')
+        tap('j'); ok(pg.evaluate("() => forge.row") == 1, 'FIRE on a slot goes straight to its element row')
         ok(pg.evaluate("() => forgeDiscovered()[forge.esel]") == 'fire', 'the element cursor starts on FIRE')
         shot('forge_02_pick_element')
         tap('j')
@@ -137,19 +142,22 @@ def main():
         ok(R['c'] == 1, 'one combine spent (1 left)')
         ok(R['nm'] == 'INCENDIARY SLUGS', 'and it is named INCENDIARY SLUGS (%s)' % R['nm'])
         ok(R['inf'] == 'fire:1', 'the held weapon takes the element at once (run.infusion %s)' % R['inf'])
+        weld_back()
         step(20); shot('forge_03_incendiary_slugs')
 
         # ---- combine LASER + lightning, then the third combine is refused ----------------------------
         tap('d'); tap('d'); tap('d')
         ok(pg.evaluate("() => run.loadout[forge.sel]") == 3, 'three RIGHT presses land on the LASER')
-        tap('j'); tap('j'); tap('d')
-        ok(pg.evaluate("() => forgeDiscovered()[forge.esel]") == 'lightning', 'RIGHT on the element row picks LIGHTNING')
+        tap('j')
+        want = pg.evaluate("() => forgeElemsFor(3).indexOf('lightning')")
+        for _ in range(max(0, want)): tap('d')
+        ok(pg.evaluate("() => forgeElemsFor(3)[forge.esel]") == 'lightning', 'RIGHT on the element row picks LIGHTNING')
         tap('j')
         R2 = pg.evaluate("() => ({f:run.forge[3]||null, c:run.forgeCombos, nm:weaponDisplayName(3)})")
         ok(R2['f'] and R2['f']['elem'] == 'lightning' and R2['nm'] == 'TESLA BEAM', 'the laser is FORGED lightning: TESLA BEAM (%s)' % R2['nm'])
         ok(R2['c'] == 0, 'both combines spent')
+        weld_back()
         step(20); shot('forge_04_tesla_beam')
-        tap('j')
         tap('j')
         ok(pg.evaluate("() => forge.row") == 0 and 'NO COMBINES' in pg.evaluate("() => forge.msg"),
            'a THIRD combine is refused and says why: %r' % pg.evaluate("() => forge.msg"))
@@ -160,58 +168,59 @@ def main():
         ok(R3['f'] is None and R3['nm'] == 'LASER' and R3['r'] == 1, 'CHARGE re-specs the laser back to LASER, one re-spec left (%s)' % json.dumps(R3))
         step(20); shot('forge_05_respec')
 
-        # ---- the PICKER: selecting a slot opens a scrollable weapon list, one ding per row -------------
-        # Mike: "when I select a weapon slot, should become like a scrollable list I can select and
-        # ding's with each icon. Missiles is a slot that remains Missiles and will never not be missiles"
-        tap('d'); tap('d'); tap('d')                       # back to slot 4 (the LASER, sel 3)
-        pg.evaluate("() => { window.__blips=0; const b=Audio.SFX.blip; Audio.SFX.blip=function(){ window.__blips++; return b&&b.apply(this,arguments); }; }")
-        tap('j')
-        ok(pg.evaluate("() => forge.row") == 2, 'FIRE on a slot opens the weapon PICKER (row 2)')
-        ok(pg.evaluate("() => forge.pool[forge.psel]===run.loadout[forge.sel]"), 'the list opens on the weapon already in that slot')
-        b0 = pg.evaluate("() => window.__blips|0")
-        tap('s'); p1 = pg.evaluate("() => forge.psel"); tap('s'); p2 = pg.evaluate("() => forge.psel"); tap('w'); p3 = pg.evaluate("() => forge.psel")
-        b1 = pg.evaluate("() => window.__blips|0")
-        ok(p2 == p1 + 1 and p3 == p1, 'DOWN, DOWN, UP move the list cursor exactly +1, +1, -1 (%s)' % str((p1, p2, p3)))
-        ok(b1 - b0 >= 3, 'and each move DINGS (%d blips for 3 moves)' % (b1 - b0))
-        step(20); shot('forge_06_picker')
-        # pick LASER MIST (slot 6), which is unlocked but not in the loadout
-        pg.evaluate("() => { forge.psel = forge.pool.indexOf(6); }")
-        sel_pick = pg.evaluate("() => forge.sel")   # the pick lands in the SELECTED slot, wherever the cursor is
-        before = pg.evaluate("() => run.loadout.slice()")
-        tap('j')
-        after = pg.evaluate("() => run.loadout.slice()")
-        ok(after[sel_pick] == 6 and 6 not in before and len(set(after)) == 6 and 2 in after,
-           'FIRE puts the picked weapon in the slot, no duplicates, missiles still in the loadout (%s -> %s)' % (before, after))
-        ok(pg.evaluate("() => forge.row") == 0, 'LASER MIST cannot take an element, so it returns to the boxes (no element row)')
-        # the MISSILES slot never opens the picker
-        mi = pg.evaluate("() => run.loadout.indexOf(2)")
-        pg.evaluate("([i]) => { forge.sel = i; }", [mi])
-        tap('j')
-        ok(pg.evaluate("() => forge.row") != 2 and 'MISSILES STAY MISSILES' in pg.evaluate("() => forge.msg"),
-           'FIRE on the MISSILES slot refuses the picker and says so: %r' % pg.evaluate("() => forge.msg"))
-        pg.evaluate("() => { forge.row = 0; forge.sel = 0; }")
-        # swap: pick a weapon that sits in ANOTHER slot and the two trade places
-        pg.evaluate("() => { forge.sel = 1; }")
-        tap('j'); pg.evaluate("() => { forge.psel = forge.pool.indexOf(run.loadout[4]); }")
-        b4 = pg.evaluate("() => run.loadout[4]"); b1w = pg.evaluate("() => run.loadout[1]")
-        tap('j'); pg.evaluate("() => { forge.row = 0; }")
-        ok(pg.evaluate("([a,b]) => run.loadout[1]===a && run.loadout[4]===b", [b4, b1w]), 'picking a weapon that sits in another slot SWAPS the two slots')
-        pg.evaluate("() => { forge.sel = 0; }")
-        # ---- (the old UP/DOWN cycling is retired; the picker above is the loadout choice) ----------------
-        step(10)
-
         # ---- the save carries it ----------------------------------------------------------------------
         snap = pg.evaluate("() => { const s=campSnapshot(); return {forge:s.forge, elems:s.forgeElems, load:s.loadout}; }")
-        ok(snap['forge'].get('0', {}).get('elem') == 'fire' and snap['elems'].get('fire') and len(snap['load']) == 6,
-           'campSnapshot carries the forge, the discovered elements and the loadout')
+        # the EARNED combinations live in the profile (achievementState.owned), not in the run save - so the
+        # save carries what this RUN forged and its loadout, and the combinations survive without it
+        ok(snap['forge'].get('0', {}).get('elem') == 'fire' and len(snap['load']) == 6,
+           'campSnapshot carries the forge and the loadout')
+        ok(pg.evaluate("() => forgeComboOwned('fire',0) && forgeComboOwned('lightning',3)"),
+           'and the earned combinations are the PROFILE\'s, independent of any run save')
         ok(pg.evaluate("() => { const s=campSnapshot(); const keep={f:run.forge,e:run.forgeElems,l:run.loadout};"
                        " run.forge={}; run.forgeElems={}; run.loadout=null; campApply(s);"
                        " const r=!!(run.forge[0]&&run.forge[0].elem==='fire'&&run.loadout&&run.loadout.length===6);"
                        " run.forge=keep.f; run.forgeElems=keep.e; run.loadout=keep.l; run.mode='arcade'; return r; }"),
            'campApply restores them onto a cleared run')
 
-        # ---- CONTINUE -> the next stage, where the machine gun is still INCENDIARY SLUGS ---------------
+        # ---- START -> THE LOADOUT: the scrollable list, one ding per icon (Mike, 0917) -----------------
+        # "when I select a weapon slot, should become like a scrollable list I can select and ding's with
+        # each icon. Missiles is a slot that remains Missiles and will never not be missiles"
         tap('enter', 20)
+        ok(pg.evaluate("() => state") == 'loadout', 'START on the Forge opens THE LOADOUT (%s)' % pg.evaluate("() => state"))
+        step(50)
+        pg.evaluate("() => { loadoutScr.sel=run.loadout.indexOf(3); window.__blips=0; const b=Audio.SFX.blip; Audio.SFX.blip=function(){ window.__blips++; return b&&b.apply(this,arguments); }; }")
+        tap('j')
+        ok(pg.evaluate("() => loadoutScr.row") == 1, 'FIRE on a bay opens the weapon pool')
+        ok(pg.evaluate("() => loadoutScr.pool[loadoutScr.psel]===run.loadout[loadoutScr.sel]"), 'the pool opens on the weapon already in that bay')
+        b0 = pg.evaluate("() => window.__blips|0")
+        tap('d'); p1 = pg.evaluate("() => loadoutScr.psel"); tap('d'); p2 = pg.evaluate("() => loadoutScr.psel"); tap('a'); p3 = pg.evaluate("() => loadoutScr.psel")
+        b1 = pg.evaluate("() => window.__blips|0")
+        n = pg.evaluate("() => loadoutScr.pool.length")
+        ok(p2 == (p1 + 1) % n and p3 == p1, 'RIGHT, RIGHT, LEFT move the pool cursor exactly +1, +1, -1 (%s)' % str((p1, p2, p3)))
+        ok(b1 - b0 >= 3, 'and each move DINGS (%d blips for 3 moves)' % (b1 - b0))
+        step(20); shot('forge_06_picker')
+        pg.evaluate("() => { loadoutScr.psel = loadoutScr.pool.indexOf(6); }")
+        sel_pick = pg.evaluate("() => loadoutScr.sel")
+        before = pg.evaluate("() => run.loadout.slice()")
+        tap('j')
+        after = pg.evaluate("() => run.loadout.slice()")
+        ok(after[sel_pick] == 6 and 6 not in before and len(set(after)) == 6 and 2 in after,
+           'FIRE puts the picked weapon in the bay, no duplicates, missiles still in the loadout (%s -> %s)' % (before, after))
+        ok(pg.evaluate("() => loadoutScr.row") == 0, 'and the pool closes')
+        mi = pg.evaluate("() => run.loadout.indexOf(2)")
+        pg.evaluate("([i]) => { loadoutScr.sel = i; }", [mi])
+        tap('j')
+        ok(pg.evaluate("() => loadoutScr.row") == 0 and 'MISSILES STAY MISSILES' in pg.evaluate("() => loadoutScr.msg"),
+           'FIRE on the MISSILES bay refuses the pool and says so: %r' % pg.evaluate("() => loadoutScr.msg"))
+        pg.evaluate("() => { loadoutScr.sel = 1; }")
+        tap('j'); pg.evaluate("() => { loadoutScr.psel = loadoutScr.pool.indexOf(run.loadout[4]); }")
+        b4 = pg.evaluate("() => run.loadout[4]"); b1w = pg.evaluate("() => run.loadout[1]")
+        tap('j')
+        ok(pg.evaluate("([a,b]) => run.loadout[1]===a && run.loadout[4]===b", [b4, b1w]), 'picking a weapon that sits in another bay SWAPS the two bays')
+        step(10)
+
+        # ---- CONTINUE -> the next stage, where the machine gun is still INCENDIARY SLUGS ---------------
+        tap('enter', 20)   # START on the loadout fades to the next level
         ok(until("() => state==='play' && (run.stage|0)===2", 400, 10, 40), 'CONTINUE leaves the Forge and stage 2 begins (state %s, stage %s)' % (st(), pg.evaluate("() => run.stage")))
         pg.evaluate("() => { player.dead=false; enemies.length=0; }")
         for _ in range(6):

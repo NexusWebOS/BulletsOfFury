@@ -117,13 +117,79 @@ module.exports=function testForge(vm,ctxv,ok){
   var ds=strip(R("String(drawScene)"));
   ok(/case GS\.FORGE:\s*return drawForge\(dt\)/.test(ds), 'drawScene routes GS.FORGE to drawForge');
   var cv=strip(R("String(_setCinematicViewport)"));
-  ok((cv.match(/GS\.FORGE/g)||[]).length>=2, 'the Forge takes the debrief plate aspect in BOTH _setCinematicViewport lines');
+  /* 0917b: the four places are ONE predicate now (debriefFamily), so a new Forge beat cannot miss one of them */
+  ok((cv.match(/debriefFamily\(state\)/g)||[]).length>=2, 'the Forge takes the debrief plate aspect in BOTH _setCinematicViewport lines (through debriefFamily)');
+  ok(R("['forge','forging','forged','loadout','unlocks','stageclear'].every(function(k){ return debriefFamily(k); }) && !debriefFamily(GS.PLAY)"),
+     'debriefFamily covers every Forge beat and the debrief, and nothing else');
   var ss=strip(R("String(setState)"));
-  ok(ss.indexOf('GS.FORGE')>=0, 'and setState turns the cinematic viewport on for it (the fourth place - the one the unlock page missed first)');
+  ok(ss.indexOf('debriefFamily(s)')>=0, 'and setState turns the cinematic viewport on for it (the fourth place - the one the unlock page missed first)');
   ok(R("_hudStateWants(GS.FORGE)===true"), '_hudStateWants keeps the HUD canvases for it, as it does for the debrief');
   var dsc=strip(R("String(drawStageClear)"));
-  ok(dsc.indexOf('forgeVisible()')>=0 && dsc.indexOf('forgeStart(_leave)')>=0 && dsc.indexOf('unlocksStart(_un, _forgeThen)')>=0,
-     'the debrief chains unlocks -> forge -> scLeaveStage, each from its own CONTINUE');
+  ok(dsc.indexOf('forgeVisible()')>=0 && dsc.indexOf('forgeStart(_toLoadout)')>=0 && dsc.indexOf('loadoutStart(_leave)')>=0 && dsc.indexOf('unlocksStart(_un, _forgeThen)')>=0,
+     'the debrief chains unlocks -> forge -> loadout -> scLeaveStage, each from its own CONTINUE (0917b)');
+  /* ---- 0917b: the Forge sequence's beats ---- */
+  ok(R("GS.FORGING==='forging' && GS.FORGED==='forged' && GS.LOADOUT==='loadout' && typeof drawForging==='function' && typeof drawLoadout==='function'"),
+     'THE FORGING, THE PRODUCT and THE LOADOUT exist as states with their draws');
+  ok(/case GS\.FORGING:\s*return drawForging\(dt\)/.test(ds) && /case GS\.FORGED:\s*return drawForging\(dt\)/.test(ds) && /case GS\.LOADOUT:\s*return drawLoadout\(dt\)/.test(ds),
+     'drawScene routes all three');
+  var fsrc=strip(R("String(drawForge)"));
+  ok(fsrc.indexOf('forgingStart(')>=0 && fsrc.indexOf('strokeRect(ecx')<0, 'a combine opens THE FORGING, and the element cursor is no longer a stroked square');
+  ok(fsrc.indexOf('forgeHexPointer(')>=0 && fsrc.indexOf('forgeSelArrowUp(')>=0, 'the Forge selector is the traced hex pointer plus the menu arrow');
+  var trs=strip(R("String(forgeTraceCanvas)"));
+  ok(trs.indexOf('getImageData')<0 && trs.indexOf('destination-out')>=0, 'the pointer is traced by compositing, never getImageData (file:// taints)');
+  var pvs=strip(R("String(forgePreviewTick)"))+strip(R("String(forgePreviewSwap)"));
+  ok(pvs.indexOf('pShoot()')>=0 && pvs.indexOf('finally')>=0 && pvs.indexOf('pBullets=sv.pb')>=0,
+     'the product preview fires the REAL weapon through pShoot and always restores the live round list');
+  ok(R("(function(){ var s0=run._forgeShown; run._forgeShown=false; var a=loadoutVisible(); run._forgeShown=true; var b=loadoutVisible(); run._forgeShown=s0; return b===true && (a===(crateWeaponPool(true).length>FORGE_LOADOUT_MAX)); })()"),
+     'THE LOADOUT opens after a Forge visit, or when there are more weapons than bays - never on an empty choice');
+  /* 0917c, Mike: WEAPONS GAINED lists weapon unlocks only; POWERS GAINED is its own screen, one bay per ELEMENT,
+     and it does "not display what we can make with it" */
+  ok(R("(function(){ var s0=run._stageCombos; run._stageCombos=[{elem:'fire',w:0},{elem:'fire',w:3},{elem:'ice',w:0}]; var r=unlockRowsFor(3,'cole'); var g=powersGained(); run._stageCombos=s0; return r.length===0 && JSON.stringify(g)==='[\"fire\",\"ice\"]'; })()"),
+     'the boss-dropped combinations go to POWERS GAINED as ELEMENTS (deduplicated), never onto the weapons page');
+  ok(R("GS.POWERS==='powers' && debriefFamily(GS.POWERS) && typeof drawPowers==='function'") && /case GS\.POWERS:\s*return drawPowers\(dt\)/.test(ds),
+     'POWERS GAINED is its own state, drawn by drawPowers, at the debrief aspect');
+  var pws=strip(R("String(drawPowers)"));
+  ok(pws.indexOf('forgeComboName')<0 && pws.indexOf('micon_forge_')<0 && pws.indexOf("'inf_'+e")>=0,
+     'and it shows the element badge and name only - no weapon, no forged product');
+  ok(dsc.indexOf('powersStart(_toForge)')>=0, 'the debrief runs weapons gained -> powers gained -> forge');
+  var fgs=strip(R("String(drawForging)"));
+  ok(fgs.indexOf("'LEVEL '")<0 && fgs.indexOf('FORGE_ROMAN[')<0, 'the Forge sequence shows no weapon LEVELS - those are the in-game upgrade');
+  ok(R("typeof stageTextCoin==='function' && typeof fpCoin==='function'") && strip(R("String(drawArmory)")).indexOf('stageTextCoin(')>=0,
+     'the FURIOUS coin draws beside the points on the Armory');
+  ok(R("(function(){ var d=[]; for(var i=0;i<LOADOUT_PLATE.bayX.length;i++) d.push(LOADOUT_PLATE.bayX[i]); var p=[]; for(var j=1;j<d.length;j++) p.push(d[j]-d[j-1]); return p.every(function(x){ return Math.abs(x-0.1431)<0.002; }) && LOADOUT_PLATE.bayY>0.35; })()"),
+     'the loadout icons centre on the MEASURED bay wells (even pitch, not the outer bevel box)');
+  /* ---- 0917c: the bonus pickups and the two bombs ---- */
+  ok(R("(function(){ var s=String(killDrop); return s.indexOf('bonusDrop(e)')>=0 && s.indexOf('bonusDrop(e)')<s.indexOf('chance(0.18'); })()"),
+     'killDrop rolls the score bullets and bombs on their own, before the 18% loot gate');
+  ok(R("(function(){ var n={}; for(var i=0;i<4000;i++){ var v=scoreChipRoll(); n[v]=(n[v]|0)+1; } return n[100]>n[250] && n[250]>n[500] && n[500]>n[1000] && n[1000]>0; })()"),
+     'score bullets: 100 is the common one, 1000 the rare one - all four can drop');
+  ok(R("(function(){ var sc0=run.score|0; var p={kind:'scorechip',val:500,x:10,y:10}; applyPowerup(p); var d=(run.score|0)-sc0; run.score=sc0; return d===500; })()"),
+     'a score bullet is worth exactly its NUMBER (the pickup bonus is not paid twice)');
+  ok(R("(function(){ var keep=enemies.slice(); enemies.length=0; var L=camLeftX(); var a={x:L+100,y:200,w:30,h:30,hp:40,maxhp:40,dropOk:false}, b={x:L+200,y:300,w:30,h:30,hp:40,maxhp:40,dropOk:false}, off={x:L-400,y:200,w:30,h:30,hp:40,maxhp:40,dropOk:false}; enemies.push(a,b,off); var eb=eBullets.slice(); eBullets.push({x:L+50,y:50,vx:0,vy:1}); var n=furyBombDetonate(); var ok2=n===2 && (a.dead||a._dyingT!=null) && (b.dead||b._dyingT!=null) && !(off.dead||off._dyingT!=null) && eBullets.every(function(q){return q.dead;}); enemies.length=0; for(var i=0;i<keep.length;i++) enemies.push(keep[i]); eBullets.length=0; for(var j=0;j<eb.length;j++) eBullets.push(eb[j]); bombReset(); return ok2; })()"),
+     'the FURY BOMB blows up everything ON SCREEN and every enemy round - and nothing off it');
+  ok(R("(function(){ timeBombArm(); var beeps=[]; var last=0; for(var f=0;f<60*3.3;f++){ bombTick(1/60); if(timeBomb && timeBomb.beeps!==last){ beeps.push(timeBomb.t); last=timeBomb.beeps; } } var gaps=[]; for(var i=1;i<beeps.length;i++) gaps.push(beeps[i]-beeps[i-1]); var shrinking=gaps.length>6 && gaps[gaps.length-1]<gaps[0]*0.3; for(var g=0;g<60;g++) bombTick(1/60); var blew=!timeBomb && !!bombFx && bombFx.kind==='time'; bombReset(); return shrinking && blew; })()"),
+     'the TIMED BOMB beeps with every gap shorter than the last, then blows as a wave');
+  ok(R("(function(){ var keep=powerups.slice(); powerups.length=0; var c={kind:'crate',x:player.x+40,y:player.y,hp:5,w:30,h:30,wtype:1}; powerups.push(c); timeBombBlow(); for(var f=0;f<30;f++) bombTick(1/60); var broke=c.dead; powerups.length=0; for(var i=0;i<keep.length;i++) powerups.push(keep[i]); bombReset(); return broke; })()"),
+     'and the wave BREAKS OPEN the boxes and pills it reaches (crates, capsules)');
+  ok(R("(function(){ var s=String(bombHitBosses); return s.indexOf('hitBoss(')>=0 && s.indexOf('frac')>=0; })()"),
+     'a bomb takes a SHARE of a boss bar through the ordinary hit path - never a one-shot');
+  /* ---- 0917d ---- */
+  ok(R("(function(){ var keepE=enemies, keepP=powerups; var dummy={x:65,y:40,w:40,h:40,hp:30,maxhp:30}; enemies=[dummy]; powerups=[]; var P=forgePreviewNew(0,'fire',2); for(var i=0;i<120;i++) forgePreviewTick(P,130,330,1/60); var untouched=(dummy.hp===30) && enemies.length===1 && enemies[0]===dummy; enemies=keepE; powerups=keepP; return untouched && P.fired>0; })()"),
+     'the product preview swaps the stage target lists out - a preview round cannot strike a live unit');
+  ok(R("(function(){ var keep=powerups.slice(); powerups.length=0; var px=player.x, py=player.y, pd=player.dead; player.dead=false; var c={kind:'scorechip',val:100,x:player.x+60,y:player.y}, b={kind:'furybomb',x:player.x+60,y:player.y+5}; powerups.push(c,b); var d0=Math.abs(c.x-player.x); scoreMagnetTick(); var pulled=Math.abs(c.x-player.x)<d0, still=(b.x===player.x+60); powerups.length=0; for(var i=0;i<keep.length;i++) powerups.push(keep[i]); player.dead=pd; return pulled && still; })()"),
+     'score bullets drift to a nearby ship; a bomb does not');
+  ok(R("(function(){ var s=String(campaignMenuInputTick); return s.indexOf('campMapStartTap()')>=0 && String(campMapStartTap).indexOf(\"k!=='enter'\")>=0; })()"),
+     'on the campaign map ENTER is confirm - the menu toggle is P / controller START (0917d)');
+  /* ---- 0918: the generated effects ---- */
+  ok(R("['fire','ice','lightning','prism','toxic','kinetic','water','chrome','dark'].every(function(e){ return XART._src['efx_burst_'+e]; }) && XART._src.efx_burn && ['fire','water','lightning'].every(function(g){ return XART._src['efx_geyser_'+g]; })"),
+     'all 13 generated effect strips are registered (9 bursts, the burning fire, 3 geysers)');
+  ok(strip(R("String(infusionOnHit)")).indexOf('efxBurst(b._inf')>=0, 'a forged round spawns its element BURST where it lands');
+  ok(R("(function(){ efxBursts=[]; for(var i=0;i<60;i++) efxBurst('fire',0,0,40); var capped=efxBursts.length===EFX_BURST_CAP; efxTick(1); var gone=efxBursts.length===0; return capped && gone; })()"),
+     'bursts are capped and expire on the game clock');
+  ok(R("(function(){ geysers=[]; geyserSpawn(100,400,'fire'); for(var i=0;i<60;i++) geyserTick(1/60); var h=geysers[0]&&geysers[0].h; for(var j=0;j<120;j++) geyserTick(1/60); var done=geysers.length===0; return h===GEYSER_H && GEYSER_H>=300 && done; })()"),
+     'a geyser erupts to a section of the screen (GEYSER_H) and ends');
+  ok(R("(function(){ geysers=[]; for(var i=0;i<9;i++) geyserSpawn(100+i,400,'fire'); var n=geysers.length; geysers=[]; return n===GEYSER_CAP; })()"),
+     'geysers are capped');
   var df=strip(R("String(drawForge)"));
   ok(/const mL=\(Input\.menuLeft\?Input\.menuLeft\(\):false\), mR=/.test(df) && /const mB=\(Input\.menuBack/.test(df) && /,\s*mS=\(Input\.menuStart/.test(df),
      'every consuming reader is read ONCE into a local before any is acted on');

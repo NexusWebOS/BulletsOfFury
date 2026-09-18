@@ -105,8 +105,11 @@ module.exports=function testInfusion(vm,ctxv,ok){
      'killDrop rolls the infusion on its own, then the unchanged 18% loot gate underneath it');
   ok(vm.runInContext("(function(){var src=require_src();return src.indexOf('if(e.dropOk && chance(0.18*DIFF.dropMul)) dropPowerup(e.x,e.y);')<0;})()",ctxv),
      'and both ordinary death paths go through that one funnel');
-  ok(vm.runInContext("(function(){var st=run.stage;run.stage=1;var n0=powerups.length;dropPowerup(10,10,'infuse');run.stage=st;var p=powerups[powerups.length-1];var got=powerups.length>n0&&p.kind==='infuse'&&!!p.elem;powerups.length=n0;return got;})()",ctxv),
-     "a forced 'infuse' drop always carries an element - never a pickup with nothing on it");
+  /* 0917b, Mike: element badges "shouldnt ... generate in-game. they are meant for the forge screen, and when
+     the boss dies as a drop." A forced 'infuse' now puts NOTHING on the field - which also means it can never
+     be a pickup with nothing on it, the claim this assertion was written for. */
+  ok(vm.runInContext("(function(){var st=run.stage;run.stage=1;var n0=powerups.length;dropPowerup(10,10,'infuse');dropPowerup(10,10);run.stage=st;var any=powerups.slice(n0).some(function(p){return p.kind==='infuse';});powerups.length=n0;return INFUSION_FIELD_DROPS===false && !any;})()",ctxv),
+     "no element badge ever reaches the field from an ordinary drop - only the boss drops one (0917b)");
 
   /* death drops the element with the gun - the reset line that zeroes the weapon zeroes this too */
   ok(vm.runInContext("(function(){var src=require_src();var i=src.indexOf('manualMissileResetOnDeath(run);');return i>=0&&src.slice(i,i+400).indexOf('run.infusion=null')>=0;})()",ctxv),

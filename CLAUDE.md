@@ -5288,3 +5288,151 @@ needs `e.score`. Same family as this file's first standing rule about spawnEnemy
 ⚠ **A CEILING OF ZERO MUST AWARD NOTHING**: `got >= 0 * 0.75` is TRUE, so a debug jump or an empty
 fixture would hand out a free award on a score of zero. `probe_thorough_0917.py` (12/0) drives that arm
 deliberately, along with 74% / exactly 75% / 99%, and a fat score carried in from an earlier level.
+
+## 0917b - the Forge sequence in its beats, and a tainted canvas that stopped the pilot screen
+
+Mike: "Defeat boss, end screen - currency conversion during end screen and stats given - weapons gained
+screen/powers gained screen - the forge screen - the forging screen itself - the forged product screen -
+the loadout selection screen - fade to next level." Plus: no box in the element icons, none in the field,
+a selector that is not a square, and "the game crashed".
+
+**The order now:** debrief (the conversion counted on bare plating under SCORE) -> WEAPONS / POWERS GAINED
+(the boss-dropped pair, `run._stageCombos`, as a row with its forged badge in its element colour) -> THE
+FORGE (a slot goes straight to its earned elements) -> THE FORGING (`GS.FORGING`, the weapon and element
+welded 0-100% in the chamber) -> THE PRODUCT (`GS.FORGED`, same draw: the name typed, LEVEL I-V, and the
+weapon's REAL rounds firing in the glass) -> THE LOADOUT (`GS.LOADOUT`, six bays and a scrolling pool; the
+weapon picker moved here from the Forge) -> START fades to black -> the next stage.
+Code: `_BUILD_SOURCE/forge_sequence_0917b.js` (inserted before `drawGameOver`) via
+`patch_forge_sequence_0917b.py`. Plates `assets/game/ui/forge_0917b/` - SpriteCook, 1376x768 = the
+debrief's 477:266 exactly; the chamber is an `edit_asset_id` of the 0916 concept plate, and every socket
+in `FORGE_CHAMBER` / `LOADOUT_PLATE` is measured off the pixels (longest near-black runs), never guessed.
+Probes: `probe_forge_sequence_0917b.py` 27/0, `probe_forge_0917.py` 47/0, `probe_armory_0917.py` 35/0,
+`probe_bossdrop_0917.py` 34/0, all 0 page errors. Suite 4,895 ok / 57 - the committed tree's 56 plus the
+sand-tank flake, names otherwise identical (baseline run by swapping in `git show HEAD:assets/game.js`).
+
+⚠⚠ **THE PILOT-SCREEN CRASH WAS `getImageData` ON A file:// PAGE.** `dialogueFrame` (the 0914 comm-plate
+tint) read pixels unguarded, and from disk every decoded image taints the canvas, so pilot select threw
+`SecurityError` every frame. Four more unguarded sites were found by listing every `getImageData` with no
+`try` in the 12 lines above it (two stage-3 frost plates, two stage-9 hammer tint caches); all fall back to
+the authored image and cache it so the throw happens once. **Any new pixel read needs the guard; better,
+composite instead** - the new traced pointer does (`source-in` / `destination-out`, no read).
+
+⚠ **FOUR PLACES KNEW WHICH SCREENS SHARE THE DEBRIEF'S ASPECT, NOW ONE.** `debriefFamily(s)` is read by
+both `_setCinematicViewport` lines, `setState` and `_hudStateWants`. 0916 records a state missing from one
+of the four drawing its plate stretched into the play column; three new states would have been twelve edits.
+
+⚠ **THE PREVIEW SWAPS THE GAME'S GLOBALS AND RESTORES THEM IN A `finally`.** `forgePreviewSwap` hands
+`pShoot` / `drawBullets` the preview's own `pBullets`, `eBullets`, `particles`, player position, weapon
+and infusion - measured: 13 rounds fired, all wearing the element, 0 leaked into the live list. It does NOT
+run the stage's collision loop, so rounds move by their own velocity; beam and flame are anchored the way
+that loop anchors them. A weapon whose rounds only move inside that loop would sit still in the glass.
+
+⚠ **THE LOADOUT OPENS ONLY WHEN THERE IS A CHOICE OR THE FORGE RAN** (`pool > 6 || run._forgeShown`). The
+first cut opened it for any pool over one, and the 0915 arcade route check caught it: a plain arcade clear
+must still go straight to the next stage.
+
+⚠ **FOUR OF THE NINE ELEMENT BADGES HAD AN EMPTY TAG BOX BAKED IN** (dark, kinetic, toxic, water - rendered,
+not assumed; fire, ice, chrome, lightning and prism are clean). `inf_unbox_0917b.py` rebuilds the covered
+apex from each badge's own mirrored top, re-toned by the measured bottom/top rim gain; originals in
+`_BUILD_SOURCE/_backups/infusion_0917_boxed/`. **Field element drops are OFF** (`INFUSION_FIELD_DROPS`):
+only `forgeBossDrop` puts one on the field.
+
+⚠ **`probe_forge_0917.py` HAD BEEN STALE SINCE 32f4eac4** - it discovered elements through a field pickup
+the economy had already stopped honouring, and a random boss drop made it pass by luck on one run in two.
+It grants its pairs through `forgeComboGrant` now and takes the random boss drop off the field.
+
+⚠ **THIS BASH TOOL MANGLES SOME HEREDOCS BEYOND THE BACKSLASH CASE ABOVE** - two Python patch heredocs
+containing triple-quoted JS failed with "unexpected EOF while looking for matching quote". Put every
+patch script through the Write tool.
+
+⚠ **C: HIT 0 BYTES FREE AND GIT'S AUTO-REPACK WAS THE CAUSE** - a promisor-remote geometric repack
+retried on every git command and left multi-GB `tmp_pack_*` files. `maintenance.auto=false` and
+`gc.auto=0` are set in THIS repo's config; delete stray `.git/objects/pack/tmp_pack_*` if it recurs.
+
+## 0917c - POWERS GAINED is its own screen, the FURIOUS coin, the Fury/Timed bombs, score bullets
+
+Mike, on 0917b: no weapon LEVELS in the Forge sequence ("thats handled in game with the icons"); POWERS
+GAINED gets "its own screen generated" with large boxes and must "not display what we can make with it";
+WEAPONS GAINED is the weapon-unlock page (fire orb, ice breath, thermoshock, lightning orb...); a currency
+graphic for Furious Points; icons centred in their boxes; a FURY bomb, a TIMED bomb and score bullets.
+
+**Order now:** debrief -> WEAPONS GAINED (weapons only; skips itself) -> POWERS GAINED (`GS.POWERS`, one bay
+per ELEMENT the boss dropped this stage, `powersGained()` deduplicates; no weapon, no forged badge) -> the
+Forge -> forging -> product -> loadout -> fade. Code `_BUILD_SOURCE/forge_sequence_0917c.js` via
+`patch_forge_sequence_0917c.py`; plate `forge_0917b/powers_bays.png`; pickups `ui/pickups_0917b/`.
+
+**Pickups** roll in `bonusDrop(e)`, called at the top of `killDrop` - their OWN roll, never competing with
+the 18% loot gate: score bullets 12% (100/250/500/1000 at 55/28/13/4%), Fury and Timed bombs 1.2% each, all
+x `DIFF.dropMul`. A score bullet pays exactly its number (applyPowerup's PICKUP_SCORE is netted off).
+**FURY BOMB** kills every enemy ON SCREEN and every enemy round at once. **TIMED BOMB** arms on pickup, the
+ship glows and beeps with every gap shorter (`bombTick`, game clock), then a wave expands from where the
+ship was and takes what it REACHES, breaking crates and capsules ("boxes and pills") OPEN via
+`breakContainer`. ⚠ **Neither one-shots a boss**: `bombHitBosses` takes 10% / 14% of the bar through
+`hitBoss` / `hitSubBoss`, so barriers and part routers still apply (ENG-05). The arcade overlay (18 Hz
+palette flash + rolling scanline bands + KA-BOOM / FURY BOMB) draws in screen space at the tail of
+`drawWorld`, before the CRT scanlines.
+⚠ **`whiteBlast` NEVER DECAYS ON ITS OWN** - the boss death sets and clears it explicitly. A pickup that
+sets it leaves the screen white for ever; the bombs use `bombFlash`, which does decay.
+⚠ **The loadout bays were measured off the BEVEL box, not the well** - every icon sat ~6px high. The six
+well interiors are at an even .14315 pitch (`LOADOUT_PLATE.bayX`), and icons are no longer stretched.
+
+Proofs: `probe_forge_sequence_0917b.py` 34/0 (powers, weapons, bombs and bullets collected in play),
+`probe_playable_0917c.py` 23/0 (from DISK: real Enter presses boot -> opener -> title -> mode -> diff ->
+pilot -> stage 1, 20 real seconds flying and firing; then all nine stages x 45 s with both bombs, 0
+errors), forge 47/0, armory 35/0, bossdrop 34/0, unlocks 66/0. Suite 4,908 ok / 57 = the committed
+tree's 56 + the sand-tank flake.
+
+## 0917d - the campaign map could not be deployed from the keyboard
+
+Mike: "Continue upgrading and improving our new systems and ensure the campaign mode is playable."
+
+⚠⚠ **ON THE CAMPAIGN MAP, ENTER NEVER DEPLOYED.** Enter is bound to START, and 0912v made START toggle the
+map's button bar - so a keyboard player who reached the map by pressing Enter through every screen before it
+pressed Enter here and watched the focus flip bar/map/bar. Measured: 60 presses over 54 s, no stage. FIRE (J)
+always deployed, which is why every probe that tapped `j` called the map fine. `campMapStartTap()` is START
+without Enter (P, controller START); Enter falls through to the map's own confirm like on every other screen,
+and UP still climbs to the bar. The map hint reads FIRE / ENTER: DEPLOY. This reverses part of 0826's
+"Enter/Start opens the menu" - flagged to Mike, one function to put back.
+⚠ **The map's boot sequence locks input for ~7.2 s** (`sselBoot`, the terminal text, the zoom, the flag drop,
+the retina sweep) and then opens on stage N's UNLOCK cinematic, which is what writes `campaign.unlockedMax` -
+a check made the moment the map appears reads the OLD value. Wait for `sselUnlockCine==null && sselBoot===0`.
+
+**`probe_campaign_0917d.py` (12/0, 0 errors) is the campaign, played:** real keys boot -> opener -> title ->
+modesel -> camphub -> diff -> pilot -> campaignintro -> map -> cutscene -> intro -> launch -> stage 1 PLAY; the
+boss killed through its death branch; debrief -> powers -> forge -> loadout -> cutscene -> map (stage 2
+unlocked) -> stage 2 PLAY with the forged gun; a real death on the last life -> CONTINUE -> stage 2 again.
+
+**The product preview runs each weapon's OWN tick** (lightning orb splitting into bolts, the laser mist's
+cloud, space rounds), so all nine read true in the glass. ⚠ **Those ticks collide with `enemies`, `powerups`,
+`boss`, `subBoss` and push `zaps`, so `forgePreviewSwap` empties all of them** (and `bossActive`/
+`subBossActive`) for the duration and restores them in its `finally` - a preview round at x 65 would
+otherwise strike a live unit at world x 65. ⚠ The LIGHTNING ORB is Yuri's alone (`yuriLightningOrbFire`
+refuses any other pilot), so it previews empty for anyone else - correctly, no one else can hold it.
+**Score bullets drift to a ship within 96 px** (`scoreMagnetTick`, from `bombTick`); the bombs do not.
+
+## 0918 - generated effects: element bursts, burning fire, geyser columns
+
+Mike: "fire effects in game like burst fire decals for our new upgrades, same with the other elements. We also
+need actual fire effects that animate and we need flaming laser beam geysers that take up sections of the
+screen. These should all be generated effects."
+
+**13 SpriteCook animations** (a still per effect, then `animate_game_art`, spritesheet, 8 frames), installed as
+8-frame horizontal strips in `assets/game/fx_0918/` by `_BUILD_SOURCE/fx_install_0918.py`, wired by
+`patch_fx_0918.py`: `efx_burst_<elem>` x9 (one-shot, spawned from `infusionOnHit`, throttled 0.12 s per target
+on `efxClock`), `efx_burn` (loop, on every unit with `e._burn`), `efx_geyser_{fire,water,lightning}` (loop).
+All drawn in WORLD space from `_drawEffectsInner` via `efxDraw`. **Geysers are now columns**: `GEYSER_H` 360,
+grow 1150 px/s, life 1.5 s, cap 4, damage lane = the drawn column's width; a level III+ FIRE kill raises one
+(22/36/52% at III/IV/V), lightning III+ 18%, water and the soaked-kill route as before.
+`probe_fx_0918.py` 9/0 (incendiary gun: 137 burst blits, 236 burn blits; all nine bursts; three geysers at
+360 px hurting a unit in the lane; 0 errors). Suite 4,917 ok / 57 = baseline + the sand-tank flake.
+
+⚠ **`animate_game_art` REFUSES SOURCES OUTSIDE 1:2..2:1**, and a pixel source above 256 px animates in the
+smooth DETAILED style. The geyser stills came back 96x256 and 320-358 square; each was cropped to its ink,
+padded to exactly 1:2 and nearest-scaled to 128x256 before upload. They still came back in 256-square cells,
+so the installer crops each strip to the UNION of its frames' ink columns - one shared anchor, no sideways
+jitter - and fades the top 22% because the source frame cut the fire column's crown flat.
+⚠ **THE ANIMATOR'S #808080 MATTE LEAKS INTO TAIL FRAMES** (grey specks; a whole grey disc on the lightning
+burst's 4th frame). Low-saturation mid-grey is punched to alpha - except on CHROME, whose silver IS that grey.
+⚠ **CHROME COULD NOT BE ANIMATED CLEANLY**: both renders (grey matte; magenta matte + Pro removal + a negative
+prompt) turned the scattering shards into a solid silver DISC from frame 4. Its strip is the first render's
+three good frames plus the scatter frame flung outward and fading. Worth a regeneration if Mike dislikes it.

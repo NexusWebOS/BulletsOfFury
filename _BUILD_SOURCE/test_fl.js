@@ -10956,12 +10956,14 @@ console.log("=== 215. menu navigation ===");
     +"run.mode='campaign'; campPause=null; campPick=null; state=GS.STAGESEL;"
     +"sselUnlockCine=null; s9MapCine=null; window.sselCommitted=false;"
     +"sselBoot=1; Input.injectTap('enter'); campaignMenuInputTick(); var during=(campPause===null)&&(typeof cmap2==='undefined'||cmap2.focus==='map');"
-    +"sselBoot=0; Input.injectTap('enter'); campaignMenuInputTick(); var live=(typeof cmap2On==='function'&&cmap2On())?(cmap2.focus==='bar'&&campPause===null):!!campPause; campPause=null; if(typeof cmap2!=='undefined') cmap2.focus='map';"
+    +"sselBoot=0; Input.injectTap('p'); campaignMenuInputTick(); var live=(typeof cmap2On==='function'&&cmap2On())?(cmap2.focus==='bar'&&campPause===null):!!campPause; campPause=null; if(typeof cmap2!=='undefined') cmap2.focus='map';"
+    +"Input.injectTap('enter'); campaignMenuInputTick(); var enterFree=(campPause===null)&&(typeof cmap2==='undefined'||cmap2.focus==='map');"
     +"state=GS.STAGESEL; sselBoot=1; Input.injectTap('k'); campaignMenuInputTick();"
     +"var escaped=menuBackTick(); var held=(state===GS.STAGESEL&&!escaped);"
-    +"return JSON.stringify({during:during,live:live,held:held});})()", ctxv));
+    +"return JSON.stringify({during:during,live:live,held:held,enterFree:enterFree});})()", ctxv));
   ok(_campInput.during, 'Enter/Start cannot open the campaign menu during the map sequence');
-  ok(_campInput.live, 'Enter/Start climbs to the campaign menu bar once the map is live (0912v: the bar replaced the modal)');
+  ok(_campInput.live, 'Start (P / controller) climbs to the campaign menu bar once the map is live (0912v: the bar replaced the modal)');
+  ok(_campInput.enterFree, 'and ENTER does not - on the map Enter is confirm, so a keyboard player can deploy (0917d)');
   ok(_campInput.held, 'the assigned back button is consumed before generic routing can leave campaign');
   ok(vm.runInContext("CAMP_PAUSE_BTN.length===3 && CAMP_PAUSE_BTN.map(b=>b.act).join(',')==='save,load,exit'", ctxv),
      'the campaign menu offers exactly save, load and exit');
@@ -11730,8 +11732,8 @@ console.log("=== 229. flame/ice hitbox + reaver colour + fire orb ===");
   ok(_g229.indexOf("sselUnlockCine==='undefined' || sselUnlockCine==null")>0 &&
      _g229.indexOf("s9MapCine==='undefined' || s9MapCine==null")>0,
      'unlock cinematics keep the campaign menu gated too');
-  ok(_g229.indexOf("if(state===GS.STAGESEL && Input.menuStart())")>0,
-     'only the stage map routes Enter/Start into the campaign menu');
+  ok(_g229.indexOf("if(state===GS.STAGESEL && campMapStartTap())")>0,
+     'only the stage map routes Start into the campaign menu (P / controller START - Enter is confirm there, 0917d)');
 }
 
 // ===== 230. STAGE-1 GUNFIGHTERS, STAGE-3 FIRE SHARKS, AND HOMING AS A GRANT =====
@@ -14663,7 +14665,7 @@ console.log("=== 278. lizzie B-42 alternate costume ===");
     +"Input.injectTap('d'); cmap2BarInput(1,8); o.right=(cmap2.bar===1&&sselCursor===3);"
     +"Input.injectTap('d'); cmap2BarInput(1,8); Input.injectTap('d'); cmap2BarInput(1,8); o.wrap=(cmap2.bar===0);"
     +"Input.injectTap('s'); cmap2BarInput(1,8); o.down=(cmap2.focus==='map');"
-    +"cmap2.focus='bar'; Input.injectTap('enter'); campaignMenuInputTick(); o.start=(cmap2.focus==='map'&&campPause===null);"
+    +"cmap2.focus='bar'; Input.injectTap('p'); campaignMenuInputTick(); o.start=(cmap2.focus==='map'&&campPause===null);"
     +"cmap2.focus='bar'; Input.injectTap('k'); campaignMenuInputTick(); o.back=(cmap2.focus==='map');"
     +"cmap2BarActivate(1); for(var i=0;i<40;i++) selFlashTick(1/60); o.drop=!!(campPause&&campPause.bar&&campPause.mode==='load');"
     +"Input.injectTap('k'); campBarMenuDraw(1/60); o.close=(campPause===null&&cmap2.focus==='bar');"

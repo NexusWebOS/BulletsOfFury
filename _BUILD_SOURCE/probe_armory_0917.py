@@ -143,12 +143,19 @@ def main():
         pg.evaluate("() => { setState(GS.PLAY); run.forge={}; run.forgeElems={}; run.loadout=null; run.weapon=3; run.wlevel=1; forgeStart(function(){ setState(GS.TITLE); }); }")
         step(50); pg.wait_for_timeout(400); step(10)
         ok(pg.evaluate("() => state==='forge'"), 'the Forge is up')
-        # walk to the laser slot and combine (list -> keep -> element -> FIRE)
+        # walk to the laser slot and combine (slot -> element -> FIRE). 0917b: the weapon LIST moved to the
+        # LOADOUT screen, so a slot opens its elements directly, and the combine opens THE FORGING.
         pg.evaluate("() => { forge.sel=run.loadout.indexOf(3); }")
-        tap(keys['fire']); tap(keys['fire']); tap(keys['fire'])
+        tap(keys['fire']); tap(keys['fire'])
         F = pg.evaluate("() => ({f:run.forge[3]||null, inf:run.infusion, icon:weaponIconKey(3,1), nm:weaponDisplayName(3)})")
         ok(F['f'] and F['f']['elem'] == 'lightning' and F['f']['lv'] == 2, 'combining LIGHTNING on the LASER opens it at the OWNED level II: %s' % json.dumps(F['f']))
         ok(F['icon'] == 'micon_forge_lightning_3_2' and F['nm'] == 'TESLA BEAM', 'the badge is the level-II plate and the name TESLA BEAM (%s)' % F['icon'])
+        # the weld is its own screen now: skip it, let the product come up, and BACK (FORGE MORE) returns here
+        ok(pg.evaluate("() => state==='forging'"), 'the combine opens THE FORGING (0917b)')
+        step(30); tap(keys['fire']); step(90)   # a press in the weld's first 0.4s is ignored, so it cannot carry the combine's own press
+        ok(pg.evaluate("() => state==='forged'"), 'and then the PRODUCT screen')
+        step(40); tap(keys['back']); step(10)
+        ok(pg.evaluate("() => state==='forge'"), 'BACK on the product (a combine left) returns to the Forge')
         step(20); shot('06_forge_tesla_L2')
         tap(keys['retina'])
         ok(pg.evaluate("() => state==='armory' && armory.back==='forge'"), 'RETINA on the Forge opens THE ARMORY (back = forge)')
