@@ -22,7 +22,7 @@ console.log('=== 306. Arcade stocks and credit lifecycle ===');
    o.stage9NoRefund=state===GS.GAMEOVER&&run.contUsed===5&&run.lives===0;
    state=GS.PLAY;riftFallbackStart();o.directRetreatNoRefund=state===GS.GAMEOVER&&run.contUsed===5;
    run.mode='campaign';DIFF=difficultyForRun(run.mode,'normal');o.campaign=DIFF===DIFFS.normal&&DIFF.continues===-1&&continueCap()===1;
-   o.baseUnchanged=DIFFS.normal.startLives===4&&DIFFS.furious.startLives===1;
+   o.baseUnchanged=DIFFS.normal.startLives===4&&DIFFS.furious.startLives===3;
    return JSON.stringify(o);
   }finally{Object.assign(run,save.run);DIFF=save.DIFF;diffKey=save.diffKey;player=save.player;Input.tap=save.InputTap;drawWorld=save.drawWorld;stageText=save.stageText;msgText=save.msgText;artReady=save.artReady;state=save.state;stateT=save.stateT;curStage=save.curStage;bossDefeated=save.bossDefeated;}
  })()`,ctxv));

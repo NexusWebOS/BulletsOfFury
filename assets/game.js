@@ -6719,7 +6719,17 @@ const Audio = (()=>{
      top of it. Music comes up and the effects bus comes down so the two sit close to level; the
      per-sound taming above is what keeps individual effects in their place, and it should not be
      doing the job of a master balance as well. */
-  let volMaster=0.8, volMusic=0.72, volSfx=0.74, muted=false, musicDuck=1;
+  const AUDIO_VOL_KEY='bof_audio_mix_v2';
+  /* Music is the spine of the fight. These defaults match the recommended cabinet mix and are
+     persisted when APPLY is pressed in Options. SFX gets additional music-priority headroom below,
+     preventing dense boss volleys from masking a full-level soundtrack. */
+  let volMaster=1.0, volMusic=1.0, volSfx=0.40, muted=false, musicDuck=1;
+  try{const v=JSON.parse(localStorage.getItem(AUDIO_VOL_KEY)||'null');if(v){
+    if(Number.isFinite(v.master))volMaster=clamp(v.master,0,1);
+    if(Number.isFinite(v.music))volMusic=clamp(v.music,0,1);
+    if(Number.isFinite(v.sfx))volSfx=clamp(v.sfx,0,1);
+  }}catch(_avRead){}
+  function sfxMixLevel(){const headroom=.35*volMusic*Math.max(0,(1-volSfx)/.6);return volSfx*(1-headroom);}
   let noiseBuf=null;
   /* init() MUST NOT THROW (drop 0724di).
      goTitle() is `Audio.init(); Audio.startMusic('title'); setState(GS.TITLE);` — audio FIRST, and
@@ -6735,7 +6745,7 @@ const Audio = (()=>{
     }catch(_){ actx=null; return; }
     master = actx.createGain(); master.gain.value=volMaster; master.connect(actx.destination);
     musicGain = actx.createGain(); musicGain.gain.value=volMusic*musicDuck; musicGain.connect(master);
-    sfxGain = actx.createGain(); sfxGain.gain.value=volSfx; sfxGain.connect(master);
+    sfxGain = actx.createGain(); sfxGain.gain.value=sfxMixLevel(); sfxGain.connect(master);
     const len = actx.sampleRate*1.0; noiseBuf=actx.createBuffer(1,len,actx.sampleRate);
     const d=noiseBuf.getChannelData(0); for(let i=0;i<len;i++) d[i]=Math.random()*2-1;
   }
@@ -7042,10 +7052,12 @@ const Audio = (()=>{
   }
   function stopMusic(){ musicOn=false; if(musicTimer){clearInterval(musicTimer);musicTimer=null;} }
   function setVol(kind,v){
+    v=clamp(Number(v)||0,0,1);
     if(kind==='master'){volMaster=v; if(master)master.gain.value=v;}
-    if(kind==='music'){volMusic=v; if(musicGain)musicGain.gain.value=v*musicDuck;}
-    if(kind==='sfx'){volSfx=v; if(sfxGain)sfxGain.gain.value=v;}
+    if(kind==='music'){volMusic=v; if(musicGain)musicGain.gain.value=v*musicDuck;if(sfxGain)sfxGain.gain.value=sfxMixLevel();}
+    if(kind==='sfx'){volSfx=v; if(sfxGain)sfxGain.gain.value=sfxMixLevel();}
   }
+  function saveVol(){try{localStorage.setItem(AUDIO_VOL_KEY,JSON.stringify({master:volMaster,music:volMusic,sfx:volSfx}));return true;}catch(_avWrite){return false;}}
   function setMusicDuck(v){musicDuck=v;if(musicGain)musicGain.gain.value=volMusic*musicDuck;}
   function getVol(kind){return kind==='master'?volMaster:kind==='music'?volMusic:volSfx;}
   function toggleMute(){ muted=!muted; return muted; }
@@ -7057,7 +7069,7 @@ const Audio = (()=>{
      of those guards has always evaluated to "nothing is playing" regardless of the truth. They
      were no-ops wearing the shape of a check. Exposing the real state makes all four work as
      written, which is the root of the campaign-map silence. */
-  return {init,resume,SFX,startMusic,stopMusic,setVol,setMusicDuck,getVol,toggleMute,warpAmbienceStart,warpAmbienceLevel,warpAmbienceStop,setWarpMix:()=>{},isMuted:()=>muted,
+  return {init,resume,SFX,startMusic,stopMusic,setVol,saveVol,setMusicDuck,getVol,toggleMute,warpAmbienceStart,warpAmbienceLevel,warpAmbienceStop,setWarpMix:()=>{},isMuted:()=>muted,
           musicPlaying:()=>!!(musicOn && musicTimer)};
 })();
 
@@ -7631,7 +7643,7 @@ function EHP(baseHp){
 const DIFFS = {
   /* CONTINUES ARE PART OF THE DIFFICULTY (drop 0805b). Mike:
        "Hard is a scale up from normal, and you only get 3 continues."
-       "Furious - You only get 1 life, 1 continue and 1 life per that 1 continue you do get."
+       "Furious - 3 lives, 1 continue, and that continue immediately restores 3 lives."
      `continues` is the cap; `contLives` is how many lives a continue restores. Easy and
      normal keep the unlimited behaviour they already had (-1 = no cap). */
   /* density RAISED across the board (Mike, 0819): "increase the amount of enemies."
@@ -7656,8 +7668,8 @@ const DIFFS = {
   hard:   {name:'HARD',   ebSpeed:1.35, eFire:1.45, eHp:1.10, density:1.25, startLives:3, startBombs:2, dropMul:0.95, continues:3,  contLives:3},
   /* FURIOUS: "enemies are also 10-25% faster with DPS, travel speed and smarter dodge
      and manueverability detection." ebSpeed/eFire sit ~20% over HARD, inside that band.
-     1 life, 1 continue, and that continue gives back exactly 1 life. */
-  furious:{name:'FURIOUS',ebSpeed:1.60, eFire:1.85, eHp:1.30, density:1.50, startLives:1, startBombs:1, dropMul:0.80, continues:1,  contLives:1},
+     3 lives, 1 continue, and that continue immediately restores the full 3-life stock. */
+  furious:{name:'FURIOUS',ebSpeed:1.60, eFire:1.85, eHp:1.30, density:1.50, startLives:3, startBombs:1, dropMul:0.80, continues:1,  contLives:3},
   /* INSANITY (Mike, 0916): "a 5th difficulty ... it will not show up unless you unlock it via
      achievement points, so its an invisible button you cant even select until this condition is
      met, then it becomes visible and selectable."
@@ -18732,6 +18744,9 @@ const RZB_R={gun:17, turret:34, hull:52};                 // hit radii, already 
 const RZB_FAN=[0.80,0.80,0.64,0.64,0.48,0.48,0.32,0.32,0.16,0.16];
 const RZB_ATTACKS={guns:['suppression','sonic','missiles','nova','sonic'], turret:['suppression','sonic','missiles','nova','sonic'],
                    hull:['nova','ram','missiles','sonic','ram']};
+const RZB_FURY_ATTACKS={guns:['suppression','sonic','rocketFlurry','missiles','nova','sonic'],
+  turret:['suppression','sonic','rocketFlurry','missiles','nova','sonic'],
+  hull:['nova','ram','rocketFlurry','sonic','ram','missiles']};
 function rzbWrap(a){ return Math.atan2(Math.sin(a),Math.cos(a)); }
 function rzbAim(f,t){ return Math.atan2(f.x-t.x, t.y-f.y); }                    // pack convention, 0 = south
 function rzbFwd(p,a,d){ return {x:p.x-Math.sin(a)*d, y:p.y+Math.cos(a)*d}; }
@@ -18764,7 +18779,7 @@ function razorbackInit(b){
   b._rzb={state:'arrival', pt:0, attack:'arrival', at:0, idx:-1, a:0, turret:0, tgt:{x:W/2,y:VH*0.27},
     speed:0, travel:{left:0,right:0}, charge:0, recoil:0, guns:{left:{a:0,flash:0},right:{a:0,flash:0}},
     pods:[0,0], pools:pools, max:Object.assign({},pools), flash:{}, waves:[], fx:[], beat:-1, mgBeat:-1,
-    trans:0, ramX:W/2, pid:0, ppx:player?player.x:W/2, pvx:0, shake:0, clankT:0};
+    trans:0, ramX:W/2, pid:0, ppx:player?player.x:W/2, pvx:0, shake:0, clankT:0, sonicFlash:0, flurryAngle:null};
   if(typeof diffKey!=='undefined'&&diffKey==='furious'){
     const R=b._rzb;R.furious=true;R.scale=1.5;R.speedMul=1.62;R.turnMul=1.55;R.rate=1.30;
     b.name='FURIOUS RAZORBACK';b.w=Math.round(270*RZB_S*R.scale);b.h=Math.round(270*RZB_S*R.scale);
@@ -18879,8 +18894,9 @@ function razorbackEnter(b,state){
   rzbSfx('bossPhase'); razorbackNext(b);
 }
 function razorbackNext(b){
-  const R=b._rzb, W=(typeof worldWidth==='function')?worldWidth():VW, L=camLeftX(),span=camRightX()-L,list=RZB_ATTACKS[R.state]||RZB_ATTACKS.guns;
-  R.attack=list[++R.idx%list.length]; R.at=0; R.beat=-1; R.mgBeat=-1; R.charge=0; R.ramLocked=false;
+  const R=b._rzb, W=(typeof worldWidth==='function')?worldWidth():VW, L=camLeftX(),span=camRightX()-L,
+    book=R.furious?RZB_FURY_ATTACKS:RZB_ATTACKS,list=book[R.state]||book.guns;
+  R.attack=list[++R.idx%list.length]; R.at=0; R.beat=-1; R.mgBeat=-1; R.charge=0; R.ramLocked=false; R.flurryAngle=null;
   if(R.pairSide){const inner=(R.idx%2)!==0;R.homeX=L+span*(R.pairSide<0 ? .28 : .72);R.tgt={x:L+span*(R.pairSide<0 ? (inner ? .34 : .25) : (inner ? .66 : .75)),y:(R.idx%3===0)?VH*.36:VH*.24};}
   else R.tgt={x:(R.idx%2)?W*0.27:W*0.73, y:(R.idx%3===0)?VH*.36:VH*.24};
   if(R.attack==='sonic'||R.attack==='nova') stageRevisionCue(b,'razorbackCharge',.16);
@@ -18889,10 +18905,11 @@ function rzbShot(b,p,a,spdPack,rPack,kind){
   const v=rzbPxFrame(spdPack,b), r=Math.max(6,Math.round(rPack*2*rzbScale(b))), ga=rzbGameAng(a);
   eBullets.push({x:p.x,y:p.y,vx:Math.cos(ga)*v,vy:Math.sin(ga)*v,w:r,h:r,kind:kind,t:0,_rzb:true,_rzbOwner:b,_rzbFurious:!!b._rzb.furious,ang:ga,spin:Math.random()*6});
 }
-function rzbMissile(b,p,a){
-  const ga=rzbGameAng(a), v=rzbPxFrame(160,b),furious=!!b._rzb.furious;
+function rzbMissile(b,p,a,straight){
+  const ga=rzbGameAng(a), v=rzbPxFrame(straight?230:160,b),furious=!!b._rzb.furious;
   eBullets.push({x:p.x,y:p.y,vx:Math.cos(ga)*v,vy:Math.sin(ga)*v,ang:ga,w:furious?15:10,h:furious?24:16,kind:'rzbMissile',hp:1,
-    _shootable:true,spd:v,_accel:furious?0.034:0.0264,_maxspd:furious?6.25:5.04,t:0,_rzb:true,_rzbOwner:b,_rzbFurious:furious});
+    _shootable:true,spd:v,_accel:straight?0:(furious?0.034:0.0264),_maxspd:straight?v:(furious?6.25:5.04),t:0,
+    _committed:!!straight,_rzbStraight:!!straight,_rzb:true,_rzbOwner:b,_rzbFurious:furious});
   stageRevisionCue(b,'razorbackRocket',.10);
 }
 function razorbackMove(b,dt){
@@ -18923,6 +18940,7 @@ function razorbackUpdate(b,dt){
     }
   }
   R.shake=Math.max(0,R.shake-dt*24); R.recoil=Math.max(0,R.recoil-dt*100); R.clankT=Math.max(0,R.clankT-dt);
+  R.sonicFlash=Math.max(0,(R.sonicFlash||0)-dt);
   for(const k of ['left','right']) R.guns[k].flash=Math.max(0,R.guns[k].flash-dt);
   R.pods[0]=Math.max(0,R.pods[0]-dt); R.pods[1]=Math.max(0,R.pods[1]-dt);
   for(const k in R.flash) R.flash[k]=Math.max(0,R.flash[k]-dt);
@@ -18983,6 +19001,7 @@ function razorbackCombat(b){
     // SONIC HAMMER: charge, then a five-round spread and a directional pressure wave
     const cycle=t%2.4, beat=Math.floor(t/2.4);
     R.charge=Math.min(1,cycle/1.2);
+    if(cycle<1.2) combatWarningTick(b,'razorback-sonic-fov',cycle,1.2,true);
     const audioBeat=R.pid+':'+beat;
     if(cycle<1.2&&R._sonicAudioBeat!==audioBeat){R._sonicAudioBeat=audioBeat;stageRevisionCue(b,'razorbackCharge',.16);}
     if(cycle>=1.2){ R.charge=0;
@@ -18990,10 +19009,26 @@ function razorbackCombat(b){
         const offs=R.furious?[-0.56,-0.42,-0.28,-0.14,0,0.14,0.28,0.42,0.56]:[-0.28,-0.14,0,0.14,0.28];
         for(const off of offs)rzbShot(b,m,R.turret+off,R.furious?300:240,R.furious?22:18,'rzbSonic');
         R.waves.push({x:m.x,y:m.y,r:10*S,a:R.turret,arc:R.furious?1.05:0.65,segments:R.furious?rzbFuriousSegments(1.05,5):null,speed:(R.furious?248:180)*S*RZB_WFAST,width:(R.furious?20:15)*S,life:R.furious?6:5,furious:!!R.furious});
-        R.recoil=24; shake=Math.max(shake||0,5); stageRevisionCue(b,'razorbackPressure',.12);
+        R.recoil=24; R.sonicFlash=.16; shake=Math.max(shake||0,5); stageRevisionCue(b,'razorbackPressure',.12);
         // Charge report belongs to the windup above; release has its own cue.
       } }
     if(t>5.1) razorbackNext(b);
+  } else if(R.attack==='rocketFlurry'){
+    /* FURIOUS LOCKED SALVO: one Retina commits a firing lane, then both racks hammer that exact
+       heading. Every rocket is marked committed so the shared lock system cannot bend it after launch. */
+    R.charge=t<0.9?t/0.9:0;
+    if(R.beat<0){
+      R.beat=0; const N=12,pid=R.pid;
+      for(let i=0;i<N;i++){ const side=(i%2)?1:-1;
+        enemyLockOn(b,0.9+i*0.105,{fire:function(){
+          if(!b._rzb||b.dead||R.pid!==pid)return;
+          if(R.flurryAngle==null)R.flurryAngle=rzbAim(b,{x:player.x,y:player.y});
+          rzbMissile(b,rzbWorld(b,side*105,10),R.flurryAngle,true);
+          R.pods[side<0?0:1]=0.14;
+        }});
+      }
+    }
+    if(t>3.6)razorbackNext(b);
   } else if(R.attack==='missiles'){
     R.charge=t<0.9?t/0.9:0;
     if(R.beat<0){
@@ -19086,12 +19121,12 @@ function razorbackDraw(b){
     rzbSprite('rzb_rotor',p.x,p.y,R.a+R.travel[side]/25,0.43,null,null,null,mul,bodyTint);
   }
   for(const s of [-1,1]){ const p=rzbWorld(b,s*105,10); rzbSprite('rzb_missile_pod',p.x,p.y,R.a,0.55,null,null,null,mul,bodyTint);
-    if(R.pods[s<0?0:1]>0){ const q=rzbFwd(p,R.turret+s*0.6,26*S); rzbSprite('rzb_muzzle',q.x,q.y,R.turret,0.2,null,null,null,mul); } }
+    if(R.pods[s<0?0:1]>0){ const q=rzbFwd(p,R.turret+s*0.6,26*S); rzbSprite('rzb_muzzle',q.x,q.y,R.turret,0.2,null,null,null,mul,bodyTint); } }
   for(const k of ['left','right']) if(R.pools[k]>0){
     const p=rzbWorld(b,k==='left'?-57:57,96), g=R.guns[k];
     rzbSprite('rzb_machinegun',p.x,p.y,g.a,1,null,64,65,mul,bodyTint);
     rzbFlash('rzb_machinegun',p.x,p.y,g.a,1,64,65,R.flash[k],mul);
-    if(g.flash>0){ const m=rzbFwd(p,g.a,49*S); rzbSprite('rzb_muzzle',m.x,m.y,g.a,0.34,null,null,null,mul); }
+    if(g.flash>0){ const m=rzbFwd(p,g.a,49*S); rzbSprite('rzb_muzzle',m.x,m.y,g.a,0.34,null,null,null,mul,bodyTint); }
   }
   if(R.pools.turret>0){
     const p=rzbFwd({x:b.x,y:b.y},R.turret,-R.recoil*S), tk=(R.pools.turret<R.max.turret*0.5)?'rzb_turret_damaged':'rzb_turret';
@@ -19105,10 +19140,12 @@ function razorbackDraw(b){
     g.addColorStop(0,R.furious?'rgba(255,28,52,'+(0.22+R.charge*0.4)+')':'rgba(174,255,49,'+(0.22+R.charge*0.4)+')'); g.addColorStop(1,R.furious?'rgba(255,28,52,0)':'rgba(174,255,49,0)');
     ctx.fillStyle=g; ctx.fillRect(m.x-rr,m.y-rr,rr*2,rr*2); ctx.restore();
     rzbSprite('rzb_sonic_charge',m.x,m.y,(b.t||0)*(R.furious?1.7:0.8),0.16+R.charge*(R.furious?0.78:0.5),null,null,null,mul,R.furious?'#ff1838':null);
-    if(R.attack==='sonic'){ const e=rzbFwd(m,R.turret,750*S); ctx.save(); ctx.setLineDash([10*S,12*S]);
-      ctx.strokeStyle=R.furious?'rgba(255,32,58,0.72)':'rgba(184,238,94,0.5)'; ctx.lineWidth=2; ctx.beginPath(); ctx.moveTo(m.x,m.y); ctx.lineTo(e.x,e.y); ctx.stroke(); ctx.restore(); }
+    if(R.attack==='sonic'){ const e=rzbFwd(m,R.turret,750*S);
+      combatWarningDraw(b,{x:m.x,y:m.y,ex:e.x,ey:e.y,progress:R.charge,width:(R.furious?110:82)*mul}); }
     if(R.attack==='ram') combatWarningDraw(b,{x:b.x,y:b.y,ex:R.ramX,ey:VH*0.85,progress:R.charge,width:80*mul});
   }
+  if(R.sonicFlash>0){ const m=rzbFwd(b,R.turret,142*S);
+    rzbSprite('rzb_muzzle',m.x,m.y,R.turret,0.58,R.sonicFlash/.16,null,null,mul,bodyTint); }
   for(const w of R.waves) razorbackWaveDraw(w);
   for(const e of R.fx){ const u=1-e.life/e.max;
     rzbSprite(e.key,e.x,e.y,(e.spin?u*3:0),e.s*(0.7+u*0.6),1-u, e.key==='rzb_turret_damaged'?128:null, e.key==='rzb_turret_damaged'?128:null,mul,bodyTint); }
@@ -73785,8 +73822,11 @@ const Snd=(function(){
   if(!window.BOFA||!window.Audio) return null;
   function c01(x){ return Math.max(0,Math.min(1,x||0)); }
   // music at full level, SFX mixed LOWER so music is clearly audible over the effects
-  const A={ vol:{master:1.0,music:1.0,sfx:0.42,voice:0.85}, pools:{}, music:{}, cur:null,
+  const A={ vol:{master:1.0,music:1.0,sfx:0.40,voice:0.85}, pools:{}, music:{}, cur:null,
     warpMix:0,warpMusicEcho:[],_warpSfxAt:0 };
+  /* Reserve soundtrack headroom as music rises. At Mike's 100/100/40 setting, dense sampled SFX
+     run at 26% before their per-cue TAME gain, while music retains its full authored level. */
+  A._sfxMix=function(){const headroom=.35*A.vol.music*Math.max(0,(1-A.vol.sfx)/.6);return A.vol.sfx*(1-headroom);};
   function _au(v){ return (typeof v==='string'&&v.lastIndexOf('assets/',0)===0)?v:('data:audio/mpeg;base64,'+v); }
   /* ROUND-ROBIN SOURCE SETS. A BOFA entry may be one legacy URI or an array of authored
      variations. The pool used to clone one identical element three times, which prevented
@@ -74193,8 +74233,11 @@ const Snd=(function(){
       if(A._last[name]!=null && t-A._last[name] < cfg.min) return false;
       A._last[name]=t;
     }
-    const a=p.list[p.i]; p.i=(p.i+1)%p.list.length;
-    const ch=A.VOICE_SET[name] ? (A.vol.voice!=null?A.vol.voice:1) : A.vol.sfx;
+    let a=p.list[p.i]; p.i=(p.i+1)%p.list.length;
+    /* Never throw a shot at an undecoded overlap clone when this cue already has a playable voice.
+       A ready paused voice wins; restarting a ready voice is still preferable to a silent shot. */
+    if(a.readyState<3){let fallback=null;for(const q of p.list){if(q.readyState>=3){fallback=q;if(q.paused)break;}}if(fallback)a=fallback;}
+    const ch=A.VOICE_SET[name] ? (A.vol.voice!=null?A.vol.voice:1) : A._sfxMix();
     const gm=cfg?cfg.g:1;
     /* Media elements already routed through a WebAudio filter become completely silent if that
        context was suspended while a stage/card/dialogue changed focus. Resume it on every real
@@ -74207,7 +74250,7 @@ const Snd=(function(){
       const retry=function(){
         a._bofRetry=false;
         const now=(window.performance&&performance.now?performance.now():Date.now());
-        if(now-born>520)return;
+        if(now-born>2500)return;
         try{a.currentTime=0;const q=a.play();if(q&&q.catch)q.catch(function(){});}catch(e){}
       };
       const pr=a.play();
@@ -74303,7 +74346,7 @@ const Snd=(function(){
         }
       }
       else { L.lvl=Math.max(0, L.lvl-dt*5); if(L.lvl<=0 && L.on){ L.on=false;L.playing=false;L.pending=false;try{ L.el.pause(); }catch(e){} } }
-      try{ L.el.volume=c01(L.lvl*L.want*gm*A.vol.sfx*A.vol.master); }catch(e){}
+      try{ L.el.volume=c01(L.lvl*L.want*gm*A._sfxMix()*A.vol.master); }catch(e){}
     }
   };
   A.loopStopAll=function(){ for(const n in A.loops){ const L=A.loops[n]; L.hold=0;L.lvl=0;L.on=false;L.playing=false;L.pending=false;try{ L.el.pause(); }catch(e){} } };

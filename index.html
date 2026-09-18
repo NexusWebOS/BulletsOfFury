@@ -304,5 +304,14 @@
   L(); setTimeout(L,60); setTimeout(L,300);
 })();
 </script>
+<script>
+(function(){
+  if(location.protocol!=='file:')return;
+  var n=document.createElement('div');n.id='file-audio-warning';
+  n.style.cssText='position:fixed;left:12px;right:12px;bottom:12px;z-index:999999;padding:12px 42px 12px 14px;background:#170b05;border:2px solid #ff9b35;color:#fff3d4;font:700 13px Arial,sans-serif;box-shadow:0 0 18px #000;text-align:center';
+  n.innerHTML='FULL SOUND REQUIRES LOCAL SERVER MODE. Close this page and double-click <b>PLAY_BULLETS_OF_FURY.bat</b>.<button aria-label="Dismiss" style="position:absolute;right:8px;top:5px;border:0;background:transparent;color:#fff;font-size:22px;cursor:pointer">&times;</button>';
+  n.querySelector('button').onclick=function(){n.remove();};document.body.appendChild(n);
+})();
+</script>
 </body>
 </html>
