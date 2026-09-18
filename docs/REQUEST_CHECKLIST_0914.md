@@ -1,6 +1,6 @@
 # Bullets of Fury — request checklist
 
-Updated 2026-09-16. **151 entries: 128 complete / 7 partial / 16 pending.**
+Updated 2026-09-18. **156 entries: 133 complete / 7 partial / 16 pending.**
 
 **23 remain unfinished.** 10 depend on SpriteCook production assets; 0 needs a model-name decision. These are included in the totals.
 
@@ -12,7 +12,7 @@ Detailed specifications: [original request ledger](OVERNIGHT_REQUESTS_0914.md). 
 
 ## Current batch and next work
 
-Just verified: Stage-2 Inferno Reaver role repair and shared nine-lane shotgun warning [Proof](STAGE2_REAVER_SHARED_WARNING_0916.md).
+Just verified: Furious Razorback, global boss-element Forge, selectable weapon forms, new UI, Magma Orb and combat-sound verification [Proof](WEAPON_FORGE_REPAIR_0918.md).
 
 Work in ascending workOrder, an estimate of implementation plus verification difficulty. Respect prerequisites and skip externally blocked items while continuing ready work. Re-rank when investigation changes the estimate; retain IDs and explain the change.
 
@@ -23,14 +23,14 @@ Mike selected furyship_somersault_13.png and approved image_gen for its replacem
 | Area | Complete | Partial | Pending | Total |
 | --- | ---: | ---: | ---: | ---: |
 | Earlier handoff, weapons and Tempest | 9 | 1 | 0 | 10 |
-| Shared combat, warnings and targeting | 12 | 2 | 1 | 15 |
-| Stage 1: fodder, Razorback and jungle chopper | 12 | 0 | 0 | 12 |
+| Shared combat, warnings and targeting | 15 | 2 | 1 | 18 |
+| Stage 1: fodder, Razorback and jungle chopper | 13 | 0 | 0 | 13 |
 | Stage 2: lava enemies, Magma Ward and Furnace Tyrant | 7 | 1 | 3 | 11 |
 | Stage 3: ice enemies, miniboss and Rime Wall | 12 | 0 | 2 | 14 |
 | Stage 4: Olive Warden and Sovereign | 14 | 0 | 4 | 18 |
 | Stages 5-9: space and encounter cleanup | 18 | 2 | 4 | 24 |
 | Manual missile tiers and supplies | 9 | 0 | 0 | 9 |
-| Pause, saving, title and pilot selection | 16 | 0 | 0 | 16 |
+| Pause, saving, title and pilot selection | 17 | 0 | 0 | 17 |
 | Achievements, timers and unlockable modes | 11 | 1 | 2 | 14 |
 | Arcade and shared difficulty rewards | 8 | 0 | 0 | 8 |
 
@@ -66,6 +66,9 @@ Mike selected furyship_somersault_13.png and approved image_gen for its replacem
 - [x] **ENG-13 · Complete** — Shared elemental weakness: fire deals 2x to ice and ice 2x to fire across enemy, miniboss, boss, component/helper and shield damage routes; Freezer's authored x2 attacks do not stack to x4. [Evidence](ELEMENTAL_WEAKNESS_0915.md).
 - [ ] **ENG-14 · Partial** — All pilots retain barrel roll and somersault access; existing ground/space support is present, but full nine-pilot regression and the replacement ship frames remain. [Evidence](proofs/spaceship_0913a/report.json).
 - [ ] **ENG-15 · Pending** — HUD incoming-lock indicator above Equipped: gray idle, red flashing and distance-accelerated beeps until evasion or hit. Dependency: SpriteCook.
+- [x] **ENG-16 · Complete** — Boss victories grant deterministic stage elements instead of weapon pairs; every obtained element can upgrade every forgeable weapon and remains usable after save/load. [Evidence](WEAPON_FORGE_REPAIR_0918.md).
+- [x] **ENG-17 · Complete** — Persist multiple crafted forms per weapon and select them from loadout, including Flamethrower/Ice Breath and Ice Orb/Fire Orb/Thermoshock choices; preserve two upgrades and two re-specs per stage. [Evidence](WEAPON_FORGE_REPAIR_0918.md).
+- [x] **ENG-18 · Complete** — Give Fire Orb a dedicated readable Magma Orb projectile and verify ordinary enemy, boss-family, Furious charge/release, and projectile-launch sounds resolve through audible real-sample routes. [Evidence](WEAPON_FORGE_REPAIR_0918.md).
 
 ### Stage 1: fodder, Razorback and jungle chopper
 
@@ -81,6 +84,7 @@ Mike selected furyship_somersault_13.png and approved image_gen for its replacem
 - [x] **S1-10 · Complete** — Chopper introduction: boss bar fades in, fills left-to-right with repeated existing chimes; fight/music start after filling. [Evidence](OVERLORD_GAUGE_INTRO_0915.md).
 - [x] **S1-11 · Complete** — Below 50%: frenzy plus four alternating down/up passes across distinct lanes; passes two and four rain bullets. [Evidence](OVERLORD_FOUR_PASS_FRENZY_0915.md).
 - [x] **S1-12 · Complete** — Chopper pass warning: eight synchronized red flashes/beeps, then committed fast but reactable charge with a shooting window. [Evidence](OVERLORD_EIGHT_BEAT_WARNING_0915.md).
+- [x] **S1-13 · Complete** — Furious Razorback is the current authored tank at 150% scale with only its green armor panels palette-swapped to neon red; sonic pressure waves have readable decibel-lobe openings and matching collision gaps. [Evidence](WEAPON_FORGE_REPAIR_0918.md).
 
 ### Stage 2: lava enemies, Magma Ward and Furnace Tyrant
 
@@ -191,6 +195,7 @@ Mike selected furyship_somersault_13.png and approved image_gen for its replacem
 - [x] **UI-14 · Complete** — Generate a rectangular 16-bit dialogue frame with a cool border, centered text, and palette swaps for all nine pilots; share it across in-game dialogue. [Evidence](DIALOGUE_HAZARDS_0914.md).
 - [x] **UI-15 · Complete** — B is Back; use generated D-pad, action-button and Start graphics consistently for navigation prompts. [Evidence](CONTROL_HINTS_0914.md).
 - [x] **UI-16 · Complete** — Generate matching neutral mouse, red left-click, red right-click, mouse-wheel, Spacebar and R input icons; use the graphics in Help and live binding displays. [Evidence](INPUT_PROMPTS_0915.md).
+- [x] **UI-17 · Complete** — Use an authored Forge/loadout plate with Fury Points and embedded RE-SPEC plus a four-row Weapon Found plate that announces real weapon systems separately from boss powers. [Evidence](WEAPON_FORGE_REPAIR_0918.md).
 
 ### Achievements, timers and unlockable modes
 

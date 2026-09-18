@@ -5568,3 +5568,11 @@ plays); a sample played seconds after boot can still be cold (only slot 0 of eac
 load on first play, measured 50-125 ms, fine); and the FIRST media play of a page takes 265-642 ms on either build
 (the device waking up - the menu blips always do that before combat).
 `probe_sfx_output_0918.py`: 31/0 on the fix, **9 fail on the pre-fix build** (the busted arm). Suite 56 names = baseline.
+
+## Codex update — 2026-09-18: Furious Razorback and global boss-element Forge repair
+
+- The Furious Razorback is now the current authored tank at 150% scale with a reproducible green-panel-to-neon-red palette set; gray armor, black outlines, lights and ordnance remain authored. Furious sonic pressure draws five directional or eleven nova decibel lobes with collision-safe openings.
+- Boss kills award one deterministic stage element rather than a random weapon pair. The element applies to all nine forgeable weapons, survives save/load and is available in Stage 5 space. Each stage retains two upgrades and two re-specs; every crafted form persists when another form or bare weapon is equipped.
+- Loadout selection now exposes Ice Breath, Fire Orb, Ice Orb, Thermoshock and forged elemental forms as their requirements are earned. A new Forge/loadout plate shows Fury Points and embeds RE-SPEC; a separate four-row Weapon Found plate announces actual weapon systems.
+- Fire Orb draws a dedicated Magma Orb plate without additive washout. Combat audio validation covers ordinary projectile families, boss-specific families, Razorback charge/release and Magma Orb launch through real-sample routes.
+- Verification: syntax pass; full suite 4,921 pass / exact incoming 57-name failure baseline; real Chromium 9/9 with zero page or console errors. Evidence: docs/WEAPON_FORGE_REPAIR_0918.md and docs/qa/weapon_forge_repair_0918.json. Checklist: 156 entries, 133 complete / 7 partial / 16 pending.

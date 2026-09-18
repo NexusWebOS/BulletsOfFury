@@ -13,7 +13,10 @@ if(typeof window!=='undefined' && window.BOFX && BOFX.img){
      green by _BUILD_SOURCE/forest_swap_0912p.py. Loose files: the rig is 25 parts at their own pivots. */
   for(const _rz of ['hull_0','hull_1','hull_2','hull_3','hull_4','hull_5','hull_6','hull_7','hull_base','turret','turret_damaged',
     'machinegun','missile_pod','rotor','tread','wreck','debris','sonic_bullet','sonic_wave','sonic_ring','razor_missile',
-    'sonic_charge','muzzle','sonic_impact','dust']) BOFX.img['rzb_'+_rz]='assets/game/bosses/razorback/rzb_'+_rz+'.png';
+    'sonic_charge','muzzle','sonic_impact','dust']){
+      BOFX.img['rzb_'+_rz]='assets/game/bosses/razorback/rzb_'+_rz+'.png';
+      BOFX.img['rzbf_'+_rz]='assets/game/bosses/razorback_furious/rzbf_'+_rz+'.png';
+    }
   /* the FURNACE TYRANT (0912t) - Mike's approved Chainborn encounter, 45 of its 56 plates. Its own shield set is
      deliberately NOT shipped: he asked for the Magma Ward's fire shield instead of the pack's. */
   for(const _fz of ['body_intact', 'body_damaged', 'body_exposed', 'body_wreck', 'arm_flame_intact', 'arm_flame_damaged', 'arm_flame_exposed', 'arm_cannon_intact', 'arm_cannon_damaged', 'arm_cannon_exposed', 'debris_flame', 'debris_cannon', 'body_rotor', 'body_rotor_damaged', 'flame_jet_0', 'flame_jet_1', 'charge_0', 'charge_1', 'charge_2', 'cannon_flash', 'fireball_0', 'fireball_1', 'fireball_impact', 'damage_smoke_0', 'damage_smoke_1', 'damage_fire_0', 'damage_fire_1', 'boss_explosion', 'overload_wave', 'torso_yaw_0', 'torso_yaw_1', 'torso_yaw_2', 'torso_yaw_3', 'torso_yaw_4', 'torso_yaw_5', 'torso_yaw_6', 'torso_yaw_7', 'head_intact', 'head_damaged', 'head_charged', 'head_wreck', 'chain_link', 'chain_edge', 'laser_muzzle', 'fire_laser']) BOFX.img['fzt_'+_fz]='assets/game/bosses/furnace/fzt_'+_fz+'.png';
@@ -2061,6 +2064,9 @@ const XART=(function(){
      against it as a reference so the two read as one family. */
   X._src['forge_chamber_0917b']='assets/game/ui/forge_0917b/forge_chamber.png';
   X._src['loadout_bays_0917b']='assets/game/ui/forge_0917b/loadout_bays.png';
+  X._src['forge_loadout_0918']='assets/game/ui/forge_0918/forge_loadout.png';
+  X._src['weapon_found_0918']='assets/game/ui/forge_0918/weapon_found.png';
+  X._src['magma_orb_0918']='assets/game/player_weapons/magma_orb_0918/magma_orb.png';
   /* 0917c: POWERS GAINED's own plate (same family), the FURIOUS coin, the two bombs, the score bullets */
   X._src['powers_bays_0917c']='assets/game/ui/forge_0917b/powers_bays.png';
   X._src['fury_coin_0917c']='assets/game/ui/pickups_0917b/fury_coin.png';
@@ -7966,7 +7972,7 @@ const INFUSIONS=Object.freeze({
   lightning:{name:'VOLTAIC',    body:'#ffe03a', glow:'#fff29a', el:null,    named:{3:'GODS WRATH'}},
   prism:    {name:'PRISM',      body:'#e0b3ff', glow:'#ffffff', el:null,    named:{2:'LUMINAIRE',3:'PRISM WAVE'}},
   toxic:    {name:'TOXIC',      body:'#8de23a', glow:'#3aff5a', el:null,    named:{3:'ERADICATION'}},
-  kinetic:  {name:'KINETIC',    body:'#dfe8ff', glow:'#8ab4ff', el:null,    named:{3:'SONIC WAVE'}},
+  kinetic:  {name:'SONIC',    body:'#dfe8ff', glow:'#8ab4ff', el:null,    named:{3:'SONIC WAVE'}},
   /* chromium (Mike: "chromium energy upgrades"): a hit MIRRORS enemy rounds near the impact back up
      the screen as the player's own; level 3 MIRROR SHELL turns every round on screen on a kill */
   chrome:   {name:'CHROMIUM',   body:'#d6e2ee', glow:'#ffffff', el:null,    named:{2:'CHROME BURST',3:'MIRROR SHELL'}},
@@ -8000,8 +8006,9 @@ const INFUSION_FIELD_DROPS=false;
    the on-hit effect; each has its own authored draw, so none of them takes the palette swap. */
 const INFUSION_CARRIERS={mg:1,spread:1,beam:1,missile:1,orb:1,shard:1,
                          flame:1,lasermist:1,yuriLightningOrb:1,yuriLightningBolt:1};
-/* which elements a stage tends to drop - a bias, never a lock, so every element stays reachable */
-const INFUSION_STAGE_BIAS={1:'kinetic',2:'fire',3:'ice',4:'lightning',6:'chrome',7:'toxic',8:'prism'};
+/* Each boss awards one global element; the Forge applies it to any weapon. */
+const BOSS_ELEMENT_BY_STAGE=Object.freeze({1:'kinetic',2:'fire',3:'ice',4:'lightning',5:'chrome',6:'water',7:'toxic',8:'prism',9:'dark'});
+const INFUSION_STAGE_BIAS=BOSS_ELEMENT_BY_STAGE;
 function infusionEligible(){
   /* ⚠ A `bg==='space'` CATCH-ALL HERE SILENTLY DELETED STAGE 8's INFUSIONS (measured 0917 by
      probe_infusion_rate_0917.py: 0 pickups in 4,000 dropPowerup calls on stage 8 against ~530 on
@@ -8015,6 +8022,7 @@ function infusionEligible(){
   return true;
 }
 function infusionGateOpen(elem){
+  if(run&&run.forgeElems&&run.forgeElems[elem]) return true;
   const g=(INFUSIONS[elem]||{}).gate;
   if(!g) return true;
   if(g==='water') return (typeof laserMistIsUnlocked==='function'&&laserMistIsUnlocked());
@@ -8187,32 +8195,32 @@ const FORGE_NAMES=Object.freeze({
   water:    {0:'TIDAL SLUGS',      1:'GEYSER FAN',    2:'TORRENT RACK',   3:'HYDRO BEAM',     5:'WATER ORB',    7:'TORRENT GATLING', 4:'STEAM JET',     6:'TIDAL MIST',  8:'GEYSER SPHERE'},
   dark:     {0:'VOID SLUGS',       1:'VOID FAN',      2:'VOID RACK',      3:'VOID BEAM',      5:'VOID ORB',     7:'VOID GATLING', 4:'VOID JET',      6:'VOID MIST',   8:'VOID SPHERE'}
 });
+function ensureForgeForms(){
+  if(!run) return {};
+  if(!run.forge) run.forge={};
+  if(!run.forgeForms) run.forgeForms={};
+  for(const w of Object.keys(run.forge)){
+    const f=run.forge[w]; if(!f||!INFUSIONS[f.elem]) continue;
+    if(!run.forgeForms[w]) run.forgeForms[w]={};
+    if(!run.forgeForms[w][f.elem]) run.forgeForms[w][f.elem]={elem:f.elem,lv:Math.max(1,f.lv|0)};
+  }
+  return run.forgeForms;
+}
 function forgeEntry(w){ return (run && run.forge && run.forge[w]) ? run.forge[w] : null; }
+function forgeFormsFor(w){ const F=ensureForgeForms(); return F[w]||{}; }
 function forgeName(w){
   const f=forgeEntry(w); if(!f || !INFUSIONS[f.elem]) return null;
   const T=FORGE_NAMES[f.elem];
   return (T && T[w]) ? T[w] : (INFUSIONS[f.elem].name+' '+((typeof WEAPONS!=='undefined'&&WEAPONS[w])||'WEAPON'));
 }
 function forgeCanTake(w){ return FORGE_WEAPONS.indexOf(w|0)>=0; }
-/* an element is SEEN when one of its pickups is collected in play. ⚠ SINCE 0917 THIS GRANTS
-   NOTHING - it used to license that element on all nine slots at once, which is exactly the
-   "you dont unlock all these weapon combination upgrades" Mike ruled out. The Forge uses it only
-   to show an element it can name; forgeElemsFor(w) is what may actually be combined. */
 function forgeDiscover(elem){ if(run && INFUSIONS[elem]){ if(!run.forgeElems) run.forgeElems={}; run.forgeElems[elem]=1; } }
-/* every element combinable on ANY slot right now - the union of the owned pairs, which is what a
-   screen asking "is there anything to do here" needs. */
-/* ⚠ IN TABLE ORDER, not in the order the profile happens to store them - the element strip is
-   drawn from this and a list that reorders itself as combinations are earned would move the
-   cursor under the player's thumb. */
 function forgeDiscovered(){
-  const own={};
-  for(const c of forgeCombosOwned()) own[c.elem]=1;
-  return Object.keys(INFUSIONS).filter(function(e){ return own[e] && infusionGateOpen(e); });
+  if(!run) return [];
+  if(!run.forgeElems) run.forgeElems={};
+  for(const c of forgeCombosOwned()) run.forgeElems[c.elem]=1;  /* migrate old pair licenses */
+  return Object.keys(INFUSIONS).filter(function(e){ return run.forgeElems[e] && infusionGateOpen(e); });
 }
-/* the permanent element ASSERTS itself on the held weapon. A pickup of the same element in play can
-   still level it further for the stage; a different element still fuses. This only writes when the
-   held weapon is forged and its element is not already at least this strong - it never takes
-   anything away, so an in-play boost survives a weapon swap and back. */
 function forgeApply(){
   if(!run) return false;
   const f=forgeEntry(run.weapon|0); if(!f) return false;
@@ -8222,21 +8230,18 @@ function forgeApply(){
   if(f.elem==='lightning' && typeof XART!=='undefined'){ try{ XART.rdy('chain_bolt_0'); XART.rdy('nchp_0'); }catch(_fa){} }
   return true;
 }
-/* one combine: the same element again LEVELS the weapon (L1 -> L2 -> L3, the named one); a
-   different element REPLACES it at L1 - that is "permanently takes over", and a re-spec is how
-   you get the bare weapon back. Returns a WORD so the screen can say what happened. */
 function forgeCombine(w, elem){
   if(!run) return 'norun';
   if(!forgeCanTake(w)) return 'cannot';
   if(!INFUSIONS[elem] || !infusionGateOpen(elem)) return 'unknown';
-  /* ⚠ THE PAIR HAS TO HAVE BEEN EARNED. This is Mike's whole rule: a combination comes off a boss,
-     so an element you have merely SEEN cannot be welded onto a slot you never won it for (0917). */
-  if(typeof forgeComboOwned==='function' && !forgeComboOwned(elem,w)) return 'locked';
+  forgeDiscovered();                 /* imports old/profile element rewards into this run */
+  if(!run.forgeElems || !run.forgeElems[elem]) return 'locked';
   if((run.forgeCombos|0)<=0) return 'spent';
-  if(!run.forge) run.forge={};
-  const f=run.forge[w];
-  if(f && f.elem===elem){ if((f.lv|0)>=INFUSION_MAX) return 'maxed'; f.lv=(f.lv|0)+1; }
-  else run.forge[w]={elem:elem, lv:(typeof forgeOwnedLevel==='function')?forgeOwnedLevel(elem,w):1};   /* opens at the level the ARMORY owns (0917) */
+  const all=ensureForgeForms(); if(!all[w]) all[w]={};
+  let f=all[w][elem];
+  if(f){ if((f.lv|0)>=INFUSION_MAX) return 'maxed'; f.lv=(f.lv|0)+1; }
+  else f=all[w][elem]={elem:elem,lv:(typeof forgeOwnedLevel==='function')?forgeOwnedLevel(elem,w):1};
+  run.forge[w]=f;
   run.forgeCombos=(run.forgeCombos|0)-1;
   if((run.weapon|0)===w){ run.infusion=null; forgeApply(); }
   return 'ok';
@@ -8244,9 +8249,46 @@ function forgeCombine(w, elem){
 function forgeRespec(w){
   if(!run || !run.forge || !run.forge[w]) return 'bare';
   if((run.forgeRespecs|0)<=0) return 'spent';
-  delete run.forge[w];
+  delete run.forge[w];                         /* unequip; earned forms remain */
   run.forgeRespecs=(run.forgeRespecs|0)-1;
   if((run.weapon|0)===w && run.infusion) run.infusion=null;
+  return 'ok';
+}
+function forgeSelect(w,elem){
+  if(!run||!forgeCanTake(w)) return 'cannot';
+  ensureForgeForms();
+  if(elem==null){ delete run.forge[w]; if((run.weapon|0)===(w|0)) run.infusion=null; return 'ok'; }
+  const f=run.forgeForms[w]&&run.forgeForms[w][elem]; if(!f) return 'locked';
+  run.forge[w]=f;
+  if((run.weapon|0)===(w|0)){ run.infusion=null; forgeApply(); }
+  return 'ok';
+}
+function weaponBaseForms(w){
+  const d=run&&run.forgeElems||{}, pk=(typeof _pilotKey==='function')?_pilotKey():'', out=[];
+  if((w|0)===4){ out.push({kind:'variant',id:'flamethrower',name:'FLAMETHROWER'}); if(d.ice||pk==='freezer') out.push({kind:'variant',id:'icebreath',name:'ICE BREATH'}); }
+  else if((w|0)===5){ out.push({kind:'variant',id:'iceorb',name:'ICE ORB'}); if(d.fire&&pk!=='freezer') out.push({kind:'variant',id:'fireorb',name:'FIRE ORB'}); if((d.fire&&d.ice)||pk==='freezer') out.push({kind:'variant',id:'fireice',name:'THERMOSHOCK'}); }
+  else out.push({kind:'bare',id:null,name:'BARE '+(WEAPONS[w]||'WEAPON')});
+  return out;
+}
+function weaponFormOptions(w){
+  const out=weaponBaseForms(w), F=forgeFormsFor(w);
+  for(const e of Object.keys(INFUSIONS)) if(F[e]) out.push({kind:'forge',id:e,name:forgeComboName(e,w),elem:e,lv:F[e].lv|0});
+  return out;
+}
+function weaponFormSelect(w,opt){
+  if(!opt) return 'unknown';
+  if(opt.kind==='forge'){
+    const r=forgeSelect(w,opt.elem);
+    if(r==='ok'){
+      if(!run.wvars) run.wvars=WEAPONS.map(()=>null);
+      if((w|0)===4) run.wvars[w]=opt.elem==='ice'?'icebreath':'flamethrower';
+      if((w|0)===5) run.wvars[w]=opt.elem==='fire'?'fireorb':'iceorb';
+    }
+    return r;
+  }
+  forgeSelect(w,null);
+  if(!run.wvars) run.wvars=WEAPONS.map(()=>null);
+  run.wvars[w]=opt.kind==='variant'?opt.id:null;
   return 'ok';
 }
 /* the loadout is the crate bag's pool, capped. While the pool fits, the loadout IS the pool, so a
@@ -8268,7 +8310,6 @@ function forgeLoadoutSync(){
    concept note said so, and the unlock page already skips itself the same way). */
 function forgeVisible(){
   if(!run) return false;
-  if(typeof spaceWeaponsActive==='function' && spaceWeaponsActive()) return false;
   if(forgeDiscovered().length) return true;
   if(run.forge && Object.keys(run.forge).length) return true;
   const pool=(typeof crateWeaponPool==='function')?crateWeaponPool(true):[];
@@ -8560,73 +8601,45 @@ function forgeLevelId(elem,w,lv){ return 'forge_'+elem+'_'+(w|0)+'_L'+(lv|0); }
    free reward can never advance the price ladder or read as spending.
    ============================================================ */
 const FORGE_COMBO_ID_RE=/^forge_[a-z]+_[0-9]_C$/;
+const FORGE_ELEMENT_ID_RE=/^forge_element_[a-z]+_E$/;
 function forgeComboId(elem,w){ return 'forge_'+elem+'_'+(w|0)+'_C'; }
-function forgeComboOwned(elem,w){ return !!(INFUSIONS[elem] && forgeCanTake(w) && furiousOwned(forgeComboId(elem,w))); }
+function forgeElementId(elem){ return 'forge_element_'+elem+'_E'; }
+function forgeComboOwned(elem,w){
+  if(!INFUSIONS[elem]||!forgeCanTake(w)) return false;
+  return !!((run&&run.forgeElems&&run.forgeElems[elem]) || furiousOwned(forgeElementId(elem)) || furiousOwned(forgeComboId(elem,w)));
+}
 function forgeComboGrant(elem,w){
-  if(!INFUSIONS[elem] || !forgeCanTake(w)) return 'unknown';
-  const id=forgeComboId(elem,w);
-  if(furiousOwned(id)) return 'owned';
+  if(!INFUSIONS[elem]) return 'unknown';
+  const already=!!(run&&run.forgeElems&&run.forgeElems[elem]), id=forgeElementId(elem);
   if(!achievementState.owned) achievementState.owned={};
-  achievementState.owned[id]={at:Date.now()};   /* no cost: it was not bought */
-  achievementSave();
-  /* the POWERS GAINED page reads this - what THIS stage's boss handed over (0917b) */
-  if(run){ if(!run._stageCombos) run._stageCombos=[]; run._stageCombos.push({elem:elem, w:w|0}); }
-  return 'ok';
+  if(!furiousOwned(id)) achievementState.owned[id]={at:Date.now()};
+  forgeDiscover(elem); achievementSave();
+  if(run&&!already){ if(!run._stageElements) run._stageElements=[]; run._stageElements.push(elem); }
+  return already?'owned':'ok';
 }
 function forgeCombosOwned(){
-  const out=[]; const O=achievementState.owned||{};
+  const out=[], O=achievementState.owned||{};
+  for(const id of Object.keys(O)){ const m=/^forge_element_([a-z]+)_E$/.exec(id); if(m&&INFUSIONS[m[1]]) out.push({elem:m[1],w:0}); }
   for(const id of Object.keys(O)){ if(!FORGE_COMBO_ID_RE.test(id)) continue;
-    const m=/^forge_([a-z]+)_([0-9])_C$/.exec(id); if(!m) continue;
-    if(!INFUSIONS[m[1]] || !forgeCanTake(+m[2])) continue;
-    out.push({elem:m[1], w:+m[2]}); }
+    const m=/^forge_([a-z]+)_([0-9])_C$/.exec(id); if(m&&INFUSIONS[m[1]]&&forgeCanTake(+m[2])) out.push({elem:m[1],w:+m[2]}); }
   return out;
 }
-/* what a slot may be combined with TODAY: owned, and past whatever gate the element carries */
-function forgeElemsFor(w){
-  if(!forgeCanTake(w)) return [];
-  return Object.keys(INFUSIONS).filter(function(e){ return forgeComboOwned(e,w) && infusionGateOpen(e); });
-}
-/* every pair that could still be given. The weapon side is the UNLOCKED pool, never the whole table -
-   a combination for a weapon the pilot cannot hold is a reward you cannot look at. */
-function forgeComboCandidates(){
-  const pool=(typeof crateWeaponPool==='function')?crateWeaponPool(true):FORGE_WEAPONS.slice();
-  const ws=FORGE_WEAPONS.filter(function(w){ return pool.indexOf(w)>=0; });
-  const out=[];
-  for(const e of Object.keys(INFUSIONS)){
-    if(!infusionGateOpen(e)) continue;
-    for(const w of ws) if(!forgeComboOwned(e,w)) out.push({elem:e, w:w});
-  }
-  return out;
-}
-/* the boss's pick. Biased toward the stage's own element and toward the weapon in the player's hands,
-   so the drop reads as belonging to the fight that paid for it rather than as a lottery ticket. */
+function forgeElemsFor(w){ return forgeCanTake(w)?forgeDiscovered():[]; }
+function forgeComboCandidates(){ return forgeDiscovered().map(function(elem){ return {elem:elem,w:null}; }); }
 function forgeComboRoll(){
-  const C=forgeComboCandidates(); if(!C.length) return null;
-  const bias=INFUSION_STAGE_BIAS[(run&&run.stage)|0]||null, held=(run&&run.weapon)|0;
-  const pref=C.filter(function(c){ return c.elem===bias && c.w===held; });
-  if(pref.length && Math.random()<0.50) return pref[(Math.random()*pref.length)|0];
-  const be=C.filter(function(c){ return c.elem===bias; });
-  if(be.length && Math.random()<0.55) return be[(Math.random()*be.length)|0];
-  const bw=C.filter(function(c){ return c.w===held; });
-  if(bw.length && Math.random()<0.40) return bw[(Math.random()*bw.length)|0];
-  return C[(Math.random()*C.length)|0];
+  const elem=BOSS_ELEMENT_BY_STAGE[(run&&run.stage)|0];
+  return elem&&INFUSIONS[elem]?{elem:elem,w:null}:null;
 }
-/* ⚠ GUARANTEED, ONE PER BOSS - see this patch's header. Returns the pickup, or null when every
-   combination the player could use is already owned. */
 function forgeBossDrop(x,y){
   if(typeof powerups==='undefined') return null;
   const c=forgeComboRoll(); if(!c) return null;
-  /* ⚠ CLAMPED INTO THE PLAYFIELD, because a boss's own y is not where it is drawn: the stage-1
-     helicopter reports 618.6 on a 512-tall field, so the first build spawned this reward below the
-     screen and the cull killed it on frame one. Measured, not reasoned about. */
-  const _lo=(typeof camLeftX==='function')?camLeftX()+22:22, _hi=(typeof camRightX==='function')?camRightX()-22:VW-22;
-  x=clamp(Number.isFinite(x)?x:VW/2, Math.min(_lo,_hi), Math.max(_lo,_hi));
-  y=clamp(Number.isFinite(y)?y:VH*0.35, 40, VH*0.52);
-  const P={x:x, y:y, vy:0.85, t:0, kind:'forgecombo', elem:c.elem, fw:c.w, w:24, h:24, bob:rnd(0,TAU),
-           _fcHold:VH*0.58};   /* it descends to here and then WAITS - see this patch's header */
+  const lo=(typeof camLeftX==='function')?camLeftX()+22:22, hi=(typeof camRightX==='function')?camRightX()-22:VW-22;
+  x=clamp(Number.isFinite(x)?x:VW/2,Math.min(lo,hi),Math.max(lo,hi));
+  y=clamp(Number.isFinite(y)?y:VH*0.35,40,VH*0.52);
+  const P={x:x,y:y,vy:0.85,t:0,kind:'forgecombo',elem:c.elem,w:24,h:24,bob:rnd(0,TAU),_fcHold:VH*0.58};
   powerups.push(P);
-  try{ if(typeof stageStats!=='undefined' && stageStats.pickupsSeen!=null) stageStats.pickupsSeen++; }catch(_fb){}
-  try{ if(typeof XART!=='undefined'){ XART.rdy('inf_'+c.elem); if(typeof weaponIconKey==='function') XART.rdy(weaponIconKey(c.w,1,{bare:1})); } }catch(_fb2){}
+  try{ if(typeof stageStats!=='undefined'&&stageStats.pickupsSeen!=null) stageStats.pickupsSeen++; }catch(_fb){}
+  try{ if(typeof XART!=='undefined') XART.rdy('inf_'+c.elem); }catch(_fb2){}
   return P;
 }
 function forgeComboName(elem,w){
@@ -8699,11 +8712,11 @@ function achievementNormalize(v){
      An absent `owned` reads as {} and the save is upgraded the next time anything is bought. */
   if(v.owned&&typeof v.owned==='object')
     for(const id of Object.keys(v.owned)){
-      if(!FURIOUS_SHOP[id] && !FORGE_LEVEL_ID_RE.test(id) && !FORGE_COMBO_ID_RE.test(id)) continue;
+      if(!FURIOUS_SHOP[id] && !FORGE_LEVEL_ID_RE.test(id) && !FORGE_COMBO_ID_RE.test(id) && !FORGE_ELEMENT_ID_RE.test(id)) continue;
       const q=v.owned[id]||{};
       /* ⚠ A COMBINATION CARRIES NO `cost` AND MUST NOT GAIN ONE HERE. Defaulting it to 0 would be
          harmless; defaulting it to a shop price would charge the player for a boss drop. */
-      if(FORGE_COMBO_ID_RE.test(id)){ out.owned[id]={at:Number.isFinite(q.at)?q.at:0}; continue; }
+      if(FORGE_COMBO_ID_RE.test(id)||FORGE_ELEMENT_ID_RE.test(id)){ out.owned[id]={at:Number.isFinite(q.at)?q.at:0}; continue; }
       out.owned[id]={at:Number.isFinite(q.at)?q.at:0,cost:Number.isFinite(q.cost)?q.cost:((FURIOUS_SHOP[id]||{}).cost|0)}; }
   /* THE SCORE BANK (0917) rides the same store, for the same reason `owned` does: one profile, one
      save, and a version bump would delete every award. Each field is re-typed on the way in. */
@@ -18728,6 +18741,15 @@ function rzbWorld(b,lx,ly){ const a=b._rzb.a, c=Math.cos(a), s=Math.sin(a), z=rz
   return {x:b.x+(lx*c-ly*s)*z, y:b.y+(lx*s+ly*c)*z}; }
 function rzbPxFrame(spdPack,b){ return spdPack*RZB_S*RZB_PFAST*((b&&b._rzb&&b._rzb.furious)?1.22:1)/60; }
 function rzbImg(k){ return (typeof XART!=='undefined' && XART.rdy(k)) ? XART.get(k) : null; }
+function rzbFuriousSegments(arc,n){
+  const out=[], pitch=arc*2/n, gap=pitch*0.38;
+  for(let i=0;i<n;i++){ const lo=-arc+i*pitch+gap/2, hi=-arc+(i+1)*pitch-gap/2; out.push([lo,hi,0.62+0.38*((i*5)%7)/6]); }
+  return out;
+}
+function rzbWaveAngleHit(w,rel){
+  if(!w.segments) return Math.abs(rel)<w.arc;
+  return w.segments.some(function(seg){ return rel>=seg[0]&&rel<=seg[1]; });
+}
 function rzbSfx(name){ try{ const f=Audio&&Audio.SFX&&Audio.SFX[name]; if(f) f(); }catch(_rs){} }
 
 function razorbackInit(b){
@@ -18747,7 +18769,7 @@ function razorbackInit(b){
     const R=b._rzb;R.furious=true;R.scale=1.5;R.speedMul=1.62;R.turnMul=1.55;R.rate=1.30;
     b.name='FURIOUS RAZORBACK';b.w=Math.round(270*RZB_S*R.scale);b.h=Math.round(270*RZB_S*R.scale);
   }
-  try{ if(typeof XART!=='undefined') for(const k in BOFX.img) if(k.indexOf('rzb_')===0){ XART.rdy(k); if(XART._touch) XART._touch(k); } }catch(_rw){}
+  try{ if(typeof XART!=='undefined') for(const k in BOFX.img) if(k.indexOf('rzb_')===0||k.indexOf('rzbf_')===0){ XART.rdy(k); if(XART._touch) XART._touch(k); } }catch(_rw){}
 }
 /* Hard mode fields two complete tanks inside the one campaign miniboss slot. Each actor keeps its
    own authored rig, phase pools, projectiles and locks; the controller owns only the combined gauge,
@@ -18930,7 +18952,7 @@ function razorbackUpdate(b,dt){
   for(const w of R.waves){
     w.r+=w.speed*dt; w.life-=dt;
     if(!P.dead){ const dd=Math.hypot(P.x-w.x,P.y-w.y), aa=rzbAim(w,P);
-      if(Math.abs(dd-w.r)<w.width+7*rzbScale(b) && Math.abs(rzbWrap(aa-w.a))<w.arc && typeof playerHit==='function') playerHit(); }
+      if(Math.abs(dd-w.r)<w.width+7*rzbScale(b) && rzbWaveAngleHit(w,rzbWrap(aa-w.a)) && typeof playerHit==='function') playerHit(); }
   }
   R.waves=R.waves.filter(w=>w.life>0);
   if(!P.dead && Math.hypot(b.x-P.x,b.y-P.y)<105*rzbScale(b) && typeof playerHit==='function') playerHit();   // the hull runs you over
@@ -18967,7 +18989,7 @@ function razorbackCombat(b){
       if(beat>R.beat){ R.beat=beat;
         const offs=R.furious?[-0.56,-0.42,-0.28,-0.14,0,0.14,0.28,0.42,0.56]:[-0.28,-0.14,0,0.14,0.28];
         for(const off of offs)rzbShot(b,m,R.turret+off,R.furious?300:240,R.furious?22:18,'rzbSonic');
-        R.waves.push({x:m.x,y:m.y,r:10*S,a:R.turret,arc:R.furious?1.05:0.65,speed:(R.furious?270:180)*S*RZB_WFAST,width:(R.furious?24:15)*S,life:R.furious?6:5,furious:!!R.furious});
+        R.waves.push({x:m.x,y:m.y,r:10*S,a:R.turret,arc:R.furious?1.05:0.65,segments:R.furious?rzbFuriousSegments(1.05,5):null,speed:(R.furious?248:180)*S*RZB_WFAST,width:(R.furious?20:15)*S,life:R.furious?6:5,furious:!!R.furious});
         R.recoil=24; shake=Math.max(shake||0,5); stageRevisionCue(b,'razorbackPressure',.12);
         // Charge report belongs to the windup above; release has its own cue.
       } }
@@ -18993,7 +19015,7 @@ function razorbackCombat(b){
     // RESONANCE NOVA: an expanding arc with a gap BEHIND the tank, plus a slow ring
     R.charge=clamp(t/1.55,0,1);
     if(t>1.55 && R.beat<0){ R.beat=0;
-      R.waves.push({x:b.x,y:b.y,r:35*S,a:R.a,arc:R.furious?2.92:2.66,speed:(R.furious?260:200)*S*RZB_WFAST,width:(R.furious?25:17)*S,life:R.furious?6.4:5.6,furious:!!R.furious});
+      R.waves.push({x:b.x,y:b.y,r:35*S,a:R.a,arc:R.furious?2.92:2.66,segments:R.furious?rzbFuriousSegments(2.92,11):null,speed:(R.furious?242:200)*S*RZB_WFAST,width:(R.furious?21:17)*S,life:R.furious?6.4:5.6,furious:!!R.furious});
       const n=R.furious?28:16;for(let i=0;i<n;i++)rzbShot(b,{x:b.x,y:b.y},i*Math.PI*2/n,R.furious?205:145,R.furious?15:12,'rzbSonic');
       shake=Math.max(shake||0,8); stageRevisionCue(b,'razorbackPressure',.12); }
     if(t>1.55) R.charge=0;
@@ -19011,7 +19033,8 @@ function razorbackCombat(b){
   }
 }
 function rzbSprite(key,x,y,a,s,alpha,px,py,mul,tint){
-  const im=(tint&&typeof xartPalette==='function'&&xartPalette(key,tint))||rzbImg(key); if(!im) return false;
+  const useKey=tint==='furious'?key.replace(/^rzb_/,'rzbf_'):key;
+  const im=rzbImg(useKey); if(!im) return false;
   const w=im.width||im.naturalWidth, h=im.height||im.naturalHeight;
   const ox=(px!=null?px:w/2), oy=(py!=null?py:h/2), sc=s*RZB_S*(mul||1);
   ctx.save(); ctx.translate(x,y); ctx.rotate(a||0); if(alpha!=null) ctx.globalAlpha=alpha;
@@ -19026,7 +19049,7 @@ function rzbFlash(key,x,y,a,s,px,py,amt,mul){
 }
 function razorbackDraw(b){
   const R=b._rzb; if(!R) return;
-  const mul=R.scale||1,S=rzbScale(b),bodyTint=R.furious?'#d51f3b':null;
+  const mul=R.scale||1,S=rzbScale(b),bodyTint=R.furious?'furious':null;
   ctx.save(); ctx.imageSmoothingEnabled=false;
   if(b.dead){
     const k=clamp((b.dying||0)/1.9,0,1);
@@ -19049,7 +19072,7 @@ function razorbackDraw(b){
   rzbSprite(hk,b.x,b.y,ha,1,null,null,null,mul,bodyTint);
   if(R.state==='hull') rzbFlash(hk,b.x,b.y,ha,1,null,null,R.flash.hull,mul);
   // treads scroll by the distance each side actually travelled
-  const tr=(bodyTint&&typeof xartPalette==='function'&&xartPalette('rzb_tread',bodyTint))||rzbImg('rzb_tread');
+  const tr=rzbImg(R.furious?'rzbf_tread':'rzb_tread');
   if(tr){ ctx.save(); ctx.translate(b.x,b.y); ctx.rotate(R.a);
     for(const side of [-1,1]){ ctx.save(); ctx.beginPath(); ctx.rect((side*81-19)*S,-98*S,38*S,218*S); ctx.clip();
       const off=((R.travel[side<0?'left':'right']*0.65)%42+42)%42;
@@ -19079,7 +19102,7 @@ function razorbackDraw(b){
     const m=(R.attack==='sonic')?rzbFwd(b,R.turret,142*S):{x:b.x,y:b.y};
     ctx.save(); ctx.globalCompositeOperation='lighter';
     const rr=(45+R.charge*65)*S, g=ctx.createRadialGradient(m.x,m.y,0,m.x,m.y,rr);
-    g.addColorStop(0,'rgba(174,255,49,'+(0.22+R.charge*0.4)+')'); g.addColorStop(1,'rgba(174,255,49,0)');
+    g.addColorStop(0,R.furious?'rgba(255,28,52,'+(0.22+R.charge*0.4)+')':'rgba(174,255,49,'+(0.22+R.charge*0.4)+')'); g.addColorStop(1,R.furious?'rgba(255,28,52,0)':'rgba(174,255,49,0)');
     ctx.fillStyle=g; ctx.fillRect(m.x-rr,m.y-rr,rr*2,rr*2); ctx.restore();
     rzbSprite('rzb_sonic_charge',m.x,m.y,(b.t||0)*(R.furious?1.7:0.8),0.16+R.charge*(R.furious?0.78:0.5),null,null,null,mul,R.furious?'#ff1838':null);
     if(R.attack==='sonic'){ const e=rzbFwd(m,R.turret,750*S); ctx.save(); ctx.setLineDash([10*S,12*S]);
@@ -19092,19 +19115,23 @@ function razorbackDraw(b){
   ctx.restore();
 }
 function razorbackWaveDraw(w){
-  const im=(w.furious&&typeof xartPalette==='function'&&xartPalette('rzb_sonic_ring','#ff1838'))||rzbImg('rzb_sonic_ring');
-  ctx.save(); ctx.translate(w.x,w.y);
-  ctx.beginPath(); ctx.moveTo(0,0); ctx.arc(0,0,w.r+w.width+5,w.a+Math.PI/2-w.arc,w.a+Math.PI/2+w.arc); ctx.closePath(); ctx.clip();
-  ctx.beginPath(); ctx.arc(0,0,w.r+w.width,0,Math.PI*2); ctx.arc(0,0,Math.max(0,w.r-w.width),0,Math.PI*2,true); ctx.clip();
-  if(im){ const sz=256*(w.r+15*RZB_S)/105; ctx.globalAlpha=0.9; ctx.drawImage(im,-sz/2,-sz/2,sz,sz); }
-  ctx.restore();
-  ctx.save(); ctx.strokeStyle=w.furious?'rgba(255,40,65,0.72)':'rgba(202,255,119,0.5)'; ctx.lineWidth=2; ctx.beginPath();
-  ctx.arc(w.x,w.y,w.r,w.a+Math.PI/2-w.arc,w.a+Math.PI/2+w.arc); ctx.stroke(); ctx.restore();
+  const im=rzbImg(w.furious?'rzbf_sonic_ring':'rzb_sonic_ring');
+  const segs=w.segments||[[-w.arc,w.arc,1]];
+  for(const seg of segs){
+    const a0=w.a+Math.PI/2+seg[0], a1=w.a+Math.PI/2+seg[1], amp=seg[2]||1;
+    ctx.save(); ctx.translate(w.x,w.y);
+    ctx.beginPath(); ctx.moveTo(0,0); ctx.arc(0,0,w.r+w.width+5,a0,a1); ctx.closePath(); ctx.clip();
+    ctx.beginPath(); ctx.arc(0,0,w.r+w.width*amp,0,TAU); ctx.arc(0,0,Math.max(0,w.r-w.width*amp),0,TAU,true); ctx.clip();
+    if(im){ const sz=256*(w.r+15*RZB_S)/105; ctx.globalAlpha=0.58+0.34*amp; ctx.drawImage(im,-sz/2,-sz/2,sz,sz); }
+    ctx.restore();
+    ctx.save(); ctx.strokeStyle=w.furious?'rgba(255,34,62,'+(0.52+0.3*amp)+')':'rgba(202,255,119,0.5)';
+    ctx.lineWidth=1.5+amp*1.4; ctx.beginPath(); ctx.arc(w.x,w.y,w.r,a0,a1); ctx.stroke(); ctx.restore();
+  }
 }
 function razorbackProjectileDraw(q){
   if(q.kind!=='rzbSonic' && q.kind!=='rzbMissile') return false;
   const a=(q.ang!=null?q.ang:Math.atan2(q.vy,q.vx))-Math.PI/2;
-  const key=q.kind==='rzbMissile'?'rzb_razor_missile':'rzb_sonic_bullet', im=(q._rzbFurious&&typeof xartPalette==='function'&&xartPalette(key,'#ff1838'))||rzbImg(key);
+  const key=q.kind==='rzbMissile'?'rzb_razor_missile':'rzb_sonic_bullet', im=rzbImg(q._rzbFurious?key.replace(/^rzb_/,'rzbf_'):key);
   if(!im) return false;
   const sz=q.kind==='rzbMissile'?(q._rzbFurious?51:34):Math.max(20,q.w*1.9);
   ctx.save(); ctx.translate(q.x,q.y); ctx.rotate(a); ctx.imageSmoothingEnabled=false;
@@ -28962,13 +28989,11 @@ function applyPowerup(p){
     case 'forgecombo': {
       const _fc=(typeof forgeComboGrant==='function')?forgeComboGrant(p.elem,p.fw):'unknown';
       if(_fc==='ok'){
-        if(typeof arcadeBanner==='function') arcadeBanner('NEW COMBINATION  -  '+forgeComboName(p.elem,p.fw));
-        else floatText(p.x,p.y,'NEW COMBINATION','#ffd45a');
-        /* it can be welded on at the next Forge; the round in hand is not changed here */
-        if(typeof forgeDiscover==='function') forgeDiscover(p.elem);
+        const _en=((INFUSIONS[p.elem]||{}).name||p.elem).toUpperCase();
+        if(typeof arcadeBanner==='function') arcadeBanner(_en+' POWER ACQUIRED');
+        else floatText(p.x,p.y,'POWER ACQUIRED','#ffd45a');
         try{ Audio.SFX.life&&Audio.SFX.life(); }catch(_fg1){}
-      } else { floatText(p.x,p.y,'+'+PICKUP_SCORE,'#ffd45a'); }   /* already owned, or nothing to give:
-        applyPowerup's own PICKUP_SCORE has paid for it and the float just says so */
+      } else { floatText(p.x,p.y,'+'+PICKUP_SCORE,'#ffd45a'); }
       break; }
     case 'infuse':
       if(typeof forgeDiscover==='function') forgeDiscover(p.elem);   /* it can be forged from now on (0917) */
@@ -31579,7 +31604,7 @@ function startRun(fromStage=1){
   run.contUsed=0; run.contBonus=0;   // spent credits and earned Continue Ups reset per run
   run._s5Resume=null;run._s5ResumeArm=0;run._s5GateOut=0;run._s9taken=0;run._l78Entry=0;
   run._missileBonus=null;
-  run.forge={}; run.forgeElems={}; run.loadout=null; run.forgeCombos=0; run.forgeRespecs=0;   // the Forge (0917)
+  run.forge={}; run.forgeForms={}; run.forgeElems={}; run.loadout=null; run.forgeCombos=0; run.forgeRespecs=0;   // the Forge
   /* ---- P2's half of a co-op run (drop 0902f) ----------------------------------------------
      Mike's call: SEPARATE lives and SEPARATE scores. So P2 gets its own full allowance off the
      same difficulty rather than a share of P1's — a shared pool lets one player end the other's
@@ -32485,7 +32510,7 @@ function beginStage(num){
      stage began — the four new rows would have read 0 forever. Caught by asserting the fields
      exist at RUNTIME rather than just in the source. */
   if(run) run._fpLevelDone=false;   /* a new level may convert again (0917) */
-  if(run){ run._stageCombos=[]; run._forgeShown=false; }
+  if(run){ run._stageCombos=[]; run._stageElements=[]; run._forgeShown=false; }
   if(typeof bombReset==='function') bombReset();   /* a fuse never carries into the next stage (0917c) */
   efxBursts=[]; geysers=[];                         /* nor a burst or a geyser (0918) */
   s2Vents=[]; fireDebris=[]; zoneCols=[]; s2VentT=S2VENT.first; _arenaDimLv=0;   /* nor a vent, debris or zone column (0918b) */   /* and the powers-gained page starts empty (0917b) */
@@ -47049,6 +47074,13 @@ function drawBullets(){
         else { ctx.fillStyle=(b.kind==='nukem')?'#ffe14a':'#ffb04a'; ctx.fillRect(-3,-10,6,20); }
       }
       ctx.restore(); continue; }
+    if(b.kind==='orb' && b._inf==='fire' && typeof XART!=='undefined' && XART.rdy('magma_orb_0918')){
+      const im=XART.get('magma_orb_0918'), pulse=0.94+0.06*Math.sin((b.t||0)*18), d=b.w*2.05*pulse;
+      ctx.save(); ctx.translate(b.x,b.y); ctx.rotate((b.spin||0)*1.15);
+      /* The generated plate has transparent breathing room. Crop to its authored 64px cell and
+         draw normally: additive compositing bleached the dark volcanic shell into a white flare. */
+      ctx.shadowColor='#ff451c'; ctx.shadowBlur=6; ctx.drawImage(im,32,32,64,64,-d/2,-d/2,d,d); ctx.restore(); continue;
+    }
     if(b.kind==='orb' && b._ts){
       /* THE FIRE-ICE ORB (drop 0814a) — the uncharged half of Mike's item 3. `nts_orb_*` is a
          12-frame split fire/ice ball authored for this weapon and never referenced until now.
@@ -48326,29 +48358,12 @@ function drawPowerups(){
     if(p.kind==='mcrate'){ drawMcrate(p.x,yb,p.t,p.flash||0); continue; }
     if(typeof bonusPickupDraw==='function' && bonusPickupDraw(p,yb)) continue;   /* 0917c */
     if(p.kind==='forgecombo'){
-      /* the ELEMENT badge with the WEAPON's own icon inside it - the two halves of the pair, so
-         what is on the ground says which combination it is rather than just "an upgrade" */
-      const I=(typeof INFUSIONS!=='undefined'&&INFUSIONS[p.elem])||null;
-      const col=I?I.glow:'#ffd45a';
-      ctx.save(); ctx.translate(p.x, yb+Math.sin((p.bob||0)+performance.now()/300)*2.8);
+      const I=(typeof INFUSIONS!=='undefined'&&INFUSIONS[p.elem])||null, col=I?I.glow:'#ffd45a';
+      ctx.save(); ctx.translate(p.x,yb+Math.sin((p.bob||0)+performance.now()/300)*2.8);
       ctx.shadowColor=col; ctx.shadowBlur=18;
-      let drew=null;
-      if(typeof iconBlit==='function'){ try{ drew=iconBlit(ctx,'inf_'+p.elem,0,0,PICKUP_BOX*1.25,true); }catch(_fcb){ drew=null; } }
-      if(drew==null){ ctx.rotate(Math.PI/4); ctx.fillStyle=I?I.body:'#888'; ctx.fillRect(-11,-11,22,22);
-        ctx.strokeStyle='#101018'; ctx.lineWidth=2; ctx.strokeRect(-11,-11,22,22); ctx.rotate(-Math.PI/4); }
-      ctx.shadowBlur=0;
-      /* ⚠ THE WEAPON ICON IS AN INSET, NOT AN OVERLAY. Centred on the element badge it sat on the
-         badge's own artwork and both halves read as one smudge - looked at, not guessed. Tucked into
-         the lower right it reads as "this element, for this weapon", which is what the pair IS. */
-      if(typeof iconBlit==='function' && typeof weaponIconKey==='function'){
-        try{ const _wk=weaponIconKey(p.fw,1,{bare:1});
-          if(_wk){ const _z=PICKUP_BOX*0.46, _o=PICKUP_BOX*0.36;
-            ctx.save(); ctx.fillStyle='rgba(8,10,16,0.78)';
-            ctx.beginPath(); ctx.arc(_o,_o,_z*0.56,0,TAU); ctx.fill();
-            iconBlit(ctx,_wk,_o,_o,_z,true); ctx.restore(); } }catch(_fcw){}
-      }
-      ctx.restore();
-      continue;
+      let drew=null; if(typeof iconBlit==='function'){ try{ drew=iconBlit(ctx,'inf_'+p.elem,0,0,PICKUP_BOX*1.25,true); }catch(_fcb){} }
+      if(drew==null){ ctx.rotate(Math.PI/4); ctx.fillStyle=I?I.body:'#888'; ctx.fillRect(-11,-11,22,22); }
+      ctx.restore(); continue;
     }
     if(p.kind==='infuse'){
       const I=(typeof INFUSIONS!=='undefined'&&INFUSIONS[p.elem])||null;
@@ -60538,7 +60553,7 @@ function campSnapshot(){
     wvars:(run.wvars||[]).slice(),
     /* the Forge (0917): the permanent elements, what has been discovered, and the loadout. Optional
        fields; CAMP_SAVE_VER is deliberately NOT bumped (an older slot simply has none). */
-    forge:Object.assign({},run.forge||{}), forgeElems:Object.assign({},run.forgeElems||{}),
+    forge:Object.assign({},run.forge||{}), forgeForms:JSON.parse(JSON.stringify(run.forgeForms||{})), forgeElems:Object.assign({},run.forgeElems||{}),
     loadout:Array.isArray(run.loadout)?run.loadout.slice():null,
     unlockedMax:campaign.unlockedMax||1, rank:Object.assign({},campaign.rank||{}),
     /* ⚠ PASSWORD UNLOCKS RIDE THE SAVE, AND NOTHING ELSE (Mike, 0909: "if the player loads his
@@ -60566,7 +60581,9 @@ function campApply(s){
   run.wvars = Array.isArray(s.wvars) ? s.wvars.slice() : WEAPONS.map(()=>null);
   while(run.wvars.length<WEAPONS.length)run.wvars.push(null);
   run.forge=(s.forge&&typeof s.forge==='object')?Object.assign({},s.forge):{};
+  run.forgeForms=(s.forgeForms&&typeof s.forgeForms==='object')?JSON.parse(JSON.stringify(s.forgeForms)):{};
   run.forgeElems=(s.forgeElems&&typeof s.forgeElems==='object')?Object.assign({},s.forgeElems):{};
+  ensureForgeForms();
   run.loadout=Array.isArray(s.loadout)?s.loadout.slice():null;
   if(typeof s.pilotIndex==='number') pilotIndex=s.pilotIndex;
   if(s.diff) diffKey=s.diff;
@@ -71896,175 +71913,39 @@ function unlocksStart(rows, onDone){
      nothing at all and the row would draw its name beside a hole. laserMistWarm touches the
      atlas. Any future row whose art lives off the icon sheet needs the same. */
   try{ if(rows.some(function(r){ return /^micon_lasermist_/.test(r[1]||''); }) && typeof laserMistWarm==='function') laserMistWarm(); }catch(_){ }
+  try{ if(typeof XART!=='undefined') XART.rdy('weapon_found_0918'); }catch(_wf){}
   try{ if(Audio.SFX && Audio.SFX.life) Audio.SFX.life(); }catch(_){ }
   setState(GS.UNLOCKS);
 }
 function drawUnlocks(dt){
-  const U=unlocks;
-  const W=(typeof cutsceneViewWidth==='function')?cutsceneViewWidth():VW, H=VH;
+  const U=unlocks, W=(typeof cutsceneViewWidth==='function')?cutsceneViewWidth():VW, H=VH;
   ctx.fillStyle='#000'; ctx.fillRect(0,0,W,H);
   if(!U){ setState(GS.TITLE); return; }
-  U.t+=dt; const t=U.t;
-  const fade=Math.min(1,t/0.45);                        // the "fade/transition" from the debrief
-  /* the SAME plate the debrief uses, so this reads as its second page */
-  const plate=(typeof XART!=='undefined' && XART.rdy('statpanel_full_0916')) ? XART.get('statpanel_full_0916') : null;
-  ctx.save(); ctx.globalAlpha=fade;
-  if(plate){ ctx.imageSmoothingEnabled=false; ctx.drawImage(plate,0,0,W,H); }
-  else { ctx.fillStyle='#14171f'; ctx.fillRect(0,0,W,H); }
-  ctx.restore();
-  const P=[0,0,W,H], S=SC_SLOTS_FULL, bay=function(f){ return [P[0]+P[2]*f[0], P[1]+P[3]*f[1], P[2]*f[2], P[3]*f[3]]; };
-  const art=(typeof curFontArt==='function')?curFontArt():null;
-  const A=function(d){ return Math.max(0,Math.min(1,(t-d)/0.35)); };
-  if(art && typeof stageText==='function'){
-    /* title bay */
-    let b=bay(S.title);
-    const _uTitle='WEAPONS GAINED';   /* Mike's name for it (0917c); POWERS GAINED is its own screen */
-    const tH=(typeof stageFitH==='function')?stageFitH(art,_uTitle,b[2]*0.90,b[3]*0.62,10,0.08):b[3]*0.5;
-    stageText(art,_uTitle,b[0]+b[2]/2,b[1]+b[3]*0.55,tH,'#ffd24a',0.9,A(0.10),0.08);
-    /* portrait bay: the pilot, pleased */
-    b=bay(S.pilot);
-    try{
-      const pk=(typeof _pilotKey==='function')?_pilotKey():'axel';
-      const pkey=(typeof scPortrait==='function')?scPortrait(pk,'S'):null;
-      if(pkey && XART.rdy(pkey)){ const im=XART.get(pkey), k=Math.min(b[2]*0.88/im.naturalWidth,b[3]*0.88/im.naturalHeight), w=im.naturalWidth*k, h=im.naturalHeight*k;
-        ctx.save(); ctx.globalAlpha=A(0.15); ctx.drawImage(im,b[0]+(b[2]-w)/2,b[1]+(b[3]-h)/2,w,h); ctx.restore(); }
-    }catch(_){ }
-    /* briefing bay: what happened */
-    /* ⚠ THE BRIEF IS FITTED TO ITS BAY'S HEIGHT, NOT JUST ITS WIDTH (Mike, 0916: "make them fit
-       about the stage 2 clear message"). It wrapped to three rows and the third sat BELOW the bay,
-       so CRATES. was clipped by the panel edge on every stage that has a page. stageFitH only
-       solves the WIDTH of one line; stageWrapCount gives the row count at a size without drawing,
-       which is the half that was missing - the same pairing 0811q needed for the cutscene box.
-       The block is then centred in the bay rather than started at a fixed fraction of it. */
-    b=bay(S.brief);
-    const msg=unlockHasWeapon(U.rows)
-      ? ('STAGE '+(run.stage|0)+' CLEARED. YOUR ARSENAL GROWS - THE FOLLOWING WILL NOW DROP FROM SUPPLY CRATES.')
-      : ('STAGE '+(run.stage|0)+' CLEARED. THE BOSS LEFT SOMETHING BEHIND - A NEW COMBINATION IS READY FOR THE FORGE.');
-    const mW=b[2]*0.94, mLine=1.30;
-    let mH=b[3]*0.30;
-    if(typeof stageWrapCount==='function'){
-      for(let g=0; g<14 && mH>8; g++){
-        const rows=stageWrapCount(art,msg,mH,mW,0.05);
-        if(rows*mH*mLine <= b[3]*0.94) break;
-        mH*=0.92;
-      }
+  U.t+=dt; const t=U.t, art=(typeof curFontArt==='function')?curFontArt():null;
+  const plate=(typeof XART!=='undefined'&&XART.rdy('weapon_found_0918'))?XART.get('weapon_found_0918'):null;
+  ctx.save(); ctx.globalAlpha=Math.min(1,t/0.35); if(plate){ctx.imageSmoothingEnabled=false;ctx.drawImage(plate,0,0,W,H);}else{ctx.fillStyle='#151923';ctx.fillRect(0,0,W,H);} ctx.restore();
+  const maxS=Math.max(0,U.rows.length-UNLOCK_VIEW); U.scroll=clamp(U.scroll||0,0,maxS);
+  const ys=[0.180,0.368,0.536,0.680], ix=0.087*W, iw=0.100*W, tx=0.213*W, tw=0.700*W, rh=0.105*H;
+  for(let k=0;k<UNLOCK_VIEW;k++){
+    const i=U.scroll+k, row=U.rows[i]; if(!row) continue;
+    const a=Math.max(0,Math.min(1,(t-(0.35+k*0.22))/0.28)), cy=(ys[k]+0.052)*H;
+    if(typeof iconBlit==='function'){
+      ctx.save();ctx.globalAlpha=a;iconBlit(ctx,row[1],ix+iw/2,cy,rh*0.88,true);ctx.restore();
     }
-    mH=Math.max(8,mH);
-    if(typeof stageWrapCen==='function'){
-      const rows=(typeof stageWrapCount==='function')?stageWrapCount(art,msg,mH,mW,0.05):3;
-      const blk=rows*mH*mLine, top=b[1]+(b[3]-blk)/2+mH*0.55;
-      stageWrapCen(art,msg,b[0]+b[2]/2,top,mH,mW,mLine,A(0.25),0.05,'#ffd24a',0.6);
-    }
-    /* the unlocks themselves, one per slot, typed in */
-    /* ⚠ FOUR LARGE ICON BOXES, EACH WITH ITS OWN RECTANGLE BESIDE IT (Mike, 0916): "should be 4
-       large boxes for th weapon icons, 4 rectangle boxes next to the large boxes."
-       Both panels are drawn in the PLATE'S OWN socket colours rather than invented ones - measured
-       off stat_panel_full.png at a stat bay AND at the rank bay, identical on the two: a bronze
-       rail at rgb(112,88,72) around a rgb(22,22,32) well, with the plate's own lighter top bevel
-       above the rail. All FOUR sockets draw whether or not there is a weapon in them, because four
-       is the layout, and an announcement of one weapon into one lit box of four reads better than
-       one box floating in the middle of a plate. */
-    const R0=UNLOCK_ROWS, RX=P[0]+P[2]*R0.x, RY=P[1]+P[3]*R0.y, RW=P[2]*R0.w, RH=P[3]*R0.h;
-    /* ⚠ THE PITCH IS FIXED AND THE BLOCK IS CENTRED. Sizing the rows to the COUNT would make a
-       single unlock a box four times the size of one in a list of four - the same art at two
-       scales on two runs of the same stage. One unlock is one row, centred. */
-    const nRows=U.rows.length, view=Math.min(nRows,UNLOCK_VIEW);
-    const maxScroll=Math.max(0,nRows-UNLOCK_VIEW);
-    U.scroll=clamp(U.scroll||0,0,maxScroll);
-    const pitch=RH/UNLOCK_VIEW, rh=pitch*(1-R0.gap), gapx=RW*0.012;
-    const oy=RY+(RH-pitch*view)/2;
-    const pl=(typeof XART!=='undefined' && XART.rdy('statpanel_full_0916')) ? XART.get('statpanel_full_0916') : null;
-    const pNW=pl?(pl.naturalWidth||pl.width):1, pNH=pl?(pl.naturalHeight||pl.height):1;
-    /* the box keeps the authored piece's own aspect, so its bevel is never distorted */
-    const boxAsp=(UNLOCK_ART.box[2]*pNW)/(UNLOCK_ART.box[3]*pNH);
-    const box=pl?rh*boxAsp:rh;
-    for(let k=0;k<view;k++){
-      const i=k+U.scroll, r=U.rows[i]||null, ry=oy+pitch*k;
-      /* a row scrolled into view later is past its own reveal delay, so the delay is capped at the
-         last visible slot rather than growing with the list */
-      const a=r?A(0.55+Math.min(i,UNLOCK_VIEW-1)*0.45):0;
-      if(a<=0) continue;
-      const rx2=RX+box+gapx, rw2=RW-box-gapx;
-      ctx.save();
-      /* ⚠ OPAQUE EVEN ON AN EMPTY SLOT. The plate's thin stat bays are BAKED under these rows, so
-         a socket drawn at part alpha shows two columns of old rails through itself - worse than
-         either layout alone. An unused slot is the same panel, only dimmer. */
-      /* and at FULL alpha, filled or not: at 0.62 the baked bays read straight through an unused
-         socket as a second set of rails. An empty slot is the same panel with nothing in it. */
-      ctx.globalAlpha=a;
-      ctx.imageSmoothingEnabled=true;
-      if(pl){
-        unlockPanel(pl, UNLOCK_ART.box,   RX,  ry, box, rh, false);
-        unlockPanel(pl, UNLOCK_ART.strip, rx2, ry, rw2, rh, true);
-      }else{
-        /* the plate has not decoded yet - a flat socket, so the page is never blank */
-        const lw2=Math.max(1,rh*0.055);
-        ctx.fillStyle='#16161f'; ctx.fillRect(RX,ry,box,rh); ctx.fillRect(rx2,ry,rw2,rh);
-        ctx.strokeStyle='#705848'; ctx.lineWidth=lw2;
-        ctx.strokeRect(RX+lw2/2,ry+lw2/2,box-lw2,rh-lw2);
-        ctx.strokeRect(rx2+lw2/2,ry+lw2/2,rw2-lw2,rh-lw2);
-      }
-      ctx.restore();
-      if(!r) continue;
-      /* ⚠ THE ICON FILLS THE BOX (Mike: "stretch to fill icons inside the box"). iconBlit takes a
-         HEIGHT and derives its width from the art's aspect, so it cannot stretch on its own - and
-         the three art stores make the aspect unknowable from here. It is measured instead: one
-         draw at alpha 0 returns the width it WOULD take at this height, and the real draw runs
-         under a horizontal scale that turns that into the box's width. */
-      if(typeof iconBlit==='function'){
-        const ih=rh*0.86, cxp=RX+box/2, cyp=ry+rh/2;
-        ctx.save(); ctx.globalAlpha=0; const w0=iconBlit(ctx,r[1],-9999,-9999,ih,true)||0; ctx.restore();
-        const want=box*0.86, sxk=(w0>0.5)?(want/w0):1;
-        ctx.save(); ctx.globalAlpha=a; ctx.translate(cxp,cyp); ctx.scale(sxk,1);
-        iconBlit(ctx,r[1],0,0,ih,true); ctx.restore();
-      }
-      /* ⚠ CENTRED, AND CENTRED ON THE WHOLE NAME (Mike, 0916: "center all texts"). Centring the
-         typed PREFIX would walk the word sideways as it types; the block is placed from the full
-         string's width and the letters fill it left to right, so it lands centred and never moves. */
-      const full=r[0], shown=full.slice(0, Math.max(0,Math.round((t-(0.55+Math.min(i,UNLOCK_VIEW-1)*0.45))*22)));
-      const pad=rw2*0.055, room=rw2-pad*2;
-      const lH=(typeof stageFitH==='function')?stageFitH(art,full,room,rh*0.52,9,0.06):rh*0.45;
-      const fw=(typeof stageWidth==='function')?stageWidth(art,full,lH,0.06):0;
-      const sw=(typeof stageWidth==='function')?stageWidth(art,shown,lH,0.06):0;
-      stageText(art,shown,rx2+rw2/2-fw/2+sw/2,ry+rh/2,lH,(r[2]||unlockTint(r[1])),0.85,a,0.06);
-    }
-    /* ⚠ THE SECTION SAYS WHEN THERE IS MORE (Mike: "flexible scrollable section"). Two small
-       drawn triangles - NOT glyphs: CLAUDE.md records that 25B2/25BC are absent from this face and
-       a missing glyph draws a SPACE, so an arrow written as text is an invisible affordance. */
-    if(maxScroll>0){
-      const ax=RX+RW+P[2]*0.012, tw2=P[2]*0.012, th2=P[3]*0.016;
-      ctx.save(); ctx.fillStyle='#9fd6ff';
-      if(U.scroll>0){ ctx.globalAlpha=0.85; ctx.beginPath();
-        ctx.moveTo(ax,RY+th2); ctx.lineTo(ax+tw2,RY+th2); ctx.lineTo(ax+tw2/2,RY); ctx.closePath(); ctx.fill(); }
-      if(U.scroll<maxScroll){ ctx.globalAlpha=0.85; ctx.beginPath();
-        ctx.moveTo(ax,RY+RH-th2); ctx.lineTo(ax+tw2,RY+RH-th2); ctx.lineTo(ax+tw2/2,RY+RH); ctx.closePath(); ctx.fill(); }
-      ctx.restore();
-    }
-    /* ⚠ THE INSTRUCTION MOVED OUT OF THE SCORE BAY - the four rows now cover it. It goes in the
-       sign-off strip, and the CONTINUE prompt goes in the footer, so nothing is drawn twice in one
-       place. (0814b: two strings at the same y read as garbage, not as two lines.) */
-    b=bay(S.signoff);
-    const goA=A(0.55+U.rows.length*0.45);
-    if(goA>0){ stageText(art,(unlockHasWeapon(U.rows)?'LOOK FOR THEM IN THE FIELD':'WELD IT AT THE FORGE'),b[0]+b[2]/2,b[1]+b[3]*0.55,Math.min(b[3]*0.5,14),'#9fd6ff',0.8,goA,0.08); }
-    b=bay(S.footer);
-    if(goA>0 && Math.floor(t*2)%2) controlHintRow([['pad_a','CONTINUE']],b[1]+b[3]*0.55,W/2,W-24);
+    if(art){ const full=row[0], shown=full.slice(0,Math.max(0,Math.round((t-(0.35+k*0.22))*24)));
+      const h=Math.min(rh*0.44,(typeof stageFitH==='function')?stageFitH(art,full,tw*0.92,rh*0.44,8,0.06):16);
+      stageText(art,shown,tx+tw/2,cy,h,row[2]||unlockTint(row[1]),0.88,a,0.06); }
   }
-  /* ⚠ UP/DOWN SCROLL THE SECTION, AND EACH IS READ EXACTLY ONCE. Input.menuUp/menuDown CONSUME
-     their tap (CLAUDE.md records `menuLeft()||menuRight()` always resolving to +1 for this reason),
-     so both are read into locals before either is acted on. */
-  const _mUp=(Input.menuUp?Input.menuUp():false), _mDn=(Input.menuDown?Input.menuDown():false);
-  const _maxS=Math.max(0,U.rows.length-UNLOCK_VIEW);
-  if(_maxS>0){
-    if(_mDn) U.scroll=Math.min(_maxS,(U.scroll||0)+1);
-    else if(_mUp) U.scroll=Math.max(0,(U.scroll||0)-1);
+  if(art){
+    const msg='STAGE '+(run.stage|0)+' CLEAR  -  NEW WEAPON SYSTEM ONLINE';
+    stageText(art,msg,W/2,H*0.875,Math.min(15,stageFitH(art,msg,W*0.72,15,7,0.06)),'#ffd24a',0.86,Math.min(1,t/0.7),0.06);
   }
-  /* exit: any press once the rows are in, click included */
+  const up=Input.menuUp?Input.menuUp():false, dn=Input.menuDown?Input.menuDown():false;
+  if(dn) U.scroll=Math.min(maxS,U.scroll+1); else if(up) U.scroll=Math.max(0,U.scroll-1);
   const click=Input.mouse.down&&!U.md; U.md=!!Input.mouse.down;
-  const ready=t>0.55+Math.min(U.rows.length,UNLOCK_VIEW)*0.45+0.2;
-  if(ready && (click||Input.tap('enter')||keybind.fire.some(function(k){return Input.tap(k);})||Input.menuStart())){
-    Input.mouse.down=false;
-    const done=U.onDone; unlocks=null;
-    if(done) done(); else setState(GS.TITLE);
+  const ready=t>0.65+Math.min(U.rows.length,UNLOCK_VIEW)*0.22;
+  if(ready&&(click||Input.tap('enter')||keybind.fire.some(function(k){return Input.tap(k);})||Input.menuStart())){
+    Input.mouse.down=false; const done=U.onDone; unlocks=null; if(done) done(); else setState(GS.TITLE);
   }
 }
 
@@ -72082,7 +71963,7 @@ function drawUnlocks(dt){
    left the bottom stat pair peeking out above it and the rank bay's foot below - two stray boxes on
    the first screenshot. Same trap the unlock page hit: an opaque panel under a row has to be at
    least as tall as the paint it is standing on. */
-const FORGE_ROWS={ box:{x:0.0818, y:0.3300, w:0.8364, h:0.2450}, elems:{x:0.0818, y:0.5720, w:0.8364, h:0.2400} };
+const FORGE_ROWS={ box:{x:0.0730,y:0.2850,w:0.8540,h:0.3300}, elems:{x:0.0730,y:0.6500,w:0.8540,h:0.1300} };
 let forge=null;
 function forgeStart(onDone){
   /* the loadout can hold the LASER MIST, whose icon needs its own sheet warmed or the box is a hole (0917) */
@@ -72094,7 +71975,7 @@ function forgeStart(onDone){
   const load=forgeLoadoutSync();
   forge={onDone:onDone||null, t:0, row:0, sel:0, esel:0, msg:'', msgT:0, md:!!(Input&&Input.mouse&&Input.mouse.down),
          pool:(typeof crateWeaponPool==='function')?crateWeaponPool(true):load.slice()};
-  try{ if(typeof XART!=='undefined'){ Object.keys(INFUSIONS).forEach(function(e){ XART.rdy('inf_'+e); }); XART.rdy('statpanel_full_0916'); } }catch(_fs){}
+  try{ if(typeof XART!=='undefined'){ Object.keys(INFUSIONS).forEach(function(e){ XART.rdy('inf_'+e); }); XART.rdy('forge_loadout_0918'); } }catch(_fs){}
   try{ if(Audio.SFX && Audio.SFX.life) Audio.SFX.life(); }catch(_fs2){}
   setState(GS.FORGE);
 }
@@ -72157,146 +72038,31 @@ function forgePick(i, w){
   return 'ok';
 }
 function drawForge(dt){
-  const F=forge;
-  const W=(typeof cutsceneViewWidth==='function')?cutsceneViewWidth():VW, H=VH;
-  ctx.fillStyle='#000'; ctx.fillRect(0,0,W,H);
-  if(!F){ setState(GS.TITLE); return; }
-  F.t+=dt; const t=F.t; if(F.msgT>0) F.msgT-=dt;
-  const fade=Math.min(1,t/0.45);
-  const plate=(typeof XART!=='undefined' && XART.rdy('statpanel_full_0916')) ? XART.get('statpanel_full_0916') : null;
-  ctx.save(); ctx.globalAlpha=fade;
-  if(plate){ ctx.imageSmoothingEnabled=false; ctx.drawImage(plate,0,0,W,H); }
-  else { ctx.fillStyle='#14171f'; ctx.fillRect(0,0,W,H); }
-  ctx.restore();
-  const P=[0,0,W,H], S=SC_SLOTS_FULL, bay=function(f){ return [P[0]+P[2]*f[0], P[1]+P[3]*f[1], P[2]*f[2], P[3]*f[3]]; };
-  const art=(typeof curFontArt==='function')?curFontArt():null;
-  const A=function(d){ return Math.max(0,Math.min(1,(t-d)/0.35)); };
-  const load=run.loadout||[];
-  F.sel=clamp(F.sel|0,0,Math.max(0,load.length-1));
-  const selW=load.length?load[F.sel]:null;
-  /* ⚠ THE ELEMENTS BELONG TO THE SLOT, NOT TO THE PROFILE (0917). A combination is earned per
-     element x weapon, so a global list would offer the laser's FIRE on the machine gun and then be
-     refused by forgeCombine - a list whose contents the screen behind it will not accept. */
-  const disc=(selW!=null && typeof forgeElemsFor==='function') ? forgeElemsFor(selW) : [];
-  F.esel=clamp(F.esel|0,0,Math.max(0,disc.length-1));
-  if(art && typeof stageText==='function'){
-    let b=bay(S.title);
-    const tH=(typeof stageFitH==='function')?stageFitH(art,'THE FORGE',b[2]*0.90,b[3]*0.62,10,0.08):b[3]*0.5;
-    stageText(art,'THE FORGE',b[0]+b[2]/2,b[1]+b[3]*0.55,tH,'#ffd24a',0.9,A(0.10),0.08);
-    b=bay(S.pilot);
-    try{
-      const pk=(typeof _pilotKey==='function')?_pilotKey():'axel';
-      const pkey=(typeof scPortrait==='function')?scPortrait(pk,'A'):null;
-      if(pkey && XART.rdy(pkey)){ const im=XART.get(pkey), k=Math.min(b[2]*0.88/im.naturalWidth,b[3]*0.88/im.naturalHeight), w=im.naturalWidth*k, h=im.naturalHeight*k;
-        ctx.save(); ctx.globalAlpha=A(0.15); ctx.drawImage(im,b[0]+(b[2]-w)/2,b[1]+(b[3]-h)/2,w,h); ctx.restore(); }
-    }catch(_){ }
-    /* the brief bay: the allowance, then the line that says what the cursor is on */
-    b=bay(S.brief);
-    /* the level's own conversion, said where the player is standing when it happens (0917) */
-    const _fpN=(run._fpLevel&&run._fpLevel.fp>0)?(run._fpLevel.fp|0):0;
-    const l1='COMBINE  X'+(run.forgeCombos|0)+'      RE-SPEC  X'+(run.forgeRespecs|0)+'      LOADOUT  '+load.length+' OF '+FORGE_LOADOUT_MAX;
-    const h1=Math.min(13,(typeof stageFitH==='function')?stageFitH(art,l1+(_fpN?'      XX+'+_fpN:''),b[2]*0.94,b[3]*0.42,8,0.06):11);
-    /* the level's conversion is the FURIOUS coin and its number, set on the end of the same line (0917c) */
-    if(_fpN) stageTextCoin(art,l1+'     ','+'+_fpN,b[0]+b[2]/2,b[1]+b[3]*0.30,h1,'#9fd6ff',0.8,A(0.20),0.06,'#ffd24a');
-    else stageText(art,l1,b[0]+b[2]/2,b[1]+b[3]*0.30,h1,'#9fd6ff',0.8,A(0.20),0.06);
-    let l2, l2c='#ffd24a';
-    if(F.msgT>0 && F.msg){ l2=F.msg; l2c='#ffffff'; }
-    else if(F.row===1){ const el=disc[F.esel]; const nm=(FORGE_NAMES[el]&&FORGE_NAMES[el][selW])||(INFUSIONS[el].name+' '+WEAPONS[selW]);
-      l2=WEAPONS[selW]+'  +  '+INFUSIONS[el].name+'   =   '+nm; }
-    else if(selW==null) l2='NOTHING UNLOCKED';
-    else if(!forgeCanTake(selW)) l2=WEAPONS[selW]+' CANNOT TAKE AN ELEMENT';
-    else if(forgeEntry(selW)){ const f=forgeEntry(selW); l2=forgeName(selW)+'   -   '+INFUSIONS[f.elem].name+'   -   CHARGE RE-SPECS'; }
-    else if(!disc.length) l2='NO COMBINATIONS FOR THIS WEAPON YET - THEY DROP FROM BOSSES';
-    else if((run.forgeCombos|0)<=0) l2='NO COMBINES LEFT THIS STAGE';
-    else l2='FIRE: FORGE THE '+WEAPONS[selW]+' WITH AN ELEMENT';
-    const h2=Math.min(12,(typeof stageFitH==='function')?stageFitH(art,l2,b[2]*0.94,b[3]*0.40,7,0.06):10);
-    stageText(art,l2,b[0]+b[2]/2,b[1]+b[3]*0.74,h2,l2c,0.8,A(0.25),0.06);
-    /* ---- the six LOADOUT boxes ---- */
-    const R0=FORGE_ROWS.box, RX=P[0]+P[2]*R0.x, RY=P[1]+P[3]*R0.y, RW=P[2]*R0.w, RH=P[3]*R0.h;
-    const pl=plate, pNW=pl?(pl.naturalWidth||pl.width):1, pNH=pl?(pl.naturalHeight||pl.height):1;
-    const boxAsp=(UNLOCK_ART.box[2]*pNW)/(UNLOCK_ART.box[3]*pNH);
-    const n=FORGE_LOADOUT_MAX, gap=RW*0.014;
-    let bw=(RW-gap*(n-1))/n, bh=bw/boxAsp;
-    const nameH=Math.max(8,Math.min(11,RH*0.11));
-    if(bh+nameH*1.9>RH){ bh=RH-nameH*1.9; bw=bh*boxAsp; }
-    const ox=RX+(RW-(bw*n+gap*(n-1)))/2;
-    for(let i=0;i<n;i++){
-      const w=(i<load.length)?load[i]:null, bx=ox+i*(bw+gap), a=A(0.40+i*0.09);
-      if(a<=0) continue;
-      ctx.save(); ctx.globalAlpha=a; ctx.imageSmoothingEnabled=true;
-      if(pl) unlockPanel(pl, UNLOCK_ART.box, bx, RY, bw, bh, false);
-      else { ctx.fillStyle='#16161f'; ctx.fillRect(bx,RY,bw,bh); ctx.strokeStyle='#705848'; ctx.lineWidth=2; ctx.strokeRect(bx+1,RY+1,bw-2,bh-2); }
-      ctx.restore();
-      if(w==null) continue;
-      /* the weapon icon, stretched to the box the way the unlock page does it */
-      if(typeof iconBlit==='function' && typeof weaponIconKey==='function'){
-        const key=weaponIconKey(w, Math.max(1,(run.wlevels&&run.wlevels[w])|0));
-        const ih=bh*0.78, cxp=bx+bw/2, cyp=RY+bh/2;
-        ctx.save(); ctx.globalAlpha=0; const w0=iconBlit(ctx,key,-9999,-9999,ih,true)||0; ctx.restore();
-        const want=bw*0.70, sxk=(w0>0.5)?Math.min(1.35,want/w0):1;
-        ctx.save(); ctx.globalAlpha=a; ctx.translate(cxp,cyp); ctx.scale(sxk,1); iconBlit(ctx,key,0,0,ih,true); ctx.restore();
-        /* a forged weapon wears its element badge in the box's corner, with its level */
-        const f=forgeEntry(w);
-        if(f && XART.rdy('inf_'+f.elem)){
-          const eh=bh*0.34;
-          ctx.save(); ctx.globalAlpha=a; iconBlit(ctx,'inf_'+f.elem,bx+bw-eh*0.62,RY+eh*0.62,eh,true); ctx.restore();
-        }
-      }
-      /* the name beneath: the forged name if it has one */
-      const nm=(typeof weaponDisplayName==='function')?weaponDisplayName(w):WEAPONS[w];
-      const nh=Math.min(nameH,(typeof stageFitH==='function')?stageFitH(art,nm,bw*1.02,nameH,6,0.05):nameH);
-      const f2=forgeEntry(w);
-      stageText(art,nm,bx+bw/2,RY+bh+nameH*0.95,nh,f2?INFUSIONS[f2.elem].body:'#c8d2e2',0.8,a,0.05);
-      /* the cursor (0917b): NOT a square (Mike). The traced pointer rings the weapon's own badge and the
-         menu's arrow rises under it; on the element row the slot keeps a still, dim ring so it is clear
-         which weapon the element is going onto. */
-      if(i===F.sel){
-        const key2=weaponIconKey(w, Math.max(1,(run.wlevels&&run.wlevels[w])|0));
-        ctx.save(); ctx.globalAlpha=a*(F.row===0?1:0.45);
-        if(F.row===0) forgeHexPointer(key2,bx+bw/2,RY+bh/2,bh*0.78,'#ffd24a');
-        ctx.restore();
-        if(F.row===0) forgeSelArrowUp(bx+bw/2, RY+bh+nameH*1.55, Math.min(nameH*2.2,bh*0.30));
-      }
-    }
-    /* ---- the element row, on the plate's own strip so the baked bays never show through ---- */
-    const E0=FORGE_ROWS.elems, EX=P[0]+P[2]*E0.x, EY=P[1]+P[3]*E0.y, EW=P[2]*E0.w, EH=P[3]*E0.h;
-    const ea=A(0.95);
-    if(ea>0){
-      ctx.save(); ctx.globalAlpha=ea; ctx.imageSmoothingEnabled=true;
-      if(pl) unlockPanel(pl, UNLOCK_ART.strip, EX, EY, EW, EH, true);
-      else { ctx.fillStyle='#16161f'; ctx.fillRect(EX,EY,EW,EH); }
-      ctx.restore();
-      if(F.row===2) forgePickerDraw(F, art, EX, EY, EW, EH, ea, t);
-      const keys=Object.keys(INFUSIONS), eh=EH*0.70, egap=EW*0.012;
-      let ew=eh*0.86; let tot=keys.length*ew+(keys.length-1)*egap;
-      if(tot>EW*0.92){ ew=(EW*0.92-(keys.length-1)*egap)/keys.length; tot=keys.length*ew+(keys.length-1)*egap; }
-      const ex0=EX+(EW-tot)/2, ecy=EY+EH*0.50;
-      for(let i=0;i<keys.length && F.row!==2;i++){
-        const el=keys[i], known=disc.indexOf(el)>=0, ecx=ex0+i*(ew+egap)+ew/2;
-        if(!XART.rdy('inf_'+el)) continue;
-        ctx.save(); ctx.globalAlpha=ea*(known?1:0.18); iconBlit(ctx,'inf_'+el,ecx,ecy,eh,true); ctx.restore();
-        /* ⚠ THE SELECTOR IS NOT A SQUARE (Mike, 0917b: "make the selector do a pixel flash bottom to top
-           mirror of the arrow from the menu ... trace the icon to make our own hexagon pointer that blinks
-           rapidly"). The ring is traced off the badge's OWN alpha, so it is a hexagon because the badge is. */
-        if(F.row===1 && disc[F.esel]===el){
-          forgeHexPointer('inf_'+el,ecx,ecy,eh,INFUSIONS[el].glow||'#ffffff');
-          forgeSelArrowUp(ecx, ecy+eh*0.56, Math.min(EH*0.24, eh*0.34));
-        }
-      }
-    }
-    /* sign-off: what is discovered; footer: the controls */
-    b=bay(S.signoff);
-    const so=disc.length ? ('EARNED FOR THIS WEAPON: '+disc.map(function(e){ return INFUSIONS[e].name; }).join('  -  ')) : 'BEAT A BOSS TO EARN A COMBINATION FOR THIS WEAPON';
-    const soH=Math.min(11,(typeof stageFitH==='function')?stageFitH(art,so,b[2]*0.96,b[3]*0.60,6,0.06):10);
-    stageText(art,so,b[0]+b[2]/2,b[1]+b[3]*0.55,soH,'#9fd6ff',0.8,A(1.0),0.06);
-    b=bay(S.footer);
-    if(A(1.0)>0){
-      const hints=(F.row===1)?[['pad_a','PICK ELEMENT'],['pad_b','BACK']]
-                 :(F.row===2)?[['pad_dpad','SCROLL'],['pad_a','SELECT'],['pad_b','BACK']]
-                 :[['pad_a','SELECT SLOT'],['pad_x','RE-SPEC'],['pad_y','ARMORY'],['pad_start','LOADOUT']];
-      controlHintRow(hints,b[1]+b[3]*0.55,W/2,W-24);
-    }
+  const F=forge, W=(typeof cutsceneViewWidth==='function')?cutsceneViewWidth():VW, H=VH;
+  ctx.fillStyle='#000';ctx.fillRect(0,0,W,H); if(!F){setState(GS.TITLE);return;}
+  F.t+=dt;const t=F.t;if(F.msgT>0)F.msgT-=dt;
+  const art=(typeof curFontArt==='function')?curFontArt():null,A=function(d){return clamp((t-d)/0.3,0,1);};
+  const plate=XART.rdy('forge_loadout_0918')?XART.get('forge_loadout_0918'):null;
+  ctx.save();ctx.globalAlpha=Math.min(1,t/.35);if(plate){ctx.imageSmoothingEnabled=false;ctx.drawImage(plate,0,0,W,H);}else{ctx.fillStyle='#151923';ctx.fillRect(0,0,W,H);}ctx.restore();
+  const load=run.loadout||[];F.sel=clamp(F.sel|0,0,Math.max(0,load.length-1));const selW=load.length?load[F.sel]:null;
+  const disc=(selW!=null)?forgeElemsFor(selW):[];F.esel=clamp(F.esel|0,0,Math.max(0,disc.length-1));
+  if(art) stageTextCoin(art,'',String(typeof furiousBalance==='function'?furiousBalance():0),W/2,H*.175,18,'#ffd24a',.9,A(.1),.06);
+  const xs=[.083,.226,.369,.512,.655,.798],by=.294*H,bw=.118*W,bh=.218*H;
+  for(let i=0;i<FORGE_LOADOUT_MAX;i++){
+    const w=load[i];if(w==null)continue;const cx=(xs[i]+.059)*W,cy=by+bh*.48,key=forgeSlotKey(w),a=A(.18+i*.05);
+    forgeIconFit(key,cx,cy,Math.min(bw,bh)*.75,0,a);
+    if(i===F.sel){forgeHexPointer(key,cx,cy,Math.min(bw,bh)*.75,F.row===0?'#ffd24a':'#708090');if(F.row===0)forgeSelArrowUp(cx,by+bh*.94,H*.038);}
+    if(art){const nm=weaponDisplayName(w),f=forgeEntry(w);stageText(art,nm,cx,H*.575,Math.min(9,stageFitH(art,nm,bw*.95,9,5,.04)),f?INFUSIONS[f.elem].body:'#c8d2e2',.8,a,.04);}
   }
+  const EX=.075*W,EY=.650*H,EW=.850*W,EH=.125*H;
+  if(F.row===1&&disc.length){
+    const pitch=EW/disc.length;
+    disc.forEach(function(el,i){const cx=EX+pitch*(i+.5),h=Math.min(EH*.72,pitch*.70);ctx.save();ctx.globalAlpha=i===F.esel?1:.48;iconBlit(ctx,'inf_'+el,cx,EY+EH*.48,h,true);ctx.restore();if(i===F.esel)forgeHexPointer('inf_'+el,cx,EY+EH*.48,h,INFUSIONS[el].glow);});
+  }else if(art){
+    let msg=F.msgT>0?F.msg:(selW==null?'NO WEAPON SELECTED':(forgeEntry(selW)?forgeName(selW)+'  -  CHARGE RE-SPECS':'FIRE OPENS EVERY BOSS ELEMENT FOR THIS WEAPON'));
+    stageText(art,msg,W/2,EY+EH*.50,Math.min(13,stageFitH(art,msg,EW*.92,13,7,.05)),F.msgT>0?'#fff':'#9fd6ff',.82,A(.3),.05);
+  }
+  if(art){const rs='X'+(run.forgeRespecs|0);stageText(art,rs,W*.705,H*.883,13,'#ffd24a',.9,A(.25),.05);}
   /* ---- input. EVERY consuming reader is read ONCE into a local (CLAUDE.md: menuLeft()||menuRight()
      always resolves to +1 because the second call was eaten by the first). ---- */
   const mL=(Input.menuLeft?Input.menuLeft():false), mR=(Input.menuRight?Input.menuRight():false);
@@ -72408,14 +72174,10 @@ const FORGE_CHAMBER={
   title:[0.2400,0.0900,0.5200,0.0800]   /* the plating above the chamber, where the product is named */
 };
 const LOADOUT_PLATE={
-  title:[0.2602,0.1224,0.4797,0.0833],
-  /* ⚠ the bay INTERIORS, measured 0917c: the first cut used the outer bevel box (y .3320 h .2135), which
-     centred every icon ~6px above the well - Mike's "center all icons in boxes". Four wells read clean;
-     the two whose edges merge with the frame take the same measured pitch (.14315). */
-  bayX:[0.0858,0.2297,0.3721,0.5153,0.6584,0.8016], bayY:0.3555, bayW:0.1130, bayH:0.1888,
-  stripX:[0.0807,0.2246,0.3663,0.5102,0.6541,0.7943], stripY:0.6016, stripW:0.1235, stripH:0.0508,
-  pool:[0.0850,0.6780,0.8300,0.1300],
-  info:[0.2878,0.8320,0.4244,0.0742]
+  title:[0.285,0.120,0.430,0.105],
+  bayX:[0.083,0.226,0.369,0.512,0.655,0.798],bayY:0.294,bayW:0.118,bayH:0.218,
+  stripX:[0.080,0.223,0.366,0.509,0.652,0.795],stripY:0.542,stripW:0.124,stripH:0.064,
+  pool:[0.073,0.650,0.854,0.130],info:[0.073,0.650,0.854,0.130],respec:[0.363,0.824,0.274,0.100]
 };
 const FORGE_WELD_T0=0.75, FORGE_WELD_T=2.8, FORGE_PRODUCT_WAIT=0.95;
 const FSEL_BLINK=14;                           /* Hz: the traced pointer "blinks rapidly" */
@@ -72756,7 +72518,6 @@ let loadoutScr=null;
    must still go straight to the next stage (0915). */
 function loadoutVisible(){
   if(!run) return false;
-  if(typeof spaceWeaponsActive==='function' && spaceWeaponsActive()) return false;
   const pool=(typeof crateWeaponPool==='function')?crateWeaponPool(true):[];
   return pool.length>FORGE_LOADOUT_MAX || !!run._forgeShown;
 }
@@ -72765,120 +72526,49 @@ function loadoutStart(onDone){
   const pool=(typeof crateWeaponPool==='function')?crateWeaponPool(true):load.slice();
   loadoutScr={onDone:onDone||null, t:0, sel:0, row:0, psel:0, pscroll:0, exitT:-1, msg:'', msgT:0, pool:pool,
               md:!!(Input&&Input.mouse&&Input.mouse.down)};
-  try{ XART.rdy('loadout_bays_0917b'); XART.rdy(_selKey('y'));
+  try{ XART.rdy('forge_loadout_0918'); XART.rdy(_selKey('y'));
        for(const w of pool){ XART.rdy(weaponIconKey(w,Math.max(1,(run.wlevels&&run.wlevels[w])|0))); const f=forgeEntry(w); if(f) XART.rdy(forgeBadgeKey(f.elem,w,f.lv)); }
        if(typeof laserMistWarm==='function') laserMistWarm(); }catch(_l){ }
   setState(GS.LOADOUT);
 }
 function loadoutSay(m,sfx){ if(loadoutScr){ loadoutScr.msg=m; loadoutScr.msgT=2.2; } if(sfx) fsx(sfx); }
 function drawLoadout(dt){
-  const L=loadoutScr;
-  const W=(typeof cutsceneViewWidth==='function')?cutsceneViewWidth():VW, H=VH;
-  ctx.fillStyle='#000'; ctx.fillRect(0,0,W,H);
-  if(!L){ setState(GS.TITLE); return; }
-  L.t+=dt; const t=L.t; if(L.msgT>0) L.msgT-=dt;
-  const art=(typeof curFontArt==='function')?curFontArt():null;
-  const P=LOADOUT_PLATE, load=run.loadout||[];
-  const A=function(d){ return Math.max(0,Math.min(1,(t-d)/0.3)); };
-  const plate=XART.rdy('loadout_bays_0917b')?XART.get('loadout_bays_0917b'):null;
-  ctx.save(); ctx.globalAlpha=Math.min(1,t/0.4);
-  if(plate){ ctx.imageSmoothingEnabled=false; ctx.drawImage(plate,0,0,W,H); } else { ctx.fillStyle='#161a22'; ctx.fillRect(0,0,W,H); }
-  ctx.restore();
-  L.sel=clamp(L.sel|0,0,Math.max(0,load.length-1));
-  const selW=load[L.sel];
-  if(art){
-    const T=frc(P.title,W,H), tt='LOADOUT   '+load.length+' OF '+FORGE_LOADOUT_MAX;
-    stageText(art,tt,T[0]+T[2]/2,T[1]+T[3]/2,Math.min(T[3]*0.56,(typeof stageFitH==='function')?stageFitH(art,tt,T[2]*0.9,T[3]*0.56,9,0.08):T[3]*0.5),'#ffd24a',0.9,A(0.1),0.08);
-  }
-  /* the six bays */
+  const L=loadoutScr,W=(typeof cutsceneViewWidth==='function')?cutsceneViewWidth():VW,H=VH;
+  ctx.fillStyle='#000';ctx.fillRect(0,0,W,H);if(!L){setState(GS.TITLE);return;}
+  L.t+=dt;const t=L.t;if(L.msgT>0)L.msgT-=dt;const art=(typeof curFontArt==='function')?curFontArt():null,P=LOADOUT_PLATE,load=run.loadout||[];
+  const plate=XART.rdy('forge_loadout_0918')?XART.get('forge_loadout_0918'):null;
+  ctx.save();ctx.globalAlpha=Math.min(1,t/.35);if(plate){ctx.imageSmoothingEnabled=false;ctx.drawImage(plate,0,0,W,H);}else{ctx.fillStyle='#151923';ctx.fillRect(0,0,W,H);}ctx.restore();
+  L.sel=clamp(L.sel|0,0,Math.max(0,load.length-1));const selW=load[L.sel];
+  if(art)stageTextCoin(art,'',String(typeof furiousBalance==='function'?furiousBalance():0),W/2,H*.175,18,'#ffd24a',.9,1,.06);
   for(let i=0;i<FORGE_LOADOUT_MAX;i++){
-    const w=load[i], a=A(0.25+i*0.07);
-    const bx=P.bayX[i]*W, by=P.bayY*H, bw=P.bayW*W, bh=P.bayH*H, cx=bx+bw/2, cy=by+bh/2;
-    if(w==null||a<=0) continue;
-    const key=forgeSlotKey(w);
-    forgeIconFit(key,cx,cy,Math.min(bh,bw)*0.86,0,a);   /* centred, never stretched */
-    const f=forgeEntry(w), nm=(typeof weaponDisplayName==='function')?weaponDisplayName(w):WEAPONS[w];
-    if(art){ const sx=P.stripX[i]*W, sy=P.stripY*H, sw2=P.stripW*W, sh2=P.stripH*H;
-      const nh=Math.min(sh2*0.56,(typeof stageFitH==='function')?stageFitH(art,nm,sw2*0.9,sh2*0.56,6,0.05):sh2*0.5);
-      stageText(art,nm,sx+sw2/2,sy+sh2/2,nh,f?INFUSIONS[f.elem].body:'#c8d2e2',0.8,a,0.05); }
-    if(i===L.sel && L.exitT<0){
-      ctx.save(); ctx.globalAlpha=(L.row===0?1:0.45); if(L.row===0) forgeHexPointer(key,cx,cy,Math.min(bh,bw)*0.86,'#ffd24a'); ctx.restore();
-      if(L.row===0) forgeSelArrowUp(cx, by+bh+H*0.004, H*0.050);
-    }
+    const w=load[i];if(w==null)continue;const bx=P.bayX[i]*W,by=P.bayY*H,bw=P.bayW*W,bh=P.bayH*H,cx=bx+bw/2,cy=by+bh*.48,key=forgeSlotKey(w);
+    forgeIconFit(key,cx,cy,Math.min(bh,bw)*.76,0,1);
+    if(i===L.sel&&L.exitT<0){forgeHexPointer(key,cx,cy,Math.min(bh,bw)*.76,L.row===0?'#ffd24a':'#667080');if(L.row===0)forgeSelArrowUp(cx,by+bh*.94,H*.038);}
+    if(art){const nm=weaponDisplayName(w),f=forgeEntry(w),sy=P.stripY*H,sh=P.stripH*H;stageText(art,nm,cx,sy+sh/2,Math.min(9,stageFitH(art,nm,bw*.94,9,5,.04)),f?INFUSIONS[f.elem].body:'#c8d2e2',.8,1,.04);}
   }
-  /* the pool: every unlocked weapon, a scrolling strip - dim until a bay is opened */
-  const PB=frc(P.pool,W,H), pa=A(0.7);
-  if(pa>0){
-    ctx.save(); ctx.globalAlpha=pa*0.9; ctx.fillStyle='#0a0c12'; ctx.fillRect(PB[0],PB[1],PB[2],PB[3]);
-    ctx.globalAlpha=pa; ctx.strokeStyle=L.row===1?'#ffd24a':'#566074'; ctx.lineWidth=2; ctx.strokeRect(PB[0]+1,PB[1]+1,PB[2]-2,PB[3]-2); ctx.restore();
-    const n=L.pool.length, view=Math.min(n,7);
-    L.psel=clamp(L.psel|0,0,Math.max(0,n-1));
-    const maxS=Math.max(0,n-view); L.pscroll=clamp(Math.min(L.pscroll|0,L.psel),L.psel-view+1,maxS); L.pscroll=clamp(L.pscroll,0,maxS);
-    const pitch=PB[2]/7, ih=PB[3]*0.62, ox=PB[0]+(PB[2]-pitch*view)/2;
-    for(let k=0;k<view;k++){
-      const i=k+L.pscroll, w=L.pool[i], cx=ox+pitch*(k+0.5), cy=PB[1]+PB[3]*0.42;
-      const inL=load.indexOf(w), isSel=(L.row===1&&i===L.psel);
-      const key=forgeSlotKey(w);
-      forgeIconFit(key,cx,cy,ih,0,pa*(L.row===1?(isSel?1:0.6):0.45));
-      if(inL>=0 && art) stageText(art,String(inL+1),cx+ih*0.46,PB[1]+PB[3]*0.16,Math.max(7,PB[3]*0.16),'#9fd6ff',0.8,pa,0.05);
-      if(isSel){ forgeHexPointer(key,cx,cy,ih,'#ffd24a'); forgeSelArrowUp(cx,cy+ih*0.52,PB[3]*0.30); }
-    }
-    ctx.save(); ctx.fillStyle='#9fd6ff'; ctx.globalAlpha=pa*0.85;
-    const ah=PB[3]*0.22, ay=PB[1]+PB[3]/2;
-    if(L.pscroll>0){ ctx.beginPath(); ctx.moveTo(PB[0]+6,ay); ctx.lineTo(PB[0]+6+ah*0.7,ay-ah/2); ctx.lineTo(PB[0]+6+ah*0.7,ay+ah/2); ctx.closePath(); ctx.fill(); }
-    if(L.pscroll<maxS){ ctx.beginPath(); ctx.moveTo(PB[0]+PB[2]-6,ay); ctx.lineTo(PB[0]+PB[2]-6-ah*0.7,ay-ah/2); ctx.lineTo(PB[0]+PB[2]-6-ah*0.7,ay+ah/2); ctx.closePath(); ctx.fill(); }
-    ctx.restore();
-  }
-  /* the information bar: what the cursor is on */
-  if(art){
-    const IB=frc(P.info,W,H);
-    let txt, col='#ffd24a';
-    if(L.msgT>0 && L.msg){ txt=L.msg; col='#ffffff'; }
-    else if(L.row===1){ const w=L.pool[L.psel], j=load.indexOf(w); txt=((typeof weaponDisplayName==='function')?weaponDisplayName(w):WEAPONS[w])+(j>=0?('   -   IN BAY '+(j+1)):'   -   FIRE PUTS IT IN BAY '+(L.sel+1)); }
-    else if(selW!=null){ const f=forgeEntry(selW); txt='BAY '+(L.sel+1)+':  '+((typeof weaponDisplayName==='function')?weaponDisplayName(selW):WEAPONS[selW])+(f?('   -   '+INFUSIONS[f.elem].name):''); if(f) col=INFUSIONS[f.elem].body; }
-    else txt='NOTHING UNLOCKED';
-    const th=Math.min(IB[3]*0.46,(typeof stageFitH==='function')?stageFitH(art,txt,IB[2]*0.94,IB[3]*0.46,7,0.06):12);
-    stageText(art,txt,IB[0]+IB[2]/2,IB[1]+IB[3]/2,th,col,0.85,A(0.4),0.06);
-  }
-  if(A(0.6)>0 && L.exitT<0){
-    const hints=(L.row===1)?[['pad_dpad','SCROLL'],['pad_a','EQUIP'],['pad_b','BACK']]:[['pad_dpad','BAY'],['pad_a','CHANGE'],['pad_start','LAUNCH']];
-    controlHintRow(hints,H*0.968,W/2,W-24);
-  }
-  /* FADE TO THE NEXT LEVEL (Mike: "the loadout selection screen - fade to next level") */
-  if(L.exitT>=0){
-    L.exitT+=dt;
-    ctx.save(); ctx.globalAlpha=Math.min(1,L.exitT/0.6); ctx.fillStyle='#000'; ctx.fillRect(0,0,W,H); ctx.restore();
-    if(L.exitT>=0.62){ const done=L.onDone; loadoutScr=null; run._wbag=[]; if(done) done(); else setState(GS.TITLE); }
-    return;
-  }
-  /* input - every consuming reader read ONCE (menuLeft()||menuRight() is always +1 otherwise) */
-  const mL=(Input.menuLeft?Input.menuLeft():false), mR=(Input.menuRight?Input.menuRight():false);
-  const mU=(Input.menuUp?Input.menuUp():false), mD=(Input.menuDown?Input.menuDown():false);
-  const mB=(Input.menuBack?Input.menuBack():false), mS=(Input.menuStart?Input.menuStart():false);
-  const fire=(keybind.fire||[]).filter(function(k){ return !/^mouse/.test(k); }).some(function(k){ return Input.tap(k); });
-  const click=Input.mouse.down&&!L.md; L.md=!!Input.mouse.down;
-  const enter=Input.tap('enter');
-  if(t<0.6) return;
+  const B=frc(P.pool,W,H);let opts=[];
+  if(L.row===1)opts=L.pool.map(function(w){return {weapon:w,name:weaponDisplayName(w),key:forgeSlotKey(w)};});
+  else if(L.row===2&&selW!=null)opts=weaponFormOptions(selW).map(function(o){return Object.assign({},o,{key:o.kind==='forge'?forgeBadgeKey(o.elem,selW,o.lv):(o.kind==='variant'&&WVAR_ICON[o.id]?WVAR_ICON[o.id]+'3':weaponIconKey(selW,3,{bare:1}))});});
+  if(L.row>0&&opts.length){
+    L.psel=clamp(L.psel|0,0,opts.length-1);const view=Math.min(7,opts.length),pitch=B[2]/view,first=clamp(L.psel-3,0,Math.max(0,opts.length-view));
+    for(let k=0;k<view;k++){const i=first+k,o=opts[i],cx=B[0]+pitch*(k+.5),cy=B[1]+B[3]*.40,h=Math.min(B[3]*.56,pitch*.62);forgeIconFit(o.key,cx,cy,h,0,i===L.psel?1:.45);if(i===L.psel)forgeHexPointer(o.key,cx,cy,h,'#ffd24a');if(art)stageText(art,o.name,cx,B[1]+B[3]*.84,Math.min(7,stageFitH(art,o.name,pitch*.88,7,4,.03)),'#cfeaff',.8,1,.03);}
+  }else if(art){let msg=L.msgT>0?L.msg:'FIRE: CHANGE FORM   DOWN: CHANGE WEAPON   CHARGE: RE-SPEC';stageText(art,msg,W/2,B[1]+B[3]/2,Math.min(12,stageFitH(art,msg,B[2]*.92,12,6,.05)),'#9fd6ff',.82,1,.05);}
+  if(art)stageText(art,'X'+(run.forgeRespecs|0),W*.705,H*.883,13,'#ffd24a',.9,1,.05);
+  if(L.exitT>=0){L.exitT+=dt;ctx.save();ctx.globalAlpha=Math.min(1,L.exitT/.6);ctx.fillStyle='#000';ctx.fillRect(0,0,W,H);ctx.restore();if(L.exitT>=.62){const done=L.onDone;loadoutScr=null;run._wbag=[];if(done)done();else setState(GS.TITLE);}return;}
+  const mL=Input.menuLeft?Input.menuLeft():false,mR=Input.menuRight?Input.menuRight():false,mU=Input.menuUp?Input.menuUp():false,mD=Input.menuDown?Input.menuDown():false,mB=Input.menuBack?Input.menuBack():false,mS=Input.menuStart?Input.menuStart():false;
+  const fire=(keybind.fire||[]).filter(function(k){return !/^mouse/.test(k);}).some(function(k){return Input.tap(k);});
+  const charge=(keybind.charge||[]).some(function(k){return Input.tap(k);});const click=Input.mouse.down&&!L.md;L.md=!!Input.mouse.down;const enter=Input.tap('enter');if(t<.55)return;
   if(L.row===0){
-    if(mL && load.length){ L.sel=(L.sel-1+load.length)%load.length; fsx('blip'); }
-    else if(mR && load.length){ L.sel=(L.sel+1)%load.length; fsx('blip'); }
-    else if(mS||enter){ Input.mouse.down=false; L.exitT=0; fsx('powerup'); }
-    else if((fire||click||mD) && selW!=null){
-      if(FORGE_FIXED[selW]) loadoutSay('MISSILES STAY MISSILES','blocked');
-      else if(L.pool.length<2) loadoutSay('NOTHING ELSE UNLOCKED YET','blocked');
-      else { L.row=1; L.psel=Math.max(0,L.pool.indexOf(selW)); L.pscroll=0; fsx('blip'); }
-    }
-  } else {
-    const n=L.pool.length;
-    if(mL && n){ L.psel=(L.psel-1+n)%n; fsx('blip'); }          /* a ding on every icon */
-    else if(mR && n){ L.psel=(L.psel+1)%n; fsx('blip'); }
-    else if(mB||mU){ L.row=0; fsx('blip'); }
-    else if(fire||click||enter){
-      const w=L.pool[L.psel], r=forgePick(L.sel,w);
-      if(r==='fixedelsewhere') loadoutSay('MISSILES STAY IN THEIR OWN BAY','blocked');
-      else if(r==='fixed') loadoutSay('MISSILES STAY MISSILES','blocked');
-      else { if(r==='ok') loadoutSay('BAY '+(L.sel+1)+':  '+((typeof weaponDisplayName==='function')?weaponDisplayName(w):WEAPONS[w]),'powerup'); else fsx('blip'); L.row=0; }
-    }
+    if(mL&&load.length){L.sel=(L.sel-1+load.length)%load.length;fsx('blip');}
+    else if(mR&&load.length){L.sel=(L.sel+1)%load.length;fsx('blip');}
+    else if(mS||enter){Input.mouse.down=false;L.exitT=0;fsx('powerup');}
+    else if(charge&&selW!=null){const q=forgeRespec(selW);loadoutSay(q==='ok'?'BARE FORM EQUIPPED':'NO ACTIVE FORM TO RE-SPEC',q==='ok'?'powerup':'blocked');}
+    else if(mD&&selW!=null){L.row=1;L.psel=Math.max(0,L.pool.indexOf(selW));fsx('blip');}
+    else if((fire||click||mU)&&selW!=null){L.row=2;L.psel=0;fsx('blip');}
+  }else if(L.row===1){
+    const n=L.pool.length;if(mL&&n){L.psel=(L.psel-1+n)%n;fsx('blip');}else if(mR&&n){L.psel=(L.psel+1)%n;fsx('blip');}else if(mB||mU){L.row=0;fsx('blip');}else if(fire||click||enter){const w=L.pool[L.psel],r=forgePick(L.sel,w);if(r==='fixedelsewhere'||r==='fixed')loadoutSay('MISSILES STAY IN THEIR OWN BAY','blocked');else{if(r==='ok')loadoutSay('BAY '+(L.sel+1)+': '+weaponDisplayName(w),'powerup');L.row=0;}}
+  }else{
+    const forms=weaponFormOptions(selW),n=forms.length;if(mL&&n){L.psel=(L.psel-1+n)%n;fsx('blip');}else if(mR&&n){L.psel=(L.psel+1)%n;fsx('blip');}else if(mB||mD){L.row=0;fsx('blip');}else if(fire||click||enter){const o=forms[L.psel],r=weaponFormSelect(selW,o);loadoutSay(r==='ok'?o.name+' EQUIPPED':'FORM LOCKED',r==='ok'?'powerup':'blocked');L.row=0;}
   }
 }
 
@@ -72928,8 +72618,8 @@ const POWERS_PLATE={
 };
 /* one bay per ELEMENT, never per weapon - "do not display what we can make with it" */
 function powersGained(){
-  const C=(run && run._stageCombos) || [], out=[];
-  for(const c of C) if(INFUSIONS[c.elem] && out.indexOf(c.elem)<0) out.push(c.elem);
+  const C=(run && (run._stageElements||run._stageCombos)) || [], out=[];
+  for(const c of C){ const e=typeof c==='string'?c:c.elem; if(INFUSIONS[e]&&out.indexOf(e)<0) out.push(e); }
   return out.slice(0,3);
 }
 function powersVisible(){ return powersGained().length>0; }

@@ -21,13 +21,13 @@ module.exports=function(vm,ctxv,ok){
       for(var i=0;i<60;i++){razorbackMove(nq,1/60);razorbackMove(fq,1/60);}o.hyperMovement=fq.x>nq.x*1.60&&fq._rzb.speedMul===1.62&&fq._rzb.turnMul===1.55;
       ready(b,'guns','sonic',1.21);eBullets=[];R.waves=[];razorbackCombat(b);
       o.furiousSonic=eBullets.length===9&&eBullets.every(x=>x.kind==='rzbSonic'&&x._rzbFurious)&&R.waves.length===1&&R.waves[0].furious&&R.waves[0].arc===1.05;
-      o.giantWave=R.waves[0].width>15*RZB_S*2&&R.waves[0].speed>180*RZB_S*RZB_WFAST*2&&R.waves[0].life===6;
+      o.segmentedWave=R.waves[0].segments.length===5&&R.waves[0].segments.every((q,i,a)=>q[0]<q[1]&&(!i||a[i-1][1]<q[0]))&&R.waves[0].life===6;
       ready(b,'hull','nova',1.56);eBullets=[];R.waves=[];razorbackCombat(b);o.hyperNova=eBullets.length===28&&R.waves.length===1&&R.waves[0].furious;
       ready(b,'guns','missiles',0);playerLocks=[];razorbackCombat(b);o.razorRack=playerLocks.length===1&&playerLocks[0].launches.length===14;
       ready(b,'guns','suppression',0);var g=rzbWorld(b,-57,96),edgeX=g.x+RZB_R.gun*1.25;
       o.scaledHitbox=razorbackPartAt(b,edgeX,g.y)==='left';
       var beam={x:edgeX,w:2,top:g.y-50,bot:g.y+50};o.scaledBeam=razorbackBeamHit(b,beam)!==null;
-      var src=razorbackDraw.toString()+razorbackWaveDraw.toString()+razorbackProjectileDraw.toString();o.furiousPalette=src.indexOf("'#d51f3b'")>=0&&src.indexOf("'#ff1838'")>=0&&src.indexOf('xartPalette')>=0;
+      var src=rzbSprite.toString()+razorbackWaveDraw.toString()+razorbackProjectileDraw.toString();o.authoredRedPanels=!!BOFX.img.rzbf_hull_0&&!!BOFX.img.rzbf_turret&&src.indexOf('xartPalette')<0;
       return JSON.stringify(o);
     }finally{subBoss=save.sub;subBossActive=save.active;run.stage=save.runStage;curStage=save.curStage;diffKey=save.diffKey;DIFF=save.DIFF;
       eBullets=save.bullets;pBullets=save.pb;enemies=save.en;stagePlan=save.plan;playerLocks=save.locks;player.x=save.px;

@@ -99,9 +99,9 @@ module.exports=function testEconomy(vm,ctxv,ok){
      'achievementNormalize keeps the forge levels (by pattern) and the per-level FP ledger');
 
   /* ---- the Forge opens a weapon at its owned level; a pickup never lifts past III ---- */
-  R("run.forge={}; run.forgeElems={}; run.forgeCombos=2; run.forgeRespecs=2; run.weapon=0; run.infusion=null; run.ngplus=false; forgeDiscover('toxic');");
+  R("run.forge={}; run.forgeForms={}; run.forgeElems={}; run.forgeCombos=2; run.forgeRespecs=2; run.weapon=0; run.infusion=null; run.ngplus=false; forgeDiscover('toxic');");
   /* the fire pair was EARNED above; toxic has only been SEEN in the field, which is not the same thing */
-  ok(R("forgeCombine(0,'toxic')==='locked'"), 'an element merely seen in the field cannot be welded on');
+  ok(R("forgeCombine(0,'toxic')==='ok'"), 'a globally obtained element can be welded onto any weapon');
   ok(R("forgeCombine(0,'fire')==='ok' && run.forge[0].lv===5 && run.infusion && run.infusion.lv===5"), 'combining fire on the machine gun opens it at the OWNED level (V) and the held weapon takes it');
   ok(R("weaponIconKey(0,1)==='micon_forge_fire_0_5'"), 'and the badge is the level-V plate');
   R("infusionGrant('fire');");
@@ -114,7 +114,7 @@ module.exports=function testEconomy(vm,ctxv,ok){
 
   /* ---- one upgrade per weapon TYPE, by construction ---- */
   R("run.forgeCombos=2; forgeCombine(0,'ice');");
-  ok(R("Object.keys(run.forge).length===1 && run.forge[0].elem==='ice'"), 'a second element on the same slot REPLACES the first - a slot holds exactly one upgrade');
+  ok(R("Object.keys(run.forge).length===1 && run.forge[0].elem==='ice' && run.forgeForms[0].fire && run.forgeForms[0].ice"), 'a second element becomes active while the first crafted form remains selectable');
   ok(R("Object.keys(run.forge).every(function(k){ return FORGE_WEAPONS.indexOf(+k)>=0; })"), 'and every forge key is a weapon slot, so there is one upgrade per weapon type');
 
 
@@ -126,18 +126,16 @@ module.exports=function testEconomy(vm,ctxv,ok){
   ok(/forgeBossDrop\(/.test(bd), 'every boss death drops a combination - bossDie calls forgeBossDrop');
   ok(/_drawY/.test(bd.slice(Math.max(0,bd.indexOf('forgeBossDrop')-120), bd.indexOf('forgeBossDrop')+160)),
      'at the DRAWN position, not the logical one - a boss y can sit below the playfield');
-  R("var __ownC=achievementState.owned; achievementState.owned={}; run.stage=1;");
-  ok(R("forgeComboCandidates().length>0 && forgeComboCandidates().every(function(c){ return !forgeComboOwned(c.elem,c.w); })"),
-     'the candidates are pairs the player does NOT own - a boss never hands over what you have');
-  ok(R("(function(){ var c=forgeComboRoll(); return !!c && !!INFUSIONS[c.elem] && forgeCanTake(c.w); })()"),
-     'and the roll always names a real element on a forgeable slot');
+  R("var __ownC=achievementState.owned; achievementState.owned={}; run.forgeElems={}; run.stage=1;");
+  ok(R("forgeComboRoll().elem==='kinetic' && forgeComboRoll().w==null"),
+     'the boss roll is the stage element, with no weapon preselected');
   R("forgeComboGrant('fire',0);");
-  ok(R("forgeComboOwned('fire',0) && !forgeComboOwned('fire',1) && !forgeComboOwned('ice',0)"),
-     'a grant owns exactly ONE pair - a combination is ELEMENT x WEAPON, not an element');
-  ok(R("achievementState.owned[forgeComboId('fire',0)].cost===undefined && furiousSpent()===0 && forgeUpgradesBought()===0"),
-     'it carries NO cost, so a reward can neither read as spending nor advance the price ladder');
-  ok(R("(function(){ var v=achievementNormalize(JSON.parse(JSON.stringify(achievementState))); return !!v.owned[forgeComboId('fire',0)] && v.owned[forgeComboId('fire',0)].cost==null; })()"),
-     'and it survives a save/load round trip, still with no cost - which is what PERMANENT means');
+  ok(R("FORGE_WEAPONS.every(function(w){ return forgeComboOwned('fire',w); }) && !forgeComboOwned('ice',0)"),
+     'one boss-earned element is licensed on every weapon slot');
+  ok(R("achievementState.owned[forgeElementId('fire')].cost===undefined && furiousSpent()===0 && forgeUpgradesBought()===0"),
+     'the global element carries NO cost, so a reward cannot read as spending or advance the ladder');
+  ok(R("(function(){ var v=achievementNormalize(JSON.parse(JSON.stringify(achievementState))); return !!v.owned[forgeElementId('fire')] && v.owned[forgeElementId('fire')].cost==null; })()"),
+     'the global element survives a profile round trip with no cost');
   R("achievementState.owned=__ownC;");
 
   /* ---- what a pickup and a dodge are worth ---- */

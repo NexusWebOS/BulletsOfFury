@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-16",
+  "updated": "2026-09-18",
   "scope": "Consolidated requests in this conversation; superseded variants folded into the latest request. Rows count deliverables, not effort or percent of development time.",
   "items": [
     {
@@ -1488,11 +1488,51 @@
       "request": "Generate matching neutral mouse, red left-click, red right-click, mouse-wheel, Spacebar and R input icons; use the graphics in Help and live binding displays.",
       "evidence": "INPUT_PROMPTS_0915.md",
       "dependency": ""
+    },
+    {
+      "id": "S1-13",
+      "group": "Stage 1: fodder, Razorback and jungle chopper",
+      "status": "complete",
+      "request": "Furious Razorback is the current authored tank at 150% scale with only its green armor panels palette-swapped to neon red; sonic pressure waves have readable decibel-lobe openings and matching collision gaps.",
+      "evidence": "WEAPON_FORGE_REPAIR_0918.md",
+      "dependency": ""
+    },
+    {
+      "id": "ENG-16",
+      "group": "Shared combat, warnings and targeting",
+      "status": "complete",
+      "request": "Boss victories grant deterministic stage elements instead of weapon pairs; every obtained element can upgrade every forgeable weapon and remains usable after save/load.",
+      "evidence": "WEAPON_FORGE_REPAIR_0918.md",
+      "dependency": ""
+    },
+    {
+      "id": "ENG-17",
+      "group": "Shared combat, warnings and targeting",
+      "status": "complete",
+      "request": "Persist multiple crafted forms per weapon and select them from loadout, including Flamethrower/Ice Breath and Ice Orb/Fire Orb/Thermoshock choices; preserve two upgrades and two re-specs per stage.",
+      "evidence": "WEAPON_FORGE_REPAIR_0918.md",
+      "dependency": ""
+    },
+    {
+      "id": "UI-17",
+      "group": "Pause, saving, title and pilot selection",
+      "status": "complete",
+      "request": "Use an authored Forge/loadout plate with Fury Points and embedded RE-SPEC plus a four-row Weapon Found plate that announces real weapon systems separately from boss powers.",
+      "evidence": "WEAPON_FORGE_REPAIR_0918.md",
+      "dependency": ""
+    },
+    {
+      "id": "ENG-18",
+      "group": "Shared combat, warnings and targeting",
+      "status": "complete",
+      "request": "Give Fire Orb a dedicated readable Magma Orb projectile and verify ordinary enemy, boss-family, Furious charge/release, and projectile-launch sounds resolve through audible real-sample routes.",
+      "evidence": "WEAPON_FORGE_REPAIR_0918.md",
+      "dependency": ""
     }
   ],
   "queuePolicy": "Work in ascending workOrder, an estimate of implementation plus verification difficulty. Respect prerequisites and skip externally blocked items while continuing ready work. Re-rank when investigation changes the estimate; retain IDs and explain the change.",
   "latestBatch": {
-    "description": "Stage-2 Inferno Reaver role repair and shared nine-lane shotgun warning",
-    "evidence": "STAGE2_REAVER_SHARED_WARNING_0916.md"
+    "description": "Furious Razorback, global boss-element Forge, selectable weapon forms, new UI, Magma Orb and combat-sound verification",
+    "evidence": "WEAPON_FORGE_REPAIR_0918.md"
   }
 }

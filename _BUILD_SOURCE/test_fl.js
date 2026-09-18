@@ -15736,6 +15736,7 @@ require('./test_infusion_0917.cjs')(vm,ctxv,ok);
 require('./test_ngplus_0917.cjs')(vm,ctxv,ok);
 require('./test_evade_0917.cjs')(vm,ctxv,ok);
 require('./test_forge_0917.cjs')(vm,ctxv,ok);
+require('./test_weapon_repair_0918.cjs')(vm,ctxv,ok);
 require('./test_sonic_0917.cjs')(vm,ctxv,ok);
 require('./test_economy_0917.cjs')(vm,ctxv,ok);
 require('./test_infusion_levels_0917.cjs')(vm,ctxv,ok);

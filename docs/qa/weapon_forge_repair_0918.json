@@ -1,0 +1,35 @@
+{
+  "date": "2026-09-18",
+  "scope": "Furious Razorback palette and sonic openings; global boss-element Forge; persistent weapon forms; Forge and Weapon Found UI; Magma Orb; combat SFX routes",
+  "syntax": {
+    "command": "node --check assets/game.js",
+    "passed": true
+  },
+  "suite": {
+    "command": "node _BUILD_SOURCE/test_fl.js",
+    "checksPassed": 4921,
+    "failures": 57,
+    "baselineFailures": 57,
+    "baselineExact": true,
+    "newFailureNames": []
+  },
+  "chromium": {
+    "command": "python _BUILD_SOURCE/weapon_repair_0918/probe.py",
+    "passed": 9,
+    "failed": 0,
+    "pageErrors": [],
+    "consoleErrors": [],
+    "proofDirectory": "docs/proofs/weapon_forge_repair_0918"
+  },
+  "results": [
+    "Furious Razorback is the authored tank at 150% scale with targeted neon-red panels",
+    "Five directional sonic lobes have real collision-safe openings",
+    "Boss elements are available to all nine forgeable weapon slots",
+    "Two Forge upgrades and two re-specs remain available per stage",
+    "Multiple crafted forms persist and remain selectable",
+    "Orb slot exposes Ice Orb, Fire Orb, and Thermoshock",
+    "Weapon Found announces the actual Stage-2 Freezer systems",
+    "Fire Orb draws the dedicated Magma Orb art",
+    "Boss charge/release and projectile launch reach registered audible SFX routes"
+  ]
+}

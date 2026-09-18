@@ -40,7 +40,7 @@ module.exports=function testForge(vm,ctxv,ok){
      'no forged name carries an apostrophe (this face has no usable one at UI size - LIZZIE,S)');
 
   /* ---- the rules, in the vm ---- */
-  R("run.forge={}; run.forgeElems={}; run.loadout=null; run.forgeCombos=2; run.forgeRespecs=2; run.weapon=0; run.infusion=null; run.ngplus=false;");
+  R("run.forge={}; run.forgeForms={}; run.forgeElems={}; run.loadout=null; run.forgeCombos=2; run.forgeRespecs=2; run.weapon=0; run.infusion=null; run.ngplus=false;");
   /* A COMBINATION IS EARNED FROM A BOSS (Mike, 0917), so the pairs this block is about are
      granted first - and one it is NOT given proves the gate is real rather than absent. */
   R("var __ownBefore=achievementState.owned; achievementState.owned={}; forgeComboGrant('fire',0); forgeComboGrant('ice',0);");
@@ -75,14 +75,14 @@ module.exports=function testForge(vm,ctxv,ok){
      these weapon combination upgrades ... they drop from the boss"). It used to license that
      element on all nine slots at once, which is exactly what he ruled out. */
   R("forgeDiscover('toxic');");
-  ok(R("forgeDiscovered().indexOf('toxic')<0"),
-     'an element merely SEEN in the field is not combinable - only an earned pair is');
+  ok(R("forgeDiscovered().indexOf('toxic')>=0"),
+     'a globally obtained element appears in the Forge for every weapon');
   R("forgeComboGrant('lightning',0); forgeComboGrant('fire',3); forgeComboGrant('dark',0);");
-  ok(R("JSON.stringify(forgeDiscovered())==='[\"fire\",\"lightning\"]'"),
-     'forgeDiscovered() is in table order and hides an EARNED element whose gate is shut (dark needs NEW GAME +)');
+  ok(R("JSON.stringify(forgeDiscovered())==='[\"fire\",\"lightning\",\"toxic\",\"dark\"]'"),
+     'forgeDiscovered is stable table order and boss-earned Dark Matter bypasses its old field gate');
   /* and a pair is a pair: the element is on the slot it was earned for, and on no other */
-  ok(R("forgeElemsFor(0).indexOf('lightning')>=0 && forgeElemsFor(3).indexOf('lightning')<0"),
-     'forgeElemsFor answers per SLOT - lightning was earned for the machine gun, not for the laser');
+  ok(R("FORGE_WEAPONS.every(function(w){ return forgeElemsFor(w).indexOf('lightning')>=0; })"),
+     'one obtained Lightning element is available on every weapon slot');
   R("achievementState.owned=__ownD;");
   var ap=strip(R("String(applyPowerup)"));
   ok(/case 'infuse':[\s\S]{0,200}forgeDiscover\(p\.elem\)/.test(ap), 'collecting an infuse pickup calls forgeDiscover - discovery is the real pickup path');
@@ -144,8 +144,8 @@ module.exports=function testForge(vm,ctxv,ok){
      'THE LOADOUT opens after a Forge visit, or when there are more weapons than bays - never on an empty choice');
   /* 0917c, Mike: WEAPONS GAINED lists weapon unlocks only; POWERS GAINED is its own screen, one bay per ELEMENT,
      and it does "not display what we can make with it" */
-  ok(R("(function(){ var s0=run._stageCombos; run._stageCombos=[{elem:'fire',w:0},{elem:'fire',w:3},{elem:'ice',w:0}]; var r=unlockRowsFor(3,'cole'); var g=powersGained(); run._stageCombos=s0; return r.length===0 && JSON.stringify(g)==='[\"fire\",\"ice\"]'; })()"),
-     'the boss-dropped combinations go to POWERS GAINED as ELEMENTS (deduplicated), never onto the weapons page');
+  ok(R("(function(){ var s0=run._stageElements; run._stageElements=['fire','fire','ice']; var r=unlockRowsFor(3,'cole'); var g=powersGained(); run._stageElements=s0; return r.length===0 && JSON.stringify(g)==='[\"fire\",\"ice\"]'; })()"),
+     'boss-dropped elements go to POWERS GAINED, deduplicated, never onto Weapon Found');
   ok(R("GS.POWERS==='powers' && debriefFamily(GS.POWERS) && typeof drawPowers==='function'") && /case GS\.POWERS:\s*return drawPowers\(dt\)/.test(ds),
      'POWERS GAINED is its own state, drawn by drawPowers, at the debrief aspect');
   var pws=strip(R("String(drawPowers)"));
@@ -156,8 +156,8 @@ module.exports=function testForge(vm,ctxv,ok){
   ok(fgs.indexOf("'LEVEL '")<0 && fgs.indexOf('FORGE_ROMAN[')<0, 'the Forge sequence shows no weapon LEVELS - those are the in-game upgrade');
   ok(R("typeof stageTextCoin==='function' && typeof fpCoin==='function'") && strip(R("String(drawArmory)")).indexOf('stageTextCoin(')>=0,
      'the FURIOUS coin draws beside the points on the Armory');
-  ok(R("(function(){ var d=[]; for(var i=0;i<LOADOUT_PLATE.bayX.length;i++) d.push(LOADOUT_PLATE.bayX[i]); var p=[]; for(var j=1;j<d.length;j++) p.push(d[j]-d[j-1]); return p.every(function(x){ return Math.abs(x-0.1431)<0.002; }) && LOADOUT_PLATE.bayY>0.35; })()"),
-     'the loadout icons centre on the MEASURED bay wells (even pitch, not the outer bevel box)');
+  ok(R("(function(){ var p=[]; for(var j=1;j<LOADOUT_PLATE.bayX.length;j++) p.push(LOADOUT_PLATE.bayX[j]-LOADOUT_PLATE.bayX[j-1]); return p.every(function(x){ return Math.abs(x-0.143)<0.002; }) && LOADOUT_PLATE.bayY>0.28; })()"),
+     'the six loadout icons align with the measured wells on the rebuilt plate');
   /* ---- 0917c: the bonus pickups and the two bombs ---- */
   ok(R("(function(){ var s=String(killDrop); return s.indexOf('bonusDrop(e)')>=0 && s.indexOf('bonusDrop(e)')<s.indexOf('chance(0.18'); })()"),
      'killDrop rolls the score bullets and bombs on their own, before the 18% loot gate');
@@ -209,15 +209,15 @@ module.exports=function testForge(vm,ctxv,ok){
   var df=strip(R("String(drawForge)"));
   ok(/const mL=\(Input\.menuLeft\?Input\.menuLeft\(\):false\), mR=/.test(df) && /const mB=\(Input\.menuBack/.test(df) && /,\s*mS=\(Input\.menuStart/.test(df),
      'every consuming reader is read ONCE into a local before any is acted on');
-  ok(df.indexOf("'pad_x'")>=0 && df.indexOf("'pad_start'")>=0, 'the footer names COMBINE, RE-SPEC and CONTINUE with the pad glyphs');
-  ok(df.indexOf('unlockPanel(pl, UNLOCK_ART.box')>=0, "the six loadout boxes are the plate's own rank bay, the construction Mike approved for the unlock page");
+  ok(df.indexOf('forge_loadout_0918')>=0 && df.indexOf('forgeRespec')>=0, 'the generated plate embeds RE-SPEC and the input remains wired');
+  ok(df.indexOf('forge_loadout_0918')>=0 && df.indexOf('forgeSlotKey')>=0, "the six loadout boxes come from the dedicated Forge plate and show live weapon art");
   ok(R("Object.keys(MENU_BACK).indexOf(GS.FORGE)<0"), 'the Forge is NOT in MENU_BACK - back cancels an element pick, it never leaves the screen');
 
   /* ---- the save ---- */
   var cs=strip(R("String(campSnapshot)")), ca=strip(R("String(campApply)"));
-  ok(cs.indexOf('forge:')>=0 && cs.indexOf('forgeElems:')>=0 && cs.indexOf('loadout:')>=0, 'campSnapshot carries forge, forgeElems and loadout');
-  ok(ca.indexOf('run.forge=')>=0 && ca.indexOf('run.forgeElems=')>=0 && ca.indexOf('run.loadout=')>=0, 'campApply restores all three (optional fields, CAMP_SAVE_VER untouched)');
+  ok(cs.indexOf('forge:')>=0 && cs.indexOf('forgeForms:')>=0 && cs.indexOf('forgeElems:')>=0 && cs.indexOf('loadout:')>=0, 'campSnapshot carries active forge, all forms, elements and loadout');
+  ok(ca.indexOf('run.forge=')>=0 && ca.indexOf('run.forgeForms=')>=0 && ca.indexOf('run.forgeElems=')>=0 && ca.indexOf('run.loadout=')>=0, 'campApply restores every Forge field without invalidating old saves');
   var sr=strip(R("String(startRun)"));
-  ok(/run\.forge=\{\};\s*run\.forgeElems=\{\};\s*run\.loadout=null;/.test(sr), 'a new run starts bare');
-  R("run.forge={}; run.forgeElems={}; run.loadout=null; run.infusion=null; run.weapon=0;");
+  ok(/run\.forge=\{\};\s*run\.forgeForms=\{\};\s*run\.forgeElems=\{\};\s*run\.loadout=null;/.test(sr), 'a new run starts with no active or crafted forms');
+  R("run.forge={}; run.forgeForms={}; run.forgeElems={}; run.loadout=null; run.infusion=null; run.weapon=0;");
 };

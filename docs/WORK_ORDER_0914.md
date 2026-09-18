@@ -1,6 +1,6 @@
 # Bullets of Fury — easiest-to-hardest work order
 
-**151 entries: 128 complete / 7 partial / 16 pending.**
+**156 entries: 133 complete / 7 partial / 16 pending.**
 
 Work in ascending workOrder, an estimate of implementation plus verification difficulty. Respect prerequisites and skip externally blocked items while continuing ready work. Re-rank when investigation changes the estimate; retain IDs and explain the change.
 
