@@ -190,6 +190,22 @@ module.exports=function testForge(vm,ctxv,ok){
      'a geyser erupts to a section of the screen (GEYSER_H) and ends');
   ok(R("(function(){ geysers=[]; for(var i=0;i<9;i++) geyserSpawn(100+i,400,'fire'); var n=geysers.length; geysers=[]; return n===GEYSER_CAP; })()"),
      'geysers are capped');
+  /* ---- 0918b: vents, debris, zone columns, the flipped flamethrower ---- */
+  ok(R("XART._src.efx_debris_0 && XART._src.efx_debris_1"), 'both fire debris sprites are registered');
+  ok(R("(function(){ geysers=[]; var g=geyserSpawn(100,400,'fire'); var ok=!!g && geysers[0]===g; geysers=[]; return ok; })()"), 'geyserSpawn returns the column it raised');
+  ok(R("(function(){ var r=run.stage, b=bossActive; s2Vents=[]; run.stage=3; s2VentT=0; s2VentTick(1/60); var a=s2Vents.length; run.stage=2; bossActive=true; s2VentT=0; s2VentTick(1/60); var c=s2Vents.length; run.stage=r; bossActive=b; s2Vents=[]; fireDebris=[]; return a===0 && c===0; })()"),
+     'mountain vents erupt only on stage 2 and never while the boss is up');
+  ok(R("(function(){ fireDebris=[]; var d=debrisLaunch(0,400,1,0); var vy0=d.vy; debrisTick(1/60); var up=d.vy>vy0; fireDebris=[]; return vy0<0 && up; })()"), 'fire debris is thrown UP and falls under gravity');
+  ok(R("ZONE_N===4 && (function(){ var L=camLeftX(), R2=camRightX(); zoneCols=[]; var c=zoneColumnSpawn(zoneOf(R2-1),'fire',true); var ok=c.i===3 && Math.abs(c.w-(R2-L)/4)<0.01 && c.hostile; zoneCols=[]; return ok; })()"),
+     'the screen is four zones and a zone column fills exactly one');
+  ok(strip(R("String(fztBeamDraw)")).indexOf("efx_geyser_fire")>=0 && strip(R("String(fztBeamDraw)")).indexOf("scale(1,-1)")>=0,
+     "the Furnace's flamethrower is the fire geyser, flipped");
+  ok(strip(R("String(furnaceTick)")).indexOf('furnaceZoneTick')>=0, 'the Furnace pours a zone column');
+  /* ---- 0918c: the boss arena's terrain is dimmed while the boss lives ---- */
+  ok(R("(function(){ var r=run.stage; run.stage=2; var c=_levelCfg(); run.stage=r; return !!c && c.bossDim>0.3 && c.bossDim<0.8; })()"), 'stage 2 opts its boss arena into the terrain dim');
+  ok(strip(R("String(_drawBGCore)")).indexOf('arenaBossDimDraw')>=0, 'the dim is drawn on the TERRAIN pass, under every unit and round');
+  ok(R("(function(){ var b=bossActive, bb=boss, lv=_arenaDimLv; _arenaDimLv=1; bossActive=false; for(var i=0;i<200;i++) arenaBossDimDraw(1/60); var gone=_arenaDimLv===0; _arenaDimLv=lv; bossActive=b; boss=bb; return gone; })()"),
+     'with no live boss the dim eases back out to nothing');
   var df=strip(R("String(drawForge)"));
   ok(/const mL=\(Input\.menuLeft\?Input\.menuLeft\(\):false\), mR=/.test(df) && /const mB=\(Input\.menuBack/.test(df) && /,\s*mS=\(Input\.menuStart/.test(df),
      'every consuming reader is read ONCE into a local before any is acted on');

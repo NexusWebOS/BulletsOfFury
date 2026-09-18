@@ -2066,6 +2066,7 @@ const XART=(function(){
   for(const _e of ['fire','ice','lightning','prism','toxic','kinetic','water','chrome','dark']) X._src['efx_burst_'+_e]='assets/game/fx_0918/efx_burst_'+_e+'.png';
   X._src['efx_burn']='assets/game/fx_0918/efx_burn.png';
   for(const _g of ['fire','water','lightning']) X._src['efx_geyser_'+_g]='assets/game/fx_0918/efx_geyser_'+_g+'.png';
+  X._src['efx_debris_0']='assets/game/fx_0918/efx_debris_0.png'; X._src['efx_debris_1']='assets/game/fx_0918/efx_debris_1.png';
   /* THE WHOLE TITLE MENU, REGENERATED AS ONE SHEET (Mike, 0916: "Regenerate all my other buttons
      here to match the current style of Bullets of Fury and proper reference of ships and pilots
      please. The help button also is too large compared to the rest.").
@@ -3609,7 +3610,7 @@ function _levelCfg(){
        it only needed the mountain to stop being drawn over it. No new art. */
     /* CF_BoFExpansion-Vol.1 (Mike, 0903): 'replace our lava tile in-game with the new animated lava tile'. 8 x 512px seamless frames at the pack's 10 fps; _liquidFrames reads _0.._7. */
     case 2: return {master:'nst2_master', liquid:'nlq3_lava', fill:'#241008', tile:0.5, fps:10,
-                    arenaLiquid:true,continuousBoss:true,plateW:680, h:4080};
+                    arenaLiquid:true,continuousBoss:true,plateW:680, h:4080, bossDim:0.58};
     case 3: return {master:'nst3_master', liquid:'nlq2_ice',     fill:'#0c1c2e', tile:0.5, fps:5,
                     plateW:680, h:4080};   // 0822d: plate rescaled 800x4800 -> 680x4080
     /* 4 CROUCHING MISSILES, HIDDEN DEATH — REORDERED (drop 0801ai).
@@ -4757,6 +4758,28 @@ let _masterSrcY = 0;
 const ARENA_LAVA_SPD = 150;     // px/sec — the ARENA's own rate, deliberately faster than the level
 let _arenaHold = false;
 let _arenaLavaScroll = 0;
+/* 0918c (Mike): "When we get to the boss fight, please darken our tileset ... that makes it easier to see our
+   boss and his projectiles." Stage 2 keeps drawing its own master through the fight (continuousBoss), and the
+   top of that plate is a bright orange lava field - the same colours as the Furnace Tyrant, his fire shield and
+   every round he fires. A stage opts in with `bossDim` on its _levelCfg row. While its real boss is alive a
+   MULTIPLY pass over the TERRAIN (drawn from _drawBGCore, after the ground and before any unit, so the boss,
+   his rounds and the player keep full brightness) takes that share of the level's brightness while keeping its
+   hues and shading - a luminance drop, not a flat overlay. It eases in over ARENA_DIM_T as the boss arrives
+   and back out when he dies, so the victory flyover is bright again. */
+const ARENA_DIM_T=1.6;
+let _arenaDimLv=0, _arenaDimAmt=0;
+function arenaBossDimDraw(dt){
+  const cfg=_levelCfg(); if(cfg && cfg.bossDim) _arenaDimAmt=cfg.bossDim;
+  const live=!!(cfg && cfg.bossDim && typeof bossActive!=='undefined' && bossActive && boss && !boss.dead);
+  const step=(typeof dt==='number' && isFinite(dt) && dt>0 ? Math.min(dt,0.1) : 1/60)/ARENA_DIM_T;
+  _arenaDimLv=clamp(_arenaDimLv+(live?step:-step),0,1);
+  if(_arenaDimLv<=0.001 || !_arenaDimAmt) return;
+  const r=_arenaDimLv, k=1-_arenaDimAmt*r*r*(3-2*r);
+  ctx.save(); ctx.globalCompositeOperation='multiply';
+  ctx.fillStyle='rgb('+Math.round(255*k)+','+Math.round(255*k*0.93)+','+Math.round(255*k*0.9)+')';
+  const W=(typeof worldWidth==='function')?worldWidth():VW;
+  ctx.fillRect(-40,viewFillY(),W+80,viewFillH()); ctx.restore();
+}
 /* STAGE 7 TERRAIN DESPILL (Mike, 0824). The corrected sewer plate already carries real alpha for
    the sludge channels, so those pixels must remain transparent. What is still visible in-game is
    a separate set of OPAQUE purple/magenta edge pixels baked into the masonry and pipework. Clean
@@ -8292,6 +8315,11 @@ function infusionOnHit(e,b,dmg){
        second read as a rhythm of bursts rather than a smear */
     if(typeof efxBurst==='function' && efxClock-(e._efxAt==null?-9:e._efxAt)>0.12){ e._efxAt=efxClock;
       efxBurst(b._inf, e.x+rnd(-(e.w||20)*0.2,(e.w||20)*0.2), e.y+rnd(-(e.h||20)*0.2,(e.h||20)*0.2), 30+lv*9); }
+    /* 0918b: a level IV+ fire / water / lightning KILL may raise that element's ZONE COLUMN - the geyser scaled
+       to fill a quarter of the screen - up through the zone the target died in. One at a time, 4 s apart. */
+    if(e.hp<=0 && lv>=4 && (b._inf==='fire'||b._inf==='water'||b._inf==='lightning') && typeof zoneColumnSpawn==='function'
+       && efxClock-zoneFriendlyAt>ZONE_FRIENDLY_GAP && !zoneCols.some(function(c){ return !c.hostile; }) && Math.random()<(lv>=5?0.16:0.10)){
+      zoneFriendlyAt=efxClock; zoneColumnSpawn(zoneOf(e.x),b._inf,false); }
     /* the geysers Mike named - fire, water, lightning: water's own at level 3, and a SOAKED target
        killed by fire or lightning raises that element's column (steam, or a charged plume) */
     if(e._soaked>0 && e.hp<=0 && lv>=2 && (b._inf==='fire'||b._inf==='lightning')) geyserSpawn(e.x,e.y,b._inf);
@@ -8363,9 +8391,10 @@ let geysers=[];
 const GEYSER_H=360, GEYSER_GROW=1150, GEYSER_LIFE=1.5, GEYSER_CAP=4;
 function geyserSpawn(x,y,kind){
   if(geysers.length>=GEYSER_CAP) geysers.shift();
-  geysers.push({x,y,kind:kind||'water',t:0,life:GEYSER_LIFE,h:0});
+  const g={x,y,kind:kind||'water',t:0,life:GEYSER_LIFE,h:0}; geysers.push(g);
   try{ XART.rdy('efx_geyser_'+(kind||'water')); }catch(_g){ }
   if(typeof shake!=='undefined') shake=Math.max(shake,3);
+  return g;
 }
 function geyserLane(g){
   let w=40;
@@ -8375,7 +8404,10 @@ function geyserLane(g){
 function geyserTick(dt){
   if(!geysers.length) return;
   for(const g of geysers){ g.t+=dt; g.h=Math.min(GEYSER_H, g.h+GEYSER_GROW*dt);
-    if(g.t<g.life){ const lane=geyserLane(g); for(const e of enemies){ if(e.dead||e._dyingT!=null) continue;
+    if(g.t<g.life){ const lane=geyserLane(g);
+      /* 0918b: a stage-2 mountain vent is HOSTILE - its column burns the player, never the enemies */
+      if(g.hostile){ if(!player.dead && typeof playerHit==='function' && Math.abs(player.x-g.x)<lane*0.75 && player.y<g.y && player.y>g.y-g.h) playerHit(); }
+      else for(const e of enemies){ if(e.dead||e._dyingT!=null) continue;
       if(Math.abs(e.x-g.x)<lane+(e.w||20)*0.3 && e.y<g.y && e.y>g.y-g.h){ e._geyT=(e._geyT||0)-dt; if(e._geyT<=0){ e._geyT=0.16;
         if(g.kind==='fire') e._burn=Math.max(e._burn||0,DK_BURN_TIME*0.6);
         hitEnemy(e, g.kind==='lightning'?4:3); } } }
@@ -20526,6 +20558,7 @@ function furnaceTick(b,dt){
     b.x+=(W/2-b.x)*Math.min(1,dt*3); F.arm.left.recoil=F.arm.right.recoil=0;
   } else {
     F.at+=dt; furnaceCombat(b,dt);
+    if(typeof furnaceZoneTick==='function') furnaceZoneTick(b,dt);   /* 0918b */
   }
   // beams and contact hurt; bullets hurt through the ordinary enemy-bullet path
   if(!P.dead && typeof playerHit==='function'){
@@ -20719,8 +20752,14 @@ function fztBeamDraw(q){
   ctx.save(); ctx.translate(q.x,q.y); ctx.rotate(q.a); ctx.imageSmoothingEnabled=false;
   const n=performance.now();
   if(q.kind==='flame'){
-    const im=fztImg('fzt_flame_jet_'+(Math.floor(n/77)%2));
-    if(im){ const w=q.width*2.8*1.25; ctx.drawImage(im,70,0,116,240,-w/2,-8*FZT_S,w,q.len+8*FZT_S); }
+    /* 0918b (Mike): the fire geyser, FLIPPED - its narrow base sits in the muzzle and the column flares out
+       along the beam. The pack's jet stays as the fallback while the strip decodes. */
+    const gk='efx_geyser_fire';
+    if(XART.rdy(gk)){ const g=XART.get(gk), fw=(g.naturalWidth||g.width)/EFX_N, fh=(g.naturalHeight||g.height);
+      const w=q.width*4.2, L=q.len+10*FZT_S, f=Math.floor(n/70)%EFX_N;
+      ctx.scale(1,-1); ctx.drawImage(g,f*fw,0,fw,fh,-w/2,-L+2*FZT_S,w,L); }
+    else { const im=fztImg('fzt_flame_jet_'+(Math.floor(n/77)%2));
+      if(im){ const w=q.width*2.8*1.25; ctx.drawImage(im,70,0,116,240,-w/2,-8*FZT_S,w,q.len+8*FZT_S); } }
   } else {
     const fl=1+Math.sin(n/14)*0.035;
     ctx.globalCompositeOperation='lighter'; ctx.globalAlpha=0.20;
@@ -29251,6 +29290,8 @@ function _newWeaponTick(dt){
         if(Math.abs(dx)>4 && Math.abs(dx)<R && e.y<(_voidBeam.bot!=null?_voidBeam.bot:player.y)){ e.x+=Math.sign(dx)*Math.min(Math.abs(dx),(40+25*(run.infusion.lv|0))*dt); e._voidPull=0.1; } } }
     if(typeof geyserTick==='function') geyserTick(dt);
     if(typeof efxTick==='function') efxTick(dt);   /* 0918 generated effects */
+    if(typeof s2VentTick==='function') s2VentTick(dt);   /* 0918b stage-2 vents + fire debris */
+    if(typeof zoneTick==='function') zoneTick(dt);       /* 0918b quarter-screen zone columns */
     if(typeof voidTick==='function') voidTick(dt);
   }
   /* the charge is driven off the RAW trigger, exactly like falvaChargeTick, so it does not
@@ -32424,7 +32465,8 @@ function beginStage(num){
   if(run) run._fpLevelDone=false;   /* a new level may convert again (0917) */
   if(run){ run._stageCombos=[]; run._forgeShown=false; }
   if(typeof bombReset==='function') bombReset();   /* a fuse never carries into the next stage (0917c) */
-  efxBursts=[]; geysers=[];                         /* nor a burst or a geyser (0918) */   /* and the powers-gained page starts empty (0917b) */
+  efxBursts=[]; geysers=[];                         /* nor a burst or a geyser (0918) */
+  s2Vents=[]; fireDebris=[]; zoneCols=[]; s2VentT=S2VENT.first; _arenaDimLv=0;   /* nor a vent, debris or zone column (0918b) */   /* and the powers-gained page starts empty (0917b) */
   stylish=null;
   stageStats={kills:0,shots:0,hits:0,livesStart:run.lives,scoreStart:run.score,spawned:0,deaths:0,missiles:0,scoreMax:0,
               dmgDealt:0,dmgTaken:0, mslHits:0, spShots:0, spHits:0, spDmg:0, pickups:0, pickupsSeen:0, wpn:{},
@@ -37776,6 +37818,7 @@ function _drawBGCore(dt){
     if(typeof drawClouds==='function') drawClouds(dt);      // cloud layer, above terrain, below units
     // storm dim sits on the TERRAIN, under everything that moves
     if(typeof wfxDimDraw==="function") wfxDimDraw();
+    if(typeof arenaBossDimDraw==='function') arenaBossDimDraw(dt);   // 0918c: the boss arena's terrain, dimmed
     return;
   }
   if(run.stage===1 && ASSETS.ready && drawStageMap(dt)) return;
@@ -72597,6 +72640,7 @@ function efxDraw(){
     const s=Math.max(22,Math.min(58,(e.w||30)*0.8)), f=Math.floor(tt*13+((e.x|0)%7))%EFX_N;
     efxFrame('efx_burn',f,e.x-s/2,e.y-s*0.78,s,s,Math.min(1,e._burn*2.5));
   }
+  s2VentDraw();
   /* geysers: the column erupts UP out of its vent - the source is revealed from the bottom as it grows */
   for(const g of geysers){
     const k='efx_geyser_'+g.kind; if(!XART.rdy(k)) continue;
@@ -72606,11 +72650,161 @@ function efxDraw(){
     ctx.save(); ctx.globalAlpha*=Math.max(0,a); ctx.imageSmoothingEnabled=false;
     ctx.drawImage(im,f*fw,fh-sh,fw,sh,g.x-W/2,g.y-g.h,W,g.h); ctx.restore();
   }
+  zoneDraw();
+  debrisDraw();
   /* bursts */
   for(const b of efxBursts){
     const f=Math.min(EFX_N-1,Math.floor(b.t/EFX_BURST_T*EFX_N));
     efxFrame('efx_burst_'+b.elem,f,b.x-b.s/2,b.y-b.s/2,b.s,b.s,1);
   }
+}
+
+/* ============================================================
+   0918b - STAGE-2 MOUNTAIN VENTS, FIRE DEBRIS, ZONE COLUMNS (Mike)
+   ============================================================ */
+/* The vents: on stage 2 a fire geyser erupts on the SIDE of the screen every few seconds (the mountainsides),
+   0.95 s of warning first - the vent glows and the generated fire starts in it - then a HOSTILE column and
+   five chunks of burning rock thrown up out of it, which arc over and come down on the field. The column and
+   every chunk hurt the player (playerHit, so a roll's or a respawn's i-frames still protect). Off while a
+   boss is up - the Furnace has its own zone column. */
+const S2VENT={warn:0.95, gap:[6.2,10.4], first:4.5, debris:5};
+let s2Vents=[], s2VentT=4.5, fireDebris=[];
+function s2VentDiff(){ const k=(typeof diffKey!=='undefined')?diffKey:'normal'; return k==='easy'?1.4:(k==='hard'||k==='furious'||k==='insanity')?0.8:1; }
+function s2VentTick(dt){
+  debrisTick(dt);
+  for(const v of s2Vents){ v.t+=dt;
+    if(!v.done && v.t>=S2VENT.warn){ v.done=true;
+      const g=geyserSpawn(v.x,v.y,'fire'); if(g) g.hostile=true;
+      for(let i=0;i<S2VENT.debris;i++) debrisLaunch(v.x+rnd(-12,12), v.y-rnd(4,24), -v.side, i*0.07+rnd(0,0.05));
+      try{ if(Audio.SFX.furnaceFlameRelease) Audio.SFX.furnaceFlameRelease(); }catch(_s){ }
+      if(typeof shake!=='undefined') shake=Math.max(shake,6); } }
+  s2Vents=s2Vents.filter(function(v){ return v.t<S2VENT.warn+0.05; });
+  const on=run && run.stage===2 && !(typeof bossActive!=='undefined'&&bossActive) && player && !player.dead
+           && !(typeof spaceWeaponsActive==='function'&&spaceWeaponsActive());
+  if(!on) return;
+  s2VentT-=dt; if(s2VentT>0) return;
+  s2VentT=rnd(S2VENT.gap[0],S2VENT.gap[1])*s2VentDiff();
+  s2VentSpawn(chance(0.5)?-1:1);
+}
+function s2VentSpawn(side,y){
+  const L=camLeftX(), R=camRightX();
+  const v={side:side, x:side<0?L+rnd(24,64):R-rnd(24,64), y:(y!=null?y:rnd(VH*0.62,VH+4)), t:0, done:false};
+  s2Vents.push(v);
+  try{ XART.rdy('efx_geyser_fire'); XART.rdy('efx_burn'); XART.rdy('efx_debris_0'); XART.rdy('efx_debris_1'); }catch(_r){ }
+  try{ if(Audio.SFX.furnaceFlameIgnite) Audio.SFX.furnaceFlameIgnite(); }catch(_s){ }
+  return v;
+}
+function s2VentDraw(){
+  for(const v of s2Vents){ if(v.done) continue;
+    const k=clamp(v.t/S2VENT.warn,0,1), pulse=0.5+0.5*Math.sin(v.t*30);
+    ctx.save(); ctx.globalCompositeOperation='lighter';
+    const r=14+22*k, gr=ctx.createRadialGradient(v.x,v.y,1,v.x,v.y,r);
+    gr.addColorStop(0,'rgba(255,220,120,'+(0.55+0.35*pulse)+')'); gr.addColorStop(0.5,'rgba(255,90,20,'+(0.35+0.2*pulse)+')'); gr.addColorStop(1,'rgba(255,40,0,0)');
+    ctx.fillStyle=gr; ctx.beginPath(); ctx.ellipse(v.x,v.y,r,r*0.55,0,0,Math.PI*2); ctx.fill(); ctx.restore();
+    const s=12+40*k; efxFrame('efx_burn',Math.floor(v.t*14)%EFX_N,v.x-s/2,v.y-s*0.85,s,s,0.6+0.4*k);
+    if(chance(0.6)) particles.push({x:v.x+rnd(-8,8),y:v.y-rnd(0,6),vx:rnd(-0.4,0.4),vy:rnd(-2.6,-1),life:rnd(0.25,0.5),t:0,r:rnd(1.2,2.4),color:chance(0.4)?'#ffd27a':'#ff6a1e'});
+  }
+}
+/* fire debris: its own list, because enemy rounds have no gravity. Per-frame units like every other round. */
+const DEBRIS_G=0.25, DEBRIS_CAP=24;
+function debrisLaunch(x,y,dir,delay){
+  if(fireDebris.length>=DEBRIS_CAP) fireDebris.shift();
+  const d={x:x,y:y,vx:dir*rnd(0.5,2.9),vy:-rnd(8.6,12.2),rot:0,spin:rnd(-0.2,0.2),v:chance(0.5)?1:0,s:rnd(20,30),r:9,delay:delay||0,t:0,dead:false};
+  fireDebris.push(d); return d;
+}
+function debrisTick(dt){
+  if(!fireDebris.length) return;
+  const k=dt*60;
+  for(const d of fireDebris){ if(d.dead) continue;
+    if(d.delay>0){ d.delay-=dt; continue; }
+    d.t+=dt; d.vy+=DEBRIS_G*k; d.x+=d.vx*k; d.y+=d.vy*k; d.rot+=d.spin*k;
+    if(chance(0.7)) particles.push({x:d.x+rnd(-3,3),y:d.y+rnd(-3,3),vx:rnd(-0.3,0.3),vy:rnd(-0.6,0.2),life:rnd(0.18,0.34),t:0,r:rnd(1.2,2.6),color:chance(0.5)?'#ff7a1e':'#ffd070'});
+    if(!player.dead && typeof playerHit==='function' && Math.hypot(player.x-d.x,player.y-d.y)<d.r+8){
+      playerHit(); d.dead=true; if(typeof explode==='function') explode(d.x,d.y,14,'orange'); }
+    if(d.y>VH+60) d.dead=true;
+  }
+  fireDebris=fireDebris.filter(function(d){ return !d.dead; });
+}
+function debrisDraw(){
+  for(const d of fireDebris){ if(d.dead||d.delay>0) continue;
+    const key='efx_debris_'+d.v;
+    if(!XART.rdy(key)){ ctx.save(); ctx.fillStyle='#ff6a1e'; ctx.beginPath(); ctx.arc(d.x,d.y,5,0,Math.PI*2); ctx.fill(); ctx.restore(); continue; }
+    const im=XART.get(key);
+    ctx.save(); ctx.translate(d.x,d.y); ctx.rotate(Math.atan2(d.vy,d.vx)-Math.PI*0.75); ctx.imageSmoothingEnabled=false;
+    ctx.drawImage(im,-d.s/2,-d.s/2,d.s,d.s); ctx.restore();
+  }
+}
+
+/* ZONE COLUMNS: the screen as four horizontal zones (Mike: "imagining the screen has 4 horizontal zones"),
+   and a geyser scaled up to fill one of them, top to bottom. The zones are the CAMERA's quarters, measured at
+   the moment the column is called, and the column stays at that world x. A hostile column warns for ZONE_WARN
+   (the zone lit and its edges flashing), then POURS DOWN from the top; a friendly one rises from the bottom
+   after a short beat. */
+const ZONE_N=4, ZONE_WARN=1.05, ZONE_LIFE=1.15, ZONE_GROW=0.24, ZONE_FRIENDLY_GAP=4;
+const ZONE_COL={fire:'#ff5a1e', water:'#5fd0ff', lightning:'#ffe23a'};
+let zoneCols=[], zoneFriendlyAt=-9;
+function zoneBounds(i){ const L=camLeftX(), R=camRightX(), w=(R-L)/ZONE_N; return {x0:L+i*w, w:w}; }
+function zoneOf(x){ const L=camLeftX(), R=camRightX(); return clamp(Math.floor((x-L)/((R-L)/ZONE_N)),0,ZONE_N-1); }
+function zoneColumnSpawn(i,kind,hostile){
+  const z=zoneBounds(i), c={i:i, x0:z.x0, w:z.w, kind:kind, hostile:!!hostile, t:0, warn:hostile?ZONE_WARN:0.3, life:ZONE_LIFE, boom:false};
+  zoneCols.push(c);
+  try{ XART.rdy('efx_geyser_'+kind); }catch(_r){ }
+  if(hostile){ try{ if(Audio.SFX.alertDanger) Audio.SFX.alertDanger(); else if(Audio.SFX.furnaceFlameIgnite) Audio.SFX.furnaceFlameIgnite(); }catch(_s){ } }
+  return c;
+}
+function zoneReach(c){ return clamp((c.t-c.warn)/ZONE_GROW,0,1)*(VH+20); }
+function zoneTick(dt){
+  if(!zoneCols.length) return;
+  for(const c of zoneCols){ c.t+=dt;
+    const live=c.t>=c.warn && c.t<c.warn+c.life; if(!live) continue;
+    if(!c.boom){ c.boom=true; if(typeof shake!=='undefined') shake=Math.max(shake,c.hostile?9:6);
+      try{ const f=c.kind==='lightning'?Audio.SFX.enemyElectricBolt:Audio.SFX.furnaceFlameRelease; if(f) f(); }catch(_s){ } }
+    const reach=zoneReach(c), x1=c.x0+c.w;
+    if(c.hostile){
+      if(!player.dead && typeof playerHit==='function' && player.x>c.x0+4 && player.x<x1-4 && player.y<reach) playerHit();
+    } else {
+      for(const e of enemies){ if(!e||e.dead||e._dyingT!=null) continue;
+        if(e.x<c.x0||e.x>x1||e.y<VH+20-reach) continue;
+        e._zoneT=(e._zoneT||0)-dt; if(e._zoneT>0) continue; e._zoneT=0.18;
+        if(c.kind==='fire') e._burn=Math.max(e._burn||0,DK_BURN_TIME*0.7);
+        if(c.kind==='water') e._soaked=Math.max(e._soaked||0,2.5);
+        hitEnemy(e, c.kind==='lightning'?6:5); }
+    }
+    if(chance(0.8)) particles.push({x:rnd(c.x0+8,x1-8),y:c.hostile?rnd(0,reach):rnd(VH-reach,VH),vx:rnd(-0.6,0.6),vy:c.hostile?rnd(1,3):rnd(-3,-1),life:rnd(0.2,0.45),t:0,r:rnd(1.5,3),color:chance(0.4)?'#ffffff':ZONE_COL[c.kind]});
+  }
+  zoneCols=zoneCols.filter(function(c){ return c.t<c.warn+c.life+0.25; });
+}
+function zoneDraw(){
+  for(const c of zoneCols){
+    const col=ZONE_COL[c.kind]||'#ffffff', x1=c.x0+c.w;
+    if(c.t<c.warn){
+      /* the telegraph: the zone lit and its edges flashing, faster as it closes */
+      const k=c.t/c.warn, on=Math.floor(c.t*(6+14*k))%2===0;
+      ctx.save(); ctx.globalAlpha*=(c.hostile?0.10:0.06)+0.10*k; ctx.fillStyle=col; ctx.fillRect(c.x0,0,c.w,VH+20);
+      ctx.globalAlpha=on?0.85:0.35; ctx.fillStyle=col; ctx.fillRect(c.x0,0,2,VH+20); ctx.fillRect(x1-2,0,2,VH+20); ctx.restore();
+      continue;
+    }
+    const k='efx_geyser_'+c.kind; if(!XART.rdy(k)) continue;
+    const im=XART.get(k), fw=(im.naturalWidth||im.width)/EFX_N, fh=(im.naturalHeight||im.height);
+    const H=VH+40, W=c.w*1.5, cx=c.x0+c.w/2, reach=zoneReach(c), u=c.t-c.warn;
+    const a=Math.max(0,Math.min(1,(c.life+0.25-u)/0.35)), f=Math.floor(u*14)%EFX_N;
+    ctx.save(); ctx.globalAlpha*=a; ctx.imageSmoothingEnabled=false;
+    ctx.beginPath();
+    if(c.hostile) ctx.rect(c.x0-W,0,c.w+W*2,reach); else ctx.rect(c.x0-W,VH+20-reach,c.w+W*2,reach);
+    ctx.clip();
+    if(c.hostile){ ctx.translate(cx,-10); ctx.scale(1,-1); ctx.drawImage(im,f*fw,0,fw,fh,-W/2,-H,W,H); }
+    else ctx.drawImage(im,f*fw,0,fw,fh,cx-W/2,VH+20-H,W,H);
+    ctx.restore();
+  }
+}
+/* the Furnace Tyrant pours a fire column down the zone the player is in, every 8-11 s once it is fighting */
+function furnaceZoneTick(b,dt){
+  const F=b._fz; if(!F||b.dead||F.phase==='intro') return;
+  if(F.zoneT==null) F.zoneT=6;
+  F.zoneT-=dt; if(F.zoneT>0) return;
+  if(zoneCols.some(function(c){ return c.hostile; })) return;
+  F.zoneT=rnd(8,11)*s2VentDiff();
+  zoneColumnSpawn(zoneOf(player.x),'fire',true);
 }
 
 function drawGameOver(dt){

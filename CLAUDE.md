@@ -5436,3 +5436,56 @@ burst's 4th frame). Low-saturation mid-grey is punched to alpha - except on CHRO
 ⚠ **CHROME COULD NOT BE ANIMATED CLEANLY**: both renders (grey matte; magenta matte + Pro removal + a negative
 prompt) turned the scattering shards into a solid silver DISC from frame 4. Its strip is the first render's
 three good frames plus the scatter frame flung outward and fading. Worth a regeneration if Mike dislikes it.
+
+## 0918b - the bursts un-clipped, the geyser without its vent, stage-2 vents, zone columns, the Furnace's flame
+
+Mike: "if these are our decal effects, they were spliced incorrectly and cut off ... this fire geyser is awesome,
+we can use these on stage 2 like geysers that ... erupt on the sides of the mountains and launch fire debris up in
+the air, then come flying down and can damage us ... remove the geyser bottom effect and just use the fire
+animation, you can use that flipped for the stage boss's flamethrower and ... scaling it up 200% to be like a
+screen fill 1/4th section ... 4 horizontal zones ... Same with the other effects too."
+
+**Bursts**: all nine re-animated at `edge_margin` 25 (the tool's maximum) and STILL touched the cell edge on
+frames 2-4 - an explosion grows to fill whatever cell it is given. So `fx_install_0918.py` now softens instead of
+re-rolling: a circular alpha vignette (0.36 -> 0.5 of the cell) on every burst frame, the last two frames faded
+(0.62 / 0.28), the grey matte punched on all nine (chrome with a narrow 0.40-0.62 band so its silver survives).
+Worst edge alpha is now 0 on all nine. The chrome re-render is clean, so `chrome_strip`'s assembly no longer runs.
+**Geysers**: the rock vent rows are cut (fire 20 / water 6 / lightning 12) and the new base fades in over 18 rows.
+**Stage-2 vents** (`s2VentTick`/`s2VentSpawn`, stage 2 only, never while a boss is up): every 6.2-10.4 s x
+difficulty, a vent 24-64 px in from a camera edge glows for 0.95 s (the generated `efx_burn` growing in it), then a
+HOSTILE geyser (`g.hostile` - geyserTick hurts the player in 0.75 x its lane, never enemies) and five chunks of
+`efx_debris_0/1` (own list `fireDebris` - enemy rounds have no gravity - per-frame units, g 0.25, drawn rotated to
+their velocity) thrown toward the field; a chunk hurts on contact. `playerHit`, so i-frames still protect.
+**Zone columns** (`zoneColumnSpawn(i,kind,hostile)`): the CAMERA split into four (measured: the live camera is
+480 wide here, so a zone is 120 - a quarter of what is on screen, whatever the world width), the geyser drawn at
+1.5x the zone's width and full screen height, clipped to how far it has grown. Hostile: 1.05 s telegraph (the zone
+lit, edges flashing faster), then it POURS DOWN (flipped) and hurts the player in the zone. Friendly: rises from
+the bottom after 0.3 s and hits enemies every 0.18 s (fire burns, water soaks). The Furnace Tyrant pours one on the
+player's zone every 8-11 s x difficulty (`furnaceZoneTick`); a level IV+ fire / water / lightning KILL raises a
+friendly one (10% / 16% at V, one at a time, 4 s apart).
+**The Furnace's flamethrower** is `efx_geyser_fire` flipped in `fztBeamDraw` (base in the muzzle, 4.2 x beam width,
+wider than the 1.25 x hit lane); the pack's jet is the decode fallback.
+⚠ **A ZONE IS FIXED IN WORLD SPACE WHEN IT IS CALLED**, so when the camera pans it slides on screen with the ground
+under it - its damage and its picture stay together. The probe's first cut placed its test unit relative to the
+CURRENT camera after moving the player, put it outside the zone, and read "the friendly column does nothing".
+⚠ **COUNT A WARNING IN FRAMES BEFORE STEPPING PAST IT**: 0.95 s is 57 frames; the first probe stepped 58 and
+measured a column one frame old (38 px) as a failed eruption.
+`probe_fx_0918b.py` 21/0 in real Chromium (bursts 0 edge alpha; vent warns, erupts to 360 px, burns the player 20
+hits, five debris; a chunk falling on the player hurts; zone warns harmless, pours, spares the next zone; water
+column hits + soaks; a level-V fire kill raises one; the Furnace flame draws the geyser 41/41 frames and it pours a
+zone column; 0 errors). Frames `docs/proofs/fx_0918b/`.
+
+## 0918c - the stage-2 boss arena is dimmed so the Furnace and his rounds read
+
+Mike: "When we get to the boss fight, please darken our tileset ... that makes it easier to see our boss and his
+projectiles." `bossDim:0.58` on stage 2's `_levelCfg` row; `arenaBossDimDraw` runs from `_drawBGCore` right after
+the terrain (after `wfxDimDraw`, before any unit), a MULTIPLY fill that keeps the lava's hues and shading and takes
+58% of its brightness, easing in over 1.6 s while the real boss is alive and back out when he dies. Measured on
+the live fight: bed luminance 46.8 -> 23.0. Any stage opts in with the same field.
+⚠ **STAGE 2's FIGHT IS NOT THE arenaLiquid BRANCH.** Its row carries `continuousBoss:true`, which skips the arena
+block entirely - the lava-crack field under the Furnace is the TOP OF THE MASTER, not the `nlq3_lava` bed. The
+first cut hooked the arena branch and the probe measured 0 calls. `drawLevelMaster` also has several return
+paths, which is why the hook sits at its one caller instead.
+⚠ **`probe_furnace_0912t.py` IS STALE**: it fails 9 on the committed tree (6 here) - its phase script predates the
+later Furnace changes (rollerball, core). Not a 0918b/c regression; needs its own pass.
+`probe_arena_dim_0918c.py` 6/0 (dim on the live arena, 49% bed luminance, eases out with no boss, 0 errors).
