@@ -13268,8 +13268,11 @@ function _planSorted(P,stageNum){
    Each stage receives a distinct finished palette that suits its biome, while its shields,
    predictive strafe, incoming-fire roll and aimed volleys come from the existing ELITEX engine.
    The flag is also the single future reward boundary for Continue Up eligibility. */
+/* Mike 0918, on the stage-1 miniboss: "theres this elite ship with a shield, remove it." The Hard ace lands at
+   43% of stage 1's plan (Furious adds a second at 71%) - right on top of the Razorback fight, where it reads as
+   the miniboss's helper. Stage 1 fields NO difficulty ace on any difficulty; every other stage keeps its row. */
 const DIFFICULTY_ELITE_STAGE={
-  1:['razorback','furytalon'],2:['emberwing','furytalon'],3:['glacierlance','tempest'],
+  2:['emberwing','furytalon'],3:['glacierlance','tempest'],
   4:['furytalon','razorback'],5:['voidreaver','nighthammer'],6:['tempest','glacierlance'],
   7:['ironserpent','voidreaver'],8:['nighthammer','solarwarden'],9:['solarwarden','voidreaver']
 };
