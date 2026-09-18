@@ -116,7 +116,23 @@ def main():
             ok(seen['beam'], 'Hard: a thruster charged and fired the one-third-screen beam')
         s = until(lambda s: s['st'] == 'away', 600)
         ok(s['st'] == 'away' and s['cy'] < -100, 'the carrier climbed away off screen (cy %d)' % s['cy'])
-        step(120); s = st()
+        esc = pg.evaluate("() => boss._whv.jets.map(e => ({sh: !!e._esh, hp: e.hp}))")
+        ok(esc and not any(x['sh'] for x in esc), 'Mike 0918: the escorts carry NO shield (%d jets)' % len(esc))
+        pg.evaluate("() => { window.__eb=0; window.__seenB=new WeakSet(); }")
+        dives = 0; maxdiv = 0; seen = set()
+        for _ in range(110):
+            step(3)
+            d = pg.evaluate("""() => { let n=0, ids=[]; for(const e of boss._whv.jets) if(e&&!e.dead&&e._hwD){ if(e._hwD.st!=='climb') n++; ids.push(e._hwSlot+':'+e._hwD.st); }
+                for(const q of eBullets) if(q&&q.kind==='dart'&&!window.__seenB.has(q)){ window.__seenB.add(q); window.__eb++; }
+                return {n:n, ids:ids, eb:window.__eb}; }""")
+            maxdiv = max(maxdiv, d['n'])
+            for x in d['ids']:
+                if x.endswith(':run'): seen.add(x.split(':')[0])
+            if d['n'] and not any(c[0] == 'dive' for c in caps): shot('03b_dive.png', 'dive')
+        s = st()
+        ok(len(seen) >= 2, 'the squadron takes strafing dives (%d different jets dived)' % len(seen))
+        ok(maxdiv <= 1, 'one dive at a time (peak %d)' % maxdiv)
+        ok(d['eb'] >= 12, 'the escorts fire aimed bursts (%d rounds)' % d['eb'])
         ok(s['st'] == 'away', 'it waits while escorts live (%d alive)' % s['jets'])
         shot('03_escorts.png', 'escorts on their own')
         pg.evaluate("() => { for(const e of boss._whv.jets.slice()) if(!e.dead) killEnemy(e); }")

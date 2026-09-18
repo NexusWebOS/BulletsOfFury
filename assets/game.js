@@ -12642,7 +12642,7 @@ const SHIPS=[];
       c.w=X.w; c.h=X.h; c.hp=c._maxhp=Math.ceil(X.hp*((typeof DIFF!=='undefined'&&DIFF.eHp)||1)); c.score=X.score;
       c.vy=0; c.pattern='elitex'; c._elx=K; c.art=type; c._foot=1.0;    // one trimmed 256 cell, not a uniform-canvas roster frame
       c.shoots=false; c.fk=null; c.dropOk=true; c._dieDur=0.52;
-      if(typeof enemyShieldEquip==='function') enemyShieldEquip(c, X.shield, Math.ceil(c.hp*X.sh));
+      if(X.shield&&typeof enemyShieldEquip==='function') enemyShieldEquip(c, X.shield, Math.ceil(c.hp*X.sh));   // hivewing carries none (Mike 0918)
       break;
     }
     case 'talon': case 'hell': case 'cdisc': case 'spiral': {
@@ -37023,7 +37023,7 @@ function updateOverlordX(b, dt){
    the same shape as the Doomsday Carrier's bays that Mike asked for.
 
    Art: assets/game/bosses/skycarrier/ (SpriteCook 0918, palette-locked, dither off). The escort
-   is a NEW ELITEX row, 'hivewing', so it inherits the aces' shield, strafe, roll and volley.
+   is a NEW ELITEX row, 'hivewing', with NO shield (Mike 0918) and its own elite squadron pattern (hivewingTick).
    The ace's barrel roll and somersault are derived from its authored TOP and BELLY views by
    foreshortening between them - generate the views, derive the rotation (0906y).
    ============================================================ */
@@ -37071,7 +37071,8 @@ function whvLaunchJet(b){
   const W=b._whv, d=whvPartPos(b,'door'), i=W.launched++;
   const e=spawnEnemy('xelite_hivewing', d.x+((i%3)-1)*14, d.y+6, {});
   if(!e)return;
-  e._et=i*1.37; e.dropOk=(W.launched===W.jetN); e._whvEscort=true; e.vy=0;
+  e._et=i*1.37; e.dropOk=(W.launched===W.jetN); e._whvEscort=true; e.vy=0; e._hwSlot=i; e._hwN=W.jetN;
+  e._hwDive=rnd(2.2,3.4)+i*0.9;   // staggered, so the squadron takes its dives in turn
   W.jets.push(e);
   if(typeof fxBurst==='function')fxBurst(d.x,d.y+10,26,{color:'#9fd8ff',rings:1,sparks:6});
   whvSfx('launch',.8); shake=Math.max(shake,3);
@@ -52651,10 +52652,54 @@ const ELITEX = {
   solarwarden: {hp:210, w:56, h:56, score:5000, band:0.28, spd:64,  shield:'gold',    sh:0.65, vol:4, gap:0.08, cd:[1.2,1.7], kind:'xorb_solar'},
   nighthammer: {hp:220, w:60, h:60, score:5200, band:0.24, spd:58,  shield:'prism',   sh:0.60, vol:5, gap:0.05, cd:[1.4,1.9], kind:'xorb_antimatter'},
   /* the WARHIVE's launched escorts (0918): lighter than a stage ace - six to eight come out of one bay */
-  hivewing:    {hp:52,  w:56, h:62, score:1400, band:0.58, spd:96,  shield:'crimson', sh:0.35, vol:3, gap:0.12, cd:[1.3,1.9], kind:'dart'},
+  /* Mike 0918: "do not use shields on our elite jets here ... elite, I meant their patterns, attack speed and styling".
+     So NO shield, and the elite part is hivewingTick: squadron slots, fast aimed bursts, one strafing dive at a time. */
+  hivewing:    {hp:60,  w:56, h:62, score:1400, band:0.54, spd:150, shield:null,      sh:0,    vol:3, gap:0.07, cd:[0.9,1.3], kind:'dart'},
 };
+/* THE HIVEWING SQUADRON (Mike 0918) - elite by pattern, speed and styling, not by armour.
+   - a SLOT in a loose staggered line that tracks the player's column and weaves, so the squadron reads as one unit
+   - quick aimed 3-round bursts
+   - a STRAFING DIVE, one jet at a time: a 0.4s nose-flash tell, then a committed run down the vector to where the player
+     WAS, firing along its heading and trailing smoke, then a climb back to its slot
+   - it rolls out of rounds climbing into it, faster than the stage aces do */
+function hivewingDiving(){ for(const o of enemies) if(o&&o._elx==='hivewing'&&!o.dead&&o._hwD&&o._hwD.st!=='climb') return true; return false; }
+function hivewingTick(e,dt,X){
+  e._et=(e._et||0)+dt; const W=worldWidth(), fm=(DIFF&&DIFF.eFire)||1;
+  if(e._rollT!=null){ e._rollT+=dt; e.x+=e._rollDir*230*dt; if(e._rollT>=EL8_ROLL) e._rollT=null; }
+  const D=e._hwD;
+  if(D){ D.t+=dt;
+    if(D.st==='tell'){ e._muz=0.12; e._faceAng=Math.PI;
+      if(D.t>=0.4){ D.st='run'; D.t=0; D.a=Math.atan2(player.y-e.y,player.x-e.x); D.fcd=0; (Audio.SFX.whip||function(){})(); } }
+    else if(D.st==='run'){
+      e.x+=Math.cos(D.a)*380*dt; e.y+=Math.sin(D.a)*380*dt;
+      D.fcd-=dt; if(D.fcd<=0){ D.fcd=0.075; eShootT(e.x,e.y+e.h*0.35,D.a,5.2,'dart'); e._muz=0.1; }
+      if(typeof addTrail==='function'&&Math.random()<0.8) addTrail(e.x+rnd(-6,6),e.y-e.h*0.42,'#ff4a3a','jet');
+      if(D.t>=0.62||e.y>VH*0.80){ D.st='climb'; D.t=0; D.x0=e.x; D.y0=e.y; } }
+    else { const u=clamp(D.t/0.9,0,1), k=u*u*(3-2*u), sx=D.x0+(hivewingSlotX(e,X)-D.x0)*k, sy=D.y0+(VH*X.band-D.y0)*k;
+      e.x=sx; e.y=sy; if(u>=1){ e._hwD=null; e._hwDive=rnd(4.2,6.0); } }
+    e.x=clamp(e.x,28,W-28); return;
+  }
+  const ty=VH*X.band+((e._hwSlot|0)%2?22:-6);
+  if(e.y<ty-2) e.y+=X.spd*1.8*dt;
+  else { e.x+=clamp(hivewingSlotX(e,X)-e.x,-X.spd*dt,X.spd*dt); e.y=ty+Math.sin(e._et*2.1+(e._hwSlot|0))*9; }
+  e.x=clamp(e.x,28,W-28);
+  if(e._rollT==null) for(const b of pBullets){ if(b.dead) continue;
+    if(Math.abs(b.x-e.x)<e.w*0.7&&b.y>e.y&&b.y-e.y<100&&b.vy<0){ if(Math.random()<0.7) el8Roll(e,b.x<e.x?1:-1); break; } }
+  if(e.y<ty-6) return;
+  if(e._hwBurst>0){ e._hwBT-=dt; if(e._hwBT<=0){ e._hwBurst--; e._hwBT=X.gap; eShootT(e.x,e.y+e.h*0.30,e._hwBA,4.4,X.kind); e._muz=0.1; } }
+  else if((e._fcd=(e._fcd==null?rnd(X.cd[0],X.cd[1]):e._fcd)-dt)<=0){
+    e._fcd=rnd(X.cd[0],X.cd[1])/fm; e._hwBurst=X.vol; e._hwBT=0; e._hwBA=aimPlayer(e.x,e.y,4.4); }
+  e._hwDive=(e._hwDive==null?3:e._hwDive)-dt;
+  if(e._hwDive<=0&&e._rollT==null){ if(hivewingDiving()) e._hwDive=0.6; else e._hwD={st:'tell',t:0}; }
+}
+function hivewingSlotX(e,X){
+  const n=e._hwN||6, i=(e._hwSlot|0), off=(i-(n-1)/2)*54;
+  const T=(typeof targetShip==='function')?targetShip(e.x,e.y):player;
+  return T.x*0.55+(camLeftX()+VW/2)*0.45+off+Math.sin(e._et*1.4+i*0.8)*34;
+}
 function elitexTick(e, dt){
   const K=e._elx, X=ELITEX[K]; if(!X) return;
+  if(K==='hivewing'){ hivewingTick(e,dt,X); return; }
   e._et=(e._et||0)+dt; const W=worldWidth();
   /* the roll is elite8's: it MOVES the ship, which is what makes it a dodge */
   if(e._rollT!=null){ e._rollT+=dt; e.x+=e._rollDir*170*dt; if(e._rollT>=EL8_ROLL){ e._rollT=null; } }

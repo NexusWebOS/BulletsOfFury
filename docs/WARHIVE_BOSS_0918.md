@@ -25,7 +25,7 @@ inspired by these designs and stage 6's enemy roster."* So every plate below is 
 | stage slot | `STAGES` stage 6 `boss:'warhive'` — `'doomsdaycarriermk2'` restores the Mk II fight, which is kept whole and still spawns by kind |
 | rig | `warhiveInit / warhiveTick / warhiveDraw / warhiveHitTest / warhiveDamage / warhiveRetinaTargets`, all `whv*` helpers, placed just above `updateBoss` |
 | hooks | `spawnBoss` switch, top of `updateBoss`, top of `drawBossInner`, `bossHitTest`, `hitBoss` (beside the hammer), `bossHealthVisible`, `retinaBossTargets`, the boss-warning music line, `drawBoss` fade |
-| escort | `ELITEX.hivewing` + `case 'xelite_hivewing'` + `ENEMY_ART.xelite_hivewing` — inherits the aces' shield, strafe, incoming-fire roll and aimed volleys |
+| escort | `ELITEX.hivewing` + `case 'xelite_hivewing'` + `ENEMY_ART.xelite_hivewing`, driven by its own `hivewingTick` — NO shield (Mike 0918) |
 | art | `assets/game/bosses/skycarrier/` (25 PNGs), registered at the top of game.js beside the Tempest |
 | probe | `_BUILD_SOURCE/probe_warhive_0918.py --diff normal|hard` — Normal 19/19, Hard 24/24, 0 errors |
 | proofs | `docs/proofs/warhive_0918/{normal,hard}/` + `hard/_beam.png` |
@@ -107,11 +107,24 @@ a flash), and the hull goes out.
 - **Death**: the player's own death mirrored — a spin-out with explosions anchored to the hull for
   2.4 s, then the crash (seven blasts, three shock rings), then the whiteout.
 
+## The escorts — elite by pattern, not armour (Mike 0918)
+
+*"Please do not use shields on our elite jets here, when I meant elite, I meant their patterns, attack speed and
+styling is considered elite."* So `hivewing` has no shield (60 HP ×DIFF) and its own `hivewingTick`:
+
+- **Squadron slots.** Each jet holds a slot in a staggered two-row line 54 px apart. The line tracks
+  a blend of the player's column and the screen centre, and weaves.
+- **Fast aimed bursts.** 3 rounds 0.07 s apart at 4.4 px/frame, every 0.9–1.3 s ÷ `DIFF.eFire`.
+- **Strafing dives, one at a time.**
+  - A 0.4 s nose-flash tell comes first.
+  - Then a committed run at 380 px/s down the vector to where the player WAS, firing along its
+    heading every 0.075 s and trailing smoke.
+  - The dive stops at 80% of the screen height, then the jet climbs back to its slot.
+  - Dives are staggered by slot, and `hivewingDiving()` holds the others off while one is running.
+- **Faster evasive roll** (230 px/s) out of rounds climbing into it.
+
 ## Known / for Mike
 
-- The escorts carry the `crimson` enemy shield. With 6–8 on screen the red rings dominate the frame
-  (`docs/proofs/warhive_0918/hard/03_escorts.png`). Another family (`hex`, `ion`) or no shield is one
-  word on the `ELITEX.hivewing` row.
 - Carrier hull contact hurts the player, like any boss body.
 - Numbers to tune after play: thruster HP 520, hold windows 3.6/5.2 s, ace roll chance 0.6/0.8, ace
   missile cadence 6–8 s.
