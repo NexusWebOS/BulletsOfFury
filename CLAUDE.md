@@ -5489,3 +5489,14 @@ paths, which is why the hook sits at its one caller instead.
 ⚠ **`probe_furnace_0912t.py` IS STALE**: it fails 9 on the committed tree (6 here) - its phase script predates the
 later Furnace changes (rollerball, core). Not a 0918b/c regression; needs its own pass.
 `probe_arena_dim_0918c.py` 6/0 (dim on the live arena, 49% bed luminance, eases out with no boss, 0 errors).
+
+## 0918d - Enter on the arcade opener opened the PAUSE MENU
+
+Found by playing the build in the browser pane with real keys. `updatePlay` has no state gate, and the opener's live
+gameplay cuts (and the attract demo) drive it - so its `pauseTapped() -> setState('paused')` ate the Enter that should
+skip the opener, and a first-time player pressing START landed in RESUME / RETURN TO MAIN MENU over the opener. The
+pause is now refused while `state` is OPENER or ATTRACT. `probe_opener_0912a` never saw it because it skips with a
+key only while the opener is on a still beat, never during a gameplay cut.
+⚠ **THE BROWSER PANE'S `key` ACTION NAMED "Return" SENDS AN EMPTY `e.key`** - the game ignores it and it reads as a
+dead menu. Use "Enter". And the pane runs the game at ~22 fps; read `state` with javascript_tool rather than
+trusting a screenshot taken between frames.

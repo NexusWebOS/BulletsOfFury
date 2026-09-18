@@ -33301,7 +33301,10 @@ function updatePlay(dt){
   if(_seatHalt){ setState(GS.CONTINUE); return; }
   /* either seat's START pauses - in co-op the player who is not holding the pad still has to be
      able to stop the game. */
-  if(pauseTapped()){ setState('paused'); return; }
+  /* ⚠ updatePlay HAS NO STATE GATE: the arcade opener's live cuts and the attract demo drive it too, and there
+     START is "skip", not "pause". Without this the Enter that should skip the opener opened the real pause
+     menu over it (found playing the build in the browser, 0918d). */
+  if(state!==GS.OPENER && state!==GS.ATTRACT && pauseTapped()){ setState('paused'); return; }
   encounterClockTick(boss,bossActive,dt);
   encounterClockTick(subBoss,subBossActive,dt);
 
