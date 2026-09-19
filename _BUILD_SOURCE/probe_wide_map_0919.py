@@ -26,4 +26,3 @@ try:
   print(json.dumps({'before':before,'after':after,'errors':errors}))
   browser.close()
 finally:stop()
-
