@@ -1,8 +1,8 @@
 # Bullets of Fury — request checklist
 
-Updated 2026-09-18. **176 entries: 141 complete / 7 partial / 28 pending.**
+Updated 2026-09-19. **176 entries: 143 complete / 7 partial / 26 pending.**
 
-**35 remain unfinished.** 10 depend on SpriteCook production assets; 0 needs a model-name decision. These are included in the totals.
+**33 remain unfinished.** 10 depend on SpriteCook production assets; 0 needs a model-name decision. These are included in the totals.
 
 Consolidated requests in this conversation; superseded variants folded into the latest request. Rows count deliverables, not effort or percent of development time.
 
@@ -208,10 +208,10 @@ Mike selected furyship_somersault_13.png and approved image_gen for its replacem
 - [x] **UI-16 · Complete** — Generate matching neutral mouse, red left-click, red right-click, mouse-wheel, Spacebar and R input icons; use the graphics in Help and live binding displays. [Evidence](INPUT_PROMPTS_0915.md).
 - [x] **UI-17 · Complete** — Use an authored Forge/loadout plate with Fury Points and embedded RE-SPEC plus a four-row Weapon Found plate that announces real weapon systems separately from boss powers. [Evidence](WEAPON_FORGE_REPAIR_0918.md).
 - [ ] **UI-18 · Pending** — Stage-clear screen: keep achievement notices and Fury Point conversion clear of the sign-off, password and Continue areas at every supported aspect ratio. [Evidence](PLAYTEST_REPAIR_QUEUE_0918.md).
-- [ ] **UI-19 · Pending** — Loadout arsenal: add D-pad/controller paging with generated control prompts and stronger selected-row/combination glow before equipping. [Evidence](PLAYTEST_REPAIR_QUEUE_0918.md).
+- [x] **UI-19 · Complete** — Loadout arsenal: add D-pad/controller paging with generated control prompts and stronger selected-row/combination glow before equipping. [Evidence](LOADOUT_CATALOG_0919.md).
 - [ ] **UI-20 · Pending** — Pilot Select: restore the deliberate arcade reveal sequence so identity and affiliation type first, then each stat bar fills separately with synchronized sounds; preserve the clean GOOD LUCK pilot-and-ship launch card. [Evidence](PLAYTEST_REPAIR_QUEUE_0918.md).
 - [ ] **UI-21 · Pending** — Stats accuracy and fit: correct the BULLETS FIRED metric/value mismatch and keep long labels and values inside their authored bays. [Evidence](PLAYTEST_REPAIR_QUEUE_0918.md).
-- [ ] **UI-22 · Pending** — Loadout catalog readability: enlarge or page the combination cells and display the selected combination name/price/state so opacity alone is not the only locked/unlocked cue. [Evidence](PLAYTEST_REPAIR_QUEUE_0918.md).
+- [x] **UI-22 · Complete** — Loadout catalog readability: enlarge or page the combination cells and display the selected combination name/price/state so opacity alone is not the only locked/unlocked cue. [Evidence](LOADOUT_CATALOG_0919.md).
 - [ ] **UI-23 · Pending** — Pilot Select completeness: warm ship/emblem art before the screen appears and restore callsign, role/special and biography detail without contaminating the clean GOOD LUCK launch card. [Evidence](PLAYTEST_REPAIR_QUEUE_0918.md).
 - [x] **UI-24 · Complete** — Use the graphical arcade dialogue font and letter-by-letter centered banner for item, ammunition and upgrade acquisition messages instead of basic floating text. [Evidence](ROTATION_SHIELD_STAGE2_REPAIR_0918.md).
 - [x] **UI-25 · Complete** — Replace the HP-like shield gauge with a distinct rectangular energy-shield frame, straight fill well and connected SHIELD box whose baked label is centered horizontally and vertically. [Evidence](ROTATION_SHIELD_STAGE2_REPAIR_0918.md).

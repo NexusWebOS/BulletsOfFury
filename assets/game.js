@@ -73262,10 +73262,13 @@ function loadoutStart(onDone){
   const load=forgeLoadoutSync();
   const pool=(typeof crateWeaponPool==='function')?crateWeaponPool(true):load.slice();
   const focus=(run.stage===2||(_pilotKey()==='freezer'&&run.stage===3))?5:(_pilotKey()==='freezer'&&run.stage===1?4:null);
-  loadoutScr={onDone:onDone||null, t:0, sel:focus!=null&&load.indexOf(focus)>=0?load.indexOf(focus):0, row:0, psel:0, pscroll:0, exitT:-1, msg:'', msgT:0, critT:0, pool:pool,
+  loadoutScr={onDone:onDone||null, t:0, sel:focus!=null&&load.indexOf(focus)>=0?load.indexOf(focus):0, row:0, psel:0, pscroll:0, cat:0, catSel:0, catCol:0, exitT:-1, msg:'', msgT:0, critT:0, pool:pool,
               md:!!(Input&&Input.mouse&&Input.mouse.down)};
   try{ XART.rdy('forge_loadout_0918'); XART.rdy(_selKey('y'));
-       for(const w of pool){ XART.rdy(weaponIconKey(w,Math.max(1,(run.wlevels&&run.wlevels[w])|0))); const f=forgeEntry(w); if(f) XART.rdy(forgeBadgeKey(f.elem,w,f.lv)); }
+       for(const e of Object.keys(INFUSIONS)) XART.rdy('inf_'+e);
+       for(const w of pool){ XART.rdy(weaponIconKey(w,Math.max(1,(run.wlevels&&run.wlevels[w])|0)));
+         const f=forgeEntry(w); if(f) XART.rdy(forgeBadgeKey(f.elem,w,f.lv));
+         const forms=forgeFormsFor(w); for(const e of Object.keys(INFUSIONS).slice(0,4)) if(forms[e]) XART.rdy(forgeBadgeKey(e,w,forms[e].lv)); }
        if(typeof laserMistWarm==='function') laserMistWarm(); }catch(_l){ }
   setState(GS.LOADOUT);
 }
@@ -73287,19 +73290,40 @@ function drawLoadout(dt){
     if(art){const nm=weaponDisplayName(w),f=forgeEntry(w),sy=P.stripY*H,sh=P.stripH*H;stageText(art,nm,cx,sy+sh/2,Math.min(9,stageFitH(art,nm,bw*.94,9,5,.04)),f?INFUSIONS[f.elem].body:'#c8d2e2',.8,1,.04);}
   }
   const B=frc(P.pool,W,H);let opts=[];
-  /* Three compact arsenal rows are always visible. Every known form has a cell; unavailable forms
-     remain as dim silhouettes so the player can see the size and shape of the system. */
-  L.cat=L.cat||0; const allW=WEAPONS.map((_,i)=>i).filter(i=>i>0), firstW=clamp(L.cat|0,0,Math.max(0,allW.length-3));
+  /* Six authored badges per row, across two pages: BASE plus five of the nine elements.
+     The selected weapon/recipe is a real focus target for D-pad and mouse, not just opacity. */
+  const allW=WEAPONS.map((_,i)=>i), elements=Object.keys(INFUSIONS), visible=3;
+  L.catSel=clamp(L.catSel|0,0,allW.length-1);
+  L.catCol=clamp(L.catCol|0,0,elements.length);
+  L.cat=clamp(L.cat|0,0,Math.max(0,allW.length-visible));
+  if(L.row===1){ if(L.catSel<L.cat)L.cat=L.catSel; else if(L.catSel>=L.cat+visible)L.cat=L.catSel-visible+1; }
+  const page=Math.floor(Math.max(0,L.catCol-1)/5), pageElems=elements.slice(page*5,page*5+5);
   L.catalogRects=[];
-  for(let rr=0;rr<3;rr++){const w=allW[firstW+rr];if(w==null)continue;const yy=B[1]+B[3]*(.16+rr*.32),owned=L.pool.indexOf(w)>=0;
-    if(art)stageText(art,weaponDisplayName(w),B[0]+B[2]*.095,yy,6.5,owned?'#dceaff':'#596170',.7,1,.02);
-    const forms=weaponFormOptions(w), cells=[{key:weaponIconKey(w,3,{bare:1}),ok:owned,name:'BASE'}];
-    for(const e of Object.keys(INFUSIONS)){const f=forgeFormsFor(w)[e];cells.push({key:f?forgeBadgeKey(e,w,f.lv):'inf_'+e,ok:!!f,name:INFUSIONS[e].name,elem:e});}
-    const x0=B[0]+B[2]*.22,pitch=B[2]*.073;
-    for(let ci=0;ci<cells.length;ci++){const c=cells[ci],cx=x0+ci*pitch,h=Math.min(18,B[3]*.24);forgeIconFit(c.key,cx,yy,h,0,c.ok?1:.18);L.catalogRects.push({x:cx-h/2,y:yy-h/2,w:h,h:h,weapon:w,cell:c});}
+  for(let rr=0;rr<visible;rr++){
+    const ri=L.cat+rr,w=allW[ri];if(w==null)continue;
+    const yy=B[1]+B[3]*(.18+rr*.31),owned=L.pool.indexOf(w)>=0,focused=L.row===1&&L.catSel===ri;
+    if(focused){ctx.save();ctx.globalAlpha=.22+.10*Math.sin(t*8);ctx.fillStyle='#ffd24a';ctx.fillRect(B[0]+2,yy-B[3]*.145,B[2]-4,B[3]*.28);ctx.restore();}
+    if(art)stageText(art,weaponDisplayName(w),B[0]+B[2]*.115,yy,6.5,owned?'#dceaff':'#596170',.78,1,.02);
+    const forms=forgeFormsFor(w), cells=[{key:weaponIconKey(w,3,{bare:1}),ok:owned,name:'BASE',kind:'bare'}];
+    for(const e of pageElems){const f=forms[e],earned=forgeComboOwned(e,w);
+      cells.push({key:f?forgeBadgeKey(e,w,f.lv):'inf_'+e,ok:owned&&!!f,name:INFUSIONS[e].name,elem:e,kind:'forge',earned:earned,price:earned&&!f?forgeComboCost():0});}
+    const x0=B[0]+B[2]*.325,pitch=B[2]*.108,h=Math.min(24,B[3]*.285);
+    for(let ci=0;ci<cells.length;ci++){
+      const c=cells[ci],cx=x0+ci*pitch,selected=focused&&L.catCol===ci+page*5*(ci>0);
+      forgeIconFit(c.key,cx,yy,h,0,c.ok?1:.20);
+      if(selected){ctx.save();ctx.globalAlpha=.8+.2*Math.sin(t*13);ctx.shadowColor=c.ok?'#ffd24a':'#7bb0d7';ctx.shadowBlur=11;
+        ctx.strokeStyle=c.ok?'#ffe089':'#7bb0d7';ctx.lineWidth=2;ctx.strokeRect(cx-h*.56,yy-h*.56,h*1.12,h*1.12);ctx.restore();}
+      L.catalogRects.push({x:cx-h*.58,y:yy-h*.58,w:h*1.16,h:h*1.16,weapon:w,ri:ri,col:ci+page*5*(ci>0),cell:c});
+    }
   }
-  if(L.row===1)opts=L.pool.map(function(w){return {weapon:w,name:weaponDisplayName(w),key:forgeSlotKey(w)};});
-  else if(L.row===2&&selW!=null)opts=weaponFormOptions(selW).map(function(o){return Object.assign({},o,{key:o.kind==='forge'?forgeBadgeKey(o.elem,selW,o.lv):(o.kind==='variant'&&o.id==='firewhip'?'micon_firewhip_0919_3':(o.kind==='variant'&&WVAR_ICON[o.id]?WVAR_ICON[o.id]+'3':weaponIconKey(selW,3,{bare:1})))});});
+  if(art){const label=(L.cat+1)+'-'+Math.min(allW.length,L.cat+visible)+' / '+allW.length+'   ELEMENTS '+(page+1)+'/2';
+    stageText(art,label,B[0]+B[2]*.78,B[1]+B[3]*.05,5.5,'#9fd6ff',.75,1,.025);
+    const r=(L.catalogRects||[]).find(q=>q.ri===L.catSel&&q.col===L.catCol),c=r&&r.cell;
+    if(c){const status=c.ok?'OWNED':(c.price?'ARMORY '+c.price+' FP':(c.earned?'ARMORY RECIPE':'BOSS LOCKED'));
+      const detail=L.msgT>0?L.msg:weaponDisplayName(r.weapon)+' + '+c.name+'  -  '+status;
+      stageText(art,detail,W*.5,H*.627,Math.min(9,stageFitH(art,detail,W*.75,9,6,.04)),L.msgT>0?'#ffffff':(c.ok?'#ffe18b':'#9aafc2'),.88,1,.04);}
+  }
+  if(L.row===2&&selW!=null)opts=weaponFormOptions(selW).map(function(o){return Object.assign({},o,{key:o.kind==='forge'?forgeBadgeKey(o.elem,selW,o.lv):(o.kind==='variant'&&o.id==='firewhip'?'micon_firewhip_0919_3':(o.kind==='variant'&&WVAR_ICON[o.id]?WVAR_ICON[o.id]+'3':weaponIconKey(selW,3,{bare:1})))});});
   const matchup=loadoutMatchup(selW,L.row===2?opts[clamp(L.psel|0,0,Math.max(0,opts.length-1))]:null);
   if(art&&matchup){
     const yy=H*.249,flash=matchup.good?(.68+.32*Math.sin(t*16)):.86;
@@ -73308,35 +73332,54 @@ function drawLoadout(dt){
     stageText(art,(L.critT>0&&matchup.good?'CRITICAL!  ':'')+matchup.text,W*.5,yy,
       Math.min(10,stageFitH(art,matchup.text,W*.77,10,6,.035)),matchup.good?'#ffe183':'#a8d9ff',.95,1,.035);
   }
-  if(art&&L.row===0){const total=allW.length,label=(firstW+1)+'-'+Math.min(total,firstW+3)+' / '+total+'   MOUSE WHEEL: BROWSE';
-    stageText(art,label,B[0]+B[2]*.82,B[1]+B[3]*.08,5.5,'#9fd6ff',.75,1,.025);}
   if(L.row>0&&opts.length){
     L.psel=clamp(L.psel|0,0,opts.length-1);const view=Math.min(7,opts.length),pitch=B[2]/view,first=clamp(L.psel-3,0,Math.max(0,opts.length-view));
     for(let k=0;k<view;k++){const i=first+k,o=opts[i],cx=B[0]+pitch*(k+.5),cy=B[1]+B[3]*.40,h=Math.min(B[3]*.56,pitch*.62);forgeIconFit(o.key,cx,cy,h,0,i===L.psel?1:.45);if(i===L.psel)forgeHexPointer(o.key,cx,cy,h,'#ffd24a');if(art)stageText(art,o.name,cx,B[1]+B[3]*.84,Math.min(7,stageFitH(art,o.name,pitch*.88,7,4,.03)),'#cfeaff',.8,1,.03);}
-  }else if(art&&L.msgT>0){stageText(art,L.msg,W/2,B[1]+B[3]*.96,Math.min(8,stageFitH(art,L.msg,B[2]*.92,8,5,.04)),'#9fd6ff',.82,1,.04);}
+  }
   if(art)stageText(art,'X'+(run.forgeRespecs|0),W*.705,H*.883,13,'#ffd24a',.9,1,.05);
+  controlHintRow(L.row===1?[['pad_dpad','BROWSE'],['pad_a','EQUIP'],['pad_b','BACK'],['pad_start','LAUNCH']]:
+    L.row===2?[['pad_dpad','FORM'],['pad_a','EQUIP'],['pad_b','BACK']]:
+    [['pad_dpad','SLOT / CATALOG'],['pad_a','FORMS'],['pad_start','LAUNCH']],H*.965,W/2,W-24);
   if(L.exitT>=0){L.exitT+=dt;ctx.save();ctx.globalAlpha=Math.min(1,L.exitT/.6);ctx.fillStyle='#000';ctx.fillRect(0,0,W,H);ctx.restore();if(L.exitT>=.62){const done=L.onDone;loadoutScr=null;run._wbag=[];if(done)done();else setState(GS.TITLE);}return;}
   const mL=Input.menuLeft?Input.menuLeft():false,mR=Input.menuRight?Input.menuRight():false,mU=Input.menuUp?Input.menuUp():false,mD=Input.menuDown?Input.menuDown():false,mB=Input.menuBack?Input.menuBack():false,mS=Input.menuStart?Input.menuStart():false;
   const fire=(keybind.fire||[]).filter(function(k){return !/^mouse/.test(k);}).some(function(k){return Input.tap(k);});
   const charge=(keybind.charge||[]).some(function(k){return Input.tap(k);});const click=Input.mouse.down&&!L.md;L.md=!!Input.mouse.down;const enter=Input.tap('enter');if(t<.55)return;
-  if(Input.mouse.wheel){L.cat=clamp((L.cat|0)+(Input.mouse.wheel>0?1:-1),0,Math.max(0,WEAPONS.length-4));Input.mouse.wheel=0;fsx('blip');}
+  if(Input.mouse.wheel){const d=Input.mouse.wheel>0?1:-1;Input.mouse.wheel=0;
+    if(L.row===1)L.catSel=clamp(L.catSel+d,0,allW.length-1);
+    else L.cat=clamp(L.cat+d,0,Math.max(0,allW.length-3));fsx('blip');}
   if(click){const mx=Input.mouse.x,my=Input.mouse.y,RB=frc(P.respec,W,H);
     if(mx>=RB[0]&&mx<=RB[0]+RB[2]&&my>=RB[1]&&my<=RB[1]+RB[3]&&selW!=null){const q=forgeRespec(selW);loadoutSay(q==='ok'?'BARE FORM EQUIPPED':'NO ACTIVE FORM TO RE-SPEC',q==='ok'?'powerup':'blocked');return;}
     const hit=(L.catalogRects||[]).find(r=>mx>=r.x&&mx<=r.x+r.w&&my>=r.y&&my<=r.y+r.h);
-    if(hit){if(!hit.cell.ok){loadoutSay('LOCKED - EARN OR FORGE THIS WEAPON','blocked');return;}
-      const q=forgePick(L.sel,hit.weapon);if(q!=='ok'){loadoutSay('WEAPON CANNOT USE THIS BAY','blocked');return;}
-      if(hit.cell.elem)weaponFormSelect(hit.weapon,{kind:'forge',elem:hit.cell.elem});
+    if(hit){if(L.row!==1||L.catSel!==hit.ri||L.catCol!==hit.col){L.catSel=hit.ri;L.catCol=hit.col;L.row=1;fsx('blip');return;}
+      if(!hit.cell.ok){loadoutSay(hit.cell.price?'BUY THIS RECIPE IN THE ARMORY':'LOCKED - EARN THIS ELEMENT','blocked');return;}
+      const q=forgePick(L.sel,hit.weapon);if(q!=='ok'&&q!=='same'){loadoutSay('WEAPON CANNOT USE THIS BAY','blocked');return;}
+      const f=weaponFormSelect(hit.weapon,hit.cell.kind==='forge'?{kind:'forge',elem:hit.cell.elem}:weaponBaseForms(hit.weapon)[0]);
+      if(f!=='ok'){loadoutSay('FORM LOCKED','blocked');return;}
       loadoutSay('BAY '+(L.sel+1)+': '+(hit.cell.elem?forgeComboName(hit.cell.elem,hit.weapon):weaponDisplayName(hit.weapon)),'powerup');return;}
   }
+  if(mS){Input.mouse.down=false;L.exitT=0;fsx('powerup');return;}
   if(L.row===0){
     if(mL&&load.length){L.sel=(L.sel-1+load.length)%load.length;fsx('blip');}
     else if(mR&&load.length){L.sel=(L.sel+1)%load.length;fsx('blip');}
-    else if(mS||enter){Input.mouse.down=false;L.exitT=0;fsx('powerup');}
+    else if(enter){Input.mouse.down=false;L.exitT=0;fsx('powerup');}
     else if(charge&&selW!=null){const q=forgeRespec(selW);loadoutSay(q==='ok'?'BARE FORM EQUIPPED':'NO ACTIVE FORM TO RE-SPEC',q==='ok'?'powerup':'blocked');}
-    else if(mD&&selW!=null){L.row=1;L.psel=Math.max(0,L.pool.indexOf(selW));fsx('blip');}
+    else if(mD&&selW!=null){L.row=1;L.catSel=Math.max(0,allW.indexOf(selW));L.catCol=0;fsx('blip');}
     else if((fire||click||mU)&&selW!=null){L.row=2;L.psel=0;fsx('blip');}
   }else if(L.row===1){
-    const n=L.pool.length;if(mL&&n){L.psel=(L.psel-1+n)%n;fsx('blip');}else if(mR&&n){L.psel=(L.psel+1)%n;fsx('blip');}else if(mB||mU){L.row=0;fsx('blip');}else if(fire||click||enter){const w=L.pool[L.psel],r=forgePick(L.sel,w);if(r==='fixedelsewhere'||r==='fixed')loadoutSay('MISSILES STAY IN THEIR OWN BAY','blocked');else{if(r==='ok')loadoutSay('BAY '+(L.sel+1)+': '+weaponDisplayName(w),'powerup');L.row=0;}}
+    if(mU){L.catSel=clamp(L.catSel-1,0,allW.length-1);fsx('blip');}
+    else if(mD){L.catSel=clamp(L.catSel+1,0,allW.length-1);fsx('blip');}
+    else if(mL){L.catCol=clamp(L.catCol-1,0,elements.length);fsx('blip');}
+    else if(mR){L.catCol=clamp(L.catCol+1,0,elements.length);fsx('blip');}
+    else if(mB){L.row=0;fsx('blip');}
+    else if(fire||click||enter){
+      const w=allW[L.catSel],elem=L.catCol?elements[L.catCol-1]:null,forms=forgeFormsFor(w),owned=L.pool.indexOf(w)>=0;
+      if(!owned||elem&&!forms[elem]){loadoutSay(elem&&forgeComboOwned(elem,w)?'BUY THIS RECIPE IN THE ARMORY':'LOCKED - EARN THIS WEAPON','blocked');}
+      else {const q=forgePick(L.sel,w);
+        if(q==='ok'||q==='same'){
+          const f=weaponFormSelect(w,elem?{kind:'forge',elem:elem}:weaponBaseForms(w)[0]);
+          loadoutSay(f==='ok'?'BAY '+(L.sel+1)+': '+(elem?forgeComboName(elem,w):weaponDisplayName(w)):'FORM LOCKED',f==='ok'?'powerup':'blocked');
+        }else loadoutSay('MISSILES STAY IN THEIR OWN BAY','blocked');}
+    }
   }else{
     const forms=weaponFormOptions(selW),n=forms.length;if(mL&&n){L.psel=(L.psel-1+n)%n;fsx('blip');}else if(mR&&n){L.psel=(L.psel+1)%n;fsx('blip');}else if(mB||mD){L.row=0;fsx('blip');}else if(fire||click||enter){const o=forms[L.psel],r=weaponFormSelect(selW,o);loadoutSay(r==='ok'?o.name+' EQUIPPED':'FORM LOCKED',r==='ok'?'powerup':'blocked');if(r==='ok'&&loadoutMatchup(selW,o)?.good){L.critT=2.2;fsx('life');}L.row=0;}
   }
