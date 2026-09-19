@@ -2072,6 +2072,7 @@ const XART=(function(){
      the 0916 concept plate Mike liked (edit_asset_id, every socket emptied), the bays are generated
      against it as a reference so the two read as one family. */
   X._src['forge_chamber_0917b']='assets/game/ui/forge_0917b/forge_chamber.png';
+  X._src['forge_element_rail_0919']='assets/game/ui/forge_0919/forge_element_rail_9.png';
   X._src['loadout_bays_0917b']='assets/game/ui/forge_0917b/loadout_bays.png';
   X._src['forge_loadout_0918']='assets/game/ui/forge_0918/forge_loadout.png';
   X._src['weapon_found_0918']='assets/game/ui/forge_0918/weapon_found.png';
@@ -72544,7 +72545,7 @@ function forgeStart(onDone){
          pool:(typeof crateWeaponPool==='function')?crateWeaponPool(true):load.slice()};
   try{ if(typeof XART!=='undefined'){
     Object.keys(INFUSIONS).forEach(function(e){ XART.rdy('inf_'+e); });
-    XART.rdy('forge_loadout_0918'); XART.rdy('forge_chamber_0917b');
+    XART.rdy('forge_loadout_0918'); XART.rdy('forge_chamber_0917b'); XART.rdy('forge_element_rail_0919');
     load.forEach(function(w){ XART.rdy(weaponIconKey(w,Math.max(1,(run.wlevels&&run.wlevels[w])|0),{bare:1}));
       const f=forgeEntry(w); if(f) XART.rdy(forgeBadgeKey(f.elem,w,f.lv)); });
   } }catch(_fs){}
@@ -72649,6 +72650,17 @@ function drawForge(dt){
   const ready=t>0.6;
   if(!ready) return;
   const blip=function(){ try{ Audio.SFX.blip&&Audio.SFX.blip(); }catch(_){ } };
+  if(F.row===1&&disc.length){
+    const V=forgeElementRailView(F,disc,W,H),mx=Input.mouse.x,my=Input.mouse.y;
+    const over=mx>=V.x&&mx<=V.x+V.w&&my>=V.y&&my<=V.y+V.h;
+    const wheel=Input.mouse.wheel||0;
+    if(wheel){ Input.mouse.wheel=0; if(over){F.esel=clamp(F.esel+(wheel>0?1:-1),0,disc.length-1);blip();} }
+    if(click&&over){
+      const sy=V.sy+(my-V.y)/V.h*FORGE_RAIL.sh;
+      const hit=clamp(Math.round((sy-FORGE_RAIL.center0)/FORGE_RAIL.pitch),0,disc.length-1);
+      if(hit!==F.esel){F.esel=hit;blip();return;}
+    }
+  }
   if(F.row===0){
     if(mL && load.length){ F.sel=(F.sel-1+load.length)%load.length; blip(); }
     else if(mR && load.length){ F.sel=(F.sel+1)%load.length; blip(); }
@@ -72702,8 +72714,8 @@ function drawForge(dt){
       }
     }
   } else {
-    if(mL && disc.length){ F.esel=(F.esel-1+disc.length)%disc.length; blip(); }
-    else if(mR && disc.length){ F.esel=(F.esel+1)%disc.length; blip(); }
+    if((mL||mU) && disc.length){ F.esel=(F.esel-1+disc.length)%disc.length; blip(); }
+    else if((mR||mD) && disc.length){ F.esel=(F.esel+1)%disc.length; blip(); }
     else if(mB){ F.row=0; blip(); }
     else if(fire||click||enter){
       const el=disc[F.esel], r=forgeCombine(selW, el);
@@ -72871,6 +72883,49 @@ function forgeEnergyPipes(W,H,t,power){
   }
   ctx.restore();
 }
+/* The rail is one authored nine-bay IMAGE, separate from the chamber. Five
+   bays are visible at once; source cropping scrolls the art itself, and badges follow the exact
+   same source coordinates. The fixed rail/thumb are blitted from that image so the scrollbar
+   does not drift with the content. This keeps every bay's pixel bevel authored. */
+const FORGE_RAIL={x:.047,y:.055,w:.230,h:.842,sx:198,sy:65,sw:548,sh:860,center0:155,pitch:172};
+function forgeElementRailView(F,disc,W,H){
+  const R=FORGE_RAIL, first=clamp((F.esel|0)-2,0,Math.max(0,disc.length-5));
+  return {x:R.x*W,y:R.y*H,w:R.w*W,h:R.h*H,sy:R.sy+first*R.pitch,first:first};
+}
+function forgeElementRailDraw(F,disc,W,H){
+  const R=FORGE_RAIL,V=forgeElementRailView(F,disc,W,H);
+  const key='forge_element_rail_0919';
+  if(!XART.rdy(key)){
+    /* The old five baked bays remain usable while the new plate decodes. */
+    const first=clamp((F.esel|0)-2,0,Math.max(0,disc.length-5));
+    for(let i=0;i<Math.min(5,disc.length);i++){
+      const e=disc[first+i],r=frc(FORGE_CHAMBER.slots[i],W,H);
+      forgeIconFit('inf_'+e,r[0]+r[2]/2,r[1]+r[3]/2,r[3]*.82,r[2]*.70,first+i===F.esel?1:.48);
+    }
+    return;
+  }
+  const im=XART.get(key);
+  ctx.save();ctx.imageSmoothingEnabled=false;
+  ctx.drawImage(im,R.sx,V.sy,R.sw,R.sh,V.x,V.y,V.w,V.h);
+  /* Fix the rail in place while the nine authored bays move underneath it. */
+  const railX=V.x+V.w*.79,railW=V.w*.17;
+  ctx.drawImage(im,635,270,81,1190,railX,V.y+V.h*.035,railW,V.h*.93);
+  const maxFirst=Math.max(0,disc.length-5),pos=maxFirst?V.first/maxFirst:0;
+  const thumbH=V.h*.11;
+  ctx.drawImage(im,651,152,42,99,railX+railW*.28,V.y+V.h*.085+pos*(V.h*.80-thumbH),railW*.47,thumbH);
+  /* Icons use the source image's actual bay centers. Clip to the viewport so a scrolled
+     badge never floats outside its frame, even during a rapid wheel/gamepad move. */
+  ctx.beginPath();ctx.rect(V.x,V.y,V.w*.79,V.h);ctx.clip();
+  for(let i=0;i<disc.length;i++){
+    const cy=V.y+(R.center0+i*R.pitch-V.sy)/R.sh*V.h;
+    if(cy<V.y-32||cy>V.y+V.h+32)continue;
+    const e=disc[i],cx=V.x+V.w*.45,selected=i===F.esel;
+    XART.rdy('inf_'+e);
+    forgeIconFit('inf_'+e,cx,cy,V.h*.112,V.w*.46,selected?1:.45);
+    if(selected)forgeHexPointer('inf_'+e,cx,cy,V.h*.112,INFUSIONS[e].glow);
+  }
+  ctx.restore();
+}
 function forgeRecipeDraw(F,w,disc,dt,W,H,art){
   const elem=disc[F.esel], forms=forgeFormsFor(w), owned=forms[elem];
   const lv=owned?Math.min(INFUSION_MAX,(owned.lv|0)+1):
@@ -72900,15 +72955,8 @@ function forgeRecipeDraw(F,w,disc,dt,W,H,art){
     stageText(art,label,B[0]+B[2]/2,B[1]+B[3]/2,bh,'#e5f4ff',.9,1,.06);
     if(F.preview.err) stageText(art,'PREVIEW UNAVAILABLE',view[0]+view[2]/2,view[1]+view[3]*.5,8,'#ff9c7d',.9,1,.05);
   }
-  /* Five physical bays on the plate; scroll the unlocked elements through those bays. */
-  const first=clamp(F.esel-2,0,Math.max(0,disc.length-C.slots.length));
-  for(let i=0;i<C.slots.length;i++){
-    const e=disc[first+i]; if(!e) continue;
-    XART.rdy('inf_'+e);
-    const r=frc(C.slots[i],W,H), cx=r[0]+r[2]/2, cy=r[1]+r[3]/2, selected=(first+i===F.esel);
-    forgeIconFit('inf_'+e,cx,cy,r[3]*.82,r[2]*.70,selected?1:.48);
-    if(selected) forgeHexPointer('inf_'+e,cx,cy,r[3]*.82,INFUSIONS[e].glow);
-  }
+  /* A separate nine-bay pixel plate scrolls behind this viewport; the chamber art remains intact. */
+  forgeElementRailDraw(F,disc,W,H);
   if(art && F.msgT>0) stageText(art,F.msg,W*.50,H*.94,Math.min(10,stageFitH(art,F.msg,W*.70,10,7,.05)),'#ffffff',.9,1,.05);
   controlHintRow([['pad_b','BACK'],['pad_a','FORGE']],H*.968,W/2,W-24);
 }
