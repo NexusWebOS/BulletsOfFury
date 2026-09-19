@@ -39,11 +39,11 @@ module.exports=function testDifficultyTables(vm,ctxv,ok){
   ok(src.indexOf("difficultyRank")>=0 && src.indexOf("diffKey==='furious'")<0,
      'the boss grant is ranked, not an equality ladder');
 
-  /* the fifth button is bought, never granted, and it is ABSENT rather than disabled */
+  /* the fifth button is visible but locked until bought, never granted */
   ok(vm.runInContext("!!FURIOUS_SHOP.insanity_mode&&FURIOUS_SHOP.insanity_mode.cost>0",ctxv),
      'INSANITY is a shop item with a price');
-  ok(vm.runInContext("DIFF_KEYS.indexOf('insanity')>=0&&diffList().indexOf('insanity')<0",ctxv),
-     'and until it is bought it is absent from the list the screen walks, not drawn-and-disabled');
+  ok(vm.runInContext("DIFF_KEYS.indexOf('insanity')>=0&&diffList().indexOf('insanity')>=0&&diffLocked('insanity')",ctxv),
+     'and until it is bought it is visible but locked on the difficulty screen');
   /* Mike, 0916: "Can you also remake our other difficulty options please ... I would like each to
      feature Faces that go from Normal to Under Pressure to Furious to Insanity's Death." All five
      are generated now, and all five ship as LOOSE FILES under _0916 keys - diff_easy..diff_furious

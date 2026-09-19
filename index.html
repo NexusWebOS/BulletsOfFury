@@ -47,7 +47,18 @@
   #fs-btn svg{width:20px;height:20px;pointer-events:none;fill:currentColor;}
 
   /* ---- FULLSCREEN mode: hide the cabinet art, blow the play window up to fill the screen ---- */
-  body.fs #room{background:#000;}
+  body.fs #room{background:#050b12 url('assets/game/campaign_map_v2/ocean.png') center center/cover no-repeat;}
+  body.fs #room::before{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(4,7,12,.58),rgba(4,7,12,.18) 24%,rgba(4,7,12,.18) 76%,rgba(4,7,12,.58));}
+  .wide-overlay{position:fixed;display:none;z-index:2;pointer-events:none;image-rendering:pixelated;filter:drop-shadow(0 8px 20px rgba(0,0,0,.75));}
+  #wide-clock{z-index:4;}
+  #wide-map-top{position:fixed;display:none;z-index:2;pointer-events:none;background:#0a1a2b url('assets/game/campaign_map_v2/ocean.png') center/cover no-repeat;}
+  body.wide-map #room{background-image:url('assets/game/campaign_map_v2/ocean.png');background-size:cover;background-position:center;}
+  body.wide-map #game-frame{box-shadow:0 0 0 2px #39546a,0 0 35px rgba(0,0,0,.7);}
+  body.wide-map #hud-row{background:#081522 url('assets/game/campaign_map_v2/ocean.png') center/cover;}
+  body.wide-map #hud-wrap,body.wide-map #equip-dom{visibility:hidden;}
+  body.wide-map #hud-row{position:relative;}
+  body.wide-map #hud-row::after{content:'';position:absolute;inset:0;z-index:3;pointer-events:none;background:#081522 url('assets/game/campaign_map_v2/ocean.png') center/cover;}
+  @media(max-width:1149px){.wide-overlay{display:none !important;}}
   body.fs #marquee,
   body.fs #side-left,
   body.fs #side-right{display:none !important;}
@@ -210,6 +221,7 @@
 <script src="assets/game/atlas/stage_runtime_atlases.js"></script>
 <script src="assets/game/atlas/stage5_runtime_atlas.js"></script>
 <script src="assets/game.js"></script>
+<script src="assets/widescreen_hud_0918.js"></script>
 <script>
 (function(){
   var GA=480/512, SIDE_A=335/1042, MARQ_A=693/179, HUD_R=62/512, gap=16, FR=14, mgap=6, MSCALE=1.12;

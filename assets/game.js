@@ -8030,7 +8030,7 @@ const INFUSION_FIELD_DROPS=false;
 const INFUSION_CARRIERS={mg:1,spread:1,beam:1,missile:1,orb:1,shard:1,
                          flame:1,lasermist:1,yuriLightningOrb:1,yuriLightningBolt:1,forgeFireBlast:1};
 /* Each boss awards one global element; the Forge applies it to any weapon. */
-const BOSS_ELEMENT_BY_STAGE=Object.freeze({1:'kinetic',2:'fire',3:'ice',4:'lightning',5:'chrome',6:'water',7:'toxic',8:'prism',9:'dark'});
+const BOSS_ELEMENT_BY_STAGE=Object.freeze({1:'kinetic',2:'fire',3:'ice',4:'lightning',5:'chrome',6:'dark',7:'toxic',8:'prism',9:'water'});
 const INFUSION_STAGE_BIAS=BOSS_ELEMENT_BY_STAGE;
 function infusionEligible(){
   /* ⚠ A `bg==='space'` CATCH-ALL HERE SILENTLY DELETED STAGE 8's INFUSIONS (measured 0917 by
@@ -31810,6 +31810,8 @@ function startRun(fromStage=1){
   run.spaceMode=false;run.spaceWeapon=0;run.spaceLevels=[1,1,1];run.gravityShipReady=false;run._groundLoadout=null;run._spaceShadowCharge=0;run._spaceShadowHeld=false;run._spaceVolleyCd=0;   // Gravity ship is earned visibly in Stage 5 and retained for Stage 9
   if(run.mode==='arcade'){ beginStage(fromStage); }
   else {
+    campBeginFresh();
+    lizzieSkinUnlocked=false;coleUnlocked=false;furyLegacyShip=false;
     /* A NEW CAMPAIGN now owns a real prologue before the tactical map. Continue/load routes never
        replay it: they already represent an operation in progress and open the map immediately. */
     var _firstBoot = (typeof campaign!=='undefined') && !campaign._booted;
@@ -36073,6 +36075,7 @@ function playerHit(){
 
 function triggerGameOver(){
   if(run.stage===9&&run.mode!=='arcade'&&!bossDefeated&&typeof riftFallbackStart==='function'){riftFallbackStart();return;}
+  if(run.mode==='campaign')campSession=null; // Continue now loads the last completed-stage autosave.
   setState(GS.GAMEOVER); Audio.stopMusic(); Audio.SFX.gameover();
   if(run.score>=highScore){ highScore=run.score; try{localStorage.setItem('bof_hi',highScore);}catch(e){} } }
 function triggerVictory(){
@@ -44534,16 +44537,8 @@ function playPauseSubmenuReturn(){
   Input.clearTaps();return true;
 }
 function playPauseSave(){
-  if(run.mode!=='campaign')return {ok:true,name:null};
-  try{
-    campSuspend();const snap=Object.assign(campSnapshot(),{mode:'campaign'}),i=(Number(localStorage.getItem('bof_autosave_next'))||0)%3,
-      name='Autosav0'+(i+1)+'.json',bytes=JSON.stringify(snap);
-    localStorage.setItem(name,bytes);
-    if(localStorage.getItem(name)!==bytes)throw new Error('Autosave verification failed');
-    localStorage.setItem('bof_autosave_latest',name);
-    localStorage.setItem('bof_autosave_next',String((i+1)%3));
-    return {ok:true,name};
-  }catch(_){return {ok:false,name:null};}
+  /* Leaving or dying mid-level never advances the checkpoint. Manual saves use the map's 24 slots. */
+  return {ok:true,name:null};
 }
 function playPauseExit(quit){
   const save=playPauseSave();
@@ -49447,7 +49442,7 @@ function campPauseDraw(dt){
   campPause.t+=dt;
   if(campPause.msgT>0) campPause.msgT-=dt;
   const f=(typeof uiFontArt==='function')?uiFontArt():null;
-  const rows=(campPause.mode==='root')?CAMP_PAUSE_BTN.length:CAMP_SLOTS;
+  const slotPage=Math.floor(campPause.sel/CAMP_SLOT_PAGE), rows=(campPause.mode==='root')?CAMP_PAUSE_BTN.length:Math.min(CAMP_SLOT_PAGE,CAMP_SLOTS-slotPage*CAMP_SLOT_PAGE);
 
   ctx.save();
   ctx.fillStyle='rgba(0,0,0,0.62)'; ctx.fillRect(0,0,VW,VH);
@@ -49456,11 +49451,11 @@ function campPauseDraw(dt){
      The panel spans the screen now and the buttons are sized from it, rather than the panel
      being sized from a fixed button width. dlg_window has a deep frame - thick top rail, bottom
      lip with an emblem - so both ends still need real padding or the last button is clipped. */
-  const padX=20, padTop=40, padBot=36;
+  const padX=20, padTop=campPause.mode==='root'?40:55, padBot=36;
   const pw=VW-16, px=8;
   const bw=pw-padX*2;
   const gap=Math.round(bw*0.185*0.26);
-  const bh=Math.round(bw*0.185);
+  const bh=Math.min(Math.round(bw*0.185),Math.floor((VH-16-padTop-padBot-(rows-1)*gap)/rows));
   const listH=rows*bh+(rows-1)*gap;
   const ph=Math.min(VH-16, listH+padTop+padBot);
   const py=Math.round((VH-ph)/2);
@@ -49481,8 +49476,13 @@ function campPauseDraw(dt){
     stageText(f, title, px+pw/2, py+19, 15, '#cfe6ff', 0.85, 1, 0.10);
   }
 
+  if(campPause.mode!=='root'&&f&&typeof stageText==='function'){
+    stageText(f,'PAGE '+(slotPage+1)+' / '+Math.ceil(CAMP_SLOTS/CAMP_SLOT_PAGE)+'  LEFT / RIGHT',VW/2,py+31,9,'#8fbad2',0.85,1,0.08);
+    if(campPause.mode==='load')stageText(f,campAutoLabel()+'  START: LOAD',VW/2,py+44,9,'#9ad9f4',0.85,1,0.08);
+  }
   for(let i=0;i<rows;i++){
-    const by=py+padTop+i*(bh+gap), sel=(i===campPause.sel);
+    const abs=campPause.mode==='root'?i:slotPage*CAMP_SLOT_PAGE+i;
+    const by=py+padTop+i*(bh+gap), sel=(abs===campPause.sel);
     ctx.save();
     ctx.globalAlpha=sel?1:0.5;
     if(sel){ ctx.shadowColor='rgba(150,220,255,0.9)'; ctx.shadowBlur=12+6*pulse; }
@@ -49490,11 +49490,11 @@ function campPauseDraw(dt){
       const k=CAMP_PAUSE_BTN[i].key;
       if(typeof XART!=='undefined' && XART.rdy(k)) ctx.drawImage(XART.get(k), px+padX, by, bw, bh);
     } else {
-      drawPanel('dlg_window', CAMP_SLOT_PAL[i]||null, px+padX, by, bw, bh);
+      drawPanel('dlg_window', CAMP_SLOT_PAL[abs%3]||null, px+padX, by, bw, bh);
     }
     ctx.restore();
     if(campPause.mode!=='root' && f && typeof stageText==='function')
-      stageText(f, campPauseSlotLabel(i), px+padX+bw/2, by+bh*0.52,
+      stageText(f, campPauseSlotLabel(abs), px+padX+bw/2, by+bh*0.52,
                 Math.max(10,Math.round(bh*0.28)), sel?'#ffe082':'#cfd6e0', 0.85, sel?1:0.7, 0.09);
   }
   if(campPause.msgT>0 && f && typeof stageText==='function')
@@ -49503,8 +49503,16 @@ function campPauseDraw(dt){
   ctx.restore(); ctx.globalAlpha=1;
 
   // ---- input ----
-  if(Input.menuUp()){ campPause.sel=(campPause.sel+rows-1)%rows; if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); }
-  if(Input.menuDown()){ campPause.sel=(campPause.sel+1)%rows; if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); }
+  if(campPause.mode==='load'&&campMapStartTap()){
+    const a=campReadAuto();if(a&&campApply(a)){campSession=a;campPauseClose();openStageSelect(run.stage,{});}else campPauseSay('AUTO SLOT EMPTY');return;
+  }
+  if(campPause.mode!=='root'){
+    if(Input.menuLeft()){campPause.sel=Math.max(0,campPause.sel-CAMP_SLOT_PAGE);Audio.SFX.blip();}
+    if(Input.menuRight()){campPause.sel=Math.min(CAMP_SLOTS-1,campPause.sel+CAMP_SLOT_PAGE);Audio.SFX.blip();}
+  }
+  const navN=campPause.mode==='root'?rows:CAMP_SLOTS;
+  if(Input.menuUp()){ campPause.sel=(campPause.sel+navN-1)%navN; if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); }
+  if(Input.menuDown()){ campPause.sel=(campPause.sel+1)%navN; if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); }
   if(Input.menuBack()){
     if(campPause.mode!=='root'){ campPause.mode='root'; campPause.sel=0; }
     else campPauseClose();
@@ -60734,7 +60742,7 @@ var campaign = { unlockedMax:1, rank:{}, justUnlocked:0 };
    NAME COLLISION, ON PURPOSE: GS.CONTINUE already exists and is the post-death
    countdown. This is not that. The campaign hub state is GS.CAMPHUB.
    ============================================================ */
-const CAMP_SLOTS=3, CAMP_SAVE_VER=1;
+const CAMP_SLOTS=24, CAMP_SLOT_PAGE=5, CAMP_SAVE_VER=1, CAMP_AUTO_KEY='bof_campaign_auto';
 const campSlotKey=i=>'bof_campaign_slot'+i;
 function campSnapshot(){
   return { v:CAMP_SAVE_VER, t:Date.now(),
@@ -60810,13 +60818,19 @@ function campAnySaved(){ for(let i=0;i<CAMP_SLOTS;i++) if(campSlotUsed(i)) retur
 function bofStorageResetKeepSaves(){
   const keep=[];
   for(let i=0;i<CAMP_SLOTS;i++){ try{ keep.push(localStorage.getItem(campSlotKey(i))); }catch(e){ keep.push(null); } }
-  const autoKeys=['Autosav01.json','Autosav02.json','Autosav03.json','bof_autosave_latest','bof_autosave_next'];const autos=autoKeys.map(k=>{try{return localStorage.getItem(k);}catch(_){return null;}});
+  const autoKeys=[CAMP_AUTO_KEY,'Autosav01.json','Autosav02.json','Autosav03.json','bof_autosave_latest','bof_autosave_next'];const autos=autoKeys.map(k=>{try{return localStorage.getItem(k);}catch(_){return null;}});
   let mist=null;try{mist=localStorage.getItem(LASER_MIST_UNLOCK_KEY);}catch(e){}
   try{ localStorage.clear(); }catch(e){}
   for(let i=0;i<CAMP_SLOTS;i++){ if(keep[i]!=null){ try{ localStorage.setItem(campSlotKey(i), keep[i]); }catch(e){} } }
   autoKeys.forEach((k,i)=>{if(autos[i]!=null)try{localStorage.setItem(k,autos[i]);}catch(_){}});
   if(mist!=null)try{localStorage.setItem(LASER_MIST_UNLOCK_KEY,mist);}catch(e){}
 }
+function campAutoLabel(){
+  try{const a=JSON.parse(localStorage.getItem(CAMP_AUTO_KEY)||'null');
+    if(a&&a.v===CAMP_SAVE_VER&&a.mode==='campaign')return 'AUTO  '+String(a.pilot||'?').toUpperCase()+'  STAGE '+(a.stage||1);
+  }catch(_){}return 'AUTO  EMPTY';
+}
+function campReadAuto(){try{const a=JSON.parse(localStorage.getItem(CAMP_AUTO_KEY)||'null');return a&&a.v===CAMP_SAVE_VER&&a.mode==='campaign'?a:null;}catch(_){return null;}}
 function campSlotLabel(i){
   const s=campReadSlot(i);
   if(!s || s.v!==CAMP_SAVE_VER) return 'SLOT '+(i+1)+'  - - -  EMPTY';
@@ -60831,8 +60845,26 @@ function campSuspend(){
 }
 function campCanContinue(){
  if(campSession)return true;
- try{const name=localStorage.getItem('bof_autosave_latest');if(!/^Autosav0[123][.]json$/.test(name||''))return false;const data=JSON.parse(localStorage.getItem(name)||'null');if(data&&data.v===CAMP_SAVE_VER&&data.mode==='campaign'){campSession=data;return true;}}catch(_){}
+ try{const data=JSON.parse(localStorage.getItem(CAMP_AUTO_KEY)||'null');if(data&&data.v===CAMP_SAVE_VER&&data.mode==='campaign'){campSession=data;return true;}}catch(_){}
  return false;
+}
+function campBeginFresh(){
+ campSession=null;
+ /* A new operation cannot resume a prior one. Legacy rotating records remain untouched for data safety. */
+ try{localStorage.removeItem(CAMP_AUTO_KEY);}catch(_){}
+ campaign.unlockedMax=1;campaign.rank={};campaign.justUnlocked=0;campaign.bonusUnlocked=0;
+ campaign._booted=false;campaign._introSeen=false;
+}
+function campAutoAfterClear(stage,next,rank){
+ if(run.mode!=='campaign')return false;
+ const completed=stage===8, destination=stage===9 ? Math.max(1,Math.min(8,campaign.unlockedMax||1)) : Math.max(1,Math.min(8,next));
+ if(rank&&stage>=1&&stage<=9)campaign.rank[stage]=rank;
+ const data=Object.assign(campSnapshot(),{mode:'campaign',stage:destination,
+   unlockedMax:Math.max(campaign.unlockedMax||1,destination),completed});
+ try{const bytes=JSON.stringify(data);localStorage.setItem(CAMP_AUTO_KEY,bytes);
+   if(localStorage.getItem(CAMP_AUTO_KEY)!==bytes)return false;
+   campSession=data;return true;
+ }catch(_){return false;}
 }
 /* ⚠⚠ THESE SIX WERE DELETED BY 45174735 AND EVERY CONSUMER SURVIVED IT, WHICH IS THE WHOLE
    LOCK-UP. assets/game.js is "use strict", so `campHubIndex=...` in the mode-select confirm
@@ -60854,7 +60886,7 @@ const CAMPHUB_ITEMS=[
 let campHubIndex=0, campPick=null, campHubMsg='', campHubMsgT=0;
 function campHubEnabled(act){
   if(act==='continue') return campCanContinue();
-  if(act==='load')     return campAnySaved();
+  if(act==='load')     return campAnySaved()||!!campReadAuto();
   if(act==='save')     return campCanContinue();   // nothing to write until a campaign is under way
   return true;
 }
@@ -60918,9 +60950,12 @@ function drawCampaignHub(dt){
   if(!campPause) campHubInput();      // the modal owns the keys while it is up — see the note at `locked`
 }
 function drawCampSlots(dt){
-  campText(campPick==='save'?'SAVE TO WHICH SLOT?':'LOAD WHICH SLOT?', VW/2, 106, 13, '#cfd6e0');
-  for(let i=0;i<CAMP_SLOTS;i++){
-    const cy=170+i*54, sel=(i===campHubIndex), used=campSlotUsed(i);
+  campText(campPick==='save'?'SAVE TO WHICH SLOT?':'LOAD WHICH SLOT?', VW/2, 96, 13, '#cfd6e0');
+  if(campPick==='load')campText(campAutoLabel()+'  START: LOAD',VW/2,119,10,'#9ad9f4');
+  const page=Math.floor(campHubIndex/CAMP_SLOT_PAGE);
+  campText('PAGE '+(page+1)+' / '+Math.ceil(CAMP_SLOTS/CAMP_SLOT_PAGE)+'  LEFT / RIGHT', VW/2, 140, 11, '#8fbad2');
+  for(let i=page*CAMP_SLOT_PAGE;i<Math.min(CAMP_SLOTS,(page+1)*CAMP_SLOT_PAGE);i++){
+    const cy=177+(i-page*CAMP_SLOT_PAGE)*51, sel=(i===campHubIndex), used=campSlotUsed(i);
     const on=(campPick==='save') || used;                  // loading an empty slot is not an action
     const w=330, h=42, x=VW/2-w/2, y=cy-h/2;
     if(sel) drawCampSlots._selRect={x:x, y:y, w:w, h:h, key:null};   // 0822ag: flash the slot, not the screen
@@ -60953,9 +60988,9 @@ function drawCampSlots(dt){
   ctx.globalAlpha=1;
   /* MOUSE (drop 0812b) — rows are cy=170+i*54, w=330, h=42; before campSlotInput for the same
      reason as the hub: the click injects the tap that call then consumes. */
-  if(!campPause) menuMouseList('campslots', CAMP_SLOTS,
-      i=>({cx:VW/2, cy:170+i*54, hw:165, hh:21}),
-      ()=>campHubIndex, v=>{campHubIndex=v;}, stateT>0.25);
+  if(!campPause) menuMouseList('campslots', Math.min(CAMP_SLOT_PAGE,CAMP_SLOTS-page*CAMP_SLOT_PAGE),
+      i=>({cx:VW/2, cy:177+i*51, hw:165, hh:21}),
+      ()=>campHubIndex-page*CAMP_SLOT_PAGE, v=>{campHubIndex=page*CAMP_SLOT_PAGE+v;}, stateT>0.25);
   if(!campPause) campSlotInput();     // same gate: the hub's slot picker must not read under the modal
 }
 function campHubInput(){
@@ -60968,13 +61003,19 @@ function campHubInput(){
       campHubSay(it.act==='continue'?'NO CAMPAIGN IN PROGRESS':it.act==='load'?'NO SAVED GAMES':'START A CAMPAIGN FIRST'); return; }
     const act=it.act;
     selFlash(function(){
-      if(act==='new'){ campSession=null; if(typeof campaign!=='undefined'){campaign._booted=false;campaign._introSeen=false;} setState(GS.DIFF); }
+      if(act==='new'){ campSession=null; setState(GS.DIFF); }
       else if(act==='continue'){ if(campApply(campSession)) openStageSelect(run.stage,{}); else setState(GS.DIFF); }
       else { campPick=act; campHubIndex=0; }
     }, null, drawCampaignHub._selRect||null);   // 0822ag: the button, not the screen
   }
 }
 function campSlotInput(){
+  if(campPick==='load'&&campMapStartTap()){
+    const a=campReadAuto();if(a&&campApply(a)){campSession=a;campPick=null;Audio.SFX.select();openStageSelect(run.stage,{});}
+    else campHubSay('AUTO SLOT EMPTY');return;
+  }
+  if(Input.menuLeft()){campHubIndex=Math.max(0,campHubIndex-CAMP_SLOT_PAGE);Audio.SFX.blip();}
+  if(Input.menuRight()){campHubIndex=Math.min(CAMP_SLOTS-1,campHubIndex+CAMP_SLOT_PAGE);Audio.SFX.blip();}
   if(Input.menuUp()){ campHubIndex=(campHubIndex+CAMP_SLOTS-1)%CAMP_SLOTS; if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); }   // 0822af
   if(Input.menuDown()){ campHubIndex=(campHubIndex+1)%CAMP_SLOTS; if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); }
   if(stateT>0.25 && (Input.tap('enter')||keybind.fire.some(k=>Input.tap(k))||Input.menuStart()||Input.menuFaceTap())){
@@ -61982,9 +62023,9 @@ function campBarMenuDraw(dt){
   const P=campPause; if(!P) return;
   P.t+=(dt||0); if(P.msgT>0) P.msgT-=(dt||0);
   const f=(typeof uiFontArt==='function') ? uiFontArt() : null;
-  const exit=(P.mode==='exit'), rows=exit ? 2 : CAMP_SLOTS;
+  const exit=(P.mode==='exit'), slotPage=Math.floor(P.sel/CAMP_SLOT_PAGE), rows=exit ? 2 : Math.min(CAMP_SLOT_PAGE,CAMP_SLOTS-slotPage*CAMP_SLOT_PAGE);
   const B=(cmap2._btnRects||cmap2BtnRects())[P.btn]||{x:VW/2-60, y:10, w:120, h:26};
-  const pw=exit ? 262 : 318, rowH=exit ? 30 : 34, gap=6, padT=34, padB=exit ? 14 : 26;
+  const pw=exit ? 262 : 318, rowH=exit ? 30 : 34, gap=6, padT=exit ? 34 : 52, padB=exit ? 14 : 26;
   const ph=padT+rows*rowH+(rows-1)*gap+padB;
   const px=clamp(B.x+B.w/2-pw/2, 10, VW-10-pw);
   const top=CM2_BAR.y+CM2_BAR.h+2;
@@ -62001,14 +62042,19 @@ function campBarMenuDraw(dt){
   ctx.restore();
   const title=exit ? 'EXIT GAME' : (P.mode==='save' ? 'SAVE GAME' : 'LOAD GAME');
   if(f && typeof stageText==='function') stageText(f, title, px+pw/2, py+18, 13, '#cfe6ff', 0.85, 1, 0.10);
+  if(!exit&&f&&typeof stageText==='function'){
+    stageText(f,'PAGE '+(slotPage+1)+' / '+Math.ceil(CAMP_SLOTS/CAMP_SLOT_PAGE)+'  LEFT / RIGHT',px+pw/2,py+29,9,'#8fbad2',0.85,1,0.08);
+    if(P.mode==='load')stageText(f,campAutoLabel()+'  START: LOAD',px+pw/2,py+43,9,'#9ad9f4',0.85,1,0.08);
+  }
   for(let i=0;i<rows;i++){
-    const bx=px+14, bw=pw-28, by=py+padT+i*(rowH+gap), sel=(i===P.sel);
+    const abs=exit?i:slotPage*CAMP_SLOT_PAGE+i;
+    const bx=px+14, bw=pw-28, by=py+padT+i*(rowH+gap), sel=(abs===P.sel);
     rowR.push({x:bx, y:by, w:bw, h:rowH, key:null});
     ctx.save(); ctx.globalAlpha=sel ? 1 : 0.5;
     if(sel){ ctx.shadowColor='rgba(150,220,255,0.9)'; ctx.shadowBlur=10+6*pulse; }
-    drawPanel('dlg_window', exit ? (i===0 ? '#d2323c' : 'white') : (CAMP_SLOT_PAL[i]||null), bx, by, bw, rowH);
+    drawPanel('dlg_window', exit ? (i===0 ? '#d2323c' : 'white') : (CAMP_SLOT_PAL[abs%3]||null), bx, by, bw, rowH);
     ctx.restore();
-    const lab=exit ? (i===0 ? 'RETURN TO MAIN MENU' : 'STAY ON THE MAP') : campPauseSlotLabel(i);
+    const lab=exit ? (i===0 ? 'RETURN TO MAIN MENU' : 'STAY ON THE MAP') : campPauseSlotLabel(abs);
     if(f && typeof stageText==='function') stageText(f, lab, bx+bw/2, by+rowH*0.52, 11, sel ? '#ffe082' : '#cfd6e0', 0.85, sel ? 1 : 0.75, 0.09);
   }
   if(P.msgT>0 && f && typeof stageText==='function')
@@ -62017,19 +62063,26 @@ function campBarMenuDraw(dt){
 
   // ---- input ----
   if(typeof _selFlash!=='undefined' && _selFlash) return;
+  if(P.mode==='load'&&campMapStartTap()){
+    const a=campReadAuto();if(a&&campApply(a)){campSession=a;campPauseClose();openStageSelect(run.stage,{});}else campPauseSay('AUTO SLOT EMPTY');return;
+  }
   const m=Input.mouse;
   if(m && e>=1){
     let hov=-1;
     for(let i=0;i<rowR.length;i++){ const r=rowR[i]; if(m.x>=r.x && m.x<=r.x+r.w && m.y>=r.y && m.y<=r.y+r.h){ hov=i; break; } }
-    if(hov>=0 && hov!==P.sel && Input.consumeMouseMoved()){ P.sel=hov; if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); }
-    if(hov>=0 && m.down && !cmap2._mdPrev){ P.sel=hov; Input.injectTap('enter'); }
+    if(hov>=0 && (exit?hov:slotPage*CAMP_SLOT_PAGE+hov)!==P.sel && Input.consumeMouseMoved()){ P.sel=exit?hov:slotPage*CAMP_SLOT_PAGE+hov; if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); }
+    if(hov>=0 && m.down && !cmap2._mdPrev){ P.sel=exit?hov:slotPage*CAMP_SLOT_PAGE+hov; Input.injectTap('enter'); }
   }
-  Input.menuLeft(); Input.menuRight();                    // the map is locked under the menu; eat them
-  if(Input.menuUp()){ P.sel=(P.sel+rows-1)%rows; if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); }
-  if(Input.menuDown()){ P.sel=(P.sel+1)%rows; if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); }
+  if(!exit){
+    if(Input.menuLeft()){P.sel=Math.max(0,P.sel-CAMP_SLOT_PAGE);Audio.SFX.blip();}
+    if(Input.menuRight()){P.sel=Math.min(CAMP_SLOTS-1,P.sel+CAMP_SLOT_PAGE);Audio.SFX.blip();}
+  }else{Input.menuLeft();Input.menuRight();}
+  const navN=exit?rows:CAMP_SLOTS;
+  if(Input.menuUp()){ P.sel=(P.sel+navN-1)%navN; if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); }
+  if(Input.menuDown()){ P.sel=(P.sel+1)%navN; if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); }
   if(Input.menuBack()){ campPauseClose(); cmap2.focus='bar'; return; }
   if(P.t>0.18 && Input.menuConfirm()){
-    const i=P.sel, rr=rowR[i]||null;                     // the slot is captured before anything resets it (0810p)
+    const i=P.sel, rr=rowR[exit?i:i-slotPage*CAMP_SLOT_PAGE]||null;                     // the slot is captured before anything resets it (0810p)
     if(exit){
       if(i===0) selFlash(function(){ campPauseClose(); cmap2.focus='map'; campaignEnd(); menuIndex=0; goTitle(); }, null, rr);
       else { campPauseClose(); cmap2.focus='bar'; if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); }
@@ -63462,9 +63515,10 @@ const DIFF_META={
    mouse cannot hit it and `pickDiff` cannot name it - three separate ways in, closed by one fact
    instead of by three guards that each have to remember. */
 function diffLocked(k){ return k==='insanity' && !(typeof furiousOwned==='function' && furiousOwned('insanity_mode')); }
-function diffList(){ return DIFF_KEYS.filter(function(k){ return !diffLocked(k); }); }
+function diffList(){ return DIFF_KEYS.slice(); }
 function difficultyDescription(i){
   const L=diffList(); i=clamp(i,0,L.length-1); const k=L[i], d=difficultyForRun(run.mode,k);
+  if(diffLocked(k))return 'INSANITY LOCKED · UNLOCK IN FURIOUS ARMORY';
   return d.startLives+' '+(d.startLives===1?'LIFE':'LIVES')+' \u00B7 '+
     (d.continues<0?'UNLIMITED CONTINUES':d.continues+' '+(d.continues===1?'CONTINUE':'CONTINUES'))+' \u00B7 '+
     ((DIFF_META[k]||{}).desc||'');
@@ -63498,7 +63552,9 @@ function drawDiff(dt){
       const im=XART.rdy(ik)?XART.get(ik):XART.get('diff_normal_0916');
       const w=sel?w0*1.05:w0, h=w*(im.naturalHeight/im.naturalWidth);
       ctx.save(); if(sel){ctx.shadowColor='#ffdf73';ctx.shadowBlur=15;}else ctx.globalAlpha=0.84;
+      if(diffLocked(L[i]))ctx.filter='grayscale(1) brightness(.52)';
       ctx.drawImage(im,VW/2-w/2,cy-h/2,w,h); ctx.restore();
+      if(diffLocked(L[i])&&typeof modeLockDraw==='function')modeLockDraw({x:VW/2-w/2,y:cy-h/2,w,h});
       /* CURSOR (drop 0801ba). This screen was the only menu with no selector at
          all - just a glow. drawSelArrow is the shared rising-white selector the
          title/mode/pause menus already use, so the difficulty screen now reads
@@ -63533,6 +63589,7 @@ function drawDiff(dt){
         stageText(uf,line,VW/2,yy,fh,null,null,1,0.08);
       } else { ctx.textAlign='center'; ctx.fillStyle='#eaf2ff'; ctx.font='13px "BOFmil", monospace'; ctx.fillText(line,VW/2,yy); } yy+=20; }
   }
+  if(typeof modeDenyDraw==='function')modeDenyDraw(dt);
   if(diffFlash>0) diffFlash-=dt;
   if(diffPending!=null && diffFlash<=0){ const m=diffPending; diffPending=null; menuIndex=m; pickDiff(); return; }
   if(diffPending!=null) return;
@@ -63546,8 +63603,8 @@ function drawDiff(dt){
   if(Input.menuBack()){ setState(GS.TITLE); menuIndex=0; }
   if(backButton()){ setState(GS.TITLE); menuIndex=0; Audio.SFX.select(); }
 }
-function confirmDiff(){ if(diffPending!=null)return; Audio.SFX.select(); diffPending=menuIndex; diffFlash=0.2; }
-function pickDiff(){ const L=diffList(); diffKey=L[clamp(menuIndex,0,L.length-1)]; Audio.SFX.select();
+function confirmDiff(){ if(diffPending!=null)return; if(diffLocked(diffList()[menuIndex])){drawModeSelect._deny={t:0,text:'UNLOCK INSANITY IN FURIOUS ARMORY',shown:0};(Audio.SFX.blocked||Audio.SFX.blip)();return;} Audio.SFX.select(); diffPending=menuIndex; diffFlash=0.2; }
+function pickDiff(){ const L=diffList(); if(diffLocked(L[clamp(menuIndex,0,L.length-1)])){confirmDiff();return;} diffKey=L[clamp(menuIndex,0,L.length-1)]; Audio.SFX.select();
   /* MUSIC CROSSES OVER HERE (drop 0724cg), not when the map forms. Choosing a difficulty is the
      moment the player commits, so the menu track fades and the campaign track comes up UNDER the
      boot sequence — by the time the map appears it is already playing rather than starting
@@ -71758,6 +71815,7 @@ function scLeaveStage(R){
       if(R.seats){ run2.score=(run2.score|0)+R.seats[1].bonus; run2.lives=clamp(run2.lives,0,9); }
       drawStageClear._init=false; drawStageClear._res=null;
       Audio.stopMusic();
+      if(run.mode==='campaign')campAutoAfterClear(run.stage,run.stage===9 ? campaign.unlockedMax : run.stage+1,R.rank);
       /* ⚠ THE BONUS STAGE RETURNS, IT DOES NOT END THE GAME (0822ab). run.stage 9 is >= the
          campaign length, so without this branch clearing the bonus stage would roll credits. */
       /* ⚠ THE BONUS STAGE RETURNS TO THE MAP (0822ad supersedes 0822ab). It used to jump

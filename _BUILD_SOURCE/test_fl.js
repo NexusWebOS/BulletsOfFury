@@ -15470,20 +15470,31 @@ console.log('=== 302. green pause menu and verified autosave ===');
  ok(pause302.help==='help'&&pause302.helpBack==='paused/root','real Help back routes to pause rather than abandoning the stage');
  ok(pause302.resume==='play'&&pause302.resumedMusic===.60&&pause302.resumedDuck===1,'resume removes the temporary duck while retaining the selected music volume');
  var save302=JSON.parse(vm.runInContext(`(function(){
-  var get=localStorage.getItem,set=localStorage.setItem,clear=localStorage.clear,oldMode=run.mode,oldSession=campSession,oldP=playPause;
-  var store={bof_campaign_slot0:'manual-save'};localStorage.getItem=k=>store[k]||null;localStorage.setItem=(k,v)=>store[k]=String(v);localStorage.clear=()=>{store={};};
-  run.mode='campaign';playPauseBegin();var s=playPauseSave(),written=JSON.parse(store[s.name]),manual=store.bof_campaign_slot0;
-  campSession=null;var can=campCanContinue(),loaded=campSession&&campSession.stage===written.stage;
-  bofStorageResetKeepSaves();var kept=store[s.name]&&store.bof_campaign_slot0===manual;
-  localStorage.setItem=()=>{throw new Error('quota');};var failed=playPauseSave();
-  localStorage.getItem=get;localStorage.setItem=set;localStorage.clear=clear;run.mode=oldMode;campSession=oldSession;playPause=oldP;
-  return JSON.stringify({ok:s.ok,name:s.name,pilot:written.pilot,manual,can,loaded,kept:!!kept,failed:failed.ok});
+  var get=localStorage.getItem,set=localStorage.setItem,clear=localStorage.clear,remove=localStorage.removeItem;
+  var oldMode=run.mode,oldStage=run.stage,oldSession=campSession,oldP=playPause;
+  var oldProgress={unlockedMax:campaign.unlockedMax,rank:campaign.rank,justUnlocked:campaign.justUnlocked,bonusUnlocked:campaign.bonusUnlocked};
+  var store={bof_campaign_slot0:'manual-save'};
+  localStorage.getItem=k=>store[k]||null;localStorage.setItem=(k,v)=>store[k]=String(v);
+  localStorage.removeItem=k=>{delete store[k];};localStorage.clear=()=>{store={};};
+  run.mode='campaign';run.stage=2;campaign.unlockedMax=2;campaign.rank={};playPauseBegin();
+  var checkpoint=campAutoAfterClear(2,3,'A'),written=JSON.parse(store[CAMP_AUTO_KEY]),manual=store.bof_campaign_slot0;
+  var exit=playPauseSave(),unchanged=store[CAMP_AUTO_KEY]===JSON.stringify(written);
+  campSession=null;var can=campCanContinue(),loaded=campSession&&campSession.stage===3;
+  bofStorageResetKeepSaves();var kept=store[CAMP_AUTO_KEY]&&store.bof_campaign_slot0===manual;
+  localStorage.setItem=()=>{throw new Error('quota');};var failed=campAutoAfterClear(2,3,'A');
+  localStorage.setItem=set;localStorage.getItem=k=>store[k]||null;
+  campBeginFresh();var fresh=!store[CAMP_AUTO_KEY]&&store.bof_campaign_slot0===manual&&Object.keys(campaign.rank).length===0;
+  localStorage.getItem=get;localStorage.setItem=set;localStorage.removeItem=remove;localStorage.clear=clear;
+  run.mode=oldMode;run.stage=oldStage;campSession=oldSession;playPause=oldP;Object.assign(campaign,oldProgress);
+  return JSON.stringify({checkpoint,pilot:written.pilot,stage:written.stage,manual,can,loaded,kept:!!kept,
+    failed,exit:exit.ok&&exit.name===null,unchanged,fresh,slots:CAMP_SLOTS});
  })()`,ctxv));
- ok(save302.ok&&save302.name==='Autosav01.json'&&save302.pilot,'campaign autosave serializes and reads back a real named JSON record');
- ok(save302.manual==='manual-save','autosave uses separate records and preserves an existing manual slot');
- ok(save302.can&&save302.loaded,'Continue can recover the latest verified campaign autosave after the session is lost');
- ok(save302.kept,'controls reset preserves new autosave data together with manual saves');
- ok(!save302.failed,'failed storage cannot be advertised as a successful autosave');
+ ok(save302.checkpoint&&save302.stage===3&&save302.pilot,'a completed stage writes one verified checkpoint at the next stage');
+ ok(save302.exit&&save302.unchanged,'leaving mid-level does not autosave or advance the checkpoint');
+ ok(save302.manual==='manual-save'&&save302.slots===24,'the checkpoint is separate from 24 manual slots');
+ ok(save302.can&&save302.loaded,'Continue restores the completed-stage checkpoint after the session is lost');
+ ok(save302.kept,'controls reset preserves the checkpoint and manual saves');
+ ok(!save302.failed&&save302.fresh,'failed checkpoint writes are rejected and a fresh campaign clears only the checkpoint');
 }
 
 // ===== 303. SHARED LASER WARNING FAMILIES, 0914 =====

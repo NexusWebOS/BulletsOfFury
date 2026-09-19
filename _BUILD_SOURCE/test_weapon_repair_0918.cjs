@@ -2,8 +2,8 @@ const fs=require('fs');
 module.exports=function testWeaponRepair0918(vm,ctxv,ok){
   console.log('=== 373. BOSS ELEMENTS, SELECTABLE FORMS, FURIOUS RAZORBACK (0918) ===');
   const R=js=>vm.runInContext(js,ctxv);
-  ok(R("JSON.stringify(BOSS_ELEMENT_BY_STAGE)==='{"+"\\\"1\\\":\\\"kinetic\\\",\\\"2\\\":\\\"fire\\\",\\\"3\\\":\\\"ice\\\",\\\"4\\\":\\\"lightning\\\",\\\"5\\\":\\\"chrome\\\",\\\"6\\\":\\\"water\\\",\\\"7\\\":\\\"toxic\\\",\\\"8\\\":\\\"prism\\\",\\\"9\\\":\\\"dark\\\"}'"),
-    'stages 1-9 award Sonic, Fire, Ice, Lightning, Chromium, Tidal, Toxic, Prism and Dark Matter in order');
+  ok(R("JSON.stringify(BOSS_ELEMENT_BY_STAGE)==='{"+"\\\"1\\\":\\\"kinetic\\\",\\\"2\\\":\\\"fire\\\",\\\"3\\\":\\\"ice\\\",\\\"4\\\":\\\"lightning\\\",\\\"5\\\":\\\"chrome\\\",\\\"6\\\":\\\"dark\\\",\\\"7\\\":\\\"toxic\\\",\\\"8\\\":\\\"prism\\\",\\\"9\\\":\\\"water\\\"}'"),
+    'stages 1-9 award Sonic, Fire, Ice, Lightning, Chromium, Dark Matter, Toxic, Prism and Water in order');
   R("var __wrOwn=achievementState.owned;achievementState.owned={};run.forge={};run.forgeForms={};run.forgeElems={};run.forgeCombos=4;run.forgeRespecs=2;run.weapon=0;run.infusion=null;");
   ok(R("forgeComboGrant('fire')==='ok' && FORGE_WEAPONS.every(function(w){return forgeElemsFor(w).indexOf('fire')>=0;})"),
     'the Fire boss reward unlocks Fire for every weapon, not one random pairing');
@@ -20,7 +20,7 @@ module.exports=function testWeaponRepair0918(vm,ctxv,ok){
     'the Stage-5 Chromium Forge opens after the space boss');
   ok(R("(run.stage=9,forgeComboGrant('dark'),infusionGateOpen('dark'))"),
     'a boss-earned gated element is usable immediately');
-  ok(R("(run.stage=1,forgeComboRoll().elem==='kinetic') && (run.stage=5,forgeComboRoll().elem==='chrome') && (run.stage=9,forgeComboRoll().elem==='dark')"),
+  ok(R("(run.stage=1,forgeComboRoll().elem==='kinetic') && (run.stage=5,forgeComboRoll().elem==='chrome') && (run.stage=9,forgeComboRoll().elem==='water')"),
     'boss element rewards are deterministic, never a lottery');
   ok(R("XART._src.magma_orb_0918 && XART._src.forge_loadout_0918 && XART._src.weapon_found_0918"),
     'the Magma Orb, Forge/loadout and Weapon Found plates are registered');
