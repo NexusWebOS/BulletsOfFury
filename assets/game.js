@@ -2067,6 +2067,10 @@ const XART=(function(){
   X._src['forge_loadout_0918']='assets/game/ui/forge_0918/forge_loadout.png';
   X._src['weapon_found_0918']='assets/game/ui/forge_0918/weapon_found.png';
   X._src['magma_orb_0918']='assets/game/player_weapons/magma_orb_0918/magma_orb.png';
+  const _forgeFire='assets/game/player_weapons/forge_fire_0918/';
+  X._src.forge_fire_slug_0918=_forgeFire+'fire_rotary_slug.png';
+  X._src.forge_fire_laser_0918=_forgeFire+'fire_laser_column.png';
+  X._src.forge_fire_blast_0918=_forgeFire+'fire_magma_blast.png';
   /* 0917c: POWERS GAINED's own plate (same family), the FURIOUS coin, the two bombs, the score bullets */
   X._src['powers_bays_0917c']='assets/game/ui/forge_0917b/powers_bays.png';
   X._src['fury_coin_0917c']='assets/game/ui/pickups_0917b/fury_coin.png';
@@ -6731,7 +6735,7 @@ const Audio = (()=>{
     if(Number.isFinite(v.music))volMusic=clamp(v.music,0,1);
     if(Number.isFinite(v.sfx))volSfx=clamp(v.sfx,0,1);
   }}catch(_avRead){}
-  function sfxMixLevel(){const headroom=.35*volMusic*Math.max(0,(1-volSfx)/.6);return volSfx*(1-headroom);}
+  function sfxMixLevel(){return volSfx;}
   let noiseBuf=null;
   /* init() MUST NOT THROW (drop 0724di).
      goTitle() is `Audio.init(); Audio.startMusic('title'); setState(GS.TITLE);` — audio FIRST, and
@@ -8019,7 +8023,7 @@ const INFUSION_FIELD_DROPS=false;
    "1 flamethrower/ice breath/ other types upgrade". They take the element as the aura, the trail and
    the on-hit effect; each has its own authored draw, so none of them takes the palette swap. */
 const INFUSION_CARRIERS={mg:1,spread:1,beam:1,missile:1,orb:1,shard:1,
-                         flame:1,lasermist:1,yuriLightningOrb:1,yuriLightningBolt:1};
+                         flame:1,lasermist:1,yuriLightningOrb:1,yuriLightningBolt:1,forgeFireBlast:1};
 /* Each boss awards one global element; the Forge applies it to any weapon. */
 const BOSS_ELEMENT_BY_STAGE=Object.freeze({1:'kinetic',2:'fire',3:'ice',4:'lightning',5:'chrome',6:'water',7:'toxic',8:'prism',9:'dark'});
 const INFUSION_STAGE_BIAS=BOSS_ELEMENT_BY_STAGE;
@@ -8218,6 +8222,12 @@ function ensureForgeForms(){
     if(!run.forgeForms[w]) run.forgeForms[w]={};
     if(!run.forgeForms[w][f.elem]) run.forgeForms[w][f.elem]={elem:f.elem,lv:Math.max(1,f.lv|0)};
   }
+  /* A permanent Armory recipe is available in every later run without charging again. */
+  for(const id of Object.keys(achievementState.owned||{})){
+    const m=/^forge_([a-z]+)_([0-9])_C$/.exec(id); if(!m||!INFUSIONS[m[1]]) continue;
+    const w=+m[2], elem=m[1]; if(!run.forgeForms[w]) run.forgeForms[w]={};
+    if(!run.forgeForms[w][elem]) run.forgeForms[w][elem]={elem:elem,lv:forgeOwnedLevel(elem,w)};
+  }
   return run.forgeForms;
 }
 function forgeEntry(w){ return (run && run.forge && run.forge[w]) ? run.forge[w] : null; }
@@ -8225,7 +8235,31 @@ function forgeFormsFor(w){ const F=ensureForgeForms(); return F[w]||{}; }
 function forgeName(w){
   const f=forgeEntry(w); if(!f || !INFUSIONS[f.elem]) return null;
   const T=FORGE_NAMES[f.elem];
-  return (T && T[w]) ? T[w] : (INFUSIONS[f.elem].name+' '+((typeof WEAPONS!=='undefined'&&WEAPONS[w])||'WEAPON'));
+  return forgeStyleName(f.elem,w,f.lv);
+}
+/* Every element receives three weapon-family forms: the base recipe, a changed
+   firing pattern at III, and a stronger finisher at V. The 405 authored badges
+   continue to identify element, weapon and level independently of these names. */
+const FORGE_STYLE_WORDS=Object.freeze({
+  fire:['FIRE','MAGMA'],ice:['HAIL','GLACIAL'],lightning:['VOLT','THUNDER'],
+  prism:['PRISM','SPECTRUM'],toxic:['VENOM','BLIGHT'],kinetic:['SONIC','IMPACT'],
+  chrome:['CHROME','MIRROR'],water:['TIDAL','GEYSER'],dark:['VOID','ABYSS']
+});
+const FORGE_STYLE_FAMILY=Object.freeze({
+  0:['MINIGUN','BARRAGE'],1:['STORM','NOVA'],2:['SWARM','SALVO'],
+  3:['LASER CANNON','LANCE'],4:['TORRENT','ERUPTION'],5:['SATELLITE','BURST'],
+  6:['CLOUD','TYPHOON'],7:['ROTARY','BARRAGE'],8:['CHAIN','STORM']
+});
+function forgeStyleName(elem,w,lv){
+  const base=(FORGE_NAMES[elem]&&FORGE_NAMES[elem][w])||((INFUSIONS[elem]||{}).name+' '+WEAPONS[w]);
+  if((lv|0)<3) return base;
+  const words=FORGE_STYLE_WORDS[elem]||['POWER','MEGA'], family=FORGE_STYLE_FAMILY[w]||['WEAPON','BURST'];
+  return (lv|0)<5?words[0]+' '+family[0]:words[1]+' '+family[1];
+}
+function forgeActiveTier(w){
+  const f=forgeEntry(w);
+  if(!f||!run||!run.infusion||run.infusion.elem!==f.elem) return 0;
+  return (f.lv|0)>=5?5:(f.lv|0)>=3?3:1;
 }
 function forgeCanTake(w){ return FORGE_WEAPONS.indexOf(w|0)>=0; }
 function forgeDiscover(elem){ if(run && INFUSIONS[elem]){ if(!run.forgeElems) run.forgeElems={}; run.forgeElems[elem]=1; } }
@@ -8617,6 +8651,31 @@ function forgeLevelId(elem,w,lv){ return 'forge_'+elem+'_'+(w|0)+'_L'+(lv|0); }
 const FORGE_COMBO_ID_RE=/^forge_[a-z]+_[0-9]_C$/;
 const FORGE_ELEMENT_ID_RE=/^forge_element_[a-z]+_E$/;
 function forgeComboId(elem,w){ return 'forge_'+elem+'_'+(w|0)+'_C'; }
+const FORGE_COMBO_COST=300;
+function forgeComboCost(){
+  const owned=(achievementState&&achievementState.owned)||{};
+  const bought=Object.keys(owned).filter(function(k){return FORGE_COMBO_ID_RE.test(k)&&owned[k]&&owned[k].cost>0;}).length;
+  return Math.min(1800,Math.round(FORGE_COMBO_COST*Math.pow(1.22,bought)/10)*10);
+}
+/* The boss awards an element. Buying one pairing keeps its recipe across runs;
+   the two free combines available each stage remain intact. */
+function forgeComboBuy(elem,w){
+  if(!INFUSIONS[elem]||!forgeCanTake(w)) return 'unknown';
+  if(!forgeComboOwned(elem,w)) return 'locked';
+  const id=forgeComboId(elem,w);
+  if(furiousOwned(id)) return 'owned';
+  const cost=forgeComboCost();
+  if(furiousBalance()<cost) return 'poor';
+  if(!achievementState.owned) achievementState.owned={};
+  achievementState.owned[id]={at:Date.now(),cost:cost};
+  achievementSave();
+  if(run){
+    if(!run.forgeForms) run.forgeForms={};
+    if(!run.forgeForms[w]) run.forgeForms[w]={};
+    if(!run.forgeForms[w][elem]) run.forgeForms[w][elem]={elem:elem,lv:forgeOwnedLevel(elem,w)};
+  }
+  return 'ok';
+}
 function forgeElementId(elem){ return 'forge_element_'+elem+'_E'; }
 function forgeComboOwned(elem,w){
   if(!INFUSIONS[elem]||!forgeCanTake(w)) return false;
@@ -8650,7 +8709,7 @@ function forgeBossDrop(x,y){
   const lo=(typeof camLeftX==='function')?camLeftX()+22:22, hi=(typeof camRightX==='function')?camRightX()-22:VW-22;
   x=clamp(Number.isFinite(x)?x:VW/2,Math.min(lo,hi),Math.max(lo,hi));
   y=clamp(Number.isFinite(y)?y:VH*0.35,40,VH*0.52);
-  const P={x:x,y:y,vy:0.85,t:0,kind:'forgecombo',elem:c.elem,w:24,h:24,bob:rnd(0,TAU),_fcHold:VH*0.58};
+  const P={x:x,y:y,vy:0,t:0,kind:'forgecombo',elem:c.elem,w:24,h:24,bob:rnd(0,TAU),_fcHold:1};
   powerups.push(P);
   try{ if(typeof stageStats!=='undefined'&&stageStats.pickupsSeen!=null) stageStats.pickupsSeen++; }catch(_fb){}
   try{ if(typeof XART!=='undefined') XART.rdy('inf_'+c.elem); }catch(_fb2){}
@@ -18853,6 +18912,8 @@ function razorbackPartAt(b,x,y){
   if(R.state==='guns'){
     for(const k of ['left','right']) if(R.pools[k]>0){ const g=rzbWorld(b,k==='left'?-57:57,96);
       const rr=RZB_R.gun*(R.scale||1);if((x-g.x)*(x-g.x)+(y-g.y)*(y-g.y) < rr*rr) return k; }
+    if(R.pools.turret>0){ const rr=RZB_R.turret*(R.scale||1);
+      if((x-b.x)*(x-b.x)+(y-b.y)*(y-b.y)<rr*rr) return 'turret'; }
     return null;
   }
   const r=(R.state==='turret'?RZB_R.turret:RZB_R.hull)*(R.scale||1);
@@ -18877,6 +18938,7 @@ function razorbackHit(b,dmg,hx,hy){
 }
 function razorbackClear(b){
   const R=b._rzb; R.pid++; R.waves=[]; R.charge=0;
+  if(typeof Snd!=='undefined'&&Snd.loopOff) Snd.loopOff('rzbTankRoll');
   for(const q of eBullets) if(q._rzb&&(!q._rzbOwner||q._rzbOwner===b)) q.dead=true;
   if(typeof playerLocks!=='undefined') playerLocks=playerLocks.filter(L=>L.src!==b);
 }
@@ -18887,9 +18949,12 @@ function razorbackBreak(b,key){
   if(typeof fxBurst==='function') fxBurst(p.x,p.y,34,{color:'#c8ff6a',rings:1});
   shake=Math.max(shake||0,10);
   rzbSfx(key==='hull'?'explodeBig':'expBig');
-  if(key==='left'||key==='right'){ if(R.pools.left<=0 && R.pools.right<=0) razorbackEnter(b,'turret'); }
-  else if(key==='turret'){ R.fx.push({key:'rzb_turret_damaged',x:p.x,y:p.y,s:1,life:1.8,max:1.8,spin:1}); razorbackEnter(b,'hull'); }
-  else razorbackClear(b);                                         // the hull: hitSubBoss runs the death
+  if(key==='left'||key==='right'){
+    if(R.pools.left<=0 && R.pools.right<=0) razorbackEnter(b,R.pools.turret>0?'turret':'hull');
+  } else if(key==='turret'){
+    R.fx.push({key:'rzb_turret_damaged',x:p.x,y:p.y,s:1,life:1.8,max:1.8,spin:1});
+    if(R.pools.left<=0 && R.pools.right<=0) razorbackEnter(b,'hull');
+  } else razorbackClear(b);                                         // the hull: hitSubBoss runs the death
 }
 function razorbackEnter(b,state){
   const R=b._rzb; R.state=state; R.pt=0; R.trans=1.4; R.idx=-1+(R.attackOffset||0); razorbackClear(b);
@@ -18962,7 +19027,12 @@ function razorbackUpdate(b,dt){
   /* THE DRIVETRAIN IS AUDIBLE: the pack's servo whirr while the hull is actually moving, gated by its
      TAME row and a 2.2s cadence so it reads as machinery rather than a repeating blip */
   R.servoT=(R.servoT||0)-dt;
-  if(R.speed>20*RZB_S && R.servoT<=0){ R.servoT=2.2; rzbSfx('furnaceServo'); }
+  if(R.speed>20*RZB_S){
+    if(typeof Snd!=='undefined'&&Snd.loopOn) Snd.loopOn('rzbTankRoll',Math.min(.72,.34+R.speed/520));
+    R.rollShake=(R.rollShake||0)+dt;
+    if(R.rollShake>.085){R.rollShake=0;shake=Math.max(shake||0,1.15+(R.speed>150*RZB_S?0.75:0));}
+    if(R.servoT<=0){ R.servoT=2.2; rzbSfx('furnaceServo'); }
+  } else if(typeof Snd!=='undefined'&&Snd.loopOff) Snd.loopOff('rzbTankRoll');
   const ta=rzbAim(b,{x:P.x+R.pvx*0.16, y:P.y});
   R.turret+=clamp(rzbWrap(ta-R.turret), -1.85*(R.turnMul||1)*dt, 1.85*(R.turnMul||1)*dt);
   for(const k of ['left','right']){ const g=rzbWorld(b,k==='left'?-57:57,96);
@@ -18971,10 +19041,14 @@ function razorbackUpdate(b,dt){
   // pressure waves: expand, and hurt whoever stands on the ring inside its arc
   for(const w of R.waves){
     w.r+=w.speed*dt; w.life-=dt;
-    if(!P.dead){ const dd=Math.hypot(P.x-w.x,P.y-w.y), aa=rzbAim(w,P);
+    if(w.maxR==null) w.maxR=Math.max(100,(VH-w.y)*.82);
+    const fadeAt=w.maxR*.70;
+    w.fade=clamp((w.maxR-w.r)/Math.max(1,w.maxR-fadeAt),0,1);
+    if(w.r>=w.maxR) w.life=0;
+    if(w.fade>.28&&!P.dead){ const dd=Math.hypot(P.x-w.x,P.y-w.y), aa=rzbAim(w,P);
       if(Math.abs(dd-w.r)<w.width+7*rzbScale(b) && rzbWaveAngleHit(w,rzbWrap(aa-w.a)) && typeof playerHit==='function') playerHit(); }
   }
-  R.waves=R.waves.filter(w=>w.life>0);
+  R.waves=R.waves.filter(w=>w.life>0&&w.fade>0);
   if(!P.dead && Math.hypot(b.x-P.x,b.y-P.y)<105*rzbScale(b) && typeof playerHit==='function') playerHit();   // the hull runs you over
 }
 function razorbackCombat(b){
@@ -19089,8 +19163,8 @@ function razorbackDraw(b){
   const mul=R.scale||1,S=rzbScale(b),bodyTint=R.furious?'furious':null;
   ctx.save(); ctx.imageSmoothingEnabled=false;
   if(b.dead){
-    const k=clamp((b.dying||0)/1.9,0,1);
-    rzbSprite('rzb_wreck',b.x,b.y,R.a,1,1-k*0.85,null,null,mul,bodyTint);
+    /* Modular enemies never dissolve: the wreck stays solid while explosions and debris remove it. */
+    rzbSprite('rzb_wreck',b.x,b.y,R.a,1,1,null,null,mul,bodyTint);
     ctx.restore(); return;
   }
   /* ground shadow: the hull's own SILHOUETTE flooded black and offset. The pack drew a translucent
@@ -19161,9 +19235,9 @@ function razorbackWaveDraw(w){
     ctx.save(); ctx.translate(w.x,w.y);
     ctx.beginPath(); ctx.moveTo(0,0); ctx.arc(0,0,w.r+w.width+5,a0,a1); ctx.closePath(); ctx.clip();
     ctx.beginPath(); ctx.arc(0,0,w.r+w.width*amp,0,TAU); ctx.arc(0,0,Math.max(0,w.r-w.width*amp),0,TAU,true); ctx.clip();
-    if(im){ const sz=256*(w.r+15*RZB_S)/105; ctx.globalAlpha=0.58+0.34*amp; ctx.drawImage(im,-sz/2,-sz/2,sz,sz); }
+    if(im){ const sz=256*(w.r+15*RZB_S)/105; ctx.globalAlpha=(w.fade==null?1:w.fade)*(0.58+0.34*amp); ctx.drawImage(im,-sz/2,-sz/2,sz,sz); }
     ctx.restore();
-    ctx.save(); ctx.strokeStyle=w.furious?'rgba(255,34,62,'+(0.52+0.3*amp)+')':'rgba(202,255,119,0.5)';
+    ctx.save(); ctx.globalAlpha=(w.fade==null?1:w.fade); ctx.strokeStyle=w.furious?'rgba(255,34,62,'+(0.52+0.3*amp)+')':'rgba(202,255,119,0.5)';
     ctx.lineWidth=1.5+amp*1.4; ctx.beginPath(); ctx.arc(w.x,w.y,w.r,a0,a1); ctx.stroke(); ctx.restore();
   }
 }
@@ -21793,6 +21867,7 @@ function s7WardenForwardCrawl(b,dt,speed,crippled){
   S.crawlFrame=pose.f;S.gait=pose.f;S.travel=moved;S.bodyDrop=(pose.plant?(crippled?3.2:1.8):-.55)*Math.sin(u*Math.PI);
 }
 function s7WardenBeginDefeat(b){
+  if(b&&!b._forgeRewardDropped){ b._forgeRewardDropped=true; try{ forgeBossDrop(b.x,b.y); }catch(_s7fr){} }
   const S=b&&b._s7warden,F=S&&S.final;if(!F||F.finished||F.phase==='defeat'||F.phase==='escape')return true;
   b.hp=1;b._s7FinalNoBar=true;bossDefeated=true;eBullets.length=0;
   s7WardenPhase(b,'defeat');F.finalY=b.y;F.finalX=b.x;F.bossHidden=false;
@@ -21828,6 +21903,8 @@ function s7WardenHit(b,dmg,x,y){
 }
 function s7WardenFinishCampaign(b){
   const F=b&&b._s7warden&&b._s7warden.final;if(!F||F.finished)return;F.finished=true;
+  for(const p of powerups){ if(p.kind==='forgecombo'&&!p.dead){ applyPowerup(p); p.dead=true; } }
+  powerups=powerups.filter(function(p){return !p.dead;});
   whiteBlast=0;bossActive=false;bossDefeated=true;b.dead=true;
   try{Audio.stopMusic();}catch(_s7m){}
   if(run.mode==='campaign'&&typeof campaign!=='undefined'){
@@ -24599,6 +24676,19 @@ function updateSubBoss(dt){
     b.dying+=dt; const T=b.dying;
     /* The Hellwing owns its complete destruction reel. Every other miniboss gets one authored,
        class-sized death takeover instead of a spray of generic fireballs. */
+    if(b._ql){
+      /* The four guns have already exploded as independent pieces. Split the hull into
+         four visible plates during its death instead of dissolving one intact sprite. */
+      if(!b._qlDeathFx){b._qlDeathFx=true;unitDeathFX(b,'mini','red');}
+      const beats=[.30,.54,.78,1.03];
+      for(let i=0;i<beats.length;i++)if(T>=beats[i]&&!(b._qlDeathBeats&(1<<i))){
+        b._qlDeathBeats=(b._qlDeathBeats||0)|(1<<i);
+        const ox=(i%2?1:-1)*b.w*.22,oy=(i<2?-1:1)*b.h*.22;
+        explode(b.x+ox,b.y+oy,Math.max(40,b.w*.42),i%2?'orange':'red');
+        if(typeof spawnDeathDebris==='function')spawnDeathDebris({x:b.x+ox,y:b.y+oy,w:42,h:42},'jet');
+        if(Audio.SFX&&Audio.SFX.expSmall)Audio.SFX.expSmall();
+      }
+    }
     if(!b._deathFxStarted){
       if(b._herald) b._deathFxStarted=true;
       else if(jcShip(b)&&typeof unitDeathFX==='function'){
@@ -25738,7 +25828,15 @@ function drawSubBoss(){
       const im=XART.get(bodyK);
       const S=b.w/384, x0=b.x-192*S, y0=b.y-192*S;
       ctx.save();
-      ctx.drawImage(im, x0, y0, 384*S, 384*S);
+      if(b.dead){
+        const t=Math.max(0,b.dying-.22),gap=Math.min(1,t*1.25);
+        for(let i=0;i<4;i++){
+          const sx=(i%2)*192,sy=(i>>1)*192,dirX=i%2?1:-1,dirY=i<2?-1:1;
+          const cx=x0+(sx+96)*S+dirX*gap*56,cy=y0+(sy+96)*S+dirY*gap*42+t*t*18;
+          ctx.save();ctx.translate(cx,cy);ctx.rotate(dirX*dirY*t*.47);
+          ctx.drawImage(im,sx,sy,192,192,-96*S,-96*S,192*S,192*S);ctx.restore();
+        }
+      }else ctx.drawImage(im, x0, y0, 384*S, 384*S);
       /* THE ARMOUR TRACE (drop 0801kf). While the shield is up, a hit on the hull
          pulses its OUTLINE - the same read as the charge-up - instead of washing
          every plate white. */
@@ -25750,7 +25848,7 @@ function drawSubBoss(){
          firing saw a plain hull. The shield is a STATE, so it should be visible whenever it is
          up. This draws a slow breathing aura the whole time a turret lives, and the hit pulse
          still rides on top of it. */
-      if(!b._qlHullOpen && (b._qlCan||[]).some(function(c){ return !c.dead; }) && typeof xartTint==='function'){
+      if(!b.dead && !b._qlHullOpen && (b._qlCan||[]).some(function(c){ return !c.dead; }) && typeof xartTint==='function'){
         const _au=xartTint(bodyK,'#7fd1ff',0.55);
         if(_au){
           ctx.save();
@@ -25761,7 +25859,7 @@ function drawSubBoss(){
           ctx.restore();
         }
       }
-      if((b._qlArmor||0) > 0 && typeof xartTint==='function'){
+      if(!b.dead && (b._qlArmor||0) > 0 && typeof xartTint==='function'){
         /* SHIELD BLUE WHILE THE GUNS LIVE, AMBER ONCE THEY DO NOT (drop 0807b). Mike: "do not
            let the hull flash white until you break all the turrets, until then, just make it
            flash the shield color."
@@ -26499,6 +26597,9 @@ function _weaponCadence(){
   /* A docked vehicle-mounted MG owns the primary trigger: about eighteen twin-barrel beats per
      second gives it the requested MG42/gatling rip without turning it into a 60Hz particle hose. */
   if(typeof lzMountActive==='function' && lzMountActive()) return LZ_SLUG_CD;
+  /* The III/V rotary form is a real minigun: faster beats, with its own heat of fire. */
+  if(run.weapon===0 && forgeActiveTier(0)>=3)
+    return WEAPON_CADENCE[0]*(forgeActiveTier(0)>=5?0.64:0.78);
   // Basic machine gun = weapon 0 at level 0 (before any MG powerup): a slower base cadence than the
   // L1 rapid-fire (0.085). The pilot's stat-card fire rate is applied on top via PILOTMOD.fire in the
   // caller, so faster-firing pilots get a snappier basic MG automatically.
@@ -26533,7 +26634,8 @@ function _weaponCadence(){
      tracking run cannot resolve a difference smaller than about 2x and will invent ones that are
      not there. Second pass, from the pinned medians 21/26/30/35/34/42/41, targets ~30s. */
   if(run.weapon===6)return Math.max(.29,.55-clamp(run.wlevel||1,1,5)*.055);
-  if(run.weapon===7){const r=clamp(run._chainRev||0,0,1);return Math.max(.045,.18-r*.135);}
+  if(run.weapon===7){const r=clamp(run._chainRev||0,0,1);
+    return Math.max(.042,(.18-r*.135)*(forgeActiveTier(7)>=3?.90:1));}
   {
     const _c=WEAPON_CADENCE[run.weapon];
     if(_c!=null && WEAPON_LVL_RAMP[run.weapon]){
@@ -26742,7 +26844,7 @@ const FLAME_SEG  = 30;      // px between drawn segments up the jet
 const FLAME_FIXED_LV = 3;                                        // the 0903z pinned size; unused while SCALES is on
 const FLAME_SCALES_WITH_LV = true;                               // Mike 0906 - set false to restore the 0903z pin
 function _flv(lv){ return FLAME_SCALES_WITH_LV ? clamp(lv,1,5) : FLAME_FIXED_LV; }
-function flameReach(lv){ return 118 + _flv(lv)*30; }             // 148 (lv1) .. 268 (lv5)
+function flameReach(lv){ return (118 + _flv(lv)*30)*(run&&run.weapon===4&&forgeActiveTier(4)>=3?1.16:1); }             // 148 (lv1) .. 268 (lv5)
 function flameBase(lv){ return 15 + _flv(lv)*4; }                // 19 .. 35 half-width at the nozzle
 function flameFlare(lv){ return 2.0 + _flv(lv)*0.15; }           // 2.15 .. 2.75 tip multiple
 /* per-tick damage. FLAME_TICK is 0.08s, so lv5 is ~137 dps against lv1's ~45 - the upgrade the
@@ -28087,7 +28189,7 @@ function chaingunHeatTick(dt,firing){
    ============================================================ */
 function yuriLightningOrbRelease(b){
   if(!b||b._released)return;b._released=true;
-  const lv=clamp(b.lv||1,1,5),n=lv+1,spread=.16+lv*.055,spd=8.0+lv*.34;
+  const lv=clamp(b.lv||1,1,5),n=lv+1+((b._forgeTier|0)>=3?1:0),spread=.16+lv*.055,spd=8.0+lv*.34;
   for(let i=0;i<n;i++){
     const a=-Math.PI/2+(i-(n-1)/2)*spread;
     pBullets.push({kind:'yuriLightningBolt',x:b.x,y:b.y,vx:Math.cos(a)*spd,vy:Math.sin(a)*spd,
@@ -28101,7 +28203,7 @@ function yuriLightningOrbFire(lv){
   lv=clamp(lv||1,1,5);let live=0;for(const q of pBullets)if(q&&!q.dead&&q.kind==='yuriLightningOrb')live++;
   if(live>=2+Math.floor(lv/3))return false;
   pBullets.push({kind:'yuriLightningOrb',x:player.x,y:player.y-18,vx:0,vy:-(5.0+lv*.25),w:22+lv*3,h:22+lv*3,
-    dmg:2.4+lv*.72,lv:lv,t:0,life:2.2,_released:false,_hit:[],pierce:true});
+    dmg:2.4+lv*.72,lv:lv,t:0,life:2.2,_released:false,_hit:[],pierce:true,_forgeTier:forgeActiveTier(8)});
   player._mgMuzT=.09;player._mgMuzLv=Math.max(1,lv);shake=Math.max(shake,.7+lv*.12);
   if(Audio&&Audio.SFX)(Audio.SFX.chainShoot||Audio.SFX.laser||Audio.SFX.shoot)();
   return true;
@@ -28126,6 +28228,34 @@ function yuriLightningOrbTick(b,dt){
   return true;
 }
 
+/* The same forge behavior drives play and both live previews. Each family changes its
+   pattern at III; its element continues to own the hit effect (burn, freeze, chain, etc.).
+   At V, fire rotary families periodically launch the new Stage-2-sized magma blast. */
+function forgeStyleAfterShot(w,from){
+  const tier=forgeActiveTier(w); if(tier<3) return;
+  const elem=run.infusion.elem;
+  for(let i=from;i<pBullets.length;i++){
+    const b=pBullets[i]; if(!b||b._forgeStyled) continue;
+    b._forgeStyled=1; b._forgeTier=tier;
+    if(b.kind!=='beam' && b.kind!=='flame'){
+      b.dmg=(b.dmg||1)*(tier>=5?1.18:1.08);
+      if(w===2) b.turn=(b.turn||.13)+.025;
+      if(w===6) b.w=(b.w||8)*1.12;
+      if(w===7) b.vy=(b.vy||-8)*1.06;
+    }
+  }
+  if(elem==='fire' && tier>=5 && (w===0||w===1||w===2||w===7)){
+    const every=({0:12,1:5,2:3,7:14})[w];
+    if(!run._forgeBlastSeq) run._forgeBlastSeq={};
+    const n=run._forgeBlastSeq[w]=(run._forgeBlastSeq[w]|0)+1;
+    if(n%every===0){
+      pBullets.push({kind:'forgeFireBlast',x:player.x,y:player.y-23,vx:0,vy:-6.5,
+        w:25,h:31,dmg:6+tier*0.8,_bossDmg:7,lv:Math.max(1,run.wlevel|0),
+        _inf:'fire',_infLv:tier,t:0});
+      try{ XART.rdy('forge_fire_blast_0918'); }catch(_ff){}
+    }
+  }
+}
 function pShoot(){
   const w=run.weapon, lv=run.wlevel; const _sn0=pBullets.length;
   /* SONIC BOOM REPLACES THE PRIMARY WHILE IT LASTS (drop 0805i). It is a shockwave weapon,
@@ -28205,7 +28335,8 @@ function pShoot(){
        lasers in a row now, lvl 5 to red and with 6.' The colours (WLV_GLOW/WLV_BODY) already
        matched that scheme; the count was one short from L2 up (L2 fired 2, L3 fired 3...).
        L0 stays the single default shot. Cole's 6 and 7 keep their own authored widths. */
-    const spread = _cl<=0 ? 1 : (_cl>=7 ? 4 : (_cl>=6 ? 3 : _cl+1));
+    const spread = (_cl<=0 ? 1 : (_cl>=7 ? 4 : (_cl>=6 ? 3 : _cl+1)))+
+      (forgeActiveTier(0)>=3?1:0);
     const lvv = _cl;
     /* PER-PELLET DAMAGE now scales with the weapon level. Measured before this change: the default
        gun did 11.8 dps (one pellet, one damage) and NEVER got stronger — upgrades only added more
@@ -28221,7 +28352,7 @@ function pShoot(){
     player._mgMuzT=0.07; player._mgMuzLv=Math.max(1,Math.min(8,lvv));   // real machinefx muzzle flash at the nose
     (Audio.SFX.machineGun||Audio.SFX.shoot)();
   } else if(w===1){ // spread fire
-    const n=2+lv;
+    const n=2+lv+(forgeActiveTier(1)>=3?1:0);
     const sprd=0.22+lv*0.05;
     for(let i=0;i<n;i++){
       const a=-Math.PI/2 + (i-(n-1)/2)*sprd;
@@ -28236,7 +28367,8 @@ function pShoot(){
     player._mgMuzT=0.07; player._mgMuzLv=Math.max(1,Math.min(8,lv));
     Audio.SFX.spread();
   } else if(w===2){ // MISSILE — salvo of homing missiles (real pilot-colored missile art, Raiden-style tracking)
-    const n = 1+Math.floor((lv+1)/2);              // lv1:2 lv2:2 lv3:3 lv4:3 lv5:4
+    const n = 1+Math.floor((lv+1)/2)+(forgeActiveTier(2)>=3?1:0);
+    // The III missile form adds a separate warhead to each volley.
     const dmg = 3 + Math.floor(lv/2);
     const turn = 0.13 + lv*0.012;
     const mk=(typeof pilotMissileKey==='function')?pilotMissileKey(false):null;
@@ -28273,7 +28405,8 @@ function pShoot(){
            still remain silent. Subsequent simulation frames only refresh this idempotent loop. */
         if(typeof Snd!=='undefined'&&Snd&&Snd.loopOn)Snd.loopOn('laserBeamLoop',0.90);
       }
-      beam.dmg=dmg; beam.lv=lv; beam.life=0.15; beam.w=14+lv*4;
+      beam.dmg=dmg*(forgeActiveTier(3)>=5?1.16:1); beam.lv=lv; beam.life=0.15;
+      beam.w=(14+lv*4)*(forgeActiveTier(3)>=3?1.16:1);
       /* GIANT BEAM (0917, Mike: "giant laser beams like the fireboss has"): a KINETIC infusion on the laser
          widens the column - x1.5 / x2.0 / x2.5 at levels 1-3 - and the hit test reads the same beam.w, so the
          wider beam burns a wider lane. Level 3 is the fire boss's own scale (SONIC WAVE on the laser). */
@@ -28298,7 +28431,7 @@ function pShoot(){
     const maxOrbs = lv>=5?2:1;
     let live=0; for(const b of pBullets){ if(b.kind==='orb') live++; }
     if(live<maxOrbs){
-      const shardN=({1:3,2:5,3:7,4:9,5:9})[lv]||3;
+      const shardN=(({1:3,2:5,3:7,4:9,5:9})[lv]||3)+(forgeActiveTier(5)>=3?2:0);
       const vx=(maxOrbs>1)?(live===0?-1.5:1.5):0;
       /* `_ts` rides on the orb rather than being re-asked at draw time — an orb already in
          flight when the slot changes must keep being the orb it was launched as. Same reason
@@ -28318,6 +28451,7 @@ function pShoot(){
   } else if(w===4){ // FLAMETHROWER — held, short reach, huge close-quarters damage (crowd control)
     flameFire(lv);
   }
+  forgeStyleAfterShot(w,_sn0);
   stageStats.shots+=(pBullets.length-_sn0);
 }
 /* ============================================================
@@ -29032,7 +29166,7 @@ function applyPowerup(p){
         if(typeof arcadeBanner==='function') arcadeBanner(_en+' POWER ACQUIRED');
         else floatText(p.x,p.y,'POWER ACQUIRED','#ffd45a');
         try{ Audio.SFX.life&&Audio.SFX.life(); }catch(_fg1){}
-      } else { floatText(p.x,p.y,'+'+PICKUP_SCORE,'#ffd45a'); }
+      } else if(typeof arcadeBanner==='function'){ arcadeBanner('ELEMENT ALREADY ACQUIRED'); }
       break; }
     case 'infuse':
       if(typeof forgeDiscover==='function') forgeDiscover(p.elem);   /* it can be forged from now on (0917) */
@@ -35033,6 +35167,14 @@ function updatePlay(dt){
         }
       }
     }
+    if(b.dead && b.kind==='forgeFireBlast' && !b._forgeBoom){
+      b._forgeBoom=true;
+      if(typeof efxBurst==='function') efxBurst('fire',b.x,b.y,56);
+      const old=_dmgBullet; _dmgBullet=null;
+      for(const e of enemies){ if(e.dead||dist2(e.x,e.y,b.x,b.y)>44*44) continue;
+        hitEnemy(e,3); e._burn=Math.max(e._burn||0,DK_BURN_TIME*.8); }
+      _dmgBullet=old;
+    }
     const _bw=(typeof worldWidth==='function')?worldWidth():VW;   // 800 on stage 1 — right-side shots must live
     if(b.y<-40||b.y>VH+40||b.x<-40||b.x>_bw+40){
       // the travelling lance finishes with a burst at the top of its run
@@ -35388,11 +35530,13 @@ function updatePlay(dt){
        It settles at its hover line and then closes on the player, so it cannot be lost to a timer. */
     if(p._fcHold!=null){
       p.t+=dt;
-      if(p.y<p._fcHold) p.y=Math.min(p._fcHold, p.y+p.vy);
-      else { p.vy=0;
+      /* Eject visibly, then snap the guaranteed element toward the nearest live pilot. */
+      if(p.t<0.22){ p.y-=1.6; p.x+=Math.sin(p.t*28)*0.9; }
+      else {
         const _T=(typeof targetShip==='function')?targetShip(p.x,p.y):player;
         if(_T && !_T.dead){ const dx=_T.x-p.x, dy=_T.y-p.y, d=Math.hypot(dx,dy);
-          if(d>1){ const sp=Math.min(2.2, 0.45+d*0.012); p.x+=dx/d*sp; p.y+=dy/d*sp; } } }
+          if(d>1){ const sp=Math.min(12,5+d*0.045); p.x+=dx/d*sp; p.y+=dy/d*sp; } }
+      }
       if(p.flash>0) p.flash-=dt;
     } else {
     p.t+=dt; p.y+=p.vy; p.x+=Math.sin(p.t*3+p.bob)*0.4;
@@ -35455,6 +35599,9 @@ function updatePlay(dt){
        just the player sitting still after the kill. */
     const endT = boss&&boss._cinDeath?9.8:5.8;
     if(stageEnding>endT){
+      /* The stage handoff cannot erase the guaranteed boss element. */
+      for(const p of powerups){ if(p.kind==='forgecombo'&&!p.dead){ applyPowerup(p); p.dead=true; } }
+      powerups=powerups.filter(function(p){return !p.dead;});
       whiteBlast=0;
       if(run.stage>=5){ if(run.score>highScore){ highScore=run.score; try{localStorage.setItem('bof_hi',highScore);}catch(e){} } }
       flyoverT=0;
@@ -47236,7 +47383,14 @@ function drawBullets(){
       else { ctx.fillStyle='#cfeaff'; ctx.fillRect(-2,-8,4,16); }
       ctx.restore(); continue;
     }
-    if(b.kind==='beam'){   // solid laser beam — NEW laserbeam art, tinted per level (1 orange,2 blue,3 green,4 white,5 red)
+    if(b.kind==='beam'){   // held player laser
+      if(b._inf==='fire' && typeof XART!=='undefined' && XART.rdy('forge_fire_laser_0918')){
+        const im=XART.get('forge_fire_laser_0918'), top=b.top!=null?b.top:-20, bot=b.bot!=null?b.bot:player.y-14;
+        const bw=Math.max(12,b.w||18), bh=Math.max(2,bot-top);
+        ctx.save();ctx.globalCompositeOperation='lighter';ctx.imageSmoothingEnabled=false;
+        ctx.shadowColor='#ff5121';ctx.shadowBlur=9+(b._infLv|0)*2;
+        ctx.drawImage(im,b.x-bw/2,top,bw,bh);ctx.restore();continue;
+      }
       const lv=clamp(b.lv||1,1,5);
       /* ============================================================
          ONE WEAPON, FIVE TIERS (drop 0811w)
@@ -47621,6 +47775,20 @@ function drawBullets(){
       }
     }
     if(b.kind==='sonic'){sonicDrawFront(b);continue;}
+    if(b.kind==='forgeFireBlast'){
+      const key='forge_fire_blast_0918';
+      if(typeof XART!=='undefined'&&XART.rdy(key)){
+        const im=XART.get(key),h=35+(b._infLv|0)*2,w=h*im.naturalWidth/im.naturalHeight;
+        ctx.save();ctx.globalCompositeOperation='lighter';ctx.imageSmoothingEnabled=false;
+        ctx.shadowColor='#ff5620';ctx.shadowBlur=9;
+        ctx.drawImage(im,b.x-w/2,b.y-h/2,w,h);ctx.restore();continue;
+      }
+    }
+    if(b.kind==='mg' && b._inf==='fire' && typeof XART!=='undefined' && XART.rdy('forge_fire_slug_0918')){
+      const im=XART.get('forge_fire_slug_0918'),h=20+Math.min(5,b._infLv|0)*2,w=h*im.naturalWidth/im.naturalHeight;
+      ctx.save();ctx.imageSmoothingEnabled=false;ctx.globalCompositeOperation='lighter';
+      ctx.shadowColor='#ff6a20';ctx.shadowBlur=5;ctx.drawImage(im,b.x-w/2,b.y-h/2,w,h);ctx.restore();continue;
+    }
     if(b.kind==='mg'){
       /* MG PELLET COLOUR (drop 0801b). Mike: "my machine gun bullets are not changing colors when
          they are supposed to. at lvl 2 - they turn blue and double, lvl 3 green and triple, 4
@@ -62831,7 +62999,7 @@ function drawVault(dt){
    Six tabs - one per forgeable weapon - and nine element rows under each, every row wearing its badge
    at the level OWNED. FIRE buys the next level. Reached from the VAULT (its last row) and from the
    Forge (RETINA), and BACK returns to whichever opened it. */
-const ARMORY_VIEW=5;
+const ARMORY_VIEW=4;
 let armory=null;
 function armoryOpen(back){
   armory={tab:0,i:0,scroll:0,t:0,msg:'',msgT:0,back:back||'vault'};
@@ -62850,8 +63018,10 @@ function armoryRows(w){
        what this screen sells. A row that has not been earned shows no price, because there is
        nothing here to buy for it yet. */
     const earned=(typeof forgeComboOwned==='function')?forgeComboOwned(e,w):true;
+    const forms=run&&run.forgeForms&&run.forgeForms[w];
+    const purchased=furiousOwned(forgeComboId(e,w))||!!(forms&&forms[e]);
     return {elem:e,w:w,name:(FORGE_NAMES[e]&&FORGE_NAMES[e][w])||(INFUSIONS[e].name+' '+WEAPONS[w]),lv:lv,
-            cost:earned?forgeLevelCost(e,w):0,earned:earned,
+            cost:earned?(purchased?forgeLevelCost(e,w):forgeComboCost()):0,earned:earned,purchased:purchased,
             open:infusionGateOpen(e),gate:INFUSIONS[e].gate||null};
   });
 }
@@ -62860,8 +63030,11 @@ function armoryBuy(){
   const w=FORGE_WEAPONS[A.tab|0], r=armoryRows(w)[A.i|0]; if(!r) return null;
   if(!r.open){ armorySay(r.gate==='ngplus'?'DARK MATTER OPENS IN NEW GAME +':'TIDAL OPENS AFTER STAGE 9'); try{ Audio.SFX.blocked&&Audio.SFX.blocked(); }catch(_ab0){} return 'gated'; }
   if(!r.earned){ armorySay('EARN '+String(r.name).toUpperCase()+' FROM A BOSS FIRST'); try{ Audio.SFX.blocked&&Audio.SFX.blocked(); }catch(_ab3){} return 'locked'; }
-  const res=forgeLevelBuy(r.elem,w);
-  if(res==='ok'){ armorySay(r.name+'  -  LEVEL '+forgeOwnedLevel(r.elem,w)); try{ Audio.SFX.select&&Audio.SFX.select(); }catch(_ab1){} }
+  const res=r.purchased?forgeLevelBuy(r.elem,w):forgeComboBuy(r.elem,w);
+  if(res==='ok'){
+    armorySay(r.purchased?(r.name+'  -  LEVEL '+forgeOwnedLevel(r.elem,w)):(r.name+' RECIPE ACQUIRED'));
+    try{ Audio.SFX.select&&Audio.SFX.select(); }catch(_ab1){}
+  }
   else if(res==='maxed') armorySay(r.name+' IS AT LEVEL '+INFUSION_MAX);
   else if(res==='poor') armorySay('NEED '+Math.max(0,r.cost-furiousBalance())+' MORE FURIOUS PTS');
   else if(res==='locked') armorySay('EARN '+String(r.name).toUpperCase()+' FROM A BOSS FIRST');
@@ -62894,7 +63067,7 @@ function drawArmory(dt){
       stageText(art,lb,bx+tw/2,tabY+tabH/2,fh,on?'#ffd24a':'#7f8899',0.85,1,0.06); }
   }
   const pl=(typeof XART!=='undefined' && XART.rdy('statpanel_full_0916')) ? XART.get('statpanel_full_0916') : null;
-  const x0=18, wdt=VW-36, y0=72, rowH=(VH-y0-40)/ARMORY_VIEW, rh=rowH*0.88;
+  const x0=18, wdt=VW-36, y0=72, rowH=72, rh=rowH*0.87;
   const maxScroll=Math.max(0,rows.length-ARMORY_VIEW);
   A.i=clamp(A.i|0,0,Math.max(0,rows.length-1));
   if(A.i<A.scroll) A.scroll=A.i; else if(A.i>=A.scroll+ARMORY_VIEW) A.scroll=A.i-ARMORY_VIEW+1;
@@ -62928,11 +63101,12 @@ function drawArmory(dt){
     const fh=(typeof stageFitH==='function')?stageFitH(art,nm,room,lh,7,0.06):lh;
     stageText(art,nm,x0+pad+((typeof stageWidth==='function')?stageWidth(art,nm,fh,0.06):0)/2,ry+rh*0.34,fh,col,0.85,1,0.06);
     const sub=!r.open?(r.gate==='ngplus'?'NEW GAME + ONLY':'AFTER STAGE 9')
-            : !r.earned?'BOSS DROP'
+            : !r.earned?'BOSS ELEMENT REQUIRED'
+            : !r.purchased?'RECIPE - BUY WITH FURIOUS PTS'
             : ('LEVEL '+r.lv+(r.lv>=INFUSION_MAX?'  -  MAX':('  -  NEXT: LEVEL '+(r.lv+1))));
     const sh=(typeof stageFitH==='function')?stageFitH(art,sub,room,lh*0.85,6,0.06):lh*0.85;
     stageText(art,sub,x0+pad+((typeof stageWidth==='function')?stageWidth(art,sub,sh,0.06):0)/2,ry+rh*0.70,sh,'#7f8899',0.8,1,0.06);
-    if(r.open && r.earned && r.lv<INFUSION_MAX){ const pt=String(r.cost);
+    if(r.open && r.earned && (!r.purchased || r.lv<INFUSION_MAX)){ const pt=String(r.cost);
       stageText(art,pt,x0+wdt-wdt*0.04-((typeof stageWidth==='function')?stageWidth(art,pt,fh,0.06):0)/2,ry+rh/2,fh,bal>=r.cost?'#ffd24a':'#b06a6a',0.85,1,0.06); }
   }
   if(maxScroll>0){
@@ -62942,8 +63116,33 @@ function drawArmory(dt){
     if(A.scroll<maxScroll){ const by=y0+ARMORY_VIEW*rowH; ctx.beginPath(); ctx.moveTo(ax-tw2/2,by-th); ctx.lineTo(ax+tw2/2,by-th); ctx.lineTo(ax,by); ctx.closePath(); ctx.fill(); }
     ctx.restore();
   }
+  /* Selected recipe: three named weapon-family forms and real projectiles. */
+  const chosen=rows[A.i], detailY=y0+ARMORY_VIEW*rowH+5, detailH=VH-detailY-38;
+  if(chosen){
+    ctx.save();
+    if(pl&&typeof unlockPanel==='function') unlockPanel(pl,UNLOCK_ART.strip,x0,detailY,wdt,detailH,true);
+    else { ctx.fillStyle='#171b25'; ctx.fillRect(x0,detailY,wdt,detailH); }
+    ctx.restore();
+    const next=chosen.purchased?Math.min(INFUSION_MAX,chosen.lv+1):1;
+    const badge=forgeBadgeKey(chosen.elem,w,next); XART.rdy(badge);
+    forgeIconFit(badge,x0+43,detailY+detailH*.5,detailH*.70,72,1);
+    if(art){
+      const lines=[forgeStyleName(chosen.elem,w,1),forgeStyleName(chosen.elem,w,3),forgeStyleName(chosen.elem,w,5)];
+      for(let j=0;j<3;j++){
+        const label=(j===0?'I   ':j===1?'III ': 'V   ')+lines[j];
+        const th=Math.min(8,stageFitH(art,label,wdt*.53,8,6,.05));
+        stageText(art,label,x0+wdt*.48,detailY+15+j*18,th,j===0?'#ffd98a':j===1?'#ff9c59':'#ff6550',.85,1,.05);
+      }
+      const action=!chosen.open?'LOCKED':!chosen.earned?'DEFEAT THE BOSS':!chosen.purchased?'BUY RECIPE  '+chosen.cost+' FP':
+        chosen.lv>=INFUSION_MAX?'MAX LEVEL':'BUY LEVEL '+(chosen.lv+1)+'  '+chosen.cost+' FP';
+      stageText(art,action,x0+wdt*.49,detailY+detailH-9,Math.min(9,stageFitH(art,action,wdt*.61,9,6,.05)),'#9fd6ff',.85,1,.05);
+    }
+    const pv=[x0+wdt-89,detailY+6,79,detailH-12],pid=w+'|'+chosen.elem+'|'+next;
+    if(A.previewId!==pid){A.previewId=pid;A.preview=forgePreviewNew(w,chosen.elem,next);}
+    forgePreviewTick(A.preview,pv[2],pv[3],dt); forgePreviewDraw(A.preview,pv[0],pv[1],pv[2],pv[3]);
+  }
   if(typeof controlHintRow==='function')
-    controlHintRow([['pad_dpad','WEAPON / ELEMENT'],['pad_a','BUY LEVEL'],['pad_b','BACK']],VH-14,VW/2,VW-24);
+    controlHintRow([['pad_dpad','WEAPON / ELEMENT'],['pad_a','BUY'],['pad_b','BACK']],VH-14,VW/2,VW-24);
   /* each read ONCE - these consume their tap */
   const up=(Input.menuUp?Input.menuUp():false), dn=(Input.menuDown?Input.menuDown():false);
   const lf=(Input.menuLeft?Input.menuLeft():false), rt=(Input.menuRight?Input.menuRight():false);
@@ -63828,8 +64027,22 @@ function drawPilot(dt){
     }else{
       const body=psBodyKey(P.key);
       psBlitFit(body||'port_'+P.key+'_idle',BX+bayW/2,BY+BH*.51,bayW-16,BH-18,1);
-      psBlitFit(psShipKey(P.key,spin),SHX+bayW/2,BY+BH*.54,bayW-18,BH*.79,1);
-      pilotNameDraw(P.name,PX+PW/2,PY+25,19,P.tint,1);
+      const launching=pilotPending!=null;
+      psBlitFit(psShipKey(P.key,spin),SHX+bayW/2,BY+(launching?BH*.54:BH*.31),bayW-18,launching?BH*.79:BH*.43,1);
+      pilotNameDraw(launching?'GOOD LUCK, '+P.name+'!':P.name,PX+PW/2,PY+25,launching?17:19,P.tint,1);
+      if(!launching){
+        const M=(BOFX.pilotcard&&BOFX.pilotcard[P.key])||{}, stats=pcStats(P.key), x0=SHX+12, x1=SHX+bayW-12;
+        const aff=M.affil||P.role||'FURY HQ';
+        if(typeof msgText==='function') msgText(aff.toUpperCase(),SHX+bayW/2,BY+BH*.55,8,'#cfeaff',1,1,.035);
+        for(let si=0;si<stats.length;si++){
+          const yy=BY+BH*(.65+si*.105), frac=stats[si].val/PC_MAX_SEG;
+          if(typeof msgText==='function') msgText(stats[si].label,x0,yy-4,7,'#dbe8ff',0,1,.025);
+          ctx.save();ctx.fillStyle='rgba(8,12,20,.9)';ctx.fillRect(x0,yy+2,x1-x0,7);
+          ctx.fillStyle=P.tint;ctx.shadowColor=P.tint;ctx.shadowBlur=6;ctx.fillRect(x0+1,yy+3,(x1-x0-2)*frac,5);ctx.restore();
+        }
+        const ek=affilEmblemKey(M.affil);
+        if(ek) psBlitFit(ek,SHX+bayW*.84,BY+BH*.55,bayW*.22,BH*.12,.9);
+      }
     }
     if(locked && pilotFlash>0){
       ctx.save(); ctx.globalAlpha=Math.min(1,pilotFlash)*0.42; ctx.fillStyle='#ffffff';
@@ -71042,9 +71255,9 @@ function scConceptBody(R, px, py, pw, ph, t, dt, art, F){
     if(R.face && XART.rdy(R.face)){
       const im=XART.get(R.face);
       const pad=Math.min(b[2],b[3])*0.045, aw=b[2]-pad*2, ah=b[3]-pad*2;
-      const k=Math.min(aw/im.naturalWidth, ah/im.naturalHeight);
+      const k=Math.max(aw/im.naturalWidth, ah/im.naturalHeight);
       const w=im.naturalWidth*k, h=im.naturalHeight*k;
-      ctx.save(); ctx.globalAlpha=A(0.26); ctx.imageSmoothingEnabled=false;
+      ctx.save(); ctx.globalAlpha=A(0.26); ctx.imageSmoothingEnabled=false; ctx.beginPath();ctx.rect(b[0]+pad,b[1]+pad,aw,ah);ctx.clip();
       ctx.drawImage(im, b[0]+(b[2]-w)/2, b[1]+(b[3]-h)/2, w, h);   // centred on both axes
       ctx.restore();
     }
@@ -71082,24 +71295,26 @@ function scConceptBody(R, px, py, pw, ph, t, dt, art, F){
   }
 
   /* ---- 4. THE SIX STAT BAYS - the authored fill inside HIS recess, text on it ---- */
-  if(t>0.42 && drawStageClear._row<SC_CONCEPT.length){
+  if(t>0.38 && drawStageClear._row<Math.min(SC_CONCEPT.length,scSlots().stats.length)){
     drawStageClear._segT+=dt;
-    if(drawStageClear._segT>=0.16){ drawStageClear._segT=0; drawStageClear._row++;
+    if(drawStageClear._segT>=0.28){ drawStageClear._segT=0; drawStageClear._row++;
       if(Audio.SFX.statTick) Audio.SFX.statTick(); }
   }
   for(let i=0;i<SC_CONCEPT.length && i<scSlots().stats.length;i++){
     if(i>drawStageClear._row) break;
     const row=SC_CONCEPT[i], b=scBay(P,scSlots().stats[i]);
-    const app=Math.min(1,(drawStageClear._row-i)+0.35);
-    const frac=Math.max(0,Math.min(1,row.val(S)))*Math.min(1,app*1.6);
+    const active=i===drawStageClear._row, app=i<drawStageClear._row?1:clamp(drawStageClear._segT/.28,0,1);
+    const frac=Math.max(0,Math.min(1,row.val(S)))*app;
     /* inset so his cyan rim stays visible - the fill sits IN the recess, it does not replace it */
     scFillBar(b[0]+b[2]*0.020, b[1]+b[3]*0.16, b[2]*0.960, b[3]*0.68, row.fill, frac, t);
-    const txt=row.k+' = '+row.fmt(S);
-    /* ⚠ THESE BAYS ARE NARROWER THAN THE OLD FULL-WIDTH ROWS, so the same 0.90/0.62 box shrank the
-       line to a size where a one-pixel I reads as squished (Mike, 0916). The text uses more of the
-       bay now - it is a recess with a rim, not a frame that needs clearance. */
+    const txt=row.k+' = '+row.fmt(S), nch=Math.max(0,Math.min(txt.length,Math.floor(app*txt.length)));
+    const shown=txt.slice(0,nch);
+    drawStageClear._lastChars=drawStageClear._lastChars||[];
+    if(nch>(drawStageClear._lastChars[i]||0)){drawStageClear._lastChars[i]=nch;if(Audio.SFX.statTick)Audio.SFX.statTick();}
+    /* Each section types in while its segmented bar grows left-to-right. Fit against the FULL line
+       so the letters never jump in size as the prefix grows. */
     const H=scFit(art,txt,b[2]*0.96,b[3]*0.78,ph2*0.010,0.05);
-    scCenLift(art,txt,b[0]+b[2]/2,b[1]+b[3]/2,H,null,0,app,0.05,0.55,1);
+    scCenLift(art,shown,b[0]+b[2]/2,b[1]+b[3]/2,H,null,0,1,0.05,0.55,1);
   }
 
   /* ---- 5. SCORE / CLEAR TIME / RANK ---- */
@@ -71168,9 +71383,12 @@ function scConceptBody(R, px, py, pw, ph, t, dt, art, F){
           ctx.drawImage(im, Math.round(bb[0]+(bb[2]-w)/2), Math.round(bb[1]+(bb[3]-h)/2), Math.round(w), Math.round(h));
           ctx.restore(); return true;
         };
-        const _shield=_fit('rankshield_'+_lo+'_0916', scSlots().rank||SC_SLOTS_FULL.rank, 0.96);
-        const _word  =_fit('rankword_'+_lo+'_0916',  scSlots().rankword||SC_SLOTS_FULL.rankword, 0.94);
-        if(!_shield && !_word){
+        const _plate=_fit('rankplate_'+_lo+'_0916', scSlots().rank||SC_SLOTS_FULL.rank, 0.96);
+        if(_plate && scSlots().rankword){
+          const rb=scBay(P,scSlots().rankword), label='RANK = '+_rk;
+          scCenLift(art,label,rb[0]+rb[2]/2,rb[1]+rb[3]/2,scFit(art,label,rb[2]*.88,rb[3]*.42,7,.08),null,0,1,.08,.45,1);
+        }
+        if(!_plate){
           /* nothing decoded yet: the old reading, in the score row where it always was */
           scPairLift(art,rLab,rVal,b[0]+b[2]*0.820,cy,H,1,SP,SPV,0.45,1);
         }
@@ -72094,6 +72312,29 @@ function forgeHexPointer(key,cx,cy,h,col){
    that loop anchors them. */
 /* The element row is a real recipe view: source, element, proposed output and actual rounds.
    The chamber art is the same one used for the weld, so what the player confirms is what appears. */
+function forgeEnergyPipes(W,H,t,power){
+  const traces=[
+    {pts:[[.478,.345],[.518,.345],[.518,.435],[.548,.435]],col:'#ff9d32',hot:'#fff0ac'},
+    {pts:[[.479,.583],[.518,.583],[.518,.493],[.548,.493]],col:'#42d8ff',hot:'#d0fbff'}
+  ];
+  ctx.save();ctx.globalCompositeOperation='lighter';ctx.lineCap='round';ctx.lineJoin='round';
+  for(let k=0;k<traces.length;k++){
+    const q=traces[k],pts=q.pts.map(v=>[v[0]*W,v[1]*H]);
+    const pulse=.42+.28*Math.sin(t*5.8+k*1.6),alpha=(.25+pulse*.45)*power;
+    ctx.shadowColor=q.col;ctx.shadowBlur=13;ctx.strokeStyle=q.col;ctx.lineWidth=5;ctx.globalAlpha=alpha;
+    ctx.beginPath();pts.forEach((v,i)=>i?ctx.lineTo(v[0],v[1]):ctx.moveTo(v[0],v[1]));ctx.stroke();
+    ctx.shadowBlur=0;ctx.strokeStyle=q.hot;ctx.lineWidth=1.4;ctx.globalAlpha=alpha*.8;
+    ctx.stroke();
+    const speed=(t*.72+k*.37)%1;
+    let total=0;for(let i=1;i<pts.length;i++)total+=Math.hypot(pts[i][0]-pts[i-1][0],pts[i][1]-pts[i-1][1]);
+    let at=speed*total,x=pts[0][0],y=pts[0][1];
+    for(let i=1;i<pts.length;i++){const dx=pts[i][0]-pts[i-1][0],dy=pts[i][1]-pts[i-1][1],len=Math.hypot(dx,dy);
+      if(at<=len){x=pts[i-1][0]+dx*at/len;y=pts[i-1][1]+dy*at/len;break;}at-=len;}
+    ctx.globalAlpha=Math.min(1,power*.9);ctx.shadowColor=q.col;ctx.shadowBlur=9;ctx.fillStyle=q.hot;
+    ctx.fillRect(Math.round(x)-2,Math.round(y)-2,4,4);
+  }
+  ctx.restore();
+}
 function forgeRecipeDraw(F,w,disc,dt,W,H,art){
   const elem=disc[F.esel], forms=forgeFormsFor(w), owned=forms[elem];
   const lv=owned?Math.min(INFUSION_MAX,(owned.lv|0)+1):
@@ -72101,6 +72342,7 @@ function forgeRecipeDraw(F,w,disc,dt,W,H,art){
   const I=INFUSIONS[elem], C=FORGE_CHAMBER;
   const plate=XART.rdy('forge_chamber_0917b')?XART.get('forge_chamber_0917b'):null;
   if(plate){ ctx.save(); ctx.imageSmoothingEnabled=false; ctx.drawImage(plate,0,0,W,H); ctx.restore(); }
+  forgeEnergyPipes(W,H,F.t||0,1);
   const bare=weaponIconKey(w,Math.max(1,(run.wlevels&&run.wlevels[w])|0),{bare:1});
   const result=forgeBadgeKey(elem,w,lv);
   XART.rdy(bare); XART.rdy('inf_'+elem); XART.rdy(result);
@@ -72141,7 +72383,10 @@ function forgePreviewSwap(P,VWp,VHp,fn){
      `powerups`, `boss` and `subBoss` and push `zaps` - so every one of them is emptied for the duration and
      put back in the finally, or a preview round fired at x 65 could strike a live unit at world x 65. */
   const sv={pb:pBullets, eb:eBullets, pa:particles, px:player.x, py:player.y, pd:player.dead, pi:player.invuln,
-            w:run.weapon, wl:run.wlevel, inf:run.infusion, sh:shake,
+            w:run.weapon, wl:run.wlevel, inf:run.infusion, fg:run.forge, fb:run._forgeBlastSeq, sh:shake,
+            shots:stageStats&&stageStats.shots, kin:run._kinN,
+            rev:run._chainRev, heat:run._chainHeat, over:run._chainOverheat,
+            muz:player._mgMuzT, muzLv:player._mgMuzLv,
             en:enemies, pu:powerups, zp:zaps, ba:bossActive, sba:subBossActive};
   try{
     pBullets=P.bullets; eBullets=[]; particles=P.parts;
@@ -72149,13 +72394,20 @@ function forgePreviewSwap(P,VWp,VHp,fn){
     player.x=VWp/2; player.y=VHp-40; player.dead=false;
     run.weapon=P.w; run.wlevel=Math.max(1,((run.wlevels&&run.wlevels[P.w])|0)||1);
     run.infusion={elem:P.elem, lv:Math.max(1,P.lv), hits:0};
+    run.forge=Object.assign({},sv.fg||{}); run.forge[P.w]={elem:P.elem,lv:P.lv};
+    run._forgeBlastSeq=P.blastSeq||(P.blastSeq={});
     fn();
   }catch(err){ P.err=String((err&&err.message)||err); }
   finally{
     P.bullets=pBullets; P.parts=particles;
     pBullets=sv.pb; eBullets=sv.eb; particles=sv.pa; player.x=sv.px; player.y=sv.py; player.dead=sv.pd; player.invuln=sv.pi;
     enemies=sv.en; powerups=sv.pu; zaps=sv.zp; bossActive=sv.ba; subBossActive=sv.sba;
-    run.weapon=sv.w; run.wlevel=sv.wl; run.infusion=sv.inf; shake=sv.sh;
+    run.weapon=sv.w; run.wlevel=sv.wl; run.infusion=sv.inf; run.forge=sv.fg;
+    run._forgeBlastSeq=sv.fb; run._kinN=sv.kin;
+    run._chainRev=sv.rev; run._chainHeat=sv.heat; run._chainOverheat=sv.over;
+    player._mgMuzT=sv.muz; player._mgMuzLv=sv.muzLv;
+    if(stageStats) stageStats.shots=sv.shots;
+    shake=sv.sh;
   }
 }
 function forgePreviewTick(P,VWp,VHp,dt){
@@ -72236,6 +72488,7 @@ function drawForging(dt){
   ctx.save(); ctx.globalAlpha=fade;
   if(plate){ ctx.imageSmoothingEnabled=false; ctx.drawImage(plate,0,0,W,H); } else { ctx.fillStyle='#161a22'; ctx.fillRect(0,0,W,H); }
   ctx.restore();
+  forgeEnergyPipes(W,H,t,fade*(product?1:0.65+0.35*Math.min(1,t/1.5)));
   const C=FORGE_CHAMBER, hw=frc(C.hexW,W,H), he=frc(C.hexE,W,H), ho=frc(C.hexOut,W,H), core=frc(C.core,W,H);
   const cW=[hw[0]+hw[2]/2,hw[1]+hw[3]/2], cE=[he[0]+he[2]/2,he[1]+he[3]/2], cO=[ho[0]+ho[2]/2,ho[1]+ho[3]/2];
   const p=product?1:Math.max(0,Math.min(1,(t-FORGE_WELD_T0)/FORGE_WELD_T));
@@ -72333,16 +72586,18 @@ function drawForging(dt){
     stageText(art2,nm,B[0]+B[2]/2,B[1]+B[3]/2,nh,I.body,0.85,1,0.06);
   }
 
-  /* the product's NAME, typed across the plating above the chamber */
-  if(art2 && (product || FG.doneT>=0)){
-    const T=frc(C.title,W,H), full=forgeComboName(FG.elem,FG.w);
-    const since=product?Math.max(0,t-(FG.productT||0)):0;
-    const shown=product?full.slice(0,Math.max(0,Math.round(since*28))):'';
-    if(shown){
-      const th=Math.min(T[3]*0.72,(typeof stageFitH==='function')?stageFitH(art2,full,T[2],T[3]*0.72,9,0.08):T[3]*0.6);
-      const fw=stageWidth(art2,full,th,0.08), sw=stageWidth(art2,shown,th,0.08);
-      stageText(art2,shown,T[0]+T[2]/2-fw/2+sw/2,T[1]+T[3]/2,th,I.body,0.9,1,0.08);
-      if(since<full.length/28 && Math.floor(since*28)!==Math.floor((since-dt)*28)) fsx('blip');
+  /* The reward name owns the centre of the chamber, large and revealed one letter at a time. */
+  if(art2 && product){
+    const full=forgeComboName(FG.elem,FG.w), since=Math.max(0,t-(FG.productT||0));
+    const letters=Math.min(full.length,Math.floor(since*22));
+    if(letters>0){
+      const shown=full.slice(0,letters),th=Math.min(25,stageFitH(art2,full,W*.87,25,12,.09));
+      const by=H*.5,bw=Math.min(W*.94,stageWidth(art2,full,th,.09)+36);
+      ctx.save();ctx.fillStyle='rgba(4,9,20,.88)';ctx.fillRect((W-bw)/2,by-th*.95,bw,th*1.9);
+      ctx.strokeStyle=I.glow;ctx.lineWidth=2;ctx.shadowColor=I.glow;ctx.shadowBlur=12;
+      ctx.strokeRect((W-bw)/2+.5,by-th*.95+.5,bw-1,th*1.9-1);ctx.restore();
+      stageText(art2,shown,W/2,by,th,I.body,1,1,.09);
+      if(letters<full.length && letters>Math.floor(Math.max(0,since-dt)*22)) fsx('blip');
     }
   }
 
@@ -72365,7 +72620,7 @@ function drawForging(dt){
     else if(FG.doneT>=0 && (t-FG.doneT>FORGE_PRODUCT_WAIT || (go && t-FG.doneT>0.3))){ FG.productT=t; setState(GS.FORGED); }
     return;
   }
-  if(t-(FG.productT||0)<0.4) return;
+  if(t-(FG.productT||0)<1.2) return;
   if(mB){ fsx('blip'); forgingLeave(false); }
   else if(go){ Input.mouse.down=false; fsx('blip'); forgingLeave(true); }
 }
@@ -72401,7 +72656,9 @@ function drawLoadout(dt){
   const plate=XART.rdy('forge_loadout_0918')?XART.get('forge_loadout_0918'):null;
   ctx.save();ctx.globalAlpha=Math.min(1,t/.35);if(plate){ctx.imageSmoothingEnabled=false;ctx.drawImage(plate,0,0,W,H);}else{ctx.fillStyle='#151923';ctx.fillRect(0,0,W,H);}ctx.restore();
   L.sel=clamp(L.sel|0,0,Math.max(0,load.length-1));const selW=load[L.sel];
-  if(art)stageTextCoin(art,'',String(typeof furiousBalance==='function'?furiousBalance():0),W/2,H*.175,18,'#ffd24a',.9,1,.06);
+  if(art){const T=frc(P.title,W,H);ctx.save();ctx.fillStyle='rgba(8,11,18,.94)';ctx.fillRect(T[0],T[1],T[2],T[3]);ctx.restore();
+    stageText(art,'LOADOUT / ARSENAL',T[0]+T[2]/2,T[1]+T[3]*.34,13,'#ffd24a',.95,1,.07);
+    stageTextCoin(art,'FURY PTS ',String(typeof furiousBalance==='function'?furiousBalance():0),T[0]+T[2]/2,T[1]+T[3]*.73,9,'#ffd24a',.9,1,.04);}
   for(let i=0;i<FORGE_LOADOUT_MAX;i++){
     const w=load[i];if(w==null)continue;const bx=P.bayX[i]*W,by=P.bayY*H,bw=P.bayW*W,bh=P.bayH*H,cx=bx+bw/2,cy=by+bh*.48,key=forgeSlotKey(w);
     forgeIconFit(key,cx,cy,Math.min(bh,bw)*.76,0,1);
@@ -72409,17 +72666,39 @@ function drawLoadout(dt){
     if(art){const nm=weaponDisplayName(w),f=forgeEntry(w),sy=P.stripY*H,sh=P.stripH*H;stageText(art,nm,cx,sy+sh/2,Math.min(9,stageFitH(art,nm,bw*.94,9,5,.04)),f?INFUSIONS[f.elem].body:'#c8d2e2',.8,1,.04);}
   }
   const B=frc(P.pool,W,H);let opts=[];
+  /* Three compact arsenal rows are always visible. Every known form has a cell; unavailable forms
+     remain as dim silhouettes so the player can see the size and shape of the system. */
+  L.cat=L.cat||0; const allW=WEAPONS.map((_,i)=>i).filter(i=>i>0), firstW=clamp(L.cat|0,0,Math.max(0,allW.length-3));
+  L.catalogRects=[];
+  for(let rr=0;rr<3;rr++){const w=allW[firstW+rr];if(w==null)continue;const yy=B[1]+B[3]*(.16+rr*.32),owned=L.pool.indexOf(w)>=0;
+    if(art)stageText(art,weaponDisplayName(w),B[0]+B[2]*.095,yy,6.5,owned?'#dceaff':'#596170',.7,1,.02);
+    const forms=weaponFormOptions(w), cells=[{key:weaponIconKey(w,3,{bare:1}),ok:owned,name:'BASE'}];
+    for(const e of Object.keys(INFUSIONS)){const f=forgeFormsFor(w)[e];cells.push({key:f?forgeBadgeKey(e,w,f.lv):'inf_'+e,ok:!!f,name:INFUSIONS[e].name,elem:e});}
+    const x0=B[0]+B[2]*.22,pitch=B[2]*.073;
+    for(let ci=0;ci<cells.length;ci++){const c=cells[ci],cx=x0+ci*pitch,h=Math.min(18,B[3]*.24);forgeIconFit(c.key,cx,yy,h,0,c.ok?1:.18);L.catalogRects.push({x:cx-h/2,y:yy-h/2,w:h,h:h,weapon:w,cell:c});}
+  }
   if(L.row===1)opts=L.pool.map(function(w){return {weapon:w,name:weaponDisplayName(w),key:forgeSlotKey(w)};});
   else if(L.row===2&&selW!=null)opts=weaponFormOptions(selW).map(function(o){return Object.assign({},o,{key:o.kind==='forge'?forgeBadgeKey(o.elem,selW,o.lv):(o.kind==='variant'&&WVAR_ICON[o.id]?WVAR_ICON[o.id]+'3':weaponIconKey(selW,3,{bare:1}))});});
+  if(art&&L.row===0){const total=allW.length,label=(firstW+1)+'-'+Math.min(total,firstW+3)+' / '+total+'   MOUSE WHEEL: BROWSE';
+    stageText(art,label,B[0]+B[2]*.82,B[1]+B[3]*.08,5.5,'#9fd6ff',.75,1,.025);}
   if(L.row>0&&opts.length){
     L.psel=clamp(L.psel|0,0,opts.length-1);const view=Math.min(7,opts.length),pitch=B[2]/view,first=clamp(L.psel-3,0,Math.max(0,opts.length-view));
     for(let k=0;k<view;k++){const i=first+k,o=opts[i],cx=B[0]+pitch*(k+.5),cy=B[1]+B[3]*.40,h=Math.min(B[3]*.56,pitch*.62);forgeIconFit(o.key,cx,cy,h,0,i===L.psel?1:.45);if(i===L.psel)forgeHexPointer(o.key,cx,cy,h,'#ffd24a');if(art)stageText(art,o.name,cx,B[1]+B[3]*.84,Math.min(7,stageFitH(art,o.name,pitch*.88,7,4,.03)),'#cfeaff',.8,1,.03);}
-  }else if(art){let msg=L.msgT>0?L.msg:'FIRE: CHANGE FORM   DOWN: CHANGE WEAPON   CHARGE: RE-SPEC';stageText(art,msg,W/2,B[1]+B[3]/2,Math.min(12,stageFitH(art,msg,B[2]*.92,12,6,.05)),'#9fd6ff',.82,1,.05);}
+  }else if(art&&L.msgT>0){stageText(art,L.msg,W/2,B[1]+B[3]*.96,Math.min(8,stageFitH(art,L.msg,B[2]*.92,8,5,.04)),'#9fd6ff',.82,1,.04);}
   if(art)stageText(art,'X'+(run.forgeRespecs|0),W*.705,H*.883,13,'#ffd24a',.9,1,.05);
   if(L.exitT>=0){L.exitT+=dt;ctx.save();ctx.globalAlpha=Math.min(1,L.exitT/.6);ctx.fillStyle='#000';ctx.fillRect(0,0,W,H);ctx.restore();if(L.exitT>=.62){const done=L.onDone;loadoutScr=null;run._wbag=[];if(done)done();else setState(GS.TITLE);}return;}
   const mL=Input.menuLeft?Input.menuLeft():false,mR=Input.menuRight?Input.menuRight():false,mU=Input.menuUp?Input.menuUp():false,mD=Input.menuDown?Input.menuDown():false,mB=Input.menuBack?Input.menuBack():false,mS=Input.menuStart?Input.menuStart():false;
   const fire=(keybind.fire||[]).filter(function(k){return !/^mouse/.test(k);}).some(function(k){return Input.tap(k);});
   const charge=(keybind.charge||[]).some(function(k){return Input.tap(k);});const click=Input.mouse.down&&!L.md;L.md=!!Input.mouse.down;const enter=Input.tap('enter');if(t<.55)return;
+  if(Input.mouse.wheel){L.cat=clamp((L.cat|0)+(Input.mouse.wheel>0?1:-1),0,Math.max(0,WEAPONS.length-4));Input.mouse.wheel=0;fsx('blip');}
+  if(click){const mx=Input.mouse.x,my=Input.mouse.y,RB=frc(P.respec,W,H);
+    if(mx>=RB[0]&&mx<=RB[0]+RB[2]&&my>=RB[1]&&my<=RB[1]+RB[3]&&selW!=null){const q=forgeRespec(selW);loadoutSay(q==='ok'?'BARE FORM EQUIPPED':'NO ACTIVE FORM TO RE-SPEC',q==='ok'?'powerup':'blocked');return;}
+    const hit=(L.catalogRects||[]).find(r=>mx>=r.x&&mx<=r.x+r.w&&my>=r.y&&my<=r.y+r.h);
+    if(hit){if(!hit.cell.ok){loadoutSay('LOCKED - EARN OR FORGE THIS WEAPON','blocked');return;}
+      const q=forgePick(L.sel,hit.weapon);if(q!=='ok'){loadoutSay('WEAPON CANNOT USE THIS BAY','blocked');return;}
+      if(hit.cell.elem)weaponFormSelect(hit.weapon,{kind:'forge',elem:hit.cell.elem});
+      loadoutSay('BAY '+(L.sel+1)+': '+(hit.cell.elem?forgeComboName(hit.cell.elem,hit.weapon):weaponDisplayName(hit.weapon)),'powerup');return;}
+  }
   if(L.row===0){
     if(mL&&load.length){L.sel=(L.sel-1+load.length)%load.length;fsx('blip');}
     else if(mR&&load.length){L.sel=(L.sel+1)%load.length;fsx('blip');}
@@ -73406,6 +73685,7 @@ if(window.BOFA && BOFA.sfx){
     tlvJetTurn:'assets/game/sounds/nsp_rcs_thruster.mp3',
     tlvJetThrust:'assets/game/sounds/nsp_booster_ignite.mp3',
     tlvJetEngine:'assets/game/sounds/nsp_engine_loop.mp3',
+    rzbTankRoll:'assets/game/sounds/nsp_engine_loop.mp3',
     tlvJetBrake:'assets/game/sounds/brake.wav',
     dkBuck:'assets/game/sounds/reviewed_decker_shotgun.wav',
     dkShell:'assets/game/sounds/reviewed_decker_shell_eject.wav',
@@ -73660,9 +73940,9 @@ const Snd=(function(){
   // music at full level, SFX mixed LOWER so music is clearly audible over the effects
   const A={ vol:{master:1.0,music:1.0,sfx:0.40,voice:0.85}, pools:{}, music:{}, cur:null,
     warpMix:0,warpMusicEcho:[],_warpSfxAt:0 };
-  /* Reserve soundtrack headroom as music rises. At Mike's 100/100/40 setting, dense sampled SFX
-     run at 26% before their per-cue TAME gain, while music retains its full authored level. */
-  A._sfxMix=function(){const headroom=.35*A.vol.music*Math.max(0,(1-A.vol.sfx)/.6);return A.vol.sfx*(1-headroom);};
+  /* The SFX slider is the bus level. Per-cue TAME gains already balance dense effects;
+     applying a second music-based reduction made attacks vanish at the 40% cabinet mix. */
+  A._sfxMix=function(){return A.vol.sfx;};
   function _au(v){ return (typeof v==='string'&&v.lastIndexOf('assets/',0)===0)?v:('data:audio/mpeg;base64,'+v); }
   /* ROUND-ROBIN SOURCE SETS. A BOFA entry may be one legacy URI or an array of authored
      variations. The pool used to clone one identical element three times, which prevented
@@ -73896,6 +74176,7 @@ const Snd=(function(){
     tlvJetTurn:{g:0.46,lp:5200,min:0.25},
     tlvJetThrust:{g:0.78,lp:6200,min:0.65},
     tlvJetEngine:{g:0.68,native:true},
+    rzbTankRoll:{g:0.58,lp:3000,native:true},
     tlvJetBrake:{g:0.42,lp:4800,min:0.60},
     enemyMachineGunBurst:{g:0.54, lp:6600, min:0.55},
     dkBuck:               {g:1.00, boost:1.20, lp:6800, min:0.42},
@@ -74186,9 +74467,15 @@ const Snd=(function(){
     }
   };
   A.loopStopAll=function(){ for(const n in A.loops){ const L=A.loops[n]; L.hold=0;L.lvl=0;L.on=false;L.playing=false;L.pending=false;try{ L.el.pause(); }catch(e){} } };
-  A.startMusic=function(name){ const m=A.music[name]; if(!m) return; if(A.cur===m&&!m.paused) return; A.stopMusic(); A.cur=m;
+  A.startMusic=function(name){ const m=A.music[name]; if(!m) return; if(A.cur===m&&!m.paused) return;
+    if(A.cur!==m){ A.stopMusic(); A.cur=m; try{m.currentTime=0;}catch(e){} }
     try{ m.playbackRate=(typeof timeScale!=='undefined'&&timeScale<1)?timeScale:1; if('preservesPitch'in m)m.preservesPitch=(timeScale>=1); }catch(e){}
-    try{ m.volume=c01(A.vol.music*A.vol.master*pauseMusicDuck()); m.currentTime=0; const pr=m.play(); if(pr&&pr.catch)pr.catch(function(){}); }catch(e){} A._warpMusicStart(); };
+    try{ m.volume=c01(A.vol.music*A.vol.master*pauseMusicDuck()); const pr=m.play(); if(pr&&pr.catch)pr.catch(function(){}); }catch(e){} A._warpMusicStart(); };
+  A.musicPlaying=function(){return !!(A.cur&&!A.cur.paused&&!A.cur.ended);};
+  A.resume=function(){
+    if(A._ctx&&A._ctx.state==='suspended')try{A._ctx.resume();}catch(e){}
+    if(A.cur&&A.cur.paused)try{const pr=A.cur.play();if(pr&&pr.catch)pr.catch(function(){});}catch(e){}
+  };
   A.stopMusic=function(){ A._warpMusicStop();if(A.cur){ try{A.cur.pause();}catch(e){} A.cur=null; } };
   A.stopVoice=function(){ for(const nm in A.VOICE_SET){ const p=A.pools[nm]; if(p&&p.list){ for(const a of p.list){ try{ a.pause(); a.currentTime=0; }catch(e){} } } } };
   A.setVol=function(k,v){ if(A.vol[k]!=null){ A.vol[k]=c01(v); if(A.cur) A.cur.volume=c01(A.vol.music*A.vol.master*pauseMusicDuck());if(k==='music'||k==='master')A.setWarpMix(A.warpMix); } };
@@ -74218,6 +74505,9 @@ if(Snd){
   Audio.setWarpMix=function(v){ if(Snd.setWarpMix)Snd.setWarpMix(v); };
   const _setVol=Audio.setVol;
   Audio.setVol=function(k,v){ try{ if(_setVol)_setVol(k,v); }catch(e){} Snd.setVol(k,v); };
+  const _synthResume=Audio.resume;
+  Audio.resume=function(){if(_synthResume)_synthResume();Snd.resume();};
+  Audio.musicPlaying=function(){return Snd.musicPlaying();};
   try{ Snd.setVol('master',Audio.getVol('master')); Snd.setVol('music',Audio.getVol('music')); Snd.setVol('sfx',Audio.getVol('sfx')); }catch(e){}
 }
 
