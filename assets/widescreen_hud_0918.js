@@ -30,8 +30,8 @@ function values(){try{
   objective:(typeof STAGES!=='undefined'&&STAGES[stage-1]?STAGES[stage-1].sub:'RETURN TO FURY HQ')};
 }catch(_){return {key:'cole',name:'COLE',stage:1,score:0,lives:0,continues:0,diff:'NORMAL',points:0,total:0,objective:'STANDBY'};}}
 function stageGrid(g,w,h,v){
- const cols=3,gap=4,cellW=Math.min(124,Math.floor((w-18-gap*2)/3)),cellH=Math.round(cellW*.92);
- const blockH=cellH*3+gap*2,x0=(w-(cellW*3+gap*2))/2,y0=h-blockH-14;
+ const cols=9,gap=2,cellW=Math.min(50,Math.floor((w-12-gap*8)/9)),cellH=Math.round(cellW*1.12);
+ const x0=8,y0=h-cellH-14;
  for(let i=0;i<9;i++){
   const st=i+1,x=x0+(i%cols)*(cellW+gap),y=y0+Math.floor(i/cols)*(cellH+gap),unlocked=st<=(campaign.unlockedMax||1)||(st===9&&campaign.bonusUnlocked);
   g.save();g.globalAlpha=unlocked?1:.48;
@@ -41,7 +41,7 @@ function stageGrid(g,w,h,v){
   if(rank){const file=String(rank).toLowerCase(),im=img(ranks,file,'assets/game/ui/debrief_0916/rankplate_'+file+'.png');
     if(im.complete&&im.naturalWidth)g.drawImage(im,x+cellW*.36,y+2,cellW*.28,cellH*.34);}
   if(st===v.stage){g.strokeStyle='#ffd76e';g.lineWidth=2;g.strokeRect(x+3,y+cellH*.26,cellW-6,cellH*.67);}
-  txt(g,'0'+st,x+cellW*.12,y+cellH*.78,11,unlocked?'#dce8f2':'#70808b');
+  txt(g,'0'+st,x+cellW*.10,y+cellH*.82,Math.max(7,Math.min(10,cellW*.2)),unlocked?'#dce8f2':'#70808b');
   g.restore();
  }
  txt(g,'THEATER PROGRESSION',w/2,Math.max(24,y0-24),17,'#e8d7a1','center');

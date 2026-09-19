@@ -2369,7 +2369,7 @@ const XART=(function(){
      side profile, and the back view with the CF jacket logo. */
   X._src.yuri_avatar='assets/game/yuri_v2/yuri_avatar.png';
   for(const em of ['idle','anger','smile','crash','sad','laugh','victory'])
-    X._src['yuri_v2_'+em]='assets/game/yuri_v2/port_yuri_'+em+'.png';
+    X._src['yuri_v2_'+em]='assets/game/pilot_portraits/yuri-'+(em==='smile'?'happy':em)+'.png';
   for(const pk of _CF_PORTRAIT_PILOTS)for(const em of _CF_PORTRAIT_POSES)
     X._src['comm_'+pk+'_'+em]='assets/game/comm_portraits_0914/comm_'+pk+'_'+em+'.png';
   /* ⚠ SQUARE BORDERED ROSTER AVATARS (Mike, 0906): "make sure you use square'd bordered
@@ -2855,9 +2855,9 @@ const XART=(function(){
   X._touch=function(k){
     // New Yuri identity is enforced before caches/atlas lookup, including legacy callers.
     if(k==='face_yuri')k='yuri_avatar';
-    const yp=/^port_(?:cf_)?yuri_(.+)$/.exec(k||'');
-    if(yp){let em=yp[1];if(em==='happy')em='smile';if(em.indexOf('talk')===0)em='idle';
-      k='yuri_v2_'+(['idle','anger','smile','crash','sad','laugh','victory'].includes(em)?em:'idle');}
+    const yp=/^port_yuri_(.+)$/.exec(k||'');
+    if(yp){const em=yp[1]==='smile'?'happy':yp[1];
+      k='port_cf_yuri_'+(em==='talk'?'talk-closed':em);}
 
     /* CELLS ARE CHECKED FIRST (drop 0806u). BOFX.img still names the SHEET for every atlased
        key, so that any consumer asking "is this registered / is the file there" gets a true
@@ -69417,12 +69417,6 @@ function pilotPortrait(pilotKey, emo){
   // Approved CF pack first. Dialogue may ask for `talk`, which cycles the authored mouth poses.
   const p=String(pilotKey||'').toLowerCase();
   let e=String(emo||'idle').toLowerCase();
-  if(p==='yuri'){
-    const em=e==='happy'?'smile':e.indexOf('talk')===0?'idle':e;
-    const key='yuri_v2_'+(['idle','anger','smile','crash','sad','laugh','victory'].includes(em)?em:'idle');
-    if(XART.rdy(key))return key;
-    XART.rdy('yuri_v2_idle');return 'yuri_v2_idle';
-  }
   if(e==='smile') e='happy';
   if(e==='talk'){
     const mouths=['talk-closed','talk-small','talk-medium','talk-wide','talk-o','talk-medium','talk-small'];
