@@ -64483,6 +64483,16 @@ function drawPilot(dt){
   const showIdx=(pilotRot>0.5)?pilotFrom:pilotIndex;
   const P=PILOTS[showIdx];
   const locked=isPilotLocked(P);
+  // Restart the arcade reveal for each visible pilot; the launch card stays fully readable.
+  if(drawPilot._pcFor!==P.key){
+    drawPilot._pcFor=P.key;
+    if(locked) pcard=null;
+    else {
+      const card=pcStart(P.key), meta=(BOFX.pilotcard&&BOFX.pilotcard[P.key])||{};
+      card.textTotal=P.name.length+(meta.affil||P.role||'FURY HQ').length;
+    }
+  }
+  if(!locked && pilotPending==null) pcUpdate(dt);
   drawPilotBG(P.tint);
   const titleFace=pilotFont(P.font)||pilotFont(2);
   if(titleFace && typeof stageText==='function')
@@ -64521,14 +64531,18 @@ function drawPilot(dt){
       psBlitFit(body||'port_'+P.key+'_idle',BX+bayW/2,BY+BH*.51,bayW-16,BH-18,1);
       const launching=pilotPending!=null;
       psBlitFit(psShipKey(P.key,spin),SHX+bayW/2,BY+(launching?BH*.54:BH*.31),bayW-18,launching?BH*.79:BH*.43,1);
-      pilotNameDraw(launching?'GOOD LUCK, '+P.name+'!':P.name,PX+PW/2,PY+25,launching?17:19,P.tint,1);
+      if(launching) pilotNameDraw('GOOD LUCK, '+P.name+'!',PX+PW/2,PY+25,17,P.tint,1);
       if(!launching){
         const M=(BOFX.pilotcard&&BOFX.pilotcard[P.key])||{}, stats=pcStats(P.key), x0=SHX+12, x1=SHX+bayW-12;
-        const aff=M.affil||P.role||'FURY HQ';
-        if(typeof msgText==='function') msgText(aff.toUpperCase(),SHX+bayW/2,BY+BH*.55,8,'#cfeaff',1,1,.035);
+        const aff=(M.affil||P.role||'FURY HQ').toUpperCase();
+        const copy=[P.name,aff];
+        const visibleName=pcRevealText(copy,0), visibleAff=pcRevealText(copy,1);
+        if(visibleName) pilotNameDraw(visibleName,PX+PW/2,PY+25,19,P.tint,1);
+        if(visibleAff && typeof msgText==='function') msgText(visibleAff,SHX+bayW/2,BY+BH*.55,8,'#cfeaff',1,1,.035);
         for(let si=0;si<stats.length;si++){
-          const yy=BY+BH*(.65+si*.105), frac=stats[si].val/PC_MAX_SEG;
-          if(typeof msgText==='function') msgText(stats[si].label,x0,yy-4,7,'#dbe8ff',0,1,.025);
+          const yy=BY+BH*(.65+si*.105), frac=pcVisibleSegments(si,stats[si].val)/PC_MAX_SEG;
+          const labelReady=pcard && (pcard.done||pcard.phase==='special'||pcard.phase==='hold'||(pcard.phase==='bars'&&pcard.bar>=si));
+          if(labelReady && typeof msgText==='function') msgText(stats[si].label,x0,yy-4,7,'#dbe8ff',0,1,.025);
           ctx.save();ctx.fillStyle='rgba(8,12,20,.9)';ctx.fillRect(x0,yy+2,x1-x0,7);
           ctx.fillStyle=P.tint;ctx.shadowColor=P.tint;ctx.shadowBlur=6;ctx.fillRect(x0+1,yy+3,(x1-x0-2)*frac,5);ctx.restore();
         }
