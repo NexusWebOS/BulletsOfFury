@@ -2004,6 +2004,10 @@ const XART=(function(){
   for(const _e of ['fire','ice','lightning','prism','toxic','kinetic','chrome','water','dark'])X._src['turn_inf_'+_e+'_0918']=_turn0918+'inf_'+_e+'_turn.png';
   for(const _f of ['arm_flame_intact','arm_flame_damaged','arm_flame_exposed','arm_cannon_intact','arm_cannon_damaged','arm_cannon_exposed','body_intact','body_damaged','body_exposed','body_wreck','body_rotor','body_rotor_damaged'])X._src['fzt_'+_f+'_turn0918']=_turn0918+'fzt_'+_f+'_turn.png';
   X._src.bmbar_frame_shield_v2='assets/game/ui/bossbar_0918/shield_frame_v2.png';
+  for(const [theme,file] of [['volcano','volcano_red'],['steel','level5_steel']]){
+    X._src['bmbar_frame_shield_'+theme]='assets/game/ui/bossbar_0918/shield_frame_'+file+'.png';
+    for(const state of ['over','hex','plasma','low'])X._src['bmbar_shield_'+theme+'_fill_'+state]='assets/game/ui/bossbar_0918/shield_fill_'+file+'_'+state+'.png';
+  }
   for(const tier of ['super','ultra','uber']){
     X._src['missile_'+tier+'_icon_0915']='assets/game/ui/missile_tiers_0915/'+tier+'_icon.png';
     X._src['missile_'+tier+'_box_0915']='assets/game/ui/missile_tiers_0915/'+tier+'_box.png';
@@ -25329,7 +25333,9 @@ function bossBarWarm(stage){
      fallback for a frame or two every time. All of them are warmed with the stage. */
   try{ for(const k of ['bmbar_frame_boss','bmbar_frame_mini','bmbar_fill_grey','bmbar_fill_seg','bmbar_fill_orange','bmbar_fill_green','bmbar_fill_cyan','bmbar_fill_red',
                        'bmbar_frame_shield','bmbar_frame_shield_v2','bmbar_tab_shield','bmbar_tab_boss','bmbar_tab_mini','bmbar_fill_solid',
-                       'bmbar_sf2_over','bmbar_sf2_hex','bmbar_sf2_plasma','bmbar_sf2_low']){ XART.rdy(k); if(XART._touch) XART._touch(k); } }catch(_e){}
+                       'bmbar_sf2_over','bmbar_sf2_hex','bmbar_sf2_plasma','bmbar_sf2_low',
+                       'bmbar_frame_shield_volcano','bmbar_frame_shield_steel',
+                       ...['volcano','steel'].flatMap(t=>['over','hex','plasma','low'].map(s=>'bmbar_shield_'+t+'_fill_'+s))]){ XART.rdy(k); if(XART._touch) XART._touch(k); } }catch(_e){}
 }
 function drawHealthBarV2(kind, frac, cx, cy, w, inWorld, lagKey){
   if(typeof ctx==='undefined') return false;
@@ -25359,7 +25365,7 @@ function drawHealthBarV2(kind, frac, cx, cy, w, inWorld, lagKey){
         /* Position the attached SHIELD nameplate below the boss gauge. */
         const sc=w/BMBAR.frameW;
         const h=BMBAR.frameH*sc, sh=82*(w/881);
-        drawShieldBarArt(sf,cx,cy+h/2+sh/2+3,w);
+        drawShieldBarArt(sf,cx,cy+h/2+sh/2+3,w,b);
       } finally { _bmShieldDepth=0; }
     }
   }
@@ -25508,8 +25514,11 @@ function bmbarShieldFillKey(frac){
        : (frac>0.22) ? 'bmbar_sf2_plasma'
        :               'bmbar_sf2_low';
 }
-function bmbarShieldFill(frac){
+function bmbarShieldFill(frac,b){
   const k=bmbarShieldFillKey(frac);
+  const theme=b&&b._mwBarrier?'volcano':b&&b._shieldGaugeStyle==='level5_steel'?'steel':null;
+  if(theme){const alt='bmbar_shield_'+theme+'_fill_'+k.slice('bmbar_sf2_'.length);
+    if(typeof XART!=='undefined'&&XART.rdy(alt))return XART.get(alt);}
   if(typeof XART!=='undefined' && XART.rdy(k)) return XART.get(k);
   const old=k.replace('bmbar_sf2_','bmbar_sfill_');
   if(typeof XART!=='undefined' && XART.rdy(old)) return XART.get(old);
@@ -25517,13 +25526,16 @@ function bmbarShieldFill(frac){
 }
 /* The separate rectangular shield frame has a connected, centered SHIELD nameplate.
    Fill clips against the straight well, independent of the boss health gauge. */
-function drawShieldBarArt(frac, cx, cy, w){
+function drawShieldBarArt(frac, cx, cy, w, b){
   if(typeof XART==='undefined'||!XART.rdy('bmbar_frame_shield_v2'))return false;
-  const im=XART.get('bmbar_frame_shield_v2'),fill=bmbarShieldFill(frac);if(!fill)return false;
+  const theme=b&&b._mwBarrier?'volcano':b&&b._shieldGaugeStyle==='level5_steel'?'steel':null;
+  const themed=theme&&'bmbar_frame_shield_'+theme;
+  const key=themed&&XART.rdy(themed)?themed:'bmbar_frame_shield_v2';
+  const im=XART.get(key),fill=bmbarShieldFill(frac,b);if(!fill)return false;
   frac=clamp(frac||0,0,1);const ar=(im.naturalWidth||im.width)/(im.naturalHeight||im.height),h=w/ar;
   const x=Math.round(cx-w/2),y=Math.round(cy-h/2),fx=x+w*.067,fy=y+h*.43,fw=w*.866,fh=h*.235;
   ctx.save();ctx.imageSmoothingEnabled=true;ctx.drawImage(im,x,y,w,h);
-  if(frac>0){ctx.save();ctx.beginPath();ctx.rect(fx,fy,fw*frac,fh);ctx.clip();ctx.drawImage(fill,fx,fy,fw,fh);ctx.globalAlpha=.12+.08*Math.sin(stateT*5);ctx.fillStyle='#e8fdff';ctx.fillRect(fx,fy,fw,fh);ctx.restore();}
+  if(frac>0){ctx.save();ctx.beginPath();ctx.rect(fx,fy,fw*frac,fh);ctx.clip();ctx.drawImage(fill,fx,fy,fw,fh);ctx.globalAlpha=.12+.08*Math.sin(stateT*5);ctx.fillStyle=theme==='volcano'?'#ffe1cb':theme==='steel'?'#ffffff':'#e8fdff';ctx.fillRect(fx,fy,fw,fh);ctx.restore();}
   ctx.restore();return true;
 }
 
