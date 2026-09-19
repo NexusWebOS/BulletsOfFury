@@ -2373,10 +2373,9 @@ const XART=(function(){
   for(const pk of _CF_PORTRAIT_PILOTS)for(const em of _CF_PORTRAIT_POSES)
     X._src['comm_'+pk+'_'+em]='assets/game/comm_portraits_0914/comm_'+pk+'_'+em+'.png';
   /* ⚠ SQUARE BORDERED ROSTER AVATARS (Mike, 0906): "make sure you use square'd bordered
-     portraits for each pilot." One authored frame - lifted off his own Yuri avatar plate -
-     composited over each pilot's own portrait, so the only thing that changes between roster
-     slots is the face. See _BUILD_SOURCE/build_pilot_avatars_0906.py for why this is a
-     composite rather than nine separate generations. */
+     portraits for each pilot." The nine avatar plates share one approved frame template
+     and are rebuilt from current pilot_portraits/*-idle.png by
+     _BUILD_SOURCE/rebuild_pilot_avatars_0919.py. */
   for(const _pa of ['axel','decker','maverick','freezer','juggernaut','yuri','lizzie','falva','cole'])
     X._src['pav_'+_pa]='assets/game/pilot_avatars/pav_'+_pa+'.png';
   /* ⚠ ALL NINE FRONT-FACING FIGURES, ONE FOLDER, ONE LOOP (Mike, 0909: "should be part of the

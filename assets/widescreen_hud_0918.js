@@ -32,6 +32,7 @@ function values(){try{
 function stageGrid(g,w,h,v){
  const cols=9,gap=2,cellW=Math.min(50,Math.floor((w-12-gap*8)/9)),cellH=Math.round(cellW*1.12);
  const x0=8,y0=h-cellH-14;
+ const shade=g.createLinearGradient(0,y0-46,0,h);shade.addColorStop(0,'rgba(2,8,20,0)');shade.addColorStop(.55,'rgba(2,8,20,.72)');shade.addColorStop(1,'rgba(2,8,20,.82)');g.fillStyle=shade;g.fillRect(0,y0-46,w,h-y0+46);
  for(let i=0;i<9;i++){
   const st=i+1,x=x0+(i%cols)*(cellW+gap),y=y0+Math.floor(i/cols)*(cellH+gap),unlocked=st<=(campaign.unlockedMax||1)||(st===9&&campaign.bonusUnlocked);
   g.save();g.globalAlpha=unlocked?1:.48;
@@ -60,7 +61,7 @@ function rightPanel(g,w,h,v,isMap){
  const panelW=Math.min(w-12,Math.floor(h*.45)),panelH=Math.min(h-20,Math.floor(panelW*810/320));
  const x=(w-panelW)/2,y=h-panelH-12;
  plate(g,bgRect.panel,x,y,panelW,panelH);
- const port=img(portraits,v.key,'assets/game/pilot_portraits/'+v.key+'-idle.png');
+ const port=img(portraits,v.key,'assets/game/pilot_avatars/pav_'+v.key+'.png');
  if(port.complete&&port.naturalWidth){g.save();g.beginPath();g.rect(x+panelW*.16,y+panelH*.075,panelW*.68,panelH*.24);g.clip();
   const ph=panelH*.25,pw=ph*port.naturalWidth/port.naturalHeight;
   g.drawImage(port,x+(panelW-pw)/2,y+panelH*.065,pw,ph);g.restore();}
@@ -81,7 +82,7 @@ function menuPanel(g,w,h,st){
  if(st==='pilot'){
   try{const p=PILOTS[pilotIndex]||PILOTS[0];key=p.key;name=p.name||p.key.toUpperCase();lines=['PILOT ROSTER','CALLSIGN  '+name.toUpperCase(),'FURY DIVISION','SHIP READY','CONFIRM PILOT','GOOD LUCK'];}catch(_){}
  }
- const port=img(portraits,key,key==='hub'?'assets/game/campaign_map_v2/isl_hub.png':'assets/game/pilot_portraits/'+key+'-idle.png');
+ const port=img(portraits,key,key==='hub'?'assets/game/campaign_map_v2/isl_hub.png':'assets/game/pilot_avatars/pav_'+key+'.png');
  if(port.complete&&port.naturalWidth){g.save();g.beginPath();g.rect(x+panelW*.16,y+panelH*.075,panelW*.68,panelH*.24);g.clip();
   const ph=panelH*.25,pw=ph*port.naturalWidth/port.naturalHeight;g.drawImage(port,x+(panelW-pw)/2,y+panelH*.065,pw,ph);g.restore();}
  txt(g,name.toUpperCase(),x+panelW/2,y+panelH*.31,Math.max(12,panelW*.07),'#e8f2ff','center');
