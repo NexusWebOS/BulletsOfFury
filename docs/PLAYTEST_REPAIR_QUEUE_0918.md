@@ -7,7 +7,7 @@ Source review: the three latest September 18 gameplay recordings in `C:\Users\Mi
 - Hard Razorback Duo pressure: extended 0919. Sonic, missile and nova attacks take turns with shared recovery that waits for prior waves, Retina locks and missiles to clear; machine guns keep firing. Focused browser simulation passed.
 - Furious Razorback: 0919 partial fix inserts a five-second suppression beat between Retina salvos and adds pale contrast to sonic rings and projectiles. Dense warning/explosion overlap still needs a continuous playtest. [Proof](RAZORBACK_FURIOUS_READABILITY_0919.md).
 - Achievement notifications and Fury Point conversion compete with the lower Stats sign-off and Continue area.
-- Loadout needs controller/D-pad arsenal paging and stronger selected combination feedback alongside its mouse browsing.
+- Loadout form chooser: fixed 0919. Clicking an authored form badge now selects that badge, and a second click equips it. The arsenal rows are hidden while the chooser is open, leaving readable form labels and the matchup banner. D-pad arsenal paging and broader combination feedback remain.
 - Pilot Select: role, callsign, affiliation, biography, sequential stat bars and boxed special icon restored 0919; GOOD LUCK retains only the pilot and ship. [Proof](PILOT_SELECT_DETAILS_0919.md).
 - Respawn projectile safety: extended 0919. Life-loss respawns clear the incoming lane for the full two-second invulnerability window; distant shots and boss beams remain. The ship stays visibly lit during grace. Focused browser check passed.
 - Hard/Furious warning colors: 0919 partial fix gives the final red FOV/alert a cool-cyan edge. Dense overlap in other encounters remains to be tested. [Proof](HARD_FURIOUS_WARNING_CONTRAST_0919.md).

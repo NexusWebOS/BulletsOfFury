@@ -73397,7 +73397,7 @@ function drawLoadout(dt){
   if(L.row===1){ if(L.catSel<L.cat)L.cat=L.catSel; else if(L.catSel>=L.cat+visible)L.cat=L.catSel-visible+1; }
   const page=Math.floor(Math.max(0,L.catCol-1)/5), pageElems=elements.slice(page*5,page*5+5);
   L.catalogRects=[];
-  for(let rr=0;rr<visible;rr++){
+  if(L.row!==2)for(let rr=0;rr<visible;rr++){
     const ri=L.cat+rr,w=allW[ri];if(w==null)continue;
     const yy=B[1]+B[3]*(.18+rr*.31),owned=L.pool.indexOf(w)>=0,focused=L.row===1&&L.catSel===ri;
     if(focused){ctx.save();ctx.globalAlpha=.22+.10*Math.sin(t*8);ctx.fillStyle='#ffd24a';ctx.fillRect(B[0]+2,yy-B[3]*.145,B[2]-4,B[3]*.28);ctx.restore();}
@@ -73414,7 +73414,7 @@ function drawLoadout(dt){
       L.catalogRects.push({x:cx-h*.58,y:yy-h*.58,w:h*1.16,h:h*1.16,weapon:w,ri:ri,col:ci+page*5*(ci>0),cell:c});
     }
   }
-  if(art){const label=(L.cat+1)+'-'+Math.min(allW.length,L.cat+visible)+' / '+allW.length+'   ELEMENTS '+(page+1)+'/2';
+  if(art&&L.row!==2){const label=(L.cat+1)+'-'+Math.min(allW.length,L.cat+visible)+' / '+allW.length+'   ELEMENTS '+(page+1)+'/2';
     stageText(art,label,B[0]+B[2]*.78,B[1]+B[3]*.05,5.5,'#9fd6ff',.75,1,.025);
     const r=(L.catalogRects||[]).find(q=>q.ri===L.catSel&&q.col===L.catCol),c=r&&r.cell;
     if(c){const status=c.ok?'OWNED':(c.price?'ARMORY '+c.price+' FP':(c.earned?'ARMORY RECIPE':'BOSS LOCKED'));
@@ -73430,9 +73430,12 @@ function drawLoadout(dt){
     stageText(art,(L.critT>0&&matchup.good?'CRITICAL!  ':'')+matchup.text,W*.5,yy,
       Math.min(10,stageFitH(art,matchup.text,W*.77,10,6,.035)),matchup.good?'#ffe183':'#a8d9ff',.95,1,.035);
   }
-  if(L.row>0&&opts.length){
+  L.formRects=[];
+  if(L.row===2&&opts.length){
+    if(art)stageText(art,'SELECT '+weaponDisplayName(selW)+' FORM',B[0]+B[2]*.5,B[1]+B[3]*.10,8,'#ffe18b',.9,1,.035);
     L.psel=clamp(L.psel|0,0,opts.length-1);const view=Math.min(7,opts.length),pitch=B[2]/view,first=clamp(L.psel-3,0,Math.max(0,opts.length-view));
-    for(let k=0;k<view;k++){const i=first+k,o=opts[i],cx=B[0]+pitch*(k+.5),cy=B[1]+B[3]*.40,h=Math.min(B[3]*.56,pitch*.62);forgeIconFit(o.key,cx,cy,h,0,i===L.psel?1:.45);if(i===L.psel)forgeHexPointer(o.key,cx,cy,h,'#ffd24a');if(art)stageText(art,o.name,cx,B[1]+B[3]*.84,Math.min(7,stageFitH(art,o.name,pitch*.88,7,4,.03)),'#cfeaff',.8,1,.03);}
+    for(let k=0;k<view;k++){const i=first+k,o=opts[i],cx=B[0]+pitch*(k+.5),cy=B[1]+B[3]*.40,h=Math.min(B[3]*.56,pitch*.62);forgeIconFit(o.key,cx,cy,h,0,i===L.psel?1:.45);if(i===L.psel)forgeHexPointer(o.key,cx,cy,h,'#ffd24a');if(art)stageText(art,o.name,cx,B[1]+B[3]*.84,Math.min(7,stageFitH(art,o.name,pitch*.88,7,4,.03)),'#cfeaff',.8,1,.03);
+      L.formRects.push({x:cx-pitch*.46,y:cy-h*.62,w:pitch*.92,h:h*1.24,index:i});}
   }
   if(art)stageText(art,'X'+(run.forgeRespecs|0),W*.705,H*.883,13,'#ffd24a',.9,1,.05);
   controlHintRow(L.row===1?[['pad_dpad','BROWSE'],['pad_a','EQUIP'],['pad_b','BACK'],['pad_start','LAUNCH']]:
@@ -73447,6 +73450,14 @@ function drawLoadout(dt){
     else L.cat=clamp(L.cat+d,0,Math.max(0,allW.length-3));fsx('blip');}
   if(click){const mx=Input.mouse.x,my=Input.mouse.y,RB=frc(P.respec,W,H);
     if(mx>=RB[0]&&mx<=RB[0]+RB[2]&&my>=RB[1]&&my<=RB[1]+RB[3]&&selW!=null){const q=forgeRespec(selW);loadoutSay(q==='ok'?'BARE FORM EQUIPPED':'NO ACTIVE FORM TO RE-SPEC',q==='ok'?'powerup':'blocked');return;}
+    if(L.row===2){const hit=(L.formRects||[]).find(r=>mx>=r.x&&mx<=r.x+r.w&&my>=r.y&&my<=r.y+r.h);
+      if(!hit)return;
+      if(L.psel!==hit.index){L.psel=hit.index;fsx('blip');return;}
+      const o=weaponFormOptions(selW)[hit.index],r=weaponFormSelect(selW,o);
+      loadoutSay(r==='ok'?o.name+' EQUIPPED':'FORM LOCKED',r==='ok'?'powerup':'blocked');
+      if(r==='ok'&&loadoutMatchup(selW,o)?.good){L.critT=2.2;fsx('life');}
+      L.row=0;return;
+    }
     const hit=(L.catalogRects||[]).find(r=>mx>=r.x&&mx<=r.x+r.w&&my>=r.y&&my<=r.y+r.h);
     if(hit){if(L.row!==1||L.catSel!==hit.ri||L.catCol!==hit.col){L.catSel=hit.ri;L.catCol=hit.col;L.row=1;fsx('blip');return;}
       if(!hit.cell.ok){loadoutSay(hit.cell.price?'BUY THIS RECIPE IN THE ARMORY':'LOCKED - EARN THIS ELEMENT','blocked');return;}
