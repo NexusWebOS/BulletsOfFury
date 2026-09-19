@@ -1,8 +1,8 @@
 # Bullets of Fury — request checklist
 
-Updated 2026-09-19. **176 entries: 148 complete / 9 partial / 19 pending.**
+Updated 2026-09-19. **176 entries: 149 complete / 9 partial / 18 pending.**
 
-**28 remain unfinished.** 10 depend on SpriteCook production assets; 0 needs a model-name decision. These are included in the totals.
+**27 remain unfinished.** 10 depend on SpriteCook production assets; 0 needs a model-name decision. These are included in the totals.
 
 Consolidated requests in this conversation; superseded variants folded into the latest request. Rows count deliverables, not effort or percent of development time.
 
@@ -30,7 +30,7 @@ Mike selected furyship_somersault_13.png and approved image_gen for its replacem
 | Stage 4: Olive Warden and Sovereign | 14 | 0 | 4 | 18 |
 | Stages 5-9: space and encounter cleanup | 18 | 2 | 4 | 24 |
 | Manual missile tiers and supplies | 9 | 0 | 0 | 9 |
-| Pause, saving, title and pilot selection | 24 | 0 | 1 | 25 |
+| Pause, saving, title and pilot selection | 25 | 0 | 0 | 25 |
 | Achievements, timers and unlockable modes | 11 | 1 | 2 | 14 |
 | Arcade and shared difficulty rewards | 8 | 0 | 0 | 8 |
 | Stage 2: lava hazards, Magma Ward and Furnace Tyrant | 2 | 0 | 0 | 2 |
@@ -212,7 +212,7 @@ Mike selected furyship_somersault_13.png and approved image_gen for its replacem
 - [x] **UI-20 · Completed** — Pilot Select types identity and affiliation, then fills each stat bar in order with synchronized ticks; the GOOD LUCK card retains only pilot and ship. [Proof](PILOT_REVEAL_0919.md).
 - [x] **UI-21 · Completed** — BULLETS FIRED displays the projectile count with matching firepower fill; the longest labels and values fit within authored stat bays. [Proof](STATS_FIT_0919.md).
 - [x] **UI-22 · Complete** — Loadout catalog readability: enlarge or page the combination cells and display the selected combination name/price/state so opacity alone is not the only locked/unlocked cue. [Evidence](LOADOUT_CATALOG_0919.md).
-- [ ] **UI-23 · Pending** — Pilot Select completeness: warm ship/emblem art before the screen appears and restore callsign, role/special and biography detail without contaminating the clean GOOD LUCK launch card. [Evidence](PLAYTEST_REPAIR_QUEUE_0918.md).
+- [x] **UI-23 · Complete** — Pilot Select warms roster art and restores typed role, callsign, affiliation, biography, sequential stat bars, and the boxed special icon. GOOD LUCK stays pilot-and-ship only. [Proof](PILOT_SELECT_DETAILS_0919.md).
 - [x] **UI-24 · Complete** — Use the graphical arcade dialogue font and letter-by-letter centered banner for item, ammunition and upgrade acquisition messages instead of basic floating text. [Evidence](ROTATION_SHIELD_STAGE2_REPAIR_0918.md).
 - [x] **UI-25 · Complete** — Replace the HP-like shield gauge with a distinct rectangular energy-shield frame, straight fill well and connected SHIELD box whose baked label is centered horizontally and vertically. [Evidence](ROTATION_SHIELD_STAGE2_REPAIR_0918.md).
 

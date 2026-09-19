@@ -33206,6 +33206,7 @@ function setState(s){
   if(s==='paused'&&_prevState!=='paused')_pausePresentation(true);
   else if(_prevState==='paused'&&s!=='paused')_pausePresentation(false);
   stateT=0; Input.clearTaps(); _hudShow(_hudStateWants(s), s!==GS.INTRO);
+  if(s===GS.DIFF||s===GS.PILOT) pilotSelectWarm();
   /* ⚠ THE DEBRIEF JOINED THIS LIST (0905). Mike: "the whole screen should go full screen for the
      stat screen". GS.STAGECLEAR now takes the same browser-aspect viewport the HQ cutscenes use,
      which is also what hides the credit rails, the score strip and its divider behind it - the
@@ -58711,11 +58712,9 @@ function pcStats(p){
 /* The composed roster uses different copy from the legacy card. Count the strings actually
    drawn so the reveal and its stat ticks finish together. Full strings still determine layout. */
 function pcScreenCopy(P){
-  const M=(BOFX.pilotcard&&BOFX.pilotcard[P.key])||{}, SP=pcSpecial(P.key);
-  return [P.name,
-    (M.callsign?('"'+M.callsign+'"'):'')+(M.affil?('   '+M.affil.toUpperCase()):''),
-    M.desc||P.role||'', SP&&SP.name?'SPECIAL: '+SP.name:'',
-    ...pcStats(P.key).map(s=>s.label)];
+  const M=(BOFX.pilotcard&&BOFX.pilotcard[P.key])||{};
+  return [P.name, M.title||P.role||'', M.callsign?('"'+M.callsign+'"'):'',
+    (M.affil||'FURY HQ').toUpperCase(), M.desc||''];
 }
 function pcRevealText(copy,index){
   if(!pcard||pcard.done) return copy[index]||'';
@@ -64378,6 +64377,22 @@ function affilEmblemKey(affil){
   const k='affil_'+s;
   return (typeof XART!=='undefined' && XART.rdy(k)) ? k : null;
 }
+/* Start decoding the nine roster faces and ship level views on the difficulty screen.
+   A direct Arcade/Password entry repeats this harmlessly on Pilot Select. The selected
+   pose, affiliation badge and special icon are touched before its first card draw. */
+function pilotSelectWarm(){
+  if(typeof XART==='undefined'||!XART._touch||typeof PILOTS==='undefined')return;
+  XART._touch('bof_player_weapon_special_icons_atlas');
+  for(const P of PILOTS){
+    XART._touch('pav_'+P.key);XART._touch('ship_'+P.key+'_pv2');
+    XART._touch(P.key+'_body_0');
+    const M=(BOFX.pilotcard&&BOFX.pilotcard[P.key])||{}, tag=AFFIL_EMBLEM[String(M.affil||'').toUpperCase()];
+    if(tag)XART._touch('affil_'+tag);
+    const sp=pcSpecial(P.key),ik=specialArtKey('spicon_'+P.key);
+    if(XART._src&&XART._src[ik])XART._touch(ik);
+    if(sp&&sp.icon&&XART._src&&XART._src[sp.icon])XART._touch(sp.icon);
+  }
+}
 function psBodyKey(key){
   if(typeof XART==='undefined') return null;
   const chain=[key+'_body_0'];
@@ -64516,8 +64531,8 @@ function drawPilot(dt){
     drawPilot._pcFor=P.key;
     if(locked) pcard=null;
     else {
-      const card=pcStart(P.key), meta=(BOFX.pilotcard&&BOFX.pilotcard[P.key])||{};
-      card.textTotal=P.name.length+(meta.affil||P.role||'FURY HQ').length;
+      const card=pcStart(P.key);
+      card.textTotal=pcScreenCopy(P).join('').length;
     }
   }
   if(!locked && pilotPending==null) pcUpdate(dt);
@@ -64527,8 +64542,8 @@ function drawPilot(dt){
     stageText(titleFace,'CHOOSE YOUR PILOT!',VW/2,42,22,'#f2f5ff',.85,1,.06);
   else if(typeof msgText==='function')
     msgText('CHOOSE YOUR PILOT!',VW/2,42,22,'#f2f5ff',0,1,.06);
-  /* The selected card contains only the full-body pilot and the rotating ship.
-     The roster below remains the navigation control for all nine pilots. */
+  /* Selection retains the full pilot, rotating ship, affiliation, biography,
+     special and stat reveal. The launch slide leaves only pilot and ship visible. */
   let cardRect=null;
   {
     /* ⚠ PY CLEARS THE TITLE. At 40 the panel's top edge cut straight through "CHOOSE YOUR
@@ -64558,24 +64573,47 @@ function drawPilot(dt){
       const body=psBodyKey(P.key);
       psBlitFit(body||'port_'+P.key+'_idle',BX+bayW/2,BY+BH*.51,bayW-16,BH-18,1);
       const launching=pilotPending!=null;
-      psBlitFit(psShipKey(P.key,spin),SHX+bayW/2,BY+(launching?BH*.54:BH*.31),bayW-18,launching?BH*.79:BH*.43,1);
+      psBlitFit(psShipKey(P.key,spin),SHX+bayW/2,BY+(launching?BH*.54:BH*.13),bayW-18,launching?BH*.79:BH*.24,1);
       if(launching) pilotNameDraw('GOOD LUCK, '+P.name+'!',PX+PW/2,PY+25,17,P.tint,1);
       if(!launching){
-        const M=(BOFX.pilotcard&&BOFX.pilotcard[P.key])||{}, stats=pcStats(P.key), x0=SHX+12, x1=SHX+bayW-12;
-        const aff=(M.affil||P.role||'FURY HQ').toUpperCase();
-        const copy=[P.name,aff];
-        const visibleName=pcRevealText(copy,0), visibleAff=pcRevealText(copy,1);
+        const M=(BOFX.pilotcard&&BOFX.pilotcard[P.key])||{}, stats=pcStats(P.key), sp=pcSpecial(P.key);
+        const copy=pcScreenCopy(P), x0=SHX+12, x1=SHX+bayW-12, width=x1-x0;
+        const visibleName=pcRevealText(copy,0);
         if(visibleName) pilotNameDraw(visibleName,PX+PW/2,PY+25,19,P.tint,1);
-        if(visibleAff && typeof msgText==='function') msgText(visibleAff,SHX+bayW/2,BY+BH*.55,8,'#cfeaff',1,1,.035);
-        for(let si=0;si<stats.length;si++){
-          const yy=BY+BH*(.65+si*.105), frac=pcVisibleSegments(si,stats[si].val)/PC_MAX_SEG;
-          const labelReady=pcard && (pcard.done||pcard.phase==='special'||pcard.phase==='hold'||(pcard.phase==='bars'&&pcard.bar>=si));
-          if(labelReady && typeof msgText==='function') msgText(stats[si].label,x0,yy-4,7,'#dbe8ff',0,1,.025);
-          ctx.save();ctx.fillStyle='rgba(8,12,20,.9)';ctx.fillRect(x0,yy+2,x1-x0,7);
-          ctx.fillStyle=P.tint;ctx.shadowColor=P.tint;ctx.shadowBlur=6;ctx.fillRect(x0+1,yy+3,(x1-x0-2)*frac,5);ctx.restore();
+        const idH=clamp(BH*.038,8,11), idStep=idH*1.5;
+        let ty=BY+BH*.26;
+        for(let ci=1;ci<=3;ci++){
+          const row=pcRevealText(copy,ci);
+          if(row) pcFontLeft(row,x0,ty,pcFontFit(row,width-(ci===3?28:0),idH,7),ci===3?'#cfeaff':P.tint,1);
+          if(ci===3){ const emblem=affilEmblemKey(M.affil);
+            if(emblem)psBlitFit(emblem,x1-11,ty,23,idH*2.2,.95); }
+          ty+=idStep;
         }
-        const ek=affilEmblemKey(M.affil);
-        if(ek) psBlitFit(ek,SHX+bayW*.84,BY+BH*.55,bayW*.22,BH*.12,.9);
+        const step=clamp(BH*.047,11,15), specialY=BY+BH-14;
+        const barTop=specialY-19-stats.length*step, bioTop=ty+3, bioBottom=barTop-4;
+        const bio=pcRevealText(copy,4);
+        if(bio && bioBottom>bioTop){
+          let h=clamp(BH*.034,7,9), lines=pcFontWrap(bio,width,h);
+          while(h>7 && lines.length*h*1.48>bioBottom-bioTop){h-=.5;lines=pcFontWrap(bio,width,h);}
+          ctx.save();ctx.beginPath();ctx.rect(x0,bioTop,width,Math.max(1,bioBottom-bioTop));ctx.clip();
+          for(let li=0;li<lines.length;li++)pcFontLeft(lines[li],x0,bioTop+h*.5+li*h*1.48,h,'#dbe8f3',1);
+          ctx.restore();
+        }
+        const barX=x0+Math.min(118,width*.43),barW=Math.max(24,x1-barX);
+        for(let si=0;si<stats.length;si++){
+          const yy=barTop+(si+.5)*step,frac=pcVisibleSegments(si,stats[si].val)/PC_MAX_SEG;
+          const labelReady=pcard&&(pcard.done||pcard.phase==='special'||pcard.phase==='hold'||(pcard.phase==='bars'&&pcard.bar>=si));
+          if(labelReady)pcFontLeft(stats[si].label,x0,yy,pcFontFit(stats[si].label,barX-x0-5,8,7),'#dbe8ff',1);
+          ctx.save();ctx.fillStyle='rgba(8,12,20,.9)';ctx.fillRect(barX,yy-4,barW,8);
+          ctx.fillStyle=P.tint;ctx.shadowColor=P.tint;ctx.shadowBlur=5;ctx.fillRect(barX+1,yy-3,(barW-2)*frac,6);ctx.restore();
+        }
+        if(pcard&&(pcard.done||pcard.phase==='special'||pcard.phase==='hold')){
+          const alpha=pcard.done?1:pcard.spT||0;
+          ctx.save();ctx.globalAlpha=alpha;
+          const iconW=iconDraw('spicon_'+P.key,x0,specialY-9,18,false)||0;ctx.restore();
+          const label='SPECIAL: '+(sp&&sp.name||'SPECIAL'),labelX=x0+(iconW?iconW+5:0);
+          pcFontLeft(label,labelX,specialY,pcFontFit(label,x1-labelX,8,7),P.tint,alpha);
+        }
       }
     }
     if(locked && pilotFlash>0){
