@@ -72023,7 +72023,7 @@ function scConceptBody(R, px, py, pw, ph, t, dt, art, F){
       if(typeof scFullOn==='function' && scFullOn()){
         const S2=SC_SLOTS_FULL, gx=P[0]+P[2]*S2.score[0], gw=P[2]*S2.score[2];
         const g0=P[1]+P[3]*(S2.score[1]+S2.score[3]), g1=P[1]+P[3]*S2.signoff[1];
-        const cH=Math.min((g1-g0)*0.52, (typeof stageFitH==='function')?stageFitH(art,conv,gw*0.98,(g1-g0)*0.52,7,0.06):(g1-g0)*0.45);
+        const cH=Math.min(20,(g1-g0)*0.32, (typeof stageFitH==='function')?stageFitH(art,conv,gw*0.98,20,7,0.06):20);
         stageTextCoin(art,'LEVEL SCORE '+_sc.toLocaleString('en-US')+'   =','+'+_n,gx+gw/2,(g0+g1)/2,cH,'#ffd24a',0.9,1,0.06);
       } else {
         const cH=Math.min(b[3]*0.40, (typeof stageFitH==='function')?stageFitH(art,conv,mW,b[3]*0.40,7,0.06):b[3]*0.36);
