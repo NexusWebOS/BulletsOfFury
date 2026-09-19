@@ -86,6 +86,13 @@ function onReady(){
   $('#roster-filter').placeholder='filter '+S.roster.length+' types…';
   const sel=$('#t-stage'); sel.innerHTML='';
   for(let i=1;i<=9;i++){ const o=document.createElement('option'); o.value=i; o.textContent='STAGE '+i; sel.appendChild(o); }
+  const C=d.scenario.catalog();
+  $('#t-pilot').innerHTML=C.pilots.map(p=>'<option value="'+p.key+'">'+p.name+'</option>').join('');
+  $('#t-diff').innerHTML=C.difficulties.map(k=>'<option value="'+k+'">'+k.toUpperCase()+'</option>').join('');
+  $('#t-diff').value=d.scenario.difficulty;
+  $('#t-weapon').innerHTML=C.weapons.map((name,i)=>'<option value="'+i+'">'+name+'</option>').join('');
+  $('#t-element').innerHTML='<option value="">BARE</option>'+C.elements.map(e=>'<option value="'+e+'">'+e.toUpperCase()+'</option>').join('');
+  $('#t-variant').innerHTML='<option value="">AUTO</option>'+C.variants.map(v=>'<option value="'+v+'">'+v.toUpperCase()+'</option>').join('');
   renderRoster();
   msg('roster: '+S.roster.length+' types across '+new Set(S.roster.map(r=>r.table)).size+' tables');
 }
@@ -126,7 +133,7 @@ function pick(r){
 function labOpen(){
   const d=api(); if(!d) return;
   const st=+$('#t-stage').value||1;
-  const ok=d.lab.on(st);
+  const ok=d.lab.on(st,$('#t-pilot').value,$('#t-diff').value);
   msg(ok?('lab open on stage '+st+' — wave script spent, nothing will arrive'):'lab failed to open');
 }
 function spawn(){
@@ -967,6 +974,7 @@ function wire(){
   $('#v-theater').onclick=()=>toggleTheater();
   $('#roster-filter').oninput=e=>{ S.filter=e.target.value; renderRoster(); };
   $('#t-lab').onclick=labOpen;
+  $('#t-equip').onclick=()=>{const d=api();if(!d)return; if(!d.lab.active)labOpen();const out=d.scenario.equip(+$('#t-weapon').value,+$('#t-level').value,$('#t-element').value,$('#t-variant').value);msg(out.ok?('equipped '+out.weapon+' lv'+out.level+(out.element?' '+out.element:'')):(out.reason||'unavailable'));};
   $('#b-spawn').onclick=spawn; $('#b-clear').onclick=clearField;
   $('#b-apply').onclick=()=>renderInspector();
   $('#e-apply').onclick=()=>renderInspector();

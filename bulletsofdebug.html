@@ -39,7 +39,7 @@
     <button class="tb" id="v-insp"  title="Inspector dock (Tab)"><span class="ico" data-icon="settings"></span><span class="lbl">INSPECTOR</span></button>
     <button class="tb" id="v-theater" title="Theater (T)"><span class="ico" data-icon="select"></span><span class="lbl">THEATER</span></button>
   </div>
-  <div id="hoststat"><span id="host-led" class="led"></span><span id="host-txt">ENGINE BOOTING</span><span id="ver">v0912g</span></div>
+  <div id="hoststat"><span id="host-led" class="led"></span><span id="host-txt">ENGINE BOOTING</span><span id="ver">LIVE ENGINE</span></div>
 </header>
 
 <main id="app">
@@ -63,6 +63,13 @@
   <section id="view">
     <div class="toolbar">
       <label>STAGE <select id="t-stage"></select></label>
+      <label>PILOT <select id="t-pilot"></select></label>
+      <label>DIFFICULTY <select id="t-diff"></select></label>
+      <label>WEAPON <select id="t-weapon"></select></label>
+      <label>LV <input id="t-level" type="number" min="1" max="5" value="1" style="width:40px"></label>
+      <label>ELEMENT <select id="t-element"></select></label>
+      <label>FORM <select id="t-variant"></select></label>
+      <button class="tb" id="t-equip">EQUIP</button>
       <button class="tb" id="t-lab" title="Open a quiet stage with the wave script spent"><span class="ico" data-icon="play"></span>LAB</button>
       <button class="tb" id="t-pause"><span class="ico" data-icon="pause"></span>PAUSE</button>
       <label class="chk"><input type="checkbox" id="t-fov" checked> FOV</label>

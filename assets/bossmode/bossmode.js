@@ -403,6 +403,16 @@ function tick(){
   $('#tf-boss').textContent=b?(b.name+(b.dead?' (DEAD '+b.dying.toFixed(1)+'s)':(b.enter?' (entering)':''))):'no boss';
   $('#tf-pat').textContent=b&&b.ship?('phase '+phaseOf(b)+(b.step!=null?'  step '+b.step:'')+'  cd '+(b.fireCd!=null?b.fireCd.toFixed(2):'-')):'';
   $('#tf-pos').textContent=b?('x '+Math.round(b.x)+'  y '+Math.round(b.y)+'  bullets '+s.eBullets):'';
+  const parts=b&&b.components||[];
+  $('#tf-parts').textContent=parts.map(x=>x.id+' '+Math.round(x.hp)+'/'+Math.round(x.maxhp)+(x.targetable?'':' [LOCKED]')).join('  ·  ');
+  const partSel=$('#t-part'),partIds=parts.map(x=>x.id+':'+(x.targetable?'1':'0')).join('|');
+  if(partSel.dataset.ids!==partIds){
+    const keep=partSel.value;
+    partSel.innerHTML=parts.length?parts.map(x=>'<option value="'+x.id+'"'+(x.targetable?'':' disabled')+'>'+x.id.toUpperCase()+'</option>').join(''):'<option value="">NO PARTS</option>';
+    partSel.value=parts.some(x=>x.id===keep&&x.targetable)?keep:((parts.find(x=>x.targetable)||{}).id||'');
+    partSel.dataset.ids=partIds;
+  }
+  $('#t-setpart').disabled=!parts.some(x=>x.targetable);
   const rec=$('#tf-rec'); rec.textContent=s.recording?'● REC':''; rec.classList.toggle('on',!!s.recording);
   $('#t-rec').classList.toggle('on', !!s.recording); $('#t-pause').classList.toggle('on', s.state==='paused');
   $('#b-stop').classList.toggle('dis', !s.fight);
@@ -428,6 +438,12 @@ function drawOverlay(s){
 function onHostReady(){
   hostFullscreenChrome();
   const T=tables(); const ps=$('#t-pilot'); ps.innerHTML=T.PILOTS.map(p=>'<option value="'+p.key+'"'+(p.key==='cole'?' selected':'')+'>'+p.name+'</option>').join('');
+  const C=host.api.loadout.catalog();
+  $('#t-diff').innerHTML=C.difficulties.map(k=>'<option value="'+k+'">'+k.toUpperCase()+'</option>').join('');
+  $('#t-diff').value=host.api.difficulty;
+  $('#t-weapon').innerHTML=C.weapons.map((name,i)=>'<option value="'+i+'">'+name+'</option>').join('');
+  $('#t-element').innerHTML='<option value="">BARE</option>'+C.elements.map(e=>'<option value="'+e+'">'+e.toUpperCase()+'</option>').join('');
+  $('#t-variant').innerHTML='<option value="">AUTO</option>'+C.variants.map(v=>'<option value="'+v+'">'+v.toUpperCase()+'</option>').join('');
   renderList();
   const b=$('#boot'); $('#boot-bar-fill').style.width='97%'; $('#boot-bar-txt').textContent='READY'; setTimeout(()=>b.classList.add('gone'), 500);
   msg('engine ready · '+fights().length+' fights on the table');
@@ -464,7 +480,7 @@ function playTest(){ if(!host.ready) return msg('engine not ready', true); const
   const slot=slotOf(d.base); if(!slot) return msg(d.base+' has no stage slot to run in', true);
   if(!d.codeOnly) applyDoc({});
   const rec=$('#t-rec').classList.contains('arm');
-  host.api.start(slot.stage, slot.role, $('#t-pilot').value, rec); state.inv=false; selectTab('stage'); msg('PLAY TEST · S'+slot.stage+' '+slot.role+' · '+d.name); setTimeout(()=>{ try{ $('#host').contentWindow.focus(); }catch(e){} }, 200); }
+  host.api.start(slot.stage, slot.role, $('#t-pilot').value, rec, $('#t-diff').value); state.inv=false; selectTab('stage'); msg('PLAY TEST · S'+slot.stage+' '+slot.role+' · '+d.name); setTimeout(()=>{ try{ $('#host').contentWindow.focus(); }catch(e){} }, 200); }
 function stopTest(){ if(!host.ready) return; host.api.stop(); msg('stopped'); }
 
 /* ---- wiring ---- */
@@ -508,6 +524,8 @@ function wire(){
   $('#t-pause').onclick=()=>{ if(!host.ready) return; host.api.pause(host.api.state!=='paused'); };
   $('#t-kill').onclick=()=>{ if(host.ready) host.api.kill(); };
   $('#t-sethp').onclick=()=>{ if(!host.ready||!state.snap||!state.snap.boss) return; host.api.setBossHp(state.snap.boss.maxhp*Math.max(1,Math.min(100,+$('#t-hp').value))/100); };
+  $('#t-setpart').onclick=()=>{if(!host.ready||!state.snap||!state.snap.boss)return;const id=$('#t-part').value;const ok=host.api.setBossComponentHp(id,Math.max(0,Math.min(100,+$('#t-part-hp').value))/100);msg(ok?('SET '+id+' HP'):('PART UNAVAILABLE'),!ok);};
+  $('#t-equip').onclick=()=>{if(!host.ready||!state.snap||!state.snap.fight)return msg('start a fight first',true);const out=host.api.loadout.equip(+$('#t-weapon').value,+$('#t-level').value,$('#t-element').value,$('#t-variant').value);msg(out.ok?('EQUIPPED '+out.weapon+' LV'+out.level+(out.element?' '+out.element:'')):(out.reason||'UNAVAILABLE'),!out.ok);};
   window.addEventListener('keydown', e=>{ if(e.target.tagName==='INPUT'||e.target.tagName==='TEXTAREA'||e.target.tagName==='SELECT') return;
     if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='s'){ e.preventDefault(); fileSave(); }
     else if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='z'){ e.preventDefault(); $('#e-undo').click(); }

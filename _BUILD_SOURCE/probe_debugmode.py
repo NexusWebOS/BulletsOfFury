@@ -126,8 +126,8 @@ def main():
             if J("state==='debugmenu'"): break
         ok(J("state==='debugmenu'"), 'dying in a debug fight returns to the menu too (states: %s)' % ','.join(sorted(seen)))
         # back out
-        press('Backspace'); step(5)
-        ok(J("state==='title'"), 'BACKSPACE leaves the menu for the title')
+        press('Escape'); step(5)
+        ok(J("state==='title'"), 'B / ESCAPE leaves the menu for the title')
         # 7. the host
         pg2=b.new_page(viewport={'width':700,'height':800})
         pg2.on('pageerror', lambda e: errs.append('host pageerror: '+str(e)[:200]))

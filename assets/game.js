@@ -3309,6 +3309,32 @@ function debugEquip(slot, opts){
      confirmation blip already used for menu choices. */
   if(Audio.SFX && Audio.SFX.select) Audio.SFX.select();
 }
+/* Shared editor loadout: exercise the shipping weapon/infusion paths without awarding a
+   campaign unlock or consuming one of the Forge's two post-boss combinations. */
+function debugScenarioEquip(w, lv, elem, variant){
+  w=Math.max(0,Math.min(WEAPONS.length-1,w|0)); lv=Math.max(1,Math.min(5,lv|0||1));
+  if(run.spaceMode) return {ok:false,reason:'SPACE STAGE USES ITS OWN LASER CANNON / SHADOW ORB LOADOUT',spaceMode:true};
+  if(!run.forge) run.forge={};
+  if(!run.forgeForms) run.forgeForms={};
+  if(!run.forgeElems) run.forgeElems={};
+  delete run.forge[w]; run.infusion=null;
+  debugEquip(w,{variant:variant||null,label:'TEST '+WEAPONS[w]});
+  run.wlevel=lv; if(run.wlevels) run.wlevels[w]=lv;
+  if(elem&&INFUSIONS[elem]){
+    run.forgeElems[elem]=1;
+    if(!run.forgeForms[w]) run.forgeForms[w]={};
+    run.forgeForms[w][elem]={elem:elem,lv:lv};
+    run.forge[w]={elem:elem,lv:lv};
+    forgeApply();
+  }
+  if(variant){ if(!run.wvars) run.wvars=WEAPONS.map(()=>null); run.wvars[w]=variant; }
+  return {ok:true,weapon:w,level:lv,element:elem||null,variant:heldVariant(w)||null};
+}
+function debugScenarioCatalog(){
+  return {weapons:WEAPONS.slice(),elements:Object.keys(INFUSIONS),
+    variants:Object.keys(WVAR_NAME),
+    difficulties:DIFF_KEYS.slice(),pilots:PILOTS.map(p=>({key:p.key,name:p.name}))};
+}
 if(typeof window!=='undefined') window.addEventListener('keydown', function(e){
   if(!DEBUG_WEAPONS) return;
   if(e.key==='9') debugEquip(4, {forceIce:true,  label:'ICE BREATH'});
@@ -20726,7 +20752,7 @@ function fztFlashSprite(key,x,y,a,s,alpha,sx,sy){
   ctx.drawImage(tt,-pv[0],-pv[1],w,h); ctx.restore(); return true;
 }
 function furnaceInit(b){
-  b._furnace=true; b.enter=false; b.fireCd=999; b.name='FURNACE TYRANT';
+  b._furnace=true; b.enter=false; b.fireCd=999; b.name=(SHIPBOSS[b._ship]&&SHIPBOSS[b._ship].name)||'FURNACE TYRANT';
   const W=(typeof worldWidth==='function')?worldWidth():VW;
   b.x=W/2;
   b._fz={phase:'intro', pt:0, t:0, attack:'assembly', at:0, idx:-1, serial:0, dir:1, a:0,
@@ -66212,18 +66238,57 @@ function sceneSnapshot(b){
   return {t:S.t, track:S.ti, trackName:(S.track&&S.track.name)||null, kf:S.kf, kt:S.kt, rotDeg:S.rot*180/Math.PI, sx:S.sx, sy:S.sy,
           zones:S.zones.map(function(z){ return {name:z.name, type:z.type, active:sceneZoneActive(b,S,z)}; }), bursts:S.bursts.length, done:Object.keys(S.done).length};
 }
+/* Current live modular targets exposed to Boss Mode. The editor reads these values from
+   the same objects the player weapons hit; no copied boss-health model is kept in the host. */
+function debugBossComponents(b){
+  const F=b&&b._fz;
+  if(F){
+    if(!F.hpSync) furnaceSync(b);
+    const live=furnaceVulnerable(b);
+    return Object.keys(FZT_SHARE).map(k=>({id:k,hp:F.pools[k],maxhp:F.max[k],dead:F.pools[k]<=0,targetable:live.indexOf(k)>=0&&F.trans<=0}));
+  }
+  const R=b&&b._xenoRig; if(!R) return [];
+  const all=[{id:'shield',part:R.mother}].concat((R.helpers||[]).map(h=>({id:h.side<0?'escort-left':'escort-right',part:h})));
+  return all.filter(x=>x.part).map(x=>({id:x.id,hp:x.part.hp,maxhp:x.part.maxhp,dead:!!x.part.dead,targetable:!x.part.dead}));
+}
+function debugSetBossComponentHp(id,frac){
+  const b=(bossActive&&boss)?boss:((subBossActive&&subBoss)?subBoss:null);
+  const F=b&&b._fz;
+  if(F){
+    if(!F.hpSync) furnaceSync(b);
+    if(furnaceVulnerable(b).indexOf(id)<0||F.trans>0) return false;
+    const old=F.pools[id], max=F.max[id];
+    if(old<=0||!max) return false;
+    const target=Math.max(0,Math.min(max,Math.round(max*(+frac||0))));
+    F.pools[id]=target; F.flash[id]=.16;
+    b.hp=Math.max(1,Object.keys(FZT_SHARE).reduce((sum,k)=>sum+F.pools[k],0));
+    if(target<=0&&old>0){ furnaceBreak(b,id); if(id==='head'&&b===boss){b.hp=0;bossDie();} }
+    return true;
+  }
+  const R=b&&b._xenoRig;
+  if(!R) return false;
+  const p=id==='shield'?R.mother:(R.helpers||[]).find(h=>id===(h.side<0?'escort-left':'escort-right'));
+  if(!p||p.dead) return false;
+  const target=Math.max(0,Math.min(p.maxhp,p.maxhp*(+frac||0)));
+  if(target<=0) xenoRegentPartDamage(p,p.hp,b,false);
+  else {p.hp=target;p.flash=.16;}
+  return true;
+}
 /* ---- the editor's window onto the engine ----------------------------------------------------- */
 try{
 window.BOSSMODE={
-  host:_bmHost, version:'0910a',
+  host:_bmHost, version:'engine-live',
   get state(){ return state; }, get stateT(){ return stateT; }, GS:GS,
   get ready(){ return (typeof ASSETS!=='undefined') && !!ASSETS.ready && state!==GS.BOOT && state!==GS.LOADING && state!==GS.ATTRACT; },
   fights:debugFightList, name:debugBossName,
+  get difficulty(){ return diffKey; },
+  setDifficulty:function(k){ if(DIFF_KEYS.indexOf(k)<0) return false; diffKey=k; return true; },
+  loadout:{catalog:debugScenarioCatalog,equip:debugScenarioEquip},
   tables:function(){ return {SHIPBOSS:SHIPBOSS, STAGES:STAGES, SUBBOSS:SUBBOSS, MEGABOSS:MEGABOSS, NEWBOSS:NEWBOSS, MINIBOSS:MINIBOSS,
     PILOTS:PILOTS, SHIP_ACTION_PROFILE:(typeof SHIP_ACTION_PROFILE!=='undefined')?SHIP_ACTION_PROFILE:null,
     BOSS_HP_FLOOR:BOSS_HP_FLOOR, MINIBOSS_HP_FLOOR:MINIBOSS_HP_FLOOR, DEBUG_BOSS_SCROLL:DEBUG_BOSS_SCROLL, DIFF:DIFF}; },
   patternSlots:function(pat,step){ return shipBossPatternSlots(pat,step|0); },
-  start:function(stage, role, pilot, record){ const F=debugFightFor(stage|0, role); return F?debugStartFight(F,{pilot:pilot,record:!!record}):false; },
+  start:function(stage, role, pilot, record, difficulty){ if(difficulty&&DIFF_KEYS.indexOf(difficulty)>=0) diffKey=difficulty; const F=debugFightFor(stage|0, role); return F?debugStartFight(F,{pilot:pilot,record:!!record}):false; },
   stop:function(){ if(debugFight) setState(GS.STAGECLEAR); else if(state!==GS.BMHOST&&_bmHost) setState(GS.BMHOST); },
   pause:function(on){ if(on&&state===GS.PLAY) setState('paused'); else if(!on&&state==='paused') setState(GS.PLAY); },
   get fight(){ return debugFight; }, get boss(){ return boss; }, get subBoss(){ return subBoss; },
@@ -66232,11 +66297,14 @@ window.BOSSMODE={
     const b=(bossActive&&boss)?boss:((subBossActive&&subBoss)?subBoss:(boss||subBoss));
     const o={state:state, fight:debugFight, warnT:warnT, bossActive:bossActive, subBossActive:subBossActive, bossDefeated:bossDefeated,
       stageEnding:stageEnding, eBullets:eBullets.length, enemies:enemies.length, recording:debugRecActive(), timeScale:timeScale,
-      lives:run.lives, score:run.score, player:{x:player.x,y:player.y,dead:!!player.dead,invuln:player.invuln},
+      lives:run.lives, score:run.score, difficulty:diffKey, spaceMode:!!run.spaceMode,
+      loadout:{weapon:run.weapon,level:run.wlevel,element:run.infusion&&run.infusion.elem||null,variant:heldVariant(run.weapon|0)||null},
+      player:{x:player.x,y:player.y,dead:!!player.dead,invuln:player.invuln},
       camX:(typeof camX==='number')?camX:0, vz:(typeof viewZoom==='function')?viewZoom():1, VW:VW, VH:VH,
       worldW:(typeof worldWidth==='function')?worldWidth():VW, scene:(b&&typeof sceneSnapshot==='function')?sceneSnapshot(b):null, overlay:!!debugMenu.sceneOverlay};
     if(b) o.boss={kind:b.kind, name:b.name, ship:b._ship||null, hp:b.hp, maxhp:b.maxhp, x:b.x, y:b.y, w:b.w, h:b.h, t:b.t, dead:!!b.dead,
-      dying:b.dying||0, enter:!!b.enter, phase:b.phase, pat:b._pat||b.pat||null, step:b._sbStep, fireCd:b.fireCd, sub:!!b.sub, mini:!!b.mini};
+      dying:b.dying||0, enter:!!b.enter, phase:b.phase, pat:b._pat||b.pat||null, step:b._sbStep, fireCd:b.fireCd, sub:!!b.sub, mini:!!b.mini,
+      components:debugBossComponents(b)};
     return o;
   },
   override:{ apply:bossmodeApplyOverride, reset:bossmodeResetOverride, arm:bossmodeOverridesArm, get armed(){ return _bmArmed; },
@@ -66247,6 +66315,7 @@ window.BOSSMODE={
   rec:{ start:debugRecStart, stop:debugRecStop, active:debugRecActive, last:function(){ return debugRec.last; } },
   setInvuln:function(v){ player.invuln=v?1e9:0; }, setTimeScale:function(v){ timeScale=Math.max(0.05,Math.min(2,+v||1)); },
   setBossHp:function(v){ const b=(bossActive&&boss)?boss:((subBossActive&&subBoss)?subBoss:null); if(b){ b.hp=Math.max(1,Math.min(b.maxhp,+v||1)); } },
+  setBossComponentHp:debugSetBossComponentHp,
   /* the death BRANCHES, not a hit: barriers (magmaward), wing pools (blacksteel) and part gates
      (quadlaser) all absorb a hit before the hull sees it, so hp=1 + hitX() killed nothing */
   kill:function(){
@@ -66403,9 +66472,11 @@ window.BOFDEBUG=(function(){
      Modelled on debugJump, which already knows how to silence a stage (waveIdx spent, crates
      cleared) - the difference is that this one does NOT raise a boss. */
   let _lab=false, _labStage=1;
-  function labOn(stage){
+  function labOn(stage,pilot,difficulty){
     _labStage=Math.max(1,Math.min(9,stage|0||1));
     try{
+      if(difficulty&&DIFF_KEYS.indexOf(difficulty)>=0) diffKey=difficulty;
+      if(pilot){const pi=PILOTS.findIndex(p=>p.key===pilot);if(pi>=0)pilotIndex=pi;}
       run.mode='arcade';
       if(typeof coopOn!=='undefined') coopOn=false;
       startRun(_labStage);
@@ -66448,11 +66519,13 @@ window.BOFDEBUG=(function(){
     return Object.keys(out).sort();
   }
   return {
-    version:'0912g',
+    version:'engine-live',
     get ready(){ return typeof spawnEnemy==='function' && typeof XART!=='undefined'; },
     get state(){ return state; },
     tables:_tables,
     roster:_roster,
+    scenario:{catalog:debugScenarioCatalog,equip:debugScenarioEquip,get difficulty(){return diffKey;},
+      setDifficulty:function(k){if(DIFF_KEYS.indexOf(k)<0)return false;diffKey=k;return true;}},
     /* ⚠ getters, never stored refs - `enemies` is reassigned by the cull every frame */
     get enemies(){ return enemies; },
     get eBullets(){ return eBullets; },

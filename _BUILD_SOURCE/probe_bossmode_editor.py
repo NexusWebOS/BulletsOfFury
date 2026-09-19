@@ -40,11 +40,11 @@ def main():
         pg.wait_for_timeout(800); shot('02_editor.png')
         n=pg.evaluate("() => document.querySelectorAll('#list-groups .li').length")
         ok(n>=18, 'boss list built from the engine: %d rows' % n)
-        # open stage 2 boss (MAGMA WARD = infernoreaver row) via the list
-        pg.evaluate("() => { const li=[...document.querySelectorAll('#list-groups .li')].find(e=>e.textContent.includes('MAGMA WARD')); li.click(); }")
+        # open stage 2 boss (FURNACE TYRANT = infernoreaver row) via the list
+        pg.evaluate("() => { const li=[...document.querySelectorAll('#list-groups .li')].find(e=>e.textContent.includes('FURNACE TYRANT')); li.click(); }")
         pg.wait_for_timeout(300)
         name=pg.evaluate("() => document.querySelector('#insp [data-f=name]').value")
-        ok(name=='MAGMA WARD', 'inspector filled from SHIPBOSS: name=%s' % name)
+        ok(name=='FURNACE TYRANT', 'inspector filled from SHIPBOSS: name=%s' % name)
         anchors=pg.evaluate("() => [...document.querySelectorAll('#insp [data-anch-name]')].map(e=>e.value)")
         ok(set(anchors)=={'L','C','R'}, 'anchors from mounts: %s' % anchors)
         pats=pg.evaluate("() => [...document.querySelectorAll('#insp select[data-f^=\"actions.pats.\"]')].map(e=>e.value)")
@@ -55,13 +55,13 @@ def main():
         ok(pv>20000, 'plate canvas has ink: %d px' % pv)
         # edit + apply: name + cooldown, through the inspector
         pg.click('#tabs .tab[data-tab=stage]')
-        pg.fill('#insp [data-f=name]', 'MAGMA WARD TEST'); pg.dispatch_event('#insp [data-f=name]','change')
+        pg.fill('#insp [data-f=name]', 'FURNACE TYRANT TEST'); pg.dispatch_event('#insp [data-f=name]','change')
         pg.fill('#insp [data-f="actions.cd"]', '0.5'); pg.dispatch_event('#insp [data-f="actions.cd"]','change')
         pg.click('#e-apply'); pg.wait_for_timeout(200)
         ov=pg.evaluate("() => document.getElementById('host').contentWindow.BOSSMODE.override.get('infernoreaver')")
-        ok(ov and ov['name']=='MAGMA WARD TEST' and abs(ov['cd']-0.5)<1e-9, 'APPLY wrote the override into the engine: %s' % (ov and {k:ov[k] for k in ('name','cd')}))
+        ok(ov and ov['name']=='FURNACE TYRANT TEST' and abs(ov['cd']-0.5)<1e-9, 'APPLY wrote the override into the engine: %s' % (ov and {k:ov[k] for k in ('name','cd')}))
         live=pg.evaluate("() => document.getElementById('host').contentWindow.BOSSMODE.override.live('infernoreaver').name")
-        ok(live=='MAGMA WARD TEST', 'and the live SHIPBOSS row carries it: %s' % live)
+        ok(live=='FURNACE TYRANT TEST', 'and the live SHIPBOSS row carries it: %s' % live)
         st=pg.evaluate("() => JSON.parse(document.getElementById('host').contentWindow.localStorage.getItem('bof_bossmode')||'{}')")
         ok('infernoreaver' in st, 'persisted to the game\'s localStorage store')
         # play test
@@ -71,9 +71,9 @@ def main():
         except Exception: ok(False,'PLAY TEST never spawned a boss')
         pg.wait_for_timeout(1200); shot('04_playtest.png')
         s=pg.evaluate("() => document.getElementById('host').contentWindow.BOSSMODE.snapshot()")
-        ok(s['boss']['name']=='MAGMA WARD TEST' and s['fight']['stage']==2 and s['fight']['role']=='boss', 'the edited row is what fights: %s S%s %s' % (s['boss']['name'], s['fight']['stage'], s['fight']['role']))
+        ok(s['boss']['name']=='FURNACE TYRANT TEST' and s['fight']['stage']==2 and s['fight']['role']=='boss', 'the edited row is what fights: %s S%s %s' % (s['boss']['name'], s['fight']['stage'], s['fight']['role']))
         tele=pg.evaluate("() => document.getElementById('tele-hp-txt').textContent+' | '+document.getElementById('tf-boss').textContent")
-        ok('MAGMA WARD TEST' in tele and '/' in tele, 'telemetry bar reads the boss: %s' % tele)
+        ok('FURNACE TYRANT TEST' in tele and '/' in tele, 'telemetry bar reads the boss: %s' % tele)
         ovpx=pg.evaluate("() => { const c=document.getElementById('stage-overlay'); if(c.width<10) return 0; const d=c.getContext('2d').getImageData(0,0,c.width,c.height).data; let n=0; for(let i=3;i<d.length;i+=4) if(d[i]>0) n++; return n; }")
         ok(ovpx>50, 'anchor overlay drawn over the live stage: %d px' % ovpx)
         # kill + stop
@@ -86,15 +86,15 @@ def main():
         with pg.expect_download() as dl:
             pg.click('#b-export')
         path=dl.value.path(); j=json.load(open(path))
-        ok(j['schema']=='bof-bossmode/1' and j['kind']=='infernoreaver' and j['name']=='MAGMA WARD TEST', 'EXPORT wrote a schema\'d doc: %s' % dl.value.suggested_filename)
+        ok(j['schema']=='bof-bossmode/1' and j['kind']=='infernoreaver' and j['name']=='FURNACE TYRANT TEST', 'EXPORT wrote a schema\'d doc: %s' % dl.value.suggested_filename)
         # cancel reverts
         pg.click('#e-cancel'); pg.wait_for_timeout(200)
         live=pg.evaluate("() => document.getElementById('host').contentWindow.BOSSMODE.override.live('infernoreaver').name")
-        ok(live=='MAGMA WARD', 'CANCEL reverted the row to stock: %s' % live)
+        ok(live=='FURNACE TYRANT', 'CANCEL reverted the row to stock: %s' % live)
         # import the exported file back
         pg.set_input_files('#file-in', path); pg.wait_for_timeout(400)
         live=pg.evaluate("() => document.getElementById('host').contentWindow.BOSSMODE.override.live('infernoreaver').name")
-        ok(live=='MAGMA WARD TEST', 'IMPORT applied it again: %s' % live)
+        ok(live=='FURNACE TYRANT TEST', 'IMPORT applied it again: %s' % live)
         pg.click('#e-cancel'); pg.wait_for_timeout(200)
         # graphics tab lists the boss's art
         pg.click('#tabs .tab[data-tab=graphics]'); pg.wait_for_timeout(2500); shot('05_graphics.png')
