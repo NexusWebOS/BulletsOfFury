@@ -18984,8 +18984,23 @@ function razorbackPairHit(b,dmg,hx,hy){
   }
   razorbackPairSync(b);if(typeof stageStats!=='undefined')stageStats.dmgDealt+=Math.max(0,before-b.hp);return Math.max(0,before-b.hp);
 }
+function razorbackPairPressureBusy(P){
+  const p=P.pressureDrain;
+  if(!p||p.dead)return false;
+  if(p._rzb&&p._rzb.waves.some(w=>w.life>0&&w.fade!==0))return true;
+  if(typeof playerLocks!=='undefined'&&playerLocks.some(L=>L.src===p))return true;
+  return eBullets.some(q=>q&&!q.dead&&q._rzbOwner===p&&(q.kind==='rzbSonic'||q.kind==='rzbMissile'));
+}
 function razorbackPairUpdate(b,dt){
-  const P=b._rzbPair;P.pressureRest=Math.max(0,(P.pressureRest||0)-dt);for(const p of P.actors){p.t+=dt;if(p.dead){p.dying+=dt;if(p.dying>=1.05)p._rzbGone=true;}else razorbackUpdate(p,dt);}
+  const P=b._rzbPair;
+  P.pressureRest=Math.max(0,(P.pressureRest||0)-dt);
+  // The handoff cannot overlap a wave or locked missile still travelling from the last heavy
+  // attack. Suppression keeps firing, so this protects the dodge lane without pausing the duo.
+  if(P.pressureDrain){
+    if(razorbackPairPressureBusy(P))P.pressureRest=Math.max(P.pressureRest,.10);
+    else P.pressureDrain=null;
+  }
+  for(const p of P.actors){p.t+=dt;if(p.dead){p.dying+=dt;if(p.dying>=1.05)p._rzbGone=true;}else razorbackUpdate(p,dt);}
   razorbackPairSync(b);
   if(!P.cleared&&P.actors.every(p=>p._rzbGone)){P.cleared=true;b.dead=true;b.dying=0;b._deathFxStarted=true;
     achievementEncounterDefeat(b,'miniboss');rzbSfx('expBig');shake=Math.max(shake||0,10);}
@@ -19025,7 +19040,7 @@ function razorbackPressureRelease(b){
   if(!pair)return;
   if(pair.pressureNext===b)pair.pressureNext=null;
   if(pair.pressureOwner!==b)return;
-  pair.pressureOwner=null;pair.pressureRest=.72;
+  pair.pressureOwner=null;pair.pressureRest=.72;pair.pressureDrain=b;
   pair.pressureNext=pair.actors.find(p=>p!==b&&!p.dead&&p._rzb&&
     (p._rzb.attack==='sonic'||p._rzb.attack==='missiles'||p._rzb.attack==='nova'||p._rzb.attack==='rocketFlurry'))||null;
 }

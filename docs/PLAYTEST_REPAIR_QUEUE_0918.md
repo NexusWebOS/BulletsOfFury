@@ -4,7 +4,7 @@ Source review: the three latest September 18 gameplay recordings in `C:\Users\Mi
 
 ## Confirmed repair targets
 
-- Hard Razorback Duo pressure: implemented 0919. Sonic, missile and nova attacks take turns with shared recovery; focused browser simulation passed.
+- Hard Razorback Duo pressure: extended 0919. Sonic, missile and nova attacks take turns with shared recovery that waits for prior waves, Retina locks and missiles to clear; machine guns keep firing. Focused browser simulation passed.
 - Furious Razorback rocket pressure and red-on-red effect density reduce both survival space and visual readability.
 - Achievement notifications and Fury Point conversion compete with the lower Stats sign-off and Continue area.
 - Loadout needs controller/D-pad arsenal paging and stronger selected combination feedback alongside its mouse browsing.

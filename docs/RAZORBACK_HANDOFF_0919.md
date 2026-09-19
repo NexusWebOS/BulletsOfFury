@@ -1,0 +1,5 @@
+# Hard Razorback duo attack handoff (S1-14)
+
+The duo previously released its shared heavy-attack slot after a fixed 0.72-second rest. The prior sonic wave, Retina lock, or missiles could remain active after that rest, allowing the other tank's heavy warning and release to stack on an occupied dodge lane. The handoff now waits for those owned hazards to clear, then preserves a short recovery before the waiting tank takes its turn. The other tank's ordinary machine-gun fire continues throughout.
+
+Live Chromium assertions verified that a sonic wave, an active Retina lock, and a travelling Razorback missile each held the second tank's heavy attack while the first tank's machine guns kept firing. Once those hazards cleared, the second tank acquired the heavy slot. The native two-tank screen was captured and inspected with no page errors. `node --check assets/game.js` and `git diff --check` passed. The full legacy suite completed with its pre-existing failures; see the current run's failure-name comparison.
