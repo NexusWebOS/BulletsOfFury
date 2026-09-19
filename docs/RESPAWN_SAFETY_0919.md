@@ -1,0 +1,5 @@
+# Respawn safety (ENG-19)
+
+Life-loss respawn keeps the pilot at the death position and provides 120 frames of invulnerability. The prior local projectile sweep lasted only one second and blinked the hull out for much of that period. The sweep now runs for the same two seconds as invulnerability, clearing the incoming lane above the ship and its immediate lower escape area. Distant enemy rounds and authored boss beams are left intact. During the grace window the authored ship frame remains solid with a pale energy halo, making the safe period visible.
+
+In live Chromium, two nearby hostile rounds were cleared; a distant round and boss beam remained; invulnerability was 120 frames with a two-second sweep; a hit during respawn did not kill the pilot; and the ship rendered without page errors. The screenshot was inspected. `node --check assets/game.js` and `git diff --check` passed. The full legacy suite completed with 77 failures versus 76 on the prior run: the only additional failure name was the intermittent Stage 1 sand-tank spawn assertion, unrelated to respawn.

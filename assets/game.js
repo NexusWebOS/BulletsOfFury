@@ -9807,14 +9807,18 @@ function isSetPiece(e){
    rather than a typed-in radius, so a future ship of another size is covered without anyone
    remembering this. AABB, because every hitbox in this file is one. ============================================================ */
 const SPAWN_CLEAR_PAD = 26;      // px of clearance around the hull the player must materialise into
-const SPAWN_PROJECTILE_GRACE=1.0;
+const SPAWN_PROJECTILE_GRACE=2.0;  // match the 120-frame respawn invulnerability
 function clearSpawnProjectiles(ship){
   if(typeof eBullets==='undefined'||!eBullets)return 0;
   let cleared=0;
   for(let i=eBullets.length-1;i>=0;i--){const q=eBullets[i];
     if(!q||q.dead||q._beam||q.kind==='beam'||!Number.isFinite(q.x)||!Number.isFinite(q.y))continue;
-    const dx=80+(ship.w||24)/2+(q.w||10)/2,dy=100+(ship.h||30)/2+(q.h||10)/2;
-    if(Math.abs(q.x-ship.x)<dx&&Math.abs(q.y-ship.y)<dy){eBullets.splice(i,1);cleared++;}
+    // Clear the incoming lane above the ship and its immediate lower escape area. Distant
+    // rounds and authored boss beams keep running, including in co-op.
+    const dx=105+(ship.w||24)/2+(q.w||10)/2;
+    const above=170+(ship.h||30)/2+(q.h||10)/2;
+    const below=90+(ship.h||30)/2+(q.h||10)/2;
+    if(Math.abs(q.x-ship.x)<dx&&q.y>ship.y-above&&q.y<ship.y+below){eBullets.splice(i,1);cleared++;}
   }
   return cleared;
 }
@@ -40434,7 +40438,7 @@ function _drawPlayerCore(){
     return;
   }
 
-  if(!_axelAegis && !chargeDashing() && player.invuln>0 && (Math.floor(player.invuln/4)%2)) return;
+  if(!_axelAegis && !chargeDashing() && player.invuln>0 && !(player._spawnClearT>0) && (Math.floor(player.invuln/4)%2)) return;
 
   if(ASSETS.ready && ASSETS.has('player')){
     const dx=x-(player._lx==null?x:player._lx); player._lx=x;
@@ -40519,8 +40523,14 @@ function _drawPlayerCore(){
          the arcade plates and the boss rigs all set it and this one never did. Restored around
          the blit only, so nothing else inherits it. ============================================================ */
       const _sm=ctx.imageSmoothingEnabled;
+      ctx.save();
       ctx.imageSmoothingEnabled=false;
+      if(player._spawnClearT>0){
+        ctx.shadowColor='#b9ecff';
+        ctx.shadowBlur=8+4*Math.sin(performance.now()/120);
+      }
       ctx.drawImage(im, x-w/2, y-h/2, w, h);
+      ctx.restore();
       ctx.imageSmoothingEnabled=_sm;
       return;
     }

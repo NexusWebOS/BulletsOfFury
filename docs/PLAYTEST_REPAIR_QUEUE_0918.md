@@ -9,7 +9,7 @@ Source review: the three latest September 18 gameplay recordings in `C:\Users\Mi
 - Achievement notifications and Fury Point conversion compete with the lower Stats sign-off and Continue area.
 - Loadout needs controller/D-pad arsenal paging and stronger selected combination feedback alongside its mouse browsing.
 - Pilot Select needs its identity typing and one-by-one bar-fill presentation restored before the clean GOOD LUCK launch card.
-- Respawn projectile safety: implemented 0919. Life-loss respawns clear nearby hostile rounds for one second; distant shots remain and normal behavior resumes when the window ends. Focused browser check passed.
+- Respawn projectile safety: extended 0919. Life-loss respawns clear the incoming lane for the full two-second invulnerability window; distant shots and boss beams remain. The ship stays visibly lit during grace. Focused browser check passed.
 - Hard/Furious warning colors need stronger value separation from hostile rounds, explosions, and red enemy palettes.
 
 These are recorded observations; each item retains its own implementation and browser-verification status.
