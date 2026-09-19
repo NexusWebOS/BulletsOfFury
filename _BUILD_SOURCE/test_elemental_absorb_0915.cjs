@@ -17,16 +17,16 @@ module.exports=function(vm,ctxv,ok){
 
       run.stage=2;floaters=[];_dmgBullet={kind:'iceorb',_el:'ice'};
       e={x:140,y:120,w:40,h:40,hp:100,maxhp:100,dead:false,_volc:true};hitEnemy(e,20);
-      o.iceOnFireDouble=e.hp===60&&e._hitFlashColor==='#83d9ff'&&floaters.length===0;
+      o.iceOnFireDouble=e.hp===70&&e._hitFlashColor==='#83d9ff'&&floaters.length===0;
 
       run.stage=3;_dmgBullet={kind:'flame',_el:'fire'};
       e={x:145,y:120,w:40,h:40,hp:100,maxhp:100,dead:false,_s3ice:true};hitEnemy(e,20);
-      o.fireOnIceDouble=e.hp===60&&e._hitFlashColor==='#ff3b30'&&floaters.length===0;
+      o.fireOnIceDouble=e.hp===70&&e._hitFlashColor==='#ff3b30'&&floaters.length===0;
 
       run.stage=2;_dmgBullet={kind:'iceorb',_el:'ice',x:160,y:120};
       e={x:160,y:120,w:40,h:40,hp:100,maxhp:100,dead:false,_volc:true,
         _esh:{family:'bubble_hex',kind:'bubble',once:false,energy:100,max:100,drawScale:2.5,breakDelay:1.4,regen:.07,phase:'active',animT:0,hitT:0,sinceHit:99,breakT:0,impactCd:1}};
-      hitEnemy(e,20);o.shieldDouble=e.hp===100&&e._esh.energy===60;
+      hitEnemy(e,20);o.shieldDouble=e.hp===100&&e._esh.energy===70;
 
       const oldPilot=run.pilot;run.pilot='freezer';_dmgBullet={kind:'flame',_el:'ice'};
       e={x:150,y:120,w:40,h:40,hp:100,maxhp:100,dead:false,_volc:true};hitEnemy(e,40);

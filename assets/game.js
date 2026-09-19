@@ -2076,6 +2076,9 @@ const XART=(function(){
   X._src['forge_loadout_0918']='assets/game/ui/forge_0918/forge_loadout.png';
   X._src['weapon_found_0918']='assets/game/ui/forge_0918/weapon_found.png';
   X._src['magma_orb_0918']='assets/game/player_weapons/magma_orb_0918/magma_orb.png';
+  X._src['forge_orbs_0919']='assets/game/player_weapons/forge_orbs_0919/element_orbs.png';
+  X._src['forge_missiles_0919']='assets/game/player_weapons/forge_missiles_0919/element_missiles.png';
+  X._src['toxic_orb_0919']='assets/game/player_weapons/toxic_orb_0919/toxic_orb.png';
   for(const _e of ['ice','lightning','prism','toxic','kinetic','water','chrome','dark']){
     X._src['forge_elem_'+_e+'_bullet_0918']='assets/game/player_weapons/forge_elements_0918/'+_e+'_bullet.png';
     X._src['forge_elem_'+_e+'_laser_0918']='assets/game/player_weapons/forge_elements_0918/'+_e+'_laser.png';
@@ -5910,6 +5913,7 @@ function weaponVariant(w, opt){
      key could silently rebake the next real pickup as the wrong weapon. Debug grants now write an
      explicit held variant in debugEquip; the production dispenser depends only on pilot+stage. */
   const frz = (pk==='freezer');
+  const chosen=run&&run.wvars&&run.wvars[w];
   if(w===4){
     if(!frz) return 'flamethrower';               // ice breath is EXCLUSIVE to Freezer
     if(st<=1) return 'flamethrower';
@@ -5917,28 +5921,17 @@ function weaponVariant(w, opt){
     /* stage 3 withholds ICE BREATH, not the SLOT. Before they were separated the two were one
        weapon, so "disable ice breath for him" could only be honoured by returning null — which
        took his flamethrower away too and left slot 4 out of the stage-3 crate bag entirely. */
-    if(st===3) return 'flamethrower';
-    return (opt && opt.roll!=null ? opt.roll : Math.random()) < 0.5 ? 'flamethrower' : 'icebreath';
+    if(st===3) return chosen==='icebreath'?'icebreath':'flamethrower';
+    return chosen==='icebreath'?'icebreath':'flamethrower';
   }
   if(w===5){
-    /* ⚠ FREEZER'S ORB SLOT, PER MIKE (drop 0822ag). His words:
-         "level 3 you turn ice breath to false and ice orb to false, fireiceorb and
-          flamethrower to on/true, then the rest of the game he has access to all of them -
-          ice breath, flame thrower, ice orb and his fireiceball. He doesnt get fireorb.
-          everyone else does though during level 3 and rest of the game."
-       Stage 3 is the MERGE: the combination orb is the event, so the slot dispenses only
-       fireice and ice orb is withheld. From stage 4 he has both, so the slot rolls between
-       them — it used to return fireice forever, which locked his ice orb out of the entire
-       back half of the game.
-       FIREORB IS NEVER HIS, at any stage: he is the only pilot whose fire and ice systems
-       merged, and the merged ball is what he gets instead. */
+    /* Freezer can choose Ice Orb, Fire Orb or Thermoshock once the fire form unlocks.
+       Stage 3 keeps his selected form; clearing it defaults him to Thermoshock. */
     if(frz){
       if(st<=2) return 'iceorb';
-      if(st===3) return 'fireice';                                  // the merge, on its own level
-      return (opt && opt.roll!=null ? opt.roll : Math.random()) < 0.5 ? 'iceorb' : 'fireice';
+      return chosen==='fireorb'||chosen==='iceorb'?chosen:'fireice';
     }
-    if(st===3 || (run && run._dbgFire)) return 'fireorb';           // everyone else: the fire orb is theirs
-    return 'iceorb';
+    return chosen==='fireorb'||chosen==='iceorb'?chosen:'iceorb';
   }
   return null;                                    // slots 0-3 have no variants
 }
@@ -8335,7 +8328,7 @@ function forgeSelect(w,elem){
 function weaponBaseForms(w){
   const d=run&&run.forgeElems||{}, pk=(typeof _pilotKey==='function')?_pilotKey():'', out=[];
   if((w|0)===4){ out.push({kind:'variant',id:'flamethrower',name:'FLAMETHROWER'}); if(d.ice||pk==='freezer') out.push({kind:'variant',id:'icebreath',name:'ICE BREATH'}); }
-  else if((w|0)===5){ out.push({kind:'variant',id:'iceorb',name:'ICE ORB'}); if(d.fire&&pk!=='freezer') out.push({kind:'variant',id:'fireorb',name:'FIRE ORB'}); if((d.fire&&d.ice)||pk==='freezer') out.push({kind:'variant',id:'fireice',name:'THERMOSHOCK'}); }
+  else if((w|0)===5){ out.push({kind:'variant',id:'iceorb',name:'ICE ORB'}); if(d.fire) out.push({kind:'variant',id:'fireorb',name:'FIRE ORB'}); if((d.fire&&d.ice)||(pk==='freezer'&&run&&(run.stage|0)>=2)) out.push({kind:'variant',id:'fireice',name:'THERMOSHOCK'}); }
   else { out.push({kind:'bare',id:null,name:'BARE '+(WEAPONS[w]||'WEAPON')});
     if((w|0)===3 && forgeFormsFor(3).fire) out.push({kind:'variant',id:'firewhip',name:'FIRE WHIP'}); }
   return out;
@@ -8347,6 +8340,7 @@ function weaponFormOptions(w){
 }
 function weaponFormSelect(w,opt){
   if(!opt) return 'unknown';
+  if(opt.kind==='variant'&&!weaponBaseForms(w).some(o=>o.id===opt.id))return 'locked';
   if(opt.kind==='forge'){
     const r=forgeSelect(w,opt.elem);
     if(r==='ok'){
@@ -8366,6 +8360,12 @@ function weaponFormSelect(w,opt){
   if(!run.wvars) run.wvars=WEAPONS.map(()=>null);
   run.wvars[w]=opt.kind==='variant'?opt.id:null;
   return 'ok';
+}
+function freezerStageClearDefaults(stage){
+  if(typeof _pilotKey!=='function'||_pilotKey()!=='freezer')return;
+  if(stage===1)weaponFormSelect(4,{kind:'variant',id:'icebreath'});
+  else if(stage===2)weaponFormSelect(4,{kind:'variant',id:'flamethrower'});
+  else if(stage===3)weaponFormSelect(5,{kind:'variant',id:'fireice'});
 }
 /* the loadout is the crate bag's pool, capped. While the pool fits, the loadout IS the pool, so a
    player with five weapons never has to "choose" five. Once it does not fit, what was chosen last
@@ -26619,10 +26619,11 @@ function eTankBlast(e){ // STRONG shell fired from the END OF THE BARREL, scalin
    rather than a balance change I chose. If the orb now reads too strong there, the dial is
    elementMultiplier, not this. */
 function pShard(x,y,ang,lv,opt){ const spd=3.4+lv*0.25; pBullets.push({kind:'shard', x, y, vx:Math.cos(ang)*spd, vy:Math.sin(ang)*spd, w:8, h:16, dmg:1*((opt&&opt.mul)||1), lv, ang, life:1.3,
-  _wvar:(opt&&opt.wvar)||'iceorb', _el:(opt&&opt.el)||'ice', _fire:(opt&&opt.fire)?1:0, _ts:(opt&&opt.ts)?1:0}); }
+  _wvar:(opt&&opt.wvar)||'iceorb', _el:(opt&&opt.el)||'ice', _fire:(opt&&opt.fire)?1:0, _ts:(opt&&opt.ts)?1:0,
+  _inf:(opt&&opt.forge)?opt.el:null, _infLv:(opt&&opt.forgeLv)||0}); }
 function iceBurst(x,y,n,lv,opt){
   for(let i=0;i<n;i++) pShard(x,y, i*(TAU/n)+Math.random()*0.3, lv, opt);
-  if(typeof explode==='function') explode(x,y,10,(opt&&opt.ts)?'#9fd8ff':((opt&&opt.fire)?'#ff7331':'#bfe8ff'));
+  if(typeof explode==='function') explode(x,y,10,(opt&&opt.ts)?'#9fd8ff':((opt&&opt.el==='toxic')?'#96ec38':((opt&&opt.fire)?'#ff7331':'#bfe8ff')));
   const S=(typeof Audio!=='undefined'&&Audio.SFX)?Audio.SFX:null;
   if(S){
     const el=(opt&&opt.el)||((opt&&opt.ts)?'fireice':'ice');
@@ -28586,9 +28587,10 @@ function pShoot(){
       /* `_ts` rides on the orb rather than being re-asked at draw time — an orb already in
          flight when the slot changes must keep being the orb it was launched as. Same reason
          `lv` is captured here and not read off `run` by the draw. */
-      const _forgeOrb=forgeEntry(5), _ov=(_forgeOrb&&_forgeOrb.elem==='fire')?'magmaorb':((typeof heldVariant==='function' && heldVariant(5)) || 'iceorb');
+      const _forgeOrb=forgeEntry(5), _ov=_forgeOrb?(_forgeOrb.elem==='fire'?'magmaorb':_forgeOrb.elem+'orb'):
+        ((typeof heldVariant==='function'&&heldVariant(5))||'iceorb');
       const _ts=_ov==='fireice', _fire=(_ov==='fireorb'||_ov==='magmaorb'||_ts);
-      const _el=_ts?'fireice':(_fire?'fire':'ice');
+      const _el=_forgeOrb?_forgeOrb.elem:(_ts?'fireice':(_fire?'fire':'ice'));
       pBullets.push({kind:'orb', x:player.x, y:player.y-16, vx, vy:-2.7, w:34, h:34, dmg:2, lv, spin:0, life:2.6, shardN, shardCd:0.06, frame:0,
         _wvar:_ov, _fire:_fire?1:0, _ts:_ts?1:0, _el, _hit:[], _ht:0, _bt:0});
       const _launch=_el==='fireice'?(Audio.SFX.fireIceOrbLaunch||Audio.SFX.spread):
@@ -32426,11 +32428,11 @@ function warmStage(n){
      - Cole has no pilot-specific elemental bonus. His specials are Sonic Boom and nuclear missiles.
 
    elementalAlreadyScaled recognizes these authored paths so the shared opposing-element rule
-   keeps them at x2 instead of stacking a second multiplier and turning them into x4 attacks. */
+   does not stack a second multiplier on them. */
 function elementMultiplier(atkElem, attackKind){
   if(!run || typeof _pilotKey!=='function' || _pilotKey()!=='freezer') return 1;
-  if(run.stage===2 && atkElem==='ice' && attackKind==='icebreath') return 2;
-  if(run.stage===3 && atkElem==='fireice' && attackKind==='fireice') return 2;
+  if(run.stage===2 && atkElem==='ice' && attackKind==='icebreath') return 1.5;
+  if(run.stage===3 && atkElem==='fireice' && attackKind==='fireice') return 1.5;
   return 1;
 }
 function attackElement(kind){
@@ -32457,6 +32459,7 @@ function attackElement(kind){
    Stage 8's final boss is deliberately exempt; ordinary Stage-8 enemies and its miniboss are not. */
 function damageProjectileElement(b){
   if(!b) return null;
+  if(b._inf==='fire'||b._inf==='ice')return b._inf;
   const el=String(b._el||b.element||'').toLowerCase();
   if(el==='fireice'||el==='thermoshock') return 'fireice';
   if(el==='fire'||el==='flame'||el==='magma'||el==='lava') return 'fire';
@@ -32514,7 +32517,7 @@ function elementalAlreadyScaled(b,reaction){
 }
 function elementalDamageResult(t,role,b,dmg,x,y){
   const reaction=opposingElementImpact(t,role,b);
-  if(reaction==='fire'||reaction==='ice')return{dmg:elementalAlreadyScaled(b,reaction)?dmg:dmg*2,reaction:reaction};
+  if(reaction==='fire'||reaction==='ice')return{dmg:elementalAlreadyScaled(b,reaction)?dmg:dmg*1.5,reaction:reaction};
   if(reaction!=='absorb-fire'&&reaction!=='absorb-ice')return{dmg:dmg,reaction:reaction};
   const now=(typeof stageTimer==='number'?stageTimer:0),next=t._elemAbsorbNext;
   if(next==null||now>=next){
@@ -32781,6 +32784,8 @@ function beginStage(num){
   try{ if(typeof warmStage==='function') warmStage(arguments[0]); }catch(e){}
   try{ if(typeof bossBarWarm==='function') bossBarWarm(num); }catch(e){}   // the pack's gauge art, before any warning can show it (0910b)
   curStage=STAGES[num-1];
+  if(num===2&&typeof _pilotKey==='function'&&_pilotKey()==='freezer')
+    weaponFormSelect(4,{kind:'variant',id:'icebreath'}); // locked for his Stage-2 deployment
   /* the loadout this stage may drop, and the held weapon's permanent element (the Forge, 0917).
      The bag is rebuilt so the stage draws from THIS loadout, not last stage's leftovers. */
   try{ if(typeof forgeLoadoutSync==='function') forgeLoadoutSync(); run._wbag=[]; if(typeof forgeApply==='function') forgeApply(); }catch(_fg){}
@@ -35156,7 +35161,7 @@ function updatePlay(dt){
          pShoot. The multiplier is solved once per volley rather than per shard. */
       const _oel=b._el||(b._ts?'fireice':(orbIsFire()?'fire':'ice'));
       const _om=elementMultiplier(_oel,b._ts?'fireice':'orb');
-      const _sopt={mul:_om, ts:b._ts, fire:b._fire, wvar:b._wvar, el:_oel};
+      const _sopt={mul:_om, ts:b._ts, fire:b._fire, wvar:b._wvar, el:_oel, forge:!!b._inf, forgeLv:b._infLv||0};
       if(b.shardCd<=0){ b.shardCd=0.10; const n=b.shardN; for(let i=0;i<n;i++){ pShard(b.x,b.y, b.spin + i*(TAU/n), b.lv, _sopt); } b.sfxCd=(b.sfxCd||0)-1; if(b.sfxCd<=0){ b.sfxCd=3; if(Audio.SFX.spread)Audio.SFX.spread(); } }
       b._ht-=dt; if(b._ht<=0){ b._hit.length=0; b._ht=0.16; }
       for(const e of enemies){ if(e.dead)continue; if(Math.abs(e.x-b.x)<(e.w/2+b.w/2)&&Math.abs(e.y-b.y)<(e.h/2+b.h/2)){ if(b._hit.indexOf(e)<0){ hitEnemy(e,b.dmg*_om); if(b._ts){ e._frozen=(e._frozen||0)+1; e._frzFlash=0.18; } b._hit.push(e); } } }
@@ -46927,6 +46932,13 @@ function p87Pose(ang){
    cannot be built so the caller's normal draw runs - never a missing missile. */
 function infusionMissileDraw(key,b,ang){
   const I=(typeof INFUSIONS!=='undefined')?INFUSIONS[b._inf]:null; if(!I) return false;
+  const cells={fire:0,ice:1,lightning:2,prism:3,toxic:4,kinetic:5,chrome:6,water:7,dark:8};
+  const n=cells[b._inf];
+  if(n!=null&&typeof XART!=='undefined'&&XART.rdy('forge_missiles_0919')){
+    const im=XART.get('forge_missiles_0919'),sw=im.naturalWidth/3,sh=im.naturalHeight/3;
+    ctx.save();ctx.translate(b.x,b.y);ctx.rotate(ang+Math.PI/2);ctx.imageSmoothingEnabled=false;
+    ctx.drawImage(im,(n%3)*sw,Math.floor(n/3)*sh,sw,sh,-17,-20,34,40);ctx.restore();return true;
+  }
   const pal=infPal(key,I.body); if(!pal) return false;
   const im=XART.get(key), hq=11, s2=hq/Math.max(1,im.naturalHeight), w=im.naturalWidth*s2, h=hq;
   ctx.save(); ctx.translate(b.x,b.y); ctx.rotate(ang);
@@ -47444,6 +47456,17 @@ function drawBullets(){
         else { ctx.fillStyle=(b.kind==='nukem')?'#ffe14a':'#ffb04a'; ctx.fillRect(-3,-10,6,20); }
       }
       ctx.restore(); continue; }
+    if(b.kind==='orb' && b._inf && b._inf!=='fire' && b._inf!=='toxic' && b._inf!=='ice' && typeof XART!=='undefined' && XART.rdy('forge_orbs_0919')){
+      const cells={lightning:0,prism:1,kinetic:2,chrome:3,water:4,dark:5};
+      const n=cells[b._inf];if(n!=null){const im=XART.get('forge_orbs_0919'),d=b.w*2.04*(.94+.06*Math.sin((b.t||0)*18));
+        ctx.save();ctx.translate(b.x,b.y);ctx.rotate((b.spin||0)*1.15);ctx.imageSmoothingEnabled=false;
+        ctx.drawImage(im,(n%3)*418,Math.floor(n/3)*418,418,418,-d/2,-d/2,d,d);ctx.restore();continue;}
+    }
+    if(b.kind==='orb' && b._wvar==='toxicorb' && typeof XART!=='undefined' && XART.rdy('toxic_orb_0919')){
+      const im=XART.get('toxic_orb_0919'),d=b.w*2.04*(.94+.06*Math.sin((b.t||0)*18));
+      ctx.save();ctx.translate(b.x,b.y);ctx.rotate((b.spin||0)*1.15);ctx.imageSmoothingEnabled=false;
+      ctx.shadowColor='#81ff30';ctx.shadowBlur=5;ctx.drawImage(im,239,258,780,780,-d/2,-d/2,d,d);ctx.restore();continue;
+    }
     if(b.kind==='orb' && b._wvar==='magmaorb' && typeof XART!=='undefined' && XART.rdy('magma_orb_0918')){
       const im=XART.get('magma_orb_0918'), pulse=0.94+0.06*Math.sin((b.t||0)*18), d=b.w*2.05*pulse;
       ctx.save(); ctx.translate(b.x,b.y); ctx.rotate((b.spin||0)*1.15);
@@ -47475,7 +47498,7 @@ function drawBullets(){
          his hands twice and it was the wrong orb both times.
 
          Same projectile, the real fireball pack's art, counted as fire so it takes
-         the 2x elemental bonus. */
+         the elemental matchup bonus. */
       const _lv=clamp(run.wlevel||1,1,5);
       const _fk='nfb_orb'+_lv+'_'+((((b.t||0)*12)|0)%8);
       if(typeof XART!=='undefined' && XART.rdy(_fk)){
@@ -47509,6 +47532,11 @@ function drawBullets(){
       ctx.restore(); continue;
     }
     if(b.kind==='shard'){
+      if(b._inf&&b._inf!=='fire'&&b._inf!=='ice'&&typeof XART!=='undefined'&&XART.rdy('forge_elem_'+b._inf+'_bullet_0918')){
+        const im=XART.get('forge_elem_'+b._inf+'_bullet_0918'),h=19+(b.lv||1)*2,w=h*im.naturalWidth/im.naturalHeight;
+        ctx.save();ctx.translate(b.x,b.y);ctx.rotate((b.ang||0)+Math.PI/2);ctx.imageSmoothingEnabled=false;
+        ctx.drawImage(im,-w/2,-h/2,w,h);ctx.restore();continue;
+      }
       /* THE ORB WENT FIRE, THE SHARDS DID NOT (drop 0806c). Mike: "Fireball - spins and works,
          but its shooting ice shards instead of fire projectiles."
 
@@ -72028,6 +72056,7 @@ function drawStageClear(dt){
       /* THE FORGE SITS AFTER THE UNLOCK PAGE (0917): debrief -> unlocks -> forge -> next stage, the
          order the concept note wrote down. Each page runs the next from its own CONTINUE, and the
          exit itself is still the one function. */
+      freezerStageClearDefaults(run.stage|0);
       const _R=R, _un=unlockRowsFor(run.stage|0, (typeof _pilotKey==='function')?_pilotKey():'');
       const _leave=function(){ drawStageClear._unShown=false; scLeaveStage(_R); };
       /* debrief -> weapons/powers gained -> forge (-> forging -> forged, from inside it) -> LOADOUT -> fade
@@ -72106,9 +72135,8 @@ function scLeaveStage(R){
     the style, but for all characters letting us know we have now unlocked Fire Orb. For Freezer -
     that he's unlocked Ice Breath and ThermoShock Ball. For Yuri - Unlocks Fire Orb & Lightning Orb."
 
-   Keyed by the stage just CLEARED. `all` is every pilot; a pilot's own row REPLACES it (Freezer
-   never gets the fire orb - his fire and ice merged into the Thermoshock instead). Stage 2 is his
-   words verbatim.
+   Keyed by the stage just CLEARED. `all` is every pilot; a pilot's own row REPLACES it.
+   Freezer may now select Fire Orb alongside Ice Orb and Thermoshock after the fire unlock.
 
    Mike, 0916 (asked whether to move the grant or the announcement): "announcement should be after
    stage 4 victory yes. The same should apply if you unlock the laser mist on stage 9 if you beat
@@ -72126,7 +72154,7 @@ function scLeaveStage(R){
    three art stores. */
 const SC_UNLOCKS = {
   2: { all:[['FIRE ORB','micon_fireorb_3']],
-       freezer:[['ICE BREATH','micon_icebreath_3'],['THERMOSHOCK BALL','micon_thermoshock_3']],
+       freezer:[['FIRE ORB','micon_fireorb_3'],['THERMOSHOCK BALL','micon_thermoshock_3']],
        yuri:[['FIRE ORB','micon_fireorb_3']] },
   4: { yuri:[['LIGHTNING ORB','micon_lightningorb_3']] },
   5: { all:[['CHAINGUN','micon_chaingun_3']] },
@@ -72677,7 +72705,7 @@ function forgePreviewSwap(P,VWp,VHp,fn){
     run.infusion={elem:P.elem, lv:Math.max(1,P.lv), hits:0};
     run.forge=Object.assign({},sv.fg||{}); run.forge[P.w]={elem:P.elem,lv:P.lv};
     run.wvars=(sv.wvars||WEAPONS.map(()=>null)).slice();
-    if(P.w===5) run.wvars[5]=P.elem==='fire'?'magmaorb':'iceorb';
+    if(P.w===5) run.wvars[5]=P.elem==='fire'?'magmaorb':P.elem+'orb';
     if(P.w===4) run.wvars[4]=P.elem==='ice'?'icebreath':'flamethrower';
     run._forgeBlastSeq=P.blastSeq||(P.blastSeq={});
     fn();
@@ -72930,12 +72958,35 @@ let loadoutScr=null;
 function loadoutVisible(){
   if(!run) return false;
   const pool=(typeof crateWeaponPool==='function')?crateWeaponPool(true):[];
-  return pool.length>FORGE_LOADOUT_MAX || !!run._forgeShown;
+  return pool.length>FORGE_LOADOUT_MAX || !!run._forgeShown ||
+    (run.mode==='campaign'&&((run.stage|0)===2||(_pilotKey()==='freezer'&&((run.stage|0)===1||(run.stage|0)===3))));
+}
+function loadoutFormElement(w,o){
+  if(o&&o.kind==='forge')return o.elem;
+  if(o&&o.kind==='bare')return null;
+  const f=!o&&forgeEntry(w);if(f)return f.elem;
+  const id=o&&o.kind==='variant'?o.id:heldVariant(w);
+  if(id==='fireorb'||id==='flamethrower'||id==='firewhip')return 'fire';
+  if(id==='iceorb'||id==='icebreath')return 'ice';
+  if(id==='fireice')return 'fireice';
+  return null;
+}
+function loadoutMatchup(w,o){
+  if(w==null)return null;
+  const next=(run.stage|0)+1,target=next===2?'fire':next===3?'ice':null;
+  if(!target)return null;
+  const el=loadoutFormElement(w,o),name=o&&o.name?o.name:weaponDisplayName(w);
+  if(!el)return null;
+  if(el==='fireice'||(el==='fire'&&target==='ice')||(el==='ice'&&target==='fire'))
+    return {text:(next===3&&w===5?'RECOMMENDED  ':'CRITICAL ADVANTAGE  ')+name+'  +50% VS '+target.toUpperCase()+' UNITS',good:true};
+  if(el===target)return {text:name+'  -50% VS '+target.toUpperCase()+' UNITS'+(next===3&&w===5?'  |  FIRE ORB +50%':''),good:false};
+  return null;
 }
 function loadoutStart(onDone){
   const load=forgeLoadoutSync();
   const pool=(typeof crateWeaponPool==='function')?crateWeaponPool(true):load.slice();
-  loadoutScr={onDone:onDone||null, t:0, sel:0, row:0, psel:0, pscroll:0, exitT:-1, msg:'', msgT:0, pool:pool,
+  const focus=(run.stage===2||(_pilotKey()==='freezer'&&run.stage===3))?5:(_pilotKey()==='freezer'&&run.stage===1?4:null);
+  loadoutScr={onDone:onDone||null, t:0, sel:focus!=null&&load.indexOf(focus)>=0?load.indexOf(focus):0, row:0, psel:0, pscroll:0, exitT:-1, msg:'', msgT:0, critT:0, pool:pool,
               md:!!(Input&&Input.mouse&&Input.mouse.down)};
   try{ XART.rdy('forge_loadout_0918'); XART.rdy(_selKey('y'));
        for(const w of pool){ XART.rdy(weaponIconKey(w,Math.max(1,(run.wlevels&&run.wlevels[w])|0))); const f=forgeEntry(w); if(f) XART.rdy(forgeBadgeKey(f.elem,w,f.lv)); }
@@ -72946,7 +72997,7 @@ function loadoutSay(m,sfx){ if(loadoutScr){ loadoutScr.msg=m; loadoutScr.msgT=2.
 function drawLoadout(dt){
   const L=loadoutScr,W=(typeof cutsceneViewWidth==='function')?cutsceneViewWidth():VW,H=VH;
   ctx.fillStyle='#000';ctx.fillRect(0,0,W,H);if(!L){setState(GS.TITLE);return;}
-  L.t+=dt;const t=L.t;if(L.msgT>0)L.msgT-=dt;const art=(typeof curFontArt==='function')?curFontArt():null,P=LOADOUT_PLATE,load=run.loadout||[];
+  L.t+=dt;const t=L.t;if(L.msgT>0)L.msgT-=dt;if(L.critT>0)L.critT-=dt;const art=(typeof curFontArt==='function')?curFontArt():null,P=LOADOUT_PLATE,load=run.loadout||[];
   const plate=XART.rdy('forge_loadout_0918')?XART.get('forge_loadout_0918'):null;
   ctx.save();ctx.globalAlpha=Math.min(1,t/.35);if(plate){ctx.imageSmoothingEnabled=false;ctx.drawImage(plate,0,0,W,H);}else{ctx.fillStyle='#151923';ctx.fillRect(0,0,W,H);}ctx.restore();
   L.sel=clamp(L.sel|0,0,Math.max(0,load.length-1));const selW=load[L.sel];
@@ -72973,6 +73024,14 @@ function drawLoadout(dt){
   }
   if(L.row===1)opts=L.pool.map(function(w){return {weapon:w,name:weaponDisplayName(w),key:forgeSlotKey(w)};});
   else if(L.row===2&&selW!=null)opts=weaponFormOptions(selW).map(function(o){return Object.assign({},o,{key:o.kind==='forge'?forgeBadgeKey(o.elem,selW,o.lv):(o.kind==='variant'&&o.id==='firewhip'?'micon_firewhip_0919':(o.kind==='variant'&&WVAR_ICON[o.id]?WVAR_ICON[o.id]+'3':weaponIconKey(selW,3,{bare:1})))});});
+  const matchup=loadoutMatchup(selW,L.row===2?opts[clamp(L.psel|0,0,Math.max(0,opts.length-1))]:null);
+  if(art&&matchup){
+    const yy=H*.249,flash=matchup.good?(.68+.32*Math.sin(t*16)):.86;
+    ctx.save();ctx.globalAlpha=.80;ctx.fillStyle='#07101a';ctx.fillRect(W*.10,yy-H*.020,W*.80,H*.041);
+    ctx.globalAlpha=flash;ctx.strokeStyle=matchup.good?'#ffb841':'#8acfff';ctx.lineWidth=2;ctx.strokeRect(W*.10,yy-H*.020,W*.80,H*.041);ctx.restore();
+    stageText(art,(L.critT>0&&matchup.good?'CRITICAL!  ':'')+matchup.text,W*.5,yy,
+      Math.min(10,stageFitH(art,matchup.text,W*.77,10,6,.035)),matchup.good?'#ffe183':'#a8d9ff',.95,1,.035);
+  }
   if(art&&L.row===0){const total=allW.length,label=(firstW+1)+'-'+Math.min(total,firstW+3)+' / '+total+'   MOUSE WHEEL: BROWSE';
     stageText(art,label,B[0]+B[2]*.82,B[1]+B[3]*.08,5.5,'#9fd6ff',.75,1,.025);}
   if(L.row>0&&opts.length){
@@ -73003,7 +73062,7 @@ function drawLoadout(dt){
   }else if(L.row===1){
     const n=L.pool.length;if(mL&&n){L.psel=(L.psel-1+n)%n;fsx('blip');}else if(mR&&n){L.psel=(L.psel+1)%n;fsx('blip');}else if(mB||mU){L.row=0;fsx('blip');}else if(fire||click||enter){const w=L.pool[L.psel],r=forgePick(L.sel,w);if(r==='fixedelsewhere'||r==='fixed')loadoutSay('MISSILES STAY IN THEIR OWN BAY','blocked');else{if(r==='ok')loadoutSay('BAY '+(L.sel+1)+': '+weaponDisplayName(w),'powerup');L.row=0;}}
   }else{
-    const forms=weaponFormOptions(selW),n=forms.length;if(mL&&n){L.psel=(L.psel-1+n)%n;fsx('blip');}else if(mR&&n){L.psel=(L.psel+1)%n;fsx('blip');}else if(mB||mD){L.row=0;fsx('blip');}else if(fire||click||enter){const o=forms[L.psel],r=weaponFormSelect(selW,o);loadoutSay(r==='ok'?o.name+' EQUIPPED':'FORM LOCKED',r==='ok'?'powerup':'blocked');L.row=0;}
+    const forms=weaponFormOptions(selW),n=forms.length;if(mL&&n){L.psel=(L.psel-1+n)%n;fsx('blip');}else if(mR&&n){L.psel=(L.psel+1)%n;fsx('blip');}else if(mB||mD){L.row=0;fsx('blip');}else if(fire||click||enter){const o=forms[L.psel],r=weaponFormSelect(selW,o);loadoutSay(r==='ok'?o.name+' EQUIPPED':'FORM LOCKED',r==='ok'?'powerup':'blocked');if(r==='ok'&&loadoutMatchup(selW,o)?.good){L.critT=2.2;fsx('life');}L.row=0;}
   }
 }
 

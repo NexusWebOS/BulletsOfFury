@@ -7374,27 +7374,23 @@ console.log('=== 156. protected assets — planned content, not dead weight (dro
   /* and the password keypad must read the BINDING rather than a hand-listed pad button */
   ok(/_padFire=Input\.tapAny\(\(keybind\.fire\|\|\[\]\)\.filter/.test(_gmi),
      'the password keypad accepts any BOUND pad confirm button, not just pad_b0');
-  /* ===== FREEZER'S KIT, PER STAGE (drop 0822ag) ======================================
-     Mike's rule, verbatim: "He should NEVER get a flamethrower on level 2 either... level 3 you
-     turn ice breath to false and ice orb to false, fireiceorb and flamethrower to on/true, then
-     the rest of the game he has access to all of them - ice breath, flame thrower, ice orb and
-     his fireiceball... He doesnt get fireorb. everyone else does though during level 3 and rest
-     of the game."
-     He is the only pilot whose fire and ice systems merged, so the combination ball replaces the
-     fire orb for him permanently. */
+  /* Freezer's stage lock and post-stage choices. */
 function _wv(st,pk,w,roll){ return vm.runInContext("weaponVariant("+w+",{stage:"+st+",pilot:'"+pk+"',roll:"+roll+"})", ctxv); }
-  ok(_wv(2,'freezer',4,0.0)==='icebreath' && _wv(2,'freezer',4,0.99)==='icebreath',
-     'stage 2 Freezer: ICE BREATH only - he never gets a flamethrower there');
-  ok(_wv(3,'freezer',4,0.0)==='flamethrower' && _wv(3,'freezer',5,0.0)==='fireice' && _wv(3,'freezer',5,0.99)==='fireice',
-     'stage 3 Freezer: flamethrower + the merged orb, with ice breath and ice orb withheld');
-  ok(_wv(4,'freezer',5,0.0)==='iceorb' && _wv(4,'freezer',5,0.99)==='fireice',
-     'stage 4+ Freezer: the orb slot gives ICE ORB or the fireice ball - both, not just the ball');
-  ok(_wv(5,'freezer',4,0.0)==='flamethrower' && _wv(5,'freezer',4,0.99)==='icebreath',
-     'and the flame slot gives flamethrower or ice breath - he has all four');
-  ok([1,2,3,4,5,6,7,8].every(function(st){ return _wv(st,'freezer',5,0.0)!=='fireorb' && _wv(st,'freezer',5,0.99)!=='fireorb'; }),
-     'Freezer NEVER gets the fire orb, at any stage');
-  ok(_wv(3,'cole',5,0.0)==='fireorb' && _wv(3,'axel',5,0.99)==='fireorb',
-     'while everyone else does get the fire orb on stage 3');
+  vm.runInContext('run.wvars=WEAPONS.map(()=>null)',ctxv);
+  ok(_wv(2,'freezer',4,0)==='icebreath' && _wv(2,'freezer',5,0)==='iceorb',
+     'stage 2 Freezer is locked to ICE BREATH and retains ICE ORB');
+  ok(_wv(3,'freezer',4,0)==='flamethrower' && _wv(3,'freezer',5,0)==='fireice',
+     'stage 3 Freezer defaults to flamethrower and Thermoshock');
+  vm.runInContext("run.wvars[5]='fireorb';run.wvars[4]='icebreath'",ctxv);
+  ok(_wv(3,'freezer',5,0)==='fireorb' && _wv(4,'freezer',5,0)==='fireorb' &&
+     _wv(5,'freezer',4,0)==='icebreath',
+     'Freezer can explicitly select Fire Orb and Ice Breath after their locks lift');
+  vm.runInContext("run.wvars[5]='iceorb'",ctxv);
+  ok(_wv(4,'freezer',5,0)==='iceorb', 'Freezer may switch back to Ice Orb');
+  vm.runInContext("run.wvars[5]='fireorb'",ctxv);
+  ok(_wv(3,'cole',5,0)==='fireorb' && _wv(3,'axel',5,0)==='fireorb',
+     'the chosen Fire Orb persists into Stage 3 pickups for every pilot');
+  vm.runInContext('run.wvars=WEAPONS.map(()=>null)',ctxv);
   /* \u26a0 AND THE ICONS HAVE TO EXIST. Mike: "I could not get a ice freeze icon to spawn out of a
      powerupbox on level 2 for me at all." The DROP was fine - measured, 20 of 120 crates - but
      WVAR_ICON named micon_icebreath_, micon_fireorb_ and micon_thermoshock_ and NONE of the five
@@ -8767,7 +8763,7 @@ console.log("=== 177. fireball shards ===");
     return JSON.parse(vm.runInContext("(function(){"
      +"ASSETS.ready=true; run.stage="+sn+"; curStage=STAGES["+(sn-1)+"];"
      +"beginStage("+sn+"); setState(GS.PLAY); player.reset();"
-     +"run.weapon=5; run.wlevels=[0,0,0,0,0,5]; run.wlevel=5; run._dbgFire=false;"
+     +"run.weapon=5; run.wlevels=[0,0,0,0,0,5]; run.wlevel=5; run._dbgFire=false; run.wvars[5]=(run.stage===3?'fireorb':'iceorb');"
      +"return JSON.stringify({fire:orbIsFire(), el:attackElement('shard')});})()", ctxv));
   };
   var _s3=_fb(3), _s5=_fb(5);
@@ -8792,7 +8788,7 @@ console.log("=== 178. stage-3 orb + thaw ===");
      three icons already existed and were simply unreachable. */
   var _ico=JSON.parse(vm.runInContext("(function(){ ASSETS.ready=true; run.spaceMode=false; run._groundLoadout=null; var o={};"
    +"[['yuri',3],['freezer',3],['yuri',5],['freezer',5]].forEach(function(p){"
-   +"  run.pilot=p[0]; run.stage=p[1]; curStage=STAGES[p[1]-1];"
+   +"  run.pilot=p[0]; run.stage=p[1]; curStage=STAGES[p[1]-1]; run.wvars[5]=(p[1]===3?(p[0]==='freezer'?'fireice':'fireorb'):'iceorb');"
    +"  o[p[0]+p[1]]={orb:weaponIconKey(5,3), flame:weaponIconKey(4,3)}; });"
    +"return JSON.stringify(o);})()", ctxv));
   ok(_ico.yuri3.orb==='micon_fireorb_3', 'stage 3 shows the FIREBALL icon, not the ice orb');
@@ -12057,10 +12053,10 @@ console.log("=== 238. exact pilot kit rules ===");
     +"run.stage=4;o.f4thermo=elementMultiplier('fireice','fireice');return JSON.stringify(o);})()",ctxv));
   ok(_m238.coleIce===1 && _m238.coleFire===1 && _m238.coleFireIce===1,
      'Cole has no elemental damage bonus; Sonic Boom and nuclear missiles remain his specials');
-  ok(_m238.f2breath===2 && _m238.f2orb===1 && _m238.f2thermo===1,
-     "Stage 2 doubles only Freezer's ICE BREATH, not an orb or thermoshock");
-  ok(_m238.f3thermo===2 && _m238.f3fire===1 && _m238.f3breath===1 && _m238.f4thermo===1,
-     "Stage 3 doubles only Freezer's FIRE-ICE ball, and the bonus does not leak to Stage 4");
+  ok(_m238.f2breath===1.5 && _m238.f2orb===1 && _m238.f2thermo===1,
+     "Stage 2 gives Freezer's ICE BREATH +50%, not an orb or thermoshock");
+  ok(_m238.f3thermo===1.5 && _m238.f3fire===1 && _m238.f3breath===1 && _m238.f4thermo===1,
+     "Stage 3 gives Freezer's FIRE-ICE ball +50%, and the bonus does not leak to Stage 4");
   ok(vm.runInContext("typeof SUBBOSS[8]==='undefined' && !!ALTBOSS[8] && ALTBOSS[8].kind==='heralddeath' && SHIPBOSS.heralddeath.name==='HERALD OF DEATH' && SHIPBOSS.heralddeath.key==='nhd_idle_0' && !(typeof DEAD_SUBBOSS!=='undefined' && DEAD_SUBBOSS.heralddeath)",ctxv),
      'the Hellwing HERALD OF DEATH is STORED as ALTBOSS[8] - row, art and spawnable kind kept, not retired (Mike, 0913: "store the hod")');
 }
