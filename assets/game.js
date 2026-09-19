@@ -22478,10 +22478,13 @@ function spaceBossShot(x,y,a,sp,kind,o){o=o||{};const hit=(S5_PROJECTILE_HIT&&S5
    detonate on an invisible boss rectangle while the visible shield source remains untouched. */
 function xenoRegentInit(b){
   regentCombatMixArm();
-  if(!b)return;const hp=Math.max(150,Math.ceil((b.maxhp||1200)*.075));
+  if(!b)return;
+  const pressure=diffKey==='furious'||diffKey==='insanity'?1.5:diffKey==='hard'?1.3:diffKey==='easy'?.82:1;
+  const hp=Math.max(240,Math.ceil((b.maxhp||1200)*.16))*pressure;
+  const escortHp=Math.max(125,Math.ceil(hp*.62));
   const mother={role:'mother',x:b.x,y:-90,w:154,h:88,hp:hp,maxhp:hp,dead:false,flash:0,fire:.9,anim:0};
   const helpers=[-1,1].map((side,i)=>({role:'helper',side:side,x:b.x+side*154,y:-55-i*18,w:88,h:82,
-    hp:Math.max(70,Math.ceil(hp*.48)),maxhp:Math.max(70,Math.ceil(hp*.48)),dead:false,flash:0,
+    hp:escortHp,maxhp:escortHp,dead:false,flash:0,
     fire:.65+i*.38,anim:0}));
   b._xenoRig={t:0,mother:mother,helpers:helpers,shield:true,shieldFlash:0,shieldBreak:0,fireBeat:0};
 }
@@ -22524,7 +22527,7 @@ function xenoRegentTick(b,dt){
        the sprite above the screen even though it was the one mandatory target in the fight. */
     const ty=Math.max(100,cy-b.h*.46);m.x+=(b.x-m.x)*Math.min(1,dt*3.2);m.y+=(ty-m.y)*Math.min(1,dt*2.9);
     m.flash=Math.max(0,m.flash-dt);m.anim=Math.max(0,m.anim-dt);m.fire-=dt;
-    if(R.t>1.25&&m.fire<=0&&!b._xenoGrid&&!xenoRigAnyTell(b)){m.fire=2.10;xenoRigTell(m);}
+    if(R.t>1.25&&m.fire<=0&&!b._xenoGrid&&!xenoRigAnyTell(b)){m.fire=diffKey==='furious'||diffKey==='insanity'?1.25:diffKey==='hard'?1.45:1.7;xenoRigTell(m);}
 
   }
   for(const h of R.helpers){
@@ -22537,7 +22540,7 @@ function xenoRegentTick(b,dt){
           tx=clamp(b.x+h.side*(b.w*.70+56)+Math.sin(R.t*1.35+h.side)*18,left,right),
           ty=cy+10+Math.cos(R.t*1.1+h.side)*25;
     h.x+=(tx-h.x)*Math.min(1,dt*4.2);h.y+=(ty-h.y)*Math.min(1,dt*4.2);h.flash=Math.max(0,h.flash-dt);h.anim=Math.max(0,h.anim-dt);h.fire-=dt;
-    if(R.t>1.05&&h.fire<=0&&!b._xenoGrid&&!xenoRigAnyTell(b)){h.fire=1.60+(h.side>0?.24:0);xenoRigTell(h);}
+    if(R.t>1.05&&h.fire<=0&&!b._xenoGrid&&!xenoRigAnyTell(b)){h.fire=(diffKey==='furious'||diffKey==='insanity'?1.05:diffKey==='hard'?1.2:1.4)+(h.side>0?.18:0);xenoRigTell(h);}
 
   }
 }
@@ -27764,6 +27767,9 @@ function maverickLaserVolley(lv,dmg){
      independent phases and acquire targets independently; no multi-lance decal is ever fired. */
   const tier=maverickLaserTier(lv);
   const count=tier.count, spread=(lv===1?0.20:0.30);
+  /* Bounded ordinary tracking rounds: each one searches targets and draws a helix every frame.
+     Do not let repeated volleys accumulate when the player holds fire into an empty field. */
+  if(pBullets.reduce((n,b)=>n+(b.kind==='mavlaser'&&!b._burstVolley&&!b.dead?1:0),0)+count>28) return;
   /* Ordinary laser damage is a volley budget. Passing full damage into every lance multiplied
      Maverick's non-special DPS by five to seven before pierce was even considered. */
   const perLance=dmg*([0,0.31,0.25,0.29,0.24,0.22][lv]||0.22);
