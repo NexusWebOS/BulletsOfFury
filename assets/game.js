@@ -28269,15 +28269,17 @@ function forgeStyleAfterShot(w,from){
     }
   }
 }
-const FIRE_WHIP_TIME=.48;
+const FIRE_WHIP_TIME=.48, FIRE_WHIP_GRACE=.18;
 function fireWhipFire(lv,laserDmg){
-  if(pBullets.some(b=>b.kind==='firewhip'&&!b.dead))return;
+  const live=pBullets.find(b=>b.kind==='firewhip'&&!b.dead);
+  if(live){live.life=FIRE_WHIP_GRACE;player._mgMuzT=.09;return;}
   const reach=112+Math.max(1,lv)*10,tier=forgeActiveTier(3);
   // Nine laser burn ticks fit in the sweep. One hit per target deals 125% of that.
   pBullets.push({kind:'firewhip',x:player.x,y:player.y-18,vx:0,vy:0,w:reach*2,h:reach,
-    reach,t:0,duration:FIRE_WHIP_TIME,lv,dmg:laserDmg*9*1.25*(tier>=5?1.16:1),
+    reach,t:0,duration:FIRE_WHIP_TIME,dir:1,life:FIRE_WHIP_GRACE,lv,dmg:laserDmg*9*1.25*(tier>=5?1.16:1),
     _hit:[],_inf:'fire',_infLv:tier,_el:'fire'});
-  (Audio.SFX.flameWhoosh||Audio.SFX.laserBeamStart||Audio.SFX.laser||Audio.SFX.shoot)();
+  (Audio.SFX.laserBeamStart||Audio.SFX.flameThrowerStart||Audio.SFX.laser||Audio.SFX.shoot)();
+  if(typeof Snd!=='undefined'&&Snd?.loopOn)Snd.loopOn('laserBeamLoop',.80);
   player._mgMuzT=.09;player._mgMuzLv=Math.max(1,Math.min(8,lv));
 }
 function fireWhipTouches(b,o,from,to){
@@ -28288,14 +28290,11 @@ function fireWhipTouches(b,o,from,to){
   if(Math.abs(dx)>b.reach+pad)return false;
   const curveY=-b.reach*.78*Math.pow(Math.min(1,Math.abs(nx)),1.5);
   if(Math.abs(dy-curveY)>19+pad)return false;
-  const progress=Math.max(0,Math.min(1,(nx+1)/2));
+  const xProgress=Math.max(0,Math.min(1,(nx+1)/2));
+  const progress=b.dir===-1?1-xProgress:xProgress;
   return progress>=from-(pad+11)/(b.reach*2)&&progress<=to+(pad+11)/(b.reach*2);
 }
-function fireWhipTick(b,dt){
-  const prev=b.t||0;b.t=Math.min(b.duration,prev+dt);
-  if(player.dead){b.dead=true;return;}
-  b.x=player.x;b.y=player.y-18;
-  const from=prev/b.duration,to=b.t/b.duration;
+function fireWhipStrike(b,from,to){
   for(const e of enemies)if(!e.dead&&b._hit.indexOf(e)<0&&fireWhipTouches(b,e,from,to)){
     hitEnemy(e,b.dmg);weaponHitSfx('fire');b._hit.push(e);
   }
@@ -28308,7 +28307,18 @@ function fireWhipTick(b,dt){
   for(const q of powerups){if(q.dead||!['crate','capsule','scrate','mcrate','hqspacebox'].includes(q.kind)||b._hit.indexOf(q)>=0)continue;
     if(fireWhipTouches(b,q,from,to)){q.hp=(q.hp||5)-b.dmg;q.flash=.12;b._hit.push(q);if(q.hp<=0){q.dead=true;breakContainer(q);}}
   }
-  if(b.t>=b.duration)b.dead=true;
+}
+function fireWhipTick(b,dt){
+  b.life-=dt;
+  if(player.dead||b.life<=0){b.dead=true;if(typeof Snd!=='undefined'&&Snd?.loopOff)Snd.loopOff('laserBeamLoop');if(!player.dead&&Audio.SFX.laserBeamEnd)Audio.SFX.laserBeamEnd();return;}
+  if(typeof Snd!=='undefined'&&Snd?.loopOn)Snd.loopOn('laserBeamLoop',.80);
+  // The pivot follows the ship every frame, even while the player dodges.
+  b.x=player.x;b.y=player.y-18;
+  const prev=b.t||0,next=prev+dt;
+  if(next<b.duration){b.t=next;fireWhipStrike(b,prev/b.duration,next/b.duration);return;}
+  fireWhipStrike(b,prev/b.duration,1);
+  b.dir*=-1;b._hit.length=0;b.t=next-b.duration;
+  fireWhipStrike(b,0,Math.min(1,b.t/b.duration));
 }
 function pShoot(){
   const w=run.weapon, lv=run.wlevel; const _sn0=pBullets.length;
@@ -46881,8 +46891,8 @@ function drawBullets(){
     /* THE LEVEL'S AURA (0917) - under the round, before any kind branch, so every carrier gets it */
     if(b._inf && (b._infLv|0)>=2 && !(b._launchDelay>0) && typeof infusionAuraDraw==='function') infusionAuraDraw(b);
     if(b.kind==='firewhip'){
-      const progress=Math.min(1,(b.t||0)/b.duration),r=b.reach;
-      ctx.save();ctx.beginPath();ctx.rect(b.x-r-4,b.y-r*.9,r*2*progress+4,r*.98);ctx.clip();
+      const progress=Math.min(1,(b.t||0)/b.duration),r=b.reach,sw=r*2*progress+4;
+      ctx.save();ctx.beginPath();ctx.rect(b.dir===-1?b.x+r-sw:b.x-r-4,b.y-r*.9,sw,r*.98);ctx.clip();
       ctx.globalCompositeOperation='lighter';ctx.imageSmoothingEnabled=false;
       if(typeof XART!=='undefined'&&XART.rdy('fire_whip_fx_0919')){
         const im=XART.get('fire_whip_fx_0919');ctx.drawImage(im,b.x-r,b.y-r*.87,r*2,r*.87);
@@ -72545,7 +72555,7 @@ function forgePreviewTick(P,VWp,VHp,dt){
       if(typeof yuriLightningOrbTick==='function' && yuriLightningOrbTick(b,dt)) continue;
       if(typeof laserMistTick==='function' && laserMistTick(b,dt)) continue;
       if(typeof spaceBulletTick==='function' && spaceBulletTick(b,dt)) continue;
-      if(b.kind==='firewhip'){b.t=Math.min(b.duration,(b.t||0)+dt);b.x=player.x;b.y=player.y-18;if(b.t>=b.duration)b.dead=true;}
+      if(b.kind==='firewhip'){b.life-=dt;if(b.life<=0){b.dead=true;continue;}b.t=(b.t||0)+dt;if(b.t>=b.duration){b.t-=b.duration;b.dir*=-1;}b.x=player.x;b.y=player.y-18;}
       else if(b.kind==='beam'){ b.life=(b.life==null?0.3:b.life)-dt; if(b.life<=0){ b.dead=true; continue; } b.x=player.x; b.bot=player.y-14; b.top=-20; }
       else if(b.kind==='flame'){ b.life=(b.life==null?0.3:b.life)-dt; b.anim=(b.anim||0)+dt; if(b.life<=0){ b.dead=true; continue; }
         b.x=player.x; b.bot=player.y-14; b.top=b.bot-flameReach(b.lv); b.w=flameBase(b.lv)*2; b.h=flameReach(b.lv); }
