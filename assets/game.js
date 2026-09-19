@@ -26728,7 +26728,7 @@ function _weaponCadence(){
      tracking run cannot resolve a difference smaller than about 2x and will invent ones that are
      not there. Second pass, from the pinned medians 21/26/30/35/34/42/41, targets ~30s. */
   if(run.weapon===6)return Math.max(.29,.55-clamp(run.wlevel||1,1,5)*.055);
-  if(run.weapon===3 && forgeEntry(3)?.elem==='ice') return Math.max(1.20,1.90-0.16*clamp(run.wlevel||1,1,5));
+  if(run.weapon===3 && forgeEntry(3)?.elem==='ice') return Math.max(2.10,2.90-0.18*clamp(run.wlevel||1,1,5));
   if(run.weapon===7){const r=clamp(run._chainRev||0,0,1);
     return Math.max(.042,(.18-r*.135)*(forgeActiveTier(7)>=3?.90:1));}
   {
