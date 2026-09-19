@@ -72620,7 +72620,7 @@ function forgePreviewSwap(P,VWp,VHp,fn){
   const sv={pb:pBullets, eb:eBullets, pa:particles, px:player.x, py:player.y, pd:player.dead, pi:player.invuln,
             w:run.weapon, wl:run.wlevel, wvars:run.wvars, inf:run.infusion, fg:run.forge, fb:run._forgeBlastSeq, sh:shake,
             shots:stageStats&&stageStats.shots, kin:run._kinN,
-            rev:run._chainRev, heat:run._chainHeat, over:run._chainOverheat,
+            rev:run._chainRev, heat:run._chainHeat, over:run._chainOverheat, chromeRelease:run._chromeSpreadRelease,
             muz:player._mgMuzT, muzLv:player._mgMuzLv,
             en:enemies, pu:powerups, zp:zaps, ba:bossActive, sba:subBossActive};
   try{
@@ -72642,7 +72642,7 @@ function forgePreviewSwap(P,VWp,VHp,fn){
     enemies=sv.en; powerups=sv.pu; zaps=sv.zp; bossActive=sv.ba; subBossActive=sv.sba;
     run.weapon=sv.w; run.wlevel=sv.wl; run.wvars=sv.wvars; run.infusion=sv.inf; run.forge=sv.fg;
     run._forgeBlastSeq=sv.fb; run._kinN=sv.kin;
-    run._chainRev=sv.rev; run._chainHeat=sv.heat; run._chainOverheat=sv.over;
+    run._chainRev=sv.rev; run._chainHeat=sv.heat; run._chainOverheat=sv.over; run._chromeSpreadRelease=sv.chromeRelease;
     player._mgMuzT=sv.muz; player._mgMuzLv=sv.muzLv;
     if(stageStats) stageStats.shots=sv.shots;
     shake=sv.sh;
@@ -72653,7 +72653,16 @@ function forgePreviewTick(P,VWp,VHp,dt){
   P.t+=dt;
   forgePreviewSwap(P,VWp,VHp,function(){
     P.cd-=dt;
-    if(P.cd<=0){ pShoot(); P.fired++; let c=0.2; try{ c=_weaponCadence()||0.2; }catch(_c){ } P.cd=Math.max(0.07,c); }
+    if(P.cd<=0){
+      if(P.w===1 && P.elem==='chrome'){
+        // Cycle the same three held-release strengths used in live play.
+        const rank=P.fired%3, charge=[.2,.8,1.6][rank];
+        run._chromeSpreadRelease=charge; pShoot();run._chromeSpreadRelease=0;
+        P.chargeRank=rank;P.fired++;P.cd=[.8,1.2,1.8][rank];
+      } else {
+        pShoot(); P.fired++; let c=0.2; try{ c=_weaponCadence()||0.2; }catch(_c){ } P.cd=Math.max(0.07,c);
+      }
+    }
     for(const b of pBullets){
       if(b._inf===undefined||b.kind==='beam'){ b._inf=(typeof infusionCarrier==='function'&&infusionCarrier(b))?P.elem:null; b._infLv=b._inf?Math.max(1,P.lv):0; }
       /* a weapon with its OWN tick runs it, so the preview shows its real behaviour (the orb splitting) */
