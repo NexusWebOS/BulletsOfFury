@@ -26719,6 +26719,14 @@ function _weaponCadence(){
 function laserMistDraw(b){
   const lv=clamp(b.lv||1,1,5),f=(Math.floor((b.t||0)*16)+(b._mistIndex||0))%4;
   const h=24+lv*3,w=10+lv*1.2,a=Math.atan2(b.vy||-1,b.vx||0)+Math.PI/2;
+  if(b._inf){
+    const ik=b._inf==='fire'?'forge_fire_laser_0918':'forge_elem_'+b._inf+'_laser_0918';
+    if(typeof XART!=='undefined'&&XART.rdy(ik)){
+      const im=XART.get(ik);ctx.save();ctx.translate(b.x,b.y);ctx.rotate(a);ctx.imageSmoothingEnabled=false;
+      ctx.globalCompositeOperation='lighter';ctx.shadowColor=INFUSIONS[b._inf]?.glow||'#ffffff';ctx.shadowBlur=4;
+      ctx.drawImage(im,-w/2,-h/2,w,h);ctx.restore();return;
+    }
+  }
   ctx.save();ctx.translate(b.x,b.y);ctx.rotate(a);ctx.globalCompositeOperation='lighter';ctx.imageSmoothingEnabled=false;
   // Two dim atlas echoes show motion; they cannot form a full-width cyan slab.
   for(let i=2;i>=1;i--){ctx.globalAlpha=.12/i;laserMistAtlasBlit(ctx,'lmfx_beam_'+lv+'_'+((f+4-i)%4),0,h*.42*i,w*.82,h*.80,true);}
@@ -27281,7 +27289,9 @@ function flameDraw(f){
   if(XART._touch) XART._touch(key);
   if(!XART.rdy(key)) return;
   const _isIce = key.indexOf('nib_')===0 || key.indexOf('nibr_')===0;
-  const src=_isIce?XART.get(key):(xartPalette(key,'#ff6924')||XART.get(key));
+  const _forgePlume=f._inf&&INFUSIONS[f._inf]?INFUSIONS[f._inf].body:null;
+  const src=_forgePlume?(xartPalette(key,_forgePlume)||XART.get(key)):
+    (_isIce?XART.get(key):(xartPalette(key,'#ff6924')||XART.get(key)));
   const sw=src.naturalWidth||src.width, sh=src.naturalHeight||src.height;
   if(!sw||!sh) return;
   const _ink=(typeof window!=='undefined' && window.BOFFI) ? window.BOFFI[key] : null;
@@ -47022,6 +47032,20 @@ function drawBullets(){
     }
     if(b.kind==='yuriLightningOrb'||b.kind==='yuriLightningBolt'){
       const lv=clamp(b.lv||1,1,5),orb=b.kind==='yuriLightningOrb',key=orb?'ylo_orb_'+lv:'ylo_bolt_'+clamp(b.art||lv,1,5);
+      if(b._inf){
+        const cells={lightning:0,prism:1,kinetic:2,chrome:3,water:4,dark:5,ice:6,fire:7,toxic:8};
+        const n=cells[b._inf];
+        if(orb&&n!=null&&typeof XART!=='undefined'&&XART.rdy('forge_orbs_0919')){
+          const im=XART.get('forge_orbs_0919'),d=(28+lv*4)*(.92+.08*Math.sin((b.t||0)*24+lv));
+          ctx.save();ctx.imageSmoothingEnabled=false;ctx.drawImage(im,(n%3)*418,Math.floor(n/3)*418,418,418,b.x-d/2,b.y-d/2,d,d);ctx.restore();continue;
+        }
+        const boltKey=b._inf==='fire'?'forge_fire_slug_0918':'forge_elem_'+b._inf+'_bullet_0918';
+        if(!orb&&typeof XART!=='undefined'&&XART.rdy(boltKey)){
+          const im=XART.get(boltKey),d=34+lv*4,a=(b.ang==null?Math.atan2(b.vy,b.vx):b.ang)+Math.PI/2;
+          ctx.save();ctx.translate(b.x,b.y);ctx.rotate(a);ctx.imageSmoothingEnabled=false;
+          ctx.drawImage(im,-d*.28,-d/2,d*.56,d);ctx.restore();continue;
+        }
+      }
       ctx.save();ctx.translate(b.x,b.y);if(!orb)ctx.rotate((b.ang==null?Math.atan2(b.vy,b.vx):b.ang)+Math.PI/2);
       ctx.globalCompositeOperation='lighter';ctx.imageSmoothingEnabled=false;ctx.shadowColor=orb?'#8d7dff':'#43dfff';ctx.shadowBlur=10+lv*2;
       const pulse=.92+.08*Math.sin((b.t||0)*24+lv),d=orb?(28+lv*4)*pulse:(34+lv*4);
