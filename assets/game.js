@@ -18889,8 +18889,8 @@ const RZB_R={gun:17, turret:34, hull:52};                 // hit radii, already 
 const RZB_FAN=[0.80,0.80,0.64,0.64,0.48,0.48,0.32,0.32,0.16,0.16];
 const RZB_ATTACKS={guns:['suppression','sonic','missiles','nova','sonic'], turret:['suppression','sonic','missiles','nova','sonic'],
                    hull:['nova','ram','missiles','sonic','ram']};
-const RZB_FURY_ATTACKS={guns:['suppression','sonic','rocketFlurry','missiles','nova','sonic'],
-  turret:['suppression','sonic','rocketFlurry','missiles','nova','sonic'],
+const RZB_FURY_ATTACKS={guns:['suppression','sonic','rocketFlurry','suppression','missiles','nova','sonic'],
+  turret:['suppression','sonic','rocketFlurry','suppression','missiles','nova','sonic'],
   hull:['nova','ram','rocketFlurry','sonic','ram','missiles']};
 function rzbWrap(a){ return Math.atan2(Math.sin(a),Math.cos(a)); }
 function rzbAim(f,t){ return Math.atan2(f.x-t.x, t.y-f.y); }                    // pack convention, 0 = south
@@ -19359,7 +19359,7 @@ function razorbackWaveDraw(w){
     ctx.beginPath(); ctx.arc(0,0,w.r+w.width*amp,0,TAU); ctx.arc(0,0,Math.max(0,w.r-w.width*amp),0,TAU,true); ctx.clip();
     if(im){ const sz=256*(w.r+15*RZB_S)/105; ctx.globalAlpha=(w.fade==null?1:w.fade)*(0.58+0.34*amp); ctx.drawImage(im,-sz/2,-sz/2,sz,sz); }
     ctx.restore();
-    ctx.save(); ctx.globalAlpha=(w.fade==null?1:w.fade); ctx.strokeStyle=w.furious?'rgba(255,34,62,'+(0.52+0.3*amp)+')':'rgba(202,255,119,0.5)';
+    ctx.save(); ctx.globalAlpha=(w.fade==null?1:w.fade); ctx.strokeStyle=w.furious?'rgba(255,244,211,'+(0.58+0.32*amp)+')':'rgba(202,255,119,0.5)';
     ctx.lineWidth=1.5+amp*1.4; ctx.beginPath(); ctx.arc(w.x,w.y,w.r,a0,a1); ctx.stroke(); ctx.restore();
   }
 }
@@ -19370,6 +19370,7 @@ function razorbackProjectileDraw(q){
   if(!im) return false;
   const sz=q.kind==='rzbMissile'?(q._rzbFurious?51:34):Math.max(20,q.w*1.9);
   ctx.save(); ctx.translate(q.x,q.y); ctx.rotate(a); ctx.imageSmoothingEnabled=false;
+  if(q._rzbFurious){ctx.shadowColor=q.kind==='rzbSonic'?'#fff0ca':'#fff6c4';ctx.shadowBlur=q.kind==='rzbSonic'?9:5;}
   ctx.drawImage(im,-sz/2,-sz/2,sz,sz); ctx.restore();
   return true;
 }

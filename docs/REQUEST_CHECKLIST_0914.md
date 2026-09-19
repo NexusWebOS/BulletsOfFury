@@ -1,8 +1,8 @@
 # Bullets of Fury — request checklist
 
-Updated 2026-09-19. **176 entries: 143 complete / 7 partial / 26 pending.**
+Updated 2026-09-19. **176 entries: 148 complete / 8 partial / 20 pending.**
 
-**33 remain unfinished.** 10 depend on SpriteCook production assets; 0 needs a model-name decision. These are included in the totals.
+**28 remain unfinished.** 10 depend on SpriteCook production assets; 0 needs a model-name decision. These are included in the totals.
 
 Consolidated requests in this conversation; superseded variants folded into the latest request. Rows count deliverables, not effort or percent of development time.
 
@@ -23,14 +23,14 @@ Mike selected furyship_somersault_13.png and approved image_gen for its replacem
 | Area | Complete | Partial | Pending | Total |
 | --- | ---: | ---: | ---: | ---: |
 | Earlier handoff, weapons and Tempest | 9 | 1 | 0 | 10 |
-| Shared combat, warnings and targeting | 16 | 2 | 4 | 22 |
-| Stage 1: fodder, Razorback and jungle chopper | 16 | 0 | 3 | 19 |
+| Shared combat, warnings and targeting | 17 | 2 | 3 | 22 |
+| Stage 1: fodder, Razorback and jungle chopper | 17 | 1 | 1 | 19 |
 | Stage 2: lava enemies, Magma Ward and Furnace Tyrant | 7 | 1 | 3 | 11 |
 | Stage 3: ice enemies, miniboss and Rime Wall | 12 | 0 | 2 | 14 |
 | Stage 4: Olive Warden and Sovereign | 14 | 0 | 4 | 18 |
 | Stages 5-9: space and encounter cleanup | 18 | 2 | 4 | 24 |
 | Manual missile tiers and supplies | 9 | 0 | 0 | 9 |
-| Pause, saving, title and pilot selection | 19 | 0 | 6 | 25 |
+| Pause, saving, title and pilot selection | 24 | 0 | 1 | 25 |
 | Achievements, timers and unlockable modes | 11 | 1 | 2 | 14 |
 | Arcade and shared difficulty rewards | 8 | 0 | 0 | 8 |
 | Stage 2: lava hazards, Magma Ward and Furnace Tyrant | 2 | 0 | 0 | 2 |
@@ -91,7 +91,7 @@ Mike selected furyship_somersault_13.png and approved image_gen for its replacem
 - [x] **S1-12 · Complete** — Chopper pass warning: eight synchronized red flashes/beeps, then committed fast but reactable charge with a shooting window. [Evidence](OVERLORD_EIGHT_BEAT_WARNING_0915.md).
 - [x] **S1-13 · Complete** — Furious Razorback is the current authored tank at 150% scale with only its green armor panels palette-swapped to neon red; sonic pressure waves have readable decibel-lobe openings and matching collision gaps. [Evidence](WEAPON_FORGE_REPAIR_0918.md).
 - [x] **S1-14 · Completed** — Hard Razorback heavy attacks now wait for the preceding sonic wave, Retina lock, and missile to clear before the other tank takes its turn; ordinary guns remain active. [Proof](RAZORBACK_HANDOFF_0919.md).
-- [ ] **S1-15 · Pending** — Furious Razorback: retune consecutive retina rocket salvos and distinguish red warnings, projectiles, explosions and armor during peak attack density. [Evidence](PLAYTEST_REPAIR_QUEUE_0918.md).
+- [ ] **S1-15 · Partial** — A suppression beat now separates the committed Retina rocket flurry from the missile rack; Furious sonic rings have a pale edge and projectiles have a warm halo. Dense warning/explosion overlap still needs continuous playtest review. [Proof](RAZORBACK_FURIOUS_READABILITY_0919.md).
 - [x] **S1-16 · Complete** — Razorback early-turret hit feedback: flash the targetable central turret white during the machine-gun phase and keep destroyed-part feedback local to the struck module. [Evidence](ROTATION_SHIELD_STAGE2_REPAIR_0918.md).
 - [x] **S1-17 · Complete** — Give the Hard Razorback Duo readable per-tank condition/target feedback in addition to the combined encounter bar so the player can identify which tank is close to breaking. [Evidence](ROTATION_SHIELD_STAGE2_REPAIR_0918.md).
 - [ ] **S1-18 · Pending** — Replace the temporary low-passed shared engine loop with a dedicated tracked-tank tread/roller recording and verify movement start, stop and dual-tank ownership. [Evidence](PLAYTEST_REPAIR_QUEUE_0918.md).

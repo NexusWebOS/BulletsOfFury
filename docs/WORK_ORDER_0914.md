@@ -1,6 +1,6 @@
 # Bullets of Fury — easiest-to-hardest work order
 
-**176 entries: 148 complete / 7 partial / 21 pending.**
+**176 entries: 148 complete / 8 partial / 20 pending.**
 
 Work in ascending workOrder, an estimate of implementation plus verification difficulty. Respect prerequisites and skip externally blocked items while continuing ready work. Re-rank when investigation changes the estimate; retain IDs and explain the change.
 
@@ -8,7 +8,7 @@ Completed entries are excluded. The list below contains every unfinished item ex
 
 ## Complex encounter choreography
 
-1. **S1-15 · Pending** — Furious Razorback: retune consecutive retina rocket salvos and distinguish red warnings, projectiles, explosions and armor during peak attack density.
+1. **S1-15 · Partial** — Retina salvos now have a five-second suppression beat, and Furious rings/rounds have pale contrast. Verify dense warning/explosion overlap during continuous Furious play. [Proof](RAZORBACK_FURIOUS_READABILITY_0919.md).
 
 ## Shared systems and progression
 

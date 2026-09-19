@@ -1,0 +1,7 @@
+# Furious Razorback pacing and contrast — 2026-09-19
+
+The Furious attack book previously put its committed 12-rocket Retina flurry directly before the 14-shot tracking missile rack in both guns and turret phases. A five-second suppression beat now separates them. The hull phase keeps its existing attack order. The sonic ring keeps its authored red pixels but gets a pale inner edge; Furious sonic bullets and razor missiles receive a small warm halo so they separate from the red armor and dark field.
+
+Focused Chromium probe: the flurry advances to suppression, suppression advances to missiles, the Furious sonic release still spawns nine bullets and its segmented wave, and no page errors occurred. The captured rendered frame is at `C:\Users\Mike\Documents\New project\furious_readability_shots\furious_sonic.png`; it was visually reviewed. `node --check assets/game.js` passed. The full legacy suite returned 77 known assertion failures; compared with the preceding 76-failure run, the only added failure was the already-intermittent Stage 1 sand-tank spawn assertion. No new failure name appeared.
+
+Status: partial. This directly reduces back-to-back Retina pressure and improves the projectile/ring contrast. A continuous Furious playtest with explosions, warnings and multiple hostile rounds on screen together is still needed before closing S1-15. Shared Hard/Furious hazard value separation remains ENG-20.

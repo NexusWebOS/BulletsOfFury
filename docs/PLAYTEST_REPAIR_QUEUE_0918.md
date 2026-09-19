@@ -5,7 +5,7 @@ Source review: the three latest September 18 gameplay recordings in `C:\Users\Mi
 ## Confirmed repair targets
 
 - Hard Razorback Duo pressure: extended 0919. Sonic, missile and nova attacks take turns with shared recovery that waits for prior waves, Retina locks and missiles to clear; machine guns keep firing. Focused browser simulation passed.
-- Furious Razorback rocket pressure and red-on-red effect density reduce both survival space and visual readability.
+- Furious Razorback: 0919 partial fix inserts a five-second suppression beat between Retina salvos and adds pale contrast to sonic rings and projectiles. Dense warning/explosion overlap still needs a continuous playtest. [Proof](RAZORBACK_FURIOUS_READABILITY_0919.md).
 - Achievement notifications and Fury Point conversion compete with the lower Stats sign-off and Continue area.
 - Loadout needs controller/D-pad arsenal paging and stronger selected combination feedback alongside its mouse browsing.
 - Pilot Select needs its identity typing and one-by-one bar-fill presentation restored before the clean GOOD LUCK launch card.
