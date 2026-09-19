@@ -49533,12 +49533,13 @@ function _drawEffectsInner(){
     }
     ctx.globalAlpha=1;
   }
-  // floaters
+  // Engine rule: field announcements use the same authored arcade alphabet as score pops.
+  const fieldArt=(typeof curFontArt==='function')?curFontArt():null;
   ctx.textAlign='center';
   for(const f of floaters){
     if(f.score){
       /* the stage face, with an arcade pop: 1.6x on the first frames, settling to 1 by 0.18s */
-      const art=(typeof curFontArt==='function')?curFontArt():null;
+      const art=fieldArt;
       const k=clamp(f.t/0.18,0,1), pop=1+0.6*(1-k)*(1-k);
       const fade=f.t<f.life*0.55?1:clamp(1-(f.t-f.life*0.55)/(f.life*0.45),0,1);
       const H=(f.big?13:10)*pop;
@@ -49546,8 +49547,10 @@ function _drawEffectsInner(){
       else { ctx.globalAlpha=fade; ctx.fillStyle=f.color; ctx.font='bold '+Math.round(H)+'px "BOFmil", monospace'; ctx.textAlign='center'; ctx.fillText(f.txt,f.x,f.y); ctx.globalAlpha=1; ctx.textAlign='left'; }
       continue;
     }
-    ctx.globalAlpha=clamp(1-f.t/f.life,0,1); ctx.fillStyle=f.color;
-    ctx.font='bold 10px "BOFmil", monospace'; ctx.fillText(f.txt,f.x,f.y); ctx.globalAlpha=1; }
+    const fade=clamp(1-f.t/f.life,0,1);
+    if(fieldArt && typeof stageText==='function') stageText(fieldArt,f.txt,f.x,f.y,10,f.color,0.85,fade,0.06);
+    else { ctx.globalAlpha=fade; ctx.fillStyle=f.color; ctx.font='bold 10px "BOFmil", monospace'; ctx.fillText(f.txt,f.x,f.y); ctx.globalAlpha=1; }
+  }
   /* the pickup announcement, over the field and in screen space (drop 0811m) */
   if(typeof drawArcadeBanner==='function') drawArcadeBanner();
   if(typeof stylishDraw==='function') stylishDraw();
@@ -62676,7 +62679,11 @@ function _drawStageSelectInner(dt){
         if(budget<=0) break;
         const take=Math.min(lines[i].length, Math.floor(budget));
         ctx.fillStyle = (take<lines[i].length) ? '#7fffa0' : '#39d06a';
-        ctx.fillText(lines[i].slice(0,take), 24, 120+i*22);
+        const line=lines[i].slice(0,take),font=(typeof uiFontArt==='function')?uiFontArt():null;
+        if(font && typeof stageText==='function'){
+          const wid=stageWidth(font,line,11,0.06);
+          stageText(font,line,24+wid/2,120+i*22,11,ctx.fillStyle,0.9,1,0.06);
+        } else ctx.fillText(line, 24, 120+i*22);
         typedTotal+=take;
         budget-=lines[i].length+2;                    // +2 = the pause between lines
       }
