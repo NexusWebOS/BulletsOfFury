@@ -51727,6 +51727,14 @@ function drawCutsceneEnsemble(dt){
 }
 function drawBoot(dt){
   ctx.fillStyle='#000'; ctx.fillRect(0,0,VW,VH);
+  // On tall fullscreen displays, extend the hangar art behind the complete logo plate.
+  // The foreground still uses contain, so neither the wordmark nor the jets are cropped.
+  if(XART.rdy('cf_boot')){
+    const bg=XART.get('cf_boot'), fill=Math.max(VW/bg.naturalWidth,VH/bg.naturalHeight);
+    ctx.drawImage(bg,(VW-bg.naturalWidth*fill)/2,(VH-bg.naturalHeight*fill)/2,
+                  bg.naturalWidth*fill,bg.naturalHeight*fill);
+    ctx.fillStyle='rgba(0,0,0,0.42)'; ctx.fillRect(0,0,VW,VH);
+  }
   // ---- gate: wait for a gesture so the chime + music are allowed to play ----
   if(!drawBoot._started){
     /* PRESS-START GATE shows the NEW plate too — the old starfield tile and the assembled
@@ -51734,7 +51742,7 @@ function drawBoot(dt){
     if(XART.rdy('cf_boot')){
       const bi=XART.get('cf_boot');
       const bs=Math.min(VW/bi.naturalWidth, VH/bi.naturalHeight);
-      ctx.save(); ctx.globalAlpha=0.85;
+      ctx.save(); ctx.globalAlpha=1;
       ctx.drawImage(bi, (VW-bi.naturalWidth*bs)/2, (VH-bi.naturalHeight*bs)/2,
                         bi.naturalWidth*bs, bi.naturalHeight*bs);
       ctx.restore();
