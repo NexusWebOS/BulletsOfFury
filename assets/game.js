@@ -18949,7 +18949,7 @@ function razorbackPairHit(b,dmg,hx,hy){
   razorbackPairSync(b);if(typeof stageStats!=='undefined')stageStats.dmgDealt+=Math.max(0,before-b.hp);return Math.max(0,before-b.hp);
 }
 function razorbackPairUpdate(b,dt){
-  const P=b._rzbPair;for(const p of P.actors){p.t+=dt;if(p.dead){p.dying+=dt;if(p.dying>=1.05)p._rzbGone=true;}else razorbackUpdate(p,dt);}
+  const P=b._rzbPair;P.pressureRest=Math.max(0,(P.pressureRest||0)-dt);for(const p of P.actors){p.t+=dt;if(p.dead){p.dying+=dt;if(p.dying>=1.05)p._rzbGone=true;}else razorbackUpdate(p,dt);}
   razorbackPairSync(b);
   if(!P.cleared&&P.actors.every(p=>p._rzbGone)){P.cleared=true;b.dead=true;b.dying=0;b._deathFxStarted=true;
     achievementEncounterDefeat(b,'miniboss');rzbSfx('expBig');shake=Math.max(shake||0,10);}
@@ -18984,8 +18984,18 @@ function razorbackHit(b,dmg,hx,hy){
   if(key==='hull' && R.pools.hull<=0) return Math.max(d, b.hp);   // the last pool always takes the bar to zero
   return d;
 }
+function razorbackPressureRelease(b){
+  const pair=b._pairController&&b._pairController._rzbPair;
+  if(!pair)return;
+  if(pair.pressureNext===b)pair.pressureNext=null;
+  if(pair.pressureOwner!==b)return;
+  pair.pressureOwner=null;pair.pressureRest=.72;
+  pair.pressureNext=pair.actors.find(p=>p!==b&&!p.dead&&p._rzb&&
+    (p._rzb.attack==='sonic'||p._rzb.attack==='missiles'||p._rzb.attack==='nova'||p._rzb.attack==='rocketFlurry'))||null;
+}
 function razorbackClear(b){
   const R=b._rzb; R.pid++; R.waves=[]; R.charge=0;
+  razorbackPressureRelease(b);
   if(typeof Snd!=='undefined'&&Snd.loopOff) Snd.loopOff('rzbTankRoll');
   for(const q of eBullets) if(q._rzb&&(!q._rzbOwner||q._rzbOwner===b)) q.dead=true;
   if(typeof playerLocks!=='undefined') playerLocks=playerLocks.filter(L=>L.src!==b);
@@ -19009,6 +19019,7 @@ function razorbackEnter(b,state){
   rzbSfx('bossPhase'); razorbackNext(b);
 }
 function razorbackNext(b){
+  razorbackPressureRelease(b);
   const R=b._rzb, W=(typeof worldWidth==='function')?worldWidth():VW, L=camLeftX(),span=camRightX()-L,
     book=R.furious?RZB_FURY_ATTACKS:RZB_ATTACKS,list=book[R.state]||book.guns;
   R.attack=list[++R.idx%list.length]; R.at=0; R.beat=-1; R.mgBeat=-1; R.charge=0; R.ramLocked=false; R.flurryAngle=null;
@@ -19085,7 +19096,19 @@ function razorbackUpdate(b,dt){
   R.turret+=clamp(rzbWrap(ta-R.turret), -1.85*(R.turnMul||1)*dt, 1.85*(R.turnMul||1)*dt);
   for(const k of ['left','right']){ const g=rzbWorld(b,k==='left'?-57:57,96);
     R.guns[k].a=R.a+clamp(rzbWrap(rzbAim(g,P)-R.a), -1.1, 1.1); }
-  if(R.trans<=0){ R.at+=dt*(R.rate||1); razorbackCombat(b); }
+  if(R.trans<=0){
+    const pair=b._pairController&&b._pairController._rzbPair;
+    const heavy=R.attack==='sonic'||R.attack==='missiles'||R.attack==='nova'||R.attack==='rocketFlurry';
+    let wait=false;
+    if(pair&&heavy){
+      if(pair.pressureOwner&&pair.pressureOwner.dead)pair.pressureOwner=null;
+      if(!pair.pressureOwner&&!(pair.pressureRest>0)&&(!pair.pressureNext||pair.pressureNext===b||pair.pressureNext.dead)){
+        pair.pressureOwner=b;pair.pressureNext=null;
+      }
+      wait=pair.pressureOwner!==b;
+    }
+    if(!wait){R.at+=dt*(R.rate||1);razorbackCombat(b);}
+  }
   // pressure waves: expand, and hurt whoever stands on the ring inside its arc
   for(const w of R.waves){
     w.r+=w.speed*dt; w.life-=dt;
