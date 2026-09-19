@@ -8,8 +8,8 @@
       "width": 512,
       "height": 512
     },
-    "enemy_machine_shot_heavy.wav": {
-      "file": "assets/enemy_machine_shot_heavy.wav",
+    "enemy_machine_shot_heavy.mp3": {
+      "file": "assets/enemy_machine_shot_heavy.mp3",
       "bytes": 15920,
       "sha256": "438a3008efce10724e2b76d9e757fd6b6d394c9c12bf049c2d7410b137adced2"
     },
@@ -69,18 +69,18 @@
       "width": 256,
       "height": 256
     },
-    "explosion_air_small_01.wav": {
-      "file": "assets/explosion_air_small_01.wav",
+    "explosion_air_small_01.mp3": {
+      "file": "assets/explosion_air_small_01.mp3",
       "bytes": 63548,
       "sha256": "7a4a082cee4779ad2c62c1cf9deb7f07349f7f5901f1a5d0fe8b5ece12e8525c"
     },
-    "explosion_boss_core.wav": {
-      "file": "assets/explosion_boss_core.wav",
+    "explosion_boss_core.mp3": {
+      "file": "assets/explosion_boss_core.mp3",
       "bytes": 247004,
       "sha256": "8068d721044d9ef5af266b3e6cbee1ff703b4a3a033f0da9d80988a577745e8a"
     },
-    "explosion_jet_breakup.wav": {
-      "file": "assets/explosion_jet_breakup.wav",
+    "explosion_jet_breakup.mp3": {
+      "file": "assets/explosion_jet_breakup.mp3",
       "bytes": 158804,
       "sha256": "05f4b2b0900abcb0b8181ab882d7114ececc21e330765d354de587a482ebb018"
     },
@@ -133,8 +133,8 @@
       "width": 512,
       "height": 512
     },
-    "reviewed_maverick_helix_release.wav": {
-      "file": "assets/reviewed_maverick_helix_release.wav",
+    "reviewed_maverick_helix_release.mp3": {
+      "file": "assets/reviewed_maverick_helix_release.mp3",
       "bytes": 243918,
       "sha256": "6b06693cfc208dcf37b4249df3c07c913a1b0459640ea1d21e39694eeb15f506"
     },
@@ -264,13 +264,13 @@
       "width": 627,
       "height": 627
     },
-    "ram-boost.wav": {
-      "file": "assets/ram-boost.wav",
+    "ram-boost.mp3": {
+      "file": "assets/ram-boost.mp3",
       "bytes": 243918,
       "sha256": "6b06693cfc208dcf37b4249df3c07c913a1b0459640ea1d21e39694eeb15f506"
     },
-    "reviewed_enemy_laser.wav": {
-      "file": "assets/reviewed_enemy_laser.wav",
+    "reviewed_enemy_laser.mp3": {
+      "file": "assets/reviewed_enemy_laser.mp3",
       "bytes": 97998,
       "sha256": "f03b6546db546c11509905c72222e09f92374e525f328dcb4758456fa1d489c9"
     },

@@ -4342,7 +4342,7 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
     if(a!==b) _bad.push(k);
   });
   ok(_bad.length===0, Object.keys(_repoint).length+' engine sounds re-pointed at the new pack'+(_bad.length?(' — '+_bad.join(', ')):''));
-  ok(vm.runInContext("/reviewed_enemy_laser\\.wav$/.test(BOFA.sfx.laserShot) && /reviewed_maverick_charge_loop\\.wav$/.test(BOFA.sfx.helixCharge)",ctxv),
+  ok(vm.runInContext("/reviewed_enemy_laser\\.mp3$/.test(BOFA.sfx.laserShot) && /reviewed_maverick_charge_loop\\.mp3$/.test(BOFA.sfx.helixCharge)",ctxv),
      'the two reviewed 0829 overrides replace the old generic laser and charge mappings');
   // NOTHING DESTROYED — every new sound is also addressable on its own key
   ok(vm.runInContext("!!BOFA.sfx['nsp_pulse_laser'] && !!BOFA.sfx['laser']", ctxv), 'both the nsp_ key and the engine key resolve, so any mapping is reversible');
@@ -7012,10 +7012,10 @@ console.log('=== 153. new sounds + the 20/35/50/100 missile crates (drop 0801km)
      and registered. What actually matters is that the key resolves to the RIGHT SAMPLE and that
      the sample is on disk — the folder it sits in is the restructure's business, not this
      assertion's. Matching on the filename keeps the real guarantee and survives a move. */
-  var _snd={flamewall:'flame_wall.wav',
-            arcFlameLoop:'arc_flame_loop.wav',
-            arcBarrelRoll:'arc_barrel_roll.wav',
-            lzStack:'lz_stack.wav'};
+  var _snd={flamewall:'flame_wall.mp3',
+            arcFlameLoop:'arc_flame_loop.mp3',
+            arcBarrelRoll:'arc_barrel_roll.mp3',
+            lzStack:'lz_stack.mp3'};
   Object.keys(_snd).forEach(function(k){
     var v=vm.runInContext("window.BOFA.sfx['"+k+"']||''", ctxv);
     ok(v.slice(-_snd[k].length)===_snd[k] && fs.existsSync(ROOT+'/'+v), 'sfx '+k+' registered and on disk ('+v+')');
@@ -7025,19 +7025,19 @@ console.log('=== 153. new sounds + the 20/35/50/100 missile crates (drop 0801km)
   /* The flamethrower must actually LOOP a flame BED, not the old flare one-shot. That is the
      rule; the filename is not. Mike reassigned the samples in 0822s - "wire up sounds for flame
      thrower, flamewalls/waves that come at us" - so the held weapon takes arc_flame_loop (authored
-     to loop) and flame_wall.wav goes to the wave that crosses the caldera, which is what it was
+     to loop) and flame_wall.mp3 goes to the wave that crosses the caldera, which is what it was
      authored for. This pinned the literal 'flamewall' and so failed on his own instruction.
      Repointed at the rule, and the guard against the old flare one-shot is kept because that is
      the failure the block exists to prevent. */
   var _fsrc=vm.runInContext("String(flameSndStart)", ctxv);
   ok(_fsrc.indexOf('flameThrowerLoop')>0, 'the flamethrower prefers the generated V4 sustained loop');
   ok(!/loopOn\('firewall'/.test(_fsrc), 'and no longer loops the old firewall flare');
-  ok(!/loopOn\('flamewall'/.test(_fsrc), "and not flame_wall.wav either - that is the firewave's");
+  ok(!/loopOn\('flamewall'/.test(_fsrc), "and not flame_wall.mp3 either - that is the firewave's");
   /* the samples Mike named must reach the triggers he named them for */
   ok(vm.runInContext("String(coleFuseRelease).indexOf('lzStack')>0", ctxv),
-     "cole's LV8 fusion cannon fires lz_stack.wav");
+     "cole's LV8 fusion cannon fires lz_stack.mp3");
   ok(vm.runInContext("String(startRoll).indexOf('arcBarrelRoll')>0", ctxv),
-     'a barrel roll fires arc_barrel_roll.wav');
+     'a barrel roll fires arc_barrel_roll.mp3');
   /* Taming is keyed by NAME. Without an entry the new sample plays raw and undoes
      drop 0730a's fix for "the missile and firewave sounds are harsh to the ears." */
   ok(vm.runInContext("!!(Snd&&Snd.TAME&&Snd.TAME.flamewall&&Snd.TAME.flamewall.lp)", ctxv),
@@ -12122,7 +12122,7 @@ console.log("=== 240. launch, lava, audio and dialogue regressions ===");
      _s240.indexOf("Audio.SFX.expBig=function(){ Snd.play('expBig'); }")>0 &&
      _s240.indexOf("_sfxVariant(['explosionAirSmall01'")<0,
      'enemy and boss deaths use the original shipped explosion sounds again');
-  ok(_s240.indexOf("flameHit:'assets/game/sounds/explosion_air_small_01.wav'")>0 &&
+  ok(_s240.indexOf("flameHit:'assets/game/sounds/explosion_air_small_01.mp3'")>0 &&
      _s240.indexOf("flameHit:            {g:0.28, lp:4300, min:0.09}")>0,
      'the flamethrower alone keeps a new, throttled contact/kill transient');
 
@@ -12818,12 +12818,12 @@ console.log("=== 259. generated combat audio routing ===");
 {
   var _src259=fs.readFileSync(path.join(ROOT,'assets','game.js'),'utf8');
   var _bank259={
-    machineGun:'jet_machinegun_shot_01.wav', heavyMachineGun:'reviewed_lizzie_heavy_mg.wav',
-    enemyMachineGunLight:'enemy_machine_shot_light.wav', enemyMachineGunHeavy:'reviewed_enemy_heavy_mg.wav',
-    enemyMachineGunBurst:'reviewed_enemy_heavy_mg.wav', coleSonicBoom:'reviewed_cole_sonic_release.wav',
-    laserBeamStart:'reviewed_player_laser_beam_start.wav', laserBeamLoop:'reviewed_player_laser_beam_loop.wav', laserBeamEnd:'reviewed_player_laser_beam_end.wav',
-    flameThrowerStart:'reviewed_flamethrower_start.wav', flameThrowerLoop:'reviewed_flamethrower_loop.wav', flameThrowerEnd:'reviewed_flamethrower_end.wav',
-    iceBreathStart:'ice_breath_start.wav', iceBreathLoop:'ice_breath_loop.wav', iceBreathEnd:'ice_breath_release.wav'
+    machineGun:'jet_machinegun_shot_01.mp3', heavyMachineGun:'reviewed_lizzie_heavy_mg.mp3',
+    enemyMachineGunLight:'enemy_machine_shot_light.mp3', enemyMachineGunHeavy:'reviewed_enemy_heavy_mg.mp3',
+    enemyMachineGunBurst:'reviewed_enemy_heavy_mg.mp3', coleSonicBoom:'reviewed_cole_sonic_release.mp3',
+    laserBeamStart:'reviewed_player_laser_beam_start.mp3', laserBeamLoop:'reviewed_player_laser_beam_loop.mp3', laserBeamEnd:'reviewed_player_laser_beam_end.mp3',
+    flameThrowerStart:'reviewed_flamethrower_start.mp3', flameThrowerLoop:'reviewed_flamethrower_loop.mp3', flameThrowerEnd:'reviewed_flamethrower_end.mp3',
+    iceBreathStart:'ice_breath_start.mp3', iceBreathLoop:'ice_breath_loop.mp3', iceBreathEnd:'ice_breath_release.mp3'
   };
   ok(Object.keys(_bank259).every(function(k){
        var rel=sandbox.window.BOFA.sfx[k];
@@ -12832,24 +12832,24 @@ console.log("=== 259. generated combat audio routing ===");
   ok(Object.keys(_bank259).every(function(k){return vm.runInContext("typeof Audio.SFX['"+k+"']==='function'",ctxv);}),
      'the sample layer exposes a callable Audio.SFX method for every signature combat cue');
   var _approved259={
-    dkReload:'reviewed_decker_reload.wav', laserCannon:'reviewed_laser_cannon.wav',
-    spaceLaserCannon:'reviewed_laser_cannon.wav', spaceLaserHit:'shield_hit_light.wav',
+    dkReload:'reviewed_decker_reload.mp3', laserCannon:'reviewed_laser_cannon.mp3',
+    spaceLaserCannon:'reviewed_laser_cannon.mp3', spaceLaserHit:'shield_hit_light.mp3',
     spaceShadowCharge:'nsp_bof2_charge_shot.mp3',
-    /* 0906: was reviewed_shadow_orb_launch.wav, which runs 2.250 s and PEAKS AT 1.805 s, reaching
+    /* 0906: was reviewed_shadow_orb_launch.mp3, which runs 2.250 s and PEAKS AT 1.805 s, reaching
        -6 dB only at 1.170 s - Mike: "in space, the shadow orb, you can heard the sound clearly
        delayed for impact". Same shape as the spaceShadowHit line below and the same resolution:
        the approved table had pinned the late sample, so it defended the defect. The original
        file is still on disk and untouched. */
-    spaceShadowRelease:'reviewed_shadow_orb_launch_fast.wav',
-    spaceShadowHit:'reviewed_shadow_orb_impact.wav', /* 0903q: was explosion_plasma.wav, whose peak lands at 454 ms - Mike: 'delayed impact sound'. The approved table pinned the late sample; see the mapping note in game.js. */ spaceVolleyLaunch:'nsp_rocket_launch.mp3',
-    spaceVolleyHit:'explosion_air_medium.wav',
-    atomicLaunch:'reviewed_lizzie_atom_launch.wav', atomicDetonate:'reviewed_lizzie_atom_impact.wav',
-    megaShieldPickup:'reviewed_axel_mega_shield.wav', specialAbilityPickup:'reviewed_special_pickup.wav',
-    helixChargeStart:'reviewed_maverick_charge_build.wav', helixCharge:'reviewed_maverick_charge_loop.wav',
-    maverickHelixRelease:'reviewed_maverick_helix_release.wav',
-    gravityTransform:'reviewed_ship_fusion_sequence.wav', gravityFuse:'reviewed_ship_fusion_lock.wav',
-    sonicChargeStart:'reviewed_cole_sonic_charge_start.wav', sonicChargeLoop:'reviewed_cole_sonic_charge_loop.wav',
-    amb_storm:'reviewed_stage6_wind_loop.wav'
+    spaceShadowRelease:'reviewed_shadow_orb_launch_fast.mp3',
+    spaceShadowHit:'reviewed_shadow_orb_impact.mp3', /* 0903q: was explosion_plasma.mp3, whose peak lands at 454 ms - Mike: 'delayed impact sound'. The approved table pinned the late sample; see the mapping note in game.js. */ spaceVolleyLaunch:'nsp_rocket_launch.mp3',
+    spaceVolleyHit:'explosion_air_medium.mp3',
+    atomicLaunch:'reviewed_lizzie_atom_launch.mp3', atomicDetonate:'reviewed_lizzie_atom_impact.mp3',
+    megaShieldPickup:'reviewed_axel_mega_shield.mp3', specialAbilityPickup:'reviewed_special_pickup.mp3',
+    helixChargeStart:'reviewed_maverick_charge_build.mp3', helixCharge:'reviewed_maverick_charge_loop.mp3',
+    maverickHelixRelease:'reviewed_maverick_helix_release.mp3',
+    gravityTransform:'reviewed_ship_fusion_sequence.mp3', gravityFuse:'reviewed_ship_fusion_lock.mp3',
+    sonicChargeStart:'reviewed_cole_sonic_charge_start.mp3', sonicChargeLoop:'reviewed_cole_sonic_charge_loop.mp3',
+    amb_storm:'reviewed_stage6_wind_loop.mp3'
   };
   ok(Object.keys(_approved259).every(function(k){
        var rel=sandbox.window.BOFA.sfx[k];
@@ -12978,7 +12978,7 @@ console.log("=== 262. Reconciled regression repairs ===");
      'Volley Missiles lock and damage the visible black/blue drone hulls instead of detonating in the empty gap');
   ok(vm.runInContext("_drawEffectsInner.toString().indexOf('_fade')<0",ctxv),
      'enemy explosion reels complete at full opacity instead of dissolving');
-  ok(vm.runInContext("BOFA.sfx.enemyShoot.indexOf('enemy_machine_shot_light.wav')>=0 && Snd.TAME.enemyShoot.min>=0.12 && Snd.TAME.bossAlarm.min>=2",ctxv),
+  ok(vm.runInContext("BOFA.sfx.enemyShoot.indexOf('enemy_machine_shot_light.mp3')>=0 && Snd.TAME.enemyShoot.min>=0.12 && Snd.TAME.bossAlarm.min>=2",ctxv),
      'enemy fallback fire is mechanical and repeated enemy/boss cues are throttled in the mix layer');
   var _src262=fs.readFileSync(ROOT+'/assets/game.js','utf8'),
       _enemyDraw262=_src262.slice(_src262.indexOf('// enemy — master fire-type art first'),_src262.indexOf('ctx.imageSmoothingEnabled = _ebSmooth'));
@@ -14813,8 +14813,8 @@ console.log("=== 278. lizzie B-42 alternate costume ===");
      'both of its bullet kinds have PROJ rows that resolve to a master type');
 
   /* ---- the sound ---- */
-  ok(vm.runInContext("String(BOFA.sfx.enemyMachineShotHeavy||'').indexOf('enemy_machine_shot_heavy.wav')>=0", ctxv) &&
-     fs.existsSync(path.join(ROOT, 'assets/game/sounds/enemy_machine_shot_heavy.wav')),
+  ok(vm.runInContext("String(BOFA.sfx.enemyMachineShotHeavy||'').indexOf('enemy_machine_shot_heavy.mp3')>=0", ctxv) &&
+     fs.existsSync(path.join(ROOT, 'assets/game/sounds/enemy_machine_shot_heavy.mp3')),
      'the bolt voice enemyMachineShotHeavy is registered in the code-owned sfx block, and its file is on disk');
   ok(vm.runInContext("!!(Snd.TAME.enemyMachineShotHeavy && Snd.TAME.enemyMachineShotHeavy.min>=0.1 && Snd.TAME.enemyMachineShotHeavy.min<0.16)", ctxv),
      'and it has a TAME row whose gate sits under the 0.16s rapid beat (0912j: a key with no row plays raw)');
@@ -15265,7 +15265,7 @@ console.log('=== 297. Razorback and Tempest weapon geometry; Cole impact sound =
   ok(vm.runInContext("mist298.dead&&R.pools.left<before298&&pImpacts.length>0",ctxv),'a live rotated gun still receives mist damage and a real wet impact');
   vm.runInContext("weaponFeedbackSound=oldSound298;pBullets=[];pImpacts=[];particles=[];sonicTrail=[];run.sonicT=0;special=null;subBoss=null;subBossActive=false;player._chgDash=null;player._chgOn=false;Snd.loopStopAll();",ctxv);
   var audio298=JSON.parse(fs.readFileSync(path.join(ROOT,'_BUILD_SOURCE/weapon_feedback_0913/audio-build.json'),'utf8'));
-  ok(Object.values(audio298).every(a=>fs.existsSync(path.join(ROOT,a.file))&&a.peak<.8&&a.rms>0),'all sixteen authored sound mixes exist with measured headroom');
+  ok(Object.values(audio298).every(a=>fs.existsSync(path.join(ROOT,a.file.replace(/\.wav$/i,'.mp3')))&&a.peak<.8&&a.rms>0),'all sixteen authored sound mixes exist with measured headroom');
   ok(vm.runInContext("Object.keys(BOFA.sfx).filter(k=>/^(colePressure|juggernaut|laserMist)/.test(k)).every(k=>Snd.TAME[k]&&Snd.TAME[k].g<=.85&&typeof Snd.TAME[k].min==='number')",ctxv),'every new sound route has an explicit gain and retrigger policy');
 }
 

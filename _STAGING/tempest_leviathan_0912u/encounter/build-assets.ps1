@@ -14,5 +14,5 @@ $src='C:/Users/Mike/Desktop/Github Coding/BulletsOfFury'
 $atlas=[Drawing.Bitmap]::new((Join-Path $src 'assets/game/atlas/fx_explosions.png'))
 for($i=0;$i -lt 8;$i++){$c=$atlas.Clone([Drawing.Rectangle]::new((637+258*$i),403,256,256),[Drawing.Imaging.PixelFormat]::Format32bppArgb);$c.Save((Join-Path $dest "explosion-$i.png"));$c.Dispose()};$atlas.Dispose()
 Copy-Item (Join-Path $src 'assets/game/ships_v2/ship_yuri_v2_hero.png') (Join-Path $dest 'player.png')
-foreach($n in @('explosion_jet_breakup','explosion_boss_core','reviewed_maverick_helix_release','enemy_machine_shot_heavy','explosion_air_small_01')){Copy-Item (Join-Path $src "assets/game/sounds/$n.wav") (Join-Path $dest "$n.wav")}
+foreach($n in @('explosion_jet_breakup','explosion_boss_core','reviewed_maverick_helix_release','enemy_machine_shot_heavy','explosion_air_small_01')){Copy-Item (Join-Path $src "assets/game/sounds/$n.mp3") (Join-Path $dest "$n.mp3")}
 'Assets extracted'

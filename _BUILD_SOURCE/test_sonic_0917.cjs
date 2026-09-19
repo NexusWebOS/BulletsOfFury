@@ -38,8 +38,8 @@ module.exports=function testSonic(vm,ctxv,ok){
      'a pierced ordinary hull is SHOVED back up the screen, 6 + 14 x charge px');
 
   /* the cues are registered in the code-owned sound block, with TAME rows */
-  ok(R("!!(BOFA&&BOFA.sfx&&/cole_sonic_full\\.wav$/.test(String(BOFA.sfx.coleSonicFull||''))&&/cole_sonic_half\\.wav$/.test(String(BOFA.sfx.coleSonicHalf||'')))"),
-     'coleSonicFull / coleSonicHalf point at the generated wavs');
+  ok(R("!!(BOFA&&BOFA.sfx&&/cole_sonic_full\\.mp3$/.test(String(BOFA.sfx.coleSonicFull||''))&&/cole_sonic_half\\.mp3$/.test(String(BOFA.sfx.coleSonicHalf||'')))"),
+     'coleSonicFull / coleSonicHalf point at the generated MP3s');
   ok(R("(function(){ try{ var T=Snd.TAME; return !!(T&&T.coleSonicFull&&T.coleSonicFull.min>0&&T.coleSonicHalf&&T.coleSonicHalf.min>0); }catch(_){ return false; } })()"),
      'both carry a TAME row with a retrigger gate (the only gate in the engine)');
   var warm=strip(R("String(typeof warmPilot==='function'?warmPilot:function(){})"));

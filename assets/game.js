@@ -8348,7 +8348,7 @@ function weaponBaseForms(w){
   else { if((w|0)===3 && pk==='maverick'){
       out.push({kind:'variant',id:'mavhoming',name:'HOMING LANCES'});
       if((run.stage|0)>1 || run._mavBeamUnlocked) out.push({kind:'variant',id:'laserbeam',name:'STRAIGHT LASER'});
-    } else out.push({kind:'bare',id:null,name:'BARE '+(WEAPONS[w]||'WEAPON')});
+    } else out.push({kind:'bare',id:null,name:(w|0)===3?'LASER BEAM':'BARE '+(WEAPONS[w]||'WEAPON')});
     if((w|0)===3 && forgeFormsFor(3).fire) out.push({kind:'variant',id:'firewhip',name:'FIRE WHIP'}); }
   return out;
 }
@@ -16645,7 +16645,7 @@ function stage4CoreTurretDamage(b,t,dmg){
   dmg=Math.max(1,dmg||1);
   if(t.shield>0){const use=enemyPoolDamage(t,'shield',dmg,'stage4HelperShield','maxShield');dmg-=use;t.deflectFlash=.13;b._s4war.coreBlockedHits++;
     /* ⚠ Mike, 0906: "I need different sound for hitting shields, the one your using is bad."
-       shield_hit_light.wav is a thin tick. shield_hit_heavy.wav is a separate authored sample
+       shield_hit_light.mp3 is a thin tick. shield_hit_heavy.mp3 is a separate authored sample
        already proven in the game on the Magma Ward's shield, so this is a swap between two
        existing cues rather than a new one. ⚠ I CANNOT HEAR EITHER OF THEM - this is the best
        available pick, not a judgement of how it sounds. If it is still wrong, the fix is to
@@ -27118,16 +27118,16 @@ function flameFire(lv){
    loopOn() was already the right mechanism and is already called every frame the
    button is held — it starts the bed once and keeps the fade climbing, so "repeat"
    needs no new machinery, only the right sample. It was pointed at 'firewall'
-   (nsp_solar_flare), which is a one-shot flare whoosh; flame_wall.wav is the 3.18s
+   (nsp_solar_flare), which is a one-shot flare whoosh; flame_wall.mp3 is the 3.18s
    bed Mike sent for this.
 
    IT INHERITS THE TAMING. Snd.TAME keys off the sound NAME, so moving to a new key
    would have silently dropped the lowpass and level cut that drop 0730a added after
    Mike said "the missile and firewave sounds are harsh to the ears." A matching
    TAME entry is registered for 'flamewall' alongside this, or the harshness returns. */
-/* ⚠ THE FLAMETHROWER'S VOICE IS arc_flame_loop.wav (drop 0822s). Mike, naming the files:
+/* ⚠ THE FLAMETHROWER'S VOICE IS arc_flame_loop.mp3 (drop 0822s). Mike, naming the files:
    "wire up sounds for flame thrower, flamewalls/waves that come at us". It had been looping
-   'flamewall' (flame_wall.wav) since 0801km — that sample is the FIREWAVE's, and it was on the
+   'flamewall' (flame_wall.mp3) since 0801km — that sample is the FIREWAVE's, and it was on the
    held weapon while the wave that crosses the caldera played a generic flare whoosh. The two are
    swapped to the files he named. arc_flame_loop is authored to loop; flame_wall is a 3.18s
    one-shot, which is why the held weapon is the one that gets the loop. */
@@ -27674,7 +27674,7 @@ function coleFuseRelease(){
     pBullets.push({x:player.x+off, y:player.y-16, vx:0, vy:-13,
                    w:14, h:56, dmg:FUSE_DMG, kind:'colefuse', pierce:true, t:0});
   }
-  /* ⚠ lz_stack.wav IS THE FUSION CANNON (drop 0822s). Mike: "the lz_stack is for cole's fusion
+  /* ⚠ lz_stack.mp3 IS THE FUSION CANNON (drop 0822s). Mike: "the lz_stack is for cole's fusion
      cannon /lvl 8". It had been borrowing the generic pulse laser, which is the same cue an
      ordinary laser shot uses — so the release of a charged two-lance piercing shot sounded like
      a normal trigger pull. Falls back down the old chain if the sample has not decoded. */
@@ -27766,7 +27766,7 @@ function maverickLaserVolley(lv,dmg){
   const count=tier.count, spread=(lv===1?0.20:0.30);
   /* Ordinary laser damage is a volley budget. Passing full damage into every lance multiplied
      Maverick's non-special DPS by five to seven before pierce was even considered. */
-  const perLance=dmg*(0.34+lv*0.025);
+  const perLance=dmg*([0,0.31,0.25,0.29,0.24,0.22][lv]||0.22);
   for(let i=0;i<count;i++){
     const u=count===1?0:(i/(count-1)-0.5), angle=-Math.PI/2+u*spread;
     const side=(i-(count-1)/2), x=player.x+side*4.2;
@@ -27776,6 +27776,7 @@ function maverickLaserVolley(lv,dmg){
 }
 function maverickLaserTick(b,dt){
   const tier=maverickLaserTier(b.lv);
+  if(!b._burstVolley && (b.t||0)>1.65){ b.dead=true; return; }
   /* A charged-ball payload gets a short radial breakout before it starts seeking. Without the
      grace beat every direction snaps toward the same nearest target on frame one and the promised
      multi-direction burst collapses into one stacked graphic. */
@@ -32760,7 +32761,7 @@ function launchFireball(charge, forceTier){
      fireball to the level-1 ball (drop 0801fm). */
   const lv = clamp(Math.max(1, (run.wlevels&&run.wlevels[run.weapon])||1, run.wlevel||1), 1, 5);
   /* FIREBALL VOICE (drop 0801km). Mike: "use the flame loop for fireball."
-     arc_flame_loop.wav, fired ONCE on launch. He asked for a repeat only on the
+     arc_flame_loop.mp3, fired ONCE on launch. He asked for a repeat only on the
      flamethrower — here he is naming which file to use, not asking for a sustain, so
      this is deliberately a one-shot and not Snd.loopOn. If he wants it burning for as
      long as the ball is alive, that is loopOn keyed on the fireball's lifetime instead.
@@ -35357,6 +35358,7 @@ function updatePlay(dt){
        opens with climb, and _hz (cos of the same angle) is the depth cue the draw sorts on. */
     if(b.kind==='mavlaser'){
       maverickLaserTick(b,dt);
+      if(b.dead)continue;
     } else if(b.kind==='hfl'){
       b._ht=(b._ht||0)+dt;
       /* ⚠ THE STRAND TRAVELS A HEADING NOW, NOT A COLUMN (0821). Mike: the burst should throw
@@ -35449,7 +35451,8 @@ function updatePlay(dt){
         const _rawSd=(b._bossDmg!=null)?b._bossDmg:b.dmg;
         if(pierce){ b._bt=(b._bt||0)-dt; if(b._bt<=0){
           const _sd=helixEncounterDamage(b,subBoss,_rawSd);
-          if(_sd>0){hitSubBoss(_sd, b.x, b.y);if(b.kind==='sonic')sonicImpact(b.x,b.y,b._p);else explode(b.x,b.y,6,'red');}
+          if(_sd>0){hitSubBoss(_sd, b.x, b.y);if(b.kind==='sonic')sonicImpact(b.x,b.y,b._p);else explode(b.x,b.y,6,'red');
+            if(b.kind==='mavlaser'&&!b._burstVolley)b.dead=true; }
           b._bt=0.10;
         } }
         else {
@@ -35486,6 +35489,7 @@ function updatePlay(dt){
           if(_bd>0){
             _lastHitX=b.x; _lastHitY=b.y;        // so the section under THIS shot takes the damage
             hitBoss(_bd);
+            if(b.kind==='mavlaser'&&!b._burstVolley)b.dead=true;
             if(b.kind==='sonic')sonicImpact(b.x,b.y,b._p);
             else explode(b.x,b.y,b.kind==='fire'?9:6,b.kind==='fire'?'red':'blue');
           }
@@ -52432,7 +52436,7 @@ function wfxUpdate(dt){
              stinger and the flame as two events is satisfied by the flashes now carrying the
              stinger, three times, before anything arrives. */
           /* ⚠ THE FLAMETHROWER SAMPLE IS THE WALL'S NOW (Mike, 0905): "use flamethrower for the
-             actual flamewall sounds." This reverses 0822s, which had moved flame_wall.wav ONTO
+             actual flamewall sounds." This reverses 0822s, which had moved flame_wall.mp3 ONTO
              this cue and left the flamethrower bed elsewhere - reversed in the open, on newer
              instruction from the same person, rather than quietly. flameThrowerStart is the
              ignition transient and is the right shape for a wall arriving; flamewall stays as the
@@ -61796,7 +61800,7 @@ function openingUpdate(dt){
     if(c!==O.counted && c>=0 && c<=3){
       O.counted=c;
       /* ⚠ NOT countdown() — THAT IS THE GAME-OVER CLIP (drop 0810q). Mike: "Stop playing the game
-         over countdown for the 3 2 1 part." Audio.SFX.countdown is countdown.wav, which
+         over countdown for the 3 2 1 part." Audio.SFX.countdown is countdown.mp3, which
          drawContinue plays ONCE on the continue screen as the you-are-about-to-lose timer. This
          fired it on every number of the launch countdown, so starting a level sounded like dying.
          getready is the launch's own per-number tick, which is what drawLaunch already uses. */
@@ -62382,6 +62386,9 @@ function cmap2DrawClouds(selStage){
   ctx.restore();
 }
 function cmap2DrawVignette(){
+  /* The wide-map canvas draws the same ocean outside the game viewport. A vignette only
+     on the centre canvas made a dark rectangle around its otherwise seamless sea. */
+  if(typeof document!=='undefined'&&document.body&&document.body.classList.contains('wide-map'))return;
   let v=cmap2._vig;
   if(!v){
     v=cmap2._vig=document.createElement('canvas'); v.width=240; v.height=256;
@@ -71894,13 +71901,13 @@ function scConceptBody(R, px, py, pw, ph, t, dt, art, F){
   /* ---- 4. THE SIX STAT BAYS - the authored fill inside HIS recess, text on it ---- */
   if(t>0.38 && drawStageClear._row<Math.min(SC_CONCEPT.length,scSlots().stats.length)){
     drawStageClear._segT+=dt;
-    if(drawStageClear._segT>=0.28){ drawStageClear._segT=0; drawStageClear._row++;
+    if(drawStageClear._segT>=0.14){ drawStageClear._segT=0; drawStageClear._row++;
       if(Audio.SFX.statTick) Audio.SFX.statTick(); }
   }
   for(let i=0;i<SC_CONCEPT.length && i<scSlots().stats.length;i++){
     if(i>drawStageClear._row) break;
     const row=SC_CONCEPT[i], b=scBay(P,scSlots().stats[i]);
-    const active=i===drawStageClear._row, app=i<drawStageClear._row?1:clamp(drawStageClear._segT/.28,0,1);
+    const active=i===drawStageClear._row, app=i<drawStageClear._row?1:clamp(drawStageClear._segT/.14,0,1);
     const frac=Math.max(0,Math.min(1,row.val(S)))*app;
     /* inset so his cyan rim stays visible - the fill sits IN the recess, it does not replace it */
     scFillBar(b[0]+b[2]*0.020, b[1]+b[3]*0.16, b[2]*0.960, b[3]*0.68, row.fill, frac, t);
@@ -72246,7 +72253,7 @@ function drawStageClear(dt){
   /* ---- PASSWORD: typed in, then flashing, with a tick per letter ---- */
   if(drawStageClear._stamp>=1 && R.pw){
     const before=Math.floor(drawStageClear._pwChars);
-    drawStageClear._pwChars=Math.min(R.pw.length, drawStageClear._pwChars+dt*7);
+    drawStageClear._pwChars=Math.min(R.pw.length, drawStageClear._pwChars+dt*18);
     if(Math.floor(drawStageClear._pwChars)>before && Audio.SFX.blip) Audio.SFX.blip();
     const full=drawStageClear._pwChars>=R.pw.length;
     const shown=R.pw.slice(0, Math.floor(drawStageClear._pwChars));
@@ -73158,7 +73165,10 @@ function forgingStart(o){
 function forgingLeave(toLoadout){
   forging=null;
   const F=forge;
-  if(!toLoadout && F){ setState(GS.FORGE); return; }
+  if(F && (!toLoadout || (run.forgeCombos|0)>0)){
+    if(toLoadout) forgeSay('ONE MORE UPGRADE AVAILABLE - CHOOSE A WEAPON','powerup');
+    setState(GS.FORGE); return;
+  }
   const done=F&&F.onDone; forge=null; run._wbag=[];
   if(done) done(); else setState(GS.TITLE);
 }
@@ -73438,7 +73448,7 @@ function drawLoadout(dt){
       L.formRects.push({x:cx-pitch*.46,y:cy-h*.62,w:pitch*.92,h:h*1.24,index:i});}
   }
   if(art)stageText(art,'X'+(run.forgeRespecs|0),W*.705,H*.883,13,'#ffd24a',.9,1,.05);
-  controlHintRow(L.row===1?[['pad_dpad','BROWSE'],['pad_a','EQUIP'],['pad_b','BACK'],['pad_start','LAUNCH']]:
+  controlHintRow(L.row===1?[['pad_dpad','WEAPON / ELEMENT'],['pad_a','EQUIP'],['pad_b','BACK'],['pad_start','LAUNCH']]:
     L.row===2?[['pad_dpad','FORM'],['pad_a','EQUIP'],['pad_b','BACK']]:
     [['pad_dpad','SLOT / CATALOG'],['pad_a','FORMS'],['pad_start','LAUNCH']],H*.965,W/2,W-24);
   if(L.exitT>=0){L.exitT+=dt;ctx.save();ctx.globalAlpha=Math.min(1,L.exitT/.6);ctx.fillStyle='#000';ctx.fillRect(0,0,W,H);ctx.restore();if(L.exitT>=.62){const done=L.onDone;loadoutScr=null;run._wbag=[];if(done)done();else setState(GS.TITLE);}return;}
@@ -73462,6 +73472,10 @@ function drawLoadout(dt){
     if(hit){if(L.row!==1||L.catSel!==hit.ri||L.catCol!==hit.col){L.catSel=hit.ri;L.catCol=hit.col;L.row=1;fsx('blip');return;}
       if(!hit.cell.ok){loadoutSay(hit.cell.price?'BUY THIS RECIPE IN THE ARMORY':'LOCKED - EARN THIS ELEMENT','blocked');return;}
       const q=forgePick(L.sel,hit.weapon);if(q!=='ok'&&q!=='same'){loadoutSay('WEAPON CANNOT USE THIS BAY','blocked');return;}
+      if(hit.cell.kind!=='forge'&&weaponBaseForms(hit.weapon).length>1){
+        L.row=2;L.psel=Math.max(0,weaponBaseForms(hit.weapon).findIndex(o=>o.id===heldVariant(hit.weapon)));
+        loadoutSay('CHOOSE '+weaponDisplayName(hit.weapon)+' FORM','blip');return;
+      }
       const f=weaponFormSelect(hit.weapon,hit.cell.kind==='forge'?{kind:'forge',elem:hit.cell.elem}:weaponBaseForms(hit.weapon)[0]);
       if(f!=='ok'){loadoutSay('FORM LOCKED','blocked');return;}
       loadoutSay('BAY '+(L.sel+1)+': '+(hit.cell.elem?forgeComboName(hit.cell.elem,hit.weapon):weaponDisplayName(hit.weapon)),'powerup');return;}
@@ -73473,18 +73487,23 @@ function drawLoadout(dt){
     else if(enter){Input.mouse.down=false;L.exitT=0;fsx('powerup');}
     else if(charge&&selW!=null){const q=forgeRespec(selW);loadoutSay(q==='ok'?'BARE FORM EQUIPPED':'NO ACTIVE FORM TO RE-SPEC',q==='ok'?'powerup':'blocked');}
     else if(mD&&selW!=null){L.row=1;L.catSel=Math.max(0,allW.indexOf(selW));L.catCol=0;fsx('blip');}
-    else if((fire||click||mU)&&selW!=null){L.row=2;L.psel=0;fsx('blip');}
+    else if((fire||click)&&selW!=null){L.row=1;L.catSel=Math.max(0,allW.indexOf(selW));L.catCol=0;fsx('blip');}
+    else if(mU&&selW!=null){L.row=2;L.psel=0;fsx('blip');}
   }else if(L.row===1){
-    if(mU){L.catSel=clamp(L.catSel-1,0,allW.length-1);fsx('blip');}
-    else if(mD){L.catSel=clamp(L.catSel+1,0,allW.length-1);fsx('blip');}
-    else if(mL){L.catCol=clamp(L.catCol-1,0,elements.length);fsx('blip');}
-    else if(mR){L.catCol=clamp(L.catCol+1,0,elements.length);fsx('blip');}
+    if(mL){L.catSel=clamp(L.catSel-1,0,allW.length-1);fsx('blip');}
+    else if(mR){L.catSel=clamp(L.catSel+1,0,allW.length-1);fsx('blip');}
+    else if(mU){L.catCol=clamp(L.catCol-1,0,elements.length);fsx('blip');}
+    else if(mD){L.catCol=clamp(L.catCol+1,0,elements.length);fsx('blip');}
     else if(mB){L.row=0;fsx('blip');}
     else if(fire||click||enter){
       const w=allW[L.catSel],elem=L.catCol?elements[L.catCol-1]:null,forms=forgeFormsFor(w),owned=L.pool.indexOf(w)>=0;
       if(!owned||elem&&!forms[elem]){loadoutSay(elem&&forgeComboOwned(elem,w)?'BUY THIS RECIPE IN THE ARMORY':'LOCKED - EARN THIS WEAPON','blocked');}
       else {const q=forgePick(L.sel,w);
         if(q==='ok'||q==='same'){
+          if(!elem&&weaponBaseForms(w).length>1){
+            L.row=2;L.psel=Math.max(0,weaponBaseForms(w).findIndex(o=>o.id===heldVariant(w)));
+            loadoutSay('CHOOSE '+weaponDisplayName(w)+' FORM','blip');return;
+          }
           const f=weaponFormSelect(w,elem?{kind:'forge',elem:elem}:weaponBaseForms(w)[0]);
           loadoutSay(f==='ok'?'BAY '+(L.sel+1)+': '+(elem?forgeComboName(elem,w):weaponDisplayName(w)):'FORM LOCKED',f==='ok'?'powerup':'blocked');
         }else loadoutSay('MISSILES STAY IN THEIR OWN BAY','blocked');}
@@ -74427,7 +74446,7 @@ if(window.BOFA && BOFA.music){
        peaks at 0.0, against -16.1..-16.6 / -2.2..-3.0). A global music slider cannot fix one hot track,
        so they were GAIN-matched on encode to the boss-track mean - volume only, dynamics untouched -
        at the house format, 112k CBR 44.1 kHz stereo, from Mike's original WAVs. */
-  /* Stage 1 boss: Mike's helicopterboss.wav, encoded for browser playback. Previous
+  /* Stage 1 boss: Mike's helicopterboss.mp3, encoded for browser playback. Previous
      Stage 1 boss theme (minderaser) is archived as unused_x; mini1 remains fireboss. */
   BOFA.music.boss1='assets/game/music/boss1_helicopterboss.mp3';
   BOFA.music.unused_x='assets/game/music/unused_x.mp3';
@@ -74442,132 +74461,132 @@ if(window.BOFA && BOFA.sfx){
   Object.assign(BOFA.sfx, {
     /* Replace the old tonal enemyShoot.mp3 catch-all with a short mechanical weapon transient.
        Named elemental/boss families below still keep their own sound identities. */
-    enemyShoot:'assets/game/sounds/enemy_machine_shot_light.wav',
-    machineGun:'assets/game/sounds/jet_machinegun_shot_01.wav',
-    heavyMachineGun:'assets/game/sounds/reviewed_lizzie_heavy_mg.wav',
-    enemyMachineGunLight:'assets/game/sounds/enemy_machine_shot_light.wav',
-    enemyMachineGunHeavy:'assets/game/sounds/reviewed_enemy_heavy_mg.wav',
-    enemyMachineGunBurst:'assets/game/sounds/reviewed_enemy_heavy_mg.wav',
+    enemyShoot:'assets/game/sounds/enemy_machine_shot_light.mp3',
+    machineGun:'assets/game/sounds/jet_machinegun_shot_01.mp3',
+    heavyMachineGun:'assets/game/sounds/reviewed_lizzie_heavy_mg.mp3',
+    enemyMachineGunLight:'assets/game/sounds/enemy_machine_shot_light.mp3',
+    enemyMachineGunHeavy:'assets/game/sounds/reviewed_enemy_heavy_mg.mp3',
+    enemyMachineGunBurst:'assets/game/sounds/reviewed_enemy_heavy_mg.mp3',
     /* the Tempest Leviathan's plasma bolts (0913b): the pack's own heavy machine-shot, already on disk and byte-identical
        (sha256 438a3008...). TAME-gated below - a key with no row plays every round raw. */
-    enemyMachineShotHeavy:'assets/game/sounds/enemy_machine_shot_heavy.wav',
-    tlvJetCharge:'assets/game/sounds/boss_weapon_charge.wav',
+    enemyMachineShotHeavy:'assets/game/sounds/enemy_machine_shot_heavy.mp3',
+    tlvJetCharge:'assets/game/sounds/boss_weapon_charge.mp3',
     tlvJetReady:'assets/game/sounds/retina_charge.mp3',
     tlvJetTurn:'assets/game/sounds/nsp_rcs_thruster.mp3',
     tlvJetThrust:'assets/game/sounds/nsp_booster_ignite.mp3',
     tlvJetEngine:'assets/game/sounds/nsp_engine_loop.mp3',
-    rzbTankRoll:'assets/game/sounds/rzb_tank_tread_loop_0919.wav',
-    tlvJetBrake:'assets/game/sounds/brake.wav',
-    dkBuck:'assets/game/sounds/reviewed_decker_shotgun.wav',
-    dkShell:'assets/game/sounds/reviewed_decker_shell_eject.wav',
-    dkReload:'assets/game/sounds/reviewed_decker_reload.wav',
+    rzbTankRoll:'assets/game/sounds/rzb_tank_tread_loop_0919.mp3',
+    tlvJetBrake:'assets/game/sounds/brake.mp3',
+    dkBuck:'assets/game/sounds/reviewed_decker_shotgun.mp3',
+    dkShell:'assets/game/sounds/reviewed_decker_shell_eject.mp3',
+    dkReload:'assets/game/sounds/reviewed_decker_reload.mp3',
     /* 0913 authored weapon mixes: every cue owns a gain and retrigger gate below. */
-    colePressureStart:'assets/game/sounds/cole_pressure_start_0913.wav',
-    colePressureLoop:'assets/game/sounds/cole_pressure_loop_0913.wav',
-    colePressureRelease:'assets/game/sounds/cole_pressure_release_0913.wav',
-    colePressureImpact:'assets/game/sounds/cole_pressure_impact_0913.wav',
-    juggernautChargeStart:'assets/game/sounds/juggernaut_charge_start_0913.wav',
-    juggernautChargeLoop:'assets/game/sounds/juggernaut_charge_loop_0913.wav',
-    juggernautRamLaunch:'assets/game/sounds/juggernaut_ram_launch_0913.wav',
-    juggernautRamLoop:'assets/game/sounds/juggernaut_ram_loop_0913.wav',
-    juggernautRamImpact:'assets/game/sounds/juggernaut_wreck_hit_0913.wav',
-    juggernautRamStop:'assets/game/sounds/juggernaut_ram_stop_0913.wav',
-    juggernautChains:'assets/game/sounds/juggernaut_chains_0913.wav',
-    juggernautWreckHit:'assets/game/sounds/juggernaut_wreck_hit_0913.wav',
-    juggernautWreckBlock:'assets/game/sounds/juggernaut_wreck_block_0913.wav',
-    laserMistFire:'assets/game/sounds/laser_mist_fire_0913.wav',
-    laserMistSplit:'assets/game/sounds/laser_mist_split_0913.wav',
-    laserMistBloom:'assets/game/sounds/laser_mist_bloom_0913.wav',
-    laserMistImpact:'assets/game/sounds/laser_mist_impact_0913.wav',
-    coleSonicBoom:'assets/game/sounds/reviewed_cole_sonic_release.wav',
+    colePressureStart:'assets/game/sounds/cole_pressure_start_0913.mp3',
+    colePressureLoop:'assets/game/sounds/cole_pressure_loop_0913.mp3',
+    colePressureRelease:'assets/game/sounds/cole_pressure_release_0913.mp3',
+    colePressureImpact:'assets/game/sounds/cole_pressure_impact_0913.mp3',
+    juggernautChargeStart:'assets/game/sounds/juggernaut_charge_start_0913.mp3',
+    juggernautChargeLoop:'assets/game/sounds/juggernaut_charge_loop_0913.mp3',
+    juggernautRamLaunch:'assets/game/sounds/juggernaut_ram_launch_0913.mp3',
+    juggernautRamLoop:'assets/game/sounds/juggernaut_ram_loop_0913.mp3',
+    juggernautRamImpact:'assets/game/sounds/juggernaut_wreck_hit_0913.mp3',
+    juggernautRamStop:'assets/game/sounds/juggernaut_ram_stop_0913.mp3',
+    juggernautChains:'assets/game/sounds/juggernaut_chains_0913.mp3',
+    juggernautWreckHit:'assets/game/sounds/juggernaut_wreck_hit_0913.mp3',
+    juggernautWreckBlock:'assets/game/sounds/juggernaut_wreck_block_0913.mp3',
+    laserMistFire:'assets/game/sounds/laser_mist_fire_0913.mp3',
+    laserMistSplit:'assets/game/sounds/laser_mist_split_0913.mp3',
+    laserMistBloom:'assets/game/sounds/laser_mist_bloom_0913.mp3',
+    laserMistImpact:'assets/game/sounds/laser_mist_impact_0913.mp3',
+    coleSonicBoom:'assets/game/sounds/reviewed_cole_sonic_release.mp3',
     /* THE DEADLY SONIC BOOM (Mike, 0917): two cues, one family, generated through the gated sheet
        _BUILD_SOURCE/sfx/sonic.json - the first pair was refused as pure bass (0.016 above 2 kHz), the
        shipped pair peaks 1% / 24% in with 0.89 of its energy above 2 kHz. Full charge / half charge. */
-    coleSonicFull:'assets/game/sounds/cole_sonic_full.wav',
-    coleSonicHalf:'assets/game/sounds/cole_sonic_half.wav',
-    sonicChargeStart:'assets/game/sounds/reviewed_cole_sonic_charge_start.wav',
-    sonicChargeLoop:'assets/game/sounds/reviewed_cole_sonic_charge_loop.wav',
-    laserBeamStart:'assets/game/sounds/reviewed_player_laser_beam_start.wav',
-    laserBeamLoop:'assets/game/sounds/reviewed_player_laser_beam_loop.wav',
-    laserBeamEnd:'assets/game/sounds/reviewed_player_laser_beam_end.wav',
-    laserBeamHit:'assets/game/sounds/shield_hit_light.wav',
-    flameThrowerStart:'assets/game/sounds/reviewed_flamethrower_start.wav',
-    flameThrowerLoop:'assets/game/sounds/reviewed_flamethrower_loop.wav',
-    flameThrowerEnd:'assets/game/sounds/reviewed_flamethrower_end.wav',
-    magmaWardFlameLoop:'assets/game/sounds/reviewed_flamethrower_loop.wav',
-    flameHit:'assets/game/sounds/explosion_air_small_01.wav',
-    iceBreathStart:'assets/game/sounds/ice_breath_start.wav',
-    iceBreathLoop:'assets/game/sounds/ice_breath_loop.wav',
-    iceBreathEnd:'assets/game/sounds/ice_breath_release.wav',
-    iceBreathHit:'assets/game/sounds/enemy_ice_bolt.wav',
-    fireIceChargeStart:'assets/game/sounds/ice_breath_start.wav',
+    coleSonicFull:'assets/game/sounds/cole_sonic_full.mp3',
+    coleSonicHalf:'assets/game/sounds/cole_sonic_half.mp3',
+    sonicChargeStart:'assets/game/sounds/reviewed_cole_sonic_charge_start.mp3',
+    sonicChargeLoop:'assets/game/sounds/reviewed_cole_sonic_charge_loop.mp3',
+    laserBeamStart:'assets/game/sounds/reviewed_player_laser_beam_start.mp3',
+    laserBeamLoop:'assets/game/sounds/reviewed_player_laser_beam_loop.mp3',
+    laserBeamEnd:'assets/game/sounds/reviewed_player_laser_beam_end.mp3',
+    laserBeamHit:'assets/game/sounds/shield_hit_light.mp3',
+    flameThrowerStart:'assets/game/sounds/reviewed_flamethrower_start.mp3',
+    flameThrowerLoop:'assets/game/sounds/reviewed_flamethrower_loop.mp3',
+    flameThrowerEnd:'assets/game/sounds/reviewed_flamethrower_end.mp3',
+    magmaWardFlameLoop:'assets/game/sounds/reviewed_flamethrower_loop.mp3',
+    flameHit:'assets/game/sounds/explosion_air_small_01.mp3',
+    iceBreathStart:'assets/game/sounds/ice_breath_start.mp3',
+    iceBreathLoop:'assets/game/sounds/ice_breath_loop.mp3',
+    iceBreathEnd:'assets/game/sounds/ice_breath_release.mp3',
+    iceBreathHit:'assets/game/sounds/enemy_ice_bolt.mp3',
+    fireIceChargeStart:'assets/game/sounds/ice_breath_start.mp3',
     fireIceOrbLaunch:'assets/game/sounds/nsp_charge_release.mp3',
     fireIceOrbImpact:'assets/game/sounds/hit.mp3',
-    laserCannon:'assets/game/sounds/reviewed_laser_cannon.wav',
-    spaceLaserCannon:'assets/game/sounds/reviewed_laser_cannon.wav',
-    spaceLaserHit:'assets/game/sounds/shield_hit_light.wav',
+    laserCannon:'assets/game/sounds/reviewed_laser_cannon.mp3',
+    spaceLaserCannon:'assets/game/sounds/reviewed_laser_cannon.mp3',
+    spaceLaserHit:'assets/game/sounds/shield_hit_light.mp3',
     spaceShadowCharge:'assets/game/sounds/nsp_bof2_charge_shot.mp3',
     /* ⚠ THE LAUNCH CUE WAS THE OTHER HALF OF THE DELAY (Mike, 0906): "in space, the shadow orb,
        you can heard the sound clearly delayed for impact." 0903q cut the IMPACT and the note below
        already recorded that the launch sample "does not reach -12 dB until 928 ms" - it was
        measured, written down, and then not acted on. Re-measured 0906 over the whole envelope:
-       reviewed_shadow_orb_launch.wav runs 2.250 s and PEAKS AT 1.805 s, reaching -6 dB only at
+       reviewed_shadow_orb_launch.mp3 runs 2.250 s and PEAKS AT 1.805 s, reaching -6 dB only at
        1.170 s. There is a thin transient at 20 ms, which is why it never read as silent - it read
        as the sound arriving a beat after the button. Cut 60 ms ahead of the -6 dB crossing (the
        same rule 0903q used on the impact), 4 ms fade-in, peak-normalised to -1 dBFS: 1.140 s long,
        -6 dB at 60 ms, -3 dB at 135 ms. The original file is untouched; swap this line back and
        nothing else moves. */
-    spaceShadowRelease:'assets/game/sounds/reviewed_shadow_orb_launch_fast.wav',
+    spaceShadowRelease:'assets/game/sounds/reviewed_shadow_orb_launch_fast.mp3',
     /* THE ORB'S IMPACT HAD A 454 ms SWELL (drop 0903q). spaceImpact() fires this cue on the frame of
-       contact - the delay Mike heard was in the sample: explosion_plasma.wav peaks at 454 ms, under a
-       reviewed launch cue that does not reach -12 dB until 928 ms. reviewed_shadow_orb_impact.wav is
+       contact - the delay Mike heard was in the sample: explosion_plasma.mp3 peaks at 454 ms, under a
+       reviewed launch cue that does not reach -12 dB until 928 ms. reviewed_shadow_orb_impact.mp3 is
        the same plasma burst cut 60 ms ahead of its peak (4 ms fade-in, normalised), so the hit lands
-       with the flash. explosion_plasma.wav is untouched; swap this line back and nothing else moves. */
-    spaceShadowHit:'assets/game/sounds/reviewed_shadow_orb_impact.wav',
+       with the flash. explosion_plasma.mp3 is untouched; swap this line back and nothing else moves. */
+    spaceShadowHit:'assets/game/sounds/reviewed_shadow_orb_impact.mp3',
     spaceVolleyLaunch:'assets/game/sounds/nsp_rocket_launch.mp3',
-    spaceVolleyHit:'assets/game/sounds/explosion_air_medium.wav',
-    enemyPulseLaserBlue:'assets/game/sounds/reviewed_enemy_laser.wav',
-    enemyPulseLaserRed:'assets/game/sounds/reviewed_enemy_laser.wav',
-    enemyPulseLaserAlien:'assets/game/sounds/reviewed_enemy_laser.wav',
-    enemyHeavyLaser:'assets/game/sounds/reviewed_enemy_laser.wav',
-    enemyScatterLaser:'assets/game/sounds/reviewed_enemy_laser.wav',
-    laserShot:'assets/game/sounds/reviewed_enemy_laser.wav',
-    enemyFlameBolt:'assets/game/sounds/enemy_flame_bolt.wav',
-    enemyIceBolt:'assets/game/sounds/enemy_ice_bolt.wav',
-    enemyElectricBolt:'assets/game/sounds/enemy_electric_bolt.wav',
-    enemyRailCannon:'assets/game/sounds/enemy_rail_cannon.wav',
-    enemyBossCannon:'assets/game/sounds/enemy_boss_cannon.wav',
-    explosionAirSmall01:'assets/game/sounds/explosion_air_small_01.wav',
-    explosionAirSmall02:'assets/game/sounds/explosion_air_small_02.wav',
-    explosionAirMedium:'assets/game/sounds/explosion_air_medium.wav',
-    explosionAirLarge:'assets/game/sounds/explosion_air_large.wav',
-    explosionTankCookoff:'assets/game/sounds/explosion_tank_cookoff.wav',
-    explosionJetBreakup:'assets/game/sounds/explosion_jet_breakup.wav',
-    explosionFuelAir:'assets/game/sounds/explosion_fuel_air.wav',
-    explosionBossCore:'assets/game/sounds/explosion_boss_core.wav',
-    explosionPlasma:'assets/game/sounds/explosion_plasma.wav',
-    explosionElectrical:'assets/game/sounds/explosion_electrical.wav',
-    explosionIceBurst:'assets/game/sounds/explosion_ice_burst.wav',
-    explosionChain:'assets/game/sounds/explosion_chain_sequence.wav',
-    bossWeaponCharge:'assets/game/sounds/boss_weapon_charge.wav',
-    shieldHitLight:'assets/game/sounds/shield_hit_light.wav',
-    shieldHitHeavy:'assets/game/sounds/shield_hit_heavy.wav',
-    shieldBreakCombat:'assets/game/sounds/shield_break_combat.wav',
-    debrisMetal:'assets/game/sounds/debris_scatter_metal.wav',
-    projectileRicochet:'assets/game/sounds/projectile_ricochet.wav',
-    atomicLaunch:'assets/game/sounds/reviewed_lizzie_atom_launch.wav',
-    atomicDetonate:'assets/game/sounds/reviewed_lizzie_atom_impact.wav',
-    megaShieldPickup:'assets/game/sounds/reviewed_axel_mega_shield.wav',
-    specialAbilityPickup:'assets/game/sounds/reviewed_special_pickup.wav',
-    helixChargeStart:'assets/game/sounds/reviewed_maverick_charge_build.wav',
-    helixCharge:'assets/game/sounds/reviewed_maverick_charge_loop.wav',
-    maverickHelixRelease:'assets/game/sounds/reviewed_maverick_helix_release.wav',
+    spaceVolleyHit:'assets/game/sounds/explosion_air_medium.mp3',
+    enemyPulseLaserBlue:'assets/game/sounds/reviewed_enemy_laser.mp3',
+    enemyPulseLaserRed:'assets/game/sounds/reviewed_enemy_laser.mp3',
+    enemyPulseLaserAlien:'assets/game/sounds/reviewed_enemy_laser.mp3',
+    enemyHeavyLaser:'assets/game/sounds/reviewed_enemy_laser.mp3',
+    enemyScatterLaser:'assets/game/sounds/reviewed_enemy_laser.mp3',
+    laserShot:'assets/game/sounds/reviewed_enemy_laser.mp3',
+    enemyFlameBolt:'assets/game/sounds/enemy_flame_bolt.mp3',
+    enemyIceBolt:'assets/game/sounds/enemy_ice_bolt.mp3',
+    enemyElectricBolt:'assets/game/sounds/enemy_electric_bolt.mp3',
+    enemyRailCannon:'assets/game/sounds/enemy_rail_cannon.mp3',
+    enemyBossCannon:'assets/game/sounds/enemy_boss_cannon.mp3',
+    explosionAirSmall01:'assets/game/sounds/explosion_air_small_01.mp3',
+    explosionAirSmall02:'assets/game/sounds/explosion_air_small_02.mp3',
+    explosionAirMedium:'assets/game/sounds/explosion_air_medium.mp3',
+    explosionAirLarge:'assets/game/sounds/explosion_air_large.mp3',
+    explosionTankCookoff:'assets/game/sounds/explosion_tank_cookoff.mp3',
+    explosionJetBreakup:'assets/game/sounds/explosion_jet_breakup.mp3',
+    explosionFuelAir:'assets/game/sounds/explosion_fuel_air.mp3',
+    explosionBossCore:'assets/game/sounds/explosion_boss_core.mp3',
+    explosionPlasma:'assets/game/sounds/explosion_plasma.mp3',
+    explosionElectrical:'assets/game/sounds/explosion_electrical.mp3',
+    explosionIceBurst:'assets/game/sounds/explosion_ice_burst.mp3',
+    explosionChain:'assets/game/sounds/explosion_chain_sequence.mp3',
+    bossWeaponCharge:'assets/game/sounds/boss_weapon_charge.mp3',
+    shieldHitLight:'assets/game/sounds/shield_hit_light.mp3',
+    shieldHitHeavy:'assets/game/sounds/shield_hit_heavy.mp3',
+    shieldBreakCombat:'assets/game/sounds/shield_break_combat.mp3',
+    debrisMetal:'assets/game/sounds/debris_scatter_metal.mp3',
+    projectileRicochet:'assets/game/sounds/projectile_ricochet.mp3',
+    atomicLaunch:'assets/game/sounds/reviewed_lizzie_atom_launch.mp3',
+    atomicDetonate:'assets/game/sounds/reviewed_lizzie_atom_impact.mp3',
+    megaShieldPickup:'assets/game/sounds/reviewed_axel_mega_shield.mp3',
+    specialAbilityPickup:'assets/game/sounds/reviewed_special_pickup.mp3',
+    helixChargeStart:'assets/game/sounds/reviewed_maverick_charge_build.mp3',
+    helixCharge:'assets/game/sounds/reviewed_maverick_charge_loop.mp3',
+    maverickHelixRelease:'assets/game/sounds/reviewed_maverick_helix_release.mp3',
     /* Keep unrelated charge systems out of Maverick's new two-part bed. */
     fusionChargeLoop:'assets/game/sounds/nsp_bof2_charge_shot.mp3',
     fireIceChargeLoop:'assets/game/sounds/nsp_bof2_charge_shot.mp3',
-    gravityTransform:'assets/game/sounds/reviewed_ship_fusion_sequence.wav',
-    gravityFuse:'assets/game/sounds/reviewed_ship_fusion_lock.wav',
-    amb_storm:'assets/game/sounds/reviewed_stage6_wind_loop.wav',
+    gravityTransform:'assets/game/sounds/reviewed_ship_fusion_sequence.mp3',
+    gravityFuse:'assets/game/sounds/reviewed_ship_fusion_lock.mp3',
+    amb_storm:'assets/game/sounds/reviewed_stage6_wind_loop.mp3',
 
     /* ============================================================
        THE 0912j ELEVENLABS SET. Mike: "get rid of those annoying sounds I've complained about and
@@ -74587,72 +74606,72 @@ if(window.BOFA && BOFA.sfx){
        rather than faded, and an impact must carry real energy above 2kHz. See _BUILD_SOURCE/
        sfx_gen.py, and _BUILD_SOURCE/sfx_proof.py for the rendered waveform/spectrogram proof.
        ============================================================ */
-    shieldHitLight:'assets/game/sounds/shield_hit_light.wav',
-    shieldHitHeavy:'assets/game/sounds/shield_hit_heavy.wav',
-    shieldBreakCombat:'assets/game/sounds/shield_break.wav',
-    shieldGraze:'assets/game/sounds/shield_graze.wav',
-    shieldUp:'assets/game/sounds/shield_up.wav',
-    shieldLow:'assets/game/sounds/shield_low.wav',
-    shieldBossAbsorb:'assets/game/sounds/shield_boss_absorb.wav',
+    shieldHitLight:'assets/game/sounds/shield_hit_light.mp3',
+    shieldHitHeavy:'assets/game/sounds/shield_hit_heavy.mp3',
+    shieldBreakCombat:'assets/game/sounds/shield_break.mp3',
+    shieldGraze:'assets/game/sounds/shield_graze.mp3',
+    shieldUp:'assets/game/sounds/shield_up.mp3',
+    shieldLow:'assets/game/sounds/shield_low.mp3',
+    shieldBossAbsorb:'assets/game/sounds/shield_boss_absorb.mp3',
 
     /* one signature ordnance voice per stage boss - see BOSS_KIND_SFX */
     /* 0914 encounter-owned reports; matching TAME rows prevent per-round stacking. */
-    razorbackGun:'assets/game/sounds/reviewed_enemy_heavy_mg.wav',
-    razorbackPressure:'assets/game/sounds/cole_pressure_release_0913.wav',
-    razorbackCharge:'assets/game/sounds/cole_pressure_start_0913.wav',
+    razorbackGun:'assets/game/sounds/reviewed_enemy_heavy_mg.mp3',
+    razorbackPressure:'assets/game/sounds/cole_pressure_release_0913.mp3',
+    razorbackCharge:'assets/game/sounds/cole_pressure_start_0913.mp3',
     razorbackRocket:'assets/game/sounds/nsp_rocket_launch.mp3',
-    razorbackRam:'assets/game/sounds/juggernaut_ram_launch_0913.wav',
-    overlordGun:'assets/game/sounds/reviewed_enemy_heavy_mg.wav',
+    razorbackRam:'assets/game/sounds/juggernaut_ram_launch_0913.mp3',
+    overlordGun:'assets/game/sounds/reviewed_enemy_heavy_mg.mp3',
     overlordRocket:'assets/game/sounds/nsp_rocket_launch.mp3',
-    overlordLance:'assets/game/sounds/reviewed_enemy_laser.wav',
-    overlordWind:'assets/game/sounds/cole_pressure_release_0913.wav',
-    overlordCharge:'assets/game/sounds/furnace_power_surge.wav',
-    overlordRotor:'assets/game/sounds/overlord_helicopter_rotor.wav',
-    wardenGun:'assets/game/sounds/reviewed_enemy_heavy_mg.wav',
-    wardenCenterGun:'assets/game/sounds/enemy_machine_shot_light.wav',
+    overlordLance:'assets/game/sounds/reviewed_enemy_laser.mp3',
+    overlordWind:'assets/game/sounds/cole_pressure_release_0913.mp3',
+    overlordCharge:'assets/game/sounds/furnace_power_surge.mp3',
+    overlordRotor:'assets/game/sounds/overlord_helicopter_rotor.mp3',
+    wardenGun:'assets/game/sounds/reviewed_enemy_heavy_mg.mp3',
+    wardenCenterGun:'assets/game/sounds/enemy_machine_shot_light.mp3',
     wardenRocket:'assets/game/sounds/nsp_rocket_launch.mp3',
-    wardenRackCharge:'assets/game/sounds/furnace_servo_whirr.wav',
-    sovereignDive:'assets/game/sounds/juggernaut_charge_start_0913.wav',
-    sovereignFlyby:'assets/game/sounds/juggernaut_ram_launch_0913.wav',
-    sovereignContact:'assets/game/sounds/shield_hit_heavy.wav',
-    sovereignIntercept:'assets/game/sounds/enemy_electric_bolt.wav',
+    wardenRackCharge:'assets/game/sounds/furnace_servo_whirr.mp3',
+    sovereignDive:'assets/game/sounds/juggernaut_charge_start_0913.mp3',
+    sovereignFlyby:'assets/game/sounds/juggernaut_ram_launch_0913.mp3',
+    sovereignContact:'assets/game/sounds/shield_hit_heavy.mp3',
+    sovereignIntercept:'assets/game/sounds/enemy_electric_bolt.mp3',
     sovereignBreak:'assets/game/sounds/expBig.mp3',
-    sovereignHelperGun:'assets/game/sounds/enemy_machine_shot_heavy.wav',
-    sovereignHeat:'assets/game/sounds/furnace_servo_whirr.wav',
-    sovereignWindup:'assets/game/sounds/furnace_power_surge.wav',
-    sovereignLaser:'assets/game/sounds/reviewed_enemy_laser.wav',
-    bossfireDamkeeper:'assets/game/sounds/bossfire_damkeeper.wav',
-    bossfireInfernoreaver:'assets/game/sounds/bossfire_infernoreaver.wav',
-    bossfireCryospear:'assets/game/sounds/bossfire_cryospear.wav',
-    bossfireStormsovereign:'assets/game/sounds/bossfire_stormsovereign.wav',
-    bossfireXenoregent:'assets/game/sounds/bossfire_xenoregent.wav',
-    bossfireDoomsdaycarrier:'assets/game/sounds/bossfire_doomsdaycarriermk2.wav',
-    bossfireSludgeemperor:'assets/game/sounds/bossfire_sludgeemperor.wav',
-    bossfireVileexistence:'assets/game/sounds/bossfire_vileexistence.wav',
-    bossfireTidalfusion:'assets/game/sounds/bossfire_tidalfusion.wav',
+    sovereignHelperGun:'assets/game/sounds/enemy_machine_shot_heavy.mp3',
+    sovereignHeat:'assets/game/sounds/furnace_servo_whirr.mp3',
+    sovereignWindup:'assets/game/sounds/furnace_power_surge.mp3',
+    sovereignLaser:'assets/game/sounds/reviewed_enemy_laser.mp3',
+    bossfireDamkeeper:'assets/game/sounds/bossfire_damkeeper.mp3',
+    bossfireInfernoreaver:'assets/game/sounds/bossfire_infernoreaver.mp3',
+    bossfireCryospear:'assets/game/sounds/bossfire_cryospear.mp3',
+    bossfireStormsovereign:'assets/game/sounds/bossfire_stormsovereign.mp3',
+    bossfireXenoregent:'assets/game/sounds/bossfire_xenoregent.mp3',
+    bossfireDoomsdaycarrier:'assets/game/sounds/bossfire_doomsdaycarriermk2.mp3',
+    bossfireSludgeemperor:'assets/game/sounds/bossfire_sludgeemperor.mp3',
+    bossfireVileexistence:'assets/game/sounds/bossfire_vileexistence.mp3',
+    bossfireTidalfusion:'assets/game/sounds/bossfire_tidalfusion.mp3',
 
-    alertBossIncoming:'assets/game/sounds/alert_boss_incoming.wav',
-    alertDanger:'assets/game/sounds/alert_danger.wav',
-    alertLockon:'assets/game/sounds/alert_lockon.wav',
+    alertBossIncoming:'assets/game/sounds/alert_boss_incoming.mp3',
+    alertDanger:'assets/game/sounds/alert_danger.mp3',
+    alertLockon:'assets/game/sounds/alert_lockon.mp3',
     /* THE RETINA LOCK's beep (0912) - one short tick, rescheduled faster as a launch closes in */
     retinaLockBeep:'assets/game/sounds/nsp_console_beep.mp3',
     /* the FURNACE TYRANT (0912t): the pack's six synthesized assembly cues, plus the shipped samples it layered */
-    furnaceChainLaunch:'assets/game/sounds/furnace_chain_launch.wav',
-    furnaceChainReel:'assets/game/sounds/furnace_chain_reel.wav',
-    furnaceArmLock:'assets/game/sounds/furnace_arm_lock.wav',
-    furnacePowerSurge:'assets/game/sounds/furnace_power_surge.wav',
-    furnaceReactorHum:'assets/game/sounds/furnace_reactor_hum.wav',
-    furnaceServo:'assets/game/sounds/furnace_servo_whirr.wav',
-    furnaceFlameIgnite:'assets/game/sounds/flamethrower_ignite.wav',
-    furnaceFlameRelease:'assets/game/sounds/flamethrower_release.wav',
-    furnaceLaserStart:'assets/game/sounds/laser_beam_start.wav',
-    furnaceLaserEnd:'assets/game/sounds/laser_beam_end.wav',
-    furnaceHeavyLaser:'assets/game/sounds/enemy_heavy_laser.wav',
-    alertBeamCharge:'assets/game/sounds/alert_beam_charge.wav',
-    firewallArrive:'assets/game/sounds/firewall_arrive.wav',
-    firewallPass:'assets/game/sounds/firewall_pass.wav',
-    s2GeyserWarn:'assets/game/sounds/s2_geyser_warn_0918.wav',
-    s2GeyserErupt:'assets/game/sounds/s2_geyser_erupt_0918.wav',
+    furnaceChainLaunch:'assets/game/sounds/furnace_chain_launch.mp3',
+    furnaceChainReel:'assets/game/sounds/furnace_chain_reel.mp3',
+    furnaceArmLock:'assets/game/sounds/furnace_arm_lock.mp3',
+    furnacePowerSurge:'assets/game/sounds/furnace_power_surge.mp3',
+    furnaceReactorHum:'assets/game/sounds/furnace_reactor_hum.mp3',
+    furnaceServo:'assets/game/sounds/furnace_servo_whirr.mp3',
+    furnaceFlameIgnite:'assets/game/sounds/flamethrower_ignite.mp3',
+    furnaceFlameRelease:'assets/game/sounds/flamethrower_release.mp3',
+    furnaceLaserStart:'assets/game/sounds/laser_beam_start.mp3',
+    furnaceLaserEnd:'assets/game/sounds/laser_beam_end.mp3',
+    furnaceHeavyLaser:'assets/game/sounds/enemy_heavy_laser.mp3',
+    alertBeamCharge:'assets/game/sounds/alert_beam_charge.mp3',
+    firewallArrive:'assets/game/sounds/firewall_arrive.mp3',
+    firewallPass:'assets/game/sounds/firewall_pass.mp3',
+    s2GeyserWarn:'assets/game/sounds/s2_geyser_warn_0918.mp3',
+    s2GeyserErupt:'assets/game/sounds/s2_geyser_erupt_0918.mp3',
 
     /* ============================================================
        TWENTY CUES THE CODE ASKS FOR AND THE ENGINE DOES NOT HAVE (drop 0912k)
@@ -74673,36 +74692,36 @@ if(window.BOFA && BOFA.sfx){
        equivalent in the library at all and are newly generated - see _BUILD_SOURCE/sfx/creature.json.
        ⚠ EVERY ONE OF THESE NEEDS A TAME ROW TOO. See the note at A.TAME.
        ============================================================ */
-    explodeBig:'assets/game/sounds/explosion_boss_core.wav',
-    explosion:'assets/game/sounds/explosion_air_medium.wav',
-    enemyBossHit:'assets/game/sounds/explosion_air_small_01.wav',
-    missileHit:'assets/game/sounds/explosion_air_small_02.wav',
-    grenadeHit:'assets/game/sounds/explosion_fuel_air.wav',
-    fireOrbImpact:'assets/game/sounds/explosion_plasma.wav',
-    iceOrbImpact:'assets/game/sounds/explosion_ice_burst.wav',
-    boom:'assets/game/sounds/explosion_air_large.wav',
-    nuclearDetonate:'assets/game/sounds/explosion_chain_sequence.wav',
+    explodeBig:'assets/game/sounds/explosion_boss_core.mp3',
+    explosion:'assets/game/sounds/explosion_air_medium.mp3',
+    enemyBossHit:'assets/game/sounds/explosion_air_small_01.mp3',
+    missileHit:'assets/game/sounds/explosion_air_small_02.mp3',
+    grenadeHit:'assets/game/sounds/explosion_fuel_air.mp3',
+    fireOrbImpact:'assets/game/sounds/explosion_plasma.mp3',
+    iceOrbImpact:'assets/game/sounds/explosion_ice_burst.mp3',
+    boom:'assets/game/sounds/explosion_air_large.mp3',
+    nuclearDetonate:'assets/game/sounds/explosion_chain_sequence.mp3',
     nuclearLaunch:'assets/game/sounds/nsp_rocket_launch.mp3',
-    chargeStart:'assets/game/sounds/boss_weapon_charge.wav',
+    chargeStart:'assets/game/sounds/boss_weapon_charge.mp3',
     rank:'assets/game/sounds/stats_bar.mp3',
-    bodyDrop:'assets/game/sounds/debris_scatter_metal.wav',
+    bodyDrop:'assets/game/sounds/debris_scatter_metal.mp3',
     coreUnlocked:'assets/game/sounds/nsp_docking_clamp.mp3',
-    flameOut:'assets/game/sounds/reviewed_flamethrower_end.wav',
-    iceBreathStop:'assets/game/sounds/ice_breath_release.wav',
+    flameOut:'assets/game/sounds/reviewed_flamethrower_end.mp3',
+    iceBreathStop:'assets/game/sounds/ice_breath_release.mp3',
 
     /* the nine that had nothing to borrow - there is no creature roar, no mech footfall and no
        teleport anywhere in the 164-file library. These are the boss-PRESENCE cues, and their
        absence is why the Colossus, the Olive Warden and the Toxic Portal Warden move and attack
        without ever sounding alive. */
-    mechRoar:'assets/game/sounds/mechRoar.wav',
-    mechScream:'assets/game/sounds/mechScream.wav',
-    mechFootWhir:'assets/game/sounds/mechFootWhir.wav',
-    wardenRoar:'assets/game/sounds/wardenRoar.wav',
-    wardenScream:'assets/game/sounds/wardenScream.wav',
-    clank:'assets/game/sounds/clank.wav',
-    enemyToxicSpit:'assets/game/sounds/enemyToxicSpit.wav',
-    teleportIn:'assets/game/sounds/teleportIn.wav',
-    teleportOut:'assets/game/sounds/teleportOut.wav'
+    mechRoar:'assets/game/sounds/mechRoar.mp3',
+    mechScream:'assets/game/sounds/mechScream.mp3',
+    mechFootWhir:'assets/game/sounds/mechFootWhir.mp3',
+    wardenRoar:'assets/game/sounds/wardenRoar.mp3',
+    wardenScream:'assets/game/sounds/wardenScream.mp3',
+    clank:'assets/game/sounds/clank.mp3',
+    enemyToxicSpit:'assets/game/sounds/enemyToxicSpit.mp3',
+    teleportIn:'assets/game/sounds/teleportIn.mp3',
+    teleportOut:'assets/game/sounds/teleportOut.mp3'
   });
 }
 
@@ -74827,7 +74846,7 @@ const Snd=(function(){
     /* ⚠ enemyFlameBolt HAD NO GATE and magmaWardSound calls it from three sites, one of them a
        per-volley counter. Its sample was also one of ten shipped one-shots whose transient landed
        late (78% of its own length, with 0ms of leading silence, so a trim could not fix it) and
-       was regenerated - the old file is at _BUILD_SOURCE/_backups/enemy_flame_bolt.wav.pre0912k.
+       was regenerated - the old file is at _BUILD_SOURCE/_backups/enemy_flame_bolt.mp3.pre0912k.
        ⚠ THE OTHER SEVEN LATE ONE-SHOTS ARE `reviewed_*`, i.e. Mike's approved and mastered pack,
        and are LEFT ALONE. Replacing those is his call, not a measurement's. arc_barrel_roll is
        left too: a barrel roll is a sweep, and a sweep peaking mid-way is the klaxon lesson again. */
@@ -74919,7 +74938,7 @@ const Snd=(function(){
 
     missile:  {g:0.62, lp:4200, min:0.11},
     firewall: {g:0.58, lp:3400, min:0.10},
-    /* flame_wall.wav replaced 'firewall' on the flamethrower in 0801km. TAME is keyed
+    /* flame_wall.mp3 replaced 'firewall' on the flamethrower in 0801km. TAME is keyed
        by NAME, so without this line the new sample would have played raw and undone
        drop 0730a's fix for "the missile and firewave sounds are harsh to the ears."
        Same shaping as the sound it replaces. It runs as a sustained loop rather than
@@ -75222,7 +75241,7 @@ const Snd=(function(){
          ice breath still play no sound when used or hitting enemies." Measured: readyState 0
          when loopOn fired, paused TRUE afterwards, currentTime 0.004 - it never ran. loopOn
          calls play() exactly once, guarded by `if(!L.on)`; the trigger is pulled the instant
-         the weapon fires, which is before a lazily-fetched .wav has decoded, so the promise
+         the weapon fires, which is before a lazily-fetched .mp3 has decoded, so the promise
          rejects, is swallowed by the .catch, and `on` stays true - latching the sound off for
          the rest of the session with every other value looking correct.
          Same shape as XART.rdy() being false on its first call, one subsystem over: the first
