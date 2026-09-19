@@ -28451,8 +28451,9 @@ function pShoot(){
     if(chromeSpreadActive()) chromeSpreadFire(lv);
     else {
     const n=2+lv+(forgeActiveTier(1)>=3?1:0);
-    const sprd=0.22+lv*0.05;
     const rayburst=forgeActiveTier(1)>0 && forgeEntry(1)?.elem==='prism';
+    // At level V the ordinary spread angle sends the outer two rays downward.
+    const sprd=rayburst?Math.min(.18+lv*.015,.25):(.22+lv*.05);
     if(rayburst && typeof XART!=='undefined') XART.rdy('forge_elem_prism_laser_0918');
     for(let i=0;i<n;i++){
       const a=-Math.PI/2 + (i-(n-1)/2)*sprd;
