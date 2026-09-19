@@ -6,7 +6,7 @@ module.exports=function testAwards(vm,ctxv,ok){
      Driven end to end by probe_awards_0916.py (22/0). */
 
   /* ---- the seventh title button ---- */
-  ok(vm.runInContext("TITLE_ITEMS.length===7&&TITLE_ITEMS.indexOf('ACHIEVEMENTS')>=0",ctxv),
+  ok(vm.runInContext("TITLE_ITEMS.length===8&&TITLE_ITEMS.indexOf('ACHIEVEMENTS')>=0",ctxv),
      'the title carries an ACHIEVEMENTS button');
   ok(vm.runInContext("MENU_KEYS.length===TITLE_ITEMS.length&&MENU_KEYS.indexOf('btn_achievements_0916')===TITLE_ITEMS.indexOf('ACHIEVEMENTS')",ctxv),
      'its plate sits at its own index - the two tables cannot slip');

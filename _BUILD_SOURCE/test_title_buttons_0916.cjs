@@ -12,8 +12,8 @@ module.exports=function testTitleButtons(vm,ctxv,ok){
      construction. Driven in real Chromium by the 0916 title probe (12/0), which reads the blits
      back off the context by KEY. */
 
-  ok(vm.runInContext("TITLE_ITEMS.length===7&&MENU_KEYS.length===7&&TITLE_ICONS.length===7",ctxv),
-     'seven rows, seven plates, seven fallback icons');
+  ok(vm.runInContext("TITLE_ITEMS.length===8&&MENU_KEYS.length===8&&TITLE_ICONS.length===8",ctxv),
+     'eight rows, eight plates, eight fallback icons');
 
   /* ⚠ TITLE_ICONS EXISTS BECAUSE THE FALLBACK WAS A FIFTH PLACE THAT KNEW THE MENU LENGTH.
      It was an inline six-entry array against a seven-row menu, so EXIT GAME drew with icon

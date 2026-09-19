@@ -2121,7 +2121,7 @@ const XART=(function(){
      away from being reverted and `title_lights_0916.py` can always be re-run from a clean source
      rather than from its own output - a script that consumes its own output is not idempotent
      (0907u, where exactly that made a plate worse on every run). */
-  for(const _b of ['newgame','password','options','help','achievements','credits','exit'])
+  for(const _b of ['newgame','password','options','help','armory','achievements','credits','exit'])
     X._src['btn_'+_b+'_0916']='assets/game/ui/title_0916/btn_'+_b+'_lit.png';
   /* the achievement plaques: nine medals generated as ONE sheet and sliced on its own alpha
      gutters, so they share a light source and a bevel weight by construction (ach_plaques_0916.py) */
@@ -63178,10 +63178,10 @@ function drawStaticPlayer(){
    the cursor with `%5` in two places; adding a row without those would have made the last item
    unreachable from below and produced a cursor that skips - the exact symptom 0801r spent a drop
    chasing. Driven off TITLE_ITEMS.length now, so a seventh button is one edit. */
-const TITLE_ITEMS=['NEW GAME','PASSWORD','OPTIONS','HELP','ACHIEVEMENTS','CREDITS','EXIT GAME'];
+const TITLE_ITEMS=['NEW GAME','PASSWORD','OPTIONS','HELP','ARMORY','ACHIEVEMENTS','CREDITS','EXIT GAME'];
 /* one icon per TITLE_ITEM, for the pre-decode fallback rows only - asserted the same length */
-const TITLE_ICONS=['ship','lock','gear','help','medal','star','door'];
-const MENU_KEYS=['btn_newgame_0916','btn_password_0916','btn_options_0916','btn_help_0916','btn_achievements_0916','btn_credits_0916','btn_exit_0916'];
+const TITLE_ICONS=['ship','lock','gear','help','gear','medal','star','door'];
+const MENU_KEYS=['btn_newgame_0916','btn_password_0916','btn_options_0916','btn_help_0916','btn_armory_0916','btn_achievements_0916','btn_credits_0916','btn_exit_0916'];
 /* ⚠ THE DISPATCH IS KEYED BY NAME, NOT BY INDEX (ACH-02). It was a ladder of `m===0 .. m===4`
    with `else { tryExit(); }` at the end, so INSERTING a row silently repointed every entry below it
    and the fallback turned whatever landed last into EXIT GAME. Adding AWARDS before CREDITS is
@@ -63191,6 +63191,7 @@ const TITLE_ACTION={
   'PASSWORD': function(){ setState(GS.PASSWORD); pwInput=''; },
   'OPTIONS':  function(){ setState(GS.OPTIONS); menuIndex=0; },
   'HELP':     function(){ setState(GS.HELP); helpPage=0; helpT=0; },
+  'ARMORY': function(){ armoryOpen('title'); setState(GS.ARMORY); },
   'ACHIEVEMENTS': function(){ setState(GS.ACHIEVEMENTS); awardsOpen(); },
   'CREDITS':  function(){ setState('credits'); },
   'EXIT GAME':function(){ tryExit(); }
@@ -63559,19 +63560,9 @@ function armoryRows(w){
 function armoryBuy(){
   const A=armory; if(!A) return null;
   const w=FORGE_WEAPONS[A.tab|0], r=armoryRows(w)[A.i|0]; if(!r) return null;
-  if(!r.open){ armorySay(r.gate==='ngplus'?'DARK MATTER OPENS IN NEW GAME +':'TIDAL OPENS AFTER STAGE 9'); try{ Audio.SFX.blocked&&Audio.SFX.blocked(); }catch(_ab0){} return 'gated'; }
-  if(!r.earned){ armorySay('EARN '+String(r.name).toUpperCase()+' FROM A BOSS FIRST'); try{ Audio.SFX.blocked&&Audio.SFX.blocked(); }catch(_ab3){} return 'locked'; }
-  const res=r.purchased?forgeLevelBuy(r.elem,w):forgeComboBuy(r.elem,w);
-  if(res==='ok'){
-    armorySay(r.purchased?(r.name+'  -  LEVEL '+forgeOwnedLevel(r.elem,w)):(r.name+' RECIPE ACQUIRED'));
-    try{ Audio.SFX.select&&Audio.SFX.select(); }catch(_ab1){}
-  }
-  else if(res==='maxed') armorySay(r.name+' IS AT LEVEL '+INFUSION_MAX);
-  else if(res==='poor') armorySay('NEED '+Math.max(0,r.cost-furiousBalance())+' MORE FURIOUS PTS');
-  else if(res==='locked') armorySay('EARN '+String(r.name).toUpperCase()+' FROM A BOSS FIRST');
-  else armorySay('NOT AVAILABLE');
-  if(res!=='ok'){ try{ Audio.SFX.blocked&&Audio.SFX.blocked(); }catch(_ab2){} }
-  return res;
+  armorySay(r.open&&r.purchased?'ALREADY IN YOUR ARSENAL':'DEFEAT BOSSES AND FORGE TO UNLOCK');
+  try{ (r.open&&r.purchased?Audio.SFX.select:Audio.SFX.blocked)?.(); }catch(_ab){}
+  return r.open&&r.purchased?'owned':'locked';
 }
 function drawArmory(dt){
   const A=armory||(armoryOpen('vault'),armory); A.t+=dt; if(A.msgT>0) A.msgT-=dt;
@@ -63613,7 +63604,7 @@ function drawArmory(dt){
     ctx.restore();
     /* the badge at the level owned - the same key weaponIconKey answers once the weapon is forged */
     const ik='micon_forge_'+r.elem+'_'+w+(r.lv>1?'_'+r.lv:''), ih=rh*0.82, ix=x0+wdt*0.012+ih/2, iy=ry+rh/2;
-    ctx.save(); ctx.globalAlpha=(r.open&&r.earned)?1:0.35;
+    ctx.save(); ctx.globalAlpha=(r.open&&r.purchased)?1:0.18;
     /* ⚠ THE LAST FALLBACK IS THE WEAPON'S OWN TIER ICON, AND IT IS NOT OPTIONAL. Both branches used to
        build a micon_forge_* key, and those plates exist only for the six slots whose sheets were
        generated - so every row on the FLAME, MIST and BOLT tabs drew a hole while the weapon's own icon
@@ -63625,20 +63616,19 @@ function drawArmory(dt){
       else if(_bk) iconBlit(ctx,_bk,ix,iy,ih,true);
     }
     ctx.restore();
+    if(art && (!r.open||!r.purchased)) stageText(art,'?',ix,iy,21,'#c1cad9',0.95,1,0.05);
     if(!art) continue;
     const pad=wdt*0.035+ih, lh=Math.min(rh*0.40,10);
     const col=(!r.open||!r.earned)?'#6a7180':(r.lv>=INFUSION_MAX?'#8de23a':(bal>=r.cost?'#ffd24a':'#b06a6a'));
-    const nm=String(r.name).toUpperCase(), room=wdt-pad*2-60;
+    const nm=(r.open&&r.purchased)?String(r.name).toUpperCase():'???  LOCKED', room=wdt-pad*2-60;
     const fh=(typeof stageFitH==='function')?stageFitH(art,nm,room,lh,7,0.06):lh;
     stageText(art,nm,x0+pad+((typeof stageWidth==='function')?stageWidth(art,nm,fh,0.06):0)/2,ry+rh*0.34,fh,col,0.85,1,0.06);
     const sub=!r.open?(r.gate==='ngplus'?'NEW GAME + ONLY':'AFTER STAGE 9')
-            : !r.earned?'BOSS ELEMENT REQUIRED'
-            : !r.purchased?'RECIPE - BUY WITH FURIOUS PTS'
-            : ('LEVEL '+r.lv+(r.lv>=INFUSION_MAX?'  -  MAX':('  -  NEXT: LEVEL '+(r.lv+1))));
+            : !r.purchased?'DEFEAT BOSSES AND FORGE TO UNLOCK'
+            : ('UNLOCKED  -  LEVEL '+r.lv);
     const sh=(typeof stageFitH==='function')?stageFitH(art,sub,room,lh*0.85,6,0.06):lh*0.85;
     stageText(art,sub,x0+pad+((typeof stageWidth==='function')?stageWidth(art,sub,sh,0.06):0)/2,ry+rh*0.70,sh,'#7f8899',0.8,1,0.06);
-    if(r.open && r.earned && (!r.purchased || r.lv<INFUSION_MAX)){ const pt=String(r.cost);
-      stageText(art,pt,x0+wdt-wdt*0.04-((typeof stageWidth==='function')?stageWidth(art,pt,fh,0.06):0)/2,ry+rh/2,fh,bal>=r.cost?'#ffd24a':'#b06a6a',0.85,1,0.06); }
+
   }
   if(maxScroll>0){
     const ax=VW-12, tw2=8, th=7;
@@ -63656,29 +63646,31 @@ function drawArmory(dt){
     ctx.restore();
     const next=chosen.purchased?Math.min(INFUSION_MAX,chosen.lv+1):1;
     const badge=forgeBadgeKey(chosen.elem,w,next); XART.rdy(badge);
-    forgeIconFit(badge,x0+43,detailY+detailH*.5,detailH*.70,72,1);
-    if(w===5 && chosen.elem==='fire' && XART.rdy('magma_orb_0918')){
+    if(chosen.open&&chosen.purchased) forgeIconFit(badge,x0+43,detailY+detailH*.5,detailH*.70,72,1);
+    else if(art) stageText(art,'?',x0+43,detailY+detailH*.5,32,'#b8c2d0',0.85,1,.05);
+    if(chosen.open&&chosen.purchased&&w===5 && chosen.elem==='fire' && XART.rdy('magma_orb_0918')){
       const orb=XART.get('magma_orb_0918'),sz=Math.min(56,detailH*.68),cx=x0+116,cy=detailY+detailH*.50;
       ctx.save();ctx.shadowColor='#ff5b19';ctx.shadowBlur=10;ctx.imageSmoothingEnabled=false;
       ctx.drawImage(orb,32,32,64,64,cx-sz/2,cy-sz/2,sz,sz);ctx.restore();
     }
     if(art){
-      const lines=[forgeStyleName(chosen.elem,w,1),forgeStyleName(chosen.elem,w,3),forgeStyleName(chosen.elem,w,5)];
-      for(let j=0;j<3;j++){
+      const lines=chosen.open&&chosen.purchased?[forgeStyleName(chosen.elem,w,1),forgeStyleName(chosen.elem,w,3),forgeStyleName(chosen.elem,w,5)]:[];
+      for(let j=0;j<lines.length;j++){
         const label=(j===0?'I   ':j===1?'III ': 'V   ')+lines[j];
         const th=Math.min(8,stageFitH(art,label,wdt*.53,8,6,.05));
         stageText(art,label,x0+wdt*.48,detailY+15+j*18,th,j===0?'#ffd98a':j===1?'#ff9c59':'#ff6550',.85,1,.05);
       }
-      const action=!chosen.open?'LOCKED':!chosen.earned?'DEFEAT THE BOSS':!chosen.purchased?'BUY RECIPE  '+chosen.cost+' FP':
-        chosen.lv>=INFUSION_MAX?'MAX LEVEL':'BUY LEVEL '+(chosen.lv+1)+'  '+chosen.cost+' FP';
+      const action=!chosen.open?'LOCKED':!chosen.purchased?'UNLOCK THROUGH THE FORGE':'IN YOUR ARSENAL';
       stageText(art,action,x0+wdt*.49,detailY+detailH-9,Math.min(9,stageFitH(art,action,wdt*.61,9,6,.05)),'#9fd6ff',.85,1,.05);
     }
     const pv=[x0+wdt-89,detailY+6,79,detailH-12],pid=w+'|'+chosen.elem+'|'+next;
-    if(A.previewId!==pid){A.previewId=pid;A.preview=forgePreviewNew(w,chosen.elem,next);}
-    forgePreviewTick(A.preview,pv[2],pv[3],dt); forgePreviewDraw(A.preview,pv[0],pv[1],pv[2],pv[3]);
+    if(chosen.open&&chosen.purchased){
+      if(A.previewId!==pid){A.previewId=pid;A.preview=forgePreviewNew(w,chosen.elem,next);}
+      forgePreviewTick(A.preview,pv[2],pv[3],dt); forgePreviewDraw(A.preview,pv[0],pv[1],pv[2],pv[3]);
+    }
   }
   if(typeof controlHintRow==='function')
-    controlHintRow([['pad_dpad','WEAPON / ELEMENT'],['pad_a','BUY'],['pad_b','BACK']],VH-14,VW/2,VW-24);
+    controlHintRow([['pad_dpad','WEAPON / ELEMENT'],['pad_a','VIEW'],['pad_b','BACK']],VH-14,VW/2,VW-24);
   /* each read ONCE - these consume their tap */
   const up=(Input.menuUp?Input.menuUp():false), dn=(Input.menuDown?Input.menuDown():false);
   const lf=(Input.menuLeft?Input.menuLeft():false), rt=(Input.menuRight?Input.menuRight():false);
@@ -63687,8 +63679,19 @@ function drawArmory(dt){
   else if(up){ A.i=Math.max(0,A.i-1); try{ Audio.SFX.blip&&Audio.SFX.blip(); }catch(_a4){} }
   if(lf||rt){ A.tab=((A.tab+(rt?1:-1))%FORGE_WEAPONS.length+FORGE_WEAPONS.length)%FORGE_WEAPONS.length; A.i=0; A.scroll=0; try{ Audio.SFX.blip&&Audio.SFX.blip(); }catch(_a5){} }
   if(go) armoryBuy();
+  const md=!!Input.mouse.down;
+  if(md&&!A.md&&Input.mouse.inside){
+    const mx=Input.mouse.x,my=Input.mouse.y;
+    if(my>=tabY&&my<tabY+tabH&&mx>=tx0&&mx<tx0+tw*FORGE_WEAPONS.length){ A.tab=clamp(Math.floor((mx-tx0)/tw),0,FORGE_WEAPONS.length-1);A.i=0;A.scroll=0; }
+    else if(my>=y0&&my<y0+ARMORY_VIEW*rowH&&mx>=x0&&mx<x0+wdt){
+      const hit=clamp(A.scroll+Math.floor((my-y0)/rowH),0,rows.length-1);
+      if(hit===A.i) armoryBuy(); else A.i=hit;
+    }
+  }
+  A.md=md;
   if(Input.menuBack&&Input.menuBack()){
     if(A.back==='forge' && typeof forge!=='undefined' && forge) setState(GS.FORGE);
+    else if(A.back==='title'){ setState(GS.TITLE); menuIndex=TITLE_ITEMS.indexOf('ARMORY'); }
     else { setState(GS.VAULT); vaultOpen(); }
   }
 }
