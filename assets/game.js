@@ -8223,7 +8223,7 @@ const FORGE_TAB_NAME=Object.freeze({0:'MG',1:'SPREAD',2:'MISSILE',3:'LASER',4:'F
 const FORGE_NAMES=Object.freeze({
   fire:     {0:'INCENDIARY SLUGS', 1:'NAPALM FAN',    2:'HELLFIRE RACK',  3:'INFERNO BEAM',   5:'MAGMA ORB',    7:'INFERNO GATLING', 4:'BLAST FURNACE', 6:'EMBER MIST',  8:'MAGMA SPHERE'},
   ice:      {0:'CRYO SLUGS',       1:'SHARD FAN',     2:'FROSTBITE RACK', 3:'CRYO BEAM',      5:'GLACIER ORB',  7:'HAIL GATLING', 4:'ABSOLUTE ZERO', 6:'FROST MIST',  8:'HAIL SPHERE'},
-  lightning:{0:'VOLT SLUGS',       1:'ARC FAN',       2:'STORM RACK',     3:'TESLA BEAM',     5:'THUNDER ORB',  7:'STORM GATLING', 4:'PLASMA JET',    6:'STORM MIST',  8:'TESLA SPHERE'},
+  lightning:{0:'VOLT SLUGS',       1:'ARC FAN',       2:'STORM RACK',     3:'LIGHTNING BURST',     5:'THUNDER ORB',  7:'STORM GATLING', 4:'PLASMA JET',    6:'STORM MIST',  8:'TESLA SPHERE'},
   prism:    {0:'PRISM SLUGS',      1:'RAYBURST',  2:'PRISM RACK',     3:'LUMINAIRE BEAM', 5:'PRISM ORB',    7:'PRISM GATLING', 4:'SPECTRUM JET',  6:'PRISM MIST',  8:'PRISM SPHERE'},
   toxic:    {0:'VENOM SLUGS',      1:'ACID FAN',      2:'BLIGHT RACK',    3:'DECAY BEAM',     5:'PLAGUE ORB',   7:'VENOM GATLING', 4:'VENOM JET',     6:'BLIGHT MIST', 8:'PLAGUE SPHERE'},
   kinetic:  {0:'SONIC SLUGS',      1:'SHOCK FAN',     2:'IMPACT RACK',    3:'GIANT BEAM',     5:'KINETIC ORB',  7:'HAMMER GATLING', 4:'PRESSURE JET',  6:'SHOCK MIST',  8:'IMPACT SPHERE'},
@@ -8272,6 +8272,7 @@ function forgeStyleName(elem,w,lv){
   const base=(FORGE_NAMES[elem]&&FORGE_NAMES[elem][w])||((INFUSIONS[elem]||{}).name+' '+WEAPONS[w]);
   if(elem==='prism' && w===1) return (lv|0)>=5?'RAYBURST NOVA':(lv|0)>=3?'RAYBURST STORM':'RAYBURST';
   if(elem==='chrome' && w===1) return (lv|0)>=5?'MIRROR SPREAD NOVA':(lv|0)>=3?'MIRROR SPREAD STORM':'MIRROR SPREAD';
+  if(elem==='lightning' && w===3) return (lv|0)>=5?'THUNDER BURST NOVA':(lv|0)>=3?'LIGHTNING BURST STORM':'LIGHTNING BURST';
   if((lv|0)<3) return base;
   const words=FORGE_STYLE_WORDS[elem]||['POWER','MEGA'], family=FORGE_STYLE_FAMILY[w]||['WEAPON','BURST'];
   return (lv|0)<5?words[0]+' '+family[0]:words[1]+' '+family[1];
@@ -8471,7 +8472,14 @@ function infusionOnHit(e,b,dmg){
     } else if(b._inf==='lightning'){
       e._zapFlash=0.2;
       if(e.hp<=0 && lv>=3 && !e._geyDone && Math.random()<0.18){ e._geyDone=1; geyserSpawn(e.x,e.y,'lightning'); }
-      chainZap(e.x,e.y, lv-1, [e]);
+      if(b.kind==='beam'){
+        // A sustained lightning laser discharges into a formation on a readable beat.
+        // Its ordinary beam burn continues between bursts.
+        if(efxClock-(b._lightningBurstAt==null?-9:b._lightningBurstAt)>=.28){
+          b._lightningBurstAt=efxClock;chainZap(e.x,e.y,lv-1,[e]);
+          if(typeof XART!=='undefined')XART.rdy('forge_elem_lightning_laser_0918');
+        }
+      } else chainZap(e.x,e.y, lv-1, [e]);
       if(lv>=3 && e.hp<=0 && Math.random()<0.14) godsWrath(e.x,e.y);
     } else if(b._inf==='prism'){
       if(!b._split){ b._split=1;
@@ -47522,8 +47530,9 @@ function drawBullets(){
     if(b.kind==='beam'){   // held player laser
       if(b._inf && b._inf!=='fire' && typeof XART!=='undefined' && XART.rdy('forge_elem_'+b._inf+'_laser_0918')){
         const im=XART.get('forge_elem_'+b._inf+'_laser_0918'),top=b.top!=null?b.top:-20,bot=b.bot!=null?b.bot:player.y-14;
-        const bw=Math.max(12,b.w||18);ctx.save();ctx.globalCompositeOperation='lighter';ctx.imageSmoothingEnabled=false;
-        ctx.shadowColor=INFUSIONS[b._inf]?.glow||'#ffffff';ctx.shadowBlur=5+(b._infLv|0);
+        const bw=Math.max(12,b.w||18);ctx.save();ctx.globalCompositeOperation=b._inf==='lightning'?'source-over':'lighter';ctx.imageSmoothingEnabled=false;
+        const pulse=b._inf==='lightning'&&b._lightningBurstAt!=null?Math.max(0,1-(efxClock-b._lightningBurstAt)/.28):0;
+        ctx.shadowColor=INFUSIONS[b._inf]?.glow||'#ffffff';ctx.shadowBlur=5+(b._infLv|0)+pulse*12;
         ctx.drawImage(im,b.x-bw/2,top,bw,Math.max(2,bot-top));ctx.restore();continue;
       }
       if(b._inf==='fire' && typeof XART!=='undefined' && XART.rdy('forge_fire_laser_0918')){
