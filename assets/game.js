@@ -2077,6 +2077,11 @@ const XART=(function(){
   X._src['weapon_found_0918']='assets/game/ui/forge_0918/weapon_found.png';
   X._src['magma_orb_0918']='assets/game/player_weapons/magma_orb_0918/magma_orb.png';
   X._src['forge_orbs_0919']='assets/game/player_weapons/forge_orbs_0919/element_orbs.png';
+  X._src['mav_lances_0919']='assets/game/player_weapons/maverick_lances_0919.png';
+  X._src['yuri_storm_icon_0919']='assets/game/special_icons/yuri_thunder_storm_0919.png';
+  X._src['forge_lightning_stream_0919']='assets/game/player_weapons/forge_lightning_stream_0919.png';
+  X._src['forge_ice_lance_0919']='assets/game/player_weapons/forge_ice_lance_0919.png';
+  X._src['forge_dark_void_0919']='assets/game/player_weapons/forge_dark_void_0919.png';
   X._src['forge_missiles_0919']='assets/game/player_weapons/forge_missiles_0919/element_missiles.png';
   X._src['toxic_orb_0919']='assets/game/player_weapons/toxic_orb_0919/toxic_orb.png';
   for(const _e of ['ice','lightning','prism','toxic','kinetic','water','chrome','dark']){
@@ -2194,6 +2199,7 @@ const XART=(function(){
   X._src.port_cf_cole_alert='assets/game/pilot_portraits/cole-alert-0919.png';
   X._src.fire_whip_fx_0919='assets/game/player_weapons/fire_whip_0919/fire_whip_fx.png';
   X._src.micon_firewhip_0919='assets/game/player_weapons/fire_whip_0919/fire_whip_icon.png';
+  X._src.fire_whip_icons_0919='assets/game/player_weapons/fire_whip_0919/fire_whip_tiers.png';
   /* PILOT-SELECTED CAMPAIGN OPENINGS (0901). The approved ImageGen cinematic pack contains
      six opening views plus a dedicated centered stern view of every Fury aircraft, so scenes use
      real generated art instead of another static HQ briefing or canvas-drawn stand-ins. Keep
@@ -5901,9 +5907,11 @@ const WVAR_NAME = {flamethrower:'FLAMETHROWER', icebreath:'ICE BREATH',
                       was the last one out of step. Mike wrote "Thermashock"; the established
                       in-game spelling everywhere else is THERMOSHOCK, so that spelling wins for
                       consistency rather than introducing a second one. */
-                   iceorb:'ICE ORB', fireorb:'FIRE ORB', fireice:'THERMOSHOCK', firewhip:'FIRE WHIP'};
+                   iceorb:'ICE ORB', fireorb:'FIRE ORB', fireice:'THERMOSHOCK', firewhip:'FIRE WHIP',
+                    mavhoming:'HOMING LANCES',laserbeam:'LASER BEAM'};
 const WVAR_ICON = {flamethrower:'micon_firewall_', icebreath:'micon_icebreath_',
-                   iceorb:'micon_iceorb_', fireorb:'micon_fireorb_', fireice:'micon_thermoshock_'};
+                   iceorb:'micon_iceorb_', fireorb:'micon_fireorb_', fireice:'micon_thermoshock_',
+                    mavhoming:'micon_maverick_laser_',laserbeam:'micon_laser_'};
 function weaponVariant(w, opt){
   /* a variant baked onto a pickup at spawn WINS - see the note above about stage 4+ re-rolling */
   if(opt && opt.fixed) return opt.fixed;
@@ -5914,6 +5922,7 @@ function weaponVariant(w, opt){
      explicit held variant in debugEquip; the production dispenser depends only on pilot+stage. */
   const frz = (pk==='freezer');
   const chosen=run&&run.wvars&&run.wvars[w];
+  if(w===3 && pk==='maverick') return chosen==='laserbeam'?'laserbeam':'mavhoming';
   if(w===4){
     if(!frz) return 'flamethrower';               // ice breath is EXCLUSIVE to Freezer
     if(st<=1) return 'flamethrower';
@@ -5962,7 +5971,7 @@ function weaponIconKey(w, lv, opt){
      box, the falling crate (0917). Registered-or-nothing: an unregistered plate keeps the tier icon. */
   /* `{bare:1}` asks for the weapon's OWN tier icon, forge or no forge - the ARMORY needs that for a row
      whose element is not the one currently forged on the slot (0917). */
-  if(w===3 && !(opt && opt.bare) && !opt && heldVariant(3)==='firewhip' && forgeEntry(3)?.elem==='fire') return 'micon_firewhip_0919';
+  if(w===3 && !(opt && opt.bare) && !opt && heldVariant(3)==='firewhip' && forgeEntry(3)?.elem==='fire') return 'micon_firewhip_0919_'+clamp(lv||1,1,5);
   if(!(opt && opt.bare) && typeof forgeEntry==='function'){ const _fe=forgeEntry(w); if(_fe && _fe.elem && XART._src){
     const _fk='micon_forge_'+_fe.elem+'_'+w, _fl=_fe.lv|0;
     if(_fl>1 && XART._src[_fk+'_'+_fl]) return _fk+'_'+_fl;      /* the level's own badge (II..V), when its plate landed */
@@ -5975,7 +5984,7 @@ function weaponIconKey(w, lv, opt){
   /* Maverick owns a separate five-tier laser family. The pickup, HUD and equipped plate all ask
      this resolver, so one branch changes every player-facing surface without touching the laser
      icons used by the other eight pilots. */
-  if(w===3 && _pk==='maverick') return 'micon_maverick_laser_'+clamp(lv||1,1,5);
+  if(w===3 && _pk==='maverick' && (opt ? weaponVariant(w,opt) : heldVariant(w))!=='laserbeam') return 'micon_maverick_laser_'+clamp(lv||1,1,5);
   /* ⚠ WITH an opt this is a question about a PICKUP (opt.fixed carries its baked variant);
      WITHOUT one it is a question about the weapon in the player's hands. Asking the dispenser
      rule for the second is what made the HUD icon change stage by stage and the falling crate
@@ -7509,7 +7518,7 @@ function uiBlipRep(){
 }
 const GS = { BOOT:'boot', LOADING:'loading', TITLE:'title', DIFF:'diff', PILOT:'pilot',
   PASSWORD:'password', CREDITS:'credits', OPTIONS:'options', INTRO:'intro', LAUNCH:'launch',
-  PLAY:'play', GAMEOVER:'gameover', VICTORY:'victory', STAGECLEAR:'stageclear', UNLOCKS:'unlocks', FORGE:'forge', CONTINUE:'continue', RIFTFALLBACK:'riftfallback', RIVAL:'rival', FLYOVER:'flyover', WARPENTRY:'warpentry', STAGESEL:'stagesel', MODESEL:'modesel', CAMPHUB:'camphub', CAMPAIGNINTRO:'campaignintro', ATTRACT:'attract', OUTBOUND:'outbound', OPENING:'opening', CUTSCENE:'cutscene',
+  PLAY:'play', GAMEOVER:'gameover', VICTORY:'victory', STAGECLEAR:'stageclear', UNLOCKS:'unlocks', YURIUP:'yuriup', FORGE:'forge', CONTINUE:'continue', RIFTFALLBACK:'riftfallback', RIVAL:'rival', FLYOVER:'flyover', WARPENTRY:'warpentry', STAGESEL:'stagesel', MODESEL:'modesel', CAMPHUB:'camphub', CAMPAIGNINTRO:'campaignintro', ATTRACT:'attract', OUTBOUND:'outbound', OPENING:'opening', CUTSCENE:'cutscene',
   /* the co-op wing muster: both chosen pilots side by side before deploy (drop 0902f) */
   COOPROSTER:'cooproster',
   /* ⚠ 'opener' AND NOT 'intro'. GS.INTRO is the STAGE card that precedes GS.LAUNCH and has been
@@ -8034,7 +8043,7 @@ const INFUSION_FIELD_DROPS=false;
    "1 flamethrower/ice breath/ other types upgrade". They take the element as the aura, the trail and
    the on-hit effect; each has its own authored draw, so none of them takes the palette swap. */
 const INFUSION_CARRIERS={mg:1,spread:1,prismRay:1,chromeRay:1,beam:1,missile:1,orb:1,shard:1,
-                         flame:1,lasermist:1,yuriLightningOrb:1,yuriLightningBolt:1,forgeFireBlast:1};
+                         flame:1,iceLance:1,lasermist:1,yuriLightningOrb:1,yuriLightningBolt:1,forgeFireBlast:1};
 /* Each boss awards one global element; the Forge applies it to any weapon. */
 const BOSS_ELEMENT_BY_STAGE=Object.freeze({1:'kinetic',2:'fire',3:'ice',4:'lightning',5:'chrome',6:'dark',7:'toxic',8:'prism',9:'water'});
 const INFUSION_STAGE_BIAS=BOSS_ELEMENT_BY_STAGE;
@@ -8138,6 +8147,7 @@ function infusionColumnPlate(elem,lv,w){
   _infColCache[k]=c; return c;
 }
 function infusionAuraDraw(b){
+  if((b.kind==='flame' && b._inf==='lightning')||b.kind==='iceLance') return; // the authored bolt carries its own light, without a rectangular column
   const lv=clamp(b._infLv|0,2,INFUSION_MAX), I=INFUSIONS[b._inf]; if(!I) return;
   const pulse=0.86+0.14*Math.sin((b.t||0)*22+(b.x|0));
   if(b.kind==='beam'||b.kind==='flame'){
@@ -8266,6 +8276,11 @@ function forgeStyleName(elem,w,lv){
   if(elem==='prism' && w===1) return (lv|0)>=5?'RAYBURST NOVA':(lv|0)>=3?'RAYBURST STORM':'RAYBURST';
   if(elem==='chrome' && w===1) return (lv|0)>=5?'MIRROR SPREAD NOVA':(lv|0)>=3?'MIRROR SPREAD STORM':'MIRROR SPREAD';
   if(elem==='lightning' && w===3) return (lv|0)>=5?'THUNDER BURST NOVA':(lv|0)>=3?'LIGHTNING BURST STORM':'LIGHTNING BURST';
+  if(elem==='ice' && w===3) return 'ICE LANCE';
+  if(elem==='dark' && w===5) return 'DARK VOID';
+  if(elem==='dark' && w===3) return 'ERADICATOR';
+  if(elem==='chrome' && w===3) return 'MERCURY LOCK';
+  if(elem==='prism' && w===3) return 'RAINBOW STORM';
   if((lv|0)<3) return base;
   const words=FORGE_STYLE_WORDS[elem]||['POWER','MEGA'], family=FORGE_STYLE_FAMILY[w]||['WEAPON','BURST'];
   return (lv|0)<5?words[0]+' '+family[0]:words[1]+' '+family[1];
@@ -8329,7 +8344,10 @@ function weaponBaseForms(w){
   const d=run&&run.forgeElems||{}, pk=(typeof _pilotKey==='function')?_pilotKey():'', out=[];
   if((w|0)===4){ out.push({kind:'variant',id:'flamethrower',name:'FLAMETHROWER'}); if(d.ice||pk==='freezer') out.push({kind:'variant',id:'icebreath',name:'ICE BREATH'}); }
   else if((w|0)===5){ out.push({kind:'variant',id:'iceorb',name:'ICE ORB'}); if(d.fire) out.push({kind:'variant',id:'fireorb',name:'FIRE ORB'}); if((d.fire&&d.ice)||(pk==='freezer'&&run&&(run.stage|0)>=2)) out.push({kind:'variant',id:'fireice',name:'THERMOSHOCK'}); }
-  else { out.push({kind:'bare',id:null,name:'BARE '+(WEAPONS[w]||'WEAPON')});
+  else { if((w|0)===3 && pk==='maverick'){
+      out.push({kind:'variant',id:'mavhoming',name:'HOMING LANCES'});
+      if((run.stage|0)>1 || run._mavBeamUnlocked) out.push({kind:'variant',id:'laserbeam',name:'STRAIGHT LASER'});
+    } else out.push({kind:'bare',id:null,name:'BARE '+(WEAPONS[w]||'WEAPON')});
     if((w|0)===3 && forgeFormsFor(3).fire) out.push({kind:'variant',id:'firewhip',name:'FIRE WHIP'}); }
   return out;
 }
@@ -8482,6 +8500,10 @@ function infusionOnHit(e,b,dmg){
       } else chainZap(e.x,e.y, lv-1, [e]);
       if(lv>=3 && e.hp<=0 && Math.random()<0.14) godsWrath(e.x,e.y);
     } else if(b._inf==='prism'){
+      if(b.kind==='beam' && efxClock-(b._rainbowAt||-9)>.18){
+        b._rainbowAt=efxClock;b._split=1;for(const dir of [-1,1])pBullets.push({kind:'spread',x:e.x+dir*((e.w||20)*.5+8),y:e.y,
+          vx:dir*(8+lv),vy:0,w:7,h:17,dmg:Math.max(2,Math.round(dmg*.65)),lv:1,t:0,pierce:true,_hit:[e],_inf:'prism',_child:true,_split:true});
+      }
       if(!b._split){ b._split=1;
         const n = lv>=3?5:(lv===2?3:2), a0=Math.atan2(b.vy||-1,b.vx||0);
         /* ⚠ THE SHARDS START ON THE FAR SIDE OF THE TARGET, NOT ON IT. Spawned at (e.x,e.y)
@@ -8502,9 +8524,17 @@ function infusionOnHit(e,b,dmg){
       e.vy*=0.7;
       if(e.hp<=0 && (lv>=3 || (lv===2 && Math.random()<0.35))) geyserSpawn(e.x,e.y,'water');
     } else if(b._inf==='chrome' && !b._mirror){
+      if(b.kind==='beam' && !(typeof isSetPiece==='function'&&isSetPiece(e))){
+        e._mercuryLock=Math.max(e._mercuryLock||0,.85+lv*.16);
+        if(e._mercuryX==null){e._mercuryX=e.x;e._mercuryY=e.y;e._mercuryShoots=e.shoots;}e.vx=0;e.vy=0;e.shoots=false;
+      }
       const kill=(e.hp<=0), R=(lv>=3&&kill)?9999:(38+16*lv);
       const n=chromeMirror(e.x,e.y,R,lv); if(n) e._chromeFlash=0.16;
     } else if(b._inf==='dark'){
+      if(b.kind==='beam'){e._eradicatorT=Math.max(e._eradicatorT||0,.34);e._voidPull=.25;
+        if(!(typeof isSetPiece==='function'&&isSetPiece(e))){e._eradicatorDose=(e._eradicatorDose||0)+dmg;
+          if(e._eradicatorDose>=(e.maxhp||e.hp||20)*.3 && e.hp<=(e.maxhp||e.hp||20)*.25)e.hp=0;}
+        if(e.hp<=0){e._voidDeath=1;efxBurst('dark',e.x,e.y,Math.max(e.w||20,e.h||20)*1.6);}}
       for(const o of enemies){ if(o===e||o.dead||o._dyingT!=null) continue;
         const d=Math.hypot(o.x-e.x,o.y-e.y); if(d>1&&d<90){ o.x+=(e.x-o.x)/d*3.5; o.y+=(e.y-o.y)/d*3.5; } }
       if(lv>=3 && e.hp<=0) voidSpawn(e.x,e.y);
@@ -9083,6 +9113,7 @@ function yuriLightningOrbGrantStage4(){
     R.wlevels[8]=Math.max(1,R.wlevels[8]||0);R.wvars[8]='lightningorb';R.weapon=8;R.wlevel=R.wlevels[8];R._wbag=[];
   }
   if(!yuriWon)return false;
+  for(const R of seats)if(R&&String(R.pilot||'').toLowerCase()==='yuri')R._thunderStormUnlocked=true;
   const fresh=!yuriLightningOrbUnlocked;yuriLightningOrbUnlocked=true;
   try{localStorage.setItem(YURI_LIGHTNING_ORB_UNLOCK_KEY,'1');}catch(_yloWrite){}
   yuriLightningOrbWarm();
@@ -26697,6 +26728,7 @@ function _weaponCadence(){
      tracking run cannot resolve a difference smaller than about 2x and will invent ones that are
      not there. Second pass, from the pinned medians 21/26/30/35/34/42/41, targets ~30s. */
   if(run.weapon===6)return Math.max(.29,.55-clamp(run.wlevel||1,1,5)*.055);
+  if(run.weapon===3 && forgeEntry(3)?.elem==='ice') return Math.max(1.20,1.90-0.16*clamp(run.wlevel||1,1,5));
   if(run.weapon===7){const r=clamp(run._chainRev||0,0,1);
     return Math.max(.042,(.18-r*.135)*(forgeActiveTier(7)>=3?.90:1));}
   {
@@ -27284,14 +27316,14 @@ function flameDraw(f){
   /* my line-range replacement ate `const key=_fk;` and flameDraw threw
      "key is not defined" on the very next line - the same class of bug as the
      damage-flash sites. Restored (drop 0801hh). */
-  const key=_fk;
+  const key=f._inf==='lightning'?'forge_lightning_stream_0919':_fk;
   if(!(XART._src && XART._src[key])) return;
   if(XART._touch) XART._touch(key);
   if(!XART.rdy(key)) return;
   const _isIce = key.indexOf('nib_')===0 || key.indexOf('nibr_')===0;
   const _forgePlume=f._inf&&INFUSIONS[f._inf]?INFUSIONS[f._inf].body:null;
-  const src=_forgePlume?(xartPalette(key,_forgePlume)||XART.get(key)):
-    (_isIce?XART.get(key):(xartPalette(key,'#ff6924')||XART.get(key)));
+  const src=key==='forge_lightning_stream_0919'?XART.get(key):(_forgePlume?(xartPalette(key,_forgePlume)||XART.get(key)):
+    (_isIce?XART.get(key):(xartPalette(key,'#ff6924')||XART.get(key))));
   const sw=src.naturalWidth||src.width, sh=src.naturalHeight||src.height;
   if(!sw||!sh) return;
   const _ink=(typeof window!=='undefined' && window.BOFFI) ? window.BOFFI[key] : null;
@@ -28269,7 +28301,7 @@ function yuriLightningOrbRelease(b){
     pBullets.push({kind:'yuriLightningBolt',x:b.x,y:b.y,vx:Math.cos(a)*spd,vy:Math.sin(a)*spd,
       w:9+lv,h:25+lv*3,dmg:1.2+lv*.48,lv:lv,t:0,life:1.55,ang:a,art:1+(i%5),pierce:lv>=4,_hit:[]});
   }
-  zaps.push({x1:b.x-8,y1:b.y,x2:b.x+8,y2:b.y,t:.11});
+  zaps.push({x1:b.x-8,y1:b.y,x2:b.x+8,y2:b.y,t:.11,_blue:!!run._thunderStormUnlocked});
   if(Audio&&Audio.SFX)(Audio.SFX.chainShoot||Audio.SFX.laser||Audio.SFX.shoot)();
 }
 function yuriLightningOrbFire(lv){
@@ -28284,10 +28316,10 @@ function yuriLightningOrbFire(lv){
 }
 function yuriLightningOrbTick(b,dt){
   if(!b||(b.kind!=='yuriLightningOrb'&&b.kind!=='yuriLightningBolt'))return false;
-  b.t=(b.t||0)+dt;b.life-=dt;const f=Math.min(1.5,dt*60);b.x+=(b.vx||0)*f;b.y+=(b.vy||0)*f;
+  b.t=(b.t||0)+dt;b.spin=(b.spin||0)+dt*7;b.life-=dt;const f=Math.min(1.5,dt*60);b.x+=(b.vx||0)*f;b.y+=(b.vy||0)*f;
   if(b.kind==='yuriLightningOrb'&&!b._released&&b.t>=.14)yuriLightningOrbRelease(b);
   const hitOnce=(target,damage,fn)=>{
-    if(b._hit.indexOf(target)>=0)return false;b._hit.push(target);fn(damage);zaps.push({x1:b.x,y1:b.y,x2:target.x||b.x,y2:(target._drawY!=null?target._drawY:target.y)||b.y,t:.10});
+    if(b._hit.indexOf(target)>=0)return false;b._hit.push(target);fn(damage);zaps.push({x1:b.x,y1:b.y,x2:target.x||b.x,y2:(target._drawY!=null?target._drawY:target.y)||b.y,t:.10,_blue:!!run._thunderStormUnlocked});
     if(!b.pierce||b.kind==='yuriLightningOrb'&&b._hit.length>=2+Math.floor(b.lv/2))b.dead=true;return true;
   };
   for(const e of enemies){if(e.dead)continue;if(Math.abs(e.x-b.x)<(e.w+b.w)/2&&Math.abs(e.y-b.y)<(e.h+b.h)/2){hitOnce(e,b.dmg,d=>hitEnemy(e,d));if(b.dead)break;}}
@@ -28545,7 +28577,13 @@ function pShoot(){
     const dmg = 2 + Math.floor(lv/2);            // lv1:2 lv2:3 lv3:3 lv4:4 lv5:4
     if(heldVariant(3)==='firewhip' && forgeEntry(3)?.elem==='fire'){
       fireWhipFire(lv,dmg);
-    } else if(run.pilot!=='maverick'){
+    } else if(forgeEntry(3)?.elem==='ice'){
+      /* The Ice Lance is a discrete tap-fired spear. Cadence owns its multi-second pause. */
+      pBullets.push({kind:'iceLance',x:player.x,y:player.y-19,vx:0,vy:-(12+lv),w:12+lv*2,h:35+lv*4,
+        dmg:(12+lv*5)*(forgeActiveTier(3)>=5?1.18:1),lv,pierce:lv>=3,_hit:[],t:0,_el:'ice'});
+      player._mgMuzT=.12;player._mgMuzLv=Math.max(1,lv);
+      (Audio.SFX.iceOrbLaunch||Audio.SFX.shatter||Audio.SFX.laser||Audio.SFX.shoot)();
+    } else if(run.pilot!=='maverick' || heldVariant(3)==='laserbeam'){
       /* Restore the original held beam. One entity is refreshed while the trigger is held, so the
          authored nlz_/laserbeam animation stays anchored to the player's muzzle and burns the
          straight column. The Fire-Shark widening arc was requested for Maverick specifically and
@@ -29666,7 +29704,11 @@ function _newWeaponTick(dt){
        field - every hostile within reach of the live column is drawn toward it, harder by level, so the
        beam gathers what it burns. One lookup per frame, not per enemy. */
     let _voidBeam=null; if(typeof infusionActive==='function'&&infusionActive()&&run.infusion.elem==='dark'){ for(const b of pBullets){ if(b.kind==='beam'&&!b.dead&&b._inf==='dark'){ _voidBeam=b; break; } } }
-    for(const e of enemies){ if(e && e._burn>0) dkBurnTick(e, dt); if(e && e._poison>0) poisonTick(e, dt); if(e && e._soaked>0) e._soaked-=dt; if(e) enemyEvadeTick(e, dt);
+    for(const e of enemies){ if(e&&e._mercuryLock>0){e._mercuryLock-=dt;e.vx=0;e.vy=0;e.shoots=false;
+      if(e._mercuryX!=null){e.x=e._mercuryX;e.y=e._mercuryY+Math.sin(efxClock*8)*2.5;}
+      if(e._mercuryLock<=0){e._mercuryX=null;e._mercuryY=null;e.shoots=e._mercuryShoots;e._mercuryShoots=null;}}
+      if(e&&e._eradicatorT>0)e._eradicatorT-=dt;
+      if(e && e._burn>0) dkBurnTick(e, dt); if(e && e._poison>0) poisonTick(e, dt); if(e && e._soaked>0) e._soaked-=dt; if(e) enemyEvadeTick(e, dt);
       if(_voidBeam && e && !e.dead && e._dyingT==null && !(typeof isSetPiece==='function'&&isSetPiece(e)) && e._vkind!=='tank'){
         const dx=_voidBeam.x-e.x, R=90+30*(run.infusion.lv|0);
         if(Math.abs(dx)>4 && Math.abs(dx)<R && e.y<(_voidBeam.bot!=null?_voidBeam.bot:player.y)){ e.x+=Math.sign(dx)*Math.min(Math.abs(dx),(40+25*(run.infusion.lv|0))*dt); e._voidPull=0.1; } } }
@@ -29683,6 +29725,7 @@ function _newWeaponTick(dt){
     sonicCharge(dt, _held);
   }
   if(typeof sonicTick==='function') sonicTick(dt);
+  thunderStormTick(dt);
   if(typeof lzMountTick==='function') lzMountTick(dt);
 }
 function endSpecial(){
@@ -30151,6 +30194,7 @@ function chargePilotActive(){
   const k=special.pilot;
   if(k==='falva') return true;                       // rollerball: hold to spin up
   if(k==='maverick') return true;                    // venom helix lance
+  if(k==='yuri' && run && run._thunderStormUnlocked) return true;
   /* Thermoshock already had a hold/release controller, but Freezer was missing from this
      ownership gate.  His normal orb cadence therefore fired repeatedly underneath the
      charge, stacking launch sounds and projectiles before the button was released. */
@@ -31538,7 +31582,7 @@ function yuriChainStrike(){
   if(best!=null || kind!=null){
     // FIRE sound. The chain had a hit sound but nothing on release, so it launched silently.
     (Audio.SFX.chainShoot||Audio.SFX.laser||Audio.SFX.shoot)();
-    zaps.push({x1:ox,y1:oy,x2:tx,y2:ty,t:0.20});   // primary bolt from the SHIP to the target
+    zaps.push({x1:ox,y1:oy,x2:tx,y2:ty,t:0.20,_blue:!!(run&&run._thunderStormUnlocked)});   // primary bolt from the SHIP to the target
     // every branch now chains at the SAME level-scaled depth — previously only the enemy branch
     // scaled, so hitting a boss or a crate collapsed the chain back to depth 2.
     if(kind==='enemy'){ hitEnemy(tobj,dmg); tobj._zapFlash=0.22; weaponHitSfx('normal'); chainZap(tx,ty, depth, [tobj]); }
@@ -31605,7 +31649,7 @@ function chainZap(x,y,depth,hitset,dirx,diry){
   if(!best) return;
   /* a zap raised from an INFUSION hit (the on-hit hook holds _infBusy) is tagged so the per-frame
   hard-clear below - Yuri's own - does not delete it the frame it is born (0917) */
-  zaps.push({x1:x,y1:y,x2:best.x,y2:best.y,t:0.18,_inf:!!_infBusy});
+  zaps.push({x1:x,y1:y,x2:best.x,y2:best.y,t:0.18,_inf:!!_infBusy,_blue:!!(run&&run._thunderStormUnlocked&&_pilotKey()==='yuri')});
   hitEnemy(best, 3+_lv*2); hitset.push(best);          // per-link damage scales with level
   best._zapFlash=0.20;                                  // struck by lightning -> white/yellow pop
   weaponHitSfx('normal');
@@ -31780,7 +31824,7 @@ function drawSpecialHUD(){
   screenBar(function(){ _drawSpecialHUDInner(); });
 }
 function _drawSpecialHUDInner(){
-  const frac=clamp(special.t/special.dur,0,1), col=_pilotTint();
+  const frac=clamp(special.t/special.dur,0,1), col=(special.pilot==='yuri'&&run._thunderStormUnlocked)?'#4acaff':_pilotTint();
   /* ⚠ JUGGERNAUT'S TIMER MOVED TO THE CHARGE BAR (Mike, 0912): "we dont need to use the special
      bar anymore". His icon still draws - it is how you know WHICH crate you picked up - but the
      centre bar and its SPECIAL label would now be a second copy of the rail under CHARGE, and two
@@ -31800,7 +31844,7 @@ function _drawSpecialHUDInner(){
     ctx.fillStyle='rgba(0,0,0,0.55)'; ctx.fillRect(VW/2-81,VH-34,162,8);
     ctx.fillStyle=col; ctx.fillRect(VW/2-80,VH-33,160*frac,6);
     ctx.font='8px "BOFmil", monospace'; ctx.textAlign='center'; ctx.fillStyle=col;
-    ctx.fillText('SPECIAL',VW/2,VH-38);
+    ctx.fillText(special.pilot==='yuri'&&run&&run._thunderStormUnlocked?'THUNDER STORM':'SPECIAL',VW/2,VH-38);
   } else {
     ctx.font='8px "BOFmil", monospace'; ctx.textAlign='center'; ctx.fillStyle=col;
     ctx.fillText('WRECKING BALL',VW/2,VH-33);
@@ -31836,10 +31880,61 @@ function drawNukeImpacts(){
     }
   }
 }
+
+/* Yuri's Stage-4 reward turns a tap into blue chain lightning and a held release
+   into a short, accelerating sky barrage. Strikes have real hit tests; the
+   generated Stage-4 bolt sheet supplies both the charge and the world effect. */
+let thunderStorm=null;
+function thunderStormStart(held){
+  if(!specialActive('yuri')||!run._thunderStormUnlocked)return false;
+  if((special._stormCd||0)>0){yuriChainStrike();return false;}
+  const power=clamp(held/1.3,.15,1);
+  thunderStorm={t:0,dur:1.55+power*.75,cd:.28,count:0,max:Math.round(10+power*17),bolts:[],power};
+  special._stormCd=2.1;
+  shake=Math.max(shake,5+power*4);
+  (Audio.SFX.crackle||Audio.SFX.chainShoot||Audio.SFX.shoot)();
+  return true;
+}
+function thunderStormTick(dt){
+  if(special&&special._stormCd>0)special._stormCd=Math.max(0,special._stormCd-dt);
+  const S=thunderStorm;if(!S)return;
+  S.t+=dt;S.cd-=dt;
+  for(const b of S.bolts)b.life-=dt;
+  S.bolts=S.bolts.filter(b=>b.life>0);
+  if(S.t<S.dur&&S.cd<=0&&S.count<S.max){
+    const f=S.count/Math.max(1,S.max-1), live=enemies.filter(e=>e&&!e.dead&&e.y>12&&e.y<VH+20);
+    const target=live.length&&S.count%3!==2?live[S.count%live.length]:null;
+    const x=target?target.x:rnd(18,VW-18),y=target?target.y:rnd(105,VH-55);
+    S.bolts.push({x,y,life:.23,frame:S.count%8});S.count++;
+    S.cd=(.24-.18*f)*(1-.24*S.power);
+    for(const e of enemies)if(e&&!e.dead&&Math.abs(e.x-x)<29+S.power*11&&Math.abs(e.y-y)<55)hitEnemy(e,13+S.power*17);
+    if(boss&&bossActive&&!boss.dead&&Math.abs(boss.x-x)<(boss.w||90)/2+18&&Math.abs(boss.y-y)<(boss.h||90)/2+25)hitBoss(3+S.power*5);
+    for(const b of eBullets)if(b&&!b.dead&&Math.abs(b.x-x)<24&&Math.abs(b.y-y)<45)b.dead=true;
+    if(S.count%3===1)(Audio.SFX.chainHit||Audio.SFX.crackle||Audio.SFX.shoot)();
+    explode(x,y,6,'blue');
+  }
+  if(S.t>S.dur+.30&&S.bolts.length===0)thunderStorm=null;
+}
+function thunderStormDraw(){
+  const S=thunderStorm;if(!S)return;
+  ctx.save();ctx.fillStyle='rgba(2,7,26,0.50)';ctx.fillRect(0,0,VW,VH);ctx.restore();
+  if(!XART.rdy('cfx_stage4_chain_lightning'))return;
+  const im=XART.get('cfx_stage4_chain_lightning');
+  for(const b of S.bolts){
+    const w=38+S.power*13,h=b.y+25;
+    ctx.save();ctx.globalCompositeOperation='lighter';ctx.globalAlpha=clamp(b.life/.23,0,1);ctx.shadowColor='#4de9ff';ctx.shadowBlur=14;
+    ctx.drawImage(im,(b.frame%4)*256,Math.floor(b.frame/4)*384,256,384,b.x-w/2,-18,w,h);ctx.restore();
+  }
+}
+
 function drawZaps(){
   for(const z of zaps){
     const dx=z.x2-z.x1, dy=z.y2-z.y1, len=Math.hypot(dx,dy), ang=Math.atan2(dy,dx)+Math.PI/2;
-    if(len>4 && (XART.rdy('chain_bolt_0') || _nchainReady() || _nchpReady())){
+    if(z._blue && len>4 && XART.rdy('cfx_stage4_chain_lightning')){
+      const im=XART.get('cfx_stage4_chain_lightning'),f=Math.abs(((z.t*34)|0)%8);
+      ctx.save();ctx.translate((z.x1+z.x2)/2,(z.y1+z.y2)/2);ctx.rotate(ang);ctx.globalCompositeOperation='lighter';ctx.shadowColor='#34bfff';ctx.shadowBlur=9;
+      ctx.drawImage(im,(f%4)*256,Math.floor(f/4)*384,256,384,-18,-len/2,36,len);ctx.restore();
+    } else if(len>4 && (XART.rdy('chain_bolt_0') || _nchainReady() || _nchpReady())){
       drawChainBolt(z.x1,z.y1,z.x2,z.y2, Math.min(1,z.t/0.18+0.3));
       // branching burst at the struck node instead of the old round ring flash
       drawChainBurst(z.x2, z.y2, clamp((z.t||0)/0.22,0,1), 40);
@@ -31995,6 +32090,7 @@ function startRun(fromStage=1){
      a Cole sonic test left run.sonicT set and the Lizzie block that ran after it fired
      nothing at all, because pShoot returned on the sonic branch before reaching the mount. */
   run.sonicT=0; run._sonicCd=0; run._lzCd=0;player._retinaScan=null;player2._retinaScan=null;
+  run._mavBeamUnlocked=false;run._thunderStormUnlocked=false;run._thunderCeremonyShown=false;thunderStorm=null;
   run._lifeCombatT=0; run._lifeThreat=0; run._threatBuild=0;run._chainHeat=0;run._chainRev=0;run._chainOverheat=0;
   if(typeof hqSeen!=='undefined') hqSeen={};      // a fresh run plays the HQ scenes again
   if(typeof sonicTrail!=='undefined') sonicTrail.length=0;
@@ -32790,6 +32886,7 @@ function freezerL3Draw(){
 /* the floor stage 9 tops you up to - see beginStage */
 const STAGE9_LIVES = 5;
 function beginStage(num){
+  thunderStorm=null;
   try{ window.sselCommitted=false; }catch(e){}
   try{ if(typeof warmStage==='function') warmStage(arguments[0]); }catch(e){}
   try{ if(typeof bossBarWarm==='function') bossBarWarm(num); }catch(e){}   // the pack's gauge art, before any warning can show it (0910b)
@@ -32854,7 +32951,8 @@ function beginStage(num){
     }
   }catch(_fap){}
   thaw=null; if(num===3 && typeof thawStart==='function') thawStart();   // the stage-3 thaw (0806d)
-  run.sonicT=0; run._sonicCd=0; run._lzCd=0;player._retinaScan=null;player2._retinaScan=null;          // pickup weapons do not ride between stages
+  run.sonicT=0; run._sonicCd=0; run._lzCd=0;player._retinaScan=null;player2._retinaScan=null;
+  run._mavBeamUnlocked=false;run._thunderStormUnlocked=false;run._thunderCeremonyShown=false;thunderStorm=null;          // pickup weapons do not ride between stages
   if(typeof sonicTrail!=='undefined') sonicTrail.length=0;
   if(typeof lzMount!=='undefined') lzMount=null;
   /* ⚠ AND DECKER'S SHOTGUN, WHICH THIS LINE HAD BEEN PROMISING SINCE 0805w (drop 0810b).
@@ -33634,6 +33732,7 @@ function updatePlay(dt){
       if(firing){
         player._tapT = (player._tapT==null ? 0 : player._tapT) + dt;
         player._tapHeld = true;
+        if(specialActive('yuri')&&run._thunderStormUnlocked)special._yCharge=(special._yCharge||0)+dt;
       } else if(player._tapHeld){
         /* released — if it was inside the window it was a TAP, so let exactly one shot go */
         const wasTap = (player._tapT||0) < TAP_WINDOW;
@@ -33644,7 +33743,10 @@ function updatePlay(dt){
           player.fireCd = (typeof specialActive==='function' && specialActive('maverick'))
                           ? SPECIAL_TAP_CD : (_weaponCadence()||0.2);
           pShoot();
+        } else if(!wasTap && specialActive('yuri') && run._thunderStormUnlocked && !player.dead){
+          thunderStormStart(special._yCharge||0);
         }
+        if(specialActive('yuri'))special._yCharge=0;
       }
     } else { player._tapT=null; player._tapHeld=false; }
     /* FUSION CANNON owns the trigger at tier 8: holding CHARGES rather than firing, and releasing
@@ -34617,6 +34719,7 @@ function updatePlay(dt){
     if(!_racerEntering && (e.y>VH+80 || e.x<-80 || e.x>((typeof worldWidth==='function')?worldWidth():VW)+80)) e.dead=true;
     if(e.pattern==='racer' && e._phase==='flee' && e.y<-60) e.dead=true;   // culled after fleeing off the top
   }
+  for(const e of enemies)if(e._mercuryLock>0&&e._mercuryX!=null){e.x=e._mercuryX;e.y=e._mercuryY+Math.sin(efxClock*8)*2.5;e.vx=0;e.vy=0;}
   enemies=enemies.filter(e=>!e.dead);
   /* ---- NOTHING STACKS (drop 0811l) ----
      After every mover has run and the dead are gone, so it relaxes the frame that will actually
@@ -35164,7 +35267,19 @@ function updatePlay(dt){
       continue;
     }
     if(b.kind==='orb'){
-      b.life-=dt; b.spin+=dt*7; b.frame=(b.frame+dt*12)%4;
+      b.life-=dt; b.spin+=dt*7;
+      /* Dark Void travels first, then blossoms into a stationary, hungry rift. */
+      if(b._el==='dark'){
+        b._voidAge=(b._voidAge||0)+dt;
+        if(b._voidAge>.52){b.vx=0;b.vy=0;b.w=Math.min(92,b.w+dt*42);b.h=b.w;
+          for(const e of enemies){if(e.dead||e._dyingT!=null||(typeof isSetPiece==='function'&&isSetPiece(e)))continue;
+            const d=Math.hypot(e.x-b.x,e.y-b.y),r=85+Math.min(40,b._voidAge*26);
+            if(d<r&&d>2){e.x+=(b.x-e.x)/d*Math.min(3.3,d*.1);e.y+=(b.y-e.y)/d*Math.min(3.3,d*.1);}
+            if(d<b.w*.32){e._voidT=(e._voidT||0)-dt;if(e._voidT<=0){e._voidT=.16;hitEnemy(e,4+2*b.lv);}}
+          }
+          if(b._voidAge>1.75)b.life=0;
+        }
+      } b.frame=(b.frame+dt*12)%4;
       b.x+=b.vx; b.y+=b.vy; b.vy*=0.986;
       b.shardCd-=dt;
       /* the orb's element is fixed at LAUNCH (b._ts), never re-asked here — see the note at
@@ -35172,16 +35287,27 @@ function updatePlay(dt){
       const _oel=b._el||(b._ts?'fireice':(orbIsFire()?'fire':'ice'));
       const _om=elementMultiplier(_oel,b._ts?'fireice':'orb');
       const _sopt={mul:_om, ts:b._ts, fire:b._fire, wvar:b._wvar, el:_oel, forge:!!b._inf, forgeLv:b._infLv||0};
-      if(b.shardCd<=0){ b.shardCd=0.10; const n=b.shardN; for(let i=0;i<n;i++){ pShard(b.x,b.y, b.spin + i*(TAU/n), b.lv, _sopt); } b.sfxCd=(b.sfxCd||0)-1; if(b.sfxCd<=0){ b.sfxCd=3; if(Audio.SFX.spread)Audio.SFX.spread(); } }
+      const _orbPattern={ice:[1,.10],fireice:[1,.10],fire:[0,.10],toxic:[.45,.23],lightning:[.7,.15],prism:[.65,.17],kinetic:[.4,.26],water:[.6,.19],chrome:[.45,.20],dark:[0,.24]}[_oel]||[1,.10];
+      if(b.shardCd<=0){ b.shardCd=_orbPattern[1]; const n=Math.max(2,Math.round(b.shardN*_orbPattern[0]));
+        if(_orbPattern[0]>0)for(let i=0;i<n;i++)pShard(b.x,b.y,b.spin+i*(TAU/n),b.lv,_sopt);
+        b.sfxCd=(b.sfxCd||0)-1;if(_orbPattern[0]>0&&b.sfxCd<=0){b.sfxCd=3;if(Audio.SFX.spread)Audio.SFX.spread();} }
       b._ht-=dt; if(b._ht<=0){ b._hit.length=0; b._ht=0.16; }
-      for(const e of enemies){ if(e.dead)continue; if(Math.abs(e.x-b.x)<(e.w/2+b.w/2)&&Math.abs(e.y-b.y)<(e.h/2+b.h/2)){ if(b._hit.indexOf(e)<0){ hitEnemy(e,b.dmg*_om); if(b._ts){ e._frozen=(e._frozen||0)+1; e._frzFlash=0.18; } b._hit.push(e); } } }
+      for(const e of enemies){ if(e.dead)continue; if(Math.abs(e.x-b.x)<(e.w/2+b.w/2)&&Math.abs(e.y-b.y)<(e.h/2+b.h/2)){ if(b._hit.indexOf(e)<0){ hitEnemy(e,b.dmg*_om); if(_oel==='toxic')e._poison=Math.max(e._poison||0,2.2); if(['fire','toxic','kinetic','water'].includes(_oel))b._impact=true; if(b._ts){ e._frozen=(e._frozen||0)+1; e._frzFlash=0.18; } b._hit.push(e); } } }
       if(boss&&bossActive&&!boss.dead){
         const _s4t=(typeof stage4CoreTurretAt==='function')?stage4CoreTurretAt(boss,b.x,b.y,Math.max(b.w,b.h)*.5):null;
         const _s4n=(typeof stage4ShieldNodeAt==='function')?stage4ShieldNodeAt(boss,b.x,b.y,Math.max(b.w,b.h)*.5):null;
         const _hull=Math.abs(boss.x-b.x)<(boss.w/2+b.w/2)&&Math.abs(boss.y-b.y)<(boss.h/2+b.h/2);
-        if(_s4t||_s4n||_hull){b._bt-=dt;if(b._bt<=0){if(_s4t){boss._s4CoreHit=_s4t;_lastHitX=_s4t.x;_lastHitY=_s4t.y;}else if(_s4n){boss._s4ShieldHit=_s4n;_lastHitX=_s4n.x;_lastHitY=_s4n.y;}hitBoss(b.dmg*_om);b._bt=.16;}}
+        if(_s4t||_s4n||_hull){b._bt-=dt;if(b._bt<=0){if(_s4t){boss._s4CoreHit=_s4t;_lastHitX=_s4t.x;_lastHitY=_s4t.y;}else if(_s4n){boss._s4ShieldHit=_s4n;_lastHitX=_s4n.x;_lastHitY=_s4n.y;}hitBoss(b.dmg*_om);if(['fire','toxic','kinetic','water'].includes(_oel))b._impact=true;b._bt=.16;}}
       }
-      if(b.life<=0 || b.y<-40){ b.dead=true; iceBurst(b.x,b.y,b.shardN,b.lv,_sopt); if(b._ts) tsFx(b.x,b.y,'imp',110); }
+      if(b._impact || b.life<=0 || b.y<-40){b.dead=true;
+        if(_oel==='dark'){
+          /* Collapse releases a forward 180-degree ring, never a friendly-fire hazard. */
+          const N=9+Math.min(5,b.lv);for(let i=0;i<N;i++)pShard(b.x,b.y,Math.PI+(i/(N-1))*Math.PI,b.lv,{mul:_om,el:'dark',wvar:'darkorb',forge:true,forgeLv:b._infLv||1});
+          efxBurst('dark',b.x,b.y,54);
+          (Audio.SFX.wardenScream||Audio.SFX.mechScream||Audio.SFX.death||function(){})();
+        }
+        const n=_oel==='fire'?Math.max(9,b.shardN*2):_oel==='prism'?b.shardN+5:_oel==='lightning'?b.shardN+3:b.shardN;
+        if(_oel!=='dark')iceBurst(b.x,b.y,n,b.lv,_sopt);if(b._ts)tsFx(b.x,b.y,'imp',110); }
       continue;
     }
     if(b.kind==='prismRay') prismRaySteer(b,dt);
@@ -35230,7 +35356,7 @@ function updatePlay(dt){
        clock driving a 4-frame loop is the anti-pattern CLAUDE.md keeps a standing rule about,
        because the reel then runs at a rate nothing in the game controls. Nothing else reads
        dkshot's t; it has sat at 0 since the pellet was written. */
-    if(b.kind==='dkshot'){ b.t=(b.t||0)+dt; }
+    if(b.kind==='dkshot'||b.kind==='iceLance'){ b.t=(b.t||0)+dt; }
     if(b.anim!=null) b.anim+=dt;
     /* Once a directional plate turns a round around, it belongs to the enemy. Keep the original
        player art, but do not let it strike another enemy or a boss on its way back down. */
@@ -36093,6 +36219,13 @@ function _hitEnemyCore(e,dmg){
 }
 function killEnemy(e){
   if(e.dead) return;
+  if(e._mercuryLock>0){
+    /* Chrome-locked targets burst into player-owned metal splinters on destruction. */
+    for(let i=0;i<10;i++){const a=i*TAU/10,sp=5.2+(i%3);pBullets.push({kind:'spread',x:e.x,y:e.y,
+      vx:Math.cos(a)*sp,vy:Math.sin(a)*sp,w:5,h:12,dmg:3+Math.max(1,run.infusion?.lv||1),
+      lv:1,t:0,_inf:'chrome',_child:true,_mirror:true});}
+    efxBurst('chrome',e.x,e.y,Math.max(25,e.w||25));
+  }
   if(e._environmentBody&&!e._waterRock){
     // A destroyed comet is gone. Its explosion must not leave fading rock-shaped ghosts.
     e.dead=true;e.hp=0;e.shoots=false;run.score+=(e.score||0);
@@ -39293,8 +39426,18 @@ const SPECIAL_ART_OVERRIDE = {
   special_cole:'nsw_box_cole',
   special_decker:'nsw_box_decker'
 };
-function specialArtKey(k){ return SPECIAL_ART_OVERRIDE[k] || k; }
+function specialArtKey(k){ if(k==='spicon_yuri'&&run&&run._thunderStormUnlocked)return 'yuri_storm_icon_0919'; return SPECIAL_ART_OVERRIDE[k] || k; }
+function fireWhipTierIcon(g,key,x,y,h,centred){
+  const m=/^micon_firewhip_0919_([1-5])$/.exec(key||'');if(!m)return null;
+  if(!XART.rdy('fire_whip_icons_0919'))return null;
+  const rect=[[16,90,418,520],[434,90,433,520],[877,90,419,520],[1306,90,432,520],[1738,84,422,529]][+m[1]-1];
+  const im=XART.get('fire_whip_icons_0919'),w=h*.84;
+  g.save();g.imageSmoothingEnabled=false;
+  g.drawImage(im,rect[0],rect[1],rect[2],rect[3],centred?x-w/2:x,centred?y-h/2:y,w,h);
+  g.restore();return w;
+}
 function iconDraw(key, x, y, h, centred){
+  if(/^micon_firewhip_0919_[1-5]$/.test(key||''))return fireWhipTierIcon(ctx,key,x,y,h,centred);
   if(/^micon_lasermist_[1-5]$/.test(key||'')){
     return laserMistAtlasBlit(ctx,key,x,y,h,h,centred);
   }
@@ -39331,6 +39474,7 @@ function iconDraw(key, x, y, h, centred){
    That is the third store trap in CLAUDE.md, and this is the fix for it: one lookup, usable from
    any canvas, so a second surface can never drift from the first again. ============================================================ */
 function iconBlit(g, key, x, y, h, centred){
+  if(/^micon_firewhip_0919_[1-5]$/.test(key||''))return fireWhipTierIcon(g,key,x,y,h,centred);
   if(!g) return null;
   if(/^micon_lasermist_[1-5]$/.test(key||'')){
     return laserMistAtlasBlit(g,key,x,y,h,h,centred);
@@ -47037,7 +47181,7 @@ function drawBullets(){
         const n=cells[b._inf];
         if(orb&&n!=null&&typeof XART!=='undefined'&&XART.rdy('forge_orbs_0919')){
           const im=XART.get('forge_orbs_0919'),d=(28+lv*4)*(.92+.08*Math.sin((b.t||0)*24+lv));
-          ctx.save();ctx.imageSmoothingEnabled=false;ctx.drawImage(im,(n%3)*418,Math.floor(n/3)*418,418,418,b.x-d/2,b.y-d/2,d,d);ctx.restore();continue;
+          ctx.save();ctx.translate(b.x,b.y);ctx.rotate(b.spin||0);ctx.imageSmoothingEnabled=false;ctx.drawImage(im,(n%3)*418,Math.floor(n/3)*418,418,418,-d/2,-d/2,d,d);ctx.restore();continue;
         }
         const boltKey=b._inf==='fire'?'forge_fire_slug_0918':'forge_elem_'+b._inf+'_bullet_0918';
         if(!orb&&typeof XART!=='undefined'&&XART.rdy(boltKey)){
@@ -47046,7 +47190,7 @@ function drawBullets(){
           ctx.drawImage(im,-d*.28,-d/2,d*.56,d);ctx.restore();continue;
         }
       }
-      ctx.save();ctx.translate(b.x,b.y);if(!orb)ctx.rotate((b.ang==null?Math.atan2(b.vy,b.vx):b.ang)+Math.PI/2);
+      ctx.save();ctx.translate(b.x,b.y);if(orb)ctx.rotate(b.spin||0);else ctx.rotate((b.ang==null?Math.atan2(b.vy,b.vx):b.ang)+Math.PI/2);
       ctx.globalCompositeOperation='lighter';ctx.imageSmoothingEnabled=false;ctx.shadowColor=orb?'#8d7dff':'#43dfff';ctx.shadowBlur=10+lv*2;
       const pulse=.92+.08*Math.sin((b.t||0)*24+lv),d=orb?(28+lv*4)*pulse:(34+lv*4);
       if(typeof XART!=='undefined'&&XART.rdy(key))ctx.drawImage(XART.get(key),-d/2,-d/2,d,d);
@@ -47112,21 +47256,24 @@ function drawBullets(){
       /* One entity, one lance. Position supplies the spiral; tangent supplies the rotation;
          pulse/stretch and a dim trailing echo keep the isolated sprite alive in motion. */
       const lv=clamp(b.lv||1,1,5), key='mavlaser_lance_'+lv;
-      if(typeof XART!=='undefined' && XART.rdy(key)){
-        const im=XART.get(key), tier=maverickLaserTier(lv);
+      const _newMav=typeof XART!=='undefined'&&XART.rdy('mav_lances_0919');
+      if(_newMav || (typeof XART!=='undefined' && XART.rdy(key))){
+        const im=XART.get(_newMav?'mav_lances_0919':key), tier=maverickLaserTier(lv);
+        const crop=([[18,465,173,415],[280,345,220,515],[590,160,220,710],[920,45,280,810],[1275,4,342,920]])[lv-1];
+        const lance=function(x,y,w,h){if(_newMav)ctx.drawImage(im,crop[0],crop[1],crop[2],crop[3],x,y,w,h);else ctx.drawImage(im,x,y,w,h);};
         const pulse=0.92+0.08*Math.sin((b._phase||0)+(b.t||0)*22);
-        const h=(42+lv*4)*(b._burstVolley?0.92:1)*pulse;
-        const w=(14+lv*1.4)*(b._burstVolley?0.92:1)*(2-pulse);
+        const h=(_newMav?(32+lv*3):(42+lv*4))*(b._burstVolley?0.92:1)*pulse;
+        const w=(_newMav?(8+lv*.55):(14+lv*1.4))*(b._burstVolley?0.92:1)*(2-pulse);
         const rot=(b._ang||-Math.PI/2)+Math.PI/2+Math.sin((b._phase||0)+(b.t||0)*17)*0.045;
         ctx.save(); ctx.translate(b.x,b.y); ctx.rotate((b._ang||-Math.PI/2)+Math.PI/2);
         ctx.globalCompositeOperation='lighter'; ctx.imageSmoothingEnabled=false;
-        ctx.globalAlpha=0.18; ctx.shadowColor=tier.glow; ctx.shadowBlur=12;
-        ctx.drawImage(im,-w/2,h*0.18,w,h);
+        ctx.globalAlpha=_newMav?0.05:0.18; ctx.shadowColor=tier.glow; ctx.shadowBlur=_newMav?0:12;
+        lance(-w/2,h*0.18,w,h);
         ctx.restore();
         ctx.save(); ctx.translate(b.x,b.y); ctx.rotate(rot);
-        ctx.globalCompositeOperation='lighter'; ctx.imageSmoothingEnabled=false;
-        ctx.globalAlpha=0.96; ctx.shadowColor=tier.glow; ctx.shadowBlur=8;
-        ctx.drawImage(im,-w/2,-h*0.56,w,h);
+        ctx.globalCompositeOperation=_newMav?'source-over':'lighter'; ctx.imageSmoothingEnabled=false;
+        ctx.globalAlpha=_newMav?1:0.96; ctx.shadowColor=tier.glow; ctx.shadowBlur=_newMav?2:8;
+        lance(-w/2,-h*0.56,w,h);
         ctx.restore();
       }
       continue;
@@ -47480,6 +47627,14 @@ function drawBullets(){
         else { ctx.fillStyle=(b.kind==='nukem')?'#ffe14a':'#ffb04a'; ctx.fillRect(-3,-10,6,20); }
       }
       ctx.restore(); continue; }
+    if(b.kind==='iceLance' && typeof XART!=='undefined' && XART.rdy('forge_ice_lance_0919')){
+      const im=XART.get('forge_ice_lance_0919');ctx.save();ctx.translate(b.x,b.y);ctx.shadowColor='#75deff';ctx.shadowBlur=7;
+      ctx.drawImage(im,340,25,345,1480,-b.w*.9,-b.h*.8,b.w*1.8,b.h*1.6);ctx.restore();continue;
+    }
+    if(b.kind==='orb' && b._el==='dark' && (b._voidAge||0)>.52 && typeof XART!=='undefined' && XART.rdy('forge_dark_void_0919')){
+      const im=XART.get('forge_dark_void_0919'),d=b.w*2.25;ctx.save();ctx.translate(b.x,b.y);ctx.rotate((b.spin||0)*.7);
+      ctx.imageSmoothingEnabled=false;ctx.drawImage(im,-d/2,-d/2,d,d);ctx.restore();continue;
+    }
     if(b.kind==='orb' && b._inf && b._inf!=='fire' && b._inf!=='toxic' && b._inf!=='ice' && typeof XART!=='undefined' && XART.rdy('forge_orbs_0919')){
       const cells={lightning:0,prism:1,kinetic:2,chrome:3,water:4,dark:5};
       const n=cells[b._inf];if(n!=null){const im=XART.get('forge_orbs_0919'),d=b.w*2.04*(.94+.06*Math.sin((b.t||0)*18));
@@ -49865,6 +50020,7 @@ function drawScene(dt){
     case 'paused':   playPauseWorldDraw(); return drawPaused(dt);
     case GS.STAGECLEAR: return drawStageClear(dt);
     case GS.UNLOCKS:    return drawUnlocks(dt);
+    case GS.YURIUP:     return drawYuriUpgrade(dt);
     case GS.FORGE:      return drawForge(dt);
     case GS.FORGING:    return drawForging(dt);
     case GS.FORGED:     return drawForging(dt);
@@ -61036,6 +61192,7 @@ function campSnapshot(){
        exactly the pre-0814a behaviour. Bumping would have invalidated every existing save to
        add an optional field. */
     wvars:(run.wvars||[]).slice(),
+    mavBeamUnlocked:!!run._mavBeamUnlocked,thunderStormUnlocked:!!run._thunderStormUnlocked,thunderCeremonyShown:!!run._thunderCeremonyShown,
     /* the Forge (0917): the permanent elements, what has been discovered, and the loadout. Optional
        fields; CAMP_SAVE_VER is deliberately NOT bumped (an older slot simply has none). */
     forge:Object.assign({},run.forge||{}), forgeForms:JSON.parse(JSON.stringify(run.forgeForms||{})), forgeElems:Object.assign({},run.forgeElems||{}),
@@ -61065,6 +61222,8 @@ function campApply(s){
   while(run.wlevels.length<WEAPONS.length)run.wlevels.push(0);
   run.wvars = Array.isArray(s.wvars) ? s.wvars.slice() : WEAPONS.map(()=>null);
   while(run.wvars.length<WEAPONS.length)run.wvars.push(null);
+  run._mavBeamUnlocked=!!s.mavBeamUnlocked || (run.pilot==='maverick'&&run.stage>1);
+  run._thunderStormUnlocked=!!s.thunderStormUnlocked;run._thunderCeremonyShown=!!s.thunderCeremonyShown;
   run.forge=(s.forge&&typeof s.forge==='object')?Object.assign({},s.forge):{};
   run.forgeForms=(s.forgeForms&&typeof s.forgeForms==='object')?JSON.parse(JSON.stringify(s.forgeForms)):{};
   run.forgeElems=(s.forgeElems&&typeof s.forgeElems==='object')?Object.assign({},s.forgeElems):{};
@@ -69472,9 +69631,12 @@ function drawWorld(dt){
      fighters and the zap flash — a unit taking any of those paths would silently never smoke. */
   for(const e of enemies){
     try{ drawEnemyShieldBack(e); }catch(_esb){}
-    drawEnemy(e);
+    ctx.save();if(e._mercuryLock>0)ctx.filter='grayscale(1) brightness(1.5)';
+    drawEnemy(e);ctx.restore();
     try{ drawEnemyShieldFront(e); }catch(_esf){}
     try{ drawEnemyDamage(e, _lastDt||1/60); }catch(_de){}
+    if(e._eradicatorT>0){ctx.save();ctx.strokeStyle='#a457ed';ctx.lineWidth=3;ctx.shadowColor='#a457ed';ctx.shadowBlur=9;
+      const rr=Math.max(e.w||20,e.h||20)*(.65+.08*Math.sin(efxClock*22));ctx.beginPath();ctx.ellipse(e.x,e.y,rr,rr*.65,efxClock*3,0,TAU);ctx.stroke();ctx.restore();}
     try{ drawLaserTell(e); }catch(_lt){}
   }
   try{ enemyShieldFxUpdate(dt); enemyShieldFxDraw(); }catch(_esfx){}
@@ -69521,6 +69683,7 @@ function drawWorld(dt){
   if(typeof wfxUpdate==='function'){ wfxUpdate(dt); wfxDraw(); }   // WEATHER FX: L2 firewave / L3 snow / L6 bolts
   if(typeof allyUpdate==='function') allyUpdate(dt);                 // spared-rival wingman
   if(typeof allyDraw==='function') allyDraw();
+  thunderStormDraw();
   drawZaps();
   /* god's wrath: a white-out that decays fast, over the field but under the HUD */
   if(wrathFlash>0){ wrathFlash-=dt; ctx.save(); ctx.setTransform(1,0,0,1,0,0);
@@ -69531,6 +69694,11 @@ function drawWorld(dt){
   /* ⚠ THE UI THAT USED TO DRAW HERE IS NOW BELOW THE restore() (Mike, 0819) — see the block after
      it. These are SCREEN-space panels that were being drawn inside the camera transform. */
   drawBullets();
+  if(specialActive('yuri')&&run._thunderStormUnlocked&&(special._yCharge||0)>0.14&&XART.rdy('cfx_stage4_chain_lightning')){
+    const im=XART.get('cfx_stage4_chain_lightning'),q=clamp(special._yCharge/1.3,0,1),f=Math.floor(stateT*14)%8;
+    ctx.save();ctx.globalCompositeOperation='lighter';ctx.globalAlpha=.35+.45*q;ctx.translate(player.x,player.y);ctx.rotate(stateT*7);
+    ctx.drawImage(im,(f%4)*256,Math.floor(f/4)*384,256,384,-30-q*13,-30-q*13,60+q*26,60+q*26);ctx.restore();
+  }
   drawFalvaAura();     // pink glow burning off the hull — UNDER the ship
   if(typeof drawFalvaCharge==='function') drawFalvaCharge();   // Falva: charge aura + roller balls
   if(typeof drawColeCharge==='function') drawColeCharge();     // Cole: fusion-cannon charge (tier 8)
@@ -72081,6 +72249,7 @@ function drawStageClear(dt){
          order the concept note wrote down. Each page runs the next from its own CONTINUE, and the
          exit itself is still the one function. */
       freezerStageClearDefaults(run.stage|0);
+      if((run.stage|0)===1 && _pilotKey()==='maverick') run._mavBeamUnlocked=true;
       const _R=R, _un=unlockRowsFor(run.stage|0, (typeof _pilotKey==='function')?_pilotKey():'');
       const _leave=function(){ drawStageClear._unShown=false; scLeaveStage(_R); };
       /* debrief -> weapons/powers gained -> forge (-> forging -> forged, from inside it) -> LOADOUT -> fade
@@ -72089,10 +72258,44 @@ function drawStageClear(dt){
       const _toLoadout=function(){ if(typeof loadoutVisible==='function' && loadoutVisible()) loadoutStart(_leave); else _leave(); };
       const _toForge=function(){ if(typeof forgeVisible==='function' && forgeVisible()) forgeStart(_toLoadout); else _toLoadout(); };
       /* weapons gained -> POWERS GAINED (its own screen, 0917c) -> the forge */
-      const _forgeThen=function(){ if(typeof powersVisible==='function' && powersVisible()) powersStart(_toForge); else _toForge(); };
+      const _forgeThen=function(){ const next=function(){if(typeof powersVisible==='function'&&powersVisible())powersStart(_toForge);else _toForge();};
+        if((run.stage|0)===4&&_pilotKey()==='yuri'&&run._thunderStormUnlocked&&!run._thunderCeremonyShown){run._thunderCeremonyShown=true;yuriUpgradeStart(next);}else next(); };
       if(_un.length && !drawStageClear._unShown){ drawStageClear._unShown=true; unlocksStart(_un, _forgeThen); }
       else if(!drawStageClear._unShown){ drawStageClear._unShown=true; _forgeThen(); }
     }
+  }
+}
+
+
+let yuriUpgrade=null;
+function yuriUpgradeStart(done){
+  yuriUpgrade={done,t:0,md:!!(Input&&Input.mouse&&Input.mouse.down)};
+  XART.rdy('ship_yuri');XART.rdy('yuri_storm_icon_0919');XART.rdy('cfx_stage4_chain_lightning');XART.rdy('cut_furyhq_command_center');
+  (Audio.SFX.weapon||Audio.SFX.powerup||function(){})();setState(GS.YURIUP);
+}
+function drawYuriUpgrade(dt){
+  const U=yuriUpgrade;if(!U)return;
+  U.t+=dt;const W=typeof cutsceneViewWidth==='function'?cutsceneViewWidth():VW,H=VH;
+  ctx.fillStyle='#040914';ctx.fillRect(0,0,W,H);
+  const hq=XART.rdy('cut_furyhq_command_center')?XART.get('cut_furyhq_command_center'):null;
+  if(hq)ctx.drawImage(hq,0,0,W,H);
+  ctx.fillStyle='rgba(2,10,27,.86)';ctx.fillRect(W*.08,H*.075,W*.84,H*.12);ctx.fillRect(W*.08,H*.68,W*.84,H*.17);
+  ctx.strokeStyle='#35cafa';ctx.lineWidth=2;ctx.strokeRect(W*.08,H*.075,W*.84,H*.12);ctx.strokeRect(W*.08,H*.68,W*.84,H*.17);
+  const ship=XART.rdy('ship_yuri')?XART.get('ship_yuri'):null;
+  if(ship){const h=H*.40,w=h*ship.naturalWidth/ship.naturalHeight;ctx.save();ctx.shadowColor='#52caff';ctx.shadowBlur=20+10*Math.sin(U.t*9);ctx.drawImage(ship,W*.50-w/2,H*.21,w,h);ctx.restore();}
+  const icon=XART.rdy('yuri_storm_icon_0919')?XART.get('yuri_storm_icon_0919'):null;
+  if(icon)ctx.drawImage(icon,W*.67,H*.30,W*.16,W*.16);
+  const bolt=XART.rdy('cfx_stage4_chain_lightning')?XART.get('cfx_stage4_chain_lightning'):null;
+  if(bolt){ctx.save();ctx.globalCompositeOperation='lighter';ctx.globalAlpha=.55;const f=Math.floor(U.t*12)%8;
+    ctx.drawImage(bolt,(f%4)*256,Math.floor(f/4)*384,256,384,W*.43,H*.13,W*.14,H*.47);ctx.restore();}
+  const art=typeof curFontArt==='function'?curFontArt():null;
+  if(art){stageText(art,'YURI - THUNDER STORM',W/2,H*.13,Math.min(22,W*.037),'#84eaff',.96,1,.05);
+    stageText(art,'LIGHTNING CORE INSTALLED',W/2,H*.72,Math.min(16,W*.028),'#e0f8ff',.94,1,.05);
+    stageText(art,'TAP: CHAIN  /  HOLD: STORM',W/2,H*.79,Math.min(14,W*.025),'#62caff',.9,1,.05);}
+  controlHintRow([['pad_a','CONTINUE']],H*.91,W/2,W*.65);
+  const click=Input.mouse.down&&!U.md;U.md=!!Input.mouse.down;
+  if(U.t>.9&&(click||Input.tap('enter')||keybind.fire.some(k=>Input.tap(k))||Input.menuStart())){
+    const done=U.done;yuriUpgrade=null;if(done)done();
   }
 }
 
@@ -72557,7 +72760,7 @@ function fsx(n){ try{ if(Audio&&Audio.SFX&&Audio.SFX[n]){ Audio.SFX[n](); return
 function forgeBadgeKey(e,w,l){ return 'micon_forge_'+e+'_'+(w|0)+((l|0)>1?'_'+(l|0):''); }
 /* the icon a bay shows: the FORGED badge once a weapon carries an element, the plain one before */
 function forgeSlotKey(w){
-  if((w|0)===3 && heldVariant(3)==='firewhip' && forgeEntry(3)?.elem==='fire' && XART.rdy('micon_firewhip_0919')) return 'micon_firewhip_0919';
+  if((w|0)===3 && heldVariant(3)==='firewhip' && forgeEntry(3)?.elem==='fire' && XART.rdy('fire_whip_icons_0919')) return 'micon_firewhip_0919_'+clamp((run.wlevels&&run.wlevels[3])||1,1,5);
   const f=forgeEntry(w);
   if(f && XART.rdy(forgeBadgeKey(f.elem,w,f.lv))) return forgeBadgeKey(f.elem,w,f.lv);
   return weaponIconKey(w, Math.max(1,(run.wlevels&&run.wlevels[w])|0), {bare:1});
@@ -72983,7 +73186,8 @@ function loadoutVisible(){
   if(!run) return false;
   const pool=(typeof crateWeaponPool==='function')?crateWeaponPool(true):[];
   return pool.length>FORGE_LOADOUT_MAX || !!run._forgeShown ||
-    (run.mode==='campaign'&&((run.stage|0)===2||(_pilotKey()==='freezer'&&((run.stage|0)===1||(run.stage|0)===3))));
+    (_pilotKey()==='maverick'&&(run.stage|0)===1&&!!run._mavBeamUnlocked) ||
+     (run.mode==='campaign'&&((run.stage|0)===2||(_pilotKey()==='freezer'&&((run.stage|0)===1||(run.stage|0)===3))));
 }
 function loadoutFormElement(w,o){
   if(o&&o.kind==='forge')return o.elem;
@@ -73047,7 +73251,7 @@ function drawLoadout(dt){
     for(let ci=0;ci<cells.length;ci++){const c=cells[ci],cx=x0+ci*pitch,h=Math.min(18,B[3]*.24);forgeIconFit(c.key,cx,yy,h,0,c.ok?1:.18);L.catalogRects.push({x:cx-h/2,y:yy-h/2,w:h,h:h,weapon:w,cell:c});}
   }
   if(L.row===1)opts=L.pool.map(function(w){return {weapon:w,name:weaponDisplayName(w),key:forgeSlotKey(w)};});
-  else if(L.row===2&&selW!=null)opts=weaponFormOptions(selW).map(function(o){return Object.assign({},o,{key:o.kind==='forge'?forgeBadgeKey(o.elem,selW,o.lv):(o.kind==='variant'&&o.id==='firewhip'?'micon_firewhip_0919':(o.kind==='variant'&&WVAR_ICON[o.id]?WVAR_ICON[o.id]+'3':weaponIconKey(selW,3,{bare:1})))});});
+  else if(L.row===2&&selW!=null)opts=weaponFormOptions(selW).map(function(o){return Object.assign({},o,{key:o.kind==='forge'?forgeBadgeKey(o.elem,selW,o.lv):(o.kind==='variant'&&o.id==='firewhip'?'micon_firewhip_0919_3':(o.kind==='variant'&&WVAR_ICON[o.id]?WVAR_ICON[o.id]+'3':weaponIconKey(selW,3,{bare:1})))});});
   const matchup=loadoutMatchup(selW,L.row===2?opts[clamp(L.psel|0,0,Math.max(0,opts.length-1))]:null);
   if(art&&matchup){
     const yy=H*.249,flash=matchup.good?(.68+.32*Math.sin(t*16)):.86;
