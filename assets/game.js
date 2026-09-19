@@ -73950,7 +73950,7 @@ if(window.BOFA && BOFA.sfx){
     tlvJetTurn:'assets/game/sounds/nsp_rcs_thruster.mp3',
     tlvJetThrust:'assets/game/sounds/nsp_booster_ignite.mp3',
     tlvJetEngine:'assets/game/sounds/nsp_engine_loop.mp3',
-    rzbTankRoll:'assets/game/sounds/nsp_engine_loop.mp3',
+    rzbTankRoll:'assets/game/sounds/rzb_tank_tread_loop_0919.wav',
     tlvJetBrake:'assets/game/sounds/brake.wav',
     dkBuck:'assets/game/sounds/reviewed_decker_shotgun.wav',
     dkShell:'assets/game/sounds/reviewed_decker_shell_eject.wav',
