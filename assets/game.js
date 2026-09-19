@@ -8040,7 +8040,7 @@ const INFUSION_FIELD_DROPS=false;
    its FLAME_TICK ledger, the mist and the bolt once per target. Mike's own equip rule names them:
    "1 flamethrower/ice breath/ other types upgrade". They take the element as the aura, the trail and
    the on-hit effect; each has its own authored draw, so none of them takes the palette swap. */
-const INFUSION_CARRIERS={mg:1,spread:1,beam:1,missile:1,orb:1,shard:1,
+const INFUSION_CARRIERS={mg:1,spread:1,prismRay:1,beam:1,missile:1,orb:1,shard:1,
                          flame:1,lasermist:1,yuriLightningOrb:1,yuriLightningBolt:1,forgeFireBlast:1};
 /* Each boss awards one global element; the Forge applies it to any weapon. */
 const BOSS_ELEMENT_BY_STAGE=Object.freeze({1:'kinetic',2:'fire',3:'ice',4:'lightning',5:'chrome',6:'dark',7:'toxic',8:'prism',9:'water'});
@@ -8224,7 +8224,7 @@ const FORGE_NAMES=Object.freeze({
   fire:     {0:'INCENDIARY SLUGS', 1:'NAPALM FAN',    2:'HELLFIRE RACK',  3:'INFERNO BEAM',   5:'MAGMA ORB',    7:'INFERNO GATLING', 4:'BLAST FURNACE', 6:'EMBER MIST',  8:'MAGMA SPHERE'},
   ice:      {0:'CRYO SLUGS',       1:'SHARD FAN',     2:'FROSTBITE RACK', 3:'CRYO BEAM',      5:'GLACIER ORB',  7:'HAIL GATLING', 4:'ABSOLUTE ZERO', 6:'FROST MIST',  8:'HAIL SPHERE'},
   lightning:{0:'VOLT SLUGS',       1:'ARC FAN',       2:'STORM RACK',     3:'TESLA BEAM',     5:'THUNDER ORB',  7:'STORM GATLING', 4:'PLASMA JET',    6:'STORM MIST',  8:'TESLA SPHERE'},
-  prism:    {0:'PRISM SLUGS',      1:'SPECTRUM FAN',  2:'PRISM RACK',     3:'LUMINAIRE BEAM', 5:'PRISM ORB',    7:'PRISM GATLING', 4:'SPECTRUM JET',  6:'PRISM MIST',  8:'PRISM SPHERE'},
+  prism:    {0:'PRISM SLUGS',      1:'RAYBURST',  2:'PRISM RACK',     3:'LUMINAIRE BEAM', 5:'PRISM ORB',    7:'PRISM GATLING', 4:'SPECTRUM JET',  6:'PRISM MIST',  8:'PRISM SPHERE'},
   toxic:    {0:'VENOM SLUGS',      1:'ACID FAN',      2:'BLIGHT RACK',    3:'DECAY BEAM',     5:'PLAGUE ORB',   7:'VENOM GATLING', 4:'VENOM JET',     6:'BLIGHT MIST', 8:'PLAGUE SPHERE'},
   kinetic:  {0:'SONIC SLUGS',      1:'SHOCK FAN',     2:'IMPACT RACK',    3:'GIANT BEAM',     5:'KINETIC ORB',  7:'HAMMER GATLING', 4:'PRESSURE JET',  6:'SHOCK MIST',  8:'IMPACT SPHERE'},
   chrome:   {0:'MIRROR SLUGS',     1:'CHROME FAN',    2:'MIRROR RACK',    3:'CHROME BEAM',    5:'MIRROR ORB',   7:'CHROME GATLING', 4:'CHROME JET',    6:'MIRROR MIST', 8:'MIRROR SPHERE'},
@@ -8270,6 +8270,7 @@ const FORGE_STYLE_FAMILY=Object.freeze({
 });
 function forgeStyleName(elem,w,lv){
   const base=(FORGE_NAMES[elem]&&FORGE_NAMES[elem][w])||((INFUSIONS[elem]||{}).name+' '+WEAPONS[w]);
+  if(elem==='prism' && w===1) return (lv|0)>=5?'RAYBURST NOVA':(lv|0)>=3?'RAYBURST STORM':'RAYBURST';
   if((lv|0)<3) return base;
   const words=FORGE_STYLE_WORDS[elem]||['POWER','MEGA'], family=FORGE_STYLE_FAMILY[w]||['WEAPON','BURST'];
   return (lv|0)<5?words[0]+' '+family[0]:words[1]+' '+family[1];
@@ -28422,13 +28423,17 @@ function pShoot(){
   } else if(w===1){ // spread fire
     const n=2+lv+(forgeActiveTier(1)>=3?1:0);
     const sprd=0.22+lv*0.05;
+    const rayburst=forgeActiveTier(1)>0 && forgeEntry(1)?.elem==='prism';
+    if(rayburst && typeof XART!=='undefined') XART.rdy('forge_elem_prism_laser_0918');
     for(let i=0;i<n;i++){
       const a=-Math.PI/2 + (i-(n-1)/2)*sprd;
       /* ⚠ THE SAME PELLET DAMAGE AS THE MACHINE GUN (Mike, 0905): "doing the same damage."
          It was a flat dmg:1 against the MG's 2 + floor(lv/2), so a spread pellet hit at a third
          of an MG pellet's strength at level 5 - which is most of why spread measured 107s on a
          miniboss against the machine gun's 21s, the worst gun in the game by five times. */
-      pBullets.push({x:player.x, y:player.y-12, vx:Math.cos(a)*7.5, vy:Math.sin(a)*7.5, w:5,h:10, dmg:2+Math.floor(lv/2), kind:'spread', lv});
+      pBullets.push({x:player.x, y:player.y-12, vx:Math.cos(a)*7.5, vy:Math.sin(a)*7.5,
+        w:rayburst?8:5,h:rayburst?22:10, dmg:2+Math.floor(lv/2), kind:rayburst?'prismRay':'spread', lv,
+        ...(rayburst?{ang:a,spd:7.5,turn:0.075+lv*0.006,seekT:0,fanSlot:i,fanCount:n}:{} )});
     }
     /* the gun's real muzzle flash, which spread never lit - part of "more
        graphical". Same machinefx reel the MG branch uses. */
@@ -30570,6 +30575,26 @@ function retinaMissileDamage(t,dmg,shot){
   else if(typeof rival!=='undefined'&&t===rival)hitRival(dmg);
   else hitEnemy(t,dmg);
   return true;
+}
+function prismRaySteer(b,dt){
+  b.seekT=(b.seekT||0)+dt;
+  if(b.seekT<0.14) return; // Let the authored rays open into a fan before they converge.
+  let target=null, best=Infinity;
+  const bias=((b.fanSlot||0)-((b.fanCount||1)-1)/2)*22;
+  for(const t of _lockTargets()){
+    if(t.dead||t.hp===0) continue;
+    const ty=t._drawY!=null?t._drawY:t.y;
+    if(ty>b.y+24) continue; // Rayburst seeks into the playfield, never back at the player.
+    const dx=t.x+bias-b.x,dy=ty-b.y,d=dx*dx+dy*dy;
+    if(d<best){best=d;target={x:t.x+bias,y:ty};}
+  }
+  if(!target) return;
+  let ang=b.ang==null?Math.atan2(b.vy,b.vx):b.ang;
+  const desired=Math.atan2(target.y-b.y,target.x-b.x);
+  const delta=((desired-ang+Math.PI*3)%(Math.PI*2))-Math.PI;
+  const turn=(b.turn||0.085)*Math.min(2.1,dt*60);
+  ang+=clamp(delta,-turn,turn);
+  b.ang=ang;const speed=b.spd||7.5;b.vx=Math.cos(ang)*speed;b.vy=Math.sin(ang)*speed;
 }
 function _lockTargets(){
   const t=[];
@@ -35067,6 +35092,7 @@ function updatePlay(dt){
       if(b.life<=0 || b.y<-40){ b.dead=true; iceBurst(b.x,b.y,b.shardN,b.lv,_sopt); if(b._ts) tsFx(b.x,b.y,'imp',110); }
       continue;
     }
+    if(b.kind==='prismRay') prismRaySteer(b,dt);
     if(b.kind==='missile'){
       b.t=(b.t||0)+dt;
       let tx=null,ty=null,best=1e9;
@@ -47867,6 +47893,12 @@ function drawBullets(){
         ctx.shadowColor='#ff5620';ctx.shadowBlur=9;
         ctx.drawImage(im,b.x-w/2,b.y-h/2,w,h);ctx.restore();continue;
       }
+    }
+    if(b.kind==='prismRay' && typeof XART!=='undefined' && XART.rdy('forge_elem_prism_laser_0918')){
+      const im=XART.get('forge_elem_prism_laser_0918'),h=29+Math.min(5,b._infLv|0)*2,w=h*im.naturalWidth/im.naturalHeight;
+      ctx.save();ctx.translate(b.x,b.y);ctx.rotate(Math.atan2(b.vy||-1,b.vx||0)+Math.PI/2);
+      ctx.imageSmoothingEnabled=false;ctx.shadowColor='#a87dff';ctx.shadowBlur=2;
+      ctx.drawImage(im,-w/2,-h/2,w,h);ctx.restore();continue;
     }
     if(b.kind==='spread' && b._inf==='fire' && typeof XART!=='undefined' && XART.rdy('forge_fire_blast_0918')){
       const im=XART.get('forge_fire_blast_0918'),h=27+Math.min(5,b._infLv|0)*2,w=h*im.naturalWidth/im.naturalHeight;
@@ -72589,7 +72621,7 @@ function forgePreviewTick(P,VWp,VHp,dt){
       else if(b.kind==='beam'){ b.life=(b.life==null?0.3:b.life)-dt; if(b.life<=0){ b.dead=true; continue; } b.x=player.x; b.bot=player.y-14; b.top=-20; }
       else if(b.kind==='flame'){ b.life=(b.life==null?0.3:b.life)-dt; b.anim=(b.anim||0)+dt; if(b.life<=0){ b.dead=true; continue; }
         b.x=player.x; b.bot=player.y-14; b.top=b.bot-flameReach(b.lv); b.w=flameBase(b.lv)*2; b.h=flameReach(b.lv); }
-      else { b.x+=(b.vx||0); b.y+=(b.vy||0); b.t=(b.t||0)+dt; }
+      else { if(b.kind==='prismRay') prismRaySteer(b,dt); b.x+=(b.vx||0); b.y+=(b.vy||0); b.t=(b.t||0)+dt; }
       if(b.y<-80||b.y>VHp+80||b.x<-80||b.x>VWp+80) b.dead=true;
     }
     pBullets=pBullets.filter(function(b){ return !b.dead; });
