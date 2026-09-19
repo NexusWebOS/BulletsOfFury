@@ -13,9 +13,9 @@ try:
   page.on('pageerror',lambda e:errors.append(str(e)))
   page.goto(f'http://127.0.0.1:{port}/index.html',wait_until='load',timeout=60000)
   page.wait_for_function("typeof ASSETS!=='undefined' && (window.__bofFrames|0)>4",timeout=45000)
-  page.evaluate("() => {document.body.classList.add('fs');__bofFit();run.mode='campaign';run.pilot='yuri';run.stage=4;campaign.unlockedMax=5;openStageSelect(4,{});}")
+  page.evaluate("() => {document.body.classList.add('fs');__bofFit();run.mode='campaign';run.pilot='yuri';run.stage=4;run.score=231450;run.lives=3;diffKey='hard';DIFF=difficultyForRun('campaign','hard');campaign.unlockedMax=5;openStageSelect(4,{});}")
   page.wait_for_timeout(1800)
-  page.screenshot(path=str(root/'_shots'/'widescreen_0918'/'campaign_map_full_world.png'))
+  page.screenshot(path=str(root/'_shots'/'widescreen_0918'/'campaign_map_portrait_centered.png'))
   before=page.evaluate("""() => {const s=document.getElementById('screen').getBoundingClientRect(),w=cmap2World(2),c=cmap2.cam,k=s.width/480;return {x:s.left+240*k+(w.x-c.x)*c.z*k,y:s.top+218*k+(w.y-c.y)*c.z*k,frameLeft:s.left,cursor:sselCursor,worldVisible:getComputedStyle(document.getElementById('wide-map-world')).display};}""")
   if before['x']<before['frameLeft'] and before['y']>0:
    page.mouse.click(before['x'],before['y'])
