@@ -19003,6 +19003,12 @@ function razorbackPairUpdate(b,dt){
     else P.pressureDrain=null;
   }
   for(const p of P.actors){p.t+=dt;if(p.dead){p.dying+=dt;if(p.dying>=1.05)p._rzbGone=true;}else razorbackUpdate(p,dt);}
+  // The duo shares one loop: only the controller decides whether either live tread is rolling.
+  const rolling=Math.max(0,...P.actors.filter(p=>!p.dead&&p._rzb).map(p=>p._rzb.speed||0));
+  if(typeof Snd!=='undefined'){
+    if(rolling>20*RZB_S&&Snd.loopOn)Snd.loopOn('rzbTankRoll',Math.min(.72,.34+rolling/520));
+    else if(Snd.loopOff)Snd.loopOff('rzbTankRoll');
+  }
   razorbackPairSync(b);
   if(!P.cleared&&P.actors.every(p=>p._rzbGone)){P.cleared=true;b.dead=true;b.dying=0;b._deathFxStarted=true;
     achievementEncounterDefeat(b,'miniboss');rzbSfx('expBig');shake=Math.max(shake||0,10);}
@@ -19049,7 +19055,7 @@ function razorbackPressureRelease(b){
 function razorbackClear(b){
   const R=b._rzb; R.pid++; R.waves=[]; R.charge=0;
   razorbackPressureRelease(b);
-  if(typeof Snd!=='undefined'&&Snd.loopOff) Snd.loopOff('rzbTankRoll');
+  if(!b._pairController&&typeof Snd!=='undefined'&&Snd.loopOff) Snd.loopOff('rzbTankRoll');
   for(const q of eBullets) if(q._rzb&&(!q._rzbOwner||q._rzbOwner===b)) q.dead=true;
   if(typeof playerLocks!=='undefined') playerLocks=playerLocks.filter(L=>L.src!==b);
 }
@@ -19140,11 +19146,11 @@ function razorbackUpdate(b,dt){
      TAME row and a 2.2s cadence so it reads as machinery rather than a repeating blip */
   R.servoT=(R.servoT||0)-dt;
   if(R.speed>20*RZB_S){
-    if(typeof Snd!=='undefined'&&Snd.loopOn) Snd.loopOn('rzbTankRoll',Math.min(.72,.34+R.speed/520));
+    if(!b._pairController&&typeof Snd!=='undefined'&&Snd.loopOn) Snd.loopOn('rzbTankRoll',Math.min(.72,.34+R.speed/520));
     R.rollShake=(R.rollShake||0)+dt;
     if(R.rollShake>.085){R.rollShake=0;shake=Math.max(shake||0,1.15+(R.speed>150*RZB_S?0.75:0));}
     if(R.servoT<=0){ R.servoT=2.2; rzbSfx('furnaceServo'); }
-  } else if(typeof Snd!=='undefined'&&Snd.loopOff) Snd.loopOff('rzbTankRoll');
+  } else if(!b._pairController&&typeof Snd!=='undefined'&&Snd.loopOff) Snd.loopOff('rzbTankRoll');
   const ta=rzbAim(b,{x:P.x+R.pvx*0.16, y:P.y});
   R.turret+=clamp(rzbWrap(ta-R.turret), -1.85*(R.turnMul||1)*dt, 1.85*(R.turnMul||1)*dt);
   for(const k of ['left','right']){ const g=rzbWorld(b,k==='left'?-57:57,96);

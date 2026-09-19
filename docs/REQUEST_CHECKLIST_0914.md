@@ -1,8 +1,8 @@
 # Bullets of Fury — request checklist
 
-Updated 2026-09-19. **176 entries: 149 complete / 9 partial / 18 pending.**
+Updated 2026-09-19. **176 entries: 150 complete / 9 partial / 17 pending.**
 
-**27 remain unfinished.** 10 depend on SpriteCook production assets; 0 needs a model-name decision. These are included in the totals.
+**26 remain unfinished.** 10 depend on SpriteCook production assets; 0 needs a model-name decision. These are included in the totals.
 
 Consolidated requests in this conversation; superseded variants folded into the latest request. Rows count deliverables, not effort or percent of development time.
 
@@ -24,7 +24,7 @@ Mike selected furyship_somersault_13.png and approved image_gen for its replacem
 | --- | ---: | ---: | ---: | ---: |
 | Earlier handoff, weapons and Tempest | 9 | 1 | 0 | 10 |
 | Shared combat, warnings and targeting | 17 | 3 | 2 | 22 |
-| Stage 1: fodder, Razorback and jungle chopper | 17 | 1 | 1 | 19 |
+| Stage 1: fodder, Razorback and jungle chopper | 18 | 1 | 0 | 19 |
 | Stage 2: lava enemies, Magma Ward and Furnace Tyrant | 7 | 1 | 3 | 11 |
 | Stage 3: ice enemies, miniboss and Rime Wall | 12 | 0 | 2 | 14 |
 | Stage 4: Olive Warden and Sovereign | 14 | 0 | 4 | 18 |
@@ -94,7 +94,7 @@ Mike selected furyship_somersault_13.png and approved image_gen for its replacem
 - [ ] **S1-15 · Partial** — A suppression beat now separates the committed Retina rocket flurry from the missile rack; Furious sonic rings have a pale edge and projectiles have a warm halo. Dense warning/explosion overlap still needs continuous playtest review. [Proof](RAZORBACK_FURIOUS_READABILITY_0919.md).
 - [x] **S1-16 · Complete** — Razorback early-turret hit feedback: flash the targetable central turret white during the machine-gun phase and keep destroyed-part feedback local to the struck module. [Evidence](ROTATION_SHIELD_STAGE2_REPAIR_0918.md).
 - [x] **S1-17 · Complete** — Give the Hard Razorback Duo readable per-tank condition/target feedback in addition to the combined encounter bar so the player can identify which tank is close to breaking. [Evidence](ROTATION_SHIELD_STAGE2_REPAIR_0918.md).
-- [ ] **S1-18 · Pending** — Replace the temporary low-passed shared engine loop with a dedicated tracked-tank tread/roller recording and verify movement start, stop and dual-tank ownership. [Evidence](PLAYTEST_REPAIR_QUEUE_0918.md).
+- [x] **S1-18 · Complete** — The Razorback now uses a CC0 recorded rolling texture mixed with its low motor bed; the Hard duo owns one loop that follows either moving tank and stops only when both stop. [Proof](RAZORBACK_TREAD_RECORDING_0919.md).
 - [x] **S1-19 · Complete** — Show two independent miniboss bars for the Hard Razorback Duo, one for each tank, and flash the targetable center turret during opening-phase hits. [Evidence](ROTATION_SHIELD_STAGE2_REPAIR_0918.md).
 
 ### Stage 2: lava enemies, Magma Ward and Furnace Tyrant

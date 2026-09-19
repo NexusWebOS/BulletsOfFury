@@ -1,0 +1,8 @@
+Source: "Tank Tread" by 77Pacer, Freesound sound 425271
+Page: https://freesound.org/people/77Pacer/sounds/425271/
+License: Creative Commons Zero 1.0 (CC0)
+Source asset in this folder: tank_tread_77pacer_cc0_source.mp3 (public HQ preview)
+The artist recorded a rolling garage door and described it as useful for tank treads.
+Rebuild: python _BUILD_SOURCE/rebuild_razorback_recorded_tread.py
+The rebuild mixes its metallic recording with the prior synthesized motor bed retained
+in unused_x/rzb_tank_tread_synth_0919.wav; the output is a seamless 2-second mono WAV.

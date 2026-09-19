@@ -18,7 +18,7 @@ These are recorded observations; each item retains its own implementation and br
 
 - Early central-turret hits are accepted during Razorback's gun phase, but the turret flash is still gated to the later turret phase.
 - The Hard duo exposes one combined health bar without a clear per-tank condition readout.
-- Tank-roll cue: dedicated tread and motor loop added 0919 and loaded through the Razorback movement route; browser audio-pool check passed.
+- Tank-roll cue: CC0 recorded rolling texture blended into the motor loop 0919; Chromium verified the Hard duo keeps the loop alive while either tank moves. [Proof](RAZORBACK_TREAD_RECORDING_0919.md).
 - Stats labels `BULLETS FIRED` while formatting `hits / shots`, which describes accuracy counts rather than bullets fired.
 - The dense Loadout matrix needs a selected-name/state readout and larger paging; dim opacity alone is weak feedback.
 - Pilot Select can briefly show blank ship cells during lazy decode and still omits callsign, special and biography detail from the restored selection view.

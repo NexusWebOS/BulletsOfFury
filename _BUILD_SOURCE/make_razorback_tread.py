@@ -34,7 +34,7 @@ seam = int(rate * 0.06)
 signal[-seam:] -= (signal[-1] - signal[0]) * np.linspace(0, 1, seam)
 pcm = np.round(np.clip(signal, -1, 1) * 32767).astype('<i2')
 
-dest = Path(__file__).resolve().parent.parent / 'assets/game/sounds/rzb_tank_tread_loop_0919.wav'
+dest = Path(__file__).resolve().parent.parent / 'assets/game/sounds/unused_x/rzb_tank_tread_synth_0919.wav'
 with wave.open(str(dest), 'wb') as wav:
     wav.setnchannels(1)
     wav.setsampwidth(2)
