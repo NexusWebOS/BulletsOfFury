@@ -26265,15 +26265,18 @@ function beamCircleImpact(q,r,range){
   const chord=Math.sqrt(r*r-dx*dx),lo=Math.max(range.top,q.y-chord),hi=Math.min(range.bot,q.y+chord);
   return hi>lo?{x:x,y:(lo+hi)/2,entry:hi}:null;
 }
+function razorbackTargetParts(R){
+  if(!R||R.state==='arrival'||R.trans>0)return [];
+  return R.state==='guns'?['left','right','turret']:[R.state];
+}
 function razorbackBeamHit(b,beam){
   const R=b&&b._rzb,range=playerBeamRange(beam);
-  if(!R||b.dead||R.state==='arrival'||R.trans>0||!range)return null;
+  if(!R||b.dead||!range)return null;
   let best=null;
-  const parts=R.state==='guns'?['left','right']:[R.state];
-  for(const key of parts){
+  for(const key of razorbackTargetParts(R)){
     if(!(R.pools[key]>0))continue;
     const q=key==='left'||key==='right'?rzbWorld(b,key==='left'?-57:57,96):{x:b.x,y:b.y};
-    const r=(R.state==='guns'?RZB_R.gun:R.state==='turret'?RZB_R.turret:RZB_R.hull)*(R.scale||1);
+    const r=RZB_R[key==='left'||key==='right'?'gun':key]*(R.scale||1);
     const hit=beamCircleImpact(q,r,range);
     if(hit&&(!best||hit.entry>best.entry))best=Object.assign(hit,{key:key});
   }
@@ -30679,14 +30682,14 @@ function retinaBossTargets(b){
       a.push(retinaImpactTarget(b,id,'section '+id,state,48,48));
     }
   }else if(b._rzbPair){
-    sectional=true;for(let ai=0;ai<b._rzbPair.actors.length;ai++){const p=b._rzbPair.actors[ai],R=p._rzb,ids=R.state==='guns'?['left','right']:[R.state];
-      if(!p.dead&&R.state!=='arrival'&&R.trans<=0)for(const id of ids)if(R.pools[id]>0){const rid=ai+':'+id,state=()=>{const q=id==='left'||id==='right'?rzbWorld(p,id==='left'?-57:57,96):{x:p.x,y:p.y};return{x:q.x,y:q.y,hp:R.pools[id],dead:p.dead||R.pools[id]<=0||R.state!==((id==='left'||id==='right')?'guns':id)||R.trans>0};};
+    sectional=true;for(let ai=0;ai<b._rzbPair.actors.length;ai++){const p=b._rzbPair.actors[ai],R=p._rzb,ids=razorbackTargetParts(R);
+      if(!p.dead)for(const id of ids)if(R.pools[id]>0){const rid=ai+':'+id,state=()=>{const q=id==='left'||id==='right'?rzbWorld(p,id==='left'?-57:57,96):{x:p.x,y:p.y};return{x:q.x,y:q.y,hp:R.pools[id],dead:p.dead||R.pools[id]<=0||!razorbackTargetParts(R).includes(id)};};
         const rr=(RZB_R[id==='left'||id==='right'?'gun':id]||34)*(R.scale||1)*2;a.push(retinaImpactTarget(b,rid,'razorback '+(ai+1)+' '+id,state,rr,rr));}
     }
   }else if(b._rzb){
-    sectional=true;const R=b._rzb,ids=R.state==='guns'?['left','right']:[R.state];
-    if(R.state!=='arrival'&&R.trans<=0)for(const id of ids)if(R.pools[id]>0){
-      const state=()=>{const q=id==='left'||id==='right'?rzbWorld(b,id==='left'?-57:57,96):{x:b.x,y:b.y};return{x:q.x,y:q.y,hp:R.pools[id],dead:R.pools[id]<=0||R.state!==((id==='left'||id==='right')?'guns':id)||R.trans>0};};
+    sectional=true;const R=b._rzb,ids=razorbackTargetParts(R);
+    for(const id of ids)if(R.pools[id]>0){
+      const state=()=>{const q=id==='left'||id==='right'?rzbWorld(b,id==='left'?-57:57,96):{x:b.x,y:b.y};return{x:q.x,y:q.y,hp:R.pools[id],dead:R.pools[id]<=0||!razorbackTargetParts(R).includes(id)};};
       const rr=(RZB_R[id==='left'||id==='right'?'gun':id]||34)*(R.scale||1)*2;a.push(retinaImpactTarget(b,id,'razorback '+id,state,rr,rr));
     }
   }else if(b._tempestDuo){

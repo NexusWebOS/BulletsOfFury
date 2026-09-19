@@ -19,7 +19,7 @@ module.exports=function(vm,ctxv,ok){
       razorbackEnter(a[0],'guns');razorbackEnter(a[1],'guns');
       o.offsetAttackBooks=a[0]._rzb.attack!==a[1]._rzb.attack&&a[0]._rzb.attack==='suppression'&&a[1]._rzb.attack==='sonic';
       ready(a[0]);ready(a[1]);razorbackPairSync(b);
-      var locks=retinaBossTargets(b);o.fourRetinaParts=locks.length===4&&locks.filter(t=>String(t._retinaId).startsWith('0:')).length===2&&locks.filter(t=>String(t._retinaId).startsWith('1:')).length===2;
+      var locks=retinaBossTargets(b);o.sixRetinaParts=locks.length===6&&locks.filter(t=>String(t._retinaId).startsWith('0:')).length===3&&locks.filter(t=>String(t._retinaId).startsWith('1:')).length===3;
       var L=rzbWorld(a[0],-57,96),R=rzbWorld(a[1],57,96),lh=a[0].hp,rh=a[1].hp;
       _dmgBullet=null;razorbackPairHit(b,11,L.x,L.y);o.leftOnly=a[0].hp<lh&&a[1].hp===rh&&b.hp===a[0].hp+a[1].hp;
       eBullets=[{_rzb:true,_rzbOwner:a[0],dead:false},{_rzb:true,_rzbOwner:a[1],dead:false}];

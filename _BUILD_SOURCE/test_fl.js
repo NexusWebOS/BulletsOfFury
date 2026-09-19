@@ -15202,7 +15202,7 @@ console.log('=== 297. Razorback and Tempest weapon geometry; Cole impact sound =
   ok(vm.runInContext("subBossSolidAt(b.x,b.y)===true",ctxv),'the final exposed hull remains targetable');
   vm.runInContext(_pre297+"R.a=0;var q=rzbWorld(b,-57,96);player.x=q.x;player.y=430;var before=R.pools.left,old=updateSubBoss;updateSubBoss=function(){};pBullets=[{kind:'beam',x:player.x,w:2,dmg:7,life:.5,_hit:[],top:-20,bot:416}];try{updatePlay(1/60);}finally{updateSubBoss=old;}",ctxv);
   ok(vm.runInContext("R.pools.left<before",ctxv),'the actual held-beam update damages a gun away from the hull center');
-  ok(vm.runInContext("razorbackBeamHit(b,{x:q.x+20,w:10,top:-20,bot:416}).key==='left'&&razorbackBeamHit(b,{x:q.x,w:2,top:-20,bot:q.y-20})===null",ctxv),'laser width reaches a gun edge while its finite endpoint excludes a gun beyond reach');
+  ok(vm.runInContext("razorbackBeamHit(b,{x:q.x+20,w:10,top:-20,bot:416}).key==='left'&&razorbackBeamHit(b,{x:q.x,w:2,top:-20,bot:q.y-20}).key==='turret'&&razorbackBeamHit(b,{x:q.x,w:2,top:-20,bot:b.y-40})===null",ctxv),'laser reaches a gun and the early turret, but stops before both');
   vm.runInContext(_pre295+"s.boss.y=340;J.angle=Math.PI/2;D.ships[1]._ai.vulnerable=false;tempestBrothersSync(b);var q=tempestPortXY(p,2),beam={kind:'beam',x:q.x+8,w:2,top:-20,bot:416};",ctxv);
   ok(vm.runInContext("tempestBrothersBeamHit(b,beam).key==='B2'",ctxv),'a quarter-turn laser column reaches the physically rotated front aperture');
   vm.runInContext("var before=s.rig[2].hp,hp=s.hp,gray=D.ai.gray.hp;_dmgBullet=beam;hitSubBoss(7,b.x,b.y);_dmgBullet=null;",ctxv);

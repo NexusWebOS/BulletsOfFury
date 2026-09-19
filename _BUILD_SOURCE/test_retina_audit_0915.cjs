@@ -24,7 +24,7 @@ module.exports=function(vm,ctxv,ok){
       subBoss={x:240,y:150,w:130,h:125,hp:400,maxhp:400,dead:false,enter:false,
         _rzb:{state:'guns',trans:0,a:0,pools:{left:40,right:40,turret:100,hull:100},flash:{},clankT:0}};
       list=_lockTargets();left=list.find(t=>t._retinaId==='left');retinaMissileDamage(left,6,{x:left.x,y:left.y});
-      o.razorback=list.length===2&&subBoss._rzb.pools.left===34&&subBoss._rzb.pools.right===40;
+      o.razorback=list.length===3&&list.some(t=>t._retinaId==='turret'&&!t.dead)&&subBoss._rzb.pools.left===34&&subBoss._rzb.pools.right===40&&subBoss._rzb.pools.turret===100;
 
       subBoss={x:240,y:150,w:77,h:84,hp:200,maxhp:200,dead:false,enter:false,
         _tlv:{vuln:true,phase:'chase',ap:[0,1,2,3].map(()=>({hp:10,max:10}))}};
