@@ -74227,14 +74227,10 @@ if(window.BOFA && BOFA.music){
        peaks at 0.0, against -16.1..-16.6 / -2.2..-3.0). A global music slider cannot fix one hot track,
        so they were GAIN-matched on encode to the boss-track mean - volume only, dynamics untouched -
        at the house format, 112k CBR 44.1 kHz stereo, from Mike's original WAVs. */
-  /* Stage 1's boss theme is bossfight3 (Mike, 0916: "replace stage 1's boss music with bossfight3").
-     It stays registered on boss2 as well, so both stage bosses share it until stage 2 gets its own.
-     Stage 1 has no mini1, so its miniboss falls back to boss1 and changes with it. */
-  /* Stage 1 (Mike, 0916): the boss fights to minderaser, the miniboss to fireboss. minderaser came in as
-     a 48k WAV in music/newboss and was encoded to the house format - 112k CBR 44.1 kHz stereo - and
-     gain-matched to the boss-track mean, -4.8 dB, volume only: -11.5 dB mean / 0.0 peak became -16.8 / -4.3,
-     against boss1/3/5 at -16.1..-16.6 mean. mini1 IS NEW; before this, stage 1's miniboss fell back to boss1. */
-  BOFA.music.boss1='assets/game/music/boss1_minderaser.mp3';
+  /* Stage 1 boss: Mike's helicopterboss.wav, encoded for browser playback. Previous
+     Stage 1 boss theme (minderaser) is archived as unused_x; mini1 remains fireboss. */
+  BOFA.music.boss1='assets/game/music/boss1_helicopterboss.mp3';
+  BOFA.music.unused_x='assets/game/music/unused_x.mp3';
   BOFA.music.mini1='assets/game/music/miniboss_fireboss.mp3';
   BOFA.music.mini2='assets/game/music/miniboss_fireboss.mp3';
   BOFA.music.boss2='assets/game/music/boss2_bossfight3.mp3';
