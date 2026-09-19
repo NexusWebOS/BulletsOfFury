@@ -2183,6 +2183,10 @@ const XART=(function(){
       X._src['port_cf_'+_pp+'_'+_pe]='assets/game/pilot_portraits/'+_pp+'-'+_pe+'.png';
     }
   }
+  X._src.port_cf_yuri_alert='assets/game/pilot_portraits/yuri-alert-0919.png';
+  X._src.port_cf_cole_alert='assets/game/pilot_portraits/cole-alert-0919.png';
+  X._src.fire_whip_fx_0919='assets/game/player_weapons/fire_whip_0919/fire_whip_fx.png';
+  X._src.micon_firewhip_0919='assets/game/player_weapons/fire_whip_0919/fire_whip_icon.png';
   /* PILOT-SELECTED CAMPAIGN OPENINGS (0901). The approved ImageGen cinematic pack contains
      six opening views plus a dedicated centered stern view of every Fury aircraft, so scenes use
      real generated art instead of another static HQ briefing or canvas-drawn stand-ins. Keep
@@ -63323,6 +63327,9 @@ function achToastPush(t){ if(t) achToasts.push({title:String(t.title||''), point
    which is neither. A corner card can also carry TWO lines - the award and what it paid - where a
    bottom strip had room for one. */
 function achToastTick(dt){
+  /* Debrief owns the lower screen for score conversion, sign-off, password and Continue.
+     Hold the queued card until the next screen instead of covering those authored bays. */
+  if(state===GS.STAGECLEAR) return false;
   if(!achToasts.length || typeof ctx==='undefined') return false;
   const T=achToasts[0], D=ACH_TOAST, life=D.slide+D.hold+D.out;
   T.t+=Math.max(0,dt||0);
@@ -70995,8 +71002,8 @@ const SC_CONCEPT = [
    val:s=>s.spawned? Math.min(1,s.kills/s.spawned) : 1},
   {k:'LIVES LOST',      fill:'health',    fmt:s=>String(s.deaths)+' / '+Math.max(1,s.livesStart|0),
    val:s=>Math.max(0, 1-s.deaths/Math.max(1,s.livesStart|0))},   // inverted: fewer lost fills more
-  {k:'BULLETS FIRED',   fill:'missiles',  fmt:s=>s.hits+' / '+s.shots,
-   val:s=>s.shots? Math.min(1,s.hits/s.shots) : 0},
+  {k:'BULLETS FIRED',   fill:'missiles',  fmt:s=>String(s.shots|0),
+   val:s=>Math.min(1,(s.shots||0)/1000)},
   {k:'WEAPON ACCURACY', fill:'speed',     fmt:s=>(s.shots? Math.round(100*Math.min(1,s.hits/s.shots)):0)+'%',
    val:s=>s.shots? Math.min(1,s.hits/s.shots) : 0},
   {k:'WEAPON OF CHOICE',fill:'special',   fmt:s=>scTopWeapon(s),
