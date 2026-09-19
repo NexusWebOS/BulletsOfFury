@@ -62,9 +62,9 @@ function rightPanel(g,w,h,v,isMap){
  const x=(w-panelW)/2,y=h-panelH-12;
  plate(g,bgRect.panel,x,y,panelW,panelH);
  const port=img(portraits,v.key,'assets/game/pilot_avatars/pav_'+v.key+'.png');
- if(port.complete&&port.naturalWidth){g.save();g.beginPath();g.rect(x+panelW*.16,y+panelH*.075,panelW*.68,panelH*.24);g.clip();
-  const ph=panelH*.25,pw=ph*port.naturalWidth/port.naturalHeight;
-  g.drawImage(port,x+(panelW-pw)/2,y+panelH*.065,pw,ph);g.restore();}
+ if(port.complete&&port.naturalWidth){const bx=x+panelW*.16,by=y+panelH*.075,bw=panelW*.68,bh=panelH*.24;
+  const scale=Math.min(bw*.94/port.naturalWidth,bh*.94/port.naturalHeight),pw=port.naturalWidth*scale,ph=port.naturalHeight*scale;
+  g.drawImage(port,bx+(bw-pw)/2,by+(bh-ph)/2,pw,ph);}
  const rows=[['SCORE',v.score.toLocaleString()],['FURY PTS',v.points],['ACHIEVEMENT PTS',v.total],['LIVES / CONT',v.lives+' / '+v.continues],['DIFFICULTY',v.diff],['OBJECTIVE',v.objective]];
  rows.forEach((row,i)=>{const yy=y+panelH*(.396+i*.095),fs=Math.max(10,Math.min(15,panelW*.047));
   txt(g,row[0],x+panelW/2,yy-panelH*.013,fs*.8,'#8bbbcf','center');
@@ -81,8 +81,9 @@ function menuPanel(g,w,h,st){
   try{const p=PILOTS[pilotIndex]||PILOTS[0];key=p.key;name=p.name||p.key.toUpperCase();lines=['PILOT ROSTER','CALLSIGN  '+name.toUpperCase(),'FURY DIVISION','SHIP READY','CONFIRM PILOT','GOOD LUCK'];}catch(_){}
  }
  const port=img(portraits,key,key==='hub'?'assets/game/campaign_map_v2/isl_hub.png':'assets/game/pilot_avatars/pav_'+key+'.png');
- if(port.complete&&port.naturalWidth){g.save();g.beginPath();g.rect(x+panelW*.16,y+panelH*.075,panelW*.68,panelH*.24);g.clip();
-  const ph=panelH*.25,pw=ph*port.naturalWidth/port.naturalHeight;g.drawImage(port,x+(panelW-pw)/2,y+panelH*.065,pw,ph);g.restore();}
+ if(port.complete&&port.naturalWidth){const bx=x+panelW*.16,by=y+panelH*.075,bw=panelW*.68,bh=panelH*.24;
+  const scale=Math.min(bw*.94/port.naturalWidth,bh*.94/port.naturalHeight),pw=port.naturalWidth*scale,ph=port.naturalHeight*scale;
+  g.drawImage(port,bx+(bw-pw)/2,by+(bh-ph)/2,pw,ph);}
  txt(g,name.toUpperCase(),x+panelW/2,y+panelH*.31,Math.max(12,panelW*.07),'#e8f2ff','center');
  lines.forEach((line,i)=>txt(g,line,x+panelW*.20,y+panelH*(.41+i*.095),Math.max(10,Math.min(15,panelW*.045)),'#e1f0ff'));
 }
@@ -97,7 +98,7 @@ function tick(now){requestAnimationFrame(tick);if(now-last<180)return;last=now;
  document.body.classList.toggle('wide-playing',wide&&playing);
  const frame=document.getElementById('game-frame').getBoundingClientRect(),half=Math.max(0,(innerWidth-frame.width)/2),side=Math.min(460,Math.floor(half-18));
  const visible=wide&&side>=184;
- left.style.display=right.style.display=visible?'block':'none';clock.style.display=visible&&map?'block':'none';mapTop.style.display=visible&&map?'block':'none';
+ left.style.display=right.style.display=visible?'block':'none';clock.style.display=visible&&map?'block':'none';mapTop.style.display='none';
  if(!visible)return;
  const h=Math.min(innerHeight-16,Math.max(420,Math.floor(frame.height))),top=Math.max(8,Math.round((innerHeight-h)/2));
  for(const [c,sideName] of [[left,'left'],[right,'right']]){

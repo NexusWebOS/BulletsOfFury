@@ -54,11 +54,9 @@
   #wide-clock{z-index:4;}
   #wide-map-top{position:fixed;display:none;z-index:2;pointer-events:none;background:#0a1a2b url('assets/game/campaign_map_v2/ocean.png') center/cover no-repeat;}
   body.wide-map #room{background-image:url('assets/game/campaign_map_v2/ocean.png');background-size:cover;background-position:center;}
-  body.wide-map #game-frame{box-shadow:none;background:transparent;}
-  body.wide-map #hud-row{background:transparent;}
-  body.wide-map #hud-wrap,body.wide-map #equip-dom{visibility:hidden;}
-  body.wide-map #hud-row{position:relative;}
-  body.wide-map #hud-row::after{content:'';position:absolute;inset:0;z-index:3;pointer-events:none;background:transparent;}
+  body.wide-map #game-frame{box-shadow:none;background:transparent;width:93.75vh !important;height:100vh !important;}
+  body.wide-map #hud-row,body.wide-map #hud-div{display:none !important;}
+  body.wide-map #screen-area,body.wide-map #screen{width:100% !important;height:100% !important;}
   @media(max-width:1149px){.wide-overlay{display:none !important;}}
   body.fs #marquee,
   body.fs #side-left,
