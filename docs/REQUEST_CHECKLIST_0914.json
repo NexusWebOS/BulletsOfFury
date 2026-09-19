@@ -81,7 +81,7 @@
       "request": "Existing ship used in space, pilot palettes, transformation and space death/roll support have proof; the later replacement concept and complete new frame set are still pending.",
       "evidence": "proofs/spaceship_0913a/report.json",
       "dependency": "",
-      "workOrder": 96,
+      "workOrder": 23,
       "difficulty": 5,
       "difficultyBand": "Largest asset, mode and full-stage passes"
     },
@@ -100,7 +100,7 @@
       "request": "Migrate all dangerous non-laser boss/miniboss attacks to the shared warning rule. Covered families now include the Stage-2 Inferno Reaver nine-lane shotgun fan, Stage-5 Chrome Hammer Archmage vertical boomerang, committed spiked-ball launch and fused mega-wave corridor, Stage-6 Doomsday Carrier twin-battery cyclone fan, alternating storm-node fans, four-barrel prism crossfire, paired gravity mines, accelerating omega bombs, mirrored cluster fan, chrome flak fan and Thunderhead, Stage-7 DUAL SCOOP DREDGER minefield and Toxic Portal Warden cripple-phase rail groups, Stage-8 BLACK COCOON crescent wall, RAVENOUS ASCENDANT five-needle fan, ABYSSAL LEVIATHAN nine-lane solar wheel, FURIOUS DEATH seven-gunship fan and four-lane straight-missile salvo, Stage-9 Event Horizon, independent Warp Sentinel radial/aimed volleys, and every row of the Tidal Sovereign cascade; remaining encounter families need review.",
       "evidence": "SHARED_NONLASER_WARNING_0915.md",
       "dependency": "",
-      "workOrder": 66,
+      "workOrder": 17,
       "difficulty": 3,
       "difficultyBand": "Shared systems and progression"
     },
@@ -217,7 +217,7 @@
       "request": "All pilots retain barrel roll and somersault access; existing ground/space support is present, but full nine-pilot regression and the replacement ship frames remain.",
       "evidence": "proofs/spaceship_0913a/report.json",
       "dependency": "",
-      "workOrder": 97,
+      "workOrder": 24,
       "difficulty": 5,
       "difficultyBand": "Largest asset, mode and full-stage passes"
     },
@@ -228,7 +228,7 @@
       "request": "HUD incoming-lock indicator above Equipped: gray idle, red flashing and distance-accelerated beeps until evasion or hit.",
       "evidence": "",
       "dependency": "SpriteCook",
-      "workOrder": 65,
+      "workOrder": 16,
       "difficulty": 3,
       "difficultyBand": "Shared systems and progression"
     },
@@ -430,7 +430,7 @@
       "request": "Missile-sequence head fight is recorded as a design note; distinct Super Missile Box and encounter sequence remain to be built.",
       "evidence": "OVERNIGHT_REQUESTS_0914.md",
       "dependency": "",
-      "workOrder": 91,
+      "workOrder": 21,
       "difficulty": 4,
       "difficultyBand": "Complex encounter choreography"
     },
@@ -441,7 +441,7 @@
       "request": "Generate improved authored Furnace giant-beam graphics that also support the Stage-3 Furious palette variant.",
       "evidence": "",
       "dependency": "SpriteCook",
-      "workOrder": 75,
+      "workOrder": 18,
       "difficulty": 4,
       "difficultyBand": "Complex encounter choreography"
     },
@@ -539,7 +539,7 @@
       "request": "Hard boss: Juggernaut-like dash with authored charge effects, fluid circular return and persistent hull-shaped shadow.",
       "evidence": "",
       "dependency": "SpriteCook",
-      "workOrder": 76,
+      "workOrder": 19,
       "difficulty": 4,
       "difficultyBand": "Complex encounter choreography"
     },
@@ -561,7 +561,7 @@
       "request": "Furious boss: black/blue palette and all Hard patterns, plus giant beam derived from the improved Furnace art.",
       "evidence": "",
       "dependency": "SpriteCook",
-      "workOrder": 79,
+      "workOrder": 20,
       "difficulty": 4,
       "difficultyBand": "Complex encounter choreography"
     },
@@ -656,7 +656,7 @@
       "request": "Furious third helper: elite black camo, opaque black/white Maverick-style ball with glowing blue charge growth.",
       "evidence": "",
       "dependency": "SpriteCook",
-      "workOrder": 98,
+      "workOrder": 25,
       "difficulty": 5,
       "difficultyBand": "Largest asset, mode and full-stage passes"
     },
@@ -667,7 +667,7 @@
       "request": "Dark Chromium attack: fade darker, shatter/disintegrate the ball into dual rotating energy flames with appropriate sounds.",
       "evidence": "",
       "dependency": "SpriteCook",
-      "workOrder": 99,
+      "workOrder": 26,
       "difficulty": 5,
       "difficultyBand": "Largest asset, mode and full-stage passes"
     },
@@ -678,7 +678,7 @@
       "request": "Dark Chromium lethal hit: explicitly requested ship-disintegration death and sound; preserve ordinary burn/spin/crash deaths elsewhere.",
       "evidence": "",
       "dependency": "SpriteCook",
-      "workOrder": 100,
+      "workOrder": 27,
       "difficulty": 5,
       "difficultyBand": "Largest asset, mode and full-stage passes"
     },
@@ -744,7 +744,7 @@
       "request": "Authored left/right escape arrows: flipped pair, flashing with synchronized warning sounds for the giant strike.",
       "evidence": "",
       "dependency": "SpriteCook",
-      "workOrder": 40,
+      "workOrder": 13,
       "difficulty": 2,
       "difficultyBand": "Moderate presentation and behavior work"
     },
@@ -795,7 +795,7 @@
       "request": "Stage 5 full enemy/projectile/boss balance round: first readability fixes have proof; full natural-play review with Mike remains.",
       "evidence": "READABLE_ATTACKS_0914.md",
       "dependency": "",
-      "workOrder": 102,
+      "workOrder": 29,
       "difficulty": 5,
       "difficultyBand": "Largest asset, mode and full-stage passes"
     },
@@ -806,7 +806,7 @@
       "request": "Stage 6 full enemy/projectile behavior cleanup round with Mike; separate from the completed Tempest/Retina work.",
       "evidence": "",
       "dependency": "",
-      "workOrder": 103,
+      "workOrder": 30,
       "difficulty": 5,
       "difficultyBand": "Largest asset, mode and full-stage passes"
     },
@@ -817,7 +817,7 @@
       "request": "Stage 7 full enemy/projectile behavior cleanup round with Mike.",
       "evidence": "",
       "dependency": "",
-      "workOrder": 104,
+      "workOrder": 31,
       "difficulty": 5,
       "difficultyBand": "Largest asset, mode and full-stage passes"
     },
@@ -828,7 +828,7 @@
       "request": "Stage 8 full enemy/projectile behavior cleanup round with Mike.",
       "evidence": "",
       "dependency": "",
-      "workOrder": 105,
+      "workOrder": 32,
       "difficulty": 5,
       "difficultyBand": "Largest asset, mode and full-stage passes"
     },
@@ -839,7 +839,7 @@
       "request": "Stage 9 full enemy/projectile behavior cleanup round with Mike.",
       "evidence": "",
       "dependency": "",
-      "workOrder": 106,
+      "workOrder": 33,
       "difficulty": 5,
       "difficultyBand": "Largest asset, mode and full-stage passes"
     },
@@ -861,7 +861,7 @@
       "request": "New ship and flight reels integrated. Twelve large solid top-view components rise from below individually with sound, then rotate and orbit without fades or mirrored perspective tricks. Remaining: flight-reel silhouette/wingspan consistency and exact final component fit.",
       "evidence": "FURYSHIP_SOLID_ASSEMBLY_0914.md",
       "dependency": "",
-      "workOrder": 93,
+      "workOrder": 22,
       "difficulty": 5,
       "difficultyBand": "Largest asset, mode and full-stage passes"
     },
@@ -1145,7 +1145,7 @@
       "request": "Achievement menu/button and bottom-center unlock notification that slides/fades downward.",
       "evidence": "",
       "dependency": "SpriteCook",
-      "workOrder": 55,
+      "workOrder": 14,
       "difficulty": 3,
       "difficultyBand": "Shared systems and progression"
     },
@@ -1189,7 +1189,7 @@
       "request": "Entire game without spending a continue: 1000 points plus a generated trophy avatar. Award trigger is complete; SpriteCook trophy avatar remains.",
       "evidence": "ACHIEVEMENT_REGISTRY_0915.md",
       "dependency": "SpriteCook",
-      "workOrder": 62,
+      "workOrder": 15,
       "difficulty": 3,
       "difficultyBand": "Shared systems and progression"
     },
@@ -1277,7 +1277,7 @@
       "request": "Wire playable Boss Rush and Time Attack behind their real unlock condition; do not fake a final campaign clear.",
       "evidence": "",
       "dependency": "",
-      "workOrder": 101,
+      "workOrder": 28,
       "difficulty": 5,
       "difficultyBand": "Largest asset, mode and full-stage passes"
     },
@@ -1402,7 +1402,7 @@
       "request": "Accelerating screaming head frames and shrieks/shake; two fire-ring X cycles; final white flash, absent boss and residual explosions.",
       "evidence": "BOSS_BATCH_0915.md",
       "dependency": "Mike: Stage 2 boss identity",
-      "workOrder": 13,
+      "workOrder": 11,
       "difficulty": 4,
       "difficultyBand": "Current boss brief \u2014 awaiting Stage 2 identity"
     },
@@ -1413,7 +1413,7 @@
       "request": "Continue scrolling after defeat; RNG different-pilot dialogue addressing the player about the assimilated military mech.",
       "evidence": "BOSS_BATCH_0915.md",
       "dependency": "S2-10",
-      "workOrder": 14,
+      "workOrder": 12,
       "difficulty": 4,
       "difficultyBand": "Current boss brief \u2014 awaiting Stage 2 identity"
     },
@@ -1609,19 +1609,16 @@
     {
       "id": "S1-16",
       "group": "Stage 1: fodder, Razorback and jungle chopper",
-      "status": "pending",
-      "workOrder": 7,
-      "difficulty": 1,
-      "difficultyBand": "Small changes and focused checks",
+      "status": "complete",
       "request": "Razorback early-turret hit feedback: flash the targetable central turret white during the machine-gun phase and keep destroyed-part feedback local to the struck module.",
-      "evidence": "PLAYTEST_REPAIR_QUEUE_0918.md",
+      "evidence": "ROTATION_SHIELD_STAGE2_REPAIR_0918.md",
       "dependency": ""
     },
     {
       "id": "UI-21",
       "group": "Pause, saving, title and pilot selection",
       "status": "pending",
-      "workOrder": 8,
+      "workOrder": 7,
       "difficulty": 1,
       "difficultyBand": "Small changes and focused checks",
       "request": "Stats accuracy and fit: correct the BULLETS FIRED metric/value mismatch and keep long labels and values inside their authored bays.",
@@ -1631,19 +1628,16 @@
     {
       "id": "S1-17",
       "group": "Stage 1: fodder, Razorback and jungle chopper",
-      "status": "pending",
-      "workOrder": 9,
-      "difficulty": 2,
-      "difficultyBand": "Moderate presentation and behavior work",
+      "status": "complete",
       "request": "Give the Hard Razorback Duo readable per-tank condition/target feedback in addition to the combined encounter bar so the player can identify which tank is close to breaking.",
-      "evidence": "PLAYTEST_REPAIR_QUEUE_0918.md",
+      "evidence": "ROTATION_SHIELD_STAGE2_REPAIR_0918.md",
       "dependency": ""
     },
     {
       "id": "S1-18",
       "group": "Stage 1: fodder, Razorback and jungle chopper",
       "status": "pending",
-      "workOrder": 10,
+      "workOrder": 8,
       "difficulty": 2,
       "difficultyBand": "Moderate presentation and behavior work",
       "request": "Replace the temporary low-passed shared engine loop with a dedicated tracked-tank tread/roller recording and verify movement start, stop and dual-tank ownership.",
@@ -1654,7 +1648,7 @@
       "id": "UI-22",
       "group": "Pause, saving, title and pilot selection",
       "status": "pending",
-      "workOrder": 11,
+      "workOrder": 9,
       "difficulty": 2,
       "difficultyBand": "Moderate presentation and behavior work",
       "request": "Loadout catalog readability: enlarge or page the combination cells and display the selected combination name/price/state so opacity alone is not the only locked/unlocked cue.",
@@ -1665,17 +1659,76 @@
       "id": "UI-23",
       "group": "Pause, saving, title and pilot selection",
       "status": "pending",
-      "workOrder": 12,
+      "workOrder": 10,
       "difficulty": 2,
       "difficultyBand": "Moderate presentation and behavior work",
       "request": "Pilot Select completeness: warm ship/emblem art before the screen appears and restore callsign, role/special and biography detail without contaminating the clean GOOD LUCK launch card.",
       "evidence": "PLAYTEST_REPAIR_QUEUE_0918.md",
       "dependency": ""
+    },
+    {
+      "id": "UI-24",
+      "group": "Pause, saving, title and pilot selection",
+      "status": "complete",
+      "request": "Use the graphical arcade dialogue font and letter-by-letter centered banner for item, ammunition and upgrade acquisition messages instead of basic floating text.",
+      "evidence": "ROTATION_SHIELD_STAGE2_REPAIR_0918.md",
+      "dependency": ""
+    },
+    {
+      "id": "UI-25",
+      "group": "Pause, saving, title and pilot selection",
+      "status": "complete",
+      "request": "Replace the HP-like shield gauge with a distinct rectangular energy-shield frame, straight fill well and connected SHIELD box whose baked label is centered horizontally and vertically.",
+      "evidence": "ROTATION_SHIELD_STAGE2_REPAIR_0918.md",
+      "dependency": ""
+    },
+    {
+      "id": "ENG-21",
+      "group": "Shared combat, warnings and targeting",
+      "status": "pending",
+      "request": "Complete a vehicle-wide authored direction-frame audit for all remaining tanks and jets; remove live canvas rotation where it produces warped or wonky turns, while retaining correct pivots, shadows and weapon mounts.",
+      "evidence": "ROTATION_SHIELD_STAGE2_REPAIR_0918.md",
+      "dependency": "",
+      "difficulty": 5,
+      "difficultyBand": "Broad asset and engine conversion",
+      "workOrder": 34
+    },
+    {
+      "id": "ENG-22",
+      "group": "Shared combat, warnings and targeting",
+      "status": "complete",
+      "request": "Give pickup families authored turn strips, select frames at runtime, and remove the ugly additive glow discs from the new bombs and score bullets.",
+      "evidence": "ROTATION_SHIELD_STAGE2_REPAIR_0918.md",
+      "dependency": ""
+    },
+    {
+      "id": "S1-19",
+      "group": "Stage 1: fodder, Razorback and jungle chopper",
+      "status": "complete",
+      "request": "Show two independent miniboss bars for the Hard Razorback Duo, one for each tank, and flash the targetable center turret during opening-phase hits.",
+      "evidence": "ROTATION_SHIELD_STAGE2_REPAIR_0918.md",
+      "dependency": ""
+    },
+    {
+      "id": "S2-12",
+      "group": "Stage 2: lava hazards, Magma Ward and Furnace Tyrant",
+      "status": "complete",
+      "request": "Confine hostile fire geysers to the left/right lava gutters, keep them off the mountain, add dedicated warning/eruption audio, and play the firewall pass cue as it crosses the player.",
+      "evidence": "ROTATION_SHIELD_STAGE2_REPAIR_0918.md",
+      "dependency": ""
+    },
+    {
+      "id": "S2-13",
+      "group": "Stage 2: lava hazards, Magma Ward and Furnace Tyrant",
+      "status": "complete",
+      "request": "Use individual authored direction frames for Furnace Tyrant body and destructible arm/turret states, with arm mounts locked to the boss spin angle.",
+      "evidence": "ROTATION_SHIELD_STAGE2_REPAIR_0918.md",
+      "dependency": ""
     }
   ],
   "queuePolicy": "Work in ascending workOrder, an estimate of implementation plus verification difficulty. Respect prerequisites and skip externally blocked items while continuing ready work. Re-rank when investigation changes the estimate; retain IDs and explain the change.",
   "latestBatch": {
-    "description": "0918 recorded-playtest repair queue: Razorback pressure, results/loadout/pilot UI, respawn safety and hazard readability",
-    "evidence": "PLAYTEST_REPAIR_QUEUE_0918.md"
+    "description": "0918 authored pickup/Furnace turns, rectangular shield gauge, dual Razorback bars and Stage 2 fire-hazard repair",
+    "evidence": "ROTATION_SHIELD_STAGE2_REPAIR_0918.md"
   }
 }

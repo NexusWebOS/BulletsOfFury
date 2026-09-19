@@ -1,8 +1,8 @@
 # Bullets of Fury — request checklist
 
-Updated 2026-09-18. **169 entries: 133 complete / 7 partial / 29 pending.**
+Updated 2026-09-18. **176 entries: 141 complete / 7 partial / 28 pending.**
 
-**36 remain unfinished.** 10 depend on SpriteCook production assets; 0 needs a model-name decision. These are included in the totals.
+**35 remain unfinished.** 10 depend on SpriteCook production assets; 0 needs a model-name decision. These are included in the totals.
 
 Consolidated requests in this conversation; superseded variants folded into the latest request. Rows count deliverables, not effort or percent of development time.
 
@@ -12,7 +12,7 @@ Detailed specifications: [original request ledger](OVERNIGHT_REQUESTS_0914.md). 
 
 ## Current batch and next work
 
-Just verified: 0918 recorded-playtest repair queue: Razorback pressure, results/loadout/pilot UI, respawn safety and hazard readability [Proof](PLAYTEST_REPAIR_QUEUE_0918.md).
+Just verified: 0918 authored pickup/Furnace turns, rectangular shield gauge, dual Razorback bars and Stage 2 fire-hazard repair [Proof](ROTATION_SHIELD_STAGE2_REPAIR_0918.md).
 
 Work in ascending workOrder, an estimate of implementation plus verification difficulty. Respect prerequisites and skip externally blocked items while continuing ready work. Re-rank when investigation changes the estimate; retain IDs and explain the change.
 
@@ -23,16 +23,17 @@ Mike selected furyship_somersault_13.png and approved image_gen for its replacem
 | Area | Complete | Partial | Pending | Total |
 | --- | ---: | ---: | ---: | ---: |
 | Earlier handoff, weapons and Tempest | 9 | 1 | 0 | 10 |
-| Shared combat, warnings and targeting | 15 | 2 | 3 | 20 |
-| Stage 1: fodder, Razorback and jungle chopper | 13 | 0 | 5 | 18 |
+| Shared combat, warnings and targeting | 16 | 2 | 4 | 22 |
+| Stage 1: fodder, Razorback and jungle chopper | 16 | 0 | 3 | 19 |
 | Stage 2: lava enemies, Magma Ward and Furnace Tyrant | 7 | 1 | 3 | 11 |
 | Stage 3: ice enemies, miniboss and Rime Wall | 12 | 0 | 2 | 14 |
 | Stage 4: Olive Warden and Sovereign | 14 | 0 | 4 | 18 |
 | Stages 5-9: space and encounter cleanup | 18 | 2 | 4 | 24 |
 | Manual missile tiers and supplies | 9 | 0 | 0 | 9 |
-| Pause, saving, title and pilot selection | 17 | 0 | 6 | 23 |
+| Pause, saving, title and pilot selection | 19 | 0 | 6 | 25 |
 | Achievements, timers and unlockable modes | 11 | 1 | 2 | 14 |
 | Arcade and shared difficulty rewards | 8 | 0 | 0 | 8 |
+| Stage 2: lava hazards, Magma Ward and Furnace Tyrant | 2 | 0 | 0 | 2 |
 
 ## Checklist
 
@@ -71,6 +72,8 @@ Mike selected furyship_somersault_13.png and approved image_gen for its replacem
 - [x] **ENG-18 · Complete** — Give Fire Orb a dedicated readable Magma Orb projectile and verify ordinary enemy, boss-family, Furious charge/release, and projectile-launch sounds resolve through audible real-sample routes. [Evidence](WEAPON_FORGE_REPAIR_0918.md).
 - [ ] **ENG-19 · Pending** — Respawn safety: clear or neutralize lethal lower-screen patterns and preserve a readable invulnerability window so a death cannot immediately chain into another. [Evidence](PLAYTEST_REPAIR_QUEUE_0918.md).
 - [ ] **ENG-20 · Pending** — Hard/Furious hazard readability: separate warning, hostile projectile, explosion and enemy-palette values when several red effects overlap. [Evidence](PLAYTEST_REPAIR_QUEUE_0918.md).
+- [ ] **ENG-21 · Pending** — Complete a vehicle-wide authored direction-frame audit for all remaining tanks and jets; remove live canvas rotation where it produces warped or wonky turns, while retaining correct pivots, shadows and weapon mounts. [Evidence](ROTATION_SHIELD_STAGE2_REPAIR_0918.md).
+- [x] **ENG-22 · Complete** — Give pickup families authored turn strips, select frames at runtime, and remove the ugly additive glow discs from the new bombs and score bullets. [Evidence](ROTATION_SHIELD_STAGE2_REPAIR_0918.md).
 
 ### Stage 1: fodder, Razorback and jungle chopper
 
@@ -89,9 +92,10 @@ Mike selected furyship_somersault_13.png and approved image_gen for its replacem
 - [x] **S1-13 · Complete** — Furious Razorback is the current authored tank at 150% scale with only its green armor panels palette-swapped to neon red; sonic pressure waves have readable decibel-lobe openings and matching collision gaps. [Evidence](WEAPON_FORGE_REPAIR_0918.md).
 - [ ] **S1-14 · Pending** — Hard Razorback Duo: prevent overlapping sonic releases, missile locks and recovery windows from creating unavoidable stacked patterns while preserving the two-tank challenge. [Evidence](PLAYTEST_REPAIR_QUEUE_0918.md).
 - [ ] **S1-15 · Pending** — Furious Razorback: retune consecutive retina rocket salvos and distinguish red warnings, projectiles, explosions and armor during peak attack density. [Evidence](PLAYTEST_REPAIR_QUEUE_0918.md).
-- [ ] **S1-16 · Pending** — Razorback early-turret hit feedback: flash the targetable central turret white during the machine-gun phase and keep destroyed-part feedback local to the struck module. [Evidence](PLAYTEST_REPAIR_QUEUE_0918.md).
-- [ ] **S1-17 · Pending** — Give the Hard Razorback Duo readable per-tank condition/target feedback in addition to the combined encounter bar so the player can identify which tank is close to breaking. [Evidence](PLAYTEST_REPAIR_QUEUE_0918.md).
+- [x] **S1-16 · Complete** — Razorback early-turret hit feedback: flash the targetable central turret white during the machine-gun phase and keep destroyed-part feedback local to the struck module. [Evidence](ROTATION_SHIELD_STAGE2_REPAIR_0918.md).
+- [x] **S1-17 · Complete** — Give the Hard Razorback Duo readable per-tank condition/target feedback in addition to the combined encounter bar so the player can identify which tank is close to breaking. [Evidence](ROTATION_SHIELD_STAGE2_REPAIR_0918.md).
 - [ ] **S1-18 · Pending** — Replace the temporary low-passed shared engine loop with a dedicated tracked-tank tread/roller recording and verify movement start, stop and dual-tank ownership. [Evidence](PLAYTEST_REPAIR_QUEUE_0918.md).
+- [x] **S1-19 · Complete** — Show two independent miniboss bars for the Hard Razorback Duo, one for each tank, and flash the targetable center turret during opening-phase hits. [Evidence](ROTATION_SHIELD_STAGE2_REPAIR_0918.md).
 
 ### Stage 2: lava enemies, Magma Ward and Furnace Tyrant
 
@@ -209,6 +213,8 @@ Mike selected furyship_somersault_13.png and approved image_gen for its replacem
 - [ ] **UI-21 · Pending** — Stats accuracy and fit: correct the BULLETS FIRED metric/value mismatch and keep long labels and values inside their authored bays. [Evidence](PLAYTEST_REPAIR_QUEUE_0918.md).
 - [ ] **UI-22 · Pending** — Loadout catalog readability: enlarge or page the combination cells and display the selected combination name/price/state so opacity alone is not the only locked/unlocked cue. [Evidence](PLAYTEST_REPAIR_QUEUE_0918.md).
 - [ ] **UI-23 · Pending** — Pilot Select completeness: warm ship/emblem art before the screen appears and restore callsign, role/special and biography detail without contaminating the clean GOOD LUCK launch card. [Evidence](PLAYTEST_REPAIR_QUEUE_0918.md).
+- [x] **UI-24 · Complete** — Use the graphical arcade dialogue font and letter-by-letter centered banner for item, ammunition and upgrade acquisition messages instead of basic floating text. [Evidence](ROTATION_SHIELD_STAGE2_REPAIR_0918.md).
+- [x] **UI-25 · Complete** — Replace the HP-like shield gauge with a distinct rectangular energy-shield frame, straight fill well and connected SHIELD box whose baked label is centered horizontally and vertically. [Evidence](ROTATION_SHIELD_STAGE2_REPAIR_0918.md).
 
 ### Achievements, timers and unlockable modes
 
@@ -237,6 +243,11 @@ Mike selected furyship_somersault_13.png and approved image_gen for its replacem
 - [x] **MODE-06 · Complete** — Hard/Furious Life Up frequency increased by 25%. [Evidence](EASY_QUEUE_0914.md).
 - [x] **MODE-07 · Complete** — Continue Up reward in all modes for qualifying deathless sections, or Hard/Furious elite kills; enforce defined reward eligibility. [Evidence](CONTINUE_UP_REWARDS_0915.md).
 - [x] **MODE-08 · Complete** — Regenerate Life Up and create Continue Up pickup art matching Bullets of Fury through SpriteCook. [Evidence](MODE_UP_ART_0915.md).
+
+### Stage 2: lava hazards, Magma Ward and Furnace Tyrant
+
+- [x] **S2-12 · Complete** — Confine hostile fire geysers to the left/right lava gutters, keep them off the mountain, add dedicated warning/eruption audio, and play the firewall pass cue as it crosses the player. [Evidence](ROTATION_SHIELD_STAGE2_REPAIR_0918.md).
+- [x] **S2-13 · Complete** — Use individual authored direction frames for Furnace Tyrant body and destructible arm/turret states, with arm mounts locked to the boss spin angle. [Evidence](ROTATION_SHIELD_STAGE2_REPAIR_0918.md).
 
 ## Keeping this tally current
 

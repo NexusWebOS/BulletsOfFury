@@ -1999,6 +1999,11 @@ const XART=(function(){
   X._src['pause_button_0915']='assets/game/ui/pause_0915/button.png';
   X._src['mode_life_up_0915']='assets/game/ui/pickups_0915/life_up_wings.png';
   X._src['mode_continue_up_0915']='assets/game/ui/pickups_0915/continue_up.png';
+  const _turn0918='assets/game/rotation_frames_0918/';
+  for(const [_tk,_tf] of Object.entries({turn_life_0918:'life_up_turn.png',turn_continue_0918:'continue_up_turn.png',turn_spacehelper_0918:'space_helper_turn.png',turn_spaceakimbo_0918:'space_akimbo_turn.png',turn_spacemine_0918:'space_mine_turn.png',turn_furybomb_0918:'fury_bomb_turn.png',turn_timebomb_0918:'timed_bomb_turn.png',turn_score_100_0918:'score_100_turn.png',turn_score_250_0918:'score_250_turn.png',turn_score_500_0918:'score_500_turn.png',turn_score_1000_0918:'score_1000_turn.png'}))X._src[_tk]=_turn0918+_tf;
+  for(const _e of ['fire','ice','lightning','prism','toxic','kinetic','chrome','water','dark'])X._src['turn_inf_'+_e+'_0918']=_turn0918+'inf_'+_e+'_turn.png';
+  for(const _f of ['arm_flame_intact','arm_flame_damaged','arm_flame_exposed','arm_cannon_intact','arm_cannon_damaged','arm_cannon_exposed','body_intact','body_damaged','body_exposed','body_wreck','body_rotor','body_rotor_damaged'])X._src['fzt_'+_f+'_turn0918']=_turn0918+'fzt_'+_f+'_turn.png';
+  X._src.bmbar_frame_shield_v2='assets/game/ui/bossbar_0918/shield_frame_v2.png';
   for(const tier of ['super','ultra','uber']){
     X._src['missile_'+tier+'_icon_0915']='assets/game/ui/missile_tiers_0915/'+tier+'_icon.png';
     X._src['missile_'+tier+'_box_0915']='assets/game/ui/missile_tiers_0915/'+tier+'_box.png';
@@ -19207,7 +19212,7 @@ function razorbackDraw(b){
   if(R.pools.turret>0){
     const p=rzbFwd({x:b.x,y:b.y},R.turret,-R.recoil*S), tk=(R.pools.turret<R.max.turret*0.5)?'rzb_turret_damaged':'rzb_turret';
     rzbSprite(tk,p.x,p.y,R.turret,1,null,128,128,mul,bodyTint);
-    if(R.state==='turret') rzbFlash(tk,p.x,p.y,R.turret,1,128,128,R.flash.turret,mul);
+    rzbFlash(tk,p.x,p.y,R.turret,1,128,128,R.flash.turret,mul);
   }
   if(R.charge>0){
     const m=(R.attack==='sonic')?rzbFwd(b,R.turret,142*S):{x:b.x,y:b.y};
@@ -20569,7 +20574,14 @@ function fztPivot(key,w,h){
   if(key==='fzt_fire_laser') return [48,0];
   return [w/2,h/2];
 }
+function fztTurnKey(key){const k=key+'_turn0918';return typeof XART!=='undefined'&&XART.rdy(k)?k:null;}
+function fztTurnDraw(key,x,y,a,s,alpha,sx,sy,tint){
+  const tk=fztTurnKey(key);if(!tk)return false;const im=tint&&typeof xartTint==='function'?xartTint(tk,'#ffffff',.9):XART.get(tk);if(!im)return false;
+  const n=16,fw=(im.width||im.naturalWidth)/n,fh=(im.height||im.naturalHeight),i=((Math.round((((a||0)%TAU)+TAU)%TAU/TAU*n)%n)+n)%n,sc=(s==null?1:s)*FZT_S;
+  ctx.save();ctx.translate(x,y);ctx.scale(sc*(sx||1),sc*(sy||1));if(alpha!=null)ctx.globalAlpha=clamp(alpha,0,1);ctx.drawImage(im,i*fw,0,fw,fh,-fw/2,-fh/2,fw,fh);ctx.restore();return true;
+}
 function fztSprite(key,x,y,a,s,alpha,sx,sy){
+  if(fztTurnDraw(key,x,y,a,s,alpha,sx,sy,false))return true;
   const im=fztImg(key); if(!im) return false;
   const w=im.width||im.naturalWidth, h=im.height||im.naturalHeight, pv=fztPivot(key,w,h), sc=(s==null?1:s)*FZT_S;
   ctx.save(); ctx.translate(x,y); ctx.rotate(a||0); ctx.scale(sc*(sx||1), sc*(sy||1));
@@ -20578,6 +20590,7 @@ function fztSprite(key,x,y,a,s,alpha,sx,sy){
 }
 
 function fztFlashSprite(key,x,y,a,s,alpha,sx,sy){
+  if(fztTurnDraw(key,x,y,a,s,alpha,sx,sy,true))return true;
   /* fztSprite's own placement, drawing the part's white tint - so the flash sits exactly on the plate it lights */
   const im=fztImg(key); if(!im || typeof xartTint!=='function') return false;
   const tt=xartTint(key,'#ffffff',0.9); if(!tt) return false;
@@ -25315,16 +25328,16 @@ function bossBarWarm(stage){
      false on its first call and that call is what starts the load, so the bar would open on the
      fallback for a frame or two every time. All of them are warmed with the stage. */
   try{ for(const k of ['bmbar_frame_boss','bmbar_frame_mini','bmbar_fill_grey','bmbar_fill_seg','bmbar_fill_orange','bmbar_fill_green','bmbar_fill_cyan','bmbar_fill_red',
-                       'bmbar_frame_shield','bmbar_tab_shield','bmbar_tab_boss','bmbar_tab_mini','bmbar_fill_solid',
+                       'bmbar_frame_shield','bmbar_frame_shield_v2','bmbar_tab_shield','bmbar_tab_boss','bmbar_tab_mini','bmbar_fill_solid',
                        'bmbar_sf2_over','bmbar_sf2_hex','bmbar_sf2_plasma','bmbar_sf2_low']){ XART.rdy(k); if(XART._touch) XART._touch(k); } }catch(_e){}
 }
-function drawHealthBarV2(kind, frac, cx, cy, w, inWorld){
+function drawHealthBarV2(kind, frac, cx, cy, w, inWorld, lagKey){
   if(typeof ctx==='undefined') return false;
   const _barBoss=(kind==='boss'&&typeof boss!=='undefined')?boss:null;
   if(_barBoss&&typeof bossHealthFraction==='function')frac=bossHealthFraction(_barBoss);
   ctx.save();ctx.globalAlpha*=(_barBoss&&typeof bossHealthAlpha==='function')?bossHealthAlpha(_barBoss):1;
-  const ok = drawHealthBarArt(kind, frac, cx, cy, w, inWorld)
-          || drawHealthBarDrawn(kind, frac, cx, cy, w, inWorld);
+  const ok = drawHealthBarArt(kind, frac, cx, cy, w, inWorld, lagKey)
+          || drawHealthBarDrawn(kind, frac, cx, cy, w, inWorld, lagKey);
   /* ⚠ THE SHIELD BAR HANGS OFF THE GAUGE, NOT OFF A CALL SITE (Mike, 0912e). There are FOUR boss
      bar callers - the HUD strip, the world pass and two stage paths - and the first cut patched
      two of them, neither of which is the one stage 2 actually draws through. Measured:
@@ -25343,15 +25356,10 @@ function drawHealthBarV2(kind, frac, cx, cy, w, inWorld){
     if(sf!=null && typeof drawShieldBarArt==='function'){
       _bmShieldDepth=1;
       try{
-        /* ⚠ THE GAP HAS TO CLEAR THE SHIELD BAR'S OWN TAB, not just the bar. The tab is drawn
-           ABOVE whatever bar it labels, so a gap sized for the bar alone put SHIELD straight
-           across the middle of the HP bar - measured at ~10px of overlap. One tab height plus a
-           couple of pixels leaves it sitting in clear air between the two. */
+        /* Position the attached SHIELD nameplate below the boss gauge. */
         const sc=w/BMBAR.frameW;
-        const h=BMBAR.frameH*sc, tabH=BMTAB.h*sc;
-        const sy=cy-h/2+h+tabH+2;
-        if(drawShieldBarArt(sf, cx, sy+h/2, w) && typeof drawBossTab==='function')
-          drawBossTab('shield', cx, sy, w);
+        const h=BMBAR.frameH*sc, sh=82*(w/881);
+        drawShieldBarArt(sf,cx,cy+h/2+sh/2+3,w);
       } finally { _bmShieldDepth=0; }
     }
   }
@@ -25365,13 +25373,13 @@ let _bmShieldDepth=0;
      the two hbDraw label arguments and the '!! NAME !!' entrance banner. The bar is the readout.
      The debrief still names what you beat (run._lastBossName) and the radio still substitutes
      {BOSS_NAME} - those are screens and dialogue, not the HUD. */
-function drawHealthBarArt(kind, frac, cx, cy, w, inWorld){
+function drawHealthBarArt(kind, frac, cx, cy, w, inWorld, lagKey){
   const boss=(kind==='boss'), stage=(typeof run!=='undefined'&&run&&run.stage)|0;
   const fk=boss?'bmbar_frame_boss':'bmbar_frame_mini';
   if(typeof XART==='undefined' || !XART.rdy(fk) || !XART.rdy('bmbar_fill_grey')) return false;
   const fill=bmbarFill(kind, stage); if(!fill) return false;
   frac=clamp(frac||0,0,1);
-  const key=kind||'boss';
+  const key=lagKey||kind||'boss';
   const prev=(_gaugeLag[key]==null)?frac:_gaugeLag[key];
   const lag=(frac<prev)?Math.max(frac, prev-0.012):frac;
   _gaugeLag[key]=lag;
@@ -25507,41 +25515,20 @@ function bmbarShieldFill(frac){
   if(typeof XART!=='undefined' && XART.rdy(old)) return XART.get(old);
   return (typeof XART!=='undefined' && XART.rdy('bmbar_sfill_hex')) ? XART.get('bmbar_sfill_hex') : null;
 }
-/* ⚠ THE SHIELD HAS ITS OWN BAR (Mike, 0916: "Shield should get it's own shield like boss bar, not
-   the same as the boss bar"). `bmbar_frame_shield` is the boss frame hue-ROTATED to ice - the same
-   object in a second livery, so its rails, rivets, lamp and hazard block still line up and its well
-   geometry is BMBAR.boss unchanged. Its well also carries a faint hex lattice, so an EMPTY shield
-   bar still reads as a field rather than as an empty hp bar. It falls back to the boss frame only
-   while the new plate is decoding. */
+/* The separate rectangular shield frame has a connected, centered SHIELD nameplate.
+   Fill clips against the straight well, independent of the boss health gauge. */
 function drawShieldBarArt(frac, cx, cy, w){
-  if(typeof XART==='undefined') return false;
-  const fk=XART.rdy('bmbar_frame_shield') ? 'bmbar_frame_shield' : 'bmbar_frame_boss';
-  if(!XART.rdy(fk)) return false;
-  const fill=bmbarShieldFill(frac); if(!fill) return false;
-  frac=clamp(frac||0,0,1);
-  const s=w/BMBAR.frameW, h=BMBAR.frameH*s;
-  const x=Math.round(cx-w/2), y=Math.round(cy-h/2);
-  const O=BMBAR.boss;
-  const fx=x+O.dx*s, fy=y+O.dy*s, fw=O.w*s, fh=O.h*s;
-  ctx.save();
-  ctx.imageSmoothingEnabled=true;
-  ctx.drawImage(XART.get(fk), x, y, w, h);
-  if(frac>0){
-    ctx.save(); ctx.beginPath(); ctx.rect(fx, fy, fw*frac, fh); ctx.clip();
-    ctx.drawImage(fill, fx, fy, fw, fh);
-    /* a field carries a travelling shimmer - it is energy, not paint */
-    const t=(typeof stateT==='number')?stateT:0;
-    ctx.globalAlpha=0.13+0.10*Math.sin(t*5);
-    ctx.fillStyle='#dffbff'; ctx.fillRect(fx, fy, fw, fh);
-    ctx.globalAlpha=1;
-    ctx.restore();
-  }
-  ctx.restore();
-  return true;
+  if(typeof XART==='undefined'||!XART.rdy('bmbar_frame_shield_v2'))return false;
+  const im=XART.get('bmbar_frame_shield_v2'),fill=bmbarShieldFill(frac);if(!fill)return false;
+  frac=clamp(frac||0,0,1);const ar=(im.naturalWidth||im.width)/(im.naturalHeight||im.height),h=w/ar;
+  const x=Math.round(cx-w/2),y=Math.round(cy-h/2),fx=x+w*.067,fy=y+h*.43,fw=w*.866,fh=h*.235;
+  ctx.save();ctx.imageSmoothingEnabled=true;ctx.drawImage(im,x,y,w,h);
+  if(frac>0){ctx.save();ctx.beginPath();ctx.rect(fx,fy,fw*frac,fh);ctx.clip();ctx.drawImage(fill,fx,fy,fw,fh);ctx.globalAlpha=.12+.08*Math.sin(stateT*5);ctx.fillStyle='#e8fdff';ctx.fillRect(fx,fy,fw,fh);ctx.restore();}
+  ctx.restore();return true;
 }
 
 /* the 0810n drawn gauge, kept as the fallback for the frames before the sheet decodes */
-function drawHealthBarDrawn(kind, frac, cx, cy, w, inWorld){
+function drawHealthBarDrawn(kind, frac, cx, cy, w, inWorld, lagKey){
   if(typeof ctx==='undefined') return false;
   const boss = (kind==='boss');
   frac = clamp(frac||0, 0, 1);
@@ -25551,7 +25538,7 @@ function drawHealthBarDrawn(kind, frac, cx, cy, w, inWorld){
 
   /* DAMAGE LAG. The ghost only ever falls, and only toward the live value, so a refill (a new
      boss, or a phase that restores health) snaps rather than crawling up from nowhere. */
-  const key = kind || 'boss';
+  const key = lagKey || kind || 'boss';
   const prev = (_gaugeLag[key]==null) ? frac : _gaugeLag[key];
   const lag = (frac < prev) ? Math.max(frac, prev - 0.012) : frac;
   _gaugeLag[key] = lag;
@@ -25601,6 +25588,7 @@ function drawHealthBarDrawn(kind, frac, cx, cy, w, inWorld){
 }
 function drawSubBossBar(b){
   if(!b || b.dead || b.enter) return;
+  if(b._rzbPair&&b._rzbPair.actors){const ps=b._rzbPair.actors,w=VW*.43,tab=BMTAB.h*(w/BMBAR.frameW);screenBar(function(){for(let i=0;i<2;i++){const p=ps[i],f=p&&p.maxhp?clamp(p.hp/p.maxhp,0,1):0;drawHealthBarV2('mini',f,VW*(i?0.745:0.255),20+tab+3,w,false,'razorback'+i);}});return;}
   const frac=clamp(b.hp/(b.maxhp||b.hp||1),0,1);
   const w=Math.round(VW*0.56), x=Math.round((VW-w)/2), y=10, h=7;
   /* v2 ART BAR first — per-stage themed frame + animated fill. Falls through to the drawn bar
@@ -27939,15 +27927,15 @@ function spaceArmorySupplyTick(dt){
 }
 function spaceArmoryGrant(kind,x,y){
   if(kind==='spaceakimbo'){
-    run.spaceAkimbo=1;arcadeBanner('AKIMBO WEAPONS');floatText(x,y,'QUAD FIRE','#ff6848');
+    run.spaceAkimbo=1;arcadeBanner('AKIMBO WEAPONS');
   }else if(kind==='spacehelper'){
     let h=spaceHelpers.find(v=>v.seat===_seat&&!v.dead);
     if(h){h.life=SPACE_HELPER_LIFE;h.cd=.08;}
     else spaceHelpers.push({seat:_seat,t:0,life:SPACE_HELPER_LIFE,cd:.08,a:Math.random()*TAU,x:player.x,y:player.y,dead:false});
-    arcadeBanner('HELPER ORB ONLINE');floatText(x,y,'AUTO SUPPORT','#62eaff');
+    arcadeBanner('HELPER ORB ONLINE');
   }else if(kind==='spacemine'){
     spaceMines.push({seat:_seat,x:player.x,y:player.y-18,t:0,arm:.42,life:18,range:SPACE_MINE_TRIGGER,dead:false});
-    arcadeBanner('PROXIMITY MINE ARMED');floatText(x,y,'SPLASH + SHRAPNEL','#ff5848');
+    arcadeBanner('PROXIMITY MINE ARMED');
   }
   if(Audio&&Audio.SFX&&Audio.SFX.powerup)Audio.SFX.powerup();
 }
@@ -28005,6 +27993,7 @@ function spaceArmoryArt(key,x,y,h,glow,rot){
 function drawSpaceArmoryPickup(p,y){
   const keys={hqspacebox:'hq_space_box_0915',spacehelper:'hq_space_helper_icon_0915',spaceakimbo:'hq_space_akimbo_icon_0915',spacemine:'hq_space_mine_icon_0915'};
   const key=keys[p.kind];if(!key)return false;const box=p.kind==='hqspacebox',pulse=.5+.5*Math.sin((p.t||0)*7);
+  if(!box){const turn={spacehelper:'turn_spacehelper_0918',spaceakimbo:'turn_spaceakimbo_0918',spacemine:'turn_spacemine_0918'}[p.kind];if(pickupTurnFrame(turn,p.x,y,49+pulse*2,p.t,12))return true;}
   return spaceArmoryArt(key,p.x,y,(box?58:49)+pulse*2,box?'#55bcff':p.kind==='spacemine'?'#ff4a38':'#68eaff',0);
 }
 function drawSpaceArmoryMines(){
@@ -28806,7 +28795,7 @@ function continueRewardEliteKill(e){
 function continueRewardCollect(p){
   run.contBonus=Math.max(0,run.contBonus|0)+1;
   const cap=continueCap(),left=cap<0?'UNLIMITED':String(Math.max(0,cap-(run.contUsed||0)));
-  floatText(p.x,p.y,'CONTINUE UP','#62e6ff');
+  pickupAnnounce('CONTINUE UP','#62e6ff');
   if(typeof arcadeBanner==='function')arcadeBanner(cap<0?'CONTINUE UP!':('CONTINUE UP - '+left+' READY'));
   if(Audio.SFX&&Audio.SFX.life)Audio.SFX.life();else if(Audio.SFX&&Audio.SFX.powerup)Audio.SFX.powerup();
   return run.contBonus;
@@ -29013,7 +29002,7 @@ function grantCinematicMissiles(x, y){
   const c = MSL_BIG.missilepack100;
   if(specialActive('cole')){ special.strikes += c.n; run.bombs = special.strikes; }
   else addManualMissiles(c.n);
-  if(typeof floatText==='function') floatText(x==null?240:x, y==null?200:y, c.label, c.col);
+  if(typeof pickupAnnounce==='function') pickupAnnounce(c.label,c.col);
   if(Audio.SFX.powerup) Audio.SFX.powerup();
 }
 
@@ -29053,9 +29042,9 @@ function applyPowerup(p){
     case 'spacemine':
       spaceArmoryGrant(p.kind,p.x,p.y);break;
     case 'speed':
-      run.speedLevel=clamp((run.speedLevel||0)+1,1,5); run.speed=run.speedLevel; floatText(p.x,p.y,'SPEED L'+run.speedLevel,'#7fd1ff'); Audio.SFX.powerup(); break;
+      run.speedLevel=clamp((run.speedLevel||0)+1,1,5); run.speed=run.speedLevel; pickupAnnounce('SPEED L'+run.speedLevel,'#7fd1ff'); Audio.SFX.powerup(); break;
     case 'shield':
-      run.shield=clamp(run.shield+1,0,5); floatText(p.x,p.y,'SHIELD L'+run.shield, '#4ea0ff'); Audio.SFX.powerup(); break;
+      run.shield=clamp(run.shield+1,0,5); pickupAnnounce('SHIELD L'+run.shield, '#4ea0ff'); Audio.SFX.powerup(); break;
     case 'special':
     case 'specialicon':
       startSpecial(); break;
@@ -29079,23 +29068,23 @@ function applyPowerup(p){
     case 'missileup_uber': {
       const _tier=p.kind.slice('missileup_'.length);
       if(manualMissileApplyUpgrade(_tier)){
-        const _ms=manualMissileSpec(_tier);floatText(p.x,p.y,_ms.name+' MISSILES','#9fe0ff');Audio.SFX.powerup();
+        const _ms=manualMissileSpec(_tier);pickupAnnounce(_ms.name+' MISSILES','#9fe0ff');Audio.SFX.powerup();
       }else if(Audio.SFX.hit)Audio.SFX.hit();
       break;
     }
     case 'missilepack2':
       /* matches its siblings exactly — run.bombs, clamped 0..99, and Cole's nuke swap. I had
          written run.missiles/MSL_MAX, neither of which exists in this codebase. */
-      if(specialActive('cole')){ special.strikes+=2; run.bombs=special.strikes; floatText(p.x,p.y,'NUKES +2','#8de23a'); Audio.SFX.powerup(); }
-      else { addManualMissiles(2); floatText(p.x,p.y,'MISSILES +2','#8ecbff'); Audio.SFX.powerup(); }
+      if(specialActive('cole')){ special.strikes+=2; run.bombs=special.strikes; pickupAnnounce('NUKES +2','#8de23a'); Audio.SFX.powerup(); }
+      else { addManualMissiles(2); pickupAnnounce('MISSILES +2','#8ecbff'); Audio.SFX.powerup(); }
       break;
     case 'missilepack':
-      if(specialActive('cole')){ special.strikes+=5; run.bombs=special.strikes; floatText(p.x,p.y,'NUKES +5','#8de23a'); Audio.SFX.powerup(); }
-      else { addManualMissiles(5); floatText(p.x,p.y,'MISSILES +5','#9fe0ff'); Audio.SFX.powerup(); }
+      if(specialActive('cole')){ special.strikes+=5; run.bombs=special.strikes; pickupAnnounce('NUKES +5','#8de23a'); Audio.SFX.powerup(); }
+      else { addManualMissiles(5); pickupAnnounce('MISSILES +5','#9fe0ff'); Audio.SFX.powerup(); }
       break;
     case 'missilepack10':
-      if(specialActive('cole')){ special.strikes+=10; run.bombs=special.strikes; floatText(p.x,p.y,'NUKES +10','#8de23a'); Audio.SFX.powerup(); }
-      else { addManualMissiles(10); floatText(p.x,p.y,'MISSILES +10','#ffd36b'); Audio.SFX.powerup(); }
+      if(specialActive('cole')){ special.strikes+=10; run.bombs=special.strikes; pickupAnnounce('NUKES +10','#8de23a'); Audio.SFX.powerup(); }
+      else { addManualMissiles(10); pickupAnnounce('MISSILES +10','#ffd36b'); Audio.SFX.powerup(); }
       break;
     case 'missilepack20':
     case 'missilepack35':
@@ -29106,9 +29095,9 @@ function applyPowerup(p){
          Cole's nuke swap is preserved exactly as the 2/3/10 packs do it. */
       const _c = MSL_BIG[p.kind];
       if(specialActive('cole')){ special.strikes += _c.n; run.bombs = special.strikes;
-        floatText(p.x,p.y,'NUKES +'+_c.n,'#8de23a'); }
+        pickupAnnounce('NUKES +'+_c.n,'#8de23a'); }
       else { addManualMissiles(_c.n);
-        floatText(p.x,p.y,_c.label,_c.col); }
+        pickupAnnounce(_c.label,_c.col); }
       Audio.SFX.powerup(); break;
     }
     case 'weapon': {
@@ -29180,13 +29169,14 @@ function applyPowerup(p){
          stock rarely passed 9; ruinous now that a 50 crate exists. All missile
          clamps share MSL_CAP so they cannot drift apart again. run.lives keeps its
          own 0..9 below — that one is a real design cap, not this bug. */
-      addManualMissiles(1); floatText(p.x,p.y,'MISSILE+','#ff8a2e'); Audio.SFX.powerup(); break;
+      addManualMissiles(1); pickupAnnounce('MISSILE+','#ff8a2e'); Audio.SFX.powerup(); break;
     case 'life':
-      run.lives=clamp(run.lives+1,0,9); floatText(p.x,p.y,'1UP','#ff5a8a'); Audio.SFX.life(); break;
+      run.lives=clamp(run.lives+1,0,9); pickupAnnounce('1UP','#ff5a8a'); Audio.SFX.life(); break;
     case 'continueup':
       continueRewardCollect(p); break;
   }
 }
+function pickupAnnounce(txt,color){ if(typeof arcadeBanner==='function') arcadeBanner(String(txt||'').toUpperCase(),color); }
 function floatText(x,y,txt,color){ floaters.push({x,y,txt,color,t:0,life:1.1}); }
 
 /* ============================================================
@@ -48532,10 +48522,8 @@ function drawCapsule(x,y,t,flash){
 function drawModeUpPickup(p,y){
   const key=p.kind==='life'?'mode_life_up_0915':p.kind==='continueup'?'mode_continue_up_0915':null;
   if(!key||typeof XART==='undefined'||!XART.rdy(key))return false;
-  const im=XART.get(key),pulse=.5+.5*Math.sin((p.t||0)*7.5),h=48+2*pulse,w=h*(im.naturalWidth/im.naturalHeight);
-  ctx.save();ctx.translate(Math.round(p.x),Math.round(y));ctx.imageSmoothingEnabled=false;
-  ctx.globalAlpha=.97;ctx.shadowColor=p.kind==='life'?'#ff5b20':'#4deaff';ctx.shadowBlur=3+3*pulse;
-  ctx.drawImage(im,-w/2,-h/2,w,h);ctx.restore();return true;
+  const pulse=.5+.5*Math.sin((p.t||0)*7.5),h=48+2*pulse,turn=p.kind==='life'?'turn_life_0918':'turn_continue_0918';
+  return pickupTurnFrame(turn,p.x,y,h,p.t,12);
 }
 function drawMissileTierPickup(p,y){
   const m=/^missileup(box)?_(super|ultra|uber)$/.exec(p.kind||'');if(!m)return false;
@@ -48548,6 +48536,7 @@ function drawMissileTierPickup(p,y){
   ctx.globalAlpha=.96+.04*pulse;ctx.shadowColor=col;ctx.shadowBlur=5+5*pulse;
   ctx.drawImage(im,-w/2,-h/2,w,h);ctx.restore();return true;
 }
+function pickupTurnFrame(key,x,y,h,t,frames){frames=frames||12;if(typeof XART==='undefined'||!XART.rdy(key))return false;const im=XART.get(key),fw=(im.naturalWidth||im.width)/frames,fh=(im.naturalHeight||im.height),i=((Math.floor((t||0)*12)%frames)+frames)%frames,w=h*(fw/fh);ctx.save();ctx.translate(Math.round(x),Math.round(y));ctx.imageSmoothingEnabled=false;ctx.drawImage(im,i*fw,0,fw,fh,-w/2,-h/2,w,h);ctx.restore();return true;}
 function drawPowerups(){
   for(const p of powerups){
     if(p.kind==='missilepack2')p.kind='missilepack';
@@ -48569,19 +48558,17 @@ function drawPowerups(){
     if(typeof bonusPickupDraw==='function' && bonusPickupDraw(p,yb)) continue;   /* 0917c */
     if(p.kind==='forgecombo'){
       const I=(typeof INFUSIONS!=='undefined'&&INFUSIONS[p.elem])||null, col=I?I.glow:'#ffd45a';
-      ctx.save(); ctx.translate(p.x,yb+Math.sin((p.bob||0)+performance.now()/300)*2.8);
-      ctx.shadowColor=col; ctx.shadowBlur=18;
-      let drew=null; if(typeof iconBlit==='function'){ try{ drew=iconBlit(ctx,'inf_'+p.elem,0,0,PICKUP_BOX*1.25,true); }catch(_fcb){} }
-      if(drew==null){ ctx.rotate(Math.PI/4); ctx.fillStyle=I?I.body:'#888'; ctx.fillRect(-11,-11,22,22); }
-      ctx.restore(); continue;
+      const yy=yb+Math.sin((p.bob||0)+performance.now()/300)*2.8;
+      if(pickupTurnFrame('turn_inf_'+p.elem+'_0918',p.x,yy,PICKUP_BOX*1.25,p.t,12))continue;
+      ctx.save();ctx.translate(p.x,yy);ctx.fillStyle=I?I.body:'#888';ctx.fillRect(-11,-11,22,22);ctx.restore();continue;
     }
     if(p.kind==='infuse'){
       const I=(typeof INFUSIONS!=='undefined'&&INFUSIONS[p.elem])||null;
       const col=I?I.glow:'#ffffff';
-      ctx.save(); ctx.translate(p.x, yb+Math.sin((p.bob||0)+performance.now()/360)*2.4);
-      ctx.shadowColor=col; ctx.shadowBlur=16;
+      const _infY=yb+Math.sin((p.bob||0)+performance.now()/360)*2.4;
+      if(pickupTurnFrame('turn_inf_'+p.elem+'_0918',p.x,_infY,PICKUP_BOX,p.t,12))continue;
+      ctx.save(); ctx.translate(p.x,_infY);
       let drew=null;
-      if(typeof iconBlit==='function'){ try{ drew=iconBlit(ctx,'inf_'+p.elem,0,0,PICKUP_BOX,true); }catch(_ib){ drew=null; } }
       if(drew==null){
         /* the badge until its icon lands: a diamond in the element's colour with a lit core */
         ctx.rotate(Math.PI/4); ctx.fillStyle=I?I.body:'#888'; ctx.fillRect(-9,-9,18,18);
@@ -51987,6 +51974,7 @@ function wfxUpdate(dt){
           const hw=150*w.sc, hh=150*w.sc;
           w.caught = (!player.dead && Math.abs(player.x-w.x)<hw*0.34 && Math.abs(player.y-w.y)<hh*0.34);
           if(w.caught && typeof playerHit==='function') playerHit();
+          if(!w._passed&&w.y>player.y+hh*.34){w._passed=true;try{Audio.SFX.firewallPass&&Audio.SFX.firewallPass();}catch(_fp){}}
           if(w.y > VH+180){ F.wave=null; }
         }
         if(F.fired>=3 && !F.wave){ wfx.fseq=null; wfx.fireCd=rnd(9,14); }
@@ -72849,22 +72837,16 @@ function bonusPickupDraw(p,yb){
   else if(p.kind==='timebomb'){ key='timed_bomb_0917c'; h=44; }
   else return false;
   const bob=Math.sin((p.bob||0)+performance.now()/300)*2.4;
-  ctx.save(); ctx.translate(p.x, yb+bob);
-  /* a cheap pulsing glow - one additive disc, never shadowBlur (0916ab: that was the space stages' whole cost) */
-  const glow=p.kind==='scorechip'?({100:'#d08a4a',250:'#dfe8ff',500:'#ffd24a',1000:'#3fe3ff'}[p.val|0]||'#ffd24a'):(p.kind==='furybomb'?'#ff4a1a':'#ff2a2a');
-  ctx.globalCompositeOperation='lighter'; ctx.globalAlpha=0.30+0.18*Math.sin(performance.now()/120);
-  ctx.fillStyle=glow; ctx.beginPath(); ctx.arc(0,0,h*0.62,0,TAU); ctx.fill();
-  ctx.globalCompositeOperation='source-over'; ctx.globalAlpha=1;
-  if(XART.rdy(key)){ const im=XART.get(key), w=h*((im.naturalWidth||im.width)/(im.naturalHeight||im.height)); ctx.imageSmoothingEnabled=false; ctx.drawImage(im,-w/2,-h/2,w,h); }
-  else { ctx.fillStyle=glow; ctx.fillRect(-8,-12,16,24); }
-  ctx.restore();
+  const turn=p.kind==='scorechip'?('turn_score_'+(p.val|0)+'_0918'):(p.kind==='furybomb'?'turn_furybomb_0918':'turn_timebomb_0918');
+  if(pickupTurnFrame(turn,p.x,yb+bob,h,p.t,12))return true;
+  if(XART.rdy(key)){const im=XART.get(key),w=h*((im.naturalWidth||im.width)/(im.naturalHeight||im.height));ctx.drawImage(im,p.x-w/2,yb+bob-h/2,w,h);}
   return true;
 }
 /* applyPowerup's arm for the three; returns true when it handled the pickup */
 function bonusPickupApply(p){
   if(p.kind==='scorechip'){
     const v=p.val|0; run.score=(run.score|0)+v-PICKUP_SCORE;      /* applyPowerup already paid PICKUP_SCORE: the bullet is worth its NUMBER */
-    floatText(p.x,p.y-10,'+'+v,{100:'#e0a060',250:'#e8f0ff',500:'#ffd24a',1000:'#7ff0ff'}[v]||'#ffd24a');
+    pickupAnnounce('+'+v,{100:'#e0a060',250:'#e8f0ff',500:'#ffd24a',1000:'#7ff0ff'}[v]||'#ffd24a');
     fsx('select')||fsx('blip');
     return true;
   }
@@ -73058,7 +73040,7 @@ function efxDraw(){
    five chunks of burning rock thrown up out of it, which arc over and come down on the field. The column and
    every chunk hurt the player (playerHit, so a roll's or a respawn's i-frames still protect). Off while a
    boss is up - the Furnace has its own zone column. */
-const S2VENT={warn:0.95, gap:[6.2,10.4], first:4.5, debris:5};
+const S2VENT={warn:0.95,gap:[6.2,10.4],first:4.5,debris:5,edgeMin:10,edgeMax:42};
 let s2Vents=[], s2VentT=4.5, fireDebris=[];
 function s2VentDiff(){ const k=(typeof diffKey!=='undefined')?diffKey:'normal'; return k==='easy'?1.4:(k==='hard'||k==='furious'||k==='insanity')?0.8:1; }
 function s2VentTick(dt){
@@ -73067,7 +73049,7 @@ function s2VentTick(dt){
     if(!v.done && v.t>=S2VENT.warn){ v.done=true;
       const g=geyserSpawn(v.x,v.y,'fire'); if(g) g.hostile=true;
       for(let i=0;i<S2VENT.debris;i++) debrisLaunch(v.x+rnd(-12,12), v.y-rnd(4,24), -v.side, i*0.07+rnd(0,0.05));
-      try{ if(Audio.SFX.furnaceFlameRelease) Audio.SFX.furnaceFlameRelease(); }catch(_s){ }
+      try{ if(Audio.SFX.s2GeyserErupt) Audio.SFX.s2GeyserErupt(); }catch(_s){ }
       if(typeof shake!=='undefined') shake=Math.max(shake,6); } }
   s2Vents=s2Vents.filter(function(v){ return v.t<S2VENT.warn+0.05; });
   const on=run && run.stage===2 && !(typeof bossActive!=='undefined'&&bossActive) && player && !player.dead
@@ -73079,10 +73061,10 @@ function s2VentTick(dt){
 }
 function s2VentSpawn(side,y){
   const L=camLeftX(), R=camRightX();
-  const v={side:side, x:side<0?L+rnd(24,64):R-rnd(24,64), y:(y!=null?y:rnd(VH*0.62,VH+4)), t:0, done:false};
+  const v={side:side,x:side<0?L+rnd(S2VENT.edgeMin,S2VENT.edgeMax):R-rnd(S2VENT.edgeMin,S2VENT.edgeMax),y:(y!=null?y:VH+2),t:0,done:false};
   s2Vents.push(v);
   try{ XART.rdy('efx_geyser_fire'); XART.rdy('efx_burn'); XART.rdy('efx_debris_0'); XART.rdy('efx_debris_1'); }catch(_r){ }
-  try{ if(Audio.SFX.furnaceFlameIgnite) Audio.SFX.furnaceFlameIgnite(); }catch(_s){ }
+  try{ if(Audio.SFX.s2GeyserWarn) Audio.SFX.s2GeyserWarn(); }catch(_s){ }
   return v;
 }
 function s2VentDraw(){
@@ -73880,6 +73862,8 @@ if(window.BOFA && BOFA.sfx){
     alertBeamCharge:'assets/game/sounds/alert_beam_charge.wav',
     firewallArrive:'assets/game/sounds/firewall_arrive.wav',
     firewallPass:'assets/game/sounds/firewall_pass.wav',
+    s2GeyserWarn:'assets/game/sounds/s2_geyser_warn_0918.wav',
+    s2GeyserErupt:'assets/game/sounds/s2_geyser_erupt_0918.wav',
 
     /* ============================================================
        TWENTY CUES THE CODE ASKS FOR AND THE ENGINE DOES NOT HAVE (drop 0912k)
@@ -74140,7 +74124,9 @@ const Snd=(function(){
     retinaCharge:     {g:0.50, lp:6400, min:0.80},
     alertBeamCharge:  {g:0.50, lp:5600, min:1.40},
     firewallArrive:   {g:0.60, lp:5200, min:1.50},
-    firewallPass:     {g:0.46, lp:4200, min:1.20},
+    firewallPass:     {g:0.62, native:true, min:0.45},
+    s2GeyserWarn:      {g:0.64, native:true, min:0.70},
+    s2GeyserErupt:     {g:0.74, native:true, min:0.70},
 
     missile:  {g:0.62, lp:4200, min:0.11},
     firewall: {g:0.58, lp:3400, min:0.10},
