@@ -9775,6 +9775,17 @@ function isSetPiece(e){
    rather than a typed-in radius, so a future ship of another size is covered without anyone
    remembering this. AABB, because every hitbox in this file is one. ============================================================ */
 const SPAWN_CLEAR_PAD = 26;      // px of clearance around the hull the player must materialise into
+const SPAWN_PROJECTILE_GRACE=1.0;
+function clearSpawnProjectiles(ship){
+  if(typeof eBullets==='undefined'||!eBullets)return 0;
+  let cleared=0;
+  for(let i=eBullets.length-1;i>=0;i--){const q=eBullets[i];
+    if(!q||q.dead||q._beam||q.kind==='beam'||!Number.isFinite(q.x)||!Number.isFinite(q.y))continue;
+    const dx=80+(ship.w||24)/2+(q.w||10)/2,dy=100+(ship.h||30)/2+(q.h||10)/2;
+    if(Math.abs(q.x-ship.x)<dx&&Math.abs(q.y-ship.y)<dy){eBullets.splice(i,1);cleared++;}
+  }
+  return cleared;
+}
 function clearSpawnZone(){
   if(typeof enemies==='undefined' || !enemies || !enemies.length) return 0;
   const px=player.x, py=player.y;
@@ -9823,7 +9834,9 @@ let player = {
   reset(keepPos){ if(!keepPos){ this.x=(typeof worldWidth==='function'?worldWidth():VW)/2; this.y=VH*0.78; } this.alive=true; this.invuln=120; this.dead=false; this.fireCd=0; this.roll=null; this._tapL=-9; this._tapR=-9; this._bank=0; this._hx=9; this._hy=10;
     /* AFTER the position is set, never before — the zone has to be measured where the player is
        actually going to appear. See clearSpawnZone. */
-    if(typeof clearSpawnZone==='function') clearSpawnZone(); },
+    if(typeof clearSpawnZone==='function') clearSpawnZone();
+    this._spawnClearT=keepPos?SPAWN_PROJECTILE_GRACE:0;
+    if(keepPos)clearSpawnProjectiles(this); },
 };
 
 /* ============================================================
@@ -33507,6 +33520,7 @@ function updatePlay(dt){
     player._vy = player.y - (player._py==null?player.y:player._py);
     player._px = player.x; player._py = player.y;
     if(player.invuln>0) player.invuln-=1;
+    if(player._spawnClearT>0){player._spawnClearT=Math.max(0,player._spawnClearT-dt);clearSpawnProjectiles(player);}
 
     // ---- PIVOT bank ramp (drives the pv frame choice AND the hitbox) ----
     // Held direction ramps the bank toward ±1 over ~0.32s; release eases it back to 0.
