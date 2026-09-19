@@ -8040,7 +8040,7 @@ const INFUSION_FIELD_DROPS=false;
    its FLAME_TICK ledger, the mist and the bolt once per target. Mike's own equip rule names them:
    "1 flamethrower/ice breath/ other types upgrade". They take the element as the aura, the trail and
    the on-hit effect; each has its own authored draw, so none of them takes the palette swap. */
-const INFUSION_CARRIERS={mg:1,spread:1,prismRay:1,beam:1,missile:1,orb:1,shard:1,
+const INFUSION_CARRIERS={mg:1,spread:1,prismRay:1,chromeRay:1,beam:1,missile:1,orb:1,shard:1,
                          flame:1,lasermist:1,yuriLightningOrb:1,yuriLightningBolt:1,forgeFireBlast:1};
 /* Each boss awards one global element; the Forge applies it to any weapon. */
 const BOSS_ELEMENT_BY_STAGE=Object.freeze({1:'kinetic',2:'fire',3:'ice',4:'lightning',5:'chrome',6:'dark',7:'toxic',8:'prism',9:'water'});
@@ -8227,7 +8227,7 @@ const FORGE_NAMES=Object.freeze({
   prism:    {0:'PRISM SLUGS',      1:'RAYBURST',  2:'PRISM RACK',     3:'LUMINAIRE BEAM', 5:'PRISM ORB',    7:'PRISM GATLING', 4:'SPECTRUM JET',  6:'PRISM MIST',  8:'PRISM SPHERE'},
   toxic:    {0:'VENOM SLUGS',      1:'ACID FAN',      2:'BLIGHT RACK',    3:'DECAY BEAM',     5:'PLAGUE ORB',   7:'VENOM GATLING', 4:'VENOM JET',     6:'BLIGHT MIST', 8:'PLAGUE SPHERE'},
   kinetic:  {0:'SONIC SLUGS',      1:'SHOCK FAN',     2:'IMPACT RACK',    3:'GIANT BEAM',     5:'KINETIC ORB',  7:'HAMMER GATLING', 4:'PRESSURE JET',  6:'SHOCK MIST',  8:'IMPACT SPHERE'},
-  chrome:   {0:'MIRROR SLUGS',     1:'CHROME FAN',    2:'MIRROR RACK',    3:'CHROME BEAM',    5:'MIRROR ORB',   7:'CHROME GATLING', 4:'CHROME JET',    6:'MIRROR MIST', 8:'MIRROR SPHERE'},
+  chrome:   {0:'MIRROR SLUGS',     1:'MIRROR SPREAD',    2:'MIRROR RACK',    3:'CHROME BEAM',    5:'MIRROR ORB',   7:'CHROME GATLING', 4:'CHROME JET',    6:'MIRROR MIST', 8:'MIRROR SPHERE'},
   water:    {0:'TIDAL SLUGS',      1:'GEYSER FAN',    2:'TORRENT RACK',   3:'HYDRO BEAM',     5:'WATER ORB',    7:'TORRENT GATLING', 4:'STEAM JET',     6:'TIDAL MIST',  8:'GEYSER SPHERE'},
   dark:     {0:'VOID SLUGS',       1:'VOID FAN',      2:'VOID RACK',      3:'VOID BEAM',      5:'VOID ORB',     7:'VOID GATLING', 4:'VOID JET',      6:'VOID MIST',   8:'VOID SPHERE'}
 });
@@ -8271,6 +8271,7 @@ const FORGE_STYLE_FAMILY=Object.freeze({
 function forgeStyleName(elem,w,lv){
   const base=(FORGE_NAMES[elem]&&FORGE_NAMES[elem][w])||((INFUSIONS[elem]||{}).name+' '+WEAPONS[w]);
   if(elem==='prism' && w===1) return (lv|0)>=5?'RAYBURST NOVA':(lv|0)>=3?'RAYBURST STORM':'RAYBURST';
+  if(elem==='chrome' && w===1) return (lv|0)>=5?'MIRROR SPREAD NOVA':(lv|0)>=3?'MIRROR SPREAD STORM':'MIRROR SPREAD';
   if((lv|0)<3) return base;
   const words=FORGE_STYLE_WORDS[elem]||['POWER','MEGA'], family=FORGE_STYLE_FAMILY[w]||['WEAPON','BURST'];
   return (lv|0)<5?words[0]+' '+family[0]:words[1]+' '+family[1];
@@ -28325,6 +28326,32 @@ function fireWhipTick(b,dt){
   b.dir*=-1;b._hit.length=0;b.t=next-b.duration;
   fireWhipStrike(b,0,Math.min(1,b.t/b.duration));
 }
+function chromeSpreadActive(){return run.weapon===1 && forgeActiveTier(1)>0 && forgeEntry(1)?.elem==='chrome' && !spaceWeaponsActive();}
+function chromeSpreadTick(dt,firing){
+  if(!chromeSpreadActive()||player.dead){player._chromeSpreadT=0;player._chromeSpreadPending=0;return false;}
+  if(firing){player._chromeSpreadT=Math.min(1.8,(player._chromeSpreadT||0)+dt);return true;}
+  if(player._chromeSpreadT>0){player._chromeSpreadPending=player._chromeSpreadT;player._chromeSpreadT=0;}
+  const charge=player._chromeSpreadPending||0;if(!charge)return false;
+  if(player.fireCd<=0){
+    run._chromeSpreadRelease=charge;pShoot();run._chromeSpreadRelease=0;
+    player._chromeSpreadPending=0;
+    player.fireCd=charge>=1.5?.52:charge>=.7?.4:.29;
+  }
+  return true;
+}
+function chromeSpreadFire(lv){
+  const held=run._chromeSpreadRelease||0;
+  const rank=held>=1.5?2:held>=.7?1:0;
+  const n=[3,5,7][rank], arc=[.17,.15,.135][rank], speed=rank===2?10:rank===1?9:8;
+  const damage=(2+Math.floor(lv/2))*[1,1.18,1.42][rank];
+  for(let i=0;i<n;i++){const angle=-Math.PI/2+(i-(n-1)/2)*arc;
+    pBullets.push({x:player.x,y:player.y-16,vx:Math.cos(angle)*speed,vy:Math.sin(angle)*speed,
+      w:8,h:26,kind:'chromeRay',lv,dmg:damage,pierce:rank===2,chargeRank:rank,ang:angle});
+  }
+  if(typeof XART!=='undefined')XART.rdy('forge_elem_chrome_laser_0918');
+  player._mgMuzT=.1;player._mgMuzLv=Math.max(1,Math.min(8,lv));
+  (Audio.SFX.laserBeamStart||Audio.SFX.spread||Audio.SFX.shoot)();
+}
 function pShoot(){
   const w=run.weapon, lv=run.wlevel; const _sn0=pBullets.length;
   /* SONIC BOOM REPLACES THE PRIMARY WHILE IT LASTS (drop 0805i). It is a shockwave weapon,
@@ -28421,6 +28448,8 @@ function pShoot(){
     player._mgMuzT=0.07; player._mgMuzLv=Math.max(1,Math.min(8,lvv));   // real machinefx muzzle flash at the nose
     (Audio.SFX.machineGun||Audio.SFX.shoot)();
   } else if(w===1){ // spread fire
+    if(chromeSpreadActive()) chromeSpreadFire(lv);
+    else {
     const n=2+lv+(forgeActiveTier(1)>=3?1:0);
     const sprd=0.22+lv*0.05;
     const rayburst=forgeActiveTier(1)>0 && forgeEntry(1)?.elem==='prism';
@@ -28439,6 +28468,7 @@ function pShoot(){
        graphical". Same machinefx reel the MG branch uses. */
     player._mgMuzT=0.07; player._mgMuzLv=Math.max(1,Math.min(8,lv));
     Audio.SFX.spread();
+    }
   } else if(w===2){ // MISSILE — salvo of homing missiles (real pilot-colored missile art, Raiden-style tracking)
     const n = 1+Math.floor((lv+1)/2)+(forgeActiveTier(2)>=3?1:0);
     // The III missile form adds a separate warhead to each volley.
@@ -33561,6 +33591,7 @@ function updatePlay(dt){
        firing underneath the charge. */
     if(spaceShadowTick(dt,firing)) { /* Shadow Orb owns hold + release in Gravity Mode. */ }
     else if(coleFuseTick(dt, firing)) { /* charging — no MG fire this frame */ }
+    else if(!_chgPilot && chromeSpreadTick(dt,firing)) { /* release fires one charged chrome fan */ }
     /* a held trigger on a charge pilot never reaches the cadence block at all */
     else if(_chgPilot && firing) { /* winding up — the charge tick owns the trigger */ }
     else if(firing && player.fireCd<=0){
@@ -47893,6 +47924,12 @@ function drawBullets(){
         ctx.shadowColor='#ff5620';ctx.shadowBlur=9;
         ctx.drawImage(im,b.x-w/2,b.y-h/2,w,h);ctx.restore();continue;
       }
+    }
+    if(b.kind==='chromeRay' && typeof XART!=='undefined' && XART.rdy('forge_elem_chrome_laser_0918')){
+      const im=XART.get('forge_elem_chrome_laser_0918'),h=33+(b.chargeRank||0)*7,w=h*im.naturalWidth/im.naturalHeight;
+      ctx.save();ctx.translate(b.x,b.y);ctx.rotate(Math.atan2(b.vy||-1,b.vx||0)+Math.PI/2);
+      ctx.imageSmoothingEnabled=false;ctx.shadowColor='#d6eaff';ctx.shadowBlur=3;
+      ctx.drawImage(im,-w/2,-h/2,w,h);ctx.restore();continue;
     }
     if(b.kind==='prismRay' && typeof XART!=='undefined' && XART.rdy('forge_elem_prism_laser_0918')){
       const im=XART.get('forge_elem_prism_laser_0918'),h=29+Math.min(5,b._infLv|0)*2,w=h*im.naturalWidth/im.naturalHeight;
@@ -69423,6 +69460,11 @@ function drawWorld(dt){
   for(const _s of seatList().slice().reverse()) withSeat(_s, function(){
     if(player.out) return;
     drawPlayer();
+    if(player._chromeSpreadT>0 && chromeSpreadActive() && typeof XART!=='undefined' && XART.rdy('forge_elem_chrome_laser_0918')){
+      const im=XART.get('forge_elem_chrome_laser_0918'),p=clamp(player._chromeSpreadT/1.5,0,1),h=16+p*24,w=h*im.naturalWidth/im.naturalHeight;
+      ctx.save();ctx.globalAlpha=.55+p*.45;ctx.shadowColor='#d6eaff';ctx.shadowBlur=4+p*5;
+      ctx.drawImage(im,player.x-w/2,player.y-20-h,w,h);ctx.restore();
+    }
   });
   if(run.weapon===7){
     if((run._chainOverheat||0)>0){ctx.save();ctx.fillStyle='rgba(255,18,12,'+(.08+.07*(.5+.5*Math.sin((stateT||0)*16)))+')';ctx.fillRect(0,0,VW,VH);ctx.restore();}
