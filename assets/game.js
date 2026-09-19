@@ -5894,7 +5894,7 @@ const WVAR_NAME = {flamethrower:'FLAMETHROWER', icebreath:'ICE BREATH',
                       was the last one out of step. Mike wrote "Thermashock"; the established
                       in-game spelling everywhere else is THERMOSHOCK, so that spelling wins for
                       consistency rather than introducing a second one. */
-                   iceorb:'ICE ORB', fireorb:'FIRE ORB', fireice:'THERMOSHOCK'};
+                   iceorb:'ICE ORB', fireorb:'FIRE ORB', fireice:'THERMOSHOCK', firewhip:'FIRE WHIP'};
 const WVAR_ICON = {flamethrower:'micon_firewall_', icebreath:'micon_icebreath_',
                    iceorb:'micon_iceorb_', fireorb:'micon_fireorb_', fireice:'micon_thermoshock_'};
 function weaponVariant(w, opt){
@@ -5953,6 +5953,7 @@ function weaponDisplayName(w, opt){
   if(typeof spaceWeaponsActive==='function' && spaceWeaponsActive()) return spaceWeaponName();
   /* a FORGED weapon carries its forged name everywhere the bare name went - the HUD, the pickup
      banner, the debrief's WEAPON OF CHOICE (Mike: "machine gun now becomes incendary slugs") */
+  if(w===3 && !opt && heldVariant(3)==='firewhip' && forgeEntry(3)?.elem==='fire') return 'FIRE WHIP';
   if(typeof forgeName==='function'){ const fn=forgeName(w); if(fn) return fn; }
   const v = opt ? weaponVariant(w, opt) : heldVariant(w);
   if(v && WVAR_NAME[v]) return WVAR_NAME[v];
@@ -5964,6 +5965,7 @@ function weaponIconKey(w, lv, opt){
      box, the falling crate (0917). Registered-or-nothing: an unregistered plate keeps the tier icon. */
   /* `{bare:1}` asks for the weapon's OWN tier icon, forge or no forge - the ARMORY needs that for a row
      whose element is not the one currently forged on the slot (0917). */
+  if(w===3 && !(opt && opt.bare) && !opt && heldVariant(3)==='firewhip' && forgeEntry(3)?.elem==='fire') return 'micon_firewhip_0919';
   if(!(opt && opt.bare) && typeof forgeEntry==='function'){ const _fe=forgeEntry(w); if(_fe && _fe.elem && XART._src){
     const _fk='micon_forge_'+_fe.elem+'_'+w, _fl=_fe.lv|0;
     if(_fl>1 && XART._src[_fk+'_'+_fl]) return _fk+'_'+_fl;      /* the level's own badge (II..V), when its plate landed */
@@ -8327,7 +8329,8 @@ function weaponBaseForms(w){
   const d=run&&run.forgeElems||{}, pk=(typeof _pilotKey==='function')?_pilotKey():'', out=[];
   if((w|0)===4){ out.push({kind:'variant',id:'flamethrower',name:'FLAMETHROWER'}); if(d.ice||pk==='freezer') out.push({kind:'variant',id:'icebreath',name:'ICE BREATH'}); }
   else if((w|0)===5){ out.push({kind:'variant',id:'iceorb',name:'ICE ORB'}); if(d.fire&&pk!=='freezer') out.push({kind:'variant',id:'fireorb',name:'FIRE ORB'}); if((d.fire&&d.ice)||pk==='freezer') out.push({kind:'variant',id:'fireice',name:'THERMOSHOCK'}); }
-  else out.push({kind:'bare',id:null,name:'BARE '+(WEAPONS[w]||'WEAPON')});
+  else { out.push({kind:'bare',id:null,name:'BARE '+(WEAPONS[w]||'WEAPON')});
+    if((w|0)===3 && forgeFormsFor(3).fire) out.push({kind:'variant',id:'firewhip',name:'FIRE WHIP'}); }
   return out;
 }
 function weaponFormOptions(w){
@@ -8343,8 +8346,14 @@ function weaponFormSelect(w,opt){
       if(!run.wvars) run.wvars=WEAPONS.map(()=>null);
       if((w|0)===4) run.wvars[w]=opt.elem==='ice'?'icebreath':'flamethrower';
       if((w|0)===5) run.wvars[w]=opt.elem==='fire'?'fireorb':'iceorb';
+      if((w|0)===3) run.wvars[w]=null;
     }
     return r;
+  }
+  if((w|0)===3 && opt.kind==='variant' && opt.id==='firewhip'){
+    const r=forgeSelect(3,'fire'); if(r!=='ok') return r;
+    if(!run.wvars) run.wvars=WEAPONS.map(()=>null);
+    run.wvars[3]='firewhip'; return 'ok';
   }
   forgeSelect(w,null);
   if(!run.wvars) run.wvars=WEAPONS.map(()=>null);
@@ -28260,6 +28269,47 @@ function forgeStyleAfterShot(w,from){
     }
   }
 }
+const FIRE_WHIP_TIME=.48;
+function fireWhipFire(lv,laserDmg){
+  if(pBullets.some(b=>b.kind==='firewhip'&&!b.dead))return;
+  const reach=112+Math.max(1,lv)*10,tier=forgeActiveTier(3);
+  // Nine laser burn ticks fit in the sweep. One hit per target deals 125% of that.
+  pBullets.push({kind:'firewhip',x:player.x,y:player.y-18,vx:0,vy:0,w:reach*2,h:reach,
+    reach,t:0,duration:FIRE_WHIP_TIME,lv,dmg:laserDmg*9*1.25*(tier>=5?1.16:1),
+    _hit:[],_inf:'fire',_infLv:tier,_el:'fire'});
+  (Audio.SFX.flameWhoosh||Audio.SFX.laserBeamStart||Audio.SFX.laser||Audio.SFX.shoot)();
+  player._mgMuzT=.09;player._mgMuzLv=Math.max(1,Math.min(8,lv));
+}
+function fireWhipTouches(b,o,from,to){
+  // The authored plate is a U-shaped 180-degree whip: high at each flank and
+  // low at the middle. Follow that curve, not a circular ring above the ship.
+  const dx=o.x-b.x,dy=(o._drawY!=null?o._drawY:o.y)-b.y;
+  const nx=dx/b.reach,pad=Math.hypot((o.w||0)/2,(o.h||0)/2);
+  if(Math.abs(dx)>b.reach+pad)return false;
+  const curveY=-b.reach*.78*Math.pow(Math.min(1,Math.abs(nx)),1.5);
+  if(Math.abs(dy-curveY)>19+pad)return false;
+  const progress=Math.max(0,Math.min(1,(nx+1)/2));
+  return progress>=from-(pad+11)/(b.reach*2)&&progress<=to+(pad+11)/(b.reach*2);
+}
+function fireWhipTick(b,dt){
+  const prev=b.t||0;b.t=Math.min(b.duration,prev+dt);
+  if(player.dead){b.dead=true;return;}
+  b.x=player.x;b.y=player.y-18;
+  const from=prev/b.duration,to=b.t/b.duration;
+  for(const e of enemies)if(!e.dead&&b._hit.indexOf(e)<0&&fireWhipTouches(b,e,from,to)){
+    hitEnemy(e,b.dmg);weaponHitSfx('fire');b._hit.push(e);
+  }
+  if(boss&&bossActive&&!boss.dead&&b._hit.indexOf(boss)<0&&fireWhipTouches(b,boss,from,to)){
+    hitBoss(b.dmg);weaponHitSfx('fire');b._hit.push(boss);
+  }
+  if(typeof subBoss!=='undefined'&&subBoss&&subBossActive&&!subBoss.dead&&!subBoss.enter&&b._hit.indexOf(subBoss)<0&&fireWhipTouches(b,subBoss,from,to)){
+    hitSubBoss(b.dmg,subBoss.x,subBoss._drawY||subBoss.y);weaponHitSfx('fire');b._hit.push(subBoss);
+  }
+  for(const q of powerups){if(q.dead||!['crate','capsule','scrate','mcrate','hqspacebox'].includes(q.kind)||b._hit.indexOf(q)>=0)continue;
+    if(fireWhipTouches(b,q,from,to)){q.hp=(q.hp||5)-b.dmg;q.flash=.12;b._hit.push(q);if(q.hp<=0){q.dead=true;breakContainer(q);}}
+  }
+  if(b.t>=b.duration)b.dead=true;
+}
 function pShoot(){
   const w=run.weapon, lv=run.wlevel; const _sn0=pBullets.length;
   /* SONIC BOOM REPLACES THE PRIMARY WHILE IT LASTS (drop 0805i). It is a shockwave weapon,
@@ -28388,7 +28438,9 @@ function pShoot(){
     player._mgMuzT=0.07; player._mgMuzLv=Math.max(1,Math.min(8,lv||1));
   } else if(w===3){ // LASER — legacy column for everyone; Maverick keeps his widening helix arc
     const dmg = 2 + Math.floor(lv/2);            // lv1:2 lv2:3 lv3:3 lv4:4 lv5:4
-    if(run.pilot!=='maverick'){
+    if(heldVariant(3)==='firewhip' && forgeEntry(3)?.elem==='fire'){
+      fireWhipFire(lv,dmg);
+    } else if(run.pilot!=='maverick'){
       /* Restore the original held beam. One entity is refreshed while the trigger is held, so the
          authored nlz_/laserbeam animation stays anchored to the player's muzzle and burns the
          straight column. The Fire-Shark widening arc was requested for Maverick specifically and
@@ -34871,6 +34923,7 @@ function updatePlay(dt){
       }
       continue;
     }
+    if(b.kind==='firewhip'){fireWhipTick(b,dt);continue;}
     if(b.kind==='beam'){   // solid laser beam: anchored to the ship, burns the whole column above it
       b.life-=dt;
       if(b.life<=0 || player.dead){
@@ -46827,6 +46880,17 @@ function drawBullets(){
   for(const b of pBullets){
     /* THE LEVEL'S AURA (0917) - under the round, before any kind branch, so every carrier gets it */
     if(b._inf && (b._infLv|0)>=2 && !(b._launchDelay>0) && typeof infusionAuraDraw==='function') infusionAuraDraw(b);
+    if(b.kind==='firewhip'){
+      const progress=Math.min(1,(b.t||0)/b.duration),r=b.reach;
+      ctx.save();ctx.beginPath();ctx.rect(b.x-r-4,b.y-r*.9,r*2*progress+4,r*.98);ctx.clip();
+      ctx.globalCompositeOperation='lighter';ctx.imageSmoothingEnabled=false;
+      if(typeof XART!=='undefined'&&XART.rdy('fire_whip_fx_0919')){
+        const im=XART.get('fire_whip_fx_0919');ctx.drawImage(im,b.x-r,b.y-r*.87,r*2,r*.87);
+      }else{ctx.strokeStyle='#ff9a24';ctx.lineWidth=19;ctx.beginPath();for(let i=0;i<=24;i++){
+        const nx=-1+i/12,yy=b.y-r*.78*Math.pow(Math.abs(nx),1.5);if(i)ctx.lineTo(b.x+nx*r,yy);else ctx.moveTo(b.x+nx*r,yy);
+      }ctx.stroke();}
+      ctx.restore();continue;
+    }
     if(b.kind==='yuriLightningOrb'||b.kind==='yuriLightningBolt'){
       const lv=clamp(b.lv||1,1,5),orb=b.kind==='yuriLightningOrb',key=orb?'ylo_orb_'+lv:'ylo_bolt_'+clamp(b.art||lv,1,5);
       ctx.save();ctx.translate(b.x,b.y);if(!orb)ctx.rotate((b.ang==null?Math.atan2(b.vy,b.vx):b.ang)+Math.PI/2);
@@ -72283,6 +72347,7 @@ function fsx(n){ try{ if(Audio&&Audio.SFX&&Audio.SFX[n]){ Audio.SFX[n](); return
 function forgeBadgeKey(e,w,l){ return 'micon_forge_'+e+'_'+(w|0)+((l|0)>1?'_'+(l|0):''); }
 /* the icon a bay shows: the FORGED badge once a weapon carries an element, the plain one before */
 function forgeSlotKey(w){
+  if((w|0)===3 && heldVariant(3)==='firewhip' && forgeEntry(3)?.elem==='fire' && XART.rdy('micon_firewhip_0919')) return 'micon_firewhip_0919';
   const f=forgeEntry(w);
   if(f && XART.rdy(forgeBadgeKey(f.elem,w,f.lv))) return forgeBadgeKey(f.elem,w,f.lv);
   return weaponIconKey(w, Math.max(1,(run.wlevels&&run.wlevels[w])|0), {bare:1});
@@ -72480,7 +72545,8 @@ function forgePreviewTick(P,VWp,VHp,dt){
       if(typeof yuriLightningOrbTick==='function' && yuriLightningOrbTick(b,dt)) continue;
       if(typeof laserMistTick==='function' && laserMistTick(b,dt)) continue;
       if(typeof spaceBulletTick==='function' && spaceBulletTick(b,dt)) continue;
-      if(b.kind==='beam'){ b.life=(b.life==null?0.3:b.life)-dt; if(b.life<=0){ b.dead=true; continue; } b.x=player.x; b.bot=player.y-14; b.top=-20; }
+      if(b.kind==='firewhip'){b.t=Math.min(b.duration,(b.t||0)+dt);b.x=player.x;b.y=player.y-18;if(b.t>=b.duration)b.dead=true;}
+      else if(b.kind==='beam'){ b.life=(b.life==null?0.3:b.life)-dt; if(b.life<=0){ b.dead=true; continue; } b.x=player.x; b.bot=player.y-14; b.top=-20; }
       else if(b.kind==='flame'){ b.life=(b.life==null?0.3:b.life)-dt; b.anim=(b.anim||0)+dt; if(b.life<=0){ b.dead=true; continue; }
         b.x=player.x; b.bot=player.y-14; b.top=b.bot-flameReach(b.lv); b.w=flameBase(b.lv)*2; b.h=flameReach(b.lv); }
       else { b.x+=(b.vx||0); b.y+=(b.vy||0); b.t=(b.t||0)+dt; }
@@ -72736,7 +72802,7 @@ function drawLoadout(dt){
     for(let ci=0;ci<cells.length;ci++){const c=cells[ci],cx=x0+ci*pitch,h=Math.min(18,B[3]*.24);forgeIconFit(c.key,cx,yy,h,0,c.ok?1:.18);L.catalogRects.push({x:cx-h/2,y:yy-h/2,w:h,h:h,weapon:w,cell:c});}
   }
   if(L.row===1)opts=L.pool.map(function(w){return {weapon:w,name:weaponDisplayName(w),key:forgeSlotKey(w)};});
-  else if(L.row===2&&selW!=null)opts=weaponFormOptions(selW).map(function(o){return Object.assign({},o,{key:o.kind==='forge'?forgeBadgeKey(o.elem,selW,o.lv):(o.kind==='variant'&&WVAR_ICON[o.id]?WVAR_ICON[o.id]+'3':weaponIconKey(selW,3,{bare:1}))});});
+  else if(L.row===2&&selW!=null)opts=weaponFormOptions(selW).map(function(o){return Object.assign({},o,{key:o.kind==='forge'?forgeBadgeKey(o.elem,selW,o.lv):(o.kind==='variant'&&o.id==='firewhip'?'micon_firewhip_0919':(o.kind==='variant'&&WVAR_ICON[o.id]?WVAR_ICON[o.id]+'3':weaponIconKey(selW,3,{bare:1})))});});
   if(art&&L.row===0){const total=allW.length,label=(firstW+1)+'-'+Math.min(total,firstW+3)+' / '+total+'   MOUSE WHEEL: BROWSE';
     stageText(art,label,B[0]+B[2]*.82,B[1]+B[3]*.08,5.5,'#9fd6ff',.75,1,.025);}
   if(L.row>0&&opts.length){
