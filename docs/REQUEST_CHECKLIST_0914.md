@@ -1,6 +1,6 @@
 # Bullets of Fury — request checklist
 
-Updated 2026-09-19. **176 entries: 148 complete / 8 partial / 20 pending.**
+Updated 2026-09-19. **176 entries: 148 complete / 9 partial / 19 pending.**
 
 **28 remain unfinished.** 10 depend on SpriteCook production assets; 0 needs a model-name decision. These are included in the totals.
 
@@ -23,7 +23,7 @@ Mike selected furyship_somersault_13.png and approved image_gen for its replacem
 | Area | Complete | Partial | Pending | Total |
 | --- | ---: | ---: | ---: | ---: |
 | Earlier handoff, weapons and Tempest | 9 | 1 | 0 | 10 |
-| Shared combat, warnings and targeting | 17 | 2 | 3 | 22 |
+| Shared combat, warnings and targeting | 17 | 3 | 2 | 22 |
 | Stage 1: fodder, Razorback and jungle chopper | 17 | 1 | 1 | 19 |
 | Stage 2: lava enemies, Magma Ward and Furnace Tyrant | 7 | 1 | 3 | 11 |
 | Stage 3: ice enemies, miniboss and Rime Wall | 12 | 0 | 2 | 14 |
@@ -71,7 +71,7 @@ Mike selected furyship_somersault_13.png and approved image_gen for its replacem
 - [x] **ENG-17 · Complete** — Persist multiple crafted forms per weapon and select them from loadout, including Flamethrower/Ice Breath and Ice Orb/Fire Orb/Thermoshock choices; preserve two upgrades and two re-specs per stage. [Evidence](WEAPON_FORGE_REPAIR_0918.md).
 - [x] **ENG-18 · Complete** — Give Fire Orb a dedicated readable Magma Orb projectile and verify ordinary enemy, boss-family, Furious charge/release, and projectile-launch sounds resolve through audible real-sample routes. [Evidence](WEAPON_FORGE_REPAIR_0918.md).
 - [x] **ENG-19 · Completed** — Life-loss respawns clear the incoming projectile lane for the full two-second invulnerability window and keep the ship visibly lit; distant rounds and boss beams remain. [Proof](RESPAWN_SAFETY_0919.md).
-- [ ] **ENG-20 · Pending** — Hard/Furious hazard readability: separate warning, hostile projectile, explosion and enemy-palette values when several red effects overlap. [Evidence](PLAYTEST_REPAIR_QUEUE_0918.md).
+- [ ] **ENG-20 · Partial** — The final red FOV cone and alert now have a cool edge on Hard/Furious, separate from warm projectiles and white/orange explosions. Audit other hazard families under dense overlap. [Proof](HARD_FURIOUS_WARNING_CONTRAST_0919.md).
 - [ ] **ENG-21 · Pending** — Complete a vehicle-wide authored direction-frame audit for all remaining tanks and jets; remove live canvas rotation where it produces warped or wonky turns, while retaining correct pivots, shadows and weapon mounts. [Evidence](ROTATION_SHIELD_STAGE2_REPAIR_0918.md).
 - [x] **ENG-22 · Complete** — Give pickup families authored turn strips, select frames at runtime, and remove the ugly additive glow discs from the new bombs and score bullets. [Evidence](ROTATION_SHIELD_STAGE2_REPAIR_0918.md).
 

@@ -10,7 +10,7 @@ Source review: the three latest September 18 gameplay recordings in `C:\Users\Mi
 - Loadout needs controller/D-pad arsenal paging and stronger selected combination feedback alongside its mouse browsing.
 - Pilot Select needs its identity typing and one-by-one bar-fill presentation restored before the clean GOOD LUCK launch card.
 - Respawn projectile safety: extended 0919. Life-loss respawns clear the incoming lane for the full two-second invulnerability window; distant shots and boss beams remain. The ship stays visibly lit during grace. Focused browser check passed.
-- Hard/Furious warning colors need stronger value separation from hostile rounds, explosions, and red enemy palettes.
+- Hard/Furious warning colors: 0919 partial fix gives the final red FOV/alert a cool-cyan edge. Dense overlap in other encounters remains to be tested. [Proof](HARD_FURIOUS_WARNING_CONTRAST_0919.md).
 
 These are recorded observations; each item retains its own implementation and browser-verification status.
 

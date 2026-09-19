@@ -1,6 +1,6 @@
 # Bullets of Fury — easiest-to-hardest work order
 
-**176 entries: 148 complete / 8 partial / 20 pending.**
+**176 entries: 148 complete / 9 partial / 19 pending.**
 
 Work in ascending workOrder, an estimate of implementation plus verification difficulty. Respect prerequisites and skip externally blocked items while continuing ready work. Re-rank when investigation changes the estimate; retain IDs and explain the change.
 
@@ -12,7 +12,7 @@ Completed entries are excluded. The list below contains every unfinished item ex
 
 ## Shared systems and progression
 
-2. **ENG-20 · Pending** — Hard/Furious hazard readability: separate warning, hostile projectile, explosion and enemy-palette values when several red effects overlap.
+2. **ENG-20 · Partial** — Final red FOV/alert now has a cool edge. Audit other Hard/Furious hazards under dense overlapping fire. [Proof](HARD_FURIOUS_WARNING_CONTRAST_0919.md).
 
 ## Moderate presentation and behavior work
 

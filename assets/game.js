@@ -17725,6 +17725,7 @@ function l23FovDraw(b,B,i,p,k,lane){
   const a=col==='green' ? 0.5 : (col==='yellow' ? 0.74+0.26*pl : 0.56+0.44*pl);
   ctx.save(); ctx.imageSmoothingEnabled=true; ctx.imageSmoothingQuality='high';
   ctx.globalCompositeOperation='source-over'; ctx.globalAlpha=a;
+  if(col==='red'&&(diffKey==='hard'||diffKey==='furious')){ctx.shadowColor='#80e8ff';ctx.shadowBlur=7;}
   ctx.drawImage(im,-W*C.ax,-H*C.ay,W,H);
   /* Mike, 0905: "a pixel glow from bottom to top as a cool effect before officially firing off" - the
      rising band is the cone's own pixels re-blitted additively, as it was on the lane plate. It waits
@@ -17771,6 +17772,7 @@ function l23WarnSymbolDraw(b,B){
      text) before a screenshot showed the sign was never there. 46 clears the gauge band. */
   const sy=Number.isFinite(B.alertY)?Math.max(L23_WARN_MINY,B.alertY):Math.max(L23_WARN_MINY,top-h-12),sx=Number.isFinite(B.alertX)?B.alertX:b.x;
   ctx.save();ctx.imageSmoothingEnabled=false;ctx.globalAlpha=steady?.62:(red?1:.92);
+  if(red&&(diffKey==='hard'||diffKey==='furious')){ctx.shadowColor='#80e8ff';ctx.shadowBlur=7;}
   ctx.drawImage(im,Math.round(sx-w/2),Math.round(sy),w,h);
   ctx.restore();return true;
 }
