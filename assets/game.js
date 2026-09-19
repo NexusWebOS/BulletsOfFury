@@ -63549,7 +63549,9 @@ let armory=null;
 function armoryOpen(back){
   armory={tab:0,i:0,scroll:0,t:0,msg:'',msgT:0,back:back||'vault'};
   try{ if(typeof XART!=='undefined'){ XART.rdy('statpanel_full_0916');
-    for(const e of Object.keys(INFUSIONS)) for(const w of FORGE_WEAPONS) for(let l=1;l<=INFUSION_MAX;l++) XART.rdy('micon_forge_'+e+'_'+w+(l>1?'_'+l:''));
+    /* The gallery has 405 tier icons. Warm only the first visible page; drawArmory requests
+       the selected tab's rows on demand, keeping menu entry responsive on small devices. */
+    for(const e of Object.keys(INFUSIONS).slice(0,ARMORY_VIEW)) XART.rdy('micon_forge_'+e+'_'+FORGE_WEAPONS[0]);
     /* ⚠ micon_lasermist_* IS NOT ON nia_icons - iconBlit routes it to the mist's own atlas, which stays
        null until that sheet is warmed. Touching the icon key starts nothing (0916's unlock page). */
     for(let l=1;l<=5;l++){ XART.rdy('micon_firewall_'+l); XART.rdy('micon_icebreath_'+l); XART.rdy('micon_lightningorb_'+l); XART.rdy('micon_lasermist_'+l); }
