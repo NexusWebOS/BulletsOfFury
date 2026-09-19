@@ -2076,6 +2076,10 @@ const XART=(function(){
   X._src['forge_loadout_0918']='assets/game/ui/forge_0918/forge_loadout.png';
   X._src['weapon_found_0918']='assets/game/ui/forge_0918/weapon_found.png';
   X._src['magma_orb_0918']='assets/game/player_weapons/magma_orb_0918/magma_orb.png';
+  for(const _e of ['ice','lightning','prism','toxic','kinetic','water','chrome','dark']){
+    X._src['forge_elem_'+_e+'_bullet_0918']='assets/game/player_weapons/forge_elements_0918/'+_e+'_bullet.png';
+    X._src['forge_elem_'+_e+'_laser_0918']='assets/game/player_weapons/forge_elements_0918/'+_e+'_laser.png';
+  }
   const _forgeFire='assets/game/player_weapons/forge_fire_0918/';
   X._src.forge_fire_slug_0918=_forgeFire+'fire_rotary_slug.png';
   X._src.forge_fire_laser_0918=_forgeFire+'fire_laser_column.png';
@@ -26572,7 +26576,7 @@ function pShard(x,y,ang,lv,opt){ const spd=3.4+lv*0.25; pBullets.push({kind:'sha
   _wvar:(opt&&opt.wvar)||'iceorb', _el:(opt&&opt.el)||'ice', _fire:(opt&&opt.fire)?1:0, _ts:(opt&&opt.ts)?1:0}); }
 function iceBurst(x,y,n,lv,opt){
   for(let i=0;i<n;i++) pShard(x,y, i*(TAU/n)+Math.random()*0.3, lv, opt);
-  if(typeof explode==='function') explode(x,y,10,(opt&&opt.ts)?'#9fd8ff':'#bfe8ff');
+  if(typeof explode==='function') explode(x,y,10,(opt&&opt.ts)?'#9fd8ff':((opt&&opt.fire)?'#ff7331':'#bfe8ff'));
   const S=(typeof Audio!=='undefined'&&Audio.SFX)?Audio.SFX:null;
   if(S){
     const el=(opt&&opt.el)||((opt&&opt.ts)?'fireice':'ice');
@@ -28502,9 +28506,9 @@ function pShoot(){
       /* `_ts` rides on the orb rather than being re-asked at draw time — an orb already in
          flight when the slot changes must keep being the orb it was launched as. Same reason
          `lv` is captured here and not read off `run` by the draw. */
-      const _ov=(typeof heldVariant==='function' && heldVariant(5)) || 'iceorb';
-      const _ts=_ov==='fireice', _fire=(_ov==='fireorb'||_ts);
-      const _el=_ts?'fireice':(_ov==='fireorb'?'fire':'ice');
+      const _forgeOrb=forgeEntry(5), _ov=(_forgeOrb&&_forgeOrb.elem==='fire')?'magmaorb':((typeof heldVariant==='function' && heldVariant(5)) || 'iceorb');
+      const _ts=_ov==='fireice', _fire=(_ov==='fireorb'||_ov==='magmaorb'||_ts);
+      const _el=_ts?'fireice':(_fire?'fire':'ice');
       pBullets.push({kind:'orb', x:player.x, y:player.y-16, vx, vy:-2.7, w:34, h:34, dmg:2, lv, spin:0, life:2.6, shardN, shardCd:0.06, frame:0,
         _wvar:_ov, _fire:_fire?1:0, _ts:_ts?1:0, _el, _hit:[], _ht:0, _bt:0});
       const _launch=_el==='fireice'?(Audio.SFX.fireIceOrbLaunch||Audio.SFX.spread):
@@ -47337,7 +47341,7 @@ function drawBullets(){
         else { ctx.fillStyle=(b.kind==='nukem')?'#ffe14a':'#ffb04a'; ctx.fillRect(-3,-10,6,20); }
       }
       ctx.restore(); continue; }
-    if(b.kind==='orb' && b._inf==='fire' && typeof XART!=='undefined' && XART.rdy('magma_orb_0918')){
+    if(b.kind==='orb' && b._wvar==='magmaorb' && typeof XART!=='undefined' && XART.rdy('magma_orb_0918')){
       const im=XART.get('magma_orb_0918'), pulse=0.94+0.06*Math.sin((b.t||0)*18), d=b.w*2.05*pulse;
       ctx.save(); ctx.translate(b.x,b.y); ctx.rotate((b.spin||0)*1.15);
       /* The generated plate has transparent breathing room. Crop to its authored 64px cell and
@@ -47458,6 +47462,12 @@ function drawBullets(){
       ctx.restore(); continue;
     }
     if(b.kind==='beam'){   // held player laser
+      if(b._inf && b._inf!=='fire' && typeof XART!=='undefined' && XART.rdy('forge_elem_'+b._inf+'_laser_0918')){
+        const im=XART.get('forge_elem_'+b._inf+'_laser_0918'),top=b.top!=null?b.top:-20,bot=b.bot!=null?b.bot:player.y-14;
+        const bw=Math.max(12,b.w||18);ctx.save();ctx.globalCompositeOperation='lighter';ctx.imageSmoothingEnabled=false;
+        ctx.shadowColor=INFUSIONS[b._inf]?.glow||'#ffffff';ctx.shadowBlur=5+(b._infLv|0);
+        ctx.drawImage(im,b.x-bw/2,top,bw,Math.max(2,bot-top));ctx.restore();continue;
+      }
       if(b._inf==='fire' && typeof XART!=='undefined' && XART.rdy('forge_fire_laser_0918')){
         const im=XART.get('forge_fire_laser_0918'), top=b.top!=null?b.top:-20, bot=b.bot!=null?b.bot:player.y-14;
         const bw=Math.max(12,b.w||18), bh=Math.max(2,bot-top);
@@ -47857,6 +47867,18 @@ function drawBullets(){
         ctx.shadowColor='#ff5620';ctx.shadowBlur=9;
         ctx.drawImage(im,b.x-w/2,b.y-h/2,w,h);ctx.restore();continue;
       }
+    }
+    if(b.kind==='spread' && b._inf==='fire' && typeof XART!=='undefined' && XART.rdy('forge_fire_blast_0918')){
+      const im=XART.get('forge_fire_blast_0918'),h=27+Math.min(5,b._infLv|0)*2,w=h*im.naturalWidth/im.naturalHeight;
+      ctx.save();ctx.translate(b.x,b.y);ctx.rotate(Math.atan2(b.vy||-1,b.vx||0)+Math.PI/2);
+      ctx.globalCompositeOperation='lighter';ctx.imageSmoothingEnabled=false;ctx.shadowColor='#ff6724';ctx.shadowBlur=6;
+      ctx.drawImage(im,-w/2,-h/2,w,h);ctx.restore();continue;
+    }
+    if((b.kind==='mg'||b.kind==='spread') && b._inf && b._inf!=='fire' && typeof XART!=='undefined' && XART.rdy('forge_elem_'+b._inf+'_bullet_0918')){
+      const im=XART.get('forge_elem_'+b._inf+'_bullet_0918'),h=19+Math.min(5,b._infLv|0)*2,w=h*im.naturalWidth/im.naturalHeight;
+      ctx.save();ctx.translate(b.x,b.y);ctx.rotate(Math.atan2(b.vy||-1,b.vx||0)+Math.PI/2);ctx.imageSmoothingEnabled=false;
+      ctx.globalCompositeOperation='lighter';ctx.shadowColor=INFUSIONS[b._inf]?.glow||'#ffffff';ctx.shadowBlur=4;
+      ctx.drawImage(im,-w/2,-h/2,w,h);ctx.restore();continue;
     }
     if(b.kind==='mg' && b._inf==='fire' && typeof XART!=='undefined' && XART.rdy('forge_fire_slug_0918')){
       const im=XART.get('forge_fire_slug_0918'),h=20+Math.min(5,b._infLv|0)*2,w=h*im.naturalWidth/im.naturalHeight;
@@ -63256,6 +63278,11 @@ function drawArmory(dt){
     const next=chosen.purchased?Math.min(INFUSION_MAX,chosen.lv+1):1;
     const badge=forgeBadgeKey(chosen.elem,w,next); XART.rdy(badge);
     forgeIconFit(badge,x0+43,detailY+detailH*.5,detailH*.70,72,1);
+    if(w===5 && chosen.elem==='fire' && XART.rdy('magma_orb_0918')){
+      const orb=XART.get('magma_orb_0918'),sz=Math.min(56,detailH*.68),cx=x0+116,cy=detailY+detailH*.50;
+      ctx.save();ctx.shadowColor='#ff5b19';ctx.shadowBlur=10;ctx.imageSmoothingEnabled=false;
+      ctx.drawImage(orb,32,32,64,64,cx-sz/2,cy-sz/2,sz,sz);ctx.restore();
+    }
     if(art){
       const lines=[forgeStyleName(chosen.elem,w,1),forgeStyleName(chosen.elem,w,3),forgeStyleName(chosen.elem,w,5)];
       for(let j=0;j<3;j++){
@@ -72516,7 +72543,7 @@ function forgePreviewSwap(P,VWp,VHp,fn){
      `powerups`, `boss` and `subBoss` and push `zaps` - so every one of them is emptied for the duration and
      put back in the finally, or a preview round fired at x 65 could strike a live unit at world x 65. */
   const sv={pb:pBullets, eb:eBullets, pa:particles, px:player.x, py:player.y, pd:player.dead, pi:player.invuln,
-            w:run.weapon, wl:run.wlevel, inf:run.infusion, fg:run.forge, fb:run._forgeBlastSeq, sh:shake,
+            w:run.weapon, wl:run.wlevel, wvars:run.wvars, inf:run.infusion, fg:run.forge, fb:run._forgeBlastSeq, sh:shake,
             shots:stageStats&&stageStats.shots, kin:run._kinN,
             rev:run._chainRev, heat:run._chainHeat, over:run._chainOverheat,
             muz:player._mgMuzT, muzLv:player._mgMuzLv,
@@ -72528,6 +72555,9 @@ function forgePreviewSwap(P,VWp,VHp,fn){
     run.weapon=P.w; run.wlevel=Math.max(1,((run.wlevels&&run.wlevels[P.w])|0)||1);
     run.infusion={elem:P.elem, lv:Math.max(1,P.lv), hits:0};
     run.forge=Object.assign({},sv.fg||{}); run.forge[P.w]={elem:P.elem,lv:P.lv};
+    run.wvars=(sv.wvars||WEAPONS.map(()=>null)).slice();
+    if(P.w===5) run.wvars[5]=P.elem==='fire'?'magmaorb':'iceorb';
+    if(P.w===4) run.wvars[4]=P.elem==='ice'?'icebreath':'flamethrower';
     run._forgeBlastSeq=P.blastSeq||(P.blastSeq={});
     fn();
   }catch(err){ P.err=String((err&&err.message)||err); }
@@ -72535,7 +72565,7 @@ function forgePreviewSwap(P,VWp,VHp,fn){
     P.bullets=pBullets; P.parts=particles;
     pBullets=sv.pb; eBullets=sv.eb; particles=sv.pa; player.x=sv.px; player.y=sv.py; player.dead=sv.pd; player.invuln=sv.pi;
     enemies=sv.en; powerups=sv.pu; zaps=sv.zp; bossActive=sv.ba; subBossActive=sv.sba;
-    run.weapon=sv.w; run.wlevel=sv.wl; run.infusion=sv.inf; run.forge=sv.fg;
+    run.weapon=sv.w; run.wlevel=sv.wl; run.wvars=sv.wvars; run.infusion=sv.inf; run.forge=sv.fg;
     run._forgeBlastSeq=sv.fb; run._kinN=sv.kin;
     run._chainRev=sv.rev; run._chainHeat=sv.heat; run._chainOverheat=sv.over;
     player._mgMuzT=sv.muz; player._mgMuzLv=sv.muzLv;
