@@ -71966,7 +71966,8 @@ function scConceptBody(R, px, py, pw, ph, t, dt, art, F){
     drawStageClear._pwY = P[1]+P[3]*(_fb[1]+_fb[3]*0.52);          // inside the footer bay
     /* CONTINUE goes on the plating between the sign-off bay and the footer, because below the
        footer is the bottom EDGE of the screen - the plate has no band under itself any more. */
-    drawStageClear._pfY = P[1]+P[3]*0.898;
+    const _so=SC_SLOTS_FULL.signoff;
+    drawStageClear._pfY = P[1]+P[3]*((_so[1]+_so[3]+_fb[1])/2);
   } else {
     drawStageClear._pwY = P[1]+P[3] + Math.max(10,(VH-(P[1]+P[3]))*0.34);
     drawStageClear._pfY = P[1]+P[3] + Math.max(22,(VH-(P[1]+P[3]))*0.70);
