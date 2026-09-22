@@ -130,15 +130,15 @@ function docFor(kind, role, stage){
     move:Object.assign({ampX:0,ampY:0,period:0,orbit:false}, D.move||{}),
     anchors:clone(D.mounts||{C:[0,0.4]}),
     orientation:{facing:'south', rotation:0},
-    actions:{pat:D.pat||'', cd:(D.cd!=null?D.cd:1.2), proj:D.proj||'', pats:clone(D.pats||(D.pat?[D.pat]:[]))},
+    actions:{pat:D.pat||'', cd:(D.cd!=null?D.cd:1.2), proj:D.proj||'', pats:clone(D.pats||(D.pat?[D.pat]:[])), projPats:clone(D.projPats||[])},
     hitboxes:[{name:'hull', x:0, y:0, w:D.w||160, h:D.h||120, live:true}],
-    parts:[], notes:'', scene:(ov.scene?clone(ov.scene):null)
+    parts:[], notes:'', artFx:clone(ov.artFx||{hue:0,saturation:100,flipX:false,flipY:false,rotate:0,spin:0,invert:false,glow:0,glowColor:'#ff8a1e'}), scene:(ov.scene?clone(ov.scene):null)
   };
   if(saved && saved.schema===SCHEMA){
     if(!d.scene && saved.scene) d.scene=clone(saved.scene);
     // the saved doc carries the data-only fields; the live fields come from the engine row so a
     // change made through the game's own tables is never hidden by a stale document
-    d.orientation=saved.orientation||d.orientation; d.parts=saved.parts||[]; d.notes=saved.notes||'';
+    d.orientation=saved.orientation||d.orientation; d.parts=saved.parts||[]; d.notes=saved.notes||''; d.artFx=clone(saved.artFx||d.artFx);
     if(saved.hitboxes) d.hitboxes=[d.hitboxes[0]].concat(saved.hitboxes.filter(h=>!h.live));
     if(saved.states) for(let i=0;i<3;i++) if(saved.states[i]&&saved.states[i].at!=null) d.states[i].at=saved.states[i].at;
     if(saved.name && !ov.name) d.name=saved.name;
@@ -148,7 +148,7 @@ function docFor(kind, role, stage){
 /* the subset the engine reads. Everything else is design data that rides in the .json only. */
 function toPatch(d){
   const p={ name:d.name, w:+d.size.w, h:+d.size.h, pat:d.actions.pat, cd:+d.actions.cd, proj:d.actions.proj,
-    pats:d.actions.pats.filter(Boolean), move:{ampX:+d.move.ampX||0, ampY:+d.move.ampY||0, period:+d.move.period||0}, mounts:{} };
+    pats:d.actions.pats.filter(Boolean), projPats:(d.actions.projPats||[]).slice(0,d.actions.pats.length), move:{ampX:+d.move.ampX||0, ampY:+d.move.ampY||0, period:+d.move.period||0}, mounts:{} };
   if(d.move.orbit) p.move.orbit=true;
   for(const k in d.anchors){ const a=d.anchors[k]; p.mounts[k]=[+a[0]||0, +a[1]||0]; }
   if(d.states[0].key) p.key=d.states[0].key;
@@ -159,6 +159,7 @@ function toPatch(d){
   if(d.hp.hp!=null && d.hp.hp!=='') p.hp=+d.hp.hp; else if(d.hp.hpMul!=null && d.hp.hpMul!=='') p.hpMul=+d.hp.hpMul;
   const hull=d.hitboxes.find(h=>h.live); if(hull){ p.w=+hull.w; p.h=+hull.h; }
   if(d.scene && ((d.scene.tracks&&d.scene.tracks.length)||(d.scene.zones&&d.scene.zones.length))) p.scene=clone(d.scene);   // the scene director's data (0911a)
+  p.artFx=clone(d.artFx||{});
   return p;
 }
 function pushUndo(){ if(!state.doc) return; state.undo.push(JSON.stringify(state.doc)); if(state.undo.length>60) state.undo.shift(); }
@@ -175,7 +176,7 @@ function applyDoc(opts){
 }
 
 /* ================================================================== 4. VIEWS ============== */
-function renderAll(){ renderList(); renderInspector(); renderPlate(); renderJSON(); renderGraphics(); syncTitle(); }
+function renderAll(){ renderList(); renderInspector(); renderPlate(); renderJSON(); renderGraphics(); syncArtFx(); syncTitle(); }
 function syncTitle(){ const d=state.doc; const T={stage:'STAGE',plate:'PLATE',scene:'SCENE',graphics:'ART',json:'JSON',clips:'CLIPS'}; $('#vt-tab').textContent=T[state.tab]||state.tab.toUpperCase(); $('#vt-name').textContent=d?d.name:''; const ds=$('#dock-sub'); if(ds) ds.textContent=d?(d.role.toUpperCase()+' · S'+d.stage):''; }
 /* ---- boss list ---- */
 function renderList(){
@@ -251,9 +252,11 @@ function renderInspector(){
     sel('PATTERN','actions.pat',d.actions.pat,allPatterns(),true)+fld('COOLDOWN s','actions.cd',d.actions.cd,'number','step="0.01"')+sel('PROJECTILE','actions.proj',d.actions.proj,allProj(),true)+
     '<div class="hint">PATTERN is the fallback when PATTERNS below is empty; PROJECTILE picks the bfx_&lt;proj&gt; muzzle + round family.</div>');
   // patterns
-  let pt='<table class="t"><tr><th>#</th><th>PATTERN</th><th>FIRES FROM</th><th></th></tr>';
+  d.actions.projPats=d.actions.projPats||[];
+  let pt='<table class="t"><tr><th>#</th><th>PATTERN</th><th>PROJECTILE</th><th>FIRES FROM</th><th></th></tr>';
   d.actions.pats.forEach((p,i)=>{ const slots=host.api.patternSlots(p,1)||[]; const miss=slots.filter(s=>!d.anchors[s]);
-    pt+='<tr><td>'+(i+1)+'</td><td><select data-f="actions.pats.'+i+'">'+allPatterns().map(o=>'<option'+(o===p?' selected':'')+'>'+o+'</option>').join('')+'</select></td><td>'+slots.map(s=>'<span class="tag'+(d.anchors[s]?'':' miss')+'">'+s+'</span>').join('')+'</td><td><span class="up" data-up="'+i+'">▲</span><span class="dn" data-dn="'+i+'">▼</span><span class="x" data-delpat="'+i+'">✕</span></td></tr>'; });
+    const pv=d.actions.projPats[i]||'custom'; const po=[['custom','CUSTOM / AUTHORED']].concat(allProj().map(x=>[x,x.toUpperCase()]));
+    pt+='<tr><td>'+(i+1)+'</td><td><select data-f="actions.pats.'+i+'">'+allPatterns().map(o=>'<option'+(o===p?' selected':'')+'>'+o+'</option>').join('')+'</select></td><td><div class="projpick"><canvas width="46" height="46" data-proj-preview="'+i+'"></canvas><select data-proj-pat="'+i+'">'+po.map(o=>'<option value="'+o[0]+'"'+(o[0]===pv?' selected':'')+'>'+o[1]+'</option>').join('')+'</select></div></td><td>'+slots.map(s=>'<span class="tag'+(d.anchors[s]?'':' miss')+'">'+s+'</span>').join('')+'</td><td><span class="up" data-up="'+i+'">▲</span><span class="dn" data-dn="'+i+'">▼</span><span class="x" data-delpat="'+i+'">✕</span></td></tr>'; });
   pt+='</table><div class="row"><button class="tb" id="i-addpat"><span class="ico" data-icon="new"></span>ADD PATTERN</button></div><div class="hint">each pattern is a phase; the fight moves down the list as the bar drains. A red slot is an anchor this pattern fires from that the boss does not have.</div>';
   h+=sec('patterns','pattern','PATTERNS / ACTIONS', d.actions.pats.length+' phases', pt);
   // phases (derived)
@@ -285,17 +288,19 @@ function renderInspector(){
   h+=sec('parts','missiles','PARTS', d.parts.length+' parts', pa);
   h+=sec('notes','settings','NOTES', '', '<textarea data-f="notes" style="width:100%;height:70px">'+String(d.notes||'').replace(/</g,'&lt;')+'</textarea>');
   el.innerHTML=h;
+  renderProjectilePreviews();
   // wire
   $$('.sec>h3',el).forEach(hd=>hd.onclick=()=>{ const s=hd.parentElement; s.classList.toggle('closed'); SEC_OPEN[s.dataset.sec]=!s.classList.contains('closed'); });
   $$('[data-f]',el).forEach(inp=>{ inp.onchange=()=>{ pushUndo(); setPath(d, inp.dataset.f, inp.type==='checkbox'?inp.checked:(inp.type==='number'?(inp.value===''?null:+inp.value):inp.value)); afterEdit(); }; });
   $$('[data-anch-name]',el).forEach(inp=>{ inp.onchange=()=>{ const old=inp.dataset.anchName, nu=inp.value.trim(); if(!nu||nu===old||d.anchors[nu]) { inp.value=old; return; } pushUndo(); d.anchors[nu]=d.anchors[old]; delete d.anchors[old]; afterEdit(); }; });
   $$('[data-delanch]',el).forEach(x=>x.onclick=()=>{ pushUndo(); delete d.anchors[x.dataset.delanch]; afterEdit(); });
-  $$('[data-delpat]',el).forEach(x=>x.onclick=()=>{ pushUndo(); d.actions.pats.splice(+x.dataset.delpat,1); afterEdit(); });
-  $$('[data-up]',el).forEach(x=>x.onclick=()=>{ const i=+x.dataset.up; if(i<1) return; pushUndo(); const a=d.actions.pats; [a[i-1],a[i]]=[a[i],a[i-1]]; afterEdit(); });
-  $$('[data-dn]',el).forEach(x=>x.onclick=()=>{ const i=+x.dataset.dn; const a=d.actions.pats; if(i>=a.length-1) return; pushUndo(); [a[i+1],a[i]]=[a[i],a[i+1]]; afterEdit(); });
+  $$('[data-delpat]',el).forEach(x=>x.onclick=()=>{ const i=+x.dataset.delpat; pushUndo(); d.actions.pats.splice(i,1); d.actions.projPats.splice(i,1); afterEdit(); });
+  $$('[data-proj-pat]',el).forEach(x=>x.onchange=()=>{ const i=+x.dataset.projPat; pushUndo(); d.actions.projPats[i]=x.value; afterEdit(); });
+  $$('[data-up]',el).forEach(x=>x.onclick=()=>{ const i=+x.dataset.up; if(i<1) return; pushUndo(); const a=d.actions.pats,q=d.actions.projPats; [a[i-1],a[i]]=[a[i],a[i-1]]; [q[i-1],q[i]]=[q[i],q[i-1]]; afterEdit(); });
+  $$('[data-dn]',el).forEach(x=>x.onclick=()=>{ const i=+x.dataset.dn; const a=d.actions.pats,q=d.actions.projPats; if(i>=a.length-1) return; pushUndo(); [a[i+1],a[i]]=[a[i],a[i+1]]; [q[i+1],q[i]]=[q[i],q[i+1]]; afterEdit(); });
   $$('[data-delhit]',el).forEach(x=>x.onclick=()=>{ pushUndo(); d.hitboxes.splice(+x.dataset.delhit,1); afterEdit(); });
   $$('[data-delpart]',el).forEach(x=>x.onclick=()=>{ pushUndo(); d.parts.splice(+x.dataset.delpart,1); afterEdit(); });
-  const ap=$('#i-addpat',el); if(ap) ap.onclick=()=>{ pushUndo(); d.actions.pats.push(d.actions.pat||allPatterns()[0]); afterEdit(); };
+  const ap=$('#i-addpat',el); if(ap) ap.onclick=()=>{ pushUndo(); d.actions.pats.push(d.actions.pat||allPatterns()[0]); d.actions.projPats.push('custom'); afterEdit(); };
   const aa=$('#i-addanch',el); if(aa) aa.onclick=addAnchor;
   const ah=$('#i-addhit',el); if(ah) ah.onclick=addHitbox;
 }
@@ -377,10 +382,22 @@ function thumb(k, c, tries){
 function bigGfx(k){
   const c=$('#gfx-big-cv'); let im=null; try{ if(host.api.art.rdy(k)) im=host.api.art.raw(k); }catch(e){}
   if(!im){ $('#gfx-big-txt').textContent=k+'\n(decoding)'; setTimeout(()=>bigGfx(k),300); return; }
-  c.width=im.width; c.height=im.height; c.getContext('2d').drawImage(im,0,0);
+  drawArtFx(c,im,state.doc&&state.doc.artFx);
   const cell=host.api.art.cell(k), img=host.api.art.img(k);
   $('#gfx-big-txt').textContent=k+'\n'+im.width+'×'+im.height+'\n'+(cell?('cell on sheet '+cell[0]+' @ '+cell[1]+','+cell[2]):('file '+(img||'?')));
 }
+function projectilePreviewKey(pat,proj){ try{return host.api.art.projectileKey(state.doc.base,pat,proj||'custom');}catch(e){return null;} }
+function renderProjectilePreviews(tries){ tries=tries||0; const d=state.doc;if(!d)return; let pending=false; $$('[data-proj-preview]').forEach(c=>{const i=+c.dataset.projPreview,p=d.actions.pats[i],v=(d.actions.projPats||[])[i]||'custom',k=projectilePreviewKey(p,v);const x=c.getContext('2d');x.clearRect(0,0,46,46);if(!k)return;let im=null;try{if(host.api.art.rdy(k))im=host.api.art.raw(k);}catch(e){}if(!im){pending=true;return;}x.imageSmoothingEnabled=false;const s=Math.min(42/im.width,42/im.height);x.drawImage(im,(46-im.width*s)/2,(46-im.height*s)/2,im.width*s,im.height*s);c.title=k;});if(pending&&tries<30)setTimeout(()=>renderProjectilePreviews(tries+1),250);}
+function artFx(){ const d=state.doc; if(!d) return null; return d.artFx||(d.artFx={hue:0,saturation:100,flipX:false,flipY:false,rotate:0,spin:0,invert:false,glow:0,glowColor:'#ff8a1e'}); }
+function drawArtFx(c,im,fx,clock){
+  fx=fx||{}; const a=((+fx.rotate||0)+(+fx.spin||0)*(clock==null?performance.now()/1000:clock))*Math.PI/180;
+  const pad=Math.ceil(+fx.glow||0)+4, ca=Math.abs(Math.cos(a)), sa=Math.abs(Math.sin(a));
+  c.width=Math.max(1,Math.ceil(im.width*ca+im.height*sa)+pad*2); c.height=Math.max(1,Math.ceil(im.width*sa+im.height*ca)+pad*2);
+  const x=c.getContext('2d'); x.clearRect(0,0,c.width,c.height); x.save(); x.translate(c.width/2,c.height/2); x.rotate(a); x.scale(fx.flipX?-1:1,fx.flipY?-1:1);
+  x.imageSmoothingEnabled=false; x.filter='hue-rotate('+(+fx.hue||0)+'deg) saturate('+((+fx.saturation||100)/100)+')'+(fx.invert?' invert(1)':'')+(+fx.glow?' drop-shadow(0 0 '+(+fx.glow)+'px '+(fx.glowColor||'#ff8a1e')+')':'');
+  x.drawImage(im,-im.width/2,-im.height/2); x.restore(); return c;
+}
+function syncArtFx(){ const f=artFx(); if(!f) return; const map={hue:'gfx-hue',saturation:'gfx-sat',flipX:'gfx-flipx',flipY:'gfx-flipy',rotate:'gfx-rotate',spin:'gfx-spin',invert:'gfx-invert',glow:'gfx-glow',glowColor:'gfx-glow-color'}; for(const k in map){const e=$('#'+map[k]);if(!e)continue;if(e.type==='checkbox')e.checked=!!f[k];else e.value=f[k]!=null?f[k]:(k==='saturation'?100:0);} $('#gfx-hue-v').textContent=(+f.hue||0)+'°'; $('#gfx-sat-v').textContent=(+f.saturation||100)+'%'; $('#gfx-glow-v').textContent=+f.glow||0; }
 /* ---- json ---- */
 function renderJSON(){ const d=state.doc; $('#json').value=d?JSON.stringify(d,null,2):''; $('#j-err').textContent=''; }
 function applyJSONText(){
@@ -519,6 +536,9 @@ function wire(){
   $('#gfx-plate').onclick=()=>{ if(!state.gfxSel||!state.doc) return; pushUndo(); state.doc.states[0].key=state.gfxSel; afterEdit(); };
   $('#gfx-dmg').onclick=()=>{ if(!state.gfxSel||!state.doc) return; pushUndo(); state.doc.states[1].key=state.gfxSel; afterEdit(); };
   $('#gfx-crit').onclick=()=>{ if(!state.gfxSel||!state.doc) return; pushUndo(); state.doc.states[2].key=state.gfxSel; afterEdit(); };
+  const fxInputs={ 'gfx-hue':'hue','gfx-sat':'saturation','gfx-flipx':'flipX','gfx-flipy':'flipY','gfx-rotate':'rotate','gfx-spin':'spin','gfx-invert':'invert','gfx-glow':'glow','gfx-glow-color':'glowColor' };
+  for(const id in fxInputs){ const e=$('#'+id); const ev=(e.type==='range')?'input':'change'; e.addEventListener(ev,()=>{ const f=artFx(); if(!f)return; f[fxInputs[id]]=e.type==='checkbox'?e.checked:(e.type==='color'?e.value:+e.value); syncArtFx(); if(state.gfxSel)bigGfx(state.gfxSel); renderPlate(); if(hooks.scene&&hooks.scene.draw)hooks.scene.draw(); renderJSON(); }); }
+  $('#gfx-reset').onclick=()=>{ if(!state.doc)return; pushUndo(); state.doc.artFx={hue:0,saturation:100,flipX:false,flipY:false,rotate:0,spin:0,invert:false,glow:0,glowColor:'#ff8a1e'}; syncArtFx(); if(state.gfxSel)bigGfx(state.gfxSel); renderPlate(); if(hooks.scene&&hooks.scene.draw)hooks.scene.draw(); renderJSON(); };
   $('#j-apply').onclick=applyJSONText; $('#j-copy').onclick=()=>{ navigator.clipboard&&navigator.clipboard.writeText($('#json').value); msg('copied'); }; $('#j-bundle').onclick=fileBundle;
   $('#t-rec').onclick=()=>{ if(!host.ready) return; const s=state.snap; if(s&&s.fight){ if(s.recording) host.api.rec.stop(); else host.api.rec.start(); } else { $('#t-rec').classList.toggle('arm'); msg($('#t-rec').classList.contains('arm')?'REC armed: the next PLAY TEST records from its first frame':'REC disarmed'); } };
   $('#t-invuln').onclick=()=>{ if(!host.ready) return; state.inv=!state.inv; host.api.setInvuln(state.inv); $('#t-invuln').classList.toggle('on', state.inv); };
@@ -554,9 +574,10 @@ async function boot(){
   const closeGuide=document.createElement('button');closeGuide.className='tb';closeGuide.textContent='CLOSE';closeGuide.onclick=()=>guide.close();guide.appendChild(closeGuide);document.body.appendChild(guide);
   const help=document.createElement('button');help.className='tb';help.textContent='START HERE';help.onclick=()=>guide.showModal();$('#filebar').appendChild(help);
   setInterval(tick, 120);
+  setInterval(()=>{ if(state.tab==='graphics'&&state.gfxSel&&state.doc&&state.doc.artFx&&+state.doc.artFx.spin) bigGfx(state.gfxSel); }, 50);
   setTimeout(()=>{ if(!host.ready){ bar.style.width='80%'; } }, 3000);
   setTimeout(()=>{ if(!host.ready){ txt.textContent='ENGINE SLOW TO BOOT - is index.html beside this page?'; } }, 25000);
 }
-window.BM={ state, host, A, hooks, loadAtlas, rectOf, cellRule, applyDoc, pushUndo, renderJSON, renderAll, msg, selectTab, get api(){ return host.api; } };
+window.BM={ state, host, A, hooks, loadAtlas, rectOf, cellRule, applyDoc, pushUndo, renderJSON, renderAll, drawArtFx, msg, selectTab, get api(){ return host.api; } };
 boot().catch(e=>{ $('#boot-bar-txt').textContent='UI FAILED: '+(e.message||e); });
 })();

@@ -15644,7 +15644,14 @@ function shipShotKind(owner){
   if(owner&&owner._ship==='spawncarrier') return 's8herald';
   return 'eshot';
 }
-/* one bullet, on the file's own contract: slow, readable, scaled by difficulty SPEED */
+function shipBossProjectileFamily(owner,D){
+  if(!D)return null;
+  const pats=D.pats||[], ph=owner&&owner._ship?shipBossPhase(owner):0, choice=D.projPats&&D.projPats[ph];
+  return choice&&choice!=='custom'?choice:(D.proj||null);
+}
+function shipBossHasProjectileOverride(owner,D){
+  if(!owner||!D||!D.projPats)return false;const v=D.projPats[shipBossPhase(owner)];return !!v&&v!=='custom';
+}/* one bullet, on the file's own contract: slow, readable, scaled by difficulty SPEED */
 function _shipShot(x,y,vx,vy,w,owner){
   const sp=(typeof DIFF!=='undefined'&&DIFF&&DIFF.ebSpeed)?DIFF.ebSpeed:1;
   /* STORM SOVEREIGN is a forward-gun jet. Every ordinary round leaves vertically south and
@@ -15653,15 +15660,15 @@ function _shipShot(x,y,vx,vy,w,owner){
   if(owner&&owner._ship==='stormsovereign'){
     const forward=Math.max(0.01,Math.hypot(vx||0,vy||0));vx=0;vy=forward;
   }
-  const D=owner&&owner._ship?SHIPBOSS[owner._ship]:null;
+  const D=owner&&owner._ship?SHIPBOSS[owner._ship]:null, explicitProj=shipBossHasProjectileOverride(owner,D), projFam=shipBossProjectileFamily(owner,D);
   const kind=shipShotKind(owner), herald=owner&&owner._herald;
   const hb=(typeof S3_PROJECTILE_HIT!=='undefined'&&S3_PROJECTILE_HIT[kind])?S3_PROJECTILE_HIT[kind]:
     ((typeof S4_PROJECTILE_HIT!=='undefined'&&S4_PROJECTILE_HIT[kind])?S4_PROJECTILE_HIT[kind]:
     ((typeof S6_PROJECTILE_HIT!=='undefined'&&S6_PROJECTILE_HIT[kind])?S6_PROJECTILE_HIT[kind]:[w||11,w||11]));
   eBullets.push({x:x, y:y, vx:vx*sp, vy:vy*sp, w:hb[0], h:hb[1], dmg:1, t:0, kind:kind,
-                 _boss:!!(owner&&D&&D.proj), _bfam:(D&&D.proj)||null,
-                 _l23fx:(owner&&owner._shotFx)||null,
-                 _noArsenal:!!(owner&&owner._shotFx)||kind==='magma'||!!ICE_SHIP_SHOT[owner&&owner._ship]||!!S4_SHIP_SHOT[owner&&owner._ship]||!!S6_SHIP_SHOT[owner&&owner._ship]||!!herald,
+                 _boss:!!(owner&&D&&projFam), _bfam:projFam||null,
+                 _l23fx:(!explicitProj&&owner&&owner._shotFx)||null,
+                 _noArsenal:explicitProj?false:(!!(owner&&owner._shotFx)||kind==='magma'||!!ICE_SHIP_SHOT[owner&&owner._ship]||!!S4_SHIP_SHOT[owner&&owner._ship]||!!S6_SHIP_SHOT[owner&&owner._ship]||!!herald),
                  _heraldProjectile:herald ? (herald.attack==='special_attack'?'special':'primary') : null});
 }
 function shipBossMount(b, slot){
@@ -66966,7 +66973,7 @@ function drawBmHost(dt){
 /* ---- editor overrides ------------------------------------------------------------------------ */
 const BOSSMODE_OVERRIDES={};      // kind -> patch, as saved by the editor
 const _bmStock={};                // kind -> the shipped SHIPBOSS row, taken before the first patch
-const BM_LIVE_FIELDS=['key','name','w','h','ty','hp','hpMul','pat','cd','proj','pats','move','mounts','dmg','drawW','drawH','scene'];
+const BM_LIVE_FIELDS=['key','name','w','h','ty','hp','hpMul','pat','cd','proj','pats','projPats','move','mounts','dmg','drawW','drawH','scene','artFx'];
 let _bmArmed=false;               // whether patches are laid onto SHIPBOSS right now
 function _bmClone(o){ return (o===undefined)?undefined:JSON.parse(JSON.stringify(o)); }
 function _bmLay(kind){
@@ -67007,7 +67014,14 @@ const BM_ART_EXTRA={magmaward:['mwfx_'], infernoreaver:['l23fx_inferno','mwfx_']
   heralddeath:['nhd_'], voidhorizon:['ns9_'], tidalfusion:['ns9_'], chaosharrier:['s5'], quadlaser:['nqx_'], damkeeper:['chopper','death_'],
   vileexistence:['nvx_','mbv'], doomsdaycarriermk2:['nsb_dcarrmk','s6mb_'], doomsdaycarrier:['nsb_dcarrier'], siegeember:['nsb_siege'],
   thornrime:['nsb_thorn'], lavamaw:['nvl_'], spawncarrier:['nsb_spawncarrier'], glacierfortress:['mbg3f'], voidbat:['nsb_void']};
-function bossmodeArtKeys(kind){
+const BM_CUSTOM_PROJECTILE={
+  infernogate:'l23fx_inferno_laser_0', fireorb:'mwfx_fireball_0', infernoburst:'l23fx_inferno_shotgun_0', infernostorm:'mwfx_flamethrower_0',
+  magmaflame:'mwfx_flamethrower_0', magmaflamelaser:'mwfx_flame_laser_0', magmafireball:'mwfx_fireball_0', magmafireshield:'mwfx_fire_shield_0'
+};
+function bossmodeProjectileKey(kind,pat,proj){
+  if(!proj||proj==='custom') return BM_CUSTOM_PROJECTILE[pat]||('bfx_'+(((SHIPBOSS[kind]||{}).proj)||'magma')+'_p_0');
+  return 'bfx_'+proj+'_p_0';
+}function bossmodeArtKeys(kind){
   const D=SHIPBOSS[kind], stems=[];
   if(D){
     if(D.key) stems.push(D.key.replace(/_(intact|idle|closed|master|damaged|critical|v2)$/,'').replace(/_\d+$/,''));
@@ -67138,7 +67152,11 @@ function sceneDirectorTick(b, dt){
   const dur=Math.max(0.0001, (cur.t!=null?+cur.t:1)/spd);
   S.kt+=dt;
   const p=Math.min(1, S.kt/dur), e=sceneEase(cur.ease, p);
-  const tx=(+cur.x||0)*cell, ty=(+cur.y||0)*cell, trot=(+cur.rot||0)*Math.PI/180;
+  const tx=(+cur.x||0)*cell, ty=(+cur.y||0)*cell;
+  let trot=(+cur.rot||0)*Math.PI/180;
+  if(cur.face==='travel')trot=Math.atan2(ty-S.from.y,tx-S.from.x)-Math.PI/2;
+  else if(cur.face==='player'){const P=(typeof targetShip==='function')?targetShip(b.x,b.y):player;if(P)trot=Math.atan2(P.y-b.y,P.x-b.x)-Math.PI/2;}
+  else if(cur.face==='north')trot=Math.PI;else if(cur.face==='south')trot=0;else if(cur.face==='east')trot=-Math.PI/2;else if(cur.face==='west')trot=Math.PI/2;
   const tsx=(cur.sx!=null&&cur.sx!=='')?+cur.sx:1, tsy=(cur.sy!=null&&cur.sy!=='')?+cur.sy:1;
   b.x=S.from.x+(tx-S.from.x)*e; b.y=S.from.y+(ty-S.from.y)*e;
   S.rot=S.from.rot+(trot-S.from.rot)*e;
@@ -67389,7 +67407,7 @@ window.BOSSMODE={
   override:{ apply:bossmodeApplyOverride, reset:bossmodeResetOverride, arm:bossmodeOverridesArm, get armed(){ return _bmArmed; },
     get:function(k){ return BOSSMODE_OVERRIDES[k]||null; }, all:function(){ return BOSSMODE_OVERRIDES; },
     stock:function(k){ return _bmStock[k]||SHIPBOSS[k]||null; }, live:function(k){ return SHIPBOSS[k]||null; } },
-  art:{ rdy:function(k){ return XART.rdy(k); }, raw:function(k){ return XART.raw(k); }, keysFor:bossmodeArtKeys,
+  art:{ rdy:function(k){ return XART.rdy(k); }, raw:function(k){ return XART.raw(k); }, keysFor:bossmodeArtKeys, projectileKey:bossmodeProjectileKey,
     cell:function(k){ return (window.BOFX&&BOFX.cells)?BOFX.cells[k]:null; }, img:function(k){ return (window.BOFX&&BOFX.img)?BOFX.img[k]:null; } },
   rec:{ start:debugRecStart, stop:debugRecStop, active:debugRecActive, last:function(){ return debugRec.last; } },
   setInvuln:function(v){ player.invuln=v?1e9:0; }, setTimeScale:function(v){ timeScale=Math.max(0.05,Math.min(2,+v||1)); },

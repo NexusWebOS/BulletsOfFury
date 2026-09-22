@@ -94,7 +94,8 @@ function build(){
   pane.innerHTML=
    '<div id="sc-tools">'+
      '<div class="sc-group" id="sc-toolbtns">'+TOOLS.map(t=>'<button class="scb" data-tool="'+t.id+'" title="'+t.tip+'"><span class="pk" data-set="'+t.icon[0]+'" data-name="'+t.icon[1]+'"></span></button>').join('')+'</div>'+
-     '<div class="sc-group"><label>TRACK <select id="sc-track"></select></label><button class="tb" id="sc-newtrack">+ TRACK</button><button class="tb" id="sc-deltrack">✕</button>'+
+     '<div class="sc-group"><label>PHASE <select id="sc-track"></select></label><button class="tb" id="sc-newtrack">+ PHASE</button><button class="tb" id="sc-deltrack">✕</button>'+
+       '<label>NAME <input id="sc-trackname" type="text" value="" style="width:130px"></label><label>PHASE # <input id="sc-phase" type="number" min="0" value="0" style="width:46px"></label>'+
        '<label>MODE <select id="sc-mode"><option>once</option><option>loop</option><option>pingpong</option></select></label>'+
        '<label>SPEED <input type="number" id="sc-speed" step="0.1" min="0.1" value="1" style="width:52px"></label>'+
        '<label>REPEAT <input type="number" id="sc-repeat" min="0" value="0" style="width:46px" title="0 = forever (loop/pingpong)"></label>'+
@@ -109,13 +110,15 @@ function build(){
        '<span class="sc-lbl">MOVE</span>'+MANEUVERS.map(p=>'<button class="scb" data-man="'+p[0]+'" title="'+p[0]+'"><span class="pk" data-set="maneuvericons" data-name="'+p[0]+'"></span></button>').join('')+'</div>'+
    '</div>'+
    '<div id="sc-main"><div id="sc-wrap"><canvas id="sc-cv"></canvas><div id="sc-readout"></div></div></div>'+
-   '<div id="sc-time"><canvas id="sc-tl"></canvas></div>';
+   '<div id="sc-time"><canvas id="sc-tl"></canvas></div><pre id="sc-code"></pre>';
   // the scene inspector lives in the DOCK, so the field has the whole theater
   const dock=$('#dock-scene'); dock.innerHTML='<div id="sc-insp"></div>';
   $$('#sc-toolbtns .scb').forEach(b=>b.onclick=()=>{ S.tool=b.dataset.tool; $$('#sc-toolbtns .scb').forEach(x=>x.classList.toggle('on',x===b)); draw(); });
   $('#sc-toolbtns .scb').classList.add('on');
   $('#sc-track').onchange=e=>{ S.track=+e.target.value; S.selKey=-1; renderAll(); };
-  $('#sc-newtrack').onclick=()=>{ const sc=scene(); if(!sc) return; BM().pushUndo(); sc.tracks.push({name:'track '+(sc.tracks.length+1), trigger:{type:'start'}, mode:'once', speed:1, repeat:0, keys:[]}); S.track=sc.tracks.length-1; S.selKey=-1; renderAll(); };
+  $('#sc-trackname').onchange=e=>{ const t=track();if(!t)return;BM().pushUndo();t.name=e.target.value||('phase '+(S.track+1));after(); };
+  $('#sc-phase').onchange=e=>{ const t=track();if(!t)return;BM().pushUndo();t.phase=Math.max(0,+e.target.value|0);t.trigger={type:'phase',phase:t.phase};after();renderTop(); };
+  $('#sc-newtrack').onclick=()=>{ const sc=scene(); if(!sc) return; BM().pushUndo(); const ph=sc.tracks.length; sc.tracks.push({name:'Phase '+(ph+1), phase:ph, trigger:{type:'phase',phase:ph}, mode:'once', speed:1, repeat:0, keys:[]}); S.track=sc.tracks.length-1; S.selKey=-1; renderAll(); };
   $('#sc-deltrack').onclick=()=>{ const sc=scene(); if(!sc||!sc.tracks.length) return; BM().pushUndo(); sc.tracks.splice(S.track,1); S.track=0; S.selKey=-1; renderAll(); after(); };
   $('#sc-mode').onchange=e=>{ const t=track(); if(!t) return; BM().pushUndo(); t.mode=e.target.value; after(); };
   $('#sc-speed').onchange=e=>{ const t=track(); if(!t) return; BM().pushUndo(); t.speed=+e.target.value||1; after(); };
@@ -173,7 +176,7 @@ function previewPose(t){
   for(let guard=0; guard<400; guard++){
     const k=ks[i]; if(!k) break;
     const dur=Math.max(0.0001,(k.t!=null?+k.t:1)/spd), hold=(+k.hold||0)/spd;
-    const tgt={x:+k.x,y:+k.y,rot:+k.rot||0,sx:(k.sx!=null&&k.sx!=='')?+k.sx:1,sy:(k.sy!=null&&k.sy!=='')?+k.sy:1};
+    const tgt={x:+k.x,y:+k.y,rot:stepRotation(k,from),sx:(k.sx!=null&&k.sx!=='')?+k.sx:1,sy:(k.sy!=null&&k.sy!=='')?+k.sy:1};
     if(t<clock+dur){ const p=(t-clock)/dur, e=ease(k.ease,p); return {x:from.x+(tgt.x-from.x)*e, y:from.y+(tgt.y-from.y)*e, rot:from.rot+(tgt.rot-from.rot)*e, sx:from.sx+(tgt.sx-from.sx)*e, sy:from.sy+(tgt.sy-from.sy)*e, key:i, p:p}; }
     clock+=dur; if(t<clock+hold) return Object.assign({key:i,p:1},tgt);
     clock+=hold; from=tgt;
@@ -183,6 +186,7 @@ function previewPose(t){
   }
   return Object.assign({key:i,p:1},from);
 }
+function stepRotation(k,from){ const f=k.face||'fixed'; if(f==='travel')return Math.atan2((+k.y)-from.y,(+k.x)-from.x)*180/Math.PI-90; if(f==='north')return 180;if(f==='east')return -90;if(f==='west')return 90;if(f==='south')return 0;return +k.rot||0; }
 function bossPoseStatic(){ const d=doc(); const ty=(d&&d.size.ty!=null&&d.size.ty!=='')?+d.size.ty:fieldH()*0.24; return {x:fieldW()/2/cell(), y:ty/cell(), rot:0, sx:1, sy:1}; }
 function ease(kind,p){ if(kind==='in') return p*p; if(kind==='out') return 1-(1-p)*(1-p); if(kind==='inout') return p<0.5?2*p*p:1-Math.pow(-2*p+2,2)/2; return p; }
 function trackLength(){ const tr=track(); if(!tr) return 0; const spd=Math.max(0.05,+tr.speed||1); return tr.keys.reduce((s,k)=>s+((k.t!=null?+k.t:1)+(+k.hold||0))/spd,0); }
@@ -219,13 +223,13 @@ function draw(){
     for(let i=0;i<ks.length;i++){ const a=i?toPx(+ks[i-1].x,+ks[i-1].y):[sx0,sy0], b=toPx(+ks[i].x,+ks[i].y); const ang=Math.atan2(b[1]-a[1],b[0]-a[0]); const mx=(a[0]+b[0])/2, my=(a[1]+b[1])/2; x.save(); x.translate(mx,my); x.rotate(ang); x.fillStyle='rgba(74,168,255,0.9)'; x.beginPath(); x.moveTo(6,0); x.lineTo(-4,-4); x.lineTo(-4,4); x.closePath(); x.fill(); x.restore(); }
   }
   // the boss
-  const P=bossPose(); const [bx,by]=toPx(P.x,P.y); const [bw,bh]=bossSize();
+  const P=bossPose(); const [bx,by]=toPx(P.x,P.y); const [bw,bh]=bossSize(); const d=doc();
   x.save(); x.translate(bx,by); x.rotate((P.rot||0)*Math.PI/180); x.scale(P.sx||1,P.sy||1);
   const im=plateImg(); const dw=bw*S.scale, dh=bh*S.scale;
-  if(im){ x.imageSmoothingEnabled=false; x.drawImage(im,-dw/2,-dh/2,dw,dh); } else { x.fillStyle='rgba(255,138,30,0.25)'; x.fillRect(-dw/2,-dh/2,dw,dh); }
+  if(im){ x.imageSmoothingEnabled=false; const af=d&&d.artFx; x.scale(af&&af.flipX?-1:1,af&&af.flipY?-1:1); x.filter='hue-rotate('+((af&&+af.hue)||0)+'deg) saturate('+(((af&&+af.saturation)||100)/100)+')'+(af&&af.invert?' invert(1)':'')+((af&&+af.glow)?' drop-shadow(0 0 '+af.glow+'px '+(af.glowColor||'#ff8a1e')+')':''); x.rotate((((af&&+af.rotate)||0)+((af&&+af.spin)||0)*S.preview.t)*Math.PI/180); x.drawImage(im,-dw/2,-dh/2,dw,dh); x.filter='none'; } else { x.fillStyle='rgba(255,138,30,0.25)'; x.fillRect(-dw/2,-dh/2,dw,dh); }
   x.strokeStyle='rgba(141,226,58,0.8)'; x.setLineDash([5,3]); x.strokeRect(-dw/2,-dh/2,dw,dh); x.setLineDash([]);
   // anchors on the hull
-  const d=doc(); if(d&&d.anchors){ for(const nm in d.anchors){ const a=d.anchors[nm]; const mx=a[0]*dw, my=a[1]*dh; const mk=marker('muzzle','normal'); if(mk) x.drawImage(mk, mx-9, my-9, 18, 18); x.fillStyle='#ffc21a'; x.font='9px monospace'; x.fillText(nm, mx+8, my-6); } }
+  if(d&&d.anchors){ for(const nm in d.anchors){ const a=d.anchors[nm]; const mx=a[0]*dw, my=a[1]*dh; const mk=marker('muzzle','normal'); if(mk) x.drawImage(mk, mx-9, my-9, 18, 18); x.fillStyle='#ffc21a'; x.font='9px monospace'; x.fillText(nm, mx+8, my-6); } }
   x.restore();
   // rotation handle above the hull
   const hr=Math.max(dw,dh)*0.62; const hx=bx+Math.sin((P.rot||0)*Math.PI/180)*hr, hy=by-Math.cos((P.rot||0)*Math.PI/180)*hr;
@@ -244,7 +248,7 @@ function draw(){
 function plateImg(){ const d=doc(); if(!d||!api()) return null; const k=d.states[0].key; if(!k) return null; try{ if(api().art.rdy(k)) return api().art.raw(k); }catch(e){} setTimeout(draw,300); return null; }
 function drawTimeline(){
   const cv=$('#sc-tl'); if(!cv) return; const wrap=$('#sc-time'); cv.width=wrap.clientWidth-4; cv.height=44; const x=cv.getContext('2d'); x.fillStyle='#0c0e13'; x.fillRect(0,0,cv.width,cv.height);
-  const tr=track(); if(!tr){ x.fillStyle='#6f7f8f'; x.font='10px monospace'; x.fillText('no track - add one with + TRACK, then click WAYPOINTS on the field', 8, 26); return; }
+  const tr=track(); if(!tr){ x.fillStyle='#6f7f8f'; x.font='10px monospace'; x.fillText('no phase - add one with + PHASE, then click WAYPOINTS on the field', 8, 26); renderCode(); return; }
   const L=Math.max(0.001,trackLength()), spd=Math.max(0.05,+tr.speed||1); const px=t=>10+(cv.width-20)*(t/L);
   x.strokeStyle='#2a2d35'; x.beginPath(); x.moveTo(10,30); x.lineTo(cv.width-10,30); x.stroke();
   let clock=0; tr.keys.forEach((k,i)=>{ const dur=((k.t!=null?+k.t:1))/spd, hold=(+k.hold||0)/spd; const a=px(clock), b=px(clock+dur), c2=px(clock+dur+hold);
@@ -253,7 +257,9 @@ function drawTimeline(){
     clock+=dur+hold; });
   x.fillStyle='#6f7f8f'; x.font='9px monospace'; x.fillText('0s', 4, 42); x.textAlign='right'; x.fillText(L.toFixed(2)+'s', cv.width-4, 42); x.textAlign='left';
   if(S.preview.on){ const p=px(Math.min(S.preview.t,L)); x.strokeStyle='#8de23a'; x.lineWidth=2; x.beginPath(); x.moveTo(p,2); x.lineTo(p,42); x.stroke(); }
+  renderCode();
 }
+function renderCode(){ const e=$('#sc-code'),tr=track();if(!e)return;if(!tr){e.textContent='// Add a phase to generate its sequence code.';return;} const rows=['phase '+(+tr.phase||0)+' "'+(tr.name||'untitled')+'"  trigger '+JSON.stringify(tr.trigger||{type:'start'})+'  mode '+(tr.mode||'once')]; (tr.keys||[]).forEach((k,i)=>{rows.push('  step '+(i+1)+' "'+(k.name||('Step '+(i+1)))+'": move '+(+k.x).toFixed(2)+','+(+k.y).toFixed(2)+' tiles  face '+(k.face||('fixed '+(+k.rot||0)+'°'))+'  '+(+k.t||0).toFixed(2)+'s  hold '+(+k.hold||0).toFixed(2)+'s');(k.actions||[]).forEach(a=>rows.push('    '+a.type+' '+JSON.stringify(a)));});e.textContent=rows.join('\n');}
 function onTimeline(e){ const cv=$('#sc-tl'); const r=cv.getBoundingClientRect(); const L=Math.max(0.001,trackLength()); const t=((e.clientX-r.left)-10)/(cv.width-20)*L; const P=previewPose(Math.max(0,t)); if(P&&P.key!=null){ S.selKey=P.key; } S.preview.t=Math.max(0,Math.min(L,t)); S.preview.on=false; $('#sc-play').classList.remove('on'); renderInsp(); draw(); drawTimeline(); }
 function tickPreview(){ if(S.preview.on){ const now=performance.now(); S.preview.t+=(now-S.preview.last)/1000; S.preview.last=now; const L=trackLength(); const tr=track(); if(tr&&tr.mode==='once'&&S.preview.t>L+0.5){ S.preview.t=0; } draw(); drawTimeline(); } requestAnimationFrame(tickPreview); }
 
@@ -270,14 +276,14 @@ function hitTest(px,py){
 function onDown(e){
   const sc=scene(); if(!sc) return; const [px,py]=pos(e); const [tx,ty]=toTile(px,py); const h=hitTest(px,py);
   if(S.tool==='delete'){ if(h&&h.type==='key'){ BM().pushUndo(); keys().splice(h.i,1); S.selKey=-1; after(); } else if(h&&h.type==='zone'){ BM().pushUndo(); sc.zones.splice(h.i,1); S.selZone=-1; after(); } return; }
-  if(S.tool==='waypoint'){ let tr=track(); if(!tr){ sc.tracks.push({name:'track 1',trigger:{type:'start'},mode:'once',speed:1,repeat:0,keys:[]}); S.track=0; tr=sc.tracks[0]; renderTop(); }
+  if(S.tool==='waypoint'){ let tr=track(); if(!tr){ sc.tracks.push({name:'Phase 1',phase:0,trigger:{type:'phase',phase:0},mode:'once',speed:1,repeat:0,keys:[]}); S.track=0; tr=sc.tracks[0]; renderTop(); }
     BM().pushUndo(); const last=tr.keys[tr.keys.length-1]; const k={x:snapT(tx), y:snapT(ty), rot:last?+last.rot||0:0, t:1, hold:0, ease:'inout', actions:[]}; tr.keys.push(k); S.selKey=tr.keys.length-1; S.selZone=-1; S.drag={type:'key',i:S.selKey,shift:e.shiftKey}; after(); return; }
   if(S.tool==='zboss'||S.tool==='zattack'||S.tool==='zsafe'){ S.drag={type:'zone-new', ztype:S.tool.slice(1), a:[snapT(tx),snapT(ty)], b:null}; return; }
   // select
   if(h&&h.type==='key'){ S.selKey=h.i; S.selZone=-1; S.drag={type:'key',i:h.i,shift:e.shiftKey}; BM().pushUndo(); }
   else if(h&&h.type==='rot'){ S.drag={type:'rot'}; BM().pushUndo(); if(S.selKey<0&&keys().length) S.selKey=0; }
   else if(h&&h.type==='boss'){ // dragging the boss moves the selected key, or creates the first one
-    if(S.selKey<0){ let tr=track(); if(!tr){ sc.tracks.push({name:'track 1',trigger:{type:'start'},mode:'once',speed:1,repeat:0,keys:[]}); S.track=0; tr=sc.tracks[0]; renderTop(); } if(!tr.keys.length){ const P=bossPose(); tr.keys.push({x:snapT(P.x),y:snapT(P.y),rot:0,t:1,hold:0,ease:'inout',actions:[]}); } S.selKey=tr.keys.length-1; }
+    if(S.selKey<0){ let tr=track(); if(!tr){ sc.tracks.push({name:'Phase 1',phase:0,trigger:{type:'phase',phase:0},mode:'once',speed:1,repeat:0,keys:[]}); S.track=0; tr=sc.tracks[0]; renderTop(); } if(!tr.keys.length){ const P=bossPose(); tr.keys.push({name:'Step 1',x:snapT(P.x),y:snapT(P.y),face:'fixed',rot:0,t:1,hold:0,ease:'inout',actions:[]}); } S.selKey=tr.keys.length-1; }
     BM().pushUndo(); S.drag={type:'key',i:S.selKey,shift:e.shiftKey}; }
   else if(h&&h.type==='zone'){ S.selZone=h.i; S.selKey=-1; BM().pushUndo(); const z=sc.zones[h.i]; S.drag={type:h.resize?'zone-size':'zone-move', i:h.i, off:[tx-z.x, ty-z.y], shift:e.shiftKey}; }
   else { S.selKey=-1; S.selZone=-1; }
@@ -303,12 +309,12 @@ function onUp(e){
 function nudge(key, amt){ const k=keys()[S.selKey]; const z=scene().zones[S.selZone]; const t=k||z; if(!t) return; BM().pushUndo(); if(key==='ArrowLeft') t.x=+(t.x-amt).toFixed(3); if(key==='ArrowRight') t.x=+(t.x+amt).toFixed(3); if(key==='ArrowUp') t.y=+(t.y-amt).toFixed(3); if(key==='ArrowDown') t.y=+(t.y+amt).toFixed(3); after(); }
 function rotSel(d){ const k=keys()[S.selKey]; if(!k) return; BM().pushUndo(); k.rot=+((+k.rot||0)+d).toFixed(1); after(); }
 function delSelected(){ const sc=scene(); if(S.selKey>=0){ BM().pushUndo(); keys().splice(S.selKey,1); S.selKey=-1; after(); } else if(S.selZone>=0){ BM().pushUndo(); sc.zones.splice(S.selZone,1); S.selZone=-1; after(); } }
-function addPath(name){ const sc=scene(); if(!sc) return; let tr=track(); if(!tr){ sc.tracks.push({name:'track 1',trigger:{type:'start'},mode:'once',speed:1,repeat:0,keys:[]}); S.track=0; tr=sc.tracks[0]; renderTop(); }
+function addPath(name){ const sc=scene(); if(!sc) return; let tr=track(); if(!tr){ sc.tracks.push({name:'Phase 1',phase:0,trigger:{type:'phase',phase:0},mode:'once',speed:1,repeat:0,keys:[]}); S.track=0; tr=sc.tracks[0]; renderTop(); }
   BM().pushUndo(); const P=(S.selKey>=0&&tr.keys[S.selKey])?tr.keys[S.selKey]:(tr.keys.length?tr.keys[tr.keys.length-1]:bossPoseStatic()); const gen=PATHS.find(p=>p[0]===name)[1](P, cell());
   const at=(S.selKey>=0)?S.selKey+1:tr.keys.length;
   const ks=gen.map(g=>({x:+(+P.x+g.dx).toFixed(3), y:+(+P.y+g.dy).toFixed(3), rot:+P.rot||0, t:+(g.t!=null?g.t:0.5).toFixed(2), hold:g.hold||0, ease:g.e||'inout', actions:[]}));
   tr.keys.splice(at,0,...ks); S.selKey=at+ks.length-1; after(); }
-function addManeuver(name){ const sc=scene(); if(!sc) return; let tr=track(); if(!tr){ sc.tracks.push({name:'track 1',trigger:{type:'start'},mode:'once',speed:1,repeat:0,keys:[]}); S.track=0; tr=sc.tracks[0]; renderTop(); }
+function addManeuver(name){ const sc=scene(); if(!sc) return; let tr=track(); if(!tr){ sc.tracks.push({name:'Phase 1',phase:0,trigger:{type:'phase',phase:0},mode:'once',speed:1,repeat:0,keys:[]}); S.track=0; tr=sc.tracks[0]; renderTop(); }
   BM().pushUndo(); const P=(S.selKey>=0&&tr.keys[S.selKey])?tr.keys[S.selKey]:(tr.keys.length?tr.keys[tr.keys.length-1]:bossPoseStatic()); const gen=MANEUVERS.find(p=>p[0]===name)[1](P);
   const at=(S.selKey>=0)?S.selKey+1:tr.keys.length;
   const ks=gen.map(g=>({x:+(+P.x+(g.dx||0)).toFixed(3), y:+(+P.y+(g.dy||0)).toFixed(3), rot:(g.rot!=null)?+g.rot:(+P.rot||0), t:+(g.t!=null?g.t:0.5), hold:g.hold||0, ease:g.e||'inout', actions:[]}));
@@ -321,6 +327,7 @@ function palette(){ if(S.pal) return S.pal; if(!api()) return {muzzle:[],explode
 function renderTop(){
   const sc=scene(); const ts=$('#sc-track'); if(!ts) return; ts.innerHTML=(sc?sc.tracks:[]).map((t,i)=>'<option value="'+i+'"'+(i===S.track?' selected':'')+'>'+(t.name||('track '+(i+1)))+'</option>').join('')||'<option value="0">(none)</option>';
   const tr=track(); $('#sc-mode').value=tr?(tr.mode||'once'):'once'; $('#sc-speed').value=tr?(tr.speed||1):1; $('#sc-repeat').value=tr?(tr.repeat||0):0;
+  $('#sc-trackname').value=tr?(tr.name||''):''; $('#sc-phase').value=tr?(+tr.phase||0):0;
   const T=(tr&&tr.trigger)||{type:'start'}; $('#sc-trig').value=T.type||'start'; $('#sc-trigv').value=(T.type==='time')?(T.t||0):(T.type==='phase')?(T.phase||0):(T.type==='hp')?(T.hp!=null?T.hp:0.5):(T.type==='proximity')?(T.dist||160):''; $('#sc-trigv').disabled=(T.type==='start'||!T.type);
   $('#sc-cell').value=String(cell()); $('#sc-ownfire').checked=!(sc&&sc.ownFire===false);
 }
@@ -333,7 +340,7 @@ function renderInsp(quiet){
   const k=keys()[S.selKey];
   if(k){
     h+='<div class="sec"><h3><span class="ico" data-icon="path"></span>WAYPOINT '+(S.selKey+1)+' / '+keys().length+'<span class="r">'+(track().name||'')+'</span></h3><div class="sb">'+
-      fld('X (tiles)','x',k.x,'number','step="0.25"')+fld('Y (tiles)','y',k.y,'number','step="0.25"')+fld('ROT °','rot',k.rot||0,'number','step="5"')+
+      fld('STEP NAME','name',k.name||('Step '+(S.selKey+1)))+fld('X (tiles)','x',k.x,'number','step="0.25"')+fld('Y (tiles)','y',k.y,'number','step="0.25"')+sel('FACE','face',k.face||'fixed',[['fixed','fixed angle'],['travel','direction of travel'],['player','track player'],['north','north'],['south','south'],['east','east'],['west','west']])+fld('ROT °','rot',k.rot||0,'number','step="5"')+
       fld('SCALE X','sx',k.sx==null?'':k.sx,'number','step="0.05" placeholder="1"')+fld('SCALE Y','sy',k.sy==null?'':k.sy,'number','step="0.05" placeholder="1"')+
       fld('TRAVEL s','t',k.t!=null?k.t:1,'number','step="0.05" min="0"')+fld('HOLD s','hold',k.hold||0,'number','step="0.05" min="0"')+sel('EASE','ease',k.ease||'inout',['linear','in','out','inout'])+
       '<div class="row"><button class="tb" data-act="dup">DUPLICATE</button><button class="tb" data-act="up">◀ EARLIER</button><button class="tb" data-act="dn">LATER ▶</button><button class="tb" data-act="del"><span class="ico" data-icon="delete"></span></button></div>'+

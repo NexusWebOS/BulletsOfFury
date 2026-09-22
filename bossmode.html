@@ -124,6 +124,17 @@
         <button class="tb" id="gfx-plate">USE AS PLATE</button>
         <button class="tb" id="gfx-dmg">USE AS DAMAGED</button>
         <button class="tb" id="gfx-crit">USE AS CRITICAL</button>
+        <span class="gfx-sep"></span>
+        <label>PALETTE <input type="range" id="gfx-hue" min="-180" max="180" step="5" value="0"><span id="gfx-hue-v">0°</span></label>
+        <label>SAT <input type="range" id="gfx-sat" min="0" max="200" step="5" value="100"><span id="gfx-sat-v">100%</span></label>
+        <label class="chk"><input type="checkbox" id="gfx-flipx"> FLIP X</label>
+        <label class="chk"><input type="checkbox" id="gfx-flipy"> FLIP Y</label>
+        <label>ROTATE <input type="number" id="gfx-rotate" min="-360" max="360" step="5" value="0" style="width:58px">°</label>
+        <label>SPIN <input type="number" id="gfx-spin" min="-720" max="720" step="15" value="0" style="width:58px">°/s</label>
+        <label class="chk"><input type="checkbox" id="gfx-invert"> INVERT</label>
+        <label>GLOW <input type="range" id="gfx-glow" min="0" max="30" step="1" value="0"><span id="gfx-glow-v">0</span></label>
+        <input type="color" id="gfx-glow-color" value="#ff8a1e" title="glow color">
+        <button class="tb" id="gfx-reset">RESET FX</button>
       </div>
       <div id="gfx-grid"></div>
       <div id="gfx-big"><canvas id="gfx-big-cv"></canvas><div id="gfx-big-txt"></div></div>
