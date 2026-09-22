@@ -36,7 +36,7 @@ module.exports=function testInfusion(vm,ctxv,ok){
   /* ⚠ EVERY EFFECT REUSES A MECHANISM THE GAME ALREADY HAD - a second burn beside the first is
      how two flags end up sharing a name (0810q). */
   var src=String(vm.runInContext("String(infusionOnHit)",ctxv)).replace(/\/\*[\s\S]*?\*\//g,'').replace(/\/\/.*$/gm,'');
-  ok(src.indexOf('_burn')>=0&&src.indexOf('DK_BURN_TIME')>=0, 'fire is the incendiary shotgun\'s own burn');
+  ok(vm.runInContext("(function(){var e={x:100,y:100,hp:100};infusionOnHit(e,{_inf:'fire',_infLv:1},1);return e._burn>0&&e._burnPalette===INFUSIONS.fire.body;})()",ctxv), 'fire is the incendiary shotgun\'s own burn');
   ok(src.indexOf('_frozen')>=0, 'ice stacks the ice weapon\'s own freeze counter');
   ok(src.indexOf('chainZap(')>=0, 'lightning is Yuri\'s own arc');
   ok(src.indexOf('chromeMirror(')>=0 && String(vm.runInContext('String(chromeMirror)',ctxv)).indexOf('eBullets')>=0,

@@ -1,0 +1,1180 @@
+{
+  "date": "2026-09-22",
+  "poses": [
+    "idle",
+    "happy",
+    "laugh",
+    "anger",
+    "sad",
+    "crash",
+    "victory",
+    "talk-closed",
+    "talk-small",
+    "talk-medium",
+    "talk-wide",
+    "talk-o"
+  ],
+  "assets": [
+    {
+      "pilot": "cole",
+      "source": "assets/game/pilots_0922/sources/cole_reference.png",
+      "sheet": "assets/game/pilots_0922/sheets/cole_expressions.png",
+      "cells": [
+        {
+          "pose": "idle",
+          "rect": [
+            0,
+            0,
+            362,
+            362
+          ],
+          "suppliedOverride": "02_neutral"
+        },
+        {
+          "pose": "happy",
+          "rect": [
+            362,
+            0,
+            724,
+            362
+          ],
+          "suppliedOverride": "03_smirking"
+        },
+        {
+          "pose": "laugh",
+          "rect": [
+            724,
+            0,
+            1086,
+            362
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "anger",
+          "rect": [
+            1086,
+            0,
+            1448,
+            362
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "sad",
+          "rect": [
+            0,
+            362,
+            362,
+            724
+          ],
+          "suppliedOverride": "06_brooding"
+        },
+        {
+          "pose": "crash",
+          "rect": [
+            362,
+            362,
+            724,
+            724
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "victory",
+          "rect": [
+            724,
+            362,
+            1086,
+            724
+          ],
+          "suppliedOverride": "07_sunglasses_salute"
+        },
+        {
+          "pose": "talk-closed",
+          "rect": [
+            1086,
+            362,
+            1448,
+            724
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "talk-small",
+          "rect": [
+            0,
+            724,
+            362,
+            1086
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "talk-medium",
+          "rect": [
+            362,
+            724,
+            724,
+            1086
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "talk-wide",
+          "rect": [
+            724,
+            724,
+            1086,
+            1086
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "talk-o",
+          "rect": [
+            1086,
+            724,
+            1448,
+            1086
+          ],
+          "suppliedOverride": null
+        }
+      ],
+      "generator": "built-in image_gen",
+      "prompt": "Use case: identity-preserve. Production asset for Bullets of Fury: ONE expression spritesheet, exactly 4 columns x 3 rows of equal SQUARE cells, canvas aspect ratio 4:3. Input image is identity, palette, pixel-art and frame reference. Cole: keep this exact NEW face, short tousled brown hair, trimmed beard, blue eyes, green flight suit, green metal frame. No sunglasses in this sheet. Preserve adult western arcade 16-bit pixel-art proportions and crisp deliberate pixel clusters, no anime, no painterly blur. Each cell contains the same complete square riveted portrait frame as reference with identical dark cockpit background, identical head scale and position; shoulders and all frame edges contained inside cell. Seamless equal grid with NO margins, gutters, captions, text or labels. Every face looks slightly toward screen LEFT as in reference; no mirroring. Expressions in row-major order: row1 neutral mouth closed; warm small smile; hearty laugh mouth open; angry shouting. Row2 sad/brooding; alarmed hurt crash reaction (no blood); confident victorious grin; neutral talking closed mouth. Row3 talking slightly open mouth; talking medium open mouth; talking wide mouth; talking rounded O mouth. All 12 expressions visibly distinct, same person and outfit, aligned eyes so dialogue animation stays steady. The frame is never distorted. This is an actual extractable spritesheet, not a presentation poster. CRITICAL correction: All twelve cells must have EXACTLY equal width and height. Vertical grid boundaries at precisely 25%,50%,75%; horizontal at precisely one-third and two-thirds. First column must NOT be wider. Match head size across every cell: same eye-line, skull height, shoulder width. The face must occupy the same proportion in all cells, no zoom changes."
+    },
+    {
+      "pilot": "decker",
+      "source": "assets/game/pilots_0922/sources/decker_reference.png",
+      "sheet": "assets/game/pilots_0922/sheets/decker_expressions.png",
+      "cells": [
+        {
+          "pose": "idle",
+          "rect": [
+            0,
+            0,
+            362,
+            362
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "happy",
+          "rect": [
+            362,
+            0,
+            724,
+            362
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "laugh",
+          "rect": [
+            724,
+            0,
+            1086,
+            362
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "anger",
+          "rect": [
+            1086,
+            0,
+            1448,
+            362
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "sad",
+          "rect": [
+            0,
+            362,
+            362,
+            724
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "crash",
+          "rect": [
+            362,
+            362,
+            724,
+            724
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "victory",
+          "rect": [
+            724,
+            362,
+            1086,
+            724
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "talk-closed",
+          "rect": [
+            1086,
+            362,
+            1448,
+            724
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "talk-small",
+          "rect": [
+            0,
+            724,
+            362,
+            1086
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "talk-medium",
+          "rect": [
+            362,
+            724,
+            724,
+            1086
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "talk-wide",
+          "rect": [
+            724,
+            724,
+            1086,
+            1086
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "talk-o",
+          "rect": [
+            1086,
+            724,
+            1448,
+            1086
+          ],
+          "suppliedOverride": null
+        }
+      ],
+      "generator": "built-in image_gen",
+      "prompt": "Use case: identity-preserve. Production asset for Bullets of Fury: ONE expression spritesheet, exactly 4 columns x 3 rows of equal SQUARE cells, canvas aspect ratio 4:3. Input image is identity, palette, pixel-art and frame reference. Decker: exact blond swept curly hair, angular mature clean-shaven face, black rectangular glasses, black/gold flight jacket, amber metal frame. Preserve adult western arcade 16-bit pixel-art proportions and crisp deliberate pixel clusters, no anime, no painterly blur. Each cell contains the same complete square riveted portrait frame as reference with identical dark cockpit background, identical head scale and position; shoulders and all frame edges contained inside cell. Seamless equal grid with NO margins, gutters, captions, text or labels. Every face looks slightly toward screen LEFT as in reference; no mirroring. Expressions in row-major order: row1 neutral mouth closed; warm small smile; hearty laugh mouth open; angry shouting. Row2 sad/brooding; alarmed hurt crash reaction (no blood); confident victorious grin; neutral talking closed mouth. Row3 talking slightly open mouth; talking medium open mouth; talking wide mouth; talking rounded O mouth. All 12 expressions visibly distinct, same person and outfit, aligned eyes so dialogue animation stays steady. The frame is never distorted. This is an actual extractable spritesheet, not a presentation poster."
+    },
+    {
+      "pilot": "axel",
+      "source": "assets/game/pilots_0922/sources/axel_reference.png",
+      "sheet": "assets/game/pilots_0922/sheets/axel_expressions.png",
+      "cells": [
+        {
+          "pose": "idle",
+          "rect": [
+            0,
+            0,
+            362,
+            362
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "happy",
+          "rect": [
+            362,
+            0,
+            724,
+            362
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "laugh",
+          "rect": [
+            724,
+            0,
+            1086,
+            362
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "anger",
+          "rect": [
+            1086,
+            0,
+            1448,
+            362
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "sad",
+          "rect": [
+            0,
+            362,
+            362,
+            724
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "crash",
+          "rect": [
+            362,
+            362,
+            724,
+            724
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "victory",
+          "rect": [
+            724,
+            362,
+            1086,
+            724
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "talk-closed",
+          "rect": [
+            1086,
+            362,
+            1448,
+            724
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "talk-small",
+          "rect": [
+            0,
+            724,
+            362,
+            1086
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "talk-medium",
+          "rect": [
+            362,
+            724,
+            724,
+            1086
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "talk-wide",
+          "rect": [
+            724,
+            724,
+            1086,
+            1086
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "talk-o",
+          "rect": [
+            1086,
+            724,
+            1448,
+            1086
+          ],
+          "suppliedOverride": null
+        }
+      ],
+      "generator": "built-in image_gen",
+      "prompt": "Use case: identity-preserve. Production asset for Bullets of Fury: ONE expression spritesheet, exactly 4 columns x 3 rows of equal SQUARE cells, canvas aspect ratio 4:3. Input image is identity, palette, pixel-art and frame reference. Axel: exact Black male face, short textured dark hair, neat full beard, black sunglasses with gold rim, blue flight jacket and cream shearling collar, blue metal frame. Sunglasses remain on. Preserve adult western arcade 16-bit pixel-art proportions and crisp deliberate pixel clusters, no anime, no painterly blur. Each cell contains the same complete square riveted portrait frame as reference with identical dark cockpit background, identical head scale and position; shoulders and all frame edges contained inside cell. Seamless equal grid with NO margins, gutters, captions, text or labels. Every face looks slightly toward screen LEFT as in reference; no mirroring. Expressions in row-major order: row1 neutral mouth closed; warm small smile; hearty laugh mouth open; angry shouting. Row2 sad/brooding; alarmed hurt crash reaction (no blood); confident victorious grin; neutral talking closed mouth. Row3 talking slightly open mouth; talking medium open mouth; talking wide mouth; talking rounded O mouth. All 12 expressions visibly distinct, same person and outfit, aligned eyes so dialogue animation stays steady. The frame is never distorted. This is an actual extractable spritesheet, not a presentation poster."
+    },
+    {
+      "pilot": "freezer",
+      "source": "assets/game/pilots_0922/sources/freezer_reference.png",
+      "sheet": "assets/game/pilots_0922/sheets/freezer_expressions.png",
+      "cells": [
+        {
+          "pose": "idle",
+          "rect": [
+            0,
+            0,
+            362,
+            362
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "happy",
+          "rect": [
+            362,
+            0,
+            724,
+            362
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "laugh",
+          "rect": [
+            724,
+            0,
+            1086,
+            362
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "anger",
+          "rect": [
+            1086,
+            0,
+            1448,
+            362
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "sad",
+          "rect": [
+            0,
+            362,
+            362,
+            724
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "crash",
+          "rect": [
+            362,
+            362,
+            724,
+            724
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "victory",
+          "rect": [
+            724,
+            362,
+            1086,
+            724
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "talk-closed",
+          "rect": [
+            1086,
+            362,
+            1448,
+            724
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "talk-small",
+          "rect": [
+            0,
+            724,
+            362,
+            1086
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "talk-medium",
+          "rect": [
+            362,
+            724,
+            724,
+            1086
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "talk-wide",
+          "rect": [
+            724,
+            724,
+            1086,
+            1086
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "talk-o",
+          "rect": [
+            1086,
+            724,
+            1448,
+            1086
+          ],
+          "suppliedOverride": null
+        }
+      ],
+      "generator": "built-in image_gen",
+      "prompt": "Use case: identity-preserve. Production asset for Bullets of Fury: ONE expression spritesheet, exactly 4 columns x 3 rows of equal SQUARE cells, canvas aspect ratio 4:3. Input image is identity, palette, pixel-art and frame reference. Freezer: rugged mature man, black high ponytail tied purple, full short beard, purple flight jacket and cream fur collar, cyan steel frame. Exact provided face. Preserve adult western arcade 16-bit pixel-art proportions and crisp deliberate pixel clusters, no anime, no painterly blur. Each cell contains the same complete square riveted portrait frame as reference with identical dark cockpit background, identical head scale and position; shoulders and all frame edges contained inside cell. Seamless equal grid with NO margins, gutters, captions, text or labels. Every face looks slightly toward screen LEFT as in reference; no mirroring. Expressions in row-major order: row1 neutral mouth closed; warm small smile; hearty laugh mouth open; angry shouting. Row2 sad/brooding; alarmed hurt crash reaction (no blood); confident victorious grin; neutral talking closed mouth. Row3 talking slightly open mouth; talking medium open mouth; talking wide mouth; talking rounded O mouth. All 12 expressions visibly distinct, same person and outfit, aligned eyes so dialogue animation stays steady. The frame is never distorted. This is an actual extractable spritesheet, not a presentation poster. CRITICAL: All twelve cells have EXACTLY the same width and height. Put grid boundaries precisely at 25%,50%,75% of width and 33.333%,66.666% of height. Do not let first column grow wider."
+    },
+    {
+      "pilot": "juggernaut",
+      "source": "assets/game/pilots_0922/sources/juggernaut_reference.png",
+      "sheet": "assets/game/pilots_0922/sheets/juggernaut_expressions.png",
+      "cells": [
+        {
+          "pose": "idle",
+          "rect": [
+            0,
+            0,
+            362,
+            362
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "happy",
+          "rect": [
+            362,
+            0,
+            724,
+            362
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "laugh",
+          "rect": [
+            724,
+            0,
+            1086,
+            362
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "anger",
+          "rect": [
+            1086,
+            0,
+            1448,
+            362
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "sad",
+          "rect": [
+            0,
+            362,
+            362,
+            724
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "crash",
+          "rect": [
+            362,
+            362,
+            724,
+            724
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "victory",
+          "rect": [
+            724,
+            362,
+            1086,
+            724
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "talk-closed",
+          "rect": [
+            1086,
+            362,
+            1448,
+            724
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "talk-small",
+          "rect": [
+            0,
+            724,
+            362,
+            1086
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "talk-medium",
+          "rect": [
+            362,
+            724,
+            724,
+            1086
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "talk-wide",
+          "rect": [
+            724,
+            724,
+            1086,
+            1086
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "talk-o",
+          "rect": [
+            1086,
+            724,
+            1448,
+            1086
+          ],
+          "suppliedOverride": null
+        }
+      ],
+      "generator": "built-in image_gen",
+      "prompt": "Use case: identity-preserve. Production asset for Bullets of Fury: ONE expression spritesheet, exactly 4 columns x 3 rows of equal SQUARE cells, canvas aspect ratio 4:3. Input image is identity, palette, pixel-art and frame reference. Juggernaut: very burly middle-aged brown-haired man with thick full beard, gold-rimmed black sunglasses, black sleeveless tactical flight gear, tattooed shoulders, amber/bronze frame. Keep sunglasses. Preserve adult western arcade 16-bit pixel-art proportions and crisp deliberate pixel clusters, no anime, no painterly blur. Each cell contains the same complete square riveted portrait frame as reference with identical dark cockpit background, identical head scale and position; shoulders and all frame edges contained inside cell. Seamless equal grid with NO margins, gutters, captions, text or labels. Every face looks slightly toward screen LEFT as in reference; no mirroring. Expressions in row-major order: row1 neutral mouth closed; warm small smile; hearty laugh mouth open; angry shouting. Row2 sad/brooding; alarmed hurt crash reaction (no blood); confident victorious grin; neutral talking closed mouth. Row3 talking slightly open mouth; talking medium open mouth; talking wide mouth; talking rounded O mouth. All 12 expressions visibly distinct, same person and outfit, aligned eyes so dialogue animation stays steady. The frame is never distorted. This is an actual extractable spritesheet, not a presentation poster. CRITICAL: All twelve cells have EXACTLY the same width and height. Put grid boundaries precisely at 25%,50%,75% of width and 33.333%,66.666% of height. Do not let first column grow wider."
+    },
+    {
+      "pilot": "maverick",
+      "source": "assets/game/pilots_0922/sources/maverick_reference.png",
+      "sheet": "assets/game/pilots_0922/sheets/maverick_expressions.png",
+      "cells": [
+        {
+          "pose": "idle",
+          "rect": [
+            0,
+            0,
+            362,
+            362
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "happy",
+          "rect": [
+            362,
+            0,
+            724,
+            362
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "laugh",
+          "rect": [
+            724,
+            0,
+            1086,
+            362
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "anger",
+          "rect": [
+            1086,
+            0,
+            1448,
+            362
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "sad",
+          "rect": [
+            0,
+            362,
+            362,
+            724
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "crash",
+          "rect": [
+            362,
+            362,
+            724,
+            724
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "victory",
+          "rect": [
+            724,
+            362,
+            1086,
+            724
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "talk-closed",
+          "rect": [
+            1086,
+            362,
+            1448,
+            724
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "talk-small",
+          "rect": [
+            0,
+            724,
+            362,
+            1086
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "talk-medium",
+          "rect": [
+            362,
+            724,
+            724,
+            1086
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "talk-wide",
+          "rect": [
+            724,
+            724,
+            1086,
+            1086
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "talk-o",
+          "rect": [
+            1086,
+            724,
+            1448,
+            1086
+          ],
+          "suppliedOverride": null
+        }
+      ],
+      "generator": "built-in image_gen",
+      "prompt": "Use case: identity-preserve. Production asset for Bullets of Fury: ONE expression spritesheet, exactly 4 columns x 3 rows of equal SQUARE cells, canvas aspect ratio 4:3. Input image is identity, palette, pixel-art and frame reference. Maverick: exact brown swept-back hair and trimmed beard, green-reflective aviator sunglasses, dark olive flight jacket and black harness, olive frame lime lights. Keep sunglasses. Preserve adult western arcade 16-bit pixel-art proportions and crisp deliberate pixel clusters, no anime, no painterly blur. Each cell contains the same complete square riveted portrait frame as reference with identical dark cockpit background, identical head scale and position; shoulders and all frame edges contained inside cell. Seamless equal grid with NO margins, gutters, captions, text or labels. Every face looks slightly toward screen LEFT as in reference; no mirroring. Expressions in row-major order: row1 neutral mouth closed; warm small smile; hearty laugh mouth open; angry shouting. Row2 sad/brooding; alarmed hurt crash reaction (no blood); confident victorious grin; neutral talking closed mouth. Row3 talking slightly open mouth; talking medium open mouth; talking wide mouth; talking rounded O mouth. All 12 expressions visibly distinct, same person and outfit, aligned eyes so dialogue animation stays steady. The frame is never distorted. This is an actual extractable spritesheet, not a presentation poster. CRITICAL: All twelve cells have EXACTLY the same width and height. Put grid boundaries precisely at 25%,50%,75% of width and 33.333%,66.666% of height. Do not let first column grow wider."
+    },
+    {
+      "pilot": "falva",
+      "source": "assets/game/pilots_0922/sources/falva_reference.png",
+      "sheet": "assets/game/pilots_0922/sheets/falva_expressions.png",
+      "cells": [
+        {
+          "pose": "idle",
+          "rect": [
+            0,
+            0,
+            362,
+            362
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "happy",
+          "rect": [
+            362,
+            0,
+            724,
+            362
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "laugh",
+          "rect": [
+            724,
+            0,
+            1086,
+            362
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "anger",
+          "rect": [
+            1086,
+            0,
+            1448,
+            362
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "sad",
+          "rect": [
+            0,
+            362,
+            362,
+            724
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "crash",
+          "rect": [
+            362,
+            362,
+            724,
+            724
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "victory",
+          "rect": [
+            724,
+            362,
+            1086,
+            724
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "talk-closed",
+          "rect": [
+            1086,
+            362,
+            1448,
+            724
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "talk-small",
+          "rect": [
+            0,
+            724,
+            362,
+            1086
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "talk-medium",
+          "rect": [
+            362,
+            724,
+            724,
+            1086
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "talk-wide",
+          "rect": [
+            724,
+            724,
+            1086,
+            1086
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "talk-o",
+          "rect": [
+            1086,
+            724,
+            1448,
+            1086
+          ],
+          "suppliedOverride": null
+        }
+      ],
+      "generator": "built-in image_gen",
+      "prompt": "Use case: identity-preserve. Production asset for Bullets of Fury: ONE expression spritesheet, exactly 4 columns x 3 rows of equal SQUARE cells, canvas aspect ratio 4:3. Input image is identity, palette, pixel-art and frame reference. Falva: exact adult woman with long voluminous auburn curls, black rectangular glasses, dark pink flight jacket black straps, violet metal frame with magenta lights. Preserve face and glasses, adult western arcade proportions. Preserve adult western arcade 16-bit pixel-art proportions and crisp deliberate pixel clusters, no anime, no painterly blur. Each cell contains the same complete square riveted portrait frame as reference with identical dark cockpit background, identical head scale and position; shoulders and all frame edges contained inside cell. Seamless equal grid with NO margins, gutters, captions, text or labels. Every face looks slightly toward screen LEFT as in reference; no mirroring. Expressions in row-major order: row1 neutral mouth closed; warm small smile; hearty laugh mouth open; angry shouting. Row2 sad/brooding; alarmed hurt crash reaction (no blood); confident victorious grin; neutral talking closed mouth. Row3 talking slightly open mouth; talking medium open mouth; talking wide mouth; talking rounded O mouth. All 12 expressions visibly distinct, same person and outfit, aligned eyes so dialogue animation stays steady. The frame is never distorted. This is an actual extractable spritesheet, not a presentation poster. CRITICAL: All twelve square cells have EXACTLY the same width and height. Put grid boundaries precisely at 25%,50%,75% of width and 33.333%,66.666% of height. No oversized first column."
+    },
+    {
+      "pilot": "lizzie",
+      "source": "assets/game/pilots_0922/sources/lizzie_reference.png",
+      "sheet": "assets/game/pilots_0922/sheets/lizzie_expressions.png",
+      "cells": [
+        {
+          "pose": "idle",
+          "rect": [
+            0,
+            0,
+            362,
+            362
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "happy",
+          "rect": [
+            362,
+            0,
+            724,
+            362
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "laugh",
+          "rect": [
+            724,
+            0,
+            1086,
+            362
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "anger",
+          "rect": [
+            1086,
+            0,
+            1448,
+            362
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "sad",
+          "rect": [
+            0,
+            362,
+            362,
+            724
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "crash",
+          "rect": [
+            362,
+            362,
+            724,
+            724
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "victory",
+          "rect": [
+            724,
+            362,
+            1086,
+            724
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "talk-closed",
+          "rect": [
+            1086,
+            362,
+            1448,
+            724
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "talk-small",
+          "rect": [
+            0,
+            724,
+            362,
+            1086
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "talk-medium",
+          "rect": [
+            362,
+            724,
+            724,
+            1086
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "talk-wide",
+          "rect": [
+            724,
+            724,
+            1086,
+            1086
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "talk-o",
+          "rect": [
+            1086,
+            724,
+            1448,
+            1086
+          ],
+          "suppliedOverride": null
+        }
+      ],
+      "generator": "built-in image_gen",
+      "prompt": "Use case: identity-preserve. Production asset for Bullets of Fury: ONE expression spritesheet, exactly 4 columns x 3 rows of equal SQUARE cells, canvas aspect ratio 4:3. Input image is identity, palette, pixel-art and frame reference. Lizzie: exact adult woman with voluminous wavy chestnut hair, green eyes, gold hoop earrings and pendant, yellow/black flight jacket black harness, yellow industrial frame. Adult western arcade facial proportions. Preserve adult western arcade 16-bit pixel-art proportions and crisp deliberate pixel clusters, no anime, no painterly blur. Each cell contains the same complete square riveted portrait frame as reference with identical dark cockpit background, identical head scale and position; shoulders and all frame edges contained inside cell. Seamless equal grid with NO margins, gutters, captions, text or labels. Every face looks slightly toward screen LEFT as in reference; no mirroring. Expressions in row-major order: row1 neutral mouth closed; warm small smile; hearty laugh mouth open; angry shouting. Row2 sad/brooding; alarmed hurt crash reaction (no blood); confident victorious grin; neutral talking closed mouth. Row3 talking slightly open mouth; talking medium open mouth; talking wide mouth; talking rounded O mouth. All 12 expressions visibly distinct, same person and outfit, aligned eyes so dialogue animation stays steady. The frame is never distorted. This is an actual extractable spritesheet, not a presentation poster. CRITICAL: All twelve square cells have EXACTLY the same width and height. Put grid boundaries precisely at 25%,50%,75% of width and 33.333%,66.666% of height. No oversized first column."
+    },
+    {
+      "pilot": "yuri",
+      "source": "assets/game/pilots_0922/sources/yuri_reference.png",
+      "sheet": "assets/game/pilots_0922/sheets/yuri_expressions.png",
+      "cells": [
+        {
+          "pose": "idle",
+          "rect": [
+            0,
+            0,
+            362,
+            362
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "happy",
+          "rect": [
+            362,
+            0,
+            724,
+            362
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "laugh",
+          "rect": [
+            724,
+            0,
+            1086,
+            362
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "anger",
+          "rect": [
+            1086,
+            0,
+            1448,
+            362
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "sad",
+          "rect": [
+            0,
+            362,
+            362,
+            724
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "crash",
+          "rect": [
+            362,
+            362,
+            724,
+            724
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "victory",
+          "rect": [
+            724,
+            362,
+            1086,
+            724
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "talk-closed",
+          "rect": [
+            1086,
+            362,
+            1448,
+            724
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "talk-small",
+          "rect": [
+            0,
+            724,
+            362,
+            1086
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "talk-medium",
+          "rect": [
+            362,
+            724,
+            724,
+            1086
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "talk-wide",
+          "rect": [
+            724,
+            724,
+            1086,
+            1086
+          ],
+          "suppliedOverride": null
+        },
+        {
+          "pose": "talk-o",
+          "rect": [
+            1086,
+            724,
+            1448,
+            1086
+          ],
+          "suppliedOverride": null
+        }
+      ],
+      "generator": "built-in image_gen",
+      "prompt": "Use case: identity-preserve. Production asset for Bullets of Fury: ONE expression spritesheet, exactly 4 columns x 3 rows of equal SQUARE cells, canvas aspect ratio 4:3. Input image is identity, palette, pixel-art and frame reference. Yuri: exact CURRENT rugged adult man with dark red tipped short spiky mohawk, shaved sides, trimmed goatee and mustache, red combat jacket black scarf. Keep this identity absolutely, not old long-haired Yuri. Add a square gunmetal industrial frame with crimson red accents, matching other Bullets of Fury portrait frames. Preserve adult western arcade 16-bit pixel-art proportions and crisp deliberate pixel clusters, no anime, no painterly blur. Each cell contains the same complete square riveted portrait frame as reference with identical dark cockpit background, identical head scale and position; shoulders and all frame edges contained inside cell. Seamless equal grid with NO margins, gutters, captions, text or labels. Every face looks slightly toward screen LEFT as in reference; no mirroring. Expressions in row-major order: row1 neutral mouth closed; warm small smile; hearty laugh mouth open; angry shouting. Row2 sad/brooding; alarmed hurt crash reaction (no blood); confident victorious grin; neutral talking closed mouth. Row3 talking slightly open mouth; talking medium open mouth; talking wide mouth; talking rounded O mouth. All 12 expressions visibly distinct, same person and outfit, aligned eyes so dialogue animation stays steady. The frame is never distorted. This is an actual extractable spritesheet, not a presentation poster. CRITICAL: All twelve square cells have EXACTLY the same width and height. Put grid boundaries precisely at 25%,50%,75% of width and 33.333%,66.666% of height. No oversized first column."
+    }
+  ]
+}

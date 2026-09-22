@@ -1,0 +1,52 @@
+{
+  "name": "The Roaming Rebels",
+  "alignment": "Independent hostile hacker/militia group; opposes every organization, including Fury HQ.",
+  "status": "Art roster; names are working concepts. Five members including the male leader. Existing Stage 6 three-ship encounter is unchanged.",
+  "pilots": [
+    {
+      "key": "voss",
+      "name": "Darius Voss",
+      "role": "Leader",
+      "sex": "male",
+      "ship": "voss_iron_vulture",
+      "shipName": "Iron Vulture",
+      "color": "#b92335"
+    },
+    {
+      "key": "nyx",
+      "name": "Nyx Calder",
+      "role": "Infiltrator",
+      "sex": "female",
+      "ship": "nyx_ghostknife",
+      "shipName": "Ghostknife",
+      "color": "#a45bde"
+    },
+    {
+      "key": "rook",
+      "name": "Rook Mercer",
+      "role": "Enforcer",
+      "sex": "male",
+      "ship": "rook_breachhammer",
+      "shipName": "Breachhammer",
+      "color": "#df7a29"
+    },
+    {
+      "key": "kaia",
+      "name": "Kaia Vane",
+      "role": "Signal Hacker",
+      "sex": "female",
+      "ship": "kaia_signal_wraith",
+      "shipName": "Signal Wraith",
+      "color": "#29c3be"
+    },
+    {
+      "key": "jace",
+      "name": "Jace Riven",
+      "role": "Interceptor",
+      "sex": "male",
+      "ship": "jace_razorjack",
+      "shipName": "Razorjack",
+      "color": "#d34743"
+    }
+  ]
+}

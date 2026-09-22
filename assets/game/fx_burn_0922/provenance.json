@@ -1,0 +1,19 @@
+{
+  "tool": "built-in image_gen",
+  "prompt": "Create a production 16-bit pixel-art sprite sheet for Bullets of Fury enemy burning status effect. References: image 1 is the approved player flamethrower; image 2 is the approved magma orb. Match their bright orange, vermilion edges, gold-yellow flame tongues and small hot cream-white cores. A looping engulfing fire effect that wraps around a small top-down enemy aircraft hull: irregular broken crescent of licking flames around lower sides and outer hull, rising curling tongues and a few detached embers, with a generous TRANSPARENT OPEN CENTER so the aircraft remains readable. No aircraft or object drawn. No circular magic ring, no smoke cloud, no ground shadow. Crisp deliberately clustered arcade pixel art, not photorealistic, no blur. EXACTLY eight animation frames in a perfectly regular FOUR COLUMNS by TWO ROWS grid of equal SQUARE cells, read left-to-right then next row. Each flame envelope centered at the same anchor and same overall scale; progressing turbulent flames instead of eight unrelated shapes. Each fits within central 80 percent of cell, empty margins. Genuinely transparent background alpha, no labels, text, borders, checkerboard, watermark. Overall aspect ratio 2:1. Eight frames all visible, no clipped art. Strong warm saturation, preserve dark red outlines and white-hot detail matching both weapon references.",
+  "references": [
+    "assets/game/flame_v2/nfw2_2.png",
+    "assets/game/player_weapons/magma_orb_0918/magma_orb.png"
+  ],
+  "source": "source.png",
+  "frames": 8,
+  "grid": [
+    4,
+    2
+  ],
+  "outputSize": [
+    128,
+    128
+  ],
+  "packaging": "Equal cells with shared anchors; nearest-neighbor downsample, original alpha preserved. Runtime palette matches flameDraw."
+}

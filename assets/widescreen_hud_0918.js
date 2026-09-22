@@ -12,7 +12,7 @@ const stageElements=['kinetic','fire','ice','lightning','chrome','dark','toxic',
 const portraits={},ranks={};
 function img(cache,key,path){if(!cache[key]){const im=new Image();im.src=path;cache[key]=im;}return cache[key];}
 function plate(g,source,x,y,w,h){if(atlas.complete&&atlas.naturalWidth)g.drawImage(atlas,...source,x,y,w,h);}
-function txt(g,str,x,y,size,color,align){g.fillStyle=color||'#d8eaff';g.font='bold '+size+'px BOFmil, monospace';g.textAlign=align||'left';g.textBaseline='middle';g.fillText(String(str),x,y);}
+function txt(g,str,x,y,size,color,align){if(typeof bmfDrawOn==='function')bmfDrawOn(g,'dialogue',str,x,y,size,align||'left');}
 function symbol(g,key,x,y,size){try{
   if(typeof iconBlit==='function'){const v=iconBlit(g,key,x,y,size,true);if(v)return true;}
   if(typeof XART!=='undefined'&&XART.rdy(key)){const im=XART.get(key);g.drawImage(im,x-size/2,y-size/2,size,size);return true;}
@@ -26,7 +26,7 @@ function values(){try{
  const points=typeof furiousBalance==='function'?furiousBalance():0;
  const cap=typeof DIFF!=='undefined'&&DIFF?DIFF.continues:0;
  return {key,name:(p&&p.name)||key.toUpperCase(),stage,score:run.score||0,lives:run.lives||0,
-  continues:cap<0?'∞':Math.max(0,cap-(run.contUsed||0)),diff:(diffKey||'normal').toUpperCase(),points,total,
+  continues:cap<0?'âˆž':Math.max(0,cap-(run.contUsed||0)),diff:(diffKey||'normal').toUpperCase(),points,total,
   objective:(typeof STAGES!=='undefined'&&STAGES[stage-1]?STAGES[stage-1].sub:'RETURN TO FURY HQ')};
 }catch(_){return {key:'cole',name:'COLE',stage:1,score:0,lives:0,continues:0,diff:'NORMAL',points:0,total:0,objective:'STANDBY'};}}
 function stageGrid(g,w,h,v){
@@ -78,17 +78,20 @@ function menuPanel(g,w,h,st){
  const panelW=Math.min(w-12,Math.floor(h*.45)),panelH=Math.min(h-20,Math.floor(panelW*810/320));
  const x=(w-panelW)/2,y=h-panelH-12;
  plate(g,bgRect.panel,x,y,panelW,panelH);
- let key='hub',name='FURY HQ',lines=['OPERATIONS','NEW GAME / LOAD','24 MANUAL SLOTS','ONE AUTO CHECKPOINT','SELECT A PILOT','STAND BY'];
+ let key='hub',name='',lines=['OPERATIONS','NEW GAME / LOAD','24 MANUAL SLOTS','ONE AUTO CHECKPOINT','SELECT A PILOT','STAND BY'];
  if(st==='diff'){lines=['DIFFICULTY','EASY TO FURIOUS','INSANITY LOCKED','FURIOUS ARMORY','SELECT A PILOT','STAND BY'];}
  if(st==='pilot'){
   try{const p=PILOTS[pilotIndex]||PILOTS[0];key=p.key;name=p.name||p.key.toUpperCase();lines=['PILOT ROSTER','CALLSIGN  '+name.toUpperCase(),'FURY DIVISION','SHIP READY','CONFIRM PILOT','GOOD LUCK'];}catch(_){}
  }
- const port=img(portraits,key,key==='hub'?'assets/game/campaign_map_v2/isl_hub.png':'assets/game/pilot_avatars/pav_'+key+'.png');
+ const port=img(portraits,key,key==='hub'?'assets/game/ui/logo_0916/bof_logo.png':'assets/game/pilot_avatars/pav_'+key+'.png');
  if(port.complete&&port.naturalWidth){const bx=x+panelW*.16,by=y+panelH*.075,bw=panelW*.68,bh=panelH*.24;
   const scale=Math.min(bw*.94/port.naturalWidth,bh*.94/port.naturalHeight),pw=port.naturalWidth*scale,ph=port.naturalHeight*scale;
   g.drawImage(port,bx+(bw-pw)/2,by+(bh-ph)/2,pw,ph);}
- txt(g,name.toUpperCase(),x+panelW/2,y+panelH*.31,Math.max(12,panelW*.07),'#e8f2ff','center');
- lines.forEach((line,i)=>txt(g,line,x+panelW*.20,y+panelH*(.41+i*.095),Math.max(10,Math.min(15,panelW*.045)),'#e1f0ff'));
+ if(name)txt(g,name.toUpperCase(),x+panelW/2,y+panelH*.35,Math.max(12,panelW*.058),'#ffe3a3','center');
+ lines.forEach((line,i)=>{const size=Math.max(9,Math.min(15,panelW*.045));
+  const measure=typeof bmfMeasure==='function'?bmfMeasure('dialogue',line,size):line.length*size*.65;
+  const fit=Math.min(size,size*panelW*.64/Math.max(1,measure));
+  txt(g,line,x+panelW/2,y+panelH*(.41+i*.095),fit,'#e1f0ff','center');});
 }
 function clockPanel(g,w,h){plate(g,bgRect.clock,0,0,w,h);const now=new Date();
  const stamp=[now.getHours(),now.getMinutes(),now.getSeconds()].map(v=>String(v).padStart(2,'0')).join(':');

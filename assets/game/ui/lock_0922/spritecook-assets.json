@@ -1,0 +1,7 @@
+{
+  "asset_id": "f7e43e41-5f29-47da-bfb1-872457429a08",
+  "model": "gpt-image-2.5-flare",
+  "file": "frame.png",
+  "normalization": "Trim transparent padding; dark interior alpha 128; original metal border preserved",
+  "sha256": "09b9c904375b3c88421c849d471113304acca73f7eb5d65468af5a24199ce802"
+}

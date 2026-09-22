@@ -19,3 +19,9 @@ Visually inspected: real PLAY dialogue above the weapon HUD, long HQ launch text
 The suite harness now loads the shipping font registrations; assertions that pinned replaced font names/donors and the former portrait accessor were updated to verify the new routes. Full-suite counts, inherited failure names, syntax result and runtime hash are recorded in `qa/readable_type_yuri_0914.json`. Runtime and test-file line endings remain LF and CRLF respectively.
 
 Preview: `_shots/readable_type_0914/Yuri_Readable_Dialogue_0914.mp4`. Stage font contact sheet: `_shots/readable_type_0914/stage_fonts.png`.
+
+## Campaign opening correction — 2026-09-20
+
+Mike found an omitted route: the first Campaign flight's cockpit figure still asked for `pose_yuri_0`, a retired likeness on the cinematic atlas, even though the dialogue portraits and Pilot Select had already moved to the replacement Yuri. The intro now selects the approved `yuri_body_0` front-facing figure for Yuri, preloads it, and waits for it to decode. It never falls back to the retired pose. `cutPose()` also routes Yuri to the same current figure, preventing the archived cinematic pose/seated paths from showing the old likeness if used. Other pilots keep their existing scene poses.
+
+`_BUILD_SOURCE/probe_yuri_campaign_intro_0920.py` rendered the real opening in Chromium for Yuri and Cole, checked the intro asset keys and `cutPose()` route, and captured `_shots/yuri_campaign_intro_0920/yuri_intro.png` and `cole_intro.png`. The Yuri screenshot was inspected: the cockpit now shows his approved mohawk, beard and red jacket. No page or console errors occurred. `node --check assets/game.js` and whitespace diff check passed. The full test suite still exits nonzero with exactly the same 76 failing assertion names as the recorded baseline.

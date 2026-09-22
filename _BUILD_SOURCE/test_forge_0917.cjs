@@ -119,14 +119,14 @@ module.exports=function testForge(vm,ctxv,ok){
   var cv=strip(R("String(_setCinematicViewport)"));
   /* 0917b: the four places are ONE predicate now (debriefFamily), so a new Forge beat cannot miss one of them */
   ok((cv.match(/debriefFamily\(state\)/g)||[]).length>=2, 'the Forge takes the debrief plate aspect in BOTH _setCinematicViewport lines (through debriefFamily)');
-  ok(R("['forge','forging','forged','loadout','unlocks','stageclear'].every(function(k){ return debriefFamily(k); }) && !debriefFamily(GS.PLAY)"),
+  ok(R("['forge','forging','forged','loadout','supplies','unlocks','stageclear'].every(function(k){ return debriefFamily(k); }) && !debriefFamily(GS.PLAY)"),
      'debriefFamily covers every Forge beat and the debrief, and nothing else');
   var ss=strip(R("String(setState)"));
   ok(ss.indexOf('debriefFamily(s)')>=0, 'and setState turns the cinematic viewport on for it (the fourth place - the one the unlock page missed first)');
   ok(R("_hudStateWants(GS.FORGE)===true"), '_hudStateWants keeps the HUD canvases for it, as it does for the debrief');
   var dsc=strip(R("String(drawStageClear)"));
-  ok(dsc.indexOf('forgeVisible()')>=0 && dsc.indexOf('forgeStart(_toLoadout)')>=0 && dsc.indexOf('loadoutStart(_leave)')>=0 && dsc.indexOf('unlocksStart(_un, _forgeThen)')>=0,
-     'the debrief chains unlocks -> forge -> loadout -> scLeaveStage, each from its own CONTINUE (0917b)');
+  ok(dsc.indexOf('forgeVisible()')>=0 && dsc.indexOf('forgeStart(_toLoadout)')>=0 && dsc.indexOf('loadoutStart(_toSupplies)')>=0 && dsc.indexOf('suppliesStart(_leave,')>=0 && dsc.indexOf('unlocksStart(_un, _forgeThen)')>=0,
+     'the debrief chains unlocks -> forge -> loadout -> supplies -> scLeaveStage, each from its own CONTINUE (0917b)');
   /* ---- 0917b: the Forge sequence's beats ---- */
   ok(R("GS.FORGING==='forging' && GS.FORGED==='forged' && GS.LOADOUT==='loadout' && typeof drawForging==='function' && typeof drawLoadout==='function'"),
      'THE FORGING, THE PRODUCT and THE LOADOUT exist as states with their draws');
@@ -142,10 +142,9 @@ module.exports=function testForge(vm,ctxv,ok){
      'the product preview fires the REAL weapon through pShoot and always restores the live round list');
   ok(R("(function(){ var s0=run._forgeShown; run._forgeShown=false; var a=loadoutVisible(); run._forgeShown=true; var b=loadoutVisible(); run._forgeShown=s0; return b===true && (a===(crateWeaponPool(true).length>FORGE_LOADOUT_MAX)); })()"),
      'THE LOADOUT opens after a Forge visit, or when there are more weapons than bays - never on an empty choice');
-  /* 0917c, Mike: WEAPONS GAINED lists weapon unlocks only; POWERS GAINED is its own screen, one bay per ELEMENT,
-     and it does "not display what we can make with it" */
-  ok(R("(function(){ var s0=run._stageElements; run._stageElements=['fire','fire','ice']; var r=unlockRowsFor(3,'cole'); var g=powersGained(); run._stageElements=s0; return r.length===0 && JSON.stringify(g)==='[\"fire\",\"ice\"]'; })()"),
-     'boss-dropped elements go to POWERS GAINED, deduplicated, never onto Weapon Found');
+  /* 0919, Mike: each cleared level grants one power and POWERS GAINED has one bay. */
+  ok(R("(function(){ var s0=run._stageElements; run._stageElements=['fire','fire','ice']; var r=unlockRowsFor(3,'cole'); var g=powersGained(); run._stageElements=s0; return r.length===0 && JSON.stringify(g)==='[\"fire\"]'; })()"),
+     'boss-dropped elements grant one power in POWERS GAINED, never on Weapon Found');
   ok(R("GS.POWERS==='powers' && debriefFamily(GS.POWERS) && typeof drawPowers==='function'") && /case GS\.POWERS:\s*return drawPowers\(dt\)/.test(ds),
      'POWERS GAINED is its own state, drawn by drawPowers, at the debrief aspect');
   var pws=strip(R("String(drawPowers)"));

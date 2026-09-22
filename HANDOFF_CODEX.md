@@ -663,3 +663,144 @@ Chrome Hammer now has its one-hand vertical boomerang, Hard/Furious difficulty a
 - Loadout selection now exposes Ice Breath, Fire Orb, Ice Orb, Thermoshock and forged elemental forms as their requirements are earned. A new Forge/loadout plate shows Fury Points and embeds RE-SPEC; a separate four-row Weapon Found plate announces actual weapon systems.
 - Fire Orb draws a dedicated Magma Orb plate without additive washout. Combat audio validation covers ordinary projectile families, boss-specific families, Razorback charge/release and Magma Orb launch through real-sample routes.
 - Verification: syntax pass; full suite 4,921 pass / exact incoming 57-name failure baseline; real Chromium 9/9 with zero page or console errors. Evidence: docs/WEAPON_FORGE_REPAIR_0918.md and docs/qa/weapon_forge_repair_0918.json. Checklist: 156 entries, 133 complete / 7 partial / 16 pending.
+
+## Codex update — 2026-09-20: Furnace, gate, Archmage and late-stage openings
+
+- The Furnace core beam has new pixel art, and its shield gauge preserves the source aspect ratios of both frame and fill. Stage-5 gates now move with their background rather than on a separate scroll clock.
+- The Chrome Hammer Archmage now has missile-triggered arms-up/kneel/magnetic-recovery stun poses and a heavier leap. Stage 6 opens with two black fighters, separate Retina locks and a shootable slow-motion missile check. The Stage-7 Warden hyper rotation gains a toxic chaingun burst and a leg-strike leap. Do not touch the Stage-8 boss; Mike reserved that encounter for a separate design session.
+- Focused Chromium checks passed for all new flows, including successful Stage-6 Retina interception and the life-loss path. The full legacy suite reached its summary at 75 then 76 failures; the final 76 matches the recorded baseline exactly, with no new failing assertion names. The one changing name is the existing intermittent Stage-1 sand-tank spawn fixture. Current evidence and remaining scope: docs/OVERNIGHT_PASS_0920.md. The generated checklist and work order are rebuilt from `docs/REQUEST_CHECKLIST_0914.json`; the old rendered tally was stale.
+
+## Codex update — 2026-09-20: combat audio, decals and stage exit
+
+- A 20-cue ColeForge offline sound bank now gives the nine forged elements, Thermoshock, fire hazards, shield destruction, three boss attacks and three enemy projectile families new short sounds with retrigger gates. The project's ElevenLabs script remains available, but its ignored credentials file is absent; ElevenLabs finishing and listening review of the full boss/miniboss roster remain open.
+- All nine primary weapon slots now have authored impact decals, while uninfused fire, ice and lightning hits use the existing eight-frame elemental burst art. Stage-2 and Stage-4 boss tracks have louder copies; the originals remain. The pilot can steer through boss death and the fly-off hover, then loses control as the climb starts.
+- `node --check` passed; the full suite ended with the exact 76-name failing baseline and no new name. The Chromium probe verified playback, visible decals, music volume and exit controls with no page or console errors. Evidence: docs/AUDIO_DECALS_EXIT_0920.md and `_shots/qa_0920_audio/`. Tally: 186 entries, 148 complete / 10 partial / 28 pending.
+
+## Codex update — 2026-09-20: Stage-5 Chaos Harrier miniboss
+
+- Kept Mike's approved teleport rift and three-warps-then-stationary fight. Corrected horizontally shifted source frames so plasma, wing emitters, flashes and the nose beam remain anchored through their animation. Each warp now leads to a distinct weapon beat: plasma glide, paired straight-lane bay missiles, then twin lasers. Lower spawn/warp anchors keep the full hull below the MINI BOSS gauge.
+- Chromium captured the final encounter in `_shots/chaos_harrier_final_full_0920/capture.gif`; the focused live probe traversed every attack with no page or console errors. Syntax passes. The full suite remains at 76 failures; a rerun matched the baseline names exactly, while other runs exchanged two unrelated intermittent fixtures. Details: docs/CHAOS_HARRIER_REPAIR_0920.md. Checklist: 187 entries, 149 complete / 10 partial / 28 pending. No commit or push.
+
+## Codex update — 2026-09-20: Stage-7 Warden machine round
+
+- The hyper chaingun no longer shrinks the Warden's large pressure shell. A dedicated static machine round comes from the authored small-slug cell of the existing Stage-7 toxic projectile atlas, preserving its gold casing and bright green tip. Only the 20-round chain attack uses it; the other Warden projectile families are unchanged.
+- Syntax passes; real Chromium shows the rounds firing from both cannon mouths with no page or console errors. The complete suite again exits nonzero with the exact recorded 76 failing names and no additions. Evidence: docs/STAGE7_MACHINE_ROUND_0920.md and `_shots/stage7_chain_0920/`. Checklist: 188 entries, 150 complete / 10 partial / 28 pending. Stage-7 natural-play balance remains open; do not touch Mike's reserved Stage-8 boss. No commit or push.
+
+## Codex update — 2026-09-20: Furious ice beams and Forge reward audit
+
+- The Stage-3 Furious Rime Wall now releases a dark-blue, pale-core giant beam from the cannon selected by its Simon-Says FOV warning. The warning and collision width are both 62 world pixels. The Furious Frost Cruiser miniboss uses the same authored-source palette variant for its nose sweep; other difficulties retain their original art. See docs/FROST_FURIOUS_BEAM_0920.md and `_shots/frost_furious_beams_0920/` for native-browser frames.
+- A real Chromium Stage-1 boss reward fixture confirmed one Kinetic element, two Forge combines, third-combine denial, re-spec and Loadout form restoration, audible UI cue routes, then Stage-2 death persistence. It begins at the boss's last hit; full later-stage natural play and campaign save/load remain. See docs/FORGE_REWARD_AUDIT_0920.md.
+- `node --check` passed and the browser probe recorded no page or console errors. The full suite exited nonzero on both runs: the first had 77 failures including the intermittent Stage-1 three-drone lance fixture, the repeat matched the recorded 76-name baseline exactly. Checklist: 188 entries, 151 complete / 11 partial / 26 pending. Stage-3 Furious hull palette and Hard-pattern parity remain. No commit or push.
+
+## Codex update — 2026-09-20: Stage-clear separation
+
+- Moved the Fury Point conversion below the score separator rail and kept it above the sign-off. The existing achievement queue holds its notices throughout Stage Clear so they do not cover the password or Continue prompt, then resumes after the debrief.
+- Chromium rendered the authored debrief at wide, square and portrait browser sizes. All showed separate conversion, sign-off, Continue and footer areas with no page or console errors. Syntax passes. The complete suite still exits nonzero at 75 failures, a subset of the recorded 76-name baseline; the absent name is the intermittent Stage-1 sand-tank fixture. Evidence: docs/STAGECLEAR_SEPARATION_0920.md. Checklist: 188 entries, 152 complete / 11 partial / 25 pending. No commit or push.
+
+## Codex update — 2026-09-20: Loadout catalog paging
+
+- The arsenal now displays one weapon's six larger authored form badges per page. D-pad left/right changes weapon and up/down traverses Base and both element pages. The selected row and badge glow, and a separate strip identifies the form and its owned, Armory cost, recipe or boss-locked state before equipping.
+- The focused Chromium probe navigated both pages, checked a locked weapon and equipped an owned form with no page or console errors. Screenshots were visually reviewed. Syntax and whitespace checks pass. The full suite exits nonzero with 75 failing assertions, all within the recorded 76-name baseline; the intermittent Stage-1 sand-tank fixture was absent. Evidence: docs/LOADOUT_CATALOG_0920.md and `_shots/loadout_pages_0920/`. Checklist: 188 entries, 154 complete / 11 partial / 23 pending. No commit or push.
+
+## Codex update — 2026-09-20: Pilot Select checklist re-audit
+
+- Fresh Chromium frames confirmed Yuri's identity and biography type before the first stat, each stat fills separately, and the completed card shows the special icon. The GOOD LUCK slide retains only pilot and ship. No page or console errors. The 0919 implementation already prewarms all nine art families and was previously rendered across the roster; only two outdated checklist statuses were corrected, with no game-code changes. Evidence: docs/PILOT_REVEAL_REAUDIT_0920.md and `_shots/pilot_reveal_0920/`. Checklist: 188 entries, 156 complete / 11 partial / 21 pending. No commit or push.
+
+## Codex update — 2026-09-20: stats and tread checklist reconciliation
+
+- The Stats screen's BULLETS FIRED value and fill already use the shot count, with WEAPON ACCURACY separately using hits/shots; the 0919 Chromium check measured every label/value inside its authored bay at portrait, standard and ultrawide sizes. The Razorback already uses the recorded tread loop and its pair controller keeps audio owned by the moving tank. Both 0919 proofs were present, so two stale pending statuses were marked complete without further game-code changes. Evidence: docs/STATS_FIT_0919.md and docs/RAZORBACK_TREAD_RECORDING_0919.md. Checklist: 188 entries, 158 complete / 11 partial / 19 pending. No commit or push.
+
+## Codex update — 2026-09-20: save audit and checklist corrections
+
+- An isolated Chromium campaign-slot probe saved Kinetic and Fire discoveries, selected/saved forms, the Ice Breath variant and Forge state, then reloaded and applied that slot. It also exercised the Stage-2 to Stage-3 autosave and reload; Stage-3 start reapplied Kinetic. No browser errors. The later boss rewards and full natural-play Forge path remain open. Evidence: docs/FORGE_REWARD_AUDIT_0920.md and `_shots/forge_campaign_save_0920/`.
+- Existing 0919 proofs closed stale entries for respawn safety and the Hard Razorback duo, while the 0916 synchronized Stage-4 giant-strike escape arrows and achievement menu/unlock card also had stale pending flags. The unlock card uses Mike's later-approved lower-left placement. Evidence: docs/RESPAWN_SAFETY_0919.md, docs/RAZORBACK_HANDOFF_0919.md, docs/ESCAPE_ARROWS_0916.md and docs/AWARDS_0916.md. No new gameplay change for these status corrections.
+
+## Codex update — 2026-09-20: incoming lock warning and working-file recovery
+
+- The authored Retina plate now draws gray above the in-game EQUIPPED panel and flashes red during an incoming lock. Warning beeps tighten with missile distance, and the next beep advances immediately when a missile closes in. Chromium inspected idle and active frames and measured 0.444-second and 0.100-second gaps at 400px and 90px; no page/console errors. Evidence: docs/LOCK_WARNING_0920.md and `_shots/lock_hud_0920/`.
+- A large-file patch operation unexpectedly damaged a middle span of `assets/game.js`. A copy of the damaged bytes is in `_shots/recovery_0920/game_corrupted.js`. The committed span was restored, the smaller working changes reapplied, and the Warden escort, Stage-6 chase, fly-off input and sound mappings were restored at their intended sites. `node --check` passes; the full suite exits 1 at 75 failures, all a subset of the earlier 76-failure baseline. The Stage-5 Chaos Harrier Chromium attack-cycle probe passes again. Review `docs/LOCK_WARNING_0920.md` before another edit to this giant file; use exact byte-level replacements, not `apply_patch` on `assets/game.js`.
+- Checklist: 188 total, 163 complete / 11 partial / 14 pending. No commit or push.
+
+## Codex update — 2026-09-20: Chaos Harrier field isolation and recovery verification
+
+- Stage-5 scheduled and adaptive waves now stay queued from the Chaos Harrier warning through its defeat, then resume. Existing hazards remain physical and pickups remain available. Chromium verified the due wave did not dispatch during the fight, resumed afterward, and the full teleport/weapon cycle still reached every state without browser errors. Evidence: docs/CHAOS_HARRIER_REPAIR_0920.md and `_shots/recovery_0920/harrier_waves.log`.
+- The working-file recovery was extended to restore the Archmage's authored missile-stun poses and heavy leap, background-anchored Stage-5 gates, and weapon impact decals. Focused Chromium probes passed for those systems, both Stage-6 opener outcomes, and audio/decals/stage exit. The full `test_fl.js` suite reached its summary and exited 1 with the exact recorded 76 failing names and no new failures. `node --check` and `git diff --check` passed. Details: docs/LOCK_WARNING_0920.md. No commit or push.
+- The Harrier's stationary sequence now truly plays nose beam, paired wing lasers, nose beam; the old post-increment produced side/beam/beam. New Stage-5 asteroid/comet spawns pause during the warning/fight while existing rocks remain physical. Supply crates use side lanes clear of the hull. The 32-frame real-game recording is `_shots/chaos_harrier_repaired_0920/capture.gif`. Full-cycle and field-flow Chromium probes passed with no browser errors, and the final complete suite still exits 1 with the exact 76-name known baseline. No commit or push.
+- Stage-7 through Stage-9 real boss defeat routes were also probed: one Toxic, Prism, and Water element respectively. Stage 7 begins a staged defeat and keeps the boss object alive on its first frame. ENG-23 remains partial until natural-play Forge combinations are checked. Evidence: docs/FORGE_REWARD_AUDIT_0920.md.
+
+## Codex update — 2026-09-20: Forge form isolation
+
+- A native Chromium pickup probe reproduced a Forge leak: a level-I Kinetic Spread inherited the level-V aura from the previous Machine Gun, and a bare flamethrower kept that aura. `forgeApply()` now records the forged slot, reapplies that slot's exact level, and clears its aura on a bare pickup while preserving an independent field infusion.
+- The focused probe passed afterward and exercised all 81 weapon/element pairings. The boss reward/Forge UI/death flow and campaign save/autosave round-trips passed again without browser errors. Evidence: docs/FORGE_REWARD_AUDIT_0920.md and `_shots/recovery_0920/forge_switch_matrix.log`. ENG-23 remains partial for later natural-play combination review. No commit or push.
+
+## Codex update — 2026-09-20: Campaign Stage-1 flight bridge
+
+- After clearing Stage 1 in Campaign, the selected pilot and Cole (or Axel when Cole is selected) now fly a short top-down radio scene over the authored jungle terrain. It uses the existing comm portraits and framed 16-bit dialogue panel. Arcade remains direct, and the older HQ ensemble scenes stay archived. The scene is only the first transition; PRE-11 is partial.
+- Chromium verified Yuri and Cole variants plus the real `scLeaveStage` to flight to map unlock route, with no page or console errors. Screenshots and details: docs/CAMPAIGN_BRIDGE_0920.md and `_shots/campaign_bridge_0920/`. `node --check` and whitespace diff check passed. The full suite reached its summary with 76 failing assertion names, exactly matching the recorded baseline; it still exits nonzero. No commit or push.
+
+## Codex update — 2026-09-20: natural Stage-5 miniboss entrance
+
+- A normal Stage-5 progression probe found the Chaos Harrier appearing under nine surviving fleet enemies, shield domes, portal effects and bullets. Its warning now clears ordinary fleet units and hostile rounds so the teleport encounter has a readable arena; physical asteroids/comets and pickups remain. The repeated Chromium run reached the miniboss naturally at 28.57 seconds with zero ordinary enemies and two physical rocks still present. The before/after screenshots and probe are under `_shots/stage5_natural_mini_0920/`; details are in docs/CHAOS_HARRIER_REPAIR_0920.md.
+- `node --check` and whitespace diff check passed. The complete assertion suite exits 1 with exactly the same 76 failing assertion names as the baseline. No commit or push.
+
+## Codex update — 2026-09-20: current Yuri in the Campaign opening
+
+- The opening cockpit still used `pose_yuri_0`, an older likeness despite the new Yuri already being used elsewhere. It now loads the approved `yuri_body_0` front-facing figure and never falls back to the retired pose. `cutPose()` redirects Yuri's old cinematic/seated routes to the same current figure; other pilots are unchanged.
+- Real Chromium rendered and visually checked Yuri and Cole openings; no page or console errors. Evidence: docs/READABLE_TYPE_YURI_0914.md and `_shots/yuri_campaign_intro_0920/`. Syntax and whitespace checks passed. The full suite exits 1 with the same 76 failing assertion names as the baseline. No commit or push.
+
+## Codex update — 2026-09-20: current cinematic ships, distant escorts and pickup UI
+
+- All cinematic ship views and the opening silhouette now resolve to the current nine-pilot gameplay atlas. The old cutouts are removed from runtime registration; source files remain archived. Chromium rendered the Stage-1 bridge with the current Cole, Axel and Yuri airframes.
+- Hard/Furious Olive Warden escorts now receive ordinary and special-weapon hits at their own positions, including when they fly outside the miniboss's central bounding box. A real browser shot from the lower field took 60 HP from the distant left helper.
+- Stage passwords lead to difficulty, then pilot, then the chosen Arcade stage. Back from difficulty returns to password. Pickup banners and floating labels use the authored graphical game font, with no plain canvas-font loading flash.
+- Chromium probes passed with no page or console errors. Evidence: `docs/LATEST_REPAIRS_0920.md`, `_shots/campaign_bridge_0920/`, `_shots/latest_repairs_0920/`. The full suite retains its established nonzero baseline; see `_shots/test_fl_latest_0920_final.log`. No commit or push.
+
+## Codex update — 2026-09-20: Pandemonium and dialogue portraits
+
+- Stage 3's main boss now plays Mike's `pandemonium.wav` via the encoded `boss3_pandemonium.mp3`. The former boss track is preserved under the `unused2` music key; the Stage 3 miniboss uses the Stage 3 field music.
+- Shared dialogue portraits, including Cole's Campaign radio scene, are centered in the panel's left portrait bay with the name and message clear of the frame. Real Chromium screenshots and music-key routing pass without browser errors.
+- Full details and baseline comparison: `docs/STAGE3_PANDEMONIUM_PORTRAITS_0920.md`. The suite retains exactly the same 76 known failure names and exits nonzero. No commit or push.
+
+## Codex update — 2026-09-20: right-facing portraits and B/Back
+
+- The shared dialogue renderer now mirrors all nine pilot comm portraits to face the message and enlarges each square to fit its left bay. Cole and Yuri were visually inspected in real Chromium.
+- Campaign setup no longer consumes B/Back without acting: hub → mode select, difficulty → hub, pilot → difficulty. Arcade and Co-op setup return from difficulty to mode select and pilot to difficulty. The Campaign map returns from its button bar to the map and then to the hub; slot-picker cancel remains intact.
+- Chromium navigation and render proof: `docs/DIALOGUE_BACK_0920.md`, `_shots/dialogue_back_0920/`. The repeat full suite has the same 76 failing names as baseline and exits nonzero. No commit or push.
+
+## 2026-09-22 repair pass
+
+See [REPAIR_0922.md](docs/REPAIR_0922.md) for the latest request checklist, exact repairs, remaining work and verification limits. The old status/test totals above are historical. Current full-suite result: 76 pre-existing failures, identical assertion names to the 0920 cinematic baseline; no new failures. Nothing committed or pushed. ElevenLabs generated two batches but browser export is blocked; do not regenerate them or claim they are installed. IDs are in the repair note.
+
+Large-file tooling warning: apply_patch on assets/game.js truncated unrelated sections again on 0922. Recovery artifacts are under _shots/repair_0922; use backed-up, count-asserted text replacements for this file and run node --check immediately. Do not use whole-file patch rewriting on this multi-megabyte source.
+
+## 2026-09-22: independent Stage 6 wingmen
+
+See docs/STAGE6_WINGMEN_0922.md. Allies now own their movement/targets, use the player hull scale and native damaging shots, avoid incoming projectiles and ground strikes, and withdraw when hurt. Added side bombing runs with fixed landing warnings, rotating descending bombs and difficulty-scaled racks. Corrected south-facing jet orientation. Chromium passes with zero page/console errors; full suite exits 1 with the same 76 failing names as baseline. Nothing committed or pushed.
+
+## 2026-09-22: Cole sonic and Furious helicopter
+
+See docs/OVERLORD_SONIC_0922.md. Cole sonic damage +50% (full 22 to 33). Furious Overlord gets green armour, a warned horizontal/vertical/horizontal pressure combo after rain/reentry, then a six-beep pod windup and three sonic missile volleys while resuming flight. Chromium validates native rain-to-combo progression, interception and roll/somersault survival. Full suite: same 76 known failure names, exit 1; no new failures. No commit/push.
+
+
+## September 22: Level 4 target sizes and projectile protection
+See `docs/STAGE4_TARGETS_0922.md` and `_BUILD_SOURCE/probe_stage4_targets_0922.py`. Warden +25%, escorts +50%, warship helpers 2x with matching collision geometry. Warship rounds resist player weapon interception. Existing work preserved; nothing committed or pushed.
+
+
+## September 22: faster tally and post-loadout supplies
+See `docs/SUPPLIES_TALLY_0922.md` and `_BUILD_SOURCE/probe_supplies_0922.py`. Results finish within 0.8 seconds. Fury Supplies offers 250-FP lives and 750-FP continues, persistent spending, stock guards, Back and optional skip. Shared debrief mouse mapping now uses its actual widescreen width. No commit/push.
+
+
+## September 22: Cole overhaul, nine portrait packs and Roaming Rebels art
+See `docs/PORTRAITS_REBELS_0922.md` and its HTML visual catalog. Current likenesses route through menus/dialogue/legacy aliases; Cole body comes from Mike's supplied PNG, and his ZIP is retained. Generated five-member Rebel roster (leader included) and five south-facing alpha ship masters, registered for art/editor use; existing Stage 6 encounters unchanged. Native Chromium: 236 assets, all pilot aliases, dialogue and Cole intro verified, no browser errors. Full suite exits 1 with the same 75 failure names, no new ones. No commit/push.
+
+## Codex update — 2026-09-22: enemy burn effects
+
+- Generated and integrated eight hull-wrapping burn frames matching the flamethrower/orb heat palette; forged flames retain their source color.
+- Native Chromium collision, palettes, animation, expiry and readability verified; zero browser errors. Syntax passed; full suite exit 1, same 75 baseline failure names.
+- Source, prompt, implementation and verification: docs/ENEMY_BURN_0922.md. Nothing committed or pushed.
+
+## Codex update — 2026-09-22: Level 4 electrical-core anchoring
+
+- Four shield-generator cores now follow fixed boss-relative offsets; camera/background scrolling no longer moves them independently. Independent chaingun helper patterns preserved.
+- Chromium scroll/movement/rearm/hitbox checks passed with no browser errors. Syntax passed; full suite exit 1, 4,905 pass / same 75 baseline failures.
+- Details: docs/STAGE4_CORE_ANCHORS_0922.md. Nothing committed or pushed.

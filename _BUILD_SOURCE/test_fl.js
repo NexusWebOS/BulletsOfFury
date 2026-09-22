@@ -2695,7 +2695,7 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   ok(vm.runInContext("outboundDraw.toString().indexOf('_liquidFrame')<0", ctxv), 'no liquid anywhere in the outbound');
   // Arcade confirms its score and advances without a campaign transition (0915).
   ok(vm.runInContext(fs.readFileSync(path.join(__dirname,'arcade_routes_0915/result_route_check.js'),'utf8'),ctxv),
-     'Arcade stage clear awards its score and advances directly to Stage 2');
+     'Arcade stage clear offers optional supplies before awarding score and advancing to Stage 2');
   /* ⚠ THESE TWO PINNED THE RUNWAY PLATES INSIDE drawLaunch, AND THE TWO DIRECTLY BELOW THEM SAID
      THE OPPOSITE — worth keeping as the clearest example of rule 2 in this file. 'no OTHER stage
      flies a runway' passed for drops on end, because it asks seqRunway, which returns null for
@@ -10923,9 +10923,9 @@ console.log("=== 215. menu navigation ===");
      being the sixth one somebody forgot. */
   var _mb=JSON.parse(vm.runInContext("JSON.stringify(MENU_BACK)", ctxv));
   /* eight since 0910a: the DEBUG menu joined the table (Mike: the fights end back on the debug menu, and K backs out of it) */
-  ok(Object.keys(_mb).length===9, 'all nine menus have a back destination — HELP joined them in 0912a ('+Object.keys(_mb).length+')');
-  [['pilot','modesel'],['password','title'],['options','title'],['diff','title'],
-   ['credits','title'],['stagesel','modesel'],['modesel','title']].forEach(function(p){
+  ok(Object.keys(_mb).length===10, 'all ten menus have a back destination, including the Campaign hub ('+Object.keys(_mb).length+')');
+  [['pilot','diff'],['password','title'],['options','title'],['diff','modesel'],
+   ['camphub','modesel'],['credits','title'],['stagesel','modesel'],['modesel','title']].forEach(function(p){
     ok(_mb[p[0]]===p[1], p[0]+' backs out to '+p[1]);
   });
   var _g215=fs.readFileSync(ROOT+'/assets/game.js','utf8');
@@ -13713,7 +13713,7 @@ console.log("=== 277. pilot select: nine standing figures ===");
   var _own=0, _bad=[];
   for (var i=0;i<_PS.length;i++){
     var k=vm.runInContext("psBodyKey("+JSON.stringify(_PS[i])+")", ctxv);
-    if (k && (k===_PS[i]+'_body_0' || k.indexOf('pose_'+_PS[i]+'_')===0)) _own++;
+    if (k && (k===_PS[i]+'_body_0' || (_PS[i]==='cole' && k==='cole_body_0922') || k.indexOf('pose_'+_PS[i]+'_')===0)) _own++;
     else _bad.push(_PS[i]+'->'+k);
   }
   ok(_own===9, 'every pilot draws a standing figure of THEMSELVES ('+_own+'/9'+(_bad.length?'; '+_bad.join(', '):'')+')');
@@ -14169,13 +14169,11 @@ console.log("=== 278. lizzie B-42 alternate costume ===");
   ok(vm.runInContext("!!(window.BOFA && BOFA.music && BOFA.music.opener && /stage9_bonus_warp_run/.test(BOFA.music.opener))", ctxv),
      'it runs on the one track the manifest never mapped');
   ok(fs.existsSync(path.join(ROOT,'assets/game/music/stage9_bonus_warp_run.mp3')), 'and that file is actually there');
-  /* ⚠ THE SILHOUETTE SOURCE MUST BE A CUTOUT. port_cf_* portraits are 77% opaque framed busts and
-     silhouette into a black BOX; the cinematic ship cutouts are ~43% and silhouette into an
-     aeroplane. Pinned because the key name gives no hint which is which, and the first cut of this
-     beat shipped a rectangle with a rim light round it. */
-  ok(vm.runInContext("OPN_SIL_KEY('axel')==='cinship_axel_2'", ctxv),
-     'the silhouettes are cut from the ship cutouts, not from the framed portraits');
-  ok(vm.runInContext("!!(XART._src && XART._src['cinship_axel_2'])", ctxv), 'and that cutout is registered');
+   /* Cinematic and opening ships use the current gameplay atlas. */
+   ok(vm.runInContext("OPN_SIL_KEY('axel')==='ship_axel_pv2' && cinShipKey('axel',1)==='ship_axel_pv2'", ctxv),
+      'the opening and cinematic ships resolve to current gameplay airframes');
+   ok(vm.runInContext("!!(BOFX.ships && BOFX.ships[OPN_SIL_KEY('axel')]) && !(XART._src && XART._src['cinship_axel_2'])", ctxv),
+      'the new atlas ship is registered and the retired cutout is unloaded');
 
   /* ---- HELP ---- */
   /* ⚠ REPOINTED (0916, ACH-02 adds AWARDS). This required TITLE_ITEMS.length===6 - the COUNT - while
@@ -15225,7 +15223,7 @@ console.log('=== 297. Razorback and Tempest weapon geometry; Cole impact sound =
   ok(vm.runInContext("pBullets.length===0&&run._sonicChg===SONIC_MAX",ctxv),'held Sonic Boom remains a charge with no duplicate projectile');
   vm.runInContext("sonicCharge(0,false);var wave298=pBullets[0];",ctxv);
   /* 0917 (Mike: "work like a deadly sonic sound attack"): SONIC_DMG 7 -> 11, so a full charge is round(11*2.0)=22; pinned to the constant so the RULE (0.6 + 1.4p of SONIC_DMG) is what this checks */
-  ok(vm.runInContext("pBullets.length===1&&wave298.pierce&&wave298.dmg===Math.round(SONIC_DMG*2)&&wave298.dmg===22&&Math.abs(wave298.life-1.024)<1e-9",ctxv),'full pressure feedback preserves the one piercing wave, damage (22 at SONIC_DMG 11) and finite range');
+  ok(vm.runInContext("pBullets.length===1&&wave298.pierce&&wave298.dmg===Math.round(SONIC_DMG*2)*1.5&&wave298.dmg===33&&Math.abs(wave298.life-1.024)<1e-9",ctxv),'full pressure feedback preserves the one piercing wave, damage (33 with Cole sonic 50% bonus) and finite range');
   /* 0917: the release now carries TWO cues - the dedicated coleSonicFull at full strength (the cue that was built and never called before), with the pressure-release feedback under it at a reduced bed (.35+.25p = .6 on a full charge) */
   ok(vm.runInContext("sounds298.filter(e=>e[0]==='colePressureRelease').length===1&&Math.abs(sounds298.find(e=>e[0]==='colePressureRelease')[1]-0.6)<1e-9",ctxv),'full pressure release receives one pressure-release bed at .6 under the boom');
   ok(vm.runInContext("sounds298.filter(e=>e[0]==='coleSonicFull').length===1&&Math.abs(sounds298.find(e=>e[0]==='coleSonicFull')[1]-1)<1e-9&&!sounds298.some(e=>e[0]==='coleSonicHalf')",ctxv),'and exactly one full-strength coleSonicFull - the deadly boom cue (0917), never the half cue on a full charge');

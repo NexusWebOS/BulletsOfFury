@@ -1,0 +1,86 @@
+{
+  "generator": "built-in image_gen",
+  "date": "2026-09-22",
+  "assets": [
+    {
+      "name": "roaming_rebels_roster",
+      "prompt": "Generate a production character concept roster for BULLETS OF FURY titled exactly THE ROAMING REBELS. Reference 1 is inspiration for militia/hacker gear ONLY: replace that seven-character roster and its ideology. Reference 2 is the definitive face rendering and pixel-art style. Exactly FIVE distinct adults total: THREE MEN and TWO WOMEN, vicious deadly male leader INCLUDED in five. Grounded rugged western 16-bit arcade military pixel art, realistic adult faces, crisp pixels, not anime or manga, no smooth 3D. A hacker/militia faction opposing ALL organizations including Fury HQ; no Fury allegiance or heroic freedom propaganda. Design five non-overlapping full-body characters arranged across a wide dark hangar poster with portraits in five separate cards below. Left-to-right working names and roles: DARIUS VOSS / LEADER: 45yo male, hard scarred face, dark sidepart hair with gray temples, short beard, cold ruthless expression, blue-black flight coat, crimson scarf, hacked command gauntlet. NYX CALDER / INFILTRATOR: 35yo woman, dark undercut tied hair, severe adult face, violet/gray patched flight armor, intrusion wrist terminal. ROOK MERCER / ENFORCER: 45yo burly bald male, black stubble, broken nose, rust-orange ballistic plates and black flight pants. KAIA VANE / SIGNAL HACKER: 32yo woman, practical short sandy-blond hair, freckles, teal patched flight suit and utility rig, compact hacking tablet. JACE RIVEN / INTERCEPTOR: 30yo male, dark brown tousled hair, visible stubble, asymmetrical dark red flight jacket and black armor, angry focused expression. Distinct credible pilots, worn stolen military equipment, handpainted crossed-out faction badges and same simple broken-chevron rebel emblem. Each outfit practical and fully clothed. No rifles pointing toward camera. Bottom cards same square riveted frames as reference 2, colors respectively crimson, purple, orange, teal, red. Only text: title, names, roles, and small subtitle HACKER / MILITIA - NO ALLEGIANCE. Five people only, no extra background people. Faces in bottom cards repeat the corresponding five people. Premium readable composition, same degree of pixel detail as provided current pilot portraits.",
+      "master": "assets/game/roaming_rebels_0922/masters/roaming_rebels_roster.png"
+    },
+    {
+      "name": "voss_iron_vulture",
+      "desc": "Leader Darius Voss's IRON VULTURE: wide predatory swept wings, split armored beak nose, broad heavy shoulders, four exhaust nacelles, paired rail cannons and dorsal command antenna. Charcoal, worn steel and dark crimson markings, icy blue canopy. A dangerous command fighter, completely different from the slim scouts.",
+      "prompt": "Use case: stylized-concept. Generate ONE game-ready top-down enemy fighter sprite for Bullets of Fury, Roaming Rebels hacker/militia faction. The reference atlas establishes the game's hard outlined 16-bit arcade ship language ONLY: do NOT make a spritesheet. Leader Darius Voss's IRON VULTURE: wide predatory swept wings, split armored beak nose, broad heavy shoulders, four exhaust nacelles, paired rail cannons and dorsal command antenna. Charcoal, worn steel and dark crimson markings, icy blue canopy. A dangerous command fighter, completely different from the slim scouts. Orthographic overhead view, nose points straight DOWN toward bottom of image/player, rear thrusters at TOP. Show the TOP hull surface; not underside and not the front elevation. Symmetric functional aircraft silhouette except tiny surface equipment. Practical stolen/modified Fury-like fighter, scraped serial numbers, small simple broken-chevron rebel badge, visible panel lines, black pixel outlines and metal highlights, limited purposeful pixel palette. Compact crisp pixel clusters at approximately 256x320 sprite resolution, clean nearest-neighbor pixel appearance, not smooth 3D, not vector. Center the entire single ship with 12% empty safe margin on all sides. Transparent alpha background. No shadow on background, no floor, no labels, no UI, no detached parts, no muzzle fire, no motion blur. Short visible engine glow only, entire hull opaque. No extra ships. This is production master art for an enemy ship, not a poster.",
+      "master": "assets/game/roaming_rebels_0922/masters/voss_iron_vulture.png",
+      "sprite": "assets/game/roaming_rebels_0922/ships/voss_iron_vulture.png",
+      "facing": "south",
+      "view": "overhead",
+      "alphaBounds": [
+        0,
+        0,
+        1092,
+        1378
+      ]
+    },
+    {
+      "name": "nyx_ghostknife",
+      "desc": "Nyx Calder's GHOSTKNIFE: extremely narrow stealth dart with clipped diamond wings, long single needle fuselage, paired aft thrusters, concealed missile slots, small asymmetric hacker antenna. Charcoal black, dull off-white salvage plates and violet plasma seams, purple canopy.",
+      "prompt": "Use case: stylized-concept. Generate ONE game-ready top-down enemy fighter sprite for Bullets of Fury, Roaming Rebels hacker/militia faction. The reference atlas establishes the game's hard outlined 16-bit arcade ship language ONLY: do NOT make a spritesheet. Nyx Calder's GHOSTKNIFE: extremely narrow stealth dart with clipped diamond wings, long single needle fuselage, paired aft thrusters, concealed missile slots, small asymmetric hacker antenna. Charcoal black, dull off-white salvage plates and violet plasma seams, purple canopy. Orthographic overhead view, nose points straight DOWN toward bottom of image/player, rear thrusters at TOP. Show the TOP hull surface; not underside and not the front elevation. Symmetric functional aircraft silhouette except tiny surface equipment. Practical stolen/modified Fury-like fighter, scraped serial numbers, small simple broken-chevron rebel badge, visible panel lines, black pixel outlines and metal highlights, limited purposeful pixel palette. Compact crisp pixel clusters at approximately 256x320 sprite resolution, clean nearest-neighbor pixel appearance, not smooth 3D, not vector. Center the entire single ship with 12% empty safe margin on all sides. Transparent alpha background. No shadow on background, no floor, no labels, no UI, no detached parts, no muzzle fire, no motion blur. Short visible engine glow only, entire hull opaque. No extra ships. This is production master art for an enemy ship, not a poster.",
+      "master": "assets/game/roaming_rebels_0922/masters/nyx_ghostknife.png",
+      "sprite": "assets/game/roaming_rebels_0922/ships/nyx_ghostknife.png",
+      "facing": "south",
+      "view": "overhead",
+      "alphaBounds": [
+        49,
+        51,
+        1056,
+        1378
+      ]
+    },
+    {
+      "name": "rook_breachhammer",
+      "desc": "Rook Mercer's BREACHHAMMER: squat broad armored gunship, blunt wedge nose, massive twin rotary cannon pods visibly mounted at wing roots, four short stabilizer fins, two very wide engines. Worn rust-orange armor panels over black chassis, amber canopy. Heavy militia brawler.",
+      "prompt": "Use case: stylized-concept. Generate ONE game-ready top-down enemy fighter sprite for Bullets of Fury, Roaming Rebels hacker/militia faction. The reference atlas establishes the game's hard outlined 16-bit arcade ship language ONLY: do NOT make a spritesheet. Rook Mercer's BREACHHAMMER: squat broad armored gunship, blunt wedge nose, massive twin rotary cannon pods visibly mounted at wing roots, four short stabilizer fins, two very wide engines. Worn rust-orange armor panels over black chassis, amber canopy. Heavy militia brawler. Orthographic overhead view, nose points straight DOWN toward bottom of image/player, rear thrusters at TOP. Show the TOP hull surface; not underside and not the front elevation. Symmetric functional aircraft silhouette except tiny surface equipment. Practical stolen/modified Fury-like fighter, scraped serial numbers, small simple broken-chevron rebel badge, visible panel lines, black pixel outlines and metal highlights, limited purposeful pixel palette. Compact crisp pixel clusters at approximately 256x320 sprite resolution, clean nearest-neighbor pixel appearance, not smooth 3D, not vector. Center the entire single ship with 12% empty safe margin on all sides. Transparent alpha background. No shadow on background, no floor, no labels, no UI, no detached parts, no muzzle fire, no motion blur. Short visible engine glow only, entire hull opaque. No extra ships. This is production master art for an enemy ship, not a poster.",
+      "master": "assets/game/roaming_rebels_0922/masters/rook_breachhammer.png",
+      "sprite": "assets/game/roaming_rebels_0922/ships/rook_breachhammer.png",
+      "facing": "south",
+      "view": "overhead",
+      "alphaBounds": [
+        0,
+        19,
+        1102,
+        1378
+      ]
+    },
+    {
+      "name": "kaia_signal_wraith",
+      "desc": "Kaia Vane's SIGNAL WRAITH: elegant forked nose and compact crescent wings around a thin central cockpit, a pair of prominent electronic-warfare antenna pods, twin thrusters, compact laser hardpoints. Worn teal and pale gray panels over gunmetal, turquoise canopy. Distinct technical electronic-warfare craft, no giant ring.",
+      "prompt": "Use case: stylized-concept. Generate ONE game-ready top-down enemy fighter sprite for Bullets of Fury, Roaming Rebels hacker/militia faction. The reference atlas establishes the game's hard outlined 16-bit arcade ship language ONLY: do NOT make a spritesheet. Kaia Vane's SIGNAL WRAITH: elegant forked nose and compact crescent wings around a thin central cockpit, a pair of prominent electronic-warfare antenna pods, twin thrusters, compact laser hardpoints. Worn teal and pale gray panels over gunmetal, turquoise canopy. Distinct technical electronic-warfare craft, no giant ring. Orthographic overhead view, nose points straight DOWN toward bottom of image/player, rear thrusters at TOP. Show the TOP hull surface; not underside and not the front elevation. Symmetric functional aircraft silhouette except tiny surface equipment. Practical stolen/modified Fury-like fighter, scraped serial numbers, small simple broken-chevron rebel badge, visible panel lines, black pixel outlines and metal highlights, limited purposeful pixel palette. Compact crisp pixel clusters at approximately 256x320 sprite resolution, clean nearest-neighbor pixel appearance, not smooth 3D, not vector. Center the entire single ship with 12% empty safe margin on all sides. Transparent alpha background. No shadow on background, no floor, no labels, no UI, no detached parts, no muzzle fire, no motion blur. Short visible engine glow only, entire hull opaque. No extra ships. This is production master art for an enemy ship, not a poster.",
+      "master": "assets/game/roaming_rebels_0922/masters/kaia_signal_wraith.png",
+      "sprite": "assets/game/roaming_rebels_0922/ships/kaia_signal_wraith.png",
+      "facing": "south",
+      "view": "overhead",
+      "alphaBounds": [
+        33,
+        37,
+        1074,
+        1402
+      ]
+    },
+    {
+      "name": "jace_razorjack",
+      "desc": "Jace Riven's RAZORJACK: lean aggressive interceptor with reverse swept blade wings, long pointed center nose, two exposed oversized engines running alongside fuselage, forward canards, missile rack on each wing. Deep red salvaged armor with dirty ivory stripes, gunmetal frame and orange canopy.",
+      "prompt": "Use case: stylized-concept. Generate ONE game-ready top-down enemy fighter sprite for Bullets of Fury, Roaming Rebels hacker/militia faction. The reference atlas establishes the game's hard outlined 16-bit arcade ship language ONLY: do NOT make a spritesheet. Jace Riven's RAZORJACK: lean aggressive interceptor with reverse swept blade wings, long pointed center nose, two exposed oversized engines running alongside fuselage, forward canards, missile rack on each wing. Deep red salvaged armor with dirty ivory stripes, gunmetal frame and orange canopy. Orthographic overhead view, nose points straight DOWN toward bottom of image/player, rear thrusters at TOP. Show the TOP hull surface; not underside and not the front elevation. Symmetric functional aircraft silhouette except tiny surface equipment. Practical stolen/modified Fury-like fighter, scraped serial numbers, small simple broken-chevron rebel badge, visible panel lines, black pixel outlines and metal highlights, limited purposeful pixel palette. Compact crisp pixel clusters at approximately 256x320 sprite resolution, clean nearest-neighbor pixel appearance, not smooth 3D, not vector. Center the entire single ship with 12% empty safe margin on all sides. Transparent alpha background. No shadow on background, no floor, no labels, no UI, no detached parts, no muzzle fire, no motion blur. Short visible engine glow only, entire hull opaque. No extra ships. This is production master art for an enemy ship, not a poster.",
+      "master": "assets/game/roaming_rebels_0922/masters/jace_razorjack.png",
+      "sprite": "assets/game/roaming_rebels_0922/ships/jace_razorjack.png",
+      "facing": "south",
+      "view": "overhead",
+      "alphaBounds": [
+        25,
+        37,
+        1074,
+        1402
+      ]
+    }
+  ]
+}

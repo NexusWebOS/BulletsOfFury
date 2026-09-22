@@ -1,0 +1,7 @@
+# Stage-clear separation — 2026-09-20
+
+The Fury Point conversion now sits below the score row's separator rail, in the narrow metal band above the sign-off. Its font size and horizontal fit still derive from that band, so it neither crosses the sign-off nor pushes the Continue prompt toward the footer. The existing achievement queue is held during Stage Clear, then allowed to resume afterward; awards are not dropped just to make room.
+
+`_BUILD_SOURCE/probe_stageclear_separation_0920.py` rendered native Chromium debrief frames for wide (1920×1080), square (1024×1024) and portrait (900×1600) browser windows. The authored debrief keeps a 477:266 virtual aspect in all three, with the full plate scaled to the available window. Captures are in `_shots/stageclear_separation_0920/`. All three showed the converted score, sign-off and Continue in separate vertical bands. The Stage-1 password stayed in its footer bay; Stage 9 had no password. Two queued achievement notices remained unadvanced during the card. No page or console errors were recorded.
+
+`node --check assets/game.js` passed. The complete assertion suite still exits nonzero: 75 failing names, all in the recorded 76-name baseline. The only absent name is the intermittent Stage-1 sand-tank fixture (`_shots/stageclear_separation_0920/test_fl.log`). The proof uses representative seeded stage statistics and advances the real `drawStageClear` renderer; it does not claim that every stage's earned score has been playtested.

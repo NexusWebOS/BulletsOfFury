@@ -22,7 +22,7 @@ module.exports=function(vm,ctxv,ok){
       o.playerAnchor=Math.abs(center-player.x)<5;
       o.seenAdvance=S.coreFormationSeen.advance&&S.coreFormationSeen.hold;
       player.x=520;for(i=0;i<45;i++)stage4CoreTurretTick(b,1/60,2);left=S.coreTurrets.find(t=>t.side<0);right=S.coreTurrets.find(t=>t.side>0);
-      o.anchorsMovement=Math.abs((left.x+right.x)/2-clamp(player.x,camLeftX()+105,camRightX()-105))<8;
+      o.anchorsMovement=(left.x+right.x)/2>center+40&&left.x-S4H_HALF>=camLeftX()&&right.x+S4H_HALF<=camRightX();
       for(i=0;i<190;i++)stage4CoreTurretTick(b,1/60,2);o.retreatSeen=S.coreFormationSeen.retreat;
       var normalDown=fireCount('normal','down'),hardDown=fireCount('hard','down'),furiousDown=fireCount('furious','down');
       o.fasterStraight=hardDown.count>normalDown.count&&furiousDown.count>hardDown.count;

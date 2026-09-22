@@ -1,0 +1,5 @@
+# Pilot Select reveal re-audit — 2026-09-20
+
+The existing 0919 implementation already covers both queued Pilot Select items: `pcScreenCopy` and `pcUpdate` type identity and biography, fill stat bars sequentially with segment sounds, then reveal the special icon; `pilotSelectWarm` touches all nine portraits, hulls, poses, emblems and special art before the screen; `drawPilot` suppresses details on the GOOD LUCK slide. This was an outdated checklist status, not a fresh gameplay change.
+
+`_BUILD_SOURCE/probe_pilot_reveal_0920.py` stepped a fresh Chromium session through Yuri's typewriter phase, first and second bar fills, full card and GOOD LUCK card. Native screenshots under `_shots/pilot_reveal_0920/` were visually reviewed. The first bar completed before the second filled; the full card showed role, callsign, affiliation, biography, all stats and special; the GOOD LUCK card showed only pilot and ship. No page or console errors occurred. The earlier all-nine-card render is documented in `PILOT_SELECT_DETAILS_0919.md`; this re-audit does not repeat that all-nine test.

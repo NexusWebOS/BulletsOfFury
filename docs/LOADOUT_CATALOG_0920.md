@@ -1,0 +1,7 @@
+# Loadout catalog paging and selected form status — 2026-09-20
+
+The Loadout arsenal now shows one weapon's six authored form badges at a time. D-pad left/right changes weapon, up/down traverses Base and both element pages. The existing D-pad and action-button art explains navigation. The focused row and cell glow, and a status strip spells out the selected weapon, element and whether it is owned, available for Fury Points, awaiting a recipe or locked behind a boss. The existing equipped-form slot and re-spec behavior remain.
+
+Real Chromium verification used `_BUILD_SOURCE/probe_loadout_pages_0920.py`, with screenshots under `_shots/loadout_pages_0920/`. It navigated from the focused weapon into the catalog, across the two element pages and to a locked weapon, then equipped the owned Kinetic form. The selected state remained visible and the probe recorded no page or console errors. The screenshots were reviewed for readable names, page indicator, selected-cell outline and locked-state text.
+
+`node --check assets/game.js` and `git -c core.whitespace=cr-at-eol diff --check` passed. The complete `node _BUILD_SOURCE/test_fl.js` run exited nonzero with 75 failing assertions, all from the recorded 76-name baseline; the intermittent Stage-1 sand-tank assertion was absent. No new failing names occurred. These checks cover navigation and rendered states, not every combination in a full campaign.

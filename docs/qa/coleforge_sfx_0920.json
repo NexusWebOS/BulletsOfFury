@@ -1,0 +1,222 @@
+{
+  "cf_combo_fire_0920": {
+    "file": "assets/game/sounds/cf_combo_fire_0920.mp3",
+    "seconds": 0.31,
+    "peak": 0.78,
+    "rms": 0.135,
+    "peak_at": 0.03,
+    "sources": [
+      "enemy_flame_bolt.mp3",
+      "explosion_air_small_01.mp3"
+    ]
+  },
+  "cf_combo_ice_0920": {
+    "file": "assets/game/sounds/cf_combo_ice_0920.mp3",
+    "seconds": 0.3,
+    "peak": 0.78,
+    "rms": 0.128,
+    "peak_at": 0.005,
+    "sources": [
+      "enemy_ice_bolt.mp3",
+      "explosion_ice_burst.mp3"
+    ]
+  },
+  "cf_combo_lightning_0920": {
+    "file": "assets/game/sounds/cf_combo_lightning_0920.mp3",
+    "seconds": 0.29,
+    "peak": 0.78,
+    "rms": 0.127,
+    "peak_at": 0.005,
+    "sources": [
+      "enemy_electric_bolt.mp3",
+      "explosion_electrical.mp3"
+    ]
+  },
+  "cf_combo_prism_0920": {
+    "file": "assets/game/sounds/cf_combo_prism_0920.mp3",
+    "seconds": 0.34,
+    "peak": 0.78,
+    "rms": 0.199,
+    "peak_at": 0.072,
+    "sources": [
+      "reviewed_enemy_laser.mp3",
+      "shield_graze.mp3"
+    ]
+  },
+  "cf_combo_toxic_0920": {
+    "file": "assets/game/sounds/cf_combo_toxic_0920.mp3",
+    "seconds": 0.38,
+    "peak": 0.78,
+    "rms": 0.123,
+    "peak_at": 0.051,
+    "sources": [
+      "enemyToxicSpit.mp3",
+      "explosion_plasma.mp3"
+    ]
+  },
+  "cf_combo_kinetic_0920": {
+    "file": "assets/game/sounds/cf_combo_kinetic_0920.mp3",
+    "seconds": 0.28,
+    "peak": 0.78,
+    "rms": 0.134,
+    "peak_at": 0.005,
+    "sources": [
+      "cole_pressure_impact_0913.mp3",
+      "debris_scatter_metal.mp3"
+    ]
+  },
+  "cf_combo_chrome_0920": {
+    "file": "assets/game/sounds/cf_combo_chrome_0920.mp3",
+    "seconds": 0.34,
+    "peak": 0.78,
+    "rms": 0.19,
+    "peak_at": 0.007,
+    "sources": [
+      "projectile_ricochet.mp3",
+      "shield_hit_heavy.mp3"
+    ]
+  },
+  "cf_combo_water_0920": {
+    "file": "assets/game/sounds/cf_combo_water_0920.mp3",
+    "seconds": 0.35,
+    "peak": 0.78,
+    "rms": 0.154,
+    "peak_at": 0.069,
+    "sources": [
+      "ice_breath_release.mp3",
+      "shield_graze.mp3"
+    ]
+  },
+  "cf_combo_dark_0920": {
+    "file": "assets/game/sounds/cf_combo_dark_0920.mp3",
+    "seconds": 0.39,
+    "peak": 0.78,
+    "rms": 0.256,
+    "peak_at": 0.048,
+    "sources": [
+      "reviewed_shadow_orb_impact.mp3",
+      "enemy_pulse_laser_alien.mp3"
+    ]
+  },
+  "cf_combo_thermoshock_0920": {
+    "file": "assets/game/sounds/cf_combo_thermoshock_0920.mp3",
+    "seconds": 0.38,
+    "peak": 0.78,
+    "rms": 0.124,
+    "peak_at": 0.025,
+    "sources": [
+      "enemy_flame_bolt.mp3",
+      "explosion_ice_burst.mp3"
+    ]
+  },
+  "cf_fire_wave_0920": {
+    "file": "assets/game/sounds/cf_fire_wave_0920.mp3",
+    "seconds": 0.8,
+    "peak": 0.78,
+    "rms": 0.133,
+    "peak_at": 0.046,
+    "sources": [
+      "firewall_arrive.mp3",
+      "flamethrower_release.mp3"
+    ]
+  },
+  "cf_fire_burst_0920": {
+    "file": "assets/game/sounds/cf_fire_burst_0920.mp3",
+    "seconds": 0.44,
+    "peak": 0.78,
+    "rms": 0.173,
+    "peak_at": 0.037,
+    "sources": [
+      "explosion_fuel_air.mp3",
+      "enemy_flame_bolt.mp3"
+    ]
+  },
+  "cf_fire_geyser_0920": {
+    "file": "assets/game/sounds/cf_fire_geyser_0920.mp3",
+    "seconds": 0.91,
+    "peak": 0.78,
+    "rms": 0.16,
+    "peak_at": 0.124,
+    "sources": [
+      "s2_geyser_erupt_0918.mp3",
+      "flamethrower_ignite.mp3"
+    ]
+  },
+  "cf_shield_destroy_0920": {
+    "file": "assets/game/sounds/cf_shield_destroy_0920.mp3",
+    "seconds": 0.55,
+    "peak": 0.78,
+    "rms": 0.213,
+    "peak_at": 0.087,
+    "sources": [
+      "shield_break.mp3",
+      "explosion_electrical.mp3"
+    ]
+  },
+  "cf_boss_razorback_0920": {
+    "file": "assets/game/sounds/cf_boss_razorback_0920.mp3",
+    "seconds": 0.54,
+    "peak": 0.78,
+    "rms": 0.187,
+    "peak_at": 0.013,
+    "sources": [
+      "cole_sonic_full.mp3",
+      "explosion_tank_cookoff.mp3"
+    ]
+  },
+  "cf_boss_overlord_0920": {
+    "file": "assets/game/sounds/cf_boss_overlord_0920.mp3",
+    "seconds": 0.5,
+    "peak": 0.78,
+    "rms": 0.263,
+    "peak_at": 0.057,
+    "sources": [
+      "reviewed_enemy_laser.mp3",
+      "nsp_rocket_launch.mp3"
+    ]
+  },
+  "cf_boss_warden_0920": {
+    "file": "assets/game/sounds/cf_boss_warden_0920.mp3",
+    "seconds": 0.58,
+    "peak": 0.78,
+    "rms": 0.188,
+    "peak_at": 0.103,
+    "sources": [
+      "enemy_heavy_laser.mp3",
+      "explosion_electrical.mp3"
+    ]
+  },
+  "cf_enemy_flame_0920": {
+    "file": "assets/game/sounds/cf_enemy_flame_0920.mp3",
+    "seconds": 0.26,
+    "peak": 0.78,
+    "rms": 0.135,
+    "peak_at": 0.02,
+    "sources": [
+      "enemy_flame_bolt.mp3",
+      "flamethrower_ignite.mp3"
+    ]
+  },
+  "cf_enemy_ice_0920": {
+    "file": "assets/game/sounds/cf_enemy_ice_0920.mp3",
+    "seconds": 0.26,
+    "peak": 0.78,
+    "rms": 0.099,
+    "peak_at": 0.005,
+    "sources": [
+      "enemy_ice_bolt.mp3",
+      "shield_graze.mp3"
+    ]
+  },
+  "cf_enemy_electric_0920": {
+    "file": "assets/game/sounds/cf_enemy_electric_0920.mp3",
+    "seconds": 0.25,
+    "peak": 0.78,
+    "rms": 0.105,
+    "peak_at": 0.005,
+    "sources": [
+      "enemy_electric_bolt.mp3",
+      "projectile_ricochet.mp3"
+    ]
+  }
+}

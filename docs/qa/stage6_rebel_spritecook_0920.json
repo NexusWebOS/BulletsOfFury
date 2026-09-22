@@ -1,0 +1,35 @@
+{
+  "date": "2026-09-20",
+  "model": "gpt-image-2.5-flare",
+  "quality": "medium",
+  "resolution": "1K",
+  "playable_frame_orientation": "raw SpriteCook views rotated 180 degrees so noses face the player at the bottom of the screen",
+  "credits_used": 192,
+  "notes": "Source sheets and current playable plates were uploaded. GPT-2.5 generated view, somersault, charge/dash and dedicated underside art for each Rebel hull. The 2x2 somersault sheets repeat top-down geometry in places; the playable reel uses the strongest poses plus the separate underside. Signed download URLs are intentionally omitted.",
+  "ships": {
+    "ghost": {
+      "source": {"asset_id": "f481c962-6d02-4b39-b63d-f1f475a3a293", "sha12": "680e18b32f50"},
+      "plate": {"asset_id": "992a690e-751a-4ca0-a979-6f544afb5a6d", "sha12": "cf731808bcc0"},
+      "views": {"asset_id": "98bdfa84-02b6-4e01-849f-95f7d9fea5c3"},
+      "somersault": {"asset_id": "bfc4f98f-e6bf-41c5-8ade-a513fe358ed4"},
+      "underside": {"asset_id": "55db84b7-7f9b-49dc-93c4-1390eea03f32"},
+      "dash": {"asset_id": "588a289c-90e7-4536-a8c2-c72f64ae30cd"}
+    },
+    "phantom": {
+      "source": {"asset_id": "79975ed7-5d32-4865-ab70-eefb584f5ed2", "sha12": "a7b54c447531"},
+      "plate": {"asset_id": "a6a09665-f6b8-4bbb-bfda-f80d6af330d1", "sha12": "3b4689fcd810"},
+      "views": {"asset_id": "dd9fa260-c4d3-401f-ae07-000a3700db62"},
+      "somersault": {"asset_id": "203728ec-3598-4510-848b-6ad6c881817a"},
+      "underside": {"asset_id": "1c1f75d6-3eb4-4f00-9542-65aa31e0062e"},
+      "dash": {"asset_id": "d1850630-740d-439e-a6cd-39e643333089"}
+    },
+    "ouroboros": {
+      "source": {"asset_id": "b9b093f5-54f6-43fe-abdf-142229ba49f2", "sha12": "785b811334a4"},
+      "plate": {"asset_id": "26f9be4d-4613-412f-8bd6-4d6cbe8c9ede", "sha12": "0089ed7f460e"},
+      "views": {"asset_id": "fde24bb4-60bc-4946-97b8-d3ede064d4c2"},
+      "somersault": {"asset_id": "6e06c1ac-0d4b-49b0-963e-6854c76ddecb"},
+      "underside": {"asset_id": "f6fc83db-0e9c-4afa-8922-a841a825eda1"},
+      "dash": {"asset_id": "e13283ba-b0d4-4670-baf7-25953454bf67"}
+    }
+  }
+}

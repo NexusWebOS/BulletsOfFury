@@ -20,6 +20,8 @@ if(typeof window!=='undefined' && window.BOFX && BOFX.img){
   /* the FURNACE TYRANT (0912t) - Mike's approved Chainborn encounter, 45 of its 56 plates. Its own shield set is
      deliberately NOT shipped: he asked for the Magma Ward's fire shield instead of the pack's. */
   for(const _fz of ['body_intact', 'body_damaged', 'body_exposed', 'body_wreck', 'arm_flame_intact', 'arm_flame_damaged', 'arm_flame_exposed', 'arm_cannon_intact', 'arm_cannon_damaged', 'arm_cannon_exposed', 'debris_flame', 'debris_cannon', 'body_rotor', 'body_rotor_damaged', 'flame_jet_0', 'flame_jet_1', 'charge_0', 'charge_1', 'charge_2', 'cannon_flash', 'fireball_0', 'fireball_1', 'fireball_impact', 'damage_smoke_0', 'damage_smoke_1', 'damage_fire_0', 'damage_fire_1', 'boss_explosion', 'overload_wave', 'torso_yaw_0', 'torso_yaw_1', 'torso_yaw_2', 'torso_yaw_3', 'torso_yaw_4', 'torso_yaw_5', 'torso_yaw_6', 'torso_yaw_7', 'head_intact', 'head_damaged', 'head_charged', 'head_wreck', 'chain_link', 'chain_edge', 'laser_muzzle', 'fire_laser']) BOFX.img['fzt_'+_fz]='assets/game/bosses/furnace/fzt_'+_fz+'.png';
+  BOFX.img.fzt_fire_laser_0920='assets/game/bosses/furnace/fzt_fire_laser_0920.png';
+  BOFX.img.frost_furious_beam_0920='assets/game/bosses/frost/frost_furious_beam_0920.png';
   /* the TEMPEST LEVIATHAN (0913b) - Mike's approved jet-duel pack, its red paint palette-swapped to black/dark gray by
      _BUILD_SOURCE/tempest_blackswap_0912u.py. Two hull plates and four ordnance plates. The pack's explosion-0..7 are
      deliberately NOT shipped: they ARE this game's nxp_barrage_0..7, which the rig asks XART for instead. */
@@ -29,6 +31,11 @@ if(typeof window!=='undefined' && window.BOFX && BOFX.img){
   for(const [_wk,_wf] of [['whv_closed','carrier_closed'],['whv_open','carrier_open'],['whv_broken','carrier_broken'],['whv_fan','carrier_fan'],
     ['whv_twreck','carrier_thruster_wreck'],['whv_ace','ace_top'],['whv_ace_belly','ace_belly'],['whv_ace_dmg','ace_damaged'],
     ['xelite_hivewing_idle','elite_jet'],['xelite_hivewing_fire','elite_jet'],['xelite_hivewing_death','elite_jet'],['xelite_hivewing','elite_jet']]) BOFX.img[_wk]='assets/game/bosses/skycarrier/'+_wf+'.png';
+  for(const _r of ['ghost','ouroboros','phantom']){
+    BOFX.img['s6rebel_'+_r]='assets/game/bosses/rebel_squad_0920/'+_r+'_threequarter.png';
+    for(const _pose of ['idle','bank_l','bank_r','roll_l','roll_r','belly','som_0','som_1','som_2','som_3','dash_0','dash_1','dash_2','dash_3'])
+      BOFX.img['s6rebel_'+_r+'_'+_pose]='assets/game/bosses/rebel_squad_0920/frames/'+_r+'_'+_pose+'.png';
+  }
   for(let i=0;i<8;i++){ BOFX.img['whv_ace_br'+i]='assets/game/bosses/skycarrier/ace_br'+i+'.png'; BOFX.img['whv_ace_so'+i]='assets/game/bosses/skycarrier/ace_so'+i+'.png'; }
 }
 
@@ -1966,6 +1973,9 @@ const XART=(function(){
   X._src['nsb_jungle_cruiser'] = 'assets/game/nsb_jungle_cruiser.png';
   X._src['nsb_frost_cruiser']  = 'assets/game/nsb_frost_cruiser.png';   // the same hull swapped to ice (0912s, _BUILD_SOURCE/ice_swap_0912s.py)
   X._src['nsb_olive_carrier']  = 'assets/game/nsb_olive_carrier.png';
+  X._src['lock_frame_0922']='assets/game/ui/lock_0922/frame.png';
+  X._src['s4w_warden_gunner_0919']='assets/game/stage4_warfare/s4w_warden_gunner_0919.png';
+  X._src['s4w_warden_rocketeer_0919']='assets/game/stage4_warfare/s4w_warden_rocketeer_0919.png';
   /* CAMPAIGN MAP v2 PIECES (0912v). Code-owned for the same reason as the hulls above. Baked from
      SpriteCook plates by _BUILD_SOURCE/campaign_map_v2_0912v.py; `cm2_` keeps them off PRELOAD,
      and cmap2Warm touches them from the hub, a screen before the map needs them. */
@@ -1979,6 +1989,7 @@ const XART=(function(){
   for(const k of ['ship','ball','leap','charge','reticle','boomerang_body','boomerang_hammer'])X._src['hammer_'+k]='assets/game/stage5_hammer/'+k+'.png';
   const _archRoot='assets/game/stage5_archmage_0916/';
   for(const k of ['master','idle','twirl_throw','ship_transform','spiked_ball','chaingun_detach_fire','chaingun_break_enrage','dual_uzi_assault','spell_raise','death','effects','hammer','hammer_spin','heat_meter','chaingun_icons'])X._src['arch_'+k]=_archRoot+k+'.png';
+  X._src.arch_stun_0920=_archRoot+'stun_0920.png';
   for(let i=1;i<=5;i++)X._src['micon_chaingun_'+i]=_archRoot+'chaingun_icon_'+i+'.png';
   /* THE FORGE'S OWN ICONS (0917): one badge per element x forgeable slot, generated against the
      authored badge strip (docs/proofs/forge_icons_0917). Loose files under NEW keys - a cell beats
@@ -2010,7 +2021,7 @@ const XART=(function(){
   }
   for(const tier of ['super','ultra','uber']){
     X._src['missile_'+tier+'_icon_0915']='assets/game/ui/missile_tiers_0915/'+tier+'_icon.png';
-    X._src['missile_'+tier+'_box_0915']='assets/game/ui/missile_tiers_0915/'+tier+'_box.png';
+    X._src['missile_'+tier+'_box_0915']='assets/game/ui/missile_tiers_0915/'+tier+'_box_v3.png';
   }
   const _hqSpaceRoot='assets/game/ui/space_armory_0915/';
   X._src.hq_space_box_0915=_hqSpaceRoot+'fury_hq_box.png';
@@ -2094,7 +2105,7 @@ const XART=(function(){
   X._src.forge_fire_laser_0918=_forgeFire+'fire_laser_column.png';
   X._src.forge_fire_blast_0918=_forgeFire+'fire_magma_blast.png';
   /* 0917c: POWERS GAINED's own plate (same family), the FURIOUS coin, the two bombs, the score bullets */
-  X._src['powers_bays_0917c']='assets/game/ui/forge_0917b/powers_bays.png';
+  X._src['powers_single_0919']='assets/game/ui/forge_0917b/powers_single_0919.png';
   X._src['fury_coin_0917c']='assets/game/ui/pickups_0917b/fury_coin.png';
   X._src['fury_bomb_0917c']='assets/game/ui/pickups_0917b/fury_bomb.png';
   X._src['timed_bomb_0917c']='assets/game/ui/pickups_0917b/timed_bomb.png';
@@ -2102,6 +2113,7 @@ const XART=(function(){
   /* 0918: the generated effect animations - 8-frame horizontal strips (fx_install_0918.py) */
   for(const _e of ['fire','ice','lightning','prism','toxic','kinetic','water','chrome','dark']) X._src['efx_burst_'+_e]='assets/game/fx_0918/efx_burst_'+_e+'.png';
   X._src['efx_burn']='assets/game/fx_0918/efx_burn.png';
+  for(let i=0;i<8;i++) X._src['enemy_burn_0922_'+i]='assets/game/fx_burn_0922/burn_'+i+'.png';
   for(const _g of ['fire','water','lightning']) X._src['efx_geyser_'+_g]='assets/game/fx_0918/efx_geyser_'+_g+'.png';
   X._src['efx_debris_0']='assets/game/fx_0918/efx_debris_0.png'; X._src['efx_debris_1']='assets/game/fx_0918/efx_debris_1.png';
   /* THE WHOLE TITLE MENU, REGENERATED AS ONE SHEET (Mike, 0916: "Regenerate all my other buttons
@@ -2156,6 +2168,7 @@ const XART=(function(){
   X._src['mode_ngplus_0917']='assets/game/ui/modes_0917/new_game_plus.png';
   X._src['mode_lock_nexus_0915']='assets/game/ui/modes_0915/nexus_chains.webp';
   for(const _f of ['ocean','bar','btn_save','btn_load','btn_exit']) X._src['cm2_'+_f]='assets/game/campaign_map_v2/'+_f+'.png';
+  X._src['cm2_ocean']='assets/game/campaign_map_v2/ocean_seamless_0920.png';
   /* LASER MIST REWARD ATLAS (0902). One decoded sheet owns the five pickup plates, twenty
      travelling-water frames and all impact/ripple/bubble animation. Runtime rects below keep
      the generated cells padded; no loose duplicate images are loaded. */
@@ -2193,31 +2206,28 @@ const XART=(function(){
                             'talk-closed','talk-small','talk-medium','talk-wide','talk-o'];
   for(const _pp of _CF_PORTRAIT_PILOTS){
     for(const _pe of _CF_PORTRAIT_POSES){
-      X._src['port_cf_'+_pp+'_'+_pe]='assets/game/pilot_portraits/'+_pp+'-'+_pe+'.png';
+      X._src['port_cf_'+_pp+'_'+_pe]='assets/game/pilots_0922/portraits/'+_pp+'-'+_pe+'.png';
     }
   }
-  X._src.port_cf_yuri_alert='assets/game/pilot_portraits/yuri-alert-0919.png';
-  X._src.port_cf_cole_alert='assets/game/pilot_portraits/cole-alert-0919.png';
+  for(const pk of _CF_PORTRAIT_PILOTS){
+    X._src['port_cf_'+pk+'_alert']='assets/game/pilots_0922/portraits/'+pk+'-crash.png';
+    X._src['comm_'+pk+'_alert']='assets/game/pilots_0922/comm/comm_'+pk+'_crash.png';
+  }
+  for(const em of ['neutral','smirking','brooding','sunglasses','shout','smile-shades','salute','thinking']){
+    X._src['port_cf_cole_'+em]='assets/game/pilots_0922/portraits/cole-'+em+'.png';
+    X._src['comm_cole_'+em]='assets/game/pilots_0922/comm/comm_cole_'+em+'.png';
+  }
   X._src.fire_whip_fx_0919='assets/game/player_weapons/fire_whip_0919/fire_whip_fx.png';
   X._src.micon_firewhip_0919='assets/game/player_weapons/fire_whip_0919/fire_whip_icon.png';
   X._src.fire_whip_icons_0919='assets/game/player_weapons/fire_whip_0919/fire_whip_tiers.png';
-  /* PILOT-SELECTED CAMPAIGN OPENINGS (0901). The approved ImageGen cinematic pack contains
-     six opening views plus a dedicated centered stern view of every Fury aircraft, so scenes use
-     real generated art instead of another static HQ briefing or canvas-drawn stand-ins. Keep
-     these registrations code-owned: manifest.js is generated, and each scene lazily warms only
-     the one- or two-pilot cast it needs. */
-  const _CIN_PILOTS=['axel','cole','decker','falva','freezer','juggernaut','lizzie','maverick','yuri'];
-  const _CIN_VIEWS=['01_top_down','02_front_left_3q','03_front_right_3q',
-                    '04_rear_left_3q','05_rear_right_3q','06_hard_bank','07_center_rear'];
-  for(const _cp of _CIN_PILOTS) for(let _cv=0;_cv<_CIN_VIEWS.length;_cv++){
-    X._src['cinship_'+_cp+'_'+(_cv+1)]='assets/game/cinematic_ships/'+_cp+
-      '/cutouts_native/'+_CIN_VIEWS[_cv]+'.png';
-  }
+  /* Cinematics use the same current player atlas as gameplay and pilot select.
+     Retired cinematic cutouts remain archived on disk, but are not loaded. */
   X._src['cinbg_fury_hq']='assets/game/cinematic_campaign/exteriors_generated_official/01_fury_hq_island_aerial_official_generated.png';
   X._src['cinbg_hq_aerial']='assets/game/cinematic_campaign/exteriors_generated_official/01_fury_hq_island_aerial_official_generated.png';
   X._src['cinbg_hq_beach']='assets/game/cinematic_campaign/exteriors_generated_official/02_fury_hq_beach_approach_official_generated.png';
   X._src['cinbg_hq_gate']='assets/game/cinematic_campaign/exteriors_generated_official/03_fury_hq_jungle_gate_official_generated.png';
   X._src['cinbg_jungle']='assets/game/cinematic_level_approaches/stage01_rumble_in_the_jungle_approach.png';
+  X._src['cinbg_stage1_route']='assets/game/mapJungle.png';
   X._src['cinbg_hq_warroom']='assets/game/cinematic_backgrounds/fury_hq/04_strategic_war_room.png';
   X._src['cin_cockpit_frame']='assets/game/cinematic_campaign/solo_cockpit_frame.png';
   /* ENDING CINEMATIC (0902). Keep these code-owned like the other cinematic plates: manifest.js
@@ -2311,6 +2321,7 @@ const XART=(function(){
   X._src['cfx_stage7_warden_cannon']='assets/game/combat_final/stage7_warden_cannon_barrage_spritecook.png';
   X._src['cfx_stage7_warden_rail']='assets/game/combat_final/stage7_warden_rail_charge_spritecook.png';
   X._src['cfx_stage7_warden_shell']='assets/game/combat_final/stage7_warden_toxic_pressure_shell_spritecook.png';
+  X._src['cfx_stage7_warden_machine_round']='assets/game/combat_final/stage7_warden_toxic_machine_round_0920.png';
   X._src['cfx_stage7_warden_mine']='assets/game/combat_final/stage7_warden_portal_mine_spritecook.png';
   X._src['cfx_stage7_warden_spear']='assets/game/combat_final/stage7_warden_rift_rail_spear_spritecook.png';
   X._src['cfx_stage7_warden_roar']='assets/game/combat_final/stage7_warden_rear_roar_spritecook.png';
@@ -2387,15 +2398,15 @@ const XART=(function(){
      side profile, and the back view with the CF jacket logo. */
   X._src.yuri_avatar='assets/game/yuri_v2/yuri_avatar.png';
   for(const em of ['idle','anger','smile','crash','sad','laugh','victory'])
-    X._src['yuri_v2_'+em]='assets/game/pilot_portraits/yuri-'+(em==='smile'?'happy':em)+'.png';
+    X._src['yuri_v2_'+em]='assets/game/pilots_0922/portraits/yuri-'+(em==='smile'?'happy':em)+'.png';
   for(const pk of _CF_PORTRAIT_PILOTS)for(const em of _CF_PORTRAIT_POSES)
-    X._src['comm_'+pk+'_'+em]='assets/game/comm_portraits_0914/comm_'+pk+'_'+em+'.png';
+    X._src['comm_'+pk+'_'+em]='assets/game/pilots_0922/comm/comm_'+pk+'_'+em+'.png';
   /* ⚠ SQUARE BORDERED ROSTER AVATARS (Mike, 0906): "make sure you use square'd bordered
      portraits for each pilot." The nine avatar plates share one approved frame template
      and are rebuilt from current pilot_portraits/*-idle.png by
      _BUILD_SOURCE/rebuild_pilot_avatars_0919.py. */
   for(const _pa of ['axel','decker','maverick','freezer','juggernaut','yuri','lizzie','falva','cole'])
-    X._src['pav_'+_pa]='assets/game/pilot_avatars/pav_'+_pa+'.png';
+    X._src['pav_'+_pa]='assets/game/pilots_0922/portraits/'+_pa+'-idle.png';
   /* ⚠ ALL NINE FRONT-FACING FIGURES, ONE FOLDER, ONE LOOP (Mike, 0909: "should be part of the
      same row/atlas. his other frames you can drop, theyre bad for Yuri").
 
@@ -2416,6 +2427,13 @@ const XART=(function(){
      Yuri's _0 moved to pilot_bodies/ with the rest, so the nine are one folder and one loop. */
   for(const _pb of ['axel','decker','maverick','freezer','juggernaut','lizzie','falva','cole','yuri'])
     X._src[_pb+'_body_0']='assets/game/pilot_bodies/'+_pb+'_body_0.png';
+  X._src.cole_body_0922='assets/game/pilots_0922/bodies/cole.png';
+  // Roaming Rebels: generated master art, available to previews/editors without changing encounters.
+  X._src.rr_roster_0922='assets/game/roaming_rebels_0922/masters/roaming_rebels_roster.png';
+  for(const id of ['voss_iron_vulture','nyx_ghostknife','rook_breachhammer','kaia_signal_wraith','jace_razorjack'])
+    X._src['rr_ship_'+id]='assets/game/roaming_rebels_0922/ships/'+id+'.png';
+  for(const id of ['voss','nyx','rook','kaia','jace'])
+    X._src['rr_portrait_'+id]='assets/game/roaming_rebels_0922/portraits/'+id+'.png';
   /* ⚠ SIX AFFILIATION EMBLEMS FOR NINE PILOTS, KEYED BY FACTION AND NOT BY PILOT. Two pilots
      fly AIRFORCE, two are INDEPENDENT, two are PRINCESSES OF THE SKY - a faction badge is worn
      by its members, so keying these per pilot would have produced two different Airforce
@@ -2870,11 +2888,14 @@ const XART=(function(){
     return n;
   };
   X._touch=function(k){
-    // New Yuri identity is enforced before caches/atlas lookup, including legacy callers.
-    if(k==='face_yuri')k='yuri_avatar';
-    const yp=/^port_yuri_(.+)$/.exec(k||'');
-    if(yp){const em=yp[1]==='smile'?'happy':yp[1];
-      k='port_cf_yuri_'+(em==='talk'?'talk-closed':em);}
+    // Current likenesses resolve before atlas cells and caches, including legacy callers.
+    const oldPort=/^port_(axel|cole|decker|falva|freezer|juggernaut|lizzie|maverick|yuri)_(.+)$/.exec(k||'');
+    if(oldPort){let em=oldPort[2]==='smile'?'happy':oldPort[2];if(em==='talk')em='talk-closed';
+      k='port_cf_'+oldPort[1]+'_'+em;if(!X._src[k])k='port_cf_'+oldPort[1]+'_idle';}
+    const oldFace=/^face_(axel|cole|decker|falva|freezer|juggernaut|lizzie|maverick|yuri)$/.exec(k||'');
+    if(oldFace)k='port_cf_'+oldFace[1]+'_idle';
+    if(k==='yuri_avatar')k='port_cf_yuri_idle';
+    if(k==='cole_body_0'||k==='cinseat_cole'||/^pose_cole_/.test(k||''))k='cole_body_0922';
 
     /* CELLS ARE CHECKED FIRST (drop 0806u). BOFX.img still names the SHEET for every atlased
        key, so that any consumer asking "is this registered / is the file there" gets a true
@@ -3011,8 +3032,8 @@ function drawBossSprite(b){
        band resolved to a missing key, so from 66% down to 33% HP the chopper's
        BODY drew nothing while the rotor kept spinning on top of it. */
     const bodyKey = frac>0.5 ? 'ovbody_intact' : 'ovbody_critical';
-    const bim=XART.get(bodyKey);
-    const w=b.w*1.15, h=w*(bim.naturalHeight/bim.naturalWidth);
+    const bim=(diffKey==='furious'?ovFuryPlate(bodyKey):null)||XART.get(bodyKey);
+    const w=b.w*1.15, h=w*((bim.naturalHeight||bim.height)/(bim.naturalWidth||bim.width));
     const dx=b.x+(b._ovJitterX||0);
     const yy=b.y+Math.sin((b.t||0)*1.6)*6+(b._ovJitterY||0); b._drawY=yy; b._drawW=w; b._drawH=h;
     // rotor spin: derive angle from the boss clock (b.t advances each update) -> deg, pick nearest 5-deg frame
@@ -3044,6 +3065,9 @@ function drawBossSprite(b){
     }
     // body first, then the spinning rotor overlay (same rect = shared 192 center anchor)
     const piv=b._pivot||0;
+    if(b._ovSonic){ctx.save();ctx.shadowColor='#63ff25';ctx.shadowBlur=14;
+      ctx.translate(dx,yy);ctx.rotate(piv);ctx.drawImage(bim,-w/2,-h/2,w,h);ctx.restore();}
+
     // REAL missile-launch flash (mlaunch_0..6, megapack) anchored on the firing wing pod:
     // ignition point at the pod, plume blasting down the rocket's exit line.
     const _drawPodFlash=()=>{
@@ -3056,6 +3080,7 @@ function drawBossSprite(b){
       }
     };
     const _drawChargeAlert=()=>{
+      if(b._ovSonic)ovSonicWarningDraw(b);
       if(b._ovState!=='chargeTell'||!b._chargeTell)return;
       const T=b._chargeTell,p=ovChargeWarningProgress(T),hub=ovChargeOrigin(b,T);
       combatWarningDraw(b,{x:hub.x,y:hub.y,ex:T.lane,ey:T.dir<0?0:VH,progress:p,width:42,alertOnly:true});
@@ -3065,17 +3090,17 @@ function drawBossSprite(b){
       ctx.drawImage(bim,dx-w/2,yy-h/2,w,h);
       if(rim){ ctx.save(); ctx.globalAlpha=0.9; ctx.drawImage(rim,dx-w/2,yy-h/2,w,h); ctx.restore(); }
       _drawPodFlash();
-      if(b._enraged){ const rage=xartTint(bodyKey,'#ff321f',0.62); if(rage){ ctx.save(); ctx.globalCompositeOperation='lighter'; ctx.globalAlpha=0.10+0.08*Math.sin((b.t||0)*16); ctx.drawImage(rage,dx-w/2,yy-h/2,w,h); ctx.restore(); } }
+      if(b._enraged&&diffKey!=='furious'){ const rage=xartTint(bodyKey,'#ff321f',0.62); if(rage){ ctx.save(); ctx.globalCompositeOperation='lighter'; ctx.globalAlpha=0.10+0.08*Math.sin((b.t||0)*16); ctx.drawImage(rage,dx-w/2,yy-h/2,w,h); ctx.restore(); } }
       if(b.flash>0){ const tc=xartTint(bodyKey,hitFlashColor(b,b.flash>0.04?'#ffffff':'#ff8a4a'),0.85); if(tc) ctx.drawImage(tc,dx-w/2,yy-h/2,w,h); }
       ctx.restore();
       _drawChargeAlert();
-      b._pivot = piv*0.93;                              // ease pivot back to level (per-frame decay)
+      if(!b._ovSonic)b._pivot = piv*0.93;                              // ease pivot back to level (per-frame decay)
       return;
     }
     ctx.drawImage(bim,dx-w/2,yy-h/2,w,h);
     if(rim){ ctx.save(); ctx.globalAlpha=0.9; ctx.drawImage(rim,dx-w/2,yy-h/2,w,h); ctx.restore(); }
     _drawPodFlash();
-    if(b._enraged){ const rage=xartTint(bodyKey,'#ff321f',0.62); if(rage){ ctx.save(); ctx.globalCompositeOperation='lighter'; ctx.globalAlpha=0.10+0.08*Math.sin((b.t||0)*16); ctx.drawImage(rage,dx-w/2,yy-h/2,w,h); ctx.restore(); } }
+    if(b._enraged&&diffKey!=='furious'){ const rage=xartTint(bodyKey,'#ff321f',0.62); if(rage){ ctx.save(); ctx.globalCompositeOperation='lighter'; ctx.globalAlpha=0.10+0.08*Math.sin((b.t||0)*16); ctx.drawImage(rage,dx-w/2,yy-h/2,w,h); ctx.restore(); } }
     if(b.flash>0){ const tc=xartTint(bodyKey,hitFlashColor(b,b.flash>0.04?'#ffffff':'#ff8a4a'),0.85); if(tc) ctx.drawImage(tc,dx-w/2,yy-h/2,w,h); }
     _drawChargeAlert();
     return;
@@ -4230,6 +4255,9 @@ function cutsceneFor(pilotKey){
    sitting down mid-conversation. `seated` is therefore a parameter, not a global preference.
    ============================================================ */
 function cutPose(pilotKey, pose, seated){
+  /* The old cinematic and seated Yuri plates depict the rejected likeness. */
+  if(pilotKey==='yuri')return 'yuri_body_0';
+  if(pilotKey==='cole')return 'cole_body_0922';
   if(seated){
     const sk='cinseat_'+pilotKey;
     if(typeof XART!=='undefined' && XART._src && XART._src[sk]) return sk;
@@ -5204,7 +5232,8 @@ function drawLevelMaster(dt){
          (the gravity-conversion guard, the pause), so space keeps moving through the beats
          that freeze gameplay - which is the half of his note about converting *while*
          scrolling. */
-      _stage5SpaceScroll += dt*STAGE5_SPACE_CRUISE*((typeof wdScrollMul==='function') ? wdScrollMul() : 1);   // the warp drive runs space faster (0912v)
+      const cruise=STAGE5_SPACE_CRUISE*((typeof wdScrollMul==='function') ? wdScrollMul() : 1);
+      _stage5SpaceScroll += dt*((typeof s5run!=='undefined'&&s5run&&!s5run.done)?Math.max(cruise,S5R_SPEED):cruise); // gates ride this exact background travel
       _loopScroll=_stage5SpaceScroll;
     }
     if(run.stage===6){
@@ -5978,6 +6007,8 @@ function weaponVariant(w, opt){
 function heldVariant(w){
   if(typeof run==='undefined' || !run) return null;
   const v = run.wvars && run.wvars[w];
+  if(v==='icebreath'&&_pilotKey()!=='freezer')return 'flamethrower';
+  if(v==='fireice'&&_pilotKey()!=='freezer')return 'fireorb';
   if(v) return v;
   return (typeof weaponVariant==='function') ? weaponVariant(w) : null;
 }
@@ -6527,6 +6558,7 @@ function drawEncounterClocks(){
 function drawHUDOverlay(){
   if(typeof drawRollCharge==='function') drawRollCharge();
   if(typeof drawEquipCorner==='function') drawEquipCorner();
+  if(typeof drawIncomingLockHud==='function') drawIncomingLockHud();
   let ix=VW-10;
   // shield/speed shown as HUD EQUIPMENT pips now — no overlay icons
   if(boss && bossActive && bossHealthVisible(boss)){
@@ -7343,7 +7375,7 @@ const Input = (()=>{
     const r=cv.getBoundingClientRect();
     const cx=(e.touches?e.touches[0].clientX:e.clientX);
     const cy=(e.touches?e.touches[0].clientY:e.clientY);
-    const v=state===GS.PILOT?pilotViewSize():{w:VW,h:VH};
+    const v=state===GS.PILOT?pilotViewSize():{w:debriefFamily(state)?cutsceneViewWidth():VW,h:VH};
     const nx=clamp((cx-r.left)/r.width*v.w,0,v.w), ny=clamp((cy-r.top)/r.height*v.h,0,v.h);
     if(Math.abs(nx-mouse.x)>0.5 || Math.abs(ny-mouse.y)>0.5) mouse.moved=true;   // real movement
     mouse.x=nx; mouse.y=ny; mouse.active=true;
@@ -7410,7 +7442,7 @@ const Input = (()=>{
     const live=[];
     for(let i=0;i<(pads?pads.length:0);i++){ if(pads[i]) live.push(pads[i]); }
     const gp=live[0], gp2=live[1];
-    if(!gp){ if(gpConnected) gpConnected=false; return; }
+    if(!gp){gpConnected=false;for(const k in _padHeld){_padHeld[k]=false;keys[k]=false;pressed[k]=false;}return;}
     gpConnected=true;
     const setk=(name,held)=>{
       if(held && !_padHeld[name]){ pressed[name]=true; }
@@ -7419,7 +7451,7 @@ const Input = (()=>{
     /* P2's pad runs the identical mapping under a `pad2_` prefix. Written once and called twice
        rather than copied, because a second copy of the stick deadzone is a second place for the
        0822af double-tap bug to come back. */
-    if(gp2) padInto(gp2,'pad2_',setk);
+    if(gp2) padInto(gp2,'pad2_',setk);else for(const k in _padHeld)if(k.startsWith('pad2_'))setk(k,false);
     padInto(gp,'pad_',setk);
   }
   /* One pad's whole mapping, under whatever prefix it was handed. */
@@ -7559,13 +7591,13 @@ const GS = { BOOT:'boot', LOADING:'loading', TITLE:'title', DIFF:'diff', PILOT:'
   /* where Furious Points are spent (ACH, 0916) */
   VAULT:'vault', ARMORY:'armory',
   /* the Forge sequence's own beats (0917b): the weld, the product, the six bays */
-  FORGING:'forging', FORGED:'forged', LOADOUT:'loadout', POWERS:'powers' };
+  FORGING:'forging', FORGED:'forged', LOADOUT:'loadout', SUPPLIES:'supplies', POWERS:'powers' };
 /* ⚠ ONE LIST OF THE SCREENS THAT SHARE THE DEBRIEF'S ASPECT (0917b). It was written out four times
    (both viewport lines, the setState predicate, the HUD wants) and 0916 records that a state missing
    from ONE of them draws its plate stretched into the play column. Three new states would have been
    twelve edits; this is one. */
 function debriefFamily(st){
-  return st===GS.STAGECLEAR||st===GS.UNLOCKS||st===GS.POWERS||st===GS.FORGE||st===GS.FORGING||st===GS.FORGED||st===GS.LOADOUT;
+  return st===GS.STAGECLEAR||st===GS.UNLOCKS||st===GS.POWERS||st===GS.FORGE||st===GS.FORGING||st===GS.FORGED||st===GS.LOADOUT||st===GS.SUPPLIES;
 }
 let state = GS.BOOT;
 /* ============================================================
@@ -8327,10 +8359,21 @@ function forgeDiscovered(){
 }
 function forgeApply(){
   if(!run) return false;
-  const f=forgeEntry(run.weapon|0); if(!f) return false;
-  const cur=run.infusion;
-  if(cur && cur.elem===f.elem && (cur.lv|0)>=(f.lv|0)) return false;
-  run.infusion={elem:f.elem, lv:Math.max(1,Math.min(INFUSION_MAX,f.lv|0)), hits:0};
+  const w=run.weapon|0, f=forgeEntry(w), cur=run.infusion;
+  if(!f){
+    // A forged aura belongs to its equipped slot; a bare pickup must not inherit it.
+    // An independent field infusion (no _forgeW) retains its own lifetime.
+    if(cur&&cur._forgeW!=null) run.infusion=null;
+    return false;
+  }
+  const lv=Math.max(1,Math.min(INFUSION_MAX,f.lv|0));
+  // An independently collected infusion at this element and level keeps its hit
+  // counter; only a prior forged slot is replaced by this slot's exact level.
+  if(cur&&cur._forgeW==null&&cur.elem===f.elem&&(cur.lv|0)>=lv) return false;
+  // The same element can have different levels on two weapons. Switching slots must
+  // apply this slot's level, not keep the previous weapon's stronger aura.
+  if(cur&&cur._forgeW===w&&cur.elem===f.elem&&(cur.lv|0)===lv) return false;
+  run.infusion={elem:f.elem,lv:lv,hits:0,_forgeW:w};
   if(f.elem==='lightning' && typeof XART!=='undefined'){ try{ XART.rdy('chain_bolt_0'); XART.rdy('nchp_0'); }catch(_fa){} }
   return true;
 }
@@ -8369,8 +8412,8 @@ function forgeSelect(w,elem){
 }
 function weaponBaseForms(w){
   const d=run&&run.forgeElems||{}, pk=(typeof _pilotKey==='function')?_pilotKey():'', out=[];
-  if((w|0)===4){ out.push({kind:'variant',id:'flamethrower',name:'FLAMETHROWER'}); if(d.ice||pk==='freezer') out.push({kind:'variant',id:'icebreath',name:'ICE BREATH'}); }
-  else if((w|0)===5){ out.push({kind:'variant',id:'iceorb',name:'ICE ORB'}); if(d.fire) out.push({kind:'variant',id:'fireorb',name:'FIRE ORB'}); if((d.fire&&d.ice)||(pk==='freezer'&&run&&(run.stage|0)>=2)) out.push({kind:'variant',id:'fireice',name:'THERMOSHOCK'}); }
+  if((w|0)===4){ out.push({kind:'variant',id:'flamethrower',name:'FLAMETHROWER'}); if(pk==='freezer') out.push({kind:'variant',id:'icebreath',name:'ICE BREATH'}); }
+  else if((w|0)===5){ out.push({kind:'variant',id:'iceorb',name:'ICE ORB'}); if(d.fire) out.push({kind:'variant',id:'fireorb',name:'FIRE ORB'}); if(pk==='freezer'&&run&&(run.stage|0)>=2) out.push({kind:'variant',id:'fireice',name:'THERMOSHOCK'}); }
   else { if((w|0)===3 && pk==='maverick'){
       out.push({kind:'variant',id:'mavhoming',name:'HOMING LANCES'});
       if((run.stage|0)>1 || run._mavBeamUnlocked) out.push({kind:'variant',id:'laserbeam',name:'STRAIGHT LASER'});
@@ -8390,7 +8433,7 @@ function weaponFormSelect(w,opt){
     const r=forgeSelect(w,opt.elem);
     if(r==='ok'){
       if(!run.wvars) run.wvars=WEAPONS.map(()=>null);
-      if((w|0)===4) run.wvars[w]=opt.elem==='ice'?'icebreath':'flamethrower';
+      if((w|0)===4) run.wvars[w]=opt.elem==='ice'&&_pilotKey()==='freezer'?'icebreath':'flamethrower';
       if((w|0)===5) run.wvars[w]=opt.elem==='fire'?'fireorb':'iceorb';
       if((w|0)===3) run.wvars[w]=null;
     }
@@ -8430,7 +8473,7 @@ function forgeLoadoutSync(){
    re-spec, or more weapons unlocked than the loadout holds. An empty page teaches mashing (the
    concept note said so, and the unlock page already skips itself the same way). */
 function forgeVisible(){
-  if(!run) return false;
+  if(!run||(run.stage|0)===4||(run.stage|0)===9) return false;
   if(forgeDiscovered().length) return true;
   if(run.forge && Object.keys(run.forge).length) return true;
   const pool=(typeof crateWeaponPool==='function')?crateWeaponPool(true):[];
@@ -8466,7 +8509,7 @@ function infusionFusion(a,b){
   const A=INFUSIONS[a], B=INFUSIONS[b]; if(!A||!B) return 0;
   const L=camLeftX(), R=camRightX(); let n=0;
   const touch=(e,el)=>{
-    if(el==='fire') e._burn=Math.max(e._burn||0, DK_BURN_TIME);
+    if(el==='fire') enemyBurnApply(e,DK_BURN_TIME);
     else if(el==='ice'){ e._frozen=(e._frozen||0)+1; e.vx*=0.4; e.vy*=0.4; }
     else if(el==='toxic'){ e._poison=Math.max(e._poison||0,3.0); e._poisonLv=2; }
     else if(el==='water') e._soaked=3.0;
@@ -8503,12 +8546,12 @@ function infusionOnHit(e,b,dmg){
        killed by fire or lightning raises that element's column (steam, or a charged plume) */
     if(e._soaked>0 && e.hp<=0 && lv>=2 && (b._inf==='fire'||b._inf==='lightning')) geyserSpawn(e.x,e.y,b._inf);
     if(b._inf==='fire'){
-      e._burn=Math.max(e._burn||0, DK_BURN_TIME*(0.7+0.3*lv));
+      enemyBurnApply(e,DK_BURN_TIME*(0.7+0.3*lv),b);
       /* the FLAMING GEYSER off a high-level fire kill (0918) - more often the higher the forge */
       if(e.hp<=0 && lv>=3 && !e._geyDone && Math.random()<[0,0,0,0.22,0.36,0.52][Math.min(5,lv)]){ e._geyDone=1; geyserSpawn(e.x,e.y,'fire'); }
       if(lv>=3 && !b._burst){ b._burst=1; explode(e.x,e.y,22,'red','fireball');
         for(const o of enemies){ if(o===e||o.dead||o._dyingT!=null) continue;
-          if(dist2(o.x,o.y,e.x,e.y)<64*64){ hitEnemy(o, Math.max(2,dmg*0.5)); o._burn=Math.max(o._burn||0,DK_BURN_TIME*0.7); } } }
+          if(dist2(o.x,o.y,e.x,e.y)<64*64){ hitEnemy(o, Math.max(2,dmg*0.5)); enemyBurnApply(o,DK_BURN_TIME*0.7,b); } } }
     } else if(b._inf==='ice'){
       e.vx*=0.55; e.vy*=0.55; e._frzFlash=0.14;
       e._infHits=(e._infHits|0)+1;
@@ -8607,7 +8650,7 @@ function geyserTick(dt){
       if(g.hostile){ if(!player.dead && typeof playerHit==='function' && Math.abs(player.x-g.x)<lane*0.75 && player.y<g.y && player.y>g.y-g.h) playerHit(); }
       else for(const e of enemies){ if(e.dead||e._dyingT!=null) continue;
       if(Math.abs(e.x-g.x)<lane+(e.w||20)*0.3 && e.y<g.y && e.y>g.y-g.h){ e._geyT=(e._geyT||0)-dt; if(e._geyT<=0){ e._geyT=0.16;
-        if(g.kind==='fire') e._burn=Math.max(e._burn||0,DK_BURN_TIME*0.6);
+        if(g.kind==='fire') enemyBurnApply(e,DK_BURN_TIME*0.6);
         hitEnemy(e, g.kind==='lightning'?4:3); } } }
       const col=g.kind==='fire'?'#ff6a1e':g.kind==='lightning'?'#ffe03a':'#7fe0ff';
       if(chance(0.9)) particles.push({x:g.x+rnd(-8,8),y:g.y-rnd(0,g.h),vx:rnd(-0.5,0.5),vy:rnd(-3,-1),life:rnd(0.2,0.45),t:0,r:rnd(1.5,3),color:chance(0.4)?'#ffffff':col}); }
@@ -8619,7 +8662,7 @@ function geyserTick(dt){
    that cannot be reflected (beams, lock-bound missiles that are already dead) are left alone. */
 function chromeMirror(x,y,R,lv){
   let n=0; const R2=R*R;
-  for(const q of eBullets){ if(!q||q.dead||q.kind==='beam'||q._beam) continue;
+  for(const q of eBullets){ if(!q||q.dead||q._weaponProof||q.kind==='beam'||q._beam) continue;
     if(dist2(q.x,q.y,x,y)>R2) continue;
     q.dead=true; n++;
     const sp=7+lv;
@@ -8647,7 +8690,7 @@ function voidTick(dt){
 function furiousSellable(id){const it=FURIOUS_SHOP[id];if(!it)return false;
   if(it.kind==='media')return !!it.media; return !it.pending;}
 function furiousShopIds(){return Object.keys(FURIOUS_SHOP);}
-function furiousSpent(){let n=0;for(const id of Object.keys(achievementState.owned||{})){const q=achievementState.owned[id];n+=Number.isFinite(q&&q.cost)?q.cost:((FURIOUS_SHOP[id]||{}).cost|0);}return n;}
+function furiousSpent(){let n=0;for(const q of (achievementState.fp&&achievementState.fp.supplies)||[])n+=q.cost;for(const id of Object.keys(achievementState.owned||{})){const q=achievementState.owned[id];n+=Number.isFinite(q&&q.cost)?q.cost:((FURIOUS_SHOP[id]||{}).cost|0);}return n;}
 /* THE POOL IS BOTH INCOMES (Mike, 0917: "Achievement points are also tied to this"). His earlier
    "these are not to be purchased through the achievement system" is about the SHOP - the awards
    gallery sells nothing, the Vault and the Armory do - and that is unchanged. What an award pays
@@ -8886,7 +8929,10 @@ function achievementNormalize(v){
   /* THE SCORE BANK (0917) rides the same store, for the same reason `owned` does: one profile, one
      save, and a version bump would delete every award. Each field is re-typed on the way in. */
   if(v.fp&&typeof v.fp==='object'){
-    out.fp={carry:Math.max(0,v.fp.carry|0),levels:[]};
+    out.fp={carry:Math.max(0,v.fp.carry|0),levels:[],supplies:[]};
+    if(Array.isArray(v.fp.supplies))for(const q of v.fp.supplies){
+      if(q&&['life','continue'].includes(q.kind)&&Number.isSafeInteger(q.cost)&&q.cost>0)out.fp.supplies.push({kind:q.kind,cost:q.cost,at:Number(q.at)||0});
+    }
     if(Array.isArray(v.fp.levels)) for(const e of v.fp.levels){ if(e&&Number.isFinite(e.fp)) out.fp.levels.push({stage:e.stage|0,score:e.score|0,fp:e.fp|0,at:e.at|0}); }
   }
   if(v.bank&&typeof v.bank==='object'){
@@ -10407,6 +10453,17 @@ function chargeTick(dt){
     const ez=function(t){ return 1-(1-t)*(1-t); };          // hard out of the blocks, settling
     player.y -= (ez(k)-ez(kp))*d.dist;
     if(typeof PLAY!=='undefined') player.y=clamp(player.y, PLAY.y+12, PLAY.y+PLAY.h-6);
+    if(typeof PLAY!=='undefined' && player.y<=PLAY.y+13){
+      d.t=d.dur; d.hitEdge=true;
+    }
+    if(!d.hitEdge){
+      for(const e of enemies){if(e.dead||e._dyingT!=null)continue;
+        if(Math.abs(e.x-player.x)<(e.w||24)*.38+11&&Math.abs(e.y-player.y)<(e.h||24)*.36+12){
+          d.t=d.dur;d.hitEdge=true;break;}}
+    }
+    if(!d.hitEdge&&bossActive&&boss&&!boss.dead&&Math.abs(boss.x-player.x)<boss.w*.32+11&&Math.abs(boss.y-player.y)<boss.h*.30+12){
+      d.t=d.dur;d.hitEdge=true;
+    }
     /* the ram leaves a wake, so the distance you bought is visible after the fact - 0912z: bigger, and allowed past the
        ordinary particle cap, which a boss fight fills and which used to starve the wake to nothing */
     if(typeof particles!=='undefined' && particles.length<560){
@@ -10419,6 +10476,11 @@ function chargeTick(dt){
     if(typeof shake!=='undefined') shake=Math.max(shake, 3+4*d.k*(1-k));
     if(d.t>=d.dur){
       player._chgDash=null;
+      if(d.hitEdge && !player.somer){
+        player.somer={t:0,dur:SS_DUR,y0:player.y};
+        player.invuln=Math.max(player.invuln,Math.ceil(SS_DUR*60)+4);
+        if(Audio.SFX&&(Audio.SFX.arcBarrelRoll||Audio.SFX.dash))(Audio.SFX.arcBarrelRoll||Audio.SFX.dash)();
+      }
       weaponFeedbackOff('juggernautRamLoop');
       weaponFeedbackBurst('ram',player.x,player.y-8,56+28*d.k,.28);
       /* 0912z: the ram LANDS - a ring where it stopped, a short shake and a thump */
@@ -10806,7 +10868,7 @@ const STAGES = [
    /* STAGE 6 (drop 0801cf): leviathan's sectional code is not in the registered
       nsx_ set — it drew nothing, measured. STORM SOVEREIGN is the pack's stage-6
       boss. */
-   length:56, boss:'warhive'},   // 0918: the WARHIVE CARRIER + NIGHTWING ACE. 'doomsdaycarriermk2' restores the Mk II fight (kept whole, still spawnable by kind)
+   length:75, boss:'warhive'},   // 0918: the WARHIVE CARRIER + NIGHTWING ACE. 'doomsdaycarriermk2' restores the Mk II fight (kept whole, still spawnable by kind)
   {n:7, name:'STAGE 7', sub:'NOT ANOTHER SEWER LEVEL',  bg:'sewer',  music:'stage7mus',
    /* STAGE 7 (drop 0801cf): cesspool drew no art at all — 0 image blits, purely
       procedural shapes. TOXIC LEVIATHAN is the pack's stage-7 boss. */
@@ -12929,6 +12991,7 @@ const SHIPS=[];
       c.vy=0; c.pattern='s6storm'; c._s6storm=type;
       c.shoots=false; c.fk=null; c.fireRate=2.0; c.dropOk=true;
       c.impact=!!H.impact;
+      if(opt._jetManeuver){ c.pattern='jetmaneuver'; c._jetManeuver={mode:opt._jetManeuver,t:0,leg:0,bombed:false}; }
       break;
     }
     case 's7lamprey': case 's7barge': case 's7pipe': case 's7walker': case 's7sampler':
@@ -13368,6 +13431,10 @@ const SHIPS=[];
      at this point in the function. Null leaves the generic path nothing to resolve. */
   /* both space rosters, for the same reason - see the note above */
   if(c._s9void || c._s5space) c.art=null;
+  if(opt._jetManeuver&&!c._jetManeuver&&typeof isJetEnemy==='function'&&isJetEnemy(c)){
+    c._jetManeuver={mode:opt._jetManeuver,t:0,leg:0,bombed:false};
+    c.pattern='jetmaneuver';c.shoots=false;c.fk=null;
+  }
   /* Shield assignment is intentionally last: stage-specific setup above owns final HP/type/size,
      so capacity and field footprint are computed from the actual unit that enters the array. */
   if(typeof enemyShieldAutoEquip==='function')enemyShieldAutoEquip(c);
@@ -14091,17 +14158,17 @@ function buildStagePlan(stageNum){
        event has a different flight question and an owned weapon controller; the old nine
        palette swaps and generic AI-wave wrappers no longer define the stage. */
     const W6=worldWidth();
-    add(2.0, ()=> { spawnEnemy('s6dart',W6*.22,-64,{_side:1}); spawnEnemy('s6dart',W6*.78,-90,{_side:-1,_stagger:.24}); });
+    add(2.0, ()=> { spawnEnemy('s6dart',W6*.22,-64,{_jetManeuver:'dash'}); spawnEnemy('s6dart',W6*.78,-90,{_jetManeuver:'dash',_stagger:.24}); });
     add(5.5, ()=> spawnEnemy('s6mine',W6*.50,-74,{}));
     add(9.0, ()=> { spawnEnemy('s6lancer',W6*.28,-74,{}); spawnEnemy('s6lancer',W6*.72,-102,{_stagger:.30}); });
-    add(12.5,()=> spawnEnemy('s6skimmer',-90,VH*.25,{_side:1}));
+    add(12.5,()=> spawnEnemy('s6skimmer',-90,VH*.25,{_side:1,_jetManeuver:'bomb'}));
     add(16.0,()=> { spawnEnemy('s6thunder',W6*.30,-76,{}); spawnEnemy('s6thunder',W6*.70,-100,{_stagger:.26}); });
     add(20.0,()=> spawnEnemy('s6probe',W6*.50,-76,{}));
     add(24.0,()=> { spawnEnemy('s6cyclone',W6*.27,-78,{_side:1}); spawnEnemy('s6cyclone',W6*.73,-108,{_side:-1,_stagger:.32}); });
-    add(28.0,()=> spawnEnemy('s6bomber',-105,VH*.22,{_side:1}));
+    add(28.0,()=> spawnEnemy('s6bomber',-105,VH*.22,{_side:1,_jetManeuver:'bomb'}));
     add(32.0,()=> { spawnEnemy('s6buoy',W6*.30,-82,{}); spawnEnemy('s6buoy',W6*.70,-106,{_stagger:.26}); });
     add(36.0,()=> spawnEnemy('s6turbine',W6*.50,-96,{}));
-    add(40.0,()=> { spawnEnemy('s6skimmer',W6+90,VH*.20,{_side:-1}); spawnEnemy('s6dart',-70,VH*.34,{_side:1,_stagger:.20}); });
+    add(40.0,()=> { spawnEnemy('s6skimmer',W6+90,VH*.20,{_side:-1,_jetManeuver:'bomb'}); spawnEnemy('s6dart',-70,VH*.34,{_jetManeuver:'dash',_stagger:.20}); });
     add(44.0,()=> spawnEnemy('s6bomber',W6*.50,-112,{}));
     add(48.0,()=> { spawnEnemy('s6mine',W6*.25,-82,{}); spawnEnemy('s6probe',W6*.75,-104,{_stagger:.32}); });
     /* ⚠ THE LEVEL-6 FLEET FLIES AGAIN (Mike, 0912d): "we have an l6 fleet folder of enemies that
@@ -14134,7 +14201,15 @@ function buildStagePlan(stageNum){
     add(22.0,()=> spawnEnemy('xelite_glacierlance',W6*.50,-72,{}));   /* Vol.1 aces (0903): Mike's favourite leads */
     add(38.0,()=> spawnEnemy('xelite_tempest',W6*.30,-70,{}));
     add(38.0,()=> spawnEnemy('xelite_solarwarden',W6*.70,-70,{}));
+    for(const [at,side] of [[17.8,-1],[33,1],[54,-1],[63,1]])add(at,()=>{
+      if(enemies.filter(e=>!e.dead&&e._jetManeuver&&e._jetManeuver.mode==='bomb').length>=2)return;
+      spawnEnemy('s6bomber',side<0?camRightX()+90:camLeftX()-90,VH*.23,{_side:side,_jetManeuver:'bomb'});
+    });
     add(52.0,()=> spawnEnemy('s6turbine',W6*.50,-124,{}));
+    add(56.0,()=> {spawnEnemy('s6dart',W6*.18,-74,{_jetManeuver:'dash'});spawnEnemy('s6dart',W6*.82,-74,{_jetManeuver:'dash'});});
+    add(60.0,()=> {spawnEnemy('s6bomber',-105,VH*.28,{_jetManeuver:'bomb'});spawnEnemy('s6skimmer',W6+95,VH*.19,{_jetManeuver:'bomb'});});
+    add(65.0,()=> {spawnEnemy('s6cyclone',W6*.28,-90,{});spawnEnemy('s6cyclone',W6*.72,-120,{_stagger:.34});});
+    add(69.0,()=> {spawnEnemy('s6dart',W6*.22,-72,{_jetManeuver:'dash'});spawnEnemy('s6bomber',W6+95,VH*.24,{_jetManeuver:'bomb'});});
     add(curStage.length-4,()=> { spawnEnemy('s6cyclone',W6*.18,-92,{_side:1}); spawnEnemy('s6turbine',W6*.50,-126,{_stagger:.22}); spawnEnemy('s6thunder',W6*.82,-98,{_stagger:.38}); });
     return _planSorted(P,stageNum);
   }
@@ -15063,7 +15138,7 @@ const SHIPBOSS = {
                           V1:[-0.29,0.02],V2:[0.29,0.02]},
                   pats:['s3spearburst','s3spearcross','s3spearcore'],
                   dmg:['nsb_cryo_spear_damaged','nsb_cryo_spear_critical']},
-  olivewarden:   {key:'nsb_olivewarden_intact',name:'OLIVE WARDEN',     w:210,h:216, hp:1180, pat:'s4warburst',cd:0.92, mini:true, proj:'legion',
+  olivewarden:   {key:'nsb_olivewarden_intact',name:'OLIVE WARDEN',     w:262,h:270, hp:1180, pat:'s4warburst',cd:0.92, mini:true, proj:'legion',
                   mounts:{L:[-0.28,0.18],C:[0,0.43],R:[0.28,0.18],CL:[-.036,.430],CR:[.036,.430],MG_L:[-0.19,0.31],MG_R:[0.19,0.31]},
                   pats:['s4warburst','s4wargate','s4wardrones'], dmg:['nsb_olivewarden_damaged','nsb_olivewarden_critical']},
   /* STAGE 8'S MINIBOSS FINALLY HAS A BODY (drop 0814e). The HERALD OF DEATH was drawing frames 0-3
@@ -16052,6 +16127,7 @@ function stage3BossInit(b){
     for(let i=0;i<8;i++){XART._touch((typeof SMOKE_FAM!=='undefined'?SMOKE_FAM:'nsd_chim')+'_'+i);XART._touch('nxp_dense_'+i);}
   }}catch(_s3bl){}
   if(typeof l23FovWarm==='function')l23FovWarm();   // 0912x: the laser's FOV cones and alert frames
+  if(SHIPBOSS[b._ship].key==='nsb_rimewall_intact'&&XART._touch)XART._touch('frost_furious_beam_0920');
 }
 function stage3BossMuzzle(b,slot,kind,scale,life){
   if(!b||!b._s3boss||typeof navalFlash!=='function')return;
@@ -16456,7 +16532,7 @@ function stage4WarfareInit(b){
   const mini=b._ship==='olivewarden';stageRevisionWarm(b._ship);
   if(!mini){b.w=264;b.h=264;}
   b._s4war={mini:mini,mode:mini?'burst':'shield',t:0,shot:-.02,wave:0,event:0,round:0,poseRot:0,scale:1,
-    homeY:b.ty!=null?b.ty:(mini?132:150),summoned:false,drones:[],shieldThresholds:[.75,.50,.25],
+    homeY:mini?Math.max(b.ty||132,b.h*.5+44):(b.ty!=null?b.ty:150),summoned:false,drones:[],shieldThresholds:[.75,.50,.25],
     shieldThresholdIndex:0,finalGuns:'off',finalGunT:0,finalGunSpin:0,finalGunShot:0,finalGunWave:0,
     finalGunAimL:Math.PI/2,finalGunAimR:Math.PI/2,finalGunSweepL:0,finalGunSweepR:0,
     coreTurrets:[],coreUnlocked:false,coreGeneration:0,coreBurstSerial:0,coreShots:0,
@@ -16483,19 +16559,20 @@ function stage4WarfareInit(b){
       {side:-1,row: 1,hp:nodeHp,maxhp:nodeHp,dead:false,x:b.x-210,y:b.y+72,spin:8,flash:0,materialize:1},
       {side: 1,row: 1,hp:nodeHp,maxhp:nodeHp,dead:false,x:b.x+210,y:b.y+72,spin:12,flash:0,materialize:1},
     ]};
+    stage4ShieldSyncNodes(b);
   }
   b.fireCd=999;
 }
 function stage4MiniDroneAt(b,x,y,pad){
   const S=b&&b._s4war;if(!S||!S.mini||!S.summoned)return null;pad=pad||0;
-  for(const d of S.drones)if(!d.dead&&d.active>=.82&&Math.abs(x-d.x)<48+pad&&Math.abs(y-d.y)<48+pad)return d;
+  for(const d of S.drones)if(!d.dead&&d.active>=.82&&Math.abs(x-d.x)<(d.size||92)*.46+pad&&Math.abs(y-d.y)<(d.size||92)*.46+pad)return d;
   return null;
 }
 function stage4MiniDroneDamage(b,d,dmg){
   if(!b||!d||d.dead)return false;dmg=Math.max(1,dmg||1);
-  if(d.shield>0){const use=enemyPoolDamage(d,'shield',dmg,'stage4DroneShield','maxShield');dmg-=use;d.shieldFlash=.14;
-    if(d.shield<=0){explode(d.x,d.y,24,'blue');stage4WarfareSound('shieldBreak','enemyElectricBolt');}}
-  if(dmg>0){dmg=enemyPoolDamage(d,'hp',dmg,'stage4DroneHull','maxhp');d.flash=.15;if(typeof stageStats!=='undefined')stageStats.dmgDealt+=dmg;}
+  // The mounted escort jets have armored hulls, never a shield or cut-off shield overlay.
+  dmg=enemyPoolDamage(d,'hp',dmg,'stage4DroneHull','maxhp');d.flash=.15;
+  if(typeof stageStats!=='undefined')stageStats.dmgDealt+=dmg;
   if(d.hp<=0){d.hp=0;d.dead=true;explode(d.x,d.y,62,'blue');
     if(typeof fxBurst==='function')fxBurst(d.x,d.y,70,{color:'#39d7ff',rings:2,chunks:12,sparks:20});
     stage4WarfareSound('enemyElectricBolt','expBig');shake=Math.max(shake,7);}
@@ -16529,7 +16606,12 @@ function stage4MiniDroneDamage(b,d,dmg){
    4-round bursts (55 ms apart, a beat between) across the same 2.0 s window. The swing is
    chosen at the START of windup, so the turn is the tell - you see it angle before it fires.
    ============================================================ */
-const S4H_SCALE=.40, S4H_SIZE=132*S4H_SCALE, S4H_HALF=S4H_SIZE/2;
+// Readable helper hulls; sockets, hitboxes and arena margins share this scale.
+const S4H_SCALE=.80, S4H_SIZE=132*S4H_SCALE, S4H_HALF=S4H_SIZE/2, S4H_MARGIN=S4H_HALF*Math.SQRT2+8;
+function stage4HelperExtent(t){
+  const a=(t.ang==null?Math.PI/2:t.ang)-Math.PI/2,c=Math.abs(Math.cos(a)),sn=Math.abs(Math.sin(a));
+  return {x:(58*c+54*sn)*S4H_SCALE,y:(54*c+58*sn)*S4H_SCALE};
+}
 function stage4CoreDifficulty(){
   const key=typeof diffKey==='undefined'?'normal':diffKey,furious=key==='furious',hard=furious||key==='hard';
   return {hard:hard,furious:furious,shieldMul:hard?1.5:1,windup:furious?.94:(hard?1.08:1.35),
@@ -16557,8 +16639,8 @@ function stage4CoreFormationTick(b,dt){
 function stage4CoreTurretTarget(b,side){
   const S=b._s4war,p=stage4GeneratorColumn(b,side),home={x:p.x,y:clamp(p.y-123,80,108)},mix=S.coreFormationMix||0;
   if(mix<=0)return home;
-  const left=camLeftX(),right=camRightX(),anchor=clamp(S.coreFormationAnchor==null?(left+right)*.5:S.coreFormationAnchor,left+105,right-105),
-        row={x:anchor+side*58,y:clamp((S.homeY||150)+176,286,350)};
+  const left=camLeftX(),right=camRightX(),anchor=clamp(S.coreFormationAnchor==null?(left+right)*.5:S.coreFormationAnchor,left+S4H_HALF+10+S4H_MARGIN,right-S4H_HALF-10-S4H_MARGIN),
+        row={x:anchor+side*(S4H_HALF+10),y:clamp((S.homeY||150)+176,286,350)};
   return {x:lerp(home.x,row.x,mix),y:lerp(home.y,row.y,mix)};
 }
 function stage4CoreEnrageEnd(b){
@@ -16601,7 +16683,7 @@ function stage4CoreEnrageTick(b,dt,phase){
         sideY=baseSideY+stage4CoreEnrageWalkTick(R,dt),target=typeof targetShip==='function'?targetShip((left+right)*.5,sideY):player;
   for(const t of live){
     t.flash=Math.max(0,(t.flash||0)-dt);t.deflectFlash=Math.max(0,(t.deflectFlash||0)-dt);t.deflectSfx=Math.max(0,(t.deflectSfx||0)-dt);
-    const sideTarget={x:t.side<0?left+48:right-48,y:sideY},home=stage4GeneratorColumn(b,t.side),homeTarget={x:home.x,y:clamp(home.y-123,80,108)};
+    const sideTarget={x:t.side<0?left+S4H_MARGIN:right-S4H_MARGIN,y:sideY},home=stage4GeneratorColumn(b,t.side),homeTarget={x:home.x,y:clamp(home.y-123,80,108)};
     let p=sideTarget;
     if(R.mode==='deploy'){const q=clamp(R.t/travel,0,1),e=q*q*(3-2*q),from=t.rageFrom||homeTarget;p={x:lerp(from.x,sideTarget.x,e),y:lerp(from.y,sideTarget.y,e)};}
     else if(R.mode==='retreat'){const q=clamp((R.t-retreatAt)/travel,0,1),e=q*q*(3-2*q);p={x:lerp(sideTarget.x,homeTarget.x,e),y:lerp(sideTarget.y,homeTarget.y,e)};}
@@ -16646,13 +16728,13 @@ function stage4CoreTurretSpawnMissing(b,threshold){
 function stage4CoreTurretAt(b,x,y,pad){
   const S=b&&b._s4war;if(!S||!S.coreUnlocked)return null;pad=pad||0;
   for(const t of S.coreTurrets)if(!t.dead&&t.materialize>=.92&&
-    Math.abs(x-t.x)<58*S4H_SCALE+pad&&Math.abs(y-t.y)<54*S4H_SCALE+pad)return t;
+    Math.abs(x-t.x)<stage4HelperExtent(t).x+pad&&Math.abs(y-t.y)<stage4HelperExtent(t).y+pad)return t;
   return null;
 }
 function stage4CoreTurretBeamAt(b,x,halfW,top,bot){
   const S=b&&b._s4war;if(!S||!S.coreUnlocked)return null;let best=null,bestY=-Infinity;
   for(const t of S.coreTurrets){
-    if(t.dead||t.materialize<.92||t.y<top-54*S4H_SCALE||t.y>bot+54*S4H_SCALE||Math.abs(x-t.x)>58*S4H_SCALE+(halfW||0))continue;
+    if(t.dead||t.materialize<.92||t.y<top-stage4HelperExtent(t).y||t.y>bot+stage4HelperExtent(t).y||Math.abs(x-t.x)>stage4HelperExtent(t).x+(halfW||0))continue;
     if(t.y>bestY){best=t;bestY=t.y;}
   }
   return best;
@@ -16660,7 +16742,7 @@ function stage4CoreTurretBeamAt(b,x,halfW,top,bot){
 function stage4CoreTurretFlameAt(b,flame){
   const S=b&&b._s4war;if(!S||!S.coreUnlocked||typeof flameHit!=='function')return null;
   let best=null,bestY=-Infinity;
-  for(const t of S.coreTurrets)if(!t.dead&&t.materialize>=.92&&flameHit(flame,t.x,t.y,72*S4H_SCALE,76*S4H_SCALE)&&t.y>bestY){best=t;bestY=t.y;}
+  for(const t of S.coreTurrets)if(!t.dead&&t.materialize>=.92&&flameHit(flame,t.x,t.y,stage4HelperExtent(t).x*2,stage4HelperExtent(t).y*2)&&t.y>bestY){best=t;bestY=t.y;}
   return best;
 }
 function stage4CoreTurretDamage(b,t,dmg){
@@ -16892,15 +16974,25 @@ function stage4ShieldDeflectBullet(b,shot){
   explode(shot.x,shot.y,11,'blue');if(typeof fxBurst==='function')fxBurst(shot.x,shot.y,18,{color:'#9ef7ff',rings:1});
   stage4WarfareSound('shieldHit','shieldHitLight');shake=Math.max(shake,1.5);return true;
 }
+/* Electrical generators are boss-relative objectives, never camera/terrain anchors.
+   Freeze the encounter spacing once; update hitboxes and art together, without easing. */
+function stage4ShieldSyncNodes(b){
+  const H=b&&b._s4war&&b._s4war.shield;if(!H)return;
+  if(H.anchorX==null){
+    H.anchorX=Math.min(VW*.5-S4H_MARGIN,b.w*.69+29);
+    H.anchorY=78;H.rowOffset=b.h*.235;
+  }
+  for(const n of H.nodes){
+    n.x=b.x+n.side*H.anchorX;
+    n.y=b.y+H.anchorY+n.row*H.rowOffset;
+  }
+}
 function stage4ShieldTick(b,dt){
   const S=b&&b._s4war,H=S&&S.shield;if(!H)return;
   H.hit=Math.max(0,H.hit-dt);H.breakT=Math.max(0,H.breakT-dt);H.sfx=Math.max(0,H.sfx-dt);
-  const W=worldWidth(),xoff=Math.min(W*.5-54,b.w*.55+58),yoff=b.h*.235;
+  stage4ShieldSyncNodes(b);
   for(const n of H.nodes){
     n.spin=(n.spin+dt*(13.0+n.row*.7+n.side*.45))%16;n.flash=Math.max(0,n.flash-dt);
-    if(n.dead)continue;
-    const p=stage4GeneratorColumn(b,n.side),tx=p.x,ty=clamp(p.y+n.row*yoff,58,VH-82);
-    n.x+=(tx-n.x)*Math.min(1,dt*8);n.y+=(ty-n.y)*Math.min(1,dt*8);
   }
   if(H.rearming){
     H.rearmT+=dt;
@@ -16940,10 +17032,12 @@ function stage4WarfareMuzzle(b,slot,fam,scale,life){
   navalFlash(null,p,scale||.78,pre,{n:8,hpx:fam==='lightning'?74:(fam==='orb'?62:42),life:life||.13,anchor:.30,
     follow:()=>b&&!b.dead?shipBossMount(b,slot):null});
 }
-function stage4WarfareDroneMuzzle(b,d){
-  if(!b||!d||typeof navalFlash!=='function')return;const p={x:d.x+Math.cos(d.ang)*40,y:d.y+Math.sin(d.ang)*40};
-  navalFlash(null,p,.64,'s4w_muzzle_mg',{n:8,hpx:38,life:.105,anchor:.28,
-    follow:()=>b&&!b.dead&&d.active?{x:d.x+Math.cos(d.ang)*40,y:d.y+Math.sin(d.ang)*40}:null});
+function stage4WarfareDroneMuzzle(b,d,side){
+  if(!b||!d||typeof navalFlash!=='function')return;
+  const scale=(d.size||92)/(d.role==='gunner'?88:80),offset=(side||1)*(d.role==='gunner'?22:21)*scale;
+  const mount=()=>({x:d.x+offset+Math.cos(d.ang)*7*scale,y:d.y+23*scale+Math.sin(d.ang)*8*scale});
+  navalFlash(null,mount(),.64,'s4w_muzzle_mg',{n:8,hpx:38,life:.105,anchor:.28,
+    follow:()=>b&&!b.dead&&d.active?mount():null});
 }
 /* ============================================================
    THE HELPERS' ROUNDS ARE BIGGER (drop 0905c)
@@ -16968,6 +17062,7 @@ function stage4WarfareShot(b,slot,ang,spd,role,opt){
   const q=eShootT(p.x,p.y,ang,spd,kind,{w:opt.w||size[0],h:opt.h||size[1],silent:true,
                                         szMul:(opt.szMul||1)*S4H_SHOT_DRAW});
   q._s4wKind=role;q._noArsenal=true;q._boss=true;q._bfam='storm';q.ang=ang;
+  q._weaponProof=!!(b&&b._s4war&&!b._s4war.mini);
   if(opt.accel){q._s4Accel=opt.accel;q._s4Max=opt.max||spd*1.9;}
   if(opt.lift){q._s4wLift={t:0,dur:opt.lift,targetX:player?player.x:p.x,targetY:player?player.y:VH*.82,
       speed:opt.launchSpeed||2.25,accel:opt.launchAccel||1.5,max:opt.max||6.2,side:opt.side||0};}
@@ -17267,7 +17362,10 @@ function stage4WarfareBossTick(b,dt){
 }
 function stage4WarfareTick(b,dt){
   if(!b||!b._s4war)return false;
-  return b._s4war.mini?stage4WarfareMiniTick(b,dt):stage4WarfareBossTick(b,dt);
+  const result=b._s4war.mini?stage4WarfareMiniTick(b,dt):stage4WarfareBossTick(b,dt);
+  // The director can return early from rearm, rage or a ram after moving the hull.
+  stage4ShieldSyncNodes(b);
+  return result;
 }
 function stage4WarfareProjectileTick(b,dt){
   const L=b&&b._s4wLift;if(!L)return;L.t+=dt;
@@ -17427,18 +17525,12 @@ function stage4WarfareDrawOver(b){
     const bodyKey=d.art||'s4w_drone_body';if(d.dead||d.active<=0||!XART.rdy(bodyKey))continue;
     const body=XART.get(bodyKey),sz=(d.size||92)*d.active;
     ctx.save();ctx.globalAlpha=d.active;ctx.drawImage(body,d.x-sz/2,d.y-sz/2,sz,sz);ctx.restore();
-    if(d.role==='gunner'&&XART.rdy(bk)){
-      const im=XART.get(bk),bh=58,bw=bh*(im.naturalWidth/Math.max(1,im.naturalHeight));
-      ctx.save();ctx.translate(d.x,d.y);ctx.rotate(d.ang-Math.PI/2);ctx.drawImage(im,-bw/2,-bh*.25,bw,bh);ctx.restore();
-    }
-    if(d.shieldFlash>0&&typeof xartTint==='function'){
-      const tint=xartTint(bodyKey,'#4adfff',1);if(tint){ctx.save();ctx.globalAlpha=clamp(d.shieldFlash/.14,0,1)*.78;ctx.drawImage(tint,d.x-sz/2,d.y-sz/2,sz,sz);ctx.restore();}
-    }else if(d.flash>0&&typeof xartTint==='function'){
+    if(d.flash>0&&typeof xartTint==='function'){
       const tint=xartTint(bodyKey,'#ffffff',1);if(tint){ctx.save();ctx.globalAlpha=clamp(d.flash/.15,0,1);ctx.drawImage(tint,d.x-sz/2,d.y-sz/2,sz,sz);ctx.restore();}
     }
-    if(d.active>=.82){const bw=52,bh=3,sr=clamp(d.shield/Math.max(1,d.maxShield),0,1),hr=clamp(d.hp/Math.max(1,d.maxhp),0,1),y=d.y+48;
-      ctx.save();ctx.fillStyle='rgba(0,0,0,.82)';ctx.fillRect(d.x-bw/2-1,y-1,bw+2,bh*2+5);
-      ctx.fillStyle='#28a9ff';ctx.fillRect(d.x-bw/2,y,bw*sr,bh);ctx.fillStyle='#3fe875';ctx.fillRect(d.x-bw/2,y+bh+2,bw*hr,bh);ctx.restore();}
+    if(d.active>=.82){const bw=68,bh=3,hr=clamp(d.hp/Math.max(1,d.maxhp),0,1),y=d.y+(d.size||92)*.5+4;
+      ctx.save();ctx.fillStyle='rgba(0,0,0,.82)';ctx.fillRect(d.x-bw/2-1,y-1,bw+2,bh+2);
+      ctx.fillStyle=hr>.3?'#3fe875':'#ff7d50';ctx.fillRect(d.x-bw/2,y,bw*hr,bh);ctx.restore();}
   }
 }
 /* which phase is this boss in, 0-based, and has it just changed? */
@@ -17924,7 +18016,20 @@ function l23BossBeamDraw(b){
   const _ghost=(!B.released && B.t<B.warm) ? 0.22 : 1;
   for(let i=0;i<B.slots.length;i++){
     const p=shipBossMount(b,B.slots[i]);ctx.save();ctx.translate(p.x,p.y);ctx.rotate(B.angles[i]-Math.PI/2);
-    if(B.released){ctx.globalAlpha=1;if(wall){const rim=xartTint(key,'#071c51',1);if(rim)ctx.drawImage(rim,-B.width/2-2,0,B.width+4,len);}ctx.drawImage(im,-B.width/2,0,B.width,len);if(wall){const core=XART.get(key);ctx.drawImage(core,-B.width*.065,0,B.width*.13,len);}}ctx.restore();
+    if(B.released){
+      ctx.globalAlpha=1;
+      const furyBeam=wall&&diffKey==='furious'&&B._furySimon&&XART.rdy('frost_furious_beam_0920')
+        ?XART.get('frost_furious_beam_0920'):null;
+      if(furyBeam){
+        ctx.globalCompositeOperation='source-over';
+        const artW=B.width*2.8;ctx.drawImage(furyBeam,-artW*.5,0,artW,len);
+        ctx.globalCompositeOperation='lighter';
+      }else{
+        if(wall){const rim=xartTint(key,'#071c51',1);if(rim)ctx.drawImage(rim,-B.width/2-2,0,B.width+4,len);}
+        ctx.drawImage(im,-B.width/2,0,B.width,len);
+        if(wall){const core=XART.get(key);ctx.drawImage(core,-B.width*.065,0,B.width*.13,len);}
+      }
+    }ctx.restore();
   }
   /* RED ALERT FIELD - drawn OVER the ghosted beam so lava cannot swallow it. (Mike, 0903): 'get us red alert field graphics to let us know whre the lasers
      are going'. During the warm-up the beam art is not drawn at all, so the player had NO tell -
@@ -18371,6 +18476,12 @@ function _mwGlowSprite(k,s){
 }
 function magmaWardProjectileDraw(b){
   if(!b||!b._mwKind||typeof XART==='undefined')return false;
+  if(b._mwKind==='furyOrb'){
+    if(!XART.rdy('magma_orb_0918'))return false;
+    const im=XART.get('magma_orb_0918'),d=48+Math.sin((b.t||0)*20)*2;
+    ctx.save();ctx.shadowColor='#ff681a';ctx.shadowBlur=3;
+    ctx.drawImage(im,b.x-d/2,b.y-d/2,d,d);ctx.restore();return true;
+  }
   const k='mwfx_fireball_'+(Math.floor((b.t||0)*13)%8);if(!XART.rdy(k))return false;
   const s=b._mwKind==='fireball'?82:38,c=_mwGlowSprite(k,s); if(!c) return false;
   ctx.save();ctx.globalCompositeOperation='lighter';
@@ -20759,7 +20870,7 @@ function furnaceInit(b){
     arm:{left:{a:0,recoil:0,charge:0}, right:{a:0,recoil:0,charge:0}}, pools:{}, max:{}, hpSync:false,
     beams:[], tells:[], fx:[], charge:0, trans:0, shotBeat:-1, burstBeat:-1, startX:W/2, endX:W/2,
     introY0:null, cues:{}, eye:{'-1':Math.PI*0, '1':0}, eyeLock:0, lanceX:W/2, ppx:null, pvx:0, pvy:0, ppy:null, flash:{},
-    rollY:null,rollStartY:null,rollFrom:null,rollTo:null,rollLeg:-1,rollLive:false};
+    rollY:null,rollStartY:null,rollFrom:null,rollTo:null,rollLeg:-1,rollLive:false,furyRoll:null};
   try{ if(typeof XART!=='undefined') for(const k in BOFX.img) if(k.indexOf('fzt_')===0){ XART.rdy(k); if(XART._touch) XART._touch(k); } }catch(_fw){}
 }
 function furnaceSync(b){
@@ -20849,7 +20960,7 @@ function furnaceNext(b){
   const F=b._fz, W=(typeof worldWidth==='function')?worldWidth():VW, list=FZT_ATTACKS[F.phase]; if(!list) return;
   F.attack=list[++F.idx%list.length]; F.at=0; F.serial++; F.dir*=-1; F.startX=b.x; F.endX=F.dir>0?W*0.767:W*0.233;
   F.shotBeat=-1; F.burstBeat=-1; F.beams=[];
-  F.rollY=null;F.rollStartY=null;F.rollFrom=null;F.rollTo=null;F.rollLeg=-1;F.rollLive=false;
+  F.rollY=null;F.rollStartY=null;F.rollFrom=null;F.rollTo=null;F.rollLeg=-1;F.rollLive=false;F.furyRoll=null;
   if(F.phase==='head'){ for(const side of [-1,1]){ const p={x:b.x+side*19*FZT_S,y:b.y}; F.eye[side]=fztAim(p,player); } }
 }
 function fztShot(b,x,y,a,spdPack,rPack){
@@ -20919,12 +21030,12 @@ function furnaceIntro(b,dt){
   if(t>8.1) b.y=fztMix(fztPy(340), fztPy(240), fztSmooth((t-8.1)/1.1));
   if(t>=9.2){ b.y=fztPy(240); furnaceEnter(b,'arms'); }
 }
-function furnaceCannon(b,t,period){
+function furnaceCannon(b,t,period,lockPose){
   const F=b._fz; if(F.pools.right<=0) return;
   const cycle=t%period, beat=Math.floor(t/period), m0=furnaceMount(b,'right');
   const pred={x:player.x+F.pvx*0.12, y:player.y};
   const a=fztAim(m0,pred);
-  F.arm.right.a=fztWrap(a-F.a);
+  if(!lockPose)F.arm.right.a=fztWrap(a-F.a);
   F.arm.right.recoil=cycle<1.05 ? 18*fztSmooth(cycle/1.05) : 35*Math.exp(-(cycle-1.05)*12);
   const m=furnaceMuzzle(b,'right');
   if(cycle<1.05){ fztTell(F,m.x,m.y,m.a,350,cycle/1.05); F.arm.right.charge=cycle/1.05; if(cycle<0.03) fztSfx('bossWeaponCharge'); }
@@ -20932,19 +21043,95 @@ function furnaceCannon(b,t,period){
     if(beat>F.shotBeat){ F.shotBeat=beat; fztShot(b,m.x,m.y,m.a,265,25);
       F.fx.push({key:'fzt_cannon_flash',x:m.x,y:m.y,s:0.6,life:0.2,max:0.2,spin:0,a:0}); shake=Math.max(shake||0,5); fztSfx('enemyBossCannon'); } }
 }
+function furnaceFurySquareRoute(W){
+  const out=[],margin=Math.max(90,W*.19);
+  for(let ring=0;ring<3;ring++){
+    const left=margin+ring*38,right=W-margin-ring*38;
+    const top=VH*.29+ring*30,bottom=VH*.72-ring*30,d=.61-ring*.065;
+    out.push({x:left,y:top,d:d},{x:right,y:top,d:d},{x:right,y:bottom,d:d},
+      {x:left,y:bottom,d:d},{x:left,y:top,d:d});
+  }
+  out.push({x:W*.5,y:VH*.43,d:.58});
+  return out;
+}
+function furnaceFuryRollTick(b,dt){
+  const F=b._fz,W=(typeof worldWidth==='function')?worldWidth():VW;
+  let R=F.furyRoll;
+  if(!R){
+    R=F.furyRoll={phase:'warn',t:0,leg:0,legT:0,fromX:b.x,fromY:b.y,
+      route:furnaceFurySquareRoute(W),bursts:0,centerY:VH*.43};
+    if(typeof XART!=='undefined')XART.rdy('magma_orb_0918');
+    fztSfx('bossWeaponCharge');
+  }
+  R.t+=dt;
+  if(R.phase==='warn'){
+    const q=clamp(R.t/1.18,0,1),first=R.route[0];
+    b.x=fztMix(R.fromX,first.x,fztSmooth(q));b.y=fztMix(R.fromY,first.y,fztSmooth(q));
+    F.a+=F.dir*dt*fztMix(1.8,5.5,q);
+    F.tells.push({x:first.x,y:first.y,ex:R.route[1].x,ey:first.y,progress:q,width:116});
+    combatWarningTick(b,'furnace-fury-square',R.t,1.18,true);
+    if(q>=1){R.phase='square';R.t=0;R.leg=1;R.legT=0;R.fromX=b.x;R.fromY=b.y;}
+  }else if(R.phase==='square'){
+    const target=R.route[R.leg];R.legT+=dt;
+    const q=clamp(R.legT/target.d,0,1),speed=clamp(R.leg/R.route.length,0,1);
+    b.x=fztMix(R.fromX,target.x,fztSmooth(q));b.y=fztMix(R.fromY,target.y,fztSmooth(q));
+    F.a+=F.dir*dt*fztMix(8,27,speed);F.rollLive=true;
+    if(q>=1){
+      b.x=target.x;b.y=target.y;R.fromX=b.x;R.fromY=b.y;R.leg++;R.legT=0;
+      if(R.leg%5===1){fztSfx('whip');shake=Math.max(shake||0,7);}
+      if(R.leg>=R.route.length){R.phase='jumpTell';R.t=0;F.rollLive=false;b.x=W*.5;b.y=R.centerY;fztSfx('furnacePowerSurge');}
+    }
+  }else if(R.phase==='jumpTell'){
+    F.charge=clamp(R.t/.7,0,1);F.a+=F.dir*dt*12;
+    F.tells.push({x:W*.5,y:R.centerY,progress:F.charge,kind:'ring'});
+    combatWarningTick(b,'furnace-fury-slam',R.t,.7,true);
+    if(R.t>=.7){R.phase='jump';R.t=0;}
+  }else if(R.phase==='jump'){
+    const q=clamp(R.t/.50,0,1);b.x=W*.5;b.y=fztMix(R.centerY,-b.h*.9,fztSmooth(q));
+    F.a+=F.dir*dt*20;
+    if(q>=1){R.phase='hang';R.t=0;b.y=-b.h*.9;}
+  }else if(R.phase==='hang'){
+    b.x=W*.5;b.y=-b.h*.9;
+    F.tells.push({x:W*.5,y:R.centerY,progress:clamp(R.t/.30,0,1),kind:'ring'});
+    if(R.t>=.30){R.phase='slam';R.t=0;}
+  }else if(R.phase==='slam'){
+    const q=clamp(R.t/.47,0,1);b.x=W*.5;b.y=fztMix(-b.h*.9,R.centerY,fztSmooth(q));
+    F.a+=F.dir*dt*23;F.rollLive=true;
+    F.tells.push({x:W*.5,y:R.centerY,progress:q,kind:'ring'});
+    if(q>=1){
+      b.y=R.centerY;R.phase='burst';R.t=0;F.rollLive=false;
+      shake=Math.max(shake||0,19);flashScreen=Math.max(flashScreen||0,.18);
+      if(typeof fxBurst==='function')fxBurst(b.x,b.y,115,{color:'#ff8120',rings:2,chunks:15,sparks:25});
+      fztSfx('explosionBossCore');
+    }
+  }else{
+    b.x=W*.5;b.y=R.centerY;F.a*=Math.max(0,1-dt*5);
+    while(R.bursts<5&&R.t>=R.bursts*.19){
+      const wave=R.bursts++;
+      for(let i=0;i<12;i++){
+        const a=-Math.PI/2+(i+(wave&1)*.5)*TAU/12;
+        magmaWardProjectile(b.x+Math.cos(a)*92,b.y+Math.sin(a)*92,a,3.25+wave*.13,'furyOrb',{w:25,h:25});
+      }
+      F.fx.push({key:'fzt_overload_wave',x:b.x,y:b.y,s:.6+wave*.12,life:.46,max:.46,spin:0,a:0});
+      shake=Math.max(shake||0,7);fztSfx('bossfireInfernoreaver');
+    }
+    if(R.t>=1.35){F.a=0;furnaceNext(b);}
+  }
+}
 function furnaceCombat(b,dt){
   const F=b._fz, t=F.at, W=(typeof worldWidth==='function')?worldWidth():VW, P=player;
   F.charge=0; F.rollLive=false; F.arm.left.recoil=0; F.arm.right.recoil=0; F.arm.left.charge=0; F.arm.right.charge=0;
   if(F.idx<0) furnaceNext(b);
+  if(F.phase==='core'&&(F.attack==='rollerball'||F.attack==='rotor')){F.arm.left.a=0;F.arm.right.a=0;}
   if(F.phase==='arms'){
     if(F.attack==='spin900'){
       const u=clamp((t-1)/4.8,0,1);
       b.x=fztMix(F.startX,F.endX,fztSmooth(u)); b.y=fztPy(260)+Math.sin(u*Math.PI)*35*FZT_S;
-      F.a=F.dir*5*Math.PI*fztSmooth(u); F.arm.left.a=0.20; F.arm.right.a=0;
+      F.a=F.dir*5*Math.PI*fztSmooth(u); F.arm.left.a=0; F.arm.right.a=0;
       const m=furnaceMuzzle(b,'left');
       if(F.pools.left>0){ if(t<1){ F.arm.left.charge=t; fztTell(F,m.x,m.y,m.a,430,t); if(t<0.03) fztSfx('furnaceFlameIgnite'); }
         else if(t<5.8) fztBeam(F,m.x,m.y,m.a,430,25,'flame'); else if(t<5.83) fztSfx('furnaceFlameRelease'); }
-      if(F.pools.right>0 && t>1.3) furnaceCannon(b,t-1.3,2.15);
+      if(F.pools.right>0 && t>1.3) furnaceCannon(b,t-1.3,2.15,true);
       if(t>6.65){ F.a=0; furnaceNext(b); }
     } else if(F.attack==='cannon'){
       F.a=0; b.x+=Math.sin(F.t*0.9)*dt*35*FZT_S; b.y=fztPy(240); F.arm.left.a=0.22*Math.sin(F.t);
@@ -20988,6 +21175,8 @@ function furnaceCombat(b,dt){
         if(F.burstBeat<0){ F.burstBeat=0; fztSfx('furnaceHeavyLaser'); }
       } else if(F.burstBeat===0){ F.burstBeat=1; fztSfx('furnaceLaserEnd'); }
       if(t>6.15) furnaceNext(b);
+    } else if(F.attack==='rollerball' && typeof diffKey!=='undefined' && diffKey==='furious'){
+      furnaceFuryRollTick(b,dt);
     } else if(F.attack==='rollerball'){
       /* A committed horizontal lane gives the player a fair vertical escape, while roll and
          somersault i-frames remain a valid high-skill answer. Both the spin and crossings ramp
@@ -21091,9 +21280,16 @@ function fztBeamDraw(q){
     const halo=ctx.createLinearGradient(-q.width*0.82,0,q.width*0.82,0);
     halo.addColorStop(0,'rgba(255,79,9,0)'); halo.addColorStop(0.5,'rgba(255,79,9,1)'); halo.addColorStop(1,'rgba(255,79,9,0)');
     ctx.fillStyle=halo; ctx.fillRect(-q.width*0.82,0,q.width*1.64,q.len); ctx.globalAlpha=1;
-    const im=fztImg('fzt_fire_laser');
-    if(im) ctx.drawImage(im,5,0,86,218,-q.width*0.7,0,q.width*1.4*fl,q.len);
-    ctx.fillStyle='#fff5b0'; ctx.globalAlpha=0.9; ctx.fillRect(-q.width*0.14,0,q.width*0.28,q.len); ctx.globalAlpha=1;
+    const regenerated=q.kind==='core'?fztImg('fzt_fire_laser_0920'):null;
+    if(regenerated){
+      ctx.globalCompositeOperation='source-over';
+      const bw=q.width*2.8*fl;
+      ctx.drawImage(regenerated,-bw/2,0,bw,q.len);
+    }else{
+      const im=fztImg('fzt_fire_laser');
+      if(im) ctx.drawImage(im,5,0,86,218,-q.width*0.7,0,q.width*1.4*fl,q.len);
+      ctx.fillStyle='#fff5b0'; ctx.globalAlpha=0.9; ctx.fillRect(-q.width*0.14,0,q.width*0.28,q.len); ctx.globalAlpha=1;
+    }
     ctx.globalCompositeOperation='source-over';
     ctx.restore(); ctx.save(); ctx.translate(q.x,q.y); ctx.rotate(q.a);
     fztSprite('fzt_laser_muzzle',0,0,0,clamp(q.width/(110*FZT_S),0.18,1.6));
@@ -21308,7 +21504,7 @@ function jungleCruiserPodPair(b,slot,rage){
 function frostCruiserSpiralRocket(b,slot,index){
   if(!b||b.dead)return null;
   const m=shipBossMount(b,slot),side=slot==='L'?-1:1,t=targetShip(m.x,m.y);
-  const a=eAimDown(Math.atan2(t.y-m.y,t.x-m.x)+side*.075),spd=2.70;
+  const a=eAimDown(Math.atan2(t.y-m.y,t.x-m.x)+side*.075),spd=diffKey==='furious'?3.5:diffKey==='hard'?3.1:2.70;
   const q={x:m.x,y:m.y,vx:Math.cos(a)*spd,vy:Math.sin(a)*spd,ang:a,spd:spd,w:14,h:24,dmg:1,t:0,
     kind:'emissile',hp:1,_shootable:true,_boss:true,_noArsenal:true,_jcRocket:true,_frostSpiral:true,
     _frostSlot:slot,_frostIndex:index,_swirl:true,_swPh:index*TAU/FROST_ROCKET_COUNT,_swAmp:.82,
@@ -21623,6 +21819,14 @@ function jungleCruiserDrawUnder(b){
   }
   if(!J.beamActive)return;
   const C=shipBossMount(b,'C'),a=Math.PI/2+(J.beamAng||0),len=VH*1.55,bw=frost?FROST_BEAM_WIDTH:42;
+  if(frost&&diffKey==='furious'){
+    const key='frost_furious_beam_0920';if(!XART.rdy(key))return;
+    const im=XART.get(key);
+    ctx.save();ctx.translate(C.x,C.y);ctx.rotate(a-Math.PI/2);ctx.imageSmoothingEnabled=false;
+    ctx.globalCompositeOperation='source-over';ctx.shadowColor='#255bd4';ctx.shadowBlur=7;
+    const artW=bw*2.8;ctx.drawImage(im,-artW*.5,-5,artW,len);
+    ctx.restore();return;
+  }
   const key='nlz_3_b'+(Math.floor((b.t||0)*14)%6);if(!XART.rdy(key))return;
   const im=XART.get(key);
   ctx.save();ctx.translate(C.x,C.y);ctx.rotate(a-Math.PI/2);ctx.imageSmoothingEnabled=false;
@@ -21938,6 +22142,8 @@ function s7WardenMode(b,mode){
   if(mode==='burst')s7WardenBurstArm(b);
   if(mode==='rail'){S.railAim=aimPlayer(b.x,b.y);S.railSafe=player.x<b.x?-1:1;combatWarningTick(b,'stage7-warden-rail',0,.86,true);}
   if(mode==='minefield'){const cols=7;S.mineGap=clamp(Math.floor(player.x/(worldWidth()/cols)),1,cols-2);combatWarningTick(b,'stage7-warden-minefield',0,.72,true);}
+  if(mode==='chain'){S.chainAim=aimPlayer(b.x,b.y+b.h*.22);combatWarningTick(b,'stage7-warden-chain',0,.52,true);}
+  if(mode==='leap'){S.leapX=clamp(player.x,camLeftX()+b.w*.30,camRightX()-b.w*.30);S.leapY=clamp(player.y-70,VH*.33,VH*.62);S.leapFromX=b.x;S.leapFromY=b.y;combatWarningTick(b,'stage7-warden-leg-strike',0,.78,true);}
   if(mode==='teleport'){
     const left=(typeof camLeftX==='function'?camLeftX():0)+b.w*.57,right=(typeof camRightX==='function'?camRightX():worldWidth())-b.w*.57;
     S.teleFrom=b.x;S.teleTo=clamp(player.x<(left+right)/2?right:left,left,right);
@@ -22142,7 +22348,7 @@ function s7WardenFinalTick(b,dt){
     const arcade=run.mode==='arcade';
     S.noHit=true;F.portalOpen=arcade?0:clamp(F.t/.72,0,1);
     if(!arcade)mapScroll=Math.min(levelScrollRange(),mapScroll+dt*230);
-    if(!F.beat){F.beat=1;if(!arcade&&Audio.SFX&&(Audio.SFX.helixCharge||Audio.SFX.warpGate))(Audio.SFX.helixCharge||Audio.SFX.warpGate)();}
+    if(!F.beat){F.beat=1;if(!arcade&&Audio.SFX&&(Audio.SFX.warpGate||Audio.SFX.teleportOut))(Audio.SFX.warpGate||Audio.SFX.teleportOut)();}
     if(F.t>=.82&&!F.legRaise){F.legRaise=true;s7WardenMechSound('scream');}
     if(F.t>=1.15&&!F.warned){F.warned=true;s7WardenSay(b,"{P1_NAME}, GET OUT OF THERE NOW! IT'S GONNA BLOW!",3.0);}
     const limb=[[-.36,.25],[.36,.25],[-.28,.37],[.28,.37],[0,.16],[0,0]];
@@ -22171,7 +22377,7 @@ function s7WardenTick(b,dt){
     if(Math.abs(dx)<4||(travelDir>0?b.x>=S.targetX:b.x<=S.targetX)){
       b.x=S.targetX;S.targetX=S.targetX<(left+right)/2?right:left;S.dir=S.targetX>b.x?1:-1;
     }
-    if(S.mt>2.40){const pick=S.step%4;s7WardenMode(b,pick===0?'burst':pick===1?'minefield':pick===2?'rail':'teleport');}
+    if(S.mt>2.40){const pick=S.step%(S.final.hyper?6:4);s7WardenMode(b,pick===0?'burst':pick===1?'minefield':pick===2?'rail':pick===3?'teleport':pick===4?'chain':'leap');}
   }else if(S.mode==='burst'){
     /* Ten machine-fast toxic cannon rounds, but the whole burst commits to the angle sampled at
        the tell. The boss braces and crawls only 11px/s, so the player can read the lane. */
@@ -22191,6 +22397,23 @@ function s7WardenTick(b,dt){
     while(S.shot<10&&S.mt>=tell+S.shot*.105){const slot=(S.shot&1)?'R':'L',o=(S.shot%5-2)*.025;
       s7WardenShot(b,slot,S.aim+o,5.0,'shell',{silent:S.shot>0});s7WardenMuzzle(b,slot,false);S.shot++;}
     if(S.mt>1.78)s7WardenMode(b,'patrol');
+  }else if(S.mode==='chain'){
+    const tell=.52;combatWarningTick(b,'stage7-warden-chain',Math.min(S.mt,tell),tell);
+    while(S.shot<20&&S.mt>=tell+S.shot*.063){const slot=(S.shot&1)?'R':'L',p=shipBossMount(b,slot),o=(S.shot%5-2)*.023;
+      const q=s7WardenShot(b,slot,S.chainAim+o,5.85,'shell',{silent:S.shot>0,szMul:.30});q.w=7;q.h=18;q._s7Chain=true;s7WardenMuzzle(b,slot,false);S.shot++;}
+    if(S.mt>2.02)s7WardenMode(b,'patrol');
+  }else if(S.mode==='leap'){
+    const tell=.78;combatWarningTick(b,'stage7-warden-leg-strike',Math.min(S.mt,tell),tell);
+    if(S.mt>tell){const k=clamp((S.mt-tell)/.72,0,1),e=k*k*(3-2*k);
+      b.x=lerp(S.leapFromX,S.leapX,e);b.y=lerp(S.leapFromY,S.leapY,e)-Math.sin(k*Math.PI)*90;
+      if(k>=1&&!S.event){S.event=1;shake=Math.max(shake,14);s7WardenMechSound('foot');
+        if(typeof fxBurst==='function')fxBurst(b.x,b.y+70,105,{color:'#b3ff63',rings:2,chunks:14,sparks:24});
+        for(const a of [-.40,-.20,0,.20,.40])s7WardenShot(b,'C',Math.PI/2+a,3.9,'shell',{silent:a!==0});}
+      if(S.mt>1.75){S.leapEndX=b.x;S.leapEndY=b.y;s7WardenMode(b,'leapBack');}
+    }
+  }else if(S.mode==='leapBack'){
+    const k=clamp(S.mt/.88,0,1),e=k*k*(3-2*k);b.y=lerp(S.leapEndY,b.ty,e);
+    if(k>=1)s7WardenMode(b,'patrol');
   }else if(S.mode==='minefield'){
     const tell=.72;combatWarningTick(b,'stage7-warden-minefield',Math.min(S.mt,tell),tell);
     if(!S.event&&S.mt>tell){S.event=1;const C=shipBossMount(b,'C'),cols=7,gap=S.mineGap;
@@ -22252,6 +22475,8 @@ function s7WardenDraw(b){
   const S=b&&b._s7warden;if(!S)return false;const F=S.final,phase=F&&F.phase;
   if(phase==='portalClose'||(F&&F.bossHidden))return true;
   s7WardenBurstWarningDraw(b,false);s7WardenRailWarningDraw(b,false);s7WardenMineWarningDraw(b,false);s7WardenCrippleRailWarningDraw(b,false);
+  if(S.mode==='leap'&&S.mt<.78)combatWarningDraw(b,{x:b.x,y:b.y,ex:S.leapX,ey:S.leapY,progress:clamp(S.mt/.78,0,1),width:100,alertX:S.leapX,alertY:S.leapY-84});
+  if(S.mode==='chain'&&S.mt<.52)for(const slot of ['L','R']){const p=shipBossMount(b,slot);combatWarningDraw(b,{x:p.x,y:p.y,ex:p.x+Math.cos(S.chainAim)*650,ey:p.y+Math.sin(S.chainAim)*650,progress:clamp(S.mt/.52,0,1),width:22,fieldOnly:true});}
   const baseY=(b._drawY!=null?b._drawY:b.y);let cy=baseY+(S.bodyDrop||0),size=b.w*1.12;
   let alpha=1;if(S.mode==='teleport')alpha=S.mt<.76?1-clamp((S.mt-.20)/.38,0,1):clamp((S.mt-.84)/.38,0,1);
   /* The entrance reel belongs to the portal aperture, not to a second floating circle around
@@ -22438,8 +22663,7 @@ function s9aBeamTick(b,dt){
     B.ang=clamp(Math.atan2(player.y-C.y,player.x-C.x)-Math.PI/2,-0.30,0.30);
   }else if(B.t<(B.off||S9_BEAM_OFF)){
     if(!B.locked){ B.locked=true; shake=Math.max(shake,6);
-      if(Audio.SFX&&Audio.SFX.helixCharge)Audio.SFX.helixCharge();
-      else if(Audio.SFX&&Audio.SFX.laserShot)Audio.SFX.laserShot(); }
+      if(Audio.SFX&&(Audio.SFX.bossfireTidalfusion||Audio.SFX.enemyHeavyLaser))(Audio.SFX.bossfireTidalfusion||Audio.SFX.enemyHeavyLaser)(); }
     if(typeof chaosHarrierBeamRay==='function') chaosHarrierBeamRay(b,C,Math.PI/2+B.ang,D.w*0.46);
   }
   if(B.t>=(B.end||S9_BEAM_END)){ b._s9Beam=null; return false; }
@@ -24143,7 +24367,7 @@ function enforceEncounterHp(b,floor){
   return b;
 }
 function spawnBoss(kind){
-  if(kind==='xenoregent'&&run.stage===5&&(diffKey==='easy'||diffKey==='normal'))kind='chromehammer';
+  if(kind==='xenoregent'&&run.stage===5)kind='chromehammer';
   const sn=curStage.n;
   /* ============================================================
      ⚠ BOSS HP CLIMBS FROM STAGE 2 ON (drop 0812l). Mike: "Beef up mini boss and boss hp from
@@ -24178,6 +24402,7 @@ function spawnBoss(kind){
        Two spawners, two switches; a kind must be registered in the one that matches its ROLE. */
     case 'chromehammer': hammerBossInit(b); break;
     case 'warhive': warhiveInit(b); break;
+    case 'rebelsquad': rebelSquadInit(b,hpBase); break;
     case 'tidalfusion': s9FusionBossInit(b,hpBase); break;
     case 'infernoreaver': case 'cryospear': case 'voidbat':
     case 'tidalsovereign': case 'warpsentinel':   // stage 9's bonus pair (0822ab)
@@ -24459,7 +24684,7 @@ function spawnSubBoss__inner(kind){
     case 'subtank':    b.name='ARMORED BRUTE';   b.w=150; b.h=140; b.hp=b.maxhp=Math.ceil(150*DIFF.eHp); b.art='sub_tank'; break;
     case 'chaosharrier': {
       b.name='CHAOS HARRIER'; b.w=220; b.h=200; b.hp=b.maxhp=Math.ceil(360*DIFF.eHp);
-      b.ty=132; b.y=b.ty; b.enter=false; b._harrier=true;
+      b.ty=165; b.y=b.ty; b.enter=false; b._harrier=true;
       b._chState='spawn'; b._chT=0; b._chVisible=false; b._chCollision=false;
       b._chAttackN=0; b._chPattern=0; b._chQueued=null; b._chBank=0; b._chCd=0.75;
       /* Decode the whole encounter during the warp-in instead of discovering each frame on the
@@ -24586,7 +24811,9 @@ function chaosHarrierPoint(b, slot){
   }[slot]||[0,0];
   return {x:b.x+p[0]*s,y:y+p[1]*s};
 }
-function chaosHarrierFlash(b, family, point){ b._chFlash={family,point,t:0,life:0.24}; }
+function chaosHarrierFlash(b, family, point){
+  (b._chFlashes||(b._chFlashes=[])).push({family,point,t:0,life:0.24});
+}
 function chaosHarrierShot(b, family, slot, angle, speed){
   const p=chaosHarrierPoint(b,slot), sp=(DIFF&&DIFF.ebSpeed)||1;
   const size=family==='sidelaser'?[16,44]:(family==='missile'?[18,30]:[16,24]);
@@ -24646,12 +24873,15 @@ function chaosHarrierSelect(b){
     b._chStandLeft--;
     /* lasers while pinned - the beam cannon on the outside beats, side lances between them */
     const standSeq=['beam','side','beam'];
-    chaosHarrierBegin(b, standSeq[(b._chStandStep=(b._chStandStep||0)+1)%standSeq.length]);
+    const standStep=b._chStandStep||0; b._chStandStep=standStep+1;
+    chaosHarrierBegin(b,standSeq[standStep%standSeq.length]);
     if(b._chStandLeft<=0) b._chWarpCount=0;      /* window over: start blinking again */
     return;
   }
   /* --- the blink phase: every beat warps, and fires as it arrives --- */
-  const arrive = phase===1 ? 'warp_plasma' : (phase===2 ? 'warp_side' : 'warp_plasma');
+  /* Each arrival reveals a different authored weapon: wing plasma, the two missile bays,
+     then the wing lasers. The pinned damage window still follows exactly three warps. */
+  const arrive = ['warp_plasma','warp_missile','warp_side'][(b._chWarpCount||0)%3];
   b._chWarpCount=(b._chWarpCount||0)+1;
   if(b._chWarpCount>=HARRIER_WARPS_PER_CYCLE) b._chStandLeft=HARRIER_STAND_ATTACKS;
   chaosHarrierBegin(b, arrive);
@@ -24672,7 +24902,7 @@ function chaosHarrierArena(b){
 function chaosHarrierWarpTarget(b){
   const arena=chaosHarrierArena(b), cx=arena.centre;
   const dx=Math.min(118,Math.max(48,arena.span*0.92));
-  const pts=[[cx-dx,112],[cx,94],[cx+dx,112],[cx-dx*0.92,172],[cx,158],[cx+dx*0.92,172]];
+  const pts=[[cx-dx,158],[cx,150],[cx+dx,158],[cx-dx*0.92,198],[cx,188],[cx+dx*0.92,198]];
   let best=pts[0], score=-1;
   for(const p of pts){
     const fromPlayer=Math.hypot(p[0]-player.x,p[1]-player.y);
@@ -24731,7 +24961,7 @@ function chaosHarrierBeamRay(b,p,ang,half){
 }
 function chaosHarrierBeamHit(b){
   if(!b._chBeamActive) return;
-  chaosHarrierBeamRay(b,chaosHarrierPoint(b,'nose'),Math.PI/2+(b._chBeamAng||0),24);
+  chaosHarrierBeamRay(b,chaosHarrierPoint(b,'nose'),Math.PI/2+(b._chBeamAng||0),36);
 }
 /* the wing pair: aim while spinning up, then hold whatever line they locked */
 function chaosHarrierSideAim(b,dt){
@@ -24742,7 +24972,7 @@ function chaosHarrierSideAim(b,dt){
 }
 function chaosHarrierUpdate(b,dt){
   b._chT=(b._chT||0)+dt;
-  if(b._chFlash){ b._chFlash.t+=dt; if(b._chFlash.t>=b._chFlash.life)b._chFlash=null; }
+  if(b._chFlashes) b._chFlashes=b._chFlashes.filter(F=>{F.t+=dt;return F.t<F.life;});
   const f=b.hp/Math.max(1,b.maxhp), phase=f>0.70?1:(f>0.35?2:3);
   if(phase!==b._chPhase){ b._chPhase=phase; b._chPattern=0; if(phase===3 && b._chState==='idle')chaosHarrierBegin(b,'warp_side'); }
   const st=b._chState;
@@ -24779,6 +25009,9 @@ function chaosHarrierUpdate(b,dt){
     return;
   }
   if(st==='plasma'){
+    /* Glide with the target during the volley; the hull stays level as Mike requested. */
+    const goal=clamp(player.x,arena.left,arena.right);
+    b.x+=clamp(goal-b.x,-90*dt,90*dt);
     const times=[0.05,0.20,0.38,0.53], slots=['left_cannon','right_cannon','left_cannon','right_cannon'];
     while(b._chStep<times.length && b._chT>=times[b._chStep]){
       const slot=slots[b._chStep],p=chaosHarrierPoint(b,slot),a=eAimDown(aimPlayer(p.x,p.y,4.4));
@@ -24787,9 +25020,10 @@ function chaosHarrierUpdate(b,dt){
     if(b._chT>=0.92)chaosHarrierFinish(b); return;
   }
   if(st==='missile'){
-    const times=[0.28];
+    /* Sequential, straight-lane launches from the actual left and right open bays. */
+    const times=[0.28,0.60], bays=['left_missile_bay','right_missile_bay'];
     while(b._chStep<times.length && b._chT>=times[b._chStep]){
-      chaosHarrierShot(b,'missile','missile_bay',Math.PI/2,1.70); b._chStep++;
+      chaosHarrierShot(b,'missile',bays[b._chStep],Math.PI/2,1.70); b._chStep++;
     }
     if(b._chT>=1.12)chaosHarrierFinish(b); return;
   }
@@ -24800,8 +25034,8 @@ function chaosHarrierUpdate(b,dt){
       if(!b._chSideOn){
         b._chSideOn=true; b._chSideLock=true; shake=Math.max(shake,5);
         chaosHarrierFlash(b,'sideflash',chaosHarrierPoint(b,'left_cannon'));
-        if(Audio.SFX&&Audio.SFX.helixCharge)Audio.SFX.helixCharge();
-        else if(Audio.SFX&&Audio.SFX.laserShot)Audio.SFX.laserShot();
+        chaosHarrierFlash(b,'sideflash',chaosHarrierPoint(b,'right_cannon'));
+        if(Audio.SFX&&(Audio.SFX.bossfireTidalfusion||Audio.SFX.enemyHeavyLaser))(Audio.SFX.bossfireTidalfusion||Audio.SFX.enemyHeavyLaser)();
       }
       chaosHarrierBeamRay(b,chaosHarrierPoint(b,'left_cannon'),Math.PI/2+(b._chSideL||0),CH_SIDE_HALF);
       chaosHarrierBeamRay(b,chaosHarrierPoint(b,'right_cannon'),Math.PI/2+(b._chSideR||0),CH_SIDE_HALF);
@@ -24817,7 +25051,7 @@ function chaosHarrierUpdate(b,dt){
     }
     if(b._chT>=0.90 && b._chT<2.15){
       if(!b._chBeamActive){ b._chBeamActive=true; shake=Math.max(shake,7);
-        if(Audio.SFX&&Audio.SFX.helixCharge)Audio.SFX.helixCharge(); }
+        if(Audio.SFX&&(Audio.SFX.bossfireTidalfusion||Audio.SFX.enemyHeavyLaser))(Audio.SFX.bossfireTidalfusion||Audio.SFX.enemyHeavyLaser)(); }
       const want=clamp(Math.atan2(player.y-nose.y,player.x-nose.x)-Math.PI/2,-0.28,0.28);
       b._chBeamAng+=(clamp(want-(b._chBeamAng||0),-0.16*dt,0.16*dt)); chaosHarrierBeamHit(b);
     }else b._chBeamActive=false;
@@ -25686,7 +25920,7 @@ function drawShieldBarArt(frac, cx, cy, w, b){
   frac=clamp(frac||0,0,1);const ar=(im.naturalWidth||im.width)/(im.naturalHeight||im.height),h=w/ar;
   const x=Math.round(cx-w/2),y=Math.round(cy-h/2),fx=x+w*.067,fy=y+h*.43,fw=w*.866,fh=h*.235;
   ctx.save();ctx.imageSmoothingEnabled=true;ctx.drawImage(im,x,y,w,h);
-  if(frac>0){ctx.save();ctx.beginPath();ctx.rect(fx,fy,fw*frac,fh);ctx.clip();ctx.drawImage(fill,fx,fy,fw,fh);ctx.globalAlpha=.12+.08*Math.sin(stateT*5);ctx.fillStyle=theme==='volcano'?'#ffe1cb':theme==='steel'?'#ffffff':'#e8fdff';ctx.fillRect(fx,fy,fw,fh);ctx.restore();}
+  if(frac>0){ctx.save();ctx.beginPath();ctx.rect(fx,fy,fw*frac,fh);ctx.clip();const fs=fw/Math.max(1,fill.naturalWidth||fill.width),fillH=(fill.naturalHeight||fill.height)*fs;ctx.drawImage(fill,fx,fy+(fh-fillH)/2,fw,fillH);ctx.globalAlpha=.12+.08*Math.sin(stateT*5);ctx.fillStyle=theme==='volcano'?'#ffe1cb':theme==='steel'?'#ffffff':'#e8fdff';ctx.fillRect(fx,fy,fw,fh);ctx.restore();}
   ctx.restore();return true;
 }
 
@@ -25817,6 +26051,34 @@ function chaosHarrierImage(key,x,y,w,h,alpha,blend,rot){
   if(alpha!=null)ctx.globalAlpha=alpha; if(blend)ctx.globalCompositeOperation=blend;
   ctx.translate(x,y); if(rot)ctx.rotate(rot); ctx.drawImage(im,-w/2,-h/2,w,h); ctx.restore(); return true;
 }
+/* The source plates store four poses across shifted columns. Draw an individual pose's ink
+   at a stable hardpoint; drawing the full PNG made plasma, the reactor beam and lance jump by
+   8-32 source pixels on every animation frame. These crops were measured from the alpha bounds. */
+const CH_CROP={
+  plasma:[[119,32,48,112],[87,32,48,112],[55,32,48,112],[23,32,48,112]],
+  beam:[[81,46,64,299],[73,46,64,299],[55,46,64,299],[47,46,64,299]],
+  lance:[[120,10,47,66],[88,10,47,66],[56,10,47,66],[24,10,47,66]],
+  sidelaser:[[90,37,17,93],[82,37,17,93],[64,37,17,93],[56,37,17,93]]
+};
+const CH_EFFECT_CENTRES={
+  sideflash:[[116,97],[110,109],[106,112],[95,105]],
+  launchflash:[[117,93],[109,97],[106,118],[95,98]],
+  charge:[[116,92],[108,92],[107,99],[95,93]]
+};
+function chaosHarrierCropped(key,crop,x,y,w,h,alpha,blend,rot){
+  if(typeof XART==='undefined'||!XART.rdy(key))return false;
+  ctx.save();ctx.translate(x,y);if(rot)ctx.rotate(rot);
+  ctx.imageSmoothingEnabled=false;
+  if(alpha!=null)ctx.globalAlpha=alpha;
+  if(blend)ctx.globalCompositeOperation=blend;
+  ctx.drawImage(XART.get(key),crop[0],crop[1],crop[2],crop[3],-w/2,-h/2,w,h);
+  ctx.restore();return true;
+}
+function chaosHarrierEffect(family,fi,x,y,w,h,alpha){
+  const c=CH_EFFECT_CENTRES[family][fi];
+  return chaosHarrierCropped('ch_'+family+'_'+fi,[c[0]-90,c[1]-90,180,180],
+                            x,y,w,h,alpha,'lighter',0);
+}
 function chaosHarrierWarpFrame(b){
   const t=b._chT||0;
   if(b._chState==='warpout')return clamp(Math.floor((t/0.60)*8),0,7);
@@ -25866,10 +26128,9 @@ function chaosHarrierDraw(b){
       if(im){ctx.save();ctx.globalAlpha=Math.min(0.86,b.flash/0.18);ctx.drawImage(im,b.x-b.w/2,yy-h/2,b.w,h);ctx.restore();}
     }
   }
-  const F=b._chFlash;
-  if(F){
+  for(const F of (b._chFlashes||[])){
     const fi=clamp(Math.floor((F.t/F.life)*4),0,3), a=Math.max(0,1-F.t/F.life);
-    chaosHarrierImage('ch_'+F.family+'_'+fi,F.point.x,F.point.y,b.w*0.54,b.w*0.54,a,'lighter',0);
+    chaosHarrierEffect(F.family,fi,F.point.x,F.point.y,b.w*0.54,b.w*0.54,a);
   }
   if(b._chState==='side'){
     /* the emitter is drawn on every beat of the act - spin-up AND burn - so the wing reads as a
@@ -25879,7 +26140,7 @@ function chaosHarrierDraw(b){
                 [chaosHarrierPoint(b,'right_cannon'),b._chSideR||0]];
     for(const [p,ang] of guns){
       if(b._chSideOn && XART.rdy('ch_sidelaser_'+fi)){
-        const C=CH_SIDE_CROP, len=VH-p.y+120, w=CH_SIDE_HALF*2;
+        const C=CH_CROP.sidelaser[fi], len=VH-p.y+120, w=CH_SIDE_HALF*2;
         ctx.save();ctx.translate(p.x,p.y);ctx.rotate(ang);
         ctx.globalCompositeOperation='lighter';ctx.imageSmoothingEnabled=false;
         ctx.drawImage(XART.get('ch_sidelaser_'+fi),C[0],C[1],C[2],C[3],-w/2,-6,w,len);
@@ -25891,26 +26152,25 @@ function chaosHarrierDraw(b){
       /* ch_lance_ IS the cannon housing + charge chamber. It sits over the muzzle end, rotated
          onto the line the gun is holding, so the emitter and its beam are one object. */
       const ca=b._chSideOn?0.95:(0.30+0.65*Math.min(1,t/CH_SIDE_CHARGE));
-      const lw=b.w*0.30, lh=lw*(138/47), la=Math.PI/2+ang;
-      /* chaosHarrierImage centres the plate, and the housing is the plate's TOP third (measured:
-         row density 9999999888867764455434422210). Seat it down the beam line so the housing
-         lands on the cannon instead of floating above the wing. */
-      chaosHarrierImage('ch_lance_'+fi,p.x+Math.cos(la)*lh*0.30,p.y+Math.sin(la)*lh*0.30,
-                        lw,lh,ca,'lighter',ang);
+      /* The supplied lance reel shifts 32px per frame and already contains a long bolt.
+         Keep just the charging emitter on the cannon; the separate beam owns the burn. */
+      chaosHarrierCropped('ch_lance_'+fi,CH_CROP.lance[fi],p.x,p.y+13,
+                            39,55,ca,'lighter',ang);
     }
   }
   if(b._chState==='beam'){
     const nose=chaosHarrierPoint(b,'nose');
     if((b._chT||0)<0.92){
       const fi=clamp(Math.floor(((b._chT||0)/0.92)*4),0,3);
-      chaosHarrierImage('ch_charge_'+fi,nose.x,nose.y,b.w*0.50,b.w*0.50,0.90,'lighter',0);
+      chaosHarrierEffect('charge',fi,nose.x,nose.y,b.w*0.50,b.w*0.50,0.90);
     }
     if(b._chBeamActive){
       const fi=Math.floor((b.t||0)*14)%4, ang=b._chBeamAng||0, len=VH-nose.y+110;
       ctx.save();ctx.translate(nose.x,nose.y);ctx.rotate(ang);ctx.globalCompositeOperation='lighter';
       /* The authored beam cells carry 46 transparent pixels above the lance. Crop that
          padding so the first live pixel seats directly inside the Harrier's nose flash. */
-      if(XART.rdy('ch_beam_'+fi))ctx.drawImage(XART.get('ch_beam_'+fi),0,46,192,299,-39,-7,78,len);
+      if(XART.rdy('ch_beam_'+fi)){const C=CH_CROP.beam[fi];
+        ctx.drawImage(XART.get('ch_beam_'+fi),C[0],C[1],C[2],C[3],-39,-7,78,len);}
       ctx.restore();
       const a=Math.PI/2+ang, ex=nose.x+Math.cos(a)*(VH-nose.y+20),ey=nose.y+Math.sin(a)*(VH-nose.y+20);
       chaosHarrierImage('ch_impact_'+fi,ex,ey,96,96,0.92,'lighter',0);
@@ -25934,10 +26194,12 @@ function chaosHarrierProjectileDraw(b){
     ctx.save();ctx.translate(b.x,b.y);ctx.rotate(ang);ctx.imageSmoothingEnabled=false;
     ctx.globalCompositeOperation='lighter';ctx.drawImage(im,sx,22,40,100,-10,-25,20,50);ctx.restore();return true;
   }
-  const h=b._chKind==='sidelaser'?60:(b._chKind==='missile'?36:31);
-  const w=h*(im.naturalWidth/Math.max(1,im.naturalHeight));
+  const C=b._chKind==='plasma'?CH_CROP.plasma[fi]:CH_CROP.sidelaser[fi];
+  const w=b._chKind==='plasma'?18:22,h=b._chKind==='plasma'?42:60;
   ctx.save();ctx.translate(b.x,b.y);ctx.rotate(ang);ctx.imageSmoothingEnabled=false;
-  ctx.globalCompositeOperation='lighter';ctx.drawImage(im,-w/2,-h/2,w,h);ctx.restore();return true;
+  ctx.globalCompositeOperation='lighter';
+  ctx.drawImage(im,C[0],C[1],C[2],C[3],-w/2,-h/2,w,h);
+  ctx.restore();return true;
 }
 function drawSubBoss(){
   const b=subBoss; if(!b) return;
@@ -26911,7 +27173,7 @@ function laserMistTick(b,dt){
   if(hit&&laserMistLedgerHit(b,hit)){hitEnemy(hit,b.dmg);laserMistImpact(b.x,b.y,b.lv,false);b.dead=true;return true;}
   if(!b.dead&&typeof subBoss!=='undefined'&&subBoss&&subBossActive&&!subBoss.dead&&!subBoss.enter){
     const sy=subBoss._drawY!=null?subBoss._drawY:subBoss.y,sw=subBoss._drawW||subBoss.w,sh=subBoss._drawH||subBoss.h;
-    const inBox=Math.abs(subBoss.x-b.x)<(sw+b.w)/2&&Math.abs(sy-b.y)<(sh+b.h)/2;
+    const inBox=Math.abs(subBoss.x-b.x)<(sw+b.w)/2&&Math.abs(sy-b.y)<(sh+b.h)/2 || !!(subBoss._ship==='olivewarden'&&stage4MiniDroneAt(subBoss,b.x,b.y,Math.max(b.w,b.h)*.5));
     const solid=inBox&&typeof subBossSolidAt==='function'?subBossSolidAt(b.x,b.y):null;
     if(inBox&&solid!==false&&laserMistLedgerHit(b,subBoss)){
       hitSubBoss(b.dmg,b.x,b.y);laserMistImpact(b.x,b.y,b.lv,true);b.dead=true;return true;
@@ -26921,7 +27183,7 @@ function laserMistTick(b,dt){
     _lastHitX=b.x;_lastHitY=b.y;hitBoss(b.dmg);laserMistImpact(b.x,b.y,b.lv,true);b.dead=true;return true;
   }
   if(!b.dead)for(const p of powerups){
-    if(p.dead||(p.kind!=='crate'&&p.kind!=='capsule'&&p.kind!=='scrate'&&p.kind!=='mcrate'&&p.kind!=='hqspacebox'))continue;
+    if(p.dead||(p.kind!=='crate'&&p.kind!=='capsule'&&p.kind!=='scrate'&&p.kind!=='mcrate'&&p.kind!=='hqspacebox'&&!/^missileupbox_/.test(p.kind||'')))continue;
     if(Math.abs(p.x-b.x)<(p.w+b.w)/2&&Math.abs(p.y-b.y)<(p.h+b.h)/2){p.hp=(p.hp||5)-b.dmg;p.flash=.12;
       laserMistImpact(b.x,b.y,b.lv,false);b.dead=true;if(p.hp<=0){p.dead=true;breakContainer(p);}break;}
   }
@@ -27868,7 +28130,7 @@ const SPACE_SHADOW_FULL_CHARGE=1.55;
 /* Audio starts on the same trigger frame as the charge. The previous 100ms gate made the orb
    visibly grow before the sound arrived, especially at 30fps or on a busy laptop. */
 const SPACE_SHADOW_AUDIO_DELAY=0;
-function spaceWeaponsActive(){ return !!(run&&run.spaceMode&&(run.stage===5||run.stage===9)); }
+function spaceWeaponsActive(){ return !!(run&&run.spaceMode&&(run.stage===5||run.stage===9)&&![GS.FORGE,GS.LOADOUT,GS.POWERS].includes(state)); }
 function spaceLaserMuzzleWarm(){
   if(typeof XART==='undefined'||!XART._touch)return;
   for(const fam of SPACE_LASER_MUZZLE)for(let f=0;f<4;f++)XART._touch(fam+'_'+f);
@@ -28072,7 +28334,7 @@ function spaceTargets(){
   return a;
 }
 function spaceShootableContainer(p){
-  return !!(p&&!p.dead&&(p.kind==='crate'||p.kind==='capsule'||p.kind==='scrate'||p.kind==='mcrate'||p.kind==='hqspacebox'));
+  return !!(p&&!p.dead&&(p.kind==='crate'||p.kind==='capsule'||p.kind==='scrate'||p.kind==='mcrate'||p.kind==='hqspacebox'||/^missileupbox_/.test(p.kind||'')));
 }
 
 /* ============================================================
@@ -28391,7 +28653,7 @@ function yuriLightningOrbTick(b,dt){
   if(!b.dead&&boss&&bossActive&&!boss.dead&&bossHitTest(b.x,b.y))hitOnce(boss,b.dmg,d=>{_lastHitX=b.x;_lastHitY=b.y;hitBoss(d);});
   if(!b.dead&&typeof subBoss!=='undefined'&&subBoss&&subBossActive&&!subBoss.dead&&!subBoss.enter){
     const sy=subBoss._drawY!=null?subBoss._drawY:subBoss.y,sw=subBoss._drawW||subBoss.w,sh=subBoss._drawH||subBoss.h;
-    if(Math.abs(subBoss.x-b.x)<(sw+b.w)/2&&Math.abs(sy-b.y)<(sh+b.h)/2)hitOnce(subBoss,b.dmg,d=>hitSubBoss(d,b.x,b.y));
+    if(Math.abs(subBoss.x-b.x)<(sw+b.w)/2&&Math.abs(sy-b.y)<(sh+b.h)/2 || subBoss._ship==='olivewarden'&&stage4MiniDroneAt(subBoss,b.x,b.y,Math.max(b.w,b.h)*.5))hitOnce(subBoss,b.dmg,d=>hitSubBoss(d,b.x,b.y));
   }
   if(!b.dead)for(const c of powerups){if(c.dead||!['crate','capsule','scrate','mcrate','hqspacebox'].includes(c.kind))continue;
     if(Math.abs(c.x-b.x)<(c.w+b.w)/2&&Math.abs(c.y-b.y)<(c.h+b.h)/2&&hitOnce(c,b.dmg,d=>{c.hp=(c.hp||5)-d;c.flash=.12;if(c.hp<=0){c.dead=true;breakContainer(c);}}))break;}
@@ -28648,7 +28910,8 @@ function pShoot(){
         dmg:(12+lv*5)*(forgeActiveTier(3)>=5?1.18:1),lv,pierce:lv>=3,_hit:[],t:0,_el:'ice'});
       player._mgMuzT=.12;player._mgMuzLv=Math.max(1,lv);
       (Audio.SFX.iceOrbLaunch||Audio.SFX.shatter||Audio.SFX.laser||Audio.SFX.shoot)();
-    } else if(run.pilot!=='maverick' || heldVariant(3)==='laserbeam'){
+    } else if(run.pilot!=='maverick' || heldVariant(3)==='laserbeam' ||
+              (typeof infusionActive==='function' && infusionActive() && run.infusion.elem==='kinetic')){
       /* Restore the original held beam. One entity is refreshed while the trigger is held, so the
          authored nlz_/laserbeam animation stays anchored to the player's muzzle and burns the
          straight column. The Fire-Shark widening arc was requested for Maverick specifically and
@@ -29142,8 +29405,17 @@ function crateWeaponPool(unfiltered){
   }
   return _pool;
 }
+function harrierSupplyLane(){
+  const b=(run.stage===5&&subBossActive&&subBoss&&subBoss._harrier&&!subBoss.dead)?subBoss:null;
+  if(!b)return null;
+  const left=camLeftX()+rnd(48,78),right=camRightX()-rnd(48,78);
+  const gap=b.w*0.5+38,valid=[left,right].filter(x=>Math.abs(x-b.x)>=gap);
+  if(valid.length)return valid[(Math.random()*valid.length)|0];
+  return Math.abs(left-b.x)>Math.abs(right-b.x)?left:right;
+}
 function spawnContainer(type){
-  const x=rnd(40,VW-40);
+  const _harrierLane=harrierSupplyLane();
+  const x=_harrierLane==null?rnd(40,VW-40):_harrierLane;
   if(type==='crate'){ 
     // FAIR DEAL: crates draw from a shuffled bag of all 6 weapons (no more never-seeing FIREWALL)
     /* STAGE 3's BAG (drop 0801fn). Mike: "On level 3 - you need to spawn fireball
@@ -29166,7 +29438,8 @@ function spawnContainer(type){
   else if(type==='scrate') powerups.push({x,y:-30,vy:0.8,t:0,kind:'scrate',hp:6,flash:0,w:30,h:30,bob:rnd(0,TAU)});
   else if(type==='hqspacebox') spaceArmorySpawnBox(x,-42);
   else if(type==='mcrate'){
-    powerups.push({x:rnd(camLeftX()+40,camRightX()-40),y:-30,vy:0.85,t:0,kind:'mcrate',hp:6,flash:0,w:48,h:44,bob:rnd(0,TAU)});
+    powerups.push({x:_harrierLane==null?rnd(camLeftX()+40,camRightX()-40):_harrierLane,
+                   y:-30,vy:0.85,t:0,kind:'mcrate',hp:6,flash:0,w:48,h:44,bob:rnd(0,TAU)});
     missileSupplyBonusRoll();
   }
   else powerups.push({x,y:-30,vy:0.9,t:0,kind:'capsule',hp:5,flash:0,w:22,h:32,bob:rnd(0,TAU)});
@@ -29180,6 +29453,13 @@ function crateBreak(x,y,col){
   particles.push({x,y,vx:0,vy:0,t:0,life:.6,r:18,flashring:true,color:col}); // authored shock ring belongs to effects, not floating text
 }
 function breakContainer(p){
+  if(/^missileupbox_(super|ultra|uber)$/.test(p.kind||'')){
+    const tier=p.kind.slice('missileupbox_'.length);
+    crateBreak(p.x,p.y,tier==='super'?'#4b9dff':tier==='ultra'?'#ff952b':'#55ef59');
+    powerups.push({kind:'missileup_'+tier,x:p.x,y:p.y-18,vy:.45,t:0,bob:rnd(0,TAU),w:26,h:26,_collectAfter:.45,_missileSeat:p._missileSeat});
+    if(Audio.SFX.expSmall)Audio.SFX.expSmall();
+    return;
+  }
   retinaScanSupply(p);
   if(p.kind==='crate'){ crateBreak(p.x,p.y,'#ffcf4a'); powerups.push({x:p.x,y:p.y,vy:0.7,t:0,kind:'weapon',wtype:p.wtype,wvar:p.wvar,w:18,h:18,bob:rnd(0,TAU)}); }
   else if(p.kind==='hqspacebox'){crateBreak(p.x,p.y,'#53c9ff');powerups.push({x:p.x,y:p.y,vy:.58,t:0,kind:p._hqReward||spaceArmoryRoll(),w:28,h:28,bob:rnd(0,TAU)});}
@@ -29337,8 +29617,8 @@ function applyPowerup(p){
     case 'missileupbox_super':
     case 'missileupbox_ultra':
     case 'missileupbox_uber':
-      p=Object.assign({},p,{kind:p.kind.replace('missileupbox_','missileup_')});
-      /* falls through: a tier box grants the same gated upgrade represented by its badge */
+      breakContainer(p); break;  // safety for scripted/contact grants: open, then collect the icon
+
     case 'missileup_super':
     case 'missileup_ultra':
     case 'missileup_uber': {
@@ -29499,51 +29779,29 @@ function arcadeBannerTick(dt){
   if(_arcBan.t > typeDur+ARC_SWEEP+ARC_HOLD+ARC_OUT) _arcBan=null;
 }
 function drawArcadeBanner(){
-  const B=_arcBan; if(!B) return;
-  if(typeof msgMeasure!=='function') return;
-  /* THE PICKUP BANNER RUNS IN THE DIALOGUE FACE TOO (Mike, 0819): "when you acquire powerups and
-     items and stuff". Opted in before the first measure, because the '!' test, the width, the
-     sweep clip and the draw all have to agree about which face is on screen.
-     ⚠ AND THIS FACE HAS A REAL '!', so the hand-built bar-and-dot below stops being reachable —
-     it stays for the stage face, which does not. */
-  const _dialogueReady=msgFaceUse('dialogue');
-  const H=Math.max(12, Math.round(VH*0.042));
-  const typeDur=B.text.length/ARC_CPS;
-  const tSweep=B.t-typeDur, tOut=B.t-(typeDur+ARC_SWEEP+ARC_HOLD);
-
-  const full=B.text+((B.bang && msgHasGlyph('!'))?'!':'');
-  const w=msgMeasure(full,H); if(!w) return;             // sheet not up: draw nothing, not a guess
-  const x0=Math.round(VW/2-w/2);
-  let y=Math.round(VH*0.34), a=1;
-  if(tOut>0){ const k=Math.min(1,tOut/ARC_OUT); y-=Math.round(k*34); a=1-k; }   // slides up and fades
-
-  const shown = (tSweep>=0) ? full : full.slice(0, Math.max(0, Math.floor(B.t*ARC_CPS)));
-  /* screen space, so it cannot scroll away. ⚠ `translate(camX,0)` WAS ONLY EVER HALF THE ESCAPE
-     and the 0819 zoom is the other half — same correction as the dialogue panel. */
+  const B=_arcBan;if(!B)return;
+  /* Pickup rewards use the shaded, authored GAME lettering. Dialogue belongs in
+     conversations; it reads like plain white text over the field. */
+  const art=typeof uiFontArt==='function'?uiFontArt():null;
+  if(!art||!artReady(art))return;
+  let H=Math.max(15,Math.round(VH*.047));
+  const full=B.text+((B.bang&&stageGlyph(art,'!'))?'!':'');
+  while(H>11&&stageWidth(art,full,H,.07)>VW-26)H--;
+  const w=stageWidth(art,full,H,.07),x0=Math.round(VW/2-w/2);
+  const typeDur=B.text.length/ARC_CPS,tSweep=B.t-typeDur,tOut=B.t-(typeDur+ARC_SWEEP+ARC_HOLD);
+  let y=Math.round(VH*.34),a=1;
+  if(tOut>0){const k=Math.min(1,tOut/ARC_OUT);y-=Math.round(k*34);a=1-k;}
+  const shown=tSweep>=0?full:full.slice(0,Math.max(0,Math.floor(B.t*ARC_CPS)));
   ctx.save();
-  if(typeof worldXformEscape==='function'){ worldXformEscape(); }
-  else { ctx.translate((typeof camX!=='undefined')?camX:0, 0); }
-
-  msgTextLeft(shown, x0, y, H, B.col, 1, a);
-
-  /* the sweep: a bright band travelling left to right across the finished line */
-  if(tSweep>=0 && tSweep<=ARC_SWEEP){
-    const k=tSweep/ARC_SWEEP, band=Math.max(18,w*0.26);
-    ctx.save();
-    ctx.beginPath(); ctx.rect(x0-band+(w+band*2)*k, y-H, band, H*2); ctx.clip();
-    msgTextLeft(full, x0, y, H, '#ffffff', 1, a);
+  if(typeof worldXformEscape==='function')worldXformEscape();
+  else ctx.translate((typeof camX!=='undefined')?camX:0,0);
+  stageText(art,shown,x0+stageWidth(art,shown,H,.07)/2,y,H,null,0,a,.07);
+  if(tSweep>=0&&tSweep<=ARC_SWEEP){
+    const k=tSweep/ARC_SWEEP,band=Math.max(18,w*.26);
+    ctx.save();ctx.beginPath();ctx.rect(x0-band+(w+band*2)*k,y-H,band,H*2);ctx.clip();
+    stageText(art,full,VW/2,y,H,'#ffffff',.55,a,.07);
     ctx.restore();
   }
-  /* the mark, when the face has no '!' of its own — drawn to the face's cap height so it sits
-     with the letters instead of looking like a different typeface bolted on */
-  if(B.bang && !msgHasGlyph('!') && shown.length>=B.text.length){
-    const bw=Math.max(2,Math.round(H*0.14)), bx=x0+w+Math.round(H*0.16);
-    ctx.save(); ctx.globalAlpha=a; ctx.fillStyle=B.col;
-    ctx.fillRect(bx, y-Math.round(H*0.46), bw, Math.round(H*0.60));
-    ctx.fillRect(bx, y+Math.round(H*0.28), bw, bw);
-    ctx.restore();
-  }
-  msgFaceUse(null);
   ctx.restore();
 }
 /* the name a pickup announces itself by — WEAPONS carries the full label, and Mike's example
@@ -29601,7 +29859,19 @@ const LOCK_TURN=0.05;         // rad per frame while locked - a 64px turning cir
 const LOCK_COMMIT_PX=86;      // inside this a locked missile freezes its heading: dodge late and it sails past
 const LOCK_MAX_T=9;           // no lock outlives this, whatever its missiles are doing
 const LOCK_FADE=0.35;         // how long a broken or released retina takes to clear
-let playerLocks=[], _lockSeq=0, _lockBeepT=0;
+let playerLocks=[], _lockSeq=0, _lockBeepT=0, _lockHudGap=Infinity;
+function drawIncomingLockHud(){
+  if(!XART.rdy('lock_frame_0922')||!XART.rdy('retm_0'))return;
+  const active=playerLocks.some(L=>L.state==='arming'||L.state==='locked'),frame=XART.get('lock_frame_0922');
+  const w=88,h=w*frame.height/frame.width,right=(typeof PLAY!=='undefined'?PLAY.x+PLAY.w:VW)-6,bottom=(typeof PLAY!=='undefined'?PLAY.y+PLAY.h:VH)-6;
+  const x=right-w,y=bottom-64-h-5,blink=active&&Math.floor(performance.now()/(Math.max(.055,_lockHudGap)*1000))%2===0;
+  const col=active?'#ff2929':'#77818d',ret=xartPalette('retm_0',col)||XART.get('retm_0');
+  ctx.save();ctx.imageSmoothingEnabled=false;ctx.shadowColor=active?'#ff2929':'transparent';ctx.shadowBlur=blink?7:0;
+  ctx.drawImage(frame,x,y,w,h);ctx.shadowBlur=0;ctx.globalAlpha=active?(blink?1:.55):.65;
+  ctx.drawImage(ret,x+9,y+(h-15)/2,15,15);
+  bmfDraw('dialogue','LOCK',x+29,y+(h-10)/2,10,1,col,1,true);ctx.restore();
+}
+
 function lockById(id){ for(const L of playerLocks) if(L.id===id) return L; return null; }
 function lockEvading(){ return !!(player && (player.roll || player.somer || player._chgDash)); }
 function lockPending(L){ let m=Infinity; for(const sh of L.launches) if(!sh.done) m=Math.min(m, sh.at-L.t); return m; }
@@ -29645,10 +29915,11 @@ function _lockLaunch(L, shot){
     if(m && (m._shootable || m.kind==='emissile' || m.kind==='s1jungleMissile')){ m._lockId=L.id; L.missiles.push(m); } }
 }
 function updatePlayerLocks(dt){
-  if(!playerLocks.length){ _lockBeepT=0; return; }
-  if(typeof player==='undefined' || !player || player.dead){ playerLocks=[]; _lockBeepT=0; return; }
+  const bombWarnings=groundTargetingFx.filter(q=>q._jetBomb&&!q.dead&&!q.impact&&q.delay<=0);
+  if(!playerLocks.length&&!bombWarnings.length){ _lockBeepT=0; _lockHudGap=Infinity; return; }
+  if(typeof player==='undefined' || !player || player.dead){ playerLocks=[]; _lockBeepT=0; _lockHudGap=Infinity; return; }
   const evading=lockEvading();
-  let soonest=Infinity, holding=false;
+  let soonest=Infinity, nearest=Infinity;
   for(const L of playerLocks){
     L.t+=dt;
     L.spin+=dt*(L.state==='broken'?10:(L.state==='locked'?1.4:3.4));
@@ -29662,17 +29933,23 @@ function updatePlayerLocks(dt){
     if(L.state==='broken' || L.state==='released') L.endT+=dt;
     if(L.state==='arming' || L.state==='locked'){
       if(pend<Infinity) soonest=Math.min(soonest, pend);
-      else holding=true;
+      for(const m of L.missiles) nearest=Math.min(nearest,Math.hypot(m.x-player.x,m.y-player.y));
     }
   }
   /* a broken lock still owes its queued launches - the enemy fires anyway, just unguided */
   playerLocks=playerLocks.filter(L=> L.t<LOCK_MAX_T &&
     !((L.state==='broken' || L.state==='released') && L.endT>=LOCK_FADE && lockPending(L)===Infinity));
-  /* ONE BEEP VOICE FOR THE SCREEN: rapid as a launch closes in, a slow pulse while missiles hold */
+  /* One warning voice shared by missiles and committed ground-bomb markers. */
   let gap=Infinity;
-  if(soonest<Infinity) gap=clamp(soonest*0.42, 0.055, 0.30);
-  else if(holding) gap=0.50;
+  if(!evading)for(const q of bombWarnings)if(Math.abs(player.x-q.x)<q.radius+40&&Math.abs(player.y-q.y)<q.radius+45)
+    gap=Math.min(gap,clamp((q.warn-q.t)*.38,.12,.40));
+  if(soonest<Infinity) gap=Math.min(gap,clamp(soonest*0.42, 0.055, 0.30));
+  if(nearest<Infinity) gap=Math.min(gap,clamp(nearest/900,0.055,0.50));
+  _lockHudGap=gap;
   if(gap===Infinity){ _lockBeepT=0; return; }
+  if(run.stage===6&&s6Opening&&s6Opening.phase==='lock')gap=.4;
+  if(playerLocks.some(L=>L.src&&L.src._ovSonic&&L.src._ovSonic.phase==='missileTell'))gap=.42;
+  _lockBeepT=Math.min(_lockBeepT,gap);
   _lockBeepT-=dt;
   if(_lockBeepT<=0){
     _lockBeepT=gap;
@@ -30180,7 +30457,7 @@ function updateRollers(dt){
       }
     }
     // it also shreds enemy bullets it rolls over
-    for(const eb of eBullets){ if(!eb.dead && dist2(eb.x,eb.y,b.x,b.y)<(b.r+6)*(b.r+6)) eb.dead=true; }
+    for(const eb of eBullets){ if(!eb.dead && !eb._weaponProof && dist2(eb.x,eb.y,b.x,b.y)<(b.r+6)*(b.r+6)) eb.dead=true; }
     if(b.life<=0){
       b.dead=true;
       explode(b.x,b.y,b.full?34:20,'red');
@@ -30686,7 +30963,9 @@ function retinaBossTargets(b){
   const S=b._s4war,H=S&&S.shield,M=b._mega,X=b._xenoRig;
   let sectional=false;
   if(H&&H.active)for(const n of H.nodes)if(!n.dead)a.push(retinaPiece(b,n,'electrical node',()=>({x:n.x,y:n.y}),48,48));
-  if(S&&S.coreUnlocked)for(const p of S.coreTurrets)if(!p.dead&&p.materialize>=.92)a.push(retinaPiece(b,p,'helper',()=>({x:p.x,y:p.y}),80,80));
+  if(S&&S.coreUnlocked)for(const p of S.coreTurrets)if(!p.dead&&p.materialize>=.92)a.push(retinaPiece(b,p,'helper',()=>({x:p.x,y:p.y}),S4H_SIZE,S4H_SIZE));
+  if(S&&S.mini&&S.summoned)for(const d of S.drones)if(!d.dead&&d.active>=.82)
+    a.push(retinaPiece(b,d,'escort',()=>({x:d.x,y:d.y}),d.size||88,d.size||88));
   if(M&&M.phase>=1)for(const n of M.nodes)if(!n.dead)a.push(retinaPiece(b,n,'storm node',()=>carrierMegaNodePos(b,n),48,48));
   if(b._bay&&b._bayShield&&!b._bayShield.up)for(const side of ['L','R'])if(b._bay[side]>0){
     if(!b._retinaBays)b._retinaBays={};
@@ -30763,6 +31042,7 @@ function retinaMissileDamage(t,dmg,shot){
     if(t.kind==='storm node')carrierMegaNodeDamage(b,p,dmg);
     else if(t.kind==='electrical node'){b._s4ShieldHit=p;stage4ShieldAbsorbHit(b,dmg,t.x,t.y);}
     else if(t.kind==='helper')stage4CoreTurretDamage(b,p,dmg);
+    else if(t.kind==='escort')stage4MiniDroneDamage(b,p,dmg);
     else if(t.kind==='missile bay')carrierBayDamage(b,p.side,dmg,t.x,t.y,null);
     else if(t.kind==='module'){b._lastPart=p;hitBoss(dmg);}
   }else if(t._xenoOwner||t._spaceBossOwner||t._spaceSubOwner)spaceDamageTarget(t,dmg,shot);
@@ -30771,6 +31051,30 @@ function retinaMissileDamage(t,dmg,shot){
   else if(typeof rival!=='undefined'&&t===rival)hitRival(dmg);
   else hitEnemy(t,dmg);
   return true;
+}
+/* Missile blasts and passive warheads share the live encounter-piece list used by Retina.
+   Body hits still use the existing boss collision router, which preserves shield gates. */
+function missileComponentTargets(){
+  return _lockTargets().filter(t=>t&&!t.dead&&(t._retinaOwner||t._xenoOwner||t._spaceBossOwner||t._spaceSubOwner));
+}
+function missileComponentTargetAt(x,y,pad){
+  let best=null,dist=Infinity;
+  for(const t of missileComponentTargets()){
+    if(Math.abs(x-t.x)>(Math.max(8,t.w||36)/2+pad)||Math.abs(y-t.y)>(Math.max(8,t.h||36)/2+pad))continue;
+    const d=dist2(x,y,t.x,t.y);if(d<dist){best=t;dist=d;}
+  }
+  return best;
+}
+function missileBlastComponents(x,y,radius,dmg,shot,exclude){
+  const owners=new Set();
+  if(exclude)owners.add(exclude._retinaOwner||exclude._xenoOwner||exclude._spaceBossOwner||exclude._spaceSubOwner||exclude);
+  for(const t of missileComponentTargets()){
+    if(t===exclude)continue;
+    const reach=radius+Math.min(24,Math.max(t.w||0,t.h||0)*.25);
+    if(dist2(x,y,t.x,t.y)>reach*reach)continue;
+    if(retinaMissileDamage(t,dmg,shot))owners.add(t._retinaOwner||t._xenoOwner||t._spaceBossOwner||t._spaceSubOwner);
+  }
+  return owners;
 }
 function prismRaySteer(b,dt){
   b.seekT=(b.seekT||0)+dt;
@@ -30794,6 +31098,7 @@ function prismRaySteer(b,dt){
 }
 function _lockTargets(){
   const t=[];
+  if(s6OpeningActive())for(const m of s6Opening.shots)if(!m.dead&&m._shootable)t.push(m);
   for(const e of enemies)if(!e.dead&&e.y>PLAY.y-8&&e.y<VH)t.push(e);
   if(typeof subBoss!=='undefined'&&subBossActive)t.push(...retinaBossTargets(subBoss));
   if(bossActive)t.push(...retinaBossTargets(boss));
@@ -30985,7 +31290,7 @@ function updateRetina(dt){
    a faster pea-shooter. ============================================================ */
 const SONIC_SPD = 9.2;              // fast — it is a shockwave, not a shell
 const SONIC_CD  = 0.34;
-const SONIC_DMG = 11;               /* 7 -> 11 (0917, 'deadly'): a full charge is 26, a tap 7 */
+const SONIC_DMG = 11;               // base wave; Cole receives a 1.5x multiplier at release (full: 22 -> 33)
 const SONIC_LIFE= 1.6;
 let sonicTrail=[];                  // parked distortion plates, fading where the wave passed
 
@@ -31067,7 +31372,7 @@ function sonicRelease(p){
      BOTH STATES PIERCE — "pierce units with sonic waves in both states half or full charge
      blast." A half charge is a weaker wave, not a lesser weapon; it still goes through the row. */
   const scale = 0.75 + p*0.85;                       // 0.75x tap -> 1.6x full
-  const dmg   = Math.round(SONIC_DMG*(0.6+p*1.4));
+  const dmg   = Math.round(SONIC_DMG*(0.6+p*1.4))*(_pilotKey()==='cole'?1.5:1);
   pBullets.push({x:player.x, y:player.y-16, vx:0, vy:-SONIC_SPD*(0.85+p*0.45), kind:'sonic',
                  dmg:dmg, _bossDmg:dmg,
                  w:34*scale, h:34*scale, t:0,
@@ -31422,12 +31727,23 @@ function dkTick(dt){
 }
 /* THE BURN. Mirrors the _frozen pattern the ice breath already uses rather than inventing a
    second status system — a counter on the unit plus a flash timer, ticked where it is hit. */
-function dkIgnite(e){
+/* Enemy burns retain the attacking weapon's palette after a weapon change. The
+   flame plate and its embers use the same colour mapping as flameDraw. */
+function enemyBurnApply(e,duration,source){
+  if(!e) return;
+  const inf=source&&source._inf&&INFUSIONS[source._inf];
+  e._burn=Math.max(e._burn||0,duration);
+  e._burnPalette=inf?inf.body:'#ff6924';
+  e._burnEmber=inf?inf.glow:'#ffd36b';
+  if(e._burnPhase==null) e._burnPhase=Math.random()*8;
+  if(typeof XART!=='undefined') for(let i=0;i<8;i++) XART.rdy('enemy_burn_0922_'+i);
+}
+function dkIgnite(e,source){
   if(!e) return;
   /* "except for mini bosses and bosses" — set pieces do not catch fire. The predicate moved to
      isSetPiece (0821b) so this and the spawn-safety sweep cannot drift apart. */
   if(isSetPiece(e)) return;
-  e._burn = DK_BURN_TIME;
+  enemyBurnApply(e,DK_BURN_TIME,source);
   e._burnTick = e._burnTick || 0;
 }
 function dkBurnTick(e, dt){
@@ -31439,7 +31755,7 @@ function dkBurnTick(e, dt){
     if(typeof hitEnemy==='function') hitEnemy(e, 1);       // the fire keeps eating it
     if(chance(0.8)) particles.push({x:e.x+rnd(-e.w*0.35,e.w*0.35), y:e.y+rnd(-e.h*0.35,e.h*0.35),
       vx:rnd(-0.4,0.4), vy:rnd(-1.4,-0.4), life:rnd(0.25,0.5), t:0, r:rnd(1,2.2),
-      color:chance(0.5)?'#ffb347':'#ff6a1e'});
+      color:chance(0.5)?(e._burnEmber||'#ffd36b'):(e._burnPalette||'#ff6924')});
   }
 }
 function dkDecalAdd(e,x,y){
@@ -31572,8 +31888,10 @@ function nukeAt(x,y){
   explode(x,y,86,'red'); explode(x,y,54,'red'); shake=Math.max(shake,18); flashScreen=Math.max(flashScreen||0,0.6); (Audio.SFX.nuclearDetonate||Audio.SFX.bomb||Audio.SFX.expBig)();
   nukeImpacts.push({x,y,t:0,dur:0.5});
   for(const e of enemies){ if(!e.dead && dist2(e.x,e.y,x,y)<140*140) hitEnemy(e,40); }
-  if(typeof subBoss!=='undefined' && subBoss && !subBoss.dead && dist2(subBoss.x,subBoss.y,x,y)<160*160) hitSubBoss(60);
-  if(boss && bossActive && !boss.dead && dist2(boss.x,boss.y,x,y)<170*170) hitBoss(60);
+  const owners=missileBlastComponents(x,y,155,60,_dmgBullet,null);
+  _lastHitX=x;_lastHitY=y;
+  if(typeof subBoss!=='undefined' && subBoss && !subBoss.dead && !owners.has(subBoss) && dist2(subBoss.x,subBoss.y,x,y)<160*160) hitSubBoss(60);
+  if(boss && bossActive && !boss.dead && !owners.has(boss) && dist2(boss.x,boss.y,x,y)<170*170) hitBoss(60);
   for(const p of powerups){ if(!p.dead && (p.kind==='crate'||p.kind==='capsule'||p.kind==='scrate'||p.kind==='hqspacebox') && dist2(p.x,p.y,x,y)<140*140){ p.hp=0; p.dead=true; breakContainer(p); } }
 }
 function retinaFire(){
@@ -32070,9 +32388,9 @@ function manualMissileSpawnWaveOffers(){
   const seats=(typeof seatList==='function')?seatList():[1],left=camLeftX(),right=camRightX(),span=right-left;
   for(const n of seats){
     const r=(typeof seatRun==='function')?seatRun(n):run,tier=manualMissileUpgradeOfferTier(r);if(!tier)continue;
-    if(powerups.some(p=>!p.dead&&p._missileSeat===n&&/^missileupbox_/.test(p.kind||'')))continue;
+    if(powerups.some(p=>!p.dead&&p._missileSeat===n&&/^missileup(box)?_/.test(p.kind||'')))continue;
     const rank=tier==='super'?0:tier==='ultra'?1:2,x=left+span*(seats.length>1?(n===1?.34:.66):.5);
-    powerups.push({kind:'missileupbox_'+tier,x,y:-34,vy:.62,t:0,bob:n*Math.PI,w:46+rank*5,h:46+rank*5,_missileSeat:n,_missileTier:tier});
+    powerups.push({kind:'missileupbox_'+tier,x,y:-34,vy:.62,t:0,bob:n*Math.PI,w:46+rank*5,h:46+rank*5,hp:3,_missileSeat:n,_missileTier:tier});
     try{if(typeof stageStats!=='undefined'&&stageStats.pickupsSeen!=null)stageStats.pickupsSeen++;}catch(_muSeen){}
   }
 }
@@ -32099,6 +32417,8 @@ function useBomb(forcedTarget){
    START / FLOW CONTROL
    ============================================================ */
 function startRun(fromStage=1){
+  if(typeof _stopContinueVO==='function') _stopContinueVO();
+  drawContinue._lastNum=99;
   /* Direct/password/test routes can enter a run without spending long enough on pilot deploy for
      its asset warm to finish. This is idempotent and starts only the three shared player sheets;
      individual cells remain lazy. */
@@ -32988,7 +33308,8 @@ function beginStage(num){
     run._s5Resume={ t:(typeof stageTimer==='number'?stageTimer:0),
                     scroll:(typeof scroll==='number'?scroll:0),
                     clock:(typeof spawnClock==='number'?spawnClock:0),
-                    wave:(typeof waveIdx==='number'?waveIdx:0) };
+                    wave:(typeof waveIdx==='number'?waveIdx:0),
+                    miniDone:!!subBossDone,miniTriggered:!!subBossTriggered,map:mapScroll,sky:_stage5SpaceScroll };
   }
   // Campaign owns the map-to-rift handoff; a saved campaign latch cannot redirect Arcade.
   const _l78Pending=run.mode==='campaign'&&(num===8)&&!!(run._l78Entry||(typeof campaign!=='undefined'&&campaign._l78Pending));
@@ -33131,6 +33452,7 @@ function beginStage(num){
      The ship therefore appeared right of centre at GO and visibly drifted back. Snapped here,
      AFTER reset, so the launch draws through the same camera play will use. */
   snapCamToPlayer();
+  s6Opening=null; s6Wing=null; if(num===6&&!_coleScene){s6OpeningInit();s6WingInit();}
   /* The Stage 7 escape already supplied Stage 8's dramatic handoff.  Selecting the newly
      unlocked stage therefore begins on the requested white frame and helix-rift emergence,
      without inserting the ordinary title-card/launch sequence between those two moments. */
@@ -33142,7 +33464,7 @@ function beginStage(num){
   /* RADIO: the stage's ENTRY exchange plays over the entry flight, which is exactly where the
      delivery rules want it — "major radio exchanges should play over entry flights, empty
      transition corridors, environmental flyovers, or post-boss slowdowns". */
-  if(typeof storyPlay==='function' && run.mode==='campaign' && !(num===8&&run._l78Entry)) storyPlay(num,'entry');
+  if(typeof storyPlay==='function' && run.mode==='campaign' && num!==6 && !(num===8&&run._l78Entry)) storyPlay(num,'entry');
   /* SCENE CODE. COLE1..COLE9 put the player at the moment that matters — boss up, nearly dead,
      transition one hit away. Applied last so the stage is fully built underneath it, the same
      reason _wantOpening is applied here rather than at the top. */
@@ -33153,7 +33475,10 @@ function beginStage(num){
      later ordinary entry into stage 5 still starts from the beginning. */
   if(num===5 && run._s5ResumeArm && run._s5Resume){
     const R=run._s5Resume; run._s5ResumeArm=0; run._s5Resume=null;
-    try{ stageTimer=R.t||0; scroll=R.scroll||0; spawnClock=R.clock||0; waveIdx=R.wave||0; }catch(_rs){}
+    try{ stageTimer=R.t||0; scroll=R.scroll||0; spawnClock=R.clock||0; waveIdx=R.wave||0;
+      subBossDone=R.miniDone!==false;subBossTriggered=subBossDone||!!R.miniTriggered;_sbMusicResumed=subBossDone;
+      if(R.map!=null)mapScroll=R.map;if(R.sky!=null)_stage5SpaceScroll=R.sky;
+    }catch(_rs){}
     /* THE REWARD IS ANNOUNCED HERE, WHERE IT CAN ACTUALLY BE SEEN. Mike: "nor showed me the
        water gun pickup I got or made an announcment or showed it." laserMistUnlock() already
        banners and plays its cue - but it fires during stage 9's boss death, and the state
@@ -33242,6 +33567,7 @@ function setState(s){
        (state===GS.STAGESEL||state===GS.PLAY||state===GS.STAGECLEAR||state===GS.FLYOVER)) campSuspend();
   }catch(_){}
   const _prevState=state;
+  if(_prevState===GS.CONTINUE && s!==GS.CONTINUE && typeof _stopContinueVO==='function') _stopContinueVO();
   if(_prevState==='paused'&&playPause&&(playPause.mode==='options'||playPause.mode==='help')&&s===GS.TITLE){playPauseSubmenuReturn();return;}
   if(s==='paused'&&_prevState!=='paused')playPauseBegin();
   state=s;
@@ -33600,13 +33926,17 @@ function updatePlay(dt){
      warp-out below owns everything after that. */
   if(run && run._s9warp && !s9warp){ run._s9warp=0; s9WarpStart(); }
   if(s9warp){ s9WarpTick(dt); return; }   // the warp-out owns the frame
+  if(run.stage===6){s6OpeningTick(dt);s6WingTick(dt);
+    /* Hold the battle while the player chooses a route; the fleet and prompt still animate. */
+    if(s6Wing&&s6Wing.choice&&!s6Wing.route)return;
+  }
   try{ if(typeof freezerL3Tick==='function') freezerL3Tick(dt); }catch(e){}
   tickBlastChains(dt);          // pending blasts in a death chain (drop 0807c)
   tickSmokeRings(dt);           // rising smoke rings off heavy deaths (drop 0807k)
   tickNavalFlashes(dt);         // muzzle flashes anchored to the boats' barrels (drop 0808o)
   if(typeof s9WaterTick==='function') s9WaterTick(dt);
   if(typeof updateScenery==='function') updateScenery(dt);
-  if(timeScale<1 && !specialActive('freezer')){ timeScale=1; try{ if(Snd&&Snd.cur){ Snd.cur.playbackRate=1; if('preservesPitch'in Snd.cur)Snd.cur.preservesPitch=true; } }catch(e){} }
+  if(timeScale<1 && !specialActive('freezer') && !s6OpeningActive()){ timeScale=1; try{ if(Snd&&Snd.cur){ Snd.cur.playbackRate=1; if('preservesPitch'in Snd.cur)Snd.cur.preservesPitch=true; } }catch(e){} }
   _tsFrame++; const _tslow=(timeScale<1)&&(_tsFrame%2===1);
   updateSpecial(dt);
   // chain-lightning visuals ALWAYS tick down + clear (even after the special ends, so bolts never freeze mid-air)
@@ -33625,7 +33955,7 @@ function updatePlay(dt){
   updateMissileRush(dt);
   for(const ni of nukeImpacts) ni.t+=dt;
   if(nukeImpacts.length) nukeImpacts=nukeImpacts.filter(ni=>ni.t<ni.dur);
-  stageTimer+=dt*timeScale;
+  if(!(run.stage===6&&s6OpeningActive()))stageTimer+=dt*timeScale;
   if(!player.dead){
     run._lifeCombatT=(run._lifeCombatT||0)+dt*timeScale;
     run._lifeThreat=Math.max(run._lifeThreat||0,(typeof playerArsenalScore==='function'?playerArsenalScore():0));
@@ -33690,12 +34020,9 @@ function updatePlay(dt){
     if(_seat===1 && typeof chargeTick==='function') chargeTick(dt);
     const _rolling=!!player.roll || !!player.somer || !!player._chgDash || !!player._chgOn;   // a flip commits, same as a roll
     let mvx=0,mvy=0;
-    /* NON-PLAYABLE THE MOMENT THE STAGE CLEARS (drop 0809v). Mike: "stop taking screen pauses
-       and leaving my ship in the frame... simply make me non playable once the stage clears."
-       The boss death payoff runs for ~9s and the player was fully controllable through all of
-       it, parked in frame with nothing to shoot - which is the pause he is describing. Movement
-       and fire stop here; the ship keeps DRAWING, and drawFlyover takes it out. */
-    if(!bossDefeated && !(typeof s7WardenCinematic==='function'&&s7WardenCinematic())){
+    /* Keep the pilot steerable through the boss death and clear aftermath. The fly-off
+       takes control only when its climb starts; Stage 7's cinematic still owns its ship. */
+    if(!(typeof s7WardenCinematic==='function'&&s7WardenCinematic())){
       if(Input.hold(_seat,'left'))mvx-=1; if(Input.hold(_seat,'right'))mvx+=1;
       if(Input.hold(_seat,'up'))mvy-=1; if(Input.hold(_seat,'down'))mvy+=1;
     }
@@ -33876,7 +34203,12 @@ function updatePlay(dt){
     return false;
     })) { _seatHalt = true; break; }
   }
-  if(_seatHalt){ setState(GS.CONTINUE); return; }
+  if(_seatHalt){
+    const cap=continueCap();
+    if(cap>=0 && (run.contUsed||0)>=cap) triggerGameOver();
+    else setState(GS.CONTINUE);
+    return;
+  }
   /* either seat's START pauses - in co-op the player who is not holding the pad still has to be
      able to stop the game. */
   /* ⚠ updatePlay HAS NO STATE GATE: the arcade opener's live cuts and the attract demo drive it too, and there
@@ -33886,7 +34218,7 @@ function updatePlay(dt){
   encounterClockTick(boss,bossActive,dt);
   encounterClockTick(subBoss,subBossActive,dt);
 
-  missileSupplyBonusTick(dt);
+  if(!s6OpeningActive())missileSupplyBonusTick(dt);
   bossMissileSupplyTick(dt);
   spaceArmorySupplyTick(dt);
   // ---- powerup containers ----
@@ -33894,7 +34226,7 @@ function updatePlay(dt){
      engaged the player was cut off from health, shields and weapon upgrades for the whole fight —
      the exact point at which they need them most. They now spawn throughout, a little slower
      during a boss so it stays a fight and not a restock. */
-  if(!player.dead){
+  if(!player.dead&&!s6OpeningActive()){
     const _bx = bossActive ? 1.45 : 1;
     pwTimer+=dt; spTimer+=dt;
     if(pwTimer>=11*_bx){ pwTimer=0; spawnContainer('crate'); }
@@ -33905,7 +34237,8 @@ function updatePlay(dt){
      wall — ground units spawning from the top would be driving out of solid concrete. The spawn
      director is already gated on !bossActive; this makes the intent explicit and covers the
      boss-defeated tail as well. */
-  if(!bossActive && !bossDefeated){
+  if(!bossActive && !bossDefeated && !s6OpeningActive()){
+    if(run.stage===6&&s6Wing&&((s6Wing.choice&&!s6Wing.route)||s6Wing.fake))stageTimer=Math.min(stageTimer,curStage.length-.25);
     // density guard: cap on-screen enemies AND require a short gap between waves so the player
     // always has a lane to maneuver — never an unavoidable wall.
     _waveGap=(_waveGap||0)-dt;
@@ -34036,7 +34369,7 @@ function updatePlay(dt){
         if(warnKind==='sub'){ spawnSubBoss(SB?SB.kind:'subcore'); if(Audio.startMusic){ const _miniMus=(window.BOFA&&BOFA.music&&BOFA.music['mini'+run.stage])?('mini'+run.stage):('boss'+run.stage); Audio.startMusic(_miniMus); } }
         else if(warnKind==='boss'){
           if(curStage.boss){
-            spawnBoss(curStage.boss);
+            spawnBoss(run.stage===6&&s6Wing&&s6Wing.route==='right'?'rebelsquad':curStage.boss);
             if(run.stage===1&&boss&&boss.kind==='damkeeper')Audio.stopMusic();
             else if(boss&&boss._whv){}   // 0918: the Warhive keeps the stage music; its ace starts the boss track
             else Audio.startMusic('boss'+run.stage);
@@ -34144,6 +34477,7 @@ function updatePlay(dt){
       case 's3ice':   if(typeof s3IceTick==='function')   s3IceTick(e,dt);   break;   // level-3 native ice signatures
       case 's4chase': if(typeof s4ChaseTick==='function') s4ChaseTick(e,dt);break;   // level-4 highway war
       case 's6storm': if(typeof s6StormTick==='function') s6StormTick(e,dt);break;   // level-6 turbulence fleet
+      case 'jetmaneuver': jetManeuverTick(e,dt);break; // shared authored-jet dash / ground-retina bombing
       case 's7toxic': if(typeof s7ToxicTick==='function') s7ToxicTick(e,dt);break;   // level-7 toxic fleet
       case 's8mega':  if(typeof s8MegaTick==='function')  s8MegaTick(e,dt); break;   // Furious Death smart mega fleet
       case 'elitex':  if(typeof elitexTick==='function')  elitexTick(e,dt);  break;   // Vol.1 expansion aces (0903)
@@ -35127,7 +35461,7 @@ function updatePlay(dt){
         if(Math.abs(subBoss.x-b.x)<(sw/2+7) && Math.abs(sy-b.y)<(sh/2+10)){ hitSubBoss(b.dmg, b.x, b.y); b._hs.push(subBoss); explode(b.x,b.y,9,'green'); }
       }
       // crates still pop, but the lance keeps going (pierce)
-      for(const p of powerups){ if(p.dead||(p.kind!=='crate'&&p.kind!=='capsule'&&p.kind!=='scrate'&&p.kind!=='mcrate'&&p.kind!=='hqspacebox')) continue;
+      for(const p of powerups){ if(p.dead||(p.kind!=='crate'&&p.kind!=='capsule'&&p.kind!=='scrate'&&p.kind!=='mcrate'&&p.kind!=='hqspacebox'&&!/^missileupbox_/.test(p.kind||''))) continue;
         if(b._hs.indexOf(p)>=0) continue;
         if(Math.abs(b.x-p.x)<(p.w/2+6) && Math.abs(b.y-p.y)<(p.h/2+8)){ p.hp=(p.hp||5)-b.dmg; p.flash=0.12; weaponHitSfx('normal'); b._hs.push(p); if(p.hp<=0){ p.dead=true; breakContainer(p); } }
       }
@@ -35167,7 +35501,7 @@ function updatePlay(dt){
         if(Math.abs(subBoss.x-b.x)<(sw/2+4) && Math.abs(sy-b.y)<(sh/2+7)){ hitSubBoss(b.dmg, b.x, b.y); chainZap(b.x,sy,2); hit=true; }
       }
       if(!hit){
-        for(const p of powerups){ if(p.dead||(p.kind!=='crate'&&p.kind!=='capsule'&&p.kind!=='scrate'&&p.kind!=='mcrate'&&p.kind!=='hqspacebox')) continue;
+        for(const p of powerups){ if(p.dead||(p.kind!=='crate'&&p.kind!=='capsule'&&p.kind!=='scrate'&&p.kind!=='mcrate'&&p.kind!=='hqspacebox'&&!/^missileupbox_/.test(p.kind||''))) continue;
           if(Math.abs(b.x-p.x)<(p.w/2+4) && Math.abs(b.y-p.y)<(p.h/2+7)){ p.hp=(p.hp||5)-b.dmg; p.flash=0.12; weaponHitSfx('normal'); hit=true; if(p.hp<=0){ p.dead=true; breakContainer(p); } break; }
         }
       }
@@ -35203,7 +35537,8 @@ function updatePlay(dt){
       if(Math.random()<0.6) particles.push({x:b.x-b.vx,y:b.y-b.vy,vx:rnd(-0.3,0.3),vy:rnd(0.2,0.8),life:rnd(0.2,0.4),t:0,r:rnd(1,2),color:'#9aa0aa'});
       let reach=(t&&!t.dead)? (Math.abs(b.x-tx)<14&&Math.abs(b.y-ty)<14) : (b.y<PLAY.y+6);
       if(!t||t.dead){ // unguided: detonate on the first thing it touches
-        for(const e of enemies){ if(!e.dead && Math.abs(e.x-b.x)<(e.w/2+7) && Math.abs(e.y-b.y)<(e.h/2+9)){ reach=true; break; } }
+        for(const e of enemies){ if(!e.dead && Math.abs(e.x-b.x)<(e.w/2+7) && Math.abs(e.y-b.y)<(e.h/2+9)){ reach=true;b._impactTarget=e;break; } }
+        if(!reach){b._impactTarget=missileComponentTargetAt(b.x,b.y,Math.max(b.w,b.h)*.35);if(b._impactTarget)reach=true;}
         if(!reach && boss && bossActive && !boss.dead && bossHitTest(b.x,b.y)) reach=true;
         if(!reach && typeof subBoss!=='undefined' && subBoss && subBossActive && !subBoss.dead && Math.abs(subBoss.x-b.x)<(subBoss.w/2+8) && Math.abs((subBoss._drawY||subBoss.y)-b.y)<(subBoss.h/2+8)) reach=true;
         if(!reach){ for(const p of powerups){ if(!p.dead && (p.kind==='crate'||p.kind==='capsule'||p.kind==='scrate'||p.kind==='hqspacebox') && Math.abs(p.x-b.x)<(p.w/2+7) && Math.abs(p.y-b.y)<(p.h/2+9)){ reach=true; break; } } }
@@ -35213,11 +35548,14 @@ function updatePlay(dt){
         if(b.kind==='nukem'){ nukeAt(b.x,b.y); }
         else {
           explode(b.x,b.y,30,'red'); (Audio.SFX.missileHit||Audio.SFX.expBig)(); shake=Math.max(shake,5);
-          if(t&&!t.dead)retinaMissileDamage(t,b.dmg,b);
-          // missile blast AOE
-          for(const e of enemies){ if(!e.dead && e!==t && dist2(e.x,e.y,b.x,b.y)<90*90) hitEnemy(e,10); }
-          if(boss && bossActive && !boss.dead && t!==boss && (!t||t._retinaOwner!==boss) && dist2(boss.x,boss.y,b.x,b.y)<110*110) hitBoss(8);
-          if(typeof subBoss!=='undefined' && subBoss && subBossActive && !subBoss.dead && t!==subBoss && (!t||t._retinaOwner!==subBoss) && dist2(subBoss.x,subBoss.y,b.x,b.y)<110*110) hitSubBoss(8);
+          const direct=(t&&!t.dead)?t:(b._impactTarget&&!b._impactTarget.dead?b._impactTarget:null);
+          if(direct)retinaMissileDamage(direct,b.dmg,b);
+          // The blast reaches nearby live components, including helpers and shield nodes.
+          const owners=missileBlastComponents(b.x,b.y,90,10,b,direct);
+          for(const e of enemies){ if(!e.dead && e!==direct && dist2(e.x,e.y,b.x,b.y)<90*90) hitEnemy(e,10); }
+          _lastHitX=b.x;_lastHitY=b.y;
+          if(boss && bossActive && !boss.dead && direct!==boss && !owners.has(boss) && dist2(boss.x,boss.y,b.x,b.y)<110*110) hitBoss(8);
+          if(typeof subBoss!=='undefined' && subBoss && subBossActive && !subBoss.dead && direct!==subBoss && !owners.has(subBoss) && dist2(subBoss.x,subBoss.y,b.x,b.y)<110*110) hitSubBoss(8);
           for(const p of powerups){ if(!p.dead && (p.kind==='crate'||p.kind==='capsule'||p.kind==='scrate'||p.kind==='hqspacebox') && dist2(p.x,p.y,b.x,b.y)<90*90){ p.hp=(p.hp||5)-b.dmg; p.flash=0.12; weaponHitSfx('normal'); if(p.hp<=0){ p.dead=true; breakContainer(p); } } }
         }
       }
@@ -35256,12 +35594,18 @@ function updatePlay(dt){
       if(typeof subBoss!=='undefined' && subBoss && subBossActive && !subBoss.dead && !subBoss.enter){
         b._sbt=(b._sbt||0)-dt;
         const sy=(subBoss._drawY||subBoss.y);
+        if(b._sbt<=0&&subBoss._ship==='olivewarden'){
+          for(const d of subBoss._s4war.drones)if(!d.dead&&d.active>=.82&&d.y-(d.size||92)*.46<=b.bot&&d.y+(d.size||92)*.46>=b.top&&Math.abs(b.x-d.x)<(d.size||92)*.46+b.w/2){
+            stage4MiniDroneDamage(subBoss,d,b.dmg);weaponHitSfx('laser');
+          }
+        }
         if(b._sbt<=0&&(subBoss._rzb||subBoss._rzbPair||subBoss._tempestDuo)){
           const impact=subBossBeamImpact(subBoss,b);
           if(impact){hitSubBoss(b.dmg,impact.x,impact.y);weaponHitSfx('laser');b._sbt=0.05;}
-        }else if(b._sbt<=0 && sy<=b.bot && Math.abs(b.x-subBoss.x)<(subBoss.w/2+b.w/2)){ hitSubBoss(b.dmg, b.x, sy); weaponHitSfx('laser'); b._sbt=0.05; }
+        }else if(b._sbt<=0 && sy<=b.bot && Math.abs(b.x-subBoss.x)<(subBoss.w/2+b.w/2)&&!(subBoss._ship==='olivewarden'&&stage4MiniDroneAt(subBoss,b.x,sy,2))){ hitSubBoss(b.dmg, b.x, sy); weaponHitSfx('laser'); b._sbt=0.05; }
+        if(subBoss._ship==='olivewarden'&&b._sbt<=0)b._sbt=.05;
       }
-      for(const p of powerups){ if(p.dead||(p.kind!=='crate'&&p.kind!=='capsule'&&p.kind!=='scrate'&&p.kind!=='mcrate'&&p.kind!=='hqspacebox')) continue;
+      for(const p of powerups){ if(p.dead||(p.kind!=='crate'&&p.kind!=='capsule'&&p.kind!=='scrate'&&p.kind!=='mcrate'&&p.kind!=='hqspacebox'&&!/^missileupbox_/.test(p.kind||''))) continue;
         if(p.y<=b.bot && Math.abs(b.x-p.x)<(p.w/2+b.w/2)){ if(b._hit.indexOf(p)<0){ p.hp=(p.hp||5)-b.dmg; p.flash=0.12; weaponHitSfx('normal'); b._hit.push(p); if(p.hp<=0){ p.dead=true; breakContainer(p); } } }
       }
       continue;
@@ -35303,7 +35647,7 @@ function updatePlay(dt){
                  dkIgnite stamps DK_BURN_TIME, so the longer douse is written after it. Only
                  EXTENDED, never cut - walking fire over a target that is already well alight
                  should not shorten it. */
-              dkIgnite(e);
+              dkIgnite(e,b);
               if(e._burn>0) e._burn=Math.max(e._burn, flameDouseSec(b.lv));
             }
             if(chance(0.35)) particles.push({x:e.x,y:e.y,vx:0,vy:0,life:0.12,t:0,r:7,color:'#ffd36b',flashring:true});
@@ -35321,10 +35665,16 @@ function updatePlay(dt){
       if(typeof subBoss!=='undefined' && subBoss && subBossActive && !subBoss.dead && !subBoss.enter){
         b._sbt=(b._sbt||0)-dt;
         const sy=(subBoss._drawY||subBoss.y);
+        if(b._sbt<=0&&subBoss._ship==='olivewarden'){
+          for(const d of subBoss._s4war.drones)if(!d.dead&&d.active>=.82&&flameHit(b,d.x,d.y,(d.size||92)*.92,(d.size||92)*.92)){
+            stage4MiniDroneDamage(subBoss,d,b.dmg*elementMultiplier(attackElement('flame'),flameIsIce()?'icebreath':'flamethrower'));weaponHitSfx(attackElement('flame'));
+          }
+        }
         if(b._sbt<=0 && flameHit(b, subBoss.x, sy, (subBoss._drawW||subBoss.w), (subBoss._drawH||subBoss.h))){ hitSubBoss(b.dmg*elementMultiplier(attackElement('flame'),flameIsIce()?'icebreath':'flamethrower')); weaponHitSfx(attackElement('flame')); b._sbt=FLAME_TICK; }
+        if(subBoss._ship==='olivewarden'&&b._sbt<=0)b._sbt=FLAME_TICK;
       }
       for(const p of powerups){
-        if(p.dead||(p.kind!=='crate'&&p.kind!=='capsule'&&p.kind!=='scrate'&&p.kind!=='mcrate'&&p.kind!=='hqspacebox')) continue;
+        if(p.dead||(p.kind!=='crate'&&p.kind!=='capsule'&&p.kind!=='scrate'&&p.kind!=='mcrate'&&p.kind!=='hqspacebox'&&!/^missileupbox_/.test(p.kind||''))) continue;
         if(flameHit(b, p.x, p.y, p.w, p.h) && b._hit.indexOf(p)<0){
           p.hp=(p.hp||5)-b.dmg; p.flash=0.12; weaponHitSfx('normal'); b._hit.push(p);
           if(p.hp<=0){ p.dead=true; breakContainer(p); }
@@ -35333,7 +35683,7 @@ function updatePlay(dt){
       continue;
     }
     if(b.kind==='orb'){
-      b.life-=dt; b.spin+=dt*7;
+      b.life-=dt; b.spin+=dt*((b._wvar==='magmaorb'||b._el==='kinetic')?18:7);
       /* Dark Void travels first, then blossoms into a stationary, hungry rift. */
       if(b._el==='dark'){
         b._voidAge=(b._voidAge||0)+dt;
@@ -35351,14 +35701,28 @@ function updatePlay(dt){
       /* the orb's element is fixed at LAUNCH (b._ts), never re-asked here — see the note at
          pShoot. The multiplier is solved once per volley rather than per shard. */
       const _oel=b._el||(b._ts?'fireice':(orbIsFire()?'fire':'ice'));
-      const _om=elementMultiplier(_oel,b._ts?'fireice':'orb');
+      const _om=elementMultiplier(_oel,b._ts?'fireice':'orb')*(b._wvar==='magmaorb'?1.5:1);
       const _sopt={mul:_om, ts:b._ts, fire:b._fire, wvar:b._wvar, el:_oel, forge:!!b._inf, forgeLv:b._infLv||0};
-      const _orbPattern={ice:[1,.10],fireice:[1,.10],fire:[0,.10],toxic:[.45,.23],lightning:[.7,.15],prism:[.65,.17],kinetic:[.4,.26],water:[.6,.19],chrome:[.45,.20],dark:[0,.24]}[_oel]||[1,.10];
+      const _orbPattern={ice:[1,.10],fireice:[1,.10],fire:[0,.10],toxic:[.45,.23],lightning:[.7,.15],prism:[.65,.17],kinetic:[.85,.13],water:[.6,.19],chrome:[.45,.20],dark:[0,.24]}[_oel]||[1,.10];
       if(b.shardCd<=0){ b.shardCd=_orbPattern[1]; const n=Math.max(2,Math.round(b.shardN*_orbPattern[0]));
         if(_orbPattern[0]>0)for(let i=0;i<n;i++)pShard(b.x,b.y,b.spin+i*(TAU/n),b.lv,_sopt);
+        if(_oel==='kinetic'||b._wvar==='magmaorb'){
+          b._burstBeat=(b._burstBeat||0)+1;
+          if(b._burstBeat%2===1) efxBurst(_oel==='kinetic'?'kinetic':'fire',b.x,b.y,Math.min(56,b.w*1.5));
+        }
         b.sfxCd=(b.sfxCd||0)-1;if(_orbPattern[0]>0&&b.sfxCd<=0){b.sfxCd=3;if(Audio.SFX.spread)Audio.SFX.spread();} }
       b._ht-=dt; if(b._ht<=0){ b._hit.length=0; b._ht=0.16; }
       for(const e of enemies){ if(e.dead)continue; if(Math.abs(e.x-b.x)<(e.w/2+b.w/2)&&Math.abs(e.y-b.y)<(e.h/2+b.h/2)){ if(b._hit.indexOf(e)<0){ hitEnemy(e,b.dmg*_om); if(_oel==='toxic')e._poison=Math.max(e._poison||0,2.2); if(['fire','toxic','kinetic','water'].includes(_oel))b._impact=true; if(b._ts){ e._frozen=(e._frozen||0)+1; e._frzFlash=0.18; } b._hit.push(e); } } }
+      // Orb contact uses the same authored miniboss parts and escort bounds as pellets.
+      if(subBoss&&subBossActive&&!subBoss.dead&&!subBoss.enter){
+        const m=subBoss,dr=m._ship==='olivewarden'&&stage4MiniDroneAt(m,b.x,b.y,Math.max(b.w,b.h)*.5);
+        const hull=Math.abs(m.x-b.x)<((m._drawW||m.w)+b.w)*.5&&Math.abs((m._drawY||m.y)-b.y)<((m._drawH||m.h)+b.h)*.5;
+        if((dr||hull)&&(dr||subBossSolidAt(b.x,b.y)!==false)){
+          b._sbt=(b._sbt||0)-dt;
+          if(b._sbt<=0){hitSubBoss(b.dmg*_om,b.x,b.y);b._sbt=.16;
+            if(['fire','toxic','kinetic','water'].includes(_oel))b._impact=true;}
+        }
+      }
       if(boss&&bossActive&&!boss.dead){
         const _s4t=(typeof stage4CoreTurretAt==='function')?stage4CoreTurretAt(boss,b.x,b.y,Math.max(b.w,b.h)*.5):null;
         const _s4n=(typeof stage4ShieldNodeAt==='function')?stage4ShieldNodeAt(boss,b.x,b.y,Math.max(b.w,b.h)*.5):null;
@@ -35366,6 +35730,7 @@ function updatePlay(dt){
         if(_s4t||_s4n||_hull){b._bt-=dt;if(b._bt<=0){if(_s4t){boss._s4CoreHit=_s4t;_lastHitX=_s4t.x;_lastHitY=_s4t.y;}else if(_s4n){boss._s4ShieldHit=_s4n;_lastHitX=_s4n.x;_lastHitY=_s4n.y;}hitBoss(b.dmg*_om);if(['fire','toxic','kinetic','water'].includes(_oel))b._impact=true;b._bt=.16;}}
       }
       if(b._impact || b.life<=0 || b.y<-40){b.dead=true;
+        if(_oel==='kinetic'||b._wvar==='magmaorb') efxBurst(_oel==='kinetic'?'kinetic':'fire',b.x,b.y,Math.min(84,b.w*2.2));
         if(_oel==='dark'){
           /* Collapse releases a forward 180-degree ring, never a friendly-fire hazard. */
           const N=9+Math.min(5,b.lv);for(let i=0;i<N;i++)pShard(b.x,b.y,Math.PI+(i/(N-1))*Math.PI,b.lv,{mul:_om,el:'dark',wvar:'darkorb',forge:true,forgeLv:b._infLv||1});
@@ -35461,13 +35826,20 @@ function updatePlay(dt){
              every call site. The decal rides ON the unit, which is why it is registered with
              the enemy rather than a world position. */
           if(b.kind==='dkshot'){
-            if(typeof dkIgnite==='function') dkIgnite(e);
+            if(typeof dkIgnite==='function') dkIgnite(e,b);
             if(typeof dkDecalAdd==='function') dkDecalAdd(e, b.x, b.y);
             if(typeof XART!=='undefined' && XART.rdy('ndk_imp_0'))
               sonicTrail.push({x:b.x, y:b.y, t:0, dur:0.24, imp:true});
           }
           b.dead=true; break;
         }
+      }
+    }
+    // Passive homing missiles can strike the same exposed components as guided warheads.
+    if(!b.dead && b.kind==='missile'){
+      const part=missileComponentTargetAt(b.x,b.y,Math.max(b.w,b.h)*.3);
+      if(part&&retinaMissileDamage(part,b.dmg,b)){
+        b.dead=true;explode(b.x,b.y,8,'red');weaponHitSfx('normal');
       }
     }
     // collide sub-boss
@@ -35477,7 +35849,7 @@ function updatePlay(dt){
       /* THE RECTANGLE IS NOW ONLY A BROAD PHASE (drop 0805c). It cheaply rejects shots
          nowhere near the unit; subBossSolidAt then decides whether the pellet actually met
          anything. Null means the unit has no part data and keeps the old rectangle. */
-      const _inBox = Math.abs(subBoss.x-b.x)<(sw/2+b.w/2) && Math.abs(sy-b.y)<(sh/2+b.h/2);
+      const _inBox = (Math.abs(subBoss.x-b.x)<(sw/2+b.w/2) && Math.abs(sy-b.y)<(sh/2+b.h/2)) || !!(subBoss._ship==='olivewarden'&&stage4MiniDroneAt(subBoss,b.x,b.y,Math.max(b.w,b.h)*.5));
       const _solid = _inBox ? ((typeof subBossSolidAt==='function') ? subBossSolidAt(b.x,b.y) : null) : false;
       if(_inBox && (_solid===null || _solid===true)){
         const _rawSd=(b._bossDmg!=null)?b._bossDmg:b.dmg;
@@ -35559,7 +35931,7 @@ function updatePlay(dt){
       if(typeof efxBurst==='function') efxBurst('fire',b.x,b.y,56);
       const old=_dmgBullet; _dmgBullet=null;
       for(const e of enemies){ if(e.dead||dist2(e.x,e.y,b.x,b.y)>44*44) continue;
-        hitEnemy(e,3); e._burn=Math.max(e._burn||0,DK_BURN_TIME*.8); }
+        hitEnemy(e,3); enemyBurnApply(e,DK_BURN_TIME*.8,b); }
       _dmgBullet=old;
     }
     const _bw=(typeof worldWidth==='function')?worldWidth():VW;   // 800 on stage 1 — right-side shots must live
@@ -35747,7 +36119,7 @@ function updatePlay(dt){
       }
       if(b._accel){ b.spd=Math.min(b._maxspd||4.0,(b.spd||2.4)+b._accel); }   // missile builds speed after launch (readable then fast)
       const spd=(b.spd||2.7)*(DIFF?DIFF.ebSpeed:1); b.vx=Math.cos(ang)*spd; b.vy=Math.sin(ang)*spd; b.ang=ang;
-      for(const pb of pBullets){ if(pb.dead) continue;
+      for(const pb of pBullets){ if(pb.dead||b._weaponProof) continue;
         if(pb.kind==='beam'){ if(Math.abs(pb.x-b.x)<((pb.w||14)/2+b.w/2) && b.y<=(pb.bot!=null?pb.bot:player.y) && b.y>=(pb.top!=null?pb.top:PLAY.y)){ b.dead=true; if(b._s7warden)combatAtlasFx(b.x,b.y,'cfx_stage7_warden_projectiles',4,3,8,4,{life:.34,hpx:112,wpx:126,blend:'lighter'});else if(/^s5/.test(b.kind||''))combatAtlasFx(b.x,b.y,'cfx_stage5_xeno_projectiles',4,3,8,4,{life:.30,hpx:102,wpx:116,blend:'lighter'});else if(b.kind==='s1jungleMissile') s1CombatImpact(b.x,b.y,false,46); else if(run.stage===4&&(boss&&boss._s4war||subBoss&&subBoss._s4war))stage4InterceptFeedback(b);else explode(b.x,b.y,7,'red'); break; } }
         else if(Math.abs(pb.x-b.x)<((pb.w||4)/2+b.w/2) && Math.abs(pb.y-b.y)<((pb.h||8)/2+b.h/2)){ b.dead=true; if(b._s7warden)combatAtlasFx(b.x,b.y,'cfx_stage7_warden_projectiles',4,3,8,4,{life:.34,hpx:112,wpx:126,blend:'lighter'});else if(/^s5/.test(b.kind||''))combatAtlasFx(b.x,b.y,'cfx_stage5_xeno_projectiles',4,3,8,4,{life:.30,hpx:102,wpx:116,blend:'lighter'});else if(b.kind==='s1jungleMissile') s1CombatImpact(b.x,b.y,false,46); else explode(b.x,b.y,7,'red'); if(!pb.pierce) pb.dead=true; break; }
       }
@@ -35847,7 +36219,7 @@ function updatePlay(dt){
       if(typeof stylishCheck==='function' && stylishCheck(b)) { /* the dodge is scored; the round flies on */ }
       if(player.dead || player.invuln>0) return false;
       const _hx=(player._hx!=null?player._hx:9), _hy=(player._hy!=null?player._hy:10);
-      if(b._hammerLaser ? hammerLaserHit(b,targetShip(b.x,b.y),_hx,_hy) : b._frostNoseLaser ? frostNoseLaserHit(b,targetShip(b.x,b.y),_hx,_hy) :
+      if(b._ovSonicWave ? ovSonicWaveHit(b,player,_hx,_hy) : b._hammerLaser ? hammerLaserHit(b,targetShip(b.x,b.y),_hx,_hy) : b._frostNoseLaser ? frostNoseLaserHit(b,targetShip(b.x,b.y),_hx,_hy) :
         (Math.abs(b.x-targetShip(b.x,b.y).x)<(_hx+b.w*0.15) && Math.abs(b.y-targetShip(b.x,b.y).y)<(_hy+b.h*0.15))){
         /* the magma round lands on its OWN authored impact (Mike, 0819) — `bfx_magma_i`, the third
            plate of the set, a burst that scatters into cooling debris. explode() counts a named
@@ -35859,6 +36231,7 @@ function updatePlay(dt){
         else if(/^s5/.test(b.kind||''))combatAtlasFx(b.x,b.y,'cfx_stage5_xeno_projectiles',4,3,8,4,{life:.30,hpx:110,wpx:124,blend:'lighter'});
         else if(b._s7warden)combatAtlasFx(b.x,b.y,'cfx_stage7_warden_projectiles',4,3,8,4,{life:.34,hpx:118,wpx:132,blend:'lighter'});
         else if(b._carrierWarhead)carrierWarheadBurst(b,'s6mb_bombimpact',10,176,.46);
+        if(b._s6Opening){b._s6Hit=true;run.shield=0;}
         playerHit(); return true;
         }
         return false;
@@ -35936,6 +36309,7 @@ function updatePlay(dt){
        heat goes to P1; arbitrary, but it has to be somebody, and `break` stops it being both. */
     for(const _s of seatList()){
       if(withSeat(_s, function(){
+        if(p._wingSupply)return false;
         if(p._missileSeat&&p._missileSeat!==_s)return false;
         if(/^missileupbox_/.test(p.kind||'')&&!manualMissileUpgradeCanSpawn(p.kind.slice('missileupbox_'.length),run))return false;
         if(!player.dead && p.kind!=='crate' && p.kind!=='capsule' && p.kind!=='scrate' && p.kind!=='mcrate' && p.kind!=='hqspacebox' && dist2(p.x,p.y,player.x,player.y)<22*22){ applyPowerup(p); return true; }   /* applyPowerup scores it - PICKUP_SCORE (0917) */
@@ -36496,6 +36870,7 @@ function bossHitTest(x,y){
   if(!boss) return false;
   if(boss.kind==='damkeeper'&&boss._ovIntro&&!boss._ovIntro.done)return false;
   if(boss._whv)return warhiveHitTest(boss,x,y);
+  if(boss._rebels)return rebelSquadHitTest(boss,x,y);
   if(boss._hammer){
     if(boss._noHit||boss.dead)return false;const h=boss._hammer;boss._hammerModuleHit=null;
     const T=h.throw,hammerX=T?T.x:boss.x-54,hammerY=T?T.y:boss.y+8;
@@ -36550,6 +36925,7 @@ function hitBoss(dmg){
   dmg=_elem.dmg;const _elemHit=_elem.reaction;
   if(boss._hammer){dmg=hammerBossDamage(boss,dmg);if(dmg<=0)return;}
   if(boss._whv){dmg=warhiveDamage(boss,dmg);if(dmg<=0)return;}
+  if(boss._rebels){rebelSquadDamage(boss,dmg);return;}
   if(boss._s4war&&boss._noHit&&!boss._s4CoreHit)return;
   markHit(boss);   // 0912y: before any shield, barrier or part router can swallow the hit
   if(boss._s7warden&&typeof s7WardenHit==='function'){
@@ -36962,7 +37338,17 @@ function groundTargetReticleDraw(x,y,w,progress,alpha){
 }
 function groundTargetingDraw(){
   const atlas=(typeof XART!=='undefined'&&XART.rdy('fx_ground_strikes_0916'))?XART.get('fx_ground_strikes_0916'):null;
-  for(const q of groundTargetingFx){if(q.delay>0)continue;if(!q.impact){groundTargetReticleDraw(q.x,q.y,q.size,groundTargetingPhase(q),.78);continue;}
+  for(const q of groundTargetingFx){if(q.delay>0)continue;if(!q.impact){
+    groundTargetReticleDraw(q.x,q.y,q.size,groundTargetingPhase(q),.78);
+    if(q._jetBomb&&XART.rdy('lz_bomb')){
+      const im=XART.get('lz_bomb'),u=clamp(q.t/q.warn,0,1),p=u*u;
+      const x=lerp(q._jetBomb.x,q.x,p),y=lerp(q._jetBomb.y,q.y,p)-Math.sin(u*Math.PI)*28;
+      const h=24,w=h*(im.naturalWidth||im.width)/Math.max(1,im.naturalHeight||im.height);
+      ctx.save();ctx.translate(x,y);ctx.rotate(q.t*5);ctx.imageSmoothingEnabled=false;
+      ctx.drawImage(im,-w/2,-h/2,w,h);ctx.restore();
+    }
+    continue;}
+
     const u=clamp((q.t-q.warn)/q.active,0,.999),frame=Math.min(3,Math.floor(u*4));
     ctx.save();ctx.globalCompositeOperation='lighter';ctx.globalAlpha=1;ctx.fillStyle='rgba(0,0,0,.22)';ctx.beginPath();ctx.ellipse(q.x,q.y+7,q.size*.31,q.size*.085,0,0,TAU);ctx.fill();
     if(atlas){ctx.imageSmoothingEnabled=false;ctx.drawImage(atlas,frame*128,q.row*128,128,128,q.x-q.size/2,q.y-q.size,q.size,q.size);}ctx.restore();
@@ -37360,9 +37746,24 @@ function ovChargeWarningBeat(T,beat){
     try{if(Audio.SFX){const fn=Audio.SFX.retinaLockBeep||Audio.SFX.blip;if(fn)fn();}}catch(_ovb){}
   }
 }
+function ovHardBoss(){return typeof diffKey!=='undefined'&&(diffKey==='hard'||diffKey==='furious');}
+function ovStartMissileLock(b,next){
+  b._ovState='missileLock';
+  b._ovVolley={t:0,dur:3.65,next:next||'fight',launched:0};
+  b._ovHardVolleyCd=10.5;
+  const first=.88,step=.22;
+  for(let i=0;i<12;i++){
+    const side=(i&1)?1:-1,fan=((i>>1)%3-1)*.18;
+    enemyLockOn(b,first+i*step,{fire:function(){
+      if(!b.dead){ovRocketSide(b,side,fan);if(b._ovVolley)b._ovVolley.launched++;}
+    }});
+  }
+  stageRevisionCue(b,'overlordRocket',.12);
+}
 function ovStartChargeTell(b){
-  if(b._enraged&&!b._ovPassUsed&&!b._ovPassSeq){b._ovPassUsed=true;b._ovPassSeq={pass:0,used:[],lastLane:null};}
-  const Q=b._ovPassSeq,pass=Q?Q.pass:-1,dir=Q&&pass%2===1?-1:1,base=Q?ovPassLane(Q):clamp(player.x,72,VW-72);
+  if(diffKey==='furious'&&b._ovState==='fight')b._ovFuryComboReady=true;
+  if(b._enraged&&!b._ovFurySingleRam&&!b._ovPassUsed&&!b._ovPassSeq){b._ovPassUsed=true;b._ovPassSeq={pass:0,used:[],lastLane:null};}
+  const Q=b._ovFurySingleRam?null:b._ovPassSeq,pass=Q?Q.pass:-1,dir=Q&&pass%2===1?-1:1,base=Q?ovPassLane(Q):clamp(player.x,72,VW-72);
   b._ovState='chargeTell';
   b._chargeTell={t:0,dur:OV_CHARGE_TELL,lane:base,baseLane:base,locked:false,pulse:0,beat:-1,flash:0,pass:pass,dir:dir,holdY:dir>0?VH*.22:VH*.78};
   l23FovWarm();
@@ -37371,12 +37772,107 @@ function ovStartChargeTell(b){
   b._mgN=0; b._ovBurstSet=0;
   stageRevisionCue(b,'overlordCharge',.20);
 }
+/* Furious Overlord: recolour only chromatic armour. Neutral metal, black outlines,
+   white lights, rotor blades and projectile palettes retain their original pixels. */
+const OV_FURY_PLATES=new Map();
+function ovFuryPlate(key){
+  if(OV_FURY_PLATES.has(key))return OV_FURY_PLATES.get(key);
+  if(!XART.rdy(key))return null;
+  const im=XART.get(key),c=document.createElement('canvas');c.width=im.width;c.height=im.height;
+  const g=c.getContext('2d');g.drawImage(im,0,0);const px=g.getImageData(0,0,c.width,c.height),d=px.data;
+  for(let i=0;i<d.length;i+=4){
+    const r=d[i],v=d[i+1],b=d[i+2],hi=Math.max(r,v,b),lo=Math.min(r,v,b);
+    if(d[i+3]<8||hi<26||hi-lo<13||b>v*1.05||r>v*1.65)continue;
+    const lum=.2126*r+.7152*v+.0722*b,t=clamp((lum-30)/155,0,1);
+    const rr=.16+.14*t,gg=1,bb=.055+.045*t,k=lum/(.2126*rr+.7152*gg+.0722*bb);
+    d[i]=Math.min(255,rr*k);d[i+1]=Math.min(255,gg*k);d[i+2]=Math.min(255,bb*k);
+  }
+  g.putImageData(px,0,0);OV_FURY_PLATES.set(key,c);return c;
+}
+function ovFacingMount(b,ox,oy){
+  const s=b.w*1.15/192,a=b._pivot||0,c=Math.cos(a),n=Math.sin(a);
+  return {x:b.x+(b._ovJitterX||0)+(ox*c-oy*n)*s,
+    y:(b._drawY!=null?b._drawY:b.y)+(ox*n+oy*c)*s};
+}
+function ovSonicStart(b){
+  if(diffKey!=='furious'||b.dead)return;
+  b._ovState='sonicCombo';b._ovSonic={phase:'waveTell',t:0,sent:0,angle:Math.PI/2};
+  b._ovChargeGlow=0;b._chargeTell=null;b._ovPassSeq=null;
+  for(const k of ['rzb_sonic_wave','rzb_sonic_ring','rzb_razor_missile',
+    'bmfx_alert_green_danger','bmfx_alert_yellow_danger','bmfx_alert_red_danger'])XART.rdy(k);
+  stageRevisionCue(b,'overlordCharge',.2);
+}
+function ovSonicWave(b,vertical){
+  const S=b._ovSonic,m=ovFacingMount(b,0,60),a=S.angle,ww=vertical?44:190,hh=vertical?162:46;
+  eBullets.push({kind:'ovSonic',_ovSonicWave:true,x:m.x,y:m.y,vx:Math.cos(a)*7.8,vy:Math.sin(a)*7.8,
+    w:ww,h:hh,_waveW:ww,_waveH:hh,ang:a,t:0,vertical});
+  weaponFeedbackSound('coleSonicFull',.85);shake=Math.max(shake,5);
+}
+function ovSonicMissileVolley(b,index){
+  if(b.dead||diffKey!=='furious')return;
+  for(const side of [-1,1])for(const spread of [-.12,.12]){
+    const m=ovFacingMount(b,side<0?-48:46,41),a=Math.PI/2+(b._pivot||0)+side*.18+spread;
+    eBullets.push({kind:'s1jungleMissile',_ovSonicMissile:true,_shootable:true,_volley:index,
+      x:m.x,y:m.y,vx:Math.cos(a)*2.3,vy:Math.sin(a)*2.3,ang:a,w:14,h:26,t:0,hp:1,
+      homing:true,turn:.028,spd:2.3,_accel:.045,_maxspd:4.8});
+    navalFlash(null,m,.9,S1_MUZZLE_MILITARY,{n:6,hpx:42,life:.20,
+      follow:()=>ovFacingMount(b,side<0?-48:46,41)});
+  }
+  stageRevisionCue(b,'overlordRocket',.1);weaponFeedbackSound('colePressureRelease',.45);
+}
+function ovSonicComboTick(b,dt){
+  const S=b._ovSonic;S.t+=dt;
+  if(S.phase==='waveTell'){
+    b.y=lerp(b.y,VH*.27,Math.min(1,dt*2.3));
+    if(S.t<1.15){const a=Math.atan2(player.y-b.y,player.x-b.x);S.angle=clamp(a,Math.PI/2-.55,Math.PI/2+.55);}
+    b._pivot=S.angle-Math.PI/2;
+    if(S.t>=2.1){S.phase='waves';S.t=0;}
+  }else if(S.phase==='waves'){
+    b._pivot=S.angle-Math.PI/2;
+    while(S.sent<3&&S.t>=S.sent*.66){ovSonicWave(b,S.sent===1);S.sent++;}
+    if(S.t>=2.20){
+      S.phase='missileTell';S.t=0;
+      for(let i=0;i<3;i++)enemyLockOn(b,2.50+i*.72,{fire:()=>ovSonicMissileVolley(b,i)});
+      stageRevisionCue(b,'overlordCharge',.2);
+    }
+  }else{
+    b._ovJitterX=Math.sin(S.t*24)*2.8;b._ovJitterY=Math.cos(S.t*24)*1.5;
+    b._mzlT=.15+.12*Math.sin(S.t*18);b._mzrT=.15+.12*Math.sin(S.t*18+1);
+    if(S.t>=2.5){
+      b._ovSonic=null;b._ovState='fight';b._ovPhase=0;b.fireCd=.55;
+      b._ovFlight='orbit';b._ovFlightT=0;
+      b._ovOrbitStart=Math.atan2((b.y-VH*.22)/(VH*.115),(b.x-VW*.5)/(VW*.34));
+      b._ovChargeCd=5.8;b._ovJitterX=0;b._ovJitterY=0;
+    }
+  }
+}
+function ovSonicWarningDraw(b){
+  const S=b._ovSonic;if(!S)return;
+  const progress=S.phase==='waveTell'?clamp(S.t/2.1,0,.999):S.phase==='missileTell'?clamp(S.t/2.5,0,.999):.999;
+  l23WarnSymbolDraw(b,{family:'rime',t:progress,warm:1,released:false});
+}
+function ovSonicWaveHit(b,p,hx,hy){
+  const a=b.ang-Math.PI/2,c=Math.cos(a),s=Math.sin(a),dx=p.x-b.x,dy=p.y-b.y;
+  const x=dx*c+dy*s,y=-dx*s+dy*c;
+  return (x/(b._waveW*.42+hx))**2+(y/(b._waveH*.32+hy))**2<1;
+}
+function ovSonicProjectileDraw(b){
+  if(!b._ovSonicWave&&!b._ovSonicMissile)return false;
+  if(b._ovSonicWave){
+    weaponFeedbackArt('rzb_sonic_wave',b.x,b.y,b.vertical?b._waveH:b._waveW,b.vertical?b._waveW:b._waveH,1,b.ang-Math.PI/2+(b.vertical?Math.PI/2:0),true);
+  }else{
+    const a=Math.atan2(b.vy,b.vx)-Math.PI/2;
+    weaponFeedbackArt('rzb_sonic_ring',b.x,b.y,38+Math.sin(b.t*28)*4,38+Math.sin(b.t*28)*4,.65,a,true);
+    weaponFeedbackArt('rzb_razor_missile',b.x,b.y,26,40,1,a,false);
+  }
+  return true;
+}
 function updateOverlordX(b, dt){
   if(!b._stageAudioWarm){stageRevisionWarm('damkeeper');b._stageAudioWarm=true;}
   if(!b.dead)weaponFeedbackLoop('overlordRotor',.32);
   if(b._ovInit==null){ b._ovInit=1; b._ovState='fight'; b._ovPhase=0; b._ovT=0; b._ovBob=0;
     b.fireCd=0.7; b._faceAng=Math.PI; b._enraged=false; b._crit=false;
-    b._ovFlight='hunt'; b._ovFlightT=0; b._ovChargeCd=6.4; }
+    b._ovFlight='hunt'; b._ovFlightT=0; b._ovChargeCd=6.4; b._ovHardVolleyCd=4.7; b._ovFuryComboReady=diffKey==='furious'; }
   const frac = b.hp/(b.maxhp||b.hp||1);
   b._ovT=(b._ovT||0)+dt;
   b._ovBob=(b._ovBob||0)+dt;
@@ -37429,6 +37925,7 @@ function updateOverlordX(b, dt){
   // ================= STATE MACHINE =================
   // hunt/orbit fight -> glowing lane tell -> committed charge -> continuous corner swirl -> fight.
   const S=b._ovState;
+  if(S==='sonicCombo'&&b._ovSonic){ovSonicComboTick(b,dt);return;}
 
   if(S==='fight'){
     // Alternate a predatory left/right chase with a broad upper-screen orbit. This is aircraft
@@ -37607,6 +38104,7 @@ function updateOverlordX(b, dt){
       if(re.t>=4.02){
         b._ovState='fight'; b._ovPhase=0; b.fireCd=0.55; b._ovFlight='hunt'; b._ovFlightT=0;
         b._ovChargeCd=b._enraged?5.1:7.6; b._ovJitterX=0; b._ovJitterY=0;
+        if(diffKey==='furious')ovSonicStart(b); // follow the completed rain/circling sweep
       }
     }
     return;
@@ -37840,7 +38338,7 @@ function whvAceTick(b,dt){
   if(A.roll){ A.roll.t+=dt; const u=clamp(A.roll.t/.46,0,1); A.x=A.roll.x0+A.roll.dir*150*(1-(1-u)*(1-u)); if(u>=1)A.roll=null; }
   if(A.somer){ A.somer.t+=dt; const u=clamp(A.somer.t/.62,0,1); A.y=A.somer.y0+Math.sin(u*Math.PI)*70; if(u>=1)A.somer=null; }
   /* Hard: 50% helper orb, 25% desperation */
-  if(hard&&hr<=.5&&!A.orb){ A.orb={a:0,cd:1.2}; whvSfx('helixCharge'); }
+  if(hard&&hr<=.5&&!A.orb){ A.orb={a:0,cd:1.2}; whvSfx('bossWeaponCharge'); }
   if(hard&&hr<=.25&&!A.desp){ A.desp={st:'warn',t:0,pass:0}; A.dash=null; }
   if(A.desp&&A.desp.st!=='done'){ whvAceDesperation(b,A,dt); }
   else if(A.dash){ whvAceDashTick(b,A,dt); }
@@ -38091,6 +38589,7 @@ function updateBoss(dt){
   const b=boss;
   if(b._hammer){b.t+=dt;b.flash=Math.max(0,b.flash-dt);if(b.dead)hammerBossDeathTick(b,dt);else hammerBossTick(b,dt);return;}
   if(b._whv){warhiveTick(b,dt);return;}
+  if(b._rebels){rebelSquadTick(b,dt);return;}
   b.t+=dt; if(!b.dead) b.rotor+=dt*30;
   if(!b.dead&&b.kind==='damkeeper'&&b._ovIntro&&typeof overlordIntroTick==='function'&&overlordIntroTick(b,dt))return;
   if(b._firing>0) b._firing-=dt;
@@ -41753,7 +42252,7 @@ function dlgBox(o){
     worldXformEscape();
   }
 
-  /* Compact authored portraits keep their original facing and a shared 64px cell. */
+  /* Pilot comm portraits use the shared right-facing treatment inside the dialogue bay. */
   const _pk=String(o.portrait || who || '').toLowerCase();
   const _isPilot = o.portrait!==false && (
         (typeof PILOTS!=='undefined' && PILOTS && PILOTS[_pk]) ||
@@ -41771,11 +42270,11 @@ function dlgBox(o){
   const column=pw-32-(_hasPort?74:0);
   const needed=msgBlockLayout(full,column,1000,14,14,1.3).height+52;
   const ph=Math.min(Math.round(VH*(inPlay?.29:.43)),Math.max(o.ph||Math.round(pw*.28),needed));
-  const x=(o.x!=null) ? o.x : Math.round((dialogueViewW-pw)/2);
+  const x=Math.round((dialogueViewW-pw)/2);
   const lowerY=VH-ph-155;
   const playerInLowerBand=inPlay && typeof player!=='undefined' && player &&
     player.y>lowerY-20 && player.y<lowerY+ph+24;
-  const y=(o.y!=null) ? o.y : (inPlay?(playerInLowerBand?54:lowerY):(VH-ph-PAD));
+  const y=VH-ph-PAD; // All dialogue remains bottom centered, including in combat.
 
   /* drawPanel already tries XART itself and returns false only when the plate has not decoded,
      so the fallback here is for that one case and nothing else. */
@@ -42034,6 +42533,7 @@ function drawBoss(){
 function drawBossInner(){
   if(boss&&boss._hammer){hammerBossDraw(boss);return;}
   if(boss&&boss._whv){warhiveDraw(boss);return;}
+  if(boss&&boss._rebels){rebelSquadDraw(boss);return;}
   /* the rake draws under the hull, and like the tick it has to reach the non-ship paths too */
   if(boss && !boss._ship && boss._brk && typeof beamRakeDraw==='function') beamRakeDraw(boss);
   /* Attack-owned warning draws happen below the owning hull, using their simulation clocks. */
@@ -43222,6 +43722,7 @@ const PROJ = {
   homing:{type:'homing',slot:4},
   missile:{type:'missile',slot:5}, emr:{type:'missile',slot:5},
   emissile:{type:'missile',slot:5}, rocketW:{type:'missile',slot:5},
+  ovSonic:{type:'blast',slot:3}, // authored pressure front drawn by ovSonicProjectileDraw
   rzbMissile:{type:'missile',slot:5}, rzbSonic:{type:'orb',slot:3}, fztFireball:{type:'comet',slot:2},   // the Razorback's rounds (0912r) - razorbackProjectileDraw draws them first
   tlvBolt:{type:'comet',slot:2}, tlvNeedle:{type:'missile',slot:5},   // the Tempest Leviathan's plasma bolt and needle (0913b) - tempestProjectileDraw draws them first
   laser:{type:'missile',slot:5,tint:'#8fff9f'},
@@ -45257,17 +45758,18 @@ function stage3WallLaserAttack(b,pat,step){
     const total=S3_FURY_FEINT_COLORS.length*S3_FURY_FEINT_BEAT;
     S.volley=null;S.cannonSeq=null;S.charge={t:0,dur:total,slot:'C',kind:'centerPulse',released:false};
     S.lastPattern=pat;S.patternsSeen[pat]=(S.patternsSeen[pat]||0)+1;
-    stage3BossBeginSlide(b,total+active+1.05);b.fireCd=(total+active+1.0)*1.22;
+    stage3BossBeginSlide(b,total+active+.58);b.fireCd=total+active+.60;
     return true;
   }
   if(!l23BossBeamStart(b,'rime',slots,angles,L23_WARN_T,active,.24,width,{sweepArc:arc,sweepRate:2.6}))return true;
   S.volley=null;S.cannonSeq=null;S.charge={t:0,dur:L23_WARN_T,slot:'C',kind:'centerPulse',released:false};
   S.lastPattern=pat;S.patternsSeen[pat]=(S.patternsSeen[pat]||0)+1;
-  stage3BossBeginSlide(b,L23_WARN_T+active+1.05);b.fireCd=(L23_WARN_T+active+1.0)*1.35;
+  const recovery=(diffKey==='hard'? .65:1.35);
+  stage3BossBeginSlide(b,L23_WARN_T+active+recovery);b.fireCd=L23_WARN_T+active+recovery;
   return true;
 }
 function stage4GeneratorColumn(b,side){
-  const left=camLeftX(),right=camRightX(),mid=(left+right)*.5,off=Math.min((right-left)*.5-29,b.w*.69+29);
+  const left=camLeftX(),right=camRightX(),mid=(left+right)*.5,off=Math.min((right-left)*.5-S4H_MARGIN,b.w*.69+29);
   return {x:mid+side*off,y:(b._s4war.homeY||150)+78};
 }
 function stage4ShieldBeamNodes(b,x,halfW,top,bot){
@@ -45286,7 +45788,7 @@ function stage4InterceptFeedback(q){
 function stage4PiercingBeam(b,shot){
   const nodes=stage4ShieldBeamNodes(b,shot.x,shot.w/2,shot.top,shot.bot),
     turrets=b&&b._s4war&&b._s4war.coreUnlocked?b._s4war.coreTurrets.filter(t=>!t.dead&&t.materialize>=.92&&
-      t.y>=shot.top-S4H_HALF&&t.y<=shot.bot+S4H_HALF&&Math.abs(shot.x-t.x)<=58*S4H_SCALE+shot.w/2):[];
+      t.y>=shot.top-stage4HelperExtent(t).y&&t.y<=shot.bot+stage4HelperExtent(t).y&&Math.abs(shot.x-t.x)<=stage4HelperExtent(t).x+shot.w/2):[];
   if(!nodes.length&&!turrets.length)return false;
   /* Snapshot every intersection before either node is destroyed or the shield changes state.
      Carry the actual wide-beam context into hitBoss: direct encounter probes and future beam
@@ -45322,34 +45824,35 @@ function stage4MiniEscortEnsure(b){
   const S=b&&b._s4war;if(!S||!S.mini)return [];
   const hard=typeof diffKey!=='undefined'&&(diffKey==='hard'||diffKey==='furious');
   if(!hard){S.summoned=false;if(S.drones.length)S.drones.length=0;return S.drones;}
-  const furious=diffKey==='furious',want=furious?3:2,W=worldWidth();
+  const furious=diffKey==='furious',want=2,W=worldWidth();
   if(S.drones.length!==want){
     S.drones.length=0;
-    const roles=furious?['gunner','protector','protector']:['gunner','protector'];
+    const roles=['gunner','protector'];
     for(let i=0;i<roles.length;i++){
-      const role=roles[i],side=i===0?-1:(i===1?1:0),hp=Math.ceil((role==='gunner'?145:120)*((DIFF&&DIFF.eHp)||1)),shield=Math.ceil(hp*(role==='gunner'?.48:.38));
-      S.drones.push({role:role,side:side,index:i,art:'nsb_olive_carrier',size:role==='gunner'?88:80,
+      const role=roles[i],side=i===0?-1:1,hp=Math.ceil((role==='gunner'?145:120)*((DIFF&&DIFF.eHp)||1));
+      S.drones.push({role:role,side:side,index:i,art:role==='gunner'?'s4w_warden_gunner_0919':'s4w_warden_rocketeer_0919',size:role==='gunner'?132:120,
         x:side<0?W*.17:(side>0?W*.83:W*.5),y:214+i*12,stationX:side<0?W*.17:(side>0?W*.83:W*.5),stationY:214+i*12,
-        hp:hp,maxhp:hp,shield:shield,maxShield:shield,dead:false,active:0,t:-i*.24,ang:Math.PI/2,
+        hp:hp,maxhp:hp,shield:0,maxShield:0,dead:false,active:0,t:-i*.24,ang:Math.PI/2,
         fireCd:.28+i*.16,burstLeft:role==='gunner'?5:0,movePhase:i*Math.PI,flash:0,shieldFlash:0,shots:0});
     }
-    if(typeof XART!=='undefined'&&XART._touch){XART._touch('nsb_olive_carrier');for(let i=0;i<8;i++)XART._touch('s4w_drone_barrel_'+i);}
+    if(typeof XART!=='undefined'&&XART._touch){XART._touch('s4w_warden_gunner_0919');XART._touch('s4w_warden_rocketeer_0919');}
     stage4WarfareSound('bossWeaponCharge','enemyBossCannon');
   }
   S.summoned=S.drones.some(d=>!d.dead);return S.drones;
 }
 function stage4MiniEscortTick(b,dt,phase){
   const S=b&&b._s4war,list=stage4MiniEscortEnsure(b);if(!S||!list.length)return false;
-  const W=worldWidth(),furious=diffKey==='furious',target=(typeof targetShip==='function')?targetShip(b.x,b.y):player;
+  const left=camLeftX(),right=camRightX(),furious=diffKey==='furious',target=(typeof targetShip==='function')?targetShip(b.x,b.y):player;
   for(const d of list){
     if(d.dead)continue;d.t+=dt;d.flash=Math.max(0,(d.flash||0)-dt);d.shieldFlash=Math.max(0,(d.shieldFlash||0)-dt);
     if(d.t<0)continue;d.active=Math.min(1,d.active+dt*3.4);
+    const margin=(d.size||92)*.5+12;d.stationX=clamp(d.stationX,left+margin,right-margin);
     let tx=d.stationX,ty=d.stationY;
     if(d.role==='gunner'){
       ty=d.stationY+Math.sin(d.t*2.1+d.index)*5;
     }else{
       const leg=(d.t+1.05*d.index)%3.2,guardSide=d.side||((Math.floor(d.t/3.2)&1)?1:-1);
-      tx=clamp(target.x+guardSide*(leg<1.6?112:72),72,W-72);
+      tx=clamp(target.x+guardSide*(leg<1.6?112:72),left+margin,right-margin);
       ty=leg<.72?244:(leg<1.6?204:224+Math.sin((leg-1.6)/1.6*Math.PI)*18);
     }
     const speed=(d.role==='gunner'?85:(furious?285:230))*dt;
@@ -45357,12 +45860,12 @@ function stage4MiniEscortTick(b,dt,phase){
     const a=Math.atan2(target.y-d.y,target.x-d.x);d.ang+=stage4AngleDelta(d.ang,a)*Math.min(1,dt*(d.role==='gunner'?7:9));
     if(d.active<.82)continue;d.fireCd-=dt;
     if(d.role==='gunner'&&d.fireCd<=0){
-      const tip={x:d.x+Math.cos(d.ang)*38,y:d.y+Math.sin(d.ang)*38};
+      const tip={x:d.x+Math.cos(d.ang)*d.size*.43,y:d.y+Math.sin(d.ang)*d.size*.43};
       const q=stage4MiniMachine(b,tip,d.ang,5.45+phase*.18);q._s4EscortRole='gunner';d.shots++;d.burstLeft--;
       d.fireCd=d.burstLeft>0?.105:(furious?.52:.72);if(d.burstLeft<=0)d.burstLeft=furious?7:5;
       stage4WarfareDroneMuzzle(b,d);if((d.shots%5)===1)stageRevisionCue(b,'wardenGun',.10,.82);
     }else if(d.role==='protector'&&d.fireCd<=0){
-      const tip={x:d.x+Math.cos(d.ang)*34,y:d.y+Math.sin(d.ang)*34},q=stage4WarfareShot(b,tip,d.ang,1.85,'rocket',{accel:.92,max:5.25,shootable:true,hp:2,szMul:.74});
+      const tip={x:d.x+Math.cos(d.ang)*d.size*.43,y:d.y+Math.sin(d.ang)*d.size*.43},q=stage4WarfareShot(b,tip,d.ang,1.85,'rocket',{accel:.92,max:5.25,shootable:true,hp:2,szMul:.74});
       q._s4Mini=true;q._s4EscortRole='protector';q._s4EscortIndex=d.index;d.shots++;d.fireCd=(furious?.92:1.24)+d.index*.08;
       stage4WarfareDroneMuzzle(b,d);stageRevisionCue(b,'wardenRocket',.18,.84);
     }
@@ -45371,22 +45874,22 @@ function stage4MiniEscortTick(b,dt,phase){
 }
 function stage4MiniHardSet(b,mode){
   const S=b&&b._s4war;if(!S||!S.mini)return false;
-  const W=worldWidth(),mid=W*.5,amp=Math.min(94,Math.max(42,W*.5-b.w*.60));
+  const left=camLeftX(),right=camRightX(),W=right-left,mid=(left+right)*.5,amp=Math.min(94,Math.max(24,W*.5-b.w*.60));
   stage4WarfareSetMode(b,mode);
   const H=S.miniHard||(S.miniHard={dir:1,lane:mid,locked:false,speed:0,fromX:b.x,fromY:b.y,log:[]});
   H.fromX=b.x;H.fromY=b.y;H.amp=amp;H.mid=mid;H.homeY=S.homeY;
   if(mode==='hardCircle'){
     H.dir=-H.dir;H.startA=b.x>=mid?0:Math.PI;H.circleRadius=Math.max(8,Math.abs(b.x-mid));H.log.push({mode:mode,t:b.t||0});
   }else if(mode==='hardGlide'){
-    H.toX=H.dir>0?W-b.w*.55:b.w*.55;H.log.push({mode:mode,t:b.t||0});
+    H.toX=H.dir>0?right-b.w*.55:left+b.w*.55;H.log.push({mode:mode,t:b.t||0});
   }else if(mode==='hardWarn'){
-    H.lane=clamp(player.x,b.w*.50,W-b.w*.50);H.locked=false;H.log.push({mode:mode,t:b.t||0});
+    H.lane=clamp(player.x,left+b.w*.55,right-b.w*.55);H.locked=false;H.log.push({mode:mode,t:b.t||0});
     stageRevisionCue(b,'wardenRackCharge',0);combatWarningTick(b,'olive-warden-hard-ram',0,1.20,true);
   }else if(mode==='hardRam'){
     H.speed=210;b.x=H.lane;b.y=S.homeY;S.miniRamCount++;H.log.push({mode:mode,lane:H.lane,t:b.t||0});
     stageRevisionCue(b,'sovereignDive',0);shake=Math.max(shake,7);
   }else if(mode==='hardReturn'){
-    b._s4MiniSafe=true;H.p0={x:b.x,y:b.y};H.side=H.lane<mid?W+b.w*.58:-b.w*.58;
+    b._s4MiniSafe=true;H.p0={x:b.x,y:b.y};H.side=H.lane<mid?right+b.w*.58:left-b.w*.58;
     H.p1={x:H.side,y:VH*.78};H.p2={x:H.side,y:S.homeY-126};H.p3={x:mid,y:S.homeY};
     H.log.push({mode:mode,t:b.t||0});
   }
@@ -45394,11 +45897,11 @@ function stage4MiniHardSet(b,mode){
 }
 function stage4MiniHardBezier(a,b,c,d,t){const u=1-t;return u*u*u*a+3*u*u*t*b+3*u*t*t*c+t*t*t*d;}
 function stage4MiniHardTick(b,dt,phase){
-  const S=b._s4war,H=S.miniHard,W=worldWidth(),mid=W*.5,furious=typeof diffKey!=='undefined'&&diffKey==='furious';
+  const S=b._s4war,H=S.miniHard,left=camLeftX(),right=camRightX(),mid=(left+right)*.5,furious=typeof diffKey!=='undefined'&&diffKey==='furious';
   if(!H)return false;S.poseRot=0;S.scale=1;b._animKey=null;b.fireCd=999;
   if(S.mode==='hardCircle'){
     const dur=furious?1.16:1.34,q=clamp(S.t/dur,0,1),a=H.startA+H.dir*TAU*q;
-    const rx=lerp(H.circleRadius,H.amp,q);b.x=mid+Math.cos(a)*rx;b.y=S.homeY+Math.sin(a)*38;
+    const rx=lerp(H.circleRadius,H.amp,q);b.x=mid+Math.cos(a)*rx;b.y=S.homeY+Math.sin(a)*24;
     while(S.shot<=S.t){S.shot+=furious?.145:.18;const slot=(S.wave&1)?'L':'R',off=(S.wave&3)<2?-.20:.20;
       stage4MiniMachine(b,slot,Math.PI/2+off,5.45+phase*.22);stage4WarfareMuzzle(b,slot,'mg',.68,.10);stageRevisionCue(b,'wardenGun',.11,.86);S.wave++;}
     if(q>=1)stage4MiniHardSet(b,'hardGlide');
@@ -45409,7 +45912,7 @@ function stage4MiniHardTick(b,dt,phase){
     if(q>=1)stage4MiniHardSet(b,'hardWarn');
   }else if(S.mode==='hardWarn'){
     const dur=1.20,lock=.72,q=clamp(S.t/dur,0,1);
-    if(!H.locked&&S.t<lock)H.lane=clamp(player.x,b.w*.50,W-b.w*.50);
+    if(!H.locked&&S.t<lock)H.lane=clamp(player.x,left+b.w*.55,right-b.w*.55);
     if(!H.locked&&S.t>=lock){H.locked=true;H.log.push({mode:'hardLock',lane:H.lane,t:b.t||0});stageRevisionCue(b,'sovereignDive',0,.88);}
     b.x+=(H.lane-b.x)*Math.min(1,dt*6);b.y+=(S.homeY-b.y)*Math.min(1,dt*7);
     S.scale=1+q*.026+Math.sin(S.t*34)*q*.009;combatWarningTick(b,'olive-warden-hard-ram',S.t,dur,true);
@@ -45432,23 +45935,23 @@ function stage4MiniHardWarningDraw(b){
   combatWarningDraw(b,{x:p.x,y:p.y,ex:H.lane,ey:VH+40,progress:q,width:96});return true;
 }
 function stage4MiniDirector(b,dt){
-  const S=b._s4war,W=worldWidth(),phase=shipBossPhase(b),hard=typeof diffKey!=='undefined'&&(diffKey==='hard'||diffKey==='furious');
+  const S=b._s4war,left=camLeftX(),right=camRightX(),W=right-left,mid=(left+right)*.5,phase=shipBossPhase(b),hard=typeof diffKey!=='undefined'&&(diffKey==='hard'||diffKey==='furious');
   S.t+=dt*(1+phase*.10);b.fireCd=999;S.poseRot=0;S.scale=1;b._animKey=null;stage4MiniEscortTick(b,dt,phase);
   if(/^hard/.test(S.mode))return stage4MiniHardTick(b,dt,phase);
   const amp=Math.min(68,Math.max(24,W*.5-b.w*.62));b.y+=(S.homeY-b.y)*Math.min(1,dt*5.5);
   if(S.mode==='burst'){
-    b.x=W*.5+Math.sin(S.t*1.12)*amp;
+    b.x=mid+Math.sin(S.t*1.12)*amp;
     while(S.shot<=S.t){S.shot+=hard?.095:.145;const o=Math.sin(S.wave*.38)*.24;
       for(const slot of ['L','R']){stage4MiniMachine(b,slot,Math.PI/2+o+(slot==='L'?.12:-.12),5.20+phase*.20);stage4WarfareMuzzle(b,slot,'mg',.65,.10);}
       stageRevisionCue(b,'wardenGun',.12,.90);S.wave++;
     }
     if(S.t>=3.2)stage4WarfareSetMode(b,'center');
   }else if(S.mode==='center'){
-    b.x+=(W*.5-b.x)*Math.min(1,dt*5);
+    b.x+=(mid-b.x)*Math.min(1,dt*5);
     while(S.shot<=S.t){S.shot+=hard?.072:.11;stage4MiniCenter(b);S.wave++;}
     if(S.t>=1.45){stage4WarfareSetMode(b,'rockets');stageRevisionCue(b,'wardenRackCharge',0);}
   }else{
-    b.x=W*.5+Math.sin(S.t*.65)*amp*.5;
+    b.x=mid+Math.sin(S.t*.65)*amp*.5;
     if(S.t>=.68&&S.event<4&&S.shot<=S.t){S.shot=S.t+.48;const a=Math.PI/2+(S.event&1?-.16:.16);
       stage4MiniRocket(b,'L',a+.12);stage4MiniRocket(b,'R',a-.12);stageRevisionCue(b,'wardenRocket',.20);S.event++;}
     if(S.t>=3.1){if(hard)stage4MiniHardSet(b,'hardCircle');else stage4WarfareSetMode(b,'burst');}
@@ -48520,6 +49023,7 @@ function drawBullets(){
   ctx.imageSmoothingEnabled = false;
   // enemy — master fire-type art first (legacy kinds alias onto shared FIRETYPES)
   for(const b of eBullets){
+    if(ovSonicProjectileDraw(b))continue;
     if(b._hammerLaser){hammerLaserDraw(b);continue;}
     if(b._frostNoseLaser){frostNoseLaserDraw(b);continue;}
     if(stage3DroneShotDraw(b))continue;
@@ -49561,6 +50065,7 @@ function _drawEffectsInner(){
   }
   // Engine rule: field announcements use the same authored arcade alphabet as score pops.
   const fieldArt=(typeof curFontArt==='function')?curFontArt():null;
+  const fieldFace=(typeof uiFontArt==='function')?uiFontArt():null;
   ctx.textAlign='center';
   for(const f of floaters){
     if(f.score){
@@ -49569,13 +50074,13 @@ function _drawEffectsInner(){
       const k=clamp(f.t/0.18,0,1), pop=1+0.6*(1-k)*(1-k);
       const fade=f.t<f.life*0.55?1:clamp(1-(f.t-f.life*0.55)/(f.life*0.45),0,1);
       const H=(f.big?13:10)*pop;
-      if(art && typeof stageText==='function') stageText(art,f.txt,f.x,f.y,H,f.color,0.85,fade,0.06);
-      else { ctx.globalAlpha=fade; ctx.fillStyle=f.color; ctx.font='bold '+Math.round(H)+'px "BOFmil", monospace'; ctx.textAlign='center'; ctx.fillText(f.txt,f.x,f.y); ctx.globalAlpha=1; ctx.textAlign='left'; }
+      if(fieldFace&&artReady(fieldFace))stageText(fieldFace,f.txt,f.x,f.y,H,null,0,fade,.06);
+      else if(art&&artReady(art))stageText(art,f.txt,f.x,f.y,H,null,0,fade,.06);
       continue;
     }
     const fade=clamp(1-f.t/f.life,0,1);
-    if(fieldArt && typeof stageText==='function') stageText(fieldArt,f.txt,f.x,f.y,10,f.color,0.85,fade,0.06);
-    else { ctx.globalAlpha=fade; ctx.fillStyle=f.color; ctx.font='bold 10px "BOFmil", monospace'; ctx.fillText(f.txt,f.x,f.y); ctx.globalAlpha=1; }
+    if(fieldFace&&artReady(fieldFace))stageText(fieldFace,f.txt,f.x,f.y,13,null,0,fade,.06);
+    else if(fieldArt&&artReady(fieldArt))stageText(fieldArt,f.txt,f.x,f.y,13,null,0,fade,.06);
   }
   /* the pickup announcement, over the field and in screen space (drop 0811m) */
   if(typeof drawArcadeBanner==='function') drawArcadeBanner();
@@ -49604,6 +50109,7 @@ function _drawEffectsInner(){
         continue;
       }
       if(!XART.rdy(p.key)) continue;
+      if(p.target && !p.target.dead){p.x=p.target.x+p.ox;p.y=p.target.y+p.oy;}
       const im=XART.get(p.key), k=clamp(p.t/p.dur,0,1);
       const s=p.size*(0.55+0.45*Math.min(1,k*3));          // snap open, then hold
       const w=s*(im.naturalWidth/Math.max(1,im.naturalHeight)), h=s;
@@ -49918,12 +50424,14 @@ function campaignMenuInputTick(){
       campPauseOpen(); return true;
     }
   }
-  /* A slot picker may use back to cancel back to the campaign hub. Everywhere else it is consumed
-     here and cannot reach the generic menuBackTick route to MODESEL/TITLE. */
-  if(!(state===GS.CAMPHUB && campPick)){
-    const _bk=Input.menuBack();
-    /* ...and on the live map, BACK is the way down off the button bar (0912v) */
-    if(_bk && state===GS.STAGESEL && typeof cmap2On==='function' && cmap2On() && cmap2.focus==='bar' && campPauseIsCampaignScreen()) cmap2.focus='map';
+  /* Setup screens use the shared one-step Back route. Only the live campaign map owns
+     Back here: first leave its button bar, then return to the Campaign hub. */
+  if(state===GS.STAGESEL && Input.menuBack()){
+    if(campPauseIsCampaignScreen()){
+      if(typeof cmap2On==='function' && cmap2On() && cmap2.focus==='bar') cmap2.focus='map';
+      else { campPick=null; campHubIndex=campCanContinue()?1:0; setState(GS.CAMPHUB); }
+    }
+    return true;
   }
   return false;
 }
@@ -50103,6 +50611,7 @@ function drawScene(dt){
     case GS.FORGING:    return drawForging(dt);
     case GS.FORGED:     return drawForging(dt);
     case GS.LOADOUT:    return drawLoadout(dt);
+    case GS.SUPPLIES:   return drawSupplies(dt);
     case GS.POWERS:     return drawPowers(dt);
     case GS.GAMEOVER:return drawGameOver(dt);
     case GS.CONTINUE: return drawContinue(dt);
@@ -50244,17 +50753,9 @@ function openerToTitle(){
   try{ Audio.startMusic('title'); }catch(e){}
   setState(GS.TITLE); menuIndex=0;
 }
-/* ⚠ THE SILHOUETTE SOURCE IS THE SHIP CUTOUT, NOT THE PORTRAIT, AND THAT WAS MEASURED. The first
-   cut silhouetted port_cf_<pilot>_idle and rendered a solid black SQUARE with a rim light round it,
-   which is exactly what a silhouette of an opaque image is. The portraits are framed busts - 77%
-   of their pixels are opaque - while the cinematic cutouts are 40-43%, i.e. actual cut-out
-   aircraft with sky around them. The portraits are still used, in COLOUR, on the frontal-views
-   beat where being a full plate is the point.
-       port_cf_axel_idle            256x256   77% opaque  -> a box
-       cinship_axel_2 (front 3/4)   318x317   43% opaque  -> an aeroplane
-   This is the CLAUDE.md render-it rule doing its job: the key existed, the load succeeded, rdy()
-   was true and the picture was wrong. */
-const OPN_SIL_KEY=function(pk){ return pk==='lizzie'?'ship_lizzie_pv2':'cinship_'+pk+'_2'; };   // 02_front_left_3q, native cutout
+/* Opening silhouettes use each pilot's current gameplay airframe. The retired
+   cinematic cutouts are no longer registered or rendered. */
+const OPN_SIL_KEY=function(pk){ return cinShipKey(pk,1); };
 /* ⚠ THE OPENER FLIES THE LEVEL PLATE NOW (Mike, 0916: "use straight facing up frames of each
    pilots ships"). `ship_<pilot>` is the nose-north hull every stage draws - the same frame the
    player sees in play - where `cinship_*_2` is a front three-quarter cutout that points at the
@@ -51179,7 +51680,7 @@ function cinPilotName(key){
   const p=(typeof PILOTS!=='undefined'&&PILOTS.find)?PILOTS.find(q=>q.key===key):null;
   return String((p&&p.name)||key||'').toUpperCase();
 }
-function cinShipKey(pilot,view){ return 'cinship_'+pilot+'_'+clamp(view|0,1,7); }
+function cinShipKey(pilot,view){ const frame=[null,'pv2','br1','br7','br3','br5','br2','br4'][clamp(view|0,1,7)]; return 'ship_'+pilot+'_'+frame; }
 function cinAllPilots(sc){
   const out=[]; for(const p of (sc.cast||[]).concat(sc.traffic||[])) if(out.indexOf(p)<0) out.push(p);
   return out;
@@ -51494,9 +51995,56 @@ function hqEnd(){
   if(d) d(); else setState(GS.CAMPHUB);
 }
 
-/* Group HQ scenes remain archived, while live campaign boundaries pass through.
-   The selected pilot narrates Stage 1's return flight in campaignIntro. */
+/* The ensemble HQ scenes remain archived. Stage 1 instead gets a short, top-down
+   radio flight on its way back from the dam: the selected ship and one existing pilot.
+   It uses the current 16-bit dialogue panel and front-facing comm portraits. */
+let campaignBridge=null;
+function campaignBridgeStart(onDone){
+  const lead=(run&&run.pilot)||((typeof PILOTS!=='undefined'&&PILOTS[pilotIndex])?PILOTS[pilotIndex].key:'axel');
+  const wing=lead==='cole'?'axel':'cole';
+  campaignBridge={lead:lead,wing:wing,i:0,t:0,md:!!Input.mouse.down};
+  hqMode='bridge'; hqSc={beats:[
+    {who:lead,text:'Dam is down. The corridor is open.'},
+    {who:wing,text:'Copy. Form up on me. The volcanic front is next.'},
+    {who:lead,text:'I see it. Staying fast and staying together.'}
+  ]};
+  hqDone=onDone||null;
+  for(const p of [lead,wing]){XART.rdy(cinShipKey(p,1));XART.rdy('dlg_'+p);commPortrait(p,'idle');}
+  XART.rdy('cinbg_stage1_route');if(typeof bmfReady==='function')bmfReady('dialogue');
+  try{if(Audio&&Audio.startMusic)Audio.startMusic('cinematics');}catch(_cbm){}
+  setState(GS.CUTSCENE);return true;
+}
+function drawCampaignBridge(dt){
+  const B=campaignBridge,W=cutsceneViewWidth(),H=VH;
+  ctx.fillStyle='#05090d';ctx.fillRect(0,0,W,H);
+  if(!B||!hqSc){campaignBridge=null;hqEnd();return;}
+  const im=XART.rdy('cinbg_stage1_route')&&XART.get('cinbg_stage1_route');
+  const leadReady=XART.rdy(cinShipKey(B.lead,1)),wingReady=XART.rdy(cinShipKey(B.wing,1));
+  const faceReady=typeof bmfReady==='function'&&bmfReady('dialogue');
+  if(!im||!leadReady||!wingReady||!faceReady)return;
+  B.t+=dt;
+  const sw=im.naturalWidth||im.width,sh=im.naturalHeight||im.height,srcH=Math.min(sh,H*sw/W);
+  const travel=Math.max(0,sh-srcH),sy=Math.round(travel*(.53-.12*clamp((B.i*4+B.t)/12,0,1)));
+  ctx.drawImage(im,0,sy,sw,srcH,0,0,W,H);
+  ctx.fillStyle='rgba(3,10,17,.22)';ctx.fillRect(0,0,W,H);
+  const flight=B.i*4+B.t,bob=Math.sin(flight*2.1)*H*.008;
+  cinDrawShip(B.wing,1,W*.66+Math.sin(flight*.7)*W*.012,H*.37-bob,H*.25,false,1,0);
+  cinDrawShip(B.lead,1,W*.35+Math.sin(flight*.85)*W*.015,H*.53+bob,H*.27,false,1,0);
+  const beat=hqSc.beats[B.i],full=beat.text;
+  dlgBox({who:beat.who.toUpperCase(),portrait:beat.who,full:full,
+    shown:full.slice(0,Math.floor(B.t*42)),fade:clamp(B.t/.20,0,1),
+    tint:(PILOTS.find(p=>p.key===beat.who)||{}).tint||'#dce7ff',
+    pw:Math.min(W*.77,910),ph:Math.min(H*.25,145),
+    x:Math.round(W*.115),y:Math.round(H*.72),screenSpace:false});
+  msgFaceUse('dialogue');controlHintRow([['pad_start','SKIP']],Math.round(H*.055),Math.round(W*.84),Math.round(W*.3));msgFaceUse(null);
+  const click=Input.mouse.down&&!B.md;B.md=!!Input.mouse.down;
+  if(B.t>=4.0 || (B.t>.4&&(click||(typeof anyTap==='function'&&anyTap())))){
+    Input.mouse.down=false;B.i++;B.t=0;
+    if(B.i>=hqSc.beats.length){campaignBridge=null;hqEnd();}
+  }
+}
 function hqTrigger(when, stage, onDone){
+  if(when==='post' && stage===1 && run.mode==='campaign')return campaignBridgeStart(onDone);
   if(onDone)onDone();
   return false;
 }
@@ -51543,10 +52091,15 @@ function campaignIntroPickPilot(){
   campaignIntroPilot=(typeof PILOTS!=='undefined'&&PILOTS[pilotIndex])?PILOTS[pilotIndex].key:((run&&run.pilot)||'axel');
   return campaignIntroPilot;
 }
+function campaignIntroPortraitKey(pilot){
+  /* Mike's replacement Yuri is the authored pilot-select body. The old pose_yuri_0
+     belongs to the rejected likeness and must never be shown, even as a load fallback. */
+  return pilot==='yuri'?'yuri_body_0':pilot==='cole'?'cole_body_0922':'pose_'+pilot+'_0';
+}
 function campaignIntroKeys(){
   const pk=campaignIntroPickPilot();
   return ['cinbg_hq_aerial','cinbg_hq_warroom','cinbg_jungle','cin_cockpit_frame',
-          'pose_'+pk+'_0',cinShipKey(pk,1),'dlg_window','dlg_'+pk];
+          campaignIntroPortraitKey(pk),cinShipKey(pk,1),'dlg_window','dlg_'+pk];
 }
 function campaignIntroWarm(){
   if(typeof XART==='undefined')return false;
@@ -51557,6 +52110,7 @@ function campaignIntroWarm(){
 function campaignIntroReady(){
   return typeof XART!=='undefined' && XART.rdy('cinbg_jungle') &&
     XART.rdy('cinbg_hq_aerial') && XART.rdy('cin_cockpit_frame') &&
+    XART.rdy(campaignIntroPortraitKey(campaignIntroPickPilot())) &&
     typeof bmfReady==='function' && bmfReady('dialogue');
 }
 function campaignIntroStart(onDone){
@@ -51578,11 +52132,15 @@ function campaignIntroCockpit(pilot,W,H,t){
     const frame=XART.get('cin_cockpit_frame');
     ctx.drawImage(frame,x-sz*.5,y-sz*.5,sz,sz);
   }
-  const key='pose_'+pilot+'_0';
+  const key=campaignIntroPortraitKey(pilot);
   if(XART.rdy(key)){
     const im=XART.get(key),iw=im.naturalWidth||im.width,ih=im.naturalHeight||im.height;
     const srcH=Math.round(ih*.56),portraitH=sz*.79,portraitW=portraitH*iw/srcH;
+    // Cole's supplied standing figure is cropped behind the dashboard, never below the cockpit.
+    ctx.save();
+    if(pilot==='cole'){ctx.beginPath();ctx.rect(x-sz*.5,y-sz*.5,sz,sz*.8);ctx.clip();}
     ctx.drawImage(im,0,0,iw,srcH,x-portraitW*.5,y-sz*.31+Math.sin(t*2)*2,portraitW,portraitH);
+    ctx.restore();
   }
   if(XART.rdy('cin_cockpit_frame')){
     const frame=XART.get('cin_cockpit_frame'),fw=frame.naturalWidth||frame.width,fh=frame.naturalHeight||frame.height;
@@ -51648,6 +52206,7 @@ function drawCampaignIntro(dt){
   if(t>=CAMPAIGN_INTRO_DONE)campaignIntroFinish();
 }
 function drawCutsceneState(dt){
+  if(hqMode==='bridge') return drawCampaignBridge(dt);
   if(hqMode==='beats') return drawCutsceneBeats(dt);
   return drawCutsceneEnsemble(dt);
 }
@@ -52037,6 +52596,462 @@ function drawCallout(dt){
   ctx.restore();
 }
 
+
+/* The Stage-6 chase opens in the same playfield as the rest of the mission. Two
+   black Tempest fighters come up from behind, acquire one Retina lock each, and
+   fire ordinary shootable missiles. The brief slow-motion window keeps weapons,
+   movement, and the player's own Retina fully live. */
+let s6Opening=null;
+function s6OpeningActive(){return !!s6Opening;}
+function s6OpeningInit(){
+  if(typeof Snd!=='undefined')Snd.loopOff('overlordRotor');
+  s6Opening={phase:'cloak',t:0,allT:0,radio:null,radioIndex:0,launched:0,shots:[],beeps:0,count:-1,jets:[
+    {side:-1,x:player.x-106,y:player.y-62,dead:false},
+    {side:1,x:player.x+106,y:player.y-62,dead:false}
+  ]};
+  for(const k of ['whv_ace','whv_closed','whv_fan','nwarn_shoot'])XART.rdy(k);
+}
+function s6OpeningFire(j){
+  const O=s6Opening;if(!O||O.launched>=2)return;
+  const a=Math.atan2(player.y-j.y,player.x-j.x),v=1.45;
+  const m={x:j.x,y:j.y+22,vx:Math.cos(a)*v,vy:Math.sin(a)*v,
+    ang:a,spd:v,w:16,h:24,dmg:1,t:0,kind:'emissile',hp:1,_shootable:true,
+    _bright:true,_s6Opening:true,_retinaHit:function(){this.dead=true;explode(this.x,this.y,24,'blue');}};
+  eBullets.push(m);O.shots.push(m);O.launched++;
+  (Audio.SFX.missile||Audio.SFX.enemyShoot)();
+}
+function s6OpeningEnd(failed){
+  const O=s6Opening;if(!O||O.phase!=='intercept')return;
+  O.phase='depart';O.t=0;timeScale=1;hudCallout=null;O.radio=null;
+  for(const m of O.shots)m.dead=true;
+  for(const L of playerLocks)if(O.jets.includes(L.src)){L.state='released';L.endT=0;}
+  if(failed&&!player.dead){run.shield=0;player.invuln=0;playerHit();}
+  for(const j of O.jets){j.sx=j.x;j.sy=j.y;}
+  if(typeof Snd!=='undefined')Snd.play('tlvJetEngine',.6);
+}
+function s6OpeningTick(dt){
+  const O=s6Opening;if(!O)return;
+  O.t+=dt;O.allT+=dt;
+  const lines=[
+    [0,(_pilotKey()||'PILOT').toUpperCase(),'FURY HQ, I AM BACK DOWN. I THINK THE THREAT IS GONE.'],
+    [5.5,'COLE','WHAT YOU FOUGHT WAS A DISTRACTION. THE REAL ENEMY IS HERE.'],
+    [11,'MAVERICK','HEY DECKER... DID YOU WORK ON CLOAKING FOR THE FEDERATION?'],
+    [17,'DECKER','................'],
+    [20,'COLE','LOOK OUT! STEALTH FIGHTERS ON BOTH SIDES!']
+  ];
+  if(O.phase==='cloak'||O.phase==='reveal'){
+    while(O.radioIndex<lines.length&&O.allT>=lines[O.radioIndex][0]){
+      const L=lines[O.radioIndex++];O.radio={who:L[1],full:L[2],t:0};
+      if(Audio.SFX.blip)Audio.SFX.blip();
+    }
+  }
+  if(O.radio)O.radio.t+=dt;
+  if(O.phase==='cloak'||O.phase==='reveal'||O.phase==='lock'){
+    for(const j of O.jets){j.x=player.x+j.side*108;j.y=player.y-108+Math.sin(O.allT*1.7+j.side)*3;}
+  }
+  if(O.phase==='cloak'&&O.t>=22){O.phase='reveal';O.t=0;}
+  else if(O.phase==='reveal'&&O.t>=2.8){
+    O.phase='lock';O.t=0;O.radio=null;
+    // Seven clear warning pulses, then the pair launches together.
+    for(const j of O.jets)enemyLockOn(j,2.8,{fire:()=>s6OpeningFire(j)});
+  }else if(O.phase==='lock'){
+    if(O.launched===2){O.phase='intercept';O.t=0;timeScale=.5;showCallout('shoot',4);}
+  }else if(O.phase==='intercept'){
+    if(player.dead||O.shots.some(m=>m._s6Hit)){s6OpeningEnd(true);return;}
+    if(O.launched===2&&O.shots.every(m=>m.dead||!eBullets.includes(m))){s6OpeningEnd(false);return;}
+    if(O.t>4.2||O.shots.some(m=>!m.dead&&Math.hypot(m.x-player.x,m.y-player.y)<18)){s6OpeningEnd(true);return;}
+  }else if(O.phase==='depart'){
+    for(const j of O.jets){j.x=j.sx+j.side*O.t*240;j.y=j.sy-O.t*52;}
+    if(O.t>1.6&&!player.dead){O.phase='countdown';O.t=0;}
+  }else if(O.phase==='countdown'){
+    const n=O.t<3?3-Math.floor(O.t):0;
+    if(n!==O.count){O.count=n;const f=n?Audio.SFX.getready:Audio.SFX.go;if(f)f();}
+    if(O.t>=3.85){O.phase='flyover';O.t=0;if(typeof Snd!=='undefined')Snd.loopOn('overlordRotor',.66);}
+  }else if(O.phase==='flyover'){
+    shake=Math.max(shake,.7+.45*Math.sin(O.t*5));
+    if(O.t>=9){if(typeof Snd!=='undefined')Snd.loopOff('overlordRotor');s6Opening=null;}
+  }
+}
+function s6OpeningDraw(){
+  const O=s6Opening;if(!O)return;
+  ctx.save();ctx.imageSmoothingEnabled=false;
+  if(O.phase==='flyover'&&XART.rdy('whv_closed')){
+    const c=XART.get('whv_closed'),w=viewW()*2.1,h=w*288/512;
+    const x=camLeftX()+viewW()/2,y=lerp(VH+h*.62,-h*.62,clamp(O.t/9,0,1));
+    const shadow=xartTint('whv_closed','#01030a',1);
+    ctx.save();ctx.translate(x+24,y+72);ctx.rotate(Math.PI);ctx.globalAlpha=.55;
+    if(shadow)ctx.drawImage(shadow,-w/2,-h/2,w,h);ctx.restore();
+    ctx.save();ctx.translate(x,y);ctx.rotate(Math.PI);ctx.drawImage(c,-w/2,-h/2,w,h);
+    if(XART.rdy('whv_fan')){const fan=XART.get('whv_fan'),sc=w/512;
+      for(const side of [-1,1]){ctx.save();ctx.translate(side*169.5*sc,-10*sc);ctx.rotate(O.t*12*side);ctx.drawImage(fan,-53*sc,-53*sc,106*sc,106*sc);ctx.restore();}}
+    ctx.restore();
+  }else if(!['countdown','flyover'].includes(O.phase)&&XART.rdy('whv_ace')){
+    const im=XART.get('whv_ace'),alpha=O.phase==='cloak'?.09+.05*Math.sin(O.t*3):O.phase==='reveal'?.12+.88*clamp(O.t/1.2,0,1):1;
+    for(const j of O.jets){ctx.save();ctx.translate(j.x,j.y);ctx.globalAlpha=alpha;
+      // Authored ace is nose-south; rotate north while riding alongside, then bank toward the pilot.
+      const turn=O.phase==='cloak'?1:O.phase==='reveal'?1-clamp(O.t/1.2,0,1):0;
+      ctx.rotate(Math.PI*turn+(O.phase==='depart'?-j.side*Math.PI*.5:0));
+      const hh=74,ww=hh*(im.width||im.naturalWidth)/(im.height||im.naturalHeight);
+      ctx.drawImage(im,-ww/2,-hh/2,ww,hh);ctx.restore();}
+  }
+  ctx.restore();
+  if(O.phase==='countdown'){
+    ctx.save();worldXformEscape();msgText(O.t<3?String(3-Math.floor(O.t)):'GO!',VW/2,VH*.40,58,'#ffffff',0,1,.07);ctx.restore();
+  }
+}
+function s6OpeningRadioDraw(){
+  const O=s6Opening,R=O&&O.radio;if(!R)return;
+  dlgBox({who:R.who,full:R.full,shown:R.full.slice(0,Math.floor(R.t*42)),
+    tint:dialogueNameColor(R.who,'#76cbff'),portrait:R.who.toLowerCase(),emo:'alert'});
+}
+/* Stage-6 wingmen use the nine authored pilot plates. They fight for two waves,
+   withdraw when damaged, then reform for the shared push before the route split. */
+let s6Wing=null;
+const S6_PILOTS=['axel','cole','decker','falva','freezer','juggernaut','lizzie','maverick','yuri'];
+function s6WingInit(){s6Wing={ships:[],used:[],beats:0,all:false,choice:false,choiceT:0,route:null,line:null,lineT:0,supplyIndex:0};}
+function s6WingSay(who,text){if(!s6Wing)return;s6Wing.line={who,full:text,t:0};s6Wing.lineT=0;}
+function s6WingLaunch(n,all){
+  const W=s6Wing;if(!W)return;
+  const pool=S6_PILOTS.filter(k=>k!==_pilotKey()&&!W.used.includes(k));
+  for(let i=pool.length-1;i>0;i--){const j=(Math.random()*(i+1))|0;[pool[i],pool[j]]=[pool[j],pool[i]];}
+  const keys=all?S6_PILOTS.filter(k=>k!==_pilotKey()):pool.slice(0,n);
+  if(all)W.ships.length=0;
+  for(let i=0;i<keys.length;i++){
+    const key=keys[i],side=i%2?1:-1;
+    W.used.push(key);W.ships.push({key,x:side<0?camLeftX()+46:camRightX()-46,y:VH+65+i*24,
+      t:0,hp:3,phase:'arrive',slot:i,fcd:.2+i*.09,all:!!all});
+    XART.rdy('ship_'+key);
+  }
+  if(Audio.SFX&&Audio.SFX.allyArrive)Audio.SFX.allyArrive();
+  if(!all&&keys.length)s6WingSay(keys[0].toUpperCase(),W.beats===0?'WE FOUND YOU. FORMING ON YOUR WING.':
+    'THEY HIT FURY BASE WHILE YOU WERE UP THERE. NOWHERE IS SAFE.');
+}
+/* Each pilot owns its destination, target and velocity. Only the brief rally/route
+   formation uses arena slots; moving the player never translates the squadron. */
+function s6WingNavigate(q,W,dt){
+  const left=camLeftX()+34,right=camRightX()-34,span=right-left;
+  const top=PLAY.y+72,bottom=PLAY.y+PLAY.h-48;
+  const supply=powerups.find(p=>p._wingSupply&&!p.dead&&p._wingKey===q.key);
+  q.think=(q.think||0)-dt;
+  const rally=q.all&&q.t<2.5||W.choice&&!W.route;
+  if(q.think<=0||!Number.isFinite(q.gx)){
+    q.think=.42+(q.slot%3)*.09;
+    const candidates=enemies.filter(e=>!e.dead&&!e._dyingT&&e.hp>0&&e.y>PLAY.y-40&&e.y<bottom-48&&e.x>left-25&&e.x<right+25);
+    const score=e=>Math.abs(e.x-q.x)+Math.abs(e.y-q.y)*.25+
+      W.ships.filter(a=>a!==q&&a.phase==='fight'&&a.target===e).length*85;
+    candidates.sort((a,b)=>score(a)-score(b));q.target=candidates[0]||null;
+    const lane=q.all?(q.slot+.5)/8:(q.slot%2?.74:.26);
+    q.gx=clamp(q.target?q.target.x:left+span*lane+Math.sin(q.t*.85+q.slot*2)*42,left,right);
+    q.gy=clamp(q.target?q.target.y+125+(q.slot%3)*30:top+(bottom-top)*(.42+(q.slot%3)*.17)+Math.sin(q.t*.6+q.slot)*24,top+70,bottom);
+  }
+  let tx=q.gx,ty=q.gy;
+  if(rally){
+    const pins=[[0,0],[-.13,.18],[.13,.18],[-.26,.36],[0,.36],[.26,.36],[-.39,.54],[.39,.54]];
+    const pin=pins[q.slot];tx=(left+right)/2+span*pin[0];ty=top+(bottom-top)*pin[1];
+  }else if(supply&&Math.hypot(supply.x-q.x,supply.y-q.y)<150){tx=supply.x;ty=supply.y;}
+  // Separate hulls locally; this repulsion cannot pull an ally along with the player.
+  for(const other of [...W.ships,player]){
+    if(other===q||other.dead||other.phase==='leave')continue;
+    const dx=q.x-other.x,dy=q.y-other.y,d=Math.hypot(dx,dy);
+    if(d<68){const a=d>.1?Math.atan2(dy,dx):q.slot*2.4;tx+=Math.cos(a)*(68-d)*1.3;ty+=Math.sin(a)*(68-d)*1.3;}
+  }
+  let danger=null,soon=.5;
+  if(!rally&&q.phase==='fight'){
+    for(const b of eBullets){
+      if(b.dead)continue;
+      const vx=(b.vx||0)*60,vy=(b.vy||0)*60,dx=q.x-b.x,dy=q.y-b.y;
+      const t=clamp((dx*vx+dy*vy)/Math.max(1,vx*vx+vy*vy),0,.42);
+      if(Math.abs(dx-vx*t)<24+(b.w||4)/2&&Math.abs(dy-vy*t)<30+(b.h||4)/2&&t<soon){soon=t;danger={x:b.x+vx*t,y:b.y+vy*t};}
+    }
+    for(const g of groundTargetingFx){
+      if(g.dead||g.delay>0||g.t<g.warn*.4)continue;
+      if(Math.abs(q.x-g.x)<g.radius+35&&(g.lane||Math.abs(q.y-g.y)<g.radius+42))danger=g;
+    }
+    for(const e of enemies)if(!e.dead&&!e._dyingT&&Math.abs(q.x-e.x)<(e.w||30)*.5+35&&Math.abs(q.y-e.y)<(e.h||30)*.5+50)danger=e;
+  }
+  if(danger&&q.dodgeCd<=0){
+    let dir=q.x<danger.x?-1:1;if(q.x<left+65)dir=1;if(q.x>right-65)dir=-1;
+    q.evadeX=clamp(q.x+dir*100,left,right);q.evadeY=clamp(q.y+((q.slot%3)?-28:45),top,bottom);
+    q.dodgeMode=q.slot%3===0?'somer':'roll';q.dodgeT=.52;q.dodgeCd=1.8+(q.slot%3)*.18;
+    if(Audio.SFX&&Audio.SFX.arcBarrelRoll)Audio.SFX.arcBarrelRoll();
+  }
+  if(q.dodgeT>0){tx=q.evadeX;ty=q.evadeY;}
+  else if(danger){tx+=q.x<danger.x?-78:78;ty+=35;}
+  tx=clamp(tx,left,right);ty=clamp(ty,top,bottom);
+  const dx=tx-q.x,dy=ty-q.y,d=Math.hypot(dx,dy),speed=q.dodgeT>0?330:q.phase==='arrive'?235:145;
+  const v=Math.min(speed,d*3),blend=Math.min(1,dt*(q.dodgeT>0?16:7));
+  q.vx=(q.vx||0)+(dx/Math.max(1,d)*v-(q.vx||0))*blend;
+  q.vy=(q.vy||0)+(dy/Math.max(1,d)*v-(q.vy||0))*blend;
+  q.x=clamp(q.x+q.vx*dt,left,right);q.y+=q.vy*dt;
+  if(q.phase==='fight')q.y=clamp(q.y,top,bottom);
+  return supply;
+}
+function s6WingTick(dt){
+  const W=s6Wing;if(!W||s6OpeningActive()||bossActive||bossDefeated)return;
+  if(W.line){W.line.t+=dt;if(W.line.t>Math.max(4.8,W.line.full.length/22))W.line=null;}
+  if(stageTimer>=14&&W.beats===0){s6WingLaunch(2,false);W.beats=1;}
+  if(subBossDone&&stageTimer>=41&&W.beats===1){s6WingLaunch(2,false);W.beats=2;}
+  if(subBossDone&&stageTimer>=52&&!W.all){s6WingLaunch(8,true);W.all=true;s6WingSay('COLE','ALL NINE, FORM UP. CLEAR A PATH THROUGH THEM!');}
+  if(W.all&&stageTimer>=69&&!W.choice){
+    W.choice=true;W.choiceT=0;hudCallout=null;
+    for(const m of eBullets)m.dead=true;
+    for(const L of playerLocks){L.state='released';L.endT=0;}
+    s6WingSay('DECKER','SPLIT THE WING. CHOOSE LEFT OR RIGHT.');
+    if(Audio.SFX&&Audio.SFX.alert)Audio.SFX.alert();
+  }
+  if(W.choice&&!W.route)W.choiceT+=dt;
+  const supplyTimes=[18,45,57];
+  if(W.supplyIndex<supplyTimes.length&&stageTimer>=supplyTimes[W.supplyIndex]){
+    W.supplyIndex++;
+    const available=W.ships.filter(q=>q.phase==='fight'&&!q.dead);
+    if(available.length){const q=available[(Math.random()*available.length)|0];
+      powerups.push({x:q.x,y:q.y-68,vy:.65,t:0,kind:'speed',w:18,h:18,bob:0,
+        _wingSupply:true,_wingKey:q.key});
+      if(typeof floatText==='function')floatText(q.x,q.y-68,'WING SUPPLY','#83dfff');
+    }
+  }
+  if(W.route&&stageTimer>=curStage.length-1&&!W.fake&&!W.fakeDone){
+    W.fake={t:0,scratched:false};
+    for(const q of W.ships){q.phase='leave';q.t=0;}
+    if(Audio.SFX&&Audio.SFX.victory)Audio.SFX.victory();
+  }
+  if(W.fake){
+    W.fake.t+=dt;
+    if(W.fake.t>=1.22&&!W.fake.scratched){
+      W.fake.scratched=true;
+      if(Audio.SFX&&Audio.SFX.stage6FalseClearScratch)Audio.SFX.stage6FalseClearScratch();
+      try{if(Snd&&Snd.cur){Snd.cur.playbackRate=.62;if('preservesPitch'in Snd.cur)Snd.cur.preservesPitch=false;}}catch(_){}
+      shake=Math.max(shake,5);
+    }
+    if(W.fake.t>=2.28){
+      W.fake=null;W.fakeDone=true;bossWarned=true;stageTimer=curStage.length;
+      try{if(Snd&&Snd.cur){Snd.cur.playbackRate=1;if('preservesPitch'in Snd.cur)Snd.cur.preservesPitch=true;}}catch(_){}
+      spawnBoss(W.route==='right'?'rebelsquad':curStage.boss);
+      if(W.route==='right')Audio.startMusic('boss6');
+      if(Audio.SFX&&(Audio.SFX.alertBossIncoming||Audio.SFX.bossAlarm))(Audio.SFX.alertBossIncoming||Audio.SFX.bossAlarm)();
+    }
+  }
+  if(W.choice&&!W.route){
+    if(Input.tapSeat(1,'left'))W.route='left';
+    else if(Input.tapSeat(1,'right'))W.route='right';
+    if(W.route){s6WingSay('COLE',W.route==='left'?'WE TAKE THE STEALTH FIGHTERS. THE REST GO RIGHT!':
+      'WE TAKE THE REBELS. OTHER TEAM, COVER THE CARRIER!');
+      for(const q of W.ships)if((q.slot&1)===(W.route==='left'?1:0)){q.phase='leave';q.t=0;}
+      if(W.route==='left'){
+        spawnEnemy('xelite_hivewing',camLeftX()+80,-70,{});
+        spawnEnemy('xelite_hivewing',camRightX()-80,-95,{_stagger:.25});
+      }else{
+        spawnEnemy('s6dart',camLeftX()+92,-72,{_jetManeuver:'dash'});
+        spawnEnemy('s6dart',camRightX()-92,-98,{_jetManeuver:'dash'});
+      }
+      if(Audio.SFX&&Audio.SFX.allyLeave)Audio.SFX.allyLeave();}
+  }
+  for(const q of W.ships){
+    q.t+=dt;q.fcd-=dt;q.boostT=Math.max(0,(q.boostT||0)-dt);
+    q.dodgeT=Math.max(0,(q.dodgeT||0)-dt);q.dodgeCd=Math.max(0,(q.dodgeCd||0)-dt);
+    if(q.phase==='leave'){q.y-=260*dt;q.x+=(q.slot%2?1:-1)*75*dt;continue;}
+    q.hurtT=Math.max(0,(q.hurtT||0)-dt);
+    const supply=s6WingNavigate(q,W,dt);
+    if(q.phase==='arrive'&&q.y<VH-75){q.phase='fight';q.t=0;}
+    if(q.phase==='fight'){
+      if(supply&&Math.hypot(supply.x-q.x,supply.y-q.y)<24){
+        supply.dead=true;q.boostT=12;q.hp=Math.min(3,q.hp+1);
+        if(typeof fxBurst==='function')fxBurst(q.x,q.y,22,{color:'#83dfff',rings:1,chunks:0,sparks:7});
+        if(Audio.SFX&&Audio.SFX.powerup)Audio.SFX.powerup();
+      }
+      const target=q.target;
+      if(q.fcd<=0&&target&&!target.dead&&target.y<q.y-28&&!(W.choice&&!W.route)){
+        const dx=target.x-q.x,dy=target.y-(q.y-24),a=Math.atan2(dy,dx);
+        if(Math.abs(dx)<Math.abs(dy)*.7){
+          q.fcd=(q.all?.46:.28)*(q.boostT>0?.70:1);
+          pBullets.push({kind:'mg',lv:q.boostT>0?3:2,x:q.x,y:q.y-24,
+            vx:Math.cos(a)*11,vy:Math.sin(a)*11,w:4,h:12,t:0,
+            dmg:(q.all?1.4:2)+(q.boostT>0?1:0),ally:true,_wingKey:q.key,_inf:null});
+          if(Audio.SFX&&Audio.SFX.machineGun)Audio.SFX.machineGun();
+        }
+      }
+      if(!q.dodgeT&&!q.hurtT){
+        const hit=eBullets.find(b=>!b.dead&&Math.abs(b.x-q.x)<16+(b.w||4)/2&&Math.abs(b.y-q.y)<20+(b.h||4)/2);
+        const ground=groundTargetingFx.find(g=>!g.dead&&g.impact&&g.t>=g.warn+.08&&g.t<g.warn+g.active*.78&&
+          Math.abs(q.x-g.x)<g.radius+10&&(g.lane||Math.abs(q.y-g.y)<Math.max(32,g.radius*.9)+10));
+        const collision=enemies.some(e=>!e.dead&&!e._dyingT&&Math.abs(e.x-q.x)<(e.w||24)*.4+12&&Math.abs(e.y-q.y)<(e.h||24)*.4+16);
+        if(hit||ground||collision){
+          if(hit)hit.dead=true;q.hurtT=.85;
+          if(--q.hp<=0){q.phase='leave';q.t=0;
+            if(typeof fxBurst==='function')fxBurst(q.x,q.y,24,{color:'#9fa8b0',rings:0,sparks:8});
+            s6WingSay(q.key.toUpperCase(),'I AM HIT. SMOKING BADLY. RETURNING TO BASE!');}
+        }
+      }
+      if(!q.all&&q.t>17){q.phase='leave';q.t=0;s6WingSay(q.key.toUpperCase(),'GO HELP THE OTHERS. STAY IN THERE!');}
+    }
+  }
+  W.ships=W.ships.filter(q=>q.phase!=='leave'||q.y>-90);
+}
+function s6WingDraw(){
+  const W=s6Wing;if(!W||typeof XART==='undefined')return;
+  ctx.save();ctx.imageSmoothingEnabled=false;
+  for(const q of W.ships){const k='ship_'+q.key;if(!XART.rdy(k))continue;
+    let art=k;
+    if(q.dodgeT>0){const f=clamp(Math.floor((1-q.dodgeT/.52)*8),0,7),pose='ship_'+q.key+'_'+(q.dodgeMode==='somer'?'so':'br')+f;
+      if(XART.rdy(pose))art=pose;}
+    const im=XART.get(art),h=SHIP_DRAW_H,w=h*(im.naturalWidth||im.width)/Math.max(1,im.naturalHeight||im.height);
+    ctx.drawImage(im,q.x-w/2,q.y-h/2,w,h);
+    if(q.phase==='leave'&&q.hp<=0&&XART.rdy('nxp_smoke_0')){
+      const sm=XART.get('nxp_smoke_0');ctx.drawImage(sm,q.x-12,q.y+8,24,24);}
+  }
+  ctx.restore();
+  if(W.line&&typeof dlgBox==='function')dlgBox({who:W.line.who,full:W.line.full,
+    shown:W.line.full.slice(0,Math.floor(W.line.t*44)),portrait:W.line.who.toLowerCase(),tint:'#7bd4ff'});
+  if(W.fake&&typeof msgText==='function'){
+    const t=W.fake.t;
+    ctx.save();worldXformEscape();
+    msgText(t<1.22?'STAGE CLEAR':'SIGNAL REVERSED',VW/2,VH*.41,t<1.22?27:18,
+      t<1.22?'#ffe595':'#ff4c4c',.85,1,.06);ctx.restore();
+  }
+
+}
+function s6WingChoiceDraw(){
+  const W=s6Wing;if(!W||!W.choice||W.route)return;
+  const t=W.choiceT||0,p=.5+.5*Math.sin(t*5.2),mid=VW/2;
+  ctx.save();ctx.imageSmoothingEnabled=false;
+  ctx.fillStyle='rgba(2,7,17,.78)';ctx.fillRect(0,0,VW,VH);
+  ctx.fillStyle='rgba(12,32,48,.96)';ctx.fillRect(22,125,VW-44,270);
+  ctx.strokeStyle='#6bd6ff';ctx.lineWidth=2;ctx.strokeRect(23,126,VW-46,268);
+  ctx.fillStyle='#142338';ctx.fillRect(36,203,193,135);ctx.fillRect(251,203,193,135);
+  ctx.strokeStyle='#e9aa54';ctx.strokeRect(36.5,203.5,192,134);
+  ctx.strokeStyle='#9f7bea';ctx.strokeRect(251.5,203.5,192,134);
+  if(XART.rdy('warn_escape_arrow_0916')){
+    const im=XART.get('warn_escape_arrow_0916'),w=72+8*p,h=35+4*p;
+    ctx.save();ctx.translate(106,248);ctx.scale(-1,1);ctx.globalAlpha=.72+.28*p;
+    ctx.drawImage(im,-w/2,-h/2,w,h);ctx.restore();
+    ctx.globalAlpha=.72+.28*p;ctx.drawImage(im,374-w/2,248-h/2,w,h);ctx.globalAlpha=1;
+  }
+  msgText('SPLIT THE WING',mid,168,25,'#e7f4ff',.6,1,.06);
+  msgText('LEFT',132,296,19,'#ffc979',.72,1,.04);
+  msgText('CARRIER',132,320,13,'#ffc979',.55,1,.03);
+  msgText('RIGHT',348,296,19,'#cbaeff',.72,1,.04);
+  msgText('REBEL SQUAD',348,320,13,'#cbaeff',.55,1,.03);
+  msgText('CHOOSE YOUR PATH',mid,369,15,'#fff7d5',.55,1,.04);
+  ctx.restore();
+}
+/* Rebel Squad: three independently targetable authored hulls. The exposed hull of
+   each fighter only takes damage after its own field breaks. Difficulty changes
+   attack pace and the shield budget without turning Normal into a bullet wall. */
+const REBEL_KEYS=['ghost','ouroboros','phantom'];
+const REBEL_TINT=['#b65cff','#4ce5e5','#a6c3d5'];
+function rebelSquadInit(b,hpBase){
+  const mult=diffKey==='easy'?.5:diffKey==='hard'?1.22:diffKey==='furious'?1.48:1;
+  b.name='REBEL SQUAD';b.enter=false;b._noHit=false;b.x=camLeftX()+VW/2;b.y=VH*.23;b.w=390;b.h=135;
+  b.hp=b.maxhp=Math.ceil(hpBase*mult);
+  const each=b.maxhp/3,slots=[-.31,0,.31];
+  b._rebels={t:0,nextWarp:9,shift:0,ships:REBEL_KEYS.map((key,i)=>({key,i,x:b.x+slots[i]*VW,y:-90-i*26,
+    homeX:b.x+slots[i]*VW,homeY:VH*(i===1?.20:.25),hp:each,max:each,
+    shield:Math.ceil(each*.14),shieldMax:Math.ceil(each*.14),stun:0,
+    cd:1.1+i*.35,attack:null,mode:'entry',t:0,flash:0,warp:0,dead:false}))};
+  for(const key of REBEL_KEYS){
+    XART.rdy('s6rebel_'+key);
+    for(const pose of ['idle','bank_l','bank_r','roll_l','roll_r','belly','som_0','som_1','som_2','som_3','dash_0','dash_1','dash_2','dash_3'])
+      XART.rdy('s6rebel_'+key+'_'+pose);
+  }
+  for(const key of ['nes_bubble_void_0','nes_bubble_volt_0','nes_bubble_ice_0'])XART.rdy(key);
+  for(let i=0;i<8;i++)XART.rdy('ch_warp_'+i);
+}
+function rebelSquadHitTest(b,x,y){
+  const R=b._rebels;R.hit=-1;
+  for(const q of R.ships){if(q.dead||Math.abs(x-q.x)>(q.shield>0?73:58)||Math.abs(y-q.y)>(q.shield>0?71:49))continue;R.hit=q.i;return true;}
+  return false;
+}
+function rebelSquadDamage(b,dmg){
+  const R=b._rebels,q=R.ships[R.hit];R.hit=-1;
+  if(!q||q.dead||q.mode==='entry'||q.warp>0)return;
+  q.flash=.13;
+  if(q.shield>0){q.shield=Math.max(0,q.shield-dmg);
+    if(q.shield===0){q.stun=.85;if(Audio.SFX&&Audio.SFX.shieldBreak)Audio.SFX.shieldBreak();
+      if(typeof fxBurst==='function')fxBurst(q.x,q.y,52,{color:REBEL_TINT[q.i],rings:2,chunks:0,sparks:14});}
+    return;}
+  const applied=Math.min(Math.max(0,q.hp),dmg);q.hp-=dmg;b.hp=Math.max(0,b.hp-applied);if(typeof stageStats!=='undefined')stageStats.dmgDealt+=dmg;
+  if(q.hp<=0){q.dead=true;explode(q.x,q.y,74,'blue');
+    if(typeof fxBurst==='function')fxBurst(q.x,q.y,94,{color:REBEL_TINT[q.i],rings:2,chunks:12,sparks:20});}
+  if(R.ships.every(s=>s.dead)||b.hp<=0)bossDie();
+}
+function rebelSquadTick(b,dt){
+  const R=b._rebels;b.t+=dt;R.t+=dt;b.flash=Math.max(0,b.flash-dt);
+  if(b.dead){b.dying+=dt;return;}
+  const pace=diffKey==='furious'?.72:diffKey==='hard'?.84:diffKey==='easy'?1.38:1;
+  if(R.t>=R.nextWarp){R.nextWarp+=diffKey==='furious'?7:9;R.shift=(R.shift+1)%3;
+    for(const q of R.ships){if(q.dead||q.mode==='entry')continue;
+      q.warpFrom={x:q.x,y:q.y};q.warp=.55;
+      q.homeX=camLeftX()+VW/2+[-.31,0,.31][(q.i+R.shift)%3]*VW;
+      q.x=q.homeX;q.y=q.homeY;q.cd=Math.max(q.cd,.85);
+    }
+    if(Audio.SFX&&Audio.SFX.warpGate)Audio.SFX.warpGate();
+  }
+  for(const q of R.ships){
+    if(q.warp<=0)q.warpFrom=null;
+    if(q.mode!=='entry'&&q.warp<=0)q.homeX=camLeftX()+VW/2+[-.31,0,.31][(q.i+R.shift)%3]*VW;if(q.dead)continue;q.t+=dt;q.flash=Math.max(0,q.flash-dt);
+    q.stun=Math.max(0,q.stun-dt);q.warp=Math.max(0,q.warp-dt);
+    if(q.mode==='entry'){q.y+=(q.homeY-q.y)*Math.min(1,dt*2.3);
+      if(Math.abs(q.y-q.homeY)<2){q.y=q.homeY;q.mode='fight';q.t=0;}continue;}
+    if(q.stun>0)continue;
+    if(q.mode==='charge'){
+      if(q.t<.65){q.x+=(q.homeX-q.x)*Math.min(1,dt*3);continue;}
+      if(q.t<1.25){q.y+=410*dt;
+        if(Math.hypot(player.x-q.x,player.y-q.y)<35&&!player.dead&&player.invuln<=0)playerHit();}
+      else if(q.t<2.0){q.y+=(q.homeY-q.y)*Math.min(1,dt*5);q.x+=(q.homeX-q.x)*Math.min(1,dt*4);}
+      else{q.mode='fight';q.t=0;q.y=q.homeY;q.x=q.homeX;q.warp=.35;}
+      continue;
+    }
+    q.x+=clamp(q.homeX+Math.sin(R.t*(q.i===0?1.9:1.25)+q.i*2)*21-q.x,-90*dt,90*dt);
+    q.y+=clamp(q.homeY+Math.sin(R.t*2+q.i)*8-q.y,-60*dt,60*dt);
+    q.cd-=dt;if(q.cd>0)continue;q.cd=(q.i===0?1.35:q.i===1?2.55:2.25)*pace;
+    if(q.i===0){
+      const a=Math.atan2(player.y-q.y,player.x-q.x);
+      for(const off of [-.22,-.11,0,.11,.22])eShootT(q.x,q.y+32,a+off,3.75,'s6tracer',{w:8,h:22,silent:off!==0});
+      stage6Muzzle(q,0,.25,.80,.15);
+    }else if(q.i===1){
+      groundTargetingPattern('lightning',[{x:clamp(player.x-38,camLeftX()+30,camRightX()-30),y:player.y+12},
+        {x:clamp(player.x+38,camLeftX()+30,camRightX()-30),y:player.y+12}],
+        {owner:q,stagger:.33,warn:1.2,active:.45,radius:21,size:75,track:true,trackFor:.42,lane:false});
+      if(typeof eMissileHoming==='function')eMissileHoming(q.x,q.y+24,0);
+    }else{
+      q.mode='charge';q.t=0;groundTargetingSpawn({kind:'lightning',x:q.x,y:player.y,
+        owner:q,warn:.70,active:.25,radius:24,size:74,track:false,lane:false});
+      if(Audio.SFX&&Audio.SFX.dash)Audio.SFX.dash();
+    }
+  }
+}
+function rebelSquadDraw(b){
+  const R=b._rebels;if(!R)return;
+  for(const q of R.ships){if(q.dead)continue;
+    const base='s6rebel_'+q.key;
+    let pose='idle';
+    if(q.warp>0){
+      const reel=['som_0','roll_l','som_1','belly','som_2','roll_r','som_3','idle'];
+      pose=reel[Math.min(7,Math.floor((1-q.warp/.55)*8))];
+    }else if(q.mode==='charge'){
+      pose=q.t<.65?'dash_'+Math.min(2,Math.floor(q.t/.22)):q.t<1.25?'dash_3':'som_3';
+    }else{
+      const bank=Math.cos(R.t*(q.i===0?1.9:1.25)+q.i*2);
+      if(bank<-.45)pose='bank_l';else if(bank>.45)pose='bank_r';
+    }
+    const art=base+'_'+pose,key=XART.rdy(art)?art:base+'_idle';
+    if(!XART.rdy(key))continue;const im=XART.get(key),w=112,h=112;
+    ctx.save();ctx.imageSmoothingEnabled=false;
+    if(q.shield>0){
+      const sk=['nes_bubble_void_0','nes_bubble_volt_0','nes_bubble_ice_0'][q.i];
+      if(XART.rdy(sk)){const ring=XART.get(sk),pulse=1+Math.sin(R.t*3+q.i)*.025,z=Math.max(w,h)*1.38*pulse;
+        ctx.globalAlpha=.57;ctx.drawImage(ring,q.x-z/2,q.y-z/2,z,z);ctx.globalAlpha=1;}
+    }
+    if(q.warp>0&&XART.rdy('ch_warp_'+(Math.floor(q.warp*20)%8))){
+      const wr=XART.get('ch_warp_'+(Math.floor(q.warp*20)%8));
+      if(q.warpFrom)ctx.drawImage(wr,q.warpFrom.x-76,q.warpFrom.y-76,152,152);
+      ctx.drawImage(wr,q.x-76,q.y-76,152,152);}
+    ctx.drawImage(im,q.x-w/2,q.y-h/2,w,h);
+    if(q.flash>0){ctx.globalAlpha=q.flash/.13*.58;ctx.globalCompositeOperation='lighter';
+      const hot=xartTint(key,'#ffffff',.9);if(hot)ctx.drawImage(hot,q.x-w/2,q.y-h/2,w,h);}
+    ctx.restore();
+  }
+}
 /* ============================================================
    LEVEL-06 "HEAVY TURBULENCE" EXCLUSIVE JETS
    Six storm-themed airframes with full anim sets:
@@ -52958,13 +53973,16 @@ function l5RockBreak(r){
 }
 function l5RocksUpdate(dt){
   if(run.stage!==5) return;
-  // steady field: a rock every few seconds, occasionally a big one
-  l5RockT-=dt;
-  if(l5RockT<=0){
-    l5RockT=rnd(1.6,3.1);
-    // A comet replaces one rock slot, never a second hazard stream.
-    if(Math.random()<.20)spawnEnemy('cometsm',rnd(50,worldWidth()-50),-90,{pattern:'straight'});
-    else l5RockSpawn(null, Math.random()<0.28);
+  // Existing rocks remain solid and drift out of the arena, but the Harrier's warning
+  // and fight do not replenish the asteroid/comet stream over its hull and laser tells.
+  if(!(subBossTriggered&&!subBossDone)){
+    l5RockT-=dt;
+    if(l5RockT<=0){
+      l5RockT=rnd(1.6,3.1);
+      // A comet replaces one rock slot, never a second hazard stream.
+      if(Math.random()<.20)spawnEnemy('cometsm',rnd(50,worldWidth()-50),-90,{pattern:'straight'});
+      else l5RockSpawn(null, Math.random()<0.28);
+    }
   }
   for(const r of l5Rocks){
     if(r.dead) continue;
@@ -53383,19 +54401,19 @@ const ELITE8_IFRAMES = false;      // design lever: true = the roll becomes a re
    'beefy, stay on screen till they die, have shields and are some of the smartest and best in
    class fighters in the game. my personal favorite is the glacier lance.' Modelled on elite8:
    they enter to a band, hold station, strafe, ROLL out of your fire, and shoot aimed volleys.
-   Each carries a shield from the existing enemy shield system (enemyShieldEquip), so it must be
-   knocked down before the hull takes a hit. Glacier Lance is the strongest of the nine.
+   The authored ace hull and attack patterns remain, while incomplete directional shield art is
+   not equipped on these jets. Glacier Lance is the strongest of the nine.
    ============================================================ */
 const ELITEX = {
-  furytalon:   {hp:150, w:52, h:52, score:3600, band:0.30, spd:78,  shield:'gold',    sh:0.45, vol:3, gap:0.09, cd:[1.1,1.6], kind:'dart'},
-  razorback:   {hp:140, w:50, h:50, score:3400, band:0.34, spd:92,  shield:'crimson', sh:0.40, vol:2, gap:0.16, cd:[0.9,1.3], kind:'dart'},
-  tempest:     {hp:160, w:54, h:54, score:3800, band:0.28, spd:70,  shield:'ion',     sh:0.50, vol:4, gap:0.07, cd:[1.2,1.7], kind:'xorb_lightning'},
-  emberwing:   {hp:170, w:54, h:54, score:4000, band:0.32, spd:74,  shield:'crimson', sh:0.50, vol:3, gap:0.12, cd:[1.0,1.5], kind:'comet'},
-  glacierlance:{hp:240, w:58, h:58, score:5600, band:0.26, spd:66,  shield:'ion',     sh:0.70, vol:5, gap:0.06, cd:[1.3,1.8], kind:'xlz_burst'},
-  voidreaver:  {hp:190, w:56, h:56, score:4600, band:0.30, spd:80,  shield:'violet',  sh:0.55, vol:3, gap:0.14, cd:[1.0,1.5], kind:'xorb_void'},
-  ironserpent: {hp:150, w:50, h:50, score:3600, band:0.36, spd:110, shield:'hex',     sh:0.40, vol:2, gap:0.18, cd:[0.8,1.2], kind:'dart'},
-  solarwarden: {hp:210, w:56, h:56, score:5000, band:0.28, spd:64,  shield:'gold',    sh:0.65, vol:4, gap:0.08, cd:[1.2,1.7], kind:'xorb_solar'},
-  nighthammer: {hp:220, w:60, h:60, score:5200, band:0.24, spd:58,  shield:'prism',   sh:0.60, vol:5, gap:0.05, cd:[1.4,1.9], kind:'xorb_antimatter'},
+  furytalon:   {hp:150, w:52, h:52, score:3600, band:0.30, spd:78,  shield:null,    sh:0.45, vol:3, gap:0.09, cd:[1.1,1.6], kind:'dart'},
+  razorback:   {hp:140, w:50, h:50, score:3400, band:0.34, spd:92,  shield:null, sh:0.40, vol:2, gap:0.16, cd:[0.9,1.3], kind:'dart'},
+  tempest:     {hp:160, w:54, h:54, score:3800, band:0.28, spd:70,  shield:null,     sh:0.50, vol:4, gap:0.07, cd:[1.2,1.7], kind:'xorb_lightning'},
+  emberwing:   {hp:170, w:54, h:54, score:4000, band:0.32, spd:74,  shield:null, sh:0.50, vol:3, gap:0.12, cd:[1.0,1.5], kind:'comet'},
+  glacierlance:{hp:240, w:58, h:58, score:5600, band:0.26, spd:66,  shield:null,     sh:0.70, vol:5, gap:0.06, cd:[1.3,1.8], kind:'xlz_burst'},
+  voidreaver:  {hp:190, w:56, h:56, score:4600, band:0.30, spd:80,  shield:null,  sh:0.55, vol:3, gap:0.14, cd:[1.0,1.5], kind:'xorb_void'},
+  ironserpent: {hp:150, w:50, h:50, score:3600, band:0.36, spd:110, shield:null,     sh:0.40, vol:2, gap:0.18, cd:[0.8,1.2], kind:'dart'},
+  solarwarden: {hp:210, w:56, h:56, score:5000, band:0.28, spd:64,  shield:null,    sh:0.65, vol:4, gap:0.08, cd:[1.2,1.7], kind:'xorb_solar'},
+  nighthammer: {hp:220, w:60, h:60, score:5200, band:0.24, spd:58,  shield:null,   sh:0.60, vol:5, gap:0.05, cd:[1.4,1.9], kind:'xorb_antimatter'},
   /* the WARHIVE's launched escorts (0918): lighter than a stage ace - six to eight come out of one bay */
   /* Mike 0918: "do not use shields on our elite jets here ... elite, I meant their patterns, attack speed and styling".
      So NO shield, and the elite part is hivewingTick: squadron slots, fast aimed bursts, one strafing dive at a time. */
@@ -54121,6 +55139,53 @@ function stage6Muzzle(e,ox,oy,scale,life,fam){
   const p=s6Hardpoint(e,ox,oy);if(!p)return;
   navalFlash(null,p,scale||.76,BPFX_MUZZLE_LASER,{n:8,hpx:46,life:life||.16,
     follow:()=>e&&!e.dead?s6Hardpoint(e,ox,oy):null});
+}
+/* A shared flight controller for authored jets. A committed diagonal has a visible
+   turn and a fixed destination; it never homes after launch. The side pass uses the
+   engine's real ground reticle/strike instead of an invisible damage call. */
+function jetManeuverTick(e,dt){
+  const J=e._jetManeuver;if(!J)return;
+  if((e._stagger||0)>0){e._stagger=Math.max(0,e._stagger-dt);return;}
+  J.t+=dt;
+  if(J.mode==='dash'){
+    if(!J.armed){
+      J.armed=true;J.x0=e.x;J.y0=e.y;
+      const goRight=e.x<worldWidth()/2;
+      J.tx=goRight?camRightX()+78:camLeftX()-78;
+      J.ty=VH*.88;
+      const a=Math.atan2(J.ty-e.y,J.tx-e.x);
+      J.vx=Math.cos(a);J.vy=Math.sin(a);e.spin=a+(e._s6storm?-Math.PI/2:Math.PI/2);
+    }
+    const fast=diffKey==='furious'?620:diffKey==='hard'?540:370;
+    const tell=diffKey==='furious'?.25:.38;
+    if(J.t<tell){e.spin+=dt*2.6;return;}
+    e.spin=Math.atan2(J.vy,J.vx)+(e._s6storm?-Math.PI/2:Math.PI/2);
+    e.x+=J.vx*fast*dt;e.y+=J.vy*fast*dt;
+    if(e.x<camLeftX()-90||e.x>camRightX()+90||e.y>VH+90)e.dead=true;
+  }else if(J.mode==='bomb'){
+    if(!J.armed){J.armed=true;J.dir=e.x<worldWidth()/2?1:-1;}
+    const speed=diffKey==='furious'?250:diffKey==='hard'?225:155;
+    e.x+=J.dir*speed*dt;e.y+=Math.sin(J.t*2.4)*8*dt;
+    e.spin=J.dir*(e._s6storm?-Math.PI/2:Math.PI/2);
+    J.rackCd=Math.max(0,(J.rackCd||0)-dt);
+    const racks=diffKey==='furious'?3:diffKey==='hard'?2:1;
+    if((J.racks||0)<racks&&J.rackCd<=0&&e.x>camLeftX()+48&&e.x<camRightX()-48&&
+       groundTargetingFx.filter(g=>!g.dead&&g._jetBomb).length<6){
+      const pass=J.racks||0;J.racks=pass+1;J.bombed=true;J.rackCd=.65;
+      // Snapshot each rack's landing site: once warned it never follows a dodge.
+      if(J.aimX==null){J.aimX=player.x;J.aimY=player.y;}
+      const x=clamp(J.aimX+J.dir*pass*88,camLeftX()+34,camRightX()-34);
+      const y=clamp(J.aimY+(pass%2?-55:12),PLAY.y+80,PLAY.y+PLAY.h-34);
+      const q=groundTargetingSpawn({kind:'lightning',x,y,owner:e,track:false,
+        warn:diffKey==='easy'?1.65:diffKey==='normal'?1.45:1.25,
+        active:.50,radius:24,size:86,lane:false,shake:3,
+        onImpact:g=>explode(g.x,g.y,48,'red')});
+      q._jetBomb={x:e.x,y:e.y};XART.rdy('lz_bomb');
+      stage6Muzzle(e,0,.28,.85,.15);
+      if(Audio.SFX&&Audio.SFX.missile)Audio.SFX.missile();
+    }
+    if(e.x<camLeftX()-110||e.x>camRightX()+110)e.dead=true;
+  }
 }
 function s6StormTick(e,dt){
   const K=e._s6storm,H=S6STORM[K];if(!H)return;
@@ -57266,6 +58331,7 @@ function mechUpdate(b, dt){
        AIM      one cannon leads, the other tucks in         (pose-aim-left / aim-right)
        WIDE     both cannons out to their widest spread      (pose-dual-wide)
        TWIST    the torso leads a target, limbs follow       (pose-twist-left / right)
+
        RECOIL   the kick after a salvo                       (pose-recoil-left / right)
 
      Each one is a target offset per component; the parts ease toward it, so the boss flows
@@ -60084,6 +61150,9 @@ function l6jDraw(b){
       drew=true;
     }
   }
+const EFX_BURST_SOUND={fire:'cfComboFire',ice:'cfComboIce',lightning:'cfComboLightning',
+  prism:'cfComboPrism',toxic:'cfComboToxic',kinetic:'cfComboKinetic',chrome:'cfComboChrome',
+  water:'cfComboWater',dark:'cfComboDark'};
   if(b.flash>0 && typeof xartTint==='function'){
     for(const part in L6J_GRID){
       const st=L6J_STATE[sxPartState(b,part)] || 'clean';
@@ -60094,6 +61163,8 @@ function l6jDraw(b){
          silently, because the guard swallowed it. Two call sites, both dead.
 
          The 30 mbp_ keys that DO exist are mbp_<bw|ft|ub>_<part>_<clean|ruin>: a
+  const cue=EFX_BURST_SOUND[elem];
+  if(cue&&Audio.SFX&&Audio.SFX[cue])Audio.SFX[cue]();
          five-part body in two states, not a 3x3 grid in three. Mapping the grid's
          parts onto the parts that were authored, and 'dam' onto 'ruin' since there
          is no damaged tier here either. */
@@ -63226,8 +64297,8 @@ const MENU_KEYS=['btn_newgame_0916','btn_password_0916','btn_options_0916','btn_
    and the fallback turned whatever landed last into EXIT GAME. Adding AWARDS before CREDITS is
    exactly that insert. Keyed by the label, a new row can only do what its own case says. */
 const TITLE_ACTION={
-  'NEW GAME': function(){ setState(GS.MODESEL); modeIndex=1; menuIndex=1; },
-  'PASSWORD': function(){ setState(GS.PASSWORD); pwInput=''; },
+  'NEW GAME': function(){ passwordDifficulty=false; setState(GS.MODESEL); modeIndex=1; menuIndex=1; },
+  'PASSWORD': function(){ passwordDifficulty=false; setState(GS.PASSWORD); pwInput=''; },
   'OPTIONS':  function(){ setState(GS.OPTIONS); menuIndex=0; },
   'HELP':     function(){ setState(GS.HELP); helpPage=0; helpT=0; },
   'ARMORY': function(){ armoryOpen('title'); setState(GS.ARMORY); },
@@ -64142,8 +65213,8 @@ function drawDiff(dt){
     if(Input.mouse.down && !drawDiff._md){ menuIndex=i; confirmDiff(); } } }
   drawDiff._md=Input.mouse.down;
   if(Input.menuConfirm()) confirmDiff();
-  if(Input.menuBack()){ setState(GS.TITLE); menuIndex=0; }
-  if(backButton()){ setState(GS.TITLE); menuIndex=0; Audio.SFX.select(); }
+  if(Input.menuBack()){ setState(passwordDifficulty?GS.PASSWORD:run.mode==='campaign'?GS.CAMPHUB:GS.MODESEL); menuIndex=0; }
+  if(backButton()){ setState(passwordDifficulty?GS.PASSWORD:run.mode==='campaign'?GS.CAMPHUB:GS.MODESEL); menuIndex=0; Audio.SFX.select(); }
 }
 function confirmDiff(){ if(diffPending!=null)return; if(diffLocked(diffList()[menuIndex])){drawModeSelect._deny={t:0,text:'UNLOCK INSANITY IN FURIOUS ARMORY',shown:0};(Audio.SFX.blocked||Audio.SFX.blip)();return;} Audio.SFX.select(); diffPending=menuIndex; diffFlash=0.2; }
 function pickDiff(){ const L=diffList(); if(diffLocked(L[clamp(menuIndex,0,L.length-1)])){confirmDiff();return;} diffKey=L[clamp(menuIndex,0,L.length-1)]; Audio.SFX.select();
@@ -64463,7 +65534,7 @@ function pilotSelectWarm(){
 }
 function psBodyKey(key){
   if(typeof XART==='undefined') return null;
-  const chain=[key+'_body_0'];
+  const chain=[key==='cole'?'cole_body_0922':key+'_body_0'];
   if(!PS_POSE_STALE[key]) chain.push('pose_'+key+'_0','pose_'+key+'_3');
   for(const k of chain) if(XART.rdy(k)) return k;
   return null;
@@ -65150,6 +66221,7 @@ const COLE_SCENE={};
 for(let i=1;i<=9;i++) COLE_SCENE['COLE'+i]=i;
 let _coleScene=0;      // stage whose boss should be pre-spawned at low HP, 0 = off
 let pwInput='';
+let passwordDifficulty=false;
 /* ============================================================
    ONE BACK HANDLER FOR EVERY MENU (drop 0809c)
 
@@ -65200,16 +66272,19 @@ function pwTypeTick(){
 }
 
 const MENU_BACK = {
-  [GS.PILOT]:    GS.MODESEL,
+  [GS.PILOT]:    GS.DIFF,
   [GS.PASSWORD]: GS.TITLE,
   [GS.OPTIONS]:  GS.TITLE,
-  [GS.DIFF]:     GS.TITLE,
+  [GS.DIFF]:     GS.MODESEL,
+  [GS.CAMPHUB]:  GS.MODESEL,
   [GS.CREDITS]:  GS.TITLE,
   [GS.STAGESEL]: GS.MODESEL,
   [GS.MODESEL]:  GS.TITLE,
 };
 function menuBackTick(){
-  const dest=MENU_BACK[state];
+  const dest=passwordDifficulty&&state===GS.DIFF?GS.PASSWORD:
+             state===GS.DIFF&&run.mode==='campaign'?GS.CAMPHUB:MENU_BACK[state];
+  if(state===GS.CAMPHUB&&campPick) return false; // slot picker handles its own cancel
   if(state===GS.PASSWORD&&drawPassword.typing){
     if(Input.tapAny((keybind.bomb||[]).filter(k=>/^pad_/.test(k)))||Input.tap('pad_b1')){drawPassword.typing=false;Audio.SFX.blip();}
     return false;
@@ -65237,7 +66312,7 @@ function menuBackTick(){
   if(!Input.menuBack()) return false;
   /* leave the screen the way it was found — a half-typed password or a stray menu index
      following you back out is its own bug */
-  if(state===GS.PASSWORD){ pwInput=''; drawPassword.typing=false; }
+  if(state===GS.PASSWORD){ pwInput=''; drawPassword.typing=false; passwordDifficulty=false; }
   menuIndex=0;
   if(Audio.SFX && Audio.SFX.select) Audio.SFX.select();
   setState(dest);
@@ -65453,7 +66528,7 @@ function submitPassword(){
     PENDING_STAGE=Math.min(st,8);          // stage 9 has no level; COLE9 lands on 8's finale
     _coleScene=st;
     if(typeof run!=='undefined' && run) run.mode='arcade';
-    setState(GS.PILOT);
+    passwordDifficulty=true; menuIndex=Math.max(0,diffList().indexOf(diffKey||'normal')); setState(GS.DIFF);
     return;
   }
   if(PASSWORDS[pwInput]){
@@ -65463,8 +66538,8 @@ function submitPassword(){
        just unlocked. Passwords jump straight to the level; campaign will get its own save/load
        and its own separate codes. */
     if(typeof run!=='undefined' && run) run.mode='arcade';
-    setState(GS.PILOT);
-  }   // password -> CHARACTER SELECT -> straight into that stage, arcade mode
+    passwordDifficulty=true; menuIndex=Math.max(0,diffList().indexOf(diffKey||'normal')); setState(GS.DIFF);
+  }   // password -> difficulty -> pilot -> selected stage in arcade mode
   else { drawPassword.err=1.4; Audio.SFX.hit(); pwInput=''; }
 }
 
@@ -65572,7 +66647,8 @@ function drawDebugButton(dt){
   ctx.moveTo(x+c,y);ctx.lineTo(x+w-c,y);ctx.lineTo(x+w,y+c);ctx.lineTo(x+w,y+h-c);
   ctx.lineTo(x+w-c,y+h);ctx.lineTo(x+c,y+h);ctx.lineTo(x,y+h-c);ctx.lineTo(x,y+c);ctx.closePath(); ctx.stroke();
   ctx.fillStyle=on?'#ffffff':'#8de23a'; ctx.font='bold 12px "BOFmil", monospace'; ctx.textAlign='center'; ctx.textBaseline='middle';
-  ctx.fillText('DEBUG', B.x+B.w/2, B.y+B.h/2+1);
+  if(XART.rdy('lock_frame_0922'))ctx.drawImage(XART.get('lock_frame_0922'),B.x,B.y,B.w,B.h);
+  bmfDrawOn(ctx,'dialogue','DEBUG',B.x+B.w/2,B.y+B.h/2+1,10,'center');
   ctx.restore();
   if(on && m.down && !drawDebugButton._md) debugOpen();
   drawDebugButton._md=!!(m&&m.down);
@@ -65584,7 +66660,7 @@ function debugOpen(){
   debugMenu.msgT=0; drawDebugMenu._md=true; setState(GS.DEBUG);
 }
 /* ---- the fight list: one entry per authored slot, straight off STAGES and SUBBOSS ------------ */
-const DEBUG_BOSS_NAMES={warhive:'WARHIVE CARRIER', razorback:'RAZORBACK SIEGE TANK', tempestleviathan:'TEMPEST LEVIATHAN', tempestbrothers:'TEMPEST LEVIATHAN BROTHERS', damkeeper:'JUNGLE OVERLORD-X', vileexistence:'BLACK COCOON', tidalfusion:'WARP SENTINELS',
+const DEBUG_BOSS_NAMES={chromehammer:'CHROMIUM HAMMER',warhive:'WARHIVE CARRIER', razorback:'RAZORBACK SIEGE TANK', tempestleviathan:'TEMPEST LEVIATHAN', tempestbrothers:'TEMPEST LEVIATHAN BROTHERS', damkeeper:'JUNGLE OVERLORD-X', vileexistence:'BLACK COCOON', tidalfusion:'WARP SENTINELS',
   voidhorizon:'EVENT HORIZON', chaosharrier:'CHAOS HARRIER', quadlaser:'QUAD-LASER GUNSHIP', hellwing:'HELLWING DEATH CARRIER',
   dreadnought:'HELLFIRE GUNSHIP', wargod:'THE WAR GOD', spider:'ARACHNON MK-IX', leviathan:'LEVIATHAN CORE',
   ironrev:'IRON REVENANT', cesspool:'CESSPOOL LEVIATHAN', unitybreaker:'UNITY BREAKER', magmacolossus:'MAGMA COLOSSUS'};
@@ -65600,7 +66676,7 @@ function debugFightList(){
   for(const S of STAGES){
     const n=S.n, SB=SUBBOSS[n];
     if(SB&&SB.kind) L.push({stage:n, role:'mini', kind:SB.kind, name:debugBossName(SB.kind)});
-    if(S.boss) L.push({stage:n, role:'boss', kind:S.boss, name:debugBossName(S.boss)});
+    if(S.boss){const kind=n===5?'chromehammer':S.boss;L.push({stage:n,role:'boss',kind,name:debugBossName(kind)});}
   }
   return L;
 }
@@ -65772,20 +66848,20 @@ function debugRecOverlay(){
 /* ---- the menu -------------------------------------------------------------------------------- */
 const DBG_ROW0=128, DBG_ROWH=28, DBG_COLX=[70,276], DBG_COLW=198;
 function drawDebugMenu(dt, inert){
-  if(typeof drawTitleBackdrop==='function'){ try{ drawTitleBackdrop(dt); }catch(_e){ ctx.fillStyle='#080611'; ctx.fillRect(0,0,VW,VH); } }
-  else { ctx.fillStyle='#080611'; ctx.fillRect(0,0,VW,VH); }
-  ctx.fillStyle='rgba(4,4,10,0.62)'; ctx.fillRect(0,0,VW,VH);
+  ctx.fillStyle='#000';ctx.fillRect(0,0,VW,VH);
   const L=debugFightList(), M=debugMenu, m=Input.mouse;
   const P=PILOTS[clamp(M.pilot|0,0,PILOTS.length-1)];
   const nStages=STAGES.length;
   // header
   ctx.save(); ctx.textAlign='center'; ctx.textBaseline='alphabetic';
   ctx.font='bold 26px "BOFmil", monospace'; ctx.shadowColor='#8de23a'; ctx.shadowBlur=14; ctx.fillStyle='#e6ffd0';
-  ctx.fillText('DEBUG MODE', VW/2, 44);
+  bmfDrawOn(ctx,'dialogue','DEBUG MODE',VW/2,34,25,'center');
   ctx.shadowBlur=0; ctx.font='10px "BOFmil", monospace'; ctx.fillStyle='#9fb0cd';
-  ctx.fillText('PICK A FIGHT  ·  IT ENDS BACK HERE', VW/2, 60);
+  bmfDrawOn(ctx,'dialogue','PICK A FIGHT - RETURNS HERE',VW/2,57,10,'center');
+  bmfDrawOn(ctx,'dialogue','DIFFICULTY: '+diffKey.toUpperCase(),VW/2,74,10,'center');
   // pilot row
   const pilotSel=(M.row===-1);
+  if(M.row===-2){ctx.strokeStyle='#ffcf62';ctx.strokeRect(VW/2-108,64,216,20);}
   ctx.font='bold 13px "BOFmil", monospace';
   ctx.fillStyle=pilotSel?'#ffffff':'#cfd6e0';
   ctx.fillText('PILOT   ◀  '+P.name+'  ▶', VW/2, 96);
@@ -65831,12 +66907,14 @@ function drawDebugMenu(dt, inert){
   // ---- input ----
   if(hover && Input.consumeMouseMoved()){ M.row=hover.row; M.col=hover.col; }
   const click=!!(m && m.down && !drawDebugMenu._md); drawDebugMenu._md=!!(m&&m.down);
-  if(Input.menuUp()){ M.row=Math.max(-1,M.row-1); try{Audio.SFX.blip();}catch(_e){} }
+  if(click&&m.y>=64&&m.y<83){M.row=-2;const ds=['easy','normal','hard','furious'];diffKey=ds[(ds.indexOf(diffKey)+1)%ds.length];}
+  if(Input.menuUp()){ M.row=Math.max(-2,M.row-1); try{Audio.SFX.blip();}catch(_e){} }
   if(Input.menuDown()){ M.row=Math.min(nStages-1,M.row+1); try{Audio.SFX.blip();}catch(_e){} }
   const _ml=Input.menuLeft(), _mr=Input.menuRight();   // read once each: taps are consumed
   if(_ml||_mr){
     const d=_ml?-1:1;
-    if(M.row===-1){ M.pilot=(M.pilot+d+PILOTS.length)%PILOTS.length; }
+    if(M.row===-2){const ds=['easy','normal','hard','furious'];diffKey=ds[(ds.indexOf(diffKey)+d+ds.length)%ds.length];}
+    else if(M.row===-1){ M.pilot=(M.pilot+d+PILOTS.length)%PILOTS.length; }
     else M.col=1-M.col;
     try{Audio.SFX.blip();}catch(_e){}
   }
@@ -65907,18 +66985,19 @@ function bossmodeApplyOverride(kind, patch, opts){
   opts=opts||{};
   if(!SHIPBOSS[kind]) return false;
   if(patch) BOSSMODE_OVERRIDES[kind]=_bmClone(patch); else delete BOSSMODE_OVERRIDES[kind];
-  if(!opts.noSave) bossmodeSaveOverrides();
+  if(!opts.noSave&&!bossmodeSaveOverrides())return false;
   _bmLay(kind);
   if(opts.hp){ const b=(boss&&boss._ship===kind)?boss:((subBoss&&subBoss._ship===kind)?subBoss:null); const D=SHIPBOSS[kind];
     if(b&&D){ const mx=D.hp?Math.ceil(D.hp*DIFF.eHp):b.maxhp; b.maxhp=mx; b.hp=Math.min(b.hp,mx); } }
   return true;
 }
 function bossmodeResetOverride(kind){ return bossmodeApplyOverride(kind, null); }
-function bossmodeOverridesArm(on){ _bmArmed=!!on; for(const k in BOSSMODE_OVERRIDES) _bmLay(k); for(const k in _bmStock) if(!BOSSMODE_OVERRIDES[k]) _bmLay(k); }
-function bossmodeSaveOverrides(){ try{ localStorage.setItem('bof_bossmode', JSON.stringify(BOSSMODE_OVERRIDES)); }catch(_e){} }
+function bossmodeOverridesArm(on){ _bmArmed=!!on;try{localStorage.setItem('bof_bossmode_enabled',on?'1':'0');}catch(_){} for(const k in BOSSMODE_OVERRIDES) _bmLay(k); for(const k in _bmStock) if(!BOSSMODE_OVERRIDES[k]) _bmLay(k); }
+function bossmodeSaveOverrides(){try{localStorage.setItem('bof_bossmode',JSON.stringify(BOSSMODE_OVERRIDES));return true;}catch(_e){return false;}}
 function bossmodeLoadOverrides(){
   try{ const j=JSON.parse(localStorage.getItem('bof_bossmode')||'{}'); for(const k in j) if(SHIPBOSS[k]) BOSSMODE_OVERRIDES[k]=j[k]; }catch(_e){}
-  if(_bmHost){ debugMenu.overrides=true; bossmodeOverridesArm(true); }   // the host is the editor's engine
+  let enabled=_bmHost;try{enabled=enabled||localStorage.getItem('bof_bossmode_enabled')==='1';}catch(_){}
+  if(enabled){debugMenu.overrides=true;bossmodeOverridesArm(true);}   // the host is the editor's engine
 }
 bossmodeLoadOverrides();
 /* every registered key that belongs to a kind's art, for the editor's graphics browser */
@@ -67982,6 +69061,16 @@ function bmfStrokeGlyph(k,q){
   g.globalCompositeOperation='source-in';g.fillStyle='#010208';g.fillRect(0,0,c.width,c.height);
   g.globalCompositeOperation='source-over';_bmfStrokeCache[ck]=c;return c;
 }
+function bmfDrawOn(g,k,text,x,y,H,align){
+  if(!bmfReady(k))return false;
+  text=String(text).toUpperCase();const r=BMF[k],m=r.map,sc=bmfScale(k,H),sp=m.glyphs[' '],w=bmfMeasure(k,text,H);
+  let pen=x-(align==='center'?w/2:align==='right'?w:0);
+  g.save();g.imageSmoothingEnabled=false;
+  for(const ch of text){const v=bmfGlyph(r,ch);if(v&&v.sprite_rect&&v.sprite_rect[2]>0){const q=v.sprite_rect,b=v.bounds_in_cell;
+    g.drawImage(r.img,q[0],q[1],q[2],q[3],Math.round(pen+b[0]*sc),Math.round(y-H/2+b[1]*sc),Math.max(1,Math.round(q[2]*sc)),Math.max(1,Math.round(q[3]*sc)));}
+    pen+=((v||sp)?(v||sp).x_advance:6)*sc;}
+  g.restore();return true;
+}
 function bmfDraw(k,text,x,yTop,H,alpha,tintC,tintA,outline){
   if(!bmfReady(k)) return false;
   const r=BMF[k], m=r.map, s=bmfScale(k,H), sp=m.glyphs[' '];
@@ -69182,7 +70271,10 @@ function drawLaunch(dt){
     drawLaunch._dist+=drawLaunch._spd*dt;
     const _launchEnd=_gravityStage?(SEG_B3+SEG_B1+240):(SEG_B3+240);
     if(drawLaunch._dist>=_launchEnd){
-      if(_s6){launchBeginCountdown();} /* same fast sky, no brake/settle/pause */
+      if(_s6){ /* The carrier and stealth intercept are the playable opening, before GO. */
+        if(typeof stageLoadReady!=='function'||stageLoadReady(6))finishLaunch();
+        else {drawLaunch._phase='load';drawLaunch._pt=0;}
+      }
       else {drawLaunch._phase='brake';drawLaunch._pt=0;if(Audio.SFX.brake)Audio.SFX.brake();}
     }
     /* STAGE 6 is the exception Mike called out: runway -> SKY. It keeps climbing instead of
@@ -69251,7 +70343,9 @@ function drawLaunch(dt){
     drawLaunch._spd=_s6?STAGE6_SKY_CRUISE:(run.stage===5?STAGE5_SPACE_CRUISE:LAUNCH_COUNTDOWN_SCROLL);
     const _rng=(typeof levelScrollRange==='function')?levelScrollRange():0;
     mapScroll=_rng>0?Math.min(_rng,mapScroll+drawLaunch._spd*dt):mapScroll+drawLaunch._spd*dt;
-    if(typeof stageLoadReady!=='function'||stageLoadReady(run.stage)){drawLaunch._phase='cd';drawLaunch._pt=0;}
+    if(typeof stageLoadReady!=='function'||stageLoadReady(run.stage)){
+      if(_s6)finishLaunch();else {drawLaunch._phase='cd';drawLaunch._pt=0;}
+    }
   } else {
     /* The old countdown set speed to zero for the entire 3-2-1-GO beat. On bright water this
        looked like the game had stalled. Consume a small, real slice of the level while counting;
@@ -69878,6 +70972,7 @@ function drawWorld(dt){
   /* the old rain/squall/lightning sheet is replaced by bg6Draw, which draws under gameplay (0819f) */
   if(typeof wfxUpdate==='function'){ wfxUpdate(dt); wfxDraw(); }   // WEATHER FX: L2 firewave / L3 snow / L6 bolts
   if(typeof allyUpdate==='function') allyUpdate(dt);                 // spared-rival wingman
+  if(run.stage===6)s6WingDraw();
   if(typeof allyDraw==='function') allyDraw();
   thunderStormDraw();
   drawZaps();
@@ -69934,6 +71029,7 @@ function drawWorld(dt){
     if(player._chainMuzzle>0){player._chainMuzzle=Math.max(0,player._chainMuzzle-dt);ctx.save();ctx.translate(player.x,player.y-27);ctx.globalCompositeOperation='lighter';ctx.fillStyle=(run._chainHeat||0)>.72?'#ff4028':'#8de8ff';ctx.beginPath();ctx.moveTo(-8,8);ctx.lineTo(0,-18-rnd(0,8));ctx.lineTo(8,8);ctx.fill();ctx.restore();}
     if((run._chainOverheat||0)>0)for(let i=0;i<2;i++)particles.push({x:player.x+rnd(-8,8),y:player.y-8,vx:rnd(-.25,.25),vy:rnd(-1.3,-.6),life:.5,t:0,r:rnd(1.5,3),color:'#d8e4e8'});
   }
+  if(run.stage===6)s6OpeningDraw(); // Massive overhead carrier and its shadow cover the player.
   drawSpaceArmoryHelpers();
   overlordIntroOverflightDraw();
   stage4OverflightDraw();
@@ -69988,10 +71084,12 @@ function drawWorld(dt){
   drawMissileRushHUD();
   drawHeavyTurretHUD();
   drawSpecialHUD();
+  if(typeof drawHUDOverlay==='function')drawHUDOverlay();
   /* RADIO. Drawn last so it sits over the HUD, ducked automatically while a boss is alive so a
      line never competes with a bullet pattern (delivery rule 5). */
   if(typeof storyTick==='function'){ storyTick(1/60); if(bossActive) storyDuck(); storyDraw(); }
   if(typeof s7WardenRadioDraw==='function')s7WardenRadioDraw();
+  if(run.stage===6){s6OpeningRadioDraw();s6WingChoiceDraw();}
   /* the BOSS WARNING card rides the alert, then clears itself */
   if(_bossCard){ _bossCard.t+=1/60;
     if(_bossCard.t>3.2) _bossCard=null;
@@ -69999,7 +71097,6 @@ function drawWorld(dt){
       clamp(_bossCard.t/1.2,0,1), '#ff6b4a'); }
   if(typeof drawIncomingWarnings==='function') drawIncomingWarnings();
   if(typeof drawCallout==='function') drawCallout(dt);
-  if(typeof drawHUDOverlay==='function') drawHUDOverlay();
   // bomb white flash
   if(bombFlash>0){ ctx.fillStyle=`rgba(255,255,255,${clamp(bombFlash,0,0.8)})`; ctx.fillRect(0,0,VW,VH); }
   if(whiteBlast>0){ ctx.fillStyle=`rgba(255,255,255,${clamp(whiteBlast,0,1)})`; ctx.fillRect(0,0,VW,VH); }
@@ -70071,13 +71168,8 @@ function pilotPortrait(pilotKey, emo){
   if(typeof XART!=='undefined' && XART.rdy(cf)) return cf;
   const cfi='port_cf_'+p+'_idle';
   if(typeof XART!=='undefined' && XART.rdy(cfi)) return cfi;
-  // Backward-compatible old atlas fallback while a loose portrait is still decoding.
-  const legacyE=(e==='happy')?'smile':(e.indexOf('talk-')===0?'idle':e);
-  const k='port_'+p+'_'+legacyE;
-  if(typeof XART!=='undefined' && XART.rdy(k)) return k;
-  const ki='port_'+p+'_idle';
-  if(typeof XART!=='undefined' && XART.rdy(ki)) return ki;
-  return 'face_'+p;
+  // Keep the replacement requested while decoding; never flash a retired face.
+  return cfi;
 }
 function rivalPortrait(kind){
   // back-comp: kind maps to emotion; victory/crash preserved, default idle
@@ -70943,7 +72035,7 @@ function drawL78Entry(dt){
   const q=l78entry; q.t+=dt;
   const t=q.t,px=VW/2,py=VH*.22,pt=Math.max(0,t-.32),closeAt=2.34;
   const frame=pt<.46?Math.min(4,Math.floor(pt/.46*5)):pt<closeAt?4:Math.min(7,5+Math.floor(clamp((pt-closeAt)/.42,0,1)*3));
-  if(!q.open){ q.open=true; if(Audio.SFX){ if(Audio.SFX.helixCharge)Audio.SFX.helixCharge(); if(Audio.SFX.crackle)Audio.SFX.crackle(); } }
+  if(!q.open){ q.open=true; if(Audio.SFX){ if(Audio.SFX.warpGate)Audio.SFX.warpGate(); if(Audio.SFX.crackle)Audio.SFX.crackle(); } }
   if(t>=1.05 && !q.breach){ q.breach=true; if(Audio.SFX){ if(Audio.SFX.mapDeploy)Audio.SFX.mapDeploy(); if(Audio.SFX.dash)Audio.SFX.dash(); } shake=Math.max(shake,8); }
   if(pt>=closeAt && !q.close){ q.close=true; if(Audio.SFX&&Audio.SFX.bossPhase)Audio.SFX.bossPhase(); }
 
@@ -71074,6 +72166,21 @@ function drawFlyover(dt){
      A HOVER beat is added in front of the climb - the ship sits and idles while
      the last blasts die out, the music cuts, and only then does it go. */
   const HOVER=HOVER_T;                           // seconds of hanging while the clear title types
+  /* The fly-off hover is still playable. Stop accepting input at the first climb frame,
+     then use the pilot's last position as the takeoff origin. */
+  if(flyoverT<HOVER && !player.dead){
+    let mx=0,my=0;
+    if(Input.hold(1,'left')) mx--;
+    if(Input.hold(1,'right')) mx++;
+    if(Input.hold(1,'up')) my--;
+    if(Input.hold(1,'down')) my++;
+    if(mx||my){
+      const len=Math.hypot(mx,my),step=playerBaseSpeed()*1.35;
+      player.x=clamp(player.x+mx/len*step,10,worldWidth()-10);
+      player.y=clamp(player.y+my/len*step,PLAY.y+12,PLAY.y+PLAY.h-6);
+      flyoverStartX=player.x; flyoverStartY=player.y;
+    }
+  }
   /* 2) THE PLAYER FLIES OUT — AND IT IS THE REAL PLAYER (drop 0810f).
 
      Mike: "Find out why stage 1 and 2 the end of the stage keeps my ship in the background and
@@ -71115,7 +72222,7 @@ function drawFlyover(dt){
   const _l7t=_climb, _l7f=_l7p?l7PortalFrame(_l7t):-1;
   let _l7hid=false;
   if(_l7p && flyoverT>=HOVER){
-    if(!drawFlyover._portalOpen){ drawFlyover._portalOpen=true; if(Audio.SFX){ if(Audio.SFX.helixCharge)Audio.SFX.helixCharge(); if(Audio.SFX.crackle)Audio.SFX.crackle(); } }
+    if(!drawFlyover._portalOpen){ drawFlyover._portalOpen=true; if(Audio.SFX){ if(Audio.SFX.warpGate)Audio.SFX.warpGate(); if(Audio.SFX.crackle)Audio.SFX.crackle(); } }
     if(_l7t>=0.50 && !drawFlyover._portalTake){ drawFlyover._portalTake=true; if(Audio.SFX&&Audio.SFX.mapDeploy)Audio.SFX.mapDeploy(); shake=Math.max(shake,8); }
     if(_l7t>=L7P_CLOSE && !drawFlyover._portalClose){ drawFlyover._portalClose=true; if(Audio.SFX&&Audio.SFX.bossPhase)Audio.SFX.bossPhase(); }
 
@@ -71134,7 +72241,7 @@ function drawFlyover(dt){
     _l7hid=(_l7t>=0.98);
     if(_l7t>=0.50 && _l7t<0.76){ const _wf=1-clamp((_l7t-0.50)/0.26,0,1); ctx.fillStyle='rgba(222,255,244,'+(_wf*0.28).toFixed(3)+')'; ctx.fillRect(0,0,VW,VH); }
   } else {
-    player.y=(flyoverT<HOVER)?_base+Math.sin(flyoverT*4.2)*3:lerp(_base,-80,_ce);
+    player.y=(flyoverT<HOVER)?_base:lerp(_base,-80,_ce);
     drawWorld(dt);                                 // live, not a snapshot — and it draws the ship
   }
   /* Letter-by-letter clear title. It finishes during the hover, holds for a beat, then clears as
@@ -71359,7 +72466,7 @@ function computeStageResults(){
   if(typeof furiousConvertStage==='function') furiousConvertStage();   /* the level's score becomes FP (0917) */
   drawStageClear._res={
     rows:one.rows, pct:one.pct, rank:one.rank, bonus:one.bonus, face:one.face,
-    pw:scNextPassword(),
+    score:one.score, pw:scNextPassword(),
     /* ⚠ SNAPSHOT, NOT READ LIVE. The old CLEAR TIME row called fmtTime(stageTimer) every frame,
        which is only correct while nothing else touches the clock - and beginStage, the flyover and
        the co-op seat swap all do. Taken once, here, at the moment the stage was cleared. */
@@ -71368,7 +72475,7 @@ function computeStageResults(){
   };
   drawStageClear._seq=0; drawStageClear._segT=0; drawStageClear._row=0;
   drawStageClear._scoreShown=run.score|0; drawStageClear._scoreShown2=run2.score|0;
-  drawStageClear._stamp=0; drawStageClear._pwChars=0;
+  drawStageClear._stamp=0; drawStageClear._pwChars=0; drawStageClear._fast=false;
 }
 const RANKCOL={S:'#ffd24a',A:'#8de23a',B:'#5ab0ff',C:'#cfd6e0',D:'#c98a4a',F:'#e23a3a'};
 function _SX(f){ const r=drawStageClear._rect; return r ? r[0]+r[2]*f : VW*f; }
@@ -72015,10 +73122,10 @@ function scConceptBody(R, px, py, pw, ph, t, dt, art, F){
   /* ---- 5. SCORE / CLEAR TIME / RANK ---- */
   {
     const b=scBay(P,scSlots().score);
-    if(t>0.95){
-      const tgt=(run.score|0)+Math.round(R.bonus*Math.min(1,(t-0.95)/0.9));
+    if(t>.12){
+      const tgt=(R.score==null?run.score:R.score)+Math.round(R.bonus*clamp((t-.12)/.45,0,1));
       if(drawStageClear._scoreShown<tgt){
-        drawStageClear._scoreShown=Math.min(tgt, drawStageClear._scoreShown+Math.max(1,Math.round(R.bonus*dt*1.4)));
+        drawStageClear._scoreShown=tgt;
         if(Audio.SFX.blip && Math.random()<0.35) Audio.SFX.blip();
       }
       /* Mike, 0904: "Clear Time - make this a metric on the screen but not in the box, down below
@@ -72109,7 +73216,7 @@ function scConceptBody(R, px, py, pw, ph, t, dt, art, F){
        screen and stats given"). It used to be said only on the FORGE's brief line - a screen that skips
        itself whenever there is nothing to forge, so most clears converted in silence. Counted up after the
        stamp lands, over the level's own score, in the plate's sign-off bay above the send-off. */
-    const _fp=run._fpLevel, _fk=Math.min(1,Math.max(0,(t-1.55)/0.9));
+    const _fp=run._fpLevel, _fk=drawStageClear._fast?1:clamp(t/SC_TALLY_SECONDS,0,1);
     let _mTop=b[1], _mH=b[3];
     if(_fp && (_fp.score|0)>0){
       const _n=Math.round((_fp.fp|0)*_fk), _sc=Math.round((_fp.score|0)*_fk);
@@ -72122,7 +73229,7 @@ function scConceptBody(R, px, py, pw, ph, t, dt, art, F){
         const S2=SC_SLOTS_FULL, gx=P[0]+P[2]*S2.score[0], gw=P[2]*S2.score[2];
         const g0=P[1]+P[3]*(S2.score[1]+S2.score[3]), g1=P[1]+P[3]*S2.signoff[1];
         const cH=Math.min(20,(g1-g0)*0.32, (typeof stageFitH==='function')?stageFitH(art,conv,gw*0.98,20,7,0.06):20);
-        stageTextCoin(art,'LEVEL SCORE '+_sc.toLocaleString('en-US')+'   =','+'+_n,gx+gw/2,(g0+g1)/2,cH,'#ffd24a',0.9,1,0.06);
+        stageTextCoin(art,'LEVEL SCORE '+_sc.toLocaleString('en-US')+'   =','+'+_n,gx+gw/2,g0+(g1-g0)*0.68,cH,'#ffd24a',0.9,1,0.06);
       } else {
         const cH=Math.min(b[3]*0.40, (typeof stageFitH==='function')?stageFitH(art,conv,mW,b[3]*0.40,7,0.06):b[3]*0.36);
         stageTextCoin(art,'LEVEL SCORE '+_sc.toLocaleString('en-US')+'   =','+'+_n,b[0]+b[2]/2,b[1]+b[3]*0.24,cH,'#ffd24a',0.9,1,0.06);
@@ -72170,6 +73277,14 @@ function stageWrapCen(art,text,cx,y,H,maxW,lineMul,alpha,spacingMul,tintC,tintA)
   flush();
   return n;
 }
+const SC_TALLY_SECONDS=.8;
+function scFinishTally(R){
+  drawStageClear._row=R.rows.length;
+  R.rows.forEach(r=>{r._shown=r.segs;});
+  drawStageClear._scoreShown=(R.score==null?run.score:R.score)+R.bonus;
+  if(R.seats){for(const sheet of R.seats)sheet.rows.forEach(r=>{r._shown=r.segs;});drawStageClear._scoreShown2=R.seats[1].score+R.seats[1].bonus;}
+  drawStageClear._stamp=1;drawStageClear._pwChars=(R.pw||'').length;drawStageClear._fast=true;
+}
 function drawStageClear(dt){
   const t=stateT;
   if(!drawStageClear._init){
@@ -72179,6 +73294,7 @@ function drawStageClear(dt){
     Audio.startMusic('stageclear');
   }
   const R=drawStageClear._res; if(!R) return;
+  if(t>=SC_TALLY_SECONDS||drawStageClear._fast)scFinishTally(R);
   /* ⚠ THE WHOLE DEBRIEF WAS DRAWING IN STAGE 1'S CARD ALPHABET (drop 0904af).
 
      Mike, on the finished screen: "now replace the font here with the right stage fonts, this font
@@ -72424,14 +73540,7 @@ function drawStageClear(dt){
   /* any input SKIPS the flourish rather than making the player sit through it */
   if(Input.tap('enter') || keybind.fire.some(k=>Input.tap(k))||Input.menuStart()||Input.menuFaceTap()){
     if(!ready){
-      R.rows.forEach(function(r){ r._shown=r.segs; });
-      drawStageClear._row=R.rows.length;
-      drawStageClear._scoreShown=(run.score|0)+R.bonus;
-      if(R.seats){   // co-op: seat 2's sheet skips ahead with seat 1's
-        R.seats[1].rows.forEach(function(r){ r._shown=r.segs; });
-        drawStageClear._scoreShown2=R.seats[1].score+R.seats[1].bonus;
-      }
-      drawStageClear._stamp=1; drawStageClear._pwChars=(R.pw||'').length;
+      scFinishTally(R);
       if(Audio.SFX.blip) Audio.SFX.blip();
     } else {
       /* ⚠ THE EXIT KEEPS ALL FOUR BRANCHES (drop 0807m). My first cut of this screen replaced the
@@ -72452,7 +73561,11 @@ function drawStageClear(dt){
       /* debrief -> weapons/powers gained -> forge (-> forging -> forged, from inside it) -> LOADOUT -> fade
          -> next stage (Mike, 0917b). Each beat runs the next from its own CONTINUE; the exit is still ONE
          function, and a beat with nothing to do skips itself rather than teaching the player to mash. */
-      const _toLoadout=function(){ if(typeof loadoutVisible==='function' && loadoutVisible()) loadoutStart(_leave); else _leave(); };
+      const _toSupplies=function(){
+        if((run.stage|0)>=CAMPAIGN_STAGES&&!(curStage&&curStage.bonus)){_leave();return;}
+        suppliesStart(_leave,loadoutVisible()?()=>loadoutStart(_toSupplies):null);
+      };
+      const _toLoadout=function(){ if(typeof loadoutVisible==='function' && loadoutVisible()) loadoutStart(_toSupplies); else _toSupplies(); };
       const _toForge=function(){ if(typeof forgeVisible==='function' && forgeVisible()) forgeStart(_toLoadout); else _toLoadout(); };
       /* weapons gained -> POWERS GAINED (its own screen, 0917c) -> the forge */
       const _forgeThen=function(){ const next=function(){if(typeof powersVisible==='function'&&powersVisible())powersStart(_toForge);else _toForge();};
@@ -72730,6 +73843,7 @@ function drawUnlocks(dt){
 const FORGE_ROWS={ box:{x:0.0730,y:0.2850,w:0.8540,h:0.3300}, elems:{x:0.0730,y:0.6500,w:0.8540,h:0.1300} };
 let forge=null;
 function forgeStart(onDone){
+  if(run.stage===5&&run.spaceMode)spaceModeStage(6);
   /* the loadout can hold the LASER MIST, whose icon needs its own sheet warmed or the box is a hole (0917) */
   try{ if(typeof laserMistWarm==='function') laserMistWarm(); for(let _l=1;_l<=5;_l++) XART.rdy('micon_lasermist_'+_l); }catch(_fw){}
   if(!run.forge) run.forge={};
@@ -72797,14 +73911,8 @@ function forgePickerDraw(F, art, EX, EY, EW, EH, ea, t){
 }
 /* put weapon w into loadout slot i; if w already sits in another slot the two swap. Returns a WORD. */
 function forgePick(i, w){
-  const load=run.loadout||[]; if(i<0||i>=load.length) return 'noslot';
-  if(FORGE_FIXED[load[i]]) return 'fixed';
-  if(FORGE_FIXED[w] && load.indexOf(w)>=0 && load.indexOf(w)!==i) return 'fixedelsewhere';
-  const j=load.indexOf(w);
-  if(j===i) return 'same';
-  if(j>=0){ load[j]=load[i]; }
-  load[i]=w; run.loadout=load; run._wbag=[];
-  return 'ok';
+  const load=run.loadout||[];
+  return i>=0&&i<load.length&&load[i]===w ? 'same' : 'fixed';
 }
 function drawForge(dt){
   const F=forge, W=(typeof cutsceneViewWidth==='function')?cutsceneViewWidth():VW, H=VH;
@@ -72815,7 +73923,7 @@ function drawForge(dt){
   ctx.save();ctx.globalAlpha=Math.min(1,t/.35);if(plate){ctx.imageSmoothingEnabled=false;ctx.drawImage(plate,0,0,W,H);}else{ctx.fillStyle='#151923';ctx.fillRect(0,0,W,H);}ctx.restore();
   const load=run.loadout||[];F.sel=clamp(F.sel|0,0,Math.max(0,load.length-1));const selW=load.length?load[F.sel]:null;
   const disc=(selW!=null)?forgeElemsFor(selW):[];F.esel=clamp(F.esel|0,0,Math.max(0,disc.length-1));
-  if(art) stageTextCoin(art,'',String(typeof furiousBalance==='function'?furiousBalance():0),W/2,H*.175,18,'#ffd24a',.9,A(.1),.06);
+  if(art){const ft=frc(LOADOUT_PLATE.title,W,H);ctx.save();ctx.fillStyle='rgba(8,11,18,.94)';ctx.fillRect(ft[0],ft[1],ft[2],ft[3]);ctx.restore();stageTextCoin(art,'FURY PTS ',String(typeof furiousBalance==='function'?furiousBalance():0),W/2,ft[1]+ft[3]/2,10,'#ffd24a',.9,A(.1),.04);}
   const xs=[.083,.226,.369,.512,.655,.798],by=.294*H,bw=.118*W,bh=.218*H;
   for(let i=0;i<FORGE_LOADOUT_MAX;i++){
     const w=load[i];if(w==null)continue;const cx=(xs[i]+.059)*W,cy=by+bh*.48,key=forgeSlotKey(w),a=A(.18+i*.05);
@@ -73177,7 +74285,7 @@ function forgePreviewSwap(P,VWp,VHp,fn){
     run.forge=Object.assign({},sv.fg||{}); run.forge[P.w]={elem:P.elem,lv:P.lv};
     run.wvars=(sv.wvars||WEAPONS.map(()=>null)).slice();
     if(P.w===5) run.wvars[5]=P.elem==='fire'?'magmaorb':P.elem+'orb';
-    if(P.w===4) run.wvars[4]=P.elem==='ice'?'icebreath':'flamethrower';
+    if(P.w===4) run.wvars[4]=P.elem==='ice'&&_pilotKey()==='freezer'?'icebreath':'flamethrower';
     run._forgeBlastSeq=P.blastSeq||(P.blastSeq={});
     fn();
   }catch(err){ P.err=String((err&&err.message)||err); }
@@ -73430,7 +74538,7 @@ let loadoutScr=null;
    first cut opened it for any pool over ONE and the arcade route check caught it: a plain arcade clear
    must still go straight to the next stage (0915). */
 function loadoutVisible(){
-  if(!run) return false;
+  if(!run||(run.stage|0)===4||(run.stage|0)===9) return false;
   const pool=(typeof crateWeaponPool==='function')?crateWeaponPool(true):[];
   return pool.length>FORGE_LOADOUT_MAX || !!run._forgeShown ||
     (_pilotKey()==='maverick'&&(run.stage|0)===1&&!!run._mavBeamUnlocked) ||
@@ -73458,6 +74566,7 @@ function loadoutMatchup(w,o){
   return null;
 }
 function loadoutStart(onDone){
+  if(run.stage===5&&run.spaceMode)spaceModeStage(6);
   const load=forgeLoadoutSync();
   const pool=(typeof crateWeaponPool==='function')?crateWeaponPool(true):load.slice();
   const focus=(run.stage===2||(_pilotKey()==='freezer'&&run.stage===3))?5:(_pilotKey()==='freezer'&&run.stage===1?4:null);
@@ -73471,6 +74580,81 @@ function loadoutStart(onDone){
        if(typeof laserMistWarm==='function') laserMistWarm(); }catch(_l){ }
   setState(GS.LOADOUT);
 }
+
+/* Optional between-stage supplies: profile FP purchases grant stock to this run only. */
+const SUPPLY_PRICES=Object.freeze({life:250,continue:750});
+let supplyScr=null;
+function supplyBuy(kind,seat){
+  if(state!==GS.SUPPLIES||!supplyScr)return 'closed';
+  const cost=SUPPLY_PRICES[kind];if(!cost)return 'unknown';
+  const stock=seat===2&&coopActive()?run2:run;
+  if(kind==='life'&&stock.lives>=9)return 'maxed';
+  if(kind==='continue'&&continueCap()<0)return 'unlimited';
+  if(furiousBalance()<cost)return 'poor';
+  const L=furiousLedger();if(!L.supplies)L.supplies=[];
+  const oldLives=stock.lives,oldBonus=run.contBonus;
+  L.supplies.push({kind,cost,at:Date.now()});
+  if(kind==='life')stock.lives=clamp((stock.lives|0)+1,0,9);
+  else run.contBonus=Math.max(0,run.contBonus|0)+1;
+  if(!achievementSave()){L.supplies.pop();stock.lives=oldLives;run.contBonus=oldBonus;return 'save';}
+  fsx('life');return 'ok';
+}
+function suppliesStart(onDone,onBack){
+  supplyScr={onDone,onBack,t:0,sel:0,msg:'OPTIONAL SUPPLIES FOR THIS RUN',msgT:0,md:!!Input.mouse.down};
+  for(const k of ['statpanel_full_0916','mode_life_up_0915','mode_continue_up_0915'])XART.rdy(k);
+  setState(GS.SUPPLIES);
+}
+function supplyRows(){
+  const rows=[{kind:'life',seat:1,label:coopActive()?'P1 EXTRA LIFE':'EXTRA LIFE',key:'mode_life_up_0915',stock:run.lives|0}];
+  if(coopActive())rows.push({kind:'life',seat:2,label:'P2 EXTRA LIFE',key:'mode_life_up_0915',stock:run2.lives|0});
+  const cap=continueCap();rows.push({kind:'continue',seat:1,label:'EXTRA CONTINUE',key:'mode_continue_up_0915',stock:cap<0?-1:Math.max(0,cap-(run.contUsed|0))});
+  rows.push({kind:'launch',label:'CONTINUE TO NEXT STAGE'});return rows;
+}
+function supplyChoose(row){
+  const S=supplyScr;if(!S)return;
+  if(row.kind==='launch'){const done=S.onDone;supplyScr=null;Input.mouse.down=false;if(done)done();else setState(GS.TITLE);return;}
+  const result=supplyBuy(row.kind,row.seat);
+  S.msg=result==='ok'?row.label+' PURCHASED':result==='poor'?'NOT ENOUGH FURY POINTS':result==='maxed'?'LIVES FULL - 9 / 9':result==='unlimited'?'CONTINUES ALREADY UNLIMITED':'COULD NOT SAVE - NO POINTS SPENT';
+  S.msgT=2.4;if(result!=='ok')fsx('blocked');
+}
+function drawSupplies(dt){
+  const S=supplyScr,W=cutsceneViewWidth(),H=VH;
+  ctx.fillStyle='#000';ctx.fillRect(0,0,W,H);if(!S){setState(GS.TITLE);return;}
+  S.t+=dt;S.msgT=Math.max(0,S.msgT-dt);
+  const art=curFontArt(),plate=XART.rdy('statpanel_full_0916')?XART.get('statpanel_full_0916'):null,rows=supplyRows();
+  S.sel=clamp(S.sel,0,rows.length-1);
+  const panel=(x,y,w,h)=>{if(plate)unlockPanel(plate,UNLOCK_ART.strip,x,y,w,h,true);};
+  const text=(str,x,y,h,col)=>stageText(art,str,x,y,h,col||'#dceaff',.9,1,.045);
+  panel(W*.12,H*.055,W*.76,H*.15);
+  text('FURY SUPPLIES',W*.5,H*.10,H*.036,'#ffd24a');
+  stageTextCoin(art,'FURY POINTS  ',String(furiousBalance()),W*.5,H*.163,H*.027,'#ffd24a',.9,1,.04);
+  text('OPTIONAL STOCK FOR THIS RUN',W*.5,H*.246,H*.021,'#a8c7dc');
+  S.rects=[];const start=H*.30,pitch=H*(rows.length>3?.135:.175),rh=pitch*.84;
+  rows.forEach((r,i)=>{
+    const x=W*.14,y=start+i*pitch,w=W*.72,selected=i===S.sel;
+    panel(x,y,w,rh);S.rects.push({x,y,w,h:rh});
+    if(selected){ctx.save();ctx.strokeStyle='#ffd24a';ctx.lineWidth=2;ctx.shadowColor='#ffd24a';ctx.shadowBlur=6;ctx.strokeRect(x+2,y+2,w-4,rh-4);ctx.restore();}
+    if(r.kind==='launch'){text(r.label,W*.5,y+rh*.5,H*.025,selected?'#ffd24a':'#dceaff');return;}
+    forgeIconFit(r.key,x+w*.13,y+rh*.5,rh*.82,0,1);
+    const disabled=(r.kind==='life'&&r.stock>=9)||(r.kind==='continue'&&r.stock<0),cost=SUPPLY_PRICES[r.kind];
+    text(r.label,x+w*.58,y+rh*.29,H*.025,selected?'#ffd24a':'#dceaff');
+    const count=r.stock<0?'UNLIMITED':String(r.stock)+(r.kind==='life'?' / 9':'');
+    text('IN STOCK '+count,x+w*.58,y+rh*.54,H*.018,'#a8c7dc');
+    text(disabled?'FULL':cost+' FP  /  +1',x+w*.58,y+rh*.77,H*.021,disabled?'#8d9aa5':furiousBalance()>=cost?'#8de23a':'#ff8070');
+  });
+  const msg=S.msgT>0?S.msg:'BUY SUPPLIES OR CONTINUE WITHOUT BUYING';
+  text(msg,W*.5,H*.884,Math.min(H*.020,stageFitH(art,msg,W*.85,H*.020,6,.045)),S.msgT>0?'#ffd24a':'#a8c7dc');
+  const hints=[['pad_dpad','SELECT'],['pad_a','BUY / SELECT']];if(S.onBack)hints.push(['pad_b','LOADOUT']);hints.push(['pad_start','CONTINUE']);
+  controlHintRow(hints,H*.955,W*.5,W*.90);
+  const up=Input.menuUp(),down=Input.menuDown(),back=Input.menuBack(),startTap=Input.menuStart(),accept=Input.menuFaceTap()||Input.tap('enter')||keybind.fire.filter(k=>!/^mouse/.test(k)).some(k=>Input.tap(k));
+  const click=Input.mouse.down&&!S.md;S.md=!!Input.mouse.down;if(S.t<.25)return;
+  if(back&&S.onBack){const cb=S.onBack;supplyScr=null;Input.mouse.down=false;cb();return;}
+  if(startTap){supplyChoose(rows[rows.length-1]);return;}
+  if(up||down){S.sel=(S.sel+(up?-1:1)+rows.length)%rows.length;fsx('blip');}
+  if(click){const i=S.rects.findIndex(r=>Input.mouse.x>=r.x&&Input.mouse.x<=r.x+r.w&&Input.mouse.y>=r.y&&Input.mouse.y<=r.y+r.h);if(i>=0){S.sel=i;supplyChoose(rows[i]);}return;}
+  if(accept)supplyChoose(rows[S.sel]);
+}
+
 function loadoutSay(m,sfx){ if(loadoutScr){ loadoutScr.msg=m; loadoutScr.msgT=2.2; } if(sfx) fsx(sfx); }
 function drawLoadout(dt){
   const L=loadoutScr,W=(typeof cutsceneViewWidth==='function')?cutsceneViewWidth():VW,H=VH;
@@ -73480,8 +74664,8 @@ function drawLoadout(dt){
   ctx.save();ctx.globalAlpha=Math.min(1,t/.35);if(plate){ctx.imageSmoothingEnabled=false;ctx.drawImage(plate,0,0,W,H);}else{ctx.fillStyle='#151923';ctx.fillRect(0,0,W,H);}ctx.restore();
   L.sel=clamp(L.sel|0,0,Math.max(0,load.length-1));const selW=load[L.sel];
   if(art){const T=frc(P.title,W,H);ctx.save();ctx.fillStyle='rgba(8,11,18,.94)';ctx.fillRect(T[0],T[1],T[2],T[3]);ctx.restore();
-    stageText(art,'LOADOUT / ARSENAL',T[0]+T[2]/2,T[1]+T[3]*.34,13,'#ffd24a',.95,1,.07);
-    stageTextCoin(art,'FURY PTS ',String(typeof furiousBalance==='function'?furiousBalance():0),T[0]+T[2]/2,T[1]+T[3]*.73,9,'#ffd24a',.9,1,.04);}
+    stageText(art,'LOADOUT',T[0]+T[2]/2,T[1]+T[3]*.34,11,'#ffd24a',.95,1,.07);
+    stageTextCoin(art,'',String(typeof furiousBalance==='function'?furiousBalance():0),T[0]+T[2]/2,T[1]+T[3]*.72,9,'#ffd24a',.9,1,.04);}
   for(let i=0;i<FORGE_LOADOUT_MAX;i++){
     const w=load[i];if(w==null)continue;const bx=P.bayX[i]*W,by=P.bayY*H,bw=P.bayW*W,bh=P.bayH*H,cx=bx+bw/2,cy=by+bh*.48,key=forgeSlotKey(w);
     forgeIconFit(key,cx,cy,Math.min(bh,bw)*.76,0,1);
@@ -73489,41 +74673,61 @@ function drawLoadout(dt){
     if(art){const nm=weaponDisplayName(w),f=forgeEntry(w),sy=P.stripY*H,sh=P.stripH*H;stageText(art,nm,cx,sy+sh/2,Math.min(9,stageFitH(art,nm,bw*.94,9,5,.04)),f?INFUSIONS[f.elem].body:'#c8d2e2',.8,1,.04);}
   }
   const B=frc(P.pool,W,H);let opts=[];
-  /* Six authored badges per row, across two pages: BASE plus five of the nine elements.
-     The selected weapon/recipe is a real focus target for D-pad and mouse, not just opacity. */
-  const allW=WEAPONS.map((_,i)=>i), elements=Object.keys(INFUSIONS), visible=3;
+  /* One weapon at a time gives its badges and states readable room on the authored
+     Loadout plate. D-pad L/R chooses a weapon; U/D traverses BASE and the two element pages. */
+  const allW=WEAPONS.map((_,i)=>i),elements=Object.keys(INFUSIONS),visible=1;
   L.catSel=clamp(L.catSel|0,0,allW.length-1);
   L.catCol=clamp(L.catCol|0,0,elements.length);
-  L.cat=clamp(L.cat|0,0,Math.max(0,allW.length-visible));
-  if(L.row===1){ if(L.catSel<L.cat)L.cat=L.catSel; else if(L.catSel>=L.cat+visible)L.cat=L.catSel-visible+1; }
-  const page=Math.floor(Math.max(0,L.catCol-1)/5), pageElems=elements.slice(page*5,page*5+5);
+  L.cat=clamp(L.cat|0,0,allW.length-1);
+  if(L.row===1)L.cat=L.catSel;
+  const page=Math.floor(Math.max(0,L.catCol-1)/5),pageElems=elements.slice(page*5,page*5+5);
   L.catalogRects=[];
-  if(L.row!==2)for(let rr=0;rr<visible;rr++){
-    const ri=L.cat+rr,w=allW[ri];if(w==null)continue;
-    const yy=B[1]+B[3]*(.18+rr*.31),owned=L.pool.indexOf(w)>=0,focused=L.row===1&&L.catSel===ri;
-    if(focused){ctx.save();ctx.globalAlpha=.22+.10*Math.sin(t*8);ctx.fillStyle='#ffd24a';ctx.fillRect(B[0]+2,yy-B[3]*.145,B[2]-4,B[3]*.28);ctx.restore();}
-    if(art)stageText(art,weaponDisplayName(w),B[0]+B[2]*.115,yy,6.5,owned?'#dceaff':'#596170',.78,1,.02);
-    const forms=forgeFormsFor(w), cells=[{key:weaponIconKey(w,3,{bare:1}),ok:owned,name:'BASE',kind:'bare'}];
+  if(L.row===1){
+    const ri=L.cat,w=allW[ri],owned=L.pool.indexOf(w)>=0,focused=L.row===1&&L.catSel===ri;
+    const cy=B[1]+B[3]*.52,pitch=B[2]*.145,x0=B[0]+B[2]*.13,h=Math.min(31,B[3]*.46);
+    if(focused){ctx.save();ctx.globalAlpha=.65+.25*Math.sin(t*8);ctx.strokeStyle='#ffd24a';
+      ctx.shadowColor='#ffce57';ctx.shadowBlur=13;ctx.lineWidth=2;
+      ctx.strokeRect(B[0]+2,B[1]+2,B[2]-4,B[3]-4);ctx.restore();}
+    if(art){
+      const heading='WEAPON '+(ri+1)+'/'+allW.length+'   '+weaponDisplayName(w)+'   ELEMENTS '+(page+1)+'/2';
+      stageText(art,heading,B[0]+B[2]*.5,B[1]+B[3]*.12,
+        Math.min(9,stageFitH(art,heading,B[2]*.91,9,6,.04)),owned?'#ffe099':'#8795a9',.9,1,.04);
+    }
+    const forms=forgeFormsFor(w),cells=[{key:weaponIconKey(w,3,{bare:1}),ok:owned,name:'BASE',kind:'bare'}];
     for(const e of pageElems){const f=forms[e],earned=forgeComboOwned(e,w);
       cells.push({key:f?forgeBadgeKey(e,w,f.lv):'inf_'+e,ok:owned&&!!f,name:INFUSIONS[e].name,elem:e,kind:'forge',earned:earned,price:earned&&!f?forgeComboCost():0});}
-    const x0=B[0]+B[2]*.325,pitch=B[2]*.108,h=Math.min(24,B[3]*.285);
     for(let ci=0;ci<cells.length;ci++){
-      const c=cells[ci],cx=x0+ci*pitch,selected=focused&&L.catCol===ci+page*5*(ci>0);
-      forgeIconFit(c.key,cx,yy,h,0,c.ok?1:.20);
-      if(selected){ctx.save();ctx.globalAlpha=.8+.2*Math.sin(t*13);ctx.shadowColor=c.ok?'#ffd24a':'#7bb0d7';ctx.shadowBlur=11;
-        ctx.strokeStyle=c.ok?'#ffe089':'#7bb0d7';ctx.lineWidth=2;ctx.strokeRect(cx-h*.56,yy-h*.56,h*1.12,h*1.12);ctx.restore();}
-      L.catalogRects.push({x:cx-h*.58,y:yy-h*.58,w:h*1.16,h:h*1.16,weapon:w,ri:ri,col:ci+page*5*(ci>0),cell:c});
+      const c=cells[ci],cx=x0+ci*pitch,col=ci+page*5*(ci>0),selected=focused&&L.catCol===col;
+      forgeIconFit(c.key,cx,cy,h,0,c.ok?1:.25);
+      if(selected){ctx.save();ctx.globalAlpha=.84+.16*Math.sin(t*13);
+        ctx.shadowColor=c.ok?'#ffd24a':'#7bb0d7';ctx.shadowBlur=13;
+        ctx.strokeStyle=c.ok?'#ffe089':'#7bb0d7';ctx.lineWidth=2;
+        ctx.strokeRect(cx-h*.58,cy-h*.58,h*1.16,h*1.16);ctx.restore();}
+      if(art)stageText(art,c.name,cx,B[1]+B[3]*.80,
+        Math.min(7.5,stageFitH(art,c.name,pitch*.93,7.5,4.5,.025)),
+        c.ok?'#dceaff':'#8292a7',.82,1,.025);
+      L.catalogRects.push({x:cx-pitch*.48,y:cy-h*.65,w:pitch*.96,h:h*1.9,
+        weapon:w,ri:ri,col:col,cell:c});
     }
   }
-  if(art&&L.row!==2){const label=(L.cat+1)+'-'+Math.min(allW.length,L.cat+visible)+' / '+allW.length+'   ELEMENTS '+(page+1)+'/2';
-    stageText(art,label,B[0]+B[2]*.78,B[1]+B[3]*.05,5.5,'#9fd6ff',.75,1,.025);
+  if(art&&L.row===1){
     const r=(L.catalogRects||[]).find(q=>q.ri===L.catSel&&q.col===L.catCol),c=r&&r.cell;
     if(c){const status=c.ok?'OWNED':(c.price?'ARMORY '+c.price+' FP':(c.earned?'ARMORY RECIPE':'BOSS LOCKED'));
       const detail=L.msgT>0?L.msg:weaponDisplayName(r.weapon)+' + '+c.name+'  -  '+status;
-      stageText(art,detail,W*.5,H*.627,Math.min(9,stageFitH(art,detail,W*.75,9,6,.04)),L.msgT>0?'#ffffff':(c.ok?'#ffe18b':'#9aafc2'),.88,1,.04);}
+      const dy=H*.627,dw=W*.76,dh=H*.037;
+      ctx.save();ctx.globalAlpha=.92;ctx.fillStyle='#08101c';ctx.fillRect((W-dw)/2,dy-dh*.5,dw,dh);
+      ctx.strokeStyle=c.ok?'#d9a83f':'#5b879f';ctx.lineWidth=1;ctx.strokeRect((W-dw)/2,dy-dh*.5,dw,dh);ctx.restore();
+      stageText(art,detail,W*.5,dy,Math.min(9,stageFitH(art,detail,dw*.96,9,6,.04)),
+        L.msgT>0?'#ffffff':(c.ok?'#ffe18b':'#b2c7da'),.9,1,.04);}
   }
-  if(L.row===2&&selW!=null)opts=weaponFormOptions(selW).map(function(o){return Object.assign({},o,{key:o.kind==='forge'?forgeBadgeKey(o.elem,selW,o.lv):(o.kind==='variant'&&o.id==='firewhip'?'micon_firewhip_0919_3':(o.kind==='variant'&&WVAR_ICON[o.id]?WVAR_ICON[o.id]+'3':weaponIconKey(selW,3,{bare:1})))});});
-  const matchup=loadoutMatchup(selW,L.row===2?opts[clamp(L.psel|0,0,Math.max(0,opts.length-1))]:null);
+  if(L.row===2&&selW!=null){
+    const bases=weaponBaseForms(selW),forged=weaponFormOptions(selW).filter(o=>o.kind==='forge');
+    L.vsel=clamp(L.vsel|0,0,Math.max(0,bases.length-1));
+    L.psel=clamp(L.psel|0,0,forged.length);
+    opts=[bases[L.vsel]||bases[0]].concat(forged);
+    opts=opts.map(o=>Object.assign({},o,{key:o.kind==='forge'?forgeBadgeKey(o.elem,selW,o.lv):(o.kind==='variant'&&o.id==='firewhip'?'micon_firewhip_0919_3':(o.kind==='variant'&&WVAR_ICON[o.id]?WVAR_ICON[o.id]+'3':weaponIconKey(selW,3,{bare:1})))}));
+  }
+  const matchup=loadoutMatchup(selW,L.row===2?opts[L.psel]:null);
   if(art&&matchup){
     const yy=H*.249,flash=matchup.good?(.68+.32*Math.sin(t*16)):.86;
     ctx.save();ctx.globalAlpha=.80;ctx.fillStyle='#07101a';ctx.fillRect(W*.10,yy-H*.020,W*.80,H*.041);
@@ -73533,38 +74737,48 @@ function drawLoadout(dt){
   }
   L.formRects=[];
   if(L.row===2&&opts.length){
-    if(art)stageText(art,'SELECT '+weaponDisplayName(selW)+' FORM',B[0]+B[2]*.5,B[1]+B[3]*.10,8,'#ffe18b',.9,1,.035);
-    L.psel=clamp(L.psel|0,0,opts.length-1);const view=Math.min(7,opts.length),pitch=B[2]/view,first=clamp(L.psel-3,0,Math.max(0,opts.length-view));
-    for(let k=0;k<view;k++){const i=first+k,o=opts[i],cx=B[0]+pitch*(k+.5),cy=B[1]+B[3]*.40,h=Math.min(B[3]*.56,pitch*.62);forgeIconFit(o.key,cx,cy,h,0,i===L.psel?1:.45);if(i===L.psel)forgeHexPointer(o.key,cx,cy,h,'#ffd24a');if(art)stageText(art,o.name,cx,B[1]+B[3]*.84,Math.min(7,stageFitH(art,o.name,pitch*.88,7,4,.03)),'#cfeaff',.8,1,.03);
-      L.formRects.push({x:cx-pitch*.46,y:cy-h*.62,w:pitch*.92,h:h*1.24,index:i});}
+    const o=opts[L.psel],cx=B[0]+B[2]/2,cy=B[1]+B[3]*.48,h=Math.min(B[3]*.58,43);
+    ctx.save();ctx.beginPath();ctx.rect(B[0]+2,B[1]+2,B[2]-4,B[3]-4);ctx.clip();
+    forgeIconFit(o.key,cx-B[2]*.30,cy,h,0,1);
+    if(L.psel>0)forgeIconFit(opts[L.psel-1].key,cx-B[2]*.30,cy-B[3]*.82,h*.63,0,.35);
+    if(L.psel<opts.length-1)forgeIconFit(opts[L.psel+1].key,cx-B[2]*.30,cy+B[3]*.82,h*.63,0,.35);
+    if(art){
+      stageText(art,o.name,cx+B[2]*.07,cy,Math.min(11,stageFitH(art,o.name,B[2]*.69,11,6,.04)),'#ffe18b',.9,1,.04);
+      const variant='TYPE '+(L.vsel+1)+'/'+weaponBaseForms(selW).length+'  |  FORM '+(L.psel+1)+'/'+opts.length;
+      stageText(art,variant,cx+B[2]*.07,B[1]+B[3]*.72,7,'#a9d9f2',.8,1,.025);
+    }
+    ctx.restore();
+    L.formRects.push({x:B[0],y:B[1],w:B[2],h:B[3],index:L.psel});
   }
+  if(L.row===0&&art)stageText(art,'SELECT WEAPON  /  DOWN FOR FORMS',B[0]+B[2]/2,B[1]+B[3]/2,9,'#cfeaff',.85,1,.04);
   if(art)stageText(art,'X'+(run.forgeRespecs|0),W*.705,H*.883,13,'#ffd24a',.9,1,.05);
-  controlHintRow(L.row===1?[['pad_dpad','WEAPON / ELEMENT'],['pad_a','EQUIP'],['pad_b','BACK'],['pad_start','LAUNCH']]:
-    L.row===2?[['pad_dpad','FORM'],['pad_a','EQUIP'],['pad_b','BACK']]:
-    [['pad_dpad','SLOT / CATALOG'],['pad_a','FORMS'],['pad_start','LAUNCH']],H*.965,W/2,W-24);
+  controlHintRow(L.row===1?[['pad_dpad','L/R WEAPON U/D ELEMENT'],['pad_a','EQUIP'],['pad_b','BACK'],['pad_start','NEXT']]:
+    L.row===2?[['pad_dpad','L/R TYPE  U/D FORM'],['pad_a','EQUIP'],['pad_b','BACK']]:
+    [['pad_dpad','WEAPON'],['pad_a','FORMS'],['pad_start','NEXT']],H*.965,W/2,W-24);
   if(L.exitT>=0){L.exitT+=dt;ctx.save();ctx.globalAlpha=Math.min(1,L.exitT/.6);ctx.fillStyle='#000';ctx.fillRect(0,0,W,H);ctx.restore();if(L.exitT>=.62){const done=L.onDone;loadoutScr=null;run._wbag=[];if(done)done();else setState(GS.TITLE);}return;}
   const mL=Input.menuLeft?Input.menuLeft():false,mR=Input.menuRight?Input.menuRight():false,mU=Input.menuUp?Input.menuUp():false,mD=Input.menuDown?Input.menuDown():false,mB=Input.menuBack?Input.menuBack():false,mS=Input.menuStart?Input.menuStart():false;
   const fire=(keybind.fire||[]).filter(function(k){return !/^mouse/.test(k);}).some(function(k){return Input.tap(k);});
   const charge=(keybind.charge||[]).some(function(k){return Input.tap(k);});const click=Input.mouse.down&&!L.md;L.md=!!Input.mouse.down;const enter=Input.tap('enter');if(t<.55)return;
   if(Input.mouse.wheel){const d=Input.mouse.wheel>0?1:-1;Input.mouse.wheel=0;
     if(L.row===1)L.catSel=clamp(L.catSel+d,0,allW.length-1);
-    else L.cat=clamp(L.cat+d,0,Math.max(0,allW.length-3));fsx('blip');}
+    else if(L.row===2)L.psel=clamp(L.psel+d,0,Math.max(0,opts.length-1));fsx('blip');}
   if(click){const mx=Input.mouse.x,my=Input.mouse.y,RB=frc(P.respec,W,H);
     if(mx>=RB[0]&&mx<=RB[0]+RB[2]&&my>=RB[1]&&my<=RB[1]+RB[3]&&selW!=null){const q=forgeRespec(selW);loadoutSay(q==='ok'?'BARE FORM EQUIPPED':'NO ACTIVE FORM TO RE-SPEC',q==='ok'?'powerup':'blocked');return;}
     if(L.row===2){const hit=(L.formRects||[]).find(r=>mx>=r.x&&mx<=r.x+r.w&&my>=r.y&&my<=r.y+r.h);
       if(!hit)return;
-      if(L.psel!==hit.index){L.psel=hit.index;fsx('blip');return;}
-      const o=weaponFormOptions(selW)[hit.index],r=weaponFormSelect(selW,o);
+
+      const o=opts[L.psel],r=weaponFormSelect(selW,o);
       loadoutSay(r==='ok'?o.name+' EQUIPPED':'FORM LOCKED',r==='ok'?'powerup':'blocked');
       if(r==='ok'&&loadoutMatchup(selW,o)?.good){L.critT=2.2;fsx('life');}
       L.row=0;return;
     }
+    if(L.row===0){const bay=P.bayX.findIndex((bx,i)=>i<load.length&&mx>=bx*W&&mx<=(bx+P.bayW)*W&&my>=P.bayY*H&&my<=(P.bayY+P.bayH)*H);if(bay>=0){if(L.sel===bay){L.row=2;L.psel=0;L.vsel=0;}else L.sel=bay;fsx('blip');return;}}
     const hit=(L.catalogRects||[]).find(r=>mx>=r.x&&mx<=r.x+r.w&&my>=r.y&&my<=r.y+r.h);
     if(hit){if(L.row!==1||L.catSel!==hit.ri||L.catCol!==hit.col){L.catSel=hit.ri;L.catCol=hit.col;L.row=1;fsx('blip');return;}
       if(!hit.cell.ok){loadoutSay(hit.cell.price?'BUY THIS RECIPE IN THE ARMORY':'LOCKED - EARN THIS ELEMENT','blocked');return;}
-      const q=forgePick(L.sel,hit.weapon);if(q!=='ok'&&q!=='same'){loadoutSay('WEAPON CANNOT USE THIS BAY','blocked');return;}
+      L.sel=load.indexOf(hit.weapon);const q=L.sel>=0?'same':'fixed';if(q!=='ok'&&q!=='same'){loadoutSay('WEAPON CANNOT USE THIS BAY','blocked');return;}
       if(hit.cell.kind!=='forge'&&weaponBaseForms(hit.weapon).length>1){
-        L.row=2;L.psel=Math.max(0,weaponBaseForms(hit.weapon).findIndex(o=>o.id===heldVariant(hit.weapon)));
+        L.row=2;L.psel=0;L.vsel=Math.max(0,weaponBaseForms(hit.weapon).findIndex(o=>o.id===heldVariant(hit.weapon)));
         loadoutSay('CHOOSE '+weaponDisplayName(hit.weapon)+' FORM','blip');return;
       }
       const f=weaponFormSelect(hit.weapon,hit.cell.kind==='forge'?{kind:'forge',elem:hit.cell.elem}:weaponBaseForms(hit.weapon)[0]);
@@ -73577,9 +74791,9 @@ function drawLoadout(dt){
     else if(mR&&load.length){L.sel=(L.sel+1)%load.length;fsx('blip');}
     else if(enter){Input.mouse.down=false;L.exitT=0;fsx('powerup');}
     else if(charge&&selW!=null){const q=forgeRespec(selW);loadoutSay(q==='ok'?'BARE FORM EQUIPPED':'NO ACTIVE FORM TO RE-SPEC',q==='ok'?'powerup':'blocked');}
-    else if(mD&&selW!=null){L.row=1;L.catSel=Math.max(0,allW.indexOf(selW));L.catCol=0;fsx('blip');}
-    else if((fire||click)&&selW!=null){L.row=1;L.catSel=Math.max(0,allW.indexOf(selW));L.catCol=0;fsx('blip');}
-    else if(mU&&selW!=null){L.row=2;L.psel=0;fsx('blip');}
+    else if(mD&&selW!=null){L.row=2;L.psel=0;L.vsel=Math.max(0,weaponBaseForms(selW).findIndex(o=>o.id===heldVariant(selW)));fsx('blip');}
+    else if((fire||click)&&selW!=null){L.row=2;L.psel=0;L.vsel=Math.max(0,weaponBaseForms(selW).findIndex(o=>o.id===heldVariant(selW)));fsx('blip');}
+    else if(mU&&selW!=null){L.row=2;L.psel=0;L.vsel=0;fsx('blip');}
   }else if(L.row===1){
     if(mL){L.catSel=clamp(L.catSel-1,0,allW.length-1);fsx('blip');}
     else if(mR){L.catSel=clamp(L.catSel+1,0,allW.length-1);fsx('blip');}
@@ -73589,10 +74803,10 @@ function drawLoadout(dt){
     else if(fire||click||enter){
       const w=allW[L.catSel],elem=L.catCol?elements[L.catCol-1]:null,forms=forgeFormsFor(w),owned=L.pool.indexOf(w)>=0;
       if(!owned||elem&&!forms[elem]){loadoutSay(elem&&forgeComboOwned(elem,w)?'BUY THIS RECIPE IN THE ARMORY':'LOCKED - EARN THIS WEAPON','blocked');}
-      else {const q=forgePick(L.sel,w);
+      else {L.sel=load.indexOf(w);const q=L.sel>=0?'same':'fixed';
         if(q==='ok'||q==='same'){
           if(!elem&&weaponBaseForms(w).length>1){
-            L.row=2;L.psel=Math.max(0,weaponBaseForms(w).findIndex(o=>o.id===heldVariant(w)));
+            L.row=2;L.psel=0;L.vsel=Math.max(0,weaponBaseForms(w).findIndex(o=>o.id===heldVariant(w)));
             loadoutSay('CHOOSE '+weaponDisplayName(w)+' FORM','blip');return;
           }
           const f=weaponFormSelect(w,elem?{kind:'forge',elem:elem}:weaponBaseForms(w)[0]);
@@ -73600,7 +74814,13 @@ function drawLoadout(dt){
         }else loadoutSay('MISSILES STAY IN THEIR OWN BAY','blocked');}
     }
   }else{
-    const forms=weaponFormOptions(selW),n=forms.length;if(mL&&n){L.psel=(L.psel-1+n)%n;fsx('blip');}else if(mR&&n){L.psel=(L.psel+1)%n;fsx('blip');}else if(mB||mD){L.row=0;fsx('blip');}else if(fire||click||enter){const o=forms[L.psel],r=weaponFormSelect(selW,o);loadoutSay(r==='ok'?o.name+' EQUIPPED':'FORM LOCKED',r==='ok'?'powerup':'blocked');if(r==='ok'&&loadoutMatchup(selW,o)?.good){L.critT=2.2;fsx('life');}L.row=0;}
+    const bases=weaponBaseForms(selW),n=opts.length;
+    if(mL&&bases.length>1){L.vsel=(L.vsel-1+bases.length)%bases.length;L.psel=0;fsx('blip');}
+    else if(mR&&bases.length>1){L.vsel=(L.vsel+1)%bases.length;L.psel=0;fsx('blip');}
+    else if(mU){if(L.psel>0){L.psel--;fsx('blip');}else{L.row=0;fsx('blip');}}
+    else if(mD&&n){L.psel=(L.psel+1)%n;fsx('blip');}
+    else if(mB){L.row=0;fsx('blip');}
+    else if(fire||click||enter){const o=opts[L.psel],r=weaponFormSelect(selW,o);loadoutSay(r==='ok'?o.name+' EQUIPPED':'FORM LOCKED',r==='ok'?'powerup':'blocked');if(r==='ok'&&loadoutMatchup(selW,o)?.good){L.critT=2.2;fsx('life');}L.row=0;}
   }
 }
 
@@ -73643,72 +74863,60 @@ function stageTextCoin(art,pre,amt,cx,cy,h,col,tintA,alpha,sp,amtCol){
 
 /* ---- POWERS GAINED: its own screen (GS.POWERS) ------------------------------------------------ */
 const POWERS_PLATE={
-  title:[0.2129,0.0586,0.5741,0.1081],
-  bays:[[0.1228,0.2982,0.1773,0.3099],[0.4113,0.3008,0.1781,0.3086],[0.6999,0.2982,0.1788,0.3099]],
-  strips:[[0.0879,0.7109,0.2485,0.0755],[0.3750,0.7135,0.2500,0.0729],[0.6642,0.7109,0.2485,0.0755]],
-  msg:[0.2885,0.8385,0.4230,0.0703]
+  title:[0.206,0.059,0.588,0.109],
+  bay:[0.322,0.264,0.356,0.414],
+  strip:[0.284,0.742,0.432,0.075],
+  msg:[0.285,0.850,0.430,0.055]
 };
-/* one bay per ELEMENT, never per weapon - "do not display what we can make with it" */
+/* A stage awards one element. The card and its art have one bay to match that rule. */
 function powersGained(){
-  const C=(run && (run._stageElements||run._stageCombos)) || [], out=[];
-  for(const c of C){ const e=typeof c==='string'?c:c.elem; if(INFUSIONS[e]&&out.indexOf(e)<0) out.push(e); }
-  return out.slice(0,3);
+  const C=(run && (run._stageElements||run._stageCombos)) || [];
+  for(const c of C){const e=typeof c==='string'?c:c.elem;if(INFUSIONS[e])return [e];}
+  return [];
 }
 function powersVisible(){ return powersGained().length>0; }
 let powersScr=null;
 function powersStart(onDone){
-  powersScr={onDone:onDone||null, t:0, elems:powersGained(), md:!!(Input&&Input.mouse&&Input.mouse.down), popped:{}};
-  try{ XART.rdy('powers_bays_0917c'); powersScr.elems.forEach(function(e){ XART.rdy('inf_'+e); }); fsx('life'); }catch(_p){ }
+  powersScr={onDone:onDone||null,t:0,elems:powersGained(),md:!!(Input&&Input.mouse&&Input.mouse.down),popped:{}};
+  try{XART.rdy('powers_single_0919');powersScr.elems.forEach(function(e){XART.rdy('inf_'+e);});fsx('life');}catch(_p){}
   setState(GS.POWERS);
 }
 function drawPowers(dt){
-  const PS=powersScr;
-  const W=(typeof cutsceneViewWidth==='function')?cutsceneViewWidth():VW, H=VH;
-  ctx.fillStyle='#000'; ctx.fillRect(0,0,W,H);
-  if(!PS){ setState(GS.TITLE); return; }
-  PS.t+=dt; const t=PS.t;
-  const art=(typeof curFontArt==='function')?curFontArt():null;
-  const A=function(d){ return Math.max(0,Math.min(1,(t-d)/0.3)); };
-  const plate=XART.rdy('powers_bays_0917c')?XART.get('powers_bays_0917c'):null;
-  ctx.save(); ctx.globalAlpha=Math.min(1,t/0.4);
-  if(plate){ ctx.imageSmoothingEnabled=false; ctx.drawImage(plate,0,0,W,H); } else { ctx.fillStyle='#161a22'; ctx.fillRect(0,0,W,H); }
+  const PS=powersScr,W=(typeof cutsceneViewWidth==='function')?cutsceneViewWidth():VW,H=VH;
+  ctx.fillStyle='#000';ctx.fillRect(0,0,W,H);
+  if(!PS){setState(GS.TITLE);return;}
+  PS.t+=dt;const t=PS.t,art=(typeof curFontArt==='function')?curFontArt():null;
+  const A=function(d){return Math.max(0,Math.min(1,(t-d)/0.3));};
+  const plate=XART.rdy('powers_single_0919')?XART.get('powers_single_0919'):null;
+  ctx.save();ctx.globalAlpha=Math.min(1,t/0.4);
+  if(plate){ctx.imageSmoothingEnabled=false;ctx.drawImage(plate,0,0,W,H);}else{ctx.fillStyle='#161a22';ctx.fillRect(0,0,W,H);}
   ctx.restore();
-  const P=POWERS_PLATE, n=PS.elems.length;
-  /* one power sits in the MIDDLE bay, two in the outer pair, three fill the row */
-  const slots=n===1?[1]:(n===2?[0,2]:[0,1,2]);
-  if(art){
-    const T=frc(P.title,W,H);
-    stageText(art,'POWERS GAINED',T[0]+T[2]/2,T[1]+T[3]/2,Math.min(T[3]*0.60,(typeof stageFitH==='function')?stageFitH(art,'POWERS GAINED',T[2]*0.9,T[3]*0.6,10,0.08):T[3]*0.5),'#ffd24a',0.9,A(0.1),0.08);
+  const P=POWERS_PLATE,e=PS.elems[0],I=e&&INFUSIONS[e];
+  if(art){const T=frc(P.title,W,H);
+    stageText(art,'POWERS GAINED',T[0]+T[2]/2,T[1]+T[3]/2,Math.min(T[3]*.60,(typeof stageFitH==='function')?stageFitH(art,'POWERS GAINED',T[2]*.9,T[3]*.6,10,.08):T[3]*.5),'#ffd24a',.9,A(.1),.08);
   }
-  for(let b=0;b<3;b++){
-    const r=frc(P.bays[b],W,H), k=slots.indexOf(b);
-    if(k<0){ ctx.save(); ctx.globalAlpha=0.55*A(0.2); ctx.fillStyle='#000'; ctx.fillRect(r[0],r[1],r[2],r[3]); ctx.restore(); continue; }
-    const e=PS.elems[k], I=INFUSIONS[e], d=0.45+k*0.35, a=A(d);
-    if(a<=0) continue;
-    if(!PS.popped[e]){ PS.popped[e]=1; fsx('powerup'); }
-    const cx=r[0]+r[2]/2, cy=r[1]+r[3]/2, since=t-d, pop=1+0.35*Math.max(0,1-since/0.25);
-    /* the element's own light behind it */
-    ctx.save(); ctx.globalCompositeOperation='lighter'; ctx.globalAlpha=a*(0.30+0.14*Math.sin(t*4+k));
-    const g=ctx.createRadialGradient(cx,cy,2,cx,cy,r[2]*0.62); g.addColorStop(0,I.glow); g.addColorStop(1,'rgba(0,0,0,0)');
-    ctx.fillStyle=g; ctx.fillRect(r[0],r[1],r[2],r[3]); ctx.restore();
-    if(since<0.12){ ctx.save(); ctx.globalAlpha=(1-since/0.12)*0.8; ctx.fillStyle='#ffffff'; ctx.fillRect(r[0],r[1],r[2],r[3]); ctx.restore(); }
-    forgeIconFit('inf_'+e,cx,cy,r[3]*0.80*pop,0,a);
-    if(art){ const s=frc(P.strips[b],W,H), nm=I.name;
-      stageText(art,nm,s[0]+s[2]/2,s[1]+s[3]/2,Math.min(s[3]*0.56,(typeof stageFitH==='function')?stageFitH(art,nm,s[2]*0.86,s[3]*0.56,8,0.06):s[3]*0.5),I.body,0.85,a,0.06); }
+  if(I){const r=frc(P.bay,W,H),a=A(.45),cx=r[0]+r[2]/2,cy=r[1]+r[3]/2,since=t-.45,pop=1+.27*Math.max(0,1-since/.25);
+    if(a>0){
+      if(!PS.popped[e]){PS.popped[e]=1;fsx('powerup');}
+      ctx.save();ctx.globalCompositeOperation='lighter';ctx.globalAlpha=a*(.26+.12*Math.sin(t*4));
+      const g=ctx.createRadialGradient(cx,cy,2,cx,cy,r[2]*.62);g.addColorStop(0,I.glow);g.addColorStop(1,'rgba(0,0,0,0)');
+      ctx.fillStyle=g;ctx.fillRect(r[0],r[1],r[2],r[3]);ctx.restore();
+      if(since<.12){ctx.save();ctx.globalAlpha=(1-since/.12)*.7;ctx.fillStyle='#fff';ctx.fillRect(r[0],r[1],r[2],r[3]);ctx.restore();}
+      forgeIconFit('inf_'+e,cx,cy,r[3]*.72*pop,0,a);
+      if(art){const st=frc(P.strip,W,H),nm=I.name;
+        stageText(art,nm,st[0]+st[2]/2,st[1]+st[3]/2,Math.min(st[3]*.55,(typeof stageFitH==='function')?stageFitH(art,nm,st[2]*.88,st[3]*.55,8,.06):st[3]*.5),I.body,.85,a,.06);}
+    }
   }
-  if(art){
-    const M=frc(P.msg,W,H), msg=n>1?'NEW POWERS - TAKE THEM TO THE FORGE':'A NEW POWER - TAKE IT TO THE FORGE';
-    stageText(art,msg,M[0]+M[2]/2,M[1]+M[3]/2,Math.min(M[3]*0.46,(typeof stageFitH==='function')?stageFitH(art,msg,M[2]*0.92,M[3]*0.46,7,0.06):11),'#9fd6ff',0.85,A(0.9),0.06);
+  if(art){const M=frc(P.msg,W,H),msg='A NEW POWER - TAKE IT TO THE FORGE';
+    stageText(art,msg,M[0]+M[2]/2,M[1]+M[3]/2,Math.min(M[3]*.72,(typeof stageFitH==='function')?stageFitH(art,msg,M[2]*.92,M[3]*.72,7,.06):11),'#9fd6ff',.85,A(.9),.06);
   }
-  const ready=t>0.45+n*0.35+0.3;
-  if(ready && Math.floor(t*2)%2) controlHintRow([['pad_a','CONTINUE']],H*0.968,W/2,W-24);
-  const fire=(keybind.fire||[]).filter(function(k){ return !/^mouse/.test(k); }).some(function(k){ return Input.tap(k); });
-  const mS=(Input.menuStart?Input.menuStart():false);
-  const click=Input.mouse.down&&!PS.md; PS.md=!!Input.mouse.down;
-  if(ready && (fire||click||mS||Input.tap('enter')||Input.menuFaceTap())){
-    Input.mouse.down=false; fsx('blip');
-    const done=PS.onDone; powersScr=null;
-    if(done) done(); else setState(GS.TITLE);
+  const ready=t>1.1;
+  if(ready&&Math.floor(t*2)%2)controlHintRow([['pad_a','CONTINUE']],H*.968,W/2,W-24);
+  const fire=(keybind.fire||[]).filter(function(k){return !/^mouse/.test(k);}).some(function(k){return Input.tap(k);});
+  const mS=(Input.menuStart?Input.menuStart():false),click=Input.mouse.down&&!PS.md;PS.md=!!Input.mouse.down;
+  if(ready&&(fire||click||mS||Input.tap('enter')||Input.menuFaceTap())){
+    Input.mouse.down=false;fsx('blip');const done=PS.onDone;powersScr=null;
+    if(done)done();else setState(GS.TITLE);
   }
 }
 
@@ -73735,14 +74943,13 @@ function bonusDrop(e){
 /* drawn from drawPowerups; true when it drew */
 function bonusPickupDraw(p,yb){
   let key=null, h=30;
-  if(p.kind==='scorechip'){ key='score_bullet_'+(p.val|0); h=46; }
-  else if(p.kind==='furybomb'){ key='fury_bomb_0917c'; h=46; }
-  else if(p.kind==='timebomb'){ key='timed_bomb_0917c'; h=44; }
+  if(p.kind==='scorechip'){ key='score_bullet_'+(p.val|0); h=28; }
+  else if(p.kind==='furybomb'){ key='fury_bomb_0917c'; h=32; }
+  else if(p.kind==='timebomb'){ key='timed_bomb_0917c'; h=30; }
   else return false;
   const bob=Math.sin((p.bob||0)+performance.now()/300)*2.4;
   const turn=p.kind==='scorechip'?('turn_score_'+(p.val|0)+'_0918'):(p.kind==='furybomb'?'turn_furybomb_0918':'turn_timebomb_0918');
-  if(pickupTurnFrame(turn,p.x,yb+bob,h,p.t,12))return true;
-  if(XART.rdy(key)){const im=XART.get(key),w=h*((im.naturalWidth||im.width)/(im.naturalHeight||im.height));ctx.drawImage(im,p.x-w/2,yb+bob-h/2,w,h);}
+  if(XART.rdy(key)){const im=XART.get(key),w=h*((im.naturalWidth||im.width)/(im.naturalHeight||im.height));ctx.save();ctx.translate(p.x,yb+bob);ctx.rotate((p.t||0)*(p.kind==='scorechip'?1.25:2.1));ctx.drawImage(im,-w/2,-h/2,w,h);ctx.restore();}
   return true;
 }
 /* applyPowerup's arm for the three; returns true when it handled the pickup */
@@ -73890,6 +75097,9 @@ function bombFxDraw(){
    ============================================================ */
 const EFX_N=8, EFX_BURST_T=0.42, EFX_BURST_CAP=28;
 let efxBursts=[], efxClock=0;
+const EFX_BURST_SOUND={fire:'cfComboFire',ice:'cfComboIce',lightning:'cfComboLightning',
+  prism:'cfComboPrism',toxic:'cfComboToxic',kinetic:'cfComboKinetic',chrome:'cfComboChrome',
+  water:'cfComboWater',dark:'cfComboDark'};
 function efxFrame(key,i,x,y,w,h,alpha){
   if(typeof XART==='undefined' || !XART.rdy(key)) return false;
   const im=XART.get(key), fw=(im.naturalWidth||im.width)/EFX_N, fh=(im.naturalHeight||im.height);
@@ -73900,6 +75110,8 @@ function efxBurst(elem,x,y,size){
   if(!INFUSIONS[elem]) return null;
   if(efxBursts.length>=EFX_BURST_CAP) efxBursts.shift();
   const b={elem:elem,x:x,y:y,t:0,s:size||48}; efxBursts.push(b);
+  const cue=EFX_BURST_SOUND[elem];
+  if(cue&&Audio.SFX&&Audio.SFX[cue])Audio.SFX[cue]();
   try{ XART.rdy('efx_burst_'+elem); }catch(_b){ }
   return b;
 }
@@ -73909,12 +75121,19 @@ function efxTick(dt){
   efxBursts=efxBursts.filter(function(b){ return b.t<EFX_BURST_T; });
 }
 function efxDraw(){
-  /* burning units: the generated fire, standing on the unit, flickering on its own phase */
+  /* Eight authored hull-wrapping frames; open centres keep enemy silhouettes legible.
+     Fixed per-enemy phase avoids animation jumping whenever a target moves. */
   const tt=efxClock;
   for(const e of enemies){
-    if(!e || e.dead || !(e._burn>0)) continue;
-    const s=Math.max(22,Math.min(58,(e.w||30)*0.8)), f=Math.floor(tt*13+((e.x|0)%7))%EFX_N;
-    efxFrame('efx_burn',f,e.x-s/2,e.y-s*0.78,s,s,Math.min(1,e._burn*2.5));
+    if(!e || e.dead || e._dyingT!=null || !(e._burn>0)) continue;
+    if(e._burnPhase==null) e._burnPhase=Math.random()*8;
+    const s=clamp(Math.max(e.w||30,e.h||30)*1.35,38,132);
+    const f=Math.floor(tt*14+e._burnPhase)%8, key='enemy_burn_0922_'+f;
+    if(!XART.rdy(key)) continue;
+    const im=xartPalette(key,e._burnPalette||'#ff6924')||XART.get(key);
+    ctx.save();ctx.imageSmoothingEnabled=false;
+    ctx.globalAlpha*=Math.min(1,e._burn*3);
+    ctx.drawImage(im,e.x-s/2,e.y-s/2,s,s);ctx.restore();
   }
   s2VentDraw();
   /* geysers: the column erupts UP out of its vent - the source is revealed from the bottom as it grows */
@@ -74042,7 +75261,7 @@ function zoneTick(dt){
       for(const e of enemies){ if(!e||e.dead||e._dyingT!=null) continue;
         if(e.x<c.x0||e.x>x1||e.y<VH+20-reach) continue;
         e._zoneT=(e._zoneT||0)-dt; if(e._zoneT>0) continue; e._zoneT=0.18;
-        if(c.kind==='fire') e._burn=Math.max(e._burn||0,DK_BURN_TIME*0.7);
+        if(c.kind==='fire') enemyBurnApply(e,DK_BURN_TIME*0.7);
         if(c.kind==='water') e._soaked=Math.max(e._soaked||0,2.5);
         hitEnemy(e, c.kind==='lightning'?6:5); }
     }
@@ -74543,13 +75762,45 @@ if(window.BOFA && BOFA.music){
   BOFA.music.unused_x='assets/game/music/unused_x.mp3';
   BOFA.music.mini1='assets/game/music/miniboss_fireboss.mp3';
   BOFA.music.mini2='assets/game/music/miniboss_fireboss.mp3';
-  BOFA.music.boss2='assets/game/music/boss2_bossfight3.mp3';
-  BOFA.music.boss4='assets/game/music/boss4_cowboyfromhell.mp3';
+  BOFA.music.boss2='assets/game/music/boss2_bossfight3_loud_0920.mp3';
+  /* Stage 3's new main fight theme; the prior Cryo Behemoth track is archived.
+     The miniboss uses the field score so Pandemonium is reserved for the boss. */
+  BOFA.music.boss3='assets/game/music/boss3_pandemonium.mp3';
+  BOFA.music.mini3=BOFA.music.lvl3;
+  BOFA.music.unused2='assets/game/music/boss3_cryo_behemoth.mp3';
+  BOFA.music.boss4='assets/game/music/boss4_cowboyfromhell_loud_0920.mp3';
+  BOFA.music.unused3='assets/game/music/stage6_heavy_turbulence.mp3';
+  BOFA.music.deathtrap='assets/game/music/stage6_city_in_the_sky.mp3';
+  BOFA.music.unused4='assets/game/music/boss5_unity_breaker.mp3';
+  BOFA.music.boss5='assets/game/music/boss5_deadly_night.mp3';
+  BOFA.music.unused5='assets/game/music/unused5_bossfight4.mp3';
   BOFA.music.unused_fire='assets/game/music/unused_boss2_magma_colossus.mp3';
   BOFA.music.unused_fire2='assets/game/music/unused_boss2_magma_colossus.mp3';
 }
 if(window.BOFA && BOFA.sfx){
   Object.assign(BOFA.sfx, {
+    stage6FalseClearScratch:'assets/game/sounds/stage6_false_clear_scratch.wav',
+    /* ColeForge 0920: new owned weapon, hazard, boss, and enemy cues. */
+    cfComboFire:'assets/game/sounds/cf_combo_fire_0920.mp3',
+    cfComboIce:'assets/game/sounds/cf_combo_ice_0920.mp3',
+    cfComboLightning:'assets/game/sounds/cf_combo_lightning_0920.mp3',
+    cfComboPrism:'assets/game/sounds/cf_combo_prism_0920.mp3',
+    cfComboToxic:'assets/game/sounds/cf_combo_toxic_0920.mp3',
+    cfComboKinetic:'assets/game/sounds/cf_combo_kinetic_0920.mp3',
+    cfComboChrome:'assets/game/sounds/cf_combo_chrome_0920.mp3',
+    cfComboWater:'assets/game/sounds/cf_combo_water_0920.mp3',
+    cfComboDark:'assets/game/sounds/cf_combo_dark_0920.mp3',
+    cfComboThermoshock:'assets/game/sounds/cf_combo_thermoshock_0920.mp3',
+    cfFireWave:'assets/game/sounds/cf_fire_wave_0920.mp3',
+    cfFireBurst:'assets/game/sounds/cf_fire_burst_0920.mp3',
+    cfFireGeyser:'assets/game/sounds/cf_fire_geyser_0920.mp3',
+    cfShieldDestroy:'assets/game/sounds/cf_shield_destroy_0920.mp3',
+    cfBossRazorback:'assets/game/sounds/cf_boss_razorback_0920.mp3',
+    cfBossOverlord:'assets/game/sounds/cf_boss_overlord_0920.mp3',
+    cfBossWarden:'assets/game/sounds/cf_boss_warden_0920.mp3',
+    cfEnemyFlame:'assets/game/sounds/cf_enemy_flame_0920.mp3',
+    cfEnemyIce:'assets/game/sounds/cf_enemy_ice_0920.mp3',
+    cfEnemyElectric:'assets/game/sounds/cf_enemy_electric_0920.mp3',
     /* Replace the old tonal enemyShoot.mp3 catch-all with a short mechanical weapon transient.
        Named elemental/boss families below still keep their own sound identities. */
     enemyShoot:'assets/game/sounds/enemy_machine_shot_light.mp3',
@@ -74612,7 +75863,7 @@ if(window.BOFA && BOFA.sfx){
     iceBreathHit:'assets/game/sounds/enemy_ice_bolt.mp3',
     fireIceChargeStart:'assets/game/sounds/ice_breath_start.mp3',
     fireIceOrbLaunch:'assets/game/sounds/nsp_charge_release.mp3',
-    fireIceOrbImpact:'assets/game/sounds/hit.mp3',
+    fireIceOrbImpact:'assets/game/sounds/cf_combo_thermoshock_0920.mp3',
     laserCannon:'assets/game/sounds/reviewed_laser_cannon.mp3',
     spaceLaserCannon:'assets/game/sounds/reviewed_laser_cannon.mp3',
     spaceLaserHit:'assets/game/sounds/shield_hit_light.mp3',
@@ -74642,9 +75893,9 @@ if(window.BOFA && BOFA.sfx){
     enemyHeavyLaser:'assets/game/sounds/reviewed_enemy_laser.mp3',
     enemyScatterLaser:'assets/game/sounds/reviewed_enemy_laser.mp3',
     laserShot:'assets/game/sounds/reviewed_enemy_laser.mp3',
-    enemyFlameBolt:'assets/game/sounds/enemy_flame_bolt.mp3',
-    enemyIceBolt:'assets/game/sounds/enemy_ice_bolt.mp3',
-    enemyElectricBolt:'assets/game/sounds/enemy_electric_bolt.mp3',
+    enemyFlameBolt:'assets/game/sounds/cf_enemy_flame_0920.mp3',
+    enemyIceBolt:'assets/game/sounds/cf_enemy_ice_0920.mp3',
+    enemyElectricBolt:'assets/game/sounds/cf_enemy_electric_0920.mp3',
     enemyRailCannon:'assets/game/sounds/enemy_rail_cannon.mp3',
     enemyBossCannon:'assets/game/sounds/enemy_boss_cannon.mp3',
     explosionAirSmall01:'assets/game/sounds/explosion_air_small_01.mp3',
@@ -74699,7 +75950,7 @@ if(window.BOFA && BOFA.sfx){
        ============================================================ */
     shieldHitLight:'assets/game/sounds/shield_hit_light.mp3',
     shieldHitHeavy:'assets/game/sounds/shield_hit_heavy.mp3',
-    shieldBreakCombat:'assets/game/sounds/shield_break.mp3',
+    shieldBreakCombat:'assets/game/sounds/cf_shield_destroy_0920.mp3',
     shieldGraze:'assets/game/sounds/shield_graze.mp3',
     shieldUp:'assets/game/sounds/shield_up.mp3',
     shieldLow:'assets/game/sounds/shield_low.mp3',
@@ -74708,13 +75959,13 @@ if(window.BOFA && BOFA.sfx){
     /* one signature ordnance voice per stage boss - see BOSS_KIND_SFX */
     /* 0914 encounter-owned reports; matching TAME rows prevent per-round stacking. */
     razorbackGun:'assets/game/sounds/reviewed_enemy_heavy_mg.mp3',
-    razorbackPressure:'assets/game/sounds/cole_pressure_release_0913.mp3',
+    razorbackPressure:'assets/game/sounds/cf_boss_razorback_0920.mp3',
     razorbackCharge:'assets/game/sounds/cole_pressure_start_0913.mp3',
     razorbackRocket:'assets/game/sounds/nsp_rocket_launch.mp3',
     razorbackRam:'assets/game/sounds/juggernaut_ram_launch_0913.mp3',
     overlordGun:'assets/game/sounds/reviewed_enemy_heavy_mg.mp3',
     overlordRocket:'assets/game/sounds/nsp_rocket_launch.mp3',
-    overlordLance:'assets/game/sounds/reviewed_enemy_laser.mp3',
+    overlordLance:'assets/game/sounds/cf_boss_overlord_0920.mp3',
     overlordWind:'assets/game/sounds/cole_pressure_release_0913.mp3',
     overlordCharge:'assets/game/sounds/furnace_power_surge.mp3',
     overlordRotor:'assets/game/sounds/overlord_helicopter_rotor.mp3',
@@ -74730,7 +75981,7 @@ if(window.BOFA && BOFA.sfx){
     sovereignHelperGun:'assets/game/sounds/enemy_machine_shot_heavy.mp3',
     sovereignHeat:'assets/game/sounds/furnace_servo_whirr.mp3',
     sovereignWindup:'assets/game/sounds/furnace_power_surge.mp3',
-    sovereignLaser:'assets/game/sounds/reviewed_enemy_laser.mp3',
+    sovereignLaser:'assets/game/sounds/cf_boss_warden_0920.mp3',
     bossfireDamkeeper:'assets/game/sounds/bossfire_damkeeper.mp3',
     bossfireInfernoreaver:'assets/game/sounds/bossfire_infernoreaver.mp3',
     bossfireCryospear:'assets/game/sounds/bossfire_cryospear.mp3',
@@ -74759,10 +76010,10 @@ if(window.BOFA && BOFA.sfx){
     furnaceLaserEnd:'assets/game/sounds/laser_beam_end.mp3',
     furnaceHeavyLaser:'assets/game/sounds/enemy_heavy_laser.mp3',
     alertBeamCharge:'assets/game/sounds/alert_beam_charge.mp3',
-    firewallArrive:'assets/game/sounds/firewall_arrive.mp3',
+    firewallArrive:'assets/game/sounds/cf_fire_wave_0920.mp3',
     firewallPass:'assets/game/sounds/firewall_pass.mp3',
     s2GeyserWarn:'assets/game/sounds/s2_geyser_warn_0918.mp3',
-    s2GeyserErupt:'assets/game/sounds/s2_geyser_erupt_0918.mp3',
+    s2GeyserErupt:'assets/game/sounds/cf_fire_geyser_0920.mp3',
 
     /* ============================================================
        TWENTY CUES THE CODE ASKS FOR AND THE ENGINE DOES NOT HAVE (drop 0912k)
@@ -74788,7 +76039,7 @@ if(window.BOFA && BOFA.sfx){
     enemyBossHit:'assets/game/sounds/explosion_air_small_01.mp3',
     missileHit:'assets/game/sounds/explosion_air_small_02.mp3',
     grenadeHit:'assets/game/sounds/explosion_fuel_air.mp3',
-    fireOrbImpact:'assets/game/sounds/explosion_plasma.mp3',
+    fireOrbImpact:'assets/game/sounds/cf_fire_burst_0920.mp3',
     iceOrbImpact:'assets/game/sounds/explosion_ice_burst.mp3',
     boom:'assets/game/sounds/explosion_air_large.mp3',
     nuclearDetonate:'assets/game/sounds/explosion_chain_sequence.mp3',
@@ -74885,6 +76136,27 @@ const Snd=(function(){
      the context is actually running, and any throw drops that sound back to plain playback for
      good — the level cut and the throttle still apply either way. */
   A.TAME = {
+    /* New one-shots are short, native, and gated to keep the score forward. */
+    cfComboFire:{g:0.38, native:true, min:0.20},
+    cfComboIce:{g:0.38, native:true, min:0.20},
+    cfComboLightning:{g:0.38, native:true, min:0.20},
+    cfComboPrism:{g:0.38, native:true, min:0.20},
+    cfComboToxic:{g:0.38, native:true, min:0.20},
+    cfComboKinetic:{g:0.38, native:true, min:0.20},
+    cfComboChrome:{g:0.38, native:true, min:0.20},
+    cfComboWater:{g:0.38, native:true, min:0.20},
+    cfComboDark:{g:0.38, native:true, min:0.20},
+    cfComboThermoshock:{g:0.38, native:true, min:0.20},
+    cfFireWave:{g:0.57, native:true, min:1.40},
+    cfFireBurst:{g:0.52, native:true, min:0.32},
+    cfFireGeyser:{g:0.57, native:true, min:0.85},
+    cfShieldDestroy:{g:0.64, native:true, min:0.50},
+    cfBossRazorback:{g:0.55, native:true, min:0.38},
+    cfBossOverlord:{g:0.55, native:true, min:0.38},
+    cfBossWarden:{g:0.55, native:true, min:0.38},
+    cfEnemyFlame:{g:0.47, native:true, min:0.16},
+    cfEnemyIce:{g:0.47, native:true, min:0.16},
+    cfEnemyElectric:{g:0.47, native:true, min:0.16},
     /* ============================================================
        THE 0912j GATES. ⚠ A KEY WITH NO ROW HERE PLAYS AT g=1, UNFILTERED, WITH NO RETRIGGER GATE,
        and that - not the samples - is the mechanism behind every beeping complaint in this
@@ -74903,6 +76175,27 @@ const Snd=(function(){
        SYNTH enemyShoot body, and enemyShoot is a BOFA.sfx key, so the sample bridge overwrites
        Audio.SFX.enemyShoot and the guard is unreachable. The live gate is this table's `min`.
        ============================================================ */
+    /* New one-shots are short, native, and gated to keep the score forward. */
+    cfComboFire:{g:0.38, native:true, min:0.20},
+    cfComboIce:{g:0.38, native:true, min:0.20},
+    cfComboLightning:{g:0.38, native:true, min:0.20},
+    cfComboPrism:{g:0.38, native:true, min:0.20},
+    cfComboToxic:{g:0.38, native:true, min:0.20},
+    cfComboKinetic:{g:0.38, native:true, min:0.20},
+    cfComboChrome:{g:0.38, native:true, min:0.20},
+    cfComboWater:{g:0.38, native:true, min:0.20},
+    cfComboDark:{g:0.38, native:true, min:0.20},
+    cfComboThermoshock:{g:0.38, native:true, min:0.20},
+    cfFireWave:{g:0.57, native:true, min:1.40},
+    cfFireBurst:{g:0.52, native:true, min:0.32},
+    cfFireGeyser:{g:0.57, native:true, min:0.85},
+    cfShieldDestroy:{g:0.64, native:true, min:0.50},
+    cfBossRazorback:{g:0.55, native:true, min:0.38},
+    cfBossOverlord:{g:0.55, native:true, min:0.38},
+    cfBossWarden:{g:0.55, native:true, min:0.38},
+    cfEnemyFlame:{g:0.47, native:true, min:0.16},
+    cfEnemyIce:{g:0.47, native:true, min:0.16},
+    cfEnemyElectric:{g:0.47, native:true, min:0.16},
     whip:     {g:0.44, lp:5200, min:0.34},
     lockAlert:{g:0.40, lp:5200, min:0.55},
 
@@ -75362,7 +76655,8 @@ const Snd=(function(){
     if(A.cur&&A.cur.paused)try{const pr=A.cur.play();if(pr&&pr.catch)pr.catch(function(){});}catch(e){}
   };
   A.stopMusic=function(){ A._warpMusicStop();if(A.cur){ try{A.cur.pause();}catch(e){} A.cur=null; } };
-  A.stopVoice=function(){ for(const nm in A.VOICE_SET){ const p=A.pools[nm]; if(p&&p.list){ for(const a of p.list){ try{ a.pause(); a.currentTime=0; }catch(e){} } } } };
+  A.stopCue=function(name){const p=A.pools[name];if(p&&p.list)for(const a of p.list){try{a.pause();a.currentTime=0;}catch(e){}}};
+  A.stopVoice=function(){ for(const nm in A.VOICE_SET) A.stopCue(nm); };
   A.setVol=function(k,v){ if(A.vol[k]!=null){ A.vol[k]=c01(v); if(A.cur) A.cur.volume=c01(A.vol.music*A.vol.master*pauseMusicDuck());if(k==='music'||k==='master')A.setWarpMix(A.warpMix); } };
   return A;
 })();
@@ -75450,8 +76744,8 @@ function drawRiftFallback(dt){
 }
 function _stopContinueVO(){
   drawContinue._vo=false;
-  // silence the number-tick VO channel if it's mid-count
-  try{ if(Audio.stopVoice)Audio.stopVoice(); }catch(e){}
+  // Stop only the countdown channels; GOOD LUCK and the GAME/OVER lines must survive the state change.
+  try{if(typeof Snd!=='undefined'&&Snd){Snd.stopCue('countdown');Snd.stopCue('continueVO');}}catch(e){}
 }
 function drawContinue(dt){
   drawWorld(0);

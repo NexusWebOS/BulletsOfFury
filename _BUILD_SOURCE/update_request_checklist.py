@@ -29,7 +29,7 @@ for g in groups:
   lines.append(line)
  lines.append('')
 lines+=['## Keeping this tally current','', 'Edit stable IDs in [REQUEST_CHECKLIST_0914.json](REQUEST_CHECKLIST_0914.json), then run `python _BUILD_SOURCE/update_request_checklist.py`. Update status, evidence and workOrder together. The renderer checks IDs, evidence files and unique queue order, then recomputes totals. Do not split finished details merely to inflate completion.','']
-(D/'REQUEST_CHECKLIST_0914.md').write_text('\n'.join(lines),encoding='utf-8')
+(D/'REQUEST_CHECKLIST_0914.md').write_bytes('\n'.join(lines).encode('utf-8'))
 q=['# Bullets of Fury — easiest-to-hardest work order','',tally,'',data['queuePolicy'],'','Completed entries are excluded. The list below contains every unfinished item exactly once. Partial items retain that status. Difficulty bands are estimates, not promises that an unchecked feature already works. Asset/naming dependencies can be skipped until available.','']
 band=None
 for n,x in enumerate(queue,1):
@@ -39,5 +39,5 @@ for n,x in enumerate(queue,1):
  q.append(line)
  if n==len(queue)or queue[n]['difficultyBand']!=band:q.append('')
 q+=['Full completed list and evidence: [request checklist](REQUEST_CHECKLIST_0914.md).','']
-(D/'WORK_ORDER_0914.md').write_text('\n'.join(q),encoding='utf-8')
+(D/'WORK_ORDER_0914.md').write_bytes('\n'.join(q).encode('utf-8'))
 print(dict(counts),'total',len(items),'queued',len(queue),'SpriteCook-dependent',assets)

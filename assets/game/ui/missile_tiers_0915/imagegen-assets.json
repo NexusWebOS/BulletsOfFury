@@ -5,6 +5,16 @@
     "uber_magenta_source": "uber_magenta_source.png"
   },
   "prompt_summary": "Distinct M missile upgrades: navy Super, orange/black Ultra, and a regenerated nuclear-green Uber with physically connected wings and a solid magenta key background; matching full-name badges and armored boxes.",
+  "crate_recolor_0919": {
+    "generator": "OpenAI imagegen edit",
+    "source": "Corresponding *_box_v2.png for each tier",
+    "prompt_summary": "Strict recolor of the existing pixel-art crate. Preserve silhouette, panels, bolts, two missiles, tier label, outlines and shading. Make broad armor blue/orange/green at gameplay size; give both missile tips and the bottom star the same tier color. Keep steel missile bodies and transparent background, without added objects or text.",
+    "outputs": [
+      {"file": "super_box_v3.png", "color": "cobalt blue", "size": [1254, 1254], "sha12": "7b88e3d9a2a2"},
+      {"file": "ultra_box_v3.png", "color": "amber orange", "size": [1254, 1254], "sha12": "2177d28ec17c"},
+      {"file": "uber_box_v3.png", "color": "emerald green", "size": [1254, 1254], "sha12": "f26e0ab0c48a"}
+    ]
+  },
   "source_sha12": "292bc08ea3a5",
   "assets": [
     {

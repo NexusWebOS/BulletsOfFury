@@ -94,7 +94,9 @@ function onReady(){
   $('#t-element').innerHTML='<option value="">BARE</option>'+C.elements.map(e=>'<option value="'+e+'">'+e.toUpperCase()+'</option>').join('');
   $('#t-variant').innerHTML='<option value="">AUTO</option>'+C.variants.map(v=>'<option value="'+v+'">'+v.toUpperCase()+'</option>').join('');
   renderRoster();
-  msg('roster: '+S.roster.length+' types across '+new Set(S.roster.map(r=>r.table)).size+' tables');
+  renderInspector();
+  toggleDrawer(true);
+  msg('Choose a unit from ROSTER, then SPAWN. Adjust the live sliders or open FIRE to test its attacks.');
 }
 function renderRoster(){
   const box=$('#roster'); box.innerHTML='';
@@ -976,8 +978,19 @@ function wire(){
   $('#t-lab').onclick=labOpen;
   $('#t-equip').onclick=()=>{const d=api();if(!d)return; if(!d.lab.active)labOpen();const out=d.scenario.equip(+$('#t-weapon').value,+$('#t-level').value,$('#t-element').value,$('#t-variant').value);msg(out.ok?('equipped '+out.weapon+' lv'+out.level+(out.element?' '+out.element:'')):(out.reason||'unavailable'));};
   $('#b-spawn').onclick=spawn; $('#b-clear').onclick=clearField;
-  $('#b-apply').onclick=()=>renderInspector();
-  $('#e-apply').onclick=()=>renderInspector();
+  const applyInspector=()=>{
+    if(!api())return msg('Engine is still loading.');
+    if(!unit())return msg('Choose a unit from ROSTER, then press SPAWN.');
+    // Commit the controls before repainting; repainting alone used to discard focused edits.
+    $$('#insp input[data-k]').forEach(el=>el.dispatchEvent(new Event('input')));
+    for(const id of ['i-pattern','i-shadow','i-shoots']){
+      const el=$('#'+id);if(el)el.dispatchEvent(new Event('change'));
+    }
+    msg('Applied to the live unit. Lab changes are temporary; JSON exports keep your setup.');
+    renderInspector();
+  };
+  $('#b-apply').onclick=applyInspector;
+  $('#e-apply').onclick=applyInspector;
   $('#e-respawn').onclick=()=>{ clearField(); spawn(); };
   $('#t-fov').onchange=e=>S.fov=e.target.checked;
   $('#t-anchor').onchange=e=>S.anchors=e.target.checked;

@@ -1,4 +1,5 @@
 {
+  "enemy_burn_0922_": {"role": "effect", "sheet": null, "note": "Eight generated transparent hull-wrapping burn frames. Shared 128px anchors; flameDraw palette retained per enemy. Source and prompt in assets/game/fx_burn_0922/provenance.json."},
   "_README": "Prefix -> role, named by Mike from the 0807y contact sheet. THIS IS THE SOURCE OF TRUTH. Filenames in this project have lied four separate times in one session (slatejet=debris, nxp_smoke=explosion, nqm_vent=a vent port, nrb=helix mass). Do not infer a role from a key name again \u2014 look it up here, and if it is not here, render it and ask.",
   "?": {
     "role": "boot",
@@ -213,5 +214,30 @@
     "note": "CONFIRMED REAL 0808b. NINE reels, one per pilot, FOUR frames each: nthp_<pilot>_0..3. Mike read 'all missing' because my render looked up the family name without its frame index. This is the art the thruster fix needs \u2014 he has asked repeatedly to stop overlaying fake thrusters and animate these instead. NEVER delete."
   },
   "_ROUND2_WARNINGS": "Three calls in round 2 contradict earlier direction and are HELD, not applied: nxp_ (called a decal, is the explosion set he confirmed himself), nthp_ (called delete, is the per-pilot thruster art he has asked to be fixed), ndk_ (called 'idk', is Decker's incendiary shotgun kit). All three were misjudged from an unrepresentative thumbnail \u2014 the sampler took the first frame of each reel, which for an effect is a 4px spark.",
-  "_SAMPLER_WARNING": "TWO separate misreads in this taxonomy came from HOW I SAMPLED, not from Mike: (1) taking frame 0 of an effect reel shows a 4px spark, which made the explosion set look like a decal; (2) looking up a FAMILY name with no frame index returns nothing, which made nine real thruster reels and a whole weapon set look missing. When rendering a family for identification, take a MID-REEL frame and resolve the index."
+  "_SAMPLER_WARNING": "TWO separate misreads in this taxonomy came from HOW I SAMPLED, not from Mike: (1) taking frame 0 of an effect reel shows a 4px spark, which made the explosion set look like a decal; (2) looking up a FAMILY name with no frame index returns nothing, which made nine real thruster reels and a whole weapon set look missing. When rendering a family for identification, take a MID-REEL frame and resolve the index.",
+  "rr_ship_": {
+    "role": "enemyship_master",
+    "sheet": null,
+    "note": "Roaming Rebels south-facing overhead ship masters, 0922. Five distinct generated designs; opaque hulls and alpha backgrounds. Art/editor library only; existing Stage 6 encounter unchanged. See assets/game/roaming_rebels_0922/roster.json."
+  },
+  "rr_portrait_": {
+    "role": "dialogue_portrait",
+    "sheet": null,
+    "note": "Five Roaming Rebels portraits extracted from their generated roster concept. Working names Voss, Nyx, Rook, Kaia, Jace; leader included among three men/two women."
+  },
+  "port_cf_": {
+    "role": "pilot_portrait",
+    "sheet": null,
+    "note": "0922 replacement nine-pilot expression pack. Supplied new Cole likeness and ZIP poses; current Yuri mohawk identity. Source art and prompts at assets/game/pilots_0922/provenance.json. Legacy port_/face_ requests redirect before atlas lookup."
+  },
+  "comm_": {
+    "role": "dialogue_portrait",
+    "sheet": null,
+    "note": "0922 replacement compact framed pilot expressions facing right toward dialogue text; see assets/game/pilots_0922/comm."
+  },
+  "cole_body_0922": {
+    "role": "pilot_body",
+    "sheet": null,
+    "note": "Mike supplied new full-body Cole figure. Shared pilot select/cinematic/intro asset; original alpha preserved."
+  }
 }

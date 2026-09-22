@@ -11,11 +11,14 @@ module.exports=function testWeaponRepair0918(vm,ctxv,ok){
     'the same obtained element forges both machine gun and laser');
   ok(R("forgeSelect(0,null)==='ok' && !run.forge[0] && run.forgeForms[0].fire && forgeSelect(0,'fire')==='ok' && run.forge[0].elem==='fire'"),
     'switching to bare and back preserves the crafted form');
-  R("forgeComboGrant('ice');");
+  R("forgeComboGrant('ice');var __wrPilot=run.pilot;run.pilot='freezer';run.stage=3;");
   ok(R("weaponBaseForms(4).some(function(x){return x.id==='icebreath';}) && weaponBaseForms(5).some(function(x){return x.id==='fireorb';}) && weaponBaseForms(5).some(function(x){return x.id==='fireice';})"),
     'loadout offers Ice Breath, Fire Orb and Thermoshock once their elements are obtained');
   ok(R("weaponFormSelect(5,{kind:'variant',id:'fireice'})==='ok' && run.wvars[5]==='fireice'"),
-    'the loadout form selector equips Thermoshock');
+    'the Freezer loadout form selector equips Thermoshock');
+  R("run.pilot='cole';");
+  ok(R("!weaponBaseForms(4).some(function(x){return x.id==='icebreath';}) && weaponFormSelect(5,{kind:'variant',id:'fireice'})==='locked'"), 'other pilots cannot equip Freezer-exclusive forms');
+  R("run.pilot=__wrPilot;");
   ok(R("(run.stage=5,run.spaceMode=true,forgeComboGrant('chrome'),forgeVisible())"),
     'the Stage-5 Chromium Forge opens after the space boss');
   ok(R("(run.stage=9,forgeComboGrant('dark'),infusionGateOpen('dark'))"),

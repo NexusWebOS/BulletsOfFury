@@ -1,8 +1,8 @@
 # Bullets of Fury — request checklist
 
-Updated 2026-09-19. **176 entries: 150 complete / 9 partial / 17 pending.**
+Updated 2026-09-20. **195 entries: 170 complete / 12 partial / 13 pending.**
 
-**26 remain unfinished.** 10 depend on SpriteCook production assets; 0 needs a model-name decision. These are included in the totals.
+**25 remain unfinished.** 6 depend on SpriteCook production assets; 0 needs a model-name decision. These are included in the totals.
 
 Consolidated requests in this conversation; superseded variants folded into the latest request. Rows count deliverables, not effort or percent of development time.
 
@@ -12,7 +12,7 @@ Detailed specifications: [original request ledger](OVERNIGHT_REQUESTS_0914.md). 
 
 ## Current batch and next work
 
-Just verified: 0918 authored pickup/Furnace turns, rectangular shield gauge, dual Razorback bars and Stage 2 fire-hazard repair [Proof](ROTATION_SHIELD_STAGE2_REPAIR_0918.md).
+Just verified: Right-facing enlarged dialogue portraits and repaired B/Back routes through mode setup, verified in Chromium [Proof](DIALOGUE_BACK_0920.md).
 
 Work in ascending workOrder, an estimate of implementation plus verification difficulty. Respect prerequisites and skip externally blocked items while continuing ready work. Re-rank when investigation changes the estimate; retain IDs and explain the change.
 
@@ -22,18 +22,20 @@ Mike selected furyship_somersault_13.png and approved image_gen for its replacem
 
 | Area | Complete | Partial | Pending | Total |
 | --- | ---: | ---: | ---: | ---: |
-| Earlier handoff, weapons and Tempest | 9 | 1 | 0 | 10 |
-| Shared combat, warnings and targeting | 17 | 3 | 2 | 22 |
-| Stage 1: fodder, Razorback and jungle chopper | 18 | 1 | 0 | 19 |
-| Stage 2: lava enemies, Magma Ward and Furnace Tyrant | 7 | 1 | 3 | 11 |
-| Stage 3: ice enemies, miniboss and Rime Wall | 12 | 0 | 2 | 14 |
-| Stage 4: Olive Warden and Sovereign | 14 | 0 | 4 | 18 |
-| Stages 5-9: space and encounter cleanup | 18 | 2 | 4 | 24 |
+| Earlier handoff, weapons and Tempest | 10 | 2 | 0 | 12 |
+| Shared combat, warnings and targeting | 21 | 4 | 2 | 27 |
+| Stage 1: fodder, Razorback and jungle chopper | 18 | 0 | 1 | 19 |
+| Stage 2: lava enemies, Magma Ward and Furnace Tyrant | 8 | 1 | 2 | 11 |
+| Stage 3: ice enemies, miniboss and Rime Wall | 13 | 1 | 1 | 15 |
+| Stage 4: Olive Warden and Sovereign | 16 | 0 | 3 | 19 |
+| Stages 5-9: space and encounter cleanup | 21 | 3 | 3 | 27 |
 | Manual missile tiers and supplies | 9 | 0 | 0 | 9 |
-| Pause, saving, title and pilot selection | 25 | 0 | 0 | 25 |
-| Achievements, timers and unlockable modes | 11 | 1 | 2 | 14 |
+| Pause, saving, title and pilot selection | 29 | 0 | 0 | 29 |
+| Achievements, timers and unlockable modes | 12 | 1 | 1 | 14 |
 | Arcade and shared difficulty rewards | 8 | 0 | 0 | 8 |
-| Stage 2: lava hazards, Magma Ward and Furnace Tyrant | 2 | 0 | 0 | 2 |
+| Stage 2: lava hazards, Magma Ward and Furnace Tyrant | 3 | 0 | 0 | 3 |
+| Stage 5 combat and miniboss | 1 | 0 | 0 | 1 |
+| Stage 7 combat and boss | 1 | 0 | 0 | 1 |
 
 ## Checklist
 
@@ -49,6 +51,8 @@ Mike selected furyship_somersault_13.png and approved image_gen for its replacem
 - [x] **PRE-08 · Complete** — Cole's silent middle nuclear detonation: separate impacts now each receive their sound. [Evidence](BUGFIX_0913.md).
 - [x] **PRE-09 · Complete** — Razorback and rotated Tempest collision fixes: pellets and held lasers respect exposed parts and finite beam geometry. [Evidence](BUGFIX_0913.md).
 - [ ] **PRE-10 · Partial** — Existing ship used in space, pilot palettes, transformation and space death/roll support have proof; the later replacement concept and complete new frame set are still pending. [Evidence](proofs/spaceship_0913a/report.json).
+- [ ] **PRE-11 · Partial** — Build short, readable Campaign transition scenes with two or three existing pilots, top-down ships, front-facing portraits, and cockpit/POV dialogue where the story supports them. [Evidence](CAMPAIGN_BRIDGE_0920.md).
+- [x] **PRE-12 · Complete** — Replace the retired cinematic aircraft cutouts with the current nine-pilot gameplay airframes in the openings and Campaign flight scenes. [Evidence](LATEST_REPAIRS_0920.md).
 
 ### Shared combat, warnings and targeting
 
@@ -66,14 +70,19 @@ Mike selected furyship_somersault_13.png and approved image_gen for its replacem
 - [x] **ENG-12 · Complete** — Shared elemental absorption: fire-aligned enemies retain 50% fire damage and ice-aligned enemies retain 50% ice damage, with throttled matching popup text at enemy, miniboss and boss boundaries. [Evidence](ELEMENTAL_ABSORPTION_0915.md).
 - [x] **ENG-13 · Complete** — Shared elemental weakness: fire deals 2x to ice and ice 2x to fire across enemy, miniboss, boss, component/helper and shield damage routes; Freezer's authored x2 attacks do not stack to x4. [Evidence](ELEMENTAL_WEAKNESS_0915.md).
 - [ ] **ENG-14 · Partial** — All pilots retain barrel roll and somersault access; existing ground/space support is present, but full nine-pilot regression and the replacement ship frames remain. [Evidence](proofs/spaceship_0913a/report.json).
-- [ ] **ENG-15 · Pending** — HUD incoming-lock indicator above Equipped: gray idle, red flashing and distance-accelerated beeps until evasion or hit. Dependency: SpriteCook.
+- [x] **ENG-15 · Complete** — HUD incoming-lock indicator above Equipped: gray idle, red flashing and distance-accelerated beeps until evasion or hit. [Evidence](LOCK_WARNING_0920.md).
 - [x] **ENG-16 · Complete** — Boss victories grant deterministic stage elements instead of weapon pairs; every obtained element can upgrade every forgeable weapon and remains usable after save/load. [Evidence](WEAPON_FORGE_REPAIR_0918.md).
 - [x] **ENG-17 · Complete** — Persist multiple crafted forms per weapon and select them from loadout, including Flamethrower/Ice Breath and Ice Orb/Fire Orb/Thermoshock choices; preserve two upgrades and two re-specs per stage. [Evidence](WEAPON_FORGE_REPAIR_0918.md).
 - [x] **ENG-18 · Complete** — Give Fire Orb a dedicated readable Magma Orb projectile and verify ordinary enemy, boss-family, Furious charge/release, and projectile-launch sounds resolve through audible real-sample routes. [Evidence](WEAPON_FORGE_REPAIR_0918.md).
-- [x] **ENG-19 · Completed** — Life-loss respawns clear the incoming projectile lane for the full two-second invulnerability window and keep the ship visibly lit; distant rounds and boss beams remain. [Proof](RESPAWN_SAFETY_0919.md).
-- [ ] **ENG-20 · Partial** — The final red FOV cone and alert now have a cool edge on Hard/Furious, separate from warm projectiles and white/orange explosions. Audit other hazard families under dense overlap. [Proof](HARD_FURIOUS_WARNING_CONTRAST_0919.md).
+- [x] **ENG-19 · Complete** — Respawn safety: clear or neutralize lethal lower-screen patterns and preserve a readable invulnerability window so a death cannot immediately chain into another. [Evidence](RESPAWN_SAFETY_0919.md).
+- [ ] **ENG-20 · Pending** — Hard/Furious hazard readability: separate warning, hostile projectile, explosion and enemy-palette values when several red effects overlap. [Evidence](PLAYTEST_REPAIR_QUEUE_0918.md).
 - [ ] **ENG-21 · Pending** — Complete a vehicle-wide authored direction-frame audit for all remaining tanks and jets; remove live canvas rotation where it produces warped or wonky turns, while retaining correct pivots, shadows and weapon mounts. [Evidence](ROTATION_SHIELD_STAGE2_REPAIR_0918.md).
 - [x] **ENG-22 · Complete** — Give pickup families authored turn strips, select frames at runtime, and remove the ugly additive glow discs from the new bombs and score bullets. [Evidence](ROTATION_SHIELD_STAGE2_REPAIR_0918.md).
+- [ ] **ENG-23 · Partial** — Audit and repair the Forge/weapon upgrade loop. The Stage-1-to-2 boss reward, two combines, re-spec, Loadout swap, death persistence, audible UI cues, campaign manual-slot and autosave round-trips, and Stage-3 entry have Chromium proof. Stage-1 through Stage-9 boss elements and all 81 weapon/element pairings have Chromium proof. Weapon switching now applies the exact forged level without leaking an aura to bare weapons; full natural-play combinations still need review. [Evidence](FORGE_REWARD_AUDIT_0920.md).
+- [ ] **ENG-24 · Partial** — Create and audition a full ElevenLabs plus ColeForge sound pass for every forged weapon combination, miniboss, boss, enemy projectile, fire hazard and shield destruction. A 20-cue local ColeForge bank is integrated; ElevenLabs and remaining encounter voices need finishing. Dependency: ElevenLabs key. [Evidence](AUDIO_DECALS_EXIT_0920.md).
+- [x] **ENG-25 · Complete** — Show authored, weapon-specific impact decals for all nine primary weapon slots and animated fire, ice and lightning bursts on uninfused hits. [Evidence](AUDIO_DECALS_EXIT_0920.md).
+- [x] **ENG-26 · Complete** — Keep the score at full selected volume during boss fights and lift quieter Stage-2 and Stage-4 boss masters without replacing their originals. [Evidence](AUDIO_DECALS_EXIT_0920.md).
+- [x] **ENG-27 · Complete** — Keep the pilot steerable after boss death and during stage-clear hover; hand control to the fly-off only when ascent begins. [Evidence](AUDIO_DECALS_EXIT_0920.md).
 
 ### Stage 1: fodder, Razorback and jungle chopper
 
@@ -90,11 +99,11 @@ Mike selected furyship_somersault_13.png and approved image_gen for its replacem
 - [x] **S1-11 · Complete** — Below 50%: frenzy plus four alternating down/up passes across distinct lanes; passes two and four rain bullets. [Evidence](OVERLORD_FOUR_PASS_FRENZY_0915.md).
 - [x] **S1-12 · Complete** — Chopper pass warning: eight synchronized red flashes/beeps, then committed fast but reactable charge with a shooting window. [Evidence](OVERLORD_EIGHT_BEAT_WARNING_0915.md).
 - [x] **S1-13 · Complete** — Furious Razorback is the current authored tank at 150% scale with only its green armor panels palette-swapped to neon red; sonic pressure waves have readable decibel-lobe openings and matching collision gaps. [Evidence](WEAPON_FORGE_REPAIR_0918.md).
-- [x] **S1-14 · Completed** — Hard Razorback heavy attacks now wait for the preceding sonic wave, Retina lock, and missile to clear before the other tank takes its turn; ordinary guns remain active. [Proof](RAZORBACK_HANDOFF_0919.md).
-- [ ] **S1-15 · Partial** — A suppression beat now separates the committed Retina rocket flurry from the missile rack; Furious sonic rings have a pale edge and projectiles have a warm halo. Dense warning/explosion overlap still needs continuous playtest review. [Proof](RAZORBACK_FURIOUS_READABILITY_0919.md).
+- [x] **S1-14 · Complete** — Hard Razorback Duo: prevent overlapping sonic releases, missile locks and recovery windows from creating unavoidable stacked patterns while preserving the two-tank challenge. [Evidence](RAZORBACK_HANDOFF_0919.md).
+- [ ] **S1-15 · Pending** — Furious Razorback: retune consecutive retina rocket salvos and distinguish red warnings, projectiles, explosions and armor during peak attack density. [Evidence](PLAYTEST_REPAIR_QUEUE_0918.md).
 - [x] **S1-16 · Complete** — Razorback early-turret hit feedback: flash the targetable central turret white during the machine-gun phase and keep destroyed-part feedback local to the struck module. [Evidence](ROTATION_SHIELD_STAGE2_REPAIR_0918.md).
 - [x] **S1-17 · Complete** — Give the Hard Razorback Duo readable per-tank condition/target feedback in addition to the combined encounter bar so the player can identify which tank is close to breaking. [Evidence](ROTATION_SHIELD_STAGE2_REPAIR_0918.md).
-- [x] **S1-18 · Complete** — The Razorback now uses a CC0 recorded rolling texture mixed with its low motor bed; the Hard duo owns one loop that follows either moving tank and stops only when both stop. [Proof](RAZORBACK_TREAD_RECORDING_0919.md).
+- [x] **S1-18 · Complete** — Replace the temporary low-passed shared engine loop with a dedicated tracked-tank tread/roller recording and verify movement start, stop and dual-tank ownership. [Evidence](RAZORBACK_TREAD_RECORDING_0919.md).
 - [x] **S1-19 · Complete** — Show two independent miniboss bars for the Hard Razorback Duo, one for each tank, and flash the targetable center turret during opening-phase hits. [Evidence](ROTATION_SHIELD_STAGE2_REPAIR_0918.md).
 
 ### Stage 2: lava enemies, Magma Ward and Furnace Tyrant
@@ -107,7 +116,7 @@ Mike selected furyship_somersault_13.png and approved image_gen for its replacem
 - [x] **S2-06 · Complete** — Furnace rollerball: slow-to-medium-to-fast-to-super-fast spin and accelerating horizontal travel, dodgeable by roll/somersault. [Evidence](FURNACE_ROLLERBALL_0915.md).
 - [x] **S2-07 · Complete** — Hard miniboss and boss: additional 25% HP and 50% fire absorption using the shared elemental rules. [Evidence](STAGE2_HARD_ENCOUNTERS_0915.md).
 - [ ] **S2-08 · Partial** — Missile-sequence head fight is recorded as a design note; distinct Super Missile Box and encounter sequence remain to be built. [Evidence](OVERNIGHT_REQUESTS_0914.md).
-- [ ] **S2-09 · Pending** — Generate improved authored Furnace giant-beam graphics that also support the Stage-3 Furious palette variant. Dependency: SpriteCook.
+- [x] **S2-09 · Complete** — Regenerated Furnace giant core-beam art and a dark-blue, pale-core variant for the Stage-3 Furious boss; both have native-browser visual proof. [Evidence](FROST_FURIOUS_BEAM_0920.md).
 - [ ] **S2-10 · Pending** — Accelerating screaming head frames and shrieks/shake; two fire-ring X cycles; final white flash, absent boss and residual explosions. Dependency: Mike: Stage 2 boss identity. [Evidence](BOSS_BATCH_0915.md).
 - [ ] **S2-11 · Pending** — Continue scrolling after defeat; RNG different-pilot dialogue addressing the player about the assimilated military mech. Dependency: S2-10. [Evidence](BOSS_BATCH_0915.md).
 
@@ -124,9 +133,10 @@ Mike selected furyship_somersault_13.png and approved image_gen for its replacem
 - [x] **S3-09 · Complete** — Furious miniboss: combine rockets with a late committed charge into the player. [Evidence](FROST_CRUISER_FURIOUS_CHARGE_0915.md).
 - [ ] **S3-10 · Pending** — Hard boss: Juggernaut-like dash with authored charge effects, fluid circular return and persistent hull-shaped shadow. Dependency: SpriteCook.
 - [x] **S3-11 · Complete** — Hard boss below 50%: double laser firing and shootable homing laser balls; evade by leaving the screen or breaking lock with roll/somersault. [Evidence](RIME_WALL_HARD_LASER_BALLS_0915.md).
-- [ ] **S3-12 · Pending** — Furious boss: black/blue palette and all Hard patterns, plus giant beam derived from the improved Furnace art. Dependency: SpriteCook.
+- [ ] **S3-12 · Partial** — Furious Rime Wall: enlarged blue laser with matching Simon-Says warning is integrated; black/blue hull palette and full Hard-pattern parity remain. Dependency: SpriteCook. [Evidence](FROST_FURIOUS_BEAM_0920.md).
 - [x] **S3-13 · Complete** — Furious cannon feints: faster Simon-Says sequencing, yellow/red/yellow/red/red-flash then fire; no green and no overhead asterisk only on Furious. [Evidence](RIME_WALL_FURIOUS_SIMON_0915.md).
 - [x] **S3-14 · Complete** — Frost Cruiser: missiles stay on wing turrets; nose shoots broad, tall Falva-style black/blue laser bolts with stable art and animated pixel glow. [Evidence](FROST_NOSE_LASER_0914.md).
+- [x] **S3-15 · Complete** — Play Mike's Pandemonium for the Stage 3 main boss, archive the former boss track as unused2, and keep miniboss music independent. [Evidence](STAGE3_PANDEMONIUM_PORTRAITS_0920.md).
 
 ### Stage 4: Olive Warden and Sovereign
 
@@ -145,9 +155,10 @@ Mike selected furyship_somersault_13.png and approved image_gen for its replacem
 - [x] **S4-13 · Complete** — Enraged helpers react to generator damage with limited upward/backward tracking, preserving the edge-hugging/spider-walk dodge route. [Evidence](SOVEREIGN_HELPER_SPIDER_WALK_0915.md).
 - [x] **S4-14 · Complete** — Hard Sovereign chain lightning: double and widen with extra projectiles; Furious faster/wider and more frequent lightning balls. [Evidence](SOVEREIGN_CHAIN_LIGHTNING_0915.md).
 - [x] **S4-15 · Complete** — Furious Sovereign giant lightning strike: five-second charge, yellow/red FOV, red flash, darkened screen/crackling core; bottom corners remain safe. [Evidence](SOVEREIGN_GIANT_LIGHTNING_0915.md).
-- [ ] **S4-16 · Pending** — Authored left/right escape arrows: flipped pair, flashing with synchronized warning sounds for the giant strike. Dependency: SpriteCook.
+- [x] **S4-16 · Complete** — Authored left/right escape arrows: flipped pair, flashing with synchronized warning sounds for the giant strike. [Evidence](ESCAPE_ARROWS_0916.md).
 - [x] **S4-17 · Complete** — Regenerated repeating highway with matching roadside vegetation across loop boundaries. [Evidence](BOSS_BATCH_0915.md).
 - [x] **S4-18 · Complete** — Four crossed smoke rings, intact falling ship with accelerating overlaid explosions, white flash and residual blasts. [Evidence](BOSS_BATCH_0915.md).
+- [x] **S4-19 · Complete** — Make the Hard/Furious Olive Warden helper jets vulnerable to shots and held weapons from normal fighting distance. [Evidence](LATEST_REPAIRS_0920.md).
 
 ### Stages 5-9: space and encounter cleanup
 
@@ -158,7 +169,7 @@ Mike selected furyship_somersault_13.png and approved image_gen for its replacem
 - [x] **SPACE-05 · Complete** — Regent port readability: serialize warned ports and helper tells; remove overlapping full-screen grid/impact clutter. [Evidence](READABLE_ATTACKS_0914.md).
 - [ ] **SPACE-06 · Partial** — Stage 5 full enemy/projectile/boss balance round: first readability fixes have proof; full natural-play review with Mike remains. [Evidence](READABLE_ATTACKS_0914.md).
 - [ ] **SPACE-07 · Pending** — Stage 6 full enemy/projectile behavior cleanup round with Mike; separate from the completed Tempest/Retina work.
-- [ ] **SPACE-08 · Pending** — Stage 7 full enemy/projectile behavior cleanup round with Mike.
+- [ ] **SPACE-08 · Partial** — Stage 7 full enemy/projectile behavior cleanup round with Mike. First Warden hyper chaingun and leg-strike leap pass is integrated; natural-play balance and the wider stage remain. [Evidence](OVERNIGHT_PASS_0920.md).
 - [ ] **SPACE-09 · Pending** — Stage 8 full enemy/projectile behavior cleanup round with Mike.
 - [ ] **SPACE-10 · Pending** — Stage 9 full enemy/projectile behavior cleanup round with Mike.
 - [x] **SPACE-11 · Complete** — Identify and inspect the replacement ship concept: Mike approved furyship_somersault_13.png; source and existing reel inspected. New asset production remains SPACE-12/13/14. [Evidence](FURYSHIP_REFERENCE_0914.md).
@@ -175,6 +186,9 @@ Mike selected furyship_somersault_13.png and approved image_gen for its replacem
 - [x] **SPACE-22 · Complete** — Hammer leap attacks with a depth-projected green/yellow/red ground-floor target marker, upward charge scan, return leap or follow-up strike. [Evidence](GROUND_RETICLE_0915.md).
 - [x] **SPACE-23 · Complete** — Chrome Hammer Archmage one-hand boomerang: rapidly spin and charge the authored hammer, warn its committed vertical player lane, throw it downfield, turn below the playfield, then visibly retract it to the raised hand at medium magnetic speed with sounds. [Evidence](ARCHMAGE_BOOMERANG_VISUAL_0916.md).
 - [x] **SPACE-24 · Complete** — Fury HQ Space Division crate with a three-reward RNG bag: autonomous helper orb, Akimbo projectile upgrade, and proximity mine with splash plus authored shrapnel. [Evidence](SPACE_ARMORY_0915.md).
+- [x] **SPACE-25 · Complete** — Keep Stage-5 warp gates at authored background positions and scroll them only with that background. [Evidence](OVERNIGHT_PASS_0920.md).
+- [x] **SPACE-26 · Complete** — Interrupt the Stage-5 hammer throw after five distinct rapid player missiles: arms-up shriek, dropped targetable hammer, kneel, magnetic retrieval and recovery; add a heavier jumping leap. [Evidence](OVERNIGHT_PASS_0920.md).
+- [x] **SPACE-27 · Complete** — Stage-6 entrance: two black jets climb from behind, acquire separate Retina locks, fire shootable missiles, and trigger slow-motion SHOOT! interception; unanswered missiles cost a life. [Evidence](OVERNIGHT_PASS_0920.md).
 
 ### Manual missile tiers and supplies
 
@@ -207,19 +221,23 @@ Mike selected furyship_somersault_13.png and approved image_gen for its replacem
 - [x] **UI-15 · Complete** — B is Back; use generated D-pad, action-button and Start graphics consistently for navigation prompts. [Evidence](CONTROL_HINTS_0914.md).
 - [x] **UI-16 · Complete** — Generate matching neutral mouse, red left-click, red right-click, mouse-wheel, Spacebar and R input icons; use the graphics in Help and live binding displays. [Evidence](INPUT_PROMPTS_0915.md).
 - [x] **UI-17 · Complete** — Use an authored Forge/loadout plate with Fury Points and embedded RE-SPEC plus a four-row Weapon Found plate that announces real weapon systems separately from boss powers. [Evidence](WEAPON_FORGE_REPAIR_0918.md).
-- [x] **UI-18 · Completed** — Stage-clear achievement notices wait until the next screen; Fury Point conversion, sign-off, Continue, and password have separate vertical regions at the supported aspect ratios. [Proof](STAGECLEAR_LAYOUT_0919.md).
-- [x] **UI-19 · Complete** — Loadout arsenal: add D-pad/controller paging with generated control prompts and stronger selected-row/combination glow before equipping. [Evidence](LOADOUT_CATALOG_0919.md).
-- [x] **UI-20 · Completed** — Pilot Select types identity and affiliation, then fills each stat bar in order with synchronized ticks; the GOOD LUCK card retains only pilot and ship. [Proof](PILOT_REVEAL_0919.md).
-- [x] **UI-21 · Completed** — BULLETS FIRED displays the projectile count with matching firepower fill; the longest labels and values fit within authored stat bays. [Proof](STATS_FIT_0919.md).
-- [x] **UI-22 · Complete** — Loadout catalog readability: enlarge or page the combination cells and display the selected combination name/price/state so opacity alone is not the only locked/unlocked cue. [Evidence](LOADOUT_CATALOG_0919.md).
-- [x] **UI-23 · Complete** — Pilot Select warms roster art and restores typed role, callsign, affiliation, biography, sequential stat bars, and the boxed special icon. GOOD LUCK stays pilot-and-ship only. [Proof](PILOT_SELECT_DETAILS_0919.md).
+- [x] **UI-18 · Complete** — Stage-clear achievement notices stay queued while the debrief owns the screen, and Fury Point conversion, sign-off, password and Continue occupy separate bands at wide, square and portrait display sizes. [Evidence](STAGECLEAR_SEPARATION_0920.md).
+- [x] **UI-19 · Complete** — Loadout arsenal: add D-pad/controller paging with generated control prompts and stronger selected-row/combination glow before equipping. [Evidence](LOADOUT_CATALOG_0920.md).
+- [x] **UI-20 · Complete** — Pilot Select: restore the deliberate arcade reveal sequence so identity and affiliation type first, then each stat bar fills separately with synchronized sounds; preserve the clean GOOD LUCK pilot-and-ship launch card. [Evidence](PILOT_REVEAL_REAUDIT_0920.md).
+- [x] **UI-21 · Complete** — Stats accuracy and fit: correct the BULLETS FIRED metric/value mismatch and keep long labels and values inside their authored bays. [Evidence](STATS_FIT_0919.md).
+- [x] **UI-22 · Complete** — Loadout catalog readability: enlarge or page the combination cells and display the selected combination name/price/state so opacity alone is not the only locked/unlocked cue. [Evidence](LOADOUT_CATALOG_0920.md).
+- [x] **UI-23 · Complete** — Pilot Select completeness: warm ship/emblem art before the screen appears and restore callsign, role/special and biography detail without contaminating the clean GOOD LUCK launch card. [Evidence](PILOT_REVEAL_REAUDIT_0920.md).
 - [x] **UI-24 · Complete** — Use the graphical arcade dialogue font and letter-by-letter centered banner for item, ammunition and upgrade acquisition messages instead of basic floating text. [Evidence](ROTATION_SHIELD_STAGE2_REPAIR_0918.md).
 - [x] **UI-25 · Complete** — Replace the HP-like shield gauge with a distinct rectangular energy-shield frame, straight fill well and connected SHIELD box whose baked label is centered horizontally and vertically. [Evidence](ROTATION_SHIELD_STAGE2_REPAIR_0918.md).
+- [x] **UI-26 · Complete** — Route a valid stage password through difficulty selection, then pilot selection, before launching the selected Arcade stage. [Evidence](LATEST_REPAIRS_0920.md).
+- [x] **UI-27 · Complete** — Render in-game pickup banners and floating notices with the authored graphical game alphabet instead of plain canvas lettering. [Evidence](LATEST_REPAIRS_0920.md).
+- [x] **UI-28 · Complete** — Center Cole and all shared dialogue portraits in the left bay, enlarge them within the frame and face the pilots right toward the message without overlap. [Evidence](DIALOGUE_BACK_0920.md).
+- [x] **UI-29 · Complete** — Make B/Back navigate through Campaign, Arcade and Co-op setup; preserve slot-picker cancel and the live map's button-bar Back behavior. [Evidence](DIALOGUE_BACK_0920.md).
 
 ### Achievements, timers and unlockable modes
 
 - [x] **ACH-01 · Complete** — Persistent once-per-profile/account achievement registry, points and future Steam mapping. [Evidence](ACHIEVEMENT_REGISTRY_0915.md).
-- [ ] **ACH-02 · Pending** — Achievement menu/button and bottom-center unlock notification that slides/fades downward. Dependency: SpriteCook.
+- [x] **ACH-02 · Complete** — Achievement title button and gallery, plus a queued unlock card that rises, holds, then slides/fades down at lower left, per Mike's later 0916 placement. [Evidence](AWARDS_0916.md).
 - [x] **ACH-03 · Complete** — Nine Campaign Clear - <Pilot> achievements for Campaign or Arcade completion, 100 points each. [Evidence](ACHIEVEMENT_REGISTRY_0915.md).
 - [x] **ACH-04 · Complete** — Each stage cleared on Normal or above: 10 points. [Evidence](ACHIEVEMENT_REGISTRY_0915.md).
 - [x] **ACH-05 · Complete** — Each stage on Normal or above without losing a life: 200 points. [Evidence](ACHIEVEMENT_REGISTRY_0915.md).
@@ -248,6 +266,15 @@ Mike selected furyship_somersault_13.png and approved image_gen for its replacem
 
 - [x] **S2-12 · Complete** — Confine hostile fire geysers to the left/right lava gutters, keep them off the mountain, add dedicated warning/eruption audio, and play the firewall pass cue as it crosses the player. [Evidence](ROTATION_SHIELD_STAGE2_REPAIR_0918.md).
 - [x] **S2-13 · Complete** — Use individual authored direction frames for Furnace Tyrant body and destructible arm/turret states, with arm mounts locked to the boss spin angle. [Evidence](ROTATION_SHIELD_STAGE2_REPAIR_0918.md).
+- [x] **S2-14 · Complete** — Preserve source proportions of the Furnace shield gauge frame and its fill; do not stretch either vertically. [Evidence](OVERNIGHT_PASS_0920.md).
+
+### Stage 5 combat and miniboss
+
+- [x] **S5-MINI-01 · Complete** — Remake the Chaos Harrier miniboss attack animation and behavior while preserving its approved teleport effect: stabilize weapon frames, fire from the correct hardpoints, and give the three arrivals distinct attacks before its stationary laser window. [Evidence](CHAOS_HARRIER_REPAIR_0920.md).
+
+### Stage 7 combat and boss
+
+- [x] **S7-MACHINE-01 · Complete** — Give the Stage 7 Warden's hyper chaingun a dedicated visible toxic machine-bullet plate, retaining the authored attack timing and collision. [Evidence](STAGE7_MACHINE_ROUND_0920.md).
 
 ## Keeping this tally current
 

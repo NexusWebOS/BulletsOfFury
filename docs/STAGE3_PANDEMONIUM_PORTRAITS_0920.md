@@ -1,0 +1,9 @@
+# Stage 3 boss music and dialogue portraits — 2026-09-20
+
+Mike supplied `C:/Users/Mdogg/Desktop/pandemonium.wav` for the Stage 3 main boss. The source remains on the Desktop. An MP3 game copy is `assets/game/music/boss3_pandemonium.mp3` (44.1 kHz stereo, 160 kbps, with 3.5 dB attenuation to sit beside current boss music). `BOFA.music.boss3` selects it. The prior Cryo Behemoth MP3 remains untouched at `assets/game/music/boss3_cryo_behemoth.mp3`, now addressed by `BOFA.music.unused2`. The Stage 3 miniboss gets the existing Stage 3 field score via `mini3` rather than inheriting the replaced boss key. No other music routing was changed.
+
+`dlgBox` now measures a dedicated portrait bay on the left of its panel. Every pilot portrait using that shared dialogue renderer is centered within the bay and vertically aligned with the body, while the speaker name and text retain their own area. The Cole Campaign bridge frame was inspected in real Chromium at `_shots/campaign_bridge_0920/cole_flight.png`; Yuri's frame is alongside it. Neither portrait overlaps the text. The Campaign bridge probe and Stage 3 music routing probe pass without page or console errors (`_BUILD_SOURCE/probe_campaign_bridge_0920.py`, `_BUILD_SOURCE/probe_pandemonium_portraits_0920.py`).
+
+`node --check assets/game.js` and `git -c core.whitespace=cr-at-eol diff --check` pass. The full `test_fl.js` suite reaches its final summary and exits 1 with the same 76 failing assertion names as `_shots/qa_0920_audio/test_fl_final.log`; zero new failures. Current log: `_shots/test_fl_pandemonium_0920.log`.
+
+Archive note: the music folder also retains `unused_x.mp3` and `unused_boss2_magma_colossus.mp3` from earlier work. Together with the former Stage 3 boss track, that is three distinct unused music files on disk; none was discarded to force a count of two.

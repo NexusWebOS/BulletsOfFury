@@ -20,7 +20,7 @@ module.exports=function(vm,ctxv,ok){
             o.bounded=o.bounded&&waves.every(w=>w.t>=12&&w.t<=Math.max(12,last));
             enemies=[];waves.forEach(w=>w.fn());var elite=enemies.filter(e=>e._difficultyElite);
             o.flags=o.flags&&elite.length===want&&elite.every(e=>e._continueEligible&&e.pattern==='elitex'&&e.art==='xelite_'+e._eliteAuthoredVariant);
-            o.shields=o.shields&&elite.every(e=>e._esh&&e._esh.energy>0&&e._esh.max===e._esh.energy);
+            o.shields=o.shields&&elite.every(e=>!e._esh);
             if(k==='hard'){o.variants=o.variants&&elite[0]&&elite[0]._eliteAuthoredVariant===expected[s];seen.push(elite[0]._eliteAuthoredVariant);}
           }
         }
@@ -34,7 +34,7 @@ module.exports=function(vm,ctxv,ok){
       return JSON.stringify(o);
     }finally{run.stage=save.runStage;curStage=save.curStage;diffKey=save.diffKey;DIFF=save.DIFF;stagePlan=save.plan;enemies=save.en;pBullets=save.pb;eBullets=save.eb;player.x=save.px;player.y=save.py;}
   })()`,ctxv));
-  const labels={counts:'each stage injects zero/one/two aces on Normal/Hard/Furious',sorted:'elite waves preserve stable chronological stage scheduling',flags:'spawned aces carry authored identity and reward eligibility',shields:'every injected ace owns a live authored shield',variants:'each Hard stage receives its designated authored biome palette',bounded:'elite waves stay inside the authored combat timeline',normalClean:'Easy and Normal plans remain byte-for-byte free of difficulty elites',hardOne:'Hard adds one demanding ace per stage (none on stage 1)',furiousTwo:'Furious adds a second distinct ace wave per stage (none on stage 1)',stage1Clean:'Mike 0918: stage 1 fields no shielded difficulty ace on any difficulty',unique:'the eight ace stages each use a distinct primary authored ace',roll:'the ace rolls away from incoming player fire',hunts:'the ace strafes toward the player column',fires:'the ace releases its complete authored volley',authored:'all configured variants resolve through the existing ELITEX roster',noTint:'difficulty injection never applies a runtime palette overlay'};
+  const labels={counts:'each stage injects zero/one/two aces on Normal/Hard/Furious',sorted:'elite waves preserve stable chronological stage scheduling',flags:'spawned aces carry authored identity and reward eligibility',shields:'injected aces use hull movement and volleys without the broken shield art',variants:'each Hard stage receives its designated authored biome palette',bounded:'elite waves stay inside the authored combat timeline',normalClean:'Easy and Normal plans remain byte-for-byte free of difficulty elites',hardOne:'Hard adds one demanding ace per stage (none on stage 1)',furiousTwo:'Furious adds a second distinct ace wave per stage (none on stage 1)',stage1Clean:'Mike 0918: stage 1 fields no shielded difficulty ace on any difficulty',unique:'the eight ace stages each use a distinct primary authored ace',roll:'the ace rolls away from incoming player fire',hunts:'the ace strafes toward the player column',fires:'the ace releases its complete authored volley',authored:'all configured variants resolve through the existing ELITEX roster',noTint:'difficulty injection never applies a runtime palette overlay'};
   for(const k of Object.keys(labels))ok(q[k],labels[k]);
   const artRoot=path.join(__dirname,'..','assets','game','expansion_v1','ships_south');
   for(const name of ['razorback','emberwing','glacierlance','furytalon','voidreaver','tempest','ironserpent','nighthammer','solarwarden']){

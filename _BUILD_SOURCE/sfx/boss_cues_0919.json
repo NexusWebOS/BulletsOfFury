@@ -1,0 +1,37 @@
+{
+  "_note": [
+    "Replacement boss cues requested 2026-09-19. Do not use Maverick's helix charge sample for enemies.",
+    "Generate with python _BUILD_SOURCE/sfx_gen.py sheet _BUILD_SOURCE/sfx/boss_cues_0919.json after ElevenLabs credentials are available.",
+    "Review each generated cue in context before wiring it into assets/game.js. Keep player helix sounds for Maverick."
+  ],
+  "sounds": [
+    {
+      "key": "boss_warden_portal_open_0919",
+      "class": "swell",
+      "seconds": 1.5,
+      "max_seconds": 1.15,
+      "influence": 0.8,
+      "retro_sr": 32000,
+      "prompt": "A huge toxic warship tears open a short-lived escape portal. Immediate metallic latch snap, then a rising low warped spatial rush and a brief crackling collapse. Menacing mechanical sci-fi arcade boss sound, distinct from a musical power-up or charging helix. Clear transient, compact tail, dry, no reverb, no speech, no music."
+    },
+    {
+      "key": "boss_harrier_fusion_beam_0919",
+      "class": "impact",
+      "seconds": 1.0,
+      "max_seconds": 0.65,
+      "influence": 0.85,
+      "retro_sr": 32000,
+      "min_bright": 0.12,
+      "prompt": "A sharp metallic discharge SNAP at the start of a massive alien fusion laser from a boss warship, immediately followed by a deep blue plasma roar with a brief electrical crackle. One decisive beam ignition, not repeated beeps or a rising helix tone. Bright attack, heavy body, dry, no reverb, no voice, no music, 16-bit arcade boss weapon."
+    },
+    {
+      "key": "boss_warhive_orb_charge_0919",
+      "class": "swell",
+      "seconds": 1.0,
+      "max_seconds": 0.8,
+      "influence": 0.8,
+      "retro_sr": 32000,
+      "prompt": "A hostile armored ace fighter powers up a contained electrical orb. Immediate low mechanical switch click, then a rough crackling capacitor rise and short bass pulse. Dangerous and industrial, not a smooth musical helix sound. Compact dry arcade boss cue, no reverb, no speech, no music."
+    }
+  ]
+}

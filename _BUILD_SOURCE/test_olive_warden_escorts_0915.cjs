@@ -12,17 +12,17 @@ module.exports=function(vm,ctxv,ok){
         var liveProtect=S.drones.find(d=>d.role==='protector');if(liveProtect)maxProtectTravel=Math.max(maxProtectTravel,Math.abs(liveProtect.x-liveProtect.stationX));}
       var roles=S.drones.map(d=>d.role),gun=S.drones.find(d=>d.role==='gunner'),protect=S.drones.find(d=>d.role==='protector');
       o.hardPair=S.drones.length===2&&roles.filter(x=>x==='gunner').length===1&&roles.filter(x=>x==='protector').length===1;
-      o.authored=S.drones.every(d=>d.art==='nsb_olive_carrier'&&d.active>=.99);
-      o.separatePools=S.drones.every(d=>d.shield>0&&d.maxShield>0&&d.hp===d.maxhp);
+      o.authored=S.drones.every(d=>['s4w_warden_gunner_0919','s4w_warden_rocketeer_0919'].includes(d.art)&&d.active>=.99);
+      o.noShieldEffects=S.drones.every(d=>d.shield===0&&d.maxShield===0&&d.hp===d.maxhp);
       o.mountedGunner=eBullets.some(x=>x._s4EscortRole==='gunner'&&x._s4wKind==='machine')&&gun.shots>=5;
       o.missileProtector=eBullets.some(x=>x._s4EscortRole==='protector'&&x._shootable&&x._s4wKind==='rocket')&&protect.shots>=1;
       o.playerLikeMotion=maxProtectTravel>30&&protect.y>=198&&protect.y<=252;
       o.stationaryGunner=Math.abs(gun.x-gun.stationX)<1&&Math.abs(gun.y-gun.stationY)<=6;
-      var hp=gun.hp,sh=gun.shield;stage4MiniDroneDamage(b,gun,Math.max(1,Math.floor(sh*.3)));o.shieldFirst=gun.shield<sh&&gun.hp===hp;
+      var hp=gun.hp;stage4MiniDroneDamage(b,gun,5);o.hullTakesDamage=gun.hp<hp&&gun.shield===0;
       o.hittable=stage4MiniDroneAt(b,gun.x,gun.y,2)===gun;
       o.planContinues=/^hard/.test(S.mode)||S.miniHard||['burst','center','rockets'].includes(S.mode);
       b=spawn('furious');S=b._s4war;for(i=0;i<170;i++)stage4MiniDirector(b,1/60);
-      o.furiousTrio=S.drones.length===3&&S.drones.filter(d=>d.role==='protector').length===2&&S.summoned;
+      o.furiousPair=S.drones.length===2&&S.drones.filter(d=>d.role==='gunner').length===1&&S.drones.filter(d=>d.role==='protector').length===1&&S.summoned;
       o.furiousPressure=S.drones.every(d=>d.shots>0);
       o.noPostStageHoming=eBullets.filter(x=>x._s4EscortRole==='protector').every(x=>!x.homing);
       return JSON.stringify(o);

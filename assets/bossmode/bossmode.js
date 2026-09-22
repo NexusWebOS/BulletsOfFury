@@ -109,7 +109,7 @@ const state={ doc:null, docs:{}, undo:[], sel:{stage:0,role:'',kind:''}, tab:'st
 const hooks={ onDoc:null, onTab:null, overlay:null, scene:null };   // scene.js hangs off these
 function clone(o){ return JSON.parse(JSON.stringify(o)); }
 function loadDocs(){ try{ state.docs=JSON.parse(localStorage.getItem('bof_bossmode_docs')||'{}'); }catch(e){ state.docs={}; } }
-function saveDocs(){ try{ localStorage.setItem('bof_bossmode_docs', JSON.stringify(state.docs)); }catch(e){} }
+function saveDocs(){try{localStorage.setItem('bof_bossmode_docs',JSON.stringify(state.docs));return true;}catch(e){msg('SAVE FAILED: browser storage is unavailable. Use EXPORT to keep your work.',true);return false;}}
 function fights(){ return host.api?host.api.fights():[]; }
 function tables(){ return host.api?host.api.tables():null; }
 function slotOf(kind){ return fights().find(f=>f.kind===kind)||null; }
@@ -168,8 +168,9 @@ function applyDoc(opts){
   const d=state.doc; if(!d||!host.api) return false;
   const p=toPatch(d);
   const ok=host.api.override.apply(d.base, p, Object.assign({hp:true}, opts||{}));
-  state.docs[d.kind]=clone(d); saveDocs();
-  if(ok) msg('APPLIED to '+d.base+(host.api.override.armed?' (live)':' (saved; host arms overrides itself)')); else msg('engine has no row for '+d.base, true);
+  state.docs[d.kind]=clone(d);if(!saveDocs())return false;
+  if(ok)host.api.override.arm(true);
+  if(ok) msg('APPLIED to '+d.base+(host.api.override.armed?' (live)':' (saved; host arms overrides itself)')); else msg('Could not save '+d.base+'. Check browser storage and whether this encounter supports live edits; EXPORT preserves the document.', true);
   renderList(); return ok;
 }
 
@@ -212,6 +213,7 @@ function openFight(kind, role, stage){
     const d={schema:SCHEMA, kind, base:kind, role, stage, name:host.api.name(kind), codeOnly:true, states:[{name:'intact',key:'',at:1},{name:'damaged',key:'',at:.66},{name:'critical',key:'',at:.33}],
       size:{w:0,h:0,ty:null,drawW:null,drawH:null}, hp:{hp:null,hpMul:null}, move:{ampX:0,ampY:0,period:0,orbit:false}, anchors:{}, orientation:{facing:'south',rotation:0},
       actions:{pat:'',cd:0,proj:'',pats:[]}, hitboxes:[], parts:[], notes:'this fight is built in code (spawnBoss / spawnSubBoss), not on the SHIPBOSS table - PLAY TEST works, the row editor does not apply'};
+    const saved=state.docs[kind];if(saved&&saved.schema===SCHEMA)Object.assign(d,clone(saved),{codeOnly:true});
     setDoc(d); msg(d.name+' is code-driven: play test only', true); return;
   }
   setDoc(docFor(kind, role, stage)); msg('opened '+state.doc.name);
@@ -462,7 +464,7 @@ function fileNew(){ const d=state.doc; if(!d) return msg('open a fight first', t
 function fileOpen(){ const el=$('#open-list'); el.innerHTML=''; for(const f of fights()){ const e=document.createElement('div'); e.className='li'; e.innerHTML='<span class="role '+f.role+'">S'+f.stage+' '+(f.role==='boss'?'BOSS':'MINI')+'</span><span class="name">'+f.name+'</span>'; e.onclick=()=>{ $('#modal').classList.add('hidden'); openFight(f.kind,f.role,f.stage); }; el.appendChild(e); }
   for(const k in state.docs){ if(fights().some(f=>f.kind===k)) continue; const e=document.createElement('div'); e.className='li'; e.innerHTML='<span class="role">DOC</span><span class="name">'+(state.docs[k].name||k)+'</span>'; e.onclick=()=>{ $('#modal').classList.add('hidden'); setDoc(clone(state.docs[k])); }; el.appendChild(e); }
   $('#modal').classList.remove('hidden'); }
-function fileSave(){ if(!state.doc) return; if(state.doc.codeOnly){ state.docs[state.doc.kind]=clone(state.doc); saveDocs(); return msg('saved doc (code-driven fight: nothing to apply)'); } applyDoc({}); msg('SAVED - '+state.doc.name+' is in the game\'s override store; F4 in the debug menu arms it for normal play'); }
+function fileSave(){if(!state.doc)return;if(state.doc.codeOnly){state.docs[state.doc.kind]=clone(state.doc);if(saveDocs())msg('Design saved. This scripted encounter is preview-only; live edits require its engine adapter.',true);return;}if(applyDoc({}))msg('SAVED AND ENABLED - playtests and this browser’s campaign use your changes. Export a backup to share them.');}
 function fileSaveAs(){ if(!state.doc) return; const nm=prompt('File name:', state.doc.kind+'.json'); if(!nm) return; download(nm.endsWith('.json')?nm:nm+'.json', JSON.stringify(state.doc,null,2)); }
 function fileExport(){ if(!state.doc) return; download('bossmode_'+state.doc.kind+'.json', JSON.stringify(state.doc,null,2)); msg('exported bossmode_'+state.doc.kind+'.json'); }
 function fileBundle(){ if(!host.ready) return; const all=host.api.override.all(); download('bossmode_overrides_'+new Date().toISOString().slice(0,10)+'.json', JSON.stringify({schema:'bof-bossmode-overrides/1', overrides:all, docs:state.docs},null,2)); msg(Object.keys(all).length+' overrides exported'); }
@@ -548,6 +550,9 @@ async function boot(){
   $$('.win-title[data-bm], .bm[data-bm]').forEach(el=>bmInto(el, el.dataset.bm, 40));
   txt.textContent='BOOTING ENGINE'; bar.style.width='60%';
   loadDocs(); wire(); syncTitle();
+  const guide=document.createElement('dialog');guide.style.cssText='background:#101c29;border:1px solid #56a4cf;padding:24px;max-width:480px;color:#e7f5ff';guide.innerHTML='<h2>START HERE - BOSS EDITOR</h2><p>1. LIST: choose a stage and encounter.</p><p>2. GRAPHICS: preview a sprite, then assign its intact or damaged state.</p><p>3. SCENE: add a track and drag its keyframes on the grid. Add FIRE actions at a keyframe.</p><p>4. APPLY, then PLAY TEST. SAVE keeps edits enabled after reloading. EXPORT makes a portable backup.</p><p>Scripted encounters identify controls that are design notes only. Use the live preview to verify changes.</p>';
+  const closeGuide=document.createElement('button');closeGuide.className='tb';closeGuide.textContent='CLOSE';closeGuide.onclick=()=>guide.close();guide.appendChild(closeGuide);document.body.appendChild(guide);
+  const help=document.createElement('button');help.className='tb';help.textContent='START HERE';help.onclick=()=>guide.showModal();$('#filebar').appendChild(help);
   setInterval(tick, 120);
   setTimeout(()=>{ if(!host.ready){ bar.style.width='80%'; } }, 3000);
   setTimeout(()=>{ if(!host.ready){ txt.textContent='ENGINE SLOW TO BOOT - is index.html beside this page?'; } }, 25000);
