@@ -66961,13 +66961,14 @@ function drawBmHost(dt){
   if(stateT<0.05){ try{ Audio.stopMusic(); }catch(_e){} }
   ctx.fillStyle='#07080c'; ctx.fillRect(0,0,VW,VH);
   const p=0.5+0.5*Math.sin(performance.now()/600);
-  ctx.save(); ctx.textAlign='center'; ctx.textBaseline='middle';
-  ctx.font='bold 22px "BOFmil", monospace'; ctx.fillStyle='#ffb040'; ctx.shadowColor='#ff6a1a'; ctx.shadowBlur=12;
-  ctx.fillText('BOSS MODE', VW/2, VH/2-22);
-  ctx.shadowBlur=0; ctx.font='11px "BOFmil", monospace'; ctx.fillStyle='rgba(207,214,224,'+(0.45+0.5*p).toFixed(2)+')';
-  ctx.fillText('ENGINE READY  -  WAITING FOR THE EDITOR', VW/2, VH/2+8);
-  ctx.font='9px "BOFmil", monospace'; ctx.fillStyle='#6f7f8f';
-  ctx.fillText('PRESS PLAY TEST TO LOAD A FIGHT', VW/2, VH/2+26);
+  ctx.save(); ctx.shadowColor='#ff6a1a'; ctx.shadowBlur=12;
+  const title='BOSS MODE', titleH=23, titleW=bmfMeasure(UI_GRAPHICAL_FACE,title,titleH);
+  bmfDraw(UI_GRAPHICAL_FACE,title,VW/2-titleW/2,VH/2-22-titleH/2,titleH,1,'#ffb040',1,true);
+  ctx.shadowBlur=0;
+  const ready='ENGINE READY  -  WAITING FOR THE EDITOR', readyH=10, readyW=bmfMeasure(UI_GRAPHICAL_FACE,ready,readyH);
+  bmfDraw(UI_GRAPHICAL_FACE,ready,VW/2-readyW/2,VH/2+8-readyH/2,readyH,0.45+0.5*p,'#cfd6e0',1,false);
+  const prompt='PRESS PLAY TEST TO LOAD A FIGHT', promptH=8, promptW=bmfMeasure(UI_GRAPHICAL_FACE,prompt,promptH);
+  bmfDraw(UI_GRAPHICAL_FACE,prompt,VW/2-promptW/2,VH/2+26-promptH/2,promptH,1,'#6f7f8f',1,false);
   ctx.restore();
 }
 /* ---- editor overrides ------------------------------------------------------------------------ */
@@ -69034,6 +69035,10 @@ const BMF_FACES = {
 };
 if(typeof window!=='undefined'&&window.BOF_COMMAND_FONTS)
   Object.assign(BMF_FACES,window.BOF_COMMAND_FONTS.faces);
+/* Permanent menus, HUD headers, leaderboards and side panels use the authored wide
+   Command Alloy face. Command Signal is reserved for dialogue and conversation copy. */
+const UI_GRAPHICAL_FACE='game';
+if(typeof window!=='undefined')window.BOF_UI_FACE=UI_GRAPHICAL_FACE;
 const BMF = {};
 function bmfInit(){
   if(typeof Image==='undefined') return;

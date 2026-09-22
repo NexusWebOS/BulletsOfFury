@@ -11,8 +11,12 @@ const bgRect={cell:[27,190,126,211],panel:[1184,90,320,810],clock:[182,680,826,1
 const stageElements=['kinetic','fire','ice','lightning','chrome','dark','toxic','prism','water'];
 const portraits={},ranks={};
 function img(cache,key,path){if(!cache[key]){const im=new Image();im.src=path;cache[key]=im;}return cache[key];}
+function pilotPortraitPath(key){return 'assets/game/pilots_0922/portraits/'+key+'-idle.png';}
 function plate(g,source,x,y,w,h){if(atlas.complete&&atlas.naturalWidth)g.drawImage(atlas,...source,x,y,w,h);}
-function txt(g,str,x,y,size,color,align){if(typeof bmfDrawOn==='function')bmfDrawOn(g,'dialogue',str,x,y,size,align||'left');}
+/* Engine UI rule: permanent HUD, leaderboard and side-panel copy uses the authored
+   wide Command Alloy face. Dialogue copy keeps Command Signal inside conversations. */
+function uiFace(){return window.BOF_UI_FACE||'game';}
+function txt(g,str,x,y,size,color,align){if(typeof bmfDrawOn==='function')bmfDrawOn(g,uiFace(),str,x,y,size,align||'left');}
 function symbol(g,key,x,y,size){try{
   if(typeof iconBlit==='function'){const v=iconBlit(g,key,x,y,size,true);if(v)return true;}
   if(typeof XART!=='undefined'&&XART.rdy(key)){const im=XART.get(key);g.drawImage(im,x-size/2,y-size/2,size,size);return true;}
@@ -64,7 +68,7 @@ function rightPanel(g,w,h,v,isMap){
  const panelW=Math.min(w-12,Math.floor(h*.45)),panelH=Math.min(h-20,Math.floor(panelW*810/320));
  const x=(w-panelW)/2,y=h-panelH-12;
  plate(g,bgRect.panel,x,y,panelW,panelH);
- const port=img(portraits,v.key,'assets/game/pilot_avatars/pav_'+v.key+'.png');
+ const port=img(portraits,v.key,pilotPortraitPath(v.key));
  if(port.complete&&port.naturalWidth){const bx=x+panelW*.16,by=y+panelH*.075,bw=panelW*.68,bh=panelH*.24;
   const scale=Math.min(bw*.94/port.naturalWidth,bh*.94/port.naturalHeight),pw=port.naturalWidth*scale,ph=port.naturalHeight*scale;
   g.drawImage(port,bx+(bw-pw)/2,by+(bh-ph)/2,pw,ph);}
@@ -83,13 +87,13 @@ function menuPanel(g,w,h,st){
  if(st==='pilot'){
   try{const p=PILOTS[pilotIndex]||PILOTS[0];key=p.key;name=p.name||p.key.toUpperCase();lines=['PILOT ROSTER','CALLSIGN  '+name.toUpperCase(),'FURY DIVISION','SHIP READY','CONFIRM PILOT','GOOD LUCK'];}catch(_){}
  }
- const port=img(portraits,key,key==='hub'?'assets/game/ui/logo_0916/bof_logo.png':'assets/game/pilot_avatars/pav_'+key+'.png');
+ const port=img(portraits,key,key==='hub'?'assets/game/ui/logo_0916/bof_logo.png':pilotPortraitPath(key));
  if(port.complete&&port.naturalWidth){const bx=x+panelW*.16,by=y+panelH*.075,bw=panelW*.68,bh=panelH*.24;
   const scale=Math.min(bw*.94/port.naturalWidth,bh*.94/port.naturalHeight),pw=port.naturalWidth*scale,ph=port.naturalHeight*scale;
   g.drawImage(port,bx+(bw-pw)/2,by+(bh-ph)/2,pw,ph);}
  if(name)txt(g,name.toUpperCase(),x+panelW/2,y+panelH*.35,Math.max(12,panelW*.058),'#ffe3a3','center');
  lines.forEach((line,i)=>{const size=Math.max(9,Math.min(15,panelW*.045));
-  const measure=typeof bmfMeasure==='function'?bmfMeasure('dialogue',line,size):line.length*size*.65;
+  const measure=typeof bmfMeasure==='function'?bmfMeasure(uiFace(),line,size):line.length*size*.65;
   const fit=Math.min(size,size*panelW*.64/Math.max(1,measure));
   txt(g,line,x+panelW/2,y+panelH*(.41+i*.095),fit,'#e1f0ff','center');});
 }
