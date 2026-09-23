@@ -2271,6 +2271,8 @@ const XART=(function(){
   X._src['cin_cockpit_front_fighter']=_originRoot+'fighter_cockpit_front.png';
   X._src['cin_cockpit_front_space']=_originRoot+'space_cockpit_front.png';
   X._src['cin_cockpit_pov_magenta']=_originRoot+'pilot_pov_magenta.png';
+  X._src['cpov_male_hand']='assets/game/cockpit_pov_0923/male_hand_strip.png';
+  X._src['cpov_female_hand']='assets/game/cockpit_pov_0923/female_hand_strip.png';
   X._src['cinbg_hq_beach']='assets/game/cinematic_campaign/exteriors_generated_official/02_fury_hq_beach_approach_official_generated.png';
   X._src['cinbg_hq_gate']='assets/game/cinematic_campaign/exteriors_generated_official/03_fury_hq_jungle_gate_official_generated.png';
   X._src['cinbg_jungle']='assets/game/cinematic_level_approaches/stage01_rumble_in_the_jungle_approach.png';
@@ -6842,7 +6844,7 @@ function applyPendingViewport(){
   try{
     if(state===GS.STAGESEL){ _setCampaignViewport(); return; }
     if(state===GS.PILOT){ _setPilotViewport(); return; }
-    if(state===GS.CUTSCENE||state===GS.CAMPAIGNINTRO||state===GS.VICTORY||debriefFamily(state)) _setCinematicViewport(true);
+    if(state===GS.CUTSCENE||state===GS.CAMPAIGNINTRO||state===GS.COCKPIT||state===GS.VICTORY||debriefFamily(state)) _setCinematicViewport(true);
   }catch(_cinResize){}
 }
 window.__bofResizeCinematic=function(){ _viewportDirty=true; };
@@ -7440,7 +7442,7 @@ const Input = (()=>{
     const cx=(e.touches?e.touches[0].clientX:e.clientX);
     const cy=(e.touches?e.touches[0].clientY:e.clientY);
     if(state===GS.STAGESEL){const panel=document.getElementById('wide-right');if(panel&&panel.style.display==='block'){const p=panel.getBoundingClientRect();if(cx>=p.left&&cx<=p.right&&cy>=p.top&&cy<=p.bottom){mouse.x=-10000;mouse.y=-10000;mouse.moved=true;mouse.active=false;return;}}}
-    const v=state===GS.PILOT?pilotViewSize():{w:state===GS.STAGESEL?campaignViewWidth():debriefFamily(state)?cutsceneViewWidth():VW,h:VH};
+    const v=state===GS.PILOT?pilotViewSize():{w:state===GS.STAGESEL?campaignViewWidth():(state===GS.COCKPIT||debriefFamily(state))?cutsceneViewWidth():VW,h:VH};
     const nx=clamp((cx-r.left)/r.width*v.w,0,v.w)-(state===GS.STAGESEL?campaignViewOffset():0), ny=clamp((cy-r.top)/r.height*v.h,0,v.h);
     if(Math.abs(nx-mouse.x)>0.5 || Math.abs(ny-mouse.y)>0.5) mouse.moved=true;   // real movement
     mouse.x=nx; mouse.y=ny; mouse.active=true;
@@ -7641,7 +7643,7 @@ function uiBlipRep(){
   try{ if(typeof Audio!=='undefined' && Audio.SFX && Audio.SFX.blip) Audio.SFX.blip(); }catch(e){}
 }
 const GS = { BOOT:'boot', LOADING:'loading', TITLE:'title', DIFF:'diff', PILOT:'pilot',
-  PASSWORD:'password', CREDITS:'credits', OPTIONS:'options', INTRO:'intro', LAUNCH:'launch',
+  PASSWORD:'password', CREDITS:'credits', OPTIONS:'options', INTRO:'intro', LAUNCH:'launch', COCKPIT:'cockpit',
   PLAY:'play', GAMEOVER:'gameover', VICTORY:'victory', STAGECLEAR:'stageclear', UNLOCKS:'unlocks', YURIUP:'yuriup', FORGE:'forge', CONTINUE:'continue', RIFTFALLBACK:'riftfallback', RIVAL:'rival', FLYOVER:'flyover', WARPENTRY:'warpentry', STAGESEL:'stagesel', MODESEL:'modesel', CAMPHUB:'camphub', CAMPAIGNINTRO:'campaignintro', ATTRACT:'attract', OUTBOUND:'outbound', OPENING:'opening', CUTSCENE:'cutscene',
   /* the co-op wing muster: both chosen pilots side by side before deploy (drop 0902f) */
   COOPROSTER:'cooproster',
@@ -33836,7 +33838,7 @@ function setState(s){
   if(s!==GS.STAGESEL&&document.body&&document.body.classList)document.body.classList.remove('campaign-full');
   if(s===GS.STAGESEL)_setCampaignViewport();
   else if(s===GS.PILOT)_setPilotViewport();
-  else _setCinematicViewport(s===GS.CUTSCENE || s===GS.CAMPAIGNINTRO || s===GS.VICTORY ||
+  else _setCinematicViewport(s===GS.CUTSCENE || s===GS.CAMPAIGNINTRO || s===GS.COCKPIT || s===GS.VICTORY ||
                         debriefFamily(s));   // the unlock page and every Forge beat share the debrief's plate and aspect
   /* The final results card is useful decode time. Start the ending plates here so a player who
      advances immediately never reaches the first line of the finale before its HQ background and
@@ -51183,7 +51185,7 @@ function drawScene(dt){
   if(typeof window!=='undefined') window.__bofFrames=(window.__bofFrames|0)+1;   // watchdog: proves the loop is running
   /* The prologue owns its own ANY-BUTTON skip. Letting the generic BACK handler run first would
      turn one of those valid skip buttons into an exit from Campaign instead. */
-  if(state!==GS.CAMPAIGNINTRO){
+  if(state!==GS.CAMPAIGNINTRO&&state!==GS.COCKPIT){
     /* Campaign consumes BACK and gives Enter/Start to the live map menu before generic routing. */
     if(typeof campaignMenuInputTick==='function') campaignMenuInputTick();
     /* every other menu is backable, checked once here rather than in seven screens (drop 0809c) */
@@ -51232,6 +51234,7 @@ function drawScene(dt){
     case GS.MODESEL: return drawModeSelect(dt);
     case GS.CAMPHUB: return drawCampaignHub(dt);
     case GS.CAMPAIGNINTRO: return drawCampaignIntro(dt);
+    case GS.COCKPIT: return drawCockpitEncounter(dt);
     case GS.DEBUG:     return drawDebugMenu(dt);
     case GS.DEBUGFADE: return drawDebugFade(dt);
     case GS.BMHOST:    return drawBmHost(dt);
@@ -52785,6 +52788,206 @@ function campaignIntroPovGlass(){
   }
   p.putImageData(im,0,0);return _campaignPovGlass=canvas;
 }
+
+/* Stage 9 cockpit intercept. This is an on-rails perspective segment: authored enemy
+   plates approach in depth; the exact existing magenta-glass cockpit is the foreground.
+   The pilot's right hand is a four-pose generated strip, tinted from the roster palette. */
+let cockpitEncounter=null;
+const _cockpitHandCache=Object.create(null);
+function cockpitEncounterPilot(){
+  return (run&&run.pilot)||((PILOTS[pilotIndex]||PILOTS[0]).key);
+}
+function cockpitEncounterWarm(){
+  if(typeof XART==='undefined')return;
+  for(const k of ['cin_origin_arrival','cin_cockpit_pov_magenta',
+    'cpov_male_hand','cpov_female_hand','ns9x_horizon_0','ns9x_horizonblk_0',
+    'laser_round_muzzle_0','laser_round_muzzle_1','laser_round_muzzle_2',
+    'laser_round_muzzle_3','laser_round_muzzle_4','laser_round_muzzle_5',
+    'laser_round_muzzle_6','laser_round_muzzle_7','pad_dpad','pad_a','pad_b'])XART.rdy(k);
+  if(typeof bmfReady==='function')bmfReady('dialogue');
+}
+function cockpitEncounterReady(){
+  return !!(XART&&['cin_origin_arrival','cin_cockpit_pov_magenta',
+    'cpov_male_hand','cpov_female_hand','ns9x_horizon_0','ns9x_horizonblk_0',
+    'laser_round_muzzle_0'].every(k=>XART.rdy(k)) &&
+    [1,2,3,4,5,6,7].every(f=>XART.rdy('laser_round_muzzle_'+f)));
+}
+function cockpitEncounterStart(){
+  cockpitEncounterWarm();
+  try{if(Audio&&Audio.startMusic)Audio.startMusic((curStage&&curStage.music)||'stage');}catch(_){}
+  if(Input.mouse){Input.mouse.active=false;Input.mouse.moved=false;}
+  cockpitEncounter={pilot:cockpitEncounterPilot(),t:0,next:1.0,seq:0,kills:0,
+    hull:3,earned:0,enemies:[],aimX:cutsceneViewWidth()*.5,aimY:VH*.31,
+    fireCd:0,shotFlash:0,shotX:0,shotY:0,hitFlash:0,handLean:0,
+    handFrame:0,evade:0,failT:0,ready:false};
+  setState(GS.COCKPIT);
+}
+function cockpitEncounterFinish(){
+  cockpitEncounter=null;
+  setState(GS.LAUNCH);
+}
+function cockpitHandTint(pilot){
+  const female=pilot==='yuri'||pilot==='lizzie'||pilot==='falva';
+  const key=(female?'f':'m')+'_'+pilot;
+  if(_cockpitHandCache[key])return _cockpitHandCache[key];
+  const sourceKey=female?'cpov_female_hand':'cpov_male_hand';
+  if(!XART.rdy(sourceKey))return null;
+  const source=XART.get(sourceKey),w=source.naturalWidth||source.width,h=source.naturalHeight||source.height;
+  const canvas=document.createElement('canvas');canvas.width=w;canvas.height=h;
+  const c=canvas.getContext('2d',{willReadFrequently:true});c.drawImage(source,0,0);
+  const im=c.getImageData(0,0,w,h),d=im.data;
+  const spec=PILOTS.find(p=>p.key===pilot)||PILOTS[0],hex=spec.tint.replace('#','');
+  const tr=parseInt(hex.slice(0,2),16),tg=parseInt(hex.slice(2,4),16),tb=parseInt(hex.slice(4,6),16);
+  for(let i=0;i<d.length;i+=4){
+    if(d[i+3]<12)continue;
+    const r=d[i],g=d[i+1],b=d[i+2];
+    const sleeve=b>r*1.34&&b>g*1.16&&b>45;
+    const seam=g>r*1.45&&b>r*1.4&&g>58;
+    if(!sleeve&&!seam)continue;
+    const v=seam?Math.min(1.26,(r+g+b)/270+.17):Math.min(.98,(r+g+b)/325+.12);
+    d[i]=Math.min(255,tr*v);d[i+1]=Math.min(255,tg*v);d[i+2]=Math.min(255,tb*v);
+  }
+  c.putImageData(im,0,0);return _cockpitHandCache[key]=canvas;
+}
+function cockpitEnemyProject(e,W,H){
+  const q=12/(e.z+1.2),wave=Math.sin(e.age*1.45+e.seq)*.14;
+  return {x:W*.5+(e.x+wave)*W*.105*q,
+    y:H*.29+(e.y+Math.cos(e.age*1.2+e.seq)*.07)*H*.07*q,
+    size:26+(12-e.z)*15};
+}
+function cockpitEnemySpawn(C){
+  const n=C.seq++,side=n%2?-1:1;
+  C.enemies.push({seq:n,x:side*(.62+Math.abs(Math.sin(n*1.71))*1.45),
+    y:Math.sin(n*2.2)*.94,z:12,age:0,hp:(n%4===3?2:1),key:n%3===0?'ns9x_horizonblk_0':'ns9x_horizon_0'});
+}
+function cockpitEncounterUpdate(dt,W,H){
+  const C=cockpitEncounter;if(!C)return;
+  cockpitEncounterWarm();
+  if(!C.ready){C.ready=cockpitEncounterReady();if(!C.ready)return;}
+  if(C.failT>0){
+    C.failT-=dt;
+    if(C.failT<=0){run.score=Math.max(0,run.score-C.earned);C.earned=0;
+      C.t=0;C.next=1;C.seq=0;C.kills=0;C.hull=3;C.enemies.length=0;C.hitFlash=0;}
+    return;
+  }
+  C.t+=dt;C.fireCd=Math.max(0,C.fireCd-dt);C.shotFlash=Math.max(0,C.shotFlash-dt);
+  C.hitFlash=Math.max(0,C.hitFlash-dt);C.evade=Math.max(0,C.evade-dt);
+  let dx=(Input.rt?1:0)-(Input.lf?1:0),dy=(Input.dn?1:0)-(Input.up?1:0);
+  C.aimX=clamp(C.aimX+dx*W*.47*dt,W*.16,W*.84);
+  C.aimY=clamp(C.aimY+dy*H*.36*dt,H*.10,H*.50);
+  if(Input.mouse&&Input.mouse.active&&Input.consumeMouseMoved()){
+    C.aimX=clamp(Input.mouse.x,W*.16,W*.84);
+    C.aimY=clamp(Input.mouse.y,H*.10,H*.50);
+  }
+  if(Input.menuBack&&Input.menuBack()){C.evade=.65;
+    try{if(Audio.SFX)(Audio.SFX.arcBarrelRoll||Audio.SFX.dash||function(){})();}catch(_){}}
+  const fire=(keybind.fire||[]).some(k=>Input.down(k))||!!(Input.mouse&&Input.mouse.down);
+  C.handFrame=fire?3:dx<0?1:dx>0?2:0;
+  C.handLean+=(dx-C.handLean)*Math.min(1,dt*10);
+  if(C.t<19.8&&C.t>=C.next){cockpitEnemySpawn(C);C.next+=1.45;}
+  for(const e of C.enemies){
+    e.age+=dt;e.z-=dt*(2.0+(run.difficulty==='furious'?.28:0));
+    if(e.z<=1.2){
+      e.dead=true;
+      if(C.evade<=0){C.hull--;C.hitFlash=.34;
+        try{if(Audio.SFX&&Audio.SFX.hit)Audio.SFX.hit();}catch(_){}}
+    }
+  }
+  C.enemies=C.enemies.filter(e=>!e.dead);
+  if(fire&&C.fireCd<=0){
+    C.fireCd=.19;C.shotFlash=.13;C.shotX=C.aimX;C.shotY=C.aimY;
+    let hit=null,dist=Infinity;
+    for(const e of C.enemies){
+      const p=cockpitEnemyProject(e,W,H),d=Math.hypot(p.x-C.aimX,p.y-C.aimY);
+      if(d<p.size*.42+15&&d<dist){hit=e;dist=d;}
+    }
+    if(hit){hit.hp--;
+      if(hit.hp<=0){hit.dead=true;C.kills++;C.earned+=250;run.score+=250;
+        if(typeof stageStats!=='undefined')stageStats.kills++;
+        try{if(Audio.SFX&&Audio.SFX.enemyDie)Audio.SFX.enemyDie();}catch(_){}}
+    }
+    C.enemies=C.enemies.filter(e=>!e.dead);
+    try{if(Audio.SFX)(Audio.SFX.laserShot||Audio.SFX.laser||Audio.SFX.shoot)();}catch(_){}
+  }
+  if(C.hull<=0){C.failT=1.65;C.enemies.length=0;return;}
+  if(C.t>=25.5 || (C.t>=21.5&&C.seq>=13&&!C.enemies.length))cockpitEncounterFinish();
+}
+function drawCockpitEncounter(dt){
+  const C=cockpitEncounter,W=cutsceneViewWidth(),H=VH;
+  if(!C){setState(GS.LAUNCH);return;}
+  cockpitEncounterUpdate(dt,W,H);
+  ctx.fillStyle='#03050e';ctx.fillRect(0,0,W,H);
+  ctx.save();
+  if(C.evade>0){const a=Math.sin((.65-C.evade)*Math.PI/.65)*.065;
+    ctx.translate(W*.5,H*.5);ctx.rotate(a);ctx.translate(-W*.5,-H*.5);}
+  if(C.hitFlash>.1)ctx.translate(Math.sin(C.t*93)*5,Math.cos(C.t*81)*4);
+  cinCover('cin_origin_arrival',W,H,clamp(.5+(C.aimX/W-.5)*.16,0,1));
+  ctx.fillStyle='rgba(3,7,24,.25)';ctx.fillRect(0,0,W,H);
+  if(!C.ready){
+    if(typeof bmfReady==='function'&&bmfReady('dialogue'))
+      bmfDrawOn(ctx,'dialogue','COCKPIT LINK CONNECTING',W*.5,H*.42,30,'center');
+    ctx.restore();return;
+  }
+  ctx.save();ctx.beginPath();ctx.rect(W*.11,H*.025,W*.78,H*.53);ctx.clip();
+  const sorted=C.enemies.slice().sort((a,b)=>b.z-a.z);
+  for(const e of sorted){
+    const p=cockpitEnemyProject(e,W,H);
+    if(!XART.rdy(e.key))continue;
+    const im=XART.get(e.key);
+    ctx.drawImage(im,p.x-p.size*.5,p.y-p.size*.5,p.size,p.size);
+    if(e.hp>1){ctx.strokeStyle='#d53cff';ctx.lineWidth=2;
+      ctx.strokeRect(p.x-p.size*.39,p.y-p.size*.39,p.size*.78,p.size*.78);}
+  }
+  if(C.shotFlash>0){
+    const alpha=C.shotFlash/.13;
+    ctx.save();ctx.globalAlpha=alpha;ctx.strokeStyle='#75dcff';ctx.lineWidth=5;
+    for(const x of [W*.41,W*.59]){
+      ctx.beginPath();ctx.moveTo(x,H*.43);ctx.lineTo(C.shotX,C.shotY);ctx.stroke();
+      ctx.strokeStyle='#e8ffff';ctx.lineWidth=2;
+      ctx.beginPath();ctx.moveTo(x,H*.43);ctx.lineTo(C.shotX,C.shotY);ctx.stroke();
+      const k='laser_round_muzzle_'+Math.max(3,Math.min(7,Math.floor((1-alpha)*8)));
+      if(XART.rdy(k)){const m=XART.get(k);ctx.drawImage(m,x-47,H*.43-47,94,94);}
+    }
+    ctx.restore();
+  }
+  ctx.restore();
+  const glass=campaignIntroPovGlass();
+  if(glass)ctx.drawImage(glass,0,0,W,H);
+  const hand=cockpitHandTint(C.pilot);
+  if(hand){
+    const fw=(hand.naturalWidth||hand.width)/4,fh=hand.naturalHeight||hand.height;
+    const dw=W*.52,dh=dw*fh/fw,frame=C.handFrame;
+    const hx=W*.34-(frame===3?0:W*.085)-C.handLean*W*.018,hy=H*.40+(C.shotFlash>0?6:0);
+    ctx.drawImage(hand,frame*fw,0,fw,fh,hx,hy,dw,dh);
+  }
+  ctx.restore();
+  ctx.save();ctx.translate(C.aimX,C.aimY);ctx.strokeStyle=C.shotFlash>0?'#eaffff':'#70e8ff';
+  ctx.lineWidth=3;ctx.beginPath();
+  for(const a of [-1,1]){
+    ctx.moveTo(a*30,-8);ctx.lineTo(a*16,-8);ctx.moveTo(a*30,8);ctx.lineTo(a*16,8);
+    ctx.moveTo(-8,a*30);ctx.lineTo(-8,a*16);ctx.moveTo(8,a*30);ctx.lineTo(8,a*16);
+  }
+  ctx.stroke();ctx.restore();
+  ctx.fillStyle='rgba(2,9,22,.78)';ctx.fillRect(W*.17,7,W*.66,51);
+  if(typeof bmfReady==='function'&&bmfReady('dialogue')){
+    bmfDrawOn(ctx,'dialogue','VOID INTERCEPT  '+C.kills+' DOWN  HULL '+C.hull+'/3',
+      W*.5,33,24,'center');
+  }
+  if(C.hitFlash>0){ctx.fillStyle='rgba(255,45,67,'+Math.min(.36,C.hitFlash)+')';ctx.fillRect(0,0,W,H);}
+  if(C.failT>0&&typeof bmfReady==='function'&&bmfReady('dialogue')){
+    bmfDrawOn(ctx,'dialogue','HULL BREACHED - RECALIBRATING',W*.5,H*.40,35,'center');
+  }
+  const hints=[['pad_dpad','AIM'],['pad_a','FIRE'],['pad_b','EVADE']];
+  ctx.save();ctx.fillStyle='rgba(3,9,18,.82)';ctx.fillRect(W*.36,H-54,W*.42,48);
+  let hx=W*.38;
+  for(const [key,label] of hints){
+    if(XART.rdy(key)){const im=XART.get(key);ctx.drawImage(im,hx,H-47,35,35);}
+    ctx.fillStyle='#c6e9ff';ctx.font='20px "BOFmil", monospace';ctx.textBaseline='middle';
+    ctx.fillText(label,hx+39,H-28);hx+=W*.13;
+  }
+  ctx.restore();
+}
+
 function campaignIntroVisual(B,C,t,W,H){
   ctx.fillStyle='#050b12';ctx.fillRect(0,0,W,H);
   if(B.pov){
@@ -70412,6 +70615,7 @@ function proceedIntro(){
   /* Stage 8 arrived through the sewer gate, so its card hands directly to the matching portal
      exit. No runway, entry connector, countdown or GO call may sit between those two shots. */
   if(run.stage===8 && run._l78Entry){ l78EntryStart(); setState(GS.WARPENTRY); }
+  else if(run.stage===9) cockpitEncounterStart();
   else setState(GS.LAUNCH);
 }
 /* STAGE INTRO — master-art animated card with crash-in, fx, slice, countdown */
