@@ -1,0 +1,27 @@
+{
+  "headings": [
+    "N",
+    "NE",
+    "E",
+    "SE",
+    "S",
+    "SW",
+    "W",
+    "NW"
+  ],
+  "states": [
+    "intact",
+    "damaged"
+  ],
+  "sources": {
+    "black_heading": "exec-54c210e2-b91d-4f30-8301-39bb9b035e87.png",
+    "silver_heading": "exec-016738e9-8fad-444a-a556-cee334b35925.png",
+    "black_damaged": "exec-17c320b4-ba21-451b-9a71-f17f9320481a.png",
+    "silver_damaged": "exec-e087d5ca-09bb-4b6e-bbfe-c9044869630a.png",
+    "pitch": "exec-be63c079-c51a-4a21-b587-0975242d9722.png"
+  },
+  "anchor": [
+    128,
+    128
+  ]
+}

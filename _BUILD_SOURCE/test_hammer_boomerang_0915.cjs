@@ -10,7 +10,7 @@ module.exports=function testHammerBoomerang(vm,ctxv,ok){
       player={x:326,y:392,dead:false,invuln:999,_hx:9,_hy:10};
       boss={x:240,y:168,w:154,h:168,hp:1000,maxhp:1000,dead:false,flash:0};hammerBossInit(boss);
       boss.x=240;boss.y=168;boss.enter=false;boss._noHit=false;boss._hammer.state='hammer';boss._hammer.t=1.61;
-      hammerBossTick(boss,.01);o.starts=boss._hammer.state==='spin'&&boss._hammer.throwX===326;
+      hammerBoomerangStart(boss);o.starts=boss._hammer.state==='spin'&&boss._hammer.throwX===326;
       player.x=95;hammerBossTick(boss,.20);o.commits=boss._hammer.throwX===326&&boss._hammer.state==='spin';
       const spin0=boss._hammer.spinAngle;hammerBossTick(boss,.35);const spin1=boss._hammer.spinAngle;
       hammerBossTick(boss,.35);const spin2=boss._hammer.spinAngle;o.accelerates=(spin2-spin1)>(spin1-spin0);

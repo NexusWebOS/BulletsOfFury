@@ -1,0 +1,1153 @@
+{
+  "cell": [
+    128,
+    128
+  ],
+  "anchor": [
+    64,
+    64
+  ],
+  "mode": "built-in image_gen",
+  "frames": {
+    "jet_0_bank_0": {
+      "source": "bank_source.png",
+      "box": [
+        12,
+        11,
+        350,
+        346
+      ],
+      "scale": 0.34018
+    },
+    "jet_0_bank_1": {
+      "source": "bank_source.png",
+      "box": [
+        11,
+        366,
+        352,
+        695
+      ],
+      "scale": 0.34018
+    },
+    "jet_0_bank_2": {
+      "source": "bank_source.png",
+      "box": [
+        12,
+        725,
+        351,
+        1058
+      ],
+      "scale": 0.34018
+    },
+    "jet_0_roll_0": {
+      "source": "interceptor_source.png",
+      "box": [
+        12,
+        15,
+        246,
+        234
+      ],
+      "scale": 0.44444
+    },
+    "jet_0_roll_1": {
+      "source": "interceptor_source.png",
+      "box": [
+        273,
+        14,
+        453,
+        232
+      ],
+      "scale": 0.44444
+    },
+    "jet_0_roll_2": {
+      "source": "interceptor_source.png",
+      "box": [
+        516,
+        11,
+        577,
+        234
+      ],
+      "scale": 0.44444
+    },
+    "jet_0_roll_3": {
+      "source": "interceptor_source.png",
+      "box": [
+        656,
+        11,
+        828,
+        232
+      ],
+      "scale": 0.44444
+    },
+    "jet_0_roll_4": {
+      "source": "interceptor_source.png",
+      "box": [
+        866,
+        11,
+        1127,
+        234
+      ],
+      "scale": 0.44444
+    },
+    "jet_0_roll_5": {
+      "source": "interceptor_source.png",
+      "box": [
+        1164,
+        11,
+        1262,
+        234
+      ],
+      "scale": 0.44444
+    },
+    "jet_0_roll_6": {
+      "source": "interceptor_source.png",
+      "box": [
+        1323,
+        12,
+        1501,
+        231
+      ],
+      "scale": 0.44444
+    },
+    "jet_0_roll_7": {
+      "source": "interceptor_source.png",
+      "box": [
+        1528,
+        15,
+        1761,
+        234
+      ],
+      "scale": 0.44444
+    },
+    "jet_0_pitch_0": {
+      "source": "interceptor_source.png",
+      "box": [
+        12,
+        238,
+        246,
+        453
+      ],
+      "scale": 0.49573
+    },
+    "jet_0_pitch_1": {
+      "source": "interceptor_source.png",
+      "box": [
+        261,
+        248,
+        444,
+        446
+      ],
+      "scale": 0.49573
+    },
+    "jet_0_pitch_2": {
+      "source": "interceptor_source.png",
+      "box": [
+        453,
+        295,
+        657,
+        390
+      ],
+      "scale": 0.49573
+    },
+    "jet_0_pitch_3": {
+      "source": "interceptor_source.png",
+      "box": [
+        678,
+        239,
+        875,
+        446
+      ],
+      "scale": 0.49573
+    },
+    "jet_0_pitch_4": {
+      "source": "interceptor_source.png",
+      "box": [
+        894,
+        238,
+        1101,
+        443
+      ],
+      "scale": 0.49573
+    },
+    "jet_0_pitch_5": {
+      "source": "interceptor_source.png",
+      "box": [
+        1122,
+        243,
+        1316,
+        446
+      ],
+      "scale": 0.49573
+    },
+    "jet_0_pitch_6": {
+      "source": "interceptor_source.png",
+      "box": [
+        1323,
+        269,
+        1521,
+        420
+      ],
+      "scale": 0.49573
+    },
+    "jet_0_pitch_7": {
+      "source": "interceptor_source.png",
+      "box": [
+        1528,
+        238,
+        1761,
+        452
+      ],
+      "scale": 0.49573
+    },
+    "jet_0_turn_0": {
+      "source": "turn_source.png",
+      "box": [
+        20,
+        8,
+        226,
+        213
+      ],
+      "scale": 0.56311
+    },
+    "jet_0_turn_1": {
+      "source": "turn_source.png",
+      "box": [
+        244,
+        9,
+        437,
+        210
+      ],
+      "scale": 0.56311
+    },
+    "jet_0_turn_2": {
+      "source": "turn_source.png",
+      "box": [
+        464,
+        22,
+        660,
+        206
+      ],
+      "scale": 0.56311
+    },
+    "jet_0_turn_3": {
+      "source": "northturn_source.png",
+      "box": [
+        116,
+        7,
+        475,
+        371
+      ],
+      "scale": 0.31868
+    },
+    "jet_0_turn_4": {
+      "source": "turn_source.png",
+      "box": [
+        901,
+        7,
+        1097,
+        204
+      ],
+      "scale": 0.56311
+    },
+    "jet_0_turn_5": {
+      "source": "northturn_source.png",
+      "box": [
+        573,
+        7,
+        908,
+        371
+      ],
+      "scale": 0.31868
+    },
+    "jet_0_turn_6": {
+      "source": "turn_source.png",
+      "box": [
+        1374,
+        22,
+        1570,
+        206
+      ],
+      "scale": 0.56311
+    },
+    "jet_0_turn_7": {
+      "source": "turn_source.png",
+      "box": [
+        1562,
+        8,
+        1756,
+        210
+      ],
+      "scale": 0.56311
+    },
+    "jet_1_bank_0": {
+      "source": "bank_source.png",
+      "box": [
+        367,
+        10,
+        720,
+        356
+      ],
+      "scale": 0.32861
+    },
+    "jet_1_bank_1": {
+      "source": "bank_source.png",
+      "box": [
+        370,
+        364,
+        720,
+        707
+      ],
+      "scale": 0.32861
+    },
+    "jet_1_bank_2": {
+      "source": "bank_source.png",
+      "box": [
+        367,
+        721,
+        715,
+        1069
+      ],
+      "scale": 0.32861
+    },
+    "jet_1_roll_0": {
+      "source": "bomber_source.png",
+      "box": [
+        10,
+        21,
+        242,
+        229
+      ],
+      "scale": 0.47737
+    },
+    "jet_1_roll_1": {
+      "source": "bomber_source.png",
+      "box": [
+        270,
+        16,
+        462,
+        217
+      ],
+      "scale": 0.47737
+    },
+    "jet_1_roll_2": {
+      "source": "bomber_source.png",
+      "box": [
+        527,
+        16,
+        585,
+        230
+      ],
+      "scale": 0.47737
+    },
+    "jet_1_roll_3": {
+      "source": "bomber_source.png",
+      "box": [
+        654,
+        16,
+        854,
+        223
+      ],
+      "scale": 0.47737
+    },
+    "jet_1_roll_4": {
+      "source": "bomber_source.png",
+      "box": [
+        877,
+        21,
+        1120,
+        223
+      ],
+      "scale": 0.47737
+    },
+    "jet_1_roll_5": {
+      "source": "bomber_source.png",
+      "box": [
+        1143,
+        16,
+        1344,
+        223
+      ],
+      "scale": 0.47737
+    },
+    "jet_1_roll_6": {
+      "source": "bomber_source.png",
+      "box": [
+        1411,
+        16,
+        1470,
+        230
+      ],
+      "scale": 0.47737
+    },
+    "jet_1_roll_7": {
+      "source": "bomber_source.png",
+      "box": [
+        1536,
+        21,
+        1766,
+        229
+      ],
+      "scale": 0.47737
+    },
+    "jet_1_pitch_0": {
+      "source": "bomber_source.png",
+      "box": [
+        10,
+        241,
+        241,
+        447
+      ],
+      "scale": 0.50216
+    },
+    "jet_1_pitch_1": {
+      "source": "bomber_source.png",
+      "box": [
+        253,
+        241,
+        460,
+        441
+      ],
+      "scale": 0.50216
+    },
+    "jet_1_pitch_2": {
+      "source": "bomber_source.png",
+      "box": [
+        468,
+        304,
+        655,
+        392
+      ],
+      "scale": 0.50216
+    },
+    "jet_1_pitch_3": {
+      "source": "bomber_source.png",
+      "box": [
+        666,
+        239,
+        883,
+        441
+      ],
+      "scale": 0.50216
+    },
+    "jet_1_pitch_4": {
+      "source": "bomber_source.png",
+      "box": [
+        893,
+        239,
+        1109,
+        444
+      ],
+      "scale": 0.50216
+    },
+    "jet_1_pitch_5": {
+      "source": "bomber_source.png",
+      "box": [
+        1121,
+        264,
+        1325,
+        422
+      ],
+      "scale": 0.50216
+    },
+    "jet_1_pitch_6": {
+      "source": "bomber_source.png",
+      "box": [
+        1330,
+        321,
+        1531,
+        391
+      ],
+      "scale": 0.50216
+    },
+    "jet_1_pitch_7": {
+      "source": "bomber_source.png",
+      "box": [
+        1536,
+        241,
+        1766,
+        447
+      ],
+      "scale": 0.50216
+    },
+    "jet_1_turn_0": {
+      "source": "turn_source.png",
+      "box": [
+        14,
+        225,
+        236,
+        436
+      ],
+      "scale": 0.52252
+    },
+    "jet_1_turn_1": {
+      "source": "turn_source.png",
+      "box": [
+        238,
+        227,
+        452,
+        433
+      ],
+      "scale": 0.52252
+    },
+    "jet_1_turn_2": {
+      "source": "turn_source.png",
+      "box": [
+        459,
+        238,
+        660,
+        433
+      ],
+      "scale": 0.52252
+    },
+    "jet_1_turn_3": {
+      "source": "northturn_source.png",
+      "box": [
+        14,
+        359,
+        506,
+        736
+      ],
+      "scale": 0.23577
+    },
+    "jet_1_turn_4": {
+      "source": "turn_source.png",
+      "box": [
+        894,
+        225,
+        1104,
+        421
+      ],
+      "scale": 0.52252
+    },
+    "jet_1_turn_5": {
+      "source": "northturn_source.png",
+      "box": [
+        542,
+        359,
+        1015,
+        736
+      ],
+      "scale": 0.23577
+    },
+    "jet_1_turn_6": {
+      "source": "turn_source.png",
+      "box": [
+        1365,
+        238,
+        1567,
+        433
+      ],
+      "scale": 0.52252
+    },
+    "jet_1_turn_7": {
+      "source": "turn_source.png",
+      "box": [
+        1555,
+        228,
+        1761,
+        433
+      ],
+      "scale": 0.52252
+    },
+    "jet_2_bank_0": {
+      "source": "bank_source.png",
+      "box": [
+        736,
+        11,
+        1074,
+        346
+      ],
+      "scale": 0.34018
+    },
+    "jet_2_bank_1": {
+      "source": "bank_source.png",
+      "box": [
+        735,
+        366,
+        1076,
+        695
+      ],
+      "scale": 0.34018
+    },
+    "jet_2_bank_2": {
+      "source": "bank_source.png",
+      "box": [
+        736,
+        725,
+        1075,
+        1058
+      ],
+      "scale": 0.34018
+    },
+    "jet_2_roll_0": {
+      "source": "interceptor_source.png",
+      "box": [
+        12,
+        459,
+        246,
+        678
+      ],
+      "scale": 0.44444
+    },
+    "jet_2_roll_1": {
+      "source": "interceptor_source.png",
+      "box": [
+        273,
+        457,
+        453,
+        677
+      ],
+      "scale": 0.44444
+    },
+    "jet_2_roll_2": {
+      "source": "interceptor_source.png",
+      "box": [
+        516,
+        454,
+        577,
+        677
+      ],
+      "scale": 0.44444
+    },
+    "jet_2_roll_3": {
+      "source": "interceptor_source.png",
+      "box": [
+        656,
+        454,
+        828,
+        675
+      ],
+      "scale": 0.44444
+    },
+    "jet_2_roll_4": {
+      "source": "interceptor_source.png",
+      "box": [
+        866,
+        454,
+        1127,
+        677
+      ],
+      "scale": 0.44444
+    },
+    "jet_2_roll_5": {
+      "source": "interceptor_source.png",
+      "box": [
+        1164,
+        454,
+        1262,
+        677
+      ],
+      "scale": 0.44444
+    },
+    "jet_2_roll_6": {
+      "source": "interceptor_source.png",
+      "box": [
+        1322,
+        455,
+        1501,
+        675
+      ],
+      "scale": 0.44444
+    },
+    "jet_2_roll_7": {
+      "source": "interceptor_source.png",
+      "box": [
+        1528,
+        459,
+        1761,
+        677
+      ],
+      "scale": 0.44444
+    },
+    "jet_2_pitch_0": {
+      "source": "interceptor_source.png",
+      "box": [
+        12,
+        681,
+        246,
+        887
+      ],
+      "scale": 0.49573
+    },
+    "jet_2_pitch_1": {
+      "source": "interceptor_source.png",
+      "box": [
+        261,
+        692,
+        444,
+        887
+      ],
+      "scale": 0.49573
+    },
+    "jet_2_pitch_2": {
+      "source": "interceptor_source.png",
+      "box": [
+        453,
+        738,
+        657,
+        833
+      ],
+      "scale": 0.49573
+    },
+    "jet_2_pitch_3": {
+      "source": "interceptor_source.png",
+      "box": [
+        678,
+        682,
+        875,
+        887
+      ],
+      "scale": 0.49573
+    },
+    "jet_2_pitch_4": {
+      "source": "interceptor_source.png",
+      "box": [
+        894,
+        681,
+        1101,
+        886
+      ],
+      "scale": 0.49573
+    },
+    "jet_2_pitch_5": {
+      "source": "interceptor_source.png",
+      "box": [
+        1122,
+        687,
+        1316,
+        887
+      ],
+      "scale": 0.49573
+    },
+    "jet_2_pitch_6": {
+      "source": "interceptor_source.png",
+      "box": [
+        1323,
+        713,
+        1522,
+        863
+      ],
+      "scale": 0.49573
+    },
+    "jet_2_pitch_7": {
+      "source": "interceptor_source.png",
+      "box": [
+        1528,
+        681,
+        1761,
+        887
+      ],
+      "scale": 0.49573
+    },
+    "jet_2_turn_0": {
+      "source": "turn_source.png",
+      "box": [
+        20,
+        450,
+        227,
+        655
+      ],
+      "scale": 0.56039
+    },
+    "jet_2_turn_1": {
+      "source": "turn_source.png",
+      "box": [
+        243,
+        451,
+        438,
+        652
+      ],
+      "scale": 0.56039
+    },
+    "jet_2_turn_2": {
+      "source": "turn_source.png",
+      "box": [
+        461,
+        463,
+        659,
+        649
+      ],
+      "scale": 0.56039
+    },
+    "jet_2_turn_3": {
+      "source": "northturn_source.png",
+      "box": [
+        110,
+        741,
+        479,
+        1112
+      ],
+      "scale": 0.31267
+    },
+    "jet_2_turn_4": {
+      "source": "turn_source.png",
+      "box": [
+        899,
+        445,
+        1097,
+        646
+      ],
+      "scale": 0.56039
+    },
+    "jet_2_turn_5": {
+      "source": "northturn_source.png",
+      "box": [
+        569,
+        741,
+        914,
+        1112
+      ],
+      "scale": 0.31267
+    },
+    "jet_2_turn_6": {
+      "source": "turn_source.png",
+      "box": [
+        1369,
+        463,
+        1567,
+        649
+      ],
+      "scale": 0.56039
+    },
+    "jet_2_turn_7": {
+      "source": "turn_source.png",
+      "box": [
+        1561,
+        451,
+        1755,
+        652
+      ],
+      "scale": 0.56039
+    },
+    "jet_3_bank_0": {
+      "source": "bank_source.png",
+      "box": [
+        1090,
+        10,
+        1444,
+        356
+      ],
+      "scale": 0.32768
+    },
+    "jet_3_bank_1": {
+      "source": "bank_source.png",
+      "box": [
+        1095,
+        364,
+        1444,
+        707
+      ],
+      "scale": 0.32768
+    },
+    "jet_3_bank_2": {
+      "source": "bank_source.png",
+      "box": [
+        1091,
+        721,
+        1439,
+        1069
+      ],
+      "scale": 0.32768
+    },
+    "jet_3_roll_0": {
+      "source": "bomber_source.png",
+      "box": [
+        10,
+        462,
+        241,
+        669
+      ],
+      "scale": 0.47737
+    },
+    "jet_3_roll_1": {
+      "source": "bomber_source.png",
+      "box": [
+        270,
+        459,
+        462,
+        661
+      ],
+      "scale": 0.47737
+    },
+    "jet_3_roll_2": {
+      "source": "bomber_source.png",
+      "box": [
+        526,
+        459,
+        585,
+        675
+      ],
+      "scale": 0.47737
+    },
+    "jet_3_roll_3": {
+      "source": "bomber_source.png",
+      "box": [
+        654,
+        459,
+        854,
+        666
+      ],
+      "scale": 0.47737
+    },
+    "jet_3_roll_4": {
+      "source": "bomber_source.png",
+      "box": [
+        877,
+        464,
+        1120,
+        666
+      ],
+      "scale": 0.47737
+    },
+    "jet_3_roll_5": {
+      "source": "bomber_source.png",
+      "box": [
+        1143,
+        460,
+        1344,
+        666
+      ],
+      "scale": 0.47737
+    },
+    "jet_3_roll_6": {
+      "source": "bomber_source.png",
+      "box": [
+        1412,
+        459,
+        1470,
+        675
+      ],
+      "scale": 0.47737
+    },
+    "jet_3_roll_7": {
+      "source": "bomber_source.png",
+      "box": [
+        1535,
+        462,
+        1766,
+        669
+      ],
+      "scale": 0.47737
+    },
+    "jet_3_pitch_0": {
+      "source": "bomber_source.png",
+      "box": [
+        10,
+        684,
+        241,
+        887
+      ],
+      "scale": 0.50216
+    },
+    "jet_3_pitch_1": {
+      "source": "bomber_source.png",
+      "box": [
+        253,
+        684,
+        459,
+        885
+      ],
+      "scale": 0.50216
+    },
+    "jet_3_pitch_2": {
+      "source": "bomber_source.png",
+      "box": [
+        468,
+        748,
+        655,
+        836
+      ],
+      "scale": 0.50216
+    },
+    "jet_3_pitch_3": {
+      "source": "bomber_source.png",
+      "box": [
+        666,
+        682,
+        883,
+        885
+      ],
+      "scale": 0.50216
+    },
+    "jet_3_pitch_4": {
+      "source": "bomber_source.png",
+      "box": [
+        893,
+        682,
+        1109,
+        887
+      ],
+      "scale": 0.50216
+    },
+    "jet_3_pitch_5": {
+      "source": "bomber_source.png",
+      "box": [
+        1121,
+        708,
+        1325,
+        867
+      ],
+      "scale": 0.50216
+    },
+    "jet_3_pitch_6": {
+      "source": "bomber_source.png",
+      "box": [
+        1330,
+        764,
+        1531,
+        835
+      ],
+      "scale": 0.50216
+    },
+    "jet_3_pitch_7": {
+      "source": "bomber_source.png",
+      "box": [
+        1536,
+        684,
+        1766,
+        887
+      ],
+      "scale": 0.50216
+    },
+    "jet_3_turn_0": {
+      "source": "turn_source.png",
+      "box": [
+        14,
+        667,
+        236,
+        878
+      ],
+      "scale": 0.52252
+    },
+    "jet_3_turn_1": {
+      "source": "turn_source.png",
+      "box": [
+        238,
+        670,
+        452,
+        876
+      ],
+      "scale": 0.52252
+    },
+    "jet_3_turn_2": {
+      "source": "turn_source.png",
+      "box": [
+        459,
+        679,
+        661,
+        873
+      ],
+      "scale": 0.52252
+    },
+    "jet_3_turn_3": {
+      "source": "northturn_source.png",
+      "box": [
+        16,
+        1099,
+        506,
+        1475
+      ],
+      "scale": 0.23673
+    },
+    "jet_3_turn_4": {
+      "source": "turn_source.png",
+      "box": [
+        894,
+        662,
+        1104,
+        862
+      ],
+      "scale": 0.52252
+    },
+    "jet_3_turn_5": {
+      "source": "northturn_source.png",
+      "box": [
+        542,
+        1099,
+        1014,
+        1475
+      ],
+      "scale": 0.23673
+    },
+    "jet_3_turn_6": {
+      "source": "turn_source.png",
+      "box": [
+        1365,
+        679,
+        1568,
+        873
+      ],
+      "scale": 0.52252
+    },
+    "jet_3_turn_7": {
+      "source": "turn_source.png",
+      "box": [
+        1555,
+        670,
+        1761,
+        876
+      ],
+      "scale": 0.52252
+    },
+    "boat_0_0": {
+      "source": "boats_source.png",
+      "box": [
+        186,
+        3,
+        396,
+        498
+      ],
+      "scale": 0.22745
+    },
+    "boat_0_1": {
+      "source": "boats_source.png",
+      "box": [
+        186,
+        510,
+        395,
+        1007
+      ],
+      "scale": 0.22745
+    },
+    "boat_0_2": {
+      "source": "boats_source.png",
+      "box": [
+        186,
+        1014,
+        396,
+        1524
+      ],
+      "scale": 0.22745
+    },
+    "boat_1_0": {
+      "source": "boats_source.png",
+      "box": [
+        566,
+        3,
+        899,
+        501
+      ],
+      "scale": 0.23154
+    },
+    "boat_1_1": {
+      "source": "boats_source.png",
+      "box": [
+        564,
+        510,
+        899,
+        1010
+      ],
+      "scale": 0.23154
+    },
+    "boat_1_2": {
+      "source": "boats_source.png",
+      "box": [
+        558,
+        1014,
+        898,
+        1515
+      ],
+      "scale": 0.23154
+    }
+  }
+}

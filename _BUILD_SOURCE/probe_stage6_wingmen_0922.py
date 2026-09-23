@@ -71,7 +71,7 @@ finally:stop()
 assert not errors,errors
 assert math.dist(list(r['independence'][0].values()),list(r['independence'][1].values()))<.01
 assert len(r['squadron'])==8 and all(q['phase']=='fight' for q in r['squadron'])
-assert len(r['drawHeights'])==8 and all(h==60 for h in r['drawHeights'])
+assert r['drawHeights'].count(60)==8  # Ship draws; supply icons have their own sizes.
 assert r['nativeDamage']['hp']<200
 assert r['dodge']['dodge']>0
 for d,n in [('easy',1),('normal',1),('hard',2),('furious',3)]:

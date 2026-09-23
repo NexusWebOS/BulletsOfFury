@@ -9923,12 +9923,12 @@ console.log("=== 201. rank glyph ===");
      right-align the score — a change that touched neither the tint nor the size — failed an
      assertion whose subject is "the score draws untinted". Both halves are now checked directly:
      the tint arguments stay null/0, and the size is still ph*0.040. */
-  ok(/scPairLift\(art,sLab,sVal,/.test(_g201),
+  ok(/scCenLift\(_vf,value,b\[0\]\+b\[2\]\*x/.test(_g201) && /\[\[sLab,sVal,\.25\],\[cLab,cVal,\.75\]\]/.test(_g201),
      'and so is the score');
   /* Mike, 0904: "Clear Time - make this a metric on the screen but not in the box, down below
      with the score and rank section." It shares their bar, and it is a SNAPSHOT rather than a
      live read of stageTimer, which beginStage and the flyover both move. */
-  ok(/const cLab='CLEAR TIME = '/.test(_g201) && /clearT: \(typeof stageTimer==='number'/.test(_g201),
+  ok(/const cLab='CLEAR TIME '/.test(_g201) && /clearT: \(typeof stageTimer==='number'/.test(_g201),
      'clear time sits in the score/rank bar and is snapshotted, not read live');
   /* Mike: "the score and time and Rank values should be using diffferent stage fonts to stand out
      properly" - the value takes the pack's FINAL LEVEL face, the one cut to belong to no stage,
@@ -13096,8 +13096,8 @@ console.log("=== 265. Stage-1 VFX edge safety and Overlord hunter flight ===");
     +"return JSON.stringify({minX:minX,maxX:maxX,minY:minY,maxY:maxY,state:b._ovState,miss:miss});})()",ctxv));
   ok(_swirl265.minX<0&&_swirl265.maxX>410&&_swirl265.minY<45&&_swirl265.maxY>250,
      'side re-entry draws one continuous 1.25-turn path around all four playfield corners');
-  ok(_swirl265.state==='fight'&&_swirl265.miss>0,
-     'the corner swirl returns to the hunt while launching shootable Jungle missiles');
+  ok(_swirl265.state==='sonicCombo'&&_swirl265.miss>0,
+     'the corner swirl enters the centered sonic sequence after launching shootable Jungle missiles');
 
   var _rage265=JSON.parse(vm.runInContext("(function(){"
     +"var b=boss;b.hp=b.maxhp*0.45;b._ovState='fight';b._ovFlight='hunt';b._ovFlightT=0;b._ovChargeCd=999;b.fireCd=999;smokeTrails.length=0;particles.length=0;"

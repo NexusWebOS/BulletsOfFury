@@ -57,6 +57,12 @@
   body.wide-map #game-frame{box-shadow:none;background:transparent;width:93.75vh !important;height:100vh !important;}
   body.wide-map #hud-row,body.wide-map #hud-div{display:none !important;}
   body.wide-map #screen-area,body.wide-map #screen{width:100% !important;height:100% !important;}
+  body.campaign-full #room{display:block;background:#04102a;}
+  body.campaign-full #marquee,body.campaign-full .side,body.campaign-full #credit-left,body.campaign-full #credit-right,
+  body.campaign-full #hud-row,body.campaign-full #hud-div,body.campaign-full #hint{display:none !important;}
+  body.campaign-full #game-frame{position:fixed !important;inset:0 !important;width:100vw !important;height:100vh !important;box-shadow:none;}
+  body.campaign-full #screen-area{position:fixed;inset:0;width:100vw !important;height:100vh !important;margin:0 !important;}
+  body.campaign-full #screen{width:100vw !important;height:100vh !important;}
   /* Wide menus and the boot plate own the full middle bay; gameplay retains the top HUD. */
   @media(min-width:1150px){
     body.fs:not(.wide-playing):not(.wide-map):not(.cinematic-full) #hud-row,
@@ -228,7 +234,7 @@
 <script src="assets/game/atlas/stage5_runtime_atlas.js"></script>
 <script src="assets/game.js"></script>
 <script src="assets/widescreen_hud_0918.js"></script>
-<script src="assets/wide_map_world_0919.js"></script>
+<!-- Campaign world now renders once, on the full-width game canvas. -->
 <script>
 (function(){
   var GA=480/512, SIDE_A=335/1042, MARQ_A=693/179, HUD_R=62/512, gap=16, FR=14, mgap=6, MSCALE=1.12;
@@ -242,7 +248,7 @@
   function fit(){
     var vw=innerWidth, vh=innerHeight;
     function S(id,w,h){ var e=document.getElementById(id); if(e){ e.style.width=w+'px'; e.style.height=h+'px'; } }
-    if(document.body.classList.contains('cinematic-full')){
+    if(document.body.classList.contains('cinematic-full')||document.body.classList.contains('campaign-full')){
       var gf0=document.getElementById('game-frame'),sa0=document.getElementById('screen-area'),scr0=document.getElementById('screen');
       if(gf0){gf0.style.position='fixed';gf0.style.left='0px';gf0.style.top='0px';gf0.style.width=vw+'px';gf0.style.height=vh+'px';}
       if(sa0){sa0.style.width=vw+'px';sa0.style.height=vh+'px';sa0.style.marginLeft='0px';}

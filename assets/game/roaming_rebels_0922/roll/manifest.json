@@ -1,0 +1,67 @@
+{
+  "voss_iron_vulture": {
+    "source": "voss_iron_vulture_source.png",
+    "frames": 8,
+    "cell": [
+      256,
+      256
+    ],
+    "anchor": [
+      128,
+      128
+    ],
+    "direction": "nose south, longitudinal roll"
+  },
+  "nyx_ghostknife": {
+    "source": "nyx_ghostknife_source.png",
+    "frames": 8,
+    "cell": [
+      256,
+      256
+    ],
+    "anchor": [
+      128,
+      128
+    ],
+    "direction": "nose south, longitudinal roll"
+  },
+  "rook_breachhammer": {
+    "source": "rook_breachhammer_source.png",
+    "frames": 8,
+    "cell": [
+      256,
+      256
+    ],
+    "anchor": [
+      128,
+      128
+    ],
+    "direction": "nose south, longitudinal roll"
+  },
+  "kaia_signal_wraith": {
+    "source": "kaia_signal_wraith_source.png",
+    "frames": 8,
+    "cell": [
+      256,
+      256
+    ],
+    "anchor": [
+      128,
+      128
+    ],
+    "direction": "nose south, longitudinal roll"
+  },
+  "jace_razorjack": {
+    "source": "jace_razorjack_source.png",
+    "frames": 8,
+    "cell": [
+      256,
+      256
+    ],
+    "anchor": [
+      128,
+      128
+    ],
+    "direction": "nose south, longitudinal roll"
+  }
+}

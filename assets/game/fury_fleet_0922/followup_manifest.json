@@ -1,0 +1,35 @@
+{
+  "source_files": {
+    "unarmed_bank_magenta": [
+      "exec-46828931-3b74-4d87-94b4-f9948fdc2f6b.png",
+      3,
+      2
+    ],
+    "unarmed_maneuver": [
+      "exec-481ef848-e261-4efc-9a17-e93dfd7922da.png",
+      4,
+      3
+    ],
+    "missile_rack": [
+      "exec-3f3f4eb0-6a94-4e1b-949d-031045e91cfc.png",
+      6,
+      1
+    ],
+    "patrol_turret": [
+      "exec-367a0344-1f39-4837-bd15-e8c0abe610fc.png",
+      5,
+      2
+    ],
+    "missile_free_hull": [
+      "exec-1197c39f-afe3-49ec-a342-84eeef15ac6a.png",
+      3,
+      1
+    ]
+  },
+  "unarmed_variants": {
+    "0": "matte black",
+    "2": "steel gray"
+  },
+  "rack_frames": 6,
+  "turret_frames": 10
+}

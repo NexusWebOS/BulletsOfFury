@@ -16,8 +16,8 @@ module.exports=function(vm,ctxv,ok){
       o.noShieldEffects=S.drones.every(d=>d.shield===0&&d.maxShield===0&&d.hp===d.maxhp);
       o.mountedGunner=eBullets.some(x=>x._s4EscortRole==='gunner'&&x._s4wKind==='machine')&&gun.shots>=5;
       o.missileProtector=eBullets.some(x=>x._s4EscortRole==='protector'&&x._shootable&&x._s4wKind==='rocket')&&protect.shots>=1;
-      o.playerLikeMotion=maxProtectTravel>30&&protect.y>=198&&protect.y<=252;
-      o.stationaryGunner=Math.abs(gun.x-gun.stationX)<1&&Math.abs(gun.y-gun.stationY)<=6;
+      o.evasiveProtector=maxProtectTravel>30&&stage4MiniDroneAt(b,protect.x,protect.y,2)===protect;
+      o.exposedGunner=Math.abs(gun.x-b.x)>(b.w+gun.size)*.4||Math.abs(gun.y-b.y)>(b.h+gun.size)*.4;
       var hp=gun.hp;stage4MiniDroneDamage(b,gun,5);o.hullTakesDamage=gun.hp<hp&&gun.shield===0;
       o.hittable=stage4MiniDroneAt(b,gun.x,gun.y,2)===gun;
       o.planContinues=/^hard/.test(S.mode)||S.miniHard||['burst','center','rockets'].includes(S.mode);

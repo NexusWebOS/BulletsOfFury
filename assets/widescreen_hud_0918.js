@@ -30,7 +30,7 @@ function values(){try{
  const points=typeof furiousBalance==='function'?furiousBalance():0;
  const cap=typeof DIFF!=='undefined'&&DIFF?DIFF.continues:0;
  return {key,name:(p&&p.name)||key.toUpperCase(),stage,score:run.score||0,lives:run.lives||0,
-  continues:cap<0?'âˆž':Math.max(0,cap-(run.contUsed||0)),diff:(diffKey||'normal').toUpperCase(),points,total,
+  continues:cap<0?'Ã¢Ë†Å¾':Math.max(0,cap-(run.contUsed||0)),diff:(diffKey||'normal').toUpperCase(),points,total,
   objective:(typeof STAGES!=='undefined'&&STAGES[stage-1]?STAGES[stage-1].sub:'RETURN TO FURY HQ')};
 }catch(_){return {key:'cole',name:'COLE',stage:1,score:0,lives:0,continues:0,diff:'NORMAL',points:0,total:0,objective:'STANDBY'};}}
 function stageGrid(g,w,h,v){
@@ -49,7 +49,8 @@ function stageGrid(g,w,h,v){
   txt(g,'0'+st,x+cellW*.10,y+cellH*.82,Math.max(7,Math.min(10,cellW*.2)),unlocked?'#dce8f2':'#70808b');
   g.restore();
  }
- txt(g,'THEATER PROGRESSION',w/2,Math.max(24,y0-24),17,'#e8d7a1','center');
+ const label='THEATER PROGRESSION',measured=typeof bmfMeasure==='function'?bmfMeasure(uiFace(),label,17):label.length*12;
+ txt(g,label,w/2,Math.max(24,y0-24),Math.min(17,17*(w-16)/Math.max(1,measured)),'#e8d7a1','center');
 }
 function leaderboard(g,w,h,v){
  const panelW=Math.min(w-12,Math.floor(h*.45)),panelH=Math.min(h-20,Math.floor(panelW*810/320));
@@ -103,12 +104,13 @@ function clockPanel(g,w,h){plate(g,bgRect.clock,0,0,w,h);const now=new Date();
 let last=0,prev='';
 function tick(now){requestAnimationFrame(tick);if(now-last<180)return;last=now;
  const st=current(),map=st==='stagesel',playing=['play','paused','continue','stageclear','gameover'].includes(st);
- const wide=innerWidth>=1150&&document.body.classList.contains('fs')&&!document.body.classList.contains('cinematic-full');
+ const wide=innerWidth>=1150&&(map||document.body.classList.contains('fs'))&&!document.body.classList.contains('cinematic-full');
  document.body.classList.toggle('wide-map',wide&&map);
  document.body.classList.toggle('wide-playing',wide&&playing);
- const frame=document.getElementById('game-frame').getBoundingClientRect(),half=Math.max(0,(innerWidth-frame.width)/2),side=Math.min(460,Math.floor(half-18));
+ const nativeMapW=innerHeight*480/512;
+ const frame=map?{width:nativeMapW,height:innerHeight,left:(innerWidth-nativeMapW)/2,right:(innerWidth+nativeMapW)/2,top:0}:document.getElementById('game-frame').getBoundingClientRect(),half=Math.max(0,(innerWidth-frame.width)/2),side=Math.min(460,Math.floor(half-18));
  const visible=wide&&side>=184;
- left.style.display=right.style.display=visible?'block':'none';clock.style.display=visible&&map?'block':'none';mapTop.style.display='none';
+ left.style.display=right.style.display=visible?'block':'none';clock.style.display=visible&&map&&!(typeof campPause!=='undefined'&&campPause)?'block':'none';mapTop.style.display='none';
  if(!visible)return;
  const h=Math.min(innerHeight-16,Math.max(420,Math.floor(frame.height))),top=Math.max(8,Math.round((innerHeight-h)/2));
  for(const [c,sideName] of [[left,'left'],[right,'right']]){
@@ -119,7 +121,8 @@ function tick(now){requestAnimationFrame(tick);if(now-last<180)return;last=now;
  if(map){mapTop.style.left=Math.round(frame.left)+'px';mapTop.style.top=Math.round(frame.top)+'px';mapTop.style.width=Math.round(frame.width)+'px';mapTop.style.height=Math.round(frame.width*68/480)+'px';
   const cw=Math.min(400,Math.floor(frame.width*.58)),ch=Math.floor(cw*130/826);clock.width=cw;clock.height=ch;
   clock.style.width=cw+'px';clock.style.height=ch+'px';clock.style.left=Math.round(frame.left+(frame.width-cw)/2)+'px';
-  clock.style.top=Math.round(frame.top+frame.width*52/480)+'px';}
+  const barBottom=typeof CM2_BAR!=='undefined'?(cmap2BarY()+CM2_BAR.h):45;
+  clock.style.top=Math.round(frame.top+frame.width*(barBottom-5)/480)+'px';}
  L.clearRect(0,0,left.width,left.height);R.clearRect(0,0,right.width,right.height);
  const v=values();
  if(map){stageGrid(L,left.width,left.height,v);rightPanel(R,right.width,right.height,v,true);T.clearRect(0,0,clock.width,clock.height);clockPanel(T,clock.width,clock.height);}
