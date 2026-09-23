@@ -1,0 +1,9 @@
+{
+  "asset_id": "78b77b11-a1d9-4f0d-b196-7f6fcf2dcc53",
+  "model": "gpt-image-2.5-sunburst",
+  "prompt": "Exactly eight animation frames in a 4 column by 2 row spritesheet. A defensive MEGA SHIELD bubble for a 16-bit arcade spaceship shooter. Perfect circular blue cyan translucent energy sphere viewed straight on, no spacecraft inside, no symbols, no text. Crisp stepped pixel-art circumference, concentric blue silver rim, five subtle small luminous shield nodes equally spaced around its perimeter. Interior lightly tinted blue with subtle pixel-grid refraction, visually transparent so a ship can be seen inside when composited at 50% opacity. Animation frames show pixel energy shimmering clockwise, tiny squared highlights travel around rim and occasional white-cyan pixel flash, stays exactly the same diameter and center in all frames. Final two frames slightly brighter deflection pulse then settling back to idle. All eight isolated round bubbles equal size with generous transparent padding, no connecting streaks, no background, no checkerboard baked in. High quality 16-bit Bullets of Fury arcade art, shaded clustered pixels, no smooth photographic gradients, no rays outside ring.",
+  "credits": 14,
+  "date": "2026-09-23",
+  "source": "source.png",
+  "source_sha12": "9507d342a014"
+}

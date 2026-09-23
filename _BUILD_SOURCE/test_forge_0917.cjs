@@ -51,9 +51,9 @@ module.exports=function testForge(vm,ctxv,ok){
   ok(R("run.infusion && run.infusion.elem==='fire' && run.infusion.lv===1"),
      'and the HELD weapon takes the element at once (run.infusion)');
   ok(R("weaponDisplayName(0)==='INCENDIARY SLUGS'"), 'weaponDisplayName returns the forged name');
-  ok(R("forgeCombine(0,'fire')==='ok' && run.forge[0].lv===2 && run.forgeCombos===0"),
-     'the same element again LEVELS it (L2) and spends the second combine');
-  ok(R("forgeCombine(0,'fire')==='spent' && run.forge[0].lv===2"), 'a third combine is refused as spent and changes nothing');
+  ok(R("forgeCombine(0,'fire')==='owned' && run.forge[0].lv===1 && run.forgeCombos===1"),
+     'a duplicate combination is refused and preserves the remaining combine');
+  ok(R("forgeCombine(0,'fire')==='owned' && run.forge[0].lv===1"), 'repeated duplicate attempts never create a second tier');
   R("run.forgeCombos=1;");
   ok(R("forgeCombine(0,'ice')==='ok' && run.forge[0].elem==='ice' && run.forge[0].lv===1"),
      'a DIFFERENT element replaces the forged one at level 1 (it takes over)');
@@ -97,7 +97,7 @@ module.exports=function testForge(vm,ctxv,ok){
   ok(/run\.infusion=null;\s*\n?\s*if\(typeof forgeApply==='function'\) forgeApply\(\);/.test(src),
      'the death reset clears the in-play element and then re-asserts the FORGED one (permanent)');
   R("run.forge={0:{elem:'fire',lv:3}}; run.weapon=0; run.infusion=null;");
-  ok(R("forgeApply() && run.infusion.elem==='fire' && run.infusion.lv===3"), 'forgeApply seeds run.infusion from the forge at the forged level');
+  ok(R("forgeApply() && run.infusion.elem==='fire' && run.infusion.lv===1"), 'forgeApply normalizes legacy forged levels to the single combination');
   R("run.infusion={elem:'fire',lv:3,hits:4};");
   ok(R("forgeApply()===false && run.infusion.hits===4"), 'and never overwrites an element that is already at least as strong');
 

@@ -1,0 +1,360 @@
+{
+  "asset_id": "bf2adfda-6b5c-4b59-b2e4-f30572fe2159",
+  "model": "gpt-image-2.5-sunburst",
+  "credits": 55,
+  "reference_asset_id": "7eebc4c8-e086-42fc-8951-26f5ad1dc255",
+  "retained_curl_asset_id": "c1fe952b-34ab-4e7a-843f-0f07643864b7",
+  "frame_count": 24,
+  "order": [
+    [
+      "wide",
+      0
+    ],
+    [
+      "wide",
+      1
+    ],
+    [
+      "wide",
+      2
+    ],
+    [
+      "wide",
+      3
+    ],
+    [
+      "curl",
+      3
+    ],
+    [
+      "curl",
+      4
+    ],
+    [
+      "curl",
+      5
+    ],
+    [
+      "curl",
+      7
+    ],
+    [
+      "wide",
+      4
+    ],
+    [
+      "wide",
+      5
+    ],
+    [
+      "wide",
+      6
+    ],
+    [
+      "wide",
+      7
+    ],
+    [
+      "wide",
+      8
+    ],
+    [
+      "wide",
+      9
+    ],
+    [
+      "wide",
+      10
+    ],
+    [
+      "wide",
+      11
+    ],
+    [
+      "curl",
+      11
+    ],
+    [
+      "curl",
+      12
+    ],
+    [
+      "curl",
+      14
+    ],
+    [
+      "curl",
+      15
+    ],
+    [
+      "wide",
+      12
+    ],
+    [
+      "wide",
+      13
+    ],
+    [
+      "wide",
+      14
+    ],
+    [
+      "wide",
+      15
+    ]
+  ],
+  "extents": [
+    [
+      -158,
+      30,
+      -103,
+      0
+    ],
+    [
+      -113,
+      50,
+      -154,
+      1
+    ],
+    [
+      -79,
+      51,
+      -169,
+      2
+    ],
+    [
+      -83,
+      44,
+      -167,
+      1
+    ],
+    [
+      -78,
+      38,
+      -124,
+      2
+    ],
+    [
+      -51,
+      28,
+      -121,
+      2
+    ],
+    [
+      -67,
+      26,
+      -105,
+      2
+    ],
+    [
+      -78,
+      43,
+      -128,
+      2
+    ],
+    [
+      -52,
+      29,
+      -180,
+      1
+    ],
+    [
+      -28,
+      62,
+      -169,
+      1
+    ],
+    [
+      -43,
+      101,
+      -159,
+      0
+    ],
+    [
+      -32,
+      159,
+      -101,
+      1
+    ],
+    [
+      -35,
+      156,
+      -108,
+      1
+    ],
+    [
+      -52,
+      103,
+      -159,
+      1
+    ],
+    [
+      -51,
+      66,
+      -174,
+      0
+    ],
+    [
+      -50,
+      76,
+      -173,
+      1
+    ],
+    [
+      -81,
+      57,
+      -146,
+      2
+    ],
+    [
+      -80,
+      48,
+      -138,
+      2
+    ],
+    [
+      -77,
+      48,
+      -156,
+      2
+    ],
+    [
+      -91,
+      49,
+      -158,
+      2
+    ],
+    [
+      -28,
+      49,
+      -180,
+      0
+    ],
+    [
+      -60,
+      60,
+      -175,
+      1
+    ],
+    [
+      -109,
+      45,
+      -155,
+      1
+    ],
+    [
+      -162,
+      33,
+      -96,
+      2
+    ]
+  ],
+  "palette": "Same sampled fire-orb/flamethrower ramp and approved muzzle as fire_whip_lash_0923",
+  "source_note": "Canonical pixel conversion incorrectly produced 33x33; recovered full-resolution raw_url from same owned asset. Reported to SpriteCook.",
+  "files": [
+    {
+      "file": "pose_0.png",
+      "sha12": "3701c61727eb"
+    },
+    {
+      "file": "pose_1.png",
+      "sha12": "51edcafcec87"
+    },
+    {
+      "file": "pose_10.png",
+      "sha12": "a9eca9ff5c73"
+    },
+    {
+      "file": "pose_11.png",
+      "sha12": "0ef5fc19ad58"
+    },
+    {
+      "file": "pose_12.png",
+      "sha12": "d7c42cabda96"
+    },
+    {
+      "file": "pose_13.png",
+      "sha12": "c7a12820ef98"
+    },
+    {
+      "file": "pose_14.png",
+      "sha12": "b712f574dc34"
+    },
+    {
+      "file": "pose_15.png",
+      "sha12": "62f2e6bb53f2"
+    },
+    {
+      "file": "pose_16.png",
+      "sha12": "90dc1d408f11"
+    },
+    {
+      "file": "pose_17.png",
+      "sha12": "0ee88af1d6f7"
+    },
+    {
+      "file": "pose_18.png",
+      "sha12": "7b51271880ed"
+    },
+    {
+      "file": "pose_19.png",
+      "sha12": "deaa4c5f711b"
+    },
+    {
+      "file": "pose_2.png",
+      "sha12": "77716439fbe6"
+    },
+    {
+      "file": "pose_20.png",
+      "sha12": "1637792f3589"
+    },
+    {
+      "file": "pose_21.png",
+      "sha12": "c64e15bd5d13"
+    },
+    {
+      "file": "pose_22.png",
+      "sha12": "7b325e77388f"
+    },
+    {
+      "file": "pose_23.png",
+      "sha12": "dd39ffadb681"
+    },
+    {
+      "file": "pose_3.png",
+      "sha12": "29622293b468"
+    },
+    {
+      "file": "pose_4.png",
+      "sha12": "ff25a7c32a57"
+    },
+    {
+      "file": "pose_5.png",
+      "sha12": "f685d1e4466e"
+    },
+    {
+      "file": "pose_6.png",
+      "sha12": "8fa70e910050"
+    },
+    {
+      "file": "pose_7.png",
+      "sha12": "e606af510a30"
+    },
+    {
+      "file": "pose_8.png",
+      "sha12": "b0c4ead0a95e"
+    },
+    {
+      "file": "pose_9.png",
+      "sha12": "319426a12f84"
+    },
+    {
+      "file": "source.png",
+      "sha12": "da2820cb3a6b"
+    },
+    {
+      "file": "source_raw.png",
+      "sha12": "c2447a2eed66"
+    }
+  ]
+}

@@ -11370,8 +11370,8 @@ console.log("=== 222. muzzle flash tiers ===");
      'and it flags rather than returning, so the overlay below it still draws');
 
   /* both legacy reels are gated on the flag, or the spread lights two muzzles at once */
-  ok((_g222.match(/if\(!_p87muz && player\._mgMuzT>0/g)||[]).length===2,
-     'both legacy muzzle branches are gated on the pack having drawn');
+  ok((_g222.match(/if\(!_p87muz && player\._mgMuzT>0/g)||[]).length===3,
+     'all three legacy muzzle branches are gated after the shared circular flash draws');
 }
 
 // ===== 223. THE SHIP PATTERNS FIRE WHERE THEY AIM (drop 0812i) =====
@@ -12227,7 +12227,7 @@ console.log("=== 244. Stage-5 Chaos Harrier true missile flight ===");
 {
   var _ch244=JSON.parse(vm.runInContext("(function(){run.stage=5;curStage=STAGES[4];eBullets.length=0;enemies.length=0;"
     +"spawnSubBoss('chaosharrier');subBoss.enter=false;subBoss._chState='missile';subBoss._chT=0;subBoss._chStep=0;"
-    +"subBoss._chVisible=true;subBoss._chCollision=true;subBoss._chPhase=1;chaosHarrierUpdate(subBoss,0.29);"
+    +"subBoss._chVisible=true;subBoss._chCollision=true;subBoss._chPhase=1;chaosHarrierUpdate(subBoss,chaosHarrierWarm('missile')+0.01);"
     +"var m=eBullets.filter(function(q){return q._chKind==='missile';})[0];return JSON.stringify({"
     +"n:eBullets.filter(function(q){return q._chKind==='missile';}).length,x:m&&m.x,lane:m&&m._chLaneX,"
     +"vx:m&&m.vx,vy:m&&m.vy,ang:m&&m.ang,accel:m&&m._chAccel,max:m&&m._chMaxspd,"
@@ -14706,7 +14706,7 @@ console.log("=== 278. lizzie B-42 alternate costume ===");
     +"s9warp=null; s5RunReset(); o.reset=(wdrive.lvl===0&&wdrive.kicks.length===0); shockRings.length=0; shake=0; run.stage=rs;"
     +"return JSON.stringify(o);})()", ctxv));
   ok(_wd.lvl > 0.3 && _wd.lvl <= 0.5, 'the drive level follows the gates passed (4 of 8 -> ' + _wd.lvl.toFixed(3) + ')');
-  ok(_wd.mul > 2, 'space runs faster as the drive climbs (x' + _wd.mul.toFixed(2) + ')');
+  ok(_wd.mul > 1.15 && _wd.mul <= 1.5, 'space drive adds a controlled boost to the fast cruise (x' + _wd.mul.toFixed(2) + ')');
   ok(_wd.ring && _wd.flash > 0.5 && _wd.kicks >= 1, "a pass fires the jump burst, stage 5's own shock ring and the flash");
   ok(_wd.gx === 400, 'the warp-out anchors on the gate that finished the run');
   ok(_wd.carry < 3, 'the ship is carried under that gate in WORLD space (' + _wd.carry.toFixed(2) + 'px off)');

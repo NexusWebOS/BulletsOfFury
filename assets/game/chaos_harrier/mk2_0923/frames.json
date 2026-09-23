@@ -1,0 +1,259 @@
+{
+  "source": "frames_source.png",
+  "frames": {
+    "hull_0.png": {
+      "sha12": "542a16caa0c0",
+      "source_cell": [
+        0,
+        0,
+        545,
+        570
+      ],
+      "source_anchor": [
+        288,
+        276
+      ]
+    },
+    "hull_1.png": {
+      "sha12": "c60495e47d89",
+      "source_cell": [
+        545,
+        0,
+        1050,
+        570
+      ],
+      "source_anchor": [
+        800,
+        276
+      ]
+    },
+    "hull_2.png": {
+      "sha12": "58bd65fbb15a",
+      "source_cell": [
+        1050,
+        0,
+        1550,
+        570
+      ],
+      "source_anchor": [
+        1302,
+        276
+      ]
+    },
+    "hull_3.png": {
+      "sha12": "97e7597da116",
+      "source_cell": [
+        1550,
+        0,
+        2048,
+        570
+      ],
+      "source_anchor": [
+        1802,
+        276
+      ]
+    },
+    "gun_0.png": {
+      "sha12": "040fc69342bb",
+      "source_cell": [
+        0,
+        570,
+        545,
+        1135
+      ],
+      "source_anchor": [
+        250,
+        636
+      ]
+    },
+    "gun_1.png": {
+      "sha12": "064640560029",
+      "source_cell": [
+        545,
+        570,
+        1050,
+        1135
+      ],
+      "source_anchor": [
+        751,
+        636
+      ]
+    },
+    "gun_2.png": {
+      "sha12": "a132140ed767",
+      "source_cell": [
+        1050,
+        570,
+        1550,
+        1135
+      ],
+      "source_anchor": [
+        1245,
+        636
+      ]
+    },
+    "gun_3.png": {
+      "sha12": "b72cd3c4c763",
+      "source_cell": [
+        1550,
+        570,
+        2048,
+        1135
+      ],
+      "source_anchor": [
+        1746,
+        636
+      ]
+    },
+    "emitter_0.png": {
+      "sha12": "25c550bafe6e",
+      "source_cell": [
+        0,
+        1135,
+        545,
+        1560
+      ],
+      "source_anchor": [
+        296.0,
+        1521
+      ]
+    },
+    "emitter_1.png": {
+      "sha12": "4bd44e7ae5bf",
+      "source_cell": [
+        545,
+        1135,
+        1050,
+        1560
+      ],
+      "source_anchor": [
+        800.0,
+        1516
+      ]
+    },
+    "emitter_2.png": {
+      "sha12": "cbe62f7127dc",
+      "source_cell": [
+        1050,
+        1135,
+        1550,
+        1560
+      ],
+      "source_anchor": [
+        1296.5,
+        1526
+      ]
+    },
+    "emitter_3.png": {
+      "sha12": "c99169c183e0",
+      "source_cell": [
+        1550,
+        1135,
+        2048,
+        1560
+      ],
+      "source_anchor": [
+        1799.5,
+        1525
+      ]
+    },
+    "thruster_0.png": {
+      "sha12": "bd0344f5bfd4",
+      "source_cell": [
+        0,
+        1560,
+        545,
+        2048
+      ],
+      "source_anchor": [
+        296.5,
+        1958
+      ]
+    },
+    "thruster_1.png": {
+      "sha12": "7b0f8cd383d9",
+      "source_cell": [
+        545,
+        1560,
+        1050,
+        2048
+      ],
+      "source_anchor": [
+        796.0,
+        1958
+      ]
+    },
+    "thruster_2.png": {
+      "sha12": "a0b1f43784cc",
+      "source_cell": [
+        1050,
+        1560,
+        1550,
+        2048
+      ],
+      "source_anchor": [
+        1295.0,
+        1958
+      ]
+    },
+    "thruster_3.png": {
+      "sha12": "c682e990aee2",
+      "source_cell": [
+        1550,
+        1560,
+        2048,
+        2048
+      ],
+      "source_anchor": [
+        1799.0,
+        1958
+      ]
+    }
+  },
+  "anchors": {
+    "hull": {
+      "size": [
+        320,
+        320
+      ],
+      "scale": 0.48,
+      "anchor": [
+        160,
+        145
+      ]
+    },
+    "gun": {
+      "size": [
+        192,
+        256
+      ],
+      "scale": 0.38,
+      "anchor": [
+        80,
+        44
+      ]
+    },
+    "emitter": {
+      "size": [
+        128,
+        256
+      ],
+      "scale": 0.5,
+      "anchor": [
+        64,
+        224
+      ]
+    },
+    "thruster": {
+      "size": [
+        128,
+        256
+      ],
+      "scale": 0.45,
+      "anchor": [
+        64,
+        236
+      ]
+    }
+  }
+}

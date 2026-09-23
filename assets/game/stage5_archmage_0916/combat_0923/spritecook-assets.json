@@ -1,0 +1,16 @@
+{
+  "model": "gpt-image-2.5-sunburst",
+  "reference_asset_id": "21a44343-fcec-48f9-be76-d0aa623c7bd2",
+  "poses": {
+    "asset_id": "e72b4d75-b869-40a8-a424-c3106f2b95d3",
+    "file": "poses.png",
+    "frames": 4,
+    "sha12": "5569e6bf5e40"
+  },
+  "poses_order": [
+    "raised_arms_nova",
+    "whirlwind",
+    "two_handed_dive",
+    "sweep_followthrough"
+  ]
+}

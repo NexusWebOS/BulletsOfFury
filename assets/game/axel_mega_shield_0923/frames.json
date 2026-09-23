@@ -1,0 +1,73 @@
+{
+  "size": [
+    256,
+    256
+  ],
+  "scale": 0.45,
+  "frames": [
+    {
+      "file": "shield_0.png",
+      "anchor": [
+        128,
+        128
+      ],
+      "sha12": "c4206baad767"
+    },
+    {
+      "file": "shield_1.png",
+      "anchor": [
+        128,
+        128
+      ],
+      "sha12": "2c198f0b323b"
+    },
+    {
+      "file": "shield_2.png",
+      "anchor": [
+        128,
+        128
+      ],
+      "sha12": "d99b6646658f"
+    },
+    {
+      "file": "shield_3.png",
+      "anchor": [
+        128,
+        128
+      ],
+      "sha12": "b8d93cdeb0fb"
+    },
+    {
+      "file": "shield_4.png",
+      "anchor": [
+        128,
+        128
+      ],
+      "sha12": "d35b15617e41"
+    },
+    {
+      "file": "shield_5.png",
+      "anchor": [
+        128,
+        128
+      ],
+      "sha12": "1ad0d599ccab"
+    },
+    {
+      "file": "shield_6.png",
+      "anchor": [
+        128,
+        128
+      ],
+      "sha12": "ac417d9b36bb"
+    },
+    {
+      "file": "shield_7.png",
+      "anchor": [
+        128,
+        128
+      ],
+      "sha12": "bec3c2a9ff02"
+    }
+  ]
+}

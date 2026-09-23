@@ -1,0 +1,145 @@
+{
+  "scale": 0.25,
+  "size": [
+    128,
+    128
+  ],
+  "frames": [
+    {
+      "file": "round_0.png",
+      "sourceCell": [
+        0,
+        0,
+        512,
+        576
+      ],
+      "sourceCenter": [
+        279.0,
+        342.0
+      ],
+      "anchor": [
+        64,
+        64
+      ]
+    },
+    {
+      "file": "round_1.png",
+      "sourceCell": [
+        512,
+        0,
+        512,
+        576
+      ],
+      "sourceCenter": [
+        265.5,
+        343.0
+      ],
+      "anchor": [
+        64,
+        64
+      ]
+    },
+    {
+      "file": "round_2.png",
+      "sourceCell": [
+        1024,
+        0,
+        512,
+        576
+      ],
+      "sourceCenter": [
+        238.5,
+        341.0
+      ],
+      "anchor": [
+        64,
+        64
+      ]
+    },
+    {
+      "file": "round_3.png",
+      "sourceCell": [
+        1536,
+        0,
+        512,
+        576
+      ],
+      "sourceCenter": [
+        221.5,
+        341.0
+      ],
+      "anchor": [
+        64,
+        64
+      ]
+    },
+    {
+      "file": "round_4.png",
+      "sourceCell": [
+        0,
+        576,
+        512,
+        576
+      ],
+      "sourceCenter": [
+        293.5,
+        247.0
+      ],
+      "anchor": [
+        64,
+        64
+      ]
+    },
+    {
+      "file": "round_5.png",
+      "sourceCell": [
+        512,
+        576,
+        512,
+        576
+      ],
+      "sourceCenter": [
+        272.0,
+        249.0
+      ],
+      "anchor": [
+        64,
+        64
+      ]
+    },
+    {
+      "file": "round_6.png",
+      "sourceCell": [
+        1024,
+        576,
+        512,
+        576
+      ],
+      "sourceCenter": [
+        250.5,
+        249.0
+      ],
+      "anchor": [
+        64,
+        64
+      ]
+    },
+    {
+      "file": "round_7.png",
+      "sourceCell": [
+        1536,
+        576,
+        512,
+        576
+      ],
+      "sourceCenter": [
+        228.5,
+        250.5
+      ],
+      "anchor": [
+        64,
+        64
+      ]
+    }
+  ]
+}

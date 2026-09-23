@@ -1,0 +1,133 @@
+{
+  "asset_id": "c1fe952b-34ab-4e7a-843f-0f07643864b7",
+  "source_asset_id": "7eebc4c8-e086-42fc-8951-26f5ad1dc255",
+  "animation_source_asset_id": "a980929d-629a-4d6f-bc09-8237e238da7e",
+  "model": "pixel-engine-v1.5",
+  "frame_count": 16,
+  "animation_credits": 26,
+  "master_credits": 16,
+  "palette": "Sampled from live nfw2_2 / #ff6924 and nfb_orb3_3. Same luminance ramp on whip and muzzle, hot end capped at 224 to retain saturated gold.",
+  "size": [
+    384,
+    256
+  ],
+  "anchor": [
+    192,
+    224
+  ],
+  "reach": 180.887,
+  "files": [
+    {
+      "file": "animation_source.png",
+      "sha12": "f047f58c18a7"
+    },
+    {
+      "file": "fireorb_palette.png",
+      "sha12": "6254f36668ca"
+    },
+    {
+      "file": "flamethrower_palette.png",
+      "sha12": "460073fdcfd8"
+    },
+    {
+      "file": "master.png",
+      "sha12": "d0d717c37822"
+    },
+    {
+      "file": "muzzle_0.png",
+      "sha12": "e7e6770fbf1f"
+    },
+    {
+      "file": "muzzle_1.png",
+      "sha12": "bf890f197891"
+    },
+    {
+      "file": "muzzle_2.png",
+      "sha12": "4be97162acbc"
+    },
+    {
+      "file": "muzzle_3.png",
+      "sha12": "95bdbabce228"
+    },
+    {
+      "file": "muzzle_4.png",
+      "sha12": "f7f12567504a"
+    },
+    {
+      "file": "muzzle_5.png",
+      "sha12": "8a0c55d404e0"
+    },
+    {
+      "file": "muzzle_6.png",
+      "sha12": "3cfec7c8e649"
+    },
+    {
+      "file": "muzzle_7.png",
+      "sha12": "f96003f7c561"
+    },
+    {
+      "file": "pose_0.png",
+      "sha12": "e9f909c0b766"
+    },
+    {
+      "file": "pose_1.png",
+      "sha12": "f69171384b17"
+    },
+    {
+      "file": "pose_10.png",
+      "sha12": "d854037099ec"
+    },
+    {
+      "file": "pose_11.png",
+      "sha12": "90dc1d408f11"
+    },
+    {
+      "file": "pose_12.png",
+      "sha12": "0ee88af1d6f7"
+    },
+    {
+      "file": "pose_13.png",
+      "sha12": "d86bfdc11abe"
+    },
+    {
+      "file": "pose_14.png",
+      "sha12": "7b51271880ed"
+    },
+    {
+      "file": "pose_15.png",
+      "sha12": "deaa4c5f711b"
+    },
+    {
+      "file": "pose_2.png",
+      "sha12": "62979d333e93"
+    },
+    {
+      "file": "pose_3.png",
+      "sha12": "ff25a7c32a57"
+    },
+    {
+      "file": "pose_4.png",
+      "sha12": "f685d1e4466e"
+    },
+    {
+      "file": "pose_5.png",
+      "sha12": "8fa70e910050"
+    },
+    {
+      "file": "pose_6.png",
+      "sha12": "da61cde825a8"
+    },
+    {
+      "file": "pose_7.png",
+      "sha12": "e606af510a30"
+    },
+    {
+      "file": "pose_8.png",
+      "sha12": "7a8dd717b94e"
+    },
+    {
+      "file": "pose_9.png",
+      "sha12": "b5208adcf97b"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "assets": [
+    {
+      "file": "pilot_eradication.png",
+      "spritecook_asset_id": "84e00572-60e6-4cc9-9bf7-c7446fc3f450",
+      "model": "gpt-image-2.5-sunburst",
+      "sha256": "442c4254fe618ce80c85a7c87327bc819931d5a34a0e4075c2959171c70c8fdd",
+      "runtime": true
+    },
+    {
+      "file": "hammer_leap_shock.png",
+      "spritecook_asset_id": "fef83413-252e-47d0-b7b6-1809ea7bcf42",
+      "model": "gpt-image-2.5-sunburst",
+      "sha256": "6b2dc6b391b5f9df6ad76eab78999eb74f0b1dc602796229bbd3f35d362aecb6",
+      "runtime": true
+    },
+    {
+      "file": "leap_impact.png",
+      "spritecook_asset_id": "e18b8af0-ab2e-4862-9ec6-9c54883ad269",
+      "model": "gpt-image-2.5-sunburst",
+      "sha256": "b3703be6b487f7f101d16c98fa394935521bc9e625ad642138c7ef6c270e8c82",
+      "runtime": false
+    }
+  ]
+}

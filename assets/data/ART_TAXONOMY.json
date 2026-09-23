@@ -1,4 +1,6 @@
 {
+  "laser_round_muzzle_": {"role":"effect","sheet":null,"note":"Eight GPT 2.5 generated circular muzzle frames, centered at 64,64 on shared 128px canvases. Boss and player laser nozzles; cached palette swaps preserve luminance. Source/provenance in game/laser_round_muzzle_0923/."},
+  "ch2_": {"role":"boss","sheet":null,"note":"Generated Chaos Harrier MK II: hull, gun, emitter and thruster, four frames each. Hull/cannon states contain no beams. Shared anchors and scales in game/chaos_harrier/mk2_0923/frames.json; generation provenance beside it. Inspected in Chromium 2026-09-23."},
   "enemy_burn_0922_": {"role": "effect", "sheet": null, "note": "Eight generated transparent hull-wrapping burn frames. Shared 128px anchors; flameDraw palette retained per enemy. Source and prompt in assets/game/fx_burn_0922/provenance.json."},
   "_README": "Prefix -> role, named by Mike from the 0807y contact sheet. THIS IS THE SOURCE OF TRUTH. Filenames in this project have lied four separate times in one session (slatejet=debris, nxp_smoke=explosion, nqm_vent=a vent port, nrb=helix mass). Do not infer a role from a key name again \u2014 look it up here, and if it is not here, render it and ask.",
   "?": {
@@ -239,5 +241,35 @@
     "role": "pilot_body",
     "sheet": null,
     "note": "Mike supplied new full-body Cole figure. Shared pilot select/cinematic/intro asset; original alpha preserved."
+  },
+  "fire_whip_pose_": {
+    "role": "player_whip_full_pose_animation",
+    "sheet": null,
+    "note": "0923 current Firewhip: 24 full lash poses: 16 GPT2.5 wide-sweep frames plus eight retained curl frames, one whole draw per frame, flame shaft swings around a fixed muzzle at the ship nose. No strip deformation or mirroring. Matching alpha-derived collision masks. Source and palette provenance: assets/game/player_weapons/fire_whip_sweep_0923/manifest.json."
+  },
+  "fire_whip_muzzle_": {
+    "role": "player_whip_muzzle_animation",
+    "sheet": null,
+    "note": "Approved circular muzzle's eight frames, palette-swapped through the SAME sampled flamethrower/fire-orb ramp as the full Firewhip poses. Source shape and alpha preserved."
+  },
+  "fire_whip_flame_": {
+    "role": "player_curved_laser_animation",
+    "sheet": null,
+    "note": "0923 earlier eight-frame straight flame reel, retained as source/history. Superseded in live Firewhip by fire_whip_pose_ full authored lash animation. Manifest: assets/game/player_weapons/fire_whip_0923/manifest.json."
+  },
+  "forge_chamber_modular_0923": {
+    "role": "forge_menu_background",
+    "sheet": null,
+    "note": "0923 GPT 2.5 regenerated chamber: five empty bays, empty dedicated scrollbar lane, wide live preview. Geometry and provenance in assets/game/ui/forge_modular_0923/manifest.json."
+  },
+  "forge_scroll_": {
+    "role": "modular_scrollbar_controls",
+    "sheet": null,
+    "note": "Eight independently finalized transparent components: three track pieces, three thumb states, two blank arrow housings. Runtime uses existing nsel_arrow_y glyphs rotated up/down. Never crop controls from the old rail."
+  },
+  "axel_mega_shield_": {
+    "role": "player_shield_animation",
+    "sheet": null,
+    "note": "0923 GPT 2.5 eight-frame cyan bubble. Persistent five-hit Axel Megashield, 50% runtime opacity, frames 6-7 deflection pulse. Source and provenance: assets/game/axel_mega_shield_0923."
   }
 }

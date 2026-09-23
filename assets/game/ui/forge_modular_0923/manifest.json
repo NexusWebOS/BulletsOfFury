@@ -1,0 +1,162 @@
+{
+  "kit_id": "178f52c1-01e9-445e-916b-7fadb9233641",
+  "model": "gpt-image-2.5-sunburst",
+  "concept_asset_id": "5c2dd544-1ca0-4570-9731-702fa8a1f84e",
+  "sheet_asset_id": "9213b228-1d11-4628-a2b2-562aff59d958",
+  "version": 1,
+  "prompt_version": "ui-kit-v2",
+  "components": [
+    {
+      "asset_id": "54182a1c-ffb2-4c92-b413-34c24733752e",
+      "name": "scroll_track_top",
+      "component_type": "panel",
+      "group": "scroll_track",
+      "state": "normal",
+      "scalable": false,
+      "nine_slice": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "source_sheet_asset_id": "9213b228-1d11-4628-a2b2-562aff59d958",
+      "width": 451,
+      "height": 281,
+      "x": 197,
+      "y": 65
+    },
+    {
+      "asset_id": "79ff287e-7fe1-4c0d-b20c-47d8f06497eb",
+      "name": "scroll_thumb_normal",
+      "component_type": "panel",
+      "group": "scroll_thumb",
+      "state": "normal",
+      "scalable": true,
+      "nine_slice": {
+        "left": 70,
+        "top": 110,
+        "right": 70,
+        "bottom": 110
+      },
+      "source_sheet_asset_id": "9213b228-1d11-4628-a2b2-562aff59d958",
+      "width": 331,
+      "height": 601,
+      "x": 865,
+      "y": 72
+    },
+    {
+      "asset_id": "d78ca2ab-ad81-4448-b415-243ba199c5a0",
+      "name": "scroll_button_normal",
+      "component_type": "button",
+      "group": "scroll_button",
+      "state": "normal",
+      "scalable": false,
+      "nine_slice": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "source_sheet_asset_id": "9213b228-1d11-4628-a2b2-562aff59d958",
+      "width": 446,
+      "height": 439,
+      "x": 1431,
+      "y": 334
+    },
+    {
+      "asset_id": "3bce0c1a-8a10-4f17-abd4-2a17b818f108",
+      "name": "scroll_track_middle",
+      "component_type": "panel",
+      "group": "scroll_track",
+      "state": "normal",
+      "scalable": true,
+      "nine_slice": {
+        "left": 70,
+        "top": 20,
+        "right": 70,
+        "bottom": 20
+      },
+      "source_sheet_asset_id": "9213b228-1d11-4628-a2b2-562aff59d958",
+      "width": 402,
+      "height": 1189,
+      "x": 221,
+      "y": 402
+    },
+    {
+      "asset_id": "9a49fc12-0010-48b0-adf8-9ae5d684b9d8",
+      "name": "scroll_thumb_hover",
+      "component_type": "panel",
+      "group": "scroll_thumb",
+      "state": "hover",
+      "scalable": true,
+      "nine_slice": {
+        "left": 70,
+        "top": 110,
+        "right": 70,
+        "bottom": 110
+      },
+      "source_sheet_asset_id": "9213b228-1d11-4628-a2b2-562aff59d958",
+      "width": 363,
+      "height": 633,
+      "x": 849,
+      "y": 737
+    },
+    {
+      "asset_id": "49cdf926-57dd-436b-b3ba-baf652a070f1",
+      "name": "scroll_button_hover",
+      "component_type": "button",
+      "group": "scroll_button",
+      "state": "hover",
+      "scalable": false,
+      "nine_slice": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "source_sheet_asset_id": "9213b228-1d11-4628-a2b2-562aff59d958",
+      "width": 446,
+      "height": 437,
+      "x": 1431,
+      "y": 1265
+    },
+    {
+      "asset_id": "57b66a70-e207-4430-b886-60da65dfd1d8",
+      "name": "scroll_thumb_pressed",
+      "component_type": "panel",
+      "group": "scroll_thumb",
+      "state": "pressed",
+      "scalable": true,
+      "nine_slice": {
+        "left": 70,
+        "top": 110,
+        "right": 70,
+        "bottom": 110
+      },
+      "source_sheet_asset_id": "9213b228-1d11-4628-a2b2-562aff59d958",
+      "width": 331,
+      "height": 521,
+      "x": 865,
+      "y": 1424
+    },
+    {
+      "asset_id": "6c71b86a-9da8-4096-b939-acec8f8c5181",
+      "name": "scroll_track_bottom",
+      "component_type": "panel",
+      "group": "scroll_track",
+      "state": "normal",
+      "scalable": false,
+      "nine_slice": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "source_sheet_asset_id": "9213b228-1d11-4628-a2b2-562aff59d958",
+      "width": 451,
+      "height": 300,
+      "x": 197,
+      "y": 1641
+    }
+  ]
+}

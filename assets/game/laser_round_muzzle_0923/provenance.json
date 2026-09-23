@@ -1,0 +1,9 @@
+{
+  "assetId": "17fd6091-1240-4bfd-bfa3-78663916d1f4",
+  "model": "gpt-image-2.5-sunburst",
+  "prompt": "Production sprite animation sheet: exactly EIGHT frames in a perfectly aligned 4-column by 2-row grid. A ROUND CIRCULAR LASER MUZZLE FLASH for a 16-bit arcade spaceship shooter. Each frame shows ONE isolated front-facing circular energy flare, radially symmetrical: small brilliant white-hot filled center, concentric rounded white/silver luminous rings and a soft stepped pixel halo. Tiny cyan tint at outer rim only; mostly grayscale white so engine can recolor. Rounded circular silhouette in EVERY frame, absolutely NO pointed flame, NO spikes or starburst, NO directional tail, NO barrel, NO gun, NO beam, NO text. Eight consecutive frames of a compact circular plasma muzzle pulsing: ring swells slightly, a second round ring blossoms, bright center pulses, rings contract back into first pose for a seamless loop. Keep same exact center and same scale for all frames, diameter changes only gently, the center NEVER disappears. Crisp hand-clustered 16-bit pixel art, dark transparent outside, alpha transparency, no scenery, no checkerboard baked in, no border or grid. Each cell has wide transparent padding, at least 20% on each side, nothing touching adjacent cells. This flash will be drawn centered precisely on the barrel tip, like a round glowing energy socket from which a separate laser beam emerges.",
+  "frames": 8,
+  "source": "source.png",
+  "generated": "2026-09-23",
+  "credits": 14
+}

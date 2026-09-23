@@ -74,43 +74,23 @@ module.exports=function testEconomy(vm,ctxv,ok){
   R("forgeComboGrant('fire',0); forgeComboGrant('ice',0); forgeComboGrant('fire',1);");
   ok(R("furiousBalance()===3600 && forgeUpgradesBought()===0"),
      'the combinations were EARNED, so the balance is untouched and the ladder has not moved');
-  ok(R("forgeOwnedLevel('fire',0)===1 && forgeLevelCost('fire',0)===1000"),
-     'nothing bought: INCENDIARY SLUGS is level 1 and the next level is the first rung');
-  ok(R("forgeLevelBuy('fire',0)==='ok' && forgeOwnedLevel('fire',0)===2 && furiousBalance()===3600-1000"),
-     'buying level II spends the rung and the level is owned');
-  ok(R("forgeLevelCost('fire',0)===1250 && forgeLevelCost('ice',0)===1250"),
-     'and the NEXT price rose 25 percent for EVERY row - one ladder, not one per weapon');
-  ok(R("forgeLevelBuy('fire',0)==='ok' && forgeOwnedLevel('fire',0)===3"), 'level III next, at the risen price');
-  ok(R("forgeOwnedLevel('fire',1)===1 && forgeOwnedLevel('ice',0)===1"), 'the levels are per WEAPON x ELEMENT - NAPALM FAN and CRYO SLUGS are untouched');
-  /* ⚠ slot 4 USED TO BE THE "cannot take an element" case here and is forgeable since 0917 (Mike's
-     equip rule names the flamethrower / ice breath as an upgrade type); a slot that does not exist is
-     the honest unknown now. */
-  ok(R("forgeLevelBuy('fire',99)==='unknown' && forgeLevelBuy('bogus',0)==='unknown'"), 'a weapon slot that does not exist, or an element that does not exist, is unknown');
-  R("furiousConvertLevel(9, 5000000);");   /* a very long level, so the last two levels are affordable */
-  ok(R("forgeLevelBuy('fire',0)==='ok' && forgeLevelBuy('fire',0)==='ok' && forgeOwnedLevel('fire',0)===5 && forgeLevelBuy('fire',0)==='maxed'"),
-     'IV, then V, then maxed');
-  ok(R("furiousSpent()===1000+1250+1560+1950"), 'what was spent is the sum of the RUNGS climbed, at the prices they were bought at');
-  /* [!] THE PRICE PAID IS RECORDED PER PURCHASE, which is what makes a moving ladder safe: changing
-     the base or the step later may not re-price what an existing profile already bought. */
-  ok(R("(function(){ var v=achievementState.owned; return v[forgeLevelId('fire',0,2)].cost===1000 && v[forgeLevelId('fire',0,3)].cost===1250; })()"),
-     'each level records the price it actually paid, not the price the ladder is at now');
-  /* the profile survives a save/load round trip with the forge levels and the ledger intact */
-  ok(R("(function(){ var v=achievementNormalize(JSON.parse(JSON.stringify(achievementState))); return v.owned[forgeLevelId('fire',0,5)] && v.owned[forgeLevelId('fire',0,2)].cost===1000 && v.fp && v.fp.levels.length===2 && v.fp.levels[1].stage===9; })()"),
-     'achievementNormalize keeps the forge levels (by pattern) and the per-level FP ledger');
-
-  /* ---- the Forge opens a weapon at its owned level; a pickup never lifts past III ---- */
-  R("run.forge={}; run.forgeForms={}; run.forgeElems={}; run.forgeCombos=2; run.forgeRespecs=2; run.weapon=0; run.infusion=null; run.ngplus=false; forgeDiscover('toxic');");
-  /* the fire pair was EARNED above; toxic has only been SEEN in the field, which is not the same thing */
-  ok(R("forgeCombine(0,'toxic')==='ok'"), 'a globally obtained element can be welded onto any weapon');
-  ok(R("forgeCombine(0,'fire')==='ok' && run.forge[0].lv===5 && run.infusion && run.infusion.lv===5"), 'combining fire on the machine gun opens it at the OWNED level (V) and the held weapon takes it');
-  ok(R("weaponIconKey(0,1)==='micon_forge_fire_0_5'"), 'and the badge is the level-V plate');
-  R("infusionGrant('fire');");
-  ok(R("run.infusion.lv===5"), 'a fire pickup in the field never lowers a forged V');
-  R("run.infusion={elem:'ice',lv:3,hits:0}; infusionGrant('ice');");
-  ok(R("run.infusion.lv===3"), 'and a pickup never lifts an element past III - IV and V are the Armory\'s');
-  R("run.infusion={elem:'ice',lv:1,hits:0}; infusionGrant('ice');");
-  ok(R("run.infusion.lv===2"), 'while below III a pickup still levels as it always did');
-  ok(R("infusionLabel('fire',5)==='FIREBURST' && infusionLabel('fire',3)==='FIREBURST'"), 'the named combination keeps its name at IV and V');
+  ok(R("forgeOwnedLevel('fire',0)===1 && forgeLevelCost('fire',0)===0"),
+     'combined weapons expose one form and no tier price');
+  ok(R("forgeLevelBuy('fire',0)==='maxed' && forgeOwnedLevel('fire',0)===1 && furiousBalance()===3600"),
+     'retired combination tier purchases cannot charge the player');
+  ok(R("forgeLevelBuy('fire',99)==='unknown' && forgeLevelBuy('bogus',0)==='unknown'"),
+     'invalid recipe purchases still refuse');
+  R("achievementState.owned[forgeLevelId('fire',0,2)]={cost:1000};achievementState.owned[forgeLevelId('fire',0,5)]={cost:1950};");
+  ok(R("forgeOwnedLevel('fire',0)===1 && furiousSpent()===2950"),
+     'old paid-tier receipts remain in the ledger without creating numbered forms');
+  ok(R("(function(){var v=achievementNormalize(JSON.parse(JSON.stringify(achievementState)));return v.owned[forgeLevelId('fire',0,2)].cost===1000;})()"),
+     'normalizing a legacy profile preserves historical purchases');
+  R("run.forge={};run.forgeForms={};run.forgeElems={};run.forgeCombos=2;run.forgeRespecs=2;run.weapon=0;run.infusion=null;run.ngplus=false;forgeDiscover('toxic');");
+  ok(R("forgeCombine(0,'toxic')==='ok'"),'a discovered element can be combined once');
+  ok(R("forgeCombine(0,'fire')==='ok' && run.forge[0].lv===1 && run.infusion.lv===1"),
+     'legacy paid levels do not change the first-level combination');
+  ok(R("forgeCombine(0,'fire')==='owned' && run.forgeCombos===0"),
+     'duplicate detection applies even after the stage combine allowance is spent');
 
   /* ---- one upgrade per weapon TYPE, by construction ---- */
   R("run.forgeCombos=2; forgeCombine(0,'ice');");

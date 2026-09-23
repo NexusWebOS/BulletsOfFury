@@ -1,0 +1,268 @@
+{
+  "model": "eleven_text_to_sound_v2",
+  "flow_id": "wvfpkQOu983gd4n9lti2",
+  "processing": "mono 22.05-kHz band, 12-bit quantization, level normalization, short tail fade, encoded MP3 44.1 kHz 128 kbps",
+  "sounds": [
+    {
+      "name": "quad_charge",
+      "source_take": "quad_charge.mp3",
+      "file": "arc_quad_charge_0923.mp3",
+      "duration_s": 1.0,
+      "lead_trim_s": 0.0,
+      "target_peak": 0.58,
+      "sha256": "a87bf3905d6419a48e8bcb1d49008b8e6e81fc3d3b12da784afc1f4582656a7d"
+    },
+    {
+      "name": "quad_fire",
+      "source_take": "quad_fire.mp3",
+      "file": "arc_quad_fire_0923.mp3",
+      "duration_s": 0.64,
+      "lead_trim_s": 0.0,
+      "target_peak": 0.82,
+      "sha256": "f2d71b9220d1a757985198651c8f0068931c6f6ec62a907c7c2f287b4cab4b09"
+    },
+    {
+      "name": "overlord_sonic",
+      "source_take": "overlord_sonic.mp3",
+      "file": "arc_overlord_sonic_0923.mp3",
+      "duration_s": 1.44,
+      "lead_trim_s": 0.0,
+      "target_peak": 0.58,
+      "sha256": "68f19fc492d38d8a19f75d831f1ea6ed7c2327df798ee97cb27d652e7b508e30"
+    },
+    {
+      "name": "overlord_missiles",
+      "source_take": "overlord_missiles.mp3",
+      "file": "arc_overlord_missiles_0923.mp3",
+      "duration_s": 1.0,
+      "lead_trim_s": 0.0,
+      "target_peak": 0.82,
+      "sha256": "a2a06da9e98066ab8d99b07e4b1df65170b2a2785f42e5686b0cdc09c33229d7"
+    },
+    {
+      "name": "magma_orb",
+      "source_take": "magma_orb.mp3",
+      "file": "arc_magma_orb_0923.mp3",
+      "duration_s": 0.84,
+      "lead_trim_s": 0.0,
+      "target_peak": 0.82,
+      "sha256": "f0c74deed997e67123275ac7219c4d3729d7248e4a1bad9712cc1f6fc38cb632"
+    },
+    {
+      "name": "magma_geyser",
+      "source_take": "magma_geyser.mp3",
+      "file": "arc_magma_geyser_0923.mp3",
+      "duration_s": 1.08,
+      "lead_trim_s": 0.0,
+      "target_peak": 0.58,
+      "sha256": "27456e79b28bacf31116abc37adccd40da9c6728ca1e2a1f90e5685991dc9b2e"
+    },
+    {
+      "name": "cryo_orb",
+      "source_take": "cryo_orb.mp3",
+      "file": "arc_cryo_orb_0923.mp3",
+      "duration_s": 1.24,
+      "lead_trim_s": 0.0,
+      "target_peak": 0.82,
+      "sha256": "a7251573e5f0aeb2cb330fc19a7b9ab2e6f9e09fa8fe0621bf789bc63adf7f18"
+    },
+    {
+      "name": "cryo_beam",
+      "source_take": "cryo_beam.mp3",
+      "file": "arc_cryo_beam_0923.mp3",
+      "duration_s": 1.0,
+      "lead_trim_s": 0.0,
+      "target_peak": 0.82,
+      "sha256": "acc70c80389353d9785efceb0d62ef1450b63ce75ee8c0d7846476ac4f63af1b"
+    },
+    {
+      "name": "warship_core_charge",
+      "source_take": "warship_core_charge.mp3",
+      "file": "arc_warship_core_charge_0923.mp3",
+      "duration_s": 1.6,
+      "lead_trim_s": 0.0,
+      "target_peak": 0.58,
+      "sha256": "fb4e250256fa39739567125898da8a4bc0fc77f7d9bca28223b1763b74e2374b"
+    },
+    {
+      "name": "warship_core_blast",
+      "source_take": "warship_core_blast.mp3",
+      "file": "arc_warship_core_blast_0923.mp3",
+      "duration_s": 1.12,
+      "lead_trim_s": 0.0,
+      "target_peak": 0.82,
+      "sha256": "20838c32b7466834b5f081e093cc4884a2f280665ae893a09ee2e7ad6c13a857"
+    },
+    {
+      "name": "void_orb",
+      "source_take": "void_orb.mp3",
+      "file": "arc_void_orb_0923.mp3",
+      "duration_s": 0.88,
+      "lead_trim_s": 0.0,
+      "target_peak": 0.82,
+      "sha256": "756eb1b0f966b9e4aff199c4bce7521641685b46d2038557dfef0032569a82a3"
+    },
+    {
+      "name": "hammer_spin",
+      "source_take": "hammer_spin.mp3",
+      "file": "arc_hammer_spin_0923.mp3",
+      "duration_s": 1.2,
+      "lead_trim_s": 0.0,
+      "target_peak": 0.82,
+      "sha256": "9a52f76f486de2108971cbf0ed3968a9ac141855b5aa440d1689074524f95f05"
+    },
+    {
+      "name": "hammer_throw",
+      "source_take": "hammer_throw.mp3",
+      "file": "arc_hammer_throw_0923.mp3",
+      "duration_s": 0.92,
+      "lead_trim_s": 0.0,
+      "target_peak": 0.82,
+      "sha256": "372ca3cc70a73ff25ec6875ad247e20c97a6aef479daf36c1361b6cd2c0bbeca"
+    },
+    {
+      "name": "hammer_catch",
+      "source_take": "hammer_catch.mp3",
+      "file": "arc_hammer_catch_0923.mp3",
+      "duration_s": 1.0,
+      "lead_trim_s": 0.0,
+      "target_peak": 0.82,
+      "sha256": "7a8128f37e0340e521f6497f842d92a79879a6b8a89b1106062618693d2d7e02"
+    },
+    {
+      "name": "stealth_decloak",
+      "source_take": "stealth_decloak.mp3",
+      "file": "arc_stealth_decloak_0923.mp3",
+      "duration_s": 1.04,
+      "lead_trim_s": 0.0,
+      "target_peak": 0.58,
+      "sha256": "272fb8ccfb514240bdf935599c61c53e5fcc03dce2aaa4dcc1e695b82511376c"
+    },
+    {
+      "name": "jet_dash",
+      "source_take": "jet_dash.mp3",
+      "file": "arc_jet_dash_0923.mp3",
+      "duration_s": 0.92,
+      "lead_trim_s": 0.0,
+      "target_peak": 0.82,
+      "sha256": "73113833c96e2657cea07855f0483be27e280bd6a6cdc50710ecf52eec0ff7ad"
+    },
+    {
+      "name": "ground_bomb_lock",
+      "source_take": "ground_bomb_lock_v2.mp3",
+      "file": "arc_ground_bomb_lock_0923.mp3",
+      "duration_s": 1.44,
+      "lead_trim_s": 0.0,
+      "target_peak": 0.58,
+      "sha256": "532658f583289a21382c14bb9e4b8dcf329398b1344d491f5b8ae50dd96c2813"
+    },
+    {
+      "name": "ground_bomb_impact",
+      "source_take": "ground_bomb_impact.mp3",
+      "file": "arc_ground_bomb_impact_0923.mp3",
+      "duration_s": 1.08,
+      "lead_trim_s": 0.0,
+      "target_peak": 0.82,
+      "sha256": "07a3adc98cf352be0e54254a032ce5e52a442cd1dc21a758c2b1cad7dce4788d"
+    },
+    {
+      "name": "carrier_turbine",
+      "source_take": "carrier_turbine.mp3",
+      "file": "arc_carrier_turbine_0923.mp3",
+      "duration_s": 4.0,
+      "lead_trim_s": 0.0,
+      "target_peak": 0.58,
+      "sha256": "6bc8231ece5bde35158ae9b2e648b2b4ee92988397f3fa50042dba4991bccb6e"
+    },
+    {
+      "name": "carrier_cluster",
+      "source_take": "carrier_cluster.mp3",
+      "file": "arc_carrier_cluster_0923.mp3",
+      "duration_s": 1.28,
+      "lead_trim_s": 0.0,
+      "target_peak": 0.82,
+      "sha256": "f1ab13ef7cdbe926cb0c8a3ea21b9c0ed2b009813b51f70f63eef30e5b175bb1"
+    },
+    {
+      "name": "sludge_projectile",
+      "source_take": "sludge_projectile.mp3",
+      "file": "arc_sludge_projectile_0923.mp3",
+      "duration_s": 0.8,
+      "lead_trim_s": 0.0,
+      "target_peak": 0.82,
+      "sha256": "474d0d850782e2093bab3915e09e6d4d73ac435ab11f731a8f57e031119b0337"
+    },
+    {
+      "name": "warden_rail",
+      "source_take": "warden_rail_v4.mp3",
+      "file": "arc_warden_rail_0923.mp3",
+      "duration_s": 1.28,
+      "lead_trim_s": 0.0,
+      "target_peak": 0.82,
+      "sha256": "56a53d45d9b85387e75622c156363bdbc6ec10e00c8c8937cc2da1c727e5df09"
+    },
+    {
+      "name": "void_spectral",
+      "source_take": "void_spectral.mp3",
+      "file": "arc_void_spectral_0923.mp3",
+      "duration_s": 1.08,
+      "lead_trim_s": 0.0,
+      "target_peak": 0.82,
+      "sha256": "e560c8e6ba4a94b68d75286c8e70d14648fb302f84c5580618201909427d4945"
+    },
+    {
+      "name": "tidal_wave",
+      "source_take": "tidal_wave.mp3",
+      "file": "arc_tidal_wave_0923.mp3",
+      "duration_s": 1.32,
+      "lead_trim_s": 0.0,
+      "target_peak": 0.82,
+      "sha256": "2dc590cb2cde476cdb2fccf5ce9a5db39d7a02f259b38d7d44de8359ec6f4cf3"
+    },
+    {
+      "name": "fusion_beam",
+      "source_take": "fusion_beam_v2.mp3",
+      "file": "arc_fusion_beam_0923.mp3",
+      "duration_s": 1.6,
+      "lead_trim_s": 0.0,
+      "target_peak": 0.58,
+      "sha256": "41c94efdf2a5a9e24107294be783a8750565b2766287b841ed43f10800f6fc41"
+    },
+    {
+      "name": "warp_charge",
+      "source_take": "warp_charge_v4.mp3",
+      "file": "arc_warp_charge_0923.mp3",
+      "duration_s": 2.08,
+      "lead_trim_s": 0.0,
+      "target_peak": 0.58,
+      "sha256": "1765927c62f7160fe3890257241a37eeaa5c57493d9a4847bfaaa906af3b7a1d"
+    },
+    {
+      "name": "warp_gate",
+      "source_take": "warp_gate.mp3",
+      "file": "arc_warp_gate_0923.mp3",
+      "duration_s": 1.32,
+      "lead_trim_s": 0.0,
+      "target_peak": 0.82,
+      "sha256": "8d3b078158a386ba2af351fe31672a0b20335ebd3ad235b46005a6941b03a96e"
+    },
+    {
+      "name": "warp_burst",
+      "source_take": "warp_burst.mp3",
+      "file": "arc_warp_burst_0923.mp3",
+      "duration_s": 1.64,
+      "lead_trim_s": 0.0,
+      "target_peak": 0.82,
+      "sha256": "685f25b39d55b2ba51de1328418764e0cd2acc8c6c9c1507a45c23214c5413a6"
+    },
+    {
+      "name": "retina_missile_hit",
+      "source_take": "retina_missile_hit.mp3",
+      "file": "arc_retina_missile_hit_0923.mp3",
+      "duration_s": 0.8,
+      "lead_trim_s": 0.0,
+      "target_peak": 0.82,
+      "sha256": "99b6b28e99770b23f7ed4ca9a7f78a6df408268ea5c63c1d6a89d3e91822c107"
+    }
+  ]
+}

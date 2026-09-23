@@ -1,0 +1,92 @@
+{
+  "asset_id": "88bf8613-369c-4dc6-90d4-bddf1ad46fcf",
+  "model": "gpt-image-2.5-sunburst",
+  "credits": 14,
+  "source": {
+    "file": "source.png",
+    "sha12": "285cba212fb9"
+  },
+  "layout": [
+    4,
+    2
+  ],
+  "runtime_size": [
+    64,
+    256
+  ],
+  "fps": 16,
+  "frames": [
+    {
+      "file": "flame_0.png",
+      "sha12": "100b0317e688",
+      "root": [
+        32,
+        256
+      ],
+      "tip": "authored tapered alpha silhouette"
+    },
+    {
+      "file": "flame_1.png",
+      "sha12": "2f2ebad280a1",
+      "root": [
+        32,
+        256
+      ],
+      "tip": "authored tapered alpha silhouette"
+    },
+    {
+      "file": "flame_2.png",
+      "sha12": "705f9ad3e052",
+      "root": [
+        32,
+        256
+      ],
+      "tip": "authored tapered alpha silhouette"
+    },
+    {
+      "file": "flame_3.png",
+      "sha12": "93a7be051afc",
+      "root": [
+        32,
+        256
+      ],
+      "tip": "authored tapered alpha silhouette"
+    },
+    {
+      "file": "flame_4.png",
+      "sha12": "546f238530e8",
+      "root": [
+        32,
+        256
+      ],
+      "tip": "authored tapered alpha silhouette"
+    },
+    {
+      "file": "flame_5.png",
+      "sha12": "9816e290221e",
+      "root": [
+        32,
+        256
+      ],
+      "tip": "authored tapered alpha silhouette"
+    },
+    {
+      "file": "flame_6.png",
+      "sha12": "c6b462381b06",
+      "root": [
+        32,
+        256
+      ],
+      "tip": "authored tapered alpha silhouette"
+    },
+    {
+      "file": "flame_7.png",
+      "sha12": "6a7bb5beab29",
+      "root": [
+        32,
+        256
+      ],
+      "tip": "authored tapered alpha silhouette"
+    }
+  ]
+}
