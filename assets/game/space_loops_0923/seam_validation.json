@@ -1,0 +1,26 @@
+{
+  "stage5": {
+    "leftRightMax": 0,
+    "topBottomMax": 0,
+    "size": [
+      680,
+      2720
+    ]
+  },
+  "stage9": {
+    "leftRightMax": 0,
+    "topBottomMax": 0,
+    "size": [
+      680,
+      2720
+    ]
+  },
+  "jungle": {
+    "leftRightMax": 0,
+    "topBottomMax": 0,
+    "size": [
+      680,
+      680
+    ]
+  }
+}

@@ -4269,7 +4269,7 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
      'satellites and miscellaneous orbital hardware are absent');
   ok(vm.runInContext("stageSceneryDraw.toString().indexOf('bg5Draw(dt)')<0", ctxv),
      'the retired random planet/comet overlay is not stacked over the supplied master');
-  ok(vm.runInContext("_levelCfg(5).master==='bg_stage05_loop' && !_levelCfg(5).arena", ctxv),
+  ok(vm.runInContext("_levelCfg(5).master==='bg_stage05_loop_0923' && !_levelCfg(5).arena", ctxv),
      'the supplied space master remains visible through the Stage 5 boss fight');
   vm.runInContext("l5Rocks=[]; run.stage=1;", ctxv);
 
