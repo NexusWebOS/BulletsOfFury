@@ -10,9 +10,33 @@
     "source": "Corresponding *_box_v2.png for each tier",
     "prompt_summary": "Strict recolor of the existing pixel-art crate. Preserve silhouette, panels, bolts, two missiles, tier label, outlines and shading. Make broad armor blue/orange/green at gameplay size; give both missile tips and the bottom star the same tier color. Keep steel missile bodies and transparent background, without added objects or text.",
     "outputs": [
-      {"file": "super_box_v3.png", "color": "cobalt blue", "size": [1254, 1254], "sha12": "7b88e3d9a2a2"},
-      {"file": "ultra_box_v3.png", "color": "amber orange", "size": [1254, 1254], "sha12": "2177d28ec17c"},
-      {"file": "uber_box_v3.png", "color": "emerald green", "size": [1254, 1254], "sha12": "f26e0ab0c48a"}
+      {
+        "file": "super_box_v3.png",
+        "color": "cobalt blue",
+        "size": [
+          1254,
+          1254
+        ],
+        "sha12": "7b88e3d9a2a2"
+      },
+      {
+        "file": "ultra_box_v3.png",
+        "color": "amber orange",
+        "size": [
+          1254,
+          1254
+        ],
+        "sha12": "2177d28ec17c"
+      },
+      {
+        "file": "uber_box_v3.png",
+        "color": "emerald green",
+        "size": [
+          1254,
+          1254
+        ],
+        "sha12": "f26e0ab0c48a"
+      }
     ]
   },
   "source_sha12": "292bc08ea3a5",
@@ -131,5 +155,72 @@
       "height": 824,
       "sha12": "2696e7fc2e05"
     }
-  ]
+  ],
+  "tier_badges_0924": {
+    "generator": "OpenAI imagegen edit",
+    "reference": "Original red-and-gray M missile box in atlas/pickups.png and the existing Super missile badge",
+    "boxes": "S / UL / UB in blue / orange / green; magenta review source and transparent runtime cutouts",
+    "icons": "S / UT / UB with connected missile wings and upgraded hulls",
+    "outputs": [
+      {
+        "file": "super_box_v4.png",
+        "size": [
+          701,
+          691
+        ],
+        "sha12": "11ab1b6c901a"
+      },
+      {
+        "file": "ultra_box_v4.png",
+        "size": [
+          680,
+          687
+        ],
+        "sha12": "fefc05f025cc"
+      },
+      {
+        "file": "uber_box_v4.png",
+        "size": [
+          682,
+          668
+        ],
+        "sha12": "e4bae8e4b177"
+      },
+      {
+        "file": "super_icon_v4.png",
+        "size": [
+          685,
+          718
+        ],
+        "sha12": "84fa134a2f47"
+      },
+      {
+        "file": "ultra_icon_v4.png",
+        "size": [
+          724,
+          712
+        ],
+        "sha12": "32ecbd529340"
+      },
+      {
+        "file": "uber_icon_v4.png",
+        "size": [
+          669,
+          724
+        ],
+        "sha12": "0403a1c5a844"
+      }
+    ]
+  },
+  "base_m_box_0924": {
+    "generator": "OpenAI imagegen edit",
+    "source": "super_box_v4.png",
+    "file": "base_m_box_v4.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "sha12": "5d710452f293",
+    "usage": "Breakable missile supply M crate; red and gray base tier"
+  }
 }
