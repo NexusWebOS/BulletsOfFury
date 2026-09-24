@@ -12793,7 +12793,7 @@ console.log("=== 258. Stage 9 Velocity Void headless contract ===");
   ok(_water258.dead===true && _water258.fx0===11 && _water258.drops===10 && _water258.children===2 && _water258.gravity,
      'destroying it produces one oversized authored burst, ten gravity droplets and two shootable fragments');
 
-  var _fusion258=JSON.parse(vm.runInContext("(function(){var b={x:VW/2,y:-120,t:0,flash:0,enter:true};s9FusionBossInit(b,1000);for(var i=0;i<100;i++){b.t+=1/60;s9FusionBossTick(b,1/60);}var F=b._s9fusion;var hitL=s9FusionHitTest(b,F.left.x,F.left.y);s9FusionHit(b,99999);var one={ld:F.left.disabled,rd:F.right.disabled,phase:F.phase,left:F.left.hp,right:F.right.hp};var hitR=s9FusionHitTest(b,F.right.x,F.right.y);s9FusionHit(b,99999);var both=F.left.disabled&&F.right.disabled&&F.phase==='fuse';for(var j=0;j<130;j++){b.t+=1/60;s9FusionBossTick(b,1/60);}return JSON.stringify({hitL:hitL,hitR:hitR,one:one,both:both,phase:F.phase,kind:b.kind,ship:b._ship,name:b.name,hp:b.hp,maxhp:b.maxhp,x:b.x,y:b.y,enter:b.enter});})()",ctxv));
+  var _fusion258=JSON.parse(vm.runInContext("(function(){var b={x:VW/2,y:-120,t:0,flash:0,enter:true};s9FusionBossInit(b,1000);for(var i=0;i<100;i++){b.t+=1/60;s9FusionBossTick(b,1/60);}var F=b._s9fusion;var hitL=s9FusionHitTest(b,F.left.x,F.left.y);s9FusionHit(b,99999);var one={ld:F.left.disabled,rd:F.right.disabled,phase:F.phase,left:F.left.hp,right:F.right.hp};var hitR=s9FusionHitTest(b,F.right.x,F.right.y);s9FusionHit(b,99999);var both=F.left.disabled&&F.right.disabled&&F.phase==='fuse';for(var j=0;j<160;j++){b.t+=1/60;s9FusionBossTick(b,1/60);}return JSON.stringify({hitL:hitL,hitR:hitR,one:one,both:both,phase:F.phase,kind:b.kind,ship:b._ship,name:b.name,hp:b.hp,maxhp:b.maxhp,x:b.x,y:b.y,enter:b.enter});})()",ctxv));
   ok(_fusion258.hitL===true && _fusion258.one.ld===true && _fusion258.one.rd===false && _fusion258.one.phase==='twins' && _fusion258.hitR===true && _fusion258.both===true,
      'one defeated black/blue drone remains intact and inert; fusion waits until BOTH are disabled');
   ok(_fusion258.phase==='tidal' && _fusion258.kind==='tidalsovereign' && _fusion258.ship==='tidalsovereign' && _fusion258.name==='TIDAL SOVEREIGN' &&
@@ -14152,14 +14152,14 @@ console.log("=== 278. lizzie B-42 alternate costume ===");
   ok(vm.runInContext("GS.OPENER==='opener' && GS.INTRO==='intro' && GS.OPENER!==GS.INTRO", ctxv),
      'the opener has its OWN state - GS.INTRO is the stage card and must not be reused');
   var _opn=JSON.parse(vm.runInContext('JSON.stringify(OPN)', ctxv));
-  ok(_opn.length===9 && _opn.map(function(b){return b.k;}).join(',')==='sil,sil,roll,face,demo,demo,demo,nine,logo',
-     'nine beats in order: '+_opn.map(function(b){return b.k;}).join(' '));
-  var _lines=_opn.filter(function(b){return b.t;}).map(function(b){return b.t;});
-  ['EARTH IS IN TROUBLE!', "WE NEED FURY HQ'S HELP!", '9 ELITE PILOTS',
-   "99 PROBLEMS BUT A FLIGHT AIN'T 1!", 'DOUBLE THE ACTION', 'TRIPLE THE TROUBLE',
-   'THREAT UNKNOWN?'].forEach(function(t){
-    ok(_lines.indexOf(t)>=0, 'the trailer card is in the reel: '+t);
-  });
+  ok(_opn.length===1 && _opn[0].k==='cover' && _opn[0].d>=7,
+     'the opener holds the selected Cover B as one readable beat');
+  ok(_opn.every(function(b){return b.k!=='demo';}),
+     'the prerecorded gameplay demo is absent from the opener');
+  ok(fs.existsSync(path.join(ROOT,'docs/marketing_0916/cover_b_raw.png')),
+     'the selected SpriteCook Cover B plate is on disk');
+  ok(vm.runInContext("XART._src.bof_cover_b==='docs/marketing_0916/cover_b_raw.png'",ctxv),
+     'the opener registers Cover B as its authored plate');
   var _acts=JSON.parse(vm.runInContext('JSON.stringify(OPN_NINE.map(function(q){return q.act;}))', ctxv));
   ok(_acts.length===9
      && _acts.filter(function(a){return a==='die';}).length===3

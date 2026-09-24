@@ -1,0 +1,34 @@
+{
+  "status": "concept art layout; not registered in game runtime",
+  "canvas": [1254, 1254],
+  "drawOrder": ["beamArm", "rocketArm", "body"],
+  "parts": {
+    "body": {
+      "image": "form1_body.png",
+      "x": 90,
+      "y": -39,
+      "scale": 0.862,
+      "leftSocket": [219, 500],
+      "rightSocket": [1034, 500]
+    },
+    "beamArm": {
+      "image": "form1_beam_arm.png",
+      "x": 0,
+      "y": 0,
+      "scale": 1,
+      "pivot": [220, 500],
+      "emitter": [198, 1050],
+      "attack": "beam; beam and flash are separate runtime effects"
+    },
+    "rocketArm": {
+      "image": "form1_rocket_arm.png",
+      "x": 0,
+      "y": 0,
+      "scale": 1,
+      "pivot": [1034, 500],
+      "emitter": [1003, 993],
+      "attack": "rockets or charged projectile; projectile and flash are separate runtime effects"
+    }
+  },
+  "formTwo": "form2_alien_remnant.png"
+}

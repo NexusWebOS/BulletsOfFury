@@ -13,7 +13,7 @@ module.exports=function testStage7WardenSharedBurstWarning(vm,ctxv,ok){
       player.x=230;S.mt=.432;s7WardenTick(boss,0);B=boss._combatWarnings['stage7-warden-burst'];o.red=l23FovPhase(B.t/B.warm)==='red'&&S.aim===aim;
       S.mt=.49;s7WardenTick(boss,0);B=boss._combatWarnings['stage7-warden-burst'];o.release=B.released&&S.shot===1&&eBullets.filter(q=>q._s7warden==='shell').length===1;
       S.mt=1.44;s7WardenTick(boss,0);const shells=eBullets.filter(q=>q._s7warden==='shell'),shotAngles=shells.map(q=>Math.atan2(q.vy,q.vx));o.pattern=shells.length===10&&shotAngles.every((a,i)=>Math.abs(a-angles[i%5])<.0001);
-      const draw=s7WardenBurstWarningDraw.toString(),body=s7WardenDraw.toString(),final=s7WardenFinalTick.toString();o.shared=draw.includes('fieldOnly:true')&&draw.includes('alertOnly:true')&&body.includes('s7WardenBurstWarningDraw(b,false)')&&body.includes('s7WardenBurstWarningDraw(b,true)')&&final.split('s7WardenBurstArm(b)').length===3;
+      const draw=s7WardenBurstWarningDraw.toString(),body=s7WardenDraw.toString(),final=s7WardenFinalTick.toString();o.shared=draw.includes('fieldOnly:true')&&draw.includes('alertOnly:true')&&body.includes('s7WardenBurstWarningDraw(b,false)')&&body.includes('s7WardenBurstWarningDraw(b,true)')&&final.split('s7WardenBurstArm(b)').length===2&&final.includes("s7WardenMode(b,'leap')");
       return JSON.stringify(o);
     }finally{boss=save.boss;player=save.player;Object.assign(run,save.run);camX=save.camX;curStage=save.curStage;eBullets=save.eBullets;Audio.SFX.enemyBossCannon=save.shoot;}
   })()`,ctxv));

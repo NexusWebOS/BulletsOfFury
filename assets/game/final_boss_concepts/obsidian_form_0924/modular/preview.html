@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>Final boss modular concept preview</title>
+<style>
+  :root { color-scheme: dark; font: 15px system-ui, sans-serif; }
+  body { margin: 0; background: #10131b; color: #eef2f8; display: grid; justify-items: center; gap: 12px; padding: 24px; }
+  canvas { width: min(90vw, 780px); aspect-ratio: 12 / 11; border: 1px solid #5a6374; background: radial-gradient(circle at center, #243047, #0b0e14 70%); image-rendering: pixelated; }
+  .controls { display: flex; flex-wrap: wrap; gap: 20px; align-items: center; justify-content: center; }
+  label { display: flex; gap: 8px; align-items: center; }
+  input[type=range] { width: 130px; }
+</style>
+<h1>Final boss concept: modular first form / alien second form</h1>
+<div class="controls">
+  <label>Form <select id="form"><option value="1">1 · fused machine</option><option value="2">2 · alien remnant</option></select></label>
+  <label>Beam arm <input id="beam" type="range" min="-30" max="30" value="0"><output id="beamValue">0°</output></label>
+  <label>Rocket arm <input id="rocket" type="range" min="-30" max="30" value="0"><output id="rocketValue">0°</output></label>
+  <label><input id="bodyVisible" type="checkbox" checked>Body</label>
+  <label><input id="beamVisible" type="checkbox" checked>Beam</label>
+  <label><input id="rocketVisible" type="checkbox" checked>Rocket</label>
+</div>
+<canvas id="scene" width="1800" height="1650"></canvas>
+<script>
+  const names = {body:'form1_body.png', beam:'form1_beam_arm.png', rocket:'form1_rocket_arm.png', alien:'form2_alien_remnant.png'};
+  const sprites = Object.fromEntries(Object.entries(names).map(([key, src]) => { const img = new Image(); img.src = src; return [key, img]; }));
+  const canvas = document.querySelector('#scene'), ctx = canvas.getContext('2d');
+  const form = document.querySelector('#form'), beam = document.querySelector('#beam'), rocket = document.querySelector('#rocket');
+  const bodyVisible = document.querySelector('#bodyVisible'), beamVisible = document.querySelector('#beamVisible'), rocketVisible = document.querySelector('#rocketVisible');
+  function arm(img, pivot, degrees) {
+    ctx.save(); ctx.translate(...pivot); ctx.rotate(degrees * Math.PI / 180);
+    ctx.drawImage(img, -pivot[0], -pivot[1]); ctx.restore();
+  }
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.save(); ctx.translate(273, 198);
+    if (form.value === '2') { if (sprites.alien.complete) ctx.drawImage(sprites.alien, 0, 0); ctx.restore(); return; }
+    if (beamVisible.checked && sprites.beam.complete) arm(sprites.beam, [220, 500], Number(beam.value));
+    if (rocketVisible.checked && sprites.rocket.complete) arm(sprites.rocket, [1034, 500], Number(rocket.value));
+    if (bodyVisible.checked && sprites.body.complete) ctx.drawImage(sprites.body, 90, -39, 1254 * 0.862, 1254 * 0.862);
+    ctx.restore();
+    document.querySelector('#beamValue').value = `${beam.value}°`;
+    document.querySelector('#rocketValue').value = `${rocket.value}°`;
+  }
+  Object.values(sprites).forEach(img => img.onload = draw);
+  [form, beam, rocket, bodyVisible, beamVisible, rocketVisible].forEach(input => input.addEventListener('input', draw));
+  draw();
+</script>
+</html>

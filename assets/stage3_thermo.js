@@ -305,7 +305,7 @@ function s3WallOrbTick(b,dt){
   }
 }
 function s3HardWallTrack(b,pat){
-  if(diffKey!=='hard'||!b||b.dead||b.hp<=b.maxhp*.5||typeof enemyLockOn!=='function')return;
+  if(diffKey!=='hard'||!b||b.dead||typeof enemyLockOn!=='function')return;
   const S=b._s3boss;if(!S||S.role!=='wall')return;
   const serial=S._earlyTrackSerial=(S._earlyTrackSerial||0)+1;
   enemyLockOn(b,.72,{fire:function(){

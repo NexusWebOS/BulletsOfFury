@@ -23,7 +23,7 @@ module.exports=function(vm,ctxv,ok){
       o.bounded=J.state==='edgeGun'&&J.charge===0;
       diffKey='normal';DIFF=DIFFS.normal;playerLocks=[];eBullets=[];spawnSubBoss('frostcruiser');var n=subBoss;n.enter=false;n.x=worldWidth()/2;n.y=shipBossStationY(n);
       for(var k=0;k<60;k++)jungleCruiserDirector(n,1/60);
-      o.normalUntouched=!n._jc.hardVariant&&n._jc.state==='missiles'&&playerLocks.length===0;
+      o.normalIceOrbOpener=!n._jc.hardVariant&&n._jc.state==='iceOrbCharge'&&playerLocks.length===0;
       diffKey='furious';DIFF=DIFFS.furious;playerLocks=[];spawnSubBoss('frostcruiser');var f=subBoss;f.enter=false;f.x=worldWidth()/2;f.y=shipBossStationY(f);jungleCruiserSetState(f,'frostRocketCharge');
       o.furiousIncluded=f._jc.hardVariant&&playerLocks.length===1&&playerLocks[0].launches.length===6;
       return JSON.stringify(o);

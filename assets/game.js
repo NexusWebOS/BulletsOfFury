@@ -1992,6 +1992,19 @@ const XART=(function(){
   X._src['lock_frame_0922']='assets/game/ui/lock_0922/frame.png';
   X._src['s4w_warden_gunner_0919']='assets/game/stage4_warfare/s4w_warden_gunner_0919.png';
   X._src['s4w_warden_rocketeer_0919']='assets/game/stage4_warfare/s4w_warden_rocketeer_0919.png';
+  /* Stage-8 symbiote finale: loose, lazy-loaded authored plates. The manifest is generated. */
+  const _vroot='assets/game/final_boss_0924/';
+  for(const k of ['form2_body','form2_cannon_arm','form2_rocket_arm','portal_sheet','robot_takeover_sheet','weapons_sheet','shield_sheet','void_death_sheet','ground_portal_rise_sheet','ground_portal_beam_sheet'])X._src['vile24_'+k]=_vroot+k+'.png';
+  const _vc='assets/game/final_boss_concepts/obsidian_form_0924/';
+  X._src.vile24_form1_body=_vc+'modular/form1_body.png';
+  X._src.vile24_form1_rocket_arm=_vc+'modular/form1_rocket_arm.png';
+  X._src.vile24_robot_gray=_vc+'robot_merge/robot_gray.png';
+  X._src.vile24_alien_final=_vc+'obsidian_alien_face.png';
+  for(let i=0;i<6;i++)X._src['vile24_ball_'+i]=_vc+'rolling/rolling_0'+i+'.png';
+  X._src.bof_cover_b='docs/marketing_0916/cover_b_raw.png';
+  X._src.r24_panel='assets/game/rival_fight_0924/ally_select_panel.png';
+  X._src.r24_card='assets/game/rival_fight_0924/rival_fight_card.png';
+  X._src.s9_fusion_portal_0924='assets/game/stage9_fusion_0924/tidal_fusion_portal_16.png';
   /* CAMPAIGN MAP v2 PIECES (0912v). Code-owned for the same reason as the hulls above. Baked from
      SpriteCook plates by _BUILD_SOURCE/campaign_map_v2_0912v.py; `cm2_` keeps them off PRELOAD,
      and cmap2Warm touches them from the hub, a screen before the map needs them. */
@@ -7644,7 +7657,7 @@ function uiBlipRep(){
 }
 const GS = { BOOT:'boot', LOADING:'loading', TITLE:'title', DIFF:'diff', PILOT:'pilot',
   PASSWORD:'password', CREDITS:'credits', OPTIONS:'options', INTRO:'intro', LAUNCH:'launch', COCKPIT:'cockpit',
-  PLAY:'play', GAMEOVER:'gameover', VICTORY:'victory', STAGECLEAR:'stageclear', UNLOCKS:'unlocks', YURIUP:'yuriup', FORGE:'forge', CONTINUE:'continue', RIFTFALLBACK:'riftfallback', RIVAL:'rival', FLYOVER:'flyover', WARPENTRY:'warpentry', STAGESEL:'stagesel', MODESEL:'modesel', CAMPHUB:'camphub', CAMPAIGNINTRO:'campaignintro', ATTRACT:'attract', OUTBOUND:'outbound', OPENING:'opening', CUTSCENE:'cutscene',
+  PLAY:'play', GAMEOVER:'gameover', VICTORY:'victory', STAGECLEAR:'stageclear', UNLOCKS:'unlocks', YURIUP:'yuriup', FORGE:'forge', CONTINUE:'continue', RIFTFALLBACK:'riftfallback', RIVAL:'rival', RIVALALLY:'rivalally', FLYOVER:'flyover', WARPENTRY:'warpentry', STAGESEL:'stagesel', MODESEL:'modesel', CAMPHUB:'camphub', CAMPAIGNINTRO:'campaignintro', ATTRACT:'attract', OUTBOUND:'outbound', OPENING:'opening', CUTSCENE:'cutscene',
   /* the co-op wing muster: both chosen pilots side by side before deploy (drop 0902f) */
   COOPROSTER:'cooproster',
   /* ⚠ 'opener' AND NOT 'intro'. GS.INTRO is the STAGE card that precedes GS.LAUNCH and has been
@@ -10811,6 +10824,7 @@ function deathSpinBurst(ox, oy, size, pal){
   }
 }
 function updateDeathSpin(dt){
+  if(player._voidDeath&&typeof vile24UpdateVoidDeath==='function'){vile24UpdateVoidDeath(dt);return;}
   const s = player._spin; if(!s) return;
   s.t += dt;
   const k = clamp(s.t / s.dur, 0, 1);
@@ -10852,6 +10866,7 @@ function deathSpinKey(){
 }
 /* the wreck, drawn while `player.dead` holds every other player draw off */
 function drawDeathSpin(){
+  if(player._voidDeath&&typeof vile24DrawVoidDeath==='function'){vile24DrawVoidDeath();return;}
   const s = player._spin; if(!s || s.crashed) return;
   /* 0913a: in space the wreck is the SPACESHIP - its own level plate turned through the same angles, see
      gravityDeathSpinDraw. It falls through to the plane reel only while the space atlas cannot draw yet. */
@@ -15396,6 +15411,7 @@ function s9FusionBossInit(b,baseHp){
   if(typeof XART!=='undefined'&&XART._touch){
     for(const k of ['ns9_warpsen_intact','ns9_warpsen_damaged','ns9_warpsen_critical'])XART._touch(k);
     for(let i=0;i<4;i++)XART._touch('ns9_gatecore_'+i);
+    XART._touch('s9_fusion_portal_0924');XART._touch('ns9_tidal_intact');
   }
   return true;
 }
@@ -15476,90 +15492,40 @@ function s9FusionBossTick(b,dt){
     }
     b.hp=F.left.hp+F.right.hp;
   }else if(F.phase==='fuse'){
-    const p=clamp(F.t/2.05,0,1),k=p*p*(3-2*p),cx=VW/2,cy=142;
-    F.left.x=lerp(F.lx,cx-22,k);F.right.x=lerp(F.rx,cx+22,k);
+    /* The disabled twins remain recognizable while being drawn into a single dark
+       aperture. Their art shrinks before the centers meet; no explosion covers the
+       identity change. The Sovereign is revealed before its attack clock starts. */
+    const p=clamp(F.t/2.40,0,1),k=p*p*(3-2*p),cx=VW/2,cy=142;
+    F.left.x=lerp(F.lx,cx-14,k);F.right.x=lerp(F.rx,cx+14,k);
     F.left.y=lerp(F.ly,cy,k);F.right.y=lerp(F.ry,cy,k);
-    F.left.spin-=dt*(1.8+5*k);F.right.spin+=dt*(1.8+5*k);F.gate=k;
-    if(F.t>=1.42&&!F.burstL){F.burstL=true;explode(F.left.x,F.left.y,92,'blue');if(Audio.SFX&&Audio.SFX.expBig)Audio.SFX.expBig();}
-    if(F.t>=1.64&&!F.burstR){F.burstR=true;explode(F.right.x,F.right.y,92,'blue');if(Audio.SFX&&Audio.SFX.expBig)Audio.SFX.expBig();}
-    if(F.t>=2.05){
-      /* ⚠ THE MERGE USED whiteBlast AND NOTHING EVER CLEARS IT. Mike: "screen stays flashed
-         white when the stage 9 final boss merges." whiteBlast is documented three screens down
-         as "driven by the boss-death sequence and never self-decays" - the death sequence writes
-         it every frame from its own clock and zeroes it at the end. The MERGE is not that
-         sequence, so a one-off 0.65 written here simply stayed on the canvas for the rest of the
-         fight. atomFlash is the self-decaying white pop (it fades at dt*2.0 in the play update),
-         which is what a one-shot flare wants. */
-      flashScreen=Math.max(flashScreen,0.85);
-      atomFlash=Math.max(atomFlash||0,0.65);
-      shake=Math.max(shake,13);
+    F.left.spin-=dt*(.45+1.3*k);F.right.spin+=dt*(.45+1.3*k);F.gate=k;
+    if(F.t>=2.40){
+      atomFlash=Math.max(atomFlash||0,0.16);shake=Math.max(shake,6);
       b.maxhp=F.baseHp;b.hp=F.baseHp;shipBossInit(b,'tidalsovereign');
-      /* This object began life as the twin encounter, so shipBossInit cannot inherit the final
-         identity from spawnBoss the way it normally does.  Promote the public kind as well as
-         `_ship`; otherwise death routing, diagnostics and any kind-gated logic still see the
-         already-finished Wardens after the complete Tidal Sovereign is on the field. */
-      b.kind='tidalsovereign'; F.ringT=0;   // the aperture now COLLAPSES around the arriving hull
+      b.kind='tidalsovereign';F.ringT=0;
       b.enter=false;b.x=VW/2;b.y=132;b.tx=VW/2;b.ty=132;F.phase='tidal';F.t=0;
       if(Audio.SFX&&Audio.SFX.fusionBeam)Audio.SFX.fusionBeam();
     }
   }
   return true;
 }
-/* ============================================================
-   THE FUSION APERTURE (0905x). Mike: "you should be spawning a giant energy ring around the two of
-   them as they go to fuse and do our teleport effect but pallete swapped to something else and
-   teleport outs the final fused form".
-
-   It reuses `chrift_0..7` - the authored teleport rift from CF_EnemyTeleportFX-Vol.1, whose eight
-   frames ARE this beat already: sparks, slit, aperture opening, aperture full, phase flash, then
-   collapse, slit close, residue. Rendered before it was chosen (docs/proofs/chrift_frames.png), not
-   picked off its name.
-
-   ⚠ PALETTE-SWAPPED VIA xartPalette, NOT xartTint. `xartTint` is a source-atop flood - this file
-   records it flattening a font's drop shadow into the E->B bug. `xartPalette` composites in 'color':
-   hue and saturation from the fill, LUMINOSITY from the plate, so the rift keeps its authored
-   internal shading and only changes colour. Amber separates it from the Chaos Harrier's purple warp
-   and from stage 9's own blue void, so the two teleports do not read as the same event.
-
-   ⚠ AND IT IS SIZED TO ENCIRCLE BOTH WARDENS, not to sit behind one. The span is measured from the
-   pair's actual separation each frame, so it stays a ring AROUND them as they converge rather than
-   a disc that swallows them. The existing `ns9_gatecore_` (145->250px, driven by the same F.gate)
-   is a separate, smaller central element and is left alone.                                     */
-const S9_RING_OUT = 1.10;          // seconds the aperture collapses for after the merge
-const S9_RING_TINT = '#ffb43a';    // amber - not the harrier's purple, not the void's blue
+/* Stage 9 portal: a dedicated 16-frame authored tidal reel, kept behind the
+   independently drawn sentinels and Sovereign. The dark center stays open at reveal. */
+const S9_RING_OUT=0.72;
 function s9FusionRing(b){
-  const F=b&&b._s9fusion; if(!F||typeof XART==='undefined') return;
-  let fi, a, k;
+  const F=b&&b._s9fusion;if(!F||!XART.rdy('s9_fusion_portal_0924'))return;
+  const im=XART.get('s9_fusion_portal_0924'),cell=im.width/4;
+  let fi,alpha=1,size;
   if(F.phase==='fuse'){
-    /* ⚠ FRAME 4 IS THE PHASE FLASH, NOT THE RING. Mapping the whole fuse across 0..4 put the white
-       starburst on screen for the last 13% of the wind-up, so the beat Mike asked to read as "a
-       giant energy RING" read as an explosion instead. 0..3 is the aperture opening; 4 is held back
-       for the merge instant itself, which is what that frame is for. */
-    k=clamp(F.gate||0,0,1);
-    fi=(k>=0.93)?4:Math.min(3,Math.floor(k*3.7)); a=0.30+0.70*k;
+    const p=clamp(F.t/2.40,0,1);
+    fi=Math.min(11,Math.floor(p*12));size=210+96*Math.min(1,p*2);
   }else if(F.phase==='tidal'&&F.ringT!=null&&F.ringT<S9_RING_OUT){
-    /* ⚠ THE COLLAPSE HAS TO FADE TO NOTHING, AND THE FIRST CUT DID NEITHER END. Mike, on the frame
-       right after the merge: "your not fading back to regular screen after he comes out of the
-       teleporter". Two faults, both mine and both in this line:
-         - it opened at alpha 1.0 under 'lighter' across a 300px+ disc, so the arriving Sovereign sat
-           in a full-strength additive wash. The screen flashes themselves were innocent - measured,
-           flashScreen 0.800->0 and atomFlash 0.617->0 on their own clocks.
-         - and it bottomed at 0.15, not 0, so the ring POPPED off when ringT passed the window
-           instead of fading out.
-       A plain linear ramp from 0.62 to 0 fixes both, and squaring it keeps the aperture readable
-       early while getting out of the way fast. */
-    k=1; fi=5+Math.min(2,Math.floor((F.ringT/S9_RING_OUT)*3));
-    const _fade=1-clamp(F.ringT/S9_RING_OUT,0,1); a=0.62*_fade*_fade;
+    const p=clamp(F.ringT/S9_RING_OUT,0,1);
+    fi=12+Math.min(3,Math.floor(p*4));alpha=1-p;size=306*(1-.20*p);
   }else return;
-  const key='chrift_'+fi; if(!XART.rdy(key)) return;
-  const im=(typeof xartPalette==='function'&&xartPalette(key,S9_RING_TINT))||XART.get(key);
-  if(!im) return;
-  const cx=(F.left.x+F.right.x)*.5, cy=(F.left.y+F.right.y)*.5;
-  const span=Math.abs(F.right.x-F.left.x)+Math.max(F.left.w,F.right.w);
-  const z=Math.max(300,span*1.55)*(0.72+0.28*k);
-  ctx.save(); ctx.globalCompositeOperation='lighter'; ctx.imageSmoothingEnabled=false;
-  ctx.globalAlpha=clamp(a,0,1);
-  ctx.drawImage(im,cx-z/2,cy-z/2,z,z);
+  const cx=VW/2,cy=142;
+  ctx.save();ctx.imageSmoothingEnabled=false;ctx.globalAlpha=alpha;
+  ctx.drawImage(im,(fi%4)*cell,Math.floor(fi/4)*cell,cell,cell,cx-size/2,cy-size/2,size,size);
   ctx.restore();
 }
 function s9FusionBossDraw(b){
@@ -15577,14 +15543,23 @@ function s9FusionBossDraw(b){
      now registered-but-undrawn, which this repo tracks deliberately rather than deleting. */
   for(const w of [F.left,F.right])s9FusionWardenWarningDraw(b,w,false);
   for(const w of [F.left,F.right]){
+    const q=F.phase==='fuse'?clamp(F.t/1.85,0,1):0;
+    const scale=F.phase==='fuse'?Math.pow(1-q,1.30):1;
+    if(scale<.03)continue;
     const ratio=w.hp/w.maxhp,key=ratio>.58?'ns9_warpsen_intact':(ratio>.24?'ns9_warpsen_damaged':'ns9_warpsen_critical');
     if(XART.rdy(key)){
       ctx.save();ctx.translate(w.x,w.y);ctx.rotate(w.spin||0);ctx.globalAlpha=(w.disabled&&F.phase==='twins') ? .62 : 1;
-      ctx.drawImage(XART.get(key),-w.w/2,-w.h/2,w.w,w.h);ctx.restore();
+      ctx.drawImage(XART.get(key),-w.w*scale/2,-w.h*scale/2,w.w*scale,w.h*scale);ctx.restore();
       if(w.flash>0&&typeof xartTint==='function'){
         const hi=xartTint(key,'#ffffff',.9);if(hi){ctx.save();ctx.globalAlpha=clamp(w.flash/.16,0,1);ctx.drawImage(hi,w.x-w.w/2,w.y-w.h/2,w.w,w.h);ctx.restore();}
       }
     }
+  }
+  if(F.phase==='fuse'&&F.t>1.70&&XART.rdy('ns9_tidal_intact')){
+    const im=XART.get('ns9_tidal_intact'),r=clamp((F.t-1.70)/.70,0,1),
+          w=320*(.66+.34*r),h=256*(.66+.34*r);
+    ctx.save();ctx.imageSmoothingEnabled=false;ctx.globalAlpha=r;
+    ctx.drawImage(im,VW/2-w/2,132-h/2,w,h);ctx.restore();
   }
   for(const w of [F.left,F.right])s9FusionWardenWarningDraw(b,w,true);
   return true;
@@ -16371,9 +16346,14 @@ function stage3BossTick(b,dt){
 }
 function stage3BossAttack(b,pat,step,ph,cdMul){
   cdMul=(cdMul||1)*(diffKey==='furious'?.68:diffKey==='hard'?.79:.90);
+  const S=b._s3boss;if(!S)return false;
+  /* A short aimed hunt breaks up the Wall's longer siege beats on Normal/Hard.
+     Furious keeps its authored transformation and attack calendar. */
+  if(S.role==='wall'&&diffKey!=='furious'&&ph<3&&(step&1)===0)pat='s3wallhunt';
+  S.lastPattern=pat;S.patternsSeen[pat]=(S.patternsSeen[pat]||0)+1;
+  /* Schedule the Hard lock before the laser handler takes ownership of the attack. */
+  if(S.role==='wall'&&pat!=='s3wallhunt'&&typeof s3HardWallTrack==='function')s3HardWallTrack(b,pat);
   if(stage3WallLaserAttack(b,pat,step))return true;
-  const S=b._s3boss;if(!S)return false;S.lastPattern=pat;S.patternsSeen[pat]=(S.patternsSeen[pat]||0)+1;
-  if(S.role==='wall'&&typeof s3HardWallTrack==='function')s3HardWallTrack(b,pat);
   const ev=[];
   if(pat==='s3spearburst'){
     /* Five locked laser lanes walk across the arena while the wings add two compact shard beats.
@@ -16402,6 +16382,21 @@ function stage3BossAttack(b,pat,step,ph,cdMul){
     ev.push({at:1.16,slot:'L',base:Math.PI/2,offs:[-.18,.02],sp:4.10,kind:'s3shell',accel:1.25,max:6.6,shootable:true,hp:2});
     ev.push({at:1.16,slot:'R',base:Math.PI/2,offs:[-.02,.18],sp:4.10,kind:'s3shell',accel:1.25,max:6.6,shootable:true,hp:2,audio:false});
     stage3BossQueueVolley(b,ev,2.18);stage3BossBeginSlide(b,3.55);b.fireCd=3.72*cdMul;
+  }else if(pat==='s3wallhunt'){
+    /* The side batteries leave a visible diagonal escape channel while the core
+       commits to a sampled target. Hard holds a lock through the warning, then
+       fires once; dodging after the lock remains reliable. */
+    const C=shipBossMount(b,'C'),a=aimPlayer(C.x,C.y);
+    S.charge={t:0,dur:.78,slot:'C'};
+    for(const side of [-1,1])ev.push({at:.38,slot:side<0?'TL':'TR',base:Math.PI/2+side*.47,offs:[-.07,.07],sp:3.12,kind:'s3shard',accel:.55,max:4.8,shootable:true,audio:side<0});
+    if(diffKey==='hard'&&typeof enemyLockOn==='function')enemyLockOn(b,.78,{fire:function(){
+      if(!boss||boss!==b||b.dead)return;
+      const p=shipBossMount(b,'C'),live=aimPlayer(p.x,p.y);
+      for(const off of [-.09,0,.09])stage3BossShot(b,'C',live+off,2.9,'s3lance',{w:17,h:25,accel:.72,max:5.0,shootable:true,silent:off!==0});
+      stage3BossMuzzle(b,'C','s3lance',1.1,.18);
+    }});
+    else ev.push({at:.78,slot:'C',base:a,offs:[-.09,0,.09],sp:2.55,kind:'s3lance',accel:.6,max:4.6,shootable:true});
+    stage3BossQueueVolley(b,ev,1.55);stage3BossBeginSlide(b,2.22);b.fireCd=2.50*cdMul;
   }else if(pat==='s3wallcannons'){
     /* Seven individually timed siege lanes traverse with the Wall. The opening teaches the
        left/right rhythm, then raised batteries and core join before the giant reactor orb. */
@@ -21793,7 +21788,7 @@ function jungleCruiserDirector(b,dt){
   switch(J.state){
     case 'acquire':
       jungleCruiserStalk(b,dt);
-      if(J.t>=(b._ship==='frostcruiser'?.90:1.35))jungleCruiserSetState(b,J.hardVariant?'frostRocketCharge':'missiles');
+      if(J.t>=(b._ship==='frostcruiser'?.90:1.35))jungleCruiserSetState(b,b._ship==='frostcruiser'&&!J.hardVariant?'iceOrbCharge':J.hardVariant?'frostRocketCharge':'missiles');
       break;
     case 'frostRocketCharge': {
       jungleCruiserStalk(b,dt);J.charge=clamp(J.t/FROST_ROCKET_CHARGE,0,1);
@@ -22209,7 +22204,7 @@ function s7FinalPhase(b){return b&&b._s7warden&&b._s7warden.final?b._s7warden.fi
 function s7WardenReverseScroll(){
   if(!boss||!boss._s7warden||run.stage!==7)return 0;
   const ph=s7FinalPhase(boss);
-  return ['fight','stun','hyper','legBurst','cripple'].indexOf(ph)>=0?(ph==='cripple'?62:46):0;
+  return ['chase','fight','stun','hyper','legBurst','cripple'].indexOf(ph)>=0?(ph==='cripple'?62:ph==='chase'?34:46):0;
 }
 function s7WardenCinematic(){
   const ph=s7FinalPhase(boss);
@@ -22467,11 +22462,25 @@ function s7WardenFinalTick(b,dt){
   }
   if(F.phase==='roar'){
     S.noHit=true;if(!F.beat){F.beat=1;s7WardenMechSound('roar');shake=Math.max(shake,8);}
-    if(F.t>=1.34){b._s7FinalNoBar=false;S.mode='burst';S.mt=0;S.noHit=false;s7WardenPhase(b,'fight');s7WardenBurstArm(b);}
+    if(F.t>=1.34){b._s7FinalNoBar=false;S.noHit=true;s7WardenPhase(b,'chase');S.targetX=b.x;S.chaseSample=0;}
+    return true;
+  }
+  if(F.phase==='chase'){
+    /* The playfield reverses while the walker follows in four distinct planted
+       strokes. It begins slowly, then runs before committing to real leap lanes. */
+    S.noHit=F.t<.55;
+    S.chaseSample=(S.chaseSample||0)-dt;
+    if(S.chaseSample<=0){S.chaseSample=.42;S.targetX=clamp(targetShip(b.x,b.y).x,camLeftX()+b.w*.26,camRightX()-b.w*.26);}
+    const dx=S.targetX-b.x;
+    if(Math.abs(dx)>4){S.dir=dx<0?-1:1;s7WardenCrawl(b,dt,F.t<1.35?42:115);}
+    else {b.x=S.targetX;S.travel=0;}
+    b.x=clamp(b.x,camLeftX()+b.w*.26,camRightX()-b.w*.26);
+    b.y=Math.min(VH*.39,b.y+dt*(F.t<1.35?5:19));
+    if(F.t>=3.05){S.noHit=false;s7WardenPhase(b,'fight');S.openingLeaps=diffKey==='furious'?3:2;s7WardenMode(b,'leap');}
     return true;
   }
   if(F.phase==='fight'){
-    S.noHit=false;b.y=Math.min(VH*.39,b.y+dt*(F.hyper?13:8));return false;
+    S.noHit=false;if(S.mode!=='leap'&&S.mode!=='leapBack')b.y=Math.min(VH*.39,b.y+dt*(F.hyper?13:8));return false;
   }
   if(F.phase==='stun'){
     S.noHit=false;const q=clamp(F.t/.46,0,1),e=1-Math.pow(1-q,3);b.y=lerp(F.stunFrom,F.stunTo,e);
@@ -22533,7 +22542,7 @@ function s7WardenTick(b,dt){
     if(Math.abs(dx)<4||(travelDir>0?b.x>=S.targetX:b.x<=S.targetX)){
       b.x=S.targetX;S.targetX=S.targetX<(left+right)/2?right:left;S.dir=S.targetX>b.x?1:-1;
     }
-    if(S.mt>2.40){const pick=S.step%(S.final.hyper?6:4);s7WardenMode(b,pick===0?'burst':pick===1?'minefield':pick===2?'rail':pick===3?'teleport':pick===4?'chain':'leap');}
+    if(S.mt>2.40){const pick=S.step%(S.final.hyper?7:5);s7WardenMode(b,pick===0?'burst':pick===1?'minefield':pick===2?'rail':pick===3?'teleport':pick===4?(S.final.hyper?'chain':'leap'):pick===5?'leap':'chain');}
   }else if(S.mode==='burst'){
     /* Ten machine-fast toxic cannon rounds, but the whole burst commits to the angle sampled at
        the tell. The boss braces and crawls only 11px/s, so the player can read the lane. */
@@ -22569,7 +22578,7 @@ function s7WardenTick(b,dt){
     }
   }else if(S.mode==='leapBack'){
     const k=clamp(S.mt/.88,0,1),e=k*k*(3-2*k);b.y=lerp(S.leapEndY,b.ty,e);
-    if(k>=1)s7WardenMode(b,'patrol');
+    if(k>=1){if(S.openingLeaps>1){S.openingLeaps--;s7WardenMode(b,'leap');}else{S.openingLeaps=0;s7WardenMode(b,'patrol');}}
   }else if(S.mode==='minefield'){
     const tell=.72;combatWarningTick(b,'stage7-warden-minefield',Math.min(S.mt,tell),tell);
     if(!S.event&&S.mt>tell){S.event=1;const C=shipBossMount(b,'C'),cols=7,gap=S.mineGap;
@@ -24584,7 +24593,7 @@ function spawnBoss(kind){
     b.name='BLACK COCOON'; b.ty=140; b.y=b.ty;
     b._vPhaseHp=Math.max(1,Math.ceil(hpBase/4)); b._vBase=b._vPhaseHp*4; b._vile=true;
     vileBuildForm(b, 0);
-    b._symEntry={t:0,dur:2.55,beat:-1}; b.enter=true;
+    b._symEntry={t:0,dur:5.4,beat:-1}; b.enter=true;
   }
   if(kind==='cesspool'){             // LEVEL 7 BOSS — CESSPOOL LEVIATHAN.
     // The pack's component-map is the same five-part 256x256 layout the VILE forms use
@@ -34436,7 +34445,7 @@ function updatePlay(dt){
     updateDeathSpin(dt);
     player.deathT-=dt;
     if(player.deathT<=0){
-      if(run.lives>0){ run.lives--; player._spin=null; player.dead=false; player.reset(true); }   // hold position
+      if(run.lives>0){ run.lives--; player._spin=null; player._voidDeath=null; player.dead=false; player.reset(true); }   // hold position
       /* ---- SEPARATE LIVES (Mike's call, drop 0902f) ------------------------------------
          A seat that runs out does NOT end a co-op run. It goes `out` and sits the rest of the
          stage while its partner flies; only when BOTH seats are out does the run reach the
@@ -36565,6 +36574,7 @@ function updatePlay(dt){
        just the player sitting still after the kill. */
     const endT = boss&&boss._cinDeath?9.8:5.8;
     if(stageEnding>endT){
+      if(typeof Rival24!=='undefined'&&Rival24.active){Rival24.finish();return;}
       /* The stage handoff cannot erase the guaranteed boss element. */
       for(const p of powerups){ if(p.kind==='forgecombo'&&!p.dead){ applyPowerup(p); p.dead=true; } }
       powerups=powerups.filter(function(p){return !p.dead;});
@@ -36983,7 +36993,7 @@ function killEnemy(e){
   killDrop(e);
 }
 
-function playerHit(){
+function playerHit(source){
   if(player.dead||player.invuln>0) return;
   // JUGGERNAUT wrecking-ball special: fully invulnerable to enemy bullets/attacks while active
   if(specialActive('juggernaut')){ return; }
@@ -37008,7 +37018,8 @@ function playerHit(){
      they land at the end of the turn instead of on the frame of the hit. A pilot with no sp
      reel keeps the old timing exactly, so a missing family degrades to the previous death
      rather than to no death at all. */
-  if(deathSpinAvailable()){ startDeathSpin(); }
+  if(source==='darkVoid'&&typeof vile24StartVoidDeath==='function'){vile24StartVoidDeath();}
+  else if(deathSpinAvailable()){ startDeathSpin(); }
   else {
     player._spin=null; player.deathT=1.4;
     if(typeof fxBurst==='function') fxBurst(player.x, player.y, 66, {color:'#7fd4ff', rings:2});
@@ -39094,6 +39105,7 @@ function updateBoss(dt){
       if(bossEntryTick(b, dt)){ updateModularBoss(b, dt); return; }
     }
     updateModularBoss(b, dt);
+    if(b._vile&&typeof vile24Tick==='function')vile24Tick(b,dt);
     /* MODULAR BOSSES STILL HAVE TO SHOOT. This returned straight out of updateBoss, so it never
        reached the fireCd countdown / bossAttack() call below — every modular boss was silent
        unless its own module code happened to fire. That is why the Magma Colossus "just flew
@@ -39813,7 +39825,13 @@ function stageSceneryDraw(dt){
     if(run.stage===8 && typeof l8ObjsDraw==='function'){ l8FieldUpdate(dt); l8ObjsDraw(); }   // Furious Death scenery (0822aa)
   }catch(_s){}
 }
-function drawBG(dt){ _drawBGCore(dt); stageSceneryDraw(dt); }
+function drawBG(dt){
+  /* Optional rival encounters borrow the selected stage's authored terrain
+     without launching that stage's dialogue, waves, or hazards. */
+  const rivalStage=typeof Rival24!=='undefined'&&Rival24.arenaStage();
+  if(rivalStage){const saved=run.stage;try{run.stage=rivalStage;_drawBGCore(dt);}finally{run.stage=saved;}return;}
+  _drawBGCore(dt);stageSceneryDraw(dt);
+}
 function _drawBGCore(dt){
   // stage 1 places its tanks and boats off this mask, and the master path below RETURNS —
   // so the build has to happen before it, not inside a branch it never reaches (0821)
@@ -49629,6 +49647,7 @@ function drawBullets(){
   ctx.imageSmoothingEnabled = false;
   // enemy — master fire-type art first (legacy kinds alias onto shared FIRETYPES)
   for(const b of eBullets){
+    if(b._v24Kind&&typeof vile24DrawProjectile==='function'&&vile24DrawProjectile(b))continue;
     if(ovSonicProjectileDraw(b))continue;
     if(b._archBlaster){const k='arch_blaster_fx_'+(4+(((b._ph||0)+Math.floor((stateT||0)*18))&1));if(XART.rdy(k)){ctx.drawImage(XART.get(k),b.x-6,b.y-14,12,28);continue;}}
     if(b._hammerLaser){hammerLaserDraw(b);continue;}
@@ -51229,6 +51248,7 @@ function drawScene(dt){
     case GS.RIFTFALLBACK:return drawRiftFallback(dt);
     case GS.VICTORY: return drawVictory(dt);
     case GS.RIVAL:   return drawRivalSeq(dt);
+    case GS.RIVALALLY: return Rival24.selectDraw(dt);
     case GS.FLYOVER: return drawFlyover(dt);
     case GS.STAGESEL: { ctx.save();ctx.translate(campaignViewOffset(),0);try{drawStageSelect(dt);campPauseDraw(dt);}finally{ctx.restore();}return; }
     case GS.MODESEL: return drawModeSelect(dt);
@@ -51285,17 +51305,7 @@ function drawScene(dt){
    ⚠ ANY INPUT TAKES IT, AT ANY MOMENT, including mid-beat. An opener you cannot escape is a
    cutscene, and this one is 30 seconds long.
    ============================================================ */
-const OPN = [
-  {k:'sil',  p:'cole',       t:'EARTH IS IN TROUBLE!',               d:2.10},
-  {k:'sil',  p:'decker',     t:"WE NEED FURY HQ'S HELP!",            d:2.10},
-  {k:'roll',                 t:'9 ELITE PILOTS',                     d:12.00},
-  {k:'face',                 t:"99 PROBLEMS BUT A FLIGHT AIN'T 1!",  d:2.70},
-  {k:'demo', p:'yuri',       t:'DOUBLE THE ACTION',                  d:3.20},
-  {k:'demo', p:'maverick',   t:'TRIPLE THE TROUBLE',                 d:3.20},
-  {k:'demo', p:'juggernaut', t:'THREAT UNKNOWN?',                    d:3.20},
-  {k:'nine',                                                         d:6.60},
-  {k:'logo',                                                         d:7.00},
-];
+const OPN = [{k:'cover',d:7.5}];
 const OPN_ORDER=['cole','axel','lizzie','decker','freezer','juggernaut','yuri','falva','maverick'];
 /* three that fall, three that finish a boss, three that fly out of it - Mike named all three */
 const OPN_NINE=[
@@ -51344,7 +51354,7 @@ function openerPair(pk,cx,cy,pairW,pairH,alpha){
 }
 function openerStart(){
   opnI=0; opnT=0; opnDemoOn=false; opnFrame=0; opnDone=false;
-  drawOpener._artWait=0;openerPairsReady(OPN_ORDER);
+  drawOpener._artWait=0;XART.rdy('bof_cover_b');XART.rdy('nbl_logo_0916');
   /* ⚠ ONE TRACK THE GAME OWNS AND HAS NEVER PLAYED (Mike: "use some of our music we didnt map but
      have"). stage9_bonus_warp_run was the only file in assets/game/music that the manifest did not
      register at all - measured, not guessed. It falls back down to the title track, because a
@@ -51352,17 +51362,13 @@ function openerStart(){
   /* ⚠ startMusic RETURNS NOTHING, so `if(!startMusic(x)) startMusic(y)` would always play y -
      checked, not assumed. The track has to be tested for BEFORE it is asked for. */
   try{
-    const _has=(typeof Snd!=='undefined' && Snd.music && Snd.music.opener);
-    if(Audio.startMusic) Audio.startMusic(_has?'opener':'title');
+    if(Audio.startMusic) Audio.startMusic('title');
   }catch(e){}
   setState(GS.OPENER);
 }
 function openerToTitle(){
   opnDone=true;
-  try{ attractDemoEnd(); }catch(e){}
-  /* the opener has its own track, so unlike the attract reel this one DOES hand the menu its
-     music back - otherwise the warp-run bed would keep running under the main menu */
-  try{ Audio.startMusic('title'); }catch(e){}
+  /* The cover and menu share one title track, so the handoff has no audible seam. */
   setState(GS.TITLE); menuIndex=0;
 }
 /* Opening silhouettes use each pilot's current gameplay airframe. The retired
@@ -51659,6 +51665,26 @@ if(typeof window!=='undefined'){
             music:!!(typeof Snd!=='undefined' && Snd.music && Snd.music.opener)};
   };
 }
+/* SpriteCook cover B is an authored portrait plate; the game's current logo is layered
+   separately so a wordmark update does not require altering the illustration. */
+function opnBeatCover(t,a){
+  opnBackdrop(t,false);
+  if(XART.rdy('bof_cover_b')){
+    const im=XART.get('bof_cover_b'),s=Math.min(VW/im.width,VH/im.height);
+    const w=im.width*s,h=im.height*s;
+    ctx.save();ctx.imageSmoothingEnabled=false;ctx.globalAlpha=a;
+    ctx.drawImage(im,(VW-w)/2,(VH-h)/2,w,h);
+    ctx.restore();
+  }
+  if(XART.rdy('nbl_logo_0916')){
+    const lg=XART.get('nbl_logo_0916');
+    const w=Math.min(VW*.82,VH*.56),h=w*lg.height/lg.width;
+    ctx.save();ctx.globalAlpha=a;ctx.imageSmoothingEnabled=false;
+    ctx.drawImage(lg,(VW-w)/2,(VH-VH*(1536/2752))/2+VH*.01,w,h);
+    ctx.restore();
+  }
+  if(t>1.0&&Math.floor(t*1.8)%2)controlHintRow([['pad_start','PLAY']],VH*.92);
+}
 let dt0=1/60;      // the beat draws need dt inside helpers that do not take it
 function drawOpener(dt){
   dt0=dt;
@@ -51670,6 +51696,7 @@ function drawOpener(dt){
   if(opnI>=OPN.length){ openerToTitle(); return; }
   const B=OPN[opnI], dur=B.d;
   // Prime every pair together. Do not consume their screen time during normal lazy decode.
+  if(B.k==='cover'&&!XART.rdy('bof_cover_b')){opnBackdrop(opnT,false);return;}
   const pairBeat=B.k==='sil'||B.k==='roll';
   if(pairBeat&&!openerPairsReady(B.k==='roll'?OPN_ORDER:[B.p])&&(drawOpener._artWait||0)<4){
     drawOpener._artWait=(drawOpener._artWait||0)+dt;opnBackdrop(opnT,false);return;
@@ -51677,6 +51704,7 @@ function drawOpener(dt){
   opnT+=dt;
   const a=opnFade(opnT,dur);
   switch(B.k){
+    case 'cover': opnBeatCover(opnT,a); break;
     case 'sil':  opnBeatSil(B, opnT, a);  opnBars(1); break;
     case 'roll': opnBeatRoll(B, opnT, a); opnBars(1); break;
     case 'face': opnBeatFace(B, opnT, a); opnBars(0.6); break;
@@ -58213,15 +58241,16 @@ function bossPhaseMusic(stage, phase){
   }catch(e){ return null; }
 }
 const VILE_FORMS=[
-  {art:'s8symboss_form_0', name:'BLACK COCOON',       hpx:1, scale:0.78},
-  {art:'s8symboss_form_1', name:'RAVENOUS ASCENDANT', hpx:1, scale:0.86},
-  {art:'s8symboss_form_2', name:'ABYSSAL LEVIATHAN',  hpx:1, scale:0.94},
-  {art:'s8symboss_form_3', name:'FURIOUS DEATH',      hpx:1, scale:1.02},
+  {art:'s8symboss_form_0', name:'THE POSSESSED',       hpx:1, scale:0.78},
+  {art:'s8symboss_form_1', name:'THE ASCENDANT', hpx:1, scale:0.86},
+  {art:'s8symboss_form_2', name:'THE SEALED MASS',  hpx:1, scale:0.94},
+  {art:'s8symboss_form_3', name:'THE VILE EXISTENCE',      hpx:1, scale:1.02},
 ];
 /* The entrance is an authored sixteen-frame organic transformation, not a
    collection of hull parts. The boss is already at its combat anchor while it
    plays, stays invulnerable through `enter`, and never fades between frames. */
 function symbioteEntryTick(b,dt){
+  if(typeof vile24EntryTick==='function')return vile24EntryTick(b,dt);
   const E=b&&b._symEntry;if(!E)return false;
   E.t=Math.min(E.dur,E.t+dt);b.x=worldWidth()/2;b.y=b.ty;
   const beat=Math.min(15,Math.floor((E.t/E.dur)*16));
@@ -58234,6 +58263,7 @@ function symbioteEntryTick(b,dt){
   return true;
 }
 function symbioteEntryDraw(b){
+  if(typeof vile24EntryDraw==='function')return vile24EntryDraw(b);
   const E=b&&b._symEntry;if(!E||typeof XART==='undefined')return false;
   const p=clamp(E.t/E.dur,0,.999),fi=clamp(Math.floor(p*16),0,15),k='s8symboss_entrance_'+fi;
   if(!XART.rdy(k))return false;
@@ -58389,6 +58419,7 @@ function vileMissileSalvoDraw(b,front){
   return true;
 }
 function vileAttack(b){
+  if(typeof vile24Attack==='function')return vile24Attack(b);
   const f=b._vForm|0, y=b.y+b.h*0.28;
   const step=(b._vAtk=(b._vAtk|0)+1);
   if(b._annihilation){b.fireCd=.22;return;}
@@ -58463,6 +58494,7 @@ function vileAnnihilationDraw(b,front){
   return true;
 }
 function vileBuildForm(b, idx){
+  if(typeof vile24BuildForm==='function')return vile24BuildForm(b,idx);
   const F=VILE_FORMS[idx];b._vileWall=null;b._vileFan=null;b._vileSolar=null;b._vileMissiles=null;
   /* Equal phase pools are mandatory: one form is precisely 25% of the full
      encounter, while its attack vocabulary—not a larger life bar—escalates. */
@@ -61548,6 +61580,7 @@ function modularPartAt(x,y){
   return null;
 }
 function modularHit(dmg){
+  if(boss._vile&&typeof vile24ShieldHit==='function')dmg=vile24ShieldHit(boss,dmg);
   const p=boss._lastPart;
   if(!p || !p.dmg || p.destroyed){
     // struck a solid non-damageable hull cell: armor deflect, light chip on nearest alive part
@@ -62471,6 +62504,7 @@ function sxDraw(b, dt){
 }
 function drawModularBoss(b){
   if(typeof XART==='undefined') return;
+  if(b._vile&&typeof vile24DrawBoss==='function'){vile24DrawBoss(b);return;}
   if(b._symEntry&&typeof symbioteEntryDraw==='function'){symbioteEntryDraw(b);return;}
   /* During a shell change the black growth reel is drawn in the boss-FX pass;
      do not expose the invisible legacy component grid underneath it. */
@@ -63228,6 +63262,7 @@ function campSnapshot(){
     forge:Object.assign({},run.forge||{}), forgeForms:JSON.parse(JSON.stringify(run.forgeForms||{})), forgeElems:Object.assign({},run.forgeElems||{}),
     loadout:Array.isArray(run.loadout)?run.loadout.slice():null,
     unlockedMax:campaign.unlockedMax||1, rank:Object.assign({},campaign.rank||{}),
+    rival24:(typeof Rival24!=='undefined')?Rival24.save():null,
     /* ⚠ PASSWORD UNLOCKS RIDE THE SAVE, AND NOTHING ELSE (Mike, 0909: "if the player loads his
        campaign data and had unlocked her ship or Cole as those are the only passwords currently,
        they remain unlocked per save data only. upon game start, blank game state").
@@ -63265,6 +63300,7 @@ function campApply(s){
   DIFF=difficultyForRun(run.mode,diffKey);
   campaign.unlockedMax=Math.max(1, s.unlockedMax||1);
   campaign.rank=Object.assign({}, s.rank||{});
+  if(typeof Rival24!=='undefined')Rival24.load(s.rival24);
   /* Loading a slot ADOPTS its unlocks wholesale, in both directions - a slot saved before BOMBER
      was entered turns the costume back off. Anything else and a session that typed the password
      once would leak it into every save the player touched afterwards. */
@@ -65044,6 +65080,7 @@ function _drawStageSelectInner(dt){
      and scale, so on a tall map it landed in the middle of the briefing text and overlapped it.
      Anchoring to VH-18 puts it where the title screen's identical hint already lives, so the two
      agree and it never collides with the map content. */
+  if(typeof Rival24!=='undefined')Rival24.mapDraw(dt);
   if(sselBoot===0) drawHintBar([['pad_dpad',_c2&&cmap2.focus==='bar'?'MENU':'STAGE'],['pad_a',_c2&&cmap2.focus==='bar'?'SELECT':'DEPLOY'],['pad_start','MENU']]);
   /* LOCK ONCE COMMITTED (drop 0801fe). Mike: "when we select a level to go to
      being our j/a button, do not allow me to keep moving or pressing stuff. lock
@@ -65078,6 +65115,7 @@ function _drawStageSelectInner(dt){
   }
   const locked = campPause || sselBoot>0 || (sselUnlockCine!=null) || (typeof s9MapCine!=='undefined' && s9MapCine!=null) || (typeof riftReturn!=='undefined' && riftReturn!=null) || !!window.sselCommitted;
   if(!locked){
+    if(typeof Rival24!=='undefined'&&Rival24.mapInput())return;
     /* ⚠ ONLY THE BONUS STAGE, ONCE IT IS EARNED. Mike: "we can ONLY select stage 9 and then
        enter it." The latch clears when stage 9 is entered, so the map goes back to normal
        afterwards rather than stranding the player on a stage they have already played. */
@@ -67159,6 +67197,7 @@ const MENU_BACK = {
   [GS.MODESEL]:  GS.TITLE,
 };
 function menuBackTick(){
+  if(state===GS.STAGESEL&&typeof Rival24!=='undefined'&&Rival24.mapBack())return true;
   const dest=passwordDifficulty&&state===GS.DIFF?GS.PASSWORD:
              state===GS.DIFF&&run.mode==='campaign'?GS.CAMPHUB:MENU_BACK[state];
   if(state===GS.CAMPHUB&&campPick) return false; // slot picker handles its own cancel
@@ -70620,6 +70659,7 @@ function proceedIntro(){
 }
 /* STAGE INTRO — master-art animated card with crash-in, fx, slice, countdown */
 function drawIntro(dt){
+  if(typeof Rival24!=='undefined'&&Rival24.active)return Rival24.cardDraw(dt);
   const art=curArt();
   // NEW stage cards (stagecards_0716 pack): 800x480 alpha cards with the title embedded, all 8 stages.
   // Preferred over the old atlas card; falls back to atlas art, then the legacy banner.
@@ -71869,8 +71909,10 @@ function drawWorld(dt){
   /* the old rain/squall/lightning sheet is replaced by bg6Draw, which draws under gameplay (0819f) */
   if(typeof wfxUpdate==='function'){ wfxUpdate(dt); wfxDraw(); }   // WEATHER FX: L2 firewave / L3 snow / L6 bolts
   if(typeof allyUpdate==='function') allyUpdate(dt);                 // spared-rival wingman
+  if(typeof Rival24!=='undefined') Rival24.tick(dt);
   if(run.stage===6)s6WingDraw();
   if(typeof allyDraw==='function') allyDraw();
+  if(typeof Rival24!=='undefined') Rival24.draw();
   thunderStormDraw();
   drawZaps();
   /* god's wrath: a white-out that decays fast, over the field but under the HUD */
@@ -74519,6 +74561,7 @@ function scLeaveStage(R){
       if(R.seats){ run2.score=(run2.score|0)+R.seats[1].bonus; run2.lives=clamp(run2.lives,0,9); }
       drawStageClear._init=false; drawStageClear._res=null;
       Audio.stopMusic();
+      if(run.stage===6&&typeof Rival24!=='undefined')Rival24.scatterAfterHarrier();
       if(run.mode==='campaign')campAutoAfterClear(run.stage,run.stage===9 ? campaign.unlockedMax : run.stage+1,R.rank);
       /* ⚠ THE BONUS STAGE RETURNS, IT DOES NOT END THE GAME (0822ab). run.stage 9 is >= the
          campaign length, so without this branch clearing the bonus stage would roll credits. */
