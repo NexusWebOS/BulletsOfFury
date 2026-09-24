@@ -3129,6 +3129,7 @@ function drawBossSprite(b){
     }
     // The shared authored FOV owns the whole warning: green tracking, yellow commitment, then
     // flashing red immediately before the ram. Its overhead alert uses the same phase clock.
+    ovRushWarningDraw(b,false);
     if(b._ovState==='chargeTell' && b._chargeTell){
       const T=b._chargeTell, p=ovChargeWarningProgress(T), hub=ovChargeOrigin(b,T);
       combatWarningDraw(b,{x:hub.x,y:hub.y,ex:T.lane,ey:T.dir<0?0:VH,progress:p,width:42,fieldOnly:true});
@@ -3159,6 +3160,8 @@ function drawBossSprite(b){
     };
     const _drawChargeAlert=()=>{
       if(b._ovSonic)ovSonicWarningDraw(b);
+      ovRushWarningDraw(b,true);
+      if(b._ovVolley)l23WarnSymbolDraw(b,{family:'rime',t:Math.min(.999,b._ovVolley.t/b._ovVolley.warm),blinkT:b._ovVolley.t,warm:1,released:false});
       if(b._ovState!=='chargeTell'||!b._chargeTell)return;
       const T=b._chargeTell,p=ovChargeWarningProgress(T),hub=ovChargeOrigin(b,T);
       combatWarningDraw(b,{x:hub.x,y:hub.y,ex:T.lane,ey:T.dir<0?0:VH,progress:p,width:42,alertOnly:true});
@@ -3172,7 +3175,7 @@ function drawBossSprite(b){
       if(b.flash>0){ const tc=xartTint(bodyKey,hitFlashColor(b,b.flash>0.04?'#ffffff':'#ff8a4a'),0.85); if(tc) ctx.drawImage(tc,dx-w/2,yy-h/2,w,h); }
       ctx.restore();
       _drawChargeAlert();
-      if(!b._ovSonic)b._pivot = piv*0.93;                              // ease pivot back to level (per-frame decay)
+      if(!b._ovSonic&&!b._ovSweep&&!b._ovRush)b._pivot = piv*0.93;                              // ease pivot back to level (per-frame decay)
       return;
     }
     ctx.drawImage(bim,dx-w/2,yy-h/2,w,h);
@@ -17890,7 +17893,7 @@ function l23FovDraw(b,B,i,p,k,lane){
   const pl=0.5+0.5*Math.sin(B.t*(8+k*20));
   const a=col==='green' ? 0.5 : (col==='yellow' ? 0.74+0.26*pl : 0.56+0.44*pl);
   ctx.save(); ctx.imageSmoothingEnabled=true; ctx.imageSmoothingQuality='high';
-  ctx.globalCompositeOperation='source-over'; ctx.globalAlpha=a;
+  ctx.globalCompositeOperation='source-over'; ctx.globalAlpha=a*(B.alpha==null?1:B.alpha);
   if(col==='red'&&(diffKey==='hard'||diffKey==='furious')){ctx.shadowColor='#80e8ff';ctx.shadowBlur=7;}
   ctx.drawImage(im,-W*C.ax,-H*C.ay,W,H);
   /* Mike, 0905: "a pixel glow from bottom to top as a cool effect before officially firing off" - the
@@ -17899,7 +17902,7 @@ function l23FovDraw(b,B,i,p,k,lane){
   if(col!=='green'){
     const gy=L*(1-k), gh=Math.max(56,L*.17);
     ctx.save(); ctx.beginPath(); ctx.rect(-W/2,gy-gh/2,W,gh); ctx.clip();
-    ctx.globalCompositeOperation='lighter'; ctx.globalAlpha=0.20+0.30*k;
+    ctx.globalCompositeOperation='lighter'; ctx.globalAlpha=(0.20+0.30*k)*(B.alpha==null?1:B.alpha);
     ctx.drawImage(im,-W*C.ax,-H*C.ay,W,H);
     ctx.restore();
   }
@@ -17920,7 +17923,7 @@ function l23WarnSymbolDraw(b,B){
   }
   if(!XART.rdy(key))return false;
   /* the blink accelerates into the release, so the LAST second reads as different from the first */
-  if(!steady&&(Math.floor(B.t*(3+f*5))%2)!==0)return false;
+  if(!steady&&(Math.floor((B.blinkT==null?B.t:B.blinkT)*(3+f*5))%2)!==0)return false;
   const im=XART.get(key);if(!im||!im.width)return false;
   const h=42,w=h*(im.width/im.height);
   const top=(b._drawY!=null?b._drawY:b.y)-(b._drawH!=null?b._drawH:b.h)*.5;
@@ -17937,7 +17940,7 @@ function l23WarnSymbolDraw(b,B){
      (one counting the art key, one counting red pixels that turned out to be the RIME WALL name
      text) before a screenshot showed the sign was never there. 46 clears the gauge band. */
   const sy=Number.isFinite(B.alertY)?Math.max(L23_WARN_MINY,B.alertY):Math.max(L23_WARN_MINY,top-h-12),sx=Number.isFinite(B.alertX)?B.alertX:b.x;
-  ctx.save();ctx.imageSmoothingEnabled=false;ctx.globalAlpha=steady?.62:(red?1:.92);
+  ctx.save();ctx.imageSmoothingEnabled=false;ctx.globalAlpha=(steady?.62:(red?1:.92))*(B.alpha==null?1:B.alpha);
   if(red&&(diffKey==='hard'||diffKey==='furious')){ctx.shadowColor='#80e8ff';ctx.shadowBlur=7;}
   ctx.drawImage(im,Math.round(sx-w/2),Math.round(sy),w,h);
   ctx.restore();return true;
@@ -38082,32 +38085,33 @@ function ovMount(b, ox, oy){
   const by=b._drawY!=null?b._drawY:b.y+(b._ovJitterY||0);
   return [b.x+(b._ovJitterX||0)+ox*s, by+oy*s];
 }
-function ovTwinMG(b){
+function ovTwinMG(b,sweep){
   // burst twin machine guns from the nose chainguns. kind:'mg' routes through the engine's
   // FIRETYPES alias (mg -> 'pellet') = the REAL mfx_bmg_0..3 orange tracer art with flicker + glow.
-  const nz=ovMount(b,-10,54), nz2=ovMount(b,10,54);
+  const L=ovFacingMount(b,-10,54),R=ovFacingMount(b,10,54),nz=[L.x,L.y],nz2=[R.x,R.y];
   const s=4.2;
   /* clamped through the shared cone too — the boss's nose guns were the fourth
      unclamped muzzle, and Mike wants machine-gun bursts from it, not strays. */
-  const a1=eAimDown(aimPlayer(nz[0],nz[1])-0.05), a2=eAimDown(aimPlayer(nz2[0],nz2[1])+0.05);
+  const aim=sweep?Math.PI/2+(b._pivot||0):aimPlayer(nz[0],nz[1]);
+  const a1=eAimDown(aim-.05),a2=eAimDown(aim+.05);
   eBullets.push({x:nz[0],y:nz[1],vx:Math.cos(a1)*s*DIFF.ebSpeed, vy:Math.sin(a1)*s*DIFF.ebSpeed, w:5,h:12, kind:'mg', _ph:(Math.random()*4)|0});
   eBullets.push({x:nz2[0],y:nz2[1],vx:Math.cos(a2)*s*DIFF.ebSpeed, vy:Math.sin(a2)*s*DIFF.ebSpeed, w:5,h:12, kind:'mg', _ph:(Math.random()*4)|0});
   navalFlash(null,{x:nz[0],y:nz[1]},0.74,S1_MUZZLE_ROTARY,{n:6,hpx:35,life:0.12,
-    follow:()=>{const p=ovMount(b,-10,54);return {x:p[0],y:p[1]};}});
+    follow:()=>ovFacingMount(b,-10,54)});
   navalFlash(null,{x:nz2[0],y:nz2[1]},0.74,S1_MUZZLE_ROTARY,{n:6,hpx:35,life:0.12,
-    follow:()=>{const p=ovMount(b,10,54);return {x:p[0],y:p[1]};}});
+    follow:()=>ovFacingMount(b,10,54)});
   b._muzL=0.12; b._muzR=0.12;
   stageRevisionCue(b,'overlordGun',.085);
 }
 function ovRocketSide(b, side, fan){
   // one wing pod blasts a homing torpedo (side=-1 left, +1 right); alternate sides with a gap.
   // Anchors the REAL missile-launch flash (mlaunch_0..6) on that pod via a per-side timer.
-  const m = side<0 ? ovMount(b,-48,41) : ovMount(b,46,41);
+  const mount=ovFacingMount(b,side<0?-48:46,41),m=[mount.x,mount.y];
   if(side<0) b._mzlT=0.32; else b._mzrT=0.32;             // launch-flash anim timer for that pod
   const f=(fan||0)*side;
   eBullets.push({x:m[0],y:m[1],vx:(side*0.9+f),vy:0.8,w:14,h:24,kind:'s1jungleMissile',hp:1,spd:2.4,turn:0.055,t:0,ang:Math.PI/2,homing:true,_bright:true,_accel:0.06,_maxspd:4.0});
   navalFlash(null,{x:m[0],y:m[1]},1.0,S1_MUZZLE_MILITARY,{n:6,hpx:40,life:0.17,
-    follow:()=>{const p=side<0?ovMount(b,-48,41):ovMount(b,46,41);return {x:p[0],y:p[1]};}});
+    follow:()=>ovFacingMount(b,side<0?-48:46,41)});
   /* Weapon report only—no lock-on alarm. */
   stageRevisionCue(b,'overlordRocket',.10);
 }
@@ -38161,18 +38165,104 @@ function ovChargeWarningBeat(T,beat){
   }
 }
 function ovHardBoss(){return typeof diffKey!=='undefined'&&(diffKey==='hard'||diffKey==='furious');}
-function ovStartMissileLock(b,next){
-  b._ovState='missileLock';
-  b._ovVolley={t:0,dur:3.65,next:next||'fight',launched:0};
-  b._ovHardVolleyCd=10.5;
-  const first=.88,step=.22;
-  for(let i=0;i<12;i++){
-    const side=(i&1)?1:-1,fan=((i>>1)%3-1)*.18;
-    enemyLockOn(b,first+i*step,{fire:function(){
-      if(!b.dead){ovRocketSide(b,side,fan);if(b._ovVolley)b._ovVolley.launched++;}
-    }});
+// Difficulty is sampled at attack entry: one ordered sequence, no overlapping timer callbacks.
+function ovAttackTune(){
+  return diffKey==='furious'?{speed:330,passes:3,gap:.045,rockets:8,rocketGap:.095,lock:.34,travel:.48,legs:12}:
+    diffKey==='hard'?{speed:210,passes:1,gap:.068,rockets:4,rocketGap:.13,lock:.42,travel:.64,legs:4}:
+    {speed:125,passes:1,gap:.095,rockets:2,rocketGap:.17,lock:.50,travel:.85,legs:4};
+}
+function ovStartSweep(b){
+  const side=b._ovSweepSide===1?-1:1;b._ovSweepSide=side;
+  b._ovState='gunSweep';b._ovSweep={phase:'position',side,pass:0,fire:0,tune:ovAttackTune()};
+  b._ovPassSeq=null;b._ovFurySingleRam=false;
+}
+function ovSweepTick(b,dt){
+  const S=b._ovSweep,T=S.tune,margin=86,left=camLeftX()+margin,right=camRightX()-margin;
+  const target=S.phase==='position'?(S.side>0?left:right):(S.side>0?right:left);
+  const dx=clamp(target-b.x,-T.speed*dt,T.speed*dt);b.x+=dx;
+  b.y=lerp(b.y,VH*.23,Math.min(1,dt*5));
+  b._pivot=lerp(b._pivot,-S.side*25*Math.PI/180,Math.min(1,dt*14));
+  if(S.phase==='travel'){
+    S.fire-=dt;while(S.fire<=0){S.fire+=T.gap;ovTwinMG(b,true);}
   }
-  stageRevisionCue(b,'overlordRocket',.12);
+  if(Math.abs(target-b.x)<.01){
+    if(S.phase==='position'){S.phase='travel';S.fire=0;return;}
+    S.pass++;
+    if(S.pass<T.passes){S.side*=-1;return;}
+    b._ovSweep=null;b._ovFurySingleRam=true;ovStartChargeTell(b);
+  }
+}
+function ovStartMissileLock(b,next){
+  b._ovState='missileLock';b._ovSonic=null;
+  const tune=ovAttackTune();b._ovVolley={t:0,warm:1.2,tune,next:next||'zoneRush',launched:0,beat:-1};
+  b._pivot=0;l23FovWarm();stageRevisionCue(b,'overlordCharge',.2);
+}
+function ovMissileTick(b,dt){
+  const V=b._ovVolley;V.t+=dt;b._pivot=lerp(b._pivot,0,Math.min(1,dt*10));
+  b.y=lerp(b.y,VH*.24,Math.min(1,dt*3));
+  b._ovJitterX=Math.sin(V.t*24)*2.8;b._ovJitterY=Math.cos(V.t*24)*1.5;
+  if(V.t<V.warm){
+    b._mzlT=.19+.08*Math.sin(V.t*20);b._mzrT=.19+.08*Math.sin(V.t*20+1);
+    const beat=Math.floor(V.t/.24);if(beat>V.beat){V.beat=beat;weaponFeedbackSound('retinaLockBeep',.55);}
+  }
+  while(V.launched<V.tune.rockets*2&&V.t>=V.warm+V.launched*V.tune.rocketGap){
+    ovRocketSide(b,(V.launched&1)?1:-1);V.launched++;
+  }
+  if(V.t>=V.warm+(V.tune.rockets*2-1)*V.tune.rocketGap+.65){
+    b._ovVolley=null;b._ovJitterX=0;b._ovJitterY=0;
+    if(V.next==='zoneRush')ovStartRush(b);else{b._ovState='fight';b._ovPhase=4;b.fireCd=.5;}
+  }
+}
+function ovStartRush(b){
+  const left=camLeftX()+86,right=camRightX()-86;
+  b._ovState='zoneRush';b._ovRush={phase:'depart',t:0,leg:0,tune:ovAttackTune(),
+    lanes:[left,lerp(left,right,1/3),lerp(left,right,2/3),right],reverse:b.x>VW/2,fromX:b.x,fromY:b.y};
+  b._ovFurySingleRam=false;l23FovWarm();
+}
+function ovRushLeg(b){
+  const R=b._ovRush,order=R.reverse?[3,0,2,1]:[0,3,1,2];
+  R.phase='choose';R.t=0;R.dir=R.leg%2?-1:1;R.index=order[R.leg%4];R.lane=R.lanes[R.index];
+  R.fromX=b.x;R.fromY=b.y;R.beat=-1;
+}
+function ovRushTick(b,dt){
+  const R=b._ovRush,T=R.tune;R.t+=dt;
+  if(R.phase==='depart'){
+    const p=clamp(R.t/.75,0,1);b.y=lerp(R.fromY,-b.h,p*p);b._pivot=lerp(b._pivot,0,Math.min(1,dt*8));
+    if(p===1)ovRushLeg(b);return;
+  }
+  if(R.phase==='choose'||R.phase==='lock'||R.phase==='fade'){
+    const choose=ovHardBoss()?.62:.75;
+    if(R.phase==='choose'){
+      const p=clamp(R.t/choose,0,1),e=p*p*(3-2*p);b.x=lerp(R.fromX,R.lane,e);
+      b._pivot=lerp(b._pivot,R.dir<0?Math.PI:0,Math.min(1,dt*10));
+      const beat=Math.floor(R.t/.095);R.active=ovHardBoss()?beat%4:R.index;
+      if(beat!==R.beat){R.beat=beat;weaponFeedbackSound('retinaLockBeep',.45);}
+      if(p===1){R.phase='lock';R.t=0;R.active=R.index;stageRevisionCue(b,'overlordCharge',.1);}
+    }else if(R.phase==='lock'&&R.t>=T.lock){R.phase='fade';R.t=0;}
+    else if(R.phase==='fade'&&R.t>=.12){R.phase='charge';R.t=0;b.x=R.lane;b._pivot=R.dir<0?Math.PI:0;}
+    return;
+  }
+  if(R.phase==='charge'){
+    const p=clamp(R.t/T.travel,0,1);b.x=R.lane;
+    b.y=lerp(R.dir>0?-b.h:VH+b.h,R.dir>0?VH+b.h:-b.h,p);
+    if(p===1){R.leg++;if(R.leg<T.legs)ovRushLeg(b);else{R.phase='restore';R.t=0;R.fromX=b.x;}}
+    return;
+  }
+  const p=clamp(R.t/1.35,0,1),e=p*p*(3-2*p);
+  b.x=lerp(R.fromX,(camLeftX()+camRightX())/2,e);b.y=lerp(-b.h,VH*.22,e);b._pivot=Math.PI*(1-e);
+  if(p===1){b._ovRush=null;b._ovState='fight';b._ovPhase=4;b.fireCd=.6;b._ovChargeCd=8;
+    b._ovFlight='orbit';b._ovFlightT=0;b._ovOrbitStart=-Math.PI/2;b._pivot=0;}
+}
+function ovRushWarningDraw(b,alertOnly){
+  const R=b._ovRush;if(!R||!['choose','lock','fade'].includes(R.phase))return;
+  const choosing=R.phase==='choose',alpha=R.phase==='fade'?1-clamp(R.t/.12,0,1):1;
+  for(let i=0;i<R.lanes.length;i++){
+    const active=i===(choosing?R.active:R.index);if((!ovHardBoss()||!choosing)&&!active)continue;
+    if(alertOnly&&!active)continue;
+    combatWarningDraw(b,{x:R.lanes[i],y:R.dir>0?0:VH,ex:R.lanes[i],ey:R.dir>0?VH:0,
+      progress:active?(choosing?.6:.999):.1,width:68,alpha:alpha*(active?1:.70),blinkT:R.t,
+      fieldOnly:!alertOnly,alertOnly,alertX:R.lanes[i],alertY:R.dir>0?70:VH-70});
+  }
 }
 function ovStartChargeTell(b){
   if(diffKey==='furious'&&b._ovState==='fight')b._ovFuryComboReady=true;
@@ -38206,7 +38296,7 @@ function ovFuryPlate(key){
 function ovFacingMount(b,ox,oy){
   const s=b.w*1.15/192,a=b._pivot||0,c=Math.cos(a),n=Math.sin(a);
   return {x:b.x+(b._ovJitterX||0)+(ox*c-oy*n)*s,
-    y:(b._drawY!=null?b._drawY:b.y)+(ox*n+oy*c)*s};
+    y:b.y+Math.sin((b.t||0)*1.6)*6+(b._ovJitterY||0)+(ox*n+oy*c)*s};
 }
 function ovSonicStart(b){
   if(b.dead)return;
@@ -38217,10 +38307,13 @@ function ovSonicStart(b){
   stageRevisionCue(b,'overlordCharge',.2);
 }
 function ovSonicWave(b,vertical){
-  const S=b._ovSonic,m=ovFacingMount(b,0,60),a=S.angle,ww=vertical?44:viewW()*.75,hh=vertical?162:46;
-  if(vertical)m.x=camLeftX()+viewW()*(S.sent===2?.25:.75);
-  eBullets.push({kind:'ovSonic',_ovSonicWave:true,x:m.x,y:m.y,vx:Math.cos(a)*7.8,vy:Math.sin(a)*7.8,
-    w:ww,h:hh,_waveW:ww,_waveH:hh,ang:a,t:0,vertical});
+  const m=ovFacingMount(b,0,60),ww=vertical?116:viewW()*.84,hh=vertical?66:58;
+  // The authored pressure front faces south. A fan changes travel, not the graphic's facing.
+  for(const offset of (vertical?[-.38,0,.38]:[0])){
+    const a=Math.PI/2+offset;
+    eBullets.push({kind:'ovSonic',_ovSonicWave:true,_south:true,x:m.x,y:m.y,vx:Math.cos(a)*7.8,vy:Math.sin(a)*7.8,
+      w:ww,h:hh,_waveW:ww,_waveH:hh,ang:a,t:0,vertical});
+  }
   weaponFeedbackSound('coleSonicFull',.85);shake=Math.max(shake,5);
 }
 function ovSonicMissileVolley(b,index){
@@ -38241,27 +38334,11 @@ function ovSonicComboTick(b,dt){
     b.y=lerp(b.y,VH*.27,Math.min(1,dt*2.3));
     b.x=lerp(b.x,(camLeftX()+camRightX())/2,Math.min(1,dt*5));S.angle=Math.PI/2;b._pivot=0;
     if(S.t>=2.1){S.phase='waves';S.t=0;}
-  }else if(S.phase==='waves'){
-    b.x=(camLeftX()+camRightX())/2;b._pivot=0;
-    const count=diffKey==='furious'?6:diffKey==='hard'?3:1;
-    while(S.sent<count&&S.t>=S.sent*.66){
-      S.angle=Math.PI/2+(diffKey==='furious'?(S.sent===1?-.28:S.sent===5?.28:0):0);
-      ovSonicWave(b,diffKey==='furious'&&(S.sent===2||S.sent===3));S.sent++;
-    }
-    if(S.t>=count*.66+.22){
-      S.phase='missileTell';S.t=0;
-      if(diffKey==='furious')for(let i=0;i<3;i++)enemyLockOn(b,2.50+i*.72,{fire:()=>ovSonicMissileVolley(b,i)});
-      stageRevisionCue(b,'overlordCharge',.2);
-    }
   }else{
-    b._ovJitterX=Math.sin(S.t*24)*2.8;b._ovJitterY=Math.cos(S.t*24)*1.5;
-    b._mzlT=.15+.12*Math.sin(S.t*18);b._mzrT=.15+.12*Math.sin(S.t*18+1);
-    if(S.t>=2.5){
-      b._ovSonic=null;b._ovState='fight';b._ovPhase=0;b.fireCd=.55;
-      b._ovFlight='orbit';b._ovFlightT=0;
-      b._ovOrbitStart=Math.atan2((b.y-VH*.22)/(VH*.115),(b.x-VW*.5)/(VW*.34));
-      b._ovChargeCd=5.8;b._ovJitterX=0;b._ovJitterY=0;
-    }
+    b.x=(camLeftX()+camRightX())/2;b._pivot=0;
+    const count=diffKey==='furious'?6:diffKey==='hard'?3:2;
+    while(S.sent<count&&S.t>=S.sent*.66){ovSonicWave(b,S.sent===1||S.sent===3);S.sent++;}
+    if(S.t>=count*.66+.45)ovStartMissileLock(b,'zoneRush');
   }
 }
 function ovSonicWarningDraw(b){
@@ -38270,14 +38347,14 @@ function ovSonicWarningDraw(b){
   l23WarnSymbolDraw(b,{family:'rime',t:progress,warm:1,released:false});
 }
 function ovSonicWaveHit(b,p,hx,hy){
-  const a=b.ang-Math.PI/2,c=Math.cos(a),s=Math.sin(a),dx=p.x-b.x,dy=p.y-b.y;
+  const a=b._south?0:b.ang-Math.PI/2,c=Math.cos(a),s=Math.sin(a),dx=p.x-b.x,dy=p.y-b.y;
   const x=dx*c+dy*s,y=-dx*s+dy*c;
   return (x/(b._waveW*.42+hx))**2+(y/(b._waveH*.32+hy))**2<1;
 }
 function ovSonicProjectileDraw(b){
   if(!b._ovSonicWave&&!b._ovSonicMissile)return false;
   if(b._ovSonicWave){
-    weaponFeedbackArt('rzb_sonic_wave',b.x,b.y,b.vertical?b._waveH:b._waveW,b.vertical?b._waveW:b._waveH,1,b.ang-Math.PI/2+(b.vertical?Math.PI/2:0),true);
+    weaponFeedbackArt('rzb_sonic_wave',b.x,b.y,b._waveW,b._waveH,1,b._south?0:b.ang-Math.PI/2,true);
   }else{
     const a=Math.atan2(b.vy,b.vx)-Math.PI/2;
     weaponFeedbackArt('rzb_sonic_ring',b.x,b.y,38+Math.sin(b.t*28)*4,38+Math.sin(b.t*28)*4,.65,a,true);
@@ -38290,7 +38367,7 @@ function updateOverlordX(b, dt){
   if(!b.dead)weaponFeedbackLoop('overlordRotor',.32);
   if(b._ovInit==null){ b._ovInit=1; b._ovState='fight'; b._ovPhase=0; b._ovT=0; b._ovBob=0;
     b.fireCd=0.7; b._faceAng=Math.PI; b._enraged=false; b._crit=false;
-    b._ovFlight='hunt'; b._ovFlightT=0; b._ovChargeCd=6.4; b._ovHardVolleyCd=4.7; b._ovFuryComboReady=diffKey==='furious'; }
+    b._ovFlight=b._ovFlight||'orbit'; b._ovFlightT=0; b._ovOrbitStart=-Math.PI/2; b._ovChargeCd=6.4; b._ovHardVolleyCd=4.7; b._ovFuryComboReady=diffKey==='furious'; }
   const frac = b.hp/(b.maxhp||b.hp||1);
   b._ovT=(b._ovT||0)+dt;
   b._ovBob=(b._ovBob||0)+dt;
@@ -38344,6 +38421,9 @@ function updateOverlordX(b, dt){
   // hunt/orbit fight -> glowing lane tell -> committed charge -> continuous corner swirl -> fight.
   const S=b._ovState;
   if(S==='sonicCombo'&&b._ovSonic){ovSonicComboTick(b,dt);return;}
+  if(S==='gunSweep'){ovSweepTick(b,dt);return;}
+  if(S==='missileLock'){ovMissileTick(b,dt);return;}
+  if(S==='zoneRush'){ovRushTick(b,dt);return;}
 
   if(S==='fight'){
     // Alternate a predatory left/right chase with a broad upper-screen orbit. This is aircraft
@@ -38386,7 +38466,8 @@ function updateOverlordX(b, dt){
       if(b._mgN>=burstLen){ b._mgN=0;
         b._ovBurstSet=(b._ovBurstSet||0)+1;
         const sets = b._enraged? 3 : 1;               // below half: 3 rapid bursts
-        if(b._ovBurstSet>=sets){ b._ovBurstSet=0; b.fireCd=b._enraged?1.15:1.75; b._ovPhase=(ph+1)%5; b._pivot=0.6; }
+        if(b._ovBurstSet>=sets){ b._ovBurstSet=0; b.fireCd=b._enraged?1.15:1.75; b._ovPhase=(ph+1)%5; b._pivot=0.6;
+          if(ph===0){ovStartSweep(b);return;} }
         else { b.fireCd=0.36; }
       } else { b.fireCd=b._enraged?0.062:0.088; }
     }
@@ -46005,7 +46086,7 @@ const PLAYER_FLAME_SCALE=.75;
 function combatWarningDraw(owner,q){
   if(!owner||!q||q.progress==null)return;
   const k=clamp(q.progress,0,1),a=Math.atan2(q.ey-q.y,q.ex-q.x),p={x:q.x,y:q.y},
-    B={family:'rime',angles:[a],t:(owner.t||stateT||0),warm:1,released:false,alertX:q.alertX,alertY:q.alertY};
+    B={family:'rime',angles:[a],t:(owner.t||stateT||0),warm:1,released:false,alertX:q.alertX,alertY:q.alertY,alpha:q.alpha,blinkT:q.blinkT};
   if(!q.alertOnly){ctx.save();ctx.translate(p.x,p.y);ctx.rotate(a-Math.PI/2);
     l23FovDraw(owner,B,0,p,k,q.width||20);ctx.restore();}
   B.t=k;if(!q.fieldOnly)l23WarnSymbolDraw(owner,B);
@@ -77106,41 +77187,41 @@ const Snd=(function(){
      applying a second music-based reduction made attacks vanish at the 40% cabinet mix. */
   A._sfxMix=function(){return A.vol.sfx;};
   function _au(v){ return (typeof v==='string'&&v.lastIndexOf('assets/',0)===0)?v:('data:audio/mpeg;base64,'+v); }
-  /* ROUND-ROBIN SOURCE SETS. A BOFA entry may be one legacy URI or an array of authored
-     variations. The pool used to clone one identical element three times, which prevented
-     overlap clipping but made an 11.8-round/sec machine gun reveal the exact same waveform on
-     every shot. Arrays rotate the actual sources while preserving the old three-clone behavior
-     for every untouched cue. */
-  for(const name in BOFA.sfx){ const raw=BOFA.sfx[name], uris=(Array.isArray(raw)?raw:[raw]).map(_au);
-    /* ONLY THE FIRST COPY OF A URL PRELOADS (drop 0902c). The pool holds at least three
-       elements so a rapid weapon cannot clip itself, and every one of them carried
-       preload='auto'. Three elements pointing at one file are created in the same tick,
-       before any cache entry exists to share, so the browser fetched the SAME sample three
-       times: 22 MB of samples on disk arrived as 67.8 MB over the wire, all of it before
-       the title screen. The clones keep their src, so the moment the first fetch lands
-       they are served from cache and overlap still works. Measured, not assumed. */
-    const list=[], poolN=Math.max(3,uris.length), _seen=Object.create(null);
-    for(let i=0;i<poolN;i++){ const a=new window.Audio(), u=uris[i%uris.length];
-      a.src=u; a.preload=_seen[u]?'none':'auto'; _seen[u]=1; list.push(a); }
-    A.pools[name]={list,i:0}; }
-  /* MUSIC LOADS WHEN IT IS ASKED FOR, NOT AT BOOT (drop 0902c). Twenty-seven tracks, 43 MB,
-     every one of them preload='auto' - so the whole score downloaded before the title
-     screen even though exactly ONE track is ever audible at a time. startMusic calls
-     play(), which begins the fetch itself, so 'none' costs a short delay the first time a
-     track is heard and nothing after that. This is the single largest item in the boot
-     download. */
-  for(const name in BOFA.music){ const m=new window.Audio(); m.src=_au(BOFA.music[name]); m.loop=true; m.preload='none'; A.music[name]=m; }
-  /* WARM THE CLONES ONCE THE PLAYER IS PAST THE GATE (drop 0902c). The pool's 2nd and 3rd
-     elements no longer preload, which is what took 45 MB off the boot download - but that
-     leaves them at readyState 0, so the FIRST time a sound needs to overlap itself the
-     clone would have to start loading mid-shot. Called from the press-start gate, after
-     the first copy has already filled the HTTP cache, so these load from cache and cost
-     essentially nothing on the wire - the bytes move off the critical path rather than
-     being paid twice. Idempotent. */
+  /* Chromium caps live media players. Eagerly assigning sources to every cue and
+     warming all overlap clones exhausted that limit before the title music loaded.
+     Keep the public round-robin pools, but acquire their decoders only on use. */
+  A._sfxVoices=[];A._voiceClock=0;A._voiceLimit=64;
+  A._touchVoice=function(v){
+    if(!v.attached){
+      if(A._sfxVoices.length>=A._voiceLimit){
+        let old=A._sfxVoices[0];
+        for(const q of A._sfxVoices){
+          const idle=q.el.paused||q.el.ended,oldIdle=old.el.paused||old.el.ended;
+          if((idle&&!oldIdle)||(idle===oldIdle&&q.used<old.used))old=q;
+        }
+        old.attached=false;old.el._bofEpoch=(old.el._bofEpoch||0)+1;
+        try{old.el.pause();old.el.removeAttribute('src');old.el.load();}catch(_release){}
+        A._sfxVoices.splice(A._sfxVoices.indexOf(old),1);
+      }
+      v.el.preload='none';v.el.src=v.uri;v.attached=true;A._sfxVoices.push(v);
+    }
+    v.used=++A._voiceClock;return v.el;
+  };
+  for(const name in BOFA.sfx){
+    const raw=BOFA.sfx[name],uris=(Array.isArray(raw)?raw:[raw]).map(_au);
+    const list=[],slots=[],poolN=Math.max(3,uris.length);
+    for(let i=0;i<poolN;i++)Object.defineProperty(list,i,{enumerable:true,get:function(){
+      if(!slots[i])slots[i]={el:new window.Audio(),uri:uris[i%uris.length],attached:false,used:0};
+      return A._touchVoice(slots[i]);
+    }});
+    A.pools[name]={list,slots,i:0};
+  }
+  /* Music remains independent of the bounded effects pool. Set preload before
+     the source so even the first resource selection stays lazy. */
+  for(const name in BOFA.music){const m=new window.Audio();m.preload='none';m.src=_au(BOFA.music[name]);m.loop=true;A.music[name]=m;}
   A.warmPools=function(){
-    if(A._warmed) return; A._warmed=true;
-    for(const n in A.pools){ const L=A.pools[n].list;
-      for(let i=1;i<L.length;i++){ try{ L[i].preload='auto'; L[i].load(); }catch(_wp){} } }
+    if(A._warmed)return;A._warmed=true;
+    A.prepare(['blip','select','machineGun','expSmall','expBig']);
   };
   A.VOICE_SET={continueVO:1,countdown:1,restrictedarea:1,enemyunits:1,enemyunit:1,over:1,goodluck:1,announce:1,selectpilot:1};
 
@@ -77555,7 +77636,7 @@ const Snd=(function(){
      a ConvolverNode (a claimed media element can advance while outputting silence), so the warp
      uses two quiet, delayed copies of the active track plus one throttled SFX reflection. */
   A._warpMusicStop=function(){
-    for(const e of A.warpMusicEcho){try{e.pause();e.currentTime=0;}catch(_wme){}}
+    for(const e of A.warpMusicEcho){try{e.pause();e.removeAttribute('src');e.load();}catch(_wme){}}
     A.warpMusicEcho.length=0;
   };
   A._warpMusicStart=function(){
@@ -77563,7 +77644,7 @@ const Snd=(function(){
     for(const q of [{delay:72,rate:.997,gain:.105},{delay:148,rate:1.003,gain:.065}]){
       const e=new window.Audio();e.src=A.cur.src;e.loop=true;e.preload='auto';e.playbackRate=q.rate;
       e._warpGain=q.gain;A.warpMusicEcho.push(e);
-      setTimeout(function(){if(A.warpMix<=.02||A.cur==null)return;try{e.currentTime=Math.max(0,A.cur.currentTime-.08);e.volume=c01(A.vol.music*A.vol.master*A.warpMix*pauseMusicDuck()*e._warpGain);const p=e.play();if(p&&p.catch)p.catch(function(){});}catch(_wmp){}},q.delay);
+      setTimeout(function(){if(A.warpMix<=.02||A.cur==null||A.warpMusicEcho.indexOf(e)<0)return;try{e.currentTime=Math.max(0,A.cur.currentTime-.08);e.volume=c01(A.vol.music*A.vol.master*A.warpMix*pauseMusicDuck()*e._warpGain);const p=e.play();if(p&&p.catch)p.catch(function(){});}catch(_wmp){}},q.delay);
     }
   };
   A.setWarpMix=function(v){
@@ -77573,7 +77654,12 @@ const Snd=(function(){
   A._warpSfx=function(src,volume){
     if(A.warpMix<=.04||!src)return;const t=(window.performance&&performance.now?performance.now():Date.now());
     if(t-A._warpSfxAt<66)return;A._warpSfxAt=t;const mix=A.warpMix;
-    setTimeout(function(){if(A.warpMix<=.02)return;try{const e=new window.Audio();e.src=src;e.preload='auto';e.playbackRate=.985;e.volume=c01(volume*mix*.22);const p=e.play();if(p&&p.catch)p.catch(function(){});}catch(_wse){}},64+mix*34);
+    setTimeout(function(){if(A.warpMix<=.02)return;try{
+      const slots=A._warpEchoSlots||(A._warpEchoSlots=[]),i=(A._warpEchoIndex||0)%4;
+      A._warpEchoIndex=i+1;const e=slots[i]||(slots[i]=new window.Audio());
+      e.pause();e.preload='none';e.src=src;e.playbackRate=.985;e.volume=c01(volume*mix*.22);
+      const p=e.play();if(p&&p.catch)p.catch(function(){});
+    }catch(_wse){}},64+mix*34);
   };
   A.play=function(name,vol){ const p=A.pools[name]; if(!p) return false;
     const cfg=A.TAME[name];
@@ -77582,10 +77668,13 @@ const Snd=(function(){
       if(A._last[name]!=null && t-A._last[name] < cfg.min) return false;
       A._last[name]=t;
     }
+    /* Warm only this cue's overlap/variation voices on its first use. A cold
+       clone must start loading even when a ready voice covers the current shot. */
+    if(!p._prepared){p._prepared=true;A.prepare(name);}
     let a=p.list[p.i]; p.i=(p.i+1)%p.list.length;
     /* Never throw a shot at an undecoded overlap clone when this cue already has a playable voice.
        A ready paused voice wins; restarting a ready voice is still preferable to a silent shot. */
-    if(a.readyState<3){let fallback=null;for(const q of p.list){if(q.readyState>=3){fallback=q;if(q.paused)break;}}if(fallback)a=fallback;}
+    if(a.readyState<3){try{a.preload='auto';a.load();}catch(_warm){}let fallback=null;for(const v of p.slots){if(!v||!v.attached)continue;const q=v.el;if(q.readyState>=3){fallback=v;if(q.paused)break;}}if(fallback)a=A._touchVoice(fallback);}
     const ch=A.VOICE_SET[name] ? (A.vol.voice!=null?A.vol.voice:1) : A._sfxMix();
     const gm=cfg?cfg.g:1;
     /* Media elements already routed through a WebAudio filter become completely silent if that
@@ -77595,18 +77684,18 @@ const Snd=(function(){
     if(cfg) A._shape(a,name,cfg);
     try{
       a.currentTime=0;a.volume=c01((vol==null?1:vol)*gm*ch*A.vol.master);
-      const born=(window.performance&&performance.now?performance.now():Date.now());
+      const born=(window.performance&&performance.now?performance.now():Date.now()),epoch=a._bofEpoch||0;
       const retry=function(){
         a._bofRetry=false;
         const now=(window.performance&&performance.now?performance.now():Date.now());
-        if(now-born>2500)return;
+        if(now-born>2500||(a._bofEpoch||0)!==epoch)return;
         try{a.currentTime=0;const q=a.play();if(q&&q.catch)q.catch(function(){});}catch(e){}
       };
       const pr=a.play();
       if(pr&&pr.catch)pr.catch(function(){
         /* preload="auto" is a hint, not a guarantee. Queue one short-lived retry when the real
            sample becomes playable instead of swallowing the rejection and losing the shot. */
-        if(a.readyState<3&&!a._bofRetry){a._bofRetry=true;a.addEventListener('canplay',retry,{once:true});try{a.load();}catch(e){}}
+        if((a._bofEpoch||0)===epoch&&a.readyState<3&&!a._bofRetry){a._bofRetry=true;a.addEventListener('canplay',retry,{once:true});try{a.load();}catch(e){}}
       });
       A._warpSfx(a.src,a.volume);return true;
     }catch(e){return false;} };
@@ -77699,17 +77788,17 @@ const Snd=(function(){
     }
   };
   A.loopStopAll=function(){ for(const n in A.loops){ const L=A.loops[n]; L.hold=0;L.lvl=0;L.on=false;L.playing=false;L.pending=false;try{ L.el.pause(); }catch(e){} } };
-  A.startMusic=function(name){ const m=A.music[name]; if(!m) return; if(A.cur===m&&!m.paused) return;
+  A.startMusic=function(name){ const m=A.music[name]; if(!m) return; if(A.cur===m&&!m.paused&&!m.error) return;
     if(A.cur!==m){ A.stopMusic(); A.cur=m; try{m.currentTime=0;}catch(e){} }
     try{ m.playbackRate=(typeof timeScale!=='undefined'&&timeScale<1)?timeScale:1; if('preservesPitch'in m)m.preservesPitch=(timeScale>=1); }catch(e){}
-    try{ m.volume=c01(A.vol.music*A.vol.master*pauseMusicDuck()); const pr=m.play(); if(pr&&pr.catch)pr.catch(function(){}); }catch(e){} A._warpMusicStart(); };
-  A.musicPlaying=function(){return !!(A.cur&&!A.cur.paused&&!A.cur.ended);};
+    try{ if(m.error)m.load();m.volume=c01(A.vol.music*A.vol.master*pauseMusicDuck()); const pr=m.play(); if(pr&&pr.catch)pr.catch(function(){}); }catch(e){} A._warpMusicStart(); };
+  A.musicPlaying=function(){return !!(A.cur&&!A.cur.paused&&!A.cur.ended&&!A.cur.error&&A.cur.readyState>=2);};
   A.resume=function(){
     if(A._ctx&&A._ctx.state==='suspended')try{A._ctx.resume();}catch(e){}
-    if(A.cur&&A.cur.paused)try{const pr=A.cur.play();if(pr&&pr.catch)pr.catch(function(){});}catch(e){}
+    if(A.cur&&(A.cur.paused||A.cur.error))try{if(A.cur.error)A.cur.load();const pr=A.cur.play();if(pr&&pr.catch)pr.catch(function(){});}catch(e){}
   };
   A.stopMusic=function(){ A._warpMusicStop();if(A.cur){ try{A.cur.pause();}catch(e){} A.cur=null; } };
-  A.stopCue=function(name){const p=A.pools[name];if(p&&p.list)for(const a of p.list){try{a.pause();a.currentTime=0;}catch(e){}}};
+  A.stopCue=function(name){const p=A.pools[name];if(p)for(const v of p.slots){if(!v||!v.attached)continue;try{v.el.pause();v.el.currentTime=0;}catch(e){}}};
   A.stopVoice=function(){ for(const nm in A.VOICE_SET) A.stopCue(nm); };
   A.setVol=function(k,v){ if(A.vol[k]!=null){ A.vol[k]=c01(v); if(A.cur) A.cur.volume=c01(A.vol.music*A.vol.master*pauseMusicDuck());if(k==='music'||k==='master')A.setWarpMix(A.warpMix); } };
   return A;

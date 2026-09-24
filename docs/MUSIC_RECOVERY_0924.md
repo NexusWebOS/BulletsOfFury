@@ -1,0 +1,11 @@
+# Music recovery — September 24
+
+The title, stage and boss music failed on both HTTP and direct file launches. Chromium reported `Blocked attempt to create a WebMediaPlayer as there are too many WebMediaPlayers already in existence`. The selected music element had volume 1, readyState 0, currentTime 0 and a media-player creation error. The files were present.
+
+The 344 registered effects each allocated at least three sourced media elements; boot then loaded every overlap clone. That exhausted the browser's media-player capacity before music started. Effects now acquire sources on demand, with a 64-voice cap that releases idle voices first. Each used cue warms its own overlap/variation copies. Music remains outside this pool. Warp reflections reuse four elements and stopped music echoes release their sources. Failed music elements can reload, and an errored element is no longer reported as playing.
+
+`_BUILD_SOURCE/probe_music_capacity_0924.py` runs real Chromium without disabling autoplay rules or increasing the media-player limit. It verifies title, stage and boss playback on HTTP and file URLs, loads every effect pool in turn, checks the 64-voice bound, replays an evicted cue, and measures nonzero music signal with an analyser over HTTP. Both launch modes pass with no page or console errors. Evidence: `_shots/music_capacity_0924/report.json` and its screenshots.
+
+The existing `_BUILD_SOURCE/probe_sfx_output_0918.py` also passes with zero failures: all tested overlap slots play for explosions, enemy guns, missiles and the player machine gun. HTTP filter routes carry measured signal; file playback remains native. Evidence: `_shots/music_capacity_0924/sfx_report.json`.
+
+Syntax and whitespace checks pass. The complete gameplay suite reaches its summary and exits 1 with 84 failures (`_shots/test_fl_music_0924_final.log`), compared with 81 before this repair. The three additional names concern Stage 1 sand-tank spawning and the jet bomber's dodge/sideways movement; an earlier run of this repair had only the sand-tank difference. No gameplay AI was changed by this repair. These results remain non-green; the dedicated audio probes above establish the music and effects outcome.
