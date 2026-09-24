@@ -993,7 +993,7 @@ function outboundDrawSkySpace(o){
   /* 3. stage 5's OWN loop plate above space's leading edge, looping. Using the level's real
      backdrop is the point: when the leg ends there is nothing to swap - the player is already
      looking at stage 5, moving. */
-  band(0, yaSpace, function(){ s45Tile('bg_stage05_loop', o.scroll, 0.80, 1); });
+  band(0, yaSpace, function(){ s45Tile('bg_stage05_loop_0923', o.scroll, 0.80, 1); });
   /* ⚠ THE JOINS ARE HIDDEN, NOT FADED. Two hard clipped edges meet above: stage 4 -> sky at
      yaSky, and sky -> space at yaSpace. A cloud bank rides each of them. The lower seam holds
      full weather; the upper one thins out as the swirl takes over, because leaving the
@@ -2271,6 +2271,15 @@ const XART=(function(){
   X._src['cin_cockpit_front_fighter']=_originRoot+'fighter_cockpit_front.png';
   X._src['cin_cockpit_front_space']=_originRoot+'space_cockpit_front.png';
   X._src['cin_cockpit_pov_magenta']=_originRoot+'pilot_pov_magenta.png';
+  X._src.cin_pilot_axel_open='assets/game/cinematic_campaign/pilot_cam_0923/axel_open.png';
+  X._src.cin_pilot_axel_helmet='assets/game/cinematic_campaign/pilot_cam_0923/axel_helmet.png';
+  for(const _pk of ['cole','decker','falva','freezer','juggernaut','lizzie','maverick','yuri']){
+    for(const _pose of ['open','helmet'])
+      X._src['cin_pilot_'+_pk+'_'+_pose]='assets/game/cinematic_campaign/pilot_cam_0923/'+_pk+'_'+_pose+'.png';
+  }
+  X._src.cin_terrain_jungle_loop='assets/game/space_loops_0923/jungle_loop.png';
+  X._src.bg_stage05_loop_0923='assets/game/space_loops_0923/stage5_loop.png';
+  X._src.nst9_void_loop_0923='assets/game/space_loops_0923/stage9_loop.png';
   X._src['cpov_male_hand']='assets/game/cockpit_pov_0923/male_hand_strip.png';
   X._src['cpov_female_hand']='assets/game/cockpit_pov_0923/female_hand_strip.png';
   X._src['cinbg_hq_beach']='assets/game/cinematic_campaign/exteriors_generated_official/02_fury_hq_beach_approach_official_generated.png';
@@ -3868,7 +3877,7 @@ function _levelCfg(){
        old orbital arena" - but stage 5 was the only loopMaster stage WITHOUT the flag that
        actually enforces either statement, so the arena branch still fired and the boss changed
        location on one frame. Stages 6 and 9 have carried it all along. */
-    case 5: return {master:'bg_stage05_loop', plateW:680, liquid:null,  fill:'#05060a', tile:1.0, wide:true,
+    case 5: return {master:'bg_stage05_loop_0923', plateW:680, liquid:null,  fill:'#05060a', tile:1.0, wide:true,
                     loopMaster:true, continuousBoss:true};
     // 6 HEAVY TURBULENCE — dedicated sky kit (env pack v1.0): 800x4000 base sky + separate
     // parallax cloud layer + 800x1000 boss arena. WIDE level (800px world, camera scrolls).
@@ -4032,7 +4041,7 @@ function _levelCfg(){
        camera.  The restrained central lane keeps bullets readable while the outer liquid rifts
        carry the impossible space/ocean premise. */
     /* CF_BoFExpansion-Vol.1 (Mike, 0903): 'use space-starfield for stage 9 instead and make it tile up to the height of the stage length'. A 1024px seamless tile; loopMaster/_loopDraw repeat it for the whole 4096px scroll. */
-    case 9: return {master:'nst9_starfield', liquid:null, fill:'#020817', tile:1.0, wide:true,
+    case 9: return {master:'nst9_void_loop_0923', liquid:null, fill:'#020817', tile:1.0, wide:true,
                     plateW:680, h:4096, scrollLen:4096, loopMaster:true, continuousBoss:true};
     default: return null;
   }
@@ -51408,7 +51417,7 @@ function opnText(str, cx, cy, size, col, a){
    seamless 1024px tile - not a drawn gradient. It scrolls down slowly and the spotlight stays as a
    vignette over it, so the lit hulls still have somewhere dark to sit. */
 function opnStars(t){
-  const key='nst9_starfield';
+  const key='nst9_void_loop_0923';
   if(typeof XART==='undefined'||!XART.rdy(key)) return false;
   const im=XART.get(key); if(!im.naturalWidth) return false;
   const w=VW, h=Math.max(1,Math.round(im.naturalHeight*(VW/im.naturalWidth)));
@@ -52722,10 +52731,12 @@ function campaignIntroPortraitKey(pilot){
 }
 function campaignIntroKeys(){
   const pk=campaignIntroPickPilot();
-  return ['cin_origin_arrival','cin_origin_satellite','cin_origin_radio','cin_origin_tower',
+  const keys=['cin_origin_arrival','cin_origin_satellite','cin_origin_radio','cin_origin_tower',
           'cin_origin_land','cin_origin_hq_iso','cin_cockpit_pov_magenta',
           'cin_cockpit_front_fighter','cinbg_hq_warroom','cinbg_jungle',
-          campaignIntroPortraitKey(pk),cinShipKey(pk,1),'dlg_window','dlg_'+pk];
+          'cin_terrain_jungle_loop',campaignIntroPortraitKey(pk),cinShipKey(pk,1),'dlg_window','dlg_'+pk];
+  keys.push('cin_pilot_'+pk+'_open','cin_pilot_'+pk+'_helmet');
+  return keys;
 }
 function campaignIntroWarm(){
   if(typeof XART==='undefined')return false;
@@ -52799,18 +52810,15 @@ function cockpitEncounterPilot(){
 }
 function cockpitEncounterWarm(){
   if(typeof XART==='undefined')return;
-  for(const k of ['cin_origin_arrival','cin_cockpit_pov_magenta',
+  for(const k of ['nst9_void_loop_0923','cin_cockpit_pov_magenta',
     'cpov_male_hand','cpov_female_hand','ns9x_horizon_0','ns9x_horizonblk_0',
-    'laser_round_muzzle_0','laser_round_muzzle_1','laser_round_muzzle_2',
-    'laser_round_muzzle_3','laser_round_muzzle_4','laser_round_muzzle_5',
-    'laser_round_muzzle_6','laser_round_muzzle_7','pad_dpad','pad_a','pad_b'])XART.rdy(k);
+    'pad_dpad','pad_a','pad_b'])XART.rdy(k);
   if(typeof bmfReady==='function')bmfReady('dialogue');
 }
 function cockpitEncounterReady(){
-  return !!(XART&&['cin_origin_arrival','cin_cockpit_pov_magenta',
+  return !!(XART&&['nst9_void_loop_0923','cin_cockpit_pov_magenta',
     'cpov_male_hand','cpov_female_hand','ns9x_horizon_0','ns9x_horizonblk_0',
-    'laser_round_muzzle_0'].every(k=>XART.rdy(k)) &&
-    [1,2,3,4,5,6,7].every(f=>XART.rdy('laser_round_muzzle_'+f)));
+    'pad_dpad','pad_a','pad_b'].every(k=>XART.rdy(k)));
 }
 function cockpitEncounterStart(){
   cockpitEncounterWarm();
@@ -52921,7 +52929,7 @@ function drawCockpitEncounter(dt){
   if(C.evade>0){const a=Math.sin((.65-C.evade)*Math.PI/.65)*.065;
     ctx.translate(W*.5,H*.5);ctx.rotate(a);ctx.translate(-W*.5,-H*.5);}
   if(C.hitFlash>.1)ctx.translate(Math.sin(C.t*93)*5,Math.cos(C.t*81)*4);
-  cinCover('cin_origin_arrival',W,H,clamp(.5+(C.aimX/W-.5)*.16,0,1));
+  cinSpaceLoop('nst9_void_loop_0923',W,H,C.t,170);
   ctx.fillStyle='rgba(3,7,24,.25)';ctx.fillRect(0,0,W,H);
   if(!C.ready){
     if(typeof bmfReady==='function'&&bmfReady('dialogue'))
@@ -52945,8 +52953,6 @@ function drawCockpitEncounter(dt){
       ctx.beginPath();ctx.moveTo(x,H*.43);ctx.lineTo(C.shotX,C.shotY);ctx.stroke();
       ctx.strokeStyle='#e8ffff';ctx.lineWidth=2;
       ctx.beginPath();ctx.moveTo(x,H*.43);ctx.lineTo(C.shotX,C.shotY);ctx.stroke();
-      const k='laser_round_muzzle_'+Math.max(3,Math.min(7,Math.floor((1-alpha)*8)));
-      if(XART.rdy(k)){const m=XART.get(k);ctx.drawImage(m,x-47,H*.43-47,94,94);}
     }
     ctx.restore();
   }
@@ -52988,6 +52994,32 @@ function drawCockpitEncounter(dt){
   ctx.restore();
 }
 
+/* Both loops are authored pixel-art plates with exact matching opposite edges.
+   The canvas only translates them; it never rotates or stretches their frames. */
+function cinSpaceLoop(key,W,H,t,speed){
+  if(!XART.rdy(key)){ctx.fillStyle='#020817';ctx.fillRect(0,0,W,H);return;}
+  const im=XART.get(key),iw=im.naturalWidth||im.width,ih=im.naturalHeight||im.height;
+  const th=W*ih/iw,off=((t*speed)%th+th)%th;
+  ctx.save();ctx.imageSmoothingEnabled=false;
+  for(let y=off-th;y<H;y+=th)ctx.drawImage(im,0,Math.round(y),W,Math.ceil(th));
+  ctx.restore();
+}
+function campaignIntroJungle(W,H,t){
+  if(!XART.rdy('cin_terrain_jungle_loop')){cinCover('cinbg_jungle',W,H,.5);return;}
+  const im=XART.get('cin_terrain_jungle_loop'),th=W,off=((t*122)%th+th)%th;
+  ctx.save();ctx.imageSmoothingEnabled=false;
+  for(let y=off-th;y<H;y+=th)ctx.drawImage(im,0,Math.round(y),W,Math.ceil(th));
+  ctx.restore();
+}
+function campaignIntroPilotCamera(pilot,helmet,x,y,w,h,t){
+  const key='cin_pilot_'+pilot+'_'+(helmet?'helmet':'open');
+  if(!key||!XART.rdy(key))return false;
+  const im=XART.get(key),iw=im.naturalWidth||im.width,ih=im.naturalHeight||im.height;
+  /* Fill the visible panel while keeping the single center stick above dialogue. */
+  const panelH=h*.74,scale=Math.max(w/iw,panelH/ih),dw=iw*scale,dh=ih*scale;
+  ctx.drawImage(im,Math.round(x+(w-dw)/2),Math.round(y+(panelH-dh)/2+Math.sin(t*1.7)*1),Math.ceil(dw),Math.ceil(dh));
+  return true;
+}
 function campaignIntroVisual(B,C,t,W,H){
   ctx.fillStyle='#050b12';ctx.fillRect(0,0,W,H);
   if(B.pov){
@@ -52996,13 +53028,16 @@ function campaignIntroVisual(B,C,t,W,H){
     return;
   }
   if(!B.comic){cinCover(B.bg,W,H,.4+Math.sin(t*.2)*.02);return;}
-  cinCover('cinbg_jungle',W,H,.5+Math.sin(t*.3)*.025);
+  campaignIntroJungle(W,H,t);
   cinDrawShip(C.pilot,1,W*.38+Math.sin(t*1.6)*W*.025,H*.43+Math.cos(t*1.3)*H*.015,H*.27,false,1,0);
   ctx.save();
   ctx.beginPath();ctx.moveTo(W*.61,0);ctx.lineTo(W,0);ctx.lineTo(W,H);ctx.lineTo(W*.43,H);ctx.closePath();ctx.clip();
-  cinCover('cinbg_hq_warroom',W,H,.58);
-  ctx.fillStyle='rgba(2,8,18,.44)';ctx.fillRect(0,0,W,H);
-  campaignIntroCockpit(C.pilot,W,H,t);
+  ctx.fillStyle='#101720';ctx.fillRect(0,0,W,H);
+  if(!campaignIntroPilotCamera(C.pilot,B.pilotLine==='resolve',W*.43,0,W*.57,H,t)){
+    cinCover('cinbg_hq_warroom',W,H,.58);
+    ctx.fillStyle='rgba(2,8,18,.44)';ctx.fillRect(0,0,W,H);
+    campaignIntroCockpit(C.pilot,W,H,t);
+  }
   ctx.restore();
   ctx.save();ctx.strokeStyle='#d7e7f7';ctx.lineWidth=4;
   ctx.beginPath();ctx.moveTo(W*.61,0);ctx.lineTo(W*.43,H);ctx.stroke();
@@ -53021,7 +53056,7 @@ function campaignIntroCaption(B,C,W,H,alpha){
 }
 function campaignIntroFinale(C,t,W,H){
   const q=t-CAMPAIGN_INTRO_FINALE;
-  cinCover('cinbg_jungle',W,H,.5);
+  campaignIntroJungle(W,H,q);
   const u=clamp(q/2.4,0,1);
   cinDrawShip(C.pilot,1,W*.5,H*(.8-.55*u),H*(.31-.16*u),false,1,0);
   ctx.fillStyle='rgba(0,0,0,.42)';ctx.fillRect(0,0,W,H);
@@ -70615,7 +70650,6 @@ function proceedIntro(){
   /* Stage 8 arrived through the sewer gate, so its card hands directly to the matching portal
      exit. No runway, entry connector, countdown or GO call may sit between those two shots. */
   if(run.stage===8 && run._l78Entry){ l78EntryStart(); setState(GS.WARPENTRY); }
-  else if(run.stage===9) cockpitEncounterStart();
   else setState(GS.LAUNCH);
 }
 /* STAGE INTRO — master-art animated card with crash-in, fx, slice, countdown */
