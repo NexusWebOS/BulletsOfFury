@@ -2024,6 +2024,9 @@ const XART=(function(){
   X._src.vile24_robot_gray=_vc+'robot_merge/robot_gray.png';
   X._src.vile24_alien_final=_vc+'obsidian_alien_face.png';
   for(let i=0;i<6;i++)X._src['vile24_ball_'+i]=_vc+'rolling/rolling_0'+i+'.png';
+  const _v25='assets/game/final_boss_0925_patterns/';
+  for(const k of ['ghost_claw','ghost_wall_left','phantom_skull','void_knight','shadow_interceptor',
+                  'phantom_ground_portal','void_knight_slash','form1_hyper_cannon_arm'])X._src['vile25_'+k]=_v25+k+'.png';
   X._src.bof_cover_b='docs/marketing_0916/cover_b_raw.png';
   X._src.r24_panel='assets/game/rival_fight_0924/ally_select_panel.png';
   X._src.r24_card='assets/game/rival_fight_0924/rival_fight_card.png';
@@ -37316,6 +37319,8 @@ function triggerVictory(){
    ============================================================ */
 function bossHitTest(x,y){
   if(!boss) return false;
+  if(boss._vile&&boss._v24&&boss._v24.pattern&&boss._v24.pattern.type==='mirror'&&boss._v24.pattern.t<.9)return false;
+  if(boss._vile&&typeof vile25MirrorActive==='function'&&vile25MirrorActive(boss))return vile25MirrorHitTest(boss,x,y);
   if(boss.kind==='damkeeper'&&boss._ovIntro&&!boss._ovIntro.done)return false;
   if(boss._whv)return warhiveHitTest(boss,x,y);
   if(boss._rebels)return rebelSquadHitTest(boss,x,y);
@@ -37368,6 +37373,8 @@ function hitBoss(dmg){
   /* MECH: route the hit to whichever component is under the impact, so shooting an arm breaks
      THAT arm. Front-to-back, so the topmost piece takes it. During assembly nothing is hittable. */
   if(!boss||boss.dead) return;
+  if(boss._vile&&boss._vCloneHit!=null){const _ci=boss._vCloneHit;boss._vCloneHit=null;
+    if(boss._v24&&boss._v24.pattern&&_ci!==boss._v24.pattern.real){vile25FakeHit(boss,_ci);return;}}
   if(boss.kind==='damkeeper'&&boss._ovIntro&&!boss._ovIntro.done)return;
   const _elem=(typeof elementalDamageResult==='function')?elementalDamageResult(boss,'boss',_dmgBullet,dmg,_lastHitX,_lastHitY):{dmg:dmg,reaction:null};
   dmg=_elem.dmg;const _elemHit=_elem.reaction;
@@ -62457,6 +62464,7 @@ function modularPartAt(x,y){
   return null;
 }
 function modularHit(dmg){
+  const _v25Before=boss._vile?boss.hp:0;
   if(boss._vile&&typeof vile24ShieldHit==='function')dmg=vile24ShieldHit(boss,dmg);
   const p=boss._lastPart;
   if(!p || !p.dmg || p.destroyed){
@@ -62482,6 +62490,7 @@ function modularHit(dmg){
     }
   }
   boss.hp=boss.parts.reduce((a,q)=>a+(q.dmg&&!q.destroyed?Math.max(0,q.hp):0),0);
+  if(boss._vile&&typeof vile25OnDamage==='function')vile25OnDamage(boss,Math.max(0,_v25Before-boss.hp));
   boss.flash=0.06;
   if(!boss.parts.some(q=>q.dmg&&!q.destroyed) && !boss.dead){
     // FURIOUS DEATH: wiping every module only breaks the current shell — it re-forms
