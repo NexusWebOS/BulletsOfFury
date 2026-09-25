@@ -23,6 +23,7 @@
   #hud-wrap{position:relative;flex:0 0 auto;background:#000;}
   #hud-wrap canvas{display:block;width:100%;height:100%;}
   #equip-dom{position:relative;flex:0 0 auto;pointer-events:none;}
+  #equip-dom{display:none;} /* compact equipped socket now lives in the three-part in-play HUD */
   #equip-dom canvas{display:block;width:100%;height:100%;image-rendering:pixelated;}
   #hud-div{flex:0 0 auto;width:100%;height:3px;background:#2a2d33;box-shadow:0 1px 0 #15171b;}
   #screen-area{position:relative;flex:0 0 auto;width:100%;overflow:hidden;}
@@ -233,10 +234,13 @@
 <script src="assets/game/atlas/stage_runtime_atlases.js"></script>
 <script src="assets/game/atlas/stage5_runtime_atlas.js"></script>
 <script src="assets/game.js"></script>
+<script src="assets/campaign_story_0924.js"></script>
 <script src="assets/vile_finale_0924.js"></script>
 <script src="assets/rival_fight_0924.js"></script>
 <script src="assets/stage3_thermo.js"></script>
 <script src="assets/widescreen_hud_0918.js"></script>
+<script src="assets/online-config.js"></script>
+<script src="assets/online.js"></script>
 <!-- Campaign world now renders once, on the full-width game canvas. -->
 <script>
 (function(){

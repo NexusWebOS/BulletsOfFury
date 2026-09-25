@@ -24,7 +24,7 @@ function s3ThermoCloudInit(b){
   b._s3ice=true;b._fireEnemy=false;s3ThermoWarm();
 }
 function s3ThernoInit(b){
-  b.name='THERNO, THE SHOCKBRINGER';b.w=262;b.h=280;b.ty=145;
+  b.name='THERNO, THE SHOCKBRINGER';b.w=262;b.h=280;b.ty=170;
   b.hp=b.maxhp=Math.ceil(b.maxhp*1.55);
   b._s3Thermo={role:'boss',mode:'ice',clock:0,cycle:0,charge:null,shots:0,hitT:0,
     parts:{fireShoulder:1,iceShoulder:1,mace:1}};
@@ -242,7 +242,7 @@ function s3ThermoStrikeDraw(role,b){
   if(b._ship&&typeof shipBossDraw==='function')shipBossDraw(b);
   const retina=s3ThermoImage('nuclear_retina'),jet=s3ThermoImage('strike_jet');
   if(S.t<1.75){
-    const q=clamp((S.t-.15)/1.55,0,1),sz=role==='boss'?250:180;
+    const q=clamp((S.t-.15)/1.55,0,1),sz=role==='boss'?viewW()*.5:220;
     if(retina){ctx.save();ctx.globalAlpha=.35+.55*q;ctx.drawImage(retina,S.x-sz/2,S.y-sz/2,sz,sz);ctx.restore();}
     if(role==='mini'&&jet){const y=VH+80-S.t*410;ctx.drawImage(jet,worldWidth()*.5-65,y-75,130,150);}
   }else{

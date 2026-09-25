@@ -56,14 +56,15 @@ function leaderboard(g,w,h,v){
  const panelW=Math.min(w-12,Math.floor(h*.45)),panelH=Math.min(h-20,Math.floor(panelW*810/320));
  const x=(w-panelW)/2,y=h-panelH-12;
  plate(g,bgRect.panel,x,y,panelW,panelH);
- txt(g,'LOCAL LEADERBOARD',w/2,y+panelH*.20,Math.max(12,Math.min(18,panelW*.048)),'#ffe1a0','center');
- let scores=[{name:v.name,score:v.score}];
- try{for(let i=0;i<CAMP_SLOTS;i++){const save=campReadSlot(i);if(save&&save.v===CAMP_SAVE_VER)scores.push({name:String(save.pilot||'PILOT').toUpperCase(),score:save.score||0});}}catch(_){}
+ const live=window.BOFOnline&&window.BOFOnline.topScores&&window.BOFOnline.topScores.length;
+ txt(g,live?'ONLINE LEADERBOARD':'LOCAL LEADERBOARD',w/2,y+panelH*.20,Math.max(12,Math.min(18,panelW*.048)),'#ffe1a0','center');
+ let scores=live?window.BOFOnline.topScores.map(r=>({name:String(r.callsign||'PILOT').toUpperCase(),score:r.score|0})):[{name:v.name,score:v.score}];
+ if(!live)try{for(let i=0;i<CAMP_SLOTS;i++){const save=campReadSlot(i);if(save&&save.v===CAMP_SAVE_VER)scores.push({name:String(save.pilot||'PILOT').toUpperCase(),score:save.score||0});}}catch(_){}
  scores.sort((a,b)=>b.score-a.score);scores=scores.slice(0,4);
  scores.forEach((e,i)=>{const yy=y+panelH*(.397+i*.095);
   txt(g,(i+1)+'. '+e.name,x+panelW*.18,yy,Math.max(10,Math.min(14,panelW*.037)),'#c4d3e2');
   txt(g,String(e.score).padStart(8,'0'),x+panelW*.82,yy,Math.max(10,Math.min(14,panelW*.037)),'#f3cf86','right');});
- txt(g,'ON THIS DEVICE',w/2,y+panelH*.89,Math.max(10,Math.min(13,panelW*.036)),'#94a9b7','center');
+ txt(g,live?'COLEFORGE LIVE':'ON THIS DEVICE',w/2,y+panelH*.89,Math.max(10,Math.min(13,panelW*.036)),'#94a9b7','center');
 }
 function rightPanel(g,w,h,v,isMap){
  const panelW=Math.min(w-12,Math.floor(h*.45)),panelH=Math.min(h-20,Math.floor(panelW*810/320));

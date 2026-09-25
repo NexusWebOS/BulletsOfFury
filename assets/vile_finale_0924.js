@@ -72,7 +72,11 @@ function vile24ArmPoint(b,side){return {x:b.x+side*b.w*.33,y:b.y+b.h*.27};}
 function vile24Attack(b){
   const S=b&&b._v24;if(!S)return;
   if(S.pattern){b.fireCd=.18;return;}
-  const form=b._vForm|0,sets=[['rockets','orb','laser'],['laser','rockets','void','orb'],['ball','orb','void'],['void','laser','orb','rockets']];
+  const form=b._vForm|0,sets=(diffKey==='furious'||diffKey==='insanity')?
+    [['laser','rockets','orb','rockets'],['void','laser','rockets','orb'],['ball','void','orb','void'],['void','rockets','laser','orb','void']]:
+    diffKey==='hard'?
+    [['rockets','laser','orb'],['laser','void','rockets','orb'],['ball','orb','void'],['void','laser','rockets','orb']]:
+    [['rockets','orb','laser'],['laser','rockets','void','orb'],['ball','orb','void'],['void','laser','orb','rockets']];
   const type=sets[form][S.seq++%sets[form].length],tell=type==='void'?1.0:type==='laser'?.80:type==='ball'?.75:.70;
   S.pattern={type,t:0,tell,tx:clamp(player.x,42,worldWidth()-42),ty:clamp(player.y,PLAY.y+45,VH-54),released:false,second:false};
   b.fireCd=tell+1.3;
@@ -83,7 +87,9 @@ function vile24Release(b,P){
   const L=vile24Part(b,'left_systems'),R=vile24Part(b,'right_systems');
   const aim=(x,y)=>Math.atan2(P.ty-y,P.tx-x);
   if(P.type==='rockets'){
-    P.rockets=[];for(const side of [-1,1]){if(b._vForm<2&&!(side<0?L:R))continue;P.rockets.push(side);}
+    const live=[];for(const side of [-1,1]){if(b._vForm<2&&!(side<0?L:R))continue;live.push(side);}
+    P.rockets=[];const repeats=(diffKey==='furious'||diffKey==='insanity')?3:diffKey==='hard'?2:1;
+    for(let wave=0;wave<repeats;wave++)P.rockets.push(...live);
     P.nextRocket=P.tell;P.second=false;
   }else if(P.type==='laser'){
     const side=b._vForm===1&&L?-1:0,at=side?vile24ArmPoint(b,side):{x:b.x,y:b.y+b.h*.23};
@@ -109,11 +115,20 @@ function vile24Tick(b,dt){
   if(b._vForm===2&&!b.enter){b.x=worldWidth()/2+Math.sin(b.t*1.52)*Math.min(105,worldWidth()*.23);b.y=b.ty+Math.abs(Math.sin(b.t*1.92))*23;}
   const P=S.pattern;if(!P||b.enter)return;
   P.t+=dt;combatWarningTick(b,'stage8-vile24-'+P.type,Math.min(P.t,P.tell),P.tell);
+  /* The higher difficulties actively follow the pilot during the early tell, then commit to a
+     fixed target. The last slice of the warning and every projectile keep that shown position. */
+  if((diffKey==='hard'||diffKey==='furious'||diffKey==='insanity')&&!P.released&&!P.locked&&!player.dead){
+    const fast=diffKey==='furious'||diffKey==='insanity',commit=P.tell*(fast?.70:.60);
+    if(P.t<commit){const rate=Math.min(1,dt*(fast?5.8:3.6));
+      P.tx=lerp(P.tx,clamp(player.x,42,worldWidth()-42),rate);
+      P.ty=lerp(P.ty,clamp(player.y,PLAY.y+45,VH-54),rate);
+    }else P.locked=true;
+  }
   if(!P.released&&P.t>=P.tell){P.released=true;vile24Release(b,P);}
   if(P.type==='rockets'&&P.released&&P.rockets&&P.rockets.length&&P.t>=P.nextRocket){
     const side=P.rockets.shift(),at=vile24ArmPoint(b,side);
     vile24Shot('rocket',at.x,at.y,Math.atan2(P.ty-at.y,P.tx-at.x),3.55,P.rockets.length>0);
-    vile24DrawMuzzle(at.x,at.y,40);P.nextRocket+=.31;
+    vile24DrawMuzzle(at.x,at.y,40);P.nextRocket+=(diffKey==='furious'||diffKey==='insanity')?.25:.31;
   }
   if(P.type==='void'&&P.released&&P.t<P.activeUntil&&!player.dead){
     const dx=P.tx-player.x,dy=P.ty-player.y,d=Math.hypot(dx,dy);

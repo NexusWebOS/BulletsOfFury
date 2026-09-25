@@ -27,7 +27,8 @@ module.exports=function testGaugeShield(vm,ctxv,ok){
   /* the shield's OWN bar */
   const sb=vm.runInContext('drawShieldBarArt.toString()',ctxv).replace(/\/\*[\s\S]*?\*\/|\/\/[^\n]*/g,'');
   ok(/bmbar_frame_shield/.test(sb), 'the shield bar prefers its own frame');
-  ok(/bmbar_frame_boss/.test(sb), 'and falls back to the boss frame only while that decodes');
+  ok(/bmbar_frame_shield_v2/.test(sb)&&!/bmbar_frame_boss/.test(sb)&&/return false/.test(sb),
+     'and falls back to the drawn shield gauge while its own v2 plate decodes');
   ok(/bmbar_tab_shield/.test(tab), 'the shield tab is its own plate too');
 
   /* our own fills */

@@ -1,0 +1,32 @@
+{
+  "earth_peace": {
+    "asset_id": "e5f05ea7-5518-477c-b9a1-ccd180be0c15",
+    "sha12": "9899c5aba3d4",
+    "file": "earth_peace.png"
+  },
+  "civilian_collapse": {
+    "asset_id": "68170882-c030-4b33-a87b-ac433937bed3",
+    "sha12": "61f0c81ca856",
+    "file": "civilian_collapse.png"
+  },
+  "city_air_attack": {
+    "asset_id": "d91c4864-fb62-44af-995a-26b84aecce7c",
+    "sha12": "f25875477a53",
+    "file": "city_air_attack.png"
+  },
+  "suburban_tanks": {
+    "asset_id": "74cb44d5-f1b9-470e-b3b5-792e0e3e58ee",
+    "sha12": "18421859ebd8",
+    "file": "suburban_tanks.png"
+  },
+  "naval_exchange": {
+    "asset_id": "35fe34d5-ae79-4e0a-8c2a-7a393429e66a",
+    "sha12": "a44a2f4cd4da",
+    "file": "naval_exchange.png"
+  },
+  "rebel_shadow": {
+    "asset_id": "aecd3710-a463-4ed9-9fa4-f3928f7584e2",
+    "sha12": "0c74eb901fa2",
+    "file": "rebel_shadow.png"
+  }
+}

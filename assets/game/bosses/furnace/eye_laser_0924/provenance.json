@@ -1,0 +1,13 @@
+{
+  "tool": "built-in image_gen",
+  "date": "2026-09-24",
+  "references": [
+    "fzt_fire_laser_0920.png",
+    "fzt_laser_muzzle.png",
+    "fzt_fireball_impact.png"
+  ],
+  "prompt_summary": "Four-frame transparent Furnace Tyrant eye laser beam, circular muzzle flash, and ground laser explosion strips in the approved fire palette.",
+  "normalization": "Four equal cells per strip; fixed shared crop per family, centered beam axis and consistent floor impact anchor.",
+  "tip_prompt_summary": "Four transparent 16-bit laser end caps; white-yellow furnace beam tapers to a sharp downward fire spear, four flicker frames.",
+  "tip_normalization": "Four equal source cells, fixed crop matched to the beam center axis; each frame renders as one full-length laser so its shaft and point have identical width."
+}
