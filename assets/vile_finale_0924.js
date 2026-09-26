@@ -89,10 +89,12 @@ function vile25Warn(b,k,x,y,ex,ey,progress,width){
 function vile25Start(b,P){
   P.duration=P.type==='box'?5.35:P.type==='phantom'?(vile25Fury()?5.8:vile25Hard()?4.8:3.8):
     P.type==='knight'?(vile25Fury()?5.6:vile25Hard()?4.6:3.7):P.type==='mirror'?7.2:
-    P.type==='mirrorball'?4.3:P.type==='eclipse'?3.7:P.type==='shadowcall'?2.35:3.2;
+    P.type==='mirrorball'?4.3:P.type==='eclipse'?3.7:P.type==='shadowcall'?2.35:
+    P.type==='spinlaser'?(vile25Fury()?4.45:3.65):P.type==='hyperlaser'?(vile25Fury()?4.1:3.65):3.2;
   P.fired={};P.tx=player.x;P.ty=player.y;
   if(P.type==='box'){P.left=0;P.right=0;P.strikeAt=3.85;P.strikeX=player.x;P.strikeY=player.y;}
   if(P.type==='phantom'||P.type==='knight')P.count=P.type==='phantom'?(vile25Fury()?4:vile25Hard()?3:2):(vile25Fury()?4:vile25Hard()?3:2);
+  if(P.type==='hyperlaser'||P.type==='spinlaser'){P.legs=vile25Fury()?3:2;P.beam=null;}
   if(P.type==='mirror'){
     P.real=(Math.floor(Math.random()*4)+4)%4;P.realDamage=0;
     const left=camLeftX();
@@ -129,13 +131,22 @@ function vile25Tick(b,P,dt){
   P.t+=dt;const t=P.t,W=worldWidth(),id=P.type;
   combatWarningTick(b,'stage8-vile25-'+id,Math.min(t,.8),.8);
   if(id==='hyperlaser'||id==='spinlaser'){
-    const sweep=id==='spinlaser',on=t>=.92&&t<2.72;
-    if(on){const leg=Math.floor((t-.92)/.9),side=leg%2?-1:1,at=vile25CannonPoint(b,side);
-      const ex=sweep?W*(.12+.76*clamp((t-.92)/1.8,0,1)):clamp(P.tx+side*W*.12,30,W-30);
-      P.beam={x:at.x,y:at.y,ex,ey:VH,side};
-      vile25FireBeam(b,at.x,at.y,ex,VH,Math.hypot(ex-at.x,VH-at.y));
-      if(!P.fired[leg]){P.fired[leg]=true;vile24DrawMuzzle(at.x,at.y,48);shake=Math.max(shake,4);}
-    }else P.beam=null;
+    const sweep=id==='spinlaser',legTime=.94,age=t-.92;
+    const leg=Math.floor(age/legTime),phase=age-leg*legTime;
+    if(age>=0&&leg<P.legs){
+      const side=leg%2?-1:1,at=vile25CannonPoint(b,side);
+      const progress=clamp((phase-.17)/.69,0,1);
+      const ex=sweep?W*(leg%2?.88-.76*progress:.12+.76*progress):
+        clamp(P.tx+side*W*.12,30,W-30);
+      // Each cannon changes hands on a visible charge beat. The beam and its
+      // collision turn on together, leaving a short repeatable dodge window.
+      if(phase<.17){P.beam=null;P.beamTell={x:at.x,y:at.y,ex:sweep?W*(leg%2?.88:.12):ex,ey:VH,p:phase/.17};}
+      else if(phase<.86){P.beamTell=null;P.beam={x:at.x,y:at.y,ex,ey:VH,side};
+        vile25FireBeam(b,at.x,at.y,ex,VH,Math.hypot(ex-at.x,VH-at.y));
+        if(!P.fired[leg]){P.fired[leg]=true;vile24DrawMuzzle(at.x,at.y,48);
+          if(Audio.SFX&&Audio.SFX.enemyBossCannon)Audio.SFX.enemyBossCannon();shake=Math.max(shake,4);}}
+      else{P.beam=null;P.beamTell=null;}
+    }else{P.beam=null;P.beamTell=null;}
   }else if(id==='shadowcall'){
     if(t>.82&&!P.fired.call){P.fired.call=true;const n=vile25Fury()?4:vile25Hard()?3:2;
       for(let i=0;i<n;i++)b._v24.foes.push({x:W*(i+1)/(n+1),y:b.y+b.h*.25,hp:18,t:0,seed:i*2,shot:false});}
@@ -165,7 +176,8 @@ function vile25Tick(b,P,dt){
   }else if(id==='phantom'||id==='knight'){
     const interval=id==='phantom'?1.12:1.14,base=.55,cycle=Math.floor(Math.max(0,t-base)/interval),local=t-base-cycle*interval;
     if(t>=base&&cycle<P.count){
-      if(P.cycle!==cycle){P.cycle=cycle;P.tx=clamp(player.x,40,W-40);P.ty=clamp(player.y,PLAY.y+92,VH-58);P.emerged=false;P.hit=false;}
+      if(P.cycle!==cycle){P.cycle=cycle;P.tx=clamp(player.x,40,W-40);P.ty=clamp(player.y,PLAY.y+92,VH-58);P.emerged=false;P.hit=false;
+        if(id==='knight'){P.leapFromX=b.x;P.leapFromY=b.y;}}
       if(local>.58&&!P.emerged){P.emerged=true;shake=Math.max(shake,id==='knight'?8:5);}
       if(local>.63&&local<.92&&!P.hit&&!player.dead){
         const radius=id==='knight'?58:49;
@@ -184,6 +196,49 @@ function vile25Tick(b,P,dt){
     if(!player.dead&&Math.hypot(player.x-b.x,player.y-b.y)<b.w*.31)playerHit('collision');
   }
   if(t>=P.duration){b._v24.pattern=null;b.fireCd=.48;b.x=W/2;b.y=b.ty;}
+}
+/* The luminous shell catches incoming ordnance while charged. Once it breaks, the
+   knight's physical shield still protects its right flank, leaving the left open. */
+function vile25ShieldContact(b,q){
+  const S=b&&b._v24;if(!S||!q||q.dead||q._enemyReflected||b.enter)return false;
+  const pose=vile25KnightPose(b)||b,dx=q.x-pose.x,dy=q.y-pose.y;
+  const bubble=S.shield>0&&(dx*dx/(b.w*.58*b.w*.58)+dy*dy/(b.h*.58*b.h*.58)<=1);
+  const knight=S.pattern&&S.pattern.type==='knight'&&
+    dx>=b.w*.13&&dx<=b.w*.57&&dy>=-b.h*.26&&dy<=b.h*.38;
+  return !!(bubble||knight);
+}
+function vile25ShieldDeflect(b,q){
+  if(!vile25ShieldContact(b,q))return false;
+  const S=b._v24,pose=vile25KnightPose(b)||b;
+  const missile=['gmiss','nukem','missile','retinaMissile','spaceVolley'].includes(q.kind);
+  if(S.shield>0){
+    S.shield=Math.max(0,S.shield-Math.max(1,q._bossDmg||q.dmg||1));
+    if(S.shield===0){shake=Math.max(shake,10);
+      if(Audio.SFX&&Audio.SFX.shieldBreakCombat)Audio.SFX.shieldBreakCombat();}
+  }
+  S.reflections=(S.reflections||0)+1;
+  const aimed=S.reflections%3!==0,tx=aimed?player.x:clamp(q.x+(S.reflections%2?-160:160),28,worldWidth()-28);
+  const ty=aimed?player.y:VH+24,ang=Math.atan2(ty-q.y,tx-q.x);
+  const shot=vile24Shot(missile?'rocket':'laser',q.x,q.y,ang,missile?4.5:5.7,true);
+  shot._v25Reflected=true;shot._shootable=missile;shot.hp=missile?1:undefined;
+  q.dead=true;b.flash=Math.max(b.flash||0,.11);
+  S.shards.push({x:q.x,y:q.y,vx:Math.cos(ang)*55,vy:Math.sin(ang)*55,t:0});
+  vile24DrawMuzzle(q.x,q.y,missile?35:25);
+  if(Audio.SFX&&(Audio.SFX.projectileRicochet||Audio.SFX.shieldDeflect))
+    (Audio.SFX.projectileRicochet||Audio.SFX.shieldDeflect)();
+  return true;
+}
+function vile25KnightPose(b){
+  const P=b&&b._v24&&b._v24.pattern;if(!P||P.type!=='knight')return null;
+  const local=P.t-.55-Math.floor(Math.max(0,P.t-.55)/1.14)*1.14;
+  let x=b.x,y=b.y;
+  if(P.cycle!=null&&P.cycle<P.count){
+    if(local>=.46&&local<.72){const q=clamp((local-.46)/.26,0,1),e=q*q*(3-2*q);
+      x=lerp(P.leapFromX??b.x,P.tx,e);y=lerp(P.leapFromY??b.y,P.ty,e)-Math.sin(q*Math.PI)*34;}
+    else if(local>=.72&&local<.98){x=P.tx;y=P.ty;}
+    else if(local>=.98){const q=clamp((local-.98)/.16,0,1);x=lerp(P.tx,b.x,q);y=lerp(P.ty,b.y,q);}
+  }
+  return {x,y};
 }
 function vile25MirrorActive(b){return !!(b&&b._v24&&b._v24.pattern&&b._v24.pattern.type==='mirror'&&b._v24.pattern.t>=.9&&b._v24.pattern.clones);}
 function vile25MirrorHitTest(b,x,y){
@@ -338,11 +393,12 @@ function vile25DrawSubform(b,P){
   }
   if(id==='knight'){
     const local=t-.55-Math.floor(Math.max(0,t-.55)/1.14)*1.14;
+    const pose=vile25KnightPose(b);
     if(P.cycle!=null&&P.cycle<P.count){
-      if(local<.63)vile25Warn(b,'knight',b.x,b.y,P.tx,P.ty,local/.63,100);
+      if(local<.58)vile25Warn(b,'knight',b.x,b.y,P.tx,P.ty,local/.58,100);
       if(local>.58&&local<.98)vile25Sprite('vile25_void_knight_slash',P.tx,P.ty,155,125,1);
     }
-    vile25Sprite('vile25_void_knight',b.x,b.y,b.w*1.07,b.h*1.07,trans);return true;
+    vile25Sprite('vile25_void_knight',pose.x,pose.y,b.w*1.07,b.h*1.07,trans);return true;
   }
   if(id==='mirror'){
     if(t<.58){vile24Plate('vile24_ball_'+Math.min(5,Math.floor(t/.10)),b);return true;}
@@ -368,6 +424,7 @@ function vile25DrawWeaponTell(b,P){
   if(P.t<.92){for(const s of [-1,1]){const at=vile25CannonPoint(b,s);
     vile25Warn(b,P.type,at.x,at.y,P.type==='spinlaser'?worldWidth()*(s<0?.15:.85):P.tx+s*worldWidth()*.12,VH,Math.min(1,P.t/.92),34);
     vile24Cell('vile24_weapons_sheet',2,2,3,at.x-21,at.y-21,42,42,Math.min(1,P.t/.92));}}
+  if(P.beamTell){const Q=P.beamTell;vile25Warn(b,'cannon-followup',Q.x,Q.y,Q.ex,Q.ey,Q.p,35);}
   if(P.beam){const Q=P.beam,ang=Math.atan2(Q.ey-Q.y,Q.ex-Q.x)-Math.PI/2,len=Math.hypot(Q.ex-Q.x,Q.ey-Q.y);
     ctx.save();ctx.translate(Q.x,Q.y);ctx.rotate(ang);
     vile24Cell('vile24_weapons_sheet',2,2,2,-36,0,72,len);
@@ -399,9 +456,10 @@ function vile24DrawBoss(b){
   else if(!sub)vile24Plate('vile24_alien_final',b);
   if(S.pattern)vile25DrawWeaponTell(b,S.pattern);
   vile25FoesDraw(b);
-  if(flash){ctx.save();ctx.globalCompositeOperation='screen';ctx.globalAlpha=flash;ctx.fillStyle='#fff';ctx.beginPath();ctx.ellipse(b.x,b.y,b.w*.42,b.h*.42,0,0,TAU);ctx.fill();ctx.restore();}
+  const fxPose=vile25KnightPose(b)||b;
+  if(flash){ctx.save();ctx.globalCompositeOperation='screen';ctx.globalAlpha=flash;ctx.fillStyle='#fff';ctx.beginPath();ctx.ellipse(fxPose.x,fxPose.y,b.w*.42,b.h*.42,0,0,TAU);ctx.fill();ctx.restore();}
   if(S.shield>0){const ratio=S.shield/S.shieldMax,cell=ratio>.66?0:ratio>.33?1:2;
-    vile24Cell('vile24_shield_sheet',2,2,cell,b.x-b.w*.59,b.y-b.h*.59,b.w*1.18,b.h*1.18,.48);
+    vile24Cell('vile24_shield_sheet',2,2,cell,fxPose.x-b.w*.59,fxPose.y-b.h*.59,b.w*1.18,b.h*1.18,.48);
   }
   for(const q of S.shards)vile24Cell('vile24_shield_sheet',2,2,3,q.x-12,q.y-12,24,24,1-q.t/.55);
   for(const m of S.muzzles)vile24Cell('vile24_weapons_sheet',2,2,3,m.x-m.size/2,m.y-m.size/2,m.size,m.size,1-m.t/.20);

@@ -36048,6 +36048,7 @@ function updatePlay(dt){
         if(!reach && typeof subBoss!=='undefined' && subBoss && subBossActive && !subBoss.dead && Math.abs(subBoss.x-b.x)<(subBoss.w/2+8) && Math.abs((subBoss._drawY||subBoss.y)-b.y)<(subBoss.h/2+8)) reach=true;
         if(!reach){ for(const p of powerups){ if(!p.dead && (p.kind==='crate'||p.kind==='capsule'||p.kind==='scrate'||p.kind==='hqspacebox') && Math.abs(p.x-b.x)<(p.w/2+7) && Math.abs(p.y-b.y)<(p.h/2+9)){ reach=true; break; } } }
       }
+      if(boss&&boss._vile&&bossActive&&!boss.dead&&typeof vile25ShieldDeflect==='function'&&vile25ShieldDeflect(boss,b))continue;
       if(reach){
         b.dead=true;
         if(b.kind==='nukem'){ nukeAt(b.x,b.y); }
@@ -36317,6 +36318,8 @@ function updatePlay(dt){
        unwinnable above y~390. See carrierWarheadDeflectOne. A round that misses every warhead
        falls straight through to the hull collision below, unchanged. */
     if(!b.dead && typeof carrierWarheadDeflectAt==='function') carrierWarheadDeflectAt(b);
+    // The Stage 8 shell and knight plate intercept ordnance before the hull.
+    if(!b.dead&&boss&&boss._vile&&bossActive&&!boss.dead&&typeof vile25ShieldDeflect==='function'&&vile25ShieldDeflect(boss,b))continue;
     // collide boss
     if(!b.dead && boss && bossActive && !boss.dead && bossHitTest(b.x,b.y)){
       /* PHASE 1 SHIELD (drop 0809n). Runs BEFORE any damage is computed: a deflected round
@@ -37321,6 +37324,11 @@ function bossHitTest(x,y){
   if(!boss) return false;
   if(boss._vile&&boss._v24&&boss._v24.pattern&&boss._v24.pattern.type==='mirror'&&boss._v24.pattern.t<.9)return false;
   if(boss._vile&&typeof vile25MirrorActive==='function'&&vile25MirrorActive(boss))return vile25MirrorHitTest(boss,x,y);
+  if(boss._vile&&typeof vile25KnightPose==='function'){
+    const kp=vile25KnightPose(boss);
+    if(kp){boss._lastPart=vile24Part(boss,'central_core');
+      return !!boss._lastPart&&Math.abs(x-kp.x)<boss.w*.34&&Math.abs(y-kp.y)<boss.h*.39;}
+  }
   if(boss.kind==='damkeeper'&&boss._ovIntro&&!boss._ovIntro.done)return false;
   if(boss._whv)return warhiveHitTest(boss,x,y);
   if(boss._rebels)return rebelSquadHitTest(boss,x,y);
