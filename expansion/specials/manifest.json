@@ -1,0 +1,201 @@
+{
+  "format": "bof.overdrive.special-art.v1",
+  "runtime_registered": false,
+  "effects": {
+    "hotwire_whip": {
+      "source": "source/hotwire_whip_snap_sheet.png",
+      "grid": [
+        4,
+        2
+      ],
+      "size": [
+        384,
+        384
+      ],
+      "frames": [
+        "frames/hotwire_whip_00.png",
+        "frames/hotwire_whip_01.png",
+        "frames/hotwire_whip_02.png",
+        "frames/hotwire_whip_03.png",
+        "frames/hotwire_whip_04.png",
+        "frames/hotwire_whip_05.png",
+        "frames/hotwire_whip_06.png",
+        "frames/hotwire_whip_07.png"
+      ],
+      "frame_duration_ms": [
+        90,
+        110,
+        140,
+        55,
+        45,
+        45,
+        70,
+        110
+      ],
+      "preview": "previews/hotwire_whip.gif"
+    },
+    "hotwire_hit": {
+      "source": "source/hotwire_hit_spread_sheet.png",
+      "grid": [
+        3,
+        2
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "frames": [
+        "frames/hotwire_hit_00.png",
+        "frames/hotwire_hit_01.png",
+        "frames/hotwire_hit_02.png",
+        "frames/hotwire_hit_03.png",
+        "frames/hotwire_hit_04.png",
+        "frames/hotwire_hit_05.png"
+      ],
+      "frame_duration_ms": [
+        40,
+        45,
+        50,
+        60,
+        70,
+        100
+      ],
+      "preview": "previews/hotwire_hit.gif"
+    },
+    "hotwire_chain": {
+      "source": "source/hotwire_chain_sheet.png",
+      "grid": [
+        4,
+        2
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "frames": [
+        "frames/hotwire_chain_00.png",
+        "frames/hotwire_chain_01.png",
+        "frames/hotwire_chain_02.png",
+        "frames/hotwire_chain_03.png",
+        "frames/hotwire_chain_04.png",
+        "frames/hotwire_chain_05.png",
+        "frames/hotwire_chain_06.png",
+        "frames/hotwire_chain_07.png"
+      ],
+      "frame_duration_ms": [
+        45,
+        50,
+        55,
+        55,
+        65,
+        65,
+        70,
+        90
+      ],
+      "preview": "previews/hotwire_chain.gif"
+    },
+    "phoenix_retina": {
+      "source": "source/phoenix_retina_sheet.png",
+      "grid": [
+        4,
+        2
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "frames": [
+        "frames/phoenix_retina_00.png",
+        "frames/phoenix_retina_01.png",
+        "frames/phoenix_retina_02.png",
+        "frames/phoenix_retina_03.png",
+        "frames/phoenix_retina_04.png",
+        "frames/phoenix_retina_05.png",
+        "frames/phoenix_retina_06.png",
+        "frames/phoenix_retina_07.png"
+      ]
+    },
+    "phoenix_mortar": {
+      "source": "source/phoenix_mortar_sheet.png",
+      "grid": [
+        3,
+        2
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "frames": [
+        "frames/phoenix_mortar_00.png",
+        "frames/phoenix_mortar_01.png",
+        "frames/phoenix_mortar_02.png",
+        "frames/phoenix_mortar_03.png",
+        "frames/phoenix_mortar_04.png",
+        "frames/phoenix_mortar_05.png"
+      ]
+    },
+    "phoenix_volley": {
+      "source": "source/phoenix_volley_sheet.png",
+      "grid": [
+        4,
+        2
+      ],
+      "size": [
+        256,
+        256
+      ],
+      "frames": [
+        "frames/phoenix_volley_00.png",
+        "frames/phoenix_volley_01.png",
+        "frames/phoenix_volley_02.png",
+        "frames/phoenix_volley_03.png",
+        "frames/phoenix_volley_04.png",
+        "frames/phoenix_volley_05.png",
+        "frames/phoenix_volley_06.png",
+        "frames/phoenix_volley_07.png"
+      ]
+    }
+  },
+  "ui": {
+    "special_hotwire_box": {
+      "source": "source/special_hotwire_box_source.png",
+      "file": "ui/special_hotwire_box.png",
+      "size": [
+        360,
+        400
+      ]
+    },
+    "special_phoenix_box": {
+      "source": "source/special_phoenix_box_source.png",
+      "file": "ui/special_phoenix_box.png",
+      "size": [
+        360,
+        400
+      ]
+    },
+    "spicon_hotwire": {
+      "source": "source/special_hotwire_icon_source.png",
+      "file": "ui/spicon_hotwire.png",
+      "size": [
+        112,
+        112
+      ]
+    },
+    "spicon_phoenix": {
+      "source": "source/special_phoenix_icon_source.png",
+      "file": "ui/spicon_phoenix.png",
+      "size": [
+        112,
+        112
+      ]
+    },
+    "phoenix_charge_tether": {
+      "source": "source/phoenix_charge_tether.png",
+      "file": "ui/phoenix_charge_tether.png",
+      "size": [
+        64,
+        256
+      ]
+    }
+  }
+}
