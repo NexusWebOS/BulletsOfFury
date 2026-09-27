@@ -1,0 +1,62 @@
+{
+  "flow": "n6m1HqayopWSjY7UFO2J",
+  "model": "eleven_text_to_sound_v2",
+  "source": "ElevenLabs connector; authorized by Mike September 27",
+  "generations": [
+    {
+      "k": "boss_charge",
+      "id": "UvC7l9Tfp2nY7uCECdUd",
+      "prompt": "An isolated giant sci-fi boss cannon charging: deep electrical transformer hum ramps in pitch, layered metallic ratchet winding and crackling ion arcs, building tension for about 1.5 seconds then a sharp charged click. Tight arcade shooter mix, clean low mid punch, no musical notes, no speech, no ambience, no firing blast. One charge event suitable for matching a green-yellow-red warning."
+    },
+    {
+      "k": "hammer_slam",
+      "id": "szQLWAeQ6AswNabSwepO",
+      "prompt": "One massive robotic hammer slamming onto a steel deck, sharp heavy metallic CRANG, powerful low impact, short electric crack bursting after the strike and a tight ringing decay. Arcade action game, visceral mechanical mass, about one second, isolated single hit, dry and punchy. No voice, no music, no ambience."
+    },
+    {
+      "k": "stun",
+      "id": "H4k9CgrWIeVWauqkM4O7",
+      "prompt": "One robotic boss stagger and electrical short circuit: abrupt metal buckle, descending servo whine, sputtering static sparks and short broken motor rattle. About 1 second. Distinct defeat of a mechanical component, punchy arcade game effect, no speech, no musical tone, no ambience."
+    },
+    {
+      "k": "beam",
+      "id": "Ev8z4zYdMwJOSrqB8fDJ",
+      "prompt": "Single massive sci-fi cannon discharge. Immediate sharp electric snap into a thick roaring ion beam blast, sub bass punch, fast sparkling electrical tail. Approximately 1.2 seconds. A dangerous arcade boss laser burst with clean attack, no voice, no music, no background noise, no long reverb."
+    },
+    {
+      "k": "toxic",
+      "id": "Seb1tROQwX1JhpwRnuUN",
+      "prompt": "Single pressurized toxic plasma mortar discharge: a heavy mechanical thunk, wet acidic eruption, sizzling green energy crackle and short bubbling tail. About one second. Punchy sci-fi arcade boss sound, clear attack, no voice, no music, no ambient bed."
+    },
+    {
+      "k": "alien",
+      "id": "NSvqwX04FrdPnyHAOWjp",
+      "prompt": "One hostile alien biomechanical screech, a monstrous nonverbal WHRRRAAA distorted throat roar with metallic resonance and granular snarling static, rises abruptly then tails off in 1.5 seconds. Frightening arcade boss phase change, no human words, no speech, no music or ambience."
+    },
+    {
+      "k": "ice",
+      "id": "Vm2VHyB3KSRUIIo2wr9u",
+      "prompt": "One violent cryogenic cannon burst: sharp glassy crack with a deep compressed gas thump followed by tiny crystalline ice shards scattering. Tight 0.8 second arcade combat effect, powerful frozen energy discharge, no music, no voices, no ambience or reverb wash."
+    },
+    {
+      "id": "mdcXKjiVTJLKZdpbLnKr",
+      "duration": 2,
+      "prompt": "Single compact arcade military missile launch sound, immediate crisp mechanical rack clack followed by a forceful rocket ignition and short ascending whoosh. Punchy 16-bit arcade character layered wit"
+    },
+    {
+      "id": "ZLnvJ4Gbsredyrq6CTAW",
+      "duration": 2,
+      "prompt": "Single compact arcade military missile launch sound, immediate crisp mechanical rack clack followed by a forceful rocket ignition and short ascending whoosh. Punchy 16-bit arcade character layered wit"
+    },
+    {
+      "id": "or1FsZtZNXcR7z1JWKck",
+      "duration": 1,
+      "prompt": "Single compact arcade military missile launch sound, immediate crisp mechanical rack clack followed by a forceful rocket ignition and short ascending whoosh. Punchy 16-bit arcade character layered wit"
+    },
+    {
+      "id": "NhFjjoj26a7XHMkKsYC3",
+      "duration": 2,
+      "prompt": "Single compact arcade military missile launch sound, immediate crisp mechanical rack clack followed by a forceful rocket ignition and short ascending whoosh. Punchy 16-bit arcade character layered wit"
+    }
+  ]
+}

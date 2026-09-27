@@ -1,0 +1,1367 @@
+{
+  "storm": [
+    {
+      "difficulty": "normal",
+      "start": "storm_raise",
+      "mode": "storm",
+      "states": [
+        "storm_raise",
+        "storm_idle",
+        "storm_warn",
+        "storm_slam",
+        "storm_split",
+        "storm_idle",
+        "storm_warn",
+        "storm_slam",
+        "storm_split",
+        "storm_idle",
+        "spin",
+        "throw",
+        "hammer_catch",
+        "storm_idle",
+        "storm_warn",
+        "storm_slam",
+        "storm_split",
+        "storm_idle",
+        "storm_warn",
+        "storm_slam",
+        "storm_split",
+        "storm_idle",
+        "spin",
+        "throw",
+        "hammer_catch",
+        "storm_idle",
+        "storm_warn",
+        "storm_slam",
+        "storm_split",
+        "storm_idle",
+        "storm_warn",
+        "storm_slam",
+        "storm_split"
+      ],
+      "counts": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "targets": [
+        [
+          {
+            "x": 144,
+            "y": 344.6
+          },
+          {
+            "x": 340,
+            "y": 430
+          },
+          {
+            "x": 536,
+            "y": 344.6
+          }
+        ],
+        [
+          {
+            "x": 144,
+            "y": 344.6
+          },
+          {
+            "x": 340,
+            "y": 430
+          },
+          {
+            "x": 536,
+            "y": 344.6
+          }
+        ],
+        [
+          {
+            "x": 144,
+            "y": 344.6
+          },
+          {
+            "x": 340,
+            "y": 430
+          },
+          {
+            "x": 536,
+            "y": 344.6
+          }
+        ],
+        [
+          {
+            "x": 144,
+            "y": 344.6
+          },
+          {
+            "x": 340,
+            "y": 430
+          },
+          {
+            "x": 536,
+            "y": 344.6
+          }
+        ],
+        [
+          {
+            "x": 144,
+            "y": 344.6
+          },
+          {
+            "x": 340,
+            "y": 430
+          },
+          {
+            "x": 536,
+            "y": 344.6
+          }
+        ],
+        [
+          {
+            "x": 144,
+            "y": 344.6
+          },
+          {
+            "x": 340,
+            "y": 430
+          },
+          {
+            "x": 536,
+            "y": 344.6
+          }
+        ]
+      ],
+      "head": [
+        {
+          "p": {
+            "x": 340,
+            "y": 409.6
+          },
+          "target": {
+            "x": 340,
+            "y": 409.6
+          }
+        },
+        {
+          "p": {
+            "x": 340,
+            "y": 409.6
+          },
+          "target": {
+            "x": 340,
+            "y": 409.6
+          }
+        },
+        {
+          "p": {
+            "x": 340,
+            "y": 409.6
+          },
+          "target": {
+            "x": 340,
+            "y": 409.6
+          }
+        },
+        {
+          "p": {
+            "x": 340,
+            "y": 409.6
+          },
+          "target": {
+            "x": 340,
+            "y": 409.6
+          }
+        },
+        {
+          "p": {
+            "x": 340,
+            "y": 409.6
+          },
+          "target": {
+            "x": 340,
+            "y": 409.6
+          }
+        },
+        {
+          "p": {
+            "x": 340,
+            "y": 409.6
+          },
+          "target": {
+            "x": 340,
+            "y": 409.6
+          }
+        }
+      ],
+      "charged": true,
+      "chainGone": true,
+      "hammerBack": true
+    },
+    {
+      "difficulty": "hard",
+      "start": "storm_raise",
+      "mode": "storm",
+      "states": [
+        "storm_raise",
+        "storm_idle",
+        "storm_warn",
+        "storm_slam",
+        "storm_split",
+        "storm_idle",
+        "storm_warn",
+        "storm_slam",
+        "storm_split",
+        "storm_idle",
+        "spin",
+        "throw",
+        "hammer_catch",
+        "storm_idle",
+        "storm_warn",
+        "storm_slam",
+        "storm_split",
+        "storm_idle",
+        "storm_warn",
+        "storm_slam",
+        "storm_split",
+        "storm_idle",
+        "spin",
+        "throw",
+        "hammer_catch",
+        "storm_idle",
+        "storm_warn",
+        "storm_slam",
+        "storm_split",
+        "storm_idle",
+        "storm_warn",
+        "storm_slam",
+        "storm_split",
+        "storm_idle",
+        "spin"
+      ],
+      "counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "targets": [
+        [
+          {
+            "x": 144,
+            "y": 344.6
+          },
+          {
+            "x": 274.66666666666663,
+            "y": 430
+          },
+          {
+            "x": 405.3333333333333,
+            "y": 344.6
+          },
+          {
+            "x": 536,
+            "y": 430
+          }
+        ],
+        [
+          {
+            "x": 144,
+            "y": 344.6
+          },
+          {
+            "x": 274.66666666666663,
+            "y": 430
+          },
+          {
+            "x": 405.3333333333333,
+            "y": 344.6
+          },
+          {
+            "x": 536,
+            "y": 430
+          }
+        ],
+        [
+          {
+            "x": 144,
+            "y": 344.6
+          },
+          {
+            "x": 274.66666666666663,
+            "y": 430
+          },
+          {
+            "x": 405.3333333333333,
+            "y": 344.6
+          },
+          {
+            "x": 536,
+            "y": 430
+          }
+        ],
+        [
+          {
+            "x": 144,
+            "y": 344.6
+          },
+          {
+            "x": 274.66666666666663,
+            "y": 430
+          },
+          {
+            "x": 405.3333333333333,
+            "y": 344.6
+          },
+          {
+            "x": 536,
+            "y": 430
+          }
+        ],
+        [
+          {
+            "x": 144,
+            "y": 344.6
+          },
+          {
+            "x": 274.66666666666663,
+            "y": 430
+          },
+          {
+            "x": 405.3333333333333,
+            "y": 344.6
+          },
+          {
+            "x": 536,
+            "y": 430
+          }
+        ],
+        [
+          {
+            "x": 144,
+            "y": 344.6
+          },
+          {
+            "x": 274.66666666666663,
+            "y": 430
+          },
+          {
+            "x": 405.3333333333333,
+            "y": 344.6
+          },
+          {
+            "x": 536,
+            "y": 430
+          }
+        ]
+      ],
+      "head": [
+        {
+          "p": {
+            "x": 340,
+            "y": 409.6
+          },
+          "target": {
+            "x": 340,
+            "y": 409.6
+          }
+        },
+        {
+          "p": {
+            "x": 340,
+            "y": 409.6
+          },
+          "target": {
+            "x": 340,
+            "y": 409.6
+          }
+        },
+        {
+          "p": {
+            "x": 340,
+            "y": 409.6
+          },
+          "target": {
+            "x": 340,
+            "y": 409.6
+          }
+        },
+        {
+          "p": {
+            "x": 340,
+            "y": 409.6
+          },
+          "target": {
+            "x": 340,
+            "y": 409.6
+          }
+        },
+        {
+          "p": {
+            "x": 340,
+            "y": 409.6
+          },
+          "target": {
+            "x": 340,
+            "y": 409.6
+          }
+        },
+        {
+          "p": {
+            "x": 340,
+            "y": 409.6
+          },
+          "target": {
+            "x": 340,
+            "y": 409.6
+          }
+        }
+      ],
+      "charged": true,
+      "chainGone": true,
+      "hammerBack": true
+    },
+    {
+      "difficulty": "furious",
+      "start": "storm_raise",
+      "mode": "storm",
+      "states": [
+        "storm_raise",
+        "storm_idle",
+        "storm_warn",
+        "storm_slam",
+        "storm_split",
+        "storm_idle",
+        "storm_warn",
+        "storm_slam",
+        "storm_split",
+        "storm_idle",
+        "spin",
+        "throw",
+        "hammer_catch",
+        "storm_idle",
+        "storm_warn",
+        "storm_slam",
+        "storm_split",
+        "storm_idle",
+        "storm_warn",
+        "storm_slam",
+        "storm_split",
+        "storm_idle",
+        "spin",
+        "throw",
+        "hammer_catch",
+        "storm_idle",
+        "storm_warn",
+        "storm_slam",
+        "storm_split",
+        "storm_idle",
+        "storm_warn",
+        "storm_slam",
+        "storm_split",
+        "storm_idle",
+        "spin",
+        "throw",
+        "hammer_catch",
+        "storm_idle",
+        "storm_warn"
+      ],
+      "counts": [
+        5,
+        5,
+        5,
+        5,
+        5,
+        5
+      ],
+      "targets": [
+        [
+          {
+            "x": 144,
+            "y": 344.6
+          },
+          {
+            "x": 242,
+            "y": 430
+          },
+          {
+            "x": 340,
+            "y": 344.6
+          },
+          {
+            "x": 438,
+            "y": 430
+          },
+          {
+            "x": 536,
+            "y": 344.6
+          }
+        ],
+        [
+          {
+            "x": 144,
+            "y": 344.6
+          },
+          {
+            "x": 242,
+            "y": 430
+          },
+          {
+            "x": 340,
+            "y": 344.6
+          },
+          {
+            "x": 438,
+            "y": 430
+          },
+          {
+            "x": 536,
+            "y": 344.6
+          }
+        ],
+        [
+          {
+            "x": 144,
+            "y": 344.6
+          },
+          {
+            "x": 242,
+            "y": 430
+          },
+          {
+            "x": 340,
+            "y": 344.6
+          },
+          {
+            "x": 438,
+            "y": 430
+          },
+          {
+            "x": 536,
+            "y": 344.6
+          }
+        ],
+        [
+          {
+            "x": 144,
+            "y": 344.6
+          },
+          {
+            "x": 242,
+            "y": 430
+          },
+          {
+            "x": 340,
+            "y": 344.6
+          },
+          {
+            "x": 438,
+            "y": 430
+          },
+          {
+            "x": 536,
+            "y": 344.6
+          }
+        ],
+        [
+          {
+            "x": 144,
+            "y": 344.6
+          },
+          {
+            "x": 242,
+            "y": 430
+          },
+          {
+            "x": 340,
+            "y": 344.6
+          },
+          {
+            "x": 438,
+            "y": 430
+          },
+          {
+            "x": 536,
+            "y": 344.6
+          }
+        ],
+        [
+          {
+            "x": 144,
+            "y": 344.6
+          },
+          {
+            "x": 242,
+            "y": 430
+          },
+          {
+            "x": 340,
+            "y": 344.6
+          },
+          {
+            "x": 438,
+            "y": 430
+          },
+          {
+            "x": 536,
+            "y": 344.6
+          }
+        ]
+      ],
+      "head": [
+        {
+          "p": {
+            "x": 340,
+            "y": 409.6
+          },
+          "target": {
+            "x": 340,
+            "y": 409.6
+          }
+        },
+        {
+          "p": {
+            "x": 340,
+            "y": 409.6
+          },
+          "target": {
+            "x": 340,
+            "y": 409.6
+          }
+        },
+        {
+          "p": {
+            "x": 340,
+            "y": 409.6
+          },
+          "target": {
+            "x": 340,
+            "y": 409.6
+          }
+        },
+        {
+          "p": {
+            "x": 340,
+            "y": 409.6
+          },
+          "target": {
+            "x": 340,
+            "y": 409.6
+          }
+        },
+        {
+          "p": {
+            "x": 340,
+            "y": 409.6
+          },
+          "target": {
+            "x": 340,
+            "y": 409.6
+          }
+        },
+        {
+          "p": {
+            "x": 340,
+            "y": 409.6
+          },
+          "target": {
+            "x": 340,
+            "y": 409.6
+          }
+        }
+      ],
+      "charged": true,
+      "chainGone": true,
+      "hammerBack": true
+    }
+  ],
+  "counters": [
+    {
+      "difficulty": "normal",
+      "route": "ordinary",
+      "reflected": true,
+      "bodyUndamaged": true,
+      "weaponUndamaged": true,
+      "states": [
+        "throw",
+        "hammer_catch",
+        "revenge_charge",
+        "throw",
+        "hammer_catch",
+        "hammer",
+        "spin",
+        "throw",
+        "hammer_catch",
+        "hammer"
+      ]
+    },
+    {
+      "difficulty": "normal",
+      "route": "space",
+      "reflected": true,
+      "bodyUndamaged": true,
+      "weaponUndamaged": true,
+      "states": [
+        "throw",
+        "hammer_catch",
+        "revenge_charge",
+        "throw",
+        "hammer_catch",
+        "hammer",
+        "spin",
+        "throw",
+        "hammer_catch",
+        "hammer"
+      ]
+    },
+    {
+      "difficulty": "normal",
+      "route": "retina",
+      "reflected": true,
+      "bodyUndamaged": true,
+      "weaponUndamaged": true,
+      "states": [
+        "throw",
+        "hammer_catch",
+        "revenge_charge",
+        "throw",
+        "hammer_catch",
+        "hammer",
+        "spin",
+        "throw",
+        "hammer_catch",
+        "hammer"
+      ]
+    },
+    {
+      "difficulty": "hard",
+      "route": "ordinary",
+      "reflected": true,
+      "bodyUndamaged": true,
+      "weaponUndamaged": true,
+      "states": [
+        "throw",
+        "hammer_catch",
+        "revenge_charge",
+        "throw",
+        "hammer_catch",
+        "hammer",
+        "spin",
+        "throw",
+        "hammer_catch",
+        "hammer",
+        "whirl_warn",
+        "whirlwind"
+      ]
+    },
+    {
+      "difficulty": "hard",
+      "route": "space",
+      "reflected": true,
+      "bodyUndamaged": true,
+      "weaponUndamaged": true,
+      "states": [
+        "throw",
+        "hammer_catch",
+        "revenge_charge",
+        "throw",
+        "hammer_catch",
+        "hammer",
+        "spin",
+        "throw",
+        "hammer_catch",
+        "hammer",
+        "whirl_warn",
+        "whirlwind"
+      ]
+    },
+    {
+      "difficulty": "hard",
+      "route": "retina",
+      "reflected": true,
+      "bodyUndamaged": true,
+      "weaponUndamaged": true,
+      "states": [
+        "throw",
+        "hammer_catch",
+        "revenge_charge",
+        "throw",
+        "hammer_catch",
+        "hammer",
+        "spin",
+        "throw",
+        "hammer_catch",
+        "hammer",
+        "whirl_warn",
+        "whirlwind"
+      ]
+    },
+    {
+      "difficulty": "furious",
+      "route": "ordinary",
+      "reflected": true,
+      "bodyUndamaged": true,
+      "weaponUndamaged": true,
+      "states": [
+        "throw",
+        "hammer_catch",
+        "revenge_charge",
+        "throw",
+        "hammer_catch",
+        "hammer",
+        "spin",
+        "throw",
+        "hammer_catch",
+        "hammer",
+        "whirl_warn",
+        "whirlwind"
+      ]
+    },
+    {
+      "difficulty": "furious",
+      "route": "space",
+      "reflected": true,
+      "bodyUndamaged": true,
+      "weaponUndamaged": true,
+      "states": [
+        "throw",
+        "hammer_catch",
+        "revenge_charge",
+        "throw",
+        "hammer_catch",
+        "hammer",
+        "spin",
+        "throw",
+        "hammer_catch",
+        "hammer",
+        "whirl_warn",
+        "whirlwind"
+      ]
+    },
+    {
+      "difficulty": "furious",
+      "route": "retina",
+      "reflected": true,
+      "bodyUndamaged": true,
+      "weaponUndamaged": true,
+      "states": [
+        "throw",
+        "hammer_catch",
+        "revenge_charge",
+        "throw",
+        "hammer_catch",
+        "hammer",
+        "spin",
+        "throw",
+        "hammer_catch",
+        "hammer",
+        "whirl_warn",
+        "whirlwind"
+      ]
+    }
+  ],
+  "spikeCollision": {
+    "warning": 0,
+    "inside": 1,
+    "outside": 0
+  },
+  "draws": {
+    "keys": {
+      "arch_storm_charge_0926": 183,
+      "arch_hammer_lightning_0926": 160,
+      "arch_orbital_sweep_0926": 3861,
+      "arch_chromium_spike_0926": 2046,
+      "arch_hammer_throw_0926": 452,
+      "arch_hammer_overhead_0926": 174,
+      "arch_hammer_flight_0926": 660
+    },
+    "frames": {
+      "arch_storm_charge_0926": 8,
+      "arch_hammer_lightning_0926": 8,
+      "arch_orbital_sweep_0926": 65,
+      "arch_chromium_spike_0926": 16,
+      "arch_hammer_throw_0926": 5,
+      "arch_hammer_overhead_0926": 8,
+      "arch_hammer_flight_0926": 8
+    }
+  },
+  "artEdges": [
+    {
+      "key": "arch_storm_charge_0926",
+      "edges": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "key": "arch_hammer_throw_0926",
+      "edges": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "key": "arch_hammer_overhead_0926",
+      "edges": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "spiral": [
+    {
+      "side": -1,
+      "points": [
+        {
+          "x": 155,
+          "y": 265.5
+        },
+        {
+          "x": 163.12284326021643,
+          "y": 299.3609071918115
+        },
+        {
+          "x": 178.8092164942552,
+          "y": 330.21557106295666
+        },
+        {
+          "x": 201.01193398168212,
+          "y": 356.7825424674579
+        },
+        {
+          "x": 228.42346208259346,
+          "y": 378.0346631102401
+        },
+        {
+          "x": 259.5485125875264,
+          "y": 393.23777791549287
+        },
+        {
+          "x": 292.78300457419664,
+          "y": 401.97386141099435
+        },
+        {
+          "x": 326.49532088896706,
+          "y": 404.14795948539313
+        },
+        {
+          "x": 359.10579812454256,
+          "y": 399.9791635337748
+        },
+        {
+          "x": 389.16060251119166,
+          "y": 389.97661628807555
+        },
+        {
+          "x": 415.3965428885114,
+          "y": 374.90225948827356
+        },
+        {
+          "x": 436.7939314180752,
+          "y": 355.72263933678687
+        },
+        {
+          "x": 452.61529099322433,
+          "y": 333.55255872331315
+        },
+        {
+          "x": 462.42848771810355,
+          "y": 309.5936850871231
+        },
+        {
+          "x": 466.11369593433415,
+          "y": 285.0713772012063
+        },
+        {
+          "x": 463.8544390420376,
+          "y": 261.1729794061142
+        },
+        {
+          "x": 456.1137493561003,
+          "y": 238.9906527877751
+        },
+        {
+          "x": 443.5972147396417,
+          "y": 219.47148257914995
+        },
+        {
+          "x": 427.20529371598496,
+          "y": 203.377140151797
+        },
+        {
+          "x": 407.97775548603454,
+          "y": 191.25481304443343
+        },
+        {
+          "x": 387.03341577301705,
+          "y": 183.42047899176754
+        },
+        {
+          "x": 365.5084813079271,
+          "y": 179.95492437140166
+        },
+        {
+          "x": 344.4967817847424,
+          "y": 180.71222963347805
+        },
+        {
+          "x": 324.99496409207165,
+          "y": 185.33979927406642
+        },
+        {
+          "x": 307.8553640595739,
+          "y": 193.30843452969262
+        },
+        {
+          "x": 293.7487781011181,
+          "y": 203.95046194930413
+        },
+        {
+          "x": 283.13875974311065,
+          "y": 216.50356364312157
+        },
+        {
+          "x": 276.2683977527393,
+          "y": 230.15772206193674
+        },
+        {
+          "x": 273.15983017349186,
+          "y": 244.10260305394544
+        },
+        {
+          "x": 273.62604991890066,
+          "y": 257.57275741208235
+        },
+        {
+          "x": 277.29389970818625,
+          "y": 269.8882172240584
+        },
+        {
+          "x": 283.6365713246318,
+          "y": 280.4883858777439
+        },
+        {
+          "x": 292.01344620079806,
+          "y": 288.95754989936074
+        },
+        {
+          "x": 301.71476493526404,
+          "y": 295.0408519035073
+        },
+        {
+          "x": 312.0084090953073,
+          "y": 298.65012783292383
+        },
+        {
+          "x": 322.1860281677824,
+          "y": 299.8595969816719
+        },
+        {
+          "x": 331.6058480710611,
+          "y": 298.8919679264962
+        },
+        {
+          "x": 339.72974727041947,
+          "y": 296.09605631645763
+        },
+        {
+          "x": 346.1525665411166,
+          "y": 291.917472984954
+        },
+        {
+          "x": 350.62210625454014,
+          "y": 286.86430864573583
+        },
+        {
+          "x": 353.0488326008929,
+          "y": 281.4699954689615
+        }
+      ],
+      "center": {
+        "x": 340,
+        "y": 265.5
+      },
+      "rx": 185,
+      "ry": 164.5
+    },
+    {
+      "side": 1,
+      "points": [
+        {
+          "x": 525,
+          "y": 265.5
+        },
+        {
+          "x": 516.8771567397836,
+          "y": 299.36090719181146
+        },
+        {
+          "x": 501.19078350574483,
+          "y": 330.21557106295666
+        },
+        {
+          "x": 478.9880660183179,
+          "y": 356.7825424674579
+        },
+        {
+          "x": 451.57653791740654,
+          "y": 378.0346631102401
+        },
+        {
+          "x": 420.4514874124736,
+          "y": 393.23777791549287
+        },
+        {
+          "x": 387.21699542580336,
+          "y": 401.97386141099435
+        },
+        {
+          "x": 353.504679111033,
+          "y": 404.14795948539313
+        },
+        {
+          "x": 320.89420187545744,
+          "y": 399.9791635337748
+        },
+        {
+          "x": 290.83939748880834,
+          "y": 389.97661628807555
+        },
+        {
+          "x": 264.6034571114886,
+          "y": 374.90225948827356
+        },
+        {
+          "x": 243.20606858192482,
+          "y": 355.72263933678687
+        },
+        {
+          "x": 227.38470900677567,
+          "y": 333.55255872331315
+        },
+        {
+          "x": 217.57151228189645,
+          "y": 309.59368508712316
+        },
+        {
+          "x": 213.88630406566585,
+          "y": 285.0713772012063
+        },
+        {
+          "x": 216.1455609579624,
+          "y": 261.1729794061142
+        },
+        {
+          "x": 223.8862506438997,
+          "y": 238.9906527877751
+        },
+        {
+          "x": 236.4027852603583,
+          "y": 219.47148257914998
+        },
+        {
+          "x": 252.79470628401504,
+          "y": 203.377140151797
+        },
+        {
+          "x": 272.02224451396546,
+          "y": 191.25481304443343
+        },
+        {
+          "x": 292.96658422698295,
+          "y": 183.42047899176754
+        },
+        {
+          "x": 314.4915186920729,
+          "y": 179.9549243714017
+        },
+        {
+          "x": 335.5032182152576,
+          "y": 180.71222963347805
+        },
+        {
+          "x": 355.00503590792835,
+          "y": 185.33979927406642
+        },
+        {
+          "x": 372.1446359404261,
+          "y": 193.30843452969262
+        },
+        {
+          "x": 386.2512218988819,
+          "y": 203.9504619493041
+        },
+        {
+          "x": 396.86124025688935,
+          "y": 216.50356364312157
+        },
+        {
+          "x": 403.7316022472607,
+          "y": 230.15772206193674
+        },
+        {
+          "x": 406.84016982650814,
+          "y": 244.10260305394542
+        },
+        {
+          "x": 406.37395008109934,
+          "y": 257.57275741208235
+        },
+        {
+          "x": 402.70610029181375,
+          "y": 269.8882172240584
+        },
+        {
+          "x": 396.36342867536825,
+          "y": 280.4883858777439
+        },
+        {
+          "x": 387.98655379920194,
+          "y": 288.95754989936074
+        },
+        {
+          "x": 378.28523506473596,
+          "y": 295.0408519035073
+        },
+        {
+          "x": 367.9915909046927,
+          "y": 298.65012783292383
+        },
+        {
+          "x": 357.8139718322176,
+          "y": 299.8595969816719
+        },
+        {
+          "x": 348.394151928939,
+          "y": 298.8919679264962
+        },
+        {
+          "x": 340.27025272958053,
+          "y": 296.09605631645763
+        },
+        {
+          "x": 333.8474334588834,
+          "y": 291.917472984954
+        },
+        {
+          "x": 329.37789374545986,
+          "y": 286.86430864573583
+        },
+        {
+          "x": 326.9511673991071,
+          "y": 281.4699954689615
+        }
+      ],
+      "center": {
+        "x": 340,
+        "y": 265.5
+      },
+      "rx": 185,
+      "ry": 164.5
+    }
+  ],
+  "videos": [
+    {
+      "states": [
+        "storm_raise",
+        "storm_idle",
+        "storm_warn",
+        "storm_slam",
+        "storm_split",
+        "storm_idle",
+        "storm_warn",
+        "storm_slam",
+        "storm_split",
+        "storm_idle",
+        "spin",
+        "throw",
+        "hammer_catch",
+        "storm_idle",
+        "storm_warn",
+        "storm_slam",
+        "storm_split",
+        "storm_idle",
+        "storm_warn",
+        "storm_slam",
+        "storm_split"
+      ],
+      "seconds": 25,
+      "file": "charged_hammer_chromium.webm"
+    },
+    {
+      "states": [
+        "spin",
+        "throw",
+        "hammer_catch",
+        "revenge_charge",
+        "throw",
+        "hammer_catch",
+        "hammer",
+        "spin",
+        "throw"
+      ],
+      "seconds": 14,
+      "file": "counter_spiral_left.webm"
+    },
+    {
+      "states": [
+        "spin",
+        "throw",
+        "hammer_catch",
+        "revenge_charge",
+        "throw",
+        "hammer_catch",
+        "hammer",
+        "spin",
+        "throw"
+      ],
+      "seconds": 14,
+      "file": "counter_spiral_right.webm"
+    }
+  ],
+  "errors": [],
+  "suite": {
+    "incoming": {
+      "passed": 4957,
+      "failed": 0
+    },
+    "earlier": {
+      "passed": 4981,
+      "failed": 0,
+      "exit": 0
+    },
+    "final": {
+      "passed": 4980,
+      "failed": 1,
+      "exit": 1,
+      "name": "a second lance may destroy the wounded 3-drone column"
+    },
+    "prior_final": {
+      "passed": 4980,
+      "failed": 1,
+      "exit": 1,
+      "name": "road tank changes among the eight drive headings instead of sliding on one axis (0)"
+    }
+  }
+}

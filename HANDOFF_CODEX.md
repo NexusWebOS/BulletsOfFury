@@ -804,3 +804,288 @@ See `docs/PORTRAITS_REBELS_0922.md` and its HTML visual catalog. Current likenes
 - Four shield-generator cores now follow fixed boss-relative offsets; camera/background scrolling no longer moves them independently. Independent chaingun helper patterns preserved.
 - Chromium scroll/movement/rearm/hitbox checks passed with no browser errors. Syntax passed; full suite exit 1, 4,905 pass / same 75 baseline failures.
 - Details: docs/STAGE4_CORE_ANCHORS_0922.md. Nothing committed or pushed.
+
+
+## September 26: Stage 5–9 HUD, controller, weapon and combat repairs
+
+See docs/GAMEPLAY_REPAIRS_0926.md for the exact implementation, generated asset prompts and remaining limits. Saved raw pad bindings now survive boot; radar/LOCK join the bottom rail and active specials overlay it; Firewhip is selectable after Fire discovery with one combine credit. Level-1 previews, hammer/cannon retina targets and missile counter context repaired. New Stage 5 turntable/orbital/beam sheets and late-stage projectile frames installed. Full suite: 4,957 pass / zero fail, exit 0; 15 Chromium boss opening checks, 90 preview cases and targeted collision/HUD/controller tests passed. The controller check uses a synthetic pad; full unassisted campaign balance runs remain open. All prior work preserved; nothing committed or pushed.
+
+## September 26: correct the hammer identity and repeated-strike recovery
+
+Mike rejected the double-headed weapon in the first generated strike/whirlwind sheets. Active reels now use the canonical single cylindrical blue head: twelve strike/recovery poses and eight whirlwind poses. Every repeat has a lowered idle hold, then wind-up and jump; orbital recovery returns into view above the HUD. Head damage/Retina targets follow the drawn pose. See docs/HAMMER_CONSISTENCY_0926.md and docs/hammer_consistency_art_0926.json. Real Chromium repeat checks passed on Normal/Hard/Furious, no clipped strike frames or page/console errors, three focused recordings saved. Latest full suite: 4,957 pass, zero fail, exit 0; an earlier run exited 1 on two intermittent jet-dodge assertions (both logs preserved). Game LF/test CRLF retained. No commit or push.
+
+## September 26: whirlwind disarm and second-half arsenal
+
+See docs/HAMMER_OVERDRIVE_0926.md. Whirlwind now crosses the full arena 2/3/4 times on Normal/Hard/Furious with acceleration and reversal warnings. Spaced hits disarm it (4/6/8 normal impacts, missiles count double), throwing the authored hammer loose and giving a five-second double-damage stun with generated static; recoil keeps the boss in view. Below 50%, deterministic warned cannon rakes/cooling, committed columns and chromium beam replace the old cannon loop. Broken-cannon core gets warned directional twin-gun rakes and beam/column rotation. New blue-reactor casting reel and reticles above the HUD. Final full suite 4,957 pass/0 fail, exit 0; native Chromium verifies all difficulties, real bullet disarm and original strike/orbital regressions, no page/console errors. Four focused videos at _shots/hammer_overdrive_0926/review.html. No commit/push.
+
+
+## September 26: replace akimbo with the charged hammer
+
+See docs/HAMMER_STORM_0926.md and docs/hammer_storm_art_0926.json. Cannon destruction now restores the approved hammer/armor, raises it into a lightning charge, and runs committed slams whose ground Retina markers split into 3/4/5 chromium eruptions. Generated 52 frames across six sheets: charge, catch/throw, overhead twirl, detached hammer, lightning and chromium spikes. Ordinary shots, space shots and Retina missiles can send the flying hammer back; magnetic recall/catch leads into faster behind-head twirl and a randomly mirrored inward spiral. The retaliation is counterable without an endless counter loop. Earlier whirlwind/stun and intact-cannon arsenal retained. No akimbo continuation.
+
+Real Chromium: all three difficulties and all nine counter routes pass, spike warning/damage/safe areas verified, zero clipped pose edges, zero page/console errors. Three real-canvas clips at _shots/hammer_storm_0926/review.html; controlled invulnerable/muted fixtures, asteroid stream suppressed only for preview. Original strike/orbital regression passes. Syntax and whitespace checks pass; game LF/test CRLF preserved. Earlier full suites passed 4,981/0; final runs each exited 1 at 4,980/1 on alternating pre-existing random road-tank/drone-column assertions. Exact names, evidence and logs are in the report; all hammer assertions passed. No commit/push.
+
+## September 26: bottom-row chromium sweep and remove throw warnings
+
+Mike requested removing hammer-throw warnings and replacing staggered short spikes with a sequential bottom row. See docs/HAMMER_BOTTOM_ROW_0926.md and docs/hammer_bottom_row_art_0926.json. Ordinary/retaliation wind-ups retain their art and spin sound but no FOV, Retina, alert or warning clock. Generated 16-frame tall chromium sheet, preserved source alpha; 3/4/5 columns glow and rise in order with alternating sweep direction. Peak shaft is 384 logical pixels (75% of the 512-pixel game height); collision grows/retracts with the visible shaft, leaving safe gaps/residue. Rightmost hazard remains visible over the overlapping LOCK/radar footprint.
+
+Final full suite: 4,997 pass / 0 fail, exit 0 and final banner. Initial run's single stale boomerang-warning requirement was corrected to the requested behavior. Native Chromium Normal/Hard/Furious loops and all nine counter routes pass, zero throw warnings, zero clipped opaque sprite edges, zero page/console errors. Three refreshed clips: _shots/hammer_bottom_row_0926/review.html; earlier storm preview links forward. Game LF and test CRLF retained. No commit/push.
+
+
+## September 26: randomized eight-spike field with a red escape window
+
+See docs/HAMMER_RANDOM_SPIKES_0926.md. All difficulties now get eight evenly spaced bottom Retina positions, with a newly shuffled committed order per slam (no repeated identical order). Each lane runs green/yellow/red for three seconds, including a full second of red before eruption; its authored red zone covers the complete future shaft with a small margin. Normal/Hard/Furious gaps are .50/.42/.34 seconds. The generated 75%-height spikes, visible damage, safe residue and warning-free throws remain. Existing shared warning art reused; no new generation needed.
+
+Final full suite: 5,012 pass / 0 fail, exit 0 and final banner. Chromium: all difficulties and nine counters pass; actual sidestep avoids damage, staying hits at 1.15 seconds after red, 3,233 damage points all covered by rendered warning pixels, zero page/console errors. Initial escape fixture overlapped the boss body; corrected fixture below the body passes, with both logs retained. Three clips and updated preview at _shots/hammer_random_spikes_0926/review.html. Game LF and test CRLF retained. No commit/push.
+
+
+## September 26: restore full-size Retinas and cover off-screen map edges
+
+See docs/HAMMER_WORLD_ROW_0926.md. Stage 5 is 680px wide versus the 480px camera. Retinas restored to 96px (five widths per view); row now spans the entire world, including edge-centered spikes. Current world positions: 4, 100, 196, 292, 388, 484, 580, 676. Eight positions TOTAL across the world, not eight shrunken markers in one view. Camera movement cannot relocate or drop the row. Random order, green/yellow/red and full-second red warning, tall generated shafts and warning-free throws remain.
+
+Final full suite: 5,021 pass / 0 fail, exit 0 and final banner; no failing names versus the 5,012/0 baseline. Chromium passes both-edge movement/damage on all difficulties, identical geometry across three camera views, all prior phase/counter/escape tests, zero page/console errors. First camera assertion failed because the fixture omitted the render-loop camera update; corrected fixture passes, logs retained. New scrolling video and screenshots: _shots/hammer_world_row_0926/review.html. Game LF/test CRLF retained. No commit/push.
+
+
+## September 26: round columns and shared asterisk countdown
+
+See docs/HAMMER_ROUND_ZONES_0926.md. Mike rejected the narrowing red cone: warnings now keep the full 96px Retina diameter with rounded caps, reusing the authored plate through runtime slicing. Shared green/yellow/red impact-imminent asterisks sit at the column crowns below the boss gauge, follow the Retina countdown, and clear at eruption. World-wide row, random order, warning duration, spike animation/collision and hammer counters retained.
+
+Final full suite: 5,033 pass / 0 fail, exit 0 and final banner; no failing names versus 5,021/0. Native Chromium checks constant 96px width, round corners, all 3,233 damaging points covered, actual asterisk colors, both scrolling edges, three difficulties and nine counters. Zero page/console errors. First probe found one lower-boundary pixel outside the round foot; four extra pixels of bottom margin fixed it, verified on rerun. Updated recording/screenshots: _shots/hammer_round_zones_0926/review.html. Game LF/test harness CRLF preserved. No commit/push.
+
+
+## September 26: framed signs, fast eruptions and committed recovery
+
+See docs/HAMMER_SIGN_RECOVERY_0926.md. Replaced bare asterisks with the existing metal-framed bmfx_badge warning signs. Hard/Furious spike rises are 1.8x/2.8x faster (full height at .211/.136 seconds vs .38 Normal); eruption spacing is .30/.20 seconds vs .50 Normal. Full-second red warnings, round full-width zones, complete world row and authored collapse remain. Five authored recovery poses now lead into an eased return to a fixed world-space upper-arena home, independent of camera scrolling.
+
+Final full suite: 5,048 pass / 0 fail, exit 0 and final banner, versus 5,033/0 baseline. Initial run exited 1 at 5,047/1 on the exact-release sign assertion; comparing the shared absolute Retina timestamp fixes the floating-point boundary. Both logs retained. Chromium verifies three difficulty timings, both-side recovery under scrolling, all prior counter/escape/row checks, zero page/console errors. Three 24-second comparison clips and inspected screenshots: _shots/hammer_sign_recovery_0926/review.html. Game LF/test harness CRLF preserved. No new assets or commit/push.
+
+
+## September 26: interruptible Chromium empowerment and healing
+
+See docs/HAMMER_CHROMIUM_RECOVERY_0926.md. After cannon destruction, the raised single-headed hammer shakes and pulses while a pixel-stepped Chromium glow climbs the boss. Armor, held hammer and gauge share cyan/silver/green palettes. He restores 25% maximum HP over six seconds, previewed by a pulsing RECOVERY segment. Direct shots, space shots and Retina missiles can break the raised core: the engine explosion gets a scoped Chromium tint, all healing from that charge is revoked, and the boss enters four seconds of double-damage stun. A 2.4-second visible hammer rebuild and armor sweep restore empowerment without retrying the heal. Damage flashes remain visible over empowered palettes.
+
+Final full suite: 5,083 pass / 0 fail, exit 0 and final banner, versus 5,048/0 baseline. All full-suite runs this pass passed. Native Chromium verifies all nine interruption routes, three complete heals, actual pulse/segment/hit-flash pixels, target jitter and stun/rebuild transitions. Existing world-row, spike, counter and eased-return regressions pass; zero page/console errors. Two inspected 20-second focused recordings: _shots/hammer_chromium_recovery_0926/review.html. The interruption clip uses native Retina damage in a controlled invulnerable fixture; it is not an unassisted campaign run. Durable reports under docs/qa/hammer_chromium*. Game LF/test CRLF retained. No new raster generation or atlas changes; no commit/push.
+
+
+## September 26: shake the complete hammer handle and hilt
+
+Mike spotted that the original shake stopped partway down the handle. The raised hammer head, shaft, hilt and gripping hands now move together through the lowest visible handle pixels. A short upper-body flex joins the movement to the anchored torso; the charging glow covers the complete shaft. No new art or atlas edits. Healing, core interruption and reconstruction retain their behavior.
+
+Full suite: 5,083 pass / 0 fail, exit 0 and final banner, unchanged from baseline. Native Chromium: 24 head/shaft/hilt/torso pixel comparisons across three raised poses and both shake directions all match 100%; existing nine damage-route and three complete-heal checks pass. No page/console errors. Inspected nine-second gameplay recording and enlarged crop at _shots/hammer_full_handle_0926/review.html. Details: docs/HAMMER_CHROMIUM_RECOVERY_0926.md; durable QA: docs/qa/hammer_full_handle_0926.json and hammer_full_handle_regression_0926.json. Game LF/test CRLF retained; no commit/push.
+
+
+## September 26: lightning charges hammer, chest core spreads Chromium outward
+
+Mike replaced the bottom-up empowerment with a chest-origin pulse. Lightning follows the shaking hammer tip and charges the weapon first. After 0.35 seconds, a bright reactor pulse and pixel-stepped expanding wave reveal the armor outward through the arms and legs. Rebuilding uses the same outward mask. Full-handle shake, healing timing and core counter remain. See docs/HAMMER_CHROMIUM_RECOVERY_0926.md; new recording/screenshots: _shots/hammer_core_wave_0926/review.html.
+
+Syntax passed. Both full suites reached their final summaries at 5,082 pass / 1 fail, exit 1: 'a second lance may destroy the wounded 3-drone column'. Immediate baseline was 5,083/0; this exact intermittent failure is recorded in HAMMER_STORM_0926.md. No other failures; hammer checks passed. Native Chromium verifies initial hammer-only charge then core/arms/boots reveal, three difficulty timings, all nine core damage routes and completed/cancelled healing, hit flashes and gauge pixels, zero page/console errors. Reports: docs/qa/hammer_core_wave_0926.json and hammer_core_wave_regression_0926.json. Inspected real-canvas video/contact sheet; no new raster generation or atlas changes. Game LF/test CRLF retained; no commit/push.
+
+
+## September 26: red recovery bar without text
+
+Mike requested the pending recovery bar in red, without text. The segment and its pulse glow now stay #ff3030; the RECOVERY label is removed. Actual HP and armor keep their Chromium palette. Inspected native Chromium screenshot and refreshed video at _shots/hammer_core_wave_0926/review.html?v=red-recovery; no page/console errors. Syntax and final full suite passed: 5,083 assertions / 0 failures, exit 0 and final banner. Prior baseline was 5,082/1; the known intermittent drone assertion passed this run. Log: _shots/test_fl_red_recovery_0926.log. Game LF/test CRLF retained; no commit/push.
+
+
+## September 26: Stage 2–4 encounter revamp and nuclear ordering
+
+See docs/STAGE2_4_ENCOUNTERS_0926.md and docs/qa/stage2_4_encounters_0926.json. Stage 2 miniboss has a separate black/charred Furious book; Stage 3 keeps the original Frost Cruiser and Rime Wall hulls with neutral fight -> nuclear missile/engine explosions/whiteout -> Fire/Ice forms on Furious. Opposite element is 2x, same/neutral is 1x. Stage 4 bosses and helpers now take coordinated attack turns. The new assets/encounters_0926.js owns these live encounter directors; editor scenes retain their existing path. Full suite: 5,142 pass, zero fail, final banner and exit 0; no failing names against the 5,083/0 baseline. All 15 native Chromium cases, damage checks and five focused videos completed without page/console errors. Videos are invulnerable inspection fixtures, not campaign balance proof. Game LF/test CRLF preserved. Earlier work retained; nothing committed or pushed.
+
+
+## September 26–27: Stage 5 music and shared weapon muzzle feedback
+
+See docs/WEAPON_MUZZLES_0926.md and docs/qa/weapon_muzzles_0926.json. Stage 5 miniboss now uses the former boss track (Deadly Night); the main boss uses Mike's Hammerman Cometh, encoded for browser playback with the source WAV preserved. New assets/weapon_muzzles_0926.js attaches authored, weapon-specific muzzle reels to actual player/enemy releases, includes Maverick/Falva nose charges, ice breath and chain lightning, and replaces the flat player chaingun triangle and Stage 4 turret arrow flashes. Reaver, Warden, Sovereign and Stage 4 helper shots/flashes now use corrected visible barrel or launch-pod mounts. Shared flashes draw above boss hulls and support cached canvas art.
+
+Final syntax checks pass. Full suite reaches the final banner: 5,159 pass / 0 fail, exit 0, against 5,142/0 baseline. Early passes found two stale source checks and two asymmetric hardpoint checks; source expectations and actual mirrored geometry were repaired. Native Chromium checks 55 valid pilot/weapon combinations, eight special/missile routes, all 11 reel families, moving-emitter lifetime behavior, three boss firing points and both actual audio decodes. Zero page/console errors. Five focused native recordings and inspected stills: _shots/muzzles_0926/review.html. Fixtures are for visual inspection, not campaign difficulty proof. Game LF/test CRLF retained. Existing work preserved; no commit or push.
+
+
+## September 27: Stage 7/9 directors, field reactions, Stage 6 clarity
+
+See docs/LATE_GAME_COMBAT_0927.md and docs/qa/late_game_combat_0927.json. New assets/combat_ai_0927.js and assets/late_encounters_0927.js own shared ordinary-enemy reactions/release gates, independent ally evasions (player timing: roll 5s, somersault 7s after completion), Stage 6 traffic/fire coordination and Rival turns, plus new Dredger/Warden/Horizon/Sentinel/Sovereign attack books. Preserved Warden story/core/cripple/escape and Sentinel fusion. Fixed missing drone sine amplitudes, cached-canvas Stage 9 projectile dimensions, new energy ordnance smoke and mine snapping. Existing authored art reused; no atlas edits.
+
+Final syntax and full suite pass: 5,190 assertions / 0 failures, exit 0 and final banner (baseline 5,159/0). Native Chromium: 12 encounter/difficulty cases, nine-stage field rendering with 75 managed types, real ground/space missile damage and turret anchoring, predictive dodges, mine motion, Warden results transition, and projectile pixels. No page/console errors. Stage 6 peak hostile bullets in the controlled eight-ally window fell 35→26 / 42→34 / 61→48 (Normal/Hard/Furious). Five inspected native clips at _shots/late_game_0927/review.html are invulnerable inspection fixtures, not full campaign balance proof. Full mortal controller testing remains a tuning step. Game LF/test CRLF retained. Nothing committed or pushed.
+
+
+## Codex update — 2026-09-27: modular Stage 7 tank/Warden and menus
+
+- Mike explicitly authorized modular replacement of the Stage 7 tank and Warden.
+  `assets/stage7_modular_0927.js` now owns these encounters; Stage 9 remains in
+  `late_encounters_0927.js`. Seven generated sheets are registered as `s7m_*`.
+- Six Warden modules, protected canisters, front/rear destruction gates, delayed
+  exposed shield bar/counter-volley, survivor-gun and raised-mask laser endings;
+  reversing terrain pursuit, swipes, committed jump/slam and three toxic orb waves.
+  Tank chassis is constrained to the solid central ground corridor.
+- Upright portal sits at the final traversable floor, 610px before the decorative
+  void in the master. The Stage 7 spawn now requires actual terrain progress.
+- Password horizontal navigation remains on its row; full-size cover/title and
+  readable Fury Fighters opener. New generated-art prompts and paths are saved.
+- Verification: syntax passed; full suite **5,221 passed / 0 failed**, exit 0
+  (incoming 5,190/0; no failing-name regressions). Six native difficulty cases,
+  native bullets/beams/Retina missiles, keyboard navigation, screenshots and three
+  review videos. No page/console errors. LF/CRLF preserved.
+- Full notes: `docs/STAGE7_MODULAR_0927.md`; evidence:
+  `docs/qa/stage7_modular_0927.json`; preview:
+  `http://127.0.0.1:8794/_shots/toxic_modular_0927/review.html`.
+- Recordings are invulnerable inspection fixtures; named modules are forced to
+  break in the progression clip. Do not present them as campaign balance clears.
+  Existing work preserved; nothing committed or pushed.
+
+
+## September 27: Reaperman is the Stage 7 boss theme
+
+Mike supplied reaperman.wav. Both boss7 music aliases now select the encoded
+Reaperman track; the previous theme is preserved byte-for-byte as
+assets/game/music/unused13 - stage7b.mp3. Original WAV copied intact into
+originals_0927; Desktop source untouched. Field music remains Over The Horizon.
+Native Chromium decoded and played both new/archived themes with zero errors.
+Syntax and full suite passed: 5,221 assertions, zero failures, exit 0 and final
+banner; unchanged from 5,221/0 baseline. No gameplay code changes. Details:
+docs/STAGE7_MUSIC_0927.md and docs/qa/stage7_music_0927.json. Nothing committed/pushed.
+
+
+## September 27 overnight gameplay/audio pass, 04:40 checkpoint
+
+See docs/OVERNIGHT_0927.md latest checkpoint and docs/VIDEO_REVIEW_0927.md.
+Full suite: 5,309 passed, zero failed (suite-8.log), all runtime syntax checks pass.
+Ten real Chromium clips with captured audio, 14 mastered SFX, 42 audible aliases,
+51 encounter inspections and 27 improved finite-life campaign probes. Full human
+balance is NOT approved; finite-life bot remains weak against ground warnings.
+Review: http://127.0.0.1:8794/_shots/overnight_0927/review.html.
+Current scheduled work continues until Sep27 08:00 NY. Nothing committed/pushed.
+
+
+## September 27 overnight pass, 05:15 checkpoint
+
+Current suite:5,316/0 (suite-12.log). Stage6 ally targeting/recharge and Tempest
+warning clarity repaired. Stage7 generated body removes doubled faceplate;
+mask/laser/muzzle warnings aligned. Native later-phase coverage17cases;
+13 current audio clips. Saved gamepad reload/reconnect works with simulated
+raw buttons2/5; physical pad untested. Review and detailed remaining work in
+docs/OVERNIGHT_0927.md and docs/qa/BOSS_DIFFICULTY_REVIEW_0927.md.
+Finite-life stage-script probes are arcade setups, not full campaign wins.
+Scheduled work continues to08:00 NY; no commit/push.
+
+
+## September27 overnight, 05:55 checkpoint
+
+Suite5327/0, final banner/exit0 (`suite-16.log`). Fixed Stage4 generator access/HUD
+placement and helper bounds; Horizon first-tick HP reset/durability/shared gauge;
+Tempest return warnings; compact Stage6 HUD radio with special priority.
+33 immunity damage-window samples are NOT player clears. 14current audio clips
+and native screenshots in the overnight review. See docs/OVERNIGHT_0927.md
+and docs/qa/BOSS_DIFFICULTY_REVIEW_0927.md for metrics and remaining work.
+Next: Stage8 natural full-form progression and normal-life balance until08:00 NY.
+No pending tools or writes; no commit/push.
+
+
+## September 27 06:40 New York checkpoint — current verified state
+
+Full suite `suite-22.log`: **5,347 passed, zero failed, final banner, exit0**. This follows the incoming5327/0 checkpoint. Suite19 aborted because a much earlier legacy fixture left playerHit stubbed; the new respawn regression now temporarily restores the real source function, then restores the prior binding. Suites20–22 pass. No commit/push. game.js remains LF; test_fl remains CRLF. Latest arrow-color synchronization is after suite22 and will be included in the next full run.
+
+- Stage8 full-form natural damage routing: `probe_finale_progression_0927.py`, finale-progression/report.json. Ordinary aiming/fire, SpaceLaserIII/autoMissilesII, immunity except authored grabs,99reserve lives. All four forms defeated N274.63/H333.07/F384.58seconds, no deaths/errors/nonfinite projectiles. These are diagnostic durations, not campaign wins or human balance. Initial Furious sample timed out at360s; extended bound480s. A sound-wrapper fixture duplicates counts on later runs; do not use its raw cue counts as measurements.
+- Final boss collision/Retina/shield pose now follows visible forms. Submerged phantom and clone formation center expose no invisible hitbox/lock; all four clones expose independent generic echo targets. Fake hits enrage that fake, real hits damage the boss. Knight/phantom/box use their own timed collision windows, without extra generic hull damage during a warning. Phantom and knight use local shared ground retinas/signs. Native finale-targets probe10checks/errors0; screenshots viewed. Refreshed cannon/finalform clips with sound; finalform peak.609.
+- Actual-keyboard Hammer sample:22.18simseconds, ordinary collision, pauses between observations. Dodged a leap, countered into stun, then lost two lives to blast/another leap. Found real respawn bug: reset(true) reused the falling wreck's coordinates. playerHit now remembers the actual lethal-hit point; respawn restores it, clears stale velocity/somersault input, keeps the authored burning fall and120frame grace. Native real death->spin->respawn in all9stages returns exactly to hit position and spends one life. Warmed before/after space screenshots inspected. No claim that every possible movement bug is gone.
+- Optional Rival Fight: five individual moving Retina/missile targets replace the formation-center target. No target while entering/warping/dead. Two chosen allies now use the shared navigation/evasion controller with normal5s roll/7s somersault recharge, correct poses and muzzle audio. AI tick moved from drawWorld to updatePlay, so rendering cannot advance cooldowns or fire. Native menu->Axel+Decker selection->card and30s fixture verifies both evasions/recharge, individual target damage and update-only progress. Generated controller prompts replace raw key text. Native first audio clip peak.830/errors0; label was found camera-relative and corrected. Refreshed clip pending.
+- Furious Stage2 actual keyboard sample:13.45simseconds, ordinary damage, pauses; three lethal mistakes, no clear. It exposed paired cannon warnings/releases left at an old hull location. Incoming lanes now follow their owner's actual launcher while retaining committed firing direction; applies to bomber and ordinary missile jets too. Native moving-launchers probe checks both Magma mounts,5rounds per mount and bomber release; screenshots viewed. Arrow colors now use the same thirds as the shared green/yellow/red FOV.
+
+Evidence: `_shots/overnight_0927/{finale-progression,finale-targets,respawn,rival-route,moving-launchers,manual-hammer-normal,manual-ward-furious}`. Current review recordings are being expanded to include every configured encounter across all9stages; fixtures remain explicitly labeled as inspection, not wins. Continue until08:00. Physical8BitDo and uninterrupted human campaign/difficulty progression remain unverified.
+
+
+## September 27 07:15 New York checkpoint — current verified state
+
+Full suite `suite-28.log`: **5,351 passing, zero failed, final banner, exit0**. No commit/push. This supersedes suite22 at06:40. game.js LF/test_fl CRLF preserved.
+
+- Optional Rival Fight now clears temporary arena/allies on normal stage entry/title, restarts with the same five rivals and two chosen allies, saves its campaign return point rather than the arena's neutral stage number, and clears prior crew progression on a fresh campaign. Native menu/route/save/restart/cleanup checks all pass. Harness initially loaded Rival24 too late: suites23/25 had one cleanup failure,24 also had a lance failure. Loading the module with the initial runtime boot resolves the lifecycle harness mismatch; suites26–28 green.
+- Reproduced intermittent legacy lance-column failure:6/150 attempts. The supposedly fixed targets randomly initiated airPatternTick lane curves before bullet collision; resetting them afterward was too late. Pin original target slots and a stationary route, keep all real bullet/hit/damage logic. Strengthened first-hit assertion to require all3 targets alive at1HP.150 repeats now pass; no gameplay lance or AI change.
+- Generated six Stage4 ammunition families here (no SpriteCook), four frames each. New owning build measures uneven row gutters, preserves genuine RGBA and shared pixel scale, pads to256x320 cells. Replaces procedural Stage4 shells/rockets plus boss/mini MG and rocket art; no collision/damage/movement changes. Native24-frame renderer audit and actual Olive fight screenshots checked. Taxonomy/provenance registered. Stage3 still uses flat polygon ordnance; new generation is pending, not integrated yet.
+- Review now25 real Chromium recordings with actual sound, covering all17 configured encounters plus late phases, Rival route and fleet. Three Stage4 captures refreshed after projectile change. All clips finite/zoom1/no page or console errors; movement max3.51px in these fixtures. Music gain explicitly0 during captures (helicopter intro previously restarted it). Largest current SFX-only peak .890 (Rival). Native review page decodes25videos+14solo sound auditions and all images,9working stage links; screenshots inspected.
+
+Evidence: `_shots/overnight_0927/review.html`, `review_check.json`, `ordnance/report.json`, `rival-route/report.json`, `lance-stable-path.log`. These are selected-phase/immunity recordings, not campaign wins. Physical8BitDo hardware and full human difficulty progression remain unverified. Stage3 ammunition generation pending. Continue authorized work until08:00, then stop and report remaining work honestly.
+
+
+## Latest verified state — September 27, 07:45 New York
+
+This is the current result; earlier checkpoint blocks below are history. Scheduled work remains authorized only until08:00. Nothing committed or pushed.
+
+- Full suite `suite-30.log`: **5,351 passing assertions, zero failures, final FALVA/LIZZIE success banner, exit0**. Syntax passes. Runtime `assets/game.js` remains LF; `test_fl.js` remains CRLF. Incoming September27 baseline was5,221/0; the intermediate failures and their repairs are recorded below.
+- Review: [29 recordings and14 sound auditions](http://127.0.0.1:8794/_shots/overnight_0927/review.html),16m24s total nominal footage. Every configured encounter appears, across all9stages, with added Furnace core/head, paired Sentinels and Warden shield. Music muted for effect inspection. All43media files decoded;9stage links work; no native page/console errors. SFX-only peak maximum.893; normal input movement maximum3.51logicalpx/frame in these fixtures; zoom1 throughout. These selected-phase/immunity clips are **not campaign victories**.
+- Generated and integrated24frames each for Stage3 ice and Stage4 military ammunition. Six families per stage, using measured row gutters and genuineRGBA. Game-owned XART/drawImage inspection confirmed all48frames and every actual drawBullets route; hitbox dimensions remain unchanged. Stage4 boss machine-gun/rocket routes use the new art too. Stage3/4 recordings refreshed. Sources/build/provenance/taxonomy retained; no SpriteCook.
+- Furnace detached head now loses its permanently obsolete empty shield gauge. Core/arms and rearming shield gauges remain. Final head recording visually checked after this change.
+- Normal Portal Warden actual keyboard sample:29.28simseconds, pauses between observations, ordinary damage/lives and MGIII/autoMissileII. Destroyed one front leg and observed its balance pose, avoided a committed chaingun and the jump center, then lost two lives to toxic volleys. No clear or balance claim.
+- Normal Tempest actual keyboard retry:19.80simseconds including double-tap input frames,17actions, ordinary collision/lives. Real somersault and barrel roll registered and their7s/5s recharge advanced normally. Three deaths, one life remaining, no clear. Holding Retina intentionally blocks lateral double-tap rolls in the existing control design; release it to roll. This remains a high-priority human balance review. No difficulty change was made solely to rescue an input bot.
+
+Current durable evidence: `docs/qa/overnight_0927.json`, `docs/VIDEO_REVIEW_0927.md`, `docs/qa/BOSS_DIFFICULTY_REVIEW_0927.md`. Native outputs live under `_shots/overnight_0927/` including `ice-ordnance`, `ordnance`, `manual-warden-normal`, `manual-tempest-normal-retry`, `late-review` and `review_check.json`.
+
+Still unverified: uninterrupted human campaign clears across all difficulties, physical8BitDo hardware, and a strict stage-by-stage difficulty ranking. Tempest overlapping pressure, Hammer counter timing after cooldown use, Warden post-death firepower, and final-form fake/real target judgment need player review. This pass does not certify every legacy projectile graphic or every possible boss sound as finished.
+
+
+## 08:00 handoff — September 27 overnight cutoff
+
+The final game change was hiding the permanently obsolete Furnace head shield gauge; suite30 afterward passes5351/0 with the final banner and exit0. All13 changed runtime modules pass syntax. No commit or push. The runtime is LF and testsCRLF.
+
+Current review contains29 real Chromium recordings with captured SFX (16m24s nominal),14 sound auditions and two new projectile frame galleries. Every media file and image loads, all9 stage links resolve, and native page/console errors are empty. Review: http://127.0.0.1:8794/_shots/overnight_0927/review.html.
+
+Final actual-keyboard Horizon Normal sample (`manual-horizon-normal/report.json`):31 actions,53.1 simulated seconds with pauses between observations, ordinary collision/lives, selected Cole/SpaceLaserIII/autoMissilesII equipment. No forced kill or damage immunity after the initial2frame grace. BossHP6327→0 by51.1s; two lives lost, including a death during the defeat sequence. Play resumed alive with2 lives at53.1s. Eight manual missiles spent without Retina lock; primary/auto missiles also active, so the total HP loss is not a manual-missile-only damage measurement. All four attacks observed. No page/console errors. This is a paused encounter clear, not a real-time campaign win.
+
+Remaining priorities: Normal Tempest combined attack pressure; Hammer counter/recovery survival with ordinary acquired gear; Warden full module order and post-death weapon-tier recovery; human final-form decisions; uninterrupted1–9 Normal/Hard/Furious progression and actual8BitDo hardware. The review also records remaining legacy art/audio/cinematic auditing. Nothing here certifies every prior creative request complete or all difficulties balanced.
+
+All temporary output is under `_shots/`. Keep existing user work intact. Scheduled work ends at08:00NewYork; further implementation requires Mike's next instruction.
+
+
+## September 27 afternoon — corrected modular roster
+
+Mike corrected the new modular boss to Stage 3, requested the Stage 4 boss/black-brown warship/helpers too, moved the Earth bomber request to Stage 6, and authorized space Tempest remakes for Stage 5. Implemented in assets/modular_roster_0927.js plus measured generated art metadata. See docs/MODULAR_ROSTER_0927.md for exact assignments, Easy handicap, Furious final-form/true-ending gate and remaining balance limits. Built-in image generation only.
+
+Final full suite: 5,432 passing assertions, zero failures, final success banner, exit0; incoming 5,351/0. Native checks: 20 encounter fixtures, six silent 26-second inspection clips (immunity/staged damage, not wins), 36 bounded ordinary-damage automated stage samples with all four difficulties. No native page/console errors. Final compact Stage4 helper geometry was rerun and re-recorded. Some bots failed on Easy stages1–2/7–8; Stage6 often outlasted the sample. Human campaign progression and final balancing remain unverified.
+
+Review: http://127.0.0.1:8794/_shots/modular_roster_0927/review.html. Durable QA: docs/qa/modular_roster_0927.json. Runtime LF and tests CRLF preserved. No commit/push. Previous overnight automation remains paused.
+
+
+## September 27 director pass — muzzle effects, destruction, Furious Tempest and thrusters
+
+Mike's latest requested pass is implemented locally. See docs/DIRECTOR_UPGRADE_0927.md and docs/qa/director_upgrade_0927.json. No commit/push; the prior overnight automation remains paused.
+
+- Generated here: four transparent sheets, sixteen distinct muzzle/exhaust families, six frames each. Measured ignition-root anchors and shared routing for player/enemy/boss emitters; explicit special, held-beam, Razorback, Furnace, Hammer and Harrier paths corrected. Harrier missile/plasma/laser routes verified individually; Maverick helix tap no longer selects toxic art. No SpriteCook.
+- Modular part breaks use 12/18 staggered authored-engine explosions, following the moving hardpoint, idempotent per part, bounded at144 simultaneous queued blasts and cleared on stage change. Native large-part check drains18 blasts and rejects duplicate hits.
+- Furious Stage5 space Tempest: Crimson Eclipse black armor/red energy, faster movement/charge/recovery, paired warned missiles and a five-lane bomb pattern with an escape lane. Hard retains Silver Eclipse. Engine destruction slows it and broken charging cannons interrupt attacks. Stage6 Earth bomber is unaffected by this Furious aggression.
+- All nine pilots animate the exhaust already painted into their ships using six heat-pulse frames. Native pixel audit: six distinct frames per pilot, zero changes outside flame mask, zero alpha changes. Idle/bank/perspective supported; quick rolls retain authored poses.
+- Final full suite5479/0, final success banner, exit0; incoming5432/0. Eight runtime modules pass syntax. game.js LF, test_fl/test_director CRLF. No baseline failing assertion names and no final failures.
+- Review has7 real Chromium clips,145nominal seconds, actual SFX except two silent galleries. All decode; all posters/links work; native page/console errors0. Normal/Hard/Furious Tempest 35simsec each, finite projectiles/zoom1. Native special routes and Harrier mounts checked separately. These are controlled fixtures and staged module damage, not campaign victories or final balance proof.
+- Special audition uses65% SFX plus0.4 capture-only gain (final sampled peak.831). Unattenuated overlapping specials measured peaks1.112/1.776; full-volume special mixing remains a follow-up. Other current clips peak below1. Capture gain does not modify game mixing.
+
+Review: http://127.0.0.1:8794/_shots/director_0927/review.html. Sources/prompts/build scripts and metadata retained. Temporary evidence stays in _shots/director_0927. Prior human campaign, difficulty and hardware follow-ups remain open.
+
+
+## September 27 — single muzzles, lance colors, ice breath and acceleration
+
+Mike’s follow-up is implemented locally. See docs/PILOT_FEEDBACK_0927.md and docs/qa/pilot_feedback_0927.json. One centered ground emitter per volley; no stacked flashes at the real space cannon hardpoints. Fixed-strength homing lances now recolor across the five acquired laser tiers, with one matching muzzle flash. Generated twelve-frame Freezer ice breath here; measured nozzle roots and original RGBA retained. All nine pilots’ existing exhaust extends and brightens with real acceleration input, then eases back; space plume roots stay fixed too.
+
+Final full suite:5492/0, final success banner, exit0, versus5479/0 incoming. Five intermediate new lance-flash failures exposed delayed-volley suppression and are fixed, with native firing confirmation. Four runtime syntax checks pass; game.jsLF and testsCRLF preserved. Native screenshots and actual draw routes inspected; three review clips/36nominal seconds with SFX decode, page/console errors0. Empty fixtures, not campaign wins.
+
+Review: http://127.0.0.1:8794/_shots/pilot_feedback_0927/review.html. Generated source/prompt and owning build retained. No commit/push. The prior overnight automation remains paused; prior human balance/hardware/audio-mixing follow-ups remain open.
+
+
+## September 27 — HAMMER password dance encounter
+
+Mike supplied mchammer.wav and corrected the breakdown start to 0:16. Implemented a separate HAMMER password route through difficulty/pilot into a dancing Hammer space fight. Current break is16–24seconds: four backup dancers, generated deflective shield, uninterrupted music, frozen combat/actions and blocked in-game pause, then restored control/special and a short opening. Ordinary campaign Hammer stays separate. Generated here:16 boss poses,8 backup poses,8 shield frames; canonical single-headed hammer, stable anchors, no SpriteCook. Supplied track imported as hammer_time_mike_0927.mp3, original untouched. No separately generated singing audio; mouth motion follows the supplied track envelope.
+
+Runtime: assets/hammer_time_0927.js plus generated metadata; no game.js edits in this pass. Owning build and prompt sources retained. Full suite5513/0, exit0/final summary versus5492/0 incoming. Intermediate fixture/Windows encoding errors were corrected; final failing-name list empty. Syntax and LF/CRLF checks pass. Native four-difficulty36simsec fixtures reach ball pattern, warnings/projectiles finite, zoom1. Actual victory frame-loop fixture returns to title and cleans music/lock.36nominal-second real Chromium recording with supplied music:16.013–23.988s lock,499 frames, zero position/ammo/shot/pause violations; zero page/console errors. Invulnerability recording aid, not a completed gameplay win or final balance proof.
+
+See docs/HAMMER_TIME_0927.md and docs/qa/hammer_time_0927.json. Review: http://127.0.0.1:8794/_shots/hammer_time_0927/review.html. Mike should test balance, gamepad behavior and the chosen eight-second break endpoint. No commit/push. Prior overnight automation remains paused.
+
+
+## September 27 — HAMMER flat wall, locked entrance and fighting helpers
+
+Latest follow-up implemented locally. One generated flat horizontal forcefield, one draw at50% opacity, spans the whole world including scrolling edges. Entrance now locks all gameplay and pause through descent, canonical hammer raise/slam, engine explosion/shock ring, and four staggered robot arrivals. All difficulties receive the dancers; only Hard/Furious/Insanity helpers fight (warned aimed bursts/fans, muzzle/audio/hit/death feedback, Retina/space/missile targeting). One helper attack at a time during quiet boss beats. Insanity now takes the secret encounter's Furious Hammer logic. The0:16–0:24 dance break remains. Fixed protection after unlock to actual engine frame units (60 entrance/48 break). Normal campaign unchanged.
+
+Full suite5538/0 versus5513/0 incoming, final success banner/exit0; one intermediate grace-period failure fixed. Syntax and LF/CRLF checks pass. Native five-difficulty encounter fixtures, entry freeze/summon order, armed-helper targeting/damage, one wall draw at.5 opacity, victory cleanup pass; page/console errors0. New36nominal-second Hard recording with supplied music: entry release5.749s,4helpers,12missiles unchanged; break16.003–23.991s,500locked frames, no action/pause leakage. Audio peak.457 at capture-only gain.4. Controlled fixtures/immunity recording, not gameplay victories or final balance proof.
+
+Details: docs/HAMMER_TIME_WALL_0927.md, docs/qa/hammer_time_wall_0927.json. Generated wall provenance/owning build retained. Review: http://127.0.0.1:8794/_shots/hammer_time_wall_0927/review.html. No commit/push; prior automation stays paused.
+
+
+## September 27 — HAMMER ship entrance and continuous opening lock
+
+Mike corrected the ship/music choreography. Implemented in assets/hammer_time_0927.js: playback begins with the actual authored Hammer ship entrance after art/audio readiness; ship transforms, canonical hammer slams at6.15s, four helpers arrive from6.4s, one half-transparent wall rises7–16s. Helpers hold poses until dancing starts16s. No playable gap: all actions and pause remain locked from the entrance through24s. This replaces the old5.75s entrance unlock in the prior note. Existing approved art/music reused; normal campaign unchanged.
+
+Full suite5545/0 versus5538/0 incoming, final success banner/exit0, failing-name sets empty. Runtime syntax and LF/CRLF pass. Native five-difficulty fixtures, actual ship draw, wall alpha/draw, action/damage blocking, helper targeting and victory cleanup pass. First native exit check was contaminated by held physical gamepad inputs selecting Armory after title; final keyboard fixtures isolate desktop hardware, no runtime workaround. New36.07s real Chromium Hard clip with music/SFX: dance16.011–23.999, first control24.011;500breakframes, no movement/shots/ammo/pause leakage throughout opening,4helpers/12missiles at release. Peak.528 at capture gain.4. Screenshot and review/video checks pass with zero page/console errors. Controlled fixtures/immunity recording, not campaign wins or final balance.
+
+See docs/HAMMER_TIME_SHIP_0927.md and docs/qa/hammer_time_ship_0927.json. Review: http://127.0.0.1:8794/_shots/hammer_time_ship_0927/review.html. No commit/push; overnight automation remains paused. Prior balance/hardware follow-ups remain.

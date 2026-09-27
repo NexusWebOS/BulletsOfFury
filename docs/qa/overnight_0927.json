@@ -1,0 +1,7720 @@
+{
+  "diagnostics": {
+    "kills": [
+      {
+        "stage": 1,
+        "delta": 0,
+        "viewDelta": 0,
+        "zoomDelta": 0,
+        "state": "play"
+      },
+      {
+        "stage": 2,
+        "delta": 0,
+        "viewDelta": 0,
+        "zoomDelta": 0,
+        "state": "play"
+      },
+      {
+        "stage": 3,
+        "delta": 0,
+        "viewDelta": 0,
+        "zoomDelta": 0,
+        "state": "play"
+      },
+      {
+        "stage": 4,
+        "delta": 0,
+        "viewDelta": 0,
+        "zoomDelta": 0,
+        "state": "play"
+      },
+      {
+        "stage": 5,
+        "delta": 0,
+        "viewDelta": 0,
+        "zoomDelta": 0,
+        "state": "play"
+      },
+      {
+        "stage": 6,
+        "delta": 0,
+        "viewDelta": 0,
+        "zoomDelta": 0,
+        "state": "play"
+      },
+      {
+        "stage": 7,
+        "delta": 0,
+        "viewDelta": 0,
+        "zoomDelta": 0,
+        "state": "play"
+      },
+      {
+        "stage": 8,
+        "delta": 0,
+        "viewDelta": 0,
+        "zoomDelta": 0,
+        "state": "play"
+      },
+      {
+        "stage": 9,
+        "delta": 0,
+        "viewDelta": 0,
+        "zoomDelta": 0,
+        "state": "play"
+      }
+    ],
+    "missiles": [
+      {
+        "target": "enemy",
+        "before": 1000,
+        "after": 975.3999999999999,
+        "starts": [
+          {
+            "kind": "spaceVolley",
+            "t": "s5space_scavenger",
+            "dead": false
+          },
+          {
+            "kind": "spaceVolley",
+            "t": "s5space_scavenger",
+            "dead": false
+          },
+          {
+            "kind": "spaceVolley",
+            "t": "s5space_scavenger",
+            "dead": false
+          }
+        ],
+        "left": [],
+        "modules": null
+      },
+      {
+        "target": "hammer",
+        "before": 3598.8354,
+        "after": 3582.4354000000003,
+        "starts": [
+          {
+            "kind": "spaceVolley",
+            "t": "hammer",
+            "dead": false
+          },
+          {
+            "kind": "spaceVolley",
+            "t": "chromehammer",
+            "dead": false
+          },
+          {
+            "kind": "spaceVolley",
+            "t": "chromehammer",
+            "dead": false
+          }
+        ],
+        "left": [],
+        "modules": {
+          "hammer": 53.8,
+          "gun": 84
+        }
+      },
+      {
+        "target": "bomber",
+        "before": 6745,
+        "after": 6720.4,
+        "starts": [
+          {
+            "kind": "spaceVolley",
+            "t": "module",
+            "dead": false
+          },
+          {
+            "kind": "spaceVolley",
+            "t": "boss",
+            "dead": false
+          },
+          {
+            "kind": "spaceVolley",
+            "t": "module",
+            "dead": false
+          }
+        ],
+        "left": [],
+        "modules": null
+      }
+    ],
+    "bay": [
+      {
+        "x": 326,
+        "y": 328.1,
+        "scale": 0.18,
+        "heading": 0
+      },
+      {
+        "x": 320.92881397685426,
+        "y": 312.6454545454546,
+        "scale": 0.1990984222389181,
+        "heading": 0
+      },
+      {
+        "x": 316.26846528579927,
+        "y": 297.19090909090914,
+        "scale": 0.25146506386175804,
+        "heading": 0
+      },
+      {
+        "x": 312.39650766162333,
+        "y": 281.73636363636365,
+        "scale": 0.32970698722764835,
+        "heading": 0
+      },
+      {
+        "x": 309.62662408361865,
+        "y": 266.2818181818182,
+        "scale": 0.42643125469571747,
+        "heading": 0
+      },
+      {
+        "x": 308.18321404614323,
+        "y": 250.82727272727277,
+        "scale": 0.5342449286250938,
+        "heading": 0
+      },
+      {
+        "x": 308.18321404614323,
+        "y": 235.37272727272727,
+        "scale": 0.6457550713749062,
+        "heading": 0
+      },
+      {
+        "x": 309.6266240836187,
+        "y": 219.91818181818178,
+        "scale": 0.753568745304283,
+        "heading": 0
+      },
+      {
+        "x": 312.3965076616234,
+        "y": 204.46363636363628,
+        "scale": 0.8502930127723523,
+        "heading": 0
+      },
+      {
+        "x": 316.26846528579927,
+        "y": 189.00909090909076,
+        "scale": 0.9285349361382427,
+        "heading": 0
+      },
+      {
+        "x": 320.9288139768543,
+        "y": 173.55454545454526,
+        "scale": 0.9809015777610823,
+        "heading": 0
+      },
+      {
+        "x": 326,
+        "y": 158.10000000000002,
+        "scale": 1,
+        "heading": 0
+      },
+      {
+        "x": 321.85048010973935,
+        "y": 162.15967078189303,
+        "scale": 1,
+        "heading": 0.10773637357989686
+      }
+    ],
+    "zoom": {
+      "before": 1,
+      "after": 1
+    },
+    "errors": []
+  },
+  "input_audio": {
+    "manual": [
+      {
+        "target": "enemy",
+        "before": {
+          "hp": 1000,
+          "ammo": 5
+        },
+        "after": 976,
+        "ammo": 4,
+        "missiles": 1,
+        "key": "k",
+        "locks": false
+      },
+      {
+        "target": "hammer",
+        "before": {
+          "hp": 3380.9778000000006,
+          "ammo": 5
+        },
+        "after": 3356.9778000000006,
+        "ammo": 4,
+        "missiles": 1,
+        "key": "k",
+        "locks": false
+      },
+      {
+        "target": "bomber",
+        "before": {
+          "hp": 6335,
+          "ammo": 5
+        },
+        "after": 6285,
+        "ammo": 4,
+        "missiles": 1,
+        "key": "k",
+        "locks": false
+      }
+    ],
+    "specials": [
+      {
+        "pilot": "maverick",
+        "special": "maverick",
+        "kinds": [
+          "spaceVolley",
+          "venomx",
+          "mavlaser"
+        ],
+        "rollers": 0,
+        "charging": null
+      },
+      {
+        "pilot": "falva",
+        "special": "falva",
+        "kinds": [
+          "flaser"
+        ],
+        "rollers": 1,
+        "charging": null
+      },
+      {
+        "pilot": "yuri",
+        "special": "yuri",
+        "kinds": [
+          "yuribolt",
+          "spaceVolley",
+          "spaceImpact"
+        ],
+        "rollers": 0,
+        "charging": null
+      },
+      {
+        "pilot": "cole",
+        "special": "cole",
+        "kinds": [
+          "shadowOrb"
+        ],
+        "rollers": 0,
+        "charging": 0
+      },
+      {
+        "pilot": "decker",
+        "special": "decker",
+        "kinds": [
+          "spaceVolley",
+          "shadowOrb"
+        ],
+        "rollers": 0,
+        "charging": 0
+      },
+      {
+        "pilot": "freezer",
+        "special": "freezer",
+        "kinds": [
+          "spaceVolley",
+          "shadowOrb"
+        ],
+        "rollers": 0,
+        "charging": 0
+      },
+      {
+        "pilot": "lizzie",
+        "special": "lizzie",
+        "kinds": [
+          "spaceVolley",
+          "shadowOrb",
+          "spaceImpact"
+        ],
+        "rollers": 0,
+        "charging": 0
+      }
+    ],
+    "audio": [
+      {
+        "name": "missile",
+        "accepted": true,
+        "playing": true,
+        "peak": 0.20918229222297668,
+        "ready": [
+          4,
+          4,
+          4
+        ]
+      },
+      {
+        "name": "spaceVolleyLaunch",
+        "accepted": true,
+        "playing": true,
+        "peak": 0.20918229222297668,
+        "ready": [
+          4,
+          4,
+          4
+        ]
+      },
+      {
+        "name": "volleyLaunch",
+        "accepted": true,
+        "playing": true,
+        "peak": 0.20918229222297668,
+        "ready": [
+          4,
+          4,
+          4
+        ]
+      },
+      {
+        "name": "nuclearLaunch",
+        "accepted": true,
+        "playing": true,
+        "peak": 0.20918229222297668,
+        "ready": [
+          4,
+          4,
+          4
+        ]
+      },
+      {
+        "name": "enemyMissile",
+        "accepted": true,
+        "playing": true,
+        "peak": 0.20918229222297668,
+        "ready": [
+          4,
+          4,
+          4
+        ]
+      },
+      {
+        "name": "bossWeaponCharge",
+        "accepted": true,
+        "playing": true,
+        "peak": 0.23420262336730957,
+        "ready": [
+          4,
+          4,
+          4
+        ]
+      },
+      {
+        "name": "chargeStart",
+        "accepted": true,
+        "playing": true,
+        "peak": 0.23420262336730957,
+        "ready": [
+          4,
+          4,
+          4
+        ]
+      },
+      {
+        "name": "furnaceLaserCharge",
+        "accepted": true,
+        "playing": true,
+        "peak": 0.23420262336730957,
+        "ready": [
+          4,
+          4,
+          4
+        ]
+      },
+      {
+        "name": "warshipCoreCharge",
+        "accepted": true,
+        "playing": true,
+        "peak": 0.23420262336730957,
+        "ready": [
+          4,
+          4,
+          4
+        ]
+      },
+      {
+        "name": "hammerEradCharge",
+        "accepted": true,
+        "playing": true,
+        "peak": 0.23420262336730957,
+        "ready": [
+          4,
+          4,
+          4
+        ]
+      },
+      {
+        "name": "quadCharge",
+        "accepted": true,
+        "playing": true,
+        "peak": 0.23420262336730957,
+        "ready": [
+          4,
+          4,
+          4
+        ]
+      },
+      {
+        "name": "hammerImpact",
+        "accepted": true,
+        "playing": true,
+        "peak": 0.1978326439857483,
+        "ready": [
+          4,
+          4,
+          4
+        ]
+      },
+      {
+        "name": "groundBombImpact",
+        "accepted": true,
+        "playing": true,
+        "peak": 0.1978326439857483,
+        "ready": [
+          4,
+          4,
+          4
+        ]
+      },
+      {
+        "name": "bodyDrop",
+        "accepted": true,
+        "playing": true,
+        "peak": 0.1978326439857483,
+        "ready": [
+          4,
+          4,
+          4
+        ]
+      },
+      {
+        "name": "shieldBreakCombat",
+        "accepted": true,
+        "playing": true,
+        "peak": 0.2244855761528015,
+        "ready": [
+          4,
+          4,
+          4
+        ]
+      },
+      {
+        "name": "enemyBossHit",
+        "accepted": true,
+        "playing": true,
+        "peak": 0.2244855761528015,
+        "ready": [
+          4,
+          4,
+          4
+        ]
+      },
+      {
+        "name": "combatStun0927",
+        "accepted": true,
+        "playing": true,
+        "peak": 0.2244855761528015,
+        "ready": [
+          4,
+          4,
+          4
+        ]
+      },
+      {
+        "name": "furnaceLaserBurst",
+        "accepted": true,
+        "playing": true,
+        "peak": 0.2687287926673889,
+        "ready": [
+          4,
+          4,
+          4
+        ]
+      },
+      {
+        "name": "hammerEradBlast",
+        "accepted": true,
+        "playing": true,
+        "peak": 0.2687287926673889,
+        "ready": [
+          4,
+          4,
+          4
+        ]
+      },
+      {
+        "name": "fusionBeam",
+        "accepted": true,
+        "playing": true,
+        "peak": 0.2687287926673889,
+        "ready": [
+          4,
+          4,
+          4
+        ]
+      },
+      {
+        "name": "enemyHeavyLaser",
+        "accepted": true,
+        "playing": true,
+        "peak": 0.2687287926673889,
+        "ready": [
+          4,
+          4,
+          4
+        ]
+      },
+      {
+        "name": "combatBeam0927",
+        "accepted": true,
+        "playing": true,
+        "peak": 0.2687287926673889,
+        "ready": [
+          4,
+          4,
+          4
+        ]
+      },
+      {
+        "name": "enemyToxicSpit",
+        "accepted": true,
+        "playing": true,
+        "peak": 0.2661292552947998,
+        "ready": [
+          4,
+          4,
+          4
+        ]
+      },
+      {
+        "name": "bossfireSludgeemperor",
+        "accepted": true,
+        "playing": true,
+        "peak": 0.2661292552947998,
+        "ready": [
+          4,
+          4,
+          4
+        ]
+      },
+      {
+        "name": "combatToxic0927",
+        "accepted": true,
+        "playing": true,
+        "peak": 0.2661292552947998,
+        "ready": [
+          4,
+          4,
+          4
+        ]
+      },
+      {
+        "name": "cryoOrb",
+        "accepted": true,
+        "playing": true,
+        "peak": 0.28886130452156067,
+        "ready": [
+          4,
+          4,
+          4
+        ]
+      },
+      {
+        "name": "iceOrbImpact",
+        "accepted": true,
+        "playing": true,
+        "peak": 0.28886130452156067,
+        "ready": [
+          4,
+          4,
+          4
+        ]
+      },
+      {
+        "name": "combatIce0927",
+        "accepted": true,
+        "playing": true,
+        "peak": 0.28886130452156067,
+        "ready": [
+          4,
+          4,
+          4
+        ]
+      },
+      {
+        "name": "symbioteWarcry",
+        "accepted": true,
+        "playing": true,
+        "peak": 0.2577143907546997,
+        "ready": [
+          4,
+          4,
+          4
+        ]
+      },
+      {
+        "name": "wardenRoar",
+        "accepted": true,
+        "playing": true,
+        "peak": 0.2577143907546997,
+        "ready": [
+          4,
+          4,
+          4
+        ]
+      },
+      {
+        "name": "wardenScream",
+        "accepted": true,
+        "playing": true,
+        "peak": 0.2577143907546997,
+        "ready": [
+          4,
+          4,
+          4
+        ]
+      },
+      {
+        "name": "mechScream",
+        "accepted": true,
+        "playing": true,
+        "peak": 0.2577143907546997,
+        "ready": [
+          4,
+          4,
+          4
+        ]
+      },
+      {
+        "name": "combatAlien0927",
+        "accepted": true,
+        "playing": true,
+        "peak": 0.2577143907546997,
+        "ready": [
+          4,
+          4,
+          4
+        ]
+      },
+      {
+        "name": "enemyBossCannon",
+        "accepted": true,
+        "playing": true,
+        "peak": 0.2606793940067291,
+        "ready": [
+          4,
+          4,
+          4
+        ]
+      },
+      {
+        "name": "combatCannon0927",
+        "accepted": true,
+        "playing": true,
+        "peak": 0.27444732189178467,
+        "ready": [
+          4,
+          4,
+          4
+        ]
+      },
+      {
+        "name": "coreUnlocked",
+        "accepted": true,
+        "playing": true,
+        "peak": 0.2647177577018738,
+        "ready": [
+          4,
+          4,
+          4
+        ]
+      },
+      {
+        "name": "combatModule0927",
+        "accepted": true,
+        "playing": true,
+        "peak": 0.2647177577018738,
+        "ready": [
+          4,
+          4,
+          4
+        ]
+      },
+      {
+        "name": "quadFire",
+        "accepted": true,
+        "playing": true,
+        "peak": 0.2754212021827698,
+        "ready": [
+          4,
+          4,
+          4
+        ]
+      },
+      {
+        "name": "combatEnergy0927",
+        "accepted": true,
+        "playing": true,
+        "peak": 0.2754212021827698,
+        "ready": [
+          4,
+          4,
+          4
+        ]
+      },
+      {
+        "name": "hammerMagnet",
+        "accepted": true,
+        "playing": true,
+        "peak": 0.2736290395259857,
+        "ready": [
+          4,
+          4,
+          4
+        ]
+      },
+      {
+        "name": "combatServo0927",
+        "accepted": true,
+        "playing": true,
+        "peak": 0.27495861053466797,
+        "ready": [
+          4,
+          4,
+          4
+        ]
+      },
+      {
+        "name": "combatOrb0927",
+        "accepted": true,
+        "playing": true,
+        "peak": 0.27033546566963196,
+        "ready": [
+          4,
+          4,
+          4
+        ]
+      }
+    ],
+    "errors": []
+  },
+  "map_audio": {
+    "map": {
+      "selected": 4,
+      "committed": true,
+      "fills": [],
+      "draws": [
+        5
+      ],
+      "rotations": [
+        0
+      ]
+    },
+    "minibossAudio": [
+      {
+        "stage": 2,
+        "stageTimer": 30,
+        "combatElapsed": 22.000000000000032,
+        "cues": {
+          "enemyApproach": 1,
+          "bossWeaponCharge": 6,
+          "combatOrb0927": 13,
+          "enemyFlameBolt": 14,
+          "enemyShoot": 2,
+          "s2GeyserWarn": 3,
+          "magmaGeyser": 3,
+          "expBig": 4,
+          "alertLockon": 1,
+          "enemyHeavyLaser": 1
+        }
+      },
+      {
+        "stage": 3,
+        "stageTimer": 30,
+        "combatElapsed": 21.999999999998753,
+        "cues": {
+          "enemyApproach": 1,
+          "whip": 1,
+          "bossWeaponCharge": 5,
+          "dialogueLetter": 5,
+          "combatIce0927": 19,
+          "enemyIceBolt": 23,
+          "alertLockon": 1,
+          "enemyHeavyLaser": 1
+        }
+      },
+      {
+        "stage": 9,
+        "stageTimer": 30,
+        "combatElapsed": 21.999999999998757,
+        "cues": {
+          "alertLockon": 5,
+          "combatOrb0927": 16,
+          "combatBeam0927": 7
+        }
+      }
+    ],
+    "errors": []
+  },
+  "entry": {
+    "cases": [
+      {
+        "stage": 2,
+        "kind": "magmaward",
+        "mini": true,
+        "diff": "normal",
+        "activeMax": 9.666666666666686,
+        "arrival": [
+          {
+            "x": 240,
+            "y": 130,
+            "step": 2.01353371457418
+          }
+        ],
+        "entered": true
+      },
+      {
+        "stage": 3,
+        "kind": "frostcruiser",
+        "mini": true,
+        "diff": "normal",
+        "activeMax": 9.578333333333319,
+        "arrival": [
+          {
+            "x": 240,
+            "y": 130,
+            "step": 2.01353371457418
+          }
+        ],
+        "entered": true
+      },
+      {
+        "stage": 3,
+        "kind": "cryospear",
+        "mini": false,
+        "diff": "normal",
+        "activeMax": 2.9262666666666632,
+        "arrival": [
+          {
+            "x": 240,
+            "y": 120,
+            "step": 0.0009598195539126664
+          }
+        ],
+        "entered": true
+      },
+      {
+        "stage": 4,
+        "kind": "stormsovereign",
+        "mini": false,
+        "diff": "normal",
+        "activeMax": 2.1949603234907737,
+        "arrival": [
+          {
+            "x": 240,
+            "y": 150,
+            "step": 0.0010797969981695132
+          }
+        ],
+        "entered": true
+      },
+      {
+        "stage": 9,
+        "kind": "voidhorizon",
+        "mini": true,
+        "diff": "normal",
+        "activeMax": 0,
+        "arrival": [
+          {
+            "x": 340,
+            "y": 145,
+            "step": 0
+          }
+        ],
+        "entered": true
+      }
+    ],
+    "errors": []
+  },
+  "review": {
+    "clips": [
+      {
+        "name": "horizon-audio",
+        "stage": 9,
+        "kind": "voidhorizon",
+        "mini": true,
+        "diff": "hard",
+        "seconds": 26,
+        "setup": "",
+        "seen": [
+          {
+            "t": 0.02,
+            "state": "fleet"
+          }
+        ],
+        "maxEnemy": 0,
+        "maxBullets": 20,
+        "maxJump": 3.5100000000000477,
+        "finite": true,
+        "audioPeak": 0.574794352054596,
+        "zoom": 1
+      },
+      {
+        "name": "hammer-ball",
+        "stage": 5,
+        "kind": "chromehammer",
+        "mini": false,
+        "diff": "hard",
+        "seconds": 26,
+        "setup": "B._symEntry=null;B.enter=false;B._noHit=false;B.x=worldWidth()/2;B.y=VH*.34;B._hammer.mode='hammer';B._hammer.balance0922=true;B.hp=B.maxhp*.49;hammerState(B,'hammer');",
+        "seen": [
+          {
+            "t": 0.02,
+            "state": "curl"
+          },
+          {
+            "t": 1.33,
+            "state": "ball"
+          },
+          {
+            "t": 16.35,
+            "state": "uncurl"
+          },
+          {
+            "t": 17.62,
+            "state": "nova_charge"
+          },
+          {
+            "t": 19.23,
+            "state": "nova_release"
+          },
+          {
+            "t": 19.98,
+            "state": "hammer"
+          },
+          {
+            "t": 20,
+            "state": "chaingun_draw"
+          },
+          {
+            "t": 22.02,
+            "state": "chain_warn"
+          },
+          {
+            "t": 22.77,
+            "state": "chaingun"
+          },
+          {
+            "t": 24.34,
+            "state": "chain_cool"
+          },
+          {
+            "t": 26,
+            "state": "spell"
+          }
+        ],
+        "maxEnemy": 2,
+        "maxBullets": 32,
+        "maxJump": 3.5100000000000477,
+        "finite": true,
+        "audioPeak": 0.4072132110595703,
+        "zoom": 1
+      },
+      {
+        "name": "hammer-chromium",
+        "stage": 5,
+        "kind": "chromehammer",
+        "mini": false,
+        "diff": "furious",
+        "seconds": 26,
+        "setup": "B.enter=false;B._noHit=false;B.x=worldWidth()/2;B.y=VH*.34;B._hammer.balance0922=true;B.hp=B.maxhp*.4;hammerStormStart(B);",
+        "seen": [
+          {
+            "t": 0.02,
+            "state": "storm_raise"
+          },
+          {
+            "t": 7.86,
+            "state": "storm_idle"
+          },
+          {
+            "t": 8.51,
+            "state": "storm_warn"
+          },
+          {
+            "t": 9.42,
+            "state": "storm_slam"
+          },
+          {
+            "t": 9.89,
+            "state": "storm_split"
+          },
+          {
+            "t": 16.03,
+            "state": "storm_idle"
+          },
+          {
+            "t": 16.69,
+            "state": "storm_warn"
+          },
+          {
+            "t": 17.6,
+            "state": "storm_slam"
+          },
+          {
+            "t": 18.06,
+            "state": "storm_split"
+          },
+          {
+            "t": 24.1,
+            "state": "storm_idle"
+          },
+          {
+            "t": 24.75,
+            "state": "spin"
+          }
+        ],
+        "maxEnemy": 1,
+        "maxBullets": 0,
+        "maxJump": 3.5100000000000477,
+        "finite": true,
+        "audioPeak": 0.4088425636291504,
+        "zoom": 1
+      },
+      {
+        "name": "sovereign-framing",
+        "stage": 4,
+        "kind": "stormsovereign",
+        "mini": false,
+        "diff": "normal",
+        "seconds": 24,
+        "setup": "",
+        "seen": [
+          {
+            "t": 0.02,
+            "state": "recover"
+          },
+          {
+            "t": 2.4,
+            "state": "sovereign-battery"
+          },
+          {
+            "t": 6.11,
+            "state": "recover"
+          },
+          {
+            "t": 7.22,
+            "state": "escort-crossfire"
+          },
+          {
+            "t": 13.63,
+            "state": "recover"
+          },
+          {
+            "t": 14.74,
+            "state": "siege-rockets"
+          },
+          {
+            "t": 18.45,
+            "state": "recover"
+          },
+          {
+            "t": 19.55,
+            "state": "ion-scissors"
+          },
+          {
+            "t": 23.26,
+            "state": "recover"
+          }
+        ],
+        "maxEnemy": 0,
+        "maxBullets": 12,
+        "maxJump": 3.5100000000000477,
+        "finite": true,
+        "audioPeak": 0.6471477746963501,
+        "zoom": 1
+      },
+      {
+        "name": "harrier-launch",
+        "stage": 6,
+        "kind": "warhive",
+        "mini": false,
+        "diff": "normal",
+        "seconds": 16,
+        "setup": "s6Opening=null;B.enter=false;B.x=worldWidth()/2;B.y=VH*.34;B._whv.cx=B.x;B._whv.cy=B.y;B._whv.st='swarm';B._whv.t=0;B._whv.doorOpen=true;B._whv.spawnCd=.1;",
+        "seen": [
+          {
+            "t": 0.02,
+            "state": "swarm"
+          }
+        ],
+        "maxEnemy": 0,
+        "maxBullets": 0,
+        "maxJump": 3.5100000000000477,
+        "finite": true,
+        "audioPeak": 0.40435028076171875,
+        "zoom": 1
+      },
+      {
+        "name": "eclipse-bomber",
+        "stage": 5,
+        "kind": "siegebomber",
+        "mini": true,
+        "diff": "hard",
+        "seconds": 26,
+        "setup": "",
+        "seen": [
+          {
+            "t": 0.02,
+            "state": "entry"
+          },
+          {
+            "t": 2.08,
+            "state": "bombs"
+          },
+          {
+            "t": 6.29,
+            "state": "charge"
+          },
+          {
+            "t": 8.99,
+            "state": "beam"
+          },
+          {
+            "t": 10.5,
+            "state": "recover"
+          },
+          {
+            "t": 11.76,
+            "state": "missiles"
+          },
+          {
+            "t": 15.07,
+            "state": "bombs"
+          },
+          {
+            "t": 19.28,
+            "state": "charge"
+          },
+          {
+            "t": 21.98,
+            "state": "beam"
+          },
+          {
+            "t": 23.49,
+            "state": "recover"
+          },
+          {
+            "t": 24.75,
+            "state": "missiles"
+          }
+        ],
+        "maxEnemy": 3,
+        "maxBullets": 2,
+        "maxJump": 3.5100000000000477,
+        "finite": true,
+        "audioPeak": 0.39156603813171387,
+        "zoom": 1
+      },
+      {
+        "name": "stage8-fleet",
+        "stage": 8,
+        "kind": null,
+        "mini": false,
+        "diff": "normal",
+        "seconds": 28,
+        "setup": "boss=null;bossActive=false;B={};stagePlan=buildStagePlan(8);waveIdx=0;stageTimer=0;spawnClock=9999;",
+        "seen": [
+          {
+            "t": 0.02,
+            "state": "fleet"
+          }
+        ],
+        "maxEnemy": 6,
+        "maxBullets": 9,
+        "maxJump": 3.5100000000000477,
+        "finite": true,
+        "audioPeak": 0.9638789892196655,
+        "zoom": 1
+      },
+      {
+        "name": "vile-cannons",
+        "stage": 8,
+        "kind": "vileexistence",
+        "mini": false,
+        "diff": "hard",
+        "seconds": 24,
+        "setup": "B._symEntry=null;B.enter=false;B.x=worldWidth()/2;B.y=B.ty;B.fireCd=.6;",
+        "seen": [
+          {
+            "t": 0.02,
+            "state": "fleet"
+          },
+          {
+            "t": 0.14,
+            "state": "rockets"
+          },
+          {
+            "t": 1.81,
+            "state": "fleet"
+          },
+          {
+            "t": 1.92,
+            "state": "hyperlaser"
+          },
+          {
+            "t": 5.58,
+            "state": "fleet"
+          },
+          {
+            "t": 5.87,
+            "state": "spinlaser"
+          },
+          {
+            "t": 9.54,
+            "state": "fleet"
+          },
+          {
+            "t": 9.82,
+            "state": "shadowcall"
+          },
+          {
+            "t": 12.18,
+            "state": "fleet"
+          },
+          {
+            "t": 12.46,
+            "state": "orb"
+          },
+          {
+            "t": 13.81,
+            "state": "fleet"
+          },
+          {
+            "t": 13.92,
+            "state": "rockets"
+          },
+          {
+            "t": 15.58,
+            "state": "fleet"
+          },
+          {
+            "t": 15.7,
+            "state": "hyperlaser"
+          },
+          {
+            "t": 19.36,
+            "state": "fleet"
+          },
+          {
+            "t": 19.65,
+            "state": "spinlaser"
+          },
+          {
+            "t": 23.31,
+            "state": "fleet"
+          },
+          {
+            "t": 23.6,
+            "state": "shadowcall"
+          }
+        ],
+        "maxEnemy": 0,
+        "maxBullets": 11,
+        "maxJump": 3.5100000000000477,
+        "finite": true,
+        "audioPeak": 0.4911130666732788,
+        "zoom": 1
+      },
+      {
+        "name": "tidal-fusion",
+        "stage": 9,
+        "kind": "tidalfusion",
+        "mini": false,
+        "diff": "hard",
+        "seconds": 32,
+        "setup": "B.enter=false;B._s9fusion.t=2;late27Twins(B,.01);for(const w of [B._s9fusion.left,B._s9fusion.right]){B._s9fusion.hit=w;s9FusionHit(B,w.hp);} ",
+        "seen": [
+          {
+            "t": 0.02,
+            "state": "fleet"
+          }
+        ],
+        "maxEnemy": 0,
+        "maxBullets": 27,
+        "maxJump": 3.5100000000000477,
+        "finite": true,
+        "audioPeak": 0.559492826461792,
+        "zoom": 1
+      },
+      {
+        "name": "vile-final-forms",
+        "stage": 8,
+        "kind": "vileexistence",
+        "mini": false,
+        "diff": "normal",
+        "seconds": 40,
+        "setup": "B._symEntry=null;B.enter=false;B.x=worldWidth()/2;B.y=B.ty;vile24BuildForm(B,3);B.fireCd=.3;",
+        "seen": [
+          {
+            "t": 0.02,
+            "state": "fleet"
+          },
+          {
+            "t": 0.13,
+            "state": "void"
+          },
+          {
+            "t": 2.72,
+            "state": "fleet"
+          },
+          {
+            "t": 2.9,
+            "state": "box"
+          },
+          {
+            "t": 8.26,
+            "state": "fleet"
+          },
+          {
+            "t": 8.67,
+            "state": "phantom"
+          },
+          {
+            "t": 12.48,
+            "state": "fleet"
+          },
+          {
+            "t": 12.9,
+            "state": "knight"
+          },
+          {
+            "t": 16.61,
+            "state": "fleet"
+          },
+          {
+            "t": 17.02,
+            "state": "mirror"
+          },
+          {
+            "t": 24.23,
+            "state": "fleet"
+          },
+          {
+            "t": 24.64,
+            "state": "laser"
+          },
+          {
+            "t": 26.1,
+            "state": "fleet"
+          },
+          {
+            "t": 26.27,
+            "state": "void"
+          },
+          {
+            "t": 28.83,
+            "state": "fleet"
+          },
+          {
+            "t": 29.01,
+            "state": "box"
+          },
+          {
+            "t": 34.37,
+            "state": "fleet"
+          },
+          {
+            "t": 34.78,
+            "state": "phantom"
+          },
+          {
+            "t": 38.59,
+            "state": "fleet"
+          },
+          {
+            "t": 39.01,
+            "state": "knight"
+          }
+        ],
+        "maxEnemy": 0,
+        "maxBullets": 1,
+        "maxJump": 3.5100000000000477,
+        "finite": true,
+        "audioPeak": 0.4567906856536865,
+        "zoom": 1
+      }
+    ],
+    "errors": []
+  },
+  "suite": {
+    "file": "_shots/overnight_0927/suite-8.log",
+    "passed": 5309,
+    "failed": 0,
+    "exit": 0,
+    "baseline_passed": 5221,
+    "baseline_failed": 0
+  },
+  "campaign_v2": [
+    {
+      "stage": 1,
+      "diff": "normal",
+      "rolls": 4,
+      "flips": 2,
+      "frames": 5209,
+      "deaths": 5,
+      "maxEnemy": 5,
+      "maxBullet": 16,
+      "bossSeen": false,
+      "miniSeen": true,
+      "state": "continue",
+      "stageClear": false,
+      "finite": true
+    },
+    {
+      "stage": 2,
+      "diff": "normal",
+      "rolls": 5,
+      "flips": 2,
+      "frames": 4787,
+      "deaths": 5,
+      "maxEnemy": 8,
+      "maxBullet": 20,
+      "bossSeen": false,
+      "miniSeen": true,
+      "state": "continue",
+      "stageClear": false,
+      "finite": true
+    },
+    {
+      "stage": 3,
+      "diff": "normal",
+      "rolls": 4,
+      "flips": 3,
+      "frames": 8646,
+      "deaths": 5,
+      "maxEnemy": 6,
+      "maxBullet": 46,
+      "bossSeen": true,
+      "miniSeen": true,
+      "state": "continue",
+      "stageClear": false,
+      "finite": true
+    },
+    {
+      "stage": 4,
+      "diff": "normal",
+      "rolls": 5,
+      "flips": 2,
+      "frames": 7643,
+      "deaths": 5,
+      "maxEnemy": 4,
+      "maxBullet": 11,
+      "bossSeen": true,
+      "miniSeen": true,
+      "state": "continue",
+      "stageClear": false,
+      "finite": true
+    },
+    {
+      "stage": 5,
+      "diff": "normal",
+      "rolls": 0,
+      "flips": 0,
+      "frames": 5676,
+      "deaths": 5,
+      "maxEnemy": 3,
+      "maxBullet": 4,
+      "bossSeen": false,
+      "miniSeen": true,
+      "state": "continue",
+      "stageClear": false,
+      "finite": true
+    },
+    {
+      "stage": 6,
+      "diff": "normal",
+      "rolls": 3,
+      "flips": 1,
+      "frames": 4093,
+      "deaths": 5,
+      "maxEnemy": 5,
+      "maxBullet": 26,
+      "bossSeen": false,
+      "miniSeen": true,
+      "state": "continue",
+      "stageClear": false,
+      "finite": true
+    },
+    {
+      "stage": 7,
+      "diff": "normal",
+      "rolls": 7,
+      "flips": 3,
+      "frames": 11068,
+      "deaths": 5,
+      "maxEnemy": 6,
+      "maxBullet": 15,
+      "bossSeen": true,
+      "miniSeen": true,
+      "state": "continue",
+      "stageClear": false,
+      "finite": true
+    },
+    {
+      "stage": 8,
+      "diff": "normal",
+      "rolls": 6,
+      "flips": 1,
+      "frames": 7646,
+      "deaths": 5,
+      "maxEnemy": 6,
+      "maxBullet": 11,
+      "bossSeen": true,
+      "miniSeen": false,
+      "state": "continue",
+      "stageClear": false,
+      "finite": true
+    },
+    {
+      "stage": 9,
+      "diff": "normal",
+      "rolls": 13,
+      "flips": 5,
+      "frames": 11030,
+      "deaths": 4,
+      "maxEnemy": 12,
+      "maxBullet": 28,
+      "bossSeen": true,
+      "miniSeen": true,
+      "state": "flyover",
+      "stageClear": true,
+      "finite": true
+    },
+    {
+      "stage": 1,
+      "diff": "hard",
+      "rolls": 11,
+      "flips": 6,
+      "frames": 7710,
+      "deaths": 5,
+      "maxEnemy": 7,
+      "maxBullet": 25,
+      "bossSeen": false,
+      "miniSeen": true,
+      "state": "continue",
+      "stageClear": false,
+      "finite": true
+    },
+    {
+      "stage": 2,
+      "diff": "hard",
+      "rolls": 4,
+      "flips": 2,
+      "frames": 4334,
+      "deaths": 5,
+      "maxEnemy": 6,
+      "maxBullet": 18,
+      "bossSeen": false,
+      "miniSeen": true,
+      "state": "continue",
+      "stageClear": false,
+      "finite": true
+    },
+    {
+      "stage": 3,
+      "diff": "hard",
+      "rolls": 9,
+      "flips": 4,
+      "frames": 9554,
+      "deaths": 5,
+      "maxEnemy": 7,
+      "maxBullet": 60,
+      "bossSeen": true,
+      "miniSeen": true,
+      "state": "continue",
+      "stageClear": false,
+      "finite": true
+    },
+    {
+      "stage": 4,
+      "diff": "hard",
+      "rolls": 4,
+      "flips": 3,
+      "frames": 6028,
+      "deaths": 5,
+      "maxEnemy": 3,
+      "maxBullet": 14,
+      "bossSeen": false,
+      "miniSeen": true,
+      "state": "continue",
+      "stageClear": false,
+      "finite": true
+    },
+    {
+      "stage": 5,
+      "diff": "hard",
+      "rolls": 0,
+      "flips": 0,
+      "frames": 5311,
+      "deaths": 5,
+      "maxEnemy": 3,
+      "maxBullet": 3,
+      "bossSeen": false,
+      "miniSeen": true,
+      "state": "continue",
+      "stageClear": false,
+      "finite": true
+    },
+    {
+      "stage": 6,
+      "diff": "hard",
+      "rolls": 4,
+      "flips": 2,
+      "frames": 2856,
+      "deaths": 5,
+      "maxEnemy": 7,
+      "maxBullet": 32,
+      "bossSeen": false,
+      "miniSeen": true,
+      "state": "continue",
+      "stageClear": false,
+      "finite": true
+    },
+    {
+      "stage": 7,
+      "diff": "hard",
+      "rolls": 10,
+      "flips": 5,
+      "frames": 10084,
+      "deaths": 5,
+      "maxEnemy": 8,
+      "maxBullet": 33,
+      "bossSeen": true,
+      "miniSeen": true,
+      "state": "continue",
+      "stageClear": false,
+      "finite": true
+    },
+    {
+      "stage": 8,
+      "diff": "hard",
+      "rolls": 5,
+      "flips": 3,
+      "frames": 6303,
+      "deaths": 5,
+      "maxEnemy": 6,
+      "maxBullet": 14,
+      "bossSeen": true,
+      "miniSeen": false,
+      "state": "continue",
+      "stageClear": false,
+      "finite": true
+    },
+    {
+      "stage": 9,
+      "diff": "hard",
+      "rolls": 29,
+      "flips": 14,
+      "frames": 17168,
+      "deaths": 5,
+      "maxEnemy": 13,
+      "maxBullet": 25,
+      "bossSeen": true,
+      "miniSeen": true,
+      "state": "flyover",
+      "stageClear": true,
+      "finite": true
+    },
+    {
+      "stage": 1,
+      "diff": "furious",
+      "rolls": 13,
+      "flips": 7,
+      "frames": 7176,
+      "deaths": 5,
+      "maxEnemy": 8,
+      "maxBullet": 31,
+      "bossSeen": false,
+      "miniSeen": true,
+      "state": "continue",
+      "stageClear": false,
+      "finite": true
+    },
+    {
+      "stage": 2,
+      "diff": "furious",
+      "rolls": 2,
+      "flips": 1,
+      "frames": 2186,
+      "deaths": 5,
+      "maxEnemy": 10,
+      "maxBullet": 36,
+      "bossSeen": false,
+      "miniSeen": true,
+      "state": "continue",
+      "stageClear": false,
+      "finite": true
+    },
+    {
+      "stage": 3,
+      "diff": "furious",
+      "rolls": 4,
+      "flips": 3,
+      "frames": 3950,
+      "deaths": 5,
+      "maxEnemy": 7,
+      "maxBullet": 81,
+      "bossSeen": false,
+      "miniSeen": true,
+      "state": "continue",
+      "stageClear": false,
+      "finite": true
+    },
+    {
+      "stage": 4,
+      "diff": "furious",
+      "rolls": 5,
+      "flips": 4,
+      "frames": 4831,
+      "deaths": 5,
+      "maxEnemy": 4,
+      "maxBullet": 23,
+      "bossSeen": false,
+      "miniSeen": true,
+      "state": "continue",
+      "stageClear": false,
+      "finite": true
+    },
+    {
+      "stage": 5,
+      "diff": "furious",
+      "rolls": 0,
+      "flips": 0,
+      "frames": 5295,
+      "deaths": 5,
+      "maxEnemy": 3,
+      "maxBullet": 3,
+      "bossSeen": false,
+      "miniSeen": true,
+      "state": "continue",
+      "stageClear": false,
+      "finite": true
+    },
+    {
+      "stage": 6,
+      "diff": "furious",
+      "rolls": 4,
+      "flips": 3,
+      "frames": 2384,
+      "deaths": 5,
+      "maxEnemy": 8,
+      "maxBullet": 52,
+      "bossSeen": false,
+      "miniSeen": true,
+      "state": "continue",
+      "stageClear": false,
+      "finite": true
+    },
+    {
+      "stage": 7,
+      "diff": "furious",
+      "rolls": 8,
+      "flips": 4,
+      "frames": 5203,
+      "deaths": 5,
+      "maxEnemy": 5,
+      "maxBullet": 19,
+      "bossSeen": false,
+      "miniSeen": true,
+      "state": "continue",
+      "stageClear": false,
+      "finite": true
+    },
+    {
+      "stage": 8,
+      "diff": "furious",
+      "rolls": 3,
+      "flips": 2,
+      "frames": 2604,
+      "deaths": 5,
+      "maxEnemy": 7,
+      "maxBullet": 15,
+      "bossSeen": false,
+      "miniSeen": false,
+      "state": "continue",
+      "stageClear": false,
+      "finite": true
+    },
+    {
+      "stage": 9,
+      "diff": "furious",
+      "rolls": 5,
+      "flips": 5,
+      "frames": 6768,
+      "deaths": 6,
+      "maxEnemy": 12,
+      "maxBullet": 21,
+      "bossSeen": false,
+      "miniSeen": true,
+      "state": "continue",
+      "stageClear": false,
+      "finite": true
+    }
+  ],
+  "limitations": "Inspection clips use immunity and selected phases. The finite-life bot is weak against ground warnings. Full balance is not approved.",
+  "checkpoint0515": {
+    "suite": {
+      "log": "_shots/overnight_0927/suite-12.log",
+      "passed": 5316,
+      "failed": 0,
+      "finalSummary": true,
+      "baselinePassed": 5309,
+      "baselineFailed": 0
+    },
+    "laterPhases": {
+      "cases": [
+        {
+          "stage": 2,
+          "kind": "infernoreaver",
+          "mini": false,
+          "diff": "normal",
+          "phase": null,
+          "seconds": 38,
+          "modes": [
+            "ring",
+            "coreLaser",
+            "rollerball",
+            "rotor"
+          ],
+          "forms": [
+            "core"
+          ],
+          "events": [],
+          "maxBullets": 54,
+          "finite": true,
+          "reentries": 0,
+          "entered": true,
+          "cues": {
+            "bossWeaponCharge": 4,
+            "bossfireInfernoreaver": 9,
+            "missile": 8,
+            "furnaceLaserCharge": 2,
+            "alertDanger": 4,
+            "furnaceLaserBurst": 2,
+            "furnaceFlameRelease": 3,
+            "furnaceLaserEnd": 2,
+            "alertLockon": 1,
+            "whip": 6,
+            "furnaceFlameIgnite": 1
+          },
+          "hp": 2590,
+          "state": "play"
+        },
+        {
+          "stage": 2,
+          "kind": "infernoreaver",
+          "mini": false,
+          "diff": "normal",
+          "phase": null,
+          "seconds": 38,
+          "modes": [
+            "eyeBurst",
+            "eyeSweep"
+          ],
+          "forms": [
+            "head"
+          ],
+          "events": [],
+          "maxBullets": 2,
+          "finite": true,
+          "reentries": 0,
+          "entered": true,
+          "cues": {
+            "furnaceLaserCharge": 15,
+            "furnaceLaserBurst": 39,
+            "missile": 11,
+            "alertDanger": 4,
+            "furnaceFlameRelease": 4
+          },
+          "hp": 2590,
+          "state": "play"
+        },
+        {
+          "stage": 7,
+          "kind": "sludgeemperor",
+          "mini": false,
+          "diff": "normal",
+          "phase": "shield",
+          "seconds": 25,
+          "modes": [
+            "recover",
+            "orbs",
+            "mortar"
+          ],
+          "forms": [
+            "shield"
+          ],
+          "events": [],
+          "maxBullets": 26,
+          "finite": true,
+          "reentries": 0,
+          "entered": true,
+          "cues": {
+            "bossfireSludgeemperor": 34,
+            "alertLockon": 4,
+            "missile": 12,
+            "bossWeaponCharge": 3,
+            "wardenRail": 3,
+            "expBig": 6
+          },
+          "hp": 2035,
+          "state": "play"
+        },
+        {
+          "stage": 7,
+          "kind": "sludgeemperor",
+          "mini": false,
+          "diff": "normal",
+          "phase": "core",
+          "seconds": 25,
+          "modes": [
+            "recover",
+            "aim",
+            "mortar"
+          ],
+          "forms": [
+            "core"
+          ],
+          "events": [],
+          "maxBullets": 10,
+          "finite": true,
+          "reentries": 0,
+          "entered": true,
+          "cues": {
+            "alertLockon": 4,
+            "machineGun": 24,
+            "missile": 10,
+            "bossWeaponCharge": 3,
+            "wardenRail": 3,
+            "expBig": 6
+          },
+          "hp": 1690,
+          "state": "play"
+        },
+        {
+          "stage": 7,
+          "kind": "sludgeemperor",
+          "mini": false,
+          "diff": "normal",
+          "phase": "core",
+          "seconds": 25,
+          "modes": [
+            "recover",
+            "laser",
+            "orbs"
+          ],
+          "forms": [
+            "core"
+          ],
+          "events": [],
+          "maxBullets": 17,
+          "finite": true,
+          "reentries": 0,
+          "entered": true,
+          "cues": {
+            "bossWeaponCharge": 5,
+            "alertLockon": 7,
+            "combatBeam0927": 20,
+            "missile": 13,
+            "bossfireSludgeemperor": 6
+          },
+          "hp": 1056,
+          "state": "play"
+        },
+        {
+          "stage": 2,
+          "kind": "infernoreaver",
+          "mini": false,
+          "diff": "hard",
+          "phase": null,
+          "seconds": 38,
+          "modes": [
+            "ring",
+            "coreLaser",
+            "rollerball",
+            "rotor"
+          ],
+          "forms": [
+            "core"
+          ],
+          "events": [],
+          "maxBullets": 54,
+          "finite": true,
+          "reentries": 0,
+          "entered": true,
+          "cues": {
+            "bossWeaponCharge": 4,
+            "bossfireInfernoreaver": 9,
+            "missile": 18,
+            "furnaceLaserCharge": 2,
+            "alertDanger": 5,
+            "furnaceLaserBurst": 2,
+            "furnaceFlameRelease": 5,
+            "furnaceLaserEnd": 2,
+            "alertLockon": 1,
+            "whip": 6,
+            "furnaceFlameIgnite": 1
+          },
+          "hp": 3236,
+          "state": "play"
+        },
+        {
+          "stage": 2,
+          "kind": "infernoreaver",
+          "mini": false,
+          "diff": "hard",
+          "phase": null,
+          "seconds": 38,
+          "modes": [
+            "eyeBurst",
+            "eyeSweep"
+          ],
+          "forms": [
+            "head"
+          ],
+          "events": [],
+          "maxBullets": 2,
+          "finite": true,
+          "reentries": 0,
+          "entered": true,
+          "cues": {
+            "furnaceLaserCharge": 15,
+            "furnaceLaserBurst": 39,
+            "missile": 12,
+            "alertDanger": 5,
+            "furnaceFlameRelease": 4
+          },
+          "hp": 3236,
+          "state": "play"
+        },
+        {
+          "stage": 7,
+          "kind": "sludgeemperor",
+          "mini": false,
+          "diff": "hard",
+          "phase": "shield",
+          "seconds": 25,
+          "modes": [
+            "recover",
+            "orbs",
+            "mortar"
+          ],
+          "forms": [
+            "shield"
+          ],
+          "events": [],
+          "maxBullets": 30,
+          "finite": true,
+          "reentries": 0,
+          "entered": true,
+          "cues": {
+            "alertLockon": 4,
+            "bossfireSludgeemperor": 36,
+            "missile": 12,
+            "bossWeaponCharge": 3,
+            "wardenRail": 3,
+            "expBig": 9
+          },
+          "hp": 2552,
+          "state": "play"
+        },
+        {
+          "stage": 7,
+          "kind": "sludgeemperor",
+          "mini": false,
+          "diff": "hard",
+          "phase": "core",
+          "seconds": 25,
+          "modes": [
+            "recover",
+            "aim",
+            "mortar"
+          ],
+          "forms": [
+            "core"
+          ],
+          "events": [],
+          "maxBullets": 10,
+          "finite": true,
+          "reentries": 0,
+          "entered": true,
+          "cues": {
+            "alertLockon": 4,
+            "machineGun": 36,
+            "missile": 10,
+            "bossWeaponCharge": 3,
+            "wardenRail": 3,
+            "expBig": 9
+          },
+          "hp": 2114,
+          "state": "play"
+        },
+        {
+          "stage": 7,
+          "kind": "sludgeemperor",
+          "mini": false,
+          "diff": "hard",
+          "phase": "core",
+          "seconds": 25,
+          "modes": [
+            "recover",
+            "laser",
+            "orbs"
+          ],
+          "forms": [
+            "core"
+          ],
+          "events": [],
+          "maxBullets": 21,
+          "finite": true,
+          "reentries": 0,
+          "entered": true,
+          "cues": {
+            "bossWeaponCharge": 5,
+            "alertLockon": 7,
+            "combatBeam0927": 19,
+            "missile": 13,
+            "bossfireSludgeemperor": 6
+          },
+          "hp": 1320,
+          "state": "play"
+        },
+        {
+          "stage": 2,
+          "kind": "infernoreaver",
+          "mini": false,
+          "diff": "furious",
+          "phase": null,
+          "seconds": 38,
+          "modes": [
+            "ring",
+            "coreLaser",
+            "rollerball",
+            "rotor"
+          ],
+          "forms": [
+            "core"
+          ],
+          "events": [],
+          "maxBullets": 55,
+          "finite": true,
+          "reentries": 0,
+          "entered": true,
+          "cues": {
+            "bossWeaponCharge": 3,
+            "bossfireInfernoreaver": 11,
+            "missile": 10,
+            "furnaceLaserCharge": 2,
+            "alertDanger": 5,
+            "furnaceLaserBurst": 2,
+            "furnaceFlameRelease": 5,
+            "furnaceLaserEnd": 1,
+            "whip": 3,
+            "furnacePowerSurge": 1,
+            "explosionBossCore": 1,
+            "furnaceFlameIgnite": 1
+          },
+          "hp": 3365,
+          "state": "play"
+        },
+        {
+          "stage": 2,
+          "kind": "infernoreaver",
+          "mini": false,
+          "diff": "furious",
+          "phase": null,
+          "seconds": 38,
+          "modes": [
+            "eyeBurst",
+            "eyeSweep"
+          ],
+          "forms": [
+            "head"
+          ],
+          "events": [],
+          "maxBullets": 2,
+          "finite": true,
+          "reentries": 0,
+          "entered": true,
+          "cues": {
+            "furnaceLaserCharge": 15,
+            "furnaceLaserBurst": 39,
+            "missile": 13,
+            "alertDanger": 5,
+            "furnaceFlameRelease": 4
+          },
+          "hp": 3365,
+          "state": "play"
+        },
+        {
+          "stage": 7,
+          "kind": "sludgeemperor",
+          "mini": false,
+          "diff": "furious",
+          "phase": "shield",
+          "seconds": 25,
+          "modes": [
+            "recover",
+            "orbs",
+            "mortar"
+          ],
+          "forms": [
+            "shield"
+          ],
+          "events": [],
+          "maxBullets": 32,
+          "finite": true,
+          "reentries": 0,
+          "entered": true,
+          "cues": {
+            "alertLockon": 4,
+            "bossfireSludgeemperor": 37,
+            "bossWeaponCharge": 3,
+            "wardenRail": 3,
+            "missile": 10,
+            "expBig": 12
+          },
+          "hp": 3017,
+          "state": "play"
+        },
+        {
+          "stage": 7,
+          "kind": "sludgeemperor",
+          "mini": false,
+          "diff": "furious",
+          "phase": "core",
+          "seconds": 25,
+          "modes": [
+            "recover",
+            "aim",
+            "mortar"
+          ],
+          "forms": [
+            "core"
+          ],
+          "events": [],
+          "maxBullets": 10,
+          "finite": true,
+          "reentries": 0,
+          "entered": true,
+          "cues": {
+            "alertLockon": 4,
+            "machineGun": 54,
+            "missile": 9,
+            "bossWeaponCharge": 3,
+            "wardenRail": 3,
+            "expBig": 12
+          },
+          "hp": 2496,
+          "state": "play"
+        },
+        {
+          "stage": 7,
+          "kind": "sludgeemperor",
+          "mini": false,
+          "diff": "furious",
+          "phase": "core",
+          "seconds": 25,
+          "modes": [
+            "recover",
+            "laser",
+            "orbs"
+          ],
+          "forms": [
+            "core"
+          ],
+          "events": [],
+          "maxBullets": 21,
+          "finite": true,
+          "reentries": 0,
+          "entered": true,
+          "cues": {
+            "bossWeaponCharge": 5,
+            "alertLockon": 7,
+            "combatBeam0927": 25,
+            "missile": 14,
+            "bossfireSludgeemperor": 6
+          },
+          "hp": 1560,
+          "state": "play"
+        },
+        {
+          "stage": 3,
+          "kind": "frostcruiser",
+          "mini": true,
+          "diff": "furious",
+          "phase": null,
+          "seconds": 75,
+          "modes": [
+            "recover",
+            "nuclear",
+            "cryo-crosscut",
+            "icebreaker",
+            "form-change",
+            "shatter-wheel",
+            "pincer-lance",
+            "cryo-mortar"
+          ],
+          "forms": [
+            "neutral",
+            "fire",
+            "ice"
+          ],
+          "events": [],
+          "maxBullets": 94,
+          "finite": true,
+          "reentries": 0,
+          "entered": true,
+          "cues": {
+            "whip": 1,
+            "dialogueLetter": 17,
+            "stage3AtomicSiren": 1,
+            "atomicDetonate": 1,
+            "expBig": 37,
+            "expSmall": 43,
+            "bossWeaponCharge": 17,
+            "combatOrb0927": 49,
+            "enemyIceBolt": 113,
+            "bossPhase": 6,
+            "combatIce0927": 38,
+            "alertLockon": 2,
+            "enemyHeavyLaser": 2
+          },
+          "hp": 3758,
+          "state": "play"
+        },
+        {
+          "stage": 3,
+          "kind": "cryospear",
+          "mini": false,
+          "diff": "furious",
+          "phase": null,
+          "seconds": 75,
+          "modes": [
+            "recover",
+            "nuclear",
+            "bastion-gates",
+            "cannon-relay",
+            "form-change",
+            "orb-siege",
+            "glacier-press",
+            "cryo-mortar"
+          ],
+          "forms": [
+            "neutral",
+            "fire",
+            "ice"
+          ],
+          "events": [],
+          "maxBullets": 33,
+          "finite": true,
+          "reentries": 0,
+          "entered": true,
+          "cues": {
+            "whip": 1,
+            "dialogueLetter": 12,
+            "stage3AtomicSiren": 1,
+            "atomicDetonate": 1,
+            "expBig": 37,
+            "expSmall": 41,
+            "bossWeaponCharge": 18,
+            "combatOrb0927": 19,
+            "enemyIceBolt": 34,
+            "missile": 28,
+            "alertLockon": 4,
+            "enemyHeavyLaser": 4,
+            "bossPhase": 6,
+            "combatIce0927": 19
+          },
+          "hp": 4680,
+          "state": "play"
+        }
+      ],
+      "errors": []
+    },
+    "padAndWing": {
+      "pad": [
+        {
+          "button": 2,
+          "restored": true,
+          "shots": 24,
+          "disconnected": true,
+          "reconnected": true,
+          "released": true
+        },
+        {
+          "button": 5,
+          "restored": true,
+          "shots": 24,
+          "disconnected": true,
+          "reconnected": true,
+          "released": true
+        }
+      ],
+      "wing": {
+        "stageTimer": 34,
+        "combatTime": 39.99999999999901,
+        "missiles": {
+          "maverick": 8,
+          "freezer": 6
+        },
+        "defenseFrames": 396,
+        "ships": []
+      },
+      "errors": []
+    },
+    "lateClips": {
+      "clips": [
+        {
+          "name": "tempest-normal",
+          "stage": 6,
+          "kind": "tempestbrothers",
+          "mini": true,
+          "diff": "normal",
+          "seconds": 40,
+          "setup": "s6Opening=null;stageTimer=34;s6WingLaunch(2,false);s6Wing.beats=1;",
+          "seen": [
+            {
+              "t": 0.02,
+              "state": "strafe"
+            },
+            {
+              "t": 5.7,
+              "state": "laser-track"
+            },
+            {
+              "t": 7.36,
+              "state": "dive"
+            },
+            {
+              "t": 7.86,
+              "state": "climb"
+            },
+            {
+              "t": 8.34,
+              "state": "strafe"
+            },
+            {
+              "t": 9.02,
+              "state": "laser-track"
+            },
+            {
+              "t": 10.69,
+              "state": "dive"
+            },
+            {
+              "t": 11.22,
+              "state": "climb"
+            },
+            {
+              "t": 11.7,
+              "state": "strafe"
+            },
+            {
+              "t": 17.14,
+              "state": "laser-track"
+            },
+            {
+              "t": 18.8,
+              "state": "dive"
+            },
+            {
+              "t": 19.3,
+              "state": "climb"
+            },
+            {
+              "t": 19.78,
+              "state": "strafe"
+            },
+            {
+              "t": 20.93,
+              "state": "laser-track"
+            },
+            {
+              "t": 22.59,
+              "state": "dive"
+            },
+            {
+              "t": 23.12,
+              "state": "climb"
+            },
+            {
+              "t": 27.76,
+              "state": "strafe"
+            },
+            {
+              "t": 28.67,
+              "state": "laser-track"
+            },
+            {
+              "t": 30.34,
+              "state": "dive"
+            },
+            {
+              "t": 30.83,
+              "state": "climb"
+            },
+            {
+              "t": 31.31,
+              "state": "strafe"
+            },
+            {
+              "t": 32.01,
+              "state": "laser-track"
+            },
+            {
+              "t": 33.68,
+              "state": "dive"
+            },
+            {
+              "t": 34.21,
+              "state": "climb"
+            },
+            {
+              "t": 34.69,
+              "state": "strafe"
+            },
+            {
+              "t": 39.97,
+              "state": "laser-track"
+            }
+          ],
+          "maxEnemy": 0,
+          "maxBullets": 12,
+          "maxJump": 3.5100000000000477,
+          "finite": true,
+          "audioPeak": 0.8896303176879883,
+          "zoom": 1
+        },
+        {
+          "name": "toxic-core-laser",
+          "stage": 7,
+          "kind": "sludgeemperor",
+          "mini": false,
+          "diff": "normal",
+          "seconds": 16,
+          "setup": "s7mInit(B);B._be=null;B._s7FinalNoBar=false;B.x=worldWidth()/2;B.y=175;for(const p of B._s7mod.parts)p.hp=0;B._s7mod.shield=0;B._s7mod.seq=0;s7mSet(B,'laser');",
+          "seen": [
+            {
+              "t": 0.02,
+              "state": "laser"
+            },
+            {
+              "t": 2.86,
+              "state": "recover"
+            },
+            {
+              "t": 3.97,
+              "state": "laser"
+            },
+            {
+              "t": 6.72,
+              "state": "recover"
+            },
+            {
+              "t": 7.82,
+              "state": "laser"
+            },
+            {
+              "t": 10.58,
+              "state": "recover"
+            },
+            {
+              "t": 11.68,
+              "state": "orbs"
+            },
+            {
+              "t": 14.43,
+              "state": "recover"
+            },
+            {
+              "t": 15.54,
+              "state": "laser"
+            }
+          ],
+          "maxEnemy": 0,
+          "maxBullets": 17,
+          "maxJump": 3.5100000000000477,
+          "finite": true,
+          "audioPeak": 0.7219138145446777,
+          "zoom": 1
+        },
+        {
+          "name": "toxic-core-guns",
+          "stage": 7,
+          "kind": "sludgeemperor",
+          "mini": false,
+          "diff": "hard",
+          "seconds": 16,
+          "setup": "s7mInit(B);B._be=null;B._s7FinalNoBar=false;B.x=worldWidth()/2;B.y=175;for(const p of B._s7mod.parts)if(!p.id.startsWith('gun'))p.hp=0;B._s7mod.shield=0;B._s7mod.seq=0;s7mSet(B,'aim');",
+          "seen": [
+            {
+              "t": 0.02,
+              "state": "aim"
+            },
+            {
+              "t": 2.83,
+              "state": "recover"
+            },
+            {
+              "t": 3.74,
+              "state": "aim"
+            },
+            {
+              "t": 6.54,
+              "state": "recover"
+            },
+            {
+              "t": 7.46,
+              "state": "mortar"
+            },
+            {
+              "t": 10.26,
+              "state": "recover"
+            },
+            {
+              "t": 11.17,
+              "state": "aim"
+            },
+            {
+              "t": 13.97,
+              "state": "recover"
+            },
+            {
+              "t": 14.88,
+              "state": "mortar"
+            }
+          ],
+          "maxEnemy": 0,
+          "maxBullets": 12,
+          "maxJump": 3.5100000000000477,
+          "finite": true,
+          "audioPeak": 0.49425047636032104,
+          "zoom": 1
+        }
+      ],
+      "errors": []
+    },
+    "finiteLifeV5": [
+      {
+        "stage": 5,
+        "diff": "normal",
+        "frames": 7613,
+        "deaths": 5,
+        "rolls": 5,
+        "flips": 3,
+        "bossSeen": true,
+        "miniSeen": true,
+        "state": "continue",
+        "stageClear": false,
+        "finite": true,
+        "patterns": [
+          "entry",
+          "bombs",
+          "charge",
+          "beam",
+          "recover",
+          "missiles",
+          "flyby",
+          "return",
+          "unfold",
+          "hammer",
+          "warn",
+          "leap",
+          "leap_reset",
+          "back",
+          "shield",
+          "curl",
+          "ball",
+          "uncurl",
+          "hammer_exposed",
+          "hammer_stun"
+        ]
+      },
+      {
+        "stage": 6,
+        "diff": "normal",
+        "frames": 4881,
+        "deaths": 5,
+        "rolls": 9,
+        "flips": 6,
+        "bossSeen": false,
+        "miniSeen": true,
+        "state": "continue",
+        "stageClear": false,
+        "finite": true,
+        "patterns": []
+      },
+      {
+        "stage": 8,
+        "diff": "normal",
+        "frames": 6721,
+        "deaths": 5,
+        "rolls": 3,
+        "flips": 1,
+        "bossSeen": true,
+        "miniSeen": false,
+        "state": "continue",
+        "stageClear": false,
+        "finite": true,
+        "patterns": [
+          "rockets",
+          "hyperlaser",
+          "shadowcall",
+          "spinlaser",
+          "orb",
+          "laser"
+        ]
+      },
+      {
+        "stage": 5,
+        "diff": "hard",
+        "frames": 8448,
+        "deaths": 5,
+        "rolls": 4,
+        "flips": 3,
+        "bossSeen": true,
+        "miniSeen": true,
+        "state": "continue",
+        "stageClear": false,
+        "finite": true,
+        "patterns": [
+          "entry",
+          "bombs",
+          "charge",
+          "beam",
+          "recover",
+          "missiles",
+          "flyby",
+          "return",
+          "unfold",
+          "hammer",
+          "warn",
+          "leap",
+          "leap_reset",
+          "back",
+          "shield",
+          "curl",
+          "ball",
+          "uncurl",
+          "nova_charge",
+          "nova_release",
+          "spin",
+          "throw",
+          "hammer_catch",
+          "revenge_charge"
+        ]
+      },
+      {
+        "stage": 6,
+        "diff": "hard",
+        "frames": 4138,
+        "deaths": 5,
+        "rolls": 7,
+        "flips": 5,
+        "bossSeen": false,
+        "miniSeen": true,
+        "state": "continue",
+        "stageClear": false,
+        "finite": true,
+        "patterns": []
+      },
+      {
+        "stage": 8,
+        "diff": "hard",
+        "frames": 6037,
+        "deaths": 5,
+        "rolls": 8,
+        "flips": 2,
+        "bossSeen": true,
+        "miniSeen": false,
+        "state": "continue",
+        "stageClear": false,
+        "finite": true,
+        "patterns": [
+          "rockets",
+          "hyperlaser",
+          "spinlaser",
+          "shadowcall",
+          "orb"
+        ]
+      },
+      {
+        "stage": 5,
+        "diff": "furious",
+        "frames": 7843,
+        "deaths": 5,
+        "rolls": 6,
+        "flips": 3,
+        "bossSeen": true,
+        "miniSeen": true,
+        "state": "continue",
+        "stageClear": false,
+        "finite": true,
+        "patterns": [
+          "entry",
+          "bombs",
+          "charge",
+          "beam",
+          "recover",
+          "missiles",
+          "flyby",
+          "return",
+          "unfold",
+          "hammer",
+          "warn",
+          "leap",
+          "leap_reset",
+          "back",
+          "shield",
+          "curl",
+          "ball"
+        ]
+      },
+      {
+        "stage": 6,
+        "diff": "furious",
+        "frames": 3781,
+        "deaths": 5,
+        "rolls": 7,
+        "flips": 6,
+        "bossSeen": false,
+        "miniSeen": true,
+        "state": "continue",
+        "stageClear": false,
+        "finite": true,
+        "patterns": []
+      },
+      {
+        "stage": 8,
+        "diff": "furious",
+        "frames": 6585,
+        "deaths": 5,
+        "rolls": 6,
+        "flips": 3,
+        "bossSeen": true,
+        "miniSeen": false,
+        "state": "continue",
+        "stageClear": false,
+        "finite": true,
+        "patterns": [
+          "laser",
+          "hyperlaser",
+          "spinlaser",
+          "shadowcall",
+          "rockets",
+          "orb"
+        ]
+      }
+    ],
+    "notes": "Opening and later-phase recordings are inspection fixtures. Finite-life probes initialize stages in arcade mode with selected loadouts; no claim of full campaign completion. Physical 8BitDo hardware remains untested."
+  },
+  "checkpoint0550": {
+    "damageWindows": {
+      "runs": [
+        {
+          "stage": 1,
+          "kind": "razorback",
+          "mini": true,
+          "diff": "normal",
+          "seconds": 26.683333333333334,
+          "damage": 942,
+          "healed": 0,
+          "exposed": 1,
+          "targetable": 0.7232979387882573,
+          "initialHp": 942,
+          "endHp": 0,
+          "ended": true,
+          "state": "play",
+          "phases": [],
+          "finite": true
+        },
+        {
+          "stage": 2,
+          "kind": "magmaward",
+          "mini": true,
+          "diff": "normal",
+          "seconds": 24.45,
+          "damage": 2128,
+          "healed": 0,
+          "exposed": 0.9359236537150648,
+          "targetable": 0.9352419904567144,
+          "initialHp": 2128,
+          "endHp": 0,
+          "ended": true,
+          "state": "play",
+          "phases": [
+            {
+              "at": 0.016666666666666666,
+              "phase": "recover",
+              "hp": 2128
+            },
+            {
+              "at": 2.7333333333333334,
+              "phase": "ember-hunt",
+              "hp": 1969
+            },
+            {
+              "at": 6.45,
+              "phase": "recover",
+              "hp": 1629
+            },
+            {
+              "at": 7.55,
+              "phase": "furnace-strafe",
+              "hp": 1537
+            },
+            {
+              "at": 11.016666666666667,
+              "phase": "recover",
+              "hp": 1224
+            },
+            {
+              "at": 12.116666666666667,
+              "phase": "ember-mortar",
+              "hp": 1120
+            },
+            {
+              "at": 16.733333333333334,
+              "phase": "recover",
+              "hp": 712
+            },
+            {
+              "at": 17.833333333333332,
+              "phase": "furnace-lance",
+              "hp": 600
+            },
+            {
+              "at": 22.283333333333335,
+              "phase": "recover",
+              "hp": 204
+            },
+            {
+              "at": 23.383333333333333,
+              "phase": "ember-bombard",
+              "hp": 100
+            }
+          ],
+          "finite": true
+        },
+        {
+          "stage": 3,
+          "kind": "frostcruiser",
+          "mini": true,
+          "diff": "normal",
+          "seconds": 26.916666666666668,
+          "damage": 2699.9999999999877,
+          "healed": 0,
+          "exposed": 0.9417956656346749,
+          "targetable": 0.9411764705882353,
+          "initialHp": 2699,
+          "endHp": -0.9999999999928129,
+          "ended": true,
+          "state": "play",
+          "phases": [
+            {
+              "at": 0.016666666666666666,
+              "phase": "recover",
+              "hp": 2699
+            },
+            {
+              "at": 2.7333333333333334,
+              "phase": "cryo-crosscut",
+              "hp": 2540
+            },
+            {
+              "at": 6.45,
+              "phase": "recover",
+              "hp": 2200
+            },
+            {
+              "at": 7.55,
+              "phase": "icebreaker",
+              "hp": 2100
+            },
+            {
+              "at": 11.016666666666667,
+              "phase": "recover",
+              "hp": 1783
+            },
+            {
+              "at": 12.116666666666667,
+              "phase": "shatter-wheel",
+              "hp": 1683
+            },
+            {
+              "at": 15.833333333333334,
+              "phase": "recover",
+              "hp": 1340.9
+            },
+            {
+              "at": 16.933333333333334,
+              "phase": "pincer-lance",
+              "hp": 1216.7000000000012
+            },
+            {
+              "at": 21.383333333333333,
+              "phase": "recover",
+              "hp": 665.9000000000065
+            },
+            {
+              "at": 22.483333333333334,
+              "phase": "cryo-mortar",
+              "hp": 530.9000000000078
+            }
+          ],
+          "finite": true
+        },
+        {
+          "stage": 3,
+          "kind": "cryospear",
+          "mini": false,
+          "diff": "normal",
+          "seconds": 35.46666666666667,
+          "damage": 3169,
+          "healed": 0,
+          "exposed": 0.9708646616541353,
+          "targetable": 0.9703947368421053,
+          "initialHp": 3168,
+          "endHp": -1,
+          "ended": true,
+          "state": "play",
+          "phases": [
+            {
+              "at": 0.016666666666666666,
+              "phase": "recover",
+              "hp": 3168
+            },
+            {
+              "at": 2.2,
+              "phase": "bastion-gates",
+              "hp": 3008
+            },
+            {
+              "at": 5.916666666666667,
+              "phase": "recover",
+              "hp": 2668
+            },
+            {
+              "at": 7.016666666666667,
+              "phase": "cannon-relay",
+              "hp": 2568
+            },
+            {
+              "at": 11.466666666666667,
+              "phase": "recover",
+              "hp": 2160
+            },
+            {
+              "at": 12.566666666666666,
+              "phase": "orb-siege",
+              "hp": 2068
+            },
+            {
+              "at": 16.533333333333335,
+              "phase": "recover",
+              "hp": 1725
+            },
+            {
+              "at": 17.633333333333333,
+              "phase": "glacier-press",
+              "hp": 1613
+            },
+            {
+              "at": 21.9,
+              "phase": "recover",
+              "hp": 1229
+            },
+            {
+              "at": 23,
+              "phase": "cryo-mortar",
+              "hp": 1137
+            },
+            {
+              "at": 27.616666666666667,
+              "phase": "recover",
+              "hp": 717
+            },
+            {
+              "at": 28.716666666666665,
+              "phase": "cannon-relay",
+              "hp": 605
+            },
+            {
+              "at": 33.166666666666664,
+              "phase": "recover",
+              "hp": 209
+            },
+            {
+              "at": 34.266666666666666,
+              "phase": "bastion-gates",
+              "hp": 105
+            }
+          ],
+          "finite": true
+        },
+        {
+          "stage": 5,
+          "kind": "chromehammer",
+          "mini": false,
+          "diff": "normal",
+          "seconds": 55.333333333333336,
+          "damage": 9247.053612374973,
+          "healed": 5603.767937374936,
+          "exposed": 0.9135542168674698,
+          "targetable": 0.9045180722891566,
+          "initialHp": 3641.3442,
+          "endHp": -1.9414749999605405,
+          "ended": true,
+          "state": "play",
+          "phases": [
+            {
+              "at": 0.016666666666666666,
+              "phase": "flyby",
+              "hp": 3641.3442
+            },
+            {
+              "at": 1.2833333333333334,
+              "phase": "return",
+              "hp": 3641.3442
+            },
+            {
+              "at": 2.783333333333333,
+              "phase": "unfold",
+              "hp": 3641.3442
+            },
+            {
+              "at": 4.8,
+              "phase": "hammer",
+              "hp": 3600.4242000000017
+            },
+            {
+              "at": 5.85,
+              "phase": "warn",
+              "hp": 7298.890820000014
+            },
+            {
+              "at": 7.05,
+              "phase": "leap",
+              "hp": 7086.010820000022
+            },
+            {
+              "at": 7.583333333333333,
+              "phase": "recover",
+              "hp": 6938.650820000028
+            },
+            {
+              "at": 8.383333333333333,
+              "phase": "leap_reset",
+              "hp": 6832.210820000032
+            },
+            {
+              "at": 9.016666666666667,
+              "phase": "hammer_stun",
+              "hp": 6725.770820000036
+            },
+            {
+              "at": 14.033333333333333,
+              "phase": "leap_reset",
+              "hp": 4695.370820000115
+            },
+            {
+              "at": 14.666666666666666,
+              "phase": "hammer",
+              "hp": 4548.0108200001205
+            },
+            {
+              "at": 15.216666666666667,
+              "phase": "warn",
+              "hp": 4449.770820000124
+            },
+            {
+              "at": 16.416666666666668,
+              "phase": "leap",
+              "hp": 4195.970820000134
+            },
+            {
+              "at": 16.95,
+              "phase": "recover",
+              "hp": 4089.530820000138
+            },
+            {
+              "at": 17.083333333333332,
+              "phase": "hammer_exposed",
+              "hp": 4089.530820000138
+            },
+            {
+              "at": 17.133333333333333,
+              "phase": "hammer_stun",
+              "hp": 4073.130820000138
+            },
+            {
+              "at": 22.15,
+              "phase": "leap_reset",
+              "hp": 2042.7308200000969
+            },
+            {
+              "at": 22.166666666666668,
+              "phase": "curl",
+              "hp": 2042.7308200000969
+            },
+            {
+              "at": 23.416666666666668,
+              "phase": "ball",
+              "hp": 1788.9308200000917
+            },
+            {
+              "at": 38.416666666666664,
+              "phase": "uncurl",
+              "hp": 1398.012820000047
+            },
+            {
+              "at": 39.666666666666664,
+              "phase": "hammer",
+              "hp": 1144.2128200000418
+            },
+            {
+              "at": 39.68333333333333,
+              "phase": "chaingun_draw",
+              "hp": 1144.2128200000418
+            },
+            {
+              "at": 41.7,
+              "phase": "chain_warn",
+              "hp": 751.2528200000413
+            },
+            {
+              "at": 42.016666666666666,
+              "phase": "storm_raise",
+              "hp": 751.2528200000413
+            },
+            {
+              "at": 49.85,
+              "phase": "storm_idle",
+              "hp": 1084.2185250000387
+            },
+            {
+              "at": 50.95,
+              "phase": "storm_warn",
+              "hp": 871.3385250000385
+            },
+            {
+              "at": 52.1,
+              "phase": "storm_slam",
+              "hp": 617.5385250000402
+            },
+            {
+              "at": 52.7,
+              "phase": "storm_split",
+              "hp": 531.5585250000406
+            }
+          ],
+          "finite": true
+        },
+        {
+          "stage": 6,
+          "kind": "tempestbrothers",
+          "mini": true,
+          "diff": "normal",
+          "seconds": 50.68333333333333,
+          "damage": 1818.9999999999998,
+          "healed": 0,
+          "exposed": 1,
+          "targetable": 0.691219993423216,
+          "initialHp": 1819,
+          "endHp": 0,
+          "ended": true,
+          "state": "play",
+          "phases": [
+            {
+              "at": 0.016666666666666666,
+              "phase": "chase",
+              "hp": 1819
+            },
+            {
+              "at": 6.766666666666667,
+              "phase": "overtake",
+              "hp": 1577.6249999999998
+            },
+            {
+              "at": 8.283333333333333,
+              "phase": "pursuit",
+              "hp": 1546.6249999999998
+            },
+            {
+              "at": 18.316666666666666,
+              "phase": "return",
+              "hp": 1136.875
+            },
+            {
+              "at": 19.833333333333332,
+              "phase": "hell",
+              "hp": 1136.875
+            },
+            {
+              "at": 22.833333333333332,
+              "phase": "falsecrash",
+              "hp": 906.4999999999999
+            },
+            {
+              "at": 24.133333333333333,
+              "phase": "frenzy",
+              "hp": 829.4999999999992
+            },
+            {
+              "at": 31.816666666666666,
+              "phase": "death",
+              "hp": 505.12499999999824
+            },
+            {
+              "at": 35.13333333333333,
+              "phase": "escape",
+              "hp": 438.75000000000006
+            }
+          ],
+          "finite": true
+        },
+        {
+          "stage": 7,
+          "kind": "sludgeemperor",
+          "mini": false,
+          "diff": "normal",
+          "seconds": 58.983333333333334,
+          "damage": 11725,
+          "healed": 0,
+          "exposed": 1,
+          "targetable": 0.8372421588019214,
+          "initialHp": 11726,
+          "endHp": 1,
+          "ended": true,
+          "state": "play",
+          "phases": [
+            {
+              "at": 0.016666666666666666,
+              "phase": "portal",
+              "hp": 3716
+            },
+            {
+              "at": 1.4,
+              "phase": "entry",
+              "hp": 3716
+            },
+            {
+              "at": 3.1333333333333333,
+              "phase": "roar",
+              "hp": 3716
+            },
+            {
+              "at": 5.8,
+              "phase": "recover",
+              "hp": 3716
+            },
+            {
+              "at": 6.9,
+              "phase": "chase",
+              "hp": 3646
+            },
+            {
+              "at": 9.616666666666667,
+              "phase": "swipeL",
+              "hp": 3476
+            },
+            {
+              "at": 11.283333333333333,
+              "phase": "swipeR",
+              "hp": 3382
+            },
+            {
+              "at": 12.95,
+              "phase": "swipeX",
+              "hp": 3264
+            },
+            {
+              "at": 14.616666666666667,
+              "phase": "jump",
+              "hp": 3138
+            },
+            {
+              "at": 18.433333333333334,
+              "phase": "recover",
+              "hp": 3135
+            },
+            {
+              "at": 19.533333333333335,
+              "phase": "chain",
+              "hp": 3065
+            },
+            {
+              "at": 22.3,
+              "phase": "recover",
+              "hp": 2873
+            },
+            {
+              "at": 23.4,
+              "phase": "mortar",
+              "hp": 2806
+            },
+            {
+              "at": 26.166666666666668,
+              "phase": "recover",
+              "hp": 2575
+            },
+            {
+              "at": 27.266666666666666,
+              "phase": "orbs",
+              "hp": 2466
+            },
+            {
+              "at": 30.033333333333335,
+              "phase": "recover",
+              "hp": 2270
+            },
+            {
+              "at": 31.133333333333333,
+              "phase": "bounce",
+              "hp": 2172
+            },
+            {
+              "at": 31.7,
+              "phase": "drop",
+              "hp": 2130
+            },
+            {
+              "at": 33.166666666666664,
+              "phase": "recover",
+              "hp": 2033
+            },
+            {
+              "at": 34.266666666666666,
+              "phase": "crawl",
+              "hp": 1950
+            },
+            {
+              "at": 36.983333333333334,
+              "phase": "bounce",
+              "hp": 1787
+            },
+            {
+              "at": 39.55,
+              "phase": "recover",
+              "hp": 1663
+            },
+            {
+              "at": 40.65,
+              "phase": "mortar",
+              "hp": 1602
+            },
+            {
+              "at": 43.2,
+              "phase": "stun",
+              "hp": 1426
+            },
+            {
+              "at": 44.86666666666667,
+              "phase": "mortar",
+              "hp": 1284
+            },
+            {
+              "at": 47.28333333333333,
+              "phase": "stun",
+              "hp": 1050
+            },
+            {
+              "at": 48.95,
+              "phase": "orbs",
+              "hp": 902
+            },
+            {
+              "at": 51.71666666666667,
+              "phase": "recover",
+              "hp": 654
+            },
+            {
+              "at": 52.81666666666667,
+              "phase": "laser",
+              "hp": 562
+            },
+            {
+              "at": 55.583333333333336,
+              "phase": "recover",
+              "hp": 302
+            },
+            {
+              "at": 56.68333333333333,
+              "phase": "laser",
+              "hp": 210
+            },
+            {
+              "at": 58.983333333333334,
+              "phase": "dead",
+              "hp": 1
+            }
+          ],
+          "finite": true
+        },
+        {
+          "stage": 9,
+          "kind": "tidalfusion",
+          "mini": false,
+          "diff": "normal",
+          "seconds": 67.03333333333333,
+          "damage": 21310.30999999989,
+          "healed": 12952,
+          "exposed": 0.9753853804077574,
+          "targetable": 0.9751367478866235,
+          "initialHp": 8357,
+          "endHp": -1.3099999999282304,
+          "ended": true,
+          "state": "play",
+          "phases": [
+            {
+              "at": 0.016666666666666666,
+              "phase": "twins",
+              "hp": 8358
+            },
+            {
+              "at": 43.35,
+              "phase": "fuse",
+              "hp": 2
+            },
+            {
+              "at": 45.766666666666666,
+              "phase": "tidal",
+              "hp": 12953
+            },
+            {
+              "at": 45.78333333333333,
+              "phase": "recover",
+              "hp": 4359.080000000002
+            },
+            {
+              "at": 46.96666666666667,
+              "phase": "tidal-scissors",
+              "hp": 4146.20000000001
+            },
+            {
+              "at": 49.95,
+              "phase": "recover",
+              "hp": 3532.1600000000335
+            },
+            {
+              "at": 51.15,
+              "phase": "torpedo-hunt",
+              "hp": 3278.3600000000433
+            },
+            {
+              "at": 54.13333333333333,
+              "phase": "recover",
+              "hp": 2664.320000000067
+            },
+            {
+              "at": 55.333333333333336,
+              "phase": "abyssal-gates",
+              "hp": 2410.520000000077
+            },
+            {
+              "at": 58.31666666666667,
+              "phase": "recover",
+              "hp": 1796.4800000000855
+            },
+            {
+              "at": 59.516666666666666,
+              "phase": "maelstrom-crown",
+              "hp": 1556.3200000000807
+            },
+            {
+              "at": 62.5,
+              "phase": "recover",
+              "hp": 969.5600000000702
+            },
+            {
+              "at": 63.7,
+              "phase": "hydro-sweep",
+              "hp": 715.7600000000718
+            },
+            {
+              "at": 66.68333333333334,
+              "phase": "recover",
+              "hp": 101.72000000007174
+            }
+          ],
+          "finite": true
+        },
+        {
+          "stage": 1,
+          "kind": "razorback",
+          "mini": true,
+          "diff": "hard",
+          "seconds": 58.21666666666667,
+          "damage": 2446,
+          "healed": 0,
+          "exposed": 1,
+          "targetable": 0.9026624677927283,
+          "initialHp": 2446,
+          "endHp": 0,
+          "ended": true,
+          "state": "play",
+          "phases": [],
+          "finite": true
+        },
+        {
+          "stage": 2,
+          "kind": "magmaward",
+          "mini": true,
+          "diff": "hard",
+          "seconds": 30.55,
+          "damage": 2663,
+          "healed": 0,
+          "exposed": 0.9487179487179487,
+          "targetable": 0.9481723949809057,
+          "initialHp": 2662,
+          "endHp": -1,
+          "ended": true,
+          "state": "play",
+          "phases": [
+            {
+              "at": 0.016666666666666666,
+              "phase": "recover",
+              "hp": 2662
+            },
+            {
+              "at": 2.7333333333333334,
+              "phase": "ember-hunt",
+              "hp": 2503
+            },
+            {
+              "at": 6.35,
+              "phase": "recover",
+              "hp": 2183
+            },
+            {
+              "at": 7.2,
+              "phase": "furnace-strafe",
+              "hp": 2095
+            },
+            {
+              "at": 10.283333333333333,
+              "phase": "recover",
+              "hp": 1826
+            },
+            {
+              "at": 11.133333333333333,
+              "phase": "ember-mortar",
+              "hp": 1746
+            },
+            {
+              "at": 15.75,
+              "phase": "recover",
+              "hp": 1326
+            },
+            {
+              "at": 16.6,
+              "phase": "furnace-lance",
+              "hp": 1246
+            },
+            {
+              "at": 21.233333333333334,
+              "phase": "recover",
+              "hp": 838
+            },
+            {
+              "at": 22.083333333333332,
+              "phase": "ember-bombard",
+              "hp": 758
+            },
+            {
+              "at": 25.7,
+              "phase": "recover",
+              "hp": 442
+            },
+            {
+              "at": 26.55,
+              "phase": "ember-hunt",
+              "hp": 362
+            },
+            {
+              "at": 30.166666666666668,
+              "phase": "recover",
+              "hp": 34
+            }
+          ],
+          "finite": true
+        },
+        {
+          "stage": 3,
+          "kind": "frostcruiser",
+          "mini": true,
+          "diff": "hard",
+          "seconds": 33.516666666666666,
+          "damage": 3376.8499999999867,
+          "healed": 0,
+          "exposed": 0.9532570860268523,
+          "targetable": 0.9527598209845848,
+          "initialHp": 3374,
+          "endHp": -2.849999999990249,
+          "ended": true,
+          "state": "play",
+          "phases": [
+            {
+              "at": 0.016666666666666666,
+              "phase": "recover",
+              "hp": 3374
+            },
+            {
+              "at": 2.7333333333333334,
+              "phase": "cryo-crosscut",
+              "hp": 3223
+            },
+            {
+              "at": 6.35,
+              "phase": "recover",
+              "hp": 2895
+            },
+            {
+              "at": 7.2,
+              "phase": "icebreaker",
+              "hp": 2815
+            },
+            {
+              "at": 10.283333333333333,
+              "phase": "recover",
+              "hp": 2534
+            },
+            {
+              "at": 11.133333333333333,
+              "phase": "shatter-wheel",
+              "hp": 2458
+            },
+            {
+              "at": 14.75,
+              "phase": "recover",
+              "hp": 2138
+            },
+            {
+              "at": 15.6,
+              "phase": "pincer-lance",
+              "hp": 2050
+            },
+            {
+              "at": 20.233333333333334,
+              "phase": "recover",
+              "hp": 1610.4000000000005
+            },
+            {
+              "at": 21.083333333333332,
+              "phase": "cryo-mortar",
+              "hp": 1502.4000000000015
+            },
+            {
+              "at": 25.7,
+              "phase": "recover",
+              "hp": 951.600000000006
+            },
+            {
+              "at": 26.55,
+              "phase": "cryo-crosscut",
+              "hp": 843.6000000000072
+            },
+            {
+              "at": 30.166666666666668,
+              "phase": "recover",
+              "hp": 400.80000000001036
+            },
+            {
+              "at": 31.016666666666666,
+              "phase": "cryo-crosscut",
+              "hp": 292.80000000001013
+            }
+          ],
+          "finite": true
+        },
+        {
+          "stage": 3,
+          "kind": "cryospear",
+          "mini": false,
+          "diff": "hard",
+          "seconds": 44.31666666666667,
+          "damage": 3961,
+          "healed": 0,
+          "exposed": 0.9766829635201203,
+          "targetable": 0.9763068822865739,
+          "initialHp": 3961,
+          "endHp": 0,
+          "ended": true,
+          "state": "play",
+          "phases": [
+            {
+              "at": 0.016666666666666666,
+              "phase": "recover",
+              "hp": 3961
+            },
+            {
+              "at": 2.2,
+              "phase": "bastion-gates",
+              "hp": 3801
+            },
+            {
+              "at": 5.816666666666666,
+              "phase": "recover",
+              "hp": 3473
+            },
+            {
+              "at": 6.666666666666667,
+              "phase": "cannon-relay",
+              "hp": 3393
+            },
+            {
+              "at": 11.3,
+              "phase": "recover",
+              "hp": 2988
+            },
+            {
+              "at": 12.15,
+              "phase": "orb-siege",
+              "hp": 2900
+            },
+            {
+              "at": 15.966666666666667,
+              "phase": "recover",
+              "hp": 2557
+            },
+            {
+              "at": 16.816666666666666,
+              "phase": "glacier-press",
+              "hp": 2489
+            },
+            {
+              "at": 20.933333333333334,
+              "phase": "recover",
+              "hp": 2113
+            },
+            {
+              "at": 21.783333333333335,
+              "phase": "cryo-mortar",
+              "hp": 2045
+            },
+            {
+              "at": 26.4,
+              "phase": "recover",
+              "hp": 1617
+            },
+            {
+              "at": 27.25,
+              "phase": "cannon-relay",
+              "hp": 1537
+            },
+            {
+              "at": 31.883333333333333,
+              "phase": "recover",
+              "hp": 1120
+            },
+            {
+              "at": 32.733333333333334,
+              "phase": "bastion-gates",
+              "hp": 1052
+            },
+            {
+              "at": 36.35,
+              "phase": "recover",
+              "hp": 724
+            },
+            {
+              "at": 37.2,
+              "phase": "cannon-relay",
+              "hp": 644
+            },
+            {
+              "at": 41.833333333333336,
+              "phase": "recover",
+              "hp": 224
+            },
+            {
+              "at": 42.68333333333333,
+              "phase": "orb-siege",
+              "hp": 144
+            }
+          ],
+          "finite": true
+        },
+        {
+          "stage": 5,
+          "kind": "chromehammer",
+          "mini": false,
+          "diff": "hard",
+          "seconds": 76.58333333333333,
+          "damage": 12061.501923437128,
+          "healed": 8055.494490937478,
+          "exposed": 0.9375408052230686,
+          "targetable": 0.929923830250272,
+          "initialHp": 4005.478620000001,
+          "endHp": -0.5288124995732311,
+          "ended": true,
+          "state": "play",
+          "phases": [
+            {
+              "at": 0.016666666666666666,
+              "phase": "flyby",
+              "hp": 4005.478620000001
+            },
+            {
+              "at": 1.2833333333333334,
+              "phase": "return",
+              "hp": 4005.478620000001
+            },
+            {
+              "at": 2.783333333333333,
+              "phase": "unfold",
+              "hp": 4005.478620000001
+            },
+            {
+              "at": 4.8,
+              "phase": "hammer",
+              "hp": 3956.3586200000027
+            },
+            {
+              "at": 5.5,
+              "phase": "warn",
+              "hp": 9743.53655000001
+            },
+            {
+              "at": 6.7,
+              "phase": "leap",
+              "hp": 9489.736550000014
+            },
+            {
+              "at": 7.233333333333333,
+              "phase": "recover",
+              "hp": 9383.296550000015
+            },
+            {
+              "at": 7.933333333333334,
+              "phase": "leap_reset",
+              "hp": 9276.856550000017
+            },
+            {
+              "at": 8.566666666666666,
+              "phase": "hammer",
+              "hp": 9186.81655000002
+            },
+            {
+              "at": 8.983333333333333,
+              "phase": "warn",
+              "hp": 9088.576550000022
+            },
+            {
+              "at": 10.183333333333334,
+              "phase": "leap",
+              "hp": 8834.776550000026
+            },
+            {
+              "at": 10.716666666666667,
+              "phase": "recover",
+              "hp": 8728.336550000027
+            },
+            {
+              "at": 10.766666666666667,
+              "phase": "hammer_exposed",
+              "hp": 8728.336550000027
+            },
+            {
+              "at": 10.8,
+              "phase": "hammer_stun",
+              "hp": 8673.77655000003
+            },
+            {
+              "at": 15.816666666666666,
+              "phase": "leap_reset",
+              "hp": 6643.376550000108
+            },
+            {
+              "at": 16.45,
+              "phase": "hammer",
+              "hp": 6545.136550000112
+            },
+            {
+              "at": 16.866666666666667,
+              "phase": "warn",
+              "hp": 6446.896550000116
+            },
+            {
+              "at": 18.066666666666666,
+              "phase": "leap",
+              "hp": 6234.016550000124
+            },
+            {
+              "at": 18.6,
+              "phase": "recover",
+              "hp": 6086.65655000013
+            },
+            {
+              "at": 19.3,
+              "phase": "leap_reset",
+              "hp": 5980.216550000134
+            },
+            {
+              "at": 19.933333333333334,
+              "phase": "hammer",
+              "hp": 5881.976550000138
+            },
+            {
+              "at": 20.35,
+              "phase": "warn",
+              "hp": 5783.7365500001415
+            },
+            {
+              "at": 21.55,
+              "phase": "leap",
+              "hp": 5570.85655000015
+            },
+            {
+              "at": 22.083333333333332,
+              "phase": "recover",
+              "hp": 5423.496550000155
+            },
+            {
+              "at": 22.783333333333335,
+              "phase": "leap_reset",
+              "hp": 5303.41655000016
+            },
+            {
+              "at": 23.416666666666668,
+              "phase": "hammer",
+              "hp": 5177.896550000165
+            },
+            {
+              "at": 23.833333333333332,
+              "phase": "warn",
+              "hp": 5079.656550000169
+            },
+            {
+              "at": 25.033333333333335,
+              "phase": "leap",
+              "hp": 4866.776550000177
+            },
+            {
+              "at": 25.566666666666666,
+              "phase": "recover",
+              "hp": 4719.416550000183
+            },
+            {
+              "at": 26.266666666666666,
+              "phase": "leap_reset",
+              "hp": 4612.976550000187
+            },
+            {
+              "at": 26.283333333333335,
+              "phase": "curl",
+              "hp": 4599.336550000187
+            },
+            {
+              "at": 27.533333333333335,
+              "phase": "ball",
+              "hp": 4359.176550000197
+            },
+            {
+              "at": 42.53333333333333,
+              "phase": "uncurl",
+              "hp": 4210.867050000293
+            },
+            {
+              "at": 43.78333333333333,
+              "phase": "nova_charge",
+              "hp": 3957.0670500003025
+            },
+            {
+              "at": 45.4,
+              "phase": "nova_release",
+              "hp": 3654.1470500003143
+            },
+            {
+              "at": 46.15,
+              "phase": "hammer",
+              "hp": 3490.3870500003204
+            },
+            {
+              "at": 46.166666666666664,
+              "phase": "chaingun_draw",
+              "hp": 3490.3870500003204
+            },
+            {
+              "at": 48.18333333333333,
+              "phase": "chain_warn",
+              "hp": 3097.427050000336
+            },
+            {
+              "at": 48.93333333333333,
+              "phase": "chaingun",
+              "hp": 3097.427050000336
+            },
+            {
+              "at": 49.016666666666666,
+              "phase": "storm_raise",
+              "hp": 3097.427050000336
+            },
+            {
+              "at": 56.85,
+              "phase": "storm_idle",
+              "hp": 3975.671187500371
+            },
+            {
+              "at": 57.7,
+              "phase": "storm_warn",
+              "hp": 3828.311187500377
+            },
+            {
+              "at": 58.7,
+              "phase": "storm_slam",
+              "hp": 3615.431187500385
+            },
+            {
+              "at": 59.233333333333334,
+              "phase": "storm_split",
+              "hp": 3508.991187500389
+            },
+            {
+              "at": 66.05,
+              "phase": "storm_idle",
+              "hp": 2141.751187500442
+            },
+            {
+              "at": 66.9,
+              "phase": "storm_warn",
+              "hp": 1953.4711875004436
+            },
+            {
+              "at": 67.9,
+              "phase": "storm_slam",
+              "hp": 1740.5911875004394
+            },
+            {
+              "at": 68.43333333333334,
+              "phase": "storm_split",
+              "hp": 1642.3511875004374
+            },
+            {
+              "at": 75.25,
+              "phase": "storm_idle",
+              "hp": 281.93118750042674
+            },
+            {
+              "at": 76.1,
+              "phase": "spin",
+              "hp": 69.05118750042674
+            }
+          ],
+          "finite": true
+        },
+        {
+          "stage": 6,
+          "kind": "tempestbrothers",
+          "mini": true,
+          "diff": "hard",
+          "seconds": 51.333333333333336,
+          "damage": 2015.9999999999984,
+          "healed": 0,
+          "exposed": 1,
+          "targetable": 0.6613636363636364,
+          "initialHp": 2016,
+          "endHp": 0,
+          "ended": true,
+          "state": "play",
+          "phases": [
+            {
+              "at": 0.016666666666666666,
+              "phase": "chase",
+              "hp": 2016
+            },
+            {
+              "at": 6.9,
+              "phase": "overtake",
+              "hp": 1750
+            },
+            {
+              "at": 8.416666666666666,
+              "phase": "pursuit",
+              "hp": 1702.9999999999998
+            },
+            {
+              "at": 16.066666666666666,
+              "phase": "return",
+              "hp": 1341.3199999999997
+            },
+            {
+              "at": 17.583333333333332,
+              "phase": "hell",
+              "hp": 1242.9999999999998
+            },
+            {
+              "at": 23.266666666666666,
+              "phase": "falsecrash",
+              "hp": 908.9999999999998
+            },
+            {
+              "at": 24.566666666666666,
+              "phase": "frenzy",
+              "hp": 908.9999999999998
+            },
+            {
+              "at": 32.416666666666664,
+              "phase": "death",
+              "hp": 444.9999999999999
+            },
+            {
+              "at": 35.733333333333334,
+              "phase": "escape",
+              "hp": 392.9999999999998
+            }
+          ],
+          "finite": true
+        },
+        {
+          "stage": 7,
+          "kind": "sludgeemperor",
+          "mini": false,
+          "diff": "hard",
+          "seconds": 75.18333333333334,
+          "damage": 12897,
+          "healed": 0,
+          "exposed": 1,
+          "targetable": 0.8215473287519397,
+          "initialHp": 12898,
+          "endHp": 1,
+          "ended": true,
+          "state": "play",
+          "phases": [
+            {
+              "at": 0.016666666666666666,
+              "phase": "portal",
+              "hp": 4647
+            },
+            {
+              "at": 1.4,
+              "phase": "entry",
+              "hp": 4647
+            },
+            {
+              "at": 3.1333333333333333,
+              "phase": "roar",
+              "hp": 4647
+            },
+            {
+              "at": 5.8,
+              "phase": "recover",
+              "hp": 4647
+            },
+            {
+              "at": 6.7,
+              "phase": "chase",
+              "hp": 4600
+            },
+            {
+              "at": 9.416666666666666,
+              "phase": "swipeL",
+              "hp": 4436
+            },
+            {
+              "at": 10.916666666666666,
+              "phase": "swipeR",
+              "hp": 4351
+            },
+            {
+              "at": 12.416666666666666,
+              "phase": "swipeX",
+              "hp": 4275
+            },
+            {
+              "at": 13.916666666666666,
+              "phase": "jump",
+              "hp": 4198
+            },
+            {
+              "at": 17.733333333333334,
+              "phase": "recover",
+              "hp": 4195
+            },
+            {
+              "at": 18.633333333333333,
+              "phase": "chain",
+              "hp": 4142
+            },
+            {
+              "at": 21.433333333333334,
+              "phase": "recover",
+              "hp": 3942
+            },
+            {
+              "at": 22.333333333333332,
+              "phase": "mortar",
+              "hp": 3892
+            },
+            {
+              "at": 25.133333333333333,
+              "phase": "recover",
+              "hp": 3675
+            },
+            {
+              "at": 26.033333333333335,
+              "phase": "orbs",
+              "hp": 3601
+            },
+            {
+              "at": 28.833333333333332,
+              "phase": "recover",
+              "hp": 3350
+            },
+            {
+              "at": 29.733333333333334,
+              "phase": "bounce",
+              "hp": 3276
+            },
+            {
+              "at": 32.3,
+              "phase": "recover",
+              "hp": 3082
+            },
+            {
+              "at": 33.2,
+              "phase": "jump",
+              "hp": 3017
+            },
+            {
+              "at": 37.016666666666666,
+              "phase": "recover",
+              "hp": 3017
+            },
+            {
+              "at": 37.916666666666664,
+              "phase": "chase",
+              "hp": 2958
+            },
+            {
+              "at": 37.983333333333334,
+              "phase": "stun",
+              "hp": 2946
+            },
+            {
+              "at": 39.65,
+              "phase": "orbs",
+              "hp": 2810
+            },
+            {
+              "at": 41.18333333333333,
+              "phase": "drop",
+              "hp": 2665
+            },
+            {
+              "at": 42.65,
+              "phase": "recover",
+              "hp": 2571
+            },
+            {
+              "at": 43.55,
+              "phase": "orbs",
+              "hp": 2501
+            },
+            {
+              "at": 46.35,
+              "phase": "recover",
+              "hp": 2306
+            },
+            {
+              "at": 47.25,
+              "phase": "orbs",
+              "hp": 2244
+            },
+            {
+              "at": 50.05,
+              "phase": "recover",
+              "hp": 2109
+            },
+            {
+              "at": 50.95,
+              "phase": "crawl",
+              "hp": 2041
+            },
+            {
+              "at": 53.666666666666664,
+              "phase": "bounce",
+              "hp": 1892
+            },
+            {
+              "at": 55.416666666666664,
+              "phase": "stun",
+              "hp": 1783
+            },
+            {
+              "at": 57.083333333333336,
+              "phase": "mortar",
+              "hp": 1633
+            },
+            {
+              "at": 59.88333333333333,
+              "phase": "recover",
+              "hp": 1381
+            },
+            {
+              "at": 60.63333333333333,
+              "phase": "stun",
+              "hp": 1314
+            },
+            {
+              "at": 62.3,
+              "phase": "laser",
+              "hp": 1158
+            },
+            {
+              "at": 65.1,
+              "phase": "recover",
+              "hp": 918
+            },
+            {
+              "at": 66,
+              "phase": "laser",
+              "hp": 830
+            },
+            {
+              "at": 68.8,
+              "phase": "recover",
+              "hp": 578
+            },
+            {
+              "at": 69.7,
+              "phase": "orbs",
+              "hp": 490
+            },
+            {
+              "at": 72.5,
+              "phase": "recover",
+              "hp": 238
+            },
+            {
+              "at": 73.4,
+              "phase": "laser",
+              "hp": 158
+            },
+            {
+              "at": 75.18333333333334,
+              "phase": "dead",
+              "hp": 1
+            }
+          ],
+          "finite": true
+        },
+        {
+          "stage": 9,
+          "kind": "tidalfusion",
+          "mini": false,
+          "diff": "hard",
+          "seconds": 76.51666666666667,
+          "damage": 23443.489999999845,
+          "healed": 14248,
+          "exposed": 0.97843607057286,
+          "targetable": 0.978218253103899,
+          "initialHp": 9193,
+          "endHp": -2.489999999885619,
+          "ended": true,
+          "state": "play",
+          "phases": [
+            {
+              "at": 0.016666666666666666,
+              "phase": "twins",
+              "hp": 9194
+            },
+            {
+              "at": 47.35,
+              "phase": "fuse",
+              "hp": 2
+            },
+            {
+              "at": 49.766666666666666,
+              "phase": "tidal",
+              "hp": 14249
+            },
+            {
+              "at": 49.78333333333333,
+              "phase": "recover",
+              "hp": 5459.080000000002
+            },
+            {
+              "at": 50.96666666666667,
+              "phase": "tidal-scissors",
+              "hp": 5246.20000000001
+            },
+            {
+              "at": 53.95,
+              "phase": "recover",
+              "hp": 4632.1600000000335
+            },
+            {
+              "at": 54.9,
+              "phase": "torpedo-hunt",
+              "hp": 4419.280000000042
+            },
+            {
+              "at": 57.88333333333333,
+              "phase": "recover",
+              "hp": 3821.640000000065
+            },
+            {
+              "at": 58.833333333333336,
+              "phase": "abyssal-gates",
+              "hp": 3616.960000000073
+            },
+            {
+              "at": 61.81666666666667,
+              "phase": "recover",
+              "hp": 3002.9200000000965
+            },
+            {
+              "at": 62.766666666666666,
+              "phase": "maelstrom-crown",
+              "hp": 2803.680000000104
+            },
+            {
+              "at": 65.75,
+              "phase": "recover",
+              "hp": 2216.9200000001265
+            },
+            {
+              "at": 66.7,
+              "phase": "hydro-sweep",
+              "hp": 2028.6400000001327
+            },
+            {
+              "at": 69.68333333333334,
+              "phase": "recover",
+              "hp": 1414.6000000001202
+            },
+            {
+              "at": 70.63333333333334,
+              "phase": "tidal-scissors",
+              "hp": 1201.720000000116
+            },
+            {
+              "at": 73.61666666666666,
+              "phase": "recover",
+              "hp": 587.6800000001149
+            },
+            {
+              "at": 74.56666666666666,
+              "phase": "torpedo-hunt",
+              "hp": 399.40000000011497
+            }
+          ],
+          "finite": true
+        },
+        {
+          "stage": 1,
+          "kind": "razorback",
+          "mini": true,
+          "diff": "furious",
+          "seconds": 31.366666666666667,
+          "damage": 1442,
+          "healed": 0,
+          "exposed": 1,
+          "targetable": 0.7635494155154091,
+          "initialHp": 1442,
+          "endHp": 0,
+          "ended": true,
+          "state": "play",
+          "phases": [],
+          "finite": true
+        },
+        {
+          "stage": 2,
+          "kind": "magmaward",
+          "mini": true,
+          "diff": "furious",
+          "seconds": 35.95,
+          "damage": 3144,
+          "healed": 0,
+          "exposed": 0.9564209550301345,
+          "targetable": 0.9559573481687529,
+          "initialHp": 3144,
+          "endHp": 0,
+          "ended": true,
+          "state": "play",
+          "phases": [
+            {
+              "at": 0.016666666666666666,
+              "phase": "recover",
+              "hp": 3144
+            },
+            {
+              "at": 2.7333333333333334,
+              "phase": "charred-battery",
+              "hp": 2985
+            },
+            {
+              "at": 7.35,
+              "phase": "recover",
+              "hp": 2565
+            },
+            {
+              "at": 8.033333333333333,
+              "phase": "ash-pursuit",
+              "hp": 2509
+            },
+            {
+              "at": 11.816666666666666,
+              "phase": "recover",
+              "hp": 2157
+            },
+            {
+              "at": 12.5,
+              "phase": "charcoal-wheel",
+              "hp": 2101
+            },
+            {
+              "at": 16.183333333333334,
+              "phase": "recover",
+              "hp": 1761
+            },
+            {
+              "at": 16.866666666666667,
+              "phase": "blackout-pass",
+              "hp": 1705
+            },
+            {
+              "at": 19.583333333333332,
+              "phase": "recover",
+              "hp": 1465
+            },
+            {
+              "at": 20.266666666666666,
+              "phase": "charred-mortar",
+              "hp": 1397
+            },
+            {
+              "at": 24.883333333333333,
+              "phase": "recover",
+              "hp": 977
+            },
+            {
+              "at": 25.566666666666666,
+              "phase": "cinder-scissors",
+              "hp": 921
+            },
+            {
+              "at": 29.35,
+              "phase": "recover",
+              "hp": 569
+            },
+            {
+              "at": 30.033333333333335,
+              "phase": "ash-eruption",
+              "hp": 513
+            },
+            {
+              "at": 33.81666666666667,
+              "phase": "recover",
+              "hp": 201
+            },
+            {
+              "at": 34.5,
+              "phase": "charred-battery",
+              "hp": 133
+            }
+          ],
+          "finite": true
+        },
+        {
+          "stage": 3,
+          "kind": "frostcruiser",
+          "mini": true,
+          "diff": "furious",
+          "seconds": 49.75,
+          "damage": 3988.599999999984,
+          "healed": 0,
+          "exposed": 0.7450586264656617,
+          "targetable": 0.7447236180904523,
+          "initialHp": 3987,
+          "endHp": -1.5999999999877197,
+          "ended": true,
+          "state": "play",
+          "phases": [
+            {
+              "at": 0.016666666666666666,
+              "phase": "recover",
+              "hp": 3987
+            },
+            {
+              "at": 2.2333333333333334,
+              "phase": "nuclear",
+              "hp": 3908
+            },
+            {
+              "at": 7.083333333333333,
+              "phase": "recover",
+              "hp": 3908
+            },
+            {
+              "at": 7.766666666666667,
+              "phase": "cryo-crosscut",
+              "hp": 3816
+            },
+            {
+              "at": 11.55,
+              "phase": "recover",
+              "hp": 3468
+            },
+            {
+              "at": 12.233333333333333,
+              "phase": "icebreaker",
+              "hp": 3408
+            },
+            {
+              "at": 14.95,
+              "phase": "recover",
+              "hp": 3160
+            },
+            {
+              "at": 15.633333333333333,
+              "phase": "form-change",
+              "hp": 3104
+            },
+            {
+              "at": 17.2,
+              "phase": "shatter-wheel",
+              "hp": 3092
+            },
+            {
+              "at": 20.983333333333334,
+              "phase": "recover",
+              "hp": 2740
+            },
+            {
+              "at": 21.666666666666668,
+              "phase": "pincer-lance",
+              "hp": 2672
+            },
+            {
+              "at": 26.483333333333334,
+              "phase": "recover",
+              "hp": 2240
+            },
+            {
+              "at": 27.166666666666668,
+              "phase": "form-change",
+              "hp": 2184
+            },
+            {
+              "at": 28.733333333333334,
+              "phase": "cryo-mortar",
+              "hp": 2184
+            },
+            {
+              "at": 33.35,
+              "phase": "recover",
+              "hp": 1644.0500000000027
+            },
+            {
+              "at": 34.03333333333333,
+              "phase": "cryo-crosscut",
+              "hp": 1552.2500000000034
+            },
+            {
+              "at": 37.81666666666667,
+              "phase": "recover",
+              "hp": 1093.250000000007
+            },
+            {
+              "at": 38.5,
+              "phase": "form-change",
+              "hp": 1012.250000000008
+            },
+            {
+              "at": 40.06666666666667,
+              "phase": "cryo-crosscut",
+              "hp": 1012.250000000008
+            },
+            {
+              "at": 43.85,
+              "phase": "recover",
+              "hp": 526.250000000013
+            },
+            {
+              "at": 44.53333333333333,
+              "phase": "icebreaker",
+              "hp": 434.45000000001295
+            },
+            {
+              "at": 47.25,
+              "phase": "recover",
+              "hp": 110.45000000001225
+            },
+            {
+              "at": 47.93333333333333,
+              "phase": "form-change",
+              "hp": 18.650000000012284
+            },
+            {
+              "at": 49.5,
+              "phase": "shatter-wheel",
+              "hp": 18.650000000012284
+            }
+          ],
+          "finite": true
+        },
+        {
+          "stage": 3,
+          "kind": "cryospear",
+          "mini": false,
+          "diff": "furious",
+          "seconds": 63.86666666666667,
+          "damage": 4680,
+          "healed": 0,
+          "exposed": 0.7852296450939458,
+          "targetable": 0.7849686847599165,
+          "initialHp": 4680,
+          "endHp": 0,
+          "ended": true,
+          "state": "play",
+          "phases": [
+            {
+              "at": 0.016666666666666666,
+              "phase": "recover",
+              "hp": 4680
+            },
+            {
+              "at": 1.7,
+              "phase": "nuclear",
+              "hp": 4621
+            },
+            {
+              "at": 6.55,
+              "phase": "recover",
+              "hp": 4621
+            },
+            {
+              "at": 7.233333333333333,
+              "phase": "bastion-gates",
+              "hp": 4531
+            },
+            {
+              "at": 11.016666666666667,
+              "phase": "recover",
+              "hp": 4179
+            },
+            {
+              "at": 11.7,
+              "phase": "cannon-relay",
+              "hp": 4123
+            },
+            {
+              "at": 16.516666666666666,
+              "phase": "recover",
+              "hp": 3691
+            },
+            {
+              "at": 17.2,
+              "phase": "form-change",
+              "hp": 3623
+            },
+            {
+              "at": 18.766666666666666,
+              "phase": "orb-siege",
+              "hp": 3623
+            },
+            {
+              "at": 22.45,
+              "phase": "recover",
+              "hp": 3264
+            },
+            {
+              "at": 23.133333333333333,
+              "phase": "glacier-press",
+              "hp": 3208
+            },
+            {
+              "at": 27.116666666666667,
+              "phase": "recover",
+              "hp": 2836
+            },
+            {
+              "at": 27.8,
+              "phase": "form-change",
+              "hp": 2780
+            },
+            {
+              "at": 29.366666666666667,
+              "phase": "cryo-mortar",
+              "hp": 2768
+            },
+            {
+              "at": 33.983333333333334,
+              "phase": "recover",
+              "hp": 2328
+            },
+            {
+              "at": 34.666666666666664,
+              "phase": "cannon-relay",
+              "hp": 2272
+            },
+            {
+              "at": 39.483333333333334,
+              "phase": "recover",
+              "hp": 1840
+            },
+            {
+              "at": 40.166666666666664,
+              "phase": "form-change",
+              "hp": 1772
+            },
+            {
+              "at": 41.733333333333334,
+              "phase": "bastion-gates",
+              "hp": 1772
+            },
+            {
+              "at": 45.516666666666666,
+              "phase": "recover",
+              "hp": 1408
+            },
+            {
+              "at": 46.2,
+              "phase": "cannon-relay",
+              "hp": 1352
+            },
+            {
+              "at": 51.016666666666666,
+              "phase": "recover",
+              "hp": 920
+            },
+            {
+              "at": 51.7,
+              "phase": "form-change",
+              "hp": 852
+            },
+            {
+              "at": 53.266666666666666,
+              "phase": "orb-siege",
+              "hp": 852
+            },
+            {
+              "at": 56.95,
+              "phase": "recover",
+              "hp": 493
+            },
+            {
+              "at": 57.63333333333333,
+              "phase": "glacier-press",
+              "hp": 437
+            },
+            {
+              "at": 61.61666666666667,
+              "phase": "recover",
+              "hp": 65
+            },
+            {
+              "at": 62.3,
+              "phase": "form-change",
+              "hp": 9
+            },
+            {
+              "at": 63.86666666666667,
+              "phase": "cryo-mortar",
+              "hp": 0
+            }
+          ],
+          "finite": true
+        },
+        {
+          "stage": 5,
+          "kind": "chromehammer",
+          "mini": false,
+          "diff": "furious",
+          "seconds": 104.33333333333333,
+          "damage": 17189.72612337443,
+          "healed": 12454.50063837507,
+          "exposed": 0.9541533546325879,
+          "targetable": 0.9496805111821086,
+          "initialHp": 4733.74746,
+          "endHp": -1.4780249993024235,
+          "ended": true,
+          "state": "play",
+          "phases": [
+            {
+              "at": 0.016666666666666666,
+              "phase": "flyby",
+              "hp": 4733.74746
+            },
+            {
+              "at": 1.2833333333333334,
+              "phase": "return",
+              "hp": 4733.74746
+            },
+            {
+              "at": 2.783333333333333,
+              "phase": "unfold",
+              "hp": 4733.74746
+            },
+            {
+              "at": 4.8,
+              "phase": "hammer",
+              "hp": 4684.6274600000015
+            },
+            {
+              "at": 5.233333333333333,
+              "phase": "warn",
+              "hp": 13963.842380000007
+            },
+            {
+              "at": 5.816666666666666,
+              "phase": "leap",
+              "hp": 13841.002380000007
+            },
+            {
+              "at": 6.1,
+              "phase": "recover",
+              "hp": 13759.16238000001
+            },
+            {
+              "at": 6.616666666666666,
+              "phase": "leap_reset",
+              "hp": 13652.722380000012
+            },
+            {
+              "at": 7.05,
+              "phase": "hammer",
+              "hp": 13611.802380000014
+            },
+            {
+              "at": 7.35,
+              "phase": "warn",
+              "hp": 13521.762380000016
+            },
+            {
+              "at": 7.933333333333334,
+              "phase": "leap",
+              "hp": 13415.322380000018
+            },
+            {
+              "at": 8.216666666666667,
+              "phase": "recover",
+              "hp": 13349.802380000017
+            },
+            {
+              "at": 8.733333333333333,
+              "phase": "leap_reset",
+              "hp": 13263.822380000018
+            },
+            {
+              "at": 9.166666666666666,
+              "phase": "hammer",
+              "hp": 13195.62238000002
+            },
+            {
+              "at": 9.466666666666667,
+              "phase": "warn",
+              "hp": 13132.862380000022
+            },
+            {
+              "at": 10.05,
+              "phase": "leap",
+              "hp": 13026.422380000024
+            },
+            {
+              "at": 10.333333333333334,
+              "phase": "recover",
+              "hp": 12944.582380000027
+            },
+            {
+              "at": 10.85,
+              "phase": "leap_reset",
+              "hp": 12838.142380000028
+            },
+            {
+              "at": 11.283333333333333,
+              "phase": "hammer",
+              "hp": 12797.22238000003
+            },
+            {
+              "at": 11.583333333333334,
+              "phase": "warn",
+              "hp": 12707.182380000033
+            },
+            {
+              "at": 12.166666666666666,
+              "phase": "leap",
+              "hp": 12600.742380000034
+            },
+            {
+              "at": 12.45,
+              "phase": "recover",
+              "hp": 12535.222380000034
+            },
+            {
+              "at": 12.516666666666667,
+              "phase": "hammer_stun",
+              "hp": 12521.582380000034
+            },
+            {
+              "at": 17.533333333333335,
+              "phase": "leap_reset",
+              "hp": 10593.482380000109
+            },
+            {
+              "at": 17.966666666666665,
+              "phase": "hammer",
+              "hp": 10525.282380000112
+            },
+            {
+              "at": 18.266666666666666,
+              "phase": "warn",
+              "hp": 10467.962380000112
+            },
+            {
+              "at": 18.85,
+              "phase": "leap",
+              "hp": 10320.602380000115
+            },
+            {
+              "at": 19.133333333333333,
+              "phase": "recover",
+              "hp": 10255.082380000114
+            },
+            {
+              "at": 19.65,
+              "phase": "leap_reset",
+              "hp": 10148.642380000116
+            },
+            {
+              "at": 20.083333333333332,
+              "phase": "hammer",
+              "hp": 10107.722380000117
+            },
+            {
+              "at": 20.383333333333333,
+              "phase": "warn",
+              "hp": 10017.68238000012
+            },
+            {
+              "at": 20.966666666666665,
+              "phase": "leap",
+              "hp": 9911.242380000122
+            },
+            {
+              "at": 21.25,
+              "phase": "recover",
+              "hp": 9870.322380000123
+            },
+            {
+              "at": 21.766666666666666,
+              "phase": "leap_reset",
+              "hp": 9763.882380000125
+            },
+            {
+              "at": 22.2,
+              "phase": "hammer",
+              "hp": 9682.042380000128
+            },
+            {
+              "at": 22.5,
+              "phase": "warn",
+              "hp": 9632.92238000013
+            },
+            {
+              "at": 23.083333333333332,
+              "phase": "leap",
+              "hp": 9485.562380000132
+            },
+            {
+              "at": 23.366666666666667,
+              "phase": "recover",
+              "hp": 9420.042380000132
+            },
+            {
+              "at": 23.883333333333333,
+              "phase": "leap_reset",
+              "hp": 9313.602380000133
+            },
+            {
+              "at": 24.316666666666666,
+              "phase": "hammer",
+              "hp": 9272.682380000135
+            },
+            {
+              "at": 24.616666666666667,
+              "phase": "warn",
+              "hp": 9182.642380000138
+            },
+            {
+              "at": 25.2,
+              "phase": "leap",
+              "hp": 9076.202380000139
+            },
+            {
+              "at": 25.483333333333334,
+              "phase": "recover",
+              "hp": 9010.682380000138
+            },
+            {
+              "at": 26,
+              "phase": "leap_reset",
+              "hp": 8935.662380000142
+            },
+            {
+              "at": 26.433333333333334,
+              "phase": "hammer",
+              "hp": 8853.822380000145
+            },
+            {
+              "at": 26.733333333333334,
+              "phase": "warn",
+              "hp": 8796.502380000145
+            },
+            {
+              "at": 27.316666666666666,
+              "phase": "leap",
+              "hp": 8690.062380000147
+            },
+            {
+              "at": 27.6,
+              "phase": "recover",
+              "hp": 8583.622380000148
+            },
+            {
+              "at": 28.116666666666667,
+              "phase": "leap_reset",
+              "hp": 8477.18238000015
+            },
+            {
+              "at": 28.55,
+              "phase": "hammer",
+              "hp": 8436.262380000151
+            },
+            {
+              "at": 28.85,
+              "phase": "warn",
+              "hp": 8346.222380000154
+            },
+            {
+              "at": 29.433333333333334,
+              "phase": "leap",
+              "hp": 8239.782380000155
+            },
+            {
+              "at": 29.716666666666665,
+              "phase": "recover",
+              "hp": 8174.2623800001575
+            },
+            {
+              "at": 30.233333333333334,
+              "phase": "back",
+              "hp": 8112.88238000016
+            },
+            {
+              "at": 30.516666666666666,
+              "phase": "shield",
+              "hp": 8071.962380000162
+            },
+            {
+              "at": 31.516666666666666,
+              "phase": "curl",
+              "hp": 8024.892380000163
+            },
+            {
+              "at": 32.766666666666666,
+              "phase": "ball",
+              "hp": 7771.092380000173
+            },
+            {
+              "at": 47.766666666666666,
+              "phase": "uncurl",
+              "hp": 7569.051380000305
+            },
+            {
+              "at": 49.016666666666666,
+              "phase": "nova_charge",
+              "hp": 7327.511380000314
+            },
+            {
+              "at": 50.63333333333333,
+              "phase": "nova_release",
+              "hp": 6991.871380000327
+            },
+            {
+              "at": 52.5,
+              "phase": "hammer",
+              "hp": 6631.631380000341
+            },
+            {
+              "at": 52.516666666666666,
+              "phase": "chaingun_draw",
+              "hp": 6631.631380000341
+            },
+            {
+              "at": 54.53333333333333,
+              "phase": "chain_warn",
+              "hp": 6214.071380000357
+            },
+            {
+              "at": 55.18333333333333,
+              "phase": "chaingun",
+              "hp": 6214.071380000357
+            },
+            {
+              "at": 55.516666666666666,
+              "phase": "storm_raise",
+              "hp": 6189.471380000357
+            },
+            {
+              "at": 63.35,
+              "phase": "storm_idle",
+              "hp": 8197.901975000479
+            },
+            {
+              "at": 64,
+              "phase": "storm_warn",
+              "hp": 8075.0619750004835
+            },
+            {
+              "at": 64.9,
+              "phase": "storm_slam",
+              "hp": 7878.581975000491
+            },
+            {
+              "at": 65.36666666666666,
+              "phase": "storm_split",
+              "hp": 7772.141975000495
+            },
+            {
+              "at": 71.4,
+              "phase": "storm_idle",
+              "hp": 6544.061975000543
+            },
+            {
+              "at": 72.05,
+              "phase": "storm_warn",
+              "hp": 6437.621975000547
+            },
+            {
+              "at": 72.95,
+              "phase": "storm_slam",
+              "hp": 6249.341975000554
+            },
+            {
+              "at": 73.41666666666667,
+              "phase": "storm_split",
+              "hp": 6151.101975000558
+            },
+            {
+              "at": 79.45,
+              "phase": "storm_idle",
+              "hp": 4961.911975000604
+            },
+            {
+              "at": 80.1,
+              "phase": "spin",
+              "hp": 4814.55197500061
+            },
+            {
+              "at": 81.66666666666667,
+              "phase": "throw",
+              "hp": 4513.661975000621
+            },
+            {
+              "at": 81.98333333333333,
+              "phase": "hammer_catch",
+              "hp": 4467.951975000623
+            },
+            {
+              "at": 82.63333333333334,
+              "phase": "revenge_charge",
+              "hp": 4304.191975000629
+            },
+            {
+              "at": 84.65,
+              "phase": "throw",
+              "hp": 3903.0319750006447
+            },
+            {
+              "at": 87.2,
+              "phase": "hammer_catch",
+              "hp": 3424.0919750006633
+            },
+            {
+              "at": 87.85,
+              "phase": "storm_idle",
+              "hp": 3276.731975000669
+            },
+            {
+              "at": 88.5,
+              "phase": "storm_warn",
+              "hp": 3170.291975000673
+            },
+            {
+              "at": 89.4,
+              "phase": "storm_slam",
+              "hp": 2957.411975000681
+            },
+            {
+              "at": 89.86666666666666,
+              "phase": "storm_split",
+              "hp": 2850.9719750006852
+            },
+            {
+              "at": 95.9,
+              "phase": "storm_idle",
+              "hp": 1663.891975000709
+            },
+            {
+              "at": 96.55,
+              "phase": "storm_warn",
+              "hp": 1565.651975000707
+            },
+            {
+              "at": 97.45,
+              "phase": "storm_slam",
+              "hp": 1406.0319750007034
+            },
+            {
+              "at": 97.91666666666667,
+              "phase": "storm_split",
+              "hp": 1307.7919750007013
+            },
+            {
+              "at": 103.95,
+              "phase": "storm_idle",
+              "hp": 87.91197500069754
+            }
+          ],
+          "finite": true
+        },
+        {
+          "stage": 6,
+          "kind": "tempestbrothers",
+          "mini": true,
+          "diff": "furious",
+          "seconds": 61.43333333333333,
+          "damage": 2379.0000000000027,
+          "healed": 0,
+          "exposed": 1,
+          "targetable": 0.6918068366793272,
+          "initialHp": 2379,
+          "endHp": 0,
+          "ended": true,
+          "state": "play",
+          "phases": [
+            {
+              "at": 0.016666666666666666,
+              "phase": "chase",
+              "hp": 2379
+            },
+            {
+              "at": 6.916666666666667,
+              "phase": "overtake",
+              "hp": 2072.625
+            },
+            {
+              "at": 8.433333333333334,
+              "phase": "pursuit",
+              "hp": 2030.6250000000005
+            },
+            {
+              "at": 16.216666666666665,
+              "phase": "return",
+              "hp": 1659.8681250000009
+            },
+            {
+              "at": 17.733333333333334,
+              "phase": "hell",
+              "hp": 1543.486250000002
+            },
+            {
+              "at": 23.583333333333332,
+              "phase": "falsecrash",
+              "hp": 1189.5
+            },
+            {
+              "at": 24.883333333333333,
+              "phase": "frenzy",
+              "hp": 1189.5
+            },
+            {
+              "at": 32.71666666666667,
+              "phase": "death",
+              "hp": 697.1250000000019
+            },
+            {
+              "at": 36.03333333333333,
+              "phase": "escape",
+              "hp": 620.1250000000026
+            }
+          ],
+          "finite": true
+        },
+        {
+          "stage": 7,
+          "kind": "sludgeemperor",
+          "mini": false,
+          "diff": "furious",
+          "seconds": 87.03333333333333,
+          "damage": 15243,
+          "healed": 0,
+          "exposed": 1,
+          "targetable": 0.8458445040214477,
+          "initialHp": 15244,
+          "endHp": 1,
+          "ended": true,
+          "state": "play",
+          "phases": [
+            {
+              "at": 0.016666666666666666,
+              "phase": "portal",
+              "hp": 5486
+            },
+            {
+              "at": 1.4,
+              "phase": "entry",
+              "hp": 5486
+            },
+            {
+              "at": 3.1333333333333333,
+              "phase": "roar",
+              "hp": 5486
+            },
+            {
+              "at": 5.8,
+              "phase": "recover",
+              "hp": 5486
+            },
+            {
+              "at": 6.55,
+              "phase": "chase",
+              "hp": 5448
+            },
+            {
+              "at": 9.266666666666667,
+              "phase": "swipeL",
+              "hp": 5284
+            },
+            {
+              "at": 10.633333333333333,
+              "phase": "swipeR",
+              "hp": 5203
+            },
+            {
+              "at": 12,
+              "phase": "swipeX",
+              "hp": 5130
+            },
+            {
+              "at": 13.366666666666667,
+              "phase": "jump",
+              "hp": 5065
+            },
+            {
+              "at": 17.183333333333334,
+              "phase": "recover",
+              "hp": 5055
+            },
+            {
+              "at": 17.933333333333334,
+              "phase": "chain",
+              "hp": 5013
+            },
+            {
+              "at": 20.8,
+              "phase": "recover",
+              "hp": 4813
+            },
+            {
+              "at": 21.55,
+              "phase": "mortar",
+              "hp": 4775
+            },
+            {
+              "at": 24.416666666666668,
+              "phase": "recover",
+              "hp": 4580
+            },
+            {
+              "at": 25.166666666666668,
+              "phase": "orbs",
+              "hp": 4518
+            },
+            {
+              "at": 28.033333333333335,
+              "phase": "recover",
+              "hp": 4255
+            },
+            {
+              "at": 28.783333333333335,
+              "phase": "bounce",
+              "hp": 4193
+            },
+            {
+              "at": 31.35,
+              "phase": "recover",
+              "hp": 3992
+            },
+            {
+              "at": 32.1,
+              "phase": "jump",
+              "hp": 3924
+            },
+            {
+              "at": 35.916666666666664,
+              "phase": "recover",
+              "hp": 3917
+            },
+            {
+              "at": 36.666666666666664,
+              "phase": "chase",
+              "hp": 3881
+            },
+            {
+              "at": 38.53333333333333,
+              "phase": "stun",
+              "hp": 3753
+            },
+            {
+              "at": 40.2,
+              "phase": "orbs",
+              "hp": 3614
+            },
+            {
+              "at": 43.06666666666667,
+              "phase": "recover",
+              "hp": 3354
+            },
+            {
+              "at": 43.81666666666667,
+              "phase": "mortar",
+              "hp": 3286
+            },
+            {
+              "at": 45.81666666666667,
+              "phase": "drop",
+              "hp": 3146
+            },
+            {
+              "at": 47.28333333333333,
+              "phase": "recover",
+              "hp": 3063
+            },
+            {
+              "at": 48.03333333333333,
+              "phase": "orbs",
+              "hp": 3019
+            },
+            {
+              "at": 50.9,
+              "phase": "recover",
+              "hp": 2816
+            },
+            {
+              "at": 51.65,
+              "phase": "crawl",
+              "hp": 2775
+            },
+            {
+              "at": 54.36666666666667,
+              "phase": "bounce",
+              "hp": 2642
+            },
+            {
+              "at": 56.93333333333333,
+              "phase": "recover",
+              "hp": 2543
+            },
+            {
+              "at": 57.68333333333333,
+              "phase": "mortar",
+              "hp": 2505
+            },
+            {
+              "at": 60.55,
+              "phase": "recover",
+              "hp": 2302
+            },
+            {
+              "at": 61.3,
+              "phase": "bounce",
+              "hp": 2261
+            },
+            {
+              "at": 63.75,
+              "phase": "stun",
+              "hp": 2103
+            },
+            {
+              "at": 65.41666666666667,
+              "phase": "mortar",
+              "hp": 1970
+            },
+            {
+              "at": 68.28333333333333,
+              "phase": "recover",
+              "hp": 1698
+            },
+            {
+              "at": 69.03333333333333,
+              "phase": "orbs",
+              "hp": 1630
+            },
+            {
+              "at": 69.93333333333334,
+              "phase": "stun",
+              "hp": 1551
+            },
+            {
+              "at": 71.6,
+              "phase": "laser",
+              "hp": 1403
+            },
+            {
+              "at": 74.46666666666667,
+              "phase": "recover",
+              "hp": 1143
+            },
+            {
+              "at": 75.21666666666667,
+              "phase": "laser",
+              "hp": 1075
+            },
+            {
+              "at": 78.08333333333333,
+              "phase": "recover",
+              "hp": 815
+            },
+            {
+              "at": 78.83333333333333,
+              "phase": "orbs",
+              "hp": 747
+            },
+            {
+              "at": 81.7,
+              "phase": "recover",
+              "hp": 487
+            },
+            {
+              "at": 82.45,
+              "phase": "laser",
+              "hp": 419
+            },
+            {
+              "at": 85.31666666666666,
+              "phase": "recover",
+              "hp": 167
+            },
+            {
+              "at": 86.06666666666666,
+              "phase": "laser",
+              "hp": 99
+            },
+            {
+              "at": 87.03333333333333,
+              "phase": "dead",
+              "hp": 1
+            }
+          ],
+          "finite": true
+        },
+        {
+          "stage": 9,
+          "kind": "tidalfusion",
+          "mini": false,
+          "diff": "furious",
+          "seconds": 89.7,
+          "damage": 27685.239999999798,
+          "healed": 16820.6,
+          "exposed": 0.9816053511705686,
+          "targetable": 0.981419546636938,
+          "initialHp": 10864,
+          "endHp": -0.6399999998470491,
+          "ended": true,
+          "state": "play",
+          "phases": [
+            {
+              "at": 0.016666666666666666,
+              "phase": "twins",
+              "hp": 10864
+            },
+            {
+              "at": 55.6,
+              "phase": "fuse",
+              "hp": 2
+            },
+            {
+              "at": 58.016666666666666,
+              "phase": "tidal",
+              "hp": 16822.6
+            },
+            {
+              "at": 58.03333333333333,
+              "phase": "recover",
+              "hp": 6459.080000000002
+            },
+            {
+              "at": 59.21666666666667,
+              "phase": "tidal-scissors",
+              "hp": 6246.20000000001
+            },
+            {
+              "at": 62.233333333333334,
+              "phase": "recover",
+              "hp": 5632.1600000000335
+            },
+            {
+              "at": 63.016666666666666,
+              "phase": "torpedo-hunt",
+              "hp": 5457.52000000004
+            },
+            {
+              "at": 66.03333333333333,
+              "phase": "recover",
+              "hp": 4829.840000000065
+            },
+            {
+              "at": 66.81666666666666,
+              "phase": "abyssal-gates",
+              "hp": 4682.4800000000705
+            },
+            {
+              "at": 69.83333333333333,
+              "phase": "recover",
+              "hp": 4068.440000000094
+            },
+            {
+              "at": 70.61666666666666,
+              "phase": "maelstrom-crown",
+              "hp": 3896.4800000001005
+            },
+            {
+              "at": 73.63333333333334,
+              "phase": "recover",
+              "hp": 3282.440000000124
+            },
+            {
+              "at": 74.41666666666667,
+              "phase": "hydro-sweep",
+              "hp": 3135.08000000013
+            },
+            {
+              "at": 77.43333333333334,
+              "phase": "recover",
+              "hp": 2521.0400000001537
+            },
+            {
+              "at": 78.21666666666667,
+              "phase": "tidal-scissors",
+              "hp": 2373.6800000001595
+            },
+            {
+              "at": 81.23333333333333,
+              "phase": "recover",
+              "hp": 1759.6400000001656
+            },
+            {
+              "at": 82.01666666666667,
+              "phase": "torpedo-hunt",
+              "hp": 1560.4000000001618
+            },
+            {
+              "at": 85.03333333333333,
+              "phase": "recover",
+              "hp": 932.7200000001512
+            },
+            {
+              "at": 85.81666666666666,
+              "phase": "abyssal-gates",
+              "hp": 785.3600000001522
+            },
+            {
+              "at": 88.83333333333333,
+              "phase": "recover",
+              "hp": 171.32000000015285
+            },
+            {
+              "at": 89.61666666666666,
+              "phase": "maelstrom-crown",
+              "hp": 23.96000000015295
+            }
+          ],
+          "finite": true
+        },
+        {
+          "stage": 4,
+          "kind": "stormsovereign",
+          "mini": false,
+          "diff": "normal",
+          "seconds": 87.31666666666666,
+          "damage": 3873,
+          "healed": 0,
+          "exposed": 0.9879748043519756,
+          "targetable": 0.9505630845581218,
+          "initialHp": 3872,
+          "endHp": -1,
+          "ended": true,
+          "state": "play",
+          "phases": [
+            {
+              "at": 0.016666666666666666,
+              "phase": "recover",
+              "hp": 3872
+            },
+            {
+              "at": 2.2,
+              "phase": "sovereign-battery",
+              "hp": 3872
+            },
+            {
+              "at": 5.916666666666667,
+              "phase": "recover",
+              "hp": 3872
+            },
+            {
+              "at": 7.016666666666667,
+              "phase": "escort-crossfire",
+              "hp": 3872
+            },
+            {
+              "at": 13.433333333333334,
+              "phase": "recover",
+              "hp": 3337
+            },
+            {
+              "at": 14.533333333333333,
+              "phase": "siege-rockets",
+              "hp": 3237
+            },
+            {
+              "at": 19.25,
+              "phase": "recover",
+              "hp": 2904
+            },
+            {
+              "at": 20.35,
+              "phase": "ion-scissors",
+              "hp": 2904
+            },
+            {
+              "at": 24.066666666666666,
+              "phase": "recover",
+              "hp": 2904
+            },
+            {
+              "at": 25.166666666666668,
+              "phase": "siege-mortar",
+              "hp": 2904
+            },
+            {
+              "at": 29.783333333333335,
+              "phase": "recover",
+              "hp": 2647
+            },
+            {
+              "at": 30.883333333333333,
+              "phase": "siege-drive",
+              "hp": 2547
+            },
+            {
+              "at": 34.35,
+              "phase": "recover",
+              "hp": 2239
+            },
+            {
+              "at": 35.45,
+              "phase": "core-barrage",
+              "hp": 2127
+            },
+            {
+              "at": 38.61666666666667,
+              "phase": "recover",
+              "hp": 1936
+            },
+            {
+              "at": 39.71666666666667,
+              "phase": "sovereign-battery",
+              "hp": 1936
+            },
+            {
+              "at": 43.43333333333333,
+              "phase": "recover",
+              "hp": 1936
+            },
+            {
+              "at": 44.53333333333333,
+              "phase": "escort-crossfire",
+              "hp": 1936
+            },
+            {
+              "at": 50.95,
+              "phase": "recover",
+              "hp": 1936
+            },
+            {
+              "at": 52.05,
+              "phase": "siege-rockets",
+              "hp": 1869
+            },
+            {
+              "at": 55.766666666666666,
+              "phase": "recover",
+              "hp": 1529
+            },
+            {
+              "at": 56.86666666666667,
+              "phase": "ion-scissors",
+              "hp": 1425
+            },
+            {
+              "at": 60.583333333333336,
+              "phase": "recover",
+              "hp": 1097
+            },
+            {
+              "at": 61.68333333333333,
+              "phase": "siege-mortar",
+              "hp": 985
+            },
+            {
+              "at": 63.05,
+              "phase": "recover",
+              "hp": 968
+            },
+            {
+              "at": 64.15,
+              "phase": "siege-drive",
+              "hp": 968
+            },
+            {
+              "at": 67.61666666666666,
+              "phase": "recover",
+              "hp": 968
+            },
+            {
+              "at": 68.71666666666667,
+              "phase": "core-barrage",
+              "hp": 968
+            },
+            {
+              "at": 72.43333333333334,
+              "phase": "recover",
+              "hp": 968
+            },
+            {
+              "at": 73.53333333333333,
+              "phase": "sovereign-battery",
+              "hp": 968
+            },
+            {
+              "at": 77.25,
+              "phase": "recover",
+              "hp": 921
+            },
+            {
+              "at": 78.35,
+              "phase": "escort-crossfire",
+              "hp": 809
+            },
+            {
+              "at": 84.76666666666667,
+              "phase": "recover",
+              "hp": 229
+            },
+            {
+              "at": 85.86666666666666,
+              "phase": "siege-rockets",
+              "hp": 129
+            }
+          ],
+          "finite": true
+        },
+        {
+          "stage": 5,
+          "kind": "siegebomber",
+          "mini": true,
+          "diff": "normal",
+          "seconds": 18.6,
+          "damage": 6825,
+          "healed": 0,
+          "exposed": 0.8870967741935484,
+          "targetable": 0.8862007168458781,
+          "initialHp": 6825,
+          "endHp": 0,
+          "ended": true,
+          "state": "play",
+          "phases": [
+            {
+              "at": 0.016666666666666666,
+              "phase": "entry",
+              "hp": 6825
+            },
+            {
+              "at": 2.1166666666666667,
+              "phase": "bombs",
+              "hp": 6759.480000000002
+            },
+            {
+              "at": 6.333333333333333,
+              "phase": "charge",
+              "hp": 5884.820000000036
+            },
+            {
+              "at": 9.05,
+              "phase": "beam",
+              "hp": 5338.980000000052
+            },
+            {
+              "at": 10.566666666666666,
+              "phase": "recover",
+              "hp": 5044.260000000047
+            },
+            {
+              "at": 11.816666666666666,
+              "phase": "missiles",
+              "hp": 4782.260000000041
+            },
+            {
+              "at": 15.133333333333333,
+              "phase": "bombs",
+              "hp": 4069.980000000035
+            }
+          ],
+          "finite": true
+        },
+        {
+          "stage": 9,
+          "kind": "voidhorizon",
+          "mini": true,
+          "diff": "normal",
+          "seconds": 34.53333333333333,
+          "damage": 6876.999999999976,
+          "healed": 0,
+          "exposed": 0.9522200772200772,
+          "targetable": 0.9517374517374517,
+          "initialHp": 6877,
+          "endHp": 0,
+          "ended": true,
+          "state": "play",
+          "phases": [
+            {
+              "at": 0.016666666666666666,
+              "phase": "recover",
+              "hp": 6877
+            },
+            {
+              "at": 2.85,
+              "phase": "needle-relay",
+              "hp": 6492.160000000014
+            },
+            {
+              "at": 5.833333333333333,
+              "phase": "recover",
+              "hp": 5878.120000000038
+            },
+            {
+              "at": 7.033333333333333,
+              "phase": "rift-gates",
+              "hp": 5624.320000000048
+            },
+            {
+              "at": 10.016666666666667,
+              "phase": "recover",
+              "hp": 5044.38000000007
+            },
+            {
+              "at": 11.216666666666667,
+              "phase": "horizon-orbit",
+              "hp": 4797.40000000008
+            },
+            {
+              "at": 14.2,
+              "phase": "recover",
+              "hp": 4183.360000000103
+            },
+            {
+              "at": 15.4,
+              "phase": "prism-sweep",
+              "hp": 3929.560000000113
+            },
+            {
+              "at": 18.383333333333333,
+              "phase": "recover",
+              "hp": 3315.520000000137
+            },
+            {
+              "at": 19.583333333333332,
+              "phase": "needle-relay",
+              "hp": 3061.7200000001467
+            },
+            {
+              "at": 22.566666666666666,
+              "phase": "recover",
+              "hp": 2447.6800000001704
+            },
+            {
+              "at": 23.766666666666666,
+              "phase": "rift-gates",
+              "hp": 2227.9800000001787
+            },
+            {
+              "at": 26.75,
+              "phase": "recover",
+              "hp": 1620.7600000001773
+            },
+            {
+              "at": 27.95,
+              "phase": "horizon-orbit",
+              "hp": 1366.9600000001722
+            },
+            {
+              "at": 30.933333333333334,
+              "phase": "recover",
+              "hp": 752.9200000001665
+            },
+            {
+              "at": 32.13333333333333,
+              "phase": "prism-sweep",
+              "hp": 499.12000000016826
+            }
+          ],
+          "finite": true
+        },
+        {
+          "stage": 4,
+          "kind": "stormsovereign",
+          "mini": false,
+          "diff": "hard",
+          "seconds": 103.66666666666667,
+          "damage": 4841,
+          "healed": 0,
+          "exposed": 0.989871382636656,
+          "targetable": 0.9583601286173633,
+          "initialHp": 4840,
+          "endHp": -1,
+          "ended": true,
+          "state": "play",
+          "phases": [
+            {
+              "at": 0.016666666666666666,
+              "phase": "recover",
+              "hp": 4840
+            },
+            {
+              "at": 2.2,
+              "phase": "sovereign-battery",
+              "hp": 4840
+            },
+            {
+              "at": 5.816666666666666,
+              "phase": "recover",
+              "hp": 4840
+            },
+            {
+              "at": 6.666666666666667,
+              "phase": "escort-crossfire",
+              "hp": 4840
+            },
+            {
+              "at": 13.083333333333334,
+              "phase": "recover",
+              "hp": 4347
+            },
+            {
+              "at": 13.933333333333334,
+              "phase": "siege-rockets",
+              "hp": 4279
+            },
+            {
+              "at": 17.55,
+              "phase": "recover",
+              "hp": 3951
+            },
+            {
+              "at": 18.4,
+              "phase": "ion-scissors",
+              "hp": 3871
+            },
+            {
+              "at": 22.116666666666667,
+              "phase": "recover",
+              "hp": 3630
+            },
+            {
+              "at": 22.966666666666665,
+              "phase": "siege-mortar",
+              "hp": 3630
+            },
+            {
+              "at": 27.583333333333332,
+              "phase": "recover",
+              "hp": 3630
+            },
+            {
+              "at": 28.433333333333334,
+              "phase": "siege-drive",
+              "hp": 3630
+            },
+            {
+              "at": 31.766666666666666,
+              "phase": "recover",
+              "hp": 3551
+            },
+            {
+              "at": 32.61666666666667,
+              "phase": "core-barrage",
+              "hp": 3471
+            },
+            {
+              "at": 36.233333333333334,
+              "phase": "recover",
+              "hp": 3143
+            },
+            {
+              "at": 37.083333333333336,
+              "phase": "sovereign-battery",
+              "hp": 3063
+            },
+            {
+              "at": 40.7,
+              "phase": "recover",
+              "hp": 2735
+            },
+            {
+              "at": 41.55,
+              "phase": "escort-crossfire",
+              "hp": 2667
+            },
+            {
+              "at": 45.35,
+              "phase": "recover",
+              "hp": 2420
+            },
+            {
+              "at": 46.2,
+              "phase": "siege-rockets",
+              "hp": 2420
+            },
+            {
+              "at": 49.81666666666667,
+              "phase": "recover",
+              "hp": 2420
+            },
+            {
+              "at": 50.666666666666664,
+              "phase": "ion-scissors",
+              "hp": 2420
+            },
+            {
+              "at": 54.28333333333333,
+              "phase": "recover",
+              "hp": 2420
+            },
+            {
+              "at": 55.13333333333333,
+              "phase": "siege-mortar",
+              "hp": 2420
+            },
+            {
+              "at": 59.75,
+              "phase": "recover",
+              "hp": 2420
+            },
+            {
+              "at": 60.6,
+              "phase": "siege-drive",
+              "hp": 2397
+            },
+            {
+              "at": 63.93333333333333,
+              "phase": "recover",
+              "hp": 2075
+            },
+            {
+              "at": 64.78333333333333,
+              "phase": "core-barrage",
+              "hp": 2007
+            },
+            {
+              "at": 68.4,
+              "phase": "recover",
+              "hp": 1679
+            },
+            {
+              "at": 69.25,
+              "phase": "sovereign-battery",
+              "hp": 1599
+            },
+            {
+              "at": 72.86666666666666,
+              "phase": "recover",
+              "hp": 1271
+            },
+            {
+              "at": 75.48333333333333,
+              "phase": "escort-crossfire",
+              "hp": 1210
+            },
+            {
+              "at": 81.9,
+              "phase": "recover",
+              "hp": 1210
+            },
+            {
+              "at": 82.75,
+              "phase": "siege-rockets",
+              "hp": 1210
+            },
+            {
+              "at": 86.36666666666666,
+              "phase": "recover",
+              "hp": 1210
+            },
+            {
+              "at": 87.21666666666667,
+              "phase": "ion-scissors",
+              "hp": 1210
+            },
+            {
+              "at": 90.83333333333333,
+              "phase": "recover",
+              "hp": 1167
+            },
+            {
+              "at": 91.68333333333334,
+              "phase": "siege-mortar",
+              "hp": 1087
+            },
+            {
+              "at": 96.3,
+              "phase": "recover",
+              "hp": 679
+            },
+            {
+              "at": 97.15,
+              "phase": "siege-drive",
+              "hp": 599
+            },
+            {
+              "at": 100.48333333333333,
+              "phase": "recover",
+              "hp": 303
+            },
+            {
+              "at": 101.33333333333333,
+              "phase": "core-barrage",
+              "hp": 215
+            }
+          ],
+          "finite": true
+        },
+        {
+          "stage": 5,
+          "kind": "siegebomber",
+          "mini": true,
+          "diff": "hard",
+          "seconds": 22.583333333333332,
+          "damage": 8127,
+          "healed": 0,
+          "exposed": 0.9070110701107011,
+          "targetable": 0.9062730627306274,
+          "initialHp": 8127,
+          "endHp": 0,
+          "ended": true,
+          "state": "play",
+          "phases": [
+            {
+              "at": 0.016666666666666666,
+              "phase": "entry",
+              "hp": 8127
+            },
+            {
+              "at": 2.1166666666666667,
+              "phase": "bombs",
+              "hp": 8061.480000000002
+            },
+            {
+              "at": 6.333333333333333,
+              "phase": "charge",
+              "hp": 7186.170000000036
+            },
+            {
+              "at": 9.05,
+              "phase": "beam",
+              "hp": 6640.330000000056
+            },
+            {
+              "at": 10.566666666666666,
+              "phase": "recover",
+              "hp": 6345.610000000068
+            },
+            {
+              "at": 11.816666666666666,
+              "phase": "missiles",
+              "hp": 6083.610000000079
+            },
+            {
+              "at": 15.133333333333333,
+              "phase": "bombs",
+              "hp": 5371.330000000073
+            },
+            {
+              "at": 19.35,
+              "phase": "charge",
+              "hp": 4526.710000000066
+            },
+            {
+              "at": 22.066666666666666,
+              "phase": "beam",
+              "hp": 3994.5100000000657
+            }
+          ],
+          "finite": true
+        },
+        {
+          "stage": 9,
+          "kind": "voidhorizon",
+          "mini": true,
+          "diff": "hard",
+          "seconds": 43.03333333333333,
+          "damage": 8595.99999999998,
+          "healed": 0,
+          "exposed": 0.9616576297443842,
+          "targetable": 0.9612703330751355,
+          "initialHp": 8596,
+          "endHp": 0,
+          "ended": true,
+          "state": "play",
+          "phases": [
+            {
+              "at": 0.016666666666666666,
+              "phase": "recover",
+              "hp": 8596
+            },
+            {
+              "at": 2.85,
+              "phase": "needle-relay",
+              "hp": 8211.160000000003
+            },
+            {
+              "at": 5.833333333333333,
+              "phase": "recover",
+              "hp": 7597.120000000027
+            },
+            {
+              "at": 6.783333333333333,
+              "phase": "rift-gates",
+              "hp": 7408.840000000035
+            },
+            {
+              "at": 9.766666666666667,
+              "phase": "recover",
+              "hp": 6828.900000000057
+            },
+            {
+              "at": 10.716666666666667,
+              "phase": "horizon-orbit",
+              "hp": 6622.840000000065
+            },
+            {
+              "at": 13.7,
+              "phase": "recover",
+              "hp": 6008.800000000088
+            },
+            {
+              "at": 14.65,
+              "phase": "prism-sweep",
+              "hp": 5820.520000000096
+            },
+            {
+              "at": 17.633333333333333,
+              "phase": "recover",
+              "hp": 5206.48000000012
+            },
+            {
+              "at": 18.583333333333332,
+              "phase": "needle-relay",
+              "hp": 4993.600000000128
+            },
+            {
+              "at": 21.566666666666666,
+              "phase": "recover",
+              "hp": 4379.560000000151
+            },
+            {
+              "at": 22.516666666666666,
+              "phase": "rift-gates",
+              "hp": 4200.780000000158
+            },
+            {
+              "at": 25.5,
+              "phase": "recover",
+              "hp": 3609.960000000181
+            },
+            {
+              "at": 26.45,
+              "phase": "horizon-orbit",
+              "hp": 3405.280000000189
+            },
+            {
+              "at": 29.433333333333334,
+              "phase": "recover",
+              "hp": 2791.2400000002126
+            },
+            {
+              "at": 30.383333333333333,
+              "phase": "prism-sweep",
+              "hp": 2578.3600000002207
+            },
+            {
+              "at": 33.36666666666667,
+              "phase": "recover",
+              "hp": 1964.3200000002396
+            },
+            {
+              "at": 34.31666666666667,
+              "phase": "needle-relay",
+              "hp": 1776.0400000002355
+            },
+            {
+              "at": 37.3,
+              "phase": "recover",
+              "hp": 1162.000000000223
+            },
+            {
+              "at": 38.25,
+              "phase": "rift-gates",
+              "hp": 990.0400000002202
+            },
+            {
+              "at": 41.233333333333334,
+              "phase": "recover",
+              "hp": 376.00000000022237
+            },
+            {
+              "at": 42.18333333333333,
+              "phase": "horizon-orbit",
+              "hp": 187.7200000002218
+            }
+          ],
+          "finite": true
+        },
+        {
+          "stage": 4,
+          "kind": "stormsovereign",
+          "mini": false,
+          "diff": "furious",
+          "seconds": 121.06666666666666,
+          "damage": 5720,
+          "healed": 0,
+          "exposed": 0.9913270925110133,
+          "targetable": 0.9643447136563876,
+          "initialHp": 5720,
+          "endHp": 0,
+          "ended": true,
+          "state": "play",
+          "phases": [
+            {
+              "at": 0.016666666666666666,
+              "phase": "recover",
+              "hp": 5720
+            },
+            {
+              "at": 2.2,
+              "phase": "sovereign-battery",
+              "hp": 5720
+            },
+            {
+              "at": 5.983333333333333,
+              "phase": "recover",
+              "hp": 5720
+            },
+            {
+              "at": 6.666666666666667,
+              "phase": "escort-crossfire",
+              "hp": 5720
+            },
+            {
+              "at": 13.083333333333334,
+              "phase": "recover",
+              "hp": 5251
+            },
+            {
+              "at": 13.766666666666667,
+              "phase": "siege-rockets",
+              "hp": 5195
+            },
+            {
+              "at": 17.55,
+              "phase": "recover",
+              "hp": 4855
+            },
+            {
+              "at": 18.233333333333334,
+              "phase": "ion-scissors",
+              "hp": 4787
+            },
+            {
+              "at": 22.016666666666666,
+              "phase": "recover",
+              "hp": 4447
+            },
+            {
+              "at": 22.7,
+              "phase": "siege-mortar",
+              "hp": 4379
+            },
+            {
+              "at": 24.8,
+              "phase": "recover",
+              "hp": 4290
+            },
+            {
+              "at": 25.483333333333334,
+              "phase": "siege-drive",
+              "hp": 4290
+            },
+            {
+              "at": 28.7,
+              "phase": "recover",
+              "hp": 4290
+            },
+            {
+              "at": 29.383333333333333,
+              "phase": "core-barrage",
+              "hp": 4290
+            },
+            {
+              "at": 33.166666666666664,
+              "phase": "recover",
+              "hp": 4290
+            },
+            {
+              "at": 33.85,
+              "phase": "sovereign-battery",
+              "hp": 4290
+            },
+            {
+              "at": 37.63333333333333,
+              "phase": "recover",
+              "hp": 4052
+            },
+            {
+              "at": 38.31666666666667,
+              "phase": "escort-crossfire",
+              "hp": 3984
+            },
+            {
+              "at": 44.733333333333334,
+              "phase": "recover",
+              "hp": 3404
+            },
+            {
+              "at": 45.416666666666664,
+              "phase": "siege-rockets",
+              "hp": 3348
+            },
+            {
+              "at": 49.2,
+              "phase": "recover",
+              "hp": 3008
+            },
+            {
+              "at": 49.88333333333333,
+              "phase": "ion-scissors",
+              "hp": 2940
+            },
+            {
+              "at": 51.8,
+              "phase": "recover",
+              "hp": 2860
+            },
+            {
+              "at": 52.483333333333334,
+              "phase": "siege-mortar",
+              "hp": 2860
+            },
+            {
+              "at": 57.1,
+              "phase": "recover",
+              "hp": 2860
+            },
+            {
+              "at": 57.78333333333333,
+              "phase": "siege-drive",
+              "hp": 2860
+            },
+            {
+              "at": 61,
+              "phase": "recover",
+              "hp": 2860
+            },
+            {
+              "at": 61.68333333333333,
+              "phase": "core-barrage",
+              "hp": 2860
+            },
+            {
+              "at": 65.46666666666667,
+              "phase": "recover",
+              "hp": 2860
+            },
+            {
+              "at": 66.15,
+              "phase": "sovereign-battery",
+              "hp": 2860
+            },
+            {
+              "at": 69.93333333333334,
+              "phase": "recover",
+              "hp": 2831
+            },
+            {
+              "at": 70.61666666666666,
+              "phase": "escort-crossfire",
+              "hp": 2775
+            },
+            {
+              "at": 77.03333333333333,
+              "phase": "recover",
+              "hp": 2195
+            },
+            {
+              "at": 77.71666666666667,
+              "phase": "siege-rockets",
+              "hp": 2127
+            },
+            {
+              "at": 81.5,
+              "phase": "recover",
+              "hp": 1787
+            },
+            {
+              "at": 82.18333333333334,
+              "phase": "ion-scissors",
+              "hp": 1731
+            },
+            {
+              "at": 86.6,
+              "phase": "recover",
+              "hp": 1430
+            },
+            {
+              "at": 87.28333333333333,
+              "phase": "siege-mortar",
+              "hp": 1430
+            },
+            {
+              "at": 91.9,
+              "phase": "recover",
+              "hp": 1430
+            },
+            {
+              "at": 92.58333333333333,
+              "phase": "siege-drive",
+              "hp": 1430
+            },
+            {
+              "at": 95.8,
+              "phase": "recover",
+              "hp": 1430
+            },
+            {
+              "at": 96.48333333333333,
+              "phase": "core-barrage",
+              "hp": 1430
+            },
+            {
+              "at": 100.26666666666667,
+              "phase": "recover",
+              "hp": 1430
+            },
+            {
+              "at": 100.95,
+              "phase": "sovereign-battery",
+              "hp": 1430
+            },
+            {
+              "at": 104.73333333333333,
+              "phase": "recover",
+              "hp": 1430
+            },
+            {
+              "at": 105.41666666666667,
+              "phase": "escort-crossfire",
+              "hp": 1422
+            },
+            {
+              "at": 111.83333333333333,
+              "phase": "recover",
+              "hp": 837
+            },
+            {
+              "at": 112.51666666666667,
+              "phase": "siege-rockets",
+              "hp": 777
+            },
+            {
+              "at": 116.3,
+              "phase": "recover",
+              "hp": 429
+            },
+            {
+              "at": 116.98333333333333,
+              "phase": "ion-scissors",
+              "hp": 381
+            },
+            {
+              "at": 120.76666666666667,
+              "phase": "recover",
+              "hp": 29
+            }
+          ],
+          "finite": true
+        },
+        {
+          "stage": 5,
+          "kind": "siegebomber",
+          "mini": true,
+          "diff": "furious",
+          "seconds": 26.583333333333332,
+          "damage": 9429,
+          "healed": 0,
+          "exposed": 0.9210031347962383,
+          "targetable": 0.9203761755485893,
+          "initialHp": 9429,
+          "endHp": 0,
+          "ended": true,
+          "state": "play",
+          "phases": [
+            {
+              "at": 0.016666666666666666,
+              "phase": "entry",
+              "hp": 9429
+            },
+            {
+              "at": 2.1166666666666667,
+              "phase": "bombs",
+              "hp": 9363.480000000003
+            },
+            {
+              "at": 6.333333333333333,
+              "phase": "charge",
+              "hp": 8468.360000000037
+            },
+            {
+              "at": 9.05,
+              "phase": "beam",
+              "hp": 7947.770000000057
+            },
+            {
+              "at": 10.566666666666666,
+              "phase": "recover",
+              "hp": 7661.250000000068
+            },
+            {
+              "at": 11.816666666666666,
+              "phase": "missiles",
+              "hp": 7399.250000000078
+            },
+            {
+              "at": 15.133333333333333,
+              "phase": "bombs",
+              "hp": 6686.970000000106
+            },
+            {
+              "at": 19.35,
+              "phase": "charge",
+              "hp": 5853.960000000101
+            },
+            {
+              "at": 22.066666666666666,
+              "phase": "beam",
+              "hp": 5347.010000000093
+            },
+            {
+              "at": 23.583333333333332,
+              "phase": "recover",
+              "hp": 5033.2100000000955
+            },
+            {
+              "at": 24.833333333333332,
+              "phase": "missiles",
+              "hp": 4779.410000000095
+            }
+          ],
+          "finite": true
+        },
+        {
+          "stage": 9,
+          "kind": "voidhorizon",
+          "mini": true,
+          "diff": "furious",
+          "seconds": 50.71666666666667,
+          "damage": 10158.99999999999,
+          "healed": 0,
+          "exposed": 0.9674663161353927,
+          "targetable": 0.9671376930660532,
+          "initialHp": 10159,
+          "endHp": 0,
+          "ended": true,
+          "state": "play",
+          "phases": [
+            {
+              "at": 0.016666666666666666,
+              "phase": "recover",
+              "hp": 10159
+            },
+            {
+              "at": 2.85,
+              "phase": "needle-relay",
+              "hp": 9774.160000000003
+            },
+            {
+              "at": 5.866666666666666,
+              "phase": "recover",
+              "hp": 9160.120000000014
+            },
+            {
+              "at": 6.65,
+              "phase": "rift-gates",
+              "hp": 9012.760000000017
+            },
+            {
+              "at": 9.666666666666666,
+              "phase": "recover",
+              "hp": 8398.720000000027
+            },
+            {
+              "at": 10.45,
+              "phase": "horizon-orbit",
+              "hp": 8251.36000000003
+            },
+            {
+              "at": 13.466666666666667,
+              "phase": "recover",
+              "hp": 7637.320000000051
+            },
+            {
+              "at": 14.25,
+              "phase": "prism-sweep",
+              "hp": 7465.360000000057
+            },
+            {
+              "at": 17.266666666666666,
+              "phase": "recover",
+              "hp": 6844.500000000081
+            },
+            {
+              "at": 18.05,
+              "phase": "needle-relay",
+              "hp": 6663.040000000088
+            },
+            {
+              "at": 21.066666666666666,
+              "phase": "recover",
+              "hp": 6049.000000000112
+            },
+            {
+              "at": 21.85,
+              "phase": "rift-gates",
+              "hp": 5901.640000000118
+            },
+            {
+              "at": 24.866666666666667,
+              "phase": "recover",
+              "hp": 5287.600000000141
+            },
+            {
+              "at": 25.65,
+              "phase": "horizon-orbit",
+              "hp": 5115.640000000148
+            },
+            {
+              "at": 28.666666666666668,
+              "phase": "recover",
+              "hp": 4501.600000000171
+            },
+            {
+              "at": 29.45,
+              "phase": "prism-sweep",
+              "hp": 4354.240000000177
+            },
+            {
+              "at": 32.46666666666667,
+              "phase": "recover",
+              "hp": 3740.200000000201
+            },
+            {
+              "at": 33.25,
+              "phase": "needle-relay",
+              "hp": 3592.8400000002066
+            },
+            {
+              "at": 36.266666666666666,
+              "phase": "recover",
+              "hp": 2971.9800000002306
+            },
+            {
+              "at": 37.05,
+              "phase": "rift-gates",
+              "hp": 2765.9200000002384
+            },
+            {
+              "at": 40.06666666666667,
+              "phase": "recover",
+              "hp": 2151.880000000262
+            },
+            {
+              "at": 40.85,
+              "phase": "horizon-orbit",
+              "hp": 2004.5200000002649
+            },
+            {
+              "at": 43.86666666666667,
+              "phase": "recover",
+              "hp": 1390.4800000002524
+            },
+            {
+              "at": 44.65,
+              "phase": "prism-sweep",
+              "hp": 1243.1200000002493
+            },
+            {
+              "at": 47.666666666666664,
+              "phase": "recover",
+              "hp": 629.0800000002477
+            },
+            {
+              "at": 48.45,
+              "phase": "needle-relay",
+              "hp": 457.1200000002482
+            }
+          ],
+          "finite": true
+        }
+      ],
+      "errors": [],
+      "limits": "Native sustained-fire damage-window measurements, NOT player balance or victory claims.\nCole/MG III (space laser III in space), auto missiles II, no manual ammo/elements/specials.\nAn aiming bot uses normal movement. Immunity removes deaths from this damage-routing sample.\n"
+    },
+    "radio": {
+      "rect": {
+        "x": 139,
+        "y": 452,
+        "w": 222,
+        "h": 49
+      },
+      "rail": {
+        "x": 9,
+        "y": 449,
+        "w": 462,
+        "h": 55
+      },
+      "pages": [
+        {
+          "text": "WATCH THEIR NOSES. MOVE OUT OF\nTHE MARKED LANE WHEN THE",
+          "dur": 3.8176470588235296
+        },
+        {
+          "text": "WARNING LOCKS. YOUR WING IS\nSTILL WITH YOU.",
+          "dur": 3.4647058823529413
+        }
+      ],
+      "full": "WATCH THEIR NOSES. MOVE OUT OF THE MARKED LANE WHEN THE WARNING LOCKS. YOUR WING IS STILL WITH YOU.",
+      "visible": true,
+      "second": {
+        "page": 1,
+        "t": 6.08235294117647
+      },
+      "priority": {
+        "hidden": true,
+        "paused": true
+      },
+      "resume": {
+        "visible": true,
+        "advanced": true
+      },
+      "finished": true,
+      "errors": []
+    },
+    "returnWarnings": {
+      "cases": [
+        {
+          "diff": "normal",
+          "samples": [
+            {
+              "t": 0.18,
+              "state": "offscreen-turn",
+              "warning": {
+                "x": 302.8061002178649,
+                "y": 442,
+                "ex": 366.6666666666667,
+                "ey": 213,
+                "progress": 0.22499999999999998,
+                "width": 56.4,
+                "alertX": 302.8061002178649,
+                "alertY": 396,
+                "alpha": 0.6
+              }
+            },
+            {
+              "t": 0.36,
+              "state": "offscreen-turn",
+              "warning": {
+                "x": 302.8061002178649,
+                "y": 442,
+                "ex": 366.6666666666667,
+                "ey": 213,
+                "progress": 0.44999999999999996,
+                "width": 56.4,
+                "alertX": 302.8061002178649,
+                "alertY": 396,
+                "alpha": 0.6
+              }
+            }
+          ],
+          "dur": 0.8,
+          "before": "offscreen-turn",
+          "after": "return",
+          "cleared": true
+        },
+        {
+          "diff": "hard",
+          "samples": [
+            {
+              "t": 0.18,
+              "state": "offscreen-turn",
+              "warning": {
+                "x": 302.8061002178649,
+                "y": 442,
+                "ex": 366.6666666666667,
+                "ey": 213,
+                "progress": 0.2769230769230769,
+                "width": 56.4,
+                "alertX": 302.8061002178649,
+                "alertY": 396,
+                "alpha": 0.6
+              }
+            },
+            {
+              "t": 0.36,
+              "state": "offscreen-turn",
+              "warning": {
+                "x": 302.8061002178649,
+                "y": 442,
+                "ex": 366.6666666666667,
+                "ey": 213,
+                "progress": 0.5538461538461538,
+                "width": 56.4,
+                "alertX": 302.8061002178649,
+                "alertY": 396,
+                "alpha": 0.6
+              }
+            }
+          ],
+          "dur": 0.65,
+          "before": "offscreen-turn",
+          "after": "return",
+          "cleared": true
+        },
+        {
+          "diff": "furious",
+          "samples": [
+            {
+              "t": 0.18,
+              "state": "offscreen-turn",
+              "warning": {
+                "x": 302.8061002178649,
+                "y": 442,
+                "ex": 366.6666666666667,
+                "ey": 213,
+                "progress": 0.36,
+                "width": 56.4,
+                "alertX": 302.8061002178649,
+                "alertY": 396,
+                "alpha": 0.6
+              }
+            },
+            {
+              "t": 0.36,
+              "state": "offscreen-turn",
+              "warning": {
+                "x": 302.8061002178649,
+                "y": 442,
+                "ex": 366.6666666666667,
+                "ey": 213,
+                "progress": 0.72,
+                "width": 56.4,
+                "alertX": 302.8061002178649,
+                "alertY": 396,
+                "alpha": 0.6
+              }
+            }
+          ],
+          "dur": 0.5,
+          "before": "offscreen-turn",
+          "after": "return",
+          "cleared": true
+        }
+      ],
+      "errors": []
+    },
+    "generatorAccess": {
+      "rows": [
+        {
+          "index": 0,
+          "boss": {
+            "x": 340,
+            "y": 190,
+            "w": 264,
+            "r": 176.88000000000002
+          },
+          "y0": 318,
+          "before": [
+            {
+              "x": 136,
+              "y": 158,
+              "hp": 70
+            },
+            {
+              "x": 544,
+              "y": 158,
+              "hp": 70
+            },
+            {
+              "x": 136,
+              "y": 314,
+              "hp": 70
+            },
+            {
+              "x": 544,
+              "y": 314,
+              "hp": 70
+            }
+          ],
+          "after": [
+            {
+              "x": 136,
+              "y": 158,
+              "hp": 0,
+              "dead": true
+            },
+            {
+              "x": 544,
+              "y": 158,
+              "hp": 70,
+              "dead": false
+            },
+            {
+              "x": 136,
+              "y": 314,
+              "hp": 0,
+              "dead": true
+            },
+            {
+              "x": 544,
+              "y": 314,
+              "hp": 70,
+              "dead": false
+            }
+          ],
+          "fieldHits": 0
+        },
+        {
+          "index": 1,
+          "boss": {
+            "x": 340,
+            "y": 190,
+            "w": 264,
+            "r": 176.88000000000002
+          },
+          "y0": 318,
+          "before": [
+            {
+              "x": 136,
+              "y": 158,
+              "hp": 70
+            },
+            {
+              "x": 544,
+              "y": 158,
+              "hp": 70
+            },
+            {
+              "x": 136,
+              "y": 314,
+              "hp": 70
+            },
+            {
+              "x": 544,
+              "y": 314,
+              "hp": 70
+            }
+          ],
+          "after": [
+            {
+              "x": 136,
+              "y": 158,
+              "hp": 70,
+              "dead": false
+            },
+            {
+              "x": 544,
+              "y": 158,
+              "hp": 0,
+              "dead": true
+            },
+            {
+              "x": 136,
+              "y": 314,
+              "hp": 70,
+              "dead": false
+            },
+            {
+              "x": 544,
+              "y": 314,
+              "hp": 0,
+              "dead": true
+            }
+          ],
+          "fieldHits": 0
+        },
+        {
+          "index": 2,
+          "boss": {
+            "x": 340,
+            "y": 190,
+            "w": 264,
+            "r": 176.88000000000002
+          },
+          "y0": 474,
+          "before": [
+            {
+              "x": 136,
+              "y": 158,
+              "hp": 70
+            },
+            {
+              "x": 544,
+              "y": 158,
+              "hp": 70
+            },
+            {
+              "x": 136,
+              "y": 314,
+              "hp": 70
+            },
+            {
+              "x": 544,
+              "y": 314,
+              "hp": 70
+            }
+          ],
+          "after": [
+            {
+              "x": 136,
+              "y": 158,
+              "hp": 22,
+              "dead": false
+            },
+            {
+              "x": 544,
+              "y": 158,
+              "hp": 70,
+              "dead": false
+            },
+            {
+              "x": 136,
+              "y": 314,
+              "hp": 0,
+              "dead": true
+            },
+            {
+              "x": 544,
+              "y": 314,
+              "hp": 70,
+              "dead": false
+            }
+          ],
+          "fieldHits": 0
+        },
+        {
+          "index": 3,
+          "boss": {
+            "x": 340,
+            "y": 190,
+            "w": 264,
+            "r": 176.88000000000002
+          },
+          "y0": 474,
+          "before": [
+            {
+              "x": 136,
+              "y": 158,
+              "hp": 70
+            },
+            {
+              "x": 544,
+              "y": 158,
+              "hp": 70
+            },
+            {
+              "x": 136,
+              "y": 314,
+              "hp": 70
+            },
+            {
+              "x": 544,
+              "y": 314,
+              "hp": 70
+            }
+          ],
+          "after": [
+            {
+              "x": 136,
+              "y": 158,
+              "hp": 70,
+              "dead": false
+            },
+            {
+              "x": 544,
+              "y": 158,
+              "hp": 22,
+              "dead": false
+            },
+            {
+              "x": 136,
+              "y": 314,
+              "hp": 70,
+              "dead": false
+            },
+            {
+              "x": 544,
+              "y": 314,
+              "hp": 0,
+              "dead": true
+            }
+          ],
+          "fieldHits": 0
+        }
+      ],
+      "errors": []
+    },
+    "manualPlay": {
+      "report": "_shots/overnight_0927/manual-tempest/report.json",
+      "seconds": 15.25,
+      "deaths": 2,
+      "ordinaryDamage": true,
+      "pausedBetweenObservations": true
+    },
+    "limitations": "Damage-window times use immunity and an aiming bot, not human balance or full campaign wins. Stage 8 full-form damage progression and physical controller checks remain.",
+    "suite": {
+      "file": "_shots/overnight_0927/suite-16.log",
+      "passed": 5327,
+      "failures": 0,
+      "finalBanner": true
+    }
+  },
+  "checkpoint0640": {
+    "suite": {
+      "path": "_shots/overnight_0927/suite-22.log",
+      "passed": 5347,
+      "failed": 0,
+      "finalBanner": true
+    },
+    "finale": "_shots/overnight_0927/finale-progression/report.json",
+    "targeting": "_shots/overnight_0927/finale-targets/report.json",
+    "respawn": "_shots/overnight_0927/respawn/report.json",
+    "rival": "_shots/overnight_0927/rival-route/report.json",
+    "launchers": "_shots/overnight_0927/moving-launchers/report.json",
+    "limits": "Immunity damage routing and phase clips are not campaign victories. Actual-input samples pause between observations. Physical controller and full human difficulty progression unverified."
+  },
+  "checkpoint0715": {
+    "suite": {
+      "path": "_shots/overnight_0927/suite-28.log",
+      "passed": 5351,
+      "failed": 0,
+      "finalBanner": true
+    },
+    "review": {
+      "clips": 25,
+      "soundAuditions": 14,
+      "nativePageCheck": "_shots/overnight_0927/review_check.json"
+    },
+    "stage4Art": "_shots/overnight_0927/ordnance/report.json",
+    "rivalRoute": "_shots/overnight_0927/rival-route/report.json",
+    "lanceFixture": {
+      "randomFailures": 6,
+      "repetitions": 150,
+      "stableFailures": 0
+    },
+    "pending": "Stage3 generated ordnance. Human uninterrupted campaign/difficulty balance and physical pad unverified."
+  },
+  "checkpoint0745": {
+    "suite": {
+      "path": "_shots\\overnight_0927\\suite-30.log",
+      "passed": 5351,
+      "failed": 0,
+      "finalBanner": true,
+      "exitCode": 0
+    },
+    "review": {
+      "clips": 29,
+      "soundAuditions": 14,
+      "nominalSeconds": 984,
+      "maximumSfxPeak": 0.8927212357521057,
+      "nativePageCheck": "_shots\\overnight_0927\\review_check.json"
+    },
+    "generatedFrames": {
+      "stage3": 24,
+      "stage4": 24
+    },
+    "stage3Art": "_shots\\overnight_0927\\ice-ordnance\\report.json",
+    "stage4Art": "_shots\\overnight_0927\\ordnance\\report.json",
+    "manualWarden": "_shots\\overnight_0927\\manual-warden-normal\\report.json",
+    "manualTempest": "_shots\\overnight_0927\\manual-tempest-normal-retry\\report.json",
+    "limits": "Selected-phase and immunity clips are not wins. Manual input samples pause between observations. Physical pad and uninterrupted human difficulty progression remain unverified. No commit or push.",
+    "syntax": "_shots/overnight_0927/syntax-final.json",
+    "failureComparison": "_shots/overnight_0927/failure-name-comparison-final.json"
+  },
+  "final": {
+    "suite": {
+      "path": "_shots/overnight_0927/suite-30.log",
+      "passed": 5351,
+      "failed": 0,
+      "finalBanner": true,
+      "exitCode": 0
+    },
+    "syntax": "_shots/overnight_0927/syntax-final.json",
+    "review": "_shots/overnight_0927/review_check.json",
+    "manualHorizon": {
+      "path": "_shots/overnight_0927/manual-horizon-normal/report.json",
+      "lastSeconds": 53.1,
+      "hpZeroObserved": 51.1,
+      "livesLost": 2,
+      "aliveAfter": true,
+      "actions": 31,
+      "manualAmmoSpent": 8,
+      "errors": [],
+      "limits": "Paused between actual keyboard observations; selected equipment, ordinary collision/lives. Encounter clear, not continuous campaign win."
+    },
+    "committed": false,
+    "pushed": false,
+    "stopAt": "2026-09-27T12:00:00Z",
+    "stoppedAt": "2026-09-27T12:00:22Z"
+  }
+}

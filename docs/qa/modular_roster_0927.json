@@ -1,0 +1,1006 @@
+{
+  "suite": {
+    "passed": 5432,
+    "failed": 0,
+    "finalBanner": "FALVA/LIZZIE BUILD OK, 0 ERRORS",
+    "incomingPass": 5351,
+    "incomingFail": 0
+  },
+  "encounterFixtures": {
+    "cases": 20,
+    "difficulties": [
+      "easy",
+      "normal",
+      "hard",
+      "furious"
+    ],
+    "errors": [],
+    "method": "selected encounter; invulnerability and staged damage"
+  },
+  "stageSamples": {
+    "count": 36,
+    "errors": [],
+    "method": "36 bounded diagnostic runs, final Stage 4 helper geometry rerun. Ordinary damage and fixed loadout, automated movement, independent stage starts. Not human campaign victories.",
+    "results": [
+      {
+        "stage": 1,
+        "diff": "easy",
+        "state": "continue",
+        "frames": 5228,
+        "deaths": 6,
+        "miniSeen": true,
+        "bossSeen": false,
+        "stageClear": false,
+        "finite": true
+      },
+      {
+        "stage": 2,
+        "diff": "easy",
+        "state": "continue",
+        "frames": 6062,
+        "deaths": 6,
+        "miniSeen": true,
+        "bossSeen": false,
+        "stageClear": false,
+        "finite": true
+      },
+      {
+        "stage": 3,
+        "diff": "easy",
+        "state": "flyover",
+        "frames": 5770,
+        "deaths": 0,
+        "miniSeen": true,
+        "bossSeen": true,
+        "stageClear": true,
+        "finite": true
+      },
+      {
+        "stage": 4,
+        "diff": "easy",
+        "state": "play",
+        "frames": 10800,
+        "deaths": 1,
+        "miniSeen": true,
+        "bossSeen": true,
+        "stageClear": false,
+        "finite": true
+      },
+      {
+        "stage": 5,
+        "diff": "easy",
+        "state": "flyover",
+        "frames": 10124,
+        "deaths": 1,
+        "miniSeen": true,
+        "bossSeen": true,
+        "stageClear": true,
+        "finite": true
+      },
+      {
+        "stage": 6,
+        "diff": "easy",
+        "state": "play",
+        "frames": 10800,
+        "deaths": 0,
+        "miniSeen": true,
+        "bossSeen": false,
+        "stageClear": false,
+        "finite": true
+      },
+      {
+        "stage": 7,
+        "diff": "easy",
+        "state": "play",
+        "frames": 10800,
+        "deaths": 1,
+        "miniSeen": true,
+        "bossSeen": true,
+        "stageClear": false,
+        "finite": true
+      },
+      {
+        "stage": 8,
+        "diff": "easy",
+        "state": "continue",
+        "frames": 8617,
+        "deaths": 6,
+        "miniSeen": false,
+        "bossSeen": true,
+        "stageClear": false,
+        "finite": true
+      },
+      {
+        "stage": 9,
+        "diff": "easy",
+        "state": "flyover",
+        "frames": 7006,
+        "deaths": 0,
+        "miniSeen": true,
+        "bossSeen": true,
+        "stageClear": true,
+        "finite": true
+      },
+      {
+        "stage": 1,
+        "diff": "normal",
+        "state": "continue",
+        "frames": 6098,
+        "deaths": 5,
+        "miniSeen": true,
+        "bossSeen": false,
+        "stageClear": false,
+        "finite": true
+      },
+      {
+        "stage": 2,
+        "diff": "normal",
+        "state": "continue",
+        "frames": 3926,
+        "deaths": 5,
+        "miniSeen": true,
+        "bossSeen": false,
+        "stageClear": false,
+        "finite": true
+      },
+      {
+        "stage": 3,
+        "diff": "normal",
+        "state": "flyover",
+        "frames": 9816,
+        "deaths": 2,
+        "miniSeen": true,
+        "bossSeen": true,
+        "stageClear": true,
+        "finite": true
+      },
+      {
+        "stage": 4,
+        "diff": "normal",
+        "state": "play",
+        "frames": 10800,
+        "deaths": 0,
+        "miniSeen": true,
+        "bossSeen": true,
+        "stageClear": false,
+        "finite": true
+      },
+      {
+        "stage": 5,
+        "diff": "normal",
+        "state": "continue",
+        "frames": 8838,
+        "deaths": 5,
+        "miniSeen": true,
+        "bossSeen": true,
+        "stageClear": false,
+        "finite": true
+      },
+      {
+        "stage": 6,
+        "diff": "normal",
+        "state": "play",
+        "frames": 10800,
+        "deaths": 0,
+        "miniSeen": true,
+        "bossSeen": false,
+        "stageClear": false,
+        "finite": true
+      },
+      {
+        "stage": 7,
+        "diff": "normal",
+        "state": "continue",
+        "frames": 7064,
+        "deaths": 5,
+        "miniSeen": true,
+        "bossSeen": false,
+        "stageClear": false,
+        "finite": true
+      },
+      {
+        "stage": 8,
+        "diff": "normal",
+        "state": "continue",
+        "frames": 8187,
+        "deaths": 5,
+        "miniSeen": false,
+        "bossSeen": true,
+        "stageClear": false,
+        "finite": true
+      },
+      {
+        "stage": 9,
+        "diff": "normal",
+        "state": "flyover",
+        "frames": 7768,
+        "deaths": 0,
+        "miniSeen": true,
+        "bossSeen": true,
+        "stageClear": true,
+        "finite": true
+      },
+      {
+        "stage": 1,
+        "diff": "hard",
+        "state": "continue",
+        "frames": 5529,
+        "deaths": 4,
+        "miniSeen": true,
+        "bossSeen": false,
+        "stageClear": false,
+        "finite": true
+      },
+      {
+        "stage": 2,
+        "diff": "hard",
+        "state": "continue",
+        "frames": 2078,
+        "deaths": 4,
+        "miniSeen": true,
+        "bossSeen": false,
+        "stageClear": false,
+        "finite": true
+      },
+      {
+        "stage": 3,
+        "diff": "hard",
+        "state": "flyover",
+        "frames": 10001,
+        "deaths": 0,
+        "miniSeen": true,
+        "bossSeen": true,
+        "stageClear": true,
+        "finite": true
+      },
+      {
+        "stage": 4,
+        "diff": "hard",
+        "state": "play",
+        "frames": 10800,
+        "deaths": 2,
+        "miniSeen": true,
+        "bossSeen": true,
+        "stageClear": false,
+        "finite": true
+      },
+      {
+        "stage": 5,
+        "diff": "hard",
+        "state": "continue",
+        "frames": 7705,
+        "deaths": 4,
+        "miniSeen": true,
+        "bossSeen": true,
+        "stageClear": false,
+        "finite": true
+      },
+      {
+        "stage": 6,
+        "diff": "hard",
+        "state": "play",
+        "frames": 10800,
+        "deaths": 3,
+        "miniSeen": true,
+        "bossSeen": false,
+        "stageClear": false,
+        "finite": true
+      },
+      {
+        "stage": 7,
+        "diff": "hard",
+        "state": "continue",
+        "frames": 6837,
+        "deaths": 4,
+        "miniSeen": true,
+        "bossSeen": false,
+        "stageClear": false,
+        "finite": true
+      },
+      {
+        "stage": 8,
+        "diff": "hard",
+        "state": "continue",
+        "frames": 5475,
+        "deaths": 4,
+        "miniSeen": false,
+        "bossSeen": true,
+        "stageClear": false,
+        "finite": true
+      },
+      {
+        "stage": 9,
+        "diff": "hard",
+        "state": "play",
+        "frames": 10800,
+        "deaths": 0,
+        "miniSeen": true,
+        "bossSeen": true,
+        "stageClear": true,
+        "finite": true
+      },
+      {
+        "stage": 1,
+        "diff": "furious",
+        "state": "continue",
+        "frames": 5335,
+        "deaths": 4,
+        "miniSeen": true,
+        "bossSeen": false,
+        "stageClear": false,
+        "finite": true
+      },
+      {
+        "stage": 2,
+        "diff": "furious",
+        "state": "continue",
+        "frames": 3062,
+        "deaths": 4,
+        "miniSeen": true,
+        "bossSeen": false,
+        "stageClear": false,
+        "finite": true
+      },
+      {
+        "stage": 3,
+        "diff": "furious",
+        "state": "continue",
+        "frames": 7847,
+        "deaths": 4,
+        "miniSeen": true,
+        "bossSeen": false,
+        "stageClear": false,
+        "finite": true
+      },
+      {
+        "stage": 4,
+        "diff": "furious",
+        "state": "continue",
+        "frames": 9130,
+        "deaths": 4,
+        "miniSeen": true,
+        "bossSeen": false,
+        "stageClear": false,
+        "finite": true
+      },
+      {
+        "stage": 5,
+        "diff": "furious",
+        "state": "continue",
+        "frames": 7201,
+        "deaths": 4,
+        "miniSeen": true,
+        "bossSeen": true,
+        "stageClear": false,
+        "finite": true
+      },
+      {
+        "stage": 6,
+        "diff": "furious",
+        "state": "play",
+        "frames": 10800,
+        "deaths": 1,
+        "miniSeen": true,
+        "bossSeen": false,
+        "stageClear": false,
+        "finite": true
+      },
+      {
+        "stage": 7,
+        "diff": "furious",
+        "state": "continue",
+        "frames": 3873,
+        "deaths": 4,
+        "miniSeen": true,
+        "bossSeen": false,
+        "stageClear": false,
+        "finite": true
+      },
+      {
+        "stage": 8,
+        "diff": "furious",
+        "state": "continue",
+        "frames": 5596,
+        "deaths": 4,
+        "miniSeen": false,
+        "bossSeen": true,
+        "stageClear": false,
+        "finite": true
+      },
+      {
+        "stage": 9,
+        "diff": "furious",
+        "state": "play",
+        "frames": 10800,
+        "deaths": 0,
+        "miniSeen": true,
+        "bossSeen": true,
+        "stageClear": false,
+        "finite": true
+      }
+    ]
+  },
+  "videos": {
+    "clips": [
+      {
+        "stage": 3,
+        "kind": "cryospear",
+        "mini": false,
+        "diff": "furious",
+        "seconds": 26,
+        "seen": [
+          {
+            "t": 0.01680000001192093,
+            "state": "nuclear"
+          },
+          {
+            "t": 2.9294000000357627,
+            "state": "recover"
+          },
+          {
+            "t": 3.6165,
+            "state": "bastion-gates"
+          },
+          {
+            "t": 7.441,
+            "state": "recover"
+          },
+          {
+            "t": 8.1285,
+            "state": "cannon-relay"
+          },
+          {
+            "t": 12.928600000023842,
+            "state": "recover"
+          },
+          {
+            "t": 13.616700000047684,
+            "state": "form-change"
+          },
+          {
+            "t": 15.169700000047683,
+            "state": "orb-siege"
+          },
+          {
+            "t": 18.00060000002384,
+            "state": "recover"
+          },
+          {
+            "t": 19.040700000047682,
+            "state": "glacier-press"
+          },
+          {
+            "t": 23.0245,
+            "state": "recover"
+          },
+          {
+            "t": 23.7135,
+            "state": "form-change"
+          },
+          {
+            "t": 25.265,
+            "state": "cryo-mortar"
+          }
+        ],
+        "frames": 1523,
+        "finite": true,
+        "zoomMin": 1,
+        "zoomMax": 1
+      },
+      {
+        "stage": 4,
+        "kind": "stormsovereign",
+        "mini": false,
+        "diff": "hard",
+        "seconds": 26,
+        "seen": [
+          {
+            "t": 0.02339999997615814,
+            "state": "sovereign-battery"
+          },
+          {
+            "t": 2.096299999952316,
+            "state": "recover"
+          },
+          {
+            "t": 2.9442999999523165,
+            "state": "escort-crossfire"
+          },
+          {
+            "t": 12.432299999952317,
+            "state": "recover"
+          },
+          {
+            "t": 13.280299999952316,
+            "state": "siege-rockets"
+          },
+          {
+            "t": 16.880599999964236,
+            "state": "recover"
+          },
+          {
+            "t": 17.728299999952316,
+            "state": "ion-scissors"
+          },
+          {
+            "t": 18.002,
+            "state": "recover"
+          },
+          {
+            "t": 19.23289999997616,
+            "state": "siege-mortar"
+          },
+          {
+            "t": 23.840799999952317,
+            "state": "recover"
+          },
+          {
+            "t": 24.688299999952317,
+            "state": "siege-drive"
+          }
+        ],
+        "frames": 1553,
+        "finite": true,
+        "zoomMin": 1,
+        "zoomMax": 1
+      },
+      {
+        "stage": 4,
+        "kind": "olivewarden",
+        "mini": true,
+        "diff": "hard",
+        "seconds": 26,
+        "seen": [
+          {
+            "t": 0.016400000035762786,
+            "state": "warden-suppress"
+          },
+          {
+            "t": 2.4481999999880792,
+            "state": "recover"
+          },
+          {
+            "t": 3.296199999988079,
+            "state": "escort-crossfire"
+          },
+          {
+            "t": 9.746,
+            "state": "recover"
+          },
+          {
+            "t": 10.59269999998808,
+            "state": "rocket-feint"
+          },
+          {
+            "t": 14.193100000023842,
+            "state": "recover"
+          },
+          {
+            "t": 15.034100000023843,
+            "state": "warden-drive"
+          },
+          {
+            "t": 18.00080000001192,
+            "state": "recover"
+          },
+          {
+            "t": 19.21630000001192,
+            "state": "center-break"
+          },
+          {
+            "t": 22.83390000003576,
+            "state": "recover"
+          },
+          {
+            "t": 23.681,
+            "state": "warden-suppress"
+          }
+        ],
+        "frames": 1557,
+        "finite": true,
+        "zoomMin": 1,
+        "zoomMax": 1
+      },
+      {
+        "stage": 5,
+        "kind": "spacebomber",
+        "mini": true,
+        "diff": "normal",
+        "seconds": 26,
+        "seen": [
+          {
+            "t": 0.01610000002384186,
+            "state": "bombs"
+          },
+          {
+            "t": 2.464300000011921,
+            "state": "charge"
+          },
+          {
+            "t": 5.168600000023842,
+            "state": "beam"
+          },
+          {
+            "t": 6.673600000023842,
+            "state": "recover"
+          },
+          {
+            "t": 8.225699999988079,
+            "state": "missiles"
+          },
+          {
+            "t": 11.536600000023842,
+            "state": "bombs"
+          },
+          {
+            "t": 15.745,
+            "state": "charge"
+          },
+          {
+            "t": 18.00019999998808,
+            "state": "recover"
+          },
+          {
+            "t": 19.5365,
+            "state": "missiles"
+          },
+          {
+            "t": 22.848600000023843,
+            "state": "bombs"
+          }
+        ],
+        "frames": 1602,
+        "finite": true,
+        "zoomMin": 1,
+        "zoomMax": 1
+      },
+      {
+        "stage": 5,
+        "kind": "spacebomber",
+        "mini": true,
+        "diff": "hard",
+        "seconds": 26,
+        "seen": [
+          {
+            "t": 0.016300000011920928,
+            "state": "bombs"
+          },
+          {
+            "t": 2.289199999988079,
+            "state": "charge"
+          },
+          {
+            "t": 4.993199999988079,
+            "state": "beam"
+          },
+          {
+            "t": 6.496300000011921,
+            "state": "recover"
+          },
+          {
+            "t": 7.760699999988079,
+            "state": "missiles"
+          },
+          {
+            "t": 11.073,
+            "state": "bombs"
+          },
+          {
+            "t": 15.280699999988078,
+            "state": "charge"
+          },
+          {
+            "t": 17.98430000001192,
+            "state": "beam"
+          },
+          {
+            "t": 18.000300000011922,
+            "state": "recover"
+          },
+          {
+            "t": 19.248399999976158,
+            "state": "missiles"
+          },
+          {
+            "t": 22.569599999964236,
+            "state": "bombs"
+          }
+        ],
+        "frames": 1607,
+        "finite": true,
+        "zoomMin": 1,
+        "zoomMax": 1
+      },
+      {
+        "stage": 6,
+        "kind": "siegebomber",
+        "mini": true,
+        "diff": "normal",
+        "seconds": 26,
+        "seen": [
+          {
+            "t": 0.017799999952316285,
+            "state": "bombs"
+          },
+          {
+            "t": 2.448399999976158,
+            "state": "charge"
+          },
+          {
+            "t": 5.152399999976158,
+            "state": "beam"
+          },
+          {
+            "t": 6.656599999964238,
+            "state": "recover"
+          },
+          {
+            "t": 8.208099999964237,
+            "state": "missiles"
+          },
+          {
+            "t": 11.52119999998808,
+            "state": "bombs"
+          },
+          {
+            "t": 15.728599999964237,
+            "state": "charge"
+          },
+          {
+            "t": 18.000799999952317,
+            "state": "recover"
+          },
+          {
+            "t": 19.53659999996424,
+            "state": "missiles"
+          },
+          {
+            "t": 22.848299999952317,
+            "state": "bombs"
+          }
+        ],
+        "frames": 1598,
+        "finite": true,
+        "zoomMin": 1,
+        "zoomMax": 1
+      }
+    ],
+    "errors": []
+  },
+  "focused": {
+    "cases": [],
+    "helpers": {
+      "size": {
+        "x": 48,
+        "y": 48
+      },
+      "gun": {
+        "hp": 0,
+        "maxhp": 76,
+        "dead": true,
+        "flash": 0.18
+      },
+      "hullAlive": true,
+      "targets": 0
+    },
+    "actualBreaks": [
+      {
+        "kind": "cryospear",
+        "trace": [
+          {
+            "before": 357,
+            "after": 0,
+            "dead": true,
+            "hp": 3604,
+            "noHit": false,
+            "at": "core"
+          },
+          {
+            "before": 0,
+            "after": 0,
+            "dead": true,
+            "hp": 3246,
+            "noHit": false,
+            "at": "core"
+          },
+          {
+            "before": 0,
+            "after": 0,
+            "dead": true,
+            "hp": 2888,
+            "noHit": false,
+            "at": "core"
+          }
+        ]
+      },
+      {
+        "kind": "olivewarden",
+        "trace": [
+          {
+            "before": 325,
+            "after": 0,
+            "dead": true,
+            "hp": 3269,
+            "noHit": false,
+            "at": "core"
+          },
+          {
+            "before": 0,
+            "after": 0,
+            "dead": true,
+            "hp": 2943,
+            "noHit": false,
+            "at": "core"
+          },
+          {
+            "before": 0,
+            "after": 0,
+            "dead": true,
+            "hp": 2617,
+            "noHit": false,
+            "at": "core"
+          }
+        ]
+      },
+      {
+        "kind": "stormsovereign",
+        "trace": [
+          {
+            "before": 436,
+            "after": 0,
+            "dead": true,
+            "hp": 4404,
+            "noHit": false,
+            "at": "core"
+          },
+          {
+            "before": 0,
+            "after": 0,
+            "dead": true,
+            "hp": 3967,
+            "noHit": false,
+            "at": "core"
+          },
+          {
+            "before": 0,
+            "after": 0,
+            "dead": true,
+            "hp": 3630,
+            "noHit": false,
+            "at": "core"
+          }
+        ]
+      }
+    ],
+    "finale": [
+      {
+        "difficulty": "easy",
+        "form": 2,
+        "dead": true,
+        "trueRoute": false
+      },
+      {
+        "difficulty": "normal",
+        "form": 2,
+        "dead": true,
+        "trueRoute": false
+      },
+      {
+        "difficulty": "hard",
+        "form": 2,
+        "dead": true,
+        "trueRoute": false
+      },
+      {
+        "difficulty": "furious",
+        "form": 3,
+        "dead": false,
+        "trueRoute": true
+      }
+    ],
+    "errors": []
+  },
+  "review": {
+    "media": [
+      {
+        "src": "cryospear-furious.webm",
+        "duration": 25.629716,
+        "width": 960,
+        "height": 1024,
+        "error": null
+      },
+      {
+        "src": "olivewarden-hard.webm",
+        "duration": 25.874498,
+        "width": 960,
+        "height": 1024,
+        "error": null
+      },
+      {
+        "src": "stormsovereign-hard.webm",
+        "duration": 25.725449,
+        "width": 960,
+        "height": 1024,
+        "error": null
+      },
+      {
+        "src": "spacebomber-normal.webm",
+        "duration": 25.926871,
+        "width": 960,
+        "height": 1024,
+        "error": null
+      },
+      {
+        "src": "spacebomber-hard.webm",
+        "duration": 25.966777,
+        "width": 960,
+        "height": 1024,
+        "error": null
+      },
+      {
+        "src": "siegebomber-normal.webm",
+        "duration": 25.761548,
+        "width": 960,
+        "height": 1024,
+        "error": null
+      }
+    ],
+    "images": [
+      {
+        "src": "cryospear-normal-broken.png",
+        "width": 960
+      },
+      {
+        "src": "olivewarden-normal-broken.png",
+        "width": 960
+      },
+      {
+        "src": "spacebomber-normal-broken.png",
+        "width": 960
+      }
+    ],
+    "links": [
+      {
+        "url": "/index.html",
+        "status": 200
+      },
+      {
+        "url": "/bossmode.html",
+        "status": 200
+      },
+      {
+        "url": "/docs/MODULAR_ROSTER_0927.md",
+        "status": 200
+      },
+      {
+        "url": "/_shots/modular_roster_0927/report.json",
+        "status": 200
+      },
+      {
+        "url": "/_shots/modular_roster_0927/focused-report.json",
+        "status": 200
+      },
+      {
+        "url": "/_shots/modular_roster_0927/balance/report.json",
+        "status": 200
+      },
+      {
+        "url": "/_shots/modular_roster_0927/suite-final.log",
+        "status": 200
+      }
+    ],
+    "ending": [
+      {
+        "trueEnding": false,
+        "time": 32.6,
+        "atResultCard": true
+      },
+      {
+        "trueEnding": true,
+        "time": 8.436666666666667,
+        "atResultCard": false
+      }
+    ],
+    "errors": []
+  }
+}

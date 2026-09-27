@@ -1,0 +1,7433 @@
+{
+  "baseline": {
+    "passed": 5159,
+    "failed": 0
+  },
+  "suite": {
+    "passed": 5190,
+    "failed": 0,
+    "exit": 0,
+    "finalBanner": true,
+    "newFailingNames": []
+  },
+  "encounters": {
+    "matrix": [
+      {
+        "cfg": {
+          "stage": 7,
+          "kind": "dualscoopdredger",
+          "mini": true,
+          "diff": "normal"
+        },
+        "initial": {
+          "kind": "dualscoopdredger",
+          "ship": "dualscoopdredger",
+          "hp": 2190,
+          "world": 680,
+          "view": 480
+        },
+        "modes": [
+          "recover",
+          "sluice-crossfire",
+          "bucket-run",
+          "spore-bloom",
+          "mine-gate"
+        ],
+        "phases": [
+          "fight"
+        ],
+        "kinds": [
+          "s7acid",
+          "s7spore",
+          "s7wardenMine"
+        ],
+        "maxMove": 12.5,
+        "maxBullets": 20,
+        "shots": 0,
+        "invalid": 0,
+        "last": {
+          "x": 476.0686877298491,
+          "y": 145
+        },
+        "history": [
+          {
+            "mode": "sluice-crossfire",
+            "time": 1.2000000000000006,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 4.183333333333324,
+            "phase": 0
+          },
+          {
+            "mode": "bucket-run",
+            "time": 5.3833333333333195,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 7.749999999999978,
+            "phase": 0
+          },
+          {
+            "mode": "spore-bloom",
+            "time": 8.950000000000024,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 11.933333333333506,
+            "phase": 0
+          },
+          {
+            "mode": "mine-gate",
+            "time": 13.133333333333566,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 14.616666666666973,
+            "phase": 0
+          },
+          {
+            "mode": "sluice-crossfire",
+            "time": 15.816666666667032,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 18.800000000000214,
+            "phase": 0
+          },
+          {
+            "mode": "bucket-run",
+            "time": 20.000000000000146,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 22.366666666666678,
+            "phase": 0
+          },
+          {
+            "mode": "spore-bloom",
+            "time": 23.56666666666661,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 26.549999999999773,
+            "phase": 0
+          },
+          {
+            "mode": "mine-gate",
+            "time": 27.749999999999705,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 29.233333333332954,
+            "phase": 0
+          },
+          {
+            "mode": "sluice-crossfire",
+            "time": 30.433333333332886,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 33.41666666666605,
+            "phase": 0
+          },
+          {
+            "mode": "bucket-run",
+            "time": 34.616666666665985,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 36.98333333333252,
+            "phase": 0
+          },
+          {
+            "mode": "spore-bloom",
+            "time": 38.18333333333245,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 41.16666666666561,
+            "phase": 0
+          },
+          {
+            "mode": "mine-gate",
+            "time": 42.366666666665544,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 43.84999999999879,
+            "phase": 0
+          },
+          {
+            "mode": "sluice-crossfire",
+            "time": 45.049999999998725,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 48.03333333333189,
+            "phase": 0
+          },
+          {
+            "mode": "bucket-run",
+            "time": 49.23333333333182,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 51.59999999999835,
+            "phase": 0
+          },
+          {
+            "mode": "spore-bloom",
+            "time": 52.799999999998285,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 55.78333333333145,
+            "phase": 0
+          },
+          {
+            "mode": "mine-gate",
+            "time": 56.98333333333138,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 58.46666666666463,
+            "phase": 0
+          },
+          {
+            "mode": "sluice-crossfire",
+            "time": 59.66666666666456,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 62.649999999997725,
+            "phase": 0
+          },
+          {
+            "mode": "bucket-run",
+            "time": 63.84999999999766,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 66.2166666666642,
+            "phase": 0
+          },
+          {
+            "mode": "spore-bloom",
+            "time": 67.41666666666413,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 70.39999999999729,
+            "phase": 0
+          },
+          {
+            "mode": "mine-gate",
+            "time": 71.59999999999722,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 73.08333333333047,
+            "phase": 0
+          }
+        ],
+        "turns": [],
+        "hp": 1672,
+        "maxhp": 1672,
+        "actorRetained": true
+      },
+      {
+        "cfg": {
+          "stage": 7,
+          "kind": "dualscoopdredger",
+          "mini": true,
+          "diff": "hard"
+        },
+        "initial": {
+          "kind": "dualscoopdredger",
+          "ship": "dualscoopdredger",
+          "hp": 2408,
+          "world": 680,
+          "view": 480
+        },
+        "modes": [
+          "recover",
+          "sluice-crossfire",
+          "bucket-run",
+          "spore-bloom",
+          "mine-gate"
+        ],
+        "phases": [
+          "fight"
+        ],
+        "kinds": [
+          "s7acid",
+          "s7spore",
+          "s7wardenMine"
+        ],
+        "maxMove": 12.5,
+        "maxBullets": 24,
+        "shots": 0,
+        "invalid": 0,
+        "last": {
+          "x": 378.2536359545504,
+          "y": 145
+        },
+        "history": [
+          {
+            "mode": "sluice-crossfire",
+            "time": 1.2000000000000006,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 4.183333333333324,
+            "phase": 0
+          },
+          {
+            "mode": "bucket-run",
+            "time": 5.13333333333332,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 7.349999999999979,
+            "phase": 0
+          },
+          {
+            "mode": "spore-bloom",
+            "time": 8.299999999999992,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 11.283333333333474,
+            "phase": 0
+          },
+          {
+            "mode": "mine-gate",
+            "time": 12.23333333333352,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 13.716666666666928,
+            "phase": 0
+          },
+          {
+            "mode": "sluice-crossfire",
+            "time": 14.666666666666975,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 17.65000000000028,
+            "phase": 0
+          },
+          {
+            "mode": "bucket-run",
+            "time": 18.600000000000225,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 20.816666666666766,
+            "phase": 0
+          },
+          {
+            "mode": "spore-bloom",
+            "time": 21.766666666666712,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 24.749999999999876,
+            "phase": 0
+          },
+          {
+            "mode": "mine-gate",
+            "time": 25.69999999999982,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 27.18333333333307,
+            "phase": 0
+          },
+          {
+            "mode": "sluice-crossfire",
+            "time": 28.133333333333017,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 31.11666666666618,
+            "phase": 0
+          },
+          {
+            "mode": "bucket-run",
+            "time": 32.06666666666613,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 34.28333333333267,
+            "phase": 0
+          },
+          {
+            "mode": "spore-bloom",
+            "time": 35.23333333333262,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 38.21666666666578,
+            "phase": 0
+          },
+          {
+            "mode": "mine-gate",
+            "time": 39.166666666665726,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 40.649999999998975,
+            "phase": 0
+          },
+          {
+            "mode": "sluice-crossfire",
+            "time": 41.59999999999892,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 44.583333333332085,
+            "phase": 0
+          },
+          {
+            "mode": "bucket-run",
+            "time": 45.53333333333203,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 47.74999999999857,
+            "phase": 0
+          },
+          {
+            "mode": "spore-bloom",
+            "time": 48.69999999999852,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 51.68333333333168,
+            "phase": 0
+          },
+          {
+            "mode": "mine-gate",
+            "time": 52.63333333333163,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 54.11666666666488,
+            "phase": 0
+          },
+          {
+            "mode": "sluice-crossfire",
+            "time": 55.06666666666482,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 58.049999999997986,
+            "phase": 0
+          },
+          {
+            "mode": "bucket-run",
+            "time": 58.99999999999793,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 61.21666666666447,
+            "phase": 0
+          },
+          {
+            "mode": "spore-bloom",
+            "time": 62.16666666666442,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 65.14999999999759,
+            "phase": 0
+          },
+          {
+            "mode": "mine-gate",
+            "time": 66.09999999999754,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 67.58333333333078,
+            "phase": 0
+          },
+          {
+            "mode": "sluice-crossfire",
+            "time": 68.53333333333073,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 71.5166666666639,
+            "phase": 0
+          },
+          {
+            "mode": "bucket-run",
+            "time": 72.46666666666384,
+            "phase": 0
+          }
+        ],
+        "turns": [],
+        "hp": 2090,
+        "maxhp": 2090,
+        "actorRetained": true
+      },
+      {
+        "cfg": {
+          "stage": 7,
+          "kind": "dualscoopdredger",
+          "mini": true,
+          "diff": "furious"
+        },
+        "initial": {
+          "kind": "dualscoopdredger",
+          "ship": "dualscoopdredger",
+          "hp": 2846,
+          "world": 680,
+          "view": 480
+        },
+        "modes": [
+          "recover",
+          "sluice-crossfire",
+          "bucket-run",
+          "spore-bloom",
+          "mine-gate"
+        ],
+        "phases": [
+          "fight"
+        ],
+        "kinds": [
+          "s7acid",
+          "s7spore",
+          "s7wardenMine"
+        ],
+        "maxMove": 12.5,
+        "maxBullets": 23,
+        "shots": 0,
+        "invalid": 0,
+        "last": {
+          "x": 310.2524761731351,
+          "y": 145
+        },
+        "history": [
+          {
+            "mode": "sluice-crossfire",
+            "time": 1.2000000000000006,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 4.216666666666657,
+            "phase": 0
+          },
+          {
+            "mode": "bucket-run",
+            "time": 4.999999999999988,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 7.09999999999998,
+            "phase": 0
+          },
+          {
+            "mode": "spore-bloom",
+            "time": 7.883333333333311,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 10.900000000000121,
+            "phase": 0
+          },
+          {
+            "mode": "mine-gate",
+            "time": 11.683333333333493,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 13.1666666666669,
+            "phase": 0
+          },
+          {
+            "mode": "sluice-crossfire",
+            "time": 13.950000000000273,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 16.966666666666985,
+            "phase": 0
+          },
+          {
+            "mode": "bucket-run",
+            "time": 17.750000000000274,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 19.850000000000154,
+            "phase": 0
+          },
+          {
+            "mode": "spore-bloom",
+            "time": 20.633333333333443,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 23.649999999999938,
+            "phase": 0
+          },
+          {
+            "mode": "mine-gate",
+            "time": 24.433333333333227,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 25.916666666666476,
+            "phase": 0
+          },
+          {
+            "mode": "sluice-crossfire",
+            "time": 26.699999999999765,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 29.71666666666626,
+            "phase": 0
+          },
+          {
+            "mode": "bucket-run",
+            "time": 30.49999999999955,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 32.59999999999943,
+            "phase": 0
+          },
+          {
+            "mode": "spore-bloom",
+            "time": 33.38333333333272,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 36.39999999999922,
+            "phase": 0
+          },
+          {
+            "mode": "mine-gate",
+            "time": 37.183333333332506,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 38.666666666665755,
+            "phase": 0
+          },
+          {
+            "mode": "sluice-crossfire",
+            "time": 39.449999999999044,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 42.46666666666554,
+            "phase": 0
+          },
+          {
+            "mode": "bucket-run",
+            "time": 43.24999999999883,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 45.34999999999871,
+            "phase": 0
+          },
+          {
+            "mode": "spore-bloom",
+            "time": 46.133333333332,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 49.14999999999849,
+            "phase": 0
+          },
+          {
+            "mode": "mine-gate",
+            "time": 49.93333333333178,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 51.41666666666503,
+            "phase": 0
+          },
+          {
+            "mode": "sluice-crossfire",
+            "time": 52.19999999999832,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 55.216666666664814,
+            "phase": 0
+          },
+          {
+            "mode": "bucket-run",
+            "time": 55.9999999999981,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 58.09999999999798,
+            "phase": 0
+          },
+          {
+            "mode": "spore-bloom",
+            "time": 58.88333333333127,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 61.89999999999777,
+            "phase": 0
+          },
+          {
+            "mode": "mine-gate",
+            "time": 62.683333333331056,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 64.16666666666431,
+            "phase": 0
+          },
+          {
+            "mode": "sluice-crossfire",
+            "time": 64.9499999999976,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 67.9666666666641,
+            "phase": 0
+          },
+          {
+            "mode": "bucket-run",
+            "time": 68.74999999999739,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 70.84999999999727,
+            "phase": 0
+          },
+          {
+            "mode": "spore-bloom",
+            "time": 71.63333333333055,
+            "phase": 0
+          }
+        ],
+        "turns": [],
+        "hp": 2470,
+        "maxhp": 2470,
+        "actorRetained": true
+      },
+      {
+        "cfg": {
+          "stage": 7,
+          "kind": "sludgeemperor",
+          "mini": false,
+          "diff": "normal"
+        },
+        "initial": {
+          "kind": "sludgeemperor",
+          "ship": "sludgeemperor",
+          "hp": 10840,
+          "world": 680,
+          "view": 480
+        },
+        "modes": [
+          "recover",
+          "stalk",
+          "burst",
+          "leap",
+          "minefield",
+          "rail",
+          "chain"
+        ],
+        "phases": [
+          "portalClose",
+          "teleportIn",
+          "walkIn",
+          "roar",
+          "chase",
+          "fight",
+          "stun",
+          "hyper",
+          "legBurst",
+          "cripple"
+        ],
+        "kinds": [
+          "emissile",
+          "s7wardenShell",
+          "s7wardenMine",
+          "s7wardenRail"
+        ],
+        "maxMove": 8.452983739159434,
+        "maxBullets": 20,
+        "shots": 0,
+        "invalid": 0,
+        "last": {
+          "x": 200.12297730641814,
+          "y": 235.52
+        },
+        "history": [
+          {
+            "mode": "stalk",
+            "time": 1.2000000000000006,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 3.383333333333326,
+            "phase": 0
+          },
+          {
+            "mode": "burst",
+            "time": 4.583333333333322,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 7.566666666666645,
+            "phase": 0
+          },
+          {
+            "mode": "leap",
+            "time": 8.766666666666682,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 10.816666666666784,
+            "phase": 0
+          },
+          {
+            "mode": "minefield",
+            "time": 12.016666666666843,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 13.50000000000025,
+            "phase": 0
+          },
+          {
+            "mode": "rail",
+            "time": 14.70000000000031,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 17.68333333333361,
+            "phase": 0
+          },
+          {
+            "mode": "stalk",
+            "time": 18.883333333333542,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 21.06666666666675,
+            "phase": 0
+          },
+          {
+            "mode": "burst",
+            "time": 22.266666666666683,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 22.416666666666675,
+            "phase": 0
+          },
+          {
+            "mode": "leap",
+            "time": 23.616666666666607,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 25.66666666666649,
+            "phase": 0
+          },
+          {
+            "mode": "minefield",
+            "time": 26.866666666666422,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 28.34999999999967,
+            "phase": 0
+          },
+          {
+            "mode": "rail",
+            "time": 29.549999999999603,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 31.749999999999478,
+            "phase": 1
+          },
+          {
+            "mode": "minefield",
+            "time": 32.94999999999941,
+            "phase": 1
+          },
+          {
+            "mode": "recover",
+            "time": 34.43333333333266,
+            "phase": 1
+          },
+          {
+            "mode": "chain",
+            "time": 35.633333333332594,
+            "phase": 1
+          },
+          {
+            "mode": "recover",
+            "time": 38.61666666666576,
+            "phase": 1
+          },
+          {
+            "mode": "leap",
+            "time": 39.81666666666569,
+            "phase": 1
+          },
+          {
+            "mode": "recover",
+            "time": 41.86666666666557,
+            "phase": 1
+          },
+          {
+            "mode": "burst",
+            "time": 43.066666666665505,
+            "phase": 1
+          },
+          {
+            "mode": "recover",
+            "time": 46.04999999999867,
+            "phase": 1
+          }
+        ],
+        "turns": [],
+        "hp": 2601.6,
+        "maxhp": 10840,
+        "actorRetained": true
+      },
+      {
+        "cfg": {
+          "stage": 7,
+          "kind": "sludgeemperor",
+          "mini": false,
+          "diff": "hard"
+        },
+        "initial": {
+          "kind": "sludgeemperor",
+          "ship": "sludgeemperor",
+          "hp": 11924,
+          "world": 680,
+          "view": 480
+        },
+        "modes": [
+          "recover",
+          "stalk",
+          "burst",
+          "leap",
+          "minefield",
+          "rail",
+          "chain"
+        ],
+        "phases": [
+          "portalClose",
+          "teleportIn",
+          "walkIn",
+          "roar",
+          "chase",
+          "fight",
+          "stun",
+          "hyper",
+          "legBurst",
+          "cripple"
+        ],
+        "kinds": [
+          "emissile",
+          "s7wardenShell",
+          "s7wardenMine",
+          "s7wardenRail"
+        ],
+        "maxMove": 8.695710721620372,
+        "maxBullets": 22,
+        "shots": 0,
+        "invalid": 0,
+        "last": {
+          "x": 262.6527078001709,
+          "y": 235.52
+        },
+        "history": [
+          {
+            "mode": "stalk",
+            "time": 1.2000000000000006,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 3.383333333333326,
+            "phase": 0
+          },
+          {
+            "mode": "burst",
+            "time": 4.333333333333323,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 7.316666666666646,
+            "phase": 0
+          },
+          {
+            "mode": "leap",
+            "time": 8.266666666666657,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 10.183333333333419,
+            "phase": 0
+          },
+          {
+            "mode": "minefield",
+            "time": 11.133333333333466,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 12.616666666666873,
+            "phase": 0
+          },
+          {
+            "mode": "rail",
+            "time": 13.56666666666692,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 16.55000000000034,
+            "phase": 0
+          },
+          {
+            "mode": "stalk",
+            "time": 17.500000000000288,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 19.683333333333497,
+            "phase": 0
+          },
+          {
+            "mode": "burst",
+            "time": 20.633333333333443,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 22.416666666666675,
+            "phase": 0
+          },
+          {
+            "mode": "leap",
+            "time": 23.36666666666662,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 25.28333333333318,
+            "phase": 0
+          },
+          {
+            "mode": "minefield",
+            "time": 26.233333333333125,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 27.716666666666374,
+            "phase": 0
+          },
+          {
+            "mode": "rail",
+            "time": 28.66666666666632,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 31.649999999999483,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 31.749999999999478,
+            "phase": 1
+          },
+          {
+            "mode": "minefield",
+            "time": 32.69999999999943,
+            "phase": 1
+          },
+          {
+            "mode": "recover",
+            "time": 34.183333333332676,
+            "phase": 1
+          },
+          {
+            "mode": "chain",
+            "time": 35.13333333333262,
+            "phase": 1
+          },
+          {
+            "mode": "recover",
+            "time": 38.116666666665786,
+            "phase": 1
+          },
+          {
+            "mode": "leap",
+            "time": 39.06666666666573,
+            "phase": 1
+          },
+          {
+            "mode": "recover",
+            "time": 40.98333333333229,
+            "phase": 1
+          },
+          {
+            "mode": "burst",
+            "time": 41.933333333332236,
+            "phase": 1
+          },
+          {
+            "mode": "recover",
+            "time": 44.9166666666654,
+            "phase": 1
+          },
+          {
+            "mode": "stalk",
+            "time": 45.866666666665346,
+            "phase": 1
+          }
+        ],
+        "turns": [],
+        "hp": 2861.7599999999998,
+        "maxhp": 11924,
+        "actorRetained": true
+      },
+      {
+        "cfg": {
+          "stage": 7,
+          "kind": "sludgeemperor",
+          "mini": false,
+          "diff": "furious"
+        },
+        "initial": {
+          "kind": "sludgeemperor",
+          "ship": "sludgeemperor",
+          "hp": 14092,
+          "world": 680,
+          "view": 480
+        },
+        "modes": [
+          "recover",
+          "stalk",
+          "burst",
+          "leap",
+          "minefield",
+          "rail",
+          "chain"
+        ],
+        "phases": [
+          "portalClose",
+          "teleportIn",
+          "walkIn",
+          "roar",
+          "chase",
+          "fight",
+          "stun",
+          "hyper",
+          "legBurst",
+          "cripple"
+        ],
+        "kinds": [
+          "emissile",
+          "s7wardenShell",
+          "s7wardenMine",
+          "s7wardenRail"
+        ],
+        "maxMove": 8.599888511138012,
+        "maxBullets": 22,
+        "shots": 0,
+        "invalid": 0,
+        "last": {
+          "x": 341.4358408947575,
+          "y": 235.52
+        },
+        "history": [
+          {
+            "mode": "stalk",
+            "time": 1.2000000000000006,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 3.383333333333326,
+            "phase": 0
+          },
+          {
+            "mode": "burst",
+            "time": 4.166666666666657,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 7.183333333333313,
+            "phase": 0
+          },
+          {
+            "mode": "leap",
+            "time": 7.966666666666644,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 9.750000000000064,
+            "phase": 0
+          },
+          {
+            "mode": "minefield",
+            "time": 10.533333333333436,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 12.016666666666843,
+            "phase": 0
+          },
+          {
+            "mode": "rail",
+            "time": 12.800000000000216,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 15.816666666667032,
+            "phase": 0
+          },
+          {
+            "mode": "stalk",
+            "time": 16.60000000000034,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 18.783333333333548,
+            "phase": 0
+          },
+          {
+            "mode": "burst",
+            "time": 19.566666666666837,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 22.416666666666675,
+            "phase": 0
+          },
+          {
+            "mode": "leap",
+            "time": 23.199999999999964,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 24.983333333333196,
+            "phase": 0
+          },
+          {
+            "mode": "minefield",
+            "time": 25.766666666666485,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 27.249999999999734,
+            "phase": 0
+          },
+          {
+            "mode": "rail",
+            "time": 28.033333333333022,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 31.049999999999518,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 31.749999999999478,
+            "phase": 1
+          },
+          {
+            "mode": "minefield",
+            "time": 32.53333333333277,
+            "phase": 1
+          },
+          {
+            "mode": "recover",
+            "time": 34.01666666666602,
+            "phase": 1
+          },
+          {
+            "mode": "chain",
+            "time": 34.79999999999931,
+            "phase": 1
+          },
+          {
+            "mode": "recover",
+            "time": 37.8166666666658,
+            "phase": 1
+          },
+          {
+            "mode": "leap",
+            "time": 38.59999999999909,
+            "phase": 1
+          },
+          {
+            "mode": "recover",
+            "time": 40.383333333332324,
+            "phase": 1
+          },
+          {
+            "mode": "burst",
+            "time": 41.16666666666561,
+            "phase": 1
+          },
+          {
+            "mode": "recover",
+            "time": 44.18333333333211,
+            "phase": 1
+          },
+          {
+            "mode": "stalk",
+            "time": 44.9666666666654,
+            "phase": 1
+          },
+          {
+            "mode": "recover",
+            "time": 47.149999999998606,
+            "phase": 1
+          }
+        ],
+        "turns": [],
+        "hp": 3382.08,
+        "maxhp": 14092,
+        "actorRetained": true
+      },
+      {
+        "cfg": {
+          "stage": 9,
+          "kind": "voidhorizon",
+          "mini": true,
+          "diff": "normal"
+        },
+        "initial": {
+          "kind": "voidhorizon",
+          "ship": null,
+          "hp": 3449,
+          "world": 680,
+          "view": 480
+        },
+        "modes": [
+          "recover",
+          "needle-relay",
+          "rift-gates",
+          "horizon-orbit",
+          "prism-sweep"
+        ],
+        "phases": [
+          "fight"
+        ],
+        "kinds": [
+          "s9needle",
+          "warpshard",
+          "warporb",
+          "warplance"
+        ],
+        "maxMove": 292.5346389567164,
+        "maxBullets": 20,
+        "shots": 0,
+        "invalid": 0,
+        "last": {
+          "x": 340,
+          "y": 145
+        },
+        "history": [
+          {
+            "mode": "needle-relay",
+            "time": 1.2000000000000006,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 4.183333333333324,
+            "phase": 0
+          },
+          {
+            "mode": "rift-gates",
+            "time": 5.3833333333333195,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 8.366666666666662,
+            "phase": 0
+          },
+          {
+            "mode": "horizon-orbit",
+            "time": 9.566666666666721,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 12.550000000000203,
+            "phase": 0
+          },
+          {
+            "mode": "prism-sweep",
+            "time": 13.750000000000263,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 16.733333333333665,
+            "phase": 0
+          },
+          {
+            "mode": "needle-relay",
+            "time": 17.933333333333596,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 20.91666666666676,
+            "phase": 0
+          },
+          {
+            "mode": "rift-gates",
+            "time": 22.116666666666692,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 25.099999999999856,
+            "phase": 0
+          },
+          {
+            "mode": "horizon-orbit",
+            "time": 26.299999999999788,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 29.28333333333295,
+            "phase": 0
+          },
+          {
+            "mode": "prism-sweep",
+            "time": 30.483333333332883,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 33.46666666666605,
+            "phase": 1
+          },
+          {
+            "mode": "needle-relay",
+            "time": 34.66666666666598,
+            "phase": 1
+          },
+          {
+            "mode": "recover",
+            "time": 37.649999999999146,
+            "phase": 1
+          },
+          {
+            "mode": "rift-gates",
+            "time": 38.84999999999908,
+            "phase": 1
+          },
+          {
+            "mode": "recover",
+            "time": 41.83333333333224,
+            "phase": 1
+          },
+          {
+            "mode": "horizon-orbit",
+            "time": 43.03333333333217,
+            "phase": 1
+          },
+          {
+            "mode": "recover",
+            "time": 46.01666666666534,
+            "phase": 1
+          },
+          {
+            "mode": "prism-sweep",
+            "time": 47.21666666666527,
+            "phase": 1
+          },
+          {
+            "mode": "recover",
+            "time": 50.19999999999843,
+            "phase": 1
+          },
+          {
+            "mode": "needle-relay",
+            "time": 51.399999999998364,
+            "phase": 1
+          },
+          {
+            "mode": "recover",
+            "time": 54.38333333333153,
+            "phase": 1
+          },
+          {
+            "mode": "rift-gates",
+            "time": 55.58333333333146,
+            "phase": 1
+          },
+          {
+            "mode": "recover",
+            "time": 58.566666666664624,
+            "phase": 1
+          },
+          {
+            "mode": "horizon-orbit",
+            "time": 59.766666666664555,
+            "phase": 1
+          },
+          {
+            "mode": "recover",
+            "time": 62.74999999999772,
+            "phase": 1
+          },
+          {
+            "mode": "prism-sweep",
+            "time": 63.94999999999765,
+            "phase": 1
+          },
+          {
+            "mode": "recover",
+            "time": 66.93333333333082,
+            "phase": 1
+          },
+          {
+            "mode": "needle-relay",
+            "time": 68.13333333333075,
+            "phase": 1
+          },
+          {
+            "mode": "recover",
+            "time": 71.11666666666392,
+            "phase": 1
+          },
+          {
+            "mode": "rift-gates",
+            "time": 72.31666666666385,
+            "phase": 1
+          }
+        ],
+        "turns": [],
+        "hp": 929.28,
+        "maxhp": 1936,
+        "actorRetained": true
+      },
+      {
+        "cfg": {
+          "stage": 9,
+          "kind": "voidhorizon",
+          "mini": true,
+          "diff": "hard"
+        },
+        "initial": {
+          "kind": "voidhorizon",
+          "ship": null,
+          "hp": 3794,
+          "world": 680,
+          "view": 480
+        },
+        "modes": [
+          "recover",
+          "needle-relay",
+          "rift-gates",
+          "horizon-orbit",
+          "prism-sweep"
+        ],
+        "phases": [
+          "fight"
+        ],
+        "kinds": [
+          "s9needle",
+          "warpshard",
+          "warporb",
+          "warplance"
+        ],
+        "maxMove": 292.5346389567164,
+        "maxBullets": 22,
+        "shots": 0,
+        "invalid": 0,
+        "last": {
+          "x": 340,
+          "y": 145
+        },
+        "history": [
+          {
+            "mode": "needle-relay",
+            "time": 1.2000000000000006,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 4.183333333333324,
+            "phase": 0
+          },
+          {
+            "mode": "rift-gates",
+            "time": 5.13333333333332,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 8.11666666666665,
+            "phase": 0
+          },
+          {
+            "mode": "horizon-orbit",
+            "time": 9.066666666666697,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 12.050000000000178,
+            "phase": 0
+          },
+          {
+            "mode": "prism-sweep",
+            "time": 13.000000000000226,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 15.983333333333707,
+            "phase": 0
+          },
+          {
+            "mode": "needle-relay",
+            "time": 16.933333333333653,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 19.916666666666817,
+            "phase": 0
+          },
+          {
+            "mode": "rift-gates",
+            "time": 20.866666666666763,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 23.849999999999927,
+            "phase": 0
+          },
+          {
+            "mode": "horizon-orbit",
+            "time": 24.799999999999873,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 27.783333333333037,
+            "phase": 0
+          },
+          {
+            "mode": "prism-sweep",
+            "time": 28.733333333332983,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 31.716666666666146,
+            "phase": 0
+          },
+          {
+            "mode": "needle-relay",
+            "time": 32.666666666666096,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 35.64999999999926,
+            "phase": 1
+          },
+          {
+            "mode": "rift-gates",
+            "time": 36.599999999999206,
+            "phase": 1
+          },
+          {
+            "mode": "recover",
+            "time": 39.58333333333237,
+            "phase": 1
+          },
+          {
+            "mode": "horizon-orbit",
+            "time": 40.533333333332315,
+            "phase": 1
+          },
+          {
+            "mode": "recover",
+            "time": 43.51666666666548,
+            "phase": 1
+          },
+          {
+            "mode": "prism-sweep",
+            "time": 44.466666666665425,
+            "phase": 1
+          },
+          {
+            "mode": "recover",
+            "time": 47.44999999999859,
+            "phase": 1
+          },
+          {
+            "mode": "needle-relay",
+            "time": 48.399999999998535,
+            "phase": 1
+          },
+          {
+            "mode": "recover",
+            "time": 51.3833333333317,
+            "phase": 1
+          },
+          {
+            "mode": "rift-gates",
+            "time": 52.333333333331645,
+            "phase": 1
+          },
+          {
+            "mode": "recover",
+            "time": 55.31666666666481,
+            "phase": 1
+          },
+          {
+            "mode": "horizon-orbit",
+            "time": 56.266666666664754,
+            "phase": 1
+          },
+          {
+            "mode": "recover",
+            "time": 59.24999999999792,
+            "phase": 1
+          },
+          {
+            "mode": "prism-sweep",
+            "time": 60.199999999997864,
+            "phase": 1
+          },
+          {
+            "mode": "recover",
+            "time": 63.18333333333103,
+            "phase": 1
+          },
+          {
+            "mode": "needle-relay",
+            "time": 64.13333333333098,
+            "phase": 1
+          },
+          {
+            "mode": "recover",
+            "time": 67.11666666666414,
+            "phase": 1
+          },
+          {
+            "mode": "rift-gates",
+            "time": 68.06666666666409,
+            "phase": 1
+          },
+          {
+            "mode": "recover",
+            "time": 71.04999999999725,
+            "phase": 1
+          },
+          {
+            "mode": "horizon-orbit",
+            "time": 71.9999999999972,
+            "phase": 1
+          }
+        ],
+        "turns": [],
+        "hp": 1161.6,
+        "maxhp": 2420,
+        "actorRetained": true
+      },
+      {
+        "cfg": {
+          "stage": 9,
+          "kind": "voidhorizon",
+          "mini": true,
+          "diff": "furious"
+        },
+        "initial": {
+          "kind": "voidhorizon",
+          "ship": null,
+          "hp": 4483,
+          "world": 680,
+          "view": 480
+        },
+        "modes": [
+          "recover",
+          "needle-relay",
+          "rift-gates",
+          "horizon-orbit",
+          "prism-sweep"
+        ],
+        "phases": [
+          "fight"
+        ],
+        "kinds": [
+          "s9needle",
+          "warpshard",
+          "warporb",
+          "warplance"
+        ],
+        "maxMove": 292.5346389567164,
+        "maxBullets": 21,
+        "shots": 0,
+        "invalid": 0,
+        "last": {
+          "x": 340,
+          "y": 145
+        },
+        "history": [
+          {
+            "mode": "needle-relay",
+            "time": 1.2000000000000006,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 4.216666666666657,
+            "phase": 0
+          },
+          {
+            "mode": "rift-gates",
+            "time": 4.999999999999988,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 8.016666666666644,
+            "phase": 0
+          },
+          {
+            "mode": "horizon-orbit",
+            "time": 8.800000000000017,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 11.816666666666833,
+            "phase": 0
+          },
+          {
+            "mode": "prism-sweep",
+            "time": 12.600000000000206,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 15.616666666667022,
+            "phase": 0
+          },
+          {
+            "mode": "needle-relay",
+            "time": 16.40000000000035,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 19.416666666666845,
+            "phase": 0
+          },
+          {
+            "mode": "rift-gates",
+            "time": 20.200000000000134,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 23.21666666666663,
+            "phase": 0
+          },
+          {
+            "mode": "horizon-orbit",
+            "time": 23.99999999999992,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 27.016666666666413,
+            "phase": 0
+          },
+          {
+            "mode": "prism-sweep",
+            "time": 27.799999999999702,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 30.816666666666197,
+            "phase": 0
+          },
+          {
+            "mode": "needle-relay",
+            "time": 31.599999999999486,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 34.616666666665985,
+            "phase": 1
+          },
+          {
+            "mode": "rift-gates",
+            "time": 35.399999999999274,
+            "phase": 1
+          },
+          {
+            "mode": "recover",
+            "time": 38.41666666666577,
+            "phase": 1
+          },
+          {
+            "mode": "horizon-orbit",
+            "time": 39.19999999999906,
+            "phase": 1
+          },
+          {
+            "mode": "recover",
+            "time": 42.21666666666555,
+            "phase": 1
+          },
+          {
+            "mode": "prism-sweep",
+            "time": 42.99999999999884,
+            "phase": 1
+          },
+          {
+            "mode": "recover",
+            "time": 46.01666666666534,
+            "phase": 1
+          },
+          {
+            "mode": "needle-relay",
+            "time": 46.799999999998626,
+            "phase": 1
+          },
+          {
+            "mode": "recover",
+            "time": 49.81666666666512,
+            "phase": 1
+          },
+          {
+            "mode": "rift-gates",
+            "time": 50.59999999999841,
+            "phase": 1
+          },
+          {
+            "mode": "recover",
+            "time": 53.616666666664905,
+            "phase": 1
+          },
+          {
+            "mode": "horizon-orbit",
+            "time": 54.399999999998194,
+            "phase": 1
+          },
+          {
+            "mode": "recover",
+            "time": 57.41666666666469,
+            "phase": 1
+          },
+          {
+            "mode": "prism-sweep",
+            "time": 58.19999999999798,
+            "phase": 1
+          },
+          {
+            "mode": "recover",
+            "time": 61.21666666666447,
+            "phase": 1
+          },
+          {
+            "mode": "needle-relay",
+            "time": 61.99999999999776,
+            "phase": 1
+          },
+          {
+            "mode": "recover",
+            "time": 65.01666666666426,
+            "phase": 1
+          },
+          {
+            "mode": "rift-gates",
+            "time": 65.79999999999755,
+            "phase": 1
+          },
+          {
+            "mode": "recover",
+            "time": 68.81666666666405,
+            "phase": 1
+          },
+          {
+            "mode": "horizon-orbit",
+            "time": 69.59999999999734,
+            "phase": 1
+          },
+          {
+            "mode": "recover",
+            "time": 72.61666666666383,
+            "phase": 1
+          }
+        ],
+        "turns": [],
+        "hp": 1372.8,
+        "maxhp": 2860,
+        "actorRetained": true
+      },
+      {
+        "cfg": {
+          "stage": 9,
+          "kind": "tidalfusion",
+          "mini": false,
+          "diff": "normal"
+        },
+        "initial": {
+          "kind": "tidalfusion",
+          "ship": null,
+          "hp": 7689,
+          "world": 680,
+          "view": 480
+        },
+        "modes": [
+          "recover",
+          "tidal-scissors",
+          "torpedo-hunt",
+          "abyssal-gates",
+          "maelstrom-crown",
+          "hydro-sweep"
+        ],
+        "phases": [
+          "twins",
+          "fuse",
+          "tidal"
+        ],
+        "kinds": [
+          "s9warp",
+          "s9needle",
+          "tidalcut",
+          "emissile",
+          "tidaltorp",
+          "tidalcrown"
+        ],
+        "maxMove": 100.24470060806208,
+        "maxBullets": 22,
+        "shots": 0,
+        "invalid": 0,
+        "last": {
+          "x": 340,
+          "y": 140
+        },
+        "history": [
+          {
+            "mode": "tidal-scissors",
+            "time": 1.2000000000000006,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 4.183333333333324,
+            "phase": 0
+          },
+          {
+            "mode": "torpedo-hunt",
+            "time": 5.3833333333333195,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 8.366666666666662,
+            "phase": 0
+          },
+          {
+            "mode": "abyssal-gates",
+            "time": 9.566666666666721,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 12.550000000000203,
+            "phase": 0
+          },
+          {
+            "mode": "maelstrom-crown",
+            "time": 13.750000000000263,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 16.733333333333665,
+            "phase": 0
+          },
+          {
+            "mode": "hydro-sweep",
+            "time": 17.933333333333596,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 20.91666666666676,
+            "phase": 0
+          },
+          {
+            "mode": "tidal-scissors",
+            "time": 22.116666666666692,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 25.099999999999856,
+            "phase": 0
+          },
+          {
+            "mode": "torpedo-hunt",
+            "time": 26.299999999999788,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 29.28333333333295,
+            "phase": 0
+          },
+          {
+            "mode": "abyssal-gates",
+            "time": 30.483333333332883,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 33.46666666666605,
+            "phase": 0
+          },
+          {
+            "mode": "maelstrom-crown",
+            "time": 34.66666666666598,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 37.649999999999146,
+            "phase": 0
+          },
+          {
+            "mode": "hydro-sweep",
+            "time": 38.84999999999908,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 41.83333333333224,
+            "phase": 0
+          },
+          {
+            "mode": "tidal-scissors",
+            "time": 43.03333333333217,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 46.01666666666534,
+            "phase": 0
+          },
+          {
+            "mode": "torpedo-hunt",
+            "time": 47.21666666666527,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 50.19999999999843,
+            "phase": 0
+          }
+        ],
+        "turns": [
+          "L",
+          "R",
+          "L",
+          "R",
+          "L",
+          "R",
+          "L",
+          "R",
+          "L",
+          "R",
+          "L"
+        ],
+        "hp": 4400,
+        "maxhp": 4400,
+        "actorRetained": true
+      },
+      {
+        "cfg": {
+          "stage": 9,
+          "kind": "tidalfusion",
+          "mini": false,
+          "diff": "hard"
+        },
+        "initial": {
+          "kind": "tidalfusion",
+          "ship": null,
+          "hp": 8458,
+          "world": 680,
+          "view": 480
+        },
+        "modes": [
+          "recover",
+          "tidal-scissors",
+          "torpedo-hunt",
+          "abyssal-gates",
+          "maelstrom-crown",
+          "hydro-sweep"
+        ],
+        "phases": [
+          "twins",
+          "fuse",
+          "tidal"
+        ],
+        "kinds": [
+          "s9warp",
+          "s9needle",
+          "tidalcut",
+          "emissile",
+          "tidaltorp",
+          "tidalcrown"
+        ],
+        "maxMove": 100.24470060806208,
+        "maxBullets": 24,
+        "shots": 0,
+        "invalid": 0,
+        "last": {
+          "x": 340,
+          "y": 140
+        },
+        "history": [
+          {
+            "mode": "tidal-scissors",
+            "time": 1.2000000000000006,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 4.183333333333324,
+            "phase": 0
+          },
+          {
+            "mode": "torpedo-hunt",
+            "time": 5.13333333333332,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 8.11666666666665,
+            "phase": 0
+          },
+          {
+            "mode": "abyssal-gates",
+            "time": 9.066666666666697,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 12.050000000000178,
+            "phase": 0
+          },
+          {
+            "mode": "maelstrom-crown",
+            "time": 13.000000000000226,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 15.983333333333707,
+            "phase": 0
+          },
+          {
+            "mode": "hydro-sweep",
+            "time": 16.933333333333653,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 19.916666666666817,
+            "phase": 0
+          },
+          {
+            "mode": "tidal-scissors",
+            "time": 20.866666666666763,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 23.849999999999927,
+            "phase": 0
+          },
+          {
+            "mode": "torpedo-hunt",
+            "time": 24.799999999999873,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 27.783333333333037,
+            "phase": 0
+          },
+          {
+            "mode": "abyssal-gates",
+            "time": 28.733333333332983,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 31.716666666666146,
+            "phase": 0
+          },
+          {
+            "mode": "maelstrom-crown",
+            "time": 32.666666666666096,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 35.64999999999926,
+            "phase": 0
+          },
+          {
+            "mode": "hydro-sweep",
+            "time": 36.599999999999206,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 39.58333333333237,
+            "phase": 0
+          },
+          {
+            "mode": "tidal-scissors",
+            "time": 40.533333333332315,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 43.51666666666548,
+            "phase": 0
+          },
+          {
+            "mode": "torpedo-hunt",
+            "time": 44.466666666665425,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 47.44999999999859,
+            "phase": 0
+          },
+          {
+            "mode": "abyssal-gates",
+            "time": 48.399999999998535,
+            "phase": 0
+          }
+        ],
+        "turns": [
+          "L",
+          "R",
+          "L",
+          "R",
+          "L",
+          "R",
+          "L",
+          "R",
+          "L",
+          "R",
+          "L",
+          "R",
+          "L"
+        ],
+        "hp": 5500,
+        "maxhp": 5500,
+        "actorRetained": true
+      },
+      {
+        "cfg": {
+          "stage": 9,
+          "kind": "tidalfusion",
+          "mini": false,
+          "diff": "furious"
+        },
+        "initial": {
+          "kind": "tidalfusion",
+          "ship": null,
+          "hp": 9996,
+          "world": 680,
+          "view": 480
+        },
+        "modes": [
+          "recover",
+          "tidal-scissors",
+          "torpedo-hunt",
+          "abyssal-gates",
+          "maelstrom-crown",
+          "hydro-sweep"
+        ],
+        "phases": [
+          "twins",
+          "fuse",
+          "tidal"
+        ],
+        "kinds": [
+          "s9warp",
+          "s9needle",
+          "tidalcut",
+          "emissile",
+          "tidaltorp",
+          "tidalcrown"
+        ],
+        "maxMove": 100.24470060806208,
+        "maxBullets": 25,
+        "shots": 0,
+        "invalid": 0,
+        "last": {
+          "x": 340,
+          "y": 140
+        },
+        "history": [
+          {
+            "mode": "tidal-scissors",
+            "time": 1.2000000000000006,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 4.216666666666657,
+            "phase": 0
+          },
+          {
+            "mode": "torpedo-hunt",
+            "time": 4.999999999999988,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 8.016666666666644,
+            "phase": 0
+          },
+          {
+            "mode": "abyssal-gates",
+            "time": 8.800000000000017,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 11.816666666666833,
+            "phase": 0
+          },
+          {
+            "mode": "maelstrom-crown",
+            "time": 12.600000000000206,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 15.616666666667022,
+            "phase": 0
+          },
+          {
+            "mode": "hydro-sweep",
+            "time": 16.40000000000035,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 19.416666666666845,
+            "phase": 0
+          },
+          {
+            "mode": "tidal-scissors",
+            "time": 20.200000000000134,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 23.21666666666663,
+            "phase": 0
+          },
+          {
+            "mode": "torpedo-hunt",
+            "time": 23.99999999999992,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 27.016666666666413,
+            "phase": 0
+          },
+          {
+            "mode": "abyssal-gates",
+            "time": 27.799999999999702,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 30.816666666666197,
+            "phase": 0
+          },
+          {
+            "mode": "maelstrom-crown",
+            "time": 31.599999999999486,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 34.616666666665985,
+            "phase": 0
+          },
+          {
+            "mode": "hydro-sweep",
+            "time": 35.399999999999274,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 38.41666666666577,
+            "phase": 0
+          },
+          {
+            "mode": "tidal-scissors",
+            "time": 39.19999999999906,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 42.21666666666555,
+            "phase": 0
+          },
+          {
+            "mode": "torpedo-hunt",
+            "time": 42.99999999999884,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 46.01666666666534,
+            "phase": 0
+          },
+          {
+            "mode": "abyssal-gates",
+            "time": 46.799999999998626,
+            "phase": 0
+          },
+          {
+            "mode": "recover",
+            "time": 49.81666666666512,
+            "phase": 0
+          }
+        ],
+        "turns": [
+          "L",
+          "R",
+          "L",
+          "R",
+          "L",
+          "R",
+          "L",
+          "R",
+          "L",
+          "R",
+          "L",
+          "R",
+          "L",
+          "R",
+          "L"
+        ],
+        "hp": 6500,
+        "maxhp": 6500,
+        "actorRetained": true
+      }
+    ],
+    "errors": []
+  },
+  "field": {
+    "pressure": [
+      {
+        "version": "before",
+        "difficulty": "normal",
+        "maxEnemies": 6,
+        "maxHostile": 35,
+        "maxFriendly": 104,
+        "hostileSum": 18368,
+        "friendlySum": 43631,
+        "n": 2280,
+        "rolls": [
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 3.6166666666666667
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 3.6166666666666667
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 4.033333333333333
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 4.1
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 4.133333333333334
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 4.133333333333334
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 4.216666666666667
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 4.25
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 4.283333333333333
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 4.316666666666666
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 4.6
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 4.7
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 4.766666666666667
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 4.85
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 4.85
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 4.866666666666667
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 5.316666666666666
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 5.483333333333333
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 5.783333333333333
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 5.866666666666667
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 6.05
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 6.066666666666666
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 6.166666666666667
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 6.2
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 7.166666666666667
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 7.8
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 7.916666666666667
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 8
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 8.033333333333333
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 8.05
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 8.1
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 8.45
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 8.483333333333333
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 8.75
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 9.05
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 9.083333333333334
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 9.616666666666667
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 10.433333333333334
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 10.483333333333333
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 10.833333333333334
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 11.066666666666666
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 11.25
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 11.516666666666667
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 11.533333333333333
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 11.583333333333334
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 11.933333333333334
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 12.066666666666666
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 12.066666666666666
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 12.15
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 12.15
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 12.666666666666666
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 12.783333333333333
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 12.8
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 12.9
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 12.95
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 12.966666666666667
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 13
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 13.1
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 13.266666666666667
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 13.4
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 13.466666666666667
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 13.533333333333333
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 13.583333333333334
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 13.6
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 13.65
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 13.666666666666666
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 14.1
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 14.25
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 14.416666666666666
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 14.416666666666666
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 14.416666666666666
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 17.7
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 17.85
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 17.966666666666665
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 18.183333333333334
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 18.3
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 18.366666666666667
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 18.466666666666665
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 18.5
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 18.5
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 18.666666666666668
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 19.05
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 19.366666666666667
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 20.85
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 21.116666666666667
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 21.166666666666668
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 21.2
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 21.866666666666667
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 21.916666666666668
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 22.066666666666666
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 22.3
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 22.466666666666665
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 26.1
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 26.233333333333334
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 26.316666666666666
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 26.433333333333334
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 26.833333333333332
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 26.933333333333334
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 27.283333333333335
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 27.383333333333333
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 27.433333333333334
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 27.483333333333334
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 27.533333333333335
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 27.616666666666667
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 27.633333333333333
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 27.7
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 29.5
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 29.6
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 29.8
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 29.883333333333333
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 29.9
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 30.016666666666666
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 30.483333333333334
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 30.533333333333335
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 30.55
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 30.566666666666666
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 30.583333333333332
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 30.733333333333334
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 31.083333333333332
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 31.166666666666668
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 31.266666666666666
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 33.266666666666666
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 33.28333333333333
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 33.85
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 33.86666666666667
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 33.9
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 34
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 34.3
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 34.416666666666664
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 34.46666666666667
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 34.46666666666667
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 34.46666666666667
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 34.53333333333333
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 34.63333333333333
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 34.65
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 34.983333333333334
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 35.03333333333333
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 35.06666666666667
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 35.3
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 36.2
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 37.266666666666666
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 37.55
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 37.6
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 37.86666666666667
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 37.95
+          }
+        ],
+        "types": [
+          "s6dart",
+          "s6mine",
+          "l6v_s0",
+          "s1jetbomber_b",
+          "s6lancer",
+          "l6v_s2",
+          "l6v_s1",
+          "s6thunder",
+          "s6bomber",
+          "l6v_r0",
+          "s6probe",
+          "xelite_glacierlance",
+          "s6cyclone",
+          "l6v_r2",
+          "modturret",
+          "l6v_r1",
+          "s6buoy",
+          "l6v_b0",
+          "s6turbine",
+          "xelite_tempest",
+          "xelite_solarwarden",
+          "l6v_b2",
+          "l6v_b1"
+        ],
+        "reactionTypes": [],
+        "blocked": 0,
+        "pressure": 1.25
+      },
+      {
+        "version": "before",
+        "difficulty": "hard",
+        "maxEnemies": 10,
+        "maxHostile": 42,
+        "maxFriendly": 97,
+        "hostileSum": 24378,
+        "friendlySum": 40183,
+        "n": 2280,
+        "rolls": [
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 3.95
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 4.05
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 4.166666666666667
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 4.266666666666667
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 4.3
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 4.516666666666667
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 4.65
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 4.816666666666666
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 4.833333333333333
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 4.866666666666667
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 6.066666666666666
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 6.133333333333334
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 6.15
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 6.316666666666666
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 6.333333333333333
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 6.9
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 6.933333333333334
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 7.083333333333333
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 7.3
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 7.583333333333333
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 7.616666666666667
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 7.65
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 8.016666666666667
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 8.216666666666667
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 8.216666666666667
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 8.433333333333334
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 9.083333333333334
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 10.466666666666667
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 10.466666666666667
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 10.7
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 10.75
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 10.833333333333334
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 10.983333333333333
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 11.083333333333334
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 11.25
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 11.3
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 11.766666666666667
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 11.983333333333333
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 12.016666666666667
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 12.033333333333333
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 12.15
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 12.25
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 12.366666666666667
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 12.95
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 12.95
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 12.95
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 13.016666666666667
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 13.016666666666667
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 13.066666666666666
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 13.083333333333334
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 13.516666666666667
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 13.733333333333333
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 13.833333333333334
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 13.933333333333334
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 14.033333333333333
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 14.083333333333334
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 14.216666666666667
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 14.3
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 14.3
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 14.333333333333334
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 14.433333333333334
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 14.533333333333333
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 14.65
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 14.65
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 14.866666666666667
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 14.916666666666666
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 17.633333333333333
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 17.75
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 17.85
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 18.183333333333334
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 18.283333333333335
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 18.416666666666668
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 18.433333333333334
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 18.483333333333334
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 18.5
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 18.666666666666668
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 19.15
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 20.85
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 20.983333333333334
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 21.183333333333334
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 21.2
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 21.966666666666665
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 22.016666666666666
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 22.1
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 22.133333333333333
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 22.25
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 22.283333333333335
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 22.333333333333332
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 22.5
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 22.533333333333335
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 22.616666666666667
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 22.733333333333334
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 22.75
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 22.933333333333334
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 23.1
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 23.216666666666665
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 23.3
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 23.333333333333332
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 23.4
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 23.6
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 24.45
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 25.216666666666665
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 25.816666666666666
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 25.933333333333334
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 26.15
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 26.233333333333334
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 26.333333333333332
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 27.283333333333335
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 27.283333333333335
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 27.3
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 27.316666666666666
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 27.466666666666665
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 27.5
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 28.233333333333334
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 28.5
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 28.55
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 28.783333333333335
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 29.15
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 29.216666666666665
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 29.216666666666665
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 29.4
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 29.55
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 29.683333333333334
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 29.716666666666665
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 29.916666666666668
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 30.033333333333335
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 30.216666666666665
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 30.366666666666667
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 33.1
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 33.3
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 33.71666666666667
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 33.85
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 33.85
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 33.88333333333333
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 33.916666666666664
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 34.11666666666667
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 34.13333333333333
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 34.416666666666664
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 34.53333333333333
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 34.766666666666666
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 34.81666666666667
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 34.88333333333333
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 35
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 35.03333333333333
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 35.18333333333333
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 35.6
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 35.6
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 35.833333333333336
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 36.03333333333333
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 36.15
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 36.31666666666667
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 36.416666666666664
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 36.483333333333334
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 36.5
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 36.63333333333333
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 36.63333333333333
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 36.68333333333333
+          }
+        ],
+        "types": [
+          "s6dart",
+          "s6mine",
+          "l6v_s0",
+          "s1jetbomber_b",
+          "s6lancer",
+          "l6v_s2",
+          "l6v_s1",
+          "s6thunder",
+          "s6bomber",
+          "l6v_r0",
+          "s6probe",
+          "xelite_glacierlance",
+          "s6cyclone",
+          "l6v_r2",
+          "modturret",
+          "l6v_r1",
+          "xelite_tempest",
+          "s6buoy",
+          "l6v_b0",
+          "s6turbine",
+          "xelite_solarwarden",
+          "l6v_b2",
+          "l6v_b1"
+        ],
+        "reactionTypes": [],
+        "blocked": 0,
+        "pressure": 1.25
+      },
+      {
+        "version": "before",
+        "difficulty": "furious",
+        "maxEnemies": 10,
+        "maxHostile": 61,
+        "maxFriendly": 102,
+        "hostileSum": 46128,
+        "friendlySum": 47253,
+        "n": 2280,
+        "rolls": [
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 2.7333333333333334
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 2.8833333333333333
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 2.9
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 3.8666666666666667
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 3.9833333333333334
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 4.1
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 4.133333333333334
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 4.216666666666667
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 4.433333333333334
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 4.583333333333333
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 4.75
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 4.816666666666666
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 5.3
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 5.833333333333333
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 5.983333333333333
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 6.016666666666667
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 6.066666666666666
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 6.15
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 6.233333333333333
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 6.316666666666666
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 6.483333333333333
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 6.733333333333333
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 6.783333333333333
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 6.883333333333333
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 7.25
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 7.45
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 7.6
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 7.7
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 7.733333333333333
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 7.8
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 7.833333333333333
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 7.85
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 8.016666666666667
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 8.45
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 8.633333333333333
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 8.8
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 8.933333333333334
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 9.116666666666667
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 9.15
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 9.2
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 9.266666666666667
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 9.266666666666667
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 10.2
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 10.466666666666667
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 10.616666666666667
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 10.733333333333333
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 10.8
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 10.95
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 11.066666666666666
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 11.166666666666666
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 11.35
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 11.4
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 11.6
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 11.75
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 11.95
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 12.05
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 12.116666666666667
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 12.25
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 12.35
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 12.533333333333333
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 12.95
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 12.95
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 12.95
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 12.95
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 13.1
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 13.266666666666667
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 13.266666666666667
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 13.6
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 14.416666666666666
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 14.416666666666666
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 14.416666666666666
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 14.416666666666666
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 14.45
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 14.483333333333333
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 14.55
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 16.216666666666665
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 16.266666666666666
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 16.45
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 16.5
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 17.25
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 17.266666666666666
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 17.383333333333333
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 17.416666666666668
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 17.5
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 17.5
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 17.633333333333333
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 17.683333333333334
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 17.833333333333332
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 17.9
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 18.066666666666666
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 18.45
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 18.5
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 18.6
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 18.633333333333333
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 18.683333333333334
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 19.2
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 19.266666666666666
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 19.316666666666666
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 19.466666666666665
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 19.683333333333334
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 19.766666666666666
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 19.883333333333333
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 19.916666666666668
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 20.85
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 20.883333333333333
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 20.916666666666668
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 20.916666666666668
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 20.983333333333334
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 21.016666666666666
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 21.166666666666668
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 21.183333333333334
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 21.483333333333334
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 21.616666666666667
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 21.933333333333334
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 21.95
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 22.2
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 22.216666666666665
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 22.5
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 22.6
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 22.6
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 22.65
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 23.016666666666666
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 23.066666666666666
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 23.066666666666666
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 23.166666666666668
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 23.216666666666665
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 23.466666666666665
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 23.583333333333332
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 23.633333333333333
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 23.916666666666668
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 23.966666666666665
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 24.033333333333335
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 24.116666666666667
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 24.133333333333333
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 24.166666666666668
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 25.1
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 25.1
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 25.15
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 25.216666666666665
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 25.666666666666668
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 25.866666666666667
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 25.883333333333333
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 25.966666666666665
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 26.2
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 26.233333333333334
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 26.533333333333335
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 26.966666666666665
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 27.283333333333335
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 27.283333333333335
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 27.3
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 27.383333333333333
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 27.4
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 27.533333333333335
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 27.55
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 27.65
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 27.883333333333333
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 28.4
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 28.533333333333335
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 28.566666666666666
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 28.566666666666666
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 28.966666666666665
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 29.366666666666667
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 29.6
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 29.633333333333333
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 30.133333333333333
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 30.166666666666668
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 30.283333333333335
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 30.333333333333332
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 31.083333333333332
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 31.25
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 31.366666666666667
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 31.383333333333333
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 31.533333333333335
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 31.683333333333334
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 31.75
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 31.816666666666666
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 31.833333333333332
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 33.11666666666667
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 33.2
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 33.28333333333333
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 33.35
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 33.416666666666664
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 33.71666666666667
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 33.916666666666664
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 34.06666666666667
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 34.13333333333333
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 34.43333333333333
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 34.5
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 35.03333333333333
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 35.6
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 35.833333333333336
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 36.31666666666667
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 36.35
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 36.45
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 36.483333333333334
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 36.63333333333333
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 36.75
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 36.916666666666664
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 36.95
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 36.96666666666667
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 37.05
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 37.05
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 37.266666666666666
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 37.483333333333334
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 37.516666666666666
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 37.55
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 37.61666666666667
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 37.65
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 37.65
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 37.733333333333334
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 37.96666666666667
+          }
+        ],
+        "types": [
+          "s6dart",
+          "s6mine",
+          "l6v_s0",
+          "s1jetbomber_b",
+          "s6lancer",
+          "l6v_s2",
+          "l6v_s1",
+          "s6thunder",
+          "s6bomber",
+          "l6v_r0",
+          "s6probe",
+          "xelite_glacierlance",
+          "s6cyclone",
+          "modturret",
+          "l6v_r2",
+          "l6v_r1",
+          "xelite_tempest",
+          "s6buoy",
+          "l6v_b0",
+          "s6turbine",
+          "xelite_solarwarden",
+          "l6v_b2"
+        ],
+        "reactionTypes": [],
+        "blocked": 0,
+        "pressure": 1.25
+      },
+      {
+        "version": "after",
+        "difficulty": "normal",
+        "maxEnemies": 7,
+        "maxHostile": 26,
+        "maxFriendly": 82,
+        "hostileSum": 17936,
+        "friendlySum": 19263,
+        "n": 2280,
+        "rolls": [
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 1.5
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 1.6
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 1.7833333333333332
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 1.8
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 1.8833333333333333
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 4.666666666666667
+          },
+          {
+            "key": "maverick",
+            "mode": "roll",
+            "t": 4.766666666666667
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 4.9
+          },
+          {
+            "key": "juggernaut",
+            "mode": "somer",
+            "t": 5.183333333333334
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 5.216666666666667
+          },
+          {
+            "key": "axel",
+            "mode": "roll",
+            "t": 6.016666666666667
+          },
+          {
+            "key": "freezer",
+            "mode": "roll",
+            "t": 7.95
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 8.05
+          },
+          {
+            "key": "falva",
+            "mode": "somer",
+            "t": 8.216666666666667
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 9.15
+          },
+          {
+            "key": "decker",
+            "mode": "somer",
+            "t": 9.316666666666666
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 9.716666666666667
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 10.016666666666667
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 10.233333333333333
+          },
+          {
+            "key": "lizzie",
+            "mode": "somer",
+            "t": 10.333333333333334
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 10.5
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 10.866666666666667
+          },
+          {
+            "key": "maverick",
+            "mode": "roll",
+            "t": 11.233333333333333
+          },
+          {
+            "key": "axel",
+            "mode": "roll",
+            "t": 11.65
+          },
+          {
+            "key": "freezer",
+            "mode": "roll",
+            "t": 13.433333333333334
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 13.533333333333333
+          },
+          {
+            "key": "juggernaut",
+            "mode": "somer",
+            "t": 13.566666666666666
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 13.766666666666667
+          },
+          {
+            "key": "yuri",
+            "mode": "somer",
+            "t": 13.783333333333333
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 19.416666666666668
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 19.566666666666666
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 19.716666666666665
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 19.716666666666665
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 19.75
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 20.266666666666666
+          },
+          {
+            "key": "freezer",
+            "mode": "roll",
+            "t": 22.15
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 22.183333333333334
+          },
+          {
+            "key": "maverick",
+            "mode": "roll",
+            "t": 22.5
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 24.5
+          },
+          {
+            "key": "juggernaut",
+            "mode": "somer",
+            "t": 24.85
+          },
+          {
+            "key": "axel",
+            "mode": "roll",
+            "t": 26.433333333333334
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 26.433333333333334
+          },
+          {
+            "key": "decker",
+            "mode": "somer",
+            "t": 26.483333333333334
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 26.55
+          },
+          {
+            "key": "yuri",
+            "mode": "somer",
+            "t": 26.616666666666667
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 26.9
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 27.133333333333333
+          },
+          {
+            "key": "falva",
+            "mode": "somer",
+            "t": 27.233333333333334
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 27.45
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 27.666666666666668
+          },
+          {
+            "key": "lizzie",
+            "mode": "somer",
+            "t": 27.683333333333334
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 28.816666666666666
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 31.716666666666665
+          },
+          {
+            "key": "maverick",
+            "mode": "roll",
+            "t": 34.21666666666667
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 36.983333333333334
+          }
+        ],
+        "types": [
+          "s6dart",
+          "s6mine",
+          "l6v_s0",
+          "s1jetbomber_b",
+          "s6lancer",
+          "l6v_s2",
+          "l6v_s1",
+          "s6thunder",
+          "s6bomber",
+          "l6v_r0",
+          "s6probe",
+          "xelite_glacierlance",
+          "s6cyclone",
+          "l6v_r2",
+          "modturret",
+          "l6v_r1",
+          "s6buoy",
+          "l6v_b0",
+          "s6turbine",
+          "xelite_tempest",
+          "xelite_solarwarden",
+          "l6v_b2"
+        ],
+        "reactionTypes": [
+          "s6dart",
+          "s6mine",
+          "l6v_s0",
+          "s1jetbomber_b",
+          "s6lancer",
+          "l6v_s2",
+          "l6v_s1",
+          "s6thunder",
+          "s6bomber",
+          "l6v_r0",
+          "s6probe",
+          "xelite_glacierlance",
+          "s6cyclone",
+          "l6v_r2",
+          "modturret",
+          "l6v_r1",
+          "s6buoy",
+          "l6v_b0",
+          "s6turbine",
+          "xelite_tempest",
+          "xelite_solarwarden",
+          "l6v_b2"
+        ],
+        "blocked": 0,
+        "pressure": 0.72
+      },
+      {
+        "version": "after",
+        "difficulty": "hard",
+        "maxEnemies": 6,
+        "maxHostile": 34,
+        "maxFriendly": 85,
+        "hostileSum": 17191,
+        "friendlySum": 20429,
+        "n": 2280,
+        "rolls": [
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 1.5
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 1.6
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 1.8
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 1.85
+          },
+          {
+            "key": "freezer",
+            "mode": "roll",
+            "t": 3.966666666666667
+          },
+          {
+            "key": "maverick",
+            "mode": "roll",
+            "t": 4.116666666666666
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 4.75
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 5
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 5.116666666666666
+          },
+          {
+            "key": "axel",
+            "mode": "roll",
+            "t": 5.266666666666667
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 7.916666666666667
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 8
+          },
+          {
+            "key": "decker",
+            "mode": "somer",
+            "t": 8.816666666666666
+          },
+          {
+            "key": "falva",
+            "mode": "somer",
+            "t": 8.916666666666666
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 9.45
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 9.466666666666667
+          },
+          {
+            "key": "juggernaut",
+            "mode": "somer",
+            "t": 10.183333333333334
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 10.233333333333333
+          },
+          {
+            "key": "lizzie",
+            "mode": "somer",
+            "t": 10.25
+          },
+          {
+            "key": "axel",
+            "mode": "roll",
+            "t": 10.75
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 11.066666666666666
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 11.116666666666667
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 11.266666666666667
+          },
+          {
+            "key": "yuri",
+            "mode": "somer",
+            "t": 12.2
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 13.4
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 13.483333333333333
+          },
+          {
+            "key": "maverick",
+            "mode": "roll",
+            "t": 14.866666666666667
+          },
+          {
+            "key": "freezer",
+            "mode": "roll",
+            "t": 15.916666666666666
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 16.133333333333333
+          },
+          {
+            "key": "axel",
+            "mode": "roll",
+            "t": 16.416666666666668
+          },
+          {
+            "key": "falva",
+            "mode": "somer",
+            "t": 16.566666666666666
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 18.816666666666666
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 18.933333333333334
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 19.033333333333335
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 19.15
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 19.183333333333334
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 19.283333333333335
+          },
+          {
+            "key": "freezer",
+            "mode": "roll",
+            "t": 22.483333333333334
+          },
+          {
+            "key": "axel",
+            "mode": "roll",
+            "t": 22.583333333333332
+          },
+          {
+            "key": "juggernaut",
+            "mode": "somer",
+            "t": 22.7
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 22.766666666666666
+          },
+          {
+            "key": "maverick",
+            "mode": "roll",
+            "t": 22.8
+          },
+          {
+            "key": "lizzie",
+            "mode": "somer",
+            "t": 22.883333333333333
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 23.7
+          },
+          {
+            "key": "yuri",
+            "mode": "somer",
+            "t": 23.866666666666667
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 24.516666666666666
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 25.116666666666667
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 25.25
+          },
+          {
+            "key": "decker",
+            "mode": "somer",
+            "t": 25.3
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 29.483333333333334
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 29.7
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 31.866666666666667
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 31.866666666666667
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 31.866666666666667
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 31.866666666666667
+          },
+          {
+            "key": "maverick",
+            "mode": "roll",
+            "t": 31.866666666666667
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 31.9
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 31.9
+          },
+          {
+            "key": "freezer",
+            "mode": "roll",
+            "t": 31.933333333333334
+          },
+          {
+            "key": "axel",
+            "mode": "roll",
+            "t": 32.81666666666667
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 37.666666666666664
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 37.7
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 37.81666666666667
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 37.93333333333333
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 37.95
+          }
+        ],
+        "types": [
+          "s6dart",
+          "s6mine",
+          "l6v_s0",
+          "s1jetbomber_b",
+          "s6lancer",
+          "l6v_s2",
+          "l6v_s1",
+          "s6thunder",
+          "s6bomber",
+          "l6v_r0",
+          "s6probe",
+          "xelite_glacierlance",
+          "s6cyclone",
+          "l6v_r2",
+          "modturret",
+          "l6v_r1",
+          "xelite_tempest",
+          "s6buoy",
+          "l6v_b0"
+        ],
+        "reactionTypes": [
+          "s6dart",
+          "s6mine",
+          "l6v_s0",
+          "s1jetbomber_b",
+          "s6lancer",
+          "l6v_s2",
+          "l6v_s1",
+          "s6thunder",
+          "s6bomber",
+          "l6v_r0",
+          "s6probe",
+          "xelite_glacierlance",
+          "s6cyclone",
+          "l6v_r2",
+          "modturret",
+          "l6v_r1",
+          "xelite_tempest",
+          "s6buoy",
+          "l6v_b0"
+        ],
+        "blocked": 0,
+        "pressure": 0.7999999999999999
+      },
+      {
+        "version": "after",
+        "difficulty": "furious",
+        "maxEnemies": 8,
+        "maxHostile": 48,
+        "maxFriendly": 81,
+        "hostileSum": 29181,
+        "friendlySum": 19043,
+        "n": 2280,
+        "rolls": [
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 2.9166666666666665
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 3.533333333333333
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 3.6666666666666665
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 3.966666666666667
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 4.483333333333333
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 4.483333333333333
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 4.566666666666666
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 4.716666666666667
+          },
+          {
+            "key": "maverick",
+            "mode": "roll",
+            "t": 6.266666666666667
+          },
+          {
+            "key": "freezer",
+            "mode": "roll",
+            "t": 7.266666666666667
+          },
+          {
+            "key": "lizzie",
+            "mode": "somer",
+            "t": 7.45
+          },
+          {
+            "key": "yuri",
+            "mode": "somer",
+            "t": 7.85
+          },
+          {
+            "key": "decker",
+            "mode": "somer",
+            "t": 8.833333333333334
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 9.333333333333334
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 9.85
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 9.966666666666667
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 10.033333333333333
+          },
+          {
+            "key": "axel",
+            "mode": "roll",
+            "t": 10.266666666666667
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 10.683333333333334
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 11.333333333333334
+          },
+          {
+            "key": "juggernaut",
+            "mode": "somer",
+            "t": 11.783333333333333
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 12.716666666666667
+          },
+          {
+            "key": "freezer",
+            "mode": "roll",
+            "t": 12.75
+          },
+          {
+            "key": "maverick",
+            "mode": "roll",
+            "t": 13.983333333333333
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 15.65
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 16.05
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 19.05
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 19.25
+          },
+          {
+            "key": "yuri",
+            "mode": "somer",
+            "t": 19.266666666666666
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 19.333333333333332
+          },
+          {
+            "key": "maverick",
+            "mode": "roll",
+            "t": 19.466666666666665
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 19.55
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 19.633333333333333
+          },
+          {
+            "key": "lizzie",
+            "mode": "somer",
+            "t": 20.15
+          },
+          {
+            "key": "juggernaut",
+            "mode": "somer",
+            "t": 20.483333333333334
+          },
+          {
+            "key": "axel",
+            "mode": "roll",
+            "t": 20.783333333333335
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 22.233333333333334
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 22.25
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 23.166666666666668
+          },
+          {
+            "key": "decker",
+            "mode": "somer",
+            "t": 23.75
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 24.866666666666667
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 28.083333333333332
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 28.083333333333332
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 28.083333333333332
+          },
+          {
+            "key": "maverick",
+            "mode": "roll",
+            "t": 28.283333333333335
+          },
+          {
+            "key": "lizzie",
+            "mode": "somer",
+            "t": 28.333333333333332
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 28.416666666666668
+          },
+          {
+            "key": "freezer",
+            "mode": "roll",
+            "t": 28.883333333333333
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 29
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 29.116666666666667
+          },
+          {
+            "key": "falva",
+            "mode": "somer",
+            "t": 29.266666666666666
+          },
+          {
+            "key": "juggernaut",
+            "mode": "somer",
+            "t": 30.016666666666666
+          },
+          {
+            "key": "maverick",
+            "mode": "somer",
+            "t": 30.016666666666666
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 30.35
+          },
+          {
+            "key": "yuri",
+            "mode": "somer",
+            "t": 30.766666666666666
+          },
+          {
+            "key": "decker",
+            "mode": "somer",
+            "t": 33.016666666666666
+          },
+          {
+            "key": "freezer",
+            "mode": "somer",
+            "t": 36.28333333333333
+          },
+          {
+            "key": "juggernaut",
+            "mode": "roll",
+            "t": 36.28333333333333
+          },
+          {
+            "key": "maverick",
+            "mode": "roll",
+            "t": 36.28333333333333
+          },
+          {
+            "key": "decker",
+            "mode": "roll",
+            "t": 36.38333333333333
+          },
+          {
+            "key": "falva",
+            "mode": "roll",
+            "t": 36.45
+          },
+          {
+            "key": "yuri",
+            "mode": "roll",
+            "t": 36.516666666666666
+          },
+          {
+            "key": "lizzie",
+            "mode": "roll",
+            "t": 36.6
+          },
+          {
+            "key": "axel",
+            "mode": "somer",
+            "t": 37.05
+          },
+          {
+            "key": "axel",
+            "mode": "roll",
+            "t": 37.96666666666667
+          }
+        ],
+        "types": [
+          "s6dart",
+          "s6mine",
+          "l6v_s0",
+          "s1jetbomber_b",
+          "s6lancer",
+          "l6v_s2",
+          "l6v_s1",
+          "s6thunder",
+          "s6bomber",
+          "l6v_r0",
+          "s6probe",
+          "xelite_glacierlance",
+          "s6cyclone",
+          "modturret",
+          "l6v_r2",
+          "l6v_r1",
+          "xelite_tempest",
+          "s6buoy",
+          "l6v_b0",
+          "s6turbine",
+          "xelite_solarwarden"
+        ],
+        "reactionTypes": [
+          "s6dart",
+          "s6mine",
+          "l6v_s0",
+          "s1jetbomber_b",
+          "s6lancer",
+          "l6v_s2",
+          "l6v_s1",
+          "s6thunder",
+          "s6bomber",
+          "l6v_r0",
+          "s6probe",
+          "xelite_glacierlance",
+          "s6cyclone",
+          "modturret",
+          "l6v_r2",
+          "l6v_r1",
+          "xelite_tempest",
+          "s6buoy",
+          "l6v_b0",
+          "s6turbine",
+          "xelite_solarwarden"
+        ],
+        "blocked": 0,
+        "pressure": 0.84
+      }
+    ],
+    "fields": [
+      {
+        "stage": 1,
+        "types": [
+          "s1boatpatrol",
+          "s1boatgun",
+          "s1corvette",
+          "s1jetbomber",
+          "s1jetdelta",
+          "s1tankheavy"
+        ],
+        "managed": [
+          "s1boatpatrol",
+          "s1boatgun",
+          "s1corvette",
+          "s1jetbomber",
+          "s1jetdelta",
+          "s1tankheavy"
+        ],
+        "air": [
+          "s1jetbomber",
+          "s1jetdelta"
+        ],
+        "shooters": [
+          "s1boatpatrol",
+          "s1boatgun",
+          "s1corvette",
+          "s1jetdelta"
+        ],
+        "reactions": [],
+        "maxBullets": 36,
+        "invalid": 0,
+        "playerJump": 0
+      },
+      {
+        "stage": 2,
+        "types": [
+          "ash",
+          "skim",
+          "cinderwasp",
+          "modturret",
+          "lance",
+          "eye",
+          "magmaorb",
+          "basaltbomber",
+          "caldera",
+          "cruc",
+          "crawl",
+          "xelite_emberwing"
+        ],
+        "managed": [
+          "ash",
+          "skim",
+          "cinderwasp",
+          "modturret",
+          "lance",
+          "eye",
+          "magmaorb",
+          "basaltbomber",
+          "caldera",
+          "cruc",
+          "crawl",
+          "xelite_emberwing"
+        ],
+        "air": [
+          "ash",
+          "skim",
+          "cinderwasp",
+          "lance",
+          "eye",
+          "magmaorb",
+          "basaltbomber",
+          "caldera"
+        ],
+        "shooters": [
+          "ash",
+          "skim",
+          "cinderwasp",
+          "modturret",
+          "magmaorb",
+          "eye",
+          "basaltbomber",
+          "caldera",
+          "cruc"
+        ],
+        "reactions": [],
+        "maxBullets": 25,
+        "invalid": 0,
+        "playerJump": 0
+      },
+      {
+        "stage": 3,
+        "types": [
+          "sharddart",
+          "s3interceptor",
+          "modturret",
+          "glaciercarrier",
+          "cryoeye",
+          "frostbite",
+          "xelite_glacierlance",
+          "s3mine"
+        ],
+        "managed": [
+          "sharddart",
+          "s3interceptor",
+          "modturret",
+          "glaciercarrier",
+          "cryoeye",
+          "frostbite",
+          "xelite_glacierlance",
+          "s3mine"
+        ],
+        "air": [
+          "sharddart",
+          "s3interceptor",
+          "cryoeye",
+          "frostbite"
+        ],
+        "shooters": [
+          "sharddart",
+          "modturret",
+          "glaciercarrier",
+          "cryoeye",
+          "frostbite",
+          "xelite_glacierlance"
+        ],
+        "reactions": [],
+        "maxBullets": 10,
+        "invalid": 0,
+        "playerJump": 0
+      },
+      {
+        "stage": 4,
+        "types": [
+          "s4minitank",
+          "s4interceptor",
+          "s4rocket",
+          "s4airfield",
+          "modturret",
+          "s4barrel",
+          "dambreaker",
+          "xelite_furytalon",
+          "s4missile"
+        ],
+        "managed": [
+          "s4minitank",
+          "s4interceptor",
+          "s4rocket",
+          "s4airfield",
+          "modturret",
+          "s4barrel",
+          "dambreaker",
+          "xelite_furytalon",
+          "s4missile"
+        ],
+        "air": [
+          "s4interceptor",
+          "dambreaker"
+        ],
+        "shooters": [
+          "s4minitank",
+          "s4interceptor",
+          "s4rocket",
+          "s4airfield",
+          "modturret",
+          "dambreaker",
+          "xelite_furytalon",
+          "s4missile"
+        ],
+        "reactions": [],
+        "maxBullets": 17,
+        "invalid": 0,
+        "playerJump": 0
+      },
+      {
+        "stage": 5,
+        "types": [
+          "s5frigate",
+          "s5interceptor",
+          "s5rammer",
+          "cometsm",
+          "s5skimmer",
+          "s5gravity",
+          "s5minelayer",
+          "s5satellite",
+          "s5portalmine",
+          "xelite_voidreaver"
+        ],
+        "managed": [
+          "s5frigate",
+          "s5interceptor",
+          "s5rammer",
+          "cometsm",
+          "s5skimmer",
+          "s5gravity",
+          "s5minelayer",
+          "s5satellite",
+          "s5portalmine",
+          "xelite_voidreaver"
+        ],
+        "air": [
+          "s5frigate",
+          "s5interceptor",
+          "s5rammer",
+          "s5skimmer",
+          "s5gravity",
+          "s5satellite"
+        ],
+        "shooters": [
+          "s5interceptor",
+          "s5frigate",
+          "s5skimmer",
+          "s5gravity",
+          "s5satellite"
+        ],
+        "reactions": [],
+        "maxBullets": 17,
+        "invalid": 0,
+        "playerJump": 0
+      },
+      {
+        "stage": 6,
+        "types": [
+          "s6dart",
+          "s6mine",
+          "l6v_s0",
+          "s1jetbomber_b",
+          "s6lancer",
+          "l6v_s2",
+          "l6v_s1",
+          "s6thunder"
+        ],
+        "managed": [
+          "s6dart",
+          "s6mine",
+          "l6v_s0",
+          "s1jetbomber_b",
+          "s6lancer",
+          "l6v_s2",
+          "l6v_s1",
+          "s6thunder"
+        ],
+        "air": [
+          "s6dart",
+          "l6v_s0",
+          "s1jetbomber_b",
+          "s6lancer",
+          "l6v_s2",
+          "l6v_s1",
+          "s6thunder"
+        ],
+        "shooters": [
+          "s6mine",
+          "s6lancer"
+        ],
+        "reactions": [],
+        "maxBullets": 54,
+        "invalid": 0,
+        "playerJump": 0
+      },
+      {
+        "stage": 7,
+        "types": [
+          "s7sampler",
+          "s7pipe",
+          "s7skimmer",
+          "s7tank",
+          "modturret",
+          "s7lamprey",
+          "s7mine",
+          "xelite_ironserpent",
+          "s7walker"
+        ],
+        "managed": [
+          "s7sampler",
+          "s7pipe",
+          "s7skimmer",
+          "s7tank",
+          "modturret",
+          "s7lamprey",
+          "s7mine",
+          "xelite_ironserpent",
+          "s7walker"
+        ],
+        "air": [
+          "s7sampler",
+          "s7skimmer",
+          "s7lamprey"
+        ],
+        "shooters": [
+          "s7sampler",
+          "s7tank",
+          "modturret",
+          "s7skimmer",
+          "s7lamprey",
+          "s7mine",
+          "xelite_ironserpent"
+        ],
+        "reactions": [],
+        "maxBullets": 19,
+        "invalid": 0,
+        "playerJump": 0
+      },
+      {
+        "stage": 8,
+        "types": [
+          "s8interceptor",
+          "s8needlejet",
+          "s8leech",
+          "s8scout",
+          "s8razor",
+          "s8manta",
+          "s8spread",
+          "modturret",
+          "s8deathorb",
+          "s8parasite",
+          "s8crescent"
+        ],
+        "managed": [
+          "s8interceptor",
+          "s8needlejet",
+          "s8leech",
+          "s8scout",
+          "s8razor",
+          "s8manta",
+          "s8spread",
+          "modturret",
+          "s8deathorb",
+          "s8parasite",
+          "s8crescent"
+        ],
+        "air": [
+          "s8interceptor",
+          "s8needlejet",
+          "s8leech",
+          "s8scout",
+          "s8razor",
+          "s8manta",
+          "s8spread",
+          "s8deathorb",
+          "s8parasite",
+          "s8crescent"
+        ],
+        "shooters": [
+          "s8interceptor",
+          "s8needlejet",
+          "s8leech",
+          "s8scout",
+          "s8razor",
+          "s8spread",
+          "modturret",
+          "s8manta",
+          "s8parasite"
+        ],
+        "reactions": [],
+        "maxBullets": 13,
+        "invalid": 0,
+        "playerJump": 0
+      },
+      {
+        "stage": 9,
+        "types": [
+          "s9interceptor",
+          "s9beacon",
+          "s9ring",
+          "cometsm",
+          "s9gunship",
+          "wskim",
+          "xelite_solarwarden"
+        ],
+        "managed": [
+          "s9interceptor",
+          "s9beacon",
+          "s9ring",
+          "cometsm",
+          "s9gunship",
+          "wskim",
+          "xelite_solarwarden"
+        ],
+        "air": [
+          "s9interceptor",
+          "s9ring",
+          "s9gunship"
+        ],
+        "shooters": [
+          "s9beacon",
+          "s9ring",
+          "s9interceptor",
+          "wskim"
+        ],
+        "reactions": [],
+        "maxBullets": 12,
+        "invalid": 0,
+        "playerJump": 0
+      }
+    ],
+    "errors": []
+  },
+  "contracts": {
+    "damage": [
+      {
+        "kind": "voidhorizon",
+        "side": null,
+        "before": 1936,
+        "after": 1903,
+        "damaged": true
+      },
+      {
+        "kind": "tidalfusion",
+        "side": "L",
+        "before": 4420,
+        "after": 4398,
+        "damaged": true
+      },
+      {
+        "kind": "tidalfusion",
+        "side": "R",
+        "before": 4420,
+        "after": 4398,
+        "damaged": true
+      }
+    ],
+    "fusionDamage": {
+      "phase": "tidal",
+      "before": 4400,
+      "after": 4367,
+      "damaged": true
+    },
+    "reactions": [
+      {
+        "diff": "normal",
+        "finite": true,
+        "amp": 5,
+        "readAt": 0.9166666666666666,
+        "dodgeDistance": 31.500000000000004,
+        "hitReaction": true,
+        "reactions": 2
+      },
+      {
+        "diff": "hard",
+        "finite": true,
+        "amp": 5,
+        "readAt": 0.9166666666666666,
+        "dodgeDistance": 38.10000000000001,
+        "hitReaction": true,
+        "reactions": 2
+      },
+      {
+        "diff": "furious",
+        "finite": true,
+        "amp": 5,
+        "readAt": 0.95,
+        "dodgeDistance": 44.70000000000002,
+        "hitReaction": true,
+        "reactions": 2
+      }
+    ],
+    "rivals": {
+      "shieldBroken": true,
+      "stunInitial": 0.85,
+      "stunAfter": 0.75,
+      "retained": true
+    },
+    "wardenEnding": {
+      "states": [
+        "defeat",
+        "escape"
+      ],
+      "finished": true,
+      "state": "stageclear"
+    },
+    "mineTravel": {
+      "maxStep": 4.535474728501413,
+      "anchored": true,
+      "atAnchor": true
+    },
+    "art": {
+      "invalid": [],
+      "rows": [
+        {
+          "kind": "warplance",
+          "drew": true
+        },
+        {
+          "kind": "warpshard",
+          "drew": true
+        },
+        {
+          "kind": "warporb",
+          "drew": true
+        },
+        {
+          "kind": "warpsaw",
+          "drew": true
+        },
+        {
+          "kind": "warpbloom",
+          "drew": true
+        },
+        {
+          "kind": "tidaltorp",
+          "drew": true
+        },
+        {
+          "kind": "tidalcut",
+          "drew": true
+        },
+        {
+          "kind": "tidalorb",
+          "drew": true
+        },
+        {
+          "kind": "tidalmine",
+          "drew": true
+        },
+        {
+          "kind": "tidalcrown",
+          "drew": true
+        }
+      ]
+    },
+    "errors": []
+  },
+  "missilesAndTurrets": {
+    "manualMissile": {
+      "kind": "damkeeper",
+      "hpBefore": 1829.120384,
+      "hpAfter": 1804.120384,
+      "damaged": true
+    },
+    "turret": {
+      "spawned": true,
+      "xBefore": 215.2,
+      "xAfter": 215.2,
+      "yBefore": -45,
+      "yAfter": 75,
+      "mapY": 3243,
+      "projected": true,
+      "headAngle": 1.52412966012823,
+      "transformStable": true
+    },
+    "spaceMissile": {
+      "lockCount": 3,
+      "hpBefore": 1936,
+      "hpAfter": 1903,
+      "damaged": true
+    },
+    "errors": []
+  },
+  "videos": {
+    "clips": [
+      {
+        "stage": 9,
+        "kind": "voidhorizon",
+        "mini": true,
+        "diff": "furious",
+        "seconds": 26,
+        "seen": [
+          {
+            "seconds": 0.02,
+            "state": "fight / recover"
+          },
+          {
+            "seconds": 2.86,
+            "state": "fight / needle-relay"
+          },
+          {
+            "seconds": 6.05,
+            "state": "fight / recover"
+          },
+          {
+            "seconds": 6.83,
+            "state": "fight / rift-gates"
+          },
+          {
+            "seconds": 9.87,
+            "state": "fight / recover"
+          },
+          {
+            "seconds": 10.66,
+            "state": "fight / horizon-orbit"
+          },
+          {
+            "seconds": 14.03,
+            "state": "fight / recover"
+          },
+          {
+            "seconds": 14.82,
+            "state": "fight / prism-sweep"
+          },
+          {
+            "seconds": 18.03,
+            "state": "fight / recover"
+          },
+          {
+            "seconds": 18.82,
+            "state": "fight / needle-relay"
+          },
+          {
+            "seconds": 21.84,
+            "state": "fight / recover"
+          },
+          {
+            "seconds": 22.62,
+            "state": "fight / rift-gates"
+          },
+          {
+            "seconds": 25.66,
+            "state": "fight / recover"
+          }
+        ]
+      },
+      {
+        "stage": 6,
+        "kind": "rebelsquad",
+        "mini": false,
+        "diff": "normal",
+        "seconds": 24,
+        "seen": [
+          {
+            "seconds": 0.02,
+            "state": "fight / entry,entry,entry,entry,entry"
+          },
+          {
+            "seconds": 2.1,
+            "state": "fight / entry,fight,entry,entry,entry"
+          },
+          {
+            "seconds": 2.16,
+            "state": "fight / fight,fight,entry,entry,entry"
+          },
+          {
+            "seconds": 2.18,
+            "state": "fight / fight,fight,entry,fight,entry"
+          },
+          {
+            "seconds": 2.24,
+            "state": "fight / fight,fight,fight,fight,entry"
+          },
+          {
+            "seconds": 2.31,
+            "state": "fight / fight,fight,fight,fight,fight"
+          },
+          {
+            "seconds": 5.14,
+            "state": "fight / fight,fight,charge,fight,fight"
+          },
+          {
+            "seconds": 7.54,
+            "state": "fight / fight,fight,fight,fight,fight"
+          },
+          {
+            "seconds": 11.3,
+            "state": "fight / fight,fight,charge,fight,fight"
+          },
+          {
+            "seconds": 13.65,
+            "state": "fight / fight,fight,fight,fight,fight"
+          },
+          {
+            "seconds": 17.36,
+            "state": "fight / fight,fight,charge,fight,fight"
+          },
+          {
+            "seconds": 19.76,
+            "state": "fight / fight,fight,fight,fight,fight"
+          },
+          {
+            "seconds": 23.49,
+            "state": "fight / fight,fight,charge,fight,fight"
+          }
+        ]
+      },
+      {
+        "stage": 7,
+        "kind": "dualscoopdredger",
+        "mini": true,
+        "diff": "hard",
+        "seconds": 26,
+        "seen": [
+          {
+            "seconds": 0.02,
+            "state": "fight / undefined"
+          },
+          {
+            "seconds": 1.73,
+            "state": "fight / recover"
+          },
+          {
+            "seconds": 2.91,
+            "state": "fight / sluice-crossfire"
+          },
+          {
+            "seconds": 6.02,
+            "state": "fight / recover"
+          },
+          {
+            "seconds": 6.98,
+            "state": "fight / bucket-run"
+          },
+          {
+            "seconds": 9.2,
+            "state": "fight / recover"
+          },
+          {
+            "seconds": 10.16,
+            "state": "fight / spore-bloom"
+          },
+          {
+            "seconds": 13.71,
+            "state": "fight / recover"
+          },
+          {
+            "seconds": 14.67,
+            "state": "fight / mine-gate"
+          },
+          {
+            "seconds": 16.16,
+            "state": "fight / recover"
+          },
+          {
+            "seconds": 17.12,
+            "state": "fight / sluice-crossfire"
+          },
+          {
+            "seconds": 20.11,
+            "state": "fight / recover"
+          },
+          {
+            "seconds": 21.07,
+            "state": "fight / bucket-run"
+          },
+          {
+            "seconds": 23.3,
+            "state": "fight / recover"
+          },
+          {
+            "seconds": 24.26,
+            "state": "fight / spore-bloom"
+          }
+        ]
+      },
+      {
+        "stage": 9,
+        "kind": "tidalfusion",
+        "mini": false,
+        "diff": "hard",
+        "seconds": 40,
+        "seen": [
+          {
+            "seconds": 0.02,
+            "state": "twins / undefined"
+          },
+          {
+            "seconds": 14,
+            "state": "fuse / undefined"
+          },
+          {
+            "seconds": 16.43,
+            "state": "tidal / undefined"
+          },
+          {
+            "seconds": 16.45,
+            "state": "tidal / recover"
+          },
+          {
+            "seconds": 17.7,
+            "state": "tidal / tidal-scissors"
+          },
+          {
+            "seconds": 20.69,
+            "state": "tidal / recover"
+          },
+          {
+            "seconds": 21.65,
+            "state": "tidal / torpedo-hunt"
+          },
+          {
+            "seconds": 24.86,
+            "state": "tidal / recover"
+          },
+          {
+            "seconds": 25.82,
+            "state": "tidal / abyssal-gates"
+          },
+          {
+            "seconds": 28.9,
+            "state": "tidal / recover"
+          },
+          {
+            "seconds": 29.86,
+            "state": "tidal / maelstrom-crown"
+          },
+          {
+            "seconds": 33.27,
+            "state": "tidal / recover"
+          },
+          {
+            "seconds": 34.22,
+            "state": "tidal / hydro-sweep"
+          },
+          {
+            "seconds": 37.41,
+            "state": "tidal / recover"
+          },
+          {
+            "seconds": 38.37,
+            "state": "tidal / tidal-scissors"
+          }
+        ]
+      },
+      {
+        "stage": 7,
+        "kind": "sludgeemperor",
+        "mini": false,
+        "diff": "hard",
+        "seconds": 40,
+        "seen": [
+          {
+            "seconds": 0.02,
+            "state": "portalClose / undefined"
+          },
+          {
+            "seconds": 1.02,
+            "state": "teleportIn / undefined"
+          },
+          {
+            "seconds": 2.06,
+            "state": "walkIn / undefined"
+          },
+          {
+            "seconds": 5.3,
+            "state": "roar / undefined"
+          },
+          {
+            "seconds": 6.64,
+            "state": "chase / undefined"
+          },
+          {
+            "seconds": 9.7,
+            "state": "fight / undefined"
+          },
+          {
+            "seconds": 9.79,
+            "state": "fight / recover"
+          },
+          {
+            "seconds": 10.94,
+            "state": "fight / stalk"
+          },
+          {
+            "seconds": 13.14,
+            "state": "fight / recover"
+          },
+          {
+            "seconds": 14.1,
+            "state": "fight / burst"
+          },
+          {
+            "seconds": 17.41,
+            "state": "fight / recover"
+          },
+          {
+            "seconds": 18.37,
+            "state": "fight / leap"
+          },
+          {
+            "seconds": 20.3,
+            "state": "fight / recover"
+          },
+          {
+            "seconds": 21.26,
+            "state": "fight / minefield"
+          },
+          {
+            "seconds": 22.91,
+            "state": "fight / recover"
+          },
+          {
+            "seconds": 23.87,
+            "state": "fight / rail"
+          },
+          {
+            "seconds": 24,
+            "state": "stun / rail"
+          },
+          {
+            "seconds": 27.65,
+            "state": "fight / rail"
+          },
+          {
+            "seconds": 27.67,
+            "state": "fight / recover"
+          },
+          {
+            "seconds": 28.61,
+            "state": "fight / stalk"
+          },
+          {
+            "seconds": 30.8,
+            "state": "fight / recover"
+          },
+          {
+            "seconds": 31.01,
+            "state": "hyper / recover"
+          },
+          {
+            "seconds": 32.58,
+            "state": "fight / recover"
+          },
+          {
+            "seconds": 33.54,
+            "state": "fight / burst"
+          },
+          {
+            "seconds": 36.8,
+            "state": "fight / recover"
+          },
+          {
+            "seconds": 37.76,
+            "state": "fight / stalk"
+          },
+          {
+            "seconds": 39.95,
+            "state": "fight / recover"
+          }
+        ]
+      }
+    ],
+    "errors": [],
+    "fixture": "Invulnerable isolated encounters, keyboard movement, forced HP gates for transition inspection. Native loop and canvas. Not campaign victories or difficulty proof."
+  },
+  "scope": "Shared ordinary-enemy reactions across campaign; Stage 7 Dredger/Warden and Stage 9 Horizon/Sentinels/Sovereign directors; Stage 6 traffic, ally cooldowns/fire coordination and Rival squad pacing.",
+  "limits": "Controlled native Chromium runs and automated assertions. No claims of full mortal controller campaign completion or final clear-rate balance.",
+  "assets": "Existing authored art reused; no generated raster or atlas changes.",
+  "lineEndings": {
+    "assets/game.js": "LF",
+    "_BUILD_SOURCE/test_fl.js": "CRLF"
+  },
+  "git": "Existing work preserved; no commit or push.",
+  "reviewPage": {
+    "videos": [
+      {
+        "src": "dualscoopdredger.webm",
+        "ready": 4,
+        "width": 960,
+        "height": 1024
+      },
+      {
+        "src": "sludgeemperor.webm",
+        "ready": 4,
+        "width": 960,
+        "height": 1024
+      },
+      {
+        "src": "voidhorizon.webm",
+        "ready": 4,
+        "width": 960,
+        "height": 1024
+      },
+      {
+        "src": "tidalfusion.webm",
+        "ready": 4,
+        "width": 960,
+        "height": 1024
+      },
+      {
+        "src": "rebelsquad.webm",
+        "ready": 4,
+        "width": 960,
+        "height": 1024
+      }
+    ],
+    "images": [
+      {
+        "loaded": true,
+        "src": "ordnance.png"
+      }
+    ],
+    "status": 200,
+    "errors": []
+  },
+  "sourceSha256": {
+    "assets/game.js": "d380c7713cceeace5295513c53d6f8f63e65bad98e97cd77e19b1adf88fd9018",
+    "assets/combat_ai_0927.js": "384f0a43dfba8969f7c39c36b60b5de8fead773247332c3818b862da09b19be2",
+    "assets/late_encounters_0927.js": "b7be71b88524c4a486e48557a3bbfd85160e596eaa86c7812c95c675108a7d2e",
+    "_BUILD_SOURCE/test_fl.js": "8d73682c2bc47d4f4026e587fe9c9f8bad93773c55c7b77d9afe4846df7c35ce"
+  }
+}

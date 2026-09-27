@@ -19,7 +19,7 @@ module.exports=function testHammerSharedLeapWarning(vm,ctxv,ok){
       const srcTick=hammerBossTick.toString(),srcDraw=hammerBossDraw.toString();
       o.shared=srcTick.includes("combatWarningTick(b,'chrome-hammer-leap'")&&srcDraw.includes('combatWarningDraw(b,{x:b.x,y:b.y,ex:h.tx,ey:h.ty');
       o.reticle=srcDraw.includes("hammerFrame('reticle',0,h.t<.4?null:h.t<.8?'yellow':'red')");
-      o.boomerang=srcTick.includes("combatWarningTick(b,'chrome-hammer-boomerang'")&&HAMMER_SPIN_TIME===1.55&&HAMMER_OUT_TIME===.70&&HAMMER_RETURN_SPEED===315;
+      o.boomerang=!srcTick.includes("combatWarningTick(b,'chrome-hammer-boomerang'")&&HAMMER_SPIN_TIME===1.55&&HAMMER_OUT_TIME===.70&&HAMMER_RETURN_SPEED===315;
       return JSON.stringify(o);
     }finally{boss=save.boss;player=save.player;Object.assign(run,save.run);powerups=save.powerups;camX=save.camX;curStage=save.curStage;Audio.SFX.enemyShoot=save.shoot;}
   })()`,ctxv));

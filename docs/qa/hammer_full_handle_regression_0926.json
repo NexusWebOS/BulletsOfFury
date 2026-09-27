@@ -1,0 +1,990 @@
+{
+  "routes": [
+    {
+      "difficulty": "normal",
+      "route": "ordinary",
+      "before": {
+        "initial": 1189.6189199999997,
+        "max": 3398.9111999999996,
+        "hp": 1579.0774950000036,
+        "applied": 389.45857499999937,
+        "pending": 460.2692250000005,
+        "target": true,
+        "head": {
+          "x": 337,
+          "y": 117.03999999999999
+        }
+      },
+      "after": {
+        "broken": {
+          "hp": 1189.6189200000042,
+          "state": "storm_stun",
+          "status": "cancelled",
+          "applied": 0,
+          "revoked": 391.8189299999994,
+          "target": false,
+          "burst": true
+        },
+        "states": [
+          "storm_stun",
+          "storm_rebuild",
+          "storm_idle"
+        ],
+        "hp": 1189.6189200000042,
+        "restored": true,
+        "status": "cancelled"
+      }
+    },
+    {
+      "difficulty": "normal",
+      "route": "space",
+      "before": {
+        "initial": 1189.6189199999997,
+        "max": 3398.9111999999996,
+        "hp": 1579.0774950000036,
+        "applied": 389.45857499999937,
+        "pending": 460.2692250000005,
+        "target": true,
+        "head": {
+          "x": 337,
+          "y": 117.03999999999999
+        }
+      },
+      "after": {
+        "broken": {
+          "hp": 1189.6189200000042,
+          "state": "storm_stun",
+          "status": "cancelled",
+          "applied": 0,
+          "revoked": 389.45857499999937,
+          "target": false,
+          "burst": true
+        },
+        "states": [
+          "storm_stun",
+          "storm_rebuild",
+          "storm_idle"
+        ],
+        "hp": 1189.6189200000042,
+        "restored": true,
+        "status": "cancelled"
+      }
+    },
+    {
+      "difficulty": "normal",
+      "route": "retina",
+      "before": {
+        "initial": 1189.6189199999997,
+        "max": 3398.9111999999996,
+        "hp": 1579.0774950000036,
+        "applied": 389.45857499999937,
+        "pending": 460.2692250000005,
+        "target": true,
+        "head": {
+          "x": 337,
+          "y": 117.03999999999999
+        }
+      },
+      "after": {
+        "broken": {
+          "hp": 1189.6189200000042,
+          "state": "storm_stun",
+          "status": "cancelled",
+          "applied": 0,
+          "revoked": 389.45857499999937,
+          "target": false,
+          "burst": true
+        },
+        "states": [
+          "storm_stun",
+          "storm_rebuild",
+          "storm_idle"
+        ],
+        "hp": 1189.6189200000042,
+        "restored": true,
+        "status": "cancelled"
+      }
+    },
+    {
+      "difficulty": "hard",
+      "route": "ordinary",
+      "before": {
+        "initial": 1308.580812,
+        "max": 3738.80232,
+        "hp": 1736.9852445000001,
+        "applied": 428.40443249999936,
+        "pending": 506.2961475000006,
+        "target": true,
+        "head": {
+          "x": 337,
+          "y": 117.03999999999999
+        }
+      },
+      "after": {
+        "broken": {
+          "hp": 1308.5808120000006,
+          "state": "storm_stun",
+          "status": "cancelled",
+          "applied": 0,
+          "revoked": 431.00082299999934,
+          "target": false,
+          "burst": true
+        },
+        "states": [
+          "storm_stun",
+          "storm_rebuild",
+          "storm_idle"
+        ],
+        "hp": 1308.5808120000006,
+        "restored": true,
+        "status": "cancelled"
+      }
+    },
+    {
+      "difficulty": "hard",
+      "route": "space",
+      "before": {
+        "initial": 1308.580812,
+        "max": 3738.80232,
+        "hp": 1736.9852445000001,
+        "applied": 428.40443249999936,
+        "pending": 506.2961475000006,
+        "target": true,
+        "head": {
+          "x": 337,
+          "y": 117.03999999999999
+        }
+      },
+      "after": {
+        "broken": {
+          "hp": 1308.5808120000008,
+          "state": "storm_stun",
+          "status": "cancelled",
+          "applied": 0,
+          "revoked": 428.40443249999936,
+          "target": false,
+          "burst": true
+        },
+        "states": [
+          "storm_stun",
+          "storm_rebuild",
+          "storm_idle"
+        ],
+        "hp": 1308.5808120000008,
+        "restored": true,
+        "status": "cancelled"
+      }
+    },
+    {
+      "difficulty": "hard",
+      "route": "retina",
+      "before": {
+        "initial": 1308.580812,
+        "max": 3738.80232,
+        "hp": 1736.9852445000001,
+        "applied": 428.40443249999936,
+        "pending": 506.2961475000006,
+        "target": true,
+        "head": {
+          "x": 337,
+          "y": 117.03999999999999
+        }
+      },
+      "after": {
+        "broken": {
+          "hp": 1308.5808120000008,
+          "state": "storm_stun",
+          "status": "cancelled",
+          "applied": 0,
+          "revoked": 428.40443249999936,
+          "target": false,
+          "burst": true
+        },
+        "states": [
+          "storm_stun",
+          "storm_rebuild",
+          "storm_idle"
+        ],
+        "hp": 1308.5808120000008,
+        "restored": true,
+        "status": "cancelled"
+      }
+    },
+    {
+      "difficulty": "furious",
+      "route": "ordinary",
+      "before": {
+        "initial": 1546.5045959999998,
+        "max": 4418.584559999999,
+        "hp": 2052.8007435000018,
+        "applied": 506.2961474999992,
+        "pending": 598.3499925000006,
+        "target": true,
+        "head": {
+          "x": 337,
+          "y": 117.03999999999999
+        }
+      },
+      "after": {
+        "broken": {
+          "hp": 1546.5045960000027,
+          "state": "storm_stun",
+          "status": "cancelled",
+          "applied": 0,
+          "revoked": 509.3646089999991,
+          "target": false,
+          "burst": true
+        },
+        "states": [
+          "storm_stun",
+          "storm_rebuild",
+          "storm_idle"
+        ],
+        "hp": 1546.5045960000027,
+        "restored": true,
+        "status": "cancelled"
+      }
+    },
+    {
+      "difficulty": "furious",
+      "route": "space",
+      "before": {
+        "initial": 1546.5045959999998,
+        "max": 4418.584559999999,
+        "hp": 2052.8007435000018,
+        "applied": 506.2961474999992,
+        "pending": 598.3499925000006,
+        "target": true,
+        "head": {
+          "x": 337,
+          "y": 117.03999999999999
+        }
+      },
+      "after": {
+        "broken": {
+          "hp": 1546.5045960000025,
+          "state": "storm_stun",
+          "status": "cancelled",
+          "applied": 0,
+          "revoked": 506.2961474999992,
+          "target": false,
+          "burst": true
+        },
+        "states": [
+          "storm_stun",
+          "storm_rebuild",
+          "storm_idle"
+        ],
+        "hp": 1546.5045960000025,
+        "restored": true,
+        "status": "cancelled"
+      }
+    },
+    {
+      "difficulty": "furious",
+      "route": "retina",
+      "before": {
+        "initial": 1546.5045959999998,
+        "max": 4418.584559999999,
+        "hp": 2052.8007435000018,
+        "applied": 506.2961474999992,
+        "pending": 598.3499925000006,
+        "target": true,
+        "head": {
+          "x": 337,
+          "y": 117.03999999999999
+        }
+      },
+      "after": {
+        "broken": {
+          "hp": 1546.5045960000025,
+          "state": "storm_stun",
+          "status": "cancelled",
+          "applied": 0,
+          "revoked": 506.2961474999992,
+          "target": false,
+          "burst": true
+        },
+        "states": [
+          "storm_stun",
+          "storm_rebuild",
+          "storm_idle"
+        ],
+        "hp": 1546.5045960000025,
+        "restored": true,
+        "status": "cancelled"
+      }
+    }
+  ],
+  "completion": [
+    {
+      "difficulty": "normal",
+      "initial": 1189.6189199999997,
+      "max": 3398.9111999999996,
+      "hp": 2039.3467200000066,
+      "status": "complete",
+      "applied": 849.7278,
+      "state": "storm_idle",
+      "samples": [
+        {
+          "t": 0.016666666666666666,
+          "hp": 1189.6189199999997,
+          "state": "storm_raise",
+          "level": 0
+        },
+        {
+          "t": 0.5166666666666667,
+          "hp": 1189.6189199999997,
+          "state": "storm_raise",
+          "level": 0
+        },
+        {
+          "t": 1.0166666666666666,
+          "hp": 1189.6189199999997,
+          "state": "storm_raise",
+          "level": 0
+        },
+        {
+          "t": 1.5166666666666666,
+          "hp": 1227.3846,
+          "state": "storm_raise",
+          "level": 0.13333333333333308
+        },
+        {
+          "t": 2.0166666666666666,
+          "hp": 1298.195250000001,
+          "state": "storm_raise",
+          "level": 0.3833333333333322
+        },
+        {
+          "t": 2.5166666666666666,
+          "hp": 1369.0059000000017,
+          "state": "storm_raise",
+          "level": 0.6333333333333313
+        },
+        {
+          "t": 3.0166666666666666,
+          "hp": 1439.8165500000025,
+          "state": "storm_raise",
+          "level": 0.8833333333333304
+        },
+        {
+          "t": 3.5166666666666666,
+          "hp": 1510.6272000000033,
+          "state": "storm_raise",
+          "level": 1
+        },
+        {
+          "t": 4.016666666666667,
+          "hp": 1581.4378500000037,
+          "state": "storm_raise",
+          "level": 1
+        },
+        {
+          "t": 4.516666666666667,
+          "hp": 1652.248500000004,
+          "state": "storm_raise",
+          "level": 1
+        },
+        {
+          "t": 5.016666666666667,
+          "hp": 1723.0591500000044,
+          "state": "storm_raise",
+          "level": 1
+        },
+        {
+          "t": 5.516666666666667,
+          "hp": 1793.869800000005,
+          "state": "storm_raise",
+          "level": 1
+        },
+        {
+          "t": 6.016666666666667,
+          "hp": 1864.6804500000053,
+          "state": "storm_raise",
+          "level": 1
+        },
+        {
+          "t": 6.516666666666667,
+          "hp": 1935.4911000000047,
+          "state": "storm_raise",
+          "level": 1
+        },
+        {
+          "t": 7.016666666666667,
+          "hp": 2006.3017500000046,
+          "state": "storm_raise",
+          "level": 1
+        },
+        {
+          "t": 7.516666666666667,
+          "hp": 2039.3467200000066,
+          "state": "storm_raise",
+          "level": 1
+        },
+        {
+          "t": 8.016666666666667,
+          "hp": 2039.3467200000066,
+          "state": "storm_idle",
+          "level": 1
+        }
+      ]
+    },
+    {
+      "difficulty": "hard",
+      "initial": 1308.580812,
+      "max": 3738.80232,
+      "hp": 2243.281391999987,
+      "status": "complete",
+      "applied": 934.7005800000001,
+      "state": "storm_idle",
+      "samples": [
+        {
+          "t": 0.016666666666666666,
+          "hp": 1308.580812,
+          "state": "storm_raise",
+          "level": 0
+        },
+        {
+          "t": 0.5166666666666667,
+          "hp": 1308.580812,
+          "state": "storm_raise",
+          "level": 0
+        },
+        {
+          "t": 1.0166666666666666,
+          "hp": 1308.580812,
+          "state": "storm_raise",
+          "level": 0
+        },
+        {
+          "t": 1.5166666666666666,
+          "hp": 1350.1230600000015,
+          "state": "storm_raise",
+          "level": 0.13333333333333308
+        },
+        {
+          "t": 2.0166666666666666,
+          "hp": 1428.0147750000042,
+          "state": "storm_raise",
+          "level": 0.3833333333333322
+        },
+        {
+          "t": 2.5166666666666666,
+          "hp": 1505.9064900000044,
+          "state": "storm_raise",
+          "level": 0.6333333333333313
+        },
+        {
+          "t": 3.0166666666666666,
+          "hp": 1583.7982050000028,
+          "state": "storm_raise",
+          "level": 0.8833333333333304
+        },
+        {
+          "t": 3.5166666666666666,
+          "hp": 1661.689920000001,
+          "state": "storm_raise",
+          "level": 1
+        },
+        {
+          "t": 4.016666666666667,
+          "hp": 1739.581635,
+          "state": "storm_raise",
+          "level": 1
+        },
+        {
+          "t": 4.516666666666667,
+          "hp": 1817.4733499999993,
+          "state": "storm_raise",
+          "level": 1
+        },
+        {
+          "t": 5.016666666666667,
+          "hp": 1895.3650649999972,
+          "state": "storm_raise",
+          "level": 1
+        },
+        {
+          "t": 5.516666666666667,
+          "hp": 1973.2567799999947,
+          "state": "storm_raise",
+          "level": 1
+        },
+        {
+          "t": 6.016666666666667,
+          "hp": 2051.148494999994,
+          "state": "storm_raise",
+          "level": 1
+        },
+        {
+          "t": 6.516666666666667,
+          "hp": 2129.04020999999,
+          "state": "storm_raise",
+          "level": 1
+        },
+        {
+          "t": 7.016666666666667,
+          "hp": 2206.931924999986,
+          "state": "storm_raise",
+          "level": 1
+        },
+        {
+          "t": 7.516666666666667,
+          "hp": 2243.281391999987,
+          "state": "storm_raise",
+          "level": 1
+        },
+        {
+          "t": 8.016666666666667,
+          "hp": 2243.281391999987,
+          "state": "storm_idle",
+          "level": 1
+        }
+      ]
+    },
+    {
+      "difficulty": "furious",
+      "initial": 1546.5045959999998,
+      "max": 4418.584559999999,
+      "hp": 2651.150736000007,
+      "status": "complete",
+      "applied": 1104.6461399999998,
+      "state": "storm_warn",
+      "samples": [
+        {
+          "t": 0.016666666666666666,
+          "hp": 1546.5045959999998,
+          "state": "storm_raise",
+          "level": 0
+        },
+        {
+          "t": 0.5166666666666667,
+          "hp": 1546.5045959999998,
+          "state": "storm_raise",
+          "level": 0
+        },
+        {
+          "t": 1.0166666666666666,
+          "hp": 1546.5045959999998,
+          "state": "storm_raise",
+          "level": 0
+        },
+        {
+          "t": 1.5166666666666666,
+          "hp": 1595.59998,
+          "state": "storm_raise",
+          "level": 0.13333333333333308
+        },
+        {
+          "t": 2.0166666666666666,
+          "hp": 1687.6538250000003,
+          "state": "storm_raise",
+          "level": 0.3833333333333322
+        },
+        {
+          "t": 2.5166666666666666,
+          "hp": 1779.7076700000007,
+          "state": "storm_raise",
+          "level": 0.6333333333333313
+        },
+        {
+          "t": 3.0166666666666666,
+          "hp": 1871.761515000001,
+          "state": "storm_raise",
+          "level": 0.8833333333333304
+        },
+        {
+          "t": 3.5166666666666666,
+          "hp": 1963.8153600000014,
+          "state": "storm_raise",
+          "level": 1
+        },
+        {
+          "t": 4.016666666666667,
+          "hp": 2055.869205000002,
+          "state": "storm_raise",
+          "level": 1
+        },
+        {
+          "t": 4.516666666666667,
+          "hp": 2147.923050000002,
+          "state": "storm_raise",
+          "level": 1
+        },
+        {
+          "t": 5.016666666666667,
+          "hp": 2239.9768950000025,
+          "state": "storm_raise",
+          "level": 1
+        },
+        {
+          "t": 5.516666666666667,
+          "hp": 2332.030740000003,
+          "state": "storm_raise",
+          "level": 1
+        },
+        {
+          "t": 6.016666666666667,
+          "hp": 2424.0845850000032,
+          "state": "storm_raise",
+          "level": 1
+        },
+        {
+          "t": 6.516666666666667,
+          "hp": 2516.1384300000036,
+          "state": "storm_raise",
+          "level": 1
+        },
+        {
+          "t": 7.016666666666667,
+          "hp": 2608.192275000004,
+          "state": "storm_raise",
+          "level": 1
+        },
+        {
+          "t": 7.516666666666667,
+          "hp": 2651.150736000007,
+          "state": "storm_raise",
+          "level": 1
+        },
+        {
+          "t": 8.016666666666667,
+          "hp": 2651.150736000007,
+          "state": "storm_idle",
+          "level": 1
+        }
+      ]
+    }
+  ],
+  "pixels": {
+    "tones": [
+      {
+        "tone": 0,
+        "solid": 51985,
+        "sum": [
+          840613,
+          2990574,
+          3373228
+        ]
+      },
+      {
+        "tone": 1,
+        "solid": 51985,
+        "sum": [
+          2446116,
+          2657087,
+          2963972
+        ]
+      },
+      {
+        "tone": 2,
+        "solid": 51985,
+        "sum": [
+          950087,
+          3077375,
+          2050295
+        ]
+      }
+    ]
+  },
+  "jitter": [
+    {
+      "x": 3,
+      "y": 1
+    },
+    {
+      "x": 1,
+      "y": -1
+    },
+    {
+      "x": -2,
+      "y": -2
+    },
+    {
+      "x": -2,
+      "y": -1
+    },
+    {
+      "x": 2,
+      "y": 1
+    },
+    {
+      "x": 2,
+      "y": 2
+    },
+    {
+      "x": -1,
+      "y": 1
+    },
+    {
+      "x": -3,
+      "y": -1
+    },
+    {
+      "x": 0,
+      "y": -2
+    },
+    {
+      "x": 3,
+      "y": -1
+    },
+    {
+      "x": 1,
+      "y": 1
+    },
+    {
+      "x": -2,
+      "y": 2
+    },
+    {
+      "x": -2,
+      "y": 1
+    },
+    {
+      "x": 2,
+      "y": -0.0
+    },
+    {
+      "x": 3,
+      "y": -2
+    },
+    {
+      "x": -1,
+      "y": -1
+    },
+    {
+      "x": -3,
+      "y": 0
+    },
+    {
+      "x": -0.0,
+      "y": 2
+    },
+    {
+      "x": 3,
+      "y": 1
+    },
+    {
+      "x": 1,
+      "y": -0.0
+    },
+    {
+      "x": -2,
+      "y": -2
+    },
+    {
+      "x": -2,
+      "y": -2
+    },
+    {
+      "x": 2,
+      "y": -0.0
+    },
+    {
+      "x": 3,
+      "y": 1
+    },
+    {
+      "x": -1,
+      "y": 2
+    },
+    {
+      "x": -3,
+      "y": 0
+    },
+    {
+      "x": -1,
+      "y": -1
+    },
+    {
+      "x": 3,
+      "y": -2
+    },
+    {
+      "x": 2,
+      "y": -0.0
+    },
+    {
+      "x": -2,
+      "y": 1
+    },
+    {
+      "x": -2,
+      "y": 2
+    },
+    {
+      "x": 1,
+      "y": 1
+    },
+    {
+      "x": 3,
+      "y": -1
+    },
+    {
+      "x": -0.0,
+      "y": -2
+    },
+    {
+      "x": -3,
+      "y": -1
+    },
+    {
+      "x": -1,
+      "y": 1
+    },
+    {
+      "x": 3,
+      "y": 2
+    },
+    {
+      "x": 2,
+      "y": 1
+    },
+    {
+      "x": -2,
+      "y": -1
+    },
+    {
+      "x": -3,
+      "y": -2
+    },
+    {
+      "x": 1,
+      "y": -1
+    },
+    {
+      "x": 3,
+      "y": 1
+    },
+    {
+      "x": 0,
+      "y": 2
+    },
+    {
+      "x": -3,
+      "y": 1
+    },
+    {
+      "x": -1,
+      "y": -1
+    },
+    {
+      "x": 2,
+      "y": -2
+    },
+    {
+      "x": 2,
+      "y": -1
+    },
+    {
+      "x": -2,
+      "y": 0
+    },
+    {
+      "x": -3,
+      "y": 2
+    },
+    {
+      "x": 1,
+      "y": 1
+    },
+    {
+      "x": 3,
+      "y": -0.0
+    },
+    {
+      "x": 1,
+      "y": -2
+    },
+    {
+      "x": -3,
+      "y": -1
+    },
+    {
+      "x": -2,
+      "y": 0
+    },
+    {
+      "x": 2,
+      "y": 2
+    },
+    {
+      "x": 2,
+      "y": 2
+    },
+    {
+      "x": -1,
+      "y": 0
+    },
+    {
+      "x": -3,
+      "y": -1
+    },
+    {
+      "x": 0,
+      "y": -2
+    },
+    {
+      "x": 3,
+      "y": -0.0
+    }
+  ],
+  "barPixels": {
+    "lo": 0.44375000000000103,
+    "hi": 0.6000000000000012,
+    "frames": [
+      {
+        "min": 197,
+        "max": 259,
+        "pixels": 1134,
+        "totalAlpha": 219669
+      },
+      {
+        "min": 197,
+        "max": 259,
+        "pixels": 1134,
+        "totalAlpha": 206087
+      },
+      {
+        "min": 197,
+        "max": 259,
+        "pixels": 1134,
+        "totalAlpha": 218701
+      }
+    ],
+    "gone": true
+  },
+  "hitFlashPixels": [
+    6592387,
+    8171302
+  ],
+  "videos": [
+    {
+      "states": [
+        "storm_raise",
+        "storm_idle",
+        "storm_warn",
+        "storm_slam",
+        "storm_split",
+        "storm_idle"
+      ],
+      "seconds": 20,
+      "file": "successful_recovery.webm"
+    },
+    {
+      "states": [
+        "storm_raise",
+        "storm_stun",
+        "storm_rebuild",
+        "storm_idle",
+        "storm_warn",
+        "storm_slam",
+        "storm_split"
+      ],
+      "seconds": 20,
+      "file": "break_core_cancel_heal.webm"
+    }
+  ],
+  "errors": []
+}

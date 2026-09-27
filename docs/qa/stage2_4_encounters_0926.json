@@ -1,0 +1,1124 @@
+{
+  "date": "2026-09-26T23:18:06.241560-04:00",
+  "request": "Stage 2\u20134 encounters; corrected Stage 3 order neutral -> missile -> fire/ice",
+  "syntax": {
+    "assets/game.js": "passed",
+    "assets/stage3_thermo.js": "passed",
+    "assets/encounters_0926.js": "passed"
+  },
+  "suite": {
+    "log": "_shots\\encounters_0926\\full-suite-final.log",
+    "passed": 5142,
+    "failed": 0,
+    "exit_code": 0,
+    "final_banner": true,
+    "baseline": {
+      "passed": 5083,
+      "failed": 0,
+      "log": "_shots/test_fl_red_recovery_0926.log"
+    },
+    "new_failing_names": []
+  },
+  "chromium": {
+    "matrix": [
+      {
+        "cfg": {
+          "stage": 2,
+          "kind": "magmaward",
+          "mini": true,
+          "diff": "normal"
+        },
+        "init": {
+          "name": "INFERNO REAVER",
+          "kind": "magmaward",
+          "hp": 1233,
+          "w": 200,
+          "h": 200,
+          "world": 680,
+          "view": 480,
+          "VH": 512
+        },
+        "modes": [
+          "recover",
+          "ember-hunt",
+          "furnace-strafe",
+          "ember-bombard",
+          "furnace-lance"
+        ],
+        "forms": [
+          "neutral"
+        ],
+        "maxBullets": 19,
+        "maxMove": 10.83246321060625,
+        "shots": 182,
+        "bodyShots": 0,
+        "helperShots": 0,
+        "nuclear": null
+      },
+      {
+        "cfg": {
+          "stage": 2,
+          "kind": "magmaward",
+          "mini": true,
+          "diff": "hard"
+        },
+        "init": {
+          "name": "INFERNO REAVER",
+          "kind": "magmaward",
+          "hp": 1540,
+          "w": 200,
+          "h": 200,
+          "world": 680,
+          "view": 480,
+          "VH": 512
+        },
+        "modes": [
+          "recover",
+          "ember-hunt",
+          "furnace-strafe",
+          "ember-bombard",
+          "furnace-lance"
+        ],
+        "forms": [
+          "neutral"
+        ],
+        "maxBullets": 21,
+        "maxMove": 9.02378791669912,
+        "shots": 276,
+        "bodyShots": 0,
+        "helperShots": 0,
+        "nuclear": null
+      },
+      {
+        "cfg": {
+          "stage": 2,
+          "kind": "magmaward",
+          "mini": true,
+          "diff": "furious"
+        },
+        "init": {
+          "name": "CHARRED INFERNO REAVER",
+          "kind": "magmaward",
+          "hp": 1820,
+          "w": 200,
+          "h": 200,
+          "world": 680,
+          "view": 480,
+          "VH": 512
+        },
+        "modes": [
+          "recover",
+          "cinder-scissors",
+          "ash-pursuit",
+          "charcoal-wheel",
+          "blackout-pass",
+          "ash-eruption"
+        ],
+        "forms": [
+          "neutral"
+        ],
+        "maxBullets": 34,
+        "maxMove": 10.75275993923475,
+        "shots": 777,
+        "bodyShots": 0,
+        "helperShots": 0,
+        "nuclear": null
+      },
+      {
+        "cfg": {
+          "stage": 3,
+          "kind": "frostcruiser",
+          "mini": true,
+          "diff": "normal"
+        },
+        "init": {
+          "name": "FROST CRUISER",
+          "kind": "frostcruiser",
+          "hp": 1800,
+          "w": 202,
+          "h": 202,
+          "world": 680,
+          "view": 480,
+          "VH": 512
+        },
+        "modes": [
+          "recover",
+          "cryo-crosscut",
+          "icebreaker",
+          "shatter-wheel",
+          "pincer-lance"
+        ],
+        "forms": [
+          "neutral"
+        ],
+        "maxBullets": 47,
+        "maxMove": 10.716786296751877,
+        "shots": 358,
+        "bodyShots": 0,
+        "helperShots": 0,
+        "nuclear": null
+      },
+      {
+        "cfg": {
+          "stage": 3,
+          "kind": "frostcruiser",
+          "mini": true,
+          "diff": "hard"
+        },
+        "init": {
+          "name": "FROST CRUISER",
+          "kind": "frostcruiser",
+          "hp": 2251,
+          "w": 202,
+          "h": 202,
+          "world": 680,
+          "view": 480,
+          "VH": 512
+        },
+        "modes": [
+          "recover",
+          "cryo-crosscut",
+          "icebreaker",
+          "shatter-wheel",
+          "pincer-lance"
+        ],
+        "forms": [
+          "neutral"
+        ],
+        "maxBullets": 58,
+        "maxMove": 10.536289387199758,
+        "shots": 524,
+        "bodyShots": 0,
+        "helperShots": 0,
+        "nuclear": null
+      },
+      {
+        "cfg": {
+          "stage": 3,
+          "kind": "frostcruiser",
+          "mini": true,
+          "diff": "furious"
+        },
+        "init": {
+          "name": "FROST CRUISER",
+          "kind": "frostcruiser",
+          "hp": 2658,
+          "w": 202,
+          "h": 202,
+          "world": 680,
+          "view": 480,
+          "VH": 512
+        },
+        "modes": [
+          "recover",
+          "cryo-crosscut",
+          "icebreaker",
+          "nuclear",
+          "shatter-wheel",
+          "pincer-lance",
+          "form-change"
+        ],
+        "forms": [
+          "neutral",
+          "fire",
+          "ice"
+        ],
+        "maxBullets": 74,
+        "maxMove": 10.796665126118228,
+        "shots": 731,
+        "bodyShots": 0,
+        "helperShots": 0,
+        "nuclear": {
+          "mode": "fire",
+          "introDone": true,
+          "blasts": 28
+        }
+      },
+      {
+        "cfg": {
+          "stage": 3,
+          "kind": "cryospear",
+          "mini": false,
+          "diff": "normal"
+        },
+        "init": {
+          "name": "RIME WALL",
+          "kind": "cryospear",
+          "hp": 2552,
+          "w": 224,
+          "h": 236,
+          "world": 680,
+          "view": 480,
+          "VH": 512
+        },
+        "modes": [
+          "recover",
+          "bastion-gates",
+          "cannon-relay",
+          "orb-siege",
+          "glacier-press"
+        ],
+        "forms": [
+          "neutral"
+        ],
+        "maxBullets": 24,
+        "maxMove": 3.5065579084788396,
+        "shots": 234,
+        "bodyShots": 0,
+        "helperShots": 0,
+        "nuclear": null
+      },
+      {
+        "cfg": {
+          "stage": 3,
+          "kind": "cryospear",
+          "mini": false,
+          "diff": "hard"
+        },
+        "init": {
+          "name": "RIME WALL",
+          "kind": "cryospear",
+          "hp": 3191,
+          "w": 224,
+          "h": 236,
+          "world": 680,
+          "view": 480,
+          "VH": 512
+        },
+        "modes": [
+          "recover",
+          "bastion-gates",
+          "cannon-relay",
+          "orb-siege",
+          "glacier-press"
+        ],
+        "forms": [
+          "neutral"
+        ],
+        "maxBullets": 27,
+        "maxMove": 4.9447264137829166,
+        "shots": 306,
+        "bodyShots": 0,
+        "helperShots": 0,
+        "nuclear": null
+      },
+      {
+        "cfg": {
+          "stage": 3,
+          "kind": "cryospear",
+          "mini": false,
+          "diff": "furious"
+        },
+        "init": {
+          "name": "RIME WALL",
+          "kind": "cryospear",
+          "hp": 3770,
+          "w": 224,
+          "h": 236,
+          "world": 680,
+          "view": 480,
+          "VH": 512
+        },
+        "modes": [
+          "recover",
+          "bastion-gates",
+          "cannon-relay",
+          "nuclear",
+          "orb-siege",
+          "glacier-press",
+          "form-change"
+        ],
+        "forms": [
+          "neutral",
+          "fire",
+          "ice"
+        ],
+        "maxBullets": 30,
+        "maxMove": 10.583828460787686,
+        "shots": 333,
+        "bodyShots": 0,
+        "helperShots": 0,
+        "nuclear": {
+          "mode": "ice",
+          "introDone": true,
+          "blasts": 28
+        }
+      },
+      {
+        "cfg": {
+          "stage": 4,
+          "kind": "olivewarden",
+          "mini": true,
+          "diff": "normal"
+        },
+        "init": {
+          "name": "OLIVE WARDEN",
+          "kind": "olivewarden",
+          "hp": 2455,
+          "w": 262,
+          "h": 270,
+          "world": 680,
+          "view": 480,
+          "VH": 512
+        },
+        "modes": [
+          "recover",
+          "warden-suppress",
+          "escort-crossfire",
+          "rocket-feint",
+          "warden-drive",
+          "center-break"
+        ],
+        "forms": [
+          "neutral"
+        ],
+        "maxBullets": 14,
+        "maxMove": 4.3004155648550295,
+        "shots": 0,
+        "bodyShots": 242,
+        "helperShots": 0,
+        "nuclear": null
+      },
+      {
+        "cfg": {
+          "stage": 4,
+          "kind": "olivewarden",
+          "mini": true,
+          "diff": "hard"
+        },
+        "init": {
+          "name": "OLIVE WARDEN",
+          "kind": "olivewarden",
+          "hp": 3069,
+          "w": 262,
+          "h": 270,
+          "world": 680,
+          "view": 480,
+          "VH": 512
+        },
+        "modes": [
+          "recover",
+          "warden-suppress",
+          "escort-crossfire",
+          "rocket-feint",
+          "warden-drive",
+          "center-break"
+        ],
+        "forms": [
+          "neutral"
+        ],
+        "maxBullets": 14,
+        "maxMove": 7.849970568484991,
+        "shots": 0,
+        "bodyShots": 232,
+        "helperShots": 36,
+        "nuclear": null
+      },
+      {
+        "cfg": {
+          "stage": 4,
+          "kind": "olivewarden",
+          "mini": true,
+          "diff": "furious"
+        },
+        "init": {
+          "name": "OLIVE WARDEN",
+          "kind": "olivewarden",
+          "hp": 3625,
+          "w": 262,
+          "h": 270,
+          "world": 680,
+          "view": 480,
+          "VH": 512
+        },
+        "modes": [
+          "recover",
+          "warden-suppress",
+          "escort-crossfire",
+          "rocket-feint",
+          "warden-drive",
+          "center-break"
+        ],
+        "forms": [
+          "neutral"
+        ],
+        "maxBullets": 19,
+        "maxMove": 7.881813742677707,
+        "shots": 0,
+        "bodyShots": 293,
+        "helperShots": 45,
+        "nuclear": null
+      },
+      {
+        "cfg": {
+          "stage": 4,
+          "kind": "stormsovereign",
+          "mini": false,
+          "diff": "normal"
+        },
+        "init": {
+          "name": "STORM SOVEREIGN MK II",
+          "kind": "stormsovereign",
+          "hp": 3168,
+          "w": 264,
+          "h": 264,
+          "world": 680,
+          "view": 480,
+          "VH": 512
+        },
+        "modes": [
+          "recover",
+          "sovereign-battery",
+          "escort-crossfire",
+          "siege-rockets",
+          "ion-scissors",
+          "siege-drive",
+          "core-barrage"
+        ],
+        "forms": [
+          "neutral"
+        ],
+        "maxBullets": 14,
+        "maxMove": 9.556434481861231,
+        "shots": 0,
+        "bodyShots": 178,
+        "helperShots": 36,
+        "nuclear": null
+      },
+      {
+        "cfg": {
+          "stage": 4,
+          "kind": "stormsovereign",
+          "mini": false,
+          "diff": "hard"
+        },
+        "init": {
+          "name": "STORM SOVEREIGN MK II",
+          "kind": "stormsovereign",
+          "hp": 3961,
+          "w": 264,
+          "h": 264,
+          "world": 680,
+          "view": 480,
+          "VH": 512
+        },
+        "modes": [
+          "recover",
+          "sovereign-battery",
+          "escort-crossfire",
+          "siege-rockets",
+          "ion-scissors",
+          "siege-drive",
+          "core-barrage"
+        ],
+        "forms": [
+          "neutral"
+        ],
+        "maxBullets": 14,
+        "maxMove": 9.716150262151018,
+        "shots": 0,
+        "bodyShots": 195,
+        "helperShots": 44,
+        "nuclear": null
+      },
+      {
+        "cfg": {
+          "stage": 4,
+          "kind": "stormsovereign",
+          "mini": false,
+          "diff": "furious"
+        },
+        "init": {
+          "name": "STORM SOVEREIGN MK II",
+          "kind": "stormsovereign",
+          "hp": 4680,
+          "w": 264,
+          "h": 264,
+          "world": 680,
+          "view": 480,
+          "VH": 512
+        },
+        "modes": [
+          "recover",
+          "sovereign-battery",
+          "escort-crossfire",
+          "siege-rockets",
+          "ion-scissors",
+          "siege-drive",
+          "core-barrage"
+        ],
+        "forms": [
+          "neutral"
+        ],
+        "maxBullets": 19,
+        "maxMove": 7.109078106579602,
+        "shots": 0,
+        "bodyShots": 260,
+        "helperShots": 56,
+        "nuclear": null
+      }
+    ],
+    "elements": [
+      {
+        "kind": "frostcruiser",
+        "hits": [
+          {
+            "form": "neutral",
+            "element": "fire",
+            "delta": 10,
+            "expected": 10,
+            "flash": "#ffffff"
+          },
+          {
+            "form": "neutral",
+            "element": "ice",
+            "delta": 10,
+            "expected": 10,
+            "flash": "#ffffff"
+          },
+          {
+            "form": "neutral",
+            "element": "fireice",
+            "delta": 10,
+            "expected": 10,
+            "flash": "#ffffff"
+          },
+          {
+            "form": "fire",
+            "element": "fire",
+            "delta": 10,
+            "expected": 10,
+            "flash": "#ffffff"
+          },
+          {
+            "form": "fire",
+            "element": "ice",
+            "delta": 20,
+            "expected": 20,
+            "flash": "#83d9ff"
+          },
+          {
+            "form": "fire",
+            "element": "fireice",
+            "delta": 20,
+            "expected": 20,
+            "flash": "#83d9ff"
+          },
+          {
+            "form": "ice",
+            "element": "fire",
+            "delta": 20,
+            "expected": 20,
+            "flash": "#ff3b30"
+          },
+          {
+            "form": "ice",
+            "element": "ice",
+            "delta": 10,
+            "expected": 10,
+            "flash": "#ffffff"
+          },
+          {
+            "form": "ice",
+            "element": "fireice",
+            "delta": 20,
+            "expected": 20,
+            "flash": "#ff3b30"
+          }
+        ]
+      },
+      {
+        "kind": "cryospear",
+        "hits": [
+          {
+            "form": "neutral",
+            "element": "fire",
+            "delta": 10,
+            "expected": 10,
+            "flash": "#ffffff"
+          },
+          {
+            "form": "neutral",
+            "element": "ice",
+            "delta": 10,
+            "expected": 10,
+            "flash": "#ffffff"
+          },
+          {
+            "form": "neutral",
+            "element": "fireice",
+            "delta": 10,
+            "expected": 10,
+            "flash": "#ffffff"
+          },
+          {
+            "form": "fire",
+            "element": "fire",
+            "delta": 10,
+            "expected": 10,
+            "flash": "#ffffff"
+          },
+          {
+            "form": "fire",
+            "element": "ice",
+            "delta": 20,
+            "expected": 20,
+            "flash": "#83d9ff"
+          },
+          {
+            "form": "fire",
+            "element": "fireice",
+            "delta": 20,
+            "expected": 20,
+            "flash": "#83d9ff"
+          },
+          {
+            "form": "ice",
+            "element": "fire",
+            "delta": 20,
+            "expected": 20,
+            "flash": "#ff3b30"
+          },
+          {
+            "form": "ice",
+            "element": "ice",
+            "delta": 10,
+            "expected": 10,
+            "flash": "#ffffff"
+          },
+          {
+            "form": "ice",
+            "element": "fireice",
+            "delta": 20,
+            "expected": 20,
+            "flash": "#ff3b30"
+          }
+        ]
+      }
+    ],
+    "errors": [],
+    "seconds_per_case": 76,
+    "probe": "_BUILD_SOURCE/probe_encounters_0926.py"
+  },
+  "videos": {
+    "clips": [
+      {
+        "stage": 2,
+        "kind": "magmaward",
+        "seconds": 28,
+        "seen": [
+          {
+            "seconds": 0.02,
+            "state": "recover / neutral"
+          },
+          {
+            "seconds": 1.22,
+            "state": "cinder-scissors / neutral"
+          },
+          {
+            "seconds": 4.4,
+            "state": "recover / neutral"
+          },
+          {
+            "seconds": 5.12,
+            "state": "ash-pursuit / neutral"
+          },
+          {
+            "seconds": 8.35,
+            "state": "recover / neutral"
+          },
+          {
+            "seconds": 9.04,
+            "state": "charcoal-wheel / neutral"
+          },
+          {
+            "seconds": 12.8,
+            "state": "recover / neutral"
+          },
+          {
+            "seconds": 13.49,
+            "state": "blackout-pass / neutral"
+          },
+          {
+            "seconds": 16.21,
+            "state": "recover / neutral"
+          },
+          {
+            "seconds": 16.9,
+            "state": "cinder-scissors / neutral"
+          },
+          {
+            "seconds": 20.08,
+            "state": "recover / neutral"
+          },
+          {
+            "seconds": 20.77,
+            "state": "ash-eruption / neutral"
+          },
+          {
+            "seconds": 23.95,
+            "state": "recover / neutral"
+          },
+          {
+            "seconds": 24.64,
+            "state": "cinder-scissors / neutral"
+          },
+          {
+            "seconds": 27.82,
+            "state": "recover / neutral"
+          }
+        ],
+        "fixture": "Furious, invulnerable keyboard flight. Stage 4 HP gates exercised at 12 and 23 seconds; no player damage used for tuning claims."
+      },
+      {
+        "stage": 4,
+        "kind": "olivewarden",
+        "seconds": 32,
+        "seen": [
+          {
+            "seconds": 0.02,
+            "state": "recover / neutral"
+          },
+          {
+            "seconds": 1.12,
+            "state": "warden-suppress / neutral"
+          },
+          {
+            "seconds": 4.3,
+            "state": "recover / neutral"
+          },
+          {
+            "seconds": 4.99,
+            "state": "escort-crossfire / neutral"
+          },
+          {
+            "seconds": 11.39,
+            "state": "recover / neutral"
+          },
+          {
+            "seconds": 12.08,
+            "state": "rocket-feint / neutral"
+          },
+          {
+            "seconds": 15.27,
+            "state": "recover / neutral"
+          },
+          {
+            "seconds": 15.95,
+            "state": "warden-drive / neutral"
+          },
+          {
+            "seconds": 19.17,
+            "state": "recover / neutral"
+          },
+          {
+            "seconds": 19.86,
+            "state": "center-break / neutral"
+          },
+          {
+            "seconds": 23.04,
+            "state": "recover / neutral"
+          },
+          {
+            "seconds": 23.73,
+            "state": "warden-suppress / neutral"
+          },
+          {
+            "seconds": 26.91,
+            "state": "recover / neutral"
+          },
+          {
+            "seconds": 27.6,
+            "state": "escort-crossfire / neutral"
+          }
+        ],
+        "fixture": "Furious, invulnerable keyboard flight. Stage 4 HP gates exercised at 12 and 23 seconds; no player damage used for tuning claims."
+      },
+      {
+        "stage": 4,
+        "kind": "stormsovereign",
+        "seconds": 34,
+        "seen": [
+          {
+            "seconds": 0.02,
+            "state": "recover / neutral"
+          },
+          {
+            "seconds": 1.12,
+            "state": "sovereign-battery / neutral"
+          },
+          {
+            "seconds": 4.3,
+            "state": "recover / neutral"
+          },
+          {
+            "seconds": 4.99,
+            "state": "escort-crossfire / neutral"
+          },
+          {
+            "seconds": 11.41,
+            "state": "recover / neutral"
+          },
+          {
+            "seconds": 13.82,
+            "state": "siege-rockets / neutral"
+          },
+          {
+            "seconds": 17.01,
+            "state": "recover / neutral"
+          },
+          {
+            "seconds": 17.7,
+            "state": "ion-scissors / neutral"
+          },
+          {
+            "seconds": 20.88,
+            "state": "recover / neutral"
+          },
+          {
+            "seconds": 21.57,
+            "state": "siege-drive / neutral"
+          },
+          {
+            "seconds": 24.08,
+            "state": "recover / neutral"
+          },
+          {
+            "seconds": 24.77,
+            "state": "core-barrage / neutral"
+          },
+          {
+            "seconds": 27.95,
+            "state": "recover / neutral"
+          },
+          {
+            "seconds": 28.64,
+            "state": "sovereign-battery / neutral"
+          },
+          {
+            "seconds": 31.82,
+            "state": "recover / neutral"
+          },
+          {
+            "seconds": 32.51,
+            "state": "escort-crossfire / neutral"
+          }
+        ],
+        "fixture": "Furious, invulnerable keyboard flight. Stage 4 HP gates exercised at 12 and 23 seconds; no player damage used for tuning claims."
+      },
+      {
+        "stage": 3,
+        "kind": "frostcruiser",
+        "seconds": 40,
+        "seen": [
+          {
+            "seconds": 0.02,
+            "state": "recover / neutral"
+          },
+          {
+            "seconds": 1.33,
+            "state": "cryo-crosscut / neutral"
+          },
+          {
+            "seconds": 4.54,
+            "state": "recover / neutral"
+          },
+          {
+            "seconds": 5.23,
+            "state": "icebreaker / neutral"
+          },
+          {
+            "seconds": 7.97,
+            "state": "recover / neutral"
+          },
+          {
+            "seconds": 7.99,
+            "state": "nuclear / neutral"
+          },
+          {
+            "seconds": 11.57,
+            "state": "nuclear / fire"
+          },
+          {
+            "seconds": 13.97,
+            "state": "recover / fire"
+          },
+          {
+            "seconds": 14.66,
+            "state": "shatter-wheel / fire"
+          },
+          {
+            "seconds": 17.84,
+            "state": "recover / fire"
+          },
+          {
+            "seconds": 18.53,
+            "state": "pincer-lance / fire"
+          },
+          {
+            "seconds": 23.33,
+            "state": "recover / fire"
+          },
+          {
+            "seconds": 24.02,
+            "state": "form-change / fire"
+          },
+          {
+            "seconds": 24.77,
+            "state": "form-change / ice"
+          },
+          {
+            "seconds": 25.57,
+            "state": "cryo-crosscut / ice"
+          },
+          {
+            "seconds": 28.75,
+            "state": "recover / ice"
+          },
+          {
+            "seconds": 29.44,
+            "state": "icebreaker / ice"
+          },
+          {
+            "seconds": 32.16,
+            "state": "recover / ice"
+          },
+          {
+            "seconds": 32.85,
+            "state": "form-change / ice"
+          },
+          {
+            "seconds": 33.6,
+            "state": "form-change / fire"
+          },
+          {
+            "seconds": 34.4,
+            "state": "cryo-crosscut / fire"
+          },
+          {
+            "seconds": 37.58,
+            "state": "recover / fire"
+          },
+          {
+            "seconds": 38.27,
+            "state": "icebreaker / fire"
+          }
+        ],
+        "fixture": "Furious, invulnerable keyboard flight. Stage 4 HP gates exercised at 12 and 23 seconds; no player damage used for tuning claims."
+      },
+      {
+        "stage": 3,
+        "kind": "cryospear",
+        "seconds": 42,
+        "seen": [
+          {
+            "seconds": 0.02,
+            "state": "recover / neutral"
+          },
+          {
+            "seconds": 1.12,
+            "state": "bastion-gates / neutral"
+          },
+          {
+            "seconds": 4.3,
+            "state": "recover / neutral"
+          },
+          {
+            "seconds": 4.99,
+            "state": "cannon-relay / neutral"
+          },
+          {
+            "seconds": 9.79,
+            "state": "recover / neutral"
+          },
+          {
+            "seconds": 9.81,
+            "state": "nuclear / neutral"
+          },
+          {
+            "seconds": 13.25,
+            "state": "nuclear / fire"
+          },
+          {
+            "seconds": 15.65,
+            "state": "recover / fire"
+          },
+          {
+            "seconds": 16.34,
+            "state": "orb-siege / fire"
+          },
+          {
+            "seconds": 20.02,
+            "state": "recover / fire"
+          },
+          {
+            "seconds": 20.7,
+            "state": "glacier-press / fire"
+          },
+          {
+            "seconds": 24.69,
+            "state": "recover / fire"
+          },
+          {
+            "seconds": 25.38,
+            "state": "form-change / fire"
+          },
+          {
+            "seconds": 26.13,
+            "state": "form-change / ice"
+          },
+          {
+            "seconds": 26.93,
+            "state": "cannon-relay / ice"
+          },
+          {
+            "seconds": 31.74,
+            "state": "recover / ice"
+          },
+          {
+            "seconds": 32.43,
+            "state": "bastion-gates / ice"
+          },
+          {
+            "seconds": 35.62,
+            "state": "recover / ice"
+          },
+          {
+            "seconds": 36.3,
+            "state": "form-change / ice"
+          },
+          {
+            "seconds": 37.06,
+            "state": "form-change / fire"
+          },
+          {
+            "seconds": 37.86,
+            "state": "cannon-relay / fire"
+          }
+        ],
+        "fixture": "Furious, invulnerable keyboard flight. Stage 4 HP gates exercised at 12 and 23 seconds; no player damage used for tuning claims."
+      }
+    ],
+    "errors": [],
+    "recorder": "_BUILD_SOURCE/record_encounters_0926.py"
+  },
+  "review": "http://127.0.0.1:8794/_shots/encounters_0926/review.html",
+  "limits": [
+    "Invulnerable encounter fixtures; not complete campaign playthroughs.",
+    "Player win rates and comparative difficulty still need hands-on playtesting."
+  ],
+  "source_sha256": {
+    "assets/game.js": "3ccf5d27d18c545360339384bbd996ea87b4745c4f1679437c8e4b43572a352f",
+    "assets/stage3_thermo.js": "7dd94f9545215d20af7921e1fb68fb0d1457b08bf9e81ba3a24eea9cd37bbd4d",
+    "assets/encounters_0926.js": "60c10a52cf1f107b151dcc284f170c8e3d6998cc129687fabb419228307ebfb2",
+    "index.html": "179604c2fdd3a0f098d9f6fc2cb1ea543de6d020c862118b50581e89e70f643f",
+    "_BUILD_SOURCE/test_fl.js": "3efa0047ad7cee9c49a5b1cd7088b8ce09371954ee039a4c0ea06cb2376f10d3",
+    "_BUILD_SOURCE/test_encounters_0926.cjs": "de8e2e6d84f64b10eb95f0629835803b37533b8f07f56355d456bcc49123f9b0"
+  },
+  "line_endings": {
+    "game_lf_only": true,
+    "test_crlf": true
+  },
+  "committed": false,
+  "pushed": false
+}

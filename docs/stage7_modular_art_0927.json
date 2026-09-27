@@ -1,0 +1,111 @@
+{
+  "tool": "built-in image_gen",
+  "mode": "generated/edit reference assets",
+  "directory": "assets/game/stage7_modular_0927",
+  "prompts": [
+    {
+      "file": "warden_parts.png",
+      "prompt": "Use case: precise-object-edit. Production 16-bit pixel-art modular game boss component sheet, true transparent background. Reference is the Toxic Portal Warden from Bullets of Fury: preserve its exact industrial olive/black armored identity, huge circular green reactor, two tall green toxic cylinders, heavy ED-209-like machinery. Rebuild into SEPARATE detached modular components, not whole assembled robots. A strict 4 columns by 2 rows equal-cell sheet, 1536x1024 total, 384x512 cells; generous empty transparent gutters. Cell 0: central torso ONLY with giant round green reactor and small front mask, NO legs, NO guns, NO side canisters. Cell1: long articulated LEFT front armored claw leg, upper joint at top center, claw toward bottom left. Cell2: RIGHT front leg mirror. Cell3: rear articulated left support leg, joint at top, foot at bottom. Cell4: rear right support leg mirror. Cell5: one detached six-barrel rotary chaingun turret pointing south/down, pivot at top center, barrels bottom. Cell6: one intact glowing green toxic vertical canister with steel caps, pipes. Cell7: detached heavy front face mask plate, dark metal, small green slit. Each component fully visible and isolated, matching scale/detail and reference colors; no duplicates, no text, no labels, no grid lines, no shadows/background, no assembled boss anywhere. These parts will be rigged and rotated programmatically. Crisp sprite pixels and black outline."
+    },
+    {
+      "file": "warden_parts.png",
+      "edit": "Use case: background-extraction. Edit this exact modular boss sheet: remove the entire dark brown/black background and every background glow, replacing it with genuine transparent alpha. Preserve every pixel inside all eight metal components, their dark black outlines, green glass, positioning, original 1536x1024 dimensions, and 4x2 layout. No new objects, no fake checkerboard, no solid colored background. Clean cutout for game sprites."
+    },
+    {
+      "file": "tank_parts.png",
+      "prompt": "Use case: stylized-concept. Asset: modular toxic siege tank sprite sheet for Bullets of Fury, finely shaded 16-bit pixel art black outlines, dark olive steel, green toxic glass, yellow hazard markings. Brand new distinctive low wide heavy tracked industrial sludge tank with bulldozer armored prow, twin independently rotating cannon pods and huge cylindrical toxic reactor. Exact 2x2 evenly spaced isolated component sheet on genuine transparent background, 1024x1024. Top left: complete tracked chassis ONLY facing straight down toward player, NO turret or cannons, pair of wide treads, reinforced wedge front, empty circular turret sockets. Top right: detached rotating heavy dual-barrel gun turret pointing down, fully visible. Bottom left: detached elevated toxic mortar drum/turret with glowing green chamber pointing down. Bottom right: detached central green reactor capsule. No fully assembled duplicate tank, no text, no grid, no backdrop, no ground shadow. Components centered individually within square cells with clear transparent margins. Every part cleanly cut out."
+    },
+    {
+      "file": "portal_16.png",
+      "prompt": "Use case: stylized-concept. Asset: upright standing toxic dimensional portal animation sprite sheet for a 16-bit arcade shooter. Strict 4 columns x 4 rows =16 equal square cells, 1536x1536, row major sequence. Actual transparent background outside each effect; black void INSIDE portal. NO ground disk, NO flat circle, NO violet/purple/blue. A tall vertical standing oval doorway viewed frontally at a slight top-down three-quarter angle, toxic green fire and black tendrils with gray/white highlights. First4frames a vertical green slit opens and grows. Middle8frames full-size oval black doorway swirling with writhing green flames, flowing energy. Last4frames collapse into narrowing slit and vanish into tiny fading green sparks. Ground contact at bottom of each cell, identical centered axis and baseline, margins, no text or labels or grid or scenery. Fine crunchy pixel clusters, authored sprite detail, ready to crop into16 frames. Consistent doorway silhouette tall enough for a giant spider robot."
+    },
+    {
+      "file": "explosion_16.png",
+      "prompt": "Use case: stylized-concept. Production 16-bit pixel-art TOXIC GREEN EXPLOSION animation spritesheet. EXACT 4 columns x 4 rows,16 frames in row-major chronological order,1024x1024, each 256x256 cell. Transparent background, no text, no grid. Explosion starts small white-green ignition, swells into brilliant lime green flame with black boiling smoke, expands into huge toxic blast with glowing green molten droplets, then billowing charcoal gray smoke with fading sickly green embers, finally tiny dispersed smoke flecks. Shape changes every frame, readable strong pixel shading, green/white/gray/black ONLY, no orange/red/blue/purple. Same fixed center each cell and consistent scale, margins. Arcade shooter destruction FX, not separate copies of identical explosion. Actual alpha transparency around the effect."
+    },
+    {
+      "file": "spew_16.png",
+      "prompt": "Use case: stylized-concept. A 16-frame animated TOXIC SLIME SPEW impact for 16-bit arcade game, a separate FX sprite sheet. Exactly4x4 equal cells on actual transparent alpha background,1024x1024. Row-major sequence: small neon green liquid eruption at ground, jets rising and spreading, large elastic black-green toxic spray crown with bright lime droplets, rain falling into splatters, small fading puddle flecks at end. Starts small, peaks frames6-9, fades at16. Fixed bottom center and scale, all sprites isolated with gutters, no touching neighboring cells, no text/grid/scenery. Crisp detailed pixel clusters, slimy shading, green-white highlights with dark black-green droplets. Not an explosion cloud, this is liquid spewing out separately."
+    },
+    {
+      "file": "toxic_orb_8.png",
+      "prompt": "Use case: precise-object-edit. Reference is the game's existing magma fireball. Make a black-and-green toxic variant, retaining its round silhouette, bright readable outline and 16-bit pixel shading, replacing orange lava with fluorescent toxic green liquid cracks and black sludge crust. Generate an 8-frame animation sheet, EXACT 4 columns x2 rows equal square cells,1024x512. Frame1 to8 the black crust rolls, green cracks pulse, little toxic droplets orbit the perimeter. Each orb same size and centered in cell, occupying65%cell; transparent alpha background, no text/grid/backdrop. Not orange fire, no purple or blue, no long tails. All frames fully isolated."
+    },
+    {
+      "file": "shield_8.png",
+      "prompt": "Use case: stylized-concept. 16-bit pixel-art game effect animation atlas,8 frames,4 columns x2 rows,1024x512, true transparent background and EMPTY TRANSPARENT center. A luminous TOXIC GREEN spiraling energy shield surrounding a boss torso: two helical curved bands of lime/white green energy swirl into a sphere-like cage, with green sparks and liquid wisps. Hollow visible center so boss can be seen through it. First frames spiral grows, middle frames coils wrap into protective globe, final frames coil loosens. Same center/scale each frame; effect fills75%of equal cell, transparent gutters, no backdrop/grid/text, no solid ball or opaque disk, no robot. Industrial toxic sci-fi energy. Fine pixel clusters green/black/white only."
+    },
+    {
+      "file": "warden_body_open_0927.png",
+      "source": "exec-4e4a9172-81e8-4e2a-bc94-9f7fd5371055.png",
+      "tool": "built-in image_gen",
+      "reference": "warden_parts.png",
+      "prompt": "Production game sprite edit. Deliver ONLY the BODY in the TOP LEFT of the approved Toxic Portal Warden sheet on a genuinely transparent background. Preserve its top-down/front three-quarter viewpoint, proportions, bronze/black/olive armor, circular luminous green reactor, hoses, side details, top connector and two EMPTY canister sockets. No legs, guns, canisters or extra pieces. Remove the skull-like faceplate painted at the bottom. Reveal a small round black mechanical laser-emitter socket with bright toxic-green glass lens, surrounded by dark recessed bronze mechanics in the exact same position. It must not resemble a face. Maintain outline/extents and compact lower mounting bracket. Match detailed 16-bit arcade pixel-art, hard dark outlines, tiny metallic highlights, readable at168x198. One isolated body, closely fitted portrait composition, true alpha; no fake checkerboard, environment, shadow, glow outside silhouette, text or labels."
+    }
+  ],
+  "assets": [
+    {
+      "path": "assets/game/stage7_modular_0927/explosion_16.png",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "sha256": "21bdebb190aa0d2c6eca0915317df1439817e7020d6f5d0ef531c4413ade2435"
+    },
+    {
+      "path": "assets/game/stage7_modular_0927/portal_16.png",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "sha256": "9ab25492c124071ef6b48d9ab2bab5ee26fa317c68fda57b4b133b63e1827ce7"
+    },
+    {
+      "path": "assets/game/stage7_modular_0927/shield_8.png",
+      "dimensions": [
+        1774,
+        887
+      ],
+      "mode": "RGBA",
+      "sha256": "52cdbdcfba984028148c81bf54dac0838fc5d85f3bf4f140425f359750250086"
+    },
+    {
+      "path": "assets/game/stage7_modular_0927/spew_16.png",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "sha256": "b92bab2ee4d848cb4bd1319844ffd3401323353b9439ebd303984770ae5d2133"
+    },
+    {
+      "path": "assets/game/stage7_modular_0927/tank_parts.png",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "sha256": "4d2db386dc4bb179edec5aaf74253cedd93519600f6576cb34119416a958aa0a"
+    },
+    {
+      "path": "assets/game/stage7_modular_0927/toxic_orb_8.png",
+      "dimensions": [
+        1774,
+        887
+      ],
+      "mode": "RGBA",
+      "sha256": "042c1c66b817e0f740d4d67bde4cf474b6d12402423c1353ecf4e473ace806a8"
+    },
+    {
+      "path": "assets/game/stage7_modular_0927/warden_parts.png",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "sha256": "8e13dc3e2c7430ef34402e582f884dd4fdc2c34117575df070c51943e188e05b"
+    }
+  ]
+}

@@ -1,0 +1,1908 @@
+{
+  "date": "2026-09-27",
+  "baseline": {
+    "passed": 5190,
+    "failed": 0
+  },
+  "suite": {
+    "passed": 5221,
+    "failed": 0,
+    "exitCode": 0,
+    "finalSummary": true,
+    "newFailureNames": [],
+    "log": "_shots\\toxic_modular_0927\\suite-release.log"
+  },
+  "syntax": "node --check passed for assets/game.js and assets/stage7_modular_0927.js",
+  "nativeMatrix": {
+    "matrix": [
+      {
+        "modes": [
+          "entry",
+          "recover",
+          "tank-cross",
+          "tank-mortar",
+          "tank-charge",
+          "tank-orbits"
+        ],
+        "parts": [],
+        "kinds": [
+          "s7shard",
+          "s7acid"
+        ],
+        "maxMove": 2.333333333333343,
+        "errors": [],
+        "bounds": 0,
+        "scrollStart": 2500,
+        "tank": true,
+        "diff": "normal",
+        "scrollEnd": 2512.168888888889,
+        "dead": false,
+        "state": "play",
+        "history": [
+          "recover",
+          "tank-cross",
+          "recover",
+          "tank-mortar",
+          "recover",
+          "tank-charge",
+          "recover",
+          "tank-orbits",
+          "recover",
+          "tank-cross",
+          "recover",
+          "tank-mortar",
+          "recover",
+          "tank-charge",
+          "recover",
+          "tank-orbits",
+          "recover",
+          "tank-cross",
+          "recover",
+          "tank-mortar",
+          "recover",
+          "tank-charge",
+          "recover",
+          "tank-orbits",
+          "recover"
+        ]
+      },
+      {
+        "modes": [
+          "entry",
+          "recover",
+          "tank-cross",
+          "tank-mortar",
+          "tank-charge",
+          "tank-orbits"
+        ],
+        "parts": [],
+        "kinds": [
+          "s7shard",
+          "s7acid"
+        ],
+        "maxMove": 2.6999999999999886,
+        "errors": [],
+        "bounds": 0,
+        "scrollStart": 2500,
+        "tank": true,
+        "diff": "hard",
+        "scrollEnd": 2500,
+        "dead": false,
+        "state": "play",
+        "history": [
+          "recover",
+          "tank-cross",
+          "recover",
+          "tank-mortar",
+          "recover",
+          "tank-charge",
+          "recover",
+          "tank-orbits",
+          "recover",
+          "tank-cross",
+          "recover",
+          "tank-mortar",
+          "recover",
+          "tank-charge",
+          "recover",
+          "tank-orbits",
+          "recover",
+          "tank-cross",
+          "recover",
+          "tank-mortar",
+          "recover",
+          "tank-charge",
+          "recover",
+          "tank-orbits",
+          "recover",
+          "tank-cross"
+        ]
+      },
+      {
+        "modes": [
+          "entry",
+          "recover",
+          "tank-cross",
+          "tank-mortar",
+          "tank-charge",
+          "tank-orbits"
+        ],
+        "parts": [],
+        "kinds": [
+          "s7shard",
+          "s7acid"
+        ],
+        "maxMove": 3.066666666666663,
+        "errors": [],
+        "bounds": 0,
+        "scrollStart": 2500,
+        "tank": true,
+        "diff": "furious",
+        "scrollEnd": 2500,
+        "dead": false,
+        "state": "play",
+        "history": [
+          "recover",
+          "tank-cross",
+          "recover",
+          "tank-mortar",
+          "recover",
+          "tank-charge",
+          "recover",
+          "tank-orbits",
+          "recover",
+          "tank-cross",
+          "recover",
+          "tank-mortar",
+          "recover",
+          "tank-charge",
+          "recover",
+          "tank-orbits",
+          "recover",
+          "tank-cross",
+          "recover",
+          "tank-mortar",
+          "recover",
+          "tank-charge",
+          "recover",
+          "tank-orbits",
+          "recover",
+          "tank-cross"
+        ]
+      },
+      {
+        "modes": [
+          "portal",
+          "entry",
+          "roar",
+          "recover",
+          "chase",
+          "swipeL",
+          "swipeR",
+          "swipeX",
+          "jump",
+          "chain",
+          "mortar",
+          "orbs",
+          "bounce",
+          "drop",
+          "stun",
+          "dead"
+        ],
+        "parts": [],
+        "kinds": [
+          "emissile",
+          "s7acid",
+          "s7shard"
+        ],
+        "maxMove": 93.84800976511386,
+        "errors": [],
+        "bounds": 0,
+        "scrollStart": 3594,
+        "tank": false,
+        "diff": "normal",
+        "scrollEnd": 3087.000000000041,
+        "dead": true,
+        "state": "stageclear",
+        "history": [
+          "entry",
+          "roar",
+          "recover",
+          "chase",
+          "swipeL",
+          "swipeR",
+          "swipeX",
+          "jump",
+          "recover",
+          "chain",
+          "recover",
+          "mortar",
+          "recover",
+          "orbs",
+          "recover",
+          "bounce",
+          "recover",
+          "jump",
+          "recover",
+          "chase",
+          "swipeL",
+          "swipeR",
+          "swipeX",
+          "jump",
+          "recover",
+          "recover",
+          "recover",
+          "drop",
+          "recover",
+          "recover",
+          "stun",
+          "recover",
+          "stun",
+          "recover",
+          "recover",
+          "dead"
+        ]
+      },
+      {
+        "modes": [
+          "portal",
+          "entry",
+          "roar",
+          "recover",
+          "chase",
+          "swipeL",
+          "swipeR",
+          "swipeX",
+          "jump",
+          "chain",
+          "mortar",
+          "orbs",
+          "bounce",
+          "drop",
+          "stun",
+          "dead"
+        ],
+        "parts": [],
+        "kinds": [
+          "emissile",
+          "s7acid",
+          "s7shard"
+        ],
+        "maxMove": 81.45531865306826,
+        "errors": [],
+        "bounds": 0,
+        "scrollStart": 3594,
+        "tank": false,
+        "diff": "hard",
+        "scrollEnd": 2937.8355555555963,
+        "dead": true,
+        "state": "stageclear",
+        "history": [
+          "entry",
+          "roar",
+          "recover",
+          "chase",
+          "swipeL",
+          "swipeR",
+          "swipeX",
+          "jump",
+          "recover",
+          "chain",
+          "recover",
+          "mortar",
+          "recover",
+          "orbs",
+          "recover",
+          "bounce",
+          "recover",
+          "jump",
+          "recover",
+          "chase",
+          "swipeL",
+          "swipeR",
+          "swipeX",
+          "jump",
+          "recover",
+          "chain",
+          "recover",
+          "recover",
+          "recover",
+          "drop",
+          "recover",
+          "recover",
+          "stun",
+          "recover",
+          "stun",
+          "recover",
+          "recover",
+          "dead"
+        ]
+      },
+      {
+        "modes": [
+          "portal",
+          "entry",
+          "roar",
+          "recover",
+          "chase",
+          "swipeL",
+          "swipeR",
+          "swipeX",
+          "jump",
+          "chain",
+          "mortar",
+          "orbs",
+          "bounce",
+          "drop",
+          "stun",
+          "dead"
+        ],
+        "parts": [],
+        "kinds": [
+          "emissile",
+          "s7acid",
+          "s7shard"
+        ],
+        "maxMove": 72.16244824611262,
+        "errors": [],
+        "bounds": 0,
+        "scrollStart": 3594,
+        "tank": false,
+        "diff": "furious",
+        "scrollEnd": 2774.8355555555963,
+        "dead": true,
+        "state": "stageclear",
+        "history": [
+          "entry",
+          "roar",
+          "recover",
+          "chase",
+          "swipeL",
+          "swipeR",
+          "swipeX",
+          "jump",
+          "recover",
+          "chain",
+          "recover",
+          "mortar",
+          "recover",
+          "orbs",
+          "recover",
+          "bounce",
+          "recover",
+          "jump",
+          "recover",
+          "chase",
+          "swipeL",
+          "swipeR",
+          "swipeX",
+          "jump",
+          "recover",
+          "chain",
+          "recover",
+          "recover",
+          "recover",
+          "drop",
+          "recover",
+          "recover",
+          "stun",
+          "recover",
+          "stun",
+          "recover",
+          "recover",
+          "dead"
+        ]
+      }
+    ],
+    "destruction": [
+      {
+        "id": "gunL",
+        "before": {
+          "phase": "front",
+          "hp": 3716,
+          "shield": null
+        },
+        "after": {
+          "phase": "front",
+          "mode": "recover",
+          "hp": 3399,
+          "shield": null,
+          "parts": [
+            [
+              "frontL",
+              476
+            ],
+            [
+              "frontR",
+              476
+            ],
+            [
+              "rearL",
+              352
+            ],
+            [
+              "rearR",
+              352
+            ],
+            [
+              "gunL",
+              0
+            ],
+            [
+              "gunR",
+              317
+            ]
+          ],
+          "targets": [
+            "toxic module frontL",
+            "toxic module frontR",
+            "toxic module gunR"
+          ]
+        }
+      },
+      {
+        "id": "frontL",
+        "before": {
+          "phase": "front",
+          "hp": 3399,
+          "shield": null
+        },
+        "after": {
+          "phase": "front",
+          "mode": "recover",
+          "hp": 2923,
+          "shield": null,
+          "parts": [
+            [
+              "frontL",
+              0
+            ],
+            [
+              "frontR",
+              476
+            ],
+            [
+              "rearL",
+              352
+            ],
+            [
+              "rearR",
+              352
+            ],
+            [
+              "gunL",
+              0
+            ],
+            [
+              "gunR",
+              317
+            ]
+          ],
+          "targets": [
+            "toxic module frontR",
+            "toxic module gunR"
+          ]
+        }
+      },
+      {
+        "id": "frontR",
+        "before": {
+          "phase": "front",
+          "hp": 2923,
+          "shield": null
+        },
+        "after": {
+          "phase": "rear",
+          "mode": "drop",
+          "hp": 2447,
+          "shield": null,
+          "parts": [
+            [
+              "frontL",
+              0
+            ],
+            [
+              "frontR",
+              0
+            ],
+            [
+              "rearL",
+              352
+            ],
+            [
+              "rearR",
+              352
+            ],
+            [
+              "gunL",
+              0
+            ],
+            [
+              "gunR",
+              317
+            ]
+          ],
+          "targets": [
+            "toxic module rearL",
+            "toxic module rearR",
+            "toxic module gunR"
+          ]
+        }
+      },
+      {
+        "id": "rearL",
+        "before": {
+          "phase": "rear",
+          "hp": 2447,
+          "shield": null
+        },
+        "after": {
+          "phase": "rear",
+          "mode": "recover",
+          "hp": 2095,
+          "shield": null,
+          "parts": [
+            [
+              "frontL",
+              0
+            ],
+            [
+              "frontR",
+              0
+            ],
+            [
+              "rearL",
+              0
+            ],
+            [
+              "rearR",
+              352
+            ],
+            [
+              "gunL",
+              0
+            ],
+            [
+              "gunR",
+              317
+            ]
+          ],
+          "targets": [
+            "toxic module rearR",
+            "toxic module gunR"
+          ]
+        }
+      },
+      {
+        "id": "rearR",
+        "before": {
+          "phase": "rear",
+          "hp": 2095,
+          "shield": null
+        },
+        "after": {
+          "phase": "shield",
+          "mode": "stun",
+          "hp": 1743,
+          "shield": 1,
+          "parts": [
+            [
+              "frontL",
+              0
+            ],
+            [
+              "frontR",
+              0
+            ],
+            [
+              "rearL",
+              0
+            ],
+            [
+              "rearR",
+              0
+            ],
+            [
+              "gunL",
+              0
+            ],
+            [
+              "gunR",
+              317
+            ]
+          ],
+          "targets": [
+            "toxic module gunR",
+            "toxic module core"
+          ]
+        }
+      },
+      {
+        "id": "shield",
+        "before": {
+          "phase": "shield",
+          "hp": 1743,
+          "shield": 1
+        },
+        "after": {
+          "phase": "core",
+          "mode": "stun",
+          "hp": 1373,
+          "shield": null,
+          "parts": [
+            [
+              "frontL",
+              0
+            ],
+            [
+              "frontR",
+              0
+            ],
+            [
+              "rearL",
+              0
+            ],
+            [
+              "rearR",
+              0
+            ],
+            [
+              "gunL",
+              0
+            ],
+            [
+              "gunR",
+              317
+            ]
+          ],
+          "targets": [
+            "toxic module gunR",
+            "toxic module core"
+          ]
+        }
+      },
+      {
+        "id": "gunR",
+        "before": {
+          "phase": "core",
+          "hp": 1373,
+          "shield": null
+        },
+        "after": {
+          "phase": "core",
+          "mode": "recover",
+          "hp": 1056,
+          "shield": null,
+          "parts": [
+            [
+              "frontL",
+              0
+            ],
+            [
+              "frontR",
+              0
+            ],
+            [
+              "rearL",
+              0
+            ],
+            [
+              "rearR",
+              0
+            ],
+            [
+              "gunL",
+              0
+            ],
+            [
+              "gunR",
+              0
+            ]
+          ],
+          "targets": [
+            "toxic module core"
+          ]
+        }
+      },
+      {
+        "id": "core",
+        "before": {
+          "phase": "core",
+          "hp": 1056,
+          "shield": null
+        },
+        "after": {
+          "phase": "core",
+          "mode": "dead",
+          "hp": 1,
+          "shield": null,
+          "parts": [
+            [
+              "frontL",
+              0
+            ],
+            [
+              "frontR",
+              0
+            ],
+            [
+              "rearL",
+              0
+            ],
+            [
+              "rearR",
+              0
+            ],
+            [
+              "gunL",
+              0
+            ],
+            [
+              "gunR",
+              0
+            ]
+          ],
+          "targets": []
+        }
+      },
+      {
+        "id": "gunL",
+        "before": {
+          "phase": "front",
+          "hp": 4647,
+          "shield": null
+        },
+        "after": {
+          "phase": "front",
+          "mode": "recover",
+          "hp": 4250,
+          "shield": null,
+          "parts": [
+            [
+              "frontL",
+              594
+            ],
+            [
+              "frontR",
+              594
+            ],
+            [
+              "rearL",
+              441
+            ],
+            [
+              "rearR",
+              441
+            ],
+            [
+              "gunL",
+              0
+            ],
+            [
+              "gunR",
+              397
+            ]
+          ],
+          "targets": [
+            "toxic module frontL",
+            "toxic module frontR",
+            "toxic module gunR"
+          ]
+        }
+      },
+      {
+        "id": "frontL",
+        "before": {
+          "phase": "front",
+          "hp": 4250,
+          "shield": null
+        },
+        "after": {
+          "phase": "front",
+          "mode": "recover",
+          "hp": 3656,
+          "shield": null,
+          "parts": [
+            [
+              "frontL",
+              0
+            ],
+            [
+              "frontR",
+              594
+            ],
+            [
+              "rearL",
+              441
+            ],
+            [
+              "rearR",
+              441
+            ],
+            [
+              "gunL",
+              0
+            ],
+            [
+              "gunR",
+              397
+            ]
+          ],
+          "targets": [
+            "toxic module frontR",
+            "toxic module gunR"
+          ]
+        }
+      },
+      {
+        "id": "frontR",
+        "before": {
+          "phase": "front",
+          "hp": 3656,
+          "shield": null
+        },
+        "after": {
+          "phase": "rear",
+          "mode": "drop",
+          "hp": 3062,
+          "shield": null,
+          "parts": [
+            [
+              "frontL",
+              0
+            ],
+            [
+              "frontR",
+              0
+            ],
+            [
+              "rearL",
+              441
+            ],
+            [
+              "rearR",
+              441
+            ],
+            [
+              "gunL",
+              0
+            ],
+            [
+              "gunR",
+              397
+            ]
+          ],
+          "targets": [
+            "toxic module rearL",
+            "toxic module rearR",
+            "toxic module gunR"
+          ]
+        }
+      },
+      {
+        "id": "rearL",
+        "before": {
+          "phase": "rear",
+          "hp": 3062,
+          "shield": null
+        },
+        "after": {
+          "phase": "rear",
+          "mode": "recover",
+          "hp": 2621,
+          "shield": null,
+          "parts": [
+            [
+              "frontL",
+              0
+            ],
+            [
+              "frontR",
+              0
+            ],
+            [
+              "rearL",
+              0
+            ],
+            [
+              "rearR",
+              441
+            ],
+            [
+              "gunL",
+              0
+            ],
+            [
+              "gunR",
+              397
+            ]
+          ],
+          "targets": [
+            "toxic module rearR",
+            "toxic module gunR"
+          ]
+        }
+      },
+      {
+        "id": "rearR",
+        "before": {
+          "phase": "rear",
+          "hp": 2621,
+          "shield": null
+        },
+        "after": {
+          "phase": "shield",
+          "mode": "stun",
+          "hp": 2180,
+          "shield": 1,
+          "parts": [
+            [
+              "frontL",
+              0
+            ],
+            [
+              "frontR",
+              0
+            ],
+            [
+              "rearL",
+              0
+            ],
+            [
+              "rearR",
+              0
+            ],
+            [
+              "gunL",
+              0
+            ],
+            [
+              "gunR",
+              397
+            ]
+          ],
+          "targets": [
+            "toxic module gunR",
+            "toxic module core"
+          ]
+        }
+      },
+      {
+        "id": "shield",
+        "before": {
+          "phase": "shield",
+          "hp": 2180,
+          "shield": 1
+        },
+        "after": {
+          "phase": "core",
+          "mode": "stun",
+          "hp": 1717,
+          "shield": null,
+          "parts": [
+            [
+              "frontL",
+              0
+            ],
+            [
+              "frontR",
+              0
+            ],
+            [
+              "rearL",
+              0
+            ],
+            [
+              "rearR",
+              0
+            ],
+            [
+              "gunL",
+              0
+            ],
+            [
+              "gunR",
+              397
+            ]
+          ],
+          "targets": [
+            "toxic module gunR",
+            "toxic module core"
+          ]
+        }
+      },
+      {
+        "id": "gunR",
+        "before": {
+          "phase": "core",
+          "hp": 1717,
+          "shield": null
+        },
+        "after": {
+          "phase": "core",
+          "mode": "recover",
+          "hp": 1320,
+          "shield": null,
+          "parts": [
+            [
+              "frontL",
+              0
+            ],
+            [
+              "frontR",
+              0
+            ],
+            [
+              "rearL",
+              0
+            ],
+            [
+              "rearR",
+              0
+            ],
+            [
+              "gunL",
+              0
+            ],
+            [
+              "gunR",
+              0
+            ]
+          ],
+          "targets": [
+            "toxic module core"
+          ]
+        }
+      },
+      {
+        "id": "core",
+        "before": {
+          "phase": "core",
+          "hp": 1320,
+          "shield": null
+        },
+        "after": {
+          "phase": "core",
+          "mode": "dead",
+          "hp": 1,
+          "shield": null,
+          "parts": [
+            [
+              "frontL",
+              0
+            ],
+            [
+              "frontR",
+              0
+            ],
+            [
+              "rearL",
+              0
+            ],
+            [
+              "rearR",
+              0
+            ],
+            [
+              "gunL",
+              0
+            ],
+            [
+              "gunR",
+              0
+            ]
+          ],
+          "targets": []
+        }
+      },
+      {
+        "id": "gunL",
+        "before": {
+          "phase": "front",
+          "hp": 5486,
+          "shield": null
+        },
+        "after": {
+          "phase": "front",
+          "mode": "recover",
+          "hp": 5018,
+          "shield": null,
+          "parts": [
+            [
+              "frontL",
+              702
+            ],
+            [
+              "frontR",
+              702
+            ],
+            [
+              "rearL",
+              520
+            ],
+            [
+              "rearR",
+              520
+            ],
+            [
+              "gunL",
+              0
+            ],
+            [
+              "gunR",
+              468
+            ]
+          ],
+          "targets": [
+            "toxic module frontL",
+            "toxic module frontR",
+            "toxic module gunR"
+          ]
+        }
+      },
+      {
+        "id": "frontL",
+        "before": {
+          "phase": "front",
+          "hp": 5018,
+          "shield": null
+        },
+        "after": {
+          "phase": "front",
+          "mode": "recover",
+          "hp": 4316,
+          "shield": null,
+          "parts": [
+            [
+              "frontL",
+              0
+            ],
+            [
+              "frontR",
+              702
+            ],
+            [
+              "rearL",
+              520
+            ],
+            [
+              "rearR",
+              520
+            ],
+            [
+              "gunL",
+              0
+            ],
+            [
+              "gunR",
+              468
+            ]
+          ],
+          "targets": [
+            "toxic module frontR",
+            "toxic module gunR"
+          ]
+        }
+      },
+      {
+        "id": "frontR",
+        "before": {
+          "phase": "front",
+          "hp": 4316,
+          "shield": null
+        },
+        "after": {
+          "phase": "rear",
+          "mode": "drop",
+          "hp": 3614,
+          "shield": null,
+          "parts": [
+            [
+              "frontL",
+              0
+            ],
+            [
+              "frontR",
+              0
+            ],
+            [
+              "rearL",
+              520
+            ],
+            [
+              "rearR",
+              520
+            ],
+            [
+              "gunL",
+              0
+            ],
+            [
+              "gunR",
+              468
+            ]
+          ],
+          "targets": [
+            "toxic module rearL",
+            "toxic module rearR",
+            "toxic module gunR"
+          ]
+        }
+      },
+      {
+        "id": "rearL",
+        "before": {
+          "phase": "rear",
+          "hp": 3614,
+          "shield": null
+        },
+        "after": {
+          "phase": "rear",
+          "mode": "recover",
+          "hp": 3094,
+          "shield": null,
+          "parts": [
+            [
+              "frontL",
+              0
+            ],
+            [
+              "frontR",
+              0
+            ],
+            [
+              "rearL",
+              0
+            ],
+            [
+              "rearR",
+              520
+            ],
+            [
+              "gunL",
+              0
+            ],
+            [
+              "gunR",
+              468
+            ]
+          ],
+          "targets": [
+            "toxic module rearR",
+            "toxic module gunR"
+          ]
+        }
+      },
+      {
+        "id": "rearR",
+        "before": {
+          "phase": "rear",
+          "hp": 3094,
+          "shield": null
+        },
+        "after": {
+          "phase": "shield",
+          "mode": "stun",
+          "hp": 2574,
+          "shield": 1,
+          "parts": [
+            [
+              "frontL",
+              0
+            ],
+            [
+              "frontR",
+              0
+            ],
+            [
+              "rearL",
+              0
+            ],
+            [
+              "rearR",
+              0
+            ],
+            [
+              "gunL",
+              0
+            ],
+            [
+              "gunR",
+              468
+            ]
+          ],
+          "targets": [
+            "toxic module gunR",
+            "toxic module core"
+          ]
+        }
+      },
+      {
+        "id": "shield",
+        "before": {
+          "phase": "shield",
+          "hp": 2574,
+          "shield": 1
+        },
+        "after": {
+          "phase": "core",
+          "mode": "stun",
+          "hp": 2028,
+          "shield": null,
+          "parts": [
+            [
+              "frontL",
+              0
+            ],
+            [
+              "frontR",
+              0
+            ],
+            [
+              "rearL",
+              0
+            ],
+            [
+              "rearR",
+              0
+            ],
+            [
+              "gunL",
+              0
+            ],
+            [
+              "gunR",
+              468
+            ]
+          ],
+          "targets": [
+            "toxic module gunR",
+            "toxic module core"
+          ]
+        }
+      },
+      {
+        "id": "gunR",
+        "before": {
+          "phase": "core",
+          "hp": 2028,
+          "shield": null
+        },
+        "after": {
+          "phase": "core",
+          "mode": "recover",
+          "hp": 1560,
+          "shield": null,
+          "parts": [
+            [
+              "frontL",
+              0
+            ],
+            [
+              "frontR",
+              0
+            ],
+            [
+              "rearL",
+              0
+            ],
+            [
+              "rearR",
+              0
+            ],
+            [
+              "gunL",
+              0
+            ],
+            [
+              "gunR",
+              0
+            ]
+          ],
+          "targets": [
+            "toxic module core"
+          ]
+        }
+      },
+      {
+        "id": "core",
+        "before": {
+          "phase": "core",
+          "hp": 1560,
+          "shield": null
+        },
+        "after": {
+          "phase": "core",
+          "mode": "dead",
+          "hp": 1,
+          "shield": null,
+          "parts": [
+            [
+              "frontL",
+              0
+            ],
+            [
+              "frontR",
+              0
+            ],
+            [
+              "rearL",
+              0
+            ],
+            [
+              "rearR",
+              0
+            ],
+            [
+              "gunL",
+              0
+            ],
+            [
+              "gunR",
+              0
+            ]
+          ],
+          "targets": []
+        }
+      }
+    ],
+    "errors": []
+  },
+  "nativeInputAndDamage": {
+    "tank": {
+      "bulletDamage": 17,
+      "bulletHitPart": true,
+      "missileRouted": true,
+      "missileDamage": 29,
+      "beamPart": "gunL",
+      "nativeBeamDamage": 11,
+      "generated": [
+        {
+          "key": "s7m_warden",
+          "ready": true,
+          "width": 1536
+        },
+        {
+          "key": "s7m_tank",
+          "ready": true,
+          "width": 1254
+        },
+        {
+          "key": "s7m_portal",
+          "ready": true,
+          "width": 1254
+        },
+        {
+          "key": "s7m_explosion",
+          "ready": true,
+          "width": 1254
+        },
+        {
+          "key": "s7m_spew",
+          "ready": true,
+          "width": 1254
+        },
+        {
+          "key": "s7m_orb",
+          "ready": true,
+          "width": 1774
+        },
+        {
+          "key": "s7m_shield",
+          "ready": true,
+          "width": 1774
+        }
+      ]
+    },
+    "warden": {
+      "bulletDamage": 17,
+      "bulletHitPart": true,
+      "missileRouted": true,
+      "missileDamage": 29,
+      "beamPart": "frontL",
+      "nativeBeamDamage": 11,
+      "generated": [
+        {
+          "key": "s7m_warden",
+          "ready": true,
+          "width": 1536
+        },
+        {
+          "key": "s7m_tank",
+          "ready": true,
+          "width": 1254
+        },
+        {
+          "key": "s7m_portal",
+          "ready": true,
+          "width": 1254
+        },
+        {
+          "key": "s7m_explosion",
+          "ready": true,
+          "width": 1254
+        },
+        {
+          "key": "s7m_spew",
+          "ready": true,
+          "width": 1254
+        },
+        {
+          "key": "s7m_orb",
+          "ready": true,
+          "width": 1774
+        },
+        {
+          "key": "s7m_shield",
+          "ready": true,
+          "width": 1774
+        }
+      ]
+    },
+    "passwordSelections": [
+      37,
+      38,
+      38,
+      37,
+      36,
+      36
+    ],
+    "cover": {
+      "source": [
+        1536,
+        2752
+      ],
+      "canvas": [
+        960,
+        1024
+      ],
+      "beats": [
+        {
+          "k": "sil",
+          "p": "cole",
+          "t": "EARTH IS IN TROUBLE",
+          "d": 6.5
+        },
+        {
+          "k": "sil",
+          "p": "decker",
+          "t": "OUR WORLD NEEDS US",
+          "d": 6.5
+        },
+        {
+          "k": "sil",
+          "p": "lizzie",
+          "t": "FURY FIGHTERS, LAUNCH!",
+          "d": 6.5
+        },
+        {
+          "k": "cover",
+          "d": 9
+        }
+      ]
+    },
+    "errors": []
+  },
+  "recordings": {
+    "clips": [
+      {
+        "name": "tank",
+        "seconds": 25,
+        "forcedModules": false,
+        "seen": [
+          {
+            "t": 0.02,
+            "state": "entry/tank"
+          },
+          {
+            "t": 3.57,
+            "state": "recover/tank"
+          },
+          {
+            "t": 4.48,
+            "state": "tank-cross/tank"
+          },
+          {
+            "t": 7.31,
+            "state": "recover/tank"
+          },
+          {
+            "t": 8.22,
+            "state": "tank-mortar/tank"
+          },
+          {
+            "t": 11.02,
+            "state": "recover/tank"
+          },
+          {
+            "t": 11.97,
+            "state": "tank-charge/tank"
+          },
+          {
+            "t": 14.77,
+            "state": "recover/tank"
+          },
+          {
+            "t": 15.68,
+            "state": "tank-orbits/tank"
+          },
+          {
+            "t": 18.48,
+            "state": "recover/tank"
+          },
+          {
+            "t": 19.49,
+            "state": "tank-cross/tank"
+          },
+          {
+            "t": 22.34,
+            "state": "recover/tank"
+          },
+          {
+            "t": 23.25,
+            "state": "tank-mortar/tank"
+          }
+        ]
+      },
+      {
+        "name": "warden_attacks",
+        "seconds": 49,
+        "forcedModules": false,
+        "seen": [
+          {
+            "t": 0.02,
+            "state": "portal/front"
+          },
+          {
+            "t": 1.5,
+            "state": "entry/front"
+          },
+          {
+            "t": 3.26,
+            "state": "roar/front"
+          },
+          {
+            "t": 5.92,
+            "state": "recover/front"
+          },
+          {
+            "t": 6.83,
+            "state": "chase/front"
+          },
+          {
+            "t": 9.54,
+            "state": "swipeL/front"
+          },
+          {
+            "t": 11.07,
+            "state": "swipeR/front"
+          },
+          {
+            "t": 12.58,
+            "state": "swipeX/front"
+          },
+          {
+            "t": 14.08,
+            "state": "jump/front"
+          },
+          {
+            "t": 17.92,
+            "state": "recover/front"
+          },
+          {
+            "t": 18.83,
+            "state": "chain/front"
+          },
+          {
+            "t": 21.71,
+            "state": "recover/front"
+          },
+          {
+            "t": 22.62,
+            "state": "mortar/front"
+          },
+          {
+            "t": 25.42,
+            "state": "recover/front"
+          },
+          {
+            "t": 26.34,
+            "state": "orbs/front"
+          },
+          {
+            "t": 29.14,
+            "state": "recover/front"
+          },
+          {
+            "t": 30.05,
+            "state": "bounce/front"
+          },
+          {
+            "t": 32.61,
+            "state": "recover/front"
+          },
+          {
+            "t": 33.52,
+            "state": "jump/front"
+          },
+          {
+            "t": 37.33,
+            "state": "recover/front"
+          },
+          {
+            "t": 38.24,
+            "state": "chase/front"
+          },
+          {
+            "t": 40.94,
+            "state": "swipeL/front"
+          },
+          {
+            "t": 42.45,
+            "state": "swipeR/front"
+          },
+          {
+            "t": 43.95,
+            "state": "swipeX/front"
+          },
+          {
+            "t": 45.46,
+            "state": "jump/front"
+          }
+        ]
+      },
+      {
+        "name": "warden_parts",
+        "seconds": 40,
+        "forcedModules": true,
+        "seen": [
+          {
+            "t": 0.02,
+            "state": "recover/front"
+          },
+          {
+            "t": 1.07,
+            "state": "chase/front"
+          },
+          {
+            "t": 3.01,
+            "state": "recover/front"
+          },
+          {
+            "t": 3.9,
+            "state": "chain/front"
+          },
+          {
+            "t": 6,
+            "state": "recover/front"
+          },
+          {
+            "t": 6.9,
+            "state": "mortar/front"
+          },
+          {
+            "t": 9.01,
+            "state": "drop/rear"
+          },
+          {
+            "t": 10.45,
+            "state": "recover/rear"
+          },
+          {
+            "t": 11.36,
+            "state": "chain/rear"
+          },
+          {
+            "t": 13.01,
+            "state": "recover/rear"
+          },
+          {
+            "t": 13.9,
+            "state": "orbs/rear"
+          },
+          {
+            "t": 16,
+            "state": "stun/shield"
+          },
+          {
+            "t": 17.71,
+            "state": "mortar/shield"
+          },
+          {
+            "t": 20,
+            "state": "stun/core"
+          },
+          {
+            "t": 21.65,
+            "state": "aim/core"
+          },
+          {
+            "t": 24.45,
+            "state": "recover/core"
+          },
+          {
+            "t": 25.36,
+            "state": "mortar/core"
+          },
+          {
+            "t": 28,
+            "state": "recover/core"
+          },
+          {
+            "t": 28.9,
+            "state": "laser/core"
+          },
+          {
+            "t": 31.7,
+            "state": "recover/core"
+          },
+          {
+            "t": 32.61,
+            "state": "laser/core"
+          },
+          {
+            "t": 35.41,
+            "state": "recover/core"
+          },
+          {
+            "t": 36,
+            "state": "dead/core"
+          }
+        ]
+      }
+    ],
+    "errors": [],
+    "fixture": "Native game loop/canvas. Hard difficulty, invulnerable pilot, keyboard movement; parts clip forces named module destruction. Silent visual recordings, not campaign victories."
+  },
+  "review": {
+    "status": 200,
+    "videos": [
+      {
+        "src": "tank.webm",
+        "width": 960,
+        "height": 1024,
+        "ready": 4
+      },
+      {
+        "src": "warden_attacks.webm",
+        "width": 960,
+        "height": 1024,
+        "ready": 4
+      },
+      {
+        "src": "warden_parts.webm",
+        "width": 960,
+        "height": 1024,
+        "ready": 4
+      }
+    ],
+    "images": [
+      {
+        "src": "cover_verified.png",
+        "ready": true
+      },
+      {
+        "src": "title_verified.png",
+        "ready": true
+      },
+      {
+        "src": "password_verified.png",
+        "ready": true
+      }
+    ],
+    "errors": []
+  },
+  "sourceSha256": {
+    "assets\\game.js": "5ce41656c84f5b201c9dd5013a54e234f7b092bd1e463013685b8ce8f4a3719e",
+    "assets\\stage7_modular_0927.js": "26f84922350691212a09d16d0d011cfb05e8cd0bc8caa32146d581cbf6e0149f",
+    "index.html": "1303b5ad38880c142a06f13fa7fbd24d593ae15e2f7ea076ee16500b7a69c97c"
+  },
+  "gameLF": true,
+  "suiteCRLF": true,
+  "limitations": [
+    "Recordings use invulnerability and forced module breaks for progression inspection. They are silent visual clips.",
+    "No claim of full human campaign completion or final balance on physical controller."
+  ],
+  "committed": false,
+  "pushed": false
+}

@@ -1,0 +1,62 @@
+{
+  "import": {
+    "source": "C:\\Users\\Mdogg\\Desktop\\reaperman.wav",
+    "preserved_source": "assets/game/music/originals_0927/reaperman.wav",
+    "source_sha256": "725fe1247e8d565a9d2aecc63efd481df5be8446faaf84ae74006cce832b67d2",
+    "active": "assets/game/music/boss7_reaperman_0927.mp3",
+    "archive": "assets/game/music/unused13 - stage7b.mp3",
+    "archive_sha256": "f13b2120efb53fcdf6ce2df57a0202d70c89c1a47c48da506f319903cdb80943",
+    "old_levels_db": {
+      "mean_volume": -16.1,
+      "max_volume": -2.1
+    },
+    "input_levels_db": {
+      "mean_volume": -11.0,
+      "max_volume": 0.0
+    },
+    "gain_db": -5.100000000000001,
+    "encoded_levels_db": {
+      "mean_volume": -16.5,
+      "max_volume": -4.4
+    }
+  },
+  "browser": {
+    "rows": [
+      {
+        "key": "boss7",
+        "src": "assets/game/music/boss7_reaperman_0927.mp3",
+        "duration": 135.96,
+        "channels": 2,
+        "peak": 0.5904788374900818,
+        "playing": true,
+        "currentTime": 0.242803,
+        "error": null
+      },
+      {
+        "key": "unused13",
+        "src": "assets/game/music/unused13 - stage7b.mp3",
+        "duration": 114.71995833333334,
+        "channels": 2,
+        "peak": 0.7561109662055969,
+        "playing": true,
+        "currentTime": 0.251807,
+        "error": null
+      }
+    ],
+    "bossAlias": "assets/game/music/boss7_reaperman_0927.mp3",
+    "field": "assets/game/music/stage7_over_the_horizon_0925.mp3",
+    "errors": []
+  },
+  "suite": {
+    "passed": 5221,
+    "failed": 0,
+    "exit": 0,
+    "final_banner": true,
+    "baseline_passed": 5221,
+    "baseline_failures": [],
+    "new_failures": []
+  },
+  "syntax": "game.js and manifest.js passed",
+  "manifest_scope": "boss7, boss7mus, unused13 only",
+  "line_endings": "game LF; test CRLF"
+}

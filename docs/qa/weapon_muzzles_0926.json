@@ -1,0 +1,1903 @@
+{
+  "players": [
+    {
+      "pilot": "cole",
+      "weapon": 0,
+      "shots": 4,
+      "kinds": [
+        "mg",
+        "mg",
+        "mg",
+        "mg"
+      ],
+      "flashes": [
+        {
+          "family": "mg",
+          "x": 323.5,
+          "y": 336,
+          "life": 0.13
+        },
+        {
+          "family": "mg",
+          "x": 334.5,
+          "y": 336,
+          "life": 0.13
+        },
+        {
+          "family": "mg",
+          "x": 345.5,
+          "y": 336,
+          "life": 0.13
+        },
+        {
+          "family": "mg",
+          "x": 356.5,
+          "y": 336,
+          "life": 0.13
+        }
+      ],
+      "held": false
+    },
+    {
+      "pilot": "cole",
+      "weapon": 1,
+      "shots": 5,
+      "kinds": [
+        "spread",
+        "spread",
+        "spread",
+        "spread",
+        "spread"
+      ],
+      "flashes": [
+        {
+          "family": "spread",
+          "x": 340,
+          "y": 338,
+          "life": 0.13
+        }
+      ],
+      "held": false
+    },
+    {
+      "pilot": "cole",
+      "weapon": 2,
+      "shots": 3,
+      "kinds": [
+        "missile",
+        "missile",
+        "missile"
+      ],
+      "flashes": [
+        {
+          "family": "missile",
+          "x": 326,
+          "y": 342,
+          "life": 0.13
+        },
+        {
+          "family": "missile",
+          "x": 340,
+          "y": 342,
+          "life": 0.13
+        },
+        {
+          "family": "missile",
+          "x": 354,
+          "y": 342,
+          "life": 0.13
+        }
+      ],
+      "held": false
+    },
+    {
+      "pilot": "cole",
+      "weapon": 3,
+      "shots": 1,
+      "kinds": [
+        "beam"
+      ],
+      "flashes": [],
+      "held": true
+    },
+    {
+      "pilot": "cole",
+      "weapon": 5,
+      "shots": 1,
+      "kinds": [
+        "orb"
+      ],
+      "flashes": [
+        {
+          "family": "orb",
+          "x": 340,
+          "y": 334,
+          "life": 0.13
+        }
+      ],
+      "held": false
+    },
+    {
+      "pilot": "cole",
+      "weapon": 7,
+      "shots": 2,
+      "kinds": [
+        "mg",
+        "mg"
+      ],
+      "flashes": [
+        {
+          "family": "chaingun",
+          "x": 335,
+          "y": 335,
+          "life": 0.13
+        },
+        {
+          "family": "chaingun",
+          "x": 345,
+          "y": 335,
+          "life": 0.13
+        }
+      ],
+      "held": false
+    },
+    {
+      "pilot": "axel",
+      "weapon": 0,
+      "shots": 4,
+      "kinds": [
+        "mg",
+        "mg",
+        "mg",
+        "mg"
+      ],
+      "flashes": [
+        {
+          "family": "mg",
+          "x": 323.5,
+          "y": 336,
+          "life": 0.13
+        },
+        {
+          "family": "mg",
+          "x": 334.5,
+          "y": 336,
+          "life": 0.13
+        },
+        {
+          "family": "mg",
+          "x": 345.5,
+          "y": 336,
+          "life": 0.13
+        },
+        {
+          "family": "mg",
+          "x": 356.5,
+          "y": 336,
+          "life": 0.13
+        }
+      ],
+      "held": false
+    },
+    {
+      "pilot": "axel",
+      "weapon": 1,
+      "shots": 5,
+      "kinds": [
+        "spread",
+        "spread",
+        "spread",
+        "spread",
+        "spread"
+      ],
+      "flashes": [
+        {
+          "family": "spread",
+          "x": 340,
+          "y": 338,
+          "life": 0.13
+        }
+      ],
+      "held": false
+    },
+    {
+      "pilot": "axel",
+      "weapon": 2,
+      "shots": 3,
+      "kinds": [
+        "missile",
+        "missile",
+        "missile"
+      ],
+      "flashes": [
+        {
+          "family": "missile",
+          "x": 326,
+          "y": 342,
+          "life": 0.13
+        },
+        {
+          "family": "missile",
+          "x": 340,
+          "y": 342,
+          "life": 0.13
+        },
+        {
+          "family": "missile",
+          "x": 354,
+          "y": 342,
+          "life": 0.13
+        }
+      ],
+      "held": false
+    },
+    {
+      "pilot": "axel",
+      "weapon": 3,
+      "shots": 1,
+      "kinds": [
+        "beam"
+      ],
+      "flashes": [],
+      "held": true
+    },
+    {
+      "pilot": "axel",
+      "weapon": 5,
+      "shots": 1,
+      "kinds": [
+        "orb"
+      ],
+      "flashes": [
+        {
+          "family": "orb",
+          "x": 340,
+          "y": 334,
+          "life": 0.13
+        }
+      ],
+      "held": false
+    },
+    {
+      "pilot": "axel",
+      "weapon": 7,
+      "shots": 2,
+      "kinds": [
+        "mg",
+        "mg"
+      ],
+      "flashes": [
+        {
+          "family": "chaingun",
+          "x": 335,
+          "y": 335,
+          "life": 0.13
+        },
+        {
+          "family": "chaingun",
+          "x": 345,
+          "y": 335,
+          "life": 0.13
+        }
+      ],
+      "held": false
+    },
+    {
+      "pilot": "decker",
+      "weapon": 0,
+      "shots": 4,
+      "kinds": [
+        "mg",
+        "mg",
+        "mg",
+        "mg"
+      ],
+      "flashes": [
+        {
+          "family": "mg",
+          "x": 323.5,
+          "y": 336,
+          "life": 0.13
+        },
+        {
+          "family": "mg",
+          "x": 334.5,
+          "y": 336,
+          "life": 0.13
+        },
+        {
+          "family": "mg",
+          "x": 345.5,
+          "y": 336,
+          "life": 0.13
+        },
+        {
+          "family": "mg",
+          "x": 356.5,
+          "y": 336,
+          "life": 0.13
+        }
+      ],
+      "held": false
+    },
+    {
+      "pilot": "decker",
+      "weapon": 1,
+      "shots": 5,
+      "kinds": [
+        "spread",
+        "spread",
+        "spread",
+        "spread",
+        "spread"
+      ],
+      "flashes": [
+        {
+          "family": "spread",
+          "x": 340,
+          "y": 338,
+          "life": 0.13
+        }
+      ],
+      "held": false
+    },
+    {
+      "pilot": "decker",
+      "weapon": 2,
+      "shots": 3,
+      "kinds": [
+        "missile",
+        "missile",
+        "missile"
+      ],
+      "flashes": [
+        {
+          "family": "missile",
+          "x": 326,
+          "y": 342,
+          "life": 0.13
+        },
+        {
+          "family": "missile",
+          "x": 340,
+          "y": 342,
+          "life": 0.13
+        },
+        {
+          "family": "missile",
+          "x": 354,
+          "y": 342,
+          "life": 0.13
+        }
+      ],
+      "held": false
+    },
+    {
+      "pilot": "decker",
+      "weapon": 3,
+      "shots": 1,
+      "kinds": [
+        "beam"
+      ],
+      "flashes": [],
+      "held": true
+    },
+    {
+      "pilot": "decker",
+      "weapon": 5,
+      "shots": 1,
+      "kinds": [
+        "orb"
+      ],
+      "flashes": [
+        {
+          "family": "orb",
+          "x": 340,
+          "y": 334,
+          "life": 0.13
+        }
+      ],
+      "held": false
+    },
+    {
+      "pilot": "decker",
+      "weapon": 7,
+      "shots": 2,
+      "kinds": [
+        "mg",
+        "mg"
+      ],
+      "flashes": [
+        {
+          "family": "chaingun",
+          "x": 335,
+          "y": 335,
+          "life": 0.13
+        },
+        {
+          "family": "chaingun",
+          "x": 345,
+          "y": 335,
+          "life": 0.13
+        }
+      ],
+      "held": false
+    },
+    {
+      "pilot": "falva",
+      "weapon": 0,
+      "shots": 4,
+      "kinds": [
+        "mg",
+        "mg",
+        "mg",
+        "mg"
+      ],
+      "flashes": [
+        {
+          "family": "mg",
+          "x": 323.5,
+          "y": 336,
+          "life": 0.13
+        },
+        {
+          "family": "mg",
+          "x": 334.5,
+          "y": 336,
+          "life": 0.13
+        },
+        {
+          "family": "mg",
+          "x": 345.5,
+          "y": 336,
+          "life": 0.13
+        },
+        {
+          "family": "mg",
+          "x": 356.5,
+          "y": 336,
+          "life": 0.13
+        }
+      ],
+      "held": false
+    },
+    {
+      "pilot": "falva",
+      "weapon": 1,
+      "shots": 5,
+      "kinds": [
+        "spread",
+        "spread",
+        "spread",
+        "spread",
+        "spread"
+      ],
+      "flashes": [
+        {
+          "family": "spread",
+          "x": 340,
+          "y": 338,
+          "life": 0.13
+        }
+      ],
+      "held": false
+    },
+    {
+      "pilot": "falva",
+      "weapon": 2,
+      "shots": 3,
+      "kinds": [
+        "missile",
+        "missile",
+        "missile"
+      ],
+      "flashes": [
+        {
+          "family": "missile",
+          "x": 326,
+          "y": 342,
+          "life": 0.13
+        },
+        {
+          "family": "missile",
+          "x": 340,
+          "y": 342,
+          "life": 0.13
+        },
+        {
+          "family": "missile",
+          "x": 354,
+          "y": 342,
+          "life": 0.13
+        }
+      ],
+      "held": false
+    },
+    {
+      "pilot": "falva",
+      "weapon": 3,
+      "shots": 1,
+      "kinds": [
+        "beam"
+      ],
+      "flashes": [],
+      "held": true
+    },
+    {
+      "pilot": "falva",
+      "weapon": 5,
+      "shots": 1,
+      "kinds": [
+        "orb"
+      ],
+      "flashes": [
+        {
+          "family": "orb",
+          "x": 340,
+          "y": 334,
+          "life": 0.13
+        }
+      ],
+      "held": false
+    },
+    {
+      "pilot": "falva",
+      "weapon": 7,
+      "shots": 2,
+      "kinds": [
+        "mg",
+        "mg"
+      ],
+      "flashes": [
+        {
+          "family": "chaingun",
+          "x": 335,
+          "y": 335,
+          "life": 0.13
+        },
+        {
+          "family": "chaingun",
+          "x": 345,
+          "y": 335,
+          "life": 0.13
+        }
+      ],
+      "held": false
+    },
+    {
+      "pilot": "freezer",
+      "weapon": 0,
+      "shots": 4,
+      "kinds": [
+        "mg",
+        "mg",
+        "mg",
+        "mg"
+      ],
+      "flashes": [
+        {
+          "family": "mg",
+          "x": 323.5,
+          "y": 336,
+          "life": 0.13
+        },
+        {
+          "family": "mg",
+          "x": 334.5,
+          "y": 336,
+          "life": 0.13
+        },
+        {
+          "family": "mg",
+          "x": 345.5,
+          "y": 336,
+          "life": 0.13
+        },
+        {
+          "family": "mg",
+          "x": 356.5,
+          "y": 336,
+          "life": 0.13
+        }
+      ],
+      "held": false
+    },
+    {
+      "pilot": "freezer",
+      "weapon": 1,
+      "shots": 5,
+      "kinds": [
+        "spread",
+        "spread",
+        "spread",
+        "spread",
+        "spread"
+      ],
+      "flashes": [
+        {
+          "family": "spread",
+          "x": 340,
+          "y": 338,
+          "life": 0.13
+        }
+      ],
+      "held": false
+    },
+    {
+      "pilot": "freezer",
+      "weapon": 2,
+      "shots": 3,
+      "kinds": [
+        "missile",
+        "missile",
+        "missile"
+      ],
+      "flashes": [
+        {
+          "family": "missile",
+          "x": 326,
+          "y": 342,
+          "life": 0.13
+        },
+        {
+          "family": "missile",
+          "x": 340,
+          "y": 342,
+          "life": 0.13
+        },
+        {
+          "family": "missile",
+          "x": 354,
+          "y": 342,
+          "life": 0.13
+        }
+      ],
+      "held": false
+    },
+    {
+      "pilot": "freezer",
+      "weapon": 3,
+      "shots": 1,
+      "kinds": [
+        "beam"
+      ],
+      "flashes": [],
+      "held": true
+    },
+    {
+      "pilot": "freezer",
+      "weapon": 5,
+      "shots": 1,
+      "kinds": [
+        "orb"
+      ],
+      "flashes": [
+        {
+          "family": "orb",
+          "x": 340,
+          "y": 334,
+          "life": 0.13
+        }
+      ],
+      "held": false
+    },
+    {
+      "pilot": "freezer",
+      "weapon": 7,
+      "shots": 2,
+      "kinds": [
+        "mg",
+        "mg"
+      ],
+      "flashes": [
+        {
+          "family": "chaingun",
+          "x": 335,
+          "y": 335,
+          "life": 0.13
+        },
+        {
+          "family": "chaingun",
+          "x": 345,
+          "y": 335,
+          "life": 0.13
+        }
+      ],
+      "held": false
+    },
+    {
+      "pilot": "juggernaut",
+      "weapon": 0,
+      "shots": 4,
+      "kinds": [
+        "mg",
+        "mg",
+        "mg",
+        "mg"
+      ],
+      "flashes": [
+        {
+          "family": "mg",
+          "x": 323.5,
+          "y": 336,
+          "life": 0.13
+        },
+        {
+          "family": "mg",
+          "x": 334.5,
+          "y": 336,
+          "life": 0.13
+        },
+        {
+          "family": "mg",
+          "x": 345.5,
+          "y": 336,
+          "life": 0.13
+        },
+        {
+          "family": "mg",
+          "x": 356.5,
+          "y": 336,
+          "life": 0.13
+        }
+      ],
+      "held": false
+    },
+    {
+      "pilot": "juggernaut",
+      "weapon": 1,
+      "shots": 5,
+      "kinds": [
+        "spread",
+        "spread",
+        "spread",
+        "spread",
+        "spread"
+      ],
+      "flashes": [
+        {
+          "family": "spread",
+          "x": 340,
+          "y": 338,
+          "life": 0.13
+        }
+      ],
+      "held": false
+    },
+    {
+      "pilot": "juggernaut",
+      "weapon": 2,
+      "shots": 3,
+      "kinds": [
+        "missile",
+        "missile",
+        "missile"
+      ],
+      "flashes": [
+        {
+          "family": "missile",
+          "x": 326,
+          "y": 342,
+          "life": 0.13
+        },
+        {
+          "family": "missile",
+          "x": 340,
+          "y": 342,
+          "life": 0.13
+        },
+        {
+          "family": "missile",
+          "x": 354,
+          "y": 342,
+          "life": 0.13
+        }
+      ],
+      "held": false
+    },
+    {
+      "pilot": "juggernaut",
+      "weapon": 3,
+      "shots": 1,
+      "kinds": [
+        "beam"
+      ],
+      "flashes": [],
+      "held": true
+    },
+    {
+      "pilot": "juggernaut",
+      "weapon": 5,
+      "shots": 1,
+      "kinds": [
+        "orb"
+      ],
+      "flashes": [
+        {
+          "family": "orb",
+          "x": 340,
+          "y": 334,
+          "life": 0.13
+        }
+      ],
+      "held": false
+    },
+    {
+      "pilot": "juggernaut",
+      "weapon": 7,
+      "shots": 2,
+      "kinds": [
+        "mg",
+        "mg"
+      ],
+      "flashes": [
+        {
+          "family": "chaingun",
+          "x": 335,
+          "y": 335,
+          "life": 0.13
+        },
+        {
+          "family": "chaingun",
+          "x": 345,
+          "y": 335,
+          "life": 0.13
+        }
+      ],
+      "held": false
+    },
+    {
+      "pilot": "lizzie",
+      "weapon": 0,
+      "shots": 4,
+      "kinds": [
+        "mg",
+        "mg",
+        "mg",
+        "mg"
+      ],
+      "flashes": [
+        {
+          "family": "mg",
+          "x": 323.5,
+          "y": 336,
+          "life": 0.13
+        },
+        {
+          "family": "mg",
+          "x": 334.5,
+          "y": 336,
+          "life": 0.13
+        },
+        {
+          "family": "mg",
+          "x": 345.5,
+          "y": 336,
+          "life": 0.13
+        },
+        {
+          "family": "mg",
+          "x": 356.5,
+          "y": 336,
+          "life": 0.13
+        }
+      ],
+      "held": false
+    },
+    {
+      "pilot": "lizzie",
+      "weapon": 1,
+      "shots": 5,
+      "kinds": [
+        "spread",
+        "spread",
+        "spread",
+        "spread",
+        "spread"
+      ],
+      "flashes": [
+        {
+          "family": "spread",
+          "x": 340,
+          "y": 338,
+          "life": 0.13
+        }
+      ],
+      "held": false
+    },
+    {
+      "pilot": "lizzie",
+      "weapon": 2,
+      "shots": 3,
+      "kinds": [
+        "missile",
+        "missile",
+        "missile"
+      ],
+      "flashes": [
+        {
+          "family": "missile",
+          "x": 326,
+          "y": 342,
+          "life": 0.13
+        },
+        {
+          "family": "missile",
+          "x": 340,
+          "y": 342,
+          "life": 0.13
+        },
+        {
+          "family": "missile",
+          "x": 354,
+          "y": 342,
+          "life": 0.13
+        }
+      ],
+      "held": false
+    },
+    {
+      "pilot": "lizzie",
+      "weapon": 3,
+      "shots": 1,
+      "kinds": [
+        "beam"
+      ],
+      "flashes": [],
+      "held": true
+    },
+    {
+      "pilot": "lizzie",
+      "weapon": 5,
+      "shots": 1,
+      "kinds": [
+        "orb"
+      ],
+      "flashes": [
+        {
+          "family": "orb",
+          "x": 340,
+          "y": 334,
+          "life": 0.13
+        }
+      ],
+      "held": false
+    },
+    {
+      "pilot": "lizzie",
+      "weapon": 7,
+      "shots": 2,
+      "kinds": [
+        "mg",
+        "mg"
+      ],
+      "flashes": [
+        {
+          "family": "chaingun",
+          "x": 335,
+          "y": 335,
+          "life": 0.13
+        },
+        {
+          "family": "chaingun",
+          "x": 345,
+          "y": 335,
+          "life": 0.13
+        }
+      ],
+      "held": false
+    },
+    {
+      "pilot": "maverick",
+      "weapon": 0,
+      "shots": 4,
+      "kinds": [
+        "mg",
+        "mg",
+        "mg",
+        "mg"
+      ],
+      "flashes": [
+        {
+          "family": "mg",
+          "x": 323.5,
+          "y": 336,
+          "life": 0.13
+        },
+        {
+          "family": "mg",
+          "x": 334.5,
+          "y": 336,
+          "life": 0.13
+        },
+        {
+          "family": "mg",
+          "x": 345.5,
+          "y": 336,
+          "life": 0.13
+        },
+        {
+          "family": "mg",
+          "x": 356.5,
+          "y": 336,
+          "life": 0.13
+        }
+      ],
+      "held": false
+    },
+    {
+      "pilot": "maverick",
+      "weapon": 1,
+      "shots": 5,
+      "kinds": [
+        "spread",
+        "spread",
+        "spread",
+        "spread",
+        "spread"
+      ],
+      "flashes": [
+        {
+          "family": "spread",
+          "x": 340,
+          "y": 338,
+          "life": 0.13
+        }
+      ],
+      "held": false
+    },
+    {
+      "pilot": "maverick",
+      "weapon": 2,
+      "shots": 3,
+      "kinds": [
+        "missile",
+        "missile",
+        "missile"
+      ],
+      "flashes": [
+        {
+          "family": "missile",
+          "x": 326,
+          "y": 342,
+          "life": 0.13
+        },
+        {
+          "family": "missile",
+          "x": 340,
+          "y": 342,
+          "life": 0.13
+        },
+        {
+          "family": "missile",
+          "x": 354,
+          "y": 342,
+          "life": 0.13
+        }
+      ],
+      "held": false
+    },
+    {
+      "pilot": "maverick",
+      "weapon": 3,
+      "shots": 5,
+      "kinds": [
+        "mavlaser",
+        "mavlaser",
+        "mavlaser",
+        "mavlaser",
+        "mavlaser"
+      ],
+      "flashes": [
+        {
+          "family": "laser",
+          "x": 340,
+          "y": 332,
+          "life": 0.13
+        }
+      ],
+      "held": false
+    },
+    {
+      "pilot": "maverick",
+      "weapon": 5,
+      "shots": 1,
+      "kinds": [
+        "orb"
+      ],
+      "flashes": [
+        {
+          "family": "orb",
+          "x": 340,
+          "y": 334,
+          "life": 0.13
+        }
+      ],
+      "held": false
+    },
+    {
+      "pilot": "maverick",
+      "weapon": 7,
+      "shots": 2,
+      "kinds": [
+        "mg",
+        "mg"
+      ],
+      "flashes": [
+        {
+          "family": "chaingun",
+          "x": 335,
+          "y": 335,
+          "life": 0.13
+        },
+        {
+          "family": "chaingun",
+          "x": 345,
+          "y": 335,
+          "life": 0.13
+        }
+      ],
+      "held": false
+    },
+    {
+      "pilot": "yuri",
+      "weapon": 0,
+      "shots": 4,
+      "kinds": [
+        "mg",
+        "mg",
+        "mg",
+        "mg"
+      ],
+      "flashes": [
+        {
+          "family": "mg",
+          "x": 323.5,
+          "y": 336,
+          "life": 0.13
+        },
+        {
+          "family": "mg",
+          "x": 334.5,
+          "y": 336,
+          "life": 0.13
+        },
+        {
+          "family": "mg",
+          "x": 345.5,
+          "y": 336,
+          "life": 0.13
+        },
+        {
+          "family": "mg",
+          "x": 356.5,
+          "y": 336,
+          "life": 0.13
+        }
+      ],
+      "held": false
+    },
+    {
+      "pilot": "yuri",
+      "weapon": 1,
+      "shots": 5,
+      "kinds": [
+        "spread",
+        "spread",
+        "spread",
+        "spread",
+        "spread"
+      ],
+      "flashes": [
+        {
+          "family": "spread",
+          "x": 340,
+          "y": 338,
+          "life": 0.13
+        }
+      ],
+      "held": false
+    },
+    {
+      "pilot": "yuri",
+      "weapon": 2,
+      "shots": 3,
+      "kinds": [
+        "missile",
+        "missile",
+        "missile"
+      ],
+      "flashes": [
+        {
+          "family": "missile",
+          "x": 326,
+          "y": 342,
+          "life": 0.13
+        },
+        {
+          "family": "missile",
+          "x": 340,
+          "y": 342,
+          "life": 0.13
+        },
+        {
+          "family": "missile",
+          "x": 354,
+          "y": 342,
+          "life": 0.13
+        }
+      ],
+      "held": false
+    },
+    {
+      "pilot": "yuri",
+      "weapon": 3,
+      "shots": 1,
+      "kinds": [
+        "beam"
+      ],
+      "flashes": [],
+      "held": true
+    },
+    {
+      "pilot": "yuri",
+      "weapon": 5,
+      "shots": 1,
+      "kinds": [
+        "orb"
+      ],
+      "flashes": [
+        {
+          "family": "orb",
+          "x": 340,
+          "y": 334,
+          "life": 0.13
+        }
+      ],
+      "held": false
+    },
+    {
+      "pilot": "yuri",
+      "weapon": 7,
+      "shots": 2,
+      "kinds": [
+        "mg",
+        "mg"
+      ],
+      "flashes": [
+        {
+          "family": "chaingun",
+          "x": 335,
+          "y": 335,
+          "life": 0.13
+        },
+        {
+          "family": "chaingun",
+          "x": 345,
+          "y": 335,
+          "life": 0.13
+        }
+      ],
+      "held": false
+    },
+    {
+      "pilot": "yuri",
+      "weapon": 8,
+      "shots": 1,
+      "kinds": [
+        "yuriLightningOrb"
+      ],
+      "flashes": [
+        {
+          "family": "lightning",
+          "x": 340,
+          "y": 332,
+          "life": 0.13
+        }
+      ],
+      "held": false
+    }
+  ],
+  "specials": [
+    {
+      "name": "decker",
+      "flashes": [],
+      "shotgun": 0.08,
+      "flame": false
+    },
+    {
+      "name": "maverick",
+      "flashes": [],
+      "shotgun": null,
+      "flame": false
+    },
+    {
+      "name": "falva",
+      "flashes": [],
+      "shotgun": null,
+      "flame": false
+    },
+    {
+      "name": "freezer",
+      "flashes": [],
+      "shotgun": null,
+      "flame": false
+    },
+    {
+      "name": "yuri",
+      "flashes": [
+        "lightning"
+      ],
+      "shotgun": null,
+      "flame": false
+    },
+    {
+      "name": "manual-missile",
+      "flashes": [
+        "missile"
+      ],
+      "shotgun": null,
+      "flame": false
+    },
+    {
+      "name": "space-volley",
+      "flashes": [
+        "missile",
+        "missile",
+        "missile"
+      ],
+      "shotgun": null,
+      "flame": false
+    },
+    {
+      "name": "shadow-orb",
+      "flashes": [
+        "orb"
+      ],
+      "shotgun": null,
+      "flame": false
+    }
+  ],
+  "reels": [
+    {
+      "family": "mg",
+      "frames": [
+        {
+          "ok": true,
+          "ink": 226
+        },
+        {
+          "ok": true,
+          "ink": 490
+        },
+        {
+          "ok": true,
+          "ink": 621
+        },
+        {
+          "ok": true,
+          "ink": 257
+        }
+      ]
+    },
+    {
+      "family": "chaingun",
+      "frames": [
+        {
+          "ok": true,
+          "ink": 193
+        },
+        {
+          "ok": true,
+          "ink": 717
+        },
+        {
+          "ok": true,
+          "ink": 1108
+        },
+        {
+          "ok": true,
+          "ink": 1007
+        },
+        {
+          "ok": true,
+          "ink": 1150
+        },
+        {
+          "ok": true,
+          "ink": 1077
+        },
+        {
+          "ok": true,
+          "ink": 677
+        },
+        {
+          "ok": true,
+          "ink": 174
+        }
+      ]
+    },
+    {
+      "family": "spread",
+      "frames": [
+        {
+          "ok": true,
+          "ink": 936
+        },
+        {
+          "ok": true,
+          "ink": 984
+        },
+        {
+          "ok": true,
+          "ink": 1239
+        },
+        {
+          "ok": true,
+          "ink": 351
+        }
+      ]
+    },
+    {
+      "family": "shotgun",
+      "frames": [
+        {
+          "ok": true,
+          "ink": 936
+        },
+        {
+          "ok": true,
+          "ink": 984
+        },
+        {
+          "ok": true,
+          "ink": 1239
+        },
+        {
+          "ok": true,
+          "ink": 351
+        }
+      ]
+    },
+    {
+      "family": "missile",
+      "frames": [
+        {
+          "ok": true,
+          "ink": 442
+        },
+        {
+          "ok": true,
+          "ink": 1046
+        },
+        {
+          "ok": true,
+          "ink": 1627
+        },
+        {
+          "ok": true,
+          "ink": 781
+        }
+      ]
+    },
+    {
+      "family": "laser",
+      "frames": [
+        {
+          "ok": true,
+          "ink": 373
+        },
+        {
+          "ok": true,
+          "ink": 808
+        },
+        {
+          "ok": true,
+          "ink": 1121
+        },
+        {
+          "ok": true,
+          "ink": 477
+        }
+      ]
+    },
+    {
+      "family": "orb",
+      "frames": [
+        {
+          "ok": true,
+          "ink": 281
+        },
+        {
+          "ok": true,
+          "ink": 917
+        },
+        {
+          "ok": true,
+          "ink": 1356
+        },
+        {
+          "ok": true,
+          "ink": 1275
+        },
+        {
+          "ok": true,
+          "ink": 1257
+        },
+        {
+          "ok": true,
+          "ink": 1366
+        },
+        {
+          "ok": true,
+          "ink": 856
+        },
+        {
+          "ok": true,
+          "ink": 266
+        }
+      ]
+    },
+    {
+      "family": "fire",
+      "frames": [
+        {
+          "ok": true,
+          "ink": 2618
+        },
+        {
+          "ok": true,
+          "ink": 2094
+        },
+        {
+          "ok": true,
+          "ink": 1732
+        },
+        {
+          "ok": true,
+          "ink": 1677
+        },
+        {
+          "ok": true,
+          "ink": 1961
+        },
+        {
+          "ok": true,
+          "ink": 1921
+        }
+      ]
+    },
+    {
+      "family": "ice",
+      "frames": [
+        {
+          "ok": true,
+          "ink": 281
+        },
+        {
+          "ok": true,
+          "ink": 917
+        },
+        {
+          "ok": true,
+          "ink": 1356
+        },
+        {
+          "ok": true,
+          "ink": 1275
+        },
+        {
+          "ok": true,
+          "ink": 1257
+        },
+        {
+          "ok": true,
+          "ink": 1366
+        },
+        {
+          "ok": true,
+          "ink": 856
+        },
+        {
+          "ok": true,
+          "ink": 266
+        }
+      ]
+    },
+    {
+      "family": "lightning",
+      "frames": [
+        {
+          "ok": true,
+          "ink": 281
+        },
+        {
+          "ok": true,
+          "ink": 917
+        },
+        {
+          "ok": true,
+          "ink": 1356
+        },
+        {
+          "ok": true,
+          "ink": 1275
+        },
+        {
+          "ok": true,
+          "ink": 1257
+        },
+        {
+          "ok": true,
+          "ink": 1366
+        },
+        {
+          "ok": true,
+          "ink": 856
+        },
+        {
+          "ok": true,
+          "ink": 266
+        }
+      ]
+    },
+    {
+      "family": "sonic",
+      "frames": [
+        {
+          "ok": true,
+          "ink": 542
+        },
+        {
+          "ok": true,
+          "ink": 967
+        },
+        {
+          "ok": true,
+          "ink": 1347
+        },
+        {
+          "ok": true,
+          "ink": 1337
+        },
+        {
+          "ok": true,
+          "ink": 1020
+        },
+        {
+          "ok": true,
+          "ink": 871
+        },
+        {
+          "ok": true,
+          "ink": 571
+        },
+        {
+          "ok": true,
+          "ink": 521
+        }
+      ]
+    }
+  ],
+  "lifecycle": {
+    "dx": 37,
+    "dy": -19,
+    "expired": true
+  },
+  "bosses": [
+    {
+      "kind": "magmaward",
+      "origins": [
+        {
+          "x": 293.2866666666667,
+          "y": 179.8
+        },
+        {
+          "x": 293.2866666666667,
+          "y": 179.8
+        },
+        {
+          "x": 293.2866666666667,
+          "y": 179.8
+        }
+      ],
+      "mounts": [
+        {
+          "x": 293.2866666666667,
+          "y": 179.8
+        },
+        {
+          "x": 393.2866666666667,
+          "y": 179.8
+        }
+      ],
+      "maxError": 0
+    },
+    {
+      "kind": "olivewarden",
+      "origins": [
+        {
+          "x": 256.946,
+          "y": 230.18
+        },
+        {
+          "x": 256.946,
+          "y": 230.18
+        }
+      ],
+      "mounts": [
+        {
+          "x": 256.946,
+          "y": 230.18
+        },
+        {
+          "x": 423.054,
+          "y": 230.18
+        }
+      ],
+      "maxError": 0
+    },
+    {
+      "kind": "stormsovereign",
+      "origins": [
+        {
+          "x": 309.376,
+          "y": 243.2
+        },
+        {
+          "x": 309.376,
+          "y": 243.2
+        }
+      ],
+      "mounts": [
+        {
+          "x": 309.376,
+          "y": 243.2
+        },
+        {
+          "x": 370.624,
+          "y": 243.2
+        }
+      ],
+      "maxError": 0
+    }
+  ],
+  "music": [
+    {
+      "key": "mini5",
+      "src": "assets/game/music/boss5_deadly_night.mp3",
+      "duration": 134
+    },
+    {
+      "key": "boss5",
+      "src": "assets/game/music/boss5_hammerman_cometh_0926.mp3",
+      "duration": 101.96
+    }
+  ],
+  "errors": [],
+  "suite": {
+    "passed": 5159,
+    "failed": 0,
+    "exit_code": 0,
+    "baseline_passed": 5142,
+    "baseline_failed": 0,
+    "log": "_shots/muzzles_0926/suite-final.log"
+  },
+  "music_import": {
+    "source": "C:\\Users\\Mdogg\\Desktop\\Hammerman Cometh.wav",
+    "original": "assets\\game\\music\\originals_0926\\Hammerman Cometh.wav",
+    "target": "assets\\game\\music\\boss5_hammerman_cometh_0926.mp3",
+    "old": {
+      "mean_volume": -11.2,
+      "max_volume": 0.0
+    },
+    "input": {
+      "mean_volume": -11.2,
+      "max_volume": 0.0
+    },
+    "gain_db": -1.0,
+    "encoded": {
+      "mean_volume": -12.7,
+      "max_volume": -0.2
+    }
+  },
+  "recordings": {
+    "clips": [
+      {
+        "name": "magmaward",
+        "seen": [],
+        "seconds": 14
+      },
+      {
+        "name": "olivewarden",
+        "seen": [],
+        "seconds": 14
+      },
+      {
+        "name": "stormsovereign",
+        "seen": [],
+        "seconds": 14
+      },
+      {
+        "name": "player-weapons",
+        "seen": [
+          {
+            "seconds": 0.02,
+            "pilot": "cole",
+            "weapon": 0,
+            "special": false
+          },
+          {
+            "seconds": 3.01,
+            "pilot": "cole",
+            "weapon": 1,
+            "special": false
+          },
+          {
+            "seconds": 6,
+            "pilot": "cole",
+            "weapon": 2,
+            "special": false
+          },
+          {
+            "seconds": 9.01,
+            "pilot": "cole",
+            "weapon": 3,
+            "special": false
+          },
+          {
+            "seconds": 12,
+            "pilot": "cole",
+            "weapon": 5,
+            "special": false
+          },
+          {
+            "seconds": 15.01,
+            "pilot": "cole",
+            "weapon": 7,
+            "special": false
+          }
+        ],
+        "seconds": 18
+      },
+      {
+        "name": "player-specials",
+        "seen": [
+          {
+            "seconds": 0.02,
+            "pilot": "maverick",
+            "weapon": 0,
+            "special": true
+          },
+          {
+            "seconds": 4,
+            "pilot": "falva",
+            "weapon": 0,
+            "special": true
+          },
+          {
+            "seconds": 11.01,
+            "pilot": "decker",
+            "weapon": 0,
+            "special": false
+          },
+          {
+            "seconds": 14,
+            "pilot": "freezer",
+            "weapon": 4,
+            "special": false
+          },
+          {
+            "seconds": 17.01,
+            "pilot": "yuri",
+            "weapon": 0,
+            "special": true
+          }
+        ],
+        "seconds": 20
+      }
+    ],
+    "errors": [],
+    "fixture": "Invulnerable isolated inspection scenes; native loop, keyboard firing and movement. Not campaign balance proof."
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "date": "2026-09-26",
+  "method": "Built-in image_gen; no SpriteCook or API fallback",
+  "alpha": "Generated RGBA copied unchanged. Loose XART sheets, no atlas repack.",
+  "assets": [
+    {
+      "file": "assets/game/stage5_archmage_0916/combat_0926/whirlwind.png",
+      "supersededBy": "assets/game/stage5_archmage_0916/combat_0926/whirlwind_v2.png",
+      "status": "Rejected double-ended hammer; archived only. Active source and prompts: docs/hammer_consistency_art_0926.json",
+      "key": "arch_whirlwind_0926",
+      "grid": [
+        4,
+        2
+      ],
+      "frames": 8,
+      "source": "exec-0590766a-bf2a-43b3-ac6a-9506994cc4eb.png",
+      "prompts": [
+        "Use case: identity-preserve. Create a production game sprite animation sheet for Bullets of Fury. The reference image is the exact Stage 5 boss identity/style reference: dark gunmetal chrome humanoid robot, spiked shoulders, small helmet with blue eyes, circular electric-blue chest reactor, two legs and two arms, giant long-shaft double-headed electric-blue war hammer. Preserve that design and crisp authored 16-bit pixel arcade shading. Generate exactly EIGHT full-body animation frames arranged in an evenly spaced FOUR-column TWO-row grid, transparent background, no text, no borders. Each cell same size and character same height; full hammer must fit in every cell, with at least 15% padding. Eight sequential turntable poses of a WHIRLWIND HAMMER SPIN around the character's own vertical body axis, feet below head at all times, never tumbling sideways: front, front three-quarter right, right profile, back three-quarter right, back, back three-quarter left, left profile, front three-quarter left. Robot grips hammer horizontally outward at waist level with both hands as he spins; rear views show back armor, chest only visible front views. Hammer traces a horizontal circle in perspective, narrow blue electric sparks clinging to hammer heads. No circular motion trail, no beam, no glow background, no ground shadow. Silhouette and body center anchored at identical cell center. Actual independently drawn correct perspective motion frames, not flat rotations of one image. Frame order left to right then top to bottom. Transparent alpha background."
+      ]
+    },
+    {
+      "file": "assets/game/stage5_archmage_0916/combat_0926/orbital_sweep.png",
+      "supersededBy": "assets/game/stage5_archmage_0916/combat_0926/hammer_strike_v2.png",
+      "status": "Rejected double-ended hammer; archived only. Active source and prompts: docs/hammer_consistency_art_0926.json",
+      "key": "arch_orbital_sweep_0926",
+      "grid": [
+        4,
+        2
+      ],
+      "frames": 8,
+      "source": "exec-5589b39f-677c-4ab8-ba90-a43a2efe3d76.png",
+      "prompts": [
+        "Use case: identity-preserve. Create an eight-frame full-body attack animation sprite sheet for the exact dark chrome robot hammer boss shown in the reference. This reference establishes his identity: black gunmetal humanoid armor, spiked shoulders, blue eyes, bright blue circular chest reactor, long double-headed electric-blue hammer. Preserve this style/design. Crisp 16-bit arcade pixel-art sprite rendering, transparent background. FOUR columns TWO rows, eight equal cells, no borders or text. Sequential motion left to right: 1 hammer raised over head, legs braced; 2 knees bent in deep spring crouch, hammer held up; 3 launches upward legs extended downward hammer overhead; 4 airborne tucked legs hammer ready for downward strike; 5 descending forward two-handed hammer pulled over left shoulder; 6 enormous two-handed SWEEP across body to screen-right with torso twist and hammer extended; 7 follow-through right, knees bent; 8 recovery standing returning hammer in front. All frames upright, camera front three-quarter view. Keep robot identity and body height constant, full body and ENTIRE hammer fully contained in each cell with 15% padding. Thin blue electric arcs hugging hammer only; avoid beams, motion blur, trails, environmental effects, ground shadows and colored background. Make the body and articulated arms/legs actually change pose for each sequential frame. Fixed body center anchor, truly transparent alpha behind isolated sprites. Sheet 1536x1024.",
+        "Use case: precise-object-edit. Correct the spacing/layout of this exact eight-pose robot hammer animation sheet. Keep the SAME robot identity, colors, pixel art, and eight poses in the SAME order. Four equal columns by two equal rows. Make EVERY full character plus hammer 30% SMALLER inside its cell so all eight sprites have a wide clean TRANSPARENT gutter on every side. In particular, the long horizontal hammer in frame 6 (second row, second column) must fit ENTIRELY inside that frame's second-column cell without reaching the third column. All frames same body scale, center each frame's torso at its cell center, no changing pose to make it fit. Frame1 raised hammer, 2 crouched, 3 rising, 4 tucked, 5 descending, 6 sweeping right, 7 follow-through, 8 recovered. Clear gap between rows too. Actual transparent alpha background, NO blue ambient haze. Blue electricity only hugs hammer surface. No labels, borders, grid lines, clipping or overlaps. 1536x1024 sheet."
+      ]
+    },
+    {
+      "file": "assets/game/stage5_archmage_0916/combat_0926/chromium_beam.png",
+      "key": "arch_chromium_beam_0926",
+      "grid": [
+        4,
+        2
+      ],
+      "frames": 8,
+      "source": "exec-4040e74e-23dd-494e-afb4-bdd9d11de31b.png",
+      "prompts": [
+        "Use case: stylized-concept. Create a production transparent pixel-art animation sheet for a gigantic CHROMIUM energy beam in a 16-bit arcade space shooter. Exactly EIGHT animation frames in FOUR columns TWO rows, equal 384x512 cells, overall1536x1024. Each cell has ONE broad vertical silver/cyan/electric-blue energy column pointing DOWN from a circular metallic-blue energy muzzle at the top into a ragged curved explosive energy cap at the bottom. Column fills center 70 percent of cell width and middle 82 percent of cell height, ample clear gutter around every sprite. Frame1 narrow ignition, frame2 opening at half width, frames3,4,5,6 full-width sustained column, frame7 collapse to half width, frame8 thin dissipating sparks. Frames3-6 same outer footprint but unique flowing internal energy: layered pixel bands, chrome-gray jagged filaments, white-blue central plasma, small electric-blue arcs. KEEP DARK PIXEL OUTLINES on the beam sides and visible pointed/fading end, not a straight cut rectangle. Transparent alpha, no black backdrop, no bloom cloud, no gradients, no labels/grid, no ship or character. Hand-authored arcade pixel shading. This is one self-contained beam effect per cell, not multiple effects per cell.",
+        "Edit this 4-column by 2-row sprite sheet of 8 chromium laser animation frames. CRITICAL CORRECTION: remove every solid metal ring, machine flange, pipe and cylindrical metal surface. This is PURE ENERGY emitted from a robot's body, no equipment at all. Replace the top metal emitter with a small rounded luminous cyan-white ENERGY muzzle flare. Make the beam itself a fierce slim white/cyan lightning core with animated jagged blue plasma flames at its sides, as crisp authored 16-bit arcade pixel art, not a thick metal cylinder. Each of the 8 frames must fit exactly within its own equal 384 by 512 cell on a 1536 by 1024 canvas. Leave at least 70 transparent pixels at each side of every cell; the same centered x anchor and top/bottom anchors in every cell. Frame order left to right row1 then row2: narrow ignition, half width growth, four separate sustained full-width energy textures (frames 2,3,4,5), half width collapse, thin dying sparks. Every full sustained beam core occupies the central 200 pixel width, luminous edge fringe max240 pixels; all bottom tips taper sharply at the same y=490. No backgrounds, no blue rectangular haze, no soft broad glows, no labels, no grid. Genuine transparent alpha outside individual sprite pixels; the empty corners and gutters must be fully transparent. Preserve this palette of blue, cyan, silver and white energy and the recognizable pixel texture, but absolutely NO METAL OR SOLID HARDWARE in any frame."
+      ]
+    },
+    {
+      "file": "assets/game/projectiles_0926/late_campaign_flight.png",
+      "key": "late_campaign_flight_0926",
+      "grid": [
+        4,
+        8
+      ],
+      "frames": 32,
+      "source": "exec-5d42c2c9-e542-4bb5-bc70-19cc3aa728c0.png",
+      "prompts": [
+        "Use case: stylized-concept. Production 16-bit pixel-art projectile animation sprite sheet for the arcade shooter Bullets of Fury. Actual transparent background. Exactly FOUR columns by EIGHT rows, equally sized square cells on a 1024x2048 sheet. Four looping flight frames per row; all projectiles point UP; each tip/body anchored exactly at cell center, consistent scale across frames, no perspective or camera. Pixel-shaded, sharp dark outlines, bright small hot cores, readable at 16-32px in game. Each sprite fully contained in its cell with 25% clear margin. Row1: slim chrome-blue electric laser bolt, pointed top, rounded tail and small electric wisps. Row2: slim neon-green toxic laser bolt with bright lime core, rounded tail. Row3: green toxic slime glob, bubbling translucent spherical membrane, four wobble/bubble frames. Row4: black dark-matter needle with red inner cracks and gray-white rim, no purple. Row5: cyan water-plasma bolt, tapered fluid tip, small fluid droplets from its tail. Row6: silver/gunmetal missile with red nose, short orange engine exhaust flickering through four frames, compact fins. Row7: gold/brass armor-piercing machine-gun tracer, small pointed yellow-white core and short warm tail, not a beam. Row8: spherical chromium plasma ball with silver-blue shell and bright blue core, changing electrical arcs. No text, grid lines, walls, characters, ships, large lens flares, wide hazy bloom or shadows. All 32 frames should be distinct hand-authored pixel-style frames, not rough drawn shapes. Maintain classic console arcade visual clarity and restrained detail."
+      ]
+    }
+  ]
+}

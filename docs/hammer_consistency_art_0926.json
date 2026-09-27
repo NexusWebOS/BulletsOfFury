@@ -1,0 +1,44 @@
+{
+  "date": "2026-09-26",
+  "method": "Built-in image_gen; original RGBA output copied unchanged; no SpriteCook",
+  "reference": "assets/game/stage5_archmage_0916/leap_strike_0922.png",
+  "constraint": "Same canonical single cylindrical blue energy hammer head on one end of the shaft. Plain grip at the other end.",
+  "assets": [
+    {
+      "file": "assets/game/stage5_archmage_0916/combat_0926/hammer_strike_v2.png",
+      "key": "arch_orbital_sweep_0926",
+      "source": "C:/Users/Mdogg/.codex/generated_images/01a0d568-40a4-7b70-97c0-acc501f39d5b/exec-b964e27b-21f0-46ba-8f90-e815de195b8d.png",
+      "intermediate": "exec-ca564fd1-bc14-45e0-b5e1-e65abdeebfc2.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "frames": 12,
+      "slicing": "Explicit rectangles and chest/hammer-head anchors in HAMMER_STRIKE_REEL; natural generated spacing is not an exact uniform grid.",
+      "prompts": [
+        "Use case: identity-preserve. Production pixel-art game animation sheet. Reference image is the EXISTING CANONICAL robot boss and its EXACT SINGLE-HEADED HAMMER; preserve that identity, armor, blue chest reactor, pointed helmet and shoulder armor, proportions and blue energy colors. Generate a corrected twelve-frame full-body hammer strike animation, evenly arranged in exactly 4 columns by 3 rows, read left to right top to bottom. Transparent RGBA background, no checkerboard baked into pixels, no text, numbers, captions or borders. Each cell is equal size, full weapon and feet entirely inside cell with generous padding. Orthographic front three-quarter view for vertical arcade shooter, detailed crisp 16-bit pixel art matching the reference. Weapon invariant in ALL TWELVE frames: a long black metal handle ending in ONE cylindrical blue lightning hammer head with metal caps, exactly as in the reference. The other end of the handle is plain narrow grip. ONE head per hammer, ONE hammer per character, never a two-ended barbell, never a staff with blue glowing heads at both ends. Keep hammer dimensions consistent through poses. No guns on back or forearms. Consistent robot scale, camera, lighting and framing across cells, all torsos near the same central anchor. Frame 1: settled standing idle, hands at waist, hammer lowered diagonally to lower left, head beside shin. Frame 2: hands lift handle from waist toward chest, head beside hip. Frame 3: turn shoulders and lift single head beside shoulder. Frame 4: crouched legs preparing jump, lifting hammer above head. Frame 5: initial jump, legs extending, hammer now overhead. Frame 6: airborne apex, knees tucked, hammer fully overhead. Frame 7: downward strike, single head swinging from above toward front. Frame 8: landing crouched with single head striking below chest, clear planted impact pose WITHOUT ground effects. Frame 9: low lateral follow-through, single hammer head to the right at waist height. Frame 10: rising recovery, pull hammer downward to left hip. Frame 11: settling lower hands and hammer beside shin. Frame 12: SAME settled lowered idle as frame 1. All frames show same exact boss and same SINGLE hammer head from reference. The character must LOWER its hammer after impact before lifting it to jump again. Asset only, absolutely no scenery or floor, keep genuine transparent background.",
+        "Use case: precise-object-edit. Edit this 12-pose sprite sheet for usable GAME ANIMATION cell spacing. Preserve the robot, exact SINGLE blue cylindrical hammer head on one end of the long black handle, and all twelve poses. Fix layout ONLY: put the poses in EXACT 4 columns by 3 rows of equal square cells on a 1536x1152 transparent canvas (each cell 384x384). Every character AND hammer must fit fully inside its own cell with at least 24 transparent pixels on ALL FOUR sides. Shrink each pose uniformly as needed to provide those margins; maintain consistent robot proportions and scale across poses. Do not let poses bleed between rows. Restore the complete intact cap and blue glow at the TOP of frame 4's hammer which was too close to image edge. The first, penultimate and final poses must remain hammer lowered idle. Same single-headed hammer in all frames; other shaft end is plain grip. No text, numbers, grid lines, background, scenery, checkerboards or extra elements. Genuine transparent alpha, crisp detailed pixel art. Keep the same shot and character identity."
+      ]
+    },
+    {
+      "file": "assets/game/stage5_archmage_0916/combat_0926/whirlwind_v2.png",
+      "key": "arch_whirlwind_0926",
+      "source": "C:/Users/Mdogg/.codex/generated_images/01a0d568-40a4-7b70-97c0-acc501f39d5b/exec-3f9c2166-a6c1-4d48-9fba-e61c917a69c6.png",
+      "size": [
+        1774,
+        887
+      ],
+      "frames": 8,
+      "slicing": "Explicit rectangles and chest anchors in hammerCombatDraw.",
+      "prompts": [
+        "Use case: identity-preserve. Generate a corrected transparent pixel-art spritesheet for the SAME robot and EXACT hammer in reference 1, used as a whirlwind attack in a vertical arcade shooter. Reference 1 is canonical identity, proportions, armor and weapon. Exactly eight full-body animation poses, 4 columns by 2 rows of equal cells, read left to right. Front, front-three-quarter, profile, rear-three-quarter, back, opposite rear-three-quarter, opposite profile, opposite front-three-quarter: a full turn around the upright body's VERTICAL axis. Body upright, feet below torso, spinning shoulders and one hammer around waist/hip height in wide horizontal swing. Frame 1 weapon extended left, rear view weapon extended opposite as it rotates. All 8 cells must be consistent in size, use generous transparent padding so no hammer or feet reach image or cell edges, helmet and soles remain same approximate height throughout. Match reference detailed crisp 16-bit pixel-art black chrome robot, blue chest reactor, pointed helmet and shoulder armor. WEAPON INVARIANT: exactly ONE blue energy-filled cylindrical hammer head with metal end caps at ONE END of a long narrow black handle. Other end is ONLY a narrow grip. Never a two-ended barbell or double hammer, never two blue heads, never glowing ball at other end. Same single head dimensions in every pose. Keep hands visibly gripping long handle. No new guns, no back cannon, no scenery, no floor, no labels, no numbers, no grids, no baked checkerboard. No overwhelming energy trails: subtle little blue sparks around the head only. Genuine transparent alpha background. One robot per cell. This sheet must seamlessly match the reference robot idle and leap strike reel."
+      ]
+    }
+  ],
+  "replaces": [
+    "combat_0926/orbital_sweep.png",
+    "combat_0926/whirlwind.png"
+  ],
+  "oldFiles": "Preserved for provenance, no longer registered as the active reels.",
+  "verification": "_BUILD_SOURCE/probe_hammer_consistency_0926.py"
+}

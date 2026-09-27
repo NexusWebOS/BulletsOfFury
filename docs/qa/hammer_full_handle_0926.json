@@ -1,0 +1,197 @@
+{
+  "motion": [
+    {
+      "pose": 3,
+      "region": "head",
+      "dx": 3,
+      "dy": -2,
+      "match": 1,
+      "opaque": 812
+    },
+    {
+      "pose": 3,
+      "region": "shaft",
+      "dx": 3,
+      "dy": -2,
+      "match": 1,
+      "opaque": 152
+    },
+    {
+      "pose": 3,
+      "region": "hilt",
+      "dx": 3,
+      "dy": -2,
+      "match": 1,
+      "opaque": 112
+    },
+    {
+      "pose": 3,
+      "region": "torso",
+      "dx": 0,
+      "dy": 0,
+      "match": 1,
+      "opaque": 2068
+    },
+    {
+      "pose": 3,
+      "region": "head",
+      "dx": -3,
+      "dy": 2,
+      "match": 1,
+      "opaque": 812
+    },
+    {
+      "pose": 3,
+      "region": "shaft",
+      "dx": -3,
+      "dy": 2,
+      "match": 1,
+      "opaque": 152
+    },
+    {
+      "pose": 3,
+      "region": "hilt",
+      "dx": -3,
+      "dy": 2,
+      "match": 1,
+      "opaque": 112
+    },
+    {
+      "pose": 3,
+      "region": "torso",
+      "dx": 0,
+      "dy": 0,
+      "match": 1,
+      "opaque": 2068
+    },
+    {
+      "pose": 4,
+      "region": "head",
+      "dx": 3,
+      "dy": -2,
+      "match": 1,
+      "opaque": 812
+    },
+    {
+      "pose": 4,
+      "region": "shaft",
+      "dx": 3,
+      "dy": -2,
+      "match": 1,
+      "opaque": 152
+    },
+    {
+      "pose": 4,
+      "region": "hilt",
+      "dx": 3,
+      "dy": -2,
+      "match": 1,
+      "opaque": 112
+    },
+    {
+      "pose": 4,
+      "region": "torso",
+      "dx": 0,
+      "dy": 0,
+      "match": 1,
+      "opaque": 2071
+    },
+    {
+      "pose": 4,
+      "region": "head",
+      "dx": -3,
+      "dy": 2,
+      "match": 1,
+      "opaque": 812
+    },
+    {
+      "pose": 4,
+      "region": "shaft",
+      "dx": -3,
+      "dy": 2,
+      "match": 1,
+      "opaque": 152
+    },
+    {
+      "pose": 4,
+      "region": "hilt",
+      "dx": -3,
+      "dy": 2,
+      "match": 1,
+      "opaque": 112
+    },
+    {
+      "pose": 4,
+      "region": "torso",
+      "dx": 0,
+      "dy": 0,
+      "match": 1,
+      "opaque": 2071
+    },
+    {
+      "pose": 5,
+      "region": "head",
+      "dx": 3,
+      "dy": -2,
+      "match": 1,
+      "opaque": 812
+    },
+    {
+      "pose": 5,
+      "region": "shaft",
+      "dx": 3,
+      "dy": -2,
+      "match": 1,
+      "opaque": 152
+    },
+    {
+      "pose": 5,
+      "region": "hilt",
+      "dx": 3,
+      "dy": -2,
+      "match": 1,
+      "opaque": 112
+    },
+    {
+      "pose": 5,
+      "region": "torso",
+      "dx": 0,
+      "dy": 0,
+      "match": 1,
+      "opaque": 2071
+    },
+    {
+      "pose": 5,
+      "region": "head",
+      "dx": -3,
+      "dy": 2,
+      "match": 1,
+      "opaque": 812
+    },
+    {
+      "pose": 5,
+      "region": "shaft",
+      "dx": -3,
+      "dy": 2,
+      "match": 1,
+      "opaque": 152
+    },
+    {
+      "pose": 5,
+      "region": "hilt",
+      "dx": -3,
+      "dy": 2,
+      "match": 1,
+      "opaque": 112
+    },
+    {
+      "pose": 5,
+      "region": "torso",
+      "dx": 0,
+      "dy": 0,
+      "match": 1,
+      "opaque": 2071
+    }
+  ],
+  "errors": []
+}

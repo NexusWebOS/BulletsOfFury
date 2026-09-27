@@ -1,0 +1,10 @@
+{
+  "source": "exec-620cf05d-2519-4f54-aa24-f8f6a32fae8f.png",
+  "tool": "built-in image_gen",
+  "prompt": "Edit the reference forcefield into a production-ready 16-bit pixel-art animation spritesheet for Bullets of Fury. Preserve its electric cyan/blue/white plasma palette and transparent alpha, but replace EVERY cylindrical or curved enclosure with a STRAIGHT, FLAT, FRONT-FACING HORIZONTAL ENERGY WALL. Exact layout: ONE COLUMN of EIGHT animation frames stacked in EIGHT evenly spaced horizontal ROWS on a wide 1536 by 1024 transparent canvas. Each row is 1536 by 128; its wall is centered vertically within the row, extends from x=16 to x=1520, and is about 78 pixels high. Every frame has identical rectangle dimensions, same position, same camera, no perspective. A luminous straight upper rail and straight lower rail, with subtle semi-transparent blue hexagonal energy between the rails. Little white/cyan current sparks travel sideways along the straight rails over the eight loop frames, swelling and relaxing gently; the geometry never changes. Keep 24px transparent gutters above and below each wall. This is a flat screen-wide shield row that runs horizontally between a boss dance troupe above and the player below, not a bubble, tube, ring, dome, cylinder, oval, floor disc or perspective slab. Sharp deliberate pixel clusters, clean transparent background, true PNG alpha, no black or checkerboard baked background, no characters, no lettering, no scenery. Whole eight-frame sheet in one image; each row an independent complete flat horizontal wall.",
+  "asset": "assets/game/hammer_time_0927/wall.png",
+  "layout": "one column, eight animation rows; one frame drawn in-game",
+  "alpha": 0.5,
+  "owningBuild": "_BUILD_SOURCE/build_hammer_time_0927.py",
+  "note": "Original RGBA preserved. Rail-based frame centers measured; no pixel repainting."
+}

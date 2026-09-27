@@ -26,8 +26,8 @@ const Rival24=(()=>{
       if(chosen)campText('RIVAL '+KEYS[i].toUpperCase()+' - LEVEL '+STAGES_AT[i],VW/2,VH-144,12,'#ffb6a5');
     }
     if(flying)campText('RIVAL CREW BREAKING FORMATION',VW/2,VH-128,10,'#ffb4a3');
-    else if(!mapFocus)campText('RIVAL CONTACTS: DOWN TO SELECT',VW/2,VH-128,10,'#ff9d8a');
-    else campText('LEFT/RIGHT: RIVAL   FIRE: FIGHT   UP: MAP',VW/2,VH-123,9,'#dceeff');
+    else if(!mapFocus)controlHintRow([['pad_dpad','RIVAL CONTACTS']],VH-128,VW/2,VW-24,20);
+    else controlHintRow([['pad_dpad','RIVAL'],['pad_a','FIGHT'],['pad_b','MAP']],VH-123,VW/2,VW-24,20);
   }
   function mapInput(){
     if(!available())return false;
@@ -77,7 +77,7 @@ const Rival24=(()=>{
     S.cells=cells;
     const labels=[S.chosen[0]||'ALLY 1',S.chosen[1]||'ALLY 2','DEPLOY'];
     for(let i=0;i<3;i++)campText(labels[i].toUpperCase(),80+i*160,y+273,11,i===2&&S.chosen.length===2?'#fff1a3':'#9fd7ee');
-    campText('UP/DOWN/LEFT/RIGHT: PILOT   FIRE: SELECT   BACK: CANCEL',VW/2,VH-25,9,'#a7c9da');
+    controlHintRow([['pad_dpad','PILOT'],['pad_a',S.chosen.length===2?'DEPLOY':'SELECT'],['pad_b','CANCEL']],VH-25);
     const m=Input.mouse||{};let hit=-1;
     for(let i=0;i<cells.length;i++){const r=cells[i];if(m.x>=r.x&&m.x<r.x+r.w&&m.y>=r.y&&m.y<r.y+r.h){hit=i;break;}}
     if(hit>=0&&m.down&&!S.mouse&&S.t>.15){S.cursor=hit;choose();}
@@ -97,18 +97,20 @@ const Rival24=(()=>{
   }
   function deploy(){if(!select||select.chosen.length!==2)return;
     const chosen=select.chosen.slice(),rival=select.rival,returnStage=clamp(campaign.unlockedMax||7,1,8);
-    select=null;active={rival,returnStage,chosen,music:false};
+    select=null;
     /* Use Stage 6's neutral encounter setup, then draw the chosen contact's
        biome. Entering the destination stage outright would replay its story
        dialogue and scripted hazards over this optional duel. */
     beginStage(6);
+    active={rival,returnStage,chosen,music:false};
     curStage=STAGES[STAGES_AT[rival]-1];stagePlan=[];waveIdx=0;
     s6Opening=null;s6Wing=null;
     enemies.length=0;eBullets.length=0;pBullets.length=0;
     subBossDone=true;subBossTriggered=true;subBossActive=false;subBoss=null;
     bossWarned=true;warnT=0;
     spawnBoss('rebelsquad');bossActive=true;bossDefeated=false;
-    wing=chosen.map((key,i)=>({key,hp:45,maxhp:45,x:player.x+(i?70:-70),y:VH+35+i*14,t:0,cd:.4+i*.25,dead:false}));
+    wing=chosen.map((key,i)=>({key,slot:i,phase:'arrive',hp:45,maxhp:45,x:player.x+(i?70:-70),y:VH+35+i*14,t:0,cd:.4+i*.25,dead:false}));
+    for(const key of chosen)for(let f=0;f<8;f++){XART.rdy('ship_'+key+'_br'+f);XART.rdy('ship_'+key+'_so'+f);}
     XART.rdy('r24_card');Audio.SFX.alertBossIncoming&&Audio.SFX.alertBossIncoming();
   }
   function cardDraw(dt){
@@ -119,34 +121,39 @@ const Rival24=(()=>{
   }
   function tick(dt){if(!active||state!==GS.PLAY)return;
     if(!active.music){active.music=true;Audio.startMusic('boss6');}
+    const formation={ships:wing,boxes:[]};
     for(let i=0;i<wing.length;i++){
       const q=wing[i];if(q.dead)continue;q.t+=dt;q.cd-=dt;
-      const sx=i?1:-1,tx=clamp(player.x+sx*64+Math.sin(q.t*1.7+i)*13,camLeftX()+25,camRightX()-25),ty=clamp(player.y+22+Math.sin(q.t*2.1+i)*9,55,VH-34);
-      q.x+=(tx-q.x)*Math.min(1,dt*3.4);q.y+=(ty-q.y)*Math.min(1,dt*3.5);
-      for(let j=eBullets.length-1;j>=0;j--){const z=eBullets[j];if(!z||z.dead||Math.abs(z.x-q.x)>13||Math.abs(z.y-q.y)>15)continue;
+      ally27Tick(q,dt);s6WingNavigate(q,formation,dt);
+      if(q.phase==='arrive'&&q.y<VH-75)q.phase='fight';
+      if(q.phase==='fight')q.y=Math.min(q.y,bottomHudLayout().rail.y-26);
+      for(let j=eBullets.length-1;j>=0;j--){const z=eBullets[j];if(q.dodgeT>0||!z||z.dead||Math.abs(z.x-q.x)>13||Math.abs(z.y-q.y)>15)continue;
         eBullets.splice(j,1);q.hp-=Math.max(1,z.dmg||3);q.flash=.18;
-        if(q.hp<=0){q.dead=true;explode(q.x,q.y,45,'blue');break;}
+        if(q.hp<=0){q.dead=true;q.phase='leave';unitDeathFX({x:q.x,y:q.y,w:39,h:39},'jet','blue');break;}
       }
       if(q.dead)continue;q.flash=Math.max(0,(q.flash||0)-dt);
-      if(q.cd<=0){q.cd=.25+i*.035;
+      if(q.cd<=0&&!q.dodgeT&&q.phase==='fight'){q.cd=.25+i*.035;
         const targets=boss&&boss._rebels?boss._rebels.ships.filter(s=>!s.dead&&s.mode!=='entry'):[];
         const target=targets.reduce((best,s)=>!best||Math.hypot(s.x-q.x,s.y-q.y)<Math.hypot(best.x-q.x,best.y-q.y)?s:best,null);
         const dx=target?target.x-q.x:0,dy=target?target.y-q.y:-300,mag=Math.hypot(dx,dy)||1;
         pBullets.push({x:q.x,y:q.y-17,vx:dx/mag*10,vy:dy/mag*10,w:5,h:12,dmg:3,kind:'mg',ally:true,col:(PILOTS.find(p=>p.key===q.key)||{}).tint||'#adf5ff'});
         q._muzzle=.10;
+        if(Audio.SFX.machineGun)Audio.SFX.machineGun();
       }
       q._muzzle=Math.max(0,(q._muzzle||0)-dt);
     }
   }
   function draw(){if(!active||state!==GS.PLAY)return;
     for(const q of wing){if(q.dead)continue;const k='ship_'+q.key;if(!XART.rdy(k))continue;
-      const im=XART.get(k),h=39,w=h*(im.naturalWidth||im.width)/(im.naturalHeight||im.height);
+      let art=k;
+      if(q.dodgeT>0){const f=clamp(Math.floor((1-q.dodgeT/q.dodgeDuration)*8),0,7),pose=k+'_'+(q.dodgeMode==='somer'?'so':'br')+f;if(XART.rdy(pose))art=pose;}
+      const im=XART.get(art),h=39,w=h*(im.naturalWidth||im.width)/(im.naturalHeight||im.height);
       ctx.save();ctx.globalAlpha=q.flash>0?.56:1;ctx.drawImage(im,q.x-w/2,q.y-h/2,w,h);ctx.restore();
       ctx.fillStyle='#192536';ctx.fillRect(q.x-17,q.y+22,34,3);
       ctx.fillStyle='#53d9af';ctx.fillRect(q.x-17,q.y+22,34*q.hp/q.maxhp,3);
-      if(q._muzzle>0&&XART.rdy('mfx_bmg_0'))ctx.drawImage(XART.get('mfx_bmg_0'),q.x-7,q.y-h/2-12,14,14);
+      if(q._muzzle>0&&typeof wm26Draw==='function')wm26Draw(ctx,'mg',q.x,q.y-17,-Math.PI/2,1-q._muzzle/.10,22);
     }
-    campText('RIVAL FIGHT!   '+wing.filter(q=>!q.dead).length+' WINGMEN ACTIVE',VW/2,47,10,'#ffe0b5');
+    campText('RIVAL FIGHT!   '+wing.filter(q=>!q.dead).length+' WINGMEN ACTIVE',camLeftX()+viewW()/2,47,10,'#ffe0b5');
   }
   function finish(){if(!active)return false;
     const A=active;active=null;wing=[];
@@ -159,6 +166,11 @@ const Rival24=(()=>{
     Audio.stopMusic();openStageSelect(A.returnStage,{});
     return true;
   }
+  function reset(){active=null;wing=[];select=null;mapFocus=false;mapMouse=false;}
+  function restart(){
+    if(!active)return false;
+    select={rival:active.rival,chosen:active.chosen.slice()};deploy();return true;
+  }
   function scatterAfterHarrier(){
     if(run.mode!=='campaign'||!s6Wing||s6Wing.route!=='left')return;
     if(!campaign.rivalScattered)scatterT=0;
@@ -166,6 +178,6 @@ const Rival24=(()=>{
     if(!Array.isArray(campaign.rivalDefeated))campaign.rivalDefeated=[false,false,false,false,false];
   }
   function save(){return {scattered:!!campaign.rivalScattered,defeated:(campaign.rivalDefeated||[]).slice(0,5)};}
-  function load(s){campaign.rivalScattered=!!(s&&s.scattered);campaign.rivalDefeated=s&&Array.isArray(s.defeated)?s.defeated.slice(0,5):[false,false,false,false,false];}
-  return {get active(){return active;},arenaStage(){return active?STAGES_AT[active.rival]:null;},mapDraw,mapInput,mapBack,selectDraw,cardDraw,tick,draw,finish,scatterAfterHarrier,save,load};
+  function load(s){reset();campaign.rivalScattered=!!(s&&s.scattered);campaign.rivalDefeated=s&&Array.isArray(s.defeated)?s.defeated.slice(0,5):[false,false,false,false,false];}
+  return {get active(){return active;},arenaStage(){return active?STAGES_AT[active.rival]:null;},mapDraw,mapInput,mapBack,selectDraw,cardDraw,tick,draw,finish,reset,restart,scatterAfterHarrier,save,load};
 })();

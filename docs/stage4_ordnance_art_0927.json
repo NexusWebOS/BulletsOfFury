@@ -1,0 +1,345 @@
+{
+  "generator": "Built-in image generation, no SpriteCook",
+  "source": "assets/game/projectiles_0927/stage4_ordnance_source.png",
+  "output": "assets/game/projectiles_0927/stage4_ordnance.png",
+  "spec": "4 columns x6 rows, 256x320 cells, four animated south-facing frames each: steel cyan shell, brass tracer, red rocket, cyan-band precision missile, amber armored bomb, cobalt rail bolt. Genuine alpha; no background, labels, polygons or muzzle hardware. Stable metal bodies, varying flame/energy.",
+  "normalization": "Measured row gutters; shared scale1; translate each intact RGBA frame to centerline128 and nose300. No recoloring/background removal. Runtime anchor128,230.",
+  "frames": [
+    {
+      "role": "steel",
+      "frame": 0,
+      "sourceCell": [
+        0,
+        0,
+        256,
+        240
+      ],
+      "translation": [
+        -17,
+        68
+      ]
+    },
+    {
+      "role": "steel",
+      "frame": 1,
+      "sourceCell": [
+        256,
+        0,
+        256,
+        240
+      ],
+      "translation": [
+        0,
+        68
+      ]
+    },
+    {
+      "role": "steel",
+      "frame": 2,
+      "sourceCell": [
+        512,
+        0,
+        256,
+        240
+      ],
+      "translation": [
+        0,
+        68
+      ]
+    },
+    {
+      "role": "steel",
+      "frame": 3,
+      "sourceCell": [
+        768,
+        0,
+        256,
+        240
+      ],
+      "translation": [
+        16,
+        68
+      ]
+    },
+    {
+      "role": "brass",
+      "frame": 0,
+      "sourceCell": [
+        0,
+        240,
+        256,
+        244
+      ],
+      "translation": [
+        -17,
+        65
+      ]
+    },
+    {
+      "role": "brass",
+      "frame": 1,
+      "sourceCell": [
+        256,
+        240,
+        256,
+        244
+      ],
+      "translation": [
+        0,
+        65
+      ]
+    },
+    {
+      "role": "brass",
+      "frame": 2,
+      "sourceCell": [
+        512,
+        240,
+        256,
+        244
+      ],
+      "translation": [
+        0,
+        66
+      ]
+    },
+    {
+      "role": "brass",
+      "frame": 3,
+      "sourceCell": [
+        768,
+        240,
+        256,
+        244
+      ],
+      "translation": [
+        16,
+        66
+      ]
+    },
+    {
+      "role": "rocket",
+      "frame": 0,
+      "sourceCell": [
+        0,
+        484,
+        256,
+        262
+      ],
+      "translation": [
+        -16,
+        47
+      ]
+    },
+    {
+      "role": "rocket",
+      "frame": 1,
+      "sourceCell": [
+        256,
+        484,
+        256,
+        262
+      ],
+      "translation": [
+        -2,
+        47
+      ]
+    },
+    {
+      "role": "rocket",
+      "frame": 2,
+      "sourceCell": [
+        512,
+        484,
+        256,
+        262
+      ],
+      "translation": [
+        0,
+        47
+      ]
+    },
+    {
+      "role": "rocket",
+      "frame": 3,
+      "sourceCell": [
+        768,
+        484,
+        256,
+        262
+      ],
+      "translation": [
+        16,
+        47
+      ]
+    },
+    {
+      "role": "missile",
+      "frame": 0,
+      "sourceCell": [
+        0,
+        746,
+        256,
+        288
+      ],
+      "translation": [
+        -17,
+        20
+      ]
+    },
+    {
+      "role": "missile",
+      "frame": 1,
+      "sourceCell": [
+        256,
+        746,
+        256,
+        288
+      ],
+      "translation": [
+        -1,
+        20
+      ]
+    },
+    {
+      "role": "missile",
+      "frame": 2,
+      "sourceCell": [
+        512,
+        746,
+        256,
+        288
+      ],
+      "translation": [
+        -1,
+        20
+      ]
+    },
+    {
+      "role": "missile",
+      "frame": 3,
+      "sourceCell": [
+        768,
+        746,
+        256,
+        288
+      ],
+      "translation": [
+        15,
+        20
+      ]
+    },
+    {
+      "role": "bomb",
+      "frame": 0,
+      "sourceCell": [
+        0,
+        1034,
+        256,
+        222
+      ],
+      "translation": [
+        -17,
+        86
+      ]
+    },
+    {
+      "role": "bomb",
+      "frame": 1,
+      "sourceCell": [
+        256,
+        1034,
+        256,
+        222
+      ],
+      "translation": [
+        0,
+        85
+      ]
+    },
+    {
+      "role": "bomb",
+      "frame": 2,
+      "sourceCell": [
+        512,
+        1034,
+        256,
+        222
+      ],
+      "translation": [
+        1,
+        85
+      ]
+    },
+    {
+      "role": "bomb",
+      "frame": 3,
+      "sourceCell": [
+        768,
+        1034,
+        256,
+        222
+      ],
+      "translation": [
+        17,
+        84
+      ]
+    },
+    {
+      "role": "rail",
+      "frame": 0,
+      "sourceCell": [
+        0,
+        1256,
+        256,
+        280
+      ],
+      "translation": [
+        -16,
+        44
+      ]
+    },
+    {
+      "role": "rail",
+      "frame": 1,
+      "sourceCell": [
+        256,
+        1256,
+        256,
+        280
+      ],
+      "translation": [
+        0,
+        44
+      ]
+    },
+    {
+      "role": "rail",
+      "frame": 2,
+      "sourceCell": [
+        512,
+        1256,
+        256,
+        280
+      ],
+      "translation": [
+        0,
+        44
+      ]
+    },
+    {
+      "role": "rail",
+      "frame": 3,
+      "sourceCell": [
+        768,
+        1256,
+        256,
+        280
+      ],
+      "translation": [
+        16,
+        44
+      ]
+    }
+  ]
+}

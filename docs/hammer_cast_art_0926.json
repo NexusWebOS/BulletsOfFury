@@ -1,0 +1,15 @@
+{
+  "date": "2026-09-26",
+  "method": "Built-in image_gen",
+  "file": "assets/game/stage5_archmage_0916/combat_0926/arsenal_cast.png",
+  "key": "arch_arsenal_cast_0926",
+  "source": "C:/Users/Mdogg/.codex/generated_images/01a0d568-40a4-7b70-97c0-acc501f39d5b/exec-5586b60f-56fe-4201-be25-c520c18be2ec.png",
+  "reference": "assets/game/stage5_archmage_0916/combat_0926/hammer_strike_v2.png",
+  "size": [
+    1447,
+    1087
+  ],
+  "frames": 8,
+  "slicing": "Explicit source rectangles and chest anchors in hammerArsenalCastDraw; original RGBA copied unchanged.",
+  "prompt": "Use case: identity-preserve. Create an eight-frame spell-casting animation sprite sheet of EXACTLY the dark chrome robot boss in the reference. Preserve its bulky armored body, pointed helmet, spiked shoulder plates, segmented heavy legs, bright circular BLUE CHEST REACTOR, blue eyes and blue highlights, proportions and detailed crisp pixel-art style. This time he has put his hammer away: BOTH HANDS EMPTY, NO WEAPONS, NO GUNS, NO STAFF. Do not turn him into a thin skeletal robot. Full body same size every frame. Exactly 4 columns by 2 rows, eight equal cells, no text/numbers/borders. Plenty of transparent space surrounding each sprite. Each boss fully contained with a minimum 32 pixels empty margin inside EVERY cell. Read left-to-right: 1 standing braced hands down; 2 begins lifting open hands to chest; 3 elbows raised open palms at shoulder level; 4 BOTH hands lifted overhead, gathering small blue-white energy arcs between palms; 5 overhead casting apex, palms open, tiny blue charged sparks at fingertips; 6 arms thrust forward/down to release magic, no projectile included; 7 lowers arms to waist following through; 8 same braced idle as frame 1. Same view, same grounded foot line, same body scale and chest anchor in each cell. Keep armor neutral black and gray with BLUE highlights, not red or purple. Effects small around hands only, no background glow or floor. Genuine transparent RGBA background, no baked checkerboard. This sheet is for a blue-electric boss invoking marked laser columns; exactly the same recognizable boss character from the reference, full-body authored animation poses."
+}

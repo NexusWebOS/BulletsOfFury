@@ -1,0 +1,590 @@
+{
+  "scope": "September 27 director muzzle, modular explosions, Furious space Tempest and pilot thrusters",
+  "review": "http://127.0.0.1:8794/_shots/director_0927/review.html",
+  "tests": {
+    "baselinePassed": 5432,
+    "baselineFailingNames": [],
+    "passed": 5479,
+    "failingNames": [],
+    "exitCode": 0,
+    "finalBanner": true
+  },
+  "syntax": {
+    "passed": true,
+    "files": [
+      "assets/game.js",
+      "assets/director_art_0927.js",
+      "assets/combat_director_0927.js",
+      "assets/weapon_muzzles_0926.js",
+      "assets/modular_roster_0927.js",
+      "assets/combat_polish_0927b.js",
+      "assets/stage7_modular_0927.js",
+      "assets/rival_fight_0924.js"
+    ]
+  },
+  "lineEndings": {
+    "assets/game.js": {
+      "LF": 79553,
+      "CRLF": 0
+    },
+    "_BUILD_SOURCE/test_fl.js": {
+      "LF": 15764,
+      "CRLF": 15764
+    },
+    "_BUILD_SOURCE/test_director_0927.cjs": {
+      "LF": 28,
+      "CRLF": 28
+    }
+  },
+  "limitations": [
+    "Selected encounter/weapon fixtures, not campaign wins or completed difficulty balancing.",
+    "Physical controller hardware untested in this pass.",
+    "Original full-volume overlapping special SFX exceeded unity in captures; final special review has capture-only headroom. No game mixer change."
+  ],
+  "native": {
+    "reels": [
+      {
+        "family": "mg",
+        "frames": 6,
+        "ready": true
+      },
+      {
+        "family": "chaingun",
+        "frames": 6,
+        "ready": true
+      },
+      {
+        "family": "spread",
+        "frames": 6,
+        "ready": true
+      },
+      {
+        "family": "shotgun",
+        "frames": 6,
+        "ready": true
+      },
+      {
+        "family": "fire",
+        "frames": 6,
+        "ready": true
+      },
+      {
+        "family": "ice",
+        "frames": 6,
+        "ready": true
+      },
+      {
+        "family": "lightning",
+        "frames": 6,
+        "ready": true
+      },
+      {
+        "family": "toxic",
+        "frames": 6,
+        "ready": true
+      },
+      {
+        "family": "laser",
+        "frames": 6,
+        "ready": true
+      },
+      {
+        "family": "orb",
+        "frames": 6,
+        "ready": true
+      },
+      {
+        "family": "sonic",
+        "frames": 6,
+        "ready": true
+      },
+      {
+        "family": "void",
+        "frames": 6,
+        "ready": true
+      },
+      {
+        "family": "missile",
+        "frames": 6,
+        "ready": true
+      },
+      {
+        "family": "roller",
+        "frames": 6,
+        "ready": true
+      },
+      {
+        "family": "helix",
+        "frames": 6,
+        "ready": true
+      },
+      {
+        "family": "exhaust",
+        "frames": 6,
+        "ready": true
+      }
+    ],
+    "pilots": [
+      {
+        "pilot": "axel",
+        "frames": 6,
+        "unique": 6,
+        "changed": 858,
+        "outside": 0,
+        "alpha": 0
+      },
+      {
+        "pilot": "decker",
+        "frames": 6,
+        "unique": 6,
+        "changed": 1276,
+        "outside": 0,
+        "alpha": 0
+      },
+      {
+        "pilot": "maverick",
+        "frames": 6,
+        "unique": 6,
+        "changed": 2447,
+        "outside": 0,
+        "alpha": 0
+      },
+      {
+        "pilot": "freezer",
+        "frames": 6,
+        "unique": 6,
+        "changed": 1091,
+        "outside": 0,
+        "alpha": 0
+      },
+      {
+        "pilot": "juggernaut",
+        "frames": 6,
+        "unique": 6,
+        "changed": 2780,
+        "outside": 0,
+        "alpha": 0
+      },
+      {
+        "pilot": "yuri",
+        "frames": 6,
+        "unique": 6,
+        "changed": 2582,
+        "outside": 0,
+        "alpha": 0
+      },
+      {
+        "pilot": "lizzie",
+        "frames": 6,
+        "unique": 6,
+        "changed": 2685,
+        "outside": 0,
+        "alpha": 0
+      },
+      {
+        "pilot": "falva",
+        "frames": 6,
+        "unique": 6,
+        "changed": 2014,
+        "outside": 0,
+        "alpha": 0
+      },
+      {
+        "pilot": "cole",
+        "frames": 6,
+        "unique": 6,
+        "changed": 2124,
+        "outside": 0,
+        "alpha": 0
+      }
+    ],
+    "tempest": [
+      {
+        "difficulty": "normal",
+        "name": "TEMPEST VOID ECLIPSE",
+        "variant": 0,
+        "states": [
+          "entry",
+          "bombs",
+          "charge",
+          "beam",
+          "recover",
+          "missiles"
+        ],
+        "maxBullets": 4,
+        "travel": 1680.42915201618,
+        "lastX": 233.68328437402533,
+        "maxMove": 3.025272765913371,
+        "zoom": 1,
+        "finite": true
+      },
+      {
+        "difficulty": "hard",
+        "name": "TEMPEST SILVER ECLIPSE",
+        "variant": 1,
+        "states": [
+          "entry",
+          "bombs",
+          "charge",
+          "beam",
+          "recover",
+          "missiles"
+        ],
+        "maxBullets": 2,
+        "travel": 1680.42915201618,
+        "lastX": 233.68328437402533,
+        "maxMove": 3.025272765913371,
+        "zoom": 1,
+        "finite": true
+      },
+      {
+        "difficulty": "furious",
+        "name": "TEMPEST CRIMSON ECLIPSE",
+        "variant": 1,
+        "states": [
+          "entry",
+          "bombs",
+          "charge",
+          "beam",
+          "recover",
+          "missiles"
+        ],
+        "maxBullets": 4,
+        "travel": 6661.165833124069,
+        "lastX": 428.4314313534166,
+        "maxMove": 7.662433366451353,
+        "zoom": 1,
+        "finite": true
+      }
+    ],
+    "rupture": {
+      "count": 18,
+      "idempotent": true,
+      "mode": "recover",
+      "remaining": 0
+    },
+    "errors": []
+  },
+  "clips": {
+    "clips": [
+      {
+        "name": "module-cascades",
+        "stage": 4,
+        "kind": "stormsovereign",
+        "mini": false,
+        "diff": "normal",
+        "seconds": 22,
+        "finite": true,
+        "zoomMin": 1,
+        "zoomMax": 1,
+        "families": [
+          "laser",
+          "missile",
+          "mg"
+        ],
+        "audioPeak": 0.7315977811813354,
+        "breaks": 4
+      },
+      {
+        "name": "player-weapons",
+        "stage": 1,
+        "kind": "junglecruiser",
+        "mini": false,
+        "diff": "normal",
+        "seconds": 30,
+        "finite": true,
+        "zoomMin": 1,
+        "zoomMax": 1,
+        "families": [
+          "mg",
+          "spread",
+          "missile",
+          "orb",
+          "laser",
+          "chaingun"
+        ],
+        "audioPeak": 0.5321109294891357,
+        "breaks": 0
+      },
+      {
+        "name": "muzzle-reels",
+        "stage": 1,
+        "kind": "junglecruiser",
+        "mini": false,
+        "diff": "normal",
+        "seconds": 8,
+        "finite": true,
+        "zoomMin": 1,
+        "zoomMax": 1,
+        "families": [],
+        "audioPeak": 0,
+        "breaks": 0
+      },
+      {
+        "name": "pilot-thrusters",
+        "stage": 1,
+        "kind": "junglecruiser",
+        "mini": false,
+        "diff": "normal",
+        "seconds": 8,
+        "finite": true,
+        "zoomMin": 1,
+        "zoomMax": 1,
+        "families": [],
+        "audioPeak": 0,
+        "breaks": 0
+      },
+      {
+        "name": "tempest-hard",
+        "stage": 5,
+        "kind": "spacebomber",
+        "mini": true,
+        "diff": "hard",
+        "seconds": 24,
+        "finite": true,
+        "zoomMin": 1,
+        "zoomMax": 1,
+        "families": [
+          "missile"
+        ],
+        "audioPeak": 0.38523954153060913,
+        "breaks": 0
+      },
+      {
+        "name": "tempest-furious",
+        "stage": 5,
+        "kind": "spacebomber",
+        "mini": true,
+        "diff": "furious",
+        "seconds": 30,
+        "finite": true,
+        "zoomMin": 1,
+        "zoomMax": 1,
+        "families": [
+          "missile"
+        ],
+        "audioPeak": 0.4207608997821808,
+        "breaks": 0
+      }
+    ],
+    "errors": []
+  },
+  "specials": {
+    "seconds": 23,
+    "audioPeak": 0.8312634229660034,
+    "sfxVolume": 0.65,
+    "captureGain": 0.4,
+    "scenes": [
+      {
+        "pilot": "maverick",
+        "seconds": 4,
+        "special": true,
+        "hold": 2.2,
+        "expect": [
+          "laser",
+          "helix"
+        ],
+        "families": [
+          "laser",
+          "helix"
+        ]
+      },
+      {
+        "pilot": "falva",
+        "seconds": 7,
+        "special": true,
+        "hold": 5.2,
+        "expect": [
+          "roller"
+        ],
+        "families": [
+          "roller"
+        ]
+      },
+      {
+        "pilot": "decker",
+        "seconds": 3,
+        "expect": [
+          "shotgun"
+        ],
+        "families": [
+          "shotgun"
+        ]
+      },
+      {
+        "pilot": "freezer",
+        "weapon": 4,
+        "seconds": 3,
+        "expect": [
+          "ice"
+        ],
+        "families": [
+          "ice"
+        ]
+      },
+      {
+        "pilot": "yuri",
+        "seconds": 3,
+        "special": true,
+        "expect": [
+          "lightning"
+        ],
+        "families": [
+          "lightning"
+        ]
+      },
+      {
+        "pilot": "cole",
+        "weapon": 4,
+        "seconds": 3,
+        "expect": [
+          "fire"
+        ],
+        "families": [
+          "fire"
+        ]
+      }
+    ],
+    "errors": []
+  },
+  "harrier": {
+    "routes": [
+      {
+        "source": "missile",
+        "slot": "left_missile_bay",
+        "rendered": [
+          "missile"
+        ]
+      },
+      {
+        "source": "plasma",
+        "slot": "central_reactor",
+        "rendered": [
+          "orb"
+        ]
+      },
+      {
+        "source": "sidelaser",
+        "slot": "right_cannon",
+        "rendered": [
+          "laser"
+        ]
+      }
+    ],
+    "errors": []
+  },
+  "reviewCheck": {
+    "media": [
+      {
+        "src": "tempest-hard.webm",
+        "duration": 23.899148,
+        "width": 960,
+        "height": 1024,
+        "error": null
+      },
+      {
+        "src": "tempest-furious.webm",
+        "duration": 29.938476,
+        "width": 960,
+        "height": 1024,
+        "error": null
+      },
+      {
+        "src": "module-cascades.webm",
+        "duration": 21.936382,
+        "width": 960,
+        "height": 1024,
+        "error": null
+      },
+      {
+        "src": "player-weapons.webm",
+        "duration": 29.950585,
+        "width": 960,
+        "height": 1024,
+        "error": null
+      },
+      {
+        "src": "player-specials.webm",
+        "duration": 22.947617,
+        "width": 960,
+        "height": 1024,
+        "error": null
+      },
+      {
+        "src": "muzzle-reels.webm",
+        "duration": 7.943778,
+        "width": 480,
+        "height": 512,
+        "error": null
+      },
+      {
+        "src": "pilot-thrusters.webm",
+        "duration": 7.949836,
+        "width": 480,
+        "height": 512,
+        "error": null
+      }
+    ],
+    "posters": [
+      {
+        "src": "/_shots/director_0927/tempest-hard-video-1.png",
+        "status": 200
+      },
+      {
+        "src": "/_shots/director_0927/tempest-furious-12.png",
+        "status": 200
+      },
+      {
+        "src": "/_shots/director_0927/module-cascades-video-0.png",
+        "status": 200
+      },
+      {
+        "src": "/_shots/director_0927/player-weapons-video-0.png",
+        "status": 200
+      },
+      {
+        "src": "/_shots/director_0927/special-decker-0.png",
+        "status": 200
+      },
+      {
+        "src": "/_shots/director_0927/muzzles-2.png",
+        "status": 200
+      },
+      {
+        "src": "/_shots/director_0927/pilots-2.png",
+        "status": 200
+      }
+    ],
+    "links": [
+      {
+        "url": "/index.html",
+        "status": 200
+      },
+      {
+        "url": "/bossmode.html",
+        "status": 200
+      },
+      {
+        "url": "/docs/DIRECTOR_UPGRADE_0927.md",
+        "status": 200
+      },
+      {
+        "url": "/_shots/director_0927/report.json",
+        "status": 200
+      },
+      {
+        "url": "/_shots/director_0927/specials.json",
+        "status": 200
+      },
+      {
+        "url": "/_shots/director_0927/videos.json",
+        "status": 200
+      },
+      {
+        "url": "/_shots/director_0927/suite-final.log",
+        "status": 200
+      }
+    ],
+    "errors": []
+  }
+}

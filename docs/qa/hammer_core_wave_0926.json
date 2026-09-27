@@ -1,0 +1,253 @@
+{
+  "order": [
+    {
+      "difficulty": "normal",
+      "samples": [
+        {
+          "t": 1.2333333333333338,
+          "lightning": false,
+          "charged": false,
+          "body": 0
+        },
+        {
+          "t": 1.3166666666666669,
+          "lightning": true,
+          "charged": true,
+          "body": 0
+        },
+        {
+          "t": 1.566666666666666,
+          "lightning": true,
+          "charged": true,
+          "body": 0
+        },
+        {
+          "t": 1.816666666666665,
+          "lightning": true,
+          "charged": true,
+          "body": 0.1083333333333325
+        },
+        {
+          "t": 2.3166666666666633,
+          "lightning": true,
+          "charged": true,
+          "body": 0.3583333333333316
+        },
+        {
+          "t": 2.8166666666666615,
+          "lightning": true,
+          "charged": true,
+          "body": 0.6083333333333307
+        },
+        {
+          "t": 3.6666666666666585,
+          "lightning": true,
+          "charged": true,
+          "body": 1
+        }
+      ]
+    },
+    {
+      "difficulty": "hard",
+      "samples": [
+        {
+          "t": 1.2333333333333338,
+          "lightning": false,
+          "charged": false,
+          "body": 0
+        },
+        {
+          "t": 1.3166666666666669,
+          "lightning": true,
+          "charged": true,
+          "body": 0
+        },
+        {
+          "t": 1.566666666666666,
+          "lightning": true,
+          "charged": true,
+          "body": 0
+        },
+        {
+          "t": 1.816666666666665,
+          "lightning": true,
+          "charged": true,
+          "body": 0.1083333333333325
+        },
+        {
+          "t": 2.3166666666666633,
+          "lightning": true,
+          "charged": true,
+          "body": 0.3583333333333316
+        },
+        {
+          "t": 2.8166666666666615,
+          "lightning": true,
+          "charged": true,
+          "body": 0.6083333333333307
+        },
+        {
+          "t": 3.6666666666666585,
+          "lightning": true,
+          "charged": true,
+          "body": 1
+        }
+      ]
+    },
+    {
+      "difficulty": "furious",
+      "samples": [
+        {
+          "t": 1.2333333333333338,
+          "lightning": false,
+          "charged": false,
+          "body": 0
+        },
+        {
+          "t": 1.3166666666666669,
+          "lightning": true,
+          "charged": true,
+          "body": 0
+        },
+        {
+          "t": 1.566666666666666,
+          "lightning": true,
+          "charged": true,
+          "body": 0
+        },
+        {
+          "t": 1.816666666666665,
+          "lightning": true,
+          "charged": true,
+          "body": 0.1083333333333325
+        },
+        {
+          "t": 2.3166666666666633,
+          "lightning": true,
+          "charged": true,
+          "body": 0.3583333333333316
+        },
+        {
+          "t": 2.8166666666666615,
+          "lightning": true,
+          "charged": true,
+          "body": 0.6083333333333307
+        },
+        {
+          "t": 3.6666666666666585,
+          "lightning": true,
+          "charged": true,
+          "body": 1
+        }
+      ]
+    }
+  ],
+  "pixels": [
+    {
+      "level": 0,
+      "regions": {
+        "core": {
+          "changed": 0,
+          "opaque": 400
+        },
+        "leftArm": {
+          "changed": 0,
+          "opaque": 576
+        },
+        "rightArm": {
+          "changed": 0,
+          "opaque": 576
+        },
+        "leftBoot": {
+          "changed": 0,
+          "opaque": 392
+        },
+        "rightBoot": {
+          "changed": 0,
+          "opaque": 425
+        }
+      }
+    },
+    {
+      "level": 0.12,
+      "regions": {
+        "core": {
+          "changed": 397,
+          "opaque": 400
+        },
+        "leftArm": {
+          "changed": 0,
+          "opaque": 576
+        },
+        "rightArm": {
+          "changed": 0,
+          "opaque": 576
+        },
+        "leftBoot": {
+          "changed": 0,
+          "opaque": 392
+        },
+        "rightBoot": {
+          "changed": 0,
+          "opaque": 425
+        }
+      }
+    },
+    {
+      "level": 0.34,
+      "regions": {
+        "core": {
+          "changed": 399,
+          "opaque": 400
+        },
+        "leftArm": {
+          "changed": 576,
+          "opaque": 576
+        },
+        "rightArm": {
+          "changed": 576,
+          "opaque": 576
+        },
+        "leftBoot": {
+          "changed": 0,
+          "opaque": 392
+        },
+        "rightBoot": {
+          "changed": 0,
+          "opaque": 425
+        }
+      }
+    },
+    {
+      "level": 1,
+      "regions": {
+        "core": {
+          "changed": 400,
+          "opaque": 400
+        },
+        "leftArm": {
+          "changed": 576,
+          "opaque": 576
+        },
+        "rightArm": {
+          "changed": 576,
+          "opaque": 576
+        },
+        "leftBoot": {
+          "changed": 385,
+          "opaque": 392
+        },
+        "rightBoot": {
+          "changed": 420,
+          "opaque": 425
+        }
+      }
+    }
+  ],
+  "rebuild": {
+    "state": "storm_rebuild",
+    "level": 0.24242424242424265,
+    "status": "cancelled"
+  },
+  "errors": []
+}

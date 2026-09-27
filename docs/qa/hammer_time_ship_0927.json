@@ -1,0 +1,617 @@
+{
+  "incoming": {
+    "passing": 5538,
+    "failingNames": []
+  },
+  "final": {
+    "passing": 5545,
+    "failingNames": [],
+    "exitCode": 0,
+    "finalBanner": true
+  },
+  "syntax": [
+    "assets/game.js",
+    "assets/hammer_time_art_0927.js",
+    "assets/hammer_time_0927.js"
+  ],
+  "native": {
+    "password": {
+      "state": "diff",
+      "pending": true,
+      "stage": 5
+    },
+    "start": {
+      "state": "play",
+      "active": true,
+      "kind": "chromehammer",
+      "hp": 6800,
+      "music": true,
+      "space": true
+    },
+    "entry": {
+      "x": 340,
+      "y": 406,
+      "ammo": 12,
+      "hp": 6800,
+      "locked": true
+    },
+    "ship": {
+      "drawn": true,
+      "frame": 15,
+      "time": 1,
+      "music": true
+    },
+    "entryImpact": {
+      "x": 340,
+      "y": 406,
+      "ammo": 12,
+      "hp": 6800,
+      "locked": true,
+      "slammed": true,
+      "helpers": 0,
+      "shots": 0,
+      "state": "play"
+    },
+    "entryReady": {
+      "locked": true,
+      "helpers": 4,
+      "allArrived": true,
+      "wall": {
+        "x": -8,
+        "y": 84.57590101333335,
+        "w": 696,
+        "h": 245.76,
+        "alpha": 0.5,
+        "rise": 0.9891931111111111
+      }
+    },
+    "clockDebug": {
+      "t": 16.1,
+      "paused": false,
+      "ready": 4,
+      "active": true,
+      "dead": false,
+      "wrapper": "function(dt){\n const d=ht27Data();if(d){\n  if(d.mode==='intro'&&!ht27Begin(d)){Input.clearTaps();return;}\n  const c=ht27Clock(d,dt),a=HAMMER_TIME_ART.audio,want=c>=a.breakStart&&c<a.breakEnd;\n  if(d.mode==='intro'&&c<a.breakStart){ht27Tick(boss,dt);ht27DanceEffects(dt);efxClock+=dt;mapScroll+=dt*12;",
+      "audio": 16
+    },
+    "lock": {
+      "first": {
+        "time": 16.1,
+        "mode": "break",
+        "locked": true
+      },
+      "time": 16.1,
+      "clock": 16.1,
+      "before": {
+        "x": 340,
+        "y": 406,
+        "bombs": 12,
+        "lives": 5
+      },
+      "after": {
+        "x": 340,
+        "y": 406,
+        "bombs": 12,
+        "lives": 5
+      },
+      "state": "play",
+      "locked": true,
+      "shield": true,
+      "shots": 0,
+      "helpers": 4,
+      "special": false
+    },
+    "shieldDamage": {
+      "before": 6800,
+      "after": 6800
+    },
+    "release": {
+      "locked": false,
+      "moved": true,
+      "shots": 12,
+      "pause": "paused"
+    },
+    "attack": {
+      "mode": "attack",
+      "hammerState": "warn",
+      "zoom": 1,
+      "finite": true
+    },
+    "cleanup": {
+      "active": false,
+      "locked": false,
+      "music": false,
+      "normalBoss": true
+    },
+    "difficulty": [
+      {
+        "difficulty": "easy",
+        "states": [
+          "hammer",
+          "warn",
+          "leap",
+          "recover",
+          "back",
+          "shield",
+          "spin",
+          "throw",
+          "hammer_catch",
+          "whirl_warn",
+          "whirlwind",
+          "whirl_turn",
+          "leap_reset",
+          "curl",
+          "ball",
+          "uncurl"
+        ],
+        "finite": true,
+        "zoom": 1,
+        "active": true
+      },
+      {
+        "difficulty": "normal",
+        "states": [
+          "hammer",
+          "warn",
+          "leap",
+          "recover",
+          "back",
+          "shield",
+          "spin",
+          "throw",
+          "hammer_catch",
+          "whirl_warn",
+          "whirlwind",
+          "whirl_turn",
+          "leap_reset",
+          "curl",
+          "ball",
+          "uncurl"
+        ],
+        "finite": true,
+        "zoom": 1,
+        "active": true
+      },
+      {
+        "difficulty": "hard",
+        "states": [
+          "hammer",
+          "warn",
+          "leap",
+          "recover",
+          "back",
+          "shield",
+          "spin",
+          "throw",
+          "hammer_catch",
+          "whirl_warn",
+          "whirlwind",
+          "whirl_turn",
+          "leap_reset",
+          "curl",
+          "ball"
+        ],
+        "finite": true,
+        "zoom": 1,
+        "active": true
+      },
+      {
+        "difficulty": "furious",
+        "states": [
+          "hammer",
+          "warn",
+          "leap",
+          "recover",
+          "back",
+          "shield",
+          "spin",
+          "throw",
+          "hammer_catch",
+          "whirl_warn",
+          "whirlwind",
+          "whirl_turn",
+          "giant_idle",
+          "giant_windup",
+          "giant_rise",
+          "giant_warn",
+          "giant_dive",
+          "giant_sweep",
+          "giant_recover",
+          "leap_reset",
+          "curl",
+          "ball"
+        ],
+        "finite": true,
+        "zoom": 1,
+        "active": true
+      },
+      {
+        "difficulty": "insanity",
+        "states": [
+          "hammer",
+          "warn",
+          "leap",
+          "recover",
+          "back",
+          "shield",
+          "spin",
+          "throw",
+          "hammer_catch",
+          "whirl_warn",
+          "whirlwind",
+          "whirl_turn",
+          "giant_idle",
+          "giant_windup",
+          "giant_rise",
+          "giant_warn",
+          "giant_dive",
+          "giant_sweep",
+          "giant_recover",
+          "leap_reset",
+          "curl",
+          "ball"
+        ],
+        "finite": true,
+        "zoom": 1,
+        "active": true
+      }
+    ],
+    "helpers": [
+      {
+        "difficulty": "normal",
+        "shots": 0,
+        "maxActive": 0,
+        "listed": false,
+        "damage": 0
+      },
+      {
+        "difficulty": "hard",
+        "shots": 6,
+        "maxActive": 1,
+        "listed": true,
+        "damage": 5
+      },
+      {
+        "difficulty": "insanity",
+        "shots": 8,
+        "maxActive": 1,
+        "listed": true,
+        "damage": 5
+      }
+    ],
+    "wall": {
+      "calls": [
+        {
+          "alpha": 0.5,
+          "dest": [
+            -8,
+            81.92000000000002,
+            696,
+            245.76
+          ]
+        }
+      ],
+      "bounds": {
+        "x": -8,
+        "y": 81.92000000000002,
+        "w": 696,
+        "h": 245.76,
+        "alpha": 0.5,
+        "rise": 1
+      }
+    },
+    "preVictory": {
+      "state": "play",
+      "titlePending": null,
+      "keys": {
+        "w": false,
+        "arrowup": false,
+        "pad_up": false,
+        "j": false,
+        "mouse0": false,
+        "pad_b0": false,
+        "pad_b7": false,
+        "k": false,
+        "mouse2": false,
+        "pad_b1": false,
+        "pad_b6": false,
+        "d": false,
+        "arrowright": false,
+        "pad_right": false
+      },
+      "mouse": {
+        "x": 240,
+        "y": 384,
+        "down": false,
+        "inside": false,
+        "active": false,
+        "moved": false,
+        "_lx": -1,
+        "_ly": -1
+      },
+      "active": true
+    },
+    "victory": {
+      "dead": true,
+      "active": false,
+      "state": "title",
+      "music": false,
+      "exits": [
+        {
+          "requested": "flyover",
+          "actual": "flyover"
+        },
+        {
+          "requested": "stageclear",
+          "actual": "title"
+        }
+      ]
+    },
+    "errors": []
+  },
+  "clip": {
+    "states": [
+      {
+        "t": 0.02,
+        "state": "intro:hammer",
+        "hp": 8400
+      },
+      {
+        "t": 16.011,
+        "state": "break:hammer",
+        "hp": 8400
+      },
+      {
+        "t": 24.011,
+        "state": "dance:hammer",
+        "hp": 8400
+      },
+      {
+        "t": 26.379,
+        "state": "attack:warn",
+        "hp": 8146.200000000006
+      },
+      {
+        "t": 27.88,
+        "state": "attack:leap",
+        "hp": 8138.000000000006
+      },
+      {
+        "t": 28.411,
+        "state": "attack:recover",
+        "hp": 8064.280000000009
+      },
+      {
+        "t": 29.119,
+        "state": "attack:back",
+        "hp": 8027.42000000001
+      },
+      {
+        "t": 29.64,
+        "state": "attack:shield",
+        "hp": 8019.22000000001
+      },
+      {
+        "t": 29.659,
+        "state": "dance:hammer",
+        "hp": 8019.22000000001
+      },
+      {
+        "t": 31.587,
+        "state": "attack:spin",
+        "hp": 7994.620000000011
+      },
+      {
+        "t": 33.149,
+        "state": "attack:throw",
+        "hp": 7945.420000000012
+      },
+      {
+        "t": 33.44,
+        "state": "attack:hammer_catch",
+        "hp": 7855.380000000016
+      },
+      {
+        "t": 34.112,
+        "state": "attack:revenge_charge",
+        "hp": 7798.060000000018
+      },
+      {
+        "t": 35.331,
+        "state": "attack:hammer_stun",
+        "hp": 7773.460000000018
+      }
+    ],
+    "audio": [
+      {
+        "t": 0.02,
+        "peak": 0.15952041745185852
+      },
+      {
+        "t": 1,
+        "peak": 0.054673753678798676
+      },
+      {
+        "t": 2.01,
+        "peak": 0.0523032583296299
+      },
+      {
+        "t": 3,
+        "peak": 0.10830934345722198
+      },
+      {
+        "t": 4.01,
+        "peak": 0.2689518928527832
+      },
+      {
+        "t": 5,
+        "peak": 0.12305684387683868
+      },
+      {
+        "t": 6.01,
+        "peak": 0.1627310812473297
+      },
+      {
+        "t": 7,
+        "peak": 0.17855679988861084
+      },
+      {
+        "t": 8.01,
+        "peak": 0.13759565353393555
+      },
+      {
+        "t": 9,
+        "peak": 0.1389704942703247
+      },
+      {
+        "t": 10.01,
+        "peak": 0.1599484086036682
+      },
+      {
+        "t": 11.02,
+        "peak": 0.18412667512893677
+      },
+      {
+        "t": 12.01,
+        "peak": 0.15438322722911835
+      },
+      {
+        "t": 13.01,
+        "peak": 0.15330573916435242
+      },
+      {
+        "t": 14.01,
+        "peak": 0.21905472874641418
+      },
+      {
+        "t": 15,
+        "peak": 0.26317405700683594
+      },
+      {
+        "t": 16.01,
+        "peak": 0.1342144012451172
+      },
+      {
+        "t": 17,
+        "peak": 0.17138034105300903
+      },
+      {
+        "t": 18.01,
+        "peak": 0.22447100281715393
+      },
+      {
+        "t": 19,
+        "peak": 0.17921635508537292
+      },
+      {
+        "t": 20,
+        "peak": 0.16417652368545532
+      },
+      {
+        "t": 21,
+        "peak": 0.22524341940879822
+      },
+      {
+        "t": 22.01,
+        "peak": 0.17110204696655273
+      },
+      {
+        "t": 23,
+        "peak": 0.179997518658638
+      },
+      {
+        "t": 24.01,
+        "peak": 0.1651739925146103
+      },
+      {
+        "t": 25.05,
+        "peak": 0.2414829432964325
+      },
+      {
+        "t": 26.03,
+        "peak": 0.2901626229286194
+      },
+      {
+        "t": 27.06,
+        "peak": 0.21400853991508484
+      },
+      {
+        "t": 28.01,
+        "peak": 0.3698551654815674
+      },
+      {
+        "t": 29,
+        "peak": 0.24632547795772552
+      },
+      {
+        "t": 30.01,
+        "peak": 0.24723507463932037
+      },
+      {
+        "t": 31,
+        "peak": 0.28397855162620544
+      },
+      {
+        "t": 32.01,
+        "peak": 0.21472351253032684
+      },
+      {
+        "t": 33.01,
+        "peak": 0.3759992718696594
+      },
+      {
+        "t": 34.01,
+        "peak": 0.2167554348707199
+      },
+      {
+        "t": 35.01,
+        "peak": 0.14780472218990326
+      },
+      {
+        "t": 36,
+        "peak": 0.2435103952884674
+      }
+    ],
+    "audioPeak": 0.5279227495193481,
+    "lock": {
+      "first": 16.010667,
+      "last": 23.999252,
+      "frames": 500,
+      "moved": false,
+      "shots": false,
+      "ammo": false,
+      "pause": false
+    },
+    "intro": {
+      "x": 340,
+      "y": 406,
+      "ammo": 12,
+      "moved": false,
+      "shots": false,
+      "pause": false,
+      "release": 24.010667,
+      "helpers": 4,
+      "remainingAmmo": 12
+    },
+    "seconds": 36.069333,
+    "zoom": 1,
+    "stillPlaying": true,
+    "released": true,
+    "fixture": "Hard difficulty; player invulnerability only; real-time native Chromium with supplied soundtrack",
+    "errors": []
+  },
+  "review": {
+    "images": 4,
+    "duration": 35.998,
+    "playing": true,
+    "time": 15.461258,
+    "videoError": null,
+    "errors": []
+  },
+  "limitations": [
+    "Invulnerability-assisted recording and controlled encounters, not a campaign victory or final balance proof.",
+    "Keyboard-driven native fixtures isolate physical controller input; actual gamepad hardware remains a human check."
+  ],
+  "committed": false,
+  "pushed": false
+}

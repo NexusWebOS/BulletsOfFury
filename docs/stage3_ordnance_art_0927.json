@@ -1,0 +1,345 @@
+{
+  "generator": "Built-in image generation; no SpriteCook",
+  "source": "assets/game/projectiles_0927/stage3_ordnance_source.png",
+  "output": "assets/game/projectiles_0927/stage3_ordnance.png",
+  "spec": "Six ice ordnance families, four frames each: shard, lance, tracer, mortar, shell, crescent wave. South-facing cyan/white/violet with dark outlines, genuine alpha. Stable bodies with animated energy.",
+  "normalization": "Measured row gutters, shared scale1, bottom-center nose at128,300 in256x320 cell. Runtime center128,230; no recoloring, alpha removal or repainting.",
+  "frames": [
+    {
+      "role": "shard",
+      "frame": 0,
+      "sourceCell": [
+        0,
+        0,
+        256,
+        246
+      ],
+      "translation": [
+        -1,
+        67
+      ]
+    },
+    {
+      "role": "shard",
+      "frame": 1,
+      "sourceCell": [
+        256,
+        0,
+        256,
+        246
+      ],
+      "translation": [
+        0,
+        67
+      ]
+    },
+    {
+      "role": "shard",
+      "frame": 2,
+      "sourceCell": [
+        512,
+        0,
+        256,
+        246
+      ],
+      "translation": [
+        0,
+        67
+      ]
+    },
+    {
+      "role": "shard",
+      "frame": 3,
+      "sourceCell": [
+        768,
+        0,
+        256,
+        246
+      ],
+      "translation": [
+        -1,
+        67
+      ]
+    },
+    {
+      "role": "lance",
+      "frame": 0,
+      "sourceCell": [
+        0,
+        246,
+        256,
+        264
+      ],
+      "translation": [
+        -2,
+        45
+      ]
+    },
+    {
+      "role": "lance",
+      "frame": 1,
+      "sourceCell": [
+        256,
+        246,
+        256,
+        264
+      ],
+      "translation": [
+        -1,
+        45
+      ]
+    },
+    {
+      "role": "lance",
+      "frame": 2,
+      "sourceCell": [
+        512,
+        246,
+        256,
+        264
+      ],
+      "translation": [
+        0,
+        45
+      ]
+    },
+    {
+      "role": "lance",
+      "frame": 3,
+      "sourceCell": [
+        768,
+        246,
+        256,
+        264
+      ],
+      "translation": [
+        0,
+        45
+      ]
+    },
+    {
+      "role": "tracer",
+      "frame": 0,
+      "sourceCell": [
+        0,
+        510,
+        256,
+        248
+      ],
+      "translation": [
+        -2,
+        72
+      ]
+    },
+    {
+      "role": "tracer",
+      "frame": 1,
+      "sourceCell": [
+        256,
+        510,
+        256,
+        248
+      ],
+      "translation": [
+        -2,
+        72
+      ]
+    },
+    {
+      "role": "tracer",
+      "frame": 2,
+      "sourceCell": [
+        512,
+        510,
+        256,
+        248
+      ],
+      "translation": [
+        3,
+        72
+      ]
+    },
+    {
+      "role": "tracer",
+      "frame": 3,
+      "sourceCell": [
+        768,
+        510,
+        256,
+        248
+      ],
+      "translation": [
+        0,
+        72
+      ]
+    },
+    {
+      "role": "mortar",
+      "frame": 0,
+      "sourceCell": [
+        0,
+        758,
+        256,
+        242
+      ],
+      "translation": [
+        0,
+        72
+      ]
+    },
+    {
+      "role": "mortar",
+      "frame": 1,
+      "sourceCell": [
+        256,
+        758,
+        256,
+        242
+      ],
+      "translation": [
+        -3,
+        72
+      ]
+    },
+    {
+      "role": "mortar",
+      "frame": 2,
+      "sourceCell": [
+        512,
+        758,
+        256,
+        242
+      ],
+      "translation": [
+        0,
+        72
+      ]
+    },
+    {
+      "role": "mortar",
+      "frame": 3,
+      "sourceCell": [
+        768,
+        758,
+        256,
+        242
+      ],
+      "translation": [
+        5,
+        72
+      ]
+    },
+    {
+      "role": "shell",
+      "frame": 0,
+      "sourceCell": [
+        0,
+        1000,
+        256,
+        280
+      ],
+      "translation": [
+        0,
+        38
+      ]
+    },
+    {
+      "role": "shell",
+      "frame": 1,
+      "sourceCell": [
+        256,
+        1000,
+        256,
+        280
+      ],
+      "translation": [
+        0,
+        38
+      ]
+    },
+    {
+      "role": "shell",
+      "frame": 2,
+      "sourceCell": [
+        512,
+        1000,
+        256,
+        280
+      ],
+      "translation": [
+        0,
+        38
+      ]
+    },
+    {
+      "role": "shell",
+      "frame": 3,
+      "sourceCell": [
+        768,
+        1000,
+        256,
+        280
+      ],
+      "translation": [
+        0,
+        38
+      ]
+    },
+    {
+      "role": "wave",
+      "frame": 0,
+      "sourceCell": [
+        0,
+        1280,
+        256,
+        256
+      ],
+      "translation": [
+        -1,
+        75
+      ]
+    },
+    {
+      "role": "wave",
+      "frame": 1,
+      "sourceCell": [
+        256,
+        1280,
+        256,
+        256
+      ],
+      "translation": [
+        -1,
+        75
+      ]
+    },
+    {
+      "role": "wave",
+      "frame": 2,
+      "sourceCell": [
+        512,
+        1280,
+        256,
+        256
+      ],
+      "translation": [
+        0,
+        75
+      ]
+    },
+    {
+      "role": "wave",
+      "frame": 3,
+      "sourceCell": [
+        768,
+        1280,
+        256,
+        256
+      ],
+      "translation": [
+        -1,
+        75
+      ]
+    }
+  ]
+}

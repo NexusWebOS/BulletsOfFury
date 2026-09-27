@@ -3,12 +3,15 @@
 (function(){
   'use strict';
   let cut=null;
+  const STORY_CPS=26, STORY_READ_HOLD=2.4;
   function pilot(){return (run&&run.pilot)||_pilotKey()||'axel';}
   function support(){return pilot()==='decker'?'cole':'decker';}
   function b(bg,who,text,extra){
     const shot=bg==='cinintro_team'?'reaction':bg==='cinintro_command'?'command':bg==='cinintro_lab'?'lab':null;
     const plate=shot?(shot==='lab'?'cin_story_lab_empty':'cin_story_hq_empty'):bg;
-    return Object.assign({bg:plate,who:who,text:text,shot:shot,duration:Math.max(4.1,text.length/34+1.15)},extra||{});
+    const beat=Object.assign({bg:plate,who:who,text:text,shot:shot},extra||{});
+    beat.duration=Math.max(beat.duration||0,5.2,text.length/STORY_CPS+STORY_READ_HOLD);
+    return beat;
   }
   function script(stage){
     const pk=pilot(), tech=support(), p=(PILOTS.find(q=>q.key===pk)||{}).name||pk.toUpperCase();
@@ -285,7 +288,7 @@
     // The dedicated dialogue rail masks that caption before the live text is set.
     ctx.fillStyle='#02060b';ctx.fillRect(0,H*.70,W,H*.30);
     const full=beat.text,was=cut.shown;
-    cut.shown=Math.min(full.length,Math.floor(cut.t*38));
+    cut.shown=Math.min(full.length,Math.floor(cut.t*STORY_CPS));
     dialogueLetterTicks(full,was,cut.shown);
     const tint=dialogueNameColor(beat.who,'#a9dcfa');
     dlgBox({who:beat.who,portrait:beat.pilot||false,full:full,shown:full.slice(0,cut.shown),fade:Math.min(1,cut.t*5),tint:tint,
@@ -293,8 +296,14 @@
     msgFaceUse('dialogue');controlHintRow([['pad_start','SKIP']],H-20,W/2,W-24);msgFaceUse(null);
     ctx.restore();
     const click=Input.mouse.down&&!cut.md;cut.md=!!Input.mouse.down;
-    if(cut.t>=beat.duration||(cut.t>.35&&(click||(typeof anyTap==='function'&&anyTap())))){
-      Input.mouse.down=false;next();
+    if(cut.t>=beat.duration){Input.mouse.down=false;next();return;}
+    if(cut.t>.35&&(click||Input.menuStart())){
+      // A deliberate Start press may finish typing, but cannot erase the line
+      // before its full text has had the same reading hold as the automatic path.
+      const typedAt=full.length/STORY_CPS;
+      if(cut.t<typedAt)cut.t=typedAt;
+      else if(cut.t>=typedAt+STORY_READ_HOLD)next();
+      Input.mouse.down=false;
     }
   }
   let gateLaunch=null;

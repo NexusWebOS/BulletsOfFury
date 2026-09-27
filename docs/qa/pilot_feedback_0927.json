@@ -1,0 +1,608 @@
+{
+  "baseline": {
+    "assertions": 5479,
+    "failingNames": []
+  },
+  "final": {
+    "assertions": 5492,
+    "failingNames": [],
+    "exitCode": 0,
+    "finalBanner": true,
+    "log": "_shots/pilot_feedback_0927/suite-final-2.log"
+  },
+  "native": {
+    "muzzles": [
+      {
+        "weapon": 0,
+        "flashes": [
+          {
+            "family": "mg",
+            "x": 340,
+            "y": 332
+          }
+        ],
+        "draws": [
+          {
+            "family": "mg",
+            "x": 340,
+            "y": 332
+          }
+        ],
+        "player": {
+          "x": 340,
+          "y": 350
+        }
+      },
+      {
+        "weapon": 1,
+        "flashes": [
+          {
+            "family": "spread",
+            "x": 340,
+            "y": 332
+          }
+        ],
+        "draws": [
+          {
+            "family": "spread",
+            "x": 340,
+            "y": 332
+          }
+        ],
+        "player": {
+          "x": 340,
+          "y": 350
+        }
+      },
+      {
+        "weapon": 2,
+        "flashes": [
+          {
+            "family": "missile",
+            "x": 340,
+            "y": 332
+          }
+        ],
+        "draws": [
+          {
+            "family": "missile",
+            "x": 340,
+            "y": 332
+          }
+        ],
+        "player": {
+          "x": 340,
+          "y": 350
+        }
+      },
+      {
+        "weapon": 7,
+        "flashes": [
+          {
+            "family": "chaingun",
+            "x": 340,
+            "y": 332
+          }
+        ],
+        "draws": [
+          {
+            "family": "chaingun",
+            "x": 340,
+            "y": 332
+          }
+        ],
+        "player": {
+          "x": 340,
+          "y": 350
+        }
+      }
+    ],
+    "space": {
+      "draws": [
+        {
+          "family": "missile",
+          "x": 340,
+          "y": 377.985
+        }
+      ],
+      "turrets": [
+        {
+          "family": "laser",
+          "x": 330.25,
+          "y": 391.485
+        },
+        {
+          "family": "laser",
+          "x": 349.75,
+          "y": 391.485
+        }
+      ],
+      "ports": {
+        "laser": [
+          {
+            "x": 330.25,
+            "y": 391.485,
+            "side": -1
+          },
+          {
+            "x": 349.75,
+            "y": 391.485,
+            "side": 1
+          }
+        ],
+        "nose": {
+          "x": 340,
+          "y": 377.985
+        }
+      }
+    },
+    "thrusters": [
+      {
+        "pilot": "axel",
+        "base": "ship_axel",
+        "w": 190,
+        "h": 224,
+        "parts": [
+          {
+            "x": 90,
+            "y": 175,
+            "w": 12,
+            "h": 17
+          }
+        ]
+      },
+      {
+        "pilot": "decker",
+        "base": "ship_decker",
+        "w": 200,
+        "h": 230,
+        "parts": [
+          {
+            "x": 104,
+            "y": 196,
+            "w": 11,
+            "h": 27
+          }
+        ]
+      },
+      {
+        "pilot": "maverick",
+        "base": "ship_maverick",
+        "w": 200,
+        "h": 211,
+        "parts": [
+          {
+            "x": 83,
+            "y": 176,
+            "w": 13,
+            "h": 23
+          },
+          {
+            "x": 132,
+            "y": 177,
+            "w": 12,
+            "h": 22
+          }
+        ]
+      },
+      {
+        "pilot": "freezer",
+        "base": "ship_freezer",
+        "w": 183,
+        "h": 194,
+        "parts": [
+          {
+            "x": 87,
+            "y": 160,
+            "w": 12,
+            "h": 21
+          }
+        ]
+      },
+      {
+        "pilot": "juggernaut",
+        "base": "ship_juggernaut",
+        "w": 200,
+        "h": 205,
+        "parts": [
+          {
+            "x": 83,
+            "y": 159,
+            "w": 11,
+            "h": 29
+          },
+          {
+            "x": 128,
+            "y": 159,
+            "w": 12,
+            "h": 29
+          }
+        ]
+      },
+      {
+        "pilot": "yuri",
+        "base": "ship_yuri",
+        "w": 209,
+        "h": 229,
+        "parts": [
+          {
+            "x": 81,
+            "y": 175,
+            "w": 13,
+            "h": 26
+          },
+          {
+            "x": 123,
+            "y": 175,
+            "w": 11,
+            "h": 26
+          }
+        ]
+      },
+      {
+        "pilot": "lizzie",
+        "base": "ship_lizzie",
+        "w": 224,
+        "h": 243,
+        "parts": [
+          {
+            "x": 88,
+            "y": 193,
+            "w": 11,
+            "h": 27
+          },
+          {
+            "x": 146,
+            "y": 193,
+            "w": 12,
+            "h": 27
+          }
+        ]
+      },
+      {
+        "pilot": "falva",
+        "base": "ship_falva",
+        "w": 204,
+        "h": 238,
+        "parts": [
+          {
+            "x": 97,
+            "y": 189,
+            "w": 16,
+            "h": 28
+          }
+        ]
+      },
+      {
+        "pilot": "cole",
+        "base": "ship_cole",
+        "w": 193,
+        "h": 232,
+        "parts": [
+          {
+            "x": 75,
+            "y": 186,
+            "w": 11,
+            "h": 27
+          },
+          {
+            "x": 105,
+            "y": 186,
+            "w": 11,
+            "h": 27
+          }
+        ]
+      }
+    ],
+    "acceleration": [
+      {
+        "power": 0.951845145878804,
+        "y": 307.8800000000001,
+        "zoom": 1
+      },
+      {
+        "power": 0.9990252537071932,
+        "y": 244.70000000000027,
+        "zoom": 1
+      },
+      {
+        "power": 0.39285741093374926,
+        "y": 244.70000000000027,
+        "zoom": 1
+      },
+      {
+        "power": 0,
+        "y": 244.70000000000027,
+        "zoom": 1
+      }
+    ],
+    "iceFrames": [
+      {
+        "frame": 0,
+        "span": 208
+      },
+      {
+        "frame": 1,
+        "span": 208
+      },
+      {
+        "frame": 2,
+        "span": 208
+      },
+      {
+        "frame": 3,
+        "span": 208
+      },
+      {
+        "frame": 4,
+        "span": 208
+      },
+      {
+        "frame": 5,
+        "span": 208
+      },
+      {
+        "frame": 6,
+        "span": 208
+      },
+      {
+        "frame": 7,
+        "span": 208
+      },
+      {
+        "frame": 8,
+        "span": 208
+      },
+      {
+        "frame": 9,
+        "span": 208
+      },
+      {
+        "frame": 10,
+        "span": 208
+      },
+      {
+        "frame": 11,
+        "span": 208
+      }
+    ],
+    "palettes": [
+      {
+        "level": 1,
+        "hash": -826953118
+      },
+      {
+        "level": 2,
+        "hash": -103571387
+      },
+      {
+        "level": 3,
+        "hash": 741494890
+      },
+      {
+        "level": 4,
+        "hash": -104908925
+      },
+      {
+        "level": 5,
+        "hash": -767519404
+      }
+    ],
+    "lanceVolleys": [
+      {
+        "tier": 1,
+        "shots": 3,
+        "color": 1,
+        "damage": 0.62,
+        "fixedTier": 1,
+        "muzzleCount": 1,
+        "muzzleColor": "#ff8a1e",
+        "expectedColor": "#ff8a1e"
+      },
+      {
+        "tier": 2,
+        "shots": 3,
+        "color": 2,
+        "damage": 0.62,
+        "fixedTier": 1,
+        "muzzleCount": 1,
+        "muzzleColor": "#3a8aff",
+        "expectedColor": "#3a8aff"
+      },
+      {
+        "tier": 3,
+        "shots": 3,
+        "color": 3,
+        "damage": 0.62,
+        "fixedTier": 1,
+        "muzzleCount": 1,
+        "muzzleColor": "#5fe07a",
+        "expectedColor": "#5fe07a"
+      },
+      {
+        "tier": 4,
+        "shots": 3,
+        "color": 4,
+        "damage": 0.62,
+        "fixedTier": 1,
+        "muzzleCount": 1,
+        "muzzleColor": "#dfe8ff",
+        "expectedColor": "#dfe8ff"
+      },
+      {
+        "tier": 5,
+        "shots": 3,
+        "color": 5,
+        "damage": 0.62,
+        "fixedTier": 1,
+        "muzzleCount": 1,
+        "muzzleColor": "#ff3b30",
+        "expectedColor": "#ff3b30"
+      }
+    ],
+    "errors": []
+  },
+  "recordings": {
+    "clips": [
+      {
+        "name": "single-muzzles",
+        "seconds": 12,
+        "stage": 1,
+        "pilot": "cole",
+        "samples": [
+          {
+            "t": 2.400699999988079,
+            "thrust": 0,
+            "space": false,
+            "zoom": 1,
+            "flashes": 1
+          },
+          {
+            "t": 4.820899999976158,
+            "thrust": 0,
+            "space": false,
+            "zoom": 1,
+            "flashes": 1
+          },
+          {
+            "t": 7.201100000023842,
+            "thrust": 0,
+            "space": false,
+            "zoom": 1,
+            "flashes": 1
+          },
+          {
+            "t": 9.602,
+            "thrust": 0,
+            "space": false,
+            "zoom": 1,
+            "flashes": 1
+          }
+        ],
+        "audioPeak": 0.40342947840690613
+      },
+      {
+        "name": "ice-breath",
+        "seconds": 8,
+        "stage": 2,
+        "pilot": "freezer",
+        "weapon": 4,
+        "samples": [
+          {
+            "t": 1.6003999999761582,
+            "thrust": 0,
+            "space": false,
+            "zoom": 1,
+            "flashes": 0
+          },
+          {
+            "t": 3.200199999988079,
+            "thrust": 0,
+            "space": false,
+            "zoom": 1,
+            "flashes": 0
+          },
+          {
+            "t": 4.800199999988079,
+            "thrust": 0,
+            "space": false,
+            "zoom": 1,
+            "flashes": 0
+          },
+          {
+            "t": 6.400199999988079,
+            "thrust": 0,
+            "space": false,
+            "zoom": 1,
+            "flashes": 0
+          }
+        ],
+        "audioPeak": 0.5941838622093201
+      },
+      {
+        "name": "acceleration",
+        "seconds": 16,
+        "stage": 1,
+        "pilot": "cole",
+        "samples": [
+          {
+            "t": 3.2005,
+            "thrust": 0.07176229549559117,
+            "space": false,
+            "zoom": 1,
+            "flashes": 0
+          },
+          {
+            "t": 6.400400000035763,
+            "thrust": 0.9999979496499022,
+            "space": false,
+            "zoom": 1,
+            "flashes": 0
+          },
+          {
+            "t": 9.624199999988079,
+            "thrust": 0.9997222252431074,
+            "space": true,
+            "zoom": 1,
+            "flashes": 0
+          },
+          {
+            "t": 12.8155,
+            "thrust": 0.01849630616016032,
+            "space": true,
+            "zoom": 1,
+            "flashes": 0
+          }
+        ],
+        "audioPeak": 0.4903075695037842
+      }
+    ],
+    "errors": []
+  },
+  "review": {
+    "media": [
+      {
+        "src": "single-muzzles.webm",
+        "duration": 11.938508,
+        "width": 960,
+        "height": 1024,
+        "error": null
+      },
+      {
+        "src": "ice-breath.webm",
+        "duration": 7.940578,
+        "width": 480,
+        "height": 512,
+        "error": null
+      },
+      {
+        "src": "acceleration.webm",
+        "duration": 15.953784,
+        "width": 480,
+        "height": 512,
+        "error": null
+      }
+    ],
+    "idleToggle": "true",
+    "boostToggle": "true",
+    "gameLinkStatus": 200,
+    "errors": []
+  },
+  "limitations": [
+    "Empty encounter fixtures; not campaign wins.",
+    "Quick-roll poses retain authored exhaust; normal, banked and space exhaust use acceleration feedback.",
+    "Visual/color pass preserves fixed homing lance combat strength and existing ice damage envelope."
+  ],
+  "intermediateFailure": {
+    "log": "_shots/pilot_feedback_0927/suite-final.log",
+    "exitCode": 1,
+    "failingNames": [
+      "lance color tier 1 keeps fixed combat stats",
+      "lance color tier 2 keeps fixed combat stats",
+      "lance color tier 3 keeps fixed combat stats",
+      "lance color tier 4 keeps fixed combat stats",
+      "lance color tier 5 keeps fixed combat stats"
+    ],
+    "cause": "Strengthened assertions found that every lance had a short launch delay, so the general delayed-projectile filter suppressed the entire volley muzzle. Allowing one emitter for the staggered lance volley fixed all five; verified in real Chromium."
+  }
+}

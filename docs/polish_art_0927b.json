@@ -1,0 +1,23 @@
+{
+  "generator": "builtin image_gen",
+  "mode": "generate",
+  "assets": [
+    {
+      "key": "polish_armory",
+      "path": "assets/game/polish_0927b/armory.png",
+      "prompt": "Use case: ui-mockup. Production transparent pixel art UI atlas for Bullets of Fury, a detailed 16-bit military arcade shooter. EXACT 2 columns by 2 rows, four equal square cells with generous transparent gutters, all artwork inside its own cell. Top left: empty square gunmetal weapon inventory socket with bolted silver frame and dark blue black inner glass. Top right: same square socket selected, fine amber luminous trim. Bottom left: same socket locked with one large crisp white question mark ? centered. Bottom right: empty ornate gunmetal square information panel, thin cyan light details, dark opaque glass center suitable for labels. Consistent chunky metallic pixel highlights, black outlines, clean flat front view. All four centered, exact same external dimensions and margins. No letters, words, weapons, diagrams, grids or watermarks beyond the single question mark. Actual transparent background outside each panel. UI production assets, not a screenshot."
+    },
+    {
+      "key": "polish_bomber",
+      "path": "assets/game/polish_0927b/bomber.png",
+      "prompt": "Use case: stylized-concept. Production modular enemy sprite atlas for Bullets of Fury, 16-bit detailed arcade shoot-em-up. Giant menacing military SPACE BOMBER JET seen straight top down with slight 3/4 depth, NO perspective tilt. Nose faces UP because player is chasing it from below. Dark steel charcoal titanium with restrained crimson/amber lights, intricate armor and bold pixel outlines, coherent consistent lighting from upper left. EXACT 2 columns by 2 rows of isolated modules with broad transparent gutters. TOP LEFT: complete broad swept-wing jet chassis with central cockpit, no engine nacelles, no attached weapon pods, no exhaust, wing span wide and menacing, central rear bomb bay closed. TOP RIGHT: one long detachable armored jet engine nacelle, top facing UP, exhaust outlet at bottom, can be mirrored onto both wings. BOTTOM LEFT: one detachable massive forward laser cannon pod, muzzle pointing UP, mounting pivot at bottom. BOTTOM RIGHT: one rectangular open bomb-bay insert showing dark cavity and two red glowing heavy bombs, front at top. Components consistent scale and style, fully contained in their own cell, no overlap or fragments from other cells. Transparent background with genuine alpha, no checkerboard, no labels, no text, no board or scene. NOT a robot, NOT a player ship, NOT isometric."
+    },
+    {
+      "key": "polish_warning",
+      "path": "assets/game/polish_0927b/warning.png",
+      "prompt": "Use case: ui-mockup. Transparent 16-bit pixel art warning indicator sprite atlas for military arcade shooter Bullets of Fury. Three isolated narrow vertical rectangular metal warning signs, equal size, centered at x=1/6,3/6,5/6 across one row. Each sign has a gunmetal bolted frame, black interior, one large bold DOWN ARROW with straight shaft and clear pointed arrowhead, no text. Left sign glows lime green, middle sign amber yellow, right sign danger red. Tight chunky pixels and crisp white specular edge accents, no blur. Same geometry and silhouette across all three colors, each fully contained in its third with large clear transparent gutters, actual transparent alpha background. No other objects, letters or symbols. Production sprite UI, not a screenshot."
+    }
+  ],
+  "runtimeCuts": "POLISH_CELLS in assets/combat_polish_0927b.js; art dimensions measured, no equal-grid assumption.",
+  "referenceImages": []
+}

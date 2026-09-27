@@ -209,52 +209,62 @@ function s3ThermoDraw(b){
   }}
 }
 function s3ThermoStrikeTick(role,b,dt){
-  if(!b||run.stage!==3||diffKey!=='furious')return false;
+  if(!b||run.stage!==3||diffKey!=='furious'||b.dead||b._s3Nuclear)return false;
   const expected=role==='mini'?'frostcruiser':'cryospear';
-  if(b.kind!==expected||b.dead)return false;
+  if(b.kind!==expected)return false;
   let S=S3_THERMO_STRIKE[role];
+  if(S&&S.old!==b)S=S3_THERMO_STRIKE[role]=null;
   if(!S){
-    if((b.t||0)<2.25||b.enter)return false;
-    s3ThermoWarm();S=S3_THERMO_STRIKE[role]={t:0,beat:-1,x:b.x,y:b.y,impact:false,old:b};
-    b._noHit=true;b._jcGhost=true;
-    if(b._s3boss){b._s3boss.volley=null;b._s3boss.cannonSeq=null;b._s3boss.charge=null;}
-    b._l23Beam=null;
-    s3ThermoSound('stage3AtomicSiren','atomicLaunch');
+    if(b.enter||b._be)return false;
+    er26Init(b);
+    b._s3Arrival=(b._s3Arrival||0)+dt;
+    if(b._s3Arrival<.65){b.fireCd=999;return true;}
+    er26Warm();
+    S=S3_THERMO_STRIKE[role]={t:0,x:b.x,y:b.y,impact:false,old:b,blast:0,blasts:0};
+    b._noHit=true;b._jcGhost=false;b._be=null;b.enter=false;b._l23Beam=null;b._sba=null;b._smz=null;
+    b._er26.mode='nuclear';b._er26.warnings=[];
+    // Retain actor, kind, hull, hitbox, health and reward identity throughout.
+    for(const q of eBullets)if(q._er26Source===b._ship)q.dead=true;
+    b._er26.seeds=[];s3ThermoSound('stage3AtomicSiren','atomicLaunch');
   }
-  S.t+=dt;b.x=S.x;b.y=S.y;
+  S.t+=dt;
+  // Keep the entered actor exactly where it settled while the missile lands.
+  S.x=b.x;S.y=b.y;b._drawY=b.y;b.flash=Math.max(0,(b.flash||0)-dt);
   if(role==='boss')b.t+=dt;
-  const beat=Math.floor(Math.max(0,S.t-.28)/.22);
-  if(S.t>=.28&&beat>S.beat&&S.t<1.7){S.beat=beat;s3ThermoSound('alertLockon','dangerAlert','blip');}
-  if(S.t>=1.72&&!S.impact){
-    S.impact=true;shake=Math.max(shake,16);flashScreen=Math.max(flashScreen,.42);
-    s3ThermoSound('atomicDetonate','expBig','bossExplosion');
-    if(typeof explode==='function')explode(S.x,S.y,role==='boss'?230:125,'orange');
+  if(S.t>=1.75&&!S.impact){
+    S.impact=true;shake=Math.max(shake,14);s3ThermoSound('atomicDetonate','expBig');
+    atomBooms.push({x:S.x,y:S.y,t:0,dur:3.0,sec:_atomSecondaries(S.x,S.y)});
+    explode(S.x,S.y,160,'red');explode(S.x,S.y,90,'orange');
   }
-  if(S.t>=3.65){
+  if(S.impact){
+    S.blast-=dt;
+    if(S.blast<=0&&S.t<4.6){S.blast+=.105;
+      const a=S.blasts++*2.39996,r=25+(S.blasts%7)*17;
+      explode(S.x+Math.cos(a)*r,S.y+Math.sin(a)*r*.6,30+(S.blasts%3)*14,S.blasts%2?'red':'orange');}
+    // One smooth rise/hold/fade. Continued engine cook-offs show as white lifts.
+    const a=S.t<2.02?clamp((S.t-1.75)/.20,0,1):S.t<2.62?1:clamp((3.65-S.t)/1.03,0,1);
+    atomFlash=Math.max(atomFlash,a+.025);
+    if(S.t>=2.45){b._er26.form='fire';b._er26.nuclearRevealed=true;}
+  }
+  if(S.t>=4.85){
+    b._s3Nuclear={mode:'fire',introDone:true,blasts:S.blasts};
+    b._noHit=false;b._jcGhost=false;b._fireEnemy=false;b._s3ice=false;
+    b._er26.form='fire';b._er26.formBeats=0;b._er26.neutralOpening=false;er26Set(b,'recover');
     S3_THERMO_STRIKE[role]=null;
-    if(role==='mini')spawnSubBoss__inner('thermocloud');
-    else spawnBoss('therno');
   }
   return true;
 }
 function s3ThermoStrikeDraw(role,b){
   const S=S3_THERMO_STRIKE[role];if(!S||S.old!==b)return false;
-  if(b._ship&&typeof shipBossDraw==='function')shipBossDraw(b);
-  const retina=s3ThermoImage('nuclear_retina'),jet=s3ThermoImage('strike_jet');
-  if(S.t<1.75){
-    const q=clamp((S.t-.15)/1.55,0,1),sz=role==='boss'?viewW()*.5:220;
-    if(retina){ctx.save();ctx.globalAlpha=.35+.55*q;ctx.drawImage(retina,S.x-sz/2,S.y-sz/2,sz,sz);ctx.restore();}
-    if(role==='mini'&&jet){const y=VH+80-S.t*410;ctx.drawImage(jet,worldWidth()*.5-65,y-75,130,150);}
-  }else{
-    const fire=s3ThermoImage(S.t<2.7?'nuclear_fire':'fire_disintegrate');
-    if(fire){const q=clamp((S.t-1.72)/.72,0,1),size=(role==='boss'?440:255)*(S.t<2.6?.25+.75*q:1);
-      if(S.t<2.7){if(!s3ThermoSheet('nuclear_fire_sheet',Math.floor(q*8),S.x-size/2,S.y-size/2,size,size))
-        ctx.drawImage(fire,S.x-size/2,S.y-size/2,size,size);}
-      else ctx.drawImage(fire,S.x-size/2,S.y-size/2,size,size);}
-    const flash=(S.t<2.65?((Math.floor((S.t-1.72)*10)&1)?'#ff3b23':'#ffffff'):
-      S.t<3.0?'#ffffff':null);
-    if(flash){ctx.save();ctx.globalAlpha=S.t<2.45?.72:.26;ctx.fillStyle=flash;
-      ctx.fillRect(camLeftX(),viewTopY(),viewW(),viewH());ctx.restore();}
+  shipBossDraw(b);
+  if(S.t>=0&&S.t<1.75&&XART.rdy('lz_bomb')){
+    const im=XART.get('lz_bomb'),q=clamp(S.t/1.75,0,1),y=lerp(-190,S.y,q*q),h=184,w=h*im.width/im.height;
+    // Authored atomic ordnance, rotated nose-down; the actual missile reaches the hull.
+    ctx.save();ctx.translate(S.x,y);ctx.rotate(Math.PI);ctx.imageSmoothingEnabled=false;
+    ctx.drawImage(im,-w/2,-h/2,w,h);ctx.restore();
+    const key='l23fx_inferno_mg_'+(Math.floor(S.t*16)%8);
+    if(XART.rdy(key)){ctx.save();ctx.translate(S.x,y-h*.38);ctx.rotate(Math.PI);const fire=XART.get(key);
+      ctx.drawImage(fire,-24,-104,48,120);ctx.restore();}
   }
   return true;
 }

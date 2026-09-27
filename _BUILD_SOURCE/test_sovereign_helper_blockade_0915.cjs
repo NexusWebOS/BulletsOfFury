@@ -20,7 +20,8 @@ module.exports=function(vm,ctxv,ok){
       o.threeTimesSize=Math.abs(S4H_SIZE-132*.8*3)<.001;
       player.x=520;for(i=0;i<45;i++)stage4CoreTurretTick(b,1/60,2);
       o.independentOfPlayer=Math.abs((left.x+right.x)/2-center)<1;
-      o.completeHelpersInView=left.x-S4H_HALF>=camLeftX()-2&&right.x+S4H_HALF<=camRightX()+2;
+      o.completeHelpersInWorld=left.x-S4H_HALF>=-2&&right.x+S4H_HALF<=worldWidth()+2;
+      const zoom=viewZoom();bossActive=false;o.noBossZoom=zoom===viewZoom();bossActive=true;
       b=spawn('furious');S=b._s4war;var low=1e9,high=-1e9;
       for(i=0;i<360;i++){stage4CoreTurretTick(b,1/60,2);right=S.coreTurrets.find(t=>t.side>0);low=Math.min(low,right.y);high=Math.max(high,right.y);}
       o.furiousLevitates=high-low>65;o.furiousSideFire=Math.abs(right.ang-Math.PI)<.02;

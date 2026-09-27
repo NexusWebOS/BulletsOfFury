@@ -1,8 +1,70 @@
 {
-  "laser_round_muzzle_": {"role":"effect","sheet":null,"note":"Eight GPT 2.5 generated circular muzzle frames, centered at 64,64 on shared 128px canvases. Boss and player laser nozzles; cached palette swaps preserve luminance. Source/provenance in game/laser_round_muzzle_0923/."},
-  "ch2_": {"role":"boss","sheet":null,"note":"Generated Chaos Harrier MK II: hull, gun, emitter and thruster, four frames each. Hull/cannon states contain no beams. Shared anchors and scales in game/chaos_harrier/mk2_0923/frames.json; generation provenance beside it. Inspected in Chromium 2026-09-23."},
-  "enemy_burn_0922_": {"role": "effect", "sheet": null, "note": "Eight generated transparent hull-wrapping burn frames. Shared 128px anchors; flameDraw palette retained per enemy. Source and prompt in assets/game/fx_burn_0922/provenance.json."},
-  "_README": "Prefix -> role, named by Mike from the 0807y contact sheet. THIS IS THE SOURCE OF TRUTH. Filenames in this project have lied four separate times in one session (slatejet=debris, nxp_smoke=explosion, nqm_vent=a vent port, nrb=helix mass). Do not infer a role from a key name again \u2014 look it up here, and if it is not here, render it and ask.",
+  "arch_arsenal_cast_0926": {
+    "role": "boss",
+    "sheet": null,
+    "note": "Eight generated full-body blue-reactor casting poses matching the corrected hammer boss armor. Used for marked columns and intact-cannon phase chromium charge/release. Neutral chrome armor retained; explicit source rectangles and chest anchors in hammerArsenalCastDraw. Source/prompts: docs/hammer_cast_art_0926.json."
+  },
+  "arch_stun_static_0926": {
+    "role": "effect",
+    "sheet": null,
+    "note": "Twelve generated RGBA short-circuit/static frames in a 4x3 sheet. Blue/cyan/white sparks around a clear center, drawn around the Stage 5 hammer disarm stun at 16fps. Source and prompts: docs/hammer_static_art_0926.json. Existing authored stunned body and detached hammer remain separate."
+  },
+  "arch_orbital_sweep_0926": {
+    "role": "boss",
+    "sheet": null,
+    "note": "Corrected 12-pose hammer_strike_v2.png reel, canonical SINGLE blue cylindrical hammer head. Lowered idle, wind-up, jump, strike and lowering recovery; source rectangles and chest/head anchors in HAMMER_STRIKE_REEL. Replaces rejected eight-pose double-ended hammer. Prompts: docs/hammer_consistency_art_0926.json. Chromium pixels and complete repeat cycles verified 2026-09-26."
+  },
+  "arch_whirlwind_0926": {
+    "role": "boss",
+    "sheet": null,
+    "note": "Corrected eight-pose whirlwind_v2.png reel with the SAME single-headed hammer as leap_strike_0922. Explicit source rectangles/chest anchors in hammerCombatDraw; no rotating full-body image. Source and prompts: docs/hammer_consistency_art_0926.json."
+  },
+  "arch_storm_charge_0926": {
+    "role": "boss",
+    "sheet": null,
+    "note": "Eight raised-hammer charging poses; canonical chrome armor/blue reactor, single cylindrical hammer. Built-in image_gen; PNG alpha preserved. Prompts: docs/hammer_storm_art_0926.json. Runtime Chromium palettes, whole-weapon shake, lightning-first charge and chest-origin outward empowerment, interruptible 25% recovery and core rebuild: docs/HAMMER_CHROMIUM_RECOVERY_0926.md. Original PNG unchanged."
+  },
+  "arch_hammer_throw_0926": {
+    "role": "boss",
+    "sheet": null,
+    "note": "Eight magnet catch, behind-head wind-up, release and empty-hand poses; same boss identity. Built-in image_gen; PNG alpha preserved. Prompts: docs/hammer_storm_art_0926.json."
+  },
+  "arch_hammer_flight_0926": {
+    "role": "boss_projectile",
+    "sheet": null,
+    "note": "Eight canonical single-headed hammer orientations with measured head anchors. Built-in image_gen; PNG alpha preserved. Prompts: docs/hammer_storm_art_0926.json."
+  },
+  "arch_hammer_lightning_0926": {
+    "role": "effect",
+    "sheet": null,
+    "note": "Eight blue-white lightning frames striking the raised hammer tip. Built-in image_gen; PNG alpha preserved. Prompts: docs/hammer_storm_art_0926.json."
+  },
+  "arch_chromium_spike_0926": {
+    "role": "effect",
+    "sheet": null,
+    "note": "Sixteen tall chrome/cyan eruption frames in chromium_spike_tall_v2.png; full-size 96px Retinas across the entire world (eight edge-inclusive positions on Stage 5), randomized glow/eruption order, 75% of game height, visible-shaft collision. World row: docs/HAMMER_WORLD_ROW_0926.md. Full-width round warnings: docs/HAMMER_ROUND_ZONES_0926.md. Framed warning signs, faster Hard/Furious rises and recovery: docs/HAMMER_SIGN_RECOVERY_0926.md. Explicit alpha-safe cells and ground anchors in hammerStormSpikeShape. Built-in image_gen; PNG alpha preserved. Prompts: docs/hammer_bottom_row_art_0926.json. Replaces the prior short 12-frame sheet without deleting it."
+  },
+  "arch_hammer_overhead_0926": {
+    "role": "boss",
+    "sheet": null,
+    "note": "Eight whole-body overhead twirl poses with fixed torso and single cylindrical hammer; accelerated retaliation spin. Source/prompts: docs/hammer_storm_art_0926.json."
+  },
+  "laser_round_muzzle_": {
+    "role": "effect",
+    "sheet": null,
+    "note": "Eight GPT 2.5 generated circular muzzle frames, centered at 64,64 on shared 128px canvases. Boss and player laser nozzles; cached palette swaps preserve luminance. Source/provenance in game/laser_round_muzzle_0923/."
+  },
+  "ch2_": {
+    "role": "boss",
+    "sheet": null,
+    "note": "Generated Chaos Harrier MK II: hull, gun, emitter and thruster, four frames each. Hull/cannon states contain no beams. Shared anchors and scales in game/chaos_harrier/mk2_0923/frames.json; generation provenance beside it. Inspected in Chromium 2026-09-23."
+  },
+  "enemy_burn_0922_": {
+    "role": "effect",
+    "sheet": null,
+    "note": "Eight generated transparent hull-wrapping burn frames. Shared 128px anchors; flameDraw palette retained per enemy. Source and prompt in assets/game/fx_burn_0922/provenance.json."
+  },
+  "_README": "Prefix -> role, named by Mike from the 0807y contact sheet. THIS IS THE SOURCE OF TRUTH. Filenames in this project have lied four separate times in one session (slatejet=debris, nxp_smoke=explosion, nqm_vent=a vent port, nrb=helix mass). Do not infer a role from a key name again — look it up here, and if it is not here, render it and ask.",
   "?": {
     "role": "boot",
     "sheet": "boot",
@@ -112,7 +174,7 @@
     "role": "miniboss",
     "sheet": "miniboss_stage4"
   },
-  "_WARNING_mfx": "Mike said DELETE mfx_ (252 cells) from the 0807y sheet. But the passover history records mfx_ as an APPROVED player projectile set \u2014 pellet/mfx_mg, flare/mfx_ea_3, comet/mfx_ea_1, blast/mfx_bpow, homing/mfx_hom, missile/mfx_emr \u2014 blocked from drawing only by the nep_ per-stage override. The sample he saw may therefore have been one unused member of a family that is otherwise wanted. CONFIRMED 0822f: he said delete, the measurement says the family is live and removal frees nothing, so it is KEPT and the role above is now KEEP. Re-open only with a per-cell list, never as a family.",
+  "_WARNING_mfx": "Mike said DELETE mfx_ (252 cells) from the 0807y sheet. But the passover history records mfx_ as an APPROVED player projectile set — pellet/mfx_mg, flare/mfx_ea_3, comet/mfx_ea_1, blast/mfx_bpow, homing/mfx_hom, missile/mfx_emr — blocked from drawing only by the nep_ per-stage override. The sample he saw may therefore have been one unused member of a family that is otherwise wanted. CONFIRMED 0822f: he said delete, the measurement says the family is live and removal frees nothing, so it is KEPT and the role above is now KEEP. Re-open only with a per-cell list, never as a family.",
   "n6": {
     "role": "enemy",
     "sheet": "stage6roster"
@@ -128,7 +190,7 @@
   "nxp_": {
     "role": "explosions",
     "sheet": "explosions",
-    "note": "CONFIRMED by Mike 0808b: 'top row, explosions'. Eight blow-up families. He first read it as a decal from a 4px first-frame thumbnail \u2014 my sampler's fault, not his."
+    "note": "CONFIRMED by Mike 0808b: 'top row, explosions'. Eight blow-up families. He first read it as a decal from a 4px first-frame thumbnail — my sampler's fault, not his."
   },
   "nbs_": {
     "role": "bossbarfill",
@@ -208,14 +270,14 @@
   "ndk_": {
     "role": "deckerweapon",
     "sheet": "playerprojectiles",
-    "note": "CONFIRMED 0808b: ndk_box and ndk_icon are the INCENDIARY SHOTGUN pickup box and icon for Decker \u2014 the weapon Mike named as his new special. The other ndk_ keys (shot/muz/shell/trail/imp/scorch/ang) reported 'missing' for the same index reason as nthp_; verify before touching."
+    "note": "CONFIRMED 0808b: ndk_box and ndk_icon are the INCENDIARY SHOTGUN pickup box and icon for Decker — the weapon Mike named as his new special. The other ndk_ keys (shot/muz/shell/trail/imp/scorch/ang) reported 'missing' for the same index reason as nthp_; verify before touching."
   },
   "nthp_": {
     "role": "pilotthrusters",
     "sheet": "playerships",
-    "note": "CONFIRMED REAL 0808b. NINE reels, one per pilot, FOUR frames each: nthp_<pilot>_0..3. Mike read 'all missing' because my render looked up the family name without its frame index. This is the art the thruster fix needs \u2014 he has asked repeatedly to stop overlaying fake thrusters and animate these instead. NEVER delete."
+    "note": "CONFIRMED REAL 0808b. NINE reels, one per pilot, FOUR frames each: nthp_<pilot>_0..3. Mike read 'all missing' because my render looked up the family name without its frame index. This is the art the thruster fix needs — he has asked repeatedly to stop overlaying fake thrusters and animate these instead. NEVER delete."
   },
-  "_ROUND2_WARNINGS": "Three calls in round 2 contradict earlier direction and are HELD, not applied: nxp_ (called a decal, is the explosion set he confirmed himself), nthp_ (called delete, is the per-pilot thruster art he has asked to be fixed), ndk_ (called 'idk', is Decker's incendiary shotgun kit). All three were misjudged from an unrepresentative thumbnail \u2014 the sampler took the first frame of each reel, which for an effect is a 4px spark.",
+  "_ROUND2_WARNINGS": "Three calls in round 2 contradict earlier direction and are HELD, not applied: nxp_ (called a decal, is the explosion set he confirmed himself), nthp_ (called delete, is the per-pilot thruster art he has asked to be fixed), ndk_ (called 'idk', is Decker's incendiary shotgun kit). All three were misjudged from an unrepresentative thumbnail — the sampler took the first frame of each reel, which for an effect is a 4px spark.",
   "_SAMPLER_WARNING": "TWO separate misreads in this taxonomy came from HOW I SAMPLED, not from Mike: (1) taking frame 0 of an effect reel shows a 4px spark, which made the explosion set look like a decal; (2) looking up a FAMILY name with no frame index returns nothing, which made nine real thruster reels and a whole weapon set look missing. When rendering a family for identification, take a MID-REEL frame and resolve the index.",
   "rr_ship_": {
     "role": "enemyship_master",
@@ -271,5 +333,140 @@
     "role": "player_shield_animation",
     "sheet": null,
     "note": "0923 GPT 2.5 eight-frame cyan bubble. Persistent five-hit Axel Megashield, 50% runtime opacity, frames 6-7 deflection pulse. Source and provenance: assets/game/axel_mega_shield_0923."
+  },
+  "s7m_warden": {
+    "role": "boss_component",
+    "sheet": null,
+    "note": "Generated RGBA sheet. Runtime cell slicing and modular rig: assets/stage7_modular_0927.js. Prompts and provenance: docs/stage7_modular_art_0927.json."
+  },
+  "s7m_tank": {
+    "role": "boss_component",
+    "sheet": null,
+    "note": "Generated RGBA sheet. Runtime cell slicing and modular rig: assets/stage7_modular_0927.js. Prompts and provenance: docs/stage7_modular_art_0927.json."
+  },
+  "s7m_portal": {
+    "role": "effect",
+    "sheet": null,
+    "note": "Generated RGBA sheet. Runtime cell slicing and modular rig: assets/stage7_modular_0927.js. Prompts and provenance: docs/stage7_modular_art_0927.json."
+  },
+  "s7m_explosion": {
+    "role": "effect",
+    "sheet": null,
+    "note": "Generated RGBA sheet. Runtime cell slicing and modular rig: assets/stage7_modular_0927.js. Prompts and provenance: docs/stage7_modular_art_0927.json."
+  },
+  "s7m_spew": {
+    "role": "effect",
+    "sheet": null,
+    "note": "Generated RGBA sheet. Runtime cell slicing and modular rig: assets/stage7_modular_0927.js. Prompts and provenance: docs/stage7_modular_art_0927.json."
+  },
+  "s7m_orb": {
+    "role": "effect",
+    "sheet": null,
+    "note": "Generated RGBA sheet. Runtime cell slicing and modular rig: assets/stage7_modular_0927.js. Prompts and provenance: docs/stage7_modular_art_0927.json."
+  },
+  "s7m_shield": {
+    "role": "effect",
+    "sheet": null,
+    "note": "Generated RGBA sheet. Runtime cell slicing and modular rig: assets/stage7_modular_0927.js. Prompts and provenance: docs/stage7_modular_art_0927.json."
+  },
+  "polish_armory": {
+    "role": "ui",
+    "sheet": null,
+    "note": "Generated 2x2 modular socket/panel atlas for the 100-slot Fury Armory collection. Explicit measured source rectangles POLISH_CELLS in combat_polish_0927b.js. Genuine alpha. Source prompt docs/polish_art_0927b.json. Native Chromium screenshot armory-final.png reviewed 2026-09-27."
+  },
+  "polish_bomber": {
+    "role": "miniboss",
+    "sheet": null,
+    "note": "Generated modular Eclipse Siege Bomber for Stage 6 (corrected roster September 27): upward chassis, two mirrored engines, two forward cannons, opening bomb bay. Half-viewport wing span; separately damageable modules. Explicit measured source rectangles in combat_polish_0927b.js. Native renderer reviewed 2026-09-27; prompt docs/polish_art_0927b.json."
+  },
+  "polish_warning": {
+    "role": "effect",
+    "sheet": null,
+    "note": "Generated green/amber/red vertical incoming-missile signs with directional arrows. Rotated to match committed missile lanes; paired with shared FOV warning. Explicit source rectangles and registration in combat_polish_0927b.js. Prompt docs/polish_art_0927b.json."
+  },
+  "s7m_body": {
+    "role": "boss_component",
+    "sheet": null,
+    "note": "Generated replacement Warden body with exposed laser socket, no baked faceplate. Separate existing mask slides upward. assets/game/stage7_modular_0927/warden_body_open_0927.png; docs/stage7_modular_art_0927.json."
+  },
+  "polish_ordnance": {
+    "role": "projectile",
+    "sheet": null,
+    "note": "Generated here September27: six Stage4 ammunition types,4animation frames each, normalized256x320px cells on1024x1920 RGBA, measured gutters preserve complete exhaust. South-facing steel/brass/rocket/missile/armored bomb/rail, stable centerline and nose. Existing hitboxes and motion preserved. Also Stage4 boss/mini MG and rockets. Source and build in docs/stage4_ordnance_art_0927.json and _BUILD_SOURCE/build_stage4_ordnance_0927.py."
+  },
+  "polish_ice_ordnance": {
+    "role": "projectile",
+    "sheet": null,
+    "note": "Generated here September27: six Stage3 ice ammunition types,4frames each, measured gutters normalized256x320 cells on1024x1920 RGBA. South-facing shard/lance/tracer/mortar/shell/crescent wave. Outlines and authored energy colors preserved; existing hitboxes/motion/damage unchanged. Source/build recorded in docs/stage3_ordnance_art_0927.json."
+  },
+  "mr27_rime": {
+    "role": "boss_component",
+    "sheet": null,
+    "note": "Generated transparent modular rime sheet. Explicit source rectangles and registration in assets/modular_roster_art_0927.js; runtime art/collision/Retina share geometry in assets/modular_roster_0927.js. Source provenance and owning build: docs/modular_roster_art_0927.json and _BUILD_SOURCE/build_modular_roster_0927.py. See docs/MODULAR_ROSTER_0927.md for stage assignments and verification."
+  },
+  "mr27_storm": {
+    "role": "boss_component",
+    "sheet": null,
+    "note": "Generated transparent modular storm sheet. Explicit source rectangles and registration in assets/modular_roster_art_0927.js; runtime art/collision/Retina share geometry in assets/modular_roster_0927.js. Source provenance and owning build: docs/modular_roster_art_0927.json and _BUILD_SOURCE/build_modular_roster_0927.py. See docs/MODULAR_ROSTER_0927.md for stage assignments and verification."
+  },
+  "mr27_iron": {
+    "role": "boss_component",
+    "sheet": null,
+    "note": "Generated transparent modular iron sheet. Explicit source rectangles and registration in assets/modular_roster_art_0927.js; runtime art/collision/Retina share geometry in assets/modular_roster_0927.js. Source provenance and owning build: docs/modular_roster_art_0927.json and _BUILD_SOURCE/build_modular_roster_0927.py. See docs/MODULAR_ROSTER_0927.md for stage assignments and verification."
+  },
+  "mr27_space": {
+    "role": "boss_component",
+    "sheet": null,
+    "note": "Generated transparent modular space sheet. Explicit source rectangles and registration in assets/modular_roster_art_0927.js; runtime art/collision/Retina share geometry in assets/modular_roster_0927.js. Source provenance and owning build: docs/modular_roster_art_0927.json and _BUILD_SOURCE/build_modular_roster_0927.py. See docs/MODULAR_ROSTER_0927.md for stage assignments and verification."
+  },
+  "mr27_corefx": {
+    "role": "effect",
+    "sheet": null,
+    "note": "Generated transparent modular corefx sheet. Explicit source rectangles and registration in assets/modular_roster_art_0927.js; runtime art/collision/Retina share geometry in assets/modular_roster_0927.js. Source provenance and owning build: docs/modular_roster_art_0927.json and _BUILD_SOURCE/build_modular_roster_0927.py. See docs/MODULAR_ROSTER_0927.md for stage assignments and verification."
+  },
+  "d27_ballistic": {
+    "role": "effect",
+    "sheet": null,
+    "note": "Built-in image generation, September 27 director pass: machine gun, chaingun, spreadfire, shotgun. Four rows of six animation frames; original genuine RGBA preserved. Measured muzzle-root anchors in assets/director_art_0927.js. Owning build: _BUILD_SOURCE/build_director_art_0927.py; prompts: docs/director_prompts_0927.json. Shared player/enemy/boss emitters use distinct weapon silhouettes. No SpriteCook."
+  },
+  "d27_elemental": {
+    "role": "effect",
+    "sheet": null,
+    "note": "Built-in image generation, September 27 director pass: fire, ice, lightning, toxic. Four rows of six animation frames; original genuine RGBA preserved. Measured muzzle-root anchors in assets/director_art_0927.js. Owning build: _BUILD_SOURCE/build_director_art_0927.py; prompts: docs/director_prompts_0927.json. Shared player/enemy/boss emitters use distinct weapon silhouettes. No SpriteCook."
+  },
+  "d27_energy": {
+    "role": "effect",
+    "sheet": null,
+    "note": "Built-in image generation, September 27 director pass: laser, orb, sonic, void. Four rows of six animation frames; original genuine RGBA preserved. Measured muzzle-root anchors in assets/director_art_0927.js. Owning build: _BUILD_SOURCE/build_director_art_0927.py; prompts: docs/director_prompts_0927.json. Shared player/enemy/boss emitters use distinct weapon silhouettes. No SpriteCook."
+  },
+  "d27_specialist": {
+    "role": "effect",
+    "sheet": null,
+    "note": "Built-in image generation, September 27 director pass: missile ignition, Falva roller charge, Maverick helix, engine exhaust. Four rows of six animation frames; original genuine RGBA preserved. Measured muzzle-root anchors in assets/director_art_0927.js. Owning build: _BUILD_SOURCE/build_director_art_0927.py; prompts: docs/director_prompts_0927.json. Shared player/enemy/boss emitters use distinct weapon silhouettes. No SpriteCook."
+  },
+  "ice_breath_0927": {
+    "role": "effect",
+    "sheet": null,
+    "note": "Built-in image generation September 27: twelve frames of rolling cold vapor and travelling ice shards. Original RGBA preserved, 4x3 cells of 256x512. Per-cell nozzle roots in assets/pilot_feedback_art_0927.js; owning build _BUILD_SOURCE/build_pilot_feedback_0927.py; source/prompt docs/pilot_feedback_art_0927.json. Sustained Freezer breath uses simulation time, 18fps, existing reach and damage envelope."
+  },
+  "ht27_boss": {
+    "role": "boss_animation",
+    "sheet": null,
+    "note": "Built-in image generation; HAMMER secret encounter only. Original RGBA preserved, measured cells/anchors in hammer_time_art_0927.js. Owning build _BUILD_SOURCE/build_hammer_time_0927.py; prompts docs/hammer_time_prompts_0927.json."
+  },
+  "ht27_dancers": {
+    "role": "boss_animation",
+    "sheet": null,
+    "note": "Built-in image generation; HAMMER secret encounter only. Original RGBA preserved, measured cells/anchors in hammer_time_art_0927.js. Owning build _BUILD_SOURCE/build_hammer_time_0927.py; prompts docs/hammer_time_prompts_0927.json."
+  },
+  "ht27_shield": {
+    "role": "effect",
+    "sheet": null,
+    "note": "Built-in image generation; HAMMER secret encounter only. Original RGBA preserved, measured cells/anchors in hammer_time_art_0927.js. Owning build _BUILD_SOURCE/build_hammer_time_0927.py; prompts docs/hammer_time_prompts_0927.json."
+  },
+  "ht27_wall": {
+    "role": "effect",
+    "sheet": null,
+    "note": "Built-in image generation; HAMMER secret encounter only. Original RGBA preserved, measured cells/anchors in hammer_time_art_0927.js. Owning build _BUILD_SOURCE/build_hammer_time_0927.py; prompts docs/hammer_time_prompts_0927.json."
   }
 }

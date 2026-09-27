@@ -1,0 +1,23 @@
+{
+  "date": "2026-09-26",
+  "method": "Built-in image_gen",
+  "file": "assets/game/stage5_archmage_0916/combat_0926/stun_static.png",
+  "key": "arch_stun_static_0926",
+  "source": "C:/Users/Mdogg/.codex/generated_images/01a0d568-40a4-7b70-97c0-acc501f39d5b/exec-bdd5ac35-c41b-44bf-a2a3-22b67e43ff31.png",
+  "firstPass": "exec-2d6969b7-68c5-4ce8-92c6-962a41d5866f.png",
+  "size": [
+    1448,
+    1086
+  ],
+  "grid": [
+    4,
+    3
+  ],
+  "frames": 12,
+  "fps": 16,
+  "processing": "Source RGBA copied unchanged. Effect rendered additively over existing authored stun poses. No atlas repack.",
+  "prompts": [
+    "Use case: stylized-concept. Production animated STATIC ELECTRICITY status effect for a stunned blue-energy robot boss in a detailed 16-bit pixel-art arcade shooter. Exactly TWELVE isolated animation frames arranged 4 columns by 3 rows, equal cells, transparent alpha background. Each frame is a loose, broken, vertically oval electrical cage surrounding an EMPTY TRANSPARENT center where a full-body humanoid sprite will be placed separately. Frame silhouette about 190 wide by 250 high inside each generous square cell. Thin jagged electric-blue and cyan lightning with tiny white-hot highlights, a few short disconnected branching sparks across the interior. Keep most of the center empty so the robot is readable. Not a solid force field, not a ring of fire, not magic runes, not purple, no character or weapon or floor or scenery. 12 evolving hand-drawn positions: arcs crawl irregularly around the outside, snap between shoulders/arms and feet, then break into short charged sparks and loop smoothly. Each frame changes the paths while maintaining same general oval footprint and brightness, flickering blue STATIC DISCHARGE. Crisp deliberate pixel edges, limited blue/cyan/white palette, no smooth neon tubing, no blur, no wide haze, no black matte, no baked checkerboard. Exactly four columns and three rows with at least 25% clear transparent margin inside EVERY cell so none touch or bleed into neighboring cells. No labels, grids or text.",
+    "Edit this effect sheet. Replace ALL thick filled blue plasma blobs, broad blue bands, fuzzy glow, speckled noise and portal-ring shapes with SPARSE THIN STATIC LIGHTNING ONLY. Twelve frames, 4 columns by 3 rows. Each frame: just 6 to 9 small independent crooked electric-blue lightning bolts with tiny white cores. They are disconnected sparks scattered around the perimeter of an invisible vertical humanoid-sized oval. EMPTY TRANSPARENT CENTER. No continuous ring or connected border. No filled areas anywhere. Each jagged bolt only 2 to 5 pixels wide, 30 to 65 pixels long, a few branches. In every frame sparks jump to slightly different positions around the shoulders, elbows, hips and feet of an invisible robot. Keep the sparks limited to the central 50% width and 65% height of each equal cell, leaving LARGE FULLY TRANSPARENT GUTTERS. No pixel whatsoever outside that safe zone. Keep the entire image more than 95% transparent. Detailed crisp 16-bit game lightning, cyan/electric-blue/white, no purple. No mist, no aura fill, no portal, no floor, no character, no numbers, no grids, no checkerboard or black background. Real RGBA alpha transparency. These are little short-circuit sparks overlaying a stunned robot, not a shield."
+  ]
+}

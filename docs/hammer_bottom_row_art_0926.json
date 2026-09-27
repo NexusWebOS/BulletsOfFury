@@ -1,0 +1,32 @@
+{
+  "tool": "built-in image_gen",
+  "asset": "assets/game/stage5_archmage_0916/combat_0926/chromium_spike_tall_v2.png",
+  "source": "C:/Users/Mdogg/.codex/generated_images/01a0d568-40a4-7b70-97c0-acc501f39d5b/exec-4d40d39c-aea1-4945-add7-41f2b0e7f92f.png",
+  "reference": "assets/game/stage5_archmage_0916/combat_0926/chromium_spike.png",
+  "prompts": [
+    "Use case: precise-object-edit. Generate a replacement production sprite animation sheet for the attached chromium spike effect, preserving its black chrome/silver sharp spear material, blue and cyan electrical arcs and white energy highlights. Transparent RGBA background, no checkerboard, no labels, no grid lines, no backdrop. Detailed crisp 16-bit pixel art for Bullets of Fury.\nSheet: exactly 8 columns by 2 rows, 16 distinct sequential animation frames read left to right then next row. Landscape sheet 2048 by 1536 if possible. All cells identical 256x768, absolutely no cross-cell bleed. Fixed ground origin centered horizontally in each cell at y=720 of its 768 height, with all art above that origin except tiny 16-pixel ground sparks. Leave clear transparent gutters around every cell.\nVERY TALL NARROW chromium energy spike, skyscraper-like needle / monolithic metal spear rising straight up from ground, not a short crystal cluster and not a laser. At maximum its vertical shaft fills 650 pixels of cell height but only 55 pixels width at middle, tapering to a razor tip; foot glow and small shards no wider than 175 pixels. Large coherent dark-metal faceted spear with bright silver edges, white-blue energy pulsing up its length. No character, hammer, weapon or environment.\nAnimation:\nframe1 faint electric circular ground spark only.\nframe2 bright white cyan ground flare, first tiny needle.\nframe3 spear one quarter risen.\nframe4 spear half risen.\nframe5 spear three quarters risen.\nframe6 full-height spear, electric coil racing up shaft.\nframe7 full-height spear with intensely bright white-blue edges.\nframe8 full-height spear with cyan arcs traveling upward.\nframe9 full-height spear with bright blue electric discharge at tip.\nframe10 full-height spear another irregular lightning coil.\nframe11 full-height spear begins fragmenting from the top.\nframe12 spear retracts to three quarters with breaking silver chips.\nframe13 spear retracts to half.\nframe14 spear retracts to quarter.\nframe15 ground residual spark, no tall shaft.\nframe16 tiny fading ground sparks.\nThis must feel like a powerful towering rising spike, anchored to the same point, glowing more and more while emerging. Match supplied effect visual style but make it dramatically taller and narrower, clean transparent margins.",
+    "Precise sprite-sheet layout correction of the supplied 16-frame tall chromium spike sheet. Preserve the same tall silver/black faceted needle, cyan/blue/white electricity and chronological growing then retracting animation. Actual transparent background. Exactly 8 columns by 2 rows of equal cells; current sheet is 1448x1086, so each cell is 181x543. Keep those dimensions. Correct every frame to have at least 14 transparent pixels between its artwork and EVERY edge of its cell. NO BLEED between rows or columns. Particularly the lower-left frame must be separated from the ground flash above it. Ground center must be cell-local x=90,y=510 for EVERY frame. The highest full-grown tip is cell-local y=28, never touches the top edge; full spike narrow shaft about 36 pixels wide; bottom flare no more than 145 pixels wide. Frame heights: row1 ground spark, ground flare, 25%, 50%, 75%, 95%, 100%, 100%; row2 100% brightest, 100%, 95% with cracks, 75% breaking, 50% breaking, 25% breaking, ground residual spark, tiny fading ground spark. Completely isolated clean sprites, no grid, no text, no checkerboard. Pixel art sharp. Only correct layout/spacing and clean separation while keeping the exciting electricity."
+  ],
+  "layout": {
+    "width": 1448,
+    "height": 1086,
+    "columns": 8,
+    "rows": 2,
+    "columnWidth": 181,
+    "rowStarts": [
+      0,
+      576
+    ],
+    "rowHeights": [
+      576,
+      510
+    ],
+    "groundY": [
+      540,
+      1034
+    ],
+    "centerX": 90,
+    "frameCount": 16
+  },
+  "notes": "Original PNG copied unchanged; alpha preserved. Each source cell and visible tip measured from opaque pixels. Maximum shaft height is 0.75 * VH (384 logical pixels at VH=512), base at y=430. Separate authored glow/rise/hold/retract/fade frames."
+}

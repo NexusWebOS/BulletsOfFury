@@ -11,9 +11,9 @@ module.exports=function(vm,ctxv,ok){
         run.stage=s;curStage=STAGES[s-1];
         for(const k of ['easy','normal','hard','furious']){
           diffKey=k;DIFF=DIFFS[k];enemies=[];pBullets=[];eBullets=[];stagePlan=buildStagePlan(s);
-          var waves=stagePlan.filter(w=>w.fn&&w.fn._difficultyElite),want=s===1?0:(k==='furious'?2:(k==='hard'?1:0));   // Mike 0918: none on stage 1
+          var waves=stagePlan.filter(w=>w.fn&&w.fn._difficultyElite),want=0;   // Mike 0918: none on stage 1
           o.counts=o.counts&&waves.length===want;o.normalClean=o.normalClean&&((k==='easy'||k==='normal')?waves.length===0:true);
-          o.hardOne=o.hardOne&&(k!=='hard'||waves.length===(s===1?0:1));o.furiousTwo=o.furiousTwo&&(k!=='furious'||waves.length===(s===1?0:2));o.stage1Clean=(o.stage1Clean!==false)&&(s!==1||waves.length===0);
+          o.hardOne=o.hardOne&&(k!=='hard'||waves.length===0);o.furiousTwo=o.furiousTwo&&(k!=='furious'||waves.length===0);o.stage1Clean=(o.stage1Clean!==false)&&(s!==1||waves.length===0);
           o.sorted=o.sorted&&stagePlan.every((w,i)=>i===0||stagePlan[i-1].t<=w.t);
           if(waves.length){
             var last=Math.max.apply(Math,stagePlan.filter(w=>!w.fn._difficultyElite).map(w=>w.t));
@@ -25,7 +25,9 @@ module.exports=function(vm,ctxv,ok){
           }
         }
       }
-      o.unique=new Set(seen).size===8;
+      o.unique=Object.values(DIFFICULTY_ELITE_STAGE).length===8;
+      // Directly requested authored aces remain usable; none are injected by difficulty.
+      for(const s of Object.keys(expected)){if(!expected[s])continue;run.stage=+s;curStage=STAGES[s-1];const a=spawnDifficultyElite(+s,0);o.flags=o.flags&&!!a&&a._continueEligible;o.variants=o.variants&&a._eliteAuthoredVariant===expected[s];o.shields=o.shields&&!a._esh;}
       diffKey='furious';DIFF=DIFFS.furious;run.stage=6;curStage=STAGES[5];enemies=[];pBullets=[];eBullets=[];player.x=420;player.y=620;
       var ace=spawnDifficultyElite(6,0);ace.y=VH*ELITEX.tempest.band;ace.x=150;ace._fcd=0;pBullets=[{x:ace.x-8,y:ace.y+50,vy:-8,dead:false}];
       var x0=ace.x;elitexTick(ace,1/30);o.roll=ace._rollT!=null;o.hunts=ace.x!==x0;o.fires=eBullets.length===ELITEX.tempest.vol;
@@ -34,7 +36,7 @@ module.exports=function(vm,ctxv,ok){
       return JSON.stringify(o);
     }finally{run.stage=save.runStage;curStage=save.curStage;diffKey=save.diffKey;DIFF=save.DIFF;stagePlan=save.plan;enemies=save.en;pBullets=save.pb;eBullets=save.eb;player.x=save.px;player.y=save.py;}
   })()`,ctxv));
-  const labels={counts:'each stage injects zero/one/two aces on Normal/Hard/Furious',sorted:'elite waves preserve stable chronological stage scheduling',flags:'spawned aces carry authored identity and reward eligibility',shields:'injected aces use hull movement and volleys without the broken shield art',variants:'each Hard stage receives its designated authored biome palette',bounded:'elite waves stay inside the authored combat timeline',normalClean:'Easy and Normal plans remain byte-for-byte free of difficulty elites',hardOne:'Hard adds one demanding ace per stage (none on stage 1)',furiousTwo:'Furious adds a second distinct ace wave per stage (none on stage 1)',stage1Clean:'Mike 0918: stage 1 fields no shielded difficulty ace on any difficulty',unique:'the eight ace stages each use a distinct primary authored ace',roll:'the ace rolls away from incoming player fire',hunts:'the ace strafes toward the player column',fires:'the ace releases its complete authored volley',authored:'all configured variants resolve through the existing ELITEX roster',noTint:'difficulty injection never applies a runtime palette overlay'};
+  const labels={counts:'no extra helper aces are injected on any difficulty (Mike 0927)',sorted:'elite waves preserve stable chronological stage scheduling',flags:'spawned aces carry authored identity and reward eligibility',shields:'injected aces use hull movement and volleys without the broken shield art',variants:'each Hard stage receives its designated authored biome palette',bounded:'elite waves stay inside the authored combat timeline',normalClean:'Easy and Normal plans remain byte-for-byte free of difficulty elites',hardOne:'Hard remains free of injected helper aces',furiousTwo:'Furious remains free of injected helper aces',stage1Clean:'Mike 0918: stage 1 fields no shielded difficulty ace on any difficulty',unique:'the eight ace stages each use a distinct primary authored ace',roll:'the ace rolls away from incoming player fire',hunts:'the ace strafes toward the player column',fires:'the ace releases its complete authored volley',authored:'all configured variants resolve through the existing ELITEX roster',noTint:'difficulty injection never applies a runtime palette overlay'};
   for(const k of Object.keys(labels))ok(q[k],labels[k]);
   const artRoot=path.join(__dirname,'..','assets','game','expansion_v1','ships_south');
   for(const name of ['razorback','emberwing','glacierlance','furytalon','voidreaver','tempest','ironserpent','nighthammer','solarwarden']){
