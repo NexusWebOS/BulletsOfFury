@@ -6602,21 +6602,11 @@ function _chargeTimerRail(row, frac){
 function barRows(){
   const r={};
   let n=0;
-  if(typeof run!=='undefined'&&run&&run.weapon===7)r.chaingun=n++;
+  /* 0928: the chaingun no longer overheats (Mike: "do not make our chainguns overheat"), so it has no bar */
   if((typeof chargeAvailable==='function') && chargeAvailable()) r.charge=n++;
   if((typeof somersaultAvailable==='function') && somersaultAvailable()) r.somersault=n++;
   r.roll=n;
   return r;
-}
-function _chaingunHeatBar(row){
-  const W=112,H=8,x=(typeof PLAY!=='undefined'?PLAY.x:0)+10,y=(typeof PLAY!=='undefined'?(PLAY.y+PLAY.h):VH)-16-row*18;
-  const heat=clamp(run._chainHeat||0,0,1),cut=.72,over=(run._chainOverheat||0)>0;
-  ctx.globalAlpha=.96;ctx.fillStyle='rgba(5,8,14,.88)';ctx.fillRect(x-3,y-3,W+6,H+16);
-  ctx.strokeStyle='#52657c';ctx.strokeRect(x-2,y-2,W+4,H+4);ctx.fillStyle='#101722';ctx.fillRect(x,y,W,H);
-  const fw=Math.round(W*heat),nw=Math.min(fw,Math.round(W*cut));ctx.fillStyle=over?'#ff3028':'#36aaff';ctx.fillRect(x,y,nw,H);
-  if(fw>nw){ctx.fillStyle='#ff3b20';ctx.fillRect(x+nw,y,fw-nw,H);}
-  const ax=x+Math.round(W*cut);ctx.fillStyle='#ffcf48';ctx.beginPath();ctx.moveTo(ax-4,y-7);ctx.lineTo(ax+4,y-7);ctx.lineTo(ax,y-2);ctx.fill();
-  ctx.font='bold 7px "BOFmil", monospace';ctx.textBaseline='alphabetic';ctx.textAlign='left';ctx.fillStyle='#9bd8ff';ctx.fillText('NORMAL',x,y+15);ctx.fillStyle=over&&Math.sin(stateT*18)>0?'#fff':'#ff6652';ctx.fillText('OVERHEAT!',ax+3,y+15);
 }
 function drawRollCharge(){
   if(typeof player==='undefined' || !player) return;
@@ -8636,12 +8626,13 @@ function freezerStageClearDefaults(stage){
 function forgeLoadoutSync(){
   if(!run) return [];
   const pool=(typeof crateWeaponPool==='function')?crateWeaponPool(true):[0,1,2,3,4,5];
-  if(pool.length<=FORGE_LOADOUT_MAX){ run.loadout=pool.slice(); return run.loadout; }
+  if(pool.length<=FORGE_LOADOUT_MAX){ run.loadout=pool.slice(); if(typeof chaingunSeedLoadout==='function')chaingunSeedLoadout(); return run.loadout; }
   const keep=(run.loadout||[]).filter(function(w){ return pool.indexOf(w)>=0; });
   /* the FIXED slots (missiles) are in every loadout that can hold them, whatever was chosen */
   for(const fw in FORGE_FIXED){ const f=+fw; if(pool.indexOf(f)>=0 && keep.indexOf(f)<0) keep.unshift(f); }
   for(let i=0;i<pool.length && keep.length<FORGE_LOADOUT_MAX;i++) if(keep.indexOf(pool[i])<0) keep.push(pool[i]);
   run.loadout=keep.slice(0,FORGE_LOADOUT_MAX);
+  if(typeof chaingunSeedLoadout==='function')chaingunSeedLoadout();   // the first loadout after the unlock carries the chaingun in the MG bay
   return run.loadout;
 }
 /* the screen opens only when there is something to do on it: an element to combine, a weapon to
@@ -9328,6 +9319,8 @@ function chaingunIsUnlocked(){return !!chaingunUnlocked;}
 function chaingunUnlock(){
   if(chaingunUnlocked)return false;
   chaingunUnlocked=true;try{localStorage.setItem(CHAINGUN_UNLOCK_KEY,'1');}catch(_cgWrite){}
+  if(typeof colePilot==='function'&&colePilot())return true;   // Cole keeps his MG / fusion-cannon line (0928)
+  if(typeof chaingunSeedLoadout==='function')chaingunSeedLoadout();
   run._wbag=[];if(!run.wlevels)run.wlevels=WEAPONS.map(()=>0);run.wlevels[7]=Math.max(1,run.wlevels[7]||0);run.weapon=7;run.wlevel=run.wlevels[7];run._chainHeat=0;run._chainRev=0;run._chainOverheat=0;
   if(typeof arcadeBanner==='function')arcadeBanner('CHAINGUN UNLOCKED!');
   if(Audio&&Audio.SFX)(Audio.SFX.weapon||Audio.SFX.powerup||function(){})();
@@ -27518,8 +27511,7 @@ function _weaponCadence(){
   if(run.weapon===3&&heldVariant(3)==='mavhoming')return WEAPON_CADENCE[3];
   if(run.weapon===6)return Math.max(.29,.55-clamp(run.wlevel||1,1,5)*.055);
   if(run.weapon===3 && forgeEntry(3)?.elem==='ice') return Math.max(2.10,2.90-0.18*clamp(run.wlevel||1,1,5));
-  if(run.weapon===7){const r=clamp(run._chainRev||0,0,1);
-    return Math.max(.042,(.18-r*.135)*(forgeActiveTier(7)>=3?.90:1));}
+  if(run.weapon===7)return CHAINGUN_LV.cad[clamp(run.wlevel||1,1,5)-1]*(forgeActiveTier(7)>=3?.90:1);   // 0928: level sets the rate, no spin-up, no heat
   {
     const _c=WEAPON_CADENCE[run.weapon];
     if(_c!=null && WEAPON_LVL_RAMP[run.weapon]){
@@ -29103,22 +29095,29 @@ function spaceBulletTick(b,dt){
   return false;
 }
 
+/* 0928 - Mike: "do not make our chainguns overheat. They get level 1-5 upgrades that increase the speed,
+   damage and rate of fire." One table: DPS 36 / 71 / 105 / 180 / 270 against the MG's measured
+   24 / 58 / 81 / 142 / 180 at the same level (MG: level+1 streams x (2+level/2) per 0.164 x 0.95^(lv-1)). */
+const CHAINGUN_LV={spd:[15,16,17,18.5,20],dmg:[3.6,3.2,4.2,4.2,5.4],rounds:[1,2,2,3,3],cad:[.10,.09,.08,.07,.06]};
 function chaingunPlayerFire(lv){
-  if((run._chainOverheat||0)>0)return;
-  /* 0928 - Mike: "just make the bullets go faster and appear like .50 cals and stronger with their own
-     impact fx". Rounds leave the two wing pods (CHAINGUN_MOUNTS, measured per pilot) instead of the
-     nose: alternating pods at L1-2, both at L3-4, both plus a centre round at L5. Speed 10.5+ -> 15+,
-     damage x1.3. They stay kind 'mg', so every MG element, infusion and forged form still rides them. */
-  lv=clamp(lv||1,1,5);const hot=clamp(run._chainHeat||0,0,1),M=chaingunMountPoints();
-  const side=run._chainSide=((run._chainSide|0)^1),pods=lv>=3?[M[0],M[1]]:[M[side]];
-  if(lv>=5)pods.push({x:player.x,y:player.y-18});
-  const spd=15+lv*.5,dmg=(2+Math.floor(lv*.75))*1.3;
+  /* Rounds leave the two wing pods (CHAINGUN_MOUNTS, measured per pilot) instead of the nose: one pod
+     alternating at L1, both from L2, both plus a centre round from L4. They stay kind 'mg', so every
+     MG element, infusion and forged form still rides them. */
+  lv=clamp(lv||1,1,5);const M=chaingunMountPoints(),n=CHAINGUN_LV.rounds[lv-1];
+  const side=run._chainSide=((run._chainSide|0)^1),pods=n>=2?[M[0],M[1]]:[M[side]];
+  if(n>=3)pods.push({x:player.x,y:player.y-18});
+  const spd=CHAINGUN_LV.spd[lv-1],dmg=CHAINGUN_LV.dmg[lv-1];
   for(const p of pods){
     const a=-Math.PI/2+rnd(-.012,.012);
-    pBullets.push({x:p.x,y:p.y-10,vx:Math.cos(a)*spd,vy:Math.sin(a)*spd,w:4+lv*.35,h:18+lv,dmg,kind:'mg',lv:hot>.72?5:lv,_chaingun:true,_cal50:true,_ph:(Math.random()*8)|0});
+    pBullets.push({x:p.x,y:p.y-10,vx:Math.cos(a)*spd,vy:Math.sin(a)*spd,w:4+lv*.35,h:18+lv,dmg,kind:'mg',lv,_chaingun:true,_cal50:true,_ph:(Math.random()*8)|0});
   }
-  player._mgMuzT=.075;player._mgMuzLv=hot>.72?5:Math.max(1,lv);player._chainMuzzle=.10;run._chainSpinT=(run._chainSpinT||0);
+  player._mgMuzT=.075;player._mgMuzLv=Math.max(1,lv);player._chainMuzzle=.10;
   shake=Math.max(shake,.5+lv*.15);(Audio.SFX.heavyMachineGun||Audio.SFX.machineGun||Audio.SFX.shoot)();
+}
+function chaingunHeatTick(dt,firing){
+  /* no heat any more: the rev meter only drives how fast the pods' barrels turn */
+  run._chainHeat=0;run._chainOverheat=0;
+  run._chainRev=clamp((run._chainRev||0)+(run.weapon===7&&firing?dt*3:-dt*1.5),0,1);
 }
 /* ---- 0928: the chaingun takes over the machine gun from Stage 6 ----------------------------------
    Mike: "We never get to switch machine-gun to chaingun, nor does my machine-gun default to chaingun
@@ -29129,11 +29128,26 @@ function chaingunPlayerFire(lv){
    Now, once it is unlocked, from Stage 6 on the MG slot IS the chaingun: MG and chaingun share one
    level (an MG crate raises it), the MG's forged element applies to it, and a death drops you to it.
    Cole keeps his own MG tiers 6-8 (the fusion cannon line). */
+/* 0928 follow-up (Mike): "we dont swap back and forth, we would change that in the weapon upgrade/
+   combination/loadout menu in between levels" - so the LOADOUT decides. After the unlock the chaingun
+   takes the machine gun's bay once (chaingunSeedLoadout); from then on the chaingun is the default gun
+   while it is in the loadout and the MG is not, and putting the MG back in a bay gives the MG back.
+   "cole still keeps his machine gun and fusion cannon tiers" - Cole never gets it (his exclusive
+   upgrade from Decker is its own later pass, with its own cutscene). */
+function chaingunColeExempt(){return typeof colePilot==='function'&&colePilot();}
 function chaingunReplacesMG(){
-  if(typeof run==='undefined'||!run||!chaingunIsUnlocked()||(run.stage|0)<6)return false;
+  if(typeof run==='undefined'||!run||!chaingunIsUnlocked()||(run.stage|0)<6||chaingunColeExempt())return false;
   if(typeof spaceWeaponsActive==='function'&&spaceWeaponsActive())return false;
-  if(typeof colePilot==='function'&&colePilot()&&((run.wlevels&&run.wlevels[0])|0)>=6)return false;
-  return true;
+  chaingunSeedLoadout();
+  const L=run.loadout;
+  return !Array.isArray(L)||!L.length||(L.indexOf(7)>=0&&L.indexOf(0)<0);
+}
+function chaingunSeedLoadout(){
+  if(!run||run._chainSeeded||!chaingunIsUnlocked()||chaingunColeExempt())return;
+  if((run.stage|0)<5)return;   // the unlock is profile-wide; a new run keeps its MG until the loadout after Stage 5
+  if(!Array.isArray(run.loadout)||!run.loadout.length)return;   // nothing chosen yet: seed the first loadout that exists, not an empty one
+  run._chainSeeded=true;
+  if(run.loadout.indexOf(7)<0){const i=run.loadout.indexOf(0);if(i>=0)run.loadout[i]=7;else if(run.loadout.length<FORGE_LOADOUT_MAX)run.loadout.push(7);}
 }
 function chaingunMGSync(){
   if(!chaingunReplacesMG()||!run.wlevels)return false;
@@ -29161,10 +29175,10 @@ function chaingunMountsVisible(){
 }
 function chaingunMountsDraw(dt){
   if(!chaingunMountsVisible())return;
-  const rev=clamp(run._chainRev||0,0,1),hot=clamp(run._chainHeat||0,0,1);
+  const rev=clamp(run._chainRev||0,0,1);
   run._chainSpinT=(run._chainSpinT||0)+(dt||1/60)*(2+rev*22);
-  const f=(run._chainOverheat||0)>0||hot>.78?4+((Math.floor(run._chainSpinT)&1)):Math.floor(run._chainSpinT)%4;
-  const key=CHAINGUN_POD_KEY+f;if(!XART.rdy(key)){for(let i=0;i<6;i++)XART.rdy(CHAINGUN_POD_KEY+i);return;}
+  const f=Math.floor(run._chainSpinT)%4;   // frames 0-3 turn the barrels (4-5 were the red-hot plates)
+  const key=CHAINGUN_POD_KEY+f;if(!XART.rdy(key)){for(let i=0;i<4;i++)XART.rdy(CHAINGUN_POD_KEY+i);return;}
   const im=XART.get(key),h=25,w=h*im.width/im.height,recoil=(player._chainMuzzle||0)>0?1.5:0;
   ctx.save();ctx.imageSmoothingEnabled=false;
   for(const p of chaingunMountPoints()){
@@ -29177,7 +29191,7 @@ function chaingunMountsDraw(dt){
 /* .50-cal tracer: the Hammer's own round (arch_blaster_fx_4/5), brass, or red-hot near overheat */
 function chaingunRoundDraw(b){
   const key='arch_blaster_fx_'+(4+(((b._ph||0)+Math.floor((efxClock||0)*18))&1));if(!XART.rdy(key))return false;
-  const im=typeof xartPalette==='function'?xartPalette(key,(b.lv|0)>=5&&(run._chainHeat||0)>.72?'#ff5a2a':'#ffc15a'):XART.get(key);if(!im)return false;
+  const im=typeof xartPalette==='function'?xartPalette(key,'#ffc15a'):XART.get(key);if(!im)return false;
   const w=12+(b.lv|0),h=28+(b.lv|0)*2;
   ctx.save();ctx.translate(b.x,b.y);ctx.rotate(Math.atan2(b.vy,b.vx)+Math.PI/2+Math.PI);ctx.imageSmoothingEnabled=false;ctx.drawImage(im,-w/2,-h/2,w,h);
   /* a stepped additive pass, not a blur, so the heavy round reads as lit (0914 house rule) */
@@ -29189,14 +29203,6 @@ function chaingunImpact(x,y,big){
   if(typeof pImpacts==='undefined')return;
   pImpacts.push({x:x+rnd(-3,3),y:y+rnd(-3,3),t:0,dur:.18,key:'arch_blaster_fx_'+((Math.random()*4)|0),pal:'#ffb347',size:big?30:22,rot:rnd(-.4,.4)});
   if(pImpacts.length>180)pImpacts.splice(0,pImpacts.length-180);
-}
-function chaingunHeatTick(dt,firing){
-  run._chainHeat=clamp(run._chainHeat||0,0,1);run._chainRev=clamp(run._chainRev||0,0,1);run._chainOverheat=Math.max(0,run._chainOverheat||0);
-  if(run.weapon!==7){run._chainRev=Math.max(0,run._chainRev-dt*1.2);run._chainHeat=Math.max(0,run._chainHeat-dt*.28);return;}
-  if(run._chainOverheat>0){run._chainOverheat=Math.max(0,run._chainOverheat-dt);run._chainHeat=run._chainOverheat/5;run._chainRev=0;return;}
-  if(firing){run._chainRev=Math.min(1,run._chainRev+dt*.72);run._chainHeat=Math.min(1,run._chainHeat+dt*(.075+.105*run._chainRev));
-    if(run._chainHeat>=1){run._chainHeat=1;run._chainOverheat=5;run._chainRev=0;shake=Math.max(shake,5);if(Audio.SFX)(Audio.SFX.steam||Audio.SFX.shieldBreakCombat||Audio.SFX.hit)();}}
-  else{run._chainRev=Math.max(0,run._chainRev-dt*.85);run._chainHeat=Math.max(0,run._chainHeat-dt*.16);}
 }
 
 /* ============================================================
@@ -30069,7 +30075,7 @@ function crateWeaponPool(unfiltered){
   const _pool=[0,1,2,3,4,5];
   const _space=(typeof spaceWeaponsActive==='function'&&spaceWeaponsActive());
   if(typeof laserMistIsUnlocked==='function'&&laserMistIsUnlocked()&&!_space)_pool.push(6);
-  if(typeof chaingunIsUnlocked==='function'&&chaingunIsUnlocked()&&!_space)_pool.push(7);
+  if(typeof chaingunIsUnlocked==='function'&&chaingunIsUnlocked()&&!_space&&!(typeof colePilot==='function'&&colePilot()))_pool.push(7);
   if(typeof yuriLightningOrbIsUnlocked==='function'&&yuriLightningOrbIsUnlocked()&&
      typeof _pilotKey==='function'&&_pilotKey()==='yuri'&&!_space)_pool.push(8);
   for(let _i=_pool.length-1;_i>=0;_i--)if((_pool[_i]===4||_pool[_i]===5)&&
@@ -74060,11 +74066,7 @@ function drawWorld(dt){
     }
   });
   if(run.weapon===7&&typeof chaingunMountsDraw==='function')chaingunMountsDraw(dt);
-  if(run.weapon===7){
-    if((run._chainOverheat||0)>0){ctx.save();ctx.fillStyle='rgba(255,18,12,'+(.08+.07*(.5+.5*Math.sin((stateT||0)*16)))+')';ctx.fillRect(0,0,VW,VH);ctx.restore();}
-    if(player._chainMuzzle>0)player._chainMuzzle=Math.max(0,player._chainMuzzle-dt);
-    if((run._chainOverheat||0)>0)for(let i=0;i<2;i++)particles.push({x:player.x+rnd(-8,8),y:player.y-8,vx:rnd(-.25,.25),vy:rnd(-1.3,-.6),life:.5,t:0,r:rnd(1.5,3),color:'#d8e4e8'});
-  }
+  if(run.weapon===7&&player._chainMuzzle>0)player._chainMuzzle=Math.max(0,player._chainMuzzle-dt);
   if(run.stage===6)s6OpeningDraw(); // Massive overhead carrier and its shadow cover the player.
   drawSpaceArmoryHelpers();
   overlordIntroOverflightDraw();
@@ -76739,7 +76741,7 @@ const SC_UNLOCKS = {
        freezer:[['FIRE ORB','micon_fireorb_3'],['ICE BREATH','micon_icebreath_3'],['THERMOSHOCK BALL','micon_thermoshock_3']],
        yuri:[['FIRE ORB','micon_fireorb_3']] },
   4: { yuri:[['LIGHTNING ORB','micon_lightningorb_3'],['CHAIN LIGHTNING LEVEL II','micon_lightningorb_3']] },
-  5: { all:[['CHAINGUN','micon_chaingun_3']] },
+  5: { all:[['CHAINGUN','micon_chaingun_3']], cole:[] },   // 0928: Cole keeps his MG / fusion-cannon line
   9: { all:[['LASER MIST','micon_lasermist_3']] },
 };
 /* ⚠ FOUR AT ONCE MEANS FOUR ON SCREEN, NOT FOUR IN THE WORLD (Mike, 0916: "make it a flexible

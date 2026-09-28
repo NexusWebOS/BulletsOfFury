@@ -39,23 +39,38 @@ module.exports=function(vm,ctxv,ok){
   o['it is over in about two seconds and hands back to the fight, armor full']=steps>=120&&steps<=140&&h.frArmor.activated&&h.frArmor.hp===h.frArmor.max&&!F._noHit&&!h.empowered;
   o['nothing about the activation touches his HP']=F.hp===hp0;
 
-  /* ---- the chaingun takes over the machine gun from Stage 6 ---- */
+  /* ---- the chaingun: chosen in the loadout, no overheat, levels 1-5 raise speed, damage and rate ---- */
   const was=chaingunUnlocked;chaingunUnlocked=true;
   stage(6);run.weapon=0;run.wlevels=WEAPONS.map(()=>0);run.wlevels[0]=3;run.wlevel=3;run.forge={};run.infusion=null;
+  run.loadout=[0,1,2,3,4,5];run._chainSeeded=false;
   chaingunMGSync();
-  o['Stage 6: the MG slot becomes the chaingun at the MG level']=run.weapon===7&&run.wlevels[7]===3&&run.wlevel===3;
+  o['after the unlock the chaingun takes the MG bay once, and the MG slot becomes it']=run.loadout.indexOf(7)>=0&&run.loadout.indexOf(0)<0&&run.weapon===7&&run.wlevels[7]===3;
   run.weapon=0;run.wlevels=WEAPONS.map(()=>0);run.wlevel=0;chaingunMGSync();
-  o['a death drops you to the chaingun']=run.weapon===7;
+  o['a death drops you to the chaingun while it holds the bay']=run.weapon===7;
   run.wlevels[0]+=1;run.weapon=0;chaingunMGSync();
   o['an MG level raises the chaingun']=run.weapon===7&&run.wlevels[7]===run.wlevels[0]&&run.wlevels[7]===1;
-  run.forge={0:{elem:'ice',lv:1}};o['the MG forged element applies to the chaingun']=(forgeEntry(7)||{}).elem==='ice';
-  run.forge={};player.x=300;player.y=400;run._chainOverheat=0;const n=pBullets.length;chaingunPlayerFire(3);
-  const q=pBullets.slice(n),M=chaingunMountPoints();
-  o['chaingun rounds are faster, heavier .50-cal rounds from both wing pods at L3']=q.length===2&&q.every(b=>b._cal50&&b.kind==='mg'&&Math.hypot(b.vx,b.vy)>=16&&b.dmg>3)&&
-    q.some(b=>Math.abs(b.x-M[0].x)<2)&&q.some(b=>Math.abs(b.x-M[1].x)<2);
-  stage(5);run.weapon=0;chaingunMGSync();o['Stage 5 keeps the machine gun']=run.weapon===0;
+  run.forge={0:{elem:'ice',lv:1}};o['the MG forged element applies to the chaingun']=(forgeEntry(7)||{}).elem==='ice';run.forge={};
+  run.loadout=[0,1,2,3,4,5];run.weapon=0;chaingunMGSync();
+  o['putting the MG back in its bay in the loadout gives the MG back (no in-play swap)']=run.weapon===0&&!chaingunReplacesMG();
+  run.loadout=[7,1,2,3,4,5];player.x=300;player.y=400;
+  let up=true,prev=null;
+  for(let lv=1;lv<=5;lv++){run.weapon=7;run.wlevel=lv;const n=pBullets.length;chaingunPlayerFire(lv);const q=pBullets.slice(n);
+    const cur={spd:Math.hypot(q[0].vx,q[0].vy),dmg:q.reduce((t,b)=>t+b.dmg,0)};
+    if(prev)up=up&&cur.spd>prev.spd&&cur.dmg>prev.dmg&&CHAINGUN_LV.cad[lv-1]<CHAINGUN_LV.cad[lv-2];prev=cur;}
+  o['each level 1-5 raises round speed, damage per volley and rate of fire']=up;
+  run.weapon=7;run.wlevel=3;const n0=pBullets.length;chaingunPlayerFire(3);const q=pBullets.slice(n0),M=chaingunMountPoints();
+  o['chaingun rounds are .50-cal rounds from both wing pods']=q.length===2&&q.every(b=>b._cal50&&b.kind==='mg')&&q.some(b=>Math.abs(b.x-M[0].x)<2)&&q.some(b=>Math.abs(b.x-M[1].x)<2);
+  for(let i=0;i<60*20;i++)chaingunHeatTick(1/60,true);
+  o['twenty seconds of held fire never overheats']=!(run._chainOverheat>0)&&!(run._chainHeat>0)&&barRows().chaingun==null;
+  stage(5);run.weapon=0;run.loadout=[7,1,2,3,4,5];chaingunMGSync();o['Stage 5 keeps the machine gun']=run.weapon===0;
   chaingunUnlocked=false;stage(7);run.weapon=0;chaingunMGSync();o['before the unlock, Stage 7 keeps the machine gun']=run.weapon===0;
-  chaingunUnlocked=was;
+  chaingunUnlocked=true;stage(1);run.loadout=[];run._chainSeeded=false;forgeLoadoutSync();
+  o['a new run with the chaingun unlocked keeps the MG in its early loadouts']=run.loadout.indexOf(0)>=0&&run.loadout.indexOf(7)<0&&!run._chainSeeded;
+  run.stage=5;forgeLoadoutSync();
+  o['the loadout after Stage 5 opens with the chaingun already in the MG bay']=run.loadout.indexOf(7)>=0&&run.loadout.indexOf(0)<0&&crateWeaponPool(true).indexOf(0)>=0;
+  stage(7);run.pilot='cole';run.weapon=0;run.wlevels=WEAPONS.map(()=>0);run.wlevels[0]=2;run.loadout=[0,1,2,3,4,5];run._chainSeeded=false;chaingunMGSync();
+  o['Cole keeps his machine gun and fusion-cannon line: no chaingun, no bay, no pool slot']=run.weapon===0&&run.loadout.indexOf(7)<0&&crateWeaponPool(true).indexOf(7)<0&&unlockRowsFor(5,'cole').length===0;
+  run.pilot='maverick';chaingunUnlocked=was;
   o['every pilot has a measured pod mount']=['axel','cole','decker','falva','freezer','juggernaut','lizzie','maverick','yuri'].every(k=>Array.isArray(CHAINGUN_MOUNTS[k]));
 
   /* ---- the Stage-6 wind bed is owned by the main loop ---- */

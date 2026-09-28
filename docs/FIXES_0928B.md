@@ -69,9 +69,41 @@ exit resets to the machine gun, so it was gone at the first death and never came
 A 0927 assertion pinned the chaingun's single nose flash; it now asserts the pods own the flash (the
 0927 rule — one nose flash per volley, not one per lane — still holds for weapons 0–2).
 
+## 5. Follow-up (Mike, same day)
+
+*"No we dont swap back and forth, we would change that in the weapon upgrade/combination/loadout menu in
+between levels 6-7. Yes, cole still keeps his machine gun and fusion cannon tiers. Matter of fact, if
+playing as cole, those get an exclusive upgrade from Decker yet again. a seperate cutscene would be made
+for this. No, do not make our chainguns overheat. They get level 1-5 upgrades that increase the speed,
+damage and rate of fire."*
+
+* **The loadout decides, nothing swaps in play.** The chaingun takes the MG's bay once
+  (`chaingunSeedLoadout`), in the first loadout from Stage 5 on — so the loadout screen after Stage 5
+  opens with it in the bay and the MG still in the pool. From then on the chaingun is the default gun
+  while it is in the loadout and the MG is not; putting the MG back in a bay (between 6 and 7, or any
+  later loadout) gives the MG back. ⚠ The unlock is PROFILE-wide (`bof_chaingun_unlocked`), so the seed
+  is gated on `run.stage >= 5` — without that a second campaign would lose its MG on Stage 1.
+* **No overheat.** The heat meter, the lock-out, the HUD row and the red-hot tint are gone;
+  `chaingunHeatTick` only drives the barrel spin-up. Measured: twenty real seconds of held fire, still
+  20 rounds in the 21st second.
+* **Levels 1–5 raise speed, damage and rate** (`CHAINGUN_LV`):
+
+  | level | px/frame | dmg per round | rounds per volley | cadence s | DPS (MG) |
+  |---|---|---|---|---|---|
+  | 1 | 15 | 3.6 | 1 | 0.10 | 36 (24) |
+  | 2 | 16 | 3.2 | 2 | 0.09 | 71 (58) |
+  | 3 | 17 | 4.2 | 2 | 0.08 | 105 (81) |
+  | 4 | 18.5 | 4.2 | 3 | 0.07 | 180 (142) |
+  | 5 | 20 | 5.4 | 3 | 0.06 | 270 (180) |
+
+  A forged tier III+ trims the cadence a further 10%.
+* **Cole is fully exempt**: no seed, no bay, no pool slot, no Stage-5 unlock page row, and the unlock
+  does not touch his gun. **His exclusive Decker upgrade for the MG / fusion-cannon tiers, and its
+  cutscene, are a separate later pass** — not built here.
+
+Suite section 376 now 27 assertions; `probe_chaingun_0928.py` 20/0 with 0 page/console errors.
+
 ## Mike's calls
 
-* The switch is automatic (the Stage-5 unlock converts you; Stage 6+ is the chaingun). A manual MG ↔
-  chaingun toggle would need a new binding and screen — say if you want one.
-* Cole's MG tier 6+ exemption.
-* The 5 s overheat lock-out is unchanged, and now applies to the default gun from Stage 6.
+* The pod art is still the Hammer's gatling (`CHAINGUN_POD_KEY`), awaiting his pod images.
+* Level 2 trades per-round damage (3.6 → 3.2) for a second barrel; every level's volley and DPS still rise.

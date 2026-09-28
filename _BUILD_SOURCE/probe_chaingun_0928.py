@@ -28,6 +28,7 @@ SETUP = r"""
   stagePlan=[];waveIdx=999;spawnClock=9999;enemies=[];eBullets=[];pBullets=[];powerups=[];
   boss=null;bossActive=false;subBoss=null;subBossActive=false;subBossDone=true;
   run.weapon=0;run.wlevels=WEAPONS.map(()=>0);run.wlevels[0]=c.lv||2;run.wlevel=c.lv||2;run.forge={};run.infusion=null;
+  run.loadout=[0,1,2,3,4,5];run._chainSeeded=false;
   player.x=camLeftX()+viewW()/2;player.y=VH*.78;player.invuln=0;
   window.playerHit=function(){};
   window.__asked={};if(!window.__xg){window.__xg=XART.get.bind(XART);XART.get=function(k){window.__asked[k]=(window.__asked[k]||0)+1;return window.__xg(k);};}
@@ -82,6 +83,14 @@ def main():
         asked = pg.evaluate("() => Object.keys(window.__asked)")
         imp = pg.evaluate("() => pImpacts.filter(p=>p.pal==='#ffb347').length")
         ok(hit and imp > 0 and any(k in asked for k in ('arch_blaster_fx_0', 'arch_blaster_fx_1', 'arch_blaster_fx_2', 'arch_blaster_fx_3')), 'hits throw their own amber impact (%d live)' % imp)
+        # 3b. no overheat: twenty real seconds of held fire, still firing at the end
+        pg.evaluate("() => { enemies=[];window.__fired=0; }")
+        for _ in range(20):
+            step(60); pg.wait_for_timeout(15)
+        late = pg.evaluate("() => { const a=window.__fired;return {a,heat:run._chainHeat||0,oh:run._chainOverheat||0,row:barRows().chaingun==null?null:1}; }")
+        pg.evaluate("() => { window.__fired=0; }"); step(60)
+        tail = pg.evaluate("() => window.__fired")
+        ok(late['heat'] == 0 and late['oh'] == 0 and late['row'] is None and tail >= 20, 'twenty seconds of held fire never overheats, and it is still firing in the 21st (%s, %d rounds in the last second)' % (late, tail))
         pg.evaluate("() => { Input.keys.j=false; }")
         # 4. a death drops you to the MG slot - which is the chaingun again next frame
         pg.evaluate("() => { run.weapon=0;run.wlevels=WEAPONS.map(()=>0);run.wlevel=0; }"); step(2)
@@ -99,8 +108,15 @@ def main():
         for label, cfg in [('Stage 5', {'unlocked': True, 'stage': 5}), ('Stage 7 before the unlock', {'unlocked': False, 'stage': 7})]:
             pg.evaluate(SETUP, cfg); step(2)
             ok(pg.evaluate("() => run.weapon") == 0, '%s keeps the machine gun' % label)
-        pg.evaluate(SETUP, {'unlocked': True, 'stage': 7, 'pilot': 'cole', 'lv': 6}); step(2)
-        ok(pg.evaluate("() => run.weapon") == 0, 'Cole keeps his MG tier 6+ (the fusion-cannon line)')
+        for lv in (2, 6):
+            pg.evaluate(SETUP, {'unlocked': True, 'stage': 7, 'pilot': 'cole', 'lv': lv}); step(2)
+            c = pg.evaluate("() => ({w:run.weapon,bay:run.loadout.indexOf(7),pool:crateWeaponPool(true).indexOf(7)})")
+            ok(c['w'] == 0 and c['bay'] < 0 and c['pool'] < 0, 'Cole keeps his machine gun at MG level %d: no chaingun, no bay, no pool slot (%s)' % (lv, c))
+        # 7b. the loadout screen between stages is where the choice is made
+        pg.evaluate(SETUP, {'unlocked': True, 'stage': 5}); step(1)
+        L = pg.evaluate("() => { run._chainSeeded=false;loadoutStart(function(){});return {bays:run.loadout.slice(),pool:loadoutScr&&loadoutScr.pool.slice(),state}; }")
+        ok(7 in L['bays'] and 0 not in L['bays'] and 0 in (L['pool'] or []), 'the loadout after Stage 5 opens with the chaingun in the MG bay and the MG still in the pool (%s)' % L)
+        pg.evaluate("() => { setState(GS.PLAY); }")
         # 8. the wind bed (Stage 6)
         pg.evaluate(SETUP, {'unlocked': True, 'stage': 6}); step(4)
         w0 = pg.evaluate("() => ({on:!!_ambEl,stage:_ambStage})")

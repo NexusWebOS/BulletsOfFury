@@ -8,7 +8,8 @@ module.exports=function testUnlockAnnouncements(vm,ctxv,ok){
   const rows=(n,pk)=>R('JSON.stringify(unlockRowsFor('+n+',"'+pk+'"))');
   ok(rows(4,'yuri').includes('LIGHTNING ORB')&&rows(4,'cole')==='[]','the stage-4 page announces Lightning Orb only to Yuri');
   ok(rows(2,'freezer').includes('ICE BREATH')&&rows(2,'freezer').includes('THERMOSHOCK'),'Freezer receives both stage-2 weapon announcements');
-  ok(rows(5,'cole').includes('CHAINGUN')&&rows(9,'cole').includes('LASER MIST'),'stages 5 and 9 announce their actual weapon systems');
+  ok(rows(5,'maverick').includes('CHAINGUN')&&rows(9,'cole').includes('LASER MIST'),'stages 5 and 9 announce their actual weapon systems');
+  ok(rows(5,'cole')==='[]','Cole keeps his MG / fusion-cannon line, so stage 5 announces no chaingun to him (Mike 0928)');
   ok(rows(3,'cole')==='[]','a stage with no weapon grant skips the page');
   ok(R("XART._src.weapon_found_0918==='assets/game/ui/forge_0918/weapon_found.png'"),'the dedicated generated Weapon Found plate is registered');
   const us=R('unlocksStart.toString()'),du=R('drawUnlocks.toString()');
