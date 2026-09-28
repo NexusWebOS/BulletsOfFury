@@ -112,6 +112,7 @@ def main():
     ap.add_argument('--stage', type=int, default=9)
     ap.add_argument('--seconds', type=float, default=6)
     ap.add_argument('--pilot', default='cole')
+    ap.add_argument('--boss', default=None, help="0928: spawn this boss kind after setup, e.g. overlord")
     args = ap.parse_args()
 
     from playwright.sync_api import sync_playwright
@@ -127,6 +128,8 @@ def main():
         r = pg.evaluate(SETUP, {'stage': args.stage, 'pilot': args.pilot})
         if not r.get('ok'):
             print('setup failed:', r.get('err')); b.close(); stop(); sys.exit(1)
+        if args.boss:
+            print('  boss:', pg.evaluate("(k) => { spawnBoss(k); return boss ? {kind:boss.kind, name:boss.name} : null; }", args.boss))
         pg.evaluate(AUTOPILOT)
         pg.wait_for_timeout(3500)
         info = pg.evaluate(TRAP, CANDIDATES)
