@@ -55770,7 +55770,7 @@ function rebelSquadTick(b,dt){
     q.bankDir=(q.evadeT>0?q.evadeX:q.homeX)-q.x;
     q.x+=clamp(q.bankDir,-360*dt,360*dt);
     q.y+=clamp(q.homeY+Math.sin(R.t*2+q.i)*20-q.y,-220*dt,220*dt);
-    q.cd-=dt;if(q.cd>0||(typeof rival27Turn==='function'&&!rival27Turn(R,q)))continue;q.cd=(q.i===0?1.7:q.i===1?2.8:2.6)*pace;
+    q.cd-=dt;if(q.cd>0||(typeof rival27Turn==='function'&&!rival27Turn(R,q)))continue;q.cd=(q.i===0?1.7:q.i===1?2.8:2.6)*pace*(typeof rf28PaceMul==='function'?rf28PaceMul(R,q):1);
     if(typeof fr27RebelAttack==='function'&&fr27RebelAttack(q,R))continue;
     if(q.i%3===0){
       const a=Math.atan2(player.y-q.y,player.x-q.x);
