@@ -54,11 +54,41 @@ function fr27Cell(key,col,row,x,y,w,h,alpha){
  ctx.save();ctx.globalAlpha=alpha==null?1:alpha;ctx.imageSmoothingEnabled=false;ctx.drawImage(im,sx,sy,ex-sx,eh,x-w/2,y-h/2,w,h);ctx.restore();return true;
 }
 function fr27Armor(b){return b&&b._hammer&&b._hammer.frArmor;}
+/* ⚠ 0928 REBUILD (Mike: "the chromium armor activate sequence was horrible and needs to be re-done").
+   Measured before: 3.4 s of a SEPARATE sheet (fr27_chromium_actions row 0) - a silver robot with a
+   silver hammer that is not the boss - stepped at four frames, then a pop to the real blue boss; the
+   HP bar emptied and refilled as if he had healed; the caption sat in the HUD band. Now the REAL boss
+   stays on screen and the engine's own chromium treatment grows the armor out from his chest reactor
+   (h.empowered + empowerLevel: the pixel-stepped core mask with its bright leading ring), sparks run
+   over the plating, the grey armor gauge fills as it spreads, and it LOCKS with a blue blast, a shock
+   ring and shake that also cover the palette hand-off back to the plate. 2.1 s. No new art. */
+const FR27_ACT={brace:.35,plate:1.75,end:2.1};
 function fr27BeginArmor(b){
  const h=b._hammer,A=h.frArmor={hp:b.maxhp,max:b.maxhp,t:0,active:true,half:false,checkpoints:[],barrier:0,rage:false};
  h.throw=null;h.bombs=[];h.pillars=[];b._noHit=true;hammerState(b,'fr_activation');
- XART.rdy('fr27_chromium_actions');(Audio.SFX.bossWeaponCharge||Audio.SFX.lightning||function(){})();
+ h.empowered=true;h.empowerLevel=0;h.chromiumT=.75;h.frAct={locked:false,spark:0,y0:b.y};
+ if(typeof fxBurst==='function')fxBurst(b.x,b.y,70,{color:'#9fe9ff',rings:1,chunks:0,sparks:8});
+ (Audio.SFX.bossWeaponCharge||Audio.SFX.lightning||function(){})();
  return A;
+}
+function fr27ActivationTick(b,dt){
+ const h=b._hammer,A=fr27Armor(b),F=h.frAct||(h.frAct={locked:false,spark:0,y0:b.y});
+ h.t+=dt;b._noHit=true;
+ // hold the SILVER tone (1 of the three chromium tones): the cycle's green read as a different metal
+ h.chromiumT=.75+(h.t*.45)%.6;
+ const t=h.t,p=clamp((t-FR27_ACT.brace)/(FR27_ACT.plate-FR27_ACT.brace),0,1);
+ // brace: a short dip, then the plate rides back up as the armor spreads
+ b.y=F.y0+Math.sin(clamp(t/FR27_ACT.plate,0,1)*Math.PI)*7;
+ if(!F.locked){h.empowered=true;h.empowerLevel=p*p*(3-2*p);
+  F.spark-=dt;if(t>FR27_ACT.brace&&F.spark<=0&&typeof fxBurst==='function'){F.spark=.16;
+   const a=h.chromiumT*5.3,r=24+62*h.empowerLevel;fxBurst(b.x+Math.cos(a)*r,b.y+Math.sin(a)*r*.9,18,{color:HAMMER_CHROMIUM_COLORS[hammerChromiumTone(b)],rings:0,chunks:0,sparks:6});}
+  if(t>=FR27_ACT.plate){F.locked=true;h.empowered=false;h.empowerLevel=0;b.y=F.y0;
+   if(typeof fxBurst==='function'){fxBurst(b.x,b.y,150,{color:'#dff6ff',rings:2,chunks:0,sparks:22});fxBurst(b.x,b.y-10,60,{color:'#9fe9ff',rings:1,chunks:0,sparks:10});}
+   b.flash=Math.max(b.flash||0,.18);shake=Math.max(shake,9);
+   (Audio.SFX.shieldUp||Audio.SFX.shieldBreakCombat||Audio.SFX.expBig||function(){})();
+   if(A)A.capT=1.3;}
+ }
+ if(t>=FR27_ACT.end){A.activated=true;b._noHit=false;h.frAct=null;hammerState(b,'hammer');}
 }
 function fr27Restore(b,fraction,critical,barrier){
  const h=b._hammer,A=fr27Armor(b);hammerStormStart(b);
@@ -72,8 +102,10 @@ function fr27Restore(b,fraction,critical,barrier){
 }
 function fr27Reflect(b,A,dt){
  if(A.barrier<=0)return;A.barrier=Math.max(0,A.barrier-dt);A.reflectCD=Math.max(0,(A.reflectCD||0)-dt);
- const y=b.y+85,half=150;
+ const y=b.y+85,half=150,healing=b._hammer&&b._hammer.recovery&&b._hammer.recovery.status==='charging';
  for(const q of pBullets){if(q.dead||q.y<y-26||q.y>y+26||Math.abs(q.x-b.x)>half||q.vy>=0)continue;
+  // 0928: while he heals, a missile passes the wall - it is the one answer to the heal
+  if(healing&&hammerMissile(q))continue;
   q.dead=true;if(A.reflectCD<=0){A.reflectCD=.09;const a=Math.PI/2+clamp((q.x-b.x)/half,-1,1)*.55;
    const missile=/miss|rocket/.test(q.kind||''),z=eShootT(q.x,y+28,a,4.2,missile?'s4rocket':'eglaser',{w:missile?12:8,h:missile?28:18,silent:true});z._hammerLaser=!missile;}
  }
@@ -113,6 +145,7 @@ hammerRecoveryBreak=function(b){
  R.status='cancelled';R.revoked=R.granted||0;
  if(R.armor&&A)A.hp=Math.max(0,A.hp-R.revoked);else b.hp=Math.max(1,b.hp-R.revoked);
  R.applied=0;h.coreBurst={...hammerHeadPoint(b),t:0};h.frCriticalInterrupted=!!R.critical;
+ {const hd=hammerHeadPoint(b),first=explosions.length;explode(hd.x,hd.y,84,'blue');for(let i=first;i<explosions.length;i++)explosions[i].chromiumTone=hammerChromiumTone(b);shake=Math.max(shake,10);}
  h.hammerDestroyed=true;h.hammerHP=0;h.throw=null;h.stormWaves=[];h.frRecovery=false;
  if(A){A.barrier=3.1;A.stunCritical=!!R.critical;}
  hammerState(b,'fr_stun');(Audio.SFX.shieldBreakCombat||Audio.SFX.expBig||function(){})();
@@ -124,7 +157,7 @@ hammerBossDamage=function(b,dmg){
  if(hammerHit&&h.recovery?.status==='charging'&&dmg>0){
   // A deliberately locked rocket is the immediate recovery counter. Passive
   // weapons still deplete the exposed core normally.
-  if(_dmgBullet&&['gmiss','nukem','retinaMissile'].includes(_dmgBullet.kind)){
+  if(hammerMissile(_dmgBullet)){   // 0928: every player missile kind, locked or not (was gmiss/nukem/retinaMissile only)
    b._hammerModuleHit=null;hammerRecoveryBreak(b);return 0;
   }
   return FR27_BASE.hammerDamage(b,dmg);
@@ -143,9 +176,8 @@ hammerBossTick=function(b,dt){
  if(!A&&hammerFurious()&&h.balance0922&&!b._noHit&&passwordReady&&!['flyby','return','unfold'].includes(h.state))A=fr27BeginArmor(b);
  if(!A)return FR27_BASE.hammerTick(b,dt);
  A.t+=dt;A.flash=Math.max(0,(A.flash||0)-dt);fr27Reflect(b,A,dt);
- if(h.state==='fr_activation'){
-  h.t+=dt;b._noHit=true;if(h.t>=3.4){A.activated=true;b._noHit=false;hammerState(b,'hammer');}return;
- }
+ if(h.state==='fr_activation'){fr27ActivationTick(b,dt);return;}
+ if(A.capT>0)A.capT=Math.max(0,A.capT-dt);
  if(h.state==='fr_stun'){
   h.t+=dt;h.chromiumT=(h.chromiumT||0)+dt;
   if(h.t>=2.8){h.hammerDestroyed=false;h.hammerHP=h.hammerMax;
@@ -182,20 +214,24 @@ hammerHeadPoint=function(b){
 hammerBossDraw=function(b){
  const h=b._hammer,A=fr27Armor(b);if(!A)return FR27_BASE.hammerDraw(b);
  const s=h.state;let drawn=false;
- if(s==='fr_activation')drawn=fr27Cell('fr27_chromium_actions',Math.min(3,Math.floor(h.t/3.4*4)),0,b.x,b.y-12,235,254,1);
+ if(s==='fr_activation'){ /* the real boss, in his idle pose, with the chromium spreading over it */
+  /* the storm-idle reel is the standing pose that routes through hammerChromiumPoseDraw, which is
+     what carries the empowered core-out armor mask; the ordinary idle pose does not */
+  const mode=h.mode;h.state='storm_idle';h.mode='storm';try{FR27_BASE.hammerDraw(b);}finally{h.state='fr_activation';h.mode=mode;}drawn=true;}
  else if(s==='fr_twirl')drawn=fr27Cell('fr27_chromium_actions',h.t<2.2?Math.floor(h.t*(7+h.t*5))%4:Math.min(3,Math.floor((h.t-2.2)/.65*4)),h.t<2.2?1:2,b.x,b.y,252,258,1);
  if(!drawn){ctx.save();if(A.rage)ctx.filter='sepia(1) saturate(5) hue-rotate(315deg)';FR27_BASE.hammerDraw(b);ctx.restore();}
  if(A.hp>0&&s!=='fr_activation'){ctx.save();ctx.globalCompositeOperation='lighter';ctx.globalAlpha=.13+.06*Math.sin(A.t*12);archEffectBlit(9,b.x,b.y,115,A.t*1.7,.7);ctx.restore();}
  if(A.barrier>0)fr27Cell('fr27_chromium_actions',Math.floor(A.t*14)%4,3,b.x,b.y+67,315,120,.85);
  if(s==='fr_twirl'&&h.t<2.2)combatWarningDraw(b,{x:b.x,y:b.y+65,ex:b.x,ey:VH,progress:h.t/2.2,width:260,alpha:.32});
- if(s==='fr_activation')campText('CHROMIUM ARMOR ACTIVATED',b.x,Math.max(viewTopY()+76,b.y-132),11,'#e6edf6');
+ if(s==='fr_activation'||A.capT>0){const k=s==='fr_activation'?clamp((h.t-FR27_ACT.brace)/.4,0,1):clamp(A.capT/.4,0,1);
+  campText('CHROMIUM ARMOR',b.x,Math.min(VH*.62,b.y+118),14,'#dff6ff',k);}
 };
-bossHealthFraction=function(b){const A=fr27Armor(b);if(A&&b._hammer.state==='fr_activation')return clamp(b._hammer.t/1.0,0,1);return FR27_BASE.health(b);};
+bossHealthFraction=function(b){return FR27_BASE.health(b);};   // 0928: the HP bar no longer empties and refills during the activation
 // Draw a second steel fill on the very same authored gauge geometry; the base HP stays underneath.
 const FR27_GAUGE=drawHealthBarArt;
 drawHealthBarArt=function(kind,frac,cx,cy,w,inWorld,lagKey){
  const result=FR27_GAUGE.apply(this,arguments),A=kind==='boss'&&fr27Armor(boss);if(!result||!A)return result;
- const h=boss._hammer,ratio=h.state==='fr_activation'?clamp((h.t-1)/2.4,0,1):A.hp/A.max;
+ const h=boss._hammer,ratio=h.state==='fr_activation'?clamp((h.t-FR27_ACT.brace)/(FR27_ACT.plate-FR27_ACT.brace),0,1):A.hp/A.max;
  if(ratio<=0||!XART.rdy('bmbar_fill_grey'))return result;
  const s=w/BMBAR.frameW,O=BMBAR.boss,x=Math.round(cx-w/2)+O.dx*s,y=Math.round(cy-BMBAR.frameH*s/2)+O.dy*s;
  ctx.save();if(inWorld&&typeof camX==='number')ctx.translate(camX,0);ctx.beginPath();ctx.rect(x,y,O.w*s*ratio,O.h*s);ctx.clip();ctx.drawImage(XART.get('bmbar_fill_grey'),x,y,O.w*s,O.h*s);ctx.globalCompositeOperation='lighter';ctx.globalAlpha=.12+.12*(.5+.5*Math.sin(A.t*9));ctx.drawImage(XART.get('bmbar_fill_grey'),x,y,O.w*s,O.h*s);ctx.restore();return result;

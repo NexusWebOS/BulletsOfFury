@@ -8489,7 +8489,10 @@ function ensureForgeForms(){
   for(const w of Object.keys(run.forge))if(run.forge[w])run.forge[w].lv=1;
   return run.forgeForms;
 }
-function forgeEntry(w){ const f=(run&&run.forge&&run.forge[w])||null;if(f)f.lv=1;return f; }
+function forgeEntry(w){ let f=(run&&run.forge&&run.forge[w])||null;
+  /* 0928: while the chaingun stands in for the MG it wears the MG's forged element */
+  if(!f&&w===7&&typeof chaingunReplacesMG==='function'&&chaingunReplacesMG())f=(run.forge&&run.forge[0])||null;
+  if(f)f.lv=1;return f; }
 function forgeFormsFor(w){ const F=ensureForgeForms(); return F[w]||{}; }
 function forgeName(w){
   const f=forgeEntry(w); if(!f || !INFUSIONS[f.elem]) return null;
@@ -27105,6 +27108,7 @@ function _qlBlockSfx(){
        else if(Audio && Audio.SFX && Audio.SFX.hit) Audio.SFX.hit(); }catch(e){}
 }
 function hitSubBoss(dmg, hx, hy){
+  if(_dmgBullet&&_dmgBullet._cal50&&typeof chaingunImpact==='function'&&Number.isFinite(hx))chaingunImpact(hx,hy,true);
   /* THE IMPACT POINT NEVER ARRIVED (drop 0801kb). Mike: "the miniboss is not
      killable."
 
@@ -29101,13 +29105,90 @@ function spaceBulletTick(b,dt){
 
 function chaingunPlayerFire(lv){
   if((run._chainOverheat||0)>0)return;
-  lv=clamp(lv||1,1,5);const streams=1+Math.floor(lv/2),hot=clamp(run._chainHeat||0,0,1);
-  for(let i=0;i<streams;i++){
-    const off=(i-(streams-1)/2)*(7+lv),a=-Math.PI/2+(i-(streams-1)/2)*.018;
-    pBullets.push({x:player.x+off,y:player.y-15,vx:Math.cos(a)*(10.5+lv*.35),vy:Math.sin(a)*(10.5+lv*.35),w:5+lv*.45,h:15+lv,dmg:2+Math.floor(lv*.75),kind:'mg',lv:hot>.72?5:lv,_chaingun:true});
+  /* 0928 - Mike: "just make the bullets go faster and appear like .50 cals and stronger with their own
+     impact fx". Rounds leave the two wing pods (CHAINGUN_MOUNTS, measured per pilot) instead of the
+     nose: alternating pods at L1-2, both at L3-4, both plus a centre round at L5. Speed 10.5+ -> 15+,
+     damage x1.3. They stay kind 'mg', so every MG element, infusion and forged form still rides them. */
+  lv=clamp(lv||1,1,5);const hot=clamp(run._chainHeat||0,0,1),M=chaingunMountPoints();
+  const side=run._chainSide=((run._chainSide|0)^1),pods=lv>=3?[M[0],M[1]]:[M[side]];
+  if(lv>=5)pods.push({x:player.x,y:player.y-18});
+  const spd=15+lv*.5,dmg=(2+Math.floor(lv*.75))*1.3;
+  for(const p of pods){
+    const a=-Math.PI/2+rnd(-.012,.012);
+    pBullets.push({x:p.x,y:p.y-10,vx:Math.cos(a)*spd,vy:Math.sin(a)*spd,w:4+lv*.35,h:18+lv,dmg,kind:'mg',lv:hot>.72?5:lv,_chaingun:true,_cal50:true,_ph:(Math.random()*8)|0});
   }
-  player._mgMuzT=.075;player._mgMuzLv=hot>.72?5:Math.max(1,lv);player._chainMuzzle=.10;
+  player._mgMuzT=.075;player._mgMuzLv=hot>.72?5:Math.max(1,lv);player._chainMuzzle=.10;run._chainSpinT=(run._chainSpinT||0);
   shake=Math.max(shake,.5+lv*.15);(Audio.SFX.heavyMachineGun||Audio.SFX.machineGun||Audio.SFX.shoot)();
+}
+/* ---- 0928: the chaingun takes over the machine gun from Stage 6 ----------------------------------
+   Mike: "We never get to switch machine-gun to chaingun, nor does my machine-gun default to chaingun
+   anymore after level 5. We need this ... from stage 6 onward, we've got chaingun power baby.
+   chaingun borrows the same elements from machine gun upgrades".
+   Measured before: the Stage-5 unlock put weapon 7 in your hands ONCE, and every death, stage start
+   and space exit resets to weapon 0 - so the chaingun was gone at the first death and never came back.
+   Now, once it is unlocked, from Stage 6 on the MG slot IS the chaingun: MG and chaingun share one
+   level (an MG crate raises it), the MG's forged element applies to it, and a death drops you to it.
+   Cole keeps his own MG tiers 6-8 (the fusion cannon line). */
+function chaingunReplacesMG(){
+  if(typeof run==='undefined'||!run||!chaingunIsUnlocked()||(run.stage|0)<6)return false;
+  if(typeof spaceWeaponsActive==='function'&&spaceWeaponsActive())return false;
+  if(typeof colePilot==='function'&&colePilot()&&((run.wlevels&&run.wlevels[0])|0)>=6)return false;
+  return true;
+}
+function chaingunMGSync(){
+  if(!chaingunReplacesMG()||!run.wlevels)return false;
+  const l=Math.max(run.wlevels[0]|0,run.wlevels[7]|0);run.wlevels[0]=l;run.wlevels[7]=l;
+  if(run.weapon===0){run.weapon=7;run.wlevel=l;if(!run._chainHeat)run._chainHeat=0;if(typeof forgeApply==='function')forgeApply();return true;}
+  if(run.weapon===7)run.wlevel=l;
+  return false;
+}
+/* the pods ride each pilot's widest wing row, a fifth of the span in from the tips (measured on all
+   nine hulls, _BUILD_SOURCE/measure_chaingun_mounts_0928.py): [dx from the ink centre, dy, centre offset] */
+const CHAINGUN_MOUNTS={axel:[10.1,7.2,0],cole:[10.6,5.7,0],decker:[11.4,7.0,2.3],falva:[11.9,8.6,.5],freezer:[12.4,6.8,.3],
+  juggernaut:[13.4,8.6,3.1],lizzie:[10.9,6.5,2.6],maverick:[12.6,10.1,3.7],yuri:[10.3,9.8,.9]};
+function chaingunMountPoints(){
+  const m=CHAINGUN_MOUNTS[typeof _pilotKey==='function'?_pilotKey():run.pilot]||[11,7,0];
+  return [{x:player.x+m[2]-m[0],y:player.y+m[1]},{x:player.x+m[2]+m[0],y:player.y+m[1]}];
+}
+/* the pod art is the Hammer's own gatling (arch_blaster_gun_*: 0-3 the barrels turning, 4-5 red-hot),
+   turned to point up; the barrels spin with the rev meter. Mike's own pod art replaces the key. */
+const CHAINGUN_POD_KEY='arch_blaster_gun_';
+function chaingunMountsVisible(){
+  if(run.weapon!==7||player.dead||(player.invuln>0&&Math.floor(player.invuln/4)%2))return false;
+  if(typeof spaceShipActive==='function'&&spaceShipActive())return false;
+  if(player._spin||player.somer||player.roll)return false;   // a roll/somersault/death-spin turns the hull; the pods are on it, so they hide with it
+  return true;
+}
+function chaingunMountsDraw(dt){
+  if(!chaingunMountsVisible())return;
+  const rev=clamp(run._chainRev||0,0,1),hot=clamp(run._chainHeat||0,0,1);
+  run._chainSpinT=(run._chainSpinT||0)+(dt||1/60)*(2+rev*22);
+  const f=(run._chainOverheat||0)>0||hot>.78?4+((Math.floor(run._chainSpinT)&1)):Math.floor(run._chainSpinT)%4;
+  const key=CHAINGUN_POD_KEY+f;if(!XART.rdy(key)){for(let i=0;i<6;i++)XART.rdy(CHAINGUN_POD_KEY+i);return;}
+  const im=XART.get(key),h=25,w=h*im.width/im.height,recoil=(player._chainMuzzle||0)>0?1.5:0;
+  ctx.save();ctx.imageSmoothingEnabled=false;
+  for(const p of chaingunMountPoints()){
+    /* the plate points down (the Hammer fires south); a half-turn points it forward, hub on the wing */
+    ctx.save();ctx.translate(Math.round(p.x),Math.round(p.y+4+recoil));ctx.rotate(Math.PI);ctx.drawImage(im,-w/2,-h*.12,w,h);ctx.restore();
+    if((player._chainMuzzle||0)>0&&typeof wm26Draw==='function')wm26Draw(ctx,'chaingun',p.x,p.y-12,-Math.PI/2,1-player._chainMuzzle/.10,16);
+  }
+  ctx.restore();
+}
+/* .50-cal tracer: the Hammer's own round (arch_blaster_fx_4/5), brass, or red-hot near overheat */
+function chaingunRoundDraw(b){
+  const key='arch_blaster_fx_'+(4+(((b._ph||0)+Math.floor((efxClock||0)*18))&1));if(!XART.rdy(key))return false;
+  const im=typeof xartPalette==='function'?xartPalette(key,(b.lv|0)>=5&&(run._chainHeat||0)>.72?'#ff5a2a':'#ffc15a'):XART.get(key);if(!im)return false;
+  const w=12+(b.lv|0),h=28+(b.lv|0)*2;
+  ctx.save();ctx.translate(b.x,b.y);ctx.rotate(Math.atan2(b.vy,b.vx)+Math.PI/2+Math.PI);ctx.imageSmoothingEnabled=false;ctx.drawImage(im,-w/2,-h/2,w,h);
+  /* a stepped additive pass, not a blur, so the heavy round reads as lit (0914 house rule) */
+  ctx.globalCompositeOperation='lighter';ctx.globalAlpha=.35+.2*(((b._ph||0)+Math.floor((efxClock||0)*16))&1);ctx.drawImage(im,-w*.35,-h/2,w*.7,h);ctx.restore();
+  return true;
+}
+/* their own impact: the Hammer's blaster starburst (arch_blaster_fx_0-3) in amber */
+function chaingunImpact(x,y,big){
+  if(typeof pImpacts==='undefined')return;
+  pImpacts.push({x:x+rnd(-3,3),y:y+rnd(-3,3),t:0,dur:.18,key:'arch_blaster_fx_'+((Math.random()*4)|0),pal:'#ffb347',size:big?30:22,rot:rnd(-.4,.4)});
+  if(pImpacts.length>180)pImpacts.splice(0,pImpacts.length-180);
 }
 function chaingunHeatTick(dt,firing){
   run._chainHeat=clamp(run._chainHeat||0,0,1);run._chainRev=clamp(run._chainRev||0,0,1);run._chainOverheat=Math.max(0,run._chainOverheat||0);
@@ -31721,7 +31802,12 @@ function retinaMissileDamage(t,dmg,shot){
     else if(t.kind==='missile bay')carrierBayDamage(b,p.side,dmg,t.x,t.y,null);
     else if(t.kind==='module'){b._lastPart=p;hitBoss(dmg);}
   }else if(t._xenoOwner||t._spaceBossOwner||t._spaceSubOwner)spaceDamageTarget(t,dmg,shot);
-  else if(t===boss){if(boss._hammer)boss._hammerModuleHit=null;hitBoss(dmg);}
+  else if(t===boss){
+    /* ⚠ an UNGUIDED missile lands here with the boss as its impact target, and clearing the module
+       sent every such hit to the body - the missile that flew into the Hammer's raised hammer never
+       counted as a hammer hit (0928). Re-resolve the module at the point the missile actually hit. */
+    if(boss._hammer){boss._hammerModuleHit=null;if(shot&&Number.isFinite(shot.x)&&Number.isFinite(shot.y))bossHitTest(shot.x,shot.y);}
+    hitBoss(dmg);}
   else if(t===subBoss)hitSubBoss(dmg,t.x,t.y);
   else if(typeof rival!=='undefined'&&t===rival)hitRival(dmg);
   else hitEnemy(t,dmg);
@@ -34800,6 +34886,7 @@ function updatePlay(dt){
     player.fireCd-=dt; if(player._mgMuzT>0)player._mgMuzT-=dt;
     if(player._spaceMuzzle>0)player._spaceMuzzle=Math.max(0,player._spaceMuzzle-dt);
     const firing = !_rolling && !(typeof s7WardenCinematic==='function'&&s7WardenCinematic()) && Input.hold(_seat,'fire');   // no shooting mid-roll/cinematic
+    if(typeof chaingunMGSync==='function')chaingunMGSync();
     if(typeof chaingunHeatTick==='function')chaingunHeatTick(dt,firing);
     /* ============================================================
        TAP vs HOLD ON A CHARGE WEAPON (drop 0805r)
@@ -37345,7 +37432,8 @@ function _hitEnemyCore(e,dmg){
      which is the readability the enemy ordnance on mfx_ cannot give you. Metal armour rings
      differently from a soft target: tanks and ships take metal_impact, everything else the
      spark, and a glancing hit that fails to kill throws a ricochet. */
-  if(typeof pImpacts!=='undefined' && !_elemHit){
+  if(_dmgBullet&&_dmgBullet._cal50&&!_elemHit&&typeof chaingunImpact==='function')chaingunImpact(e.x,e.y-e.h*.18,false);
+  else if(typeof pImpacts!=='undefined' && !_elemHit){
     const hard = (e._nef && /tank|apc|boat|corvette|craft|artillery|crawler|turret|sled/.test(e._nef));
     pImpacts.push({ x:e.x+rnd(-4,4), y:e.y-e.h*0.18+rnd(-4,4), t:0, dur:0.20,
                     key: hard ? 'nwp_kin_metal_impact' : 'nwp_kin_hit_spark',
@@ -37574,6 +37662,16 @@ function bossHitTest(x,y){
     if(boss._noHit||boss.dead)return false;const h=boss._hammer;boss._hammerModuleHit=null;
     const head=hammerHeadPoint(boss),hammerX=head.x,hammerY=head.y;
     if(hammerWeaponTargetable(boss)&&dist2(x,y,hammerX,hammerY)<34*34){boss._hammerModuleHit='hammer';return true;}
+    /* ⚠ THE RAISED HAMMER SITS INSIDE THE TOP OF THE BODY'S 72px CIRCLE (0928, measured: head y 107,
+       body centre 174). Anything fired upward entered the body circle first, so during the heal no
+       round and no missile could ever reach the hammer from below - Mike's "shooting the missile into
+       his hammer didnt ... stop the healing". While the heal charges, rounds in the column under the
+       hammer pass the body and the hammer itself (+/-40px) is what they hit - so the missile is seen
+       to fly into the hammer, not to burst on the hull in front of the pilot. */
+    const _R=h.recovery;
+    if(_R&&_R.status==='charging'&&hammerWeaponTargetable(boss)&&Math.abs(x-hammerX)<40&&y>hammerY-40&&y<boss.y+72){
+      if(y<=hammerY+40){boss._hammerModuleHit='hammer';return true;}
+      return false;}
     if(['chain_warn','chaingun','chain_cool'].includes(h.state)&&!h.chainDestroyed&&hammerBlasterHit(boss,x,y)){boss._hammerModuleHit='chaingun';return true;}
     const r=h.state==='ball'?54:72;return dist2(x,y,boss.x,boss.y)<r*r;
   }
@@ -37612,6 +37710,7 @@ function bossHitTest(x,y){
   return Math.abs(x-boss.x)<_hw && Math.abs(y-boss.y)<boss.h*0.45;
 }
 function hitBoss(dmg){
+  if(_dmgBullet&&_dmgBullet._cal50&&typeof chaingunImpact==='function'&&Number.isFinite(_lastHitX))chaingunImpact(_lastHitX,_lastHitY,true);
   if(boss&&boss._s7mod)return s7mHit(boss,dmg,_lastHitX,_lastHitY);
   /* SECTIONAL DAMAGE. Route the hit to the component nearest the impact so shooting a wing breaks
      THAT wing. Normal boss HP still applies below, so the fight still ends.
@@ -38364,6 +38463,8 @@ function hammerBossDamage(b,dmg){
   const h=b._hammer;if(b._noHit)return 0;const hit=b._hammerModuleHit;b._hammerModuleHit=null;
   if(hit==='hammer'&&h.throw){if(dmg>0)hammerThrowReflect(b);return 0;}
   if(h.mode==='storm'&&hit==='hammer'&&h.recovery?.status==='charging'){
+    /* a missile into the raised hammer is the counter: it breaks the heal outright (0928) */
+    if(dmg>0&&hammerMissile(_dmgBullet)){markHit(b);hammerRecoveryBreak(b);return 0;}
     if(dmg>0){h.recovery.coreHP=Math.max(0,h.recovery.coreHP-dmg);markHit(b);if(h.recovery.coreHP<=0)hammerRecoveryBreak(b);}return 0;
   }
   if(h.state==='storm_stun')return dmg*2;
@@ -49936,6 +50037,7 @@ function drawBullets(){
   for(const b of pBullets){
     /* THE LEVEL'S AURA (0917) - under the round, before any kind branch, so every carrier gets it */
     if(b._inf && (b._infLv|0)>=2 && !(b._launchDelay>0) && typeof infusionAuraDraw==='function') infusionAuraDraw(b);
+    if(b._cal50&&!b._inf&&!b.dead&&typeof chaingunRoundDraw==='function'&&chaingunRoundDraw(b))continue;
     if(b.kind==='firewhip'){
       if(b.dead)continue;
       const f=fireWhipFrame(b,(b.t||0)/b.duration),key='fire_whip_pose_'+f;
@@ -52301,7 +52403,7 @@ function drawPlayerImpactEffects(){
       }
       if(!XART.rdy(p.key)) continue;
       if(p.target && !p.target.dead){p.x=p.target.x+p.ox;p.y=p.target.y+p.oy;}
-      const im=XART.get(p.key), k=clamp(p.t/p.dur,0,1);
+      const im=(p.pal&&typeof xartPalette==='function'&&xartPalette(p.key,p.pal))||XART.get(p.key), k=clamp(p.t/p.dur,0,1);
       const s=p.size*(0.55+0.45*Math.min(1,k*3));          // snap open, then hold
       const w=s*(im.naturalWidth/Math.max(1,im.naturalHeight)), h=s;
       ctx.save();
@@ -56174,6 +56276,24 @@ function ambStart(stage){
 function ambStop(){
   if(_ambEl){ try{ _ambEl.pause(); }catch(e){} }
   _ambEl=null; _ambStage=null;
+}
+/* ⚠ THE STAGE-6 WIND BED OUTLIVED THE STAGE (Mike 0928: "if I die or quit, the wind noise should stop").
+   It is its own <audio> element, started by beginStage and stopped only by the NEXT ambStart - so a
+   game over, a quit to the title or a return to the map left it blowing forever, and it ignored the
+   volume sliders and mute. The main loop owns it now: alive only while a Stage-6 run is on screen
+   (play, pause, the stage card and launch), back on if play resumes after a continue, and scaled by
+   the SFX/master mix (ducked while paused). */
+function ambTick(){
+  const live=typeof run!=='undefined'&&run&&AMB_KEY[run.stage]&&(AMBIENCE_ON||run.stage===6)&&
+    (state===GS.PLAY||state==='paused'||state===GS.INTRO||state===GS.LAUNCH);
+  if(!live){ if(_ambEl) ambStop(); return; }
+  if(!_ambEl&&state===GS.PLAY) ambStart(run.stage);
+  if(!_ambEl) return;
+  let v=0.55;
+  try{ if(typeof Snd!=='undefined'&&Snd&&Snd.vol) v*=(Snd._sfxMix?Snd._sfxMix():1)*(Snd.vol.master==null?1:Snd.vol.master); }catch(e){}
+  try{ if(Audio.isMuted&&Audio.isMuted()) v=0; }catch(e){}
+  if(state==='paused') v*=0.35;
+  try{ _ambEl.volume=Math.max(0,Math.min(1,v)); }catch(e){}
 }
 function wfxReset(){
   wfx = {p:[], t:0, ev:null,
@@ -73939,6 +74059,7 @@ function drawWorld(dt){
       ctx.drawImage(im,player.x-w/2,player.y-20-h,w,h);ctx.restore();
     }
   });
+  if(run.weapon===7&&typeof chaingunMountsDraw==='function')chaingunMountsDraw(dt);
   if(run.weapon===7){
     if((run._chainOverheat||0)>0){ctx.save();ctx.fillStyle='rgba(255,18,12,'+(.08+.07*(.5+.5*Math.sin((stateT||0)*16)))+')';ctx.fillRect(0,0,VW,VH);ctx.restore();}
     if(player._chainMuzzle>0)player._chainMuzzle=Math.max(0,player._chainMuzzle-dt);
@@ -78679,6 +78800,7 @@ function loop(now){
   if(typeof Snd!=='undefined' && Snd && Snd.loopTick){
     if(state===GS.PLAY) Snd.loopTick(dt); else Snd.loopStopAll();
   }
+  try{ if(typeof ambTick==='function') ambTick(); }catch(_amb){}
   Input.clearTaps();
   requestAnimationFrame(loop);
 }

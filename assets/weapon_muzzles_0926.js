@@ -70,7 +70,8 @@ function wm26Tick(dt){
 function wm26PlayerShots(first){
   const used=new Set(),space=typeof spaceShipActive==='function'&&spaceShipActive();
   for(let i=first;i<pBullets.length;i++){
-    const q=pBullets[i];if(!q||q._wm26||(q._launchDelay>0&&q.kind!=='mavlaser')||/^(beam|firewhip|flame|dk|spaceLaser)/.test(q.kind||''))continue;
+    const q=pBullets[i];if(q&&q._cal50){q._wm26=true;continue;}   // 0928: .50-cal rounds leave the wing pods, which draw their own flash
+    if(!q||q._wm26||(q._launchDelay>0&&q.kind!=='mavlaser')||/^(beam|firewhip|flame|dk|spaceLaser)/.test(q.kind||''))continue;
     if(!Number.isFinite(q.x)||!Number.isFinite(q.y)||Math.hypot(q.x-player.x,q.y-player.y)>85)continue;
     q._wm26=true;const family=q._chaingun?'chaingun':q.kind==='orb'||q.kind==='yuriorb'?'orb':wm26Family(q.kind);
     const element=q._el||q._inf||forgeEntry(run.weapon)?.elem;

@@ -15761,6 +15761,7 @@ require('./test_hammer_time_0927.cjs')(vm,ctxv,ok);
 require('./test_furious_review_0927.cjs')(vm,ctxv,ok);
 require('./test_encounter_upgrades_0928.cjs')(vm,ctxv,ok);
 require('./test_rebel_fury_0928.cjs')(vm,ctxv,ok);
+require('./test_fixes_0928b.cjs')(vm,ctxv,ok);
 
 console.log('\n============================================');
 if (errors.length) { console.log('FAILED — ' + errors.length + ' error(s):'); errors.forEach(e => console.log('  ' + e)); process.exit(1); }

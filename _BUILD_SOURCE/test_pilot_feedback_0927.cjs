@@ -4,10 +4,14 @@ module.exports=function(vm,ctxv,ok){
  console.log('=== One player emitter, lance colors, ice animation and acceleration ===');
  const result=JSON.parse(vm.runInContext(`JSON.stringify((()=>{
   const out={};run.stage=1;run.spaceMode=false;run.gravityShipReady=false;gravityMode=null;special=null;run.sonicT=run.dkT=0;run.forge={};run.infusion=null;run.wvars=[];run.pilot='cole';player.dead=player.out=false;player.x=240;player.y=360;
-  for(const w of [0,1,2,7]){wm26Releases=[];let pass=true;
+  for(const w of [0,1,2]){wm26Releases=[];let pass=true;
    for(let lv=1;lv<=5;lv++){run.weapon=w;run.wlevel=lv;run.wlevels=WEAPONS.map(()=>lv);pBullets=[];wm26Releases=[];pShoot();pass=pass&&wm26Releases.length===1&&wm26Releases[0].x===player.x;
     wm26Tick(.03);pShoot();pass=pass&&wm26Releases.length===1;}
    out['weapon '+w+' has one centered emitter across all five tiers and rapid volleys']=pass;}
+  /* 0928: the chaingun fires from its two wing pods, which draw their own flashes - it must add no nose emitter */
+  {let pass=true;for(let lv=1;lv<=5;lv++){run.weapon=7;run.wlevel=lv;run.wlevels=WEAPONS.map(()=>lv);run._chainOverheat=0;pBullets=[];wm26Releases=[];player._chainMuzzle=0;pShoot();
+    pass=pass&&wm26Releases.length===0&&player._chainMuzzle>0&&pBullets.length>0&&pBullets.every(b=>b._cal50);}
+   out['weapon 7 flashes at its wing pods, never at the nose, across all five tiers']=pass;}
   run.pilot='maverick';run.weapon=3;run.wvars[3]='mavhoming';
   for(let lv=1;lv<=5;lv++){run.wlevels[3]=lv;run.wlevel=1;pBullets=[];wm26Releases=[];pShoot();out['lance color tier '+lv+' keeps fixed combat stats']=wm26Releases.length===1&&wm26Releases[0].color===wlvGlow(lv)&&pBullets.length===3&&pBullets.every(b=>b.colorLv===lv&&b.lv===1&&Math.abs(b.dmg-.62)<.001);}
   const p={};pf27ThrustTick(p,.1,0,-1,false);const climb=p._thrustPower;
