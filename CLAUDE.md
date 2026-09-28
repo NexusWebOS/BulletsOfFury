@@ -1,5 +1,10 @@
 # Bullets of Fury
 
+**Latest Opus passover: [docs/PASSOVER_OPUS_0928.md](docs/PASSOVER_OPUS_0928.md).**
+Read its September 28 baseline and remaining-work priorities before relying on historical
+drop notes. The complete repair upload includes native source/release evidence and a full
+suite ending in **0 errors**. The engine cautions below still apply.
+
 An HTML5 canvas vertical shoot-em-up. Nine stages, nine pilots, hand-authored pixel art
 throughout. **Mike (ColeForge) owns every creative and design decision.** Claude implements.
 

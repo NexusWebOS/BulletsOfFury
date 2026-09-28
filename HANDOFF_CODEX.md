@@ -1,3 +1,17 @@
+# Current passover — September 28, 2026
+
+**Opus: start with [docs/PASSOVER_OPUS_0928.md](docs/PASSOVER_OPUS_0928.md).**
+It covers the complete September 27–28 upload, verified baseline, engine ownership,
+generated assets, release tooling, prioritized remaining adjustments and acceptance criteria.
+Portable evidence is in [docs/qa/opus_passover_0928.json](docs/qa/opus_passover_0928.json).
+
+The last full suite reached its final summary with **0 errors**. Stage 6 now uses
+the Eclipse Siege Bomber miniboss and Warhive Harrier/Ace boss. Stage 8 form 0 is
+the newly mutated alien vessel. The text below is preserved historical context;
+its uncommitted status, incoming commit warnings and old failure counts are stale.
+
+---
+
 # Handoff to Codex — 2026-09-13 (from Claude)
 
 Read `CLAUDE.md` in this folder first. Its tail has notes for every drop below.

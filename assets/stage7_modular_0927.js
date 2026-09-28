@@ -122,7 +122,7 @@ function s7mHit(b,dmg,x,y,id){const M=b._s7mod;if(!M||!Number.isFinite(dmg)||dmg
   }else if(id==='core'){
     if(M.tank){M.core=Math.max(0,M.core-dmg*(s7mLive(M,'gun').length?.42:1));M.coreFlash=.18;}
     else if(phase==='front'||phase==='rear'){M.shieldFlash=.22;s7mSound('blocked');return true;}
-    else if(phase==='shield'){M.shield=Math.max(0,M.shield-dmg);M.shieldFlash=.26;if(M.counter<=0){M.counter=[.9,.72,.58][M.n];s7mVolley(b,5+M.n*2,aimPlayer(b.x,b.y),.13,2.7);}
+    else if(phase==='shield'){M.shield=Math.max(0,M.shield-dmg);M.shieldFlash=.26;if(M.counter<=0&&!M.counterTell){M.counter=1.6;M.counterTell={t:0,warn:1.05,a:aimPlayer(b.x,b.y),count:5+M.n*2};}
       if(M.shield<=0){s7mFX(b.x,b.y,210,true);s7mSet(b,'stun');}}
     else{M.core=Math.max(0,M.core-dmg);M.coreFlash=.18;}
   }
@@ -148,6 +148,8 @@ function s7mMove(b,tx,ty,speed,dt){const M=b._s7mod;if(M.tank){const q=s7mGround
   const dx=tx-b.x,dy=ty-b.y,d=Math.hypot(dx,dy),step=Math.min(d,speed*dt);if(d>.001){b.x+=dx/d*step;b.y+=dy/d*step;}
 }
 function s7mTick(b,dt){if(!s7mOwns(b))return false;const M=s7mInit(b);M.t+=dt;M.clock+=dt;M.counter=Math.max(0,M.counter-dt);M.coreFlash=Math.max(0,(M.coreFlash||0)-dt);M.shieldFlash=Math.max(0,(M.shieldFlash||0)-dt);M.shotCD-=dt;
+  if(M.counterTell){const q=M.counterTell;if(M.shield<=0||b.dead||['dead','stun','drop'].includes(M.mode))M.counterTell=null;
+    else{q.t+=dt;combatWarningTick(q,'shield-counter',q.t,q.warn);if(q.t>=q.warn){s7mVolley(b,q.count,q.a,.13,2.7);M.counterTell=null;}}}
   for(const p of M.parts)p.flash=Math.max(0,p.flash-dt);const ph=s7mStage(M),mode=M.mode;
   M.lean+=(M.tank?0:(s7mLive(M,'front').length===1?(s7mLive(M,'front')[0].id==='frontL'?-.15:.15):0)-M.lean)*Math.min(1,dt*4);
   M.drop+=((!M.tank&&ph!=='front'?25:0)-M.drop)*Math.min(1,dt*(mode==='drop'?8:3));
@@ -180,6 +182,7 @@ function s7mTick(b,dt){if(!s7mOwns(b))return false;const M=s7mInit(b);M.t+=dt;M.
   }
   if(mode==='bounce'){
     const cycle=.85,u=(M.t%cycle)/cycle;M.height=Math.sin(u*Math.PI)*(ph==='rear'?32:77);s7mMove(b,M.target.x,Math.min(M.target.y-85,VH*.56),45,dt);
+    combatWarningTick(b,'s7m-bounce-'+Math.floor(M.t/cycle),M.t%cycle,cycle);
     if(Math.floor(M.t/cycle)>M.shot){M.shot++;s7mFX(b.x,b.y+65,125,true);shake=Math.max(shake,7);s7mVolley(b,3+M.n*2,Math.PI/2,.28,2.7);}
     if(M.t>cycle*3){M.height=0;s7mSet(b,'recover');}return true;
   }
@@ -219,7 +222,9 @@ function s7mPortalDraw(){if(run.stage!==7)return false;s7mWarm();const b=boss,M=
 }
 function s7mWarnings(front){for(const b of [boss,subBoss]){const M=b&&b._s7mod;if(!M||b.dead)continue;
   const mode=M.mode,p=clamp(M.t/M.warn,0,1);if(M.landing&&!M.landing.impact&&!M.landing.dead){if(front)combatWarningDraw(b,{x:M.landing.x,y:M.landing.y,ex:M.landing.x,ey:M.landing.y,progress:p,alertOnly:true,alertX:M.landing.x,alertY:M.landing.y-58});}
-  if(M.t>=M.warn||!['chain','aim','laser','orbs','swipeL','swipeR','swipeX','tank-cross','tank-charge'].includes(mode))continue;
+  if(M.counterTell){const q=M.counterTell,k=clamp(q.t/q.warn,0,1);for(let i=0;i<q.count;i++){const a=q.a+(i-(q.count-1)/2)*.13;combatWarningDraw(b,{x:b.x,y:b.y+55,ex:b.x+Math.cos(a)*600,ey:b.y+55+Math.sin(a)*600,progress:k,width:20,fieldOnly:!front,alertOnly:front});if(front)break;}}
+  if(mode==='bounce'){const k=(M.t%.85)/.85;combatWarningDraw(b,{x:b.x,y:b.y+55,ex:b.x,ey:VH,progress:k,width:180,fieldOnly:!front,alertOnly:front});continue;}
+  if(M.t>=M.warn||!['chain','aim','laser','orbs','tank-orbits','swipeL','swipeR','swipeX','tank-cross','tank-charge'].includes(mode))continue;
   if(front)combatWarningDraw(b,{x:b.x,y:b.y,ex:player.x,ey:player.y,progress:p,alertOnly:true,alertX:b.x,alertY:Math.max(54,b.y-112)});
   else if(mode.startsWith('swipe'))combatWarningDraw(b,{x:b.x,y:b.y+40,ex:b.x+(mode==='swipeL'?-90:mode==='swipeR'?90:0),ey:b.y+178,progress:p,width:90,fieldOnly:true});
   else if(mode==='laser'){
@@ -228,7 +233,8 @@ function s7mWarnings(front){for(const b of [boss,subBoss]){const M=b&&b._s7mod;i
     combatWarningDraw(b,{x:q.x,y:q.y,ex:q.x,ey:VH,progress:p,width:Math.tan(.88)*Math.max(1,VH-q.y),alpha:.52,fieldOnly:true});
   }else if(['chain','aim','tank-cross'].includes(mode)){
     for(const gun of s7mLive(M,'gun')){const q=s7mMuzzle(b,gun.id);combatWarningDraw(b,{x:q.x,y:q.y,ex:q.x+Math.cos(q.a)*600,ey:q.y+Math.sin(q.a)*600,progress:p,width:35,fieldOnly:true});}
-  }else {const q={x:b.x,y:b.y+55};combatWarningDraw(b,{x:q.x,y:q.y,ex:q.x+Math.cos(M.aim)*600,ey:q.y+Math.sin(M.aim)*600,progress:p,width:mode==='tank-charge'?150:35,fieldOnly:true});}
+  }else if(mode==='orbs'||mode==='tank-orbits'){const q={x:b.x,y:b.y+55},count=5+M.n*2;for(let i=0;i<count;i++)for(const turn of [-.12,.12]){const a=M.aim+(i-(count-1)/2)*.18+turn;combatWarningDraw(b,{x:q.x,y:q.y,ex:q.x+Math.cos(a)*600,ey:q.y+Math.sin(a)*600,progress:p,width:20,fieldOnly:true});}}
+  else {const q={x:b.x,y:b.y+55};combatWarningDraw(b,{x:q.x,y:q.y,ex:q.x+Math.cos(M.aim)*600,ey:q.y+Math.sin(M.aim)*600,progress:p,width:mode==='tank-charge'?150:35,fieldOnly:true});}
   if(!front&&mode==='aim')groundTargetReticleDraw(M.target.x,M.target.y,88,p,1);
  }
  if(!front)for(const q of groundTargetingFx){if(!q._s7mMortar||q.impact||q.dead)continue;const u=clamp(q.t/q.warn,0,1),from=q._s7mMortar;s7mBlit('orb',Math.floor(q.t*12)%8,lerp(from.x,q.x,u),lerp(from.y,q.y,u)-Math.sin(u*Math.PI)*155,28,28,0,1);}

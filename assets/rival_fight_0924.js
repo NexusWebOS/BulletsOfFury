@@ -1,13 +1,13 @@
 /* Optional Stage-6 Harrier-route consequence: five scattered rivals, two selected wingmen. */
 const Rival24=(()=>{
-  const STAGES_AT=[2,3,4,5,8];
+  const STAGES_AT=[6,6,6,6,6];
   const KEYS=['voss','nyx','rook','kaia','jace'];
   const SHIPS=['voss_iron_vulture','nyx_ghostknife','rook_breachhammer','kaia_signal_wraith','jace_razorjack'];
   const COLORS=['#bc77ff','#53e6e0','#c8dcf2','#ff7087','#eced6e'];
   let mapFocus=false, mapCursor=0, mapMouse=false, mapPrevCursor=7, scatterT=null, select=null, active=null, wing=[];
   function available(){return campaign&&campaign.rivalScattered&&run.mode==='campaign'&&aliveIndices().length>0;}
   function aliveIndices(){return KEYS.map((_,i)=>i).filter(i=>!(campaign.rivalDefeated||[])[i]);}
-  function pos(i){const p=sselFlagScreenXY(STAGES_AT[i]);return p?{x:clamp(p.x+24,30,VW-30),y:clamp(p.y-27,69,VH-126)}:null;}
+  function pos(i){const p=typeof fr27CoreMapPosition==='function'?fr27CoreMapPosition():sselFlagScreenXY(6);return p?{x:clamp(p.x+(i-2)*35,30,VW-30),y:clamp(p.y-27,69,VH-126)}:null;}
   function mapDraw(dt){
     if(!available()||sselBoot>0)return;
     if(scatterT!=null)scatterT=Math.min(2.7,scatterT+(dt||0));
@@ -23,7 +23,7 @@ const Rival24=(()=>{
       ctx.strokeRect(p.x-16,p.y-14,32,28);
       if(XART.rdy(k)){const im=XART.get(k);ctx.drawImage(im,p.x-13,p.y-12,26,24);}
       ctx.restore();
-      if(chosen)campText('RIVAL '+KEYS[i].toUpperCase()+' - LEVEL '+STAGES_AT[i],VW/2,VH-144,12,'#ffb6a5');
+      if(chosen)campText('RIVAL '+KEYS[i].toUpperCase()+' - STAGE X',VW/2,VH-144,12,'#ffb6a5');
     }
     if(flying)campText('RIVAL CREW BREAKING FORMATION',VW/2,VH-128,10,'#ffb4a3');
     else if(!mapFocus)controlHintRow([['pad_dpad','RIVAL CONTACTS']],VH-128,VW/2,VW-24,20);
@@ -109,6 +109,9 @@ const Rival24=(()=>{
     subBossDone=true;subBossTriggered=true;subBossActive=false;subBoss=null;
     bossWarned=true;warnT=0;
     spawnBoss('rebelsquad');bossActive=true;bossDefeated=false;
+    const R=boss._rebels;R.frStageX=true;
+    for(const q of R.ships){q.dead=q.i!==rival;if(!q.dead){q.hp=q.max*=2.4;q.homeX=worldWidth()/2;q.homeY=VH*.25;}}
+    boss.hp=boss.maxhp=R.ships[rival].max;
     wing=chosen.map((key,i)=>({key,slot:i,phase:'arrive',hp:45,maxhp:45,x:player.x+(i?70:-70),y:VH+35+i*14,t:0,cd:.4+i*.25,dead:false}));
     for(const key of chosen)for(let f=0;f<8;f++){XART.rdy('ship_'+key+'_br'+f);XART.rdy('ship_'+key+'_so'+f);}
     XART.rdy('r24_card');Audio.SFX.alertBossIncoming&&Audio.SFX.alertBossIncoming();
@@ -116,7 +119,6 @@ const Rival24=(()=>{
   function cardDraw(dt){
     ctx.fillStyle='#000';ctx.fillRect(0,0,VW,VH);
     if(XART.rdy('r24_card')){const im=XART.get('r24_card');const w=VW,h=w*(im.naturalHeight||im.height)/(im.naturalWidth||im.width);ctx.drawImage(im,0,(VH-h)/2,w,h);}
-    campText('3 FURY PILOTS VS 5 RIVALS',VW/2,VH-43,13,'#ccefff');
     if(stateT>3.5||stateT>.8&&Input.menuConfirm())proceedIntro();
   }
   function tick(dt){if(!active||state!==GS.PLAY)return;
@@ -158,9 +160,7 @@ const Rival24=(()=>{
   function finish(){if(!active)return false;
     const A=active;active=null;wing=[];
     if(!campaign.rivalDefeated)campaign.rivalDefeated=[false,false,false,false,false];
-    /* This is a five-member fight, so a win removes the entire rival crew.
-       The selected map contact decides the arena, not which pilot survived. */
-    campaign.rivalDefeated=[true,true,true,true,true];
+    campaign.rivalDefeated[A.rival]=true;
     run.stage=A.returnStage;
     try{const data=Object.assign(campSnapshot(),{mode:'campaign',stage:A.returnStage});localStorage.setItem(CAMP_AUTO_KEY,JSON.stringify(data));campSession=data;}catch(_e){}
     Audio.stopMusic();openStageSelect(A.returnStage,{});
@@ -179,5 +179,5 @@ const Rival24=(()=>{
   }
   function save(){return {scattered:!!campaign.rivalScattered,defeated:(campaign.rivalDefeated||[]).slice(0,5)};}
   function load(s){reset();campaign.rivalScattered=!!(s&&s.scattered);campaign.rivalDefeated=s&&Array.isArray(s.defeated)?s.defeated.slice(0,5):[false,false,false,false,false];}
-  return {get active(){return active;},arenaStage(){return active?STAGES_AT[active.rival]:null;},mapDraw,mapInput,mapBack,selectDraw,cardDraw,tick,draw,finish,reset,restart,scatterAfterHarrier,save,load};
+  return {get active(){return active;},get mapFocused(){return mapFocus;},arenaStage(){return active?STAGES_AT[active.rival]:null;},mapDraw,mapInput,mapBack,selectDraw,cardDraw,tick,draw,finish,reset,restart,scatterAfterHarrier,save,load};
 })();

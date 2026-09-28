@@ -140,7 +140,7 @@ function mr27BomberSetup(b){
   B.variant=B.space&&['hard','furious','insanity'].includes(diffKey)?1:0;b.name=B.space?(B.variant?'TEMPEST SILVER ECLIPSE':'TEMPEST VOID ECLIPSE'):'ECLIPSE SIEGE BOMBER';
   if(B.space&&(diffKey==='furious'||diffKey==='insanity'))b.name='TEMPEST CRIMSON ECLIPSE';
   const mul=diffKey==='easy'?.52:diffKey==='normal'?1:diffKey==='hard'?1.18:diffKey==='furious'?1.35:1.5;
-  B.core=B.coreMax=(B.space?2050:2350)*mul;for(const p of B.parts)p.hp=p.max=p.maxhp=440*mul;
+  const durability=B.space?1.8:1;B.core=B.coreMax=(B.space?2050:2350)*mul*durability;for(const p of B.parts)p.hp=p.max=p.maxhp=440*mul*durability;
   b.hp=b.maxhp=B.core+B.parts.reduce((a,p)=>a+p.hp,0);b.w=VW*.5;b.h=B.space?b.w*.83:b.w*.62;
   if(B.space){XART.rdy('mr27_space');XART.rdy('tlv_beam');for(let i=0;i<8;i++)XART.rdy('l23fx_rime_mg_'+i);}
 }
@@ -154,7 +154,7 @@ function mr27SpaceDraw(b){
     if(p.id.startsWith('engine')&&typeof d27MuzzleDraw==='function')d27MuzzleDraw(ctx,'exhaust',p.x,p.y+p.h*.37,Math.PI/2,(B.clock*12)%1,30,form?'#ff3922':null);}
   mr27Blit('space',4,{x:b.x,y:b.y+b.h*.03,w:b.w*.1,h:b.h*.31},b.flash,form);
   if(B.mode==='bombs')mr27Blit('space',5,{x:b.x,y:b.y+b.h*.27,w:b.w*.17,h:b.h*.22},0,form);
-  for(const q of B.bombs)if(q.t>0&&q.t<q.warn&&XART.rdy('lz_bomb')){const u=clamp(q.t/q.warn,0,1);ctx.drawImage(XART.get('lz_bomb'),lerp(q._polishBomb.x,q.x,u)-8,lerp(q._polishBomb.y,q.y,u)-20,16,40);}
+  for(const q of B.bombs)if(q.t>0&&q.t<q.warn&&XART.rdy('lz_bomb')){const u=clamp(q.t/q.warn,0,1);ctx.save();ctx.translate(lerp(q._polishBomb.x,q.x,u),lerp(q._polishBomb.y,q.y,u));ctx.rotate(Math.PI);ctx.drawImage(XART.get('lz_bomb'),-8,-20,16,40);ctx.restore();}
   return true;
 }
 function mr27TrueRoute(){return diffKey==='furious'||diffKey==='insanity';}

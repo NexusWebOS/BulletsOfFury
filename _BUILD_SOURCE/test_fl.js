@@ -12187,14 +12187,13 @@ console.log("=== 242. Stage-6 scrolling transition sky ===");
   var _s242=fs.readFileSync(path.join(ROOT,'assets/game.js'),'utf8');
   ok(vm.runInContext("STAGE6_TRANSITION_SKY==='stage6_blue_master' && XART.rdy(STAGE6_TRANSITION_SKY)",ctxv),
      'Stage 6 launch uses the same authored 680x5000 blue master as gameplay');
-  ok(_s242.indexOf("if(run.stage===6) stage6TransitionBackgroundDraw(drawLaunch._bgScroll)")>0 &&
-     _s242.indexOf("drawLaunch._bgScroll=(drawLaunch._bgScroll||0)+Math.max(LAUNCH_COUNTDOWN_SCROLL")>0,
-     'one scroll accumulator drives that plate through launch, settle and the full countdown');
-  var _scroll242=JSON.parse(vm.runInContext("(function(){run.stage=6;curStage=STAGES[5];stateT=20;"
-    +"drawLaunch._lastT=20;drawLaunch._phase='cd';drawLaunch._pt=0.4;drawLaunch._spd=LAUNCH_COUNTDOWN_SCROLL;"
-    +"drawLaunch._bgScroll=100;var m=mapScroll;drawLaunch(0.25);return JSON.stringify({before:100,after:drawLaunch._bgScroll,map:mapScroll-m});})()",ctxv));
-  ok(_scroll242.after>_scroll242.before && _scroll242.map>0,
-     'GET READY advances both the visible Stage-6 sky and preserved gameplay scroll instead of freezing');
+  ok(_s242.indexOf('setState(GS.PLAY);updatePlay(Math.max(0,dt||0));drawWorld(Math.max(0,dt||0))')>0,
+     'Stage 6 fly-in and dialogue enter the same live sky renderer as gameplay');
+  var _scroll242=JSON.parse(vm.runInContext("(function(){run.stage=6;curStage=STAGES[5];player.dead=false;"
+    +"s6OpeningInit();var before=_stage6SkyScroll,m=mapScroll;drawLaunch(0.25);"
+    +"return JSON.stringify({before:before,after:_stage6SkyScroll,map:mapScroll-m,locked:s6OpeningControlsLocked(),radio:!!s6Opening.radio});})()",ctxv));
+  ok(_scroll242.after>_scroll242.before && _scroll242.map>0 && _scroll242.locked && _scroll242.radio,
+     'the locked dialogue fly-in advances the visible Stage-6 sky and preserved gameplay scroll');
   ok(vm.runInContext("bg6Draw.toString().indexOf(\"blit('bg6_star_cluster'\")<0",ctxv),
      'the giant cross-shaped Stage-6 star/glint overlay is no longer drawn');
 }
@@ -12829,13 +12828,13 @@ console.log("=== 259. generated combat audio routing ===");
   var _approved259={
     dkReload:'reviewed_decker_reload.mp3', laserCannon:'reviewed_laser_cannon.mp3',
     spaceLaserCannon:'reviewed_laser_cannon.mp3', spaceLaserHit:'shield_hit_light.mp3',
-    spaceShadowCharge:'nsp_bof2_charge_shot.mp3',
+    spaceShadowCharge:'arc_warp_charge_0923.mp3',
     /* 0906: was reviewed_shadow_orb_launch.mp3, which runs 2.250 s and PEAKS AT 1.805 s, reaching
        -6 dB only at 1.170 s - Mike: "in space, the shadow orb, you can heard the sound clearly
        delayed for impact". Same shape as the spaceShadowHit line below and the same resolution:
        the approved table had pinned the late sample, so it defended the defect. The original
        file is still on disk and untouched. */
-    spaceShadowRelease:'reviewed_shadow_orb_launch_fast.mp3',
+    spaceShadowRelease:'arc_void_orb_0923.mp3',
     spaceShadowHit:'reviewed_shadow_orb_impact.mp3', /* 0903q: was explosion_plasma.mp3, whose peak lands at 454 ms - Mike: 'delayed impact sound'. The approved table pinned the late sample; see the mapping note in game.js. */ spaceVolleyLaunch:['missile_auto_1.mp3','missile_auto_3.mp3'],
     spaceVolleyHit:'explosion_air_medium.mp3',
     atomicLaunch:'reviewed_lizzie_atom_launch.mp3', atomicDetonate:'reviewed_lizzie_atom_impact.mp3',
@@ -14118,7 +14117,7 @@ console.log("=== 278. lizzie B-42 alternate costume ===");
      'seat 2 has a charge bind too - an action only P1 can reach vanishes in co-op');
   ok(vm.runInContext("CTRL_ACTS.indexOf('charge')>=0 && CTRL_LABELS.length===CTRL_ACTS.length", ctxv),
      'CHARGE is rebindable and the label list still matches the action list');
-  ok(vm.runInContext('OPT_CTRL.length===8', ctxv), 'the other controls screen lists it too');
+  ok(vm.runInContext('OPT_CTRL.length===9', ctxv), 'the other controls screen lists it too');
 
   /* ---- the charge is Juggernaut's, and only with the crate ---- */
   ok(vm.runInContext("run.pilot='yuri'; special=null; chargeAvailable()===false", ctxv), 'no charge for another pilot');
@@ -14496,7 +14495,7 @@ console.log("=== 278. lizzie B-42 alternate costume ===");
 
   ok(/retm_/.test(_dr) && /nuoTinted\(fam\+fi/.test(_dr), 'the lock draws the RETINA art, tinted');
 
-  var _mv = _g285.slice(_g285.indexOf('if(b._lockId && !b._committed)'));
+  var _mv = _g285.slice(_g285.indexOf('if(b._lockId && !b._committed'));
   _mv = _mv.slice(0, 700);
   ok(_mv.length > 100 && /_L\.state==='locked'/.test(_mv) && /LOCK_COMMIT_PX/.test(_mv) && /b\._committed=true/.test(_mv),
      'a lock-bound missile steers only while its lock is LOCKED, and commits for good when close or shaken off');
@@ -15759,6 +15758,7 @@ require('./test_modular_roster_0927.cjs')(vm,ctxv,ok);
 require('./test_director_0927.cjs')(vm,ctxv,ok);
 require('./test_pilot_feedback_0927.cjs')(vm,ctxv,ok);
 require('./test_hammer_time_0927.cjs')(vm,ctxv,ok);
+require('./test_furious_review_0927.cjs')(vm,ctxv,ok);
 
 console.log('\n============================================');
 if (errors.length) { console.log('FAILED — ' + errors.length + ' error(s):'); errors.forEach(e => console.log('  ' + e)); process.exit(1); }

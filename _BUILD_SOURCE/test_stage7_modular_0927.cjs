@@ -20,7 +20,7 @@ module.exports=function(vm,ctxv,ok){
  s7mHit(b,1e6,0,0,'frontR');out['second front leg triggers the drop']=M.mode==='drop'&&s7mStage(M)==='rear';
  out['rear legs now have retina locks']=s7mTargets(b).some(t=>t._retinaId==='rearL');
  s7mSet(b,'recover');s7mHit(b,1e6,0,0,'rearL');s7mHit(b,1e6,0,0,'rearR');out['both rear supports expose shield']=s7mStage(M)==='shield'&&bossShieldFrac(b)===1;
- eBullets=[];s7mHit(b,5,0,0,'core');const rounds=eBullets.length;for(let i=0;i<50;i++)s7mHit(b,1,0,0,'core');out['shield retaliation is a rate-limited volley']=rounds===5&&eBullets.length===rounds;
+ s7mSet(b,'recover');eBullets=[];s7mHit(b,5,0,0,'core');const queued=!!M.counterTell;for(let i=0;i<50;i++)s7mHit(b,1,0,0,'core');s7mTick(b,.5);const early=eBullets.length;s7mTick(b,.56);out['shield retaliation waits for its warning and remains rate-limited']=queued&&early===0&&eBullets.length===5&&!M.counterTell;
  s7mHit(b,1e6,0,0,'core');out['shield damage never overflows into health']=M.shield===0&&M.core===core;
  M.seq=0;s7mNext(b);out['surviving turret selects retina aim phase']=M.mode==='aim';
  s7mHit(b,1e6,0,0,'gunR');M.seq=0;s7mNext(b);out['no turrets selects raised-mask laser phase']=M.mode==='laser';

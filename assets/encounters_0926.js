@@ -47,7 +47,8 @@ function er26Book(b){
     ['charred-battery','ash-pursuit','charcoal-wheel','blackout-pass','charred-mortar','cinder-scissors','ash-eruption']:
     ['ember-hunt','furnace-strafe','ember-mortar','furnace-lance','ember-bombard'];
   if(b._ship==='frostcruiser')return ['cryo-crosscut','icebreaker','shatter-wheel','pincer-lance','cryo-mortar','cryo-crosscut'];
-  if(b._ship==='cryospear')return ['bastion-gates','cannon-relay','orb-siege','glacier-press','cryo-mortar','cannon-relay'];
+  if(b._ship==='cryospear')return ['bastion-gates','cannon-relay','orb-siege','glacier-press','orb-siege','cannon-relay'];
+  if(b._ship==='olivewarden'&&b._mr27&&!mr27CanFire(b,'L')&&!mr27CanFire(b,'R'))return ['rocket-feint','escort-crossfire','rocket-feint','warden-drive'];
   if(b._ship==='olivewarden')return ['warden-suppress','escort-crossfire','rocket-feint','warden-drive','center-break'];
   return ['sovereign-battery','escort-crossfire','siege-rockets','ion-scissors','siege-mortar','siege-drive','core-barrage'];
 }
@@ -56,7 +57,7 @@ function er26Set(b,mode){
   if(mode==='recover'&&!['recover','form-change','nuclear'].includes(R.mode)){
     R.completed++;if(b._s3Nuclear)R.formBeats++;
   }
-  R.mode=mode;R.t=0;R.shot=0;R.wave=0;R.warnings=[];R.beamStarted=false;R.groundCast=false;R.laneCast=false;R.serial++;
+  R.mode=mode;R.t=0;R.shot=0;R.wave=0;R.warnings=[];R.gateGap=null;R.beamStarted=false;R.groundCast=false;R.laneCast=false;R.serial++;
   R.from={x:b.x,y:b.y};R.side=-R.side;
   R.to={x:er26Station(b,R.side),y:R.home};
   R.target={x:clamp(player.x,camLeftX()+30,camRightX()-30),y:player.y};
@@ -85,18 +86,41 @@ function er26Next(b){
   const book=er26Book(b);R.index=(R.index+1)%book.length;er26Set(b,book[R.index]);
 }
 function er26Warning(b,slot,angle,width=38){
+  if(typeof slot==='string'&&typeof mr27CanFire==='function'&&!mr27CanFire(b,slot))return;
   const R=b._er26,p=typeof slot==='string'?shipBossMount(b,slot):slot;
   R.warnings.push({slot,x:p.x,y:p.y,angle,width});
+}
+function er26AttackWarnings(b){
+  const R=b._er26,m=R.mode,n=R.level;R.warnings=[];
+  const fan=(slot,a,count,step)=>{for(let i=0;i<count;i++)er26Warning(b,slot,a+(i-(count-1)/2)*step,22);};
+  if(/wheel/.test(m)){
+    const p=shipBossMount(b,'C'),safe=Math.atan2(R.target.y-p.y,R.target.x-p.x),count=10+n*2;
+    for(let i=0;i<count;i++){const a=i*TAU/count;if(Math.abs(Math.atan2(Math.sin(a-safe),Math.cos(a-safe)))>=.34)er26Warning(b,'C',a,18);}
+  }else if(m==='bastion-gates'||m==='glacier-press'){
+    const count=9+n*2,span=count-4;R.gateGap=2+((R.index*2)%span+span)%span;
+    for(let i=0;i<count;i++)if(Math.abs(i-R.gateGap)>1)er26Warning(b,'C',Math.PI/2+(i-(count-1)/2)*.13,20);
+  }
+  else if(/pass|strafe|icebreaker/.test(m))fan('C',Math.PI/2,3,.12);
+  else if(m==='ash-eruption')fan('C',R.angles[1],2,.44);
+  else if(m==='core-barrage')for(const side of [-1,1]){const a=stage4FinalGunAngle(b,side),p=stage4FinalGunTip(b,side,a);for(const off of [-.07,0,.07])er26Warning(b,p,a+off,22);}
+  else if(m==='center-break')for(const s of ['CL','CR'])fan(s,R.angles[1],3,.11);
+  else if(m==='ion-scissors')for(const s of ['L','R'])fan(s,Math.PI/2,3,.23);
+  else if(m==='warden-suppress'||m==='sovereign-battery')for(const s of ['L','R'])fan(s,Math.PI/2,5,.1875);
+  else for(const s of ['L','R']){
+    const a=R.angles[s==='L'?0:2];
+    if(/orb-siege|bombard/.test(m))er26Warning(b,s,a,52);
+    else fan(/rocket/.test(m)?'ROCKET_'+s:s,a,/rocket/.test(m)?1+n:/pursuit/.test(m)?5:3+n,.16);
+  }
 }
 function er26Shot(b,slot,a,speed,opt={}){
   if(typeof mr27CanFire==='function'&&!mr27CanFire(b,slot))return {dead:true};
   if(typeof mr27Fire==='function')mr27Fire(b,slot,a);
   const R=b._er26,p=typeof slot==='string'?shipBossMount(b,slot):slot;
   const fire=b._ship==='magmaward'||b._s3Nuclear&&R.form==='fire',charred=b._ship==='magmaward'&&R.level===2;
-  const size=opt.large?24:12;
+  const size=opt.large?28:fire?12:20;
   const q=eShootT(p.x,p.y,a,speed,fire?'magma':'s3mortar',{w:size,h:size,silent:true,curve:opt.curve||0,noMuzzle:typeof slot!=='string'});
   q._boss=true;q._noArsenal=true;q._er26Art=fire?'fire':'ice';q._er26Charred=charred;q._er26Large=!!opt.large;
-  q._er26Source=b._ship;q._er26Serial=R.serial;q._er26Draw=opt.large?52:26;
+  q._er26Source=b._ship;q._er26Serial=R.serial;q._er26Draw=opt.large?60:fire?30:44;
   q._weaponProof=!opt.large;q._shootable=!!opt.large;if(opt.large)q.hp=3;
   R.shots++;if(typeof combatAudio0927==='function')combatAudio0927(b,fire?'combatOrb0927':'combatIce0927',.24);
   if(opt.burst)R.seeds.push({q,t:0,form:q._er26Art,charred,at:1.35,gap:R.target.x});
@@ -114,6 +138,7 @@ function er26Seeds(b,dt){
   const R=b._er26;
   for(const s of R.seeds){
     s.t+=dt;if(s.q.dead||!eBullets.includes(s.q)){s.done=true;continue;}
+    combatWarningTick(s,'orb-split',Math.min(s.t,s.at),s.at);
     if(s.t<s.at)continue;
     const q=s.q,n=8+R.level*2,aim=Math.atan2(player.y-q.y,player.x-q.x);
     for(let j=0;j<n;j++){
@@ -153,8 +178,8 @@ function er26Combat(b,dt){
     return;
   }
   const aimed=/hunt|pursuit|crosscut|bombard/.test(mode);
-  for(const slot of ['L','R'])er26Warning(b,slot,aimed?R.angles[slot==='L'?0:2]:Math.PI/2,mode==='blackout-pass'?52:36);
-  if(t<R.warm){combatWarningTick(b,'er26-'+R.serial,t,R.warm,true);return;}
+  er26AttackWarnings(b);
+  if(t<R.warm){combatWarningTick(b,'er26-'+R.serial,t,R.warm);return;}
   R.shot-=dt;if(R.shot>0)return;
   R.shot+=R.gap;const wave=R.wave++,side=(wave&1)?'R':'L',a=R.angles[side==='L'?0:2];
   if(mode==='ember-hunt'||mode==='ash-pursuit'){
@@ -175,7 +200,7 @@ function er26Combat(b,dt){
     er26Fan(b,side,Math.PI/2+(side==='L'?-.28+off:.28-off),4,.13,speed);
     R.shot+=.12;
   }else if(mode==='charcoal-wheel'||mode==='shatter-wheel'){
-    const p=shipBossMount(b,'C'),count=10+n*2,gapAngle=Math.atan2(player.y-p.y,player.x-p.x);
+    const p=shipBossMount(b,'C'),count=10+n*2,gapAngle=Math.atan2(R.target.y-p.y,R.target.x-p.x);
     for(let j=0;j<count;j++){
       const angle=j*TAU/count+wave*.21;
       if(Math.abs(Math.atan2(Math.sin(angle-gapAngle),Math.cos(angle-gapAngle)))<.34)continue;
@@ -184,7 +209,7 @@ function er26Combat(b,dt){
   }else if(mode==='cryo-crosscut'){
     er26Fan(b,side,a,3+n,.115,speed+.4);R.shot+=.12;
   }else if(mode==='bastion-gates'||mode==='glacier-press'){
-    const count=9+n*2,gap=2+(wave+R.index*2)%(count-4),p=shipBossMount(b,'C');
+    const count=9+n*2,gap=R.gateGap==null?2:R.gateGap,p=shipBossMount(b,'C');
     for(let j=0;j<count;j++){
       if(Math.abs(j-gap)<=1)continue;
       er26Shot(b,p,Math.PI/2+(j-(count-1)/2)*.13,speed-.45);
@@ -237,6 +262,10 @@ function er26ProjectileDraw(q){
 }
 function er26Draw(b){
   const R=b._er26;if(!R||b.dead||b.enter)return;
+  for(const s of R.seeds){if(s.done||s.q.dead||s.t>=s.at)continue;const q=s.q,k=s.t/s.at,count=8+R.level*2,safe=aimPlayer(q.x,q.y);
+    for(let i=0;i<count;i++){const a=i*TAU/count+Math.PI/2;if(Math.abs(Math.atan2(Math.sin(a-safe),Math.cos(a-safe)))<.38)continue;
+      combatWarningDraw(b,{x:q.x,y:q.y,ex:q.x+Math.cos(a)*VH,ey:q.y+Math.sin(a)*VH,progress:k,width:16,fieldOnly:true});}
+    combatWarningDraw(b,{x:q.x,y:q.y,ex:q.x,ey:VH,progress:k,alertOnly:true,alertX:q.x,alertY:q.y-48,blinkT:s.t});}
   if(R.mode!=='recover'&&R.mode!=='form-change'){
     let alert=null;
     for(const w of R.warnings){
@@ -290,22 +319,23 @@ function er26EscortTick(b,dt){
     d.t+=dt;d.active=clamp(d.t/1.2,0,1);d.flash=Math.max(0,d.flash-dt);
     const x=L+W*(d.side<0?.15:.85),y=Math.min(245,R.home+46);
     d.x+=(x-d.x)*Math.min(1,dt*2.8);d.y+=(y-d.y)*Math.min(1,dt*2.8);
-    const allowed=R.mode==='escort-crossfire'&&R.t>=R.warm&&R.t<R.dur;
-    const slot=Math.floor(Math.max(0,R.t-R.warm)/2.65)%2;
+    const allowed=(R.mode==='escort-crossfire'||R.level>0&&R.mode==='recover')&&d.active===1;
+    const cadence=[3.4,2.85,2.3][R.level],clock=R.clock;
+    const slot=Math.floor(clock/cadence)%2;
     const turn=allowed&&slot===d.index&&d.active===1&&!(b._mr27&&mr27HelperState(d).dead);
-    const local=(R.t-R.warm)%2.65;
     if(!turn){d._erLock=null;d.ang+=stage4AngleDelta(d.ang,Math.PI/2)*Math.min(1,dt*4);continue;}
-    if(!d._erLock){d._erLock={x:player.x,y:player.y};d.fireCd=0;d._erBurst=0;}
+    if(!d._erLock){d._erLock={x:player.x,y:player.y,t:0};d.fireCd=0;d._erBurst=0;}
+    d._erLock.t+=dt;const local=d._erLock.t;
     const a=Math.atan2(d._erLock.y-d.y,d._erLock.x-d.x);
     d.ang+=stage4AngleDelta(d.ang,a)*Math.min(1,dt*6);
-    if(local<.72){combatWarningTick(d,'er26-escort',local,.72,true);
+    if(local<.72){combatWarningTick(d,'er26-escort',local,.72);
       R.warnings.push({slot:null,x:d.x,y:d.y,angle:a,width:32,progress:local/.72});continue;}
     d.fireCd-=dt;if(d.fireCd>0||local>2.0)continue;
     const tip={x:d.x+Math.cos(a)*d.size*.43,y:d.y+Math.sin(a)*d.size*.43};let q;
     if(d.role==='gunner'){
       q=stage4MiniMachine(b,tip,a+(d._erBurst%3-1)*.045,4.3+R.level*.5);
-      d.fireCd=.115;d._erBurst++;if(d._erBurst%5===0)d.fireCd=.38;
-    }else{q=stage4WarfareShot(b,tip,a,2.2,'rocket',{accel:.6,max:4.7,shootable:true,hp:2,szMul:.74});d.fireCd=.56;}
+      d.fireCd=[.17,.13,.10][R.level];d._erBurst++;if(d._erBurst%5===0)d.fireCd=.38;
+    }else{q=stage4WarfareShot(b,tip,a,[2.5,3.6,4.8][R.level],'rocket',{accel:.7,max:[4.5,5.8,7.2][R.level],shootable:true,hp:2,szMul:.74});d.fireCd=.56;}
     q._s4EscortRole=d.role;q._er26Source='escort';d.shots++;R.helperShots++;stage4WarfareDroneMuzzle(b,d);
   }
   S.summoned=list.some(d=>!d.dead);
@@ -332,7 +362,7 @@ function er26CoreTick(b,dt){
     if(!owns||d.materialize<1)continue;
     const a=clamp(d._erAim||Math.PI/2,Math.PI*.22,Math.PI*.78);
     d.ang+=stage4AngleDelta(d.ang,a)*Math.min(1,dt*5);
-    if(state==='windup'){combatWarningTick(d,'er26-core',local,.8,true);R.warnings.push({slot:null,x:d.x,y:d.y,angle:a,width:36,progress:local/.8});}
+    if(state==='windup'){combatWarningTick(d,'er26-core',local,.8);R.warnings.push({slot:null,x:d.x,y:d.y,angle:a,width:36,progress:local/.8});}
     if(state!=='fire')continue;
     d.fireShot-=dt;if(d.fireShot>0)continue;d.fireShot=[.12,.095,.075][R.level];
     const sideBarrel=d.barrelNext;d.barrelNext=-d.barrelNext;const tip=stage4CoreTurretTip(d,sideBarrel);
@@ -351,6 +381,7 @@ function er26WarShot(b,slot,a,speed,kind,opt){
 }
 function er26WarTick(b,dt){
   const R=b._er26,S=b._s4war,mini=S.mini,n=R.level;R.warnings=[];S.poseRot=0;S.scale=1;
+  if(mini&&b._mr27&&!mr27CanFire(b,'L')&&!mr27CanFire(b,'R')&&['warden-suppress','center-break'].includes(R.mode))er26Set(b,'rocket-feint');
   if(!mini){
     stage4ShieldTick(b,dt);stage4ShieldSyncNodes(b);
     if(S.shield.rearming){
@@ -381,14 +412,15 @@ function er26WarTick(b,dt){
     }else {b.x+=(er26Station(b,0)-b.x)*Math.min(1,dt*3);b.y+=(R.home-b.y)*Math.min(1,dt*3);}
     b._drawY=b.y;
     if(mode==='escort-crossfire'){
+      if(t<R.warm){er26AttackWarnings(b);combatWarningTick(b,'er26-'+R.serial,t,R.warm);}
       if(mini&&!S.summoned||!mini&&!S.coreUnlocked){
         // Early/Normal variant: the hull's alternating barrels teach the helper rhythm.
         if(live>=0){R.shot-=dt;if(R.shot<=0){const slot=(Math.floor(live/1.5)&1)?'R':'L';
           er26WarShot(b,slot,R.angles[slot==='L'?0:2],4.1+n*.45,'mg');R.shot=.17;}}
       }
     }else if(t<R.warm){
-      if(!drive)for(const slot of ['L','R'])er26Warning(b,slot,R.angles[slot==='L'?0:2],42);
-      combatWarningTick(b,'er26-'+R.serial,t,R.warm,true);
+      if(!drive)er26AttackWarnings(b);
+      combatWarningTick(b,'er26-'+R.serial,t,R.warm);
     }else if(!drive){
       R.shot-=dt;
       if(R.shot<=0){
@@ -398,7 +430,7 @@ function er26WarTick(b,dt){
           for(const off of [-.075,.075])er26WarShot(b,slot,Math.PI/2+sweep+off,4.3+n*.4,mini?'mg':'lightningmg');
           R.shot=diffKey==='easy'?.32:[.18,.135,.105][n];if(wave%8===7)R.shot+=.42;
         }else if(mode==='rocket-feint'||mode==='siege-rockets'){
-          for(let j=0;j<1+n;j++)er26WarShot(b,slot,a+(j-n/2)*.16+(wave%3-1)*.07,2.0,'rocket',{accel:.75,max:5,shootable:true,hp:2,szMul:.82});R.shot=.48-n*.07;
+          for(let j=0;j<1+n;j++)er26WarShot(b,slot,a+(j-n/2)*.16+(wave%3-1)*.07,[2.8,4.0,5.2][n],'rocket',{accel:[.6,.85,1.1][n],max:[4.7,6.2,7.6][n],shootable:true,hp:2,szMul:.82});R.shot=.48-n*.07;
         }else if(mode==='ion-scissors'){
           const off=wave%2?-.23:.23;
           for(const port of ['L','R'])er26WarShot(b,port,Math.PI/2+(port==='L'?off:-off),4.3+n*.4,'lightning',{szMul:1.5});R.shot=.42-n*.05;

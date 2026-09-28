@@ -51,7 +51,7 @@ function vile24EntryDraw(b){
   vile24Cell('vile24_portal_sheet',2,2,portalFrame,b.x-d/2,b.y-d*.50,d,d,p<.95?1:1-p);
   const robotFrame=p<.22?0:p<.39?1:p<.54?2:3;
   if(p<.76){vile24Cell('vile24_robot_takeover_sheet',2,2,robotFrame,b.x-b.w*.48,b.y-b.h*.48,b.w*.96,b.h*.96,p<.60?1:Math.max(0,(.76-p)/.16));}
-  if(p>.68)vile24Plate('vile24_form1_body',b,0,0,b.w,b.h,false,Math.min(1,(p-.68)/.22));
+  if(p>.68){const opacity=Math.min(1,(p-.68)/.22);if(typeof fr28VesselPlate!=='function'||!fr28VesselPlate(b,opacity))vile24Plate('vile24_form1_body',b,0,0,b.w,b.h,false,opacity);}
   return true;
 }
 function vile24DrawMuzzle(x,y,size){if(boss&&boss._v24)boss._v24.muzzles.push({x,y,size,t:0});}

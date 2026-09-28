@@ -18,7 +18,8 @@ function ht27Begin(d){
  d.musicStarted=true;d.clock=0;HT27_BASE.music('hammerTime');return true;
 }
 function ht27Data(){return ht27Active&&boss&&!boss.dead?boss._hammerTime:null;}
-function ht27Locked(){const d=ht27Data();if(!d)return false;const a=HAMMER_TIME_ART.audio,m=Snd&&Snd.music.hammerTime,t=m&&m.readyState>=2&&!m.paused?m.currentTime:d.clock;return d.mode==='intro'||d.locked||(t>=a.breakStart&&t<a.breakEnd);}
+function ht27CombatSequence(b){const h=b&&b._hammer;return !!(h&&(['fr_activation','fr_stun','fr_twirl'].includes(h.state)||h.frRecovery));}
+function ht27Locked(){const d=ht27Data();if(!d)return false;const a=HAMMER_TIME_ART.audio,m=Snd&&Snd.music.hammerTime,t=m&&m.readyState>=2&&!m.paused?m.currentTime:d.clock;return d.mode==='intro'||d.locked||(!ht27CombatSequence(boss)&&t>=a.breakStart&&t<a.breakEnd);}
 function ht27ClearAttacks(){
  pBullets=[];eBullets=[];enemies=[];playerLocks=[];rollers=[];zaps=[];wm26Releases=[];
  l5Rocks=[];
@@ -52,6 +53,8 @@ function ht27DanceEffects(dt){
 }
 function ht27DanceStart(b,d,duration){d.mode='dance';d.t=0;d.duration=duration||1.8;hammerState(b,'hammer');b._noHit=false;b.enter=false;b._hammer.phasePending=false;}
 function ht27LockStart(b,d){
+  // Finish armor/restoration counterplay before a music cue resets combat state.
+  if(ht27CombatSequence(b))return;
  d.mode='break';d.t=0;d.locked=true;d.shield=true;d.savedSpecial=special;special=null;
  d.savedSpeed=timeScale;timeScale=1;if(Snd){Snd.music.hammerTime.playbackRate=1;Snd.music.hammerTime.preservesPitch=true;}
  d.reflections=pBullets.filter(q=>!q.dead).slice(0,16).map((q,i)=>({x:q.x,y:Math.min(q.y,b.y+100),vx:(i%2?1:-1)*(130+i*3),vy:75,t:0,w:8,h:20,kind:'eglaser',_hammerLaser:true}));
@@ -228,7 +231,7 @@ startRun=function(){const launch=ht27Pending;ht27Pending=false;if(ht27Active)ht2
 setState=function(s){
  if(ht27Locked()&&s==='paused')return;
  if(ht27Active){
-  if([GS.STAGECLEAR,GS.OUTBOUND,GS.STAGESEL,GS.VICTORY,GS.GAMEOVER,GS.CONTINUE,GS.RIVAL,GS.WARPENTRY].includes(s)){ht27Stop();s=GS.TITLE;}
+  if([GS.STAGECLEAR,GS.OUTBOUND,GS.STAGESEL,GS.VICTORY,GS.GAMEOVER,GS.RIVAL,GS.WARPENTRY].includes(s)){ht27Stop();s=GS.TITLE;}
   else if(s===GS.TITLE||s===GS.MODESEL||s===GS.CAMPHUB)ht27Stop();
   else if(s==='paused')Snd.music.hammerTime.pause();
   else if(s===GS.PLAY&&state==='paused')Snd.music.hammerTime.play().catch(()=>{});
@@ -242,7 +245,7 @@ updatePlay=function(dt){
   if(d.mode==='intro'&&!ht27Begin(d)){Input.clearTaps();return;}
   const c=ht27Clock(d,dt),a=HAMMER_TIME_ART.audio,want=c>=a.breakStart&&c<a.breakEnd;
   if(d.mode==='intro'&&c<a.breakStart){ht27Tick(boss,dt);ht27DanceEffects(dt);efxClock+=dt;mapScroll+=dt*12;Input.clearTaps();return;}
-  if(want&&!d.locked)ht27LockStart(boss,d);else if(!want&&d.locked)ht27LockEnd(boss,d);
+  if(want&&!d.locked&&!ht27CombatSequence(boss))ht27LockStart(boss,d);else if(!want&&d.locked)ht27LockEnd(boss,d);
   if(d.locked){ht27Tick(boss,dt);ht27DanceEffects(dt);efxClock+=dt;mapScroll+=dt*12;Input.clearTaps();return;}
  }
  return HT27_BASE.tick.apply(this,arguments);

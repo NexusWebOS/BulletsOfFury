@@ -100,10 +100,10 @@ function polishEncounterAttack(b,dt){
   if(!/mortar|charred-battery/.test(mode))return false;
   if(b._mr27&&b._mr27.parts.filter(p=>p.id.startsWith('rocket')&&!p.dead).length===0){er26Set(b,'recover');return true;}
   R.warnings=[];b.x+=(er26Station(b,0)-b.x)*Math.min(1,dt*2);b.y+=(R.home-b.y)*Math.min(1,dt*3);b._drawY=b.y;
-  if(!R.groundCast){R.groundCast=true;R.dur=4.6;const count=mode==='charred-battery'?5:3+n,gap=Math.floor(Math.random()*count),W=camRightX()-camLeftX();
+  if(!R.groundCast){R.groundCast=true;R.dur=3.6;const count=mode==='charred-battery'?6:4+n,gap=Math.floor(Math.random()*count),W=camRightX()-camLeftX();
     for(let i=0;i<count;i++){
       if(i===gap)continue;const x=camLeftX()+W*(i+.5)/count,y=clamp(R.target.y+(i%2?24:-20),240,VH-65);
-      const q=groundTargetingSpawn({kind:'missile',owner:b,x,y,warn:[1.55,1.3,1.10][n]+i*.12,active:.5,radius:29,size:82,track:false,shake:3,onImpact:q=>{
+      const q=groundTargetingSpawn({kind:'missile',owner:b,x,y,warn:[1.25,1.05,.88][n]+i*.09,active:.5,radius:29,size:82,track:false,shake:3,onImpact:q=>{
         const a=aimPlayer(q.x,q.y);for(let k=0;k<6+n;k++){const angle=k*TAU/(6+n);if(Math.abs(Math.atan2(Math.sin(angle-a),Math.cos(angle-a)))<.5)continue;if(b._s4war)stage4WarfareShot(b,q,angle,2.35+n*.23,'mg');else er26Shot(b,q,angle,2.35+n*.23);}
         explode(q.x,q.y,72,b._ship==='magmaward'||b._s4war?'red':'blue');}});q._polishBomb={x:b.x,y:b.y+b.h*.30};
     }
@@ -130,7 +130,7 @@ function polishCombatTick(dt){
     e._polishBomberCD=(e._polishBomberCD==null?3:e._polishBomberCD)-dt;
     if(e._polishBomberCD<=0&&e.y>25&&e.y<VH*.48&&Math.abs(e.x-player.x)<VW){e._polishBomberCD=7;polishLane(e,e.x,e.y+20,Math.PI/2,{warn:1.4,speed:4.5});}
   }
-  for(const q of polishLanes){q.t+=dt;if(q.owner?.dead){q.dead=true;continue;}polishLaneOrigin(q);combatWarningTick(q,'incoming',q.t,q.warn,true);
+  for(const q of polishLanes){q.t+=dt;if(q.owner?.dead){q.dead=true;continue;}polishLaneOrigin(q);combatWarningTick(q,'incoming',q.t,q.warn);
     if(q.t>=q.warn){q.dead=true;if(q.fire)q.fire(q);else{const p=eShootT(q.x,q.y,q.angle,q.speed,'emissile',{w:12,h:25,silent:true});p._shootable=true;p.hp=2;p._noArsenal=true;p.spd=q.speed;p.ang=q.angle;p._committed=true;p.homing=false;Audio.SFX.missile?.();}}
   }polishLanes=polishLanes.filter(q=>!q.dead);
 }
@@ -139,7 +139,7 @@ function polishCombatDraw(){
   ctx.save();ctx.translate(-camLeftX(),0);
   for(const q of groundTargetingFx)if(q._polishBomb&&!q.owner?._bomber&&q.t>0&&q.t<q.warn&&XART.rdy('lz_bomb')){const p=clamp(q.t/q.warn,0,1),im=XART.get('lz_bomb');ctx.save();ctx.translate(lerp(q._polishBomb.x,q.x,p),lerp(q._polishBomb.y,q.y,p));ctx.rotate(Math.PI);ctx.drawImage(im,-7,-17,14,34);ctx.restore();}
   for(const q of polishLanes){polishLaneOrigin(q);const p=clamp(q.t/q.warn,0,1);combatWarningDraw(q,{x:q.x,y:q.y,ex:q.x+Math.cos(q.angle)*VH,ey:q.y+Math.sin(q.angle)*VH,progress:p,width:q.width});
-    const im=polishCell('warning',p<L23_FOV_YEL?0:p<L23_FOV_RED?1:2);if(im){ctx.save();ctx.translate(q.x,q.y+30);ctx.rotate(q.angle-Math.PI/2);ctx.globalAlpha=.62+.38*Math.abs(Math.sin(q.t*18));ctx.drawImage(im,-12,-26,24,52);ctx.restore();}}
+    const im=(run.stage===6||(run.stage===5&&q.owner===subBoss))?null:polishCell('warning',p<L23_FOV_YEL?0:p<L23_FOV_RED?1:2);if(im){ctx.save();ctx.translate(q.x,q.y+30);ctx.rotate(q.angle-Math.PI/2);ctx.globalAlpha=.62+.38*Math.abs(Math.sin(q.t*18));ctx.drawImage(im,-12,-26,24,52);ctx.restore();}}
   const b=subBoss;if(b?._bomber&&!b.dead){const B=b._bomber;if(B.mode==='charge'||B.mode==='beam'){ctx.restore();ctx.save();ctx.fillStyle='rgba(0,0,12,'+(B.mode==='beam'?.56:clamp(B.t/B.dur,0,1)*.62)+')';ctx.fillRect(0,0,VW,VH);ctx.translate(-camLeftX(),0);siegeBomberBeamDraw(b);}}
   ctx.restore();
 }
@@ -170,16 +170,17 @@ function siegeBomberTick(b,dt){const B=b._bomber;B.clock+=dt;B.t+=dt;b.flash=Mat
   const engines=B.parts.filter(p=>p.id.startsWith('engine')&&p.hp>0).length,furious=typeof d27FuriousBomber==='function'&&d27FuriousBomber(b);
   const tx=worldWidth()/2+Math.sin(B.clock*(furious?1.7:.48))*Math.max(35,worldWidth()*(furious?.29:.25))*engines/2;b.x+=(tx-b.x)*Math.min(1,dt*(furious?5:1.25));const ty=b.ty+(furious?Math.sin(B.clock*2.9)*22:0);b.y+=(ty-b.y)*Math.min(1,dt*(furious?4:2));
   B.cd-=dt;
+  if(B.mode==='charge')combatWarningTick(b,'siege-beam',Math.min(B.t,B.dur),B.dur);
   if(B.mode==='beam')for(const p of siegeBomberParts(b).filter(p=>p.id.startsWith('laser')))if(B.parts.find(q=>q.id===p.id).hp>0&&Math.abs(player.x-p.x)<27&&player.y<p.y-p.h*.46)playerHit();
-  if(B.mode==='bombs'&&B.cd<=0){B.cd=furious?.48:diffKey==='easy'?1.5:[1.0,.8,.64][B.n];
+  if(B.mode==='bombs'&&B.cd<=0){B.cd=furious?.38:diffKey==='easy'?1.3:[.72,.56,.44][B.n];
     const slot=(B.volley||0)%5;B.volley=(B.volley||0)+1;
     const target={x:furious?(slot+.5)*worldWidth()/5:clamp(player.x+Math.sin(B.clock*2.1)*55,camLeftX()+35,camRightX()-35),y:clamp(player.y,220,VH-65)};
     if(!furious||slot!==B.safeLane){
-      const q=groundTargetingSpawn({kind:'missile',owner:b,...target,warn:furious?1.0:diffKey==='easy'?1.85:1.4-B.n*.12,active:.40,radius:furious?27:32,size:88,track:false,shake:3,onImpact:q=>explode(q.x,q.y,68,'red')});q._polishBomb={x:b.x,y:b.y+b.h*.34};B.bombs.push(q);Audio.SFX.missile?.();
+      const q=groundTargetingSpawn({kind:'missile',owner:b,...target,warn:furious?.84:diffKey==='easy'?1.65:1.18-B.n*.14,active:.40,radius:furious?27:32,size:88,track:false,shake:3,onImpact:q=>explode(q.x,q.y,68,'red')});q._polishBomb={x:b.x,y:b.y+b.h*.34};B.bombs.push(q);Audio.SFX.missile?.();
       if(typeof wm26Emit==='function')wm26Emit(b,b.x,b.y+b.h*.34,Math.PI/2,'missile',null,{size:30});
     }
   }
-  if(B.mode==='missiles'&&B.cd<=0){B.cd=furious?.9:1.15;for(const s of [-1,1])for(const offset of (furious?[-.17,.17]:[0]))polishLane(b,b.x+s*b.w*.42,b.y+15,Math.PI/2+offset,{warn:furious?.90:diffKey==='easy'?1.65:1.1-B.n*.08,speed:furious?5.7:4.4+B.n*.5});}
+  if(B.mode==='missiles'&&B.cd<=0){B.cd=furious?.66:.86;for(const s of [-1,1])for(const offset of (furious?[-.17,.17]:[0]))polishLane(b,b.x+s*b.w*.42,b.y+15,Math.PI/2+offset,{warn:furious?.90:diffKey==='easy'?1.65:1.1-B.n*.08,speed:furious?6.7:5.2+B.n*.6});}
   if(B.t>=B.dur){if(B.mode==='charge')siegeBomberSet(b,'beam');else if(B.mode==='beam')siegeBomberSet(b,'recover');else{const next=['charge','missiles','bombs'][B.seq++%3];siegeBomberSet(b,next==='charge'&&!B.parts.some(p=>p.id.startsWith('laser')&&p.hp>0)?'bombs':next);}}
   B.bombs=B.bombs.filter(q=>!q.dead);
 }

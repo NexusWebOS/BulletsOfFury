@@ -376,7 +376,7 @@ function levelScrollRange(){
   if(cfg.scrollLen) return cfg.scrollLen;
   if(typeof XART==='undefined' || !XART.rdy(cfg.master)) return 0;
   const im=XART.get(cfg.master);
-  return Math.max(0, (im.naturalHeight||VH) - VH);
+  return Math.max(0, (im.naturalHeight||im.height||cfg.h||VH) - VH);
 }
 /* ============================================================
    THE EXIT CONNECTOR (drop 0810k) — the same join, run the other way.
@@ -2689,6 +2689,11 @@ const XART=(function(){
     const _RA=BOF_STAGE_RUNTIME_ATLASES;
     for(const _root in _RA.roots)X._src[_root]=_RA.roots[_root];
     for(const _cell in _RA.cells)BOFX.cells[_cell]=_RA.cells[_cell];
+  }
+  // A single authored south-facing fleet overrides the older packed idle hulls.
+  for(const art of ['storm_dart','cloud_lancer','thunder_fighter','lightning_skimmer','cyclone_interceptor','four_engine_bomber']){
+    const key='s6atk_'+art+'_0';delete BOFX.cells[key];
+    X._src[key]='assets/game/stage6_fleet_0927/'+(art==='four_engine_bomber'?'bomber':'interceptor')+'.png';
   }
   for(const _s9u of _S9_ATTACK_UNITS) for(let _s9f=0;_s9f<8;_s9f++){
     const _n=String(_s9f+1).padStart(2,'0');
@@ -5173,8 +5178,9 @@ function drawLevelMaster(dt){
       mapScroll = Math.min(range, mapScroll + dt*40*(1-_bossHold));
     }
   } else {
-    _bossHold = 0;
-    mapScroll = Math.min(range, mapScroll + dt*40);
+    if(run.stage===4)_bossHold=Math.max(0,(_bossHold||0)-dt*1.6);
+    else _bossHold = 0;
+    mapScroll = Math.min(range, mapScroll + dt*40*(1-_bossHold));
   }
   /* ============================================================
      THE FINALE RUN-IN — FLY THE LAST OF THE LEVEL (drop 0814d)
@@ -6258,7 +6264,8 @@ function weaponLegacyName(w, lv){
 function bossHealthVisible(b){
   if(!b||b.dead)return false;
   if(b._s7FinalNoBar)return false;
-  if(b._whv&&b._whv.mode!=='ace')return false;   // Mike 0918: the carrier shows no HP bar
+  if(b._whv&&b._whv.mode==='death')return false;
+  if(b._whv&&b._whv.mode==='carrier')return whvOnScreen(b);
   if(b.kind==='damkeeper'&&b._ovIntro&&!b._ovIntro.done)return b._ovIntro.phase!=='approach'&&b._ovIntro.phase!=='whip';
   const F=b._s9fusion;
   return !(F&&F.phase!=='tidal');
@@ -7366,7 +7373,7 @@ const Audio = (()=>{
 
    ⚠ CHARGE IS A BIND, NOT A LITERAL 'h'. He named the key, but a hardcoded letter is an action
    the rebind screen cannot reach and the second seat cannot have. See CTRL_ACTS, which it joins. */
-const KEYBIND_DEFAULT={up:['w','arrowup','pad_up'],down:['s','arrowdown','pad_down'],left:['a','arrowleft','pad_left'],right:['d','arrowright','pad_right'],fire:['j','mouse0','pad_b0','pad_b7'],bomb:['k','mouse2','pad_b1','pad_b6'],retina:['c',' ','mouse3','pad_b3','pad_b5'],charge:['h','mouse4','pad_b2'],start:['enter','p','pad_b9']};
+const KEYBIND_DEFAULT={up:['w','arrowup','pad_up'],down:['s','arrowdown','pad_down'],left:['a','arrowleft','pad_left'],right:['d','arrowright','pad_right'],fire:['j','mouse0','pad_b0','pad_b7'],bomb:['k','mouse2','pad_b1','pad_b6'],retina:['c',' ','mouse3','pad_b5'],multilock:['y','pad_b3'],charge:['h','mouse4','pad_b2'],start:['enter','p','pad_b9']};
 /* KEYBINDS MUST BE VALIDATED, NOT JUST FILLED IN (drop 0724dl).
 
    Mike's readout said it all: `state title, kd40 ku41, last shift, menu 0`. Forty keypresses
@@ -7410,7 +7417,7 @@ const KEY_UNBINDABLE = ['shift','control','alt','meta','capslock','contextmenu',
    ============================================================ */
 const KEYBIND2_DEFAULT={
   up:['t','pad2_up'], down:['g','pad2_down'], left:['f','pad2_left'], right:['h','pad2_right'],
-  fire:['v','pad2_b0','pad2_b7'], bomb:['b','pad2_b1','pad2_b6'], retina:['n','pad2_b3','pad2_b5'],
+  fire:['v','pad2_b0','pad2_b7'], bomb:['b','pad2_b1','pad2_b6'], retina:['n','pad2_b5'], multilock:['u','pad2_b3'],
   /* seat 2 gets CHARGE too - an action only P1 can reach is one that vanishes in co-op */
   charge:['m','pad2_b2'],
   /* P2 gets START on the pad only. The options screen builds a row per CTRL_ACTS for BOTH
@@ -7446,6 +7453,7 @@ function _loadBinds(key, defaults){
 }
 let keybind=_loadBinds('bof_keys', KEYBIND_DEFAULT);
 let keybind2=_loadBinds('bof_keys2', KEYBIND2_DEFAULT);
+for(const [kb,pad] of [[keybind,'pad_b3'],[keybind2,'pad2_b3']]){kb.retina=kb.retina.filter(k=>k!==pad);if(!kb.retina.length)kb.retina=[pad==='pad_b3'?'c':'n'];}
 function saveKeybind(){
   try{ localStorage.setItem('bof_keys',JSON.stringify(keybind)); }catch(e){}
   try{ localStorage.setItem('bof_keys2',JSON.stringify(keybind2)); }catch(e){}
@@ -8134,15 +8142,10 @@ const SPECIAL_INFO={
   lizzie:    {name:'ATOM BOMB',      desc:'Missiles become armed A-bombs. Each one levels the screen.'},
   falva:     {name:'ROLLER BALL',    desc:'Hold FIRE 5s to charge, release a pinball of death.'},
 };
-/* COLE IS A DEVELOPER PASSWORD, NOT A SAVE (drop 0801k). Mike: "He can only be unlocked via a
-   password - Cole4u. never save his unlocked status to gamedata or anything. this is a pure
-   password developer feature."
-
-   So the flag is SESSION-ONLY. It was being read from and written to localStorage, which meant
-   typing the code once unlocked him permanently on that machine — he has effectively been
-   unlocked this whole time. No read on boot, no write on unlock: every session starts locked and
-   the code has to be typed again. */
-let coleUnlocked=false;
+/* Cole4u stays valid until this game closes, including death, new runs and loading older saves.
+   Campaign snapshots also carry the unlock. A fresh boot starts locked until the password is
+   entered or a campaign with the unlock is loaded; no separate permanent machine-wide flag. */
+let coleUnlocked=false,coleSessionUnlocked=false;
 function isPilotLocked(P){ return !!(P && P.locked && P.key==='cole' && !coleUnlocked); }
 let pilotIndex=0, pilotFlash=0, pilotPending=null, pilotRot=0, pilotFrom=0, pilotSlide=0, pilotComm=null, pilotCommT=0;
 let pilotInputArmed=true;
@@ -9710,15 +9713,15 @@ function drawEnemyShieldLayer(e,front){
   if(F.kind!=='bubble' && fi<0) return;
   if(F.kind==='field'){
     const k=F.prefix+'_'+(front?'f':'b')+'_'+fi; if(!XART.rdy(k)) return;
-    const z=Math.max(e.w||30,e.h||30)*(s.drawScale||2.55);
-    ctx.drawImage(XART.get(k),e.x-z/2,e.y-z/2,z,z);
+    const w=(e._drawW||e.w||30)*1.55,h=(e._drawH||e.h||30)*1.55;
+    ctx.drawImage(XART.get(k),e.x-w/2,e.y-h/2,w,h);
   } else if(F.kind==='bubble'){
     if(!front) return;                                   /* one pass, drawn over the hull */
     const k=F.prefix+'_0'; if(!XART.rdy(k)) return;
     const img=(F.tint&&typeof xartPalette==='function'&&xartPalette(k,F.tint))||XART.get(k);
     /* LARGER THAN THE UNIT, ALWAYS. drawScale is a multiple of the hull's LONGEST side, so a wide
        hull and a tall one both end up fully enclosed rather than clipped on one axis. */
-    const z=Math.max(e.w||30,e.h||30)*(s.drawScale||2.6);
+    const sw=(e._drawW||e.w||30)*1.25,sh=(e._drawH||e.h||30)*1.25;
     /* the shell is one still; the life comes from a slow rotation, a breathing scale and an
        energy-linked alpha, so it never strobes and never needs an eight-frame reel */
     const t=(s.animT||0), frac=clamp(s.energy/Math.max(1,s.max),0,1);
@@ -9726,15 +9729,15 @@ function drawEnemyShieldLayer(e,front){
     let al=0.30+0.55*frac;
     if(s.phase==='deploy') al*=clamp(t/0.34,0,1);
     else if(s.phase==='broken') al*=Math.max(0,1-t/0.30);
-    ctx.save(); ctx.translate(e.x,e.y); ctx.rotate(t*0.42);
+    ctx.save(); ctx.translate(e.x,e.y);
     ctx.globalAlpha=clamp(al,0,1);
     ctx.imageSmoothingEnabled=true;      /* a 512px shell minified ~4x - see drop 0904d */
-    const zz=z*puff;
-    ctx.drawImage(img,-zz/2,-zz/2,zz,zz);
+    const ww=sw*puff,hh=sh*puff;
+    ctx.drawImage(img,-ww/2,-hh/2,ww,hh);
     if(s.hitT>0){                        /* the struck shell flares additively, it does not swap art */
       ctx.globalCompositeOperation='lighter';
       ctx.globalAlpha=clamp(0.55*(s.hitT/0.18),0,1);
-      ctx.drawImage(img,-zz/2,-zz/2,zz,zz);
+      ctx.drawImage(img,-ww/2,-hh/2,ww,hh);
     }
     ctx.restore();
   } else if(front){
@@ -14733,9 +14736,8 @@ const ENEMY_VOLLEY = {
      and staggers keyed on e.type — so the tank fired its rocket AND a spread, from the same hull,
      on two unrelated clocks. Removing the rows leaves each tank with the gun it was authored with.
      s1tankheavy / sandtank / roadtank removed; the air and naval rows are untouched. */
-  s1boatgun:     {alt:['wall','rake'],       every:3},
-  s1boatpatrol:  {pat:'pincer',  every:4},
-  s1corvette:    {pat:'wall',    every:3},
+  // Naval weapons fire from their real turret/rack mounts in navalTick.
+  // Hull-centred volley rows must not add a second, floating weapon.
   // stage 2 — the elites are nearly the only things shooting here
   el_lr:         {alt:['pincer','rake'],     every:2},
   el_em:         {alt:['fan','rake'],        every:2},
@@ -21478,7 +21480,7 @@ function furnaceCannon(b,t,period,lockPose){
   const m=furnaceMuzzle(b,'right');
   if(cycle<1.05){ fztTell(F,m.x,m.y,m.a,350,cycle/1.05); F.arm.right.charge=cycle/1.05; if(cycle<0.03) fztSfx('bossWeaponCharge'); }
   else { F.arm.right.charge=0;
-    if(beat>F.shotBeat){ F.shotBeat=beat; fztShot(b,m.x,m.y,m.a,265,25);
+    if(beat>F.shotBeat){ F.shotBeat=beat; fztShot(b,m.x,m.y,m.a,diffKey==='furious'?410:diffKey==='hard'?335:265,25);
       F.fx.push({key:'fzt_cannon_flash',x:m.x,y:m.y,s:0.6,life:0.2,max:0.2,spin:0,a:0}); shake=Math.max(shake||0,5); fztSfx('enemyBossCannon'); } }
 }
 function furnaceFurySquareRoute(W){
@@ -24851,6 +24853,7 @@ function enforceEncounterHp(b,floor){
   if(Array.isArray(b._qlCan))for(const c of b._qlCan)scalePool(c,'hp','max');
   if(b._s9rift&&b._s9rift.core)scalePool(b._s9rift.core,'hp','maxhp');   // ONE body since 0905
   if(b._s9fusion)for(const w of [b._s9fusion.left,b._s9fusion.right])scalePool(w,'hp','maxhp');
+  if(b._whv){const W=b._whv;scalePool(W,'core','coreMax');for(const p of Object.values(W.parts))scalePool(p,'hp','max');b.hp=W.core+Object.values(W.parts).reduce((sum,p)=>sum+p.hp,0);b.maxhp=W.coreMax+Object.values(W.parts).reduce((sum,p)=>sum+p.max,0);}
   if(b._bomber){const B=b._bomber;scalePool(B,'core','coreMax');for(const p of B.parts){scalePool(p,'hp','max');p.maxhp=p.max;}b.hp=B.core+B.parts.reduce((n,p)=>n+p.hp,0);b.maxhp=B.coreMax+B.parts.reduce((n,p)=>n+p.max,0);}
   return b;
 }
@@ -25258,6 +25261,7 @@ function spawnSubBoss__inner(kind){
     b.maxhp=Math.ceil(b.maxhp*COOP_BOSS_MUL); b.hp=b.maxhp;
   }
   if(kind==='razorback'&&typeof razorbackPairInit==='function')razorbackPairInit(b);
+  if(run.stage===6&&b._bomber){const B=b._bomber;const rate=.58;B.frOriginalHp=B.core+B.parts.reduce((sum,p)=>sum+p.hp,0);B.core=Math.ceil(B.core*rate);B.coreMax=B.core;for(const p of B.parts){p.hp=Math.ceil(p.hp*rate);p.max=p.maxhp=p.hp;}b.hp=b.maxhp=B.core+B.parts.reduce((sum,p)=>sum+p.hp,0);}
   continueRewardMark(b);
   subBoss=b; subBossActive=true;
 }
@@ -28744,6 +28748,17 @@ function spaceShadowTick(dt,firing){
   }
   return false;
 }
+function spaceShadowIndicatorDraw(x,y,size,progress){
+  const w=76,h=7,left=Math.round(x-w/2),top=Math.max(PLAY.y+14,Math.round(y-size*1.35));
+  const full=progress>=.985,ready=progress>=SPACE_SHADOW_MIN_CHARGE/SPACE_SHADOW_FULL_CHARGE;
+  ctx.save();ctx.globalCompositeOperation='source-over';ctx.globalAlpha=1;
+  ctx.fillStyle='#090616';ctx.fillRect(left-2,top-2,w+4,h+4);
+  ctx.strokeStyle=full?'#f5eaff':'#af75ff';ctx.lineWidth=1;ctx.strokeRect(left-1.5,top-1.5,w+3,h+3);
+  ctx.fillStyle=full?'#f5eaff':ready?'#ba79ff':'#69518c';ctx.fillRect(left,top,Math.round(w*progress),h);
+  ctx.fillStyle='#e6d5ff';ctx.fillRect(left+Math.round(w*SPACE_SHADOW_MIN_CHARGE/SPACE_SHADOW_FULL_CHARGE),top,1,h);
+  campText(full?'READY!':'CHARGE '+Math.floor(progress*100)+'%',x,top+17,8,full?'#ffffff':'#d6b5ff');
+  ctx.restore();
+}
 function spaceVolleyFire(levelOverride){spaceVolleyLaunchRack(levelOverride==null?spaceVolleyLevel():levelOverride);}
 /* Volley Missiles are the Gravity ship's auto-missile rack, not a selectable weapon and not a
    bomb-button attack. Like the ground auto missiles, they launch alongside the primary while
@@ -28970,8 +28985,13 @@ function spaceVolleyLocks(seed,range,count){
   return [left,center,right];
 }
 function spaceBulletHit(b,pierce){
+  const lockedHammer=b._target&&b._target._retinaId==='hammer'&&b._target._retinaOwner===boss&&retinaTargetValid(b._target);
+  if(lockedHammer){
+    const t=b._target;
+    if(Math.hypot(b.x-t.x,b.y-t.y)<34){spaceDamageTarget(t,b.dmg||1,b);return t;}
+  }
   // Space weapons must test the moving hammer, including its detached outbound/return path.
-  if(boss&&bossActive&&!boss.dead&&boss._hammer&&bossHitTest(b.x,b.y)){
+  if(!lockedHammer&&boss&&bossActive&&!boss.dead&&boss._hammer&&bossHitTest(b.x,b.y)){
     if(hammerDiveReflect(boss,b))return null;
     if(!b._hit||!b._hit.includes(boss)){spaceDamageTarget(boss,b.dmg||1,b);if(b._hit)b._hit.push(boss);}
     return boss;
@@ -29056,7 +29076,8 @@ function spaceBulletTick(b,dt){
     /* A short launch fan precedes normal homing. Each missile keeps its own lock until
        the target dies or exits the finite forward column. */
     if(tgt&&b.t>=.12){
-      const want=Math.atan2(spaceTargetY(tgt)-b.y,tgt.x-b.x),da=Math.atan2(Math.sin(want-ang),Math.cos(want-ang));
+      const flank=typeof fr27HammerAim==='function'?fr27HammerAim(b,tgt):null;
+      const want=Math.atan2((flank?flank.y:spaceTargetY(tgt))-b.y,(flank?flank.x:tgt.x)-b.x),da=Math.atan2(Math.sin(want-ang),Math.cos(want-ang));
       ang+=clamp(da,-(3.2+b.lv*.42)*dt,(3.2+b.lv*.42)*dt);
     }
     /* Forward passive missiles never U-turn or orbit a dead lock. Retain the space triple fan. */
@@ -30514,7 +30535,7 @@ function updatePlayerLocks(dt){
     }
   }
   /* a broken lock still owes its queued launches - the enemy fires anyway, just unguided */
-  playerLocks=playerLocks.filter(L=> L.t<LOCK_MAX_T &&
+  playerLocks=playerLocks.filter(L=> L.t<(L.maxT||LOCK_MAX_T) &&
     !((L.state==='broken' || L.state==='released') && L.endT>=LOCK_FADE && lockPending(L)===Infinity));
   /* One warning voice shared by missiles and committed ground-bomb markers. */
   let gap=Infinity;
@@ -30522,9 +30543,9 @@ function updatePlayerLocks(dt){
     gap=Math.min(gap,clamp((q.warn-q.t)*.38,.12,.40));
   if(soonest<Infinity) gap=Math.min(gap,clamp(soonest*0.42, 0.055, 0.30));
   if(nearest<Infinity) gap=Math.min(gap,clamp(nearest/900,0.055,0.50));
+  if(run.stage===6&&s6Opening&&s6Opening.threatLock&&['arming','locked'].includes(s6Opening.threatLock.state))gap=Math.min(gap,s6Opening.allT<20?.12:.065);
   _lockHudGap=gap;
   if(gap===Infinity){ _lockBeepT=0; return; }
-  if(run.stage===6&&s6Opening&&s6Opening.phase==='lock')gap=.24;
   if(playerLocks.some(L=>L.src&&L.src._ovSonic&&L.src._ovSonic.phase==='missileTell'))gap=.42;
   _lockBeepT=Math.min(_lockBeepT,gap);
   _lockBeepT-=dt;
@@ -30535,14 +30556,16 @@ function updatePlayerLocks(dt){
 }
 function drawPlayerLocks(){
   if(!playerLocks.length || typeof player==='undefined' || !player || player.dead) return;
-  const x=player.x, y=player.y, now=performance.now();
+  const now=performance.now();
   for(const L of playerLocks){
+    const acquire=L.acquireFrom,k=acquire?clamp(L.t/acquire.dur,0,1):1;
+    const x=acquire?lerp(acquire.x,player.x,k):player.x,y=acquire?lerp(acquire.y,player.y,k):player.y;
     const pend=lockPending(L);
     let R, alpha=0.95, fam='retmb_', col='#ff2323', on=true;
     if(L.state==='arming'){
       const p=clamp(L.t/Math.max(0.05,L.dur),0,1);
       R=48-22*p; fam='retm_'; col='#ff4a2e';
-      const per=clamp(pend*0.42, 0.055, 0.30);                 // the flash rides the beep
+      const per=acquire?(k<1?.22:Math.max(.065,.12-L.t*.003)):clamp(pend*0.42, 0.055, 0.30);
       on=(Math.floor(L.t/per)%2)===0;
     } else if(L.state==='locked'){
       R=26+Math.sin(L.t*9)*1.5;
@@ -31759,17 +31782,17 @@ function _lockTargets(){
 }
 /* Directional Retina Scan upgrade: four independent authored retinas, each with a
    five-second firing window. Manual missile queues never spend passive ammo. */
-const RETINA_SCAN_CAP=16,RETINA_SCAN_LIFE=5,RETINA_SCAN_GAP=.05;
-function retinaScanEnabled(){return !!(run.retinaScan||spaceWeaponsActive());}
-function retinaScanHeld(){const K=keybindFor(_seat);return [...(K.retina||[]),...(K.charge||[])].some(k=>Input.down(k));}
+const RETINA_SCAN_CAP=128,RETINA_SCAN_LIFE=5,RETINA_SCAN_GAP=.05;
+function retinaScanEnabled(){return true;} // Multi-lock is now a dedicated standard action.
+function retinaScanHeld(){const K=keybindFor(_seat);return (K.multilock||[]).some(k=>Input.down(k));}
 function retinaScanState(){
-  if(!player._retinaScan)player._retinaScan={marks:[],queue:null};
+  if(!player._retinaScan)player._retinaScan={marks:[],queue:null,fireCd:0};
   return player._retinaScan;
 }
 function retinaScanClear(){player._retinaScan=null;}
 function retinaScanAdd(t){
-  if(!retinaScanEnabled()||!retinaTargetValid(t)||run.bombs<=0)return false;
-  const S=retinaScanState();if(S.queue||S.marks.length>=Math.min(RETINA_SCAN_CAP,run.bombs)||S.marks.some(m=>m.target===t))return false;
+  if(!retinaScanEnabled()||!retinaTargetValid(t))return false;
+  const S=retinaScanState();if(S.queue||S.marks.length>=RETINA_SCAN_CAP||S.marks.some(m=>m.target===t))return false;
   S.marks.push({target:t,phase:'seek',seekT:0,ox:player.x,oy:player.y-10,x:player.x,y:player.y-10,scale:2.2,spin:0,_tick:0,animT:0,lockT:RETINA_SCAN_LIFE});
   if(Audio.SFX.retinaCharge)Audio.SFX.retinaCharge();return true;
 }
@@ -31787,21 +31810,18 @@ function retinaScanDirection(dx,dy){
   return retinaScanAdd(candidates[0]);
 }
 function retinaScanInput(dt){
-  if(!retinaScanEnabled()||player.dead||!retinaScanHeld())return;
-  const keys=keybindFor(_seat),S=retinaScanState();
-  S.dirCd=Math.max(0,(S.dirCd||0)-dt);
-  for(const [name,x,y]of [['left',-1,0],['right',1,0],['up',0,-1],['down',0,1]]){
-    const bind=keys[name]||[],tapped=bind.some(k=>Input.tap(k));
-    if(tapped||S.dirCd<=0&&bind.some(k=>Input.down(k))){
-      if(retinaScanDirection(x,y))S.dirCd=.14;
-    }
-  }
-  // Space bosses are often the only target. Reacquire after each volley while
-  // Scan is held; the next missile press should not require another direction tap.
-  if(spaceWeaponsActive()&&!S.queue&&!S.marks.length&&run.bombs>0){
-    const next=_lockTargets().filter(retinaTargetValid).sort((a,b)=>Math.hypot(a.x-player.x,a.y-player.y)-Math.hypot(b.x-player.x,b.y-player.y))[0];
-    if(next)retinaScanAdd(next);
-  }
+  if(player.dead)return;
+  const S=player._retinaScan;
+  if(!retinaScanHeld()){if(S)S.acquiring=false;return;}
+  const scan=retinaScanState();
+  if(!scan.acquiring){scan.acquiring=true;scan.scanCd=0;retina.target=null;retina.phase=null;}
+  if(scan.queue||scan.fireWhenLocked)return;
+  scan.scanCd=Math.max(0,(scan.scanCd||0)-dt);
+  if(scan.scanCd>0)return;
+  const candidates=_lockTargets().filter(t=>retinaTargetValid(t)&&t.x>=camLeftX()&&t.x<=camRightX()&&
+    (t._drawY??t.y)>=viewTopY()&&(t._drawY??t.y)<=VH&&!scan.marks.some(m=>m.target===t));
+  candidates.sort((a,b)=>Math.hypot(a.x-player.x,a.y-player.y)-Math.hypot(b.x-player.x,b.y-player.y));
+  if(candidates.length&&retinaScanAdd(candidates[0]))scan.scanCd=.22;
 }
 function retinaScanHeldFire(){
   const S=player._retinaScan,K=keybindFor(_seat);
@@ -31809,16 +31829,16 @@ function retinaScanHeldFire(){
 }
 function retinaScanFire(){
   if(!retinaScanEnabled()||player.dead||specialActive('cole')||specialActive('lizzie'))return false;
-  const S=retinaScanState();if(S.queue)return true;
+  const S=retinaScanState();if(S.queue||S.marks.length&&(S.fireCd||0)>0)return true;
   const ready=S.marks.filter(m=>m.phase==='locked'&&m.lockT>0&&retinaTargetValid(m.target));
   if(!ready.length){if(S.marks.length){S.fireWhenLocked=true;return true;}return false;} // queue a tapped launch until acquisition finishes
-  if(run.bombs<=0){if(Audio.SFX.hit)Audio.SFX.hit();return true;}
+  if(run.bombs<=0){S.fireCd=.32;if(Audio.SFX.hit)Audio.SFX.hit();return true;}
   S.queue={targets:ready.slice(0,run.bombs).map(m=>m.target),next:0};return true;
 }
 function retinaScanTick(dt){
   const S=player._retinaScan;if(!S)return;
   if(player.dead||!retinaScanEnabled()){retinaScanClear();return;}
-  let expired=false,acquired=false;S.cueCd=Math.max(0,(S.cueCd||0)-dt);
+  let expired=false,acquired=false;S.cueCd=Math.max(0,(S.cueCd||0)-dt);S.fireCd=Math.max(0,(S.fireCd||0)-dt);
   for(const m of S.marks){
     m.animT+=dt;m.spin+=dt*(m.phase==='seek'?14:Math.max(0,m.lockSpin||0));
     if(!retinaTargetValid(m.target)){m.phase=null;continue;}
@@ -31828,7 +31848,7 @@ function retinaScanTick(dt){
       m.x=lerp(m.ox,t.x,e);m.y=lerp(m.oy,y,e);m.scale=lerp(2.2,1,e);
       if(p>=1){m.phase='locked';m.lockT=RETINA_SCAN_LIFE;m.lockSpin=7;acquired=true;}
     }else if(m.phase==='locked'){
-      m.x=t.x;m.y=y;m.lockSpin=Math.max(0,(m.lockSpin||0)-dt*14);m.lockT-=dt;
+      m.x=t.x;m.y=y;m.lockSpin=Math.max(0,(m.lockSpin||0)-dt*14);m.lockT=retinaScanHeld()?RETINA_SCAN_LIFE:m.lockT-dt;
       if(m.lockT<=0){m.phase=null;expired=true;}
     }
   }
@@ -31845,8 +31865,8 @@ function retinaScanTick(dt){
         const first=pBullets.length;
         if(useBomb(t)){for(let i=first;i<pBullets.length;i++)pBullets[i].seat=_seat;}
       }
-      S.marks=S.marks.filter(m=>m.target!==t);Q.next=RETINA_SCAN_GAP;
-      if(!Q.targets.length||run.bombs<=0){S.queue=null;S.marks=[];}
+      if(!retinaScanHeld())S.marks=S.marks.filter(m=>m.target!==t);Q.next=RETINA_SCAN_GAP;
+      if(!Q.targets.length||run.bombs<=0){S.queue=null;S.fireCd=.32;if(!retinaScanHeld())S.marks=[];}
     }
   }
 }
@@ -31913,7 +31933,8 @@ function updateRetina(dt){
         if(specialActive('cole'))        fired=retinaFire();
         else if(specialActive('lizzie')) fired=lizzieFire();
         if(!fired) fired=useBomb();
-        if(fired===true){ r.holdCd=0.32; r.lockT=5; r._autoMissileFired=true; }   // stay locked & topped up while you keep holding both
+        r.holdCd=0.32; // Empty ammunition must not retrigger its sound sixty times a second.
+        if(fired===true){ r.lockT=5; r._autoMissileFired=true; }   // stay locked & topped up while you keep holding both
       }
     }
     if(cHeld) r.lockT=Math.max(r.lockT,0.4);   // holding C alone keeps the lock alive, just doesn't fire on its own
@@ -33140,7 +33161,7 @@ function startRun(fromStage=1){
   if(run.mode==='arcade'){ beginStage(fromStage); }
   else {
     campBeginFresh();
-    lizzieSkinUnlocked=false;coleUnlocked=false;furyLegacyShip=false;
+    lizzieSkinUnlocked=false;coleUnlocked=coleSessionUnlocked;furyLegacyShip=false;
     /* A NEW CAMPAIGN now owns a real prologue before the tactical map. Continue/load routes never
        replay it: they already represent an operation in progress and open the map immediately. */
     var _firstBoot = (typeof campaign!=='undefined') && !campaign._booted;
@@ -34688,6 +34709,11 @@ function updatePlay(dt){
   for(const _s of seatList()){
     if(withSeat(_s, function(){
     if(player.out) return false;         // this seat has spent every life; it is a spectator now
+    if(s6OpeningControlsLocked()){
+      player.invuln=Math.max(0,player.invuln-1);player._spawnClearT=0;
+      player._vx=0;player._vy=0;player._bank=0;
+      return false;
+    }
     if(!player.dead){
     // double-tap left/right -> barrel roll (before normal movement so a roll can start this frame)
     let _wheelLock=false;
@@ -35060,7 +35086,7 @@ function updatePlay(dt){
           if(curStage.boss){
             spawnBoss(run.stage===6&&s6Wing&&s6Wing.route==='right'?'rebelsquad':curStage.boss);
             if(run.stage===1&&boss&&boss.kind==='damkeeper')Audio.stopMusic();
-            else if(boss&&boss._whv){}   // 0918: the Warhive keeps the stage music; its ace starts the boss track
+            else if(boss&&boss._whv)Audio.startMusic('boss6');
             else Audio.startMusic('boss'+run.stage);
           }
           else { bossDefeated=true; stageEnding=0; }   // no boss authored yet (Stage 6): clear the level directly
@@ -35080,7 +35106,7 @@ function updatePlay(dt){
       if(chance(lifeDropChance(.02))){ dropPowerup(rnd(camLeftX()+40,camRightX()-40), -10, 'life'); }
     }
     // trigger boss (via WARNING)
-    if(!bossWarned && stageTimer>=curStage.length && enemies.length<=7 && (run.stage!==7||mapScroll>=(typeof s7mEndScroll==='function'?s7mEndScroll():levelScrollRange()-610)-8)){
+    if(!bossWarned && stageTimer>=curStage.length && enemies.length<=7 && (run.stage!==6||!s6Wing||s6Wing.route&&(s6Wing.routeFightT||0)>=32) && (run.stage!==7||mapScroll>=(typeof s7mEndScroll==='function'?s7mEndScroll():levelScrollRange()-610)-8)){
       bossWarned=true; warnT=2.4; warnKind='boss';
       /* the new klaxon, with bossAlarm behind it. 2.60s TAME gate - a warning that can retrigger
          is not a warning. */
@@ -36231,7 +36257,9 @@ function updatePlay(dt){
       const t=retinaTargetValid(b.tgt)?b.tgt:null;
       if(!t)b.tgt=null;
       const tx=(t&&!t.dead)?t.x:b.x, ty=(t&&!t.dead)?((t._drawY!=null?t._drawY:t.y)):-40;
-      const a=Math.atan2(ty-b.y,tx-b.x);
+      const flank=t&&typeof fr27HammerAim==='function'?fr27HammerAim(b,t):null;
+      let a=Math.atan2((flank?flank.y:ty)-b.y,(flank?flank.x:tx)-b.x);
+      if(b._frHammerRoute){const old=Number.isFinite(b.ang)?b.ang:-Math.PI/2,turn=Math.atan2(Math.sin(a-old),Math.cos(a-old));a=old+clamp(turn,-12*dt,12*dt);}
       b.vx=Math.cos(a)*b.spd; b.vy=Math.sin(a)*b.spd; b.x+=b.vx; b.y+=b.vy; b.ang=a;
       if(Math.random()<0.6) particles.push({x:b.x-b.vx,y:b.y-b.vy,vx:rnd(-0.3,0.3),vy:rnd(0.2,0.8),life:rnd(0.2,0.4),t:0,r:rnd(1,2),color:'#9aa0aa'});
       let reach=(t&&!t.dead)? (Math.abs(b.x-tx)<14&&Math.abs(b.y-ty)<14) : (b.y<PLAY.y+6);
@@ -36765,7 +36793,7 @@ function updatePlay(dt){
       }
       /* THE RETINA LOCK'S GRANT (0912) - see enemyLockOn. A lock-bound round steers only while its
          lock holds, and freezes its heading for good once it is close or the lock is gone. */
-      if(b._lockId && !b._committed){
+      if(b._lockId && !b._committed && (!b._s6Opening || b.t>=.16)){
         const _L=lockById(b._lockId);
         if(_L && _L.state==='locked' && player && !player.dead){
           const _dx=player.x-b.x, _dy=player.y-b.y;
@@ -36778,8 +36806,8 @@ function updatePlay(dt){
       if(b._accel){ b.spd=Math.min(b._maxspd||4.0,(b.spd||2.4)+b._accel); }   // missile builds speed after launch (readable then fast)
       const spd=(b.spd||2.7)*(DIFF?DIFF.ebSpeed:1); b.vx=Math.cos(ang)*spd; b.vy=Math.sin(ang)*spd; b.ang=ang;
       for(const pb of pBullets){ if(pb.dead||b._weaponProof) continue;
-        if(pb.kind==='beam'){ if(Math.abs(pb.x-b.x)<((pb.w||14)/2+b.w/2) && b.y<=(pb.bot!=null?pb.bot:player.y) && b.y>=(pb.top!=null?pb.top:PLAY.y)){ b.dead=true; if(b._s7warden)combatAtlasFx(b.x,b.y,'cfx_stage7_warden_projectiles',4,3,8,4,{life:.34,hpx:112,wpx:126,blend:'lighter'});else if(/^s5/.test(b.kind||''))combatAtlasFx(b.x,b.y,'cfx_stage5_xeno_projectiles',4,3,8,4,{life:.30,hpx:102,wpx:116,blend:'lighter'});else if(b.kind==='s1jungleMissile') s1CombatImpact(b.x,b.y,false,46); else if(run.stage===4&&(boss&&boss._s4war||subBoss&&subBoss._s4war))stage4InterceptFeedback(b);else explode(b.x,b.y,7,'red'); break; } }
-        else if(Math.abs(pb.x-b.x)<((pb.w||4)/2+b.w/2) && Math.abs(pb.y-b.y)<((pb.h||8)/2+b.h/2)){ b.dead=true; if(b._s7warden)combatAtlasFx(b.x,b.y,'cfx_stage7_warden_projectiles',4,3,8,4,{life:.34,hpx:112,wpx:126,blend:'lighter'});else if(/^s5/.test(b.kind||''))combatAtlasFx(b.x,b.y,'cfx_stage5_xeno_projectiles',4,3,8,4,{life:.30,hpx:102,wpx:116,blend:'lighter'});else if(b.kind==='s1jungleMissile') s1CombatImpact(b.x,b.y,false,46); else explode(b.x,b.y,7,'red'); if(!pb.pierce) pb.dead=true; break; }
+        if(pb.kind==='beam'){ if(Math.abs(pb.x-b.x)<((pb.w||14)/2+b.w/2) && b.y<=(pb.bot!=null?pb.bot:player.y) && b.y>=(pb.top!=null?pb.top:PLAY.y)){ b.dead=true; if(b._s6Opening)s6OpeningMissileImpact(b);else if(b._s7warden)combatAtlasFx(b.x,b.y,'cfx_stage7_warden_projectiles',4,3,8,4,{life:.34,hpx:112,wpx:126,blend:'lighter'});else if(/^s5/.test(b.kind||''))combatAtlasFx(b.x,b.y,'cfx_stage5_xeno_projectiles',4,3,8,4,{life:.30,hpx:102,wpx:116,blend:'lighter'});else if(b.kind==='s1jungleMissile') s1CombatImpact(b.x,b.y,false,46); else if(run.stage===4&&(boss&&boss._s4war||subBoss&&subBoss._s4war))stage4InterceptFeedback(b);else explode(b.x,b.y,7,'red'); break; } }
+        else if(Math.abs(pb.x-b.x)<((pb.w||4)/2+b.w/2) && Math.abs(pb.y-b.y)<((pb.h||8)/2+b.h/2)){ b.dead=true; if(b._s6Opening)s6OpeningMissileImpact(b);else if(b._s7warden)combatAtlasFx(b.x,b.y,'cfx_stage7_warden_projectiles',4,3,8,4,{life:.34,hpx:112,wpx:126,blend:'lighter'});else if(/^s5/.test(b.kind||''))combatAtlasFx(b.x,b.y,'cfx_stage5_xeno_projectiles',4,3,8,4,{life:.30,hpx:102,wpx:116,blend:'lighter'});else if(b.kind==='s1jungleMissile') s1CombatImpact(b.x,b.y,false,46); else explode(b.x,b.y,7,'red'); if(!pb.pierce) pb.dead=true; break; }
       }
       if(b.dead) continue;
     }
@@ -37489,7 +37517,7 @@ function playerHit(source){
   run.infusion=null;                                                     /* the element goes with the gun (0917) */
   if(typeof forgeApply==='function') forgeApply();                       /* ...unless it was FORGED on (0917) */
   if(run.wvars) run.wvars=WEAPONS.map(()=>null);
-  run.spaceWeapon=(run.spaceWeapon===1)?1:0;run.spaceLevels=[0,1,1];run._spaceVolleyCd=0;   // laser to LEVEL 0 (Mike, 0903)
+  run.spaceWeapon=0;run.spaceLevels=[0,1,1];run.spaceAkimbo=0;run._spaceVolleyCd=0;
   if(run._groundLoadout){
     run._groundLoadout.wlevel=1;run._groundLoadout.wlevels=WEAPONS.map(()=>1);
     run._groundLoadout.missileLevel=1;
@@ -38010,6 +38038,7 @@ function groundTargetingCancel(owner){for(const q of groundTargetingFx)if(!owner
 function groundTargetingPhase(q){return clamp(q.t/q.warn,0,1);}
 function groundTargetingTargetX(q){let x=q.x;for(const s of seatList())if(s===q.targetSeat)withSeat(s,()=>{if(!player.dead)x=player.x;});return x;}
 function groundTargetingStrikePlayers(q){
+  if(q._fztEye)return; // The rendered eye beams own damage; retinas are warnings only.
   for(const s of seatList())withSeat(s,()=>{if(player.dead||q.hitSeats[s])return;const laneHit=q.kind==='missile'?dist2(player.x,player.y,q.x,q.y)<=q.radius*q.radius:Math.abs(player.x-q.x)<=q.radius&&(q.lane||Math.abs(player.y-q.y)<=Math.max(32,q.radius*.9));if(laneHit){q.hitSeats[s]=1;playerHit();}});
 }
 function groundTargetingTick(dt){
@@ -38168,7 +38197,7 @@ function hammerBossDamage(b,dmg){
   if(h.state==='giant_dive'){if(hammerMissile(_dmgBullet)){hammerDiveCounter(b);return dmg;}return 0;}
   if(h.state==='whirlwind'||h.state==='whirl_turn'){
     // A whole volley/beam tick must not count as several separate impacts at once.
-    if(dmg>0&&(h.whirlHitCd||0)<=0){h.whirlHitCd=.12;h.whirlHits=(h.whirlHits||0)+(hammerMissile(_dmgBullet)?2:1);h.hammerHP-=dmg;
+    if((hit==='hammer'||b._hammerTime)&&dmg>0&&(h.whirlHitCd||0)<=0){h.whirlHitCd=.12;h.whirlHits=(h.whirlHits||0)+(hammerMissile(_dmgBullet)?2:1);h.hammerHP-=dmg;
       if(h.whirlHits>=(hammerFurious()?8:hammerHard()?6:4)||h.hammerHP<=0)hammerWhirlDisarm(b);}
     return hit==='hammer'?0:dmg;
   }
@@ -38271,7 +38300,7 @@ function hammerWeaponTargetable(b){const h=b._hammer;
   return !h.hammerDestroyed&&(h.mode==='hammer'||h.mode==='storm')&&['hammer','warn','spin','recover','shield','whirl_warn','whirlwind','whirl_turn','storm_raise','storm_idle','storm_warn','storm_split','revenge_charge'].includes(h.state);
 }
 function hammerStormStart(b){const h=b._hammer;
-  h.mode='storm';h.phasePending=false;h.hammerDestroyed=false;h.hammerHP=h.hammerMax;h.throw=null;h.whirl=null;h.knockedHammer=null;h.pillars=[];h.stormWaves=[];h.stormCycle=0;h.charged=false;h.lightningCue=false;b._noHit=false;
+  h.mode='storm';h.restorationSeen=true;h.phasePending=false;h.hammerDestroyed=false;h.hammerHP=h.hammerMax;h.throw=null;h.whirl=null;h.knockedHammer=null;h.pillars=[];h.stormWaves=[];h.stormCycle=0;h.charged=false;h.lightningCue=false;b._noHit=false;
   h.stormHome={x:worldWidth()/2,y:VH*.34};h.stormRecovery=null;h.chromiumT=0;h.empowered=false;h.empowerLevel=0;
   h.recovery={status:'charging',amount:Math.min(b.maxhp*.25,Math.max(0,b.maxhp-b.hp)),applied:0,elapsed:0,duration:6,
     coreHP:Math.ceil(24*((DIFF&&DIFF.eHp)||1)),startHP:b.hp};h.recovery.coreMax=h.recovery.coreHP;
@@ -38596,7 +38625,7 @@ function hammerChainStart(b){
 }
 function hammerArsenalNext(b){
   const h=b._hammer;h.arsenalStep=((h.arsenalStep||0)+1)%4;
-  if(h.arsenalStep===1)hammerSpellStart(b);else if(h.arsenalStep===3)hammerState(b,'mega_charge');else hammerChainStart(b);
+  if(h.arsenalStep===2&&!h.restorationSeen)hammerStormStart(b);else if(h.arsenalStep===1)hammerSpellStart(b);else if(h.arsenalStep===3)hammerState(b,'mega_charge');else hammerChainStart(b);
 }
 
 function hammerSpellStart(b){
@@ -38635,7 +38664,8 @@ function hammerWhirlLane(b,first){
   hammerState(b,first?'whirl_warn':'whirl_turn');
 }
 function hammerWhirlStart(b){
-  const h=b._hammer;h.giantLeft=2;h.countered=false;h.whirlHits=0;h.whirlHitCd=0;
+  const h=b._hammer;h.whirlSeen=true;h.giantLeft=2;h.countered=false;h.whirlHits=0;h.whirlHitCd=0;
+  h.hammerHP=Math.max(h.hammerHP,h.hammerMax*(hammerFurious()?4:hammerHard()?3:2));
   h.whirl={l:24,r:worldWidth()-24,dir:player.x>=b.x?1:-1,pass:0,passes:hammerFurious()?4:hammerHard()?3:2,reel:0};
   hammerWhirlLane(b,true);if(Audio.SFX.hammerSpin)Audio.SFX.hammerSpin();
 }
@@ -38861,13 +38891,13 @@ function hammerCombatDraw(b){
 
 function hammerBossTick(b,dt){
   const h=b._hammer;h.chromiumT=(h.chromiumT||0)+dt;if(h.coreBurst)h.coreBurst.t+=dt;
-  if(!h.balance0922&&!b._noHit){const k=diffKey==='furious'?3.0:diffKey==='hard'?2.5:2.1;b.hp*=k;b.maxhp*=k;h.balance0922=true;}
+  if(!h.balance0922&&!b._noHit){const k=diffKey==='furious'?5.1:diffKey==='hard'?4.25:3.57;b.hp*=k;b.maxhp*=k;h.balance0922=true;}
   h.rage=Math.max(0,(h.rage||0)-dt);
   h.chainMuzzle=Math.max(0,(h.chainMuzzle||0)-dt);h.chainDebrisT=Math.max(0,(h.chainDebrisT||0)-dt);h.chainSfxCd=Math.max(0,(h.chainSfxCd||0)-dt);if(h.state==='chaingun')h.chainSpin=(h.chainSpin||0)+dt*(10+36*(h.chainHeat||0));if(h.leapFx)h.leapFx=Math.min(.56,h.leapFx+dt);
   h.whirlHitCd=Math.max(0,(h.whirlHitCd||0)-dt);
   h.t+=dt;h.shotCd-=dt;h.hitCd=Math.max(0,(h.hitCd||0)-dt);const homeX=(camLeftX()+camRightX())/2,homeY=VH*.34,fur=hammerFurious(),hp=b.hp/(b.maxhp||1);
   if(h.mode==='hammer'&&hp<=.5)h.phasePending=true;
-  if(h.phasePending&&['hammer','leap_reset','shield'].includes(h.state)&&h.ballSeen)hammerPhaseTwoStart(b);
+  if(h.phasePending&&['hammer','leap_reset','shield'].includes(h.state)&&h.ballSeen){if(!h.whirlSeen)hammerWhirlStart(b);else hammerPhaseTwoStart(b);}
   else if(h.phasePending&&!h.ballSeen&&['hammer','leap_reset','shield'].includes(h.state)){hammerBallArm(b);hammerState(b,'curl');}
   if(hammerStormTick(b,dt))return;
   if(hammerCombatTick(b,dt))return;
@@ -38876,7 +38906,7 @@ function hammerBossTick(b,dt){
   else if(h.state==='unfold'){if(h.t>=2){b._noHit=false;b.enter=false;hammerState(b,'hammer');}}
   else if(h.state==='hammer'){
     b.x+=clamp(homeX-b.x,-110*dt,110*dt);b.y+=clamp(homeY-b.y,-110*dt,110*dt);
-    if(h.t>=hammerIdleDuration(h.comboPending)){if(h.comboPending){h.comboPending=false;hammerTarget(b);hammerState(b,'warn');}else if(h.attackCycle%4===3)hammerWhirlStart(b);else if(h.attackCycle%3===2)hammerBoomerangStart(b);else{hammerTarget(b);hammerState(b,'warn');}}
+    if(h.t>=hammerIdleDuration(h.comboPending)){if(h.comboPending){h.comboPending=false;hammerTarget(b);hammerState(b,'warn');}else if(!h.whirlSeen&&h.attackCycle>=1||h.attackCycle%4===3)hammerWhirlStart(b);else if(h.attackCycle%3===2)hammerBoomerangStart(b);else{hammerTarget(b);hammerState(b,'warn');}}
   }else if(h.state==='spin'){const k=clamp(h.t/HAMMER_SPIN_TIME,0,1);h.spinAngle+=dt*(15+42*k);if(h.t>=HAMMER_SPIN_TIME)hammerBoomerangRelease(b);}
   else if(h.state==='hammer_catch'){
     if(h.t>=.65){if(h.catchRetaliate)hammerSpiralArm(b);else hammerState(b,h.mode==='storm'?'storm_idle':'hammer');}
@@ -39417,6 +39447,7 @@ function ovSonicMissileVolley(b,index){
 function ovSonicComboTick(b,dt){
   const S=b._ovSonic;S.t+=dt;
   if(S.phase==='waveTell'){
+    combatWarningTick(b,'sonicWave',S.t,2.1);
     b.y=lerp(b.y,VH*.27,Math.min(1,dt*2.3));
     b.x=lerp(b.x,(camLeftX()+camRightX())/2,Math.min(1,dt*5));S.angle=Math.PI/2;b._pivot=0;
     if(S.t>=2.1){S.phase='waves';S.t=0;}
@@ -39428,9 +39459,10 @@ function ovSonicComboTick(b,dt){
   }
 }
 function ovSonicWarningDraw(b){
-  const S=b._ovSonic;if(!S)return;
-  const progress=S.phase==='waveTell'?clamp(S.t/2.1,0,.999):S.phase==='missileTell'?clamp(S.t/2.5,0,.999):.999;
-  l23WarnSymbolDraw(b,{family:'rime',t:progress,warm:1,released:false});
+  const S=b._ovSonic;if(!S||S.phase!=='waveTell')return;
+  const m=ovFacingMount(b,0,60),progress=clamp(S.t/2.1,0,.999);
+  combatWarningDraw(b,{x:m.x,y:m.y,ex:m.x,ey:VH+40,progress,
+    width:viewW()*.84,alertX:b.x,alertY:b.y-65,blinkT:S.t});
 }
 function ovSonicWaveHit(b,p,hx,hy){
   const a=b._south?0:b.ang-Math.PI/2,c=Math.cos(a),s=Math.sin(a),dx=p.x-b.x,dy=p.y-b.y;
@@ -39755,7 +39787,9 @@ function warhiveInit(b){
     parts:{L:{hp:tMax,max:tMax,dead:false,fl:0}, R:{hp:tMax,max:tMax,dead:false,fl:0}, door:{hp:Math.round(tMax/2),max:Math.round(tMax/2),dead:false,fl:0}},
     doorOpen:false, fanA:0, fanV:0, jets:[], launched:0, jetN:hard?8:6, launchCd:0,
     shots:[], can:{cd:2.2, i:0, seq:null}, beam:null, deadT:0, fx:[], ace:null};
-  b.x=b._whv.cx; b.y=b._whv.cy;
+  const W=b._whv;W.aceMax=b.maxhp;W.coreMax=W.core=Math.ceil(1200*(easy?.8:fur?1.4:hard?1.2:1));
+  b.maxhp=b.hp=W.coreMax+Object.values(W.parts).reduce((sum,p)=>sum+p.max,0);
+  b.x=W.cx; b.y=W.cy;
   whvWarm();
 }
 /* ---------- carrier ---------- */
@@ -39867,7 +39901,7 @@ function whvCarrierTick(b,dt){
   whvCannonTick(b,dt); whvBeamTick(b,dt);
   for(const id in W.parts){ const p=W.parts[id]; p.fl=Math.max(0,p.fl-dt); }
   b.x=W.cx; b.y=W.cy;
-  if(W.parts.L.dead&&W.parts.R.dead)whvDeathStart(b);
+  if(W.core<=0||(W.parts.L.dead&&W.parts.R.dead)){W.core=0;for(const p of Object.values(W.parts))p.hp=0;b.hp=0;whvDeathStart(b);}
 }
 /* ---------- the carrier's fall, and the ace coming out of it ---------- */
 function whvDeathStart(b){
@@ -39897,7 +39931,7 @@ function whvAceSpawn(b){
   const W=b._whv, d=whvPartPos(b,'door');
   W.ace={x:d.x,y:d.y+W.dy,vx:0,vy:0,t:0,st:'emerge',roll:null,somer:null,dash:null,rollCd:1.2,somerCd:3,gunCd:1.2,mslCd:4.5,dashCd:7,
     rng:{ox:0,oy:0,t:0}, orb:null, desp:null, inverted:false, invSomerCd:4, pvx:0, ppx:player.x, trail:[]};
-  b.w=86; b.h=88; b.hp=b.maxhp; b.dmgState=0; b.name='NIGHTWING ACE';
+  b.w=86; b.h=88; b.maxhp=W.aceMax||b.maxhp;b.hp=b.maxhp; b.dmgState=0; b.name='NIGHTWING ACE';
   if(typeof Audio!=='undefined'&&Audio.startMusic)Audio.startMusic('boss'+run.stage);
   whvSfx('launch'); whvSfx('helixBurst');
   if(typeof fxBurst==='function')fxBurst(d.x,d.y+W.dy,44,{color:'#5a8cff',rings:2,sparks:16});
@@ -40059,12 +40093,14 @@ function warhiveDamage(b,dmg){
   b._whvHit=null;
   if(id==='L'||id==='R'||id==='door'){ markHit(b); if(typeof weaponHitSfx==='function')weaponHitSfx('normal'); whvPartDamage(b,id,dmg);
     if(typeof stageStats!=='undefined')stageStats.dmgDealt+=dmg; }
-  else { if(typeof weaponHitSfx==='function')weaponHitSfx('armor'); }
+  else if(id==='hull'){W.core=Math.max(0,W.core-dmg);b.flash=.14;markHit(b);weaponHitSfx('normal');if(typeof stageStats!=='undefined')stageStats.dmgDealt+=dmg;}
+  b.hp=Math.max(0,W.core)+Object.values(W.parts).reduce((sum,p)=>sum+Math.max(0,p.hp),0);
   return 0;
 }
 function warhiveRetinaTargets(b,a){
   const W=b._whv;
   if(W.mode!=='carrier'||!whvOnScreen(b))return;
+  if(W.core>0)a.push(retinaDynamicPiece(b,'hull','carrier hull',()=>({x:W.cx,y:W.cy-38,hp:W.core,dead:b.dead||W.mode!=='carrier'||!whvOnScreen(b)}),d=>{b._whvHit='hull';hitBoss(d);},130,80));
   for(const id of ['L','R','door']){ if(W.parts[id].dead)continue;
     const state=()=>{const q=whvPartPos(b,id);return{x:q.x,y:q.y,hp:W.parts[id].hp,dead:W.parts[id].dead||W.mode!=='carrier'||!whvOnScreen(b)};};
     a.push(retinaImpactTarget(b,'whv '+id,id==='door'?'bay door':'thruster',state,id==='door'?70:64,id==='door'?70:64)); }
@@ -42323,6 +42359,7 @@ function gravityModeDrawShip(drawX,drawY,drawSize,planeH){
     spaceAtlasDraw(ctx,'shadow_'+lv+'_charge_'+f,hp.x,hp.y,s,s,true,null);
     if(p>=0.985){ctx.globalAlpha=0.34+0.24*Math.sin(performance.now()*0.025);spaceAtlasDraw(ctx,'shadow_'+lv+'_charge_2',hp.x,hp.y,s*1.28,s*1.28,true,null);}
     ctx.restore();
+    spaceShadowIndicatorDraw(x,y,size,p);
   }
   if(newFury)furyShipVeil(G);
   if(phase!=='active'){
@@ -43310,7 +43347,7 @@ function drawModularJet(e){
     ctx.drawImage(XART.get(module),-ms/2,-ms/2,ms,ms);ctx.restore();}
   if(e.flash>0&&typeof xartTint==='function'){const h=xartTint(hull,hitFlashColor(e,'#ffffff'),.74);
     if(h){ctx.save();ctx.translate(e.x,e.y);ctx.rotate(e.spin||0);ctx.drawImage(h,-size/2,-size/2,size,size);ctx.restore();}}
-  ctx.restore();return true;
+  return true;
 }
 function drawToxicJet(e){
   if(!e._toxicJet||e.dead||e._dyingT!=null||!XART.rdy('overhaul_toxic_jet'))return false;
@@ -43395,6 +43432,7 @@ function drawEnemy(e){
   /* BAKED DAMAGE STATE FOLLOWS HP (drop 0809l). Resolved at draw rather than on the damage
      call: hp is reduced from several places — hitEnemy, splash, collision, the lightning —
      and hooking one of them means a hull that never changes when killed by the others. */
+  if(run.stage===8&&e._s8mega&&typeof fr27RealmRow==='function'&&drawS8Mega(e))return;
   if(furyFleetDraw(e))return;
   if(e._nef) e.art=nefArtFor(e);
   if(e && e._modTank && drawModularTank(e)) return;
@@ -47269,7 +47307,7 @@ function combatWarningDraw(owner,q){
     B={family:'rime',angles:[a],t:(owner.t||stateT||0),warm:1,released:false,alertX:q.alertX,alertY:q.alertY,alpha:q.alpha,blinkT:q.blinkT};
   if(!q.alertOnly){ctx.save();ctx.translate(p.x,p.y);ctx.rotate(a-Math.PI/2);
     l23FovDraw(owner,B,0,p,k,q.width||20);ctx.restore();}
-  B.t=k;if(!q.fieldOnly)l23WarnSymbolDraw(owner,B);
+  B.t=k;if(!q.fieldOnly&&run.stage!==6)l23WarnSymbolDraw(owner,B);
 }
 function combatWarningTick(owner,id,elapsed,duration,silent){
   if(!owner)return;const warnings=owner._combatWarnings||(owner._combatWarnings={});
@@ -47369,7 +47407,7 @@ function furnaceHeadCombat(b,dt){
     for(const offset of F.eyeOffsets){
       const x=clamp(base+offset,48,W-48);
       const q=typeof groundTargetingSpawn==='function'?groundTargetingSpawn({kind:'lava',x,y:VH-40,
-        owner:b,track:false,warn:warm,active:.45,radius:split?36:40,size:split?94:106,lane:true,
+        owner:b,track:false,warn:warm,active:.45,radius:0,size:split?94:106,lane:false,onImpact:()=>{},
         sound:'furnaceLaserBurst',shake:8}):{x,y:VH-40,dead:false};
       q._fztEye=true;F.eyeTargets.push(q);
     }
@@ -47389,6 +47427,7 @@ function furnaceHeadCombat(b,dt){
     // The perspective reticle artwork sits above its ground anchor. End the ray on the visible ring.
     const eyeEnd=target?{x:target.x,y:target.y-38}:null;
     if(eyeEnd)F.eye[side]=fztAim(p,eyeEnd);
+    if(cycle<warm&&target)F.tells.push({x:p.x,y:p.y,ex:eyeEnd.x,ey:eyeEnd.y,progress:cycle/warm,width:18,kind:'line'});
     if(cycle<warm&&target){F.eyeMuzzles.push({x:p.x,y:p.y,frame:cycle<lock?0:1});}
     else if(cycle<warm+.32&&target){
       const len=Math.hypot(eyeEnd.x-p.x,eyeEnd.y-p.y);
@@ -48686,7 +48725,7 @@ function navalTick(e, dt){
         const mz={x:base.x+Math.cos(ang)*14,y:base.y+Math.sin(ang)*14};
         /* straight from the turret, no arc and no gravity — Mike: "they act like really
            traveling bullets from the turret" */
-        eShootT(mz.x, mz.y, ang, 4.5, 's1bullet', {silent:true});
+        for(const spread of [-.24,0,.24])eShootT(mz.x,mz.y,ang+spread,4.5,'s1bullet',{silent:true,noMuzzle:true});
         if(Audio.SFX.enemyMachineGunHeavy)Audio.SFX.enemyMachineGunHeavy();
         navalFlash(e, mz, 0.78, S1_MUZZLE_ROTARY,{n:6,hpx:33,life:0.13,ox:0,oy:0.46});
         if(e._burst<=0) e._burstCd=NAVAL_BURST_GAP;   // the fixed silence begins
@@ -51817,7 +51856,7 @@ function _drawEffectsInner(){
            retain their existing presentation scale; only classed unit deaths use this contract. */
         const sz=(ex.max||ex.r)*(ex.cls?1.25:EXPLODE_SCALE);
         ctx.save(); ctx.globalAlpha=1;
-        const im=(ex.chromiumTone!=null?hammerChromiumSheet(key,ex.chromiumTone):null)||XART.get(key),iw=im.naturalWidth||im.width,ih=im.naturalHeight||im.height,s2=sz/Math.max(iw,ih);
+        const im=(ex._frToxic?xartPalette(key,'#79ec27'):null)||(ex.chromiumTone!=null?hammerChromiumSheet(key,ex.chromiumTone):null)||XART.get(key),iw=im.naturalWidth||im.width,ih=im.naturalHeight||im.height,s2=sz/Math.max(iw,ih);
         if(ex.chromiumTone!=null){ctx.shadowColor=HAMMER_CHROMIUM_COLORS[ex.chromiumTone];ctx.shadowBlur=10;}
         ctx.drawImage(im,ex.x-iw*s2/2,ex.y-ih*s2/2,iw*s2,ih*s2);
         ctx.restore(); continue;
@@ -54891,6 +54930,7 @@ try{ window.run=run; window.player=player; window.XART=XART; }catch(e){}
    giant interceptor missiles bearing down. Pulses toward the threat's edge.
    ============================================================ */
 function drawIncomingWarnings(){
+  if(run.stage===6)return; // Stage 6 uses launch flashes, FOVs and lock reticles.
   const cam = (worldWidth()>VW) ? (typeof camX!=='undefined'?camX:0) : 0;
   const M=18;                       // inset from the screen edge
   const warns=[];
@@ -54968,21 +55008,29 @@ function drawCallout(dt){
    movement, and the player's own Retina fully live. */
 let s6Opening=null;
 function s6OpeningActive(){return !!s6Opening;}
+function s6OpeningControlsLocked(){return !!(run&&run.stage===6&&s6Opening&&s6Opening.phase==='cloak');}
+function s6OpeningHudAlpha(){return run&&run.stage===6&&s6Opening?clamp(s6Opening.allT/2.4,0,1):1;}
 function s6OpeningInit(){
   if(typeof Snd!=='undefined')Snd.loopOff('overlordRotor');
-  s6Opening={phase:'cloak',t:0,allT:0,radio:null,radioIndex:0,launched:0,shots:[],beeps:0,count:-1,carrierJets:[],carrierLaunchN:0,carrierCue:false,jets:[
+  const pose=playShipPose();
+  s6Opening={phase:'cloak',t:0,allT:0,entryX:player.x,entryY:pose.y,radio:null,radioIndex:0,launched:0,shots:[],beeps:0,count:-1,carrierJets:[],carrierLaunchN:0,carrierCue:false,jets:[
     {side:-1,x:player.x-115,y:VH+80,dead:false},
     {side:1,x:player.x+115,y:VH+80,dead:false}
   ]};
   for(const k of ['whv_ace','whv_closed','whv_open','whv_fan','nwarn_shoot'])XART.rdy(k);
   for(let i=0;i<8;i++)XART.rdy('whv_ace_br'+i);
 }
+function s6OpeningMissileImpact(m){
+  if(m._impactDone)return;m._impactDone=true;
+  unitDeathFX({x:m.x,y:m.y,w:28,h:36},'jet','red');
+  if(Audio.SFX.expSmall)Audio.SFX.expSmall();
+}
 function s6OpeningFire(j){
   const O=s6Opening;if(!O||O.launched>=2)return;
-  const a=Math.atan2(player.y-j.y,player.x-j.x),v=4.4;
-  const m={x:j.x,y:j.y+22,vx:Math.cos(a)*v,vy:Math.sin(a)*v,
-    ang:a,spd:v,_accel:.11,_maxspd:7.0,_lockTurn:.085,w:16,h:24,dmg:1,t:0,kind:'emissile',hp:1,_shootable:true,
-    _bright:true,_s6Opening:true,_retinaHit:function(){this.dead=true;explode(this.x,this.y,24,'blue');}};
+  const a=-Math.PI/2,v=4.4;
+  const m={x:j.x,y:j.y-22,vx:0,vy:-v,
+    ang:a,spd:v,_accel:.11,_maxspd:7.0,_lockTurn:.14,w:16,h:24,dmg:1,t:0,kind:'emissile',hp:1,_shootable:true,
+    _bright:true,_s6Opening:true,_retinaHit:function(){this.dead=true;s6OpeningMissileImpact(this);}};
   eBullets.push(m);O.shots.push(m);O.launched++;
   (Audio.SFX.missile||Audio.SFX.enemyShoot)();
 }
@@ -54990,7 +55038,7 @@ function s6OpeningEnd(failed){
   const O=s6Opening;if(!O||O.phase!=='intercept')return;
   O.phase='depart';O.t=0;timeScale=1;hudCallout=null;O.radio=null;
   for(const m of O.shots)m.dead=true;
-  for(const L of playerLocks)if(O.jets.includes(L.src)){L.state='released';L.endT=0;}
+  for(const L of playerLocks)if(L.src===O||O.jets.includes(L.src)){L.state='released';L.endT=0;}
   // A missed interception stays an ordinary dodgeable missile hit; no scripted lost life.
   for(const j of O.jets){j.sx=j.x;j.sy=j.y;}
   if(typeof Snd!=='undefined')Snd.play('tlvJetEngine',.6);
@@ -54998,10 +55046,14 @@ function s6OpeningEnd(failed){
 function s6OpeningTick(dt){
   const O=s6Opening;if(!O)return;
   O.t+=dt;O.allT+=dt;
+  if(O.phase==='cloak'){
+    const k=clamp(O.allT/3.2,0,1),ease=k*k*(3-2*k);
+    player.x=O.entryX;player.y=lerp(VH+60,O.entryY,ease);
+  }
   const lines=[
     [0,(_pilotKey()||'PILOT').toUpperCase(),'FURY HQ, I AM BACK DOWN. I THINK THE THREAT IS GONE.'],
     [5.5,'COLE','WHAT YOU FOUGHT WAS A DISTRACTION. THE REAL ENEMY IS HERE.'],
-    [11,'MAVERICK','HEY DECKER... DID YOU WORK ON CLOAKING FOR THE FEDERATION?'],
+    [11,'MAVERICK','HEY DECKER... DID YOU WORK ON CLOAKING FOR THE CONFEDERATION?'],
     [17,'DECKER','................'],
     [20,'COLE','LOOK OUT! STEALTH FIGHTERS ON BOTH SIDES!']
   ];
@@ -55012,6 +55064,12 @@ function s6OpeningTick(dt){
     }
   }
   if(O.radio)O.radio.t+=dt;
+  if(O.allT>=5.5&&!O.threatLock){
+    O.x=player.x;O.y=viewTopY()+30;O.dead=false;
+    O.threatLock=enemyLockOn(O,24.8-O.allT,{fire:()=>{for(const j of O.jets)s6OpeningFire(j);}});
+    O.threatLock.maxT=29;O.threatLock.acquireFrom={x:player.x+70,y:viewTopY()+35,dur:1.15};
+    if(Audio.SFX.lockAlert)Audio.SFX.lockAlert();
+  }
   if(O.phase==='cloak'){
     const approach=clamp((O.t-19.5)/2.5,0,1);
     for(const j of O.jets){j.x=player.x+j.side*115;j.y=lerp(VH+80,player.y+110,approach);}
@@ -55019,9 +55077,9 @@ function s6OpeningTick(dt){
     const pass=clamp(O.t/2.8,0,1);
     for(const j of O.jets){j.y=j.passY-315*pass;}
   }else if(O.phase==='lock'){
-    for(const j of O.jets){j.y=j.passEndY-O.t*18;}
+    for(const j of O.jets){j.y=j.passEndY-O.t*95;}
   }else if(O.phase==='intercept'){
-    for(const j of O.jets)j.y-=18*dt;
+    for(const j of O.jets)j.y-=95*dt;
   }
   if(O.phase==='cloak'&&O.t>=22){
     O.phase='reveal';O.t=0;
@@ -55030,13 +55088,13 @@ function s6OpeningTick(dt){
   }else if(O.phase==='reveal'&&O.t>=2.8){
     O.phase='lock';O.t=0;O.radio=null;
     // Both visible aircraft keep climbing while their Retinas beep and track the player.
-    for(const j of O.jets){j.passEndY=j.y;enemyLockOn(j,2.8,{fire:()=>s6OpeningFire(j)});}
+    for(const j of O.jets)j.passEndY=j.y;
   }else if(O.phase==='lock'){
     if(O.launched===2){O.phase='intercept';O.t=0;showCallout('shoot',2);}
   }else if(O.phase==='intercept'){
     if(player.dead||O.shots.some(m=>m._s6Hit)){s6OpeningEnd(true);return;}
     if(O.launched===2&&O.shots.every(m=>m.dead||!eBullets.includes(m))){s6OpeningEnd(false);return;}
-    if(O.t>5.2){s6OpeningEnd(false);return;}
+    if(O.t>7){s6OpeningEnd(false);return;}
   }else if(O.phase==='depart'){
     for(const j of O.jets){j.x=j.sx+j.side*O.t*240;j.y=j.sy-O.t*52;}
     if(O.t>1.6){O.phase='flyover';O.t=0;}
@@ -55064,10 +55122,10 @@ function s6OpeningTick(dt){
     }
     for(const j of O.carrierJets){
       j.age+=dt;
-      j.y+=(275+Math.min(j.age,1)*165)*dt;
+      j.y-=(275+Math.min(j.age,1)*165)*dt;
       if(j.age>.31)j.x+=j.side*(280+Math.min(j.age-.31,.8)*480)*dt;
     }
-    O.carrierJets=O.carrierJets.filter(j=>j.age<2.5&&j.y<VH+110&&j.x>camLeftX()-130&&j.x<camLeftX()+viewW()+130);
+    O.carrierJets=O.carrierJets.filter(j=>j.age<2.5&&j.y>-110&&j.x>camLeftX()-130&&j.x<camLeftX()+viewW()+130);
     if(O.t>=9){if(typeof Snd!=='undefined')Snd.loopOff('carrierTurbine');s6Opening=null;}
   }
 }
@@ -55096,7 +55154,7 @@ function s6OpeningDraw(){
       if(!XART.rdy(key))continue;
       const im=XART.get(key),hh=lerp(28,61,clamp(j.age/.55,0,1));
       const ww=hh*(im.width||im.naturalWidth)/(im.height||im.naturalHeight);
-      ctx.save();ctx.translate(j.x,j.y);
+      ctx.save();ctx.translate(j.x,j.y);ctx.rotate(Math.PI);
       ctx.drawImage(im,-ww/2,-hh/2,ww,hh);ctx.restore();
     }
   }else if(!['countdown','flyover'].includes(O.phase)&&XART.rdy('whv_ace')){
@@ -55209,7 +55267,7 @@ function s6WingInit(){s6Wing={ships:[],used:[],beats:0,all:false,choice:false,ch
 /* Combat chatter shares the reserved HUD bay; it never follows the player over attack tells.
    Page timing uses the simulation clock and pauses while the special or scripted radio owns it. */
 function s6WingRadioVisible(){
-  return run.stage===6&&!!(s6Wing&&s6Wing.line)&&!specialActive()&&!story&&!s6OpeningActive();
+  return run.stage===6&&!!(s6Wing&&s6Wing.line)&&!story&&!s6OpeningActive();
 }
 function s6WingRadioPages(line){
   const w=bottomHudLayout().ability.w-54,ready=bmfReady('dialogue'),key=w+'|'+ready;
@@ -55322,16 +55380,19 @@ function s6WingNavigate(q,W,dt){
 }
 function s6WingTick(dt){
   const W=s6Wing;if(!W||bossDefeated)return;
+  for(const key of ['warn_escape_arrow_0916','whv_closed',...REBEL_SHIPS.map(k=>'rr_ship_'+k)])XART.rdy(key);
   s6OnslaughtTick(W,dt);s6SupplyTick(W,dt);
   s6WingRadioTick(W,dt);
   if(stageTimer>=14&&W.beats===0){s6WingLaunch(2,false);W.beats=1;}
   if(subBossDone&&stageTimer>=41&&W.beats===1){s6WingLaunch(2,false);W.beats=2;}
   if(subBossDone&&stageTimer>=52&&!W.all){s6WingLaunch(8,true);W.all=true;s6WingSay('COLE','ALL NINE, FORM UP. CLEAR A PATH THROUGH THEM!');}
-  if(W.all&&stageTimer>=69&&!W.choice){
-    W.choice=true;W.choiceT=0;hudCallout=null;
-    s6WingSay('DECKER','SPLIT THE WING. CHOOSE LEFT OR RIGHT.');
-    if(Audio.SFX&&Audio.SFX.alert)Audio.SFX.alert();
+  if(subBossDone)W.postMiniT=(W.postMiniT||0)+dt;
+  if(W.all&&W.postMiniT>=4&&!W.fake&&!W.fakeDone){
+    W.fake={t:0};hudCallout=null;
+    s6WingSay('COLE','HARRIER BREAKING LEFT. CONTACTS COMING THROUGH!');
+    if(typeof Snd!=='undefined')Snd.loopOn('carrierTurbine',.50);
   }
+  if(W.route)W.routeFightT=(W.routeFightT||0)+dt;
   if(W.choice&&!W.route){W.choiceT+=dt;if(W.choiceT>=30)W.autoRoute=player.x<(camLeftX()+camRightX())/2?'left':'right';}
   const supplyTimes=[18,45,57];
   if(W.supplyIndex<supplyTimes.length&&stageTimer>=supplyTimes[W.supplyIndex]){
@@ -55340,25 +55401,21 @@ function s6WingTick(dt){
     for(const q of available){XART.rdy('special_'+q.key);W.boxes.push({key:q.key,x:clamp(q.x,camLeftX()+24,camRightX()-24),y:Math.max(60,q.y-115),w:38,h:38,hp:6,t:0,open:false});}
 
   }
-  if(W.route&&stageTimer>=curStage.length-1&&!W.fake&&!W.fakeDone){
-    W.fake={t:0,scratched:false};
-    for(const q of W.ships){q.phase='leave';q.t=0;}
-    s6WingSay('COLE','HARRIER BREAKING LEFT. CONTACTS COMING THROUGH!');
-  }
   if(W.fake){
     W.fake.t+=dt;
-    if(W.fake.t>=3.2){
-      W.fake=null;W.fakeDone=true;bossWarned=true;stageTimer=curStage.length;
-      spawnBoss(W.route==='right'?'rebelsquad':curStage.boss);
-      s6WingSay('VOSS','THANKS FOR THE FREE GEAR, "FURY" CREW.');
-      if(Audio.SFX&&Audio.SFX.alertBossIncoming)Audio.SFX.alertBossIncoming();
+    if(!W.fake.taunt&&W.fake.t>=2.4){W.fake.taunt=true;s6WingSay('VOSS','THANKS FOR THE FREE GEAR, "FURY" CREW.');}
+    if(W.fake.t>=6){
+      W.fake=null;W.fakeDone=true;W.choice=true;W.choiceT=0;
+      s6WingSay('DECKER','SPLIT THE WING. CHOOSE LEFT OR RIGHT.');
+      if(typeof Snd!=='undefined')Snd.loopOff('carrierTurbine');
+      if(Audio.SFX&&Audio.SFX.alert)Audio.SFX.alert();
     }
   }
   if(W.choice&&!W.route){
     if(W.autoRoute)W.route=W.autoRoute;
     else if(Input.tapSeat(1,'left'))W.route='left';
     else if(Input.tapSeat(1,'right'))W.route='right';
-    if(W.route){s6WingSay('COLE',W.route==='left'?'WE TAKE THE STEALTH FIGHTERS. THE REST GO RIGHT!':
+    if(W.route){s6WingSay('COLE',W.route==='left'?'WE TAKE THE HARRIER. THE REST GO RIGHT!':
       'WE TAKE THE REBELS. OTHER TEAM, COVER THE CARRIER!');
       for(const q of W.ships)if((q.slot&1)===(W.route==='left'?1:0)){q.phase='leave';q.t=0;}
       if(W.route==='left'){
@@ -55427,17 +55484,21 @@ function s6WingDraw(){
       const sm=XART.get('nxp_smoke_0');ctx.drawImage(sm,q.x-12,q.y+8,24,24);}
   }
   ctx.restore();
-  if(W.fake&&XART.rdy('ch_ship_0')){
-    const im=XART.get('ch_ship_0'),k=W.fake.t/3.2,w=SHIP_DRAW_H*2.2,h=w*im.height/im.width;
-    ctx.drawImage(im,lerp(camRightX()+w,camLeftX()-w,k)-w/2,VH*.22-h/2,w,h);
+  if(W.fake){
+    const t=W.fake.t,k=clamp(t/4.4,0,1),w=viewW()*1.65,h=w*288/512;
+    if(XART.rdy('whv_closed')){const im=XART.get('whv_closed');ctx.save();ctx.translate(lerp(camRightX()+w*.4,camLeftX()-w*.5,k),lerp(VH+h*.45,-h*.6,k));ctx.rotate(Math.PI-.52);ctx.drawImage(im,-w/2,-h/2,w,h);ctx.restore();}
+    for(let i=0;i<5;i++){const key='rr_ship_'+REBEL_SHIPS[i];if(!XART.rdy(key))continue;const im=XART.get(key),p=clamp((t-1.5-i*.20)/3.1,0,1);if(p<=0||p>=1)continue;const hh=SHIP_DRAW_H*1.3,ww=hh*im.width/im.height;ctx.save();ctx.translate(lerp(camLeftX()-70+i*18,camRightX()+100+i*18,p),lerp(VH+80+i*25,-110+i*22,p));ctx.rotate(.52);ctx.drawImage(im,-ww/2,-hh/2,ww,hh);ctx.restore();}
   }
 
 }
 function s6WingChoiceDraw(){
   const W=s6Wing;if(!W||!W.choice||W.route)return;
   ctx.save();
-  msgText('SPLIT THE WING  '+Math.ceil(Math.max(0,30-W.choiceT)),VW/2,74,18,'#ffffff',.65,1,.04);
-  msgText('LEFT: HARRIER    RIGHT: REBELS',VW/2,96,12,'#83dfff',.6,1,.03);
+  const y=VH*.46,pulse=.72+.28*Math.sin(stateT*8);
+  if(XART.rdy('warn_escape_arrow_0916')){const im=XART.get('warn_escape_arrow_0916'),h=48,w=h*im.width/im.height;ctx.globalAlpha=pulse;ctx.drawImage(im,VW*.77-w/2,y-h/2,w,h);ctx.save();ctx.translate(VW*.23,y);ctx.scale(-1,1);ctx.drawImage(im,-w/2,-h/2,w,h);ctx.restore();ctx.globalAlpha=1;}
+  msgText('SPLIT THE WING  '+Math.ceil(Math.max(0,30-W.choiceT)),VW/2,y-48,18,'#ffffff',.65,1,.04);
+  msgText('LEFT: HARRIER',VW*.23,y+48,12,'#83dfff',.6,1,.03);
+  msgText('RIGHT: REBELS',VW*.77,y+48,12,'#83dfff',.6,1,.03);
   ctx.restore();
 }
 
@@ -55480,7 +55541,7 @@ function rebelSquadTick(b,dt){
   if(R.t>=R.nextWarp){R.nextWarp+=4.5;R.shift=(R.shift+1)%5;}
   for(const q of R.ships){
     if(q.dead)continue;q.t+=dt;q.flash=Math.max(0,q.flash-dt);q.stun=Math.max(0,(q.stun||0)-dt);q.warp=Math.max(0,(q.warp||0)-dt);
-    q.homeX=camLeftX()+viewW()/2+[-.38,-.19,0,.19,.38][(q.i+R.shift)%5]*viewW();
+    q.homeX=camLeftX()+viewW()/2+(R.frStageX?0:[-.38,-.19,0,.19,.38][(q.i+R.shift)%5]*viewW());
     if(q.mode==='entry'){q.y+=(q.homeY-q.y)*Math.min(1,dt*2.3);
       if(Math.abs(q.y-q.homeY)<2){q.y=q.homeY;q.mode='fight';q.t=0;}continue;}
     if(q.stun>0)continue;
@@ -55501,6 +55562,7 @@ function rebelSquadTick(b,dt){
     q.x+=clamp(q.bankDir,-360*dt,360*dt);
     q.y+=clamp(q.homeY+Math.sin(R.t*2+q.i)*20-q.y,-220*dt,220*dt);
     q.cd-=dt;if(q.cd>0||(typeof rival27Turn==='function'&&!rival27Turn(R,q)))continue;q.cd=(q.i===0?1.7:q.i===1?2.8:2.6)*pace;
+    if(typeof fr27RebelAttack==='function'&&fr27RebelAttack(q,R))continue;
     if(q.i%3===0){
       const a=Math.atan2(player.y-q.y,player.x-q.x);
       for(const off of [-.22,-.11,0,.11,.22])eShootT(q.x,q.y+32,a+off,3.75,'s6tracer',{w:8,h:22,silent:off!==0});
@@ -55520,6 +55582,7 @@ function rebelSquadTick(b,dt){
 function rebelSquadDraw(b){
   if(typeof rival27Draw==='function')rival27Draw(b,false);
   for(const q of b._rebels.ships){if(q.dead)continue;
+    if(typeof fr27RebelDrawShip==='function'){fr27RebelDrawShip(q);continue;}
     const f=q.evadeT>0?Math.min(7,Math.floor((1-q.evadeT/.38)*8)):Math.abs(q.bankDir||0)>20?(q.bankDir>0?1:7):0;
     const reel='rr_roll_'+REBEL_SHIPS[q.i]+'_'+f,key=XART.rdy(reel)?reel:'rr_ship_'+REBEL_SHIPS[q.i];if(!XART.rdy(key))continue;
     const im=XART.get(key),w=SHIP_DRAW_H*1.5,h=w*im.height/im.width;
@@ -57794,7 +57857,7 @@ function drawS6Storm(e){
   e._drawW=dw;e._drawH=dh;ctx.save();ctx.translate(e.x,e.y);if(e.spin&&!['s6lancer','s6cyclone','s6bomber','s6skimmer','s6dart','s6thunder'].includes(e._s6storm))ctx.rotate(e.spin);ctx.imageSmoothingEnabled=true;/* ⚠ SMOOTH THESE, THEY ARE NOT PIXEL ART (drop 0904d). These hulls are 256px PHOTOREAL plates minified to 93-141px (1.8x-2.8x, non-integer). Nearest-neighbour MINIFICATION of photoreal art keeps every Nth source pixel and throws the rest away, so highlights survive as isolated white specks - and because the kept pixels change as the sprite drifts sub-pixel, that speckle CRAWLS. Rendered both: chronal_crawler_tank comes out peppered with sparkle under nearest and reads as a solid hull smoothed. THAT is Mike's "jagged jumpy idle sprites", and it is why S6/S7/S9 still looked jumpy after they were already holding frame 0. The engine-wide default stays nearest for the real pixel art; this is inside a save/restore so it cannot leak. *//* FRENZY RED (drop 0904e). Mike: "frenzy enemies become palette swap red based versions of themselves." No new frames: xartPalette composites with 'color', which swaps hue and saturation and KEEPS luminance, so every panel line and rivet in the plate survives the recolour. Cached per key, so this costs one canvas per hull type, once. */
   /* enraged wins over the identity palette: a frenzied hull must read as enraged, not as its
      team colour, so the state overrides the identity rather than blending with it */
-  {const _pl=frenzyPlate(e,key)||hullPlate(e,key); ctx.drawImage(_pl||im,-dw/2,-dh/2,dw,dh);}
+  {const authored=['storm_dart','cloud_lancer','thunder_fighter','lightning_skimmer','cyclone_interceptor','four_engine_bomber'].includes(H.art);const _pl=frenzyPlate(e,key)||(authored?null:hullPlate(e,key));ctx.drawImage(_pl||im,-dw/2,-dh/2,dw,dh);}
   drawS6DamageOverlay(e,frac,dw,dh);if(e.flash>0&&typeof xartTint==='function'){const q=xartTint(key,hitFlashColor(e,'#86ceff'),.66);if(q){ctx.save();ctx.globalAlpha=.48;ctx.drawImage(q,-dw/2,-dh/2,dw,dh);ctx.restore();}}ctx.restore();return true;
 }
 
@@ -57851,7 +57914,7 @@ function s7ToxicTick(e,dt){
     if(e._lane==null)e._lane=e.x;e.y+=86*dt;e.x=e._lane+Math.sin(e._s7t*1.1)*20;e.spin=Math.sin(e._s7t)*.07;
     if(!e._s7Act&&(e._fcd=(e._fcd==null?.82:e._fcd)-dt)<=0){e._fcd=9;queue(()=>{const p=s7Hardpoint(e,0,0);for(let i=0;i<4;i++)fire(p,Math.PI/4+i*TAU/4,1.65,'s7sludge',{silent:i>0});stage7Muzzle(e,0,0,.88,.17);},.72,.38);}
   }else if(K==='s7tank'){
-    if(e.y<VH*.24)e.y+=54*dt;else e.y+=14*dt;if(!e._s7Act&&(e._fcd=(e._fcd==null?.52:e._fcd)-dt)<=0){e._fcd=rnd(1.05,1.4)/DIFF.eFire;queue(()=>{const p=e._modTank?modularTankMuzzle(e):s7Hardpoint(e,0,.40),a=e._modTank?p.aim:aim(p);for(const o of [-.08,-.04,0,.04,.08])fire(p,a+o,4.65,'s7shard',{silent:o>-.08});if(e._modTank)navalFlash(null,p,.62,BPFX_MUZZLE_VOID,{n:8,hpx:48,life:.10,follow:()=>modularTankMuzzle(e)});else stage7Muzzle(e,0,.40,.62,.10);},.52,.23);}
+    if(e.y<VH*.24)e.y+=54*dt;else e.y+=14*dt;if(!e._s7Act&&(e._fcd=(e._fcd==null?.52:e._fcd)-dt)<=0){e._fcd=rnd(1.05,1.4)/DIFF.eFire;queue(()=>{const p=e._modTank?modularTankMuzzle(e):s7Hardpoint(e,0,.40),a=e._modTank?p.aim:aim(p);for(const o of [-.20,0,.20])fire(p,a+o,[2.7,3.3,3.9][typeof fr27Difficulty==='function'?fr27Difficulty():0],'s7shard',{silent:o>-.08});if(e._modTank)navalFlash(null,p,.62,BPFX_MUZZLE_VOID,{n:8,hpx:48,life:.10,follow:()=>modularTankMuzzle(e)});else stage7Muzzle(e,0,.40,.62,.10);},.52,.23);}
   }else if(K==='s7skimmer'){
     if(e._dir==null)e._dir=e._side||1;e.x+=e._dir*168*dt;e.y+=46*dt;e.spin=-e._dir*.38;
     if(!e._s7Act&&(e._fcd=(e._fcd==null?.36:e._fcd)-dt)<=0&&e.x>28&&e.x<W-28){e._fcd=1/DIFF.eFire;queue(()=>{for(const x of [-.22,0,.22]){const p=s7Hardpoint(e,x,.28);fire(p,Math.PI/2,x===0?4.15:2.45,x===0?'s7laser':'s7acid',{silent:x!==-.22});stage7Muzzle(e,x,.28,.60,.10);}},.54,.24);}if(e.x<-115||e.x>W+115)e.dead=true;
@@ -57912,22 +57975,20 @@ function stage7SluiceTick(dt){
 function stage7SluiceDraw(){
   if(!run||run.stage!==7||!XART.rdy('s7sluice_vent'))return;
   const sheet=XART.get('s7sluice_vent'),fw=(sheet.naturalWidth||sheet.width)/4,fh=(sheet.naturalHeight||sheet.height)/2;
-  const warn=stage7SluiceWarn(),W=worldWidth(),sizeX=350,sizeY=180;
-  const rank=diffKey==='furious'?2:diffKey==='hard'?1:0;
+  const warn=stage7SluiceWarn(),W=worldWidth(),sizeX=350,sizeY=180,rank=diffKey==='furious'?2:diffKey==='hard'?1:0;
   for(const e of stage7SluiceEvents()){
-    if(e.tier>rank)continue;
-    const y=e.row-_masterSrcY;if(y<-sizeY*.5||y>VH+sizeY*.5)continue;
-    const f=!e.live?0:e.done?7:e.t<warn?Math.min(2,Math.floor(e.t/warn*3)):
-      e.t<warn+.78?3+Math.min(2,Math.floor((e.t-warn)/.78*3)):
-      6+Math.min(1,Math.floor((e.t-warn-.78)/.32*2));
-    ctx.save();ctx.imageSmoothingEnabled=false;
-    if(e.side>0){ctx.translate(W,0);ctx.scale(-1,1);}
+    if(e.tier>rank)continue;const y=e.row-_masterSrcY;if(y<-sizeY*.5||y>VH+sizeY*.5)continue;
+    ctx.save();ctx.imageSmoothingEnabled=false;if(e.side>0){ctx.translate(W,0);ctx.scale(-1,1);}
+    // One fixed vent/pipe plate: attack frames animate only the toxic exhaust.
+    const split=fw*.425;ctx.drawImage(sheet,0,0,split,fh,0,y-sizeY*.5,sizeX*.425,sizeY);
     if(e.live&&!e.done&&e.t<warn&&XART.rdy('s7sluice_warning')){
-      ctx.globalAlpha=.70+.30*(.5+.5*Math.sin(e.t*18));
-      ctx.drawImage(XART.get('s7sluice_warning'),W*.19,y-58,350-W*.19,120);
-      ctx.globalAlpha=1;
+      ctx.globalAlpha=.70+.30*(.5+.5*Math.sin(e.t*18));ctx.drawImage(XART.get('s7sluice_warning'),W*.19,y-58,350-W*.19,120);ctx.globalAlpha=1;
     }
-    ctx.drawImage(sheet,(f%4)*fw,Math.floor(f/4)*fh,fw,fh,0,y-sizeY*.5,sizeX,sizeY);
+    if(e.live&&!e.done&&e.t>=warn){
+      const age=e.t-warn,f=age<.78?3+(Math.floor(age*12)%2):5+Math.min(1,Math.floor((age-.78)/.32*2));
+      const jetY=fh*.33,jetH=fh*.37;
+      ctx.drawImage(sheet,(f%4)*fw+split,Math.floor(f/4)*fh+jetY,fw-split,jetH,sizeX*.425,y-sizeY*.5+sizeY*.33,sizeX*.575,sizeY*.37);
+    }
     ctx.restore();
   }
 }
@@ -64968,11 +65029,10 @@ function campApply(s){
   campaign.unlockedMax=Math.max(1, s.unlockedMax||1);
   campaign.rank=Object.assign({}, s.rank||{});
   if(typeof Rival24!=='undefined')Rival24.load(s.rival24);
-  /* Loading a slot ADOPTS its unlocks wholesale, in both directions - a slot saved before BOMBER
-     was entered turns the costume back off. Anything else and a session that typed the password
-     once would leak it into every save the player touched afterwards. */
+  /* Bomber/ship choices come from the slot. Cole4u entered this session remains valid even when
+     returning to an older checkpoint; Cole otherwise comes only from this campaign's save. */
   lizzieSkinUnlocked=!!(s.unlocks && s.unlocks.bomber);
-  coleUnlocked=!!(s.unlocks && s.unlocks.cole);
+  coleUnlocked=coleSessionUnlocked||!!(s.unlocks && s.unlocks.cole);
   furyLegacyShip=!!(s.unlocks && s.unlocks.legacySpaceShip);
   if(!lizzieSkinUnlocked && typeof lizzieSkinOn!=='undefined' && lizzieSkinOn
      && typeof applyLizzieSkin==='function') applyLizzieSkin(false);
@@ -69107,7 +69167,7 @@ function submitPassword(){
     drawPassword.unlockMsg=1.8; drawPassword.unlockWho='bomber'; pwInput=''; return;
   }
   if(pwInput==='COLE4U'){
-    coleUnlocked=true;   // rides the campaign slot from 0909 - see campSnapshot
+    coleSessionUnlocked=true;coleUnlocked=true;
     Audio.SFX.life? Audio.SFX.life() : Audio.SFX.select();
     drawPassword.unlockMsg=1.8; drawPassword.unlockWho='cole'; pwInput=''; return;
   }
@@ -70821,7 +70881,7 @@ function helpKeyCap(glyph, act, cx, cy, h, caption){
    bottom row is where it belongs, and C is also its keyboard key, so the screen says one thing.
    Its pad bind carries pad_b5 as well as pad_b3, because a six-button pad reports C as the
    right shoulder in XInput while an ordinary pad calls that face Y. */
-const HELP_FACES_TOP=[['pad_x','charge','CHARGE'],['pad_y',null,'-'],['pad_z',null,'-']];
+const HELP_FACES_TOP=[['pad_x','charge','CHARGE'],['pad_y','multilock','MULTI-LOCK'],['pad_z',null,'-']];
 const HELP_FACES_BOT=[['pad_a','fire','FIRE'],['pad_b','bomb','MISSILE'],['pad_c','retina','RETINA']];
 function helpPageControls(){
   /* ⚠ THE HEADER SAT ON THE PAGE NAME. "CONTROLS" is drawn at y 54 by drawHelp and this row was at
@@ -70982,7 +71042,7 @@ function backButton(){
   return !!(m.down && on);
 }
 const OPT_VOL=['MASTER VOL','MUSIC VOL','SFX VOL'];
-const OPT_CTRL=[['up','UP'],['down','DOWN'],['left','LEFT'],['right','RIGHT'],['fire','FIRE'],['bomb','MISSILE'],['retina','RETINA'],['charge','CHARGE']];
+const OPT_CTRL=[['up','UP'],['down','DOWN'],['left','LEFT'],['right','RIGHT'],['fire','FIRE'],['bomb','MISSILE'],['retina','RETINA'],['multilock','MULTI-LOCK'],['charge','CHARGE']];
 let rebindAction=null;
 function keyName(k){ if(!k) return '-'; const m={arrowup:'UP',arrowdown:'DOWN',arrowleft:'LEFT',arrowright:'RIGHT',' ':'SPACE',
   pad_up:'PAD \u2191',pad_down:'PAD \u2193',pad_left:'PAD \u2190',pad_right:'PAD \u2192',
@@ -71060,8 +71120,8 @@ function bofTitle(txt,cx,cy,H){
   ctx.restore(); ctx.textBaseline='alphabetic';
 }
 const VOL_KINDS=['master','music','sfx','voice'];
-const CTRL_ACTS=['left','right','up','down','fire','bomb','retina','charge','start'];
-const CTRL_LABELS=['MOVE LEFT','MOVE RIGHT','MOVE UP','MOVE DOWN','FIRE','MISSILE','RETINA LOCK','CHARGE','PAUSE (START)'];
+const CTRL_ACTS=['left','right','up','down','fire','bomb','retina','multilock','charge','start'];
+const CTRL_LABELS=['MOVE LEFT','MOVE RIGHT','MOVE UP','MOVE DOWN','FIRE','MISSILE','RETINA LOCK','MULTI-LOCK','CHARGE','PAUSE (START)'];
 let voiceVol=1.0, optScroll=0, optSnap=null, optDrag=-1, optSbDrag=false, optSelIdx=0;
 /* Which seat's table an armed rebind writes to: 1 or 2 (drop 0902f). */
 let rebindWho=1;
@@ -72850,6 +72910,14 @@ function furyIntroDraw(dt){
 }
 
 function drawLaunch(dt){
+  // Stage 6 enters the same live sky, camera and ship renderer used by PLAY.
+  // Its opening owns the input lock and fly-in, so there is no second arrival pose.
+  if(run.stage===6){
+    if(!s6Opening)s6OpeningInit();
+    gravityModeReset();
+    Audio.startMusic((curStage&&curStage.music)||'stage');
+    setState(GS.PLAY);updatePlay(Math.max(0,dt||0));drawWorld(Math.max(0,dt||0));return;
+  }
   if(run.stage===7&&window.BOFCampaignStory&&typeof window.BOFCampaignStory.drawGateLaunch==='function'){
     if(window.BOFCampaignStory.drawGateLaunch(dt,VW,VH))return;
     finishLaunch();return;
@@ -73512,6 +73580,7 @@ function drawWorld(dt){
   if(_vz!==1){ ctx.scale(_vz, _vz); ctx.translate(0, VH*(1-_vz)/_vz); }
   if(worldWidth()>viewW()){ ctx.translate(-camX, 0); }   // horizontal camera scroll (live check: cached WORLD_W must never shift non-scroll stages)
   _inWorldXform = true;    // anything escaping to screen space from here must undo the above
+  if(typeof fr27CinematicCamera==='function')fr27CinematicCamera();
   /* ⚠ NOTHING IN THIS ENGINE CLEARS THE PLAY CANVAS — `drawBG` painting world rows 0..VH IS the
      clear, and it has been sufficient for exactly as long as those rows were the whole screen.
      The zoom shows rows ABOVE y=0, and that band was left holding the PREVIOUS frame: measured as
@@ -73525,7 +73594,7 @@ function drawWorld(dt){
   if(shake>0){
     // A continuous oscillation preserves impact without randomly teleporting the playfield each frame.
     cameraShakePhase+=Math.min(Math.max(dt||0,0),.05);
-    const impact=Math.min(shake,4);
+    const impact=Math.min(shake,run.stage===4?(bossActive||subBossActive?1.25:.4):4);
     ctx.translate(Math.sin(cameraShakePhase*36)*impact*.48,Math.sin(cameraShakePhase*29+1.1)*impact*.42);
   }
   drawBG(dt);
@@ -73714,9 +73783,11 @@ function drawWorld(dt){
   drawWarning();
   drawMissileRushHUD();
   drawHeavyTurretHUD();
+  ctx.save();ctx.globalAlpha*=s6OpeningHudAlpha();
   if(typeof drawHUDOverlay==='function')drawHUDOverlay();
   hammerStormHudHazardDraw();
   drawSpecialHUD();
+  ctx.restore();
   s6WingRadioDraw();
   /* RADIO. Drawn last so it sits over the HUD, ducked automatically while a boss is alive so a
      line never competes with a bullet pattern (delivery rule 5). */
@@ -78385,7 +78456,7 @@ function loop(now){
   catch(_selErr){ try{ console.error('selFlash tick error', _selErr); }catch(_){} }
   try{ if(typeof selFlashDraw==='function') selFlashDraw(); }
   catch(_selErr2){ try{ console.error('selFlash draw error', _selErr2); }catch(_){} }
-  if(hudctx){ hudctx.clearRect(0,0,VW,HUDH); if(state===GS.PLAY||state==='paused'){ if(typeof drawHUDStrip==='function') drawHUDStrip(hudctx); } }
+  if(hudctx){ hudctx.clearRect(0,0,VW,HUDH); if(state===GS.PLAY||state==='paused'){ hudctx.save();hudctx.globalAlpha*=s6OpeningHudAlpha();if(typeof drawHUDStrip==='function') drawHUDStrip(hudctx);hudctx.restore(); } }
   try{ debugRecFrame(); }catch(_recFrame){}   // the clip takes hud + equip + play, in that order (0910d)
   /* SUSTAINED SFX BEDS (drop 0730a). Held weapons keep their loop alive by calling loopOn every
      time they fire; this is what fades one out once they stop. It has to run OUTSIDE the play
@@ -78447,12 +78518,12 @@ if(window.BOFA && BOFA.music){
   BOFA.music.boss=BOFA.music.boss1;
   BOFA.music.unused_x='assets/game/music/unused4 - stage1b.mp3';
   BOFA.music.mini1='assets/game/music/miniboss_fireboss.mp3';
-  BOFA.music.mini2='assets/game/music/miniboss_fireboss.mp3';
+  BOFA.music.mini2='assets/game/music/unused5 - stage2mb-stage2b.mp3';
   BOFA.music.boss2='assets/game/music/boss2_bossfight3_loud_0920.mp3';
   /* Stage 3's new main fight theme; the prior Cryo Behemoth track is archived.
      The miniboss uses the field score so Pandemonium is reserved for the boss. */
   BOFA.music.boss3='assets/game/music/boss3_pandemonium.mp3';
-  BOFA.music.mini3=BOFA.music.lvl3;
+  BOFA.music.mini3='assets/game/music/unused6 - stage3b.mp3';
   BOFA.music.unused2='assets/game/music/unused6 - stage3b.mp3';
   BOFA.music.boss4='assets/game/music/boss4_cowboyfromhell_loud_0920.mp3';
   BOFA.music.unused3='assets/game/music/unused7 - stage6.mp3';
@@ -78554,18 +78625,9 @@ if(window.BOFA && BOFA.sfx){
     laserCannon:'assets/game/sounds/reviewed_laser_cannon.mp3',
     spaceLaserCannon:'assets/game/sounds/reviewed_laser_cannon.mp3',
     spaceLaserHit:'assets/game/sounds/shield_hit_light.mp3',
-    spaceShadowCharge:'assets/game/sounds/nsp_bof2_charge_shot.mp3',
-    /* ⚠ THE LAUNCH CUE WAS THE OTHER HALF OF THE DELAY (Mike, 0906): "in space, the shadow orb,
-       you can heard the sound clearly delayed for impact." 0903q cut the IMPACT and the note below
-       already recorded that the launch sample "does not reach -12 dB until 928 ms" - it was
-       measured, written down, and then not acted on. Re-measured 0906 over the whole envelope:
-       reviewed_shadow_orb_launch.mp3 runs 2.250 s and PEAKS AT 1.805 s, reaching -6 dB only at
-       1.170 s. There is a thin transient at 20 ms, which is why it never read as silent - it read
-       as the sound arriving a beat after the button. Cut 60 ms ahead of the -6 dB crossing (the
-       same rule 0903q used on the impact), 4 ms fade-in, peak-normalised to -1 dBFS: 1.140 s long,
-       -6 dB at 60 ms, -3 dB at 135 ms. The original file is untouched; swap this line back and
-       nothing else moves. */
-    spaceShadowRelease:'assets/game/sounds/reviewed_shadow_orb_launch_fast.mp3',
+    spaceShadowCharge:'assets/game/sounds/arc_warp_charge_0923.mp3',
+    // Shadow Orb has a distinct dark charge/launch pair, separate from the cannon.
+    spaceShadowRelease:'assets/game/sounds/arc_void_orb_0923.mp3',
     /* THE ORB'S IMPACT HAD A 454 ms SWELL (drop 0903q). spaceImpact() fires this cue on the frame of
        contact - the delay Mike heard was in the sample: explosion_plasma.mp3 peaks at 454 ms, under a
        reviewed launch cue that does not reach -12 dB until 928 ms. reviewed_shadow_orb_impact.mp3 is
