@@ -41,7 +41,8 @@ function er26Station(b,side){
   const pad=Math.min(W*.5,Math.max(Math.min(W*.42,b.w*.53+18),span));
   return clamp(L+W*(side<0?.24:side>0?.76:.5),L+pad,L+W-pad);
 }
-function er26Book(b){
+function er26Book(b){return er28Book(b,er26BookBase(b));}
+function er26BookBase(b){
   const R=b._er26;
   if(b._ship==='magmaward')return R.level===2?
     ['charred-battery','ash-pursuit','charcoal-wheel','blackout-pass','charred-mortar','cinder-scissors','ash-eruption']:
@@ -52,7 +53,8 @@ function er26Book(b){
   if(b._ship==='olivewarden')return ['warden-suppress','escort-crossfire','rocket-feint','warden-drive','center-break'];
   return ['sovereign-battery','escort-crossfire','siege-rockets','ion-scissors','siege-mortar','siege-drive','core-barrage'];
 }
-function er26Set(b,mode){
+function er26Set(b,mode){er26SetBase(b,mode);er28Set(b,mode);}
+function er26SetBase(b,mode){
   const R=b._er26;
   if(mode==='recover'&&!['recover','form-change','nuclear'].includes(R.mode)){
     R.completed++;if(b._s3Nuclear)R.formBeats++;
@@ -155,6 +157,7 @@ function er26Seeds(b,dt){
 function er26Combat(b,dt){
   const R=b._er26,n=R.level,t=R.t,live=t-R.warm,speed=3.4+n*.48+R.phase*.18+(R.form==='fire'?.35:0),mode=R.mode;
   if(typeof polishEncounterAttack==='function'&&polishEncounterAttack(b,dt))return;
+  if(er28Combat(b,dt))return;
   const moving=/pass|strafe|icebreaker/.test(mode);
   R.warnings=[];
   if(moving){
@@ -262,10 +265,8 @@ function er26ProjectileDraw(q){
 }
 function er26Draw(b){
   const R=b._er26;if(!R||b.dead||b.enter)return;
-  for(const s of R.seeds){if(s.done||s.q.dead||s.t>=s.at)continue;const q=s.q,k=s.t/s.at,count=8+R.level*2,safe=aimPlayer(q.x,q.y);
-    for(let i=0;i<count;i++){const a=i*TAU/count+Math.PI/2;if(Math.abs(Math.atan2(Math.sin(a-safe),Math.cos(a-safe)))<.38)continue;
-      combatWarningDraw(b,{x:q.x,y:q.y,ex:q.x+Math.cos(a)*VH,ey:q.y+Math.sin(a)*VH,progress:k,width:16,fieldOnly:true});}
-    combatWarningDraw(b,{x:q.x,y:q.y,ex:q.x,ey:VH,progress:k,alertOnly:true,alertX:q.x,alertY:q.y-48,blinkT:s.t});}
+  /* 0928: a split orb's burst is an explosion and gets no FOV fan - the warning is where the ball
+     is coming (tb28's targeted lane), never where it breaks apart. */
   if(R.mode!=='recover'&&R.mode!=='form-change'){
     let alert=null;
     for(const w of R.warnings){
@@ -279,6 +280,7 @@ function er26Draw(b){
     // One sign per attack, below the Sovereign's separate shield gauge.
     if(alert)combatWarningDraw(b,{...alert,alertOnly:true,alertY:b._s4war&&!b._s4war.mini?82:undefined});
   }
+  er28Draw(b);
   if(R.mode==='form-change'){
     const key='mwfx_fireball_charge_'+Math.min(7,Math.floor(R.t/1.55*8));
     const im=er26Palette(key,R.formNext||'ice');if(im){const s=60+R.t*48;ctx.save();ctx.globalAlpha=.7;
@@ -293,6 +295,7 @@ function er26Tick(b,dt){
   if(!R.engaged){R.engaged=true;if(R.mode==='recover'){R.from={x:b.x,y:b.y};R.t=0;}}
   R.t+=dt;R.clock+=dt;R.phase=b.hp/b.maxhp<=.30?2:b.hp/b.maxhp<=.65?1:0;
   b.fireCd=999;b._sba=null;b._sbaHitT=Math.max(0,(b._sbaHitT||0)-dt);b._sbaKick=0;
+  er28PhaseCheck(b);
   if(b._s4war)return er26WarTick(b,dt);
   er26Seeds(b,dt);
   if(R.mode==='recover'){
@@ -403,6 +406,7 @@ function er26WarTick(b,dt){
   }else{
     const mode=R.mode,t=R.t,live=t-R.warm;
     if(typeof polishEncounterAttack==='function'&&polishEncounterAttack(b,dt)){if(t>=R.dur)er26Set(b,'recover');return true;}
+    if(er28Combat(b,dt)){if(t>=R.dur){R.drive=null;er26Set(b,'recover');}return true;}
     const drive=mode==='warden-drive'||mode==='siege-drive';
     if(drive){
       if(!R.drive){R.drive={x:clamp(R.target.x,camLeftX()+b.w*.52,camRightX()-b.w*.52),y:Math.min(VH*.65,player.y-82),fromX:b.x,fromY:b.y};R.live=2.2;R.dur=R.warm+R.live;}
@@ -452,4 +456,208 @@ function er26WarTick(b,dt){
   }
   if(!mini){stage4ShieldSyncNodes(b);b._animKey='s4w_boss_'+(R.t<R.warm&&R.mode!=='recover'?'charge_':'energized_')+(Math.floor((b.t||0)*10)%12);}
   return true;
+}
+
+/* ============================================================================
+   0928 — Mike: "level 2 mini boss, level 3 mini boss, level 3 boss, level 4 mini boss, level 4
+   boss ... On Normal, hard and furious, need upgrades, adjustments, better FOV warnings but not
+   when stuff is going to explode, only that the ball is coming where its targeted like a magma
+   ball. On Furious, they should all get extra abilities, attacks, patterns, phases and more."
+
+   * Every ball this director aims at a POINT is now a shared targeted ball (tb28, game.js): its
+     lane runs from the live muzzle and ends on the point, with the floor reticle there, and the
+     burst it makes on arrival has no FOV fan. The old radial "about to split" fans are gone.
+   * Normal/Hard gain one targeted-ball attack each (magma rain, ice lob, shell lob, storm orbs).
+   * Furious gains an OVERDRIVE phase on every encounter (50%, or 40% on the two bosses with
+     shield/nuclear gates): an invulnerable transformation beat, a faster cadence and a second
+     book that adds that encounter's own dive/ram, meteor grid or revived authored finisher
+     (the Sovereign's S4-14 chain storm and S4-15 giant strike, which the 0926 revision left
+     unreachable).
+   ============================================================================ */
+const ER28_TB=new Set(['ember-bombard','orb-siege','ash-eruption','magma-rain','ash-rain','ice-lob','hail-meteor','ash-meteor','shell-lob','shell-barrage','storm-orbs']);
+const ER28_OD_AT={magmaward:.50,frostcruiser:.50,cryospear:.40,olivewarden:.50,stormsovereign:.40};
+function er28Art(b,big){
+  const R=b._er26;
+  if(b._ship==='magmaward')return R.level===2?'charred':'magma';
+  if(b._s3Nuclear&&R.form==='fire')return 'magma';
+  if(b._ship==='stormsovereign')return 'storm';
+  if(b._ship==='olivewarden')return 'shell';
+  return big?'rime':'cryo';
+}
+function er28Mount(b,slot){return ()=>b.dead?null:shipBossMount(b,slot);}
+function er28BurstShot(b){
+  if(b._s4war)return (x,y,a,s)=>{const q=stage4WarfareShot(b,{x,y},a,s,b._ship==='stormsovereign'?'lightning':'mg');q._er26Source='tb28';return q;};
+  return (x,y,a,s)=>er26Shot(b,{x,y},a,s);
+}
+function er28Target(dx,dy){return {x:player.x+(dx||0),y:player.y+(dy||0)};}
+function er28Book(b,base){
+  const R=b._er26,ship=b._ship,od=!!R.od;
+  let book=base.slice();
+  const add=(mode,after)=>{const i=after?book.indexOf(after):-1;if(i>=0)book.splice(i+1,0,mode);else book.push(mode);};
+  if(ship==='magmaward'){add(R.level===2?'ash-rain':'magma-rain',R.level===2?'ash-pursuit':'furnace-strafe');
+    if(od){add('ash-meteor','charcoal-wheel');add('reaver-dive','blackout-pass');}}
+  else if(ship==='frostcruiser'){add('ice-lob','icebreaker');if(od){add('hail-meteor','shatter-wheel');add('cruiser-ram','pincer-lance');}}
+  else if(ship==='cryospear'){add('ice-lob','glacier-press');if(od){add('hail-meteor','orb-siege');add('hail-meteor','cannon-relay');}}
+  else if(ship==='olivewarden'){add('shell-lob','rocket-feint');if(od){add('shell-barrage','warden-drive');add('warden-drive','center-break');}}
+  else if(ship==='stormsovereign'){add('storm-orbs','siege-rockets');if(od){add('chain-storm','ion-scissors');add('giant-strike','core-barrage');}}
+  return book;
+}
+/* Called when a new attack is chosen. Only the modes this layer owns are timed here. */
+function er28Set(b,mode){
+  const R=b._er26;if(!R)return;const n=R.level,od=!!R.od;
+  R.tb=null;R.tbCount=0;R.tbNext=0;R.dive=null;R.chain=null;
+  if(od&&mode!=='overdrive'){R.gap*=.85;if(mode==='recover')R.dur*=.78;}
+  if(mode==='overdrive'){R.dur=1.7;R.warm=0;R.live=R.dur;R.to={x:er26Station(b,0),y:R.home};b._noHit=true;return;}
+  if(!ER28_TB.has(mode)&&!['reaver-dive','cruiser-ram','chain-storm','giant-strike'].includes(mode))return;
+  R.warm=0;
+  const easy=diffKey==='easy'?1.3:1;
+  if(mode==='ember-bombard'||mode==='orb-siege'){R.tbCount=3+n;R.tbGap=[.46,.40,.34][n]*easy;R.dur=[1.05,.90,.78][n]*easy+R.tbCount*R.tbGap+1.4;}
+  else if(mode==='ash-eruption'){R.tbCount=8;R.tbGap=.30;R.dur=.8+8*.30+1.4;}
+  else if(mode==='magma-rain'||mode==='ash-rain'){R.tbCount=[5,6,8][n];R.tbGap=[.62,.50,.40][n]*easy;R.dur=R.tbCount*R.tbGap+1.9;}
+  else if(mode==='ice-lob'){R.tbCount=2+n;R.tbGap=[.42,.36,.30][n]*easy;R.dur=[1.0,.9,.8][n]*easy+R.tbCount*R.tbGap+1.5;}
+  else if(mode==='shell-lob'){R.tbCount=3+n;R.tbGap=[.34,.30,.26][n]*easy;R.dur=[1.1,.95,.85][n]*easy+R.tbCount*R.tbGap+1.6;}
+  else if(mode==='storm-orbs'){R.tbCount=2+n;R.tbGap=[.44,.38,.32][n]*easy;R.dur=[1.1,.95,.85][n]*easy+R.tbCount*R.tbGap+1.4;}
+  else if(mode==='ash-meteor'||mode==='hail-meteor'){R.tbCount=1;R.tbGap=0;R.dur=2.9;}
+  else if(mode==='shell-barrage'){R.tbCount=1;R.tbGap=0;R.dur=3.4;}
+  else if(mode==='reaver-dive'||mode==='cruiser-ram'){R.warm=1.05;R.dur=1.05+.55+.18+.95;R.to={x:b.x,y:R.home};}
+  else if(mode==='chain-storm'){R.chain={P:stage4SovereignChainProfile(),beat:0,orb:0};R.warm=.6;R.dur=.6+R.chain.P.end+.4;}
+  else if(mode==='giant-strike'){R.dur=9;}
+}
+/* The one place a targeted ball is fired for these encounters. */
+function er28Ball(b,i,opt){
+  const R=b._er26,n=R.level,art=opt.art||er28Art(b,true),big=art==='rime'||art==='magma'||art==='charred';
+  return tb28Fire(b,Object.assign({from:er28Mount(b,opt.slot||((i&1)?'R':'L')),target:opt.target||er28Target(),
+    warm:[1.05,.90,.78][n],flight:[.95,.85,.75][n],mode:'direct',art,size:big?30:26,hp:0,
+    er26Art:art==='magma'||art==='charred'?'fire':art==='rime'||art==='cryo'?'ice':null,charred:art==='charred',
+    shot:er28BurstShot(b),silent:i>0},opt));
+}
+function er28Grid(b,mode){
+  /* 3x3 around the pilot, one neighbouring cell left open: the pilot must MOVE, and can always see where */
+  const R=b._er26,step=66,cells=[];for(let r=-1;r<=1;r++)for(let c=-1;c<=1;c++)cells.push([c,r]);
+  const open=cells.filter(q=>q[0]||q[1]),safe=open[(((R.serial*5+R.index*3)%open.length)+open.length)%open.length],hail=mode==='hail-meteor';
+  let i=0;
+  for(const [c,r] of cells){
+    if(c===safe[0]&&r===safe[1])continue;
+    const target=er28Target(c*step,r*step*.8),T=tb28ClampTarget(target.x,target.y),slot=['L','C','R'][i%3];
+    tb28Fire(b,{from:hail?{x:T.x,y:viewTopY()-60}:er28Mount(b,slot),target:T,warm:.95+i*.07,flight:hail?.7:.85,mode:'lob',
+      arc:hail?0:140,art:hail?'rime':er28Art(b,true),size:32,splash:30,reticle:74,silent:i>0,width:24,laneAlpha:.34,
+      onArrive:(q,x,y)=>{explode(x,y,40,hail?'blue':'red');}});i++;
+  }
+  er26Sound('bossWeaponCharge','enemyBossCannon');
+}
+function er28Barrage(b){
+  /* a creeping line of shells walking in from the far side toward the pilot, one cell always open */
+  const R=b._er26,L=camLeftX()+36,W=camRightX()-camLeftX()-72,cols=7,dir=player.x<(L+W/2)?-1:1,gap=clamp(Math.round((player.x-L)/W*(cols-1))+dir,0,cols-1);
+  let i=0;for(let k=0;k<cols;k++){const c=dir<0?cols-1-k:k;if(c===gap)continue;
+    const x=L+W*c/(cols-1),y=clamp(player.y+((k&1)?-26:22),PLAY.y+90,PLAY.y+PLAY.h-26);
+    tb28Fire(b,{from:er28Mount(b,(k&1)?'ROCKET_R':'ROCKET_L'),target:{x,y},warm:.7+i*.22,flight:.85,mode:'lob',arc:120,art:'shell',size:30,splash:34,reticle:80,silent:i>0,width:26,laneAlpha:.40,
+      shot:er28BurstShot(b),burst:{n:4,speed:2.5,gap:0,offset:Math.PI/4},onArrive:(q,x,y)=>{explode(x,y,44,'red');}});i++;}
+  er26Sound('bossWeaponCharge','enemyBossCannon');
+}
+function er28Combat(b,dt){
+  const R=b._er26,mode=R.mode,t=R.t,n=R.level;
+  if(mode==='overdrive'){
+    b.x+=(R.to.x-b.x)*Math.min(1,dt*3);b.y+=(R.home-b.y)*Math.min(1,dt*3);b._drawY=b.y;
+    if(!R.odFx&&t>=.35){R.odFx=true;shake=Math.max(shake,12);flashScreen=Math.max(flashScreen||0,.45);
+      if(typeof spawnShockRing==='function'){spawnShockRing(b.x,b.y,b.w*.9,'fire');spawnShockRing(b.x,b.y,b.w*1.4,'fire');}
+      explode(b.x,b.y,b.w*.45,er28Art(b)==='magma'||er28Art(b)==='charred'?'red':'blue');er26Sound('bossRoar','expBig');}
+    if(t>=R.dur){b._noHit=false;R.odFx=false;}
+    return true;
+  }
+  if(ER28_TB.has(mode)){
+    if(!b._s4war&&!/rain|meteor/.test(mode)){b.x+=(R.to.x-b.x)*Math.min(1,dt*1.7);b.y+=(R.home-b.y)*Math.min(1,dt*3);}
+    else if(/rain/.test(mode)){b.x+=(clamp(player.x*.35+er26Station(b,0)*.65,camLeftX()+b.w*.5,camRightX()-b.w*.5)-b.x)*Math.min(1,dt*1.2);b.y+=(R.home-b.y)*Math.min(1,dt*3);}
+    else if(!b._s4war){b.x+=(er26Station(b,0)-b.x)*Math.min(1,dt*2);b.y+=(R.home-b.y)*Math.min(1,dt*3);}
+    b._drawY=b.y;R.warnings=[];
+    if(mode==='ash-meteor'||mode==='hail-meteor'){if(!R.tbCount)return true;R.tbCount=0;er28Grid(b,mode);return true;}
+    if(mode==='shell-barrage'){if(!R.tbCount)return true;R.tbCount=0;er28Barrage(b);return true;}
+    const sequential=/rain/.test(mode);
+    while(R.tbCount>0&&(sequential?t>=R.tbNext:true)){
+      const i=R.tb==null?0:R.tb;R.tb=i+1;R.tbCount--;
+      if(mode==='ember-bombard'||mode==='orb-siege'){
+        const off=[0,70,-70,140,-140][i]||0;
+        er28Ball(b,i,{target:er28Target(off,(i&1)?-12:10),warm:[1.05,.90,.78][n]*(diffKey==='easy'?1.3:1)+i*R.tbGap,hp:3,
+          burst:{n:8+2*n,speed:2.5+.3*n,gap:.38},onArrive:(q,x,y)=>{explode(x,y,30,q.art==='rime'||q.art==='cryo'?'blue':'red');er26Sound('iceOrbImpact','expSmall');}});
+      }else if(mode==='ash-eruption'){
+        const side=(i&1)?1:-1,wave=i>>1;
+        er28Ball(b,i,{slot:'C',target:er28Target(side*(80+wave*12),0),warm:.8+wave*.55,hp:3,burst:{n:8,speed:2.4,gap:.5},
+          onArrive:(q,x,y)=>explode(x,y,30,'red')});
+      }else if(mode==='magma-rain'||mode==='ash-rain'){
+        er28Ball(b,i,{target:er28Target(),warm:[.95,.85,.75][n],flight:.70,track:.35,size:26,splash:24,silent:false,
+          burst:n?{n:n===2?5:3,speed:2.2,gap:.6}:null,onArrive:(q,x,y)=>{explode(x,y,26,'red');if(i%2===0)er26Sound('expSmall','enemyFlameBolt');}});
+        R.tbNext=t+R.tbGap;
+      }else if(mode==='ice-lob'){
+        const off=i===0?0:((i&1)?88:-88);
+        er28Ball(b,i,{art:'rime',target:er28Target(off,-8),warm:[1.0,.9,.8][n]*(diffKey==='easy'?1.3:1)+i*R.tbGap,hp:3,size:32,
+          burst:{n:6+2*n,speed:2.6+.25*n,gap:.40},onArrive:(q,x,y)=>{explode(x,y,30,'blue');er26Sound('iceOrbImpact','expSmall');}});
+      }else if(mode==='shell-lob'){
+        const off=i===0?0:[0,76,-76,150,-150][i]||0;
+        er28Ball(b,i,{slot:(i&1)?'ROCKET_R':'ROCKET_L',art:'shell',mode:'lob',arc:130,target:er28Target(off,(i&1)?-24:18),
+          warm:[1.1,.95,.85][n]*(diffKey==='easy'?1.3:1)+i*R.tbGap,flight:.9,size:30,splash:34,reticle:82,
+          burst:n?{n:4,speed:2.5,gap:0,offset:Math.PI/4}:null,onArrive:(q,x,y)=>{explode(x,y,44,'red');er26Sound('expSmall','expBig');}});
+      }else if(mode==='storm-orbs'){
+        const off=i===0?0:((i&1)?96:-96);
+        er28Ball(b,i,{slot:(i&1)?'R':'L',art:'storm',target:er28Target(off,-10),warm:[1.1,.95,.85][n]*(diffKey==='easy'?1.3:1)+i*R.tbGap,
+          flight:.8,size:34,hp:2,burst:{n:4,speed:3.0+.3*n,gap:0,offset:(i&1)?Math.PI/4:0},
+          onArrive:(q,x,y)=>{explode(x,y,34,'blue');er26Sound('enemyElectricBolt','expSmall');}});
+      }
+      if(!sequential&&R.tbCount>0)continue;
+      break;
+    }
+    return true;
+  }
+  if(mode==='reaver-dive'||mode==='cruiser-ram'){
+    if(!R.dive)R.dive={x:b.x,top:R.home,commit:null,phase:'warn'};
+    const D=R.dive,bottom=Math.min(VH-b.h*.35,player.y+40);
+    if(t<R.warm){
+      if(t<R.warm*.55)D.x+=(clamp(player.x,camLeftX()+b.w*.4,camRightX()-b.w*.4)-D.x)*Math.min(1,dt*5);
+      b.x+=(D.x-b.x)*Math.min(1,dt*6);b.y+=(R.home-b.y)*Math.min(1,dt*4);b._drawY=b.y;
+      R.warnings=[{slot:null,x:b.x,y:b.y,angle:Math.PI/2,width:b.w*.55,progress:t/R.warm}];
+      combatWarningTick(b,'er28-dive',t,R.warm);return true;
+    }
+    R.warnings=[];const u=t-R.warm;
+    if(u<.55){const k=u/.55;b.y=lerp(R.home,bottom,k*k);if(!D.boom){D.boom=true;er26Sound('dash','launch');shake=Math.max(shake,6);}}
+    else if(u<.73)b.y=bottom;
+    else b.y=lerp(bottom,R.home,clamp((u-.73)/.95,0,1)*(2-clamp((u-.73)/.95,0,1)));
+    b._drawY=b.y;
+    if(u<.9)for(const s of seatList())withSeat(s,()=>{if(!player.dead&&player.invuln<=0&&Math.abs(player.x-b.x)<b.w*.34&&Math.abs(player.y-b.y)<b.h*.38)playerHit();});
+    if(u<.6&&Math.floor(u*20)!==D.trail){D.trail=Math.floor(u*20);explode(b.x+rnd(-b.w*.2,b.w*.2),b.y-b.h*.45,18,er28Art(b)==='cryo'||er28Art(b)==='rime'?'blue':'red');}
+    return true;
+  }
+  if(mode==='chain-storm'){
+    const C=R.chain,P=C.P;b.x+=(er26Station(b,0)-b.x)*Math.min(1,dt*3);b.y+=(R.home-b.y)*Math.min(1,dt*3);b._drawY=b.y;
+    if(t<R.warm){for(const a of P.outer)er26Warning(b,'L',Math.PI/2+a,24);combatWarningTick(b,'er28-chain',t,R.warm);return true;}
+    R.warnings=[];const u=t-R.warm;
+    while(C.beat<P.beats.length&&u>=P.beats[C.beat]){stage4SovereignChainVolley(b,P,(C.beat&1)===1);C.beat++;}
+    while(C.orb<P.orbTimes.length&&u>=P.orbTimes[C.orb]){stage4SovereignChainOrb(b,P,C.orb);C.orb++;}
+    return true;
+  }
+  if(mode==='giant-strike'){
+    const S=b._s4war;
+    if(!R.gsStarted){R.gsStarted=true;if(!S||!stage4GiantStrikeStart(b)){R.dur=0;return true;}}
+    if(!stage4GiantStrikeTick(b,dt)||!S.giantStrike){R.dur=Math.min(R.dur,t);R.gsStarted=false;}
+    b._drawY=b.y;return true;
+  }
+  return false;
+}
+/* Furious only: the overdrive beat fires once, between attacks, at the encounter's own threshold. */
+function er28PhaseCheck(b){
+  const R=b._er26;if(!R||R.level!==2||R.od||R.mode!=='recover'||b.dead)return false;
+  if(b._s4war&&b._s4war.shield&&(b._s4war.shield.rearming))return false;
+  if(b._s3Nuclear&&!R.nuclearRevealed&&b._ship==='cryospear'&&R.neutralOpening)return false;
+  const at=ER28_OD_AT[b._ship];if(at==null||b.hp>b.maxhp*at)return false;
+  R.od=true;R.odAt=R.clock;R.index=-1;er26Set(b,'overdrive');
+  if(typeof arcadeBanner==='function')arcadeBanner(b._ship==='magmaward'?'CHARRED OVERDRIVE':b._ship==='frostcruiser'?'WHITEOUT OVERDRIVE':
+    b._ship==='cryospear'?'GLACIAL COLLAPSE':b._ship==='olivewarden'?'LOCKDOWN OVERDRIVE':'STORM CROWN');
+  return true;
+}
+function er28Draw(b){
+  const R=b._er26;if(!R||b.dead)return;
+  if(R.mode==='overdrive'){
+    const k=clamp(R.t/R.dur,0,1),s=b.w*(.6+k*.9);
+    ctx.save();ctx.globalCompositeOperation='lighter';ctx.globalAlpha=.55*(1-k);
+    const key=er28Art(b)==='magma'||er28Art(b)==='charred'?'mwfx_fireball_charge_'+Math.min(7,Math.floor(k*8)):'l23fx_rime_orb_'+(Math.floor(R.t*12)%8);
+    if(XART.rdy(key))ctx.drawImage(XART.get(key),b.x-s/2,b.y-s/2,s,s);ctx.restore();
+  }
+  if(R.mode==='giant-strike'&&b._s4war&&b._s4war.giantStrike&&typeof stage4GiantStrikeDraw==='function')stage4GiantStrikeDraw(b);
 }

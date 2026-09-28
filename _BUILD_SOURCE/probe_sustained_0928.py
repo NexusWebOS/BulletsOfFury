@@ -80,6 +80,14 @@ AP = r"""
   window.__qaTick = function() {
     Q.f++;
     const st = state;
+    // every screen change is logged with the reward state, so a natural boss kill shows what it granted
+    if (st !== Q.lastSt) {
+      Q.trans = Q.trans || [];
+      let owned = null; try { owned = forgeCombosOwned().map(o => o.elem + (o.w ? ':' + o.w : '')); } catch (_o) {}
+      if (Q.trans.length < 600) Q.trans.push({f: Q.f, from: Q.lastSt || null, to: st, stage: run && run.stage, combos: run && run.forgeCombos,
+        respecs: run && run.forgeRespecs, owned, weapon: run && run.weapon, wlevel: run && run.wlevel, lives: run && run.lives, cont: run && run.continues});
+      Q.lastSt = st;
+    }
     if (Q.depth0 == null) Q.depth0 = Q.depth;
     if (Q.depth !== Q.depth0) { if (Q.cur) { Q.cur.stackLeaks = (Q.cur.stackLeaks|0) + 1; if (!Q.cur.leakAt) Q.cur.leakAt = {f: Q.cur.playFrames, st, d: Q.depth - Q.depth0}; } Q.depth0 = Q.depth; }
     if (Q.cur && (!Q.cur.states.length || Q.cur.states[Q.cur.states.length-1] !== st)) Q.cur.states.push(st);
@@ -239,13 +247,16 @@ def main():
         while True:
             err = pg.evaluate(STEP, CH)
             if err: report['stepErrors'].append(err); print('STEP ERR', err, flush=True)
-            sim += CH / 60.0; stage_sim += CH / 60.0
+            sim += CH / 60.0
             pg.wait_for_timeout(25)
             info = pg.evaluate("() => ({state, stage:run.stage, lives:run.lives, cont:run.continues, boss:!!(bossActive&&boss), mini:!!(subBossActive&&subBoss), en:enemies.length, t:(typeof stageTimer==='number'?stageTimer:0), len:(curStage&&curStage.length)||0})")
             if info['stage'] != last_stage:
                 if last_stage is not None: print('  stage %s -> %s at sim %.0fs' % (last_stage, info['stage'], sim), flush=True)
                 last_stage = info['stage']; stage_sim = 0.0
             same_state = same_state + CH / 60.0 if info['state'] == prev_state else 0.0; prev_state = info['state']
+            # the cap counts PLAY time only: a stage already cleared and sitting in its debrief or cutscene
+            # must never be force-advanced mid-transition (that corrupts the flow being measured)
+            if info['state'] == 'play': stage_sim += CH / 60.0
             if info['state'] != 'play' and same_state > 90:
                 print('STUCK on screen', info['state'], 'for 90 s', flush=True); shot('STUCK_%s' % info['state']); report['stuck'] = info; break
             if not report['path'] or report['path'][-1] != info['state']:
@@ -258,7 +269,7 @@ def main():
                 print('GAME OVER at stage', info['stage'], flush=True); break
             if info['state'] in ('victory', 'credits', 'title'): print('run ended in', info['state'], flush=True); break
             if info['stage'] > hi and info['state'] == 'play': break
-            if stage_sim > a.cap:
+            if stage_sim > a.cap and info['state'] == 'play':
                 print('  CAP: stage %s exceeded %ds' % (info['stage'], a.cap), flush=True)
                 pg.evaluate("() => { if(window.__ap.cur) window.__ap.cur.ended='cap'; }")
                 if info['stage'] >= hi: break
@@ -267,6 +278,7 @@ def main():
                 stage_sim = 0.0
         report['stages'] = pg.evaluate("() => window.__ap.stages.map(s => { const o=Object.assign({}, s); delete o._wasDead; delete o.lastScroll; o.lives=o.lives.filter((v,i,a)=>i===0||v!==a[i-1]); return o; })")
         report['errors'] = pg.evaluate("() => window.__ap.errs.slice(0, 80)")
+        report['transitions'] = pg.evaluate("() => (window.__ap.trans || [])")
         report['simSeconds'] = sim; report['realSeconds'] = time.time() - t_start
         br.close()
     stop()

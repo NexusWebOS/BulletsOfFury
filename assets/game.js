@@ -18142,7 +18142,8 @@ function l23FovDraw(b,B,i,p,k,lane){
   if(!XART.rdy(key))return false;
   const im=XART.get(key); if(!im||!im.width)return false;
   const dn=Math.sin(B.angles[i]);
-  const L=Math.max(120, dn>0.25 ? (VH-p.y)/dn : Math.max(VW,VH)*1.25);
+  /* 0928: B.len is the distance to a targeted ball's landing point; the cone's base lands ON it */
+  const L=(Number.isFinite(B.len)&&B.len>0)?Math.max(36,B.len):Math.max(120, dn>0.25 ? (VH-p.y)/dn : Math.max(VW,VH)*1.25);
   const far=Math.max(F.minFar, lane*F.far);
   const C=L23_FOV_CELL, W=far/C.ww, H=L/(C.by-C.ay);
   const pl=0.5+0.5*Math.sin(B.t*(8+k*20));
@@ -33986,6 +33987,7 @@ function beginStage(num){
   try{ if(typeof forgeLoadoutSync==='function') forgeLoadoutSync(); run._wbag=[]; if(typeof forgeApply==='function') forgeApply(); }catch(_fg){}
   playerLocks=[]; _lockBeepT=0;   // a retina never follows the player into the next stage (0912)
   if(typeof groundTargetingReset==='function')groundTargetingReset(); // shared ground warnings never cross stage boundaries
+  if(typeof tb28Reset==='function')tb28Reset(); // and neither do targeted balls (0928)
   try{ for(let _ri=0;_ri<4;_ri++){ XART.rdy('retm_'+_ri); XART.rdy('retmb_'+_ri); } }catch(_rw){}
   /* the secret is SPENT once it is entered, so the map is not stuck on stage 9 forever (0822ad) */
   if(num===9 && run.mode==='campaign' && typeof campaign!=='undefined') campaign.bonusUnlocked=0;
@@ -34612,6 +34614,7 @@ function enemySeparate(dt){
 function updatePlay(dt){
   if(typeof combatAudioTick0927==='function')combatAudioTick0927(dt);
   if(typeof polishCombatTick==='function')polishCombatTick(dt);
+  if(typeof tb28Tick==='function')tb28Tick(dt);
   _lastDt=dt;
   if(typeof wm26Tick==='function')wm26Tick(dt);
   if(spaceShipActive())furyFlightTime+=dt;
@@ -38084,6 +38087,177 @@ function groundTargetingDraw(){
     const u=clamp((q.t-q.warn)/q.active,0,.999),frame=Math.min(3,Math.floor(u*4));
     ctx.save();ctx.globalCompositeOperation='lighter';ctx.globalAlpha=1;ctx.fillStyle='rgba(0,0,0,.22)';ctx.beginPath();ctx.ellipse(q.x,q.y+7,q.size*.31,q.size*.085,0,0,TAU);ctx.fill();
     if(atlas){ctx.imageSmoothingEnabled=false;ctx.drawImage(atlas,frame*128,q.row*128,128,128,q.x-q.size/2,q.y-q.size,q.size,q.size);}ctx.restore();
+  }
+}
+/* ============================================================================
+   SHARED TARGETED-BALL WARNINGS (0928)
+   Mike: "better FOV warnings but not when stuff is going to explode, only that the ball is
+   coming where its targeted like a magma ball."
+   A targeted ball COMMITS to a point. While it charges, the shared green/yellow/red FOV lane
+   runs from the LIVE muzzle and ENDS ON THAT POINT (combatWarningDraw's `len`), with the floor
+   reticle on the point itself and one alert sign per attack. On release the ball flies exactly
+   that line ('direct', a real enemy round that can hit and can be shot down) or that line as
+   an arc ('lob', airborne and harmless until it lands). What it does when it gets there - a
+   burst of rounds, a splash, a puddle - is the EXPLOSION, and the explosion gets no FOV fan.
+   ⚠ The muzzle is read live every frame through `from` (a function), so a lane rooted on a
+   moving hull never drifts off the gun that fires it (polishLaneOrigin's lesson).
+   ⚠ Owned by its launcher: an owner that dies, or leaves the field, cancels its pending balls.
+   ============================================================================ */
+const TB28_ART={
+  magma:{reel:'mwfx_fireball_',n:8,spin:2.7},
+  charred:{reel:'mwfx_fireball_',n:8,spin:2.7,pal:'charred-shot'},
+  rime:{reel:'l23fx_rime_orb_',n:8,spin:2.1},
+  cryo:{reel:'l23fx_cryo_ball_',n:8,spin:2.4},
+  acid:{still:'xorb_acid',spin:1.4},lightning:{still:'xorb_lightning',spin:3.2},
+  plasma:{still:'xorb_plasma_blue',spin:2.2},void:{still:'xorb_void',spin:1.2},
+  antimatter:{still:'xorb_antimatter',spin:1.8},molten:{still:'xorb_molten_orange',spin:2.0},
+  solar:{still:'xorb_solar',spin:2.5},gravity:{still:'xorb_gravity',spin:3.6},
+  storm:{reel:'s4w_lightning_ball_',n:16,spin:0},        // the Storm Sovereign's own authored ball lightning
+  shell:{polish:'bomb'},                                  // Stage-4 artillery: the authored ordnance sheet's bomb row
+  toxic:{s7m:'orb',n:8,spin:1.6}                          // Stage 7's toxic orb reel
+};
+let tb28List=[], tb28Serial=0;
+function tb28Reset(){tb28List.length=0;}
+function tb28Warm(art){
+  const A=TB28_ART[art];if(!A||typeof XART==='undefined')return;
+  if(A.reel)for(let i=0;i<A.n;i++)XART.rdy(A.reel+i);
+  else if(A.still)XART.rdy(A.still);
+  else if(A.polish)XART.rdy('polish_ordnance');
+  else if(A.s7m&&typeof s7mWarm==='function')s7mWarm();
+  XART.rdy('fx_ground_target_reticle');if(typeof l23FovWarm==='function')l23FovWarm();
+}
+function tb28ClampTarget(x,y){
+  const l=camLeftX()+22,r=camRightX()-22;
+  return {x:clamp(x,Math.min(l,r),Math.max(l,r)),y:clamp(y,PLAY.y+70,PLAY.y+PLAY.h-18)};
+}
+function tb28Origin(q){
+  let p=null;try{p=typeof q.from==='function'?q.from():q.from;}catch(_o){p=null;}
+  if(p&&Number.isFinite(p.x)&&Number.isFinite(p.y)){q.ox=p.x;q.oy=p.y;}
+  return {x:q.ox,y:q.oy};
+}
+/* opts: from (fn|{x,y}), target {x,y} (defaults to the player), warm, flight, track (share of the
+   warm that the point may still follow the player), mode 'direct'|'lob', art, size, width (lane at
+   the landing point), reticle (floor reticle width), hp (shootable direct ball), arc (lob height),
+   splash (lob landing radius), shot(x,y,a,spd) + burst {n,speed,gap} for the landing burst,
+   onArrive(q), silent (no warn tick - volleys chime once), kind (eShootT kind for a direct ball). */
+function tb28Fire(owner,o){
+  o=o||{};const t0=o.target||player,T=tb28ClampTarget(t0.x,t0.y);
+  const q={id:++tb28Serial,owner:owner||null,from:o.from||{x:owner?owner.x:VW/2,y:owner?owner.y:0},
+    tx:T.x,ty:T.y,t:0,warm:Math.max(.2,o.warm==null?1.0:+o.warm),flight:Math.max(.15,o.flight==null?.85:+o.flight),
+    track:clamp(o.track==null?0:+o.track,0,.8),mode:o.mode==='lob'?'lob':'direct',art:o.art||'magma',
+    size:o.size||30,width:o.width||Math.max(30,(o.size||30)*1.5),reticle:o.reticle||Math.max(60,(o.size||30)*2.6),
+    hp:o.hp||0,arc:o.arc==null?110:+o.arc,splash:o.splash==null?(o.mode==='lob'?34:0):+o.splash,
+    shot:o.shot||null,burst:o.burst||null,onArrive:o.onArrive||null,onRelease:o.onRelease||null,silent:!!o.silent,
+    kind:o.kind||'magma',er26Art:o.er26Art||null,charred:!!o.charred,laneAlpha:o.laneAlpha==null?.9:+o.laneAlpha,phase:'warn',ball:null,arrived:false,dead:false,ox:0,oy:0,sx:0,sy:0};
+  tb28Origin(q);tb28Warm(q.art);tb28List.push(q);
+  if(!q.silent&&owner)combatWarningTick(q,'tb28',0,q.warm,true);
+  return q;
+}
+function tb28Release(q){
+  const o=tb28Origin(q);q.phase='flight';q.ft=0;q.sx=o.x;q.sy=o.y;
+  if(q.mode==='direct'){
+    const dx=q.tx-o.x,dy=q.ty-o.y,d=Math.hypot(dx,dy)||1,a=Math.atan2(dy,dx),frames=Math.max(6,q.flight*60);
+    const b=eShootT(o.x,o.y,a,d/frames,q.kind,{w:q.size*.62,h:q.size*.62,silent:true,noMuzzle:true});
+    /* the frame velocity is the flight: pressure and difficulty scalars must not move the landing */
+    b.vx=dx/frames;b.vy=dy/frames;b.spd=d/frames;b.ang=a;b._boss=true;b._noArsenal=true;
+    /* the element tag follows the ball (fire/ice), so element rules and round-art tests still read it */
+    b._tb28=q;b._tb28Len=d;if(q.er26Art){b._er26Art=q.er26Art;b._er26Charred=q.charred;b._er26Draw=q.size;}
+    if(q.hp>0){b._shootable=true;b.hp=q.hp;}
+    q.ball=b;q.len=d;
+  }
+  if(q.onRelease)try{q.onRelease(q);}catch(_r){}
+}
+function tb28Arrive(q,x,y){
+  if(q.arrived)return;q.arrived=true;q.phase='done';q.ax=x;q.ay=y;
+  if(q.splash>0)for(const s of seatList())withSeat(s,()=>{
+    if(!player.dead&&player.invuln<=0&&Math.hypot(player.x-x,player.y-y)<=q.splash+(player._hx||9))playerHit();});
+  if(q.burst&&q.shot){
+    const B=q.burst,n=Math.max(1,B.n|0),aim=Math.atan2(player.y-y,player.x-x),gap=B.gap==null?.36:+B.gap,off=B.offset||0;
+    for(let j=0;j<n;j++){const a=off+j*TAU/n+Math.PI/2;
+      /* a burst always leaves an escape sector on the side of the pilot it was fired at */
+      if(gap>0&&Math.abs(Math.atan2(Math.sin(a-aim),Math.cos(a-aim)))<gap)continue;
+      try{q.shot(x,y,a,B.speed||2.4);}catch(_s){}}
+  }
+  if(q.onArrive)try{q.onArrive(q,x,y);}catch(_a){}
+}
+function tb28Tick(dt){
+  if(!tb28List.length)return;
+  for(const q of tb28List){
+    if(q.dead)continue;
+    const own=q.owner;
+    if(own&&(own.dead||own.hp<=0)&&q.phase==='warn'){q.dead=true;continue;}
+    q.t+=dt;tb28Origin(q);
+    if(q.phase==='warn'){
+      if(q.track>0&&q.t<q.warm*q.track){const T=tb28ClampTarget(player.x,player.y);
+        q.tx+=clamp(T.x-q.tx,-190*dt,190*dt);q.ty+=clamp(T.y-q.ty,-150*dt,150*dt);}
+      if(!q.silent)combatWarningTick(q,'tb28',Math.min(q.t,q.warm),q.warm);
+      if(q.t>=q.warm)tb28Release(q);
+      continue;
+    }
+    if(q.phase==='flight'){
+      q.ft+=dt;
+      if(q.mode==='direct'){
+        const b=q.ball;
+        if(!b||b.dead||eBullets.indexOf(b)<0){ /* shot down, or it struck the pilot on the way */ q.phase='done';q.dead=true;continue; }
+        const along=((b.x-q.sx)*(q.tx-q.sx)+(b.y-q.sy)*(q.ty-q.sy))/Math.max(1,q.len);
+        if(along>=q.len-.5){b.dead=true;tb28Arrive(q,q.tx,q.ty);}
+      }else if(q.ft>=q.flight)tb28Arrive(q,q.tx,q.ty);
+      continue;
+    }
+    q.dead=true;
+  }
+  tb28List=tb28List.filter(q=>!q.dead&&q.phase!=='done');
+}
+function tb28BallDraw(art,x,y,size,t,alpha,spinSeed,heading){
+  const A=TB28_ART[art];if(!A||typeof XART==='undefined')return false;
+  if(A.polish){ /* nose along its flight, so a lobbed shell visibly pitches over the top of its arc */
+    if(typeof polishStage4Projectile!=='function')return false;
+    const h=Number.isFinite(heading)?heading:Math.PI/2;
+    ctx.save();ctx.globalAlpha=alpha==null?1:alpha;const ok=polishStage4Projectile({x,y,vx:Math.cos(h),vy:Math.sin(h),t,szMul:size/48,_ph:spinSeed||0},A.polish);ctx.restore();return ok||true;}
+  if(A.s7m){
+    if(typeof s7mBlit!=='function')return false;
+    s7mBlit(A.s7m,Math.floor((t||0)*12)%A.n,x,y,size,size,(t||0)*(A.spin||0),alpha==null?1:alpha);return true;}
+  let im=null;
+  if(A.reel){const k=A.reel+(Math.floor((t||0)*12)%A.n);if(!XART.rdy(k))return true;
+    im=(A.pal&&typeof er26Palette==='function')?er26Palette(k,A.pal):XART.get(k);}
+  else {if(!XART.rdy(A.still))return true;im=XART.get(A.still);}
+  if(!im)return true;
+  ctx.save();ctx.translate(Math.round(x),Math.round(y));ctx.rotate((t||0)*(A.spin||2)+(spinSeed||0));
+  ctx.imageSmoothingEnabled=false;ctx.globalAlpha=alpha==null?1:alpha;ctx.drawImage(im,-size/2,-size/2,size,size);
+  /* a stepped, pixel pulse rather than a blur - the house rule for fixed-frame ordnance (0914) */
+  if(A.still){ctx.globalCompositeOperation='lighter';ctx.globalAlpha=(alpha==null?1:alpha)*(.14+.12*((Math.floor((t||0)*8)&1)));ctx.drawImage(im,-size/2,-size/2,size,size);}
+  ctx.restore();return true;
+}
+function tb28Draw(front){
+  if(!tb28List.length)return;
+  const alerts=new Map();
+  for(const q of tb28List){
+    if(q.dead||q.phase==='done')continue;
+    const o={x:q.ox,y:q.oy},len=Math.hypot(q.tx-o.x,q.ty-o.y);
+    if(q.phase==='warn'){
+      const k=clamp(q.t/q.warm,0,1);
+      if(!front){
+        combatWarningDraw(q.owner||q,{x:o.x,y:o.y,ex:q.tx,ey:q.ty,progress:k,width:q.width,len:len,fieldOnly:true,alpha:q.laneAlpha});
+        groundTargetReticleDraw(q.tx,q.ty,q.reticle,k,.82);
+      }else if(q.owner){const cur=alerts.get(q.owner);if(!cur||k>cur.k)alerts.set(q.owner,{k,q});}
+      continue;
+    }
+    if(!front){
+      /* in flight the lane holds red and thins, and the reticle keeps flashing, until it lands */
+      const u=clamp(q.ft/q.flight,0,1),sx=q.sx,sy=q.sy;
+      combatWarningDraw(q.owner||q,{x:sx,y:sy,ex:q.tx,ey:q.ty,progress:1,width:q.width,len:Math.hypot(q.tx-sx,q.ty-sy),fieldOnly:true,alpha:(.55-.3*u)*q.laneAlpha/.9});
+      groundTargetReticleDraw(q.tx,q.ty,q.reticle,1,.9);
+      if(q.mode==='lob'){
+        const x=lerp(sx,q.tx,u),y=lerp(sy,q.ty,u),h=Math.sin(u*Math.PI)*q.arc,sc=1+Math.sin(u*Math.PI)*.35;
+        ctx.save();ctx.globalAlpha=.30+.25*u;ctx.fillStyle='#000';ctx.beginPath();ctx.ellipse(x,y+q.size*.2,q.size*.42*(0.7+.3*u),q.size*.16*(0.7+.3*u),0,0,TAU);ctx.fill();ctx.restore();
+        const hd=Math.atan2((q.ty-sy)-Math.cos(u*Math.PI)*Math.PI*q.arc,(q.tx-sx)||.001);
+        tb28BallDraw(q.art,x,y-h,q.size*sc,q.ft,1,q.id,hd);
+      }
+    }
+  }
+  if(front)for(const [owner,A] of alerts){
+    const q=A.q;combatWarningDraw(owner,{x:owner.x,y:owner.y,ex:q.tx,ey:q.ty,progress:A.k,alertOnly:true,
+      alertX:owner.x,alertY:Math.max(56,(owner._drawY!=null?owner._drawY:owner.y)-(owner._drawH||owner.h||80)*.5-48)});
   }
 }
 function hammerBoomerangSpinDraw(b){
@@ -47304,7 +47478,9 @@ const PLAYER_FLAME_SCALE=.75;
 function combatWarningDraw(owner,q){
   if(!owner||!q||q.progress==null)return;
   const k=clamp(q.progress,0,1),a=Math.atan2(q.ey-q.y,q.ex-q.x),p={x:q.x,y:q.y},
-    B={family:'rime',angles:[a],t:(owner.t||stateT||0),warm:1,released:false,alertX:q.alertX,alertY:q.alertY,alpha:q.alpha,blinkT:q.blinkT};
+    B={family:'rime',angles:[a],t:(owner.t||stateT||0),warm:1,released:false,alertX:q.alertX,alertY:q.alertY,alpha:q.alpha,blinkT:q.blinkT,
+      /* 0928: a TARGETED lane ends where its ball lands (tb28), instead of running on to the floor */
+      len:Number.isFinite(q.len)?q.len:null,fovColor:q.fovColor};
   if(!q.alertOnly){ctx.save();ctx.translate(p.x,p.y);ctx.rotate(a-Math.PI/2);
     l23FovDraw(owner,B,0,p,k,q.width||20);ctx.restore();}
   B.t=k;if(!q.fieldOnly&&run.stage!==6)l23WarnSymbolDraw(owner,B);
@@ -51001,6 +51177,7 @@ function drawBullets(){
     if(b._rzb&&typeof razorbackProjectileDraw==='function'&&razorbackProjectileDraw(b))continue;
     if(b._fzt&&typeof furnaceProjectileDraw==='function'&&furnaceProjectileDraw(b))continue;
     if(b._tlv&&typeof tempestProjectileDraw==='function'&&tempestProjectileDraw(b))continue;
+    if(b._tb28&&typeof tb28BallDraw==='function'&&tb28BallDraw(b._tb28.art,b.x,b.y,b._tb28.size,b.t,1,b._tb28.id,b.ang))continue;   // targeted balls wear their own art (0928)
     if(b._er26Art&&typeof er26ProjectileDraw==='function'&&er26ProjectileDraw(b))continue;
     if(b._s4wKind&&typeof drawStage4WarfareProjectile==='function'&&drawStage4WarfareProjectile(b))continue;
     if(b._s3ThermoArt&&typeof s3ThermoProjectileDraw==='function'&&s3ThermoProjectileDraw(b))continue;
@@ -73633,11 +73810,13 @@ function drawWorld(dt){
      is gone, so nothing else that reads fadeOuts changes behaviour. */
   if(typeof late27Draw==='function')late27Draw(false);
   if(typeof s7mWarnings==='function')s7mWarnings(false);
+  if(typeof tb28Draw==='function')tb28Draw(false);
   if(boss) drawBoss();
   if(boss && boss._morphT!=null && typeof vileMorphDraw==='function') vileMorphDraw(boss);
   if(subBoss){drawSubBoss();encounterDamageOverlay(subBoss,true);}
   if(typeof late27Draw==='function')late27Draw(true);
   if(typeof s7mWarnings==='function')s7mWarnings(true);
+  if(typeof tb28Draw==='function')tb28Draw(true);
   // Release flashes belong above the barrels, including the large boss plates.
   drawNavalFlashes();
   if(typeof wm26DrawEnemy==='function')wm26DrawEnemy();
