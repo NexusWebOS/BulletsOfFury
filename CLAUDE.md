@@ -5581,3 +5581,16 @@ load on first play, measured 50-125 ms, fine); and the FIRST media play of a pag
 - Loadout selection now exposes Ice Breath, Fire Orb, Ice Orb, Thermoshock and forged elemental forms as their requirements are earned. A new Forge/loadout plate shows Fury Points and embeds RE-SPEC; a separate four-row Weapon Found plate announces actual weapon systems.
 - Fire Orb draws a dedicated Magma Orb plate without additive washout. Combat audio validation covers ordinary projectile families, boss-specific families, Razorback charge/release and Magma Orb launch through real-sample routes.
 - Verification: syntax pass; full suite 4,921 pass / exact incoming 57-name failure baseline; real Chromium 9/9 with zero page or console errors. Evidence: docs/WEAPON_FORGE_REPAIR_0918.md and docs/qa/weapon_forge_repair_0918.json. Checklist: 156 entries, 133 complete / 7 partial / 16 pending.
+
+## 0928 - HAMA: Hammer Time on the MC Hammer instrumental
+
+Password HAMA -> Stage 5. docs/HAMA_0928.md. hammer_time_0927.js is variant-driven now (ht27Variant: song,
+intro length, lock windows; null = the original HAMMER). assets/hama_0928.js adds the moonwalk intro, sung
+captions on the bar, a double slam on HAMMER and on TIME at every measured STOP dropout, the lasso / jumping
+360 breakdown, and the robot toss. Every cue comes from _BUILD_SOURCE/build_hama_0928.py measuring the file.
+- The toss re-launched its hammer forever: the catch cleared flyHammer and the release keyed on "nothing in
+  the air". Only a real-time run found it; pinned-clock runs re-seeded the mode after the first toss.
+- msgText draws on every path but returns a width on only one; a fallback after it double-draws the line.
+- stageText's 9th argument is letter SPACING, not a scale.
+- SpriteCook had 1 credit; all poses are authored (troupe sheets + arch_hammer_throw_0926, the only
+  empty-handed Hammer). HAMA_FRAMES is the one table dedicated lasso/moonwalk/carry frames replace.

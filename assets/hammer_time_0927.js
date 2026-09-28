@@ -9,17 +9,25 @@ hammerFurious=function(){return ht27Active?['furious','insanity'].includes(diffK
 for(const [key,d]of Object.entries(HAMMER_TIME_ART.sheets))XART._src['ht27_'+key]=d.path;
 BOFA.music.hammerTime=HAMMER_TIME_ART.audio.path;
 if(Snd){const m=new window.Audio();m.preload='none';m.src=HAMMER_TIME_ART.audio.path;m.loop=true;Snd.music.hammerTime=m;}
-function ht27Warm(){for(const k of Object.keys(HAMMER_TIME_ART.sheets))XART.rdy('ht27_'+k);XART.rdy('arch_ship_transform');XART.rdy('arch_orbital_sweep_0926');for(let i=0;i<8;i++)XART.rdy('nsr_comet_'+i);furyShipWarm();const m=Snd&&Snd.music.hammerTime;if(m&&m.preload==='none'){m.preload='auto';m.load();}}
+/* 0928 (HAMA): the encounter is track-agnostic. A variant supplies its own song, cue windows and intro
+   length; null is the original HAMMER code with Mike's remix and its 0:16-0:24 dance break. */
+let ht27Variant=null;
+function ht27A(){return ht27Variant?ht27Variant.audio:HAMMER_TIME_ART.audio;}
+function ht27SongName(){return ht27Variant?ht27Variant.music:'hammerTime';}
+function ht27Song(){return Snd&&Snd.music[ht27SongName()];}
+function ht27IntroEnd(){return ht27Variant?ht27Variant.introEnd:HAMMER_TIME_ART.audio.breakStart;}
+function ht27WantLock(c){return ht27Variant?ht27Variant.wantLock(c):c>=HAMMER_TIME_ART.audio.breakStart&&c<HAMMER_TIME_ART.audio.breakEnd;}
+function ht27Warm(){for(const k of Object.keys(HAMMER_TIME_ART.sheets))XART.rdy('ht27_'+k);XART.rdy('arch_ship_transform');XART.rdy('arch_orbital_sweep_0926');for(let i=0;i<8;i++)XART.rdy('nsr_comet_'+i);furyShipWarm();const m=ht27Song();if(m&&m.preload==='none'){m.preload='auto';m.load();}}
 function ht27Begin(d){
  if(d.musicStarted)return true;
- const m=Snd&&Snd.music.hammerTime;
+ const m=ht27Song();
  if(!m||m.readyState<2||!XART.rdy('arch_ship_transform')||!XART.rdy('arch_orbital_sweep_0926')||!furyShipReady()||!Object.keys(HAMMER_TIME_ART.sheets).every(k=>XART.rdy('ht27_'+k)))return false;
  // The first visible ship frame and the soundtrack share this start gate.
- d.musicStarted=true;d.clock=0;HT27_BASE.music('hammerTime');return true;
+ d.musicStarted=true;d.clock=0;HT27_BASE.music(ht27SongName());return true;
 }
 function ht27Data(){return ht27Active&&boss&&!boss.dead?boss._hammerTime:null;}
 function ht27CombatSequence(b){const h=b&&b._hammer;return !!(h&&(['fr_activation','fr_stun','fr_twirl'].includes(h.state)||h.frRecovery));}
-function ht27Locked(){const d=ht27Data();if(!d)return false;const a=HAMMER_TIME_ART.audio,m=Snd&&Snd.music.hammerTime,t=m&&m.readyState>=2&&!m.paused?m.currentTime:d.clock;return d.mode==='intro'||d.locked||(!ht27CombatSequence(boss)&&t>=a.breakStart&&t<a.breakEnd);}
+function ht27Locked(){const d=ht27Data();if(!d)return false;const m=ht27Song(),t=m&&m.readyState>=2&&!m.paused?m.currentTime:d.clock;return d.mode==='intro'||d.locked||(!ht27CombatSequence(boss)&&ht27WantLock(t));}
 function ht27ClearAttacks(){
  pBullets=[];eBullets=[];enemies=[];playerLocks=[];rollers=[];zaps=[];wm26Releases=[];
  l5Rocks=[];
@@ -28,11 +36,11 @@ function ht27ClearAttacks(){
  if(Snd)Snd.loopStopAll();
 }
 function ht27Clock(d,dt){
- const m=Snd&&Snd.music.hammerTime;
+ const m=ht27Song();
  // Use the playing soundtrack, not accumulated combat time. Muting keeps its clock alive.
  if(m&&m.readyState>=2&&!m.paused&&Number.isFinite(m.currentTime))d.clock=m.currentTime;
- else if(d.mode!=='intro')d.clock=(d.clock+dt)%HAMMER_TIME_ART.audio.seconds;
- const a=HAMMER_TIME_ART.audio;
+ else if(d.mode!=='intro')d.clock=(d.clock+dt)%ht27A().seconds;
+ const a=ht27A();
  d.energy=a.envelope[Math.min(a.envelope.length-1,Math.floor(d.clock*a.envelopeFPS))]||0;
  return d.clock;
 }
@@ -56,7 +64,7 @@ function ht27LockStart(b,d){
   // Finish armor/restoration counterplay before a music cue resets combat state.
   if(ht27CombatSequence(b))return;
  d.mode='break';d.t=0;d.locked=true;d.shield=true;d.savedSpecial=special;special=null;
- d.savedSpeed=timeScale;timeScale=1;if(Snd){Snd.music.hammerTime.playbackRate=1;Snd.music.hammerTime.preservesPitch=true;}
+ d.savedSpeed=timeScale;timeScale=1;{const m=ht27Song();if(m){m.playbackRate=1;m.preservesPitch=true;}}
  d.reflections=pBullets.filter(q=>!q.dead).slice(0,16).map((q,i)=>({x:q.x,y:Math.min(q.y,b.y+100),vx:(i%2?1:-1)*(130+i*3),vy:75,t:0,w:8,h:20,kind:'eglaser',_hammerLaser:true}));
  ht27ClearAttacks();hammerState(b,'hammer');b._noHit=false;b.enter=false;
  for(const p of [player,player2])if(p){p.roll=null;p.somer=null;p._thrustPower=0;}
@@ -160,7 +168,7 @@ function ht27Tick(b,dt){
  }
  if(d.mode==='dance'){
   const hx=(camLeftX()+camRightX())/2,hy=VH*.34;
-  b.x+=clamp(hx+Math.sin(d.clock*HAMMER_TIME_ART.audio.bpm/60*Math.PI)*22-b.x,-135*dt,135*dt);
+  b.x+=clamp(hx+Math.sin(d.clock*ht27A().bpm/60*Math.PI)*22-b.x,-135*dt,135*dt);
   b.y+=clamp(hy-b.y,-160*dt,160*dt);
   if(d.t>=d.duration)ht27Attack(b,d);return;
  }
@@ -174,10 +182,10 @@ function ht27Sprite(key,frame,x,footY,height,alpha,flash){
  ctx.save();ctx.imageSmoothingEnabled=false;ctx.globalAlpha=alpha==null?1:alpha;
  ctx.drawImage(flash?xartTint('ht27_'+key,'#ffffff',.78):XART.get('ht27_'+key),r[0],r[1],r[2],r[3],x-r[4]*s,footY-r[5]*s,r[2]*s,r[3]*s);ctx.restore();return true;
 }
-function ht27WallBounds(d){const rise=d&&d.mode==='intro'?clamp((d.clock-7)/(HAMMER_TIME_ART.audio.breakStart-7),0,1):1;return{x:-8,y:VH*.64-VH*.48*rise,w:worldWidth()+16,h:VH*.48,alpha:.5,rise};}
+function ht27WallBounds(d){const rise=d&&d.mode==='intro'?clamp((d.clock-7)/(ht27IntroEnd()-7),0,1):1;return{x:-8,y:VH*.64-VH*.48*rise,w:worldWidth()+16,h:VH*.48,alpha:.5,rise};}
 function ht27Draw(b){
  const d=b._hammerTime;if(!d||b.dead)return HT27_BASE.draw(b);
- const beat=d.clock*HAMMER_TIME_ART.audio.bpm/60,step=Math.floor(beat*2),twirl=d.mode==='break'&&Math.floor(d.t/2)%2===1;
+ const beat=d.clock*ht27A().bpm/60,step=Math.floor(beat*2),twirl=d.mode==='break'&&Math.floor(d.t/2)%2===1;
  for(const q of d.helpers){
   if(q.spawn<=0)continue;
   ht27Sprite('dancers',d.mode==='intro'?0:(twirl?4:0)+(step+q.slot)%4,q.x,q.y+32,116*q.spawn,1,q.flash>0);
@@ -218,11 +226,12 @@ function ht27Start(){
 function ht27Stop(){
  const d=boss&&boss._hammerTime;if(d&&d.savedSpecial){special=d.savedSpecial;d.savedSpecial=null;}
  ht27Active=false;ht27Pending=false;run._hammerTime=false;timeScale=1;if(d){d.locked=false;d.shield=false;d.helpers=[];}
- if(Snd&&Snd.cur===Snd.music.hammerTime)Snd.stopMusic();
+ if(Snd&&Snd.cur&&Snd.cur===ht27Song())Snd.stopMusic();
+ ht27Variant=null;
 }
 submitPassword=function(){
  if(String(pwInput).trim().toUpperCase()==='HAMMER'){
-  ht27Pending=true;ht27Warm();pwInput='';PENDING_STAGE=5;_coleScene=0;run.mode='arcade';passwordDifficulty=true;
+  ht27Variant=null;ht27Pending=true;ht27Warm();pwInput='';PENDING_STAGE=5;_coleScene=0;run.mode='arcade';passwordDifficulty=true;
   menuIndex=Math.max(0,diffList().indexOf(diffKey||'normal'));Audio.SFX.select();setState(GS.DIFF);return;
  }
  ht27Pending=false;return HT27_BASE.submit.apply(this,arguments);
@@ -233,18 +242,18 @@ setState=function(s){
  if(ht27Active){
   if([GS.STAGECLEAR,GS.OUTBOUND,GS.STAGESEL,GS.VICTORY,GS.GAMEOVER,GS.RIVAL,GS.WARPENTRY].includes(s)){ht27Stop();s=GS.TITLE;}
   else if(s===GS.TITLE||s===GS.MODESEL||s===GS.CAMPHUB)ht27Stop();
-  else if(s==='paused')Snd.music.hammerTime.pause();
-  else if(s===GS.PLAY&&state==='paused')Snd.music.hammerTime.play().catch(()=>{});
+  else if(s==='paused'){const m=ht27Song();if(m)m.pause();}
+  else if(s===GS.PLAY&&state==='paused'){const m=ht27Song();if(m)m.play().catch(()=>{});}
  }
  if(ht27Pending&&[GS.TITLE,GS.PASSWORD,GS.MODESEL].includes(s))ht27Pending=false;
  return HT27_BASE.state.call(this,s);
 };
-Audio.startMusic=function(name){return HT27_BASE.music.call(this,ht27Active&&boss&&!boss.dead&&/^(boss5|mini5|lvl5|stage|hammerTime)$/.test(name)?'hammerTime':name);};
+Audio.startMusic=function(name){return HT27_BASE.music.call(this,ht27Active&&boss&&!boss.dead&&/^(boss5|mini5|lvl5|stage|hammerTime|hama)$/.test(name)?ht27SongName():name);};
 updatePlay=function(dt){
  const d=ht27Data();if(d){
   if(d.mode==='intro'&&!ht27Begin(d)){Input.clearTaps();return;}
-  const c=ht27Clock(d,dt),a=HAMMER_TIME_ART.audio,want=c>=a.breakStart&&c<a.breakEnd;
-  if(d.mode==='intro'&&c<a.breakStart){ht27Tick(boss,dt);ht27DanceEffects(dt);efxClock+=dt;mapScroll+=dt*12;Input.clearTaps();return;}
+  const c=ht27Clock(d,dt),want=ht27WantLock(c);
+  if(d.mode==='intro'&&c<ht27IntroEnd()){ht27Tick(boss,dt);ht27DanceEffects(dt);efxClock+=dt;mapScroll+=dt*12;Input.clearTaps();return;}
   if(want&&!d.locked&&!ht27CombatSequence(boss))ht27LockStart(boss,d);else if(!want&&d.locked)ht27LockEnd(boss,d);
   if(d.locked){ht27Tick(boss,dt);ht27DanceEffects(dt);efxClock+=dt;mapScroll+=dt*12;Input.clearTaps();return;}
  }
