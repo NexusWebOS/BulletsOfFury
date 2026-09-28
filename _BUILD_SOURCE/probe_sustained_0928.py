@@ -58,6 +58,11 @@ AP = r"""
     };
     const origKill = window.killEnemy;
     window.killEnemy = function(e) { if (Q.cur && e && !e._apKilled) { e._apKilled = 1; Q.cur.kills++; } return origKill.apply(this, arguments); };
+    // Canvas stack balance (Priority 0 #7): count save/restore on the game's own context instance
+    Q.depth = 0; Q.depth0 = null;
+    const cs = ctx.save, cr = ctx.restore;
+    ctx.save = function() { Q.depth++; return cs.apply(this, arguments); };
+    ctx.restore = function() { Q.depth--; return cr.apply(this, arguments); };
     const ce = console.error.bind(console), cl = console.log.bind(console), cw = console.warn.bind(console);
     const grab = (a) => { const s = Array.prototype.map.call(a, x => String(x && x.stack || x)).join(' ');
       if (/draw error|update error|TypeError|ReferenceError|RangeError/.test(s)) { Q.errs.push({f: Q.f, st: state, stage: run && run.stage, s: s.slice(0, 300)}); if (Q.cur) Q.cur.errs++; } };
@@ -75,6 +80,8 @@ AP = r"""
   window.__qaTick = function() {
     Q.f++;
     const st = state;
+    if (Q.depth0 == null) Q.depth0 = Q.depth;
+    if (Q.depth !== Q.depth0) { if (Q.cur) { Q.cur.stackLeaks = (Q.cur.stackLeaks|0) + 1; if (!Q.cur.leakAt) Q.cur.leakAt = {f: Q.cur.playFrames, st, d: Q.depth - Q.depth0}; } Q.depth0 = Q.depth; }
     if (Q.cur && (!Q.cur.states.length || Q.cur.states[Q.cur.states.length-1] !== st)) Q.cur.states.push(st);
     if (st !== 'play') {
       release();
@@ -117,6 +124,10 @@ AP = r"""
     const bodies = [];
     for (const e of enemies) { if (!e || e.dead || e._dyingT != null) continue; if (Math.abs(e.x - P.x) > 200 || Math.abs(e.y - P.y) > 220) continue;
       bodies.push([e.x, e.y, (e.w || 30) / 2 + 10, (e.h || 30) / 2 + 12, +e.vx || 0, +e.vy || 0]); }
+    // column hazards the bullet list does not carry: hostile zone columns and hostile geysers (0918b)
+    const cols = [];
+    try { for (const c of zoneCols) if (c && c.hostile && c.t < c.life) cols.push([c.x0 - 12, c.x0 + c.w + 12, -1e9, 1e9]); } catch (_z) {}
+    try { for (const g of geysers) if (g && g.hostile && g.t < g.life) { const l = (typeof geyserLane === 'function' ? geyserLane(g) : 14) * 0.75 + 14; cols.push([g.x - l, g.x + l, g.y - GEYSER_H - 20, g.y + 10]); } } catch (_g) {}
     const T = (bossActive && boss && !boss.dead) ? boss : (subBossActive && subBoss && !subBoss.dead ? subBoss : null);
     // target x: nearest pickup, else the encounter, else the lowest living enemy on screen
     let tx = worldWidth() / 2, ty = VH * 0.78, pick = null;
@@ -139,6 +150,8 @@ AP = r"""
         for (const e of bodies) { const ex = e[0] + e[4] * t, ey = e[1] + e[5] * t;
           if (Math.abs(ex - px) < e[2] && Math.abs(ey - py) < e[3]) risk += w * 30; }
       }
+      for (let t = 2; t <= H; t += 6) { const px = clamp(P.x + dx / l * sp * t, 10, worldWidth() - 10), py = clamp(P.y + dy / l * sp * t, PLAY.y + 12, PLAY.y + PLAY.h - 6);
+        for (const c of cols) if (px > c[0] && px < c[1] && py > c[2] && py < c[3]) risk += 25; }
       const fx = clamp(P.x + dx / l * sp * 10, 10, worldWidth() - 10), fy = clamp(P.y + dy / l * sp * 10, PLAY.y + 12, PLAY.y + PLAY.h - 6);
       const goal = Math.abs(fx - tx) * 0.05 + Math.abs(fy - ty) * 0.03 + (fx < 40 || fx > worldWidth() - 40 ? 1.5 : 0);
       const score = risk + goal + (dx || dy ? 0.02 : 0);
@@ -261,9 +274,9 @@ def main():
     print(json.dumps({k: report[k] for k in ('path', 'pageErrors', 'stepErrors')}, indent=0)[:3000])
     for s in report['stages']:
         fs = lambda v: ('%.0fs' % (v / 60.0)) if v is not None else '-'
-        print('stage %d: play %s mini %s->%s boss %s->%s kills %d picks %d hits %d deaths %d errs %d peakE %d peakR %d maxStall %s ended %s' % (
+        print('stage %d: play %s mini %s->%s boss %s->%s kills %d picks %d hits %d deaths %d errs %d leaks %s peakE %d peakR %d maxStall %s ended %s' % (
             s['stage'], fs(s['playFrames']), fs(s['mini']), fs(s['miniDown']), fs(s['boss']), fs(s['bossDown']), s['kills'], s['pickups'],
-            s['hits'], s['deaths'], s['errs'], s['peakEnemies'], s['peakRounds'], fs(s['maxStall']), s['ended']))
+            s['hits'], s['deaths'], s['errs'], s.get('stackLeaks', 0), s['peakEnemies'], s['peakRounds'], fs(s['maxStall']), s['ended']))
     print('errors (first):', report['errors'][:6])
 
 if __name__ == '__main__':
