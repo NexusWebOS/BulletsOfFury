@@ -37,6 +37,13 @@ CASES = [
   ('spacebomber', 5, 'mini', 'furious', ['overdrive', 'carpet']),
   ('siegebomber', 6, 'mini', 'hard', ['lob', 'bombs']),
   ('siegebomber', 6, 'mini', 'furious', ['overdrive', 'carpet']),
+  ('warhive', 6, 'boss', 'normal', ['mortar']),
+  ('warhive', 6, 'boss', 'hard', ['flurry']),
+  ('warhive', 6, 'boss', 'furious', ['twin', 'barrage']),
+  ('dualscoopdredger', 7, 'mini', 'normal', ['caustic-lob', 'tank-mortar']),
+  ('dualscoopdredger', 7, 'mini', 'furious', ['overdrive', 'sludge-wall']),
+  ('sludgeemperor', 7, 'boss', 'hard', ['spore-lob', 'mortar']),
+  ('sludgeemperor', 7, 'boss', 'furious', ['overdrive', 'portal-volley']),
 ]
 
 SETUP = r"""
@@ -52,7 +59,29 @@ SETUP = r"""
   if(c.role==='mini'){spawnSubBoss__inner(c.kind);subBossActive=true;}else{spawnBoss(c.kind);bossActive=true;}
   const b=c.role==='mini'?subBoss:boss;b.enter=false;b._be=null;b._noHit=false;
   if(b._s3Arrival!=null)b._s3Arrival=9;
-  window.__B=b;return {name:b.name,hp:b.hp,maxhp:b.maxhp,owner:!!b._er26};
+  window.__B=b;
+  window.__forceS7=function(b,mode){
+    const M=b._s7mod;b.y=b.ty;b.enter=false;
+    if(!M.tank&&(mode==='overdrive'||mode==='portal-volley')){for(const p of M.parts)if(!p.id.startsWith('gun'))p.hp=0;M.shield=0;}
+    if(M.tank&&mode==='overdrive')b.hp=b.maxhp*.45;
+    if(mode==='overdrive'){M.od=false;s7mNext(b);}
+    else {if(mode==='sludge-wall'||mode==='portal-volley')M.od=true;s7mSet(b,mode);}
+    return {mode:M.mode,od:!!M.od,stage:s7mStage(M)};
+  };
+  window.__force28=function(b,mode){
+    const W=b._whv,M=b._s7mod;
+    if(W){
+      W.mode='carrier';W.st='hold';W.t=0;W.cy=WHV_HOME_Y;W.doorOpen=true;W.launched=W.jetN;W.mortarCast=false;b.x=W.cx;b.y=W.cy;
+      if(mode==='mortar'){W.can.cd=99;}
+      if(mode==='flurry'){W.can.i=0;W.can.cd=0;W.mortarCast=true;}
+      if(mode==='twin'){W.od=true;W.can.i=1;W.can.cd=0;W.mortarCast=true;b.hp=b.maxhp*.45;}
+      if(mode==='barrage'){W.od=true;W.can.cd=99;b.hp=b.maxhp*.45;}
+      return {st:W.st,fur:W.fur,hard:W.hard};
+    }
+    if(M&&typeof window.__forceS7==='function')return window.__forceS7(b,mode);
+    return {err:'no force'};
+  };
+  return {name:b.name,hp:b.hp,maxhp:b.maxhp,owner:!!b._er26};
 }
 """
 

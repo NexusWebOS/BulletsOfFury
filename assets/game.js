@@ -40024,15 +40024,27 @@ function whvCannonTick(b,dt){
     return;
   }
   C.cd-=dt*(DIFF.eFire||1); if(C.cd>0)return;
-  const side=live[C.i%live.length], pat=['flurry','spread','beam'][C.i%3]; C.i++;
+  const book=(W.fur&&W.od&&live.length===2)?['flurry','twin','spread','beam']:['flurry','spread','beam'];
+  const side=live[C.i%live.length], pat=book[C.i%book.length]; C.i++; C.last=pat;
   if(pat==='beam'){ const q=whvPartPos(b,side);
     W.beam={side:side, t:0, warn:1.55, fire:1.25, w:VW/3}; whvSfx('beamCharge'); C.cd=2.4; return; }
+  if(pat==='twin'){ /* 0928 Furious: both thrusters burn at once - the gap between them is the safe lane */
+    W.beam={side:'L', t:0, warn:1.55, fire:1.2, w:VW/4}; W.beam2={side:'R', t:0, warn:1.55, fire:1.2, w:VW/4}; whvSfx('beamCharge'); C.cd=2.8; return; }
+  if(pat==='flurry'){ /* 0928: five TARGETED balls - each lane ends on the point it is coming to */
+    for(let k=0;k<5;k++)tb28Fire(b,{from:()=>{const q=whvPartPos(b,side);return b.dead||W.parts[side].dead?null:{x:q.x,y:q.y+14};},
+      target:{x:player.x+rnd(-24,24),y:player.y+rnd(-16,10)},warm:.62+k*.2,track:.45,flight:.7,mode:'direct',art:'plasma',size:26,silent:k>0,
+      onArrive:(q,x,y)=>explode(x,y,22,'blue')});
+    whvSfx('beamCharge',.5); C.cd=2.3; return; }
   const shots=[];
-  if(pat==='flurry'){ for(let k=0;k<5;k++)shots.push({at:k*.2,off:rnd(-.05,.05),sp:3.1}); C.cd=2.1; }
-  else { for(let r=0;r<2;r++)for(const o of [-.32,0,.32])shots.push({at:r*.5,off:o,sp:2.9}); C.cd=2.0; }
+  for(let r=0;r<2;r++)for(const o of [-.32,0,.32])shots.push({at:r*.5,off:o,sp:2.9}); C.cd=2.0;   // spread
   C.seq={side:side,t:0,shots:shots};
 }
 function whvBeamTick(b,dt){
+  const W=b._whv;
+  if(W.beam2){ const keep=W.beam; W.beam=W.beam2; whvBeamTick1(b,dt); W.beam2=W.beam; W.beam=keep; }
+  whvBeamTick1(b,dt);
+}
+function whvBeamTick1(b,dt){
   const W=b._whv, B=W.beam; if(!B)return;
   if(W.parts[B.side].dead){ W.beam=null; return; }
   B.t+=dt; const q=whvPartPos(b,B.side);
@@ -40060,22 +40072,40 @@ function whvCarrierTick(b,dt){
   const ez=u=>1-Math.pow(1-clamp(u,0,1),3);
   if(W.st==='descend'){ W.cy=W.y0+(WHV_HOME_Y-W.y0)*ez(W.t/2.6);
     if(W.t>=2.6){ W.st='open'; W.t=0; W.cy=WHV_HOME_Y; } }
-  else if(W.st==='open'){ if(W.t>=.35&&!W.doorOpen){ W.doorOpen=true; whvSfx('dash'); shake=Math.max(shake,4);
+  else if(W.st==='open'){ W.mortarCast=false; if(W.t>=.35&&!W.doorOpen){ W.doorOpen=true; whvSfx('dash'); shake=Math.max(shake,4);
       const d=whvPartPos(b,'door'); if(typeof fxBurst==='function')fxBurst(d.x,d.y,30,{color:'#cfe6ff',rings:1}); }
     if(W.t>=.75){ W.st='launch'; W.t=0; W.launched=0; W.launchCd=0; } }
   else if(W.st==='launch'){ W.launchCd-=dt;
     if(W.launchCd<=0&&W.launched<W.jetN){ whvLaunchJet(b); W.launchCd=W.hard?.5:.42; }
     if(W.launched>=W.jetN){ W.st='hold'; W.t=0; } }
-  else if(W.st==='hold'){ if(W.t>=(W.hard?5.2:3.6)){ W.st='retreat'; W.t=0; W.y0=W.cy;
-      if(!W.parts.door.dead){ W.doorOpen=false; whvSfx('dash'); } W.beam=null; W.can.seq=null; } }
+  else if(W.st==='hold'){ if(!W.mortarCast&&W.t>=.6){ W.mortarCast=true; whvBayMortar(b); }
+    if(W.t>=(W.hard?5.2:3.6)){ W.st='retreat'; W.t=0; W.y0=W.cy;
+      if(!W.parts.door.dead){ W.doorOpen=false; whvSfx('dash'); } W.beam=null; W.beam2=null; W.can.seq=null; } }
   else if(W.st==='retreat'){ W.cy=W.y0+(WHV_AWAY_Y-W.y0)*Math.pow(clamp(W.t/2.3,0,1),2);
     if(W.t>=2.3){ W.st='away'; W.t=0; } }
   else if(W.st==='away'){ W.cy=WHV_AWAY_Y;
     if(whvJetsAlive(W)===0&&W.t>1.2 || W.t>45){ W.st='descend'; W.t=0; W.y0=WHV_AWAY_Y; W.cycle++; } }
+  if(W.fur&&!W.od&&b.hp<=b.maxhp*.5&&whvOnScreen(b)){ W.od=true; W.can.cd=Math.min(W.can.cd,.8);
+    if(typeof arcadeBanner==='function')arcadeBanner('SCRAMBLE'); shake=Math.max(shake,10); whvSfx('bossRoar');
+    if(typeof spawnShockRing==='function'){spawnShockRing(W.cx,W.cy,180,'fire');spawnShockRing(W.cx,W.cy,280,'fire');} }
   whvCannonTick(b,dt); whvBeamTick(b,dt);
   for(const id in W.parts){ const p=W.parts[id]; p.fl=Math.max(0,p.fl-dt); }
   b.x=W.cx; b.y=W.cy;
   if(W.core<=0||(W.parts.L.dead&&W.parts.R.dead)){W.core=0;for(const p of Object.values(W.parts))p.hp=0;b.hp=0;whvDeathStart(b);}
+}
+/* 0928: the bay lobs plasma bombs onto reticles while the door is open (every difficulty; the Normal
+   carrier had no fire of its own). Furious below half turns it into a grid with one open cell. */
+function whvBayMortar(b){
+  const W=b._whv, door=()=>{ if(b.dead||!W.doorOpen)return null; const d=whvPartPos(b,'door'); return {x:d.x,y:d.y+10}; };
+  const n=diffKey==='furious'?2:diffKey==='hard'?1:0;
+  if(W.fur&&W.od){
+    const cells=[];for(const c of [-1,0,1])for(const r of [-1,1])cells.push([c,r]);const safe=(W.cycle*3+1)%cells.length;
+    cells.forEach(([c,r],i)=>{ if(i===safe)return; tb28Fire(b,{from:door,target:{x:player.x+c*70,y:player.y+r*34},warm:.85+i*.08,flight:.85,mode:'lob',arc:110,
+      art:'plasma',size:28,splash:32,reticle:76,width:24,laneAlpha:.38,silent:i>0,onArrive:(q,x,y)=>explode(x,y,34,'blue')}); });
+  }else for(let i=0;i<2+n;i++){ const off=i===0?0:((i&1)?90:-90);
+    tb28Fire(b,{from:door,target:{x:player.x+off,y:player.y-(i&1?18:0)},warm:[1.1,.95,.85][n]*(diffKey==='easy'?1.3:1)+i*.3,flight:.85,mode:'lob',arc:110,
+      art:'plasma',size:28,splash:32,reticle:78,width:26,laneAlpha:.5,silent:i>0,onArrive:(q,x,y)=>explode(x,y,34,'blue')}); }
+  whvSfx('launch',.7);
 }
 /* ---------- the carrier's fall, and the ace coming out of it ---------- */
 function whvDeathStart(b){
@@ -40183,7 +40213,7 @@ function whvAceDecide(b,A,dt){
   if(A.gunCd<=0&&Math.abs(player.x-A.x)<46){ A.gunCd=(A.inverted?.7:1.05)/(DIFF.eFire||1);
     if(A.inverted)whvAceGuns(b,A,.22); else { whvAceGuns(b,A,0); A.burst=3; A.burstT=.09; } }
   if(A.burst>0){ A.burstT-=dt; if(A.burstT<=0){ A.burst--; A.burstT=.09; whvAceGuns(b,A,0); } }
-  if(A.mslCd<=0){ A.mslCd=rnd(6,8)/(DIFF.eFire||1); whvAceFireMissiles(b,hard?4:2); }
+  if(A.mslCd<=0){ A.mslCd=rnd(6,8)/(DIFF.eFire||1); whvAceFireMissiles(b,(W.fur&&b.hp<=b.maxhp*.5)?6:hard?4:2); }
   if(hard&&A.dashCd<=0&&!A.inverted){ A.dashCd=rnd(8,10); A.dash={st:'warn',t:0,x0:A.x,y0:A.y}; }
   if(A.inverted){ A.invSomerCd-=dt; if(A.invSomerCd<=0){ A.invSomerCd=rnd(3.5,5); A.somer={t:0,y0:A.y}; } }
 }
@@ -40201,7 +40231,9 @@ function whvAceDashTick(b,A,dt){
     if(u>=1){ D.st='back'; D.t=0; D.bx=A.x; D.by=A.y; } return; }
   if(D.st==='back'){ const u=clamp(D.t/1.1,0,1), e=u*u*(3-2*u), ty=(WHV_ZONE.y0+WHV_ZONE.y1)/2;
     A.x=D.bx+(clamp(player.x,camLeftX()+60,camRightX()-60)-D.bx)*e*.5; A.y=D.by+(ty-D.by)*e;
-    if(u>=1){ A.dash=null; A.vx=A.vy=0; } }
+    if(u>=1){ const again=b._whv.fur&&b.hp<=b.maxhp*.5&&!D.second; A.dash=null; A.vx=A.vy=0;
+      /* 0928 Furious: the ace doubles its charge - a second committed lane, re-aimed, with its own warning */
+      if(again)A.dash={st:'warn',t:0,x0:A.x,y0:A.y,second:true}; } }
 }
 /* Hard, 25%: charge off the bottom, three wobbling criss-cross passes, then back in and inverted */
 function whvAceDesperation(b,A,dt){
@@ -40339,7 +40371,7 @@ function whvDrawShots(b){
     if(orb){ const d=s.r*2.6; ctx.save(); ctx.translate(s.x,s.y); ctx.rotate(now*6+s.t*3); ctx.globalCompositeOperation='lighter'; ctx.imageSmoothingEnabled=false;
       ctx.drawImage(orb,-d/2,-d/2,d,d); ctx.globalAlpha=.55; ctx.drawImage(orb,-d*.32,-d*.32,d*.64,d*.64); ctx.restore(); }
   }
-  const B=W.beam; if(B&&!W.parts[B.side].dead){ const q=whvPartPos(b,B.side);
+  for(const B of [W.beam,W.beam2]) if(B&&!W.parts[B.side].dead){ const q=whvPartPos(b,B.side);
     if(B.t<B.warn){ if(typeof combatWarningDraw==='function')combatWarningDraw(b,{x:q.x,y:q.y+14,ex:q.x,ey:VH+40,progress:B.t/B.warn,width:B.w}); }
     else if(las){ const u=B.t-B.warn, open=clamp(u/.12,0,1)*clamp((B.fire-u)/.18,0,1), w=B.w*open, h=VH-q.y+40;
       ctx.save(); ctx.globalCompositeOperation='lighter'; ctx.imageSmoothingEnabled=false;
@@ -66157,6 +66189,10 @@ function cmap2CameraTick(dt, cine, selStage){
      into the open band instead, with the fence lifted - past the world edge is still open sea. */
   if(typeof s9MapCine!=='undefined' && s9MapCine){ const f=cmap2Frame(5,9); tx=f.x; ty=f.y; tz=f.z; free=true; }
   else if(typeof riftReturn!=='undefined' && riftReturn){ const f=cmap2Frame(9,5); tx=f.x; ty=f.y; tz=f.z; free=true; }
+  /* 0928: the skipped rebels leave Stage 6 for the map's centre - frame that flight, and afterwards keep
+     Stage 7 and the orbiting Stage X in one shot, so both choices Mike named are on screen together */
+  else if(typeof Rival24!=='undefined' && Rival24.mapAvailable && !Rival24.mapFocused && (Rival24.flying || selStage===7 || selStage===6)){
+    const f=cmap2Frame(Rival24.flying?6:selStage,'hub'); tx=f.x; ty=f.y; tz=Math.min(1,f.z); free=true; }
   else {
     const w=cmap2World(selStage)||{x:CM2_W/2, y:CM2_H/2};
     tx=w.x; ty=w.y;

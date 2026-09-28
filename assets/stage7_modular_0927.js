@@ -60,13 +60,17 @@ function s7mSet(b,mode){const M=b._s7mod;M.mode=mode;M.t=0;M.shot=0;M.shotCD=0;M
   }
   if(mode==='drop'||mode==='roar'||mode==='jump')s7WardenMechSound(mode==='drop'?'scream':'roar');
   if(mode==='chain'||mode==='aim'||mode==='laser'||mode==='orbs')combatWarningTick(b,'s7m-'+mode,0,M.warn,true);
+  s7m28Set(b,mode);
 }
 function s7mNext(b){const M=b._s7mod,phase=s7mStage(M);let book;
-  if(M.tank)book=['tank-cross','tank-mortar','tank-charge','tank-orbits'];
-  else if(phase==='front')book=['chase','chain','mortar','orbs','bounce','jump'];
-  else if(phase==='rear')book=['crawl','mortar','bounce','chain','orbs'];
-  else if(phase==='shield')book=['orbs','mortar'];
-  else book=s7mLive(M,'gun').length?['aim','mortar']:['laser','laser','orbs'];
+  /* 0928 Furious: the tank vents at half its pool; the Warden's exposed core opens portal feedback */
+  if(M.n===2&&!M.od&&(M.tank?b.hp<=b.maxhp*.5:phase==='core')){M.od=true;M.seq=0;s7mSet(b,'overdrive');return;}
+  if(M.tank)book=M.od?['tank-cross','sludge-wall','caustic-lob','tank-charge','tank-charge','tank-mortar','tank-orbits']:['tank-cross','caustic-lob','tank-mortar','tank-charge','tank-orbits'];
+  else if(phase==='front')book=['chase','chain','mortar','spore-lob','orbs','bounce','jump'];
+  else if(phase==='rear')book=['crawl','mortar','spore-lob','bounce','chain','orbs'];
+  else if(phase==='shield')book=['orbs','spore-lob','mortar'];
+  else book=M.od?(s7mLive(M,'gun').length?['aim','portal-volley','spore-lob','jump','jump','mortar']:['laser','portal-volley','laser','spore-lob','jump','jump','orbs'])
+    :(s7mLive(M,'gun').length?['aim','mortar','spore-lob']:['laser','laser','orbs','spore-lob']);
   let next=book[M.seq++%book.length];if(['chain','aim','tank-cross'].includes(next)&&!s7mLive(M,'gun').length)next=M.tank?'tank-orbits':'orbs';
   s7mSet(b,next);
 }
@@ -98,7 +102,7 @@ function s7mPose(b){const M=b._s7mod,t=M.clock,phase=s7mStage(M),parts=[],tank=M
   add('mask',7,0,60-M.mask*37,47,43);return parts;
 }
 function s7mWorld(b,p){const M=b._s7mod,c=Math.cos(M.lean),s=Math.sin(M.lean);return{x:b.x+p.x*c-p.y*s,y:b.y+M.drop-M.height+p.x*s+p.y*c};}
-function s7mAt(b,x,y){const M=b._s7mod;if(!M||['portal','entry','roar','dead','jump'].includes(M.mode))return null;
+function s7mAt(b,x,y){const M=b._s7mod;if(!M||['portal','entry','roar','dead','jump','overdrive'].includes(M.mode))return null;
   const pose=s7mPose(b);for(const p of pose.slice().reverse()){
     const part=M.parts.find(q=>q.id===p.id);if(part&&part.hp<=0)continue;if(!part&&!['body','core','canL','canR'].includes(p.id))continue;
     const q=s7mWorld(b,p),a=p.a+M.lean,c=Math.cos(a),s=Math.sin(a),dx=(x-q.x)*c+(y-q.y)*s,dy=-(x-q.x)*s+(y-q.y)*c;
@@ -111,7 +115,7 @@ function s7mBeamImpact(b,beam){
   return null;
 }
 function s7mSyncHP(b){const M=b._s7mod;b.hp=Math.max(1,M.core+(M.tank?0:M.shield)+M.parts.reduce((s,p)=>s+Math.max(0,p.hp),0));}
-function s7mHit(b,dmg,x,y,id){const M=b._s7mod;if(!M||!Number.isFinite(dmg)||dmg<=0||['portal','entry','roar','dead','jump'].includes(M.mode))return true;
+function s7mHit(b,dmg,x,y,id){const M=b._s7mod;if(!M||!Number.isFinite(dmg)||dmg<=0||['portal','entry','roar','dead','jump','overdrive'].includes(M.mode))return true;
   id=id||s7mAt(b,x,y);if(!id)return true;if(id==='canister'){M.shieldFlash=.12;return true;}const phase=s7mStage(M),p=M.parts.find(p=>p.id===id);
   if(p){if(!s7mVulnerable(M,p))return true;p.hp=Math.max(0,p.hp-dmg);p.flash=.18;p.stress+=dmg;
     if(p.id.startsWith('front')&&M.mode==='chase'&&p.stress>=p.max*.16){p.stress=0;s7mSet(b,'stun');s7mSound('blocked');}
@@ -153,7 +157,7 @@ function s7mTick(b,dt){if(!s7mOwns(b))return false;const M=s7mInit(b);M.t+=dt;M.
   for(const p of M.parts)p.flash=Math.max(0,p.flash-dt);const ph=s7mStage(M),mode=M.mode;
   M.lean+=(M.tank?0:(s7mLive(M,'front').length===1?(s7mLive(M,'front')[0].id==='frontL'?-.15:.15):0)-M.lean)*Math.min(1,dt*4);
   M.drop+=((!M.tank&&ph!=='front'?25:0)-M.drop)*Math.min(1,dt*(mode==='drop'?8:3));
-  if(!M.tank){b._s7warden.noHit=['portal','entry','roar','jump','dead'].includes(mode);b._s7warden.final.phase=mode==='dead'?'defeat':mode==='portal'?'portalClose':mode==='entry'?'walkIn':mode==='roar'?'roar':'fight';b._s7warden.final.t=M.t;b._s7FinalNoBar=['portal','entry','roar','dead'].includes(mode);}
+  if(!M.tank){b._s7warden.noHit=['portal','entry','roar','jump','dead','overdrive'].includes(mode);b._s7warden.final.phase=mode==='dead'?'defeat':mode==='portal'?'portalClose':mode==='entry'?'walkIn':mode==='roar'?'roar':'fight';b._s7warden.final.t=M.t;b._s7FinalNoBar=['portal','entry','roar','dead'].includes(mode);}
   if(mode==='portal'){if(M.t>=1.4)s7mSet(b,'entry');return true;}
   if(mode==='entry'){b.y+=dt*(M.tank?75:48);if(b.y>=b.ty){b.y=b.ty;s7mSet(b,M.tank?'recover':'roar');}return true;}
   if(mode==='roar'){if(M.t>=1.3&&!M.shot){M.shot=1;shake=Math.max(shake,11);s7mFX(b.x,b.y+85,170,true);s7mSound('wardenRail');}if(M.t>=2.65)s7mSet(b,'recover');return true;}
@@ -161,6 +165,7 @@ function s7mTick(b,dt){if(!s7mOwns(b))return false;const M=s7mInit(b);M.t+=dt;M.
     if(M.t>3.3){if(M.tank){b.dead=true;subBossActive=false;subBossDone=true;run.score+=7000;continueRewardResolve(b,b.x,b.y,'miniboss');dropPowerup(b.x,b.y,'weapon');}else{if(!b._forgeRewardDropped){b._forgeRewardDropped=true;forgeBossDrop(b.x,b.y);run.score+=35000;}s7WardenFinishCampaign(b);}}return true;}
   if(mode==='drop'){if(M.t>.23&&!M.shot){M.shot=1;shake=Math.max(shake,15);s7mFX(b.x,b.y+80,200,true);s7mSound('expBig');}if(M.t>1.45)s7mSet(b,'recover');return true;}
   if(mode==='recover'||mode==='stun'){s7mMove(b,worldWidth()/2,M.tank?145:175,mode==='stun'?35:62,dt);if(M.t>(mode==='stun'?1.65:[1.1,.9,.75][M.n]))s7mNext(b);return true;}
+  if(s7m28Tick(b,dt))return true;
   if(mode==='chase'||mode==='crawl'){
     if(Math.floor(M.t*2.5)!==M.shot){M.shot=Math.floor(M.t*2.5);M.target.x=player.x;s7WardenMechSound('foot');}
     const planted=(Math.floor(M.t*9)%2)?1.55:.45;s7mMove(b,M.target.x,Math.min(VH*.59,player.y-70),[125,148,172][M.n]*planted*(mode==='crawl'?.48:1),dt);
@@ -220,7 +225,7 @@ function s7mPortalDraw(){if(run.stage!==7)return false;s7mWarm();const b=boss,M=
   const fi=M.mode==='portal'?Math.min(7,Math.floor(M.t*5)):M.mode==='entry'?4+Math.floor(M.clock*10)%8:12+Math.min(3,Math.floor(M.t/.30));
   if(M.mode==='roar'&&M.t>1.2)return true;s7mBlit('portal',fi,worldWidth()/2,149,240,274,0,1);return true;
 }
-function s7mWarnings(front){for(const b of [boss,subBoss]){const M=b&&b._s7mod;if(!M||b.dead)continue;
+function s7mWarnings(front){s7m28Warnings(front);for(const b of [boss,subBoss]){const M=b&&b._s7mod;if(!M||b.dead)continue;
   const mode=M.mode,p=clamp(M.t/M.warn,0,1);if(M.landing&&!M.landing.impact&&!M.landing.dead){if(front)combatWarningDraw(b,{x:M.landing.x,y:M.landing.y,ex:M.landing.x,ey:M.landing.y,progress:p,alertOnly:true,alertX:M.landing.x,alertY:M.landing.y-58});}
   if(M.counterTell){const q=M.counterTell,k=clamp(q.t/q.warn,0,1);for(let i=0;i<q.count;i++){const a=q.a+(i-(q.count-1)/2)*.13;combatWarningDraw(b,{x:b.x,y:b.y+55,ex:b.x+Math.cos(a)*600,ey:b.y+55+Math.sin(a)*600,progress:k,width:20,fieldOnly:!front,alertOnly:front});if(front)break;}}
   if(mode==='bounce'){const k=(M.t%.85)/.85;combatWarningDraw(b,{x:b.x,y:b.y+55,ex:b.x,ey:VH,progress:k,width:180,fieldOnly:!front,alertOnly:front});continue;}
@@ -238,4 +243,85 @@ function s7mWarnings(front){for(const b of [boss,subBoss]){const M=b&&b._s7mod;i
   if(!front&&mode==='aim')groundTargetReticleDraw(M.target.x,M.target.y,88,p,1);
  }
  if(!front)for(const q of groundTargetingFx){if(!q._s7mMortar||q.impact||q.dead)continue;const u=clamp(q.t/q.warn,0,1),from=q._s7mMortar;s7mBlit('orb',Math.floor(q.t*12)%8,lerp(from.x,q.x,u),lerp(from.y,q.y,u)-Math.sin(u*Math.PI)*155,28,28,0,1);}
+}
+
+/* ============================================================================
+   0928 — Stage 7 (Mike: FOV warnings for balls coming to a targeted point, not for explosions;
+   Normal/Hard upgrades; Furious "extra abilities, attacks, patterns, phases").
+   * Mortar orbs already arced onto floor reticles; each now shows its lane from the launcher.
+   * CAUSTIC LOB (tank) and SPORE LOB (Warden) on every difficulty: targeted toxic balls (tb28).
+   * Furious tank, half pool: OVERPRESSURE - an invulnerable vent, then SLUDGE WALLS (rows of acid
+     whose dangerous columns are previewed, with a two-column gap that shifts every row) and a
+     back-to-back double charge.
+   * Furious Warden, exposed core: PORTAL FEEDBACK - three small toxic portals open at the field's
+     edges and each fires targeted balls at the pilot, plus a double jump.
+   ============================================================================ */
+function s7m28Set(b,mode){
+  const M=b._s7mod,n=M.n;
+  if(mode==='overdrive'){M.warn=0;M.live=1.7;M.odFx=false;}
+  else if(mode==='caustic-lob'){M.warn=0;M.live=[1.0,.9,.8][n]*(diffKey==='easy'?1.3:1)+(2+n)*.34+1.5;M.cast=false;}
+  else if(mode==='spore-lob'){M.warn=0;M.live=[1.1,.95,.85][n]*(diffKey==='easy'?1.3:1)+(3+n)*.3+1.6;M.cast=false;}
+  else if(mode==='sludge-wall'){M.warn=0;M.live=5*.62+1.6;M.rows=[];M.row=0;}
+  else if(mode==='portal-volley'){M.warn=0;M.live=4.6;M.portals=null;}
+}
+function s7m28Shot(b){return (x,y,a,s)=>s7mShot(b,x,y,a,s,'acid');}
+function s7m28Tick(b,dt){
+  const M=b._s7mod,mode=M.mode,n=M.n;
+  if(mode==='overdrive'){
+    s7mMove(b,worldWidth()/2,M.tank?145:175,40,dt);
+    if(!M.odFx&&M.t>=.3){M.odFx=true;shake=Math.max(shake,12);s7mFX(b.x,b.y,210,true);s7mFX(b.x,b.y+40,170,false);s7mSound('expBig');
+      if(typeof arcadeBanner==='function')arcadeBanner(M.tank?'OVERPRESSURE':'PORTAL FEEDBACK');if(!M.tank)s7WardenMechSound('roar');}
+    if(M.t>=M.live)s7mSet(b,'recover');return true;
+  }
+  if(mode==='caustic-lob'){
+    s7mMove(b,clamp(player.x,120,worldWidth()-120),M.tank?145:175,60,dt);
+    if(!M.cast){M.cast=true;const guns=s7mLive(M,'gun');for(let i=0;i<2+n;i++){const id=guns.length?guns[i%guns.length].id:null,off=i===0?0:((i&1)?86:-86)*Math.ceil(i/2);
+      tb28Fire(b,{from:()=>b.dead?null:(id?s7mMuzzle(b,id):{x:b.x,y:b.y+55}),target:{x:player.x+off,y:player.y-(i&1?14:0)},warm:[1.0,.9,.8][n]*(diffKey==='easy'?1.3:1)+i*.34,
+        flight:.8,mode:'direct',art:'toxic',size:30,hp:2,silent:i>0,shot:s7m28Shot(b),burst:{n:5+n,speed:2.4+.25*n,gap:.5},onArrive:(q,x,y)=>{s7mFX(x,y,90,true);s7mSound('expSmall');}});}
+      if(typeof combatAudio0927==='function')combatAudio0927(b,'bossWeaponCharge',.5);}
+    if(M.t>=M.live)s7mSet(b,'recover');return true;
+  }
+  if(mode==='spore-lob'){
+    s7mMove(b,worldWidth()/2,Math.min(VH*.5,M.tank?145:175),35,dt);
+    if(!M.cast){M.cast=true;for(let i=0;i<3+n;i++){const off=[0,-88,88,-176,176][i]||0,can=(i&1)?'canR':'canL';
+      tb28Fire(b,{from:()=>{if(b.dead)return null;const p=s7mPose(b).find(q=>q.id===can);if(!p)return {x:b.x,y:b.y};const w=s7mWorld(b,p);return {x:w.x,y:w.y-p.h*.4};},
+        target:{x:player.x+off,y:player.y+((i&1)?-20:14)},warm:[1.1,.95,.85][n]*(diffKey==='easy'?1.3:1)+i*.3,flight:.9,mode:'lob',arc:130,art:'toxic',size:32,splash:32,reticle:80,
+        width:26,laneAlpha:.5,silent:i>0,shot:s7m28Shot(b),burst:n?{n:4,speed:2.3,gap:0,offset:Math.PI/4}:null,onArrive:(q,x,y)=>{s7mFX(x,y,110,true);s7mSound('expSmall');}});}
+      s7WardenMechSound('roar');}
+    if(M.t>=M.live)s7mSet(b,'recover');return true;
+  }
+  if(mode==='sludge-wall'){
+    s7mMove(b,worldWidth()/2,M.tank?145:175,50,dt);
+    const cols=8,L=camLeftX()+24,W=camRightX()-camLeftX()-48;
+    while(M.row<5&&M.t>=M.row*.62){const gap=((M.row*3+Math.floor(player.x/80))%(cols-1)+cols-1)%(cols-1);M.rows.push({t:M.t,gap,fired:false});M.row++;}
+    for(const r of M.rows){if(r.fired||M.t<r.t+.58)continue;r.fired=true;
+      for(let c=0;c<cols;c++){if(c===r.gap||c===r.gap+1)continue;const x=L+W*(c+.5)/cols,q=s7mShot(b,x,b.y+70,Math.PI/2,2.5+.2*n,'acid');q._s7mWall=true;}
+      s7mFX(b.x,b.y+70,120,true);s7mSound('bossfireSludgeemperor');}
+    if(M.t>=M.live)s7mSet(b,'recover');return true;
+  }
+  if(mode==='portal-volley'){
+    s7mMove(b,worldWidth()/2,175,30,dt);
+    if(!M.portals){const L=camLeftX(),R=camRightX();M.portals=[{x:L+46,y:VH*.36},{x:R-46,y:VH*.36},{x:(L+R)/2,y:Math.max(viewTopY()+70,90)}].map((p,i)=>({...p,t:0,i}));
+      M.portals.forEach((P,i)=>{for(let k=0;k<2;k++)tb28Fire(b,{from:{x:P.x,y:P.y},target:{x:player.x+(k?rnd(-60,60):0),y:player.y+(k?rnd(-30,20):0)},warm:.95+i*.55+k*.42,track:.4,flight:.75,mode:'direct',
+        art:'toxic',size:30,hp:2,silent:i+k>0,shot:s7m28Shot(b),burst:{n:4+n,speed:2.3,gap:.55},onArrive:(q,x,y)=>s7mFX(x,y,80,true)});});
+      s7mSound('warpGate');}
+    for(const P of M.portals)P.t+=dt;
+    if(M.t>=M.live){M.portals=null;s7mSet(b,'recover');}return true;
+  }
+  return false;
+}
+function s7m28Warnings(front){
+  if(front)return;
+  /* the mortar orbs arc onto reticles: their lane says where each one is coming from */
+  for(const q of groundTargetingFx){if(!q._s7mMortar||q.impact||q.dead||!(q.t>0))continue;const k=clamp(q.t/q.warn,0,1),f=q._s7mMortar;
+    combatWarningDraw(q.owner||q,{x:f.x,y:f.y,ex:q.x,ey:q.y,progress:k,width:26,len:Math.hypot(q.x-f.x,q.y-f.y),fieldOnly:true,alpha:.34});}
+  for(const b of [boss,subBoss]){const M=b&&b._s7mod;if(!M||b.dead)continue;
+    if(M.mode==='sludge-wall'&&M.rows){const cols=8,L=camLeftX()+24,W=camRightX()-camLeftX()-48;
+      for(const r of M.rows){if(r.fired)continue;const k=clamp((M.t-r.t)/.58,0,1);
+        for(let c=0;c<cols;c++){if(c===r.gap||c===r.gap+1)continue;const x=L+W*(c+.5)/cols;
+          combatWarningDraw(b,{x,y:b.y+70,ex:x,ey:VH,progress:k,width:W/cols*.45,fieldOnly:true,alpha:.3});}}}
+    if(M.mode==='portal-volley'&&M.portals)for(const P of M.portals){
+      const close=clamp((M.t-(M.live-.6))/.6,0,1),fi=close>0?12+Math.min(3,Math.floor(close*4)):P.t<1.4?Math.min(7,Math.floor(P.t*5)):4+Math.floor(P.t*10)%8;
+      s7mBlit('portal',fi,P.x,P.y,96,110,0,1);}
+  }
 }

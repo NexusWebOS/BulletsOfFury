@@ -7,31 +7,78 @@ const Rival24=(()=>{
   let mapFocus=false, mapCursor=0, mapMouse=false, mapPrevCursor=7, scatterT=null, select=null, active=null, wing=[];
   function available(){return campaign&&campaign.rivalScattered&&run.mode==='campaign'&&aliveIndices().length>0;}
   function aliveIndices(){return KEYS.map((_,i)=>i).filter(i=>!(campaign.rivalDefeated||[])[i]);}
-  function pos(i){const p=typeof fr27CoreMapPosition==='function'?fr27CoreMapPosition():sselFlagScreenXY(6);return p?{x:clamp(p.x+(i-2)*35,30,VW-30),y:clamp(p.y-27,69,VH-126)}:null;}
+  /* 0928 - Mike: "if we dont face them, when we go back to the campaign map, they will fly out from
+     stage 6 and go to the middle and spiral around it all 5 of them. We then can either go to Stage 7,
+     or Stage X aka 10." They launch from the STAGE 6 flag (the old code launched from 7's), bank in
+     along curved paths nose-first, then orbit the hub in a breathing spiral around the STAGE X plaque.
+     The authored rr_ship plates face south, so a heading theta is drawn rotated by theta - PI/2. */
+  let orbitT=0;
+  function hub(){const p=typeof fr27CoreMapPosition==='function'?fr27CoreMapPosition():null;return p||(sselFlagScreenXY(6)||null);}
+  function orbitAt(i,t){
+    const h=hub();if(!h)return null;const idx=aliveIndices(),k=Math.max(0,idx.indexOf(i)),N=Math.max(1,idx.length);
+    const a=t*.8+k*TAU/N,r=92+Math.sin(t*1.5+k*1.3)*10,ry=.55;
+    return {x:h.x+Math.cos(a)*r,y:h.y+Math.sin(a)*r*ry,heading:Math.atan2(Math.cos(a)*r*ry,-Math.sin(a)*r)};
+  }
+  function pos(i){const p=orbitAt(i,orbitT);return p?{x:clamp(p.x,30,VW-30),y:clamp(p.y,40,VH-40)}:null;}
+  function shipDraw(i,x,y,heading,size,alpha){
+    const k='rr_ship_'+SHIPS[i];if(!XART.rdy(k))return;const im=XART.get(k),h=size,w=h*im.width/im.height;
+    ctx.save();ctx.globalAlpha=alpha==null?1:alpha;ctx.translate(x,y);ctx.rotate(heading-Math.PI/2);ctx.imageSmoothingEnabled=false;
+    ctx.drawImage(im,-w/2,-h/2,w,h);ctx.restore();
+  }
   function mapDraw(dt){
     if(!available()||sselBoot>0)return;
-    if(scatterT!=null)scatterT=Math.min(2.7,scatterT+(dt||0));
-    const origin=sselFlagScreenXY(7),flying=scatterT!=null&&scatterT<2.7;
-    for(const i of aliveIndices()){
-      const dest=pos(i);if(!dest)continue;
-      const k=flying?'rr_ship_'+SHIPS[i]:'rr_portrait_'+KEYS[i],chosen=mapFocus&&i===mapCursor;
-      const f=clamp(((scatterT||0)-i*.14)/2,0,1),ease=f*f*(3-2*f);
-      const p=flying&&origin?{x:lerp(origin.x,dest.x,ease),y:lerp(origin.y-25,dest.y,ease)-Math.sin(f*Math.PI)*(14+i*3)}:dest;
-      ctx.save();ctx.globalAlpha=chosen?1:.86;
-      ctx.shadowColor=COLORS[i];ctx.shadowBlur=chosen?16:6;
-      ctx.strokeStyle=COLORS[i];ctx.lineWidth=chosen?2:1;
-      ctx.strokeRect(p.x-16,p.y-14,32,28);
-      if(XART.rdy(k)){const im=XART.get(k);ctx.drawImage(im,p.x-13,p.y-12,26,24);}
-      ctx.restore();
-      if(chosen)campText('RIVAL '+KEYS[i].toUpperCase()+' - STAGE X',VW/2,VH-144,12,'#ffb6a5');
-    }
-    if(flying)campText('RIVAL CREW BREAKING FORMATION',VW/2,VH-128,10,'#ffb4a3');
-    else if(!mapFocus)controlHintRow([['pad_dpad','RIVAL CONTACTS']],VH-128,VW/2,VW-24,20);
-    else controlHintRow([['pad_dpad','RIVAL'],['pad_a','FIGHT'],['pad_b','MAP']],VH-123,VW/2,VW-24,20);
+    dt=dt||0;orbitT+=dt;
+    if(scatterT!=null)scatterT=Math.min(3.2,scatterT+dt);
+    const origin=sselFlagScreenXY(6),flying=scatterT!=null&&scatterT<3.2,h=hub();
+    const idx=aliveIndices();
+    const order=idx.map(i=>({i,p:orbitAt(i,orbitT)})).filter(o=>o.p).sort((a,b)=>a.p.y-b.p.y);
+    const drawShips=front=>{for(const {i,p} of order){
+      if((p.y>=(h?h.y:0))!==front)continue;
+      let x=p.x,y=p.y,heading=p.heading;
+      if(flying&&origin){
+        /* launched one after another from the stage 6 flag, curving out to their slot in the orbit */
+        const f=clamp((scatterT-i*.16)/2.2,0,1),e=f*f*(3-2*f);
+        if(f<=0)continue;
+        const c={x:(origin.x+p.x)/2+(i-2)*34,y:Math.min(origin.y,p.y)-60-i*6};
+        const bx=(1-e)*(1-e)*origin.x+2*(1-e)*e*c.x+e*e*p.x,by=(1-e)*(1-e)*origin.y+2*(1-e)*e*c.y+e*e*p.y;
+        const tx=2*(1-e)*(c.x-origin.x)+2*e*(p.x-c.x),ty=2*(1-e)*(c.y-origin.y)+2*e*(p.y-c.y);
+        x=bx;y=by;if(f<1)heading=Math.atan2(ty,tx);
+      }
+      const chosen=mapFocus&&i===mapCursor;
+      if(chosen){ctx.save();ctx.globalAlpha=.7+.3*Math.sin(orbitT*9);ctx.strokeStyle=COLORS[i];ctx.lineWidth=2;ctx.shadowColor=COLORS[i];ctx.shadowBlur=12;
+        ctx.beginPath();ctx.arc(x,y,21,0,TAU);ctx.stroke();ctx.restore();}
+      shipDraw(i,x,y,heading,chosen?40:34,mapFocus&&!chosen?.8:1);
+    }};
+    drawShips(false);   // the far side of the orbit passes behind the plaque
+    /* the STAGE X plaque sits in the middle of the orbit - this is the node the pilot chooses */
+    if(h&&XART.rdy('fr27_stagex_card')){const im=XART.get('fr27_stagex_card'),w=mapFocus?118:98,hh=w*im.height/im.width,
+      pulse=mapFocus?1:.86+.14*Math.sin(orbitT*3);ctx.save();ctx.globalAlpha=(flying?clamp(scatterT/2.2,0,1):1)*pulse;ctx.imageSmoothingEnabled=false;
+      if(mapFocus){ctx.shadowColor='#ff5a4a';ctx.shadowBlur=14;}ctx.drawImage(im,h.x-w/2,h.y-hh/2,w,hh);ctx.restore();}
+    else XART.rdy('fr27_stagex_card');
+    drawShips(true);    // and the near side in front of it
+    if(mapFocus&&idx.includes(mapCursor))stageXCard(mapCursor);
+    if(flying)campText('REBEL FURY BREAKING FORMATION',VW/2,VH-128,10,'#ffb4a3');
+    else if(!mapFocus)controlHintRow([['pad_dpad','STAGE X']],VH-128,VW/2,VW-24,20);
+    else controlHintRow([['pad_dpad','RIVAL'],['pad_a','FIGHT'],['pad_b','MAP']],stageXCardTop()-14,VW/2,VW-24,20);
+  }
+  /* Stage X owns the bottom card while it is focused. The stage cards are baked images (nss_panel_N)
+     and the focus borrows Stage 6's cursor, so without this the pilot read Stage 6's briefing. */
+  function stageXCardH(){const ref=XART.rdy('nss_panel_6')?XART.get('nss_panel_6'):null;return ref?456*(ref.naturalHeight||ref.height)/(ref.naturalWidth||ref.width):92;}
+  function stageXCardTop(){return VH-stageXCardH()-24;}
+  function stageXCard(i){
+    const pw=456,ph=stageXCardH(),x=(VW-pw)/2,y=VH-ph-24;
+    ctx.save();ctx.fillStyle='#08060e';ctx.fillRect(x,y,pw,ph);ctx.strokeStyle=COLORS[i];ctx.lineWidth=2;ctx.strokeRect(x+1,y+1,pw-2,ph-2);ctx.restore();
+    if(XART.rdy('fr27_stagex_card')){const im=XART.get('fr27_stagex_card'),hh=ph-12,w=hh*im.width/im.height;ctx.save();ctx.imageSmoothingEnabled=false;ctx.drawImage(im,x+8,y+6,w,hh);ctx.restore();}
+    const k='rr_portrait_'+KEYS[i],px=x+pw-ph+6;
+    if(XART.rdy(k)){ctx.save();ctx.strokeStyle=COLORS[i];ctx.lineWidth=2;ctx.strokeRect(px,y+6,ph-12,ph-12);ctx.drawImage(XART.get(k),px+1,y+7,ph-14,ph-14);ctx.restore();}else XART.rdy(k);
+    const tx=x+pw*.56;
+    campText('STAGE X  -  FRACTURED FURY',tx,y+ph*.30,11,'#ffcf9a');
+    campText('RIVAL '+KEYS[i].toUpperCase(),tx,y+ph*.55,15,COLORS[i]);
+    campText('FLY WITH TWO ALLIED PILOTS',tx,y+ph*.80,8,'#bcd3e6');
   }
   function mapInput(){
     if(!available())return false;
-    if(scatterT!=null&&scatterT<2.7)return true;
+    if(scatterT!=null&&scatterT<3.2)return true;
     const m=Input.mouse||{},idx=aliveIndices();
     if(!idx.length)return false;
     let hit=-1;
@@ -179,5 +226,5 @@ const Rival24=(()=>{
   }
   function save(){return {scattered:!!campaign.rivalScattered,defeated:(campaign.rivalDefeated||[]).slice(0,5)};}
   function load(s){reset();campaign.rivalScattered=!!(s&&s.scattered);campaign.rivalDefeated=s&&Array.isArray(s.defeated)?s.defeated.slice(0,5):[false,false,false,false,false];}
-  return {get active(){return active;},get mapFocused(){return mapFocus;},arenaStage(){return active?STAGES_AT[active.rival]:null;},mapDraw,mapInput,mapBack,selectDraw,cardDraw,tick,draw,finish,reset,restart,scatterAfterHarrier,save,load};
+  return {get active(){return active;},get mapFocused(){return mapFocus;},get mapAvailable(){return available();},get flying(){return available()&&scatterT!=null&&scatterT<3.2;},arenaStage(){return active?STAGES_AT[active.rival]:null;},mapDraw,mapInput,mapBack,selectDraw,cardDraw,tick,draw,finish,reset,restart,scatterAfterHarrier,save,load};
 })();
