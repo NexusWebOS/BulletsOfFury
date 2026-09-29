@@ -1,0 +1,9 @@
+{
+  "reels": 15,
+  "frames": 128,
+  "nonemptyCanvases": 15,
+  "animatedReels": 15,
+  "pageErrors": [],
+  "filtersAndScrub": "passed",
+  "scope": "isolated art viewer only, no audio or gameplay verification"
+}

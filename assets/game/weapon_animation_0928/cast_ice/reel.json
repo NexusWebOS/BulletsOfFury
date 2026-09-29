@@ -1,0 +1,121 @@
+{
+  "atlas": "cast_ice/atlas.png",
+  "size": [
+    160,
+    320
+  ],
+  "fps": 12,
+  "loop": true,
+  "anchor": [
+    80,
+    312
+  ],
+  "source": "casts_a",
+  "notes": "Authored elemental frame reel. Fixed center/origin; do not canvas-rotate or independently rescale frames.",
+  "frames": [
+    {
+      "file": "cast_ice/00.png",
+      "rect": [
+        2,
+        2,
+        160,
+        320
+      ],
+      "sourceCell": [
+        0,
+        514,
+        256,
+        506
+      ],
+      "sourceAlphaBounds": [
+        31,
+        8,
+        239,
+        501
+      ],
+      "scale": 0.6166328600405679,
+      "offset": [
+        16,
+        8
+      ]
+    },
+    {
+      "file": "cast_ice/01.png",
+      "rect": [
+        166,
+        2,
+        160,
+        320
+      ],
+      "sourceCell": [
+        256,
+        514,
+        256,
+        506
+      ],
+      "sourceAlphaBounds": [
+        41,
+        8,
+        232,
+        501
+      ],
+      "scale": 0.6166328600405679,
+      "offset": [
+        21,
+        8
+      ]
+    },
+    {
+      "file": "cast_ice/02.png",
+      "rect": [
+        330,
+        2,
+        160,
+        320
+      ],
+      "sourceCell": [
+        512,
+        514,
+        256,
+        506
+      ],
+      "sourceAlphaBounds": [
+        37,
+        8,
+        233,
+        501
+      ],
+      "scale": 0.6166328600405679,
+      "offset": [
+        19,
+        8
+      ]
+    },
+    {
+      "file": "cast_ice/03.png",
+      "rect": [
+        494,
+        2,
+        160,
+        320
+      ],
+      "sourceCell": [
+        768,
+        514,
+        256,
+        506
+      ],
+      "sourceAlphaBounds": [
+        41,
+        8,
+        222,
+        501
+      ],
+      "scale": 0.6166328600405679,
+      "offset": [
+        24,
+        8
+      ]
+    }
+  ]
+}

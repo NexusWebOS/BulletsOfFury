@@ -1,0 +1,22 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bullets of Fury — September 28 weapon art</title>
+<style>
+*{box-sizing:border-box}body{background:#0c151f;color:#e3edf6;font:16px system-ui;margin:0;padding:24px}header{position:sticky;top:0;background:#0c151ff5;padding:12px 0;z-index:2}h1{font-size:24px;margin:0 0 10px}p{color:#aabccd;max-width:1000px;line-height:1.5}button,select{background:#193044;color:#e3edf6;border:1px solid #456981;padding:9px 14px;margin:3px;border-radius:4px}button[aria-pressed=true]{background:#245473}#grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}article{background:#11202d;border:1px solid #2c4558;border-radius:6px;padding:12px;text-align:center}h2{font-size:14px;word-break:break-word;margin:0 0 8px}canvas{image-rendering:pixelated;background:#08121c;max-width:100%;height:240px;object-fit:contain}small{display:block;color:#95acbd;margin:8px 0}#status{color:#69dbc3}a{color:#71cce7}
+</style>
+<header><h1>Bullets of Fury · Weapon animation pack</h1>
+<p>Generated art review. These reels are ready for engine integration. Gameplay, audio, unlocks and damage remain with the gameplay agent. Chromium uses the current hammer-only form.</p>
+<div id="filters"></div><button id="pause">Pause</button><select id="speed"><option value="0.5">Half speed</option><option selected value="1">Normal speed</option><option value="2">Double speed</option></select><span id="status">Loading…</span></header>
+<main id="grid"></main>
+<script>
+let pack,entries=[],paused=false,clock=0,last=performance.now(),filter='all';
+const errors=[];window.addEventListener('error',e=>errors.push(e.message));window.__ART_REVIEW__={errors};
+const filters={all:'All',chaingun:'Chainguns',orb:'Orbs',beam:'Lasers',cast:'Casting',orb_hit:'Orb impacts',chromium:'Chromium'};
+function select(k){filter=k;document.querySelectorAll('#filters button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.filter===k));for(const e of entries)e.card.hidden=!(k==='all'||(k==='orb'?e.key.startsWith('orb_')&&!e.key.startsWith('orb_hit_'):e.key.startsWith(k)));}
+for(const[k,label]of Object.entries(filters)){const b=document.createElement('button');b.textContent=label;b.dataset.filter=k;b.onclick=()=>select(k);document.querySelector('#filters').append(b);}
+document.querySelector('#pause').onclick=()=>{paused=!paused;document.querySelector('#pause').textContent=paused?'Play':'Pause';};
+async function init(){pack=await(await fetch('manifest.json')).json();for(const[key,f]of Object.entries(pack.families)){const card=document.createElement('article');const h=document.createElement('h2');h.textContent=key.replaceAll('_',' ');const cv=document.createElement('canvas');cv.width=f.size[0];cv.height=f.size[1];const ctx=cv.getContext('2d');ctx.imageSmoothingEnabled=false;const details=document.createElement('small');details.textContent=`${f.frames.length} frames · ${f.fps} fps · ${f.loop?'loop':'one-shot'} · anchor ${f.anchor.join(', ')}`;const a=document.createElement('a');a.href=f.atlas;a.textContent='Open sheet';card.append(h,cv,details,a);document.querySelector('#grid').append(card);const im=new Image;im.src=f.atlas;await im.decode();entries.push({key,f,card,cv,ctx,im,frame:0});}select('all');window.__ART_REVIEW__.ready=true;window.__ART_REVIEW__.familyCount=entries.length;document.querySelector('#status').textContent=`${entries.length} families · ${Object.values(pack.families).reduce((n,f)=>n+f.frames.length,0)} frames`;}
+function draw(now){if(!paused)clock+=(now-last)*Number(document.querySelector('#speed').value);last=now;for(const e of entries){if(e.card.hidden)continue;let t=Math.floor(clock/1000*e.f.fps);const n=e.f.frames.length;const frame=e.f.loop?t%n:Math.min(t%(n+Math.round(e.f.fps)),n-1);e.frame=frame;const[x,y,w,h]=e.f.frames[frame].rect;e.ctx.clearRect(0,0,e.cv.width,e.cv.height);e.ctx.drawImage(e.im,x,y,w,h,0,0,w,h);}window.__ART_REVIEW__.clock=clock;requestAnimationFrame(draw);}
+init().catch(e=>{errors.push(e.message);document.querySelector('#status').textContent='Load failed: '+e.message;});requestAnimationFrame(draw);
+</script>

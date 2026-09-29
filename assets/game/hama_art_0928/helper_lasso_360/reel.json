@@ -1,0 +1,391 @@
+{
+  "atlas": "helper_lasso_360/atlas.png",
+  "size": [
+    176,
+    200
+  ],
+  "anchor": [
+    88,
+    184
+  ],
+  "fps": 12,
+  "loop": true,
+  "group": "helper",
+  "source": "helper_lasso",
+  "events": {},
+  "notes": "One complete lasso turn. Authored poses, no HTML rotation. Hop timing may be tuned independently.",
+  "frames": [
+    {
+      "file": "helper_lasso_360/00.png",
+      "rect": [
+        2,
+        2,
+        176,
+        200
+      ],
+      "sourceRect": [
+        0,
+        0,
+        375,
+        365
+      ],
+      "sourceAlphaBounds": [
+        91,
+        31,
+        300,
+        347
+      ],
+      "sourceAnchor": [
+        196.0,
+        347
+      ],
+      "sharedScale": 0.5045045045045045,
+      "offset": [
+        35,
+        25
+      ],
+      "sourceCutEdgePixelsAlpha32": 0
+    },
+    {
+      "file": "helper_lasso_360/01.png",
+      "rect": [
+        182,
+        2,
+        176,
+        200
+      ],
+      "sourceRect": [
+        375,
+        0,
+        726,
+        365
+      ],
+      "sourceAlphaBounds": [
+        74,
+        20,
+        283,
+        346
+      ],
+      "sourceAnchor": [
+        196.5,
+        346
+      ],
+      "sharedScale": 0.5045045045045045,
+      "offset": [
+        26,
+        17
+      ],
+      "sourceCutEdgePixelsAlpha32": 0
+    },
+    {
+      "file": "helper_lasso_360/02.png",
+      "rect": [
+        362,
+        2,
+        176,
+        200
+      ],
+      "sourceRect": [
+        726,
+        0,
+        1092,
+        365
+      ],
+      "sourceAlphaBounds": [
+        91,
+        18,
+        275,
+        351
+      ],
+      "sourceAnchor": [
+        201.0,
+        351
+      ],
+      "sharedScale": 0.5045045045045045,
+      "offset": [
+        33,
+        10
+      ],
+      "sourceCutEdgePixelsAlpha32": 0
+    },
+    {
+      "file": "helper_lasso_360/03.png",
+      "rect": [
+        542,
+        2,
+        176,
+        200
+      ],
+      "sourceRect": [
+        1092,
+        0,
+        1448,
+        365
+      ],
+      "sourceAlphaBounds": [
+        127,
+        33,
+        264,
+        348
+      ],
+      "sourceAnchor": [
+        219.5,
+        348
+      ],
+      "sharedScale": 0.5045045045045045,
+      "offset": [
+        41,
+        21
+      ],
+      "sourceCutEdgePixelsAlpha32": 0
+    },
+    {
+      "file": "helper_lasso_360/04.png",
+      "rect": [
+        722,
+        2,
+        176,
+        200
+      ],
+      "sourceRect": [
+        0,
+        365,
+        375,
+        715
+      ],
+      "sourceAlphaBounds": [
+        81,
+        27,
+        280,
+        334
+      ],
+      "sourceAnchor": [
+        162.0,
+        334
+      ],
+      "sharedScale": 0.5045045045045045,
+      "offset": [
+        47,
+        26
+      ],
+      "sourceCutEdgePixelsAlpha32": 0
+    },
+    {
+      "file": "helper_lasso_360/05.png",
+      "rect": [
+        902,
+        2,
+        176,
+        200
+      ],
+      "sourceRect": [
+        375,
+        365,
+        726,
+        715
+      ],
+      "sourceAlphaBounds": [
+        83,
+        16,
+        277,
+        337
+      ],
+      "sourceAnchor": [
+        166.0,
+        337
+      ],
+      "sharedScale": 0.5045045045045045,
+      "offset": [
+        46,
+        16
+      ],
+      "sourceCutEdgePixelsAlpha32": 0
+    },
+    {
+      "file": "helper_lasso_360/06.png",
+      "rect": [
+        1082,
+        2,
+        176,
+        200
+      ],
+      "sourceRect": [
+        726,
+        365,
+        1092,
+        715
+      ],
+      "sourceAlphaBounds": [
+        68,
+        18,
+        278,
+        337
+      ],
+      "sourceAnchor": [
+        174.5,
+        337
+      ],
+      "sharedScale": 0.5045045045045045,
+      "offset": [
+        34,
+        23
+      ],
+      "sourceCutEdgePixelsAlpha32": 0
+    },
+    {
+      "file": "helper_lasso_360/07.png",
+      "rect": [
+        1262,
+        2,
+        176,
+        200
+      ],
+      "sourceRect": [
+        1092,
+        365,
+        1448,
+        715
+      ],
+      "sourceAlphaBounds": [
+        90,
+        18,
+        286,
+        326
+      ],
+      "sourceAnchor": [
+        163.0,
+        326
+      ],
+      "sharedScale": 0.5045045045045045,
+      "offset": [
+        51,
+        24
+      ],
+      "sourceCutEdgePixelsAlpha32": 0
+    },
+    {
+      "file": "helper_lasso_360/08.png",
+      "rect": [
+        2,
+        206,
+        176,
+        200
+      ],
+      "sourceRect": [
+        0,
+        715,
+        375,
+        1086
+      ],
+      "sourceAlphaBounds": [
+        101,
+        14,
+        290,
+        333
+      ],
+      "sourceAnchor": [
+        179.5,
+        333
+      ],
+      "sharedScale": 0.5045045045045045,
+      "offset": [
+        48,
+        17
+      ],
+      "sourceCutEdgePixelsAlpha32": 0
+    },
+    {
+      "file": "helper_lasso_360/09.png",
+      "rect": [
+        182,
+        206,
+        176,
+        200
+      ],
+      "sourceRect": [
+        375,
+        715,
+        726,
+        1086
+      ],
+      "sourceAlphaBounds": [
+        96,
+        18,
+        247,
+        345
+      ],
+      "sourceAnchor": [
+        185.5,
+        345
+      ],
+      "sharedScale": 0.5045045045045045,
+      "offset": [
+        43,
+        16
+      ],
+      "sourceCutEdgePixelsAlpha32": 0
+    },
+    {
+      "file": "helper_lasso_360/10.png",
+      "rect": [
+        362,
+        206,
+        176,
+        200
+      ],
+      "sourceRect": [
+        726,
+        715,
+        1092,
+        1086
+      ],
+      "sourceAlphaBounds": [
+        90,
+        30,
+        281,
+        345
+      ],
+      "sourceAnchor": [
+        168.5,
+        345
+      ],
+      "sharedScale": 0.5045045045045045,
+      "offset": [
+        48,
+        19
+      ],
+      "sourceCutEdgePixelsAlpha32": 0
+    },
+    {
+      "file": "helper_lasso_360/11.png",
+      "rect": [
+        542,
+        206,
+        176,
+        200
+      ],
+      "sourceRect": [
+        1092,
+        715,
+        1448,
+        1086
+      ],
+      "sourceAlphaBounds": [
+        85,
+        32,
+        291,
+        342
+      ],
+      "sourceAnchor": [
+        203.5,
+        342
+      ],
+      "sharedScale": 0.5045045045045045,
+      "offset": [
+        28,
+        25
+      ],
+      "sourceCutEdgePixelsAlpha32": 0
+    }
+  ]
+}

@@ -316,7 +316,7 @@ function fr27Exit(b,dt){
  E.t+=dt;M.t=E.t;M.clock+=dt;F.phase='escape';F.shipHidden=E.t>=17.3;F.bossHidden=E.t>=13;
  b._s7FinalNoBar=true;b._s7warden.noHit=true;bossDefeated=true;player.invuln=Math.max(player.invuln,3);eBullets.length=0;
  const name=(PILOTS.find(q=>q.key===run.pilot)?.name||run.pilot).toUpperCase();
- const beats=[{at:0,who:'',text:''},{at:1.1,who:'DECKER',text:'I AM DETECTING A SELF-DESTRUCT SEQUENCE IN THAT THING!'},{at:5.0,who:'COLE',text:"IT'S GONNA BLOW! GET OUT OF THERE, NOW!!!"},{at:15.6,who:'DECKER',text:name+', NOOOOOOOOOOOOOOO!'},{at:18.4,who:'COLE',text:'WHERE DID THEY GO? ARE THEY ALL RIGHT? CHECK THE RADAR, NOW!'}];
+ const beats=[{at:0,who:'',text:''},{at:1.1,who:missionRadioWho('DECKER'),text:'I AM DETECTING A SELF-DESTRUCT SEQUENCE IN THAT THING!'},{at:5.0,who:missionRadioWho('COLE'),text:"IT'S GONNA BLOW! GET OUT OF THERE, NOW!!!"},{at:15.6,who:missionRadioWho('DECKER'),text:name+', NOOOOOOOOOOOOOOO!'},{at:18.4,who:missionRadioWho('COLE'),text:'WHERE DID THEY GO? ARE THEY ALL RIGHT? CHECK THE RADAR, NOW!'}];
  if(E.beat<beats.length&&E.t>=beats[E.beat].at){const q=beats[E.beat++];F.radio=q.who?{who:q.who,full:q.text,t:0,typed:0,dur:5}:null;if(E.beat===1)s7WardenMechSound('scream');}
  if(F.radio){F.radio.t+=dt;F.radio.typed+=dt*44;if(F.radio.t>F.radio.dur)F.radio=null;}
  if(E.t>=8){

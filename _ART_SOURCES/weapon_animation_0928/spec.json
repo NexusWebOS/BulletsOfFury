@@ -1,0 +1,40 @@
+{
+  "status": "graphics only; not registered or wired into gameplay",
+  "elements": [
+    "fire",
+    "ice",
+    "lightning",
+    "kinetic",
+    "chrome",
+    "dark",
+    "toxic",
+    "prism",
+    "water"
+  ],
+  "pilots": [
+    "axel",
+    "decker",
+    "maverick",
+    "freezer",
+    "juggernaut",
+    "yuri",
+    "lizzie",
+    "falva",
+    "cole"
+  ],
+  "scope": [
+    "modular chaingun housings for nine pilot palettes",
+    "authored rotating barrel frames",
+    "50-cal projectile and impact graphics",
+    "replacement Chromium armor activation poses and silver energy",
+    "elemental orb spinning frame reels",
+    "elemental laser beam reels including distinct glacial shapes",
+    "elemental cast-stream reels including Ice Breath and non-fire silhouettes"
+  ],
+  "reserved_for_other_agent": [
+    "Stage 6 wind audio shutdown",
+    "hammer missile interrupt and healing/stun routing",
+    "machinegun/chaingun unlock, default and form switching",
+    "damage, speed, pickups, loadouts and all runtime integration"
+  ]
+}

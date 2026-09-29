@@ -1,0 +1,496 @@
+{
+  "families": 70,
+  "frames": 287,
+  "checks": [
+    {
+      "name": "chaingun_mount_axel_left",
+      "frames": 1,
+      "uniqueFrames": 1,
+      "outerEdgePixelsAlpha32": 0,
+      "transparentCanvas": true
+    },
+    {
+      "name": "chaingun_mount_axel_right",
+      "frames": 1,
+      "uniqueFrames": 1,
+      "outerEdgePixelsAlpha32": 0,
+      "transparentCanvas": true
+    },
+    {
+      "name": "chaingun_mount_decker_left",
+      "frames": 1,
+      "uniqueFrames": 1,
+      "outerEdgePixelsAlpha32": 0,
+      "transparentCanvas": true
+    },
+    {
+      "name": "chaingun_mount_decker_right",
+      "frames": 1,
+      "uniqueFrames": 1,
+      "outerEdgePixelsAlpha32": 0,
+      "transparentCanvas": true
+    },
+    {
+      "name": "chaingun_mount_maverick_left",
+      "frames": 1,
+      "uniqueFrames": 1,
+      "outerEdgePixelsAlpha32": 0,
+      "transparentCanvas": true
+    },
+    {
+      "name": "chaingun_mount_maverick_right",
+      "frames": 1,
+      "uniqueFrames": 1,
+      "outerEdgePixelsAlpha32": 0,
+      "transparentCanvas": true
+    },
+    {
+      "name": "chaingun_mount_freezer_left",
+      "frames": 1,
+      "uniqueFrames": 1,
+      "outerEdgePixelsAlpha32": 0,
+      "transparentCanvas": true
+    },
+    {
+      "name": "chaingun_mount_freezer_right",
+      "frames": 1,
+      "uniqueFrames": 1,
+      "outerEdgePixelsAlpha32": 0,
+      "transparentCanvas": true
+    },
+    {
+      "name": "chaingun_mount_juggernaut_left",
+      "frames": 1,
+      "uniqueFrames": 1,
+      "outerEdgePixelsAlpha32": 0,
+      "transparentCanvas": true
+    },
+    {
+      "name": "chaingun_mount_juggernaut_right",
+      "frames": 1,
+      "uniqueFrames": 1,
+      "outerEdgePixelsAlpha32": 0,
+      "transparentCanvas": true
+    },
+    {
+      "name": "chaingun_mount_yuri_left",
+      "frames": 1,
+      "uniqueFrames": 1,
+      "outerEdgePixelsAlpha32": 0,
+      "transparentCanvas": true
+    },
+    {
+      "name": "chaingun_mount_yuri_right",
+      "frames": 1,
+      "uniqueFrames": 1,
+      "outerEdgePixelsAlpha32": 0,
+      "transparentCanvas": true
+    },
+    {
+      "name": "chaingun_mount_lizzie_left",
+      "frames": 1,
+      "uniqueFrames": 1,
+      "outerEdgePixelsAlpha32": 0,
+      "transparentCanvas": true
+    },
+    {
+      "name": "chaingun_mount_lizzie_right",
+      "frames": 1,
+      "uniqueFrames": 1,
+      "outerEdgePixelsAlpha32": 0,
+      "transparentCanvas": true
+    },
+    {
+      "name": "chaingun_mount_falva_left",
+      "frames": 1,
+      "uniqueFrames": 1,
+      "outerEdgePixelsAlpha32": 0,
+      "transparentCanvas": true
+    },
+    {
+      "name": "chaingun_mount_falva_right",
+      "frames": 1,
+      "uniqueFrames": 1,
+      "outerEdgePixelsAlpha32": 0,
+      "transparentCanvas": true
+    },
+    {
+      "name": "chaingun_mount_cole_left",
+      "frames": 1,
+      "uniqueFrames": 1,
+      "outerEdgePixelsAlpha32": 0,
+      "transparentCanvas": true
+    },
+    {
+      "name": "chaingun_mount_cole_right",
+      "frames": 1,
+      "uniqueFrames": 1,
+      "outerEdgePixelsAlpha32": 0,
+      "transparentCanvas": true
+    },
+    {
+      "name": "chaingun_barrel_top",
+      "frames": 16,
+      "uniqueFrames": 16,
+      "outerEdgePixelsAlpha32": 0,
+      "transparentCanvas": true
+    },
+    {
+      "name": "chaingun_barrel_bank",
+      "frames": 16,
+      "uniqueFrames": 16,
+      "outerEdgePixelsAlpha32": 0,
+      "transparentCanvas": true
+    },
+    {
+      "name": "chaingun_barrel_underside",
+      "frames": 16,
+      "uniqueFrames": 16,
+      "outerEdgePixelsAlpha32": 0,
+      "transparentCanvas": true
+    },
+    {
+      "name": "orb_fire",
+      "frames": 8,
+      "uniqueFrames": 8,
+      "outerEdgePixelsAlpha32": 0,
+      "transparentCanvas": true
+    },
+    {
+      "name": "orb_ice",
+      "frames": 8,
+      "uniqueFrames": 8,
+      "outerEdgePixelsAlpha32": 0,
+      "transparentCanvas": true
+    },
+    {
+      "name": "orb_lightning",
+      "frames": 8,
+      "uniqueFrames": 8,
+      "outerEdgePixelsAlpha32": 0,
+      "transparentCanvas": true
+    },
+    {
+      "name": "orb_kinetic",
+      "frames": 8,
+      "uniqueFrames": 8,
+      "outerEdgePixelsAlpha32": 0,
+      "transparentCanvas": true
+    },
+    {
+      "name": "orb_chrome",
+      "frames": 8,
+      "uniqueFrames": 8,
+      "outerEdgePixelsAlpha32": 0,
+      "transparentCanvas": true
+    },
+    {
+      "name": "orb_dark",
+      "frames": 8,
+      "uniqueFrames": 8,
+      "outerEdgePixelsAlpha32": 0,
+      "transparentCanvas": true
+    },
+    {
+      "name": "orb_toxic",
+      "frames": 8,
+      "uniqueFrames": 8,
+      "outerEdgePixelsAlpha32": 0,
+      "transparentCanvas": true
+    },
+    {
+      "name": "orb_prism",
+      "frames": 8,
+      "uniqueFrames": 8,
+      "outerEdgePixelsAlpha32": 0,
+      "transparentCanvas": true
+    },
+    {
+      "name": "orb_water",
+      "frames": 8,
+      "uniqueFrames": 8,
+      "outerEdgePixelsAlpha32": 0,
+      "transparentCanvas": true
+    },
+    {
+      "name": "beam_fire",
+      "frames": 4,
+      "uniqueFrames": 4,
+      "outerEdgePixelsAlpha32": 0,
+      "transparentCanvas": true
+    },
+    {
+      "name": "beam_ice",
+      "frames": 4,
+      "uniqueFrames": 4,
+      "outerEdgePixelsAlpha32": 0,
+      "transparentCanvas": true
+    },
+    {
+      "name": "beam_lightning",
+      "frames": 4,
+      "uniqueFrames": 4,
+      "outerEdgePixelsAlpha32": 0,
+      "transparentCanvas": true
+    },
+    {
+      "name": "beam_kinetic",
+      "frames": 4,
+      "uniqueFrames": 4,
+      "outerEdgePixelsAlpha32": 0,
+      "transparentCanvas": true
+    },
+    {
+      "name": "beam_chrome",
+      "frames": 4,
+      "uniqueFrames": 4,
+      "outerEdgePixelsAlpha32": 0,
+      "transparentCanvas": true
+    },
+    {
+      "name": "beam_dark",
+      "frames": 4,
+      "uniqueFrames": 4,
+      "outerEdgePixelsAlpha32": 0,
+      "transparentCanvas": true
+    },
+    {
+      "name": "beam_toxic",
+      "frames": 4,
+      "uniqueFrames": 4,
+      "outerEdgePixelsAlpha32": 0,
+      "transparentCanvas": true
+    },
+    {
+      "name": "beam_prism",
+      "frames": 4,
+      "uniqueFrames": 4,
+      "outerEdgePixelsAlpha32": 0,
+      "transparentCanvas": true
+    },
+    {
+      "name": "beam_water",
+      "frames": 4,
+      "uniqueFrames": 4,
+      "outerEdgePixelsAlpha32": 0,
+      "transparentCanvas": true
+    },
+    {
+      "name": "cast_fire",
+      "frames": 4,
+      "uniqueFrames": 4,
+      "outerEdgePixelsAlpha32": 0,
+      "transparentCanvas": true
+    },
+    {
+      "name": "cast_ice",
+      "frames": 4,
+      "uniqueFrames": 4,
+      "outerEdgePixelsAlpha32": 0,
+      "transparentCanvas": true
+    },
+    {
+      "name": "cast_lightning",
+      "frames": 4,
+      "uniqueFrames": 4,
+      "outerEdgePixelsAlpha32": 0,
+      "transparentCanvas": true
+    },
+    {
+      "name": "cast_kinetic",
+      "frames": 4,
+      "uniqueFrames": 4,
+      "outerEdgePixelsAlpha32": 0,
+      "transparentCanvas": true
+    },
+    {
+      "name": "cast_chrome",
+      "frames": 4,
+      "uniqueFrames": 4,
+      "outerEdgePixelsAlpha32": 0,
+      "transparentCanvas": true
+    },
+    {
+      "name": "cast_dark",
+      "frames": 4,
+      "uniqueFrames": 4,
+      "outerEdgePixelsAlpha32": 0,
+      "transparentCanvas": true
+    },
+    {
+      "name": "cast_toxic",
+      "frames": 4,
+      "uniqueFrames": 4,
+      "outerEdgePixelsAlpha32": 0,
+      "transparentCanvas": true
+    },
+    {
+      "name": "cast_prism",
+      "frames": 4,
+      "uniqueFrames": 4,
+      "outerEdgePixelsAlpha32": 0,
+      "transparentCanvas": true
+    },
+    {
+      "name": "cast_water",
+      "frames": 4,
+      "uniqueFrames": 4,
+      "outerEdgePixelsAlpha32": 0,
+      "transparentCanvas": true
+    },
+    {
+      "name": "orb_hit_fire",
+      "frames": 4,
+      "uniqueFrames": 4,
+      "outerEdgePixelsAlpha32": 0,
+      "transparentCanvas": true
+    },
+    {
+      "name": "orb_hit_ice",
+      "frames": 4,
+      "uniqueFrames": 4,
+      "outerEdgePixelsAlpha32": 0,
+      "transparentCanvas": true
+    },
+    {
+      "name": "orb_hit_lightning",
+      "frames": 4,
+      "uniqueFrames": 4,
+      "outerEdgePixelsAlpha32": 0,
+      "transparentCanvas": true
+    },
+    {
+      "name": "orb_hit_kinetic",
+      "frames": 4,
+      "uniqueFrames": 4,
+      "outerEdgePixelsAlpha32": 0,
+      "transparentCanvas": true
+    },
+    {
+      "name": "orb_hit_chrome",
+      "frames": 4,
+      "uniqueFrames": 4,
+      "outerEdgePixelsAlpha32": 0,
+      "transparentCanvas": true
+    },
+    {
+      "name": "orb_hit_dark",
+      "frames": 4,
+      "uniqueFrames": 4,
+      "outerEdgePixelsAlpha32": 0,
+      "transparentCanvas": true
+    },
+    {
+      "name": "orb_hit_toxic",
+      "frames": 4,
+      "uniqueFrames": 4,
+      "outerEdgePixelsAlpha32": 0,
+      "transparentCanvas": true
+    },
+    {
+      "name": "orb_hit_prism",
+      "frames": 4,
+      "uniqueFrames": 4,
+      "outerEdgePixelsAlpha32": 0,
+      "transparentCanvas": true
+    },
+    {
+      "name": "orb_hit_water",
+      "frames": 4,
+      "uniqueFrames": 4,
+      "outerEdgePixelsAlpha32": 0,
+      "transparentCanvas": true
+    },
+    {
+      "name": "chaingun_round",
+      "frames": 4,
+      "uniqueFrames": 4,
+      "outerEdgePixelsAlpha32": 0,
+      "transparentCanvas": true
+    },
+    {
+      "name": "chaingun_muzzle",
+      "frames": 8,
+      "uniqueFrames": 8,
+      "outerEdgePixelsAlpha32": 0,
+      "transparentCanvas": true
+    },
+    {
+      "name": "chaingun_impact",
+      "frames": 8,
+      "uniqueFrames": 8,
+      "outerEdgePixelsAlpha32": 0,
+      "transparentCanvas": true
+    },
+    {
+      "name": "chaingun_round_fire",
+      "frames": 1,
+      "uniqueFrames": 1,
+      "outerEdgePixelsAlpha32": 0,
+      "transparentCanvas": true
+    },
+    {
+      "name": "chaingun_round_ice",
+      "frames": 1,
+      "uniqueFrames": 1,
+      "outerEdgePixelsAlpha32": 0,
+      "transparentCanvas": true
+    },
+    {
+      "name": "chaingun_round_lightning",
+      "frames": 1,
+      "uniqueFrames": 1,
+      "outerEdgePixelsAlpha32": 0,
+      "transparentCanvas": true
+    },
+    {
+      "name": "chaingun_round_kinetic",
+      "frames": 1,
+      "uniqueFrames": 1,
+      "outerEdgePixelsAlpha32": 0,
+      "transparentCanvas": true
+    },
+    {
+      "name": "chaingun_round_chrome",
+      "frames": 1,
+      "uniqueFrames": 1,
+      "outerEdgePixelsAlpha32": 0,
+      "transparentCanvas": true
+    },
+    {
+      "name": "chaingun_round_dark",
+      "frames": 1,
+      "uniqueFrames": 1,
+      "outerEdgePixelsAlpha32": 0,
+      "transparentCanvas": true
+    },
+    {
+      "name": "chaingun_round_toxic",
+      "frames": 1,
+      "uniqueFrames": 1,
+      "outerEdgePixelsAlpha32": 0,
+      "transparentCanvas": true
+    },
+    {
+      "name": "chaingun_round_prism",
+      "frames": 1,
+      "uniqueFrames": 1,
+      "outerEdgePixelsAlpha32": 0,
+      "transparentCanvas": true
+    },
+    {
+      "name": "chaingun_round_water",
+      "frames": 1,
+      "uniqueFrames": 1,
+      "outerEdgePixelsAlpha32": 0,
+      "transparentCanvas": true
+    },
+    {
+      "name": "chromium_activation_hammer_only",
+      "frames": 12,
+      "uniqueFrames": 12,
+      "outerEdgePixelsAlpha32": 0,
+      "transparentCanvas": true
+    }
+  ]
+}

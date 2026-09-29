@@ -5594,3 +5594,67 @@ captions on the bar, a double slam on HAMMER and on TIME at every measured STOP 
 - stageText's 9th argument is letter SPACING, not a scale.
 - SpriteCook had 1 credit; all poses are authored (troupe sheets + arch_hammer_throw_0926, the only
   empty-handed Hammer). HAMA_FRAMES is the one table dedicated lasso/moonwalk/carry frames replace.
+
+## 0929 - HAMA authored frames integrated
+
+The 15-reel / 128-frame hammer-only pack is now wired after hama_0928.js by
+hama_frames_art_0929.js and hama_frames_0929.js. Do not generate the former
+lasso/moonwalk/carry stand-ins again: see docs/HAMA_FRAMES_0929.md.
+Body composites already contain their helper; independent copies are hidden.
+The held target follows the authored carry pose, replacement summons occur once,
+and thrown helpers use eight authored views instead of canvas rotation.
+The registry owns atlas/source rectangles through hama_art_0928/build_runtime.py.
+Original HAMMER, media cue timing and incoming combat changes retain their owners.
+Native Chromium verified all 128 frames; real-time soundtrack playback also passed.
+Changes are local and uncommitted; commit/push only when Mike asks.
+
+## 0929 - Moonwalk appearance correction
+
+Mike rejected the moonwalk appearance changing. The intro mistakenly selected
+silver moonwalks whenever its dance shield rose. It now uses the regular
+black-steel/cyan moonwalk in both directions for the whole intro. A dance shield
+is not a Chromium armor transformation. Do not reintroduce that palette switch.
+The source pack still has 128 frames; only 13 reels / 112 frames are active.
+Silver moonwalks are preserved as unused art and no longer register or preload.
+The native probe rejects silver draws before/after shield rise.
+
+## 0929 - Stage 6/7 campaign and beam repair
+
+See docs/MISSION_REPAIR_0929.md. mission_art_0929.js and mission_repair_0929.js
+load after HAMA and before the widescreen HUD. Preserve the shared renderer hook.
+- Stage 7 uses its ORIGINAL upright 16-frame toxic doorway for entry, escape and
+  Stage 8 arrival. Seven-second anomaly beat darkens the field, shows generated
+  radar static and green explosions, and uses Decker/Cole conditional comms.
+- Dead Warden pose stays fixed to sewer coordinates; it leaves the screen with
+  terrain movement. Do not reattach it to the player or hide it by fixed time.
+- Stage 6 assault occupies the live opening slot after the Harrier flyover.
+  Ordered warned right/left row gates, left/right ground-only bomber passes,
+  then jets descending from the north. Safe lanes remain; Normal/Hard gates
+  are unarmed, Furious adds selected guns/bombs. Cardinal authored blue jets
+  are standard shootable/Retina-targetable enemies, with difficulty speed scaling.
+- Campaign forms/elements and mist/chaingun/Yuri Orb gates use run-earned data,
+  never profile recipes from another run. Manual saves, Armory, arcade profile
+  and Cole session password remain intact. Preview permissions cannot leak.
+- All nine authored beam reels share drawBullets with gameplay and Forge previews.
+  Existing Fire Whip and Ice Lance retain their distinct attacks.
+- Verified: full suite 5,817 / zero errors; real Chromium 45 / zero failures.
+  Native observation uses immunity for complete-pattern inspection, not a claim
+  of balanced survival. Captures/results: _shots/mission_0929.
+Changes remain local and uncommitted. Existing HAMA work is preserved.
+
+## 0929 - Stage 6-8 rendering and vent repair
+
+See docs/PERFORMANCE_REPAIR_0929.md and _BUILD_SOURCE/performance_repair_0929.
+P87 round halos, Cole trident filters/glows and main-context pickup/icon shadows
+use a bounded small-plate cache. Keep alpha and body pivots with the callers.
+Existing glow caches now evict instead of reverting to live blur after filling.
+Stage 6 rain retains all drops, batched into three strokes. Do not restore one
+Gaussian blur per round or one stroke per rain drop.
+Stage 7 vent uses a fixed pipe and registered exhaust cells: last column X -33,
+lower row Y -31 source pixels. Buildup/flow/retraction are frames 2 / 3-4 / 5-6.
+Ordinary enemy warning triangles and their polish-lane arrows are removed;
+boss/miniboss warnings, FOV lanes, ground reticles and jet-row asterisks remain.
+Matched high-quality Chromium stress: Stage 6 ~54 FPS, Stage 7/8 ~60 FPS,
+100 projectiles / 180 particles / 4 pickups. Nine native checks pass. These are
+rendering workloads, not complete-stage balance or universal FPS guarantees.
+Incoming HAMA and mission repairs remain preserved; no art/atlas was regenerated.

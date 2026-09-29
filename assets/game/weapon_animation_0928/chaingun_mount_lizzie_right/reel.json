@@ -1,0 +1,43 @@
+{
+  "atlas": "chaingun_mount_lizzie_right/atlas.png",
+  "size": [
+    64,
+    96
+  ],
+  "fps": 1,
+  "loop": false,
+  "anchor": [
+    32,
+    88
+  ],
+  "source": "mounts",
+  "notes": "Fixed armored housing. Rear mount anchor; barrel couples to front socket.",
+  "frames": [
+    {
+      "file": "chaingun_mount_lizzie_right/00.png",
+      "rect": [
+        2,
+        2,
+        64,
+        96
+      ],
+      "sourceCell": [
+        209,
+        836,
+        209,
+        418
+      ],
+      "sourceAlphaBounds": [
+        60,
+        41,
+        208,
+        335
+      ],
+      "scale": 0.272108843537415,
+      "offset": [
+        12,
+        8
+      ]
+    }
+  ]
+}

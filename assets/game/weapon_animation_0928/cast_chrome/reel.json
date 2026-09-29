@@ -1,0 +1,121 @@
+{
+  "atlas": "cast_chrome/atlas.png",
+  "size": [
+    160,
+    320
+  ],
+  "fps": 12,
+  "loop": true,
+  "anchor": [
+    80,
+    312
+  ],
+  "source": "casts_b",
+  "notes": "Authored elemental frame reel. Fixed center/origin; do not canvas-rotate or independently rescale frames.",
+  "frames": [
+    {
+      "file": "cast_chrome/00.png",
+      "rect": [
+        2,
+        2,
+        160,
+        320
+      ],
+      "sourceCell": [
+        0,
+        515,
+        256,
+        506
+      ],
+      "sourceAlphaBounds": [
+        44,
+        14,
+        206,
+        505
+      ],
+      "scale": 0.6104417670682731,
+      "offset": [
+        30,
+        12
+      ]
+    },
+    {
+      "file": "cast_chrome/01.png",
+      "rect": [
+        166,
+        2,
+        160,
+        320
+      ],
+      "sourceCell": [
+        256,
+        515,
+        256,
+        506
+      ],
+      "sourceAlphaBounds": [
+        40,
+        9,
+        221,
+        505
+      ],
+      "scale": 0.6104417670682731,
+      "offset": [
+        25,
+        9
+      ]
+    },
+    {
+      "file": "cast_chrome/02.png",
+      "rect": [
+        330,
+        2,
+        160,
+        320
+      ],
+      "sourceCell": [
+        512,
+        515,
+        256,
+        506
+      ],
+      "sourceAlphaBounds": [
+        27,
+        7,
+        230,
+        505
+      ],
+      "scale": 0.6104417670682731,
+      "offset": [
+        18,
+        8
+      ]
+    },
+    {
+      "file": "cast_chrome/03.png",
+      "rect": [
+        494,
+        2,
+        160,
+        320
+      ],
+      "sourceCell": [
+        768,
+        515,
+        256,
+        506
+      ],
+      "sourceAlphaBounds": [
+        13,
+        15,
+        228,
+        505
+      ],
+      "scale": 0.6104417670682731,
+      "offset": [
+        14,
+        13
+      ]
+    }
+  ]
+}

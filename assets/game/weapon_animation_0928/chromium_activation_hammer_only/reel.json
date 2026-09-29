@@ -1,0 +1,329 @@
+{
+  "atlas": "chromium_activation_hammer_only/atlas.png",
+  "size": [
+    320,
+    480
+  ],
+  "fps": 10,
+  "loop": false,
+  "anchor": [
+    160,
+    468
+  ],
+  "source": "chromium_corrected",
+  "notes": "Correct current hammer-only boss. Neutral, hand rise, silver lightning, armor coating, armored settle. No back chaingun.",
+  "frames": [
+    {
+      "file": "chromium_activation_hammer_only/00.png",
+      "rect": [
+        2,
+        2,
+        320,
+        480
+      ],
+      "sourceCell": [
+        0,
+        0,
+        314,
+        373
+      ],
+      "sourceAlphaBounds": [
+        15,
+        102,
+        270,
+        373
+      ],
+      "scale": 1.0313588850174216,
+      "offset": [
+        18,
+        189
+      ]
+    },
+    {
+      "file": "chromium_activation_hammer_only/01.png",
+      "rect": [
+        326,
+        2,
+        320,
+        480
+      ],
+      "sourceCell": [
+        314,
+        0,
+        313,
+        373
+      ],
+      "sourceAlphaBounds": [
+        14,
+        102,
+        276,
+        373
+      ],
+      "scale": 1.0313588850174216,
+      "offset": [
+        16,
+        189
+      ]
+    },
+    {
+      "file": "chromium_activation_hammer_only/02.png",
+      "rect": [
+        650,
+        2,
+        320,
+        480
+      ],
+      "sourceCell": [
+        627,
+        0,
+        313,
+        373
+      ],
+      "sourceAlphaBounds": [
+        12,
+        102,
+        296,
+        373
+      ],
+      "scale": 1.0313588850174216,
+      "offset": [
+        15,
+        189
+      ]
+    },
+    {
+      "file": "chromium_activation_hammer_only/03.png",
+      "rect": [
+        974,
+        2,
+        320,
+        480
+      ],
+      "sourceCell": [
+        940,
+        0,
+        314,
+        373
+      ],
+      "sourceAlphaBounds": [
+        5,
+        24,
+        277,
+        373
+      ],
+      "scale": 1.0313588850174216,
+      "offset": [
+        13,
+        108
+      ]
+    },
+    {
+      "file": "chromium_activation_hammer_only/04.png",
+      "rect": [
+        1298,
+        2,
+        320,
+        480
+      ],
+      "sourceCell": [
+        0,
+        373,
+        314,
+        432
+      ],
+      "sourceAlphaBounds": [
+        10,
+        0,
+        291,
+        423
+      ],
+      "scale": 1.0313588850174216,
+      "offset": [
+        9,
+        32
+      ]
+    },
+    {
+      "file": "chromium_activation_hammer_only/05.png",
+      "rect": [
+        1622,
+        2,
+        320,
+        480
+      ],
+      "sourceCell": [
+        314,
+        373,
+        313,
+        432
+      ],
+      "sourceAlphaBounds": [
+        8,
+        0,
+        286,
+        423
+      ],
+      "scale": 1.0313588850174216,
+      "offset": [
+        11,
+        32
+      ]
+    },
+    {
+      "file": "chromium_activation_hammer_only/06.png",
+      "rect": [
+        1946,
+        2,
+        320,
+        480
+      ],
+      "sourceCell": [
+        627,
+        373,
+        313,
+        432
+      ],
+      "sourceAlphaBounds": [
+        7,
+        76,
+        294,
+        423
+      ],
+      "scale": 1.0313588850174216,
+      "offset": [
+        11,
+        110
+      ]
+    },
+    {
+      "file": "chromium_activation_hammer_only/07.png",
+      "rect": [
+        2270,
+        2,
+        320,
+        480
+      ],
+      "sourceCell": [
+        940,
+        373,
+        314,
+        432
+      ],
+      "sourceAlphaBounds": [
+        1,
+        77,
+        283,
+        423
+      ],
+      "scale": 1.0313588850174216,
+      "offset": [
+        6,
+        111
+      ]
+    },
+    {
+      "file": "chromium_activation_hammer_only/08.png",
+      "rect": [
+        2,
+        486,
+        320,
+        480
+      ],
+      "sourceCell": [
+        0,
+        805,
+        314,
+        449
+      ],
+      "sourceAlphaBounds": [
+        10,
+        6,
+        289,
+        387
+      ],
+      "scale": 1.0313588850174216,
+      "offset": [
+        11,
+        75
+      ]
+    },
+    {
+      "file": "chromium_activation_hammer_only/09.png",
+      "rect": [
+        326,
+        486,
+        320,
+        480
+      ],
+      "sourceCell": [
+        314,
+        805,
+        313,
+        449
+      ],
+      "sourceAlphaBounds": [
+        7,
+        49,
+        289,
+        387
+      ],
+      "scale": 1.0313588850174216,
+      "offset": [
+        10,
+        119
+      ]
+    },
+    {
+      "file": "chromium_activation_hammer_only/10.png",
+      "rect": [
+        650,
+        486,
+        320,
+        480
+      ],
+      "sourceCell": [
+        627,
+        805,
+        313,
+        449
+      ],
+      "sourceAlphaBounds": [
+        7,
+        119,
+        290,
+        388
+      ],
+      "scale": 1.0313588850174216,
+      "offset": [
+        11,
+        191
+      ]
+    },
+    {
+      "file": "chromium_activation_hammer_only/11.png",
+      "rect": [
+        974,
+        486,
+        320,
+        480
+      ],
+      "sourceCell": [
+        940,
+        805,
+        314,
+        449
+      ],
+      "sourceAlphaBounds": [
+        4,
+        119,
+        268,
+        389
+      ],
+      "scale": 1.0313588850174216,
+      "offset": [
+        11,
+        190
+      ]
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "atlas": "chaingun_mount_falva_left/atlas.png",
+  "size": [
+    64,
+    96
+  ],
+  "fps": 1,
+  "loop": false,
+  "anchor": [
+    32,
+    88
+  ],
+  "source": "mounts",
+  "notes": "Fixed armored housing. Rear mount anchor; barrel couples to front socket.",
+  "frames": [
+    {
+      "file": "chaingun_mount_falva_left/00.png",
+      "rect": [
+        2,
+        2,
+        64,
+        96
+      ],
+      "sourceCell": [
+        418,
+        836,
+        209,
+        418
+      ],
+      "sourceAlphaBounds": [
+        33,
+        42,
+        175,
+        335
+      ],
+      "scale": 0.27303754266211605,
+      "offset": [
+        12,
+        8
+      ]
+    }
+  ]
+}

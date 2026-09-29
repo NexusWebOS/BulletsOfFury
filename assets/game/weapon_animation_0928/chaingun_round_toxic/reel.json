@@ -1,0 +1,43 @@
+{
+  "atlas": "chaingun_round_toxic/atlas.png",
+  "size": [
+    48,
+    96
+  ],
+  "fps": 1,
+  "loop": false,
+  "anchor": [
+    24,
+    6
+  ],
+  "source": "round_elements",
+  "notes": "Single directional infused ballistic round; inherits MG element in runtime.",
+  "frames": [
+    {
+      "file": "chaingun_round_toxic/00.png",
+      "rect": [
+        2,
+        2,
+        48,
+        96
+      ],
+      "sourceCell": [
+        0,
+        824,
+        475,
+        430
+      ],
+      "sourceAlphaBounds": [
+        258,
+        7,
+        399,
+        419
+      ],
+      "scale": 0.20388349514563106,
+      "offset": [
+        9,
+        6
+      ]
+    }
+  ]
+}

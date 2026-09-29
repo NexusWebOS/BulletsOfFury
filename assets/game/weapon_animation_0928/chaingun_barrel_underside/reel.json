@@ -1,0 +1,433 @@
+{
+  "atlas": "chaingun_barrel_underside/atlas.png",
+  "size": [
+    64,
+    112
+  ],
+  "fps": 20,
+  "loop": true,
+  "anchor": [
+    32,
+    104
+  ],
+  "source": "barrels",
+  "notes": "Axial rotation frames. Rear coupling anchor. Bank/underside are authored views, not yaw rotation.",
+  "frames": [
+    {
+      "file": "chaingun_barrel_underside/00.png",
+      "rect": [
+        2,
+        2,
+        64,
+        112
+      ],
+      "sourceCell": [
+        0,
+        855,
+        186,
+        185
+      ],
+      "sourceAlphaBounds": [
+        47,
+        14,
+        145,
+        174
+      ],
+      "scale": 0.46153846153846156,
+      "offset": [
+        9,
+        30
+      ]
+    },
+    {
+      "file": "chaingun_barrel_underside/01.png",
+      "rect": [
+        70,
+        2,
+        64,
+        112
+      ],
+      "sourceCell": [
+        186,
+        855,
+        160,
+        185
+      ],
+      "sourceAlphaBounds": [
+        23,
+        14,
+        121,
+        174
+      ],
+      "scale": 0.46153846153846156,
+      "offset": [
+        9,
+        30
+      ]
+    },
+    {
+      "file": "chaingun_barrel_underside/02.png",
+      "rect": [
+        138,
+        2,
+        64,
+        112
+      ],
+      "sourceCell": [
+        346,
+        855,
+        155,
+        185
+      ],
+      "sourceAlphaBounds": [
+        26,
+        16,
+        125,
+        173
+      ],
+      "scale": 0.46153846153846156,
+      "offset": [
+        9,
+        32
+      ]
+    },
+    {
+      "file": "chaingun_barrel_underside/03.png",
+      "rect": [
+        206,
+        2,
+        64,
+        112
+      ],
+      "sourceCell": [
+        501,
+        855,
+        147,
+        185
+      ],
+      "sourceAlphaBounds": [
+        16,
+        14,
+        117,
+        173
+      ],
+      "scale": 0.46153846153846156,
+      "offset": [
+        8,
+        31
+      ]
+    },
+    {
+      "file": "chaingun_barrel_underside/04.png",
+      "rect": [
+        274,
+        2,
+        64,
+        112
+      ],
+      "sourceCell": [
+        648,
+        855,
+        149,
+        185
+      ],
+      "sourceAlphaBounds": [
+        18,
+        14,
+        120,
+        174
+      ],
+      "scale": 0.46153846153846156,
+      "offset": [
+        8,
+        30
+      ]
+    },
+    {
+      "file": "chaingun_barrel_underside/05.png",
+      "rect": [
+        342,
+        2,
+        64,
+        112
+      ],
+      "sourceCell": [
+        797,
+        855,
+        149,
+        185
+      ],
+      "sourceAlphaBounds": [
+        19,
+        14,
+        118,
+        174
+      ],
+      "scale": 0.46153846153846156,
+      "offset": [
+        9,
+        30
+      ]
+    },
+    {
+      "file": "chaingun_barrel_underside/06.png",
+      "rect": [
+        410,
+        2,
+        64,
+        112
+      ],
+      "sourceCell": [
+        946,
+        855,
+        148,
+        185
+      ],
+      "sourceAlphaBounds": [
+        22,
+        14,
+        122,
+        173
+      ],
+      "scale": 0.46153846153846156,
+      "offset": [
+        9,
+        31
+      ]
+    },
+    {
+      "file": "chaingun_barrel_underside/07.png",
+      "rect": [
+        478,
+        2,
+        64,
+        112
+      ],
+      "sourceCell": [
+        1094,
+        855,
+        160,
+        185
+      ],
+      "sourceAlphaBounds": [
+        25,
+        14,
+        125,
+        174
+      ],
+      "scale": 0.46153846153846156,
+      "offset": [
+        9,
+        30
+      ]
+    },
+    {
+      "file": "chaingun_barrel_underside/08.png",
+      "rect": [
+        2,
+        118,
+        64,
+        112
+      ],
+      "sourceCell": [
+        0,
+        1040,
+        186,
+        214
+      ],
+      "sourceAlphaBounds": [
+        44,
+        10,
+        146,
+        169
+      ],
+      "scale": 0.46153846153846156,
+      "offset": [
+        8,
+        31
+      ]
+    },
+    {
+      "file": "chaingun_barrel_underside/09.png",
+      "rect": [
+        70,
+        118,
+        64,
+        112
+      ],
+      "sourceCell": [
+        186,
+        1040,
+        160,
+        214
+      ],
+      "sourceAlphaBounds": [
+        21,
+        10,
+        122,
+        169
+      ],
+      "scale": 0.46153846153846156,
+      "offset": [
+        8,
+        31
+      ]
+    },
+    {
+      "file": "chaingun_barrel_underside/10.png",
+      "rect": [
+        138,
+        118,
+        64,
+        112
+      ],
+      "sourceCell": [
+        346,
+        1040,
+        155,
+        214
+      ],
+      "sourceAlphaBounds": [
+        18,
+        10,
+        120,
+        169
+      ],
+      "scale": 0.46153846153846156,
+      "offset": [
+        8,
+        31
+      ]
+    },
+    {
+      "file": "chaingun_barrel_underside/11.png",
+      "rect": [
+        206,
+        118,
+        64,
+        112
+      ],
+      "sourceCell": [
+        501,
+        1040,
+        147,
+        214
+      ],
+      "sourceAlphaBounds": [
+        16,
+        10,
+        120,
+        169
+      ],
+      "scale": 0.46153846153846156,
+      "offset": [
+        8,
+        31
+      ]
+    },
+    {
+      "file": "chaingun_barrel_underside/12.png",
+      "rect": [
+        274,
+        118,
+        64,
+        112
+      ],
+      "sourceCell": [
+        648,
+        1040,
+        149,
+        214
+      ],
+      "sourceAlphaBounds": [
+        23,
+        10,
+        125,
+        169
+      ],
+      "scale": 0.46153846153846156,
+      "offset": [
+        8,
+        31
+      ]
+    },
+    {
+      "file": "chaingun_barrel_underside/13.png",
+      "rect": [
+        342,
+        118,
+        64,
+        112
+      ],
+      "sourceCell": [
+        797,
+        1040,
+        149,
+        214
+      ],
+      "sourceAlphaBounds": [
+        20,
+        8,
+        122,
+        169
+      ],
+      "scale": 0.46153846153846156,
+      "offset": [
+        8,
+        30
+      ]
+    },
+    {
+      "file": "chaingun_barrel_underside/14.png",
+      "rect": [
+        410,
+        118,
+        64,
+        112
+      ],
+      "sourceCell": [
+        946,
+        1040,
+        148,
+        214
+      ],
+      "sourceAlphaBounds": [
+        22,
+        8,
+        126,
+        169
+      ],
+      "scale": 0.46153846153846156,
+      "offset": [
+        8,
+        30
+      ]
+    },
+    {
+      "file": "chaingun_barrel_underside/15.png",
+      "rect": [
+        478,
+        118,
+        64,
+        112
+      ],
+      "sourceCell": [
+        1094,
+        1040,
+        160,
+        214
+      ],
+      "sourceAlphaBounds": [
+        20,
+        8,
+        123,
+        169
+      ],
+      "scale": 0.46153846153846156,
+      "offset": [
+        8,
+        30
+      ]
+    }
+  ]
+}

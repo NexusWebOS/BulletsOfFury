@@ -1,0 +1,225 @@
+{
+  "atlas": "orb_toxic/atlas.png",
+  "size": [
+    96,
+    96
+  ],
+  "fps": 10,
+  "loop": true,
+  "anchor": [
+    48,
+    48
+  ],
+  "source": "orbs_c",
+  "notes": "Authored elemental frame reel. Fixed center/origin; do not canvas-rotate or independently rescale frames.",
+  "frames": [
+    {
+      "file": "orb_toxic/00.png",
+      "rect": [
+        2,
+        2,
+        96,
+        96
+      ],
+      "sourceCell": [
+        0,
+        0,
+        256,
+        256
+      ],
+      "sourceAlphaBounds": [
+        25,
+        46,
+        242,
+        256
+      ],
+      "scale": 0.321285140562249,
+      "offset": [
+        13,
+        14
+      ]
+    },
+    {
+      "file": "orb_toxic/01.png",
+      "rect": [
+        102,
+        2,
+        96,
+        96
+      ],
+      "sourceCell": [
+        256,
+        0,
+        256,
+        256
+      ],
+      "sourceAlphaBounds": [
+        22,
+        43,
+        237,
+        256
+      ],
+      "scale": 0.321285140562249,
+      "offset": [
+        13,
+        14
+      ]
+    },
+    {
+      "file": "orb_toxic/02.png",
+      "rect": [
+        202,
+        2,
+        96,
+        96
+      ],
+      "sourceCell": [
+        512,
+        0,
+        256,
+        256
+      ],
+      "sourceAlphaBounds": [
+        16,
+        43,
+        235,
+        256
+      ],
+      "scale": 0.321285140562249,
+      "offset": [
+        13,
+        14
+      ]
+    },
+    {
+      "file": "orb_toxic/03.png",
+      "rect": [
+        302,
+        2,
+        96,
+        96
+      ],
+      "sourceCell": [
+        768,
+        0,
+        256,
+        256
+      ],
+      "sourceAlphaBounds": [
+        8,
+        43,
+        227,
+        256
+      ],
+      "scale": 0.321285140562249,
+      "offset": [
+        13,
+        14
+      ]
+    },
+    {
+      "file": "orb_toxic/04.png",
+      "rect": [
+        402,
+        2,
+        96,
+        96
+      ],
+      "sourceCell": [
+        0,
+        256,
+        256,
+        256
+      ],
+      "sourceAlphaBounds": [
+        25,
+        0,
+        245,
+        246
+      ],
+      "scale": 0.321285140562249,
+      "offset": [
+        12,
+        8
+      ]
+    },
+    {
+      "file": "orb_toxic/05.png",
+      "rect": [
+        502,
+        2,
+        96,
+        96
+      ],
+      "sourceCell": [
+        256,
+        256,
+        256,
+        256
+      ],
+      "sourceAlphaBounds": [
+        22,
+        0,
+        236,
+        249
+      ],
+      "scale": 0.321285140562249,
+      "offset": [
+        13,
+        8
+      ]
+    },
+    {
+      "file": "orb_toxic/06.png",
+      "rect": [
+        602,
+        2,
+        96,
+        96
+      ],
+      "sourceCell": [
+        512,
+        256,
+        256,
+        256
+      ],
+      "sourceAlphaBounds": [
+        16,
+        0,
+        234,
+        249
+      ],
+      "scale": 0.321285140562249,
+      "offset": [
+        13,
+        8
+      ]
+    },
+    {
+      "file": "orb_toxic/07.png",
+      "rect": [
+        702,
+        2,
+        96,
+        96
+      ],
+      "sourceCell": [
+        768,
+        256,
+        256,
+        256
+      ],
+      "sourceAlphaBounds": [
+        10,
+        0,
+        231,
+        249
+      ],
+      "scale": 0.321285140562249,
+      "offset": [
+        12,
+        8
+      ]
+    }
+  ]
+}

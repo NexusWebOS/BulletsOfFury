@@ -1,0 +1,521 @@
+{
+  "atlas": "hammer_toss_helper_throw/atlas.png",
+  "size": [
+    448,
+    480
+  ],
+  "anchor": [
+    224,
+    464
+  ],
+  "fps": 12,
+  "loop": false,
+  "group": "boss",
+  "source": "toss_helper_padded",
+  "events": {
+    "3": "detach_hammer",
+    "6": "attach_helper",
+    "10": "release_helper",
+    "13": "beckon_helper",
+    "14": "summon_helper"
+  },
+  "notes": "Boss+helper composite during pickup/carry. Hide standalone helper for attached frames; use separate airborne reel on release.",
+  "frames": [
+    {
+      "file": "hammer_toss_helper_throw/00.png",
+      "rect": [
+        2,
+        2,
+        448,
+        480
+      ],
+      "sourceRect": [
+        0,
+        0,
+        320,
+        352
+      ],
+      "sourceAlphaBounds": [
+        37,
+        130,
+        292,
+        306
+      ],
+      "sourceAnchor": [
+        146,
+        306
+      ],
+      "sharedScale": 1.2694610778443114,
+      "offset": [
+        86,
+        241
+      ],
+      "sourceCutEdgePixelsAlpha32": 0
+    },
+    {
+      "file": "hammer_toss_helper_throw/01.png",
+      "rect": [
+        454,
+        2,
+        448,
+        480
+      ],
+      "sourceRect": [
+        320,
+        0,
+        634,
+        352
+      ],
+      "sourceAlphaBounds": [
+        28,
+        120,
+        285,
+        306
+      ],
+      "sourceAnchor": [
+        140,
+        306
+      ],
+      "sharedScale": 1.2694610778443114,
+      "offset": [
+        82,
+        228
+      ],
+      "sourceCutEdgePixelsAlpha32": 0
+    },
+    {
+      "file": "hammer_toss_helper_throw/02.png",
+      "rect": [
+        906,
+        2,
+        448,
+        480
+      ],
+      "sourceRect": [
+        634,
+        0,
+        968,
+        352
+      ],
+      "sourceAlphaBounds": [
+        30,
+        48,
+        283,
+        306
+      ],
+      "sourceAnchor": [
+        136,
+        306
+      ],
+      "sharedScale": 1.2694610778443114,
+      "offset": [
+        89,
+        136
+      ],
+      "sourceCutEdgePixelsAlpha32": 0
+    },
+    {
+      "file": "hammer_toss_helper_throw/03.png",
+      "rect": [
+        1358,
+        2,
+        448,
+        480
+      ],
+      "sourceRect": [
+        968,
+        0,
+        1254,
+        352
+      ],
+      "sourceAlphaBounds": [
+        52,
+        108,
+        271,
+        306
+      ],
+      "sourceAnchor": [
+        132,
+        306
+      ],
+      "sharedScale": 1.2694610778443114,
+      "offset": [
+        122,
+        213
+      ],
+      "sourceCutEdgePixelsAlpha32": 0
+    },
+    {
+      "file": "hammer_toss_helper_throw/04.png",
+      "rect": [
+        1810,
+        2,
+        448,
+        480
+      ],
+      "sourceRect": [
+        0,
+        352,
+        346,
+        624
+      ],
+      "sourceAlphaBounds": [
+        58,
+        49,
+        308,
+        232
+      ],
+      "sourceAnchor": [
+        145,
+        233
+      ],
+      "sharedScale": 1.2694610778443114,
+      "offset": [
+        114,
+        230
+      ],
+      "sourceCutEdgePixelsAlpha32": 0
+    },
+    {
+      "file": "hammer_toss_helper_throw/05.png",
+      "rect": [
+        2262,
+        2,
+        448,
+        480
+      ],
+      "sourceRect": [
+        346,
+        352,
+        666,
+        624
+      ],
+      "sourceAlphaBounds": [
+        38,
+        54,
+        291,
+        235
+      ],
+      "sourceAnchor": [
+        124,
+        236
+      ],
+      "sharedScale": 1.2694610778443114,
+      "offset": [
+        115,
+        233
+      ],
+      "sourceCutEdgePixelsAlpha32": 0
+    },
+    {
+      "file": "hammer_toss_helper_throw/06.png",
+      "rect": [
+        2714,
+        2,
+        448,
+        480
+      ],
+      "sourceRect": [
+        666,
+        352,
+        965,
+        624
+      ],
+      "sourceAlphaBounds": [
+        31,
+        47,
+        237,
+        236
+      ],
+      "sourceAnchor": [
+        133,
+        235
+      ],
+      "sharedScale": 1.2694610778443114,
+      "offset": [
+        95,
+        225
+      ],
+      "sourceCutEdgePixelsAlpha32": 0
+    },
+    {
+      "file": "hammer_toss_helper_throw/07.png",
+      "rect": [
+        3166,
+        2,
+        448,
+        480
+      ],
+      "sourceRect": [
+        965,
+        352,
+        1254,
+        624
+      ],
+      "sourceAlphaBounds": [
+        61,
+        46,
+        220,
+        236
+      ],
+      "sourceAnchor": [
+        145,
+        235
+      ],
+      "sharedScale": 1.2694610778443114,
+      "offset": [
+        117,
+        224
+      ],
+      "sourceCutEdgePixelsAlpha32": 0
+    },
+    {
+      "file": "hammer_toss_helper_throw/08.png",
+      "rect": [
+        2,
+        486,
+        448,
+        480
+      ],
+      "sourceRect": [
+        0,
+        624,
+        326,
+        931
+      ],
+      "sourceAlphaBounds": [
+        66,
+        37,
+        280,
+        271
+      ],
+      "sourceAnchor": [
+        172,
+        271
+      ],
+      "sharedScale": 1.2694610778443114,
+      "offset": [
+        89,
+        167
+      ],
+      "sourceCutEdgePixelsAlpha32": 0
+    },
+    {
+      "file": "hammer_toss_helper_throw/09.png",
+      "rect": [
+        454,
+        486,
+        448,
+        480
+      ],
+      "sourceRect": [
+        326,
+        624,
+        629,
+        931
+      ],
+      "sourceAlphaBounds": [
+        46,
+        80,
+        248,
+        271
+      ],
+      "sourceAnchor": [
+        152,
+        271
+      ],
+      "sharedScale": 1.2694610778443114,
+      "offset": [
+        89,
+        222
+      ],
+      "sourceCutEdgePixelsAlpha32": 0
+    },
+    {
+      "file": "hammer_toss_helper_throw/10.png",
+      "rect": [
+        906,
+        486,
+        448,
+        480
+      ],
+      "sourceRect": [
+        629,
+        624,
+        942,
+        931
+      ],
+      "sourceAlphaBounds": [
+        55,
+        86,
+        256,
+        271
+      ],
+      "sourceAnchor": [
+        146,
+        271
+      ],
+      "sharedScale": 1.2694610778443114,
+      "offset": [
+        108,
+        229
+      ],
+      "sourceCutEdgePixelsAlpha32": 0
+    },
+    {
+      "file": "hammer_toss_helper_throw/11.png",
+      "rect": [
+        1358,
+        486,
+        448,
+        480
+      ],
+      "sourceRect": [
+        942,
+        624,
+        1254,
+        931
+      ],
+      "sourceAlphaBounds": [
+        57,
+        80,
+        261,
+        271
+      ],
+      "sourceAnchor": [
+        169,
+        271
+      ],
+      "sharedScale": 1.2694610778443114,
+      "offset": [
+        82,
+        222
+      ],
+      "sourceCutEdgePixelsAlpha32": 0
+    },
+    {
+      "file": "hammer_toss_helper_throw/12.png",
+      "rect": [
+        1810,
+        486,
+        448,
+        480
+      ],
+      "sourceRect": [
+        0,
+        931,
+        324,
+        1254
+      ],
+      "sourceAlphaBounds": [
+        48,
+        72,
+        265,
+        250
+      ],
+      "sourceAnchor": [
+        154,
+        250
+      ],
+      "sharedScale": 1.2694610778443114,
+      "offset": [
+        89,
+        238
+      ],
+      "sourceCutEdgePixelsAlpha32": 0
+    },
+    {
+      "file": "hammer_toss_helper_throw/13.png",
+      "rect": [
+        2262,
+        486,
+        448,
+        480
+      ],
+      "sourceRect": [
+        324,
+        931,
+        639,
+        1254
+      ],
+      "sourceAlphaBounds": [
+        58,
+        65,
+        272,
+        250
+      ],
+      "sourceAnchor": [
+        162,
+        250
+      ],
+      "sharedScale": 1.2694610778443114,
+      "offset": [
+        92,
+        229
+      ],
+      "sourceCutEdgePixelsAlpha32": 0
+    },
+    {
+      "file": "hammer_toss_helper_throw/14.png",
+      "rect": [
+        2714,
+        486,
+        448,
+        480
+      ],
+      "sourceRect": [
+        639,
+        931,
+        948,
+        1254
+      ],
+      "sourceAlphaBounds": [
+        43,
+        35,
+        241,
+        250
+      ],
+      "sourceAnchor": [
+        133,
+        250
+      ],
+      "sharedScale": 1.2694610778443114,
+      "offset": [
+        110,
+        191
+      ],
+      "sourceCutEdgePixelsAlpha32": 0
+    },
+    {
+      "file": "hammer_toss_helper_throw/15.png",
+      "rect": [
+        3166,
+        486,
+        448,
+        480
+      ],
+      "sourceRect": [
+        948,
+        931,
+        1254,
+        1254
+      ],
+      "sourceAlphaBounds": [
+        67,
+        59,
+        236,
+        250
+      ],
+      "sourceAnchor": [
+        152,
+        250
+      ],
+      "sharedScale": 1.2694610778443114,
+      "offset": [
+        116,
+        222
+      ],
+      "sourceCutEdgePixelsAlpha32": 0
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "families": 15,
+  "frames": 128,
+  "checks": [
+    {
+      "name": "boss_moonwalk_left",
+      "frames": 8,
+      "uniqueFrames": 8,
+      "outerEdgePixelsAlpha32": 0,
+      "sourceCutEdgePixelsAlpha32": 0,
+      "allCornersTransparent": true
+    },
+    {
+      "name": "boss_moonwalk_right",
+      "frames": 8,
+      "uniqueFrames": 8,
+      "outerEdgePixelsAlpha32": 0,
+      "sourceCutEdgePixelsAlpha32": 0,
+      "allCornersTransparent": true
+    },
+    {
+      "name": "armored_moonwalk_left",
+      "frames": 8,
+      "uniqueFrames": 8,
+      "outerEdgePixelsAlpha32": 0,
+      "sourceCutEdgePixelsAlpha32": 0,
+      "allCornersTransparent": true
+    },
+    {
+      "name": "armored_moonwalk_right",
+      "frames": 8,
+      "uniqueFrames": 8,
+      "outerEdgePixelsAlpha32": 0,
+      "sourceCutEdgePixelsAlpha32": 0,
+      "allCornersTransparent": true
+    },
+    {
+      "name": "boss_lasso_360",
+      "frames": 12,
+      "uniqueFrames": 12,
+      "outerEdgePixelsAlpha32": 0,
+      "sourceCutEdgePixelsAlpha32": 0,
+      "allCornersTransparent": true
+    },
+    {
+      "name": "helper_lasso_360",
+      "frames": 12,
+      "uniqueFrames": 12,
+      "outerEdgePixelsAlpha32": 0,
+      "sourceCutEdgePixelsAlpha32": 0,
+      "allCornersTransparent": true
+    },
+    {
+      "name": "double_hammer_slam",
+      "frames": 12,
+      "uniqueFrames": 12,
+      "outerEdgePixelsAlpha32": 0,
+      "sourceCutEdgePixelsAlpha32": 0,
+      "allCornersTransparent": true
+    },
+    {
+      "name": "hammer_toss_helper_throw",
+      "frames": 16,
+      "uniqueFrames": 16,
+      "outerEdgePixelsAlpha32": 0,
+      "sourceCutEdgePixelsAlpha32": 0,
+      "allCornersTransparent": true
+    },
+    {
+      "name": "helper_airborne_tumble",
+      "frames": 8,
+      "uniqueFrames": 8,
+      "outerEdgePixelsAlpha32": 0,
+      "sourceCutEdgePixelsAlpha32": 0,
+      "allCornersTransparent": true
+    },
+    {
+      "name": "boss_speaker_sing",
+      "frames": 4,
+      "uniqueFrames": 4,
+      "outerEdgePixelsAlpha32": 0,
+      "sourceCutEdgePixelsAlpha32": 0,
+      "allCornersTransparent": true
+    },
+    {
+      "name": "boss_speaker_chant",
+      "frames": 4,
+      "uniqueFrames": 4,
+      "outerEdgePixelsAlpha32": 0,
+      "sourceCutEdgePixelsAlpha32": 0,
+      "allCornersTransparent": true
+    },
+    {
+      "name": "helper_speaker_sing",
+      "frames": 4,
+      "uniqueFrames": 4,
+      "outerEdgePixelsAlpha32": 0,
+      "sourceCutEdgePixelsAlpha32": 0,
+      "allCornersTransparent": true
+    },
+    {
+      "name": "helper_speaker_chant",
+      "frames": 4,
+      "uniqueFrames": 4,
+      "outerEdgePixelsAlpha32": 0,
+      "sourceCutEdgePixelsAlpha32": 0,
+      "allCornersTransparent": true
+    },
+    {
+      "name": "hammer_airborne_spin",
+      "frames": 8,
+      "uniqueFrames": 8,
+      "outerEdgePixelsAlpha32": 0,
+      "sourceCutEdgePixelsAlpha32": 0,
+      "allCornersTransparent": true
+    },
+    {
+      "name": "boss_vocal_leap",
+      "frames": 12,
+      "uniqueFrames": 12,
+      "outerEdgePixelsAlpha32": 0,
+      "sourceCutEdgePixelsAlpha32": 0,
+      "allCornersTransparent": true
+    }
+  ]
+}

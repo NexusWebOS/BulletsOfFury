@@ -1,0 +1,13 @@
+{
+  "date": "2026-09-29",
+  "tool": "built-in image_gen",
+  "sourceFiles": [
+    "C:\\Users\\Mike\\.codex\\generated_images\\01a0c9fd-a6cc-73a3-8dca-3e0f7a90a956\\exec-942986b8-d4a8-4fa9-b430-99be00fce590.png",
+    "C:\\Users\\Mike\\.codex\\generated_images\\01a0c9fd-a6cc-73a3-8dca-3e0f7a90a956\\exec-f7eb061c-641e-41e6-8004-8f1cf37b8413.png"
+  ],
+  "references": [
+    "cinematic_campaign/war_origin_0924/radar_bezel_native.png",
+    "stage6_enemy_attacks/storm_dart/01.png"
+  ],
+  "imports": "Equal cells cropped, nearest-neighbor resized, padded, packed. Beam cells from September 28 owning manifest."
+}

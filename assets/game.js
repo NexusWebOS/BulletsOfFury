@@ -8470,7 +8470,7 @@ function ensureForgeForms(){
     if(!run.forgeForms[w][f.elem]) run.forgeForms[w][f.elem]={elem:f.elem,lv:Math.max(1,f.lv|0)};
   }
   /* A permanent Armory recipe is available in every later run without charging again. */
-  for(const id of Object.keys(achievementState.owned||{})){
+  if(run.mode!=='campaign')for(const id of Object.keys(achievementState.owned||{})){
     const m=/^forge_([a-z]+)_([0-9])_C$/.exec(id); if(!m||!INFUSIONS[m[1]]) continue;
     const w=+m[2], elem=m[1]; if(!run.forgeForms[w]) run.forgeForms[w]={};
     if(!run.forgeForms[w][elem]) run.forgeForms[w][elem]={elem:elem,lv:forgeOwnedLevel(elem,w)};
@@ -8513,7 +8513,7 @@ function forgeDiscover(elem){ if(run && INFUSIONS[elem]){ if(!run.forgeElems) ru
 function forgeDiscovered(){
   if(!run) return [];
   if(!run.forgeElems) run.forgeElems={};
-  for(const c of forgeCombosOwned()) run.forgeElems[c.elem]=1;  /* migrate old pair licenses */
+  if(run.mode!=='campaign')for(const c of forgeCombosOwned()) run.forgeElems[c.elem]=1;  /* migrate old pair licenses */
   return Object.keys(INFUSIONS).filter(function(e){ return run.forgeElems[e] && infusionGateOpen(e); });
 }
 function forgeApply(){
@@ -8980,7 +8980,7 @@ function forgeComboBuy(elem,w){
 function forgeElementId(elem){ return 'forge_element_'+elem+'_E'; }
 function forgeComboOwned(elem,w){
   if(!INFUSIONS[elem]||!forgeCanTake(w)) return false;
-  return !!((run&&run.forgeElems&&run.forgeElems[elem]) || furiousOwned(forgeElementId(elem)) || furiousOwned(forgeComboId(elem,w)));
+  return !!((run&&run.forgeElems&&run.forgeElems[elem]) || (run.mode!=='campaign'&&(furiousOwned(forgeElementId(elem)) || furiousOwned(forgeComboId(elem,w)))));
 }
 function forgeComboGrant(elem,w){
   if(!INFUSIONS[elem]) return 'unknown';
@@ -9302,9 +9302,10 @@ function p2Pilot(){ return PILOTS[p2Index] || PILOTS[(pilotIndex+1)%PILOTS.lengt
 const LASER_MIST_UNLOCK_KEY='bof_laser_mist_unlocked';
 let laserMistUnlocked=false;
 try{laserMistUnlocked=localStorage.getItem(LASER_MIST_UNLOCK_KEY)==='1';}catch(_lmRead){}
-function laserMistIsUnlocked(){return !!laserMistUnlocked;}
+function laserMistIsUnlocked(){return run&&run.mode==='campaign'?!!run._earnedUnlocks?.mist:!!laserMistUnlocked;}
 function laserMistUnlock(){
-  if(laserMistUnlocked)return false;
+  if(laserMistIsUnlocked())return false;
+  if(run){run._earnedUnlocks=run._earnedUnlocks||{};run._earnedUnlocks.mist=true;}
   laserMistUnlocked=true;try{localStorage.setItem(LASER_MIST_UNLOCK_KEY,'1');}catch(_lmWrite){}
   if(typeof laserMistWarm==='function')laserMistWarm();
   run._wbag=[];
@@ -9315,9 +9316,10 @@ function laserMistUnlock(){
 const CHAINGUN_UNLOCK_KEY='bof_chaingun_unlocked';
 let chaingunUnlocked=false;
 try{chaingunUnlocked=localStorage.getItem(CHAINGUN_UNLOCK_KEY)==='1';}catch(_cgRead){}
-function chaingunIsUnlocked(){return !!chaingunUnlocked;}
+function chaingunIsUnlocked(){return run&&run.mode==='campaign'?!!run._earnedUnlocks?.chaingun:!!chaingunUnlocked;}
 function chaingunUnlock(){
-  if(chaingunUnlocked)return false;
+  if(chaingunIsUnlocked())return false;
+  if(run){run._earnedUnlocks=run._earnedUnlocks||{};run._earnedUnlocks.chaingun=true;}
   chaingunUnlocked=true;try{localStorage.setItem(CHAINGUN_UNLOCK_KEY,'1');}catch(_cgWrite){}
   if(typeof colePilot==='function'&&colePilot())return true;   // Cole keeps his MG / fusion-cannon line (0928)
   if(typeof chaingunSeedLoadout==='function')chaingunSeedLoadout();
@@ -9329,7 +9331,7 @@ function chaingunUnlock(){
 const YURI_LIGHTNING_ORB_UNLOCK_KEY='bof_yuri_lightning_orb_unlocked';
 let yuriLightningOrbUnlocked=false;
 try{yuriLightningOrbUnlocked=localStorage.getItem(YURI_LIGHTNING_ORB_UNLOCK_KEY)==='1';}catch(_yloRead){}
-function yuriLightningOrbIsUnlocked(){return !!yuriLightningOrbUnlocked;}
+function yuriLightningOrbIsUnlocked(){return run&&run.mode==='campaign'?!!run._earnedUnlocks?.lightningOrb:!!yuriLightningOrbUnlocked;}
 function yuriLightningOrbWarm(){
   if(typeof XART==='undefined'||!XART._touch)return;
   for(let i=1;i<=5;i++){XART._touch('micon_lightningorb_'+i);XART._touch('ylo_orb_'+i);XART._touch('ylo_bolt_'+i);}
@@ -9341,11 +9343,13 @@ function yuriLightningOrbGrantStage4(){
   let yuriWon=false;
   for(const R of seats){
     if(!R||String(R.pilot||'').toLowerCase()!=='yuri')continue;
-    yuriWon=true;if(!R.wlevels)R.wlevels=WEAPONS.map(()=>0);while(R.wlevels.length<WEAPONS.length)R.wlevels.push(0);
+    yuriWon=true;R._earnedUnlocks=R._earnedUnlocks||{};R._earnedUnlocks.lightningOrb=true;if(!R.wlevels)R.wlevels=WEAPONS.map(()=>0);while(R.wlevels.length<WEAPONS.length)R.wlevels.push(0);
     if(!R.wvars)R.wvars=WEAPONS.map(()=>null);while(R.wvars.length<WEAPONS.length)R.wvars.push(null);
     R.wlevels[8]=Math.max(1,R.wlevels[8]||0);R.wvars[8]='lightningorb';R.weapon=8;R.wlevel=R.wlevels[8];R._wbag=[];
   }
   if(!yuriWon)return false;
+  // Campaign progress is shared by seatIn; Yuri in seat 2 must retain his earned gate.
+  run._earnedUnlocks=run._earnedUnlocks||{};run._earnedUnlocks.lightningOrb=true;
   for(const R of seats)if(R&&String(R.pilot||'').toLowerCase()==='yuri'){R._thunderStormUnlocked=true;R._chainLightningLevel=Math.max(2,R._chainLightningLevel||1);}
   const fresh=!yuriLightningOrbUnlocked;yuriLightningOrbUnlocked=true;
   try{localStorage.setItem(YURI_LIGHTNING_ORB_UNLOCK_KEY,'1');}catch(_yloWrite){}
@@ -18161,7 +18165,9 @@ function l23FovDraw(b,B,i,p,k,lane){
   ctx.restore();
   return true;
 }
+function enemyWarningOwner(owner){return !!owner&&(enemies.includes(owner)||enemies.includes(owner.owner));}
 function l23WarnSymbolDraw(b,B){
+  if(enemyWarningOwner(b))return false; // Ordinary enemies retain lane/ground tells, not floating triangles.
   if(!b||!B||B.released||B.t>=B.warm||typeof XART==='undefined')return false;
   const f=clamp(B.t/Math.max(.001,B.warm),0,1);let red=f>=L23_WARN_RED;
   let key=red?'nwarn_alert':'nwarn_yield', steady=false;
@@ -28265,18 +28271,17 @@ function coleTriDraw(b){
        Two passes: the sprite darkened almost to silhouette, then a small bright core drawn INSIDE
        it that drifts on its own clock — so the glow reads as something moving within the round
        rather than a highlight painted on it. */
-    ctx.globalAlpha=0.92; ctx.filter='brightness(0.18)';
-    ctx.drawImage(im,-w/2,-h/2,w,h);
+    ctx.globalAlpha=0.92;
+    lateSpriteBlit(lateSpriteBake(im,[0,0,im.width,im.height],w,h,null,0,'brightness(0.18)',false),-w/2,-h/2);
     ctx.filter='none';
     const cy=Math.sin((b.t||0)*11)*h*0.16;
     ctx.globalCompositeOperation='lighter'; ctx.globalAlpha=0.85;
-    ctx.filter='brightness(2.4) saturate(0)';
-    ctx.drawImage(im,-w*0.28, -h*0.28+cy, w*0.56, h*0.56);
+    lateSpriteBlit(lateSpriteBake(im,[0,0,im.width,im.height],w*.56,h*.56,null,0,'brightness(2.4) saturate(0)',false),-w*.28,-h*.28+cy);
     ctx.filter='none';
   } else {
     ctx.globalCompositeOperation='lighter';
-    ctx.shadowColor='#ffc23a'; ctx.shadowBlur=8;
-    ctx.drawImage(im,-w/2,-h/2,w,h);
+    ctx.shadowBlur=0;
+    lateSpriteBlit(lateSpriteBake(im,[0,0,im.width,im.height],w,h,'#ffc23a',8,null,true),-w/2,-h/2);
   }
   ctx.restore();
   return true;
@@ -33209,6 +33214,8 @@ function startRun(fromStage=1){
   run.contUsed=0; run.contBonus=0;   // spent credits and earned Continue Ups reset per run
   run._s5Resume=null;run._s5ResumeArm=0;run._s5GateOut=0;run._s9taken=0;run._l78Entry=0;
   run._missileBonus=null;
+  run.infusion=null;run._stageElements=[];run._earnedUnlocks={};run._chainSeeded=false;run._chainLightningLevel=1;run._wbag=[];run._forgeBlastSeq={};
+  if(run.mode==='campaign'){run.ngplus=false;run.affiliation={};run.allies=[];}
   run.forge={}; run.forgeForms={}; run.forgeElems={}; run.loadout=null; run.forgeCombos=0; run.forgeRespecs=0;   // the Forge
   /* ---- P2's half of a co-op run (drop 0902f) ----------------------------------------------
      Mike's call: SEPARATE lives and SEPARATE scores. So P2 gets its own full allowance off the
@@ -33226,6 +33233,7 @@ function startRun(fromStage=1){
     run2.missileTier='standard'; run2.missileUpgrade=null; run2._missileWaveSerial=0; run2.bombs = coopActive() ? clampManualMissiles(DIFF.startBombs,'standard') : 0;
     run2.weapon = 0; run2.wlevel = 1; run2.wlevels = WEAPONS.map(()=>1);
     run2.wvars = WEAPONS.map(()=>null);
+    run2.infusion=null;run2.forge={};run2.forgeForms={};run2.forgeElems={};run2.loadout=null;run2._earnedUnlocks={};run2._chainSeeded=false;run2._stageElements=[];
     run2.speed = 0; run2.speedT = 0; run2.speedLevel = 0;
     run2.shield = 0; run2._megaShield=false; run2.power = 0; run2.missileLevel = 0;
     run2.dkT = 0; run2.sonicT = 0; run2._mslCd = 0;run2._chainHeat=0;run2._chainRev=0;run2._chainOverheat=0;
@@ -42014,13 +42022,13 @@ function iconBlit(g, key, x, y, h, centred){
     if(typeof XART==='undefined' || !XART.rdy(sheetKey)) return null;
     const im=XART.get(sheetKey); if(!im||!im.naturalWidth) return null;
     const sc=h/T[3], w=T[2]*sc;
-    g.drawImage(im, T[0],T[1],T[2],T[3], centred?(x-w/2):x, centred?(y-h/2):y, w, h);
+    lateShadowImage(g,im, T[0],T[1],T[2],T[3], centred?(x-w/2):x, centred?(y-h/2):y, w, h);
     return w;
   }
   /* not a sheet cell — the override may point at a standalone plate */
   if(typeof XART!=='undefined' && XART.rdy(key)){
     const im=XART.get(key), w=h*(im.naturalWidth/im.naturalHeight);
-    g.drawImage(im, centred?(x-w/2):x, centred?(y-h/2):y, w, h);
+    lateShadowImage(g,im, centred?(x-w/2):x, centred?(y-h/2):y, w, h);
     return w;
   }
   return null;
@@ -42040,7 +42048,7 @@ function _iconDrawCell(key, x, y, h, centred){
      draws from a left edge, and using the wrong one shifts the icon by half its width. */
   const dx = centred ? (x - w/2) : x;
   const dy = centred ? (y - h/2) : y;
-  ctx.drawImage(im, T[0],T[1],T[2],T[3], dx, dy, w, h);
+  lateShadowImage(ctx,im, T[0],T[1],T[2],T[3], dx, dy, w, h);
   return w;                                   // callers need the drawn width back
 }
 /* ============================================================
@@ -44861,13 +44869,58 @@ function _qs(v,step){ return Math.max(1, Math.round(v/step)*step); }   // quanti
 /* bakeA: draw-time alpha baked INTO the layer. Needed whenever the live path used
    globalAlpha with source-over: per-element alpha != group alpha, but source-over is
    associative, so baking the element alpha and blitting the layer at 1.0 is exact. */
+/* 0929: bounded sprite-layer cache. Gaussian blurs and static filters belong on
+   small offscreen plates, not on every projectile. Alpha remains per layer. */
+const _lateSpriteCache=new Map(),_lateSpriteIds=new WeakMap();
+let _lateSpriteSerial=0,_lateSpriteBytes=0;
+const LATE_SPRITE_BYTES=8*1024*1024,LATE_SPRITE_CAP=192;
+function lateSpriteBake(src,rc,w,h,glow,blur,filter,additive){
+  let id=_lateSpriteIds.get(src);if(!id){id=++_lateSpriteSerial;_lateSpriteIds.set(src,id);}
+  const scale=SS||1,key=[id,rc.join(','),w,h,glow||'',blur||0,filter||'',!!additive,scale].join('|');
+  const hit=_lateSpriteCache.get(key);
+  if(hit){_lateSpriteCache.delete(key);_lateSpriteCache.set(key,hit);return hit;}
+  const pad=Math.ceil((blur||0)*1.8)+2,c=document.createElement('canvas');
+  c.width=Math.ceil(w*scale)+2*pad;c.height=Math.ceil(h*scale)+2*pad;
+  const g=c.getContext('2d');g.imageSmoothingEnabled=false;
+  if(additive)g.globalCompositeOperation='lighter';
+  if(filter)g.filter=filter;
+  if(glow&&blur){g.shadowColor=glow;g.shadowBlur=blur;}
+  g.drawImage(src,...rc,pad,pad,w*scale,h*scale);
+  c._latePad=pad/scale;c._lateScale=scale;
+  const bytes=c.width*c.height*4;
+  while(_lateSpriteCache.size&&(_lateSpriteCache.size>=LATE_SPRITE_CAP||_lateSpriteBytes+bytes>LATE_SPRITE_BYTES)){
+    const oldest=_lateSpriteCache.keys().next().value,plate=_lateSpriteCache.get(oldest);
+    _lateSpriteBytes-=plate.width*plate.height*4;_lateSpriteCache.delete(oldest);
+  }
+  if(bytes<=LATE_SPRITE_BYTES){_lateSpriteCache.set(key,c);_lateSpriteBytes+=bytes;}
+  return c;
+}
+function lateSpriteBlit(c,x,y){
+  ctx.drawImage(c,x-c._latePad,y-c._latePad,c.width/c._lateScale,c.height/c._lateScale);
+}
+function lateShadowImage(g,im,...args){
+  if(g!==ctx||(!g.shadowBlur&&(!g.filter||g.filter==='none')))return g.drawImage(im,...args);
+  let rc,x,y,w,h;
+  if(args.length===8){rc=args.slice(0,4);[x,y,w,h]=args.slice(4);}
+  else if(args.length===4){rc=[0,0,im.naturalWidth||im.width,im.naturalHeight||im.height];[x,y,w,h]=args;}
+  else return g.drawImage(im,...args);
+  if(!(w>0&&h>0))return g.drawImage(im,...args);
+  const plate=lateSpriteBake(im,rc,w,h,g.shadowColor,g.shadowBlur,g.filter,g.globalCompositeOperation==='lighter');
+  g.save();g.shadowBlur=0;g.filter='none';lateSpriteBlit(plate,x,y);g.restore();
+}
+const _glowOrder=new Map(),_blobOrder=new Map();
+function glowCacheTouch(order,key,cache,cap){
+  if(order.has(key))order.delete(key);order.set(key,1);
+  while(order.size>cap){const k=order.keys().next().value;order.delete(k);delete cache[k];}
+}
+
 function bakeGlow(key, w, h, tint, tintA, glow, blur, additive, bakeA){
   if(typeof XART==='undefined'||!XART.rdy(key)) return null;
   w=Math.max(1,Math.round(w)); h=Math.max(1,Math.round(h));
   const ck=key+'|'+w+'|'+h+'|'+(tint||'-')+'|'+(tintA==null?'-':tintA)+'|'+(glow||'-')+'|'+(blur||0)+'|'+(additive?'A':'S')+'|'+(bakeA==null?1:bakeA);
   const hit=_glowc[ck];
-  if(hit){ _glowHits++; return hit; }
-  if(_glowBakes>=_GLOW_CAP) return null;     // pathological variety: fall back to the live path
+  if(_GLOW_CAP<=0)return null;
+  if(hit){ _glowHits++;glowCacheTouch(_glowOrder,ck,_glowc,_GLOW_CAP);return hit; }
   const im=XART.get(key);
   const src=tint?(xartTint(key,tint,(tintA==null?0.7:tintA))||im):im;
   const pad=Math.ceil((blur||0)*1.8)+2;
@@ -44882,7 +44935,7 @@ function bakeGlow(key, w, h, tint, tintA, glow, blur, additive, bakeA){
   if(glow && blur>0){ x.shadowColor=glow; x.shadowBlur=blur; }
   x.drawImage(src,pad,pad,w,h);
   c._pad=pad; c._w=w; c._h=h;
-  _glowc[ck]=c; _glowBakes++;
+  _glowc[ck]=c; _glowBakes++;glowCacheTouch(_glowOrder,ck,_glowc,_GLOW_CAP);
   return c;
 }
 /* Same idea for the glowing VECTOR blobs (tracer cores, beam pulses): the shape never
@@ -44896,8 +44949,8 @@ function _qr(v,step){ return Math.max(step, Math.round(v/step)*step); }
 function glowBlob(color, rx, ry, blur, additive){
   rx=_qr(rx,0.5); ry=_qr(ry,0.5); blur=blur|0;
   const ck=color+'|'+rx+'|'+ry+'|'+blur+'|'+(additive?'A':'S');
-  const hit=_blobc[ck]; if(hit){ _glowHits++; return hit; }
-  if(_blobBakes>=_BLOB_CAP) return null;
+  const hit=_blobc[ck];if(_BLOB_CAP<=0)return null;
+  if(hit){ _glowHits++;glowCacheTouch(_blobOrder,ck,_blobc,_BLOB_CAP);return hit; }
   const pad=Math.ceil(blur*1.8)+2;
   const c=document.createElement('canvas');
   c.width=Math.ceil(rx*2)+pad*2; c.height=Math.ceil(ry*2)+pad*2;
@@ -44905,7 +44958,7 @@ function glowBlob(color, rx, ry, blur, additive){
   if(additive) x.globalCompositeOperation='lighter';
   if(blur>0){ x.shadowColor=color; x.shadowBlur=blur; }
   x.fillStyle=color; x.beginPath(); x.ellipse(c.width/2,c.height/2,rx,ry,0,0,TAU); x.fill();
-  _blobc[ck]=c; _blobBakes++; return c;
+  _blobc[ck]=c; _blobBakes++;glowCacheTouch(_blobOrder,ck,_blobc,_BLOB_CAP);return c;
 }
 function blitBlob(c,x,y){ ctx.drawImage(c, x-c.width/2, y-c.height/2); }
 
@@ -49926,11 +49979,11 @@ function p87Draw(rc, x, y, ang, h, lv, glow, alpha, inf){
      inspection. Two draws of a ~48px sprite; the pack is cached per palette so neither re-swaps. */
   if(glow){
     ctx.save();
-    ctx.shadowColor=glow; ctx.shadowBlur=16;
+    ctx.shadowBlur=0;
     ctx.globalAlpha=(alpha!=null?alpha:1)*0.85;
-    ctx.drawImage(src, sx, sy, P87_CELL, P87_CELL, -h/2, -h*P87_BODY_Y, h, h);
-    ctx.shadowBlur=7;                                    // a tighter, hotter inner ring
-    ctx.drawImage(src, sx, sy, P87_CELL, P87_CELL, -h/2, -h*P87_BODY_Y, h, h);
+    const rc=[sx,sy,P87_CELL,P87_CELL];
+    lateSpriteBlit(lateSpriteBake(src,rc,h,h,glow,16,null,false),-h/2,-h*P87_BODY_Y);
+    lateSpriteBlit(lateSpriteBake(src,rc,h,h,glow,7,null,false),-h/2,-h*P87_BODY_Y);
     ctx.restore();
   }
   ctx.drawImage(src, sx, sy, P87_CELL, P87_CELL, -h/2, -h*P87_BODY_Y, h, h);
@@ -50656,6 +50709,7 @@ function drawBullets(){
       ctx.restore(); continue;
     }
     if(b.kind==='beam'){   // held player laser
+      if(typeof missionBeamDraw==='function'&&missionBeamDraw(b))continue;
       if(b._inf && b._inf!=='fire' && typeof XART!=='undefined' && XART.rdy('forge_elem_'+b._inf+'_laser_0918')){
         const im=XART.get('forge_elem_'+b._inf+'_laser_0918'),top=b.top!=null?b.top:-20,bot=b.bot!=null?b.bot:player.y-14;
         const bw=Math.max(12,b.w||18);ctx.save();ctx.globalCompositeOperation=b._inf==='lightning'?'source-over':'lighter';ctx.imageSmoothingEnabled=false;
@@ -51655,8 +51709,8 @@ function drawScrate(x,y,t,flash){
     const im=XART.get(boxKey), _f=pickupFit(im), w=_f.w, h=_f.h;   // flash reads through the lighter pass, not a size bump
     ctx.save(); ctx.translate(x,y+Math.sin(t*3)*1.5);
     ctx.shadowColor=(typeof _pilotTint==='function')?_pilotTint():'#ff2a1a'; ctx.shadowBlur=8+(flash>0?12:0);
-    if(flash>0){ ctx.globalCompositeOperation='lighter'; ctx.globalAlpha=0.5; ctx.drawImage(im,-w/2,-h/2,w,h); ctx.globalAlpha=1; ctx.globalCompositeOperation='source-over'; }
-    ctx.drawImage(im,-w/2,-h/2,w,h); ctx.restore(); return;
+    if(flash>0){ ctx.globalCompositeOperation='lighter'; ctx.globalAlpha=0.5; lateShadowImage(ctx,im,-w/2,-h/2,w,h); ctx.globalAlpha=1; ctx.globalCompositeOperation='source-over'; }
+    lateShadowImage(ctx,im,-w/2,-h/2,w,h); ctx.restore(); return;
   }
   // procedural fallback: red border, dark-gray body, glowing black/red lightning bolt
   const S=30;
@@ -51722,7 +51776,7 @@ function drawBoxPillCell(name, x, y, size, flash){
   if(!T) return false;
   const im=XART.get('nba_boxpill'); if(!im||!im.naturalWidth) return false;
   const s=size/Math.max(T[2],T[3]), w=T[2]*s, h=T[3]*s;
-  ctx.drawImage(im, T[0],T[1],T[2],T[3], Math.round(x-w/2), Math.round(y-h/2), Math.round(w), Math.round(h));
+  lateShadowImage(ctx,im, T[0],T[1],T[2],T[3], Math.round(x-w/2), Math.round(y-h/2), Math.round(w), Math.round(h));
   return true;
 }
 function drawCrate(x,y,t,flash){
@@ -51744,7 +51798,7 @@ function drawCrate(x,y,t,flash){
     const fi=Math.floor(t*8)%4, im=_X0.get('nlc'+run.stage+'_'+fi);
     if(im&&im.complete&&im.naturalWidth){ const _f=pickupFit(im), w=_f.w, h=_f.h;
       ctx.save(); ctx.shadowColor='#ffcf4a'; ctx.shadowBlur=7+(flash>0?10:0);
-      ctx.drawImage(im,Math.round(x-w/2),Math.round(y-h/2),Math.round(w),Math.round(h)); ctx.restore(); return; }
+      lateShadowImage(ctx,im,Math.round(x-w/2),Math.round(y-h/2),Math.round(w),Math.round(h)); ctx.restore(); return; }
   }
   const _X=(typeof XART!=='undefined')?XART:null, _cm={1:'crate1',2:'crate2b',3:'crate3',4:'crate4',5:'crate5',6:'crate6'}, _ck=_cm[run.stage];
   if(_X && _ck && _X.rdy(_ck+'_0')){
@@ -51752,7 +51806,7 @@ function drawCrate(x,y,t,flash){
     const fi=(flash>0)?(_ck==='crate6'?3:0):(Math.floor(t*8)%_nspin), im=_X.get(_ck+'_'+fi);
     if(im&&im.complete&&im.naturalWidth){ const _f=pickupFit(im), w=_f.w, h=_f.h;
       ctx.save(); ctx.shadowColor=(run.stage===1?'#8de23a':run.stage===2?'#ff7a2a':run.stage===3?'#7fe0ff':'#ffcf4a'); ctx.shadowBlur=7+(flash>0?10:0);
-      ctx.drawImage(im,Math.round(x-w/2),Math.round(y-h/2),Math.round(w),Math.round(h)); ctx.restore(); return; }
+      lateShadowImage(ctx,im,Math.round(x-w/2),Math.round(y-h/2),Math.round(w),Math.round(h)); ctx.restore(); return; }
   }
   // NEW art: gold crate (rotated frames -> spinning + pulsing) in normal stages, 3D-rotating ice crate in ice stages
   // (the FINAL stage skips these and uses the classic wooden rotating crate below, as a throwback)
@@ -51798,7 +51852,7 @@ function drawCapsule(x,y,t,flash){
     if(im&&im.complete&&im.naturalWidth){ const pulse=0.5+0.5*Math.sin(t*5), s=(46/Math.max(im.naturalWidth,im.naturalHeight))*(1+pulse*0.06), w=im.naturalWidth*s, h=im.naturalHeight*s;
       ctx.save(); ctx.shadowColor=(run.stage===3?'#8fe0ff':run.stage===2?'#ff8a3a':'#bfe6ff'); ctx.shadowBlur=6+pulse*7+(flash>0?9:0);
       if(flash>0) ctx.globalAlpha=0.92;
-      ctx.drawImage(im,Math.round(x-w/2),Math.round(y-h/2),Math.round(w),Math.round(h)); ctx.restore(); return; }
+      lateShadowImage(ctx,im,Math.round(x-w/2),Math.round(y-h/2),Math.round(w),Math.round(h)); ctx.restore(); return; }
   }
   // NEW art: speed pill spinning FAST through 4 rotations (manually pre-rotated 0/90/180/270)
   if(ASSETS.ready){
@@ -51837,9 +51891,9 @@ function drawMissileTierPickup(p,y){
   const col=tier==='super'?'#367dff':tier==='ultra'?'#ff8a20':'#5bf63c';
   ctx.save();ctx.translate(Math.round(p.x),Math.round(y));ctx.imageSmoothingEnabled=false;
   ctx.globalAlpha=.96+.04*pulse;ctx.shadowColor=col;ctx.shadowBlur=5+5*pulse;
-  ctx.drawImage(im,-w/2,-h/2,w,h);ctx.restore();return true;
+  lateShadowImage(ctx,im,-w/2,-h/2,w,h);ctx.restore();return true;
 }
-function pickupTurnFrame(key,x,y,h,t,frames){frames=frames||12;if(typeof XART==='undefined'||!XART.rdy(key))return false;const im=XART.get(key),fw=(im.naturalWidth||im.width)/frames,fh=(im.naturalHeight||im.height),i=((Math.floor((t||0)*12)%frames)+frames)%frames,w=h*(fw/fh);ctx.save();ctx.translate(Math.round(x),Math.round(y));ctx.imageSmoothingEnabled=false;ctx.drawImage(im,i*fw,0,fw,fh,-w/2,-h/2,w,h);ctx.restore();return true;}
+function pickupTurnFrame(key,x,y,h,t,frames){frames=frames||12;if(typeof XART==='undefined'||!XART.rdy(key))return false;const im=XART.get(key),fw=(im.naturalWidth||im.width)/frames,fh=(im.naturalHeight||im.height),i=((Math.floor((t||0)*12)%frames)+frames)%frames,w=h*(fw/fh);ctx.save();ctx.translate(Math.round(x),Math.round(y));ctx.imageSmoothingEnabled=false;lateShadowImage(ctx,im,i*fw,0,fw,fh,-w/2,-h/2,w,h);ctx.restore();return true;}
 function drawPowerups(){
   for(const p of powerups){
     if(p.kind==='missilepack2')p.kind='missilepack';
@@ -51908,7 +51962,7 @@ function drawPowerups(){
         const im=XART.get(_k), _f=pickupFit(im), w=_f.w, h=_f.h;
         ctx.save(); ctx.translate(p.x, yb+Math.sin((p.bob||0)+performance.now()/360)*2.4);
         ctx.shadowColor=(p.kind==='sonicbox')?'#8de23a':'#ffc21a'; ctx.shadowBlur=14;
-        ctx.drawImage(im,-w/2,-h/2,w,h); ctx.restore();
+        lateShadowImage(ctx,im,-w/2,-h/2,w,h); ctx.restore();
         continue;
       }
     }
@@ -51932,12 +51986,12 @@ function drawPowerups(){
         const im=XART.get(resolvedIcon), s2=PICKUP_BOX/Math.max(im.naturalWidth,im.naturalHeight);
         ctx.save(); ctx.translate(p.x, yb+Math.sin((p.bob||0)+performance.now()/360)*2.4); ctx.rotate(performance.now()/560);
         ctx.shadowColor=_pilotTint(); ctx.shadowBlur=12;
-        ctx.drawImage(im,-im.naturalWidth*s2/2,-im.naturalHeight*s2/2,im.naturalWidth*s2,im.naturalHeight*s2); ctx.restore();
+        lateShadowImage(ctx,im,-im.naturalWidth*s2/2,-im.naturalHeight*s2/2,im.naturalWidth*s2,im.naturalHeight*s2); ctx.restore();
       } else if(typeof XART!=='undefined' && XART.rdy(animKey)){
         const im=XART.get(animKey), s2=PICKUP_BOX/Math.max(im.naturalWidth,im.naturalHeight);
         ctx.save(); ctx.translate(p.x, yb+Math.sin((p.bob||0)+performance.now()/360)*2.4); ctx.rotate(performance.now()/560);
         ctx.shadowColor=_pilotTint(); ctx.shadowBlur=12;
-        ctx.drawImage(im,-im.naturalWidth*s2/2,-im.naturalHeight*s2/2,im.naturalWidth*s2,im.naturalHeight*s2); ctx.restore();
+        lateShadowImage(ctx,im,-im.naturalWidth*s2/2,-im.naturalHeight*s2/2,im.naturalWidth*s2,im.naturalHeight*s2); ctx.restore();
       } else if(typeof iconDraw==='function' && BOFX.icons && BOFX.icons[iconKey]){
         /* THE PICKUP ICON GOES THROUGH THE SHEET TOO (drop 0805p). Wiring only the stage-card
            path and deleting the spicon_ keys would have left THIS branch failing XART.rdy and
@@ -51952,11 +52006,11 @@ function drawPowerups(){
         const im=XART.get(iconKey), _f=pickupFit(im), w=_f.w, h=_f.h;
         ctx.save(); ctx.translate(p.x,yb+Math.sin((p.bob||0)+performance.now()/360)*2.4);
         ctx.globalCompositeOperation='lighter'; ctx.shadowColor=_pilotTint(); ctx.shadowBlur=14;
-        ctx.drawImage(im,-w/2,-h/2,w,h); ctx.restore();
+        lateShadowImage(ctx,im,-w/2,-h/2,w,h); ctx.restore();
       } else if(typeof XART!=='undefined' && XART.rdy(boxKey)){
         const im=XART.get(boxKey), _f=pickupFit(im), w=_f.w, h=_f.h;
         ctx.save(); ctx.translate(p.x,yb+Math.sin((p.bob||0)+performance.now()/380)*2.4);
-        ctx.shadowColor=_pilotTint(); ctx.shadowBlur=12; ctx.drawImage(im,-w/2,-h/2,w,h); ctx.restore();
+        ctx.shadowColor=_pilotTint(); ctx.shadowBlur=12; lateShadowImage(ctx,im,-w/2,-h/2,w,h); ctx.restore();
       } else { ctx.save(); ctx.translate(p.x,yb); ctx.rotate(performance.now()/420); ctx.fillStyle=_pilotTint(); ctx.fillRect(-9,-9,18,18); ctx.restore(); }
       continue;
     }
@@ -51966,7 +52020,7 @@ function drawPowerups(){
       const im=XART.get('missilebox'), _f=pickupFit(im), w=_f.w, h=_f.h;   // was a raw 42, the one pickup that never took PICKUP_SCALE
       const _bob=Math.sin((p.t||0)*2.4)*2;
       ctx.save(); ctx.shadowColor='#9fe0ff'; ctx.shadowBlur=7;
-      ctx.drawImage(im,p.x-w/2,yb-h/2+_bob,w,h); ctx.restore(); continue;   // upright + readable, no spin
+      lateShadowImage(ctx,im,p.x-w/2,yb-h/2+_bob,w,h); ctx.restore(); continue;   // upright + readable, no spin
     }
     if(p.kind==='speed'||p.kind==='shield'){
       const _lvI=clamp((p.kind==='speed'?(run.speedLevel||0):((player.shield|0)))+1,1,5);
@@ -51984,7 +52038,7 @@ function drawPowerups(){
            Two sibling branches in this same block already drew upright and were commented
            "upright + readable, no spin" — this one had been missed. */
         ctx.save(); ctx.globalAlpha=0.92+0.08*Math.sin(p.t*8);
-        ctx.drawImage(im, p.x-im.naturalWidth*s2/2, yb-im.naturalHeight*s2/2,
+        lateShadowImage(ctx,im, p.x-im.naturalWidth*s2/2, yb-im.naturalHeight*s2/2,
                       im.naturalWidth*s2, im.naturalHeight*s2);
         ctx.restore(); continue;
       }
@@ -52003,7 +52057,7 @@ function drawPowerups(){
         const _bob=Math.sin((p.t||0)*2.6)*2.5;
         ctx.save(); ctx.shadowColor=_c.col; ctx.shadowBlur=10;
         ctx.globalAlpha=0.94+0.06*Math.sin((p.t||0)*7);
-        ctx.drawImage(im, p.x-_w/2, p.y-_h/2+_bob, _w, _h);
+        lateShadowImage(ctx,im, p.x-_w/2, p.y-_h/2+_bob, _w, _h);
         ctx.restore(); continue;
       }
     }
@@ -52015,7 +52069,7 @@ function drawPowerups(){
         const im=XART.get(_mk);
         const _h=p.h*1.6, _w=_h*(im.naturalWidth/im.naturalHeight);
         const _bob=Math.sin((p.t||0)*3)*3;
-        ctx.drawImage(im, p.x-_w/2, p.y-_h/2+_bob, _w, _h);
+        lateShadowImage(ctx,im, p.x-_w/2, p.y-_h/2+_bob, _w, _h);
         continue;
       }
     }
@@ -52025,7 +52079,7 @@ function drawPowerups(){
         const im=XART.get(_ck), w=(p.kind==='missilepack10')?58:46, h=w*(im.naturalHeight/im.naturalWidth);
         const _bob=Math.sin((p.t||0)*2.4)*2;
         ctx.save(); ctx.shadowColor='#9fe0ff'; ctx.shadowBlur=9;
-        ctx.drawImage(im, p.x-w/2, yb-h/2+_bob, w, h); ctx.restore(); continue;   // upright + readable, no spin
+        lateShadowImage(ctx,im, p.x-w/2, yb-h/2+_bob, w, h); ctx.restore(); continue;   // upright + readable, no spin
       }
     }
     if(p.kind==='weapon'){ const _w2=(p.wtype!=null?p.wtype:run.weapon), _sw2=spaceWeaponsActive()?spaceWeaponPickupIndex(p):null,
@@ -52093,13 +52147,13 @@ function drawPowerups(){
       else if(_w2===3)           _xk='laser_icon_'+_l2;
       if(_xk && typeof XART!=='undefined' && XART.rdy(_xk)){ const im=XART.get(_xk), s=36/Math.max(im.naturalWidth,im.naturalHeight);
         ctx.save(); ctx.globalAlpha=0.92+0.08*Math.sin(p.t*8); ctx.shadowColor='#cfe6ff'; ctx.shadowBlur=6;
-        ctx.drawImage(im, p.x-im.naturalWidth*s/2, yb-im.naturalHeight*s/2, im.naturalWidth*s, im.naturalHeight*s); ctx.restore(); continue; } }
+        lateShadowImage(ctx,im, p.x-im.naturalWidth*s/2, yb-im.naturalHeight*s/2, im.naturalWidth*s, im.naturalHeight*s); ctx.restore(); continue; } }
     if(ASSETS.ready){ const _wt=(p.wtype!=null?p.wtype:run.weapon);
       // stages 6-9: speed/shield pickups use the themed per-level pill (npup6-9)
       if((p.kind==='speed'||p.kind==='shield') && run.stage>=6 && run.stage<=9 && typeof XART!=='undefined' && XART.rdy('npup'+run.stage)){
         const pim=XART.get('npup'+run.stage), _s=34/Math.max(pim.naturalWidth,pim.naturalHeight);
         ctx.save(); ctx.globalAlpha=0.92+0.08*Math.sin(p.t*8); ctx.shadowColor='#cfe6ff'; ctx.shadowBlur=4;
-        ctx.drawImage(pim, p.x-pim.naturalWidth*_s/2, yb-pim.naturalHeight*_s/2, pim.naturalWidth*_s, pim.naturalHeight*_s); ctx.restore(); continue;
+        lateShadowImage(ctx,pim, p.x-pim.naturalWidth*_s/2, yb-pim.naturalHeight*_s/2, pim.naturalWidth*_s, pim.naturalHeight*_s); ctx.restore(); continue;
       }
       /* ⚠ THE THIRD ELEMENT TABLE LIVED ON THIS LINE (drop 0811m). It rebuilt the pw_ name from
          its own {5:'iceorb', 4:'firewall'} map, so slot 5 on stage 3 and Freezer's slot 4 landed
@@ -55264,7 +55318,7 @@ function drawIncomingWarnings(){
   };
   // enemies that spawned off-field and are inbound (behind / sides / high dives still tiny)
   for(const e of enemies){
-    if(e.dead) continue;
+    if(e.dead||run.stage>=6&&run.stage<=8) continue;
     if(e._fromBehind || e._crosser || (e._pScale!=null && e._pScale<0.5)){
       consider(e.x, e.y, 1, e._fromBehind?'#ff5a3a':'#ffd24a');
     }
@@ -55323,6 +55377,12 @@ function drawCallout(dt){
    black Tempest fighters come up from behind, acquire one Retina lock each, and
    fire ordinary shootable missiles. The brief slow-motion window keeps weapons,
    movement, and the player's own Retina fully live. */
+function missionRadioWho(preferred){
+  const who=String(preferred||'DECKER').toUpperCase(),p=String(run.pilot||'').toUpperCase();
+  // In co-op either live seat can speak on the shared radio.
+  if(typeof coopActive==='function'&&coopActive())return who;
+  return who===p?(who==='DECKER'?'COLE':who==='COLE'?'DECKER':'COLE'):who;
+}
 let s6Opening=null;
 function s6OpeningActive(){return !!s6Opening;}
 function s6OpeningControlsLocked(){return !!(run&&run.stage===6&&s6Opening&&s6Opening.phase==='cloak');}
@@ -55369,10 +55429,10 @@ function s6OpeningTick(dt){
   }
   const lines=[
     [0,(_pilotKey()||'PILOT').toUpperCase(),'FURY HQ, I AM BACK DOWN. I THINK THE THREAT IS GONE.'],
-    [5.5,'COLE','WHAT YOU FOUGHT WAS A DISTRACTION. THE REAL ENEMY IS HERE.'],
-    [11,'MAVERICK','HEY DECKER... DID YOU WORK ON CLOAKING FOR THE CONFEDERATION?'],
-    [17,'DECKER','................'],
-    [20,'COLE','LOOK OUT! STEALTH FIGHTERS ON BOTH SIDES!']
+    [5.5,missionRadioWho('DECKER'),'WHAT YOU FOUGHT WAS A DISTRACTION. THE REAL ENEMY IS HERE.'],
+    [11,missionRadioWho('MAVERICK'),missionRadioWho('DECKER')+'... DID YOU WORK ON CLOAKING FOR THE CONFEDERATION?'],
+    [17,missionRadioWho('DECKER'),'................'],
+    [20,missionRadioWho('DECKER'),'LOOK OUT! STEALTH FIGHTERS ON BOTH SIDES!']
   ];
   if(O.phase==='cloak'||O.phase==='reveal'){
     while(O.radioIndex<lines.length&&O.allT>=lines[O.radioIndex][0]){
@@ -55426,7 +55486,7 @@ function s6OpeningTick(dt){
     // out to alternating sides without yawing the authored top-down fighters.
     if(O.t>=1.85&&!O.carrierCue){
       O.carrierCue=true;
-      const who=_pilotKey()==='cole'?'MAVERICK':'COLE';
+      const who=missionRadioWho('COLE');
       O.radio={who,full:'LOOKS LIKE WE GOT SOME UNEXPECTED COMPANY. TEAM FORMATION, NOW!',t:0};
       if(Audio.SFX.blip)Audio.SFX.blip();
     }
@@ -58300,13 +58360,15 @@ function stage7SluiceTick(dt){
     if(!e.fired&&e.t>=warn){e.fired=true;try{if(Audio.SFX&&Audio.SFX.enemyToxicSpit)Audio.SFX.enemyToxicSpit();}catch(_s7vf){}}
     if(e.t>=warn+1.10){e.done=true;continue;}
     if(e.t<warn||e.t>=warn+.78||y<-40||y>VH+40)continue;
-    const W=worldWidth(),lo=e.side<0?W*.19:W-350,hi=e.side<0?350:W-W*.19;
+    const W=worldWidth(),mouth=350*213/(1774/4),reach=e.t-warn<.14?252:350;
+    const lo=e.side<0?mouth:W-reach,hi=e.side<0?reach:W-mouth;
     for(const seat of seatList())withSeat(seat,()=>{
       if(!player.dead&&!player.out&&player.invuln<=0&&player.x+(player._hx||9)>lo&&player.x-(player._hx||9)<hi&&
          Math.abs(player.y-y)<24+(player._hy||10))playerHit('stage7Sluice');
     });
   }
 }
+function stage7SluiceFrame(age){return age<.14?2:age<.78?3+(Math.floor((age-.14)*10)%2):age<.96?5:6;}
 function stage7SluiceDraw(){
   if(!run||run.stage!==7||!XART.rdy('s7sluice_vent'))return;
   const sheet=XART.get('s7sluice_vent'),fw=(sheet.naturalWidth||sheet.width)/4,fh=(sheet.naturalHeight||sheet.height)/2;
@@ -58314,15 +58376,18 @@ function stage7SluiceDraw(){
   for(const e of stage7SluiceEvents()){
     if(e.tier>rank)continue;const y=e.row-_masterSrcY;if(y<-sizeY*.5||y>VH+sizeY*.5)continue;
     ctx.save();ctx.imageSmoothingEnabled=false;if(e.side>0){ctx.translate(W,0);ctx.scale(-1,1);}
-    // One fixed vent/pipe plate: attack frames animate only the toxic exhaust.
-    const split=fw*.425;ctx.drawImage(sheet,0,0,split,fh,0,y-sizeY*.5,sizeX*.425,sizeY);
+    // The last column shifts left 33 source pixels; the lower row shifts up 31.
+    // Keep the authored pipe fixed and register each exhaust frame to its mouth.
+    const split=213,originY=y-sizeY*265/fh;
+    ctx.drawImage(sheet,0,0,split,fh,0,originY,sizeX*split/fw,sizeY);
     if(e.live&&!e.done&&e.t<warn&&XART.rdy('s7sluice_warning')){
       ctx.globalAlpha=.70+.30*(.5+.5*Math.sin(e.t*18));ctx.drawImage(XART.get('s7sluice_warning'),W*.19,y-58,350-W*.19,120);ctx.globalAlpha=1;
     }
     if(e.live&&!e.done&&e.t>=warn){
-      const age=e.t-warn,f=age<.78?3+(Math.floor(age*12)%2):5+Math.min(1,Math.floor((age-.78)/.32*2));
-      const jetY=fh*.33,jetH=fh*.37;
-      ctx.drawImage(sheet,(f%4)*fw+split,Math.floor(f/4)*fh+jetY,fw-split,jetH,sizeX*.425,y-sizeY*.5+sizeY*.33,sizeX*.575,sizeY*.37);
+      const age=e.t-warn,f=stage7SluiceFrame(age);
+      const dx=f%4===3?-33:0,dy=f>=4?-31:0,jetY=160,jetH=240;
+      ctx.drawImage(sheet,(f%4)*fw+split+dx,Math.floor(f/4)*fh+jetY+dy,fw-split,jetH,
+        sizeX*split/fw,originY+sizeY*jetY/fh,sizeX*(fw-split)/fw,sizeY*jetH/fh);
     }
     ctx.restore();
   }
@@ -65322,6 +65387,7 @@ function campSnapshot(){
     mavBeamUnlocked:!!run._mavBeamUnlocked,thunderStormUnlocked:!!run._thunderStormUnlocked,thunderCeremonyShown:!!run._thunderCeremonyShown,
     /* the Forge (0917): the permanent elements, what has been discovered, and the loadout. Optional
        fields; CAMP_SAVE_VER is deliberately NOT bumped (an older slot simply has none). */
+    earnedUnlocks:Object.assign({},run._earnedUnlocks||{}),
     forge:Object.assign({},run.forge||{}), forgeForms:JSON.parse(JSON.stringify(run.forgeForms||{})), forgeElems:Object.assign({},run.forgeElems||{}),
     loadout:Array.isArray(run.loadout)?run.loadout.slice():null,
     unlockedMax:campaign.unlockedMax||1, rank:Object.assign({},campaign.rank||{}),
@@ -65338,7 +65404,9 @@ function campSnapshot(){
 /* A slot written by an older build must never half-apply — version out, or nothing. */
 function campApply(s){
   if(!s || s.v!==CAMP_SAVE_VER) return false;
-  run.mode='campaign';run._missileBonus=null;run.ngplus=!!s.ngplus;
+  run.mode='campaign';run._missileBonus=null;run.ngplus=!!s.ngplus;run.infusion=null;run._stageElements=[];run._chainSeeded=false;
+  // Old slots migrate from THEIR completed stages, never profile-wide unlocks.
+  run._earnedUnlocks=s.earnedUnlocks?Object.assign({},s.earnedUnlocks):{chaingun:!!s.rank?.[5],mist:!!s.rank?.[9],lightningOrb:s.pilot==='yuri'&&!!s.rank?.[4]};
   run.pilot=s.pilot||run.pilot;
   run.stage=clamp(s.stage||1,1,9);
   run.score=s.score||0;
@@ -65352,7 +65420,7 @@ function campApply(s){
   run.wvars = Array.isArray(s.wvars) ? s.wvars.slice() : WEAPONS.map(()=>null);
   while(run.wvars.length<WEAPONS.length)run.wvars.push(null);
   run._mavBeamUnlocked=!!s.mavBeamUnlocked || (run.pilot==='maverick'&&run.stage>1);
-  run._thunderStormUnlocked=!!s.thunderStormUnlocked;run._thunderCeremonyShown=!!s.thunderCeremonyShown;
+  run._thunderStormUnlocked=!!s.thunderStormUnlocked;run._chainLightningLevel=run._thunderStormUnlocked?2:1;run._thunderCeremonyShown=!!s.thunderCeremonyShown;
   run.forge=(s.forge&&typeof s.forge==='object')?Object.assign({},s.forge):{};
   run.forgeForms=(s.forgeForms&&typeof s.forgeForms==='object')?JSON.parse(JSON.stringify(s.forgeForms)):{};
   run.forgeElems=(s.forgeElems&&typeof s.forgeElems==='object')?Object.assign({},s.forgeElems):{};
@@ -65421,7 +65489,7 @@ function campBeginFresh(){
  /* A new operation cannot resume a prior one. Legacy rotating records remain untouched for data safety. */
  try{localStorage.removeItem(CAMP_AUTO_KEY);}catch(_){}
  campaign.unlockedMax=1;campaign.rank={};campaign.justUnlocked=0;campaign.bonusUnlocked=0;
- campaign._booted=false;campaign._introSeen=false;
+ campaign._booted=false;campaign._introSeen=false;campaign._l78Pending=0;campaign.rivalScattered=false;campaign.rivalDefeated=[false,false,false,false,false];
 }
 function campAutoAfterClear(stage,next,rank){
  if(run.mode!=='campaign')return false;
@@ -73848,14 +73916,19 @@ function bg6RainDraw(wet,W,top,hgt){
     const fall=(near?760:470)+wet*(near?520:360);
     const wind=(near?150:82)+wet*(near?104:76),t=_bg6T;
     ctx.strokeStyle=near?'rgba(210,236,255,0.82)':'rgba(116,182,232,0.60)';
-    for(let i=0;i<count;i++){
-      const seed=((i*(near?83.17:97.31))%101)/101;
-      const x0=((i*(near?61.73:67.73)+seed*W+t*wind)%W+W)%W;
-      const y0=top+(((i*(near?37.11:43.17)+seed*hgt+t*fall)%hgt+hgt)%hgt);
-      const len=(near?14:8)+wet*(near?22:15)+(i%6);
-      ctx.globalAlpha=(near?0.38:0.25)+wet*(near?0.42:0.30);
-      ctx.lineWidth=near?((i%6===0)?2:1.25):1;
-      ctx.beginPath();ctx.moveTo(x0,y0);ctx.lineTo(x0-wind/fall*len,y0+len);ctx.stroke();
+    ctx.globalAlpha=(near?0.38:0.25)+wet*(near?0.42:0.30);
+    // Same rain positions, lengths and widths; three strokes replace hundreds.
+    for(let group=0;group<(near?2:1);group++){
+      ctx.lineWidth=near?(group===1?2:1.25):1;ctx.beginPath();
+      for(let i=0;i<count;i++){
+        if(near&&((i%6===0)!==(group===1)))continue;
+        const seed=((i*(near?83.17:97.31))%101)/101;
+        const x0=((i*(near?61.73:67.73)+seed*W+t*wind)%W+W)%W;
+        const y0=top+(((i*(near?37.11:43.17)+seed*hgt+t*fall)%hgt+hgt)%hgt);
+        const len=(near?14:8)+wet*(near?22:15)+(i%6);
+        ctx.moveTo(x0,y0);ctx.lineTo(x0-wind/fall*len,y0+len);
+      }
+      ctx.stroke();
     }
   }
   ctx.restore();
@@ -77335,7 +77408,7 @@ function forgePreviewSwap(P,VWp,VHp,fn){
     stageStats=Object.assign({},sv.stats);Audio.SFX=Object.fromEntries(Object.keys(sv.sfx).map(k=>[k,()=>{if(P.audition&&P.t>=(P.nextSound||0)){P.nextSound=P.t+.18;sv.sfx[k]?.();}}]));Snd.loopOn=(k)=>{if(P.audition&&P.t>=(P.nextLoopSound||0)){P.nextLoopSound=P.t+.40;sv.sfx[k]?.();}};Snd.loopOff=()=>{};
     if(P.pilot)run.pilot=P.pilot;
     if(P.space!=null){run.stage=5;run.spaceMode=true;run.spaceWeapon=P.space===2?0:P.space;run.spaceLevels=[1,1,1];}
-    if(P.w===8){run.pilot='yuri';yuriLightningOrbUnlocked=true;}
+    if(P.w===8){run.pilot='yuri';yuriLightningOrbUnlocked=true;run._earnedUnlocks=Object.assign({},run._earnedUnlocks,{lightningOrb:true});}
     if(P.elem)run.forge[P.w]={elem:P.elem,lv:1};
     if(P.w===5)run.wvars[5]=P.elem==='fire'?'fireorb':'iceorb';
     if(P.w===4)run.wvars[4]=P.elem==='ice'&&_pilotKey()==='freezer'?'icebreath':'flamethrower';
