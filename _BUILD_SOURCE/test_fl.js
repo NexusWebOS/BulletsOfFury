@@ -15765,6 +15765,8 @@ require('./test_fixes_0928b.cjs')(vm,ctxv,ok);
 require('./test_hama_0928.cjs')(vm,ctxv,ok);
 require('./test_hama_frames_0929.cjs')(vm,ctxv,ok);
 require("./test_mission_0929.cjs")(vm,ctxv,ok);
+require('./test_hammer_heal_break_0929.cjs')(vm,ctxv,ok);
+require('./test_stage67_review_0929.cjs')(vm,ctxv,ok);
 
 console.log('\n============================================');
 if (errors.length) { console.log('FAILED — ' + errors.length + ' error(s):'); errors.forEach(e => console.log('  ' + e)); process.exit(1); }

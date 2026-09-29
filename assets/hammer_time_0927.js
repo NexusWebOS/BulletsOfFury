@@ -26,7 +26,8 @@ function ht27Begin(d){
  d.musicStarted=true;d.clock=0;HT27_BASE.music(ht27SongName());return true;
 }
 function ht27Data(){return ht27Active&&boss&&!boss.dead?boss._hammerTime:null;}
-function ht27CombatSequence(b){const h=b&&b._hammer;return !!(h&&(['fr_activation','fr_stun','fr_twirl'].includes(h.state)||h.frRecovery));}
+// 0929: the base stuns are no longer converted into fr_stun on Hard/Furious, so the cue waits for them by name.
+function ht27CombatSequence(b){const h=b&&b._hammer;return !!(h&&(['fr_activation','fr_stun','fr_twirl','hammer_exposed','hammer_stun','storm_stun','storm_rebuild'].includes(h.state)||h.frRecovery));}
 function ht27Locked(){const d=ht27Data();if(!d)return false;const m=ht27Song(),t=m&&m.readyState>=2&&!m.paused?m.currentTime:d.clock;return d.mode==='intro'||d.locked||(!ht27CombatSequence(boss)&&ht27WantLock(t));}
 function ht27ClearAttacks(){
  pBullets=[];eBullets=[];enemies=[];playerLocks=[];rollers=[];zaps=[];wm26Releases=[];

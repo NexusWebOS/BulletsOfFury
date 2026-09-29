@@ -20,7 +20,7 @@ module.exports=function(vm,ctxv,ok){
   o['armor takes damage before underlying HP']=A.hp===ap-100&&b.hp===hp;
   A.hp=A.max*.49;hammerState(b,'hammer');hammerBossTick(b,.016);o['half armor triggers protected restoration']=h.frRecovery&&h.recovery.armor&&A.barrier>0;
   A.hp=0;A.barrier=0;h.frRecovery=false;h.recovery=null;A.checkpoints=[.75,.50,.35];b.hp=b.maxhp*.14;hammerState(b,'hammer');hammerBossTick(b,.016);
-  o['critical health starts front hammer twirl']=h.state==='fr_twirl';h._unused=0;b._hammerModuleHit='hammer';hammerBossDamage(b,h.hammerMax);o['shooting twirling hammer interrupts the final recovery']=h.state==='fr_stun';hammerBossTick(b,2.9);o['critical interruption releases red rage jumps']=A.rage&&h.state==='warn';
+  o['critical health starts front hammer twirl']=h.state==='fr_twirl';h._unused=0;b._hammerModuleHit='hammer';hammerBossDamage(b,h.hammerMax);o['shooting twirling hammer interrupts the final recovery']=h.state==='fr_stun';hammerBossTick(b,FR27_STUN_T+.1);o['critical interruption releases red rage jumps']=A.rage&&h.state==='warn';
   b.hp=b.maxhp-1;fr27Restore(b,.1,false,false);hammerRecoveryTick(b,3);const actual=h.recovery.granted;hammerRecoveryBreak(b);o['interrupt only revokes HP actually granted']=actual<=1.001&&Math.abs(b.hp-(b.maxhp-1))<.001;
   b.hp=b.maxhp*.5;fr27Restore(b,.10,false,true);const heal=h.recovery,hammer=retinaBossTargets(b).find(t=>t._retinaId==='hammer');
   retinaMissileDamage(hammer,24,{kind:'gmiss',x:hammer.x,y:hammer.y});o['locked rocket interrupts healing even while the body barrier is up']=heal.status==='cancelled'&&h.state==='fr_stun';

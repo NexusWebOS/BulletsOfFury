@@ -54,6 +54,18 @@ function fr27Cell(key,col,row,x,y,w,h,alpha){
  ctx.save();ctx.globalAlpha=alpha==null?1:alpha;ctx.imageSmoothingEnabled=false;ctx.drawImage(im,sx,sy,ex-sx,eh,x-w/2,y-h/2,w,h);ctx.restore();return true;
 }
 function fr27Armor(b){return b&&b._hammer&&b._hammer.frArmor;}
+/* ⚠ 0929 - Mike: "when I shoot the hammer when he charges it to restore his energy it is still not breaking and
+   bringing him to his stun state and he just keeps the shield up and keeps doing it. This is bad."
+   Measured in Chromium on Hard/Furious before this pass (_BUILD_SOURCE/probe_hammer_heal_break_0929.py):
+   - the energy wall swallowed 349-452 of the pilot's rounds, so held gunfire never reached the healing hammer;
+   - a break sent him to fr_stun, which nothing drew as a stun - he stood in his IDLE pose holding the hammer -
+     with the shield still up (barrier 3.1: every body round did 0) ...
+   - ... and 2.8 s later fr_stun called fr27Restore: ANOTHER heal. Every stun ended in a heal, the disarm stun
+     included, because hammer_stun/storm_stun were converted into fr_stun as well.
+   Now rounds in the raised hammer's own column pass the wall while he heals, a break is the authored stun
+   (the base storm stun's pose, static and core burst, same 4 s) with the shield DOWN and double body damage,
+   and a broken heal is over: he gets back up and fights on. Checkpoint heals still happen once each. */
+const FR27_STUN_T=4,FR27_HAMMER_LANE=40;
 /* ⚠ 0928 REBUILD (Mike: "the chromium armor activate sequence was horrible and needs to be re-done").
    Measured before: 3.4 s of a SEPARATE sheet (fr27_chromium_actions row 0) - a silver robot with a
    silver hammer that is not the boss - stepped at four frames, then a pop to the real blue boss; the
@@ -91,7 +103,12 @@ function fr27ActivationTick(b,dt){
  if(t>=FR27_ACT.end){A.activated=true;b._noHit=false;h.frAct=null;hammerState(b,'hammer');}
 }
 function fr27Restore(b,fraction,critical,barrier){
- const h=b._hammer,A=fr27Armor(b);hammerStormStart(b);
+ const h=b._hammer,A=fr27Armor(b);
+ h.frResume=h.mode;   // 0929: where the fight goes back to if the player breaks this heal (hammerStormStart makes it 'storm')
+ // 0929: HAMMER draws its dance crew, not the boss, while its mode is 'dance' - so a heal that starts mid-dance hands
+ // the fight back to 'attack', or the charge and the stun that follows it would be drawn as dancing.
+ {const d=b._hammerTime;if(d&&d.mode==='dance'){d.mode='attack';d.t=0;}}
+ hammerStormStart(b);
  h.recovery.amount=b.maxhp*fraction;h.recovery.duration=critical?5:2.25;h.recovery.elapsed=0;h.recovery.applied=0;
  h.recovery.fr=true;h.recovery.armor=!!(A&&A.hp>0);h.recovery.critical=!!critical;
  h.recovery.coreHP=critical?Math.max(36,h.hammerMax*.32):Math.max(24,h.hammerMax*.18);
@@ -103,9 +120,12 @@ function fr27Restore(b,fraction,critical,barrier){
 function fr27Reflect(b,A,dt){
  if(A.barrier<=0)return;A.barrier=Math.max(0,A.barrier-dt);A.reflectCD=Math.max(0,(A.reflectCD||0)-dt);
  const y=b.y+85,half=150,healing=b._hammer&&b._hammer.recovery&&b._hammer.recovery.status==='charging';
+ // 0929: the raised hammer's own column - the same +/-40 px bossHitTest gives the healing hammer
+ const lane=healing&&hammerWeaponTargetable(b)?hammerHeadPoint(b).x:null;
  for(const q of pBullets){if(q.dead||q.y<y-26||q.y>y+26||Math.abs(q.x-b.x)>half||q.vy>=0)continue;
-  // 0928: while he heals, a missile passes the wall - it is the one answer to the heal
-  if(healing&&hammerMissile(q))continue;
+  // 0928: while he heals, a missile passes the wall. 0929: so does any round aimed at the hammer - shooting the
+  // hammer is the counter Mike asked for; body shots beside it are still turned back.
+  if(healing&&(hammerMissile(q)||(lane!=null&&Math.abs(q.x-lane)<FR27_HAMMER_LANE)))continue;
   q.dead=true;if(A.reflectCD<=0){A.reflectCD=.09;const a=Math.PI/2+clamp((q.x-b.x)/half,-1,1)*.55;
    const missile=/miss|rocket/.test(q.kind||''),z=eShootT(q.x,y+28,a,4.2,missile?'s4rocket':'eglaser',{w:missile?12:8,h:missile?28:18,silent:true});z._hammerLaser=!missile;}
  }
@@ -147,9 +167,20 @@ hammerRecoveryBreak=function(b){
  R.applied=0;h.coreBurst={...hammerHeadPoint(b),t:0};h.frCriticalInterrupted=!!R.critical;
  {const hd=hammerHeadPoint(b),first=explosions.length;explode(hd.x,hd.y,84,'blue');for(let i=first;i<explosions.length;i++)explosions[i].chromiumTone=hammerChromiumTone(b);shake=Math.max(shake,10);}
  h.hammerDestroyed=true;h.hammerHP=0;h.throw=null;h.stormWaves=[];h.frRecovery=false;
- if(A){A.barrier=3.1;A.stunCritical=!!R.critical;}
+ h.empowered=false;h.empowerLevel=0;h.charged=false;   // 0929: he loses the charge, as the base break does
+ if(A){A.barrier=0;A.stunCritical=!!R.critical;}      // 0929: the shield DROPS - he is stunned, not protected (was 3.1)
  hammerState(b,'fr_stun');(Audio.SFX.shieldBreakCombat||Audio.SFX.expBig||function(){})();
 };
+/* 0929: a broken restoration is over. He gets back up into the fight he left - he does not start another heal.
+   From the storm phase that is the base stun's own get-up (the hammer re-forms from the grip); otherwise the
+   base disarm stun's (leap_reset with the combo armed), which HAMMER's own tick turns into its dance. */
+function fr27Resume(b){
+ const h=b._hammer,A=fr27Armor(b),mode=h.frResume;h.frResume=null;
+ if(A)A.barrier=0;h.empowered=false;h.empowerLevel=0;h.throw=null;h.knockedHammer=null;
+ if(mode==='storm'){h.mode='storm';h.hammerDestroyed=true;hammerState(b,'storm_rebuild');return;}
+ h.hammerDestroyed=false;h.hammerHP=h.hammerMax;h.mode='hammer';h.followCount=0;h.comboPending=true;
+ hammerState(b,'leap_reset');(Audio.SFX.bossPhase||function(){})();
+}
 hammerBossDamage=function(b,dmg){
  const h=b._hammer,A=fr27Armor(b);if(!A)return FR27_BASE.hammerDamage(b,dmg);
  if(h.state==='fr_activation'){b._hammerModuleHit=null;return 0;}
@@ -163,8 +194,9 @@ hammerBossDamage=function(b,dmg){
   return FR27_BASE.hammerDamage(b,dmg);
  }
  if(A.barrier>0&&!hammerHit&&_dmgBullet?._frHammerFlank!==b){b._hammerModuleHit=null;return 0;}
- if(h.state==='fr_twirl'){const hit=b._hammerModuleHit;b._hammerModuleHit=null;if(hit==='hammer'){h.frTwirlHits=(h.frTwirlHits||0)+dmg;if(h.frTwirlHits>=h.hammerMax*.30){h.frCriticalInterrupted=true;A.stunCritical=true;A.barrier=3.1;hammerState(b,'fr_stun');}}return 0;}
- const dealt=FR27_BASE.hammerDamage(b,dmg);
+ if(h.state==='fr_twirl'){const hit=b._hammerModuleHit;b._hammerModuleHit=null;if(hit==='hammer'){h.frTwirlHits=(h.frTwirlHits||0)+dmg;if(h.frTwirlHits>=h.hammerMax*.30){h.frCriticalInterrupted=true;A.stunCritical=true;A.barrier=0;h.hammerDestroyed=true;hammerState(b,'fr_stun');}}return 0;}
+ // 0929: the stun is the punish window - double body damage, as the base stuns give (armor still takes it first)
+ const dealt=FR27_BASE.hammerDamage(b,dmg)*(h.state==='fr_stun'?2:1);
  if(A.hp>0&&dealt>0){const blocked=Math.min(A.hp,dealt);A.hp-=blocked;A.flash=.15;if(A.hp<=0){A.active=false;spawnShockRing(b.x,b.y,180,'comet');(Audio.SFX.shieldBreakCombat||Audio.SFX.expBig||function(){})();}return dealt-blocked;}
  return dealt;
 };
@@ -179,10 +211,10 @@ hammerBossTick=function(b,dt){
  if(h.state==='fr_activation'){fr27ActivationTick(b,dt);return;}
  if(A.capT>0)A.capT=Math.max(0,A.capT-dt);
  if(h.state==='fr_stun'){
-  h.t+=dt;h.chromiumT=(h.chromiumT||0)+dt;
-  if(h.t>=2.8){h.hammerDestroyed=false;h.hammerHP=h.hammerMax;
-   if(A.stunCritical){A.stunCritical=false;A.rage=true;A.barrier=0;h.rage=999;h.mode='hammer';h.followCount=0;h.comboPending=false;hammerTarget(b);hammerState(b,'warn');}
-   else fr27Restore(b,.10,false,true);
+  h.t+=dt;h.chromiumT=(h.chromiumT||0)+dt;A.barrier=0;
+  if(h.t>=FR27_STUN_T){
+   if(A.stunCritical){A.stunCritical=false;A.rage=true;A.barrier=0;h.rage=999;h.hammerDestroyed=false;h.hammerHP=h.hammerMax;h.frResume=null;h.mode='hammer';h.followCount=0;h.comboPending=false;hammerTarget(b);hammerState(b,'warn');}
+   else fr27Resume(b);   // 0929: was fr27Restore(b,.10,false,true) - a second heal after every stun
   }return;
  }
  if(h.state==='fr_twirl'){
@@ -195,8 +227,14 @@ hammerBossTick=function(b,dt){
   if(h.t>1.0)hammerRecoveryTick(b,dt);
   if(h.recovery.status==='complete'&&h.t-h.recovery.finishedAt>.35){h.frRecovery=false;A.barrier=0;h.mode='hammer';h.phasePending=false;hammerWhirlStart(b);}return;
  }
- if(['hammer_stun','storm_stun'].includes(h.state)){A.barrier=3.1;A.stunCritical=false;hammerState(b,'fr_stun');return;}
- const safe=['hammer','shield','leap_reset','storm_idle','chain_cool','hammer_catch'].includes(h.state);
+ /* 0929: the base stuns are no longer turned into fr_stun (which put the shield up and ended in a heal). They
+    run as authored - shield down, double damage, their own get-up. In the red rage the disarm stun's get-up
+    goes back to the rage jumps, as the critical stun does, instead of the base's phase-two hand-off. */
+ if(['hammer_exposed','hammer_stun','storm_stun','storm_rebuild'].includes(h.state))A.barrier=0;
+ if(A.rage&&((h.state==='hammer_stun'&&h.t+dt>=5)||(h.state==='hammer_exposed'&&h.t+dt>=3))){
+  h.knockedHammer=null;h.hammerDestroyed=false;h.hammerHP=h.hammerMax;h.followCount=0;h.comboPending=false;hammerTarget(b);hammerState(b,'warn');return;}
+ // 0929: in HAMMER only between moves of the fight itself - never inside a music break or the intro
+ const safe=['hammer','shield','leap_reset','storm_idle','chain_cool','hammer_catch'].includes(h.state)&&(!b._hammerTime||['attack','dance'].includes(b._hammerTime.mode));
  if(safe&&!A.half&&A.hp>0&&A.hp<=A.max*.50){A.half=true;fr27Restore(b,.10,false,true);return;}
  if(safe&&A.hp<=0){
   const ratio=b.hp/b.maxhp,threshold=[.75,.50,.35,.15].find(v=>ratio<=v&&!A.checkpoints.includes(v));
@@ -219,6 +257,11 @@ hammerBossDraw=function(b){
      what carries the empowered core-out armor mask; the ordinary idle pose does not */
   const mode=h.mode;h.state='storm_idle';h.mode='storm';try{FR27_BASE.hammerDraw(b);}finally{h.state='fr_activation';h.mode=mode;}drawn=true;}
  else if(s==='fr_twirl')drawn=fr27Cell('fr27_chromium_actions',h.t<2.2?Math.floor(h.t*(7+h.t*5))%4:Math.min(3,Math.floor((h.t-2.2)/.65*4)),h.t<2.2?1:2,b.x,b.y,252,258,1);
+ /* 0929: fr_stun IS his stun, so it draws as one - the base storm stun's authored pose (hit, stunned, getting up),
+    its static and the hammer-core burst, on the same 4 s clock. Nothing drew fr_stun before: he stood in his
+    idle pose, hammer in hand, which read as "the heal did not break". */
+ else if(s==='fr_stun'){const d=b._hammerTime,dm=d&&d.mode;if(d)d.mode='attack';   // HAMMER draws the boss only in 'attack'
+  h.state='storm_stun';try{FR27_BASE.hammerDraw(b);}finally{h.state='fr_stun';if(d)d.mode=dm;}drawn=true;}
  if(!drawn){ctx.save();if(A.rage)ctx.filter='sepia(1) saturate(5) hue-rotate(315deg)';FR27_BASE.hammerDraw(b);ctx.restore();}
  if(A.hp>0&&s!=='fr_activation'){ctx.save();ctx.globalCompositeOperation='lighter';ctx.globalAlpha=.13+.06*Math.sin(A.t*12);archEffectBlit(9,b.x,b.y,115,A.t*1.7,.7);ctx.restore();}
  if(A.barrier>0)fr27Cell('fr27_chromium_actions',Math.floor(A.t*14)%4,3,b.x,b.y+67,315,120,.85);

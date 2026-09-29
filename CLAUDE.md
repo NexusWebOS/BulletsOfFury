@@ -5658,3 +5658,23 @@ Matched high-quality Chromium stress: Stage 6 ~54 FPS, Stage 7/8 ~60 FPS,
 100 projectiles / 180 particles / 4 pickups. Nine native checks pass. These are
 rendering workloads, not complete-stage balance or universal FPS guarantees.
 Incoming HAMA and mission repairs remain preserved; no art/atlas was regenerated.
+
+## 0929 - Stage 6/7 review (Mike's list) and the Hammer heal break
+
+Read docs/STAGE67_REVIEW_0929.md. All in assets/stage67_review_0929.js (after mission_repair_0929.js);
+derived art from _BUILD_SOURCE/warhive_modular_0929.py. Proof: probe_s67_0929.py 39/0, suite section 379.
+- Warhive is MODULAR: open fan wells, fans spinning under the rim, coil beam cannons deploying under each
+  nacelle (Hard/Furious); beams leave the cannon muzzle (tlv_beam art). Hull/fan/door hits all flash.
+  Escorts 3/4/5/5. Ace 1.5x, fuselage + wing modules, longer cooldowns.
+- Assault bombers 128px, flash, Lizzie's lz_bomb / lz_nuke / atomicLaunch / atomicDetonate.
+- Stage-6 supply boxes removed; abilities granted at random.
+- No triangles on enemies: S4/S6/S7 procedural damage overlays are no-ops; ordinary-enemy warnings are
+  straight bands (bosses keep FOV cones and alert frames).
+- Sluice: floor lane + outlet tell + authored splash; no striped boom.
+- Furious Warden: chaingun scissor sweep, stomp-and-swat, core toxic mortar clouds.
+- Stage-7 escape: analytic 880 px/s flight; the wreck and every escape FX are anchored to the terrain
+  (s67Anchor / s67ShiftAnchored); visible portal entry. Stage-7 entrance uses the top-down connector,
+  not the painted gate still.
+Hammer heal break: docs/HAMMER_HEAL_BREAK_0929.md, section 378.
+Traps: xartPalette caches (trap it, not XART.get); the Bash tool mangles JS heredocs; bossActive stays
+true through the escape (supply boxes keep dropping); SpriteCook had 1 credit.
