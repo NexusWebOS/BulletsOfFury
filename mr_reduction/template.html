@@ -1,0 +1,480 @@
+<title>Mr. Reduction</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap">
+<style>
+/* Layout: one arcade cabinet column - stage (Mr. Reduction), intake, scoreboard, borough ledgers. Deliberately single dark theme. */
+:root{
+  --night:#15122c; --panel:#231e47; --panel2:#2d2760; --line:#0a0818;
+  --ink:#ece6d6; --dim:#a79fc9; --hazard:#ff8a1f; --vest:#ffd23f; --stop:#ff4f3a; --go:#5fe07a;
+  --display:"Press Start 2P","Courier New",monospace; --body:"VT323","Courier New",monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{background:var(--night);color:var(--ink)}
+body{font-family:var(--body);font-size:21px;line-height:1.15;padding-block:16px 40px;padding-inline:16px;
+  background-image:repeating-linear-gradient(0deg,rgba(0,0,0,.18) 0 2px,transparent 2px 4px);}
+.wrap{max-width:1080px;margin:0 auto;display:flex;flex-direction:column;gap:20px}
+h1,h2,h3,.btn,.tag,.tile b{font-family:var(--display);letter-spacing:.04em}
+h1{font-size:clamp(18px,4vw,34px);margin:0;color:var(--vest);text-shadow:3px 3px 0 var(--line),-1px -1px 0 var(--hazard)}
+h2{font-size:14px;margin:0;color:var(--vest);text-wrap:balance}
+h3{font-size:11px;margin:0;color:var(--hazard)}
+.sub{color:var(--dim);font-size:20px}
+.px{background:var(--panel);box-shadow:0 0 0 3px var(--line),0 0 0 6px var(--panel2),6px 6px 0 6px var(--line);padding:16px;min-width:0}
+.hazard{height:10px;background:repeating-linear-gradient(-45deg,var(--vest) 0 12px,var(--line) 12px 24px)}
+header.top{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap}
+/* stage */
+.stage{position:relative;aspect-ratio:379/180;width:100%;max-width:100%;overflow:hidden;background:#000;box-shadow:0 0 0 4px var(--line),0 0 0 8px var(--hazard)}
+.stage .bg{position:absolute;inset:0;width:100%;height:100%;image-rendering:pixelated}
+.stage canvas.hero{position:absolute;left:3%;bottom:0;height:92%;image-rendering:pixelated;transition:transform .2s}
+.bubble{position:absolute;right:3%;top:6%;width:min(52%,440px);background:var(--ink);color:var(--line);padding:12px 14px;font-family:var(--display);font-size:clamp(9px,1.5vw,14px);line-height:1.6;
+  box-shadow:0 0 0 3px var(--line),5px 5px 0 3px rgba(0,0,0,.5);min-height:3.4em}
+.bubble:after{content:"";position:absolute;left:-18px;bottom:18px;border:9px solid transparent;border-right:12px solid var(--ink)}
+.bubble .who{display:block;color:var(--stop);font-size:.8em;margin-bottom:6px}
+.shake{animation:shake .35s steps(2) 2}
+@keyframes shake{0%{transform:translate(0,0)}25%{transform:translate(-4px,2px)}50%{transform:translate(4px,-2px)}75%{transform:translate(-2px,-2px)}}
+/* intake */
+.grid2{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:20px}
+@media (max-width:760px){.grid2{grid-template-columns:minmax(0,1fr)}}
+.drop{border:3px dashed var(--hazard);padding:18px;text-align:center;cursor:pointer;display:flex;flex-direction:column;gap:10px;align-items:center;background:rgba(255,138,31,.06)}
+.drop.over{background:rgba(255,210,63,.18);border-color:var(--vest)}
+.drop img{width:48px;image-rendering:pixelated}
+.btn{display:inline-block;border:0;cursor:pointer;background:var(--hazard);color:var(--line);font-size:11px;padding:12px 16px;box-shadow:0 0 0 3px var(--line),4px 4px 0 3px var(--line)}
+.btn:hover{background:var(--vest)}
+.btn:active{transform:translate(3px,3px);box-shadow:0 0 0 3px var(--line)}
+.btn:focus-visible{outline:3px solid var(--go);outline-offset:4px}
+.btn.alt{background:var(--panel2);color:var(--ink)}
+.btn[disabled]{opacity:.45;cursor:not-allowed}
+.row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+ul.sigs{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-direction:column;gap:8px}
+ul.sigs li{display:flex;gap:10px;align-items:center;justify-content:space-between;background:var(--panel2);padding:8px 10px;flex-wrap:wrap}
+.tag{font-size:9px;padding:4px 6px;background:var(--line);color:var(--vest)}
+.tag.pm{color:#9fd0ff}.tag.warn{color:var(--stop)}
+.x{background:none;border:0;color:var(--dim);font-family:var(--display);font-size:10px;cursor:pointer}
+.x:hover{color:var(--stop)}
+dl.kv{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;margin:10px 0 0}
+dl.kv dt{color:var(--dim)} dl.kv dd{margin:0;font-variant-numeric:tabular-nums}
+/* scoreboard */
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px}
+.tile{background:var(--line);padding:12px;display:flex;flex-direction:column;gap:8px;border-top:6px solid var(--hazard)}
+.tile b{font-size:clamp(16px,2.6vw,24px);color:var(--vest);font-variant-numeric:tabular-nums}
+.tile span{color:var(--dim);font-size:19px}
+.tile.red{border-color:var(--stop)} .tile.red b{color:var(--stop)}
+.tile img{height:28px;width:auto;image-rendering:pixelated;align-self:flex-start}
+/* tables */
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums;min-width:640px}
+th{font-family:var(--display);font-size:9px;color:var(--vest);text-align:left;padding:8px 8px;background:var(--line);position:sticky;top:0}
+td{padding:5px 8px;border-bottom:2px solid var(--line);vertical-align:top}
+td.n,th.n{text-align:right}
+tr.boro td{background:var(--panel2);font-family:var(--display);font-size:10px;color:var(--hazard);padding:9px 8px}
+tr.sub td{color:var(--vest);border-bottom:3px solid var(--hazard)}
+.lost{color:var(--stop)} .gain{color:var(--go)} .muted{color:var(--dim)}
+.fca{color:var(--dim);font-size:18px}
+details summary{cursor:pointer;font-family:var(--display);font-size:10px;color:var(--hazard);padding:6px 0}
+.empty{padding:18px;text-align:center;color:var(--dim)}
+.note{color:var(--dim);font-size:19px}
+.toast{position:fixed;left:50%;bottom:calc(16px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--vest);color:var(--line);font-family:var(--display);font-size:10px;padding:10px 14px;box-shadow:0 0 0 3px var(--line)}
+@media (prefers-reduced-motion:reduce){.shake{animation:none}.stage canvas.hero{transition:none}}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div>
+      <h1>MR. REDUCTION</h1>
+      <div class="sub">Rollcall SIG vs. the Oct 12 final roster &middot; 8 hrs per post per day &middot; 40 hrs per post per week</div>
+    </div>
+    <div class="row">
+      <button class="btn" id="pdfBtn">GENERATE PDF</button>
+    </div>
+  </header>
+
+  <section class="stage" id="stage" aria-label="Mr. Reduction">
+    <img class="bg" alt="" src="__BG__">
+    <canvas class="hero" id="hero" width="232" height="232"></canvas>
+    <div class="bubble" id="bubble"><span class="who">MR. REDUCTION:</span><span id="say"></span></div>
+  </section>
+  <div class="hazard"></div>
+
+  <section class="grid2">
+    <div class="px">
+      <h2>1. DROP TODAY'S SIGS</h2>
+      <p class="note">Upload the daily rollcall SIG PDFs (AM 06:00x14:00, PM 14:00x22:00). The tour is read off the sheet. Everything is read on this device; nothing is uploaded anywhere.</p>
+      <label class="drop" id="drop" for="file">
+        <img alt="" src="__ICON_HARDHAT__">
+        <span>Drop PDFs here or tap to choose</span>
+        <span class="btn alt" aria-hidden="true">CHOOSE PDFs</span>
+      </label>
+      <input id="file" type="file" accept="application/pdf,.pdf" multiple hidden>
+      <ul class="sigs" id="sigList"></ul>
+    </div>
+    <div class="px">
+      <h2>2. OCT 12 FINAL ROSTER</h2>
+      <p class="note">Hard-wired. These are the only stations that remain after Oct 12.</p>
+      <dl class="kv" id="baseKv"></dl>
+      <details><summary>VIEW ROSTER</summary><div class="tbl" id="baseTbl"></div></details>
+    </div>
+  </section>
+
+  <section class="px">
+    <div class="row" style="justify-content:space-between"><h2>3. THE DAMAGE</h2><span class="note" id="basis"></span></div>
+    <div class="tiles" id="tiles" style="margin-top:14px"></div>
+    <div class="tbl" id="tourTbl" style="margin-top:16px"></div>
+  </section>
+
+  <section class="px">
+    <h2>BY BOROUGH</h2>
+    <div class="tbl" id="boroTbl" style="margin-top:12px"></div>
+  </section>
+
+  <section class="px">
+    <div class="row"><img alt="" src="__ICON_BARRICADE__" style="height:32px;image-rendering:pixelated"><h2>STATIONS CLOSING</h2></div>
+    <p class="note">On today's sig, not on the Oct 12 roster for any tour. Sorted by borough, then posts lost.</p>
+    <div class="tbl" id="closedTbl"></div>
+  </section>
+
+  <section class="px">
+    <div class="row"><img alt="" src="__ICON_CONE__" style="height:32px;image-rendering:pixelated"><h2>STATIONS LOSING POSTS</h2></div>
+    <p class="note">Still open after Oct 12 with fewer posts. Columns show today's sig &rarr; Oct 12.</p>
+    <div class="tbl" id="redTbl"></div>
+  </section>
+
+  <section class="px">
+    <details><summary>OCT 12 STATIONS NOT ON TODAY'S SIG / POST INCREASES</summary><div class="tbl" id="otherTbl"></div></details>
+  </section>
+</div>
+<div class="toast" id="toast" hidden></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
+<script>
+"use strict";
+/* ---------- hard-wired data ---------- */
+const BASE = __BASELINE__;          // Oct 12 final roster: {AM:{tour,headerSet,rows:[[borough,station,fcas,posts]]},PM:{...}}
+const SAMPLE = __SAMPLE__;          // the two daily sigs sent with the request (station totals only, no names)
+const ART = __ART__;                // sprites
+const HRS_DAY = 8, HRS_WEEK = 40;
+const BORO_ORDER = ["Bronx","Brooklyn","Manhattan","Queens","Staten Island"];
+
+/* ---------- SIG parser (pdf.js text items -> station rows) ---------- */
+__PARSER__
+
+const norm = s => s.toUpperCase().replace(/\s+/g," ").replace(/\s*-\s*/g,"-").replace(/\s*\/\s*/g,"/").replace(/\(\s*/g,"(").replace(/\s*\)/g,")").trim();
+const tourKey = t => !t ? null : t.startsWith("06") ? "AM" : t.startsWith("14") ? "PM" : t.startsWith("22") ? "MID" : t;
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const fmt = n => n.toLocaleString("en-US");
+const boroRank = b => { const i = BORO_ORDER.indexOf(b); return i < 0 ? 99 : i; };
+
+async function readSig(file){
+  const buf = new Uint8Array(await file.arrayBuffer());
+  const doc = await pdfjsLib.getDocument({data:buf}).promise;
+  const pages = [];
+  for (let p = 1; p <= doc.numPages; p++){
+    const pg = await doc.getPage(p); const vp = pg.getViewport({scale:1}); const tc = await pg.getTextContent();
+    pages.push(tc.items.map(it => ({s:it.str, x:it.transform[4], y:vp.height - it.transform[5], w:it.width})));
+  }
+  const r = parseSigItems(pages);
+  let tour = tourKey(r.tour);
+  if (!tour){ if (/\bAM\b|_AM_/i.test(file.name)) tour = "AM"; else if (/\bPM\b|_PM_/i.test(file.name)) tour = "PM"; }
+  return {file:file.name, date:r.date, tour, tourLabel:r.tour, headerSet:r.headerSet,
+          rows:r.rows.map(x => [x.borough, x.station, x.fcas.join(", "), x.set||0])};
+}
+
+/* ---------- state ---------- */
+const state = { sigs:{}, sample:true };
+function loadSample(){ state.sigs = {}; for (const s of SAMPLE) state.sigs[s.tour] = s; state.sample = true; }
+
+/* ---------- analysis ---------- */
+function baseIndex(){
+  const st = {}, fcaIx = {};
+  for (const T of Object.keys(BASE)) for (const [b,name,fcas,posts] of BASE[T].rows){
+    const k = norm(name);
+    const o = st[k] || (st[k] = {key:k, name, borough:b, fcas:new Set(), t:{}});
+    o.t[T] = (o.t[T]||0) + posts;
+    fcas.split(/,\s*/).filter(Boolean).forEach(f => { o.fcas.add(f); fcaIx[f] = k; });
+  }
+  return {st, fcaIx};
+}
+function analyze(){
+  const {st:base, fcaIx} = baseIndex();
+  const tours = Object.keys(state.sigs).sort();
+  const cur = {};
+  for (const T of tours) for (const [b,name,fcas,posts] of state.sigs[T].rows){
+    let k = norm(name);
+    const fl = fcas.split(/,\s*/).filter(Boolean);
+    if (!base[k]){ const hit = fl.map(f => fcaIx[f]).find(Boolean); if (hit && base[hit].borough === b) k = hit; }
+    const o = cur[k] || (cur[k] = {key:k, name:base[k] ? base[k].name : name, borough:b, fcas:new Set(), t:{}});
+    o.t[T] = (o.t[T]||0) + posts; fl.forEach(f => o.fcas.add(f));
+  }
+  const closed = [], reduced = [], increased = [], missing = [];
+  const tourLost = {}; tours.forEach(T => tourLost[T] = {closed:0, reduced:0});
+  for (const k in cur){
+    const c = cur[k], bs = base[k];
+    const per = {}; let lost = 0, gain = 0;
+    for (const T of tours){
+      const now = c.t[T]||0, after = bs ? (bs.t[T]||0) : 0;
+      per[T] = {now, after};
+      if (now > after){ lost += now-after; tourLost[T][bs ? "reduced" : "closed"] += now-after; }
+      else if (after > now && now > 0) gain += after-now;
+    }
+    const row = {name:c.name, borough:c.borough, fcas:[...c.fcas].join(", "), per, lost};
+    if (!bs) closed.push(row);
+    else if (lost > 0) reduced.push(row);
+    if (bs && gain > 0) increased.push({...row, gain});
+  }
+  for (const k in base) if (!cur[k]){
+    const onTour = tours.filter(T => base[k].t[T]);
+    if (onTour.length) missing.push({name:base[k].name, borough:base[k].borough, fcas:[...base[k].fcas].join(", "), per:Object.fromEntries(onTour.map(T => [T, base[k].t[T]]))});
+  }
+  const sorter = (a,b) => boroRank(a.borough)-boroRank(b.borough) || b.lost-a.lost || a.name.localeCompare(b.name);
+  closed.sort(sorter); reduced.sort(sorter);
+  missing.sort((a,b) => boroRank(a.borough)-boroRank(b.borough) || a.name.localeCompare(b.name));
+  const boros = {};
+  for (const [list, kind] of [[closed,"closed"],[reduced,"reduced"]]) for (const r of list){
+    const o = boros[r.borough] || (boros[r.borough] = {closed:0, reduced:0, lostClosed:0, lostReduced:0});
+    o[kind]++; o[kind === "closed" ? "lostClosed" : "lostReduced"] += r.lost;
+  }
+  const lostClosed = closed.reduce((a,r) => a+r.lost, 0), lostReduced = reduced.reduce((a,r) => a+r.lost, 0);
+  const sigTotals = {}; tours.forEach(T => sigTotals[T] = {now:state.sigs[T].rows.reduce((a,r) => a+r[3], 0), after:BASE[T] ? BASE[T].rows.reduce((a,r) => a+r[3], 0) : 0});
+  return {tours, closed, reduced, increased, missing, boros, lostClosed, lostReduced, total:lostClosed+lostReduced, tourLost, sigTotals};
+}
+
+/* ---------- rendering ---------- */
+let R = null;
+const $ = id => document.getElementById(id);
+function perCells(r, tours){
+  return tours.map(T => { const p = r.per[T]; if (!p || (!p.now && !p.after)) return `<td class="n muted">-</td>`;
+    const d = p.now - p.after;
+    return `<td class="n">${p.now} &rarr; ${p.after}${d > 0 ? ` <span class="lost">(-${d})</span>` : ""}</td>`; }).join("");
+}
+function stationTable(list, tours, kind){
+  if (!list.length) return `<div class="empty">${kind === "closed" ? "No stations closing on the loaded sigs." : "No post reductions on the loaded sigs."}</div>`;
+  let h = `<table><thead><tr><th>STATION</th><th>FCA</th>${tours.map(T => `<th class="n">${T} POSTS</th>`).join("")}<th class="n">POSTS LOST</th><th class="n">HRS/DAY</th><th class="n">HPW</th></tr></thead><tbody>`;
+  let cur = null, sub = 0;
+  const subRow = () => `<tr class="sub"><td colspan="${2+tours.length}">${esc(cur)} subtotal</td><td class="n">${sub}</td><td class="n">${fmt(sub*HRS_DAY)}</td><td class="n">${fmt(sub*HRS_WEEK)}</td></tr>`;
+  for (const r of list){
+    if (r.borough !== cur){ if (cur) h += subRow(); cur = r.borough; sub = 0; h += `<tr class="boro"><td colspan="${5+tours.length}">${esc(cur.toUpperCase())}</td></tr>`; }
+    sub += r.lost;
+    h += `<tr><td>${esc(r.name)}</td><td class="fca">${esc(r.fcas)}</td>${perCells(r, tours)}<td class="n lost">${r.lost}</td><td class="n">${fmt(r.lost*HRS_DAY)}</td><td class="n">${fmt(r.lost*HRS_WEEK)}</td></tr>`;
+  }
+  return h + subRow() + `</tbody></table>`;
+}
+function render(){
+  R = analyze();
+  const tours = R.tours;
+  // sig list
+  $("sigList").innerHTML = tours.length ? tours.map(T => { const s = state.sigs[T];
+    return `<li><span class="row"><span class="tag ${T === "PM" ? "pm" : ""}">${T}</span> ${esc(s.date || "no date")} &middot; ${s.rows.length} sites &middot; ${R.sigTotals[T].now} posts${!BASE[T] ? ` <span class="tag warn">NO OCT 12 ROSTER FOR THIS TOUR</span>` : ""}</span>
+      <span class="row"><span class="muted">${state.sample ? "sample" : esc(s.file)}</span><button class="x" data-rm="${T}" aria-label="Remove ${T} sig">X</button></span></li>`; }).join("")
+    : `<li class="muted">No sigs loaded. Drop today's AM and PM sigs above.</li>`;
+  $("basis").textContent = tours.length ? `Basis: ${tours.map(T => `${T} ${state.sigs[T].date||""}`).join(" + ")}${state.sample ? " (sample - the sigs you sent)" : ""}` : "";
+  // tiles
+  const t = (label, val, cls, icon) => `<div class="tile ${cls||""}">${icon ? `<img alt="" src="${icon}">` : ""}<b>${val}</b><span>${label}</span></div>`;
+  $("tiles").innerHTML = [
+    t("stations closing", R.closed.length, "red", ART.barricade),
+    t("stations losing posts", R.reduced.length, "", ART.cone),
+    t("posts lost", fmt(R.total), "red", ART.arrow),
+    t("hours per day lost", fmt(R.total*HRS_DAY)),
+    t("hours per week lost (HPW)", fmt(R.total*HRS_WEEK))
+  ].join("");
+  $("tourTbl").innerHTML = tours.length ? `<table><thead><tr><th>TOUR</th><th class="n">SIG POSTS</th><th class="n">OCT 12 POSTS</th><th class="n">LOST TO CLOSINGS</th><th class="n">LOST TO REDUCTIONS</th><th class="n">POSTS LOST</th><th class="n">HRS/DAY</th><th class="n">HPW</th></tr></thead><tbody>`+
+    tours.map(T => { const L = R.tourLost[T], n = L.closed+L.reduced;
+      return `<tr><td>${T} ${esc(state.sigs[T].tourLabel||"")}</td><td class="n">${R.sigTotals[T].now}</td><td class="n">${R.sigTotals[T].after}</td><td class="n">${L.closed}</td><td class="n">${L.reduced}</td><td class="n lost">${n}</td><td class="n">${fmt(n*HRS_DAY)}</td><td class="n">${fmt(n*HRS_WEEK)}</td></tr>`; }).join("")+
+    `<tr class="sub"><td>ALL TOURS</td><td class="n">${tours.reduce((a,T)=>a+R.sigTotals[T].now,0)}</td><td class="n">${tours.reduce((a,T)=>a+R.sigTotals[T].after,0)}</td><td class="n">${R.lostClosed}</td><td class="n">${R.lostReduced}</td><td class="n">${R.total}</td><td class="n">${fmt(R.total*HRS_DAY)}</td><td class="n">${fmt(R.total*HRS_WEEK)}</td></tr></tbody></table>` : "";
+  // borough
+  const bk = Object.keys(R.boros).sort((a,b) => boroRank(a)-boroRank(b));
+  $("boroTbl").innerHTML = bk.length ? `<table><thead><tr><th>BOROUGH</th><th class="n">STATIONS CLOSING</th><th class="n">STATIONS REDUCED</th><th class="n">POSTS LOST</th><th class="n">HRS/DAY</th><th class="n">HPW</th></tr></thead><tbody>`+
+    bk.map(b => { const o = R.boros[b], n = o.lostClosed+o.lostReduced;
+      return `<tr><td>${esc(b)}</td><td class="n">${o.closed}</td><td class="n">${o.reduced}</td><td class="n lost">${n}</td><td class="n">${fmt(n*HRS_DAY)}</td><td class="n">${fmt(n*HRS_WEEK)}</td></tr>`; }).join("")+
+    `<tr class="sub"><td>ALL BOROUGHS</td><td class="n">${R.closed.length}</td><td class="n">${R.reduced.length}</td><td class="n">${R.total}</td><td class="n">${fmt(R.total*HRS_DAY)}</td><td class="n">${fmt(R.total*HRS_WEEK)}</td></tr></tbody></table>` : `<div class="empty">Load a sig to see borough totals.</div>`;
+  $("closedTbl").innerHTML = stationTable(R.closed, tours, "closed");
+  $("redTbl").innerHTML = stationTable(R.reduced, tours, "reduced");
+  let o = "";
+  o += R.missing.length ? `<h3 style="margin-top:10px">ON THE OCT 12 ROSTER, NOT ON TODAY'S SIG</h3><table><thead><tr><th>BOROUGH</th><th>STATION</th><th>FCA</th><th class="n">OCT 12 POSTS</th></tr></thead><tbody>${R.missing.map(m => `<tr><td>${esc(m.borough)}</td><td>${esc(m.name)}</td><td class="fca">${esc(m.fcas)}</td><td class="n">${Object.entries(m.per).map(([T,n]) => `${T} ${n}`).join(" / ")}</td></tr>`).join("")}</tbody></table>` : "";
+  o += R.increased.length ? `<h3 style="margin-top:14px">STATIONS GAINING POSTS ON A TOUR</h3><table><thead><tr><th>BOROUGH</th><th>STATION</th>${tours.map(T => `<th class="n">${T}</th>`).join("")}</tr></thead><tbody>${R.increased.map(m => `<tr><td>${esc(m.borough)}</td><td>${esc(m.name)}</td>${perCells(m, tours).replace(/lost/g,"gain")}</tr>`).join("")}</tbody></table>` : "";
+  $("otherTbl").innerHTML = o || `<div class="empty">Nothing here.</div>`;
+  $("pdfBtn").disabled = !tours.length;
+}
+function renderBase(){
+  const kv = [], rows = [];
+  for (const T of ["AM","PM"]) if (BASE[T]){
+    const stations = new Set(BASE[T].rows.map(r => norm(r[1]))).size;
+    const posts = BASE[T].rows.reduce((a,r) => a+r[3], 0);
+    kv.push(`<dt>${T} ${esc(BASE[T].tour)}</dt><dd>${stations} stations &middot; ${BASE[T].rows.length} sites &middot; ${posts} posts</dd>`);
+  }
+  const {st} = baseIndex(); const all = Object.values(st);
+  kv.push(`<dt>Stations remaining</dt><dd>${all.length}</dd>`);
+  $("baseKv").innerHTML = kv.join("");
+  all.sort((a,b) => boroRank(a.borough)-boroRank(b.borough) || a.name.localeCompare(b.name));
+  $("baseTbl").innerHTML = `<table><thead><tr><th>BOROUGH</th><th>STATION</th><th>FCA</th><th class="n">AM</th><th class="n">PM</th></tr></thead><tbody>${all.map(s => `<tr><td>${esc(s.borough)}</td><td>${esc(s.name)}</td><td class="fca">${esc([...s.fcas].join(", "))}</td><td class="n">${s.t.AM||"-"}</td><td class="n">${s.t.PM||"-"}</td></tr>`).join("")}</tbody></table>`;
+}
+
+/* ---------- Mr. Reduction ---------- */
+const QUIPS = {
+  idle:["I AM MR. REDUCTION. GIVE ME YOUR SIGS AND I WILL SPLIT THEM IN HALF.","EVERY POST IS EIGHT HOURS. I FEEL EACH ONE IN MY LEGS.","HARD HAT ON. CLIPBOARD UP. OCT 12 IS COMING."],
+  loaded:["I HAVE READ YOUR SIG. I DID FIFTY PUSH-UPS WHILE READING IT."],
+  bad:["THIS PDF FIGHTS BACK. I SEE NO STATIONS IN IT. BRING ME A REAL SIG."],
+  pdf:["YOUR REPORT IS READY. SORTED BY BOROUGH. LIKE MY SPICE RACK."]
+};
+const pick = a => a[Math.floor(Math.random()*a.length)];
+let typeTimer = null;
+function say(text){
+  clearInterval(typeTimer); const el = $("say"); el.textContent = ""; let i = 0;
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduce){ el.textContent = text; return; }
+  typeTimer = setInterval(() => { el.textContent = text.slice(0, ++i); if (i >= text.length) clearInterval(typeTimer); }, 22);
+}
+function verdict(){
+  if (!R || !R.tours.length) return pick(QUIPS.idle);
+  return `${R.closed.length} STATIONS: CLOSED. ${R.reduced.length} STATIONS: REDUCED. ${fmt(R.total)} POSTS GONE. THAT IS ${fmt(R.total*HRS_DAY)} HOURS A DAY AND ${fmt(R.total*HRS_WEEK)} A WEEK. HYAAA!`;
+}
+// sprite player
+const hero = $("hero"), hctx = hero.getContext("2d"); hctx.imageSmoothingEnabled = false;
+const imgs = {};
+function loadImg(src){ return new Promise(r => { const i = new Image(); i.onload = () => r(i); i.onerror = () => r(null); i.src = src; }); }
+let anim = "idle", frame = 0, kickUntil = 0;
+async function initHero(){
+  for (const k of ["idle","kick"]) if (ART[k]) imgs[k] = await loadImg(ART[k].src);
+  imgs.stand = await loadImg(ART.stand); imgs.split = await loadImg(ART.split);
+  let last = 0;
+  const tick = ts => {
+    if (ts - last > 110){ last = ts; frame++;
+      const kicking = ts < kickUntil;
+      const a = kicking ? (imgs.kick ? ART.kick : null) : (imgs.idle ? ART.idle : null);
+      const still = kicking ? imgs.split : imgs.stand;
+      hctx.clearRect(0,0,hero.width,hero.height);
+      if (a){ const im = kicking ? imgs.kick : imgs.idle; const n = a.n, f = kicking ? Math.min(frame - kickFrame0, n-1) : frame % n;
+        const c = f % a.cols, r = Math.floor(f / a.cols);
+        const s = Math.min(hero.width/a.fw, hero.height/a.fh), w = a.fw*s, h = a.fh*s;
+        hctx.drawImage(im, c*a.fw, r*a.fh, a.fw, a.fh, (hero.width-w)/2, hero.height-h, w, h);
+      } else if (still){ const s = Math.min(hero.width/still.width, hero.height/still.height); const w = still.width*s, h = still.height*s; hctx.drawImage(still, (hero.width-w)/2, hero.height-h, w, h); }
+    }
+    requestAnimationFrame(tick);
+  };
+  requestAnimationFrame(tick);
+}
+let kickFrame0 = 0;
+function kick(){
+  const n = ART.kick ? ART.kick.n : 6;
+  kickFrame0 = frame + 1; kickUntil = performance.now() + Math.max(1400, n*110 + 700);
+  const s = $("stage"); s.classList.remove("shake"); void s.offsetWidth; s.classList.add("shake");
+}
+
+/* ---------- intake ---------- */
+function toast(m){ const t = $("toast"); t.textContent = m; t.hidden = false; clearTimeout(toast.t); toast.t = setTimeout(() => t.hidden = true, 3200); }
+async function takeFiles(files){
+  const list = [...files].filter(f => /pdf$/i.test(f.type) || /\.pdf$/i.test(f.name));
+  if (!list.length){ say(QUIPS.bad[0]); return; }
+  if (state.sample){ state.sigs = {}; state.sample = false; }
+  let ok = 0;
+  for (const f of list){
+    try{
+      const s = await readSig(f);
+      if (!s.rows.length || !s.tour){ toast(`${f.name}: no station rows found`); continue; }
+      if (/oct[_ ]?12/i.test(f.name)) toast(`${f.name} looks like the Oct 12 roster itself - loaded anyway`);
+      const prev = state.sigs[s.tour];
+      if (prev && prev.date && s.date && new Date(prev.date) > new Date(s.date)){ toast(`Kept the newer ${s.tour} sig (${prev.date})`); continue; }
+      state.sigs[s.tour] = s; ok++;
+    }catch(e){ console.error(e); toast(`${f.name}: could not read this PDF`); }
+  }
+  render();
+  if (ok){ kick(); say(verdict()); } else say(QUIPS.bad[0]);
+}
+$("file").addEventListener("change", e => { takeFiles(e.target.files); e.target.value = ""; });
+const drop = $("drop");
+["dragenter","dragover"].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.add("over"); }));
+["dragleave","drop"].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.remove("over"); }));
+drop.addEventListener("drop", e => takeFiles(e.dataTransfer.files));
+$("sigList").addEventListener("click", e => { const T = e.target.dataset && e.target.dataset.rm; if (!T) return;
+  if (state.sample){ state.sample = false; } delete state.sigs[T]; render(); say(Object.keys(state.sigs).length ? verdict() : pick(QUIPS.idle)); });
+$("stage").addEventListener("click", () => { kick(); say(verdict()); });
+
+/* ---------- PDF ---------- */
+async function saveFile(blob, name){
+  try{
+    const d = window.claude && window.claude.use ? await window.claude.use("downloads") : null;
+    if (d){ await d.save({filename:name, data:blob}); toast("Saved " + name); return; }
+  }catch(e){ if (e && e.code === "declined") return; if (e && e.code && !/unavailable|not_granted|capability/.test(e.code)){ toast("Could not save: " + e.message); return; } }
+  const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = name; document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(a.href), 4000); toast("Downloaded " + name);
+}
+function buildPdf(){
+  const {jsPDF} = window.jspdf;
+  const doc = new jsPDF({unit:"pt", format:"letter"});
+  const W = doc.internal.pageSize.getWidth(), M = 36;
+  const tours = R.tours;
+  const NAVY = [21,18,44], ORANGE = [255,138,31], YELLOW = [255,210,63], RED = [200,40,30];
+  // header band
+  doc.setFillColor(...NAVY); doc.rect(0,0,W,96,"F");
+  for (let x = -20; x < W; x += 24){ doc.setFillColor(...YELLOW); doc.triangle(x,96,x+12,96,x+22,86,"F"); }
+  try{ doc.addImage(ART.stand, "PNG", M-6, 6, 84, 84); }catch(e){}
+  doc.setTextColor(...YELLOW); doc.setFont("courier","bold"); doc.setFontSize(22); doc.text("MR. REDUCTION", M+86, 38);
+  doc.setTextColor(236,230,214); doc.setFontSize(10); doc.setFont("courier","normal");
+  doc.text("STATION CLOSURE & POST REDUCTION REPORT", M+86, 54);
+  doc.text(`Today's sig: ${tours.map(T => `${T} ${state.sigs[T].date||""}`).join("  +  ")}${state.sample ? " (sample)" : ""}`, M+86, 68);
+  doc.text(`Compared against: Oct 12 final roster  |  Generated ${new Date().toLocaleString("en-US")}`, M+86, 80);
+  let y = 118;
+  // summary
+  doc.setTextColor(0); doc.setFont("helvetica","bold"); doc.setFontSize(12); doc.text("SUMMARY", M, y);
+  const sumBody = tours.map(T => { const L = R.tourLost[T], n = L.closed+L.reduced; return [`${T} (${state.sigs[T].tourLabel||""})`, R.sigTotals[T].now, R.sigTotals[T].after, L.closed, L.reduced, n, fmt(n*HRS_DAY), fmt(n*HRS_WEEK)]; });
+  doc.autoTable({startY:y+6, margin:{left:M,right:M}, head:[["Tour","Sig posts","Oct 12 posts","Lost to closings","Lost to reductions","Posts lost","Hrs/Day","HPW"]],
+    body:sumBody, foot:[["ALL TOURS", tours.reduce((a,T)=>a+R.sigTotals[T].now,0), tours.reduce((a,T)=>a+R.sigTotals[T].after,0), R.lostClosed, R.lostReduced, R.total, fmt(R.total*HRS_DAY), fmt(R.total*HRS_WEEK)]],
+    theme:"grid", styles:{fontSize:9, halign:"right"}, columnStyles:{0:{halign:"left"}}, headStyles:{fillColor:NAVY, textColor:YELLOW, halign:"center"}, footStyles:{fillColor:ORANGE, textColor:0}});
+  y = doc.lastAutoTable.finalY + 10;
+  doc.setFont("helvetica","normal"); doc.setFontSize(9);
+  doc.text(`${R.closed.length} stations closing  |  ${R.reduced.length} stations losing posts  |  ${R.total} posts x 8 hrs = ${fmt(R.total*HRS_DAY)} hrs/day  |  x 40 hrs = ${fmt(R.total*HRS_WEEK)} HPW`, M, y+4);
+  y += 20;
+  // borough
+  doc.setFont("helvetica","bold"); doc.setFontSize(12); doc.text("BY BOROUGH", M, y);
+  const bk = Object.keys(R.boros).sort((a,b) => boroRank(a)-boroRank(b));
+  doc.autoTable({startY:y+6, margin:{left:M,right:M}, head:[["Borough","Stations closing","Stations reduced","Posts lost","Hrs/Day","HPW"]],
+    body:bk.map(b => { const o = R.boros[b], n = o.lostClosed+o.lostReduced; return [b, o.closed, o.reduced, n, fmt(n*HRS_DAY), fmt(n*HRS_WEEK)]; }),
+    foot:[["ALL", R.closed.length, R.reduced.length, R.total, fmt(R.total*HRS_DAY), fmt(R.total*HRS_WEEK)]],
+    theme:"grid", styles:{fontSize:9, halign:"right"}, columnStyles:{0:{halign:"left"}}, headStyles:{fillColor:NAVY, textColor:YELLOW, halign:"center"}, footStyles:{fillColor:ORANGE, textColor:0}});
+  // station sections
+  const section = (title, list, color) => {
+    doc.addPage(); let yy = 44;
+    doc.setFillColor(...color); doc.rect(M, yy-16, W-2*M, 24, "F");
+    doc.setTextColor(255); doc.setFont("helvetica","bold"); doc.setFontSize(13); doc.text(title, M+8, yy); doc.setTextColor(0);
+    if (!list.length){ doc.setFont("helvetica","normal"); doc.setFontSize(10); doc.text("None on the loaded sigs.", M, yy+30); return; }
+    const body = []; let cur = null, sub = 0;
+    const pushSub = () => body.push([{content:`${cur} subtotal`, colSpan:2+tours.length, styles:{halign:"right", fontStyle:"bold"}}, {content:String(sub), styles:{fontStyle:"bold"}}, {content:fmt(sub*HRS_DAY), styles:{fontStyle:"bold"}}, {content:fmt(sub*HRS_WEEK), styles:{fontStyle:"bold"}}]);
+    for (const r of list){
+      if (r.borough !== cur){ if (cur) pushSub(); cur = r.borough; sub = 0;
+        body.push([{content:cur.toUpperCase(), colSpan:5+tours.length, styles:{fillColor:[255,226,190], fontStyle:"bold", halign:"left"}}]); }
+      sub += r.lost;
+      body.push([r.name, r.fcas, ...tours.map(T => { const p = r.per[T]; return p && (p.now||p.after) ? `${p.now} -> ${p.after}` : "-"; }), r.lost, fmt(r.lost*HRS_DAY), fmt(r.lost*HRS_WEEK)]);
+    }
+    pushSub();
+    const tot = list.reduce((a,r) => a+r.lost, 0);
+    doc.autoTable({startY:yy+14, margin:{left:M,right:M}, head:[["Station","FCA",...tours.map(T => `${T} posts (sig -> Oct 12)`),"Posts lost","Hrs/Day","HPW"]], body,
+      foot:[[{content:`TOTAL - ${list.length} stations`, colSpan:2+tours.length, styles:{halign:"right"}}, tot, fmt(tot*HRS_DAY), fmt(tot*HRS_WEEK)]],
+      showFoot:"lastPage", theme:"grid", styles:{fontSize:8.5, halign:"right", cellPadding:3}, columnStyles:{0:{halign:"left", cellWidth:170}, 1:{halign:"left", cellWidth:80}},
+      headStyles:{fillColor:NAVY, textColor:YELLOW, halign:"center"}, footStyles:{fillColor:ORANGE, textColor:0}});
+  };
+  section("STATIONS CLOSING (not on the Oct 12 roster)", R.closed, RED);
+  section("STATIONS LOSING POSTS (still open after Oct 12)", R.reduced, [200,110,10]);
+  if (R.missing.length){
+    doc.addPage(); doc.setFont("helvetica","bold"); doc.setFontSize(12); doc.text("ON THE OCT 12 ROSTER BUT NOT ON TODAY'S SIG (for reference)", M, 44);
+    doc.autoTable({startY:54, margin:{left:M,right:M}, head:[["Borough","Station","FCA","Oct 12 posts"]], body:R.missing.map(m => [m.borough, m.name, m.fcas, Object.entries(m.per).map(([T,n]) => `${T} ${n}`).join(" / ")]),
+      theme:"grid", styles:{fontSize:9}, headStyles:{fillColor:NAVY, textColor:YELLOW}});
+  }
+  const pages = doc.internal.getNumberOfPages();
+  for (let i = 1; i <= pages; i++){ doc.setPage(i); doc.setFont("helvetica","normal"); doc.setFontSize(8); doc.setTextColor(120);
+    doc.text(`Mr. Reduction  |  1 post = 8 hrs/day = 40 hrs/week  |  page ${i} of ${pages}`, M, doc.internal.pageSize.getHeight()-18); }
+  return doc;
+}
+$("pdfBtn").addEventListener("click", async () => {
+  if (!R || !R.tours.length) return;
+  const doc = buildPdf();
+  const d = R.tours.map(T => (state.sigs[T].date||"").replace(/\//g,"-")).filter(Boolean)[0] || "today";
+  kick(); say(pick(QUIPS.pdf));
+  await saveFile(doc.output("blob"), `Mr_Reduction_Report_${d}.pdf`);
+});
+
+/* ---------- boot ---------- */
+if (window.pdfjsLib && window.pdfjsWorker) pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+loadSample(); renderBase(); render(); initHero(); say(pick(QUIPS.idle));
+window.MR = {state, analyze, takeFiles, buildPdf};
+</script>

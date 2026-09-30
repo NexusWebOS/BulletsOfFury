@@ -1,0 +1,5 @@
+# Built outputs embed the Oct 12 roster and sample SIG station counts (workplace data) - never commit.
+MrReduction.html
+mr_reduction_artifact.html
+*.pdf
+baseline*.json
