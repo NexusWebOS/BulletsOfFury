@@ -172,6 +172,8 @@ run('assets/audio_feedback_0927.js', 'audio_feedback');
 run('assets/game.js', 'game');
 run('assets/combat_polish_0927b.js', 'combat_polish');
 run('assets/rival_fight_0924.js', 'rival_fight');
+// Earlier soak fixtures temporarily stub playerHit. Keep the real death pipeline for overload regression.
+const nativePlayerHit0930=vm.runInContext('playerHit',ctxv);
 if(errors.length){ console.log('LOAD ERRORS:'); errors.forEach(e=>
 console.log('  '+e)); process.exit(1); }
 
@@ -7055,7 +7057,7 @@ console.log('=== 153. new sounds + the 20/35/50/100 missile crates (drop 0801km)
      'stage 5 rolls x20 alongside x5/x10 without stage-8 prizes');
   var _anyHundred=['missilepack100'].filter(function(k){
     return r5.indexOf(k)>=0||r6.indexOf(k)>=0||r8.indexOf(k)>=0; });
-  ok(_anyHundred.length===1&&r8.indexOf('missilepack100')>=0&&r5.indexOf('missilepack100')<0&&r6.indexOf('missilepack100')<0, 'x100 normal ammo rolls only on stage 8; cinematic grants remain available');
+  ok(_anyHundred.length===0, 'x100 ammo never spawns in random supplies; direct cinematic grants remain available');
   ok(vm.runInContext("typeof grantCinematicMissiles==='function'", ctxv),
      'and is granted by script for the end cinematic');
 
@@ -8361,6 +8363,8 @@ console.log("=== 170. charge tap/hold + cole sonic art ===");
     ['maverick','falva'].forEach(function(p){
       ASSETS.ready=true; beginStage(1); setState(GS.PLAY); player.reset();
       run.pilot=p; pBullets.length=0; if(typeof rollers!=='undefined') rollers.length=0;
+      // Isolate trigger ownership: random enemy damage must not cancel the special under test.
+      player.invuln=99;enemies=[];stagePlan=[];spawnClock=9999;
       startSpecial();
       var held=true; Input.down=function(){ return held; };
       var leaked=0;
@@ -12705,7 +12709,7 @@ console.log("=== 257. Gravity Mode space armory I-V ===");
   ok(_src257.indexOf('function spaceWeaponPickupIndex(')>=0 &&
      _src257.match(/spaceWeaponPickupIndex\(p\)/g).length>=3,
      'pickup application and every pickup renderer share the same two-primary/one-passive routing helper');
-  ok(_arm257.indexOf("const SPACE_WEAPONS=['LASER CANNON','SHADOW ORB']")>=0 &&
+  ok(_arm257.indexOf("const SPACE_WEAPONS=['LASER CANNON','FUSION CANNON']")>=0 &&
      _arm257.indexOf('function spaceVolleyAutoTick(')>=0 && _arm257.indexOf("if(w===0)spaceLaserFire()")>=0,
      'Volley Missiles are a passive auto-fire rack and cannot occupy the primary fire-button slot');
 
@@ -12744,7 +12748,7 @@ console.log("=== 257. Gravity Mode space armory I-V ===");
   ok(_passive257.active===0 && _passive257.levels.join()==='4,3,2' && _passive257.fired && _passive257.n===3,
      'a Volley pickup upgrades only the passive rack, which auto-fires without replacing the selected primary');
   var _hud257=vm.runInContext("(function(){run.stage=5;run.spaceMode=true;run.spaceWeapon=1;run.spaceLevels[1]=4;run.wlevel=1;return [weaponDisplayName(run.weapon),weaponIconKey(run.weapon,run.wlevel),spaceWeaponLevel()];})()",ctxv);
-  ok(_hud257.join()==='SHADOW ORB,space_shadow_icon_4,4',
+  ok(_hud257.join()==='FUSION CANNON,space_fusion_icon_4,4',
      'HUD name, icon and tier read the selected space armory level rather than stale ground state');
 }
 
@@ -12828,13 +12832,13 @@ console.log("=== 259. generated combat audio routing ===");
   var _approved259={
     dkReload:'reviewed_decker_reload.mp3', laserCannon:'reviewed_laser_cannon.mp3',
     spaceLaserCannon:'reviewed_laser_cannon.mp3', spaceLaserHit:'shield_hit_light.mp3',
-    spaceShadowCharge:'arc_warp_charge_0923.mp3',
+    spaceShadowCharge:'alert_beam_charge.mp3',
     /* 0906: was reviewed_shadow_orb_launch.mp3, which runs 2.250 s and PEAKS AT 1.805 s, reaching
        -6 dB only at 1.170 s - Mike: "in space, the shadow orb, you can heard the sound clearly
        delayed for impact". Same shape as the spaceShadowHit line below and the same resolution:
        the approved table had pinned the late sample, so it defended the defect. The original
        file is still on disk and untouched. */
-    spaceShadowRelease:'arc_void_orb_0923.mp3',
+    spaceShadowRelease:'arc_fusion_beam_0923.mp3',
     spaceShadowHit:'reviewed_shadow_orb_impact.mp3', /* 0903q: was explosion_plasma.mp3, whose peak lands at 454 ms - Mike: 'delayed impact sound'. The approved table pinned the late sample; see the mapping note in game.js. */ spaceVolleyLaunch:['missile_auto_1.mp3','missile_auto_3.mp3'],
     spaceVolleyHit:'explosion_air_medium.mp3',
     atomicLaunch:'reviewed_lizzie_atom_launch.mp3', atomicDetonate:'reviewed_lizzie_atom_impact.mp3',
@@ -15407,7 +15411,7 @@ console.log('=== 301. missile supplies during encounters ===');
    return JSON.stringify(o);
  })()`,ctxv));
  ok([1,2,3,4,5,6,7].every(i=>supplies301[i]==='missilepack20'),'every stage 1-7 can roll the authored x20 supply');
- ok(supplies301[8]==='missilepack100'&&supplies301.low8==='missilepack50','stage 8 rolls both x50 and x100 ammo');
+ ok(supplies301[8]==='missilepack50'&&supplies301.low8==='missilepack50','stage 8 supplies x50 and never spawns x100');
  ok(supplies301[9]==='missilepack10','unspecified stage 9 retains small supplies without an x2 roll');
  ok(supplies301.five===5&&supplies301.oldTwo===5,'x5 graphics grant five rounds and old x2 pickups migrate to five');
  var bossSupply301=JSON.parse(vm.runInContext(`(function(){
@@ -15565,7 +15569,7 @@ console.log('=== 305. directional Retina scan ===');
    retinaScanAdd(enemies[0]);retinaScanAdd(enemies[1]);retinaScanTick(.5);retinaScanFire();enemies[0].dead=true;const ammo=run.bombs;retinaScanTick(.001);o.invalidFree=run.bombs===ammo;retinaScanTick(.051);o.liveFires=run.bombs===ammo-1;
    retinaScanAdd(enemies[1]);retinaScanAdd(enemies[2]);retinaScanTick(.5);run.bombs=1;retinaScanFire();retinaScanTick(.001);retinaScanTick(.051);o.ammoFloor=run.bombs===0&&!retinaScanState().queue;
    run.bombs=3;retinaScanAdd(enemies[1]);player.dead=true;retinaScanTick(.01);o.deathClears=!player._retinaScan;
-   player.dead=false;run.retinaScan=false;retinaScanSupply({kind:'mcrate',x:240,y:200});retinaScanSupply({kind:'mcrate',x:240,y:200});o.onePickup=powerups.filter(p=>p.kind==='retinascan').length===1;applyPowerup(powerups[0]);o.grant=run.retinaScan===true&&campSnapshot().retinaScan===true;
+   player.dead=false;run.retinaScan=false;retinaScanSupply({kind:'mcrate',x:240,y:200});retinaScanSupply({kind:'mcrate',x:240,y:200});o.noPickup=powerups.filter(p=>p.kind==='retinascan').length===0;o.noUpgrade=run.retinaScan===false;
    return JSON.stringify(o);
   }finally{boss=save.boss;subBoss=save.subBoss;bossActive=save.bossActive;subBossActive=save.subBossActive;enemies=save.enemies;retina=save.retina;player=save.player;camX=save.camX;curStage=save.curStage;Object.assign(run,save.run);pBullets=save.pBullets;powerups=save.powerups;special=save.special;}
  })()`,ctxv));
@@ -15767,6 +15771,10 @@ require('./test_hama_frames_0929.cjs')(vm,ctxv,ok);
 require("./test_mission_0929.cjs")(vm,ctxv,ok);
 require('./test_hammer_heal_break_0929.cjs')(vm,ctxv,ok);
 require('./test_stage67_review_0929.cjs')(vm,ctxv,ok);
+require('./test_repair_0930.cjs')(vm,ctxv,ok,nativePlayerHit0930);
+require('./test_cinema_0930.cjs')(vm,ctxv,ok);
+require('./test_realm_0930.cjs')(vm,ctxv,ok);
+require('./test_campaign_0930.cjs')(vm,ctxv,ok);
 
 console.log('\n============================================');
 if (errors.length) { console.log('FAILED — ' + errors.length + ' error(s):'); errors.forEach(e => console.log('  ' + e)); process.exit(1); }

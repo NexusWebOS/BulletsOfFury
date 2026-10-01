@@ -1,0 +1,220 @@
+{
+  "date": "2026-09-30",
+  "engine": {
+    "passed": 6080,
+    "errors": 0,
+    "final_banner": true
+  },
+  "browser": [
+    {
+      "ok": true,
+      "name": "all story scene keys are registered",
+      "detail": {
+        "missing": [],
+        "count": 30
+      }
+    },
+    {
+      "ok": true,
+      "name": "axel has an individual upgrade conversation",
+      "detail": null
+    },
+    {
+      "ok": true,
+      "name": "freezer has an individual upgrade conversation",
+      "detail": null
+    },
+    {
+      "ok": true,
+      "name": "lizzie has an individual upgrade conversation",
+      "detail": null
+    },
+    {
+      "ok": true,
+      "name": "falva has an individual upgrade conversation",
+      "detail": null
+    },
+    {
+      "ok": true,
+      "name": "yuri has an individual upgrade conversation",
+      "detail": null
+    },
+    {
+      "ok": true,
+      "name": "maverick has an individual upgrade conversation",
+      "detail": null
+    },
+    {
+      "ok": true,
+      "name": "cole has an individual upgrade conversation",
+      "detail": null
+    },
+    {
+      "ok": true,
+      "name": "decker has an individual upgrade conversation",
+      "detail": null
+    },
+    {
+      "ok": true,
+      "name": "juggernaut has an individual upgrade conversation",
+      "detail": null
+    },
+    {
+      "ok": true,
+      "name": "A/fire reveals entire current line",
+      "detail": {
+        "i": 0,
+        "shown": 80,
+        "n": 80
+      }
+    },
+    {
+      "ok": true,
+      "name": "second A advances exactly one dialogue beat",
+      "detail": null
+    },
+    {
+      "ok": true,
+      "name": "Start skips the scene and runs continuation exactly once",
+      "detail": null
+    },
+    {
+      "ok": true,
+      "name": "campaign robot reveal opens Cronos transmission",
+      "detail": null
+    },
+    {
+      "ok": true,
+      "name": "Start returns directly to Cronos fight, not pause menu",
+      "detail": null
+    },
+    {
+      "ok": true,
+      "name": "hammer music mode never interrupted by campaign speech",
+      "detail": null
+    },
+    {
+      "ok": true,
+      "name": "hama music mode never interrupted by campaign speech",
+      "detail": null
+    },
+    {
+      "ok": true,
+      "name": "Harrier briefing precedes route commit",
+      "detail": null
+    },
+    {
+      "ok": true,
+      "name": "Stage 6 terrain continues during route dialogue",
+      "detail": {
+        "before": 0.6666666666666605,
+        "after": 20.66666666666648
+      }
+    },
+    {
+      "ok": true,
+      "name": "Start commits selected Harrier route once",
+      "detail": null
+    },
+    {
+      "ok": true,
+      "name": "Stage X briefing identifies the actual rival",
+      "detail": null
+    },
+    {
+      "ok": true,
+      "name": "Stage X skip releases real combat",
+      "detail": null
+    },
+    {
+      "ok": true,
+      "name": "Stage 5 real exit enters the mission bridge",
+      "detail": {
+        "id": "post-5",
+        "score": 125
+      }
+    },
+    {
+      "ok": true,
+      "name": "Stage 5 skip returns to map with bonus awarded once",
+      "detail": {
+        "state": "stagesel",
+        "score": 125,
+        "next": 5,
+        "pending": null
+      }
+    },
+    {
+      "ok": true,
+      "name": "Stage 7 real exit enters the mission bridge",
+      "detail": {
+        "id": "post-7",
+        "score": 100
+      }
+    },
+    {
+      "ok": true,
+      "name": "Stage 7 skip returns to map with bonus awarded once",
+      "detail": {
+        "state": "stagesel",
+        "score": 125,
+        "next": 8,
+        "pending": 1
+      }
+    },
+    {
+      "ok": true,
+      "name": "Stage 9 real exit enters the mission bridge",
+      "detail": {
+        "id": "post-9",
+        "score": 100
+      }
+    },
+    {
+      "ok": true,
+      "name": "Stage 9 skip returns to map with bonus awarded once",
+      "detail": {
+        "state": "stagesel",
+        "score": 125,
+        "next": 7,
+        "pending": 1
+      }
+    },
+    {
+      "ok": true,
+      "name": "opening A reveals/advances dialogue without skipping the prologue",
+      "detail": null
+    },
+    {
+      "ok": true,
+      "name": "opening Start skips to its continuation",
+      "detail": null
+    },
+    {
+      "ok": true,
+      "name": "review screen starts chosen scene in the shared engine",
+      "detail": null
+    },
+    {
+      "ok": true,
+      "name": "review Next/Skip controls operate the same director",
+      "detail": null
+    },
+    {
+      "ok": true,
+      "name": "no page/console errors",
+      "detail": []
+    }
+  ],
+  "limitations": [
+    "Focused scene/trigger testing, not a complete nine-stage campaign replay.",
+    "New portraits are still shots; no new recorded voices or lip-sync reels.",
+    "Last full suite preceded only a top-anchored cockpit crop adjustment; final native browser probe passed after that rendering-only change."
+  ],
+  "sources": {
+    "assets/cinematic_director_0930.js": "d7c2dec3f7ab4f6fc6cc49a3f080e65102306dd325c3c0250d32bdf1fcdbacee",
+    "cinematic-review.html": "06ef504fe53842169a93016d16a3bb98a63a68f55332764f170926852bd17853",
+    "_BUILD_SOURCE/probe_cinema_0930.py": "9d2c14b53a575b36138d743f898d9a13989da76eeaffeddc7b1bb0b1715aeac8",
+    "assets/game/cinema_0930/manifest.json": "5ae81c774a4885e384436e68ad3dfc4cb157fc1bc9db4c0bfdf402f282156496"
+  }
+}

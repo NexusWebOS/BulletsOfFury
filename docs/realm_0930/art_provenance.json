@@ -1,0 +1,46 @@
+{
+  "generator": "built-in image_gen",
+  "date": "2026-09-30",
+  "briefsAreSummaries": true,
+  "sources": [
+    {
+      "file": "possessed.png",
+      "brief": "Three isolated modular components: gray robot host with green eye and side sockets possessed by black/red symbiote; matching separate claws.",
+      "references": [
+        "vile24_robot_gray",
+        "vile24_alien_final"
+      ]
+    },
+    {
+      "file": "colossus.png",
+      "brief": "Massive black alien symbiote torso with ivory eyes and crimson fissures, plus independent left and right talon arms.",
+      "references": [
+        "vile24_alien_final"
+      ]
+    },
+    {
+      "file": "furnace.png",
+      "brief": "Black symbiote possession of the Furnace Tyrant, preserving the mechanical face, orange mouth and shoulder identity.",
+      "references": [
+        "fzt_body_intact",
+        "vile24_alien_final"
+      ]
+    },
+    {
+      "file": "chopper.png",
+      "brief": "South-facing possessed Stage 1 helicopter hull plus separate X rotor; preserve long tail, rocket wings and canopy identity.",
+      "references": [
+        "native Stage 1 helicopter capture",
+        "vile24_alien_final"
+      ]
+    },
+    {
+      "file": "fx.png",
+      "brief": "4x4 aligned transparent cells: exclusive rupture sequence, fragment reformation, binary bolt/data bomb/dark-matter orb/tentacle spear, and portal opening/closure."
+    },
+    {
+      "file": "walls.png",
+      "brief": "3x2 transparent cells: intact/cracked/breaking alien binary wall, plus intact/cracked/breaking fitted binary shield with an open center."
+    }
+  ]
+}

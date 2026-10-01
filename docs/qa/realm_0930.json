@@ -1,0 +1,149 @@
+{
+  "nativeTransitions": {
+    "checks": [
+      {
+        "ok": true,
+        "name": "intro reaches fight"
+      },
+      {
+        "ok": true,
+        "name": "form 0 cycles without invalid HP"
+      },
+      {
+        "ok": true,
+        "name": "form 1 cycles without invalid HP"
+      },
+      {
+        "ok": true,
+        "name": "form 2 cycles without invalid HP"
+      },
+      {
+        "ok": true,
+        "name": "wall takes damage and flashes"
+      },
+      {
+        "ok": true,
+        "name": "wall destroyed opens gap"
+      },
+      {
+        "ok": true,
+        "name": "form 0 death hides bar without ending fight"
+      },
+      {
+        "ok": true,
+        "name": "form 1 death hides bar without ending fight"
+      },
+      {
+        "ok": true,
+        "name": "form 2 death hides bar without ending fight"
+      },
+      {
+        "ok": true,
+        "name": "portal reunion rewards only at completion"
+      },
+      {
+        "ok": true,
+        "name": "no native browser errors"
+      }
+    ],
+    "errors": []
+  },
+  "nativeCombat": {
+    "checks": [
+      {
+        "ok": true,
+        "name": "normal real boss-hit routing, shield and four health layers"
+      },
+      {
+        "ok": true,
+        "name": "hard real boss-hit routing, shield and four health layers"
+      },
+      {
+        "ok": true,
+        "name": "furious real boss-hit routing, shield and four health layers"
+      },
+      {
+        "ok": true,
+        "name": "insanity real boss-hit routing, shield and four health layers"
+      },
+      {
+        "ok": true,
+        "name": "native update loop keeps wall and boss coordinates valid"
+      },
+      {
+        "ok": true,
+        "name": "Retina locks three moving modules and missiles damage them"
+      },
+      {
+        "ok": true,
+        "name": "launched homing missile reaches module through native updatePlay"
+      },
+      {
+        "ok": true,
+        "name": "launched homing missile reaches shield through native updatePlay"
+      },
+      {
+        "ok": true,
+        "name": "launched homing missile reaches wall through native updatePlay"
+      },
+      {
+        "ok": true,
+        "name": "native primary weapon 0 damages the modular host"
+      },
+      {
+        "ok": true,
+        "name": "native primary weapon 3 damages the modular host"
+      },
+      {
+        "ok": true,
+        "name": "native primary weapon 5 damages the modular host"
+      },
+      {
+        "ok": true,
+        "name": "native primary weapon 7 damages the modular host"
+      },
+      {
+        "ok": true,
+        "name": "native code-rain projectiles remain finite"
+      },
+      {
+        "ok": true,
+        "name": "rotation memory stays within 48 MiB budget"
+      },
+      {
+        "ok": true,
+        "name": "all nine pilots steer with neutral hull and matching clockwise headings"
+      },
+      {
+        "ok": true,
+        "name": "no native page or draw errors"
+      }
+    ],
+    "errors": []
+  },
+  "visual": {
+    "render": {
+      "median": 4.200000002980232,
+      "p95": 6.700000002980232,
+      "rotationBytes": 11895780
+    },
+    "stress": {
+      "withinBudget": true,
+      "bytes": 50199824,
+      "budget": 50331648
+    },
+    "errors": []
+  },
+  "rotation": {
+    "sources": 2414,
+    "pages": 1996,
+    "headings": 72,
+    "logicalFrames": 173808,
+    "bytes": 4707758078,
+    "missing": []
+  },
+  "suite": {
+    "summary": "FALVA/LIZZIE BUILD OK, 0 ERRORS",
+    "passingLines": 6114
+  }
+}

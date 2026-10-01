@@ -1,0 +1,142 @@
+{
+  "image": "east_coast_flames_v3.png",
+  "columns": 4,
+  "rows": 2,
+  "fps": 12,
+  "frame_width": 256,
+  "frame_height": 512,
+  "count": 8,
+  "direction": "left",
+  "motion": "authored frames; fixed destination; no texture offsets",
+  "opaque": true,
+  "frames": [
+    {
+      "index": 0,
+      "source_box": [
+        0,
+        0,
+        314,
+        627
+      ],
+      "rect": [
+        0,
+        0,
+        256,
+        512
+      ],
+      "sha256": "4e77a909d68c4ccab218f44f4fcc88f853af642edd3b1c05898144abec19fd1a"
+    },
+    {
+      "index": 1,
+      "source_box": [
+        314,
+        0,
+        627,
+        627
+      ],
+      "rect": [
+        256,
+        0,
+        256,
+        512
+      ],
+      "sha256": "e615db57ab641cc1cdc958f4b66708c79fd357468c9ca5275907bfcd95966156"
+    },
+    {
+      "index": 2,
+      "source_box": [
+        627,
+        0,
+        940,
+        627
+      ],
+      "rect": [
+        512,
+        0,
+        256,
+        512
+      ],
+      "sha256": "cd07636473c4dbba390159481dbbd9ad2d5505f5a88ed1156146b7fcb4c68e7e"
+    },
+    {
+      "index": 3,
+      "source_box": [
+        940,
+        0,
+        1254,
+        627
+      ],
+      "rect": [
+        768,
+        0,
+        256,
+        512
+      ],
+      "sha256": "d5c07b3df8be2c1f4947cc835626fadbee5d961ef008ca1c52dff795c0175fd8"
+    },
+    {
+      "index": 4,
+      "source_box": [
+        0,
+        627,
+        314,
+        1254
+      ],
+      "rect": [
+        0,
+        512,
+        256,
+        512
+      ],
+      "sha256": "920efe8f7499bbc82c9b3dc23cd5ad84dd22d913cd842c082566722a7cb4cf99"
+    },
+    {
+      "index": 5,
+      "source_box": [
+        314,
+        627,
+        627,
+        1254
+      ],
+      "rect": [
+        256,
+        512,
+        256,
+        512
+      ],
+      "sha256": "6a00e00ef3653e17a5653e587729cc73cb075e35ef6204c0b5a03b9ab297053e"
+    },
+    {
+      "index": 6,
+      "source_box": [
+        627,
+        627,
+        940,
+        1254
+      ],
+      "rect": [
+        512,
+        512,
+        256,
+        512
+      ],
+      "sha256": "dafb3fe65a00f92e2095883060e43e8368461fe3fb736f11304d0a94a5b4e025"
+    },
+    {
+      "index": 7,
+      "source_box": [
+        940,
+        627,
+        1254,
+        1254
+      ],
+      "rect": [
+        768,
+        512,
+        256,
+        512
+      ],
+      "sha256": "824b830358d6b3d839ab1cc562746915869a9c08d4e14522515059abf393f773"
+    }
+  ]
+}

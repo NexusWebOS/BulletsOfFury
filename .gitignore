@@ -48,3 +48,6 @@ _BUILD_SOURCE/.secrets.json
 docs/marketing_*/clips/
 docs/marketing_*/video/
 docs/marketing_*/social/thumbs/_frames/
+
+# Regenerable 72-heading porting pages; catalog, manifest and exporter are retained.
+_ART_SOURCES/rotation5_0930/*.png

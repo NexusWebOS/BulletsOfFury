@@ -25,7 +25,7 @@ try:
   def capture(name):
    (OUT/(name+'.png')).write_bytes(base64.b64decode(ev('()=>cv.toDataURL().split(",")[1]')))
   ev(SETUP,{'state':'PLAY','stage':1,'pilot':'cole','invuln':True})
-  ev('''()=>{stagePlan=[];waveIdx=999;_adaptiveSpawnT=999;spawnClock=9999;player.invuln=1e9;
+  ev('''()=>{stagePlan=[];waveIdx=999;_adaptiveSpawnT=999;spawnClock=9999;player.invuln=1e9;mapScroll=Math.max(0,levelScrollRange()-220);
     window.resetOV=function(d){diffKey=d;DIFF=DIFFS[d];spawnBoss('damkeeper');boss.enter=false;boss._ovIntro=null;
       boss._noHit=false;boss._ovAirborne=false;boss.x=VW/2;boss.y=VH*.22;boss._pivot=0;
       enemies=[];eBullets=[];pBullets=[];playerLocks=[];powerups=[];player.x=VW/2;player.y=VH*.8;
@@ -84,8 +84,9 @@ try:
   step(26);capture('rush_committed_zone')
   step(34);capture('rush_charge')
   # All four authored lane plates remain visible during selection; no FOV during a missile tell.
-  report['warningRoutes']=ev('''()=>{let lanes=0,cones=0,alerts=0;
-    const fov=l23FovDraw,alert=l23WarnSymbolDraw;
+  report['warningRoutes']=ev('''()=>{let lanes=0,cones=0,alerts=0,redZones=0;
+    const fov=l23FovDraw,alert=l23WarnSymbolDraw,fill=ctx.fillRect.bind(ctx);
+    ctx.fillRect=function(x,y,w,h){if(this.fillStyle==='#ff2018'&&w===worldWidth()/4&&h>300)redZones++;return fill(x,y,w,h);};
     l23FovDraw=function(){cones++;return fov.apply(this,arguments);};
     l23WarnSymbolDraw=function(){const shown=alert.apply(this,arguments);if(shown)alerts++;return shown;};
     try{resetOV('furious');ovStartMissileLock(boss);boss._ovVolley.t=1.1;drawBossSprite(boss);
@@ -93,8 +94,8 @@ try:
       boss._ovVolley=null;ovStartRush(boss);ovRushLeg(boss);boss._ovRush.t=.22;boss._ovRush.active=2;
       ovRushWarningDraw(boss,false);lanes=cones;
       boss._ovRush.phase='lock';boss._ovRush.t=.03;ovRushWarningDraw(boss,true);
-      return {missile,lanes,lockAlert:alerts>0};
-    }finally{l23FovDraw=fov;l23WarnSymbolDraw=alert;}}''')
+      return {missile,lanes,redZones,lockAlert:alerts>0};
+    }finally{l23FovDraw=fov;l23WarnSymbolDraw=alert;ctx.fillRect=fill;}}''')
   report['evasion']={}
   ev("()=>{XART.rdy('ship_cole_so0');}");page.wait_for_timeout(100)
   for mode in ['roll','somer','clear','none']:
@@ -115,13 +116,14 @@ for row in report['contracts']:
  d=row['difficulty'];s=row['sweep'];m=row['missiles'];r=row['rush']
  assert s['passes']==(3 if d=='furious' else 1) and s['anchored'] and s['bounded'] and s['charge'],row
  assert 24<s['bank']<26,row
+ assert len(row['sonic']['fans'])=={'normal':2,'hard':3,'furious':6}[d],row
  assert row['sonic']['salvoHandoff'] and all(f['south'] and f['count']==(3 if f['fan'] else 1) for f in row['sonic']['fans']),row
- assert m['left']==m['right']=={'normal':2,'hard':4,'furious':8}[d] and m['staggered'] and m['rushHandoff'],row
+ assert m['left']==m['right']=={'normal':2,'hard':4,'furious':5}[d] and m['staggered'] and m['rushHandoff'],row
  assert len(r['legs'])==(12 if d=='furious' else 4) and all(q['dir']==(1 if i%2==0 else -1) for i,q in enumerate(r['legs'])),row
  assert r['committed'] and r['restored'] and r['bounded'] and all(t>=.33 for t in r['locks']),row
 assert all(s in report['nativeStates'] for s in ['gunSweep','chargeTell','chargeOff','reentry','sonicCombo','missileLock','zoneRush']),report['nativeStates']
-assert report['warningRoutes']=={'missile':{'cones':0,'alerts':1},'lanes':4,'lockAlert':True},report['warningRoutes']
+assert report['warningRoutes']=={'missile':{'cones':0,'alerts':1},'lanes':0,'redZones':4,'lockAlert':True},report['warningRoutes']
 assert all(not report['evasion'][m]['dead'] and report['evasion'][m]['lives']==5 for m in ['roll','somer','clear']),report['evasion']
 assert report['evasion']['none']['dead'] or report['evasion']['none']['lives']<5,report['evasion']
 assert not errors,errors
-print('PASS: all three difficulties, native sequence, anchors, 2/4/8-per-side missiles, south-facing fans, and 4/4/12 committed rush legs. No browser errors.')
+print('PASS: all three difficulties, native sequence, anchors, 2/4/5-per-side missiles, 2/3/6 sonic volleys, four red warning zones, south-facing fans, and 4/4/12 committed rush legs. No browser errors.')

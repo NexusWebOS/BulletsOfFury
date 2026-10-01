@@ -1,0 +1,343 @@
+{
+  "possessed_armL": {
+    "path": "assets/game/realm_0930/possessed_armL.png",
+    "w": 175,
+    "h": 392,
+    "sourceBox": [
+      24,
+      147,
+      396,
+      1004
+    ]
+  },
+  "possessed_body": {
+    "path": "assets/game/realm_0930/possessed_body.png",
+    "w": 392,
+    "h": 349,
+    "sourceBox": [
+      346,
+      36,
+      1186,
+      782
+    ]
+  },
+  "possessed_armR": {
+    "path": "assets/game/realm_0930/possessed_armR.png",
+    "w": 175,
+    "h": 392,
+    "sourceBox": [
+      1140,
+      148,
+      1512,
+      1004
+    ]
+  },
+  "colossus_body": {
+    "path": "assets/game/realm_0930/colossus_body.png",
+    "w": 275,
+    "h": 392,
+    "sourceBox": [
+      5,
+      10,
+      702,
+      1011
+    ]
+  },
+  "colossus_armL": {
+    "path": "assets/game/realm_0930/colossus_armL.png",
+    "w": 171,
+    "h": 392,
+    "sourceBox": [
+      684,
+      6,
+      1109,
+      1005
+    ]
+  },
+  "colossus_armR": {
+    "path": "assets/game/realm_0930/colossus_armR.png",
+    "w": 149,
+    "h": 392,
+    "sourceBox": [
+      1169,
+      6,
+      1529,
+      989
+    ]
+  },
+  "furnace": {
+    "path": "assets/game/realm_0930/furnace.png",
+    "w": 358,
+    "h": 392,
+    "sourceBox": [
+      80,
+      26,
+      1174,
+      1226
+    ]
+  },
+  "chopper_body": {
+    "path": "assets/game/realm_0930/chopper_body.png",
+    "w": 279,
+    "h": 392,
+    "sourceBox": [
+      93,
+      60,
+      739,
+      974
+    ]
+  },
+  "chopper_rotor": {
+    "path": "assets/game/realm_0930/chopper_rotor.png",
+    "w": 392,
+    "h": 363,
+    "sourceBox": [
+      857,
+      245,
+      1490,
+      830
+    ]
+  },
+  "fx_0": {
+    "path": "assets/game/realm_0930/fx_0.png",
+    "w": 264,
+    "h": 264,
+    "sourceBox": [
+      69,
+      100,
+      226,
+      242
+    ]
+  },
+  "fx_1": {
+    "path": "assets/game/realm_0930/fx_1.png",
+    "w": 264,
+    "h": 263,
+    "sourceBox": [
+      9,
+      22,
+      296,
+      305
+    ]
+  },
+  "fx_2": {
+    "path": "assets/game/realm_0930/fx_2.png",
+    "w": 264,
+    "h": 264,
+    "sourceBox": [
+      8,
+      16,
+      307,
+      306
+    ]
+  },
+  "fx_3": {
+    "path": "assets/game/realm_0930/fx_3.png",
+    "w": 264,
+    "h": 263,
+    "sourceBox": [
+      34,
+      38,
+      294,
+      299
+    ]
+  },
+  "fx_4": {
+    "path": "assets/game/realm_0930/fx_4.png",
+    "w": 263,
+    "h": 264,
+    "sourceBox": [
+      19,
+      11,
+      304,
+      309
+    ]
+  },
+  "fx_5": {
+    "path": "assets/game/realm_0930/fx_5.png",
+    "w": 264,
+    "h": 264,
+    "sourceBox": [
+      15,
+      27,
+      301,
+      310
+    ]
+  },
+  "fx_6": {
+    "path": "assets/game/realm_0930/fx_6.png",
+    "w": 263,
+    "h": 264,
+    "sourceBox": [
+      21,
+      30,
+      282,
+      310
+    ]
+  },
+  "fx_7": {
+    "path": "assets/game/realm_0930/fx_7.png",
+    "w": 264,
+    "h": 264,
+    "sourceBox": [
+      6,
+      29,
+      298,
+      314
+    ]
+  },
+  "fx_8": {
+    "path": "assets/game/realm_0930/fx_8.png",
+    "w": 264,
+    "h": 264,
+    "sourceBox": [
+      91,
+      12,
+      226,
+      309
+    ]
+  },
+  "fx_9": {
+    "path": "assets/game/realm_0930/fx_9.png",
+    "w": 264,
+    "h": 263,
+    "sourceBox": [
+      25,
+      17,
+      277,
+      302
+    ]
+  },
+  "fx_10": {
+    "path": "assets/game/realm_0930/fx_10.png",
+    "w": 264,
+    "h": 264,
+    "sourceBox": [
+      17,
+      23,
+      295,
+      293
+    ]
+  },
+  "fx_11": {
+    "path": "assets/game/realm_0930/fx_11.png",
+    "w": 264,
+    "h": 263,
+    "sourceBox": [
+      102,
+      0,
+      211,
+      305
+    ]
+  },
+  "fx_12": {
+    "path": "assets/game/realm_0930/fx_12.png",
+    "w": 263,
+    "h": 264,
+    "sourceBox": [
+      99,
+      10,
+      221,
+      293
+    ]
+  },
+  "fx_13": {
+    "path": "assets/game/realm_0930/fx_13.png",
+    "w": 264,
+    "h": 264,
+    "sourceBox": [
+      42,
+      5,
+      246,
+      302
+    ]
+  },
+  "fx_14": {
+    "path": "assets/game/realm_0930/fx_14.png",
+    "w": 263,
+    "h": 264,
+    "sourceBox": [
+      5,
+      6,
+      302,
+      304
+    ]
+  },
+  "fx_15": {
+    "path": "assets/game/realm_0930/fx_15.png",
+    "w": 264,
+    "h": 264,
+    "sourceBox": [
+      126,
+      6,
+      236,
+      303
+    ]
+  },
+  "walls_0": {
+    "path": "assets/game/realm_0930/walls_0.png",
+    "w": 226,
+    "h": 264,
+    "sourceBox": [
+      69,
+      0,
+      423,
+      496
+    ]
+  },
+  "walls_1": {
+    "path": "assets/game/realm_0930/walls_1.png",
+    "w": 226,
+    "h": 264,
+    "sourceBox": [
+      21,
+      0,
+      395,
+      496
+    ]
+  },
+  "walls_2": {
+    "path": "assets/game/realm_0930/walls_2.png",
+    "w": 226,
+    "h": 264,
+    "sourceBox": [
+      0,
+      2,
+      375,
+      496
+    ]
+  },
+  "walls_3": {
+    "path": "assets/game/realm_0930/walls_3.png",
+    "w": 241,
+    "h": 264,
+    "sourceBox": [
+      89,
+      0,
+      446,
+      489
+    ]
+  },
+  "walls_4": {
+    "path": "assets/game/realm_0930/walls_4.png",
+    "w": 241,
+    "h": 264,
+    "sourceBox": [
+      35,
+      0,
+      421,
+      489
+    ]
+  },
+  "walls_5": {
+    "path": "assets/game/realm_0930/walls_5.png",
+    "w": 241,
+    "h": 264,
+    "sourceBox": [
+      0,
+      0,
+      411,
+      488
+    ]
+  }
+}

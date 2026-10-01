@@ -1,0 +1,12 @@
+{
+  "tool": "built-in image_gen",
+  "sources": {
+    "vent": "exec-bb3226ee-c155-406b-adb2-a2ddc896f1b6.png",
+    "tank": "exec-e98c04ab-27b3-47b4-ab70-e9b34ad09db5.png",
+    "jet": "exec-15a3b323-ba0f-47f8-a15b-a76e1de275d1.png",
+    "ace": "exec-5c5b6ff6-c5ed-450a-bd5f-ee95bfdc8f73.png",
+    "bomber": "exec-33de87e7-6cd4-4ac5-b6ef-134bc28a5189.png",
+    "entry": "exec-b87eabae-1de3-424d-a8bb-7aa60852416c.png"
+  },
+  "processing": "Reviewed cell cuts and pivots, nearest-neighbour resampling, preserved generated alpha. Wing modules are exact crops of level poses; vent fluid separated from stationary outlet."
+}

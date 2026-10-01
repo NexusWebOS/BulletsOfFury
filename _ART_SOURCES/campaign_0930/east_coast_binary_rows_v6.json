@@ -1,0 +1,9 @@
+{
+  "tool": "built-in image_gen",
+  "prompt": "Create ONE vertical 16-bit pixel-art ALIEN BINARY DATA WALL sprite for the Bullets of Fury campaign map, isolated on genuine transparent background. This is a huge locked-map barrier seen from above/straight-on, placed along the far LEFT side of a blue ocean map. Dominant visual is at least 20 dense HORIZONTAL ROWS of small crisp, readable 0 and 1 digits across the entire wall, like `01000010 1001100100101 00101110` and varying sequences, each row 12\u201322 characters long. Make it look like an otherworldly machine-code curtain: thin cyan/ice-blue/pale-white digits on deep charcoal, black, and navy digital static, with occasional muted teal scanline highlights. The rows must be the main texture and remain legible when reduced for a game map. The wall has an opaque dark left core and a rough dissolving RIGHT edge where tiny binary fragments break into transparency over the ocean; do not make a simple straight rectangle. Static fixed-position wall, no scrolling trail. Restrained 16-bit hard pixels and chunky graphic detail, much less purple than before (at most tiny hints of violet, under 5%). Explicitly NO crystals, diamonds, gems, neon pink or magenta, giant standalone digits, flame, smoke, lightning, circuitry columns, icons, symbols besides 0 and 1, labels, map background, ocean, checkerboard, frames or UI. One complete tall wall panel, no multi-panel contact sheet, no clipping, aspect ratio approximately 1:2.",
+  "master_size": [
+    887,
+    1774
+  ],
+  "reference": "user feedback requested dense binary rows and less purple/crystal than v5"
+}

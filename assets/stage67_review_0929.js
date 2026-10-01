@@ -582,11 +582,11 @@ for(const [k,f] of [['whv_closed_w','carrier_closed_wells'],['whv_open_w','carri
   XART._src[k]='assets/game/bosses/skycarrier/'+f+'.png';
 const S67C={FAN_D:58,WELL_D:60,CAN_W:34,CAN_H:59.5,CAN_IN:30,CAN_OUT:84};
 const S67_WHV_WARM=whvWarm;
-whvWarm=function(){S67_WHV_WARM();for(const k of ['whv_closed_w','whv_open_w','whv_broken_w','whv_well','whv_cannon','tlv_beam','whv_acem_body','whv_acem_wingL','whv_acem_wingR','whv_acem_body_dmg','whv_acem_wingL_dmg','whv_acem_wingR_dmg'])try{XART.rdy(k);}catch(_w){}};
+whvWarm=function(){S67_WHV_WARM();for(const k of ['whv_closed_w','whv_open_w','whv_broken_w','whv_well','whv_cannon','tlv_beam','mission29_beam_lightning','whv_acem_body','whv_acem_wingL','whv_acem_wingR','whv_acem_body_dmg','whv_acem_wingL_dmg','whv_acem_wingR_dmg'])try{XART.rdy(k);}catch(_w){}};
 function s67WhvDeployed(W){return W.hard&&W.mode==='carrier'&&['open','launch','hold'].includes(W.st);}
 /* the cannon's muzzle, in world space: under the front of its nacelle, as far out as it is deployed */
 function s67WhvMuzzle(b,side){const W=b._whv,s=WHV_S,dep=(W.dep&&W.dep[side])||0,hub=whvPartPos(b,side);
-  return {x:hub.x,y:hub.y+(lerp(S67C.CAN_IN,S67C.CAN_OUT,dep)+S67C.CAN_H*.5-3)*s};}
+  return {x:hub.x,y:hub.y+(W.dy||0)+(lerp(S67C.CAN_IN,S67C.CAN_OUT,dep)+S67C.CAN_H*.5-6)*s};}
 const S67_WHV_TICK=whvCarrierTick;
 whvCarrierTick=function(b,dt){
   const W=b._whv;if(!W.dep)W.dep={L:0,R:0};if(!W.spin)W.spin={L:0,R:0};
@@ -619,12 +619,12 @@ whvCannonTick=function(b,dt){
 };
 function s67WhvCannonDraw(b,id,alpha){
   const W=b._whv,s=WHV_S,dep=(W.dep&&W.dep[id])||0,hub=whvPartPos(b,id);if(!XART.rdy('whv_cannon'))return;
-  const im=XART.get('whv_cannon'),w=S67C.CAN_W*s,h=S67C.CAN_H*s,y=hub.y+lerp(S67C.CAN_IN,S67C.CAN_OUT,dep)*s;
+  const im=XART.get('whv_cannon'),w=S67C.CAN_W*s,h=S67C.CAN_H*s,y=hub.y+(W.dy||0)+lerp(S67C.CAN_IN,S67C.CAN_OUT,dep)*s;
   ctx.save();ctx.globalAlpha=alpha;ctx.imageSmoothingEnabled=false;ctx.drawImage(im,hub.x-w/2,y-h/2,w,h);
   const B=[W.beam,W.beam2].find(q=>q&&q.side===id),k=B&&B.t<B.warn?clamp(B.t/B.warn,0,1):B?1:(W.can.seq&&W.can.seq.side===id?.45:0);
   if(k>0){ctx.globalCompositeOperation='lighter';ctx.globalAlpha=alpha*(.25+.6*k*(.6+.4*Math.sin((b.t||0)*(18+k*30))));ctx.drawImage(im,hub.x-w/2,y-h/2,w,h);
-    const c=xartPalette('florb_'+(Math.floor((b.t||0)*16)%8),'#3ad0ff'),m=s67WhvMuzzle(b,id),d=10+k*30;
-    if(c){ctx.globalAlpha=alpha*(.5+.5*k);ctx.drawImage(c,m.x-d/2,m.y-d/2,d,d);}}
+    // The coils themselves carry the charge; no spherical orb covering the nozzle.
+  }
   ctx.restore();
 }
 const S67_BASE_WHV_DRAW=whvDrawCarrier;
@@ -659,20 +659,51 @@ whvDrawCarrier=function(b){
   ctx.restore();
   for(const e of W.jets)if(e&&!e.dead&&e.y<cy+ph*.55&&typeof drawEnemy==='function'){try{drawEnemy(e);}catch(_de){}}
 };
-/* the beam and the balls leave the muzzle; the beam is the Tempest's authored blue beam */
+/* One shared beam envelope drives the warning, animation and collision. */
+function s67WhvBeamShape(b,B){
+  const q=s67WhvMuzzle(b,B.side),u=B.t-B.warn;
+  const open=u<0||u>=B.fire?0:clamp(u/.12,0,1)*clamp((B.fire-u)/.18,0,1);
+  return {x:q.x,y:q.y,w:B.w*open,open,flare:52,bottom:VH+40};
+}
+function s67WhvBeamHalf(G,y){const u=clamp((y-G.y)/G.flare,0,1);return G.w*.5*lerp(.05,1,u*u*(3-2*u));}
+whvBeamTick1=function(b,dt){
+  const W=b._whv,B=W.beam;if(!B)return;
+  if(W.parts[B.side].dead||!s67WhvDeployed(W)){W.beam=null;return;}
+  B.t+=dt;
+  if(B.t<B.warn){combatWarningTick(b,'whvbeam-'+B.side,B.t,B.warn);return;}
+  if(!B.sfx){B.sfx=true;whvSfx('laserShot');shake=Math.max(shake,6);}
+  const G=s67WhvBeamShape(b,B);
+  for(const seat of seatList())withSeat(seat,()=>{
+    if(G.open>.04&&player.y>G.y&&player.y<G.bottom&&Math.abs(player.x-G.x)<Math.max(0,s67WhvBeamHalf(G,player.y)-6))playerHit('carrier beam');
+  });
+  if(B.t>=B.warn+B.fire)W.beam=null;
+};
 const S67_WHV_SHOTS=whvDrawShots;
 whvDrawShots=function(b){
   const W=b._whv,keep=[W.beam,W.beam2];W.beam=null;W.beam2=null;
   try{S67_WHV_SHOTS(b);}finally{W.beam=keep[0];W.beam2=keep[1];}
-  for(const B of keep)if(B&&!W.parts[B.side].dead){const q=s67WhvMuzzle(b,B.side);
-    if(B.t<B.warn){combatWarningDraw(b,{x:q.x,y:q.y,ex:q.x,ey:VH+40,progress:B.t/B.warn,width:B.w});continue;}
-    const u=B.t-B.warn,open=clamp(u/.12,0,1)*clamp((B.fire-u)/.18,0,1),w=B.w*open,h=VH-q.y+40,im=tlvImg('tlv_beam');
+  for(const B of keep)if(B&&!W.parts[B.side].dead){
+    const G=s67WhvBeamShape(b,B);
+    if(B.t<B.warn){combatWarningDraw(b,{x:G.x,y:G.y,ex:G.x,ey:G.bottom,progress:B.t/B.warn,width:B.w});continue;}
+    if(!G.open)continue;
+    const A=MISSION29_ART.beam_lightning,core=tlvImg('tlv_beam');
+    if(!core||!XART.rdy(A.key))continue;
+    const arc=XART.get(A.key),f=A.frames[Math.floor((b.t||0)*A.fps)%A.frames.length];
+    const h=G.bottom-G.y,iw=core.naturalWidth||core.width,ih=core.naturalHeight||core.height;
     ctx.save();ctx.imageSmoothingEnabled=false;
-    if(im){ctx.globalAlpha=.92;ctx.drawImage(im,q.x-w/2,q.y,w,h);ctx.globalCompositeOperation='lighter';ctx.globalAlpha=.35;ctx.drawImage(im,q.x-w*.2,q.y,w*.4,h);}
-    else{const c=xartPalette('fllaser_0','#3ad0ff');if(c){ctx.globalCompositeOperation='lighter';ctx.globalAlpha=.8;ctx.drawImage(c,q.x-w/2,q.y,w,h);}}
-    const fl=xartPalette('florb_'+(Math.floor((b.t||0)*18)%8),'#9ff0ff'),d=w*.55+10;
-    if(fl){ctx.globalCompositeOperation='lighter';ctx.globalAlpha=.9*open;ctx.drawImage(fl,q.x-d/2,q.y-d/2,d,d);}
-    ctx.restore();}
+    const strip=(dy,dh)=>{
+      const width=s67WhvBeamHalf(G,G.y+dy+dh*.5)*2;
+      // Warp the authored plasma into its nozzle; clipping a wide slab made a hard triangle.
+      ctx.globalAlpha=.95;
+      ctx.drawImage(core,iw*.27,ih*dy/h,iw*.49,ih*dh/h,G.x-width/2,G.y+dy,width,dh);
+      ctx.globalAlpha=.24;ctx.globalCompositeOperation='lighter';
+      ctx.drawImage(arc,f[0]+A.ink[0],f[1]+A.ink[1]+A.ink[3]*dy/h,A.ink[2],A.ink[3]*dh/h,G.x-width/2,G.y+dy,width,dh);
+      ctx.globalCompositeOperation='source-over';
+    };
+    for(let y=0;y<G.flare;y+=2)strip(y,Math.min(2,G.flare-y));
+    strip(G.flare,h-G.flare);
+    ctx.restore();
+  }
 };
 
 /* ---------------------------------------------------------------------------

@@ -203,9 +203,7 @@ hammerBossDamage=function(b,dmg){
 hammerBossTick=function(b,dt){
  const h=b._hammer;let A=fr27Armor(b);
  const passwordReady=!b._hammerTime||b._hammerTime.mode==='attack';
- if(!A&&diffKey==='hard'&&h.balance0922&&!b._noHit&&passwordReady&&!['flyby','return','unfold'].includes(h.state))
-  A=h.frArmor={hp:0,max:b.maxhp,t:0,active:false,half:true,checkpoints:[.75,.35,.15],barrier:0,rage:false};
- if(!A&&hammerFurious()&&h.balance0922&&!b._noHit&&passwordReady&&!['flyby','return','unfold'].includes(h.state))A=fr27BeginArmor(b);
+ if(!A&&h.balance0922&&!b._noHit&&passwordReady&&!['flyby','return','unfold'].includes(h.state))A=fr27BeginArmor(b);
  if(!A)return FR27_BASE.hammerTick(b,dt);
  A.t+=dt;A.flash=Math.max(0,(A.flash||0)-dt);fr27Reflect(b,A,dt);
  if(h.state==='fr_activation'){fr27ActivationTick(b,dt);return;}
@@ -255,7 +253,8 @@ hammerBossDraw=function(b){
  if(s==='fr_activation'){ /* the real boss, in his idle pose, with the chromium spreading over it */
   /* the storm-idle reel is the standing pose that routes through hammerChromiumPoseDraw, which is
      what carries the empowered core-out armor mask; the ordinary idle pose does not */
-  const mode=h.mode;h.state='storm_idle';h.mode='storm';try{FR27_BASE.hammerDraw(b);}finally{h.state='fr_activation';h.mode=mode;}drawn=true;}
+  if(typeof repair30ChromiumActivationDraw==='function')drawn=repair30ChromiumActivationDraw(b);
+  else{const mode=h.mode;h.state='storm_idle';h.mode='storm';try{FR27_BASE.hammerDraw(b);}finally{h.state='fr_activation';h.mode=mode;}drawn=true;}}
  else if(s==='fr_twirl')drawn=fr27Cell('fr27_chromium_actions',h.t<2.2?Math.floor(h.t*(7+h.t*5))%4:Math.min(3,Math.floor((h.t-2.2)/.65*4)),h.t<2.2?1:2,b.x,b.y,252,258,1);
  /* 0929: fr_stun IS his stun, so it draws as one - the base storm stun's authored pose (hit, stunned, getting up),
     its static and the hammer-core burst, on the same 4 s clock. Nothing drew fr_stun before: he stood in his

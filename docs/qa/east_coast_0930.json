@@ -1,0 +1,124 @@
+{
+  "flameDraws": 160,
+  "retiredDraws": 0,
+  "noWesternGeography": true,
+  "time": 5.415900000000021,
+  "animation": {
+    "samples": 9,
+    "uniqueFrames": 8,
+    "fixedDestination": true,
+    "fixedTransform": true,
+    "fullDrawOpacity": true,
+    "loops": true,
+    "sourceRects": [
+      [
+        0,
+        0,
+        256,
+        512
+      ],
+      [
+        256,
+        0,
+        256,
+        512
+      ],
+      [
+        512,
+        0,
+        256,
+        512
+      ],
+      [
+        768,
+        0,
+        256,
+        512
+      ],
+      [
+        0,
+        512,
+        256,
+        512
+      ],
+      [
+        256,
+        512,
+        256,
+        512
+      ],
+      [
+        512,
+        512,
+        256,
+        512
+      ],
+      [
+        768,
+        512,
+        256,
+        512
+      ],
+      [
+        0,
+        0,
+        256,
+        512
+      ]
+    ],
+    "label": true
+  },
+  "organicEdge": {
+    "frames": [
+      {
+        "transparentPixels": 15104,
+        "densePixels": 82758,
+        "edgeVariation": 99
+      },
+      {
+        "transparentPixels": 27912,
+        "densePixels": 65648,
+        "edgeVariation": 111
+      },
+      {
+        "transparentPixels": 17726,
+        "densePixels": 74501,
+        "edgeVariation": 111
+      },
+      {
+        "transparentPixels": 30830,
+        "densePixels": 64229,
+        "edgeVariation": 132
+      },
+      {
+        "transparentPixels": 14424,
+        "densePixels": 79645,
+        "edgeVariation": 106
+      },
+      {
+        "transparentPixels": 18799,
+        "densePixels": 72993,
+        "edgeVariation": 104
+      },
+      {
+        "transparentPixels": 17069,
+        "densePixels": 75834,
+        "edgeVariation": 93
+      },
+      {
+        "transparentPixels": 21660,
+        "densePixels": 77445,
+        "edgeVariation": 91
+      }
+    ],
+    "noHardEdgeClip": true,
+    "perimeterOverlapsOcean": true
+  },
+  "fallback": {
+    "noImageDraw": true,
+    "opaque": true,
+    "coversRegion": true
+  },
+  "animatedPixelsChanged": true,
+  "errors": []
+}

@@ -468,5 +468,15 @@
     "role": "effect",
     "sheet": null,
     "note": "Built-in image generation; HAMMER secret encounter only. Original RGBA preserved, measured cells/anchors in hammer_time_art_0927.js. Owning build _BUILD_SOURCE/build_hammer_time_0927.py; prompts docs/hammer_time_prompts_0927.json."
+  },
+  "realm_0930": {
+    "role": "boss_component",
+    "sheet": null,
+    "note": "Generated modular possessed host, colossus arms/body, helicopter hull/rotor, Furnace disguise, rupture/reform/portal cells and destructible binary walls/shields. REALM30_ART registers all 31 paths. Source and build: docs/REALM_ROTATION_PASS_0930.md."
+  },
+  "campaign_0930": {
+    "role": "campaign_map_geography",
+    "sheet": null,
+    "note": "Generated Fury HQ plaque and northern jungle HQ island, ruined east coast, northern mainland, offshore islands, and an alien binary-data barrier concealing the locked East Coast USA sector to the west. Four palette poses in east_coast_binary_rows_v6.png show dense cyan 0/1 strings flickering at 3 fps at fixed coordinates. The generated ragged alpha perimeter blends over live ocean without scrolling or mirroring. The preserved master, exact prompt and cell manifest are in _ART_SOURCES/campaign_0930 and assets/game/campaign_0930; build_east_coast_binary_rows_0930.py owns the runtime sheet. The v5 crystal wall and v4 fire front are retired. See docs/CAMPAIGN_WORLD_0930.md."
   }
 }

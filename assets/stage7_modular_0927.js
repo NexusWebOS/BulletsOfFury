@@ -82,10 +82,12 @@ function s7mPose(b){const M=b._s7mod,t=M.clock,phase=s7mStage(M),parts=[],tank=M
     for(const s of [-1,1])add(s<0?'gunL':'gunR',1,s*43,65,67,105,clamp(tracking+(M.t>M.warn?Math.sin((M.t-M.warn)*2.1+(s<0?0:Math.PI))*.20:0)-Math.PI/2,-.75,.75));
     add('core',2,0,-39,76,68);return parts;
   }
-  const moving=['entry','chase','crawl','recover','bounce'].includes(M.mode),rearOpen=phase!=='front';
+  const moving=['chase','crawl','recover','bounce'].includes(M.mode),rearOpen=phase!=='front';
+  // Leap out of the aperture with all legs tucked, then extend to absorb the landing.
+  const leap=M.mode==='entry'&&!tank?Math.sin(clamp(M.t/1.12,0,1)*Math.PI):0;
   for(const s of [-1,1]){
     const id=s<0?'rearL':'rearR',gait=moving?Math.sin(t*(phase==='rear'?9:13)+(s<0?Math.PI:0)):0;
-    joint(id,s<0?3:4,s*65,-78,46,rearOpen?138:120,-s*(rearOpen?.55:.62)+gait*.065);
+    joint(id,s<0?3:4,s*65,-78,46,rearOpen?138:120,-s*(rearOpen?.55:.62)+gait*.065+s*leap*.48);
   }
   add('body',0,0,-18,168,198);
   for(const s of [-1,1]){
@@ -93,7 +95,7 @@ function s7mPose(b){const M=b._s7mod,t=M.clock,phase=s7mStage(M),parts=[],tank=M
     if(active)swing=Math.sin(clamp((M.t-M.warn)/.38,0,1)*Math.PI)*s*(M.mode==='swipeX'?1.32:Math.PI/4);
     const raised=['roar','jump'].includes(M.mode)?Math.sin(clamp(M.t/(M.mode==='roar'?2.4:.65),0,1)*Math.PI)*1.8:0;
     const gait=moving?Math.sin(t*(M.mode==='chase'?14:9)+(s<0?0:Math.PI))*.15:0;
-    joint(s<0?'frontL':'frontR',s<0?1:2,s*65,-14,64,128,-s*.18+s*raised+swing+gait);
+    joint(s<0?'frontL':'frontR',s<0?1:2,s*65,-14,64,128,-s*.18+s*raised+swing+gait+s*leap*1.1);
     add(s<0?'canL':'canR',6,s*55,-63+(['roar','mortar'].includes(M.mode)?Math.sin(t*12+s)*7:0),34,88);
     const gun=s<0?'gunL':'gunR',extension=['chain','aim'].includes(M.mode)?Math.min(1,M.t/.65)*15:0;
     const ga=M.aim+(M.t>M.warn&&['chain','aim'].includes(M.mode)?Math.sin((M.t-M.warn)*2.1+(s<0?0:Math.PI))*.20:0);
@@ -158,8 +160,17 @@ function s7mTick(b,dt){if(!s7mOwns(b))return false;const M=s7mInit(b);M.t+=dt;M.
   M.lean+=(M.tank?0:(s7mLive(M,'front').length===1?(s7mLive(M,'front')[0].id==='frontL'?-.15:.15):0)-M.lean)*Math.min(1,dt*4);
   M.drop+=((!M.tank&&ph!=='front'?25:0)-M.drop)*Math.min(1,dt*(mode==='drop'?8:3));
   if(!M.tank){b._s7warden.noHit=['portal','entry','roar','jump','dead','overdrive'].includes(mode);b._s7warden.final.phase=mode==='dead'?'defeat':mode==='portal'?'portalClose':mode==='entry'?'walkIn':mode==='roar'?'roar':'fight';b._s7warden.final.t=M.t;b._s7FinalNoBar=['portal','entry','roar','dead'].includes(mode);}
-  if(mode==='portal'){if(M.t>=1.4)s7mSet(b,'entry');return true;}
-  if(mode==='entry'){b.y+=dt*(M.tank?75:48);if(b.y>=b.ty){b.y=b.ty;s7mSet(b,M.tank?'recover':'roar');}return true;}
+  if(mode==='portal'){if(M.t>=1.4){b.x=worldWidth()/2;b.y=149;s7mSet(b,'entry');}return true;}
+  if(mode==='entry'){
+    if(M.tank){b.y+=dt*75;if(b.y>=b.ty){b.y=b.ty;s7mSet(b,'recover');}return true;}
+    const u=clamp(M.t/1.12,0,1),e=1-Math.pow(1-u,2);
+    b.x=worldWidth()/2;b.y=lerp(149,225,e);M.height=88*Math.sin(u*Math.PI);
+    if(!M.entryCue){M.entryCue=true;s7mSound('hammerThrow');}
+    if(u>=1){M.height=0;s7mSet(b,'roar');M.entryCue=false;
+      shake=Math.max(shake,12);s7mFX(b.x-65,b.y+75,130,false);s7mFX(b.x+65,b.y+75,130,false);
+      s7mSound('expBig');s7WardenMechSound('foot');}
+    return true;
+  }
   if(mode==='roar'){if(M.t>=1.3&&!M.shot){M.shot=1;shake=Math.max(shake,11);s7mFX(b.x,b.y+85,170,true);s7mSound('wardenRail');}if(M.t>=2.65)s7mSet(b,'recover');return true;}
   if(mode==='dead'){while(M.shot<12&&M.t>=M.shot*.19){const i=M.shot++;s7mFX(b.x+Math.sin(i*2.4)*66,b.y+Math.cos(i*1.8)*60,140+i*8,false);if(i%2===0)s7mFX(b.x+Math.sin(i)*70,b.y+55,135,true);s7mSound('expBig');shake=Math.max(shake,11);}
     if(M.t>3.3){if(M.tank){b.dead=true;subBossActive=false;subBossDone=true;run.score+=7000;continueRewardResolve(b,b.x,b.y,'miniboss');dropPowerup(b.x,b.y,'weapon');}else{if(!b._forgeRewardDropped){b._forgeRewardDropped=true;forgeBossDrop(b.x,b.y);run.score+=35000;}s7WardenFinishCampaign(b);}}return true;}
@@ -210,10 +221,20 @@ function s7mTick(b,dt){if(!s7mOwns(b))return false;const M=s7mInit(b);M.t+=dt;M.
 function s7mDraw(b){const M=b._s7mod||s7mInit(b);if(M.mode==='portal')return true;
   if(M.mode==='dead'&&M.t>1.3)return true;
   if(M.mode==='jump'&&M.height>330){const q=M.landing;if(q){ctx.save();ctx.globalAlpha=.12+.2*clamp(M.t/M.warn,0,1);ctx.fillStyle='#000';ctx.beginPath();ctx.ellipse(q.x,q.y,45+55*M.t/M.warn,18+22*M.t/M.warn,0,0,TAU);ctx.fill();ctx.restore();}return true;}
+  ctx.save();
+  if(!M.tank&&M.mode==='entry'){
+    const u=clamp(M.t/1.12,0,1),sc=lerp(.30,1,Math.min(1,u/.76));
+    // Depth scaling is anchored to the portal, not a walk from above the screen.
+    if(u<.16){ctx.beginPath();ctx.ellipse(worldWidth()/2,149,78,111,0,0,TAU);ctx.clip();}
+    const y=b.y-M.height;ctx.translate(b.x,y);ctx.scale(sc,sc);ctx.translate(-b.x,-y);
+  }else if(!M.tank&&M.mode==='roar'&&M.t<.22){
+    const k=Math.sin(M.t/.22*Math.PI);ctx.translate(b.x,b.y+85);ctx.scale(1+.035*k,1-.09*k);ctx.translate(-b.x,-b.y-85);
+  }
   for(const p of s7mPose(b)){const part=M.parts.find(q=>q.id===p.id);if(part&&part.hp<=0)continue;
     const q=s7mWorld(b,p),fl=part?part.flash:(p.id==='body'||p.id==='core'?Math.max(M.coreFlash||0,M.mode==='roar'?.07+.035*Math.sin(M.clock*24):0):0);s7mBlit(M.tank?'tank':p.id==='body'?'body':'warden',p.cell,q.x,q.y,p.w,p.h,p.a+M.lean,1,fl);
     if((p.id.startsWith('can')||p.id==='core')&&['roar','mortar','orbs','tank-mortar'].includes(M.mode))s7mBlit(M.tank?'tank':'warden',p.cell,q.x,q.y,p.w,p.h,p.a+M.lean,.14+.14*Math.sin(M.clock*19),.8);
   }
+  ctx.restore();
   if(!M.tank&&M.shield>0&&M.mode!=='entry'){
     const phase=s7mStage(M),strength=phase==='front'||phase==='rear'?.48:.20;
     s7mBlit('shield',Math.floor(M.clock*10)%8,b.x,b.y-10+M.drop-M.height,210,210,0,strength+(M.shieldFlash||0));
