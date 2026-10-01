@@ -1,0 +1,444 @@
+{
+  "baselineCommit": "db406eca",
+  "baselinePasses": 6121,
+  "baselineFailureNames": [],
+  "suite": {
+    "passes": 6129,
+    "failureNames": [],
+    "finalBanner": true,
+    "exitCode": 0
+  },
+  "rendering": {
+    "dialogue": [
+      {
+        "viewport": [
+          1920,
+          1080
+        ],
+        "canvasWidth": 910,
+        "count": 606,
+        "bad": []
+      },
+      {
+        "viewport": [
+          1280,
+          800
+        ],
+        "canvasWidth": 819,
+        "count": 606,
+        "bad": []
+      },
+      {
+        "viewport": [
+          720,
+          900
+        ],
+        "canvasWidth": 640,
+        "count": 606,
+        "bad": []
+      }
+    ],
+    "combat": [
+      {
+        "type": "skim",
+        "art": "nef_s2_magma_skimmer_intact",
+        "src": null,
+        "hp": 170,
+        "color": "#83d9ff",
+        "flash": 0.12,
+        "crit": [
+          {
+            "text": "+50% DMG CRIT",
+            "color": "#83d9ff"
+          }
+        ],
+        "before": 200,
+        "name": "ice_vs_fire"
+      },
+      {
+        "type": "s3interceptor",
+        "art": "nef_s3_elite_ice_interceptor_intact",
+        "src": null,
+        "hp": 170,
+        "color": "#ff3b30",
+        "flash": 0.12,
+        "crit": [
+          {
+            "text": "+50% DMG CRIT",
+            "color": "#ff3b30"
+          }
+        ],
+        "before": 200,
+        "name": "fire_vs_ice"
+      }
+    ],
+    "wall": {
+      "size": [
+        1254,
+        1254
+      ],
+      "path": "assets/game/campaign_1001/binary_wall_v7.png",
+      "calls": [
+        {
+          "source": [
+            0,
+            0,
+            314,
+            627
+          ],
+          "dest": [
+            -846.6652779678542,
+            -252.96770934208132,
+            979.628086630949,
+            1959.256173261898
+          ]
+        },
+        {
+          "source": [
+            314,
+            0,
+            313,
+            627
+          ],
+          "dest": [
+            -846.6652779678542,
+            -252.96770934208132,
+            979.628086630949,
+            1959.256173261898
+          ]
+        },
+        {
+          "source": [
+            627,
+            0,
+            313,
+            627
+          ],
+          "dest": [
+            -846.6652779678542,
+            -252.96770934208132,
+            979.628086630949,
+            1959.256173261898
+          ]
+        },
+        {
+          "source": [
+            940,
+            0,
+            314,
+            627
+          ],
+          "dest": [
+            -846.6652779678542,
+            -252.96770934208132,
+            979.628086630949,
+            1959.256173261898
+          ]
+        },
+        {
+          "source": [
+            0,
+            627,
+            314,
+            627
+          ],
+          "dest": [
+            -846.6652779678542,
+            -252.96770934208132,
+            979.628086630949,
+            1959.256173261898
+          ]
+        },
+        {
+          "source": [
+            314,
+            627,
+            313,
+            627
+          ],
+          "dest": [
+            -846.6652779678542,
+            -252.96770934208132,
+            979.628086630949,
+            1959.256173261898
+          ]
+        },
+        {
+          "source": [
+            627,
+            627,
+            313,
+            627
+          ],
+          "dest": [
+            -846.6652779678542,
+            -252.96770934208132,
+            979.628086630949,
+            1959.256173261898
+          ]
+        },
+        {
+          "source": [
+            940,
+            627,
+            314,
+            627
+          ],
+          "dest": [
+            -846.6652779678542,
+            -252.96770934208132,
+            979.628086630949,
+            1959.256173261898
+          ]
+        }
+      ],
+      "hashes": [
+        4103381012,
+        443706169,
+        1995376381,
+        2795181658,
+        3954211351,
+        887088022,
+        1550593683,
+        1197722886
+      ]
+    },
+    "module": {
+      "before": 286,
+      "after": 256,
+      "color": "#ff3b30",
+      "floaters": 1,
+      "cache": [
+        "rime:0:#ff3b30",
+        "rime:1:#ff3b30",
+        "rime:2:#ff3b30",
+        "rime:4:#ff3b30",
+        "rime:3:#ff3b30"
+      ]
+    },
+    "errors": []
+  },
+  "shields": {
+    "cases": [
+      {
+        "role": "boss",
+        "before": 200,
+        "after": 170,
+        "color": "#83d9ff",
+        "labels": 1,
+        "phase": "arms"
+      },
+      {
+        "role": "miniboss",
+        "before": 2016,
+        "after": 1986,
+        "color": "#83d9ff",
+        "labels": 1,
+        "phase": null
+      }
+    ],
+    "errors": []
+  },
+  "cinematicChecks": [
+    {
+      "ok": true,
+      "name": "all story scene keys are registered",
+      "detail": {
+        "missing": [],
+        "count": 30
+      }
+    },
+    {
+      "ok": true,
+      "name": "axel has an individual upgrade conversation",
+      "detail": null
+    },
+    {
+      "ok": true,
+      "name": "freezer has an individual upgrade conversation",
+      "detail": null
+    },
+    {
+      "ok": true,
+      "name": "lizzie has an individual upgrade conversation",
+      "detail": null
+    },
+    {
+      "ok": true,
+      "name": "falva has an individual upgrade conversation",
+      "detail": null
+    },
+    {
+      "ok": true,
+      "name": "yuri has an individual upgrade conversation",
+      "detail": null
+    },
+    {
+      "ok": true,
+      "name": "maverick has an individual upgrade conversation",
+      "detail": null
+    },
+    {
+      "ok": true,
+      "name": "cole has an individual upgrade conversation",
+      "detail": null
+    },
+    {
+      "ok": true,
+      "name": "decker has an individual upgrade conversation",
+      "detail": null
+    },
+    {
+      "ok": true,
+      "name": "juggernaut has an individual upgrade conversation",
+      "detail": null
+    },
+    {
+      "ok": true,
+      "name": "A/fire reveals entire current line",
+      "detail": {
+        "i": 0,
+        "shown": 80,
+        "n": 80
+      }
+    },
+    {
+      "ok": true,
+      "name": "second A advances exactly one dialogue beat",
+      "detail": null
+    },
+    {
+      "ok": true,
+      "name": "Start skips the scene and runs continuation exactly once",
+      "detail": null
+    },
+    {
+      "ok": true,
+      "name": "campaign robot reveal opens Cronos transmission",
+      "detail": null
+    },
+    {
+      "ok": true,
+      "name": "Start returns directly to Cronos fight, not pause menu",
+      "detail": null
+    },
+    {
+      "ok": true,
+      "name": "hammer music mode never interrupted by campaign speech",
+      "detail": null
+    },
+    {
+      "ok": true,
+      "name": "hama music mode never interrupted by campaign speech",
+      "detail": null
+    },
+    {
+      "ok": true,
+      "name": "Harrier briefing precedes route commit",
+      "detail": null
+    },
+    {
+      "ok": true,
+      "name": "Stage 6 terrain continues during route dialogue",
+      "detail": {
+        "before": 0.6666666666666697,
+        "after": 20.66666666666667
+      }
+    },
+    {
+      "ok": true,
+      "name": "Start commits selected Harrier route once",
+      "detail": null
+    },
+    {
+      "ok": true,
+      "name": "Stage X briefing identifies the actual rival",
+      "detail": null
+    },
+    {
+      "ok": true,
+      "name": "Stage X skip releases real combat",
+      "detail": null
+    },
+    {
+      "ok": true,
+      "name": "Stage 5 real exit enters the mission bridge",
+      "detail": {
+        "id": "post-5",
+        "score": 125
+      }
+    },
+    {
+      "ok": true,
+      "name": "Stage 5 skip returns to map with bonus awarded once",
+      "detail": {
+        "state": "stagesel",
+        "score": 125,
+        "next": 5,
+        "pending": null
+      }
+    },
+    {
+      "ok": true,
+      "name": "Stage 7 real exit enters the mission bridge",
+      "detail": {
+        "id": "post-7",
+        "score": 100
+      }
+    },
+    {
+      "ok": true,
+      "name": "Stage 7 skip returns to map with bonus awarded once",
+      "detail": {
+        "state": "stagesel",
+        "score": 125,
+        "next": 8,
+        "pending": 1
+      }
+    },
+    {
+      "ok": true,
+      "name": "Stage 9 real exit enters the mission bridge",
+      "detail": {
+        "id": "post-9",
+        "score": 100
+      }
+    },
+    {
+      "ok": true,
+      "name": "Stage 9 skip returns to map with bonus awarded once",
+      "detail": {
+        "state": "stagesel",
+        "score": 125,
+        "next": 7,
+        "pending": 1
+      }
+    },
+    {
+      "ok": true,
+      "name": "opening A reveals/advances dialogue without skipping the prologue",
+      "detail": null
+    },
+    {
+      "ok": true,
+      "name": "opening Start skips to its continuation",
+      "detail": null
+    },
+    {
+      "ok": true,
+      "name": "review screen starts chosen scene in the shared engine",
+      "detail": null
+    },
+    {
+      "ok": true,
+      "name": "review Next/Skip controls operate the same director",
+      "detail": null
+    },
+    {
+      "ok": true,
+      "name": "no page/console errors",
+      "detail": []
+    }
+  ],
+  "scope": "Focused rendering/input/damage fixtures; not full campaign clears or difficulty certification."
+}

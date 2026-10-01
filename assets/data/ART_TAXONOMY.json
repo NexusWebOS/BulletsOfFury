@@ -478,5 +478,15 @@
     "role": "campaign_map_geography",
     "sheet": null,
     "note": "Generated Fury HQ plaque and northern jungle HQ island, ruined east coast, northern mainland, offshore islands, and an alien binary-data barrier concealing the locked East Coast USA sector to the west. Four palette poses in east_coast_binary_rows_v6.png show dense cyan 0/1 strings flickering at 3 fps at fixed coordinates. The generated ragged alpha perimeter blends over live ocean without scrolling or mirroring. The preserved master, exact prompt and cell manifest are in _ART_SOURCES/campaign_0930 and assets/game/campaign_0930; build_east_coast_binary_rows_0930.py owns the runtime sheet. The v5 crystal wall and v4 fire front are retired. See docs/CAMPAIGN_WORLD_0930.md."
+  },
+  "campaign_1001": {
+    "role": "campaign_map_geography",
+    "sheet": null,
+    "note": "Built-in image_gen: eight actual binary-row and scan-packet frames at 6fps. Original RGBA untouched, measured integer cells in datawall_art_1001.js. build_datawall_1001.py imports source. Replaces v6 brightness-only poses; fixed destination and locked-region behavior retained."
+  },
+  "spread1001_": {
+    "role": "player_projectile",
+    "sheet": null,
+    "note": "Ten generated four-frame Spreadfire loops: base, fire, ice, lightning, kinetic, chrome, dark, toxic, prism, water. Native alpha; explicit measured row bands and common per-row pivot. Runtime/source rectangles: assets/spread_art_1001.js and game/encounters_1001/manifest.json. Built-in image generation and import notes: _ART_SOURCES/encounters_1001/generation.md. Native game-context contact sheet inspected October 1; shared combat and Forge projectile drawing at 16 fps."
   }
 }

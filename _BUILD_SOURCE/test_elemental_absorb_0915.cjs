@@ -17,11 +17,11 @@ module.exports=function(vm,ctxv,ok){
 
       run.stage=2;floaters=[];_dmgBullet={kind:'iceorb',_el:'ice'};
       e={x:140,y:120,w:40,h:40,hp:100,maxhp:100,dead:false,_volc:true};hitEnemy(e,20);
-      o.iceOnFireDouble=e.hp===70&&e._hitFlashColor==='#83d9ff'&&floaters.length===0;
+      o.iceOnFireCritical=e.hp===70&&hitFlashColor(e)==='#83d9ff'&&floaters.length===1&&floaters[0].txt==='+50% DMG CRIT';
 
       run.stage=3;_dmgBullet={kind:'flame',_el:'fire'};
       e={x:145,y:120,w:40,h:40,hp:100,maxhp:100,dead:false,_s3ice:true};hitEnemy(e,20);
-      o.fireOnIceDouble=e.hp===70&&e._hitFlashColor==='#ff3b30'&&floaters.length===0;
+      o.fireOnIceCritical=e.hp===70&&hitFlashColor(e)==='#ff3b30'&&floaters.length===2&&floaters[1].color==='#ff3b30';
 
       run.stage=2;_dmgBullet={kind:'iceorb',_el:'ice',x:160,y:120};
       e={x:160,y:120,w:40,h:40,hp:100,maxhp:100,dead:false,_volc:true,
@@ -29,8 +29,8 @@ module.exports=function(vm,ctxv,ok){
       hitEnemy(e,20);o.shieldDouble=e.hp===100&&e._esh.energy===70;
 
       const oldPilot=run.pilot;run.pilot='freezer';_dmgBullet={kind:'flame',_el:'ice'};
-      e={x:150,y:120,w:40,h:40,hp:100,maxhp:100,dead:false,_volc:true};hitEnemy(e,40);
-      o.freezerNoQuad=e.hp===60;run.pilot=oldPilot;
+      e={x:150,y:120,w:40,h:40,hp:100,maxhp:100,dead:false,_volc:true};hitEnemy(e,30);
+      o.freezerNoDoubleScaling=e.hp===70;run.pilot=oldPilot;
 
       _dmgBullet={kind:'flame',_el:'fire'};boss={x:240,y:140,w:100,h:100,hp:200,maxhp:200,dead:false,enter:false,_volc:true};bossActive=true;_lastHitX=boss.x;_lastHitY=boss.y;hitBoss(20);
       o.bossHalf=boss.hp===190;

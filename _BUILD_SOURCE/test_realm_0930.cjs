@@ -11,7 +11,7 @@ module.exports=function(vm,ctxv,ok){
   for(let i=0;i<360;i++)r30Tick(b,1/60);
   out[dk+' finishes takeover before accepting combat']=r30Live(b)&&bossHealthVisible(b);
   r30Form(b,2);S.mode='fight';b.enter=false;
-  out[dk+' colossus always has four complete life layers']=b.maxhp===S.base*4;
+  out[dk+' colossus has one bounded life pool']=b.maxhp===Math.ceil(S.base*1.35);
   S.shieldMax=S.shield=20;const hp=b.hp;b._lastPart=b.parts[0];modularHit(7);
   out[dk+' shield absorbs direct and splash hits before hull']=S.shield===13&&b.hp===hp;
   modularHit(20);out[dk+' binary shield can be shot down']=S.shield===0&&b.hp===hp;

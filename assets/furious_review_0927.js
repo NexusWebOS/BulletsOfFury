@@ -238,8 +238,12 @@ hammerBossTick=function(b,dt){
   const ratio=b.hp/b.maxhp,threshold=[.75,.50,.35,.15].find(v=>ratio<=v&&!A.checkpoints.includes(v));
   if(threshold!=null){A.checkpoints.push(threshold);if(threshold===.15){h.frSlam=false;h.frTwirlHits=0;hammerState(b,'fr_twirl');}else fr27Restore(b,.10,false,true);return;}
  }
- if(A.rage&&h.state==='leap_reset'){h.followCount=0;h.phasePending=false;hammerTarget(b);hammerState(b,'warn');}
- if(A.rage&&['warn','leap','recover'].includes(h.state))h.t+=dt;
+ if(A.rage&&h.state==='leap_reset'){
+  h.t+=dt;h.followCount=0;h.phasePending=false;
+  const u=clamp(h.t/.75,0,1),ease=u*u*(3-2*u);b.x=lerp(h.ox,(camLeftX()+camRightX())/2,ease);b.y=lerp(h.oy,VH*.34,ease);
+  // Hold the actual recovery pose before the next full-speed, fully warned slam.
+  if(h.t>=({easy:1.5,normal:1.25,hard:1.1,furious:.95,insanity:.90}[diffKey]||1.25)){hammerTarget(b);hammerState(b,'warn');}return;
+ }
  if(A.rage)h.phasePending=false;
  FR27_BASE.hammerTick(b,dt);
 };

@@ -12041,8 +12041,8 @@ console.log("=== 238. exact pilot kit rules ===");
     +"run.stage=4;o.f4thermo=elementMultiplier('fireice','fireice');return JSON.stringify(o);})()",ctxv));
   ok(_m238.coleIce===1 && _m238.coleFire===1 && _m238.coleFireIce===1,
      'Cole has no elemental damage bonus; Sonic Boom and nuclear missiles remain his specials');
-  ok(_m238.f2breath===2 && _m238.f2orb===1 && _m238.f2thermo===1,
-     "Stage 2 gives Freezer's ICE BREATH 2x before the shared boss shield and module gate");
+  ok(_m238.f2breath===1.5 && _m238.f2orb===1 && _m238.f2thermo===1,
+     "Stage 2 gives Freezer's ICE BREATH +50% before the shared boss shield and module gate");
   ok(_m238.f3thermo===1.5 && _m238.f3fire===1 && _m238.f3breath===1 && _m238.f4thermo===1,
      "Stage 3 gives Freezer's FIRE-ICE ball +50%, and the bonus does not leak to Stage 4");
   ok(vm.runInContext("typeof SUBBOSS[8]==='undefined' && !!ALTBOSS[8] && ALTBOSS[8].kind==='heralddeath' && SHIPBOSS.heralddeath.name==='HERALD OF DEATH' && SHIPBOSS.heralddeath.key==='nhd_idle_0' && !(typeof DEAD_SUBBOSS!=='undefined' && DEAD_SUBBOSS.heralddeath)",ctxv),
@@ -15776,6 +15776,8 @@ require('./test_cinema_0930.cjs')(vm,ctxv,ok);
 require('./test_realm_0930.cjs')(vm,ctxv,ok);
 require('./test_campaign_0930.cjs')(vm,ctxv,ok);
 require('./test_stagex_duel_0930.cjs')(vm,ctxv,ok);
+require('./test_feedback_1001.cjs')(vm,ctxv,ok);
+require('./test_encounter_feedback_1001.cjs')(vm,ctxv,ok);
 
 console.log('\n============================================');
 if (errors.length) { console.log('FAILED — ' + errors.length + ' error(s):'); errors.forEach(e => console.log('  ' + e)); process.exit(1); }

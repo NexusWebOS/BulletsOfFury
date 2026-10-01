@@ -1,5 +1,6 @@
 module.exports=function(vm,ctxv,ok){
  const fs=require('fs'),path=require('path');
+ vm.runInContext(fs.readFileSync(path.join(__dirname,'../assets/datawall_art_1001.js'),'utf8'),ctxv,{filename:'datawall_art_1001.js'});
  vm.runInContext(fs.readFileSync(path.join(__dirname,'../assets/campaign_world_0930.js'),'utf8'),ctxv,{filename:'campaign_world_0930.js'});
  console.log('=== 384. Expanded campaign geography and fixed horizontal map flight ===');
  const out=JSON.parse(vm.runInContext(`JSON.stringify((()=>{
