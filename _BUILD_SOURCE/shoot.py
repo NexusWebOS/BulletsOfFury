@@ -44,8 +44,8 @@ GAME = os.path.abspath(os.path.join(ROOT, '..'))
 
 def serve(directory, port=0):
     """A quiet static server. Returns (port, shutdown)."""
-    handler = functools.partial(http.server.SimpleHTTPRequestHandler, directory=directory)
-    handler.log_message = lambda *a, **k: None
+    handler = type("QuietHandler", (http.server.SimpleHTTPRequestHandler,), {"log_message": lambda *a, **k: None})
+    handler = functools.partial(handler, directory=directory)
     # Loose XART families (bosses, weather, shields) arrive as many independent PNGs. A serial
     # server makes a visual proof wait behind its own asset queue and can remove live units before
     # the first frame is captured. Match a real web server and service those requests concurrently.
@@ -144,7 +144,7 @@ def main():
     errs, shots = [], []
 
     with sync_playwright() as p:
-        b = p.chromium.launch(args=['--disable-gpu', '--no-sandbox', '--mute-audio'])
+        b = p.chromium.launch(args=['--disable-gpu', '--no-sandbox', '--mute-audio'], **({'executable_path': os.environ['BOF_CHROME']} if os.environ.get('BOF_CHROME') else {}))
         # the game sizes its canvas to the window, and index.html renders at 2x — a viewport smaller
         # than the canvas makes Locator.screenshot hang waiting for it to be fully visible
         pg = b.new_page(viewport={'width': 1100, 'height': 1200}, device_scale_factor=1)

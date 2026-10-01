@@ -4164,6 +4164,10 @@ const STAGE6_SKY_CRUISE=740, STAGE6_SKY_BOSS_CRUISE=740;
    stays separate from mapScroll so combat timing and wave spacing remain intact. */
 const STAGE5_SPACE_CRUISE=1000;
 let _stage5SpaceScroll=0;
+/* 1001b - Mike: "when we appear in stage 9 ... we remain in this space/water realm and scroll as fast
+   as stage 5." Stage 9 rode mapScroll (~40px/s, frozen for every boss) while stage 5 cruises at
+   STAGE5_SPACE_CRUISE on its own clock. Same contract: visual travel only, combat still reads mapScroll. */
+let _stage9SpaceScroll=0;
 let _stage6SkyScroll=0;
 /* stages that keep scrolling through their miniboss. Mike: "unless stated
    differently per level". Empty means the hold applies everywhere. */
@@ -5392,6 +5396,7 @@ function drawLevelMaster(dt){
       _stage5SpaceScroll += dt*((typeof s5run!=='undefined'&&s5run&&!s5run.done)?Math.max(cruise,S5R_SPEED):cruise); // gates ride this exact background travel
       _loopScroll=_stage5SpaceScroll;
     }
+    if(run.stage===9){ _stage9SpaceScroll += dt*STAGE5_SPACE_CRUISE; _loopScroll=_stage9SpaceScroll; }
     if(run.stage===6){
       /* A continuous loop of the ONE approved 5000px master. This is visual travel only: combat
          continues to read mapScroll, so making the atmosphere feel fast cannot skip a pattern. */
@@ -5409,7 +5414,7 @@ function drawLevelMaster(dt){
        miniboss so the LEVEL stops advancing. Half the background travelled and half stood still,
        which is what reads as the scroll stopping. On stage 6 it now rides the sky's own clock. */
     if(cfg.par && XART.rdy(cfg.par))
-      _loopDraw(XART.get(cfg.par), ((run.stage===6||run.stage===5) ? _loopScroll*0.62 : mapScroll*1.18));
+      _loopDraw(XART.get(cfg.par), ((run.stage===6||run.stage===5||run.stage===9) ? _loopScroll*0.62 : mapScroll*1.18));
     return true;
   }
   const scrollFrac=range>0?(mapScroll/range):0;    // 0..1 progress through the level
@@ -34272,6 +34277,7 @@ function beginStage(num){
   if(typeof wfxReset==='function') wfxReset();
   if(typeof bg6Reset==='function') bg6Reset();
   _stage5SpaceScroll=0;                      // stage 5's space clock, the counterpart bg6Reset holds for 6
+  _stage9SpaceScroll=0;
   /* AMBIENCE DISABLED (drop 0724bu). Mike: stop playing the jungle ambient. The beds sat under the
      music at 0.55 and muddied it rather than adding depth, and stage 1's was the worst offender.
      ambStart/ambStop are intact — set AMBIENCE_ON=true to bring them back. */
@@ -73200,23 +73206,34 @@ function stage5SkyToSpaceDraw(progress,scroll){
 }
 /* Stage 9 is the other side of the secret gate. It never rebuilds the Fury ship: the portal sits
    behind the already-active craft while the opening white falls away. */
+/* 1001b - Mike: "When we appear in stage 9, do not make us pop up in water anymore, we remain in this
+   space/water realm." The launch drew entryConnectorDraw(9), whose surface is the WATER flat, for the
+   whole run phase - a blue ocean plate under a ship that had just left space. The backdrop is the
+   stage-9 void itself, on its own clock (_stage9SpaceScroll), so GO hands PLAY the same picture. */
+function stage9LaunchBackdropDraw(scroll){
+  _stage9SpaceScroll=scroll||0;
+  ctx.save();
+  if(((typeof worldWidth==='function')?worldWidth():VW)>VW) ctx.translate(-camX,0);
+  try{ drawBG(0); }catch(_s9lb){}
+  ctx.restore();
+}
+/* The gate the ship leaves through. ⚠ IT USED TO NEVER CLOSE: alpha was 1-p*0.72, so at p=1 it kept
+   drawing at 28% - through the whole countdown, on GO, and as the grey dish "re-appearing in stage 9
+   for no reason". It now shrinks shut and is gone by the time the ship is clear (p=1). */
 function stage9PortalEscapeDraw(progress,foreground){
   const p=clamp(progress,0,1),cx=VW/2,cy=VH*0.30;
+  const close=clamp((p-0.45)/0.55,0,1), open=1-close*close*(3-2*close);
+  const key='nfx_s5gate96_'+(Math.floor((1-p)*7)%8);
   if(!foreground){
-    /* Stage 9 begins inside the tunnel, not on a blue surface transition. Keep the destination
-       hidden behind deep void until the Fury ship has actually cleared the portal; the live
-       Stage-9 background then resolves underneath over the last third of the exit. */
-    ctx.save();ctx.globalAlpha=1-clamp((p-.58)/.42,0,1);ctx.fillStyle='#01020b';ctx.fillRect(0,0,VW,VH);ctx.restore();
-    warpFxDraw(1-p,(typeof performance!=='undefined'?performance.now():Date.now())*.0017,true);
-    const key='nfx_s5gate96_'+(Math.floor((1-p)*7)%8);
-    if(typeof XART!=='undefined'&&XART.rdy(key)){const im=XART.get(key),s=96;
-      ctx.save();ctx.globalAlpha=1-p*0.72;ctx.shadowColor='#b8f4ff';ctx.shadowBlur=20*(1-p);ctx.drawImage(im,cx-s/2,cy-s/2,s,s);ctx.restore();}
+    /* Stage 9 begins inside the tunnel. The live void resolves underneath as the ship clears it. */
+    ctx.save();ctx.globalAlpha=1-clamp((p-.35)/.40,0,1);ctx.fillStyle='#01020b';ctx.fillRect(0,0,VW,VH);ctx.restore();
+    if(p<1)warpFxDraw((1-p)*(1-p),(typeof performance!=='undefined'?performance.now():Date.now())*.0017,true);
+    if(open>0.01 && typeof XART!=='undefined'&&XART.rdy(key)){const im=XART.get(key),s=96*open;
+      ctx.save();ctx.globalAlpha=open;ctx.shadowColor='#b8f4ff';ctx.shadowBlur=20*open;ctx.translate(cx,cy);ctx.rotate(p*2.4);ctx.drawImage(im,-s/2,-s/2,s,s);ctx.restore();}
   }else{
-    const key='nfx_s5gate96_'+(Math.floor((1-p)*7)%8);
-    if(typeof XART!=='undefined'&&XART.rdy(key)){const im=XART.get(key),s=96;
-      ctx.save();ctx.globalAlpha=1-p*0.72;ctx.beginPath();ctx.rect(cx-s/2,cy+18,s,30);ctx.clip();ctx.drawImage(im,cx-s/2,cy-s/2,s,s);ctx.restore();}
-    /* Only a snap flash at the instant of emergence. The former .36 white hold washed the whole
-       tunnel gray and made the sequence read as another surface fade instead of a warp. */
+    if(open>0.01 && typeof XART!=='undefined'&&XART.rdy(key)){const im=XART.get(key),s=96*open;
+      ctx.save();ctx.globalAlpha=open;ctx.beginPath();ctx.rect(cx-s/2,cy+18*open,s,30*open);ctx.clip();ctx.translate(cx,cy);ctx.rotate(p*2.4);ctx.drawImage(im,-s/2,-s/2,s,s);ctx.restore();}
+    /* Only a snap flash at the instant of emergence. */
     if(p<0.08)gravityWhite(1-p/0.08);
   }
 }
@@ -73409,11 +73426,11 @@ function drawLaunch(dt){
        the gravity build IS the settle/gravity beat. So it eases to STAGE5_SPACE_CRUISE instead
        and holds it through every remaining phase - one speed from here into PLAY, no stop. */
     drawLaunch._pt+=dt; const p=clamp(drawLaunch._pt/2.0,0,1);
-    drawLaunch._spd=lerp(1750,(run.stage===5?STAGE5_SPACE_CRUISE:0),_ease(p));
+    drawLaunch._spd=lerp(1750,((run.stage===5||run.stage===9)?STAGE5_SPACE_CRUISE:0),_ease(p));
     drawLaunch._dist+=drawLaunch._spd*dt;                          /* level keeps scrolling in smoothly while braking */
     if(drawLaunch._pt>=2.0){ drawLaunch._phase='settle'; drawLaunch._pt=0; }
   } else if(ph==='settle'){
-    drawLaunch._pt+=dt; drawLaunch._spd=(run.stage===5?STAGE5_SPACE_CRUISE:LAUNCH_COUNTDOWN_SCROLL);
+    drawLaunch._pt+=dt; drawLaunch._spd=((run.stage===5||run.stage===9)?STAGE5_SPACE_CRUISE:LAUNCH_COUNTDOWN_SCROLL);
     const _rng=(typeof levelScrollRange==='function')?levelScrollRange():0;
     mapScroll=_rng>0 ? Math.min(_rng,mapScroll+LAUNCH_COUNTDOWN_SCROLL*dt)
                      : mapScroll+LAUNCH_COUNTDOWN_SCROLL*dt;
@@ -73432,7 +73449,7 @@ function drawLaunch(dt){
     /* Gravity Mode is a stage-transition beat, not a gameplay freeze.  The completed level
        background keeps creeping beneath it, then GET READY begins only after the somersault has
        resolved into the active craft.  No player-controlled frame exists between those states. */
-    drawLaunch._pt+=dt; drawLaunch._spd=(run.stage===5?STAGE5_SPACE_CRUISE:LAUNCH_COUNTDOWN_SCROLL);
+    drawLaunch._pt+=dt; drawLaunch._spd=((run.stage===5||run.stage===9)?STAGE5_SPACE_CRUISE:LAUNCH_COUNTDOWN_SCROLL);
     /* ⚠ THE TRANSFORMATION'S SHAKE AND FLASH ARE SPENT INSIDE THE TRANSFORMATION (0913a). snap, fuse and lock
        raise `shake` to 4/8/12 and the reveal raises `flashScreen` to 0.72 - and nothing in LAUNCH draws or decays
        either: only updatePlay decays them and only drawWorld paints them. So both waited out the whole countdown
@@ -73458,7 +73475,7 @@ function drawLaunch(dt){
        still decoding. A slow load meant the high-speed sky dropped to a 24px/s crawl, waited,
        and then sped back up for the numerals. On a warm machine you never see it; on a cold one
        it is the whole transition. */
-    drawLaunch._spd=_s6?STAGE6_SKY_CRUISE:(run.stage===5?STAGE5_SPACE_CRUISE:LAUNCH_COUNTDOWN_SCROLL);
+    drawLaunch._spd=_s6?STAGE6_SKY_CRUISE:((run.stage===5||run.stage===9)?STAGE5_SPACE_CRUISE:LAUNCH_COUNTDOWN_SCROLL);
     const _rng=(typeof levelScrollRange==='function')?levelScrollRange():0;
     mapScroll=_rng>0?Math.min(_rng,mapScroll+drawLaunch._spd*dt):mapScroll+drawLaunch._spd*dt;
     if(typeof stageLoadReady!=='function'||stageLoadReady(run.stage)){
@@ -73469,7 +73486,7 @@ function drawLaunch(dt){
        looked like the game had stalled. Consume a small, real slice of the level while counting;
        finishLaunch preserves mapScroll, so PLAY continues from this exact frame at 40px/s. */
     drawLaunch._pt+=dt;
-    drawLaunch._spd=_s6?Math.max(STAGE6_SKY_CRUISE,(drawLaunch._spd||STAGE6_SKY_CRUISE)-700*dt):(run.stage===5?STAGE5_SPACE_CRUISE:LAUNCH_COUNTDOWN_SCROLL);
+    drawLaunch._spd=_s6?Math.max(STAGE6_SKY_CRUISE,(drawLaunch._spd||STAGE6_SKY_CRUISE)-700*dt):((run.stage===5||run.stage===9)?STAGE5_SPACE_CRUISE:LAUNCH_COUNTDOWN_SCROLL);
     const _rng=(typeof levelScrollRange==='function')?levelScrollRange():0;
     mapScroll=_rng>0 ? Math.min(_rng, mapScroll+drawLaunch._spd*dt)
                      : mapScroll+drawLaunch._spd*dt;
@@ -73510,6 +73527,7 @@ function drawLaunch(dt){
   const rum=nrm*4; ctx.save(); if(rum>0.2) ctx.translate(rnd(-rum,rum),rnd(-rum,rum));
   if(run.stage===5) stage5SkyToSpaceDraw(stage5SpaceAscentProgress(),drawLaunch._bgScroll);
   else if(run.stage===6) stage6TransitionBackgroundDraw(drawLaunch._bgScroll);
+  else if(run.stage===9) stage9LaunchBackdropDraw(drawLaunch._bgScroll);
   else entryConnectorDraw(run.stage, launchConnDy());
   const _s9portalP=run.stage===9?clamp(drawLaunch._dist/Math.max(1,SEG_B1*0.78),0,1):0;
   if(run.stage===9){
@@ -73672,6 +73690,7 @@ function finishLaunch(){ drawLaunch._eng=false; drawLaunch._thr=false;
   /* Same handoff for stage 5: without it the starfield restarts from 0 at GO and the whole
      field jumps on the handoff frame - the seam this file has fixed three times already. */
   if(run&&run.stage===5) _stage5SpaceScroll=drawLaunch._bgScroll||_stage5SpaceScroll||0;
+  if(run&&run.stage===9) _stage9SpaceScroll=drawLaunch._bgScroll||_stage9SpaceScroll||0;
   if(drawLaunch._warpAudio){drawLaunch._warpAudio=false;try{if(Audio.warpAmbienceStop)Audio.warpAmbienceStop();if(Audio.setWarpMix)Audio.setWarpMix(0);}catch(_flw){}}
   if(!drawLaunch._mus) Audio.startMusic((curStage&&curStage.music)||'stage'); drawLaunch._mus=false;
   setState(GS.PLAY);

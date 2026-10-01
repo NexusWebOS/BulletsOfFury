@@ -15778,6 +15778,7 @@ require('./test_campaign_0930.cjs')(vm,ctxv,ok);
 require('./test_stagex_duel_0930.cjs')(vm,ctxv,ok);
 require('./test_feedback_1001.cjs')(vm,ctxv,ok);
 require('./test_encounter_feedback_1001.cjs')(vm,ctxv,ok);
+require('./test_feedback_1001b.cjs')(vm,ctxv,ok);
 
 console.log('\n============================================');
 if (errors.length) { console.log('FAILED — ' + errors.length + ' error(s):'); errors.forEach(e => console.log('  ' + e)); process.exit(1); }

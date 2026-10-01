@@ -5724,3 +5724,11 @@ psDrawLineup draws. README 'The redo' has the numbers.
 - A death spin-out scores as ACTION (explosions, shake): edit9 needs DEATH_PEN 80/frame or deaths win shots.
 - Hazards that are not eBullets kill a dodger: fireDebris (gravity), hostile geysers, groundTargetingFx, l23 beams,
   boss hulls (bossHitTest). The stack of a fatal playerHit names the system in one run.
+
+## 1001b - trailer feedback: bomber flash, Falva's box, stage 9 entry/asteroids, stage 7 rift run, Stage X arena, stage 6 turn
+Read docs/FEEDBACK_1001B.md. Runtime layer assets/feedback_1001b.js (after campaign_world_0930.js, before the widescreen HUD); stage 9 launch/clock in game.js.
+- Falva's 256px portraits AND the 128px comm_ set the dialogue box really draws were sliced at the wrong pitch (244/122): rebuild only via _BUILD_SOURCE/fix_falva_portraits_1001b.py, which reads the _backups, never its own output.
+- Stage 9 owns _stage9SpaceScroll at STAGE5_SPACE_CRUISE; its launch draws the stage-9 void (stage9LaunchBackdropDraw), never the water connector; the exit gate closes (it used to sit at 28% alpha forever).
+- Stage 6's camera has only 200px of travel, so the left/right turn slides the SKY 340px (s6TurnOffset), tiled three across with mirrored outer copies.
+- Stage X (Rival24 duel) draws assets/game/stagex_1001/stagex_arena.png (SpriteCook) instead of stage 6. Stage 9 meteors are the six s9_asteroids_1001 plates at 46-74px.
+- Probe tool: _BUILD_SOURCE/scene1001.py drives a scripted scene and grabs frames. Do not pin player.invuln in a probe - the damage blink hides the ship; stub playerHit.
