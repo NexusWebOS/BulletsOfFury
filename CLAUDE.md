@@ -5732,3 +5732,10 @@ Read docs/FEEDBACK_1001B.md. Runtime layer assets/feedback_1001b.js (after campa
 - Stage 6's camera has only 200px of travel, so the left/right turn slides the SKY 340px (s6TurnOffset), tiled three across with mirrored outer copies.
 - Stage X (Rival24 duel) draws assets/game/stagex_1001/stagex_arena.png (SpriteCook) instead of stage 6. Stage 9 meteors are the six s9_asteroids_1001 plates at 46-74px.
 - Probe tool: _BUILD_SOURCE/scene1001.py drives a scripted scene and grabs frames. Do not pin player.invuln in a probe - the damage blink hides the ship; stub playerHit.
+
+## 1001c - one ship size from intro to play, and no dead stops
+Read docs/LAUNCH_SCALE_1001C.md. Change script _BUILD_SOURCE/patch_launch_scale_1001c.py; probe probe_launchscale_1001c.py; suite test_launch_scale_1001c.cjs.
+- playShipPose().h is SHIP_DRAW_H (60), the height _drawPlayerCore actually blits. It was 0810a's 76.1 content formula, so every launch countdown drew the ship 27% big and PLAY cut it back at GO.
+- Ground launches brake on DISTANCE to PLAY's 40 px/s, landing exactly when the level joins (LAUNCH_LAND / LAUNCH_BRAKE_DIST), and hold 40 into PLAY. Never a 0 px/s frame.
+- Stage 5 plane 60 / fighter 48 throughout; the kit still orbits at its 0914 size (FURY_ORBIT_HULL) and closes onto the craft in the snap. Stage 9 fighter 48 from frame one; the space brake eases from its real speed. Outbound routes and the stage 8 rift arrival draw at play size.
+- Probe trap: _drawPlayerCore asks XART.get for the hull, then pf27PlaneThrustDraw asks for more before the blit, so "last key requested" misses PLAY's ship. Tag the returned image object.

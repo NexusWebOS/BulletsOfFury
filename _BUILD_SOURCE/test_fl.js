@@ -12096,7 +12096,7 @@ console.log("=== 240. launch, lava, audio and dialogue regressions ===");
   var _s240=fs.readFileSync(path.join(ROOT,'assets/game.js'),'utf8');
   ok(vm.runInContext('LAUNCH_COUNTDOWN_SCROLL>0 && LAUNCH_COUNTDOWN_SCROLL<40',ctxv) &&
      _s240.indexOf('mapScroll+LAUNCH_COUNTDOWN_SCROLL*dt')>0,
-     '3-2-1 keeps the stage moving slowly, then hands its preserved scroll to PLAY at normal speed');
+     'the stage-5 gravity beat keeps the level crawling; ground countdowns now hold PLAY\'s own 40 px/s (1001c, section 1001c)');
   ok(_s240.indexOf("shipY=_space?lerp(POSE.y-42,POSE.y,k)")>0 &&
      _s240.indexOf("lerp(POSE.y+20,POSE.y,k)")>0,
      'space and ground launches each fly continuously into their play lane');
@@ -15779,6 +15779,7 @@ require('./test_stagex_duel_0930.cjs')(vm,ctxv,ok);
 require('./test_feedback_1001.cjs')(vm,ctxv,ok);
 require('./test_encounter_feedback_1001.cjs')(vm,ctxv,ok);
 require('./test_feedback_1001b.cjs')(vm,ctxv,ok);
+require('./test_launch_scale_1001c.cjs')(vm,ctxv,ok);
 
 console.log('\n============================================');
 if (errors.length) { console.log('FAILED — ' + errors.length + ' error(s):'); errors.forEach(e => console.log('  ' + e)); process.exit(1); }
