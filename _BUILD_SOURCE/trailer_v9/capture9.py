@@ -26,6 +26,7 @@ import os, sys, json, time, base64, shutil, argparse, subprocess
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import capture3 as C3   # noqa: E402
+import real9            # noqa: E402  (REAL GAMEPLAY: the real playerHit, the dodge autopilot)
 
 C3.TAKES.clear()
 TAKES = C3.TAKES
@@ -305,6 +306,7 @@ def run_take(browser, port, tid, spec, quality):
     page.wait_for_function("() => (window.__bofFrames|0) > 4", timeout=90000)
     page.evaluate(C3.LIB)
     page.evaluate(LIB9)
+    page.evaluate(real9.LIB_REAL)
     page.evaluate("() => { ASSETS.ready = true; }")
     page.evaluate("(d) => { diffKey = d; }", spec.get('diff') or 'normal')
     if spec.get('quiet'):
@@ -330,6 +332,7 @@ def run_take(browser, port, tid, spec, quality):
     if spec.get('arm'):
         w, lv, wv = spec['arm']
         notes.append('arm ' + json.dumps(page.evaluate("([w, l, v]) => window.__arm(w, l, v)", [w, lv, wv])))
+        page.evaluate("(a) => window.__armSpecSet(a)", [w, lv, wv])
     page.evaluate("([m, f]) => { window.__mode = m; window.__fire = f; }", [spec['mode'], spec['fire']])
     page.evaluate("(b) => { window.__burst = b; }", spec.get('burst'))
 

@@ -1,0 +1,66 @@
+[
+ {
+  "case": "3/boss/juggernaut/normal",
+  "arm": "dodge",
+  "hits": 0,
+  "deaths": 0,
+  "rolls": 1,
+  "state": "play",
+  "killers": [],
+  "err": null,
+  "page_errors": 0
+ },
+ {
+  "case": "1/boss/axel/furious",
+  "arm": "dodge",
+  "hits": 2,
+  "deaths": 2,
+  "rolls": 1,
+  "state": "play",
+  "killers": [
+   "at game.js:37028 < at withSeat game.js:10181 < at Object.updatePlay game.js:37009",
+   "at game.js:37028 < at withSeat game.js:10181 < at Object.updatePlay game.js:37009"
+  ],
+  "err": null,
+  "page_errors": 0
+ },
+ {
+  "case": "5/boss/falva/normal",
+  "arm": "dodge",
+  "hits": 0,
+  "deaths": 0,
+  "rolls": 1,
+  "state": "play",
+  "killers": [],
+  "err": null,
+  "page_errors": 0
+ },
+ {
+  "case": "7/boss/decker/hard",
+  "arm": "dodge",
+  "hits": 2,
+  "deaths": 2,
+  "rolls": 0,
+  "state": "play",
+  "killers": [
+   "at stage7_modular_0927.js:189 < at withSeat game.js:10181 < at Object.s7mTick [as s7Tick] stage7_modular_0927.js:189",
+   "at game.js:38158 < at withSeat game.js:10181 < at groundTargetingStrikePlayers game.js:38158"
+  ],
+  "err": null,
+  "page_errors": 0
+ },
+ {
+  "case": "2/mini/yuri/normal",
+  "arm": "dodge",
+  "hits": 2,
+  "deaths": 2,
+  "rolls": 0,
+  "state": "play",
+  "killers": [
+   "at geyserTick game.js:8816 < at _newWeaponTick game.js:30802 < at Object.updatePlay game.js:34756",
+   "at wfxUpdate game.js:56460 < at Object.drawWorld [as world] game.js:74092 < at drawWorld furious_review_0927.js:481"
+  ],
+  "err": null,
+  "page_errors": 0
+ }
+]

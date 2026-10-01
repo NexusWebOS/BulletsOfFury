@@ -87,11 +87,12 @@ def main():
             os.path.join(ROOT, 'assets', 'game', 'pilot_bodies', '%s_body_0.png' % p)
         trim(Image.open(path).convert('RGBA')).save(os.path.join(OUT, 'body_%s.png' % p))
         got.append('body_%s.png' % p)
-        try:
-            trim(cell(B, 'port_%s_idle' % p)).save(os.path.join(OUT, 'port_%s.png' % p))
-            got.append('port_%s.png' % p)
-        except Exception as e:
-            print('  missing port', p, e)
+        # THE PILOT-SELECT PORTRAIT BOX (Mike, 0930: "use their portrait boxes from the pilot select screen"): psDrawLineup
+        # draws 'pav_'+key, registered from pilots_0922/portraits/<pilot>-idle.png - a 256x256 bordered avatar. Copied
+        # WHOLE (never trimmed: the border is the box) and scaled nearest-neighbour in the edit.
+        Image.open(os.path.join(ROOT, 'assets', 'game', 'pilots_0922', 'portraits', '%s-idle.png' % p)).convert('RGBA') \
+            .save(os.path.join(OUT, 'pav_%s.png' % p))
+        got.append('pav_%s.png' % p)
     copyright_card().save(os.path.join(OUT, 'copyright.png'))
     got.append('copyright.png')
     for n in got:

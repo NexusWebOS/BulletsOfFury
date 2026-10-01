@@ -85,3 +85,30 @@ through the stage-7 portal, whose first frames are a slit, not the card.
 
 The HAMA segment plays `hama_instrumental_0928.mp3`. `docs/HAMA_0928.md` records that a public or Steam release needs
 a sync licence for that track, or the track swapped. The trailer carries the same caveat.
+
+## The redo on the Oct 1 build: real gameplay and the pilot-select portrait boxes
+
+Mike, 0930: *"you used the wrong portrait boxes, your supposed to use their portrait boxes from the pilot select screen
+and needs to be more realistic. you shouldnt be invisible taking bullets. real gameplay my friend lets go its a new build
+locally btw so you must redo the trailer."* Every take was re-recorded on `db406eca`.
+
+* **real9.py** is evaluated after capture3.LIB and LIB9 and undoes the invincibility every earlier trailer had (capture3
+  stubbed `playerHit` and zeroed `invuln`/`dead` each frame). The game's own `playerHit` is back, so shields pop,
+  i-frames blink and a lethal hit runs the real spin-out. Only GAME OVER is off: `run.lives` is held at >= 3. A death
+  strips the gun as in play; the take's loadout comes back on respawn.
+* **The dodge autopilot** predicts every enemy round (with its measured acceleration), enemy hulls, stage-2 vent debris
+  (DEBRIS_G), hostile geysers, ground strikes, the l23 boss beams (from 0.5 s before they open) and the boss / miniboss
+  hulls (through `bossHitTest`), 2-26 frames ahead, scores the nine input moves at `playerBaseSpeed()*1.35`, and holds
+  the cheapest; when every move is a hit within 6 frames it barrel-rolls with a real double tap.
+* **probe_real9.py** proves both halves: five 30 s fights (stages 1/2/3/5/7, Normal/Hard/Furious). The CONTROL arm (the
+  old straight-to-target autopilot, real hits) died **17** times - so hits really land - and the first dodge cut **9**;
+  with hulls, beams and acceleration added, **6**. What is left is stage-specific (the stage-7 rig, weather), and real.
+* **edit9.py** subtracts `DEATH_PEN` (80) per dead frame from every window score - at 10 the spin-out's explosions
+  out-scored the penalty and 863 of 7,405 shown frames were a dead pilot; at 80 it is 58, one honest death (the Furnace
+  rollerball, 37 s). The montage's hit-flash penalty went 30 -> 90 for the same reason (burst fire's own rounds and
+  sparks out-scored a white boss).
+* **Portraits** are `pav_<pilot>` - the bordered 256x256 box `psDrawLineup` draws on pilot select
+  (`pilots_0922/portraits/<pilot>-idle.png`), copied whole and scaled nearest-neighbour. The 9 PILOTS card is that
+  roster: nine boxes over the nine bodies.
+* The new 1400x1200 campaign map is an overview camera now; X_rival's taps still walk the map -> ally pick -> card ->
+  duel unchanged. Re-recording needs ~14 GB: capture refuses under 4 GB free.

@@ -5707,3 +5707,14 @@ the pinned HAMA clock, burst fire on bosses). The rendered video lives in _shots
   hp kills nothing; drive s7mHit / whvDeathStart. The no-one-shot rule floors a forced lethal event at 1 hp.
 - Suite 5,871 ok / 0 errors, reaching the FALVA/LIZZIE banner; section 380 passes 7/7 and fails 3 with the fix
   removed. Its draw runs inside try/catch because the vm's stub canvas has no createImageData (rival art).
+
+## 1001 - trailer v9 redone: real hits, a dodge autopilot, the pilot-select portrait boxes
+
+Mike: "you shouldnt be invisible taking bullets. real gameplay" - every v7/v8/v9 take had flown an INVINCIBLE ship
+(capture3 stubs playerHit and zeroes invuln/dead every frame). _BUILD_SOURCE/trailer_v9/real9.py restores the real
+playerHit (lives held >= 3 so no game over) and flies a predictive dodge; probe_real9.py has a no-dodge CONTROL arm
+(17 deaths in five 30 s fights) so a zero can never be a stubbed hit path. Portraits are pav_<pilot>, the box
+psDrawLineup draws. README 'The redo' has the numbers.
+- A death spin-out scores as ACTION (explosions, shake): edit9 needs DEATH_PEN 80/frame or deaths win shots.
+- Hazards that are not eBullets kill a dodger: fireDebris (gravity), hostile geysers, groundTargetingFx, l23 beams,
+  boss hulls (bossHitTest). The stack of a fatal playerHit names the system in one run.

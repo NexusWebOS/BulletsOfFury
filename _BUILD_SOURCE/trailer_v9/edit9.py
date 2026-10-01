@@ -181,7 +181,7 @@ def fight_score(m):
 
 def montage_score(m):
     # a half-bar cut has no time to recover from a white frame: the boss must be on screen and in its own colours
-    return action(m) + 14 * target_on(m) - 30 * (m.get('bf') or 0) - 400 * (m.get('wx') or 0)
+    return action(m) + 14 * target_on(m) - 90 * (m.get('bf') or 0) - 400 * (m.get('wx') or 0)
 
 
 def special_view(m):
@@ -204,6 +204,9 @@ def free(tid, a, b):
     return all(not (a < y and x < b) for (x, y, _) in CLAIMS[tid])
 
 
+DEATH_PEN = 80
+
+
 def best(tid, n, score=action, lo=0, hi=None, step=3):
     """the start frame of the unclaimed n-frame window with the highest summed score"""
     Ms = M(tid)
@@ -213,7 +216,8 @@ def best(tid, n, score=action, lo=0, hi=None, step=3):
         lo = max(0, hi - n)
     sc = [0.0] + [0.0] * len(Ms)
     for i, m in enumerate(Ms):
-        sc[i + 1] = sc[i] + float(score(m))
+        # REAL GAMEPLAY (real9.py): a death spin-out may appear, but never wins a shot on its own
+        sc[i + 1] = sc[i] + float(score(m)) - DEATH_PEN * (m.get('dd') or 0)
     bestv, bests = None, None
     for s in range(lo, max(lo + 1, hi - n + 1), step):
         if s + n > len(Ms):
@@ -363,9 +367,9 @@ def body_prescale(p, want_h):
     return want_h / float(im.height)
 
 
-def port_prescale(p, want_h):
+def pav_prescale(p, want_h):
     from PIL import Image
-    im = Image.open(os.path.join(HERE, 'brand', 'port_%s.png' % p))
+    im = Image.open(os.path.join(HERE, 'brand', 'pav_%s.png' % p))
     return want_h / float(im.height)
 
 
@@ -417,8 +421,11 @@ for n, tid in enumerate(CARD_TAKES + ['X_rival_map']):
 lineup = []
 xs = [W * (i + 0.5) / 9 for i in range(9)]
 for i, p in enumerate(PILOTS):
-    lineup.append(image(tb(9, i * 0.25), tb(10), 'brand/body_%s.png' % p, x=xs[i], y=650,
-                        prescale=body_prescale(p, 520), kin='rise', out='cut', overlay=False))
+    # the pilot-select roster: each pilot's own portrait box over their full-body figure
+    lineup.append(image(tb(9, i * 0.25), tb(10), 'brand/body_%s.png' % p, x=xs[i], y=760,
+                        prescale=body_prescale(p, 430), kin='rise', out='cut', overlay=False))
+    lineup.append(image(tb(9, i * 0.25), tb(10), 'brand/pav_%s.png' % p, x=xs[i], y=420, prescale=0.75,
+                        kin='rise', out='cut', resample='nearest', overlay=False))
 black(tb(9), tb(10), label='9 PILOTS line-up', layers=lineup + [text(tb(9), tb(10), '9 PILOTS', height=150, y=210,
                                                                       overlay=False)])
 hit(tb(9), 'flash', 0.14, 0.75)
@@ -433,8 +440,8 @@ for i, p in enumerate(PILOT_ORDER):
     src_p = best(tid, frames_for(a, b), special_score if p == 'lizzie' else special_view, lo=max(0, sp0 - 8), hi=sp0 + 170)
     lay = [text(a, b, p.upper(), height=120, y=92, tint=PILOT_TINT[p], band=0.55, overlay=False),
            image(a, b, 'brand/body_%s.png' % p, x=240, y=640, prescale=body_prescale(p, 600), kin='slide-l', overlay=False),
-           image(a + 0.06, b, 'brand/port_%s.png' % p, x=1680, y=600, prescale=port_prescale(p, 320), kin='slide-r',
-                 overlay=False)]
+           image(a + 0.06, b, 'brand/pav_%s.png' % p, x=1680, y=600, prescale=1.25, kin='slide-r',
+                 resample='nearest', overlay=False)]
     shot(a, b, tid, src=src_p, label='%s special' % p, layers=lay, c=cam(1.0, 1.12, track='player', lead=-220))
     hit(a, 'punch', 0.18, 0.04)
 
