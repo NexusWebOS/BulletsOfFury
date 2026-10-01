@@ -1,0 +1,61 @@
+{
+  "image": "east_coast_binary_rows_v6.png",
+  "columns": 4,
+  "rows": 1,
+  "frame_width": 512,
+  "frame_height": 1024,
+  "fps": 3,
+  "count": 4,
+  "motion": "fixed-position subtle palette flicker of generated binary rows",
+  "transparent_edge": true,
+  "frames": [
+    {
+      "index": 0,
+      "rect": [
+        0,
+        0,
+        512,
+        1024
+      ],
+      "light": 0.95,
+      "cyan": 1.0,
+      "sha256": "42e7ff8aac62bc3ce150b762a1b8f1b9e8d3aacef70e9f37abaf9a67b1be7b6c"
+    },
+    {
+      "index": 1,
+      "rect": [
+        512,
+        0,
+        512,
+        1024
+      ],
+      "light": 1.0,
+      "cyan": 1.02,
+      "sha256": "8a74f5d44f0bee635d78d1e8d232b2136e780398f18c0d6f8a72a1057551ba32"
+    },
+    {
+      "index": 2,
+      "rect": [
+        1024,
+        0,
+        512,
+        1024
+      ],
+      "light": 1.04,
+      "cyan": 1.08,
+      "sha256": "719af0952147f4907ae9c2db7c93bc809bbbf8ffe4269003910d9e88ab21e1ed"
+    },
+    {
+      "index": 3,
+      "rect": [
+        1536,
+        0,
+        512,
+        1024
+      ],
+      "light": 0.98,
+      "cyan": 1.01,
+      "sha256": "195b64df7d8a6275207227cb3a3eb135e3b2ef5fa64af46a24dda51fe2be6fc2"
+    }
+  ]
+}

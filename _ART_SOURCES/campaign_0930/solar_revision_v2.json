@@ -1,0 +1,11 @@
+{
+  "generator": "built-in image_gen",
+  "prompt": "Use case: stylized-concept. Edit/reference: turn the attached narrow solar ribbon into a MASSIVE dense solar-wave curtain for a locked region of a 16-bit arcade world map. A tall rectangle filled across almost its ENTIRE WIDTH with opaque dense churning dark crimson, burnt orange, amber and gold plasma. This is a solar storm covering an entire continent, NOT a thin lightning bolt, NOT a stripe and NOT a ring. Broad braided rolling sheets of flame occupy left, middle and right. Brightest white-yellow boiling wave crest runs along the RIGHT boundary, with a jagged irregular edge, flaring a little out into transparent background at right. Deep red/orange opaque plasma on the entire left, so no terrain can show through. View from high above, no horizon, no sun disc, no planet, no objects, no text. Crisp high-quality 16-bit Neo Geo pixel art with visible pixel clusters and stepped shading, dark red pixel outlines. Flame flow predominantly north/south. Designed to repeat vertically by alternating the tile orientation. Approximately 1:1.5 width:height canvas. Leave a thin transparent margin on the far right only. Cover at least 90 percent of the width with the actual storm, no wide empty gutters.",
+  "reference": "assets/game/campaign_0930/solar_frontier.png",
+  "source": "exec-16aeab21-2a21-45fc-a696-0a0906d45c44.png",
+  "runtime": "assets/game/campaign_0930/solar_curtain_v2.png",
+  "size": [
+    768,
+    1152
+  ]
+}

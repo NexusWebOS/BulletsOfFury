@@ -1,0 +1,5989 @@
+{
+  "date": "2026-09-30",
+  "base": "f61737bff83e3572163ab0c1acf6135ea9944112",
+  "status": "local uncommitted; not pushed",
+  "suite": {
+    "banner": "FALVA/LIZZIE BUILD OK, 0 ERRORS",
+    "okLines": 5969,
+    "notes": "Last full suite covers the gameplay changes. The later ace exhaust draw change was verified by the native encounter probe."
+  },
+  "reports": {
+    "fusion": [
+      {
+        "ok": true,
+        "name": "Fusion name and HUD icon",
+        "detail": null
+      },
+      {
+        "ok": true,
+        "name": "100% release size",
+        "detail": {
+          "scale": 1,
+          "w": 39,
+          "h": 152
+        }
+      },
+      {
+        "ok": true,
+        "name": "150% release size",
+        "detail": {
+          "scale": 1.5,
+          "w": 58.5,
+          "h": 228
+        }
+      },
+      {
+        "ok": true,
+        "name": "199% release size",
+        "detail": {
+          "scale": 2,
+          "w": 78,
+          "h": 304
+        }
+      },
+      {
+        "ok": true,
+        "name": "beam sweeps target once and creates impact/scar",
+        "detail": {
+          "hp": 755,
+          "hits": 1,
+          "fx": 2
+        }
+      },
+      {
+        "ok": true,
+        "name": "Stage 5 200% is one real death despite protection",
+        "detail": {
+          "dead": true,
+          "spin": true,
+          "deathT": 1.8,
+          "shield": 0,
+          "charge": 0,
+          "weapon": 0,
+          "deaths": 1,
+          "repeat": 0,
+          "beams": 0
+        }
+      },
+      {
+        "ok": true,
+        "name": "Stage 9 200% is one real death despite protection",
+        "detail": {
+          "dead": true,
+          "spin": true,
+          "deathT": 1.8,
+          "shield": 0,
+          "charge": 0,
+          "weapon": 0,
+          "deaths": 1,
+          "repeat": 0,
+          "beams": 0
+        }
+      },
+      {
+        "ok": true,
+        "name": "switching weapon cancels charge",
+        "detail": null
+      },
+      {
+        "ok": true,
+        "name": "random Stage8 supply never gives x100",
+        "detail": null
+      },
+      {
+        "ok": true,
+        "name": "retina upgrade no longer spawns",
+        "detail": null
+      },
+      {
+        "ok": true,
+        "name": "Stage5 helper removed from fresh and saved reward bags",
+        "detail": null
+      },
+      {
+        "ok": true,
+        "name": "Start submits once without inserting keypad text",
+        "detail": {
+          "calls": 1,
+          "value": "HAMMER"
+        }
+      },
+      {
+        "ok": true,
+        "name": "no browser errors",
+        "detail": []
+      }
+    ],
+    "repair": [
+      {
+        "ok": true,
+        "name": "chaingun wider and damage scales upward",
+        "detail": [
+          {
+            "lv": 1,
+            "damage": 4.05,
+            "w": 7.55,
+            "color": "#ff8a1e",
+            "dps": 40.49999999999999
+          },
+          {
+            "lv": 2,
+            "damage": 3.6,
+            "w": 8.1,
+            "color": "#3a8aff",
+            "dps": 80
+          },
+          {
+            "lv": 3,
+            "damage": 4.7,
+            "w": 8.65,
+            "color": "#5fe07a",
+            "dps": 117.5
+          },
+          {
+            "lv": 4,
+            "damage": 4.7,
+            "w": 9.2,
+            "color": "#dfe8ff",
+            "dps": 201.42857142857142
+          },
+          {
+            "lv": 5,
+            "damage": 6.05,
+            "w": 9.75,
+            "color": "#ff3b30",
+            "dps": 302.5
+          }
+        ]
+      },
+      {
+        "ok": true,
+        "name": "respawn grace keeps pod visibility matched to ship",
+        "detail": null
+      },
+      {
+        "ok": true,
+        "name": "both modular pods follow live ship coordinates",
+        "detail": {
+          "blits": 12,
+          "dx": 76.99999999999997,
+          "dy": -33
+        }
+      },
+      {
+        "ok": true,
+        "name": "all nine orb families draw authored frames",
+        "detail": null
+      },
+      {
+        "ok": true,
+        "name": "overlapping helper receives bullets despite parent invulnerability",
+        "detail": {
+          "routed": true,
+          "dead": true,
+          "first": 389,
+          "second": 382,
+          "flash": 0.15,
+          "parentNoHit": true
+        }
+      },
+      {
+        "ok": true,
+        "name": "regular normal starts Chromium sequence",
+        "detail": {
+          "state": "fr_activation",
+          "armor": true,
+          "ratio": 0.3,
+          "hama": false
+        }
+      },
+      {
+        "ok": true,
+        "name": "regular normal renders raised hammer and lightning",
+        "detail": {
+          "raised": true,
+          "lightning": true,
+          "state": "fr_activation"
+        }
+      },
+      {
+        "ok": true,
+        "name": "regular normal completes armor / Normal heal is exposed",
+        "detail": {
+          "activated": true,
+          "state": "storm_raise",
+          "barrier": 0,
+          "breakHP": 12
+        }
+      },
+      {
+        "ok": true,
+        "name": "regular hard starts Chromium sequence",
+        "detail": {
+          "state": "fr_activation",
+          "armor": true,
+          "ratio": 0.6,
+          "hama": false
+        }
+      },
+      {
+        "ok": true,
+        "name": "regular hard renders raised hammer and lightning",
+        "detail": {
+          "raised": true,
+          "lightning": true,
+          "state": "fr_activation"
+        }
+      },
+      {
+        "ok": true,
+        "name": "regular hard completes armor / Normal heal is exposed",
+        "detail": {
+          "activated": true,
+          "state": "storm_raise",
+          "barrier": 5.983333333333333,
+          "breakHP": 24
+        }
+      },
+      {
+        "ok": true,
+        "name": "regular furious starts Chromium sequence",
+        "detail": {
+          "state": "fr_activation",
+          "armor": true,
+          "ratio": 1,
+          "hama": false
+        }
+      },
+      {
+        "ok": true,
+        "name": "regular furious renders raised hammer and lightning",
+        "detail": {
+          "raised": true,
+          "lightning": true,
+          "state": "fr_activation"
+        }
+      },
+      {
+        "ok": true,
+        "name": "regular furious completes armor / Normal heal is exposed",
+        "detail": {
+          "activated": true,
+          "state": "storm_raise",
+          "barrier": 5.983333333333333,
+          "breakHP": 24
+        }
+      },
+      {
+        "ok": true,
+        "name": "hammer normal starts Chromium sequence",
+        "detail": {
+          "state": "fr_activation",
+          "armor": true,
+          "ratio": 0.3,
+          "hama": false
+        }
+      },
+      {
+        "ok": true,
+        "name": "hammer normal renders raised hammer and lightning",
+        "detail": {
+          "raised": true,
+          "lightning": true,
+          "state": "fr_activation"
+        }
+      },
+      {
+        "ok": true,
+        "name": "hammer normal completes armor / Normal heal is exposed",
+        "detail": {
+          "activated": true,
+          "state": "storm_raise",
+          "barrier": 0,
+          "breakHP": 12
+        }
+      },
+      {
+        "ok": true,
+        "name": "hammer hard starts Chromium sequence",
+        "detail": {
+          "state": "fr_activation",
+          "armor": true,
+          "ratio": 0.6,
+          "hama": false
+        }
+      },
+      {
+        "ok": true,
+        "name": "hammer hard renders raised hammer and lightning",
+        "detail": {
+          "raised": true,
+          "lightning": true,
+          "state": "fr_activation"
+        }
+      },
+      {
+        "ok": true,
+        "name": "hammer hard completes armor / Normal heal is exposed",
+        "detail": {
+          "activated": true,
+          "state": "storm_raise",
+          "barrier": 5.983333333333333,
+          "breakHP": 24
+        }
+      },
+      {
+        "ok": true,
+        "name": "hammer furious starts Chromium sequence",
+        "detail": {
+          "state": "fr_activation",
+          "armor": true,
+          "ratio": 1,
+          "hama": false
+        }
+      },
+      {
+        "ok": true,
+        "name": "hammer furious renders raised hammer and lightning",
+        "detail": {
+          "raised": true,
+          "lightning": true,
+          "state": "fr_activation"
+        }
+      },
+      {
+        "ok": true,
+        "name": "hammer furious completes armor / Normal heal is exposed",
+        "detail": {
+          "activated": true,
+          "state": "storm_raise",
+          "barrier": 5.983333333333333,
+          "breakHP": 24
+        }
+      },
+      {
+        "ok": true,
+        "name": "hama normal starts Chromium sequence",
+        "detail": {
+          "state": "fr_activation",
+          "armor": true,
+          "ratio": 0.3,
+          "hama": true
+        }
+      },
+      {
+        "ok": true,
+        "name": "hama normal renders raised hammer and lightning",
+        "detail": {
+          "raised": true,
+          "lightning": true,
+          "state": "fr_activation"
+        }
+      },
+      {
+        "ok": true,
+        "name": "hama normal completes armor / Normal heal is exposed",
+        "detail": {
+          "activated": true,
+          "state": "storm_raise",
+          "barrier": 0,
+          "breakHP": 12
+        }
+      },
+      {
+        "ok": true,
+        "name": "hama hard starts Chromium sequence",
+        "detail": {
+          "state": "fr_activation",
+          "armor": true,
+          "ratio": 0.6,
+          "hama": true
+        }
+      },
+      {
+        "ok": true,
+        "name": "hama hard renders raised hammer and lightning",
+        "detail": {
+          "raised": true,
+          "lightning": true,
+          "state": "fr_activation"
+        }
+      },
+      {
+        "ok": true,
+        "name": "hama hard completes armor / Normal heal is exposed",
+        "detail": {
+          "activated": true,
+          "state": "storm_raise",
+          "barrier": 5.983333333333333,
+          "breakHP": 24
+        }
+      },
+      {
+        "ok": true,
+        "name": "hama furious starts Chromium sequence",
+        "detail": {
+          "state": "fr_activation",
+          "armor": true,
+          "ratio": 1,
+          "hama": true
+        }
+      },
+      {
+        "ok": true,
+        "name": "hama furious renders raised hammer and lightning",
+        "detail": {
+          "raised": true,
+          "lightning": true,
+          "state": "fr_activation"
+        }
+      },
+      {
+        "ok": true,
+        "name": "hama furious completes armor / Normal heal is exposed",
+        "detail": {
+          "activated": true,
+          "state": "storm_raise",
+          "barrier": 5.983333333333333,
+          "breakHP": 24
+        }
+      },
+      {
+        "ok": true,
+        "name": "hammer retains all eight combat families and protects active recovery from music cuts",
+        "detail": {
+          "states": [
+            "warn",
+            "spin",
+            "whirl_warn",
+            "curl",
+            "spell",
+            "chain_warn",
+            "storm_raise",
+            "mega_charge"
+          ],
+          "protectedHeal": true
+        }
+      },
+      {
+        "ok": true,
+        "name": "hama retains all eight combat families and protects active recovery from music cuts",
+        "detail": {
+          "states": [
+            "warn",
+            "spin",
+            "whirl_warn",
+            "curl",
+            "spell",
+            "chain_warn",
+            "storm_raise",
+            "mega_charge"
+          ],
+          "protectedHeal": true
+        }
+      },
+      {
+        "ok": true,
+        "name": "no browser errors",
+        "detail": []
+      }
+    ],
+    "encounters": [
+      {
+        "ok": true,
+        "name": "all five Stage4 replacement rigs render",
+        "detail": [
+          {
+            "type": "sandtank",
+            "parts": true,
+            "hp": 17.55,
+            "draw": 49.896
+          },
+          {
+            "type": "roadtank",
+            "parts": true,
+            "hp": 17.55,
+            "draw": 58.967999999999996
+          },
+          {
+            "type": "s4interceptor",
+            "parts": true,
+            "hp": 14.560000000000002,
+            "draw": 80.64000000000001
+          },
+          {
+            "type": "s4heavyjet",
+            "parts": true,
+            "hp": 14.560000000000002,
+            "draw": 104.83200000000001
+          },
+          {
+            "type": "s4command",
+            "parts": true,
+            "hp": 14.560000000000002,
+            "draw": 99.072
+          }
+        ]
+      },
+      {
+        "ok": true,
+        "name": "shooting a wing module destroys and disables that gun",
+        "detail": {
+          "hp": 0,
+          "disabled": true,
+          "right": false,
+          "flash": 0.12
+        }
+      },
+      {
+        "ok": true,
+        "name": "tank pods warn before two downward missiles",
+        "detail": {
+          "tell": true,
+          "before": 0,
+          "shots": 2,
+          "down": true
+        }
+      },
+      {
+        "ok": true,
+        "name": "blue ace wing has its own target and flash",
+        "detail": {
+          "hit": true,
+          "flash": 0.16,
+          "body": 0,
+          "w": 148
+        }
+      },
+      {
+        "ok": true,
+        "name": "ace roll and somersault use distinct generated poses",
+        "detail": null
+      },
+      {
+        "ok": true,
+        "name": "vent warning, initial spray, full stream and decay render distinctly",
+        "detail": null
+      },
+      {
+        "ok": true,
+        "name": "vent damage matches visible spray and leaves outside lane safe",
+        "detail": {
+          "warning": 0,
+          "outside": 0,
+          "inside": 1
+        }
+      },
+      {
+        "ok": true,
+        "name": "no browser errors",
+        "detail": []
+      }
+    ],
+    "combinations": [
+      {
+        "ok": true,
+        "name": "laser tier 1: all nine previews fire, draw and preserve live loadout",
+        "detail": null
+      },
+      {
+        "ok": true,
+        "name": "laser tier 2: all nine previews fire, draw and preserve live loadout",
+        "detail": null
+      },
+      {
+        "ok": true,
+        "name": "laser tier 3: all nine previews fire, draw and preserve live loadout",
+        "detail": null
+      },
+      {
+        "ok": true,
+        "name": "laser tier 4: all nine previews fire, draw and preserve live loadout",
+        "detail": null
+      },
+      {
+        "ok": true,
+        "name": "laser tier 5: all nine previews fire, draw and preserve live loadout",
+        "detail": null
+      },
+      {
+        "ok": true,
+        "name": "cast tier 1: all nine previews fire, draw and preserve live loadout",
+        "detail": null
+      },
+      {
+        "ok": true,
+        "name": "cast tier 2: all nine previews fire, draw and preserve live loadout",
+        "detail": null
+      },
+      {
+        "ok": true,
+        "name": "cast tier 3: all nine previews fire, draw and preserve live loadout",
+        "detail": null
+      },
+      {
+        "ok": true,
+        "name": "cast tier 4: all nine previews fire, draw and preserve live loadout",
+        "detail": null
+      },
+      {
+        "ok": true,
+        "name": "cast tier 5: all nine previews fire, draw and preserve live loadout",
+        "detail": null
+      },
+      {
+        "ok": true,
+        "name": "orb tier 1: all nine previews fire, draw and preserve live loadout",
+        "detail": null
+      },
+      {
+        "ok": true,
+        "name": "orb tier 2: all nine previews fire, draw and preserve live loadout",
+        "detail": null
+      },
+      {
+        "ok": true,
+        "name": "orb tier 3: all nine previews fire, draw and preserve live loadout",
+        "detail": null
+      },
+      {
+        "ok": true,
+        "name": "orb tier 4: all nine previews fire, draw and preserve live loadout",
+        "detail": null
+      },
+      {
+        "ok": true,
+        "name": "orb tier 5: all nine previews fire, draw and preserve live loadout",
+        "detail": null
+      },
+      {
+        "ok": true,
+        "name": "chaingun tier 1: all nine previews fire, draw and preserve live loadout",
+        "detail": null
+      },
+      {
+        "ok": true,
+        "name": "chaingun tier 2: all nine previews fire, draw and preserve live loadout",
+        "detail": null
+      },
+      {
+        "ok": true,
+        "name": "chaingun tier 3: all nine previews fire, draw and preserve live loadout",
+        "detail": null
+      },
+      {
+        "ok": true,
+        "name": "chaingun tier 4: all nine previews fire, draw and preserve live loadout",
+        "detail": null
+      },
+      {
+        "ok": true,
+        "name": "chaingun tier 5: all nine previews fire, draw and preserve live loadout",
+        "detail": null
+      },
+      {
+        "ok": true,
+        "name": "27 animated families advance; nine authored chaingun rounds render",
+        "detail": []
+      },
+      {
+        "ok": true,
+        "name": "glyph cache stays bounded through 650 unique masks",
+        "detail": {
+          "size": 512,
+          "bytes": 131072,
+          "limit": 8388608
+        }
+      },
+      {
+        "ok": true,
+        "name": "no browser errors",
+        "detail": []
+      }
+    ],
+    "stats": {
+      "profile": {
+        "ms": 12.520833333178112,
+        "max": 17.700000002980232,
+        "draws": 1406.8333333333333,
+        "solid": 1015.4166666666666,
+        "tint": 383.4166666666667,
+        "score": 9879090,
+        "rank": 0
+      },
+      "errors": []
+    },
+    "performance": {
+      "label": "upgrade_0930",
+      "scenes": [
+        {
+          "stage": 5,
+          "state": "play",
+          "frames": 321,
+          "frameMean": 3.0538940809876007,
+          "frameP95": 4.699999999254942,
+          "frameMax": 13.100000001490116,
+          "intervalP50": 16.69999999999891,
+          "intervalP95": 33.399999999999636,
+          "fps": 54.08694476370765,
+          "functions": {},
+          "images": {},
+          "enemies": 3,
+          "pBullets": 3,
+          "eBullets": 0,
+          "particles": 20,
+          "fx": 0,
+          "explosions": 0,
+          "phase": null,
+          "cachedTints": 172
+        },
+        {
+          "stage": 6,
+          "state": "play",
+          "frames": 356,
+          "frameMean": 7.257584269681757,
+          "frameP95": 11.800000000745058,
+          "frameMax": 28.600000001490116,
+          "intervalP50": 16.69999999999709,
+          "intervalP95": 16.700000000004366,
+          "fps": 60.00169018845601,
+          "functions": {},
+          "images": {},
+          "enemies": 6,
+          "pBullets": 2,
+          "eBullets": 3,
+          "particles": 207,
+          "fx": 0,
+          "explosions": 1,
+          "phase": null,
+          "cachedTints": 242
+        },
+        {
+          "stage": 7,
+          "state": "play",
+          "frames": 356,
+          "frameMean": 6.0132022471993825,
+          "frameP95": 7.599999997764826,
+          "frameMax": 21.099999997764826,
+          "intervalP50": 16.69999999999709,
+          "intervalP95": 16.700000000004366,
+          "fps": 60.00270434723817,
+          "functions": {},
+          "images": {},
+          "enemies": 0,
+          "pBullets": 28,
+          "eBullets": 0,
+          "particles": 87,
+          "fx": 0,
+          "explosions": 13,
+          "phase": null,
+          "cachedTints": 267
+        },
+        {
+          "stage": 8,
+          "state": "play",
+          "frames": 352,
+          "frameMean": 3.176420454613187,
+          "frameP95": 7.900000002235174,
+          "frameMax": 74.89999999850988,
+          "intervalP50": 16.69999999999709,
+          "intervalP95": 16.799999999995634,
+          "fps": 59.326617537691824,
+          "functions": {},
+          "images": {},
+          "enemies": 5,
+          "pBullets": 0,
+          "eBullets": 0,
+          "particles": 4,
+          "fx": 0,
+          "explosions": 0,
+          "phase": null,
+          "cachedTints": 291
+        }
+      ],
+      "errors": []
+    },
+    "hammer_secret": [
+      {
+        "diff": "hard",
+        "route": "checkpoint",
+        "weapon": "gun",
+        "secret": true,
+        "info": {
+          "kind": "chromehammer",
+          "state": "hammer",
+          "hp": 8400,
+          "maxhp": 8400,
+          "secret": true,
+          "space": true
+        },
+        "heal": {
+          "state": "storm_raise",
+          "status": "charging",
+          "fr": true,
+          "core": 24,
+          "barrier": 6
+        },
+        "broke": true,
+        "breakAt": 1.0999999999999996,
+        "reflected": 30,
+        "stunStates": [
+          "fr_stun"
+        ],
+        "stunSec": 3.9,
+        "shieldInStun": 0,
+        "stunPoseDrawn": 36,
+        "stunFx": 36,
+        "bodyDmgInStun": {
+          "hp": 0,
+          "armor": 20,
+          "state": "fr_stun"
+        },
+        "reheal": false,
+        "rehealAt": null,
+        "resumed": "hammer",
+        "errs": [],
+        "end": {
+          "t": 16.98,
+          "state": "spin",
+          "mode": "hammer",
+          "status": "cancelled",
+          "same": true,
+          "core": 4,
+          "hp": 4620,
+          "armor": 1860,
+          "barrier": 0,
+          "head": {
+            "x": 404,
+            "y": 166
+          },
+          "bx": 333,
+          "by": 174,
+          "refl": 30,
+          "dead": false
+        },
+        "timeline": [
+          {
+            "t": 5.08,
+            "state": "storm_raise",
+            "mode": "storm",
+            "status": "charging",
+            "same": true,
+            "core": 24,
+            "hp": 4620,
+            "armor": 2016,
+            "barrier": 5.57,
+            "head": {
+              "x": 442,
+              "y": 92
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 12,
+            "dead": false
+          },
+          {
+            "t": 5.58,
+            "state": "storm_raise",
+            "mode": "storm",
+            "status": "charging",
+            "same": true,
+            "core": 4,
+            "hp": 4620,
+            "armor": 2016,
+            "barrier": 5.07,
+            "head": {
+              "x": 395,
+              "y": 43
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 18,
+            "dead": false
+          },
+          {
+            "t": 6.08,
+            "state": "storm_raise",
+            "mode": "storm",
+            "status": "charging",
+            "same": true,
+            "core": 4,
+            "hp": 4620,
+            "armor": 2184,
+            "barrier": 4.57,
+            "head": {
+              "x": 339,
+              "y": 36
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 6.58,
+            "state": "fr_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 4620,
+            "armor": 1880,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 257
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 7.08,
+            "state": "fr_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 4620,
+            "armor": 1860,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 257
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 7.58,
+            "state": "fr_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 4620,
+            "armor": 1860,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 257
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 8.08,
+            "state": "fr_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 4620,
+            "armor": 1860,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 257
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 8.58,
+            "state": "fr_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 4620,
+            "armor": 1860,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 257
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 9.08,
+            "state": "fr_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 4620,
+            "armor": 1860,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 257
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 9.58,
+            "state": "fr_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 4620,
+            "armor": 1860,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 257
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 10.08,
+            "state": "fr_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 4620,
+            "armor": 1860,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 257
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 10.58,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 4620,
+            "armor": 1860,
+            "barrier": 0,
+            "head": {
+              "x": 256,
+              "y": 257
+            },
+            "bx": 318,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 11.08,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 4620,
+            "armor": 1860,
+            "barrier": 0,
+            "head": {
+              "x": 299,
+              "y": 257
+            },
+            "bx": 361,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 11.58,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 4620,
+            "armor": 1860,
+            "barrier": 0,
+            "head": {
+              "x": 258,
+              "y": 257
+            },
+            "bx": 320,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 12.08,
+            "state": "warn",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 4620,
+            "armor": 1860,
+            "barrier": 0,
+            "head": {
+              "x": 288,
+              "y": 261
+            },
+            "bx": 357,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 12.58,
+            "state": "warn",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 4620,
+            "armor": 1860,
+            "barrier": 0,
+            "head": {
+              "x": 384,
+              "y": 95
+            },
+            "bx": 357,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 13.08,
+            "state": "warn",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 4620,
+            "armor": 1860,
+            "barrier": 0,
+            "head": {
+              "x": 400,
+              "y": 74
+            },
+            "bx": 357,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 13.58,
+            "state": "leap",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 4620,
+            "armor": 1860,
+            "barrier": 0,
+            "head": {
+              "x": 395,
+              "y": 330
+            },
+            "bx": 344,
+            "by": 287,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 14.08,
+            "state": "recover",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 4620,
+            "armor": 1860,
+            "barrier": 0,
+            "head": {
+              "x": 280,
+              "y": 412
+            },
+            "bx": 339,
+            "by": 334,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 14.58,
+            "state": "back",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 4620,
+            "armor": 1860,
+            "barrier": 0,
+            "head": {
+              "x": 277,
+              "y": 406
+            },
+            "bx": 339,
+            "by": 323,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 15.08,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 4620,
+            "armor": 1860,
+            "barrier": 0,
+            "head": {
+              "x": 272,
+              "y": 257
+            },
+            "bx": 335,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 15.58,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 4620,
+            "armor": 1860,
+            "barrier": 0,
+            "head": {
+              "x": 291,
+              "y": 257
+            },
+            "bx": 354,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 16.08,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 4620,
+            "armor": 1860,
+            "barrier": 0,
+            "head": {
+              "x": 270,
+              "y": 257
+            },
+            "bx": 332,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 16.58,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 4620,
+            "armor": 1860,
+            "barrier": 0,
+            "head": {
+              "x": 276,
+              "y": 257
+            },
+            "bx": 338,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          }
+        ]
+      },
+      {
+        "diff": "hard",
+        "route": "checkpoint",
+        "weapon": "missile",
+        "secret": true,
+        "info": {
+          "kind": "chromehammer",
+          "state": "hammer",
+          "hp": 8400,
+          "maxhp": 8400,
+          "secret": true,
+          "space": true
+        },
+        "heal": {
+          "state": "storm_raise",
+          "status": "charging",
+          "fr": true,
+          "core": 24,
+          "barrier": 6
+        },
+        "broke": true,
+        "breakAt": 1.0,
+        "reflected": 0,
+        "stunStates": [
+          "fr_stun"
+        ],
+        "stunSec": 3.8,
+        "shieldInStun": 0,
+        "stunPoseDrawn": 36,
+        "stunFx": 36,
+        "bodyDmgInStun": {
+          "hp": 0,
+          "armor": 20,
+          "state": "fr_stun"
+        },
+        "reheal": false,
+        "rehealAt": null,
+        "resumed": "leap_reset",
+        "errs": [],
+        "end": {
+          "t": 16.82,
+          "state": "spin",
+          "mode": "hammer",
+          "status": "cancelled",
+          "same": true,
+          "core": 24,
+          "hp": 4620,
+          "armor": 1996,
+          "barrier": 0,
+          "head": {
+            "x": 322,
+            "y": 166
+          },
+          "bx": 250,
+          "by": 174,
+          "refl": 0,
+          "dead": false
+        },
+        "timeline": [
+          {
+            "t": 4.92,
+            "state": "storm_raise",
+            "mode": "storm",
+            "status": "charging",
+            "same": true,
+            "core": 24,
+            "hp": 4620,
+            "armor": 2016,
+            "barrier": 5.57,
+            "head": {
+              "x": 442,
+              "y": 92
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 5.42,
+            "state": "storm_raise",
+            "mode": "storm",
+            "status": "charging",
+            "same": true,
+            "core": 24,
+            "hp": 4620,
+            "armor": 2016,
+            "barrier": 5.07,
+            "head": {
+              "x": 395,
+              "y": 43
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 5.92,
+            "state": "fr_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 4620,
+            "armor": 2016,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 257
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 6.42,
+            "state": "fr_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 4620,
+            "armor": 2016,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 257
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 6.92,
+            "state": "fr_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 4620,
+            "armor": 1996,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 257
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 7.42,
+            "state": "fr_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 4620,
+            "armor": 1996,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 257
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 7.92,
+            "state": "fr_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 4620,
+            "armor": 1996,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 257
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 8.42,
+            "state": "fr_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 4620,
+            "armor": 1996,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 257
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 8.92,
+            "state": "fr_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 4620,
+            "armor": 1996,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 257
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 9.42,
+            "state": "fr_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 4620,
+            "armor": 1996,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 257
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 9.92,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 4620,
+            "armor": 1996,
+            "barrier": 0,
+            "head": {
+              "x": 266,
+              "y": 257
+            },
+            "bx": 329,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 10.42,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 4620,
+            "armor": 1996,
+            "barrier": 0,
+            "head": {
+              "x": 199,
+              "y": 257
+            },
+            "bx": 261,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 10.92,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 4620,
+            "armor": 1996,
+            "barrier": 0,
+            "head": {
+              "x": 230,
+              "y": 257
+            },
+            "bx": 292,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 11.42,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 4620,
+            "armor": 1996,
+            "barrier": 0,
+            "head": {
+              "x": 189,
+              "y": 257
+            },
+            "bx": 251,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 11.92,
+            "state": "warn",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 4620,
+            "armor": 1996,
+            "barrier": 0,
+            "head": {
+              "x": 222,
+              "y": 261
+            },
+            "bx": 292,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 12.42,
+            "state": "warn",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 4620,
+            "armor": 1996,
+            "barrier": 0,
+            "head": {
+              "x": 318,
+              "y": 95
+            },
+            "bx": 292,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 12.92,
+            "state": "warn",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 4620,
+            "armor": 1996,
+            "barrier": 0,
+            "head": {
+              "x": 334,
+              "y": 74
+            },
+            "bx": 292,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 13.42,
+            "state": "leap",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 4620,
+            "armor": 1996,
+            "barrier": 0,
+            "head": {
+              "x": 322,
+              "y": 370
+            },
+            "bx": 271,
+            "by": 326,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 13.92,
+            "state": "recover",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 4620,
+            "armor": 1996,
+            "barrier": 0,
+            "head": {
+              "x": 211,
+              "y": 412
+            },
+            "bx": 270,
+            "by": 334,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 14.42,
+            "state": "back",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 4620,
+            "armor": 1996,
+            "barrier": 0,
+            "head": {
+              "x": 208,
+              "y": 364
+            },
+            "bx": 270,
+            "by": 281,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 14.92,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 4620,
+            "armor": 1996,
+            "barrier": 0,
+            "head": {
+              "x": 188,
+              "y": 257
+            },
+            "bx": 250,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 15.42,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 4620,
+            "armor": 1996,
+            "barrier": 0,
+            "head": {
+              "x": 223,
+              "y": 257
+            },
+            "bx": 285,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 15.92,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 4620,
+            "armor": 1996,
+            "barrier": 0,
+            "head": {
+              "x": 201,
+              "y": 257
+            },
+            "bx": 263,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 16.42,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 4620,
+            "armor": 1996,
+            "barrier": 0,
+            "head": {
+              "x": 207,
+              "y": 257
+            },
+            "bx": 269,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          }
+        ]
+      },
+      {
+        "diff": "furious",
+        "route": "checkpoint",
+        "weapon": "gun",
+        "secret": true,
+        "info": {
+          "kind": "chromehammer",
+          "state": "hammer",
+          "hp": 9800,
+          "maxhp": 9800,
+          "secret": true,
+          "space": true
+        },
+        "heal": {
+          "state": "storm_raise",
+          "status": "charging",
+          "fr": true,
+          "core": 24,
+          "barrier": 6
+        },
+        "broke": true,
+        "breakAt": 1.0999999999999996,
+        "reflected": 30,
+        "stunStates": [
+          "fr_stun"
+        ],
+        "stunSec": 3.9,
+        "shieldInStun": 0,
+        "stunPoseDrawn": 36,
+        "stunFx": 36,
+        "bodyDmgInStun": {
+          "hp": 0,
+          "armor": 20,
+          "state": "fr_stun"
+        },
+        "reheal": false,
+        "rehealAt": null,
+        "resumed": "hammer",
+        "errs": [],
+        "end": {
+          "t": 16.94,
+          "state": "throw",
+          "mode": "hammer",
+          "status": "cancelled",
+          "same": true,
+          "core": 4,
+          "hp": 5390,
+          "armor": 3764,
+          "barrier": 0,
+          "head": {
+            "x": 315,
+            "y": 301
+          },
+          "bx": 358,
+          "by": 174,
+          "refl": 30,
+          "dead": false
+        },
+        "timeline": [
+          {
+            "t": 5.04,
+            "state": "storm_raise",
+            "mode": "storm",
+            "status": "charging",
+            "same": true,
+            "core": 24,
+            "hp": 5390,
+            "armor": 3920,
+            "barrier": 5.57,
+            "head": {
+              "x": 442,
+              "y": 92
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 12,
+            "dead": false
+          },
+          {
+            "t": 5.54,
+            "state": "storm_raise",
+            "mode": "storm",
+            "status": "charging",
+            "same": true,
+            "core": 4,
+            "hp": 5390,
+            "armor": 3920,
+            "barrier": 5.07,
+            "head": {
+              "x": 395,
+              "y": 43
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 18,
+            "dead": false
+          },
+          {
+            "t": 6.04,
+            "state": "storm_raise",
+            "mode": "storm",
+            "status": "charging",
+            "same": true,
+            "core": 4,
+            "hp": 5390,
+            "armor": 4116,
+            "barrier": 4.57,
+            "head": {
+              "x": 339,
+              "y": 36
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 6.54,
+            "state": "fr_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 5390,
+            "armor": 3784,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 257
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 7.04,
+            "state": "fr_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 5390,
+            "armor": 3764,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 257
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 7.54,
+            "state": "fr_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 5390,
+            "armor": 3764,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 257
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 8.04,
+            "state": "fr_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 5390,
+            "armor": 3764,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 257
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 8.54,
+            "state": "fr_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 5390,
+            "armor": 3764,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 257
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 9.04,
+            "state": "fr_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 5390,
+            "armor": 3764,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 257
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 9.54,
+            "state": "fr_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 5390,
+            "armor": 3764,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 257
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 10.04,
+            "state": "fr_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 5390,
+            "armor": 3764,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 257
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 10.54,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 5390,
+            "armor": 3764,
+            "barrier": 0,
+            "head": {
+              "x": 257,
+              "y": 257
+            },
+            "bx": 319,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 11.04,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 5390,
+            "armor": 3764,
+            "barrier": 0,
+            "head": {
+              "x": 299,
+              "y": 257
+            },
+            "bx": 361,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 11.54,
+            "state": "warn",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 5390,
+            "armor": 3764,
+            "barrier": 0,
+            "head": {
+              "x": 243,
+              "y": 243
+            },
+            "bx": 318,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 12.04,
+            "state": "leap",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 5390,
+            "armor": 3764,
+            "barrier": 0,
+            "head": {
+              "x": 376,
+              "y": 91
+            },
+            "bx": 318,
+            "by": 176,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 12.54,
+            "state": "recover",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 5390,
+            "armor": 3764,
+            "barrier": 0,
+            "head": {
+              "x": 280,
+              "y": 412
+            },
+            "bx": 339,
+            "by": 334,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 13.04,
+            "state": "back",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 5390,
+            "armor": 3764,
+            "barrier": 0,
+            "head": {
+              "x": 277,
+              "y": 273
+            },
+            "bx": 339,
+            "by": 190,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 13.54,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 5390,
+            "armor": 3764,
+            "barrier": 0,
+            "head": {
+              "x": 286,
+              "y": 257
+            },
+            "bx": 349,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 14.04,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 5390,
+            "armor": 3764,
+            "barrier": 0,
+            "head": {
+              "x": 259,
+              "y": 257
+            },
+            "bx": 321,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 14.54,
+            "state": "spin",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 5390,
+            "armor": 3764,
+            "barrier": 0,
+            "head": {
+              "x": 430,
+              "y": 166
+            },
+            "bx": 358,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 15.04,
+            "state": "spin",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 5390,
+            "armor": 3764,
+            "barrier": 0,
+            "head": {
+              "x": 424,
+              "y": 89
+            },
+            "bx": 358,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 15.54,
+            "state": "spin",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 5390,
+            "armor": 3764,
+            "barrier": 0,
+            "head": {
+              "x": 271,
+              "y": 114
+            },
+            "bx": 358,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 16.04,
+            "state": "spin",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 5390,
+            "armor": 3764,
+            "barrier": 0,
+            "head": {
+              "x": 434,
+              "y": 174
+            },
+            "bx": 358,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 16.54,
+            "state": "throw",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 5390,
+            "armor": 3764,
+            "barrier": 0,
+            "head": {
+              "x": 335,
+              "y": 298
+            },
+            "bx": 358,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          }
+        ]
+      },
+      {
+        "diff": "furious",
+        "route": "checkpoint",
+        "weapon": "missile",
+        "secret": true,
+        "info": {
+          "kind": "chromehammer",
+          "state": "hammer",
+          "hp": 9800,
+          "maxhp": 9800,
+          "secret": true,
+          "space": true
+        },
+        "heal": {
+          "state": "storm_raise",
+          "status": "charging",
+          "fr": true,
+          "core": 24,
+          "barrier": 6
+        },
+        "broke": true,
+        "breakAt": 1.0,
+        "reflected": 0,
+        "stunStates": [
+          "fr_stun"
+        ],
+        "stunSec": 3.8,
+        "shieldInStun": 0,
+        "stunPoseDrawn": 36,
+        "stunFx": 36,
+        "bodyDmgInStun": {
+          "hp": 0,
+          "armor": 20,
+          "state": "fr_stun"
+        },
+        "reheal": false,
+        "rehealAt": null,
+        "resumed": "leap_reset",
+        "errs": [],
+        "end": {
+          "t": 16.94,
+          "state": "throw",
+          "mode": "hammer",
+          "status": "cancelled",
+          "same": true,
+          "core": 24,
+          "hp": 5390,
+          "armor": 3900,
+          "barrier": 0,
+          "head": {
+            "x": 224,
+            "y": 272
+          },
+          "bx": 276,
+          "by": 174,
+          "refl": 0,
+          "dead": false
+        },
+        "timeline": [
+          {
+            "t": 5.04,
+            "state": "storm_raise",
+            "mode": "storm",
+            "status": "charging",
+            "same": true,
+            "core": 24,
+            "hp": 5390,
+            "armor": 3920,
+            "barrier": 5.57,
+            "head": {
+              "x": 442,
+              "y": 92
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 5.54,
+            "state": "storm_raise",
+            "mode": "storm",
+            "status": "charging",
+            "same": true,
+            "core": 24,
+            "hp": 5390,
+            "armor": 3920,
+            "barrier": 5.07,
+            "head": {
+              "x": 395,
+              "y": 43
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 6.04,
+            "state": "fr_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 5390,
+            "armor": 3920,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 257
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 6.54,
+            "state": "fr_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 5390,
+            "armor": 3920,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 257
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 7.04,
+            "state": "fr_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 5390,
+            "armor": 3900,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 257
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 7.54,
+            "state": "fr_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 5390,
+            "armor": 3900,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 257
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 8.04,
+            "state": "fr_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 5390,
+            "armor": 3900,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 257
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 8.54,
+            "state": "fr_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 5390,
+            "armor": 3900,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 257
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 9.04,
+            "state": "fr_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 5390,
+            "armor": 3900,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 257
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 9.54,
+            "state": "fr_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 5390,
+            "armor": 3900,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 257
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 10.04,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 5390,
+            "armor": 3900,
+            "barrier": 0,
+            "head": {
+              "x": 266,
+              "y": 257
+            },
+            "bx": 329,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 10.54,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 5390,
+            "armor": 3900,
+            "barrier": 0,
+            "head": {
+              "x": 199,
+              "y": 257
+            },
+            "bx": 261,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 11.04,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 5390,
+            "armor": 3900,
+            "barrier": 0,
+            "head": {
+              "x": 230,
+              "y": 257
+            },
+            "bx": 292,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 11.54,
+            "state": "warn",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 5390,
+            "armor": 3900,
+            "barrier": 0,
+            "head": {
+              "x": 287,
+              "y": 95
+            },
+            "bx": 261,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 12.04,
+            "state": "leap",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 5390,
+            "armor": 3900,
+            "barrier": 0,
+            "head": {
+              "x": 311,
+              "y": 166
+            },
+            "bx": 265,
+            "by": 253,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 12.54,
+            "state": "recover",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 5390,
+            "armor": 3900,
+            "barrier": 0,
+            "head": {
+              "x": 208,
+              "y": 417
+            },
+            "bx": 270,
+            "by": 334,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 13.04,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 5390,
+            "armor": 3900,
+            "barrier": 0,
+            "head": {
+              "x": 203,
+              "y": 257
+            },
+            "bx": 266,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 13.54,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 5390,
+            "armor": 3900,
+            "barrier": 0,
+            "head": {
+              "x": 220,
+              "y": 257
+            },
+            "bx": 282,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 14.04,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 5390,
+            "armor": 3900,
+            "barrier": 0,
+            "head": {
+              "x": 188,
+              "y": 257
+            },
+            "bx": 250,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 14.54,
+            "state": "spin",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 5390,
+            "armor": 3900,
+            "barrier": 0,
+            "head": {
+              "x": 348,
+              "y": 166
+            },
+            "bx": 276,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 15.04,
+            "state": "spin",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 5390,
+            "armor": 3900,
+            "barrier": 0,
+            "head": {
+              "x": 223,
+              "y": 88
+            },
+            "bx": 276,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 15.54,
+            "state": "spin",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 5390,
+            "armor": 3900,
+            "barrier": 0,
+            "head": {
+              "x": 304,
+              "y": 90
+            },
+            "bx": 276,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 16.04,
+            "state": "throw",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 5390,
+            "armor": 3900,
+            "barrier": 0,
+            "head": {
+              "x": 323,
+              "y": 200
+            },
+            "bx": 276,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 16.54,
+            "state": "throw",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 5390,
+            "armor": 3900,
+            "barrier": 0,
+            "head": {
+              "x": 265,
+              "y": 328
+            },
+            "bx": 276,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          }
+        ]
+      }
+    ],
+    "hama_heal": [
+      {
+        "diff": "hard",
+        "route": "checkpoint",
+        "weapon": "gun",
+        "secret": true,
+        "info": {
+          "kind": "chromehammer",
+          "state": "hammer",
+          "hp": 8400,
+          "maxhp": 8400,
+          "secret": true,
+          "space": true
+        },
+        "heal": {
+          "state": "storm_raise",
+          "status": "charging",
+          "fr": true,
+          "core": 24,
+          "barrier": 6
+        },
+        "broke": true,
+        "breakAt": 1.1000000000000005,
+        "reflected": 30,
+        "stunStates": [
+          "fr_stun"
+        ],
+        "stunSec": 3.9,
+        "shieldInStun": 0,
+        "stunPoseDrawn": 36,
+        "stunFx": 36,
+        "bodyDmgInStun": {
+          "hp": 0,
+          "armor": 20,
+          "state": "fr_stun"
+        },
+        "reheal": false,
+        "rehealAt": null,
+        "resumed": "hammer",
+        "errs": [],
+        "end": {
+          "t": 17.16,
+          "state": "hammer",
+          "mode": "hammer",
+          "status": "cancelled",
+          "same": true,
+          "core": 4,
+          "hp": 4620,
+          "armor": 1860,
+          "barrier": 0,
+          "head": {
+            "x": 298,
+            "y": 257
+          },
+          "bx": 360,
+          "by": 174,
+          "refl": 30,
+          "dead": false
+        },
+        "timeline": [
+          {
+            "t": 5.26,
+            "state": "storm_raise",
+            "mode": "storm",
+            "status": "charging",
+            "same": true,
+            "core": 24,
+            "hp": 4620,
+            "armor": 2016,
+            "barrier": 5.57,
+            "head": {
+              "x": 442,
+              "y": 92
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 12,
+            "dead": false
+          },
+          {
+            "t": 5.76,
+            "state": "storm_raise",
+            "mode": "storm",
+            "status": "charging",
+            "same": true,
+            "core": 4,
+            "hp": 4620,
+            "armor": 2016,
+            "barrier": 5.07,
+            "head": {
+              "x": 395,
+              "y": 43
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 18,
+            "dead": false
+          },
+          {
+            "t": 6.26,
+            "state": "storm_raise",
+            "mode": "storm",
+            "status": "charging",
+            "same": true,
+            "core": 4,
+            "hp": 4620,
+            "armor": 2184,
+            "barrier": 4.57,
+            "head": {
+              "x": 339,
+              "y": 36
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 6.76,
+            "state": "fr_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 4620,
+            "armor": 1880,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 257
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 7.26,
+            "state": "fr_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 4620,
+            "armor": 1860,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 257
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 7.76,
+            "state": "fr_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 4620,
+            "armor": 1860,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 257
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 8.26,
+            "state": "fr_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 4620,
+            "armor": 1860,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 257
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 8.76,
+            "state": "fr_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 4620,
+            "armor": 1860,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 257
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 9.26,
+            "state": "fr_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 4620,
+            "armor": 1860,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 257
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 9.76,
+            "state": "fr_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 4620,
+            "armor": 1860,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 257
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 10.26,
+            "state": "fr_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 4620,
+            "armor": 1860,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 257
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 10.76,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 4620,
+            "armor": 1860,
+            "barrier": 0,
+            "head": {
+              "x": 293,
+              "y": 257
+            },
+            "bx": 356,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 11.26,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 4620,
+            "armor": 1860,
+            "barrier": 0,
+            "head": {
+              "x": 256,
+              "y": 257
+            },
+            "bx": 318,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 11.76,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 4620,
+            "armor": 1860,
+            "barrier": 0,
+            "head": {
+              "x": 299,
+              "y": 257
+            },
+            "bx": 361,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 12.26,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 4620,
+            "armor": 1860,
+            "barrier": 0,
+            "head": {
+              "x": 255,
+              "y": 257
+            },
+            "bx": 317,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 12.76,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 4620,
+            "armor": 1860,
+            "barrier": 0,
+            "head": {
+              "x": 255,
+              "y": 257
+            },
+            "bx": 317,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 13.26,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 4620,
+            "armor": 1860,
+            "barrier": 0,
+            "head": {
+              "x": 255,
+              "y": 257
+            },
+            "bx": 317,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 13.76,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 4620,
+            "armor": 1860,
+            "barrier": 0,
+            "head": {
+              "x": 255,
+              "y": 257
+            },
+            "bx": 317,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 14.26,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 4620,
+            "armor": 1860,
+            "barrier": 0,
+            "head": {
+              "x": 255,
+              "y": 257
+            },
+            "bx": 317,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 14.76,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 4620,
+            "armor": 1860,
+            "barrier": 0,
+            "head": {
+              "x": 255,
+              "y": 257
+            },
+            "bx": 317,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 15.26,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 4620,
+            "armor": 1860,
+            "barrier": 0,
+            "head": {
+              "x": 255,
+              "y": 257
+            },
+            "bx": 317,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 15.76,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 4620,
+            "armor": 1860,
+            "barrier": 0,
+            "head": {
+              "x": 255,
+              "y": 257
+            },
+            "bx": 317,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 16.26,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 4620,
+            "armor": 1860,
+            "barrier": 0,
+            "head": {
+              "x": 259,
+              "y": 257
+            },
+            "bx": 322,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 16.76,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 4620,
+            "armor": 1860,
+            "barrier": 0,
+            "head": {
+              "x": 255,
+              "y": 257
+            },
+            "bx": 317,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          }
+        ]
+      },
+      {
+        "diff": "hard",
+        "route": "checkpoint",
+        "weapon": "missile",
+        "secret": true,
+        "info": {
+          "kind": "chromehammer",
+          "state": "hammer",
+          "hp": 8400,
+          "maxhp": 8400,
+          "secret": true,
+          "space": true
+        },
+        "heal": {
+          "state": "storm_raise",
+          "status": "charging",
+          "fr": true,
+          "core": 24,
+          "barrier": 6
+        },
+        "broke": true,
+        "breakAt": 1.0,
+        "reflected": 0,
+        "stunStates": [
+          "fr_stun"
+        ],
+        "stunSec": 3.8,
+        "shieldInStun": 0,
+        "stunPoseDrawn": 36,
+        "stunFx": 36,
+        "bodyDmgInStun": {
+          "hp": 0,
+          "armor": 20,
+          "state": "fr_stun"
+        },
+        "reheal": false,
+        "rehealAt": null,
+        "resumed": "leap_reset",
+        "errs": [],
+        "end": {
+          "t": 17.18,
+          "state": "hammer",
+          "mode": "hammer",
+          "status": "cancelled",
+          "same": true,
+          "core": 24,
+          "hp": 4620,
+          "armor": 1996,
+          "barrier": 0,
+          "head": {
+            "x": 229,
+            "y": 257
+          },
+          "bx": 292,
+          "by": 174,
+          "refl": 0,
+          "dead": false
+        },
+        "timeline": [
+          {
+            "t": 5.28,
+            "state": "storm_raise",
+            "mode": "storm",
+            "status": "charging",
+            "same": true,
+            "core": 24,
+            "hp": 4620,
+            "armor": 2016,
+            "barrier": 5.57,
+            "head": {
+              "x": 442,
+              "y": 92
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 5.78,
+            "state": "storm_raise",
+            "mode": "storm",
+            "status": "charging",
+            "same": true,
+            "core": 24,
+            "hp": 4620,
+            "armor": 2016,
+            "barrier": 5.07,
+            "head": {
+              "x": 395,
+              "y": 43
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 6.28,
+            "state": "fr_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 4620,
+            "armor": 2016,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 257
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 6.78,
+            "state": "fr_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 4620,
+            "armor": 2016,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 257
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 7.28,
+            "state": "fr_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 4620,
+            "armor": 1996,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 257
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 7.78,
+            "state": "fr_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 4620,
+            "armor": 1996,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 257
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 8.28,
+            "state": "fr_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 4620,
+            "armor": 1996,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 257
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 8.78,
+            "state": "fr_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 4620,
+            "armor": 1996,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 257
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 9.28,
+            "state": "fr_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 4620,
+            "armor": 1996,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 257
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 9.78,
+            "state": "fr_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 4620,
+            "armor": 1996,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 257
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 10.28,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 4620,
+            "armor": 1996,
+            "barrier": 0,
+            "head": {
+              "x": 266,
+              "y": 257
+            },
+            "bx": 329,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 10.78,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 4620,
+            "armor": 1996,
+            "barrier": 0,
+            "head": {
+              "x": 225,
+              "y": 257
+            },
+            "bx": 287,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 11.28,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 4620,
+            "armor": 1996,
+            "barrier": 0,
+            "head": {
+              "x": 187,
+              "y": 257
+            },
+            "bx": 250,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 11.78,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 4620,
+            "armor": 1996,
+            "barrier": 0,
+            "head": {
+              "x": 230,
+              "y": 257
+            },
+            "bx": 292,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 12.28,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 4620,
+            "armor": 1996,
+            "barrier": 0,
+            "head": {
+              "x": 195,
+              "y": 257
+            },
+            "bx": 257,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 12.78,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 4620,
+            "armor": 1996,
+            "barrier": 0,
+            "head": {
+              "x": 195,
+              "y": 257
+            },
+            "bx": 257,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 13.28,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 4620,
+            "armor": 1996,
+            "barrier": 0,
+            "head": {
+              "x": 195,
+              "y": 257
+            },
+            "bx": 257,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 13.78,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 4620,
+            "armor": 1996,
+            "barrier": 0,
+            "head": {
+              "x": 195,
+              "y": 257
+            },
+            "bx": 257,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 14.28,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 4620,
+            "armor": 1996,
+            "barrier": 0,
+            "head": {
+              "x": 195,
+              "y": 257
+            },
+            "bx": 257,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 14.78,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 4620,
+            "armor": 1996,
+            "barrier": 0,
+            "head": {
+              "x": 195,
+              "y": 257
+            },
+            "bx": 257,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 15.28,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 4620,
+            "armor": 1996,
+            "barrier": 0,
+            "head": {
+              "x": 195,
+              "y": 257
+            },
+            "bx": 257,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 15.78,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 4620,
+            "armor": 1996,
+            "barrier": 0,
+            "head": {
+              "x": 195,
+              "y": 257
+            },
+            "bx": 257,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 16.28,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 4620,
+            "armor": 1996,
+            "barrier": 0,
+            "head": {
+              "x": 215,
+              "y": 257
+            },
+            "bx": 277,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 16.78,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 4620,
+            "armor": 1996,
+            "barrier": 0,
+            "head": {
+              "x": 186,
+              "y": 257
+            },
+            "bx": 248,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          }
+        ]
+      },
+      {
+        "diff": "furious",
+        "route": "checkpoint",
+        "weapon": "gun",
+        "secret": true,
+        "info": {
+          "kind": "chromehammer",
+          "state": "hammer",
+          "hp": 9800,
+          "maxhp": 9800,
+          "secret": true,
+          "space": true
+        },
+        "heal": {
+          "state": "storm_raise",
+          "status": "charging",
+          "fr": true,
+          "core": 24,
+          "barrier": 6
+        },
+        "broke": true,
+        "breakAt": 1.0999999999999996,
+        "reflected": 30,
+        "stunStates": [
+          "fr_stun"
+        ],
+        "stunSec": 3.9,
+        "shieldInStun": 0,
+        "stunPoseDrawn": 36,
+        "stunFx": 36,
+        "bodyDmgInStun": {
+          "hp": 0,
+          "armor": 20,
+          "state": "fr_stun"
+        },
+        "reheal": false,
+        "rehealAt": null,
+        "resumed": "hammer",
+        "errs": [],
+        "end": {
+          "t": 16.98,
+          "state": "warn",
+          "mode": "hammer",
+          "status": "cancelled",
+          "same": true,
+          "core": 4,
+          "hp": 5390,
+          "armor": 3764,
+          "barrier": 0,
+          "head": {
+            "x": 344,
+            "y": 95
+          },
+          "bx": 318,
+          "by": 174,
+          "refl": 30,
+          "dead": false
+        },
+        "timeline": [
+          {
+            "t": 5.08,
+            "state": "storm_raise",
+            "mode": "storm",
+            "status": "charging",
+            "same": true,
+            "core": 24,
+            "hp": 5390,
+            "armor": 3920,
+            "barrier": 5.57,
+            "head": {
+              "x": 442,
+              "y": 92
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 12,
+            "dead": false
+          },
+          {
+            "t": 5.58,
+            "state": "storm_raise",
+            "mode": "storm",
+            "status": "charging",
+            "same": true,
+            "core": 4,
+            "hp": 5390,
+            "armor": 3920,
+            "barrier": 5.07,
+            "head": {
+              "x": 395,
+              "y": 43
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 18,
+            "dead": false
+          },
+          {
+            "t": 6.08,
+            "state": "storm_raise",
+            "mode": "storm",
+            "status": "charging",
+            "same": true,
+            "core": 4,
+            "hp": 5390,
+            "armor": 4116,
+            "barrier": 4.57,
+            "head": {
+              "x": 339,
+              "y": 36
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 6.58,
+            "state": "fr_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 5390,
+            "armor": 3784,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 257
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 7.08,
+            "state": "fr_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 5390,
+            "armor": 3764,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 257
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 7.58,
+            "state": "fr_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 5390,
+            "armor": 3764,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 257
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 8.08,
+            "state": "fr_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 5390,
+            "armor": 3764,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 257
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 8.58,
+            "state": "fr_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 5390,
+            "armor": 3764,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 257
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 9.08,
+            "state": "fr_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 5390,
+            "armor": 3764,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 257
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 9.58,
+            "state": "fr_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 5390,
+            "armor": 3764,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 257
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 10.08,
+            "state": "fr_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 5390,
+            "armor": 3764,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 257
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 10.58,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 5390,
+            "armor": 3764,
+            "barrier": 0,
+            "head": {
+              "x": 291,
+              "y": 257
+            },
+            "bx": 353,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 11.08,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 5390,
+            "armor": 3764,
+            "barrier": 0,
+            "head": {
+              "x": 257,
+              "y": 257
+            },
+            "bx": 319,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 11.58,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 5390,
+            "armor": 3764,
+            "barrier": 0,
+            "head": {
+              "x": 290,
+              "y": 257
+            },
+            "bx": 353,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 12.08,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 5390,
+            "armor": 3764,
+            "barrier": 0,
+            "head": {
+              "x": 290,
+              "y": 257
+            },
+            "bx": 353,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 12.58,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 5390,
+            "armor": 3764,
+            "barrier": 0,
+            "head": {
+              "x": 290,
+              "y": 257
+            },
+            "bx": 353,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 13.08,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 5390,
+            "armor": 3764,
+            "barrier": 0,
+            "head": {
+              "x": 290,
+              "y": 257
+            },
+            "bx": 353,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 13.58,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 5390,
+            "armor": 3764,
+            "barrier": 0,
+            "head": {
+              "x": 290,
+              "y": 257
+            },
+            "bx": 353,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 14.08,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 5390,
+            "armor": 3764,
+            "barrier": 0,
+            "head": {
+              "x": 290,
+              "y": 257
+            },
+            "bx": 353,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 14.58,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 5390,
+            "armor": 3764,
+            "barrier": 0,
+            "head": {
+              "x": 290,
+              "y": 257
+            },
+            "bx": 353,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 15.08,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 5390,
+            "armor": 3764,
+            "barrier": 0,
+            "head": {
+              "x": 290,
+              "y": 257
+            },
+            "bx": 353,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 15.58,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 5390,
+            "armor": 3764,
+            "barrier": 0,
+            "head": {
+              "x": 279,
+              "y": 257
+            },
+            "bx": 341,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 16.08,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 5390,
+            "armor": 3764,
+            "barrier": 0,
+            "head": {
+              "x": 298,
+              "y": 257
+            },
+            "bx": 360,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          },
+          {
+            "t": 16.58,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 4,
+            "hp": 5390,
+            "armor": 3764,
+            "barrier": 0,
+            "head": {
+              "x": 255,
+              "y": 257
+            },
+            "bx": 317,
+            "by": 174,
+            "refl": 30,
+            "dead": false
+          }
+        ]
+      },
+      {
+        "diff": "furious",
+        "route": "checkpoint",
+        "weapon": "missile",
+        "secret": true,
+        "info": {
+          "kind": "chromehammer",
+          "state": "hammer",
+          "hp": 9800,
+          "maxhp": 9800,
+          "secret": true,
+          "space": true
+        },
+        "heal": {
+          "state": "storm_raise",
+          "status": "charging",
+          "fr": true,
+          "core": 24,
+          "barrier": 6
+        },
+        "broke": true,
+        "breakAt": 1.0,
+        "reflected": 0,
+        "stunStates": [
+          "fr_stun"
+        ],
+        "stunSec": 3.8,
+        "shieldInStun": 0,
+        "stunPoseDrawn": 36,
+        "stunFx": 36,
+        "bodyDmgInStun": {
+          "hp": 0,
+          "armor": 20,
+          "state": "fr_stun"
+        },
+        "reheal": false,
+        "rehealAt": null,
+        "resumed": "leap_reset",
+        "errs": [],
+        "end": {
+          "t": 17.09,
+          "state": "warn",
+          "mode": "hammer",
+          "status": "cancelled",
+          "same": true,
+          "core": 24,
+          "hp": 5390,
+          "armor": 3900,
+          "barrier": 0,
+          "head": {
+            "x": 293,
+            "y": 74
+          },
+          "bx": 250,
+          "by": 174,
+          "refl": 0,
+          "dead": false
+        },
+        "timeline": [
+          {
+            "t": 5.19,
+            "state": "storm_raise",
+            "mode": "storm",
+            "status": "charging",
+            "same": true,
+            "core": 24,
+            "hp": 5390,
+            "armor": 3920,
+            "barrier": 5.57,
+            "head": {
+              "x": 442,
+              "y": 92
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 5.69,
+            "state": "storm_raise",
+            "mode": "storm",
+            "status": "charging",
+            "same": true,
+            "core": 24,
+            "hp": 5390,
+            "armor": 3920,
+            "barrier": 5.07,
+            "head": {
+              "x": 395,
+              "y": 43
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 6.19,
+            "state": "fr_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 5390,
+            "armor": 3920,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 257
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 6.69,
+            "state": "fr_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 5390,
+            "armor": 3920,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 257
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 7.19,
+            "state": "fr_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 5390,
+            "armor": 3900,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 257
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 7.69,
+            "state": "fr_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 5390,
+            "armor": 3900,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 257
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 8.19,
+            "state": "fr_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 5390,
+            "armor": 3900,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 257
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 8.69,
+            "state": "fr_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 5390,
+            "armor": 3900,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 257
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 9.19,
+            "state": "fr_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 5390,
+            "armor": 3900,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 257
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 9.69,
+            "state": "fr_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 5390,
+            "armor": 3900,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 257
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 10.19,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 5390,
+            "armor": 3900,
+            "barrier": 0,
+            "head": {
+              "x": 266,
+              "y": 257
+            },
+            "bx": 329,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 10.69,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 5390,
+            "armor": 3900,
+            "barrier": 0,
+            "head": {
+              "x": 225,
+              "y": 257
+            },
+            "bx": 287,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 11.19,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 5390,
+            "armor": 3900,
+            "barrier": 0,
+            "head": {
+              "x": 187,
+              "y": 257
+            },
+            "bx": 250,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 11.69,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 5390,
+            "armor": 3900,
+            "barrier": 0,
+            "head": {
+              "x": 208,
+              "y": 257
+            },
+            "bx": 270,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 12.19,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 5390,
+            "armor": 3900,
+            "barrier": 0,
+            "head": {
+              "x": 208,
+              "y": 257
+            },
+            "bx": 270,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 12.69,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 5390,
+            "armor": 3900,
+            "barrier": 0,
+            "head": {
+              "x": 208,
+              "y": 257
+            },
+            "bx": 270,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 13.19,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 5390,
+            "armor": 3900,
+            "barrier": 0,
+            "head": {
+              "x": 208,
+              "y": 257
+            },
+            "bx": 270,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 13.69,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 5390,
+            "armor": 3900,
+            "barrier": 0,
+            "head": {
+              "x": 208,
+              "y": 257
+            },
+            "bx": 270,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 14.19,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 5390,
+            "armor": 3900,
+            "barrier": 0,
+            "head": {
+              "x": 208,
+              "y": 257
+            },
+            "bx": 270,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 14.69,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 5390,
+            "armor": 3900,
+            "barrier": 0,
+            "head": {
+              "x": 208,
+              "y": 257
+            },
+            "bx": 270,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 15.19,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 5390,
+            "armor": 3900,
+            "barrier": 0,
+            "head": {
+              "x": 208,
+              "y": 257
+            },
+            "bx": 270,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 15.69,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 5390,
+            "armor": 3900,
+            "barrier": 0,
+            "head": {
+              "x": 189,
+              "y": 257
+            },
+            "bx": 251,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 16.19,
+            "state": "hammer",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 5390,
+            "armor": 3900,
+            "barrier": 0,
+            "head": {
+              "x": 230,
+              "y": 257
+            },
+            "bx": 292,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 16.69,
+            "state": "warn",
+            "mode": "hammer",
+            "status": "cancelled",
+            "same": true,
+            "core": 24,
+            "hp": 5390,
+            "armor": 3900,
+            "barrier": 0,
+            "head": {
+              "x": 176,
+              "y": 243
+            },
+            "bx": 250,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          }
+        ]
+      }
+    ],
+    "normal_heal": [
+      {
+        "diff": "normal",
+        "route": "base",
+        "weapon": "gun",
+        "secret": false,
+        "info": {
+          "kind": "chromehammer",
+          "state": "flyby",
+          "hp": 3399,
+          "maxhp": 3399,
+          "secret": false,
+          "space": true
+        },
+        "heal": {
+          "state": "storm_raise",
+          "status": "charging",
+          "fr": false,
+          "core": 12,
+          "barrier": 0
+        },
+        "broke": true,
+        "breakAt": 0.0,
+        "reflected": 0,
+        "stunStates": [
+          "storm_stun"
+        ],
+        "stunSec": 3.8,
+        "shieldInStun": 0,
+        "stunPoseDrawn": 36,
+        "stunFx": 36,
+        "bodyDmgInStun": {
+          "hp": 0,
+          "armor": 20,
+          "state": "storm_stun"
+        },
+        "reheal": false,
+        "rehealAt": null,
+        "resumed": "storm_idle",
+        "errs": [],
+        "end": {
+          "t": 21.8,
+          "state": "storm_split",
+          "mode": "storm",
+          "status": "cancelled",
+          "same": true,
+          "core": 12,
+          "hp": 1869,
+          "armor": 954,
+          "barrier": 0,
+          "head": {
+            "x": 278,
+            "y": 257
+          },
+          "bx": 340,
+          "by": 174,
+          "refl": 0,
+          "dead": false
+        },
+        "timeline": [
+          {
+            "t": 9.9,
+            "state": "storm_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 12,
+            "hp": 1869,
+            "armor": 1020,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 307
+            },
+            "bx": 340,
+            "by": 225,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 10.4,
+            "state": "storm_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 12,
+            "hp": 1869,
+            "armor": 974,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 307
+            },
+            "bx": 340,
+            "by": 225,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 10.9,
+            "state": "storm_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 12,
+            "hp": 1869,
+            "armor": 954,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 307
+            },
+            "bx": 340,
+            "by": 225,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 11.4,
+            "state": "storm_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 12,
+            "hp": 1869,
+            "armor": 954,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 307
+            },
+            "bx": 340,
+            "by": 225,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 11.9,
+            "state": "storm_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 12,
+            "hp": 1869,
+            "armor": 954,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 307
+            },
+            "bx": 340,
+            "by": 225,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 12.4,
+            "state": "storm_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 12,
+            "hp": 1869,
+            "armor": 954,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 307
+            },
+            "bx": 340,
+            "by": 225,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 12.9,
+            "state": "storm_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 12,
+            "hp": 1869,
+            "armor": 954,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 307
+            },
+            "bx": 340,
+            "by": 225,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 13.4,
+            "state": "storm_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 12,
+            "hp": 1869,
+            "armor": 954,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 307
+            },
+            "bx": 340,
+            "by": 225,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 13.9,
+            "state": "storm_rebuild",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 12,
+            "hp": 1869,
+            "armor": 954,
+            "barrier": 0,
+            "head": {
+              "x": 340,
+              "y": 74
+            },
+            "bx": 340,
+            "by": 225,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 14.4,
+            "state": "storm_rebuild",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 12,
+            "hp": 1869,
+            "armor": 954,
+            "barrier": 0,
+            "head": {
+              "x": 340,
+              "y": 74
+            },
+            "bx": 340,
+            "by": 225,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 14.9,
+            "state": "storm_rebuild",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 12,
+            "hp": 1869,
+            "armor": 954,
+            "barrier": 0,
+            "head": {
+              "x": 340,
+              "y": 74
+            },
+            "bx": 340,
+            "by": 225,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 15.4,
+            "state": "storm_rebuild",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 12,
+            "hp": 1869,
+            "armor": 954,
+            "barrier": 0,
+            "head": {
+              "x": 340,
+              "y": 74
+            },
+            "bx": 340,
+            "by": 225,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 15.9,
+            "state": "storm_rebuild",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 12,
+            "hp": 1869,
+            "armor": 954,
+            "barrier": 0,
+            "head": {
+              "x": 414,
+              "y": 143
+            },
+            "bx": 340,
+            "by": 225,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 16.4,
+            "state": "storm_idle",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 12,
+            "hp": 1869,
+            "armor": 954,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 293
+            },
+            "bx": 340,
+            "by": 210,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 16.9,
+            "state": "storm_idle",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 12,
+            "hp": 1869,
+            "armor": 954,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 257
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 17.4,
+            "state": "storm_warn",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 12,
+            "hp": 1869,
+            "armor": 954,
+            "barrier": 0,
+            "head": {
+              "x": 265,
+              "y": 243
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 17.9,
+            "state": "storm_warn",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 12,
+            "hp": 1869,
+            "armor": 954,
+            "barrier": 0,
+            "head": {
+              "x": 383,
+              "y": 74
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 18.4,
+            "state": "storm_warn",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 12,
+            "hp": 1869,
+            "armor": 954,
+            "barrier": 0,
+            "head": {
+              "x": 383,
+              "y": 74
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 18.9,
+            "state": "storm_slam",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 12,
+            "hp": 1869,
+            "armor": 954,
+            "barrier": 0,
+            "head": {
+              "x": 334,
+              "y": 276
+            },
+            "bx": 284,
+            "by": 233,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 19.4,
+            "state": "storm_split",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 12,
+            "hp": 1869,
+            "armor": 954,
+            "barrier": 0,
+            "head": {
+              "x": 390,
+              "y": 361
+            },
+            "bx": 271,
+            "by": 308,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 19.9,
+            "state": "storm_split",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 12,
+            "hp": 1869,
+            "armor": 954,
+            "barrier": 0,
+            "head": {
+              "x": 215,
+              "y": 378
+            },
+            "bx": 277,
+            "by": 295,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 20.4,
+            "state": "storm_split",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 12,
+            "hp": 1869,
+            "armor": 954,
+            "barrier": 0,
+            "head": {
+              "x": 273,
+              "y": 265
+            },
+            "bx": 336,
+            "by": 183,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 20.9,
+            "state": "storm_split",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 12,
+            "hp": 1869,
+            "armor": 954,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 257
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 21.4,
+            "state": "storm_split",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 12,
+            "hp": 1869,
+            "armor": 954,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 257
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          }
+        ]
+      },
+      {
+        "diff": "normal",
+        "route": "base",
+        "weapon": "missile",
+        "secret": false,
+        "info": {
+          "kind": "chromehammer",
+          "state": "flyby",
+          "hp": 3399,
+          "maxhp": 3399,
+          "secret": false,
+          "space": true
+        },
+        "heal": {
+          "state": "storm_raise",
+          "status": "charging",
+          "fr": false,
+          "core": 12,
+          "barrier": 0
+        },
+        "broke": true,
+        "breakAt": 0.6999999999999993,
+        "reflected": 0,
+        "stunStates": [
+          "storm_stun"
+        ],
+        "stunSec": 3.9,
+        "shieldInStun": 0,
+        "stunPoseDrawn": 36,
+        "stunFx": 36,
+        "bodyDmgInStun": {
+          "hp": 0,
+          "armor": 20,
+          "state": "storm_stun"
+        },
+        "reheal": false,
+        "rehealAt": null,
+        "resumed": "storm_idle",
+        "errs": [],
+        "end": {
+          "t": 21.64,
+          "state": "storm_split",
+          "mode": "storm",
+          "status": "cancelled",
+          "same": true,
+          "core": 12,
+          "hp": 1869,
+          "armor": 1000,
+          "barrier": 0,
+          "head": {
+            "x": 278,
+            "y": 257
+          },
+          "bx": 340,
+          "by": 174,
+          "refl": 0,
+          "dead": false
+        },
+        "timeline": [
+          {
+            "t": 9.74,
+            "state": "storm_raise",
+            "mode": "storm",
+            "status": "charging",
+            "same": true,
+            "core": 12,
+            "hp": 1869,
+            "armor": 1020,
+            "barrier": 0,
+            "head": {
+              "x": 442,
+              "y": 154
+            },
+            "bx": 340,
+            "by": 237,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 10.24,
+            "state": "storm_raise",
+            "mode": "storm",
+            "status": "charging",
+            "same": true,
+            "core": 12,
+            "hp": 1869,
+            "armor": 1020,
+            "barrier": 0,
+            "head": {
+              "x": 395,
+              "y": 125
+            },
+            "bx": 340,
+            "by": 256,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 10.74,
+            "state": "storm_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 12,
+            "hp": 1869,
+            "armor": 1020,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 339
+            },
+            "bx": 340,
+            "by": 256,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 11.24,
+            "state": "storm_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 12,
+            "hp": 1869,
+            "armor": 1000,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 339
+            },
+            "bx": 340,
+            "by": 256,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 11.74,
+            "state": "storm_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 12,
+            "hp": 1869,
+            "armor": 1000,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 339
+            },
+            "bx": 340,
+            "by": 256,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 12.24,
+            "state": "storm_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 12,
+            "hp": 1869,
+            "armor": 1000,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 339
+            },
+            "bx": 340,
+            "by": 256,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 12.74,
+            "state": "storm_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 12,
+            "hp": 1869,
+            "armor": 1000,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 339
+            },
+            "bx": 340,
+            "by": 256,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 13.24,
+            "state": "storm_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 12,
+            "hp": 1869,
+            "armor": 1000,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 339
+            },
+            "bx": 340,
+            "by": 256,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 13.74,
+            "state": "storm_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 12,
+            "hp": 1869,
+            "armor": 1000,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 339
+            },
+            "bx": 340,
+            "by": 256,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 14.24,
+            "state": "storm_stun",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 12,
+            "hp": 1869,
+            "armor": 1000,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 339
+            },
+            "bx": 340,
+            "by": 256,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 14.74,
+            "state": "storm_rebuild",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 12,
+            "hp": 1869,
+            "armor": 1000,
+            "barrier": 0,
+            "head": {
+              "x": 340,
+              "y": 106
+            },
+            "bx": 340,
+            "by": 256,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 15.24,
+            "state": "storm_rebuild",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 12,
+            "hp": 1869,
+            "armor": 1000,
+            "barrier": 0,
+            "head": {
+              "x": 340,
+              "y": 106
+            },
+            "bx": 340,
+            "by": 256,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 15.74,
+            "state": "storm_rebuild",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 12,
+            "hp": 1869,
+            "armor": 1000,
+            "barrier": 0,
+            "head": {
+              "x": 340,
+              "y": 106
+            },
+            "bx": 340,
+            "by": 256,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 16.24,
+            "state": "storm_rebuild",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 12,
+            "hp": 1869,
+            "armor": 1000,
+            "barrier": 0,
+            "head": {
+              "x": 414,
+              "y": 174
+            },
+            "bx": 340,
+            "by": 256,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 16.74,
+            "state": "storm_rebuild",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 12,
+            "hp": 1869,
+            "armor": 1000,
+            "barrier": 0,
+            "head": {
+              "x": 279,
+              "y": 353
+            },
+            "bx": 340,
+            "by": 256,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 17.24,
+            "state": "storm_idle",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 12,
+            "hp": 1869,
+            "armor": 1000,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 257
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 17.74,
+            "state": "storm_idle",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 12,
+            "hp": 1869,
+            "armor": 1000,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 257
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 18.24,
+            "state": "storm_warn",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 12,
+            "hp": 1869,
+            "armor": 1000,
+            "barrier": 0,
+            "head": {
+              "x": 367,
+              "y": 95
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 18.74,
+            "state": "storm_warn",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 12,
+            "hp": 1869,
+            "armor": 1000,
+            "barrier": 0,
+            "head": {
+              "x": 383,
+              "y": 74
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 19.24,
+            "state": "storm_slam",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 12,
+            "hp": 1869,
+            "armor": 1000,
+            "barrier": 0,
+            "head": {
+              "x": 365,
+              "y": 69
+            },
+            "bx": 319,
+            "by": 155,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 19.74,
+            "state": "storm_split",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 12,
+            "hp": 1869,
+            "armor": 1000,
+            "barrier": 0,
+            "head": {
+              "x": 270,
+              "y": 382
+            },
+            "bx": 271,
+            "by": 308,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 20.24,
+            "state": "storm_split",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 12,
+            "hp": 1869,
+            "armor": 1000,
+            "barrier": 0,
+            "head": {
+              "x": 209,
+              "y": 391
+            },
+            "bx": 271,
+            "by": 308,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 20.74,
+            "state": "storm_split",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 12,
+            "hp": 1869,
+            "armor": 1000,
+            "barrier": 0,
+            "head": {
+              "x": 250,
+              "y": 311
+            },
+            "bx": 312,
+            "by": 228,
+            "refl": 0,
+            "dead": false
+          },
+          {
+            "t": 21.24,
+            "state": "storm_split",
+            "mode": "storm",
+            "status": "cancelled",
+            "same": true,
+            "core": 12,
+            "hp": 1869,
+            "armor": 1000,
+            "barrier": 0,
+            "head": {
+              "x": 278,
+              "y": 257
+            },
+            "bx": 340,
+            "by": 174,
+            "refl": 0,
+            "dead": false
+          }
+        ]
+      }
+    ]
+  },
+  "limitations": [
+    "Warm profiling is four brief single-player samples, not a complete campaign or co-op endurance test.",
+    "Stage 8 had one 74.9ms frame; Stage 5 averaged 54.1FPS in the sampled window.",
+    "The new password arsenal selectors and recovery are tested; a full song-length playthrough of every new attack interleaving is still a manual acceptance check.",
+    "Directional front-plate shields keep their existing aiming rule; field/bubble shields now scale to both hull dimensions."
+  ]
+}

@@ -1,3 +1,13 @@
+Latest local campaign work: [Expanded campaign world](docs/CAMPAIGN_WORLD_0930.md). Fury HQ north of Stage 1, central battleground, wider island spacing, northern portal/coast, eastern ruins, offshore islands, locked East Coast USA sector with four fixed-position cyan binary-row poses over a ragged transparent ocean edge, and fixed horizontal map ships. Latest native map/animation checks pass; prior full-suite baseline is 6,121 assertions with zero errors. Included in the October 1 publishing batch.
+
+Latest local Stage 8 work: [Three-form finale and portable rotations](docs/REALM_ROTATION_PASS_0930.md). Generated destructible code walls/shields, three encounter lives, portal reunion, corrected steering and portable rotation pages. Full suite and native combat checks pass. Local and uncommitted; preserve prior work.
+
+Latest local internal polish: [September 30 cinematic polish](docs/CINEMATIC_POLISH_0930.md). Portal leap, uniform storm lighting, Harrier beam rendering/collision, dam capture bookmark, and native checks are complete locally. No trailer reshoot or push yet. Preserve the earlier uncommitted work below.
+
+Latest local cinematic work: [September 30 cinematic director pass](docs/CINEMATIC_PASS_0930.md). New mission bridges, nine pilot upgrade conversations, Cronos, Harrier/Rebel/Stage X dialogue, art and scene review are local and uncommitted. Preserve the repair pass below as well.
+
+Current local work: [September 30 repair/art pass](docs/REPAIR_PASS_0930.md). The pass is uncommitted and includes corrected Fusion icons, armor/weapon wiring, encounter assets, and focused verification. Preserve it before pulling or merging.
+
 # Current passover — September 28, 2026
 
 **Opus: start with [docs/PASSOVER_OPUS_0928.md](docs/PASSOVER_OPUS_0928.md).**

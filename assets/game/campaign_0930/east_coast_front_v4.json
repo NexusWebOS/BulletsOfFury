@@ -1,0 +1,142 @@
+{
+  "image": "east_coast_front_v4.png",
+  "columns": 4,
+  "rows": 2,
+  "fps": 6,
+  "frame_width": 256,
+  "frame_height": 512,
+  "count": 8,
+  "direction": "left",
+  "transparent_edge": true,
+  "motion": "fixed-position authored flame and smoke poses",
+  "frames": [
+    {
+      "index": 0,
+      "source_box": [
+        0,
+        0,
+        219,
+        887
+      ],
+      "rect": [
+        0,
+        0,
+        256,
+        512
+      ],
+      "sha256": "ce5b0badd68d3be8a19241e4bff98f4cd3cf346730800f948ec5f7203d7941c8"
+    },
+    {
+      "index": 1,
+      "source_box": [
+        222,
+        0,
+        441,
+        887
+      ],
+      "rect": [
+        256,
+        0,
+        256,
+        512
+      ],
+      "sha256": "4226f65f15b2cc0164bce01630c0bc8c3b96c740fd458b2f5062239416fc41a4"
+    },
+    {
+      "index": 2,
+      "source_box": [
+        444,
+        0,
+        662,
+        887
+      ],
+      "rect": [
+        512,
+        0,
+        256,
+        512
+      ],
+      "sha256": "978dac48afdf3e71757458f4a2e36259c7a396bfdb98c668a492112ac7bd9703"
+    },
+    {
+      "index": 3,
+      "source_box": [
+        665,
+        0,
+        884,
+        887
+      ],
+      "rect": [
+        768,
+        0,
+        256,
+        512
+      ],
+      "sha256": "57d5c9eb0e20136411e0f89aa3ba3243b6e880495e83cd83742168d14931b6ff"
+    },
+    {
+      "index": 4,
+      "source_box": [
+        0,
+        887,
+        219,
+        1774
+      ],
+      "rect": [
+        0,
+        512,
+        256,
+        512
+      ],
+      "sha256": "b2a555d70d9a125af6fa23aa32078794674ba701205773aed00adffcf74a5b44"
+    },
+    {
+      "index": 5,
+      "source_box": [
+        222,
+        887,
+        441,
+        1774
+      ],
+      "rect": [
+        256,
+        512,
+        256,
+        512
+      ],
+      "sha256": "4a98c1e7cbf44acb2924b8f81bf3290c92372a3f5163198d7b132d230252fe36"
+    },
+    {
+      "index": 6,
+      "source_box": [
+        444,
+        887,
+        662,
+        1774
+      ],
+      "rect": [
+        512,
+        512,
+        256,
+        512
+      ],
+      "sha256": "fa5c941da45c8fc6d4866d3bdea170398ca6f15059c3d695602549c07d1bb237"
+    },
+    {
+      "index": 7,
+      "source_box": [
+        665,
+        887,
+        884,
+        1774
+      ],
+      "rect": [
+        768,
+        512,
+        256,
+        512
+      ],
+      "sha256": "15cf7d9cc7b4977cd3fd7c9419fae2091722c00963c91b645a6ab2eb2a229e3c"
+    }
+  ]
+}

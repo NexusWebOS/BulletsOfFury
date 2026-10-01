@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bullets of Fury - Cinematic review</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#080d14;color:#e0eaf5;font:15px system-ui,sans-serif;height:100vh;display:grid;grid-template-rows:auto 1fr auto}header{display:flex;gap:12px;align-items:center;flex-wrap:wrap;padding:12px 18px;background:#111e2c;border-bottom:1px solid #344658}h1{font-size:17px;margin:0 12px 0 0}label{display:flex;gap:7px;align-items:center}select,button{font:inherit;background:#1a2d40;color:#eaf4ff;border:1px solid #5c7891;padding:8px;border-radius:3px}button{cursor:pointer}button:hover{background:#284965}button:disabled{opacity:.4;cursor:wait}main{min-height:0;background:black}iframe{border:0;width:100%;height:100%;display:block}footer{padding:10px 18px;display:flex;gap:14px;align-items:center;font-size:13px;color:#a8c2d7}#status{flex:1}a{color:#9ed5ff}
+</style></head><body>
+<header><h1>Bullets of Fury · Cinematic review</h1>
+<label>Pilot <select id="pilot"></select></label><label>Scene <select id="scene"></select></label>
+<button id="play" disabled>Play scene</button><button id="next" disabled>A · Reveal / Next</button><button id="skip" disabled>Start · Skip scene</button></header>
+<main><iframe id="game" title="Live game cinematic preview" src="index.html?cinemaReview=1" allow="autoplay; fullscreen; gamepad"></iframe></main>
+<footer><span id="status">Loading the game and cinematic director…</span><span>Preview only · No mission rewards or save-slot writes</span></footer>
+<script>
+const P=document.querySelector('#pilot'),S=document.querySelector('#scene'),F=document.querySelector('#game'),status=document.querySelector('#status');
+for(const p of ['axel','freezer','lizzie','falva','yuri','maverick','cole','decker','juggernaut'])P.add(new Option(p.toUpperCase(),p));
+const choices=[...Array.from({length:9},(_,i)=>['post-'+(i+1),'After Stage '+(i+1)]),['cronos','Cronos - first contact'],['left','Harrier pursuit'],['right','Rebel Fury pursuit'],['rebels','Rebel Fury confrontation'],...['voss','nyx','rook','kaia','jace'].map(k=>['x-'+k,'Stage X - '+k.toUpperCase()])];
+for(const [k,label]of choices)S.add(new Option(label,k));S.value='post-5';
+const query=new URLSearchParams(location.search);if([...P.options].some(o=>o.value===query.get('pilot')))P.value=query.get('pilot');if(choices.some(o=>o[0]===query.get('scene')))S.value=query.get('scene');let autostart=query.get('play')==='1';
+function director(){return F.contentWindow?.BOFCinematicDirector;}
+function preview(){const D=director();if(!D)return;D.preview(S.value,P.value);F.focus();}
+document.querySelector('#play').onclick=preview;
+document.querySelector('#next').onclick=()=>director()?.advance();
+document.querySelector('#skip').onclick=()=>director()?.finish();
+setInterval(()=>{const D=director();if(!D||!(F.contentWindow.__bofFrames>4))return;for(const b of document.querySelectorAll('button'))b.disabled=false;
+if(autostart){autostart=false;preview();}
+const C=D.current;status.textContent=C?C.beats[C.i].who+' · '+(C.i+1)+' / '+C.beats.length+' · '+C.beats[C.i].text:'Ready. Choose a pilot and scene. A reveals/advances; Start skips.';},200);
+</script></body></html>

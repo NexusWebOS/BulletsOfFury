@@ -3495,7 +3495,7 @@ function debugEquip(slot, opts){
    campaign unlock or consuming one of the Forge's two post-boss combinations. */
 function debugScenarioEquip(w, lv, elem, variant){
   w=Math.max(0,Math.min(WEAPONS.length-1,w|0)); lv=Math.max(1,Math.min(5,lv|0||1));
-  if(run.spaceMode) return {ok:false,reason:'SPACE STAGE USES ITS OWN LASER CANNON / SHADOW ORB LOADOUT',spaceMode:true};
+  if(run.spaceMode) return {ok:false,reason:'SPACE STAGE USES ITS OWN LASER CANNON / FUSION CANNON LOADOUT',spaceMode:true};
   if(!run.forge) run.forge={};
   if(!run.forgeForms) run.forgeForms={};
   if(!run.forgeElems) run.forgeElems={};
@@ -8458,7 +8458,7 @@ const FORGE_NAMES=Object.freeze({
   kinetic:  {0:'SONIC SLUGS',      1:'SHOCK FAN',     2:'IMPACT RACK',    3:'GIANT BEAM',     5:'KINETIC ORB',  7:'HAMMER GATLING', 4:'PRESSURE JET',  6:'SHOCK MIST',  8:'IMPACT SPHERE'},
   chrome:   {0:'MIRROR SLUGS',     1:'MIRROR SPREAD',    2:'MIRROR RACK',    3:'CHROME BEAM',    5:'MIRROR ORB',   7:'CHROME GATLING', 4:'CHROME JET',    6:'MIRROR MIST', 8:'MIRROR SPHERE'},
   water:    {0:'TIDAL SLUGS',      1:'GEYSER FAN',    2:'TORRENT RACK',   3:'HYDRO BEAM',     5:'WATER ORB',    7:'TORRENT GATLING', 4:'STEAM JET',     6:'TIDAL MIST',  8:'GEYSER SPHERE'},
-  dark:     {0:'VOID SLUGS',       1:'VOID FAN',      2:'VOID RACK',      3:'VOID BEAM',      5:'VOID ORB',     7:'VOID GATLING', 4:'VOID JET',      6:'VOID MIST',   8:'VOID SPHERE'}
+  dark:     {0:'VOID SLUGS',       1:'VOID FAN',      2:'VOID RACK',      3:'VOID BEAM',      5:'SHADOW ORB',     7:'VOID GATLING', 4:'VOID JET',      6:'VOID MIST',   8:'VOID SPHERE'}
 });
 function ensureForgeForms(){
   if(!run) return {};
@@ -9713,7 +9713,7 @@ function drawEnemyShieldLayer(e,front){
   if(F.kind!=='bubble' && fi<0) return;
   if(F.kind==='field'){
     const k=F.prefix+'_'+(front?'f':'b')+'_'+fi; if(!XART.rdy(k)) return;
-    const w=(e._drawW||e.w||30)*1.55,h=(e._drawH||e.h||30)*1.55;
+    const w=(e._drawW||e.w||30)*1.12,h=(e._drawH||e.h||30)*1.12;
     ctx.drawImage(XART.get(k),e.x-w/2,e.y-h/2,w,h);
   } else if(F.kind==='bubble'){
     if(!front) return;                                   /* one pass, drawn over the hull */
@@ -9721,7 +9721,7 @@ function drawEnemyShieldLayer(e,front){
     const img=(F.tint&&typeof xartPalette==='function'&&xartPalette(k,F.tint))||XART.get(k);
     /* LARGER THAN THE UNIT, ALWAYS. drawScale is a multiple of the hull's LONGEST side, so a wide
        hull and a tall one both end up fully enclosed rather than clipped on one axis. */
-    const sw=(e._drawW||e.w||30)*1.25,sh=(e._drawH||e.h||30)*1.25;
+    const sw=(e._drawW||e.w||30)*1.12,sh=(e._drawH||e.h||30)*1.12;
     /* the shell is one still; the life comes from a slow rotation, a breathing scale and an
        energy-linked alpha, so it never strobes and never needs an eight-frame reel */
     const t=(s.animT||0), frac=clamp(s.energy/Math.max(1,s.max),0,1);
@@ -27124,6 +27124,10 @@ function hitSubBoss(dmg, hx, hy){
   if(b._s7mod)return s7mHit(b,dmg,hx==null?_lastHitX:hx,hy==null?_lastHitY:hy);
   const _elem=(typeof elementalDamageResult==='function')?elementalDamageResult(b,'subboss',_dmgBullet,dmg,hx,hy):{dmg:dmg,reaction:null};
   dmg=_elem.dmg;const _elemHit=_elem.reaction;
+  if(b._ship==='olivewarden'&&typeof stage4MiniDroneAt==='function'){
+    const d=stage4MiniDroneAt(b,hx!=null?hx:b.x,hy!=null?hy:b.y,2);
+    if(d){stage4MiniDroneDamage(b,d,dmg);weaponHitSfx('normal');return;}
+  }
   if(typeof er26DamageClamp==='function'){dmg=er26DamageClamp(b,dmg);if(dmg<=0)return;}
   /* ⚠ THE RAPTOR'S WINGS HANG OFF THE SUB-BOSS PATH, NOT hitBoss. Minibosses live in `subBoss`
      and never touch `boss`, so a sectional hook on hitBoss would simply never fire for them - the
@@ -27147,10 +27151,7 @@ function hitSubBoss(dmg, hx, hy){
      you break all the turrets". The seal is derived from the live cannons, exactly as the gate below derives it. */
   if(!(b._ql && !b._qlHullOpen && (b._qlCan||[]).some(function(c){ return !c.dead; }))) markHit(b);   // 0912y: every other registered hit flashes
   if(b._s9rift){ if(s9VoidHorizonHit(b,dmg,hx,hy)) weaponHitSfx('normal'); return; }
-  if(b._ship==='olivewarden'&&typeof stage4MiniDroneAt==='function'){
-    const d=stage4MiniDroneAt(b,hx!=null?hx:b.x,hy!=null?hy:b.y,2);
-    if(d){stage4MiniDroneDamage(b,d,dmg);weaponHitSfx('normal');return;}
-  }
+
   if(b._ship==='magmaward'&&typeof magmaWardBarrierDamage==='function'&&magmaWardBarrierDamage(b,dmg,hx,hy))return;
   if(b._mr27)dmg=mr27Damage(b,dmg,hx??_lastHitX,hy??_lastHitY);
 
@@ -28576,10 +28577,10 @@ function maverickLaserTick(b,dt){
    normal weapon while run.spaceMode is live. Volley Missiles remain a separately levelled,
    always-equipped auto-fire system and can never occupy the primary-weapon slot:
      0  LASER CANNON I-V — six twin-turret pulses, 2 ms authored spacing
-     1  SHADOW ORB       — hold to charge, release a scaling shadow blast
+     1  FUSION CANNON    — hold/release, 200% overload destroys the ship
      P  VOLLEY MISSILES  — passive launch splits into three independent crossing homers
    ============================================================ */
-const SPACE_WEAPONS=['LASER CANNON','SHADOW ORB'];
+const SPACE_WEAPONS=['LASER CANNON','FUSION CANNON'];
 const SPACE_LASER_COL=['#ff972b','#39a4ff','#48e36c','#f5f7ff','#ff4848'];
 /* Standalone four-frame overlays already shipped in the production muzzle library.  They match
    the five Laser Cannon palettes and, unlike the Gravity atlas demonstration cells, contain no
@@ -28641,7 +28642,7 @@ function spaceVolleyLevel(){
 function spaceWeaponName(){ return SPACE_WEAPONS[clamp(run.spaceWeapon||0,0,1)]||SPACE_WEAPONS[0]; }
 function spaceWeaponIconKey(){
   const w=clamp(run.spaceWeapon||0,0,1),lv=spaceWeaponLevel();
-  return w===0?'space_laser_icon_'+lv:'space_shadow_icon_'+lv;
+  return w===0?'space_laser_icon_'+lv:'space_fusion_icon_'+Math.max(1,lv);
 }
 function spaceVolleyIconKey(lv){return 'space_volley_icon_'+clamp(lv==null?spaceVolleyLevel():lv,1,5);}
 function spaceWeaponPickupIndex(p){
@@ -28834,13 +28835,15 @@ const SPACE_HELPER_LIFE=30, SPACE_MINE_TRIGGER=62, SPACE_MINE_SPLASH=104;
 function spaceAkimboActive(){return !!(spaceWeaponsActive()&&run.spaceAkimbo);}
 function spaceArmoryRoll(){
   if(!run._spaceArmoryBag||!run._spaceArmoryBag.length){
-    run._spaceArmoryBag=SPACE_ARMORY_REWARDS.slice();
+    run._spaceArmoryBag=SPACE_ARMORY_REWARDS.filter(k=>run.stage!==5||k!=='spacehelper');
     for(let i=run._spaceArmoryBag.length-1;i>0;i--){const j=(Math.random()*(i+1))|0,t=run._spaceArmoryBag[i];run._spaceArmoryBag[i]=run._spaceArmoryBag[j];run._spaceArmoryBag[j]=t;}
   }
-  return run._spaceArmoryBag.pop();
+  if(run.stage===5)run._spaceArmoryBag=run._spaceArmoryBag.filter(k=>k!=='spacehelper');
+  return run._spaceArmoryBag.pop()||'spaceakimbo';
 }
 function spaceArmorySpawnBox(x,y,reward){
   if(!spaceWeaponsActive())return null;
+  if(run.stage===5&&reward==='spacehelper')reward=null;
   const p={x:x==null?rnd(camLeftX()+54,camRightX()-54):x,y:y==null?-42:y,vy:.72,t:0,kind:'hqspacebox',
     _hqReward:SPACE_ARMORY_REWARDS.indexOf(reward)>=0?reward:spaceArmoryRoll(),hp:9,flash:0,w:54,h:48,bob:rnd(0,TAU)};
   powerups.push(p);return p;
@@ -29103,7 +29106,7 @@ function spaceBulletTick(b,dt){
 /* 0928 - Mike: "do not make our chainguns overheat. They get level 1-5 upgrades that increase the speed,
    damage and rate of fire." One table: DPS 36 / 71 / 105 / 180 / 270 against the MG's measured
    24 / 58 / 81 / 142 / 180 at the same level (MG: level+1 streams x (2+level/2) per 0.164 x 0.95^(lv-1)). */
-const CHAINGUN_LV={spd:[15,16,17,18.5,20],dmg:[3.6,3.2,4.2,4.2,5.4],rounds:[1,2,2,3,3],cad:[.10,.09,.08,.07,.06]};
+const CHAINGUN_LV={spd:[15,16,17,18.5,20],dmg:[4.05,3.6,4.7,4.7,6.05],rounds:[1,2,2,3,3],cad:[.10,.09,.08,.07,.06]};
 function chaingunPlayerFire(lv){
   /* Rounds leave the two wing pods (CHAINGUN_MOUNTS, measured per pilot) instead of the nose: one pod
      alternating at L1, both from L2, both plus a centre round from L4. They stay kind 'mg', so every
@@ -29114,7 +29117,7 @@ function chaingunPlayerFire(lv){
   const spd=CHAINGUN_LV.spd[lv-1],dmg=CHAINGUN_LV.dmg[lv-1];
   for(const p of pods){
     const a=-Math.PI/2+rnd(-.012,.012);
-    pBullets.push({x:p.x,y:p.y-10,vx:Math.cos(a)*spd,vy:Math.sin(a)*spd,w:4+lv*.35,h:18+lv,dmg,kind:'mg',lv,_chaingun:true,_cal50:true,_ph:(Math.random()*8)|0});
+    pBullets.push({x:p.x,y:p.y-10,vx:Math.cos(a)*spd,vy:Math.sin(a)*spd,w:7+lv*.55,h:24+lv*2,dmg,kind:'mg',lv,_chaingun:true,_cal50:true,_ph:(Math.random()*8)|0});
   }
   player._mgMuzT=.075;player._mgMuzLv=Math.max(1,lv);player._chainMuzzle=.10;
   shake=Math.max(shake,.5+lv*.15);(Audio.SFX.heavyMachineGun||Audio.SFX.machineGun||Audio.SFX.shoot)();
@@ -29173,7 +29176,9 @@ function chaingunMountPoints(){
    turned to point up; the barrels spin with the rev meter. Mike's own pod art replaces the key. */
 const CHAINGUN_POD_KEY='arch_blaster_gun_';
 function chaingunMountsVisible(){
-  if(run.weapon!==7||player.dead||(player.invuln>0&&Math.floor(player.invuln/4)%2))return false;
+  if(run.weapon!==7||player.dead||player.out||player._hammerEvap||player._eradicated)return false;
+  if((typeof _cinematicHidePlayer!=='undefined'&&_cinematicHidePlayer)||(typeof s7WardenShipHidden==='function'&&s7WardenShipHidden()))return false;
+  if(!axelMegaShieldActive()&&!chargeDashing()&&player.invuln>0&&!(player._spawnClearT>0)&&Math.floor(player.invuln/4)%2)return false;
   if(typeof spaceShipActive==='function'&&spaceShipActive())return false;
   if(player._spin||player.somer||player.roll)return false;   // a roll/somersault/death-spin turns the hull; the pods are on it, so they hide with it
   return true;
@@ -29206,7 +29211,7 @@ function chaingunRoundDraw(b){
 /* their own impact: the Hammer's blaster starburst (arch_blaster_fx_0-3) in amber */
 function chaingunImpact(x,y,big){
   if(typeof pImpacts==='undefined')return;
-  pImpacts.push({x:x+rnd(-3,3),y:y+rnd(-3,3),t:0,dur:.18,key:'arch_blaster_fx_'+((Math.random()*4)|0),pal:'#ffb347',size:big?30:22,rot:rnd(-.4,.4)});
+  pImpacts.push({x:x+rnd(-3,3),y:y+rnd(-3,3),t:0,dur:.18,key:'arch_blaster_fx_'+((Math.random()*4)|0),pal:_dmgBullet?(_dmgBullet._inf?(INFUSIONS[_dmgBullet._inf]?.glow||wlvGlow(_dmgBullet.lv||1)):wlvGlow(_dmgBullet.lv||1)):'#ffb347',size:big?34:26,rot:rnd(-.4,.4)});
   if(pImpacts.length>180)pImpacts.splice(0,pImpacts.length-180);
 }
 
@@ -30219,7 +30224,7 @@ const MSL_BIG = {
   missilepack100:{n:100, art:'nmc_100', label:'MISSILES +100', col:'#8de23a', a:3300},
 };
 /* which big crates a stage may roll. 100 is deliberately absent everywhere. */
-const MSL_STAGE_TIERS = {1:['missilepack20'],2:['missilepack20'],3:['missilepack20'],4:['missilepack20'],5:['missilepack20'],6:['missilepack20'],7:['missilepack20'],8:['missilepack50','missilepack100']};
+const MSL_STAGE_TIERS = {1:['missilepack20'],2:['missilepack20'],3:['missilepack20'],4:['missilepack20'],5:['missilepack20'],6:['missilepack20'],7:['missilepack20'],8:['missilepack50']};
 /* Chance that a missile crate upgrades to that stage's big tier instead of the
    normal 2/5/10 roll. Kept low so the big crate stays an event, matching the way
    crate10 was already "the prize" at 20%. */
@@ -30236,7 +30241,7 @@ function mslBigPackForStage(stage){
 function mslPackRoll(){
  if(boss&&boss._hammer&&!boss.dead)return Math.random()<.6?'missilepack10':'missilepack20';
  const stage=run.stage|0,r=Math.random();
- if(stage===8)return r<.5?'missilepack50':'missilepack100';
+ if(stage===8)return 'missilepack50';
  if(stage>=1&&stage<=7)return r<.50?'missilepack':r<.80?'missilepack10':'missilepack20';
  return r<.65?'missilepack':'missilepack10';
 }
@@ -31980,10 +31985,7 @@ function retinaScanPickupDraw(p,y){
   const w=im.width||im.naturalWidth,h=im.height||im.naturalHeight,scale=42/Math.max(w,h);
   ctx.save();ctx.translate(p.x,y);ctx.rotate((p.t||0)*2.2);ctx.drawImage(im,-w*scale/2,-h*scale/2,w*scale,h*scale);ctx.restore();
 }
-function retinaScanSupply(p){
-  if(p.kind!=='mcrate'||run.stage<2||run.retinaScan||powerups.some(q=>!q.dead&&q.kind==='retinascan'))return;
-  powerups.push({x:clamp(p.x+35,camLeftX()+24,camRightX()-24),y:p.y,vy:.7,t:0,kind:'retinascan',w:32,h:32,bob:0});
-}
+function retinaScanSupply(p){ /* Retina is a core control, not a collectible upgrade. */ }
 
 function cycleLock(){
   /* RESTORED (drop 0724bx). The retina lock used to play its own retina_charge cue; I re-pointed it
@@ -33072,7 +33074,7 @@ function thunderStormTick(dt){
 }
 function thunderStormDraw(){
   const S=thunderStorm;if(!S)return;
-  ctx.save();ctx.fillStyle='rgba(2,7,26,0.50)';ctx.fillRect(0,0,VW,VH);ctx.restore();
+  ctx.save();ctx.fillStyle='rgba(2,7,26,0.50)';ctx.fillRect(camLeftX()-40,viewFillY(),viewW()+80,viewFillH());ctx.restore();
   if(!XART.rdy('cfx_stage4_chain_lightning'))return;
   const im=XART.get('cfx_stage4_chain_lightning');
   for(const b of S.bolts){
@@ -33813,15 +33815,8 @@ function elementalDamageResult(t,role,b,dmg,x,y){
   }
   return{dmg:dmg*.5,reaction:reaction};
 }
-/* Sprite-only hit tint. Elemental reactions use the exact same silhouette as an ordinary hit:
-   fire on ice is red, ice on fire is light blue. No halo, reel, geometry or glow is added. */
-function hitFlashColor(t,fallback){
-  if(t&&t._hitFlashColor)return t._hitFlashColor;
-  const base=fallback||'#ffffff',stage=run&&run.stage;
-  // These later stages use a shaded energy pulse; opaque white hides their detailed hull art.
-  if((base==='#ffffff'||base==='#fff')&&(stage===5||stage===6||stage===9))return stage===9?'#78b7e0':'#8ab9df';
-  return base;
-}
+/* Every registered hit uses a white silhouette; elemental feedback stays in impact effects. */
+function hitFlashColor(t,fallback){return '#ffffff';}
 const ORB_FIRE_ON_L3 = true;
 /* ⚠ THE ORB'S ELEMENT IS THE ORB YOU PICKED UP, NOT THE STAGE YOU ARE STANDING ON (drop 0814a).
 
@@ -35234,6 +35229,9 @@ function updatePlay(dt){
 
   // ---- enemies ----
   for(const e of enemies){
+    // Alien code constructs float in the encounter, not on the scrolling terrain.
+    // Their owner ticks movement/expiry; bullets and Retina still use the enemy list.
+    if(e._r30Wall)continue;
     /* CO-OP: the seat THIS unit is working against - nearest live ship (targetShip), or
        `player` in solo so a one-player run reads exactly what it always read. Every
        dive, lateral track and ram line below aims at _T, not at the global player. */
@@ -36617,6 +36615,7 @@ function updatePlay(dt){
         }
       }
     }
+    if(!b.dead&&typeof repair30DroneBullet==='function'&&repair30DroneBullet(b,pierce,dt))continue;
     // Passive homing missiles can strike the same exposed components as guided warheads.
     if(!b.dead && b.kind==='missile'){
       const part=missileComponentTargetAt(b.x,b.y,Math.max(b.w,b.h)*.3);
@@ -37573,12 +37572,12 @@ function killEnemy(e){
 }
 
 function playerHit(source){
-  if(player.dead||player.invuln>0) return;
+  if(player.dead||(source!=='fusionOvercharge'&&player.invuln>0)) return;
   // JUGGERNAUT wrecking-ball special: fully invulnerable to enemy bullets/attacks while active
-  if(specialActive('juggernaut')){ return; }
-  if(axelMegaShieldActive()){axelMegaShieldSpend();player.invuln=40;return;}
+  if(source!=='fusionOvercharge'&&specialActive('juggernaut')){ return; }
+  if(source!=='fusionOvercharge'&&axelMegaShieldActive()){axelMegaShieldSpend();player.invuln=40;return;}
   if(typeof stageStats!=='undefined') stageStats.dmgTaken++;
-  if(run.shield>0){ run.shield--; player.invuln=70; flashScreen=0.5;
+  if(source!=='fusionOvercharge'&&run.shield>0){ run.shield--; player.invuln=70; flashScreen=0.5;
     if(run.shield<=0) (Audio.SFX.shieldBreakCombat||Audio.SFX.nsp_shield_down||Audio.SFX.hit)();
     else (Audio.SFX.shieldHitHeavy||Audio.SFX.hit)();
     floatText(player.x,player.y-16, run.shield>0?('SHIELD L'+run.shield):'SHIELD DOWN','#4ea0ff');
@@ -37595,6 +37594,7 @@ function playerHit(source){
   // the end of its crash drift could put the live ship behind the bottom HUD.
   player._deathAnchor={x:player.x,y:player.y};
   player.dead=true; player.alive=false;
+  if(source==='fusionOvercharge')run.shield=0;
   /* THE SPIN-OUT OWNS THE DEATH NOW (Mike's header rule, 0907). The shock ring and the seven
      explosions that used to fire HERE are the CRASH, and they moved into updateDeathSpin so
      they land at the end of the turn instead of on the frame of the hit. A pilot with no sp
@@ -38087,7 +38087,7 @@ function hammerBossDamage(b,dmg){
     }
     if(h.rage<=0)h.shotCd=Math.max(h.shotCd,.45);h.rage=3;return dmg*.15;
   }
-  return h.state==='shield'?dmg*.25:dmg;
+  return h.state==='shield'&&hammerHard()?dmg*.25:dmg;
 }
 const hammerTintCache=new Map();
 function hammerFrame(key,frame,tint){
@@ -38498,7 +38498,7 @@ function hammerBossDamage(b,dmg){
     if(_dmgBullet&&_dmgBullet.kind==='gmiss'){let dx=b.x-_dmgBullet.x,dy=b.y-_dmgBullet.y,m=Math.hypot(dx,dy)||1;h.vx=dx/m*210;h.vy=dy/m*210;h.rage=0;return dmg;}
     h.rage=3;return dmg*.15;
   }
-  return h.state==='shield'?dmg*.25:dmg;
+  return h.state==='shield'&&hammerHard()?dmg*.25:dmg;
 }
 function hammerBlasterMount(b){
   const h=b._hammer,scale=170/272,recoil=clamp((h.chainMuzzle||0)/.09,0,1)*3;
@@ -38872,7 +38872,7 @@ function hammerStormDraw(b){const h=b._hammer,s=h.state;if(!s.startsWith('storm_
   }
   if(s==='storm_split')for(const q of h.stormWaves||[]){hammerStormRedZoneDraw(q);hammerStormRowRetinaDraw(q);}
   if(s==='storm_stun'||(s==='storm_rebuild'&&h.t<.35)){
-    archBlit('stun_0920',s==='storm_rebuild'?2:h.t<.18?0:h.t>3.65?2:1,b.x,b.y,240,b.flash>0?'blue':null,0);
+    archBlit('stun_0920',s==='storm_rebuild'?2:h.t<.18?0:h.t>3.65?2:1,b.x,b.y,240,b.flash>0?'white':null,0);
     hammerStunEffectsDraw(b);hammerRecoveryBurstDraw(b);return true;
   }
   if(s==='storm_raise'||s==='storm_rebuild'){
@@ -39112,7 +39112,7 @@ function hammerArsenalCastDraw(b){
   const key='arch_arsenal_cast_0926',f=h.state==='spell'?Math.min(4,Math.floor(h.t/2.35*5)):h.state==='spell_blast'?(h.t<.35?5:h.t<.85?6:7):h.state==='mega_charge'?Math.min(4,Math.floor(h.t/1.65*5)):5;
   const rects=[[0,0,338,530,178,262],[338,0,397,530,542,262],[735,0,355,530,907,262],[1090,0,358,530,1285,262],
     [0,530,338,556,180,778],[338,530,397,556,542,791],[735,530,355,556,907,788],[1090,530,358,556,1275,777]];
-  const im=b.flash>0?xartTint(key,'#70baff',.4):h.mode==='enraged'?xartTint(key,'#ee4338',.3):XART.get(key),r=rects[f],k=.54;
+  const im=b.flash>0?xartTint(key,'#ffffff',.8):h.mode==='enraged'?xartTint(key,'#ee4338',.3):XART.get(key),r=rects[f],k=.54;
   ctx.save();ctx.imageSmoothingEnabled=false;ctx.drawImage(im,r[0],r[1],r[2],r[3],b.x+(r[0]-r[4])*k,b.y+(r[1]-r[5])*k,r[2]*k,r[3]*k);ctx.restore();return true;
 }
 function hammerChromiumFrame(t,dur){
@@ -39143,7 +39143,7 @@ function hammerCombatDraw(b){
   const h=b._hammer,s=h.state;
   if(s==='hammer_exposed'||s==='hammer_stun'){
     const pose=s==='hammer_stun'?(h.t<.18?0:h.t>4.65?2:1):0;
-    archBlit('stun_0920',pose,b.x,b.y,240,b.flash>0?'blue':null,0);
+    archBlit('stun_0920',pose,b.x,b.y,240,b.flash>0?'white':null,0);
     if(s==='hammer_stun')hammerStunEffectsDraw(b);
     return true;
   }
@@ -39161,7 +39161,7 @@ function hammerCombatDraw(b){
     const w=h.whirl;
     if(s!=='whirlwind'&&w)combatWarningDraw(b,{x:w.startX,y:w.y+36,ex:w.endX,ey:w.y+36,progress:clamp(h.t/w.warm,0,1),width:208,alertX:b.x,alertY:b.y-75});
     if(XART.rdy('arch_whirlwind_0926')){
-      const key='arch_whirlwind_0926',im=(b.flash>0&&xartTint(key,'#70baff',.45))||XART.get(key),r=HAMMER_WHIRL_REEL[hammerWhirlFrame(b)],scale=.62;
+      const key='arch_whirlwind_0926',im=(b.flash>0&&xartTint(key,'#ffffff',.8))||XART.get(key),r=HAMMER_WHIRL_REEL[hammerWhirlFrame(b)],scale=.62;
       ctx.save();ctx.imageSmoothingEnabled=false;
       ctx.drawImage(im,r[0],r[1],r[2],r[3],b.x+(r[0]-r[4])*scale,b.y+(r[1]-r[5])*scale,r[2]*scale,r[3]*scale);ctx.restore();
     }else hammerOrbitalPose(b,11,1);return true;
@@ -39297,7 +39297,7 @@ function hammerBossDraw(b){
       if(h.state==='spell_blast')hammerChromiumDraw(q.x,PLAY.y+PLAY.h-12,PLAY.y,44,h.t,1.35);
     }
   }
-  let key='leap_strike_0922',f=0,tint=b.flash>0?'blue':null,rot=0,z=300;
+  let key='leap_strike_0922',f=0,tint=b.flash>0?'white':null,rot=0,z=300;
   if(h.state==='warn')f=1;
   else if(h.state==='leap')f=2+Math.min(2,Math.floor(h.t/(hammerFurious()?.27:.52)*3));
   else if(h.state==='recover')f=h.t<.14?5:6;
@@ -39327,6 +39327,7 @@ function hammerBossDraw(b){
   // Old reels begin with the retired back-gun pose; use the clean armored body at that join.
   if(key==='ship_transform'&&f<6){key='leap_strike_0922';f=0;}
   if(key!=='leap_strike_0922'&&z===300)z=206;
+  if(b.flash>0)tint='white';
   if(h.state==='spell'||h.state==='spell_blast'||(h.mode==='chaingun'&&['mega_charge','mega_beam'].includes(h.state)))hammerArsenalCastDraw(b);
   else if(key==='leap_strike_0922')hammerOrbitalPose(b,hammerStrikeFrame(b),1,tint);
   else archBlit(key,f,b.x,b.y,z,tint,rot);
@@ -42212,6 +42213,10 @@ function spaceLaserMuzzleDraw(g,lv,frame,x,y,size){
   return roundLaserMuzzleDraw(g,x,y,clamp(size*.22,12,24),SPACE_LASER_COL[clamp((lv|0)-1,0,4)],clamp(frame|0,0,3)*2);
 }
 function spaceAtlasIconBlit(g,key,x,y,h,centred){
+  if(/^space_fusion_icon_/.test(key)&&typeof fusion30Cell==='function'){
+    const lv=clamp(parseInt(key.split('_').pop())||1,1,5);
+    const w=h*104/112;return fusion30Cell('icon_'+lv,0,centred?x:x+w/2,centred?y:y+h/2,w,h,g)?w:null;
+  }
   let fk=null;
   if(/^space_laser_icon_/.test(key)) fk='laser_icon_'+clamp(parseInt(key.split('_').pop())||1,1,5);
   else if(/^space_shadow_icon_/.test(key)) fk='shadow_icon_'+clamp(parseInt(key.split('_').pop())||1,1,5);
@@ -42562,6 +42567,7 @@ function gravityModeDrawShip(drawX,drawY,drawSize,planeH){
   const pilot=_pilotKey(), phase=G.phase;
   const newFury=furyShipReady();
   if(!newFury&&!spaceAtlasCanvas('ship_base',pilot))return false;
+  if(play&&phase==='active'&&run.shield>0&&!axelMegaShieldActive())drawShield(x,y);
   if(newFury)furyShipDrawPhase(G,x,y,size,planeH,pilot);
   else {
   if(phase==='drift'||phase==='charge'||phase==='scatter'||phase==='snap'){
@@ -42674,14 +42680,7 @@ function gravityModeDrawShip(drawX,drawY,drawSize,planeH){
     for(const hp of spaceShipHardpoints(x,y,size).laser)spaceLaserMuzzleDraw(ctx,lv,f,hp.x,hp.y,size);
     ctx.restore();
   }
-  if(phase==='active'&&(run._spaceShadowCharge||0)>0){
-    const p=clamp(run._spaceShadowCharge/SPACE_SHADOW_FULL_CHARGE,0,1),f=clamp(Math.floor(p*3),0,2),s=size*(0.20+p*0.25),lv=spaceWeaponLevel(),hp=spaceShipHardpoints(x,y,size).nose;
-    ctx.save();ctx.globalCompositeOperation='lighter';ctx.shadowColor=p>=0.985?'#ffffff':'#8e48ff';ctx.shadowBlur=p>=0.985?20:9;
-    spaceAtlasDraw(ctx,'shadow_'+lv+'_charge_'+f,hp.x,hp.y,s,s,true,null);
-    if(p>=0.985){ctx.globalAlpha=0.34+0.24*Math.sin(performance.now()*0.025);spaceAtlasDraw(ctx,'shadow_'+lv+'_charge_2',hp.x,hp.y,s*1.28,s*1.28,true,null);}
-    ctx.restore();
-    spaceShadowIndicatorDraw(x,y,size,p);
-  }
+  if(phase==='active'&&(run._spaceShadowCharge||0)>0&&typeof fusion30ChargeDraw==='function')fusion30ChargeDraw(x,y,size);
   if(newFury)furyShipVeil(G);
   if(phase!=='active'){
     ctx.save();ctx.textAlign='center';ctx.font='bold 17px "BOFmil", monospace';
@@ -44358,7 +44357,7 @@ function dlgBox(o){
   const full  = o.full || '';
   const key=String(state)+'|'+who+'|'+full,now=performance.now();
   const prior=dlgBox._tw,first=!prior||prior.key!==key;
-  const auto=o.shown==null||(o.shown===full&&(first||prior.auto));
+  const auto=o.forceShown!==true&&(o.shown==null||(o.shown===full&&(first||prior.auto)));
   let shown;
   if(auto){
     const count=first?0:Math.min(full.length,prior.count+(now-prior.at)*.034);
@@ -47485,6 +47484,7 @@ function missileSupplyBonusRoll(){
   B.pending++;B.delay=Math.max(B.delay,2);return true;
 }
 function scriptedMissileSupply(x,pack){
+  if(pack==='missilepack100')pack='missilepack50';
   const p={x:clamp(x,camLeftX()+40,camRightX()-40),y:-30,vy:.85,t:0,kind:'mcrate',
     hp:6,flash:0,w:48,h:44,bob:rnd(0,TAU),_pack:pack};
   powerups.push(p);missileSupplyBonusRoll();return p;
@@ -48886,6 +48886,7 @@ function tankCruiseTick(e,dt,maxSpd){
 function tankTick(e, dt){
   if(e.dead) return;
   tankMotionTick(e,dt,TANK_SPD);
+  if(e._r30&&e._r30.turret.hp<=0)return;
 
   /* FIRING — the same burst rhythm as the boats, per Mike's "similar attack" */
   const canFire = targetShip(e.x,e.y).y > e.y+8 && Math.abs(targetShip(e.x,e.y).x-e.x) < 120;
@@ -50096,7 +50097,7 @@ function drawBullets(){
   for(const b of pBullets){
     /* THE LEVEL'S AURA (0917) - under the round, before any kind branch, so every carrier gets it */
     if(b._inf && (b._infLv|0)>=2 && !(b._launchDelay>0) && typeof infusionAuraDraw==='function') infusionAuraDraw(b);
-    if(b._cal50&&!b._inf&&!b.dead&&typeof chaingunRoundDraw==='function'&&chaingunRoundDraw(b))continue;
+    if(b._cal50&&!b.dead&&typeof chaingunRoundDraw==='function'&&chaingunRoundDraw(b))continue;
     if(b.kind==='firewhip'){
       if(b.dead)continue;
       const f=fireWhipFrame(b,(b.t||0)/b.duration),key='fire_whip_pose_'+f;
@@ -50179,6 +50180,7 @@ function drawBullets(){
       ctx.globalAlpha=1;spaceAtlasDraw(ctx,trail,0,14,20,30,true,null);
       if(r){ctx.globalAlpha=.24;spaceAtlasDraw(ctx,key,0,0,31,50,true,null);ctx.globalAlpha=1;spaceAtlasDraw(ctx,key,0,0,22,36,true,null);}ctx.restore();continue;
     }
+    if(typeof fusion30BulletDraw==='function'&&fusion30BulletDraw(b))continue;
     if(b.kind==='shadowOrb'){
       const lv=clamp(b.lv||1,1,5),key='shadow_'+lv+'_flight_'+(Math.floor((b.t||0)*14)%6),s=b.w*(1.05+0.06*Math.sin((b.t||0)*20));
       /* The authored flight cells point left. Rotate that left-facing nose clockwise to NORTH so
@@ -50568,6 +50570,7 @@ function drawBullets(){
       const im=XART.get('forge_ice_lance_0919');ctx.save();ctx.translate(b.x,b.y);ctx.shadowColor='#75deff';ctx.shadowBlur=7;
       ctx.drawImage(im,340,25,345,1480,-b.w*.9,-b.h*.8,b.w*1.8,b.h*1.6);ctx.restore();continue;
     }
+    if(typeof repair30OrbDraw==='function'&&repair30OrbDraw(b))continue;
     if(b.kind==='orb' && b._el==='dark' && (b._voidAge||0)>.52 && typeof XART!=='undefined' && XART.rdy('forge_dark_void_0919')){
       const im=XART.get('forge_dark_void_0919'),d=b.w*2.25;ctx.save();ctx.translate(b.x,b.y);ctx.rotate((b.spin||0)*.7);
       ctx.imageSmoothingEnabled=false;ctx.drawImage(im,-d/2,-d/2,d,d);ctx.restore();continue;
@@ -52129,7 +52132,7 @@ function drawPowerups(){
          falling") and then no call site honoured it. `p.wvar` was baked at spawn for this. */
       const _pvOpt = {fixed:weaponPickupVariant(_w2,p.wvar)};
       ctx.save(); ctx.globalAlpha=0.92+0.08*Math.sin(p.t*8); ctx.shadowColor='#cfe6ff'; ctx.shadowBlur=6;
-      const _pik=spaceWeaponsActive()?(_sw2===0?'space_laser_icon_'+_l2:_sw2===1?'space_shadow_icon_'+_l2:spaceVolleyIconKey(_l2)):weaponIconKey(_w2,_l2,_pvOpt);
+      const _pik=spaceWeaponsActive()?(_sw2===0?'space_laser_icon_'+_l2:_sw2===1?'space_fusion_icon_'+Math.max(1,_l2):spaceVolleyIconKey(_l2)):weaponIconKey(_w2,_l2,_pvOpt);
       const _drew=(typeof iconBlit==='function') && iconBlit(ctx, _pik, p.x, yb, 36, true);
       ctx.restore();
       if(_drew) continue;
@@ -54978,7 +54981,7 @@ function drawCampaignIntro(dt){
     campaignIntroCaption(B,C,W,H,Math.min(clamp(local/.25,0,1),clamp((B.to-t)/.25,0,1)));
 
   }else campaignIntroFinale(C,t,W,H);
-  msgFaceUse('dialogue');controlHintRow([['pad_start','SKIP']],H-20,W/2,W-24);msgFaceUse(null);
+  msgFaceUse('dialogue');controlHintRow([['pad_a','NEXT'],['pad_start','SKIP SCENE']],H-20,W/2,W-24);msgFaceUse(null);
   const click=Input.mouse.down&&!C.md;C.md=!!Input.mouse.down;
   if(stateT>.35&&(click||Input.menuStart())){Input.mouse.down=false;campaignIntroFinish();return;}
   if(t>=CAMPAIGN_INTRO_DONE)campaignIntroFinish();
@@ -56543,6 +56546,9 @@ function wfxUpdate(dt){
    wfxDraw, which is called AFTER the units are drawn — so the wash sat on top of everything and
    the enemies vanished into the weather. Terrain darkens; the things shooting at you do not. */
 function wfxDimDraw(){
+  if(run.stage===6){
+    bg6WeatherGrade(camLeftX()-40,viewFillY(),viewW()+80,viewFillH());return;
+  }
   const C=wfxCfg(); if(!C || !wfx) return;
   if(C.kind==='snow' && wfx.snow>0){
     /* WORLD WIDTH, NOT CAMERA WIDTH (drop 0801bf). Mike: "the snow level only
@@ -57943,7 +57949,7 @@ function s4Hardpoint(e,ox,oy){
   return combatHardpoint(e,ox,oy);
 }
 function stage4Muzzle(e,ox,oy,scale,life,fam){
-  const p=s4Hardpoint(e,ox,oy);if(!p)return;
+  const p=s4Hardpoint(e,ox,oy);if(!p||p._disabled)return;
   const _fam=e._modJet?'weapon_muzzle_'+(e._modJet==='desert'?'rotary':e._modJet==='black'?'missile':'laser'):
     fam===MUZZLE_MG?BPFX_MUZZLE_KINETIC:BPFX_MUZZLE_MISSILE;
   navalFlash(null,p,scale||.82,_fam,{n:e._modJet?4:8,hpx:e._modJet?30:46,life:life||.15,
@@ -57951,10 +57957,11 @@ function stage4Muzzle(e,ox,oy,scale,life,fam){
 }
 function s4ChaseTick(e,dt){
   const K=e._s4chase,H=S4CHASE[K];if(!H)return;
+  if(e._r30&&e._modJet&&e._r30.left.hp<=0&&e._r30.right.hp<=0){e._s4Act=null;e._fcd=999;}
   e._s4t=(e._s4t||0)+dt;
   const W=worldWidth(),aim=(p)=>aimPlayer(p.x,p.y);
   const fire=(p,a,sp,kind,opts)=>{
-    opts=opts||{};const hb=S4_PROJECTILE_HIT[kind]||[8,8];
+    if(p._disabled)return;opts=opts||{};const hb=S4_PROJECTILE_HIT[kind]||[8,8];
     if(opts.w==null)opts.w=hb[0];if(opts.h==null)opts.h=hb[1];
     const b=eShootT(p.x,p.y,a,sp,kind,opts);e._muz=.13;
     if(opts.accel){b._s4Accel=opts.accel;b._s4Max=opts.max||sp*1.9;}
@@ -65214,7 +65221,7 @@ function drawModeSelect(dt){
    above and the highlighted stage's guide panel below. Flags: completed / available /
    locked / highlight (2-fr anim); animated cursor on the highlighted stage.
    Rival + victory branches in the clear handler are untouched. */
-const SSEL_POS={1:[120,117],2:[286,80],3:[444,117],4:[517,255],5:[497,390],6:[322,401],7:[137,389],8:[91,252],9:[575,75]};
+const SSEL_POS={1:[385,370],2:[700,270],3:[1015,370],4:[1140,630],5:[1005,860],6:[700,940],7:[395,860],8:[260,630],9:[735,90]};
 /* ============================================================
    CAMPAIGN MAP — THE PILOT'S SHIP (drop 0724af).
    Once the flags have finished dropping, the pilot you actually picked flies IN from off the left
@@ -65304,16 +65311,12 @@ function sselShipUpdate(dt){
   const k = (sh.phase==='flyin') ? 0.055 : 0.075;
   sh.x += dx*Math.min(1, dt*60*k);
   sh.y += dy*Math.min(1, dt*60*k);
-  /* FACE THE DIRECTION OF TRAVEL. The sprite points UP by default, so flying in from the left it
-     was moving right while still facing up-screen. Aim it along its actual velocity and hold the
-     last heading when it settles, so it sits pointing the way it arrived. */
-  if(d>2){
-    const want=Math.atan2(dy,dx)+Math.PI/2;      // +90deg: the art's nose is up, not right
-    let diff=want-(sh.head==null?want:sh.head);
-    while(diff>Math.PI) diff-=TAU; while(diff<-Math.PI) diff+=TAU;
-    sh.head=(sh.head==null?want:sh.head+diff*Math.min(1,dt*7));
-  }
-  sh.bank = clamp(dx*0.045, -0.5, 0.5);          // leans into the turn on top of the heading
+  /* FACE THE DIRECTION OF TRAVEL horizontally only. Map travel keeps the last
+     left/right heading on a vertical leg; bobbing never pivots the pilot. */
+  if(Math.abs(dx)>2) sh.face=dx<0?-1:1;
+  if(!sh.face) sh.face=1;
+  sh.head=sh.face*Math.PI/2;
+  sh.bank=0;
   if(sh.phase==='flyin' && d<4){ sh.phase='idle'; }
   sh.moving = d>3;
   // engine trail while it is actually travelling
@@ -65321,7 +65324,7 @@ function sselShipUpdate(dt){
   if(sh.moving && sh.trail<=0){
     sh.trail=0.03;
     if(typeof particles!=='undefined'){
-      particles.push({x:sh.x-dx*0.06, y:sh.y-dy*0.06+4, vx:rnd(-0.2,0.2), vy:rnd(0.1,0.5),
+      particles.push({x:sh.x-sh.face*17, y:sh.y, vx:rnd(-0.2,0.2), vy:rnd(0.1,0.5),
         life:rnd(0.18,0.36), t:0, r:rnd(1,2.2), color: d>90?'#ffd27a':'#8fd0ff'});
     }
   }
@@ -65683,7 +65686,7 @@ let sselFlagsShown=0;  // how many flags have appeared (sequenced)
 let sselUnlockCine=null; // {stage, t, phase} unlock cinematic, or null
 function openStageSelect(nextStage, opts){
   opts=opts||{};
-  sselMax=clamp(nextStage,1,8); sselCursor=sselMax; sselNext=nextStage;
+  sselMax=clamp(nextStage,1,8); sselCursor=nextStage===9 && campaign.bonusUnlocked ? 9 : sselMax; sselNext=nextStage;
   if(opts.unlock){
     // UNLOCK CINEMATIC: hold the new stage LOCKED (gray) until the camera is on it —
     // the cine's ding-end does the real unlock so the gray -> true-colors unfurl reads.
@@ -66263,9 +66266,9 @@ function drawOpening(dt){
    boot overview, so the stage-select draw scales markers by 1/zoom (`_fz` there).
    ============================================================ */
 const CM2_ISLANDS=[1,2,3,4,5,6,7,8,9,'hub'];
-const CM2_K=1.45, CM2_OX=10, CM2_OY=10;          // world = SSEL_POS*K + O, logical px at the live zoom
-const CM2_W=940, CM2_H=700;                        // the world the camera is fenced into
-const CM2_HUB=[304,245];                           // the citadel stands where the plate's centre was
+const CM2_K=1, CM2_OX=0, CM2_OY=0;          // world = SSEL_POS*K + O, logical px at the live zoom
+const CM2_W=1400, CM2_H=1200;                        // the world the camera is fenced into
+const CM2_HUB=[700,600];                           // central battleground / Stage X; Fury HQ is north of Stage 1
 const CM2_ISL=190, CM2_HUB_SZ=240, CM2_PORTAL_SZ=130;   // 1:1 with the baked plates on the 2x store
 const CM2_BAR={x:25, y:2, w:430, h:43};            // bar.png is 860x86
 const CM2_BTN_W=[96.5, 96.5, 123], CM2_BTN_H=26;   // btn_save / btn_load / btn_exit, baked 52 tall
@@ -69385,10 +69388,9 @@ function passwordStageText(art,text,cx,cy,wantH,maxW,color,alpha,spacing){
 }
 function drawPassword(dt){
   /* keyboard entry runs alongside the on-screen keypad — both write the same pwInput */
-  if(typeof pwTypeTick==='function'){
-    const _sub=pwTypeTick();
-    if(_sub && typeof submitPassword==='function') submitPassword();
-  }
+  const startSubmit=Input.menuStart&&Input.menuStart();
+  const typedSubmit=typeof pwTypeTick==='function'&&pwTypeTick();
+  if(startSubmit||typedSubmit){submitPassword();return;}
   const _PWMAP={'FURY':1,'IRON':2,'DAM5':3,'STRM':4,'ORBT':5,'TURB':6,'SEWR':7,'DETH':8};
   let _pwStage=1;
   for(const code in _PWMAP){ if(code.slice(0,pwInput.length)===pwInput && pwInput.length>0){ _pwStage=_PWMAP[code]; break; } }
@@ -69497,8 +69499,7 @@ function drawPassword(dt){
      ⚠ PAD BUTTONS ONLY, NOT menuConfirm(). menuConfirm also carries the KEYBOARD fire key,
      and on this screen letters type into the password — accepting 'j' here would press the
      highlighted keypad key as well as typing, which is the 'stuck on B' bug noted above. */
-  const _padFire=Input.tapAny((keybind.fire||[]).filter(function(k){ return /^pad_/.test(k); }))
-                 || Input.tap('pad_b9');
+  const _padFire=Input.tapAny((keybind.fire||[]).filter(function(k){ return /^pad_/.test(k); }));
   if(_padFire){ const t=NAV[drawPassword.sel!=null?drawPassword.sel:0];
     if(t && t.isBack){ setState(GS.TITLE); menuIndex=0; pwInput=''; drawPassword.typing=false; Audio.SFX.select(); return; }
     if(t && t.isType){ drawPassword.typing=!drawPassword.typing; Audio.SFX.select(); return; }
@@ -69772,7 +69773,7 @@ function debugJump(entry){
   } else {
     subBossDone=true; subBossTriggered=true; subBossActive=false; subBoss=null; _sbMusicResumed=true;
     stageTimer=9999;
-    mapScroll=DEBUG_BOSS_SCROLL[entry.stage]||0;
+    mapScroll=entry.stage===1?Math.max(0,levelScrollRange()-220):(DEBUG_BOSS_SCROLL[entry.stage]||0);
     bossWarned=true; warnT=2.4; warnKind='boss';
     try{ if(typeof arcStageCard==='function'&&typeof _bossCard!=='undefined'){ const _bw=arcStageCard(run.stage,'boss_warning'); if(_bw) _bossCard={lines:_bw,t:0}; } }catch(_e){}
   }
@@ -73100,6 +73101,8 @@ function stage6TransitionBackgroundDraw(scroll){
   if(typeof bg6LoopDraw==='function')bg6LoopDraw(im,STAGE6_TRANSITION_SKY,scroll||0,VW,VH,0);
   else {const H=im.naturalHeight||5000;let sy=H-((((scroll||0)%H)+H)%H)-VH;sy=((sy%H)+H)%H;
     const h1=Math.min(VH,H-sy);ctx.drawImage(im,0,sy,VW,h1,0,0,VW,h1);if(h1<VH)ctx.drawImage(im,0,0,VW,VH-h1,0,h1,VW,VH-h1);}
+  // Launch and gameplay share the same complete-scene grade, without a brightness cut.
+  bg6WeatherGrade(0,0,VW,VH);
   return true;
 }
 function stage5KitArrivalProgress(dist){
@@ -73780,22 +73783,23 @@ function bg6Mood(p){
   return {a,b,mix};
 }
 
+function bg6WeatherGrade(x,y,w,h){
+    const wet=bg6StormStrength(),m=bg6Mood(bg6Phase());
+    const mix=(a,b,k)=>Math.round(a+(b-a)*k),rgb=h=>[1,3,5].map(i=>parseInt(h.slice(i,i+2),16));
+    const a=rgb(m.a.tint),b=rgb(m.b.tint),storm=[3,9,20];
+    const col=a.map((v,i)=>mix(mix(v,b[i],m.mix),storm[i],wet));
+    const strength=lerp(lerp(m.a.amt,m.b.amt,m.mix),.72,wet);
+    ctx.save();ctx.fillStyle='rgba('+col.join(',')+','+strength+')';
+    ctx.fillRect(x,y,w,h);ctx.restore();
+}
 function bg6MoodImage(key, mood, which){
   const s=which?mood.b:mood.a;
   return (typeof xartTint==='function' && xartTint(key,s.tint,s.amt)) || XART.get(key);
 }
 
 function bg6SkyBaseDraw(img, key, sy, winH, drawW, dstY){
-  const mood=bg6Mood(bg6Phase());
-  const a=bg6MoodImage(key,mood,0), b=bg6MoodImage(key,mood,1);
-  ctx.save();
-  ctx.globalAlpha=1-mood.mix;
-  ctx.drawImage(a,0,sy,drawW,winH,0,dstY,drawW,winH);
-  if(mood.mix>0){
-    ctx.globalAlpha=mood.mix;
-    ctx.drawImage(b,0,sy,drawW,winH,0,dstY,drawW,winH);
-  }
-  ctx.restore();
+  // Draw the original once. Grade the complete background after city/cloud compositing.
+  ctx.drawImage(img,0,sy,drawW,winH,0,dstY,drawW,winH);
 }
 /* when the city begins to show and when it is fully there, as fractions of the stage clock */
 const BG6_CITY_FROM=0.30, BG6_CITY_TO=0.80, BG6_CITY_MAX=0.92;
@@ -74134,6 +74138,8 @@ function drawWorld(dt){
   for(const _s of seatList().slice().reverse()) withSeat(_s, function(){
     if(player.out) return;
     drawPlayer();
+    if(run.weapon===7&&typeof chaingunMountsDraw==='function')chaingunMountsDraw(dt);
+    if(run.weapon===7&&player._chainMuzzle>0)player._chainMuzzle=Math.max(0,player._chainMuzzle-dt);
     if(typeof wm26DrawPlayer==='function')wm26DrawPlayer();
     axelMegaShieldDraw();
     if(player._chromeSpreadT>0 && chromeSpreadActive() && typeof XART!=='undefined' && XART.rdy('forge_elem_chrome_laser_0918')){
@@ -74142,8 +74148,6 @@ function drawWorld(dt){
       ctx.drawImage(im,player.x-w/2,player.y-20-h,w,h);ctx.restore();
     }
   });
-  if(run.weapon===7&&typeof chaingunMountsDraw==='function')chaingunMountsDraw(dt);
-  if(run.weapon===7&&player._chainMuzzle>0)player._chainMuzzle=Math.max(0,player._chainMuzzle-dt);
   if(run.stage===6)s6OpeningDraw(); // Massive overhead carrier and its shadow cover the player.
   drawSpaceArmoryHelpers();
   overlordIntroOverflightDraw();
@@ -77395,7 +77399,7 @@ function forgeRecipeDraw(F,w,disc,dt,W,H,art){
   if(art && F.msgT>0) stageText(art,F.msg,W*.50,H*.94,Math.min(10,stageFitH(art,F.msg,W*.70,10,7,.05)),'#ffffff',.9,1,.05);
   controlHintRow([['pad_b','BACK'],['pad_a',owned?'OWNED':'FORGE']],H*.968,W/2,W-24);
 }
-function forgePreviewNew(w,elem,lv){ return {w:w|0,elem:elem,lv:1,bullets:[],parts:[],bursts:[],geysers:[],voids:[],zaps:[],impacts:[],explosions:[],smoke:[],cd:.2,t:0,fired:0,err:null,variant:(w|0)===3&&elem==='fire'?'firewhip':null}; }
+function forgePreviewNew(w,elem,lv){ return {w:w|0,elem:elem,lv:clamp(lv||1,1,5),bullets:[],parts:[],bursts:[],geysers:[],voids:[],zaps:[],impacts:[],explosions:[],smoke:[],cd:.2,t:0,fired:0,err:null,variant:(w|0)===3&&elem==='fire'?'firewhip':null}; }
 function forgePreviewSwap(P,VWp,VHp,fn){
   // Preview owns complete run/player snapshots: no equipped level, special, space mode or
   // cooldown can leak in, and no preview attack can mutate live entities or effects.
@@ -77403,17 +77407,17 @@ function forgePreviewSwap(P,VWp,VHp,fn){
     ba:bossActive,sba:subBossActive,bursts:efxBursts,geysers,voids,clock:efxClock,vents:s2Vents,debris:fireDebris,zones:zoneCols,
     impacts:pImpacts,explosions,smoke:smokeTrails,sh:shake,flash:flashScreen,stats:stageStats,yuri:yuriLightningOrbUnlocked,sfx:Audio.SFX,loop:Snd.loopOn,loopOff:Snd.loopOff};
   try{
-    Object.assign(run,{weapon:P.w,wlevel:1,wlevels:WEAPONS.map(()=>1),wvars:WEAPONS.map(()=>null),
+    Object.assign(run,{weapon:P.w,wlevel:P.lv,wlevels:WEAPONS.map(()=>P.lv),wvars:WEAPONS.map(()=>null),
       spaceMode:false,dkT:0,sonicT:0,forge:{},forgeForms:{},forgeElems:{},_forgeBlastSeq:P.blastSeq||(P.blastSeq={}),_chainRev:0,_chainHeat:0,_chainOverheat:0,_kinN:0,
-      infusion:P.elem?{elem:P.elem,lv:1,hits:0}:null});
+      infusion:P.elem?{elem:P.elem,lv:P.lv,hits:0}:null});
     player=Object.assign({},sv.player,{x:VW/2,y:VH-70,dead:false,invuln:0,_mgMuzT:0,_spaceMuzzle:0});
     special=null;boss=null;subBoss=null;bossActive=false;subBossActive=false;enemies=[];powerups=[];
     pImpacts=P.impacts;explosions=P.explosions;smokeTrails=P.smoke;pBullets=P.bullets;eBullets=[];particles=P.parts;zaps=P.zaps;efxBursts=P.bursts;geysers=P.geysers;voids=P.voids;s2Vents=[];fireDebris=[];zoneCols=[];efxClock=P.t;
     stageStats=Object.assign({},sv.stats);Audio.SFX=Object.fromEntries(Object.keys(sv.sfx).map(k=>[k,()=>{if(P.audition&&P.t>=(P.nextSound||0)){P.nextSound=P.t+.18;sv.sfx[k]?.();}}]));Snd.loopOn=(k)=>{if(P.audition&&P.t>=(P.nextLoopSound||0)){P.nextLoopSound=P.t+.40;sv.sfx[k]?.();}};Snd.loopOff=()=>{};
     if(P.pilot)run.pilot=P.pilot;
-    if(P.space!=null){run.stage=5;run.spaceMode=true;run.spaceWeapon=P.space===2?0:P.space;run.spaceLevels=[1,1,1];}
+    if(P.space!=null){run.stage=5;run.spaceMode=true;run.spaceWeapon=P.space===2?0:P.space;run.spaceLevels=[P.lv,P.lv,P.lv];}
     if(P.w===8){run.pilot='yuri';yuriLightningOrbUnlocked=true;run._earnedUnlocks=Object.assign({},run._earnedUnlocks,{lightningOrb:true});}
-    if(P.elem)run.forge[P.w]={elem:P.elem,lv:1};
+    if(P.elem)run.forge[P.w]={elem:P.elem,lv:P.lv};
     if(P.w===5)run.wvars[5]=P.elem==='fire'?'fireorb':'iceorb';
     if(P.w===4)run.wvars[4]=P.elem==='ice'&&_pilotKey()==='freezer'?'icebreath':'flamethrower';
     if(P.variant)run.wvars[P.w]=P.variant;
@@ -77437,7 +77441,7 @@ function forgePreviewTick(P,VWp,VHp,dt){
     P.cd-=dt;
     if(P.cd<=0){
       if(P.space!=null){
-        if(P.space===2)spaceVolleyFire(1);else if(P.space===1)spaceShadowRelease(SPACE_SHADOW_FULL_CHARGE);else spaceLaserFire();
+        if(P.space===2)spaceVolleyFire(1);else if(P.space===1)spaceShadowRelease(typeof FUSION30_FULL!=='undefined'?FUSION30_FULL:SPACE_SHADOW_FULL_CHARGE);else spaceLaserFire();
         P.fired++;P.cd=P.space===1?1.5:P.space===2?.85:.24;
       } else if(P.w===1 && P.elem==='chrome'){
         // Cycle the same three held-release strengths used in live play.
@@ -79041,9 +79045,9 @@ if(window.BOFA && BOFA.sfx){
     laserCannon:'assets/game/sounds/reviewed_laser_cannon.mp3',
     spaceLaserCannon:'assets/game/sounds/reviewed_laser_cannon.mp3',
     spaceLaserHit:'assets/game/sounds/shield_hit_light.mp3',
-    spaceShadowCharge:'assets/game/sounds/arc_warp_charge_0923.mp3',
-    // Shadow Orb has a distinct dark charge/launch pair, separate from the cannon.
-    spaceShadowRelease:'assets/game/sounds/arc_void_orb_0923.mp3',
+    spaceShadowCharge:'assets/game/sounds/alert_beam_charge.mp3',
+    // Fusion uses its own charge/launch pair; legacy event keys preserve save/editor compatibility.
+    spaceShadowRelease:'assets/game/sounds/arc_fusion_beam_0923.mp3',
     /* THE ORB'S IMPACT HAD A 454 ms SWELL (drop 0903q). spaceImpact() fires this cue on the frame of
        contact - the delay Mike heard was in the sample: explosion_plasma.mp3 peaks at 454 ms, under a
        reviewed launch cue that does not reach -12 dB until 928 ms. reviewed_shadow_orb_impact.mp3 is

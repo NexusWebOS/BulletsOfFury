@@ -1,0 +1,78 @@
+{
+  "tool": "built-in image_gen",
+  "input_images": [
+    "_ART_SOURCES/realm_0930/walls.png",
+    "_ART_SOURCES/campaign_0930/east_coast_front_v4.png"
+  ],
+  "prompt": "Use case: stylized-concept. Asset type: Bullets of Fury 16-bit campaign map animated barrier sprite sheet. Reference Image 1 is the established Stage 8 alien binary wall styling and palette; reference Image 2 is ONLY the existing barrier's tall vertical composition and irregular transparent right perimeter, not its fire palette. Create exactly FOUR adjacent tall vertical animation poses in a single 4-column sprite sheet, no gaps between columns, equal column width and height. Every pose depicts the same massive alien symbiote DATA WALL sealing a coastline from the west: opaque deep-black/navy-violet corrupted digital mass occupying the left part of each column; a ragged translucent right edge breaking into clusters of bright alien binary digits 0 and 1, fragmented data tiles, angular violet/cyan filaments and intermittent magenta-white code pulses extending rightward over transparency. The four columns should be similar but visibly different animation poses of flickering/reconfiguring code, stationary rather than scrolling. The organic edge must not be a straight vertical line. Crisp dense 16-bit pixel art with readable 0/1 glyphs, eerie technological alien feel, saturated violet, electric cyan and restrained hot magenta. IMPORTANT: actual transparent alpha outside the ragged right perimeter. No fire, flame, lava, orange, smoke, island, ocean, label, UI, frame, white background or checkerboard. Full sprite sheet visible, no clipping. Tall panels approximately 1:3 width-to-height individually.",
+  "master_size": [
+    724,
+    2172
+  ],
+  "cells": [
+    {
+      "index": 0,
+      "source_box": [
+        0,
+        600,
+        180,
+        1500
+      ],
+      "rect": [
+        0,
+        0,
+        256,
+        512
+      ],
+      "sha256": "a6cf143eee098ee08b50813a249acc069176a0330aae8903881eb42748af9abb"
+    },
+    {
+      "index": 1,
+      "source_box": [
+        181,
+        600,
+        361,
+        1500
+      ],
+      "rect": [
+        256,
+        0,
+        256,
+        512
+      ],
+      "sha256": "203677a54548508dff1dd6ded11b8da02e5f4285769a6afe686c87add4918559"
+    },
+    {
+      "index": 2,
+      "source_box": [
+        362,
+        600,
+        542,
+        1500
+      ],
+      "rect": [
+        512,
+        0,
+        256,
+        512
+      ],
+      "sha256": "bd95d0ad0fd26f64648da8b386a7dfdf87c2acc9727daaa568036a7f3f8bfd03"
+    },
+    {
+      "index": 3,
+      "source_box": [
+        543,
+        600,
+        723,
+        1500
+      ],
+      "rect": [
+        768,
+        0,
+        256,
+        512
+      ],
+      "sha256": "3d563ebd836cc3b97c3d07c83d47899ab6c1348a796c1d75dc097db1654e1607"
+    }
+  ]
+}

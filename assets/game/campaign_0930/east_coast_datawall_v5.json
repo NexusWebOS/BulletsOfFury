@@ -1,0 +1,78 @@
+{
+  "image": "east_coast_datawall_v5.png",
+  "columns": 4,
+  "rows": 1,
+  "fps": 4,
+  "frame_width": 256,
+  "frame_height": 512,
+  "count": 4,
+  "motion": "fixed-position authored alien binary-data flicker",
+  "transparent_edge": true,
+  "edge_mask": "authored fourth-frame alpha, shared by all poses",
+  "frames": [
+    {
+      "index": 0,
+      "source_box": [
+        0,
+        600,
+        180,
+        1500
+      ],
+      "rect": [
+        0,
+        0,
+        256,
+        512
+      ],
+      "sha256": "3c72a4c0719056c026bf50e5d22debedab17eb10e497e4ea082d56a0a74215ff"
+    },
+    {
+      "index": 1,
+      "source_box": [
+        181,
+        600,
+        361,
+        1500
+      ],
+      "rect": [
+        256,
+        0,
+        256,
+        512
+      ],
+      "sha256": "902eb2bd3c9fdb720cbcbf95841f9dd7fd8c24b42a1c842e9f26c3e2840f2c95"
+    },
+    {
+      "index": 2,
+      "source_box": [
+        362,
+        600,
+        542,
+        1500
+      ],
+      "rect": [
+        512,
+        0,
+        256,
+        512
+      ],
+      "sha256": "1a04ddea0645210b958a072cdd75932da1257d384ec89c855e40b12f5eb2bea6"
+    },
+    {
+      "index": 3,
+      "source_box": [
+        543,
+        600,
+        723,
+        1500
+      ],
+      "rect": [
+        768,
+        0,
+        256,
+        512
+      ],
+      "sha256": "3d563ebd836cc3b97c3d07c83d47899ab6c1348a796c1d75dc097db1654e1607"
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+[
+  {
+    "name": "fury_hq",
+    "source": "C:\\Users\\Mike\\.codex\\generated_images\\01a0c9fd-a6cc-73a3-8dca-3e0f7a90a956\\exec-14580f72-0c6b-4982-a1fa-1ff6929e3bdc.png",
+    "runtime": "assets\\game\\campaign_0930\\fury_hq.png",
+    "size": [
+      256,
+      247
+    ],
+    "generator": "built-in image_gen"
+  },
+  {
+    "name": "eastern_ruins",
+    "source": "C:\\Users\\Mike\\.codex\\generated_images\\01a0c9fd-a6cc-73a3-8dca-3e0f7a90a956\\exec-9f668bf2-e1c2-4ef5-9cda-30ee478bb38f.png",
+    "runtime": "assets\\game\\campaign_0930\\eastern_ruins.png",
+    "size": [
+      546,
+      1100
+    ],
+    "generator": "built-in image_gen"
+  },
+  {
+    "name": "solar_frontier",
+    "source": "C:\\Users\\Mike\\.codex\\generated_images\\01a0c9fd-a6cc-73a3-8dca-3e0f7a90a956\\exec-13ef4cca-24ad-4120-a33a-6d46f97ff799.png",
+    "runtime": "assets\\game\\campaign_0930\\solar_frontier.png",
+    "size": [
+      683,
+      1024
+    ],
+    "generator": "built-in image_gen"
+  },
+  {
+    "name": "northern_coast",
+    "source": "C:\\Users\\Mike\\.codex\\generated_images\\01a0c9fd-a6cc-73a3-8dca-3e0f7a90a956\\exec-cce6e8a2-1c25-424f-9b41-b3c5b0235f55.png",
+    "runtime": "assets\\game\\campaign_0930\\northern_coast.png",
+    "size": [
+      1600,
+      534
+    ],
+    "generator": "built-in image_gen"
+  },
+  {
+    "name": "island_cove",
+    "source": "C:\\Users\\Mike\\Documents\\New project\\expansion\\coastline\\assets\\v2\\island_cove.png",
+    "runtime": "assets\\game\\campaign_0930\\island_cove.png",
+    "size": [
+      264,
+      202
+    ],
+    "generator": "existing expansion artwork, decorative reference only"
+  },
+  {
+    "name": "island_ruins",
+    "source": "C:\\Users\\Mike\\Documents\\New project\\expansion\\coastline\\assets\\v2\\island_ruins.png",
+    "runtime": "assets\\game\\campaign_0930\\island_ruins.png",
+    "size": [
+      264,
+      227
+    ],
+    "generator": "existing expansion artwork, decorative reference only"
+  },
+  {
+    "name": "western_coast",
+    "source": "C:\\Users\\Mike\\Documents\\New project\\expansion\\coastline\\assets\\v2\\coast_terrain.png",
+    "runtime": "assets\\game\\campaign_0930\\western_coast.png",
+    "size": [
+      522,
+      700
+    ],
+    "generator": "existing expansion artwork, decorative reference only"
+  },
+  {
+    "name": "east_coast_flames_v3",
+    "source": "_ART_SOURCES/campaign_0930/east_coast_flames_v3.png",
+    "runtime": "assets/game/campaign_0930/east_coast_flames_v3.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "frames": 8,
+    "generator": "built-in image_gen",
+    "prompt": "_ART_SOURCES/campaign_0930/east_coast_flames_v3.json",
+    "replaces_live": [
+      "solar_frontier",
+      "solar_curtain_v2"
+    ]
+  },
+  {
+    "name": "east_coast_front_v4",
+    "source": "_ART_SOURCES/campaign_0930/east_coast_front_v4.png",
+    "runtime": "assets/game/campaign_0930/east_coast_front_v4.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "frames": 8,
+    "generator": "built-in image_gen",
+    "prompt": "_ART_SOURCES/campaign_0930/east_coast_front_v4.json",
+    "replaces_live": [
+      "east_coast_flames_v3"
+    ],
+    "alpha": "original transparent smoke edge preserved"
+  },
+  {
+    "name": "northern_hq_island",
+    "source": "_ART_SOURCES/campaign_0930/northern_hq_island.png",
+    "runtime": "assets/game/campaign_0930/northern_hq_island.png",
+    "size": [
+      384,
+      376
+    ],
+    "generator": "built-in image_gen",
+    "prompt": "_ART_SOURCES/campaign_0930/northern_hq_island.json",
+    "placement_world": [
+      385,
+      185
+    ],
+    "reference": "Stage 1 campaign island and approved HQ exterior"
+  }
+]

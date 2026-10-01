@@ -1,0 +1,146 @@
+{
+  "clicks": [
+    {
+      "expected": 2,
+      "actual": 2,
+      "state": "stagesel"
+    },
+    {
+      "expected": 3,
+      "actual": 3,
+      "state": "stagesel"
+    },
+    {
+      "expected": 4,
+      "actual": 4,
+      "state": "stagesel"
+    },
+    {
+      "expected": 5,
+      "actual": 5,
+      "state": "stagesel"
+    },
+    {
+      "expected": 6,
+      "actual": 6,
+      "state": "stagesel"
+    },
+    {
+      "expected": 7,
+      "actual": 7,
+      "state": "stagesel"
+    },
+    {
+      "expected": 8,
+      "actual": 8,
+      "state": "stagesel"
+    },
+    {
+      "expected": 1,
+      "actual": 1,
+      "state": "stagesel"
+    }
+  ],
+  "layout": {
+    "world": [
+      1400,
+      1200
+    ],
+    "hub": {
+      "x": 700,
+      "y": 600
+    },
+    "portal": {
+      "x": 735,
+      "y": 90
+    },
+    "cam": {
+      "x": 699.9999999999987,
+      "y": 599.9999999999991,
+      "z": 0.3000000000000028
+    },
+    "stagePoints": [
+      {
+        "s": 1,
+        "x": 385,
+        "y": 370
+      },
+      {
+        "s": 2,
+        "x": 700,
+        "y": 270
+      },
+      {
+        "s": 3,
+        "x": 1015,
+        "y": 370
+      },
+      {
+        "s": 4,
+        "x": 1140,
+        "y": 630
+      },
+      {
+        "s": 5,
+        "x": 1005,
+        "y": 860
+      },
+      {
+        "s": 6,
+        "x": 700,
+        "y": 940
+      },
+      {
+        "s": 7,
+        "x": 395,
+        "y": 860
+      },
+      {
+        "s": 8,
+        "x": 260,
+        "y": 630
+      },
+      {
+        "s": 9,
+        "x": 735,
+        "y": 90
+      },
+      {
+        "s": "hub",
+        "x": 700,
+        "y": 600
+      }
+    ],
+    "errors": 0
+  },
+  "headings": {
+    "count": 1080,
+    "horizontal": true,
+    "faces": [
+      1,
+      -1
+    ]
+  },
+  "navigation": {
+    "stage": 2,
+    "focus": "map"
+  },
+  "frontier": {
+    "stage": 2,
+    "toast": "EAST COAST USA - PASSAGE SEALED",
+    "bonus": false
+  },
+  "portal": {
+    "point": {
+      "x": 240,
+      "y": 166
+    },
+    "hit": 9,
+    "cam": {
+      "x": 735,
+      "y": 142,
+      "z": 1
+    }
+  },
+  "errors": []
+}
