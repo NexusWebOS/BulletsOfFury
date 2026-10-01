@@ -73320,7 +73320,11 @@ function drawLaunch(dt){
   // Stage 6 enters the same live sky, camera and ship renderer used by PLAY.
   // Its opening owns the input lock and fly-in, so there is no second arrival pose.
   if(run.stage===6){
-    if(!s6Opening)s6OpeningInit();
+    /* A STAGE X rival duel runs on stage 6's neutral setup with s6Opening deliberately null (Rival24's deploy:
+       "entering the destination stage outright would replay its story dialogue and scripted hazards over this
+       optional duel") - re-initialising it here replayed the whole cloaked lock-on, its 26 s input lock and its
+       radio over the duel, and the two radios typing at once re-ticked every letter each frame. */
+    if(!s6Opening&&!(typeof Rival24!=='undefined'&&Rival24.active))s6OpeningInit();
     gravityModeReset();
     Audio.startMusic((curStage&&curStage.music)||'stage');
     setState(GS.PLAY);updatePlay(Math.max(0,dt||0));drawWorld(Math.max(0,dt||0));return;

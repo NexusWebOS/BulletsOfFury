@@ -1,0 +1,4436 @@
+{
+ "clips": [
+  {
+   "t0": 0.0,
+   "t1": 3.316666666666667,
+   "panes": [],
+   "layers": [
+    {
+     "kind": "image",
+     "src": "brand/cf_logo.png",
+     "x": 960.0,
+     "y": 530,
+     "prescale": 0.66,
+     "anchor": "c",
+     "t_in": 0.25,
+     "t_out": 3.2666666666666666,
+     "in": "fade",
+     "out": "fade",
+     "shadow": true,
+     "resample": "lanczos",
+     "drift": 0.012,
+     "fade": 0.7,
+     "fade_out": 0.45
+    }
+   ],
+   "label": "COLEFORGE + chime"
+  },
+  {
+   "t0": 3.316666666666667,
+   "t1": 6.35,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "A_title",
+     "src": 40,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.25,
+      "s1": 1.32,
+      "ease": "inout",
+      "cx": 480,
+      "cy": 600,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     },
+     "desat": 0.4,
+     "tint": [
+      0,
+      0,
+      0,
+      0.72
+     ]
+    }
+   ],
+   "layers": [
+    {
+     "kind": "image",
+     "src": "brand/bof_logo.png",
+     "x": 960.0,
+     "y": 520,
+     "prescale": 0.8,
+     "anchor": "c",
+     "t_in": 3.316666666666667,
+     "t_out": 6.35,
+     "in": "slam",
+     "out": "cut",
+     "shadow": true,
+     "resample": "lanczos",
+     "drift": 0.02,
+     "fade": 0.25,
+     "fade_out": 0.2
+    }
+   ],
+   "label": "BULLETS OF FURY slam"
+  },
+  {
+   "t0": 6.35,
+   "t1": 7.866666666666666,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "C_mapfly",
+     "src": 10,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.08,
+      "ease": "inout",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     },
+     "desat": 0.35,
+     "tint": [
+      0,
+      0,
+      0,
+      0.55
+     ]
+    }
+   ],
+   "layers": [],
+   "label": "10 LEVELS over the campaign map"
+  },
+  {
+   "t0": 7.866666666666666,
+   "t1": 8.616666666666667,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "F_card_s1",
+     "src": 48,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.28,
+      "s1": 1.34,
+      "ease": "inout",
+      "cx": 480,
+      "cy": 505,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "stage 1 card"
+  },
+  {
+   "t0": 8.616666666666667,
+   "t1": 9.383333333333333,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "F_card_s2",
+     "src": 48,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.28,
+      "s1": 1.34,
+      "ease": "inout",
+      "cx": 480,
+      "cy": 505,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "stage 2 card"
+  },
+  {
+   "t0": 9.383333333333333,
+   "t1": 10.133333333333333,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "F_card_s3",
+     "src": 48,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.28,
+      "s1": 1.34,
+      "ease": "inout",
+      "cx": 480,
+      "cy": 505,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "stage 3 card"
+  },
+  {
+   "t0": 10.133333333333333,
+   "t1": 10.883333333333333,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "F_card_s4",
+     "src": 48,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.28,
+      "s1": 1.34,
+      "ease": "inout",
+      "cx": 480,
+      "cy": 505,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "stage 4 card"
+  },
+  {
+   "t0": 10.883333333333333,
+   "t1": 11.65,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "F_card_s5",
+     "src": 48,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.28,
+      "s1": 1.34,
+      "ease": "inout",
+      "cx": 480,
+      "cy": 505,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "stage 5 card"
+  },
+  {
+   "t0": 11.65,
+   "t1": 12.4,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "F_card_s6",
+     "src": 48,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.28,
+      "s1": 1.34,
+      "ease": "inout",
+      "cx": 480,
+      "cy": 505,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "stage 6 card"
+  },
+  {
+   "t0": 12.4,
+   "t1": 13.166666666666666,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "F_card_s7",
+     "src": 48,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.28,
+      "s1": 1.34,
+      "ease": "inout",
+      "cx": 480,
+      "cy": 505,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "stage 7 card"
+  },
+  {
+   "t0": 13.166666666666666,
+   "t1": 13.916666666666666,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "F_card_s8b",
+     "src": 48,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.28,
+      "s1": 1.34,
+      "ease": "inout",
+      "cx": 480,
+      "cy": 505,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "stage 8 card"
+  },
+  {
+   "t0": 13.916666666666666,
+   "t1": 14.683333333333334,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "F_card_s9",
+     "src": 48,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.28,
+      "s1": 1.34,
+      "ease": "inout",
+      "cx": 480,
+      "cy": 505,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "stage 9 card"
+  },
+  {
+   "t0": 14.683333333333334,
+   "t1": 15.433333333333334,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "X_rival_map",
+     "src": 435,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.06,
+      "ease": "inout",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "STAGE X card"
+  },
+  {
+   "t0": 15.433333333333334,
+   "t1": 16.95,
+   "panes": [],
+   "layers": [
+    {
+     "kind": "image",
+     "src": "brand/body_axel.png",
+     "x": 106.66666666666667,
+     "y": 650,
+     "prescale": 1.9047619047619047,
+     "anchor": "c",
+     "t_in": 15.433333333333334,
+     "t_out": 16.95,
+     "in": "rise",
+     "out": "cut",
+     "shadow": true,
+     "resample": "lanczos",
+     "drift": 0.0,
+     "fade": 0.25,
+     "fade_out": 0.2
+    },
+    {
+     "kind": "image",
+     "src": "brand/body_decker.png",
+     "x": 320.0,
+     "y": 650,
+     "prescale": 1.9047619047619047,
+     "anchor": "c",
+     "t_in": 15.533333333333333,
+     "t_out": 16.95,
+     "in": "rise",
+     "out": "cut",
+     "shadow": true,
+     "resample": "lanczos",
+     "drift": 0.0,
+     "fade": 0.25,
+     "fade_out": 0.2
+    },
+    {
+     "kind": "image",
+     "src": "brand/body_maverick.png",
+     "x": 533.3333333333334,
+     "y": 650,
+     "prescale": 1.9047619047619047,
+     "anchor": "c",
+     "t_in": 15.633333333333333,
+     "t_out": 16.95,
+     "in": "rise",
+     "out": "cut",
+     "shadow": true,
+     "resample": "lanczos",
+     "drift": 0.0,
+     "fade": 0.25,
+     "fade_out": 0.2
+    },
+    {
+     "kind": "image",
+     "src": "brand/body_freezer.png",
+     "x": 746.6666666666666,
+     "y": 650,
+     "prescale": 1.9047619047619047,
+     "anchor": "c",
+     "t_in": 15.716666666666667,
+     "t_out": 16.95,
+     "in": "rise",
+     "out": "cut",
+     "shadow": true,
+     "resample": "lanczos",
+     "drift": 0.0,
+     "fade": 0.25,
+     "fade_out": 0.2
+    },
+    {
+     "kind": "image",
+     "src": "brand/body_juggernaut.png",
+     "x": 960.0,
+     "y": 650,
+     "prescale": 1.9047619047619047,
+     "anchor": "c",
+     "t_in": 15.816666666666666,
+     "t_out": 16.95,
+     "in": "rise",
+     "out": "cut",
+     "shadow": true,
+     "resample": "lanczos",
+     "drift": 0.0,
+     "fade": 0.25,
+     "fade_out": 0.2
+    },
+    {
+     "kind": "image",
+     "src": "brand/body_yuri.png",
+     "x": 1173.3333333333333,
+     "y": 650,
+     "prescale": 1.9047619047619047,
+     "anchor": "c",
+     "t_in": 15.916666666666666,
+     "t_out": 16.95,
+     "in": "rise",
+     "out": "cut",
+     "shadow": true,
+     "resample": "lanczos",
+     "drift": 0.0,
+     "fade": 0.25,
+     "fade_out": 0.2
+    },
+    {
+     "kind": "image",
+     "src": "brand/body_lizzie.png",
+     "x": 1386.6666666666667,
+     "y": 650,
+     "prescale": 1.9047619047619047,
+     "anchor": "c",
+     "t_in": 16.0,
+     "t_out": 16.95,
+     "in": "rise",
+     "out": "cut",
+     "shadow": true,
+     "resample": "lanczos",
+     "drift": 0.0,
+     "fade": 0.25,
+     "fade_out": 0.2
+    },
+    {
+     "kind": "image",
+     "src": "brand/body_falva.png",
+     "x": 1600.0,
+     "y": 650,
+     "prescale": 1.9047619047619047,
+     "anchor": "c",
+     "t_in": 16.1,
+     "t_out": 16.95,
+     "in": "rise",
+     "out": "cut",
+     "shadow": true,
+     "resample": "lanczos",
+     "drift": 0.0,
+     "fade": 0.25,
+     "fade_out": 0.2
+    },
+    {
+     "kind": "image",
+     "src": "brand/body_cole.png",
+     "x": 1813.3333333333333,
+     "y": 650,
+     "prescale": 0.5123152709359606,
+     "anchor": "c",
+     "t_in": 16.2,
+     "t_out": 16.95,
+     "in": "rise",
+     "out": "cut",
+     "shadow": true,
+     "resample": "lanczos",
+     "drift": 0.0,
+     "fade": 0.25,
+     "fade_out": 0.2
+    },
+    {
+     "kind": "text",
+     "text": "9 PILOTS",
+     "face": "final",
+     "height": 150,
+     "x": 960.0,
+     "y": 210,
+     "anchor": "c",
+     "t_in": 15.433333333333334,
+     "t_out": 16.95,
+     "in": "slam",
+     "out": "cut",
+     "fade": 0.25,
+     "fade_out": 0.2,
+     "drift": 0.0
+    }
+   ],
+   "label": "9 PILOTS line-up"
+  },
+  {
+   "t0": 16.95,
+   "t1": 18.466666666666665,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "P_cole",
+     "src": 29,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.12,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": "player",
+      "track_x": false,
+      "lead": -220
+     }
+    }
+   ],
+   "layers": [
+    {
+     "kind": "text",
+     "text": "COLE",
+     "face": "final",
+     "height": 120,
+     "x": 960.0,
+     "y": 92,
+     "anchor": "c",
+     "t_in": 16.95,
+     "t_out": 18.466666666666665,
+     "in": "slam",
+     "out": "cut",
+     "fade": 0.25,
+     "fade_out": 0.2,
+     "drift": 0.0,
+     "tint": "#7ad63a",
+     "band": 0.55
+    },
+    {
+     "kind": "image",
+     "src": "brand/body_cole.png",
+     "x": 240,
+     "y": 640,
+     "prescale": 0.5911330049261084,
+     "anchor": "c",
+     "t_in": 16.95,
+     "t_out": 18.466666666666665,
+     "in": "slide-l",
+     "out": "cut",
+     "shadow": true,
+     "resample": "lanczos",
+     "drift": 0.0,
+     "fade": 0.25,
+     "fade_out": 0.2
+    },
+    {
+     "kind": "image",
+     "src": "brand/port_cole.png",
+     "x": 1680,
+     "y": 600,
+     "prescale": 1.0921501706484642,
+     "anchor": "c",
+     "t_in": 17.016666666666666,
+     "t_out": 18.466666666666665,
+     "in": "slide-r",
+     "out": "cut",
+     "shadow": true,
+     "resample": "lanczos",
+     "drift": 0.0,
+     "fade": 0.25,
+     "fade_out": 0.2
+    }
+   ],
+   "label": "cole special"
+  },
+  {
+   "t0": 18.466666666666665,
+   "t1": 19.983333333333334,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "P_lizzie",
+     "src": 71,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.12,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": "player",
+      "track_x": false,
+      "lead": -220
+     }
+    }
+   ],
+   "layers": [
+    {
+     "kind": "text",
+     "text": "LIZZIE",
+     "face": "final",
+     "height": 120,
+     "x": 960.0,
+     "y": 92,
+     "anchor": "c",
+     "t_in": 18.466666666666665,
+     "t_out": 19.983333333333334,
+     "in": "slam",
+     "out": "cut",
+     "fade": 0.25,
+     "fade_out": 0.2,
+     "drift": 0.0,
+     "tint": "#ffc21a",
+     "band": 0.55
+    },
+    {
+     "kind": "image",
+     "src": "brand/body_lizzie.png",
+     "x": 240,
+     "y": 640,
+     "prescale": 2.197802197802198,
+     "anchor": "c",
+     "t_in": 18.466666666666665,
+     "t_out": 19.983333333333334,
+     "in": "slide-l",
+     "out": "cut",
+     "shadow": true,
+     "resample": "lanczos",
+     "drift": 0.0,
+     "fade": 0.25,
+     "fade_out": 0.2
+    },
+    {
+     "kind": "image",
+     "src": "brand/port_lizzie.png",
+     "x": 1680,
+     "y": 600,
+     "prescale": 0.8488063660477454,
+     "anchor": "c",
+     "t_in": 18.533333333333335,
+     "t_out": 19.983333333333334,
+     "in": "slide-r",
+     "out": "cut",
+     "shadow": true,
+     "resample": "lanczos",
+     "drift": 0.0,
+     "fade": 0.25,
+     "fade_out": 0.2
+    }
+   ],
+   "label": "lizzie special"
+  },
+  {
+   "t0": 19.983333333333334,
+   "t1": 21.5,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "P_juggernaut",
+     "src": 2,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.12,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": "player",
+      "track_x": false,
+      "lead": -220
+     }
+    }
+   ],
+   "layers": [
+    {
+     "kind": "text",
+     "text": "JUGGERNAUT",
+     "face": "final",
+     "height": 120,
+     "x": 960.0,
+     "y": 92,
+     "anchor": "c",
+     "t_in": 19.983333333333334,
+     "t_out": 21.5,
+     "in": "slam",
+     "out": "cut",
+     "fade": 0.25,
+     "fade_out": 0.2,
+     "drift": 0.0,
+     "tint": "#c08a3a",
+     "band": 0.55
+    },
+    {
+     "kind": "image",
+     "src": "brand/body_juggernaut.png",
+     "x": 240,
+     "y": 640,
+     "prescale": 2.197802197802198,
+     "anchor": "c",
+     "t_in": 19.983333333333334,
+     "t_out": 21.5,
+     "in": "slide-l",
+     "out": "cut",
+     "shadow": true,
+     "resample": "lanczos",
+     "drift": 0.0,
+     "fade": 0.25,
+     "fade_out": 0.2
+    },
+    {
+     "kind": "image",
+     "src": "brand/port_juggernaut.png",
+     "x": 1680,
+     "y": 600,
+     "prescale": 1.2403100775193798,
+     "anchor": "c",
+     "t_in": 20.05,
+     "t_out": 21.5,
+     "in": "slide-r",
+     "out": "cut",
+     "shadow": true,
+     "resample": "lanczos",
+     "drift": 0.0,
+     "fade": 0.25,
+     "fade_out": 0.2
+    }
+   ],
+   "label": "juggernaut special"
+  },
+  {
+   "t0": 21.5,
+   "t1": 23.016666666666666,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "P_falva",
+     "src": 78,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.12,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": "player",
+      "track_x": false,
+      "lead": -220
+     }
+    }
+   ],
+   "layers": [
+    {
+     "kind": "text",
+     "text": "FALVA",
+     "face": "final",
+     "height": 120,
+     "x": 960.0,
+     "y": 92,
+     "anchor": "c",
+     "t_in": 21.5,
+     "t_out": 23.016666666666666,
+     "in": "slam",
+     "out": "cut",
+     "fade": 0.25,
+     "fade_out": 0.2,
+     "drift": 0.0,
+     "tint": "#ff2a8f",
+     "band": 0.55
+    },
+    {
+     "kind": "image",
+     "src": "brand/body_falva.png",
+     "x": 240,
+     "y": 640,
+     "prescale": 2.197802197802198,
+     "anchor": "c",
+     "t_in": 21.5,
+     "t_out": 23.016666666666666,
+     "in": "slide-l",
+     "out": "cut",
+     "shadow": true,
+     "resample": "lanczos",
+     "drift": 0.0,
+     "fade": 0.25,
+     "fade_out": 0.2
+    },
+    {
+     "kind": "image",
+     "src": "brand/port_falva.png",
+     "x": 1680,
+     "y": 600,
+     "prescale": 0.9221902017291066,
+     "anchor": "c",
+     "t_in": 21.566666666666666,
+     "t_out": 23.016666666666666,
+     "in": "slide-r",
+     "out": "cut",
+     "shadow": true,
+     "resample": "lanczos",
+     "drift": 0.0,
+     "fade": 0.25,
+     "fade_out": 0.2
+    }
+   ],
+   "label": "falva special"
+  },
+  {
+   "t0": 23.016666666666666,
+   "t1": 24.533333333333335,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "P_maverick",
+     "src": 86,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.12,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": "player",
+      "track_x": false,
+      "lead": -220
+     }
+    }
+   ],
+   "layers": [
+    {
+     "kind": "text",
+     "text": "MAVERICK",
+     "face": "final",
+     "height": 120,
+     "x": 960.0,
+     "y": 92,
+     "anchor": "c",
+     "t_in": 23.016666666666666,
+     "t_out": 24.533333333333335,
+     "in": "slam",
+     "out": "cut",
+     "fade": 0.25,
+     "fade_out": 0.2,
+     "drift": 0.0,
+     "tint": "#3ad6c8",
+     "band": 0.55
+    },
+    {
+     "kind": "image",
+     "src": "brand/body_maverick.png",
+     "x": 240,
+     "y": 640,
+     "prescale": 2.197802197802198,
+     "anchor": "c",
+     "t_in": 23.016666666666666,
+     "t_out": 24.533333333333335,
+     "in": "slide-l",
+     "out": "cut",
+     "shadow": true,
+     "resample": "lanczos",
+     "drift": 0.0,
+     "fade": 0.25,
+     "fade_out": 0.2
+    },
+    {
+     "kind": "image",
+     "src": "brand/port_maverick.png",
+     "x": 1680,
+     "y": 600,
+     "prescale": 1.2213740458015268,
+     "anchor": "c",
+     "t_in": 23.083333333333332,
+     "t_out": 24.533333333333335,
+     "in": "slide-r",
+     "out": "cut",
+     "shadow": true,
+     "resample": "lanczos",
+     "drift": 0.0,
+     "fade": 0.25,
+     "fade_out": 0.2
+    }
+   ],
+   "label": "maverick special"
+  },
+  {
+   "t0": 24.533333333333335,
+   "t1": 26.05,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "P_yuri",
+     "src": 83,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.12,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": "player",
+      "track_x": false,
+      "lead": -220
+     }
+    }
+   ],
+   "layers": [
+    {
+     "kind": "text",
+     "text": "YURI",
+     "face": "final",
+     "height": 120,
+     "x": 960.0,
+     "y": 92,
+     "anchor": "c",
+     "t_in": 24.533333333333335,
+     "t_out": 26.05,
+     "in": "slam",
+     "out": "cut",
+     "fade": 0.25,
+     "fade_out": 0.2,
+     "drift": 0.0,
+     "tint": "#e23a3a",
+     "band": 0.55
+    },
+    {
+     "kind": "image",
+     "src": "brand/body_yuri.png",
+     "x": 240,
+     "y": 640,
+     "prescale": 2.197802197802198,
+     "anchor": "c",
+     "t_in": 24.533333333333335,
+     "t_out": 26.05,
+     "in": "slide-l",
+     "out": "cut",
+     "shadow": true,
+     "resample": "lanczos",
+     "drift": 0.0,
+     "fade": 0.25,
+     "fade_out": 0.2
+    },
+    {
+     "kind": "image",
+     "src": "brand/port_yuri.png",
+     "x": 1680,
+     "y": 600,
+     "prescale": 1.7112299465240641,
+     "anchor": "c",
+     "t_in": 24.6,
+     "t_out": 26.05,
+     "in": "slide-r",
+     "out": "cut",
+     "shadow": true,
+     "resample": "lanczos",
+     "drift": 0.0,
+     "fade": 0.25,
+     "fade_out": 0.2
+    }
+   ],
+   "label": "yuri special"
+  },
+  {
+   "t0": 26.05,
+   "t1": 27.55,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "P_decker",
+     "src": 89,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.12,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": "player",
+      "track_x": false,
+      "lead": -220
+     }
+    }
+   ],
+   "layers": [
+    {
+     "kind": "text",
+     "text": "DECKER",
+     "face": "final",
+     "height": 120,
+     "x": 960.0,
+     "y": 92,
+     "anchor": "c",
+     "t_in": 26.05,
+     "t_out": 27.55,
+     "in": "slam",
+     "out": "cut",
+     "fade": 0.25,
+     "fade_out": 0.2,
+     "drift": 0.0,
+     "tint": "#ffd24a",
+     "band": 0.55
+    },
+    {
+     "kind": "image",
+     "src": "brand/body_decker.png",
+     "x": 240,
+     "y": 640,
+     "prescale": 2.197802197802198,
+     "anchor": "c",
+     "t_in": 26.05,
+     "t_out": 27.55,
+     "in": "slide-l",
+     "out": "cut",
+     "shadow": true,
+     "resample": "lanczos",
+     "drift": 0.0,
+     "fade": 0.25,
+     "fade_out": 0.2
+    },
+    {
+     "kind": "image",
+     "src": "brand/port_decker.png",
+     "x": 1680,
+     "y": 600,
+     "prescale": 1.2121212121212122,
+     "anchor": "c",
+     "t_in": 26.116666666666667,
+     "t_out": 27.55,
+     "in": "slide-r",
+     "out": "cut",
+     "shadow": true,
+     "resample": "lanczos",
+     "drift": 0.0,
+     "fade": 0.25,
+     "fade_out": 0.2
+    }
+   ],
+   "label": "decker special"
+  },
+  {
+   "t0": 27.55,
+   "t1": 29.066666666666666,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "P_freezer",
+     "src": 86,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.12,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": "player",
+      "track_x": false,
+      "lead": -220
+     }
+    }
+   ],
+   "layers": [
+    {
+     "kind": "text",
+     "text": "FREEZER",
+     "face": "final",
+     "height": 120,
+     "x": 960.0,
+     "y": 92,
+     "anchor": "c",
+     "t_in": 27.55,
+     "t_out": 29.066666666666666,
+     "in": "slam",
+     "out": "cut",
+     "fade": 0.25,
+     "fade_out": 0.2,
+     "drift": 0.0,
+     "tint": "#6fd0ff",
+     "band": 0.55
+    },
+    {
+     "kind": "image",
+     "src": "brand/body_freezer.png",
+     "x": 240,
+     "y": 640,
+     "prescale": 2.197802197802198,
+     "anchor": "c",
+     "t_in": 27.55,
+     "t_out": 29.066666666666666,
+     "in": "slide-l",
+     "out": "cut",
+     "shadow": true,
+     "resample": "lanczos",
+     "drift": 0.0,
+     "fade": 0.25,
+     "fade_out": 0.2
+    },
+    {
+     "kind": "image",
+     "src": "brand/port_freezer.png",
+     "x": 1680,
+     "y": 600,
+     "prescale": 1.2030075187969924,
+     "anchor": "c",
+     "t_in": 27.616666666666667,
+     "t_out": 29.066666666666666,
+     "in": "slide-r",
+     "out": "cut",
+     "shadow": true,
+     "resample": "lanczos",
+     "drift": 0.0,
+     "fade": 0.25,
+     "fade_out": 0.2
+    }
+   ],
+   "label": "freezer special"
+  },
+  {
+   "t0": 29.066666666666666,
+   "t1": 30.583333333333332,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "P_axel",
+     "src": 86,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.12,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": "player",
+      "track_x": false,
+      "lead": -220
+     }
+    }
+   ],
+   "layers": [
+    {
+     "kind": "text",
+     "text": "AXEL",
+     "face": "final",
+     "height": 120,
+     "x": 960.0,
+     "y": 92,
+     "anchor": "c",
+     "t_in": 29.066666666666666,
+     "t_out": 30.583333333333332,
+     "in": "slam",
+     "out": "cut",
+     "fade": 0.25,
+     "fade_out": 0.2,
+     "drift": 0.0,
+     "tint": "#3a8aff",
+     "band": 0.55
+    },
+    {
+     "kind": "image",
+     "src": "brand/body_axel.png",
+     "x": 240,
+     "y": 640,
+     "prescale": 2.197802197802198,
+     "anchor": "c",
+     "t_in": 29.066666666666666,
+     "t_out": 30.583333333333332,
+     "in": "slide-l",
+     "out": "cut",
+     "shadow": true,
+     "resample": "lanczos",
+     "drift": 0.0,
+     "fade": 0.25,
+     "fade_out": 0.2
+    },
+    {
+     "kind": "image",
+     "src": "brand/port_axel.png",
+     "x": 1680,
+     "y": 600,
+     "prescale": 1.2075471698113207,
+     "anchor": "c",
+     "t_in": 29.133333333333333,
+     "t_out": 30.583333333333332,
+     "in": "slide-r",
+     "out": "cut",
+     "shadow": true,
+     "resample": "lanczos",
+     "drift": 0.0,
+     "fade": 0.25,
+     "fade_out": 0.2
+    }
+   ],
+   "label": "axel special"
+  },
+  {
+   "t0": 30.583333333333332,
+   "t1": 33.61666666666667,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "E1_entry",
+     "src": 134,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.0,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [
+    {
+     "kind": "text",
+     "text": "20 BOSSES",
+     "face": "final",
+     "height": 160,
+     "x": 960.0,
+     "y": 540,
+     "anchor": "c",
+     "t_in": 30.583333333333332,
+     "t_out": 32.1,
+     "in": "slam",
+     "out": "cut",
+     "fade": 0.25,
+     "fade_out": 0.2,
+     "drift": 0.0,
+     "band": 0.5
+    }
+   ],
+   "label": "S1 boss: Overlord-X flyover entrance"
+  },
+  {
+   "t0": 33.61666666666667,
+   "t1": 35.13333333333333,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "E1_frenzy",
+     "src": 54,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.25,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": "target",
+      "track_x": false,
+      "lead": 180
+     }
+    }
+   ],
+   "layers": [],
+   "label": "S1 boss: Furious four-pass frenzy"
+  },
+  {
+   "t0": 35.13333333333333,
+   "t1": 36.65,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "E2_form",
+     "src": 354,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.0,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "S2 boss: Furnace Tyrant assembles"
+  },
+  {
+   "t0": 36.65,
+   "t1": 38.166666666666664,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "E2_core",
+     "src": 135,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.15,
+      "s1": 1.3,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": "target",
+      "track_x": false,
+      "lead": 150
+     }
+    }
+   ],
+   "layers": [],
+   "label": "S2 boss: the rollerball core"
+  },
+  {
+   "t0": 38.166666666666664,
+   "t1": 38.916666666666664,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "E2_head",
+     "src": 732,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.3,
+      "s1": 1.45,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": "target",
+      "track_x": false,
+      "lead": 120
+     }
+    }
+   ],
+   "layers": [],
+   "label": "S2 boss: the head flies alone"
+  },
+  {
+   "t0": 38.916666666666664,
+   "t1": 39.68333333333333,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "B_s3b",
+     "src": 240,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.1,
+      "ease": "inout",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "boss montage B_s3b"
+  },
+  {
+   "t0": 39.68333333333333,
+   "t1": 40.43333333333333,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "B_s4m",
+     "src": 183,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.1,
+      "ease": "inout",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "boss montage B_s4m"
+  },
+  {
+   "t0": 40.43333333333333,
+   "t1": 41.2,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "B_s8b",
+     "src": 228,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.1,
+      "ease": "inout",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "boss montage B_s8b"
+  },
+  {
+   "t0": 41.2,
+   "t1": 41.95,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "B_s2m",
+     "src": 177,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.1,
+      "ease": "inout",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "boss montage B_s2m"
+  },
+  {
+   "t0": 41.95,
+   "t1": 42.71666666666667,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "B_s4b",
+     "src": 180,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.1,
+      "ease": "inout",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "boss montage B_s4b"
+  },
+  {
+   "t0": 42.71666666666667,
+   "t1": 43.46666666666667,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "B_s7m",
+     "src": 246,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.1,
+      "ease": "inout",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "boss montage B_s7m"
+  },
+  {
+   "t0": 43.46666666666667,
+   "t1": 44.21666666666667,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "B_s9b",
+     "src": 255,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.1,
+      "ease": "inout",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "boss montage B_s9b"
+  },
+  {
+   "t0": 44.21666666666667,
+   "t1": 44.983333333333334,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "B_s5m",
+     "src": 141,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.1,
+      "ease": "inout",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "boss montage B_s5m"
+  },
+  {
+   "t0": 44.983333333333334,
+   "t1": 45.733333333333334,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "B_s3m",
+     "src": 192,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.1,
+      "ease": "inout",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "boss montage B_s3m"
+  },
+  {
+   "t0": 45.733333333333334,
+   "t1": 47.25,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "H_arrive",
+     "src": 273,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.3,
+      "s1": 1.42,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": "target",
+      "track_x": false,
+      "lead": 150
+     }
+    }
+   ],
+   "layers": [],
+   "label": "S5 boss: arrival and transformation"
+  },
+  {
+   "t0": 47.25,
+   "t1": 48.766666666666666,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "H_fight",
+     "src": 849,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.42,
+      "s1": 1.3,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": "target",
+      "track_x": false,
+      "lead": 150
+     }
+    }
+   ],
+   "layers": [],
+   "label": "S5 boss: hammer fight"
+  },
+  {
+   "t0": 48.766666666666666,
+   "t1": 50.28333333333333,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "H_yuri",
+     "src": 0,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.3,
+      "s1": 1.42,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": "target",
+      "track_x": false,
+      "lead": 150
+     }
+    }
+   ],
+   "layers": [],
+   "label": "S5 boss: Hard: hammer jumps"
+  },
+  {
+   "t0": 50.28333333333333,
+   "t1": 51.8,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "H_furious",
+     "src": 864,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.42,
+      "s1": 1.3,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": "target",
+      "track_x": false,
+      "lead": 150
+     }
+    }
+   ],
+   "layers": [],
+   "label": "S5 boss: Furious chromium armour"
+  },
+  {
+   "t0": 51.8,
+   "t1": 53.31666666666667,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "H_yuri",
+     "src": 556,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.3,
+      "s1": 1.42,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": "target",
+      "track_x": false,
+      "lead": 150
+     }
+    }
+   ],
+   "layers": [],
+   "label": "S5 boss: Hard: the slam"
+  },
+  {
+   "t0": 53.31666666666667,
+   "t1": 54.833333333333336,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "H_fight",
+     "src": 1059,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.42,
+      "s1": 1.3,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": "target",
+      "track_x": false,
+      "lead": 150
+     }
+    }
+   ],
+   "layers": [],
+   "label": "S5 boss: boomerang / spiked ball"
+  },
+  {
+   "t0": 54.833333333333336,
+   "t1": 57.1,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "V_rzb_normal",
+     "src": 201,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.08,
+      "ease": "inout",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [
+    {
+     "kind": "text",
+     "text": "NORMAL",
+     "face": "final",
+     "height": 150,
+     "x": 960.0,
+     "y": 960,
+     "anchor": "c",
+     "t_in": 54.833333333333336,
+     "t_out": 57.1,
+     "in": "slam",
+     "out": "cut",
+     "fade": 0.25,
+     "fade_out": 0.2,
+     "drift": 0.0,
+     "tint": "#3a8aff",
+     "band": 0.6
+    }
+   ],
+   "label": "difficulty NORMAL"
+  },
+  {
+   "t0": 57.1,
+   "t1": 59.38333333333333,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "V_rzb_hard",
+     "src": 129,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.08,
+      "ease": "inout",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [
+    {
+     "kind": "text",
+     "text": "HARD",
+     "face": "final",
+     "height": 150,
+     "x": 960.0,
+     "y": 960,
+     "anchor": "c",
+     "t_in": 57.1,
+     "t_out": 59.38333333333333,
+     "in": "slam",
+     "out": "cut",
+     "fade": 0.25,
+     "fade_out": 0.2,
+     "drift": 0.0,
+     "tint": "#ff8a1c",
+     "band": 0.6
+    }
+   ],
+   "label": "difficulty HARD"
+  },
+  {
+   "t0": 59.38333333333333,
+   "t1": 61.65,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "V_rzb_furious",
+     "src": 207,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.08,
+      "ease": "inout",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [
+    {
+     "kind": "text",
+     "text": "FURIOUS",
+     "face": "final",
+     "height": 150,
+     "x": 960.0,
+     "y": 960,
+     "anchor": "c",
+     "t_in": 59.38333333333333,
+     "t_out": 61.65,
+     "in": "slam",
+     "out": "cut",
+     "fade": 0.25,
+     "fade_out": 0.2,
+     "drift": 0.0,
+     "tint": "#ff2a2a",
+     "band": 0.6
+    }
+   ],
+   "label": "difficulty FURIOUS"
+  },
+  {
+   "t0": 61.65,
+   "t1": 63.916666666666664,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      640,
+      1080
+     ],
+     "take": "V_rzb_normal",
+     "src": 15,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.0,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     },
+     "gain": 0.45,
+     "border": [
+      8,
+      8,
+      12
+     ]
+    },
+    {
+     "rect": [
+      640,
+      0,
+      640,
+      1080
+     ],
+     "take": "V_rzb_hard",
+     "src": 447,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.0,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     },
+     "gain": 0.45,
+     "border": [
+      8,
+      8,
+      12
+     ]
+    },
+    {
+     "rect": [
+      1280,
+      0,
+      640,
+      1080
+     ],
+     "take": "V_rzb_furious",
+     "src": 384,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.0,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     },
+     "gain": 0.55,
+     "border": [
+      8,
+      8,
+      12
+     ]
+    }
+   ],
+   "layers": [
+    {
+     "kind": "text",
+     "text": "NORMAL",
+     "face": "final",
+     "height": 84,
+     "x": 320.0,
+     "y": 990,
+     "anchor": "c",
+     "t_in": 61.65,
+     "t_out": 63.916666666666664,
+     "in": "slam",
+     "out": "cut",
+     "fade": 0.25,
+     "fade_out": 0.2,
+     "drift": 0.0,
+     "tint": "#3a8aff"
+    },
+    {
+     "kind": "text",
+     "text": "HARD",
+     "face": "final",
+     "height": 84,
+     "x": 960.0,
+     "y": 990,
+     "anchor": "c",
+     "t_in": 61.65,
+     "t_out": 63.916666666666664,
+     "in": "slam",
+     "out": "cut",
+     "fade": 0.25,
+     "fade_out": 0.2,
+     "drift": 0.0,
+     "tint": "#ff8a1c"
+    },
+    {
+     "kind": "text",
+     "text": "FURIOUS",
+     "face": "final",
+     "height": 84,
+     "x": 1600.0,
+     "y": 990,
+     "anchor": "c",
+     "t_in": 61.65,
+     "t_out": 63.916666666666664,
+     "in": "slam",
+     "out": "cut",
+     "fade": 0.25,
+     "fade_out": 0.2,
+     "drift": 0.0,
+     "tint": "#ff2a2a"
+    }
+   ],
+   "label": "difficulty triptych"
+  },
+  {
+   "t0": 63.916666666666664,
+   "t1": 65.43333333333334,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "S6O_x_open",
+     "src": 240,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.0,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "S6 opening: the fly-in, the live sky, the radio"
+  },
+  {
+   "t0": 65.43333333333334,
+   "t1": 66.95,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "S6L_open",
+     "src": 1235,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.3,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": "player",
+      "track_x": false,
+      "lead": -150
+     }
+    }
+   ],
+   "layers": [],
+   "label": "S6: the lock-on - a Retina settles on the ship"
+  },
+  {
+   "t0": 66.95,
+   "t1": 68.46666666666667,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "S6O_x_open",
+     "src": 1523,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.0,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "S6: LOOK OUT! stealth fighters uncloak"
+  },
+  {
+   "t0": 68.46666666666667,
+   "t1": 69.98333333333333,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "S6L_open",
+     "src": 1682,
+     "speed": 0.75,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.25,
+      "s1": 1.4,
+      "ease": "inout",
+      "cx": 480,
+      "cy": 430,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "S6: SHOOT! - the slow-motion intercept"
+  },
+  {
+   "t0": 69.98333333333333,
+   "t1": 73.01666666666667,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "S6O_x_open",
+     "src": 1972,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.0,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "S6: the CARRIER FLYOVER"
+  },
+  {
+   "t0": 73.01666666666667,
+   "t1": 74.53333333333333,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "S6O_y_assault",
+     "src": 516,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.0,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "S6: the assault - warned row gates"
+  },
+  {
+   "t0": 74.53333333333333,
+   "t1": 76.05,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "S6L_assault",
+     "src": 660,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.1,
+      "ease": "inout",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "S6: the assault - bomber passes, jets from the north"
+  },
+  {
+   "t0": 76.05,
+   "t1": 76.8,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "S6R_allies",
+     "src": 459,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.15,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": "player",
+      "track_x": false,
+      "lead": -180
+     }
+    }
+   ],
+   "layers": [],
+   "label": "S6: two wingmen join"
+  },
+  {
+   "t0": 76.8,
+   "t1": 77.56666666666666,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "S6L_nine",
+     "src": 0,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.0,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "S6: ALL NINE, FORM UP"
+  },
+  {
+   "t0": 77.56666666666666,
+   "t1": 79.06666666666666,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "S6R_choice",
+     "src": 20,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.45,
+      "s1": 1.6,
+      "ease": "inout",
+      "cx": 480,
+      "cy": 486,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "S6: CHOOSE YOUR PURSUIT - left or right"
+  },
+  {
+   "t0": 79.06666666666666,
+   "t1": 80.58333333333333,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      960,
+      1080
+     ],
+     "take": "S6L_route",
+     "src": 0,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.0,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     },
+     "gain": 0.5,
+     "border": [
+      8,
+      8,
+      12
+     ]
+    },
+    {
+     "rect": [
+      960,
+      0,
+      960,
+      1080
+     ],
+     "take": "S6R_choice",
+     "src": 156,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.0,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     },
+     "gain": 0.5,
+     "border": [
+      8,
+      8,
+      12
+     ]
+    }
+   ],
+   "layers": [
+    {
+     "kind": "text",
+     "text": "LEFT",
+     "face": "final",
+     "height": 120,
+     "x": 480.0,
+     "y": 940,
+     "anchor": "c",
+     "t_in": 79.06666666666666,
+     "t_out": 80.58333333333333,
+     "in": "slam",
+     "out": "cut",
+     "fade": 0.25,
+     "fade_out": 0.2,
+     "drift": 0.0,
+     "tint": "#8edfff"
+    },
+    {
+     "kind": "text",
+     "text": "RIGHT",
+     "face": "final",
+     "height": 120,
+     "x": 1440.0,
+     "y": 940,
+     "anchor": "c",
+     "t_in": 79.06666666666666,
+     "t_out": 80.58333333333333,
+     "in": "slam",
+     "out": "cut",
+     "fade": 0.25,
+     "fade_out": 0.2,
+     "drift": 0.0,
+     "tint": "#ffb4a3"
+    }
+   ],
+   "label": "LEFT | RIGHT"
+  },
+  {
+   "t0": 80.58333333333333,
+   "t1": 82.1,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "S6L_harrier",
+     "src": 106,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.0,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "the HARRIER: the Warhive carrier"
+  },
+  {
+   "t0": 82.1,
+   "t1": 82.86666666666666,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "S6R_furyin",
+     "src": 72,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.0,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "REBEL FURY: the squad arrives in a V"
+  },
+  {
+   "t0": 82.86666666666666,
+   "t1": 83.61666666666666,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "S6L_harrier",
+     "src": 1222,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.2,
+      "s1": 1.35,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": "target",
+      "track_x": false,
+      "lead": 140
+     }
+    }
+   ],
+   "layers": [],
+   "label": "the HARRIER: fans and escorts"
+  },
+  {
+   "t0": 83.61666666666666,
+   "t1": 85.13333333333334,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "S6R_fury",
+     "src": 228,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.0,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "REBEL FURY: wall of fury"
+  },
+  {
+   "t0": 85.13333333333334,
+   "t1": 86.65,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "S6L_harrier",
+     "src": 1500,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.15,
+      "ease": "inout",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "the HARRIER falls"
+  },
+  {
+   "t0": 86.65,
+   "t1": 88.16666666666667,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "S6R_fury",
+     "src": 2235,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.1,
+      "s1": 1.3,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": "player",
+      "track_x": false,
+      "lead": -200
+     }
+    }
+   ],
+   "layers": [],
+   "label": "REBEL FURY: signatures"
+  },
+  {
+   "t0": 88.16666666666667,
+   "t1": 88.91666666666667,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "S6L_harrier",
+     "src": 1636,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.2,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": "target",
+      "track_x": false,
+      "lead": 120
+     }
+    }
+   ],
+   "layers": [],
+   "label": "the NIGHTWING ACE bursts out"
+  },
+  {
+   "t0": 88.91666666666667,
+   "t1": 89.68333333333334,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "X_rival_map",
+     "src": 100,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.1,
+      "ease": "inout",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "STAGE X: the centre of the map"
+  },
+  {
+   "t0": 89.68333333333334,
+   "t1": 91.2,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "X_rival_duel",
+     "src": 1209,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.2,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": "player",
+      "track_x": false,
+      "lead": -220
+     }
+    }
+   ],
+   "layers": [],
+   "label": "STAGE X: the rival duel, two wingmen"
+  },
+  {
+   "t0": 91.2,
+   "t1": 92.71666666666667,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "C_mapfly",
+     "src": 200,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.1,
+      "ease": "inout",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     },
+     "desat": 0.2,
+     "tint": [
+      0,
+      0,
+      0,
+      0.35
+     ]
+    }
+   ],
+   "layers": [
+    {
+     "kind": "text",
+     "text": "1 HELL OF A",
+     "face": "6",
+     "height": 120,
+     "x": 960.0,
+     "y": 430,
+     "anchor": "c",
+     "t_in": 91.2,
+     "t_out": 92.71666666666667,
+     "in": "slam",
+     "out": "cut",
+     "fade": 0.25,
+     "fade_out": 0.2,
+     "drift": 0.0,
+     "band": 0.5
+    },
+    {
+     "kind": "text",
+     "text": "CAMPAIGN",
+     "face": "6",
+     "height": 170,
+     "x": 960.0,
+     "y": 590,
+     "anchor": "c",
+     "t_in": 91.2,
+     "t_out": 92.71666666666667,
+     "in": "slam",
+     "out": "cut",
+     "fade": 0.25,
+     "fade_out": 0.2,
+     "drift": 0.0
+    }
+   ],
+   "label": "1 HELL OF A CAMPAIGN - the map"
+  },
+  {
+   "t0": 92.71666666666667,
+   "t1": 94.23333333333333,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "C_launch5",
+     "src": 595,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.1,
+      "s1": 1.25,
+      "ease": "inout",
+      "cx": 480,
+      "cy": 520,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "S5: the spaceship transformation - the kit converges and snaps"
+  },
+  {
+   "t0": 94.23333333333333,
+   "t1": 94.98333333333333,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "B_s1m",
+     "src": 231,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.15,
+      "ease": "inout",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "campaign cut B_s1m"
+  },
+  {
+   "t0": 94.98333333333333,
+   "t1": 95.73333333333333,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "E1_frenzy",
+     "src": 234,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.15,
+      "ease": "inout",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "campaign cut E1_frenzy"
+  },
+  {
+   "t0": 95.73333333333333,
+   "t1": 96.5,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "B_s9m",
+     "src": 135,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.15,
+      "ease": "inout",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "campaign cut B_s9m"
+  },
+  {
+   "t0": 96.5,
+   "t1": 97.25,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "E2_core",
+     "src": 264,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.15,
+      "ease": "inout",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "campaign cut E2_core"
+  },
+  {
+   "t0": 97.25,
+   "t1": 98.76666666666667,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "W7_fight",
+     "src": 744,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.0,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "S7 boss: Furious: the chaingun scissor"
+  },
+  {
+   "t0": 98.76666666666667,
+   "t1": 100.28333333333333,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "W7_fight2",
+     "src": 687,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.15,
+      "s1": 1.3,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": "target",
+      "track_x": false,
+      "lead": 170
+     }
+    }
+   ],
+   "layers": [],
+   "label": "S7 boss: Hard: the rail fan"
+  },
+  {
+   "t0": 100.28333333333333,
+   "t1": 101.8,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "W7_fight",
+     "src": 1406,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.0,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "S7 boss: stomp and swat"
+  },
+  {
+   "t0": 101.8,
+   "t1": 103.31666666666666,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "W7_fight2",
+     "src": 834,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.15,
+      "s1": 1.3,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": "target",
+      "track_x": false,
+      "lead": 170
+     }
+    }
+   ],
+   "layers": [],
+   "label": "S7 boss: the minefield"
+  },
+  {
+   "t0": 103.31666666666666,
+   "t1": 104.83333333333333,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "W7_fight",
+     "src": 1024,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.0,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "S7 boss: toxic mortar clouds"
+  },
+  {
+   "t0": 104.83333333333333,
+   "t1": 106.35,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "W7_fight2",
+     "src": 927,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.15,
+      "s1": 1.3,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": "target",
+      "track_x": false,
+      "lead": 170
+     }
+    }
+   ],
+   "layers": [],
+   "label": "S7 boss: the cannon burst"
+  },
+  {
+   "t0": 106.35,
+   "t1": 109.38333333333334,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "W7_escape",
+     "src": 460,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.12,
+      "ease": "inout",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "S7: the Warden dies - the wreck blows"
+  },
+  {
+   "t0": 109.38333333333334,
+   "t1": 114.16666666666667,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "W7_escape",
+     "src": 925,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.0,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "S7: the escape through the toxic portal (continues)",
+   "fade_out": 2.4
+  },
+  {
+   "t0": 114.16666666666667,
+   "t1": 117.11666666666666,
+   "panes": [],
+   "layers": [],
+   "label": "LAST BUT NOT LEAST."
+  },
+  {
+   "t0": 117.11666666666666,
+   "t1": 117.26666666666667,
+   "panes": [],
+   "layers": [],
+   "label": "beat"
+  },
+  {
+   "t0": 117.26666666666667,
+   "t1": 118.31666666666666,
+   "panes": [],
+   "layers": [
+    {
+     "kind": "text",
+     "text": "STOP?",
+     "face": "5",
+     "height": 190,
+     "x": 960.0,
+     "y": 540,
+     "anchor": "c",
+     "t_in": 117.26666666666667,
+     "t_out": 118.31666666666666,
+     "in": "slam",
+     "out": "cut",
+     "fade": 0.25,
+     "fade_out": 0.2,
+     "drift": 0.0
+    }
+   ],
+   "label": "STOP?"
+  },
+  {
+   "t0": 118.31666666666666,
+   "t1": 119.51666666666667,
+   "panes": [],
+   "layers": [
+    {
+     "kind": "text",
+     "text": "HAMMERTIME?",
+     "face": "5",
+     "height": 190,
+     "x": 960.0,
+     "y": 540,
+     "anchor": "c",
+     "t_in": 118.31666666666666,
+     "t_out": 119.51666666666667,
+     "in": "slam",
+     "out": "cut",
+     "fade": 0.25,
+     "fade_out": 0.2,
+     "drift": 0.0
+    }
+   ],
+   "label": "HAMMERTIME?"
+  },
+  {
+   "t0": 119.51666666666667,
+   "t1": 125.9,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "T_hama",
+     "src": 430,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.12,
+      "ease": "inout",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "HAMA: the breakdown - OH, OH-OH"
+  },
+  {
+   "t0": 125.9,
+   "t1": 127.93333333333334,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "T_hama",
+     "src": 813,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.3,
+      "s1": 1.42,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": "target",
+      "track_x": false,
+      "lead": 120
+     }
+    }
+   ],
+   "layers": [],
+   "label": "HAMA: STOP! HAMMER - TIME!"
+  },
+  {
+   "t0": 127.93333333333334,
+   "t1": 135.13333333333333,
+   "panes": [],
+   "layers": [
+    {
+     "kind": "image",
+     "src": "brand/bof_logo.png",
+     "x": 960.0,
+     "y": 400,
+     "prescale": 0.66,
+     "anchor": "c",
+     "t_in": 127.93333333333334,
+     "t_out": 135.13333333333333,
+     "in": "slam",
+     "out": "cut",
+     "shadow": true,
+     "resample": "lanczos",
+     "drift": 0.008,
+     "fade": 0.25,
+     "fade_out": 0.2
+    },
+    {
+     "kind": "text",
+     "text": "11.1.26",
+     "face": "final",
+     "height": 110,
+     "x": 960.0,
+     "y": 735,
+     "anchor": "c",
+     "t_in": 128.83333333333334,
+     "t_out": 135.13333333333333,
+     "in": "rise",
+     "out": "cut",
+     "fade": 0.25,
+     "fade_out": 0.2,
+     "drift": 0.0
+    },
+    {
+     "kind": "text",
+     "text": "STEAM / PC / MAC / LINUX",
+     "face": "6",
+     "height": 58,
+     "x": 960.0,
+     "y": 855,
+     "anchor": "c",
+     "t_in": 129.43333333333334,
+     "t_out": 135.13333333333333,
+     "in": "fade",
+     "out": "cut",
+     "fade": 0.25,
+     "fade_out": 0.2,
+     "drift": 0.0
+    },
+    {
+     "kind": "image",
+     "src": "brand/copyright.png",
+     "x": 960.0,
+     "y": 965,
+     "prescale": 0.8,
+     "anchor": "c",
+     "t_in": 130.03333333333333,
+     "t_out": 135.13333333333333,
+     "in": "fade",
+     "out": "cut",
+     "shadow": false,
+     "resample": "lanczos",
+     "drift": 0.0,
+     "fade": 0.25,
+     "fade_out": 0.2
+    }
+   ],
+   "label": "logo card",
+   "fade_out": 1.6
+  }
+ ],
+ "overlays": [
+  {
+   "kind": "text",
+   "text": "10 LEVELS",
+   "face": "final",
+   "height": 170,
+   "x": 960.0,
+   "y": 540,
+   "anchor": "c",
+   "t_in": 6.35,
+   "t_out": 7.866666666666666,
+   "in": "slam",
+   "out": "cut",
+   "fade": 0.25,
+   "fade_out": 0.2,
+   "drift": 0.0,
+   "band": 0.5
+  },
+  {
+   "kind": "text",
+   "text": "L",
+   "face": "final",
+   "height": 110,
+   "x": 322.5,
+   "y": 540,
+   "anchor": "l",
+   "t_in": 114.51666666666667,
+   "t_out": 114.58333333333333,
+   "in": "cut",
+   "out": "cut",
+   "fade": 0.25,
+   "fade_out": 0.2,
+   "drift": 0.0
+  },
+  {
+   "kind": "text",
+   "text": "LA",
+   "face": "final",
+   "height": 110,
+   "x": 322.5,
+   "y": 540,
+   "anchor": "l",
+   "t_in": 114.58333333333333,
+   "t_out": 114.66666666666667,
+   "in": "cut",
+   "out": "cut",
+   "fade": 0.25,
+   "fade_out": 0.2,
+   "drift": 0.0
+  },
+  {
+   "kind": "text",
+   "text": "LAS",
+   "face": "final",
+   "height": 110,
+   "x": 322.5,
+   "y": 540,
+   "anchor": "l",
+   "t_in": 114.66666666666667,
+   "t_out": 114.73333333333333,
+   "in": "cut",
+   "out": "cut",
+   "fade": 0.25,
+   "fade_out": 0.2,
+   "drift": 0.0
+  },
+  {
+   "kind": "text",
+   "text": "LAST",
+   "face": "final",
+   "height": 110,
+   "x": 322.5,
+   "y": 540,
+   "anchor": "l",
+   "t_in": 114.73333333333333,
+   "t_out": 114.8,
+   "in": "cut",
+   "out": "cut",
+   "fade": 0.25,
+   "fade_out": 0.2,
+   "drift": 0.0
+  },
+  {
+   "kind": "text",
+   "text": "LAST B",
+   "face": "final",
+   "height": 110,
+   "x": 322.5,
+   "y": 540,
+   "anchor": "l",
+   "t_in": 114.8,
+   "t_out": 114.95,
+   "in": "cut",
+   "out": "cut",
+   "fade": 0.25,
+   "fade_out": 0.2,
+   "drift": 0.0
+  },
+  {
+   "kind": "text",
+   "text": "LAST BU",
+   "face": "final",
+   "height": 110,
+   "x": 322.5,
+   "y": 540,
+   "anchor": "l",
+   "t_in": 114.95,
+   "t_out": 115.01666666666667,
+   "in": "cut",
+   "out": "cut",
+   "fade": 0.25,
+   "fade_out": 0.2,
+   "drift": 0.0
+  },
+  {
+   "kind": "text",
+   "text": "LAST BUT",
+   "face": "final",
+   "height": 110,
+   "x": 322.5,
+   "y": 540,
+   "anchor": "l",
+   "t_in": 115.01666666666667,
+   "t_out": 115.1,
+   "in": "cut",
+   "out": "cut",
+   "fade": 0.25,
+   "fade_out": 0.2,
+   "drift": 0.0
+  },
+  {
+   "kind": "text",
+   "text": "LAST BUT N",
+   "face": "final",
+   "height": 110,
+   "x": 322.5,
+   "y": 540,
+   "anchor": "l",
+   "t_in": 115.1,
+   "t_out": 115.23333333333333,
+   "in": "cut",
+   "out": "cut",
+   "fade": 0.25,
+   "fade_out": 0.2,
+   "drift": 0.0
+  },
+  {
+   "kind": "text",
+   "text": "LAST BUT NO",
+   "face": "final",
+   "height": 110,
+   "x": 322.5,
+   "y": 540,
+   "anchor": "l",
+   "t_in": 115.23333333333333,
+   "t_out": 115.31666666666666,
+   "in": "cut",
+   "out": "cut",
+   "fade": 0.25,
+   "fade_out": 0.2,
+   "drift": 0.0
+  },
+  {
+   "kind": "text",
+   "text": "LAST BUT NOT",
+   "face": "final",
+   "height": 110,
+   "x": 322.5,
+   "y": 540,
+   "anchor": "l",
+   "t_in": 115.31666666666666,
+   "t_out": 115.38333333333334,
+   "in": "cut",
+   "out": "cut",
+   "fade": 0.25,
+   "fade_out": 0.2,
+   "drift": 0.0
+  },
+  {
+   "kind": "text",
+   "text": "LAST BUT NOT L",
+   "face": "final",
+   "height": 110,
+   "x": 322.5,
+   "y": 540,
+   "anchor": "l",
+   "t_in": 115.38333333333334,
+   "t_out": 115.51666666666667,
+   "in": "cut",
+   "out": "cut",
+   "fade": 0.25,
+   "fade_out": 0.2,
+   "drift": 0.0
+  },
+  {
+   "kind": "text",
+   "text": "LAST BUT NOT LE",
+   "face": "final",
+   "height": 110,
+   "x": 322.5,
+   "y": 540,
+   "anchor": "l",
+   "t_in": 115.51666666666667,
+   "t_out": 115.6,
+   "in": "cut",
+   "out": "cut",
+   "fade": 0.25,
+   "fade_out": 0.2,
+   "drift": 0.0
+  },
+  {
+   "kind": "text",
+   "text": "LAST BUT NOT LEA",
+   "face": "final",
+   "height": 110,
+   "x": 322.5,
+   "y": 540,
+   "anchor": "l",
+   "t_in": 115.6,
+   "t_out": 115.66666666666667,
+   "in": "cut",
+   "out": "cut",
+   "fade": 0.25,
+   "fade_out": 0.2,
+   "drift": 0.0
+  },
+  {
+   "kind": "text",
+   "text": "LAST BUT NOT LEAS",
+   "face": "final",
+   "height": 110,
+   "x": 322.5,
+   "y": 540,
+   "anchor": "l",
+   "t_in": 115.66666666666667,
+   "t_out": 115.73333333333333,
+   "in": "cut",
+   "out": "cut",
+   "fade": 0.25,
+   "fade_out": 0.2,
+   "drift": 0.0
+  },
+  {
+   "kind": "text",
+   "text": "LAST BUT NOT LEAST",
+   "face": "final",
+   "height": 110,
+   "x": 322.5,
+   "y": 540,
+   "anchor": "l",
+   "t_in": 115.73333333333333,
+   "t_out": 115.81666666666666,
+   "in": "cut",
+   "out": "cut",
+   "fade": 0.25,
+   "fade_out": 0.2,
+   "drift": 0.0
+  },
+  {
+   "kind": "text",
+   "text": "LAST BUT NOT LEAST.",
+   "face": "final",
+   "height": 110,
+   "x": 322.5,
+   "y": 540,
+   "anchor": "l",
+   "t_in": 115.81666666666666,
+   "t_out": 117.11666666666666,
+   "in": "cut",
+   "out": "fade",
+   "fade": 0.25,
+   "fade_out": 0.2,
+   "drift": 0.0
+  }
+ ],
+ "hits": [
+  {
+   "t": 0.55,
+   "kind": "flash",
+   "dur": 0.6,
+   "amp": 0.12
+  },
+  {
+   "t": 3.316666666666667,
+   "kind": "flash",
+   "dur": 0.18,
+   "amp": 0.95
+  },
+  {
+   "t": 3.316666666666667,
+   "kind": "shake",
+   "dur": 0.45,
+   "amp": 18
+  },
+  {
+   "t": 6.35,
+   "kind": "flash",
+   "dur": 0.14,
+   "amp": 0.7
+  },
+  {
+   "t": 6.35,
+   "kind": "punch",
+   "dur": 0.25,
+   "amp": 0.05
+  },
+  {
+   "t": 7.866666666666666,
+   "kind": "punch",
+   "dur": 0.16,
+   "amp": 0.035
+  },
+  {
+   "t": 8.616666666666667,
+   "kind": "punch",
+   "dur": 0.16,
+   "amp": 0.035
+  },
+  {
+   "t": 9.383333333333333,
+   "kind": "punch",
+   "dur": 0.16,
+   "amp": 0.035
+  },
+  {
+   "t": 10.133333333333333,
+   "kind": "punch",
+   "dur": 0.16,
+   "amp": 0.035
+  },
+  {
+   "t": 10.883333333333333,
+   "kind": "punch",
+   "dur": 0.16,
+   "amp": 0.035
+  },
+  {
+   "t": 11.65,
+   "kind": "punch",
+   "dur": 0.16,
+   "amp": 0.035
+  },
+  {
+   "t": 12.4,
+   "kind": "punch",
+   "dur": 0.16,
+   "amp": 0.035
+  },
+  {
+   "t": 13.166666666666666,
+   "kind": "punch",
+   "dur": 0.16,
+   "amp": 0.035
+  },
+  {
+   "t": 13.916666666666666,
+   "kind": "punch",
+   "dur": 0.16,
+   "amp": 0.035
+  },
+  {
+   "t": 14.683333333333334,
+   "kind": "punch",
+   "dur": 0.16,
+   "amp": 0.035
+  },
+  {
+   "t": 15.433333333333334,
+   "kind": "flash",
+   "dur": 0.14,
+   "amp": 0.75
+  },
+  {
+   "t": 16.95,
+   "kind": "punch",
+   "dur": 0.18,
+   "amp": 0.04
+  },
+  {
+   "t": 18.466666666666665,
+   "kind": "punch",
+   "dur": 0.18,
+   "amp": 0.04
+  },
+  {
+   "t": 19.983333333333334,
+   "kind": "punch",
+   "dur": 0.18,
+   "amp": 0.04
+  },
+  {
+   "t": 21.5,
+   "kind": "punch",
+   "dur": 0.18,
+   "amp": 0.04
+  },
+  {
+   "t": 23.016666666666666,
+   "kind": "punch",
+   "dur": 0.18,
+   "amp": 0.04
+  },
+  {
+   "t": 24.533333333333335,
+   "kind": "punch",
+   "dur": 0.18,
+   "amp": 0.04
+  },
+  {
+   "t": 26.05,
+   "kind": "punch",
+   "dur": 0.18,
+   "amp": 0.04
+  },
+  {
+   "t": 27.55,
+   "kind": "punch",
+   "dur": 0.18,
+   "amp": 0.04
+  },
+  {
+   "t": 29.066666666666666,
+   "kind": "punch",
+   "dur": 0.18,
+   "amp": 0.04
+  },
+  {
+   "t": 30.583333333333332,
+   "kind": "flash",
+   "dur": 0.16,
+   "amp": 0.85
+  },
+  {
+   "t": 30.583333333333332,
+   "kind": "shake",
+   "dur": 0.4,
+   "amp": 12
+  },
+  {
+   "t": 38.916666666666664,
+   "kind": "punch",
+   "dur": 0.14,
+   "amp": 0.03
+  },
+  {
+   "t": 39.68333333333333,
+   "kind": "punch",
+   "dur": 0.14,
+   "amp": 0.03
+  },
+  {
+   "t": 40.43333333333333,
+   "kind": "punch",
+   "dur": 0.14,
+   "amp": 0.03
+  },
+  {
+   "t": 41.2,
+   "kind": "punch",
+   "dur": 0.14,
+   "amp": 0.03
+  },
+  {
+   "t": 41.95,
+   "kind": "punch",
+   "dur": 0.14,
+   "amp": 0.03
+  },
+  {
+   "t": 42.71666666666667,
+   "kind": "punch",
+   "dur": 0.14,
+   "amp": 0.03
+  },
+  {
+   "t": 43.46666666666667,
+   "kind": "punch",
+   "dur": 0.14,
+   "amp": 0.03
+  },
+  {
+   "t": 44.21666666666667,
+   "kind": "punch",
+   "dur": 0.14,
+   "amp": 0.03
+  },
+  {
+   "t": 44.983333333333334,
+   "kind": "punch",
+   "dur": 0.14,
+   "amp": 0.03
+  },
+  {
+   "t": 45.733333333333334,
+   "kind": "punch",
+   "dur": 0.16,
+   "amp": 0.035
+  },
+  {
+   "t": 47.25,
+   "kind": "punch",
+   "dur": 0.16,
+   "amp": 0.035
+  },
+  {
+   "t": 48.766666666666666,
+   "kind": "punch",
+   "dur": 0.16,
+   "amp": 0.035
+  },
+  {
+   "t": 50.28333333333333,
+   "kind": "punch",
+   "dur": 0.16,
+   "amp": 0.035
+  },
+  {
+   "t": 51.8,
+   "kind": "punch",
+   "dur": 0.16,
+   "amp": 0.035
+  },
+  {
+   "t": 53.31666666666667,
+   "kind": "punch",
+   "dur": 0.16,
+   "amp": 0.035
+  },
+  {
+   "t": 45.733333333333334,
+   "kind": "flash",
+   "dur": 0.14,
+   "amp": 0.6
+  },
+  {
+   "t": 54.833333333333336,
+   "kind": "flash",
+   "dur": 0.12,
+   "amp": 0.55
+  },
+  {
+   "t": 57.1,
+   "kind": "flash",
+   "dur": 0.12,
+   "amp": 0.55
+  },
+  {
+   "t": 59.38333333333333,
+   "kind": "flash",
+   "dur": 0.12,
+   "amp": 0.55
+  },
+  {
+   "t": 61.65,
+   "kind": "punch",
+   "dur": 0.2,
+   "amp": 0.04
+  },
+  {
+   "t": 63.916666666666664,
+   "kind": "flash",
+   "dur": 0.16,
+   "amp": 0.8
+  },
+  {
+   "t": 69.98333333333333,
+   "kind": "shake",
+   "dur": 0.6,
+   "amp": 10
+  },
+  {
+   "t": 79.06666666666666,
+   "kind": "flash",
+   "dur": 0.2,
+   "amp": 0.9
+  },
+  {
+   "t": 79.06666666666666,
+   "kind": "shake",
+   "dur": 0.5,
+   "amp": 14
+  },
+  {
+   "t": 91.2,
+   "kind": "flash",
+   "dur": 0.16,
+   "amp": 0.8
+  },
+  {
+   "t": 94.23333333333333,
+   "kind": "punch",
+   "dur": 0.14,
+   "amp": 0.03
+  },
+  {
+   "t": 94.98333333333333,
+   "kind": "punch",
+   "dur": 0.14,
+   "amp": 0.03
+  },
+  {
+   "t": 95.73333333333333,
+   "kind": "punch",
+   "dur": 0.14,
+   "amp": 0.03
+  },
+  {
+   "t": 96.5,
+   "kind": "punch",
+   "dur": 0.14,
+   "amp": 0.03
+  },
+  {
+   "t": 97.25,
+   "kind": "punch",
+   "dur": 0.16,
+   "amp": 0.035
+  },
+  {
+   "t": 98.76666666666667,
+   "kind": "punch",
+   "dur": 0.16,
+   "amp": 0.035
+  },
+  {
+   "t": 100.28333333333333,
+   "kind": "punch",
+   "dur": 0.16,
+   "amp": 0.035
+  },
+  {
+   "t": 101.8,
+   "kind": "punch",
+   "dur": 0.16,
+   "amp": 0.035
+  },
+  {
+   "t": 103.31666666666666,
+   "kind": "punch",
+   "dur": 0.16,
+   "amp": 0.035
+  },
+  {
+   "t": 104.83333333333333,
+   "kind": "punch",
+   "dur": 0.16,
+   "amp": 0.035
+  },
+  {
+   "t": 97.25,
+   "kind": "flash",
+   "dur": 0.16,
+   "amp": 0.85
+  },
+  {
+   "t": 106.35,
+   "kind": "flash",
+   "dur": 0.22,
+   "amp": 0.9
+  },
+  {
+   "t": 106.35,
+   "kind": "shake",
+   "dur": 0.9,
+   "amp": 16
+  },
+  {
+   "t": 109.38333333333334,
+   "kind": "punch",
+   "dur": 0.2,
+   "amp": 0.03
+  },
+  {
+   "t": 117.26666666666667,
+   "kind": "shake",
+   "dur": 0.35,
+   "amp": 10
+  },
+  {
+   "t": 118.31666666666666,
+   "kind": "shake",
+   "dur": 0.45,
+   "amp": 14
+  },
+  {
+   "t": 119.51666666666667,
+   "kind": "flash",
+   "dur": 0.12,
+   "amp": 0.6
+  },
+  {
+   "t": 126.58333333333333,
+   "kind": "shake",
+   "dur": 0.4,
+   "amp": 16
+  },
+  {
+   "t": 126.58333333333333,
+   "kind": "flash",
+   "dur": 0.1,
+   "amp": 0.35
+  },
+  {
+   "t": 127.03333333333333,
+   "kind": "shake",
+   "dur": 0.4,
+   "amp": 16
+  },
+  {
+   "t": 127.03333333333333,
+   "kind": "flash",
+   "dur": 0.1,
+   "amp": 0.35
+  },
+  {
+   "t": 127.93333333333334,
+   "kind": "flash",
+   "dur": 0.22,
+   "amp": 1.0
+  },
+  {
+   "t": 127.93333333333334,
+   "kind": "shake",
+   "dur": 0.4,
+   "amp": 14
+  }
+ ],
+ "audio": {
+  "length": 135.13333333333333,
+  "t0": 3.2,
+  "takes_dir": "/home/user/BulletsOfFury/_BUILD_SOURCE/trailer_v9/takes9",
+  "song": "/home/user/BulletsOfFury/assets/game/music/stage6_city_in_the_sky.mp3",
+  "song_gain_db": -6.3,
+  "song_fade_in": 0.02,
+  "song_fade_out": [
+   109.38333333333334,
+   114.16666666666667
+  ],
+  "music2": {
+   "file": "/home/user/BulletsOfFury/assets/game/music/hama_instrumental_0928.mp3",
+   "t": 119.51666666666667,
+   "src": 108.3833,
+   "fade_in": 0.02,
+   "fade_out": [
+    132.53333333333333,
+    135.13333333333333
+   ],
+   "match_song": true,
+   "match_offset_db": -3.0
+  },
+  "chime": {
+   "file": "/home/user/BulletsOfFury/assets/game/sounds/cf_boot.mp3",
+   "t": 0.45,
+   "gain_db": -0.6
+  },
+  "sfx": [
+   {
+    "t": 114.5167,
+    "file": "/home/user/BulletsOfFury/assets/game/sounds/dialogue_letter_0924.wav",
+    "gain_db": -4.0
+   },
+   {
+    "t": 114.5887,
+    "file": "/home/user/BulletsOfFury/assets/game/sounds/dialogue_letter_0924.wav",
+    "gain_db": -4.0
+   },
+   {
+    "t": 114.6607,
+    "file": "/home/user/BulletsOfFury/assets/game/sounds/dialogue_letter_0924.wav",
+    "gain_db": -4.0
+   },
+   {
+    "t": 114.7327,
+    "file": "/home/user/BulletsOfFury/assets/game/sounds/dialogue_letter_0924.wav",
+    "gain_db": -4.0
+   },
+   {
+    "t": 114.8047,
+    "file": "/home/user/BulletsOfFury/assets/game/sounds/dialogue_letter_0924.wav",
+    "gain_db": -4.0
+   },
+   {
+    "t": 114.9487,
+    "file": "/home/user/BulletsOfFury/assets/game/sounds/dialogue_letter_0924.wav",
+    "gain_db": -4.0
+   },
+   {
+    "t": 115.0207,
+    "file": "/home/user/BulletsOfFury/assets/game/sounds/dialogue_letter_0924.wav",
+    "gain_db": -4.0
+   },
+   {
+    "t": 115.0927,
+    "file": "/home/user/BulletsOfFury/assets/game/sounds/dialogue_letter_0924.wav",
+    "gain_db": -4.0
+   },
+   {
+    "t": 115.2367,
+    "file": "/home/user/BulletsOfFury/assets/game/sounds/dialogue_letter_0924.wav",
+    "gain_db": -4.0
+   },
+   {
+    "t": 115.3087,
+    "file": "/home/user/BulletsOfFury/assets/game/sounds/dialogue_letter_0924.wav",
+    "gain_db": -4.0
+   },
+   {
+    "t": 115.3807,
+    "file": "/home/user/BulletsOfFury/assets/game/sounds/dialogue_letter_0924.wav",
+    "gain_db": -4.0
+   },
+   {
+    "t": 115.5247,
+    "file": "/home/user/BulletsOfFury/assets/game/sounds/dialogue_letter_0924.wav",
+    "gain_db": -4.0
+   },
+   {
+    "t": 115.5967,
+    "file": "/home/user/BulletsOfFury/assets/game/sounds/dialogue_letter_0924.wav",
+    "gain_db": -4.0
+   },
+   {
+    "t": 115.6687,
+    "file": "/home/user/BulletsOfFury/assets/game/sounds/dialogue_letter_0924.wav",
+    "gain_db": -4.0
+   },
+   {
+    "t": 115.7407,
+    "file": "/home/user/BulletsOfFury/assets/game/sounds/dialogue_letter_0924.wav",
+    "gain_db": -4.0
+   },
+   {
+    "t": 115.8127,
+    "file": "/home/user/BulletsOfFury/assets/game/sounds/dialogue_letter_0924.wav",
+    "gain_db": -4.0
+   },
+   {
+    "t": 117.2667,
+    "file": "/home/user/BulletsOfFury/assets/game/sfx_0927/hammer_slam.mp3",
+    "gain_db": -7.0
+   },
+   {
+    "t": 118.3167,
+    "file": "/home/user/BulletsOfFury/assets/game/sfx_0927/hammer_slam.mp3",
+    "gain_db": -5.0
+   },
+   {
+    "t": 118.3367,
+    "file": "/home/user/BulletsOfFury/assets/game/sounds/expBig.mp3",
+    "gain_db": -9.0
+   }
+  ],
+  "fade_out": 0.4
+ }
+}

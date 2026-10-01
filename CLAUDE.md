@@ -5678,3 +5678,22 @@ derived art from _BUILD_SOURCE/warhive_modular_0929.py. Proof: probe_s67_0929.py
 Hammer heal break: docs/HAMMER_HEAL_BREAK_0929.md, section 378.
 Traps: xartPalette caches (trap it, not XART.get); the Bash tool mangles JS heredocs; bossActive stays
 true through the escape (supply boxes keep dropping); SpriteCook had 1 credit.
+
+## 0930 - trailer v9 (City in the Sky), and a Stage X bug it found
+
+Mike asked for a revised trailer on the stage-6 track: 10 levels, 9 pilots, 20 bosses, 1 hell of a campaign, the
+Normal/Hard/Furious variants, the stage-6 opening, allies, the left/right choice, the Harrier, the Stage X rival duel,
+plenty of the stage 1/2/5 bosses, stage 7's boss, then LAST BUT NOT LEAST / STOP? / HAMMERTIME? -> the HAMA breakdown
+-> the logo, 11.1.26, Steam/PC/Mac/Linux, (c) 2026 ColeForge Productions. Pipeline and findings:
+_BUILD_SOURCE/trailer_v9/README.md (capture9 = capture3 + difficulty, conditional events, one-run-many-takes windows,
+the pinned HAMA clock, burst fire on bosses). The rendered video lives in _shots/trailer_v9/ (gitignored).
+- FIXED: drawLaunch re-initialised s6Opening under a live Rival24 duel (deploy nulls it on purpose), so the whole
+  stage-6 opening - its 26 s input lock and radio - replayed over every Stage X fight. Suite section 380.
+- capture3's __audioDump kept only STRING BOFA.sfx entries; missile / enemyMissile / nuclearLaunch /
+  spaceVolleyLaunch / volleyLaunch are variation ARRAYS, so every v7/v8 trailer rendered them silent. Fixed in the v9
+  copy; fix_sfx_arrays.py repairs old takes.
+- A gun on a boss every frame holds its hit flash for the whole take: filming bosses needs burst fire or they read
+  as white silhouettes. The stage-7 Warden and the Warhive rebuild boss.hp from their modules every frame - forcing
+  hp kills nothing; drive s7mHit / whvDeathStart. The no-one-shot rule floors a forced lethal event at 1 hp.
+- Suite 5,871 ok / 0 errors, reaching the FALVA/LIZZIE banner; section 380 passes 7/7 and fails 3 with the fix
+  removed. Its draw runs inside try/catch because the vm's stub canvas has no createImageData (rival art).
