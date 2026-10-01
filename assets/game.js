@@ -18317,7 +18317,7 @@ function l23AlertCol(fam){ return L23_ALERT[fam] || L23_ALERT.inferno; }
 function l23BossBeamDraw(b){
   const B=b&&b._l23Beam;if(!B||typeof XART==='undefined')return false;
   let key='l23fx_'+(B.family==='inferno'?'inferno_laser':'rime_laser')+'_'+l23BossBeamFrame(B);
-  if(!XART.rdy(key))return false;const wall=B.family==='rime'&&b._s3boss&&b._s3boss.role==='wall',im=wall?(xartTint(key,'#10328a',.72)||XART.get(key)):XART.get(key),len=Math.max(VW,VH)*1.25;
+  if(!XART.rdy(key))return false;const modularIce=B.family==='rime'&&!!b._mr27,wall=!modularIce&&B.family==='rime'&&b._s3boss&&b._s3boss.role==='wall',im=wall?(xartTint(key,'#10328a',.72)||XART.get(key)):XART.get(key),len=Math.max(VW,VH)*1.25;
   ctx.save();ctx.imageSmoothingEnabled=false;
   /* THE BEAM IS THE RELEASE, NOT THE TELL. It used to draw at full length and brightness from
      the first warm-up frame, so charging and firing looked identical and the player had no
@@ -18329,7 +18329,11 @@ function l23BossBeamDraw(b){
       ctx.globalAlpha=1;
       const furyBeam=wall&&diffKey==='furious'&&B._furySimon&&XART.rdy('frost_furious_beam_0920')
         ?XART.get('frost_furious_beam_0920'):null;
-      if(furyBeam){
+      if(modularIce){
+        // Measured shared alpha bounds: preserve the icy core, omit the sheet's
+        // empty side gutters so each separate barrel has a readable 16px beam.
+        ctx.drawImage(im,34,0,28,256,-B.width/2,0,B.width,len);
+      }else if(furyBeam){
         ctx.globalCompositeOperation='source-over';
         const artW=B.width*2.8;ctx.drawImage(furyBeam,-artW*.5,0,artW,len);
         ctx.globalCompositeOperation='lighter';
@@ -25248,23 +25252,24 @@ function spawnSubBoss__inner(kind){
   {
     const _sn=(run.stage|0)-1;
     const _r=(_sn<=0)?1:(1.06+_sn*0.09);
-    if(_r>1 && b.maxhp>0)enforceEncounterHp(b,Math.ceil(b.maxhp*_r));
+    if(!b._bomber && _r>1 && b.maxhp>0)enforceEncounterHp(b,Math.ceil(b.maxhp*_r));
   }
   b._threat=(typeof combatThreat==='function')?combatThreat(run.stage):{bossHp:1,bossRate:1,bossDensity:1,bullet:1};
   /* Rift Wardens already receive combatThreat inside their twin initializer; every other mini
      receives it here. Always scale through enforceEncounterHp so private section pools follow. */
-  if(!b._s9rift&&b._threat.bossHp>1&&b.maxhp>0)enforceEncounterHp(b,Math.ceil(b.maxhp*b._threat.bossHp));
+  if(!b._bomber&&!b._s9rift&&b._threat.bossHp>1&&b.maxhp>0)enforceEncounterHp(b,Math.ceil(b.maxhp*b._threat.bossHp));
   {
     const _i=clamp(((run.stage|0)-1),0,MINIBOSS_HP_FLOOR.length-1);
-    enforceEncounterHp(b,MINIBOSS_HP_FLOOR[_i]*encounterFloorDifficultyMul(run.stage)*(b._threat.bossHp||1));
+    if(!b._bomber)enforceEncounterHp(b,MINIBOSS_HP_FLOOR[_i]*encounterFloorDifficultyMul(run.stage)*(b._threat.bossHp||1));
   }
   /* co-op: +50% on this miniboss, applied at the ONE exit every kind passes
      through, so a boss added later cannot miss it. */
   if(typeof coopActive==='function' && coopActive() && b && b.maxhp>0){
-    b.maxhp=Math.ceil(b.maxhp*COOP_BOSS_MUL); b.hp=b.maxhp;
+    enforceEncounterHp(b,Math.ceil(b.maxhp*COOP_BOSS_MUL));
   }
   if(kind==='razorback'&&typeof razorbackPairInit==='function')razorbackPairInit(b);
-  if(run.stage===6&&b._bomber){const B=b._bomber;const rate=.58;B.frOriginalHp=B.core+B.parts.reduce((sum,p)=>sum+p.hp,0);B.core=Math.ceil(B.core*rate);B.coreMax=B.core;for(const p of B.parts){p.hp=Math.ceil(p.hp*rate);p.max=p.maxhp=p.hp;}b.hp=b.maxhp=B.core+B.parts.reduce((sum,p)=>sum+p.hp,0);}
+  // Pursuit bombers have explicit per-difficulty pools; do not stack the legacy
+  // stage floor, threat multiplier or the old Stage 6 compensating reduction.
   continueRewardMark(b);
   subBoss=b; subBossActive=true;
 }
@@ -33698,15 +33703,15 @@ function warmStage(n){
 /* FREEZER'S AUTHORED ELEMENTAL BONUSES (0825c).
 
    These two multipliers predate the shared fire-versus-ice weakness gate:
-     - Stage 2: Freezer's ICE BREATH deals x2.
-     - Stage 3: Freezer's FIRE-ICE / thermoshock ball deals x2.
+     - Stage 2: Freezer's ICE BREATH pre-applies the shared +50% weakness.
+     - Stage 3: Freezer's FIRE-ICE / thermoshock ball pre-applies +50%.
      - Cole has no pilot-specific elemental bonus. His specials are Sonic Boom and nuclear missiles.
 
    elementalAlreadyScaled recognizes these authored paths so the shared opposing-element rule
    does not stack a second multiplier on them. */
 function elementMultiplier(atkElem, attackKind){
   if(!run || typeof _pilotKey!=='function' || _pilotKey()!=='freezer') return 1;
-  if(run.stage===2 && atkElem==='ice' && attackKind==='icebreath') return 2;
+  if(run.stage===2 && atkElem==='ice' && attackKind==='icebreath') return 1.5;
   if(run.stage===3 && atkElem==='fireice' && attackKind==='fireice') return 1.5;
   return 1;
 }
@@ -33800,10 +33805,12 @@ function elementalDamageResult(t,role,b,dmg,x,y){
     // Freezer's thermoshock callers have already applied their stage bonus.
     // Undo only that pre-scale so ordinary enemies retain their established damage.
     const base=elementalAlreadyScaled(b,'fire')?dmg/1.5:dmg;
-    return {dmg:base*((reaction==='fire'||reaction==='ice')?2:1),reaction:reaction};
+    if(reaction==='fire'||reaction==='ice')elementalCriticalText(t,reaction,x,y);
+    return {dmg:base*((reaction==='fire'||reaction==='ice')?1.5:1),reaction:reaction};
   }
   if(reaction==='fire'||reaction==='ice'){
-    const mult=reaction==='ice'&&role==='boss'&&run&&run.stage===2?2:1.5;
+    const mult=1.5;
+    elementalCriticalText(t,reaction,x,y);
     return{dmg:elementalAlreadyScaled(b,reaction)?dmg:dmg*mult,reaction:reaction};
   }
   if(reaction!=='absorb-fire'&&reaction!=='absorb-ice')return{dmg:dmg,reaction:reaction};
@@ -33815,8 +33822,36 @@ function elementalDamageResult(t,role,b,dmg,x,y){
   }
   return{dmg:dmg*.5,reaction:reaction};
 }
-/* Every registered hit uses a white silhouette; elemental feedback stays in impact effects. */
-function hitFlashColor(t,fallback){return '#ffffff';}
+/* October 1: the weakness tint belongs to the struck silhouette, including modules. */
+function hitFlashColor(t,fallback){return t&&['#ff3b30','#83d9ff'].includes(t._hitFlashColor)?t._hitFlashColor:'#ffffff';}
+function elementalCriticalText(t,reaction,x,y){
+  if(!t||t._noHit||t.enter||t.dead)return;
+  const now=typeof stageTimer==='number'?stageTimer:0;
+  if(t._elemCritNext!=null&&now<t._elemCritNext&&t._elemCritReaction===reaction)return;
+  t._elemCritNext=now+.45;t._elemCritReaction=reaction;
+  const tx=Number.isFinite(x)?x:t.x,ty=Number.isFinite(y)?y:(t._drawY??t.y);
+  floaters.push({x:tx,y:ty-24,txt:'+50% DMG CRIT',color:reaction==='ice'?'#83d9ff':'#ff3b30',t:0,life:.85,elementCrit:true});
+}
+// A flat color mask keeps white bitmap glyph highlights from washing out the critical hue.
+// Reuse the authored dialogue glyphs, with a one-pixel dark outline for busy backgrounds.
+const ELEMENT_CRIT_INK=new Map();
+function drawElementalCritical(f){
+  if(!bmfReady('dialogue'))return;
+  const key=f.color+':'+f.txt;let art=ELEMENT_CRIT_INK.get(key);
+  if(!art){
+    const ink=document.createElement('canvas');ink.width=Math.ceil(bmfMeasure('dialogue',f.txt,12))+4;ink.height=16;
+    const g=ink.getContext('2d');bmfDrawOn(g,'dialogue',f.txt,2,8,12,'left');
+    g.globalCompositeOperation='source-in';g.fillStyle=f.color;g.fillRect(0,0,ink.width,ink.height);
+    const edge=document.createElement('canvas');edge.width=ink.width;edge.height=ink.height;
+    const eg=edge.getContext('2d');eg.drawImage(ink,0,0);eg.globalCompositeOperation='source-in';eg.fillStyle='#010208';eg.fillRect(0,0,edge.width,edge.height);
+    art={ink,edge};ELEMENT_CRIT_INK.set(key,art);
+  }
+  const scale=(10+2*Math.max(0,1-f.t/.14))/12,w=art.ink.width*scale,h=art.ink.height*scale;
+  const x=Math.round(clamp(f.x,camLeftX()+8+w/2,camRightX()-8-w/2)-w/2),y=Math.round(Math.max(PLAY.y+32,f.y)-h/2);
+  ctx.save();ctx.globalAlpha=clamp((f.life-f.t)/.25,0,1);ctx.imageSmoothingEnabled=false;
+  for(let oy=-1;oy<=1;oy++)for(let ox=-1;ox<=1;ox++)if(ox||oy)ctx.drawImage(art.edge,x+ox,y+oy,w,h);
+  ctx.drawImage(art.ink,x,y,w,h);ctx.restore();
+}
 const ORB_FIRE_ON_L3 = true;
 /* ⚠ THE ORB'S ELEMENT IS THE ORB YOU PICKED UP, NOT THE STAGE YOU ARE STANDING ON (drop 0814a).
 
@@ -36884,7 +36919,8 @@ function updatePlay(dt){
          Now a round steers only if its muzzle set b.homing, and the grant only exists on stage 1
          (the helicopter boss keeps its swerving torpedoes — eMissileHoming stage-gates itself).
          Everything else flies the vector it launched on, and stays shootable on the way in. */
-      if(b.homing && !b._committed && (typeof run==='undefined' || run.stage===1)){
+      if(b._frostHoming && b.t>1.1){b.homing=false;b._frostHoming=false;}
+      if(b.homing && !b._committed && (typeof run==='undefined' || run.stage===1 || b._frostHoming)){
         // SWERVE: while _swerve is counting down the missile sweeps outward (weak turn);
         // once it expires it locks on and hauls back into the player (hard turn).
         let _tr=(b.turn||0.05);
@@ -38219,8 +38255,8 @@ function groundTargetingDraw(){
 const TB28_ART={
   magma:{reel:'mwfx_fireball_',n:8,spin:2.7},
   charred:{reel:'mwfx_fireball_',n:8,spin:2.7,pal:'charred-shot'},
-  rime:{reel:'l23fx_rime_orb_',n:8,spin:2.1},
-  cryo:{reel:'l23fx_cryo_ball_',n:8,spin:2.4},
+  rime:{reel:'mwfx_fireball_',n:8,spin:2.1,pal:'ice-shot'},
+  cryo:{reel:'mwfx_fireball_',n:8,spin:2.4,pal:'ice-shot'},
   acid:{still:'xorb_acid',spin:1.4},lightning:{still:'xorb_lightning',spin:3.2},
   plasma:{still:'xorb_plasma_blue',spin:2.2},void:{still:'xorb_void',spin:1.2},
   antimatter:{still:'xorb_antimatter',spin:1.8},molten:{still:'xorb_molten_orange',spin:2.0},
@@ -44400,17 +44436,19 @@ function dlgBox(o){
 
   const PAD=10, inPlay=(typeof state!=='undefined' && state===GS.PLAY);
   const dialogueViewW=(typeof state!=='undefined' && (state===GS.CAMPAIGNINTRO||state===GS.CUTSCENE))?cutsceneViewWidth():VW;
-  const pw=Math.min(dialogueViewW-PAD*2, o.pw || (inPlay?Math.round(VW*.64):dialogueViewW-20));
-  const column=pw-32-(_hasPort?74:0);
-  const needed=msgBlockLayout(full,column,1000,14,14,1.3).height+52;
-  const ph=Math.min(Math.round(VH*(inPlay?.29:.43)),Math.max(o.ph||Math.round(pw*.28),needed));
+  const pw=Math.min(dialogueViewW-PAD*2,o.pw||(inPlay?Math.round(VW*.64):dialogueViewW-20));
+  // Reserve a stable left bay even while a portrait is decoding. Its centre is
+  // independent of text length, mouth frame and speaker artwork aspect ratio.
+  const hasPortrait=!!_portK,inset=18,bay=hasPortrait?clamp(Math.round(pw*.13),76,106):0,gap=hasPortrait?14:0;
+  const column=pw-inset*2-bay-gap;
+  const needed=msgBlockLayout(full,column,1000,14,14,1.3).height+(who?60:36);
+  const ph=Math.min(Math.round(VH*(inPlay?.29:.43)),Math.max(o.ph||Math.round(pw*.28),needed,hasPortrait?104:0));
   const x=o.x!=null?Math.round(o.x):(inPlay?PLAY.x+8:Math.round((dialogueViewW-pw)/2));
-  const lowerY=VH-ph-155;
-  const playerInLowerBand=inPlay && typeof player!=='undefined' && player &&
-    player.y>lowerY-20 && player.y<lowerY+ph+24;
   const hudTop=PLAY.y+PLAY.h-57;
   const safePlayY=Math.max(PLAY.y+8,Math.min(hudTop-ph-10,player&&Number.isFinite(player.y)?player.y-ph-25:hudTop-ph-10));
-  const y=o.y!=null?Math.round(o.y):(inPlay?safePlayY:VH-ph-PAD); // Dialogue stays left of radar and above both player and HUD.
+  const bottom=Math.min(VH-PAD,o.maxBottom??VH-PAD);
+  const desiredY=o.y!=null?Math.round(o.y):(inPlay?safePlayY:bottom-ph);
+  const y=clamp(desiredY,8,bottom-ph);
 
   /* drawPanel already tries XART itself and returns false only when the plate has not decoded,
      so the fallback here is for that one case and nothing else. */
@@ -44418,22 +44456,14 @@ function dlgBox(o){
     ctx.fillStyle='rgba(6,9,14,0.90)'; ctx.fillRect(x,y,pw,ph);
     ctx.strokeStyle=tint; ctx.lineWidth=2; ctx.strokeRect(x,y,pw,ph);
   }
-  let bay=0;
   if(_hasPort){
-    const im=XART.get(_portK);
-    const bh=64, bw=64;
-    const bx=x+14, by=y+Math.round((ph-bh)/2);
-    ctx.save();
-    ctx.globalAlpha=fade;
-    ctx.beginPath(); ctx.rect(bx, by, Math.min(bw, Math.round(pw*0.30)), bh); ctx.clip();
-    ctx.translate(bx,by);ctx.imageSmoothingEnabled=false; // compact portraits retain their authored facing
-    ctx.drawImage(im, 0, 0, bw, bh);
-    ctx.restore();
-    bay=Math.min(bw, Math.round(pw*0.30))+10;
+    const im=XART.get(_portK),iw=im.naturalWidth||im.width,ih=im.naturalHeight||im.height;
+    const size=Math.min(bay-8,ph-40,84),scale=Math.min(size/iw,size/ih),bw=iw*scale,bh=ih*scale;
+    const bx=x+inset+(bay-bw)/2,by=y+(ph-bh)/2;
+    ctx.save();ctx.globalAlpha=fade;ctx.imageSmoothingEnabled=false;
+    ctx.drawImage(im,Math.round(bx),Math.round(by),Math.round(bw),Math.round(bh));ctx.restore();
   }
-  /* dlg_window has a deep machined frame — the inset is the frame, not taste. Text laid out to
-     the panel's outer edge sits on the rivets. */
-  const ix=x+16+bay, iw=pw-32-bay;
+  const ix=x+inset+bay+gap,iw=column;
   if(who && _dlgFace){
     const nameH=16;
     const _nh=(typeof msgFitH==='function')?msgFitH(who, iw, nameH, 7):nameH;
@@ -44448,7 +44478,7 @@ function dlgBox(o){
   const yTop=y+(who?42:18), yBot=y+ph-14;
   if(_dlgFace && typeof msgDrawBlock==='function'){
     msgDrawBlock({text:full,budget:shown.length,x:ix,y:yTop,w:iw,h:Math.max(1,yBot-yTop),
-      maxH:14,minH:12,lineMul:1.3,
+      maxH:14,minH:8,lineMul:1.3,
       color:'#ffffff',alpha:fade,outline:false,align:'center',stableCenter:true,valign:'middle'});
   }
   msgFaceUse(null);        // ⚠ the ONLY exit past the opt-in above; leaving it set would repaint every banner
@@ -47957,23 +47987,9 @@ function stage4MiniRocket(b,slot,a){
    launches shootable missiles on the heading promised at release. */
 function stage4MiniEscortEnsure(b){
   const S=b&&b._s4war;if(!S||!S.mini)return [];
-  const hard=typeof diffKey!=='undefined'&&(diffKey==='hard'||diffKey==='furious');
-  if(!hard){S.summoned=false;if(S.drones.length)S.drones.length=0;return S.drones;}
-  const furious=diffKey==='furious',want=2,W=worldWidth();
-  if(S.drones.length!==want){
-    S.drones.length=0;
-    const roles=['gunner','protector'];
-    for(let i=0;i<roles.length;i++){
-      const role=roles[i],side=i===0?-1:1,hp=Math.ceil((role==='gunner'?145:120)*((DIFF&&DIFF.eHp)||1));
-      S.drones.push({role:role,side:side,index:i,art:role==='gunner'?'s4w_warden_gunner_0919':'s4w_warden_rocketeer_0919',size:role==='gunner'?132:120,
-        x:side<0?W*.17:(side>0?W*.83:W*.5),y:214+i*12,stationX:side<0?W*.17:(side>0?W*.83:W*.5),stationY:214+i*12,
-        hp:hp,maxhp:hp,shield:0,maxShield:0,dead:false,active:0,t:-i*.24,ang:Math.PI/2,
-        fireCd:.28+i*.16,burstLeft:role==='gunner'?5:0,movePhase:i*Math.PI,flash:0,shieldFlash:0,shots:0});
-    }
-    if(typeof XART!=='undefined'&&XART._touch){XART._touch('s4w_warden_gunner_0919');XART._touch('s4w_warden_rocketeer_0919');}
-    stage4WarfareSound('bossWeaponCharge','enemyBossCannon');
-  }
-  S.summoned=S.drones.some(d=>!d.dead);return S.drones;
+  // The miniboss fights alone at every difficulty; Sovereign's helpers are separate.
+  S.summoned=false;S.drones.length=0;return S.drones;
+
 }
 function stage4MiniEscortTick(b,dt,phase){
   const S=b&&b._s4war,list=stage4MiniEscortEnsure(b);if(!S||!list.length)return false;
@@ -51111,6 +51127,7 @@ function drawBullets(){
       ctx.imageSmoothingEnabled=false;ctx.shadowColor='#a87dff';ctx.shadowBlur=2;
       ctx.drawImage(im,-w/2,-h/2,w,h);ctx.restore();continue;
     }
+    if(b.kind==='spread'&&typeof spreadDraw1001==='function'&&spreadDraw1001(b))continue;
     if(b.kind==='spread' && b._inf==='fire' && typeof XART!=='undefined' && XART.rdy('forge_fire_blast_0918')){
       const im=XART.get('forge_fire_blast_0918'),h=27+Math.min(5,b._infLv|0)*2,w=h*im.naturalWidth/im.naturalHeight;
       ctx.save();ctx.translate(b.x,b.y);ctx.rotate(Math.atan2(b.vy||-1,b.vx||0)+Math.PI/2);
@@ -52421,6 +52438,9 @@ function _drawEffectsInner(){
   const fieldFace=(typeof uiFontArt==='function')?uiFontArt():null;
   ctx.textAlign='center';
   for(const f of floaters){
+    if(f.elementCrit){
+      drawElementalCritical(f);continue;
+    }
     if(f.score){
       /* the stage face, with an arcade pop: 1.6x on the first frames, settling to 1 by 0.18s */
       const art=fieldArt;
@@ -55810,7 +55830,7 @@ function s6WingTick(dt){
   for(const q of W.ships){
     q.t+=dt;q.fcd-=dt;q.boostT=Math.max(0,(q.boostT||0)-dt);
     if(typeof ally27Tick==='function')ally27Tick(q,dt);else{q.dodgeT=Math.max(0,(q.dodgeT||0)-dt);q.dodgeCd=Math.max(0,(q.dodgeCd||0)-dt);}
-    if(q.phase==='leave'){q.y-=260*dt;q.x+=(q.slot%2?1:-1)*75*dt;continue;}
+    if(q.phase==='leave'){q.dodgeT=0;q.dodgeMode=null;q.vx=(q.slot%2?1:-1)*75;q.vy=-(180+Math.min(220,q.t*180));q.x+=q.vx*dt;q.y+=q.vy*dt;continue;}
     q.hurtT=Math.max(0,(q.hurtT||0)-dt);
     const supply=s6WingNavigate(q,W,dt);
     if(q.phase==='arrive'&&q.y<VH-75){q.phase='fight';q.t=0;}
@@ -55855,11 +55875,11 @@ function s6WingDraw(){
   ctx.save();ctx.imageSmoothingEnabled=false;
   for(const q of W.ships){const k='ship_'+q.key;if(!XART.rdy(k))continue;
     let art=k;
-    const bank='ship_'+q.key+'_br'+((q.vx||0)>0?7:1);if(Math.abs(q.vx||0)>65&&XART.rdy(bank))art=bank;
+    // Neutral nose-forward hull for navigation; roll frames belong to deliberate evasions only.
     if(q.dodgeT>0){const f=clamp(Math.floor((1-q.dodgeT/(q.dodgeDuration||BR_DUR))*8),0,7),pose='ship_'+q.key+'_'+(q.dodgeMode==='somer'?'so':'br')+f;
       if(XART.rdy(pose))art=pose;}
     const im=XART.get(art),h=SHIP_DRAW_H,w=h*(im.naturalWidth||im.width)/Math.max(1,im.naturalHeight||im.height);
-    ctx.drawImage(im,q.x-w/2,q.y-h/2,w,h);
+    ctx.save();ctx.translate(q.x,q.y);ctx.rotate(clamp(Math.atan2(q.vx||0,-(q.vy||-180)),-.26,.26));ctx.drawImage(im,-w/2,-h/2,w,h);ctx.restore();
     if(q.phase==='leave'&&q.hp<=0&&XART.rdy('nxp_smoke_0')){
       const sm=XART.get('nxp_smoke_0');ctx.drawImage(sm,q.x-12,q.y+8,24,24);}
   }

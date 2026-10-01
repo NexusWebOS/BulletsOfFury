@@ -147,8 +147,8 @@ function polishCombatDraw(){
 /* Stage 5 pursuit: two engines, two forward cannons, and a rear bomb bay. */
 function siegeBomberInit(b){
   const n=diffKey==='furious'?2:diffKey==='hard'?1:0;b.name='ECLIPSE SIEGE BOMBER';b.w=VW*.50;b.h=b.w*.62;b.x=worldWidth()/2;b.y=-b.h;b.ty=VH*.27;b.enter=true;b._ship=null;
-  const hp=[1800,2200,2600][n];b._bomber={n,mode:'entry',t:0,dur:2.1,seq:0,cd:0,clock:0,bombs:[],history:['entry'],core:hp,coreMax:hp,parts:[]};
-  for(const id of ['engineL','engineR','laserL','laserR'])b._bomber.parts.push({id,hp:440+n*70,max:440+n*70,flash:0});
+  const hp=diffKey==='easy'?600:[1050,1250,1450][n];b._bomber={n,mode:'entry',t:0,dur:2.1,seq:0,cd:0,clock:0,bombs:[],history:['entry'],core:hp,coreMax:hp,parts:[]};
+  for(const id of ['engineL','engineR','laserL','laserR'])b._bomber.parts.push({id,hp:diffKey==='easy'?140:250+n*40,max:diffKey==='easy'?140:250+n*40,flash:0});
   b.hp=b.maxhp=hp+b._bomber.parts.reduce((a,p)=>a+p.hp,0);if(typeof mr27BomberSetup==='function')mr27BomberSetup(b);XART.rdy('polish_bomber');for(let i=0;i<8;i++){XART.rdy('l23fx_inferno_laser_'+i);XART.rdy('l23fx_inferno_mg_'+i);XART.rdy('laser_round_muzzle_'+i);}XART.rdy('lz_bomb');
 }
 function siegeBomberParts(b){
@@ -172,11 +172,11 @@ function siegeBomberTick(b,dt){const B=b._bomber;B.clock+=dt;B.t+=dt;b.flash=Mat
   if(b.dead){b.dying+=dt;if(b.dying>2.8){subBossActive=false;subBossDone=true;subBoss=null;run.score+=9000;stageScoreOffer(9000);dropPowerup(b.x,b.y,'weapon');}return;}
   if(B.mode==='entry'){b.y=lerp(-b.h,b.ty,1-Math.pow(1-clamp(B.t/B.dur,0,1),3));if(B.t>=B.dur){b.enter=false;siegeBomberSet(b,'bombs');}return;}
   const engines=B.parts.filter(p=>p.id.startsWith('engine')&&p.hp>0).length,furious=typeof d27FuriousBomber==='function'&&d27FuriousBomber(b);
-  const tx=worldWidth()/2+Math.sin(B.clock*(furious?1.7:.48))*Math.max(35,worldWidth()*(furious?.29:.25))*engines/2;b.x+=(tx-b.x)*Math.min(1,dt*(furious?5:1.25));const ty=b.ty+(furious?Math.sin(B.clock*2.9)*22:0);b.y+=(ty-b.y)*Math.min(1,dt*(furious?4:2));
+  const tx=worldWidth()/2+Math.sin(B.clock*(furious?1.7:diffKey==='easy'?.48:.78+B.n*.18))*Math.max(35,worldWidth()*(furious?.29:.25))*engines/2;b.x+=(tx-b.x)*Math.min(1,dt*(furious?5:diffKey==='easy'?1.25:2.1));const ty=b.ty+(furious?Math.sin(B.clock*2.9)*22:0);b.y+=(ty-b.y)*Math.min(1,dt*(furious?4:2));
   B.cd-=dt;
   if(B.mode==='charge')combatWarningTick(b,'siege-beam',Math.min(B.t,B.dur),B.dur);
   if(B.mode==='beam')for(const p of siegeBomberParts(b).filter(p=>p.id.startsWith('laser')))if(B.parts.find(q=>q.id===p.id).hp>0&&Math.abs(player.x-p.x)<27&&player.y<p.y-p.h*.46)playerHit();
-  if(B.mode==='bombs'&&B.cd<=0){B.cd=furious?.38:diffKey==='easy'?1.3:[.72,.56,.44][B.n];
+  if(B.mode==='bombs'&&B.cd<=0){B.cd=furious?.38:diffKey==='easy'?1.3:[.62,.49,.40][B.n];
     const slot=(B.volley||0)%5;B.volley=(B.volley||0)+1;
     const target={x:furious?(slot+.5)*worldWidth()/5:clamp(player.x+Math.sin(B.clock*2.1)*55,camLeftX()+35,camRightX()-35),y:clamp(player.y,220,VH-65)};
     if(!furious||slot!==B.safeLane){
@@ -185,7 +185,7 @@ function siegeBomberTick(b,dt){const B=b._bomber;B.clock+=dt;B.t+=dt;b.flash=Mat
     }
   }
   if(B.mode==='lob'||B.mode==='carpet'||B.mode==='overdrive')siegeBomber28Tick(b,B);
-  if(B.mode==='missiles'&&B.cd<=0){B.cd=furious?.66:.86;for(const s of [-1,1])for(const offset of (furious?[-.17,.17]:[0]))polishLane(b,b.x+s*b.w*.42,b.y+15,Math.PI/2+offset,{warn:furious?.90:diffKey==='easy'?1.65:1.1-B.n*.08,speed:furious?6.7:5.2+B.n*.6});}
+  if(B.mode==='missiles'&&B.cd<=0){B.cd=furious?.62:diffKey==='easy'?1.1:[.76,.68,.62][B.n];for(const s of [-1,1])for(const offset of (furious?[-.17,.17]:[0]))polishLane(b,b.x+s*b.w*.42,b.y+15,Math.PI/2+offset,{warn:furious?.90:diffKey==='easy'?1.65:1.1-B.n*.08,speed:furious?7.2:diffKey==='easy'?4.6:5.8+B.n*.65});}
   if(B.t>=B.dur){if(B.mode==='charge')siegeBomberSet(b,'beam');else if(B.mode==='beam')siegeBomberSet(b,'recover');else{
     /* 0928: Furious crosses into its overdrive once, between attacks, at half the pool */
     if(B.n===2&&!B.od&&b.hp<=b.maxhp*.5){B.od=true;siegeBomberSet(b,'overdrive');}

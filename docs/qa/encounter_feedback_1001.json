@@ -1,0 +1,706 @@
+{
+  "combat": {
+    "checks": [
+      {
+        "ok": true,
+        "name": "easy Stage8 form1 finite / bounded health"
+      },
+      {
+        "ok": true,
+        "name": "easy Stage8 form2 finite / bounded health"
+      },
+      {
+        "ok": true,
+        "name": "easy Stage8 form3 finite / bounded health"
+      },
+      {
+        "ok": true,
+        "name": "normal Stage8 form1 finite / bounded health"
+      },
+      {
+        "ok": true,
+        "name": "normal Stage8 form2 finite / bounded health"
+      },
+      {
+        "ok": true,
+        "name": "normal Stage8 form3 finite / bounded health"
+      },
+      {
+        "ok": true,
+        "name": "hard Stage8 form1 finite / bounded health"
+      },
+      {
+        "ok": true,
+        "name": "hard Stage8 form2 finite / bounded health"
+      },
+      {
+        "ok": true,
+        "name": "hard Stage8 form3 finite / bounded health"
+      },
+      {
+        "ok": true,
+        "name": "furious Stage8 form1 finite / bounded health"
+      },
+      {
+        "ok": true,
+        "name": "furious Stage8 form2 finite / bounded health"
+      },
+      {
+        "ok": true,
+        "name": "furious Stage8 form3 finite / bounded health"
+      },
+      {
+        "ok": true,
+        "name": "bossWeaponCharge actual media playback"
+      },
+      {
+        "ok": true,
+        "name": "combatAlien0927 actual media playback"
+      },
+      {
+        "ok": true,
+        "name": "enemyBossCannon actual media playback"
+      },
+      {
+        "ok": true,
+        "name": "hammerImpact actual media playback"
+      },
+      {
+        "ok": true,
+        "name": "combatBeam0927 actual media playback"
+      },
+      {
+        "ok": true,
+        "name": "expBoss actual media playback"
+      },
+      {
+        "ok": true,
+        "name": "frostcruiser normal fires"
+      },
+      {
+        "ok": true,
+        "name": "miniboss has no laser normal"
+      },
+      {
+        "ok": true,
+        "name": "frostcruiser hard fires"
+      },
+      {
+        "ok": true,
+        "name": "miniboss has no laser hard"
+      },
+      {
+        "ok": true,
+        "name": "frostcruiser furious fires"
+      },
+      {
+        "ok": true,
+        "name": "miniboss has no laser furious"
+      },
+      {
+        "ok": true,
+        "name": "cryospear normal fires"
+      },
+      {
+        "ok": true,
+        "name": "dual cold beams from distinct barrel tips normal"
+      },
+      {
+        "ok": true,
+        "name": "cryospear hard fires"
+      },
+      {
+        "ok": true,
+        "name": "dual cold beams from distinct barrel tips hard"
+      },
+      {
+        "ok": true,
+        "name": "cryospear furious fires"
+      },
+      {
+        "ok": true,
+        "name": "dual cold beams from distinct barrel tips furious"
+      },
+      {
+        "ok": true,
+        "name": "Stage4 miniboss has no helpers"
+      },
+      {
+        "ok": true,
+        "name": "legacy Stage4 tanks use new modular tank"
+      },
+      {
+        "ok": true,
+        "name": "Stage5 easy miniboss smaller health pool (1066)"
+      },
+      {
+        "ok": true,
+        "name": "Stage5 normal miniboss smaller health pool (2050)"
+      },
+      {
+        "ok": true,
+        "name": "Stage5 hard miniboss smaller health pool (2419)"
+      },
+      {
+        "ok": true,
+        "name": "Stage5 furious miniboss smaller health pool (2770)"
+      },
+      {
+        "ok": true,
+        "name": "Stage6 easy miniboss smaller health pool (1173)"
+      },
+      {
+        "ok": true,
+        "name": "Stage6 normal miniboss smaller health pool (2255)"
+      },
+      {
+        "ok": true,
+        "name": "Stage6 hard miniboss smaller health pool (2663)"
+      },
+      {
+        "ok": true,
+        "name": "Stage6 furious miniboss smaller health pool (3048)"
+      },
+      {
+        "ok": true,
+        "name": "first and second sideways jets drop bombs"
+      },
+      {
+        "ok": true,
+        "name": "all 10 Spreadfire animation reels loaded"
+      },
+      {
+        "ok": true,
+        "name": "no page or console errors"
+      }
+    ],
+    "matrix": [
+      {
+        "hp": 1200,
+        "peak": 32,
+        "modes": [
+          "binary",
+          "bombs",
+          "datawall",
+          "cannons",
+          "shield",
+          "tentacles"
+        ],
+        "ms": 5.099999999627471,
+        "finite": true,
+        "diff": "easy",
+        "form": 0
+      },
+      {
+        "hp": 1380,
+        "peak": 31,
+        "modes": [
+          "ghost",
+          "knight",
+          "ball",
+          "binarywall",
+          "codeRain",
+          "bombs"
+        ],
+        "ms": 8.300000000745058,
+        "finite": true,
+        "diff": "easy",
+        "form": 1
+      },
+      {
+        "hp": 1620,
+        "peak": 12,
+        "modes": [
+          "arms",
+          "tentacles",
+          "binarywall",
+          "chopper",
+          "furnace",
+          "codeRain"
+        ],
+        "ms": 6.600000001490116,
+        "finite": true,
+        "diff": "easy",
+        "form": 2
+      },
+      {
+        "hp": 2600,
+        "peak": 28,
+        "modes": [
+          "binary",
+          "bombs",
+          "datawall",
+          "cannons",
+          "shield",
+          "tentacles"
+        ],
+        "ms": 7.100000001490116,
+        "finite": true,
+        "diff": "normal",
+        "form": 0
+      },
+      {
+        "hp": 2990,
+        "peak": 28,
+        "modes": [
+          "ghost",
+          "knight",
+          "ball",
+          "binarywall",
+          "codeRain",
+          "bombs"
+        ],
+        "ms": 7.400000000372529,
+        "finite": true,
+        "diff": "normal",
+        "form": 1
+      },
+      {
+        "hp": 3511,
+        "peak": 8,
+        "modes": [
+          "arms",
+          "tentacles",
+          "binarywall",
+          "chopper",
+          "furnace",
+          "codeRain"
+        ],
+        "ms": 6.699999999254942,
+        "finite": true,
+        "diff": "normal",
+        "form": 2
+      },
+      {
+        "hp": 3300,
+        "peak": 30,
+        "modes": [
+          "binary",
+          "bombs",
+          "datawall",
+          "cannons",
+          "shield",
+          "tentacles"
+        ],
+        "ms": 10.5,
+        "finite": true,
+        "diff": "hard",
+        "form": 0
+      },
+      {
+        "hp": 3795,
+        "peak": 30,
+        "modes": [
+          "ghost",
+          "knight",
+          "ball",
+          "binarywall",
+          "codeRain",
+          "bombs"
+        ],
+        "ms": 10.599999999627471,
+        "finite": true,
+        "diff": "hard",
+        "form": 1
+      },
+      {
+        "hp": 4455,
+        "peak": 12,
+        "modes": [
+          "arms",
+          "tentacles",
+          "binarywall",
+          "chopper",
+          "furnace",
+          "codeRain",
+          "shield"
+        ],
+        "ms": 6.800000000745058,
+        "finite": true,
+        "diff": "hard",
+        "form": 2
+      },
+      {
+        "hp": 4100,
+        "peak": 22,
+        "modes": [
+          "binary",
+          "bombs",
+          "datawall",
+          "cannons",
+          "shield",
+          "tentacles"
+        ],
+        "ms": 16.59999999962747,
+        "finite": true,
+        "diff": "furious",
+        "form": 0
+      },
+      {
+        "hp": 4715,
+        "peak": 26,
+        "modes": [
+          "ghost",
+          "knight",
+          "ball",
+          "binarywall",
+          "codeRain",
+          "bombs"
+        ],
+        "ms": 8.900000000372529,
+        "finite": true,
+        "diff": "furious",
+        "form": 1
+      },
+      {
+        "hp": 5535,
+        "peak": 14,
+        "modes": [
+          "arms",
+          "tentacles",
+          "binarywall",
+          "chopper",
+          "furnace",
+          "codeRain",
+          "shield"
+        ],
+        "ms": 5.800000000745058,
+        "finite": true,
+        "diff": "furious",
+        "form": 2
+      }
+    ],
+    "audio": [
+      {
+        "key": "bossWeaponCharge",
+        "playing": true,
+        "ready": [
+          4,
+          4,
+          4
+        ],
+        "time": [
+          0.914038,
+          0.314023,
+          0.11402
+        ],
+        "context": "running"
+      },
+      {
+        "key": "combatAlien0927",
+        "playing": true,
+        "ready": [
+          4,
+          4,
+          4
+        ],
+        "time": [
+          1.615771,
+          1.606978,
+          0.10696
+        ],
+        "context": "running"
+      },
+      {
+        "key": "enemyBossCannon",
+        "playing": true,
+        "ready": [
+          4,
+          4,
+          4
+        ],
+        "time": [
+          0.10213,
+          0.34,
+          0.34
+        ],
+        "context": "running"
+      },
+      {
+        "key": "hammerImpact",
+        "playing": true,
+        "ready": [
+          4,
+          4,
+          4
+        ],
+        "time": [
+          0.48,
+          0.48,
+          0.098095
+        ],
+        "context": "running"
+      },
+      {
+        "key": "combatBeam0927",
+        "playing": true,
+        "ready": [
+          4,
+          4,
+          4
+        ],
+        "time": [
+          1.3,
+          0.109995,
+          1.3
+        ],
+        "context": "running"
+      },
+      {
+        "key": "expBig",
+        "playing": true,
+        "ready": [
+          4,
+          4,
+          4
+        ],
+        "time": [
+          0.134258,
+          0,
+          0
+        ],
+        "context": "running"
+      }
+    ],
+    "errors": []
+  },
+  "motion": {
+    "checks": [
+      {
+        "ok": true,
+        "name": "Stage7 normal retains recovery window"
+      },
+      {
+        "ok": true,
+        "name": "Stage7 normal attacks after a readable warning"
+      },
+      {
+        "ok": true,
+        "name": "Stage7 hard retains recovery window"
+      },
+      {
+        "ok": true,
+        "name": "Stage7 hard attacks after a readable warning"
+      },
+      {
+        "ok": true,
+        "name": "Stage7 furious retains recovery window"
+      },
+      {
+        "ok": true,
+        "name": "Stage7 furious attacks after a readable warning"
+      },
+      {
+        "ok": true,
+        "name": "Hammer rage warning clock advances once"
+      },
+      {
+        "ok": true,
+        "name": "Hammer gets a smooth half-second recovery without position jumps"
+      },
+      {
+        "ok": true,
+        "name": "departing Fury ships accelerate north and clear upside-down dodge poses"
+      },
+      {
+        "ok": true,
+        "name": "no native errors in recovery/warden/departure review"
+      }
+    ],
+    "clips": [
+      {
+        "name": "hammer-rage",
+        "frames": 639,
+        "states": [
+          {
+            "t": 0.0165,
+            "state": "leap_reset"
+          },
+          {
+            "t": 0.7045,
+            "state": "warn"
+          },
+          {
+            "t": 1.550699999999255,
+            "state": "leap"
+          },
+          {
+            "t": 1.8082999999988825,
+            "state": "recover"
+          },
+          {
+            "t": 2.3042999999988822,
+            "state": "leap_reset"
+          },
+          {
+            "t": 3.265199999999255,
+            "state": "warn"
+          },
+          {
+            "t": 4.125799999998883,
+            "state": "leap"
+          },
+          {
+            "t": 4.384799999998882,
+            "state": "recover"
+          },
+          {
+            "t": 4.881799999998883,
+            "state": "leap_reset"
+          },
+          {
+            "t": 5.792299999998883,
+            "state": "warn"
+          },
+          {
+            "t": 6.66539999999851,
+            "state": "leap"
+          },
+          {
+            "t": 6.929699999999255,
+            "state": "recover"
+          },
+          {
+            "t": 7.424199999999255,
+            "state": "leap_reset"
+          },
+          {
+            "t": 8.337,
+            "state": "warn"
+          },
+          {
+            "t": 9.1995,
+            "state": "leap"
+          },
+          {
+            "t": 9.472599999999627,
+            "state": "recover"
+          },
+          {
+            "t": 9.968799999998883,
+            "state": "leap_reset"
+          },
+          {
+            "t": 10.880199999999254,
+            "state": "warn"
+          },
+          {
+            "t": 11.7425,
+            "state": "leap"
+          },
+          {
+            "t": 12.000099999999627,
+            "state": "recover"
+          }
+        ],
+        "p95": 30.899999998509884
+      },
+      {
+        "name": "ghost-form",
+        "frames": 999,
+        "states": [
+          {
+            "t": 0.01740000000037253,
+            "state": null
+          },
+          {
+            "t": 1.2657000000011176,
+            "state": "ghost"
+          },
+          {
+            "t": 8.401099999999628,
+            "state": null
+          },
+          {
+            "t": 9.153599999999628,
+            "state": "knight"
+          }
+        ],
+        "p95": 3.100000001490116
+      },
+      {
+        "name": "warden-furious",
+        "frames": 960,
+        "states": [
+          {
+            "t": 0.016200000001117588,
+            "state": "chase"
+          },
+          {
+            "t": 2.80010000000149,
+            "state": "swipeL"
+          },
+          {
+            "t": 4.36910000000149,
+            "state": "swipeR"
+          },
+          {
+            "t": 5.728400000000373,
+            "state": "swipeX"
+          },
+          {
+            "t": 7.04060000000149,
+            "state": "jump"
+          },
+          {
+            "t": 10.722,
+            "state": "recover"
+          },
+          {
+            "t": 11.2165,
+            "state": "chase"
+          },
+          {
+            "t": 13.8245,
+            "state": "swipeL"
+          },
+          {
+            "t": 15.264200000001118,
+            "state": "swipeR"
+          }
+        ],
+        "p95": 17.5
+      }
+    ],
+    "errors": []
+  },
+  "activeIce": {
+    "beam": {
+      "family": "rime",
+      "released": true,
+      "t": 3.3333333333333264,
+      "slots": [
+        "L0",
+        "L1",
+        "R0",
+        "R1"
+      ],
+      "mounts": [
+        {
+          "x": 332.5203020133514,
+          "y": 286.8388038137988
+        },
+        {
+          "x": 348.6958058315232,
+          "y": 289.28349211055786
+        },
+        {
+          "x": 471.639063438052,
+          "y": 288.9116913517774
+        },
+        {
+          "x": 487.8145672562238,
+          "y": 286.4670030550183
+        }
+      ]
+    },
+    "errors": []
+  },
+  "suite": {
+    "incomingPasses": 6129,
+    "passes": 6188,
+    "errors": 0,
+    "log": "_shots/encounter_suite_1001_final2.log",
+    "fullSummary": true
+  }
+}

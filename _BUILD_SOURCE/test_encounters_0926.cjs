@@ -49,10 +49,10 @@ module.exports=function(vm,ctxv,ok){
       for(const form of ['fire','ice']){
         b._s3Nuclear.mode=form;
         const weak=elementalDamageResult(b,role,{_el:form==='fire'?'ice':'fire'},10),same=elementalDamageResult(b,role,{_el:form},10);
-        o[kind+' '+form+' weakness 2x and same-element 1x']=weak.dmg===20&&same.dmg===10&&hitFlashColor(b,'#ffffff')==='#ffffff';
+        o[kind+' '+form+' weakness 1.5x and same-element 1x']=weak.dmg===15&&same.dmg===10&&hitFlashColor(b,'#ffffff')==='#ffffff';
       }
       run.pilot='freezer';b._s3Nuclear.mode='fire';
-      o[kind+' Freezer pre-scaling does not multiply twice']=elementalDamageResult(b,role,{_ts:true,_el:'fireice'},15).dmg===20;
+      o[kind+' Freezer pre-scaling does not multiply twice']=elementalDamageResult(b,role,{_ts:true,_el:'fireice'},15).dmg===15;
       run.pilot='cole';b._er26.form='fire';b._s3Nuclear.mode='fire';b._er26.formBeats=2;er26Next(b);
       for(let i=0;i<96;i++)er26Tick(b,1/60);
       o[kind+' alternates into ice without another bomb']=b._er26.form==='ice'&&b._s3Nuclear.mode==='ice'&&!b._noHit;

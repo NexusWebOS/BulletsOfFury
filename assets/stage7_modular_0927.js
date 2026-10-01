@@ -34,7 +34,7 @@ function s7mBlit(name,i,x,y,w,h,rot,alpha,flash){
 function s7mFX(x,y,size,spew){combatAtlasFx(x,y,'s7m_'+(spew?'spew':'explosion'),4,4,0,16,{life:spew?1.1:.85,wpx:size,hpx:size});}
 function s7mSound(key){const f=Audio.SFX[key]||Audio.SFX.expBig;if(f)f();}
 function s7mInit(b){
-  if(b._s7mod)return b._s7mod;s7mWarm();const tank=b._ship==='dualscoopdredger',n=s7mRank(),hp=DIFF.eHp;
+  if(b._s7mod)return b._s7mod;s7mWarm();const tank=b._ship==='dualscoopdredger',n=s7mRank(),hp=DIFF.eHp*(!tank&&n===2?1.12:1);
   const M=b._s7mod={tank,n,mode:tank?'entry':'portal',t:0,clock:0,seq:0,history:[],shot:0,shotCD:0,counter:0,stun:0,drop:0,height:0,lean:0,legCharge:0,mask:0,parts:[],shieldMax:Math.ceil(420*hp),shield:Math.ceil(420*hp),core:Math.ceil((tank?900:1200)*hp),coreMax:Math.ceil((tank?900:1200)*hp)};
   const add=(id,life)=>M.parts.push({id,hp:Math.ceil(life*hp),max:Math.ceil(life*hp),flash:0,stress:0});
   if(!tank){add('frontL',540);add('frontR',540);add('rearL',400);add('rearR',400);}
@@ -175,7 +175,7 @@ function s7mTick(b,dt){if(!s7mOwns(b))return false;const M=s7mInit(b);M.t+=dt;M.
   if(mode==='dead'){while(M.shot<12&&M.t>=M.shot*.19){const i=M.shot++;s7mFX(b.x+Math.sin(i*2.4)*66,b.y+Math.cos(i*1.8)*60,140+i*8,false);if(i%2===0)s7mFX(b.x+Math.sin(i)*70,b.y+55,135,true);s7mSound('expBig');shake=Math.max(shake,11);}
     if(M.t>3.3){if(M.tank){b.dead=true;subBossActive=false;subBossDone=true;run.score+=7000;continueRewardResolve(b,b.x,b.y,'miniboss');dropPowerup(b.x,b.y,'weapon');}else{if(!b._forgeRewardDropped){b._forgeRewardDropped=true;forgeBossDrop(b.x,b.y);run.score+=35000;}s7WardenFinishCampaign(b);}}return true;}
   if(mode==='drop'){if(M.t>.23&&!M.shot){M.shot=1;shake=Math.max(shake,15);s7mFX(b.x,b.y+80,200,true);s7mSound('expBig');}if(M.t>1.45)s7mSet(b,'recover');return true;}
-  if(mode==='recover'||mode==='stun'){s7mMove(b,worldWidth()/2,M.tank?145:175,mode==='stun'?35:62,dt);if(M.t>(mode==='stun'?1.65:[1.1,.9,.75][M.n]))s7mNext(b);return true;}
+  if(mode==='recover'||mode==='stun'){s7mMove(b,worldWidth()/2,M.tank?145:175,mode==='stun'?35:62,dt);if(M.t>(mode==='stun'?(M.n===2?1.15:1.65):[1.1,.80,.50][M.n]))s7mNext(b);return true;}
   if(s7m28Tick(b,dt))return true;
   if(mode==='chase'||mode==='crawl'){
     if(Math.floor(M.t*2.5)!==M.shot){M.shot=Math.floor(M.t*2.5);M.target.x=player.x;s7WardenMechSound('foot');}
@@ -206,7 +206,7 @@ function s7mTick(b,dt){if(!s7mOwns(b))return false;const M=s7mInit(b);M.t+=dt;M.
   else if(mode==='mortar'||mode==='tank-mortar'){if(M.t>=M.warn&&!M.shot){M.shot=1;s7mMortar(b);}}
   else if(mode==='orbs'||mode==='tank-orbits'){
     if(M.t<M.warn)combatWarningTick(b,'s7m-'+mode,M.t,M.warn);
-    else if(M.shotCD<=0&&M.shot<3){M.shotCD=.48;M.shot++;s7mVolley(b,5+M.n*2,M.aim+(M.shot-2)*.12,.18,2.65+M.n*.38);}
+    else if(M.shotCD<=0&&M.shot<3){M.shotCD=M.n===2?.36:.48;M.shot++;s7mVolley(b,5+M.n*2,M.aim+(M.shot-2)*.12,.18,2.65+M.n*.60);}
   }else if(['chain','aim','laser','tank-cross'].includes(mode)){
     // Open the faceplate during the tell, before the exposed emitter fires.
     if(mode==='laser')M.mask=Math.min(1,M.mask+dt*2.6);

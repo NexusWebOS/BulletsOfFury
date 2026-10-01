@@ -47,10 +47,10 @@ function er26BookBase(b){
   if(b._ship==='magmaward')return R.level===2?
     ['charred-battery','ash-pursuit','charcoal-wheel','blackout-pass','charred-mortar','cinder-scissors','ash-eruption']:
     ['ember-hunt','furnace-strafe','ember-mortar','furnace-lance','ember-bombard'];
-  if(b._ship==='frostcruiser')return ['cryo-crosscut','icebreaker','shatter-wheel','pincer-lance','cryo-mortar','cryo-crosscut'];
+  if(b._ship==='frostcruiser')return ['cryo-crosscut','icebreaker','cryo-missiles','cryo-burst','cryo-missiles'];
   if(b._ship==='cryospear')return ['bastion-gates','cannon-relay','orb-siege','glacier-press','orb-siege','cannon-relay'];
-  if(b._ship==='olivewarden'&&b._mr27&&!mr27CanFire(b,'L')&&!mr27CanFire(b,'R'))return ['rocket-feint','escort-crossfire','rocket-feint','warden-drive'];
-  if(b._ship==='olivewarden')return ['warden-suppress','escort-crossfire','rocket-feint','warden-drive','center-break'];
+  if(b._ship==='olivewarden'&&b._mr27&&!mr27CanFire(b,'L')&&!mr27CanFire(b,'R'))return ['rocket-feint','warden-drive','rocket-feint'];
+  if(b._ship==='olivewarden')return ['warden-suppress','rocket-feint','warden-drive','center-break'];
   return ['sovereign-battery','escort-crossfire','siege-rockets','ion-scissors','siege-mortar','siege-drive','core-barrage'];
 }
 function er26Set(b,mode){er26SetBase(b,mode);er28Set(b,mode);}
@@ -118,7 +118,7 @@ function er26Shot(b,slot,a,speed,opt={}){
   if(typeof mr27CanFire==='function'&&!mr27CanFire(b,slot))return {dead:true};
   if(typeof mr27Fire==='function')mr27Fire(b,slot,a);
   const R=b._er26,p=typeof slot==='string'?shipBossMount(b,slot):slot;
-  const fire=b._ship==='magmaward'||b._s3Nuclear&&R.form==='fire',charred=b._ship==='magmaward'&&R.level===2;
+  const fire=b._ship==='magmaward',charred=b._ship==='magmaward'&&R.level===2;
   const size=opt.large?28:fire?12:20;
   const q=eShootT(p.x,p.y,a,speed,fire?'magma':'s3mortar',{w:size,h:size,silent:true,curve:opt.curve||0,noMuzzle:typeof slot!=='string'});
   q._boss=true;q._noArsenal=true;q._er26Art=fire?'fire':'ice';q._er26Charred=charred;q._er26Large=!!opt.large;
@@ -129,7 +129,7 @@ function er26Shot(b,slot,a,speed,opt={}){
   return q;
 }
 function er26Muzzle(b,slot){
-  const fire=b._ship==='magmaward'||b._er26.form==='fire';
+  const fire=b._ship==='magmaward';
   shipBossMuzzleStart(b,[slot],{life:.16,hpx:44,fam:fire?'magma':'cryo'});
 }
 function er26Fan(b,slot,a,n,spread,speed,opt){
@@ -154,8 +154,34 @@ function er26Seeds(b,dt){
   }
   R.seeds=R.seeds.filter(s=>!s.done);
 }
+function frostCruiserCombat1001(b,dt){
+  const R=b._er26,n=R.level,t=R.t;
+  if(R.mode==='overdrive'){er28Combat(b,dt);return;}
+  const missiles=R.mode==='cryo-missiles',moving=R.mode==='icebreaker';
+  b.x+=(R.to.x-b.x)*Math.min(1,dt*(moving?2.7:1.2));b.y+=(R.home-b.y)*Math.min(1,dt*3);b._drawY=b.y;
+  R.warnings=[];
+  if(t<R.warm){for(const slot of ['L','R'])er26Warning(b,slot,R.angles[slot==='L'?0:2],missiles?38:24);combatWarningTick(b,'frost-'+R.serial,t,R.warm);return;}
+  R.shot-=dt;if(R.shot>0)return;
+  const wave=R.wave++,slot=wave%2?'R':'L',a=R.angles[slot==='L'?0:2],p=shipBossMount(b,slot);
+  if(missiles){
+    R.shot=diffKey==='easy'?.9:[.72,.60,.50][n];
+    const angle=a+(wave%3-1)*.13,speed=3.6+n*.45;
+    const q=eShootT(p.x,p.y,angle,speed,'emissile',{w:10,h:22,silent:true});
+    Object.assign(q,{_boss:true,_noArsenal:true,_shootable:true,hp:2,spd:speed,ang:angle,homing:wave%2===0,_frostHoming:wave%2===0,turn:.011+n*.003,_er26Source:'frostcruiser'});
+    shipBossMuzzleStart(b,[slot],{life:.16,hpx:32,fam:'missile'});er26Sound('enemyMissile','missile');
+  }else{
+    // Short, committed bursts followed by a dodge window; no beams on the cruiser.
+    const offset=moving?Math.sin(wave*.38)*.30:(wave%5-2)*.035;
+    for(const fan of (R.mode==='cryo-burst'?[-.12,0,.12]:[0])){const q=eShootT(p.x,p.y,a+offset+fan,4.8+n*.6,'mg',{w:6,h:14,silent:true});
+    q._boss=true;q._noArsenal=true;q._er26Source='frostcruiser';}
+    R.shot=R.mode==='cryo-burst'?[.46,.36,.29][n]:wave%5===4?[.58,.46,.36][n]:[.12,.095,.08][n];if(diffKey==='easy')R.shot*=1.45;
+    shipBossMuzzleStart(b,[slot],{life:.09,hpx:28,fam:'mg'});er26Sound('machineGun','enemyBossCannon');
+  }
+  R.shots++;
+}
 function er26Combat(b,dt){
   const R=b._er26,n=R.level,t=R.t,live=t-R.warm,speed=3.4+n*.48+R.phase*.18+(R.form==='fire'?.35:0),mode=R.mode;
+  if(b._ship==='frostcruiser'&&typeof frostCruiserCombat1001==='function'){frostCruiserCombat1001(b,dt);return;}
   if(typeof polishEncounterAttack==='function'&&polishEncounterAttack(b,dt))return;
   if(er28Combat(b,dt))return;
   const moving=/pass|strafe|icebreaker/.test(mode);
@@ -170,14 +196,14 @@ function er26Combat(b,dt){
   b._drawY=b.y;
   if(/lance|cannon-relay/.test(mode)){
     if(!R.beamStarted){
-      const slots=(mode==='cannon-relay'?[(R.index&1)?'R':'L','C']:['L','R']).filter(s=>typeof mr27CanFire!=='function'||mr27CanFire(b,s));
-      const angles=slots.map(s=>s==='L'?Math.PI/2+.30:s==='R'?Math.PI/2-.30:Math.PI/2);
-      const family=b._ship==='magmaward'||R.form==='fire'?'inferno':'rime';
-      l23BossBeamStart(b,family,slots,angles,3,R.live,.24,mode==='cannon-relay'?32:25);R.beamStarted=true;
+      const slots=(mode==='cannon-relay'?['L0','L1','R0','R1']:['L','R']).filter(s=>typeof mr27CanFire!=='function'||mr27CanFire(b,s));
+      const angles=slots.map(s=>s.startsWith('L')?Math.PI/2+.15:Math.PI/2-.15);
+      const family=b._ship==='magmaward'?'inferno':'rime';
+      l23BossBeamStart(b,family,slots,angles,3,R.live,.24,mode==='cannon-relay'?16:25);R.beamStarted=true;
       R.dur=3+R.live+.24;
     }
     if(b._l23Beam)l23BossBeamTick(b,dt);
-    if(b._smz)b._smz.fam=b._ship==='magmaward'||R.form==='fire'?'magma':'cryo';
+    if(b._smz)b._smz.fam=b._ship==='magmaward'?'magma':'cryo';
     return;
   }
   const aimed=/hunt|pursuit|crosscut|bombard/.test(mode);
@@ -232,6 +258,8 @@ function er26Palette(key,mode){
       if(mode==='charred-shot'&&lum>178){d[i]=Math.min(255,lum*1.13);d[i+1]=lum*.91;d[i+2]=lum*.88;}
       else if(hot&&lum>65){d[i]=Math.min(250,115+lum*.76);d[i+1]=Math.round(lum*.17);d[i+2]=Math.round(lum*.09);}
       else {const v=lum<24?lum*.65:Math.pow(lum/255,1.05)*(mode==='charred-shot'?144:138);d[i]=v*.90;d[i+1]=v*.95;d[i+2]=v;}
+    }else if(mode==='ice-shot'){
+      if(lum<42){d[i]=lum*.14;d[i+1]=lum*.24;d[i+2]=lum*.46;}else{d[i]=lum>185?lum*.66:lum*.10;d[i+1]=lum*.68;d[i+2]=Math.min(255,60+lum*1.05);}
     }else if(mode==='fire'){
       if(lum<26)continue;d[i]=Math.min(255,lum*1.25+24);d[i+1]=lum*.52;d[i+2]=lum*.19;
     }else if(mode==='ice'){
@@ -257,9 +285,9 @@ function er26DamageClamp(b,dmg){
 function er26ProjectileDraw(q){
   if(!q._er26Art)return false;
   const frame=Math.floor((q.t||0)*12)%8;
-  const key=(q._er26Art==='fire'?'mwfx_fireball_':q._er26Large?'l23fx_rime_orb_':'l23fx_cryo_ball_')+frame;
+  const key='mwfx_fireball_'+frame;
   if(!XART.rdy(key))return true; // warmed at encounter spawn, never fall through to generic darts
-  const im=q._er26Charred?er26Palette(key,'charred-shot'):XART.get(key),s=q._er26Draw||26;
+  const im=q._er26Art==='ice'?er26Palette(key,'ice-shot'):q._er26Charred?er26Palette(key,'charred-shot'):XART.get(key),s=q._er26Draw||26;
   ctx.save();ctx.translate(Math.round(q.x),Math.round(q.y));ctx.rotate((q.t||0)*2.7);ctx.imageSmoothingEnabled=false;
   ctx.drawImage(im,-s/2,-s/2,s,s);ctx.restore();return true;
 }
@@ -479,7 +507,7 @@ const ER28_OD_AT={magmaward:.50,frostcruiser:.50,cryospear:.40,olivewarden:.50,s
 function er28Art(b,big){
   const R=b._er26;
   if(b._ship==='magmaward')return R.level===2?'charred':'magma';
-  if(b._s3Nuclear&&R.form==='fire')return 'magma';
+  // Stage 3's weapon palette stays black/blue even in its fire-vulnerable form.
   if(b._ship==='stormsovereign')return 'storm';
   if(b._ship==='olivewarden')return 'shell';
   return big?'rime':'cryo';
@@ -496,7 +524,7 @@ function er28Book(b,base){
   const add=(mode,after)=>{const i=after?book.indexOf(after):-1;if(i>=0)book.splice(i+1,0,mode);else book.push(mode);};
   if(ship==='magmaward'){add(R.level===2?'ash-rain':'magma-rain',R.level===2?'ash-pursuit':'furnace-strafe');
     if(od){add('ash-meteor','charcoal-wheel');add('reaver-dive','blackout-pass');}}
-  else if(ship==='frostcruiser'){add('ice-lob','icebreaker');if(od){add('hail-meteor','shatter-wheel');add('cruiser-ram','pincer-lance');}}
+  else if(ship==='frostcruiser'){if(od)add('cryo-hunt','icebreaker');}
   else if(ship==='cryospear'){add('ice-lob','glacier-press');if(od){add('hail-meteor','orb-siege');add('hail-meteor','cannon-relay');}}
   else if(ship==='olivewarden'){add('shell-lob','rocket-feint');if(od){add('shell-barrage','warden-drive');add('warden-drive','center-break');}}
   else if(ship==='stormsovereign'){add('storm-orbs','siege-rockets');if(od){add('chain-storm','ion-scissors');add('giant-strike','core-barrage');}}

@@ -176,7 +176,7 @@ const BOFCinematicDirector=(()=>{
   const pk=b.who.toLowerCase(),hasPilot=pilots.includes(pk),portrait=hasPilot?pk:false;
   // dlgBox's legacy wall-clock typing must not restart when A reveals a new line.
   dlgBox._tw={key:String(state)+'|'+b.who+'|'+b.text,count:s.shown,at:performance.now(),auto:false};
-  dlgBox({who:b.who,portrait,portraitKey:!hasPilot?key:undefined,full:b.text,shown:b.text.slice(0,s.shown),fade:1,tint:b.who==='CRONOS'?'#c6a6ff':'#a9dcfa',pw,ph,x,y,screenSpace:false});
+  dlgBox({who:b.who,portrait,portraitKey:!hasPilot?key:undefined,full:b.text,shown:b.text.slice(0,s.shown),fade:1,tint:b.who==='CRONOS'?'#c6a6ff':'#a9dcfa',pw,ph,x,y,maxBottom:H*.94,screenSpace:false});
   if(s.live&&b.who==='CRONOS')fit(key,W*.67,H*.27,W*.30,H*.34);
   msgFaceUse('dialogue');controlHintRow([['pad_a',s.shown<b.text.length?'REVEAL':'NEXT'],['pad_start','SKIP SCENE']],H*.972,W/2,W*.92,16);msgFaceUse(null);ctx.restore();
  }

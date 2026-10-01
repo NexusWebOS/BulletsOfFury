@@ -11,14 +11,14 @@ function mr27Cell(skin,cell,form){
   // Mike's Furious thermodynamic forms preserve luminance and metallic outlines.
   if(form==='fire'||form==='ice'){g.globalCompositeOperation='color';g.fillStyle=form==='fire'?'#df4825':'#40aaff';g.fillRect(0,0,c.width,c.height);g.globalCompositeOperation='destination-in';g.drawImage(XART.get('mr27_'+skin),...r,0,0,c.width,c.height);}
   if(form==='fury'&&typeof d27TempestPalette==='function')d27TempestPalette(c);
-  if(form==='white'){g.globalCompositeOperation='source-in';g.fillStyle='#fff';g.fillRect(0,0,c.width,c.height);}
+  if(form==='white'||/^#[0-9a-f]{6}$/i.test(form||'')){g.globalCompositeOperation='source-in';g.fillStyle=form==='white'?'#fff':form;g.fillRect(0,0,c.width,c.height);}
   MR27_CACHE.set(id,c);return c;
 }
-function mr27Blit(skin,cell,p,flash,form){
+function mr27Blit(skin,cell,p,flash,form,owner){
   const im=mr27Cell(skin,cell,form);if(!im)return false;
   ctx.save();ctx.imageSmoothingEnabled=false;ctx.translate(p.x,p.y);ctx.rotate(p.rot||0);
   ctx.drawImage(im,-p.w/2,-p.h/2,p.w,p.h);
-  if(flash>0){const white=mr27Cell(skin,cell,'white');ctx.globalAlpha=Math.min(.82,flash*5);ctx.drawImage(white,-p.w/2,-p.h/2,p.w,p.h);}
+  if(flash>0){const white=mr27Cell(skin,cell,hitFlashColor(owner||p));ctx.globalAlpha=Math.min(.82,flash*5);ctx.drawImage(white,-p.w/2,-p.h/2,p.w,p.h);}
   ctx.restore();return true;
 }
 function mr27Init(b){
@@ -43,13 +43,13 @@ function mr27Shape(b,id){
   return {id,cell,x:b.x+dx*b.w,y:(b._drawY??b.y)+dy*b.h-(p?.recoil||0)*3,w:r[2]*scale,h:r[3]*scale,rot:p?.rot||0};
 }
 function mr27Mount(b,slot){
-  const id=/ROCKET/.test(slot)?(slot.endsWith('L')?'rocketL':'rocketR'):['L','LW','CL','gunL'].includes(slot)?'gunL':['R','RW','CR','gunR'].includes(slot)?'gunR':'core';
-  const p=mr27Shape(b,id),a=p.rot+Math.PI/2;return {x:p.x+Math.cos(a)*p.h*.48,y:p.y+Math.sin(a)*p.h*.48};
+  const id=/ROCKET/.test(slot)?(slot.endsWith('L')?'rocketL':'rocketR'):['L','L0','L1','LW','CL','gunL'].includes(slot)?'gunL':['R','R0','R1','RW','CR','gunR'].includes(slot)?'gunR':'core';
+  const p=mr27Shape(b,id),a=p.rot+Math.PI/2,offset=/^[LR][01]$/.test(slot)?(slot.endsWith('0')?-1:1)*p.w*.13:0;return {x:p.x+Math.cos(a)*p.h*.48+Math.cos(p.rot)*offset,y:p.y+Math.sin(a)*p.h*.48+Math.sin(p.rot)*offset};
 }
-function mr27CanFire(b,slot){if(!b?._mr27||typeof slot!=='string')return true;const id=/ROCKET/.test(slot)?(slot.endsWith('L')?'rocketL':'rocketR'):['L','LW','CL','gunL'].includes(slot)?'gunL':['R','RW','CR','gunR'].includes(slot)?'gunR':null;return !id||!mr27Part(b,id)?.dead;}
+function mr27CanFire(b,slot){if(!b?._mr27||typeof slot!=='string')return true;const id=/ROCKET/.test(slot)?(slot.endsWith('L')?'rocketL':'rocketR'):['L','L0','L1','LW','CL','gunL'].includes(slot)?'gunL':['R','R0','R1','RW','CR','gunR'].includes(slot)?'gunR':null;return !id||!mr27Part(b,id)?.dead;}
 function mr27Fire(b,slot,a){
   if(!b?._mr27||typeof slot!=='string')return;
-  const id=/ROCKET/.test(slot)?(slot.endsWith('L')?'rocketL':'rocketR'):['L','LW','CL'].includes(slot)?'gunL':['R','RW','CR'].includes(slot)?'gunR':null;
+  const id=/ROCKET/.test(slot)?(slot.endsWith('L')?'rocketL':'rocketR'):['L','L0','L1','LW','CL'].includes(slot)?'gunL':['R','R0','R1','RW','CR'].includes(slot)?'gunR':null;
   const p=mr27Part(b,id);if(p&&!p.dead){p.rot=a-Math.PI/2;p.recoil=1;}
 }
 function mr27At(b,x,y){
@@ -73,7 +73,7 @@ function mr27Tick(b,dt){
   mr27Init(b);const M=b._mr27;if(!M)return;M.clock+=dt;M.stun=Math.max(0,M.stun-dt);
   for(const p of M.parts){p.flash=Math.max(0,p.flash-dt);p.recoil=Math.max(0,p.recoil-dt*10);
     const q=mr27Shape(b,p.id),target=b._er26.target||player,a=Math.atan2(target.y-q.y,target.x-q.x)-Math.PI/2;
-    const wanted=p.id.startsWith('gun')?clamp(a,-.42,.42):0;p.rot+=(wanted-p.rot)*Math.min(1,dt*4);}
+    const beam=b._ship==='cryospear'&&b._l23Beam,slot=p.id==='gunL'?'L0':'R0',idx=beam?beam.slots.indexOf(slot):-1;const wanted=idx>=0?beam.angles[idx]-Math.PI/2:p.id.startsWith('gun')?clamp(a,-.42,.42):0;p.rot+=(wanted-p.rot)*Math.min(1,dt*4);}
 }
 function mr27Targets(b,a){
   if(b.enter||b.dead||b._noHit)return;
@@ -95,9 +95,9 @@ function mr27CoreDraw(b,p){
   const R=b._er26,charge=R.mode!=='recover'&&R.t<(R.warm||0),skin=b._mr27.skin;
   if(skin==='storm'&&MR27_ART.corefx&&XART.rdy('mr27_corefx')){
     const cell=charge?Math.min(4,Math.floor(R.t/Math.max(.1,R.warm)*5)):5+Math.floor(b._mr27.clock*9)%3;
-    mr27Blit('corefx',cell,p,b.flash);return;
+    mr27Blit('corefx',cell,p,b.flash,null,b);return;
   }
-  mr27Blit(skin,3,p,b.flash,skin==='rime'&&b._s3Nuclear?R.form:null);
+  mr27Blit(skin,3,p,b.flash,skin==='rime'&&b._s3Nuclear?R.form:null,b);
 }
 function mr27HelperState(d){if(!d._mrGun){const hp=Math.ceil(d.maxhp*.4);d._mrGun={hp,maxhp:hp,dead:false,flash:0};}return d._mrGun;}
 function mr27HelperGun(b,d){
@@ -129,9 +129,12 @@ function mr27Draw(b){
   mr27Init(b);const M=b._mr27;if(!XART.rdy('mr27_'+M.skin))return false;
   if(b._l23Beam)l23BossBeamDraw(b);
   const shape=MR27_ART[M.skin].cells[0],scale=Math.min(b.w/shape[2],b.h/shape[3]),form=M.skin==='rime'&&b._s3Nuclear?b._er26.form:null;
-  mr27Blit(M.skin,0,{x:b.x,y:b._drawY??b.y,w:shape[2]*scale,h:shape[3]*scale},b.flash,form);
-  for(const q of M.parts)if(!q.dead){const p=mr27Shape(b,q.id);mr27Blit(M.skin,p.cell,p,Math.max(q.flash,b.flash||0),form);}
-  mr27CoreDraw(b,mr27Shape(b,'core'));mr27Over(b);er26Draw(b);shipBossMuzzleDraw(b);M.draws++;return true;
+  mr27Blit(M.skin,0,{x:b.x,y:b._drawY??b.y,w:shape[2]*scale,h:shape[3]*scale},b.flash,form,b);
+  for(const q of M.parts)if(!q.dead){const p=mr27Shape(b,q.id);mr27Blit(M.skin,p.cell,p,Math.max(q.flash,b.flash||0),form,b);}
+  mr27CoreDraw(b,mr27Shape(b,'core'));
+  if(M.skin==='rime'&&b._l23Beam&&!b._l23Beam.released){const B=b._l23Beam,k=clamp(B.t/B.warm,0,1),key='l23fx_rime_orb_'+(Math.floor(M.clock*16)%8);
+    if(XART.rdy(key))for(const slot of B.slots){const p=shipBossMount(b,slot),s=12+k*17;ctx.save();ctx.globalAlpha=.5+k*.5;ctx.drawImage(XART.get(key),p.x-s/2,p.y-s/2,s,s);ctx.restore();}}
+  mr27Over(b);er26Draw(b);shipBossMuzzleDraw(b);M.draws++;return true;
 }
 
 /* One Earth bomber; two modular Tempest skins for the space pursuit. */
@@ -140,7 +143,7 @@ function mr27BomberSetup(b){
   B.variant=B.space&&['hard','furious','insanity'].includes(diffKey)?1:0;b.name=B.space?(B.variant?'TEMPEST SILVER ECLIPSE':'TEMPEST VOID ECLIPSE'):'ECLIPSE SIEGE BOMBER';
   if(B.space&&(diffKey==='furious'||diffKey==='insanity'))b.name='TEMPEST CRIMSON ECLIPSE';
   const mul=diffKey==='easy'?.52:diffKey==='normal'?1:diffKey==='hard'?1.18:diffKey==='furious'?1.35:1.5;
-  const durability=B.space?1.8:1;B.core=B.coreMax=(B.space?2050:2350)*mul*durability;for(const p of B.parts)p.hp=p.max=p.maxhp=440*mul*durability;
+  const durability=B.space?1:1.10;B.core=B.coreMax=Math.ceil(1050*mul*durability);for(const p of B.parts)p.hp=p.max=p.maxhp=Math.ceil(250*mul*durability);
   b.hp=b.maxhp=B.core+B.parts.reduce((a,p)=>a+p.hp,0);b.w=VW*.5;b.h=B.space?b.w*.83:b.w*.62;
   if(B.space){XART.rdy('mr27_space');XART.rdy('tlv_beam');for(let i=0;i<8;i++)XART.rdy('l23fx_rime_mg_'+i);}
 }
@@ -152,7 +155,7 @@ function mr27SpaceDraw(b){
   const B=b._bomber;if(!XART.rdy('mr27_space'))return false;const form=typeof d27FuriousBomber==='function'&&d27FuriousBomber(b)?'fury':null;
   for(const p of mr27SpaceParts(b))if(!p.pool||p.pool.hp>0){mr27Blit('space',p.cell,p,p.pool?p.pool.flash:b.flash,form);
     if(p.id.startsWith('engine')&&typeof d27MuzzleDraw==='function')d27MuzzleDraw(ctx,'exhaust',p.x,p.y+p.h*.37,Math.PI/2,(B.clock*12)%1,30,form?'#ff3922':null);}
-  mr27Blit('space',4,{x:b.x,y:b.y+b.h*.03,w:b.w*.1,h:b.h*.31},b.flash,form);
+  mr27Blit('space',4,{x:b.x,y:b.y+b.h*.03,w:b.w*.1,h:b.h*.31},b.flash,form,b);
   if(B.mode==='bombs')mr27Blit('space',5,{x:b.x,y:b.y+b.h*.27,w:b.w*.17,h:b.h*.22},0,form);
   for(const q of B.bombs)if(q.t>0&&q.t<q.warn&&XART.rdy('lz_bomb')){const u=clamp(q.t/q.warn,0,1);ctx.save();ctx.translate(lerp(q._polishBomb.x,q.x,u),lerp(q._polishBomb.y,q.y,u));ctx.rotate(Math.PI);ctx.drawImage(XART.get('lz_bomb'),-8,-20,16,40);ctx.restore();}
   return true;

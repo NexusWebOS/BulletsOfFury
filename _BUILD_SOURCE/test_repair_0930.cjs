@@ -25,7 +25,7 @@ module.exports=function(vm,ctxv,ok,nativePlayerHit){
   o['preview restores the live loadout']=run.weapon===save.weapon&&run.wlevel===save.level&&run.forge===save.forge;
   const e=spawnEnemy('s4interceptor',240,180,{});e._esh=null;e._noHit=false;e._r30.left.hp=1;_dmgBullet={x:e.x-e.w*.4,y:e.y,kind:'mg',lv:3};hitEnemy(e,2);_dmgBullet=null;
   o['destroyed jet module stops only its own muzzle']=e._r30.left.hp===0&&modularJetPoint(e,-1)._disabled&&!modularJetPoint(e,1)._disabled;
-  o['registered hits flash white across elements']=hitFlashColor({_elemHit:'fire'},'#f00')==='#ffffff'&&hitFlashColor({_elemHit:'ice'},'#00f')==='#ffffff';
+  o['neutral hits stay white; weakness hits use the opposing element']=hitFlashColor({})==='#ffffff'&&hitFlashColor({_hitFlashColor:'#ff3b30'})==='#ff3b30'&&hitFlashColor({_hitFlashColor:'#83d9ff'})==='#83d9ff';
   run.stage=5;run.spaceMode=true;powerups=[];spaceArmorySpawnBox(200,200,'spacehelper');o['explicit stage5 helper reward is rerolled']=powerups.length===1&&powerups[0]._hqReward!=='spacehelper';
   for(const route of ['HAMMER','HAMA']){ht27Stop();setState(GS.PASSWORD);pwInput=route;submitPassword();startRun(5);boss.hp=boss.maxhp*.5;boss._noHit=false;boss.enter=false;
    const d=boss._hammerTime;d.mode='attack';d.locked=false;d.shield=false;d.clock=40;d.attack=0;if(d.hama)d.hama.attacks=0;const states=[];

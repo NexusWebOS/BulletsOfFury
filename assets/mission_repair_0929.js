@@ -92,11 +92,11 @@ function missionBomb(e){const n=e._mission29.n,T=targetShip(e.x,e.y);
  (Audio.SFX.missile||Audio.SFX.enemyShoot||function(){})();
 }
 s6StrikeTick=function(e,dt){const A=e._mission29;if(!A)return MISSION29_BASE.strike(e,dt);
- A.t+=dt;e._s6Strike.t=A.t;const side=A.direction!=='south',speed=(A.kind==='bomb'?[285,355,425]:[350,455,570])[A.n];
+ A.t+=dt;e._s6Strike.t=A.t;const side=A.direction!=='south',speed=(side?[510,630,740]:[350,455,570])[A.n];
  e.x+=(A.direction==='east'?1:A.direction==='west'?-1:0)*speed*dt;e.y+=(side?0:speed)*dt;e.spin=0;e._polishBomberCD=999;
  const inside=e.x>camLeftX()+45&&e.x<camRightX()-45&&e.y>viewTopY()+30&&e.y<VH-45;
  if(inside&&!A.shot){A.shot=true;
-  if(A.kind==='bomb'||A.attack===2)missionBomb(e);
+  if(side||A.kind==='bomb'||A.attack===2)missionBomb(e);
   else if(A.n===2&&A.attack===1&&e.y<player.y-65){for(const off of [-.07,.07])eMG(e.x+off*50,e.y+20,Math.PI/2+off,3.7);}}
  if(A.t>5||e.x<camLeftX()-130||e.x>camRightX()+130||e.y>VH+110)e.dead=true;
 };

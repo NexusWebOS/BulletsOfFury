@@ -19,7 +19,9 @@ const ENC30_BASE={stage:beginStage,spawn:spawnEnemy,tankDraw:drawModularTank,jet
  aceHit:warhiveHitTest,fleet:furyFleetDraw,storm:drawS6Storm,bomb:missionBomb};
 beginStage=function(n){const r=ENC30_BASE.stage.apply(this,arguments);enc30Warm(n);return r;};
 spawnEnemy=function(){
- const start=enemies.length,r=ENC30_BASE.spawn.apply(this,arguments);
+ const args=Array.from(arguments);
+ if(run.stage===4&&['tank','htank','minitank','s4minitank','s4airfield','roadtank'].includes(args[0]))args[0]='sandtank';
+ const start=enemies.length,r=ENC30_BASE.spawn.apply(this,args);
  for(const e of enemies.slice(start)){
   if(run.stage===4&&(e._modTank===4||e._modJet)){
    const tank=e._modTank===4,k=tank?1.35:1.12;e.hp*=k;e.maxhp*=k;if(e._maxhp)e._maxhp*=k;
@@ -31,7 +33,7 @@ spawnEnemy=function(){
 };
 function enc30PartFlash(e,name,f,x,y,w,h,pal){
  const r=enc30Cell(name,f,x,y,w,h,pal);
- if(r&&e.flash>0){ctx.save();ctx.globalAlpha=Math.min(.85,e.flash*7);enc30Cell(name,f,x,y,w,h,'#ffffff');ctx.restore();}return r;
+ if(r&&e.flash>0){ctx.save();ctx.globalAlpha=Math.min(.85,e.flash*7);enc30Cell(name,f,x,y,w,h,hitFlashColor(e));ctx.restore();}return r;
 }
 drawModularTank=function(e){
  if(e._modTank!==4||e.dead||e._dyingT!=null)return ENC30_BASE.tankDraw(e);
@@ -106,7 +108,26 @@ function enc30BomberDraw(e,direction){
  enc30PartFlash(e,'bomber',f,0,0,w,h);ctx.restore();
  e._drawW=direction==='south'?w:h;e._drawH=direction==='south'?h:w;return true;
 }
-furyFleetDraw=function(e){if(e._s67Bomber&&!e.dead&&e._dyingT==null&&enc30BomberDraw(e,e._mission29.direction))return true;return ENC30_BASE.fleet(e);};
+const MISSION1001_PALETTE=new Map();
+function missionPaletteJetDraw1001(e){
+ const A=e._mission29;if(e.dead||e._dyingT!=null)return true;
+ const art=MISSION29_ART.bluejets;if(!XART.rdy(art.key))return true;
+ const color=A.direction==='west'?'red':A.direction==='east'?'green':'blue';let im=XART.get(art.key);
+ if(color!=='blue'){
+  if(!MISSION1001_PALETTE.has(color)){
+   const c=document.createElement('canvas');c.width=im.width;c.height=im.height;const g=c.getContext('2d');g.drawImage(im,0,0);
+   const data=g.getImageData(0,0,c.width,c.height),d=data.data;
+   for(let i=0;i<d.length;i+=4){const r=d[i],v=d[i+1],b=d[i+2];
+    // Change blue paint only; keep the white metal, outlines and orange ordnance.
+    if(d[i+3]&&b>r*1.35&&b>v*1.12){d[i]=color==='red'?b:r;d[i+1]=color==='green'?b:v*.62;d[i+2]=color==='red'?r:v*.48;}}
+   g.putImageData(data,0,0);MISSION1001_PALETTE.set(color,c);
+  }im=MISSION1001_PALETTE.get(color);
+ }
+ const f={east:0,west:1,south:2}[A.direction],s=e._s67Draw||100,r=art.frames[f];
+ ctx.save();ctx.imageSmoothingEnabled=false;ctx.drawImage(im,...r,e.x-s/2,e.y-s/2,s,s);ctx.restore();
+ if(e.flash>0)s67CellFlash('bluejets',f,e.x-s/2,e.y-s/2,s,s,e);e._drawW=e._drawH=s;return true;
+}
+furyFleetDraw=function(e){if(e._mission29)return missionPaletteJetDraw1001(e);return ENC30_BASE.fleet(e);};
 drawS6Storm=function(e){if(e._s6storm==='s6bomber'&&!e.dead&&e._dyingT==null&&enc30BomberDraw(e,e._dir<0?'west':'east'))return true;return ENC30_BASE.storm(e);};
 missionBomb=function(e){e._r30BombAt=efxClock;return ENC30_BASE.bomb(e);};
 

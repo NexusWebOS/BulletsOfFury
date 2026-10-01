@@ -31,7 +31,10 @@ function rot5Frame(q,index){
  return c;
 }
 function rot5Draw(key,x,y,w,h,angle,alpha){
- if(!XART.rdy(key))return false;const im=XART.get(key),q=rot5Source(im,null,w,h,0);if(!q)return false;
+ if(!XART.rdy(key))return false;const im=XART.get(key);
+ // An unrotated plate needs neither a padded rotation canvas nor an LRU entry.
+ if(rot5Index(angle||0)===0){ctx.save();ctx.globalAlpha*=alpha==null?1:alpha;try{ROT5_RAW(im,x-w/2,y-h/2,w,h);}finally{ctx.restore();}return true;}
+ const q=rot5Source(im,null,w,h,0);if(!q)return false;
  const f=rot5Frame(q,rot5Index(angle||0)),s=w/q.bw;
  ctx.save();ctx.globalAlpha*=alpha==null?1:alpha;ROT5.busy=true;
  try{ROT5_RAW(f,x-f.width*s/2,y-f.height*s/2,f.width*s,f.height*s);}finally{ROT5.busy=false;ctx.restore();}return true;

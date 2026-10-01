@@ -50,8 +50,8 @@ module.exports=function(vm,ctxv,ok){
     const b=mini?subBoss:boss;b.enter=false;b._be=null;b._noHit=false;b.x=worldWidth()/2;b.y=b._er26.home;
     b._er26.from={x:b.x,y:b.y};b._er26.to={x:b.x,y:b.y};b._drawY=b.y;b._er26.neutralOpening=false;return b;
   }
-  const want={magmaward:['magma-rain','ash-rain'],frostcruiser:['ice-lob','ice-lob'],cryospear:['ice-lob','ice-lob'],olivewarden:['shell-lob','shell-lob'],stormsovereign:['storm-orbs','storm-orbs']};
-  const od={magmaward:['ash-meteor','reaver-dive'],frostcruiser:['hail-meteor','cruiser-ram'],cryospear:['hail-meteor'],olivewarden:['shell-barrage'],stormsovereign:['chain-storm','giant-strike']};
+  const want={magmaward:['magma-rain','ash-rain'],frostcruiser:['cryo-missiles','cryo-missiles'],cryospear:['ice-lob','ice-lob'],olivewarden:['shell-lob','shell-lob'],stormsovereign:['storm-orbs','storm-orbs']};
+  const od={magmaward:['ash-meteor','reaver-dive'],frostcruiser:['cryo-hunt'],cryospear:['hail-meteor'],olivewarden:['shell-barrage'],stormsovereign:['chain-storm','giant-strike']};
   for(const [kind,stage] of [['magmaward',2],['frostcruiser',3],['cryospear',3],['olivewarden',4],['stormsovereign',4]]){
     const n=fixture(kind,stage,'normal');
     out[kind+' Normal adds its targeted-ball attack']=er26Book(n).includes(want[kind][0])&&!od[kind].some(m=>er26Book(n).includes(m));
@@ -66,7 +66,8 @@ module.exports=function(vm,ctxv,ok){
     out[kind+' overdrive ends in a vulnerable, faster second book']=!f._noHit&&od[kind].every(m=>er26Book(f).includes(m));
     // the targeted attacks really fire tb28 balls (no generic lanes)
     tb28Reset();er26Set(f,want[kind][1]);for(let i=0;i<180;i++){f.t+=1/60;er26Tick(f,1/60);}
-    out[kind+' '+want[kind][1]+' fires committed targeted balls']=tb28List.length>0&&tb28List.every(q=>q.owner===f&&Number.isFinite(q.tx)&&Number.isFinite(q.ty));
+    if(kind==='frostcruiser')out['Frost Cruiser replaces lobbed balls with guided and loose missiles']=eBullets.some(q=>q._frostHoming)&&eBullets.some(q=>q.kind==='emissile'&&!q.homing)&&!f._l23Beam;
+    else out[kind+' '+want[kind][1]+' fires committed targeted balls']=tb28List.length>0&&tb28List.every(q=>q.owner===f&&Number.isFinite(q.tx)&&Number.isFinite(q.ty));
     // the Normal fight holds on hard-bounded motion across a long run, as the 0926 revision requires
     const b=fixture(kind,stage,'hard');let old={x:b.x,y:b.y},bounded=true;const seen=new Set();
     for(let i=0;i<1800;i++){b.t=(b.t||0)+1/60;er26Tick(b,1/60);seen.add(b._er26.mode);bounded=bounded&&Number.isFinite(b.x)&&Math.hypot(b.x-old.x,b.y-old.y)<15;old={x:b.x,y:b.y};if(i%120===0){eBullets=[];tb28Reset();}}

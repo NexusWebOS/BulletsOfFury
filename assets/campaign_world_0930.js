@@ -3,6 +3,7 @@
    Geography is decorative. The locked East Coast USA sector never adds an expansion unlock. */
 const MAP30_ART={hq:'fury_hq',east:'eastern_ruins',north:'northern_coast',datawall:'east_coast_binary_rows_v6',home:'northern_hq_island',cove:'island_cove',ruins:'island_ruins'};
 for(const [k,file] of Object.entries(MAP30_ART))XART._src['map30_'+k]='assets/game/campaign_0930/'+file+'.png';
+XART._src.map30_datawall=DATAWALL_1001.path;
 const MAP30={westX:35,home:{x:385,y:185,w:205,h:190},ships:new Map(),land:[
  {key:'north',x:690,y:-148,w:1280,h:402},
  {key:'east',x:1395,y:640,w:280,h:570},
@@ -59,13 +60,11 @@ function map30LockedBounds(){
  return {left:c.x+(-campaignViewOffset()-CM2_VCX)/z-8,right:MAP30.westX,
   top:c.y-CM2_VCY/z-8,height:VH/z+16,z};
 }
-/* Four binary-row palette poses from one generated panel. Its ragged alpha
-   edge composites over live ocean without scrolling or crystal geometry.
-   Source: east_coast_binary_rows_v6.json / build_east_coast_binary_rows_0930.py. */
-const MAP30_DATA={columns:4,count:4,width:512,height:1024,fps:3};
+/* Eight newly generated binary-row/scan-packet frames; never palette-only flicker. */
+const MAP30_DATA=DATAWALL_1001;
 function map30DataLayout(B){
- const w=Math.max(B.right-B.left+120,B.height*MAP30_DATA.width/MAP30_DATA.height);
- const h=w*MAP30_DATA.height/MAP30_DATA.width;
+ const w=Math.max(B.right-B.left+120,B.height*MAP30_DATA.aspect);
+ const h=w/MAP30_DATA.aspect;
  return {x:B.right-w*.9,y:B.top+(B.height-h)/2,w,h};
 }
 function map30DataWall(){
@@ -80,10 +79,8 @@ function map30DataWall(){
  if(ready){
   const f=Math.floor(cmap2.t*MAP30_DATA.fps)%MAP30_DATA.count;
   ctx.imageSmoothingEnabled=false;
-  ctx.drawImage(XART.get('map30_datawall'),
-   (f%MAP30_DATA.columns)*MAP30_DATA.width,
-   Math.floor(f/MAP30_DATA.columns)*MAP30_DATA.height,
-   MAP30_DATA.width,MAP30_DATA.height,P.x,P.y,P.w,P.h);
+  const r=MAP30_DATA.frames[f].rect;
+  ctx.drawImage(XART.get('map30_datawall'),...r,P.x,P.y,P.w,P.h);
  }
  ctx.restore();
 }

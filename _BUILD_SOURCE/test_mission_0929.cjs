@@ -32,7 +32,9 @@ module.exports=function(vm,ctxv,ok){
   o[diff+' descending gates scale simultaneous pressure and weapons']=south.length===[3,8,15][n]&&south.every(q=>n===2||q.attack===null);
   const e=missionJetSpawn(south[0],O);e.x=worldWidth()/2;e.y=viewTopY()+85;const sx=e.x,sy=e.y;s6StrikeTick(e,.1);
   o[diff+' jets use straight committed movement at the intended speed']=e.x===sx&&Math.abs(e.y-sy-[350,455,570][n]*.1)<.001;
-  if(n<2)o[diff+' gate jets neither shoot nor create ground bombs']=eBullets.length===0&&groundTargetingFx.length===0;
+  if(n<2)o[diff+' southbound gate jets remain gun-free']=eBullets.length===0&&groundTargetingFx.length===0;
+  const crossing=missionJetSpawn(side[0],O);crossing.x=worldWidth()/2;crossing.y=VH*.4;s6StrikeTick(crossing,.1);
+  o[diff+' sideways gates now drop warned bombs']=groundTargetingFx.some(q=>q._mission29&&!q.track);
   const jet=missionJetSpawn(bomb[0],O);jet.x=worldWidth()/2;jet.y=VH*.5;s6StrikeTick(jet,.1);
   o[diff+' bomber commits a dodgeable retina with the shared explosion owner']=groundTargetingFx.some(q=>q._mission29&&!q.track&&!q.lane&&q.warn>=1.35&&typeof q.onImpact==='function');
   enemies=[];groundTargetingReset();O.index=O.events.length;O.t=O.finish;O.lanes=[];missionAssaultTick(O,.01);
