@@ -1,0 +1,137 @@
+{
+  "integration": {
+    "before": "3cf070436dbea61981dce65a5b423cb412d3dcfe",
+    "target": "d19c966693d8a5e73b5394f69207801725e163eb",
+    "localBackup": {
+      "CLAUDE.md": "f3175cd6b8f58833bc6518fc61c5ba38992c5c5d4d78ed7cd4d4d0f75744525d",
+      "HANDOFF_CODEX.md": "536b4f71eee49cfa7511518a54421a2a873240b4a49584db30ef3226ce963cf5",
+      "_BUILD_SOURCE/test_fl.js": "3fa9f518a53dbb5539fa9775fdd96c13fdb4ca609741966fc10f327f02577db1",
+      "index.html": "80aed0ef3efd464b1aba62ca8863e1563c74f17ba19ffe94be3af48c36476de0"
+    },
+    "untrackedCount": 3349,
+    "after": "d19c966693d8a5e73b5394f69207801725e163eb",
+    "localEditsRestored": true,
+    "untrackedPreserved": true
+  },
+  "suite": {
+    "passes": 6247,
+    "failures": 0,
+    "incomingLocalBaseline": 6203,
+    "newFailingNames": [],
+    "finalSummary": true
+  },
+  "hamaChecks": [
+    {
+      "ok": true,
+      "name": "new recording is decoded and playing through HAMA music"
+    },
+    {
+      "ok": true,
+      "name": "recording captures the single real mixed audio stream"
+    },
+    {
+      "ok": true,
+      "name": "fight follows the single media clock (frame-lag samples recorded)"
+    },
+    {
+      "ok": true,
+      "name": "instrumental section keeps playing with removed verses"
+    },
+    {
+      "ok": true,
+      "name": "removed verses leave the singing captions clear"
+    },
+    {
+      "ok": true,
+      "name": "background hook is captioned in game"
+    },
+    {
+      "ok": true,
+      "name": "pause stops the whole vocal/music mix"
+    },
+    {
+      "ok": true,
+      "name": "resume continues from the same position"
+    },
+    {
+      "ok": true,
+      "name": "instrumental choreography retains both physical slam cues"
+    },
+    {
+      "ok": true,
+      "name": "only hook and recorded OH chant captions remain"
+    },
+    {
+      "ok": true,
+      "name": "track loops without a second voice player drifting"
+    },
+    {
+      "ok": true,
+      "name": "exit stops the vocal mix"
+    },
+    {
+      "ok": true,
+      "name": "HAMMER retains its separate remix"
+    },
+    {
+      "ok": true,
+      "name": "no page or console errors"
+    }
+  ],
+  "hamaErrors": [],
+  "launch": [
+    {
+      "stage": 2,
+      "first_play": 1073,
+      "play_h": 60,
+      "launch_frames": 860,
+      "h_min": 60,
+      "h_max": 60,
+      "off_scale_blits": 0,
+      "launch_spd_min": 40,
+      "launch_spd_max": 1750,
+      "max_drop_per_frame": 17,
+      "phases": [
+        "brake",
+        "cd",
+        "run",
+        "settle"
+      ],
+      "errors": [],
+      "screenshots": [
+        "countdown",
+        "play"
+      ],
+      "ok": true
+    },
+    {
+      "stage": 9,
+      "first_play": 876,
+      "play_h": 48,
+      "launch_frames": 664,
+      "h_min": 48,
+      "h_max": 48,
+      "off_scale_blits": 0,
+      "launch_spd_min": 153,
+      "launch_spd_max": 3200,
+      "max_drop_per_frame": 36,
+      "phases": [
+        "brake",
+        "cd",
+        "run",
+        "settle"
+      ],
+      "errors": [],
+      "screenshots": [
+        "countdown",
+        "play"
+      ],
+      "ok": true
+    }
+  ],
+  "screenshotsInspected": [
+    "stage2-play.png",
+    "stage9-play.png",
+    "hama/crew-in-game.png"
+  ]
+}

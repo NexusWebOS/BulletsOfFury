@@ -1,0 +1,41 @@
+module.exports=function(vm,ctxv,ok){
+ const fs=require('fs'),path=require('path');
+ for(const f of ['feedback_art_1002.js','feedback_1002.js'])vm.runInContext(fs.readFileSync(path.join(__dirname,'../assets',f),'utf8'),ctxv,{filename:f});
+ console.log('=== October 2 campaign feedback and straight enemy facing ===');
+ const rows=JSON.parse(vm.runInContext(`JSON.stringify((()=>{
+ const o={};ht27Stop();debugFight=null;coopOn=false;run.mode='campaign';
+ function reset(stage,diff='normal',pilot='yuri'){diffKey=diff;DIFF=DIFFS[diff];run.pilot=pilot;run._freezerL2Cleared=false;beginStage(stage);setState(GS.PLAY);player.reset();BOFCinematicDirector.cancel();story=null;stagePlan=[];enemies=[];eBullets=[];pBullets=[];groundTargetingReset();player.x=worldWidth()/2;player.y=VH-100;player.invuln=999;}
+ reset(1,'normal','freezer');o['Freezer holds the plain Ice Breath icon']=weaponIconKey(4,5)==='fb1002_icebreath'&&weaponDisplayName(4)==='ICE BREATH';
+ o['Freezer cannot forge or swap before Level 2 clear']=forgeCombine(4,'fire')==='locked'&&weaponFormSelect(4,{kind:'variant',id:'flamethrower'})==='locked';
+ freezerStageClearDefaults(2);o['Level 2 clear releases form lock']=!fb1002FreezerLocked()&&weaponBaseForms(4).length>=2;
+ const saved=campSnapshot();run._freezerL2Cleared=false;campApply(saved);run.stage=1;o['Ice Breath unlock survives save and earlier-stage replay']=!fb1002FreezerLocked();
+ reset(2,'furious');spawnSubBoss__inner('magmaward');let b=subBoss;fb1002Meteor(b);
+ o['Furious rain has three groups of nine']=groundTargetingFx.length===27&&[0,1,2].every(z=>groundTargetingFx.filter(q=>q._meteor1002.zone===z).length===9);
+ o['meteor groups are separated in time']=new Set(groundTargetingFx.map(q=>q.delay)).size===3;
+ const jet=spawnEnemy('golem',worldWidth()/2,180,{});o['old golem names resolve to the generated fire jet']=jet._fireJet1002&&jet._volc==='lance';
+ reset(3);run.forgeElems={fire:1,ice:1};o['Forge only offers discovered elements']=forgeDiscovered().length===2&&!forgeDiscovered().includes('dark');
+ spawnSubBoss__inner('frostcruiser');b=subBoss;b.enter=false;b._noHit=false;mr27Init(b);
+ o['new Frost Cruiser has independent guns and missile racks']=b._mr27.skin==='frost1002'&&b._mr27.parts.length===4;
+ o['all four barrel positions are finite']= ['L0','L1','R0','R1'].every(s=>Number.isFinite(shipBossMount(b,s).x+shipBossMount(b,s).y));
+ const part=mr27Part(b,'gunL'),p=mr27Shape(b,'gunL'),hp=part.hp;mr27Damage(b,2,p.x,p.y);o['new module geometry routes real damage']=part.hp===hp-2;
+ b._s3Nuclear={mode:'fire',introDone:true};b._er26.form='fire';er26Set(b,'elite-beam1002');er26Combat(b,.01);o['fire form fires four fire beams']=b._l23Beam.family==='inferno'&&b._l23Beam.slots.length===4;
+ reset(4);spawnBoss('stormsovereign');b=boss;b.enter=false;b._noHit=false;mr27Init(b);o['lightning barrel is a fifth weapon']=b._mr27.parts.some(p=>p.id==='lightning');
+ b.y=b._drawY=b._er26.home;stage4ShieldSyncNodes(b);stage4CoreTurretSpawnMissing(b,.5);b._s4war.shield.rearming=false;er26Set(b,'storm-lance1002');er26WarTick(b,.2);o['custom lightning attack advances the visible helper rig']=b._s4war.coreTurrets.every(d=>d.spawnT>=.2&&d.y>0);
+ const q=stage4WarfareShot(b,'ROCKET_L',Math.PI/2,3,'rocket',{shootable:true,hp:2}),t=fb1002MissileTarget(q);o['incoming missiles are Retina targets']=_lockTargets().includes(t);
+ retinaMissileDamage(t,3,{kind:'gmiss'});o['Retina interception destroys incoming missile']=q.dead;
+ for(const p of b._mr27.parts)p.dead=true;b._s4war.shield.rearming=false;er26WarTick(b,1.1);o['disarmed warship enters a ram']=!!b._mr27.ram1002;
+ reset(5);spawnBoss(curStage.boss);b=boss;b.enter=false;b._noHit=false;const h=b._hammer;h.balance0922=true;b._cin30Spoke=true;
+ h.state='whirl_turn';b._hammerModuleHit='hammer';_dmgBullet={kind:'gmiss'};hammerBossDamage(b,999);_dmgBullet=null;o['whirlwind charge cannot be interrupted']=h.state==='whirl_turn';
+ const hh=h.hammerHP;b._hammerModuleHit='hammer';_dmgBullet={kind:'spaceVolley'};const damage=hammerBossDamage(b,100);_dmgBullet=null;o['passive missiles cannot hit hammer']=damage===0&&h.hammerHP===hh;
+ b._hammerModuleHit='hammer';_dmgBullet={kind:'gmiss',tgt:null};const unguided=hammerBossDamage(b,100);_dmgBullet=null;o['unguided manual missiles cannot hit hammer']=unguided===0&&h.hammerHP===hh;
+ h.state='hammer';b._hammerModuleHit='hammer';_dmgBullet={kind:'gmiss',tgt:{kind:'hammer'}};hammerBossDamage(b,2);_dmgBullet=null;o['a deliberate Retina hammer lock can damage its core']=h.hammerHP===hh-2;
+ h.stormTarget={x:player.x,y:player.y};h.stormBounds={l:0,r:worldWidth(),bottom:hammerStormFloorY()};hammerStormImpact(b);o['spikes span full vertical playfield']=h.stormWaves.every(q=>q.height===PLAY.h&&q.y===PLAY.y+PLAY.h-6);
+ h.state='hammer';h.mode='hammer';h.phasePending=false;h.comboPending=false;h.regularBook1002=1;h.t=hammerIdleDuration(false)-1/120;hammerBossTick(b,1/60);o['ordinary attack book owns the frame when the idle timer ends']=h.state==='spin';
+ const e={type:'s7lamprey',_s7toxic:'s7lamprey',x:240,y:180,w:50,h:60,spin:.5,_bank:.7,_frBank:20,_spinA:2};ai27End(e,null);
+ o['ordinary enemy hulls never bank or spin']=e.spin===0&&e._bank===0&&e._frBank===0&&e._spinA===0;
+ e.spin=1;const mount=combatHardpoint(e,.2,.4);o['straight hull hardpoints stay welded']=mount.x===250&&mount.y===204;
+ e.dead=true;ai27End(e,null);o['death choreography retains its rotation']=e.spin===1;
+ return o;})())`,ctxv));
+ for(const [name,pass] of Object.entries(rows))ok(pass,name);
+ for(const a of JSON.parse(vm.runInContext('JSON.stringify(Object.values(FB1002_ART))',ctxv)))ok(fs.existsSync(path.join(__dirname,'..',a.path)),a.key+' generated asset exists');
+};

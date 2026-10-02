@@ -18,7 +18,7 @@ module.exports=function testArchmageStormRecovery(vm,ctxv,ok){
         hammerBossTick(boss,1);hammerBossTick(boss,.7);
         const count=Math.ceil((worldWidth()-PLAY.x*2)/96)+1;
         o[d+' complete world row']=h.state==='storm_split'&&h.stormWaves.length===count&&h.stormWaves.every(q=>q.ox===h.stormTarget.x&&q.oy===h.stormTarget.y&&!q.started);
-        o[d+' single bottom row']=h.stormWaves.every(q=>q.y===hammerStormFloorY()&&q.height===VH*.75);
+        o[d+' single bottom row']=h.stormWaves.every(q=>q.y===hammerStormFloorY()&&q.height===PLAY.h);
         o[d+' randomized permutation']=new Set(h.stormWaves.map(q=>q.delay)).size===count&&h.stormOrder.slice().sort((a,b)=>a-b).every((v,i)=>v===i);
         o[d+' original Retina size']=h.stormWaves.every(q=>q.retinaWidth===96&&q.radius===20);
         const rate=d==='furious'?2.8:d==='hard'?1.8:1;

@@ -14288,7 +14288,7 @@ function buildStagePlan(stageNum){
       {type:'pod',fx:.28},{type:'carrier',fx:.50},{type:'pod',fx:.72}
     ],.32));
     add(34.0,()=> encounterRipple([
-      {type:'skim',x:offLeftX(44),y:VH*.16},{type:'golem',fx:.50},
+      {type:'skim',x:offLeftX(44),y:VH*.16},{type:'firejet1002',fx:.50},
       {type:'skim',x:offRightX(44),y:VH*.28}
     ],.40));
     /* Volcano crown: the eight marked positions arrive as two four-unit files, never one crowded
@@ -34802,7 +34802,7 @@ function updatePlay(dt){
   updateMissileRush(dt);
   for(const ni of nukeImpacts) ni.t+=dt;
   if(nukeImpacts.length) nukeImpacts=nukeImpacts.filter(ni=>ni.t<ni.dur);
-  if(!(run.stage===6&&s6OpeningActive()))stageTimer+=dt*timeScale;
+  if(!(run.stage===6&&s6OpeningActive()))stageTimer+=dt;
   if(!player.dead){
     run._lifeCombatT=(run._lifeCombatT||0)+dt*timeScale;
     run._lifeThreat=Math.max(run._lifeThreat||0,(typeof playerArsenalScore==='function'?playerArsenalScore():0));
@@ -35217,7 +35217,7 @@ function updatePlay(dt){
     if(warnT>0){
       const _pw=warnT; warnT-=dt;
       /* One warning cue at trigger is enough; the countdown visuals carry the second beat. */
-      stageTimer-=dt*timeScale;   // hold stage progression during the alert
+      stageTimer-=dt;   // hold stage progression during the alert
       if(warnT<=0){
         /* a miniboss plays its own theme when one is registered as 'mini'+stage (Mike 0912: stage 2's Magma Ward
            -> fireboss.mp3); every other stage has none and falls back to the stage boss track, as before */
@@ -35246,7 +35246,7 @@ function updatePlay(dt){
       if(chance(lifeDropChance(.02))){ dropPowerup(rnd(camLeftX()+40,camRightX()-40), -10, 'life'); }
     }
     // trigger boss (via WARNING)
-    if(!bossWarned && stageTimer>=curStage.length && enemies.length<=7 && (run.stage!==6||!s6Wing||s6Wing.route&&(s6Wing.routeFightT||0)>=32) && (run.stage!==7||mapScroll>=(typeof s7mEndScroll==='function'?s7mEndScroll():levelScrollRange()-610)-8)){
+    if(!bossWarned && stageTimer>=curStage.length && (run.stage!==1||typeof damAssaultReady1002!=='function'||damAssaultReady1002()) && enemies.length<=7 && (run.stage!==6||!s6Wing||s6Wing.route&&(s6Wing.routeFightT||0)>=32) && (run.stage!==7||mapScroll>=(typeof s7mEndScroll==='function'?s7mEndScroll():levelScrollRange()-610)-8)){
       bossWarned=true; warnT=2.4; warnKind='boss';
       /* the new klaxon, with bossAlarm behind it. 2.60s TAME gate - a warning that can retrigger
          is not a warning. */
@@ -35996,7 +35996,7 @@ function updatePlay(dt){
   if(!_tslow && typeof enemySeparate==='function') enemySeparate(dt);
 
   // ---- boss ----
-  if(boss && !_tslow) updateBoss(dt);
+  if(boss && (!_tslow || boss.enter || (boss._ovIntro&&!boss._ovIntro.done))) updateBoss(dt);
 
   // ---- player bullets ----
   /* ATTRIBUTION, SET ONCE PER BULLET (drop 0807o). Every hitEnemy call this loop makes is
@@ -36736,7 +36736,7 @@ function updatePlay(dt){
     // collide powerup containers (shoot to break open)
     if(!b.dead){
       for(const p of powerups){
-        if(p.dead || (p.kind!=='crate'&&p.kind!=='capsule'&&p.kind!=='scrate'&&p.kind!=='mcrate'&&p.kind!=='hqspacebox')) continue;
+        if(p.dead || (p.kind!=='crate'&&p.kind!=='capsule'&&p.kind!=='scrate'&&p.kind!=='mcrate'&&p.kind!=='hqspacebox'&&!/^missileupbox_(super|ultra|uber)$/.test(p.kind))) continue;
         if(Math.abs(b.x-p.x)<(p.w/2+b.w/2) && Math.abs(b.y-p.y)<(p.h/2+b.h/2)){
           if(pierce){
             if(!b._hit) b._hit=[];
@@ -36954,7 +36954,7 @@ function updatePlay(dt){
         if(pb.kind==='beam'){ if(Math.abs(pb.x-b.x)<((pb.w||14)/2+b.w/2) && b.y<=(pb.bot!=null?pb.bot:player.y) && b.y>=(pb.top!=null?pb.top:PLAY.y)){ b.dead=true; if(b._s6Opening)s6OpeningMissileImpact(b);else if(b._s7warden)combatAtlasFx(b.x,b.y,'cfx_stage7_warden_projectiles',4,3,8,4,{life:.34,hpx:112,wpx:126,blend:'lighter'});else if(/^s5/.test(b.kind||''))combatAtlasFx(b.x,b.y,'cfx_stage5_xeno_projectiles',4,3,8,4,{life:.30,hpx:102,wpx:116,blend:'lighter'});else if(b.kind==='s1jungleMissile') s1CombatImpact(b.x,b.y,false,46); else if(run.stage===4&&(boss&&boss._s4war||subBoss&&subBoss._s4war))stage4InterceptFeedback(b);else explode(b.x,b.y,7,'red'); break; } }
         else if(Math.abs(pb.x-b.x)<((pb.w||4)/2+b.w/2) && Math.abs(pb.y-b.y)<((pb.h||8)/2+b.h/2)){ b.dead=true; if(b._s6Opening)s6OpeningMissileImpact(b);else if(b._s7warden)combatAtlasFx(b.x,b.y,'cfx_stage7_warden_projectiles',4,3,8,4,{life:.34,hpx:112,wpx:126,blend:'lighter'});else if(/^s5/.test(b.kind||''))combatAtlasFx(b.x,b.y,'cfx_stage5_xeno_projectiles',4,3,8,4,{life:.30,hpx:102,wpx:116,blend:'lighter'});else if(b.kind==='s1jungleMissile') s1CombatImpact(b.x,b.y,false,46); else explode(b.x,b.y,7,'red'); if(!pb.pierce) pb.dead=true; break; }
       }
-      if(b.dead) continue;
+      if(b.dead){if(typeof ordnanceBreak1002==='function')ordnanceBreak1002(b);continue;}
     }
     if(b.kind==='omegawarhead'){
       /* THREE LIVES: inbound -> deflected -> or never dealt with, and then it rises.
@@ -38526,7 +38526,7 @@ function hammerBossDamage(b,dmg){
   if(h.state==='storm_stun')return dmg*2;
   if(h.mode==='storm'&&hit==='hammer'){markHit(b);return dmg;}
   if(h.state==='giant_dive'){if(hammerMissile(_dmgBullet)){hammerDiveCounter(b);return dmg;}return 0;}
-  if(h.state==='whirlwind'||h.state==='whirl_turn'){
+  if(h.state==='whirlwind'){
     // A whole volley/beam tick must not count as several separate impacts at once.
     if((hit==='hammer'||b._hammerTime)&&dmg>0&&(h.whirlHitCd||0)<=0){h.whirlHitCd=.12;h.whirlHits=(h.whirlHits||0)+(hammerMissile(_dmgBullet)?2:1);h.hammerHP-=dmg;
       if(h.whirlHits>=(hammerFurious()?8:hammerHard()?6:4)||h.hammerHP<=0)hammerWhirlDisarm(b);}
@@ -38743,7 +38743,7 @@ function hammerRecoveryBarDraw(x,y,w,h,inWorld){const b=typeof boss!=='undefined
   ctx.restore();
 }
 
-function hammerStormFloorY(){return PLAY.y+PLAY.h-76;}
+function hammerStormFloorY(){return PLAY.y+PLAY.h-6;}
 function hammerStormTarget(b){const h=b._hammer;
   h.stormTarget={x:clamp(player.x,camLeftX()+65,camRightX()-65),y:clamp(player.y,PLAY.y+160,hammerStormFloorY())};
   // The eruption belongs to the whole map, not the camera window sampled by the slam.
@@ -38762,7 +38762,7 @@ function hammerStormImpact(b){const h=b._hammer,o=h.stormTarget,B=h.stormBounds,
   h.stormOrder=order;
   for(let i=0;i<n;i++){
     const x=B.l+spacing*i;
-    h.stormWaves.push({slot:i,x,y:B.bottom,ox:o.x,oy:o.y,t:0,split:.35,delay:order.indexOf(i)*cadence,warm,riseRate,active:1.14+.38/riseRate,radius:20,retinaWidth,height:VH*.75,started:false});
+    h.stormWaves.push({slot:i,x,y:B.bottom,ox:o.x,oy:o.y,t:0,split:.35,delay:order.indexOf(i)*cadence,warm,riseRate,active:1.14+.38/riseRate,radius:20,retinaWidth,height:PLAY.h,started:false});
   }
   h.stormCycle++;h.leapFx=.01;h.leapFxX=o.x;h.leapFxY=o.y;
   explode(o.x,o.y,62,'blue');shake=Math.max(shake,10);if(Audio.SFX.hammerImpact)Audio.SFX.hammerImpact();
@@ -77921,7 +77921,7 @@ function drawLoadout(dt){
   const B=frc(P.pool,W,H);let opts=[];
   /* One weapon at a time gives its badges and states readable room on the authored
      Loadout plate. D-pad L/R chooses a weapon; U/D traverses BASE and the two element pages. */
-  const allW=WEAPONS.map((_,i)=>i),elements=Object.keys(INFUSIONS),visible=1;
+  const allW=WEAPONS.map((_,i)=>i),elements=forgeDiscovered(),visible=1;
   L.catSel=clamp(L.catSel|0,0,allW.length-1);
   L.catCol=clamp(L.catCol|0,0,elements.length);
   L.cat=clamp(L.cat|0,0,allW.length-1);

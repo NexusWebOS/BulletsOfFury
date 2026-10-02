@@ -1,0 +1,10 @@
+{
+  "lead": {
+    "originalName": "lmfao.wav",
+    "sha256": "7dafc1803bd779d12adecd09bc9703695b241fe275280f40dcb0f81807c64268"
+  },
+  "extras": {
+    "originalName": "extras.wav",
+    "sha256": "d897eae2b17857acd8162efe93a9afc981a46457e18f3fdf7eb74657b063be1a"
+  }
+}

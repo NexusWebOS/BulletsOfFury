@@ -1,0 +1,945 @@
+{
+  "checks": [
+    {
+      "ok": true,
+      "name": "Freezer locked Ice Breath name/icon"
+    },
+    {
+      "ok": true,
+      "name": "cannot change Ice Breath before Level2 clear"
+    },
+    {
+      "ok": true,
+      "name": "Freezer special does not halve campaign progression"
+    },
+    {
+      "ok": true,
+      "name": "Ice Breath form lock opens after Level2"
+    },
+    {
+      "ok": true,
+      "name": "dam bombers precede chopper"
+    },
+    {
+      "ok": true,
+      "name": "all four dam waves release the chopper warning"
+    },
+    {
+      "ok": true,
+      "name": "Ultra/Uber crates open from actual ordinary bullets"
+    },
+    {
+      "ok": true,
+      "name": "retired golem resolves to generated fire jet"
+    },
+    {
+      "ok": true,
+      "name": "Furious magma retina pattern has three groups of nine"
+    },
+    {
+      "ok": true,
+      "name": "shooting magma ball invokes authored explosion/audio"
+    },
+    {
+      "ok": true,
+      "name": "frostcruiser modular weapons normal"
+    },
+    {
+      "ok": true,
+      "name": "new generated miniboss hull normal"
+    },
+    {
+      "ok": true,
+      "name": "finite modular barrel mounts normal"
+    },
+    {
+      "ok": true,
+      "name": "cryospear modular weapons normal"
+    },
+    {
+      "ok": true,
+      "name": "rapid visible cold bullets normal"
+    },
+    {
+      "ok": true,
+      "name": "stormsovereign modular weapons normal"
+    },
+    {
+      "ok": true,
+      "name": "lightning barrel destroyable normal"
+    },
+    {
+      "ok": true,
+      "name": "materialized boss helpers release real rockets normal"
+    },
+    {
+      "ok": true,
+      "name": "Retina destroys boss missile normal"
+    },
+    {
+      "ok": true,
+      "name": "weaponless boss rams normal"
+    },
+    {
+      "ok": true,
+      "name": "frostcruiser modular weapons hard"
+    },
+    {
+      "ok": true,
+      "name": "new generated miniboss hull hard"
+    },
+    {
+      "ok": true,
+      "name": "finite modular barrel mounts hard"
+    },
+    {
+      "ok": true,
+      "name": "cryospear modular weapons hard"
+    },
+    {
+      "ok": true,
+      "name": "rapid visible cold bullets hard"
+    },
+    {
+      "ok": true,
+      "name": "stormsovereign modular weapons hard"
+    },
+    {
+      "ok": true,
+      "name": "lightning barrel destroyable hard"
+    },
+    {
+      "ok": true,
+      "name": "materialized boss helpers release real rockets hard"
+    },
+    {
+      "ok": true,
+      "name": "Retina destroys boss missile hard"
+    },
+    {
+      "ok": true,
+      "name": "weaponless boss rams hard"
+    },
+    {
+      "ok": true,
+      "name": "frostcruiser modular weapons furious"
+    },
+    {
+      "ok": true,
+      "name": "new generated miniboss hull furious"
+    },
+    {
+      "ok": true,
+      "name": "finite modular barrel mounts furious"
+    },
+    {
+      "ok": true,
+      "name": "cryospear modular weapons furious"
+    },
+    {
+      "ok": true,
+      "name": "rapid visible cold bullets furious"
+    },
+    {
+      "ok": true,
+      "name": "stormsovereign modular weapons furious"
+    },
+    {
+      "ok": true,
+      "name": "lightning barrel destroyable furious"
+    },
+    {
+      "ok": true,
+      "name": "materialized boss helpers release real rockets furious"
+    },
+    {
+      "ok": true,
+      "name": "Retina destroys boss missile furious"
+    },
+    {
+      "ok": true,
+      "name": "weaponless boss rams furious"
+    },
+    {
+      "ok": true,
+      "name": "one continuous neutral/bomb/new form frostcruiser"
+    },
+    {
+      "ok": true,
+      "name": "one continuous neutral/bomb/new form cryospear"
+    },
+    {
+      "ok": true,
+      "name": "straight smooth s7lamprey normal"
+    },
+    {
+      "ok": true,
+      "name": "finite real attack s7lamprey normal"
+    },
+    {
+      "ok": true,
+      "name": "actual straight hull blits s7lamprey normal"
+    },
+    {
+      "ok": true,
+      "name": "straight smooth s7serpent normal"
+    },
+    {
+      "ok": true,
+      "name": "finite real attack s7serpent normal"
+    },
+    {
+      "ok": true,
+      "name": "actual straight hull blits s7serpent normal"
+    },
+    {
+      "ok": true,
+      "name": "straight smooth s7sampler normal"
+    },
+    {
+      "ok": true,
+      "name": "finite real attack s7sampler normal"
+    },
+    {
+      "ok": true,
+      "name": "actual straight hull blits s7sampler normal"
+    },
+    {
+      "ok": true,
+      "name": "straight smooth s8interceptor normal"
+    },
+    {
+      "ok": true,
+      "name": "finite real attack s8interceptor normal"
+    },
+    {
+      "ok": true,
+      "name": "actual straight hull blits s8interceptor normal"
+    },
+    {
+      "ok": true,
+      "name": "straight smooth s8bomber normal"
+    },
+    {
+      "ok": true,
+      "name": "finite real attack s8bomber normal"
+    },
+    {
+      "ok": true,
+      "name": "actual straight hull blits s8bomber normal"
+    },
+    {
+      "ok": true,
+      "name": "straight smooth s8needlejet normal"
+    },
+    {
+      "ok": true,
+      "name": "finite real attack s8needlejet normal"
+    },
+    {
+      "ok": true,
+      "name": "actual straight hull blits s8needlejet normal"
+    },
+    {
+      "ok": true,
+      "name": "straight smooth s8gunship normal"
+    },
+    {
+      "ok": true,
+      "name": "finite real attack s8gunship normal"
+    },
+    {
+      "ok": true,
+      "name": "actual straight hull blits s8gunship normal"
+    },
+    {
+      "ok": true,
+      "name": "straight smooth s7lamprey hard"
+    },
+    {
+      "ok": true,
+      "name": "finite real attack s7lamprey hard"
+    },
+    {
+      "ok": true,
+      "name": "actual straight hull blits s7lamprey hard"
+    },
+    {
+      "ok": true,
+      "name": "straight smooth s7serpent hard"
+    },
+    {
+      "ok": true,
+      "name": "finite real attack s7serpent hard"
+    },
+    {
+      "ok": true,
+      "name": "actual straight hull blits s7serpent hard"
+    },
+    {
+      "ok": true,
+      "name": "straight smooth s7sampler hard"
+    },
+    {
+      "ok": true,
+      "name": "finite real attack s7sampler hard"
+    },
+    {
+      "ok": true,
+      "name": "actual straight hull blits s7sampler hard"
+    },
+    {
+      "ok": true,
+      "name": "straight smooth s8interceptor hard"
+    },
+    {
+      "ok": true,
+      "name": "finite real attack s8interceptor hard"
+    },
+    {
+      "ok": true,
+      "name": "actual straight hull blits s8interceptor hard"
+    },
+    {
+      "ok": true,
+      "name": "straight smooth s8bomber hard"
+    },
+    {
+      "ok": true,
+      "name": "finite real attack s8bomber hard"
+    },
+    {
+      "ok": true,
+      "name": "actual straight hull blits s8bomber hard"
+    },
+    {
+      "ok": true,
+      "name": "straight smooth s8needlejet hard"
+    },
+    {
+      "ok": true,
+      "name": "finite real attack s8needlejet hard"
+    },
+    {
+      "ok": true,
+      "name": "actual straight hull blits s8needlejet hard"
+    },
+    {
+      "ok": true,
+      "name": "straight smooth s8gunship hard"
+    },
+    {
+      "ok": true,
+      "name": "finite real attack s8gunship hard"
+    },
+    {
+      "ok": true,
+      "name": "actual straight hull blits s8gunship hard"
+    },
+    {
+      "ok": true,
+      "name": "straight smooth s7lamprey furious"
+    },
+    {
+      "ok": true,
+      "name": "finite real attack s7lamprey furious"
+    },
+    {
+      "ok": true,
+      "name": "actual straight hull blits s7lamprey furious"
+    },
+    {
+      "ok": true,
+      "name": "straight smooth s7serpent furious"
+    },
+    {
+      "ok": true,
+      "name": "finite real attack s7serpent furious"
+    },
+    {
+      "ok": true,
+      "name": "actual straight hull blits s7serpent furious"
+    },
+    {
+      "ok": true,
+      "name": "straight smooth s7sampler furious"
+    },
+    {
+      "ok": true,
+      "name": "finite real attack s7sampler furious"
+    },
+    {
+      "ok": true,
+      "name": "actual straight hull blits s7sampler furious"
+    },
+    {
+      "ok": true,
+      "name": "straight smooth s8interceptor furious"
+    },
+    {
+      "ok": true,
+      "name": "finite real attack s8interceptor furious"
+    },
+    {
+      "ok": true,
+      "name": "actual straight hull blits s8interceptor furious"
+    },
+    {
+      "ok": true,
+      "name": "straight smooth s8bomber furious"
+    },
+    {
+      "ok": true,
+      "name": "finite real attack s8bomber furious"
+    },
+    {
+      "ok": true,
+      "name": "actual straight hull blits s8bomber furious"
+    },
+    {
+      "ok": true,
+      "name": "straight smooth s8needlejet furious"
+    },
+    {
+      "ok": true,
+      "name": "finite real attack s8needlejet furious"
+    },
+    {
+      "ok": true,
+      "name": "actual straight hull blits s8needlejet furious"
+    },
+    {
+      "ok": true,
+      "name": "straight smooth s8gunship furious"
+    },
+    {
+      "ok": true,
+      "name": "finite real attack s8gunship furious"
+    },
+    {
+      "ok": true,
+      "name": "actual straight hull blits s8gunship furious"
+    },
+    {
+      "ok": true,
+      "name": "other droid hulls draw straight without losing independent state"
+    },
+    {
+      "ok": true,
+      "name": "ordinary Normal fight naturally uses throws orbital jumps and spiked ball"
+    },
+    {
+      "ok": true,
+      "name": "regular Hammer taunt follows transformation"
+    },
+    {
+      "ok": true,
+      "name": "dialogue immediately begins jump attack"
+    },
+    {
+      "ok": true,
+      "name": "passive volley cannot damage hammer"
+    },
+    {
+      "ok": true,
+      "name": "unguided manual missile cannot damage hammer"
+    },
+    {
+      "ok": true,
+      "name": "whirlwind windup cannot be stunned"
+    },
+    {
+      "ok": true,
+      "name": "Hammer bottom row spans full play height"
+    },
+    {
+      "ok": true,
+      "name": "real curved Retina missile damages the hammer"
+    },
+    {
+      "ok": true,
+      "name": "new modular chaingun plays a sustained real attack"
+    },
+    {
+      "ok": true,
+      "name": "rage uses two jumps then a full evasion recharge window"
+    },
+    {
+      "ok": true,
+      "name": "unique Hammer death event sequence"
+    },
+    {
+      "ok": true,
+      "name": "no page or console errors"
+    }
+  ],
+  "scenes": [
+    {
+      "kind": "s7lamprey",
+      "diff": "normal",
+      "peakShots": 3,
+      "maxStep": 1.0833333333333144,
+      "ai": {
+        "t": 2.749999999999995,
+        "cd": 2.4333333333333345,
+        "phase": "rest",
+        "seq": 1,
+        "home": 388,
+        "age": 1.6833333333333322,
+        "aim": {
+          "x": 340,
+          "y": 402
+        },
+        "warm": 0.92,
+        "fired": 3
+      }
+    },
+    {
+      "kind": "s7serpent",
+      "diff": "normal",
+      "peakShots": 3,
+      "maxStep": 1.2898104942630348,
+      "ai": {
+        "t": 2.749999999999995,
+        "cd": 2.4333333333333345,
+        "phase": "rest",
+        "seq": 1,
+        "home": 388,
+        "age": 1.6833333333333322,
+        "aim": {
+          "x": 340,
+          "y": 402
+        },
+        "warm": 0.92,
+        "fired": 3
+      }
+    },
+    {
+      "kind": "s7sampler",
+      "diff": "normal",
+      "peakShots": 3,
+      "maxStep": 1.2898104942630348,
+      "ai": {
+        "t": 2.749999999999995,
+        "cd": 2.4333333333333345,
+        "phase": "rest",
+        "seq": 1,
+        "home": 388,
+        "age": 1.6833333333333322,
+        "aim": {
+          "x": 340,
+          "y": 402
+        },
+        "warm": 0.92,
+        "fired": 3
+      }
+    },
+    {
+      "kind": "s8interceptor",
+      "diff": "normal",
+      "peakShots": 6,
+      "maxStep": 0.9166666666666572,
+      "ai": {
+        "t": 2.749999999999995,
+        "cd": -1.7336163074420017,
+        "shot": 0,
+        "home": 340,
+        "seq": 0,
+        "tell": {
+          "t": 1.7499999999999987,
+          "x": 340,
+          "y": 402,
+          "fired": 3
+        }
+      }
+    },
+    {
+      "kind": "s8bomber",
+      "diff": "normal",
+      "peakShots": 3,
+      "maxStep": 1.3166666666666629,
+      "ai": {
+        "t": 2.749999999999995,
+        "cd": -1.6253784191246905,
+        "shot": 0,
+        "home": 340,
+        "seq": 0,
+        "tell": {
+          "t": 1.6333333333333324,
+          "x": 340,
+          "y": 402,
+          "fired": 3
+        }
+      }
+    },
+    {
+      "kind": "s8needlejet",
+      "diff": "normal",
+      "peakShots": 3,
+      "maxStep": 1.26666666666668,
+      "ai": {
+        "t": 2.749999999999995,
+        "cd": -1.6505630918902519,
+        "shot": 0,
+        "home": 340,
+        "seq": 0,
+        "tell": {
+          "t": 1.6666666666666656,
+          "x": 340,
+          "y": 402,
+          "fired": 3
+        }
+      }
+    },
+    {
+      "kind": "s8gunship",
+      "diff": "normal",
+      "peakShots": 7,
+      "maxStep": 0.46666666666666856,
+      "ai": {
+        "t": 2.749999999999995,
+        "cd": -1.4917377549144166,
+        "shot": 0,
+        "home": 340,
+        "seq": 0,
+        "tell": {
+          "t": 1.4999999999999996,
+          "x": 340,
+          "y": 402,
+          "fired": 3
+        }
+      }
+    },
+    {
+      "kind": "s7lamprey",
+      "diff": "hard",
+      "peakShots": 3,
+      "maxStep": 1.42999999999995,
+      "ai": {
+        "t": 2.749999999999995,
+        "cd": 1.783333333333335,
+        "phase": "rest",
+        "seq": 1,
+        "home": 388,
+        "age": 1.5333333333333328,
+        "aim": {
+          "x": 340,
+          "y": 402
+        },
+        "warm": 0.78,
+        "fired": 3
+      }
+    },
+    {
+      "kind": "s7serpent",
+      "diff": "hard",
+      "peakShots": 3,
+      "maxStep": 1.7025498524271812,
+      "ai": {
+        "t": 2.749999999999995,
+        "cd": 1.783333333333335,
+        "phase": "rest",
+        "seq": 1,
+        "home": 388,
+        "age": 1.5333333333333328,
+        "aim": {
+          "x": 340,
+          "y": 402
+        },
+        "warm": 0.78,
+        "fired": 3
+      }
+    },
+    {
+      "kind": "s7sampler",
+      "diff": "hard",
+      "peakShots": 3,
+      "maxStep": 1.7025498524271812,
+      "ai": {
+        "t": 2.749999999999995,
+        "cd": 1.783333333333335,
+        "phase": "rest",
+        "seq": 1,
+        "home": 388,
+        "age": 1.5333333333333328,
+        "aim": {
+          "x": 340,
+          "y": 402
+        },
+        "warm": 0.78,
+        "fired": 3
+      }
+    },
+    {
+      "kind": "s8interceptor",
+      "diff": "hard",
+      "peakShots": 6,
+      "maxStep": 1.2099999999999795,
+      "ai": {
+        "t": 2.749999999999995,
+        "cd": -1.489842424036197,
+        "shot": 0,
+        "home": 340,
+        "seq": 0,
+        "tell": {
+          "t": 1.4999999999999996,
+          "x": 340,
+          "y": 402,
+          "fired": 3
+        }
+      }
+    },
+    {
+      "kind": "s8bomber",
+      "diff": "hard",
+      "peakShots": 3,
+      "maxStep": 0.9239999999999782,
+      "ai": {
+        "t": 2.749999999999995,
+        "cd": -1.4066435882169137,
+        "shot": 0,
+        "home": 340,
+        "seq": 0,
+        "tell": {
+          "t": 1.4166666666666665,
+          "x": 340,
+          "y": 402,
+          "fired": 3
+        }
+      }
+    },
+    {
+      "kind": "s8needlejet",
+      "diff": "hard",
+      "peakShots": 3,
+      "maxStep": 1.6720000000000255,
+      "ai": {
+        "t": 2.749999999999995,
+        "cd": 2.65,
+        "shot": 0,
+        "home": 340,
+        "seq": 1,
+        "tell": null
+      }
+    },
+    {
+      "kind": "s8gunship",
+      "diff": "hard",
+      "peakShots": 6,
+      "maxStep": 1.539999999999992,
+      "ai": {
+        "t": 2.749999999999995,
+        "cd": -1.1743933711724284,
+        "shot": 0,
+        "home": 340,
+        "seq": 0,
+        "tell": {
+          "t": 1.183333333333334,
+          "x": 340,
+          "y": 402,
+          "fired": 3
+        }
+      }
+    },
+    {
+      "kind": "s7lamprey",
+      "diff": "furious",
+      "peakShots": 3,
+      "maxStep": 1.8199999999999932,
+      "ai": {
+        "t": 2.749999999999995,
+        "cd": 1.2666666666666688,
+        "phase": "rest",
+        "seq": 1,
+        "home": 388,
+        "age": 1.4166666666666665,
+        "aim": {
+          "x": 340,
+          "y": 402
+        },
+        "warm": 0.65,
+        "fired": 3
+      }
+    },
+    {
+      "kind": "s7serpent",
+      "diff": "furious",
+      "peakShots": 3,
+      "maxStep": 1.8199999999999932,
+      "ai": {
+        "t": 2.749999999999995,
+        "cd": 1.2666666666666688,
+        "phase": "rest",
+        "seq": 1,
+        "home": 388,
+        "age": 1.4166666666666665,
+        "aim": {
+          "x": 340,
+          "y": 402
+        },
+        "warm": 0.65,
+        "fired": 3
+      }
+    },
+    {
+      "kind": "s7sampler",
+      "diff": "furious",
+      "peakShots": 3,
+      "maxStep": 2.166881630361923,
+      "ai": {
+        "t": 2.749999999999995,
+        "cd": 1.2666666666666688,
+        "phase": "rest",
+        "seq": 1,
+        "home": 388,
+        "age": 1.4166666666666665,
+        "aim": {
+          "x": 340,
+          "y": 402
+        },
+        "warm": 0.65,
+        "fired": 3
+      }
+    },
+    {
+      "kind": "s8interceptor",
+      "diff": "furious",
+      "peakShots": 6,
+      "maxStep": 1.539999999999992,
+      "ai": {
+        "t": 2.749999999999995,
+        "cd": -1.423808162439431,
+        "shot": 0,
+        "home": 340,
+        "seq": 0,
+        "tell": {
+          "t": 1.4333333333333331,
+          "x": 340,
+          "y": 402,
+          "fired": 3
+        }
+      }
+    },
+    {
+      "kind": "s8bomber",
+      "diff": "furious",
+      "peakShots": 3,
+      "maxStep": 2.211999999999989,
+      "ai": {
+        "t": 2.749999999999995,
+        "cd": 2.1000000000000005,
+        "shot": 0,
+        "home": 340,
+        "seq": 1,
+        "tell": null
+      }
+    },
+    {
+      "kind": "s8needlejet",
+      "diff": "furious",
+      "peakShots": 2,
+      "maxStep": 2.1280000000000143,
+      "ai": {
+        "t": 2.749999999999995,
+        "cd": -1.3195511551713295,
+        "shot": 0,
+        "home": 340,
+        "seq": 0,
+        "tell": {
+          "t": 1.2500000000000004,
+          "x": 340,
+          "y": 402,
+          "fired": 3
+        }
+      }
+    },
+    {
+      "kind": "s8gunship",
+      "diff": "furious",
+      "peakShots": 7,
+      "maxStep": 0.7839999999999918,
+      "ai": {
+        "t": 2.749999999999995,
+        "cd": 2.3,
+        "shot": 0,
+        "home": 340,
+        "seq": 1,
+        "tell": null
+      }
+    }
+  ],
+  "clock": [
+    {
+      "t": 0,
+      "map": 0,
+      "x": 340,
+      "y": 402
+    },
+    {
+      "t": 1.0000000000000013,
+      "map": 39.99999999999999,
+      "x": 340,
+      "y": 402
+    }
+  ],
+  "regularHammer": [
+    "hammer",
+    "warn",
+    "leap",
+    "recover",
+    "leap_reset",
+    "hammer",
+    "warn",
+    "leap",
+    "recover",
+    "back",
+    "shield",
+    "curl",
+    "ball",
+    "uncurl",
+    "hammer",
+    "spin",
+    "throw",
+    "hammer_catch",
+    "hammer",
+    "giant_idle",
+    "giant_windup",
+    "giant_rise",
+    "giant_warn",
+    "giant_dive",
+    "giant_sweep",
+    "giant_recover",
+    "leap_reset",
+    "hammer",
+    "whirl_warn",
+    "whirlwind",
+    "whirl_turn",
+    "whirlwind"
+  ],
+  "rage": {
+    "states": [
+      "warn",
+      "leap",
+      "recover",
+      "warn",
+      "leap",
+      "recover",
+      "recharge1002",
+      "warn"
+    ],
+    "rest": 7.666666666666645,
+    "roll": 5,
+    "somersault": 7
+  },
+  "errors": [],
+  "baseline": {
+    "assertions": 6247,
+    "failing_names": []
+  },
+  "suite": {
+    "assertions": 6287,
+    "failing_names": [],
+    "final_banner": true
+  },
+  "scope": "Controlled real Chromium fixtures; not campaign wins or verified final balance."
+}

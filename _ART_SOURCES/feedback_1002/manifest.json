@@ -1,0 +1,400 @@
+{
+  "generator": "built-in image_gen",
+  "assets": {
+    "firejet": "exec-5bd43869-36d4-4e6d-9894-4e4b293c47e4.png",
+    "frostkit": "exec-fcbee964-b3c8-4404-bd3b-9c90ef6d34f2.png",
+    "icebreath": "exec-fa816499-319e-4f7c-ac8d-fb51cd76b485.png",
+    "chaingun": "exec-bbf3cccc-0a0c-4db5-b20c-74fbb65d9978.png",
+    "deathkit": "exec-8e56519c-b7d1-49b2-b7fa-68c5e4649813.png",
+    "electrical": "exec-47d5c554-259a-4734-ac6b-b503f5f0535c.png",
+    "lightning": "exec-55e013f5-5e3c-4a54-86e3-0c7ee77a344a.png",
+    "deathbody": "exec-fb760b06-1724-4bde-9dc5-6025357c426d.png",
+    "chaingun_v2": "exec-5b223e6f-e26f-4c78-b70d-b887cd7eab4c.png"
+  },
+  "art": {
+    "firejet": {
+      "key": "fb1002_firejet",
+      "path": "assets/game/feedback_1002/firejet.png",
+      "frames": [
+        [
+          0,
+          0,
+          1236,
+          1121
+        ]
+      ]
+    },
+    "icebreath": {
+      "key": "fb1002_icebreath",
+      "path": "assets/game/feedback_1002/icebreath.png",
+      "frames": [
+        [
+          0,
+          0,
+          1164,
+          868
+        ]
+      ]
+    },
+    "deathbody": {
+      "key": "fb1002_deathbody",
+      "path": "assets/game/feedback_1002/deathbody.png",
+      "frames": [
+        [
+          0,
+          0,
+          815,
+          1087
+        ]
+      ]
+    },
+    "frost_hull": {
+      "key": "fb1002_frost_hull",
+      "path": "assets/game/feedback_1002/frost_hull.png",
+      "frames": [
+        [
+          0,
+          0,
+          705,
+          640
+        ]
+      ]
+    },
+    "frost_gun": {
+      "key": "fb1002_frost_gun",
+      "path": "assets/game/feedback_1002/frost_gun.png",
+      "frames": [
+        [
+          0,
+          0,
+          228,
+          533
+        ]
+      ]
+    },
+    "frost_missile": {
+      "key": "fb1002_frost_missile",
+      "path": "assets/game/feedback_1002/frost_missile.png",
+      "frames": [
+        [
+          0,
+          0,
+          270,
+          436
+        ]
+      ]
+    },
+    "frost_core": {
+      "key": "fb1002_frost_core",
+      "path": "assets/game/feedback_1002/frost_core.png",
+      "frames": [
+        [
+          0,
+          0,
+          297,
+          310
+        ]
+      ]
+    },
+    "chaingun": {
+      "key": "fb1002_chaingun",
+      "path": "assets/game/feedback_1002/chaingun.png",
+      "frames": [
+        [
+          0,
+          0,
+          215,
+          438
+        ],
+        [
+          215,
+          0,
+          215,
+          438
+        ],
+        [
+          430,
+          0,
+          215,
+          438
+        ],
+        [
+          645,
+          0,
+          215,
+          438
+        ],
+        [
+          860,
+          0,
+          215,
+          438
+        ],
+        [
+          1075,
+          0,
+          215,
+          438
+        ],
+        [
+          1290,
+          0,
+          215,
+          438
+        ],
+        [
+          1505,
+          0,
+          215,
+          438
+        ]
+      ],
+      "pivot": [
+        111,
+        89
+      ],
+      "muzzle": [
+        111,
+        401
+      ]
+    },
+    "death_head": {
+      "key": "fb1002_death_head",
+      "path": "assets/game/feedback_1002/death_head.png",
+      "frames": [
+        [
+          0,
+          0,
+          298,
+          196
+        ],
+        [
+          298,
+          0,
+          298,
+          196
+        ],
+        [
+          596,
+          0,
+          298,
+          196
+        ],
+        [
+          894,
+          0,
+          298,
+          196
+        ]
+      ]
+    },
+    "hammer_portrait": {
+      "key": "fb1002_hammer_portrait",
+      "path": "assets/game/feedback_1002/hammer_portrait.png",
+      "frames": [
+        [
+          0,
+          0,
+          282,
+          186
+        ]
+      ]
+    },
+    "death_arm": {
+      "key": "fb1002_death_arm",
+      "path": "assets/game/feedback_1002/death_arm.png",
+      "frames": [
+        [
+          0,
+          0,
+          337,
+          808
+        ],
+        [
+          337,
+          0,
+          337,
+          808
+        ],
+        [
+          674,
+          0,
+          337,
+          808
+        ],
+        [
+          1011,
+          0,
+          337,
+          808
+        ]
+      ],
+      "pivot": [
+        107,
+        378
+      ]
+    },
+    "electrical": {
+      "key": "fb1002_electrical",
+      "path": "assets/game/feedback_1002/electrical.png",
+      "frames": [
+        [
+          0,
+          0,
+          322,
+          321
+        ],
+        [
+          322,
+          0,
+          322,
+          321
+        ],
+        [
+          644,
+          0,
+          322,
+          321
+        ],
+        [
+          966,
+          0,
+          322,
+          321
+        ],
+        [
+          1288,
+          0,
+          322,
+          321
+        ],
+        [
+          1610,
+          0,
+          322,
+          321
+        ],
+        [
+          1932,
+          0,
+          322,
+          321
+        ],
+        [
+          2254,
+          0,
+          322,
+          321
+        ],
+        [
+          2576,
+          0,
+          322,
+          321
+        ],
+        [
+          2898,
+          0,
+          322,
+          321
+        ],
+        [
+          3220,
+          0,
+          322,
+          321
+        ],
+        [
+          3542,
+          0,
+          322,
+          321
+        ],
+        [
+          3864,
+          0,
+          322,
+          321
+        ],
+        [
+          4186,
+          0,
+          322,
+          321
+        ],
+        [
+          4508,
+          0,
+          322,
+          321
+        ],
+        [
+          4830,
+          0,
+          322,
+          321
+        ]
+      ]
+    },
+    "lightning_gun": {
+      "key": "fb1002_lightning_gun",
+      "path": "assets/game/feedback_1002/lightning_gun.png",
+      "frames": [
+        [
+          0,
+          0,
+          215,
+          418
+        ],
+        [
+          215,
+          0,
+          215,
+          418
+        ],
+        [
+          430,
+          0,
+          215,
+          418
+        ],
+        [
+          645,
+          0,
+          215,
+          418
+        ]
+      ]
+    },
+    "lightning_beam": {
+      "key": "fb1002_lightning_beam",
+      "path": "assets/game/feedback_1002/lightning_beam.png",
+      "frames": [
+        [
+          0,
+          0,
+          272,
+          728
+        ],
+        [
+          272,
+          0,
+          272,
+          728
+        ],
+        [
+          544,
+          0,
+          272,
+          728
+        ],
+        [
+          816,
+          0,
+          272,
+          728
+        ]
+      ]
+    }
+  }
+}

@@ -2135,7 +2135,7 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   }catch(err){ _c2=String(err&&err.message||err); }
   ok(_c2===null, 'stage 2 survives a full 110s headless run without throwing'+(_c2?(' -> '+_c2):''));
   var _sv=_vk.filter(function(k){return _seen2[k];});
-  ok(_sv.length===12, 'the ENTIRE volcanic cast appeared in the run ('+_sv.length+'/12: '+_sv.join(',')+')');
+  ok(_sv.length===11, 'all eleven active volcanic roles appeared after retiring the golem ('+_sv.length+'/11: '+_sv.join(',')+')');
   ok(_sh2>0, 'volcanic units opened fire ('+_sh2+' enemy bullets peaked)');
   ok(vm.runInContext("enemies.every(function(e){return isFinite(e.x)&&isFinite(e.y);})", ctxv), 'no non-finite enemies after the stage-2 soak');
   /* also report the SHOOTER's state: a NaN round almost always means a NaN source, and this
@@ -13125,7 +13125,7 @@ console.log("=== 266. moving muzzle hardpoints and Stage-2 volcanic overhaul ===
       _s2plan266=_src266.slice(_s2a266,_s2b266),
       _plan266={old:_s2plan266.indexOf("spawnEnemy('el_em'")>=0||_s2plan266.indexOf("spawnEnemy('el_lr'")>=0,
         alias:['magmagun','spinner','dodger'].some(function(k){return _s2plan266.indexOf("spawnEnemy('"+k+"'")>=0;}),
-        fleet:['ash','skim','cinderwasp','magmaorb','basaltbomber','eye','lance','disc','cruc','carrier','miner','lavamaw','crawl','pod','golem'].every(function(k){return _s2plan266.indexOf("type:'"+k+"'")>=0;})};
+        fleet:['ash','skim','cinderwasp','magmaorb','basaltbomber','eye','lance','disc','cruc','carrier','miner','lavamaw','crawl','pod','firejet1002'].every(function(k){return _s2plan266.indexOf("type:'"+k+"'")>=0;})};
   ok(!_plan266.old&&!_plan266.alias&&_plan266.fleet,
      'Stage 2 fields its fifteen volcanic and new fire-jet types without rejected aliases');
 
@@ -15780,6 +15780,9 @@ require('./test_feedback_1001.cjs')(vm,ctxv,ok);
 require('./test_encounter_feedback_1001.cjs')(vm,ctxv,ok);
 require('./test_feedback_1001b.cjs')(vm,ctxv,ok);
 require('./test_launch_scale_1001c.cjs')(vm,ctxv,ok);
+require('./test_hama_vocals_1001.cjs')(vm,ctxv,ok);
+
+require('./test_feedback_1002.cjs')(vm,ctxv,ok);
 
 console.log('\n============================================');
 if (errors.length) { console.log('FAILED — ' + errors.length + ' error(s):'); errors.forEach(e => console.log('  ' + e)); process.exit(1); }

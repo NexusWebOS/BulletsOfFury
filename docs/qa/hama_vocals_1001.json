@@ -1,0 +1,922 @@
+{
+  "revision": "deep-vocoder-hooks-only-v3",
+  "mastering": {
+    "revision": "deep-vocoder-hooks-only-v3",
+    "vocalContent": [
+      "CANT TOUCH THIS",
+      "OH! OH-OH!"
+    ],
+    "removedVerseStemPeak": 0.0,
+    "voices": {
+      "extras_crew": {
+        "processor": "42-band fully wet vocoder with hard chromatic note correction",
+        "dryVoiceMix": 0,
+        "wetVoiceMix": 1,
+        "pitchShiftSemitones": -6,
+        "formantShiftSemitones": -3,
+        "retune": "instant after 30 ms note stability gate",
+        "voicedFrames": 1570,
+        "inputVoicedMedianHz": 132.9894182071185,
+        "carrierMedianHz": 92.4986056779086,
+        "carrierMidiNotes": [
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46
+        ],
+        "durationSamples": 700827,
+        "sampleRate": 22050
+      }
+    },
+    "events": 14,
+    "captions": 42,
+    "seconds": 180.01299319727892,
+    "peak": 0.731920063495636,
+    "clippedSamples": 0,
+    "rms": 0.08275631815195084,
+    "sourceHashes": {
+      "lead": {
+        "originalName": "lmfao.wav",
+        "sha256": "7dafc1803bd779d12adecd09bc9703695b241fe275280f40dcb0f81807c64268"
+      },
+      "extras": {
+        "originalName": "extras.wav",
+        "sha256": "d897eae2b17857acd8162efe93a9afc981a46457e18f3fdf7eb74657b063be1a"
+      }
+    },
+    "originalInstrumentalPreserved": true
+  },
+  "browser": {
+    "checks": [
+      {
+        "ok": true,
+        "name": "new recording is decoded and playing through HAMA music"
+      },
+      {
+        "ok": true,
+        "name": "recording captures the single real mixed audio stream"
+      },
+      {
+        "ok": true,
+        "name": "fight follows the single media clock (frame-lag samples recorded)"
+      },
+      {
+        "ok": true,
+        "name": "instrumental section keeps playing with removed verses"
+      },
+      {
+        "ok": true,
+        "name": "removed verses leave the singing captions clear"
+      },
+      {
+        "ok": true,
+        "name": "background hook is captioned in game"
+      },
+      {
+        "ok": true,
+        "name": "pause stops the whole vocal/music mix"
+      },
+      {
+        "ok": true,
+        "name": "resume continues from the same position"
+      },
+      {
+        "ok": true,
+        "name": "instrumental choreography retains both physical slam cues"
+      },
+      {
+        "ok": true,
+        "name": "only hook and recorded OH chant captions remain"
+      },
+      {
+        "ok": true,
+        "name": "track loops without a second voice player drifting"
+      },
+      {
+        "ok": true,
+        "name": "exit stops the vocal mix"
+      },
+      {
+        "ok": true,
+        "name": "HAMMER retains its separate remix"
+      },
+      {
+        "ok": true,
+        "name": "no page or console errors"
+      }
+    ],
+    "samples": [
+      {
+        "media": 0.360549,
+        "game": 0.355883,
+        "lines": [],
+        "rms": 0.0001971569544552465,
+        "paused": false
+      },
+      {
+        "media": 0.76318,
+        "game": 0.750991,
+        "lines": [],
+        "rms": 0.040868577403183816,
+        "paused": false
+      },
+      {
+        "media": 1.185175,
+        "game": 1.173673,
+        "lines": [],
+        "rms": 0.004576347013478131,
+        "paused": false
+      },
+      {
+        "media": 1.591576,
+        "game": 1.588198,
+        "lines": [],
+        "rms": 0.07183207536952071,
+        "paused": false
+      },
+      {
+        "media": 2.005291,
+        "game": 2.002527,
+        "lines": [],
+        "rms": 0.09877708386777426,
+        "paused": false
+      },
+      {
+        "media": 2.415386,
+        "game": 2.408535,
+        "lines": [],
+        "rms": 0.06403785973409978,
+        "paused": false
+      },
+      {
+        "media": 2.831981,
+        "game": 2.823698,
+        "lines": [],
+        "rms": 0.1409893416395059,
+        "paused": false
+      },
+      {
+        "media": 3.244346,
+        "game": 3.237869,
+        "lines": [],
+        "rms": 0.06110731357561187,
+        "paused": false
+      },
+      {
+        "media": 3.660026,
+        "game": 3.660026,
+        "lines": [],
+        "rms": 0.030625932015243572,
+        "paused": false
+      },
+      {
+        "media": 4.067669,
+        "game": 4.060255,
+        "lines": [],
+        "rms": 0.09155686043320972,
+        "paused": false
+      },
+      {
+        "media": 4.478637,
+        "game": 4.470069,
+        "lines": [],
+        "rms": 0.04814660319022154,
+        "paused": false
+      },
+      {
+        "media": 4.889529,
+        "game": 4.88502,
+        "lines": [],
+        "rms": 0.12102041946501804,
+        "paused": false
+      },
+      {
+        "media": 5.30915,
+        "game": 5.291553,
+        "lines": [],
+        "rms": 0.11626818991466144,
+        "paused": false
+      },
+      {
+        "media": 5.719078,
+        "game": 5.705633,
+        "lines": [],
+        "rms": 0.10476718553497509,
+        "paused": false
+      },
+      {
+        "media": 6.124776,
+        "game": 6.120693,
+        "lines": [],
+        "rms": 0.058189347965226186,
+        "paused": false
+      },
+      {
+        "media": 6.595888,
+        "game": 6.422622,
+        "lines": [],
+        "rms": 0.03643011491403943,
+        "paused": false
+      },
+      {
+        "media": 7.003876,
+        "game": 6.986357,
+        "lines": [],
+        "rms": 0.05691868141918032,
+        "paused": false
+      },
+      {
+        "media": 7.405358,
+        "game": 7.401342,
+        "lines": [],
+        "rms": 0.063432399980293,
+        "paused": false
+      },
+      {
+        "media": 7.831492,
+        "game": 7.826814,
+        "lines": [],
+        "rms": 0.018804675522798447,
+        "paused": false
+      },
+      {
+        "media": 8.233284,
+        "game": 8.222057,
+        "lines": [],
+        "rms": 0.025609917170392172,
+        "paused": false
+      },
+      {
+        "media": 8.640969,
+        "game": 8.636428,
+        "lines": [],
+        "rms": 0.07243435466693124,
+        "paused": false
+      },
+      {
+        "media": 9.052512,
+        "game": 9.04315,
+        "lines": [],
+        "rms": 0.033054832411465306,
+        "paused": false
+      },
+      {
+        "media": 9.466781,
+        "game": 9.457461,
+        "lines": [],
+        "rms": 0.0903036718591086,
+        "paused": false
+      },
+      {
+        "media": 9.863573,
+        "game": 9.852333,
+        "lines": [],
+        "rms": 0.034521574557229685,
+        "paused": false
+      },
+      {
+        "media": 10.277853,
+        "game": 10.27593,
+        "lines": [],
+        "rms": 0.13035943263610905,
+        "paused": false
+      },
+      {
+        "media": 10.687958,
+        "game": 10.670388,
+        "lines": [],
+        "rms": 0.12678210542652235,
+        "paused": false
+      },
+      {
+        "media": 11.088978,
+        "game": 11.085033,
+        "lines": [],
+        "rms": 0.05919566108116127,
+        "paused": false
+      },
+      {
+        "media": 11.504845,
+        "game": 11.490404,
+        "lines": [],
+        "rms": 0.05475020574321622,
+        "paused": false
+      },
+      {
+        "media": 11.901203,
+        "game": 11.885926,
+        "lines": [],
+        "rms": 0.01468955154855326,
+        "paused": false
+      },
+      {
+        "media": 12.308455,
+        "game": 12.300043,
+        "lines": [],
+        "rms": 0.0857628114912549,
+        "paused": false
+      },
+      {
+        "media": 12.731507,
+        "game": 12.726825,
+        "lines": [],
+        "rms": 0.18631803033245872,
+        "paused": false
+      },
+      {
+        "media": 13.139795,
+        "game": 13.122276,
+        "lines": [],
+        "rms": 0.060801886320425165,
+        "paused": false
+      },
+      {
+        "media": 13.548169,
+        "game": 13.535909,
+        "lines": [],
+        "rms": 0.014771087832534611,
+        "paused": false
+      },
+      {
+        "media": 13.9612,
+        "game": 13.949988,
+        "lines": [],
+        "rms": 0.05388340495918448,
+        "paused": false
+      },
+      {
+        "media": 14.384919,
+        "game": 14.373441,
+        "lines": [],
+        "rms": 0.040289887084894824,
+        "paused": false
+      },
+      {
+        "media": 14.792767,
+        "game": 14.788469,
+        "lines": [],
+        "rms": 0.12088258910477141,
+        "paused": false
+      },
+      {
+        "media": 15.202271,
+        "game": 15.19422,
+        "lines": [],
+        "rms": 0.026779685510406607,
+        "paused": false
+      },
+      {
+        "media": 15.681867,
+        "game": 15.673376,
+        "lines": [],
+        "rms": 0.12097883150672724,
+        "paused": false
+      },
+      {
+        "media": 16.086964,
+        "game": 16.068297,
+        "lines": [],
+        "rms": 0.1427217870707453,
+        "paused": false
+      },
+      {
+        "media": 16.494291,
+        "game": 16.482699,
+        "lines": [],
+        "rms": 0.04538740983501992,
+        "paused": false
+      },
+      {
+        "media": 16.915122,
+        "game": 16.910815,
+        "lines": [],
+        "rms": 0.007551749754810535,
+        "paused": false
+      },
+      {
+        "media": 17.321598,
+        "game": 17.304076,
+        "lines": [],
+        "rms": 0.04097172526693425,
+        "paused": false
+      },
+      {
+        "media": 17.725122,
+        "game": 17.718889,
+        "lines": [],
+        "rms": 0.02689509926105808,
+        "paused": false
+      },
+      {
+        "media": 18.136718,
+        "game": 18.133525,
+        "lines": [],
+        "rms": 0.08568908174851785,
+        "paused": false
+      },
+      {
+        "media": 18.550895,
+        "game": 18.539184,
+        "lines": [],
+        "rms": 0.13595438059705195,
+        "paused": false
+      },
+      {
+        "media": 18.960922,
+        "game": 18.95546,
+        "lines": [],
+        "rms": 0.07680155982856798,
+        "paused": false
+      },
+      {
+        "media": 19.37708,
+        "game": 19.360111,
+        "lines": [],
+        "rms": 0.08757628352216604,
+        "paused": false
+      },
+      {
+        "media": 19.78902,
+        "game": 19.771515,
+        "lines": [],
+        "rms": 0.059679386425877744,
+        "paused": false
+      },
+      {
+        "media": 20.202152,
+        "game": 20.187447,
+        "lines": [],
+        "rms": 0.08104848789083646,
+        "paused": false
+      },
+      {
+        "media": 20.615172,
+        "game": 20.602526,
+        "lines": [],
+        "rms": 0.07790056698315692,
+        "paused": false
+      },
+      {
+        "media": 21.131166,
+        "game": 21.027241,
+        "lines": [],
+        "rms": 0.05251555931647629,
+        "paused": false
+      },
+      {
+        "media": 21.531904,
+        "game": 21.52699,
+        "lines": [],
+        "rms": 0.05797383350491442,
+        "paused": false
+      },
+      {
+        "media": 21.95126,
+        "game": 21.940978,
+        "lines": [],
+        "rms": 0.12145615674246414,
+        "paused": false
+      },
+      {
+        "media": 22.373599,
+        "game": 22.357644,
+        "lines": [],
+        "rms": 0.1370073845816324,
+        "paused": false
+      },
+      {
+        "media": 22.790315,
+        "game": 22.764163,
+        "lines": [],
+        "rms": 0.02341373117562741,
+        "paused": false
+      },
+      {
+        "media": 23.207786,
+        "game": 23.203001,
+        "lines": [],
+        "rms": 0.079487115800822,
+        "paused": false
+      },
+      {
+        "media": 23.621456,
+        "game": 23.617057,
+        "lines": [],
+        "rms": 0.06900067789628786,
+        "paused": false
+      },
+      {
+        "media": 24.04683,
+        "game": 24.043087,
+        "lines": [],
+        "rms": 0.02778829249180376,
+        "paused": false
+      },
+      {
+        "media": 24.461042,
+        "game": 24.456983,
+        "lines": [],
+        "rms": 0.07466028738443461,
+        "paused": false
+      },
+      {
+        "media": 24.861562,
+        "game": 24.852127,
+        "lines": [],
+        "rms": 0.03506661635018047,
+        "paused": false
+      },
+      {
+        "media": 25.275712,
+        "game": 25.275712,
+        "lines": [],
+        "rms": 0.07434883235038685,
+        "paused": false
+      },
+      {
+        "media": 25.693954,
+        "game": 25.689265,
+        "lines": [],
+        "rms": 0.03398707284143806,
+        "paused": false
+      },
+      {
+        "media": 26.098392,
+        "game": 26.083963,
+        "lines": [],
+        "rms": 0.0866692304553911,
+        "paused": false
+      },
+      {
+        "media": 26.516051,
+        "game": 26.51157,
+        "lines": [],
+        "rms": 0.09045913872484,
+        "paused": false
+      },
+      {
+        "media": 26.921949,
+        "game": 26.906327,
+        "lines": [],
+        "rms": 0.07036104699359379,
+        "paused": false
+      },
+      {
+        "media": 27.327323,
+        "game": 27.320235,
+        "lines": [],
+        "rms": 0.11221776574597513,
+        "paused": false
+      },
+      {
+        "media": 27.733588,
+        "game": 27.727665,
+        "lines": [],
+        "rms": 0.02460410983604221,
+        "paused": false
+      },
+      {
+        "media": 28.151514,
+        "game": 28.140619,
+        "lines": [],
+        "rms": 0.04670294836905383,
+        "paused": false
+      },
+      {
+        "media": 28.560155,
+        "game": 28.555529,
+        "lines": [],
+        "rms": 0.02528199139180467,
+        "paused": false
+      },
+      {
+        "media": 28.963459,
+        "game": 28.950186,
+        "lines": [],
+        "rms": 0.06319547453974746,
+        "paused": false
+      },
+      {
+        "media": 29.38237,
+        "game": 29.373566,
+        "lines": [],
+        "rms": 0.09097539422095516,
+        "paused": false
+      },
+      {
+        "media": 29.791484,
+        "game": 29.787582,
+        "lines": [],
+        "rms": 0.09737649308757566,
+        "paused": false
+      },
+      {
+        "media": 30.197882,
+        "game": 30.183326,
+        "lines": [],
+        "rms": 0.06881646796793757,
+        "paused": false
+      },
+      {
+        "media": 30.617254,
+        "game": 30.608943,
+        "lines": [],
+        "rms": 0.04005399067689902,
+        "paused": false
+      },
+      {
+        "media": 31.027831,
+        "game": 31.022886,
+        "lines": [],
+        "rms": 0.10123174129109407,
+        "paused": false
+      },
+      {
+        "media": 31.43078,
+        "game": 31.418594,
+        "lines": [],
+        "rms": 0.06824958185601705,
+        "paused": false
+      },
+      {
+        "media": 31.837842,
+        "game": 31.832573,
+        "lines": [],
+        "rms": 0.13221034184548822,
+        "paused": false
+      },
+      {
+        "media": 32.253148,
+        "game": 32.239881,
+        "lines": [],
+        "rms": 0.08658064906978614,
+        "paused": false
+      },
+      {
+        "media": 32.662172,
+        "game": 32.654853,
+        "lines": [],
+        "rms": 0.047740737343309865,
+        "paused": false
+      },
+      {
+        "media": 33.076273,
+        "game": 33.076273,
+        "lines": [
+          "CANT TOUCH THIS"
+        ],
+        "rms": 0.08579491895318196,
+        "paused": false
+      },
+      {
+        "media": 33.566165,
+        "game": 33.560453,
+        "lines": [
+          "CANT TOUCH THIS"
+        ],
+        "rms": 0.010187111894561998,
+        "paused": false
+      },
+      {
+        "media": 34.029552,
+        "game": 34.018193,
+        "lines": [],
+        "rms": 0.04196535702370407,
+        "paused": false
+      },
+      {
+        "media": 34.437266,
+        "game": 34.433636,
+        "lines": [],
+        "rms": 0.05334158361430949,
+        "paused": false
+      },
+      {
+        "media": 34.863133,
+        "game": 34.859304,
+        "lines": [],
+        "rms": 0.058961625434262095,
+        "paused": false
+      },
+      {
+        "media": 35.267385,
+        "game": 35.254185,
+        "lines": [],
+        "rms": 0.09700131832442825,
+        "paused": false
+      },
+      {
+        "media": 35.67776,
+        "game": 35.67776,
+        "lines": [],
+        "rms": 0.07236090355579115,
+        "paused": false
+      },
+      {
+        "media": 36.089204,
+        "game": 36.071569,
+        "lines": [],
+        "rms": 0.10933582421062833,
+        "paused": false
+      },
+      {
+        "media": 36.502645,
+        "game": 36.486114,
+        "lines": [
+          "CANT TOUCH THIS"
+        ],
+        "rms": 0.02559411223021657,
+        "paused": false
+      },
+      {
+        "media": 36.914725,
+        "game": 36.901207,
+        "lines": [
+          "CANT TOUCH THIS"
+        ],
+        "rms": 0.06893872632329043,
+        "paused": false
+      },
+      {
+        "media": 37.323726,
+        "game": 37.316268,
+        "lines": [
+          "CANT TOUCH THIS"
+        ],
+        "rms": 0.06186448120370385,
+        "paused": false
+      },
+      {
+        "media": 37.747374,
+        "game": 37.741972,
+        "lines": [
+          "CANT TOUCH THIS"
+        ],
+        "rms": 0.03586812859352527,
+        "paused": false
+      },
+      {
+        "media": 38.162412,
+        "game": 38.157032,
+        "lines": [],
+        "rms": 0.16490009388302312,
+        "paused": false
+      },
+      {
+        "media": 38.567333,
+        "game": 38.551916,
+        "lines": [],
+        "rms": 0.11981446270009444,
+        "paused": false
+      },
+      {
+        "media": 38.97682,
+        "game": 38.974527,
+        "lines": [],
+        "rms": 0.03549025049207492,
+        "paused": false
+      },
+      {
+        "media": 39.394446,
+        "game": 39.389616,
+        "lines": [],
+        "rms": 0.05929476489494309,
+        "paused": false
+      },
+      {
+        "media": 39.807577,
+        "game": 39.803453,
+        "lines": [],
+        "rms": 0.04964950761155676,
+        "paused": false
+      },
+      {
+        "media": 40.211911,
+        "game": 40.21013,
+        "lines": [
+          "CANT TOUCH THIS"
+        ],
+        "rms": 0.03979053746125699,
+        "paused": false
+      },
+      {
+        "media": 40.630958,
+        "game": 40.625448,
+        "lines": [
+          "CANT TOUCH THIS"
+        ],
+        "rms": 0.11982622909091589,
+        "paused": false
+      },
+      {
+        "media": 41.045284,
+        "game": 41.039622,
+        "lines": [
+          "CANT TOUCH THIS"
+        ],
+        "rms": 0.044794622413176825,
+        "paused": false
+      },
+      {
+        "media": 41.449966,
+        "game": 41.433489,
+        "lines": [
+          "CANT TOUCH THIS"
+        ],
+        "rms": 0.021484213043508896,
+        "paused": false
+      },
+      {
+        "media": 41.873654,
+        "game": 41.860352,
+        "lines": [],
+        "rms": 0.1023652230829611,
+        "paused": false
+      },
+      {
+        "media": 42.281066,
+        "game": 42.271478,
+        "lines": [],
+        "rms": 0.03251704866075771,
+        "paused": false
+      },
+      {
+        "media": 42.691011,
+        "game": 42.686673,
+        "lines": [],
+        "rms": 0.12021617668718006,
+        "paused": false
+      },
+      {
+        "media": 43.099066,
+        "game": 43.092209,
+        "lines": [],
+        "rms": 0.1264553628359709,
+        "paused": false
+      },
+      {
+        "media": 43.521143,
+        "game": 43.507532,
+        "lines": [],
+        "rms": 0.14086231957309076,
+        "paused": false
+      },
+      {
+        "media": 43.929007,
+        "game": 43.921595,
+        "lines": [],
+        "rms": 0.015254957978908046,
+        "paused": false
+      },
+      {
+        "media": 44.343093,
+        "game": 44.336721,
+        "lines": [],
+        "rms": 0.005801336542089237,
+        "paused": false
+      }
+    ],
+    "capture": {
+      "tracks": 1,
+      "clock": 0
+    },
+    "clockDrift": {
+      "max": 0.1732660000000008,
+      "p95": 0.01759699999999942
+    },
+    "slamState": {
+      "slams": [
+        {
+          "t": 61.802485,
+          "word": "HAMMER"
+        },
+        {
+          "t": 62.254067,
+          "word": "TIME!"
+        }
+      ],
+      "clock": 62.848393,
+      "game": 62.840991,
+      "mode": "break",
+      "state": "hammer",
+      "protected": false
+    },
+    "errors": []
+  },
+  "suite": {
+    "passes": 6203,
+    "failures": 0,
+    "baseline": 6203,
+    "newFailingNames": [],
+    "finalSummary": true
+  }
+}
