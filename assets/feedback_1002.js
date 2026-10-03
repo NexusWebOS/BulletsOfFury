@@ -700,3 +700,50 @@ function fb2WashTick(){
 }
 const FB2_UPD5=updatePlay;
 updatePlay=function(dt){const r=FB2_UPD5.apply(this,arguments);if(state===GS.PLAY)fb2WashTick();return r;};
+
+/* ---------------------------------------------------------------------------------------------
+   G. THE FUSION BEAM IS A SOLID PLASMA COLUMN, AND EVERY ICON KEEPS ONE SIZE
+   "the fusion cannon beams. they should not be spikey lasers, that makes no sense at all. solid pink beams like
+   falva's laser beams, but more 'Fusion' energy like while still pinkishpurple. also, their weapon pick up icons
+   are very small in game..not sure why. we should be keeping a unified system of h/w for each icon as an engine
+   rule."
+
+   BEAM. Both fusion weapons drew a branching lightning lance: the space-slot Fusion (fusion_0930/beam.png) and
+   Cole's level-8 fusion cannon (the green enemy laser, hue-rotated with a CSS filter). Both now draw
+   assets/game/fusion_1002/beam.png - a SpriteCook edit of Falva's own solid laser plate into a pink-violet
+   plasma column with a white-hot core and a contained double helix - animated by
+   _BUILD_SOURCE/fusion_beam_1002.py so the helix flows up the beam while the silhouette stays fixed. Damage,
+   speed, hit width and charge scaling are unchanged; the column fills the width the round already hits with.
+
+   ICONS - THE ENGINE RULE. iconBlit draws at a requested HEIGHT, and each art family carries its own transparent
+   margin inside its cell: measured in Chromium through iconBlit itself, the space Fusion badges put only 65-77 px
+   of ink on a 100 px request (and a different amount per tier) where the volley badges put 100, Thermoshock 72.
+   Now every icon with a measured ink box (assets/icon_ink_1002.js, built by _BUILD_SOURCE/icon_ink_1002.py from
+   the RAW draw) is drawn so its INK fills one unified box: ink height = the requested height, never wider than
+   FB2_ICON_U x height, centred in that box - and every icon reports the same box width back to its caller.
+   An icon with no entry draws exactly as before; add new families by re-running the measuring script.
+   --------------------------------------------------------------------------------------------- */
+XART._src.fb2_fusion_beam='assets/game/fusion_1002/beam.png';
+const FB2_BEAM={key:'fb2_fusion_beam',path:'assets/game/fusion_1002/beam.png',frames:[0,1,2,3,4,5,6,7].map(k=>[k*25,0,25,147]),fps:14};
+if(typeof FUSION30_ART!=='undefined')FUSION30_ART.beam=FB2_BEAM;   // fusion30Cell reads the table at call time
+function fb2BeamDraw(x,y,w,h,t){
+ if(!XART.rdy(FB2_BEAM.key))return false;const r=FB2_BEAM.frames[Math.floor((t||0)*FB2_BEAM.fps)%8];
+ ctx.save();ctx.imageSmoothingEnabled=false;ctx.drawImage(XART.get(FB2_BEAM.key),r[0],r[1],r[2],r[3],x-w/2,y-h/2,w,h);ctx.restore();return true;
+}
+coleFuseDraw=function(b){
+ // the two piercing lances keep their hit box (14 x 56); the column is drawn a touch wider so its sheath reads
+ return fb2BeamDraw(b.x,b.y,b.w*1.35,b.h*1.15,(typeof efxClock==='number'?efxClock:performance.now()/1000)+b.x*.01);   // a draw never advances the round's own clock
+};
+const FB2_ICON_U=0.93;      // the unified icon box: height H, width 0.93 H (the badge family's own 104:112)
+const FB2_ICONBLIT=iconBlit;
+iconBlit=function(g,key,x,y,h,centred){
+ const I=typeof ICON_INK_1002!=='undefined'&&key?ICON_INK_1002[key]:null;
+ if(!I||!g||!(h>0))return FB2_ICONBLIT.apply(this,arguments);
+ const [ix,iy,iw,ih,asp]=I,boxW=h*FB2_ICON_U;
+ // the request height h2 at which the INK is exactly h tall, unless that ink would be wider than the box
+ let h2=h/Math.max(.05,ih);if(iw*asp*h2>boxW)h2=boxW/Math.max(.05,iw*asp);
+ const w2=asp*h2,dx=(ix+iw/2-.5)*w2,dy=(iy+ih/2-.5)*h2;
+ const cx=centred?x:x+boxW/2,cy=centred?y:y+h/2;
+ const r=FB2_ICONBLIT.call(this,g,key,cx-dx,cy-dy,h2,true);
+ return r?boxW:r;
+};

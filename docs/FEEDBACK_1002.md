@@ -236,3 +236,47 @@ This layer loads after the audio pools are built, so it registers its own lazy p
 - The probes above all pass in real Chromium.
 
 Credits spent: SpriteCook 309 → 153; ElevenLabs about 67.
+
+## G. The fusion beam is a solid plasma column, and every icon keeps one size (follow-up)
+
+> "the fusion cannon beams. they should not be spikey lasers ... solid pink beams like falva's laser beams, but more 'Fusion' energy like while still pinkishpurple. also, their weapon pick up icons are very small in game ... we should be keeping a unified system of h/w for each icon as an engine rule."
+
+### The beam
+
+Both fusion weapons drew a branching lightning lance:
+- the space-slot Fusion used `fusion_0930/beam.png`;
+- Cole's level-8 fusion cannon used the green enemy laser, hue-rotated through a CSS filter.
+
+Both now draw `assets/game/fusion_1002/beam.png`:
+- **Source.** A SpriteCook edit of Falva's own solid laser plate (`fllaser_0`): a pink-violet sheath, a white-hot core and a contained double helix. It is kept as `_BUILD_SOURCE/fusion_beam_spritecook_1002.png`.
+- **Animation.** Built by `_BUILD_SOURCE/fusion_beam_1002.py`. One measured helix period (57 px) is tiled down the interior and offset by an eighth per frame. The helix flows up the beam while the silhouette, caps and alpha never change. A first cut that rolled the interior left a hard seam on half the frames; tiling removed it.
+- **Gameplay unchanged.** Damage, speed, hit width and charge scaling stay as they were.
+
+### Icons: the engine rule
+
+Measured in Chromium through `iconBlit` itself (`_BUILD_SOURCE/icon_ink_1002.py`), each art family carries its own transparent margin inside its cell. At a 100 px request:
+
+| Icons | Ink drawn |
+|---|---|
+| Space Fusion badges | 65–77 px, different per tier |
+| Thermoshock | 72 px |
+| Volley badges | 100 px |
+
+In the pre-change build, 100 of 256 icon draws missed their requested height, and icons reported different widths to their callers.
+
+**The rule.** Every icon with a measured ink box is drawn so its ink fills one unified box:
+- the ink height equals the requested height;
+- the ink is never wider than 0.93 × the height (the badge family's own 104:112);
+- the ink is centred in that box;
+- every icon reports the same box width.
+
+**How it works.**
+- The ink table is measured once from the raw draw. The script always calls the unwrapped `iconBlit`, so re-running it cannot measure the rule itself.
+- It ships as `assets/icon_ink_1002.js`, because a `file://` page cannot fetch JSON.
+- An icon with no entry draws exactly as before. When a new icon family is added, re-run `python3 _BUILD_SOURCE/icon_ink_1002.py --write`.
+
+**Probe:** `probe_fusion_icons_1002.py`:
+- all 128 measured icons fill the box at 40 and 64 px, with one box width per height;
+- the Fusion badges now ink at 63–64 of 64 (they were 42–49);
+- the space Fusion round and Cole's cannon both draw `fb2_fusion_beam`;
+- the busted arm fails on every point.

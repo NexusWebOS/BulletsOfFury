@@ -96,6 +96,21 @@ module.exports=function(vm,ctxv,ok){
  ok(out.callistoText==='SECRET WEAPON CALLISTOWEAPON STATUS = ACTIVATED','1002 E: the banner reads SECRET WEAPON CALLISTO / WEAPON STATUS = ACTIVATED');
  for(let i=0;i<3;i++){const s=png('assets/game/dispatch_1002/cole_rage_'+i+'.png');ok(s[0]===128&&s[1]===128,'1002 E: cole_rage_'+i+' is 128x128');}
  for(const f of ['turbulence_carrier_1002.mp3','jetwash_1002.mp3'])ok(fs.statSync(path.join(ROOT,'assets/game/sounds',f)).size>4000,'1002 F: '+f+' ships');
+ /* G - the solid fusion beam and the unified icon box */
+ {const s=png('assets/game/fusion_1002/beam.png');ok(s[0]===200&&s[1]===147,'1002 G: the fusion beam is eight 25x147 frames of one solid column ('+s.join('x')+')');}
+ ok(fs.existsSync(path.join(ROOT,'_BUILD_SOURCE/fusion_beam_spritecook_1002.png')),'1002 G: the SpriteCook source plate (an edit of Falva\'s laser) is kept beside its build script');
+ const ink=html.indexOf('assets/icon_ink_1002.js');ok(ink>0&&ink<i2,'1002 G: the icon ink table loads before feedback_1002.js');
+ let inkErr=null;try{vm.runInContext(fs.readFileSync(path.join(ROOT,'assets/icon_ink_1002.js'),'utf8').replace('const ICON_INK_1002=','this.ICON_INK_1002_T='),ctxv);}catch(e){inkErr=String(e);}
+ const g2=JSON.parse(vm.runInContext(`(()=>{const o={};try{
+   const T=this.ICON_INK_1002_T||{};o.n=Object.keys(T).length;o.fusion=[1,2,3,4,5].every(i=>T['space_fusion_icon_'+i]);
+   o.beamTable=typeof FUSION30_ART!=='undefined'?FUSION30_ART.beam.key:null;
+   o.coleSrc=coleFuseDraw.toString();o.iconSrc=iconBlit.toString();
+  }catch(e){o.err=String(e&&e.stack||e);}return JSON.stringify(o);})()`,ctxv));
+ ok(!inkErr&&!g2.err,'1002 G: the ink table and the icon checks load'+(inkErr||g2.err?' - '+(inkErr||g2.err).slice(0,160):''));
+ ok(g2.n>=100&&g2.fusion,'1002 G: the ink table covers the weapon icons, the five space Fusion badges included ('+g2.n+' keys)');
+ ok(g2.beamTable==='fb2_fusion_beam','1002 G: the space Fusion round draws the solid beam (FUSION30_ART.beam = '+g2.beamTable+')');
+ ok(/fb2BeamDraw/.test(g2.coleSrc)&&!/eglaser|hue-rotate/.test(g2.coleSrc),'1002 G: Cole\'s fusion cannon draws the solid beam, no hue-rotated spiky laser');
+ ok(/ICON_INK_1002\[key\]/.test(g2.iconSrc)&&/FB2_ICON_U/.test(g2.iconSrc),'1002 G: iconBlit fits every measured icon\'s INK to the unified box');
  const src=fs.readFileSync(path.join(ROOT,'assets/feedback_1002.js'),'utf8');
  ok(/name==='carrierTurbine'\)FB2_LOOPON\.call\(this,'turbCarrier1002'/.test(src)&&/name==='carrierTurbine'\)FB2_LOOPOFF\.call\(this,'turbCarrier1002'\)/.test(src),
    '1002 F: the turbulence loop rides the carrier turbine\'s own on/off calls');
