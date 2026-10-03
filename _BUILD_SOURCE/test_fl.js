@@ -15780,6 +15780,7 @@ require('./test_feedback_1001.cjs')(vm,ctxv,ok);
 require('./test_encounter_feedback_1001.cjs')(vm,ctxv,ok);
 require('./test_feedback_1001b.cjs')(vm,ctxv,ok);
 require('./test_launch_scale_1001c.cjs')(vm,ctxv,ok);
+require('./test_feedback_1002.cjs')(vm,ctxv,ok);
 
 console.log('\n============================================');
 if (errors.length) { console.log('FAILED — ' + errors.length + ' error(s):'); errors.forEach(e => console.log('  ' + e)); process.exit(1); }

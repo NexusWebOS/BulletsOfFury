@@ -38710,8 +38710,9 @@ function hammerChromiumPoseDraw(b,key,r,k,base){
         ctx.beginPath();ctx.rect(hx-76*k,y+j.y,152*k,(r[7]-r[1]+72)*k);ctx.rect(hx-25*k,hy+52*k,50*k,122*k);ctx.clip();}
       ctx.drawImage(im,r[0],r[1]+glowCut-shown,r[2],shown,x+j.x,y+(glowCut-shown)*k+j.y,w,shown*k);ctx.restore();}
   }
-  // Keep the engine's authored hit flash visible over the empowered palette.
-  if(b.flash>0){ctx.globalAlpha=.8;plate(base);}
+  // Keep the engine's authored hit flash visible over the empowered palette. 1002: it re-blitted the PLAIN
+  // plate here, so every hit on the armored, charging or storm poses showed no white at all.
+  if(b.flash>0){const wim=xartTint(key,hitFlashColor(b,'#ffffff'),1);ctx.globalAlpha=Math.min(.85,.45+b.flash*3);plate(wim||base);}
   ctx.restore();return true;
 }
 function hammerRecoveryTick(b,dt){const h=b._hammer,R=h.recovery;if(!R||R.status!=='charging'||b.dead)return;

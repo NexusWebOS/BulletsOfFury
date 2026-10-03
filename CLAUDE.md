@@ -5739,3 +5739,14 @@ Read docs/LAUNCH_SCALE_1001C.md. Change script _BUILD_SOURCE/patch_launch_scale_
 - Ground launches brake on DISTANCE to PLAY's 40 px/s, landing exactly when the level joins (LAUNCH_LAND / LAUNCH_BRAKE_DIST), and hold 40 into PLAY. Never a 0 px/s frame.
 - Stage 5 plane 60 / fighter 48 throughout; the kit still orbits at its 0914 size (FURY_ORBIT_HULL) and closes onto the craft in the snap. Stage 9 fighter 48 from frame one; the space brake eases from its real speed. Outbound routes and the stage 8 rift arrival draw at play size.
 - Probe trap: _drawPlayerCore asks XART.get for the hull, then pf27PlaneThrustDraw asks for more before the blit, so "last key requested" misses PLAY's ship. Tag the returned image object.
+
+## 1002 - Stage 5 hammer fixes and arrival, Stage 6 stealth flights, squadron, team scene, turbulence
+Read docs/FEEDBACK_1002.md. Runtime layer assets/feedback_1002.js (after feedback_1001b.js, before the widescreen HUD); game.js only gained the Chromium-pose white flash.
+- Hammer: the passive volley never targets or strikes the hammer (manual missiles still break the heal); every ABSORBED hit flashes (hitBoss returned before markHit); HP floors at 8% until the recovery has started and, where live, the 15% twirl has played.
+- The 0930 Cronos LIVE scene paused the world; the arrival is now in play (fb2Intro): stunned seats via s6OpeningControlsLocked (one caller), dark wash in drawBG, hammer held at unfold 1.95 s, generated hammer/dispatcher boxes in assets/game/dispatch_1002/. fb2Dispatcher is Mike's rule; never a pilot in the air.
+- Stage 6: every s6bomber and s6StrikeSpawn becomes a WARNED stealth flight (box + asterisk + arrows): red = retina lock + missiles, green = atom bomb, orange (SpriteCook) = guns. Sheets baked offline by _BUILD_SOURCE/stealth_jets_1002.py - never getImageData at runtime (file://).
+- Hivewing escorts: warned committed dive, lead aim, squadron plays (pincer/missile/bracket), lane discipline.
+- The team scene + Callisto hold the W.fake beat and release into the choice. Cole's level-7 lasers are weapon 0 at tier 7 (not the LASER slot); a random Sonic Boom grant claims pShoot, so the demo suspends it per shot.
+- Turbulence loop rides carrierTurbine's loopOn/loopOff; jet wash once per jet. A layer loaded after game.js must build its own Snd pools (fb2AddSfx) - BOFA.sfx alone is too late.
+- Probe traps: ai27 holds point-blank shots (fewer rounds is intended); index-based round counting breaks when pushes are refused - tag by object.
+- Suite 6,276 ok / 0 errors; probes probe_hammer_1002, probe_hammer_intro_1002, probe_stealth_1002, probe_hivewing_1002, probe_teamscene_1002, probe_turbulence_1002.
