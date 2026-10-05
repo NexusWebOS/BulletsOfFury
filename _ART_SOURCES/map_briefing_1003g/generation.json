@@ -1,0 +1,16 @@
+{
+  "tool": "built-in image_gen",
+  "date": "2026-10-03",
+  "assets": [
+    {
+      "file": "briefing_blank.png",
+      "prompt": "Edit the reference game UI panel. Return ONE reusable blank horizontal mission briefing frame only. Preserve its 14:3 wide aspect ratio, exact slim olive/gunmetal riveted mechanical outer border with square corner plates and tiny black/gold bevels, crisp 16-bit pixel-art aesthetic, and very dark midnight navy opaque inner text area. Remove ALL lettering, numerals, title, briefing, underline, and all writing completely. Interior must be plain subtly shaded dark navy with abundant clean room for live game text. Do not add symbols, labels, extra frames, icons, glow, perspective, decorations, or fake checkerboards. Straight-on fully visible complete rectangle with all four corners intact. Make the frame fill nearly all of a wide image with only a minimal transparent outer margin. Preserve original frame proportions and fine border scale.",
+      "generated": "C:/Users/Mdogg/.codex/generated_images/01a0e3c8-265d-7731-8ffe-ee42ebb5ba3c/exec-2df7d8db-86e2-4e35-bf3c-87df5a5cc94d.png"
+    },
+    {
+      "file": "lizzie_frame.png",
+      "prompt": "Create a blank square portrait bezel for this exact 16-bit game portrait reference. Remove the woman completely and regenerate the surrounding golden yellow industrial communications frame as a COMPLETE symmetric square with intact LEFT AND RIGHT vertical rails, all four riveted beveled corners, top and bottom golden light bars. The source was accidentally cut on its right edge: restore that edge to mirror the complete left rail. Match its crisp detailed 16-bit pixels, black keylines, yellow/gold metal and dark navy blue recessed background. Interior is empty flat dark navy, no lettering, no character, no symbols, no text of any kind. Slim bezel around perimeter, leave the central 80 percent empty for an existing character portrait to be composited in the game. No perspective. Square canvas, fully visible frame with small even transparent outer margin. Transparent outside the frame only, opaque inner dark navy.",
+      "generated": "C:/Users/Mdogg/.codex/generated_images/01a0e3c8-265d-7731-8ffe-ee42ebb5ba3c/exec-c2958a25-f5c9-4648-be00-92a361c05b2a.png"
+    }
+  ]
+}

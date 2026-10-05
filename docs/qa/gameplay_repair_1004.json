@@ -1,0 +1,560 @@
+{
+  "recording": {
+    "name": "2026-10-04 00-46-51.mp4",
+    "duration": "61:29",
+    "visual_samples": 1845,
+    "interval_seconds": 2,
+    "contact_sheets": 77,
+    "limitations": "Sampled entire timeline, not every video frame or complete audio. Stage 1 combat absent."
+  },
+  "suite": {
+    "command": "node _BUILD_SOURCE/test_fl.js",
+    "exit_code": 0,
+    "assertions": 7038,
+    "baseline": 7022,
+    "summary": "FALVA/LIZZIE BUILD OK, 0 ERRORS",
+    "initial_nonzero": "Four outdated global Forge discovery expectations; updated fixtures for run-earned elements and explicit purchases; no assertions removed."
+  },
+  "storm_defeat": {
+    "result": {
+      "hp": -1,
+      "max": 5720,
+      "dead": true,
+      "active": false,
+      "nodes": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "giant-strike",
+      "shieldPhase": null,
+      "seconds": 126
+    },
+    "fixture": "Ordinary L3 machinegun cadence, real collision/damage, autoaim, invulnerable pilot; not a human balance clear."
+  },
+  "donors_full_hp": [
+    {
+      "form": 1,
+      "hp": 2378,
+      "history": [
+        "fight",
+        "gunSweep",
+        "chargeTell",
+        "chargeOff",
+        "reentry"
+      ],
+      "bullets": 6,
+      "finite": true,
+      "x": 258.26963459440714,
+      "y": -19.684411611283764
+    },
+    {
+      "form": 2,
+      "hp": 3365,
+      "history": [
+        "spin900",
+        "cannon",
+        "sweep"
+      ],
+      "bullets": 0,
+      "finite": true,
+      "x": 246.62394469551938,
+      "y": 195.06165116420948
+    },
+    {
+      "form": 3,
+      "hp": 4680,
+      "history": [
+        "recover",
+        "ice-battery1002",
+        "recover",
+        "cannon-relay",
+        "recover",
+        "ice-crossfire1002"
+      ],
+      "bullets": 2,
+      "finite": true,
+      "x": 340,
+      "y": 220
+    },
+    {
+      "form": 4,
+      "hp": 5720,
+      "history": [
+        "recover",
+        "sovereign-battery",
+        "recover",
+        "escort-crossfire",
+        "recover",
+        "storm-lance1002"
+      ],
+      "bullets": 0,
+      "finite": true,
+      "x": 340,
+      "y": 220
+    },
+    {
+      "form": 5,
+      "hp": 6150,
+      "history": [
+        "warn",
+        "leap",
+        "recover",
+        "leap_reset",
+        "hammer",
+        "warn",
+        "leap",
+        "recover",
+        "leap_reset",
+        "hammer",
+        "warn",
+        "leap",
+        "recover",
+        "leap_reset",
+        "hammer",
+        "warn",
+        "leap",
+        "recover",
+        "leap_reset",
+        "hammer",
+        "warn",
+        "leap",
+        "recover",
+        "leap_reset",
+        "hammer",
+        "warn",
+        "leap",
+        "recover",
+        "back",
+        "shield",
+        "curl",
+        "ball"
+      ],
+      "bullets": 0,
+      "finite": true,
+      "x": 299.1458333333333,
+      "y": 219.01958333333334
+    },
+    {
+      "form": 6,
+      "hp": 5836,
+      "history": [
+        "fight",
+        "flurry",
+        "spread",
+        "beam",
+        "flurry",
+        "spread",
+        "beam"
+      ],
+      "bullets": 0,
+      "finite": true,
+      "x": 268.1,
+      "y": 167.15258560918036
+    },
+    {
+      "form": 7,
+      "hp": 6150,
+      "history": [
+        "recover",
+        "chase",
+        "swipeL",
+        "swipeR",
+        "swipeX",
+        "jump",
+        "recover",
+        "stomp",
+        "swipeL"
+      ],
+      "bullets": 0,
+      "finite": true,
+      "x": 340.21022691784543,
+      "y": 252.00000000177693
+    }
+  ],
+  "donors_low_hp": [
+    {
+      "form": 1,
+      "history": [
+        "fight",
+        "chargeTell",
+        "chargeOff",
+        "chargeTell",
+        "chargeOff",
+        "chargeTell",
+        "chargeOff",
+        "chargeTell",
+        "chargeOff",
+        "reentry",
+        "sonicCombo"
+      ],
+      "shots": 164,
+      "finite": true,
+      "hp": 0.24000000000000002
+    },
+    {
+      "form": 2,
+      "history": [
+        "eyeBurst",
+        "eyeSweep",
+        "eyeBurst"
+      ],
+      "shots": 31,
+      "finite": true,
+      "hp": 0.24000000000000002
+    },
+    {
+      "form": 3,
+      "history": [
+        "overdrive",
+        "recover",
+        "ice-battery1002",
+        "recover",
+        "cannon-relay",
+        "recover",
+        "ice-crossfire1002",
+        "recover",
+        "glacier-press"
+      ],
+      "shots": 162,
+      "finite": true,
+      "hp": 0.24000000000000002
+    },
+    {
+      "form": 4,
+      "history": [
+        "overdrive",
+        "recover",
+        "sovereign-battery",
+        "recover",
+        "escort-crossfire",
+        "recover",
+        "storm-lance1002",
+        "recover",
+        "siege-rockets"
+      ],
+      "shots": 117,
+      "finite": true,
+      "hp": 0.24
+    },
+    {
+      "form": 5,
+      "history": [
+        "warn",
+        "leap",
+        "recover",
+        "leap_reset",
+        "chaingun_draw",
+        "chain_warn",
+        "chaingun",
+        "chain_cool",
+        "spell",
+        "spell_blast",
+        "chain_warn",
+        "chaingun",
+        "chain_cool",
+        "storm_raise"
+      ],
+      "shots": 156,
+      "finite": true,
+      "hp": 0.24
+    },
+    {
+      "form": 6,
+      "history": [
+        "fight",
+        "flurry",
+        "spread",
+        "beam",
+        "flurry",
+        "spread",
+        "beam",
+        "flurry",
+        "spread",
+        "beam"
+      ],
+      "shots": 70,
+      "finite": true,
+      "hp": 0.24
+    },
+    {
+      "form": 7,
+      "history": [
+        "recover",
+        "chase",
+        "swipeL",
+        "swipeR",
+        "swipeX",
+        "jump",
+        "recover",
+        "stomp",
+        "swipeL",
+        "swipeR",
+        "swipeX",
+        "jump"
+      ],
+      "shots": 123,
+      "finite": true,
+      "hp": 0.24
+    }
+  ],
+  "helicopter_disarm": {
+    "shots": 2,
+    "onlyLiveMuzzle": true,
+    "types": [
+      "mg",
+      "s1jungleMissile"
+    ]
+  },
+  "hammer": {
+    "floor": 0.08,
+    "reserve": {
+      "hp": 0.38,
+      "state": "warn",
+      "seen": true
+    },
+    "death": [
+      {
+        "phase": "engineDeath",
+        "engineAge": 1.0000000000000013,
+        "bodyAge": 1.0000000000000013,
+        "rings": 0,
+        "white": 0
+      },
+      {
+        "phase": "engineDeath",
+        "engineAge": 2.9999999999999942,
+        "bodyAge": 2.9999999999999942,
+        "rings": 1,
+        "white": 0
+      },
+      {
+        "phase": "engineDeath",
+        "engineAge": 4.999999999999988,
+        "bodyAge": 4.999999999999988,
+        "rings": 2,
+        "white": 0
+      },
+      {
+        "phase": "engineDeath",
+        "engineAge": 6.199999999999983,
+        "bodyAge": 6.199999999999983,
+        "rings": 0,
+        "white": 1
+      },
+      {
+        "phase": "engineDeath",
+        "engineAge": 7.699999999999978,
+        "bodyAge": 7.699999999999978,
+        "rings": 0,
+        "white": 1.8318679906315083e-14
+      },
+      {
+        "phase": "overhead",
+        "engineAge": null,
+        "bodyAge": 8.016666666666644,
+        "rings": 0,
+        "white": 0
+      }
+    ]
+  },
+  "forge": {
+    "previews_errors": [],
+    "up": {
+      "error": null,
+      "selection": 0,
+      "elements": [
+        "fire",
+        "ice"
+      ]
+    }
+  },
+  "orbs": {
+    "fire_real_update": {
+      "element": "fire",
+      "base": 11,
+      "dead": true,
+      "damage": [
+        36.00000000000003,
+        23.52000000000001
+      ],
+      "finite": true
+    },
+    "motion": "30/60 FPS finite consistency assertion"
+  },
+  "rebels": {
+    "formation": {
+      "allies": [
+        "yuri",
+        "decker",
+        "cole",
+        "axel",
+        "falva"
+      ],
+      "wing": [
+        "axel",
+        "cole",
+        "decker",
+        "falva"
+      ],
+      "dead": true,
+      "portrait": "voss",
+      "bossDead": false
+    },
+    "completion": {
+      "dead": true,
+      "crashed": true,
+      "queued": 0,
+      "portrait": null,
+      "defeated": true
+    }
+  },
+  "pressure": [
+    {
+      "kind": "frostcruiser",
+      "modes": [
+        "recover",
+        "nuclear",
+        "elite-ball1002",
+        "elite-beam1002",
+        "form-change",
+        "elite-missile1002",
+        "elite-strafe1002"
+      ],
+      "shots": 140,
+      "peak": 11,
+      "beamFrames": 520
+    },
+    {
+      "kind": "cryospear",
+      "modes": [
+        "recover",
+        "nuclear",
+        "ice-battery1002",
+        "cannon-relay",
+        "form-change",
+        "ice-crossfire1002",
+        "glacier-press"
+      ],
+      "shots": 213,
+      "peak": 21,
+      "beamFrames": 612
+    },
+    {
+      "kind": "olivewarden",
+      "modes": [
+        "recover",
+        "warden-suppress",
+        "rocket-feint",
+        "shell-lob",
+        "warden-drive",
+        "center-break"
+      ],
+      "shots": 302,
+      "peak": 16,
+      "beamFrames": 0
+    }
+  ],
+  "enemies": [
+    {
+      "kind": "bluehybrid",
+      "shots": 20,
+      "finite": true
+    },
+    {
+      "kind": "hexpyre",
+      "shots": 16,
+      "finite": true
+    },
+    {
+      "kind": "impharrow",
+      "shots": 8,
+      "finite": true
+    },
+    {
+      "kind": "furnacemaw",
+      "shots": 12,
+      "finite": true
+    }
+  ],
+  "passwords": [
+    {
+      "pending": 9,
+      "stage": 9,
+      "route": null,
+      "kind": null,
+      "wing": null
+    },
+    {
+      "pending": 6,
+      "stage": 6,
+      "route": "left",
+      "kind": "warhive",
+      "wing": 4
+    },
+    {
+      "pending": 6,
+      "stage": 6,
+      "route": "right",
+      "kind": "rebelsquad",
+      "wing": 4
+    }
+  ],
+  "stage6_exit": {
+    "state": "stagesel",
+    "expected": "stagesel",
+    "stage": 6,
+    "mode": "campaign",
+    "unlocked": 7
+  },
+  "map": {
+    "firstZoom": {
+      "z": 0.3999707903637001,
+      "x": 580.0206764841225,
+      "y": 302.5512604502202
+    },
+    "hover": {
+      "stage": 4,
+      "lift": 0.9999999999999725,
+      "camera": {
+        "x": 819.9469059447287,
+        "y": 599.9341907089265,
+        "z": 0.399999994056763
+      }
+    },
+    "stagex": [
+      {
+        "route": "left",
+        "path": "assets/game/music/LevelX.mp3"
+      },
+      {
+        "route": "right",
+        "path": "assets/game/music/LevelX.mp3"
+      }
+    ],
+    "errors": []
+  },
+  "gas": {
+    "clouds": 4,
+    "player": {
+      "x": 340,
+      "y": 402
+    }
+  },
+  "knight_tells": {
+    "recover_draws": 0,
+    "tell_draws": 1
+  },
+  "browser_errors": {
+    "repair": [],
+    "routes": [],
+    "polish": [],
+    "map": [],
+    "modules": [],
+    "cinematic": []
+  },
+  "reference": "https://www.youtube.com/watch?v=6rXONPQvoTw",
+  "review": "_shots/gameplay_audit_1004/review.html",
+  "human_campaign_clear": false
+}

@@ -1,0 +1,208 @@
+{
+  "generator": "built-in image_gen",
+  "selected_roster_ids": [
+    "01",
+    "03",
+    "04",
+    "06",
+    "07",
+    "08",
+    "11"
+  ],
+  "files": [
+    {
+      "id": "01",
+      "kind": "revision2",
+      "name": "Cacoforge",
+      "file": "01-cacoforge-blue-black.png",
+      "source": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0e3c8-265d-7731-8ffe-ee42ebb5ba3c\\exec-9a39dae3-dd02-44a0-b408-858d6adbda6d.png",
+      "prompt": "Use case: precise-object-edit. Asset type: revised enemy sprite for Bullets of Fury. Input image: the edit target, a previously generated candidate. Make a precise material palette edit only. Change ALL olive-green robotic armor panels, including the two broad side pods and central forehead armor, to rich cobalt/electric blue with steel-blue and pale-blue highlights. Tint the mechanical curved horns blue metal too, with bright metallic highlights. Change ALL red/pink organic demon skin and sinew to obsidian/charcoal BLACK with enough graphite highlights to retain sculpted texture and readable contours. Preserve the green organic eye, red rectangular top sensor, white/silver teeth and blue glowing mouth plasma exactly. Preserve the full original silhouette, pose, panel shapes, anatomy, teeth and horn shapes. Do not add, remove or redesign any part. Match the source's hand-pixelled high-quality arcade style; firm dark outlines, crisp deliberate pixels, retained material luminance. Entire enemy fully visible and centered, preserve all protrusions with transparent padding. Actual transparent alpha background, no solid backdrop, no checkerboard, no text or UI. This is a new revision; preserve original elsewhere.",
+      "active": false,
+      "size": [
+        1431,
+        1099
+      ],
+      "sha256": "d5e477f656f48a527950b7a89e5d50c3022a79fcf7740c4591811cf6d08bd8d4"
+    },
+    {
+      "id": "03",
+      "kind": "revision2",
+      "name": "Hexpyre",
+      "file": "03-hexpyre-black-redesign.png",
+      "source": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0e3c8-265d-7731-8ffe-ee42ebb5ba3c\\exec-a29703ea-c35e-46aa-9100-4e447f4b19d3.png",
+      "prompt": "Use case: precise-object-edit. Asset type: revised enemy sprite for Bullets of Fury. Input image: the edit target, a previously generated candidate. Substantially REDESIGN this floating fire-caster machine into an original new chassis. Palette swap its entire chassis AND arms to black/anthracite with graphite, cool grey edge highlights, no gold metal. Keep the two articulated raised fire-casting arms and orange/gold flames. REMOVE EVERY armor spike and horn. REMOVE the central green eye and the entire horizontal eye slit: blank armored facial area, no central eye, no sensor slit. Replace the old wide semicircular trapezoid shell with a compact vertical hovering furnace body, a faceted inverted teardrop breastplate, stacked offset cooling fins, inset ember-lit rib vents and rounded ball-joint shoulder sockets. Clear NEW silhouette and panel layout, no maze camouflage pattern. Two slim skeletal-mechanical arms with visible elbow and shoulder swivel joints and multi-finger casting hands. Modular design: separate visibly connected torso, two upper arms, two forearms/casting hands; their mechanical pivot joints must make physical sense. One assembled whole original drone only, no exploded layout in THIS image. Maintain rich arcade pixel-art look. Make all-black armor readable and avoid losing its outline. Match the source's hand-pixelled high-quality arcade style; firm dark outlines, crisp deliberate pixels, retained material luminance. Entire enemy fully visible and centered, preserve all protrusions with transparent padding. Actual transparent alpha background, no solid backdrop, no checkerboard, no text or UI. This is a new revision; preserve original elsewhere.",
+      "active": true,
+      "size": [
+        1536,
+        1024
+      ],
+      "sha256": "7cf24b07a51f9bc7d4881c3a1024153fc18e4e82754ccb680efbab6ace01547d"
+    },
+    {
+      "id": "04",
+      "kind": "revision2",
+      "name": "Hellram",
+      "file": "04-hellram-green-black.png",
+      "source": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0e3c8-265d-7731-8ffe-ee42ebb5ba3c\\exec-64b22c8f-94f8-4f18-b542-3e34a5366db5.png",
+      "prompt": "Use case: precise-object-edit. Asset type: revised enemy sprite for Bullets of Fury. Input image: the edit target, a previously generated candidate. Precise material palette swap only. Change all pink fleshy demon segments, face, brow, upper arms and tendons into rich organic GREEN with dark forest shadows and bright green muscle highlights. Change ALL red robotic armor panels into BLACK anthracite with readable neutral gunmetal highlights. Keep its eyes and both plasma fist orbs luminous green, keep the grey metal horns and pale fangs unchanged, keep all existing silhouettes, pose, geometry, sockets, vents and detail intact. No new parts, no simplification, no redesign. Match the source's hand-pixelled high-quality arcade style; firm dark outlines, crisp deliberate pixels, retained material luminance. Entire enemy fully visible and centered, preserve all protrusions with transparent padding. Actual transparent alpha background, no solid backdrop, no checkerboard, no text or UI. This is a new revision; preserve original elsewhere.",
+      "active": false,
+      "size": [
+        1247,
+        1261
+      ],
+      "sha256": "221a61d12b26e32b811aba3730a5d21a777e1732b305a1f6be87f69d209c5e73"
+    },
+    {
+      "id": "06",
+      "kind": "revision2",
+      "name": "Rifle Locust",
+      "file": "06-rifle-locust-redesign.png",
+      "source": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0e3c8-265d-7731-8ffe-ee42ebb5ba3c\\exec-72c97f81-1a54-4e33-813a-a4b1121adbb4.png",
+      "prompt": "Use case: precise-object-edit. Asset type: revised enemy sprite for Bullets of Fury. Input image: the edit target, a previously generated candidate. Regenerate as a substantially redesigned original mutated rifle drone. Remove ALL four tall pointed claw/scythe/blade booms completely. NO claws, NO long sharp antennae, NO spear-like wing blades, no pointed insect forelimbs. Keep olive and deep green metal armor, red organic cable tendons and two practical underslung rifle cannons. Replace the old split-diamond central shell with a broad compact beveled oval hover chassis with offset industrial armor panels, three small red rectangular sensor lamps high on the chest and a lower exposed ribbed red biological reactor. Give it two short rounded rectangular lateral engine nacelles, blunt winglets and two independently mounted rifle turrets with round pivots. The entire outline is a new blunt, powerful hovering gunship shape, far removed from the reference's tall insect blades. Rich readable arcade pixel art with black outlines and worn metallic highlights. One whole assembled drone only. Match the source's hand-pixelled high-quality arcade style; firm dark outlines, crisp deliberate pixels, retained material luminance. Entire enemy fully visible and centered, preserve all protrusions with transparent padding. Actual transparent alpha background, no solid backdrop, no checkerboard, no text or UI. This is a new revision; preserve original elsewhere.",
+      "active": false,
+      "size": [
+        1278,
+        1230
+      ],
+      "sha256": "293c7fc490762b65e6861fec567f4afa8f3476af08da2d18e75bfc3dd746c339"
+    },
+    {
+      "id": "07",
+      "kind": "revision2",
+      "name": "Imp Harrow",
+      "file": "07-imp-harrow-red-eye.png",
+      "source": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0e3c8-265d-7731-8ffe-ee42ebb5ba3c\\exec-39a4eeb3-dd7b-4ff3-8b50-0f8e23c11183.png",
+      "prompt": "Use case: precise-object-edit. Asset type: revised enemy sprite for Bullets of Fury. Input image: the edit target, a previously generated candidate. Precise single-region palette edit. Change ONLY the luminous green central eye to a luminous RED eye with red/orange highlights. Preserve its existing pupil, lens shape and glow distribution. Everything else MUST remain the same: brown organic tissues, silver armor, ivory horns, outline, fireball furnace, orange flames, pose, pixel detail and composition. No redesign, no additional parts. Match the source's hand-pixelled high-quality arcade style; firm dark outlines, crisp deliberate pixels, retained material luminance. Entire enemy fully visible and centered, preserve all protrusions with transparent padding. Actual transparent alpha background, no solid backdrop, no checkerboard, no text or UI. This is a new revision; preserve original elsewhere.",
+      "active": true,
+      "size": [
+        1536,
+        1024
+      ],
+      "sha256": "ed14d6775aefdeb6f0f8660f01c5d41548104f206305f70d3326ec053d3bde5b"
+    },
+    {
+      "id": "08",
+      "kind": "revision2",
+      "name": "Furnace Maw",
+      "file": "08-furnace-maw-orange.png",
+      "source": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0e3c8-265d-7731-8ffe-ee42ebb5ba3c\\exec-2526f578-195c-443c-b129-9125522168d2.png",
+      "prompt": "Use case: precise-object-edit. Asset type: revised enemy sprite for Bullets of Fury. Input image: the edit target, a previously generated candidate. Precise material palette edit only. Change all red robotic armor plates into vivid furnace ORANGE with burnt-orange shadows and warm amber highlights, retaining all existing panel geometry. Change the large GREEN central circular eye/reactor to luminous RED, and change its small center pupil/core to a bright WHITE core with a faint warm-white glow. Leave all tan organic heat sacs, dark hoses, silver cannon rims, ivory teeth, metal spikes and orange gun embers unchanged. Preserve exact twin-cannon silhouette, original pose and every mechanical detail. No extra parts or redesign. Match the source's hand-pixelled high-quality arcade style; firm dark outlines, crisp deliberate pixels, retained material luminance. Entire enemy fully visible and centered, preserve all protrusions with transparent padding. Actual transparent alpha background, no solid backdrop, no checkerboard, no text or UI. This is a new revision; preserve original elsewhere.",
+      "active": false,
+      "size": [
+        1536,
+        1024
+      ],
+      "sha256": "3acbc09e373e04d074bf8113321d7d74b3e8657c054c676807fe70cacf802c17"
+    },
+    {
+      "id": "11",
+      "kind": "revision2",
+      "name": "Hellhugger",
+      "file": "11-hellhugger-modular-concept.png",
+      "source": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0e3c8-265d-7731-8ffe-ee42ebb5ba3c\\exec-5c05eed5-a234-43da-b21c-149bf2fd7a76.png",
+      "prompt": "Use case: precise-object-edit. Asset type: revised enemy sprite for Bullets of Fury. Input image: the edit target, a previously generated candidate. Develop this selected creature into a modular lightweight kamikaze claw attacker. Preserve its charcoal metal, restrained red armor accents, ivory paired talon blades, brown sinewy joint cables and green energy joints, with a red exposed central core. Refine into a centered 3/4 overhead front view with a small lightly armored hovering core-body and FOUR separately articulated claw limb modules joined at clearly visible round swivel sockets. Two long front striking claws and two shorter rear stabilizer claws. Show the paired talons slightly open, limbs swept back ready to snap forward in a lightning-fast pounce. Compact thin chassis, powerful small rear thruster pod, fragile exposed core so it reads easy to kill rather than a tank. No added guns, no bulky shield, no humongous HP-boss proportions. One assembled enemy only in this concept image, no duplicated parts. Consistent practical attachment joints so separate modular limb sprites can follow. Match the source's hand-pixelled high-quality arcade style; firm dark outlines, crisp deliberate pixels, retained material luminance. Entire enemy fully visible and centered, preserve all protrusions with transparent padding. Actual transparent alpha background, no solid backdrop, no checkerboard, no text or UI. This is a new revision; preserve original elsewhere.",
+      "active": true,
+      "size": [
+        1467,
+        1072
+      ],
+      "sha256": "b5aba837a0c72964cad10bd1fd7c9192bdace6414d9305dc01a937ae34ba9920"
+    },
+    {
+      "id": "01",
+      "kind": "revision3",
+      "file": "01-blue-black-alien-v3.png",
+      "source": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0e3c8-265d-7731-8ffe-ee42ebb5ba3c\\exec-e4152623-ebd5-4338-9a99-53786ad5f21b.png",
+      "prompt": "Use case: precise-object-edit. Input is the current blue/black enemy candidate to REGENERATE. Keep the cobalt-blue horned robotic armor, broad side engine pods, red upper rectangular machine sensor, charcoal-black organic sinew and polished arcade pixel-art quality. Substantially redesign ONLY the organic face/anatomy so it no longer resembles a cyclopean round floating demon. REMOVE the big single green eyeball entirely. REMOVE the wide horizontal grinning mouth and all rows of conical teeth. Replace the face with an elongated, angular obsidian alien skull-carapace. Four small green bioluminescent sensor pores in two offset pairs sit beside a narrow armored center ridge; these are tiny insets, not eyeballs. Its mouth is a VERTICAL plasma aperture made of four interlocking black segmented mandible plates, opening around a recessed electric-blue reactor glow. No lips, no gums, no grin, no conventional teeth. Compact lower hooked chin plate and a few black ribbed biomechanical cables create an insectile predatory machine face. This must be a clearly original mutated robot drone; the blue machine outline is retained but the entire facial structure becomes angular and alien, not a recolored version of the previous face. One centered whole sprite, all horns and pods fully visible with generous padding. Same view and crisp hand-pixelled arcade finish. Actual transparent alpha background, no scene, no labels, no checkerboard.",
+      "active": true,
+      "size": [
+        1431,
+        1099
+      ],
+      "sha256": "97b95670cff477d719e09abb2e25ee013e62183caa7c862cf60d6ec0000c875f"
+    },
+    {
+      "id": "04",
+      "kind": "revision3",
+      "file": "04-hellram-yellow-v3.png",
+      "source": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0e3c8-265d-7731-8ffe-ee42ebb5ba3c\\exec-26578071-bdca-4c10-a7c5-4452f55c460e.png",
+      "prompt": "Use case: precise-object-edit. Edit the attached green-flesh/black-armor horned enemy. Make ONLY these changes: (1) REMOVE the two large hanging inverted triangular metal frames, one directly below each wrist cannon. There must be NO triangle hanging beneath either cannon. Finish each cannon with its existing smooth round armored housing. (2) Palette-swap BOTH glowing green eyes to bright YELLOW with warm yellow-white highlights. Do not recolor the surrounding green brow or face. (3) Palette-swap the glowing green energy/swirl INSIDE BOTH circular cannon muzzles to bright YELLOW plasma with yellow-white cores and golden yellow shadows. The tiny indicator lights immediately above the two muzzles should also be yellow. Preserve ALL green organic muscles/skin and black/gunmetal armor, silver horns, pale fangs, pose, scale, silhouette elsewhere, cannon metal, texture and pixel-art detail. Preserve transparent alpha; do not add a backdrop. Whole enemy centered, generous padding. No redesign beyond these exact removals and palette edits, no extra weapons, no text.",
+      "active": true,
+      "size": [
+        1247,
+        1261
+      ],
+      "sha256": "0282a352a8ddc9c1e3052344418502e5c79aaa54cb28a4b8a127bd7287129d7d"
+    },
+    {
+      "id": "08",
+      "kind": "revision3",
+      "file": "08-furnace-maw-no-fins-v3.png",
+      "source": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0e3c8-265d-7731-8ffe-ee42ebb5ba3c\\exec-7728a9fd-da07-4813-9e72-ce01185e445c.png",
+      "prompt": "Use case: precise-object-edit. Input image is the edit target. Remove ONLY the TWO tall raised orange-and-grey shoulder fins at the TOP LEFT and TOP RIGHT of this enemy: the backward-canted rectangular plates containing large BLACK TRIANGULAR CUTOUTS. These are the two appendages rising above the tan fleshy shoulders. Completely eliminate those fins and their triangular holes, and close their attachment areas with compact rounded orange armor collars and the existing flexible hoses. Do NOT replace them with different fins, stacks, triangles, wings or spikes. Preserve the rest of the enemy exactly: orange/charcoal center armor, RED circular eye with WHITE glowing center, tan fleshy heat sacs, both huge cannons, silver muzzle rings, mouth teeth, side and lower metal spikes, pose, crisp arcade pixel detail. New upper silhouette is low and rounded around the shoulders rather than two sticking-up tabs. Whole sprite visible; transparent alpha background, no text or backdrop.",
+      "active": true,
+      "size": [
+        1536,
+        1024
+      ],
+      "sha256": "24fac8821a455be180c5107a8ce3df7832fdae465ed3c9e1783e3af404785fa0"
+    },
+    {
+      "id": "03",
+      "kind": "parts",
+      "file": "03-hexpyre-parts.png",
+      "source": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0e3c8-265d-7731-8ffe-ee42ebb5ba3c\\exec-abaacc8a-916b-4b97-908a-d69da808e8f1.png",
+      "prompt": "Use case: precise-object-edit. Asset type: modular game enemy component sheet. Reference image is the approved NEW BLACK fire-caster drone, with NO spikes and NO central eye. Preserve exactly this new design, palette, faceted furnace-body and mechanical hands. Produce a clean SIX-CELL sheet: exactly 3 columns x 2 rows, equal cells, fully transparent background. Every cell must have generous clear padding, no grids, labels or text, no overlaps. Cell 1 top-left: complete black central furnace hull ONLY, both circular shoulder sockets included, NO arms, no hands, no fire. Cell 2 top-middle: complete detached LEFT arm assembly from shoulder pivot through elbow to mechanical hand, black metal, no flame; set it in its natural raised caster posture matching the reference, circular shoulder attachment fully visible. Cell 3 top-right: complete detached RIGHT arm assembly matching it, no flame. Cell 4 bottom-left: only the upright orange/white flame held above the left hand, no fingers or arm. Cell 5 bottom-middle: only the upright orange/white flame held above the right hand in a different lively flicker shape, no fingers or arm. Cell 6 bottom-right: a small detached black orange-lit round shoulder joint cover/cap that fits the two arm pivots. All components use the SAME front 3/4 view, crisp high-quality hand-pixelled sprite art; mechanical arm tips are intact. Never draw the assembled enemy anywhere in this sheet. Retain graphite readable highlights on black armor. No dome shell, no green eye, no metal spikes.",
+      "active": true,
+      "size": [
+        1536,
+        1024
+      ],
+      "sha256": "74c3e6dde305440b77e605a17a7166ae8aa2243998c4592fb5f9c54040cc66d0"
+    },
+    {
+      "id": "11",
+      "kind": "parts",
+      "file": "11-hellhugger-parts.png",
+      "source": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0e3c8-265d-7731-8ffe-ee42ebb5ba3c\\exec-7815469f-78e9-4657-be76-b5c890ae7f47.png",
+      "prompt": "Use case: precise-object-edit. Asset type: modular sprite COMPONENT sheet for the lightweight four-claw kamikaze Hellhugger enemy shown in the reference. Preserve its exact charcoal/red metal armor, small ivory skull face and paired ivory talons, brown sinew cables, green round pivot joints and exposed red core. Create SIX fully SEPARATE components in exactly 3 columns by 2 rows, no text or grid lines, equal generous cells, transparent alpha. All parts use a coherent upright front 3/4 overhead view. Top-left cell: the small central body alone with red core, ivory face, and four green circular limb attachment sockets; NO limbs, NO thruster. Top-middle: detached long LEFT FRONT claw limb, starting with a circular attachment at its upper right and extending diagonally down-left to a paired ivory talon. Top-right: matching detached long RIGHT FRONT claw limb, attachment at upper left, talons down-right. Bottom-left: detached shorter LEFT REAR stabilizing claw, attachment at lower right and talons toward upper left. Bottom-middle: detached shorter RIGHT REAR stabilizing claw, attachment at lower left and talons toward upper right. Bottom-right: detached rear thruster module, upright barrel, small orange exhaust plume pointing UPWARD away from the body. Each of the FOUR separate limbs includes its full sinewy shaft, mechanical socket and both claw blades. Correct mirrored left/right anatomy, no assembled whole enemy, no duplicate parts or missing limbs. Keep all components centered in their own cells with 15% transparent gutters; no clipping, no overlap. High quality detailed arcade pixel sprites, black outlines, clean alpha.",
+      "active": true,
+      "size": [
+        1536,
+        1024
+      ],
+      "sha256": "98435f74ec5db46ef36344e0ae29bb5b0c1bede8adda889d5c99c8f52c2564df"
+    },
+    {
+      "file": "06-rifle-locust-neon-v4.png",
+      "kind": "revision4",
+      "prompt": "Use case: precise-object-edit. Edit the provided selected Rifle Locust drone sprite into a new color revision with visibly separable modules. Preserve the approved compact blunt gunship silhouette, two rifles, side engine pods and source pixel-art style. 1. Palette-swap the GREEN main hull armor and upper side ENGINE POD armor to vivid NEON RED / brilliant saturated cherry red, with deep crimson shadows and crisp pale-red metallic highlights. No green armor remains. 2. Palette-swap the dark red ORGANIC flesh connections and exposed muscle/cable bundles to realistic PINK FLESH, with rose shadows and pale salmon highlights. These should read as flesh and contrast clearly with the glossy neon-red metal. 3. BOTH lower gun TURRETS, gun housings, barrels, round weapon pivots and the small former red LASER MARKINGS/indicator insets on the guns and hull become DARK GRAY / charcoal gunmetal. The laser/indicator markings must no longer glow red: dark grey insets with restrained grey highlights. Keep black recesses and readable metallic edge highlights. Keep two clearly defined circular gun-pivot mounts, and distinct mechanical attachment sockets for the left/right side pods so we can separate components later. Do not add spikes, claws, horns, fins, weapons or extra eyes; keep all the approved original geometry. One assembled whole enemy, no component layout yet. Centered entire sprite, nothing cropped. High-quality hand-pixelled arcade sprite, actual transparent alpha background, no text, no checkerboard or solid background.",
+      "source": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0e3c8-265d-7731-8ffe-ee42ebb5ba3c\\exec-9e797556-c17c-4082-a363-fbe115fc5e70.png",
+      "id": "06",
+      "name": "Rifle Locust",
+      "active": true,
+      "size": [
+        1278,
+        1230
+      ],
+      "sha256": "015396b4156a9f12a33c240b76ab6e158f98601e086f2dd7acf83abdd852a9f5"
+    },
+    {
+      "file": "06-rifle-locust-parts.png",
+      "kind": "parts",
+      "prompt": "Use case: precise-object-edit. Asset type: MODULAR GAME SPRITE COMPONENT SHEET based exactly on the provided neon-red / pink-flesh / dark-grey drone. Preserve this NEW design and exact colors. Produce SIX separate components in a precise 3 columns by 2 rows arrangement with large transparent gutters; no text, borders or labels, no assembled whole enemy. All pieces front 3/4 overhead view matching the reference. TOP LEFT: entire CENTRAL neon-red hull alone including its three DARK GRAY sensor markings, pink organic side connections and inner pink belly tissue, black undercarriage and four round attachment sockets; NO rifle turrets and NO upper side engine pods or side winglets. TOP MIDDLE: detached LEFT complete DARK CHARCOAL rifle turret assembly, with circular socket at UPPER RIGHT, weapon body below and barrel pointing DOWN LEFT. All gun indicator insets dark grey, no red or pink gun metal. TOP RIGHT: mirrored RIGHT complete dark-grey rifle turret with socket at UPPER LEFT and barrels pointing DOWN RIGHT. BOTTOM LEFT: detached LEFT neon-red upper ENGINE POD plus its short blunt red winglet, intact gray intake grille and DARK GRAY marker, round attachment facing RIGHT toward hull. BOTTOM MIDDLE: detached RIGHT neon-red engine pod and winglet, attachment facing LEFT. BOTTOM RIGHT: one separate dark-grey round mechanical socket cover for the turret joints. No green metal anywhere. No red glowing laser strips. No added claws, horns or spikes. Keep the flesh connections light pink, not red. Every component stays fully within its cell with 12 percent padding, preserve ALL barrels and winglet tips, no overlap. Rich detailed arcade hand-pixel art with strong black outlines and bright red armor edge highlights. Actual transparent alpha background, no scenery or background glow filling the sheet.",
+      "cleanup_prompt": "Use case: background-extraction. Edit this exact six-component game sprite sheet. Remove ONLY the broad soft red, grey, and black atmospheric background halos surrounding all six components. The output must have fully clear alpha=0 in every space between and around the sprites, with sharp clean cutout edges and no drop shadows or outer glow. Preserve all six existing pieces in their EXACT current positions, dimensions, shapes, colors and 3-column 2-row layout: neon-red central hull with pink flesh top-left, left charcoal rifle top-middle, right charcoal rifle top-right, left neon-red engine pod bottom-left, right neon-red engine pod bottom-middle, grey socket cap bottom-right. Preserve dark sprite outlines and interior dark details. Do not repaint, redesign, move, resize, duplicate, add or remove ANY piece. No solid background, no checkerboard pattern, no haze. True transparent PNG game assets.",
+      "initial_source": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0e3c8-265d-7731-8ffe-ee42ebb5ba3c\\exec-384990f6-2284-4d9b-b680-3d1efc0fdd9f.png",
+      "source": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0e3c8-265d-7731-8ffe-ee42ebb5ba3c\\exec-f043a333-0710-4a86-b310-e66d5b682d49.png",
+      "id": "06",
+      "name": "Rifle Locust",
+      "active": true,
+      "size": [
+        1536,
+        1024
+      ],
+      "sha256": "f4147112918baed3140ba0b6715755d34b26ecffdee49432c6b9b041cc145b7e"
+    }
+  ],
+  "status": "Selected concept art revisions and modular source kits; no campaign wiring."
+}

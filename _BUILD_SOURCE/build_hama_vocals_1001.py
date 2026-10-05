@@ -10,7 +10,7 @@ from hama_robot_dsp_1001 import vocode, RATE
 R=Path(__file__).resolve().parents[1];SRC=R/'_ART_SOURCES/hama_vocals_1001';OUT=R/'assets/game/hama_vocals_1001';QA=R/'_shots/hama_hooks_1001'
 for p in [SRC,OUT,QA]:p.mkdir(parents=True,exist_ok=True)
 FF=imageio_ffmpeg.get_ffmpeg_exe();SR=44100;P=60/132.55;SECONDS=180.013;N=round(SECONDS*SR)
-VOICE_REPORT={};MIX_NAME='hama_mike_robot_mix_1001_v3.mp3'
+VOICE_REPORT={};MIX_NAME='HAMA.mp3';MUSIC_OUT=R/'assets/game/music'
 def ff(args):
  p=subprocess.run([FF,'-hide_banner','-loglevel','error','-y',*map(str,args)],capture_output=True)
  if p.returncode:raise RuntimeError(p.stderr.decode(errors='replace'))
@@ -73,17 +73,17 @@ for at,end in [(101.596,115.44-1.25*P),(145.051,158.64-1.25*P)]:
  for i,t in enumerate(np.arange(at,end,2*P)):cap(t,min(t+2*P,end),'OH! OH-OH!','boss' if i%2 else 'crew')
 assert all(e['label'] in {'chorus','breakdown chant'} for e in events)
 assert all(c['text'] in {'CANT TOUCH THIS','OH! OH-OH!'} for c in captions)
-music=decode(R/'assets/game/music/hama_instrumental_0928.mp3',2);bed=np.zeros_like(voc);bed[:min(N,len(music))]=music[:N]
+music=decode(R/'assets/game/music/HAMA_Instrumental.mp3',2);bed=np.zeros_like(voc);bed[:min(N,len(music))]=music[:N]
 # Slow, short duck envelopes; no frame-by-frame pumping or separate drifting player.
 duck=np.ones(N,dtype=np.float32)*.82
 for e in events:
  a=max(0,round((e['t']-.04)*SR));b=min(N,round((e['end']+.08)*SR));duck[a:b]=np.minimum(duck[a:b],.47)
 hop=441;sample=duck[::hop];smooth=np.convolve(np.pad(sample,(5,5),mode='edge'),np.ones(11)/11,mode='valid');duck=np.interp(np.arange(N)/hop,np.arange(len(smooth)),smooth).astype('float32')
-mix=bed*duck[:,None]+voc*.94;peak=float(np.abs(mix).max());mix*=min(1,.83/max(peak,1e-9));mp3(OUT/MIX_NAME,mix)
+mix=bed*duck[:,None]+voc*.94;peak=float(np.abs(mix).max());mix*=min(1,.83/max(peak,1e-9));mp3(MUSIC_OUT/MIX_NAME,mix)
 mp3(QA/'vocal_stem.mp3',voc*.8)
-data={'music':'assets/game/hama_vocals_1001/'+MIX_NAME,'seconds':SECONDS,'bpm':132.55,'voiceTreatment':'deep-vocoder-hooks-only-v3','events':sorted(events,key=lambda e:e['t']),'captions':sorted(captions,key=lambda e:e['t'])}
+data={'music':'assets/game/music/'+MIX_NAME,'seconds':SECONDS,'bpm':132.55,'voiceTreatment':'deep-vocoder-hooks-only-v3','events':sorted(events,key=lambda e:e['t']),'captions':sorted(captions,key=lambda e:e['t'])}
 (OUT/'cues.json').write_text(json.dumps(data,indent=2)+'\n')
 (R/'assets/hama_vocals_art_1001.js').write_text('"use strict";\nconst HAMA_VOCALS_1001='+json.dumps(data,separators=(',',':'))+';\n',encoding='utf-8',newline='\n')
-decoded=decode(OUT/MIX_NAME,2)
+decoded=decode(MUSIC_OUT/MIX_NAME,2)
 report={'revision':'deep-vocoder-hooks-only-v3','vocalContent':['CANT TOUCH THIS','OH! OH-OH!'],'removedVerseStemPeak':float(np.abs(voc[round(12*SR):round(30*SR)]).max()),'voices':VOICE_REPORT,'events':len(events),'captions':len(captions),'seconds':len(decoded)/SR,'peak':float(np.abs(decoded).max()),'clippedSamples':int(np.count_nonzero(np.abs(decoded)>=1)),'rms':float(np.sqrt(np.mean(decoded**2))),'sourceHashes':sources,'originalInstrumentalPreserved':True}
 (QA/'mastering.json').write_text(json.dumps(report,indent=2)+'\n');print(json.dumps(report,indent=2))

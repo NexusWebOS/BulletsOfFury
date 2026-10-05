@@ -28,7 +28,7 @@ module.exports=function(vm,ctxv,ok){
    s6Wing={route:'left',routeFightT:0};o.start=Math.round(s6TurnOffset());
    s6Wing={route:null};o.none=Math.round(s6TurnOffset());
    o.arenaKey=XART._src.sx1001_arena;
-   o.arenaWrap=/Rival24\\.active&&stageXArenaDraw/.test(drawBG.toString());
+   run._gp4StageX='left';o.arenaWrap=stageXArenaActive();run.stage=5;o.arenaWrap=o.arenaWrap&&!stageXArenaActive();delete run._gp4StageX;run.stage=6;
    const sp=[];for(let t=0;t<=8;t+=.05)sp.push(s7pSpeed(t));
    o.noBrake=sp.every((v,i)=>i===0||v>=sp[i-1]-1e-9); o.fullSpeed=Math.abs(s7pSpeed(S7P.SD+S7P.ACC+.01)-S7P.VMAX)<1e-6;
    o.pilotLine=fr27Exit.toString().indexOf('WHAT IS THIS?! WHAT IS HAPPENING TO ME?!')>=0;
@@ -43,7 +43,7 @@ module.exports=function(vm,ctxv,ok){
  ok(out.flashSolid,'1001b: the bomber flash is a FULL hit-colour flood of the plate, not a 74% wash');
  ok(out.left===340&&out.right===-340,'1001b: choosing LEFT slides the stage-6 world +340, RIGHT -340 ('+out.left+'/'+out.right+')');
  ok(out.start===0&&out.none===0,'1001b: the stage-6 turn is still before the choice and at the moment of it');
- ok(out.arenaKey==='assets/game/stagex_1001/stagex_arena.png'&&fs.existsSync(path.join(ROOT,out.arenaKey||'x')),'1001b: Stage X arena plate is registered and on disk');
+ ok(out.arenaKey==='assets/game/stagex_coast_1004j/terrain.png'&&fs.existsSync(path.join(ROOT,out.arenaKey||'x')),'1001b: Stage X arena plate is registered and on disk');
  ok(out.arenaWrap,'1001b: the Stage X duel draws its own water-plateau arena, not stage 6');
  const a=png('assets/game/stagex_1001/stagex_arena.png');
  ok(a[0]===680&&a[1]>=1024,'1001b: the arena plate is 680 wide and tall enough to circle the mountain ('+a.join('x')+')');

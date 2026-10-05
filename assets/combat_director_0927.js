@@ -57,12 +57,30 @@ wm26BossFlash=function(b,F){
 // True lasers retain a laser flare. Callers for fire/ice/kinetic are routed explicitly.
 roundLaserMuzzleDraw=function(g,x,y,size,hex,frame){return d27MuzzleDraw(g,hex===FIRE_WHIP_PALETTE?'fire':'laser',x,y,-Math.PI/2,(((frame==null?Math.floor(efxClock*24):frame)%8)+8)%8/8,size,hex);};
 
-/* Reuse the existing breakup/explosion families and simulation-clock queue. Each
-   part owns an idempotence key, so beams hitting a wreck cannot retrigger it. */
+/* A detached authored plate stays fully opaque until the terminal blast. */
+const D27_MODULE_DEBRIS=[];
+function d27ModuleDebrisTick(dt){
+  for(let i=D27_MODULE_DEBRIS.length-1;i>=0;i--){
+    const d=D27_MODULE_DEBRIS[i];if(d.stage!==run.stage){D27_MODULE_DEBRIS.splice(i,1);continue;}
+    d.t+=dt;d.x+=d.vx*dt;d.y+=d.vy*dt;d.vy+=75*dt;d.rot+=d.spin*dt;
+    if(d.t>=d.life){explode(d.x,d.y,Math.max(d.w,d.h)*.8,d.palette,'fireball');
+      if(typeof spawnShockRing==='function')spawnShockRing(d.x,d.y,Math.max(d.w,d.h)*.65,'fire');
+      D27_MODULE_DEBRIS.splice(i,1);}
+  }
+}
+function d27ModuleDebrisDraw(){
+  for(const d of D27_MODULE_DEBRIS){if(!d.image)continue;
+    ctx.save();ctx.imageSmoothingEnabled=false;ctx.translate(d.x,d.y);ctx.rotate(d.rot);
+    ctx.drawImage(d.image,-d.w/2,-d.h/2,d.w,d.h);ctx.restore();}
+}
+/* Reuse authored breakup/explosion families. Each part has an idempotence key. */
 function d27ModuleRupture(owner,part,shape,palette){
   if(!owner||!part||part._d27Ruptured||!shape)return false;part._d27Ruptured=true;
   const unit=clamp(Math.max(shape.w||30,shape.h||30),24,100),count=unit>60?18:12;
   const room=Math.max(0,144-_xChain.filter(q=>q.module).length),n=Math.min(count,room),dx=shape.x-owner.x,dy=shape.y-owner.y;
+  if(shape.debrisImage){const side=Math.sign(dx)||1;D27_MODULE_DEBRIS.push({image:shape.debrisImage,x:shape.x,y:shape.y,w:shape.w,h:shape.h,
+    vx:side*(100+unit*.65),vy:-105-unit*.28,rot:shape.rot||0,spin:side*(5+unit*.025),
+    t:0,life:.62+unit*.002,stage:run.stage,palette:palette||'red'});}
   const families=['nxp_dense','nxp_barrage','nxp_radial','nxp_clus'];
   for(let i=0;i<n;i++){
     const a=i*2.39996,r=unit*(.10+.24*(i%4)/3),ox=dx+Math.cos(a)*r,oy=dy+Math.sin(a)*r;

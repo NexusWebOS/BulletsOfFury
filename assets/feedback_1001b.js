@@ -72,9 +72,25 @@ bg6LoopDraw=function(img,key,scroll,drawW,winH,dstY){
    run out: the camera flies in from the plateau's southern cliffs and then circles the mountain,
    drifting slowly up and down the plate so the peak never leaves the fight.
    --------------------------------------------------------------------------------------------- */
-XART._src.sx1001_arena='assets/game/stagex_1001/stagex_arena.png';
+// Generated terrain-only coastal city. Native alpha exposes the authored water reel.
+XART._src.sx1001_arena='assets/game/stagex_coast_1004j/terrain.png';
+const SX4J_WATER_KEYS=['nwl_water_0','nwl_water_1','nwl_water_2','nwl_water_3'];
 let sx1001T=0;
-function stageXArenaReady(){return XART.rdy('sx1001_arena');}
+function stageXArenaReady(){
+  const terrain=XART.rdy('sx1001_arena');
+  let water=true;
+  for(const k of SX4J_WATER_KEYS)if(!XART.rdy(k))water=false;
+  return terrain&&water;
+}
+function stageXArenaWaterDraw(sy,top,h,W){
+  const key=SX4J_WATER_KEYS[Math.floor(sx1001T*6)%SX4J_WATER_KEYS.length];
+  const fr=XART.get(key),tw=fr.naturalWidth||fr.width,th=fr.naturalHeight||fr.height;
+  // The bed moves independently of the terrain camera, in world coordinates.
+  const phase=((sy-sx1001T*4)%th+th)%th;
+  for(let y=top-phase;y<top+h;y+=th){
+    for(let x=0;x<W;x+=tw)ctx.drawImage(fr,x,y,tw,th);
+  }
+}
 function stageXArenaSrcY(img){
   const H=img.naturalHeight||img.height,span=Math.max(0,H-viewH()),mid=span*.46,swing=span*.22;
   const intro=clamp(sx1001T/4.5,0,1),ie=intro*intro*(3-2*intro);
@@ -86,26 +102,30 @@ function stageXArenaDraw(dt){
   sx1001T+=Math.max(0,dt||0);
   const img=XART.get('sx1001_arena'),W=worldWidth(),sy=stageXArenaSrcY(img),top=viewTopY(),h=viewH();
   ctx.save();ctx.imageSmoothingEnabled=false;
+  stageXArenaWaterDraw(sy,top,h,W);
   ctx.drawImage(img,0,sy,img.naturalWidth||img.width,h,0,top,W,h);
   ctx.restore();
   _masterSrcY=sy-top;
   return true;
 }
 const FB1001_DRAWBG=drawBG;
+function stageXArenaActive(){
+  return !!(typeof Rival24!=='undefined'&&Rival24.active)||run.stage===6&&!!run._gp4StageX;
+}
 drawBG=function(dt){
-  if(typeof Rival24!=='undefined'&&Rival24.active&&stageXArenaDraw(dt))return;
+  if(stageXArenaActive()&&stageXArenaDraw(dt))return;
   return FB1001_DRAWBG.apply(this,arguments);
 };
 /* the duel's launch (a Stage-6 launch underneath) flies in over the same plate */
 const FB1001_S6TRANS=stage6TransitionBackgroundDraw;
 stage6TransitionBackgroundDraw=function(scroll){
-  if(typeof Rival24!=='undefined'&&Rival24.active&&stageXArenaReady()){
+  if(stageXArenaActive()&&stageXArenaReady()){
     sx1001T=0;ctx.save();if(worldWidth()>VW)ctx.translate(-camX,0);stageXArenaDraw(0);ctx.restore();return;
   }
   return FB1001_S6TRANS.apply(this,arguments);
 };
 const FB1001_BEGIN=beginStage;
-beginStage=function(num){sx1001T=0;const r=FB1001_BEGIN.apply(this,arguments);XART.rdy('sx1001_arena');return r;};
+beginStage=function(num){sx1001T=0;const r=FB1001_BEGIN.apply(this,arguments);stageXArenaReady();return r;};
 
 /* ---------------------------------------------------------------------------------------------
    D. STAGE 9 - SMALLER, CLEANER ASTEROIDS, AND WATERY ONES

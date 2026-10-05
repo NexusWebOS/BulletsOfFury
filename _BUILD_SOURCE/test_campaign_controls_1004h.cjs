@@ -1,0 +1,35 @@
+module.exports=function(vm,c,ok){
+ const fs=require('fs'),path=require('path');vm.runInContext(fs.readFileSync(path.join(__dirname,'../assets/campaign_controls_1004h.js'),'utf8'),c);
+ console.log('=== Campaign input ownership and verified manual slots ===');
+ const result=JSON.parse(vm.runInContext(`JSON.stringify((()=>{
+ const out={},get=localStorage.getItem,set=localStorage.setItem,store={};
+ localStorage.getItem=k=>store[k]??null;localStorage.setItem=(k,v)=>store[k]=String(v);
+ run.mode='campaign';state=GS.STAGESEL;sselCursor=3;sselBoot=0;sselUnlockCine=null;s9MapCine=null;riftReturn=null;sselZoom=null;window.sselCommitted=false;_selFlash=null;campPause=null;CF4.focus=false;MAP4E.xPreview=false;
+ campaign.unlockedMax=8;campaign.bonusUnlocked=false;campaign.stageX1004={route:'right',done:false};CF4.flight=4;
+ out['left from I reaches VIII, VII and VI without a dead end']=[sselMoveHorizontal(-1,1,8,1),sselMoveHorizontal(-1,1,8,8),sselMoveHorizontal(-1,1,8,7)].join(',')==='8,7,6';
+ out['the full mission ring is reachable in both directions']=Array.from({length:8},(_,i)=>i+1).every(k=>sselMoveHorizontal(-1,1,8,sselMoveHorizontal(1,1,8,k))===k);
+ out['the earned Stage IX latch still limits navigation']=sselMoveHorizontal(-1,9,9,9)===9&&sselMoveHorizontal(1,9,9,9)===9;
+ out['3 to 4 faces downward']=map4eShipHeading(3,4,1)===Math.PI;
+ cmap2.focus='map';Input.clearTaps();Input.injectTap('enter');campaignMenuInputTick();
+ out['Start gives the bar ownership before Stage X can deploy']=cmap2.focus==='bar'&&!Rival24.mapInput()&&state===GS.STAGESEL;
+ Input.clearTaps();cmap2.focus='map';sselCursor=6;map4hVertical(-1);
+ out['Up from VI selects the pending X fight']=CF4.focus&&!MAP4E.xPreview&&Rival24.mapFocused;
+ Input.injectTap(keybind.down[0]);Rival24.mapInput();
+ out['Down from X returns to VI']=!map4hXFocused()&&sselCursor===6;
+ campaign.stageX1004=null;map4hVertical(-1);
+ out['locked X can be inspected from VI without inventing a route']=MAP4E.xPreview&&!cf4Pending();map4hLeaveX();
+ run.score=54321;run.pilot='yuri';run.stage=7;sselCursor=3;campaign.bonusUnlocked=true;
+ out['a successful manual save reads back the exact bytes']=campWriteSlot(5)&&!!store[campSlotKey(5)];const snap=campReadSlot(5);
+ out['a map save captures selected stage and bonus access']=snap.stage===3&&snap.bonusUnlocked===true&&snap.score===54321;
+ localStorage.setItem=()=>{};run.score=98765;
+ out['a silent storage no-op cannot claim it saved']=!campWriteSlot(5)&&campReadSlot(5).score===54321;
+ out['invalid slot writes are rejected']=!campWriteSlot(-1)&&!campWriteSlot(CAMP_SLOTS);
+ localStorage.setItem=(k,v)=>store[k]=String(v);campaign.stageX1004={route:'left',done:false};CF4.focus=true;sselCursor=6;campaign.bonusUnlocked=false;
+ campWriteSlot(23);const x=campReadSlot(23);CF4.focus=false;campaign.stageX1004=null;
+ const loaded=campApply(x);openStageSelect(run.stage,{});
+ out['loading a saved X focus restores its route and city selection']=loaded&&campaign.stageX1004.route==='left'&&CF4.focus;
+ const P={mode:'save',sel:2,msg:'',msgT:0};localStorage.setItem=()=>{};
+ map4hSlotCommit(P,2,true);out['failed saves retain their selected slot and show failure']=P.sel===2&&P.msg.includes('SAVE FAILED');
+ localStorage.getItem=get;localStorage.setItem=set;Input.clearTaps();campPause=null;cmap2.focus='map';CF4.focus=false;MAP4E.xPreview=false;return out;
+})())`,c));for(const [n,v]of Object.entries(result))ok(v,n);
+};

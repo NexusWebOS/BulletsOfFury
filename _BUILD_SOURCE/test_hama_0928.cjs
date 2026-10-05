@@ -18,7 +18,7 @@ module.exports=function(vm,ctxv,ok){
   pwInput='HAMA';submitPassword();pilotIndex=PILOTS.findIndex(p=>p.key==='maverick');startRun(PENDING_STAGE);
   const b=boss,d=b._hammerTime,m=Snd.music.hama;m.readyState=4;m.paused=false;m.currentTime=0;
   updatePlay(1/60);
-  o['the run plays the instrumental, not the remix']=ht27Active&&hamaOn()&&d.musicStarted&&Snd.cur===m&&m.src.indexOf('hama_instrumental_0928.mp3')>=0&&!!d.hama;
+  o['the run plays the instrumental, not the remix']=ht27Active&&hamaOn()&&d.musicStarted&&Snd.cur===m&&m.src.indexOf('HAMA_Instrumental.mp3')>=0&&!!d.hama;
   function advance(to){while(m.currentTime<to){m.currentTime=Math.min(to,m.currentTime+1/60);updatePlay(1/60);}}
   const origin={x:player.x,y:player.y};for(const a of ['up','fire'])for(const k of keybind[a])Input.keys[k]=true;
   advance(8);const x0=b.x;advance(8.9);

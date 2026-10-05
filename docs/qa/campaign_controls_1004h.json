@@ -1,0 +1,436 @@
+{
+  "date": "2026-10-04",
+  "scope": "Campaign navigation, Stage VI/X travel, Start menu ownership and persistent manual/autosave load flows",
+  "suite": {
+    "assertions": 7160,
+    "exit": 0,
+    "final_summary": "FALVA/LIZZIE BUILD OK, 0 ERRORS"
+  },
+  "syntax": {
+    "assets/game.js": "exit 0",
+    "assets/campaign_controls_1004h.js": "exit 0"
+  },
+  "native": {
+    "map_storage": {
+      "checks": [
+        {
+          "ok": true,
+          "name": "Left mission ring reaches 8"
+        },
+        {
+          "ok": true,
+          "name": "Left mission ring reaches 7"
+        },
+        {
+          "ok": true,
+          "name": "Left mission ring reaches 6"
+        },
+        {
+          "ok": true,
+          "name": "Left mission ring reaches 5"
+        },
+        {
+          "ok": true,
+          "name": "Left mission ring reaches 4"
+        },
+        {
+          "ok": true,
+          "name": "Left mission ring reaches 3"
+        },
+        {
+          "ok": true,
+          "name": "Left mission ring reaches 2"
+        },
+        {
+          "ok": true,
+          "name": "Left mission ring reaches 1"
+        },
+        {
+          "ok": true,
+          "name": "Right mission ring reaches 2"
+        },
+        {
+          "ok": true,
+          "name": "Right mission ring reaches 3"
+        },
+        {
+          "ok": true,
+          "name": "Right mission ring reaches 4"
+        },
+        {
+          "ok": true,
+          "name": "actual 3 to 4 hull faces downward"
+        },
+        {
+          "ok": true,
+          "name": "Right mission ring reaches 5"
+        },
+        {
+          "ok": true,
+          "name": "Right mission ring reaches 6"
+        },
+        {
+          "ok": true,
+          "name": "Right mission ring reaches 7"
+        },
+        {
+          "ok": true,
+          "name": "Right mission ring reaches 8"
+        },
+        {
+          "ok": true,
+          "name": "Right mission ring reaches 1"
+        },
+        {
+          "ok": true,
+          "name": "Up from VI selects None Stage X"
+        },
+        {
+          "ok": true,
+          "name": "ship travels upward from VI to None X"
+        },
+        {
+          "ok": true,
+          "name": "Down from None X returns to VI"
+        },
+        {
+          "ok": true,
+          "name": "ship returns downward from None X to VI"
+        },
+        {
+          "ok": true,
+          "name": "Start opens bar instead of deploying stage"
+        },
+        {
+          "ok": true,
+          "name": "bar confirmation opens save panel"
+        },
+        {
+          "ok": true,
+          "name": "open save panel owns Up over None X"
+        },
+        {
+          "ok": true,
+          "name": "open save panel owns Down over None X"
+        },
+        {
+          "ok": true,
+          "name": "Back closes slots to top menu without leaving map"
+        },
+        {
+          "ok": true,
+          "name": "Up from VI selects left Stage X"
+        },
+        {
+          "ok": true,
+          "name": "ship travels upward from VI to left X"
+        },
+        {
+          "ok": true,
+          "name": "Down from left X returns to VI"
+        },
+        {
+          "ok": true,
+          "name": "ship returns downward from left X to VI"
+        },
+        {
+          "ok": true,
+          "name": "Start opens bar instead of deploying stage"
+        },
+        {
+          "ok": true,
+          "name": "bar confirmation opens save panel"
+        },
+        {
+          "ok": true,
+          "name": "open save panel owns Up over left X"
+        },
+        {
+          "ok": true,
+          "name": "open save panel owns Down over left X"
+        },
+        {
+          "ok": true,
+          "name": "Back closes slots to top menu without leaving map"
+        },
+        {
+          "ok": true,
+          "name": "Up from VI selects right Stage X"
+        },
+        {
+          "ok": true,
+          "name": "ship travels upward from VI to right X"
+        },
+        {
+          "ok": true,
+          "name": "Down from right X returns to VI"
+        },
+        {
+          "ok": true,
+          "name": "ship returns downward from right X to VI"
+        },
+        {
+          "ok": true,
+          "name": "Start opens bar instead of deploying stage"
+        },
+        {
+          "ok": true,
+          "name": "bar confirmation opens save panel"
+        },
+        {
+          "ok": true,
+          "name": "open save panel owns Up over right X"
+        },
+        {
+          "ok": true,
+          "name": "open save panel owns Down over right X"
+        },
+        {
+          "ok": true,
+          "name": "Back closes slots to top menu without leaving map"
+        },
+        {
+          "ok": true,
+          "name": "Start opens bar instead of deploying stage"
+        },
+        {
+          "ok": true,
+          "name": "bar confirmation opens save panel"
+        },
+        {
+          "ok": true,
+          "name": "real slot confirmation saves the selected stage and score to slot 3"
+        },
+        {
+          "ok": true,
+          "name": "verified save remains visible with correct receipt"
+        },
+        {
+          "ok": true,
+          "name": "selected generated cartridge and saved pilot hull draw in native renderer"
+        },
+        {
+          "ok": true,
+          "name": "Right pages four slots without returning to the map"
+        },
+        {
+          "ok": true,
+          "name": "last save slot stays reachable"
+        },
+        {
+          "ok": true,
+          "name": "last slot 24 actually writes"
+        },
+        {
+          "ok": true,
+          "name": "silent blocked write reports failure and preserves previous save"
+        },
+        {
+          "ok": true,
+          "name": "both manual slots survive real browser reload"
+        },
+        {
+          "ok": true,
+          "name": "Start opens bar instead of deploying stage"
+        },
+        {
+          "ok": true,
+          "name": "bar confirmation opens load panel"
+        },
+        {
+          "ok": true,
+          "name": "load slot 3 restores stage, pilot, score and difficulty to the map"
+        },
+        {
+          "ok": true,
+          "name": "Start opens bar instead of deploying stage"
+        },
+        {
+          "ok": true,
+          "name": "bar confirmation opens load panel"
+        },
+        {
+          "ok": true,
+          "name": "loading an empty slot keeps the load panel open"
+        },
+        {
+          "ok": true,
+          "name": "top-menu Exit remains selectable after load"
+        },
+        {
+          "ok": true,
+          "name": "safe default Exit choice stays on the campaign map"
+        },
+        {
+          "ok": true,
+          "name": "FIRE launches the earned left Stage X fight"
+        },
+        {
+          "ok": true,
+          "name": "FIRE launches the earned right Stage X fight"
+        },
+        {
+          "ok": true,
+          "name": "Start opens bar instead of deploying stage"
+        },
+        {
+          "ok": true,
+          "name": "bar confirmation opens save panel"
+        },
+        {
+          "ok": true,
+          "name": "Start opens bar instead of deploying stage"
+        },
+        {
+          "ok": true,
+          "name": "bar confirmation opens load panel"
+        },
+        {
+          "ok": true,
+          "name": "loading saved Stage X restores its city focus and earned Harrier route"
+        },
+        {
+          "ok": true,
+          "name": "all D-pad directions preserve the earned Stage IX gate"
+        },
+        {
+          "ok": true,
+          "name": "Start opens bar instead of deploying stage"
+        },
+        {
+          "ok": true,
+          "name": "bar confirmation opens save panel"
+        },
+        {
+          "ok": true,
+          "name": "Start opens bar instead of deploying stage"
+        },
+        {
+          "ok": true,
+          "name": "bar confirmation opens load panel"
+        },
+        {
+          "ok": true,
+          "name": "saved Stage IX access survives the real load flow"
+        },
+        {
+          "ok": true,
+          "name": "Start opens bar instead of deploying stage"
+        },
+        {
+          "ok": true,
+          "name": "bar confirmation opens save panel"
+        },
+        {
+          "ok": true,
+          "name": "all cartridge rows fit compact screen below the top menu"
+        },
+        {
+          "ok": true,
+          "name": "review save persists instead of silently discarding slot writes"
+        },
+        {
+          "ok": true,
+          "name": "review slot survives page reload in its separate namespace"
+        },
+        {
+          "ok": true,
+          "name": "zero page and console errors"
+        }
+      ],
+      "errors": []
+    },
+    "pointer_pad_hub": {
+      "checks": [
+        {
+          "ok": true,
+          "name": "controller Start selects the top menu"
+        },
+        {
+          "ok": true,
+          "name": "second Start confirms highlighted top-menu action"
+        },
+        {
+          "ok": true,
+          "name": "controller Down belongs to save slots"
+        },
+        {
+          "ok": true,
+          "name": "controller Up belongs to save slots"
+        },
+        {
+          "ok": true,
+          "name": "controller A writes selected manual slot"
+        },
+        {
+          "ok": true,
+          "name": "pointer saves the clicked cartridge without switching map stages"
+        },
+        {
+          "ok": true,
+          "name": "controller B closes slots to bar"
+        },
+        {
+          "ok": true,
+          "name": "autosave is a selectable entry after the manual slots"
+        },
+        {
+          "ok": true,
+          "name": "controller A loads the actual campaign autosave"
+        },
+        {
+          "ok": true,
+          "name": "hub save writes a real campaign checkpoint"
+        },
+        {
+          "ok": true,
+          "name": "hub save receipt survives the confirmation flash callback"
+        },
+        {
+          "ok": true,
+          "name": "hub receipt expires without being reset each frame"
+        },
+        {
+          "ok": true,
+          "name": "hub Back returns to campaign hub without exiting campaign"
+        },
+        {
+          "ok": true,
+          "name": "hub load restores checkpoint to campaign map"
+        },
+        {
+          "ok": true,
+          "name": "Exit starts on the safe Stay choice"
+        },
+        {
+          "ok": true,
+          "name": "explicit Exit confirmation ends campaign and returns to title"
+        },
+        {
+          "ok": true,
+          "name": "zero page and console errors in pointer/pad/hub flows"
+        }
+      ],
+      "errors": []
+    }
+  },
+  "native_checks": 98,
+  "review": "_shots/campaign_controls_1004h/review.html",
+  "live_game": "index.html?build=campaign-controls-1004h",
+  "review_storage_namespace": "bof_map_review_1004h_",
+  "art": "assets/game/campaign_controls_1004h/manifest.json",
+  "prompt": "_ART_SOURCES/campaign_controls_1004h/prompt.json",
+  "screenshots_inspected": [
+    "save-slots.png",
+    "load-slots.png",
+    "compact-save.png",
+    "pointer-save.png",
+    "auto-load.png",
+    "hub-save.png"
+  ],
+  "limitations": "Normalized gamepad events are injected, not physical hardware. No full campaign-clear or combat-balance claim.",
+  "corrected_probe_fixtures": [
+    "Hidden HUD canvas selector changed to #screen",
+    "pad_b12/13 changed to normalized pad_up/down"
+  ]
+}

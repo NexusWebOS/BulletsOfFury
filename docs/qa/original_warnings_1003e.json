@@ -1,0 +1,109 @@
+{
+  "checks": [
+    {
+      "ok": true,
+      "name": "green boss lane uses original FOV pixels and no new warning sheet"
+    },
+    {
+      "ok": true,
+      "name": "yellow boss lane uses original FOV pixels and no new warning sheet"
+    },
+    {
+      "ok": true,
+      "name": "red boss lane uses original FOV pixels and no new warning sheet"
+    },
+    {
+      "ok": true,
+      "name": "gravity targeting uses original ground Retina while keeping the chrome shield"
+    },
+    {
+      "ok": true,
+      "name": "knight jump uses original red ground Retina"
+    },
+    {
+      "ok": true,
+      "name": "ordinary alien uses original lanes without floating boss warning signs"
+    },
+    {
+      "ok": true,
+      "name": "real Stage X deployment plays the full converted Gasline MP3"
+    },
+    {
+      "ok": true,
+      "name": "Stage X track loops through the normal audible music channel"
+    },
+    {
+      "ok": true,
+      "name": "normal gameplay updates keep the Stage X track selected"
+    },
+    {
+      "ok": true,
+      "name": "captured Stage X audio stream contains a non-silent waveform"
+    },
+    {
+      "ok": true,
+      "name": "music playback clock advances normally"
+    },
+    {
+      "ok": true,
+      "name": "leaving Stage X stops Gasline and the normal Stage 6 score stays separate"
+    },
+    {
+      "ok": true,
+      "name": "no page or console errors"
+    }
+  ],
+  "enemy": {
+    "keys": [
+      "original-enemy-lane",
+      "original-enemy-lane",
+      "original-enemy-lane",
+      "original-retina-yellow",
+      "original-enemy-lane",
+      "original-enemy-lane",
+      "original-enemy-lane",
+      "original-retina-yellow"
+    ],
+    "aliens": [
+      {
+        "role": "stalker",
+        "phase": "tell",
+        "x": 340,
+        "y": 140
+      }
+    ]
+  },
+  "music": {
+    "active": true,
+    "path": "assets/game/music/stagex_gasline_1003.mp3",
+    "duration": 88.36,
+    "loop": true,
+    "volume": 1,
+    "clock": 0.013883,
+    "boss6": "assets/game/music/boss6_battle_in_the_sky.mp3",
+    "rms": [
+      0.3157400840681941,
+      0.25721358899641283,
+      0.26262647026193614,
+      0.19753630679079487,
+      0.2152414487973816,
+      0.2294557803749338
+    ]
+  },
+  "keys": [
+    "original-enemy-lane",
+    "original-retina-yellow"
+  ],
+  "errors": [],
+  "fullSuite": {
+    "exitCode": 0,
+    "assertions": 6917,
+    "finalBanner": "FALVA/LIZZIE BUILD OK, 0 ERRORS"
+  },
+  "syntax": {
+    "assets/game.js": 0,
+    "assets/rival_fight_0924.js": 0,
+    "assets/stage8_1003.js": 0,
+    "assets/original_warnings_1003e.js": 0
+  }
+}

@@ -35,8 +35,8 @@ try:
           await ac.close();
           return {rows,bossAlias:BOFA.music.boss7mus,field:BOFA.music.stage7mus};
         }''')
-        assert result['bossAlias'] == 'assets/game/music/boss7_reaperman_0927.mp3', result
-        assert result['field'] == 'assets/game/music/stage7_over_the_horizon_0925.mp3', result
+        assert result['bossAlias'] == 'assets/game/music/Level7b.mp3', result
+        assert result['field'] == 'assets/game/music/Level7.mp3', result
         assert all(r['peak'] > .01 and r['playing'] and r['currentTime'] > .1 and not r['error'] for r in result['rows']), result
         assert not errors, errors
         result['errors'] = errors

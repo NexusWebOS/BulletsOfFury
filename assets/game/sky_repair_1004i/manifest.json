@@ -1,0 +1,261 @@
+{
+  "method": "Authored source pixel palette normalization; gray armor mapped to blue at equal Rec.709 luminance. Chrome engine masks, colored engine/ordnance pixels, highlights, outlines and alpha retained. White flash PNGs use exact source alpha.",
+  "art": {
+    "ace": {
+      "key": "sky4i_ace",
+      "flash": "sky4i_ace_flash",
+      "frames": [
+        [
+          0,
+          0,
+          176,
+          184
+        ],
+        [
+          176,
+          0,
+          176,
+          184
+        ],
+        [
+          352,
+          0,
+          176,
+          184
+        ],
+        [
+          528,
+          0,
+          176,
+          184
+        ],
+        [
+          704,
+          0,
+          176,
+          184
+        ],
+        [
+          880,
+          0,
+          176,
+          184
+        ],
+        [
+          1056,
+          0,
+          176,
+          184
+        ],
+        [
+          1232,
+          0,
+          176,
+          184
+        ],
+        [
+          1408,
+          0,
+          176,
+          184
+        ],
+        [
+          1584,
+          0,
+          176,
+          184
+        ],
+        [
+          1760,
+          0,
+          176,
+          184
+        ],
+        [
+          1936,
+          0,
+          176,
+          184
+        ],
+        [
+          2112,
+          0,
+          176,
+          184
+        ],
+        [
+          2288,
+          0,
+          176,
+          184
+        ],
+        [
+          2464,
+          0,
+          176,
+          184
+        ],
+        [
+          2640,
+          0,
+          176,
+          184
+        ],
+        [
+          2816,
+          0,
+          176,
+          184
+        ],
+        [
+          2992,
+          0,
+          176,
+          184
+        ],
+        [
+          3168,
+          0,
+          176,
+          184
+        ],
+        [
+          3344,
+          0,
+          176,
+          184
+        ]
+      ]
+    },
+    "ace_body": {
+      "key": "sky4i_ace_body",
+      "flash": "sky4i_ace_body_flash",
+      "frames": [
+        [
+          0,
+          0,
+          176,
+          184
+        ]
+      ]
+    },
+    "ace_wing_l": {
+      "key": "sky4i_ace_wing_l",
+      "flash": "sky4i_ace_wing_l_flash",
+      "frames": [
+        [
+          0,
+          0,
+          176,
+          184
+        ]
+      ]
+    },
+    "ace_wing_r": {
+      "key": "sky4i_ace_wing_r",
+      "flash": "sky4i_ace_wing_r_flash",
+      "frames": [
+        [
+          0,
+          0,
+          176,
+          184
+        ]
+      ]
+    },
+    "ace_body_damage": {
+      "key": "sky4i_ace_body_damage",
+      "flash": "sky4i_ace_body_damage_flash",
+      "frames": [
+        [
+          0,
+          0,
+          176,
+          184
+        ]
+      ]
+    },
+    "ace_wing_l_damage": {
+      "key": "sky4i_ace_wing_l_damage",
+      "flash": "sky4i_ace_wing_l_damage_flash",
+      "frames": [
+        [
+          0,
+          0,
+          176,
+          184
+        ]
+      ]
+    },
+    "ace_wing_r_damage": {
+      "key": "sky4i_ace_wing_r_damage",
+      "flash": "sky4i_ace_wing_r_damage_flash",
+      "frames": [
+        [
+          0,
+          0,
+          176,
+          184
+        ]
+      ]
+    }
+  },
+  "sources": [
+    {
+      "name": "ace",
+      "source": "assets/game/encounters_0930/ace.png",
+      "sha256": "01f8ad84b402270908afd24b58fd6ca1eff83721301a29ce65fd0832ef76ee31",
+      "changed_armor_pixels": 38983,
+      "max_luminance_rounding_error": 0.4638000000000133,
+      "alpha_identical": true
+    },
+    {
+      "name": "ace_body",
+      "source": "assets/game/encounters_0930/ace_body.png",
+      "sha256": "d38c80e86daedd84e08a89601f70fce64bd227a4ad2fdaa3225286d1c2719530",
+      "changed_armor_pixels": 1651,
+      "max_luminance_rounding_error": 0.44600000000000506,
+      "alpha_identical": true
+    },
+    {
+      "name": "ace_wing_l",
+      "source": "assets/game/encounters_0930/ace_wing_l.png",
+      "sha256": "8dd91e2d7fb33a9e286e5045b1c60b75d7357e9c3ed6e40d785a956a63d4b3e1",
+      "changed_armor_pixels": 459,
+      "max_luminance_rounding_error": 0.4638000000000133,
+      "alpha_identical": true
+    },
+    {
+      "name": "ace_wing_r",
+      "source": "assets/game/encounters_0930/ace_wing_r.png",
+      "sha256": "a0deba7959f8de0ab5035292594f02eac5ae371581d62b89fb6683ca49c1342a",
+      "changed_armor_pixels": 411,
+      "max_luminance_rounding_error": 0.44199999999999307,
+      "alpha_identical": true
+    },
+    {
+      "name": "ace_body_damage",
+      "source": "assets/game/encounters_0930/ace_body_damage.png",
+      "sha256": "5af22d18b2b4fa3787b012de2c387cda6643fd3434ffbe9c8fb68e04b691e0e5",
+      "changed_armor_pixels": 1378,
+      "max_luminance_rounding_error": 0.44600000000000506,
+      "alpha_identical": true
+    },
+    {
+      "name": "ace_wing_l_damage",
+      "source": "assets/game/encounters_0930/ace_wing_l_damage.png",
+      "sha256": "a460429f35fbff62488d33a5a373abc14fe66d0c13345a59554e3df6eb96efee",
+      "changed_armor_pixels": 492,
+      "max_luminance_rounding_error": 0.4578000000000202,
+      "alpha_identical": true
+    },
+    {
+      "name": "ace_wing_r_damage",
+      "source": "assets/game/encounters_0930/ace_wing_r_damage.png",
+      "sha256": "7bd47cc86a2bd15200a318cecc01ea2b678da42ee450c3b34551ea5984274251",
+      "changed_armor_pixels": 548,
+      "max_luminance_rounding_error": 0.45940000000000225,
+      "alpha_identical": true
+    }
+  ]
+}

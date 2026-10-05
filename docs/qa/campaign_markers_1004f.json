@@ -1,0 +1,1069 @@
+{
+  "date": "2026-10-04",
+  "scope": "Generated Roman I–IX flags, permanent Stage X, physical Fury HQ frontage, vertical campaign ship travel",
+  "suite": {
+    "assertions": 7143,
+    "exit": 0,
+    "final_summary": "FALVA/LIZZIE BUILD OK, 0 ERRORS"
+  },
+  "native": {
+    "map": {
+      "checks": [
+        {
+          "ok": true,
+          "name": "uninterrupted native loop finishes boot and renders the widescreen map"
+        },
+        {
+          "ok": true,
+          "name": "cloud and floating-world animation continue in the real loop"
+        },
+        {
+          "ok": true,
+          "name": "live map and briefing follow a real keyboard selection"
+        },
+        {
+          "ok": true,
+          "name": "boot finishes with all generated land regions ready"
+        },
+        {
+          "ok": true,
+          "name": "terrain, all stages, city, HQ and cosmic region use authored XART pixels"
+        },
+        {
+          "ok": true,
+          "name": "original blue ocean and permanent locked Stage X flag are drawn"
+        },
+        {
+          "ok": true,
+          "name": "initial settled map shows the complete connected continent"
+        },
+        {
+          "ok": true,
+          "name": "nine stages retained; bonus cosmic region is offshore northeast"
+        },
+        {
+          "ok": true,
+          "name": "real directional input selects a stage and zooms to its region"
+        },
+        {
+          "ok": true,
+          "name": "selected landmark lifts while adjacent terrain stays anchored"
+        },
+        {
+          "ok": true,
+          "name": "real D-pad path reaches Stage 3"
+        },
+        {
+          "ok": true,
+          "name": "real D-pad path reaches Stage 4"
+        },
+        {
+          "ok": true,
+          "name": "real D-pad path reaches Stage 5"
+        },
+        {
+          "ok": true,
+          "name": "real D-pad path reaches Stage 6"
+        },
+        {
+          "ok": true,
+          "name": "real D-pad path reaches Stage 7"
+        },
+        {
+          "ok": true,
+          "name": "real D-pad path reaches Stage 8"
+        },
+        {
+          "ok": true,
+          "name": "travelling hull is inside the visible map band on 4 to 5"
+        },
+        {
+          "ok": true,
+          "name": "rendered ship faces down on 4 to 5"
+        },
+        {
+          "ok": true,
+          "name": "ship settles without a heading snap on 4 to 5"
+        },
+        {
+          "ok": true,
+          "name": "travelling hull is inside the visible map band on 7 to 8"
+        },
+        {
+          "ok": true,
+          "name": "rendered ship faces up on 7 to 8"
+        },
+        {
+          "ok": true,
+          "name": "ship settles without a heading snap on 7 to 8"
+        },
+        {
+          "ok": true,
+          "name": "travelling hull is inside the visible map band on 8 to 1"
+        },
+        {
+          "ok": true,
+          "name": "rendered ship faces up on 8 to 1"
+        },
+        {
+          "ok": true,
+          "name": "ship settles without a heading snap on 8 to 1"
+        },
+        {
+          "ok": true,
+          "name": "all nine pilots render their own intact authored up/down hulls"
+        },
+        {
+          "ok": true,
+          "name": "pointer hover lifts the desert without changing the chosen mission"
+        },
+        {
+          "ok": true,
+          "name": "pointer selects the visible desert region without deploying on the first click"
+        },
+        {
+          "ok": true,
+          "name": "locked stage and bonus portal cannot be selected by navigation"
+        },
+        {
+          "ok": true,
+          "name": "unlocked bonus portal focuses and remains selectable"
+        },
+        {
+          "ok": true,
+          "name": "Stage X stays anchored to the new central city"
+        },
+        {
+          "ok": true,
+          "name": "permanent Stage X flag opens an informational locked briefing"
+        },
+        {
+          "ok": true,
+          "name": "confirming locked Stage X cannot manufacture a fight"
+        },
+        {
+          "ok": true,
+          "name": "central Stage X launches the earned Harrier fight"
+        },
+        {
+          "ok": true,
+          "name": "central Stage X launches the earned Rebel fight"
+        },
+        {
+          "ok": true,
+          "name": "compact viewport retains finite full-world framing"
+        },
+        {
+          "ok": true,
+          "name": "zero page and console errors"
+        }
+      ],
+      "errors": []
+    },
+    "flags": {
+      "checks": [
+        {
+          "ok": true,
+          "name": "actual renderer uses authored rank flags for S, A and cleared stages"
+        },
+        {
+          "ok": true,
+          "name": "selected IV animates between both silhouette-highlight states"
+        },
+        {
+          "ok": true,
+          "name": "all remaining stages and locked IX draw new Roman flag pixels"
+        },
+        {
+          "ok": true,
+          "name": "real keyboard navigation reaches 5 with new flags"
+        },
+        {
+          "ok": true,
+          "name": "real keyboard flight retains the approved heading into 5"
+        },
+        {
+          "ok": true,
+          "name": "real keyboard navigation reaches 6 with new flags"
+        },
+        {
+          "ok": true,
+          "name": "real keyboard navigation reaches 7 with new flags"
+        },
+        {
+          "ok": true,
+          "name": "real keyboard navigation reaches 8 with new flags"
+        },
+        {
+          "ok": true,
+          "name": "real keyboard flight retains the approved heading into 8"
+        },
+        {
+          "ok": true,
+          "name": "real keyboard navigation reaches 1 with new flags"
+        },
+        {
+          "ok": true,
+          "name": "real keyboard flight retains the approved heading into 1"
+        },
+        {
+          "ok": true,
+          "name": "locked II–IX use grayscale flags while preserving campaign locks"
+        },
+        {
+          "ok": true,
+          "name": "new IX marker grants no bonus unlock"
+        },
+        {
+          "ok": true,
+          "name": "original unlock cinematic uses the new white silhouette flag"
+        },
+        {
+          "ok": true,
+          "name": "directional exit from the locked X preview preserves its navigation tap"
+        },
+        {
+          "ok": true,
+          "name": "zero page and console errors for flag load, animation and controls"
+        }
+      ],
+      "errors": []
+    },
+    "orbits": {
+      "checks": [
+        {
+          "ok": true,
+          "name": "all five rebels draw at full opacity in their Stage X orbit"
+        },
+        {
+          "ok": true,
+          "name": "Stage X orbit remains animated in the normal game loop"
+        },
+        {
+          "ok": true,
+          "name": "escaped Harrier draws its actual hull over Stage X"
+        },
+        {
+          "ok": true,
+          "name": "generated HQ building draws with finite geometry in the actual game context"
+        },
+        {
+          "ok": true,
+          "name": "zero page and console errors during the uninterrupted orbit and HQ captures"
+        }
+      ],
+      "details": [
+        {
+          "keys": [
+            {
+              "key": "rr_ship_voss_iron_vulture",
+              "src": "assets/game/roaming_rebels_0922/ships/voss_iron_vulture.png",
+              "ready": true
+            },
+            {
+              "key": "rr_ship_nyx_ghostknife",
+              "src": "assets/game/roaming_rebels_0922/ships/nyx_ghostknife.png",
+              "ready": true
+            },
+            {
+              "key": "rr_ship_rook_breachhammer",
+              "src": "assets/game/roaming_rebels_0922/ships/rook_breachhammer.png",
+              "ready": true
+            },
+            {
+              "key": "rr_ship_kaia_signal_wraith",
+              "src": "assets/game/roaming_rebels_0922/ships/kaia_signal_wraith.png",
+              "ready": true
+            },
+            {
+              "key": "rr_ship_jace_razorjack",
+              "src": "assets/game/roaming_rebels_0922/ships/jace_razorjack.png",
+              "ready": true
+            }
+          ],
+          "pending": true,
+          "focus": true,
+          "flight": 7.1165999999999965
+        },
+        [
+          {
+            "key": "rr_ship_voss_iron_vulture",
+            "alpha": 1,
+            "args": [
+              -12.692307692307692,
+              -15,
+              25.384615384615383,
+              30
+            ],
+            "transform": [
+              -0.8982462553740691,
+              -0.8982462553740691,
+              833.653564453125,
+              425.89923095703125
+            ]
+          },
+          {
+            "key": "rr_ship_nyx_ghostknife",
+            "alpha": 1,
+            "args": [
+              -12.692307692307692,
+              -15,
+              25.384615384615383,
+              30
+            ],
+            "transform": [
+              -1.9770540500652873,
+              -1.9770540500652873,
+              741.9548950195312,
+              346.5161437988281
+            ]
+          },
+          {
+            "key": "rr_ship_rook_breachhammer",
+            "alpha": 1,
+            "args": [
+              -12.692307692307692,
+              -15,
+              25.384615384615383,
+              30
+            ],
+            "transform": [
+              -0.32364034516191403,
+              -0.32364034516191403,
+              882.4950561523438,
+              282.9971618652344
+            ]
+          },
+          {
+            "key": "rr_ship_kaia_signal_wraith",
+            "alpha": 1,
+            "args": [
+              -12.692307692307692,
+              -15,
+              25.384615384615383,
+              30
+            ],
+            "transform": [
+              1.7770333166244767,
+              1.7770333166244767,
+              1061.0523071289062,
+              323.12335205078125
+            ]
+          },
+          {
+            "key": "rr_ship_jace_razorjack",
+            "alpha": 1,
+            "args": [
+              -12.692307692307692,
+              -15,
+              25.384615384615383,
+              30
+            ],
+            "transform": [
+              1.4219073339767945,
+              1.4219073339767945,
+              1030.8666381835938,
+              411.441650390625
+            ]
+          },
+          {
+            "key": "rr_ship_voss_iron_vulture",
+            "alpha": 1,
+            "args": [
+              -12.692307692307692,
+              -15,
+              25.384615384615383,
+              30
+            ],
+            "transform": [
+              -0.9368259956848093,
+              -0.9368259956848093,
+              830.3739013671875,
+              425.1426086425781
+            ]
+          },
+          {
+            "key": "rr_ship_nyx_ghostknife",
+            "alpha": 1,
+            "args": [
+              -12.692307692307692,
+              -15,
+              25.384615384615383,
+              30
+            ],
+            "transform": [
+              -1.9700303320125072,
+              -1.9700303320125072,
+              742.5515441894531,
+              344.8883361816406
+            ]
+          },
+          {
+            "key": "rr_ship_rook_breachhammer",
+            "alpha": 1,
+            "args": [
+              -12.692307692307692,
+              -15,
+              25.384615384615383,
+              30
+            ],
+            "transform": [
+              -0.28071970836716126,
+              -0.28071970836716126,
+              886.1429443359375,
+              282.74822998046875
+            ]
+          },
+          {
+            "key": "rr_ship_kaia_signal_wraith",
+            "alpha": 1,
+            "args": [
+              -12.692307692307692,
+              -15,
+              25.384615384615383,
+              30
+            ],
+            "transform": [
+              1.7965360109296433,
+              1.7965360109296433,
+              1062.7096557617188,
+              324.59783935546875
+            ]
+          },
+          {
+            "key": "rr_ship_jace_razorjack",
+            "alpha": 1,
+            "args": [
+              -12.692307692307692,
+              -15,
+              25.384615384615383,
+              30
+            ],
+            "transform": [
+              1.3910400251348336,
+              1.3910400251348336,
+              1028.2424926757812,
+              412.6023864746094
+            ]
+          },
+          {
+            "key": "rr_ship_voss_iron_vulture",
+            "alpha": 1,
+            "args": [
+              -12.692307692307692,
+              -15,
+              25.384615384615383,
+              30
+            ],
+            "transform": [
+              -0.9748506953218474,
+              -0.9748506953218474,
+              827.1414794921875,
+              424.35675048828125
+            ]
+          },
+          {
+            "key": "rr_ship_nyx_ghostknife",
+            "alpha": 1,
+            "args": [
+              -12.692307692307692,
+              -15,
+              25.384615384615383,
+              30
+            ],
+            "transform": [
+              -1.9621033188237622,
+              -1.9621033188237622,
+              743.2250061035156,
+              343.2715148925781
+            ]
+          },
+          {
+            "key": "rr_ship_rook_breachhammer",
+            "alpha": 1,
+            "args": [
+              -12.692307692307692,
+              -15,
+              25.384615384615383,
+              30
+            ],
+            "transform": [
+              -0.23779584515020924,
+              -0.23779584515020924,
+              889.7911376953125,
+              282.53533935546875
+            ]
+          },
+          {
+            "key": "rr_ship_kaia_signal_wraith",
+            "alpha": 1,
+            "args": [
+              -12.692307692307692,
+              -15,
+              25.384615384615383,
+              30
+            ],
+            "transform": [
+              1.8151374041374262,
+              1.8151374041374262,
+              1064.2904663085938,
+              326.08355712890625
+            ]
+          },
+          {
+            "key": "rr_ship_jace_razorjack",
+            "alpha": 1,
+            "args": [
+              -12.692307692307692,
+              -15,
+              25.384615384615383,
+              30
+            ],
+            "transform": [
+              1.3596124551583928,
+              1.3596124551583928,
+              1025.5708618164062,
+              413.7340087890625
+            ]
+          },
+          {
+            "key": "rr_ship_voss_iron_vulture",
+            "alpha": 1,
+            "args": [
+              -12.692307692307692,
+              -15,
+              25.384615384615383,
+              30
+            ],
+            "transform": [
+              -0.9937492946396662,
+              -0.9937492946396662,
+              825.534912109375,
+              423.95086669921875
+            ]
+          },
+          {
+            "key": "rr_ship_nyx_ghostknife",
+            "alpha": 1,
+            "args": [
+              -12.692307692307692,
+              -15,
+              25.384615384615383,
+              30
+            ],
+            "transform": [
+              -1.9577815713496478,
+              -1.9577815713496478,
+              743.5921936035156,
+              342.46319580078125
+            ]
+          },
+          {
+            "key": "rr_ship_rook_breachhammer",
+            "alpha": 1,
+            "args": [
+              -12.692307692307692,
+              -15,
+              25.384615384615383,
+              30
+            ],
+            "transform": [
+              -0.21622625900259268,
+              -0.21622625900259268,
+              891.6243896484375,
+              282.4418640136719
+            ]
+          },
+          {
+            "key": "rr_ship_kaia_signal_wraith",
+            "alpha": 1,
+            "args": [
+              -12.692307692307692,
+              -15,
+              25.384615384615383,
+              30
+            ],
+            "transform": [
+              1.8241463940258074,
+              1.8241463940258074,
+              1065.0560302734375,
+              326.83428955078125
+            ]
+          },
+          {
+            "key": "rr_ship_jace_razorjack",
+            "alpha": 1,
+            "args": [
+              -12.692307692307692,
+              -15,
+              25.384615384615383,
+              30
+            ],
+            "transform": [
+              1.3436107309660998,
+              1.3436107309660998,
+              1024.2105102539062,
+              414.29168701171875
+            ]
+          },
+          {
+            "key": "rr_ship_voss_iron_vulture",
+            "alpha": 1,
+            "args": [
+              -12.692307692307692,
+              -15,
+              25.384615384615383,
+              30
+            ],
+            "transform": [
+              -1.0310816099327529,
+              -1.0310816099327529,
+              822.3613891601562,
+              423.1184387207031
+            ]
+          },
+          {
+            "key": "rr_ship_nyx_ghostknife",
+            "alpha": 1,
+            "args": [
+              -12.692307692307692,
+              -15,
+              25.384615384615383,
+              30
+            ],
+            "transform": [
+              -1.9484758794339454,
+              -1.9484758794339454,
+              744.3828735351562,
+              340.8569641113281
+            ]
+          },
+          {
+            "key": "rr_ship_rook_breachhammer",
+            "alpha": 1,
+            "args": [
+              -12.692307692307692,
+              -15,
+              25.384615384615383,
+              30
+            ],
+            "transform": [
+              -0.1731427098167679,
+              -0.1731427098167679,
+              895.2861938476562,
+              282.2820129394531
+            ]
+          },
+          {
+            "key": "rr_ship_kaia_signal_wraith",
+            "alpha": 1,
+            "args": [
+              -12.692307692307692,
+              -15,
+              25.384615384615383,
+              30
+            ],
+            "transform": [
+              1.8414677998629227,
+              1.8414677998629227,
+              1066.528076171875,
+              328.3421630859375
+            ]
+          },
+          {
+            "key": "rr_ship_jace_razorjack",
+            "alpha": 1,
+            "args": [
+              -12.692307692307692,
+              -15,
+              25.384615384615383,
+              30
+            ],
+            "transform": [
+              1.3112323993205433,
+              1.3112323993205433,
+              1021.4580688476562,
+              415.38385009765625
+            ]
+          },
+          {
+            "key": "rr_ship_voss_iron_vulture",
+            "alpha": 1,
+            "args": [
+              -12.692307692307692,
+              -15,
+              25.384615384615383,
+              30
+            ],
+            "transform": [
+              -1.0496230382896719,
+              -1.0496230382896719,
+              820.7852172851562,
+              422.6894226074219
+            ]
+          },
+          {
+            "key": "rr_ship_nyx_ghostknife",
+            "alpha": 1,
+            "args": [
+              -12.692307692307692,
+              -15,
+              25.384615384615383,
+              30
+            ],
+            "transform": [
+              -1.9434650859145204,
+              -1.9434650859145204,
+              744.8086547851562,
+              340.0544128417969
+            ]
+          },
+          {
+            "key": "rr_ship_rook_breachhammer",
+            "alpha": 1,
+            "args": [
+              -12.692307692307692,
+              -15,
+              25.384615384615383,
+              30
+            ],
+            "transform": [
+              -0.15150444075423725,
+              -0.15150444075423725,
+              897.1253051757812,
+              282.2152099609375
+            ]
+          },
+          {
+            "key": "rr_ship_kaia_signal_wraith",
+            "alpha": 1,
+            "args": [
+              -12.692307692307692,
+              -15,
+              25.384615384615383,
+              30
+            ],
+            "transform": [
+              1.8498301920818572,
+              1.8498301920818572,
+              1067.23876953125,
+              329.1036071777344
+            ]
+          },
+          {
+            "key": "rr_ship_jace_razorjack",
+            "alpha": 1,
+            "args": [
+              -12.692307692307692,
+              -15,
+              25.384615384615383,
+              30
+            ],
+            "transform": [
+              1.2947623728765718,
+              1.2947623728765718,
+              1020.0579833984375,
+              415.9214782714844
+            ]
+          },
+          {
+            "key": "rr_ship_voss_iron_vulture",
+            "alpha": 1,
+            "args": [
+              -12.692307692307692,
+              -15,
+              25.384615384615383,
+              30
+            ],
+            "transform": [
+              -1.0680407897025488,
+              -1.0680407897025488,
+              819.2195739746094,
+              422.2528076171875
+            ]
+          },
+          {
+            "key": "rr_ship_nyx_ghostknife",
+            "alpha": 1,
+            "args": [
+              -12.692307692307692,
+              -15,
+              25.384615384615383,
+              30
+            ],
+            "transform": [
+              -1.9382252941605747,
+              -1.9382252941605747,
+              745.2538757324219,
+              339.25396728515625
+            ]
+          },
+          {
+            "key": "rr_ship_rook_breachhammer",
+            "alpha": 1,
+            "args": [
+              -12.692307692307692,
+              -15,
+              25.384615384615383,
+              30
+            ],
+            "transform": [
+              -0.12984831994344875,
+              -0.12984831994344875,
+              898.9659423828125,
+              282.1573181152344
+            ]
+          },
+          {
+            "key": "rr_ship_kaia_signal_wraith",
+            "alpha": 1,
+            "args": [
+              -12.692307692307692,
+              -15,
+              25.384615384615383,
+              30
+            ],
+            "transform": [
+              1.8579746190534523,
+              1.8579746190534523,
+              1067.930908203125,
+              329.86846923828125
+            ]
+          },
+          {
+            "key": "rr_ship_jace_razorjack",
+            "alpha": 1,
+            "args": [
+              -12.692307692307692,
+              -15,
+              25.384615384615383,
+              30
+            ],
+            "transform": [
+              1.2781397847531204,
+              1.2781397847531204,
+              1018.6448974609375,
+              416.4522705078125
+            ]
+          },
+          {
+            "key": "rr_ship_voss_iron_vulture",
+            "alpha": 1,
+            "args": [
+              -12.692307692307692,
+              -15,
+              25.384615384615383,
+              30
+            ],
+            "transform": [
+              -1.104388215187607,
+              -1.104388215187607,
+              816.1297912597656,
+              421.3595886230469
+            ]
+          },
+          {
+            "key": "rr_ship_nyx_ghostknife",
+            "alpha": 1,
+            "args": [
+              -12.692307692307692,
+              -15,
+              25.384615384615383,
+              30
+            ],
+            "transform": [
+              -1.9270959961638803,
+              -1.9270959961638803,
+              746.1996154785156,
+              337.6645202636719
+            ]
+          },
+          {
+            "key": "rr_ship_rook_breachhammer",
+            "alpha": 1,
+            "args": [
+              -12.692307692307692,
+              -15,
+              25.384615384615383,
+              30
+            ],
+            "transform": [
+              -0.08662261002550734,
+              -0.08662261002550734,
+              902.6398620605469,
+              282.06854248046875
+            ]
+          },
+          {
+            "key": "rr_ship_kaia_signal_wraith",
+            "alpha": 1,
+            "args": [
+              -12.692307692307692,
+              -15,
+              25.384615384615383,
+              30
+            ],
+            "transform": [
+              1.873560278973889,
+              1.873560278973889,
+              1069.2554321289062,
+              331.4034118652344
+            ]
+          },
+          {
+            "key": "rr_ship_jace_razorjack",
+            "alpha": 1,
+            "args": [
+              -12.692307692307692,
+              -15,
+              25.384615384615383,
+              30
+            ],
+            "transform": [
+              1.244546542403106,
+              1.244546542403106,
+              1015.7892456054688,
+              417.4900207519531
+            ]
+          },
+          {
+            "key": "rr_ship_voss_iron_vulture",
+            "alpha": 1,
+            "args": [
+              -12.692307692307692,
+              -15,
+              25.384615384615383,
+              30
+            ],
+            "transform": [
+              -1.1224227600060912,
+              -1.1224227600060912,
+              814.5967407226562,
+              420.90045166015625
+            ]
+          },
+          {
+            "key": "rr_ship_nyx_ghostknife",
+            "alpha": 1,
+            "args": [
+              -12.692307692307692,
+              -15,
+              25.384615384615383,
+              30
+            ],
+            "transform": [
+              -1.9211743793171159,
+              -1.9211743793171159,
+              746.7028503417969,
+              336.8709411621094
+            ]
+          },
+          {
+            "key": "rr_ship_rook_breachhammer",
+            "alpha": 1,
+            "args": [
+              -12.692307692307692,
+              -15,
+              25.384615384615383,
+              30
+            ],
+            "transform": [
+              -0.06492830472736946,
+              -0.06492830472736946,
+              904.4837646484375,
+              282.0373840332031
+            ]
+          },
+          {
+            "key": "rr_ship_kaia_signal_wraith",
+            "alpha": 1,
+            "args": [
+              -12.692307692307692,
+              -15,
+              25.384615384615383,
+              30
+            ],
+            "transform": [
+              1.881046480163691,
+              1.881046480163691,
+              1069.8916015625,
+              332.1778869628906
+            ]
+          },
+          {
+            "key": "rr_ship_jace_razorjack",
+            "alpha": 1,
+            "args": [
+              -12.692307692307692,
+              -15,
+              25.384615384615383,
+              30
+            ],
+            "transform": [
+              1.2274789638868855,
+              1.2274789638868855,
+              1014.33837890625,
+              418
+            ]
+          }
+        ],
+        {
+          "errors": []
+        }
+      ],
+      "errors": []
+    },
+    "review": {
+      "checks": [
+        {
+          "ok": true,
+          "name": "live review selects 4"
+        },
+        {
+          "ok": true,
+          "name": "live review selects 5"
+        },
+        {
+          "ok": true,
+          "name": "live review selects 7"
+        },
+        {
+          "ok": true,
+          "name": "live review selects 8"
+        },
+        {
+          "ok": true,
+          "name": "live review selects 1"
+        },
+        {
+          "ok": true,
+          "name": "live review selects xl"
+        },
+        {
+          "ok": true,
+          "name": "live review selects xh"
+        },
+        {
+          "ok": true,
+          "name": "live review selects x"
+        },
+        {
+          "ok": true,
+          "name": "live review selects hq"
+        },
+        {
+          "ok": true,
+          "name": "live review selects 0"
+        },
+        {
+          "ok": true,
+          "name": "review has zero page and console errors"
+        }
+      ],
+      "errors": []
+    }
+  },
+  "review": "_shots/campaign_markers_1004f/review.html",
+  "sources": "_ART_SOURCES/campaign_landscape_1004f",
+  "limitations": "Campaign map fixtures and normal browser animation verified; not a combat balance or campaign-clear pass."
+}

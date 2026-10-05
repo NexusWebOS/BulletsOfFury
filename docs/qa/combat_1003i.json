@@ -1,0 +1,3133 @@
+{
+  "scope": "Controlled real Chromium combat, audio and review fixtures; not full campaign clears or final difficulty certification.",
+  "fullSuite": {
+    "command": "node _BUILD_SOURCE/test_fl.js",
+    "assertions": 6967,
+    "failures": 0,
+    "exitCode": 0,
+    "finalSummary": "FALVA/LIZZIE BUILD OK, 0 ERRORS"
+  },
+  "syntax": [
+    "assets/game.js",
+    "assets/combat_1003i.js"
+  ],
+  "combat": {
+    "checks": [
+      {
+        "ok": true,
+        "name": "normal Reaver owns six independent modules"
+      },
+      {
+        "ok": true,
+        "name": "normal wing animates independently"
+      },
+      {
+        "ok": true,
+        "name": "normal actual game context blits generated modules/beams/muzzles"
+      },
+      {
+        "ok": true,
+        "name": "normal real projectile damages and flashes only the struck gun"
+      },
+      {
+        "ok": true,
+        "name": "normal actual Retina missile damages moving gun"
+      },
+      {
+        "ok": true,
+        "name": "normal destroyed gun disables shot path and missile lock"
+      },
+      {
+        "ok": true,
+        "name": "normal transparent gaps pass through and finite held beam reaches visible hull"
+      },
+      {
+        "ok": true,
+        "name": "normal modular encounter still finishes and releases stage"
+      },
+      {
+        "ok": true,
+        "name": "furious Reaver owns six independent modules"
+      },
+      {
+        "ok": true,
+        "name": "furious wing animates independently"
+      },
+      {
+        "ok": true,
+        "name": "furious actual game context blits generated modules/beams/muzzles"
+      },
+      {
+        "ok": true,
+        "name": "furious real projectile damages and flashes only the struck gun"
+      },
+      {
+        "ok": true,
+        "name": "furious actual Retina missile damages moving gun"
+      },
+      {
+        "ok": true,
+        "name": "furious destroyed gun disables shot path and missile lock"
+      },
+      {
+        "ok": true,
+        "name": "furious transparent gaps pass through and finite held beam reaches visible hull"
+      },
+      {
+        "ok": true,
+        "name": "furious modular encounter still finishes and releases stage"
+      },
+      {
+        "ok": true,
+        "name": "jungle live renderer uses beam and muzzle art"
+      },
+      {
+        "ok": true,
+        "name": "furnace live renderer uses beam and muzzle art"
+      },
+      {
+        "ok": true,
+        "name": "frost live renderer uses beam and muzzle art"
+      },
+      {
+        "ok": true,
+        "name": "hammer live renderer uses beam and muzzle art"
+      },
+      {
+        "ok": true,
+        "name": "bomber live renderer uses beam and muzzle art"
+      },
+      {
+        "ok": true,
+        "name": "harrier live renderer uses beam and muzzle art"
+      },
+      {
+        "ok": true,
+        "name": "herald live renderer uses beam and muzzle art"
+      },
+      {
+        "ok": true,
+        "name": "warhive live renderer uses beam and muzzle art"
+      },
+      {
+        "ok": true,
+        "name": "carrier live renderer uses beam and muzzle art"
+      },
+      {
+        "ok": true,
+        "name": "tempest live renderer uses beam and muzzle art"
+      },
+      {
+        "ok": true,
+        "name": "sentinel live renderer uses beam and muzzle art"
+      },
+      {
+        "ok": true,
+        "name": "all 20 generated cues decode with nonzero sound"
+      },
+      {
+        "ok": true,
+        "name": "Cole tier 6 actually outputs generated sustained laser audio"
+      },
+      {
+        "ok": true,
+        "name": "Cole tier 6 loop ends after trigger release"
+      },
+      {
+        "ok": true,
+        "name": "Cole tier 7 actually outputs generated sustained laser audio"
+      },
+      {
+        "ok": true,
+        "name": "Cole tier 7 loop ends after trigger release"
+      },
+      {
+        "ok": true,
+        "name": "actual Fusion release preserves two lances and plays dedicated sound"
+      },
+      {
+        "ok": true,
+        "name": "Stage 2 advancing firewall refreshes its own sound bed"
+      },
+      {
+        "ok": true,
+        "name": "pause immediately stops every new loop"
+      },
+      {
+        "ok": true,
+        "name": "zero page or console errors"
+      }
+    ],
+    "screens": [
+      "reaver-normal-tell",
+      "reaver-normal-beam",
+      "reaver-normal-disarmed",
+      "reaver-furious-tell",
+      "reaver-furious-beam",
+      "reaver-furious-disarmed",
+      "laser-contact-sheet",
+      "beam-jungle",
+      "beam-furnace",
+      "beam-frost",
+      "beam-hammer",
+      "beam-bomber",
+      "beam-harrier",
+      "beam-herald",
+      "beam-warhive",
+      "beam-carrier",
+      "beam-tempest",
+      "beam-sentinel"
+    ],
+    "normalProjectile": {
+      "hp": 207,
+      "before": 222,
+      "flash": 0.16,
+      "other": 0,
+      "point": {
+        "x": 390.77946494346685,
+        "y": 217.64711489631787
+      },
+      "hit": "gunL",
+      "projectiles": [],
+      "nohit": false,
+      "neutral": false
+    },
+    "furiousProjectile": {
+      "hp": 313,
+      "before": 328,
+      "flash": 0.16,
+      "other": 0,
+      "point": {
+        "x": 390.77946494346685,
+        "y": 217.64711489631787
+      },
+      "hit": "gunL",
+      "projectiles": [],
+      "nohit": false,
+      "neutral": false
+    },
+    "audio": [
+      {
+        "name": "laser_charge",
+        "duration": 1.48,
+        "peak": 0.7262765169143677,
+        "rms": 0.15884882813765014
+      },
+      {
+        "name": "laser_burn",
+        "duration": 2.21,
+        "peak": 0.41085535287857056,
+        "rms": 0.1229341409818324
+      },
+      {
+        "name": "laser_release",
+        "duration": 0.64,
+        "peak": 0.6223281621932983,
+        "rms": 0.16117286439518702
+      },
+      {
+        "name": "fusion_cannon",
+        "duration": 1.24,
+        "peak": 0.7200048565864563,
+        "rms": 0.12077944284924688
+      },
+      {
+        "name": "cole_laser6",
+        "duration": 1.67,
+        "peak": 0.5456200838088989,
+        "rms": 0.1229339813174463
+      },
+      {
+        "name": "cole_laser7",
+        "duration": 1.67,
+        "peak": 0.7739153504371643,
+        "rms": 0.08935813532104796
+      },
+      {
+        "name": "target_acquire",
+        "duration": 0.64,
+        "peak": 0.7717382311820984,
+        "rms": 0.05212749616450263
+      },
+      {
+        "name": "teleport_out",
+        "duration": 0.84,
+        "peak": 0.7555736303329468,
+        "rms": 0.11306165399590717
+      },
+      {
+        "name": "teleport_in",
+        "duration": 0.84,
+        "peak": 0.7593891620635986,
+        "rms": 0.09668151918669816
+      },
+      {
+        "name": "firewall_launch",
+        "duration": 1.2,
+        "peak": 0.7488417625427246,
+        "rms": 0.15468427021636558
+      },
+      {
+        "name": "firewall_burn",
+        "duration": 2.21,
+        "peak": 0.6176028847694397,
+        "rms": 0.12295485839154809
+      },
+      {
+        "name": "toxic_spit",
+        "duration": 0.6802291666666667,
+        "peak": 0.7660698294639587,
+        "rms": 0.11743477517448848
+      },
+      {
+        "name": "alien_orb",
+        "duration": 0.8,
+        "peak": 0.732456624507904,
+        "rms": 0.10339724147493208
+      },
+      {
+        "name": "claw_lunge",
+        "duration": 0.64,
+        "peak": 0.7629239559173584,
+        "rms": 0.11289162577904038
+      },
+      {
+        "name": "impact_metal",
+        "duration": 0.48,
+        "peak": 0.577124297618866,
+        "rms": 0.1611159077379831
+      },
+      {
+        "name": "impact_energy",
+        "duration": 0.52,
+        "peak": 0.7581155300140381,
+        "rms": 0.10572400262213305
+      },
+      {
+        "name": "impact_flesh",
+        "duration": 0.52,
+        "peak": 0.7426494359970093,
+        "rms": 0.07287126553630939
+      },
+      {
+        "name": "code_shatter",
+        "duration": 1.08,
+        "peak": 0.6642670035362244,
+        "rms": 0.09726494061151826
+      },
+      {
+        "name": "module_break",
+        "duration": 1.28,
+        "peak": 0.7661539316177368,
+        "rms": 0.14808721558666854
+      },
+      {
+        "name": "gravity_pulse",
+        "duration": 1.08,
+        "peak": 0.6877405047416687,
+        "rms": 0.16148787568428136
+      }
+    ],
+    "cole6Peak": 0.1703578531742096,
+    "cole7Peak": 0.2300269901752472,
+    "events": [
+      {
+        "cue": "laser_charge",
+        "t": 0,
+        "stage": 2
+      },
+      {
+        "cue": "laser_release",
+        "t": 3.016666666666661,
+        "stage": 2
+      },
+      {
+        "cue": "impact_metal",
+        "t": 3.183333333333327,
+        "stage": 2
+      },
+      {
+        "cue": "impact_metal",
+        "t": 3.6333333333333253,
+        "stage": 2
+      },
+      {
+        "cue": "laser_charge",
+        "t": 4.266666666666657,
+        "stage": 2
+      },
+      {
+        "cue": "target_acquire",
+        "t": 4.2833333333333234,
+        "stage": 2
+      },
+      {
+        "cue": "impact_metal",
+        "t": 5.016666666666654,
+        "stage": 2
+      },
+      {
+        "cue": "module_break",
+        "t": 5.016666666666654,
+        "stage": 2
+      },
+      {
+        "cue": "laser_charge",
+        "t": 7.683333333333311,
+        "stage": 2
+      },
+      {
+        "cue": "laser_release",
+        "t": 10.700000000000111,
+        "stage": 2
+      },
+      {
+        "cue": "impact_metal",
+        "t": 10.866666666666786,
+        "stage": 2
+      },
+      {
+        "cue": "impact_metal",
+        "t": 11.333333333333476,
+        "stage": 2
+      },
+      {
+        "cue": "laser_charge",
+        "t": 11.533333333333486,
+        "stage": 2
+      },
+      {
+        "cue": "target_acquire",
+        "t": 11.566666666666821,
+        "stage": 2
+      },
+      {
+        "cue": "alien_orb",
+        "t": 12.43333333333353,
+        "stage": 2
+      },
+      {
+        "cue": "alien_orb",
+        "t": 12.70000000000021,
+        "stage": 2
+      },
+      {
+        "cue": "impact_metal",
+        "t": 12.70000000000021,
+        "stage": 2
+      },
+      {
+        "cue": "module_break",
+        "t": 12.70000000000021,
+        "stage": 2
+      },
+      {
+        "cue": "laser_release",
+        "t": 15.36666666666701,
+        "stage": 8
+      },
+      {
+        "cue": "fusion_cannon",
+        "t": 15.36666666666701,
+        "stage": 6
+      }
+    ],
+    "errors": []
+  },
+  "soundRoster": {
+    "checks": [
+      {
+        "ok": true,
+        "name": "Level 6 s6lancer damage invokes impact sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 6 s6lancer attacks invoke sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 6 s6cyclone damage invokes impact sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 6 s6cyclone attacks invoke sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 6 s6bomber attacks invoke sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 6 s6mine damage invokes impact sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 6 s6mine attacks invoke sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 6 s6skimmer damage invokes impact sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 6 s6skimmer attacks invoke sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 6 s6buoy damage invokes impact sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 6 s6buoy attacks invoke sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 6 s6dart damage invokes impact sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 6 s6dart attacks invoke sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 6 s6thunder damage invokes impact sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 6 s6thunder attacks invoke sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 6 s6turbine damage invokes impact sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 6 s6turbine attacks invoke sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 6 s6probe damage invokes impact sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 6 s6probe attacks invoke sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 7 s7lamprey damage invokes impact sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 7 s7lamprey attacks invoke sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 7 s7barge damage invokes impact sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 7 s7barge attacks invoke sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 7 s7pipe damage invokes impact sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 7 s7pipe attacks invoke sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 7 s7walker damage invokes impact sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 7 s7walker attacks invoke sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 7 s7sampler damage invokes impact sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 7 s7sampler attacks invoke sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 7 s7serpent damage invokes impact sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 7 s7serpent attacks invoke sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 7 s7mine damage invokes impact sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 7 s7mine attacks invoke sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 7 s7canister damage invokes impact sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 7 s7canister attacks invoke sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 7 s7tank damage invokes impact sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 7 s7tank attacks invoke sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 7 s7skimmer damage invokes impact sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 7 s7skimmer attacks invoke sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 8 s8leech damage invokes impact sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 8 s8leech attacks invoke sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 8 s8interceptor damage invokes impact sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 8 s8interceptor attacks invoke sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 8 s8manta damage invokes impact sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 8 s8manta attacks invoke sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 8 s8hunter damage invokes impact sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 8 s8hunter attacks invoke sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 8 s8deathorb damage invokes impact sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 8 s8deathorb attacks invoke sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 8 s8parasite damage invokes impact sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 8 s8parasite attacks invoke sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 8 s8razor damage invokes impact sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 8 s8razor attacks invoke sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 8 s8skull damage invokes impact sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 8 s8skull attacks invoke sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 8 s8carrier damage invokes impact sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 8 s8carrier attacks invoke sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 8 s8symbiote damage invokes impact sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 8 s8symbiote attacks invoke sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 8 s8tentacle damage invokes impact sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 8 s8tentacle attacks invoke sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 8 s8bomber damage invokes impact sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 8 s8bomber attacks invoke sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 8 s8gunship damage invokes impact sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 8 s8gunship attacks invoke sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 8 s8needlejet damage invokes impact sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 8 s8needlejet attacks invoke sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 8 s8scout damage invokes impact sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 8 s8scout attacks invoke sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 8 s8solar damage invokes impact sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 8 s8solar attacks invoke sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 8 s8spread damage invokes impact sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 8 s8spread attacks invoke sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 8 s8crescent damage invokes impact sound"
+      },
+      {
+        "ok": true,
+        "name": "Level 8 s8crescent attacks invoke sound"
+      },
+      {
+        "ok": true,
+        "name": "live late-stage roster has no unregistered sound requests"
+      },
+      {
+        "ok": true,
+        "name": "audible mixer output: laser_charge"
+      },
+      {
+        "ok": true,
+        "name": "audible mixer output: laser_burn"
+      },
+      {
+        "ok": true,
+        "name": "audible mixer output: laser_release"
+      },
+      {
+        "ok": true,
+        "name": "audible mixer output: fusion_cannon"
+      },
+      {
+        "ok": true,
+        "name": "audible mixer output: cole_laser6"
+      },
+      {
+        "ok": true,
+        "name": "audible mixer output: cole_laser7"
+      },
+      {
+        "ok": true,
+        "name": "audible mixer output: target_acquire"
+      },
+      {
+        "ok": true,
+        "name": "audible mixer output: teleport_out"
+      },
+      {
+        "ok": true,
+        "name": "audible mixer output: teleport_in"
+      },
+      {
+        "ok": true,
+        "name": "audible mixer output: firewall_launch"
+      },
+      {
+        "ok": true,
+        "name": "audible mixer output: firewall_burn"
+      },
+      {
+        "ok": true,
+        "name": "audible mixer output: toxic_spit"
+      },
+      {
+        "ok": true,
+        "name": "audible mixer output: alien_orb"
+      },
+      {
+        "ok": true,
+        "name": "audible mixer output: claw_lunge"
+      },
+      {
+        "ok": true,
+        "name": "audible mixer output: impact_metal"
+      },
+      {
+        "ok": true,
+        "name": "audible mixer output: impact_energy"
+      },
+      {
+        "ok": true,
+        "name": "audible mixer output: impact_flesh"
+      },
+      {
+        "ok": true,
+        "name": "audible mixer output: code_shatter"
+      },
+      {
+        "ok": true,
+        "name": "audible mixer output: module_break"
+      },
+      {
+        "ok": true,
+        "name": "audible mixer output: gravity_pulse"
+      },
+      {
+        "ok": true,
+        "name": "direct Snd and Audio.SFX boss routes share the generated files"
+      },
+      {
+        "ok": true,
+        "name": "zero browser errors"
+      }
+    ],
+    "roster": [
+      {
+        "type": "s6lancer",
+        "stage": 6,
+        "sounds": [
+          "enemyShoot"
+        ],
+        "newCues": [],
+        "dead": false,
+        "phase": null,
+        "locked": false,
+        "enemies": [
+          "s6lancer",
+          "s6dart"
+        ],
+        "requested": "s6lancer"
+      },
+      {
+        "type": "s6cyclone",
+        "stage": 6,
+        "sounds": [
+          "jetDash"
+        ],
+        "newCues": [],
+        "dead": true,
+        "phase": "charge",
+        "locked": false,
+        "enemies": [
+          "s6dart"
+        ],
+        "requested": "s6cyclone"
+      },
+      {
+        "type": "scheduled-stealth-flight",
+        "stage": 6,
+        "sounds": [
+          "tlvJetEngine",
+          "retinaCharge",
+          "retinaLockBeep",
+          "missile"
+        ],
+        "newCues": [],
+        "dead": false,
+        "phase": null,
+        "locked": false,
+        "enemies": [
+          "s6dart"
+        ],
+        "requested": "s6bomber"
+      },
+      {
+        "type": "s6mine",
+        "stage": 6,
+        "sounds": [
+          "enemyElectricBolt"
+        ],
+        "newCues": [],
+        "dead": false,
+        "phase": null,
+        "locked": false,
+        "enemies": [
+          "s6mine",
+          "s6dart"
+        ],
+        "requested": "s6mine"
+      },
+      {
+        "type": "s6skimmer",
+        "stage": 6,
+        "sounds": [
+          "enemyShoot",
+          "av3_alien_orb"
+        ],
+        "newCues": [
+          "alien_orb"
+        ],
+        "dead": true,
+        "phase": null,
+        "locked": false,
+        "enemies": [
+          "s6dart"
+        ],
+        "requested": "s6skimmer"
+      },
+      {
+        "type": "s6buoy",
+        "stage": 6,
+        "sounds": [
+          "enemyElectricBolt"
+        ],
+        "newCues": [],
+        "dead": false,
+        "phase": null,
+        "locked": false,
+        "enemies": [
+          "s6buoy",
+          "s6dart"
+        ],
+        "requested": "s6buoy"
+      },
+      {
+        "type": "s6dart",
+        "stage": 6,
+        "sounds": [
+          "enemyMachineGunLight"
+        ],
+        "newCues": [],
+        "dead": true,
+        "phase": null,
+        "locked": false,
+        "enemies": [
+          "s6dart"
+        ],
+        "requested": "s6dart"
+      },
+      {
+        "type": "s6thunder",
+        "stage": 6,
+        "sounds": [
+          "enemyElectricBolt"
+        ],
+        "newCues": [],
+        "dead": false,
+        "phase": null,
+        "locked": false,
+        "enemies": [
+          "s6thunder",
+          "s6dart"
+        ],
+        "requested": "s6thunder"
+      },
+      {
+        "type": "s6turbine",
+        "stage": 6,
+        "sounds": [
+          "av3_gravity_pulse"
+        ],
+        "newCues": [
+          "gravity_pulse"
+        ],
+        "dead": false,
+        "phase": null,
+        "locked": false,
+        "enemies": [
+          "s6turbine",
+          "s6dart"
+        ],
+        "requested": "s6turbine"
+      },
+      {
+        "type": "s6probe",
+        "stage": 6,
+        "sounds": [
+          "enemyShoot"
+        ],
+        "newCues": [],
+        "dead": false,
+        "phase": null,
+        "locked": false,
+        "enemies": [
+          "s6probe",
+          "s6dart"
+        ],
+        "requested": "s6probe"
+      },
+      {
+        "type": "mm1003_hellram",
+        "stage": 7,
+        "sounds": [
+          "av3_laser_charge",
+          "av3_target_acquire",
+          "alertLockon",
+          "enemyApproach",
+          "av3_claw_lunge",
+          "av3_alien_orb",
+          "av3_toxic_spit"
+        ],
+        "newCues": [
+          "laser_charge",
+          "target_acquire",
+          "claw_lunge",
+          "alien_orb",
+          "toxic_spit"
+        ],
+        "dead": false,
+        "phase": null,
+        "locked": false,
+        "enemies": [
+          "mm1003_hellram",
+          "s7skimmer"
+        ],
+        "requested": "s7lamprey"
+      },
+      {
+        "type": "s7barge",
+        "stage": 7,
+        "sounds": [
+          "av3_laser_charge",
+          "av3_toxic_spit",
+          "enemyShoot"
+        ],
+        "newCues": [
+          "laser_charge",
+          "toxic_spit"
+        ],
+        "dead": false,
+        "phase": null,
+        "locked": false,
+        "enemies": [
+          "s7barge",
+          "s7skimmer"
+        ],
+        "requested": "s7barge"
+      },
+      {
+        "type": "s7pipe",
+        "stage": 7,
+        "sounds": [
+          "av3_laser_charge",
+          "av3_toxic_spit"
+        ],
+        "newCues": [
+          "laser_charge",
+          "toxic_spit"
+        ],
+        "dead": true,
+        "phase": null,
+        "locked": false,
+        "enemies": [
+          "s7skimmer"
+        ],
+        "requested": "s7pipe"
+      },
+      {
+        "type": "s7walker",
+        "stage": 7,
+        "sounds": [
+          "av3_laser_charge",
+          "av3_toxic_spit",
+          "enemyBossCannon"
+        ],
+        "newCues": [
+          "laser_charge",
+          "toxic_spit"
+        ],
+        "dead": false,
+        "phase": null,
+        "locked": false,
+        "enemies": [
+          "s7walker",
+          "s7skimmer"
+        ],
+        "requested": "s7walker"
+      },
+      {
+        "type": "mm1003_riflelocust",
+        "stage": 7,
+        "sounds": [
+          "av3_laser_charge",
+          "av3_target_acquire",
+          "alertLockon",
+          "av3_toxic_spit",
+          "enemyMachineGunHeavy"
+        ],
+        "newCues": [
+          "laser_charge",
+          "target_acquire",
+          "toxic_spit"
+        ],
+        "dead": false,
+        "phase": null,
+        "locked": false,
+        "enemies": [
+          "mm1003_riflelocust",
+          "s7skimmer"
+        ],
+        "requested": "s7sampler"
+      },
+      {
+        "type": "mm1003_hellhugger",
+        "stage": 7,
+        "sounds": [
+          "av3_laser_charge",
+          "av3_target_acquire",
+          "alertLockon",
+          "av3_toxic_spit",
+          "enemyApproach",
+          "av3_claw_lunge"
+        ],
+        "newCues": [
+          "laser_charge",
+          "target_acquire",
+          "toxic_spit",
+          "claw_lunge"
+        ],
+        "dead": true,
+        "phase": null,
+        "locked": false,
+        "enemies": [
+          "s7skimmer"
+        ],
+        "requested": "s7serpent"
+      },
+      {
+        "type": "mm1003_impharrow",
+        "stage": 7,
+        "sounds": [
+          "av3_laser_charge",
+          "av3_target_acquire",
+          "alertLockon",
+          "av3_toxic_spit",
+          "av3_alien_orb"
+        ],
+        "newCues": [
+          "laser_charge",
+          "target_acquire",
+          "toxic_spit",
+          "alien_orb"
+        ],
+        "dead": false,
+        "phase": null,
+        "locked": false,
+        "enemies": [
+          "mm1003_impharrow",
+          "s7skimmer"
+        ],
+        "requested": "s7mine"
+      },
+      {
+        "type": "mm1003_hexpyre",
+        "stage": 7,
+        "sounds": [
+          "av3_laser_charge",
+          "av3_target_acquire",
+          "alertLockon",
+          "av3_toxic_spit",
+          "flameThrowerStart"
+        ],
+        "newCues": [
+          "laser_charge",
+          "target_acquire",
+          "toxic_spit"
+        ],
+        "dead": false,
+        "phase": null,
+        "locked": false,
+        "enemies": [
+          "mm1003_hexpyre",
+          "s7skimmer"
+        ],
+        "requested": "s7canister"
+      },
+      {
+        "type": "s7tank",
+        "stage": 7,
+        "sounds": [
+          "av3_laser_charge",
+          "av3_toxic_spit",
+          "enemyShoot"
+        ],
+        "newCues": [
+          "laser_charge",
+          "toxic_spit"
+        ],
+        "dead": false,
+        "phase": null,
+        "locked": false,
+        "enemies": [
+          "s7tank",
+          "s7skimmer"
+        ],
+        "requested": "s7tank"
+      },
+      {
+        "type": "s7skimmer",
+        "stage": 7,
+        "sounds": [
+          "av3_laser_charge",
+          "enemyShoot",
+          "av3_toxic_spit",
+          "av3_laser_release"
+        ],
+        "newCues": [
+          "laser_charge",
+          "toxic_spit",
+          "laser_release"
+        ],
+        "dead": true,
+        "phase": null,
+        "locked": false,
+        "enemies": [
+          "s7skimmer"
+        ],
+        "requested": "s7skimmer"
+      },
+      {
+        "type": "s8leech",
+        "stage": 8,
+        "sounds": [
+          "av3_laser_charge",
+          "av3_target_acquire",
+          "alertLockon",
+          "combatAlien0927"
+        ],
+        "newCues": [
+          "laser_charge",
+          "target_acquire"
+        ],
+        "dead": false,
+        "phase": null,
+        "locked": false,
+        "enemies": [
+          "s8leech"
+        ],
+        "requested": "s8leech"
+      },
+      {
+        "type": "s8interceptor",
+        "stage": 8,
+        "sounds": [
+          "av3_target_acquire",
+          "alertLockon",
+          "av3_laser_release"
+        ],
+        "newCues": [
+          "target_acquire",
+          "laser_release"
+        ],
+        "dead": false,
+        "phase": null,
+        "locked": false,
+        "enemies": [
+          "s8interceptor"
+        ],
+        "requested": "s8interceptor"
+      },
+      {
+        "type": "mm1003_bluehybrid",
+        "stage": 8,
+        "sounds": [
+          "av3_laser_charge",
+          "av3_target_acquire",
+          "alertLockon",
+          "av3_alien_orb"
+        ],
+        "newCues": [
+          "laser_charge",
+          "target_acquire",
+          "alien_orb"
+        ],
+        "dead": false,
+        "phase": null,
+        "locked": false,
+        "enemies": [
+          "mm1003_bluehybrid"
+        ],
+        "requested": "s8manta"
+      },
+      {
+        "type": "s8hunter",
+        "stage": 8,
+        "sounds": [
+          "av3_laser_charge",
+          "av3_target_acquire",
+          "alertLockon",
+          "av3_laser_release"
+        ],
+        "newCues": [
+          "laser_charge",
+          "target_acquire",
+          "laser_release"
+        ],
+        "dead": false,
+        "phase": null,
+        "locked": false,
+        "enemies": [
+          "s8hunter"
+        ],
+        "requested": "s8hunter"
+      },
+      {
+        "type": "s8deathorb",
+        "stage": 8,
+        "sounds": [
+          "av3_target_acquire",
+          "alertLockon",
+          "av3_laser_release"
+        ],
+        "newCues": [
+          "target_acquire",
+          "laser_release"
+        ],
+        "dead": false,
+        "phase": null,
+        "locked": false,
+        "enemies": [
+          "s8deathorb"
+        ],
+        "requested": "s8deathorb"
+      },
+      {
+        "type": "s8parasite",
+        "stage": 8,
+        "sounds": [
+          "av3_target_acquire",
+          "alertLockon",
+          "av3_laser_release"
+        ],
+        "newCues": [
+          "target_acquire",
+          "laser_release"
+        ],
+        "dead": false,
+        "phase": null,
+        "locked": false,
+        "enemies": [
+          "s8parasite"
+        ],
+        "requested": "s8parasite"
+      },
+      {
+        "type": "s8razor",
+        "stage": 8,
+        "sounds": [
+          "av3_target_acquire",
+          "alertLockon",
+          "av3_laser_release"
+        ],
+        "newCues": [
+          "target_acquire",
+          "laser_release"
+        ],
+        "dead": true,
+        "phase": null,
+        "locked": false,
+        "enemies": [],
+        "requested": "s8razor"
+      },
+      {
+        "type": "s8skull",
+        "stage": 8,
+        "sounds": [
+          "av3_target_acquire",
+          "alertLockon",
+          "av3_laser_release"
+        ],
+        "newCues": [
+          "target_acquire",
+          "laser_release"
+        ],
+        "dead": true,
+        "phase": null,
+        "locked": false,
+        "enemies": [],
+        "requested": "s8skull"
+      },
+      {
+        "type": "s8carrier",
+        "stage": 8,
+        "sounds": [
+          "av3_target_acquire",
+          "alertLockon",
+          "av3_laser_release"
+        ],
+        "newCues": [
+          "target_acquire",
+          "laser_release"
+        ],
+        "dead": false,
+        "phase": null,
+        "locked": false,
+        "enemies": [
+          "s8carrier"
+        ],
+        "requested": "s8carrier"
+      },
+      {
+        "type": "s8symbiote",
+        "stage": 8,
+        "sounds": [
+          "av3_target_acquire",
+          "alertLockon",
+          "av3_laser_release"
+        ],
+        "newCues": [
+          "target_acquire",
+          "laser_release"
+        ],
+        "dead": false,
+        "phase": null,
+        "locked": false,
+        "enemies": [
+          "s8symbiote"
+        ],
+        "requested": "s8symbiote"
+      },
+      {
+        "type": "s8tentacle",
+        "stage": 8,
+        "sounds": [
+          "av3_target_acquire",
+          "alertLockon",
+          "av3_laser_release"
+        ],
+        "newCues": [
+          "target_acquire",
+          "laser_release"
+        ],
+        "dead": false,
+        "phase": null,
+        "locked": false,
+        "enemies": [
+          "s8tentacle"
+        ],
+        "requested": "s8tentacle"
+      },
+      {
+        "type": "s8bomber",
+        "stage": 8,
+        "sounds": [
+          "av3_target_acquire",
+          "alertLockon",
+          "av3_laser_release",
+          "missile"
+        ],
+        "newCues": [
+          "target_acquire",
+          "laser_release"
+        ],
+        "dead": false,
+        "phase": null,
+        "locked": false,
+        "enemies": [
+          "s8bomber"
+        ],
+        "requested": "s8bomber"
+      },
+      {
+        "type": "mm1003_furnacemaw",
+        "stage": 8,
+        "sounds": [
+          "av3_laser_charge",
+          "av3_target_acquire",
+          "alertLockon",
+          "av3_alien_orb"
+        ],
+        "newCues": [
+          "laser_charge",
+          "target_acquire",
+          "alien_orb"
+        ],
+        "dead": false,
+        "phase": null,
+        "locked": false,
+        "enemies": [
+          "mm1003_furnacemaw"
+        ],
+        "requested": "s8gunship"
+      },
+      {
+        "type": "mm1003_impharrow",
+        "stage": 8,
+        "sounds": [
+          "av3_laser_charge",
+          "av3_target_acquire",
+          "alertLockon",
+          "av3_alien_orb"
+        ],
+        "newCues": [
+          "laser_charge",
+          "target_acquire",
+          "alien_orb"
+        ],
+        "dead": false,
+        "phase": null,
+        "locked": false,
+        "enemies": [
+          "mm1003_impharrow"
+        ],
+        "requested": "s8needlejet"
+      },
+      {
+        "type": "mm1003_hexpyre",
+        "stage": 8,
+        "sounds": [
+          "av3_laser_charge",
+          "av3_target_acquire",
+          "alertLockon",
+          "flameThrowerStart"
+        ],
+        "newCues": [
+          "laser_charge",
+          "target_acquire"
+        ],
+        "dead": false,
+        "phase": null,
+        "locked": false,
+        "enemies": [
+          "mm1003_hexpyre"
+        ],
+        "requested": "s8scout"
+      },
+      {
+        "type": "s8solar",
+        "stage": 8,
+        "sounds": [
+          "av3_laser_charge",
+          "av3_target_acquire",
+          "alertLockon",
+          "av3_laser_release"
+        ],
+        "newCues": [
+          "laser_charge",
+          "target_acquire",
+          "laser_release"
+        ],
+        "dead": false,
+        "phase": null,
+        "locked": false,
+        "enemies": [
+          "s8solar"
+        ],
+        "requested": "s8solar"
+      },
+      {
+        "type": "s8spread",
+        "stage": 8,
+        "sounds": [
+          "av3_target_acquire",
+          "alertLockon",
+          "av3_laser_release"
+        ],
+        "newCues": [
+          "target_acquire",
+          "laser_release"
+        ],
+        "dead": false,
+        "phase": null,
+        "locked": false,
+        "enemies": [
+          "s8spread"
+        ],
+        "requested": "s8spread"
+      },
+      {
+        "type": "s8crescent",
+        "stage": 8,
+        "sounds": [
+          "av3_target_acquire",
+          "alertLockon",
+          "av3_laser_release"
+        ],
+        "newCues": [
+          "target_acquire",
+          "laser_release"
+        ],
+        "dead": false,
+        "phase": null,
+        "locked": false,
+        "enemies": [
+          "s8crescent"
+        ],
+        "requested": "s8crescent"
+      }
+    ],
+    "playback": [
+      {
+        "playing": true,
+        "src": "laser_charge.mp3",
+        "name": "laser_charge",
+        "peak": 0.5758543014526367
+      },
+      {
+        "playing": true,
+        "src": "laser_burn.mp3",
+        "name": "laser_burn",
+        "peak": 0.1817786991596222
+      },
+      {
+        "playing": true,
+        "src": "laser_release.mp3",
+        "name": "laser_release",
+        "peak": 0.5086913108825684
+      },
+      {
+        "playing": true,
+        "src": "fusion_cannon.mp3",
+        "name": "fusion_cannon",
+        "peak": 0.5031530857086182
+      },
+      {
+        "playing": true,
+        "src": "cole_laser6.mp3",
+        "name": "cole_laser6",
+        "peak": 0.2366081178188324
+      },
+      {
+        "playing": true,
+        "src": "cole_laser7.mp3",
+        "name": "cole_laser7",
+        "peak": 0.23899191617965698
+      },
+      {
+        "playing": true,
+        "src": "target_acquire.mp3",
+        "name": "target_acquire",
+        "peak": 0.6326264142990112
+      },
+      {
+        "playing": true,
+        "src": "teleport_out.mp3",
+        "name": "teleport_out",
+        "peak": 0.5409693717956543
+      },
+      {
+        "playing": true,
+        "src": "teleport_in.mp3",
+        "name": "teleport_in",
+        "peak": 0.620209813117981
+      },
+      {
+        "playing": true,
+        "src": "firewall_launch.mp3",
+        "name": "firewall_launch",
+        "peak": 0.5682621002197266
+      },
+      {
+        "playing": true,
+        "src": "firewall_burn.mp3",
+        "name": "firewall_burn",
+        "peak": 0.2866276204586029
+      },
+      {
+        "playing": true,
+        "src": "toxic_spit.mp3",
+        "name": "toxic_spit",
+        "peak": 0.50632643699646
+      },
+      {
+        "playing": true,
+        "src": "alien_orb.mp3",
+        "name": "alien_orb",
+        "peak": 0.5185776948928833
+      },
+      {
+        "playing": true,
+        "src": "claw_lunge.mp3",
+        "name": "claw_lunge",
+        "peak": 0.6201740503311157
+      },
+      {
+        "playing": true,
+        "src": "impact_metal.mp3",
+        "name": "impact_metal",
+        "peak": 0.33859097957611084
+      },
+      {
+        "playing": true,
+        "src": "impact_energy.mp3",
+        "name": "impact_energy",
+        "peak": 0.40476518869400024
+      },
+      {
+        "playing": true,
+        "src": "impact_flesh.mp3",
+        "name": "impact_flesh",
+        "peak": 0.42917126417160034
+      },
+      {
+        "playing": true,
+        "src": "code_shatter.mp3",
+        "name": "code_shatter",
+        "peak": 0.4013103246688843
+      },
+      {
+        "playing": true,
+        "src": "module_break.mp3",
+        "name": "module_break",
+        "peak": 0.6220346093177795
+      },
+      {
+        "playing": true,
+        "src": "gravity_pulse.mp3",
+        "name": "gravity_pulse",
+        "peak": 0.5623718500137329
+      }
+    ],
+    "missing": [],
+    "errors": []
+  },
+  "review": {
+    "checks": [
+      {
+        "ok": true,
+        "name": "twenty sound previews available"
+      },
+      {
+        "ok": true,
+        "name": "review launches the actual modular Stage 2 fight"
+      },
+      {
+        "ok": true,
+        "name": "selected difficulty and Stage 2 miniboss music resolve"
+      },
+      {
+        "ok": true,
+        "name": "review and restart have no page/console errors"
+      }
+    ],
+    "errors": []
+  },
+  "finaleRegression": {
+    "checks": [
+      {
+        "ok": true,
+        "name": "ten component/effect sources decode through XART"
+      },
+      {
+        "ok": true,
+        "name": "one gauge refills eight times in eight colors"
+      },
+      {
+        "ok": true,
+        "name": "exactly one boss gauge housing per draw"
+      },
+      {
+        "ok": true,
+        "name": "form 1 has independently positioned components"
+      },
+      {
+        "ok": true,
+        "name": "form 1 gauge reads its own health and color"
+      },
+      {
+        "ok": true,
+        "name": "form 1 real chaingun collision damages a component"
+      },
+      {
+        "ok": true,
+        "name": "form 1 destroyed component disappears independently"
+      },
+      {
+        "ok": true,
+        "name": "form 1 talons completes with recovery and finite rig"
+      },
+      {
+        "ok": true,
+        "name": "form 1 gravity completes with recovery and finite rig"
+      },
+      {
+        "ok": true,
+        "name": "form 1 gravity produces real hazards"
+      },
+      {
+        "ok": true,
+        "name": "form 1 code completes with recovery and finite rig"
+      },
+      {
+        "ok": true,
+        "name": "form 1 code produces real hazards"
+      },
+      {
+        "ok": true,
+        "name": "form 1 broken emitter cancels warning and beam"
+      },
+      {
+        "ok": true,
+        "name": "form 2 has independently positioned components"
+      },
+      {
+        "ok": true,
+        "name": "form 2 gauge reads its own health and color"
+      },
+      {
+        "ok": true,
+        "name": "form 2 real chaingun collision damages a component"
+      },
+      {
+        "ok": true,
+        "name": "form 2 destroyed component disappears independently"
+      },
+      {
+        "ok": true,
+        "name": "form 2 rotorMG completes with recovery and finite rig"
+      },
+      {
+        "ok": true,
+        "name": "form 2 rotorMG produces real hazards"
+      },
+      {
+        "ok": true,
+        "name": "form 2 bombing completes with recovery and finite rig"
+      },
+      {
+        "ok": true,
+        "name": "form 2 bombing produces real hazards"
+      },
+      {
+        "ok": true,
+        "name": "form 2 missiles completes with recovery and finite rig"
+      },
+      {
+        "ok": true,
+        "name": "form 2 missiles produces real hazards"
+      },
+      {
+        "ok": true,
+        "name": "form 2 gravity completes with recovery and finite rig"
+      },
+      {
+        "ok": true,
+        "name": "form 2 gravity produces real hazards"
+      },
+      {
+        "ok": true,
+        "name": "form 3 has independently positioned components"
+      },
+      {
+        "ok": true,
+        "name": "form 3 gauge reads its own health and color"
+      },
+      {
+        "ok": true,
+        "name": "form 3 real chaingun collision damages a component"
+      },
+      {
+        "ok": true,
+        "name": "form 3 destroyed component disappears independently"
+      },
+      {
+        "ok": true,
+        "name": "form 3 magma completes with recovery and finite rig"
+      },
+      {
+        "ok": true,
+        "name": "form 3 magma produces real hazards"
+      },
+      {
+        "ok": true,
+        "name": "form 3 eruptions completes with recovery and finite rig"
+      },
+      {
+        "ok": true,
+        "name": "form 3 eruptions produces real hazards"
+      },
+      {
+        "ok": true,
+        "name": "form 3 furnaceBeam completes with recovery and finite rig"
+      },
+      {
+        "ok": true,
+        "name": "form 3 furnaceBeam produces real hazards"
+      },
+      {
+        "ok": true,
+        "name": "form 3 orbit completes with recovery and finite rig"
+      },
+      {
+        "ok": true,
+        "name": "form 3 orbit produces real hazards"
+      },
+      {
+        "ok": true,
+        "name": "form 3 broken emitter cancels warning and beam"
+      },
+      {
+        "ok": true,
+        "name": "form 4 has independently positioned components"
+      },
+      {
+        "ok": true,
+        "name": "form 4 gauge reads its own health and color"
+      },
+      {
+        "ok": true,
+        "name": "form 4 real chaingun collision damages a component"
+      },
+      {
+        "ok": true,
+        "name": "form 4 destroyed component disappears independently"
+      },
+      {
+        "ok": true,
+        "name": "form 4 iceMG completes with recovery and finite rig"
+      },
+      {
+        "ok": true,
+        "name": "form 4 iceMG produces real hazards"
+      },
+      {
+        "ok": true,
+        "name": "form 4 iceLance completes with recovery and finite rig"
+      },
+      {
+        "ok": true,
+        "name": "form 4 iceLance produces real hazards"
+      },
+      {
+        "ok": true,
+        "name": "form 4 iceOrbit completes with recovery and finite rig"
+      },
+      {
+        "ok": true,
+        "name": "form 4 iceOrbit produces real hazards"
+      },
+      {
+        "ok": true,
+        "name": "form 4 gravity completes with recovery and finite rig"
+      },
+      {
+        "ok": true,
+        "name": "form 4 gravity produces real hazards"
+      },
+      {
+        "ok": true,
+        "name": "form 4 broken emitter cancels warning and beam"
+      },
+      {
+        "ok": true,
+        "name": "form 5 has independently positioned components"
+      },
+      {
+        "ok": true,
+        "name": "form 5 gauge reads its own health and color"
+      },
+      {
+        "ok": true,
+        "name": "form 5 real chaingun collision damages a component"
+      },
+      {
+        "ok": true,
+        "name": "form 5 destroyed component disappears independently"
+      },
+      {
+        "ok": true,
+        "name": "form 5 missiles completes with recovery and finite rig"
+      },
+      {
+        "ok": true,
+        "name": "form 5 missiles produces real hazards"
+      },
+      {
+        "ok": true,
+        "name": "form 5 lightning completes with recovery and finite rig"
+      },
+      {
+        "ok": true,
+        "name": "form 5 lightning produces real hazards"
+      },
+      {
+        "ok": true,
+        "name": "form 5 ram completes with recovery and finite rig"
+      },
+      {
+        "ok": true,
+        "name": "form 5 code completes with recovery and finite rig"
+      },
+      {
+        "ok": true,
+        "name": "form 5 code produces real hazards"
+      },
+      {
+        "ok": true,
+        "name": "form 5 broken emitter cancels warning and beam"
+      },
+      {
+        "ok": true,
+        "name": "form 6 has independently positioned components"
+      },
+      {
+        "ok": true,
+        "name": "form 6 gauge reads its own health and color"
+      },
+      {
+        "ok": true,
+        "name": "form 6 real chaingun collision damages a component"
+      },
+      {
+        "ok": true,
+        "name": "form 6 destroyed component disappears independently"
+      },
+      {
+        "ok": true,
+        "name": "form 6 knight completes with recovery and finite rig"
+      },
+      {
+        "ok": true,
+        "name": "form 6 knight completes with recovery and finite rig"
+      },
+      {
+        "ok": true,
+        "name": "form 6 orbit completes with recovery and finite rig"
+      },
+      {
+        "ok": true,
+        "name": "form 6 orbit produces real hazards"
+      },
+      {
+        "ok": true,
+        "name": "form 7 has independently positioned components"
+      },
+      {
+        "ok": true,
+        "name": "form 7 gauge reads its own health and color"
+      },
+      {
+        "ok": true,
+        "name": "form 7 real chaingun collision damages a component"
+      },
+      {
+        "ok": true,
+        "name": "form 7 destroyed component disappears independently"
+      },
+      {
+        "ok": true,
+        "name": "form 7 turbines completes with recovery and finite rig"
+      },
+      {
+        "ok": true,
+        "name": "form 7 turbines produces real hazards"
+      },
+      {
+        "ok": true,
+        "name": "form 7 missiles completes with recovery and finite rig"
+      },
+      {
+        "ok": true,
+        "name": "form 7 missiles produces real hazards"
+      },
+      {
+        "ok": true,
+        "name": "form 7 carrierLance completes with recovery and finite rig"
+      },
+      {
+        "ok": true,
+        "name": "form 7 carrierLance produces real hazards"
+      },
+      {
+        "ok": true,
+        "name": "form 7 gravity completes with recovery and finite rig"
+      },
+      {
+        "ok": true,
+        "name": "form 7 gravity produces real hazards"
+      },
+      {
+        "ok": true,
+        "name": "form 7 broken emitter cancels warning and beam"
+      },
+      {
+        "ok": true,
+        "name": "form 8 has independently positioned components"
+      },
+      {
+        "ok": true,
+        "name": "form 8 gauge reads its own health and color"
+      },
+      {
+        "ok": true,
+        "name": "form 8 real chaingun collision damages a component"
+      },
+      {
+        "ok": true,
+        "name": "form 8 destroyed component disappears independently"
+      },
+      {
+        "ok": true,
+        "name": "form 8 wardenMG completes with recovery and finite rig"
+      },
+      {
+        "ok": true,
+        "name": "form 8 wardenMG produces real hazards"
+      },
+      {
+        "ok": true,
+        "name": "form 8 stomp completes with recovery and finite rig"
+      },
+      {
+        "ok": true,
+        "name": "form 8 scissor completes with recovery and finite rig"
+      },
+      {
+        "ok": true,
+        "name": "form 8 scissor produces real hazards"
+      },
+      {
+        "ok": true,
+        "name": "form 8 gravity completes with recovery and finite rig"
+      },
+      {
+        "ok": true,
+        "name": "form 8 gravity produces real hazards"
+      },
+      {
+        "ok": true,
+        "name": "form 8 code completes with recovery and finite rig"
+      },
+      {
+        "ok": true,
+        "name": "form 8 code produces real hazards"
+      },
+      {
+        "ok": true,
+        "name": "form 8 broken emitter cancels warning and beam"
+      },
+      {
+        "ok": true,
+        "name": "separate head and power-up art draw with the moving sword"
+      },
+      {
+        "ok": true,
+        "name": "powered sword damages on the actual moving blade"
+      },
+      {
+        "ok": true,
+        "name": "sword does not use a remote target-circle hitbox"
+      },
+      {
+        "ok": true,
+        "name": "slash blade crosses the warned stationary target"
+      },
+      {
+        "ok": true,
+        "name": "jump blade crosses the warned stationary target"
+      },
+      {
+        "ok": true,
+        "name": "sweep blade crosses the warned stationary target"
+      },
+      {
+        "ok": true,
+        "name": "breaking sword arm removes sword and cancels its combo"
+      },
+      {
+        "ok": true,
+        "name": "progression enters intact modular form 1"
+      },
+      {
+        "ok": true,
+        "name": "no early reward after form 1"
+      },
+      {
+        "ok": true,
+        "name": "progression enters intact modular form 2"
+      },
+      {
+        "ok": true,
+        "name": "no early reward after form 2"
+      },
+      {
+        "ok": true,
+        "name": "progression enters intact modular form 3"
+      },
+      {
+        "ok": true,
+        "name": "no early reward after form 3"
+      },
+      {
+        "ok": true,
+        "name": "progression enters intact modular form 4"
+      },
+      {
+        "ok": true,
+        "name": "no early reward after form 4"
+      },
+      {
+        "ok": true,
+        "name": "progression enters intact modular form 5"
+      },
+      {
+        "ok": true,
+        "name": "no early reward after form 5"
+      },
+      {
+        "ok": true,
+        "name": "progression enters intact modular form 6"
+      },
+      {
+        "ok": true,
+        "name": "no early reward after form 6"
+      },
+      {
+        "ok": true,
+        "name": "progression enters intact modular form 7"
+      },
+      {
+        "ok": true,
+        "name": "no early reward after form 7"
+      },
+      {
+        "ok": true,
+        "name": "progression enters intact modular form 8"
+      },
+      {
+        "ok": true,
+        "name": "one final portal/reunion reward after all eight lives"
+      },
+      {
+        "ok": true,
+        "name": "no page or console errors"
+      }
+    ],
+    "forms": [
+      {
+        "id": "host",
+        "parts": [
+          {
+            "id": "core",
+            "x": 340,
+            "y": 225,
+            "w": 174,
+            "h": 190,
+            "rot": 0
+          },
+          {
+            "id": "left",
+            "x": 268.3292437623585,
+            "y": 260.94669513916745,
+            "w": 80,
+            "h": 198,
+            "rot": -0.08
+          },
+          {
+            "id": "right",
+            "x": 411.6707562376415,
+            "y": 260.94669513916745,
+            "w": 80,
+            "h": 198,
+            "rot": 0.08
+          }
+        ],
+        "book": [
+          "talons",
+          "gravity",
+          "code"
+        ]
+      },
+      {
+        "id": "chopper",
+        "parts": [
+          {
+            "id": "core",
+            "x": 340,
+            "y": 233,
+            "w": 143,
+            "h": 190,
+            "rot": 0
+          },
+          {
+            "id": "tail",
+            "x": 340,
+            "y": 104.63999999999999,
+            "w": 98,
+            "h": 108,
+            "rot": 0
+          },
+          {
+            "id": "left",
+            "x": 280.05,
+            "y": 235.25,
+            "w": 55,
+            "h": 115,
+            "rot": 0
+          },
+          {
+            "id": "right",
+            "x": 399.95,
+            "y": 235.25,
+            "w": 55,
+            "h": 115,
+            "rot": 0
+          },
+          {
+            "id": "rackL",
+            "x": 252,
+            "y": 242.3,
+            "w": 53,
+            "h": 95,
+            "rot": 0
+          },
+          {
+            "id": "rackR",
+            "x": 428,
+            "y": 242.3,
+            "w": 53,
+            "h": 95,
+            "rot": 0
+          },
+          {
+            "id": "rotor",
+            "x": 340,
+            "y": 167,
+            "w": 69.6,
+            "h": 69.6,
+            "rot": 161.5000000000017
+          }
+        ],
+        "book": [
+          "rotorMG",
+          "bombing",
+          "missiles",
+          "gravity"
+        ]
+      },
+      {
+        "id": "furnace",
+        "parts": [
+          {
+            "id": "core",
+            "x": 340,
+            "y": 205,
+            "w": 150,
+            "h": 192,
+            "rot": 0
+          },
+          {
+            "id": "legL",
+            "x": 312.76487552344634,
+            "y": 310.29710190080687,
+            "w": 64,
+            "h": 111,
+            "rot": -0.15335276014337057
+          },
+          {
+            "id": "legR",
+            "x": 368.12311007799553,
+            "y": 310.4235693739741,
+            "w": 64,
+            "h": 111,
+            "rot": 0.12958574129545183
+          },
+          {
+            "id": "left",
+            "x": 259.42717686462606,
+            "y": 233.28763451124144,
+            "w": 85,
+            "h": 158,
+            "rot": 0.04234031779959229
+          },
+          {
+            "id": "right",
+            "x": 420.57282313537394,
+            "y": 233.28763451124144,
+            "w": 85,
+            "h": 158,
+            "rot": -0.04234031779959229
+          },
+          {
+            "id": "reactor",
+            "x": 340,
+            "y": 232,
+            "w": 48,
+            "h": 49,
+            "rot": 0
+          }
+        ],
+        "book": [
+          "magma",
+          "eruptions",
+          "furnaceBeam",
+          "orbit"
+        ]
+      },
+      {
+        "id": "cryo",
+        "parts": [
+          {
+            "id": "core",
+            "x": 340,
+            "y": 225,
+            "w": 144,
+            "h": 227,
+            "rot": 0
+          },
+          {
+            "id": "rackL",
+            "x": 274.58,
+            "y": 178.3,
+            "w": 67,
+            "h": 85,
+            "rot": 0
+          },
+          {
+            "id": "gunL1",
+            "x": 296.48,
+            "y": 249.24,
+            "w": 52,
+            "h": 109,
+            "rot": 0
+          },
+          {
+            "id": "gunL2",
+            "x": 304,
+            "y": 295.32,
+            "w": 43,
+            "h": 87,
+            "rot": 0
+          },
+          {
+            "id": "rackR",
+            "x": 405.42,
+            "y": 178.3,
+            "w": 67,
+            "h": 85,
+            "rot": 0
+          },
+          {
+            "id": "gunR1",
+            "x": 383.52,
+            "y": 249.24,
+            "w": 52,
+            "h": 109,
+            "rot": 0
+          },
+          {
+            "id": "gunR2",
+            "x": 376,
+            "y": 295.32,
+            "w": 43,
+            "h": 87,
+            "rot": 0
+          }
+        ],
+        "book": [
+          "iceMG",
+          "iceLance",
+          "iceOrbit",
+          "gravity"
+        ]
+      },
+      {
+        "id": "storm",
+        "parts": [
+          {
+            "id": "core",
+            "x": 340,
+            "y": 225,
+            "w": 196,
+            "h": 226,
+            "rot": 0
+          },
+          {
+            "id": "left",
+            "x": 288.1,
+            "y": 287.84000000000003,
+            "w": 69,
+            "h": 112,
+            "rot": 0
+          },
+          {
+            "id": "right",
+            "x": 391.9,
+            "y": 287.84000000000003,
+            "w": 69,
+            "h": 112,
+            "rot": 0
+          },
+          {
+            "id": "rackL",
+            "x": 281.68,
+            "y": 216.1,
+            "w": 61,
+            "h": 117,
+            "rot": 0
+          },
+          {
+            "id": "rackR",
+            "x": 398.32,
+            "y": 216.1,
+            "w": 61,
+            "h": 117,
+            "rot": 0
+          },
+          {
+            "id": "lightning",
+            "x": 343.84,
+            "y": 236.26,
+            "w": 48,
+            "h": 186,
+            "rot": 0
+          }
+        ],
+        "book": [
+          "missiles",
+          "lightning",
+          "ram",
+          "code"
+        ]
+      },
+      {
+        "id": "knight",
+        "parts": [
+          {
+            "id": "core",
+            "x": 340,
+            "y": 225,
+            "w": 126,
+            "h": 140,
+            "rot": 0
+          },
+          {
+            "id": "legL",
+            "x": 315.02373167335224,
+            "y": 314.48826968493955,
+            "w": 55,
+            "h": 101,
+            "rot": -0.1160440284407756
+          },
+          {
+            "id": "legR",
+            "x": 367.667714243949,
+            "y": 315.090404009061,
+            "w": 55,
+            "h": 101,
+            "rot": 0.04668561460851409
+          },
+          {
+            "id": "head",
+            "x": 340.2561572427007,
+            "y": 133.15094142638839,
+            "w": 91,
+            "h": 85,
+            "rot": 0.00735034574771846
+          },
+          {
+            "id": "swordArm",
+            "x": 290.50195003897653,
+            "y": 217.73704852188897,
+            "w": 62,
+            "h": 108,
+            "rot": 0.3
+          },
+          {
+            "id": "shieldArm",
+            "x": 380.353943213032,
+            "y": 217.4946833765276,
+            "w": 62,
+            "h": 108,
+            "rot": -0.15
+          },
+          {
+            "id": "sword",
+            "x": 255.7724996407665,
+            "y": 307.91129248899006,
+            "w": 51,
+            "h": 139,
+            "rot": 0.3
+          },
+          {
+            "id": "shield",
+            "x": 385.95568860995144,
+            "y": 258.8418531528024,
+            "w": 78,
+            "h": 112,
+            "rot": -0.15
+          }
+        ],
+        "book": [
+          "knight",
+          "knight",
+          "orbit"
+        ]
+      },
+      {
+        "id": "harrier",
+        "parts": [
+          {
+            "id": "core",
+            "x": 340,
+            "y": 225,
+            "w": 158,
+            "h": 218,
+            "rot": 0
+          },
+          {
+            "id": "fanL",
+            "x": 232.2590903055147,
+            "y": 234.906525657287,
+            "w": 100,
+            "h": 104,
+            "rot": -0.04279522787319386
+          },
+          {
+            "id": "fanR",
+            "x": 447.28111057112665,
+            "y": 237.16702526989678,
+            "w": 100,
+            "h": 104,
+            "rot": 0.09999152122364297
+          },
+          {
+            "id": "rackL",
+            "x": 214.4,
+            "y": 285.1,
+            "w": 69,
+            "h": 81,
+            "rot": 0
+          },
+          {
+            "id": "rackR",
+            "x": 465.6,
+            "y": 285.1,
+            "w": 69,
+            "h": 81,
+            "rot": 0
+          },
+          {
+            "id": "beam",
+            "x": 340,
+            "y": 265.2,
+            "w": 48,
+            "h": 92,
+            "rot": 0
+          }
+        ],
+        "book": [
+          "turbines",
+          "missiles",
+          "carrierLance",
+          "gravity"
+        ]
+      },
+      {
+        "id": "warden",
+        "parts": [
+          {
+            "id": "core",
+            "x": 340,
+            "y": 200,
+            "w": 168,
+            "h": 190,
+            "rot": 0
+          },
+          {
+            "id": "legL",
+            "x": 289.9489303879136,
+            "y": 310.2867200766936,
+            "w": 77,
+            "h": 116,
+            "rot": -0.06676650820816205
+          },
+          {
+            "id": "legR",
+            "x": 391.849270525142,
+            "y": 310.0805911556899,
+            "w": 77,
+            "h": 116,
+            "rot": 0.025131747977865562
+          },
+          {
+            "id": "left",
+            "x": 255.66259155781802,
+            "y": 201.4934385347263,
+            "w": 78,
+            "h": 128,
+            "rot": 0.11249657234379784
+          },
+          {
+            "id": "right",
+            "x": 424.337408442182,
+            "y": 201.4934385347263,
+            "w": 78,
+            "h": 128,
+            "rot": -0.11249657234379784
+          },
+          {
+            "id": "gunL",
+            "x": 290,
+            "y": 249.69,
+            "w": 69,
+            "h": 99,
+            "rot": 0
+          },
+          {
+            "id": "gunR",
+            "x": 390,
+            "y": 249.69,
+            "w": 69,
+            "h": 99,
+            "rot": 0
+          }
+        ],
+        "book": [
+          "wardenMG",
+          "stomp",
+          "scissor",
+          "gravity",
+          "code"
+        ]
+      }
+    ],
+    "artCalls": [
+      "r30_vile24_robot_gray",
+      "r30_possessed_body",
+      "r30_possessed_armL",
+      "r30_possessed_armR",
+      "r30_fx_0",
+      "r30_fx_1",
+      "r30_fx_2",
+      "r30_fx_3",
+      "r30_fx_8",
+      "fmc_chopper:tail",
+      "fmc_chopper:core",
+      "fmc_chopper:left",
+      "fmc_chopper:right",
+      "fmc_chopper:rackL",
+      "fmc_chopper:rackR",
+      "r30_chopper_rotor",
+      "r30_fx_9",
+      "fmc_furnace:legL",
+      "fmc_furnace:legR",
+      "fmc_furnace:core",
+      "fmc_furnace:left",
+      "fmc_furnace:right",
+      "fmc_furnace:reactor",
+      "fmc_cryo:core",
+      "fmc_cryo:rackL",
+      "fmc_cryo:left",
+      "fmc_cryo:rackR",
+      "fmc_cryo:right",
+      "fmc_storm_hull:core",
+      "fmc_storm:left",
+      "fmc_storm:right",
+      "fmc_storm:rackL",
+      "fmc_storm:rackR",
+      "fmc_storm:lightning",
+      "fmc_knight:legL",
+      "fmc_knight:legR",
+      "fmc_knight:core",
+      "fmc_knight:swordArm",
+      "fmc_knight:shieldArm",
+      "fmc_head:head",
+      "fmc_knight:sword",
+      "fmc_knight:shield",
+      "fmc_sword_fx:0",
+      "fmc_sword_fx:1",
+      "fmc_sword_fx:2",
+      "fmc_sword_fx:3",
+      "fmc_sword_fx:4",
+      "fmc_sword_fx:5",
+      "fmc_sword_fx:6",
+      "fmc_sword_fx:7",
+      "fmc_harrier:fanL",
+      "fmc_harrier:fanR",
+      "fmc_harrier:core",
+      "fmc_harrier:rackL",
+      "fmc_harrier:rackR",
+      "fmc_harrier:beam",
+      "fmc_warden:legL",
+      "fmc_warden:legR",
+      "fmc_warden:core",
+      "fmc_warden:left",
+      "fmc_warden:right",
+      "fmc_warden:gun",
+      "r30_fx_12",
+      "r30_fx_13",
+      "r30_fx_14",
+      "r30_fx_15",
+      "r30_ship_axel",
+      "r30_ship_decker",
+      "r30_ship_maverick",
+      "r30_ship_freezer"
+    ],
+    "sounds": {
+      "combatModule0927": 15,
+      "bossWeaponCharge": 50,
+      "combatAlien0927": 3,
+      "enemyBossCannon": 52,
+      "combatBeam0927": 24,
+      "enemyMachineGunHeavy": 39,
+      "combatOrb0927": 8,
+      "combatEnergy0927": 7,
+      "hammerImpact": 4,
+      "teleportIn": 11,
+      "expBig": 23,
+      "bossPhase": 8
+    },
+    "errors": []
+  },
+  "masters": [
+    {
+      "name": "alien_orb",
+      "seconds": 0.8,
+      "rawPeak": 0.8455209732055664,
+      "rawRMS": 0.11676450073719025,
+      "gain": 0.9343351910064709,
+      "peak": 0.7366069555282593,
+      "rms": 0.10339999198913574,
+      "clippedSamples": 0,
+      "loop": false,
+      "seamDelta": null,
+      "source": "_ART_SOURCES/combat_1003i/audio_originals/alien_orb.mp3",
+      "file": "assets/game/combat_1003i/alien_orb.mp3",
+      "sha256": "8fff6fd091244d5e0e4e5183a413d6050a6aeb7b9cf670a058bfdc46b46ddd98"
+    },
+    {
+      "name": "claw_lunge",
+      "seconds": 0.64,
+      "rawPeak": 0.9992440938949585,
+      "rawRMS": 0.1481385976076126,
+      "gain": 0.7905976175657492,
+      "peak": 0.7769040465354919,
+      "rms": 0.11290106922388077,
+      "clippedSamples": 0,
+      "loop": false,
+      "seamDelta": null,
+      "source": "_ART_SOURCES/combat_1003i/audio_originals/claw_lunge.mp3",
+      "file": "assets/game/combat_1003i/claw_lunge.mp3",
+      "sha256": "4b5873e71e6b47083de3e028072ce93a78571817f025069e6870391e400574f2"
+    },
+    {
+      "name": "code_shatter",
+      "seconds": 1.08,
+      "rawPeak": 1.1500566005706787,
+      "rawRMS": 0.16088232398033142,
+      "gain": 0.686922712854296,
+      "peak": 0.6703423261642456,
+      "rms": 0.09728027880191803,
+      "clippedSamples": 0,
+      "loop": false,
+      "seamDelta": null,
+      "source": "_ART_SOURCES/combat_1003i/audio_originals/code_shatter.mp3",
+      "file": "assets/game/combat_1003i/code_shatter.mp3",
+      "sha256": "493f5e49287d90dcf27a603d8fee164ded6f6238d780e82cb3daa45b50c6cae4"
+    },
+    {
+      "name": "cole_laser6",
+      "seconds": 1.67,
+      "rawPeak": 0.8444191217422485,
+      "rawRMS": 0.19462203979492188,
+      "gain": 0.6672948245134119,
+      "peak": 0.5379104614257812,
+      "rms": 0.12293781340122223,
+      "clippedSamples": 0,
+      "loop": true,
+      "seamDelta": 0.012370433658361435,
+      "source": "_ART_SOURCES/combat_1003i/audio_originals/cole_laser6.mp3",
+      "file": "assets/game/combat_1003i/cole_laser6.mp3",
+      "sha256": "759e3576328deaec29125fae05376b9dfb3dd130df8221e8cc274af2f5f7cd6a"
+    },
+    {
+      "name": "cole_laser7",
+      "seconds": 1.67,
+      "rawPeak": 1.0206917524337769,
+      "rawRMS": 0.12124738097190857,
+      "gain": 0.7739848961415564,
+      "peak": 0.7815784215927124,
+      "rms": 0.08936425298452377,
+      "clippedSamples": 0,
+      "loop": true,
+      "seamDelta": 0.006012052297592163,
+      "source": "_ART_SOURCES/combat_1003i/audio_originals/cole_laser7.mp3",
+      "file": "assets/game/combat_1003i/cole_laser7.mp3",
+      "sha256": "4aeda2cf8e9057e21418aaa842bc8638a30c9e76bd19cc3b768f83de7fb60530"
+    },
+    {
+      "name": "firewall_burn",
+      "seconds": 2.21,
+      "rawPeak": 0.8664580583572388,
+      "rawRMS": 0.1601942628622055,
+      "gain": 0.8115959455676527,
+      "peak": 0.6047654151916504,
+      "rms": 0.12295504659414291,
+      "clippedSamples": 0,
+      "loop": true,
+      "seamDelta": 0.015464751049876213,
+      "source": "_ART_SOURCES/combat_1003i/audio_originals/firewall_burn.mp3",
+      "file": "assets/game/combat_1003i/firewall_burn.mp3",
+      "sha256": "33ceebfa9281f449120d405f03cf4cda634c5a88b3830b2abc43713a0d7a33ad"
+    },
+    {
+      "name": "firewall_launch",
+      "seconds": 1.2,
+      "rawPeak": 0.9821205735206604,
+      "rawRMS": 0.20279982686042786,
+      "gain": 0.8043818868064687,
+      "peak": 0.7492769360542297,
+      "rms": 0.1546819508075714,
+      "clippedSamples": 0,
+      "loop": false,
+      "seamDelta": null,
+      "source": "_ART_SOURCES/combat_1003i/audio_originals/firewall_launch.mp3",
+      "file": "assets/game/combat_1003i/firewall_launch.mp3",
+      "sha256": "b3365165ecf361339a4b262bc4f735b66759377e5aacdb2cc6064e1341ef8ad2"
+    },
+    {
+      "name": "fusion_cannon",
+      "seconds": 1.24,
+      "rawPeak": 1.0735973119735718,
+      "rawRMS": 0.1741926074028015,
+      "gain": 0.7358438691950144,
+      "peak": 0.7277294993400574,
+      "rms": 0.12077875435352325,
+      "clippedSamples": 0,
+      "loop": false,
+      "seamDelta": null,
+      "source": "_ART_SOURCES/combat_1003i/audio_originals/fusion_cannon.mp3",
+      "file": "assets/game/combat_1003i/fusion_cannon.mp3",
+      "sha256": "3add88ce4990f8db40cea1d89f3640437e433a945fa6a6553a2ab3b9b90e9d89"
+    },
+    {
+      "name": "gravity_pulse",
+      "seconds": 1.08,
+      "rawPeak": 0.7837954163551331,
+      "rawRMS": 0.18630129098892212,
+      "gain": 0.9174461325911314,
+      "peak": 0.6849234104156494,
+      "rms": 0.161485493183136,
+      "clippedSamples": 0,
+      "loop": false,
+      "seamDelta": null,
+      "source": "_ART_SOURCES/combat_1003i/audio_originals/gravity_pulse.mp3",
+      "file": "assets/game/combat_1003i/gravity_pulse.mp3",
+      "sha256": "1d90ac02f1ea062dabd55df5dfef5eef4cf88b9ea77644787d1cfac4e3d4bbc3"
+    },
+    {
+      "name": "impact_energy",
+      "seconds": 0.52,
+      "rawPeak": 1.0059711933135986,
+      "rawRMS": 0.1450807899236679,
+      "gain": 0.7853107576547946,
+      "peak": 0.7581033706665039,
+      "rms": 0.10572593659162521,
+      "clippedSamples": 0,
+      "loop": false,
+      "seamDelta": null,
+      "source": "_ART_SOURCES/combat_1003i/audio_originals/impact_energy.mp3",
+      "file": "assets/game/combat_1003i/impact_energy.mp3",
+      "sha256": "32fe4cbcc3fa240b24c53803d481b7a0a2995b8ba032c78167a994db5f4889ba"
+    },
+    {
+      "name": "impact_flesh",
+      "seconds": 0.52,
+      "rawPeak": 1.0897116661071777,
+      "rawRMS": 0.1067136600613594,
+      "gain": 0.7249624139770384,
+      "peak": 0.7517035007476807,
+      "rms": 0.0728742703795433,
+      "clippedSamples": 0,
+      "loop": false,
+      "seamDelta": null,
+      "source": "_ART_SOURCES/combat_1003i/audio_originals/impact_flesh.mp3",
+      "file": "assets/game/combat_1003i/impact_flesh.mp3",
+      "sha256": "01b577be843843f9c55c3f4f5dbb7d370115b6c2ea7b506228f60cf62a32ce66"
+    },
+    {
+      "name": "impact_metal",
+      "seconds": 0.48,
+      "rawPeak": 1.0138006210327148,
+      "rawRMS": 0.2816177308559418,
+      "gain": 0.6054959092628691,
+      "peak": 0.5757299065589905,
+      "rms": 0.16111424565315247,
+      "clippedSamples": 0,
+      "loop": false,
+      "seamDelta": null,
+      "source": "_ART_SOURCES/combat_1003i/audio_originals/impact_metal.mp3",
+      "file": "assets/game/combat_1003i/impact_metal.mp3",
+      "sha256": "dcb4cabddcbd25fbe01c10484c2d8c962631424f007dd2b7a35bd087210cb8d9"
+    },
+    {
+      "name": "laser_burn",
+      "seconds": 2.21,
+      "rawPeak": 1.0249896049499512,
+      "rawRMS": 0.31048718094825745,
+      "gain": 0.4160434295612746,
+      "peak": 0.4092411696910858,
+      "rms": 0.12293478846549988,
+      "clippedSamples": 0,
+      "loop": true,
+      "seamDelta": 0.0041900803335011005,
+      "source": "_ART_SOURCES/combat_1003i/audio_originals/laser_burn.mp3",
+      "file": "assets/game/combat_1003i/laser_burn.mp3",
+      "sha256": "d7534564c0c75bfd927f0d7b8b92e68e0fe49527b950b5e38819fcd8d58ff278"
+    },
+    {
+      "name": "laser_charge",
+      "seconds": 1.48,
+      "rawPeak": 0.8555082082748413,
+      "rawRMS": 0.18913236260414124,
+      "gain": 0.9000549397274789,
+      "peak": 0.7326362729072571,
+      "rms": 0.15885509550571442,
+      "clippedSamples": 0,
+      "loop": false,
+      "seamDelta": null,
+      "source": "_ART_SOURCES/combat_1003i/audio_originals/laser_charge.mp3",
+      "file": "assets/game/combat_1003i/laser_charge.mp3",
+      "sha256": "aae30b30f3b72976a35eb3f4cb369dce78c2f6748efbf0fa93936c3af4a4e030"
+    },
+    {
+      "name": "laser_release",
+      "seconds": 0.64,
+      "rawPeak": 1.0337635278701782,
+      "rawRMS": 0.2657512128353119,
+      "gain": 0.6422326003680289,
+      "peak": 0.6150413155555725,
+      "rms": 0.1611715853214264,
+      "clippedSamples": 0,
+      "loop": false,
+      "seamDelta": null,
+      "source": "_ART_SOURCES/combat_1003i/audio_originals/laser_release.mp3",
+      "file": "assets/game/combat_1003i/laser_release.mp3",
+      "sha256": "b160333dfb628a1acec4145e1f679338b2964f1ab41bad31c1ede8fdc978cbf0"
+    },
+    {
+      "name": "module_break",
+      "seconds": 1.28,
+      "rawPeak": 1.0150026082992554,
+      "rawRMS": 0.200199693441391,
+      "gain": 0.7783231230545593,
+      "peak": 0.8040077090263367,
+      "rms": 0.14808537065982819,
+      "clippedSamples": 0,
+      "loop": false,
+      "seamDelta": null,
+      "source": "_ART_SOURCES/combat_1003i/audio_originals/module_break.mp3",
+      "file": "assets/game/combat_1003i/module_break.mp3",
+      "sha256": "ddbbaa819587bca97f79f797d0f02d47b3126a0313441b549b9cac876d83670a"
+    },
+    {
+      "name": "target_acquire",
+      "seconds": 0.64,
+      "rawPeak": 0.8486385345458984,
+      "rawRMS": 0.05828145146369934,
+      "gain": 0.9309028141442156,
+      "peak": 0.7829675674438477,
+      "rms": 0.05213380232453346,
+      "clippedSamples": 0,
+      "loop": false,
+      "seamDelta": null,
+      "source": "_ART_SOURCES/combat_1003i/audio_originals/target_acquire.mp3",
+      "file": "assets/game/combat_1003i/target_acquire.mp3",
+      "sha256": "dbebda5cf78ddce07e56ff3837ed17b208f08e22fde8e78c848ee1f7c772802e"
+    },
+    {
+      "name": "teleport_in",
+      "seconds": 0.84,
+      "rawPeak": 0.6466513276100159,
+      "rawRMS": 0.08395325392484665,
+      "gain": 1.221678462982195,
+      "peak": 0.719874918460846,
+      "rms": 0.09668081998825073,
+      "clippedSamples": 0,
+      "loop": false,
+      "seamDelta": null,
+      "source": "_ART_SOURCES/combat_1003i/audio_originals/teleport_in.mp3",
+      "file": "assets/game/combat_1003i/teleport_in.mp3",
+      "sha256": "6cb8562ad6f5b46475b1abefaab05a4d6f6069530f66dd6e844174bf9524ead3"
+    },
+    {
+      "name": "teleport_out",
+      "seconds": 0.84,
+      "rawPeak": 0.900901198387146,
+      "rawRMS": 0.13741986453533173,
+      "gain": 0.8768997104391816,
+      "peak": 0.7383956909179688,
+      "rms": 0.11306198686361313,
+      "clippedSamples": 0,
+      "loop": false,
+      "seamDelta": null,
+      "source": "_ART_SOURCES/combat_1003i/audio_originals/teleport_out.mp3",
+      "file": "assets/game/combat_1003i/teleport_out.mp3",
+      "sha256": "48dddf20c1b6853a56e00df98664ebd614c42e492dc516ede72d0ab6479ccb3e"
+    },
+    {
+      "name": "toxic_spit",
+      "seconds": 0.6802,
+      "rawPeak": 1.1792936325073242,
+      "rawRMS": 0.18552690744400024,
+      "gain": 0.6698925341607774,
+      "peak": 0.769001841545105,
+      "rms": 0.11743218451738358,
+      "clippedSamples": 0,
+      "loop": false,
+      "seamDelta": null,
+      "source": "_ART_SOURCES/combat_1003i/audio_originals/toxic_spit.mp3",
+      "file": "assets/game/combat_1003i/toxic_spit.mp3",
+      "sha256": "777a86a2dbfa2a57df519520d6894e567ddf8208c5d9d3c4e84359a501b81577"
+    }
+  ],
+  "lineEndings": {
+    "assets/game.js": {
+      "CRLF": 0,
+      "bareLF": 80088
+    },
+    "_BUILD_SOURCE/test_fl.js": {
+      "CRLF": 15799,
+      "bareLF": 0
+    },
+    "index.html": {
+      "CRLF": 413,
+      "bareLF": 0
+    }
+  },
+  "nativeChecks": 260,
+  "files": {
+    "assets/combat_1003i.js": "601dade7c34fea7b4d0d0e7a81573fdd81ca9a7fd7dc9a606987e65f33662c41",
+    "assets/combat_art_1003i.js": "131623ff8837e1eae3324984eb2c8aba1035974357c6e63b25e7ce77eb875f4f",
+    "_ART_SOURCES/combat_1003i/audio.json": "5a49354b29637ac9868dfe5334fe0fecb0ead5bfa2e60dfd906589ae61c3f0a2"
+  }
+}

@@ -47,8 +47,8 @@ ai27End=function(e,previous){
 };
 Object.assign(FR27_BASE,{hammerTick:hammerBossTick,hammerDraw:hammerBossDraw,hammerDamage:hammerBossDamage,recovery:hammerRecoveryTick,breakRecovery:hammerRecoveryBreak,health:bossHealthFraction,healthVisible:bossHealthVisible,gauge:hammerChromiumGaugeFill,head:hammerHeadPoint});
 for(const name of ['chromium_actions','realm_terrain','realm_fleet'])XART._src['fr27_'+name]='assets/game/furious_review_0927/'+name+'.png';
-function fr27Cell(key,col,row,x,y,w,h,alpha){
- if(!XART.rdy(key))return false;const im=XART.get(key),W=im.width||im.naturalWidth,H=im.height||im.naturalHeight;
+function fr27Cell(key,col,row,x,y,w,h,alpha,tint){
+ if(!XART.rdy(key))return false;const im=tint?xartTint(key,tint,1):XART.get(key);if(!im)return false;const W=im.width||im.naturalWidth,H=im.height||im.naturalHeight;
  const rows=key==='fr27_chromium_actions'?[0,345,680,986,1230]:[0,285,548,899,1254];
  const sx=Math.floor(col*W/4),ex=Math.floor((col+1)*W/4),sy=rows[row]*H/rows[4],eh=(rows[row+1]-rows[row])*H/rows[4];
  ctx.save();ctx.globalAlpha=alpha==null?1:alpha;ctx.imageSmoothingEnabled=false;ctx.drawImage(im,sx,sy,ex-sx,eh,x-w/2,y-h/2,w,h);ctx.restore();return true;
@@ -470,6 +470,7 @@ s8MegaTick=function(e,dt){
 };
 drawS8Mega=function(e){const A=e._frRealmAI,row=fr27RealmRow(e),f=A?.shot>0?3:Math.abs(e._frBank||0)>10?(e._frBank<0?1:2):0;
  const size=Math.max(e.w,e.h)*1.28;e._drawW=size*.82;e._drawH=size;const drawn=fr27Cell('fr27_realm_fleet',f,row,e.x,e.y,size,size,1);
+ if(drawn&&e.flash>0)fr27Cell('fr27_realm_fleet',f,row,e.x,e.y,size,size,Math.min(1,e.flash*9),'#ffffff');
  if(A?.tell)combatWarningDraw(e,{x:e.x,y:e.y+e.h*.35,ex:A.tell.x,ey:A.tell.y,progress:A.tell.t/.8,width:row===0?85:row===2?30:100,alpha:.32});
  return drawn;
 };
@@ -628,7 +629,7 @@ drawS7Toxic=function(e){
 };
 
 // Restore the authored Stage 8 track rather than the historical Egypt-key alias.
-BOFA.music.realm8='assets/game/music/stage8_furious_death.mp3';
+BOFA.music.realm8='assets/game/music/Level8.mp3';
 STAGES[7].music='realm8';
 if(Snd?.music&&!Snd.music.realm8&&typeof window.Audio==='function'){const track=new window.Audio();track.preload='none';track.src=BOFA.music.realm8;track.loop=true;Snd.music.realm8=track;}
 

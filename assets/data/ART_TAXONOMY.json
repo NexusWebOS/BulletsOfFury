@@ -1,4 +1,59 @@
 {
+  "cf4_": {
+    "role": "modular_boss_pose_components",
+    "sheet": null,
+    "note": "October 4 follow-up: twelve generated torso/leg poses for the modular alien knight. Existing head-only asset, arms, sword, shield and power effects retained. Principal alpha bounds and measured joints keep the pieces connected through native Hammer windup, leap, impact, recovery, throw and curled attacks. Owner _BUILD_SOURCE/build_focus_1004b.py; provenance _ART_SOURCES/campaign_focus_1004b/provenance.json. No atlas repack."
+  },
+  "gp4_": {
+    "role": "campaign_islands_and_reused_encounter_art",
+    "sheet": null,
+    "note": "October 4 recording repair: builtin imagegen connected-island kit, eight authored biomes plus central city. Source/prompt/crops preserved in _ART_SOURCES/gameplay_1004; owner _BUILD_SOURCE/repair_assets_1004.py separates connected alpha components and produces nearest-neighbor 512px cells, derived lock/shadow/glow masks and an authored bridge crop. Runtime gameplay_repair_1004.js maps source cells 4/5/8 to stages 5/8/4 to preserve desert, spaceport and infernal biomes. Fresh gp4_ace/gp4_acem keys point to the existing blue skycarrier ace art and avoid stale atlas palette aliases. Red/green bomber palettes preserve source luminance and gray ordnance. gp4_death_ uses the fourth expression of the existing approved four-column Rebel portrait sheets, with a runtime white fade. No shared atlas changes. QA docs/qa/gameplay_repair_1004.json."
+  },
+  "rg4_": {
+    "role": "rebel_encounter_effects",
+    "sheet": "assets/game/rebel_gang_1004/decker_effects.png",
+    "note": "October 4: builtin imagegen RGBA, source unchanged, four rows of six centered 256px cells. Shield wave, cloak swirl, cloak reveal and chromium-style charge. Registration owned by _BUILD_SOURCE/import_rebel_gang_1004.py. Prompt docs/rebel_gang_prompts_1004.json. Original whole rr_ship/rr_roll ships, nfrb roller, florb helper, arch_blaster_gun attachments, and original Retina/asterisk warnings reused."
+  },
+  "av3_": {
+    "role": "modular_miniboss_and_combat_effect",
+    "sheet": null,
+    "note": "October 3i: Mike requested modular Stage 2 Inferno Reaver, generated beams/muzzles for bosses and minibosses, and missing combat audio. Six independently posed volcanic fighter components share draw/hit/Retina/hardpoint transforms and disarm when destroyed. Built-in imagegen source sheets are unchanged: reaver_parts, 18 laser strip frames and 18 muzzle frames across six elemental colors. Measured cells owned by _BUILD_SOURCE/import_combat_1003i.py. Exact prompts/source hashes in _ART_SOURCES/combat_1003i and deployed manifest. Twenty ElevenLabs generated sound families have preserved originals plus mastered runtime MP3s, with provenance and decoded metrics. Runtime assets/combat_1003i.js; QA docs/qa/combat_1003i.json. User explicitly supersedes whole-plate guidance for Stage 2 miniboss."
+  },
+  "mapg_": {
+    "role": "campaign_ui_portrait",
+    "sheet": null,
+    "note": "October 3g: generated blank gunmetal mission frame and complete golden Lizzie portrait bezel. Original Lizzie expression sheet supplies character and mouth pixels; cached menu/comm composites hold frame/body fixed while speaking. Source pixels preserved. Runtime map_briefing_1003g.js, owner build_map_briefing_1003g.py, prompt/source _ART_SOURCES/map_briefing_1003g, deployed assets/game/map_briefing_1003g/manifest.json. Stages 1-9/Stage X use live centered game fonts over blank art; old nss text plates remain archived and registered, not used in live map briefing."
+  },
+  "hd1003_": {
+    "role": "miniboss_modular",
+    "sheet": null,
+    "note": "October 3f: Mike explicitly restored Herald of Death and requested regenerated HQ modular art, superseding the whole-plate rule for this miniboss. Six source components: body, separate skull, two articulated skeletal wings and two cannon arms. Independent live pivots, part hit flashes, Retina targets, breakage and emitter suppression; skull weak point. Source RGBA copied unchanged; measured rectangles owned by build_herald_1003f.py. Existing original FOV/Retina, projectile and explosion assets retained. ALTBOSS[8] preserved; herald_1003f.js restores SUBBOSS[8]."
+  },
+  "cwd_": {
+    "role": "boss_shield_effect",
+    "sheet": null,
+    "note": "October 3d: built-in generated blue/chrome and red horizontal binary rows/rims; eight independent impact frames; eight overload/shatter frames; twelve vertical reconstruction frames. Animated row strips and ballistic digit fragments preserve original source pixels. New runtime codewall_1003d.js uses shared draw/collision/Retina geometry and attaches red projection to modular knight shield. Supersedes old wall/shatter/spherical transformation in the live eight-form finale. Owner build_codewall_1003d.py; measured runtime manifest assets/game/codewall_1003d/manifest.json; prompts and source hashes _ART_SOURCES/codewall_1003d. Native QA docs/qa/codewall_1003d.json."
+  },
+  "fmc_": {
+    "role": "boss_component_effect",
+    "sheet": null,
+    "note": "October 3 explicit user override: EVERY Stage 8 form is modular, including the knight. Seven built-in generated component kits, separate corrected knight HEAD ONLY (no chest), a gun-free Storm hull correction and eight sword-power frames. Source pixels unchanged; measured rectangles in finale_modular_art_1003c.js and game/finale_modular_1003c/manifest.json; shared rig pivots, recoil, hit/Retina and weapon geometry in finale_modular_1003c.js. First Host retains its authored body/arms. Owner build_finale_modular_1003c.py; exact prompts and corrections in _ART_SOURCES/finale_modular_1003c. Native evidence docs/qa/finale_modular_1003c.json. Supersedes the whole-plate transformation restriction for this boss only."
+  },
+  "finale1003b_": {
+    "role": "boss",
+    "sheet": null,
+    "note": "Preserved superseded whole-plate concept reels: Furnace, Cryo Hive, Storm Organism, Void Harrier and Last Warden. Four states each. October 3c user explicitly requested every transformation modular; live component art is now fmc_. These original reels remain as source references and historical verification, are not drawn or warmed by the final modular runtime. Owner build_finale_1003b.py; unchanged source PNGs/hashes in _ART_SOURCES/finale_1003b and assets/game/finale_1003b/manifest.json."
+  },
+  "mm1003_": {
+    "role": "enemy_modular",
+    "sheet": null,
+    "note": "Seven Mike-selected Monster Mutator designs only. Approved final palettes and silhouettes; Hexpyre/Rifle Locust/Hellhugger component sheets with shared draw, lock and damage geometry. Stage 7/8 existing spawn slots. Owning importer: _BUILD_SOURCE/build_mutator_1003.py. Source art unchanged; assets/game/mutator_1003/manifest.json records hashes and source pivots."
+  },
+  "s81003_": {
+    "role": "boss_enemy_effect",
+    "sheet": null,
+    "note": "Stage 8 built-in image generation: knight 12 poses, growing downward-flow binary wall 12, upright code teleport 8, transformation 12, three alien units 4 each, alien/code beams 8, FOV/Retina/orbs 12, impact 8, radial shatter 16 and 4 extracted shard cells. 100 generated frames plus 4 crops. Inspected in native Chromium, including full-body coverage and outward debris. Owning workflow: _BUILD_SOURCE/build_stage8_1003.py; manifest: assets/game/stage8_1003/manifest.json; prompts/source: _ART_SOURCES/stage8_1003; runtime: assets/stage8_1003.js. Details: docs/STAGE8_CODE_KNIGHT_1003.md. No shared atlas replacement. October 3e: Mike reverted warning/Retina visuals to the original shared combatWarningDraw and groundTargetReticleDraw system; frames 0-7 of the new FOV sheet are no longer used by live Stage 8 warnings. Projectile frames remain separate. See docs/GASLINE_ORIGINAL_WARNINGS_1003E.md. October 3f: original warning routing now lives at its shared source, including all Stage 7/8 mutants and aliens; ordinary emitters pass their own enemy reference and preload original reticles before any boss. Retired FOV-sheet warning frames 0-7 have no live callers."
+  },
   "arch_arsenal_cast_0926": {
     "role": "boss",
     "sheet": null,
@@ -64,7 +119,7 @@
     "sheet": null,
     "note": "Eight generated transparent hull-wrapping burn frames. Shared 128px anchors; flameDraw palette retained per enemy. Source and prompt in assets/game/fx_burn_0922/provenance.json."
   },
-  "_README": "Prefix -> role, named by Mike from the 0807y contact sheet. THIS IS THE SOURCE OF TRUTH. Filenames in this project have lied four separate times in one session (slatejet=debris, nxp_smoke=explosion, nqm_vent=a vent port, nrb=helix mass). Do not infer a role from a key name again — look it up here, and if it is not here, render it and ask.",
+  "_README": "Prefix -> role, named by Mike from the 0807y contact sheet. THIS IS THE SOURCE OF TRUTH. Filenames in this project have lied four separate times in one session (slatejet=debris, nxp_smoke=explosion, nqm_vent=a vent port, nrb=helix mass). Do not infer a role from a key name again â€” look it up here, and if it is not here, render it and ask.",
   "?": {
     "role": "boot",
     "sheet": "boot",
@@ -174,7 +229,7 @@
     "role": "miniboss",
     "sheet": "miniboss_stage4"
   },
-  "_WARNING_mfx": "Mike said DELETE mfx_ (252 cells) from the 0807y sheet. But the passover history records mfx_ as an APPROVED player projectile set — pellet/mfx_mg, flare/mfx_ea_3, comet/mfx_ea_1, blast/mfx_bpow, homing/mfx_hom, missile/mfx_emr — blocked from drawing only by the nep_ per-stage override. The sample he saw may therefore have been one unused member of a family that is otherwise wanted. CONFIRMED 0822f: he said delete, the measurement says the family is live and removal frees nothing, so it is KEPT and the role above is now KEEP. Re-open only with a per-cell list, never as a family.",
+  "_WARNING_mfx": "Mike said DELETE mfx_ (252 cells) from the 0807y sheet. But the passover history records mfx_ as an APPROVED player projectile set â€” pellet/mfx_mg, flare/mfx_ea_3, comet/mfx_ea_1, blast/mfx_bpow, homing/mfx_hom, missile/mfx_emr â€” blocked from drawing only by the nep_ per-stage override. The sample he saw may therefore have been one unused member of a family that is otherwise wanted. CONFIRMED 0822f: he said delete, the measurement says the family is live and removal frees nothing, so it is KEPT and the role above is now KEEP. Re-open only with a per-cell list, never as a family.",
   "n6": {
     "role": "enemy",
     "sheet": "stage6roster"
@@ -190,7 +245,7 @@
   "nxp_": {
     "role": "explosions",
     "sheet": "explosions",
-    "note": "CONFIRMED by Mike 0808b: 'top row, explosions'. Eight blow-up families. He first read it as a decal from a 4px first-frame thumbnail — my sampler's fault, not his."
+    "note": "CONFIRMED by Mike 0808b: 'top row, explosions'. Eight blow-up families. He first read it as a decal from a 4px first-frame thumbnail â€” my sampler's fault, not his."
   },
   "nbs_": {
     "role": "bossbarfill",
@@ -270,14 +325,14 @@
   "ndk_": {
     "role": "deckerweapon",
     "sheet": "playerprojectiles",
-    "note": "CONFIRMED 0808b: ndk_box and ndk_icon are the INCENDIARY SHOTGUN pickup box and icon for Decker — the weapon Mike named as his new special. The other ndk_ keys (shot/muz/shell/trail/imp/scorch/ang) reported 'missing' for the same index reason as nthp_; verify before touching."
+    "note": "CONFIRMED 0808b: ndk_box and ndk_icon are the INCENDIARY SHOTGUN pickup box and icon for Decker â€” the weapon Mike named as his new special. The other ndk_ keys (shot/muz/shell/trail/imp/scorch/ang) reported 'missing' for the same index reason as nthp_; verify before touching."
   },
   "nthp_": {
     "role": "pilotthrusters",
     "sheet": "playerships",
-    "note": "CONFIRMED REAL 0808b. NINE reels, one per pilot, FOUR frames each: nthp_<pilot>_0..3. Mike read 'all missing' because my render looked up the family name without its frame index. This is the art the thruster fix needs — he has asked repeatedly to stop overlaying fake thrusters and animate these instead. NEVER delete."
+    "note": "CONFIRMED REAL 0808b. NINE reels, one per pilot, FOUR frames each: nthp_<pilot>_0..3. Mike read 'all missing' because my render looked up the family name without its frame index. This is the art the thruster fix needs â€” he has asked repeatedly to stop overlaying fake thrusters and animate these instead. NEVER delete."
   },
-  "_ROUND2_WARNINGS": "Three calls in round 2 contradict earlier direction and are HELD, not applied: nxp_ (called a decal, is the explosion set he confirmed himself), nthp_ (called delete, is the per-pilot thruster art he has asked to be fixed), ndk_ (called 'idk', is Decker's incendiary shotgun kit). All three were misjudged from an unrepresentative thumbnail — the sampler took the first frame of each reel, which for an effect is a 4px spark.",
+  "_ROUND2_WARNINGS": "Three calls in round 2 contradict earlier direction and are HELD, not applied: nxp_ (called a decal, is the explosion set he confirmed himself), nthp_ (called delete, is the per-pilot thruster art he has asked to be fixed), ndk_ (called 'idk', is Decker's incendiary shotgun kit). All three were misjudged from an unrepresentative thumbnail â€” the sampler took the first frame of each reel, which for an effect is a 4px spark.",
   "_SAMPLER_WARNING": "TWO separate misreads in this taxonomy came from HOW I SAMPLED, not from Mike: (1) taking frame 0 of an effect reel shows a 4px spark, which made the explosion set look like a decal; (2) looking up a FAMILY name with no frame index returns nothing, which made nine real thruster reels and a whole weapon set look missing. When rendering a family for identification, take a MID-REEL frame and resolve the index.",
   "rr_ship_": {
     "role": "enemyship_master",
@@ -488,5 +543,45 @@
     "role": "player_projectile",
     "sheet": null,
     "note": "Ten generated four-frame Spreadfire loops: base, fire, ice, lightning, kinetic, chrome, dark, toxic, prism, water. Native alpha; explicit measured row bands and common per-row pivot. Runtime/source rectangles: assets/spread_art_1001.js and game/encounters_1001/manifest.json. Built-in image generation and import notes: _ART_SOURCES/encounters_1001/generation.md. Native game-context contact sheet inspected October 1; shared combat and Forge projectile drawing at 16 fps."
+  },
+  "h3_": {
+    "role": "portrait_and_cinematic",
+    "sheet": null,
+    "note": "Original outputs unchanged. Neutral portrait bounds and uneven rebel pitch bounds are measured in runtime. Closeup is a 2x2 equal grid. Current Furyship reference is furyship_0914/runtime_base.png; legacy-ship cinematic attempts preserved but not loaded. Prompts and provenance: _ART_SOURCES/feedback_1003h/generation.json. Build: _BUILD_SOURCE/build_feedback_1003h.py."
+  },
+  "ra4_": {
+    "role": "rebel_personal_arsenals_ui_and_effects",
+    "sheet": null,
+    "note": "October 4: generated five boxes and five hex special icons, six-frame turbo wakes/nova bursts/rocket pods/missiles. Authored Maverick ball and charge palette swaps preserve alpha, luminance and neutral outlines. Whole Rebel hulls retained. Owning workflow _BUILD_SOURCE/build_rebel_arsenal_1004c.py; measured cells, provenance and palette metrics assets/game/rebel_arsenal_1004c/manifest.json."
+  },
+  "map4e_": {
+    "role": "campaign_landscape",
+    "sheet": null,
+    "note": "October 4: Mike approved the new region art and explicitly requested large landscapes underneath the stage regions. Built-in imagegen authored a connected eight-biome continent, eight larger regions, central city, HQ coast, cosmic Stage 9 portal and satellite islets. Mechanical sheet separation/derived lock-shadow-glow masks owned by _BUILD_SOURCE/build_campaign_landscape_1004e.py. Source/provenance _ART_SOURCES/campaign_landscape_1004e. Original blue ocean, stage flags, Fury HQ icon and drifting clouds retained. Runtime campaign_landscape_1004e.js. No atlas repack."
+  },
+  "map4f_": {
+    "role": "campaign_marker",
+    "sheet": null,
+    "note": "Generated physical Fury HQ frontage and X-only flag; nine separately generated Iâ€“IX flags, measured mast-base anchors, cloth-only rank swaps and alpha-derived selected/lock/white states. Sources/prompts _ART_SOURCES/campaign_landscape_1004f. Owning workflows build_campaign_markers_1004f.py and build_campaign_flags_1004f.py. Old sources retained; no existing atlas edits."
+  },
+  "map4e_region_hub": {
+    "role": "campaign_landmark",
+    "sheet": null,
+    "note": "Floating Stage X city with generated deep rock underside; campaign_stagex_1004g. Supersedes coastal hub art without deleting it. Builder build_campaign_stagex_1004g.py."
+  },
+  "map4h_slot_": {
+    "role": "campaign_save_slot",
+    "sheet": null,
+    "note": "Generated blank chrome cartridges; red/white/blue accent variants preserve metal, dark screens and alpha. Source/prompt campaign_controls_1004h; builder build_campaign_controls_1004h.py."
+  },
+  "sky4i_": {
+    "role": "boss_airframe_and_hit_flash",
+    "sheet": null,
+    "note": "Stage 6 / X larger Nightwing ace: equal-luminance blue armor from reviewed enc30 source, exact-alpha white hit PNGs for all 20 poses and six module plates. Generated registration and manifest owned by build_sky_repair_1004i.py. Original sources retained; no packed atlas edits."
+  },
+  "sx1001_arena": {
+    "role": "terrain_alpha_overlay",
+    "sheet": null,
+    "note": "October 4j: built-in imagegen military coastal city around the Stage X snowy mountain. Final edit removes all painted water, waterfall foam and cascades; native alpha exposes authored nwl_water_0..3 underneath. Source/prompt _ART_SOURCES/stagex_coast_1004j, nearest-neighbor owner _BUILD_SOURCE/build_stagex_coast_1004j.py. Runtime feedback_1001b.js, no atlas changes; original stagex_1001 plate retained."
   }
 }

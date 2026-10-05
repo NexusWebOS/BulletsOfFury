@@ -1,0 +1,353 @@
+{
+  "checks": [
+    {
+      "ok": true,
+      "name": "all generated sheets load at registered dimensions"
+    },
+    {
+      "ok": true,
+      "name": "native complete knight sequence normal"
+    },
+    {
+      "ok": true,
+      "name": "knight remains live and finite normal"
+    },
+    {
+      "ok": true,
+      "name": "visible rectangular wall absorbs native boss-hit route normal"
+    },
+    {
+      "ok": true,
+      "name": "actual Retina missile damages exposed animated knight normal"
+    },
+    {
+      "ok": true,
+      "name": "native orbit stays smooth and hull straight s8leech normal"
+    },
+    {
+      "ok": true,
+      "name": "native alien attack actually releases s8leech normal"
+    },
+    {
+      "ok": true,
+      "name": "native orbit stays smooth and hull straight s8hunter normal"
+    },
+    {
+      "ok": true,
+      "name": "native alien attack actually releases s8hunter normal"
+    },
+    {
+      "ok": true,
+      "name": "native orbit stays smooth and hull straight s8solar normal"
+    },
+    {
+      "ok": true,
+      "name": "native alien attack actually releases s8solar normal"
+    },
+    {
+      "ok": true,
+      "name": "all three new designs appear in actual Stage8 plan normal"
+    },
+    {
+      "ok": true,
+      "name": "native complete knight sequence hard"
+    },
+    {
+      "ok": true,
+      "name": "knight remains live and finite hard"
+    },
+    {
+      "ok": true,
+      "name": "visible rectangular wall absorbs native boss-hit route hard"
+    },
+    {
+      "ok": true,
+      "name": "actual Retina missile damages exposed animated knight hard"
+    },
+    {
+      "ok": true,
+      "name": "native orbit stays smooth and hull straight s8leech hard"
+    },
+    {
+      "ok": true,
+      "name": "native alien attack actually releases s8leech hard"
+    },
+    {
+      "ok": true,
+      "name": "native orbit stays smooth and hull straight s8hunter hard"
+    },
+    {
+      "ok": true,
+      "name": "native alien attack actually releases s8hunter hard"
+    },
+    {
+      "ok": true,
+      "name": "native orbit stays smooth and hull straight s8solar hard"
+    },
+    {
+      "ok": true,
+      "name": "native alien attack actually releases s8solar hard"
+    },
+    {
+      "ok": true,
+      "name": "all three new designs appear in actual Stage8 plan hard"
+    },
+    {
+      "ok": true,
+      "name": "native complete knight sequence furious"
+    },
+    {
+      "ok": true,
+      "name": "knight remains live and finite furious"
+    },
+    {
+      "ok": true,
+      "name": "visible rectangular wall absorbs native boss-hit route furious"
+    },
+    {
+      "ok": true,
+      "name": "actual Retina missile damages exposed animated knight furious"
+    },
+    {
+      "ok": true,
+      "name": "native orbit stays smooth and hull straight s8leech furious"
+    },
+    {
+      "ok": true,
+      "name": "native alien attack actually releases s8leech furious"
+    },
+    {
+      "ok": true,
+      "name": "native orbit stays smooth and hull straight s8hunter furious"
+    },
+    {
+      "ok": true,
+      "name": "native alien attack actually releases s8hunter furious"
+    },
+    {
+      "ok": true,
+      "name": "native orbit stays smooth and hull straight s8solar furious"
+    },
+    {
+      "ok": true,
+      "name": "native alien attack actually releases s8solar furious"
+    },
+    {
+      "ok": true,
+      "name": "all three new designs appear in actual Stage8 plan furious"
+    },
+    {
+      "ok": true,
+      "name": "new FOV warning does not damage the player"
+    },
+    {
+      "ok": true,
+      "name": "live code beam uses native player-hit pipeline"
+    },
+    {
+      "ok": true,
+      "name": "moving after lock escapes the beam without retargeting"
+    },
+    {
+      "ok": true,
+      "name": "killing an emitter removes its beam in native combat"
+    },
+    {
+      "ok": true,
+      "name": "possessed host fires generated paired code lasers"
+    },
+    {
+      "ok": true,
+      "name": "native shield break emits 16 harmless generated shards"
+    },
+    {
+      "ok": true,
+      "name": "shards travel beyond all four shield edges"
+    },
+    {
+      "ok": true,
+      "name": "zero page and console errors"
+    }
+  ],
+  "scenes": [
+    {
+      "diff": "normal",
+      "role": "gravity",
+      "max": 1.6666666666666714,
+      "peak": 0,
+      "orbs": 6,
+      "finite": true,
+      "angle": 0
+    },
+    {
+      "diff": "normal",
+      "role": "stalker",
+      "max": 1.6666666666666714,
+      "peak": 2,
+      "orbs": 0,
+      "finite": true,
+      "angle": 0
+    },
+    {
+      "diff": "normal",
+      "role": "prism",
+      "max": 1.6666666666666714,
+      "peak": 1,
+      "orbs": 0,
+      "finite": true,
+      "angle": 0
+    },
+    {
+      "diff": "hard",
+      "role": "gravity",
+      "max": 1.6666666666666714,
+      "peak": 0,
+      "orbs": 8,
+      "finite": true,
+      "angle": 0
+    },
+    {
+      "diff": "hard",
+      "role": "stalker",
+      "max": 1.6666666666666714,
+      "peak": 2,
+      "orbs": 0,
+      "finite": true,
+      "angle": 0
+    },
+    {
+      "diff": "hard",
+      "role": "prism",
+      "max": 2.3666666666666742,
+      "peak": 1,
+      "orbs": 0,
+      "finite": true,
+      "angle": 0
+    },
+    {
+      "diff": "furious",
+      "role": "gravity",
+      "max": 2.6166666666666742,
+      "peak": 0,
+      "orbs": 10,
+      "finite": true,
+      "angle": 0
+    },
+    {
+      "diff": "furious",
+      "role": "stalker",
+      "max": 2.6166666666666742,
+      "peak": 2,
+      "orbs": 0,
+      "finite": true,
+      "angle": 0
+    },
+    {
+      "diff": "furious",
+      "role": "prism",
+      "max": 2.6166666666666742,
+      "peak": 1,
+      "orbs": 0,
+      "finite": true,
+      "angle": 0
+    }
+  ],
+  "limitations": "Controlled native encounter fixtures; not completed campaign runs.",
+  "captured_normal": [
+    "morph",
+    "guard",
+    "slashTell",
+    "slash",
+    "slashRecover",
+    "jumpTell",
+    "jump",
+    "land",
+    "followTell",
+    "sweep",
+    "recover",
+    "out",
+    "in"
+  ],
+  "waves": [
+    {
+      "keys": [
+        "t",
+        "fn"
+      ],
+      "roles": [
+        "gravity",
+        "stalker",
+        "prism"
+      ]
+    },
+    {
+      "keys": [
+        "t",
+        "fn"
+      ],
+      "roles": [
+        "gravity",
+        "stalker",
+        "prism"
+      ]
+    },
+    {
+      "keys": [
+        "t",
+        "fn"
+      ],
+      "roles": [
+        "gravity",
+        "stalker",
+        "prism"
+      ]
+    }
+  ],
+  "captured_hard": [
+    "morph",
+    "guard",
+    "slashTell",
+    "slash",
+    "slashRecover",
+    "jumpTell",
+    "jump",
+    "land",
+    "followTell",
+    "sweep",
+    "recover",
+    "out",
+    "in"
+  ],
+  "captured_furious": [
+    "morph",
+    "guard",
+    "slashTell",
+    "slash",
+    "slashRecover",
+    "jumpTell",
+    "jump",
+    "land",
+    "followTell",
+    "sweep",
+    "recover",
+    "out",
+    "in"
+  ],
+  "emitterKill": {
+    "hp": 0,
+    "dead": false,
+    "dying": 0,
+    "shield": null,
+    "beams": 1
+  },
+  "errors": [],
+  "baseline": {
+    "assertions": 6287,
+    "failing_names": []
+  },
+  "suite": {
+    "assertions": 6392,
+    "failing_names": [],
+    "final_banner": true
+  }
+}

@@ -24,8 +24,8 @@ module.exports=function(vm,ctxv,ok){
     out['machinegun no longer uses a circular laser flash']=WM26_REELS.mg.key!=='laser_round_muzzle_';
     out['missiles have ignition artwork']=wm26Family('gmiss')==='missile'&&wm26Family('spaceVolley')==='missile';
     out['ice and lightning remain different feedback families']=wm26Family('iceLance')==='ice'&&wm26Family('yuribolt')==='lightning';
-    out['miniboss keeps previous boss music']=BOFA.music.mini5==='assets/game/music/boss5_deadly_night.mp3';
-    out['main boss uses Hammerman Cometh']=BOFA.music.boss5==='assets/game/music/boss5_hammerman_cometh_0926.mp3';
+    out['miniboss keeps previous boss music']=BOFA.music.mini5==='assets/game/music/Level5mb.mp3';
+    out['main boss uses Hammerman Cometh']=BOFA.music.boss5==='assets/game/music/Level5b.mp3';
     const ship={_ship:'magmaward',x:300,y:150,_drawY:150,w:200,h:200};
     const p=shipBossMount(ship,'L');wm26Releases=[];wm26EnemyShot(p.x,p.y,Math.PI/2,'magma',ship);
     ship.x+=12;ship.y+=8;ship._drawY+=8;const tracked=wm26Point(wm26Releases[0]);

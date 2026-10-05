@@ -1,0 +1,688 @@
+{
+  "date": "2026-10-03",
+  "pass": "map_briefing_1003g",
+  "fullSuite": {
+    "assertions": 6952,
+    "exitCode": 0,
+    "summary": "==== FALVA/LIZZIE BUILD OK, 0 ERRORS ===="
+  },
+  "native": {
+    "checks": {
+      "Map islands stay above theater row": true,
+      "Briefing restores shared font state": true,
+      "Selecting a new stage starts with zero letters": true,
+      "Letters appear progressively": true,
+      "Partial title keeps the final centered left edge": true,
+      "Generated blank plate renders, baked panels do not": true,
+      "Stage 1 copy completes inside frame": true,
+      "Stage 2 copy completes inside frame": true,
+      "Stage 3 copy completes inside frame": true,
+      "Stage 4 copy completes inside frame": true,
+      "Stage 5 copy completes inside frame": true,
+      "Stage 6 copy completes inside frame": true,
+      "Stage 7 copy completes inside frame": true,
+      "Stage 8 copy completes inside frame": true,
+      "Stage 9 copy completes inside frame": true,
+      "Real arrow selection resets lettering": true,
+      "menu frame/body never jump between mouth poses": true,
+      "menu mouth is actually animated": true,
+      "comm frame/body never jump between mouth poses": true,
+      "comm mouth is actually animated": true,
+      "Narrow view retains theater progression renderer": true,
+      "Narrow view hides duplicate control legend": true,
+      "Narrow view preserves canvas aspect ratio": true,
+      "Stage X uses its own live briefing": true,
+      "Pilot menu uses the complete Lizzie frame": true
+    },
+    "geometry": {
+      "panel": {
+        "x": 12,
+        "y": 390,
+        "w": 456,
+        "h": 98
+      },
+      "bandBottom": 312,
+      "points": [
+        {
+          "s": 1,
+          "x": 167.39995924447192,
+          "y": 125.99044643247154
+        },
+        {
+          "s": 2,
+          "x": 240.0000174255284,
+          "y": 102.94280891467584
+        },
+        {
+          "s": 3,
+          "x": 312.60007560658494,
+          "y": 125.99044643247154
+        },
+        {
+          "s": 4,
+          "x": 341.40962250382955,
+          "y": 185.9143039787404
+        },
+        {
+          "s": 5,
+          "x": 310.29531185480533,
+          "y": 238.92387026967054
+        },
+        {
+          "s": 6,
+          "x": 240.0000174255284,
+          "y": 257.36198028390714
+        },
+        {
+          "s": 7,
+          "x": 169.70472299625146,
+          "y": 238.92387026967054
+        },
+        {
+          "s": 8,
+          "x": 138.59041234722724,
+          "y": 185.9143039787404
+        },
+        {
+          "s": 9,
+          "x": 248.0666905567569,
+          "y": 61.457061382643545
+        },
+        {
+          "s": "hub",
+          "x": 240.0000174255284,
+          "y": 179.0000127234017
+        }
+      ],
+      "font": null
+    },
+    "lettering": {
+      "first": {
+        "text": "STAGE 2 -",
+        "x": 114.7826086956521,
+        "y": 416.5,
+        "h": 15,
+        "face": "game"
+      },
+      "complete": [
+        {
+          "text": "STAGE 2 - IT'S HOT IN HERE",
+          "x": 114.7826086956521,
+          "y": 416.5,
+          "h": 15,
+          "face": "game"
+        },
+        {
+          "text": "PUSH THROUGH THE VOLCANIC FOUNDRY BEFORE THE MAGMA",
+          "x": 49.5625,
+          "y": 447.5,
+          "h": 11,
+          "face": "dialogue"
+        },
+        {
+          "text": "DEFENSE GRID ERUPTS.",
+          "x": 165.0625,
+          "y": 461.5,
+          "h": 11,
+          "face": "dialogue"
+        }
+      ],
+      "blits": [
+        {
+          "key": "mapg_briefing",
+          "args": [
+            0,
+            98,
+            2170,
+            484,
+            12,
+            390,
+            456,
+            98
+          ]
+        },
+        {
+          "key": "mapg_briefing",
+          "args": [
+            0,
+            98,
+            2170,
+            484,
+            12,
+            390,
+            456,
+            98
+          ]
+        },
+        {
+          "key": "mapg_briefing",
+          "args": [
+            0,
+            98,
+            2170,
+            484,
+            12,
+            390,
+            456,
+            98
+          ]
+        },
+        {
+          "key": "mapg_briefing",
+          "args": [
+            0,
+            98,
+            2170,
+            484,
+            12,
+            390,
+            456,
+            98
+          ]
+        }
+      ],
+      "copy": {
+        "key": "2",
+        "title": "STAGE 2 - IT'S HOT IN HERE",
+        "body": "PUSH THROUGH THE VOLCANIC FOUNDRY BEFORE THE MAGMA DEFENSE GRID ERUPTS."
+      }
+    },
+    "stages": [
+      {
+        "stage": 1,
+        "copy": {
+          "key": "1",
+          "title": "STAGE 1 - RUMBLE IN THE JUNGLE",
+          "body": "INFILTRATE THE JUNGLE AIRSTRIP. DESTROY THE OCCUPATION FORCES AND BREAK THE DAM."
+        },
+        "rows": [
+          {
+            "text": "STAGE 1 - RUMBLE IN THE JUNGLE",
+            "x": 87.39130434782601,
+            "y": 416.5,
+            "h": 15,
+            "face": "game"
+          },
+          {
+            "text": "INFILTRATE THE JUNGLE AIRSTRIP. DESTROY THE OCCUPATION",
+            "x": 38.5625,
+            "y": 447.5,
+            "h": 11,
+            "face": "dialogue"
+          },
+          {
+            "text": "FORCES AND BREAK THE DAM.",
+            "x": 147.1875,
+            "y": 461.5,
+            "h": 11,
+            "face": "dialogue"
+          }
+        ],
+        "complete": 110
+      },
+      {
+        "stage": 2,
+        "copy": {
+          "key": "2",
+          "title": "STAGE 2 - IT'S HOT IN HERE",
+          "body": "PUSH THROUGH THE VOLCANIC FOUNDRY BEFORE THE MAGMA DEFENSE GRID ERUPTS."
+        },
+        "rows": [
+          {
+            "text": "STAGE 2 - IT'S HOT IN HERE",
+            "x": 114.7826086956521,
+            "y": 416.5,
+            "h": 15,
+            "face": "game"
+          },
+          {
+            "text": "PUSH THROUGH THE VOLCANIC FOUNDRY BEFORE THE MAGMA",
+            "x": 49.5625,
+            "y": 447.5,
+            "h": 11,
+            "face": "dialogue"
+          },
+          {
+            "text": "DEFENSE GRID ERUPTS.",
+            "x": 165.0625,
+            "y": 461.5,
+            "h": 11,
+            "face": "dialogue"
+          }
+        ],
+        "complete": 97
+      },
+      {
+        "stage": 3,
+        "copy": {
+          "key": "3",
+          "title": "STAGE 3 - ICE STILL CAN'T SEE",
+          "body": "SURVIVE THE GLACIER CITADEL AND SHATTER ITS CRYO WAR MACHINES."
+        },
+        "rows": [
+          {
+            "text": "STAGE 3 - ICE STILL CAN'T SEE",
+            "x": 97.1739130434782,
+            "y": 416.5,
+            "h": 15,
+            "face": "game"
+          },
+          {
+            "text": "SURVIVE THE GLACIER CITADEL AND SHATTER ITS CRYO WAR",
+            "x": 47.5,
+            "y": 447.5,
+            "h": 11,
+            "face": "dialogue"
+          },
+          {
+            "text": "MACHINES.",
+            "x": 206.3125,
+            "y": 461.5,
+            "h": 11,
+            "face": "dialogue"
+          }
+        ],
+        "complete": 91
+      },
+      {
+        "stage": 4,
+        "copy": {
+          "key": "4",
+          "title": "STAGE 4 - CROUCHING MISSILES, HIDDEN DEATH",
+          "body": "REACH THE MISSILE AIRBASE AND SILENCE EVERY LAUNCH BATTERY."
+        },
+        "rows": [
+          {
+            "text": "STAGE 4 - CROUCHING MISSILES, HIDDEN DEATH",
+            "x": 38.21739130434784,
+            "y": 416.5,
+            "h": 14,
+            "face": "game"
+          },
+          {
+            "text": "REACH THE MISSILE AIRBASE AND SILENCE EVERY LAUNCH",
+            "x": 53.6875,
+            "y": 447.5,
+            "h": 11,
+            "face": "dialogue"
+          },
+          {
+            "text": "BATTERY.",
+            "x": 209.0625,
+            "y": 461.5,
+            "h": 11,
+            "face": "dialogue"
+          }
+        ],
+        "complete": 101
+      },
+      {
+        "stage": 5,
+        "copy": {
+          "key": "5",
+          "title": "STAGE 5 - ALL FOR ONE, NONE FOR ALL",
+          "body": "TAKE THE WAR INTO ORBIT AND CRUSH THE UNITY FLEET."
+        },
+        "rows": [
+          {
+            "text": "STAGE 5 - ALL FOR ONE, NONE FOR ALL",
+            "x": 62.934782608695514,
+            "y": 416.5,
+            "h": 15,
+            "face": "game"
+          },
+          {
+            "text": "TAKE THE WAR INTO ORBIT AND CRUSH THE UNITY FLEET.",
+            "x": 58.5,
+            "y": 454.5,
+            "h": 11,
+            "face": "dialogue"
+          }
+        ],
+        "complete": 85
+      },
+      {
+        "stage": 6,
+        "copy": {
+          "key": "6",
+          "title": "STAGE 6 - HEAVY TURBULENCE",
+          "body": "ENTER THE STORM FRONT. OUTRUN THE HUNTERS AND THEIR HOMING MISSILES."
+        },
+        "rows": [
+          {
+            "text": "STAGE 6 - HEAVY TURBULENCE",
+            "x": 101.08695652173904,
+            "y": 416.5,
+            "h": 15,
+            "face": "game"
+          },
+          {
+            "text": "ENTER THE STORM FRONT. OUTRUN THE HUNTERS AND THEIR",
+            "x": 49.5625,
+            "y": 447.5,
+            "h": 11,
+            "face": "dialogue"
+          },
+          {
+            "text": "HOMING MISSILES.",
+            "x": 182.25,
+            "y": 461.5,
+            "h": 11,
+            "face": "dialogue"
+          }
+        ],
+        "complete": 94
+      },
+      {
+        "stage": 7,
+        "copy": {
+          "key": "7",
+          "title": "STAGE 7 - NOT ANOTHER SEWER LEVEL",
+          "body": "DESCEND INTO THE TOXIC SEWER WORKS AND DESTROY THE BIO-SLUDGE CORE."
+        },
+        "rows": [
+          {
+            "text": "STAGE 7 - NOT ANOTHER SEWER LEVEL",
+            "x": 65.86956521739117,
+            "y": 416.5,
+            "h": 15,
+            "face": "game"
+          },
+          {
+            "text": "DESCEND INTO THE TOXIC SEWER WORKS AND DESTROY THE",
+            "x": 53,
+            "y": 447.5,
+            "h": 11,
+            "face": "dialogue"
+          },
+          {
+            "text": "BIO-SLUDGE CORE.",
+            "x": 180.875,
+            "y": 461.5,
+            "h": 11,
+            "face": "dialogue"
+          }
+        ],
+        "complete": 100
+      },
+      {
+        "stage": 8,
+        "copy": {
+          "key": "8",
+          "title": "STAGE 8 - FURIOUS DEATH",
+          "body": "ASSAULT THE DEATH RUINS AND END FURIOUS DEATH."
+        },
+        "rows": [
+          {
+            "text": "STAGE 8 - FURIOUS DEATH",
+            "x": 120.65217391304341,
+            "y": 416.5,
+            "h": 15,
+            "face": "game"
+          },
+          {
+            "text": "ASSAULT THE DEATH RUINS AND END FURIOUS DEATH.",
+            "x": 69.5,
+            "y": 454.5,
+            "h": 11,
+            "face": "dialogue"
+          }
+        ],
+        "complete": 69
+      },
+      {
+        "stage": 9,
+        "copy": {
+          "key": "9",
+          "title": "STAGE 9 - THE VELOCITY VOID",
+          "body": "ENTER THE SECRET RIFT EARNED THROUGH THE STAGE 5 GATE RUN."
+        },
+        "rows": [
+          {
+            "text": "STAGE 9 - THE VELOCITY VOID",
+            "x": 102.06521739130426,
+            "y": 416.5,
+            "h": 15,
+            "face": "game"
+          },
+          {
+            "text": "ENTER THE SECRET RIFT EARNED THROUGH THE STAGE 5 GATE",
+            "x": 41.3125,
+            "y": 447.5,
+            "h": 11,
+            "face": "dialogue"
+          },
+          {
+            "text": "RUN.",
+            "x": 225.5625,
+            "y": 461.5,
+            "h": 11,
+            "face": "dialogue"
+          }
+        ],
+        "complete": 85
+      }
+    ],
+    "portraits": {
+      "menu": {
+        "stable": true,
+        "moved": 3718,
+        "size": [
+          [
+            256,
+            256
+          ],
+          [
+            256,
+            256
+          ],
+          [
+            256,
+            256
+          ],
+          [
+            256,
+            256
+          ],
+          [
+            256,
+            256
+          ]
+        ]
+      },
+      "comm": {
+        "stable": true,
+        "moved": 3718,
+        "size": [
+          [
+            256,
+            256
+          ],
+          [
+            256,
+            256
+          ],
+          [
+            256,
+            256
+          ],
+          [
+            256,
+            256
+          ],
+          [
+            256,
+            256
+          ]
+        ]
+      }
+    },
+    "errors": []
+  },
+  "campaignRegression": {
+    "clicks": [
+      {
+        "expected": 2,
+        "actual": 2,
+        "state": "stagesel"
+      },
+      {
+        "expected": 3,
+        "actual": 3,
+        "state": "stagesel"
+      },
+      {
+        "expected": 4,
+        "actual": 4,
+        "state": "stagesel"
+      },
+      {
+        "expected": 5,
+        "actual": 5,
+        "state": "stagesel"
+      },
+      {
+        "expected": 6,
+        "actual": 6,
+        "state": "stagesel"
+      },
+      {
+        "expected": 7,
+        "actual": 7,
+        "state": "stagesel"
+      },
+      {
+        "expected": 8,
+        "actual": 8,
+        "state": "stagesel"
+      },
+      {
+        "expected": 1,
+        "actual": 1,
+        "state": "stagesel"
+      }
+    ],
+    "layout": {
+      "world": [
+        1400,
+        1200
+      ],
+      "hub": {
+        "x": 700,
+        "y": 600
+      },
+      "portal": {
+        "x": 735,
+        "y": 90
+      },
+      "cam": {
+        "x": 699.9999999999828,
+        "y": 599.9999999999875,
+        "z": 0.23047619047623233
+      },
+      "stagePoints": [
+        {
+          "s": 1,
+          "x": 385,
+          "y": 370
+        },
+        {
+          "s": 2,
+          "x": 700,
+          "y": 270
+        },
+        {
+          "s": 3,
+          "x": 1015,
+          "y": 370
+        },
+        {
+          "s": 4,
+          "x": 1140,
+          "y": 630
+        },
+        {
+          "s": 5,
+          "x": 1005,
+          "y": 860
+        },
+        {
+          "s": 6,
+          "x": 700,
+          "y": 940
+        },
+        {
+          "s": 7,
+          "x": 395,
+          "y": 860
+        },
+        {
+          "s": 8,
+          "x": 260,
+          "y": 630
+        },
+        {
+          "s": 9,
+          "x": 735,
+          "y": 90
+        },
+        {
+          "s": "hub",
+          "x": 700,
+          "y": 600
+        }
+      ],
+      "errors": 0
+    },
+    "headings": {
+      "count": 1080,
+      "horizontal": true,
+      "faces": [
+        1,
+        -1
+      ]
+    },
+    "navigation": {
+      "stage": 2,
+      "focus": "map"
+    },
+    "frontier": {
+      "stage": 2,
+      "toast": "EAST COAST USA - PASSAGE SEALED",
+      "bonus": false
+    },
+    "portal": {
+      "point": {
+        "x": 240,
+        "y": 166
+      },
+      "hit": 9,
+      "cam": {
+        "x": 735,
+        "y": 103,
+        "z": 1
+      }
+    },
+    "errors": []
+  },
+  "motionErrors": [],
+  "initialChecks": "One early campaign click run failed while the full suite and video recorder ran concurrently. Coordinates were inspected in a separate native pointer diagnostic; that passed. The original unmodified campaign probe then passed in isolation, including all eight clicks and Stage 9. No input-code changes were made. First portrait fixture used an undecoded dialogue frame; repaired by polling readiness before capture. Final narrow capture hides the duplicate global legend and retains aspect.",
+  "review": {
+    "errors": [],
+    "media": [
+      {
+        "file": "map-motion.webm",
+        "duration": 12.045094,
+        "width": 1822,
+        "height": 1024
+      },
+      {
+        "file": "lizzie-motion.webm",
+        "duration": 8.227056,
+        "width": 960,
+        "height": 1024
+      }
+    ],
+    "mobileOverflow": false
+  }
+}

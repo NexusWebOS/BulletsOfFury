@@ -1,0 +1,1079 @@
+{
+  "checks": [
+    {
+      "ok": true,
+      "name": "ten component/effect sources decode through XART"
+    },
+    {
+      "ok": true,
+      "name": "one gauge refills eight times in eight colors"
+    },
+    {
+      "ok": true,
+      "name": "exactly one boss gauge housing per draw"
+    },
+    {
+      "ok": true,
+      "name": "form 1 has independently positioned components"
+    },
+    {
+      "ok": true,
+      "name": "form 1 gauge reads its own health and color"
+    },
+    {
+      "ok": true,
+      "name": "form 1 real chaingun collision damages a component"
+    },
+    {
+      "ok": true,
+      "name": "form 1 destroyed component disappears independently"
+    },
+    {
+      "ok": true,
+      "name": "form 1 talons completes with recovery and finite rig"
+    },
+    {
+      "ok": true,
+      "name": "form 1 gravity completes with recovery and finite rig"
+    },
+    {
+      "ok": true,
+      "name": "form 1 gravity produces real hazards"
+    },
+    {
+      "ok": true,
+      "name": "form 1 code completes with recovery and finite rig"
+    },
+    {
+      "ok": true,
+      "name": "form 1 code produces real hazards"
+    },
+    {
+      "ok": true,
+      "name": "form 1 broken emitter cancels warning and beam"
+    },
+    {
+      "ok": true,
+      "name": "form 2 has independently positioned components"
+    },
+    {
+      "ok": true,
+      "name": "form 2 gauge reads its own health and color"
+    },
+    {
+      "ok": true,
+      "name": "form 2 real chaingun collision damages a component"
+    },
+    {
+      "ok": true,
+      "name": "form 2 destroyed component disappears independently"
+    },
+    {
+      "ok": true,
+      "name": "form 2 rotorMG completes with recovery and finite rig"
+    },
+    {
+      "ok": true,
+      "name": "form 2 rotorMG produces real hazards"
+    },
+    {
+      "ok": true,
+      "name": "form 2 bombing completes with recovery and finite rig"
+    },
+    {
+      "ok": true,
+      "name": "form 2 bombing produces real hazards"
+    },
+    {
+      "ok": true,
+      "name": "form 2 missiles completes with recovery and finite rig"
+    },
+    {
+      "ok": true,
+      "name": "form 2 missiles produces real hazards"
+    },
+    {
+      "ok": true,
+      "name": "form 2 gravity completes with recovery and finite rig"
+    },
+    {
+      "ok": true,
+      "name": "form 2 gravity produces real hazards"
+    },
+    {
+      "ok": true,
+      "name": "form 3 has independently positioned components"
+    },
+    {
+      "ok": true,
+      "name": "form 3 gauge reads its own health and color"
+    },
+    {
+      "ok": true,
+      "name": "form 3 real chaingun collision damages a component"
+    },
+    {
+      "ok": true,
+      "name": "form 3 destroyed component disappears independently"
+    },
+    {
+      "ok": true,
+      "name": "form 3 magma completes with recovery and finite rig"
+    },
+    {
+      "ok": true,
+      "name": "form 3 magma produces real hazards"
+    },
+    {
+      "ok": true,
+      "name": "form 3 eruptions completes with recovery and finite rig"
+    },
+    {
+      "ok": true,
+      "name": "form 3 eruptions produces real hazards"
+    },
+    {
+      "ok": true,
+      "name": "form 3 furnaceBeam completes with recovery and finite rig"
+    },
+    {
+      "ok": true,
+      "name": "form 3 furnaceBeam produces real hazards"
+    },
+    {
+      "ok": true,
+      "name": "form 3 orbit completes with recovery and finite rig"
+    },
+    {
+      "ok": true,
+      "name": "form 3 orbit produces real hazards"
+    },
+    {
+      "ok": true,
+      "name": "form 3 broken emitter cancels warning and beam"
+    },
+    {
+      "ok": true,
+      "name": "form 4 has independently positioned components"
+    },
+    {
+      "ok": true,
+      "name": "form 4 gauge reads its own health and color"
+    },
+    {
+      "ok": true,
+      "name": "form 4 real chaingun collision damages a component"
+    },
+    {
+      "ok": true,
+      "name": "form 4 destroyed component disappears independently"
+    },
+    {
+      "ok": true,
+      "name": "form 4 iceMG completes with recovery and finite rig"
+    },
+    {
+      "ok": true,
+      "name": "form 4 iceMG produces real hazards"
+    },
+    {
+      "ok": true,
+      "name": "form 4 iceLance completes with recovery and finite rig"
+    },
+    {
+      "ok": true,
+      "name": "form 4 iceLance produces real hazards"
+    },
+    {
+      "ok": true,
+      "name": "form 4 iceOrbit completes with recovery and finite rig"
+    },
+    {
+      "ok": true,
+      "name": "form 4 iceOrbit produces real hazards"
+    },
+    {
+      "ok": true,
+      "name": "form 4 gravity completes with recovery and finite rig"
+    },
+    {
+      "ok": true,
+      "name": "form 4 gravity produces real hazards"
+    },
+    {
+      "ok": true,
+      "name": "form 4 broken emitter cancels warning and beam"
+    },
+    {
+      "ok": true,
+      "name": "form 5 has independently positioned components"
+    },
+    {
+      "ok": true,
+      "name": "form 5 gauge reads its own health and color"
+    },
+    {
+      "ok": true,
+      "name": "form 5 real chaingun collision damages a component"
+    },
+    {
+      "ok": true,
+      "name": "form 5 destroyed component disappears independently"
+    },
+    {
+      "ok": true,
+      "name": "form 5 missiles completes with recovery and finite rig"
+    },
+    {
+      "ok": true,
+      "name": "form 5 missiles produces real hazards"
+    },
+    {
+      "ok": true,
+      "name": "form 5 lightning completes with recovery and finite rig"
+    },
+    {
+      "ok": true,
+      "name": "form 5 lightning produces real hazards"
+    },
+    {
+      "ok": true,
+      "name": "form 5 ram completes with recovery and finite rig"
+    },
+    {
+      "ok": true,
+      "name": "form 5 code completes with recovery and finite rig"
+    },
+    {
+      "ok": true,
+      "name": "form 5 code produces real hazards"
+    },
+    {
+      "ok": true,
+      "name": "form 5 broken emitter cancels warning and beam"
+    },
+    {
+      "ok": true,
+      "name": "form 6 has independently positioned components"
+    },
+    {
+      "ok": true,
+      "name": "form 6 gauge reads its own health and color"
+    },
+    {
+      "ok": true,
+      "name": "form 6 real chaingun collision damages a component"
+    },
+    {
+      "ok": true,
+      "name": "form 6 destroyed component disappears independently"
+    },
+    {
+      "ok": true,
+      "name": "form 6 knight completes with recovery and finite rig"
+    },
+    {
+      "ok": true,
+      "name": "form 6 knight completes with recovery and finite rig"
+    },
+    {
+      "ok": true,
+      "name": "form 6 orbit completes with recovery and finite rig"
+    },
+    {
+      "ok": true,
+      "name": "form 6 orbit produces real hazards"
+    },
+    {
+      "ok": true,
+      "name": "form 7 has independently positioned components"
+    },
+    {
+      "ok": true,
+      "name": "form 7 gauge reads its own health and color"
+    },
+    {
+      "ok": true,
+      "name": "form 7 real chaingun collision damages a component"
+    },
+    {
+      "ok": true,
+      "name": "form 7 destroyed component disappears independently"
+    },
+    {
+      "ok": true,
+      "name": "form 7 turbines completes with recovery and finite rig"
+    },
+    {
+      "ok": true,
+      "name": "form 7 turbines produces real hazards"
+    },
+    {
+      "ok": true,
+      "name": "form 7 missiles completes with recovery and finite rig"
+    },
+    {
+      "ok": true,
+      "name": "form 7 missiles produces real hazards"
+    },
+    {
+      "ok": true,
+      "name": "form 7 carrierLance completes with recovery and finite rig"
+    },
+    {
+      "ok": true,
+      "name": "form 7 carrierLance produces real hazards"
+    },
+    {
+      "ok": true,
+      "name": "form 7 gravity completes with recovery and finite rig"
+    },
+    {
+      "ok": true,
+      "name": "form 7 gravity produces real hazards"
+    },
+    {
+      "ok": true,
+      "name": "form 7 broken emitter cancels warning and beam"
+    },
+    {
+      "ok": true,
+      "name": "form 8 has independently positioned components"
+    },
+    {
+      "ok": true,
+      "name": "form 8 gauge reads its own health and color"
+    },
+    {
+      "ok": true,
+      "name": "form 8 real chaingun collision damages a component"
+    },
+    {
+      "ok": true,
+      "name": "form 8 destroyed component disappears independently"
+    },
+    {
+      "ok": true,
+      "name": "form 8 wardenMG completes with recovery and finite rig"
+    },
+    {
+      "ok": true,
+      "name": "form 8 wardenMG produces real hazards"
+    },
+    {
+      "ok": true,
+      "name": "form 8 stomp completes with recovery and finite rig"
+    },
+    {
+      "ok": true,
+      "name": "form 8 scissor completes with recovery and finite rig"
+    },
+    {
+      "ok": true,
+      "name": "form 8 scissor produces real hazards"
+    },
+    {
+      "ok": true,
+      "name": "form 8 gravity completes with recovery and finite rig"
+    },
+    {
+      "ok": true,
+      "name": "form 8 gravity produces real hazards"
+    },
+    {
+      "ok": true,
+      "name": "form 8 code completes with recovery and finite rig"
+    },
+    {
+      "ok": true,
+      "name": "form 8 code produces real hazards"
+    },
+    {
+      "ok": true,
+      "name": "form 8 broken emitter cancels warning and beam"
+    },
+    {
+      "ok": true,
+      "name": "separate head and power-up art draw with the moving sword"
+    },
+    {
+      "ok": true,
+      "name": "powered sword damages on the actual moving blade"
+    },
+    {
+      "ok": true,
+      "name": "sword does not use a remote target-circle hitbox"
+    },
+    {
+      "ok": true,
+      "name": "slash blade crosses the warned stationary target"
+    },
+    {
+      "ok": true,
+      "name": "jump blade crosses the warned stationary target"
+    },
+    {
+      "ok": true,
+      "name": "sweep blade crosses the warned stationary target"
+    },
+    {
+      "ok": true,
+      "name": "breaking sword arm removes sword and cancels its combo"
+    },
+    {
+      "ok": true,
+      "name": "progression enters intact modular form 1"
+    },
+    {
+      "ok": true,
+      "name": "no early reward after form 1"
+    },
+    {
+      "ok": true,
+      "name": "progression enters intact modular form 2"
+    },
+    {
+      "ok": true,
+      "name": "no early reward after form 2"
+    },
+    {
+      "ok": true,
+      "name": "progression enters intact modular form 3"
+    },
+    {
+      "ok": true,
+      "name": "no early reward after form 3"
+    },
+    {
+      "ok": true,
+      "name": "progression enters intact modular form 4"
+    },
+    {
+      "ok": true,
+      "name": "no early reward after form 4"
+    },
+    {
+      "ok": true,
+      "name": "progression enters intact modular form 5"
+    },
+    {
+      "ok": true,
+      "name": "no early reward after form 5"
+    },
+    {
+      "ok": true,
+      "name": "progression enters intact modular form 6"
+    },
+    {
+      "ok": true,
+      "name": "no early reward after form 6"
+    },
+    {
+      "ok": true,
+      "name": "progression enters intact modular form 7"
+    },
+    {
+      "ok": true,
+      "name": "no early reward after form 7"
+    },
+    {
+      "ok": true,
+      "name": "progression enters intact modular form 8"
+    },
+    {
+      "ok": true,
+      "name": "one final portal/reunion reward after all eight lives"
+    },
+    {
+      "ok": true,
+      "name": "no page or console errors"
+    }
+  ],
+  "forms": [
+    {
+      "id": "host",
+      "parts": [
+        {
+          "id": "core",
+          "x": 340,
+          "y": 225,
+          "w": 174,
+          "h": 190,
+          "rot": 0
+        },
+        {
+          "id": "left",
+          "x": 268.3292437623585,
+          "y": 260.94669513916745,
+          "w": 80,
+          "h": 198,
+          "rot": -0.08
+        },
+        {
+          "id": "right",
+          "x": 411.6707562376415,
+          "y": 260.94669513916745,
+          "w": 80,
+          "h": 198,
+          "rot": 0.08
+        }
+      ],
+      "book": [
+        "talons",
+        "gravity",
+        "code"
+      ]
+    },
+    {
+      "id": "chopper",
+      "parts": [
+        {
+          "id": "core",
+          "x": 340,
+          "y": 233,
+          "w": 143,
+          "h": 190,
+          "rot": 0
+        },
+        {
+          "id": "tail",
+          "x": 340,
+          "y": 104.63999999999999,
+          "w": 98,
+          "h": 108,
+          "rot": 0
+        },
+        {
+          "id": "left",
+          "x": 280.05,
+          "y": 235.25,
+          "w": 55,
+          "h": 115,
+          "rot": 0
+        },
+        {
+          "id": "right",
+          "x": 399.95,
+          "y": 235.25,
+          "w": 55,
+          "h": 115,
+          "rot": 0
+        },
+        {
+          "id": "rackL",
+          "x": 252,
+          "y": 242.3,
+          "w": 53,
+          "h": 95,
+          "rot": 0
+        },
+        {
+          "id": "rackR",
+          "x": 428,
+          "y": 242.3,
+          "w": 53,
+          "h": 95,
+          "rot": 0
+        },
+        {
+          "id": "rotor",
+          "x": 340,
+          "y": 167,
+          "w": 69.6,
+          "h": 69.6,
+          "rot": 161.5000000000017
+        }
+      ],
+      "book": [
+        "rotorMG",
+        "bombing",
+        "missiles",
+        "gravity"
+      ]
+    },
+    {
+      "id": "furnace",
+      "parts": [
+        {
+          "id": "core",
+          "x": 340,
+          "y": 205,
+          "w": 150,
+          "h": 192,
+          "rot": 0
+        },
+        {
+          "id": "legL",
+          "x": 312.76487552344634,
+          "y": 310.29710190080687,
+          "w": 64,
+          "h": 111,
+          "rot": -0.15335276014337057
+        },
+        {
+          "id": "legR",
+          "x": 368.12311007799553,
+          "y": 310.4235693739741,
+          "w": 64,
+          "h": 111,
+          "rot": 0.12958574129545183
+        },
+        {
+          "id": "left",
+          "x": 259.42717686462606,
+          "y": 233.28763451124144,
+          "w": 85,
+          "h": 158,
+          "rot": 0.04234031779959229
+        },
+        {
+          "id": "right",
+          "x": 420.57282313537394,
+          "y": 233.28763451124144,
+          "w": 85,
+          "h": 158,
+          "rot": -0.04234031779959229
+        },
+        {
+          "id": "reactor",
+          "x": 340,
+          "y": 232,
+          "w": 48,
+          "h": 49,
+          "rot": 0
+        }
+      ],
+      "book": [
+        "magma",
+        "eruptions",
+        "furnaceBeam",
+        "orbit"
+      ]
+    },
+    {
+      "id": "cryo",
+      "parts": [
+        {
+          "id": "core",
+          "x": 340,
+          "y": 225,
+          "w": 144,
+          "h": 227,
+          "rot": 0
+        },
+        {
+          "id": "rackL",
+          "x": 274.58,
+          "y": 178.3,
+          "w": 67,
+          "h": 85,
+          "rot": 0
+        },
+        {
+          "id": "gunL1",
+          "x": 296.48,
+          "y": 249.24,
+          "w": 52,
+          "h": 109,
+          "rot": 0
+        },
+        {
+          "id": "gunL2",
+          "x": 304,
+          "y": 295.32,
+          "w": 43,
+          "h": 87,
+          "rot": 0
+        },
+        {
+          "id": "rackR",
+          "x": 405.42,
+          "y": 178.3,
+          "w": 67,
+          "h": 85,
+          "rot": 0
+        },
+        {
+          "id": "gunR1",
+          "x": 383.52,
+          "y": 249.24,
+          "w": 52,
+          "h": 109,
+          "rot": 0
+        },
+        {
+          "id": "gunR2",
+          "x": 376,
+          "y": 295.32,
+          "w": 43,
+          "h": 87,
+          "rot": 0
+        }
+      ],
+      "book": [
+        "iceMG",
+        "iceLance",
+        "iceOrbit",
+        "gravity"
+      ]
+    },
+    {
+      "id": "storm",
+      "parts": [
+        {
+          "id": "core",
+          "x": 340,
+          "y": 225,
+          "w": 196,
+          "h": 226,
+          "rot": 0
+        },
+        {
+          "id": "left",
+          "x": 288.1,
+          "y": 287.84000000000003,
+          "w": 69,
+          "h": 112,
+          "rot": 0
+        },
+        {
+          "id": "right",
+          "x": 391.9,
+          "y": 287.84000000000003,
+          "w": 69,
+          "h": 112,
+          "rot": 0
+        },
+        {
+          "id": "rackL",
+          "x": 281.68,
+          "y": 216.1,
+          "w": 61,
+          "h": 117,
+          "rot": 0
+        },
+        {
+          "id": "rackR",
+          "x": 398.32,
+          "y": 216.1,
+          "w": 61,
+          "h": 117,
+          "rot": 0
+        },
+        {
+          "id": "lightning",
+          "x": 343.84,
+          "y": 236.26,
+          "w": 48,
+          "h": 186,
+          "rot": 0
+        }
+      ],
+      "book": [
+        "missiles",
+        "lightning",
+        "ram",
+        "code"
+      ]
+    },
+    {
+      "id": "knight",
+      "parts": [
+        {
+          "id": "core",
+          "x": 340,
+          "y": 225,
+          "w": 126,
+          "h": 140,
+          "rot": 0
+        },
+        {
+          "id": "legL",
+          "x": 315.02373167335224,
+          "y": 314.48826968493955,
+          "w": 55,
+          "h": 101,
+          "rot": -0.1160440284407756
+        },
+        {
+          "id": "legR",
+          "x": 367.667714243949,
+          "y": 315.090404009061,
+          "w": 55,
+          "h": 101,
+          "rot": 0.04668561460851409
+        },
+        {
+          "id": "head",
+          "x": 340.2561572427007,
+          "y": 133.15094142638839,
+          "w": 91,
+          "h": 85,
+          "rot": 0.00735034574771846
+        },
+        {
+          "id": "swordArm",
+          "x": 290.50195003897653,
+          "y": 217.73704852188897,
+          "w": 62,
+          "h": 108,
+          "rot": 0.3
+        },
+        {
+          "id": "shieldArm",
+          "x": 380.353943213032,
+          "y": 217.4946833765276,
+          "w": 62,
+          "h": 108,
+          "rot": -0.15
+        },
+        {
+          "id": "sword",
+          "x": 255.7724996407665,
+          "y": 307.91129248899006,
+          "w": 51,
+          "h": 139,
+          "rot": 0.3
+        },
+        {
+          "id": "shield",
+          "x": 385.95568860995144,
+          "y": 258.8418531528024,
+          "w": 78,
+          "h": 112,
+          "rot": -0.15
+        }
+      ],
+      "book": [
+        "knight",
+        "knight",
+        "orbit"
+      ]
+    },
+    {
+      "id": "harrier",
+      "parts": [
+        {
+          "id": "core",
+          "x": 340,
+          "y": 225,
+          "w": 158,
+          "h": 218,
+          "rot": 0
+        },
+        {
+          "id": "fanL",
+          "x": 232.2590903055147,
+          "y": 234.906525657287,
+          "w": 100,
+          "h": 104,
+          "rot": -0.04279522787319386
+        },
+        {
+          "id": "fanR",
+          "x": 447.28111057112665,
+          "y": 237.16702526989678,
+          "w": 100,
+          "h": 104,
+          "rot": 0.09999152122364297
+        },
+        {
+          "id": "rackL",
+          "x": 214.4,
+          "y": 285.1,
+          "w": 69,
+          "h": 81,
+          "rot": 0
+        },
+        {
+          "id": "rackR",
+          "x": 465.6,
+          "y": 285.1,
+          "w": 69,
+          "h": 81,
+          "rot": 0
+        },
+        {
+          "id": "beam",
+          "x": 340,
+          "y": 265.2,
+          "w": 48,
+          "h": 92,
+          "rot": 0
+        }
+      ],
+      "book": [
+        "turbines",
+        "missiles",
+        "carrierLance",
+        "gravity"
+      ]
+    },
+    {
+      "id": "warden",
+      "parts": [
+        {
+          "id": "core",
+          "x": 340,
+          "y": 200,
+          "w": 168,
+          "h": 190,
+          "rot": 0
+        },
+        {
+          "id": "legL",
+          "x": 289.9489303879136,
+          "y": 310.2867200766936,
+          "w": 77,
+          "h": 116,
+          "rot": -0.06676650820816205
+        },
+        {
+          "id": "legR",
+          "x": 391.849270525142,
+          "y": 310.0805911556899,
+          "w": 77,
+          "h": 116,
+          "rot": 0.025131747977865562
+        },
+        {
+          "id": "left",
+          "x": 255.66259155781802,
+          "y": 201.4934385347263,
+          "w": 78,
+          "h": 128,
+          "rot": 0.11249657234379784
+        },
+        {
+          "id": "right",
+          "x": 424.337408442182,
+          "y": 201.4934385347263,
+          "w": 78,
+          "h": 128,
+          "rot": -0.11249657234379784
+        },
+        {
+          "id": "gunL",
+          "x": 290,
+          "y": 249.69,
+          "w": 69,
+          "h": 99,
+          "rot": 0
+        },
+        {
+          "id": "gunR",
+          "x": 390,
+          "y": 249.69,
+          "w": 69,
+          "h": 99,
+          "rot": 0
+        }
+      ],
+      "book": [
+        "wardenMG",
+        "stomp",
+        "scissor",
+        "gravity",
+        "code"
+      ]
+    }
+  ],
+  "artCalls": [
+    "r30_vile24_robot_gray",
+    "r30_possessed_body",
+    "r30_possessed_armL",
+    "r30_possessed_armR",
+    "r30_fx_0",
+    "r30_fx_1",
+    "r30_fx_2",
+    "r30_fx_3",
+    "r30_fx_8",
+    "fmc_chopper:tail",
+    "fmc_chopper:core",
+    "fmc_chopper:left",
+    "fmc_chopper:right",
+    "fmc_chopper:rackL",
+    "fmc_chopper:rackR",
+    "r30_chopper_rotor",
+    "r30_fx_9",
+    "fmc_furnace:legL",
+    "fmc_furnace:legR",
+    "fmc_furnace:core",
+    "fmc_furnace:left",
+    "fmc_furnace:right",
+    "fmc_furnace:reactor",
+    "fmc_cryo:core",
+    "fmc_cryo:rackL",
+    "fmc_cryo:left",
+    "fmc_cryo:rackR",
+    "fmc_cryo:right",
+    "fmc_storm_hull:core",
+    "fmc_storm:left",
+    "fmc_storm:right",
+    "fmc_storm:rackL",
+    "fmc_storm:rackR",
+    "fmc_storm:lightning",
+    "fmc_knight:legL",
+    "fmc_knight:legR",
+    "fmc_knight:core",
+    "fmc_knight:swordArm",
+    "fmc_knight:shieldArm",
+    "fmc_head:head",
+    "fmc_knight:sword",
+    "fmc_knight:shield",
+    "fmc_sword_fx:0",
+    "fmc_sword_fx:1",
+    "fmc_sword_fx:2",
+    "fmc_sword_fx:3",
+    "fmc_sword_fx:4",
+    "fmc_sword_fx:5",
+    "fmc_sword_fx:6",
+    "fmc_sword_fx:7",
+    "fmc_harrier:fanL",
+    "fmc_harrier:fanR",
+    "fmc_harrier:core",
+    "fmc_harrier:rackL",
+    "fmc_harrier:rackR",
+    "fmc_harrier:beam",
+    "fmc_warden:legL",
+    "fmc_warden:legR",
+    "fmc_warden:core",
+    "fmc_warden:left",
+    "fmc_warden:right",
+    "fmc_warden:gun",
+    "r30_fx_12",
+    "r30_fx_13",
+    "r30_fx_14",
+    "r30_fx_15",
+    "r30_ship_axel",
+    "r30_ship_decker",
+    "r30_ship_maverick",
+    "r30_ship_freezer"
+  ],
+  "sounds": {
+    "combatModule0927": 22,
+    "bossWeaponCharge": 50,
+    "combatAlien0927": 3,
+    "enemyBossCannon": 52,
+    "combatBeam0927": 24,
+    "enemyMachineGunHeavy": 39,
+    "combatOrb0927": 8,
+    "combatEnergy0927": 7,
+    "hammerImpact": 4,
+    "teleportIn": 14,
+    "expBig": 23,
+    "bossPhase": 8
+  },
+  "errors": [],
+  "full_suite": {
+    "passed": 6893,
+    "failed": 0,
+    "exit": 0,
+    "final_banner": "FALVA/LIZZIE BUILD OK, 0 ERRORS"
+  },
+  "motion": {
+    "path": "_shots/finale_modular_1003c/modular-finale-motion.webm",
+    "errors": []
+  },
+  "scope": "Native controlled fixtures, not a campaign win or final balance certification. All eight modular rigs and corrected head inspected in real screenshots."
+}

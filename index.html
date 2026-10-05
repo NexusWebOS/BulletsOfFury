@@ -18,7 +18,7 @@
   .side{display:block;object-fit:contain;flex:0 0 auto;filter:drop-shadow(0 6px 16px rgba(0,0,0,.55));}
   /* black window: HUD row (HUD strip + equip box) on top, divider, native game canvas below */
   #game-frame{position:absolute;background:#000;overflow:hidden;z-index:1;
-    display:flex;flex-direction:column;align-items:flex-start;}
+    display:flex;flex-direction:column-reverse;align-items:flex-start;}
   #hud-row{display:flex;flex-direction:row;align-items:flex-start;justify-content:flex-start;flex:0 0 auto;}
   #hud-wrap{position:relative;flex:0 0 auto;background:#000;}
   #hud-wrap canvas{display:block;width:100%;height:100%;}
@@ -63,7 +63,7 @@
   body.campaign-full #hud-row,body.campaign-full #hud-div,body.campaign-full #hint{display:none !important;}
   body.campaign-full #game-frame{position:fixed !important;inset:0 !important;width:100vw !important;height:100vh !important;box-shadow:none;}
   body.campaign-full #screen-area{position:fixed;inset:0;width:100vw !important;height:100vh !important;margin:0 !important;}
-  body.campaign-full #screen{width:100vw !important;height:100vh !important;}
+  body.campaign-full #screen{width:100vw !important;height:min(100vh,106.666667vw) !important;}
   /* Wide menus and the boot plate own the full middle bay; gameplay retains the top HUD. */
   @media(min-width:1150px){
     body.fs:not(.wide-playing):not(.wide-map):not(.cinematic-full) #hud-row,
@@ -281,6 +281,39 @@
 <script src="assets/feedback_1001b.js"></script>
 <script src="assets/feedback_art_1002.js"></script>
 <script src="assets/feedback_1002.js"></script>
+<script src="assets/icon_ink_1002.js"></script>
+<script src="assets/feedback_claude_1003.js"></script>
+<script src="assets/build_integration_1003.js"></script>
+<script src="assets/stage8_art_1003.js"></script>
+<script src="assets/stage8_1003.js"></script>
+<script src="assets/mutator_art_1003.js"></script>
+<script src="assets/mutator_1003.js"></script>
+<script src="assets/primary_1003b.js"></script>
+<script src="assets/finale_art_1003b.js"></script>
+<script src="assets/finale_1003b.js"></script>
+<script src="assets/finale_modular_art_1003c.js"></script>
+<script src="assets/finale_modular_1003c.js"></script>
+<script src="assets/codewall_art_1003d.js"></script>
+<script src="assets/codewall_1003d.js"></script>
+<script src="assets/original_warnings_1003e.js"></script>
+<script src="assets/herald_art_1003f.js"></script>
+<script src="assets/herald_1003f.js"></script>
+<script src="assets/map_briefing_1003g.js"></script>
+<script src="assets/feedback_1003h.js"></script>
+<script src="assets/combat_art_1003i.js"></script>
+<script src="assets/combat_1003i.js"></script>
+<script src="assets/finale_structure_1003j.js"></script>
+<script src="assets/rebel_gang_1004.js"></script>
+<script src="assets/sky_repair_art_1004i.js"></script>
+<script src="assets/gameplay_repair_1004.js"></script>
+<script src="assets/finale_donors_1004.js"></script>
+<script src="assets/campaign_focus_1004b.js"></script>
+<script src="assets/rebel_arsenal_art_1004c.js"></script>
+<script src="assets/rebel_arsenal_1004c.js"></script>
+<script src="assets/stage3_combat_1004k.js"></script>
+<script src="assets/campaign_flags_art_1004f.js"></script>
+<script src="assets/campaign_landscape_1004e.js"></script>
+<script src="assets/campaign_controls_1004h.js"></script>
 <script src="assets/widescreen_hud_0918.js"></script>
 <script src="assets/online-config.js"></script>
 <script src="assets/online.js"></script>

@@ -1,0 +1,54 @@
+{
+  "wall": {
+    "source": "_ART_SOURCES/codewall_1003d/wall.png",
+    "generation": "exec-4794ae98-c9d5-4156-8818-5640ad5ce2f8",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "sha256": "43ec4f7be5a31d5e8f9052206c7184f154074044effbffd2690b706548b288ea"
+  },
+  "impact": {
+    "source": "_ART_SOURCES/codewall_1003d/impact.png",
+    "generation": "exec-7f4b1cb3-578d-4719-8376-4831882d474e",
+    "size": [
+      1774,
+      887
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "sha256": "9bf733a19f46b0c0d8d59df0372cd2e649d30b15b1c2f3147bb293741fd5481c"
+  },
+  "shatter": {
+    "source": "_ART_SOURCES/codewall_1003d/shatter.png",
+    "generation": "exec-621d6695-a8d4-4c0f-bb40-4307ede33515",
+    "size": [
+      1774,
+      887
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "sha256": "0597b4c40976f0b98574a94ab0888054770ead8d26e0e07ddeab3e5bffe98da6"
+  },
+  "morph": {
+    "source": "_ART_SOURCES/codewall_1003d/morph.png",
+    "generation": "exec-0fb1a39f-2618-4c19-b378-a6c55a06d2cf",
+    "size": [
+      1182,
+      1330
+    ],
+    "alpha": [
+      0,
+      255
+    ],
+    "sha256": "85289c3df298bae1bf67a552a21385cef729ceca718ca31610f340248d6e077b"
+  }
+}

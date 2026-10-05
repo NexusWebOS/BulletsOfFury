@@ -1,5 +1,5 @@
 {
-  "music": "assets/game/hama_vocals_1001/hama_mike_robot_mix_1001_v3.mp3",
+  "music": "assets/game/music/HAMA.mp3",
   "seconds": 180.013,
   "bpm": 132.55,
   "voiceTreatment": "deep-vocoder-hooks-only-v3",

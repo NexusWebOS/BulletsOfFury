@@ -1,0 +1,652 @@
+{
+  "checks": [
+    {
+      "ok": true,
+      "name": "all ten authored sheets resolve through registered XART keys"
+    },
+    {
+      "ok": true,
+      "name": "normal bluehybrid stays upright in native movement"
+    },
+    {
+      "ok": true,
+      "name": "normal bluehybrid completes warning and recovery"
+    },
+    {
+      "ok": true,
+      "name": "normal bluehybrid releases a native attack"
+    },
+    {
+      "ok": true,
+      "name": "normal hexpyre stays upright in native movement"
+    },
+    {
+      "ok": true,
+      "name": "normal hexpyre completes warning and recovery"
+    },
+    {
+      "ok": true,
+      "name": "normal hexpyre releases a native attack"
+    },
+    {
+      "ok": true,
+      "name": "normal hellram stays upright in native movement"
+    },
+    {
+      "ok": true,
+      "name": "normal hellram completes warning and recovery"
+    },
+    {
+      "ok": true,
+      "name": "normal hellram releases a native attack"
+    },
+    {
+      "ok": true,
+      "name": "normal riflelocust stays upright in native movement"
+    },
+    {
+      "ok": true,
+      "name": "normal riflelocust completes warning and recovery"
+    },
+    {
+      "ok": true,
+      "name": "normal riflelocust releases a native attack"
+    },
+    {
+      "ok": true,
+      "name": "normal impharrow stays upright in native movement"
+    },
+    {
+      "ok": true,
+      "name": "normal impharrow completes warning and recovery"
+    },
+    {
+      "ok": true,
+      "name": "normal impharrow releases a native attack"
+    },
+    {
+      "ok": true,
+      "name": "normal furnacemaw stays upright in native movement"
+    },
+    {
+      "ok": true,
+      "name": "normal furnacemaw completes warning and recovery"
+    },
+    {
+      "ok": true,
+      "name": "normal furnacemaw releases a native attack"
+    },
+    {
+      "ok": true,
+      "name": "normal hellhugger stays upright in native movement"
+    },
+    {
+      "ok": true,
+      "name": "normal hellhugger completes warning and recovery"
+    },
+    {
+      "ok": true,
+      "name": "normal hellhugger releases a native attack"
+    },
+    {
+      "ok": true,
+      "name": "hard bluehybrid stays upright in native movement"
+    },
+    {
+      "ok": true,
+      "name": "hard bluehybrid completes warning and recovery"
+    },
+    {
+      "ok": true,
+      "name": "hard bluehybrid releases a native attack"
+    },
+    {
+      "ok": true,
+      "name": "hard hexpyre stays upright in native movement"
+    },
+    {
+      "ok": true,
+      "name": "hard hexpyre completes warning and recovery"
+    },
+    {
+      "ok": true,
+      "name": "hard hexpyre releases a native attack"
+    },
+    {
+      "ok": true,
+      "name": "hard hellram stays upright in native movement"
+    },
+    {
+      "ok": true,
+      "name": "hard hellram completes warning and recovery"
+    },
+    {
+      "ok": true,
+      "name": "hard hellram releases a native attack"
+    },
+    {
+      "ok": true,
+      "name": "hard riflelocust stays upright in native movement"
+    },
+    {
+      "ok": true,
+      "name": "hard riflelocust completes warning and recovery"
+    },
+    {
+      "ok": true,
+      "name": "hard riflelocust releases a native attack"
+    },
+    {
+      "ok": true,
+      "name": "hard impharrow stays upright in native movement"
+    },
+    {
+      "ok": true,
+      "name": "hard impharrow completes warning and recovery"
+    },
+    {
+      "ok": true,
+      "name": "hard impharrow releases a native attack"
+    },
+    {
+      "ok": true,
+      "name": "hard furnacemaw stays upright in native movement"
+    },
+    {
+      "ok": true,
+      "name": "hard furnacemaw completes warning and recovery"
+    },
+    {
+      "ok": true,
+      "name": "hard furnacemaw releases a native attack"
+    },
+    {
+      "ok": true,
+      "name": "hard hellhugger stays upright in native movement"
+    },
+    {
+      "ok": true,
+      "name": "hard hellhugger completes warning and recovery"
+    },
+    {
+      "ok": true,
+      "name": "hard hellhugger releases a native attack"
+    },
+    {
+      "ok": true,
+      "name": "furious bluehybrid stays upright in native movement"
+    },
+    {
+      "ok": true,
+      "name": "furious bluehybrid completes warning and recovery"
+    },
+    {
+      "ok": true,
+      "name": "furious bluehybrid releases a native attack"
+    },
+    {
+      "ok": true,
+      "name": "furious hexpyre stays upright in native movement"
+    },
+    {
+      "ok": true,
+      "name": "furious hexpyre completes warning and recovery"
+    },
+    {
+      "ok": true,
+      "name": "furious hexpyre releases a native attack"
+    },
+    {
+      "ok": true,
+      "name": "furious hellram stays upright in native movement"
+    },
+    {
+      "ok": true,
+      "name": "furious hellram completes warning and recovery"
+    },
+    {
+      "ok": true,
+      "name": "furious hellram releases a native attack"
+    },
+    {
+      "ok": true,
+      "name": "furious riflelocust stays upright in native movement"
+    },
+    {
+      "ok": true,
+      "name": "furious riflelocust completes warning and recovery"
+    },
+    {
+      "ok": true,
+      "name": "furious riflelocust releases a native attack"
+    },
+    {
+      "ok": true,
+      "name": "furious impharrow stays upright in native movement"
+    },
+    {
+      "ok": true,
+      "name": "furious impharrow completes warning and recovery"
+    },
+    {
+      "ok": true,
+      "name": "furious impharrow releases a native attack"
+    },
+    {
+      "ok": true,
+      "name": "furious furnacemaw stays upright in native movement"
+    },
+    {
+      "ok": true,
+      "name": "furious furnacemaw completes warning and recovery"
+    },
+    {
+      "ok": true,
+      "name": "furious furnacemaw releases a native attack"
+    },
+    {
+      "ok": true,
+      "name": "furious hellhugger stays upright in native movement"
+    },
+    {
+      "ok": true,
+      "name": "furious hellhugger completes warning and recovery"
+    },
+    {
+      "ok": true,
+      "name": "furious hellhugger releases a native attack"
+    },
+    {
+      "ok": true,
+      "name": "actual Stage 7 wave plan contains its selected enemies"
+    },
+    {
+      "ok": true,
+      "name": "actual Stage 8 wave plan contains its selected enemies"
+    },
+    {
+      "ok": true,
+      "name": "existing gravity, Retina and code laser aliens remain in Stage8"
+    },
+    {
+      "ok": true,
+      "name": "game draws five independent Rifle Locust components"
+    },
+    {
+      "ok": true,
+      "name": "actual curved Retina missile hits the rifle module"
+    },
+    {
+      "ok": true,
+      "name": "rifle detaches without silently damaging the hull"
+    },
+    {
+      "ok": true,
+      "name": "ordinary weapon shots damage the real hull"
+    },
+    {
+      "ok": true,
+      "name": "incoming live Hammer dialogue suppresses the duplicate paused scene"
+    },
+    {
+      "ok": true,
+      "name": "live dialogue releases into the requested opening jump"
+    },
+    {
+      "ok": true,
+      "name": "incoming stealth/fusion layers coexist with local encounter assets and recorded HAMA"
+    },
+    {
+      "ok": true,
+      "name": "warnings and projectile releases invoke native sound cues"
+    },
+    {
+      "ok": true,
+      "name": "no page or console errors"
+    }
+  ],
+  "scenes": [
+    {
+      "diff": "normal",
+      "kind": "bluehybrid",
+      "shots": 5,
+      "ground": 0,
+      "straight": true,
+      "finite": true,
+      "phases": [
+        "rest",
+        "tell",
+        "fire",
+        "recover"
+      ],
+      "maxStep": 10.021378940212175
+    },
+    {
+      "diff": "normal",
+      "kind": "hexpyre",
+      "shots": 0,
+      "ground": 2,
+      "straight": true,
+      "finite": true,
+      "phases": [
+        "rest",
+        "tell",
+        "fire",
+        "recover"
+      ],
+      "maxStep": 10.000000000000114
+    },
+    {
+      "diff": "normal",
+      "kind": "hellram",
+      "shots": 2,
+      "ground": 0,
+      "straight": true,
+      "finite": true,
+      "phases": [
+        "rest",
+        "tell",
+        "dash",
+        "backstep",
+        "fire",
+        "recover"
+      ],
+      "maxStep": 42.54615384615383
+    },
+    {
+      "diff": "normal",
+      "kind": "riflelocust",
+      "shots": 4,
+      "ground": 0,
+      "straight": true,
+      "finite": true,
+      "phases": [
+        "rest",
+        "tell",
+        "fire",
+        "recover"
+      ],
+      "maxStep": 10
+    },
+    {
+      "diff": "normal",
+      "kind": "impharrow",
+      "shots": 2,
+      "ground": 0,
+      "straight": true,
+      "finite": true,
+      "phases": [
+        "rest",
+        "tell",
+        "fire",
+        "recover"
+      ],
+      "maxStep": 10.000000000000114
+    },
+    {
+      "diff": "normal",
+      "kind": "furnacemaw",
+      "shots": 6,
+      "ground": 0,
+      "straight": true,
+      "finite": true,
+      "phases": [
+        "rest",
+        "tell",
+        "fire",
+        "recover"
+      ],
+      "maxStep": 10.021378940212175
+    },
+    {
+      "diff": "normal",
+      "kind": "hellhugger",
+      "shots": 0,
+      "ground": 0,
+      "straight": true,
+      "finite": true,
+      "phases": [
+        "rest",
+        "tell",
+        "dash",
+        "recover",
+        "leave"
+      ],
+      "maxStep": 56.666666666666686
+    },
+    {
+      "diff": "hard",
+      "kind": "bluehybrid",
+      "shots": 5,
+      "ground": 0,
+      "straight": true,
+      "finite": true,
+      "phases": [
+        "rest",
+        "tell",
+        "fire",
+        "recover"
+      ],
+      "maxStep": 10.357753940303374
+    },
+    {
+      "diff": "hard",
+      "kind": "hexpyre",
+      "shots": 0,
+      "ground": 2,
+      "straight": true,
+      "finite": true,
+      "phases": [
+        "rest",
+        "tell",
+        "fire",
+        "recover"
+      ],
+      "maxStep": 10.000000000000114
+    },
+    {
+      "diff": "hard",
+      "kind": "hellram",
+      "shots": 2,
+      "ground": 0,
+      "straight": true,
+      "finite": true,
+      "phases": [
+        "rest",
+        "tell",
+        "dash",
+        "backstep",
+        "fire",
+        "recover"
+      ],
+      "maxStep": 42.21107849758166
+    },
+    {
+      "diff": "hard",
+      "kind": "riflelocust",
+      "shots": 3,
+      "ground": 0,
+      "straight": true,
+      "finite": true,
+      "phases": [
+        "rest",
+        "tell",
+        "fire",
+        "recover"
+      ],
+      "maxStep": 10.000000000000114
+    },
+    {
+      "diff": "hard",
+      "kind": "impharrow",
+      "shots": 2,
+      "ground": 0,
+      "straight": true,
+      "finite": true,
+      "phases": [
+        "rest",
+        "tell",
+        "fire",
+        "recover"
+      ],
+      "maxStep": 10.699999999999989
+    },
+    {
+      "diff": "hard",
+      "kind": "furnacemaw",
+      "shots": 6,
+      "ground": 0,
+      "straight": true,
+      "finite": true,
+      "phases": [
+        "rest",
+        "tell",
+        "fire",
+        "recover"
+      ],
+      "maxStep": 10.000000000000114
+    },
+    {
+      "diff": "hard",
+      "kind": "hellhugger",
+      "shots": 0,
+      "ground": 0,
+      "straight": true,
+      "finite": true,
+      "phases": [
+        "rest",
+        "tell",
+        "dash",
+        "recover",
+        "leave"
+      ],
+      "maxStep": 56.666666666666686
+    },
+    {
+      "diff": "furious",
+      "kind": "bluehybrid",
+      "shots": 5,
+      "ground": 0,
+      "straight": true,
+      "finite": true,
+      "phases": [
+        "rest",
+        "tell",
+        "fire",
+        "recover"
+      ],
+      "maxStep": 10
+    },
+    {
+      "diff": "furious",
+      "kind": "hexpyre",
+      "shots": 0,
+      "ground": 2,
+      "straight": true,
+      "finite": true,
+      "phases": [
+        "rest",
+        "tell",
+        "fire",
+        "recover"
+      ],
+      "maxStep": 10
+    },
+    {
+      "diff": "furious",
+      "kind": "hellram",
+      "shots": 2,
+      "ground": 0,
+      "straight": true,
+      "finite": true,
+      "phases": [
+        "rest",
+        "tell",
+        "dash",
+        "backstep",
+        "fire",
+        "recover"
+      ],
+      "maxStep": 42.21107849758166
+    },
+    {
+      "diff": "furious",
+      "kind": "riflelocust",
+      "shots": 2,
+      "ground": 0,
+      "straight": true,
+      "finite": true,
+      "phases": [
+        "rest",
+        "tell",
+        "fire",
+        "recover"
+      ],
+      "maxStep": 10.252733190867378
+    },
+    {
+      "diff": "furious",
+      "kind": "impharrow",
+      "shots": 2,
+      "ground": 0,
+      "straight": true,
+      "finite": true,
+      "phases": [
+        "rest",
+        "tell",
+        "fire",
+        "recover"
+      ],
+      "maxStep": 10.021378940212175
+    },
+    {
+      "diff": "furious",
+      "kind": "furnacemaw",
+      "shots": 5,
+      "ground": 0,
+      "straight": true,
+      "finite": true,
+      "phases": [
+        "rest",
+        "tell",
+        "fire",
+        "recover"
+      ],
+      "maxStep": 10
+    },
+    {
+      "diff": "furious",
+      "kind": "hellhugger",
+      "shots": 0,
+      "ground": 0,
+      "straight": true,
+      "finite": true,
+      "phases": [
+        "rest",
+        "tell",
+        "dash",
+        "recover",
+        "leave"
+      ],
+      "maxStep": 56.666666666666686
+    }
+  ],
+  "scope": "Controlled real game fixtures; not campaign wins or final balance.",
+  "missile": {
+    "launched": true,
+    "part": 0,
+    "old": 10,
+    "hull": 15,
+    "oldHull": 15,
+    "dead": true,
+    "valid": false
+  },
+  "sounds": {
+    "bossWeaponCharge": 40,
+    "combatOrb0927": 33,
+    "enemyApproach": 9,
+    "enemyMG": 42,
+    "expSmall": 1
+  },
+  "errors": []
+}

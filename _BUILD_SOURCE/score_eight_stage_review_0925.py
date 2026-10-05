@@ -9,14 +9,14 @@ folder=root/'_shots/eight_stage_review_0925'
 source=folder/'BulletsOfFury_Stages1-8_Review_0925.mp4'
 target=folder/'BulletsOfFury_Stages1-8_Review_0925_with_music.mp4'
 tracks=[
-    'stage1_rumble_in_the_jungle.mp3',
-    'stage2_its_hot_in_here.mp3',
-    'stage3_ice_still_cant_see.mp3',
-    'stage4_crouching_missiles.mp3',
-    'lvl3-alt.mp3',
-    'stage6_city_in_the_sky.mp3',
-    'stage7_over_the_horizon_0925.mp3',
-    'stage5_egypt.mp3',
+    'Level1.mp3',
+    'Level2.mp3',
+    'Level3.mp3',
+    'Level4.mp3',
+    'Level5.mp3',
+    'Level6.mp3',
+    'Level7.mp3',
+    'Unused_Egypt.mp3',
 ]
 paths=[root/'assets/game/music'/x for x in tracks]
 assert source.is_file() and all(p.is_file() for p in paths)

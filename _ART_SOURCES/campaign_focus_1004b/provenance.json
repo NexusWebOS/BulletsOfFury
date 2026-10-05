@@ -1,0 +1,24 @@
+{
+  "generator": "built-in image_gen.imagegen",
+  "reference": "assets/game/finale_modular_1003c/knight.png",
+  "source": "_ART_SOURCES/campaign_focus_1004b/knight_poses.png",
+  "source_sha256": "d1bef5fbd5ef6f7b6568757225c18c935503f31141da399d9b589d08f4e51737",
+  "design_intent": "Transparent four-column, three-row modular knight pose sheet. Columns: coil, airborne, impact, recovery. Rows: headless torso, viewer-left leg, viewer-right leg. Preserve silver/black biomechanical armor and red energy; existing separate head, arms, sword and shield stay authored components.",
+  "processing": "4 x 3 source cells; principal connected alpha-component bounding boxes remove isolated generation dust. Original pixels inside those bounds preserved. No shared atlas modified. Normalized neck, shoulder and hip coordinates measured in CF4_JOINTS.",
+  "owner": "_BUILD_SOURCE/build_focus_1004b.py",
+  "runtime": "assets/campaign_focus_1004b.js",
+  "parts": {
+    "core_0.png": "eeccee580760314af0219d363b68a0c47cb7c9c9a6499c1c1762bdaabc96768c",
+    "core_1.png": "8982f0ae3e02b94f1bd5292d2f805442d8df354ba39a264142eb3bf5fcbe075b",
+    "core_2.png": "a54416154756c9810ee5f783212d60be5a3daa99ddbaa81b14b74395ecf93c6f",
+    "core_3.png": "fe674a86bd138d5f2fd1ef0a89fc1e693c515d6c801851a770175f88d0186540",
+    "legL_0.png": "1c8edb2915a6ff0b340db3362061dd6ef4969de33ed89e1bb645320e196abbc9",
+    "legL_1.png": "eac02c996ce1d26726c7ceb28b6e44c797b9a0fd258ad2f27686f29dab88e234",
+    "legL_2.png": "56ea2366649e9d9f97c8dffa5b61ebfd16635bc34a07c67b27868169284869a2",
+    "legL_3.png": "0523709af73772c57f75fec4775cbf79462e72a0861e604d0d811a80d4b4c9e5",
+    "legR_0.png": "9e2f3e44ed515915c84df3a129c073c05c8c45b23b9eea6975d338d2d09418eb",
+    "legR_1.png": "76fd6796d3c2354dd1f3487edcf40a6fb33a944551cbcb425fb6f09778b2712b",
+    "legR_2.png": "c5d06fe53db1256969f4be6d17ecf8494823448cf32d49a0d2e7c66659dd748f",
+    "legR_3.png": "5cc4f05a04b3353a44742db2e53f666eeaecc2e3a6b50126155a0305759e4066"
+  }
+}

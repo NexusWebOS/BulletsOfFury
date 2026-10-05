@@ -13,8 +13,8 @@ OUT = ROOT / '_shots/reaperman_0927'
 SOURCE = Path('C:/Users/Mdogg/Desktop/reaperman.wav')
 ORIGINAL = MUSIC / 'originals_0927/reaperman.wav'
 OLD = MUSIC / 'boss7.mp3'
-ARCHIVE = MUSIC / 'unused13 - stage7b.mp3'
-TARGET = MUSIC / 'boss7_reaperman_0927.mp3'
+ARCHIVE = MUSIC / 'Level7mb.mp3'
+TARGET = MUSIC / 'Level7b.mp3'
 FF = imageio_ffmpeg.get_ffmpeg_exe()
 
 def digest(path):

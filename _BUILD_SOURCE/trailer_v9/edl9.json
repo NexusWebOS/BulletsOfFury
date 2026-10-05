@@ -4463,7 +4463,7 @@
   "length": 135.13333333333333,
   "t0": 3.2,
   "takes_dir": "/home/user/BulletsOfFury/_BUILD_SOURCE/trailer_v9/takes9",
-  "song": "/home/user/BulletsOfFury/assets/game/music/stage6_city_in_the_sky.mp3",
+  "song": "/home/user/BulletsOfFury/assets/game/music/Level6.mp3",
   "song_gain_db": -6.3,
   "song_fade_in": 0.02,
   "song_fade_out": [
@@ -4471,7 +4471,7 @@
    114.16666666666667
   ],
   "music2": {
-   "file": "/home/user/BulletsOfFury/assets/game/music/hama_instrumental_0928.mp3",
+   "file": "/home/user/BulletsOfFury/assets/game/music/HAMA_Instrumental.mp3",
    "t": 119.51666666666667,
    "src": 108.3833,
    "fade_in": 0.02,

@@ -1,0 +1,393 @@
+{
+  "recording": {
+    "path": "C:\\Users\\Mdogg\\Videos\\2026-10-04 19-56-14.mp4",
+    "duration_seconds": 795.3,
+    "overview_sampling_seconds": 12,
+    "stage3_sampling_seconds": 2,
+    "review_type": "sampled visual review; no claim of continuous playback/audio review"
+  },
+  "syntax_checks": {
+    "assets/game.js": 0,
+    "assets/stage3_combat_1004k.js": 0,
+    "assets/weapon_muzzles_0926.js": 0
+  },
+  "suite": {
+    "command": "node _BUILD_SOURCE/test_fl.js",
+    "exit_code": 0,
+    "assertions": 7200,
+    "final_summary": true,
+    "initial_run": "nonzero exit from missing mock-canvas createImageData; harness API added; no baseline failures waived"
+  },
+  "native": {
+    "checks": [
+      {
+        "ok": true,
+        "name": "mg survives mg"
+      },
+      {
+        "ok": true,
+        "name": "mg survives spread"
+      },
+      {
+        "ok": true,
+        "name": "mg survives beam"
+      },
+      {
+        "ok": true,
+        "name": "mg survives flame"
+      },
+      {
+        "ok": true,
+        "name": "mg survives orb"
+      },
+      {
+        "ok": true,
+        "name": "mg survives missile"
+      },
+      {
+        "ok": true,
+        "name": "groundup survives mg"
+      },
+      {
+        "ok": true,
+        "name": "groundup survives spread"
+      },
+      {
+        "ok": true,
+        "name": "groundup survives beam"
+      },
+      {
+        "ok": true,
+        "name": "groundup survives flame"
+      },
+      {
+        "ok": true,
+        "name": "groundup survives orb"
+      },
+      {
+        "ok": true,
+        "name": "groundup survives missile"
+      },
+      {
+        "ok": true,
+        "name": "shell survives mg"
+      },
+      {
+        "ok": true,
+        "name": "shell survives spread"
+      },
+      {
+        "ok": true,
+        "name": "shell survives beam"
+      },
+      {
+        "ok": true,
+        "name": "shell survives flame"
+      },
+      {
+        "ok": true,
+        "name": "shell survives orb"
+      },
+      {
+        "ok": true,
+        "name": "shell survives missile"
+      },
+      {
+        "ok": true,
+        "name": "Axel shield retains its gun-pellet reflection"
+      },
+      {
+        "ok": true,
+        "name": "chrome defense retains its gun-pellet reflection"
+      },
+      {
+        "ok": true,
+        "name": "bomb blast retains its gun-pellet clear"
+      },
+      {
+        "ok": true,
+        "name": "fire ball intercepted by mg"
+      },
+      {
+        "ok": true,
+        "name": "fire ball intercepted by spread"
+      },
+      {
+        "ok": true,
+        "name": "fire ball intercepted by beam"
+      },
+      {
+        "ok": true,
+        "name": "fire ball intercepted by flame"
+      },
+      {
+        "ok": true,
+        "name": "fire ball intercepted by orb"
+      },
+      {
+        "ok": true,
+        "name": "fire ball intercepted by missile"
+      },
+      {
+        "ok": true,
+        "name": "ice ball intercepted by mg"
+      },
+      {
+        "ok": true,
+        "name": "ice ball intercepted by spread"
+      },
+      {
+        "ok": true,
+        "name": "ice ball intercepted by beam"
+      },
+      {
+        "ok": true,
+        "name": "ice ball intercepted by flame"
+      },
+      {
+        "ok": true,
+        "name": "ice ball intercepted by orb"
+      },
+      {
+        "ok": true,
+        "name": "ice ball intercepted by missile"
+      },
+      {
+        "ok": true,
+        "name": "making elemental balls shootable preserves authored velocity"
+      },
+      {
+        "ok": true,
+        "name": "real held flamethrower intercepts across its entire visible plume"
+      },
+      {
+        "ok": true,
+        "name": "actual turret geometry moves into orbit"
+      },
+      {
+        "ok": true,
+        "name": "orbit uses real undestroyable gun streams"
+      },
+      {
+        "ok": true,
+        "name": "orbiting gun remains hittable"
+      },
+      {
+        "ok": true,
+        "name": "actual player shot damages a deployed orbital turret"
+      },
+      {
+        "ok": true,
+        "name": "turrets return without changing HP"
+      },
+      {
+        "ok": true,
+        "name": "four real missiles launch from paired rocket banks"
+      },
+      {
+        "ok": true,
+        "name": "charged laser FOV tracks during early warmup"
+      },
+      {
+        "ok": true,
+        "name": "laser locks its heading before release"
+      },
+      {
+        "ok": true,
+        "name": "miniboss holds through charge warning"
+      },
+      {
+        "ok": true,
+        "name": "miniboss makes an actual high-speed charge"
+      },
+      {
+        "ok": true,
+        "name": "all nine spread flashes attach to authored noses"
+      },
+      {
+        "ok": true,
+        "name": "frostcruiser completes live old and new attacks"
+      },
+      {
+        "ok": true,
+        "name": "cryospear completes live old and new attacks"
+      },
+      {
+        "ok": true,
+        "name": "zero page and console errors"
+      }
+    ],
+    "shots": [
+      "fire-interception.png",
+      "ice-interception.png",
+      "real-flame-interception.png",
+      "rime-orbit-warning.png",
+      "rime-orbit-stream.png",
+      "rime-missile-volley.png",
+      "rime-laser-charge.png",
+      "rime-laser-release.png",
+      "cruiser-charge-warning.png",
+      "cruiser-charge-dash.png",
+      "spread-all-pilots.png",
+      "frostcruiser-sustained.png",
+      "cryospear-sustained.png"
+    ],
+    "muzzleAnchors": [
+      {
+        "key": "axel",
+        "nose": {
+          "x": 50.40075009512354,
+          "y": 129.64285714285714
+        },
+        "offset": -20.35714285714286
+      },
+      {
+        "key": "decker",
+        "nose": {
+          "x": 152.57725454060477,
+          "y": 125.21739130434783
+        },
+        "offset": -24.782608695652172
+      },
+      {
+        "key": "maverick",
+        "nose": {
+          "x": 253.9060575351988,
+          "y": 123.98104265402844
+        },
+        "offset": -26.018957345971558
+      },
+      {
+        "key": "freezer",
+        "nose": {
+          "x": 350.3883088908785,
+          "y": 124.3298969072165
+        },
+        "offset": -25.670103092783506
+      },
+      {
+        "key": "juggernaut",
+        "nose": {
+          "x": 453.33904522832233,
+          "y": 125.26829268292683
+        },
+        "offset": -24.731707317073173
+      },
+      {
+        "key": "yuri",
+        "nose": {
+          "x": 551.235240353885,
+          "y": 125.50218340611355
+        },
+        "offset": -24.497816593886455
+      },
+      {
+        "key": "lizzie",
+        "nose": {
+          "x": 652.922055918926,
+          "y": 124.44444444444444
+        },
+        "offset": -25.555555555555557
+      },
+      {
+        "key": "falva",
+        "nose": {
+          "x": 750.6774215995547,
+          "y": 122.52100840336135
+        },
+        "offset": -27.47899159663865
+      },
+      {
+        "key": "cole",
+        "nose": {
+          "x": 849.8991052914523,
+          "y": 122.06896551724138
+        },
+        "offset": -27.93103448275862
+      }
+    ],
+    "frostcruiser": {
+      "modes": [
+        "recover",
+        "elite-ball1002",
+        "elite-beam1002",
+        "form-change",
+        "elite-missile1002",
+        "elite-ram1004k",
+        "elite-strafe1002"
+      ],
+      "shots": 10,
+      "hp": 4240,
+      "max": 4240
+    },
+    "cryospear": {
+      "modes": [
+        "recover",
+        "ice-battery1002",
+        "cannon-relay",
+        "form-change",
+        "rime-missile1004k",
+        "ice-crossfire1002",
+        "glacier-press",
+        "rime-orbit1004k"
+      ],
+      "shots": 21,
+      "hp": 4680,
+      "max": 4680
+    },
+    "errors": []
+  },
+  "playable_review": {
+    "checks": [
+      {
+        "name": "frostcruiser playable review button",
+        "ok": true,
+        "state": {
+          "stage": 3,
+          "pilot": "yuri",
+          "state": "play",
+          "play": "play",
+          "preview": true,
+          "ship": "frostcruiser",
+          "lives": 3,
+          "frames": 49
+        }
+      },
+      {
+        "name": "cryospear playable review button",
+        "ok": true,
+        "state": {
+          "stage": 3,
+          "pilot": "yuri",
+          "state": "play",
+          "play": "play",
+          "preview": true,
+          "ship": "cryospear",
+          "lives": 3,
+          "frames": 27
+        }
+      },
+      {
+        "name": "stage playable review button",
+        "ok": true,
+        "state": {
+          "stage": 3,
+          "pilot": "yuri",
+          "state": "play",
+          "play": "play",
+          "preview": true,
+          "ship": null,
+          "lives": 3,
+          "frames": 20
+        }
+      },
+      {
+        "name": "review zero browser errors",
+        "ok": true
+      }
+    ],
+    "errors": []
+  },
+  "review_url": "http://127.0.0.1:8794/_shots/stage3_combat_1004k/review.html",
+  "commit_push": "not requested; local only"
+}

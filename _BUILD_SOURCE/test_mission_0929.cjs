@@ -19,7 +19,7 @@ module.exports=function(vm,ctxv,ok){
  run.pilot='yuri';yuriLightningOrbGrantStage4();o['Yuri must earn his Stage 4 orb again in this campaign']=yuriLightningOrbIsUnlocked()&&run._earnedUnlocks.lightningOrb;
  run.pilot='cole';run._earnedUnlocks={};coopOn=true;run2.pilot='yuri';run2._earnedUnlocks={};yuriLightningOrbGrantStage4();let p2Orb=false;withSeat(2,()=>{p2Orb=yuriLightningOrbIsUnlocked();});o['Yuri in co-op seat 2 retains the campaign-earned orb gate']=p2Orb;coopOn=false;
  run.mode='arcade';run.forgeElems={};run.forge={};run.forgeForms={};run.ngplus=true;
- o['Armory/profile and arcade recipes are preserved']=forgeDiscovered().includes('fire')&&!!forgeFormsFor(3).dark;achievementState.owned=owned;
+ o['arcade preserves purchased recipes without importing all prior-run elements']=!forgeDiscovered().includes('fire')&&!!forgeFormsFor(3).dark;achievementState.owned=owned;
  run.pilot='cole';o['Cole solo warning comes from Decker']=missionRadioWho('DECKER')==='DECKER'&&missionRadioWho('COLE')==='DECKER';
  run.pilot='decker';o['Decker solo warning comes from Cole']=missionRadioWho('DECKER')==='COLE';
  run.pilot='maverick';o['Maverick solo does not make Decker ask himself about cloaking']=missionRadioWho('MAVERICK')==='COLE';run.pilot='decker';

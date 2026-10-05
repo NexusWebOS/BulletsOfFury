@@ -1,0 +1,440 @@
+{
+  "furnace": {
+    "key": "fmc_furnace",
+    "path": "assets/game/finale_modular_1003c/furnace.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "rects": {
+      "core": [
+        381,
+        0,
+        490,
+        630
+      ],
+      "left": [
+        30,
+        55,
+        320,
+        580
+      ],
+      "right": [
+        903,
+        55,
+        320,
+        580
+      ],
+      "legL": [
+        30,
+        640,
+        310,
+        560
+      ],
+      "legR": [
+        914,
+        640,
+        310,
+        560
+      ],
+      "reactor": [
+        450,
+        733,
+        350,
+        360
+      ]
+    },
+    "source": "_ART_SOURCES/finale_modular_1003c/furnace.png",
+    "sha256": "9c0ce196b08e5c21831f24a7b3e2aa6e3ea48ee8c392c4a8bbacee8a248f2732"
+  },
+  "chopper": {
+    "key": "fmc_chopper",
+    "path": "assets/game/finale_modular_1003c/chopper.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "rects": {
+      "core": [
+        550,
+        0,
+        440,
+        578
+      ],
+      "left": [
+        114,
+        64,
+        258,
+        458
+      ],
+      "right": [
+        1165,
+        64,
+        257,
+        458
+      ],
+      "rackL": [
+        145,
+        590,
+        217,
+        408
+      ],
+      "rackR": [
+        1175,
+        590,
+        227,
+        408
+      ],
+      "tail": [
+        550,
+        573,
+        430,
+        451
+      ]
+    },
+    "source": "_ART_SOURCES/finale_modular_1003c/chopper.png",
+    "sha256": "3ed9239264d2cd1c8fb8033be71139611182f449a644449ac5b0cac126b124bb"
+  },
+  "cryo": {
+    "key": "fmc_cryo",
+    "path": "assets/game/finale_modular_1003c/cryo.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "rects": {
+      "core": [
+        25,
+        0,
+        450,
+        710
+      ],
+      "left": [
+        520,
+        52,
+        300,
+        650
+      ],
+      "right": [
+        867,
+        55,
+        355,
+        650
+      ],
+      "rackL": [
+        25,
+        716,
+        405,
+        480
+      ],
+      "rackR": [
+        819,
+        709,
+        420,
+        484
+      ],
+      "reactor": [
+        466,
+        729,
+        320,
+        504
+      ]
+    },
+    "source": "_ART_SOURCES/finale_modular_1003c/cryo.png",
+    "sha256": "8c8b4e54ce6530534196fa479b23ad1f97cffad83541239c07f8e6e81014842e"
+  },
+  "storm": {
+    "key": "fmc_storm",
+    "path": "assets/game/finale_modular_1003c/storm.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "rects": {
+      "left": [
+        528,
+        50,
+        340,
+        566
+      ],
+      "right": [
+        896,
+        50,
+        334,
+        566
+      ],
+      "rackL": [
+        30,
+        635,
+        340,
+        580
+      ],
+      "rackR": [
+        881,
+        632,
+        346,
+        591
+      ],
+      "lightning": [
+        540,
+        631,
+        190,
+        604
+      ]
+    },
+    "source": "_ART_SOURCES/finale_modular_1003c/storm.png",
+    "sha256": "de3fec74603af60ae930dc9c3a0898d67641e8892cbf567ba3673af2ba2fd309"
+  },
+  "harrier": {
+    "key": "fmc_harrier",
+    "path": "assets/game/finale_modular_1003c/harrier.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "rects": {
+      "core": [
+        352,
+        0,
+        549,
+        756
+      ],
+      "fanL": [
+        0,
+        225,
+        350,
+        390
+      ],
+      "fanR": [
+        903,
+        222,
+        351,
+        392
+      ],
+      "rackL": [
+        29,
+        807,
+        340,
+        385
+      ],
+      "rackR": [
+        883,
+        807,
+        356,
+        385
+      ],
+      "beam": [
+        516,
+        768,
+        223,
+        439
+      ]
+    },
+    "source": "_ART_SOURCES/finale_modular_1003c/harrier.png",
+    "sha256": "aff5836ad704cc35c3713f640a399d0d34676a7bb87ba53ca48bbf686567aa11"
+  },
+  "warden": {
+    "key": "fmc_warden",
+    "path": "assets/game/finale_modular_1003c/warden.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "rects": {
+      "core": [
+        330,
+        0,
+        590,
+        660
+      ],
+      "left": [
+        28,
+        138,
+        314,
+        490
+      ],
+      "right": [
+        909,
+        138,
+        321,
+        490
+      ],
+      "gun": [
+        79,
+        707,
+        300,
+        461
+      ],
+      "legL": [
+        440,
+        661,
+        360,
+        558
+      ],
+      "legR": [
+        883,
+        661,
+        358,
+        558
+      ]
+    },
+    "source": "_ART_SOURCES/finale_modular_1003c/warden.png",
+    "sha256": "d344f2e685f3f18c491257fede17e9db67fe079e4fe9b958cf90712d8e23670a"
+  },
+  "knight": {
+    "key": "fmc_knight",
+    "path": "assets/game/finale_modular_1003c/knight.png",
+    "size": [
+      1278,
+      1230
+    ],
+    "rects": {
+      "core": [
+        60,
+        18,
+        358,
+        387
+      ],
+      "swordArm": [
+        962,
+        0,
+        280,
+        408
+      ],
+      "shieldArm": [
+        52,
+        423,
+        262,
+        387
+      ],
+      "legL": [
+        530,
+        423,
+        219,
+        388
+      ],
+      "legR": [
+        967,
+        418,
+        219,
+        394
+      ],
+      "sword": [
+        136,
+        815,
+        177,
+        407
+      ],
+      "shield": [
+        508,
+        815,
+        292,
+        407
+      ],
+      "joint": [
+        970,
+        880,
+        264,
+        299
+      ]
+    },
+    "source": "_ART_SOURCES/finale_modular_1003c/knight.png",
+    "sha256": "c009a70bb4ddf6b648626f1e2e4614eb3d3847c0bc03a1a6bb6f1aec073dd42a"
+  },
+  "head": {
+    "key": "fmc_head",
+    "path": "assets/game/finale_modular_1003c/head.png",
+    "size": [
+      1314,
+      1197
+    ],
+    "rects": {
+      "head": [
+        125,
+        57,
+        1063,
+        969
+      ]
+    },
+    "source": "_ART_SOURCES/finale_modular_1003c/head.png",
+    "sha256": "b97bca30575ba097fb6715342d4ea7d8dea0f4ad5f2c7fd97f1c7ab748b5445c"
+  },
+  "storm_hull": {
+    "key": "fmc_storm_hull",
+    "path": "assets/game/finale_modular_1003c/storm_hull.png",
+    "size": [
+      1190,
+      1322
+    ],
+    "rects": {
+      "core": [
+        78,
+        27,
+        1032,
+        1213
+      ]
+    },
+    "source": "_ART_SOURCES/finale_modular_1003c/storm_hull.png",
+    "sha256": "7d815cd968b1bb7ea90d093f8925f8ea72589a3fd2fb84d7822c04c4cb656303"
+  },
+  "sword_fx": {
+    "key": "fmc_sword_fx",
+    "path": "assets/game/finale_modular_1003c/sword_fx.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "rects": {
+      "0": [
+        0,
+        0,
+        384,
+        512
+      ],
+      "1": [
+        384,
+        0,
+        384,
+        512
+      ],
+      "2": [
+        768,
+        0,
+        384,
+        512
+      ],
+      "3": [
+        1152,
+        0,
+        384,
+        512
+      ],
+      "4": [
+        0,
+        512,
+        384,
+        512
+      ],
+      "5": [
+        384,
+        512,
+        384,
+        512
+      ],
+      "6": [
+        768,
+        512,
+        384,
+        512
+      ],
+      "7": [
+        1152,
+        512,
+        384,
+        512
+      ]
+    },
+    "source": "_ART_SOURCES/finale_modular_1003c/sword_fx.png",
+    "sha256": "d38f713c72f7aea6f4af47186cea7d56d940058719ff787e9bf1e19be58a30f5"
+  }
+}

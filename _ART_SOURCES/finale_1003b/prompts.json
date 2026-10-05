@@ -1,0 +1,52 @@
+{
+  "tool": "image_gen.imagegen",
+  "date": "2026-10-03",
+  "transparent_background": true,
+  "owner": "_BUILD_SOURCE/build_finale_1003b.py",
+  "images": [
+    {
+      "id": "furnace",
+      "file": "furnace.png",
+      "referenced_image_paths": [
+        "assets/game/realm_0930/furnace.png"
+      ],
+      "prompt": "Generate a production game sprite sheet, transparent background, 2 columns by 2 rows, four equal square cells in a square image. An alien mutation of this furnace boss. IMPORTANT add TWO COMPLETE massive articulated mechanical arms, shoulder joints, elbows, forearms, open steel claws, clearly visible attached on BOTH sides of the body in EVERY frame. Black chrome ribbed biomechanical boiler torso, blazing orange furnace core, orange fire cannons integrated into forearms, hanging cables, thick plated legs. No missing limbs. Broad imposing complete robot silhouette. Match the references' detailed high-quality arcade pixel art with crisp pixel edges, hard highlights and shaded metal, not smooth 3D. Each cell shows the SAME complete character at SAME scale and front-facing angle, centered, 12% empty padding, no overlap, no text or labels. Four animation states in reading order: 1 resting intact, 2 energy charging in guns/reactor, 3 firing with short bright muzzle flashes and slight gun recoil, 4 recoil recovery with wisps of heat. No giant beam extending outside cell, no background, no UI, no shadows on ground. Strong alien identity while retaining the original boss weapon signature. Make all four frames exact equal layout."
+    },
+    {
+      "id": "cryo",
+      "file": "cryo.png",
+      "referenced_image_paths": [
+        "_shots/feedback_1002/cryospear-hard-attack.png",
+        "assets/game/realm_0930/chopper_body.png"
+      ],
+      "prompt": "Generate a production game sprite sheet, transparent background, 2 columns by 2 rows, four equal square cells in a square image. Create the ALIEN mutation of the ice boss visible at the top center of the first gameplay reference, using the second reference's dark biomechanical alien metal style. Do NOT reproduce gameplay UI or background. A broad frontal hovering ice battleship, black chrome carapace, six fully visible side cannon pods in three symmetric pairs, bright cyan icy reactor, crystalline blue cold emitters, alien cable tendrils. Distinct broad angular silhouette. Complete weapons in every frame. Match the references' detailed high-quality arcade pixel art with crisp pixel edges, hard highlights and shaded metal, not smooth 3D. Each cell shows the SAME complete character at SAME scale and front-facing angle, centered, 12% empty padding, no overlap, no text or labels. Four animation states in reading order: 1 resting intact, 2 energy charging in guns/reactor, 3 firing with short bright muzzle flashes and slight gun recoil, 4 recoil recovery with wisps of heat. No giant beam extending outside cell, no background, no UI, no shadows on ground. Strong alien identity while retaining the original boss weapon signature. Make all four frames exact equal layout."
+    },
+    {
+      "id": "storm",
+      "file": "storm.png",
+      "referenced_image_paths": [
+        "assets/game/stage4_warfare/s4w_boss_idle.png",
+        "assets/game/realm_0930/chopper_body.png"
+      ],
+      "prompt": "Generate a production game sprite sheet, transparent background, 2 columns by 2 rows, four equal square cells in a square image. Create a biomechanical ALIEN mutation of the first lightning boss ship using the second reference's black chrome alien metal style. Frontal slightly top down arcade enemy ship aimed downward at player. Two fully visible large shoulder missile racks, two side autocannons, giant central long lightning barrel, purple-white electricity core, dark plated alien thorax and cable tendrils. Whole complete authored ship with all weapons in every frame. Match the references' detailed high-quality arcade pixel art with crisp pixel edges, hard highlights and shaded metal, not smooth 3D. Each cell shows the SAME complete character at SAME scale and front-facing angle, centered, 12% empty padding, no overlap, no text or labels. Four animation states in reading order: 1 resting intact, 2 energy charging in guns/reactor, 3 firing with short bright muzzle flashes and slight gun recoil, 4 recoil recovery with wisps of heat. No giant beam extending outside cell, no background, no UI, no shadows on ground. Strong alien identity while retaining the original boss weapon signature. Make all four frames exact equal layout."
+    },
+    {
+      "id": "harrier",
+      "file": "harrier.png",
+      "referenced_image_paths": [
+        "assets/game/bosses/skycarrier/carrier_closed.png",
+        "assets/game/realm_0930/chopper_body.png"
+      ],
+      "prompt": "Generate a production game sprite sheet, transparent background, 2 columns by 2 rows, four equal square cells in a square image. Create a biomechanical ALIEN mutation of the first harrier aircraft carrier, borrowing black chrome alien tendrils of second reference. Broad horizontal manta aircraft with TWO huge turbine lift fans clearly visible, central armored launch bay, recessed violet code emitters, alien spinal vents and curved metal ribs, twin side missile batteries. Distinct wide carrier silhouette, all parts intact in every frame. Match the references' detailed high-quality arcade pixel art with crisp pixel edges, hard highlights and shaded metal, not smooth 3D. Each cell shows the SAME complete character at SAME scale and front-facing angle, centered, 12% empty padding, no overlap, no text or labels. Four animation states in reading order: 1 resting intact, 2 energy charging in guns/reactor, 3 firing with short bright muzzle flashes and slight gun recoil, 4 recoil recovery with wisps of heat. No giant beam extending outside cell, no background, no UI, no shadows on ground. Strong alien identity while retaining the original boss weapon signature. Make all four frames exact equal layout."
+    },
+    {
+      "id": "warden",
+      "file": "warden.png",
+      "referenced_image_paths": [
+        "assets/game/combat_final/stage7_warden_last_stand_spritecook.png",
+        "assets/game/realm_0930/possessed_body.png"
+      ],
+      "prompt": "Generate a production game sprite sheet, transparent background, 2 columns by 2 rows, four equal square cells in a square image. Create an ultimate ALIEN mutation of the sewer Warden in first reference, using second reference's black chrome biomechanical styling. Full frontal heavy six-limbed mechanical crab walker, circular toxic lime reactor chest, two large multi-barrel chainguns aimed at viewer, TWO outer articulated claw arms and four support legs, alien pipes and black tendrils, violet secondary energy rings. Every limb and cannon complete in every frame. Massive intimidating final enemy. Match the references' detailed high-quality arcade pixel art with crisp pixel edges, hard highlights and shaded metal, not smooth 3D. Each cell shows the SAME complete character at SAME scale and front-facing angle, centered, 12% empty padding, no overlap, no text or labels. Four animation states in reading order: 1 resting intact, 2 energy charging in guns/reactor, 3 firing with short bright muzzle flashes and slight gun recoil, 4 recoil recovery with wisps of heat. No giant beam extending outside cell, no background, no UI, no shadows on ground. Strong alien identity while retaining the original boss weapon signature. Make all four frames exact equal layout."
+    }
+  ]
+}

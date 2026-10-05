@@ -1,0 +1,1065 @@
+{
+  "native": {
+    "checks": [
+      {
+        "ok": true,
+        "name": "five independent pilot-attached health readouts render"
+      },
+      {
+        "ok": true,
+        "name": "player and four live allies render their ability icons"
+      },
+      {
+        "ok": true,
+        "name": "rendered Jace bar follows his moved ship without a fixed HUD slot"
+      },
+      {
+        "ok": true,
+        "name": "turbo warned release reaches real gameplay"
+      },
+      {
+        "ok": true,
+        "name": "turbo commits offscreen horizontal passes with a warning row"
+      },
+      {
+        "ok": true,
+        "name": "slug warned release reaches real gameplay"
+      },
+      {
+        "ok": true,
+        "name": "helix warned release reaches real gameplay"
+      },
+      {
+        "ok": true,
+        "name": "actual authored red-orange ball exists in combat"
+      },
+      {
+        "ok": true,
+        "name": "actual helix detonation emits eight energy balls"
+      },
+      {
+        "ok": true,
+        "name": "rockets warned release reaches real gameplay"
+      },
+      {
+        "ok": true,
+        "name": "Kaia renders sequential alternating launcher releases"
+      },
+      {
+        "ok": true,
+        "name": "cloak warned release reaches real gameplay"
+      },
+      {
+        "ok": true,
+        "name": "Nyx tracing remains visible while HP and missile acquisition disappear"
+      },
+      {
+        "ok": true,
+        "name": "cloaking invalidates Nyx missile locks acquired before the cloak"
+      },
+      {
+        "ok": true,
+        "name": "cloaked Nyx fires actual ambush rounds"
+      },
+      {
+        "ok": true,
+        "name": "blind gunfire damages cloaked Nyx and renders the white hit silhouette"
+      },
+      {
+        "ok": true,
+        "name": "generated launchers, rockets, wakes, nova and actual palette cells draw through game canvas"
+      },
+      {
+        "ok": true,
+        "name": "original asterisk warning art renders during charges"
+      },
+      {
+        "ok": true,
+        "name": "ordinary player bullets intercept Kaia missiles in the native update"
+      },
+      {
+        "ok": true,
+        "name": "ordinary gunfire destroys Jace helix before detonation"
+      },
+      {
+        "ok": true,
+        "name": "generated Kaia box is a real hittable missile-targetable enemy cache"
+      },
+      {
+        "ok": true,
+        "name": "actual gunfire destroys the enemy cache before pickup"
+      },
+      {
+        "ok": true,
+        "name": "all five Rebels naturally acquire their own generated ability boxes"
+      },
+      {
+        "ok": true,
+        "name": "live encounter scheduler releases every requested pilot special"
+      },
+      {
+        "ok": true,
+        "name": "kaia fallback assigns only surviving Rebel portrait speakers"
+      },
+      {
+        "ok": true,
+        "name": "nyx fallback assigns only surviving Rebel portrait speakers"
+      },
+      {
+        "ok": true,
+        "name": "jace fallback assigns only surviving Rebel portrait speakers"
+      },
+      {
+        "ok": true,
+        "name": "rook fallback assigns only surviving Rebel portrait speakers"
+      },
+      {
+        "ok": true,
+        "name": "voss fallback assigns only surviving Rebel portrait speakers"
+      },
+      {
+        "ok": true,
+        "name": "all nine Rook/Voss dialogue beats complete without skipping"
+      },
+      {
+        "ok": true,
+        "name": "world scroll continues during protected dialogue"
+      },
+      {
+        "ok": true,
+        "name": "zero page and console errors"
+      }
+    ],
+    "screens": [
+      "five-vs-five",
+      "attached-bars",
+      "turbo-charge",
+      "turbo-release",
+      "turbo-warning-row",
+      "slug-charge",
+      "slug-release",
+      "helix-charge",
+      "helix-release",
+      "helix-eight-way-nova",
+      "rockets-charge",
+      "rockets-release",
+      "alternating-rockets",
+      "cloak-charge",
+      "cloak-release",
+      "cloak-ambush",
+      "cloak-hit-white",
+      "personal-rocket-box",
+      "natural-ability-pickup",
+      "natural-dogfight",
+      "scanner-kaia",
+      "scanner-nyx",
+      "scanner-jace",
+      "scanner-rook",
+      "scanner-voss",
+      "combat-resumed"
+    ],
+    "draws": {
+      "ra4_ui": 1,
+      "nhxsb_g_2": 1,
+      "ra4_nhxsb_g_2": 359,
+      "fchgc_2": 1,
+      "ra4_fchgc_2": 64,
+      "stage6_blue_master": 15711,
+      "nl6c_low_rolling_bank_4": 58197,
+      "nl6c_low_rolling_bank_3": 57759,
+      "nl6c_rain_cloud_2": 20485,
+      "nl6c_rain_cloud_3": 24292,
+      "nl6c_rain_cloud_4": 20968,
+      "nl6c_low_rolling_bank_1": 56631,
+      "nl6c_low_rolling_bank_0": 57833,
+      "nl6c_low_rolling_bank_2": 55765,
+      "nl6c_heavy_rain_cloud_5": 47655,
+      "nl6c_heavy_rain_cloud_0": 48169,
+      "nl6c_heavy_rain_cloud_4": 48460,
+      "nl6c_heavy_rain_cloud_3": 46944,
+      "rr_roll_voss_iron_vulture_0": 4675,
+      "rr_roll_nyx_ghostknife_0": 1261,
+      "rr_roll_rook_breachhammer_0": 4652,
+      "arch_blaster_gun_3": 2350,
+      "rr_roll_kaia_signal_wraith_0": 2246,
+      "ra4_fx": 6693,
+      "rr_roll_jace_razorjack_0": 2270,
+      "ship_axel": 4413,
+      "ship_cole_so6": 19,
+      "ship_decker_so4": 18,
+      "ship_falva_so1": 22,
+      "bof_player_weapon_special_icons_atlas": 8843,
+      "ship_yuri_g2": 279,
+      "repair30_chaingun_mount_yuri_left": 1138,
+      "repair30_chaingun_barrel_top": 2276,
+      "repair30_chaingun_mount_yuri_right": 1138,
+      "hud_equip_frame_0924": 4735,
+      "micon_chaingun_1": 4735,
+      "lock_frame_0922": 4735,
+      "hud_radar_bezel_0924": 4735,
+      "nl6c_rain_cloud_5": 23677,
+      "nl6c_heavy_rain_cloud_1": 47279,
+      "bmfx_fov_green_tall": 400,
+      "bmfx_alert_green_impact_imminent": 400,
+      "ship_decker_so5": 16,
+      "ship_falva_so2": 20,
+      "ship_cole_so7": 20,
+      "ship_decker_so6": 20,
+      "ship_falva_so3": 25,
+      "ship_yuri_g1": 293,
+      "ship_cole": 4471,
+      "ship_decker_so7": 20,
+      "ship_falva_so4": 25,
+      "arch_blaster_gun_0": 2384,
+      "ship_yuri": 3013,
+      "ship_decker": 4435,
+      "ship_falva_so5": 20,
+      "ship_falva_so6": 25,
+      "nl6c_low_rolling_bank_5": 56449,
+      "ship_falva_so7": 25,
+      "bmfx_fov_yellow_tall": 780,
+      "bmfx_alert_yellow_impact_imminent": 390,
+      "ship_falva": 4384,
+      "arch_blaster_gun_1": 2350,
+      "nl6c_heavy_rain_cloud_2": 47269,
+      "arch_blaster_gun_2": 2382,
+      "bmfx_fov_red_tall": 782,
+      "bmfx_alert_red_impact_imminent": 391,
+      "nl6c_rain_cloud_0": 19785,
+      "nl6c_rain_cloud_1": 23776,
+      "missile_base_m_box_0924": 1677,
+      "ra4_fchgc_0": 61,
+      "ra4_nhxsb_g_0": 79,
+      "ra4_fchgc_1": 58,
+      "ra4_nhxsb_g_1": 381,
+      "ra4_fchgc_3": 60,
+      "special_axel": 914,
+      "rr_roll_kaia_signal_wraith_1": 6,
+      "rr_roll_kaia_signal_wraith_2": 6,
+      "rr_roll_kaia_signal_wraith_3": 6,
+      "rr_roll_kaia_signal_wraith_4": 6,
+      "rr_roll_kaia_signal_wraith_5": 6,
+      "rr_roll_kaia_signal_wraith_6": 4,
+      "rr_roll_kaia_signal_wraith_7": 6,
+      "nfb_launch_0": 6,
+      "nfb_orb3_0": 8,
+      "nfb_fl3_0": 8,
+      "ship_axel_so0": 20,
+      "ship_cole_br0": 20,
+      "ship_decker_br0": 24,
+      "ship_falva_br0": 24,
+      "nfb_launch_1": 6,
+      "nfb_orb3_1": 10,
+      "nfb_fl3_1": 10,
+      "nfb_launch_2": 6,
+      "ship_cole_br1": 15,
+      "ship_decker_br1": 18,
+      "ship_falva_br1": 18,
+      "ship_axel_so1": 21,
+      "nfb_launch_3": 8,
+      "nfb_orb3_2": 10,
+      "nfb_fl3_2": 10,
+      "ship_cole_br2": 21,
+      "ship_decker_br2": 25,
+      "ship_falva_br2": 25,
+      "ship_axel_so2": 16,
+      "ship_cole_br3": 15,
+      "ship_decker_br3": 18,
+      "ship_falva_br3": 18,
+      "ship_axel_so3": 20,
+      "ship_cole_br4": 20,
+      "ship_decker_br4": 24,
+      "ship_falva_br4": 24,
+      "ship_cole_br5": 15,
+      "ship_decker_br5": 18,
+      "ship_falva_br5": 18,
+      "ship_axel_so4": 20,
+      "ship_cole_br6": 20,
+      "ship_decker_br6": 24,
+      "ship_falva_br6": 24,
+      "ship_axel_so5": 16,
+      "ship_cole_br7": 15,
+      "ship_decker_br7": 18,
+      "ship_falva_br7": 18,
+      "ship_axel_so6": 20,
+      "ship_axel_so7": 20,
+      "bg6_flash_0": 112,
+      "bg6_flash_1": 112,
+      "bg6_flash_2": 96,
+      "bg6_bolt_6": 65,
+      "bg6_bolt_7": 48,
+      "ship_axel_br0": 24,
+      "mexh_4": 1516,
+      "ship_axel_br1": 18,
+      "mexh_1": 767,
+      "mexh_0": 312,
+      "ship_axel_br2": 25,
+      "mexh_3": 1406,
+      "ship_axel_br3": 18,
+      "mexh_5": 3115,
+      "mexh_2": 1165,
+      "ship_axel_br4": 24,
+      "ship_axel_br5": 18,
+      "ship_axel_br6": 24,
+      "ship_axel_br7": 18,
+      "rr_ship_nyx_ghostknife": 1027,
+      "rg4_decker_effects": 8408,
+      "rr_roll_rook_breachhammer_1": 12,
+      "nxp_clus_0": 114,
+      "rr_roll_rook_breachhammer_2": 12,
+      "nxp_clus_1": 148,
+      "rr_roll_rook_breachhammer_3": 12,
+      "nxp_clus_2": 149,
+      "bpfx_proj_kinetic_0": 913,
+      "rr_roll_rook_breachhammer_4": 12,
+      "bpfx_proj_kinetic_1": 1130,
+      "nxp_clus_3": 148,
+      "rr_roll_rook_breachhammer_5": 12,
+      "rr_roll_rook_breachhammer_6": 8,
+      "bpfx_proj_kinetic_2": 1080,
+      "nxp_clus_4": 149,
+      "rr_roll_rook_breachhammer_7": 13,
+      "bpfx_proj_kinetic_3": 879,
+      "nxp_clus_5": 148,
+      "bpfx_proj_kinetic_4": 812,
+      "nxp_clus_6": 148,
+      "bpfx_proj_kinetic_5": 830,
+      "nxp_clus_7": 148,
+      "bpfx_proj_kinetic_6": 771,
+      "bpfx_proj_kinetic_7": 667,
+      "ship_falva_so0": 20,
+      "mgcf_1_0": 1,
+      "nxp_barrage_0": 4,
+      "nxp_barrage_1": 5,
+      "nxp_barrage_2": 5,
+      "nxp_barrage_3": 4,
+      "nxp_barrage_4": 5,
+      "nxp_barrage_5": 5,
+      "nxp_barrage_6": 5,
+      "ship_decker_so0": 15,
+      "nxp_barrage_7": 5,
+      "ship_decker_so1": 15,
+      "ship_decker_so2": 12,
+      "ship_decker_so3": 15,
+      "bg6_bolt_0": 60,
+      "ship_cole_so0": 15,
+      "bg6_bolt_1": 45,
+      "ship_cole_so1": 15,
+      "bg6_bolt_2": 60,
+      "bg6_bolt_3": 45,
+      "ship_cole_so2": 12,
+      "bg6_bolt_4": 60,
+      "ship_cole_so3": 15,
+      "bg6_bolt_5": 45,
+      "ship_cole_so4": 15,
+      "nsw_box_cole": 987,
+      "ship_cole_so5": 12,
+      "av3_laser_muzzles": 56,
+      "nsw_ring_3": 1,
+      "nsw_dist_0": 716,
+      "rzb_sonic_wave": 70,
+      "nsw_dist_1": 754,
+      "nsw_dist_2": 772,
+      "nsw_dist_3": 729,
+      "nsw_circ_0": 20,
+      "nsw_circ_1": 16,
+      "nsw_circ_2": 20,
+      "nsw_circ_3": 16,
+      "rr_roll_voss_iron_vulture_1": 9,
+      "rr_roll_voss_iron_vulture_2": 9,
+      "rr_roll_voss_iron_vulture_3": 9,
+      "rr_roll_voss_iron_vulture_4": 9,
+      "rr_roll_voss_iron_vulture_5": 9,
+      "rr_roll_voss_iron_vulture_6": 6,
+      "rr_roll_voss_iron_vulture_7": 9,
+      "nst6_neoncity": 15501,
+      "nsw_box_decker": 696,
+      "nfb_orb3_3": 4,
+      "nfb_fl3_3": 4,
+      "nfb_orb3_4": 5,
+      "nfb_fl3_4": 5,
+      "nfb_orb3_5": 6,
+      "nfb_fl3_5": 6,
+      "nfb_orb3_6": 4,
+      "nfb_fl3_6": 4,
+      "nfb_orb3_7": 5,
+      "nfb_fl3_7": 5,
+      "spread1001_kinetic": 75,
+      "rr_roll_jace_razorjack_1": 3,
+      "rr_roll_jace_razorjack_2": 3,
+      "rr_roll_jace_razorjack_3": 3,
+      "rr_roll_jace_razorjack_4": 3,
+      "rr_roll_jace_razorjack_5": 3,
+      "rr_roll_jace_razorjack_6": 2,
+      "rr_roll_jace_razorjack_7": 3,
+      "rr_portrait_kaia": 2,
+      "rr_portrait_nyx": 2,
+      "rr_portrait_jace": 2,
+      "rr_portrait_rook": 559,
+      "rr_portrait_voss": 734,
+      "comm_decker_idle": 489,
+      "comm_decker_talk-small": 109,
+      "comm_decker_talk-o": 68,
+      "comm_decker_talk-medium": 113,
+      "comm_decker_talk-closed": 52,
+      "comm_decker_talk-wide": 60,
+      "comm_cole_idle": 189,
+      "comm_cole_talk-medium": 28,
+      "comm_cole_talk-o": 8,
+      "comm_cole_talk-small": 21,
+      "comm_cole_talk-wide": 13,
+      "nsd_ring_0": 9
+    },
+    "events": [
+      {
+        "event": "personalBoxDrop",
+        "t": 1.4,
+        "pilot": "voss",
+        "kind": "turbo"
+      },
+      {
+        "event": "personalBoxCollected",
+        "t": 1.6999999999999988,
+        "pilot": "voss",
+        "kind": "turbo"
+      },
+      {
+        "event": "specialStart",
+        "t": 1.7166666666666655,
+        "pilot": "voss",
+        "kind": "turbo"
+      },
+      {
+        "event": "specialStart",
+        "t": 2.499999999999996,
+        "pilot": "voss",
+        "kind": "turbo"
+      },
+      {
+        "event": "specialRelease",
+        "t": 3.849999999999991,
+        "pilot": "voss",
+        "kind": "turbo"
+      },
+      {
+        "event": "specialStart",
+        "t": 4.8333333333333215,
+        "pilot": "rook",
+        "kind": "slug"
+      },
+      {
+        "event": "specialRelease",
+        "t": 5.833333333333318,
+        "pilot": "rook",
+        "kind": "slug"
+      },
+      {
+        "event": "specialStart",
+        "t": 5.999999999999984,
+        "pilot": "jace",
+        "kind": "helix"
+      },
+      {
+        "event": "specialRelease",
+        "t": 8.016666666666644,
+        "pilot": "jace",
+        "kind": "helix"
+      },
+      {
+        "event": "helixRelease",
+        "t": 8.016666666666644,
+        "pilot": "jace"
+      },
+      {
+        "event": "helixNova",
+        "t": 9.350000000000044,
+        "count": 8
+      },
+      {
+        "event": "specialStart",
+        "t": 9.500000000000052,
+        "pilot": "kaia",
+        "kind": "rockets"
+      },
+      {
+        "event": "specialRelease",
+        "t": 11.266666666666806,
+        "pilot": "kaia",
+        "kind": "rockets"
+      },
+      {
+        "event": "rocketLaunch",
+        "t": 11.266666666666806,
+        "pilot": "kaia",
+        "side": 1,
+        "locked": false
+      },
+      {
+        "event": "rocketLaunch",
+        "t": 11.700000000000161,
+        "pilot": "kaia",
+        "side": -1,
+        "locked": false
+      },
+      {
+        "event": "specialStart",
+        "t": 11.866666666666836,
+        "pilot": "nyx",
+        "kind": "cloak"
+      },
+      {
+        "event": "specialRelease",
+        "t": 13.016666666666893,
+        "pilot": "nyx",
+        "kind": "cloak"
+      },
+      {
+        "event": "specialStart",
+        "t": 16.183333333333696,
+        "pilot": "kaia",
+        "kind": "rockets"
+      },
+      {
+        "event": "rocketLaunch",
+        "t": 16.183333333333696,
+        "pilot": "kaia",
+        "side": 1,
+        "locked": true
+      },
+      {
+        "event": "helixRelease",
+        "t": 16.20000000000036,
+        "pilot": "jace"
+      },
+      {
+        "event": "ordnanceDestroyed",
+        "t": 16.216666666667027,
+        "kind": "helix"
+      },
+      {
+        "event": "personalBoxDrop",
+        "t": 16.216666666667027,
+        "pilot": "kaia",
+        "kind": "rockets"
+      },
+      {
+        "event": "personalBoxDestroyed",
+        "t": 16.233333333333693,
+        "pilot": "kaia"
+      },
+      {
+        "event": "personalBoxDrop",
+        "t": 16.25000000000036,
+        "pilot": "voss",
+        "kind": "fusion"
+      },
+      {
+        "event": "personalBoxDrop",
+        "t": 16.266666666667025,
+        "pilot": "nyx",
+        "kind": "cloak"
+      },
+      {
+        "event": "personalBoxDrop",
+        "t": 16.28333333333369,
+        "pilot": "rook",
+        "kind": "slug"
+      },
+      {
+        "event": "personalBoxDrop",
+        "t": 16.300000000000356,
+        "pilot": "kaia",
+        "kind": "rockets"
+      },
+      {
+        "event": "personalBoxDrop",
+        "t": 16.31666666666702,
+        "pilot": "jace",
+        "kind": "helix"
+      },
+      {
+        "event": "personalBoxCollected",
+        "t": 16.583333333333673,
+        "pilot": "voss",
+        "kind": "fusion"
+      },
+      {
+        "event": "specialStart",
+        "t": 16.60000000000034,
+        "pilot": "voss",
+        "kind": "fusion"
+      },
+      {
+        "event": "personalBoxCollected",
+        "t": 16.60000000000034,
+        "pilot": "nyx",
+        "kind": "cloak"
+      },
+      {
+        "event": "personalBoxCollected",
+        "t": 16.616666666667005,
+        "pilot": "rook",
+        "kind": "slug"
+      },
+      {
+        "event": "personalBoxCollected",
+        "t": 16.63333333333367,
+        "pilot": "kaia",
+        "kind": "rockets"
+      },
+      {
+        "event": "personalBoxCollected",
+        "t": 16.650000000000336,
+        "pilot": "jace",
+        "kind": "helix"
+      },
+      {
+        "event": "specialStart",
+        "t": 17.76666666666694,
+        "pilot": "nyx",
+        "kind": "cloak"
+      },
+      {
+        "event": "specialRelease",
+        "t": 18.716666666666885,
+        "pilot": "voss",
+        "kind": "fusion"
+      },
+      {
+        "event": "specialRelease",
+        "t": 18.916666666666874,
+        "pilot": "nyx",
+        "kind": "cloak"
+      },
+      {
+        "event": "specialStart",
+        "t": 20.06666666666681,
+        "pilot": "rook",
+        "kind": "slug"
+      },
+      {
+        "event": "specialRelease",
+        "t": 21.06666666666675,
+        "pilot": "rook",
+        "kind": "slug"
+      },
+      {
+        "event": "specialStart",
+        "t": 23.983333333333253,
+        "pilot": "kaia",
+        "kind": "rockets"
+      },
+      {
+        "event": "specialStart",
+        "t": 25.149999999999853,
+        "pilot": "jace",
+        "kind": "helix"
+      },
+      {
+        "event": "specialRelease",
+        "t": 25.74999999999982,
+        "pilot": "kaia",
+        "kind": "rockets"
+      },
+      {
+        "event": "rocketLaunch",
+        "t": 25.74999999999982,
+        "pilot": "kaia",
+        "side": 1,
+        "locked": false
+      },
+      {
+        "event": "rocketLaunch",
+        "t": 26.183333333333128,
+        "pilot": "kaia",
+        "side": -1,
+        "locked": false
+      },
+      {
+        "event": "rocketLaunch",
+        "t": 26.616666666666436,
+        "pilot": "kaia",
+        "side": 1,
+        "locked": false
+      },
+      {
+        "event": "rocketLaunch",
+        "t": 27.049999999999745,
+        "pilot": "kaia",
+        "side": -1,
+        "locked": false
+      },
+      {
+        "event": "specialRelease",
+        "t": 27.166666666666405,
+        "pilot": "jace",
+        "kind": "helix"
+      },
+      {
+        "event": "helixRelease",
+        "t": 27.166666666666405,
+        "pilot": "jace"
+      },
+      {
+        "event": "helixNova",
+        "t": 27.866666666666365,
+        "count": 8
+      },
+      {
+        "event": "personalBoxDrop",
+        "t": 28.616666666666323,
+        "pilot": "voss",
+        "kind": "turbo"
+      },
+      {
+        "event": "personalBoxDrop",
+        "t": 28.63333333333299,
+        "pilot": "nyx",
+        "kind": "cloak"
+      },
+      {
+        "event": "personalBoxDrop",
+        "t": 28.649999999999654,
+        "pilot": "rook",
+        "kind": "slug"
+      },
+      {
+        "event": "personalBoxCollected",
+        "t": 28.949999999999637,
+        "pilot": "voss",
+        "kind": "turbo"
+      },
+      {
+        "event": "personalBoxCollected",
+        "t": 28.966666666666303,
+        "pilot": "nyx",
+        "kind": "cloak"
+      },
+      {
+        "event": "specialStart",
+        "t": 28.98333333333297,
+        "pilot": "nyx",
+        "kind": "cloak"
+      },
+      {
+        "event": "personalBoxCollected",
+        "t": 28.98333333333297,
+        "pilot": "rook",
+        "kind": "slug"
+      },
+      {
+        "event": "specialRelease",
+        "t": 30.133333333332903,
+        "pilot": "nyx",
+        "kind": "cloak"
+      },
+      {
+        "event": "specialStart",
+        "t": 30.14999999999957,
+        "pilot": "rook",
+        "kind": "slug"
+      },
+      {
+        "event": "specialRelease",
+        "t": 31.149999999999512,
+        "pilot": "rook",
+        "kind": "slug"
+      },
+      {
+        "event": "specialStart",
+        "t": 34.066666666666016,
+        "pilot": "voss",
+        "kind": "turbo"
+      },
+      {
+        "event": "specialRelease",
+        "t": 35.41666666666594,
+        "pilot": "voss",
+        "kind": "turbo"
+      },
+      {
+        "event": "personalBoxDrop",
+        "t": 36.249999999999226,
+        "pilot": "kaia",
+        "kind": "rockets"
+      },
+      {
+        "event": "personalBoxDrop",
+        "t": 36.26666666666589,
+        "pilot": "jace",
+        "kind": "helix"
+      },
+      {
+        "event": "personalBoxCollected",
+        "t": 36.58333333333254,
+        "pilot": "kaia",
+        "kind": "rockets"
+      },
+      {
+        "event": "specialStart",
+        "t": 36.599999999999206,
+        "pilot": "kaia",
+        "kind": "rockets"
+      },
+      {
+        "event": "personalBoxCollected",
+        "t": 36.599999999999206,
+        "pilot": "jace",
+        "kind": "helix"
+      },
+      {
+        "event": "specialRelease",
+        "t": 38.36666666666577,
+        "pilot": "kaia",
+        "kind": "rockets"
+      },
+      {
+        "event": "rocketLaunch",
+        "t": 38.36666666666577,
+        "pilot": "kaia",
+        "side": 1,
+        "locked": true
+      },
+      {
+        "event": "rocketLaunch",
+        "t": 38.79999999999908,
+        "pilot": "kaia",
+        "side": -1,
+        "locked": true
+      },
+      {
+        "event": "rocketLaunch",
+        "t": 39.23333333333239,
+        "pilot": "kaia",
+        "side": 1,
+        "locked": true
+      },
+      {
+        "event": "rocketLaunch",
+        "t": 39.6666666666657,
+        "pilot": "kaia",
+        "side": -1,
+        "locked": true
+      },
+      {
+        "event": "rescueStart",
+        "t": 40.23333333333233,
+        "scanner": "kaia"
+      },
+      {
+        "event": "scannerChosen",
+        "t": 40.23333333333233,
+        "pilot": "kaia"
+      },
+      {
+        "event": "scan",
+        "t": 40.23333333333233
+      },
+      {
+        "event": "rescueStart",
+        "t": 40.249999999999,
+        "scanner": "nyx"
+      },
+      {
+        "event": "scannerChosen",
+        "t": 40.249999999999,
+        "pilot": "nyx"
+      },
+      {
+        "event": "scan",
+        "t": 40.249999999999
+      },
+      {
+        "event": "rescueStart",
+        "t": 40.266666666665664,
+        "scanner": "jace"
+      },
+      {
+        "event": "scannerChosen",
+        "t": 40.266666666665664,
+        "pilot": "jace"
+      },
+      {
+        "event": "scan",
+        "t": 40.266666666665664
+      },
+      {
+        "event": "rescueStart",
+        "t": 40.28333333333233,
+        "scanner": "rook"
+      },
+      {
+        "event": "scannerChosen",
+        "t": 40.28333333333233,
+        "pilot": "rook"
+      },
+      {
+        "event": "scan",
+        "t": 40.28333333333233
+      },
+      {
+        "event": "rescueStart",
+        "t": 40.299999999998995,
+        "scanner": "voss"
+      },
+      {
+        "event": "scannerChosen",
+        "t": 40.299999999998995,
+        "pilot": "voss"
+      },
+      {
+        "event": "scan",
+        "t": 40.299999999998995
+      },
+      {
+        "event": "rescueStart",
+        "t": 40.31666666666566,
+        "scanner": "rook"
+      },
+      {
+        "event": "scannerChosen",
+        "t": 40.31666666666566,
+        "pilot": "rook"
+      },
+      {
+        "event": "formation",
+        "t": 40.33333333333233
+      },
+      {
+        "event": "cast",
+        "t": 46.216666666665326
+      },
+      {
+        "event": "cloak",
+        "t": 50.41666666666509
+      },
+      {
+        "event": "scan",
+        "t": 58.49999999999796
+      },
+      {
+        "event": "reveal",
+        "t": 68.08333333333076
+      },
+      {
+        "event": "rescueComplete",
+        "t": 80.94999999999669
+      }
+    ],
+    "errors": []
+  },
+  "review": {
+    "checks": [
+      {
+        "ok": true,
+        "name": "Full encounter opens its live encounter state"
+      },
+      {
+        "ok": true,
+        "name": "practice intro keeps exactly four allies beside the player"
+      },
+      {
+        "ok": true,
+        "name": "Fight now opens its live encounter state"
+      },
+      {
+        "ok": true,
+        "name": "practice fight keeps exactly four allies beside the player"
+      },
+      {
+        "ok": true,
+        "name": "real keyboard fire creates player shots in practice"
+      },
+      {
+        "ok": true,
+        "name": "Gang Mode opens its live encounter state"
+      },
+      {
+        "ok": true,
+        "name": "practice gang keeps exactly four allies beside the player"
+      },
+      {
+        "ok": true,
+        "name": "Voss turbo opens its live encounter state"
+      },
+      {
+        "ok": true,
+        "name": "practice turbo keeps exactly four allies beside the player"
+      },
+      {
+        "ok": true,
+        "name": "Voss Fusion opens its live encounter state"
+      },
+      {
+        "ok": true,
+        "name": "practice fusion keeps exactly four allies beside the player"
+      },
+      {
+        "ok": true,
+        "name": "Rook .50 cal opens its live encounter state"
+      },
+      {
+        "ok": true,
+        "name": "practice slug keeps exactly four allies beside the player"
+      },
+      {
+        "ok": true,
+        "name": "Jace helix opens its live encounter state"
+      },
+      {
+        "ok": true,
+        "name": "practice helix keeps exactly four allies beside the player"
+      },
+      {
+        "ok": true,
+        "name": "Kaia rockets opens its live encounter state"
+      },
+      {
+        "ok": true,
+        "name": "practice rockets keeps exactly four allies beside the player"
+      },
+      {
+        "ok": true,
+        "name": "Nyx stealth opens its live encounter state"
+      },
+      {
+        "ok": true,
+        "name": "practice cloak keeps exactly four allies beside the player"
+      },
+      {
+        "ok": true,
+        "name": "practice kaia scene selects correct survivor without duplicating Decker"
+      },
+      {
+        "ok": true,
+        "name": "practice nyx scene selects correct survivor without duplicating Decker"
+      },
+      {
+        "ok": true,
+        "name": "practice jace scene selects correct survivor without duplicating Decker"
+      },
+      {
+        "ok": true,
+        "name": "practice rook scene selects correct survivor without duplicating Decker"
+      },
+      {
+        "ok": true,
+        "name": "practice voss scene selects correct survivor without duplicating Decker"
+      },
+      {
+        "ok": true,
+        "name": "all playable shortcuts have zero page/console errors"
+      }
+    ],
+    "screens": [
+      "playable-fight"
+    ],
+    "errors": []
+  },
+  "suite": {
+    "assertions": 7089,
+    "exit": 0,
+    "summary": "FALVA/LIZZIE BUILD OK, 0 ERRORS",
+    "log": "_shots/rebel_arsenal_test_1004c_final.log"
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "checks": [
+    {
+      "ok": true,
+      "name": "XHARR retains correct arena"
+    },
+    {
+      "ok": true,
+      "name": "XHARR retains encounter"
+    },
+    {
+      "ok": true,
+      "name": "XREBEL retains correct arena"
+    },
+    {
+      "ok": true,
+      "name": "XREBEL retains encounter"
+    },
+    {
+      "ok": true,
+      "name": "HARR6 retains correct arena"
+    },
+    {
+      "ok": true,
+      "name": "HARR6 retains encounter"
+    },
+    {
+      "ok": true,
+      "name": "REBEL6 retains correct arena"
+    },
+    {
+      "ok": true,
+      "name": "REBEL6 retains encounter"
+    },
+    {
+      "ok": true,
+      "name": "transparent lagoon exposes visibly animated authored water"
+    },
+    {
+      "ok": true,
+      "name": "mountain and city remain stable at fixed camera while water animates"
+    },
+    {
+      "ok": true,
+      "name": "all four native water frames are drawn through XART and game context"
+    },
+    {
+      "ok": true,
+      "name": "arena preserves world/camera source alignment"
+    },
+    {
+      "ok": true,
+      "name": "live review XREBEL button"
+    },
+    {
+      "ok": true,
+      "name": "live review XHARR button"
+    },
+    {
+      "ok": true,
+      "name": "zero page and console errors"
+    }
+  ],
+  "errors": [],
+  "pixels": {
+    "water": 225164,
+    "moving": 107124,
+    "land": 713352,
+    "stable": 713020,
+    "maxLandDelta": 7,
+    "keys": [
+      "nwl_water_0",
+      "nwl_water_1",
+      "nwl_water_2",
+      "nwl_water_3"
+    ],
+    "src": 215,
+    "top": 0,
+    "sy": 215
+  },
+  "suite": {
+    "assertions": 7177,
+    "exit_code": 0,
+    "summary": "FALVA/LIZZIE BUILD OK, 0 ERRORS",
+    "log": "_shots/stagex_coast_1004j/suite.log"
+  },
+  "existing_probe": {
+    "checks": 75,
+    "passed": 75,
+    "exit_code": 0,
+    "log": "_shots/stagex_coast_1004j/sky_regression.log"
+  },
+  "art": {
+    "mode": "builtin-imagegen-edit",
+    "source": "_ART_SOURCES/stagex_coast_1004j/terrain-source.png",
+    "source_sha256": "a188ad3378776d88c90b27f79409e1f246bd70eaebe3f0e65b250843bcd4ee08",
+    "source_size": [
+      937,
+      1678
+    ],
+    "runtime_size": [
+      680,
+      1218
+    ],
+    "normalization": "nearest-neighbor only; generated alpha preserved",
+    "terrain_key": "sx1001_arena",
+    "water_keys": [
+      "nwl_water_0",
+      "nwl_water_1",
+      "nwl_water_2",
+      "nwl_water_3"
+    ],
+    "transparent_pixels": 280914,
+    "partial_alpha_pixels": 547033
+  },
+  "initial_review_failure": "GIF was created after loading review, causing one 404. Generation moved before review navigation; final 15/15 with zero errors. Initial log and JSON retained under _shots/stagex_coast_1004j."
+}

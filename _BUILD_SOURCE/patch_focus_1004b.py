@@ -1,0 +1,16 @@
+from pathlib import Path
+R=Path(__file__).resolve().parents[1]
+def edit(name,repls):
+ p=R/name;b=p.read_bytes();nl='\r\n' if b.count(b'\r\n')>b.count(b'\n')/2 else '\n';s=b.decode().replace('\r\n','\n')
+ for a,z in repls:
+  assert a in s,(name,a[:80]);s=s.replace(a,z,1)
+ p.write_bytes(s.replace('\n',nl).encode())
+edit('assets/game.js',[("5:'chrome',6:'dark',7:'toxic',8:'prism'","5:'chrome',6:'prism',7:'toxic',8:'dark'"),('INFUSION_STAGE_BIAS even reserves prism for stage 8','INFUSION_STAGE_BIAS even reserves dark matter for stage 8'),('const lane=q.all?(q.slot+.5)/8:', 'const lane=q.all?(q.slot+.5)/Math.max(1,W.ships.length):'),('const pins=[[0,0],[-.13,.18],[.13,.18],[-.26,.36],[0,.36],[.26,.36],[-.39,.54],[.39,.54]];', 'const pins=[[-.20,.18],[.20,.18],[-.37,.40],[.37,.40],[0,.36],[-.26,.36],[-.39,.54],[.39,.54]];'),('SPLIT THE WING. CHOOSE LEFT OR RIGHT.','STAY TOGETHER. CHOOSE LEFT OR RIGHT.'),('WE TAKE THE HARRIER. THE REST GO RIGHT!','FIVE-SHIP WING, TAKE THE HARRIER TOGETHER!'),('WE TAKE THE REBELS. OTHER TEAM, COVER THE CARRIER!','FIVE-SHIP WING, TAKE THE REBELS TOGETHER!'),("for(const q of W.ships)if((q.slot&1)===(W.route==='left'?1:0)){q.phase='leave';q.t=0;}","// The current roster is already five ships including the player; do not split it again.")])
+edit('assets/rebel_gang_1004.js',[
+ ('G.releaseAt=G.age+warm+.65;',"G.releaseAt=G.age+(diffKey==='furious'||diffKey==='insanity'?1.15:1.85);"),
+ ("if(A.t>.07&&A.shot===0){A.shot++;for(const off of (A.kind==='ghost'?[-.21,0,.21]:[-.13,.13]))rg4Round(q,A.a+off,G.gang?5.0:4.0);Audio.SFX.enemyShoot?.();}","if(A.t>.07+A.shot*.26&&A.shot<(G.gang?4:3)){A.shot++;const drift=(A.shot-2)*.075;for(const off of (A.kind==='ghost'?[-.21,0,.21]:[-.13,.13]))rg4Round(q,A.a+off+drift,G.gang?5.0:4.0);Audio.SFX.enemyShoot?.();}"),
+ ("// A shared release budget leaves a dodge corridor even with all five alive.\n if(G.age>=G.releaseAt&&!R.ships.some(q=>!q.dead&&q.rg4.act)){\n  const alive=R.ships.filter(q=>!q.dead&&q.stun<=0&&q.rg4.cd<=0)","// Stagger two pilots on Furious. Fusion and rollers never overlap each other.\n const active=R.ships.filter(q=>!q.dead&&q.rg4.act),limit=diffKey==='furious'||diffKey==='insanity'?2:1;\n if(G.age>=G.releaseAt&&active.length<limit){\n  const alive=R.ships.filter(q=>!q.dead&&!q.rg4.act&&q.stun<=0&&q.rg4.cd<=0&&!(['fusion','roller'].includes(q.rg4.role)&&active.some(a=>['fusion','roller'].includes(a.rg4.act.kind))))"),
+ ('// Five fixed readouts remain visible through cloak and cinematic deaths.\n for(const q of b._rebels.ships){','// Living pilots keep their fixed slots through cloak; a defeated pilot has no health bar.\n for(const q of b._rebels.ships.filter(q=>!q.dead&&q.hp>0)){')])
+edit('assets/stage67_review_0929.js',[("if(run.mode==='campaign')campaign._l78Pending=1;drawStageClear._init=false;drawStageClear._res=null;Audio.stopMusic();setState(GS.STAGECLEAR);}","if(typeof cf4PortalHandoff==='function')cf4PortalHandoff();else{if(run.mode==='campaign')campaign._l78Pending=1;drawStageClear._init=false;drawStageClear._res=null;Audio.stopMusic();setState(GS.STAGECLEAR);}}")])
+edit('index.html',[("<script src=\"assets/finale_donors_1004.js\"></script>","<script src=\"assets/finale_donors_1004.js\"></script>\n<script src=\"assets/campaign_focus_1004b.js\"></script>")])
+print('Updated roster, combat scheduling, rewards and portal exit.')

@@ -1,0 +1,749 @@
+{
+  "date": "2026-10-04",
+  "scope": "Stage X password/campaign arenas, consistent blue larger ace and white hits, arcade bomber durability",
+  "suite": {
+    "assertions": 7177,
+    "exit": 0,
+    "final_summary": "FALVA/LIZZIE BUILD OK, 0 ERRORS"
+  },
+  "native": {
+    "checks": [
+      {
+        "ok": true,
+        "name": "password XHARR enters the real difficulty flow"
+      },
+      {
+        "ok": true,
+        "name": "XHARR draws the correct arena through the game renderer"
+      },
+      {
+        "ok": true,
+        "name": "XHARR retains its intended encounter"
+      },
+      {
+        "ok": true,
+        "name": "password XREBEL enters the real difficulty flow"
+      },
+      {
+        "ok": true,
+        "name": "XREBEL draws the correct arena through the game renderer"
+      },
+      {
+        "ok": true,
+        "name": "XREBEL retains its intended encounter"
+      },
+      {
+        "ok": true,
+        "name": "password HARR6 enters the real difficulty flow"
+      },
+      {
+        "ok": true,
+        "name": "HARR6 draws the correct arena through the game renderer"
+      },
+      {
+        "ok": true,
+        "name": "HARR6 retains its intended encounter"
+      },
+      {
+        "ok": true,
+        "name": "password REBEL6 enters the real difficulty flow"
+      },
+      {
+        "ok": true,
+        "name": "REBEL6 draws the correct arena through the game renderer"
+      },
+      {
+        "ok": true,
+        "name": "REBEL6 retains its intended encounter"
+      },
+      {
+        "ok": true,
+        "name": "campaign left rematch shares Stage X arena"
+      },
+      {
+        "ok": true,
+        "name": "campaign right rematch shares Stage X arena"
+      },
+      {
+        "ok": true,
+        "name": "native ace pose 0 stays blue and draws white hit pixels"
+      },
+      {
+        "ok": true,
+        "name": "native ace pose 1 stays blue and draws white hit pixels"
+      },
+      {
+        "ok": true,
+        "name": "native ace pose 2 stays blue and draws white hit pixels"
+      },
+      {
+        "ok": true,
+        "name": "native ace pose 3 stays blue and draws white hit pixels"
+      },
+      {
+        "ok": true,
+        "name": "native ace pose 4 stays blue and draws white hit pixels"
+      },
+      {
+        "ok": true,
+        "name": "native ace pose 5 stays blue and draws white hit pixels"
+      },
+      {
+        "ok": true,
+        "name": "native ace pose 6 stays blue and draws white hit pixels"
+      },
+      {
+        "ok": true,
+        "name": "native ace pose 7 stays blue and draws white hit pixels"
+      },
+      {
+        "ok": true,
+        "name": "native ace pose 8 stays blue and draws white hit pixels"
+      },
+      {
+        "ok": true,
+        "name": "native ace pose 9 stays blue and draws white hit pixels"
+      },
+      {
+        "ok": true,
+        "name": "native ace pose 10 stays blue and draws white hit pixels"
+      },
+      {
+        "ok": true,
+        "name": "native ace pose 11 stays blue and draws white hit pixels"
+      },
+      {
+        "ok": true,
+        "name": "native ace pose 12 stays blue and draws white hit pixels"
+      },
+      {
+        "ok": true,
+        "name": "native ace pose 13 stays blue and draws white hit pixels"
+      },
+      {
+        "ok": true,
+        "name": "native ace pose 14 stays blue and draws white hit pixels"
+      },
+      {
+        "ok": true,
+        "name": "native ace pose 15 stays blue and draws white hit pixels"
+      },
+      {
+        "ok": true,
+        "name": "native ace pose 16 stays blue and draws white hit pixels"
+      },
+      {
+        "ok": true,
+        "name": "native ace pose 17 stays blue and draws white hit pixels"
+      },
+      {
+        "ok": true,
+        "name": "native ace pose 18 stays blue and draws white hit pixels"
+      },
+      {
+        "ok": true,
+        "name": "native ace pose 19 stays blue and draws white hit pixels"
+      },
+      {
+        "ok": true,
+        "name": "real collision and boss damage flash body"
+      },
+      {
+        "ok": true,
+        "name": "real collision and boss damage flash wingL"
+      },
+      {
+        "ok": true,
+        "name": "real collision and boss damage flash wingR"
+      },
+      {
+        "ok": true,
+        "name": "easy red bomber dies to six base rounds"
+      },
+      {
+        "ok": true,
+        "name": "easy green bomber dies to six base rounds"
+      },
+      {
+        "ok": true,
+        "name": "easy orange bomber dies to six base rounds"
+      },
+      {
+        "ok": true,
+        "name": "easy opening bomber dies to six base rounds"
+      },
+      {
+        "ok": true,
+        "name": "easy bomb-lane bomber dies to six base rounds"
+      },
+      {
+        "ok": true,
+        "name": "easy lethal missile destroys bomber on first impact"
+      },
+      {
+        "ok": true,
+        "name": "normal red bomber dies to six base rounds"
+      },
+      {
+        "ok": true,
+        "name": "normal green bomber dies to six base rounds"
+      },
+      {
+        "ok": true,
+        "name": "normal orange bomber dies to six base rounds"
+      },
+      {
+        "ok": true,
+        "name": "normal opening bomber dies to six base rounds"
+      },
+      {
+        "ok": true,
+        "name": "normal bomb-lane bomber dies to six base rounds"
+      },
+      {
+        "ok": true,
+        "name": "normal lethal missile destroys bomber on first impact"
+      },
+      {
+        "ok": true,
+        "name": "hard red bomber dies to six base rounds"
+      },
+      {
+        "ok": true,
+        "name": "hard green bomber dies to six base rounds"
+      },
+      {
+        "ok": true,
+        "name": "hard orange bomber dies to six base rounds"
+      },
+      {
+        "ok": true,
+        "name": "hard opening bomber dies to six base rounds"
+      },
+      {
+        "ok": true,
+        "name": "hard bomb-lane bomber dies to six base rounds"
+      },
+      {
+        "ok": true,
+        "name": "hard lethal missile destroys bomber on first impact"
+      },
+      {
+        "ok": true,
+        "name": "furious red bomber dies to six base rounds"
+      },
+      {
+        "ok": true,
+        "name": "furious green bomber dies to six base rounds"
+      },
+      {
+        "ok": true,
+        "name": "furious orange bomber dies to six base rounds"
+      },
+      {
+        "ok": true,
+        "name": "furious opening bomber dies to six base rounds"
+      },
+      {
+        "ok": true,
+        "name": "furious bomb-lane bomber dies to six base rounds"
+      },
+      {
+        "ok": true,
+        "name": "furious lethal missile destroys bomber on first impact"
+      },
+      {
+        "ok": true,
+        "name": "insanity red bomber dies to six base rounds"
+      },
+      {
+        "ok": true,
+        "name": "insanity green bomber dies to six base rounds"
+      },
+      {
+        "ok": true,
+        "name": "insanity orange bomber dies to six base rounds"
+      },
+      {
+        "ok": true,
+        "name": "insanity opening bomber dies to six base rounds"
+      },
+      {
+        "ok": true,
+        "name": "insanity bomb-lane bomber dies to six base rounds"
+      },
+      {
+        "ok": true,
+        "name": "insanity lethal missile destroys bomber on first impact"
+      },
+      {
+        "ok": true,
+        "name": "fragile bombers retain their authored attacks"
+      },
+      {
+        "ok": true,
+        "name": "playable review XHARR button reaches the intended encounter"
+      },
+      {
+        "ok": true,
+        "name": "playable review XREBEL button reaches the intended encounter"
+      },
+      {
+        "ok": true,
+        "name": "playable review HARR6 button reaches the intended encounter"
+      },
+      {
+        "ok": true,
+        "name": "playable review REBEL6 button reaches the intended encounter"
+      },
+      {
+        "ok": true,
+        "name": "playable review ACE button reaches the intended encounter"
+      },
+      {
+        "ok": true,
+        "name": "playable review BOMBERS button reaches the intended encounter"
+      },
+      {
+        "ok": true,
+        "name": "zero page and console errors"
+      }
+    ],
+    "errors": [],
+    "poses": [
+      {
+        "frame": 0,
+        "blue_pixels": 32155,
+        "white_hit_pixels": 34241,
+        "keys": [
+          "sky4i_ace_wing_l_flash",
+          "sky4i_ace_body_flash",
+          "sky4i_ace_wing_r_flash"
+        ]
+      },
+      {
+        "frame": 1,
+        "blue_pixels": 30047,
+        "white_hit_pixels": 31691,
+        "keys": [
+          "sky4i_ace_wing_l_damage_flash",
+          "sky4i_ace_body_damage_flash",
+          "sky4i_ace_wing_r_damage_flash"
+        ]
+      },
+      {
+        "frame": 2,
+        "blue_pixels": 24722,
+        "white_hit_pixels": 24905,
+        "keys": [
+          "sky4i_ace_flash"
+        ]
+      },
+      {
+        "frame": 3,
+        "blue_pixels": 30209,
+        "white_hit_pixels": 32231,
+        "keys": [
+          "sky4i_ace_flash"
+        ]
+      },
+      {
+        "frame": 4,
+        "blue_pixels": 31514,
+        "white_hit_pixels": 33185,
+        "keys": [
+          "sky4i_ace_flash"
+        ]
+      },
+      {
+        "frame": 5,
+        "blue_pixels": 23616,
+        "white_hit_pixels": 24965,
+        "keys": [
+          "sky4i_ace_flash"
+        ]
+      },
+      {
+        "frame": 6,
+        "blue_pixels": 11369,
+        "white_hit_pixels": 11401,
+        "keys": [
+          "sky4i_ace_flash"
+        ]
+      },
+      {
+        "frame": 7,
+        "blue_pixels": 23560,
+        "white_hit_pixels": 25002,
+        "keys": [
+          "sky4i_ace_flash"
+        ]
+      },
+      {
+        "frame": 8,
+        "blue_pixels": 27911,
+        "white_hit_pixels": 28076,
+        "keys": [
+          "sky4i_ace_flash"
+        ]
+      },
+      {
+        "frame": 9,
+        "blue_pixels": 23419,
+        "white_hit_pixels": 24847,
+        "keys": [
+          "sky4i_ace_flash"
+        ]
+      },
+      {
+        "frame": 10,
+        "blue_pixels": 10882,
+        "white_hit_pixels": 11365,
+        "keys": [
+          "sky4i_ace_flash"
+        ]
+      },
+      {
+        "frame": 11,
+        "blue_pixels": 23213,
+        "white_hit_pixels": 24759,
+        "keys": [
+          "sky4i_ace_flash"
+        ]
+      },
+      {
+        "frame": 12,
+        "blue_pixels": 31650,
+        "white_hit_pixels": 33902,
+        "keys": [
+          "sky4i_ace_flash"
+        ]
+      },
+      {
+        "frame": 13,
+        "blue_pixels": 25781,
+        "white_hit_pixels": 26873,
+        "keys": [
+          "sky4i_ace_flash"
+        ]
+      },
+      {
+        "frame": 14,
+        "blue_pixels": 15913,
+        "white_hit_pixels": 16381,
+        "keys": [
+          "sky4i_ace_flash"
+        ]
+      },
+      {
+        "frame": 15,
+        "blue_pixels": 23296,
+        "white_hit_pixels": 24046,
+        "keys": [
+          "sky4i_ace_flash"
+        ]
+      },
+      {
+        "frame": 16,
+        "blue_pixels": 27382,
+        "white_hit_pixels": 27528,
+        "keys": [
+          "sky4i_ace_flash"
+        ]
+      },
+      {
+        "frame": 17,
+        "blue_pixels": 24126,
+        "white_hit_pixels": 25753,
+        "keys": [
+          "sky4i_ace_flash"
+        ]
+      },
+      {
+        "frame": 18,
+        "blue_pixels": 12929,
+        "white_hit_pixels": 13014,
+        "keys": [
+          "sky4i_ace_flash"
+        ]
+      },
+      {
+        "frame": 19,
+        "blue_pixels": 29605,
+        "white_hit_pixels": 31783,
+        "keys": [
+          "sky4i_ace_flash"
+        ]
+      }
+    ]
+  },
+  "stealth_regression": {
+    "difficulty": "furious",
+    "result": "PASS []",
+    "errors": [],
+    "log": "_shots/sky_repair_1004i/stealth.log"
+  },
+  "art_manifest": {
+    "method": "Authored source pixel palette normalization; gray armor mapped to blue at equal Rec.709 luminance. Chrome engine masks, colored engine/ordnance pixels, highlights, outlines and alpha retained. White flash PNGs use exact source alpha.",
+    "art": {
+      "ace": {
+        "key": "sky4i_ace",
+        "flash": "sky4i_ace_flash",
+        "frames": [
+          [
+            0,
+            0,
+            176,
+            184
+          ],
+          [
+            176,
+            0,
+            176,
+            184
+          ],
+          [
+            352,
+            0,
+            176,
+            184
+          ],
+          [
+            528,
+            0,
+            176,
+            184
+          ],
+          [
+            704,
+            0,
+            176,
+            184
+          ],
+          [
+            880,
+            0,
+            176,
+            184
+          ],
+          [
+            1056,
+            0,
+            176,
+            184
+          ],
+          [
+            1232,
+            0,
+            176,
+            184
+          ],
+          [
+            1408,
+            0,
+            176,
+            184
+          ],
+          [
+            1584,
+            0,
+            176,
+            184
+          ],
+          [
+            1760,
+            0,
+            176,
+            184
+          ],
+          [
+            1936,
+            0,
+            176,
+            184
+          ],
+          [
+            2112,
+            0,
+            176,
+            184
+          ],
+          [
+            2288,
+            0,
+            176,
+            184
+          ],
+          [
+            2464,
+            0,
+            176,
+            184
+          ],
+          [
+            2640,
+            0,
+            176,
+            184
+          ],
+          [
+            2816,
+            0,
+            176,
+            184
+          ],
+          [
+            2992,
+            0,
+            176,
+            184
+          ],
+          [
+            3168,
+            0,
+            176,
+            184
+          ],
+          [
+            3344,
+            0,
+            176,
+            184
+          ]
+        ]
+      },
+      "ace_body": {
+        "key": "sky4i_ace_body",
+        "flash": "sky4i_ace_body_flash",
+        "frames": [
+          [
+            0,
+            0,
+            176,
+            184
+          ]
+        ]
+      },
+      "ace_wing_l": {
+        "key": "sky4i_ace_wing_l",
+        "flash": "sky4i_ace_wing_l_flash",
+        "frames": [
+          [
+            0,
+            0,
+            176,
+            184
+          ]
+        ]
+      },
+      "ace_wing_r": {
+        "key": "sky4i_ace_wing_r",
+        "flash": "sky4i_ace_wing_r_flash",
+        "frames": [
+          [
+            0,
+            0,
+            176,
+            184
+          ]
+        ]
+      },
+      "ace_body_damage": {
+        "key": "sky4i_ace_body_damage",
+        "flash": "sky4i_ace_body_damage_flash",
+        "frames": [
+          [
+            0,
+            0,
+            176,
+            184
+          ]
+        ]
+      },
+      "ace_wing_l_damage": {
+        "key": "sky4i_ace_wing_l_damage",
+        "flash": "sky4i_ace_wing_l_damage_flash",
+        "frames": [
+          [
+            0,
+            0,
+            176,
+            184
+          ]
+        ]
+      },
+      "ace_wing_r_damage": {
+        "key": "sky4i_ace_wing_r_damage",
+        "flash": "sky4i_ace_wing_r_damage_flash",
+        "frames": [
+          [
+            0,
+            0,
+            176,
+            184
+          ]
+        ]
+      }
+    },
+    "sources": [
+      {
+        "name": "ace",
+        "source": "assets/game/encounters_0930/ace.png",
+        "sha256": "01f8ad84b402270908afd24b58fd6ca1eff83721301a29ce65fd0832ef76ee31",
+        "changed_armor_pixels": 38983,
+        "max_luminance_rounding_error": 0.4638000000000133,
+        "alpha_identical": true
+      },
+      {
+        "name": "ace_body",
+        "source": "assets/game/encounters_0930/ace_body.png",
+        "sha256": "d38c80e86daedd84e08a89601f70fce64bd227a4ad2fdaa3225286d1c2719530",
+        "changed_armor_pixels": 1651,
+        "max_luminance_rounding_error": 0.44600000000000506,
+        "alpha_identical": true
+      },
+      {
+        "name": "ace_wing_l",
+        "source": "assets/game/encounters_0930/ace_wing_l.png",
+        "sha256": "8dd91e2d7fb33a9e286e5045b1c60b75d7357e9c3ed6e40d785a956a63d4b3e1",
+        "changed_armor_pixels": 459,
+        "max_luminance_rounding_error": 0.4638000000000133,
+        "alpha_identical": true
+      },
+      {
+        "name": "ace_wing_r",
+        "source": "assets/game/encounters_0930/ace_wing_r.png",
+        "sha256": "a0deba7959f8de0ab5035292594f02eac5ae371581d62b89fb6683ca49c1342a",
+        "changed_armor_pixels": 411,
+        "max_luminance_rounding_error": 0.44199999999999307,
+        "alpha_identical": true
+      },
+      {
+        "name": "ace_body_damage",
+        "source": "assets/game/encounters_0930/ace_body_damage.png",
+        "sha256": "5af22d18b2b4fa3787b012de2c387cda6643fd3434ffbe9c8fb68e04b691e0e5",
+        "changed_armor_pixels": 1378,
+        "max_luminance_rounding_error": 0.44600000000000506,
+        "alpha_identical": true
+      },
+      {
+        "name": "ace_wing_l_damage",
+        "source": "assets/game/encounters_0930/ace_wing_l_damage.png",
+        "sha256": "a460429f35fbff62488d33a5a373abc14fe66d0c13345a59554e3df6eb96efee",
+        "changed_armor_pixels": 492,
+        "max_luminance_rounding_error": 0.4578000000000202,
+        "alpha_identical": true
+      },
+      {
+        "name": "ace_wing_r_damage",
+        "source": "assets/game/encounters_0930/ace_wing_r_damage.png",
+        "sha256": "7bd47cc86a2bd15200a318cecc01ea2b678da42ee450c3b34551ea5984274251",
+        "changed_armor_pixels": 548,
+        "max_luminance_rounding_error": 0.45940000000000225,
+        "alpha_identical": true
+      }
+    ]
+  },
+  "review": "_shots/sky_repair_1004i/review.html",
+  "limitations": "Controlled encounters and native pixels, not a full campaign clear or a human balance pass."
+}

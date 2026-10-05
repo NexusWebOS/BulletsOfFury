@@ -1,0 +1,170 @@
+{
+  "native": {
+    "checks": [
+      {
+        "ok": true,
+        "name": "uninterrupted native loop finishes boot and renders the widescreen map"
+      },
+      {
+        "ok": true,
+        "name": "cloud and floating-world animation continue in the real loop"
+      },
+      {
+        "ok": true,
+        "name": "live map and briefing follow a real keyboard selection"
+      },
+      {
+        "ok": true,
+        "name": "boot finishes with all generated land regions ready"
+      },
+      {
+        "ok": true,
+        "name": "terrain, all stages, city, HQ and cosmic region use authored XART pixels"
+      },
+      {
+        "ok": true,
+        "name": "original blue ocean and Fury HQ icon are drawn"
+      },
+      {
+        "ok": true,
+        "name": "initial settled map shows the complete connected continent"
+      },
+      {
+        "ok": true,
+        "name": "nine stages retained; bonus cosmic region is offshore northeast"
+      },
+      {
+        "ok": true,
+        "name": "real directional input selects a stage and zooms to its region"
+      },
+      {
+        "ok": true,
+        "name": "selected landmark lifts while adjacent terrain stays anchored"
+      },
+      {
+        "ok": true,
+        "name": "real D-pad path reaches Stage 3"
+      },
+      {
+        "ok": true,
+        "name": "real D-pad path reaches Stage 4"
+      },
+      {
+        "ok": true,
+        "name": "real D-pad path reaches Stage 5"
+      },
+      {
+        "ok": true,
+        "name": "real D-pad path reaches Stage 6"
+      },
+      {
+        "ok": true,
+        "name": "real D-pad path reaches Stage 7"
+      },
+      {
+        "ok": true,
+        "name": "real D-pad path reaches Stage 8"
+      },
+      {
+        "ok": true,
+        "name": "pointer hover lifts the desert without changing the chosen mission"
+      },
+      {
+        "ok": true,
+        "name": "pointer selects the visible desert region without deploying on the first click"
+      },
+      {
+        "ok": true,
+        "name": "locked stage and bonus portal cannot be selected by navigation"
+      },
+      {
+        "ok": true,
+        "name": "unlocked bonus portal focuses and remains selectable"
+      },
+      {
+        "ok": true,
+        "name": "Stage X stays anchored to the new central city"
+      },
+      {
+        "ok": true,
+        "name": "compact viewport retains finite full-world framing"
+      },
+      {
+        "ok": true,
+        "name": "zero page and console errors"
+      }
+    ],
+    "errors": []
+  },
+  "review": {
+    "checks": [
+      {
+        "ok": true,
+        "name": "review selects Stage 1"
+      },
+      {
+        "ok": true,
+        "name": "review selects Stage 2"
+      },
+      {
+        "ok": true,
+        "name": "review selects Stage 3"
+      },
+      {
+        "ok": true,
+        "name": "review selects Stage 4"
+      },
+      {
+        "ok": true,
+        "name": "review selects Stage 5"
+      },
+      {
+        "ok": true,
+        "name": "review selects Stage 6"
+      },
+      {
+        "ok": true,
+        "name": "review selects Stage 7"
+      },
+      {
+        "ok": true,
+        "name": "review selects Stage 8"
+      },
+      {
+        "ok": true,
+        "name": "review selects Stage 9"
+      },
+      {
+        "ok": true,
+        "name": "review selects Stage x"
+      },
+      {
+        "ok": true,
+        "name": "review selects full connected world"
+      },
+      {
+        "ok": true,
+        "name": "review has zero page and console errors"
+      }
+    ],
+    "errors": []
+  },
+  "full_suite": {
+    "passing_assertions": 7130,
+    "exit_code": 0,
+    "final_summary": "FALVA/LIZZIE BUILD OK, 0 ERRORS"
+  },
+  "syntax_checks": [
+    "assets/game.js",
+    "assets/campaign_landscape_1004e.js"
+  ],
+  "pixel_review": [
+    "live-overview-screen.png",
+    "live-focused-volcano-screen.png",
+    "focused-desert-screen.png",
+    "bonus-rift-screen.png",
+    "stage-x-screen.png",
+    "compact-screen.png"
+  ],
+  "earlier_failure": "Incorrect navigation hook name caused an extension load error; fixed to sselMoveHorizontal and verified by the final native run. Initial log retained under _shots."
+}

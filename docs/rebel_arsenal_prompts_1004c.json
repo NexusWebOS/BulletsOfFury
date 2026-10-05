@@ -1,0 +1,26 @@
+{
+  "generator": "built-in imagegen",
+  "purpose": "October 4 Rebel dogfight personal UI and combat effects",
+  "prompt_record": "Generation specifications retained for reproduction; the original tool-call text remains in the chat history.",
+  "ui": {
+    "references": ["assets/game/special_icons/special_maverick_helix_beam_v2.png", "assets/game/nsw_box_decker.png"],
+    "brief": "Create transparent 16-bit arcade pixel-art special ability pickup boxes and matching hexagonal icons for five Rebel pilots. Match the reference game's authored chrome/gunmetal frames, corner bolts, crisp stepped shading and colored glowing emblem interiors. Voss: crimson/pink turbo fighter and speed chevrons. Nyx: cyan ghost/stealth fighter tracing. Rook: amber .50-cal rotary gun and slug cartridges. Kaia: black/teal dual rocket launchers and missiles. Jace: red/orange helix energy ball with exactly eight outward spherical nodes. Every square armored pickup box has a matching small hex HUD icon. Isolated complete art, clear separation, genuine transparent alpha, no words or lettering, no ships outside emblems, no backgrounds or labels.",
+    "source_filename": "exec-3818d97e-1768-4348-b3c2-36b6baae12c7.png",
+    "saved_source": "_ART_SOURCES/rebel_arsenal_1004c/ui.png",
+    "deployed": "assets/game/rebel_arsenal_1004c/ui.png",
+    "actual_layout": "Five square boxes across the upper row and five corresponding hex icons beneath; alpha bounds measured by owning importer. Remaining sheet space unused."
+  },
+  "fx": {
+    "brief": "Create a genuine transparent RGBA 1536 by 1024 arcade 16-bit pixel-art VFX sprite sheet, six columns and four rows of separate 256 by 256 cells. No labels. Row 1: six frames of hot pink/crimson right-facing turbo speed wakes, bright white-pink core tapering into stepped red fragments, for an aggressively dashing fighter. Row 2: six frames of an orange/red helix sphere exploding into exactly eight spherical miniature energy nodes evenly distributed at 45-degree intervals, not lasers. Row 3: six state frames of a compact black/gunmetal rocket launcher pod with teal accents, suitable for independent left/right attachment: neutral, charging, launching and recoil with clear muzzle flame. Row 4: six down-facing black/teal super missiles with teal fin highlights and cyan/white exhaust extending upward, readable complete silhouettes and separated animation frames. Crisp pixel clusters and stepped highlights, consistent anchors, no painterly blur, no aircraft hulls, no text, no opaque background, no effects crossing into neighboring cells.",
+    "source_filename": "exec-eca3046b-840b-4772-9371-b9b6bcf29b09.png",
+    "saved_source": "_ART_SOURCES/rebel_arsenal_1004c/fx.png",
+    "deployed": "assets/game/rebel_arsenal_1004c/fx.png"
+  },
+  "palette": {
+    "method": "User-authorized deterministic palette swap, not generation or color overlay",
+    "source_keys": ["nhxsb_g_0", "nhxsb_g_1", "nhxsb_g_2", "fchgc_0", "fchgc_1", "fchgc_2", "fchgc_3", "nhxb_g_0", "nhxb_g_1", "nhxb_g_2", "nhxb_g_3", "nhxb_g_4"],
+    "export": "Resolved through XART.get and the game context's own drawImage, saved in _ART_SOURCES/rebel_arsenal_1004c/authored",
+    "constraints": "Neutral outlines/highlights and alpha preserved; chromatic pixels mapped through a red/orange hue ramp at their original Rec709 luminance. Maximum measured quantization error below 0.004. No color overlay.",
+    "workflow": "_BUILD_SOURCE/export_rebel_arsenal_1004c.py then _BUILD_SOURCE/build_rebel_arsenal_1004c.py"
+  }
+}

@@ -43,8 +43,8 @@ TAKES_DIR = os.path.join(HERE, 'takes9')
 FPS, W, H = 60, 1920, 1080
 PF_W, PF_H = 960, 1024
 T0 = 3.2                                   # the pre-roll: the song's first sample lands here
-SONG = os.path.join(ROOT, 'assets', 'game', 'music', 'stage6_city_in_the_sky.mp3')
-HAMA_SONG = os.path.join(ROOT, 'assets', 'game', 'music', 'hama_instrumental_0928.mp3')
+SONG = os.path.join(ROOT, 'assets', 'game', 'music', 'Level6.mp3')
+HAMA_SONG = os.path.join(ROOT, 'assets', 'game', 'music', 'HAMA_Instrumental.mp3')
 SND = lambda *p: os.path.join(ROOT, 'assets', 'game', *p)
 
 BM = json.load(open(os.path.join(HERE, 'beatmap9.json')))

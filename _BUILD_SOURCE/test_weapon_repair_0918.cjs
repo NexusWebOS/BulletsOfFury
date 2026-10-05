@@ -2,8 +2,8 @@ const fs=require('fs');
 module.exports=function testWeaponRepair0918(vm,ctxv,ok){
   console.log('=== 373. BOSS ELEMENTS, SELECTABLE FORMS, FURIOUS RAZORBACK (0918) ===');
   const R=js=>vm.runInContext(js,ctxv);
-  ok(R("JSON.stringify(BOSS_ELEMENT_BY_STAGE)==='{"+"\\\"1\\\":\\\"kinetic\\\",\\\"2\\\":\\\"fire\\\",\\\"3\\\":\\\"ice\\\",\\\"4\\\":\\\"lightning\\\",\\\"5\\\":\\\"chrome\\\",\\\"6\\\":\\\"dark\\\",\\\"7\\\":\\\"toxic\\\",\\\"8\\\":\\\"prism\\\",\\\"9\\\":\\\"water\\\"}'"),
-    'stages 1-9 award Sonic, Fire, Ice, Lightning, Chromium, Dark Matter, Toxic, Prism and Water in order');
+  ok(R("JSON.stringify(Object.values(BOSS_ELEMENT_BY_STAGE))===JSON.stringify(['kinetic','fire','ice','lightning','chrome','prism','toxic','dark','water'])"),
+    'stages 1-9 award Sonic, Fire, Ice, Lightning, Chromium, Prism, Toxic, Dark Matter and Water in order');
   R("var __wrOwn=achievementState.owned;achievementState.owned={};run.forge={};run.forgeForms={};run.forgeElems={};run.forgeCombos=4;run.forgeRespecs=2;run.weapon=0;run.infusion=null;");
   ok(R("forgeComboGrant('fire')==='ok' && FORGE_WEAPONS.every(function(w){return forgeElemsFor(w).indexOf('fire')>=0;})"),
     'the Fire boss reward unlocks Fire for every weapon, not one random pairing');

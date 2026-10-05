@@ -85,7 +85,7 @@ module.exports=function testEconomy(vm,ctxv,ok){
      'old paid-tier receipts remain in the ledger without creating numbered forms');
   ok(R("(function(){var v=achievementNormalize(JSON.parse(JSON.stringify(achievementState)));return v.owned[forgeLevelId('fire',0,2)].cost===1000;})()"),
      'normalizing a legacy profile preserves historical purchases');
-  R("run.forge={};run.forgeForms={};run.forgeElems={};run.forgeCombos=2;run.forgeRespecs=2;run.weapon=0;run.infusion=null;run.ngplus=false;forgeDiscover('toxic');");
+  R("run.forge={};run.forgeForms={};run.forgeElems={};run.forgeCombos=2;run.forgeRespecs=2;run.weapon=0;run.infusion=null;run.ngplus=false;forgeDiscover('toxic');forgeDiscover('fire');forgeDiscover('ice');");
   ok(R("forgeCombine(0,'toxic')==='ok'"),'a discovered element can be combined once');
   ok(R("forgeCombine(0,'fire')==='ok' && run.forge[0].lv===1 && run.infusion.lv===1"),
      'legacy paid levels do not change the first-level combination');

@@ -1,0 +1,430 @@
+{
+  "date": "2026-10-04",
+  "request": "Rebel personal abilities, Gang Mode and Decker cloak/counter-scan scene",
+  "checks": [
+    {
+      "ok": true,
+      "name": "fusion releases its distinct special"
+    },
+    {
+      "ok": true,
+      "name": "heavy releases its distinct special"
+    },
+    {
+      "ok": true,
+      "name": "roller releases its distinct special"
+    },
+    {
+      "ok": true,
+      "name": "ghost releases its distinct special"
+    },
+    {
+      "ok": true,
+      "name": "stealth releases its distinct special"
+    },
+    {
+      "ok": true,
+      "name": "original red asterisk drawn by the game context at release"
+    },
+    {
+      "ok": true,
+      "name": "stealth breaks Retina acquisition and reveal restores it"
+    },
+    {
+      "ok": true,
+      "name": "helper is a Retina target"
+    },
+    {
+      "ok": true,
+      "name": "ordinary gunfire destroys helper orb"
+    },
+    {
+      "ok": true,
+      "name": "two wounded pilots do not trigger Gang Mode"
+    },
+    {
+      "ok": true,
+      "name": "third pilot at exactly half health triggers shared charge"
+    },
+    {
+      "ok": true,
+      "name": "charge adds no rebel shields or HP refill"
+    },
+    {
+      "ok": true,
+      "name": "Gang Mode activates destructible orbital support"
+    },
+    {
+      "ok": true,
+      "name": "Decker rescue begins naturally after Gang Mode combat"
+    },
+    {
+      "ok": true,
+      "name": "rescue refuses firing, specials, damage and pause/skip"
+    },
+    {
+      "ok": true,
+      "name": "all timed lines complete without player skipping"
+    },
+    {
+      "ok": true,
+      "name": "all eight portrait dialogue beats rendered"
+    },
+    {
+      "ok": true,
+      "name": "world scroll and encounter clock keep moving through dialogue"
+    },
+    {
+      "ok": true,
+      "name": "counter-scan removes cloak while brief friendly shield remains"
+    },
+    {
+      "ok": true,
+      "name": "generated wave, swirls, reveal and original Retina all draw"
+    },
+    {
+      "ok": true,
+      "name": "temporary protection expires and combat controls unlock"
+    },
+    {
+      "ok": true,
+      "name": "Decker scene is one-shot"
+    },
+    {
+      "ok": true,
+      "name": "every rebel retains complete authored hull after damage"
+    },
+    {
+      "ok": true,
+      "name": "zero page/console errors"
+    },
+    {
+      "ok": true,
+      "name": "Full rebel encounter launches the correct live beat"
+    },
+    {
+      "ok": true,
+      "name": "Fight now launches the correct live beat"
+    },
+    {
+      "ok": true,
+      "name": "real keyboard fire creates player rounds in the playable encounter"
+    },
+    {
+      "ok": true,
+      "name": "Gang Mode preview launches the correct live beat"
+    },
+    {
+      "ok": true,
+      "name": "Decker scene preview launches the correct live beat"
+    },
+    {
+      "ok": true,
+      "name": "playing Decker uses the real pilot at the formation lead without a duplicate"
+    },
+    {
+      "ok": true,
+      "name": "review and all playable shortcuts have no browser errors"
+    }
+  ],
+  "events": [
+    {
+      "event": "specialStart",
+      "t": 1.4,
+      "pilot": "voss",
+      "kind": "fusion"
+    },
+    {
+      "event": "specialStart",
+      "t": 1.6666666666666656,
+      "pilot": "voss",
+      "kind": "fusion"
+    },
+    {
+      "event": "specialRelease",
+      "t": 3.7833333333333248,
+      "pilot": "voss",
+      "kind": "fusion"
+    },
+    {
+      "event": "specialStart",
+      "t": 5.816666666666651,
+      "pilot": "rook",
+      "kind": "heavy"
+    },
+    {
+      "event": "specialRelease",
+      "t": 6.816666666666648,
+      "pilot": "rook",
+      "kind": "heavy"
+    },
+    {
+      "event": "specialStart",
+      "t": 9.733333333333396,
+      "pilot": "kaia",
+      "kind": "roller"
+    },
+    {
+      "event": "specialRelease",
+      "t": 11.300000000000141,
+      "pilot": "kaia",
+      "kind": "roller"
+    },
+    {
+      "event": "rollerRelease",
+      "t": 11.300000000000141,
+      "pilot": "kaia"
+    },
+    {
+      "event": "rollerSplit",
+      "t": 12.23333333333352
+    },
+    {
+      "event": "specialStart",
+      "t": 13.650000000000258,
+      "pilot": "nyx",
+      "kind": "ghost"
+    },
+    {
+      "event": "specialRelease",
+      "t": 15.666666666667025,
+      "pilot": "nyx",
+      "kind": "ghost"
+    },
+    {
+      "event": "specialStart",
+      "t": 17.56666666666695,
+      "pilot": "jace",
+      "kind": "stealth"
+    },
+    {
+      "event": "specialRelease",
+      "t": 19.28333333333352,
+      "pilot": "jace",
+      "kind": "stealth"
+    },
+    {
+      "event": "helperSpawn",
+      "t": 19.816666666666823,
+      "pilot": "kaia"
+    },
+    {
+      "event": "ordnanceDestroyed",
+      "t": 19.83333333333349,
+      "kind": "helper"
+    },
+    {
+      "event": "gangStart",
+      "t": 19.83333333333349,
+      "wounded": 3
+    },
+    {
+      "event": "helperSpawn",
+      "t": 22.949999999999978,
+      "pilot": "kaia"
+    },
+    {
+      "event": "gangArmed",
+      "t": 22.949999999999978
+    },
+    {
+      "event": "specialStart",
+      "t": 23.94999999999992,
+      "pilot": "voss",
+      "kind": "fusion"
+    },
+    {
+      "event": "helperFire",
+      "t": 24.3499999999999
+    },
+    {
+      "event": "specialRelease",
+      "t": 26.066666666666467,
+      "pilot": "voss",
+      "kind": "fusion"
+    },
+    {
+      "event": "helperFire",
+      "t": 26.166666666666462
+    },
+    {
+      "event": "specialStart",
+      "t": 27.41666666666639,
+      "pilot": "nyx",
+      "kind": "ghost"
+    },
+    {
+      "event": "helperFire",
+      "t": 27.983333333333025
+    },
+    {
+      "event": "specialRelease",
+      "t": 29.433333333332943,
+      "pilot": "nyx",
+      "kind": "ghost"
+    },
+    {
+      "event": "helperFire",
+      "t": 29.79999999999959
+    },
+    {
+      "event": "specialStart",
+      "t": 30.53333333333288,
+      "pilot": "rook",
+      "kind": "heavy"
+    },
+    {
+      "event": "specialRelease",
+      "t": 31.533333333332823,
+      "pilot": "rook",
+      "kind": "heavy"
+    },
+    {
+      "event": "helperFire",
+      "t": 31.616666666666152
+    },
+    {
+      "event": "specialStart",
+      "t": 33.39999999999939,
+      "pilot": "kaia",
+      "kind": "roller"
+    },
+    {
+      "event": "helperFire",
+      "t": 33.43333333333272
+    },
+    {
+      "event": "rescueStart",
+      "t": 34.966666666665965,
+      "scanner": "kaia"
+    },
+    {
+      "event": "formation",
+      "t": 34.966666666665965
+    },
+    {
+      "event": "cast",
+      "t": 40.849999999998964
+    },
+    {
+      "event": "cloak",
+      "t": 45.049999999998725
+    },
+    {
+      "event": "scan",
+      "t": 53.1333333333316
+    },
+    {
+      "event": "reveal",
+      "t": 58.64999999999795
+    },
+    {
+      "event": "rescueComplete",
+      "t": 71.71666666666388
+    },
+    {
+      "event": "specialStart",
+      "t": 73.53333333333045,
+      "pilot": "voss",
+      "kind": "missiles"
+    },
+    {
+      "event": "helperFire",
+      "t": 73.73333333333044
+    },
+    {
+      "event": "specialRelease",
+      "t": 74.73333333333038,
+      "pilot": "voss",
+      "kind": "missiles"
+    },
+    {
+      "event": "missiles",
+      "t": 74.73333333333038,
+      "pilot": "voss",
+      "count": 2
+    },
+    {
+      "event": "helperFire",
+      "t": 75.549999999997
+    },
+    {
+      "event": "specialStart",
+      "t": 75.83333333333032,
+      "pilot": "nyx",
+      "kind": "ghost"
+    },
+    {
+      "event": "helperFire",
+      "t": 77.36666666666356
+    },
+    {
+      "event": "specialRelease",
+      "t": 77.84999999999687,
+      "pilot": "nyx",
+      "kind": "ghost"
+    }
+  ],
+  "draws": {
+    "heavy": 4752,
+    "row3": 1206,
+    "asterisk": 1117,
+    "fusion": 113,
+    "roller": 289,
+    "row2": 1165,
+    "helper": 1151,
+    "row0": 252,
+    "row1": 9959,
+    "scan": 2988
+  },
+  "errors": [],
+  "screens": [
+    "fusion-charge",
+    "fusion-release",
+    "heavy-charge",
+    "heavy-release",
+    "roller-charge",
+    "roller-release",
+    "ghost-charge",
+    "ghost-release",
+    "stealth-charge",
+    "stealth-release",
+    "gang-mode",
+    "scene-0",
+    "effect-wave",
+    "scene-1",
+    "scene-2",
+    "scene-3",
+    "scene-4",
+    "effect-reveal",
+    "scene-5",
+    "scene-6",
+    "scene-7",
+    "combat-resumed"
+  ],
+  "sourceHashes": {
+    "assets/rebel_gang_1004.js": "6a11a2651c8ed7df6d29259dc7038fac4cf8b1b335a0f1998c84457f2f482e10",
+    "assets/game/rebel_gang_1004/decker_effects.png": "229be5779600fdeb0b7e61cc6bde4beb9895754000db0d85401e5eb992580465",
+    "_BUILD_SOURCE/test_rebel_gang_1004.cjs": "ca4fa499705a93bcfedf66e3de6edb7f4e1515e7622c17451bc3beecfff71611",
+    "_BUILD_SOURCE/probe_rebel_gang_1004.py": "a3dd3632a291448e956e683607b25ccfe7220a70f29203477907a8f57f5f6f8a",
+    "_BUILD_SOURCE/test_fl.js": "2b1859729177a5af845f287f00fbd35f2601ec9e8565dfdefe7e098d329c7ff4"
+  },
+  "fullSuite": {
+    "expectedPassCount": 7022,
+    "result": "passed",
+    "earlierFailures": [
+      {
+        "exitCode": 1,
+        "assertion": "HOLDING leaks nothing for maverick (was 4) \u2014 got 4",
+        "cause": "Fixture used 99 invulnerability frames for a 180-frame hold trial; random damage could interrupt the special.",
+        "resolution": "Test isolation now lasts 600 frames; gameplay and zero-shot assertion unchanged.",
+        "log": "_shots/rebel_gang_1004/full-suite-before-fixture-fix.log"
+      }
+    ],
+    "passCount": 7022,
+    "exitCode": 0,
+    "finalSummary": "FALVA/LIZZIE BUILD OK, 0 ERRORS",
+    "log": "_shots/rebel_gang_1004/full-suite.log"
+  },
+  "review": "_shots/rebel_gang_1004/review.html"
+}

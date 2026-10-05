@@ -7,6 +7,11 @@ old music path accidentally registered as an image (fierceplanes).
 import json
 from pathlib import Path
 
+# Current catalog supersedes the historical 0925 assignments below.
+from organize_music_1003 import organize
+organize()
+raise SystemExit(0)
+
 root = Path(__file__).resolve().parents[1]
 path = root / "assets/manifest.js"
 src = path.read_text(encoding="utf-8")
@@ -17,22 +22,22 @@ assert isinstance(obj.get("music"), dict)
 music = obj["music"]
 
 patch = {
-    "stage7mus": "stage7_over_the_horizon_0925.mp3",
-    "deathtrap": "stage6_city_in_the_sky.mp3",
-    "boss1": "boss1_helicopterboss.mp3",
-    "boss2": "boss2_bossfight3_loud_0920.mp3",
-    "boss3": "boss3_pandemonium.mp3",
-    "boss4": "boss4_cowboyfromhell_loud_0920.mp3",
-    "boss5": "boss5_deadly_night.mp3",
-    "boss8": "final_boss_phase1_0925.mp3",
-    "boss8p3": "final_boss_phase3_the_final_confrontation_0925.mp3",
-    "finalCinematic": "cinematic_final_level_0925.mp3",
+    "stage7mus": "Level7.mp3",
+    "deathtrap": "Level6.mp3",
+    "boss1": "Level1b.mp3",
+    "boss2": "Level2b.mp3",
+    "boss3": "Level3b.mp3",
+    "boss4": "Level4b.mp3",
+    "boss5": "Level5mb.mp3",
+    "boss8": "Level8b.mp3",
+    "boss8p3": "Level8b3.mp3",
+    "finalCinematic": "FinalCinematic.mp3",
 }
 for key, file in patch.items():
     music[key] = "assets/game/music/" + file
 music["boss"] = music["boss1"]
 music["ironcage"] = music["boss8"]
-music["mini1"] = "assets/game/music/miniboss_fireboss.mp3"
+music["mini1"] = "assets/game/music/Level1mb.mp3"
 music["mini2"] = music["mini1"]
 music["mini3"] = music["lvl3"]
 

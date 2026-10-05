@@ -1,0 +1,94 @@
+{
+  "date": "2026-10-04",
+  "scope": "Floating central Stage X city island; shared flag/orbit/pointer pose and focused camera",
+  "suite": {
+    "assertions": 7146,
+    "exit": 0,
+    "final_summary": "FALVA/LIZZIE BUILD OK, 0 ERRORS"
+  },
+  "native": {
+    "checks": [
+      {
+        "ok": true,
+        "name": "generated floating city draws in the actual game context"
+      },
+      {
+        "ok": true,
+        "name": "authored shadow stays below the elevated island"
+      },
+      {
+        "ok": true,
+        "name": "new rocky island has permanent elevation above the continent"
+      },
+      {
+        "ok": true,
+        "name": "floating city visibly bobs in the uninterrupted game loop"
+      },
+      {
+        "ok": true,
+        "name": "hovering the city lifts Stage X itself"
+      },
+      {
+        "ok": true,
+        "name": "clicking the island opens the locked Stage X briefing"
+      },
+      {
+        "ok": true,
+        "name": "locked Stage X briefing types without the selected stage resetting its letters"
+      },
+      {
+        "ok": true,
+        "name": "focused Stage X fits entirely below the menu and above progression"
+      },
+      {
+        "ok": true,
+        "name": "inspecting locked Stage X grants no encounter"
+      },
+      {
+        "ok": true,
+        "name": "flag and fighter orbit use the same elevated city pose"
+      },
+      {
+        "ok": true,
+        "name": "whole-island click selects earned left route"
+      },
+      {
+        "ok": true,
+        "name": "complete authored encounter hulls orbit floating Stage X on left"
+      },
+      {
+        "ok": true,
+        "name": "real confirm launches left Stage X encounter"
+      },
+      {
+        "ok": true,
+        "name": "whole-island click selects earned right route"
+      },
+      {
+        "ok": true,
+        "name": "complete authored encounter hulls orbit floating Stage X on right"
+      },
+      {
+        "ok": true,
+        "name": "real confirm launches right Stage X encounter"
+      },
+      {
+        "ok": true,
+        "name": "floating Stage X remains visible and clickable in compact viewport"
+      },
+      {
+        "ok": true,
+        "name": "new review opens directly on floating Stage X without altering saves"
+      },
+      {
+        "ok": true,
+        "name": "zero page and console errors"
+      }
+    ],
+    "errors": []
+  },
+  "review": "_shots/campaign_stagex_1004g/review.html",
+  "art": "assets/game/campaign_stagex_1004g/region_hub.png",
+  "prompt": "_ART_SOURCES/campaign_stagex_1004g/prompt.json",
+  "limitations": "Campaign map and both route launches verified; no combat balance or full campaign-clear claim."
+}

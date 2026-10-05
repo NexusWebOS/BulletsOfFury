@@ -51,7 +51,7 @@ REELS = {
     },
     'minis': {
         'title': 'THE MINIBOSSES',
-        'music': 'assets/game/music/miniboss_fireboss.mp3',
+        'music': 'assets/game/music/Level1mb.mp3',
         'items': [
             ('mini_s1_razorback', 'STAGE 1', 'RAZORBACK SIEGE TANK', 12, 4),
             ('mini_s3_frost', 'STAGE 3', 'FROST CRUISER', 12, 4),
@@ -61,7 +61,7 @@ REELS = {
     },
     'pilots': {
         'title': 'NINE PILOTS, NINE DIFFERENT GUNS',
-        'music': 'assets/game/music/pilot_select.mp3',
+        'music': 'assets/game/music/PilotSelect.mp3',
         # ⚠ THE AFFILIATIONS ARE THE GAME'S OWN, READ OUT OF `AINTRO_AFFIL` IN game.js.
         # They exist ONLY in that table -- CLAUDE.md records that they were baked pixels in the
         # arcade intro plates until they were transcribed there, and that nothing else carries
@@ -81,7 +81,7 @@ REELS = {
     },
     'stages': {
         'title': 'NINE STAGES',
-        'music': 'assets/game/music/title_main_menu.mp3',
+        'music': 'assets/game/music/Title.mp3',
         'items': [
             ('stage_s2_lava', 'STAGE 2', "IT'S HOT IN HERE", 10, 3),
             ('stage_s3_ice', 'STAGE 3', "ICE STILL CAN'T SEE", 10, 3),

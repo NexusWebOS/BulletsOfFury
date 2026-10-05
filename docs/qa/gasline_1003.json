@@ -1,0 +1,14 @@
+{
+  "source": "C:\\Users\\Mdogg\\Desktop\\Gasline.wav",
+  "sourceBytes": 16965708,
+  "sourceSha256": "dccd4503dd084667020014b86c6613c73e5b15170665a1ef0d17c46dbb0a8f02",
+  "output": "assets/game/music/stagex_gasline_1003.mp3",
+  "outputBytes": 2829412,
+  "outputSha256": "89254be30d605db4990b6dcc2c5f41e1470f47ea2b7b7bc8b80e33bcde1a5f7c",
+  "codec": "MP3/libmp3lame",
+  "bitrate": "256 kbps",
+  "sampleRate": 48000,
+  "channels": 2,
+  "processing": "Format conversion only. Entire source, original speed and gain.",
+  "decodeExitCode": 0
+}

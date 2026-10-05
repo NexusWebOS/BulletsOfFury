@@ -1,0 +1,19 @@
+{
+  "generator": "OpenAI built-in imagegen",
+  "source": "region_hub_source.png",
+  "sha256": "4386d446bb3b3bbdc4aa2690158013a3928eb7dd7e3671a1071e2f0593dd5a43",
+  "crop": [
+    39,
+    133,
+    1221,
+    1140
+  ],
+  "size": [
+    768,
+    768
+  ],
+  "normalization": "Nearest contain with original RGBA alpha; grayscale and authored silhouette masks only.",
+  "prompt": {
+    "prompt": "Use case: precise-object-edit. Asset type: transparent 16-bit pixel art campaign map landmark for Bullets of Fury. Input image: edit target, existing central Stage X city island. Preserve the city skyline, airport on the left, harbors, streets, green vegetation, blue/chrome architecture, isometric map angle and crisp authored pixel art style. Convert this coastal island into an unmistakably FLOATING island: keep the city on top of a deep, jagged, tapering rocky underside, with visible cliffs descending below it. The sea fringe should be removed from the outer silhouette; retain water only inside the existing harbor/canals. This is one isolated elevated chunk of land hovering above the campaign continent. No surrounding landscape, no new text, no flags, no other islands, no additional ships, no labels. Full entire city and underside visible, generous transparent padding, centered. Real transparent background, no checkerboard. Match existing colors and pixel texture, not smooth 3D."
+  }
+}

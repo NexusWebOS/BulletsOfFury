@@ -1,0 +1,42 @@
+module.exports=function(vm,ctxv,ok){
+ const fs=require('fs'),path=require('path');
+ for(const f of ['sky_repair_art_1004i','gameplay_repair_1004','finale_donors_1004'])vm.runInContext(fs.readFileSync(path.join(__dirname,'../assets/'+f+'.js'),'utf8'),ctxv,{filename:f+'.js'});
+ console.log('=== Recorded gameplay repairs: reserves, progression, weapons and donor ownership ===');
+ const result=JSON.parse(vm.runInContext(`JSON.stringify((()=>{
+ const out={};ht27Stop();debugFight=null;coopOn=false;run.pilot='yuri';run.mode='campaign';diffKey='furious';DIFF=DIFFS.furious;
+ const setup=(stage,kind)=>{beginStage(stage);setState(GS.PLAY);BOFCinematicDirector.cancel();story=null;fb2Talk=null;s6Opening=null;stagePlan=[];enemies=[];pBullets=[];eBullets=[];spawnBoss(kind);const b=boss;b._be=null;b.enter=false;b._noHit=false;b.x=worldWidth()/2;b.y=200;return b;};
+ let b=setup(4,'stormsovereign'),H=b._s4war.shield;H.rearming=false;H.active=true;
+ for(let t=0;t<18.1;t+=.05)stage4ShieldTick(b,.05);
+ out['Stage 4 shield opens after sustained duty even with living generators']=!H.active&&H.exposedFor>7&&H.nodes.some(n=>!n.dead);
+ for(let t=0;t<8.1;t+=.05)stage4ShieldTick(b,.05);
+ out['generator overload has a finite exposed window and rearms']=H.active&&!H.exposedFor;
+ b=setup(5,'chromehammer');b._hammer.balance0922=true;b._hammer.restorationSeen=true;b.hp=b.maxhp*.081;
+ b.hp-=hammerBossDamage(b,1e8);out['overkill cannot skip Hammer final reserve']=Math.abs(b.hp/b.maxhp-.08)<1e-8;
+ for(let i=0;i<190;i++)hammerBossTick(b,1/60);
+ out['Hammer heals to 38 percent once and resumes an attack']=Math.abs(b.hp/b.maxhp-.38)<1e-8&&b._hammer.gp4FailsafeSeen&&['warn','leap'].includes(b._hammer.state);
+ b.hp=b.maxhp*.07;hammerBossTick(b,.05);out['final reserve cannot repeat']=!b._hammer.gp4Emergency;
+ bossDie();out['Hammer starts with in-engine death rather than a still']=H3.ending?.phase==='engineDeath';
+ beginStage(8);setState(GS.PLAY);BOFCinematicDirector.cancel();story=null;boss=null;bossActive=false;subBoss=null;subBossActive=false;enemies=[];pBullets=[];
+ const orb=(dt)=>{const q={kind:'orb',x:240,y:500,vx:0,vy:-3.5,w:34,h:34,dmg:2,lv:3,life:3,shardN:0,shardCd:10,_el:'fire'};for(let t=0;t<1-dt/2;t+=dt)playerOrbTick(q,dt);return q;};
+ const a=orb(1/60),c=orb(1/30);out['orbs remain finite and travel consistently at 30/60 FPS']=Number.isFinite(a.spin+a.y+c.spin+c.y)&&Math.abs(a.y-c.y)<1&&a.y<310;
+ run.forgeElems={ice:1};achievementState.owned.forge_element_fire_E={at:1};run.mode='arcade';
+ out['old global discovery cannot unlock every arcade combo']=!forgeDiscovered().includes('fire');
+ out['new route passwords all fit the six-character entry']=PASSWORDS.RIFT9===9&&PASSWORDS.XHARR===6&&PASSWORDS.XREBEL===6;
+ b=setup(6,'rebelsquad');const R=b._rebels;rf28Init(b,R);R.frIntro={done:true};const G=rg4Init(b);G.scene=null;for(const q of R.ships){q.mode='fight';q.warp=0;}
+ s6WingInit();s6WingLaunch(8,true);out['single-player rebel encounter is exactly five versus five']=s6Wing.ships.length===4&&gp4Allies().length===5&&R.ships.length===5;
+ R.hit=0;rebelSquadDamage(b,1e6);out['rebel death owns a burn/crash and queued portrait before victory']=R.ships[0]._gpDeath?.t===0&&GP4.deaths.length===1&&!b.dead;
+ b=setup(8,'vileexistence');j3Encounter(b,2);j3Mimic(b,3);b._r30.mode='fight';
+ for(let i=0;i<220;i++)r30Tick(b,.05);const J=j3State(b),D=J.gp4Donors[3];
+ out['alien ice form executes the real campaign battery controller']=D.history.includes('ice-battery1002')&&!!D.p._er26;
+ playerLocks.push({src:D.p});j3Clear(b);out['transform cancels delayed targeting from the previous donor']=D.p.dead&&!playerLocks.some(q=>q.src===D.p);
+ const hp=b.hp;j3Home(b);j3Mimic(b,3);out['returning donor retains its controller and form HP']=J.gp4Donors[3]===D&&b.hp===hp;
+ b.parts.find(p=>p.id==='gunL1').destroyed=true;
+ out['each alien ice battery gun disarms independently']=!mr27CanFire(D.p,'L0')&&mr27CanFire(D.p,'L1');
+ j3Home(b);j3Mimic(b,1);b._r30.mode='fight';const Heli=gd4Create(b,1).p;
+ for(const id of ['left','rackL'])b.parts.find(p=>p.id===id).destroyed=true;
+ eBullets=[];ovTwinMG(Heli);ovRocketSide(Heli,-1);ovRocketSide(Heli,1);const muzzle=gd4Port(Heli,1,'right');
+ out['alien helicopter only fires live gun and rocket mounts']=eBullets.length===2&&Math.abs(eBullets[0].x-muzzle.x)<.001&&eBullets[1].kind==='s1jungleMissile';
+ return out;
+})())`,ctxv));
+ for(const [name,pass] of Object.entries(result))ok(pass,name);
+};

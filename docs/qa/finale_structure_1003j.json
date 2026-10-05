@@ -1,0 +1,1502 @@
+{
+  "date": "2026-10-03",
+  "request": "Restore three outer finale encounters; only Dracula transforms into eight modular lives. Whole rebel ships, no shields, live protected Stage 6 dialogue.",
+  "full_suite": {
+    "passes": 6993,
+    "exit_code": 0,
+    "summary": "FALVA/LIZZIE BUILD OK, 0 ERRORS"
+  },
+  "native": {
+    "checks": 106,
+    "failures": [],
+    "page_console_errors": [],
+    "results": [
+      {
+        "ok": true,
+        "name": "normal drone arrives before mutation"
+      },
+      {
+        "ok": true,
+        "name": "mutation has no eight-life fill"
+      },
+      {
+        "ok": true,
+        "name": "first fight is the 4100 HP modular mutated drone"
+      },
+      {
+        "ok": true,
+        "name": "second fight is the ghost with its own complete HP pool"
+      },
+      {
+        "ok": true,
+        "name": "ghost never takes Dracula transformations"
+      },
+      {
+        "ok": true,
+        "name": "third encounter reveals approved Dracula body and arms"
+      },
+      {
+        "ok": true,
+        "name": "Dracula gauge fills eight times in eight colors"
+      },
+      {
+        "ok": true,
+        "name": "three separate encounters select phase music 1, 2 and 3"
+      },
+      {
+        "ok": true,
+        "name": "Dracula naturally enters first copied form"
+      },
+      {
+        "ok": true,
+        "name": "all eight transformations are reachable in natural order without forced form changes"
+      },
+      {
+        "ok": true,
+        "name": "host: independent authored modules"
+      },
+      {
+        "ok": true,
+        "name": "host: talons completes and recovers"
+      },
+      {
+        "ok": true,
+        "name": "host: gravity completes and recovers"
+      },
+      {
+        "ok": true,
+        "name": "host: code completes and recovers"
+      },
+      {
+        "ok": true,
+        "name": "host: real projectile damages visible module and health"
+      },
+      {
+        "ok": true,
+        "name": "host: damaged HP and destroyed module persist across transformations"
+      },
+      {
+        "ok": true,
+        "name": "chopper: independent authored modules"
+      },
+      {
+        "ok": true,
+        "name": "chopper: rotorMG completes and recovers"
+      },
+      {
+        "ok": true,
+        "name": "chopper: bombing completes and recovers"
+      },
+      {
+        "ok": true,
+        "name": "chopper: missiles completes and recovers"
+      },
+      {
+        "ok": true,
+        "name": "chopper: gravity completes and recovers"
+      },
+      {
+        "ok": true,
+        "name": "chopper: real projectile damages visible module and health"
+      },
+      {
+        "ok": true,
+        "name": "chopper: damaged HP and destroyed module persist across transformations"
+      },
+      {
+        "ok": true,
+        "name": "furnace: independent authored modules"
+      },
+      {
+        "ok": true,
+        "name": "furnace: magma completes and recovers"
+      },
+      {
+        "ok": true,
+        "name": "furnace: eruptions completes and recovers"
+      },
+      {
+        "ok": true,
+        "name": "furnace: furnaceBeam completes and recovers"
+      },
+      {
+        "ok": true,
+        "name": "furnace: orbit completes and recovers"
+      },
+      {
+        "ok": true,
+        "name": "furnace: real projectile damages visible module and health"
+      },
+      {
+        "ok": true,
+        "name": "furnace: damaged HP and destroyed module persist across transformations"
+      },
+      {
+        "ok": true,
+        "name": "cryo: independent authored modules"
+      },
+      {
+        "ok": true,
+        "name": "cryo: iceGates completes and recovers"
+      },
+      {
+        "ok": true,
+        "name": "cryo: iceLance completes and recovers"
+      },
+      {
+        "ok": true,
+        "name": "cryo: iceSiege completes and recovers"
+      },
+      {
+        "ok": true,
+        "name": "cryo: glacierPress completes and recovers"
+      },
+      {
+        "ok": true,
+        "name": "cryo: gravity completes and recovers"
+      },
+      {
+        "ok": true,
+        "name": "cryo: real projectile damages visible module and health"
+      },
+      {
+        "ok": true,
+        "name": "cryo: damaged HP and destroyed module persist across transformations"
+      },
+      {
+        "ok": true,
+        "name": "storm: independent authored modules"
+      },
+      {
+        "ok": true,
+        "name": "storm: missiles completes and recovers"
+      },
+      {
+        "ok": true,
+        "name": "storm: lightning completes and recovers"
+      },
+      {
+        "ok": true,
+        "name": "storm: ram completes and recovers"
+      },
+      {
+        "ok": true,
+        "name": "storm: code completes and recovers"
+      },
+      {
+        "ok": true,
+        "name": "storm: real projectile damages visible module and health"
+      },
+      {
+        "ok": true,
+        "name": "storm: damaged HP and destroyed module persist across transformations"
+      },
+      {
+        "ok": true,
+        "name": "knight: independent authored modules"
+      },
+      {
+        "ok": true,
+        "name": "knight: knight completes and recovers"
+      },
+      {
+        "ok": true,
+        "name": "knight: knight completes and recovers"
+      },
+      {
+        "ok": true,
+        "name": "knight: orbit completes and recovers"
+      },
+      {
+        "ok": true,
+        "name": "knight: real projectile damages visible module and health"
+      },
+      {
+        "ok": true,
+        "name": "knight: damaged HP and destroyed module persist across transformations"
+      },
+      {
+        "ok": true,
+        "name": "harrier: independent authored modules"
+      },
+      {
+        "ok": true,
+        "name": "harrier: turbines completes and recovers"
+      },
+      {
+        "ok": true,
+        "name": "harrier: missiles completes and recovers"
+      },
+      {
+        "ok": true,
+        "name": "harrier: carrierLance completes and recovers"
+      },
+      {
+        "ok": true,
+        "name": "harrier: gravity completes and recovers"
+      },
+      {
+        "ok": true,
+        "name": "harrier: real projectile damages visible module and health"
+      },
+      {
+        "ok": true,
+        "name": "harrier: damaged HP and destroyed module persist across transformations"
+      },
+      {
+        "ok": true,
+        "name": "warden: independent authored modules"
+      },
+      {
+        "ok": true,
+        "name": "warden: wardenMG completes and recovers"
+      },
+      {
+        "ok": true,
+        "name": "warden: stomp completes and recovers"
+      },
+      {
+        "ok": true,
+        "name": "warden: scissor completes and recovers"
+      },
+      {
+        "ok": true,
+        "name": "warden: portalVolley completes and recovers"
+      },
+      {
+        "ok": true,
+        "name": "warden: gravity completes and recovers"
+      },
+      {
+        "ok": true,
+        "name": "warden: code completes and recovers"
+      },
+      {
+        "ok": true,
+        "name": "warden: real projectile damages visible module and health"
+      },
+      {
+        "ok": true,
+        "name": "warden: damaged HP and destroyed module persist across transformations"
+      },
+      {
+        "ok": true,
+        "name": "life 1 cannot end campaign early"
+      },
+      {
+        "ok": true,
+        "name": "life 2 cannot end campaign early"
+      },
+      {
+        "ok": true,
+        "name": "life 3 cannot end campaign early"
+      },
+      {
+        "ok": true,
+        "name": "life 4 cannot end campaign early"
+      },
+      {
+        "ok": true,
+        "name": "life 5 cannot end campaign early"
+      },
+      {
+        "ok": true,
+        "name": "life 6 cannot end campaign early"
+      },
+      {
+        "ok": true,
+        "name": "life 7 cannot end campaign early"
+      },
+      {
+        "ok": true,
+        "name": "all eight Dracula lives lead to the single portal/reunion reward"
+      },
+      {
+        "ok": true,
+        "name": "yuri: reaches natural Cole dialogue"
+      },
+      {
+        "ok": true,
+        "name": "yuri: flight, world update and sky continue during dialogue"
+      },
+      {
+        "ok": true,
+        "name": "yuri: combat stays protected and dialogue unskippable"
+      },
+      {
+        "ok": true,
+        "name": "cole: reaches natural Cole dialogue"
+      },
+      {
+        "ok": true,
+        "name": "cole: flight, world update and sky continue during dialogue"
+      },
+      {
+        "ok": true,
+        "name": "cole: combat stays protected and dialogue unskippable"
+      },
+      {
+        "ok": true,
+        "name": "rebel arrival has no shields"
+      },
+      {
+        "ok": true,
+        "name": "rebel dialogue runs in a live protected world"
+      },
+      {
+        "ok": true,
+        "name": "wing hit damages hull without deleting a wing"
+      },
+      {
+        "ok": true,
+        "name": "last rebel cannot regenerate a shield"
+      },
+      {
+        "ok": true,
+        "name": "no page or console errors"
+      },
+      {
+        "ok": true,
+        "name": "yuri: reaches natural Cole dialogue"
+      },
+      {
+        "ok": true,
+        "name": "yuri: flight, world update and sky continue during dialogue"
+      },
+      {
+        "ok": true,
+        "name": "yuri: combat stays protected and dialogue unskippable"
+      },
+      {
+        "ok": true,
+        "name": "yuri: full timed conversation finishes and releases route choice"
+      },
+      {
+        "ok": true,
+        "name": "cole: reaches natural Cole dialogue"
+      },
+      {
+        "ok": true,
+        "name": "cole: flight, world update and sky continue during dialogue"
+      },
+      {
+        "ok": true,
+        "name": "cole: combat stays protected and dialogue unskippable"
+      },
+      {
+        "ok": true,
+        "name": "cole: full timed conversation finishes and releases route choice"
+      },
+      {
+        "ok": true,
+        "name": "Cole scripted demonstration completes and restores loadout in the moving world"
+      },
+      {
+        "ok": true,
+        "name": "rebel arrival has no shields"
+      },
+      {
+        "ok": true,
+        "name": "rebel dialogue runs in a live protected world"
+      },
+      {
+        "ok": true,
+        "name": "full rebel introduction finishes naturally and starts combat"
+      },
+      {
+        "ok": true,
+        "name": "wing hit damages hull without deleting a wing"
+      },
+      {
+        "ok": true,
+        "name": "last rebel cannot regenerate a shield"
+      },
+      {
+        "ok": true,
+        "name": "no page or console errors"
+      },
+      {
+        "ok": true,
+        "name": "Full finale selects correct encounter"
+      },
+      {
+        "ok": true,
+        "name": "Ghost fight selects correct encounter"
+      },
+      {
+        "ok": true,
+        "name": "Dracula fight selects correct encounter"
+      },
+      {
+        "ok": true,
+        "name": "Rebel encounter selects correct encounter"
+      },
+      {
+        "ok": true,
+        "name": "review page and playable buttons have no browser errors"
+      }
+    ]
+  },
+  "forms": [
+    {
+      "id": "host",
+      "hp": 4100,
+      "book": [
+        "talons",
+        "gravity",
+        "code"
+      ],
+      "parts": 3
+    },
+    {
+      "id": "chopper",
+      "hp": 2378,
+      "book": [
+        "rotorMG",
+        "bombing",
+        "missiles",
+        "gravity"
+      ],
+      "parts": 7
+    },
+    {
+      "id": "furnace",
+      "hp": 3365,
+      "book": [
+        "magma",
+        "eruptions",
+        "furnaceBeam",
+        "orbit"
+      ],
+      "parts": 6
+    },
+    {
+      "id": "cryo",
+      "hp": 4680,
+      "book": [
+        "iceGates",
+        "iceLance",
+        "iceSiege",
+        "glacierPress",
+        "gravity"
+      ],
+      "parts": 7
+    },
+    {
+      "id": "storm",
+      "hp": 5720,
+      "book": [
+        "missiles",
+        "lightning",
+        "ram",
+        "code"
+      ],
+      "parts": 6
+    },
+    {
+      "id": "knight",
+      "hp": 6150,
+      "book": [
+        "knight",
+        "knight",
+        "orbit"
+      ],
+      "parts": 8
+    },
+    {
+      "id": "harrier",
+      "hp": 5836,
+      "book": [
+        "turbines",
+        "missiles",
+        "carrierLance",
+        "gravity"
+      ],
+      "parts": 6
+    },
+    {
+      "id": "warden",
+      "hp": 6150,
+      "book": [
+        "wardenMG",
+        "stomp",
+        "scissor",
+        "portalVolley",
+        "gravity",
+        "code"
+      ],
+      "parts": 7
+    }
+  ],
+  "source_hp_runtime": [
+    {
+      "stage": 1,
+      "diff": "easy",
+      "kind": "damkeeper",
+      "name": "JUNGLE OVERLORD-X",
+      "hp": 873.6,
+      "armor": null,
+      "flags": [
+        "_threat",
+        "_noHit",
+        "_ovIntro",
+        "_ovAirborne",
+        "_continueDeathMark",
+        "_continueRewardResolved",
+        "_be",
+        "_drawY",
+        "_fightClock",
+        "_missileSupply",
+        "_stageAudioWarm",
+        "_pivot",
+        "_av3Mode"
+      ]
+    },
+    {
+      "stage": 2,
+      "diff": "easy",
+      "kind": "infernoreaver",
+      "name": "FURNACE TYRANT",
+      "hp": 1236,
+      "armor": null,
+      "flags": [
+        "_threat",
+        "_ship",
+        "_profile",
+        "_sbT",
+        "_sbStep",
+        "_entryDur",
+        "_scene",
+        "_mwBarrier",
+        "_furnace",
+        "_fz",
+        "_continueDeathMark",
+        "_continueRewardResolved",
+        "_be",
+        "_noHit",
+        "_drawY",
+        "_hm",
+        "_mwStun"
+      ]
+    },
+    {
+      "stage": 3,
+      "diff": "easy",
+      "kind": "cryospear",
+      "name": "RIME WALL \u00e2\u20ac\u201d MODULAR BASTION",
+      "hp": 1728,
+      "armor": null,
+      "flags": [
+        "_threat",
+        "_ship",
+        "_profile",
+        "_sbT",
+        "_sbStep",
+        "_entryDur",
+        "_scene",
+        "_s3boss",
+        "_er26",
+        "_mr27",
+        "_continueDeathMark",
+        "_continueRewardResolved",
+        "_be",
+        "_noHit",
+        "_drawY",
+        "_hm",
+        "_sba",
+        "_sbaHitT",
+        "_sbaKick"
+      ]
+    },
+    {
+      "stage": 4,
+      "diff": "easy",
+      "kind": "stormsovereign",
+      "name": "STORM SOVEREIGN MK II",
+      "hp": 2112,
+      "armor": null,
+      "flags": [
+        "_threat",
+        "_ship",
+        "_profile",
+        "_sbT",
+        "_sbStep",
+        "_entryDur",
+        "_scene",
+        "_s4war",
+        "_er26",
+        "_mr27",
+        "_continueDeathMark",
+        "_continueRewardResolved",
+        "_be",
+        "_noHit",
+        "_drawY",
+        "_hm",
+        "_sba",
+        "_sbaHitT",
+        "_sbaKick",
+        "_animKey"
+      ]
+    },
+    {
+      "stage": 5,
+      "diff": "easy",
+      "kind": "chromehammer",
+      "name": "CHROME HAMMER ARCHMAGE",
+      "hp": 5783.4,
+      "armor": null,
+      "flags": [
+        "_threat",
+        "_hammer",
+        "_noHit",
+        "_continueDeathMark",
+        "_continueRewardResolved",
+        "_be",
+        "_drawY",
+        "_cin30Spoke"
+      ]
+    },
+    {
+      "stage": 6,
+      "diff": "easy",
+      "kind": "chaosharrier",
+      "name": "",
+      "hp": 2138.6400000000003,
+      "armor": null,
+      "flags": [
+        "_threat",
+        "_continueDeathMark",
+        "_continueRewardResolved",
+        "_be",
+        "_noHit",
+        "_drawY",
+        "_hm"
+      ]
+    },
+    {
+      "stage": 7,
+      "diff": "easy",
+      "kind": "sludgeemperor",
+      "name": "TOXIC PORTAL WARDEN",
+      "hp": 2028,
+      "armor": null,
+      "flags": [
+        "_threat",
+        "_ship",
+        "_profile",
+        "_sbT",
+        "_sbStep",
+        "_entryDur",
+        "_scene",
+        "_s7warden",
+        "_s7FinalNoBar",
+        "_continueDeathMark",
+        "_continueRewardResolved",
+        "_be",
+        "_noHit",
+        "_drawY",
+        "_hm",
+        "_s7mod",
+        "_late27"
+      ]
+    },
+    {
+      "stage": 8,
+      "diff": "easy",
+      "kind": "vileexistence",
+      "name": "THE MUTATED DRONE",
+      "hp": 1200,
+      "armor": null,
+      "flags": [
+        "_threat",
+        "_vPhaseHp",
+        "_vBase",
+        "_vile",
+        "_r30",
+        "_vForm",
+        "_v24",
+        "_morphT",
+        "_symEntry",
+        "_lastPart",
+        "_noHit",
+        "_continueDeathMark",
+        "_continueRewardResolved",
+        "_be",
+        "_drawY"
+      ]
+    },
+    {
+      "stage": 1,
+      "diff": "normal",
+      "kind": "damkeeper",
+      "name": "JUNGLE OVERLORD-X",
+      "hp": 1829.120384,
+      "armor": null,
+      "flags": [
+        "_threat",
+        "_noHit",
+        "_ovIntro",
+        "_ovAirborne",
+        "_continueDeathMark",
+        "_continueRewardResolved",
+        "_be",
+        "_drawY",
+        "_stageAudioWarm",
+        "_pivot"
+      ]
+    },
+    {
+      "stage": 2,
+      "diff": "normal",
+      "kind": "infernoreaver",
+      "name": "FURNACE TYRANT",
+      "hp": 2590,
+      "armor": null,
+      "flags": [
+        "_threat",
+        "_ship",
+        "_profile",
+        "_sbT",
+        "_sbStep",
+        "_entryDur",
+        "_scene",
+        "_mwBarrier",
+        "_furnace",
+        "_fz",
+        "_continueDeathMark",
+        "_continueRewardResolved",
+        "_be",
+        "_noHit",
+        "_drawY",
+        "_hm",
+        "_mwStun"
+      ]
+    },
+    {
+      "stage": 3,
+      "diff": "normal",
+      "kind": "cryospear",
+      "name": "RIME WALL \u00e2\u20ac\u201d MODULAR BASTION",
+      "hp": 3168,
+      "armor": null,
+      "flags": [
+        "_threat",
+        "_ship",
+        "_profile",
+        "_sbT",
+        "_sbStep",
+        "_entryDur",
+        "_scene",
+        "_s3boss",
+        "_er26",
+        "_mr27",
+        "_continueDeathMark",
+        "_continueRewardResolved",
+        "_be",
+        "_noHit",
+        "_drawY",
+        "_hm",
+        "_sba",
+        "_sbaHitT",
+        "_sbaKick"
+      ]
+    },
+    {
+      "stage": 4,
+      "diff": "normal",
+      "kind": "stormsovereign",
+      "name": "STORM SOVEREIGN MK II",
+      "hp": 3872,
+      "armor": null,
+      "flags": [
+        "_threat",
+        "_ship",
+        "_profile",
+        "_sbT",
+        "_sbStep",
+        "_entryDur",
+        "_scene",
+        "_s4war",
+        "_er26",
+        "_mr27",
+        "_continueDeathMark",
+        "_continueRewardResolved",
+        "_be",
+        "_noHit",
+        "_drawY",
+        "_hm",
+        "_sba",
+        "_sbaHitT",
+        "_sbaKick",
+        "_animKey"
+      ]
+    },
+    {
+      "stage": 5,
+      "diff": "normal",
+      "kind": "chromehammer",
+      "name": "CHROME HAMMER ARCHMAGE",
+      "hp": 12134.112983999998,
+      "armor": null,
+      "flags": [
+        "_threat",
+        "_hammer",
+        "_noHit",
+        "_continueDeathMark",
+        "_continueRewardResolved",
+        "_be",
+        "_drawY",
+        "_cin30Spoke"
+      ]
+    },
+    {
+      "stage": 6,
+      "diff": "normal",
+      "kind": "chaosharrier",
+      "name": "",
+      "hp": 4489.3760576,
+      "armor": null,
+      "flags": [
+        "_threat",
+        "_continueDeathMark",
+        "_continueRewardResolved",
+        "_be",
+        "_noHit",
+        "_drawY",
+        "_hm"
+      ]
+    },
+    {
+      "stage": 7,
+      "diff": "normal",
+      "kind": "sludgeemperor",
+      "name": "TOXIC PORTAL WARDEN",
+      "hp": 3716,
+      "armor": null,
+      "flags": [
+        "_threat",
+        "_ship",
+        "_profile",
+        "_sbT",
+        "_sbStep",
+        "_entryDur",
+        "_scene",
+        "_s7warden",
+        "_s7FinalNoBar",
+        "_continueDeathMark",
+        "_continueRewardResolved",
+        "_be",
+        "_noHit",
+        "_drawY",
+        "_hm",
+        "_s7mod",
+        "_late27"
+      ]
+    },
+    {
+      "stage": 8,
+      "diff": "normal",
+      "kind": "vileexistence",
+      "name": "THE MUTATED DRONE",
+      "hp": 2600,
+      "armor": null,
+      "flags": [
+        "_threat",
+        "_vPhaseHp",
+        "_vBase",
+        "_vile",
+        "_r30",
+        "_vForm",
+        "_v24",
+        "_morphT",
+        "_symEntry",
+        "_lastPart",
+        "_noHit",
+        "_continueDeathMark",
+        "_continueRewardResolved",
+        "_be",
+        "_drawY"
+      ]
+    },
+    {
+      "stage": 1,
+      "diff": "hard",
+      "kind": "damkeeper",
+      "name": "JUNGLE OVERLORD-X",
+      "hp": 2012.0324224000003,
+      "armor": null,
+      "flags": [
+        "_threat",
+        "_noHit",
+        "_ovIntro",
+        "_ovAirborne",
+        "_continueDeathMark",
+        "_continueRewardResolved",
+        "_be",
+        "_drawY",
+        "_stageAudioWarm",
+        "_pivot"
+      ]
+    },
+    {
+      "stage": 2,
+      "diff": "hard",
+      "kind": "infernoreaver",
+      "name": "FURNACE TYRANT",
+      "hp": 3236,
+      "armor": null,
+      "flags": [
+        "_threat",
+        "_ship",
+        "_profile",
+        "_sbT",
+        "_sbStep",
+        "_entryDur",
+        "_scene",
+        "_mwBarrier",
+        "_furnace",
+        "_fz",
+        "_continueDeathMark",
+        "_continueRewardResolved",
+        "_be",
+        "_noHit",
+        "_drawY",
+        "_hm",
+        "_mwStun"
+      ]
+    },
+    {
+      "stage": 3,
+      "diff": "hard",
+      "kind": "cryospear",
+      "name": "RIME WALL \u00e2\u20ac\u201d MODULAR BASTION",
+      "hp": 3961,
+      "armor": null,
+      "flags": [
+        "_threat",
+        "_ship",
+        "_profile",
+        "_sbT",
+        "_sbStep",
+        "_entryDur",
+        "_scene",
+        "_s3boss",
+        "_er26",
+        "_mr27",
+        "_continueDeathMark",
+        "_continueRewardResolved",
+        "_be",
+        "_noHit",
+        "_drawY",
+        "_hm",
+        "_sba",
+        "_sbaHitT",
+        "_sbaKick"
+      ]
+    },
+    {
+      "stage": 4,
+      "diff": "hard",
+      "kind": "stormsovereign",
+      "name": "STORM SOVEREIGN MK II",
+      "hp": 4840,
+      "armor": null,
+      "flags": [
+        "_threat",
+        "_ship",
+        "_profile",
+        "_sbT",
+        "_sbStep",
+        "_entryDur",
+        "_scene",
+        "_s4war",
+        "_er26",
+        "_mr27",
+        "_continueDeathMark",
+        "_continueRewardResolved",
+        "_be",
+        "_noHit",
+        "_drawY",
+        "_hm",
+        "_sba",
+        "_sbaHitT",
+        "_sbaKick",
+        "_animKey"
+      ]
+    },
+    {
+      "stage": 5,
+      "diff": "hard",
+      "kind": "chromehammer",
+      "name": "CHROME HAMMER ARCHMAGE",
+      "hp": 15889.90986,
+      "armor": null,
+      "flags": [
+        "_threat",
+        "_hammer",
+        "_noHit",
+        "_continueDeathMark",
+        "_continueRewardResolved",
+        "_be",
+        "_drawY",
+        "_cin30Spoke"
+      ]
+    },
+    {
+      "stage": 6,
+      "diff": "hard",
+      "kind": "chaosharrier",
+      "name": "",
+      "hp": 4938.313663360001,
+      "armor": null,
+      "flags": [
+        "_threat",
+        "_continueDeathMark",
+        "_continueRewardResolved",
+        "_be",
+        "_noHit",
+        "_drawY",
+        "_hm"
+      ]
+    },
+    {
+      "stage": 7,
+      "diff": "hard",
+      "kind": "sludgeemperor",
+      "name": "TOXIC PORTAL WARDEN",
+      "hp": 4647,
+      "armor": null,
+      "flags": [
+        "_threat",
+        "_ship",
+        "_profile",
+        "_sbT",
+        "_sbStep",
+        "_entryDur",
+        "_scene",
+        "_s7warden",
+        "_s7FinalNoBar",
+        "_continueDeathMark",
+        "_continueRewardResolved",
+        "_be",
+        "_noHit",
+        "_drawY",
+        "_hm",
+        "_s7mod",
+        "_late27"
+      ]
+    },
+    {
+      "stage": 8,
+      "diff": "hard",
+      "kind": "vileexistence",
+      "name": "THE MUTATED DRONE",
+      "hp": 3300,
+      "armor": null,
+      "flags": [
+        "_threat",
+        "_vPhaseHp",
+        "_vBase",
+        "_vile",
+        "_r30",
+        "_vForm",
+        "_v24",
+        "_morphT",
+        "_symEntry",
+        "_lastPart",
+        "_noHit",
+        "_continueDeathMark",
+        "_continueRewardResolved",
+        "_be",
+        "_drawY"
+      ]
+    },
+    {
+      "stage": 1,
+      "diff": "furious",
+      "kind": "damkeeper",
+      "name": "JUNGLE OVERLORD-X",
+      "hp": 2377.8564992,
+      "armor": null,
+      "flags": [
+        "_threat",
+        "_noHit",
+        "_ovIntro",
+        "_ovAirborne",
+        "_continueDeathMark",
+        "_continueRewardResolved",
+        "_be",
+        "_drawY",
+        "_stageAudioWarm",
+        "_pivot"
+      ]
+    },
+    {
+      "stage": 2,
+      "diff": "furious",
+      "kind": "infernoreaver",
+      "name": "FURNACE TYRANT",
+      "hp": 3365,
+      "armor": null,
+      "flags": [
+        "_threat",
+        "_ship",
+        "_profile",
+        "_sbT",
+        "_sbStep",
+        "_entryDur",
+        "_scene",
+        "_mwBarrier",
+        "_furnace",
+        "_fz",
+        "_continueDeathMark",
+        "_continueRewardResolved",
+        "_be",
+        "_noHit",
+        "_drawY",
+        "_hm",
+        "_mwStun"
+      ]
+    },
+    {
+      "stage": 3,
+      "diff": "furious",
+      "kind": "cryospear",
+      "name": "RIME WALL \u00e2\u20ac\u201d MODULAR BASTION",
+      "hp": 4680,
+      "armor": null,
+      "flags": [
+        "_threat",
+        "_ship",
+        "_profile",
+        "_sbT",
+        "_sbStep",
+        "_entryDur",
+        "_scene",
+        "_s3boss",
+        "_er26",
+        "_mr27",
+        "_continueDeathMark",
+        "_continueRewardResolved",
+        "_be",
+        "_noHit",
+        "_drawY",
+        "_s3Arrival"
+      ]
+    },
+    {
+      "stage": 4,
+      "diff": "furious",
+      "kind": "stormsovereign",
+      "name": "STORM SOVEREIGN MK II",
+      "hp": 5720,
+      "armor": null,
+      "flags": [
+        "_threat",
+        "_ship",
+        "_profile",
+        "_sbT",
+        "_sbStep",
+        "_entryDur",
+        "_scene",
+        "_s4war",
+        "_er26",
+        "_mr27",
+        "_continueDeathMark",
+        "_continueRewardResolved",
+        "_be",
+        "_noHit",
+        "_drawY",
+        "_hm",
+        "_sba",
+        "_sbaHitT",
+        "_sbaKick",
+        "_animKey"
+      ]
+    },
+    {
+      "stage": 5,
+      "diff": "furious",
+      "kind": "chromehammer",
+      "name": "CHROME HAMMER ARCHMAGE",
+      "hp": 22534.781255999995,
+      "armor": null,
+      "flags": [
+        "_threat",
+        "_hammer",
+        "_noHit",
+        "_continueDeathMark",
+        "_continueRewardResolved",
+        "_be",
+        "_drawY",
+        "_cin30Spoke"
+      ]
+    },
+    {
+      "stage": 6,
+      "diff": "furious",
+      "kind": "chaosharrier",
+      "name": "",
+      "hp": 5836.18887488,
+      "armor": null,
+      "flags": [
+        "_threat",
+        "_continueDeathMark",
+        "_continueRewardResolved",
+        "_be",
+        "_noHit",
+        "_drawY",
+        "_hm"
+      ]
+    },
+    {
+      "stage": 7,
+      "diff": "furious",
+      "kind": "sludgeemperor",
+      "name": "TOXIC PORTAL WARDEN",
+      "hp": 6150,
+      "armor": null,
+      "flags": [
+        "_threat",
+        "_ship",
+        "_profile",
+        "_sbT",
+        "_sbStep",
+        "_entryDur",
+        "_scene",
+        "_s7warden",
+        "_s7FinalNoBar",
+        "_continueDeathMark",
+        "_continueRewardResolved",
+        "_be",
+        "_noHit",
+        "_drawY",
+        "_hm",
+        "_s7mod",
+        "_late27"
+      ]
+    },
+    {
+      "stage": 8,
+      "diff": "furious",
+      "kind": "vileexistence",
+      "name": "THE MUTATED DRONE",
+      "hp": 4100,
+      "armor": null,
+      "flags": [
+        "_threat",
+        "_vPhaseHp",
+        "_vBase",
+        "_vile",
+        "_r30",
+        "_vForm",
+        "_v24",
+        "_morphT",
+        "_symEntry",
+        "_lastPart",
+        "_noHit",
+        "_continueDeathMark",
+        "_continueRewardResolved",
+        "_be",
+        "_drawY"
+      ]
+    },
+    {
+      "stage": 1,
+      "diff": "insanity",
+      "kind": "damkeeper",
+      "name": "JUNGLE OVERLORD-X",
+      "hp": 2835.1365952,
+      "armor": null,
+      "flags": [
+        "_threat",
+        "_noHit",
+        "_ovIntro",
+        "_ovAirborne",
+        "_continueDeathMark",
+        "_continueRewardResolved",
+        "_be",
+        "_drawY",
+        "_stageAudioWarm",
+        "_pivot"
+      ]
+    },
+    {
+      "stage": 2,
+      "diff": "insanity",
+      "kind": "infernoreaver",
+      "name": "FURNACE TYRANT",
+      "hp": 4011,
+      "armor": null,
+      "flags": [
+        "_threat",
+        "_ship",
+        "_profile",
+        "_sbT",
+        "_sbStep",
+        "_entryDur",
+        "_scene",
+        "_mwBarrier",
+        "_furnace",
+        "_fz",
+        "_continueDeathMark",
+        "_continueRewardResolved",
+        "_be",
+        "_noHit",
+        "_drawY",
+        "_hm",
+        "_mwStun"
+      ]
+    },
+    {
+      "stage": 3,
+      "diff": "insanity",
+      "kind": "cryospear",
+      "name": "RIME WALL \u00e2\u20ac\u201d MODULAR BASTION",
+      "hp": 5580,
+      "armor": null,
+      "flags": [
+        "_threat",
+        "_ship",
+        "_profile",
+        "_sbT",
+        "_sbStep",
+        "_entryDur",
+        "_scene",
+        "_s3boss",
+        "_er26",
+        "_mr27",
+        "_continueDeathMark",
+        "_continueRewardResolved",
+        "_be",
+        "_noHit",
+        "_drawY",
+        "_hm",
+        "_sba",
+        "_sbaHitT",
+        "_sbaKick"
+      ]
+    },
+    {
+      "stage": 4,
+      "diff": "insanity",
+      "kind": "stormsovereign",
+      "name": "STORM SOVEREIGN MK II",
+      "hp": 6820,
+      "armor": null,
+      "flags": [
+        "_threat",
+        "_ship",
+        "_profile",
+        "_sbT",
+        "_sbStep",
+        "_entryDur",
+        "_scene",
+        "_s4war",
+        "_er26",
+        "_mr27",
+        "_continueDeathMark",
+        "_continueRewardResolved",
+        "_be",
+        "_noHit",
+        "_drawY",
+        "_hm",
+        "_sba",
+        "_sbaHitT",
+        "_sbaKick",
+        "_animKey"
+      ]
+    },
+    {
+      "stage": 5,
+      "diff": "insanity",
+      "kind": "chromehammer",
+      "name": "CHROME HAMMER ARCHMAGE",
+      "hp": 18807.875125199997,
+      "armor": null,
+      "flags": [
+        "_threat",
+        "_hammer",
+        "_noHit",
+        "_continueDeathMark",
+        "_continueRewardResolved",
+        "_be",
+        "_drawY",
+        "_cin30Spoke"
+      ]
+    },
+    {
+      "stage": 6,
+      "diff": "insanity",
+      "kind": "chaosharrier",
+      "name": "",
+      "hp": 6958.532889280001,
+      "armor": null,
+      "flags": [
+        "_threat",
+        "_continueDeathMark",
+        "_continueRewardResolved",
+        "_be",
+        "_noHit",
+        "_drawY",
+        "_hm"
+      ]
+    },
+    {
+      "stage": 7,
+      "diff": "insanity",
+      "kind": "sludgeemperor",
+      "name": "TOXIC PORTAL WARDEN",
+      "hp": 7330,
+      "armor": null,
+      "flags": [
+        "_threat",
+        "_ship",
+        "_profile",
+        "_sbT",
+        "_sbStep",
+        "_entryDur",
+        "_scene",
+        "_s7warden",
+        "_s7FinalNoBar",
+        "_continueDeathMark",
+        "_continueRewardResolved",
+        "_be",
+        "_noHit",
+        "_drawY",
+        "_hm",
+        "_s7mod",
+        "_late27"
+      ]
+    },
+    {
+      "stage": 8,
+      "diff": "insanity",
+      "kind": "vileexistence",
+      "name": "THE MUTATED DRONE",
+      "hp": 4700,
+      "armor": null,
+      "flags": [
+        "_threat",
+        "_vPhaseHp",
+        "_vBase",
+        "_vile",
+        "_r30",
+        "_vForm",
+        "_v24",
+        "_morphT",
+        "_symEntry",
+        "_lastPart",
+        "_noHit",
+        "_continueDeathMark",
+        "_continueRewardResolved",
+        "_be",
+        "_drawY"
+      ]
+    }
+  ],
+  "limitations": [
+    "Controlled encounter checks, not a human campaign clear or final difficulty rating.",
+    "Source Hammer includes multiple armor lives; copied Knight is tuned as a single life at 1.5 times Host HP."
+  ]
+}

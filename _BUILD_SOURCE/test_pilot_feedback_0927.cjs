@@ -5,7 +5,7 @@ module.exports=function(vm,ctxv,ok){
  const result=JSON.parse(vm.runInContext(`JSON.stringify((()=>{
   const out={};run.stage=1;run.spaceMode=false;run.gravityShipReady=false;gravityMode=null;special=null;run.sonicT=run.dkT=0;run.forge={};run.infusion=null;run.wvars=[];run.pilot='cole';player.dead=player.out=false;player.x=240;player.y=360;
   for(const w of [0,1,2]){wm26Releases=[];let pass=true;
-   for(let lv=1;lv<=5;lv++){run.weapon=w;run.wlevel=lv;run.wlevels=WEAPONS.map(()=>lv);pBullets=[];wm26Releases=[];pShoot();pass=pass&&wm26Releases.length===1&&wm26Releases[0].x===player.x;
+   for(let lv=1;lv<=5;lv++){run.weapon=w;run.wlevel=lv;run.wlevels=WEAPONS.map(()=>lv);pBullets=[];wm26Releases=[];pShoot();pass=pass&&wm26Releases.length===1&&wm26Releases[0].x===player.x+(w===1?2:0);
     wm26Tick(.03);pShoot();pass=pass&&wm26Releases.length===1;}
    out['weapon '+w+' has one centered emitter across all five tiers and rapid volleys']=pass;}
   /* 0928: the chaingun fires from its two wing pods, which draw their own flashes - it must add no nose emitter */

@@ -1,4 +1,7 @@
 /* Optional Stage-6 Harrier-route consequence: five scattered rivals, two selected wingmen. */
+// Mike's Stage X score. Keep the regular Stage 6 boss music independently mapped.
+BOFA.music.stagex='assets/game/music/LevelX.mp3';
+if(Snd){const m=new window.Audio();m.preload='none';m.src=BOFA.music.stagex;m.loop=true;Snd.music.stagex=m;}
 const Rival24=(()=>{
   const STAGES_AT=[6,6,6,6,6];
   const KEYS=['voss','nyx','rook','kaia','jace'];
@@ -51,31 +54,24 @@ const Rival24=(()=>{
     }};
     drawShips(false);   // the far side of the orbit passes behind the plaque
     /* the STAGE X plaque sits in the middle of the orbit - this is the node the pilot chooses */
-    if(h&&XART.rdy('fr27_stagex_card')){const im=XART.get('fr27_stagex_card'),w=mapFocus?118:98,hh=w*im.height/im.width,
+    if(typeof map4eStageXMarker!=='function'&&h&&XART.rdy('fr27_stagex_card')){const im=XART.get('fr27_stagex_card'),w=mapFocus?118:98,hh=w*im.height/im.width,
       pulse=mapFocus?1:.86+.14*Math.sin(orbitT*3);ctx.save();ctx.globalAlpha=(flying?clamp(scatterT/2.2,0,1):1)*pulse;ctx.imageSmoothingEnabled=false;
       if(mapFocus){ctx.shadowColor='#ff5a4a';ctx.shadowBlur=14;}ctx.drawImage(im,h.x-w/2,h.y-hh/2,w,hh);ctx.restore();}
     else XART.rdy('fr27_stagex_card');
     drawShips(true);    // and the near side in front of it
     if(mapFocus&&idx.includes(mapCursor))stageXCard(mapCursor);
-    if(flying)campText('REBEL FURY BREAKING FORMATION',VW/2,VH-128,10,'#ffb4a3');
-    else if(!mapFocus)controlHintRow([['pad_dpad','STAGE X']],VH-128,VW/2,VW-24,20);
-    else controlHintRow([['pad_dpad','RIVAL'],['pad_a','FIGHT'],['pad_b','MAP']],stageXCardTop()-14,VW/2,VW-24,20);
+    if(flying)campText('REBEL FURY BREAKING FORMATION',VW/2,VH-212,10,'#ffb4a3');
+    else if(!mapFocus)controlHintRow([['pad_dpad','STAGE X']],VH-212,VW/2,VW-24,20);
+    else controlHintRow([['pad_dpad','RIVAL'],['pad_a','FIGHT'],['pad_b','MAP']],stageXCardTop()-86,VW/2,VW-24,20);
   }
-  /* Stage X owns the bottom card while it is focused. The stage cards are baked images (nss_panel_N)
-     and the focus borrows Stage 6's cursor, so without this the pilot read Stage 6's briefing. */
-  function stageXCardH(){const ref=XART.rdy('nss_panel_6')?XART.get('nss_panel_6'):null;return ref?456*(ref.naturalHeight||ref.height)/(ref.naturalWidth||ref.width):92;}
+  /* Stage X borrows Stage 6's cursor but owns its own centered, live rival briefing. */
+  function stageXCardH(){return typeof MAPG!=='undefined'?MAPG.rect.h:98;}
   function stageXCardTop(){return VH-stageXCardH()-24;}
   function stageXCard(i){
-    const pw=456,ph=stageXCardH(),x=(VW-pw)/2,y=VH-ph-24;
-    ctx.save();ctx.fillStyle='#08060e';ctx.fillRect(x,y,pw,ph);ctx.strokeStyle=COLORS[i];ctx.lineWidth=2;ctx.strokeRect(x+1,y+1,pw-2,ph-2);ctx.restore();
-    if(XART.rdy('fr27_stagex_card')){const im=XART.get('fr27_stagex_card'),hh=ph-12,w=hh*im.width/im.height;ctx.save();ctx.imageSmoothingEnabled=false;ctx.drawImage(im,x+8,y+6,w,hh);ctx.restore();}
-    const k='rr_portrait_'+KEYS[i],px=x+pw-ph+6;
-    if(XART.rdy(k)){ctx.save();ctx.strokeStyle=COLORS[i];ctx.lineWidth=2;ctx.strokeRect(px,y+6,ph-12,ph-12);ctx.drawImage(XART.get(k),px+1,y+7,ph-14,ph-14);ctx.restore();}else XART.rdy(k);
-    const tx=x+pw*.56;
-    campText('STAGE X  -  FRACTURED FURY',tx,y+ph*.30,11,'#ffcf9a');
-    campText('RIVAL '+KEYS[i].toUpperCase(),tx,y+ph*.55,15,COLORS[i]);
-    campText('FLY WITH TWO ALLIED PILOTS',tx,y+ph*.80,8,'#bcd3e6');
+    if(typeof mapgBriefingDraw==='function')mapgBriefingDraw({key:'x-'+i,
+      title:'STAGE X - FRACTURED FURY',body:'RIVAL '+KEYS[i].toUpperCase()+'. FLY WITH TWO ALLIED PILOTS.'});
   }
+
   function mapInput(){
     if(!available())return false;
     if(scatterT!=null&&scatterT<3.2)return true;
@@ -169,7 +165,7 @@ const Rival24=(()=>{
     if(stateT>3.5||stateT>.8&&Input.menuConfirm())proceedIntro();
   }
   function tick(dt){if(!active||state!==GS.PLAY)return;
-    if(!active.music){active.music=true;Audio.startMusic('boss6');}
+    if(!active.music){active.music=true;Audio.startMusic('stagex');}
     const formation={ships:wing,boxes:[]};
     for(let i=0;i<wing.length;i++){
       const q=wing[i];if(q.dead)continue;q.t+=dt;q.cd-=dt;

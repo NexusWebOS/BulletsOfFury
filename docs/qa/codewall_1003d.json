@@ -1,0 +1,135 @@
+{
+  "checks": [
+    {
+      "ok": true,
+      "name": "all four generated sources decoded through XART"
+    },
+    {
+      "ok": true,
+      "name": "blue full-body wall appears during a real gravity charge"
+    },
+    {
+      "ok": true,
+      "name": "real chaingun projectile collision damages blue wall instead of boss"
+    },
+    {
+      "ok": true,
+      "name": "adjacent authored rows move in opposite horizontal directions"
+    },
+    {
+      "ok": true,
+      "name": "native row pixels advance while an independent damage flash plays"
+    },
+    {
+      "ok": true,
+      "name": "old wall impact and crystal effects are absent"
+    },
+    {
+      "ok": true,
+      "name": "break launches 24 authored chips through all eight directions with one sound"
+    },
+    {
+      "ok": true,
+      "name": "all flash and shatter particles expire"
+    },
+    {
+      "ok": true,
+      "name": "red projection follows the actual modular shield position and rotation"
+    },
+    {
+      "ok": true,
+      "name": "real chaingun projectile collision damages attached red code field"
+    },
+    {
+      "ok": true,
+      "name": "rotated kite containment accepts its center and rejects outside space"
+    },
+    {
+      "ok": true,
+      "name": "red field intercepts shots with its own separate red hit flash"
+    },
+    {
+      "ok": true,
+      "name": "exposed knight body takes damage without draining his remote shield"
+    },
+    {
+      "ok": true,
+      "name": "Retina can lock the red projection and exposed modular parts"
+    },
+    {
+      "ok": true,
+      "name": "breaking red energy leaves the independently destructible physical shield"
+    },
+    {
+      "ok": true,
+      "name": "destroyed shield arm cannot regenerate a floating code shield"
+    },
+    {
+      "ok": true,
+      "name": "morph uses new authored vertical scan and never draws the spherical reel"
+    },
+    {
+      "ok": true,
+      "name": "new scan completes transition 1 with intact next rig"
+    },
+    {
+      "ok": true,
+      "name": "new scan completes transition 2 with intact next rig"
+    },
+    {
+      "ok": true,
+      "name": "new scan completes transition 3 with intact next rig"
+    },
+    {
+      "ok": true,
+      "name": "new scan completes transition 4 with intact next rig"
+    },
+    {
+      "ok": true,
+      "name": "new scan completes transition 5 with intact next rig"
+    },
+    {
+      "ok": true,
+      "name": "new scan completes transition 6 with intact next rig"
+    },
+    {
+      "ok": true,
+      "name": "new scan completes transition 7 with intact next rig"
+    },
+    {
+      "ok": true,
+      "name": "no browser page or console errors"
+    }
+  ],
+  "artKeys": [
+    "cwd_morph:2",
+    "cwd_morph:3",
+    "cwd_morph:7",
+    "cwd_morph:8",
+    "cwd_morph:0",
+    "cwd_morph:1",
+    "cwd_morph:4",
+    "cwd_morph:5",
+    "cwd_morph:6",
+    "cwd_morph:9",
+    "cwd_morph:10",
+    "cwd_morph:11"
+  ],
+  "errors": [],
+  "fullSuite": {
+    "exitCode": 0,
+    "passingAssertions": 6917,
+    "banner": "FALVA/LIZZIE BUILD OK, 0 ERRORS",
+    "newAssertions": 24
+  },
+  "modularRegression": {
+    "exitCode": 0,
+    "checks": 122,
+    "errors": []
+  },
+  "recording": {
+    "path": "_shots/codewall_1003d/codewall-motion.webm",
+    "errors": [],
+    "fixture": "Guard poses held longer for visual inspection only."
+  }
+}

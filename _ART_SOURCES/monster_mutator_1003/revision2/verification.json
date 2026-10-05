@@ -1,0 +1,12 @@
+{
+  "revised_candidates": 7,
+  "modular_kits": 3,
+  "all_images_loaded": true,
+  "before_after_buttons": true,
+  "actual_part_motion": true,
+  "three_hit_preview_break": true,
+  "reset_works": true,
+  "mobile_no_overflow": true,
+  "errors": [],
+  "scope": "Art and rig preview only; no game runtime modifications."
+}

@@ -1,0 +1,226 @@
+{
+  "provider": "ElevenLabs Sound Effects v2",
+  "flow_id": "csYhMmwrGgLtEOrL4TGq",
+  "cues": [
+    {
+      "name": "laser_charge",
+      "duration": 1.5,
+      "loop": false,
+      "prompt": "A powerful science-fiction boss laser capacitor charging up, rising electric grit and a heavy magnetic hum, clear anticipation, restrained high frequencies. Isolated high-quality arcade game sound effect, immediate onset, no voice, no music, no ambience, no silence padding.",
+      "node_id": "MbxFQbIZtNXUtyoYg8hS",
+      "generation_id": "H0b83Wd2UQ65QdMmYpKf",
+      "file": "assets/game/combat_1003i/laser_charge.mp3",
+      "source_sha256": "51aeaa9a49485f55d342c75c31f62a0ec7e0d1753c69cd0660d501be685dd299",
+      "runtime_sha256": "aae30b30f3b72976a35eb3f4cb369dce78c2f6748efbf0fa93936c3af4a4e030"
+    },
+    {
+      "name": "laser_burn",
+      "duration": 2,
+      "loop": true,
+      "prompt": "Steady continuous heavy sci-fi laser beam, dense electric buzz with low reactor body, controlled crackling harmonics, seamless sustained texture without pulses or start or end. Isolated high-quality arcade game sound effect, immediate onset, no voice, no music, no ambience, no silence padding.",
+      "node_id": "j7rqyOp7XQTYuU2tlapY",
+      "generation_id": "HRkqpE9hoXP6UduPkVd6",
+      "file": "assets/game/combat_1003i/laser_burn.mp3",
+      "source_sha256": "83f86691577dbde8518623cd8ffb943191c2e5e657b92e8875f9f42691451b15",
+      "runtime_sha256": "d7534564c0c75bfd927f0d7b8b92e68e0fe49527b950b5e38819fcd8d58ff278"
+    },
+    {
+      "name": "laser_release",
+      "duration": 0.65,
+      "loop": false,
+      "prompt": "Single heavy boss laser firing, instant sharp plasma crack with deep electric punch and brief sizzling tail. Isolated high-quality arcade game sound effect, immediate onset, no voice, no music, no ambience, no silence padding.",
+      "node_id": "8bOCWLtVBsk6RLBKBdez",
+      "generation_id": "JIN66OdqbMgZ6gbukccx",
+      "file": "assets/game/combat_1003i/laser_release.mp3",
+      "source_sha256": "567607d28207715012beebb8d18fa47c05ac8637a451b0b75c0249c37d5785e4",
+      "runtime_sha256": "b160333dfb628a1acec4145e1f679338b2964f1ab41bad31c1ede8fdc978cbf0"
+    },
+    {
+      "name": "fusion_cannon",
+      "duration": 1.25,
+      "loop": false,
+      "prompt": "Single fusion cannon discharge, massive concentrated magnetic plasma blast, low thump, tearing white-hot electricity and a tight mechanical decay. Isolated high-quality arcade game sound effect, immediate onset, no voice, no music, no ambience, no silence padding.",
+      "node_id": "X4HIyEm45cAKjt23nyn4",
+      "generation_id": "Nhs4KC10qYpEzzos4lRK",
+      "file": "assets/game/combat_1003i/fusion_cannon.mp3",
+      "source_sha256": "39cccc28dbf8755c142461eed9f26c50814880dd2263248b8db1c0679124d347",
+      "runtime_sha256": "3add88ce4990f8db40cea1d89f3640437e433a945fa6a6553a2ab3b9b90e9d89"
+    },
+    {
+      "name": "cole_laser6",
+      "duration": 1.3,
+      "loop": true,
+      "prompt": "Sustained powerful blue spaceship laser, tight clean ion buzz, fast fine electric rasp and solid bass, seamless even continuous loop. Isolated high-quality arcade game sound effect, immediate onset, no voice, no music, no ambience, no silence padding.",
+      "node_id": "UseVt97oHhcMPMwTL4k2",
+      "generation_id": "0laoLqa7eNgacMLBUHU8",
+      "file": "assets/game/combat_1003i/cole_laser6.mp3",
+      "source_sha256": "d1437b7218172ade18035959d680c6a221267830ed6a6b866300dc87da207c15",
+      "runtime_sha256": "759e3576328deaec29125fae05376b9dfb3dd130df8221e8cc274af2f5f7cd6a"
+    },
+    {
+      "name": "cole_laser7",
+      "duration": 1.3,
+      "loop": true,
+      "prompt": "Sustained upgraded violet spaceship laser, layered oscillating plasma growl, richer lower energy than a blue laser, fine crackling electricity, seamless constant loop. Isolated high-quality arcade game sound effect, immediate onset, no voice, no music, no ambience, no silence padding.",
+      "node_id": "Wc9bpgT3qrPz7Cykx8bO",
+      "generation_id": "An0FArFMRfcSYs6lqdHc",
+      "file": "assets/game/combat_1003i/cole_laser7.mp3",
+      "source_sha256": "8cd8274dbbb2e15423879cd45effcf561de6d73f130f02f4a882fa7f25b8b004",
+      "runtime_sha256": "4aeda2cf8e9057e21418aaa842bc8638a30c9e76bd19cc3b768f83de7fb60530"
+    },
+    {
+      "name": "target_acquire",
+      "duration": 0.65,
+      "loop": false,
+      "prompt": "One short threatening targeting acquisition, mechanical iris click followed by a rising filtered electric scrape and locked metal clack. No beeps, no siren. Isolated high-quality arcade game sound effect, immediate onset, no voice, no music, no ambience, no silence padding.",
+      "node_id": "kwTsjXiwtxqINdREVpTc",
+      "generation_id": "230n1RqqflkL1Vgvx9HC",
+      "file": "assets/game/combat_1003i/target_acquire.mp3",
+      "source_sha256": "c28277f14fd653110d805e607311af159044c3e9195603adf1c1b81c31c13c1b",
+      "runtime_sha256": "dbebda5cf78ddce07e56ff3837ed17b208f08e22fde8e78c848ee1f7c772802e"
+    },
+    {
+      "name": "teleport_out",
+      "duration": 0.85,
+      "loop": false,
+      "prompt": "An alien war machine folds out of space, suction vortex with glitching energy sucked sharply inward, sudden tight ending. Isolated high-quality arcade game sound effect, immediate onset, no voice, no music, no ambience, no silence padding.",
+      "node_id": "cKjl5XMzIf7l4eD3StyM",
+      "generation_id": "5jP4EkkUq3sgp6pByd1q",
+      "file": "assets/game/combat_1003i/teleport_out.mp3",
+      "source_sha256": "6683ee1871943e46b949c899b8782da7f9eb590de257181ee1b22964b062b7e8",
+      "runtime_sha256": "48dddf20c1b6853a56e00df98664ebd614c42e492dc516ede72d0ab6479ccb3e"
+    },
+    {
+      "name": "teleport_in",
+      "duration": 0.85,
+      "loop": false,
+      "prompt": "An alien war machine materializes, compressed spatial pop expanding into a short electrical crack and sub bass impact. Isolated high-quality arcade game sound effect, immediate onset, no voice, no music, no ambience, no silence padding.",
+      "node_id": "oKb58dzraxY71MKzSXp4",
+      "generation_id": "qCAR8XO6VspXKyzIM63X",
+      "file": "assets/game/combat_1003i/teleport_in.mp3",
+      "source_sha256": "7657aec93b50d0b170a8839a302bfedc8340d7e16b44216ed6197c14bc26ac6c",
+      "runtime_sha256": "6cb8562ad6f5b46475b1abefaab05a4d6f6069530f66dd6e844174bf9524ead3"
+    },
+    {
+      "name": "firewall_launch",
+      "duration": 1.2,
+      "loop": false,
+      "prompt": "A broad wall of fire erupts and rushes forward, explosive furnace ignition, deep hot whoosh and roaring flame crackle, one distinct attack. Isolated high-quality arcade game sound effect, immediate onset, no voice, no music, no ambience, no silence padding.",
+      "node_id": "eEuyro3mZa5A4rpxNAMX",
+      "generation_id": "KvHgkZcCXvzEDG9NOYrx",
+      "file": "assets/game/combat_1003i/firewall_launch.mp3",
+      "source_sha256": "a91ec28c92caea6645b666804f656ac73e4d730836e851df805fcb074eee3028",
+      "runtime_sha256": "b3365165ecf361339a4b262bc4f735b66759377e5aacdb2cc6064e1341ef8ad2"
+    },
+    {
+      "name": "firewall_burn",
+      "duration": 2,
+      "loop": true,
+      "prompt": "A moving wall of fire, continuous layered furnace roar with brisk turbulent flame crackles, seamless sustained loop, no explosion. Isolated high-quality arcade game sound effect, immediate onset, no voice, no music, no ambience, no silence padding.",
+      "node_id": "qDZotTdsIcxM8IjOPs1L",
+      "generation_id": "atKQTrS40bRJvJ1sbYSQ",
+      "file": "assets/game/combat_1003i/firewall_burn.mp3",
+      "source_sha256": "35a3f89958f0f4d60ac9c27dc7a26a3f1733f906c8cdbdf27f6ff45532cc7683",
+      "runtime_sha256": "33ceebfa9281f449120d405f03cf4cda634c5a88b3830b2abc43713a0d7a33ad"
+    },
+    {
+      "name": "toxic_spit",
+      "duration": 0.7,
+      "loop": false,
+      "prompt": "One hostile biomechanical acid cannon shot, pressurized wet expulsion with sharp mechanical kick and corrosive sizzle. Isolated high-quality arcade game sound effect, immediate onset, no voice, no music, no ambience, no silence padding.",
+      "node_id": "I4jLjCpZ3vLErAPjNqBY",
+      "generation_id": "FMERFcKOtav0Ewc9k9Qn",
+      "file": "assets/game/combat_1003i/toxic_spit.mp3",
+      "source_sha256": "921995fc51bf34c1755126e1ca7e4bf118397825a9635b0adae5fa39d4e023dc",
+      "runtime_sha256": "777a86a2dbfa2a57df519520d6894e567ddf8208c5d9d3c4e84359a501b81577"
+    },
+    {
+      "name": "alien_orb",
+      "duration": 0.8,
+      "loop": false,
+      "prompt": "Single alien plasma orb launched from an organic machine, throaty energy thump, short resonant warble and electric grit. Isolated high-quality arcade game sound effect, immediate onset, no voice, no music, no ambience, no silence padding.",
+      "node_id": "eLFcSh6qcrq8HBRTK4Po",
+      "generation_id": "zovUJmJ538OrPEMtRWVM",
+      "file": "assets/game/combat_1003i/alien_orb.mp3",
+      "source_sha256": "16fab9dcf408458c2fec987f764462df156422b32a735857268bc15f3c41b4b0",
+      "runtime_sha256": "8fff6fd091244d5e0e4e5183a413d6050a6aeb7b9cf670a058bfdc46b46ddd98"
+    },
+    {
+      "name": "claw_lunge",
+      "duration": 0.65,
+      "loop": false,
+      "prompt": "Fast kamikaze metal claw slash, sudden aggressive air cut with servo snap and vicious metallic scrape, one lunging strike. Isolated high-quality arcade game sound effect, immediate onset, no voice, no music, no ambience, no silence padding.",
+      "node_id": "SEnJRragA1gb20Uwiztx",
+      "generation_id": "edH403N6BrIKhNz8naGR",
+      "file": "assets/game/combat_1003i/claw_lunge.mp3",
+      "source_sha256": "a62fe651daed15ecfa3718b3c1697d085fb8bb50c5e6b294f62451799873bc3e",
+      "runtime_sha256": "4b5873e71e6b47083de3e028072ce93a78571817f025069e6870391e400574f2"
+    },
+    {
+      "name": "impact_metal",
+      "duration": 0.5,
+      "loop": false,
+      "prompt": "One dense armored spaceship hit, hard metal punch and tiny crunchy fragments, short dry arcade combat impact. Isolated high-quality arcade game sound effect, immediate onset, no voice, no music, no ambience, no silence padding.",
+      "node_id": "f1Q41MfALc6QAjPcI8Dp",
+      "generation_id": "vNwqFcdEtq739BeqKjZn",
+      "file": "assets/game/combat_1003i/impact_metal.mp3",
+      "source_sha256": "e6354f063ccd11fe269287e020a729128a435912bd0b68b4c93ed129869affc8",
+      "runtime_sha256": "dcb4cabddcbd25fbe01c10484c2d8c962631424f007dd2b7a35bd087210cb8d9"
+    },
+    {
+      "name": "impact_energy",
+      "duration": 0.55,
+      "loop": false,
+      "prompt": "One laser hit on an energy shield, sharp electric splat with low resonant thud and brief static decay. Isolated high-quality arcade game sound effect, immediate onset, no voice, no music, no ambience, no silence padding.",
+      "node_id": "lf91XX80nbzN8HI2Z6lp",
+      "generation_id": "kUVQyghfA0YmeSIVLTn4",
+      "file": "assets/game/combat_1003i/impact_energy.mp3",
+      "source_sha256": "54ee13ffc2712cbea4c658a93d0e3488e930e145c0895aa71e07d906d30466c7",
+      "runtime_sha256": "32fe4cbcc3fa240b24c53803d481b7a0a2995b8ba032c78167a994db5f4889ba"
+    },
+    {
+      "name": "impact_flesh",
+      "duration": 0.55,
+      "loop": false,
+      "prompt": "One biomechanical alien struck by a projectile, thick wet crunch layered with a brittle carapace crack, short tight impact. Isolated high-quality arcade game sound effect, immediate onset, no voice, no music, no ambience, no silence padding.",
+      "node_id": "HtPvJsCNkCuzXlKholwn",
+      "generation_id": "aAAWgVGZJWhVZSSnckCe",
+      "file": "assets/game/combat_1003i/impact_flesh.mp3",
+      "source_sha256": "b387dc250edef3a5ef909eaed644c5bd8120221b08d4f82d844c0569593cb35b",
+      "runtime_sha256": "01b577be843843f9c55c3f4f5dbb7d370115b6c2ea7b506228f60cf62a32ce66"
+    },
+    {
+      "name": "code_shatter",
+      "duration": 1.1,
+      "loop": false,
+      "prompt": "A digital energy shield breaks into thousands of fragments, crystalline electronic fracture, granular data fizz and descending static shards. Isolated high-quality arcade game sound effect, immediate onset, no voice, no music, no ambience, no silence padding.",
+      "node_id": "nEuztZFg7MsNBSuiqJ2A",
+      "generation_id": "APmwywqTOaIfS4H8IWIz",
+      "file": "assets/game/combat_1003i/code_shatter.mp3",
+      "source_sha256": "30b3d805d37256e7115cb76cc564a752e083bbf4f0b12730f8e900a49e3d48c8",
+      "runtime_sha256": "493f5e49287d90dcf27a603d8fee164ded6f6238d780e82cb3daa45b50c6cae4"
+    },
+    {
+      "name": "module_break",
+      "duration": 1.3,
+      "loop": false,
+      "prompt": "A heavy robot weapon module tears off and explodes, metal joint wrench, punchy explosion and a brief shower of clanking debris. Isolated high-quality arcade game sound effect, immediate onset, no voice, no music, no ambience, no silence padding.",
+      "node_id": "QUvsClMVgubyGhMHbTew",
+      "generation_id": "c5yxnxbcWwBtqgUadogC",
+      "file": "assets/game/combat_1003i/module_break.mp3",
+      "source_sha256": "5c86bb8d6c291c4812290ad617bb7d05ff5b36613ba8efb5ff6c22d6598a986c",
+      "runtime_sha256": "ddbbaa819587bca97f79f797d0f02d47b3126a0313441b549b9cac876d83670a"
+    },
+    {
+      "name": "gravity_pulse",
+      "duration": 1.1,
+      "loop": false,
+      "prompt": "Alien gravitational shockwave, descending dense sub bass pressure with twisting magnetic electric harmonics, short readable combat pulse. Isolated high-quality arcade game sound effect, immediate onset, no voice, no music, no ambience, no silence padding.",
+      "node_id": "dNyJJtSP6kXgGSpfimf4",
+      "generation_id": "12ZMMcw5wLzARK8pkSM2",
+      "file": "assets/game/combat_1003i/gravity_pulse.mp3",
+      "source_sha256": "0efccb6c3b82691f2f44df87e9b0b3a914e8e5ea1bab2fa35f2426a814e3930d",
+      "runtime_sha256": "1d90ac02f1ea062dabd55df5dfef5eef4cf88b9ea77644787d1cfac4e3d4bbc3"
+    }
+  ]
+}

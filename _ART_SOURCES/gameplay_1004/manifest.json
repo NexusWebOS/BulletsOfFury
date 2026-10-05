@@ -1,0 +1,156 @@
+{
+  "source": "OpenAI imagegen, 2026-10-04",
+  "normalization": "separate largest connected alpha component per cell, nearest-neighbor contain on 512px transparent canvas; derived grayscale/shadow/glow UI masks",
+  "bridge_crop": [
+    9,
+    177,
+    49,
+    199
+  ],
+  "islands": [
+    {
+      "key": 1,
+      "crop": [
+        0,
+        0,
+        411,
+        378
+      ],
+      "opaque_bounds": [
+        7,
+        6,
+        411,
+        374
+      ],
+      "output": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\gameplay_1004\\island_1.png"
+    },
+    {
+      "key": 2,
+      "crop": [
+        411,
+        0,
+        849,
+        378
+      ],
+      "opaque_bounds": [
+        10,
+        5,
+        422,
+        375
+      ],
+      "output": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\gameplay_1004\\island_2.png"
+    },
+    {
+      "key": 3,
+      "crop": [
+        849,
+        0,
+        1254,
+        378
+      ],
+      "opaque_bounds": [
+        0,
+        5,
+        399,
+        375
+      ],
+      "output": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\gameplay_1004\\island_3.png"
+    },
+    {
+      "key": 4,
+      "crop": [
+        0,
+        378,
+        411,
+        818
+      ],
+      "opaque_bounds": [
+        6,
+        6,
+        394,
+        432
+      ],
+      "output": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\gameplay_1004\\island_4.png"
+    },
+    {
+      "key": "hub",
+      "crop": [
+        411,
+        378,
+        849,
+        818
+      ],
+      "opaque_bounds": [
+        0,
+        3,
+        438,
+        440
+      ],
+      "output": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\gameplay_1004\\island_hub.png"
+    },
+    {
+      "key": 5,
+      "crop": [
+        849,
+        378,
+        1254,
+        818
+      ],
+      "opaque_bounds": [
+        10,
+        6,
+        400,
+        433
+      ],
+      "output": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\gameplay_1004\\island_5.png"
+    },
+    {
+      "key": 7,
+      "crop": [
+        0,
+        818,
+        411,
+        1254
+      ],
+      "opaque_bounds": [
+        7,
+        6,
+        404,
+        416
+      ],
+      "output": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\gameplay_1004\\island_7.png"
+    },
+    {
+      "key": 6,
+      "crop": [
+        411,
+        818,
+        849,
+        1254
+      ],
+      "opaque_bounds": [
+        3,
+        10,
+        429,
+        410
+      ],
+      "output": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\gameplay_1004\\island_6.png"
+    },
+    {
+      "key": 8,
+      "crop": [
+        849,
+        818,
+        1254,
+        1254
+      ],
+      "opaque_bounds": [
+        1,
+        2,
+        397,
+        417
+      ],
+      "output": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\gameplay_1004\\island_8.png"
+    }
+  ]
+}

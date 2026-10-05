@@ -1,0 +1,19 @@
+{
+  "source": "C:/Users/Mdogg/Desktop/finalform.wav",
+  "source_sha256": "7cd57da58ca6ef0b0f8eb8e6ba6c609fbe9aa60360eac9bd9eadbf57f73396a5",
+  "duration_seconds": 131.44,
+  "encoder": "libmp3lame",
+  "bitrate": "256 kbps",
+  "gain_changes": false,
+  "trimmed": false,
+  "pitch_or_speed_changes": false,
+  "destination": "assets/game/music/Level8b3.mp3",
+  "destination_sha256": "f64d45604b436fa943ea690d7ad5450a0f90e97981e67280b4d7cca24355550e",
+  "mappings": {
+    "mutated_drone": "Level8b.mp3 (previous Level8b2)",
+    "ghost": "Level8b2.mp3 (previous Level8b3)",
+    "dracula_and_mimics": "Level8b3.mp3 (new finalform.wav)"
+  },
+  "previous_first_track_preserved": "assets/game/music/Unused_FinalBossDrone.mp3",
+  "decode_checks": "ffmpeg complete decode of all three MP3 files succeeded"
+}

@@ -1,0 +1,1165 @@
+{
+  "checks": [
+    {
+      "ok": true,
+      "name": "five generated transformation reels decode through XART"
+    },
+    {
+      "ok": true,
+      "name": "axel password boot equips, fires and displays anchored chainguns"
+    },
+    {
+      "ok": true,
+      "name": "decker password boot equips, fires and displays anchored chainguns"
+    },
+    {
+      "ok": true,
+      "name": "maverick password boot equips, fires and displays anchored chainguns"
+    },
+    {
+      "ok": true,
+      "name": "freezer password boot equips, fires and displays anchored chainguns"
+    },
+    {
+      "ok": true,
+      "name": "juggernaut password boot equips, fires and displays anchored chainguns"
+    },
+    {
+      "ok": true,
+      "name": "yuri password boot equips, fires and displays anchored chainguns"
+    },
+    {
+      "ok": true,
+      "name": "lizzie password boot equips, fires and displays anchored chainguns"
+    },
+    {
+      "ok": true,
+      "name": "falva password boot equips, fires and displays anchored chainguns"
+    },
+    {
+      "ok": true,
+      "name": "cole password boot equips, fires and displays anchored chainguns"
+    },
+    {
+      "ok": true,
+      "name": "game context draws both Yuri authored wing mounts"
+    },
+    {
+      "ok": true,
+      "name": "sewer wave callbacks replace toxic pods"
+    },
+    {
+      "ok": true,
+      "name": "loadout mouse handler equips machine gun and preserves it through save and next stage"
+    },
+    {
+      "ok": true,
+      "name": "Furious intro fills eight separate colored health lives"
+    },
+    {
+      "ok": true,
+      "name": "real player shots damage form 1"
+    },
+    {
+      "ok": true,
+      "name": "form 1 talons completes warning, attack and recovery"
+    },
+    {
+      "ok": true,
+      "name": "form 1 gravity completes warning, attack and recovery"
+    },
+    {
+      "ok": true,
+      "name": "form 1 gravity produces real hazards"
+    },
+    {
+      "ok": true,
+      "name": "form 1 code completes warning, attack and recovery"
+    },
+    {
+      "ok": true,
+      "name": "form 1 code produces real hazards"
+    },
+    {
+      "ok": true,
+      "name": "real player shots damage form 2"
+    },
+    {
+      "ok": true,
+      "name": "form 2 rotorMG completes warning, attack and recovery"
+    },
+    {
+      "ok": true,
+      "name": "form 2 rotorMG produces real hazards"
+    },
+    {
+      "ok": true,
+      "name": "form 2 bombing completes warning, attack and recovery"
+    },
+    {
+      "ok": true,
+      "name": "form 2 bombing produces real hazards"
+    },
+    {
+      "ok": true,
+      "name": "form 2 missiles completes warning, attack and recovery"
+    },
+    {
+      "ok": true,
+      "name": "form 2 missiles produces real hazards"
+    },
+    {
+      "ok": true,
+      "name": "form 2 gravity completes warning, attack and recovery"
+    },
+    {
+      "ok": true,
+      "name": "form 2 gravity produces real hazards"
+    },
+    {
+      "ok": true,
+      "name": "real player shots damage form 3"
+    },
+    {
+      "ok": true,
+      "name": "form 3 magma completes warning, attack and recovery"
+    },
+    {
+      "ok": true,
+      "name": "form 3 magma produces real hazards"
+    },
+    {
+      "ok": true,
+      "name": "form 3 eruptions completes warning, attack and recovery"
+    },
+    {
+      "ok": true,
+      "name": "form 3 eruptions produces real hazards"
+    },
+    {
+      "ok": true,
+      "name": "form 3 furnaceBeam completes warning, attack and recovery"
+    },
+    {
+      "ok": true,
+      "name": "form 3 furnaceBeam produces real hazards"
+    },
+    {
+      "ok": true,
+      "name": "form 3 orbit completes warning, attack and recovery"
+    },
+    {
+      "ok": true,
+      "name": "form 3 orbit produces real hazards"
+    },
+    {
+      "ok": true,
+      "name": "real player shots damage form 4"
+    },
+    {
+      "ok": true,
+      "name": "form 4 iceMG completes warning, attack and recovery"
+    },
+    {
+      "ok": true,
+      "name": "form 4 iceMG produces real hazards"
+    },
+    {
+      "ok": true,
+      "name": "form 4 iceLance completes warning, attack and recovery"
+    },
+    {
+      "ok": true,
+      "name": "form 4 iceLance produces real hazards"
+    },
+    {
+      "ok": true,
+      "name": "form 4 iceOrbit completes warning, attack and recovery"
+    },
+    {
+      "ok": true,
+      "name": "form 4 iceOrbit produces real hazards"
+    },
+    {
+      "ok": true,
+      "name": "form 4 gravity completes warning, attack and recovery"
+    },
+    {
+      "ok": true,
+      "name": "form 4 gravity produces real hazards"
+    },
+    {
+      "ok": true,
+      "name": "real player shots damage form 5"
+    },
+    {
+      "ok": true,
+      "name": "form 5 missiles completes warning, attack and recovery"
+    },
+    {
+      "ok": true,
+      "name": "form 5 missiles produces real hazards"
+    },
+    {
+      "ok": true,
+      "name": "form 5 lightning completes warning, attack and recovery"
+    },
+    {
+      "ok": true,
+      "name": "form 5 lightning produces real hazards"
+    },
+    {
+      "ok": true,
+      "name": "form 5 ram completes warning, attack and recovery"
+    },
+    {
+      "ok": true,
+      "name": "form 5 code completes warning, attack and recovery"
+    },
+    {
+      "ok": true,
+      "name": "form 5 code produces real hazards"
+    },
+    {
+      "ok": true,
+      "name": "real player shots damage form 6"
+    },
+    {
+      "ok": true,
+      "name": "form 6 knight completes warning, attack and recovery"
+    },
+    {
+      "ok": true,
+      "name": "form 6 knight completes warning, attack and recovery"
+    },
+    {
+      "ok": true,
+      "name": "form 6 orbit completes warning, attack and recovery"
+    },
+    {
+      "ok": true,
+      "name": "form 6 orbit produces real hazards"
+    },
+    {
+      "ok": true,
+      "name": "real player shots damage form 7"
+    },
+    {
+      "ok": true,
+      "name": "form 7 turbines completes warning, attack and recovery"
+    },
+    {
+      "ok": true,
+      "name": "form 7 turbines produces real hazards"
+    },
+    {
+      "ok": true,
+      "name": "form 7 missiles completes warning, attack and recovery"
+    },
+    {
+      "ok": true,
+      "name": "form 7 missiles produces real hazards"
+    },
+    {
+      "ok": true,
+      "name": "form 7 carrierLance completes warning, attack and recovery"
+    },
+    {
+      "ok": true,
+      "name": "form 7 carrierLance produces real hazards"
+    },
+    {
+      "ok": true,
+      "name": "form 7 gravity completes warning, attack and recovery"
+    },
+    {
+      "ok": true,
+      "name": "form 7 gravity produces real hazards"
+    },
+    {
+      "ok": true,
+      "name": "real player shots damage form 8"
+    },
+    {
+      "ok": true,
+      "name": "form 8 wardenMG completes warning, attack and recovery"
+    },
+    {
+      "ok": true,
+      "name": "form 8 wardenMG produces real hazards"
+    },
+    {
+      "ok": true,
+      "name": "form 8 stomp completes warning, attack and recovery"
+    },
+    {
+      "ok": true,
+      "name": "form 8 scissor completes warning, attack and recovery"
+    },
+    {
+      "ok": true,
+      "name": "form 8 scissor produces real hazards"
+    },
+    {
+      "ok": true,
+      "name": "form 8 gravity completes warning, attack and recovery"
+    },
+    {
+      "ok": true,
+      "name": "form 8 gravity produces real hazards"
+    },
+    {
+      "ok": true,
+      "name": "form 8 code completes warning, attack and recovery"
+    },
+    {
+      "ok": true,
+      "name": "form 8 code produces real hazards"
+    },
+    {
+      "ok": true,
+      "name": "all eight identities render authored art through game drawImage"
+    },
+    {
+      "ok": true,
+      "name": "native chaingun collision damages an independent host arm"
+    },
+    {
+      "ok": true,
+      "name": "destroyed host arm leaves the core and opposite arm intact"
+    },
+    {
+      "ok": true,
+      "name": "full progression enters intact form 1"
+    },
+    {
+      "ok": true,
+      "name": "no premature reward after life 1"
+    },
+    {
+      "ok": true,
+      "name": "full progression enters intact form 2"
+    },
+    {
+      "ok": true,
+      "name": "no premature reward after life 2"
+    },
+    {
+      "ok": true,
+      "name": "full progression enters intact form 3"
+    },
+    {
+      "ok": true,
+      "name": "no premature reward after life 3"
+    },
+    {
+      "ok": true,
+      "name": "full progression enters intact form 4"
+    },
+    {
+      "ok": true,
+      "name": "no premature reward after life 4"
+    },
+    {
+      "ok": true,
+      "name": "full progression enters intact form 5"
+    },
+    {
+      "ok": true,
+      "name": "no premature reward after life 5"
+    },
+    {
+      "ok": true,
+      "name": "full progression enters intact form 6"
+    },
+    {
+      "ok": true,
+      "name": "no premature reward after life 6"
+    },
+    {
+      "ok": true,
+      "name": "full progression enters intact form 7"
+    },
+    {
+      "ok": true,
+      "name": "no premature reward after life 7"
+    },
+    {
+      "ok": true,
+      "name": "full progression enters intact form 8"
+    },
+    {
+      "ok": true,
+      "name": "eighth life alone releases portal, reunion and final stage clear"
+    },
+    {
+      "ok": true,
+      "name": "no page or console errors"
+    }
+  ],
+  "forms": [
+    {
+      "form": 0,
+      "id": "host",
+      "attacks": [
+        {
+          "type": "talons",
+          "shots": 0,
+          "beams": 0,
+          "ground": 0,
+          "done": true,
+          "recovery": 1.1333333333333333,
+          "finite": true,
+          "phaseHistory": []
+        },
+        {
+          "type": "gravity",
+          "shots": 6,
+          "beams": 0,
+          "ground": 0,
+          "done": true,
+          "recovery": 1.0833333333333335,
+          "finite": true,
+          "phaseHistory": []
+        },
+        {
+          "type": "code",
+          "shots": 0,
+          "beams": 2,
+          "ground": 0,
+          "done": true,
+          "recovery": 1.1,
+          "finite": true,
+          "phaseHistory": []
+        }
+      ]
+    },
+    {
+      "form": 1,
+      "id": "chopper",
+      "attacks": [
+        {
+          "type": "rotorMG",
+          "shots": 4,
+          "beams": 0,
+          "ground": 0,
+          "done": true,
+          "recovery": 1.1166666666666667,
+          "finite": true,
+          "phaseHistory": []
+        },
+        {
+          "type": "bombing",
+          "shots": 2,
+          "beams": 0,
+          "ground": 5,
+          "done": true,
+          "recovery": 1.1166666666666667,
+          "finite": true,
+          "phaseHistory": []
+        },
+        {
+          "type": "missiles",
+          "shots": 2,
+          "beams": 0,
+          "ground": 0,
+          "done": true,
+          "recovery": 1.1166666666666667,
+          "finite": true,
+          "phaseHistory": []
+        },
+        {
+          "type": "gravity",
+          "shots": 6,
+          "beams": 0,
+          "ground": 0,
+          "done": true,
+          "recovery": 1.0833333333333335,
+          "finite": true,
+          "phaseHistory": []
+        }
+      ]
+    },
+    {
+      "form": 2,
+      "id": "furnace",
+      "attacks": [
+        {
+          "type": "magma",
+          "shots": 12,
+          "beams": 0,
+          "ground": 0,
+          "done": true,
+          "recovery": 1.1166666666666667,
+          "finite": true,
+          "phaseHistory": []
+        },
+        {
+          "type": "eruptions",
+          "shots": 2,
+          "beams": 0,
+          "ground": 5,
+          "done": true,
+          "recovery": 1.1166666666666667,
+          "finite": true,
+          "phaseHistory": []
+        },
+        {
+          "type": "furnaceBeam",
+          "shots": 0,
+          "beams": 2,
+          "ground": 0,
+          "done": true,
+          "recovery": 1.1,
+          "finite": true,
+          "phaseHistory": []
+        },
+        {
+          "type": "orbit",
+          "shots": 5,
+          "beams": 0,
+          "ground": 0,
+          "done": true,
+          "recovery": 1.1,
+          "finite": true,
+          "phaseHistory": []
+        }
+      ]
+    },
+    {
+      "form": 3,
+      "id": "cryo",
+      "attacks": [
+        {
+          "type": "iceMG",
+          "shots": 4,
+          "beams": 0,
+          "ground": 0,
+          "done": true,
+          "recovery": 1.1166666666666667,
+          "finite": true,
+          "phaseHistory": []
+        },
+        {
+          "type": "iceLance",
+          "shots": 0,
+          "beams": 2,
+          "ground": 0,
+          "done": true,
+          "recovery": 1.1,
+          "finite": true,
+          "phaseHistory": []
+        },
+        {
+          "type": "iceOrbit",
+          "shots": 5,
+          "beams": 0,
+          "ground": 0,
+          "done": true,
+          "recovery": 1.1,
+          "finite": true,
+          "phaseHistory": []
+        },
+        {
+          "type": "gravity",
+          "shots": 6,
+          "beams": 0,
+          "ground": 0,
+          "done": true,
+          "recovery": 1.0833333333333335,
+          "finite": true,
+          "phaseHistory": []
+        }
+      ]
+    },
+    {
+      "form": 4,
+      "id": "storm",
+      "attacks": [
+        {
+          "type": "missiles",
+          "shots": 2,
+          "beams": 0,
+          "ground": 0,
+          "done": true,
+          "recovery": 1.1166666666666667,
+          "finite": true,
+          "phaseHistory": []
+        },
+        {
+          "type": "lightning",
+          "shots": 0,
+          "beams": 1,
+          "ground": 0,
+          "done": true,
+          "recovery": 1.1,
+          "finite": true,
+          "phaseHistory": []
+        },
+        {
+          "type": "ram",
+          "shots": 0,
+          "beams": 0,
+          "ground": 0,
+          "done": true,
+          "recovery": 1.6333333333333333,
+          "finite": true,
+          "phaseHistory": []
+        },
+        {
+          "type": "code",
+          "shots": 0,
+          "beams": 2,
+          "ground": 0,
+          "done": true,
+          "recovery": 1.1,
+          "finite": true,
+          "phaseHistory": []
+        }
+      ]
+    },
+    {
+      "form": 5,
+      "id": "knight",
+      "attacks": [
+        {
+          "type": "knight",
+          "shots": 0,
+          "beams": 0,
+          "ground": 0,
+          "done": true,
+          "recovery": 1.9833333333333334,
+          "finite": true,
+          "phaseHistory": [
+            "guard",
+            "jumpTell",
+            "jump",
+            "land",
+            "followTell",
+            "sweep",
+            "slashRecover",
+            "out",
+            "in",
+            "slashTell",
+            "slash",
+            "recover",
+            "out",
+            "in"
+          ]
+        },
+        {
+          "type": "knight",
+          "shots": 0,
+          "beams": 0,
+          "ground": 0,
+          "done": true,
+          "recovery": 1.9333333333333336,
+          "finite": true,
+          "phaseHistory": [
+            "guard",
+            "jumpTell",
+            "jump",
+            "land",
+            "followTell",
+            "sweep",
+            "slashRecover",
+            "out",
+            "in",
+            "slashTell",
+            "slash",
+            "recover",
+            "out",
+            "in",
+            "guard",
+            "slashTell",
+            "slash",
+            "slashRecover",
+            "jumpTell",
+            "jump",
+            "land",
+            "followTell",
+            "sweep",
+            "slashRecover",
+            "jumpTell",
+            "jump",
+            "land",
+            "recover",
+            "out",
+            "in"
+          ]
+        },
+        {
+          "type": "orbit",
+          "shots": 6,
+          "beams": 0,
+          "ground": 0,
+          "done": true,
+          "recovery": 1.1,
+          "finite": true,
+          "phaseHistory": [
+            "guard",
+            "jumpTell",
+            "jump",
+            "land",
+            "followTell",
+            "sweep",
+            "slashRecover",
+            "out",
+            "in",
+            "slashTell",
+            "slash",
+            "recover",
+            "out",
+            "in",
+            "guard",
+            "slashTell",
+            "slash",
+            "slashRecover",
+            "jumpTell",
+            "jump",
+            "land",
+            "followTell",
+            "sweep",
+            "slashRecover",
+            "jumpTell",
+            "jump",
+            "land",
+            "recover",
+            "out",
+            "in"
+          ]
+        }
+      ]
+    },
+    {
+      "form": 6,
+      "id": "harrier",
+      "attacks": [
+        {
+          "type": "turbines",
+          "shots": 6,
+          "beams": 0,
+          "ground": 0,
+          "done": true,
+          "recovery": 1.0833333333333335,
+          "finite": true,
+          "phaseHistory": [
+            "guard",
+            "jumpTell",
+            "jump",
+            "land",
+            "followTell",
+            "sweep",
+            "slashRecover",
+            "out",
+            "in",
+            "slashTell",
+            "slash",
+            "recover",
+            "out",
+            "in",
+            "guard",
+            "slashTell",
+            "slash",
+            "slashRecover",
+            "jumpTell",
+            "jump",
+            "land",
+            "followTell",
+            "sweep",
+            "slashRecover",
+            "jumpTell",
+            "jump",
+            "land",
+            "recover",
+            "out",
+            "in"
+          ]
+        },
+        {
+          "type": "missiles",
+          "shots": 2,
+          "beams": 0,
+          "ground": 0,
+          "done": true,
+          "recovery": 1.1166666666666667,
+          "finite": true,
+          "phaseHistory": [
+            "guard",
+            "jumpTell",
+            "jump",
+            "land",
+            "followTell",
+            "sweep",
+            "slashRecover",
+            "out",
+            "in",
+            "slashTell",
+            "slash",
+            "recover",
+            "out",
+            "in",
+            "guard",
+            "slashTell",
+            "slash",
+            "slashRecover",
+            "jumpTell",
+            "jump",
+            "land",
+            "followTell",
+            "sweep",
+            "slashRecover",
+            "jumpTell",
+            "jump",
+            "land",
+            "recover",
+            "out",
+            "in"
+          ]
+        },
+        {
+          "type": "carrierLance",
+          "shots": 0,
+          "beams": 2,
+          "ground": 0,
+          "done": true,
+          "recovery": 1.1,
+          "finite": true,
+          "phaseHistory": [
+            "guard",
+            "jumpTell",
+            "jump",
+            "land",
+            "followTell",
+            "sweep",
+            "slashRecover",
+            "out",
+            "in",
+            "slashTell",
+            "slash",
+            "recover",
+            "out",
+            "in",
+            "guard",
+            "slashTell",
+            "slash",
+            "slashRecover",
+            "jumpTell",
+            "jump",
+            "land",
+            "followTell",
+            "sweep",
+            "slashRecover",
+            "jumpTell",
+            "jump",
+            "land",
+            "recover",
+            "out",
+            "in"
+          ]
+        },
+        {
+          "type": "gravity",
+          "shots": 6,
+          "beams": 0,
+          "ground": 0,
+          "done": true,
+          "recovery": 1.0833333333333335,
+          "finite": true,
+          "phaseHistory": [
+            "guard",
+            "jumpTell",
+            "jump",
+            "land",
+            "followTell",
+            "sweep",
+            "slashRecover",
+            "out",
+            "in",
+            "slashTell",
+            "slash",
+            "recover",
+            "out",
+            "in",
+            "guard",
+            "slashTell",
+            "slash",
+            "slashRecover",
+            "jumpTell",
+            "jump",
+            "land",
+            "followTell",
+            "sweep",
+            "slashRecover",
+            "jumpTell",
+            "jump",
+            "land",
+            "recover",
+            "out",
+            "in"
+          ]
+        }
+      ]
+    },
+    {
+      "form": 7,
+      "id": "warden",
+      "attacks": [
+        {
+          "type": "wardenMG",
+          "shots": 6,
+          "beams": 0,
+          "ground": 0,
+          "done": true,
+          "recovery": 1.1166666666666667,
+          "finite": true,
+          "phaseHistory": [
+            "guard",
+            "jumpTell",
+            "jump",
+            "land",
+            "followTell",
+            "sweep",
+            "slashRecover",
+            "out",
+            "in",
+            "slashTell",
+            "slash",
+            "recover",
+            "out",
+            "in",
+            "guard",
+            "slashTell",
+            "slash",
+            "slashRecover",
+            "jumpTell",
+            "jump",
+            "land",
+            "followTell",
+            "sweep",
+            "slashRecover",
+            "jumpTell",
+            "jump",
+            "land",
+            "recover",
+            "out",
+            "in"
+          ]
+        },
+        {
+          "type": "stomp",
+          "shots": 5,
+          "beams": 0,
+          "ground": 0,
+          "done": true,
+          "recovery": 1.6333333333333333,
+          "finite": true,
+          "phaseHistory": [
+            "guard",
+            "jumpTell",
+            "jump",
+            "land",
+            "followTell",
+            "sweep",
+            "slashRecover",
+            "out",
+            "in",
+            "slashTell",
+            "slash",
+            "recover",
+            "out",
+            "in",
+            "guard",
+            "slashTell",
+            "slash",
+            "slashRecover",
+            "jumpTell",
+            "jump",
+            "land",
+            "followTell",
+            "sweep",
+            "slashRecover",
+            "jumpTell",
+            "jump",
+            "land",
+            "recover",
+            "out",
+            "in"
+          ]
+        },
+        {
+          "type": "scissor",
+          "shots": 0,
+          "beams": 2,
+          "ground": 0,
+          "done": true,
+          "recovery": 1.1,
+          "finite": true,
+          "phaseHistory": [
+            "guard",
+            "jumpTell",
+            "jump",
+            "land",
+            "followTell",
+            "sweep",
+            "slashRecover",
+            "out",
+            "in",
+            "slashTell",
+            "slash",
+            "recover",
+            "out",
+            "in",
+            "guard",
+            "slashTell",
+            "slash",
+            "slashRecover",
+            "jumpTell",
+            "jump",
+            "land",
+            "followTell",
+            "sweep",
+            "slashRecover",
+            "jumpTell",
+            "jump",
+            "land",
+            "recover",
+            "out",
+            "in"
+          ]
+        },
+        {
+          "type": "gravity",
+          "shots": 6,
+          "beams": 0,
+          "ground": 0,
+          "done": true,
+          "recovery": 1.0833333333333335,
+          "finite": true,
+          "phaseHistory": [
+            "guard",
+            "jumpTell",
+            "jump",
+            "land",
+            "followTell",
+            "sweep",
+            "slashRecover",
+            "out",
+            "in",
+            "slashTell",
+            "slash",
+            "recover",
+            "out",
+            "in",
+            "guard",
+            "slashTell",
+            "slash",
+            "slashRecover",
+            "jumpTell",
+            "jump",
+            "land",
+            "followTell",
+            "sweep",
+            "slashRecover",
+            "jumpTell",
+            "jump",
+            "land",
+            "recover",
+            "out",
+            "in"
+          ]
+        },
+        {
+          "type": "code",
+          "shots": 0,
+          "beams": 2,
+          "ground": 0,
+          "done": true,
+          "recovery": 1.1,
+          "finite": true,
+          "phaseHistory": [
+            "guard",
+            "jumpTell",
+            "jump",
+            "land",
+            "followTell",
+            "sweep",
+            "slashRecover",
+            "out",
+            "in",
+            "slashTell",
+            "slash",
+            "recover",
+            "out",
+            "in",
+            "guard",
+            "slashTell",
+            "slash",
+            "slashRecover",
+            "jumpTell",
+            "jump",
+            "land",
+            "followTell",
+            "sweep",
+            "slashRecover",
+            "jumpTell",
+            "jump",
+            "land",
+            "recover",
+            "out",
+            "in"
+          ]
+        }
+      ]
+    }
+  ],
+  "scope": "Real Chromium controlled encounters; human balance playtest still needed.",
+  "artCalls": [
+    "r30_possessed_body",
+    "r30_possessed_armL",
+    "r30_possessed_armR",
+    "s81003_fov",
+    "s81003_teleport",
+    "r30_fx_8",
+    "s81003_beams",
+    "r30_chopper_body",
+    "r30_chopper_rotor",
+    "r30_fx_9",
+    "finale1003b_furnace",
+    "finale1003b_cryo",
+    "finale1003b_storm",
+    "s81003_knight",
+    "s81003_wall",
+    "r30_fx_0",
+    "r30_fx_1",
+    "r30_fx_2",
+    "r30_fx_3",
+    "finale1003b_harrier",
+    "finale1003b_warden"
+  ],
+  "armCollision": {
+    "hp": 135,
+    "before": 160,
+    "boss": 1111,
+    "beforeBoss": 1136,
+    "part": null,
+    "bullets": 0,
+    "x": 338.5,
+    "y": 225.83020796896596
+  },
+  "sounds": {
+    "bossWeaponCharge": 37,
+    "combatAlien0927": 3,
+    "enemyBossCannon": 46,
+    "combatBeam0927": 15,
+    "enemyMachineGunHeavy": 39,
+    "combatOrb0927": 8,
+    "combatEnergy0927": 2,
+    "hammerImpact": 4,
+    "combatModule0927": 5,
+    "teleportIn": 14,
+    "expBig": 23,
+    "bossPhase": 8
+  },
+  "errors": []
+}

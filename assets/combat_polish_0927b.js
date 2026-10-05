@@ -30,7 +30,7 @@ function polishCell(name,i){
 }
 function polishBlit(name,i,x,y,w,h,flash){const im=polishCell(name,i);if(!im)return;ctx.save();ctx.imageSmoothingEnabled=false;ctx.drawImage(im,x-w/2,y-h/2,w,h);if(flash){
   const id=name+i+'white';let c=POLISH_CACHE[id];if(!c){c=document.createElement('canvas');c.width=im.width;c.height=im.height;const g=c.getContext('2d');g.drawImage(im,0,0);g.globalCompositeOperation='source-in';g.fillStyle='#fff';g.fillRect(0,0,c.width,c.height);POLISH_CACHE[id]=c;}
-  ctx.globalAlpha=Math.min(.8,flash*5);ctx.drawImage(c,x-w/2,y-h/2,w,h);}ctx.restore();}
+  ctx.globalAlpha=Math.min(1,flash*9);ctx.drawImage(c,x-w/2,y-h/2,w,h);}ctx.restore();}
 function polishPanel(x,y,w,h){const im=polishCell('armory',3);if(!im)return;const s=90,d=Math.min(17,h/3),xs=[0,s,im.width-s],ys=[0,s,im.height-s],ws=[s,im.width-2*s,s],hs=[s,im.height-2*s,s],dx=[x,x+d,x+w-d],dy=[y,y+d,y+h-d],dw=[d,w-2*d,d],dh=[d,h-2*d,d];for(let a=0;a<3;a++)for(let b=0;b<3;b++)ctx.drawImage(im,xs[a],ys[b],ws[a],hs[b],dx[a],dy[b],dw[a],dh[b]);}
 function polishBaseIcon(w){return ['micon_mg_1','micon_spread_1','micon_missile_1','micon_laser_1','micon_firewall_1','micon_iceorb_1','micon_lasermist_1','micon_chaingun_1','micon_lightningorb_1'][w];}
 function polishMapFlash(F){
@@ -153,29 +153,38 @@ function siegeBomberInit(b){
 }
 function siegeBomberParts(b){
   if(b._bomber.space)return mr27SpaceParts(b);const W=b.w;return [{id:'core',cell:0,x:b.x,y:b.y,w:W,h:b.h},...[-1,1].flatMap(s=>[{id:s<0?'engineL':'engineR',cell:1,x:b.x+s*W*.30,y:b.y+W*.12,w:W*.15,h:W*.43},{id:s<0?'laserL':'laserR',cell:2,x:b.x+s*W*.17,y:b.y-W*.015,w:W*.13,h:W*.36}])];}
-function siegeBomberAt(b,x,y){if(b.dead||b.enter)return null;for(const p of siegeBomberParts(b).reverse()){const m=b._bomber.parts.find(q=>q.id===p.id);if(m&&m.hp<=0)continue;const core=p.id==='core',w=core?p.w*.48:p.w,h=core?p.h*.82:p.h;if(Math.abs(x-p.x)<w/2&&Math.abs(y-p.y)<h/2)return p.id;}return null;}
-function siegeBomberBeam(b,beam){for(let y=Math.min(beam.bot??player.y,b.y+b.h);y>Math.max(beam.top||0,b.y-b.h);y-=3)for(const x of [beam.x,beam.x-(beam.w||6)*.4,beam.x+(beam.w||6)*.4]){const id=siegeBomberAt(b,x,y);if(id)return{x,y,id};}return null;}
+function siegeBomberAt(b,x,y,pad=0){if(b.dead||b.enter||!Number.isFinite(x)||!Number.isFinite(y))return null;for(const p of siegeBomberParts(b).reverse()){const m=b._bomber.parts.find(q=>q.id===p.id);if(m&&m.hp<=0)continue;const core=p.id==='core',w=core?p.w*.48:p.w,h=core?p.h*.82:p.h;if(Math.abs(x-p.x)<w/2+pad&&Math.abs(y-p.y)<h/2+pad)return p.id;}return null;}
+function siegeBomberBeam(b,beam){const bottom=Math.min(beam.bot??player.y,b.y+b.h),top=Math.max(beam.top||0,b.y-b.h);
+  /* The laser plates are painted over their adjacent engines. A held beam aimed at a turret's
+     centre must hit that visible plate even where its lower edge overlaps an engine box. */
+  for(const p of siegeBomberParts(b).filter(q=>q.id.startsWith('laser'))){
+    const m=b._bomber.parts.find(q=>q.id===p.id);
+    if(m?.hp>0&&Math.abs(beam.x-p.x)<p.w*.5+(beam.w||6)*.5&&p.y+p.h*.5>=top&&p.y-p.h*.5<=bottom)
+      return {x:beam.x,y:Math.min(bottom,p.y+p.h*.5),id:p.id};
+  }
+  for(let y=bottom;y>top;y-=3)for(const x of [beam.x,beam.x-(beam.w||6)*.4,beam.x+(beam.w||6)*.4]){const id=siegeBomberAt(b,x,y,2);if(id)return{x,y,id};}return null;}
 function siegeBomberTargets(b){return siegeBomberParts(b).map(p=>retinaDynamicPiece(b,'bomber-'+p.id,p.id==='core'?'boss':'module',()=>{const q=siegeBomberParts(b).find(q=>q.id===p.id),m=b._bomber.parts.find(q=>q.id===p.id);return{x:q.x,y:q.y,hp:m?m.hp:b._bomber.core,dead:b.dead||b.enter||!!(m&&m.hp<=0)};},d=>siegeBomberHit(b,d,p.x,p.y,p.id),p.w,p.h));}
-function siegeBomberHit(b,dmg,x,y,id){if(b.enter||b.dead||dmg<=0||b._bomber.mode==='overdrive')return;const B=b._bomber,p=B.parts.find(p=>p.id===(id||siegeBomberAt(b,x,y)));if(!p&&id!=='core'&&siegeBomberAt(b,x,y)!=='core')return;
+function siegeBomberHit(b,dmg,x,y,id){if(b.enter||b.dead||dmg<=0||b._bomber.mode==='overdrive')return;const B=b._bomber,target=id||siegeBomberAt(b,x,y,Math.max(2,(_dmgBullet?.w||0)*.35))||(!Number.isFinite(x)||!Number.isFinite(y)?'core':null),p=B.parts.find(p=>p.id===target);if(!p&&target!=='core')return;
   if(p&&p.hp<=0)return;
-  if(p){p.hp=Math.max(0,p.hp-dmg);p.flash=.2;if(!p.hp){const shape=siegeBomberParts(b).find(q=>q.id===p.id);if(typeof d27ModuleRupture==='function')d27ModuleRupture(b,p,shape,'red');explode(x,y,b.w*.35,'red');Audio.SFX.expBig?.();if(p.id.startsWith('laser')&&['charge','beam'].includes(B.mode))siegeBomberSet(b,'recover');}}
+  if(p){p.hp=Math.max(0,p.hp-dmg);p.flash=.2;if(!p.hp){const shape=siegeBomberParts(b).find(q=>q.id===p.id);if(typeof d27ModuleRupture==='function')d27ModuleRupture(b,p,{...shape,debrisImage:B.space?mr27Cell('space',shape.cell,typeof d27FuriousBomber==='function'&&d27FuriousBomber(b)?'fury':null):polishCell('bomber',shape.cell)},'red');explode(shape.x,shape.y,b.w*.24,'red');Audio.SFX.expBig?.();if(p.id.startsWith('laser')&&['charge','beam'].includes(B.mode))siegeBomberSet(b,'recover');}}
   else {B.core=Math.max(0,B.core-dmg);b.flash=.18;}
   b.hp=B.core+B.parts.reduce((s,p)=>s+p.hp,0);
   if(B.core<=0){b.hp=0;b.dead=true;b.dying=0;groundTargetingCancel(b);polishLanes=polishLanes.filter(q=>q.owner!==b);achievementEncounterDefeat(b,'miniboss');continueRewardResolve(b,b.x,b.y,'miniboss');Audio.SFX.expBig?.();}
 }
-function siegeBomberSet(b,mode){const B=b._bomber;B.mode=mode;B.t=0;B.cd=0;B.dur=({bombs:diffKey==='easy'?3.1:4.2,charge:diffKey==='easy'?3.4:2.7,beam:1.5,missiles:diffKey==='easy'?2.4:3.3,recover:diffKey==='easy'?2.0:diffKey==='normal'?1.55:1.25})[mode]||2;if(typeof d27FuriousBomber==='function'&&d27FuriousBomber(b)){B.dur=({bombs:3.6,charge:1.65,beam:1.25,missiles:2.7,recover:.85})[mode]||B.dur;B.safeLane=Math.floor(Math.random()*5);B.volley=0;}if(mode==='lob'){B.dur=[1.1,.95,.85][B.n]*(diffKey==='easy'?1.3:1)+(2+B.n)*.34+1.5;B.lobCast=false;}
+function siegeBomberSet(b,mode){const B=b._bomber;B.mode=mode;B.t=0;B.cd=0;B.dur=({bombs:diffKey==='easy'?3.1:4.2,charge:diffKey==='easy'?3.4:2.7,beam:1.5,crossfire:diffKey==='easy'?3.1:3.8,missiles:diffKey==='easy'?2.4:3.3,recover:diffKey==='easy'?2.0:diffKey==='normal'?1.55:1.25})[mode]||2;if(typeof d27FuriousBomber==='function'&&d27FuriousBomber(b)){B.dur=({bombs:3.6,charge:1.65,beam:1.25,crossfire:3.2,missiles:2.7,recover:.85})[mode]||B.dur;B.safeLane=Math.floor(Math.random()*5);B.volley=0;}if(mode==='lob'){B.dur=[1.1,.95,.85][B.n]*(diffKey==='easy'?1.3:1)+(2+B.n)*.34+1.5;B.lobCast=false;}
   if(mode==='carpet'){B.dur=3.6;B.carpetCast=false;}
   if(mode==='overdrive'){B.dur=1.6;B.odFx=false;}
   if(B.od&&mode!=='overdrive')B.dur*=mode==='recover'?.75:.9;
   B.history.push(mode);B.target={x:player.x,y:player.y};if(mode==='charge'){(Audio.SFX.bossWeaponCharge||Audio.SFX.laserBeamStart)?.();arcadeBanner('ALLIED WING UNDER FIRE');}if(mode==='beam')(Audio.SFX.quadFire||Audio.SFX.laserBeamStart)?.();}
 function siegeBomberTick(b,dt){const B=b._bomber;B.clock+=dt;B.t+=dt;b.flash=Math.max(0,(b.flash||0)-dt);for(const p of B.parts)p.flash=Math.max(0,p.flash-dt);
   if(b.dead){b.dying+=dt;if(b.dying>2.8){subBossActive=false;subBossDone=true;subBoss=null;run.score+=9000;stageScoreOffer(9000);dropPowerup(b.x,b.y,'weapon');}return;}
-  if(B.mode==='entry'){b.y=lerp(-b.h,b.ty,1-Math.pow(1-clamp(B.t/B.dur,0,1),3));if(B.t>=B.dur){b.enter=false;siegeBomberSet(b,'bombs');}return;}
+  if(B.mode==='entry'){b.y=lerp(-b.h,b.ty,1-Math.pow(1-clamp(B.t/B.dur,0,1),3));if(B.t>=B.dur){b.enter=false;siegeBomberSet(b,B.space?'crossfire':'bombs');}return;}
   const engines=B.parts.filter(p=>p.id.startsWith('engine')&&p.hp>0).length,furious=typeof d27FuriousBomber==='function'&&d27FuriousBomber(b);
   const tx=worldWidth()/2+Math.sin(B.clock*(furious?1.7:diffKey==='easy'?.48:.78+B.n*.18))*Math.max(35,worldWidth()*(furious?.29:.25))*engines/2;b.x+=(tx-b.x)*Math.min(1,dt*(furious?5:diffKey==='easy'?1.25:2.1));const ty=b.ty+(furious?Math.sin(B.clock*2.9)*22:0);b.y+=(ty-b.y)*Math.min(1,dt*(furious?4:2));
   B.cd-=dt;
   if(B.mode==='charge')combatWarningTick(b,'siege-beam',Math.min(B.t,B.dur),B.dur);
-  if(B.mode==='beam')for(const p of siegeBomberParts(b).filter(p=>p.id.startsWith('laser')))if(B.parts.find(q=>q.id===p.id).hp>0&&Math.abs(player.x-p.x)<27&&player.y<p.y-p.h*.46)playerHit();
+  if(B.mode==='beam')for(const p of siegeBomberParts(b).filter(p=>p.id.startsWith('laser')))if(B.parts.find(q=>q.id===p.id).hp>0&&Math.abs(player.x-p.x)<27&&player.y>=p.y+p.h*.46)playerHit();
+  if(B.mode==='crossfire'&&B.cd<=0){B.cd=diffKey==='easy'?.72:B.n===2?.31:.47;for(const p of siegeBomberParts(b).filter(p=>p.id.startsWith('laser')&&B.parts.find(q=>q.id===p.id).hp>0)){const tip=p.y+p.h*.46,a=Math.atan2(player.y-tip,player.x-p.x);for(const off of (B.n===2?[-.13,0,.13]:[-.08,.08]))siegeBomberShot(b)(p.x,tip,a+off,diffKey==='easy'?3.9:5.1+B.n*.35);if(typeof wm26Emit==='function')wm26Emit(b,p.x,tip,a,'laser',null,{size:29});}Audio.SFX.laser?.();}
   if(B.mode==='bombs'&&B.cd<=0){B.cd=furious?.38:diffKey==='easy'?1.3:[.62,.49,.40][B.n];
     const slot=(B.volley||0)%5;B.volley=(B.volley||0)+1;
     const target={x:furious?(slot+.5)*worldWidth()/5:clamp(player.x+Math.sin(B.clock*2.1)*55,camLeftX()+35,camRightX()-35),y:clamp(player.y,220,VH-65)};
@@ -189,8 +198,8 @@ function siegeBomberTick(b,dt){const B=b._bomber;B.clock+=dt;B.t+=dt;b.flash=Mat
   if(B.t>=B.dur){if(B.mode==='charge')siegeBomberSet(b,'beam');else if(B.mode==='beam')siegeBomberSet(b,'recover');else{
     /* 0928: Furious crosses into its overdrive once, between attacks, at half the pool */
     if(B.n===2&&!B.od&&b.hp<=b.maxhp*.5){B.od=true;siegeBomberSet(b,'overdrive');}
-    else{const book=B.od?['charge','carpet','missiles','lob','bombs']:['charge','missiles','lob','bombs'],next=book[B.seq++%book.length];
-      siegeBomberSet(b,next==='charge'&&!B.parts.some(p=>p.id.startsWith('laser')&&p.hp>0)?'bombs':next);}}}
+    else{const book=B.space?(B.od?['charge','crossfire','missiles','charge','crossfire']:['crossfire','charge','missiles','crossfire']):(B.od?['charge','carpet','missiles','lob','bombs']:['bombs','charge','missiles','lob']),next=book[B.seq++%book.length];
+      siegeBomberSet(b,['charge','crossfire'].includes(next)&&!B.parts.some(p=>p.id.startsWith('laser')&&p.hp>0)?(B.space?'missiles':'bombs'):next);}}}
   B.bombs=B.bombs.filter(q=>!q.dead);
 }
 function siegeBomberDraw(b){
@@ -199,15 +208,15 @@ function siegeBomberDraw(b){
   siegeBomberLaneDraw(b);
   {const B0=b._bomber;if(B0.mode==='overdrive'){const k=clamp(B0.t/B0.dur,0,1),key='l23fx_inferno_mg_'+(Math.floor(B0.clock*16)%8);if(XART.rdy(key)){ctx.save();ctx.globalCompositeOperation='lighter';ctx.globalAlpha=.6*(1-k);const s=b.w*(.5+k);ctx.drawImage(XART.get(key),b.x-s/2,b.y-s/2,s,s);ctx.restore();}}}
   if(b._bomber.space&&mr27SpaceDraw(b))return;const B=b._bomber;if(b.dead)return;for(const p of siegeBomberParts(b)){const m=B.parts.find(q=>q.id===p.id);if(m?.hp<=0)continue;
-  if(p.id.startsWith('engine')){const k='l23fx_inferno_mg_'+(Math.floor(B.clock*18)%8);if(XART.rdy(k)){const im=XART.get(k);ctx.drawImage(im,p.x-11,p.y+p.h*.40,22,42+(Math.floor(B.clock*18)%3)*4);}}
+  if(p.id.startsWith('engine')&&typeof d27MuzzleDraw==='function')d27MuzzleDraw(ctx,'exhaust',p.x,p.y+p.h*.43,Math.PI/2,(B.clock*12)%1,82);
   polishBlit('bomber',p.cell,p.x,p.y,p.w,p.h,m?m.flash:b.flash);}
   if(B.mode==='bombs')polishBlit('bomber',3,b.x,b.y+b.h*.23,b.w*.12,b.h*.30);
   for(const q of B.bombs)if(q.t>0&&q.t<q.warn&&XART.rdy('lz_bomb')){const p=clamp(q.t/q.warn,0,1),im=XART.get('lz_bomb');ctx.save();ctx.translate(lerp(q._polishBomb.x,q.x,p),lerp(q._polishBomb.y,q.y,p));ctx.rotate(Math.PI);ctx.drawImage(im,-8,-20,16,40);ctx.restore();}
 }
 function siegeBomberBeamDraw(b){if(b.dead)return;const B=b._bomber;
-  for(const p of siegeBomberParts(b).filter(p=>p.id.startsWith('laser'))){if(B.parts.find(q=>q.id===p.id).hp<=0)continue;const tip=p.y-p.h*.46;
-    if(B.mode==='charge'){const s=18+Math.min(1,B.t/B.dur)*45;wm26Draw(ctx,'laser',p.x,tip,-Math.PI/2,(B.clock*13)%1,s,d27FuriousBomber(b)?'#ff3922':null);combatWarningDraw(b,{x:p.x,y:tip,ex:p.x,ey:-100,progress:B.t/B.dur,width:45});}
-    else if(B.mode==='beam'){const k=B.space?'tlv_beam':'l23fx_inferno_laser_'+Math.floor(B.clock*16)%8;if(XART.rdy(k)){const im=XART.get(k);ctx.save();ctx.translate(p.x,tip);ctx.rotate(Math.PI);ctx.drawImage(im,-27,0,54,tip+45);ctx.restore();}}
+  for(const p of siegeBomberParts(b).filter(p=>p.id.startsWith('laser'))){if(B.parts.find(q=>q.id===p.id).hp<=0)continue;const tip=p.y+p.h*.46;
+    if(B.mode==='charge'){const s=18+Math.min(1,B.t/B.dur)*45;wm26Draw(ctx,'laser',p.x,tip,Math.PI/2,(B.clock*13)%1,s,d27FuriousBomber(b)?'#ff3922':null);combatWarningDraw(b,{x:p.x,y:tip,ex:p.x,ey:VH+20,progress:B.t/B.dur,width:45});}
+    else if(B.mode==='beam'){const k=B.space?'tlv_beam':'l23fx_inferno_laser_'+Math.floor(B.clock*16)%8;if(XART.rdy(k)){const im=XART.get(k);ctx.save();ctx.translate(p.x,tip);ctx.drawImage(im,-27,0,54,VH-tip+20);ctx.restore();}if(typeof d27MuzzleDraw==='function')d27MuzzleDraw(ctx,'laser',p.x,tip,Math.PI/2,(B.clock*13)%1,40);}
   }
 }
 

@@ -1,0 +1,312 @@
+{
+  "status": "Art-only modular motion studies, not game encounters",
+  "coordinates": "source pixels; pivot relative to each rect; attach relative to body pivot",
+  "rigs": {
+    "hexpyre": {
+      "sheet": "03-hexpyre-parts.png",
+      "body": {
+        "rect": [
+          16,
+          48,
+          543,
+          552
+        ],
+        "pivot": [
+          270,
+          273
+        ]
+      },
+      "scale": 0.4,
+      "limbs": [
+        {
+          "rect": [
+            1072,
+            18,
+            455,
+            550
+          ],
+          "pivot": [
+            391,
+            287
+          ],
+          "attach": [
+            -206,
+            -14
+          ],
+          "palm": [
+            -283,
+            -131
+          ],
+          "side": -1
+        },
+        {
+          "rect": [
+            582,
+            18,
+            438,
+            550
+          ],
+          "pivot": [
+            73,
+            288
+          ],
+          "attach": [
+            214,
+            -14
+          ],
+          "palm": [
+            268,
+            -133
+          ],
+          "side": 1
+        }
+      ],
+      "flames": [
+        {
+          "rect": [
+            36,
+            588,
+            442,
+            429
+          ],
+          "pivot": [
+            221,
+            377
+          ]
+        },
+        {
+          "rect": [
+            552,
+            572,
+            471,
+            433
+          ],
+          "pivot": [
+            236,
+            392
+          ]
+        }
+      ],
+      "cap": {
+        "rect": [
+          1202,
+          696,
+          183,
+          188
+        ],
+        "pivot": [
+          91,
+          94
+        ]
+      }
+    },
+    "hellhugger": {
+      "sheet": "11-hellhugger-parts.png",
+      "body": {
+        "rect": [
+          68,
+          102,
+          410,
+          351
+        ],
+        "pivot": [
+          205,
+          176
+        ]
+      },
+      "scale": 0.32,
+      "limbs": [
+        {
+          "rect": [
+            548,
+            42,
+            462,
+            493
+          ],
+          "pivot": [
+            378,
+            65
+          ],
+          "attach": [
+            -126,
+            92
+          ],
+          "side": -1,
+          "front": true
+        },
+        {
+          "rect": [
+            1057,
+            42,
+            463,
+            493
+          ],
+          "pivot": [
+            82,
+            65
+          ],
+          "attach": [
+            126,
+            92
+          ],
+          "side": 1,
+          "front": true
+        },
+        {
+          "rect": [
+            72,
+            538,
+            426,
+            381
+          ],
+          "pivot": [
+            350,
+            309
+          ],
+          "attach": [
+            -137,
+            -88
+          ],
+          "side": -1,
+          "front": false
+        },
+        {
+          "rect": [
+            568,
+            538,
+            421,
+            381
+          ],
+          "pivot": [
+            72,
+            309
+          ],
+          "attach": [
+            147,
+            -88
+          ],
+          "side": 1,
+          "front": false
+        }
+      ],
+      "thruster": {
+        "rect": [
+          1120,
+          533,
+          293,
+          428
+        ],
+        "pivot": [
+          145,
+          380
+        ],
+        "attach": [
+          0,
+          -130
+        ],
+        "scale": 0.2
+      }
+    },
+    "riflelocust": {
+      "sheet": "06-rifle-locust-parts.png",
+      "scale": 0.48,
+      "body": {
+        "rect": [
+          90,
+          30,
+          500,
+          545
+        ],
+        "pivot": [
+          250,
+          265
+        ]
+      },
+      "guns": [
+        {
+          "rect": [
+            635,
+            110,
+            370,
+            465
+          ],
+          "pivot": [
+            318,
+            76
+          ],
+          "attach": [
+            -192,
+            101
+          ],
+          "side": -1
+        },
+        {
+          "rect": [
+            1115,
+            110,
+            375,
+            465
+          ],
+          "pivot": [
+            38,
+            76
+          ],
+          "attach": [
+            192,
+            101
+          ],
+          "side": 1
+        }
+      ],
+      "pods": [
+        {
+          "rect": [
+            80,
+            620,
+            395,
+            370
+          ],
+          "pivot": [
+            354,
+            134
+          ],
+          "attach": [
+            -210,
+            -88
+          ],
+          "side": -1
+        },
+        {
+          "rect": [
+            640,
+            620,
+            395,
+            370
+          ],
+          "pivot": [
+            31,
+            134
+          ],
+          "attach": [
+            210,
+            -88
+          ],
+          "side": 1
+        }
+      ],
+      "cap": {
+        "rect": [
+          1180,
+          690,
+          270,
+          260
+        ],
+        "pivot": [
+          135,
+          130
+        ]
+      },
+      "description": "Fixed upright hull, independent rifle pivot and recoil, articulated side pods; extra socket cover retained for later damage states."
+    }
+  }
+}

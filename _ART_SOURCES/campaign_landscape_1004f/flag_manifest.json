@@ -1,0 +1,285 @@
+{
+  "generator": "OpenAI built-in imagegen, one referenced edit per numeral",
+  "normalization": "Alpha crop and nearest-neighbor contain. Cloth-only rank palettes preserve neutral chrome, lettering and alpha. Selected halos are derived silhouettes; no procedural art.",
+  "flags": [
+    {
+      "stage": 1,
+      "roman": "I",
+      "anchor": [
+        0.29375,
+        0.95
+      ],
+      "size": [
+        240,
+        320
+      ],
+      "source": "flag_1_source.png",
+      "crop": [
+        344,
+        289,
+        898,
+        1087
+      ],
+      "sha256": "25210276a5adeff778c2386295bcf9beba426e61beb3a7f724fe729ad071bcb4",
+      "prompt": "Use case: precise-object-edit. Edit the supplied approved Stage X campaign flag. Change ONLY its letter X to the Roman numeral \"I\" and the green pennant cloth to emerald green; preserve the identical chrome mast, chrome rectangular frame, bolts, base, ivory pixel font, 16-bit pixel-art texture, highlights, silhouette and proportions as closely as possible. Exact text is \"I\", large and centered, no other text. This is one single isolated game-map flag sprite, not a sheet. Full flag and base with safe padding, genuine transparent background. Keep the ivory lettering and chrome neutral, do not recolor the mast. No caption or watermark.",
+      "states": [
+        "av",
+        "lock",
+        "done_gold",
+        "done_silver",
+        "done_green",
+        "white",
+        "hi0",
+        "hi1"
+      ]
+    },
+    {
+      "stage": 2,
+      "roman": "II",
+      "anchor": [
+        0.2916666666666667,
+        0.95
+      ],
+      "size": [
+        240,
+        320
+      ],
+      "source": "flag_2_source.png",
+      "crop": [
+        342,
+        289,
+        898,
+        1086
+      ],
+      "sha256": "2be83436e2d4d482b3b630e73d9460ce6192c774b01074d1fde276a9ba91b892",
+      "prompt": "Use case: precise-object-edit. Edit the supplied approved Stage X campaign flag. Change ONLY its letter X to the Roman numeral \"II\" and the green pennant cloth to warm orange; preserve the identical chrome mast, chrome rectangular frame, bolts, base, ivory pixel font, 16-bit pixel-art texture, highlights, silhouette and proportions as closely as possible. Exact text is \"II\", large and centered, no other text. This is one single isolated game-map flag sprite, not a sheet. Full flag and base with safe padding, genuine transparent background. Keep the ivory lettering and chrome neutral, do not recolor the mast. No caption or watermark.",
+      "states": [
+        "av",
+        "lock",
+        "done_gold",
+        "done_silver",
+        "done_green",
+        "white",
+        "hi0",
+        "hi1"
+      ]
+    },
+    {
+      "stage": 3,
+      "roman": "III",
+      "anchor": [
+        0.29583333333333334,
+        0.95
+      ],
+      "size": [
+        240,
+        320
+      ],
+      "source": "flag_3_source.png",
+      "crop": [
+        342,
+        289,
+        898,
+        1088
+      ],
+      "sha256": "c5a48f73c74de094f389deebe977b4997cc1821a704468236b1b5fdf2ad6128e",
+      "prompt": "Use case: precise-object-edit. Edit the supplied approved Stage X campaign flag. Change ONLY its letter X to the Roman numeral \"III\" and the green pennant cloth to icy cyan-blue; preserve the identical chrome mast, chrome rectangular frame, bolts, base, ivory pixel font, 16-bit pixel-art texture, highlights, silhouette and proportions as closely as possible. Exact text is \"III\", large and centered, no other text. This is one single isolated game-map flag sprite, not a sheet. Full flag and base with safe padding, genuine transparent background. Keep the ivory lettering and chrome neutral, do not recolor the mast. No caption or watermark.",
+      "states": [
+        "av",
+        "lock",
+        "done_gold",
+        "done_silver",
+        "done_green",
+        "white",
+        "hi0",
+        "hi1"
+      ]
+    },
+    {
+      "stage": 4,
+      "roman": "IV",
+      "anchor": [
+        0.28958333333333336,
+        0.95
+      ],
+      "size": [
+        240,
+        320
+      ],
+      "source": "flag_4_source.png",
+      "crop": [
+        324,
+        264,
+        903,
+        1093
+      ],
+      "sha256": "13738c2b5ed8d64a8aa014298e8a8e76be3698d2ecb32bf9a6461f579c49aa3e",
+      "prompt": "Use case: precise-object-edit. Edit the supplied approved Stage X campaign flag. Change ONLY its letter X to the Roman numeral \"IV\" and the green pennant cloth to golden yellow; preserve the identical chrome mast, chrome rectangular frame, bolts, base, ivory pixel font, 16-bit pixel-art texture, highlights, silhouette and proportions as closely as possible. Exact text is \"IV\", large and centered, no other text. This is one single isolated game-map flag sprite, not a sheet. Full flag and base with safe padding, genuine transparent background. Keep the ivory lettering and chrome neutral, do not recolor the mast. No caption or watermark.",
+      "states": [
+        "av",
+        "lock",
+        "done_gold",
+        "done_silver",
+        "done_green",
+        "white",
+        "hi0",
+        "hi1"
+      ]
+    },
+    {
+      "stage": 5,
+      "roman": "V",
+      "anchor": [
+        0.2916666666666667,
+        0.95
+      ],
+      "size": [
+        240,
+        320
+      ],
+      "source": "flag_5_source.png",
+      "crop": [
+        342,
+        289,
+        900,
+        1087
+      ],
+      "sha256": "e7603be8c428aa4dfe320e18ce6314e273c05e465b8a3d3c8e11a03f7b8443f4",
+      "prompt": "Use case: precise-object-edit. Edit the supplied approved Stage X campaign flag. Change ONLY its letter X to the Roman numeral \"V\" and the green pennant cloth to violet; preserve the identical chrome mast, chrome rectangular frame, bolts, base, ivory pixel font, 16-bit pixel-art texture, highlights, silhouette and proportions as closely as possible. Exact text is \"V\", large and centered, no other text. This is one single isolated game-map flag sprite, not a sheet. Full flag and base with safe padding, genuine transparent background. Keep the ivory lettering and chrome neutral, do not recolor the mast. No caption or watermark.",
+      "states": [
+        "av",
+        "lock",
+        "done_gold",
+        "done_silver",
+        "done_green",
+        "white",
+        "hi0",
+        "hi1"
+      ]
+    },
+    {
+      "stage": 6,
+      "roman": "VI",
+      "anchor": [
+        0.49166666666666664,
+        0.95
+      ],
+      "size": [
+        240,
+        320
+      ],
+      "source": "flag_6_source.png",
+      "crop": [
+        343,
+        288,
+        897,
+        1086
+      ],
+      "sha256": "22fafa4efba9e3dec1f087b7b811026f1f7704439e2eb828d7410a23c9863d6d",
+      "prompt": "Use case: precise-object-edit. Edit the supplied approved Stage X campaign flag. Change ONLY its letter X to the Roman numeral \"VI\" and the green pennant cloth to bright cyan; preserve the identical chrome mast, chrome rectangular frame, bolts, base, ivory pixel font, 16-bit pixel-art texture, highlights, silhouette and proportions as closely as possible. Exact text is \"VI\", large and centered, no other text. This is one single isolated game-map flag sprite, not a sheet. Full flag and base with safe padding, genuine transparent background. Keep the ivory lettering and chrome neutral, do not recolor the mast. No caption or watermark.",
+      "states": [
+        "av",
+        "lock",
+        "done_gold",
+        "done_silver",
+        "done_green",
+        "white",
+        "hi0",
+        "hi1"
+      ]
+    },
+    {
+      "stage": 7,
+      "roman": "VII",
+      "anchor": [
+        0.29583333333333334,
+        0.95
+      ],
+      "size": [
+        240,
+        320
+      ],
+      "source": "flag_7_source.png",
+      "crop": [
+        341,
+        287,
+        898,
+        1088
+      ],
+      "sha256": "53cb252a90228777b683d7dfc9337341e465ded60f28bf919d5b13d88e0047ea",
+      "prompt": "Use case: precise-object-edit. Edit the supplied approved Stage X campaign flag. Change ONLY its letter X to the Roman numeral \"VII\" and the green pennant cloth to acid lime green; preserve the identical chrome mast, chrome rectangular frame, bolts, base, ivory pixel font, 16-bit pixel-art texture, highlights, silhouette and proportions as closely as possible. Exact text is \"VII\", large and centered, no other text. This is one single isolated game-map flag sprite, not a sheet. Full flag and base with safe padding, genuine transparent background. Keep the ivory lettering and chrome neutral, do not recolor the mast. No caption or watermark.",
+      "states": [
+        "av",
+        "lock",
+        "done_gold",
+        "done_silver",
+        "done_green",
+        "white",
+        "hi0",
+        "hi1"
+      ]
+    },
+    {
+      "stage": 8,
+      "roman": "VIII",
+      "anchor": [
+        0.29375,
+        0.95
+      ],
+      "size": [
+        240,
+        320
+      ],
+      "source": "flag_8_source.png",
+      "crop": [
+        343,
+        287,
+        900,
+        1088
+      ],
+      "sha256": "b3caa240fa15c494f76cc5920d915004ec1ecc5fd5f420e69046b690ce456a25",
+      "prompt": "Use case: precise-object-edit. Edit the supplied approved Stage X campaign flag. Change ONLY its letter X to the Roman numeral \"VIII\" and the green pennant cloth to crimson red; preserve the identical chrome mast, chrome rectangular frame, bolts, base, ivory pixel font, 16-bit pixel-art texture, highlights, silhouette and proportions as closely as possible. Exact text is \"VIII\", large and centered, no other text. This is one single isolated game-map flag sprite, not a sheet. Full flag and base with safe padding, genuine transparent background. Keep the ivory lettering and chrome neutral, do not recolor the mast. No caption or watermark.",
+      "states": [
+        "av",
+        "lock",
+        "done_gold",
+        "done_silver",
+        "done_green",
+        "white",
+        "hi0",
+        "hi1"
+      ]
+    },
+    {
+      "stage": 9,
+      "roman": "IX",
+      "anchor": [
+        0.29583333333333334,
+        0.95
+      ],
+      "size": [
+        240,
+        320
+      ],
+      "source": "flag_9_source.png",
+      "crop": [
+        343,
+        288,
+        899,
+        1088
+      ],
+      "sha256": "fab6443d3406c6bd667cb234405ed6650404a980627bfa6c2f0d469332b96f3a",
+      "prompt": "Use case: precise-object-edit. Edit the supplied approved Stage X campaign flag. Change ONLY its letter X to the Roman numeral \"IX\" and the green pennant cloth to deep cosmic violet; preserve the identical chrome mast, chrome rectangular frame, bolts, base, ivory pixel font, 16-bit pixel-art texture, highlights, silhouette and proportions as closely as possible. Exact text is \"IX\", large and centered, no other text. This is one single isolated game-map flag sprite, not a sheet. Full flag and base with safe padding, genuine transparent background. Keep the ivory lettering and chrome neutral, do not recolor the mast. No caption or watermark.",
+      "states": [
+        "av",
+        "lock",
+        "done_gold",
+        "done_silver",
+        "done_green",
+        "white",
+        "hi0",
+        "hi1"
+      ]
+    }
+  ]
+}

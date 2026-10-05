@@ -26,8 +26,8 @@ module.exports=function testInfusion(vm,ctxv,ok){
      Three stages wear the space backdrop; only 5 and 9 hand out the space guns. */
   ok(vm.runInContext("(function(){var s=run.stage,c=curStage;var r=[];for(var i=1;i<=9;i++){run.stage=i;curStage=STAGES[i-1];r.push(infusionEligible());}run.stage=s;curStage=c;return r[4]===false&&r[8]===false&&r[0]&&r[1]&&r[2]&&r[3]&&r[5]&&r[6]&&r[7];})()",ctxv),
      'stages 5 and 9 are ineligible, every other stage is - with curStage set, so stage 8 (bg space, ordinary guns) counts');
-  ok(vm.runInContext("(function(){var s=run.stage,c=curStage;run.stage=8;curStage=STAGES[7];var r=curStage.bg==='space'&&!spaceWeaponsActive()&&infusionEligible()&&INFUSION_STAGE_BIAS[8]==='prism';run.stage=s;curStage=c;return r;})()",ctxv),
-     'stage 8 keeps the prism bias INFUSION_STAGE_BIAS reserves for it - a bias on an ineligible stage can never fire');
+  ok(vm.runInContext("(function(){var s=run.stage,c=curStage;run.stage=8;curStage=STAGES[7];var r=curStage.bg==='space'&&!spaceWeaponsActive()&&infusionEligible()&&INFUSION_STAGE_BIAS[8]==='dark';run.stage=s;curStage=c;return r;})()",ctxv),
+     'stage 8 carries its Dark Matter reward bias - a bias on an ineligible stage can never fire');
   ok(vm.runInContext("infusionPool().indexOf('water')<0&&infusionPool().indexOf('dark')<0",ctxv),
      'water and dark matter are gated off until earned');
   ok(vm.runInContext("(function(){var s=String(infusionGateOpen);return s.indexOf('laserMistIsUnlocked')>=0&&s.indexOf('ngplus')>=0;})()",ctxv),

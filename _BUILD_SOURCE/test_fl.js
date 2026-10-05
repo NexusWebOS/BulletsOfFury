@@ -55,6 +55,7 @@ function mkCtx() {
     createRadialGradient: () => ({ addColorStop: noop }),
     createPattern: () => ({}),
     getImageData: () => ({ data: new Uint8ClampedArray(4) }),
+    createImageData: (w,h) => ({ data: new Uint8ClampedArray(w*h*4) }),
     putImageData: noop, drawFocusIfNeeded: noop,
     globalAlpha: 1, globalCompositeOperation: 'source-over', filter: 'none',
     fillStyle: '#000', strokeStyle: '#000', lineWidth: 1, lineJoin: '', lineCap: '',
@@ -5548,7 +5549,7 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   var _bad=Object.keys(_M).filter(function(k){ return !fs.existsSync(ROOT+'/'+_M[k]); });
   ok(_bad.length===0, 'every music key resolves after the re-folder ('+Object.keys(_M).length+' keys)');
   // every stage points at its NEW track
-  var _want={1:'stage1_',2:'stage2_',3:'stage3_',4:'stage4_',5:'lvl3-alt.mp3',6:'stage6_',7:'stage7_',8:'stage5_egypt.mp3'};
+  var _want={1:'Level1.mp3',2:'Level2.mp3',3:'Level3.mp3',4:'Level4.mp3',5:'Level5.mp3',6:'Level6.mp3',7:'Level7.mp3',8:'Unused_Egypt.mp3'};
   var _g9=fs.readFileSync(ROOT+'/assets/game.js','utf8');
   /* \u26a0 A FIXED BYTE WINDOW OVER A GROWING TABLE STOPS MEASURING (repointed 0824b). This sliced
      3000 chars after `const STAGES`, and the table has since grown past that - so stage 8 fell
@@ -5566,12 +5567,12 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
     if(!f || f.indexOf(_want[n])<0) _wrong.push(n+':'+key+'->'+(f||'none'));
   });
   ok(_wrong.length===0, 'all 8 stages play their reassigned track'+(_wrong.length?(' — '+_wrong.join(', ')):''));
-  ok(String(_M['lvl6']).indexOf('stage8_furious_death')>0, 'the former Stage 8 theme is retained for credits');
-  ok(String(_M['boss6mus']).indexOf('battle_in_the_sky')>0, 'level 6 boss = Battle in the Sky');
-  ok(_M.boss7==='assets/game/music/boss7_reaperman_0927.mp3' && _M.boss7mus===_M.boss7 && _M.unused13==='assets/game/music/unused13 - stage7b.mp3', 'level 7 boss = Reaperman, with the former theme archived as unused13');
-  ok(_M['rival']==='assets/game/music/stage9_rival_dog_showdown.mp3' && _M['bonus']===_M['rival'],
+  ok(String(_M['lvl6']).indexOf('Level8.mp3')>0, 'the former Stage 8 theme is retained for credits');
+  ok(String(_M['boss6mus']).indexOf('Level6b.mp3')>0, 'level 6 boss = Battle in the Sky');
+  ok(_M.boss7==='assets/game/music/Level7b.mp3' && _M.boss7mus===_M.boss7 && _M.mini7==='assets/game/music/Level7mb.mp3' && !_M.unused13, 'level 7 boss = Reaperman, with the former theme assigned to its miniboss');
+  ok(_M['rival']==='assets/game/music/Rival.mp3' && _M['bonus']===_M['rival'],
      'stage 9 gameplay + rival sequence = Rival Dog Showdown');
-  ok(String(_M['password']).indexOf('password_and_stage_clear')>0, 'password doubles as the stage-clear track');
+  ok(String(_M['password']).indexOf('Password_StageClear.mp3')>0, 'password doubles as the stage-clear track');
   // music lives in one place now
   ok(fs.existsSync(ROOT+'/assets/game/music'), 'music is consolidated in assets/game/music');
   ok(Object.values(_M).every(function(v){ return String(v).indexOf('assets/game/music/')===0; }),
@@ -8363,8 +8364,9 @@ console.log("=== 170. charge tap/hold + cole sonic art ===");
     ['maverick','falva'].forEach(function(p){
       ASSETS.ready=true; beginStage(1); setState(GS.PLAY); player.reset();
       run.pilot=p; pBullets.length=0; if(typeof rollers!=='undefined') rollers.length=0;
-      // Isolate trigger ownership: random enemy damage must not cancel the special under test.
-      player.invuln=99;enemies=[];stagePlan=[];spawnClock=9999;
+      // Isolate trigger ownership for all 180 frames. Invulnerability is counted in frames,
+      // so 99 expired mid-trial and random damage could cancel the charge special.
+      player.invuln=600;enemies=[];stagePlan=[];spawnClock=9999;
       startSpecial();
       var held=true; Input.down=function(){ return held; };
       var leaked=0;
@@ -14170,9 +14172,9 @@ console.log("=== 278. lizzie B-42 alternate costume ===");
      && _acts.filter(function(a){return a==='kill';}).length===3
      && _acts.filter(function(a){return a==='dodge';}).length===3,
      'the nine-screen finale is 3 that fall, 3 that finish a boss, 3 that fly out - '+_acts.join(','));
-  ok(vm.runInContext("!!(window.BOFA && BOFA.music && BOFA.music.opener && /stage9_bonus_warp_run/.test(BOFA.music.opener))", ctxv),
+  ok(vm.runInContext("!!(window.BOFA && BOFA.music && BOFA.music.opener && /Opening\.mp3$/.test(BOFA.music.opener))", ctxv),
      'it runs on the one track the manifest never mapped');
-  ok(fs.existsSync(path.join(ROOT,'assets/game/music/stage9_bonus_warp_run.mp3')), 'and that file is actually there');
+  ok(fs.existsSync(path.join(ROOT,'assets/game/music/Opening.mp3')), 'and that file is actually there');
    /* Cinematic and opening ships use the current gameplay atlas. */
    ok(vm.runInContext("OPN_SIL_KEY('axel')==='ship_axel_pv2' && cinShipKey('axel',1)==='ship_axel_pv2'", ctxv),
       'the opening and cinematic ships resolve to current gameplay airframes');
@@ -15783,6 +15785,25 @@ require('./test_launch_scale_1001c.cjs')(vm,ctxv,ok);
 require('./test_hama_vocals_1001.cjs')(vm,ctxv,ok);
 
 require('./test_feedback_1002.cjs')(vm,ctxv,ok);
+require('./test_feedback_claude_1003.cjs')(vm,ctxv,ok);
+require('./test_stage8_1003.cjs')(vm,ctxv,ok);
+require('./test_mutator_1003.cjs')(vm,ctxv,ok);
+require('./test_finale_1003b.cjs')(vm,ctxv,ok);
+require('./test_finale_modular_1003c.cjs')(vm,ctxv,ok);
+require('./test_codewall_1003d.cjs')(vm,ctxv,ok);
+require('./test_herald_1003f.cjs')(vm,ctxv,ok);
+require('./test_feedback_1003h.cjs')(vm,ctxv,ok);
+require('./test_combat_1003i.cjs')(vm,ctxv,ok);
+require('./test_finale_structure_1003j.cjs')(vm,ctxv,ok);
+require('./test_rebel_gang_1004.cjs')(vm,ctxv,ok);
+require('./test_gameplay_repair_1004.cjs')(vm,ctxv,ok);
+require('./test_campaign_focus_1004b.cjs')(vm,ctxv,ok);
+require('./test_rebel_arsenal_1004c.cjs')(vm,ctxv,ok);
+require('./test_password_routes_1004d.cjs')(vm,ctxv,ok);
+require('./test_campaign_landscape_1004e.cjs')(vm,ctxv,ok);
+require('./test_campaign_controls_1004h.cjs')(vm,ctxv,ok);
+require('./test_sky_repair_1004i.cjs')(vm,ctxv,ok);
+require('./test_stage3_combat_1004k.cjs')(vm,ctxv,ok);
 
 console.log('\n============================================');
 if (errors.length) { console.log('FAILED — ' + errors.length + ' error(s):'); errors.forEach(e => console.log('  ' + e)); process.exit(1); }

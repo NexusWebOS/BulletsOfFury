@@ -1,0 +1,105 @@
+{
+  "minibosses": [
+    {
+      "stage": 4,
+      "kind": "olivewarden",
+      "path": "assets/game/music/Level4mb.mp3",
+      "key": "mini4",
+      "duration": 124.76
+    },
+    {
+      "stage": 6,
+      "kind": "siegebomber",
+      "path": "assets/game/music/Level6mb.mp3",
+      "key": "mini6",
+      "duration": 140.840181
+    },
+    {
+      "stage": 7,
+      "kind": "dualscoopdredger",
+      "path": "assets/game/music/Level7mb.mp3",
+      "key": "mini7",
+      "duration": 114.719977
+    },
+    {
+      "stage": 9,
+      "kind": "voidhorizon",
+      "path": "assets/game/music/Level9mb.mp3",
+      "key": "mini9",
+      "duration": 84.76
+    }
+  ],
+  "files": 51,
+  "secondForm": {
+    "name": "THE HIVE HELICOPTER",
+    "form": 1,
+    "key": "boss8p2",
+    "path": "assets/game/music/Level8b2.mp3",
+    "duration": 149.8135
+  },
+  "thirdForm": {
+    "form": 2,
+    "key": "boss8p3"
+  },
+  "decoded": [
+    {
+      "key": "mini4",
+      "seconds": 124.76,
+      "channels": 2
+    },
+    {
+      "key": "mini6",
+      "seconds": 140.84016666666668,
+      "channels": 2
+    },
+    {
+      "key": "mini7",
+      "seconds": 114.71995833333334,
+      "channels": 2
+    },
+    {
+      "key": "mini9",
+      "seconds": 84.76,
+      "channels": 2
+    },
+    {
+      "key": "boss8p2",
+      "seconds": 149.8135,
+      "channels": 2
+    }
+  ],
+  "unused": [
+    [
+      "unused1",
+      "assets/game/music/Unused1.mp3"
+    ],
+    [
+      "unused2old",
+      "assets/game/music/Unused2.mp3"
+    ],
+    [
+      "unused10",
+      "assets/game/music/Unused10.mp3"
+    ],
+    [
+      "unused11",
+      "assets/game/music/Unused11.mp3"
+    ],
+    [
+      "unused12",
+      "assets/game/music/Unused12.mp3"
+    ],
+    [
+      "unused4",
+      "assets/game/music/Unused8.mp3"
+    ]
+  ],
+  "errors": [],
+  "suite": {
+    "assertions": 6952,
+    "exit": 0,
+    "banner": "FALVA/LIZZIE BUILD OK, 0 ERRORS",
+    "initialExit": 1,
+    "initialFailures": 9
+  }
+}

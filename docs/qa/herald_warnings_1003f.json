@@ -1,0 +1,1613 @@
+{
+  "date": "2026-10-03",
+  "suite": {
+    "passed": 6952,
+    "exit": 0,
+    "finalBanner": true
+  },
+  "enemyWarnings": {
+    "checks": [
+      {
+        "ok": true,
+        "name": "Stage 7 entry warms original warning/Retina assets without spawning a boss"
+      },
+      {
+        "ok": true,
+        "name": "normal bluehybrid draws all original warning phases with committed geometry"
+      },
+      {
+        "ok": true,
+        "name": "normal hexpyre draws all original warning phases with committed geometry"
+      },
+      {
+        "ok": true,
+        "name": "normal hellram draws all original warning phases with committed geometry"
+      },
+      {
+        "ok": true,
+        "name": "normal riflelocust draws all original warning phases with committed geometry"
+      },
+      {
+        "ok": true,
+        "name": "normal impharrow draws all original warning phases with committed geometry"
+      },
+      {
+        "ok": true,
+        "name": "normal furnacemaw draws all original warning phases with committed geometry"
+      },
+      {
+        "ok": true,
+        "name": "normal hellhugger draws all original warning phases with committed geometry"
+      },
+      {
+        "ok": true,
+        "name": "normal stalker alien uses original enemy lanes in all three phases"
+      },
+      {
+        "ok": true,
+        "name": "normal prism alien uses original enemy lanes in all three phases"
+      },
+      {
+        "ok": true,
+        "name": "normal gravity alien uses original enemy lanes in all three phases"
+      },
+      {
+        "ok": true,
+        "name": "furious bluehybrid draws all original warning phases with committed geometry"
+      },
+      {
+        "ok": true,
+        "name": "furious hexpyre draws all original warning phases with committed geometry"
+      },
+      {
+        "ok": true,
+        "name": "furious hellram draws all original warning phases with committed geometry"
+      },
+      {
+        "ok": true,
+        "name": "furious riflelocust draws all original warning phases with committed geometry"
+      },
+      {
+        "ok": true,
+        "name": "furious impharrow draws all original warning phases with committed geometry"
+      },
+      {
+        "ok": true,
+        "name": "furious furnacemaw draws all original warning phases with committed geometry"
+      },
+      {
+        "ok": true,
+        "name": "furious hellhugger draws all original warning phases with committed geometry"
+      },
+      {
+        "ok": true,
+        "name": "furious stalker alien uses original enemy lanes in all three phases"
+      },
+      {
+        "ok": true,
+        "name": "furious prism alien uses original enemy lanes in all three phases"
+      },
+      {
+        "ok": true,
+        "name": "furious gravity alien uses original enemy lanes in all three phases"
+      },
+      {
+        "ok": true,
+        "name": "mutant warning belongs to its emitter when the finale boss is also alive"
+      },
+      {
+        "ok": true,
+        "name": "actual Stage 7 spawn plan retains the corrected enemy roster"
+      },
+      {
+        "ok": true,
+        "name": "actual Stage 8 spawn plan retains the corrected enemy roster"
+      },
+      {
+        "ok": true,
+        "name": "no page or console errors"
+      }
+    ],
+    "scenes": [
+      {
+        "kind": "bluehybrid",
+        "diff": "normal",
+        "stage": 8,
+        "states": [
+          {
+            "keys": [
+              "band-green"
+            ],
+            "owners": [
+              {
+                "enemy": true,
+                "owner": "mm1003_bluehybrid",
+                "q": {
+                  "x": 340,
+                  "y": 171.1,
+                  "ex": 340.00000000000006,
+                  "ey": 836.7,
+                  "len": 665.6,
+                  "width": 22,
+                  "progress": 0.2,
+                  "fieldOnly": true
+                }
+              }
+            ],
+            "stable": true
+          },
+          {
+            "keys": [
+              "band-yellow"
+            ],
+            "owners": [
+              {
+                "enemy": true,
+                "owner": "mm1003_bluehybrid",
+                "q": {
+                  "x": 340,
+                  "y": 171.1,
+                  "ex": 340.00000000000006,
+                  "ey": 836.7,
+                  "len": 665.6,
+                  "width": 22,
+                  "progress": 0.6,
+                  "fieldOnly": true
+                }
+              }
+            ],
+            "stable": true
+          },
+          {
+            "keys": [
+              "band-red"
+            ],
+            "owners": [
+              {
+                "enemy": true,
+                "owner": "mm1003_bluehybrid",
+                "q": {
+                  "x": 340,
+                  "y": 171.1,
+                  "ex": 340.00000000000006,
+                  "ey": 836.7,
+                  "len": 665.6,
+                  "width": 22,
+                  "progress": 0.9000000000000001,
+                  "fieldOnly": true
+                }
+              }
+            ],
+            "stable": true
+          }
+        ]
+      },
+      {
+        "kind": "hexpyre",
+        "diff": "normal",
+        "stage": 7,
+        "states": [
+          {
+            "keys": [
+              "retina-green"
+            ],
+            "owners": [],
+            "stable": true
+          },
+          {
+            "keys": [
+              "retina-yellow"
+            ],
+            "owners": [],
+            "stable": true
+          },
+          {
+            "keys": [
+              "retina-red"
+            ],
+            "owners": [],
+            "stable": true
+          }
+        ]
+      },
+      {
+        "kind": "hellram",
+        "diff": "normal",
+        "stage": 7,
+        "states": [
+          {
+            "keys": [
+              "band-green",
+              "retina-green"
+            ],
+            "owners": [
+              {
+                "enemy": true,
+                "owner": "mm1003_hellram",
+                "q": {
+                  "x": 340,
+                  "y": 145,
+                  "ex": 340,
+                  "ey": 402,
+                  "len": 257,
+                  "width": 62.63999999999999,
+                  "progress": 0.2,
+                  "fieldOnly": true
+                }
+              }
+            ],
+            "stable": true
+          },
+          {
+            "keys": [
+              "band-yellow",
+              "retina-yellow"
+            ],
+            "owners": [
+              {
+                "enemy": true,
+                "owner": "mm1003_hellram",
+                "q": {
+                  "x": 340,
+                  "y": 145,
+                  "ex": 340,
+                  "ey": 402,
+                  "len": 257,
+                  "width": 62.63999999999999,
+                  "progress": 0.6,
+                  "fieldOnly": true
+                }
+              }
+            ],
+            "stable": true
+          },
+          {
+            "keys": [
+              "band-red",
+              "retina-red"
+            ],
+            "owners": [
+              {
+                "enemy": true,
+                "owner": "mm1003_hellram",
+                "q": {
+                  "x": 340,
+                  "y": 145,
+                  "ex": 340,
+                  "ey": 402,
+                  "len": 257,
+                  "width": 62.63999999999999,
+                  "progress": 0.9000000000000001,
+                  "fieldOnly": true
+                }
+              }
+            ],
+            "stable": true
+          }
+        ]
+      },
+      {
+        "kind": "riflelocust",
+        "diff": "normal",
+        "stage": 7,
+        "states": [
+          {
+            "keys": [
+              "band-green"
+            ],
+            "owners": [
+              {
+                "enemy": true,
+                "owner": "mm1003_riflelocust",
+                "q": {
+                  "x": 340,
+                  "y": 176.5,
+                  "ex": 340.00000000000006,
+                  "ey": 842.1,
+                  "len": 665.6,
+                  "width": 22,
+                  "progress": 0.2,
+                  "fieldOnly": true
+                }
+              }
+            ],
+            "stable": true
+          },
+          {
+            "keys": [
+              "band-yellow"
+            ],
+            "owners": [
+              {
+                "enemy": true,
+                "owner": "mm1003_riflelocust",
+                "q": {
+                  "x": 340,
+                  "y": 176.5,
+                  "ex": 340.00000000000006,
+                  "ey": 842.1,
+                  "len": 665.6,
+                  "width": 22,
+                  "progress": 0.6,
+                  "fieldOnly": true
+                }
+              }
+            ],
+            "stable": true
+          },
+          {
+            "keys": [
+              "band-red"
+            ],
+            "owners": [
+              {
+                "enemy": true,
+                "owner": "mm1003_riflelocust",
+                "q": {
+                  "x": 340,
+                  "y": 176.5,
+                  "ex": 340.00000000000006,
+                  "ey": 842.1,
+                  "len": 665.6,
+                  "width": 22,
+                  "progress": 0.9000000000000001,
+                  "fieldOnly": true
+                }
+              }
+            ],
+            "stable": true
+          }
+        ]
+      },
+      {
+        "kind": "impharrow",
+        "diff": "normal",
+        "stage": 7,
+        "states": [
+          {
+            "keys": [
+              "band-green"
+            ],
+            "owners": [
+              {
+                "enemy": true,
+                "owner": "mm1003_impharrow",
+                "q": {
+                  "x": 340,
+                  "y": 163.6,
+                  "ex": 340.00000000000006,
+                  "ey": 829.2,
+                  "len": 665.6,
+                  "width": 22,
+                  "progress": 0.2,
+                  "fieldOnly": true
+                }
+              }
+            ],
+            "stable": true
+          },
+          {
+            "keys": [
+              "band-yellow"
+            ],
+            "owners": [
+              {
+                "enemy": true,
+                "owner": "mm1003_impharrow",
+                "q": {
+                  "x": 340,
+                  "y": 163.6,
+                  "ex": 340.00000000000006,
+                  "ey": 829.2,
+                  "len": 665.6,
+                  "width": 22,
+                  "progress": 0.6,
+                  "fieldOnly": true
+                }
+              }
+            ],
+            "stable": true
+          },
+          {
+            "keys": [
+              "band-red"
+            ],
+            "owners": [
+              {
+                "enemy": true,
+                "owner": "mm1003_impharrow",
+                "q": {
+                  "x": 340,
+                  "y": 163.6,
+                  "ex": 340.00000000000006,
+                  "ey": 829.2,
+                  "len": 665.6,
+                  "width": 22,
+                  "progress": 0.9000000000000001,
+                  "fieldOnly": true
+                }
+              }
+            ],
+            "stable": true
+          }
+        ]
+      },
+      {
+        "kind": "furnacemaw",
+        "diff": "normal",
+        "stage": 8,
+        "states": [
+          {
+            "keys": [
+              "band-green"
+            ],
+            "owners": [
+              {
+                "enemy": true,
+                "owner": "mm1003_furnacemaw",
+                "q": {
+                  "x": 340,
+                  "y": 169.9,
+                  "ex": 340.00000000000006,
+                  "ey": 835.5,
+                  "len": 665.6,
+                  "width": 22,
+                  "progress": 0.2,
+                  "fieldOnly": true
+                }
+              }
+            ],
+            "stable": true
+          },
+          {
+            "keys": [
+              "band-yellow"
+            ],
+            "owners": [
+              {
+                "enemy": true,
+                "owner": "mm1003_furnacemaw",
+                "q": {
+                  "x": 340,
+                  "y": 169.9,
+                  "ex": 340.00000000000006,
+                  "ey": 835.5,
+                  "len": 665.6,
+                  "width": 22,
+                  "progress": 0.6,
+                  "fieldOnly": true
+                }
+              }
+            ],
+            "stable": true
+          },
+          {
+            "keys": [
+              "band-red"
+            ],
+            "owners": [
+              {
+                "enemy": true,
+                "owner": "mm1003_furnacemaw",
+                "q": {
+                  "x": 340,
+                  "y": 169.9,
+                  "ex": 340.00000000000006,
+                  "ey": 835.5,
+                  "len": 665.6,
+                  "width": 22,
+                  "progress": 0.9000000000000001,
+                  "fieldOnly": true
+                }
+              }
+            ],
+            "stable": true
+          }
+        ]
+      },
+      {
+        "kind": "hellhugger",
+        "diff": "normal",
+        "stage": 7,
+        "states": [
+          {
+            "keys": [
+              "band-green",
+              "retina-green"
+            ],
+            "owners": [
+              {
+                "enemy": true,
+                "owner": "mm1003_hellhugger",
+                "q": {
+                  "x": 340,
+                  "y": 145,
+                  "ex": 340,
+                  "ey": 402,
+                  "len": 257,
+                  "width": 52.199999999999996,
+                  "progress": 0.2,
+                  "fieldOnly": true
+                }
+              }
+            ],
+            "stable": true
+          },
+          {
+            "keys": [
+              "band-yellow",
+              "retina-yellow"
+            ],
+            "owners": [
+              {
+                "enemy": true,
+                "owner": "mm1003_hellhugger",
+                "q": {
+                  "x": 340,
+                  "y": 145,
+                  "ex": 340,
+                  "ey": 402,
+                  "len": 257,
+                  "width": 52.199999999999996,
+                  "progress": 0.6,
+                  "fieldOnly": true
+                }
+              }
+            ],
+            "stable": true
+          },
+          {
+            "keys": [
+              "band-red",
+              "retina-red"
+            ],
+            "owners": [
+              {
+                "enemy": true,
+                "owner": "mm1003_hellhugger",
+                "q": {
+                  "x": 340,
+                  "y": 145,
+                  "ex": 340,
+                  "ey": 402,
+                  "len": 257,
+                  "width": 52.199999999999996,
+                  "progress": 0.9000000000000001,
+                  "fieldOnly": true
+                }
+              }
+            ],
+            "stable": true
+          }
+        ]
+      },
+      {
+        "kind": "bluehybrid",
+        "diff": "furious",
+        "stage": 8,
+        "states": [
+          {
+            "keys": [
+              "band-green"
+            ],
+            "owners": [
+              {
+                "enemy": true,
+                "owner": "mm1003_bluehybrid",
+                "q": {
+                  "x": 340,
+                  "y": 171.1,
+                  "ex": 340.00000000000006,
+                  "ey": 836.7,
+                  "len": 665.6,
+                  "width": 22,
+                  "progress": 0.2,
+                  "fieldOnly": true
+                }
+              }
+            ],
+            "stable": true
+          },
+          {
+            "keys": [
+              "band-yellow"
+            ],
+            "owners": [
+              {
+                "enemy": true,
+                "owner": "mm1003_bluehybrid",
+                "q": {
+                  "x": 340,
+                  "y": 171.1,
+                  "ex": 340.00000000000006,
+                  "ey": 836.7,
+                  "len": 665.6,
+                  "width": 22,
+                  "progress": 0.6,
+                  "fieldOnly": true
+                }
+              }
+            ],
+            "stable": true
+          },
+          {
+            "keys": [
+              "band-red"
+            ],
+            "owners": [
+              {
+                "enemy": true,
+                "owner": "mm1003_bluehybrid",
+                "q": {
+                  "x": 340,
+                  "y": 171.1,
+                  "ex": 340.00000000000006,
+                  "ey": 836.7,
+                  "len": 665.6,
+                  "width": 22,
+                  "progress": 0.9,
+                  "fieldOnly": true
+                }
+              }
+            ],
+            "stable": true
+          }
+        ]
+      },
+      {
+        "kind": "hexpyre",
+        "diff": "furious",
+        "stage": 7,
+        "states": [
+          {
+            "keys": [
+              "retina-green"
+            ],
+            "owners": [],
+            "stable": true
+          },
+          {
+            "keys": [
+              "retina-yellow"
+            ],
+            "owners": [],
+            "stable": true
+          },
+          {
+            "keys": [
+              "retina-red"
+            ],
+            "owners": [],
+            "stable": true
+          }
+        ]
+      },
+      {
+        "kind": "hellram",
+        "diff": "furious",
+        "stage": 7,
+        "states": [
+          {
+            "keys": [
+              "band-green",
+              "retina-green"
+            ],
+            "owners": [
+              {
+                "enemy": true,
+                "owner": "mm1003_hellram",
+                "q": {
+                  "x": 340,
+                  "y": 145,
+                  "ex": 340,
+                  "ey": 402,
+                  "len": 257,
+                  "width": 62.63999999999999,
+                  "progress": 0.2,
+                  "fieldOnly": true
+                }
+              }
+            ],
+            "stable": true
+          },
+          {
+            "keys": [
+              "band-yellow",
+              "retina-yellow"
+            ],
+            "owners": [
+              {
+                "enemy": true,
+                "owner": "mm1003_hellram",
+                "q": {
+                  "x": 340,
+                  "y": 145,
+                  "ex": 340,
+                  "ey": 402,
+                  "len": 257,
+                  "width": 62.63999999999999,
+                  "progress": 0.6,
+                  "fieldOnly": true
+                }
+              }
+            ],
+            "stable": true
+          },
+          {
+            "keys": [
+              "band-red",
+              "retina-red"
+            ],
+            "owners": [
+              {
+                "enemy": true,
+                "owner": "mm1003_hellram",
+                "q": {
+                  "x": 340,
+                  "y": 145,
+                  "ex": 340,
+                  "ey": 402,
+                  "len": 257,
+                  "width": 62.63999999999999,
+                  "progress": 0.9,
+                  "fieldOnly": true
+                }
+              }
+            ],
+            "stable": true
+          }
+        ]
+      },
+      {
+        "kind": "riflelocust",
+        "diff": "furious",
+        "stage": 7,
+        "states": [
+          {
+            "keys": [
+              "band-green"
+            ],
+            "owners": [
+              {
+                "enemy": true,
+                "owner": "mm1003_riflelocust",
+                "q": {
+                  "x": 340,
+                  "y": 176.5,
+                  "ex": 340.00000000000006,
+                  "ey": 842.1,
+                  "len": 665.6,
+                  "width": 22,
+                  "progress": 0.2,
+                  "fieldOnly": true
+                }
+              }
+            ],
+            "stable": true
+          },
+          {
+            "keys": [
+              "band-yellow"
+            ],
+            "owners": [
+              {
+                "enemy": true,
+                "owner": "mm1003_riflelocust",
+                "q": {
+                  "x": 340,
+                  "y": 176.5,
+                  "ex": 340.00000000000006,
+                  "ey": 842.1,
+                  "len": 665.6,
+                  "width": 22,
+                  "progress": 0.6,
+                  "fieldOnly": true
+                }
+              }
+            ],
+            "stable": true
+          },
+          {
+            "keys": [
+              "band-red"
+            ],
+            "owners": [
+              {
+                "enemy": true,
+                "owner": "mm1003_riflelocust",
+                "q": {
+                  "x": 340,
+                  "y": 176.5,
+                  "ex": 340.00000000000006,
+                  "ey": 842.1,
+                  "len": 665.6,
+                  "width": 22,
+                  "progress": 0.9,
+                  "fieldOnly": true
+                }
+              }
+            ],
+            "stable": true
+          }
+        ]
+      },
+      {
+        "kind": "impharrow",
+        "diff": "furious",
+        "stage": 7,
+        "states": [
+          {
+            "keys": [
+              "band-green"
+            ],
+            "owners": [
+              {
+                "enemy": true,
+                "owner": "mm1003_impharrow",
+                "q": {
+                  "x": 340,
+                  "y": 163.6,
+                  "ex": 340.00000000000006,
+                  "ey": 829.2,
+                  "len": 665.6,
+                  "width": 22,
+                  "progress": 0.2,
+                  "fieldOnly": true
+                }
+              }
+            ],
+            "stable": true
+          },
+          {
+            "keys": [
+              "band-yellow"
+            ],
+            "owners": [
+              {
+                "enemy": true,
+                "owner": "mm1003_impharrow",
+                "q": {
+                  "x": 340,
+                  "y": 163.6,
+                  "ex": 340.00000000000006,
+                  "ey": 829.2,
+                  "len": 665.6,
+                  "width": 22,
+                  "progress": 0.6,
+                  "fieldOnly": true
+                }
+              }
+            ],
+            "stable": true
+          },
+          {
+            "keys": [
+              "band-red"
+            ],
+            "owners": [
+              {
+                "enemy": true,
+                "owner": "mm1003_impharrow",
+                "q": {
+                  "x": 340,
+                  "y": 163.6,
+                  "ex": 340.00000000000006,
+                  "ey": 829.2,
+                  "len": 665.6,
+                  "width": 22,
+                  "progress": 0.9,
+                  "fieldOnly": true
+                }
+              }
+            ],
+            "stable": true
+          }
+        ]
+      },
+      {
+        "kind": "furnacemaw",
+        "diff": "furious",
+        "stage": 8,
+        "states": [
+          {
+            "keys": [
+              "band-green"
+            ],
+            "owners": [
+              {
+                "enemy": true,
+                "owner": "mm1003_furnacemaw",
+                "q": {
+                  "x": 340,
+                  "y": 169.9,
+                  "ex": 340.00000000000006,
+                  "ey": 835.5,
+                  "len": 665.6,
+                  "width": 22,
+                  "progress": 0.2,
+                  "fieldOnly": true
+                }
+              }
+            ],
+            "stable": true
+          },
+          {
+            "keys": [
+              "band-yellow"
+            ],
+            "owners": [
+              {
+                "enemy": true,
+                "owner": "mm1003_furnacemaw",
+                "q": {
+                  "x": 340,
+                  "y": 169.9,
+                  "ex": 340.00000000000006,
+                  "ey": 835.5,
+                  "len": 665.6,
+                  "width": 22,
+                  "progress": 0.6,
+                  "fieldOnly": true
+                }
+              }
+            ],
+            "stable": true
+          },
+          {
+            "keys": [
+              "band-red"
+            ],
+            "owners": [
+              {
+                "enemy": true,
+                "owner": "mm1003_furnacemaw",
+                "q": {
+                  "x": 340,
+                  "y": 169.9,
+                  "ex": 340.00000000000006,
+                  "ey": 835.5,
+                  "len": 665.6,
+                  "width": 22,
+                  "progress": 0.9,
+                  "fieldOnly": true
+                }
+              }
+            ],
+            "stable": true
+          }
+        ]
+      },
+      {
+        "kind": "hellhugger",
+        "diff": "furious",
+        "stage": 7,
+        "states": [
+          {
+            "keys": [
+              "band-green",
+              "retina-green"
+            ],
+            "owners": [
+              {
+                "enemy": true,
+                "owner": "mm1003_hellhugger",
+                "q": {
+                  "x": 340,
+                  "y": 145,
+                  "ex": 340,
+                  "ey": 402,
+                  "len": 257,
+                  "width": 52.199999999999996,
+                  "progress": 0.2,
+                  "fieldOnly": true
+                }
+              }
+            ],
+            "stable": true
+          },
+          {
+            "keys": [
+              "band-yellow",
+              "retina-yellow"
+            ],
+            "owners": [
+              {
+                "enemy": true,
+                "owner": "mm1003_hellhugger",
+                "q": {
+                  "x": 340,
+                  "y": 145,
+                  "ex": 340,
+                  "ey": 402,
+                  "len": 257,
+                  "width": 52.199999999999996,
+                  "progress": 0.6,
+                  "fieldOnly": true
+                }
+              }
+            ],
+            "stable": true
+          },
+          {
+            "keys": [
+              "band-red",
+              "retina-red"
+            ],
+            "owners": [
+              {
+                "enemy": true,
+                "owner": "mm1003_hellhugger",
+                "q": {
+                  "x": 340,
+                  "y": 145,
+                  "ex": 340,
+                  "ey": 402,
+                  "len": 257,
+                  "width": 52.199999999999996,
+                  "progress": 0.9,
+                  "fieldOnly": true
+                }
+              }
+            ],
+            "stable": true
+          }
+        ]
+      }
+    ],
+    "roster7": {
+      "mutants": [
+        "riflelocust",
+        "hellram",
+        "impharrow",
+        "hexpyre",
+        "hellhugger"
+      ],
+      "aliens": []
+    },
+    "roster8": {
+      "mutants": [
+        "impharrow",
+        "hexpyre",
+        "bluehybrid",
+        "furnacemaw"
+      ],
+      "aliens": [
+        "gravity",
+        "stalker",
+        "prism"
+      ]
+    },
+    "errors": []
+  },
+  "herald": {
+    "checks": [
+      {
+        "ok": true,
+        "name": "easy real halfway scheduler spawns exactly one modular Herald"
+      },
+      {
+        "ok": true,
+        "name": "easy Herald releases skull volleys and its difficulty-appropriate attacks"
+      },
+      {
+        "ok": true,
+        "name": "easy miniboss fight holds the stage wave clock"
+      },
+      {
+        "ok": true,
+        "name": "normal real halfway scheduler spawns exactly one modular Herald"
+      },
+      {
+        "ok": true,
+        "name": "normal Herald releases skull volleys and its difficulty-appropriate attacks"
+      },
+      {
+        "ok": true,
+        "name": "normal miniboss fight holds the stage wave clock"
+      },
+      {
+        "ok": true,
+        "name": "hard real halfway scheduler spawns exactly one modular Herald"
+      },
+      {
+        "ok": true,
+        "name": "hard Herald releases skull volleys and its difficulty-appropriate attacks"
+      },
+      {
+        "ok": true,
+        "name": "hard miniboss fight holds the stage wave clock"
+      },
+      {
+        "ok": true,
+        "name": "furious real halfway scheduler spawns exactly one modular Herald"
+      },
+      {
+        "ok": true,
+        "name": "furious Herald releases skull volleys and its difficulty-appropriate attacks"
+      },
+      {
+        "ok": true,
+        "name": "furious miniboss fight holds the stage wave clock"
+      },
+      {
+        "ok": true,
+        "name": "all six generated components actually draw on the game context"
+      },
+      {
+        "ok": true,
+        "name": "Herald uses original FOV and original Retina pixels"
+      },
+      {
+        "ok": true,
+        "name": "empty space between modular parts does not damage the pilot"
+      },
+      {
+        "ok": true,
+        "name": "touching the visible core still damages the pilot"
+      },
+      {
+        "ok": true,
+        "name": "wing animates independently of the upright body"
+      },
+      {
+        "ok": true,
+        "name": "an actual curved Retina missile damages the moving cannon"
+      },
+      {
+        "ok": true,
+        "name": "ordinary shots route into the cannon they visibly hit"
+      },
+      {
+        "ok": true,
+        "name": "destroyed cannon detaches, loses its Retina lock and stops firing"
+      },
+      {
+        "ok": true,
+        "name": "destroying a wing removes its beam emitter"
+      },
+      {
+        "ok": true,
+        "name": "separate skull takes weak-point damage"
+      },
+      {
+        "ok": true,
+        "name": "defeat ejects authored components with timed explosion beats"
+      },
+      {
+        "ok": true,
+        "name": "death resolves once and normal stage progression resumes"
+      },
+      {
+        "ok": true,
+        "name": "restored miniboss leads into the existing eight-form modular finale"
+      },
+      {
+        "ok": true,
+        "name": "native charge and module-break audio cues fire"
+      },
+      {
+        "ok": true,
+        "name": "no page or console errors"
+      }
+    ],
+    "easy": {
+      "spawn": 1,
+      "mini": "heralddeath",
+      "active": true,
+      "entered": true,
+      "rig": 6,
+      "hp": 1331,
+      "maxhp": 1331,
+      "boss": false,
+      "trigger": true,
+      "done": false,
+      "combat": {
+        "history": [
+          "skulls",
+          "salvo",
+          "skulls",
+          "salvo"
+        ],
+        "shots": 7,
+        "beams": 0,
+        "scroll": 520.0000000000591,
+        "time": 0,
+        "keys": [
+          "part-wingL",
+          "part-wingR",
+          "part-core",
+          "part-gunL",
+          "part-gunR",
+          "part-head",
+          "original-fov"
+        ]
+      }
+    },
+    "normal": {
+      "spawn": 1,
+      "mini": "heralddeath",
+      "active": true,
+      "entered": true,
+      "rig": 6,
+      "hp": 2796,
+      "maxhp": 2796,
+      "boss": false,
+      "trigger": true,
+      "done": false,
+      "combat": {
+        "history": [
+          "skulls",
+          "lances",
+          "salvo",
+          "skulls",
+          "lances"
+        ],
+        "shots": 6,
+        "beams": 2,
+        "scroll": 520.0000000000591,
+        "time": 0,
+        "keys": [
+          "part-wingL",
+          "part-wingR",
+          "part-core",
+          "part-gunL",
+          "part-gunR",
+          "part-head",
+          "original-fov",
+          "original-retina"
+        ]
+      }
+    },
+    "hard": {
+      "spawn": 1,
+      "mini": "heralddeath",
+      "active": true,
+      "entered": true,
+      "rig": 6,
+      "hp": 3075,
+      "maxhp": 3075,
+      "boss": false,
+      "trigger": true,
+      "done": false,
+      "combat": {
+        "history": [
+          "skulls",
+          "lances",
+          "salvo",
+          "skulls",
+          "lances"
+        ],
+        "shots": 10,
+        "beams": 2,
+        "scroll": 520.0000000000591,
+        "time": 0,
+        "keys": [
+          "part-wingL",
+          "part-wingR",
+          "part-core",
+          "part-gunL",
+          "part-gunR",
+          "part-head",
+          "original-fov",
+          "original-retina"
+        ]
+      }
+    },
+    "furious": {
+      "spawn": 1,
+      "mini": "heralddeath",
+      "active": true,
+      "entered": true,
+      "rig": 6,
+      "hp": 3634,
+      "maxhp": 3634,
+      "boss": false,
+      "trigger": true,
+      "done": false,
+      "combat": {
+        "history": [
+          "skulls",
+          "lances",
+          "salvo",
+          "skulls",
+          "lances"
+        ],
+        "shots": 14,
+        "beams": 2,
+        "scroll": 520.0000000000591,
+        "time": 0,
+        "keys": [
+          "part-wingL",
+          "part-wingR",
+          "part-core",
+          "part-gunL",
+          "part-gunR",
+          "part-head",
+          "original-fov",
+          "original-retina"
+        ]
+      }
+    },
+    "sounds": {
+      "bossWeaponCharge": 22,
+      "bossfireVileexistence": 14,
+      "combatOrb0927": 23,
+      "combatBeam0927": 12,
+      "combatModule0927": 5,
+      "expBig": 1,
+      "combatEnergy0927": 2,
+      "combatAlien0927": 1
+    },
+    "errors": []
+  },
+  "finaleMusicRegression": {
+    "checks": [
+      {
+        "ok": true,
+        "name": "green boss lane uses original FOV pixels and no new warning sheet"
+      },
+      {
+        "ok": true,
+        "name": "yellow boss lane uses original FOV pixels and no new warning sheet"
+      },
+      {
+        "ok": true,
+        "name": "red boss lane uses original FOV pixels and no new warning sheet"
+      },
+      {
+        "ok": true,
+        "name": "gravity targeting uses original ground Retina while keeping the chrome shield"
+      },
+      {
+        "ok": true,
+        "name": "knight jump uses original red ground Retina"
+      },
+      {
+        "ok": true,
+        "name": "ordinary alien uses original lanes without floating boss warning signs"
+      },
+      {
+        "ok": true,
+        "name": "real Stage X deployment plays the full converted Gasline MP3"
+      },
+      {
+        "ok": true,
+        "name": "Stage X track loops through the normal audible music channel"
+      },
+      {
+        "ok": true,
+        "name": "normal gameplay updates keep the Stage X track selected"
+      },
+      {
+        "ok": true,
+        "name": "captured Stage X audio stream contains a non-silent waveform"
+      },
+      {
+        "ok": true,
+        "name": "music playback clock advances normally"
+      },
+      {
+        "ok": true,
+        "name": "leaving Stage X stops Gasline and the normal Stage 6 score stays separate"
+      },
+      {
+        "ok": true,
+        "name": "no page or console errors"
+      }
+    ],
+    "enemy": {
+      "keys": [
+        "original-enemy-lane",
+        "original-enemy-lane",
+        "original-enemy-lane",
+        "original-retina-yellow",
+        "original-enemy-lane",
+        "original-enemy-lane",
+        "original-enemy-lane",
+        "original-retina-yellow"
+      ],
+      "aliens": [
+        {
+          "role": "stalker",
+          "phase": "tell",
+          "x": 340,
+          "y": 140
+        }
+      ]
+    },
+    "music": {
+      "active": true,
+      "path": "assets/game/music/stagex_gasline_1003.mp3",
+      "duration": 88.36,
+      "loop": true,
+      "volume": 1,
+      "clock": 0.006374,
+      "boss6": "assets/game/music/boss6_battle_in_the_sky.mp3",
+      "rms": [
+        0.2654888691390002,
+        0.2555040327626055,
+        0.24366459421574652,
+        0.19309536210607253,
+        0.21665144025706495,
+        0.19756279982929634
+      ]
+    },
+    "keys": [
+      "original-enemy-lane",
+      "original-retina-yellow"
+    ],
+    "errors": []
+  },
+  "source": {
+    "key": "hd1003_parts",
+    "path": "assets/game/herald_1003f/parts.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "parts": {
+      "core": {
+        "rect": [
+          70,
+          0,
+          310,
+          623
+        ],
+        "pivot": [
+          155,
+          300
+        ],
+        "attach": [
+          0,
+          0
+        ],
+        "scale": 0.34,
+        "z": 1,
+        "hit": [
+          155,
+          315,
+          110,
+          280
+        ]
+      },
+      "head": {
+        "rect": [
+          493,
+          133,
+          270,
+          435
+        ],
+        "pivot": [
+          136,
+          383
+        ],
+        "attach": [
+          0,
+          -12
+        ],
+        "scale": 0.21,
+        "z": 4,
+        "hit": [
+          136,
+          193,
+          95,
+          150
+        ]
+      },
+      "wingL": {
+        "rect": [
+          795,
+          0,
+          459,
+          622
+        ],
+        "pivot": [
+          425,
+          245
+        ],
+        "attach": [
+          -37,
+          -18
+        ],
+        "scale": 0.32,
+        "z": 0,
+        "hit": [
+          230,
+          310,
+          115,
+          225
+        ]
+      },
+      "wingR": {
+        "rect": [
+          0,
+          626,
+          458,
+          622
+        ],
+        "pivot": [
+          30,
+          245
+        ],
+        "attach": [
+          37,
+          -18
+        ],
+        "scale": 0.32,
+        "z": 0,
+        "hit": [
+          225,
+          310,
+          115,
+          225
+        ]
+      },
+      "gunL": {
+        "rect": [
+          549,
+          646,
+          210,
+          594
+        ],
+        "pivot": [
+          56,
+          87
+        ],
+        "attach": [
+          -42,
+          12
+        ],
+        "scale": 0.23,
+        "z": 2,
+        "hit": [
+          101,
+          329,
+          72,
+          228
+        ],
+        "muzzle": [
+          95,
+          497
+        ]
+      },
+      "gunR": {
+        "rect": [
+          902,
+          646,
+          211,
+          594
+        ],
+        "pivot": [
+          155,
+          87
+        ],
+        "attach": [
+          42,
+          12
+        ],
+        "scale": 0.23,
+        "z": 2,
+        "hit": [
+          110,
+          329,
+          72,
+          228
+        ],
+        "muzzle": [
+          113,
+          497
+        ]
+      }
+    },
+    "sha256": "0e0f51b5675c40221a9744dfd5fbb1c4fb42a6901f4c9cfaa1893a0ec4736f45",
+    "source": "_ART_SOURCES/herald_1003f/parts.png"
+  },
+  "replayErrors": [],
+  "limitations": "Controlled Chromium fixtures, not a complete campaign or final balance certification. Initial four backdrop-stop assertions were corrected to the existing stage-wave-clock hold.",
+  "review": {
+    "videoSeconds": 27.817101,
+    "mobileFits": true,
+    "playableHerald": true,
+    "errors": []
+  }
+}

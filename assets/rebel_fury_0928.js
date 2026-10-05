@@ -399,7 +399,7 @@ function rf28Fallen(b,R,q){
     const last=alive[0];R.rf.lastStand=true;
     rf28Banner(R,'LAST STAND - '+last.key.toUpperCase(),REBEL_TINT[last.i]);
     rf28Say(R,last.key,RF28_LINES.last[last.key]||'');
-    if(R.rf.lvl>=1){last.shieldMax=Math.max(last.shieldMax||0,Math.round(last.max*(R.rf.lvl>=2?.25:.20)));last.shield=last.shieldMax;last.rfShieldDownAt=null;}
+    if(R.rf.lvl>=1&&!RF28_K.noShields){last.shieldMax=Math.max(last.shieldMax||0,Math.round(last.max*(R.rf.lvl>=2?.25:.20)));last.shield=last.shieldMax;last.rfShieldDownAt=null;}
     last.cd=Math.min(last.cd,.8);
   }else if(s)rf28Say(R,s.key,RF28_LINES.fallen[q.key]||'');
 }

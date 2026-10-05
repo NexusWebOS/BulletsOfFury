@@ -1,0 +1,13 @@
+# Stage X coastal city and animated water — October 4
+
+Mike requested translucent water in the mountain arena and coastal buildings, then clarified that waterfalls must also be removed and the architecture should match Bullets of Fury. The selected built-in imagegen edit preserves the rocky mountain and summit snow, adds military ports, chrome industrial buildings, radar towers and coastal roads, and removes painted lagoon water, mountain cascades and waterfall foam. The original arena remains on disk.
+
+The first two generated candidates still contained opaque waterfall paint. The final edit removes it. Source and all exact prompts are preserved in `_ART_SOURCES/stagex_coast_1004j/`; `_BUILD_SOURCE/build_stagex_coast_1004j.py` performs nearest-neighbor normalization only, preserving native generated alpha. The shipping terrain is `assets/game/stagex_coast_1004j/terrain.png`, 680×1218, with provenance in its manifest. No atlas edits or procedural graphics.
+
+`assets/feedback_1001b.js` resolves the terrain and all four existing `nwl_water` frames before drawing the arena. The native-size water reel runs at six frames per second with independent gentle drift underneath the terrain. Terrain camera travel and `_masterSrcY` alignment remain intact. Both XHARR and XREBEL share the new arena; HARR6 and REBEL6 retain Stage VI's sky, as do ordinary Stage VI encounters. The campaign's floating Stage X island is a separate map asset.
+
+Verification: `node --check assets/game.js` and `node --check assets/feedback_1001b.js` pass. The complete `_BUILD_SOURCE/test_fl.js` suite reaches its final summary with 7,177 passing assertions, exit 0. The existing sky/route/fighter/bomber Chromium probe passes 75/75. New native probe passes 15/15, including both encounter routes and live review buttons, all four water frames through XART and the game context, visibly changing water pixels beneath fixed terrain, and stable mountain/building pixels. Zero final page or console errors. The initial review had one missing GIF 404; the probe now builds its GIF before loading the page. That failed initial evidence is retained.
+
+Pixel comparison at fixed camera: 225,164 transparent water pixels sampled; 107,124 visibly change between consecutive water frames. Of 713,352 near-opaque terrain pixels, 713,020 remain within five RGB levels between water frames. Native generated partial alpha is preserved.
+
+Review: `_shots/stagex_coast_1004j/review.html`. Runtime screenshots, a fixed-camera animation GIF, logs and native measurements are beside it. Permanent QA: `docs/qa/stagex_coast_1004j.json`. Review saves use the existing separate practice namespace. No commit or push.

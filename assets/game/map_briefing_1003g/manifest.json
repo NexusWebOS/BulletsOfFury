@@ -1,0 +1,42 @@
+{
+  "generator": "built-in image_gen",
+  "prompts": "_ART_SOURCES/map_briefing_1003g/generation.json",
+  "assets": [
+    {
+      "path": "assets/game/map_briefing_1003g/briefing_blank.png",
+      "source": "_ART_SOURCES/map_briefing_1003g/briefing_blank.png",
+      "rect": [
+        0,
+        98,
+        2170,
+        484
+      ],
+      "size": [
+        2170,
+        725
+      ],
+      "sha256": "bb8eac1bb994ff36312cd19b18c97fe7b0c4f5d9646641d3e30830363e503c48"
+    },
+    {
+      "path": "assets/game/map_briefing_1003g/lizzie_frame.png",
+      "source": "_ART_SOURCES/map_briefing_1003g/lizzie_frame.png",
+      "rect": [
+        31,
+        45,
+        1191,
+        1167
+      ],
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "71a7576ebdd1a11092835d5994bebe453c716e79fd9464e951257e283e2bcca7"
+    }
+  ],
+  "lizzie": {
+    "source": "assets/game/pilots_0922/sheets/lizzie_expressions.png",
+    "sha256": "2724880e6889481120135052ce7ae39bd8ffd057d4ffe25f43476feb9143b915",
+    "runtime": "assets/map_briefing_1003g.js",
+    "method": "Original portrait interior and mouth pixels drawn into fixed generated bezel; no per-frame bounds, scale, body or border change while speaking. Legacy menu and comm keys route through XART._touch. Original files preserved."
+  }
+}

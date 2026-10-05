@@ -1,0 +1,289 @@
+{
+  "date": "2026-10-03",
+  "drop": "feedback_1003h",
+  "base_head": "938d1079",
+  "status": "passed",
+  "scope": "Stage 6 bomber art and protected dialogue; rebel portraits, framing and music; Stage 5 Hammer portrait, Furious chromium tuning and orbital homecoming.",
+  "syntax_checks": {
+    "commands": [
+      "node --check assets/game.js",
+      "node --check assets/feedback_1003h.js"
+    ],
+    "exit_codes": [
+      0,
+      0
+    ]
+  },
+  "full_suite": {
+    "command": "node _BUILD_SOURCE/test_fl.js",
+    "passing_assertions": 6958,
+    "failures": 0,
+    "exit_code": 0,
+    "final_summary": "==== FALVA/LIZZIE BUILD OK, 0 ERRORS ====",
+    "log": "_shots/feedback_1003h/full-suite-final.log"
+  },
+  "native_main": {
+    "command": "python _BUILD_SOURCE/probe_feedback_1003h.py",
+    "exit_code": 0,
+    "checks": [
+      {
+        "ok": true,
+        "name": "all active generated assets loaded"
+      },
+      {
+        "ok": true,
+        "name": "all approved bomber palette sources reach the game canvas"
+      },
+      {
+        "ok": true,
+        "name": "untagged reinforcement bomber no longer falls back to old hull"
+      },
+      {
+        "ok": true,
+        "name": "yuri naturally reaches team scene"
+      },
+      {
+        "ok": true,
+        "name": "yuri confirm/fire cannot reveal or skip dialogue"
+      },
+      {
+        "ok": true,
+        "name": "yuri no AI, weapons, ammo spend or movement during dialogue"
+      },
+      {
+        "ok": true,
+        "name": "yuri complete reading sequence releases the existing route choice"
+      },
+      {
+        "ok": true,
+        "name": "cole naturally reaches team scene"
+      },
+      {
+        "ok": true,
+        "name": "cole confirm/fire cannot reveal or skip dialogue"
+      },
+      {
+        "ok": true,
+        "name": "cole no AI, weapons, ammo spend or movement during dialogue"
+      },
+      {
+        "ok": true,
+        "name": "cole complete reading sequence releases the existing route choice"
+      },
+      {
+        "ok": true,
+        "name": "scripted Callisto demonstration survives combat freeze and restores loadout"
+      },
+      {
+        "ok": true,
+        "name": "rebel encounter fixture exists"
+      },
+      {
+        "ok": true,
+        "name": "rebel approach rejects firing instead of erasing spent shots"
+      },
+      {
+        "ok": true,
+        "name": "rebel boss6 requests route to Stage X track"
+      },
+      {
+        "ok": true,
+        "name": "actual rebel encounter plays looping Stage X MP3"
+      },
+      {
+        "ok": true,
+        "name": "rebel music stays Stage X in Level 1"
+      },
+      {
+        "ok": true,
+        "name": "rebel music stays Stage X in Level 3"
+      },
+      {
+        "ok": true,
+        "name": "rebel music stays Stage X in Level 5"
+      },
+      {
+        "ok": true,
+        "name": "rebel music stays Stage X in Level 7"
+      },
+      {
+        "ok": true,
+        "name": "rebel music stays Stage X in Level 9"
+      },
+      {
+        "ok": true,
+        "name": "all five rebel pilots receive a readable portrait introduction"
+      },
+      {
+        "ok": true,
+        "name": "all five generated complete portrait frames are drawable"
+      },
+      {
+        "ok": true,
+        "name": "rebel intro finishes naturally and releases boss vulnerability"
+      },
+      {
+        "ok": true,
+        "name": "all five arrival ships remain inside frame"
+      },
+      {
+        "ok": true,
+        "name": "normal armor target; main boss health unchanged"
+      },
+      {
+        "ok": true,
+        "name": "furious armor target; main boss health unchanged"
+      },
+      {
+        "ok": true,
+        "name": "Hammer dialogue resolves to the regenerated actual head"
+      },
+      {
+        "ok": true,
+        "name": "actual Hammer defeat starts ending and preserves defeat/reward path"
+      },
+      {
+        "ok": true,
+        "name": "static aftermath smoothly reaches true monochrome"
+      },
+      {
+        "ok": true,
+        "name": "ending owns the full timeline through animated facial destruction"
+      },
+      {
+        "ok": true,
+        "name": "all nine pilots finish cheering before descent"
+      },
+      {
+        "ok": true,
+        "name": "Earth descent fades and reaches normal Stage Clear"
+      },
+      {
+        "ok": true,
+        "name": "no page or console errors"
+      }
+    ],
+    "screens": [
+      "stealth-bombers",
+      "team-yuri",
+      "team-cole",
+      "rebel-voss",
+      "rebel-voss",
+      "rebel-nyx",
+      "rebel-rook",
+      "rebel-kaia",
+      "rebel-jace",
+      "rebel-pitch-0",
+      "rebel-pitch-1",
+      "rebel-pitch-2",
+      "rebel-pitch-3",
+      "orbital-overhead",
+      "earth-surface",
+      "hammer-face",
+      "hammer-turn",
+      "hammer-shock",
+      "hammer-explosion",
+      "aftermath-color",
+      "aftermath-mid",
+      "aftermath-mono",
+      "welcome-earth",
+      "earth-descent",
+      "earth-arrival",
+      "earth-fade"
+    ],
+    "aftermathChroma": [
+      66.67697916666667,
+      35.65895833333333,
+      0
+    ],
+    "errors": []
+  },
+  "native_stagex_regression": {
+    "command": "python _BUILD_SOURCE/probe_original_warnings_1003e.py",
+    "exit_code": 0,
+    "checks": [
+      {
+        "ok": true,
+        "name": "green boss lane uses original FOV pixels and no new warning sheet"
+      },
+      {
+        "ok": true,
+        "name": "yellow boss lane uses original FOV pixels and no new warning sheet"
+      },
+      {
+        "ok": true,
+        "name": "red boss lane uses original FOV pixels and no new warning sheet"
+      },
+      {
+        "ok": true,
+        "name": "gravity targeting uses original ground Retina while keeping the chrome shield"
+      },
+      {
+        "ok": true,
+        "name": "knight jump uses original red ground Retina"
+      },
+      {
+        "ok": true,
+        "name": "ordinary alien uses original lanes without floating boss warning signs"
+      },
+      {
+        "ok": true,
+        "name": "real Stage X deployment plays the full converted Gasline MP3"
+      },
+      {
+        "ok": true,
+        "name": "Stage X track loops through the normal audible music channel"
+      },
+      {
+        "ok": true,
+        "name": "normal gameplay updates keep the Stage X track selected"
+      },
+      {
+        "ok": true,
+        "name": "captured Stage X audio stream contains a non-silent waveform"
+      },
+      {
+        "ok": true,
+        "name": "music playback clock advances normally"
+      },
+      {
+        "ok": true,
+        "name": "leaving Stage X stops Gasline and the normal Stage 6 score stays separate"
+      },
+      {
+        "ok": true,
+        "name": "no page or console errors"
+      }
+    ],
+    "errors": [],
+    "log": "_shots/feedback_1003h/stagex-regression.log"
+  },
+  "native_hammer_arrival": {
+    "command": "python _BUILD_SOURCE/probe_hammer_intro_1002.py --pilot cole --out _shots/feedback_1003h/hammer-arrival",
+    "exit_code": 0,
+    "result": "PASS []",
+    "page_and_console_errors": [],
+    "log": "_shots/feedback_1003h/hammer-arrival.log"
+  },
+  "recordings": {
+    "command": "python _BUILD_SOURCE/record_feedback_1003h.py --ending-only",
+    "exit_code": 0,
+    "errors": [],
+    "standalone": "assets/game/feedback_1003h/orbital-aftermath-monochrome.webm",
+    "ending": "_shots/feedback_1003h/hammer-homecoming.webm",
+    "rebels": "_shots/feedback_1003h/rebel-introductions.webm"
+  },
+  "art": {
+    "generated_pngs": 13,
+    "active_pngs": 11,
+    "all_manifest_hashes_match": true,
+    "current_ship_reference": "assets/game/furyship_0914/runtime_base.png",
+    "prompts": "_ART_SOURCES/feedback_1003h/generation.json",
+    "manifest": "assets/game/feedback_1003h/manifest.json"
+  },
+  "review": "_shots/feedback_1003h/review.html",
+  "limitations": [
+    "Controlled native encounters and recorded timelines; not campaign clears or human Furious balance testing.",
+    "Scratch screenshots, recordings and logs remain under ignored _shots; portable checks and reproduction commands are retained here."
+  ]
+}

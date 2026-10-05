@@ -85,7 +85,7 @@ def main():
         for _ in range(60):
             pg.evaluate(RUN, 2); pg.wait_for_timeout(120)
             if pg.evaluate("() => !!(boss&&boss._hammerTime&&boss._hammerTime.musicStarted)"): break
-        ok(pg.evaluate("() => boss._hammerTime.musicStarted && Snd.cur===Snd.music.hama && Snd.music.hama.readyState>=2 && Snd.music.hama.src.indexOf('hama_instrumental_0928.mp3')>0"),
+        ok(pg.evaluate("() => boss._hammerTime.musicStarted && Snd.cur===Snd.music.hama && Snd.music.hama.readyState>=2 && Snd.music.hama.src.indexOf('HAMA_Instrumental.mp3')>0"),
            'the instrumental itself is loaded and is the playing track')
         pg.evaluate("() => { XART.rdy('arch_hammer_throw_0926'); XART.rdy('arch_hammer_spin'); window.__rec=true; }"); pg.wait_for_timeout(800)
         def shot(name):

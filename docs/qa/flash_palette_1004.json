@@ -1,0 +1,329 @@
+{
+  "chromium": {
+    "checked": 47,
+    "passed": 47,
+    "pageConsoleErrors": [],
+    "cases": [
+      {
+        "name": "stage6-siege",
+        "ok": true,
+        "brightened": 43108,
+        "white": 40605
+      },
+      {
+        "name": "stage6-warhive",
+        "ok": true,
+        "brightened": 204297,
+        "white": 201338
+      },
+      {
+        "name": "stage6-rebel",
+        "ok": true,
+        "brightened": 9807,
+        "white": 9582
+      },
+      {
+        "name": "stage7-warden",
+        "ok": true,
+        "brightened": 128135,
+        "white": 114881
+      },
+      {
+        "name": "stage8-herald",
+        "ok": true,
+        "brightened": 137714,
+        "white": 135307
+      },
+      {
+        "name": "stage8-alien",
+        "ok": true,
+        "brightened": 24534,
+        "white": 23477
+      },
+      {
+        "name": "stage8-dracula",
+        "ok": true,
+        "brightened": 192247,
+        "white": 192232
+      },
+      {
+        "name": "stage6-s6dart",
+        "ok": true,
+        "brightened": 17033,
+        "white": 16735
+      },
+      {
+        "name": "stage6-s6mine",
+        "ok": true,
+        "brightened": 14254,
+        "white": 13959
+      },
+      {
+        "name": "stage6-s6lancer",
+        "ok": true,
+        "brightened": 27243,
+        "white": 26420
+      },
+      {
+        "name": "stage6-s6skimmer",
+        "ok": true,
+        "brightened": 27154,
+        "white": 26371
+      },
+      {
+        "name": "stage6-s6thunder",
+        "ok": true,
+        "brightened": 25943,
+        "white": 25177
+      },
+      {
+        "name": "stage6-s6probe",
+        "ok": true,
+        "brightened": 16175,
+        "white": 15846
+      },
+      {
+        "name": "stage6-s6cyclone",
+        "ok": true,
+        "brightened": 22965,
+        "white": 22336
+      },
+      {
+        "name": "stage6-s6buoy",
+        "ok": true,
+        "brightened": 7059,
+        "white": 6715
+      },
+      {
+        "name": "stage6-s6turbine",
+        "ok": true,
+        "brightened": 21422,
+        "white": 20892
+      },
+      {
+        "name": "stage7-s7sampler",
+        "ok": true,
+        "brightened": 18508,
+        "white": 18366
+      },
+      {
+        "name": "stage7-s7pipe",
+        "ok": true,
+        "brightened": 14197,
+        "white": 13783
+      },
+      {
+        "name": "stage7-s7tank",
+        "ok": true,
+        "brightened": 11430,
+        "white": 11349
+      },
+      {
+        "name": "stage7-s7skimmer",
+        "ok": true,
+        "brightened": 17825,
+        "white": 17575
+      },
+      {
+        "name": "stage7-s7lamprey",
+        "ok": true,
+        "brightened": 20638,
+        "white": 20543
+      },
+      {
+        "name": "stage7-s7mine",
+        "ok": true,
+        "brightened": 14764,
+        "white": 14668
+      },
+      {
+        "name": "stage7-s7walker",
+        "ok": true,
+        "brightened": 26371,
+        "white": 25787
+      },
+      {
+        "name": "stage7-s7canister",
+        "ok": true,
+        "brightened": 18711,
+        "white": 18488
+      },
+      {
+        "name": "stage7-s7barge",
+        "ok": true,
+        "brightened": 30488,
+        "white": 30107
+      },
+      {
+        "name": "stage7-s7serpent",
+        "ok": true,
+        "brightened": 7059,
+        "white": 6948
+      },
+      {
+        "name": "stage8-s8interceptor",
+        "ok": true,
+        "brightened": 17019,
+        "white": 16100
+      },
+      {
+        "name": "stage8-s8needlejet",
+        "ok": true,
+        "brightened": 14785,
+        "white": 14653
+      },
+      {
+        "name": "stage8-s8leech",
+        "ok": true,
+        "brightened": 24561,
+        "white": 23477
+      },
+      {
+        "name": "stage8-s8scout",
+        "ok": true,
+        "brightened": 18836,
+        "white": 18497
+      },
+      {
+        "name": "stage8-s8razor",
+        "ok": true,
+        "brightened": 8680,
+        "white": 8018
+      },
+      {
+        "name": "stage8-s8manta",
+        "ok": true,
+        "brightened": 21049,
+        "white": 20906
+      },
+      {
+        "name": "stage8-s8spread",
+        "ok": true,
+        "brightened": 30559,
+        "white": 28967
+      },
+      {
+        "name": "stage8-s8deathorb",
+        "ok": true,
+        "brightened": 39207,
+        "white": 37979
+      },
+      {
+        "name": "stage8-s8parasite",
+        "ok": true,
+        "brightened": 18609,
+        "white": 17637
+      },
+      {
+        "name": "stage8-s8crescent",
+        "ok": true,
+        "brightened": 28119,
+        "white": 26673
+      },
+      {
+        "name": "stage8-s8hunter",
+        "ok": true,
+        "brightened": 28051,
+        "white": 26819
+      },
+      {
+        "name": "stage8-s8skull",
+        "ok": true,
+        "brightened": 16402,
+        "white": 15506
+      },
+      {
+        "name": "stage8-s8solar",
+        "ok": true,
+        "brightened": 11775,
+        "white": 10689
+      },
+      {
+        "name": "stage8-s8tentacle",
+        "ok": true,
+        "brightened": 40126,
+        "white": 38498
+      },
+      {
+        "name": "stage8-s8symbiote",
+        "ok": true,
+        "brightened": 20665,
+        "white": 19608
+      },
+      {
+        "name": "stage8-s8bomber",
+        "ok": true,
+        "brightened": 57251,
+        "white": 55451
+      },
+      {
+        "name": "stage8-s8carrier",
+        "ok": true,
+        "brightened": 59084,
+        "white": 56674
+      },
+      {
+        "name": "stage8-s8gunship",
+        "ok": true,
+        "brightened": 22666,
+        "white": 22507
+      },
+      {
+        "name": "native-hit-stage6",
+        "ok": true,
+        "damage": {
+          "old": 12,
+          "hp": 11,
+          "flash": 0.12
+        },
+        "brightened": 16715,
+        "white": 16708
+      },
+      {
+        "name": "native-hit-stage7",
+        "ok": true,
+        "damage": {
+          "old": 15,
+          "hp": 14,
+          "flash": 0.12
+        },
+        "brightened": 18508,
+        "white": 18366
+      },
+      {
+        "name": "native-hit-stage8",
+        "ok": true,
+        "damage": {
+          "old": 18,
+          "hp": 17,
+          "flash": 0.12
+        },
+        "brightened": 59080,
+        "white": 56682
+      }
+    ]
+  },
+  "stealth": {
+    "passed": true,
+    "pageErrors": true
+  },
+  "palette": {
+    "red": {
+      "palette_pixels_changed": 3624,
+      "non_paint_pixels_preserved": 8441,
+      "mismatches": 0,
+      "alpha_identical": true
+    },
+    "green": {
+      "palette_pixels_changed": 3624,
+      "non_paint_pixels_preserved": 8441,
+      "mismatches": 0,
+      "alpha_identical": true
+    }
+  },
+  "suite": {
+    "ok": true,
+    "assertions": 7053,
+    "exitCode": 0
+  }
+}

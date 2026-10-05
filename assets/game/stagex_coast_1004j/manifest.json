@@ -1,0 +1,23 @@
+{
+  "mode": "builtin-imagegen-edit",
+  "source": "_ART_SOURCES/stagex_coast_1004j/terrain-source.png",
+  "source_sha256": "a188ad3378776d88c90b27f79409e1f246bd70eaebe3f0e65b250843bcd4ee08",
+  "source_size": [
+    937,
+    1678
+  ],
+  "runtime_size": [
+    680,
+    1218
+  ],
+  "normalization": "nearest-neighbor only; generated alpha preserved",
+  "terrain_key": "sx1001_arena",
+  "water_keys": [
+    "nwl_water_0",
+    "nwl_water_1",
+    "nwl_water_2",
+    "nwl_water_3"
+  ],
+  "transparent_pixels": 280914,
+  "partial_alpha_pixels": 547033
+}

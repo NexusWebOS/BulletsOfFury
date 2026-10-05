@@ -75,9 +75,9 @@ missionJetSpawn=function(event,O){
 /* the whole bluejets sheet tinted once per colour, then the cell rect is cut from it */
 function s67CellFlash(name,frame,x,y,w,h,e){
   const A=MISSION29_ART[name];if(!A||!XART.rdy(A.key))return false;
-  const c=xartTint(A.key,hitFlashColor(e,'#ffffff'),.74);if(!c)return false;
+  const c=xartTint(A.key,'#ffffff',1);if(!c)return false;
   const r=A.frames[((frame|0)%A.frames.length+A.frames.length)%A.frames.length];
-  ctx.save();ctx.imageSmoothingEnabled=false;ctx.globalAlpha*=Math.min(1,.55+(e.flash||0)*3);ctx.drawImage(c,...r,x,y,w,h);ctx.restore();return true;
+  ctx.save();ctx.imageSmoothingEnabled=false;ctx.globalAlpha*=Math.min(1,(e.flash||0)*9);ctx.drawImage(c,...r,x,y,w,h);ctx.restore();return true;
 }
 furyFleetDraw=function(e){
   const A=e._mission29;if(!A)return S67_BASE.furyFleetDraw(e);if(e.dead||e._dyingT!=null)return true;
@@ -311,7 +311,7 @@ fr27Exit=function(b,dt){
     if(!b._forgeRewardDropped){b._forgeRewardDropped=true;forgeBossDrop(player.x,player.y);run.score+=35000;}
     for(const p of powerups)if(p.kind==='forgecombo'&&!p.dead){applyPowerup(p);p.dead=true;}
     F.finished=true;F.phase='done';F.radio=null;F.shipHidden=false;b.dead=true;bossActive=false;bossDefeated=true;whiteBlast=0;run._l78Entry=1;
-    if(run.mode==='campaign')campaign._l78Pending=1;drawStageClear._init=false;drawStageClear._res=null;Audio.stopMusic();setState(GS.STAGECLEAR);}
+    if(typeof cf4PortalHandoff==='function')cf4PortalHandoff();else{if(run.mode==='campaign')campaign._l78Pending=1;drawStageClear._init=false;drawStageClear._res=null;Audio.stopMusic();setState(GS.STAGECLEAR);}}
   return true;
 };
 /* the wreck: its frozen pose on the ground it died on, in its own colours (a faint overload pulse
@@ -558,7 +558,9 @@ const S67_DRAW_ATOM2=drawAtomBooms;
 drawAtomBooms=function(){
   for(const c of s67Clouds){const key='nl6c_low_rolling_bank_'+c.k;if(!XART.rdy(key))continue;const im=xartPalette(key,'#62e82c');if(!im)continue;
     const a=Math.min(1,c.t/.5)*Math.min(1,(c.life-c.t)/1.2),h=c.w*(im.height/im.width);
-    ctx.save();ctx.globalAlpha=.72*a;ctx.imageSmoothingEnabled=false;ctx.drawImage(im,c.x-c.w/2,c.y-h/2,c.w,h);ctx.restore();}
+    // Keep the toxic atmosphere without burying ships, reticles and projectiles.
+    const overlap=Math.max(1,s67Clouds.filter(q=>Math.abs(q.x-c.x)<(q.w+c.w)*.35&&Math.abs(q.y-c.y)<h).length);
+    ctx.save();ctx.globalAlpha=.26*a/Math.sqrt(overlap);ctx.imageSmoothingEnabled=false;ctx.drawImage(im,c.x-c.w/2,c.y-h/2,c.w,h);ctx.restore();}
   return S67_DRAW_ATOM2();
 };
 
@@ -647,12 +649,13 @@ whvDrawCarrier=function(b){
     whvSprite('whv_fan',q.x,q.y,d,d,a-(id==='L'?1:-1)*Math.min(.35,v*.012),alpha*.42);   // motion blur trailing the spin
     const B=[W.beam,W.beam2].find(z=>z&&z.side===id),k=B?clamp(B.t/B.warn,0,1):0;
     if(k>0){const c=xartPalette('whv_fan','#3ad0ff');if(c){ctx.save();ctx.translate(q.x,q.y);ctx.rotate(a);ctx.globalCompositeOperation='lighter';ctx.globalAlpha=alpha*.55*k;ctx.drawImage(c,-d/2,-d/2,d,d);ctx.restore();}}
-    if(p.fl>0){const c=xartPalette('whv_fan','white');if(c){ctx.save();ctx.translate(q.x,q.y);ctx.rotate(a);ctx.globalAlpha=alpha*Math.min(1,p.fl*6);ctx.drawImage(c,-d/2,-d/2,d,d);ctx.restore();}}}
+    if(p.fl>0){const c=xartTint('whv_fan','#ffffff',1);if(c){ctx.save();ctx.translate(q.x,q.y);ctx.rotate(a);ctx.globalAlpha=alpha*Math.min(1,p.fl*9);ctx.drawImage(c,-d/2,-d/2,d,d);ctx.restore();}}}
   /* 3. the hull, rims over the fans */
   ctx.drawImage(XART.get(key),cx-pw/2,cy-ph/2,pw,ph);
-  if(W.hullFl>0){const c=xartTint(key,hitFlashColor(b,'#ffffff'),.74);if(c){ctx.save();ctx.globalAlpha=alpha*Math.min(.72,.3+W.hullFl*2.6);ctx.drawImage(c,cx-pw/2,cy-ph/2,pw,ph);ctx.restore();}}
+  const hullFlash=Math.max(W.hullFl||0,b.flash||0);
+  if(hullFlash>0){const c=xartTint(key,'#ffffff',1);if(c){ctx.save();ctx.globalAlpha=alpha*Math.min(1,hullFlash*9);ctx.drawImage(c,cx-pw/2,cy-ph/2,pw,ph);ctx.restore();}}
   for(const id of ['L','R'])if(W.parts[id].dead){const q={x:cx+WHV_NAC[id].x*s,y:cy+WHV_NAC[id].y*s},d=WHV_POD_R*2.1*s;whvSprite('whv_twreck',q.x,q.y,d,d,0,alpha);}
-  const D=W.parts.door;if(D.fl>0&&!D.dead){const q={x:cx,y:cy+WHV_DOOR.y*s},c=xartPalette('whv_'+state,'white');
+  const D=W.parts.door;if(D.fl>0&&!D.dead){const q={x:cx,y:cy+WHV_DOOR.y*s},c=xartTint(key,'#ffffff',1);
     if(c){ctx.save();ctx.beginPath();ctx.rect(q.x-WHV_DOOR.w*s/2,q.y-WHV_DOOR.h*s/2,WHV_DOOR.w*s,WHV_DOOR.h*s);ctx.clip();
       ctx.globalAlpha=D.fl*4*alpha;ctx.drawImage(c,cx-pw/2,cy-ph/2,pw,ph);ctx.restore();}}
   for(const id of ['L','R','door']){const p=W.parts[id];whvPartFx(b,whvPartPos(b,id),p.hp/p.max,p.dead,id==='door'?.9:1.15,id==='L'?0:id==='R'?1.7:3.1);}
@@ -763,16 +766,16 @@ whvDrawAce=function(b){
     if(c)for(let i=0;i<A.trail.length-1;i+=2){const p=A.trail[i];ctx.save();ctx.globalAlpha=.1+.25*i/A.trail.length;ctx.globalCompositeOperation='lighter';ctx.drawImage(c,p.x-w/2,p.y-h/2,w,h);ctx.restore();}}
   const whole=b.dead||A.somer||A.roll||A.inverted||Math.abs(A.vx)>170||!XART.rdy('whv_acem_body');
   if(whole){const k=b.dead?'whv_ace':whvAceKey(b,A);whvSprite(k,A.x,A.y,w,h,b.dead?(A.spin||0):0,1);
-    if(b.flash>0&&!b.dead){const c=xartPalette(k,'white');if(c){ctx.save();ctx.translate(A.x,A.y);ctx.globalAlpha=Math.min(1,b.flash*4);ctx.imageSmoothingEnabled=false;ctx.drawImage(c,-w/2,-h/2,w,h);ctx.restore();}}}
+    if(b.flash>0&&!b.dead){const c=xartTint(k,'#ffffff',1);if(c){ctx.save();ctx.translate(A.x,A.y);ctx.globalAlpha=Math.min(1,b.flash*9);ctx.imageSmoothingEnabled=false;ctx.drawImage(c,-w/2,-h/2,w,h);ctx.restore();}}}
   else{
     const dmg=b.hp/b.maxhp<.5?'_dmg':'',bank=clamp(A.vx/170,-1,1),sweep=A.dash&&A.dash.st==='go'?.14:0;
     const root={wingL:{x:(63-100)*S67_ACE_S,s:1-Math.max(0,-bank)*.30},wingR:{x:(137-100)*S67_ACE_S,s:1-Math.max(0,bank)*.30}};
-    for(const m of ['wingL','body','wingR']){const key='whv_acem_'+m+dmg;if(!XART.rdy(key))continue;const im=XART.get(key);
+    for(const m of ['wingL','body','wingR']){const fresh='gp4_acem_'+m+dmg,key=XART._src[fresh]?fresh:'whv_acem_'+m+dmg;if(!XART.rdy(key))continue;const im=XART.get(key);
       ctx.save();ctx.translate(A.x,A.y);ctx.imageSmoothingEnabled=false;
       if(m!=='body'){const R=root[m];ctx.translate(R.x,0);ctx.rotate((m==='wingL'?1:-1)*sweep);ctx.scale(R.s,1);ctx.translate(-R.x,0);}
       ctx.drawImage(im,-w/2,-h/2,w,h);
       const fl=A.fl?A.fl[m]:0;
-      if(fl>0){const c=xartPalette(key,'white');if(c){ctx.globalAlpha=Math.min(1,fl*6);ctx.drawImage(c,-w/2,-h/2,w,h);}}
+      if(fl>0||b.flash>0){const c=xartTint(key,'#ffffff',1);if(c){ctx.globalAlpha=Math.min(1,Math.max(fl||0,b.flash||0)*9);ctx.drawImage(c,-w/2,-h/2,w,h);}}
       ctx.restore();}
   }
   if(!b.dead&&!A.inverted&&!A.somer){const f=(Math.floor((b.t||0)*14))%8,c=xartPalette('florb_'+f,'#5a8cff'),d=(12+Math.sin((b.t||0)*30)*2)*S67_ACE_K;

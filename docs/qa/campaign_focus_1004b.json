@@ -1,0 +1,1556 @@
+{
+  "source_recording": {
+    "path": "C:/Users/Mdogg/Videos/2026-10-04 10-46-40.mp4",
+    "duration_seconds": 915.77,
+    "coverage": "Entire timeline sampled every 2 seconds; all 20 contact sheets inspected. Not every video frame or complete audio. Stage 6 absent in this new clip."
+  },
+  "reference": "https://www.youtube.com/watch?v=KfsBXXuSD_w&t=159s",
+  "suite": {
+    "command": "node _BUILD_SOURCE/test_fl.js",
+    "assertions": 7053,
+    "exit_code": 0,
+    "previous_baseline": 7038,
+    "initial_exit_code": 1,
+    "initial_failures": "Two obsolete reward expectations; updated Stage 6 to Prism and Stage 8 to Dark Matter."
+  },
+  "native_checks": 37,
+  "reports": {
+    "routes_and_teams": {
+      "checks": [
+        {
+          "ok": true,
+          "name": "all nine pilots retain four allies after actual Rebel-route input"
+        },
+        {
+          "ok": true,
+          "name": "Furious runs two staggered specialists and all five release their own attacks"
+        },
+        {
+          "ok": true,
+          "name": "Gang Mode still triggers at three wounded fighters"
+        },
+        {
+          "ok": true,
+          "name": "Decker scene returns the same four live allies to combat"
+        },
+        {
+          "ok": true,
+          "name": "single defeat keeps remaining encounter alive"
+        },
+        {
+          "ok": true,
+          "name": "Stage X launches unchosen encounter after left route and save/load"
+        },
+        {
+          "ok": true,
+          "name": "Stage X victory returns to campaign map"
+        },
+        {
+          "ok": true,
+          "name": "Stage X launches unchosen encounter after right route and save/load"
+        },
+        {
+          "ok": true,
+          "name": "Stage X victory returns to campaign map"
+        },
+        {
+          "ok": true,
+          "name": "actual Warden exit hands ship directly to Stage 8 portal with equipment and lives intact"
+        },
+        {
+          "ok": true,
+          "name": "Stage 6 awards Prism; Stage 8 awards Dark Matter"
+        },
+        {
+          "ok": true,
+          "name": "Dracula executes three articulated attacks with finite projectiles before transformations"
+        },
+        {
+          "ok": true,
+          "name": "Hammer controller drives all four generated modular knight poses"
+        },
+        {
+          "ok": true,
+          "name": "final-form MP3 preserves the supplied recording duration"
+        }
+      ],
+      "wing": [
+        {
+          "pilot": "axel",
+          "route": "right",
+          "allies": [
+            "cole",
+            "decker",
+            "falva",
+            "yuri"
+          ]
+        },
+        {
+          "pilot": "decker",
+          "route": "right",
+          "allies": [
+            "axel",
+            "cole",
+            "falva",
+            "yuri"
+          ]
+        },
+        {
+          "pilot": "maverick",
+          "route": "right",
+          "allies": [
+            "axel",
+            "cole",
+            "decker",
+            "falva"
+          ]
+        },
+        {
+          "pilot": "freezer",
+          "route": "right",
+          "allies": [
+            "axel",
+            "cole",
+            "decker",
+            "falva"
+          ]
+        },
+        {
+          "pilot": "juggernaut",
+          "route": "right",
+          "allies": [
+            "axel",
+            "cole",
+            "decker",
+            "falva"
+          ]
+        },
+        {
+          "pilot": "yuri",
+          "route": "right",
+          "allies": [
+            "axel",
+            "cole",
+            "decker",
+            "falva"
+          ]
+        },
+        {
+          "pilot": "lizzie",
+          "route": "right",
+          "allies": [
+            "axel",
+            "cole",
+            "decker",
+            "falva"
+          ]
+        },
+        {
+          "pilot": "falva",
+          "route": "right",
+          "allies": [
+            "axel",
+            "cole",
+            "decker",
+            "yuri"
+          ]
+        },
+        {
+          "pilot": "cole",
+          "route": "right",
+          "allies": [
+            "axel",
+            "decker",
+            "falva",
+            "yuri"
+          ]
+        }
+      ],
+      "rebel": {
+        "peak": 2,
+        "releases": [
+          {
+            "event": "specialRelease",
+            "t": 3.516666666666659,
+            "pilot": "voss",
+            "kind": "fusion"
+          },
+          {
+            "event": "specialRelease",
+            "t": 5.13333333333332,
+            "pilot": "nyx",
+            "kind": "ghost"
+          },
+          {
+            "event": "specialRelease",
+            "t": 5.866666666666651,
+            "pilot": "rook",
+            "kind": "heavy"
+          },
+          {
+            "event": "specialRelease",
+            "t": 8.083333333333314,
+            "pilot": "kaia",
+            "kind": "roller"
+          },
+          {
+            "event": "specialRelease",
+            "t": 9.933333333333406,
+            "pilot": "jace",
+            "kind": "stealth"
+          },
+          {
+            "event": "specialRelease",
+            "t": 13.066666666666896,
+            "pilot": "nyx",
+            "kind": "ghost"
+          },
+          {
+            "event": "specialRelease",
+            "t": 14.316666666666958,
+            "pilot": "voss",
+            "kind": "fusion"
+          },
+          {
+            "event": "specialRelease",
+            "t": 15.166666666667,
+            "pilot": "rook",
+            "kind": "heavy"
+          },
+          {
+            "event": "specialRelease",
+            "t": 17.383333333333628,
+            "pilot": "jace",
+            "kind": "stealth"
+          },
+          {
+            "event": "specialRelease",
+            "t": 18.400000000000237,
+            "pilot": "kaia",
+            "kind": "roller"
+          },
+          {
+            "event": "specialRelease",
+            "t": 21.00000000000009,
+            "pilot": "nyx",
+            "kind": "ghost"
+          },
+          {
+            "event": "specialRelease",
+            "t": 23.99999999999992,
+            "pilot": "voss",
+            "kind": "fusion"
+          },
+          {
+            "event": "specialRelease",
+            "t": 24.049999999999915,
+            "pilot": "rook",
+            "kind": "heavy"
+          },
+          {
+            "event": "specialRelease",
+            "t": 27.06666666666641,
+            "pilot": "jace",
+            "kind": "stealth"
+          },
+          {
+            "event": "specialRelease",
+            "t": 28.08333333333302,
+            "pilot": "kaia",
+            "kind": "roller"
+          }
+        ],
+        "wing": [
+          "axel",
+          "cole",
+          "decker",
+          "falva"
+        ]
+      },
+      "routes": [
+        {
+          "stage": 6,
+          "route": "right",
+          "pending": {
+            "route": "right",
+            "done": false
+          },
+          "kind": "rebelsquad",
+          "wing": 4
+        },
+        {
+          "stage": 6,
+          "route": "left",
+          "pending": {
+            "route": "left",
+            "done": false
+          },
+          "kind": "warhive",
+          "wing": 4
+        }
+      ],
+      "portal": {
+        "stage": 8,
+        "state": "warpentry",
+        "weapon": 7,
+        "lives": 4,
+        "mode": "dead",
+        "finished": true,
+        "rank": "C"
+      },
+      "reward": {
+        "six": {
+          "elem": "prism",
+          "w": null
+        },
+        "eight": {
+          "elem": "dark",
+          "w": null
+        }
+      },
+      "dracula": {
+        "types": [
+          "cf4Sweep",
+          null,
+          "cf4Crush",
+          "cf4Court"
+        ],
+        "shots": 12,
+        "finite": true,
+        "history": [
+          {
+            "event": "form",
+            "form": 0,
+            "id": "host",
+            "hp": 1136
+          },
+          {
+            "event": "form",
+            "form": 0,
+            "id": "host",
+            "hp": 1136
+          },
+          {
+            "event": "takeover"
+          },
+          {
+            "event": "form",
+            "form": 0,
+            "id": "host",
+            "hp": 1136
+          },
+          {
+            "event": "encounterStart",
+            "encounter": 0,
+            "mimic": null,
+            "hp": 4100,
+            "max": 4100
+          },
+          {
+            "event": "form",
+            "form": 2,
+            "hp": 5535
+          },
+          {
+            "event": "encounterStart",
+            "encounter": 2,
+            "mimic": null,
+            "hp": 4100,
+            "max": 4100
+          },
+          {
+            "event": "draculaPattern",
+            "encounter": 2,
+            "mimic": null,
+            "type": "cf4Sweep"
+          },
+          {
+            "event": "draculaPattern",
+            "encounter": 2,
+            "mimic": null,
+            "type": "cf4Crush"
+          },
+          {
+            "event": "draculaPattern",
+            "encounter": 2,
+            "mimic": null,
+            "type": "cf4Court"
+          }
+        ]
+      },
+      "knight": {
+        "poses": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "history": [
+          "warn",
+          "leap",
+          "recover",
+          "leap_reset",
+          "hammer",
+          "warn",
+          "leap",
+          "recover",
+          "leap_reset",
+          "hammer",
+          "warn",
+          "leap",
+          "recover",
+          "leap_reset",
+          "hammer",
+          "warn",
+          "leap",
+          "recover",
+          "leap_reset",
+          "hammer",
+          "warn",
+          "leap",
+          "recover",
+          "leap_reset",
+          "hammer",
+          "warn",
+          "leap",
+          "recover",
+          "back",
+          "shield",
+          "curl"
+        ],
+        "finite": true
+      },
+      "music": [
+        {
+          "name": "boss8",
+          "src": "http://127.0.0.1:50064/assets/game/music/Level8b.mp3",
+          "duration": 149.8135
+        },
+        {
+          "name": "boss8p2",
+          "src": "http://127.0.0.1:50064/assets/game/music/Level8b2.mp3",
+          "duration": 121.96
+        },
+        {
+          "name": "boss8p3",
+          "src": "http://127.0.0.1:50064/assets/game/music/Level8b3.mp3",
+          "duration": 131.44
+        }
+      ],
+      "errors": []
+    },
+    "combat_and_music": {
+      "checks": [
+        {
+          "ok": true,
+          "name": "coil renders finite articulated geometry and projectiles"
+        },
+        {
+          "ok": true,
+          "name": "airborne renders finite articulated geometry and projectiles"
+        },
+        {
+          "ok": true,
+          "name": "slam renders finite articulated geometry and projectiles"
+        },
+        {
+          "ok": true,
+          "name": "reset renders finite articulated geometry and projectiles"
+        },
+        {
+          "ok": true,
+          "name": "sword-throw renders finite articulated geometry and projectiles"
+        },
+        {
+          "ok": true,
+          "name": "thrown sword pixels and collision use the same position"
+        },
+        {
+          "ok": true,
+          "name": "chaingun renders finite articulated geometry and projectiles"
+        },
+        {
+          "ok": true,
+          "name": "spell renders finite articulated geometry and projectiles"
+        },
+        {
+          "ok": true,
+          "name": "storm renders finite articulated geometry and projectiles"
+        },
+        {
+          "ok": true,
+          "name": "whirlwind renders finite articulated geometry and projectiles"
+        },
+        {
+          "ok": true,
+          "name": "mega renders finite articulated geometry and projectiles"
+        },
+        {
+          "ok": true,
+          "name": "curled renders finite articulated geometry and projectiles"
+        },
+        {
+          "ok": true,
+          "name": "broken sword cannot leave an invisible damaging boomerang"
+        },
+        {
+          "ok": true,
+          "name": "real encounter transitions start the three assigned tracks in order"
+        },
+        {
+          "ok": true,
+          "name": "direct portal countdown finishes into playable Stage 8"
+        }
+      ],
+      "poses": [
+        {
+          "name": "coil",
+          "state": "warn",
+          "frame": 0,
+          "throw": null,
+          "rig": [
+            {
+              "id": "core",
+              "key": "cf4_core_0",
+              "x": 334.456,
+              "y": 173.112,
+              "w": 126,
+              "h": 124,
+              "rot": 0
+            },
+            {
+              "id": "legL",
+              "key": "cf4_legL_0",
+              "x": 272.7640465116279,
+              "y": 243.264,
+              "w": 57.44186046511628,
+              "h": 78,
+              "rot": 0
+            },
+            {
+              "id": "legR",
+              "key": "cf4_legR_0",
+              "x": 379.4378686131387,
+              "y": 243.186,
+              "w": 54.65693430656934,
+              "h": 78,
+              "rot": 0
+            },
+            {
+              "id": "head",
+              "key": "fmc_head",
+              "x": 340.76552239146355,
+              "y": 88.15840882697566,
+              "w": 91,
+              "h": 85,
+              "rot": 0.021967976109730836
+            },
+            {
+              "id": "swordArm",
+              "key": "fmc_knight",
+              "x": 256.83565316048123,
+              "y": 169.33778601524753,
+              "w": 62,
+              "h": 108,
+              "rot": 1.413793103448276
+            },
+            {
+              "id": "shieldArm",
+              "key": "fmc_knight",
+              "x": 383.2208287193569,
+              "y": 189.88080869165827,
+              "w": 62,
+              "h": 108,
+              "rot": -0.5
+            },
+            {
+              "id": "sword",
+              "key": "fmc_knight",
+              "x": 172.93851500140767,
+              "y": 207.48500417582417,
+              "w": 51,
+              "h": 139,
+              "rot": 0.863793103448276
+            },
+            {
+              "id": "shield",
+              "key": "fmc_knight",
+              "x": 409.3369608701386,
+              "y": 241.69503250600204,
+              "w": 78,
+              "h": 112,
+              "rot": -0.5
+            }
+          ],
+          "finite": true
+        },
+        {
+          "name": "airborne",
+          "state": "leap",
+          "frame": 1,
+          "throw": null,
+          "rig": [
+            {
+              "id": "core",
+              "key": "cf4_core_1",
+              "x": 340,
+              "y": 275.12788926710584,
+              "w": 126,
+              "h": 140,
+              "rot": 0
+            },
+            {
+              "id": "legL",
+              "key": "cf4_legL_1",
+              "x": 307.8968461180534,
+              "y": 354.457843845239,
+              "w": 39.93630573248408,
+              "h": 76,
+              "rot": -0.16
+            },
+            {
+              "id": "legR",
+              "key": "cf4_legR_1",
+              "x": 373.95893716561375,
+              "y": 357.370408901842,
+              "w": 42.688311688311686,
+              "h": 76,
+              "rot": 0.16
+            },
+            {
+              "id": "head",
+              "key": "fmc_head",
+              "x": 341.0201089937064,
+              "y": 176.69282248604512,
+              "w": 91,
+              "h": 85,
+              "rot": 0.029275601842000606
+            },
+            {
+              "id": "swordArm",
+              "key": "fmc_knight",
+              "x": 254.74491407041558,
+              "y": 244.6579912674468,
+              "w": 62,
+              "h": 108,
+              "rot": 1.9492074378905655
+            },
+            {
+              "id": "shieldArm",
+              "key": "fmc_knight",
+              "x": 367.75448291724956,
+              "y": 262.36242530300643,
+              "w": 62,
+              "h": 108,
+              "rot": 0.15
+            },
+            {
+              "id": "sword",
+              "key": "fmc_knight",
+              "x": 164.24730558271511,
+              "y": 239.79473637072218,
+              "w": 51,
+              "h": 139,
+              "rot": 1.2911827465325407
+            },
+            {
+              "id": "shield",
+              "key": "fmc_knight",
+              "x": 357.1878487270475,
+              "y": 319.41601756405913,
+              "w": 78,
+              "h": 112,
+              "rot": 0.15
+            }
+          ],
+          "finite": true
+        },
+        {
+          "name": "slam",
+          "state": "recover",
+          "frame": 2,
+          "throw": null,
+          "rig": [
+            {
+              "id": "core",
+              "key": "cf4_core_2",
+              "x": 340.252,
+              "y": 174.10399999999998,
+              "w": 126,
+              "h": 124,
+              "rot": 0
+            },
+            {
+              "id": "legL",
+              "key": "cf4_legL_2",
+              "x": 307.75290322580645,
+              "y": 249.5,
+              "w": 45.41935483870968,
+              "h": 88,
+              "rot": 0
+            },
+            {
+              "id": "legR",
+              "key": "cf4_legR_2",
+              "x": 374.4707372013652,
+              "y": 249.32399999999998,
+              "w": 45.95221843003413,
+              "h": 88,
+              "rot": 0
+            },
+            {
+              "id": "head",
+              "key": "fmc_head",
+              "x": 341.1174930824925,
+              "y": 88.16792126199498,
+              "w": 91,
+              "h": 85,
+              "rot": 0.032071296272474036
+            },
+            {
+              "id": "swordArm",
+              "key": "fmc_knight",
+              "x": 313.6481483016031,
+              "y": 166.00219569959427,
+              "w": 62,
+              "h": 108,
+              "rot": -0.45
+            },
+            {
+              "id": "shieldArm",
+              "key": "fmc_knight",
+              "x": 369.8964829172496,
+              "y": 173.9185360359006,
+              "w": 62,
+              "h": 108,
+              "rot": 0.15
+            },
+            {
+              "id": "sword",
+              "key": "fmc_knight",
+              "x": 379.74629865623933,
+              "y": 224.4156389833826,
+              "w": 51,
+              "h": 139,
+              "rot": -1.25
+            },
+            {
+              "id": "shield",
+              "key": "fmc_knight",
+              "x": 359.32984872704753,
+              "y": 230.97212829695331,
+              "w": 78,
+              "h": 112,
+              "rot": 0.15
+            }
+          ],
+          "finite": true
+        },
+        {
+          "name": "reset",
+          "state": "leap_reset",
+          "frame": 3,
+          "throw": null,
+          "rig": [
+            {
+              "id": "core",
+              "key": "cf4_core_3",
+              "x": 340.252,
+              "y": 183.01126876147285,
+              "w": 126,
+              "h": 140,
+              "rot": 0
+            },
+            {
+              "id": "legL",
+              "key": "cf4_legL_3",
+              "x": 296.8374954954955,
+              "y": 270.01526876147284,
+              "w": 36.3963963963964,
+              "h": 101,
+              "rot": 0
+            },
+            {
+              "id": "legR",
+              "key": "cf4_legR_3",
+              "x": 383.62820241691844,
+              "y": 272.3382687614729,
+              "w": 37.531722054380666,
+              "h": 101,
+              "rot": 0
+            },
+            {
+              "id": "head",
+              "key": "fmc_head",
+              "x": 341.42017353453264,
+              "y": 85.430217554885,
+              "w": 91,
+              "h": 85,
+              "rot": 0.04076232127188217
+            },
+            {
+              "id": "swordArm",
+              "key": "fmc_knight",
+              "x": 295.2910512946859,
+              "y": 180.33379322002077,
+              "w": 62,
+              "h": 108,
+              "rot": 0.3
+            },
+            {
+              "id": "shieldArm",
+              "key": "fmc_knight",
+              "x": 380.70242932620664,
+              "y": 180.4336050241931,
+              "w": 62,
+              "h": 108,
+              "rot": -0.25
+            },
+            {
+              "id": "sword",
+              "key": "fmc_knight",
+              "x": 266.096700103608,
+              "y": 271.51682694083974,
+              "w": 51,
+              "h": 139,
+              "rot": 0.3
+            },
+            {
+              "id": "shield",
+              "key": "fmc_knight",
+              "x": 393.1876300567671,
+              "y": 237.098284593724,
+              "w": 78,
+              "h": 112,
+              "rot": -0.25
+            }
+          ],
+          "finite": true
+        },
+        {
+          "name": "sword-throw",
+          "state": "throw",
+          "frame": 3,
+          "throw": {
+            "x": 342.42066715017455,
+            "y": 416.7697517406213
+          },
+          "rig": [
+            {
+              "id": "core",
+              "key": "cf4_core_3",
+              "x": 340.252,
+              "y": 185.76,
+              "w": 126,
+              "h": 140,
+              "rot": 0
+            },
+            {
+              "id": "legL",
+              "key": "cf4_legL_3",
+              "x": 296.8374954954955,
+              "y": 272.764,
+              "w": 36.3963963963964,
+              "h": 101,
+              "rot": 0
+            },
+            {
+              "id": "legR",
+              "key": "cf4_legR_3",
+              "x": 383.62820241691844,
+              "y": 275.087,
+              "w": 37.531722054380666,
+              "h": 101,
+              "rot": 0
+            },
+            {
+              "id": "head",
+              "key": "fmc_head",
+              "x": 341.20338642107,
+              "y": 88.17078293843537,
+              "w": 91,
+              "h": 85,
+              "rot": 0.03453732260928244
+            },
+            {
+              "id": "swordArm",
+              "key": "fmc_knight",
+              "x": 295.2910512946859,
+              "y": 183.0825244585479,
+              "w": 62,
+              "h": 108,
+              "rot": 0.3
+            },
+            {
+              "id": "shieldArm",
+              "key": "fmc_knight",
+              "x": 380.70242932620664,
+              "y": 183.18233626272024,
+              "w": 62,
+              "h": 108,
+              "rot": -0.25
+            },
+            {
+              "id": "sword",
+              "key": "fmc_knight",
+              "x": 342.42066715017455,
+              "y": 416.7697517406213,
+              "w": 34,
+              "h": 100,
+              "rot": 13.33333333333334
+            },
+            {
+              "id": "shield",
+              "key": "fmc_knight",
+              "x": 393.1876300567671,
+              "y": 239.84701583225112,
+              "w": 78,
+              "h": 112,
+              "rot": -0.25
+            }
+          ],
+          "finite": true
+        },
+        {
+          "name": "chaingun",
+          "state": "chaingun",
+          "frame": 3,
+          "throw": null,
+          "rig": [
+            {
+              "id": "core",
+              "key": "cf4_core_3",
+              "x": 331.1666666666668,
+              "y": 155.84,
+              "w": 126,
+              "h": 140,
+              "rot": 0
+            },
+            {
+              "id": "legL",
+              "key": "cf4_legL_3",
+              "x": 287.7521621621623,
+              "y": 242.84400000000002,
+              "w": 36.3963963963964,
+              "h": 101,
+              "rot": 0
+            },
+            {
+              "id": "legR",
+              "key": "cf4_legR_3",
+              "x": 374.54286908358523,
+              "y": 245.16700000000003,
+              "w": 37.531722054380666,
+              "h": 101,
+              "rot": 0
+            },
+            {
+              "id": "head",
+              "key": "fmc_head",
+              "x": 329.5114790144823,
+              "y": 58.25826017539106,
+              "w": 91,
+              "h": 85,
+              "rot": -0.040274521120286115
+            },
+            {
+              "id": "swordArm",
+              "key": "fmc_knight",
+              "x": 308.5354595927472,
+              "y": 131.93756591656717,
+              "w": 62,
+              "h": 108,
+              "rot": -0.65
+            },
+            {
+              "id": "shieldArm",
+              "key": "fmc_knight",
+              "x": 373.25438087894946,
+              "y": 153.89541457106807,
+              "w": 62,
+              "h": 108,
+              "rot": -0.3
+            },
+            {
+              "id": "sword",
+              "key": "fmc_knight",
+              "x": 343.45286859256873,
+              "y": 217.86613711188454,
+              "w": 51,
+              "h": 139,
+              "rot": -0.15000000000000002
+            },
+            {
+              "id": "shield",
+              "key": "fmc_knight",
+              "x": 388.55603197155443,
+              "y": 209.8652780856433,
+              "w": 78,
+              "h": 112,
+              "rot": -0.3
+            }
+          ],
+          "finite": true
+        },
+        {
+          "name": "spell",
+          "state": "spell_blast",
+          "frame": 3,
+          "throw": null,
+          "rig": [
+            {
+              "id": "core",
+              "key": "cf4_core_3",
+              "x": 340.252,
+              "y": 185.76,
+              "w": 126,
+              "h": 140,
+              "rot": 0
+            },
+            {
+              "id": "legL",
+              "key": "cf4_legL_3",
+              "x": 296.8374954954955,
+              "y": 272.764,
+              "w": 36.3963963963964,
+              "h": 101,
+              "rot": 0
+            },
+            {
+              "id": "legR",
+              "key": "cf4_legR_3",
+              "x": 383.62820241691844,
+              "y": 275.087,
+              "w": 37.531722054380666,
+              "h": 101,
+              "rot": 0
+            },
+            {
+              "id": "head",
+              "key": "fmc_head",
+              "x": 340.9734616786799,
+              "y": 88.16359845850693,
+              "w": 91,
+              "h": 85,
+              "rot": 0.027936536965678178
+            },
+            {
+              "id": "swordArm",
+              "key": "fmc_knight",
+              "x": 295.2910512946859,
+              "y": 183.0825244585479,
+              "w": 62,
+              "h": 108,
+              "rot": 0.3
+            },
+            {
+              "id": "shieldArm",
+              "key": "fmc_knight",
+              "x": 380.70242932620664,
+              "y": 183.18233626272024,
+              "w": 62,
+              "h": 108,
+              "rot": -0.25
+            },
+            {
+              "id": "sword",
+              "key": "fmc_knight",
+              "x": 266.096700103608,
+              "y": 274.26555817936685,
+              "w": 51,
+              "h": 139,
+              "rot": 0.3
+            },
+            {
+              "id": "shield",
+              "key": "fmc_knight",
+              "x": 393.1876300567671,
+              "y": 239.84701583225112,
+              "w": 78,
+              "h": 112,
+              "rot": -0.25
+            }
+          ],
+          "finite": true
+        },
+        {
+          "name": "storm",
+          "state": "storm_split",
+          "frame": 3,
+          "throw": null,
+          "rig": [
+            {
+              "id": "core",
+              "key": "cf4_core_3",
+              "x": 340.952,
+              "y": 332.86,
+              "w": 126,
+              "h": 140,
+              "rot": 0
+            },
+            {
+              "id": "legL",
+              "key": "cf4_legL_3",
+              "x": 297.5374954954955,
+              "y": 419.86400000000003,
+              "w": 36.3963963963964,
+              "h": 101,
+              "rot": 0
+            },
+            {
+              "id": "legR",
+              "key": "cf4_legR_3",
+              "x": 384.32820241691843,
+              "y": 422.18700000000007,
+              "w": 37.531722054380666,
+              "h": 101,
+              "rot": 0
+            },
+            {
+              "id": "head",
+              "key": "fmc_head",
+              "x": 339.35209423785255,
+              "y": 235.27607646952504,
+              "w": 91,
+              "h": 85,
+              "rot": -0.03868700293857126
+            },
+            {
+              "id": "swordArm",
+              "key": "fmc_knight",
+              "x": 315.48214830160316,
+              "y": 315.0541956995943,
+              "w": 62,
+              "h": 108,
+              "rot": -0.45
+            },
+            {
+              "id": "shieldArm",
+              "key": "fmc_knight",
+              "x": 369.8404829172496,
+              "y": 322.4745360359006,
+              "w": 62,
+              "h": 108,
+              "rot": 0.15
+            },
+            {
+              "id": "sword",
+              "key": "fmc_knight",
+              "x": 381.58029865623934,
+              "y": 373.4676389833825,
+              "w": 51,
+              "h": 139,
+              "rot": -1.25
+            },
+            {
+              "id": "shield",
+              "key": "fmc_knight",
+              "x": 359.2738487270475,
+              "y": 379.5281282969533,
+              "w": 78,
+              "h": 112,
+              "rot": 0.15
+            }
+          ],
+          "finite": true
+        },
+        {
+          "name": "whirlwind",
+          "state": "whirl_warn",
+          "frame": 3,
+          "throw": null,
+          "rig": [
+            {
+              "id": "core",
+              "key": "cf4_core_3",
+              "x": 171.0956118112348,
+              "y": 315.84076634109704,
+              "w": 126,
+              "h": 140,
+              "rot": 0
+            },
+            {
+              "id": "legL",
+              "key": "cf4_legL_3",
+              "x": 127.68110730673027,
+              "y": 402.84476634109706,
+              "w": 36.3963963963964,
+              "h": 101,
+              "rot": 0
+            },
+            {
+              "id": "legR",
+              "key": "cf4_legR_3",
+              "x": 214.47181422815322,
+              "y": 405.1677663410971,
+              "w": 37.531722054380666,
+              "h": 101,
+              "rot": 0
+            },
+            {
+              "id": "head",
+              "key": "fmc_head",
+              "x": 171.21683278099397,
+              "y": 218.23276487605273,
+              "w": 91,
+              "h": 85,
+              "rot": 0.01070955822846382
+            },
+            {
+              "id": "swordArm",
+              "key": "fmc_knight",
+              "x": 138.99999999999997,
+              "y": 306.05052958236513,
+              "w": 62,
+              "h": 108,
+              "rot": -0.14
+            },
+            {
+              "id": "shieldArm",
+              "key": "fmc_knight",
+              "x": 226.99037116091213,
+              "y": 315.897643807016,
+              "w": 62,
+              "h": 108,
+              "rot": -0.7
+            },
+            {
+              "id": "sword",
+              "key": "fmc_knight",
+              "x": 165.4015840672302,
+              "y": 396.9717796666162,
+              "w": 51,
+              "h": 139,
+              "rot": -0.44
+            },
+            {
+              "id": "shield",
+              "key": "fmc_knight",
+              "x": 262.8798165952395,
+              "y": 361.4905583268889,
+              "w": 78,
+              "h": 112,
+              "rot": -0.7
+            }
+          ],
+          "finite": true
+        },
+        {
+          "name": "mega",
+          "state": "mega_beam",
+          "frame": 3,
+          "throw": null,
+          "rig": [
+            {
+              "id": "core",
+              "key": "cf4_core_3",
+              "x": 340.252,
+              "y": 185.76,
+              "w": 126,
+              "h": 140,
+              "rot": 0
+            },
+            {
+              "id": "legL",
+              "key": "cf4_legL_3",
+              "x": 296.8374954954955,
+              "y": 272.764,
+              "w": 36.3963963963964,
+              "h": 101,
+              "rot": 0
+            },
+            {
+              "id": "legR",
+              "key": "cf4_legR_3",
+              "x": 383.62820241691844,
+              "y": 275.087,
+              "w": 37.531722054380666,
+              "h": 101,
+              "rot": 0
+            },
+            {
+              "id": "head",
+              "key": "fmc_head",
+              "x": 339.06309570672585,
+              "y": 88.1625961021025,
+              "w": 91,
+              "h": 85,
+              "rot": -0.026887150275217108
+            },
+            {
+              "id": "swordArm",
+              "key": "fmc_knight",
+              "x": 295.2910512946859,
+              "y": 183.0825244585479,
+              "w": 62,
+              "h": 108,
+              "rot": 0.3
+            },
+            {
+              "id": "shieldArm",
+              "key": "fmc_knight",
+              "x": 380.70242932620664,
+              "y": 183.18233626272024,
+              "w": 62,
+              "h": 108,
+              "rot": -0.25
+            },
+            {
+              "id": "sword",
+              "key": "fmc_knight",
+              "x": 266.096700103608,
+              "y": 274.26555817936685,
+              "w": 51,
+              "h": 139,
+              "rot": 0.3
+            },
+            {
+              "id": "shield",
+              "key": "fmc_knight",
+              "x": 393.1876300567671,
+              "y": 239.84701583225112,
+              "w": 78,
+              "h": 112,
+              "rot": -0.25
+            }
+          ],
+          "finite": true
+        },
+        {
+          "name": "curled",
+          "state": "ball",
+          "frame": 1,
+          "throw": null,
+          "rig": [
+            {
+              "id": "core",
+              "key": "cf4_core_1",
+              "x": 408.1656444021196,
+              "y": 256.0066366430676,
+              "w": 56.7,
+              "h": 63,
+              "rot": 5.779525925925926
+            },
+            {
+              "id": "legL",
+              "key": "cf4_legL_1",
+              "x": 412.74243879509413,
+              "y": 294.24448994379696,
+              "w": 17.97133757961784,
+              "h": 34.2,
+              "rot": 5.619525925925926
+            },
+            {
+              "id": "legR",
+              "key": "cf4_legR_1",
+              "x": 439.4113980693635,
+              "y": 281.04468311731864,
+              "w": 19.20974025974026,
+              "h": 34.2,
+              "rot": 5.939525925925926
+            },
+            {
+              "id": "head",
+              "key": "fmc_head",
+              "x": 386.18591188711406,
+              "y": 217.55236473258842,
+              "w": 40.95,
+              "h": 38.25,
+              "rot": 5.735449105816531
+            },
+            {
+              "id": "swordArm",
+              "key": "fmc_knight",
+              "x": 390.1914303201626,
+              "y": 263.3130252598759,
+              "w": 27.900000000000002,
+              "h": 48.6,
+              "rot": 6.0795259259259256
+            },
+            {
+              "id": "shieldArm",
+              "key": "fmc_knight",
+              "x": 422.58430562629513,
+              "y": 245.51377632983076,
+              "w": 27.900000000000002,
+              "h": 48.6,
+              "rot": 5.529525925925926
+            },
+            {
+              "id": "sword",
+              "key": "fmc_knight",
+              "x": 398.48895522980797,
+              "y": 305.59066563660235,
+              "w": 22.95,
+              "h": 62.550000000000004,
+              "rot": 6.0795259259259256
+            },
+            {
+              "id": "shield",
+              "key": "fmc_knight",
+              "x": 439.8117018763443,
+              "y": 265.13486099438984,
+              "w": 35.1,
+              "h": 50.4,
+              "rot": 5.529525925925926
+            }
+          ],
+          "finite": true
+        }
+      ],
+      "musicCues": [
+        "boss8",
+        "boss8p2",
+        "boss8p3"
+      ],
+      "errors": []
+    },
+    "practice_review": {
+      "checks": [
+        {
+          "mode": "rebels",
+          "ok": true,
+          "state": {
+            "stage": 6,
+            "state": "play",
+            "kind": "rebelsquad",
+            "encounter": null,
+            "mimic": null,
+            "allies": 4,
+            "gang": false,
+            "pending": null
+          },
+          "saveWritesBlocked": true
+        },
+        {
+          "mode": "gang",
+          "ok": true,
+          "state": {
+            "stage": 6,
+            "state": "play",
+            "kind": "rebelsquad",
+            "encounter": null,
+            "mimic": null,
+            "allies": 4,
+            "gang": true,
+            "pending": null
+          },
+          "saveWritesBlocked": true
+        },
+        {
+          "mode": "finale",
+          "ok": true,
+          "state": {
+            "stage": 8,
+            "state": "play",
+            "kind": "vileexistence",
+            "encounter": 0,
+            "mimic": null,
+            "allies": null,
+            "gang": null,
+            "pending": null
+          },
+          "saveWritesBlocked": true
+        },
+        {
+          "mode": "dracula",
+          "ok": true,
+          "state": {
+            "stage": 8,
+            "state": "play",
+            "kind": "vileexistence",
+            "encounter": 2,
+            "mimic": null,
+            "allies": null,
+            "gang": null,
+            "pending": null
+          },
+          "saveWritesBlocked": true
+        },
+        {
+          "mode": "knight",
+          "ok": true,
+          "state": {
+            "stage": 8,
+            "state": "play",
+            "kind": "vileexistence",
+            "encounter": 2,
+            "mimic": 5,
+            "allies": null,
+            "gang": null,
+            "pending": null
+          },
+          "saveWritesBlocked": true
+        },
+        {
+          "mode": "harrier-map",
+          "ok": true,
+          "state": {
+            "stage": 6,
+            "state": "stagesel",
+            "kind": null,
+            "encounter": null,
+            "mimic": null,
+            "allies": 0,
+            "gang": null,
+            "pending": "left"
+          },
+          "saveWritesBlocked": true
+        },
+        {
+          "mode": "rebels-map",
+          "ok": true,
+          "state": {
+            "stage": 6,
+            "state": "stagesel",
+            "kind": null,
+            "encounter": null,
+            "mimic": null,
+            "allies": 0,
+            "gang": null,
+            "pending": "right"
+          },
+          "saveWritesBlocked": true
+        },
+        {
+          "mode": "portal",
+          "ok": true,
+          "state": {
+            "stage": 8,
+            "state": "warpentry",
+            "kind": null,
+            "encounter": null,
+            "mimic": null,
+            "allies": null,
+            "gang": null,
+            "pending": null
+          },
+          "saveWritesBlocked": true
+        }
+      ],
+      "errors": []
+    }
+  },
+  "music": {
+    "source": "C:/Users/Mdogg/Desktop/finalform.wav",
+    "source_sha256": "7cd57da58ca6ef0b0f8eb8e6ba6c609fbe9aa60360eac9bd9eadbf57f73396a5",
+    "duration_seconds": 131.44,
+    "encoder": "libmp3lame",
+    "bitrate": "256 kbps",
+    "gain_changes": false,
+    "trimmed": false,
+    "pitch_or_speed_changes": false,
+    "destination": "assets/game/music/Level8b3.mp3",
+    "destination_sha256": "f64d45604b436fa943ea690d7ad5450a0f90e97981e67280b4d7cca24355550e",
+    "mappings": {
+      "mutated_drone": "Level8b.mp3 (previous Level8b2)",
+      "ghost": "Level8b2.mp3 (previous Level8b3)",
+      "dracula_and_mimics": "Level8b3.mp3 (new finalform.wav)"
+    },
+    "previous_first_track_preserved": "assets/game/music/Unused_FinalBossDrone.mp3",
+    "decode_checks": "ffmpeg complete decode of all three MP3 files succeeded"
+  },
+  "review": "_shots/campaign_focus_1004b/review.html",
+  "human_campaign_clear": false,
+  "committed_or_pushed": false
+}

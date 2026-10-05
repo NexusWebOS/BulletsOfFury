@@ -24,7 +24,7 @@ try:
           unused2: Snd.music.unused2.src,
           level3: Snd.music.lvl3.src
         })""")
-        assert routed['boss3'].endswith('/assets/game/music/boss3_pandemonium.mp3'), routed
+        assert routed['boss3'].endswith('/assets/game/music/Level3b.mp3'), routed
         assert routed['unused2'].endswith('/assets/game/music/boss3_cryo_behemoth.mp3'), routed
         assert routed['mini3'] == routed['level3'], routed
         assert not errors, errors[:10]

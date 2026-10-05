@@ -16,6 +16,29 @@ const WM26_REELS={
 };
 let wm26Releases=[];
 const WM26_ART=new Map();
+const WM26_ANCHORS=new Map();
+function wm26Pixels(key,im){
+  if(WM26_ANCHORS.has(key))return WM26_ANCHORS.get(key);
+  const w=im.width||im.naturalWidth,h=im.height||im.naturalHeight;
+  try{const c=document.createElement('canvas');c.width=w;c.height=h;const g=c.getContext('2d');g.drawImage(im,0,0);
+    const d=g.getImageData(0,0,w,h).data;let top=h,bottom=0;
+    for(let y=0;y<h;y++){let count=0;for(let x=0;x<w;x++)if(d[(y*w+x)*4+3]>100)count++;
+      if(count>=3){top=Math.min(top,y);bottom=y;}}
+    if(top>=h)return {top:0,bottom:.96,baseX:.5,noseX:.5};
+    let sum=0,xsum=0;for(let y=Math.max(top,bottom-Math.ceil(h*.1));y<=bottom;y++)for(let x=0;x<w;x++){
+      const i=(y*w+x)*4,a=d[i+3]/255,v=a*(d[i]+d[i+1]+d[i+2]);sum+=v;xsum+=(x+.5)*v;}
+    let noseSum=0,noseX=0;for(let y=top;y<Math.min(h,top+Math.ceil(h*.025));y++)for(let x=0;x<w;x++){
+      const a=d[(y*w+x)*4+3];if(a>100){noseSum+=a;noseX+=(x+.5)*a;}}
+    const out={top:top/h,bottom:(bottom+1)/h,baseX:sum?xsum/sum/w:.5,noseX:noseSum?noseX/noseSum/w:.5};WM26_ANCHORS.set(key,out);return out;
+  }catch(_e){return {top:0,bottom:.96,baseX:.5,noseX:.5};}
+}
+function wm26PlayerNose(){
+  const pk=_pilotKey(),frame=Math.abs(player._bank||0)<.06?'ship_'+pk:_shipFrameKey(pk),key=shipGlowKey(frame);
+  if(!XART.rdy(key))return {x:player.x+2,y:player.y-SHIP_DRAW_H*.48};
+  const im=XART.get(key),anchor=wm26Pixels(key,im);
+  const w=SHIP_DRAW_H*(im.width||im.naturalWidth)/(im.height||im.naturalHeight);
+  return {x:player.x+w*(anchor.noseX-.5)+2,y:(player._drawY??player.y)+SHIP_DRAW_H*(anchor.top-.5)};
+}
 function wm26Warm(){for(const r of Object.values(WM26_REELS))for(let i=0;i<r.n;i++)XART.rdy(r.key+i);}
 function wm26Family(kind){
   const k=String(kind||'mg').toLowerCase();
@@ -79,13 +102,14 @@ function wm26PlayerShots(first){
       q.kind==='venomx'?'#77ee35':family==='ice'?'#67dfff':family==='lightning'?'#ffe448':
       family==='orb'?'#67dfff':wlvGlow(clamp(q.colorLv||q.lv||run.wlevel||1,1,8));
     // A fan is emitted by one nose, not by one barrel for every projectile lane.
-    let p={x:player.x,y:player.y-18},emitter='nose';
+    let p=family==='spread'||family==='shotgun'?wm26PlayerNose():{x:player.x,y:player.y-18},emitter='nose';
     if(space){const hp=spaceShipHardpoints(player.x,player.y,SPACE_SHIP_SIZE),ports=[...hp.laser,hp.nose];
       if(q.kind==='shadowOrb'){p=hp.nose;emitter='space-nose';}
       else {let best=0;for(let j=1;j<ports.length;j++)if(Math.hypot(ports[j].x-q.x,ports[j].y-q.y)<Math.hypot(ports[best].x-q.x,ports[best].y-q.y))best=j;
         p=ports[best];emitter='space-'+best;}}
     if(used.has(emitter))continue;used.add(emitter);
-    wm26Emit(player,p.x,p.y,-Math.PI/2,family,color,{player:true,emitter,size:family==='mg'?20:undefined});
+    wm26Emit(player,p.x,p.y,-Math.PI/2,family,color,{player:true,emitter,size:family==='mg'?20:undefined,
+      follow:!space&&(family==='spread'||family==='shotgun')?()=>({...wm26PlayerNose(),angle:-Math.PI/2}):null});
   }
 }
 function wm26EnemyShot(x,y,angle,kind,owner){
