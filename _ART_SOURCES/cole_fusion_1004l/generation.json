@@ -1,0 +1,9 @@
+{
+  "tool": "builtin imagegen",
+  "briefs": {
+    "weapons": "Transparent 16-bit arcade 4-column, 7-row FX sheet. Yellow lance, black chrome lance, triple purple rapid helix Fusion, hollow pink-purple charge diamond/aura, 4-step purple shatter impact, damaging crystal fragments, Fusion muzzle. No ship or text.",
+    "cloak": "Four transparent authored bright cyan/violet laser diamond spirals with hollow centers for wrapping ships. Crystal diamond silhouette, not circular smoke swirls."
+  },
+  "originalRGBA": "retained byte-for-byte in source and runtime; registration only",
+  "importer": "_BUILD_SOURCE/import_cole_fusion_1004l.py"
+}

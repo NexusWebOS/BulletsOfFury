@@ -55815,6 +55815,7 @@ function s6WingNavigate(q,W,dt){
   }
   if(q.dodgeT>0){tx=q.evadeX;ty=q.evadeY;}
   else if(danger){tx+=q.x<danger.x?-78:78;ty+=35;}
+  if(boss?._rebels)ty=Math.max(ty,VH*.67+(q.slot%2)*24);  // friendly wing holds the lower arena
   tx=clamp(tx,left,right);ty=clamp(ty,top,bottom);
   const dx=tx-q.x,dy=ty-q.y,d=Math.hypot(dx,dy),speed=q.dodgeT>0?540:q.phase==='arrive'?390:295;
   const v=Math.min(speed,d*3),blend=Math.min(1,dt*(q.dodgeT>0?16:7));

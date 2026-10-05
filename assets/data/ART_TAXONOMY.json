@@ -1,4 +1,9 @@
 {
+  "cf1004_": {
+    "role": "cole_laser_fusion_and_diamond_cloak_effect",
+    "sheet": "assets/game/cole_fusion_1004l/weapons.png; cloak.png",
+    "note": "October 4l: generated authored yellow/black lasers, triple purple Fusion helix, hollow charge aura, shatter impacts, fragments and muzzle; separate crystal-diamond cloak reel. Original imagegen RGBA preserved. Registration and measured cells owned by _BUILD_SOURCE/import_cole_fusion_1004l.py; source briefs/hash manifest in _ART_SOURCES/cole_fusion_1004l. Runtime cole_fusion_1004l.js and rebel_showcase_1004l.js; native evidence docs/qa/cole_rebel_1004l.json."
+  },
   "cf4_": {
     "role": "modular_boss_pose_components",
     "sheet": null,
