@@ -1,0 +1,15 @@
+{
+  "generator": "built-in image_gen",
+  "pixelPolicy": "Native source pixels and alpha unchanged; measured component crops only.",
+  "sources": {
+    "parts": {
+      "path": "_ART_SOURCES/dracodia_1005/parts.png",
+      "size": [
+        1261,
+        1247
+      ],
+      "sha256": "edca78ec677e1cf9d11c89bd4513869d75fb8b9ce3fea67f26637aeb6d7634e7",
+      "prompt": "Preserve crowned black/oily/crimson Dracodia identity. Headless torso, two complete arms, nine head-only views: neutral, left, right, up, down, shocked, pre-explosion, split-maw scream and speaking. True alpha; measured native cells; keep complete crown."
+    }
+  }
+}

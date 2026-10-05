@@ -1,0 +1,41 @@
+{
+  "generator": "built-in image_gen",
+  "alpha": "native, unmodified",
+  "sources": {
+    "back": {
+      "path": "_ART_SOURCES/alien_arena_1005/back.png",
+      "sha256": "b3b7b28fa74d2f0d256b5630eeec7a5a01d4323d898d815006cf87d03247f590",
+      "prompt": "Edit the alien cathedral perimeter; central 60 percent pitch-black void. Preserve black chrome, skull pillars and crimson lava at edges. Remove purple haze and crossing bridges from center. Opaque, no characters or UI.",
+      "columns": 1,
+      "rows": 1
+    },
+    "front": {
+      "path": "_ART_SOURCES/alien_arena_1005/front.png",
+      "sha256": "5237a0fda75e1896046d3335bab02e0cfbaeede414e68717d429447d42d79990",
+      "prompt": "Transparent portrait black chrome biomechanical ribs and skull pillars at far edges only. Central 75 percent empty alpha. Near-black, restrained silver/crimson/green ports, no floor, characters or UI.",
+      "columns": 1,
+      "rows": 1
+    },
+    "code": {
+      "path": "_ART_SOURCES/alien_arena_1005/code.png",
+      "sha256": "7d694e4da55940c973b0d16e673f77c937012c90ea4e696f96e60779333fb23a",
+      "prompt": "Twelve equal ordered frames of the same narrow five-column emerald binary bank. Alternating columns scroll down/up, moving lime heads and dim trails, anchored chrome rib, genuine transparency, detailed arcade pixels.",
+      "columns": 4,
+      "rows": 3
+    },
+    "void": {
+      "path": "_ART_SOURCES/alien_arena_1005/void.png",
+      "sha256": "69208ec934ec50651fa90406875c04cb8292376ffab04918ced64abed716a4df",
+      "prompt": "Twelve equal ordered black oily symbiote gather/iris/open/rotating void frames, steel glints and crimson/violet fissures, fixed pivot, native transparent outer alpha, no download, bubble or UI.",
+      "columns": 4,
+      "rows": 3
+    },
+    "ghost": {
+      "path": "_ART_SOURCES/alien_arena_1005/ghost.png",
+      "sha256": "96cf508f5b66638c9a164d7ca7ca40f362a8dd7c5dd35215bd9922c80c61e909",
+      "prompt": "Nine isolated modular ghost components: reactor torso, complete crowned head, tail, left and right upper arms, left and right claws, eye satellite, cannon. Black oil/violet plasma/ivory eyes/red fissures, native alpha, equal cells and visible joint sockets.",
+      "columns": 3,
+      "rows": 3
+    }
+  }
+}

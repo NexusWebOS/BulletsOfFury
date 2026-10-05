@@ -1,0 +1,270 @@
+{
+  "checks": [
+    {
+      "ok": true,
+      "name": "all generated code/void/component cells decode in real Chromium"
+    },
+    {
+      "ok": true,
+      "name": "full-view void reveals animated arena and giant fiend"
+    },
+    {
+      "ok": true,
+      "name": "central corridor stays black while perimeter code remains green"
+    },
+    {
+      "ok": true,
+      "name": "real arena pixels animate between simulation timestamps"
+    },
+    {
+      "ok": true,
+      "name": "paused draw calls leave code and vortex clock unchanged"
+    },
+    {
+      "ok": true,
+      "name": "Furious Dracula executes portal battery and committed body dive"
+    },
+    {
+      "ok": true,
+      "name": "copy 0 keeps animated arena and accurate independent life"
+    },
+    {
+      "ok": true,
+      "name": "copy 1 keeps animated arena and accurate independent life"
+    },
+    {
+      "ok": true,
+      "name": "copy 1 runs its campaign controller beyond twelve seconds"
+    },
+    {
+      "ok": true,
+      "name": "copy 1 performs its warned alien ordnance upgrade"
+    },
+    {
+      "ok": true,
+      "name": "copy 2 keeps animated arena and accurate independent life"
+    },
+    {
+      "ok": true,
+      "name": "copy 2 runs its campaign controller beyond twelve seconds"
+    },
+    {
+      "ok": true,
+      "name": "copy 2 performs its warned alien ordnance upgrade"
+    },
+    {
+      "ok": true,
+      "name": "copy 3 keeps animated arena and accurate independent life"
+    },
+    {
+      "ok": true,
+      "name": "copy 3 runs its campaign controller beyond twelve seconds"
+    },
+    {
+      "ok": true,
+      "name": "copy 3 performs its warned alien ordnance upgrade"
+    },
+    {
+      "ok": true,
+      "name": "copy 4 keeps animated arena and accurate independent life"
+    },
+    {
+      "ok": true,
+      "name": "copy 4 runs its campaign controller beyond twelve seconds"
+    },
+    {
+      "ok": true,
+      "name": "copy 4 performs its warned alien ordnance upgrade"
+    },
+    {
+      "ok": true,
+      "name": "copy 5 keeps animated arena and accurate independent life"
+    },
+    {
+      "ok": true,
+      "name": "copy 5 runs its campaign controller beyond twelve seconds"
+    },
+    {
+      "ok": true,
+      "name": "copy 6 keeps animated arena and accurate independent life"
+    },
+    {
+      "ok": true,
+      "name": "copy 6 runs its campaign controller beyond twelve seconds"
+    },
+    {
+      "ok": true,
+      "name": "copy 6 performs its warned alien ordnance upgrade"
+    },
+    {
+      "ok": true,
+      "name": "copy 7 keeps animated arena and accurate independent life"
+    },
+    {
+      "ok": true,
+      "name": "copy 7 runs its campaign controller beyond twelve seconds"
+    },
+    {
+      "ok": true,
+      "name": "copy 7 performs its warned alien ordnance upgrade"
+    },
+    {
+      "ok": true,
+      "name": "Furious copied boss completes forty seconds before returning to host"
+    },
+    {
+      "ok": true,
+      "name": "return to host retains its exact damaged HP"
+    },
+    {
+      "ok": true,
+      "name": "ghost renders nine shapes with distinct live targeting anchors"
+    },
+    {
+      "ok": true,
+      "name": "ghost has visible native white hit pixels across its modules"
+    },
+    {
+      "ok": true,
+      "name": "ghost arm and claw detach into opaque burning spinning debris"
+    },
+    {
+      "ok": true,
+      "name": "ghost performs new physical/warp/rail signatures and Furious alternate reactor"
+    },
+    {
+      "ok": true,
+      "name": "ghost death breaks the remaining authored plates into opaque debris"
+    },
+    {
+      "ok": true,
+      "name": "mutated drone adds crossed cannon lanes and warned charge"
+    },
+    {
+      "ok": true,
+      "name": "elite turret rain starts with a real warning before any pellet"
+    },
+    {
+      "ok": true,
+      "name": "elite charge window permits escape without immediate damage"
+    },
+    {
+      "ok": true,
+      "name": "elite fires bounded staggered visible tracers after FOV"
+    },
+    {
+      "ok": true,
+      "name": "only approaching collision-lane pellet glows with authored impact asterisk"
+    },
+    {
+      "ok": true,
+      "name": "Rebel heavy gun uses the same approaching-pellet warning"
+    },
+    {
+      "ok": true,
+      "name": "arena and warnings clear when another mission begins"
+    },
+    {
+      "ok": true,
+      "name": "zero page and console errors"
+    },
+    {
+      "ok": true,
+      "name": "emerald code pixels themselves visibly animate"
+    },
+    {
+      "ok": true,
+      "name": "review starts the actual Furious FINAL3 password route"
+    }
+  ],
+  "screens": [
+    "void-expands",
+    "screen-engulfed",
+    "fiend-emerges",
+    "arena-layer-a",
+    "arena-layer-b",
+    "dracula-attack",
+    "copy-0",
+    "copy-1",
+    "copy-2",
+    "copy-3",
+    "copy-4",
+    "copy-5",
+    "copy-6",
+    "copy-7",
+    "ghost-intro",
+    "ghost-modular",
+    "ghost-breakup",
+    "ghost-unbound",
+    "ghost-death",
+    "drone-consumed",
+    "elite-turret-fov",
+    "elite-rain",
+    "pellet-impact-warning",
+    "rebel-slug-warning"
+  ],
+  "clips": [
+    {
+      "name": "dracula-live",
+      "seconds": 28,
+      "fps": 6,
+      "audio": false
+    },
+    {
+      "name": "ghost-live",
+      "seconds": 26,
+      "fps": 6,
+      "audio": false
+    },
+    {
+      "name": "mutated-drone-live",
+      "seconds": 28,
+      "fps": 6,
+      "audio": false
+    },
+    {
+      "name": "elite-live",
+      "seconds": 12,
+      "fps": 6,
+      "audio": false
+    }
+  ],
+  "arenaPixels": {
+    "green": 18061,
+    "centralDarkRatio": 1.0,
+    "movingPixels": 262486,
+    "movingGreenPixels": 27957
+  },
+  "draculaAttacks": [
+    "cf4Sweep",
+    "cf4Crush",
+    "cf4Court",
+    "aa5Void",
+    "aa5Dive"
+  ],
+  "whiteHitPixels": 125739,
+  "ghostAttacks": [
+    "ghostPinch",
+    "ghostCross",
+    "ghostWarp",
+    "ghostRail",
+    "ghostVolley",
+    "ghostDive"
+  ],
+  "errors": [],
+  "suite": {
+    "assertions": 7292,
+    "exitCode": 0,
+    "syntax": "game.js and both new runtime layers pass"
+  },
+  "scope": "Focused protected silent engine recordings; not an unassisted campaign clear.",
+  "reviewLaunch": {
+    "phase": 2,
+    "mode": "fight",
+    "arena": true,
+    "code": 5600,
+    "void": 1416,
+    "diff": "furious",
+    "errors": []
+  }
+}

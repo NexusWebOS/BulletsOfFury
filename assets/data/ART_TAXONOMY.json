@@ -1,4 +1,9 @@
 {
+  "aa5_": {
+    "role": "alien_arena_parallax_void_code_and_modular_ghost",
+    "sheet": null,
+    "note": "October 5: built-in imagegen authored black-center alien cathedral, transparent edge ribs, twelve emerald code frames, twelve black symbiote iris frames and nine ghost components. Native source alpha and pixels retained; only equal-cell slicing and ghost transparent-padding crops. Owner _BUILD_SOURCE/build_alien_arena_1005.py; source prompts and hashes _ART_SOURCES/alien_arena_1005/manifest.json; runtime registry assets/alien_arena_art_1005.js. No shared atlas repack. Ghost modularity explicitly requested by Mike. Existing original authored FOV/asterisk art reused for pellet and elite warnings."
+  },
   "cf1004_": {
     "role": "cole_laser_fusion_and_diamond_cloak_effect",
     "sheet": "assets/game/cole_fusion_1004l/weapons.png; cloak.png",

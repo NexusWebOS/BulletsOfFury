@@ -1,0 +1,2846 @@
+{
+  "checks": [
+    {
+      "ok": true,
+      "name": "axel menu keeps one intrinsic size"
+    },
+    {
+      "ok": true,
+      "name": "axel menu complete rails remain fixed for every expression"
+    },
+    {
+      "ok": true,
+      "name": "axel menu talk-closed head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "axel menu talk-closed correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "axel menu talk-small head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "axel menu talk-small correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "axel menu talk-medium head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "axel menu talk-medium correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "axel menu talk-wide head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "axel menu talk-wide correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "axel menu talk-o head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "axel menu talk-o correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "axel comm keeps one intrinsic size"
+    },
+    {
+      "ok": true,
+      "name": "axel comm complete rails remain fixed for every expression"
+    },
+    {
+      "ok": true,
+      "name": "axel comm talk-closed head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "axel comm talk-closed correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "axel comm talk-small head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "axel comm talk-small correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "axel comm talk-medium head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "axel comm talk-medium correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "axel comm talk-wide head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "axel comm talk-wide correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "axel comm talk-o head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "axel comm talk-o correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "cole menu keeps one intrinsic size"
+    },
+    {
+      "ok": true,
+      "name": "cole menu complete rails remain fixed for every expression"
+    },
+    {
+      "ok": true,
+      "name": "cole menu talk-closed head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "cole menu talk-closed correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "cole menu talk-small head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "cole menu talk-small correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "cole menu talk-medium head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "cole menu talk-medium correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "cole menu talk-wide head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "cole menu talk-wide correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "cole menu talk-o head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "cole menu talk-o correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "cole comm keeps one intrinsic size"
+    },
+    {
+      "ok": true,
+      "name": "cole comm complete rails remain fixed for every expression"
+    },
+    {
+      "ok": true,
+      "name": "cole comm talk-closed head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "cole comm talk-closed correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "cole comm talk-small head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "cole comm talk-small correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "cole comm talk-medium head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "cole comm talk-medium correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "cole comm talk-wide head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "cole comm talk-wide correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "cole comm talk-o head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "cole comm talk-o correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "decker menu keeps one intrinsic size"
+    },
+    {
+      "ok": true,
+      "name": "decker menu complete rails remain fixed for every expression"
+    },
+    {
+      "ok": true,
+      "name": "decker menu talk-closed head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "decker menu talk-closed correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "decker menu talk-small head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "decker menu talk-small correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "decker menu talk-medium head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "decker menu talk-medium correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "decker menu talk-wide head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "decker menu talk-wide correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "decker menu talk-o head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "decker menu talk-o correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "decker comm keeps one intrinsic size"
+    },
+    {
+      "ok": true,
+      "name": "decker comm complete rails remain fixed for every expression"
+    },
+    {
+      "ok": true,
+      "name": "decker comm talk-closed head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "decker comm talk-closed correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "decker comm talk-small head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "decker comm talk-small correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "decker comm talk-medium head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "decker comm talk-medium correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "decker comm talk-wide head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "decker comm talk-wide correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "decker comm talk-o head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "decker comm talk-o correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "falva menu keeps one intrinsic size"
+    },
+    {
+      "ok": true,
+      "name": "falva menu complete rails remain fixed for every expression"
+    },
+    {
+      "ok": true,
+      "name": "falva menu talk-closed head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "falva menu talk-closed correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "falva menu talk-small head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "falva menu talk-small correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "falva menu talk-medium head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "falva menu talk-medium correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "falva menu talk-wide head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "falva menu talk-wide correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "falva menu talk-o head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "falva menu talk-o correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "falva comm keeps one intrinsic size"
+    },
+    {
+      "ok": true,
+      "name": "falva comm complete rails remain fixed for every expression"
+    },
+    {
+      "ok": true,
+      "name": "falva comm talk-closed head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "falva comm talk-closed correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "falva comm talk-small head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "falva comm talk-small correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "falva comm talk-medium head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "falva comm talk-medium correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "falva comm talk-wide head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "falva comm talk-wide correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "falva comm talk-o head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "falva comm talk-o correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "freezer menu keeps one intrinsic size"
+    },
+    {
+      "ok": true,
+      "name": "freezer menu complete rails remain fixed for every expression"
+    },
+    {
+      "ok": true,
+      "name": "freezer menu talk-closed head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "freezer menu talk-closed correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "freezer menu talk-small head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "freezer menu talk-small correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "freezer menu talk-medium head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "freezer menu talk-medium correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "freezer menu talk-wide head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "freezer menu talk-wide correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "freezer menu talk-o head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "freezer menu talk-o correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "freezer comm keeps one intrinsic size"
+    },
+    {
+      "ok": true,
+      "name": "freezer comm complete rails remain fixed for every expression"
+    },
+    {
+      "ok": true,
+      "name": "freezer comm talk-closed head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "freezer comm talk-closed correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "freezer comm talk-small head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "freezer comm talk-small correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "freezer comm talk-medium head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "freezer comm talk-medium correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "freezer comm talk-wide head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "freezer comm talk-wide correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "freezer comm talk-o head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "freezer comm talk-o correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "juggernaut menu keeps one intrinsic size"
+    },
+    {
+      "ok": true,
+      "name": "juggernaut menu complete rails remain fixed for every expression"
+    },
+    {
+      "ok": true,
+      "name": "juggernaut menu talk-closed head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "juggernaut menu talk-closed correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "juggernaut menu talk-small head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "juggernaut menu talk-small correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "juggernaut menu talk-medium head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "juggernaut menu talk-medium correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "juggernaut menu talk-wide head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "juggernaut menu talk-wide correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "juggernaut menu talk-o head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "juggernaut menu talk-o correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "juggernaut comm keeps one intrinsic size"
+    },
+    {
+      "ok": true,
+      "name": "juggernaut comm complete rails remain fixed for every expression"
+    },
+    {
+      "ok": true,
+      "name": "juggernaut comm talk-closed head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "juggernaut comm talk-closed correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "juggernaut comm talk-small head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "juggernaut comm talk-small correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "juggernaut comm talk-medium head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "juggernaut comm talk-medium correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "juggernaut comm talk-wide head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "juggernaut comm talk-wide correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "juggernaut comm talk-o head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "juggernaut comm talk-o correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "lizzie menu keeps one intrinsic size"
+    },
+    {
+      "ok": true,
+      "name": "lizzie menu complete rails remain fixed for every expression"
+    },
+    {
+      "ok": true,
+      "name": "lizzie menu talk-closed head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "lizzie menu talk-closed correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "lizzie menu talk-small head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "lizzie menu talk-small correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "lizzie menu talk-medium head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "lizzie menu talk-medium correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "lizzie menu talk-wide head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "lizzie menu talk-wide correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "lizzie menu talk-o head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "lizzie menu talk-o correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "lizzie comm keeps one intrinsic size"
+    },
+    {
+      "ok": true,
+      "name": "lizzie comm complete rails remain fixed for every expression"
+    },
+    {
+      "ok": true,
+      "name": "lizzie comm talk-closed head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "lizzie comm talk-closed correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "lizzie comm talk-small head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "lizzie comm talk-small correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "lizzie comm talk-medium head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "lizzie comm talk-medium correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "lizzie comm talk-wide head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "lizzie comm talk-wide correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "lizzie comm talk-o head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "lizzie comm talk-o correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "maverick menu keeps one intrinsic size"
+    },
+    {
+      "ok": true,
+      "name": "maverick menu complete rails remain fixed for every expression"
+    },
+    {
+      "ok": true,
+      "name": "maverick menu talk-closed head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "maverick menu talk-closed correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "maverick menu talk-small head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "maverick menu talk-small correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "maverick menu talk-medium head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "maverick menu talk-medium correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "maverick menu talk-wide head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "maverick menu talk-wide correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "maverick menu talk-o head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "maverick menu talk-o correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "maverick comm keeps one intrinsic size"
+    },
+    {
+      "ok": true,
+      "name": "maverick comm complete rails remain fixed for every expression"
+    },
+    {
+      "ok": true,
+      "name": "maverick comm talk-closed head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "maverick comm talk-closed correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "maverick comm talk-small head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "maverick comm talk-small correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "maverick comm talk-medium head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "maverick comm talk-medium correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "maverick comm talk-wide head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "maverick comm talk-wide correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "maverick comm talk-o head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "maverick comm talk-o correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "yuri menu keeps one intrinsic size"
+    },
+    {
+      "ok": true,
+      "name": "yuri menu complete rails remain fixed for every expression"
+    },
+    {
+      "ok": true,
+      "name": "yuri menu talk-closed head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "yuri menu talk-closed correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "yuri menu talk-small head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "yuri menu talk-small correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "yuri menu talk-medium head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "yuri menu talk-medium correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "yuri menu talk-wide head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "yuri menu talk-wide correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "yuri menu talk-o head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "yuri menu talk-o correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "yuri comm keeps one intrinsic size"
+    },
+    {
+      "ok": true,
+      "name": "yuri comm complete rails remain fixed for every expression"
+    },
+    {
+      "ok": true,
+      "name": "yuri comm talk-closed head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "yuri comm talk-closed correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "yuri comm talk-small head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "yuri comm talk-small correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "yuri comm talk-medium head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "yuri comm talk-medium correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "yuri comm talk-wide head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "yuri comm talk-wide correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "yuri comm talk-o head/body/border stay anchored"
+    },
+    {
+      "ok": true,
+      "name": "yuri comm talk-o correct mouth animation"
+    },
+    {
+      "ok": true,
+      "name": "Legacy face and talk keys use repaired portraits"
+    },
+    {
+      "ok": true,
+      "name": "Yuri alternate entry points use repaired frame"
+    },
+    {
+      "ok": true,
+      "name": "axel live dialogue cycles mouth poses"
+    },
+    {
+      "ok": true,
+      "name": "axel returns to idle once speaking ends"
+    },
+    {
+      "ok": true,
+      "name": "cole live dialogue cycles mouth poses"
+    },
+    {
+      "ok": true,
+      "name": "cole returns to idle once speaking ends"
+    },
+    {
+      "ok": true,
+      "name": "decker live dialogue cycles mouth poses"
+    },
+    {
+      "ok": true,
+      "name": "decker returns to idle once speaking ends"
+    },
+    {
+      "ok": true,
+      "name": "falva live dialogue cycles mouth poses"
+    },
+    {
+      "ok": true,
+      "name": "falva returns to idle once speaking ends"
+    },
+    {
+      "ok": true,
+      "name": "freezer live dialogue cycles mouth poses"
+    },
+    {
+      "ok": true,
+      "name": "freezer returns to idle once speaking ends"
+    },
+    {
+      "ok": true,
+      "name": "juggernaut live dialogue cycles mouth poses"
+    },
+    {
+      "ok": true,
+      "name": "juggernaut returns to idle once speaking ends"
+    },
+    {
+      "ok": true,
+      "name": "lizzie live dialogue cycles mouth poses"
+    },
+    {
+      "ok": true,
+      "name": "lizzie returns to idle once speaking ends"
+    },
+    {
+      "ok": true,
+      "name": "maverick live dialogue cycles mouth poses"
+    },
+    {
+      "ok": true,
+      "name": "maverick returns to idle once speaking ends"
+    },
+    {
+      "ok": true,
+      "name": "yuri live dialogue cycles mouth poses"
+    },
+    {
+      "ok": true,
+      "name": "yuri returns to idle once speaking ends"
+    }
+  ],
+  "errors": [],
+  "pixels": [
+    {
+      "p": "axel",
+      "comm": false,
+      "w": 256,
+      "h": 256,
+      "poses": [
+        {
+          "em": "idle",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 0,
+          "rails": 0
+        },
+        {
+          "em": "happy",
+          "w": 256,
+          "h": 256,
+          "outside": 41203,
+          "inside": 2064,
+          "rails": 0
+        },
+        {
+          "em": "laugh",
+          "w": 256,
+          "h": 256,
+          "outside": 41201,
+          "inside": 2064,
+          "rails": 0
+        },
+        {
+          "em": "anger",
+          "w": 256,
+          "h": 256,
+          "outside": 41203,
+          "inside": 2064,
+          "rails": 0
+        },
+        {
+          "em": "sad",
+          "w": 256,
+          "h": 256,
+          "outside": 41205,
+          "inside": 2064,
+          "rails": 0
+        },
+        {
+          "em": "crash",
+          "w": 256,
+          "h": 256,
+          "outside": 41203,
+          "inside": 2064,
+          "rails": 0
+        },
+        {
+          "em": "victory",
+          "w": 256,
+          "h": 256,
+          "outside": 41205,
+          "inside": 2064,
+          "rails": 0
+        },
+        {
+          "em": "talk-closed",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 0,
+          "rails": 0
+        },
+        {
+          "em": "talk-small",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 2064,
+          "rails": 0
+        },
+        {
+          "em": "talk-medium",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 2064,
+          "rails": 0
+        },
+        {
+          "em": "talk-wide",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 2064,
+          "rails": 0
+        },
+        {
+          "em": "talk-o",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 2064,
+          "rails": 0
+        }
+      ]
+    },
+    {
+      "p": "axel",
+      "comm": true,
+      "w": 256,
+      "h": 256,
+      "poses": [
+        {
+          "em": "idle",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 0,
+          "rails": 0
+        },
+        {
+          "em": "happy",
+          "w": 256,
+          "h": 256,
+          "outside": 41203,
+          "inside": 2064,
+          "rails": 0
+        },
+        {
+          "em": "laugh",
+          "w": 256,
+          "h": 256,
+          "outside": 41201,
+          "inside": 2064,
+          "rails": 0
+        },
+        {
+          "em": "anger",
+          "w": 256,
+          "h": 256,
+          "outside": 41203,
+          "inside": 2064,
+          "rails": 0
+        },
+        {
+          "em": "sad",
+          "w": 256,
+          "h": 256,
+          "outside": 41205,
+          "inside": 2064,
+          "rails": 0
+        },
+        {
+          "em": "crash",
+          "w": 256,
+          "h": 256,
+          "outside": 41203,
+          "inside": 2064,
+          "rails": 0
+        },
+        {
+          "em": "victory",
+          "w": 256,
+          "h": 256,
+          "outside": 41205,
+          "inside": 2064,
+          "rails": 0
+        },
+        {
+          "em": "talk-closed",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 0,
+          "rails": 0
+        },
+        {
+          "em": "talk-small",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 2064,
+          "rails": 0
+        },
+        {
+          "em": "talk-medium",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 2064,
+          "rails": 0
+        },
+        {
+          "em": "talk-wide",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 2064,
+          "rails": 0
+        },
+        {
+          "em": "talk-o",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 2064,
+          "rails": 0
+        }
+      ]
+    },
+    {
+      "p": "cole",
+      "comm": false,
+      "w": 256,
+      "h": 256,
+      "poses": [
+        {
+          "em": "idle",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 0,
+          "rails": 0
+        },
+        {
+          "em": "happy",
+          "w": 256,
+          "h": 256,
+          "outside": 41583,
+          "inside": 1528,
+          "rails": 0
+        },
+        {
+          "em": "laugh",
+          "w": 256,
+          "h": 256,
+          "outside": 41427,
+          "inside": 1529,
+          "rails": 0
+        },
+        {
+          "em": "anger",
+          "w": 256,
+          "h": 256,
+          "outside": 41387,
+          "inside": 1529,
+          "rails": 0
+        },
+        {
+          "em": "sad",
+          "w": 256,
+          "h": 256,
+          "outside": 38081,
+          "inside": 1479,
+          "rails": 0
+        },
+        {
+          "em": "crash",
+          "w": 256,
+          "h": 256,
+          "outside": 41205,
+          "inside": 1530,
+          "rails": 0
+        },
+        {
+          "em": "victory",
+          "w": 256,
+          "h": 256,
+          "outside": 41169,
+          "inside": 1530,
+          "rails": 0
+        },
+        {
+          "em": "talk-closed",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 0,
+          "rails": 0
+        },
+        {
+          "em": "talk-small",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 1530,
+          "rails": 0
+        },
+        {
+          "em": "talk-medium",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 1530,
+          "rails": 0
+        },
+        {
+          "em": "talk-wide",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 1530,
+          "rails": 0
+        },
+        {
+          "em": "talk-o",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 1530,
+          "rails": 0
+        }
+      ]
+    },
+    {
+      "p": "cole",
+      "comm": true,
+      "w": 256,
+      "h": 256,
+      "poses": [
+        {
+          "em": "idle",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 0,
+          "rails": 0
+        },
+        {
+          "em": "happy",
+          "w": 256,
+          "h": 256,
+          "outside": 41583,
+          "inside": 1528,
+          "rails": 0
+        },
+        {
+          "em": "laugh",
+          "w": 256,
+          "h": 256,
+          "outside": 41427,
+          "inside": 1529,
+          "rails": 0
+        },
+        {
+          "em": "anger",
+          "w": 256,
+          "h": 256,
+          "outside": 41387,
+          "inside": 1529,
+          "rails": 0
+        },
+        {
+          "em": "sad",
+          "w": 256,
+          "h": 256,
+          "outside": 38081,
+          "inside": 1479,
+          "rails": 0
+        },
+        {
+          "em": "crash",
+          "w": 256,
+          "h": 256,
+          "outside": 41205,
+          "inside": 1530,
+          "rails": 0
+        },
+        {
+          "em": "victory",
+          "w": 256,
+          "h": 256,
+          "outside": 41169,
+          "inside": 1530,
+          "rails": 0
+        },
+        {
+          "em": "talk-closed",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 0,
+          "rails": 0
+        },
+        {
+          "em": "talk-small",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 1530,
+          "rails": 0
+        },
+        {
+          "em": "talk-medium",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 1530,
+          "rails": 0
+        },
+        {
+          "em": "talk-wide",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 1530,
+          "rails": 0
+        },
+        {
+          "em": "talk-o",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 1530,
+          "rails": 0
+        }
+      ]
+    },
+    {
+      "p": "decker",
+      "comm": false,
+      "w": 256,
+      "h": 256,
+      "poses": [
+        {
+          "em": "idle",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 0,
+          "rails": 0
+        },
+        {
+          "em": "happy",
+          "w": 256,
+          "h": 256,
+          "outside": 41677,
+          "inside": 1596,
+          "rails": 0
+        },
+        {
+          "em": "laugh",
+          "w": 256,
+          "h": 256,
+          "outside": 41675,
+          "inside": 1596,
+          "rails": 0
+        },
+        {
+          "em": "anger",
+          "w": 256,
+          "h": 256,
+          "outside": 41673,
+          "inside": 1596,
+          "rails": 0
+        },
+        {
+          "em": "sad",
+          "w": 256,
+          "h": 256,
+          "outside": 41674,
+          "inside": 1596,
+          "rails": 0
+        },
+        {
+          "em": "crash",
+          "w": 256,
+          "h": 256,
+          "outside": 41677,
+          "inside": 1596,
+          "rails": 0
+        },
+        {
+          "em": "victory",
+          "w": 256,
+          "h": 256,
+          "outside": 41674,
+          "inside": 1596,
+          "rails": 0
+        },
+        {
+          "em": "talk-closed",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 0,
+          "rails": 0
+        },
+        {
+          "em": "talk-small",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 1596,
+          "rails": 0
+        },
+        {
+          "em": "talk-medium",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 1596,
+          "rails": 0
+        },
+        {
+          "em": "talk-wide",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 1596,
+          "rails": 0
+        },
+        {
+          "em": "talk-o",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 1596,
+          "rails": 0
+        }
+      ]
+    },
+    {
+      "p": "decker",
+      "comm": true,
+      "w": 256,
+      "h": 256,
+      "poses": [
+        {
+          "em": "idle",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 0,
+          "rails": 0
+        },
+        {
+          "em": "happy",
+          "w": 256,
+          "h": 256,
+          "outside": 41677,
+          "inside": 1596,
+          "rails": 0
+        },
+        {
+          "em": "laugh",
+          "w": 256,
+          "h": 256,
+          "outside": 41675,
+          "inside": 1596,
+          "rails": 0
+        },
+        {
+          "em": "anger",
+          "w": 256,
+          "h": 256,
+          "outside": 41673,
+          "inside": 1596,
+          "rails": 0
+        },
+        {
+          "em": "sad",
+          "w": 256,
+          "h": 256,
+          "outside": 41674,
+          "inside": 1596,
+          "rails": 0
+        },
+        {
+          "em": "crash",
+          "w": 256,
+          "h": 256,
+          "outside": 41677,
+          "inside": 1596,
+          "rails": 0
+        },
+        {
+          "em": "victory",
+          "w": 256,
+          "h": 256,
+          "outside": 41674,
+          "inside": 1596,
+          "rails": 0
+        },
+        {
+          "em": "talk-closed",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 0,
+          "rails": 0
+        },
+        {
+          "em": "talk-small",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 1596,
+          "rails": 0
+        },
+        {
+          "em": "talk-medium",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 1596,
+          "rails": 0
+        },
+        {
+          "em": "talk-wide",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 1596,
+          "rails": 0
+        },
+        {
+          "em": "talk-o",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 1596,
+          "rails": 0
+        }
+      ]
+    },
+    {
+      "p": "falva",
+      "comm": false,
+      "w": 256,
+      "h": 244,
+      "poses": [
+        {
+          "em": "idle",
+          "w": 256,
+          "h": 244,
+          "outside": 0,
+          "inside": 0,
+          "rails": 0
+        },
+        {
+          "em": "happy",
+          "w": 256,
+          "h": 244,
+          "outside": 39221,
+          "inside": 1530,
+          "rails": 0
+        },
+        {
+          "em": "laugh",
+          "w": 256,
+          "h": 244,
+          "outside": 39217,
+          "inside": 1530,
+          "rails": 0
+        },
+        {
+          "em": "anger",
+          "w": 256,
+          "h": 244,
+          "outside": 39212,
+          "inside": 1530,
+          "rails": 0
+        },
+        {
+          "em": "sad",
+          "w": 256,
+          "h": 244,
+          "outside": 39225,
+          "inside": 1530,
+          "rails": 0
+        },
+        {
+          "em": "crash",
+          "w": 256,
+          "h": 244,
+          "outside": 39223,
+          "inside": 1530,
+          "rails": 0
+        },
+        {
+          "em": "victory",
+          "w": 256,
+          "h": 244,
+          "outside": 39225,
+          "inside": 1530,
+          "rails": 0
+        },
+        {
+          "em": "talk-closed",
+          "w": 256,
+          "h": 244,
+          "outside": 0,
+          "inside": 0,
+          "rails": 0
+        },
+        {
+          "em": "talk-small",
+          "w": 256,
+          "h": 244,
+          "outside": 0,
+          "inside": 1530,
+          "rails": 0
+        },
+        {
+          "em": "talk-medium",
+          "w": 256,
+          "h": 244,
+          "outside": 0,
+          "inside": 1530,
+          "rails": 0
+        },
+        {
+          "em": "talk-wide",
+          "w": 256,
+          "h": 244,
+          "outside": 0,
+          "inside": 1530,
+          "rails": 0
+        },
+        {
+          "em": "talk-o",
+          "w": 256,
+          "h": 244,
+          "outside": 0,
+          "inside": 1530,
+          "rails": 0
+        }
+      ]
+    },
+    {
+      "p": "falva",
+      "comm": true,
+      "w": 256,
+      "h": 244,
+      "poses": [
+        {
+          "em": "idle",
+          "w": 256,
+          "h": 244,
+          "outside": 0,
+          "inside": 0,
+          "rails": 0
+        },
+        {
+          "em": "happy",
+          "w": 256,
+          "h": 244,
+          "outside": 39221,
+          "inside": 1530,
+          "rails": 0
+        },
+        {
+          "em": "laugh",
+          "w": 256,
+          "h": 244,
+          "outside": 39217,
+          "inside": 1530,
+          "rails": 0
+        },
+        {
+          "em": "anger",
+          "w": 256,
+          "h": 244,
+          "outside": 39212,
+          "inside": 1530,
+          "rails": 0
+        },
+        {
+          "em": "sad",
+          "w": 256,
+          "h": 244,
+          "outside": 39225,
+          "inside": 1530,
+          "rails": 0
+        },
+        {
+          "em": "crash",
+          "w": 256,
+          "h": 244,
+          "outside": 39223,
+          "inside": 1530,
+          "rails": 0
+        },
+        {
+          "em": "victory",
+          "w": 256,
+          "h": 244,
+          "outside": 39225,
+          "inside": 1530,
+          "rails": 0
+        },
+        {
+          "em": "talk-closed",
+          "w": 256,
+          "h": 244,
+          "outside": 0,
+          "inside": 0,
+          "rails": 0
+        },
+        {
+          "em": "talk-small",
+          "w": 256,
+          "h": 244,
+          "outside": 0,
+          "inside": 1530,
+          "rails": 0
+        },
+        {
+          "em": "talk-medium",
+          "w": 256,
+          "h": 244,
+          "outside": 0,
+          "inside": 1530,
+          "rails": 0
+        },
+        {
+          "em": "talk-wide",
+          "w": 256,
+          "h": 244,
+          "outside": 0,
+          "inside": 1530,
+          "rails": 0
+        },
+        {
+          "em": "talk-o",
+          "w": 256,
+          "h": 244,
+          "outside": 0,
+          "inside": 1530,
+          "rails": 0
+        }
+      ]
+    },
+    {
+      "p": "freezer",
+      "comm": false,
+      "w": 256,
+      "h": 256,
+      "poses": [
+        {
+          "em": "idle",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 0,
+          "rails": 0
+        },
+        {
+          "em": "happy",
+          "w": 256,
+          "h": 256,
+          "outside": 41250,
+          "inside": 2021,
+          "rails": 0
+        },
+        {
+          "em": "laugh",
+          "w": 256,
+          "h": 256,
+          "outside": 41249,
+          "inside": 2021,
+          "rails": 0
+        },
+        {
+          "em": "anger",
+          "w": 256,
+          "h": 256,
+          "outside": 41249,
+          "inside": 2021,
+          "rails": 0
+        },
+        {
+          "em": "sad",
+          "w": 256,
+          "h": 256,
+          "outside": 41250,
+          "inside": 2021,
+          "rails": 0
+        },
+        {
+          "em": "crash",
+          "w": 256,
+          "h": 256,
+          "outside": 41250,
+          "inside": 2021,
+          "rails": 0
+        },
+        {
+          "em": "victory",
+          "w": 256,
+          "h": 256,
+          "outside": 41251,
+          "inside": 2021,
+          "rails": 0
+        },
+        {
+          "em": "talk-closed",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 0,
+          "rails": 0
+        },
+        {
+          "em": "talk-small",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 2021,
+          "rails": 0
+        },
+        {
+          "em": "talk-medium",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 2021,
+          "rails": 0
+        },
+        {
+          "em": "talk-wide",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 2021,
+          "rails": 0
+        },
+        {
+          "em": "talk-o",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 2021,
+          "rails": 0
+        }
+      ]
+    },
+    {
+      "p": "freezer",
+      "comm": true,
+      "w": 256,
+      "h": 256,
+      "poses": [
+        {
+          "em": "idle",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 0,
+          "rails": 0
+        },
+        {
+          "em": "happy",
+          "w": 256,
+          "h": 256,
+          "outside": 41250,
+          "inside": 2021,
+          "rails": 0
+        },
+        {
+          "em": "laugh",
+          "w": 256,
+          "h": 256,
+          "outside": 41249,
+          "inside": 2021,
+          "rails": 0
+        },
+        {
+          "em": "anger",
+          "w": 256,
+          "h": 256,
+          "outside": 41249,
+          "inside": 2021,
+          "rails": 0
+        },
+        {
+          "em": "sad",
+          "w": 256,
+          "h": 256,
+          "outside": 41250,
+          "inside": 2021,
+          "rails": 0
+        },
+        {
+          "em": "crash",
+          "w": 256,
+          "h": 256,
+          "outside": 41250,
+          "inside": 2021,
+          "rails": 0
+        },
+        {
+          "em": "victory",
+          "w": 256,
+          "h": 256,
+          "outside": 41251,
+          "inside": 2021,
+          "rails": 0
+        },
+        {
+          "em": "talk-closed",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 0,
+          "rails": 0
+        },
+        {
+          "em": "talk-small",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 2021,
+          "rails": 0
+        },
+        {
+          "em": "talk-medium",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 2021,
+          "rails": 0
+        },
+        {
+          "em": "talk-wide",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 2021,
+          "rails": 0
+        },
+        {
+          "em": "talk-o",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 2021,
+          "rails": 0
+        }
+      ]
+    },
+    {
+      "p": "juggernaut",
+      "comm": false,
+      "w": 256,
+      "h": 256,
+      "poses": [
+        {
+          "em": "idle",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 0,
+          "rails": 0
+        },
+        {
+          "em": "happy",
+          "w": 256,
+          "h": 256,
+          "outside": 41106,
+          "inside": 2162,
+          "rails": 0
+        },
+        {
+          "em": "laugh",
+          "w": 256,
+          "h": 256,
+          "outside": 41105,
+          "inside": 2162,
+          "rails": 0
+        },
+        {
+          "em": "anger",
+          "w": 256,
+          "h": 256,
+          "outside": 41104,
+          "inside": 2162,
+          "rails": 0
+        },
+        {
+          "em": "sad",
+          "w": 256,
+          "h": 256,
+          "outside": 41109,
+          "inside": 2162,
+          "rails": 0
+        },
+        {
+          "em": "crash",
+          "w": 256,
+          "h": 256,
+          "outside": 41107,
+          "inside": 2162,
+          "rails": 0
+        },
+        {
+          "em": "victory",
+          "w": 256,
+          "h": 256,
+          "outside": 41109,
+          "inside": 2162,
+          "rails": 0
+        },
+        {
+          "em": "talk-closed",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 0,
+          "rails": 0
+        },
+        {
+          "em": "talk-small",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 2162,
+          "rails": 0
+        },
+        {
+          "em": "talk-medium",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 2162,
+          "rails": 0
+        },
+        {
+          "em": "talk-wide",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 2162,
+          "rails": 0
+        },
+        {
+          "em": "talk-o",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 2162,
+          "rails": 0
+        }
+      ]
+    },
+    {
+      "p": "juggernaut",
+      "comm": true,
+      "w": 256,
+      "h": 256,
+      "poses": [
+        {
+          "em": "idle",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 0,
+          "rails": 0
+        },
+        {
+          "em": "happy",
+          "w": 256,
+          "h": 256,
+          "outside": 41106,
+          "inside": 2162,
+          "rails": 0
+        },
+        {
+          "em": "laugh",
+          "w": 256,
+          "h": 256,
+          "outside": 41105,
+          "inside": 2162,
+          "rails": 0
+        },
+        {
+          "em": "anger",
+          "w": 256,
+          "h": 256,
+          "outside": 41104,
+          "inside": 2162,
+          "rails": 0
+        },
+        {
+          "em": "sad",
+          "w": 256,
+          "h": 256,
+          "outside": 41109,
+          "inside": 2162,
+          "rails": 0
+        },
+        {
+          "em": "crash",
+          "w": 256,
+          "h": 256,
+          "outside": 41107,
+          "inside": 2162,
+          "rails": 0
+        },
+        {
+          "em": "victory",
+          "w": 256,
+          "h": 256,
+          "outside": 41109,
+          "inside": 2162,
+          "rails": 0
+        },
+        {
+          "em": "talk-closed",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 0,
+          "rails": 0
+        },
+        {
+          "em": "talk-small",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 2162,
+          "rails": 0
+        },
+        {
+          "em": "talk-medium",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 2162,
+          "rails": 0
+        },
+        {
+          "em": "talk-wide",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 2162,
+          "rails": 0
+        },
+        {
+          "em": "talk-o",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 2162,
+          "rails": 0
+        }
+      ]
+    },
+    {
+      "p": "lizzie",
+      "comm": false,
+      "w": 256,
+      "h": 256,
+      "poses": [
+        {
+          "em": "idle",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 0,
+          "rails": 0
+        },
+        {
+          "em": "happy",
+          "w": 256,
+          "h": 256,
+          "outside": 41815,
+          "inside": 1405,
+          "rails": 0
+        },
+        {
+          "em": "laugh",
+          "w": 256,
+          "h": 256,
+          "outside": 41750,
+          "inside": 1404,
+          "rails": 0
+        },
+        {
+          "em": "anger",
+          "w": 256,
+          "h": 256,
+          "outside": 41828,
+          "inside": 1406,
+          "rails": 0
+        },
+        {
+          "em": "sad",
+          "w": 256,
+          "h": 256,
+          "outside": 41822,
+          "inside": 1404,
+          "rails": 0
+        },
+        {
+          "em": "crash",
+          "w": 256,
+          "h": 256,
+          "outside": 41830,
+          "inside": 1404,
+          "rails": 0
+        },
+        {
+          "em": "victory",
+          "w": 256,
+          "h": 256,
+          "outside": 41827,
+          "inside": 1405,
+          "rails": 0
+        },
+        {
+          "em": "talk-closed",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 0,
+          "rails": 0
+        },
+        {
+          "em": "talk-small",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 929,
+          "rails": 0
+        },
+        {
+          "em": "talk-medium",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 929,
+          "rails": 0
+        },
+        {
+          "em": "talk-wide",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 930,
+          "rails": 0
+        },
+        {
+          "em": "talk-o",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 930,
+          "rails": 0
+        }
+      ]
+    },
+    {
+      "p": "lizzie",
+      "comm": true,
+      "w": 256,
+      "h": 256,
+      "poses": [
+        {
+          "em": "idle",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 0,
+          "rails": 0
+        },
+        {
+          "em": "happy",
+          "w": 256,
+          "h": 256,
+          "outside": 41815,
+          "inside": 1405,
+          "rails": 0
+        },
+        {
+          "em": "laugh",
+          "w": 256,
+          "h": 256,
+          "outside": 41750,
+          "inside": 1404,
+          "rails": 0
+        },
+        {
+          "em": "anger",
+          "w": 256,
+          "h": 256,
+          "outside": 41828,
+          "inside": 1406,
+          "rails": 0
+        },
+        {
+          "em": "sad",
+          "w": 256,
+          "h": 256,
+          "outside": 41822,
+          "inside": 1404,
+          "rails": 0
+        },
+        {
+          "em": "crash",
+          "w": 256,
+          "h": 256,
+          "outside": 41830,
+          "inside": 1404,
+          "rails": 0
+        },
+        {
+          "em": "victory",
+          "w": 256,
+          "h": 256,
+          "outside": 41827,
+          "inside": 1405,
+          "rails": 0
+        },
+        {
+          "em": "talk-closed",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 0,
+          "rails": 0
+        },
+        {
+          "em": "talk-small",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 929,
+          "rails": 0
+        },
+        {
+          "em": "talk-medium",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 929,
+          "rails": 0
+        },
+        {
+          "em": "talk-wide",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 930,
+          "rails": 0
+        },
+        {
+          "em": "talk-o",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 930,
+          "rails": 0
+        }
+      ]
+    },
+    {
+      "p": "maverick",
+      "comm": false,
+      "w": 256,
+      "h": 256,
+      "poses": [
+        {
+          "em": "idle",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 0,
+          "rails": 0
+        },
+        {
+          "em": "happy",
+          "w": 256,
+          "h": 256,
+          "outside": 41523,
+          "inside": 1748,
+          "rails": 0
+        },
+        {
+          "em": "laugh",
+          "w": 256,
+          "h": 256,
+          "outside": 41520,
+          "inside": 1748,
+          "rails": 0
+        },
+        {
+          "em": "anger",
+          "w": 256,
+          "h": 256,
+          "outside": 41523,
+          "inside": 1748,
+          "rails": 0
+        },
+        {
+          "em": "sad",
+          "w": 256,
+          "h": 256,
+          "outside": 41521,
+          "inside": 1748,
+          "rails": 0
+        },
+        {
+          "em": "crash",
+          "w": 256,
+          "h": 256,
+          "outside": 41523,
+          "inside": 1748,
+          "rails": 0
+        },
+        {
+          "em": "victory",
+          "w": 256,
+          "h": 256,
+          "outside": 41523,
+          "inside": 1748,
+          "rails": 0
+        },
+        {
+          "em": "talk-closed",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 0,
+          "rails": 0
+        },
+        {
+          "em": "talk-small",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 1748,
+          "rails": 0
+        },
+        {
+          "em": "talk-medium",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 1748,
+          "rails": 0
+        },
+        {
+          "em": "talk-wide",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 1748,
+          "rails": 0
+        },
+        {
+          "em": "talk-o",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 1748,
+          "rails": 0
+        }
+      ]
+    },
+    {
+      "p": "maverick",
+      "comm": true,
+      "w": 256,
+      "h": 256,
+      "poses": [
+        {
+          "em": "idle",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 0,
+          "rails": 0
+        },
+        {
+          "em": "happy",
+          "w": 256,
+          "h": 256,
+          "outside": 41523,
+          "inside": 1748,
+          "rails": 0
+        },
+        {
+          "em": "laugh",
+          "w": 256,
+          "h": 256,
+          "outside": 41520,
+          "inside": 1748,
+          "rails": 0
+        },
+        {
+          "em": "anger",
+          "w": 256,
+          "h": 256,
+          "outside": 41523,
+          "inside": 1748,
+          "rails": 0
+        },
+        {
+          "em": "sad",
+          "w": 256,
+          "h": 256,
+          "outside": 41521,
+          "inside": 1748,
+          "rails": 0
+        },
+        {
+          "em": "crash",
+          "w": 256,
+          "h": 256,
+          "outside": 41523,
+          "inside": 1748,
+          "rails": 0
+        },
+        {
+          "em": "victory",
+          "w": 256,
+          "h": 256,
+          "outside": 41523,
+          "inside": 1748,
+          "rails": 0
+        },
+        {
+          "em": "talk-closed",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 0,
+          "rails": 0
+        },
+        {
+          "em": "talk-small",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 1748,
+          "rails": 0
+        },
+        {
+          "em": "talk-medium",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 1748,
+          "rails": 0
+        },
+        {
+          "em": "talk-wide",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 1748,
+          "rails": 0
+        },
+        {
+          "em": "talk-o",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 1748,
+          "rails": 0
+        }
+      ]
+    },
+    {
+      "p": "yuri",
+      "comm": false,
+      "w": 256,
+      "h": 256,
+      "poses": [
+        {
+          "em": "idle",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 0,
+          "rails": 0
+        },
+        {
+          "em": "happy",
+          "w": 256,
+          "h": 256,
+          "outside": 40613,
+          "inside": 2385,
+          "rails": 0
+        },
+        {
+          "em": "laugh",
+          "w": 256,
+          "h": 256,
+          "outside": 39759,
+          "inside": 2385,
+          "rails": 0
+        },
+        {
+          "em": "anger",
+          "w": 256,
+          "h": 256,
+          "outside": 40275,
+          "inside": 2385,
+          "rails": 0
+        },
+        {
+          "em": "sad",
+          "w": 256,
+          "h": 256,
+          "outside": 40042,
+          "inside": 2385,
+          "rails": 0
+        },
+        {
+          "em": "crash",
+          "w": 256,
+          "h": 256,
+          "outside": 39493,
+          "inside": 2385,
+          "rails": 0
+        },
+        {
+          "em": "victory",
+          "w": 256,
+          "h": 256,
+          "outside": 38215,
+          "inside": 2385,
+          "rails": 0
+        },
+        {
+          "em": "talk-closed",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 0,
+          "rails": 0
+        },
+        {
+          "em": "talk-small",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 2385,
+          "rails": 0
+        },
+        {
+          "em": "talk-medium",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 2385,
+          "rails": 0
+        },
+        {
+          "em": "talk-wide",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 2385,
+          "rails": 0
+        },
+        {
+          "em": "talk-o",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 2385,
+          "rails": 0
+        }
+      ]
+    },
+    {
+      "p": "yuri",
+      "comm": true,
+      "w": 256,
+      "h": 256,
+      "poses": [
+        {
+          "em": "idle",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 0,
+          "rails": 0
+        },
+        {
+          "em": "happy",
+          "w": 256,
+          "h": 256,
+          "outside": 40613,
+          "inside": 2385,
+          "rails": 0
+        },
+        {
+          "em": "laugh",
+          "w": 256,
+          "h": 256,
+          "outside": 39759,
+          "inside": 2385,
+          "rails": 0
+        },
+        {
+          "em": "anger",
+          "w": 256,
+          "h": 256,
+          "outside": 40275,
+          "inside": 2385,
+          "rails": 0
+        },
+        {
+          "em": "sad",
+          "w": 256,
+          "h": 256,
+          "outside": 40042,
+          "inside": 2385,
+          "rails": 0
+        },
+        {
+          "em": "crash",
+          "w": 256,
+          "h": 256,
+          "outside": 39493,
+          "inside": 2385,
+          "rails": 0
+        },
+        {
+          "em": "victory",
+          "w": 256,
+          "h": 256,
+          "outside": 38215,
+          "inside": 2385,
+          "rails": 0
+        },
+        {
+          "em": "talk-closed",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 0,
+          "rails": 0
+        },
+        {
+          "em": "talk-small",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 2385,
+          "rails": 0
+        },
+        {
+          "em": "talk-medium",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 2385,
+          "rails": 0
+        },
+        {
+          "em": "talk-wide",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 2385,
+          "rails": 0
+        },
+        {
+          "em": "talk-o",
+          "w": 256,
+          "h": 256,
+          "outside": 0,
+          "inside": 2385,
+          "rails": 0
+        }
+      ]
+    }
+  ],
+  "suite": {
+    "assertions": 7274,
+    "exit_code": 0,
+    "baseline_assertions": 7274,
+    "final_summary": "FALVA/LIZZIE BUILD OK, 0 ERRORS"
+  },
+  "visual_review": {
+    "inspected": [
+      "axel-poses.png",
+      "cole-poses.png",
+      "decker-poses.png",
+      "falva-poses.png",
+      "freezer-poses.png",
+      "juggernaut-poses.png",
+      "lizzie-poses.png",
+      "maverick-poses.png",
+      "yuri-poses.png",
+      "contact.png",
+      "yuri-talk-04.png"
+    ],
+    "result": "All complete bezels and steady heads/bodies retained; mouth patches align and fit actual dialogue bay."
+  },
+  "animation_clock": "Native Chromium performance clock stepped one 85ms authored-mouth interval per capture batch."
+}

@@ -1,0 +1,55 @@
+{
+  "status": "Paused draft, not loaded by index.html",
+  "generator": "built-in image_gen",
+  "prompts": "Recorded descriptive prompt briefs, not claimed exact raw tool prompts.",
+  "sources": {
+    "parts": {
+      "path": "_ART_SOURCES/dracodia_1005/parts.png",
+      "originalFilename": "exec-2672e9b7-02fa-436c-8a91-747c424b546d.png",
+      "size": [
+        1261,
+        1247
+      ],
+      "mode": "RGBA",
+      "sha256": "edca78ec677e1cf9d11c89bd4513869d75fb8b9ce3fea67f26637aeb6d7634e7",
+      "promptBrief": "Crowned black oily/crimson Dracodia: headless torso, two arms, nine head-only views, complete crown, true alpha.",
+      "cropStatus": "Deployed parts only; measured xs 0,420,840,1261; ys 0,420,718,965,1247."
+    },
+    "portrait": {
+      "path": "_ART_SOURCES/dracodia_1005/portrait.png",
+      "originalFilename": "exec-2659710a-0967-4bf4-9ef8-34dfb85e06f5.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "sha256": "f4ff04eef0256065971d79023e263c42bd5108d843cc82749a9e097f73bee5e2",
+      "promptBrief": "Nine complete fixed chrome/green/red Dracodia bezels: idle, two speech poses, confident, angry, split-maw alien scream, shocked, burning, emerald decoding; no lettering.",
+      "cropStatus": "Provisional xs 0,418,836,1254; ys 0,400,800,1216. Must inspect before cropping."
+    },
+    "effects": {
+      "path": "_ART_SOURCES/dracodia_1005/effects.png",
+      "originalFilename": "exec-c4f354df-dc91-4b21-bb42-f448f26beac9.png",
+      "size": [
+        1278,
+        1230
+      ],
+      "mode": "RGBA",
+      "sha256": "0959514dbd4a9f03f3c04198cba0320d7f5e1cfab822fd5aa95cadb0f7411219",
+      "promptBrief": "Sixteen true-alpha alien destruction FX: eight growing gold-white reactor explosions with black tendrils/chips, four upward sun-rupture beams, four hollow smoke/fire rings.",
+      "cropStatus": "Provisional xs 0,320,640,960,1278; ys 0,320,614,902,1230. Must inspect before cropping."
+    },
+    "portal": {
+      "path": "_ART_SOURCES/dracodia_1005/portal.png",
+      "originalFilename": "exec-43e737d8-c7c5-464c-be91-d6a60e25b82d.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "mode": "RGBA",
+      "sha256": "077e1e5acbad3f4c4e47ec261a0f2dffc6126c9844ad1551f66e188c4d13be3c",
+      "promptBrief": "Twelve true-alpha oval 3D blue/white Fury portal frames, chrome alien ribs and emerald decoding sparks turning into blue energy: opening 0-3, steady 4-7, collapse 8-11, open empty center.",
+      "cropStatus": "Not yet inspected; measure native cells before integration."
+    }
+  }
+}

@@ -15807,7 +15807,11 @@ require('./test_stage3_combat_1004k.cjs')(vm,ctxv,ok);
 require('./test_cole_rebel_1004l.cjs')(vm,ctxv,ok,nativePlayerHit0930);
 require('./test_combat_integrity_1005.cjs')(vm,ctxv,ok);
 require('./test_overnight_1005.cjs')(vm,ctxv,ok);
+vm.runInContext(fs.readFileSync(path.join(__dirname,'../assets/password_catalog_1005.js'),'utf8'),ctxv,{filename:'password_catalog_1005.js'});
+vm.runInContext(fs.readFileSync(path.join(__dirname,'../assets/cole_portraits_1005.js'),'utf8'),ctxv,{filename:'cole_portraits_1005.js'});
+vm.runInContext(fs.readFileSync(path.join(__dirname,'../assets/pilot_portraits_1005.js'),'utf8'),ctxv,{filename:'pilot_portraits_1005.js'});
 
+require('./test_alien_arena_1005.cjs')(vm,ctxv,ok);
 console.log('\n============================================');
 if (errors.length) { console.log('FAILED — ' + errors.length + ' error(s):'); errors.forEach(e => console.log('  ' + e)); process.exit(1); }
 

@@ -1,0 +1,372 @@
+{
+  "checks": [
+    {
+      "ok": true,
+      "name": "comm_cole_talk-closed retains fixed head/body/frame pixels"
+    },
+    {
+      "ok": true,
+      "name": "comm_cole_talk-closed mouth pixels correct"
+    },
+    {
+      "ok": true,
+      "name": "comm_cole_talk-small retains fixed head/body/frame pixels"
+    },
+    {
+      "ok": true,
+      "name": "comm_cole_talk-small mouth pixels correct"
+    },
+    {
+      "ok": true,
+      "name": "comm_cole_talk-medium retains fixed head/body/frame pixels"
+    },
+    {
+      "ok": true,
+      "name": "comm_cole_talk-medium mouth pixels correct"
+    },
+    {
+      "ok": true,
+      "name": "comm_cole_talk-wide retains fixed head/body/frame pixels"
+    },
+    {
+      "ok": true,
+      "name": "comm_cole_talk-wide mouth pixels correct"
+    },
+    {
+      "ok": true,
+      "name": "comm_cole_talk-o retains fixed head/body/frame pixels"
+    },
+    {
+      "ok": true,
+      "name": "comm_cole_talk-o mouth pixels correct"
+    },
+    {
+      "ok": true,
+      "name": "port_cf_cole_talk-closed retains fixed head/body/frame pixels"
+    },
+    {
+      "ok": true,
+      "name": "port_cf_cole_talk-closed mouth pixels correct"
+    },
+    {
+      "ok": true,
+      "name": "port_cf_cole_talk-small retains fixed head/body/frame pixels"
+    },
+    {
+      "ok": true,
+      "name": "port_cf_cole_talk-small mouth pixels correct"
+    },
+    {
+      "ok": true,
+      "name": "port_cf_cole_talk-medium retains fixed head/body/frame pixels"
+    },
+    {
+      "ok": true,
+      "name": "port_cf_cole_talk-medium mouth pixels correct"
+    },
+    {
+      "ok": true,
+      "name": "port_cf_cole_talk-wide retains fixed head/body/frame pixels"
+    },
+    {
+      "ok": true,
+      "name": "port_cf_cole_talk-wide mouth pixels correct"
+    },
+    {
+      "ok": true,
+      "name": "port_cf_cole_talk-o retains fixed head/body/frame pixels"
+    },
+    {
+      "ok": true,
+      "name": "port_cf_cole_talk-o mouth pixels correct"
+    },
+    {
+      "ok": true,
+      "name": "Complete four-sided frame: idle"
+    },
+    {
+      "ok": true,
+      "name": "Complete four-sided frame: happy"
+    },
+    {
+      "ok": true,
+      "name": "Complete four-sided frame: laugh"
+    },
+    {
+      "ok": true,
+      "name": "Complete four-sided frame: anger"
+    },
+    {
+      "ok": true,
+      "name": "Complete four-sided frame: sad"
+    },
+    {
+      "ok": true,
+      "name": "Complete four-sided frame: crash"
+    },
+    {
+      "ok": true,
+      "name": "Complete four-sided frame: victory"
+    },
+    {
+      "ok": true,
+      "name": "Complete four-sided frame: talk-closed"
+    },
+    {
+      "ok": true,
+      "name": "Complete four-sided frame: talk-small"
+    },
+    {
+      "ok": true,
+      "name": "Complete four-sided frame: talk-medium"
+    },
+    {
+      "ok": true,
+      "name": "Complete four-sided frame: talk-wide"
+    },
+    {
+      "ok": true,
+      "name": "Complete four-sided frame: talk-o"
+    },
+    {
+      "ok": true,
+      "name": "Complete four-sided frame: neutral"
+    },
+    {
+      "ok": true,
+      "name": "Complete four-sided frame: smirking"
+    },
+    {
+      "ok": true,
+      "name": "Complete four-sided frame: brooding"
+    },
+    {
+      "ok": true,
+      "name": "Complete four-sided frame: sunglasses"
+    },
+    {
+      "ok": true,
+      "name": "Complete four-sided frame: shout"
+    },
+    {
+      "ok": true,
+      "name": "Complete four-sided frame: smile-shades"
+    },
+    {
+      "ok": true,
+      "name": "Complete four-sided frame: salute"
+    },
+    {
+      "ok": true,
+      "name": "Complete four-sided frame: thinking"
+    },
+    {
+      "ok": true,
+      "name": "Shouting frame 0 retains head/frame and animates mouth"
+    },
+    {
+      "ok": true,
+      "name": "Shouting frame 1 retains head/frame and animates mouth"
+    },
+    {
+      "ok": true,
+      "name": "All comm portraits retain right-facing treatment"
+    },
+    {
+      "ok": true,
+      "name": "Live dialogue cycles authored mouth poses"
+    },
+    {
+      "ok": true,
+      "name": "Completed dialogue returns to neutral portrait"
+    },
+    {
+      "ok": true,
+      "name": "Stage 6 shouting dialogue uses complete fixed portraits"
+    }
+  ],
+  "errors": [],
+  "pixels": {
+    "port_cf_cole_": [
+      {
+        "em": "talk-closed",
+        "outside": 0,
+        "inside": 0
+      },
+      {
+        "em": "talk-small",
+        "outside": 0,
+        "inside": 1530
+      },
+      {
+        "em": "talk-medium",
+        "outside": 0,
+        "inside": 1530
+      },
+      {
+        "em": "talk-wide",
+        "outside": 0,
+        "inside": 1530
+      },
+      {
+        "em": "talk-o",
+        "outside": 0,
+        "inside": 1530
+      }
+    ],
+    "comm_cole_": [
+      {
+        "em": "talk-closed",
+        "outside": 0,
+        "inside": 0
+      },
+      {
+        "em": "talk-small",
+        "outside": 0,
+        "inside": 1530
+      },
+      {
+        "em": "talk-medium",
+        "outside": 0,
+        "inside": 1530
+      },
+      {
+        "em": "talk-wide",
+        "outside": 0,
+        "inside": 1530
+      },
+      {
+        "em": "talk-o",
+        "outside": 0,
+        "inside": 1530
+      }
+    ],
+    "rails": [
+      {
+        "em": "idle",
+        "outside": 0,
+        "inside": 0
+      },
+      {
+        "em": "happy",
+        "outside": 0,
+        "inside": 43111
+      },
+      {
+        "em": "laugh",
+        "outside": 0,
+        "inside": 42956
+      },
+      {
+        "em": "anger",
+        "outside": 0,
+        "inside": 42916
+      },
+      {
+        "em": "sad",
+        "outside": 0,
+        "inside": 39560
+      },
+      {
+        "em": "crash",
+        "outside": 0,
+        "inside": 42735
+      },
+      {
+        "em": "victory",
+        "outside": 0,
+        "inside": 42699
+      },
+      {
+        "em": "talk-closed",
+        "outside": 0,
+        "inside": 0
+      },
+      {
+        "em": "talk-small",
+        "outside": 0,
+        "inside": 1530
+      },
+      {
+        "em": "talk-medium",
+        "outside": 0,
+        "inside": 1530
+      },
+      {
+        "em": "talk-wide",
+        "outside": 0,
+        "inside": 1530
+      },
+      {
+        "em": "talk-o",
+        "outside": 0,
+        "inside": 1530
+      },
+      {
+        "em": "neutral",
+        "outside": 0,
+        "inside": 0
+      },
+      {
+        "em": "smirking",
+        "outside": 0,
+        "inside": 43111
+      },
+      {
+        "em": "brooding",
+        "outside": 0,
+        "inside": 39560
+      },
+      {
+        "em": "sunglasses",
+        "outside": 0,
+        "inside": 41963
+      },
+      {
+        "em": "shout",
+        "outside": 0,
+        "inside": 41026
+      },
+      {
+        "em": "smile-shades",
+        "outside": 0,
+        "inside": 41994
+      },
+      {
+        "em": "salute",
+        "outside": 0,
+        "inside": 42699
+      },
+      {
+        "em": "thinking",
+        "outside": 0,
+        "inside": 43264
+      }
+    ],
+    "rage": [
+      {
+        "outside": 0,
+        "inside": 1848
+      },
+      {
+        "outside": 0,
+        "inside": 1844
+      }
+    ],
+    "mirror": true
+  },
+  "suite": {
+    "assertions": 7274,
+    "exit_code": 0,
+    "baseline_assertions": 7274,
+    "final_summary": "FALVA/LIZZIE BUILD OK, 0 ERRORS"
+  },
+  "visual_review": {
+    "inspected": [
+      "poses.png",
+      "talk-02.png",
+      "stage6-rage.png"
+    ],
+    "result": "Complete four-sided frame, steady head/body, lip patches aligned; regular and shouting dialogue fit portrait bay."
+  }
+}

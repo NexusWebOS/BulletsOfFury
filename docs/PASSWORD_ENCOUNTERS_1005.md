@@ -4,6 +4,12 @@ Enter these in the normal Password menu, then choose your difficulty and pilot.
 Encounter codes skip the regular stage waves while keeping the fight's introduction.
 All codes fit the six-character input. Existing stage and Stage X codes still work.
 
+The game now pins **all 59 current passwords** under **Password → Pinned Passwords**.
+Use the D-pad to change pages and rows, A to fill the selected code, and B to return
+to entry. Selecting a code does not submit it, start a fight or grant an unlock.
+Confirm the filled entry normally. The list is always available, including on a
+fresh boot; campaign saves and unlock state do not control its visibility.
+
 | Stage | Main boss | Miniboss | Alternate encounter |
 | --- | --- | --- | --- |
 | 1 | `BOSS1` | `MINI1` | — |
@@ -56,6 +62,19 @@ The original thirteen routes remain available:
 | Stage X Rebels, mountain/coast arena | `XREBEL` |
 | Stage 6 direct Harrier | `HARR6` |
 | Stage 6 direct Rebels | `REBEL6` |
+
+The older special passwords are pinned too:
+
+| Action | Password |
+| --- | --- |
+| Unlock Cole for the session | `COLE4U` |
+| Unlock Lizzie's B-42 Bomber costume | `BOMBER` |
+| Toggle classic/new Fury spaceship | `SPCBOY` |
+| Stage 1–8 boss-outro preview setup | `COLE1`, `COLE2`, `COLE3`, `COLE4`, `COLE5`, `COLE6`, `COLE7`, `COLE8` |
+| Final outro preview, routed to Stage 8 | `COLE9` |
+
+These preview codes set up the existing low-health boss/outro testing sequence;
+they are separate from the full boss-fight shortcuts above.
 
 Stage 6 encounter routes include the player plus four allies. The normal stage
 passwords still start the regular mission. Shortcuts are consumed once and cleared
