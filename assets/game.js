@@ -36490,7 +36490,9 @@ function updatePlay(dt){
       }
       if(boss && bossActive && !boss.dead){
         b._bt=(b._bt||0)-dt;
-        if(boss._s7mod){if(b._bt<=0){const q=s7mBeamImpact(boss,b);if(q){s7mHit(boss,b.dmg,q.x,q.y,q.id);weaponHitSfx('laser');b._bt=.05;}}}
+        if(boss._rebels&&typeof on5RebelLaser==='function')on5RebelLaser(b,dt);
+        else if(boss._r30&&typeof on5FinaleLaser==='function')on5FinaleLaser(b,dt);
+        else if(boss._s7mod){if(b._bt<=0){const q=s7mBeamImpact(boss,b);if(q){s7mHit(boss,b.dmg,q.x,q.y,q.id);weaponHitSfx('laser');b._bt=.05;}}}
         else if(b._bt<=0&&stage4PiercingBeam(boss,b)){b._bt=.05;}
         else if(b._bt<=0 && boss.y<=b.bot && Math.abs(b.x-boss.x)<(boss.w/2+b.w/2)){ hitBoss(b.dmg); weaponHitSfx('laser'); b._bt=0.05; }
       }
@@ -36563,7 +36565,9 @@ function updatePlay(dt){
         b._bt=(b._bt||0)-dt;
         const _s4t=(typeof stage4CoreTurretFlameAt==='function')?stage4CoreTurretFlameAt(boss,b):null;
         const _s4n=(typeof stage4ShieldFlameNode==='function')?stage4ShieldFlameNode(boss,b):null;
-        if(b._bt<=0&&_s4t){boss._s4CoreHit=_s4t;_lastHitX=_s4t.x;_lastHitY=_s4t.y;hitBoss(b.dmg*elementMultiplier(attackElement('flame'),flameIsIce()?'icebreath':'flamethrower'));weaponHitSfx(attackElement('flame')); flameContactSound();b._bt=FLAME_TICK;}
+        if(boss._rebels&&typeof on5RebelLaser==='function')on5RebelLaser(b,dt,true);
+        else if(boss._r30&&typeof on5FinaleLaser==='function')on5FinaleLaser(b,dt,true);
+        else if(b._bt<=0&&_s4t){boss._s4CoreHit=_s4t;_lastHitX=_s4t.x;_lastHitY=_s4t.y;hitBoss(b.dmg*elementMultiplier(attackElement('flame'),flameIsIce()?'icebreath':'flamethrower'));weaponHitSfx(attackElement('flame')); flameContactSound();b._bt=FLAME_TICK;}
         else if(b._bt<=0&&_s4n){boss._s4ShieldHit=_s4n;_lastHitX=_s4n.x;_lastHitY=_s4n.y;hitBoss(b.dmg*elementMultiplier(attackElement('flame'),flameIsIce()?'icebreath':'flamethrower'));weaponHitSfx(attackElement('flame')); flameContactSound();b._bt=FLAME_TICK;}
         else if(b._bt<=0 && flameHit(b, boss.x, (boss._drawY!=null?boss._drawY:boss.y), boss.w, boss.h)){ hitBoss(b.dmg*elementMultiplier(attackElement('flame'),flameIsIce()?'icebreath':'flamethrower')); weaponHitSfx(attackElement('flame')); flameContactSound(); b._bt=FLAME_TICK; }
       }

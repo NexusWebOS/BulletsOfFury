@@ -1,0 +1,345 @@
+{
+  "date": "2026-10-05",
+  "scope": "Fusion collision integrity and co-op weapon ownership; Rebel formation safeguard",
+  "suite": {
+    "command": "node _BUILD_SOURCE/test_fl.js",
+    "assertions": 7240,
+    "exitCode": 0,
+    "finalSummaryReached": true,
+    "previousBaseline": 7223
+  },
+  "syntax": [
+    "assets/game.js",
+    "assets/cole_fusion_1004l.js",
+    "assets/primary_1003b.js",
+    "assets/rebel_gang_1004.js"
+  ],
+  "native": {
+    "checks": [
+      {
+        "ok": true,
+        "name": "actual Fusion collision creates independent impact animation"
+      },
+      {
+        "ok": true,
+        "name": "visual impact never enters weapon collision pool"
+      },
+      {
+        "ok": true,
+        "name": "authored Fusion art renders through game drawImage"
+      },
+      {
+        "ok": true,
+        "name": "impact completes and expires through simulation"
+      },
+      {
+        "ok": true,
+        "name": "real P1 chord leaves P2 unlocks and selection independent"
+      },
+      {
+        "ok": true,
+        "name": "real P2 fire continues during P1 equip chord"
+      },
+      {
+        "ok": true,
+        "name": "P2 ricochets and shrapnel retain shooter ownership"
+      },
+      {
+        "ok": true,
+        "name": "actual Stage X rematch has five spread-out fighters"
+      },
+      {
+        "ok": true,
+        "name": "Fusion physically hits cloaked Nyx while missile acquisition excludes her"
+      },
+      {
+        "ok": true,
+        "name": "cloak reveal cannot duplicate a piercing beam hit"
+      },
+      {
+        "ok": true,
+        "name": "authored impact overlapping real Rebel ability crate does not damage it"
+      },
+      {
+        "ok": true,
+        "name": "new game clears both players saved laser state"
+      },
+      {
+        "ok": true,
+        "name": "Cole VI practice opens the correct state"
+      },
+      {
+        "ok": true,
+        "name": "Cole VII practice opens the correct state"
+      },
+      {
+        "ok": true,
+        "name": "Cole Fusion practice opens the correct state"
+      },
+      {
+        "ok": true,
+        "name": "Rebel introduction practice opens the correct state"
+      },
+      {
+        "ok": true,
+        "name": "Rebel dogfight practice opens the correct state"
+      },
+      {
+        "ok": true,
+        "name": "Stage X dogfight practice opens the correct state"
+      },
+      {
+        "ok": true,
+        "name": "zero page and console errors"
+      }
+    ],
+    "screens": [
+      "fusion-impact",
+      "independent-coop",
+      "stagex-five-fighters",
+      "fusion-hits-cloaked-nyx",
+      "harmless-impact-at-crate"
+    ],
+    "errors": []
+  },
+  "regression": {
+    "checks": [
+      {
+        "ok": true,
+        "name": "primary HUD returns to the top"
+      },
+      {
+        "ok": true,
+        "name": "tier 6 actual fire uses laser lanes and homing rounds"
+      },
+      {
+        "ok": true,
+        "name": "tier 7 actual fire uses laser lanes and homing rounds"
+      },
+      {
+        "ok": true,
+        "name": "real Fire + Y switches once and cancels charge and scan"
+      },
+      {
+        "ok": true,
+        "name": "held chord does not cycle repeatedly"
+      },
+      {
+        "ok": true,
+        "name": "second chord selects tier 7"
+      },
+      {
+        "ok": true,
+        "name": "second chord selects tier 8"
+      },
+      {
+        "ok": true,
+        "name": "held Fusion enters rising rumble and pink danger band"
+      },
+      {
+        "ok": true,
+        "name": "304 percent shows last-chance release band"
+      },
+      {
+        "ok": true,
+        "name": "real release fires over-three-times helix beams without gunfire underneath"
+      },
+      {
+        "ok": true,
+        "name": "315 percent overload enters original ship death despite shield and invulnerability"
+      },
+      {
+        "ok": true,
+        "name": "native projectile update damages targets, splash neighbors and releases shards"
+      },
+      {
+        "ok": true,
+        "name": "swept Fusion beam damages actual deployed boss module"
+      },
+      {
+        "ok": true,
+        "name": "entire unskippable introduction completes normally"
+      },
+      {
+        "ok": true,
+        "name": "all stolen-tech demonstrations run on their dialogue cues"
+      },
+      {
+        "ok": true,
+        "name": "all ten ships retain HP throughout harmless demonstrations"
+      },
+      {
+        "ok": true,
+        "name": "four allies hold the lower arena beside the player"
+      },
+      {
+        "ok": true,
+        "name": "authored HUD pixels render in the top canvas"
+      },
+      {
+        "ok": true,
+        "name": "new lasers, crystal cloak, full ball and actual slug art render through game drawImage"
+      },
+      {
+        "ok": true,
+        "name": "Cole VI review opens the requested playable state"
+      },
+      {
+        "ok": true,
+        "name": "Cole VII review opens the requested playable state"
+      },
+      {
+        "ok": true,
+        "name": "Cole Fusion review opens the requested playable state"
+      },
+      {
+        "ok": true,
+        "name": "Rebel introduction review opens the requested playable state"
+      },
+      {
+        "ok": true,
+        "name": "Rebel dogfight review opens the requested playable state"
+      },
+      {
+        "ok": true,
+        "name": "zero page and console errors"
+      }
+    ],
+    "screens": [
+      "cole-tier-6",
+      "cole-tier-7",
+      "fusion-overcharge-210",
+      "fusion-release-304",
+      "fusion-triple-helix",
+      "fusion-overload-death",
+      "fusion-impact-shrapnel",
+      "rebel-intro-cloak",
+      "rebel-intro-helix",
+      "rebel-intro-gasp",
+      "rebel-intro-slug",
+      "rebel-intro-turbo",
+      "rebel-fight-lower-wing",
+      "full-hud-top"
+    ],
+    "nativeArt": {
+      "stage6_blue_master": 8803,
+      "cf1004_weapons": 4661,
+      "nl6c_heavy_rain_cloud_0": 26913,
+      "nl6c_heavy_rain_cloud_5": 27625,
+      "nl6c_heavy_rain_cloud_2": 27154,
+      "nl6c_heavy_rain_cloud_3": 26828,
+      "nl6c_heavy_rain_cloud_1": 25934,
+      "ship_cole": 776,
+      "hud_equip_frame_0924": 2840,
+      "lock_frame_0922": 2840,
+      "retm_0": 2840,
+      "hud_radar_bezel_0924": 2840,
+      "ship_cole_g1": 405,
+      "nl6c_low_rolling_bank_3": 31828,
+      "nl6c_low_rolling_bank_2": 33301,
+      "nl6c_rain_cloud_1": 12163,
+      "nl6c_rain_cloud_2": 13017,
+      "nl6c_rain_cloud_3": 12388,
+      "nl6c_low_rolling_bank_5": 32463,
+      "nl6c_low_rolling_bank_1": 32146,
+      "nl6c_low_rolling_bank_0": 31990,
+      "nl6c_heavy_rain_cloud_4": 27544,
+      "ship_cole_g2": 353,
+      "nl6c_rain_cloud_4": 12937,
+      "nl6c_low_rolling_bank_4": 31889,
+      "nl6c_rain_cloud_5": 12583,
+      "nl6c_rain_cloud_0": 11319,
+      "ship_cole_sp0": 2,
+      "bof_player_weapon_special_icons_atlas": 10204,
+      "nwp_kin_hit_spark": 235,
+      "nwl_ice_1": 120,
+      "nsd_ring_0": 12,
+      "nxp_clus_0": 1,
+      "nxp_white_0": 5,
+      "nsr_frost_0": 3,
+      "bmbar_frame_boss": 12,
+      "bmbar_tab_boss": 12,
+      "bmbar_fill_solid": 12,
+      "nxp_clus_1": 2,
+      "nxp_radial_0": 10,
+      "nxp_clus_2": 2,
+      "nxp_dense_0": 1,
+      "nsr_frost_1": 3,
+      "nxp_dense_1": 1,
+      "nxp_clus_3": 2,
+      "nxp_white_1": 5,
+      "nxp_dense_2": 2,
+      "nsr_frost_2": 3,
+      "bmbar_fill_grey": 6,
+      "nxp_clus_4": 2,
+      "nxp_radial_1": 11,
+      "nxp_dense_3": 1,
+      "nxp_dense_4": 1,
+      "nxp_barrage_0": 1,
+      "nxp_clus_5": 2,
+      "nxp_dense_5": 2,
+      "nxp_barrage_1": 1,
+      "nsr_frost_3": 3,
+      "nxp_white_2": 2,
+      "nxp_barrage_2": 2,
+      "nxp_clus_6": 1,
+      "nxp_dense_6": 1,
+      "rr_roll_voss_iron_vulture_0": 2606,
+      "rr_roll_nyx_ghostknife_0": 938,
+      "rr_roll_rook_breachhammer_0": 2606,
+      "arch_blaster_gun_0": 5374,
+      "rr_roll_kaia_signal_wraith_0": 2606,
+      "ra4_fx": 6902,
+      "rr_roll_jace_razorjack_0": 2606,
+      "ship_axel": 2606,
+      "ship_decker": 2606,
+      "ship_falva": 2606,
+      "ship_yuri": 2606,
+      "nsr_frost_4": 3,
+      "nsr_frost_5": 3,
+      "nsr_frost_6": 4,
+      "nsr_frost_7": 3,
+      "nxp_radial_2": 5,
+      "nxp_radial_3": 6,
+      "nxp_radial_4": 5,
+      "nxp_radial_5": 6,
+      "nxp_radial_6": 5,
+      "nxp_radial_7": 6,
+      "rr_portrait_voss": 604,
+      "comm_cole_idle": 198,
+      "comm_cole_talk-medium": 41,
+      "comm_cole_talk-small": 36,
+      "special_axel": 840,
+      "comm_cole_talk-o": 16,
+      "comm_cole_talk-closed": 14,
+      "comm_cole_talk-wide": 14,
+      "cf1004_cloak": 1814,
+      "rr_portrait_nyx": 291,
+      "rr_ship_nyx_ghostknife": 1668,
+      "special_yuri": 1146,
+      "rr_portrait_kaia": 292,
+      "missile_base_m_box_0924": 2,
+      "ra4_fchgc_0": 31,
+      "ra4_nhxsb_g_2": 200,
+      "rr_portrait_jace": 291,
+      "ra4_fchgc_1": 30,
+      "ra4_fchgc_2": 32,
+      "ra4_fchgc_3": 38,
+      "nsw_box_decker": 842,
+      "port_cf_decker_talk-o": 288,
+      "rr_portrait_rook": 321,
+      "arch_blaster_gun_1": 164,
+      "arch_blaster_gun_2": 154,
+      "arch_blaster_gun_3": 162,
+      "repair30_chaingun_round": 1266,
+      "late_campaign_flight_0926": 2,
+      "bpfx_proj_kinetic_0": 1
+    },
+    "errors": []
+  },
+  "review": "_shots/combat_integrity_1005/review.html",
+  "limits": [
+    "Fixture and keyboard checks, not a human campaign completion or full balance audit.",
+    "Local-only pass; no commit or push."
+  ]
+}

@@ -4,6 +4,8 @@
 const PRIMARY1003B={unlocked:chaingunIsUnlocked,begin:beginStage,start:startRun,
  snapshot:campSnapshot,apply:campApply,pool:crateWeaponPool,forms:weaponBaseForms,
  select:weaponFormSelect,sync:chaingunMGSync};
+if(!SEAT_RUN_FIELDS.includes('_primary1003b'))SEAT_RUN_FIELDS.push('_primary1003b');
+for(const r of [run,run2])if(!('_primary1003b' in r))r._primary1003b=null;
 function primary1003bEligible(){return !!run&&((run.stage>=6&&run.stage<=8)||run.stage===5&&!!run._earnedUnlocks?.chaingun);}
 chaingunColeExempt=function(){return false;};
 chaingunIsUnlocked=function(){return primary1003bEligible()||PRIMARY1003B.unlocked();};
@@ -30,7 +32,7 @@ function primary1003bApply(){
  XART.rdy('repair30_chaingun_barrel_top');
 }
 beginStage=function(n){const r=PRIMARY1003B.begin.apply(this,arguments);for(const seat of seatList())withSeat(seat,primary1003bApply);return r;};
-startRun=function(){delete run._primary1003b;if(typeof run2!=='undefined')delete run2._primary1003b;return PRIMARY1003B.start.apply(this,arguments);};
+startRun=function(){run._primary1003b=null;run2._primary1003b=null;return PRIMARY1003B.start.apply(this,arguments);};
 campSnapshot=function(){const s=PRIMARY1003B.snapshot.apply(this,arguments);s.primary1003b=run._primary1003b==='mg'?'mg':'chain';return s;};
 campApply=function(s){
  if(!s||s.v!==CAMP_SAVE_VER)return false;

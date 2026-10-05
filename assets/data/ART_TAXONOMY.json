@@ -588,5 +588,10 @@
     "role": "terrain_alpha_overlay",
     "sheet": null,
     "note": "October 4j: built-in imagegen military coastal city around the Stage X snowy mountain. Final edit removes all painted water, waterfall foam and cascades; native alpha exposes authored nwl_water_0..3 underneath. Source/prompt _ART_SOURCES/stagex_coast_1004j, nearest-neighbor owner _BUILD_SOURCE/build_stagex_coast_1004j.py. Runtime feedback_1001b.js, no atlas changes; original stagex_1001 plate retained."
+  },
+  "on5_": {
+    "role": "finale_cinematic_and_whole_knight",
+    "sheet": null,
+    "note": "October 5: built-in image_gen native RGBA art, 12 symbiote rise/void/scatter cells, eight whole knight poses with complete head in EVERY frame and empty hands for independently mounted sword/shield, and 24 loose symbiote fragments (three shapes, eight ordered rotational views including edge/rear/flipped). Source hashes and generation briefs _ART_SOURCES/overnight_1005/manifest.json. Equal-cell owner _BUILD_SOURCE/build_overnight_1005.py registers all 44 cells together in assets/overnight_art_1005.js. No shared atlas editing or alpha repainting. Mike explicitly permits whole knight body with targetable sword/shield. Native game-context rendering verified through XART keys. Runtime overnight_finale_1005.js; QA docs/qa/overnight_1005.json."
   }
 }

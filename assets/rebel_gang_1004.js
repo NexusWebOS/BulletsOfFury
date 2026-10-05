@@ -143,7 +143,8 @@ rebelSquadTick=function(b,dt){const R=b._rebels;if(!R.frIntro?.done)return RG4_B
  for(const q of R.ships){j3RebelHull(q);if(q.dead){if(!q.rg4.deathSeen){q.rg4.deathSeen=true;rf28Fallen(b,R,q);}continue;}
   const A=q.rg4;q.t+=dt;q.flash=Math.max(0,q.flash-dt);q.stun=Math.max(0,q.stun-dt);q.warp=0;q.mode='fight';q._rg4Muzzle=Math.max(0,(q._rg4Muzzle||0)-dt);
   A.cd-=dt;q.evadeT=Math.max(0,(q.evadeT||0)-dt);q.evadeCd=Math.max(0,(q.evadeCd||0)-dt);
-  const slot=R.frStageX?0:(q.i-2),cx=camLeftX()+viewW()/2,span=Math.min(82,(viewW()-112)/4),speed=A.turbo?2.0:1.0;
+  const duel=R.frStageX&&R.ships.filter(v=>!v.dead).length===1;
+  const slot=duel?0:q.i-2,cx=camLeftX()+viewW()/2,span=Math.min(82,(viewW()-112)/4),speed=A.turbo?2.0:1.0;
   const tx=clamp(cx+slot*span+Math.sin(G.age*(.8*speed)+q.i)*20,camLeftX()+54,camRightX()-54),ty=PLAY.y+83+(q.i%2)*46+Math.sin(G.age*1.4*speed+q.i)*14;
   if(!A.act||A.act.kind==='ghost'||A.act.kind==='stealth'){
    const threat=pBullets.find(p=>!p.dead&&p.y>q.y&&p.y<q.y+150&&Math.abs(p.x-q.x)<25);

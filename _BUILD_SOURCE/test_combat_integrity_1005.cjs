@@ -1,0 +1,50 @@
+module.exports=function(vm,c,ok){
+ console.log('=== October 5 Fusion integrity, independent seats and Stage X formation ===');
+ const out=JSON.parse(vm.runInContext(`JSON.stringify((()=>{
+ const out={};ht27Stop();coopOn=false;run.pilot='cole';run.mode='campaign';beginStage(6);
+ setState(GS.PLAY);BOFCinematicDirector.cancel();story=null;fb2Talk=null;H3.release=false;s6Opening=null;s6Wing=null;
+ boss=null;bossActive=false;subBoss=null;subBossActive=false;enemies=[];eBullets=[];pBullets=[];player.reset();
+ run.weapon=0;run.wlevel=8;run.wlevels=WEAPONS.map(()=>0);run.wlevels[0]=8;run._cfUnlocked=8;run._cfTier=8;run._primary1003b='mg';
+ coopOn=true;p2Index=PILOTS.findIndex(p=>p.key==='cole');run2.pilot='cole';run2.weapon=0;run2.wlevel=6;
+ run2.wlevels=WEAPONS.map(()=>0);run2.wlevels[0]=6;run2._cfTier=null;run2._cfUnlocked=0;run2._primary1003b='chain';player2.reset();
+ withSeat(2,cf1004Cycle);
+ out['P2 cannot inherit P1 Fusion unlock']=run2._cfTier===6&&run2._cfUnlocked===6&&run._cfTier===8&&run._cfUnlocked===8;
+ run2._primary1003b='chain';withSeat(2,()=>{run._cfTier=null;});
+ out['P2 loadout choice does not change P1 primary']=run._primary1003b==='mg'&&run2._primary1003b==='chain';
+ const hold=CF1004_BASE.hold;CF1004_BASE.hold=()=>true;player._cfBlockFire=true;player2._cfBlockFire=false;
+ try{out['P1 chord does not suppress P2 fire']=!Input.hold(1,'fire')&&Input.hold(2,'fire');
+  withSeat(2,()=>{out['seat-specific input remains correct inside P2 window']=!Input.hold(1,'fire')&&Input.hold(2,'fire');});
+ }finally{CF1004_BASE.hold=hold;player._cfBlockFire=false;}
+ withSeat(2,()=>{run.wlevel=8;run._primary1003b='mg';coleFuseRelease(FUSE_FULL);});
+ const beam=pBullets[0],target={type:'fighter',x:beam.x,y:beam.y,w:32,h:32,hp:1000,max:1000};
+ enemies=[target];beam.vy=0;cf1004BulletTick(beam,0);
+ out['P2 Fusion ricochets and shards keep P2 attribution']=beam.seat===2&&pBullets.filter(p=>p._cfChild).length===10&&pBullets.filter(p=>p._cfChild).every(p=>p.seat===2);
+ out['impact art lives outside the weapon collision pool']=CF1004.effects.length>0&&!pBullets.some(p=>p.kind==='colefusionfx');
+ const hidden={...target,x:beam.x+10,hp:1000,_noHit:true};enemies=[hidden];
+ out['Fusion ignores phased or invulnerable hulls']=!cf1004Contact(beam,hidden);
+ cf1004Splash(beam,beam.x,beam.y,target);out['splash ignores phased hulls']=hidden.hp===1000;
+ coopOn=false;enemies=[];pBullets=[];spawnBoss('rebelsquad');const b=boss,R=b._rebels;rf28Init(b,R);b.enter=false;b._be=null;b._noHit=false;
+ R.frIntro={done:true};R.frStageX=true;const G=rg4Init(b);G.releaseAt=9999;G.rescueAt=9999;
+ for(const q of R.ships){q.x=worldWidth()/2;q.y=130;q.mode='fight';q.warp=0;q.rg4.cd=9999;q.rg4.act=null;}
+ const owner=R.ships[0],box={owner,key:owner.key,kind:'turbo',x:player.x,y:player.y,w:34,h:34,r:17,hp:6,max:6,t:0,flash:0};
+ G.rebelBoxes=[box];CF1004.effects[0].x=box.x;CF1004.effects[0].y=box.y;ra4SupplyTick(G,0);
+ out['overlapping Fusion explosion cannot ghost-damage ability crates']=box.hp===6&&!box.dead;
+ G.rebelBoxes=[];for(let i=0;i<180;i++)rebelSquadTick(b,1/60);
+ const xs=R.ships.map(q=>q.x);out['Stage X squad maintains five separate formation slots']=Math.max(...xs)-Math.min(...xs)>200;
+ const nyx=R.ships.find(q=>q.key==='nyx');nyx.frCloak=5;nyx.x=worldWidth()/2;nyx.y=300;const nyxHP=nyx.hp;
+ out['cloaked Nyx remains absent from missile acquisition']=!spaceTargets().some(t=>t._retinaId==='nyx-hull');
+ pBullets=[];coleFuseRelease(FUSE_FULL);const blind=pBullets[0];blind.x=blind.cx=nyx.x;blind.y=nyx.y;blind.vy=0;cf1004BulletTick(blind,0);
+ out['aimed Fusion damages cloaked Nyx physical hull']=nyx.hp<nyxHP&&nyx.flash>0;
+ const once=nyx.hp;nyx.frCloak=0;cf1004BulletTick(blind,0);
+ out['revealing cloak cannot make piercing Fusion hit twice']=nyx.hp===once;
+ pBullets=[];
+ for(const q of R.ships)q.dead=q.i!==0;for(let i=0;i<180;i++)rebelSquadTick(b,1/60);
+ out['single-contact duel retains its centered formation']=Math.abs(R.ships[0].x-(camLeftX()+viewW()/2))<25;
+ beginStage(1);out['stage changes clear transient Fusion explosions']=CF1004.effects.length===0;
+ run._cfTier=8;run._cfUnlocked=8;run2._cfTier=8;run2._cfUnlocked=8;pilotIndex=PILOTS.findIndex(p=>p.key==='cole');startRun(1);
+ out['fresh run resets both seats laser selection and unlocks']=run._cfTier===null&&run._cfUnlocked===0&&run2._cfTier===null&&run2._cfUnlocked===0;
+ const save=campSnapshot();save.coleLaserTier=999;save.coleLaserUnlocked=999;
+ out['loading malformed laser state uses earned weapon banks']=campApply(save)&&run._cfTier===null&&run._cfUnlocked<=8;
+ setState(GS.TITLE);return out;
+ })())`,c));for(const[n,v]of Object.entries(out))ok(v,n);
+};

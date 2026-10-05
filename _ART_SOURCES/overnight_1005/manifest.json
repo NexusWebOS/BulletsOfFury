@@ -1,0 +1,28 @@
+{
+  "generator": "built-in image_gen",
+  "sources": {
+    "symbiote": {
+      "path": "_ART_SOURCES/overnight_1005/symbiote.png",
+      "sha256": "4392234890422689dd14d905c77603729882ff56eacdb2e11c9dbfd0bb327181",
+      "prompt": "Twelve black oily symbiote rise, gather, swirl, void, emergence and scatter frames. Steel glints, crimson fissures, detailed arcade pixels; transparent background, no binary download or spherical morph.",
+      "columns": 4,
+      "rows": 3
+    },
+    "knight": {
+      "path": "_ART_SOURCES/overnight_1005/knight.png",
+      "sha256": "e23d2d7217f375874887ba4ddb06cd930c53fa3d4587141db2d631885d060150",
+      "prompt": "Eight whole chrome/crimson alien knight poses, same complete attached horned head in EVERY frame. Neutral, windup, strike, slash, guard, shield bash, casting, jump. Remove swords/shields/lasers/halo/backdrop, preserve arms and hands, genuine RGBA cutouts for independently attached weapons.",
+      "columns": 4,
+      "rows": 2
+    },
+    "fragments": {
+      "path": "_ART_SOURCES/overnight_1005/fragments.png",
+      "sha256": "e4dd0d090aa67cce5c836df07f163a22f09fc394a75876cef4004b813ac24073",
+      "prompt": "Twenty-four loose oily black symbiote fragments, 8 ordered 360-degree rotational views for each of three hooked/forked tendril shapes. Wide front, three-quarter, edge-on, rear, flipped backside and returning front; transparent background, no ring or backdrop.",
+      "columns": 8,
+      "rows": 3
+    }
+  },
+  "alpha": "native, unmodified",
+  "layout": "equal-cell slicing, no shared atlas edits"
+}

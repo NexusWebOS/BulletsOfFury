@@ -15805,6 +15805,8 @@ require('./test_campaign_controls_1004h.cjs')(vm,ctxv,ok);
 require('./test_sky_repair_1004i.cjs')(vm,ctxv,ok);
 require('./test_stage3_combat_1004k.cjs')(vm,ctxv,ok);
 require('./test_cole_rebel_1004l.cjs')(vm,ctxv,ok,nativePlayerHit0930);
+require('./test_combat_integrity_1005.cjs')(vm,ctxv,ok);
+require('./test_overnight_1005.cjs')(vm,ctxv,ok);
 
 console.log('\n============================================');
 if (errors.length) { console.log('FAILED — ' + errors.length + ' error(s):'); errors.forEach(e => console.log('  ' + e)); process.exit(1); }
