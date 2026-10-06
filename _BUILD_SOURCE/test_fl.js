@@ -15812,6 +15812,9 @@ vm.runInContext(fs.readFileSync(path.join(__dirname,'../assets/cole_portraits_10
 vm.runInContext(fs.readFileSync(path.join(__dirname,'../assets/pilot_portraits_1005.js'),'utf8'),ctxv,{filename:'pilot_portraits_1005.js'});
 
 require('./test_alien_arena_1005.cjs')(vm,ctxv,ok);
+require('./test_dracodia_1005.cjs')(vm,ctxv,ok);
+require('./test_hammer_knight_1005.cjs')(vm,ctxv,ok);
+require('./test_finale_ai_1006.cjs')(vm,ctxv,ok);
 console.log('\n============================================');
 if (errors.length) { console.log('FAILED — ' + errors.length + ' error(s):'); errors.forEach(e => console.log('  ' + e)); process.exit(1); }
 

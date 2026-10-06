@@ -1,0 +1,75 @@
+{
+  "status": "Resumed and integrated locally on October 5; not committed or pushed",
+  "mode": "built-in image_gen; transparent_background=true",
+  "promptRecord": "Descriptive production prompt specifications, not an exact raw tool/API log.",
+  "sources": {
+    "parts": {
+      "path": "_ART_SOURCES/dracodia_1005/parts-v2.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "sha256": "455b4adadf856727816b0f2297fb6d2cd5f679363e8d66830621eca4c181de0d",
+      "originalFilename": "exec-ceafb1e0-b600-42d8-a22c-961276b93fdf.png",
+      "promptSpecification": "Regenerate authored 16-bit black symbiote/crimson Dracodia components from the original parts reference. Twelve separated alpha cells: headless torso; independent left/right arms; complete crown/head neutral, left, right, up, down, shocked, rupture, split-maw scream and speech. Wide transparent gutters, consistent identity and scale, no clipped tendrils or background grid.",
+      "selection": "Regenerated selected source",
+      "runtimeCells": 12
+    },
+    "portrait": {
+      "path": "_ART_SOURCES/dracodia_1005/portrait.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "f4ff04eef0256065971d79023e263c42bd5108d843cc82749a9e097f73bee5e2",
+      "originalFilename": "exec-2659710a-0967-4bf4-9ef8-34dfb85e06f5.png",
+      "promptSpecification": "Reuse archived nine complete chrome/green/red Dracodia portrait expressions: idle, speech, confidence, anger, split-maw alien scream, shock, burning and decoding. Preserve bezel edges and native pixels; speaking changes only the mouth.",
+      "selection": "Archived original reused",
+      "runtimeCells": 9
+    },
+    "effects": {
+      "path": "_ART_SOURCES/dracodia_1005/effects-v2.png",
+      "size": [
+        1427,
+        1102
+      ],
+      "sha256": "844ebe5d2b6c76b1e9f33ed3260fb22b0fd6a6df2c3b3abcbf804674454ebe34",
+      "originalFilename": "exec-9482fa0e-2f04-40e4-b820-9cdd2fcae06f.png",
+      "promptSpecification": "Sixteen separated true-alpha 16-bit alien reactor destruction effects: eight escalating golden/white explosions with crimson fire, black symbiote chips and crackle; four upward sun-rupture beams; four hollow smoke/fire rings. Match the dark symbiote boss, with wide gutters and complete effects inside each cell.",
+      "selection": "Regenerated selected source",
+      "runtimeCells": 16
+    },
+    "portal": {
+      "path": "_ART_SOURCES/dracodia_1005/portal-v3.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "sha256": "7def51925626649d5a6a60f9a69fe4b1336a3bc427971ca604ee55e7ca9d44cf",
+      "originalFilename": "exec-a81ed6c9-224c-4ca1-a2d2-53c293033825.png",
+      "promptSpecification": "Twelve separated alpha oval blue/white energy portal frames with chrome ribs, empty transparent center and no drawn sheet lines. Four opening, four steady and four inward closing frames; crisp 16-bit sci-fi pixel detail, wide transparent gutters, no neighboring-cell overlap.",
+      "selection": "Regenerated selected source",
+      "runtimeCells": 12
+    },
+    "charred": {
+      "path": "_ART_SOURCES/dracodia_1005/charred.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "sha256": "f08ee5a02e1e7338e3d708d09a4809f4a9645d7ab6380c3acbf72ea46e92f426",
+      "originalFilename": "exec-9f899337-e9d1-47b0-a63c-18cc86080b6d.png",
+      "promptSpecification": "Six-cell true-alpha 16-bit charred-remains sheet for the black/crimson alien symbiote: hot wreckage, cooling remains, cold remains, claw wreckage, tentacle wreckage and ruptured chest. Physical opaque blackened fragments with crimson embers and light smoke; isolated complete cells with generous transparent gaps.",
+      "selection": "Regenerated selected source",
+      "runtimeCells": 6
+    }
+  },
+  "unselectedCandidates": [
+    {
+      "path": "_ART_SOURCES/dracodia_1005/portal-v2-candidate.png",
+      "originalFilename": "exec-17be285c-6810-44e6-8c53-2071e149035f.png",
+      "reason": "Portal cells too tightly packed for consistent complete frame extraction."
+    }
+  ],
+  "pixelPolicy": "Measured crops and transparent padding only. Native pixels/alpha unchanged."
+}

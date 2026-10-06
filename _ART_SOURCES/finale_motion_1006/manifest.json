@@ -1,0 +1,409 @@
+{
+  "tool": "built-in image_gen",
+  "source": "hammer-motion.png",
+  "reference": "../hammer_knight_1005/hammer.png",
+  "processing": "Measured native extraction and transparent padding only. No repaint, palette change, resizing or atlas reallocation.",
+  "cells": [
+    {
+      "key": "f6_hammer_motion_0",
+      "path": "assets/game/finale_motion_1006/hammer_motion_0.png",
+      "w": 217,
+      "h": 236,
+      "px": 0.5299539170506913,
+      "py": 0.5423728813559322,
+      "name": "curlStart",
+      "head": [
+        132,
+        123
+      ],
+      "sourceRect": [
+        98,
+        37,
+        291,
+        249
+      ],
+      "alphaBounds": [
+        12,
+        12,
+        204,
+        224
+      ],
+      "sha256": "980ea1735d44e652089213cea86fad56692fd48721902503addf0cd0834208d6"
+    },
+    {
+      "key": "f6_hammer_motion_1",
+      "path": "assets/game/finale_motion_1006/hammer_motion_1.png",
+      "w": 215,
+      "h": 229,
+      "px": 0.5255813953488372,
+      "py": 0.519650655021834,
+      "name": "curlMid",
+      "head": [
+        139,
+        118
+      ],
+      "sourceRect": [
+        478,
+        44,
+        669,
+        249
+      ],
+      "alphaBounds": [
+        12,
+        13,
+        203,
+        217
+      ],
+      "sha256": "b7fd886ba85f56aee6b6bbc9526603e65f915c124a4bb20499555432976b04f7"
+    },
+    {
+      "key": "f6_hammer_motion_2",
+      "path": "assets/game/finale_motion_1006/hammer_motion_2.png",
+      "w": 227,
+      "h": 222,
+      "px": 0.5154185022026432,
+      "py": 0.5720720720720721,
+      "name": "ball",
+      "head": null,
+      "sourceRect": [
+        838,
+        63,
+        1041,
+        261
+      ],
+      "alphaBounds": [
+        12,
+        13,
+        214,
+        209
+      ],
+      "sha256": "1b9b36711e584ce6d77376e4fb7f5854675065b63d7ce8ee40c09dc658b9293f"
+    },
+    {
+      "key": "f6_hammer_motion_3",
+      "path": "assets/game/finale_motion_1006/hammer_motion_3.png",
+      "w": 314,
+      "h": 251,
+      "px": 0.4140127388535032,
+      "py": 0.46613545816733065,
+      "name": "uncurl",
+      "head": [
+        255,
+        202
+      ],
+      "sourceRect": [
+        1192,
+        32,
+        1482,
+        259
+      ],
+      "alphaBounds": [
+        12,
+        13,
+        302,
+        238
+      ],
+      "sha256": "30296473dce2fb1632653fcc6099ae7747351ea649fb27f75dabbe73d33bab3e"
+    },
+    {
+      "key": "f6_hammer_motion_4",
+      "path": "assets/game/finale_motion_1006/hammer_motion_4.png",
+      "w": 271,
+      "h": 300,
+      "px": 0.5239852398523985,
+      "py": 0.5733333333333334,
+      "name": "giantLift",
+      "head": [
+        164,
+        51
+      ],
+      "sourceRect": [
+        70,
+        264,
+        317,
+        540
+      ],
+      "alphaBounds": [
+        12,
+        12,
+        259,
+        288
+      ],
+      "sha256": "ef8c6911a059e639439d38b92759e6914bd61e21dcfe84e1b491eef45bd74a27"
+    },
+    {
+      "key": "f6_hammer_motion_5",
+      "path": "assets/game/finale_motion_1006/hammer_motion_5.png",
+      "w": 228,
+      "h": 294,
+      "px": 0.618421052631579,
+      "py": 0.5850340136054422,
+      "name": "giantDive",
+      "head": [
+        71,
+        57
+      ],
+      "sourceRect": [
+        473,
+        254,
+        677,
+        524
+      ],
+      "alphaBounds": [
+        12,
+        12,
+        216,
+        282
+      ],
+      "sha256": "6838e71e0365eab9f899a6d497c86e4c038b2b1d89a2354005ebcaa8e1921ed1"
+    },
+    {
+      "key": "f6_hammer_motion_6",
+      "path": "assets/game/finale_motion_1006/hammer_motion_6.png",
+      "w": 297,
+      "h": 237,
+      "px": 0.5218855218855218,
+      "py": 0.4767932489451477,
+      "name": "giantImpact",
+      "head": [
+        151,
+        186
+      ],
+      "sourceRect": [
+        801,
+        333,
+        1074,
+        546
+      ],
+      "alphaBounds": [
+        12,
+        13,
+        284,
+        225
+      ],
+      "sha256": "45cb4fbdc0d92a1e0da2d638412067e8b23193e25e5ff6bf82182c5fbe8a7286"
+    },
+    {
+      "key": "f6_hammer_motion_7",
+      "path": "assets/game/finale_motion_1006/hammer_motion_7.png",
+      "w": 315,
+      "h": 244,
+      "px": 0.4793650793650794,
+      "py": 0.4057377049180328,
+      "name": "giantRecover",
+      "head": [
+        250,
+        181
+      ],
+      "sourceRect": [
+        1177,
+        324,
+        1468,
+        544
+      ],
+      "alphaBounds": [
+        13,
+        12,
+        303,
+        232
+      ],
+      "sha256": "db116e0653c36fad4d1ccb31373a540c50f199fb9761ae1f97ea6f126d0431ca"
+    },
+    {
+      "key": "f6_hammer_motion_8",
+      "path": "assets/game/finale_motion_1006/hammer_motion_8.png",
+      "w": 362,
+      "h": 253,
+      "px": 0.4143646408839779,
+      "py": 0.4743083003952569,
+      "name": "whirlFront",
+      "head": [
+        308,
+        106
+      ],
+      "sourceRect": [
+        58,
+        543,
+        396,
+        772
+      ],
+      "alphaBounds": [
+        12,
+        12,
+        350,
+        240
+      ],
+      "sha256": "78bba4de471f4244194e2e4554ab6c50ecf3ae52ffb257c074dca46428f7b0f8"
+    },
+    {
+      "key": "f6_hammer_motion_9",
+      "path": "assets/game/finale_motion_1006/hammer_motion_9.png",
+      "w": 306,
+      "h": 259,
+      "px": 0.41830065359477125,
+      "py": 0.47104247104247104,
+      "name": "whirlRight",
+      "head": [
+        248,
+        187
+      ],
+      "sourceRect": [
+        455,
+        540,
+        737,
+        775
+      ],
+      "alphaBounds": [
+        12,
+        13,
+        293,
+        247
+      ],
+      "sha256": "c78045caca05d8abe11b764980053333d3e736cf064b3da7c391864eaf638396"
+    },
+    {
+      "key": "f6_hammer_motion_10",
+      "path": "assets/game/finale_motion_1006/hammer_motion_10.png",
+      "w": 312,
+      "h": 256,
+      "px": 0.41346153846153844,
+      "py": 0.4921875,
+      "name": "whirlBack",
+      "head": [
+        254,
+        168
+      ],
+      "sourceRect": [
+        838,
+        543,
+        1126,
+        775
+      ],
+      "alphaBounds": [
+        12,
+        12,
+        300,
+        244
+      ],
+      "sha256": "1ae01e02b32b11da6404d8e28f18bc0d6fdd65692953acfb0ae54eea99f672cc"
+    },
+    {
+      "key": "f6_hammer_motion_11",
+      "path": "assets/game/finale_motion_1006/hammer_motion_11.png",
+      "w": 298,
+      "h": 256,
+      "px": 0.4597315436241611,
+      "py": 0.4453125,
+      "name": "whirlLeft",
+      "head": [
+        238,
+        136
+      ],
+      "sourceRect": [
+        1190,
+        541,
+        1464,
+        773
+      ],
+      "alphaBounds": [
+        12,
+        12,
+        286,
+        244
+      ],
+      "sha256": "aa97687bc8e35f498fa0a2367bc7b68784f3683bccbdbe4f98d4d953b33f92c5"
+    },
+    {
+      "key": "f6_hammer_motion_12",
+      "path": "assets/game/finale_motion_1006/hammer_motion_12.png",
+      "w": 277,
+      "h": 227,
+      "px": 0.5776173285198556,
+      "py": 0.5462555066079295,
+      "name": "kneel",
+      "head": null,
+      "sourceRect": [
+        68,
+        796,
+        321,
+        999
+      ],
+      "alphaBounds": [
+        12,
+        13,
+        264,
+        215
+      ],
+      "sha256": "6d77251f572e42f8d18c51737da162e17e9b24158dbd932fef45afde31d4ff2f"
+    },
+    {
+      "key": "f6_hammer_motion_13",
+      "path": "assets/game/finale_motion_1006/hammer_motion_13.png",
+      "w": 278,
+      "h": 250,
+      "px": 0.5107913669064749,
+      "py": 0.428,
+      "name": "stun",
+      "head": null,
+      "sourceRect": [
+        445,
+        772,
+        699,
+        998
+      ],
+      "alphaBounds": [
+        13,
+        12,
+        266,
+        238
+      ],
+      "sha256": "d4621373e11a45124db29ea72ef8dc2b2b35b543edc3572616b33df3bcfcefc2"
+    },
+    {
+      "key": "f6_hammer_motion_14",
+      "path": "assets/game/finale_motion_1006/hammer_motion_14.png",
+      "w": 327,
+      "h": 232,
+      "px": 0.4923547400611621,
+      "py": 0.5344827586206896,
+      "name": "rise",
+      "head": null,
+      "sourceRect": [
+        818,
+        788,
+        1121,
+        996
+      ],
+      "alphaBounds": [
+        12,
+        12,
+        315,
+        220
+      ],
+      "sha256": "8c8c00952c091c0e338de93c3b2feb3507c0674f7006c2776b6be5d17993e346"
+    },
+    {
+      "key": "f6_hammer_motion_15",
+      "path": "assets/game/finale_motion_1006/hammer_motion_15.png",
+      "w": 338,
+      "h": 238,
+      "px": 0.45857988165680474,
+      "py": 0.4369747899159664,
+      "name": "emptyThrow",
+      "head": null,
+      "sourceRect": [
+        1167,
+        784,
+        1481,
+        998
+      ],
+      "alphaBounds": [
+        12,
+        12,
+        326,
+        226
+      ],
+      "sha256": "d03a72a09855b9bb0452e582681abba8ebacec2c3f58782571d7f63fc893c598"
+    }
+  ]
+}

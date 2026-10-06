@@ -1,0 +1,15 @@
+{
+  "type": "Processed existing authored recordings, not provider-generated audio",
+  "inputs": [
+    {
+      "path": "assets/game/sounds/mechScream.mp3",
+      "sha256": "38da4649e75247596dce608f6f08d987c4dbfb1a40804383250a4c083098c164"
+    },
+    {
+      "path": "assets/game/sounds/wardenScream.mp3",
+      "sha256": "5fb50deaf107711fda25a64f7e59cd428e7d0336d1cd855e26d8429f56ce785a"
+    }
+  ],
+  "filter": "[0:a]aresample=48000,asetrate=36000,aresample=48000,highpass=f=90,lowpass=f=4500,volume=0.8[a];[1:a]aresample=48000,asetrate=42000,aresample=48000,adelay=90,volume=0.65[b];[a][b]amix=inputs=2:duration=longest:normalize=0,aecho=0.8:0.55:140|290:0.35|0.20,apad=pad_dur=0.35,afade=t=in:d=0.045,afade=t=out:st=2.15:d=0.65,alimiter=limit=0.86,aresample=44100[o]",
+  "output": "assets/game/dracodia_1005/dracodia_shriek.mp3"
+}

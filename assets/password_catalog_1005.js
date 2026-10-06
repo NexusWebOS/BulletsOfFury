@@ -13,7 +13,7 @@ function pc5Pages(){
  add('MINIBOSSES',Object.entries(ON5_CODES).filter(([,e])=>e.role==='mini').map(([c,e])=>[c,'STAGE '+e.stage+' MINIBOSS']));
  add('ALTERNATE FIGHTS',Object.entries(ON5_CODES).filter(([,e])=>e.role==='alt').map(([c,e])=>[c,{ALT3:'RIME WALL',ALT6:'BLACKSTEEL',ALT8:'HERALD ALTERNATE'}[c]||'STAGE '+e.stage+' ALTERNATE']).concat([['HAMMER','HAMMER MUSIC FIGHT'],['HAMA','HAMA MUSIC FIGHT']]));
  add('FINAL BOSS PHASES',Object.entries(ON5_CODES).filter(([,e])=>e.phase!=null&&e.mimic==null).map(([c,e])=>[c,['MUTATED DRONE','GHOST','DRACULA / SYMBIOTE'][e.phase]]));
- const names=['MUTATED DRONE','HELICOPTER','FURNACE','CRYO','STORM','SWORD / SHIELD KNIGHT','ACE','WARDEN'];
+ const names=['MUTATED DRONE','HELICOPTER','FURNACE','CRYO','STORM','SWORD / SHIELD KNIGHT','ACE','WARDEN','CODE HAMMER'];
  add('FINAL BOSS COPIES',Object.entries(ON5_CODES).filter(([,e])=>e.mimic!=null).map(([c,e])=>[c,names[e.mimic]]));
  add('UNLOCKS',[['COLE4U','UNLOCK COLE'],['BOMBER','UNLOCK LIZZIE BOMBER'],['SPCBOY','TOGGLE CLASSIC FURYSHIP']]);
  add('COLE SCENE PREVIEWS',Object.entries(COLE_SCENE).map(([c,n])=>[c,n===9?'FINAL OUTRO PREVIEW':'STAGE '+n+' OUTRO PREVIEW']));

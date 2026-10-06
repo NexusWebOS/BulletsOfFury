@@ -1,0 +1,609 @@
+{
+  "baseCommit": "64750e7d666335adcd3468b365d1c9f4a50e4cd9",
+  "localOnly": true,
+  "suite": {
+    "command": "node _BUILD_SOURCE/test_fl.js",
+    "assertions": 7310,
+    "exitCode": 0,
+    "finalBanner": "FALVA/LIZZIE BUILD OK, 0 ERRORS",
+    "log": "_shots/dracodia_1005/full-suite.log"
+  },
+  "syntax": {
+    "commands": [
+      "node --check assets/game.js",
+      "node --check assets/dracodia_art_1005.js",
+      "node --check assets/dracodia_cinematic_1005.js"
+    ],
+    "exitCode": 0
+  },
+  "native": {
+    "checks": [
+      {
+        "ok": true,
+        "name": "all 55 alpha component portrait effect and portal cells decode"
+      },
+      {
+        "ok": true,
+        "name": "actual first life damage starts destruction without stage rewards"
+      },
+      {
+        "ok": true,
+        "name": "player flies ahead while opaque destruction and organic reform continue"
+      },
+      {
+        "ok": true,
+        "name": "first reform retains both exact requested radio lines"
+      },
+      {
+        "ok": true,
+        "name": "first reform hands off to the actual ghost encounter"
+      },
+      {
+        "ok": true,
+        "name": "second reform retains exact disbelief lines"
+      },
+      {
+        "ok": true,
+        "name": "third encounter reveals Dracodia in animated black and green arena"
+      },
+      {
+        "ok": true,
+        "name": "held action keys cannot skip attack or damage protected dialogue"
+      },
+      {
+        "ok": true,
+        "name": "expression 0 speaks only inside stable mouth and complete frame"
+      },
+      {
+        "ok": true,
+        "name": "expression 1 speaks only inside stable mouth and complete frame"
+      },
+      {
+        "ok": true,
+        "name": "expression 2 speaks only inside stable mouth and complete frame"
+      },
+      {
+        "ok": true,
+        "name": "expression 3 speaks only inside stable mouth and complete frame"
+      },
+      {
+        "ok": true,
+        "name": "expression 4 speaks only inside stable mouth and complete frame"
+      },
+      {
+        "ok": true,
+        "name": "expression 5 speaks only inside stable mouth and complete frame"
+      },
+      {
+        "ok": true,
+        "name": "expression 6 speaks only inside stable mouth and complete frame"
+      },
+      {
+        "ok": true,
+        "name": "expression 7 speaks only inside stable mouth and complete frame"
+      },
+      {
+        "ok": true,
+        "name": "expression 8 speaks only inside stable mouth and complete frame"
+      },
+      {
+        "ok": true,
+        "name": "dedicated processed shriek advances in a real HTMLAudio voice"
+      },
+      {
+        "ok": true,
+        "name": "twelve timed speech beats return to live combat exactly once"
+      },
+      {
+        "ok": true,
+        "name": "actual last-pool hit begins Dracodia death and exact final line"
+      },
+      {
+        "ok": true,
+        "name": "death performs full arm head sun rupture disintegration and terminal sequence"
+      },
+      {
+        "ok": true,
+        "name": "native sun beams charred decals and explosive reels render before body is removed"
+      },
+      {
+        "ok": true,
+        "name": "portal closes and hands off to original unawarded sewer reunion"
+      },
+      {
+        "ok": true,
+        "name": "original reunion awards the finale exactly once"
+      },
+      {
+        "ok": true,
+        "name": "later flyover never repeats finale rewards"
+      },
+      {
+        "ok": true,
+        "name": "copied-form practice skips full introduction on return"
+      },
+      {
+        "ok": true,
+        "name": "co-op reform travel preserves and protects two independent ships"
+      },
+      {
+        "ok": true,
+        "name": "new mission clears cinematic radio flags and terminal flash"
+      },
+      {
+        "ok": true,
+        "name": "zero page or draw errors"
+      }
+    ],
+    "screens": [
+      "first-reform",
+      "second-reform",
+      "dracodia-monologue",
+      "split-maw-speech",
+      "death-shriek",
+      "death-pose-8",
+      "death-pose-13",
+      "death-pose-21",
+      "death-pose-24",
+      "death-pose-27",
+      "death-pose-30",
+      "death-pose-34",
+      "death-pose-38",
+      "death-pose-44",
+      "death-pose-53",
+      "death-pose-67",
+      "portal-open",
+      "sewer-reunion"
+    ],
+    "clips": [
+      {
+        "name": "first-destruction-reform",
+        "seconds": 11,
+        "fps": 5,
+        "audio": false
+      },
+      {
+        "name": "ghost-destruction-reform",
+        "seconds": 13,
+        "fps": 5,
+        "audio": false
+      },
+      {
+        "name": "dracodia-speech",
+        "seconds": 18,
+        "fps": 5,
+        "audio": false
+      },
+      {
+        "name": "dracodia-destruction",
+        "seconds": 16,
+        "fps": 5,
+        "audio": false
+      },
+      {
+        "name": "portal-home",
+        "seconds": 10,
+        "fps": 5,
+        "audio": false
+      }
+    ],
+    "audio": {
+      "uri": "assets/game/dracodia_1005/dracodia_shriek.mp3",
+      "voices": [
+        {
+          "time": 0.429427,
+          "ready": 4,
+          "paused": false,
+          "error": null
+        },
+        {
+          "time": 0,
+          "ready": 4,
+          "paused": true,
+          "error": null
+        }
+      ]
+    },
+    "events": [
+      {
+        "event": "phaseBreakup",
+        "t": 0,
+        "phase": 1
+      },
+      {
+        "event": "reformBegins",
+        "t": 0,
+        "phase": 1
+      },
+      {
+        "event": "dracodiaDialogue",
+        "t": 0,
+        "who": "COLE",
+        "text": "What in the world is that.."
+      },
+      {
+        "event": "reform-response",
+        "t": 3.4166666666666594
+      },
+      {
+        "event": "dracodiaDialogue",
+        "t": 3.4166666666666594,
+        "who": "DECKER",
+        "text": "It's...Reforming?!"
+      },
+      {
+        "event": "phaseBreakup",
+        "t": 0,
+        "phase": 2
+      },
+      {
+        "event": "reformBegins",
+        "t": 0,
+        "phase": 2
+      },
+      {
+        "event": "dracodiaDialogue",
+        "t": 0,
+        "who": "COLE",
+        "text": "......."
+      },
+      {
+        "event": "reform-response",
+        "t": 2.8166666666666615
+      },
+      {
+        "event": "dracodiaDialogue",
+        "t": 2.8166666666666615,
+        "who": "COLE",
+        "text": "No amount of training could ever have prepared me for this."
+      },
+      {
+        "event": "dracodiaSpeechBegin",
+        "t": 0
+      },
+      {
+        "event": "dracodiaDialogue",
+        "t": 0.016666666666666666,
+        "who": "DRACODIA",
+        "text": "I do not know my true origins. Millennia ago, I crossed from an unknown plane."
+      },
+      {
+        "event": "dracodiaDialogue",
+        "t": 4.316666666666657,
+        "who": "DRACODIA",
+        "text": "With my knowledge and my code, the entire universe is comprehensible."
+      },
+      {
+        "event": "dracodiaDialogue",
+        "t": 8.349999999999994,
+        "who": "DRACODIA",
+        "text": "Man will never triumph until he understands it."
+      },
+      {
+        "event": "dracodiaDialogue",
+        "t": 11.733333333333496,
+        "who": "DRACODIA",
+        "text": "I sent your world a virus... so you would fall, and see how inferior you truly are."
+      },
+      {
+        "event": "dracodiaDialogue",
+        "t": 16.183333333333696,
+        "who": "DRACODIA",
+        "text": "Surrender your control. Learn my code. Accept my knowledge. Become part of me."
+      },
+      {
+        "event": "dracodiaDialogue",
+        "t": 20.48333333333345,
+        "who": "DRACODIA",
+        "text": "The control. The knowledge. THE POWER."
+      },
+      {
+        "event": "dracodiaDialogue",
+        "t": 23.616666666666607,
+        "who": "DRACODIA",
+        "text": "FEAR ME!!"
+      },
+      {
+        "event": "dracodiaShriek",
+        "t": 23.616666666666607
+      },
+      {
+        "event": "dracodiaDialogue",
+        "t": 25.883333333333145,
+        "who": "DRACODIA",
+        "text": "I. AM. MACHINE."
+      },
+      {
+        "event": "dracodiaDialogue",
+        "t": 28.333333333333005,
+        "who": "DRACODIA",
+        "text": "I am Man."
+      },
+      {
+        "event": "dracodiaDialogue",
+        "t": 30.599999999999543,
+        "who": "DRACODIA",
+        "text": "I am EVERYTHING!"
+      },
+      {
+        "event": "dracodiaDialogue",
+        "t": 33.08333333333274,
+        "who": "DRACODIA",
+        "text": "THE WORLD WILL KNOW THE TRUE POWER OF I, DRACODIA!"
+      },
+      {
+        "event": "dracodiaDialogue",
+        "t": 36.566666666665874,
+        "who": "DRACODIA",
+        "text": "MASTER OF DESTRUCTION!!!!!!!!!"
+      },
+      {
+        "event": "dracodiaShriek",
+        "t": 36.566666666665874
+      },
+      {
+        "event": "dracodiaSpeechComplete",
+        "t": 0
+      },
+      {
+        "event": "dracodiaDialogue",
+        "t": 0,
+        "who": "COLE",
+        "text": "You. Are. Terminated!"
+      },
+      {
+        "event": "dracodiaFinalDeath",
+        "t": 0
+      },
+      {
+        "event": "dracodiaShriek",
+        "t": 0
+      },
+      {
+        "event": "death-arms-up",
+        "t": 1.4
+      },
+      {
+        "event": "death-arms-down",
+        "t": 2.5166666666666626
+      },
+      {
+        "event": "death-thrash",
+        "t": 3.21666666666666
+      },
+      {
+        "event": "dracodiaShriek",
+        "t": 3.21666666666666
+      },
+      {
+        "event": "death-head-left",
+        "t": 4.216666666666657
+      },
+      {
+        "event": "death-head-right",
+        "t": 4.816666666666655
+      },
+      {
+        "event": "death-head-up",
+        "t": 5.416666666666653
+      },
+      {
+        "event": "death-head-down",
+        "t": 6.016666666666651
+      },
+      {
+        "event": "death-head-shocked",
+        "t": 6.6166666666666485
+      },
+      {
+        "event": "death-head-rupture",
+        "t": 7.316666666666646
+      },
+      {
+        "event": "death-twin-sunbeams",
+        "t": 8.11666666666665
+      },
+      {
+        "event": "death-disintegrate",
+        "t": 10.500000000000101
+      },
+      {
+        "event": "death-chain-0",
+        "t": 10.600000000000106
+      },
+      {
+        "event": "death-chain-1",
+        "t": 11.033333333333461
+      },
+      {
+        "event": "death-chain-2",
+        "t": 11.450000000000149
+      },
+      {
+        "event": "death-chain-3",
+        "t": 11.866666666666836
+      },
+      {
+        "event": "death-chain-4",
+        "t": 12.283333333333523
+      },
+      {
+        "event": "death-chain-5",
+        "t": 12.70000000000021
+      },
+      {
+        "event": "death-chain-6",
+        "t": 13.133333333333566
+      },
+      {
+        "event": "death-terminal-flash",
+        "t": 13.30000000000024
+      },
+      {
+        "event": "dracodiaDialogue",
+        "t": 0,
+        "who": "COLE",
+        "text": "The code is collapsing! That portal is my way home."
+      },
+      {
+        "event": "portalHomeOpen",
+        "t": 0
+      }
+    ],
+    "rewardState": {
+      "state": "stageclear",
+      "clear": "stageclear",
+      "mode": "done",
+      "t": 6.549999999999982,
+      "rewarded": true,
+      "history": [
+        {
+          "event": "death-chain-5",
+          "encounter": 2,
+          "mimic": null
+        },
+        {
+          "event": "death-chain-6",
+          "encounter": 2,
+          "mimic": null
+        },
+        {
+          "event": "death-terminal-flash",
+          "encounter": 2,
+          "mimic": null
+        },
+        {
+          "event": "dracodiaDialogue",
+          "encounter": 2,
+          "mimic": null,
+          "who": "COLE",
+          "text": "The code is collapsing! That portal is my way home."
+        },
+        {
+          "event": "portalHomeOpen",
+          "encounter": 2,
+          "mimic": null
+        },
+        {
+          "event": "portalShipEnter",
+          "encounter": 2,
+          "mimic": null
+        },
+        {
+          "event": "sewerReunion",
+          "encounter": 2,
+          "mimic": null
+        },
+        {
+          "event": "complete"
+        }
+      ]
+    },
+    "errors": []
+  },
+  "review": {
+    "checks": [
+      {
+        "ok": true,
+        "name": "review lists exactly nine real pilots"
+      },
+      {
+        "ok": true,
+        "name": "review host starts actual requested engine sequence"
+      },
+      {
+        "ok": true,
+        "name": "review host retains correct outer encounter"
+      },
+      {
+        "ok": true,
+        "name": "review host blocks storage writes"
+      },
+      {
+        "ok": true,
+        "name": "review ghost starts actual requested engine sequence"
+      },
+      {
+        "ok": true,
+        "name": "review ghost retains correct outer encounter"
+      },
+      {
+        "ok": true,
+        "name": "review ghost blocks storage writes"
+      },
+      {
+        "ok": true,
+        "name": "review speech starts actual requested engine sequence"
+      },
+      {
+        "ok": true,
+        "name": "review speech retains correct outer encounter"
+      },
+      {
+        "ok": true,
+        "name": "review speech blocks storage writes"
+      },
+      {
+        "ok": true,
+        "name": "review combat starts actual requested engine sequence"
+      },
+      {
+        "ok": true,
+        "name": "review combat retains correct outer encounter"
+      },
+      {
+        "ok": true,
+        "name": "review combat blocks storage writes"
+      },
+      {
+        "ok": true,
+        "name": "live combat retains eight copied health pools without speech replay"
+      },
+      {
+        "ok": true,
+        "name": "review death starts actual requested engine sequence"
+      },
+      {
+        "ok": true,
+        "name": "review death retains correct outer encounter"
+      },
+      {
+        "ok": true,
+        "name": "review death blocks storage writes"
+      },
+      {
+        "ok": true,
+        "name": "Yuri and Decker co-op review has two independently configured seats"
+      },
+      {
+        "ok": true,
+        "name": "review has zero page or console errors"
+      }
+    ],
+    "errors": []
+  },
+  "visualInspection": [
+    "55-cell native alpha contact",
+    "All five full cinematic timeline contacts",
+    "Eleven articulated death pose captures",
+    "Final combat identity against cinematic components",
+    "New portal departure and sewer arrival"
+  ],
+  "knownTestRepairs": [
+    "Initial fixture continued past Stage Clear into Flyover. Stop at the actual results handoff.",
+    "Second fixture idled in live combat after the speech and died unattended. Stop at combat entry before applying final-pool damage. Neither failure required a reunion reward change."
+  ],
+  "limitations": [
+    "Isolated progression with artificial final-pool depletion is not an unassisted Furious clear or final balance evidence.",
+    "Silent cinematic recordings omit the audio mix; actual registered shriek playback is verified in HTMLAudio.",
+    "Twelve-beat expanded villain dialogue and creative timing await Mike review."
+  ],
+  "assetManifest": "_ART_SOURCES/dracodia_1005/generation_manifest.json",
+  "audioProvenance": "_ART_SOURCES/dracodia_1005/audio_provenance.json",
+  "runtimeHashes": {
+    "assets/dracodia_art_1005.js": "a8dd6341e3a53ea92d809e8ad7fb87c40807d83c4702d4199e5c3de2664a7214",
+    "assets/dracodia_cinematic_1005.js": "b6a4c844b1404d24dac82f5cdb257d605749684a79f535f10fe0298d8c59d65a",
+    "index.html": "b3cf19d7561a627ea3c649fe2dd7df295bb3db9e89572acd67b11ed25227baee",
+    "_BUILD_SOURCE/test_dracodia_1005.cjs": "c386aa953042e1d5b4a3cf002ace094c3feb0bcd27631a8ce48c6f2ce680803b"
+  }
+}

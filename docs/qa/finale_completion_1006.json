@@ -1,0 +1,434 @@
+{
+  "fullSuite": {
+    "assertions": 7407,
+    "exitCode": 0,
+    "finalBanner": true
+  },
+  "native": {
+    "checks": 42,
+    "failures": 0,
+    "errors": []
+  },
+  "nativeSources": [
+    "_BUILD_SOURCE/probe_finale_ai_1006.py",
+    "_BUILD_SOURCE/probe_finale_followups_1006.py"
+  ],
+  "visiblePixelsAndAlphaPreserved": 16,
+  "extractedCellHashesMatchManifest": 16,
+  "syntax": [
+    "assets/game.js",
+    "assets/finale_motion_art_1006.js",
+    "assets/finale_ai_1006.js"
+  ],
+  "sourceHashes": {
+    "assets/finale_motion_art_1006.js": "2aa32597cef47f5578fc42ff876f821d3601fca26493f30db880f6062652b789",
+    "assets/finale_ai_1006.js": "85aa53022bb333fa819b5f8b3e6e255378ea2791ae5a61afd7177b0d53e21fa9",
+    "_BUILD_SOURCE/test_finale_ai_1006.cjs": "1653dbe728c06b9019c44bf901fc7a2f67139299b0c1640294d7419950ec7fb6",
+    "_BUILD_SOURCE/probe_finale_ai_1006.py": "f27110fb218ae89de9488343b6e15ae1ecd342106de702bb33d235465892c2f7",
+    "_BUILD_SOURCE/probe_finale_followups_1006.py": "c6eee40347c94ec885e2aef088d9e876beeb280f1c6dd04ef7aa49795c77056d"
+  },
+  "copyCoverage": [
+    {
+      "pool": 1,
+      "renderKeys": [
+        "fmc_chopper",
+        "fmc_chopper",
+        "fmc_chopper",
+        "fmc_chopper",
+        "fmc_chopper",
+        "fmc_chopper",
+        "fmc_chopper"
+      ],
+      "liveReleasedOrdnance": [
+        {
+          "kind": "code",
+          "module": "left",
+          "x": 313.356365356068,
+          "y": 270.09870005373443
+        },
+        {
+          "kind": "code",
+          "module": "left",
+          "x": 303.735333718051,
+          "y": 276.38649313328136
+        },
+        {
+          "kind": "code",
+          "module": "left",
+          "x": 282.34700414704804,
+          "y": 284.6543089965557
+        },
+        {
+          "kind": "code",
+          "module": "left",
+          "x": 270.99823320911884,
+          "y": 286.47254709684387
+        },
+        {
+          "kind": "code",
+          "module": "right",
+          "x": 393.41568781911513,
+          "y": 286.76967327219666
+        },
+        {
+          "kind": "code",
+          "module": "right",
+          "x": 381.93347482311805,
+          "y": 286.26038327083154
+        },
+        {
+          "kind": "code",
+          "module": "right",
+          "x": 359.74037368059857,
+          "y": 280.49118205534944
+        },
+        {
+          "kind": "code",
+          "module": "right",
+          "x": 349.4637603053388,
+          "y": 275.34416261431727
+        }
+      ],
+      "patternEvents": [
+        {
+          "event": "donorPlan",
+          "source": 1,
+          "pattern": "SONIC CROSSGUN",
+          "count": 3,
+          "diff": "furious",
+          "tx": 340,
+          "ty": 402
+        },
+        {
+          "event": "donorBurst",
+          "source": 1,
+          "n": 1,
+          "count": 8
+        }
+      ]
+    },
+    {
+      "pool": 2,
+      "renderKeys": [
+        "fmc_furnace",
+        "fmc_furnace",
+        "fmc_furnace",
+        "fmc_furnace",
+        "fmc_furnace",
+        "fmc_furnace"
+      ],
+      "liveReleasedOrdnance": [
+        {
+          "kind": "fire",
+          "module": "left",
+          "x": 247.97999230471896,
+          "y": 235.62329706930683
+        },
+        {
+          "kind": "fire",
+          "module": "left",
+          "x": 230.08865626033662,
+          "y": 243.71291465000456
+        },
+        {
+          "kind": "fire",
+          "module": "right",
+          "x": 375.84616619816376,
+          "y": 240.32082430555488
+        },
+        {
+          "kind": "fire",
+          "module": "right",
+          "x": 357.0641067923677,
+          "y": 234.59578609327303
+        }
+      ],
+      "patternEvents": [
+        {
+          "event": "donorPlan",
+          "source": 2,
+          "pattern": "MAGMA RELAY",
+          "count": 3,
+          "diff": "furious",
+          "tx": 340,
+          "ty": 402
+        },
+        {
+          "event": "salvoDeferred",
+          "source": 2
+        },
+        {
+          "event": "donorPlan",
+          "source": 2,
+          "pattern": "MAGMA RELAY",
+          "count": 3,
+          "diff": "furious",
+          "tx": 340,
+          "ty": 402
+        },
+        {
+          "event": "donorBurst",
+          "source": 2,
+          "n": 1,
+          "count": 4
+        }
+      ]
+    },
+    {
+      "pool": 3,
+      "renderKeys": [
+        "fmc_cryo",
+        "fmc_cryo",
+        "fmc_cryo",
+        "fmc_cryo",
+        "fmc_cryo",
+        "fmc_cryo",
+        "fmc_cryo"
+      ],
+      "liveReleasedOrdnance": [
+        {
+          "kind": "ice",
+          "module": "rackL",
+          "x": 328.80986399736827,
+          "y": 252.87493120003515
+        },
+        {
+          "kind": "ice",
+          "module": "rackL",
+          "x": 319.6659896517754,
+          "y": 259.8384183683255
+        },
+        {
+          "kind": "ice",
+          "module": "rackL",
+          "x": 276.2929953732951,
+          "y": 273.2956689526185
+        },
+        {
+          "kind": "ice",
+          "module": "rackL",
+          "x": 264.8133729198922,
+          "y": 272.7309921262314
+        },
+        {
+          "kind": "ice",
+          "module": "gunL1",
+          "x": 358.0066060405268,
+          "y": 345.6434706575187
+        },
+        {
+          "kind": "ice",
+          "module": "gunL1",
+          "x": 348.80646041089835,
+          "y": 352.5324409713289
+        },
+        {
+          "kind": "ice",
+          "module": "gunL1",
+          "x": 305.32556758175383,
+          "y": 365.63687475345023
+        },
+        {
+          "kind": "ice",
+          "module": "gunL1",
+          "x": 293.85091155204077,
+          "y": 364.97895333663337
+        }
+      ],
+      "patternEvents": [
+        {
+          "event": "donorPlan",
+          "source": 3,
+          "pattern": "ICE GATES",
+          "count": 3,
+          "diff": "furious",
+          "tx": 340,
+          "ty": 402
+        },
+        {
+          "event": "donorBurst",
+          "source": 3,
+          "n": 1,
+          "count": 8
+        }
+      ]
+    },
+    {
+      "pool": 4,
+      "renderKeys": [
+        "fmc_storm_hull",
+        "fmc_storm",
+        "fmc_storm",
+        "fmc_storm",
+        "fmc_storm",
+        "fmc_storm"
+      ],
+      "liveReleasedOrdnance": [
+        {
+          "kind": "code",
+          "module": "left",
+          "x": 352.01553026528296,
+          "y": 393.3427111913237
+        },
+        {
+          "kind": "code",
+          "module": "left",
+          "x": 330.93022774024445,
+          "y": 405.93012238863946
+        },
+        {
+          "kind": "code",
+          "module": "left",
+          "x": 307.06683449546114,
+          "y": 411.72420264934715
+        },
+        {
+          "kind": "code",
+          "module": "right",
+          "x": 353.686005909255,
+          "y": 407.6581674882067
+        },
+        {
+          "kind": "code",
+          "module": "right",
+          "x": 331.88385393746915,
+          "y": 396.3577660518921
+        },
+        {
+          "kind": "code",
+          "module": "right",
+          "x": 314.3949595851763,
+          "y": 379.11910376164894
+        }
+      ],
+      "patternEvents": [
+        {
+          "event": "donorPlan",
+          "source": 4,
+          "pattern": "STORM RAKE",
+          "count": 3,
+          "diff": "furious",
+          "tx": 340,
+          "ty": 402
+        },
+        {
+          "event": "donorBurst",
+          "source": 4,
+          "n": 1,
+          "count": 6
+        }
+      ]
+    },
+    {
+      "pool": 6,
+      "renderKeys": [
+        "fmc_harrier",
+        "fmc_harrier",
+        "fmc_harrier",
+        "fmc_harrier",
+        "fmc_harrier",
+        "fmc_harrier"
+      ],
+      "liveReleasedOrdnance": [
+        {
+          "kind": "missile",
+          "module": "fanL",
+          "x": 292.48947779407865,
+          "y": 250.44199167667458
+        },
+        {
+          "kind": "missile",
+          "module": "fanL",
+          "x": 266.00112350608845,
+          "y": 261.4608741849751
+        },
+        {
+          "kind": "missile",
+          "module": "fanR",
+          "x": 451.6805628038302,
+          "y": 260.6623299481184
+        },
+        {
+          "kind": "missile",
+          "module": "fanR",
+          "x": 427.8259291254891,
+          "y": 244.72479134612686
+        }
+      ],
+      "patternEvents": [
+        {
+          "event": "donorPlan",
+          "source": 6,
+          "pattern": "MISSILE PINCER",
+          "count": 3,
+          "diff": "furious",
+          "tx": 340,
+          "ty": 402
+        },
+        {
+          "event": "donorBurst",
+          "source": 6,
+          "n": 1,
+          "count": 4
+        }
+      ]
+    },
+    {
+      "pool": 7,
+      "renderKeys": [
+        "fmc_warden",
+        "fmc_warden",
+        "fmc_warden",
+        "fmc_warden",
+        "fmc_warden",
+        "fmc_warden",
+        "fmc_warden"
+      ],
+      "liveReleasedOrdnance": [
+        {
+          "kind": "toxic",
+          "module": "left",
+          "x": 317.8093994946091,
+          "y": 337.13245734769566
+        },
+        {
+          "kind": "toxic",
+          "module": "left",
+          "x": 310.2750893382333,
+          "y": 349.83567076246504
+        },
+        {
+          "kind": "toxic",
+          "module": "left",
+          "x": 289.0619032228157,
+          "y": 370.2195365771652
+        },
+        {
+          "kind": "toxic",
+          "module": "left",
+          "x": 276.0684807674208,
+          "y": 377.2415329805601
+        }
+      ],
+      "patternEvents": [
+        {
+          "event": "donorPlan",
+          "source": 7,
+          "pattern": "TOXIC CLAW RELAY",
+          "count": 3,
+          "diff": "furious",
+          "tx": 340,
+          "ty": 402
+        },
+        {
+          "event": "donorBurst",
+          "source": 7,
+          "n": 1,
+          "count": 4
+        }
+      ]
+    }
+  ],
+  "review": "_shots/finale_ai_1006/review.html",
+  "limits": "Protected fixtures and controlled native motion poses. Not an unassisted Furious clear or final human balance approval. No commit/push."
+}

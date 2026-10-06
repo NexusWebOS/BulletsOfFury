@@ -39312,7 +39312,7 @@ function hammerBossTick(b,dt){
   else if(h.state==='chain_cool'){const rest=fur?1.35:hammerHard()?1.65:2;h.chainHeat=Math.max(0,1-h.t/rest);if(h.t>=rest)hammerArsenalNext(b);}
   else if(['core_orbit','enrage','uzi'].includes(h.state)){hammerStormStart(b);}
 
-  else if(h.state==='mega_charge'){b.x+=clamp(homeX-b.x,-360*dt,360*dt);combatWarningTick(b,'archmage-fused-wave',h.t,1.65);if(h.t>1.65){b.x=homeX;h.beamHit=false;h.shotCd=.48;hammerState(b,'mega_beam');}}
+  else if(h.state==='mega_charge'){b.x=h.hkMegaX??b.x;combatWarningTick(b,'archmage-fused-wave',h.t,1.65);if(h.t>1.65){h.beamHit=false;h.shotCd=.48;hammerState(b,'mega_beam');}}
   else if(h.state==='mega_beam'){
     if(h.shotCd<=0){h.shotCd=.58;const side=Math.random()<.5?-1:1;hammerEnergyBomb(b.x+side*48,b.y+18,Math.PI/2+side*rnd(.18,.55),3.5);}
     const w=hammerChromiumWidth(h.t,hammerEradDuration(),hammerEradWidth());
@@ -39320,11 +39320,8 @@ function hammerBossTick(b,dt){
     if(h.t>=hammerEradDuration()){if(h.mode==='chaingun')hammerChainStart(b);else hammerStormStart(b);}
   }
   else if(h.state==='spell'){
-    if(h.t<1.75){
-      const half=h.spellHalf||0,want=clamp(player.x,camLeftX()+half+36,camRightX()-half-36);
-      h.spellAnchor+=clamp(want-h.spellAnchor,-110*dt,110*dt);
-      for(const q of h.spellTargets)q.x=h.spellAnchor+q.offset;
-    }else for(const q of h.spellTargets)q.locked=true;
+    // Commit WORLD-space columns when the cast begins. Dodging never drags a warning.
+    for(const q of h.spellTargets)q.locked=h.t>=.60;
     if(h.t>=2.35){h.pillars=h.spellTargets.map(q=>({x:q.x,t:0}));hammerState(b,'spell_blast');}
   }
   else if(h.state==='spell_blast'){for(const q of h.pillars)q.t+=dt;if(h.t<1.05&&!player.dead&&h.hitCd<=0)for(const q of h.pillars)if(Math.abs(player.x-q.x)<hammerChromiumWidth(h.t,1.35,44)*.5){h.hitCd=2;playerHit();if(player.dead){player._hammerEvap=.01;player._eradicated=true;}break;}if(h.t>1.35){if(h.mode==='chaingun')hammerChainStart(b);else if(h.mode==='hammer')hammerState(b,'hammer');else hammerStormStart(b);}}
@@ -39364,14 +39361,14 @@ function hammerBossDraw(b){
   }
   if(h.state==='uzi'&&h.t<.75)combatWarningDraw(b,{x:b.x,y:b.y+8,ex:h.uziAimX==null?player.x:h.uziAimX,ey:h.uziAimY||player.y,progress:clamp(h.t/.75,0,1),width:64,alertX:b.x,alertY:b.y-80});
 
-  if(h.state==='mega_charge'){const k=clamp(h.t/1.65,0,1),w=hammerEradWidth();combatWarningDraw(b,{x:b.x,y:b.y-20,ex:b.x,ey:VH,progress:k,width:w,alertX:b.x+78,alertY:b.y-78});const ri=hammerFrame('reticle',0,k<.33?null:k<.66?'yellow':'red');for(let i=-2;i<=2;i++)hammerGroundReticleDraw(ri,b.x+i*w/5,hammerWarningFloorY(),Math.min(112,w/5),.55+.35*k);}
+  if(h.state==='mega_charge'){const k=clamp(h.t/1.65,0,1),w=hammerEradWidth();combatWarningDraw(b,{x:b.x,y:b.y-20,ex:b.x,ey:VH,progress:k,width:w,alertX:b.x+78,alertY:b.y-78}); /* Super blast uses the committed FOV lane only. */}
   if(h.state==='curl'&&h.ballWarn){const p=hammerBallLaunchPath(b),k=clamp(h.t/HAMMER_BALL_WARN,0,1);combatWarningDraw(b,{x:p.x,y:p.y,ex:p.ex,ey:p.ey,progress:k,width:112,alertX:b.x-p.dir*86,alertY:b.y-76});}
   if(b.dead){const f=Math.min(15,3+Math.floor((b.dying||0)*2.6));archBlit('death',f,b.x,b.y,210,null,0);return;}
   if(h.state==='spell'||h.state==='spell_blast'){
     const ri=hammerFrame('reticle',0,h.t<1.1?null:h.t<1.75?'yellow':'red');
     for(const q of h.state==='spell'?h.spellTargets:h.pillars){
       hammerGroundReticleDraw(ri,q.x,hammerWarningFloorY(),72,.75+.2*Math.sin((stateT||0)*24));
-      if(h.state==='spell_blast')hammerChromiumDraw(q.x,PLAY.y+PLAY.h-12,PLAY.y,44,h.t,1.35);
+      if(h.state==='spell_blast')hammerChromiumDraw(q.x,hammerWarningFloorY(),PLAY.y,44,h.t,1.35);
     }
   }
   let key='leap_strike_0922',f=0,tint=b.flash>0?'white':null,rot=0,z=300;

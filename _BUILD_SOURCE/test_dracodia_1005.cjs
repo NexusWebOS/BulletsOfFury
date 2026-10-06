@@ -1,0 +1,36 @@
+module.exports=function(vm,c,ok){
+ const fs=require('fs'),path=require('path');for(const n of ['dracodia_art_1005.js','dracodia_cinematic_1005.js'])vm.runInContext(fs.readFileSync(path.join(__dirname,'../assets/'+n),'utf8'),c,{filename:n});
+ console.log('=== Dracodia protected destruction, speech and one homecoming ===');
+ const out=JSON.parse(vm.runInContext(`JSON.stringify((()=>{
+ const out={};coopOn=false;run.pilot='cole';run.mode='campaign';diffKey='furious';DIFF=DIFFS.furious;beginStage(8);setState(GS.PLAY);BOFCinematicDirector.cancel();story=null;fb2Talk=null;s6Opening=null;player.reset();spawnBoss('vileexistence');
+ const b=boss,S=b._r30,J=j3State(b);on5FightStart(b);player.x=worldWidth()/2;player.y=VH-100;const y=player.y;B=b;
+ b._lastPart=b.parts[0];modularHit(b.hp+1);const D=dr5State(b);
+ out['actual first-shell death starts an unrewarded fall']=S.mode==='encounterFall1003j'&&J.encounter===0&&!S.rewarded;
+ pBullets=[{x:1,y:1}];eBullets=[{x:2,y:2}];const lives=run.lives;playerHit('fusionOvercharge');pShoot();r30Tick(b,.05);
+ out['cinematic protection blocks even overload death and weapons']=run.lives===lives&&pBullets.length===0&&eBullets.length===0;
+ for(let i=0;i<305;i++)r30Tick(b,.05);
+ out['first reform returns to the ghost and flies player ahead']=J.encounter===1&&S.mode==='fight'&&player.y<y&&!S.rewarded;
+ out['first two lines are verbatim']=DR5.events.some(q=>q.text==='What in the world is that..')&&DR5.events.some(q=>q.text==="It's...Reforming?!");
+ b._lastPart=b.parts[0];modularHit(b.hp+1);for(let i=0;i<430;i++)r30Tick(b,.05);
+ out['second defeat reaches protected third encounter speech']=J.encounter===2&&S.mode==='dr5Monologue'&&dr5Locked();
+ out['second two lines are verbatim']=DR5.events.some(q=>q.text==='.......')&&DR5.events.some(q=>q.text==='No amount of training could ever have prepared me for this.');
+ const t=S.t;r30DrawBoss(b);r30DrawBoss(b);out['drawing cannot advance cinematic clocks']=S.t===t;
+ const sentence=D.radio.text;D.radio.t=dr5TalkDuration(sentence)+.01;r30Tick(b,.05);out['speech progresses only on its timed interval']=D.line===1;
+ for(let i=0;i<1000&&S.mode==='dr5Monologue';i++)r30Tick(b,.05);
+ out['all twelve lines complete once before combat']=S.mode==='fight'&&D.introSeen&&DR5.events.filter(q=>q.event==='dracodiaDialogue'&&q.who==='DRACODIA').length===12;
+ const h0=J.hp[0];j3Mimic(b,5);j3Home(b);for(let i=0;i<35;i++)r30Tick(b,.05);
+ out['copied forms preserve health without replaying speech']=S.mode==='fight'&&J.hp[0]===h0&&D.introSeen;
+ J.hp=J.hp.map(()=>0);J.active=0;J.mimic=null;S.mode='fight';b.hp=1;b.enter=false;S.finale1003b=false;b._lastPart=b.parts[0];modularHit(2);
+ out['last pool enters unique death rather than an extra outer encounter']=S.mode==='dr5Death'&&J.encounter===2&&DR5.events.some(q=>q.text==='You. Are. Terminated!');
+ for(let i=0;i<324;i++)r30Tick(b,.05);
+ const events=DR5.events.map(q=>q.event);out['all head turns and both arm beats run before disintegration']=['death-arms-up','death-arms-down','death-thrash','death-head-left','death-head-right','death-head-up','death-head-down','death-head-shocked','death-head-rupture','death-twin-sunbeams','death-disintegrate'].every(e=>events.includes(e));
+ out['authored body ruptures before the home portal opens']=D.bodyGone&&S.mode==='dr5Portal'&&!S.rewarded;
+ for(let i=0;i<154;i++)r30Tick(b,.05);
+ out['new portal returns to original unrewarded reunion']=S.mode==='reunion'&&run._realmReturned&&!S.rewarded;
+ for(let i=0;i<132;i++)r30Tick(b,.05);
+ out['original reward fires exactly once']=state===GS.STAGECLEAR&&S.rewarded&&S.history.filter(q=>q.event==='complete').length===1;
+ beginStage(1);out['new mission removes previous radio and flash']=!dr5Locked()&&DR5.events.length===0&&whiteBlast===0;
+ out['head cells all retain one stable frame and crown margin']=DR5_ART.parts.slice(3).every(a=>a.w===420&&a.h===400);
+ out['distinct shriek has its own registered file and bank']=BOFA.sfx.dracodiaShriek.endsWith('dracodia_shriek.mp3')&&!!Snd.pools.dracodiaShriek;
+ return out;})())`,c));for(const [name,v]of Object.entries(out))ok(v,name);
+};

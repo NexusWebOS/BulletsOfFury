@@ -1,0 +1,421 @@
+{
+  "checks": [
+    {
+      "ok": true,
+      "name": "all original modular cells plus 16 new native motion cells decode"
+    },
+    {
+      "ok": true,
+      "name": "all 16 additional poses actually pass through native game renderer"
+    },
+    {
+      "ok": true,
+      "name": "copy 1 renders live finite authored rig on normal"
+    },
+    {
+      "ok": true,
+      "name": "copy 1 selects one separately warned followup bursts"
+    },
+    {
+      "ok": true,
+      "name": "copy 2 renders live finite authored rig on normal"
+    },
+    {
+      "ok": true,
+      "name": "copy 2 selects one separately warned followup bursts"
+    },
+    {
+      "ok": true,
+      "name": "copy 3 renders live finite authored rig on normal"
+    },
+    {
+      "ok": true,
+      "name": "copy 3 selects one separately warned followup bursts"
+    },
+    {
+      "ok": true,
+      "name": "copy 4 renders live finite authored rig on normal"
+    },
+    {
+      "ok": true,
+      "name": "copy 4 selects one separately warned followup bursts"
+    },
+    {
+      "ok": true,
+      "name": "copy 6 renders live finite authored rig on normal"
+    },
+    {
+      "ok": true,
+      "name": "copy 6 selects one separately warned followup bursts"
+    },
+    {
+      "ok": true,
+      "name": "copy 7 renders live finite authored rig on normal"
+    },
+    {
+      "ok": true,
+      "name": "copy 7 selects one separately warned followup bursts"
+    },
+    {
+      "ok": true,
+      "name": "copy 1 renders live finite authored rig on furious"
+    },
+    {
+      "ok": true,
+      "name": "copy 1 selects three separately warned followup bursts"
+    },
+    {
+      "ok": true,
+      "name": "copy 2 renders live finite authored rig on furious"
+    },
+    {
+      "ok": true,
+      "name": "copy 2 selects three separately warned followup bursts"
+    },
+    {
+      "ok": true,
+      "name": "copy 3 renders live finite authored rig on furious"
+    },
+    {
+      "ok": true,
+      "name": "copy 3 selects three separately warned followup bursts"
+    },
+    {
+      "ok": true,
+      "name": "copy 4 renders live finite authored rig on furious"
+    },
+    {
+      "ok": true,
+      "name": "copy 4 selects three separately warned followup bursts"
+    },
+    {
+      "ok": true,
+      "name": "copy 6 renders live finite authored rig on furious"
+    },
+    {
+      "ok": true,
+      "name": "copy 6 selects three separately warned followup bursts"
+    },
+    {
+      "ok": true,
+      "name": "copy 7 renders live finite authored rig on furious"
+    },
+    {
+      "ok": true,
+      "name": "copy 7 selects three separately warned followup bursts"
+    },
+    {
+      "ok": true,
+      "name": "actual Furious shield fires three independently warned code bursts"
+    },
+    {
+      "ok": true,
+      "name": "Furious native downward/rising slash leads into newly warned smite"
+    },
+    {
+      "ok": true,
+      "name": "destroyed sword cancels real native Armageddon"
+    },
+    {
+      "ok": true,
+      "name": "actual Furious copied Hammer warns both sideways strikes"
+    },
+    {
+      "ok": true,
+      "name": "actual Furious ghost uses warp early in its upgraded pattern book"
+    },
+    {
+      "ok": true,
+      "name": "actual Furious colossus fires its newly warned followup"
+    },
+    {
+      "ok": true,
+      "name": "nine pools and full cleanup remain intact"
+    },
+    {
+      "ok": true,
+      "name": "zero native browser or renderer errors"
+    }
+  ],
+  "scenes": [
+    {
+      "form": 1,
+      "diff": "normal",
+      "mode": "fight",
+      "hp": 2744,
+      "max": 2744,
+      "history": [
+        "fight",
+        "gunSweep"
+      ],
+      "events": [],
+      "keys": [
+        "fmc_chopper",
+        "fmc_chopper",
+        "fmc_chopper",
+        "fmc_chopper",
+        "fmc_chopper",
+        "fmc_chopper",
+        "fmc_chopper"
+      ],
+      "finite": true,
+      "ready": true
+    },
+    {
+      "form": 2,
+      "diff": "normal",
+      "mode": "fight",
+      "hp": 3885,
+      "max": 3885,
+      "history": [
+        "spin900"
+      ],
+      "events": [],
+      "keys": [
+        "fmc_furnace",
+        "fmc_furnace",
+        "fmc_furnace",
+        "fmc_furnace",
+        "fmc_furnace",
+        "fmc_furnace"
+      ],
+      "finite": true,
+      "ready": true
+    },
+    {
+      "form": 3,
+      "diff": "normal",
+      "mode": "fight",
+      "hp": 4752,
+      "max": 4752,
+      "history": [
+        "recover",
+        "ice-battery1002",
+        "recover"
+      ],
+      "events": [],
+      "keys": [
+        "fmc_cryo",
+        "fmc_cryo",
+        "fmc_cryo",
+        "fmc_cryo",
+        "fmc_cryo",
+        "fmc_cryo",
+        "fmc_cryo"
+      ],
+      "finite": true,
+      "ready": true
+    },
+    {
+      "form": 4,
+      "diff": "normal",
+      "mode": "fight",
+      "hp": 5808,
+      "max": 5808,
+      "history": [
+        "recover",
+        "sovereign-battery",
+        "recover"
+      ],
+      "events": [],
+      "keys": [
+        "fmc_storm_hull",
+        "fmc_storm",
+        "fmc_storm",
+        "fmc_storm",
+        "fmc_storm",
+        "fmc_storm"
+      ],
+      "finite": true,
+      "ready": true
+    },
+    {
+      "form": 6,
+      "diff": "normal",
+      "mode": "fight",
+      "hp": 6734,
+      "max": 6734,
+      "history": [
+        "fight"
+      ],
+      "events": [],
+      "keys": [
+        "fmc_harrier",
+        "fmc_harrier",
+        "fmc_harrier",
+        "fmc_harrier",
+        "fmc_harrier",
+        "fmc_harrier"
+      ],
+      "finite": true,
+      "ready": true
+    },
+    {
+      "form": 7,
+      "diff": "normal",
+      "mode": "fight",
+      "hp": 5574,
+      "max": 5574,
+      "history": [
+        "recover",
+        "chase",
+        "swipeL",
+        "swipeR"
+      ],
+      "events": [],
+      "keys": [
+        "fmc_warden",
+        "fmc_warden",
+        "fmc_warden",
+        "fmc_warden",
+        "fmc_warden",
+        "fmc_warden",
+        "fmc_warden"
+      ],
+      "finite": true,
+      "ready": true
+    },
+    {
+      "form": 1,
+      "diff": "furious",
+      "mode": "fight",
+      "hp": 3567,
+      "max": 3567,
+      "history": [
+        "fight",
+        "gunSweep"
+      ],
+      "events": [],
+      "keys": [
+        "fmc_chopper",
+        "fmc_chopper",
+        "fmc_chopper",
+        "fmc_chopper",
+        "fmc_chopper",
+        "fmc_chopper",
+        "fmc_chopper"
+      ],
+      "finite": true,
+      "ready": true
+    },
+    {
+      "form": 2,
+      "diff": "furious",
+      "mode": "fight",
+      "hp": 5048,
+      "max": 5048,
+      "history": [
+        "spin900"
+      ],
+      "events": [],
+      "keys": [
+        "fmc_furnace",
+        "fmc_furnace",
+        "fmc_furnace",
+        "fmc_furnace",
+        "fmc_furnace",
+        "fmc_furnace"
+      ],
+      "finite": true,
+      "ready": true
+    },
+    {
+      "form": 3,
+      "diff": "furious",
+      "mode": "fight",
+      "hp": 7020,
+      "max": 7020,
+      "history": [
+        "recover",
+        "ice-battery1002",
+        "recover"
+      ],
+      "events": [],
+      "keys": [
+        "fmc_cryo",
+        "fmc_cryo",
+        "fmc_cryo",
+        "fmc_cryo",
+        "fmc_cryo",
+        "fmc_cryo",
+        "fmc_cryo"
+      ],
+      "finite": true,
+      "ready": true
+    },
+    {
+      "form": 4,
+      "diff": "furious",
+      "mode": "fight",
+      "hp": 8580,
+      "max": 8580,
+      "history": [
+        "recover",
+        "sovereign-battery",
+        "recover"
+      ],
+      "events": [],
+      "keys": [
+        "fmc_storm_hull",
+        "fmc_storm",
+        "fmc_storm",
+        "fmc_storm",
+        "fmc_storm",
+        "fmc_storm"
+      ],
+      "finite": true,
+      "ready": true
+    },
+    {
+      "form": 6,
+      "diff": "furious",
+      "mode": "fight",
+      "hp": 8754,
+      "max": 8754,
+      "history": [
+        "fight",
+        "flurry",
+        "spread",
+        "beam"
+      ],
+      "events": [],
+      "keys": [
+        "fmc_harrier",
+        "fmc_harrier",
+        "fmc_harrier",
+        "fmc_harrier",
+        "fmc_harrier",
+        "fmc_harrier"
+      ],
+      "finite": true,
+      "ready": true
+    },
+    {
+      "form": 7,
+      "diff": "furious",
+      "mode": "fight",
+      "hp": 9225,
+      "max": 9225,
+      "history": [
+        "recover",
+        "chase",
+        "swipeL",
+        "swipeR"
+      ],
+      "events": [],
+      "keys": [
+        "fmc_warden",
+        "fmc_warden",
+        "fmc_warden",
+        "fmc_warden",
+        "fmc_warden",
+        "fmc_warden",
+        "fmc_warden"
+      ],
+      "finite": true,
+      "ready": true
+    }
+  ],
+  "errors": [],
+  "limitations": "Protected native encounter fixtures. No unassisted Furious clear or human balance approval claimed."
+}

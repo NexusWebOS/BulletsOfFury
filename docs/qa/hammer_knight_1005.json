@@ -1,0 +1,95 @@
+{
+  "checks": [
+    {
+      "ok": true,
+      "name": "all 49 isolated native alpha cells decode"
+    },
+    {
+      "ok": true,
+      "name": "copied Hammer body stays visibly inside the arena during activation"
+    },
+    {
+      "ok": true,
+      "name": "copied Hammer finishes source chromium activation"
+    },
+    {
+      "ok": true,
+      "name": "actual copied hammer Retina missile cancels healing and starts stun"
+    },
+    {
+      "ok": true,
+      "name": "live thrown Hammer returns toward a separate hand anchor"
+    },
+    {
+      "ok": true,
+      "name": "source emergency reserve hands off to aggressive copied stance"
+    },
+    {
+      "ok": true,
+      "name": "mandatory side retinas and direction arrows rendered in native fight"
+    },
+    {
+      "ok": true,
+      "name": "native downward-to-rising sword combo completes"
+    },
+    {
+      "ok": true,
+      "name": "generated code fireball animation actually renders"
+    },
+    {
+      "ok": true,
+      "name": "HAMR8 launches the new copy through the actual password flow"
+    },
+    {
+      "ok": true,
+      "name": "regular actual initialized encounter has committed lightning columns"
+    },
+    {
+      "ok": true,
+      "name": "regular super lightning warning draws FOV with no ground retinas"
+    },
+    {
+      "ok": true,
+      "name": "hammer actual initialized encounter has committed lightning columns"
+    },
+    {
+      "ok": true,
+      "name": "hammer super lightning warning draws FOV with no ground retinas"
+    },
+    {
+      "ok": true,
+      "name": "hama actual initialized encounter has committed lightning columns"
+    },
+    {
+      "ok": true,
+      "name": "hama super lightning warning draws FOV with no ground retinas"
+    },
+    {
+      "ok": true,
+      "name": "no native browser or renderer errors"
+    }
+  ],
+  "errors": [],
+  "limitations": "Protected encounter fixtures; no claim of an unassisted Furious clear.",
+  "regression": {
+    "assertions": 7363,
+    "exitCode": 0,
+    "finalBanner": "==== FALVA/LIZZIE BUILD OK, 0 ERRORS ====",
+    "syntax": [
+      "assets/game.js",
+      "assets/hammer_knight_1005.js",
+      "assets/hammer_knight_art_1005.js",
+      "assets/password_catalog_1005.js"
+    ]
+  },
+  "artReproduction": {
+    "nativeCells": 49,
+    "allRebuiltHashesMatch": true
+  },
+  "verifiedFileHashes": {
+    "assets/game.js": "f3db5aa53045f5a474f4a6bf4e2d8d046c8add76fdac9ec80f1fa0c93d998dab",
+    "assets/hammer_knight_1005.js": "f092241a5ccd75cd42d2eca8cf24be81c259feed9ab0c7d81ae6bfa57847a7d5",
+    "assets/hammer_knight_art_1005.js": "3a8adeff1498fd91bb97afe0b86aeb08953d38c7d64bbe82e4dcf0e3c00013e5",
+    "assets/password_catalog_1005.js": "58c00d1bd4720689560b0ed34350c0842f50a2bd5f1fb3306629614e6732f003"
+  }
+}

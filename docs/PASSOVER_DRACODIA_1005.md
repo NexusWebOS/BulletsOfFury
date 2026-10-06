@@ -1,5 +1,7 @@
 # October 5, 2026 — paused Dracodia cinematic passover
 
+**Resume update:** Mike resumed this work on October 5. The verified local integration, generation provenance and remaining review are in [DRACODIA_CINEMATIC_1005.md](DRACODIA_CINEMATIC_1005.md). The paused draft descriptions below record the original handoff and are historical.
+
 Mike explicitly asked to pause implementation and publish the current game,
 unfinished work, and this passover to GitHub. **Do not treat the draft cinematic
 as a completed or verified feature.** Resume this document before implementing
