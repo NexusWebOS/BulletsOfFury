@@ -1,0 +1,385 @@
+{
+  "key": "s4rev1006",
+  "path": "assets/game/s4_core_revival_1006/core_revival.png",
+  "cell": 362,
+  "clips": {
+    "charge": {
+      "row": 0,
+      "pivot": [
+        190,
+        218
+      ],
+      "frames": [
+        {
+          "rect": [
+            61,
+            91,
+            259,
+            250
+          ],
+          "offset": [
+            -129,
+            -127
+          ]
+        },
+        {
+          "rect": [
+            417,
+            85,
+            276,
+            260
+          ],
+          "offset": [
+            -135,
+            -133
+          ]
+        },
+        {
+          "rect": [
+            770,
+            80,
+            274,
+            276
+          ],
+          "offset": [
+            -144,
+            -138
+          ]
+        },
+        {
+          "rect": [
+            1144,
+            95,
+            252,
+            246
+          ],
+          "offset": [
+            -132,
+            -123
+          ]
+        }
+      ]
+    },
+    "conduit": {
+      "row": 1,
+      "pivot": [
+        58,
+        190
+      ],
+      "frames": [
+        {
+          "rect": [
+            41,
+            499,
+            297,
+            106
+          ],
+          "offset": [
+            -17,
+            -53
+          ]
+        },
+        {
+          "rect": [
+            403,
+            484,
+            295,
+            140
+          ],
+          "offset": [
+            -17,
+            -68
+          ]
+        },
+        {
+          "rect": [
+            763,
+            473,
+            293,
+            168
+          ],
+          "offset": [
+            -19,
+            -79
+          ]
+        },
+        {
+          "rect": [
+            1119,
+            499,
+            292,
+            102
+          ],
+          "offset": [
+            -25,
+            -53
+          ]
+        }
+      ]
+    },
+    "socket": {
+      "row": 2,
+      "pivot": [
+        190,
+        162
+      ],
+      "frames": [
+        {
+          "rect": [
+            72,
+            751,
+            253,
+            268
+          ],
+          "offset": [
+            -118,
+            -135
+          ]
+        },
+        {
+          "rect": [
+            419,
+            752,
+            263,
+            264
+          ],
+          "offset": [
+            -133,
+            -134
+          ]
+        },
+        {
+          "rect": [
+            777,
+            748,
+            269,
+            276
+          ],
+          "offset": [
+            -137,
+            -138
+          ]
+        },
+        {
+          "rect": [
+            1142,
+            755,
+            264,
+            259
+          ],
+          "offset": [
+            -134,
+            -131
+          ]
+        }
+      ]
+    }
+  },
+  "conduitEndpointSpan": 267,
+  "source": "_ART_SOURCES/s4_core_revival_1006/core_revival.png",
+  "sha256": "d66b3a70cb4e5d498a838724cc7360c9c50bbea7e4208ea6db0b4fff2f013e57",
+  "nativeSize": [
+    1448,
+    1086
+  ],
+  "grid": [
+    4,
+    3
+  ],
+  "frameQA": [
+    {
+      "cell": 0,
+      "significantAlphaBounds": [
+        61,
+        91,
+        320,
+        341
+      ],
+      "minimumSignificantPadding": 21,
+      "allAlphaBounds": [
+        0,
+        9,
+        362,
+        361
+      ]
+    },
+    {
+      "cell": 1,
+      "significantAlphaBounds": [
+        55,
+        85,
+        331,
+        345
+      ],
+      "minimumSignificantPadding": 17,
+      "allAlphaBounds": [
+        0,
+        9,
+        362,
+        362
+      ]
+    },
+    {
+      "cell": 2,
+      "significantAlphaBounds": [
+        46,
+        80,
+        320,
+        356
+      ],
+      "minimumSignificantPadding": 6,
+      "allAlphaBounds": [
+        0,
+        9,
+        362,
+        362
+      ]
+    },
+    {
+      "cell": 3,
+      "significantAlphaBounds": [
+        58,
+        95,
+        310,
+        341
+      ],
+      "minimumSignificantPadding": 21,
+      "allAlphaBounds": [
+        0,
+        25,
+        361,
+        362
+      ]
+    },
+    {
+      "cell": 4,
+      "significantAlphaBounds": [
+        41,
+        137,
+        338,
+        243
+      ],
+      "minimumSignificantPadding": 24,
+      "allAlphaBounds": [
+        0,
+        0,
+        362,
+        362
+      ]
+    },
+    {
+      "cell": 5,
+      "significantAlphaBounds": [
+        41,
+        122,
+        336,
+        262
+      ],
+      "minimumSignificantPadding": 26,
+      "allAlphaBounds": [
+        0,
+        0,
+        362,
+        362
+      ]
+    },
+    {
+      "cell": 6,
+      "significantAlphaBounds": [
+        39,
+        111,
+        332,
+        279
+      ],
+      "minimumSignificantPadding": 30,
+      "allAlphaBounds": [
+        0,
+        0,
+        362,
+        362
+      ]
+    },
+    {
+      "cell": 7,
+      "significantAlphaBounds": [
+        33,
+        137,
+        325,
+        239
+      ],
+      "minimumSignificantPadding": 33,
+      "allAlphaBounds": [
+        0,
+        0,
+        361,
+        362
+      ]
+    },
+    {
+      "cell": 8,
+      "significantAlphaBounds": [
+        72,
+        27,
+        325,
+        295
+      ],
+      "minimumSignificantPadding": 27,
+      "allAlphaBounds": [
+        25,
+        0,
+        362,
+        362
+      ]
+    },
+    {
+      "cell": 9,
+      "significantAlphaBounds": [
+        57,
+        28,
+        320,
+        292
+      ],
+      "minimumSignificantPadding": 28,
+      "allAlphaBounds": [
+        0,
+        0,
+        362,
+        362
+      ]
+    },
+    {
+      "cell": 10,
+      "significantAlphaBounds": [
+        53,
+        24,
+        322,
+        300
+      ],
+      "minimumSignificantPadding": 24,
+      "allAlphaBounds": [
+        0,
+        0,
+        362,
+        362
+      ]
+    },
+    {
+      "cell": 11,
+      "significantAlphaBounds": [
+        56,
+        31,
+        320,
+        290
+      ],
+      "minimumSignificantPadding": 31,
+      "allAlphaBounds": [
+        0,
+        0,
+        348,
+        362
+      ]
+    }
+  ],
+  "pixelProcessing": "None: source PNG copied byte-for-byte. Draw rectangles omit the low-alpha outer wisps beyond each significant-alpha bounding box, preserving all pixels with alpha >=24.",
+  "notes": "Requested dimensions and 40px fully empty padding were not fully honored. Actual equal cells measured at362px; exact cropped source rectangles prevent cross-cell sampling. Fixed per-clip pivots reviewed in native game. Cosmetic only."
+}

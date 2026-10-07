@@ -1,0 +1,158 @@
+{
+  "checks": [
+    {
+      "ok": true,
+      "name": "axel reacquires both authored mounts after five actual weapon pickup transitions"
+    },
+    {
+      "ok": true,
+      "name": "axel paused/repeated draw cannot advance barrel clock"
+    },
+    {
+      "ok": true,
+      "name": "decker reacquires both authored mounts after five actual weapon pickup transitions"
+    },
+    {
+      "ok": true,
+      "name": "decker paused/repeated draw cannot advance barrel clock"
+    },
+    {
+      "ok": true,
+      "name": "maverick reacquires both authored mounts after five actual weapon pickup transitions"
+    },
+    {
+      "ok": true,
+      "name": "maverick paused/repeated draw cannot advance barrel clock"
+    },
+    {
+      "ok": true,
+      "name": "freezer reacquires both authored mounts after five actual weapon pickup transitions"
+    },
+    {
+      "ok": true,
+      "name": "freezer paused/repeated draw cannot advance barrel clock"
+    },
+    {
+      "ok": true,
+      "name": "juggernaut reacquires both authored mounts after five actual weapon pickup transitions"
+    },
+    {
+      "ok": true,
+      "name": "juggernaut paused/repeated draw cannot advance barrel clock"
+    },
+    {
+      "ok": true,
+      "name": "yuri reacquires both authored mounts after five actual weapon pickup transitions"
+    },
+    {
+      "ok": true,
+      "name": "yuri paused/repeated draw cannot advance barrel clock"
+    },
+    {
+      "ok": true,
+      "name": "lizzie reacquires both authored mounts after five actual weapon pickup transitions"
+    },
+    {
+      "ok": true,
+      "name": "lizzie paused/repeated draw cannot advance barrel clock"
+    },
+    {
+      "ok": true,
+      "name": "falva reacquires both authored mounts after five actual weapon pickup transitions"
+    },
+    {
+      "ok": true,
+      "name": "falva paused/repeated draw cannot advance barrel clock"
+    },
+    {
+      "ok": true,
+      "name": "cole reacquires both authored mounts after five actual weapon pickup transitions"
+    },
+    {
+      "ok": true,
+      "name": "cole paused/repeated draw cannot advance barrel clock"
+    },
+    {
+      "ok": true,
+      "name": "chaingun hidden transition"
+    },
+    {
+      "ok": true,
+      "name": "chaingun rolled transition"
+    },
+    {
+      "ok": true,
+      "name": "chaingun somer transition"
+    },
+    {
+      "ok": true,
+      "name": "chaingun reset transition"
+    },
+    {
+      "ok": true,
+      "name": "co-op barrel clocks are independent per physical ship"
+    },
+    {
+      "ok": true,
+      "name": "native static projectile pixels freeze on simulation age while wall time passes"
+    },
+    {
+      "ok": true,
+      "name": "authored comet flight reel retains multiple native frames"
+    },
+    {
+      "ok": true,
+      "name": "30 FPS enemy tracer travels the same distance/age"
+    },
+    {
+      "ok": true,
+      "name": "60 FPS enemy tracer travels the same distance/age"
+    },
+    {
+      "ok": true,
+      "name": "120 FPS enemy tracer travels the same distance/age"
+    },
+    {
+      "ok": true,
+      "name": "fast hostile round crosses P2 in one step: only P2 shield takes a hit"
+    },
+    {
+      "ok": true,
+      "name": "fast player tracer hits a thin fighter crossed between frames"
+    },
+    {
+      "ok": true,
+      "name": "all-stage warning budget prioritizes two true approaches, removes dead rounds and ignores safe lanes"
+    },
+    {
+      "ok": true,
+      "name": "Stage 6 original warning symbols persist in every phase and deduplicate owner"
+    },
+    {
+      "ok": true,
+      "name": "final arena back and architectural ribs keep identical world anchors at left/center/right cameras"
+    },
+    {
+      "ok": true,
+      "name": "zero native page/console/missing asset errors"
+    }
+  ],
+  "errors": [],
+  "screens": [
+    "mount-axel",
+    "mount-decker",
+    "mount-maverick",
+    "mount-freezer",
+    "mount-juggernaut",
+    "mount-yuri",
+    "mount-lizzie",
+    "mount-falva",
+    "mount-cole",
+    "incoming-warning",
+    "committed-lane",
+    "arena-left",
+    "arena-center",
+    "arena-right"
+  ],
+  "scope": "Native controlled probes; no campaign-clear or human balance claim."
+}

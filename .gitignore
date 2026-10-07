@@ -51,3 +51,6 @@ docs/marketing_*/social/thumbs/_frames/
 
 # Regenerable 72-heading porting pages; catalog, manifest and exporter are retained.
 _ART_SOURCES/rotation5_0930/*.png
+
+# Local archived source/prototype assets; excluded from playable builds.
+UNUSED_ASSETS/

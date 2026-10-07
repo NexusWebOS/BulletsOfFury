@@ -1,0 +1,99 @@
+{
+  "checks": [
+    {
+      "ok": true,
+      "name": "six distinct raised-hand anticipation poses before release"
+    },
+    {
+      "ok": true,
+      "name": "cast physical body and Hammer hit module stay opaque"
+    },
+    {
+      "ok": true,
+      "name": "free hand reaches above helmet and keeps measured overhead emitter"
+    },
+    {
+      "ok": true,
+      "name": "void draws distinct native pixels between authored frames"
+    },
+    {
+      "ok": true,
+      "name": "paused void pixels do not follow wall clock"
+    },
+    {
+      "ok": true,
+      "name": "near pilot is pulled inward"
+    },
+    {
+      "ok": true,
+      "name": "outside pilot has zero pull outside visible perimeter"
+    },
+    {
+      "ok": true,
+      "name": "stationary unshielded pilot touching void center takes real damage"
+    },
+    {
+      "ok": true,
+      "name": "rift evaluates each living co-op pilot independently"
+    },
+    {
+      "ok": true,
+      "name": "lightning 0.5s collision matches visible phase"
+    },
+    {
+      "ok": true,
+      "name": "lightning 1.0s collision matches visible phase"
+    },
+    {
+      "ok": true,
+      "name": "lightning 1.23s collision matches visible phase"
+    },
+    {
+      "ok": true,
+      "name": "real Hammer module hit interrupts cast and removes pull/lightning immediately"
+    },
+    {
+      "ok": true,
+      "name": "encounter clear cancels spell without changing any saved pool"
+    },
+    {
+      "ok": true,
+      "name": "ordinary Hammer donor controller naturally enters the new spell"
+    },
+    {
+      "ok": true,
+      "name": "easy slowest pilot escapes with ordinary movement and holds edge without pull"
+    },
+    {
+      "ok": true,
+      "name": "normal slowest pilot escapes with ordinary movement and holds edge without pull"
+    },
+    {
+      "ok": true,
+      "name": "hard slowest pilot escapes with ordinary movement and holds edge without pull"
+    },
+    {
+      "ok": true,
+      "name": "furious slowest pilot escapes with ordinary movement and holds edge without pull"
+    },
+    {
+      "ok": true,
+      "name": "zero native page/console/missing-art errors"
+    }
+  ],
+  "errors": [],
+  "screens": [
+    "cast-0",
+    "cast-1",
+    "cast-2",
+    "cast-3",
+    "cast-4",
+    "edge-easy",
+    "edge-normal",
+    "edge-hard",
+    "edge-furious",
+    "rift-active",
+    "rift-recovery"
+  ],
+  "scope": "Native controlled states plus actual keyboard escape and real damage controls; not a full campaign clear."
+}

@@ -17,7 +17,7 @@
   #playrow{display:flex;flex-direction:row;align-items:center;gap:16px;position:relative;z-index:2;}
   .side{display:block;object-fit:contain;flex:0 0 auto;filter:drop-shadow(0 6px 16px rgba(0,0,0,.55));}
   /* black window: HUD row (HUD strip + equip box) on top, divider, native game canvas below */
-  #game-frame{position:absolute;background:#000;overflow:hidden;z-index:1;
+  #game-frame{position:relative;flex:0 0 auto;background:#000;overflow:hidden;z-index:1;
     display:flex;flex-direction:column;align-items:flex-start;}
   #hud-row{display:flex;flex-direction:row;align-items:flex-start;justify-content:flex-start;flex:0 0 auto;}
   #hud-wrap{position:relative;flex:0 0 auto;background:#000;}
@@ -36,7 +36,7 @@
      at, so it is the one that needed it. */
   #screen-area canvas{display:block;position:absolute;left:50%;top:50%;
     transform:translate(-50%,-50%);image-rendering:pixelated;background:#000;}
-  #hint{position:fixed;left:8px;right:8px;bottom:6px;display:flex;flex-wrap:wrap;justify-content:center;gap:12px;font-size:10px;color:#afbdce;pointer-events:none;}
+  #hint{position:fixed;left:8px;right:8px;bottom:6px;display:flex;flex-wrap:wrap;justify-content:center;gap:12px;min-height:22px;visibility:hidden;font-size:10px;color:#afbdce;pointer-events:none;}
   #hint span{display:inline-flex;align-items:center;gap:5px;} #hint canvas{image-rendering:pixelated;}
 
   /* ---- FULLSCREEN button ---- */
@@ -97,7 +97,7 @@
     font-family:'BOFmil',monospace; letter-spacing:.14em; line-height:1.5;
     font-size:clamp(9px,1.05vw,15px);
     color:#8e9bb3; text-shadow:0 0 10px rgba(120,160,255,.22);
-    flex:0 0 auto; white-space:nowrap;
+    flex:1 1 0; min-width:0; white-space:nowrap;
   }
   #credit-left{text-align:right;}
   #credit-right{text-align:left;}
@@ -220,6 +220,101 @@
   requestAnimationFrame(tick);
 })();
 </script>
+<!-- Establish the complete shell before scripts or images can delay first paint. -->
+<script>
+(function(){
+  var GA=480/512, SIDE_A=335/1042, MARQ_A=693/179, HUD_R=62/512, gap=16, FR=14, mgap=6, MSCALE=1.12;
+  function isFS(){ return document.body.classList.contains('fs'); }
+  /* LAYOUT WITHOUT THE CABINET (drop 0724dk).
+     The old version mapped the play area into a hard-coded window rect inside the cabinet image
+     (WIN_L/T/R/B as fractions of a 1448x1086 plate) and positioned #game-frame absolutely into it.
+     That is gone. The room is now a plain flex row and the play window is simply sized to fit the
+     viewport at the game's own aspect, so what you click is where it looks. */
+  var GW=480, GH=512, HUDH=62, DIVH=6;
+  function fit(){
+    var vw=innerWidth, vh=innerHeight;
+    function S(id,w,h){ var e=document.getElementById(id); if(e){ e.style.width=w+'px'; e.style.height=h+'px'; } }
+    if(document.body.classList.contains('cinematic-full')||document.body.classList.contains('campaign-full')){
+      var gf0=document.getElementById('game-frame'),sa0=document.getElementById('screen-area'),scr0=document.getElementById('screen');
+      if(gf0){gf0.style.position='fixed';gf0.style.left='0px';gf0.style.top='0px';gf0.style.width=vw+'px';gf0.style.height=vh+'px';}
+      if(sa0){sa0.style.width=vw+'px';sa0.style.height=vh+'px';sa0.style.marginLeft='0px';}
+      if(scr0){scr0.style.width=vw+'px';scr0.style.height=vh+'px';}
+      return;
+    }
+    var reserve = isFS() ? 0 : Math.min(vw*0.34, 420);      // room for the credit rails
+    var availW = Math.max(200, vw - reserve);
+    var availH = vh * (isFS()? 1.0 : 0.94);
+    var totalH = GH + HUDH + DIVH;
+    var sc = Math.min(availW/GW, availH/totalH);
+    var gw = Math.round(GW*sc), gh = Math.round(GH*sc);
+    var hh = Math.round(HUDH*sc), dh = Math.round(DIVH*sc);
+    var gf=document.getElementById('game-frame');
+    if(gf){ gf.style.position='relative'; gf.style.left='0px'; gf.style.top='0px'; }
+    S('game-frame', gw, gh+hh+dh);
+    S('hud-row', gw, hh); S('hud-wrap', gw, hh);
+    S('hud-div', gw, dh);
+    S('screen-area', gw, gh);
+    var sa=document.getElementById('screen-area'); if(sa) sa.style.marginLeft='0px';
+    var scr=document.getElementById('screen'); if(scr){ scr.style.width=gw+'px'; scr.style.height=gh+'px'; }
+    var hud=document.getElementById('hud');     if(hud){ hud.style.width=gw+'px';  hud.style.height=hh+'px'; }
+  }
+  /* The old layout function was named L and the listeners still referenced it; my replacement is
+     fit(). Aliasing keeps every existing call site working instead of hunting them all. */
+  var L = fit;
+  window.__bofFit=fit;
+  window.addEventListener('resize',L); window.addEventListener('orientationchange',L);
+  fit();
+
+  // ---- FULLSCREEN toggle ----
+  var root=document.getElementById('room');
+  function fsElement(){ return document.getElementById('room'); }
+  function inNativeFS(){ return !!(document.fullscreenElement||document.webkitFullscreenElement||document.mozFullScreenElement||document.msFullscreenElement); }
+  function requestFS(el){
+    if(el.requestFullscreen) return el.requestFullscreen();
+    if(el.webkitRequestFullscreen) return el.webkitRequestFullscreen();
+    if(el.mozRequestFullScreen) return el.mozRequestFullScreen();
+    if(el.msRequestFullscreen) return el.msRequestFullscreen();
+  }
+  function exitFS(){
+    if(document.exitFullscreen) return document.exitFullscreen();
+    if(document.webkitExitFullscreen) return document.webkitExitFullscreen();
+    if(document.mozCancelFullScreen) return document.mozCancelFullScreen();
+    if(document.msExitFullscreen) return document.msExitFullscreen();
+  }
+  function toggleFS(){
+    if(inNativeFS()){ exitFS(); }
+    else { try{ var p=requestFS(fsElement()); if(p&&p.catch) p.catch(function(){ /* fallback: CSS-only fill */ document.body.classList.add('fs'); syncFSicon(); L(); }); }catch(e){ document.body.classList.add('fs'); } }
+  }
+  function syncFSicon(){
+    var on=document.body.classList.contains('fs');
+    var a=document.getElementById('fs-icon-enter'), b=document.getElementById('fs-icon-exit');
+    if(a) a.style.display=on?'none':'block';
+    if(b) b.style.display=on?'block':'none';
+  }
+  function onFSchange(){
+    if(inNativeFS()) document.body.classList.add('fs'); else document.body.classList.remove('fs');
+    syncFSicon(); L(); setTimeout(L,50);
+  }
+  document.addEventListener('fullscreenchange',onFSchange);
+  document.addEventListener('webkitfullscreenchange',onFSchange);
+  document.addEventListener('mozfullscreenchange',onFSchange);
+  document.addEventListener('MSFullscreenChange',onFSchange);
+  var fsBtn=document.getElementById('fs-btn');
+  if(fsBtn) fsBtn.addEventListener('click',function(e){ e.preventDefault(); e.stopPropagation(); toggleFS(); });
+  // F key toggles fullscreen (ignored while typing a password, handled by game input otherwise)
+  window.addEventListener('keydown',function(e){
+    if((e.key==='f'||e.key==='F') && !e.ctrlKey && !e.metaKey && !e.altKey){
+      var st=(window.BOFGAME&&window.BOFGAME.state)||'';
+      // don't hijack F if a text field is focused
+      var ae=document.activeElement; if(ae&&(ae.tagName==='INPUT'||ae.tagName==='TEXTAREA')) return;
+      e.preventDefault(); toggleFS();
+    }
+  });
+  window.fsToggle=toggleFS;
+
+  L();
+})();
+</script>
 <script src="assets/manifest.js"></script>
 <script src="assets/stagefonts_v4.js"></script>
 <script src="assets/game/fonts/bmf_maps.js"></script>
@@ -280,7 +375,9 @@
 <script src="assets/campaign_world_0930.js"></script>
 <script src="assets/feedback_1001b.js"></script>
 <script src="assets/feedback_art_1002.js"></script>
+<script src="assets/s4_core_revival_art_1006.js"></script>
 <script src="assets/feedback_1002.js"></script>
+<script src="assets/s4_core_revival_1006.js"></script>
 <script src="assets/icon_ink_1002.js"></script>
 <script src="assets/feedback_claude_1003.js"></script>
 <script src="assets/build_integration_1003.js"></script>
@@ -330,6 +427,14 @@
 <script src="assets/hammer_knight_1005.js"></script>
 <script src="assets/finale_motion_art_1006.js"></script>
 <script src="assets/finale_ai_1006.js"></script>
+<script src="assets/engine_combat_1007.js"></script>
+<script src="assets/hardcorps_bosses_1007.js"></script>
+<script src="assets/lost_airbase_1007.js"></script>
+<script src="assets/rebel_air_1007.js"></script>
+<script src="assets/hardcorps_finale_patterns_1007.js"></script>
+<script src="assets/hardcorps_finale_art_1007.js"></script>
+<script src="assets/hardcorps_finale_1007.js"></script>
+<script src="assets/finale_transform_1007.js"></script>
 <script src="assets/campaign_flags_art_1004f.js"></script>
 <script src="assets/campaign_landscape_1004e.js"></script>
 <script src="assets/campaign_controls_1004h.js"></script>
@@ -337,100 +442,7 @@
 <script src="assets/online-config.js"></script>
 <script src="assets/online.js"></script>
 <!-- Campaign world now renders once, on the full-width game canvas. -->
-<script>
-(function(){
-  var GA=480/512, SIDE_A=335/1042, MARQ_A=693/179, HUD_R=62/512, gap=16, FR=14, mgap=6, MSCALE=1.12;
-  function isFS(){ return document.body.classList.contains('fs'); }
-  /* LAYOUT WITHOUT THE CABINET (drop 0724dk).
-     The old version mapped the play area into a hard-coded window rect inside the cabinet image
-     (WIN_L/T/R/B as fractions of a 1448x1086 plate) and positioned #game-frame absolutely into it.
-     That is gone. The room is now a plain flex row and the play window is simply sized to fit the
-     viewport at the game's own aspect, so what you click is where it looks. */
-  var GW=480, GH=512, HUDH=62, DIVH=6;
-  function fit(){
-    var vw=innerWidth, vh=innerHeight;
-    function S(id,w,h){ var e=document.getElementById(id); if(e){ e.style.width=w+'px'; e.style.height=h+'px'; } }
-    if(document.body.classList.contains('cinematic-full')||document.body.classList.contains('campaign-full')){
-      var gf0=document.getElementById('game-frame'),sa0=document.getElementById('screen-area'),scr0=document.getElementById('screen');
-      if(gf0){gf0.style.position='fixed';gf0.style.left='0px';gf0.style.top='0px';gf0.style.width=vw+'px';gf0.style.height=vh+'px';}
-      if(sa0){sa0.style.width=vw+'px';sa0.style.height=vh+'px';sa0.style.marginLeft='0px';}
-      if(scr0){scr0.style.width=vw+'px';scr0.style.height=vh+'px';}
-      return;
-    }
-    var reserve = isFS() ? 0 : Math.min(vw*0.34, 420);      // room for the credit rails
-    var availW = Math.max(200, vw - reserve);
-    var availH = vh * (isFS()? 1.0 : 0.94);
-    var totalH = GH + HUDH + DIVH;
-    var sc = Math.min(availW/GW, availH/totalH);
-    var gw = Math.round(GW*sc), gh = Math.round(GH*sc);
-    var hh = Math.round(HUDH*sc), dh = Math.round(DIVH*sc);
-    var gf=document.getElementById('game-frame');
-    if(gf){ gf.style.position='relative'; gf.style.left='0px'; gf.style.top='0px'; }
-    S('game-frame', gw, gh+hh+dh);
-    S('hud-row', gw, hh); S('hud-wrap', gw, hh);
-    S('hud-div', gw, dh);
-    S('screen-area', gw, gh);
-    var sa=document.getElementById('screen-area'); if(sa) sa.style.marginLeft='0px';
-    var scr=document.getElementById('screen'); if(scr){ scr.style.width=gw+'px'; scr.style.height=gh+'px'; }
-    var hud=document.getElementById('hud');     if(hud){ hud.style.width=gw+'px';  hud.style.height=hh+'px'; }
-  }
-  /* The old layout function was named L and the listeners still referenced it; my replacement is
-     fit(). Aliasing keeps every existing call site working instead of hunting them all. */
-  var L = fit;
-  window.__bofFit=fit;
-  window.addEventListener('resize',L); window.addEventListener('load',L);
-  fit();
 
-  // ---- FULLSCREEN toggle ----
-  var root=document.getElementById('room');
-  function fsElement(){ return document.getElementById('room'); }
-  function inNativeFS(){ return !!(document.fullscreenElement||document.webkitFullscreenElement||document.mozFullScreenElement||document.msFullscreenElement); }
-  function requestFS(el){
-    if(el.requestFullscreen) return el.requestFullscreen();
-    if(el.webkitRequestFullscreen) return el.webkitRequestFullscreen();
-    if(el.mozRequestFullScreen) return el.mozRequestFullScreen();
-    if(el.msRequestFullscreen) return el.msRequestFullscreen();
-  }
-  function exitFS(){
-    if(document.exitFullscreen) return document.exitFullscreen();
-    if(document.webkitExitFullscreen) return document.webkitExitFullscreen();
-    if(document.mozCancelFullScreen) return document.mozCancelFullScreen();
-    if(document.msExitFullscreen) return document.msExitFullscreen();
-  }
-  function toggleFS(){
-    if(inNativeFS()){ exitFS(); }
-    else { try{ var p=requestFS(fsElement()); if(p&&p.catch) p.catch(function(){ /* fallback: CSS-only fill */ document.body.classList.add('fs'); syncFSicon(); L(); }); }catch(e){ document.body.classList.add('fs'); } }
-  }
-  function syncFSicon(){
-    var on=document.body.classList.contains('fs');
-    var a=document.getElementById('fs-icon-enter'), b=document.getElementById('fs-icon-exit');
-    if(a) a.style.display=on?'none':'block';
-    if(b) b.style.display=on?'block':'none';
-  }
-  function onFSchange(){
-    if(inNativeFS()) document.body.classList.add('fs'); else document.body.classList.remove('fs');
-    syncFSicon(); L(); setTimeout(L,50);
-  }
-  document.addEventListener('fullscreenchange',onFSchange);
-  document.addEventListener('webkitfullscreenchange',onFSchange);
-  document.addEventListener('mozfullscreenchange',onFSchange);
-  document.addEventListener('MSFullscreenChange',onFSchange);
-  var fsBtn=document.getElementById('fs-btn');
-  if(fsBtn) fsBtn.addEventListener('click',function(e){ e.preventDefault(); e.stopPropagation(); toggleFS(); });
-  // F key toggles fullscreen (ignored while typing a password, handled by game input otherwise)
-  window.addEventListener('keydown',function(e){
-    if((e.key==='f'||e.key==='F') && !e.ctrlKey && !e.metaKey && !e.altKey){
-      var st=(window.BOFGAME&&window.BOFGAME.state)||'';
-      // don't hijack F if a text field is focused
-      var ae=document.activeElement; if(ae&&(ae.tagName==='INPUT'||ae.tagName==='TEXTAREA')) return;
-      e.preventDefault(); toggleFS();
-    }
-  });
-  window.fsToggle=toggleFS;
-
-  L(); setTimeout(L,60); setTimeout(L,300);
-})();
-</script>
 <script>
 (function(){
   if(location.protocol!=='file:')return;

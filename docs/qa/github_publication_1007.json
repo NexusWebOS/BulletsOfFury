@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-07",
+  "baseCommit": "3d61ff81f71a41fad1c1d0000cde0c4c89235ffa",
+  "suite": {
+    "passed": 7681,
+    "failed": 0,
+    "exitCode": 0,
+    "finalBanner": true,
+    "localArchiveAndStudyPathsHidden": true
+  },
+  "syntaxCheckedFiles": 29,
+  "nativeEncounterChecks": 563,
+  "nativeStartupChecks": 32,
+  "nativeEvidence": [
+    "docs/qa/hardcorps_upgrade_1007.json",
+    "docs/qa/startup_layout_1007.json"
+  ],
+  "archiveAudit": {
+    "deletedTrackedAssets": 4978,
+    "archiveHashesMatch": true,
+    "newFiles": 128,
+    "modifiedFiles": 20,
+    "largestPublicationFile": 4942409,
+    "runtimeMatchesNativeQA": true,
+    "secretScanFlags": [],
+    "furyshipApprovedSourceSha256": "95a0afa9fdf7bad73c6303bf9976b8385dc3b7bff0fd87f95515af677d6b1acf"
+  },
+  "validationCorrections": [
+    "Approved Furyship donor compared by pre-cleanup SHA-256.",
+    "Five asset sweeps exclude only the three exact retired editor-sheet paths; all production paths remain mandatory.",
+    "Road-patrol fixture uses a fixed seed, eastbound start, and empty player-projectile pool; gameplay controller is unchanged."
+  ],
+  "sha256": {
+    "assets/game.js": "02f16d1e640c8a41fa5a3c3a37acc179c5bb67897cf458a37a9e14e015232ae4",
+    "index.html": "ae17fa73cc647539a7979481838654d6a7de789beb3f23f51285c43a4e40b0f4",
+    "_BUILD_SOURCE/test_fl.js": "666652d755838a6cf3653d9895c70cb6746bced6a501ff341c28dd4a8d6b0872"
+  },
+  "excludedLocalPaths": [
+    "UNUSED_ASSETS/",
+    "_shots/",
+    "_STAGING/contra_study_1005/"
+  ],
+  "scope": "Controlled regressions and native playtests; not an unassisted full campaign clear. The existing portable ZIP predates this gameplay batch."
+}

@@ -42,5 +42,6 @@ module.exports=function(vm,ctxv,ok){
  for(const [name,pass] of Object.entries(out))ok(pass,name);
  const manifest=JSON.parse(fs.readFileSync(path.join(__dirname,'../assets/game/campaign_landscape_1004e/manifest.json'),'utf8'));
  ok(manifest.sources.length===4&&manifest.sources.every(s=>s.sha256.length===64),'all four authored generation sources have archived hashes');
- ok(manifest.assets.every(a=>fs.existsSync(path.join(__dirname,'../assets/game/campaign_landscape_1004e/',a.key==='landscape'?'landscape.png':'region_'+a.key+'.png'))),'every registered terrain and landmark output exists');
+ const currentFiles=JSON.parse(vm.runInContext('JSON.stringify(MAP4E.keys.flatMap(k=>[\"\",\"_lock\",\"_shadow\",\"_glow\"].map(v=>XART._src[\"map4e_region_\"+k+v])).concat(XART._src.map4e_landscape))',ctxv));
+ ok(currentFiles.every(f=>typeof f==='string'&&fs.existsSync(path.join(__dirname,'..',f))),'every currently registered terrain and landmark output exists');
 };

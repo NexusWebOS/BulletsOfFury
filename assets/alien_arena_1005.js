@@ -16,11 +16,13 @@ function aa5Arena(b){const J=j3State(b);return run.stage===8&&J?.encounter===2&&
 function aa5VoidFrame(t){return 9+Math.floor(t*8)%3;}
 function aa5ArenaDraw(b){
  const J=j3State(b),S=b._r30,t=J.aa5Clock||0,fade=S.mode==='voidIntro1005'?clamp((S.t-1.4)/1.6,0,1):1;
- const left=camLeftX(),top=viewTopY(),w=viewW(),h=viewH(),cx=left+w/2,cy=top+h/2;
+ // Architecture belongs to world coordinates. Only the normal camera moves it;
+ // re-centering on camLeftX made both walls follow the pilot.
+ const left=0,top=viewTopY(),w=worldWidth(),h=viewH(),cx=w/2,cy=top+h/2;
  ctx.save();ctx.beginPath();ctx.rect(left-12,top-12,w+24,h+24);ctx.clip();ctx.globalAlpha*=fade;
  // Opaque whole authored backdrop is the clear; no sky or preceding frames can
  // leak through its black central corridor at either supported camera zoom.
- aa5Cell('back',0,cx+Math.sin(t*.17)*4,cy+Math.sin(t*.13)*6,w+40,h+50);
+ aa5Cell('back',0,cx,cy,w+40,h+50);
  aa5Cell('void',aa5VoidFrame(t),cx+Math.sin(t*.21)*7,top+h*.49,w*1.10,w*1.10,t*.055,.12);
  for(let i=0;i<8;i++){
   const side=i%2?-1:1,row=Math.floor(i/2),x=cx+side*w*(row%2?.39:.32);
@@ -29,7 +31,7 @@ function aa5ArenaDraw(b){
  }
  // Near ribs have independent larger motion; the alpha center preserves the
  // dark vortex instead of covering it with a second opaque illustration.
- aa5Cell('front',0,cx+Math.sin(t*.31)*8,cy+Math.sin(t*.23)*14,w+42,h+72,0,.72);
+ aa5Cell('front',0,cx,cy,w+42,h+72,0,.72);
  ctx.restore();J.aa5ArenaDrawn=true;
 }
 drawBG=function(dt){const r=AA5_BASE.bg.apply(this,arguments);if(aa5Arena(boss))aa5ArenaDraw(boss);return r;};

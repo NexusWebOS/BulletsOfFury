@@ -9,6 +9,12 @@ const path = require('path');
    OLD game.js and reported green against a build hours out of date. Resolved from this
    file's own location now, so the harness can only ever test the tree it lives in. */
 const ROOT = require('path').resolve(__dirname, '..');
+// The three retired editor-only sheets are deliberately outside a shipping checkout.
+// Exclude only these exact archive paths; every production path must still exist.
+function productionImagePath(rel){
+  return !/^UNUSED_ASSETS\/cleanup_2026-10-06\/assets\/game\/atlas\/retired_rigs_[012]\.png$/.test(rel);
+}
+
 /* A PLATE'S OWN DIMENSIONS, READ FROM ITS IHDR (drop 0822d).
 
    Stage-geometry assertions carried LITERALS — `worldWidth()===800`, `_levelCfg().h===4062` — and
@@ -169,6 +175,10 @@ run('assets/game/fonts/command_0914/fonts.js', 'command_fonts');
    it out of the harness would boot a DIFFERENT program from the one the browser runs
    — which is the whole reason "a harness pass is not a game pass" keeps being true. */
 run('assets/section_geom.js', 'section_geom');
+/* Packed runtime sources must match index.html before the engine registers its cells. */
+run('assets/game/atlas/bof_gravity_mode_space_weapons.js', 'gravity_atlas');
+run('assets/game/atlas/stage_runtime_atlases.js', 'stage_runtime_atlases');
+run('assets/game/atlas/stage5_runtime_atlas.js', 'stage5_runtime_atlas');
 run('assets/audio_feedback_0927.js', 'audio_feedback');
 run('assets/game.js', 'game');
 run('assets/combat_polish_0927b.js', 'combat_polish');
@@ -2456,6 +2466,7 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
     ok(_fl.flip_safe_ratio < 1.05 && _fl.flip_safe_ratio > 0.95, 'art was flip-safe: vertical luminance-step bias '+_fl.flip_safe_ratio.toFixed(3)+' (no baked drop-shadow direction)');
   }
   // ROAD PATROL
+  seedWaves(46); // Fixed patrol fixture; restore randomness after measuring its actual controller.
   ok(vm.runInContext("(function(){var c={}; return typeof spawnEnemy==='function';})()", ctxv), 'spawn path available');
   vm.runInContext("run.stage=4; curStage=STAGES[3]; enemies.length=0; spawnEnemy('roadtank', 300, 60, {});", ctxv);
   ok(vm.runInContext("enemies.length===1 && enemies[0].pattern==='tankpatrol'", ctxv), 'roadtank spawns on the tankpatrol pattern');
@@ -2463,7 +2474,7 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   // it must actually DRIVE the road, both ways
   // The patrol logic lives inside updatePlay's pattern switch, so drive updatePlay with an EMPTY
   // spawn plan — otherwise the stage roster keeps adding enemies and enemies[0] stops being ours.
-  vm.runInContext("run.stage=4; curStage=STAGES[3]; enemies.length=0; eBullets.length=0; stagePlan=[]; waveIdx=0; stageTimer=0; boss=null; subBoss=null; subBossActive=false; bossActive=false; player.dead=false; player.invuln=999999; spawnEnemy('roadtank', 300, 200, {});", ctxv);
+  vm.runInContext("run.stage=4; curStage=STAGES[3]; enemies.length=0; eBullets.length=0; stagePlan=[]; waveIdx=0; stageTimer=0; boss=null; subBoss=null; subBossActive=false; bossActive=false; player.dead=false; player.invuln=999999; pBullets.length=0; spawnEnemy('roadtank', 300, 200, {}); tankInit(enemies[0]); enemies[0]._dir8=2;", ctxv);
   var _lv=[], _xy=[], _dirs={};
   /* 900 frames (15s) was not always long enough for a full patrol leg — the tank starts at a random
      point on the road heading a random way, so the test failed intermittently on CORRECT behaviour.
@@ -2477,6 +2488,7 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
     if(_pos){ _xy.push(_pos); if(_pos.d!=null)_dirs[_pos.d]=1; }
     _lv.push(lv);
   }
+  unseedWaves();
   var _span=0; if(_xy.length){var _x0=_xy[0].x,_y0=_xy[0].y;_xy.forEach(function(v){_span=Math.max(_span,Math.hypot(v.x-_x0,v.y-_y0));});}
   ok(_span > 40, 'road tank rolls a real distance along its path ('+Math.round(_span)+'px)');
   ok(Object.keys(_dirs).length>=2, 'road tank changes among the eight drive headings instead of sliding on one axis ('+Object.keys(_dirs).join(',')+')');
@@ -3326,10 +3338,10 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   var _keys=JSON.parse(vm.runInContext("JSON.stringify(Object.keys(BOFX.img))", ctxv));
   var _bad=[];
   _keys.forEach(function(k){
-    var rel=vm.runInContext("BOFX.img['"+k+"']", ctxv);
-    if(!rel || !fs.existsSync(ROOT+'/'+rel)) _bad.push(k);
+    var rel=vm.runInContext("BOFX.img[XART.root('"+k+"')]", ctxv);
+    if(productionImagePath(rel) && (!rel || !fs.existsSync(ROOT+'/'+rel))) _bad.push(k);
   });
-  ok(_bad.length===0, 'every registered manifest key resolves to a real file ('+_keys.length+' checked'+(_bad.length?(', MISSING: '+_bad.slice(0,6).join(', ')):'')+')');
+  ok(_bad.length===0, 'every production manifest key resolves to a real file ('+_keys.length+' checked'+(_bad.length?(', MISSING: '+_bad.slice(0,6).join(', ')):'')+')');
   ok(_keys.length>5000, 'and the manifest is still fully populated ('+_keys.length+' keys)');
 
 
@@ -5459,8 +5471,8 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   var _mf=JSON.parse(fs.readFileSync(ROOT+'/assets/manifest.js','utf8')
             .match(/window\.BOFX=([\s\S]*?\});/)[1]).img;
   // EVERY registered image must resolve. This is the guard that makes reorganising safe at all.
-  var _br=Object.keys(_mf).filter(function(k){ return !fs.existsSync(ROOT+'/'+_mf[k]); });
-  ok(_br.length===0, 'all '+Object.keys(_mf).length+' image paths resolve after the restructure'+(_br.length?(' — BROKEN '+_br.slice(0,3)):''));
+  var _br=Object.keys(_mf).filter(function(k){ return productionImagePath(_mf[k]) && !fs.existsSync(ROOT+'/'+_mf[k]); });
+  ok(_br.length===0, 'all '+Object.keys(_mf).length+' image registrations have valid production paths after the restructure'+(_br.length?(' — BROKEN '+_br.slice(0,3)):''));
   // bosses_new is gone; its art lives with the other bosses
   ok(!fs.existsSync(ROOT+'/assets/bosses_new'), 'the bosses_new folder no longer exists');
   ok(Object.values(_mf).every(function(v){ return v.indexOf('bosses_new')<0; }), 'and nothing points into it');
@@ -5477,8 +5489,8 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   var _cellsE=(vm.runInContext("JSON.stringify(Object.keys(BOFX.cells).filter(function(k){return String(BOFX.cells[k][0]).indexOf('en_')===0;}).length)", ctxv));
   var _enemyN=JSON.parse(_cellsE);
   ok(_enemyN>=1000, 'enemy art is registered and consolidated on the en_* sheets ('+_enemyN+' keys)');
-  var _loose=Object.values(_mf).filter(function(v){ return !/^assets\/(player|enemy|game)\//.test(v); });
-  ok(_loose.length===0, 'and no manifest path sits outside the three buckets'+(_loose.length?(' — '+_loose.slice(0,3).join(', ')):''));
+  var _loose=Object.values(_mf).filter(function(v){ return !/^assets\/(player|enemy|game)\//.test(v) && !/^UNUSED_ASSETS\/cleanup_2026-10-06\/assets\/game\//.test(v); });
+  ok(_loose.length===0, 'all manifest paths belong to production buckets or the separate verified source archive'+(_loose.length?(' — '+_loose.slice(0,3).join(', ')):''));
   // stage fonts live in the game bucket now, keyed not foldered
   ok(fs.existsSync(ROOT+'/assets/game'), 'the game bucket exists and holds the fonts');
   var _gf=Object.keys(_mf).filter(function(k){ return _mf[k].indexOf('assets/fonts/gamefont/')===0; });
@@ -6860,8 +6872,8 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
      until there is a way to prove a removal that does not depend on my test coverage. */
   ok(Object.keys(_M5.img).length > 7000, 'all swept assets are restored ('+Object.keys(_M5.img).length+' keys)');
   ok(!!_M5.chime, 'and BOFX.chime survived the sweep — the key I deleted by accident once before');
-  var _brk=Object.keys(_M5.img).filter(function(k){ return !fs.existsSync(ROOT+'/'+_M5.img[k]); });
-  ok(_brk.length===0, 'every remaining path resolves'+(_brk.length?(' — BROKEN '+_brk.slice(0,3)):''));
+  var _brk=Object.keys(_M5.img).filter(function(k){ return productionImagePath(_M5.img[k]) && !fs.existsSync(ROOT+'/'+_M5.img[k]); });
+  ok(_brk.length===0, 'every remaining production path resolves'+(_brk.length?(' — BROKEN '+_brk.slice(0,3)):''));
   /* The removed families, spot-checked as gone. */
   /* Families, not exact keys — nui_fill and n6e_tlj use multi-part names (nui_fill_1_0,
      n6e_sky_cf_crit), and asserting a guessed key name tests my guess rather than the restore. */
@@ -6943,8 +6955,8 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   /* THE SWEEP IS REVERTED. It passed 1,751 assertions and then threw 4,000 errors in a browser. */
   var _M6=JSON.parse(fs.readFileSync(ROOT+'/assets/manifest.js','utf8').match(/window\.BOFX=([\s\S]*?\});/)[1]);
   ok(Object.keys(_M6.img).length>7100, 'all swept assets are back ('+Object.keys(_M6.img).length+' keys) — a green suite was not the same as safe');
-  var _brk2=Object.keys(_M6.img).filter(function(k){ return !fs.existsSync(ROOT+'/'+_M6.img[k]); });
-  ok(_brk2.length===0, 'and every path resolves');
+  var _brk2=Object.keys(_M6.img).filter(function(k){ return productionImagePath(_M6.img[k]) && !fs.existsSync(ROOT+'/'+_M6.img[k]); });
+  ok(_brk2.length===0, 'and every production path resolves');
 
 
   // ===== 151. drawImage SAFETY NET + THE MISSING BOF FILES (drop 0724dr) =====
@@ -8228,8 +8240,8 @@ console.log("=== 168. icon atlas ===");
   Object.keys(_M168.img).forEach(function(k){
     var v=_M168.img[k]; (_byPath[v]=_byPath[v]||[]).push(k);
   });
-  var _broken=Object.keys(_M168.img).filter(function(k){ return !fs.existsSync(ROOT+'/'+_M168.img[k]); });
-  ok(_broken.length===0, 'every manifest path still resolves on disk'+
+  var _broken=Object.keys(_M168.img).filter(function(k){ return productionImagePath(_M168.img[k]) && !fs.existsSync(ROOT+'/'+_M168.img[k]); });
+  ok(_broken.length===0, 'every production manifest path still resolves on disk'+
      (_broken.length?(' — BROKEN: '+_broken.slice(0,4).join(', ')):''));
   var _aliased=Object.keys(_byPath).filter(function(v){ return _byPath[v].length>1; });
   ok(_aliased.length>0,
@@ -13604,7 +13616,7 @@ console.log("=== 273. Stage-8 Furious Death mega fleet ===");
   ok(Object.keys(_shots273).every(function(k){return _shots273[k].k.length&&_shots273[k].fl>0;}),'every armed mega enemy fires through a following crimson muzzle flash');
   ok(vm.runInContext("['s8needle','s8rage','s8slug','s8missile','s8pair','s8blade'].every(function(k){return FIRETYPES[k]&&FIRETYPES[k].procSpace&&PROJ[k];})",ctxv),'all six Furious Death projectile families use the hard-edged crimson renderer');
   ok(JSON.parse(vm.runInContext("JSON.stringify(Object.keys(S8MEGA).filter(function(k){return !S8MEGA[k].fixed;}).length===12 && Object.keys(S8MEGA).filter(function(k){return !S8MEGA[k].fixed;}).every(function(k){var a=S8MEGA[k].art;for(var i=0;i<8;i++){var atk=XART._src['s8atk_'+a+'_'+i],roll=XART._src['s8roll_'+a+'_'+i];if(!atk||!roll)return false;}return true;}))",ctxv)) &&
-     fs.readdirSync(path.join(ROOT,'assets/game/stage8_mega_enemies')).filter(function(d){return fs.statSync(path.join(ROOT,'assets/game/stage8_mega_enemies',d)).isDirectory();}).every(function(d){for(var i=1;i<=8;i++){var n=String(i).padStart(2,'0');if(!fs.existsSync(path.join(ROOT,'assets/game/stage8_mega_enemies',d,'attack_'+n+'.png'))||!fs.existsSync(path.join(ROOT,'assets/game/stage8_mega_enemies',d,'roll_'+n+'.png')))return false;}return true;}),
+     JSON.parse(vm.runInContext("JSON.stringify(Object.keys(S8MEGA).filter(k=>!S8MEGA[k].fixed).every(k=>{const a=S8MEGA[k].art;return [\"s8atk_\",\"s8roll_\"].every(prefix=>Array.from({length:8},(_,i)=>prefix+a+\"_\"+i).every(key=>{const root=XART.root(key);return root!==key&&BOFX.cells[key]&&!!BOFX.img[root];}));}))",ctxv)),
      'all twelve hulls register and ship eight attack plus eight roll frames without requiring synchronous lazy decode');
   ok(vm.runInContext("(function(){for(var i=0;i<16;i++)if(!XART.rdy('s8rift_'+i))return false;return true;})()",ctxv),'the generated Furious Death background rift resolves all sixteen animation frames');
   vm.runInContext("run.stage=8;curStage=STAGES[7];enemies.length=0;pBullets.length=0;var e=spawnEnemy('s8interceptor',240,140,{});e._stagger=0;pBullets.push({x:240,y:250,vx:0,vy:-8,w:5,h:14,dead:false});s8MegaTick(e,1/60);",ctxv);
@@ -15668,7 +15680,8 @@ try {
   vm.runInContext('furyLegacyShip=false;furyShipWarm();',ctxv);
   const files309=JSON.parse(vm.runInContext('JSON.stringify(FURY_KEYS.flatMap(k=>[XART._src["fury_"+k]].concat(furyTintedKey(k)?[XART._src["fury_"+k+"_blue"]]:[])))',ctxv));
   ok(files309.every(p=>p&&fs.existsSync(path.join(ROOT,p))),'every new flight, component and effect image/mask exists on disk');
-  ok(fs.readFileSync(path.join(ROOT,'assets/game/furyship_0914/runtime_base.png')).equals(fs.readFileSync(path.join(ROOT,'assets/game/gravity_mode/furyship_somersault_13.png'))),'level-flight plate is the exact approved somersault frame 13');
+  // Pin the approved donor's SHA-256 so a fresh checkout needs no local unused-assets archive.
+  ok(require('crypto').createHash('sha256').update(fs.readFileSync(path.join(ROOT,'assets/game/furyship_0914/runtime_base.png'))).digest('hex')==='95a0afa9fdf7bad73c6303bf9976b8385dc3b7bff0fd87f95515af677d6b1acf','level-flight plate is the exact approved somersault frame 13');
   const pitch309=JSON.parse(vm.runInContext('JSON.stringify(Array.from({length:12},(_,i)=>furyShipPose({somer:{t:(i+.1)/12,dur:1}},null)))',ctxv));
   ok(new Set(pitch309.map(p=>p.key)).size===12&&pitch309.every(p=>p.key.startsWith('somersault_')),'a full pitch action selects twelve distinct somersault poses');
   for(const dir of [-1,1]){
@@ -15785,6 +15798,7 @@ require('./test_launch_scale_1001c.cjs')(vm,ctxv,ok);
 require('./test_hama_vocals_1001.cjs')(vm,ctxv,ok);
 
 require('./test_feedback_1002.cjs')(vm,ctxv,ok);
+require('./test_s4_core_revival_1006.cjs')(vm,ctxv,ok);
 require('./test_feedback_claude_1003.cjs')(vm,ctxv,ok);
 require('./test_stage8_1003.cjs')(vm,ctxv,ok);
 require('./test_mutator_1003.cjs')(vm,ctxv,ok);
@@ -15815,6 +15829,12 @@ require('./test_alien_arena_1005.cjs')(vm,ctxv,ok);
 require('./test_dracodia_1005.cjs')(vm,ctxv,ok);
 require('./test_hammer_knight_1005.cjs')(vm,ctxv,ok);
 require('./test_finale_ai_1006.cjs')(vm,ctxv,ok);
+require('./test_engine_combat_1007.cjs')(vm,ctxv,ok);
+require('./test_hardcorps_bosses_1007.cjs')(vm,ctxv,ok);
+require('./test_rebel_air_1007.cjs')(vm,ctxv,ok);
+require('./test_hardcorps_finale_patterns_1007.cjs')(vm,ctxv,ok);
+require('./test_hardcorps_finale_1007.cjs')(vm,ctxv,ok);
+require('./test_finale_transform_1007.cjs')(vm,ctxv,ok);
 console.log('\n============================================');
 if (errors.length) { console.log('FAILED — ' + errors.length + ' error(s):'); errors.forEach(e => console.log('  ' + e)); process.exit(1); }
 

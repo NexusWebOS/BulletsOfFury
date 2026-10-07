@@ -34,6 +34,11 @@
     "sheet": null,
     "note": "October 3g: generated blank gunmetal mission frame and complete golden Lizzie portrait bezel. Original Lizzie expression sheet supplies character and mouth pixels; cached menu/comm composites hold frame/body fixed while speaking. Source pixels preserved. Runtime map_briefing_1003g.js, owner build_map_briefing_1003g.py, prompt/source _ART_SOURCES/map_briefing_1003g, deployed assets/game/map_briefing_1003g/manifest.json. Stages 1-9/Stage X use live centered game fonts over blank art; old nss text plates remain archived and registered, not used in live map briefing."
   },
+  "hc1006_": {
+    "role": "boss_cosmetic_effect",
+    "sheet": null,
+    "note": "October 6 Contra study transfer: original transparent joint-discharge/break and casing-breach clips. Used on the approved modular Herald only; cosmetic, no collision. Native 1448x1086 source, 4x3 grid, 362px cells. Source copied unchanged; owning builder _BUILD_SOURCE/build_contra_fx_1006.py, deployed manifest assets/game/contra_fx_1006/manifest.json. Contact row preserved but unused here."
+  },
   "hd1003_": {
     "role": "miniboss_modular",
     "sheet": null,
@@ -129,7 +134,7 @@
     "sheet": null,
     "note": "Eight generated transparent hull-wrapping burn frames. Shared 128px anchors; flameDraw palette retained per enemy. Source and prompt in assets/game/fx_burn_0922/provenance.json."
   },
-  "_README": "Prefix -> role, named by Mike from the 0807y contact sheet. THIS IS THE SOURCE OF TRUTH. Filenames in this project have lied four separate times in one session (slatejet=debris, nxp_smoke=explosion, nqm_vent=a vent port, nrb=helix mass). Do not infer a role from a key name again â€” look it up here, and if it is not here, render it and ask.",
+  "_README": "Prefix -> role, named by Mike from the 0807y contact sheet. THIS IS THE SOURCE OF TRUTH. Filenames in this project have lied four separate times in one session (slatejet=debris, nxp_smoke=explosion, nqm_vent=a vent port, nrb=helix mass). Do not infer a role from a key name again \u00e2\u20ac\u201d look it up here, and if it is not here, render it and ask.",
   "?": {
     "role": "boot",
     "sheet": "boot",
@@ -239,7 +244,7 @@
     "role": "miniboss",
     "sheet": "miniboss_stage4"
   },
-  "_WARNING_mfx": "Mike said DELETE mfx_ (252 cells) from the 0807y sheet. But the passover history records mfx_ as an APPROVED player projectile set â€” pellet/mfx_mg, flare/mfx_ea_3, comet/mfx_ea_1, blast/mfx_bpow, homing/mfx_hom, missile/mfx_emr â€” blocked from drawing only by the nep_ per-stage override. The sample he saw may therefore have been one unused member of a family that is otherwise wanted. CONFIRMED 0822f: he said delete, the measurement says the family is live and removal frees nothing, so it is KEPT and the role above is now KEEP. Re-open only with a per-cell list, never as a family.",
+  "_WARNING_mfx": "Mike said DELETE mfx_ (252 cells) from the 0807y sheet. But the passover history records mfx_ as an APPROVED player projectile set \u00e2\u20ac\u201d pellet/mfx_mg, flare/mfx_ea_3, comet/mfx_ea_1, blast/mfx_bpow, homing/mfx_hom, missile/mfx_emr \u00e2\u20ac\u201d blocked from drawing only by the nep_ per-stage override. The sample he saw may therefore have been one unused member of a family that is otherwise wanted. CONFIRMED 0822f: he said delete, the measurement says the family is live and removal frees nothing, so it is KEPT and the role above is now KEEP. Re-open only with a per-cell list, never as a family.",
   "n6": {
     "role": "enemy",
     "sheet": "stage6roster"
@@ -255,7 +260,7 @@
   "nxp_": {
     "role": "explosions",
     "sheet": "explosions",
-    "note": "CONFIRMED by Mike 0808b: 'top row, explosions'. Eight blow-up families. He first read it as a decal from a 4px first-frame thumbnail â€” my sampler's fault, not his."
+    "note": "CONFIRMED by Mike 0808b: 'top row, explosions'. Eight blow-up families. He first read it as a decal from a 4px first-frame thumbnail \u00e2\u20ac\u201d my sampler's fault, not his."
   },
   "nbs_": {
     "role": "bossbarfill",
@@ -335,14 +340,14 @@
   "ndk_": {
     "role": "deckerweapon",
     "sheet": "playerprojectiles",
-    "note": "CONFIRMED 0808b: ndk_box and ndk_icon are the INCENDIARY SHOTGUN pickup box and icon for Decker â€” the weapon Mike named as his new special. The other ndk_ keys (shot/muz/shell/trail/imp/scorch/ang) reported 'missing' for the same index reason as nthp_; verify before touching."
+    "note": "CONFIRMED 0808b: ndk_box and ndk_icon are the INCENDIARY SHOTGUN pickup box and icon for Decker \u00e2\u20ac\u201d the weapon Mike named as his new special. The other ndk_ keys (shot/muz/shell/trail/imp/scorch/ang) reported 'missing' for the same index reason as nthp_; verify before touching."
   },
   "nthp_": {
     "role": "pilotthrusters",
     "sheet": "playerships",
-    "note": "CONFIRMED REAL 0808b. NINE reels, one per pilot, FOUR frames each: nthp_<pilot>_0..3. Mike read 'all missing' because my render looked up the family name without its frame index. This is the art the thruster fix needs â€” he has asked repeatedly to stop overlaying fake thrusters and animate these instead. NEVER delete."
+    "note": "CONFIRMED REAL 0808b. NINE reels, one per pilot, FOUR frames each: nthp_<pilot>_0..3. Mike read 'all missing' because my render looked up the family name without its frame index. This is the art the thruster fix needs \u00e2\u20ac\u201d he has asked repeatedly to stop overlaying fake thrusters and animate these instead. NEVER delete."
   },
-  "_ROUND2_WARNINGS": "Three calls in round 2 contradict earlier direction and are HELD, not applied: nxp_ (called a decal, is the explosion set he confirmed himself), nthp_ (called delete, is the per-pilot thruster art he has asked to be fixed), ndk_ (called 'idk', is Decker's incendiary shotgun kit). All three were misjudged from an unrepresentative thumbnail â€” the sampler took the first frame of each reel, which for an effect is a 4px spark.",
+  "_ROUND2_WARNINGS": "Three calls in round 2 contradict earlier direction and are HELD, not applied: nxp_ (called a decal, is the explosion set he confirmed himself), nthp_ (called delete, is the per-pilot thruster art he has asked to be fixed), ndk_ (called 'idk', is Decker's incendiary shotgun kit). All three were misjudged from an unrepresentative thumbnail \u00e2\u20ac\u201d the sampler took the first frame of each reel, which for an effect is a 4px spark.",
   "_SAMPLER_WARNING": "TWO separate misreads in this taxonomy came from HOW I SAMPLED, not from Mike: (1) taking frame 0 of an effect reel shows a 4px spark, which made the explosion set look like a decal; (2) looking up a FAMILY name with no frame index returns nothing, which made nine real thruster reels and a whole weapon set look missing. When rendering a family for identification, take a MID-REEL frame and resolve the index.",
   "rr_ship_": {
     "role": "enemyship_master",
@@ -572,7 +577,7 @@
   "map4f_": {
     "role": "campaign_marker",
     "sheet": null,
-    "note": "Generated physical Fury HQ frontage and X-only flag; nine separately generated Iâ€“IX flags, measured mast-base anchors, cloth-only rank swaps and alpha-derived selected/lock/white states. Sources/prompts _ART_SOURCES/campaign_landscape_1004f. Owning workflows build_campaign_markers_1004f.py and build_campaign_flags_1004f.py. Old sources retained; no existing atlas edits."
+    "note": "Generated physical Fury HQ frontage and X-only flag; nine separately generated I\u00e2\u20ac\u201cIX flags, measured mast-base anchors, cloth-only rank swaps and alpha-derived selected/lock/white states. Sources/prompts _ART_SOURCES/campaign_landscape_1004f. Owning workflows build_campaign_markers_1004f.py and build_campaign_flags_1004f.py. Old sources retained; no existing atlas edits."
   },
   "map4e_region_hub": {
     "role": "campaign_landmark",
@@ -598,5 +603,25 @@
     "role": "finale_cinematic_and_whole_knight",
     "sheet": null,
     "note": "October 5: built-in image_gen native RGBA art, 12 symbiote rise/void/scatter cells, eight whole knight poses with complete head in EVERY frame and empty hands for independently mounted sword/shield, and 24 loose symbiote fragments (three shapes, eight ordered rotational views including edge/rear/flipped). Source hashes and generation briefs _ART_SOURCES/overnight_1005/manifest.json. Equal-cell owner _BUILD_SOURCE/build_overnight_1005.py registers all 44 cells together in assets/overnight_art_1005.js. No shared atlas editing or alpha repainting. Mike explicitly permits whole knight body with targetable sword/shield. Native game-context rendering verified through XART keys. Runtime overnight_finale_1005.js; QA docs/qa/overnight_1005.json."
+  },
+  "s4rev1006": {
+    "role": "boss_cosmetic_revival_effect",
+    "sheet": "s4_core_revival_1006",
+    "note": "October6 imagegen transparent source: ship reactor charge, hull-to-generator lightning and local socket reconstruction, four frames each. Exact PNG/source/prompt archived _ART_SOURCES/s4_core_revival_1006; measured source rects/pivots emitted by _BUILD_SOURCE/build_s4_core_revival_1006.py. Low-alpha outside significant bounds omitted by draw rects; pixels unchanged. Native metadata assets/s4_core_revival_art_1006.js, existing1.08s rearm choreography assets/s4_core_revival_1006.js. Cosmetic only; no hazards or damage."
+  },
+  "hc7_": {
+    "role": "finale_cast_and_chromium_energy",
+    "sheet": null,
+    "note": "October7 generated native-alpha 16-frame black/chrome void,16-frame symbiote helix and8-frame whole Code Hammer overhead cast. Exact source,prompts,hashes and measured reactor/hand/head anchors:_ART_SOURCES/hardcorps_1007/generation_manifest.json. Owner:_BUILD_SOURCE/build_hardcorps_finale_1007.py. Authored-frame blending is limited to energy; combat modules opaque. Runtime assets/hardcorps_finale_1007.js."
+  },
+  "la1007_": {
+    "role": "stage4_lost_desert_airbase",
+    "sheet": null,
+    "note": "October7 exact generated1024x1536 whole terrain; ruinedhangars,aprons,radar,fuel,wrecks andcontinuouslooping highway. Alternating reflected tiles share exact edge rows. World680px,originalmap progression3568px; native seam/camera checks docs/qa/lost_airbase_1007.json. Owner build_lost_airbase_1007.py."
+  },
+  "ra7_": {
+    "role": "rebel_grapple_hardware_and_nyx_spiral",
+    "sheet": "rebel_air_1007",
+    "note": "October7 native-alpha modular Rook winch,open/closed grapple and chain link;8-frame cyan/indigo corkscrew for Nyx cloak,with above/below depth. Exact importer _BUILD_SOURCE/build_rebel_air_1007.py; gameplay assets/rebel_air_1007.js; QA docs/qa/rebel_air_1007.json."
   }
 }

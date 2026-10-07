@@ -1,0 +1,32 @@
+module.exports=function(vm,c,ok){
+ const fs=require('fs'),path=require('path');
+ if(vm.runInContext('typeof EC7',c)==='undefined')vm.runInContext(fs.readFileSync(path.join(__dirname,'../assets/engine_combat_1007.js'),'utf8'),c,{filename:'engine_combat_1007.js'});
+ console.log('=== October 7 combat engine consistency ===');
+ const out=JSON.parse(vm.runInContext(`JSON.stringify((()=>{
+ const out={};ht27Stop();coopOn=false;run.mode='arcade';run.pilot='cole';beginStage(7);setState(GS.PLAY);BOFCinematicDirector.cancel();story=null;fb2Talk=null;s6Opening=null;s6Wing=null;
+ boss=null;bossActive=false;subBoss=null;subBossActive=false;enemies=[];powerups=[];pBullets=[];eBullets=[];player.reset();player.invuln=0;
+ out['swept tracer hits a crossed thin hull']=ec7SegmentBox(80,0,80,100,80,50,8,8);
+ out['parallel passing tracer is safe']=!ec7SegmentBox(50,0,50,100,80,50,8,8);
+ out['swept point handles zero-length movement']=ec7SegmentBox(80,50,80,50,80,50,8,8)&&!ec7SegmentBox(80,10,80,10,80,50,8,8);
+ out['non-finite projectile geometry is rejected']=!ec7SegmentBox(NaN,0,0,100,0,50,8,8);
+ const e={x:160,y:220,w:16,h:16,dead:false};enemies=[e];const b={x:160,y:160,w:4,h:10,kind:'mg',vx:0,vy:-100};ec7SweepRound(b,160,260);
+ out['ordinary tracer is placed at first real contact before damage dispatch']=b.y>e.y&&b.y<e.y+14;
+ const clear={x:210,y:160,w:4,h:10,kind:'mg'};ec7SweepRound(clear,210,260);out['empty lane preserves exact travel endpoint']=clear.x===210&&clear.y===160;
+ const beam={x:160,y:160,w:4,h:10,kind:'beam'};ec7SweepRound(beam,160,260);out['sustained beams keep their existing collision owner']=beam.y===160;
+ enemies=[];run.weapon=7;run.wlevel=1;run.wlevels=WEAPONS.map(()=>1);
+ player._spin={crashed:true};player.reset(true);player.invuln=0;out['reset removes stale death-spin that hid newly equipped pods']=player._spin===null&&chaingunMountsVisible();
+ player._chainSpinT=2;player._chainMuzzle=.1;chaingunMountsDraw(1);chaingunMountsDraw(1);
+ out['render cannot advance barrel or muzzle clocks']=player._chainSpinT===2&&player._chainMuzzle===.1;
+ chaingunHeatTick(.02,true);out['simulation advances active barrel and decays muzzle']=player._chainSpinT>2&&Math.abs(player._chainMuzzle-.08)<1e-9;
+ const t=player._chainSpinT;chaingunHeatTick(0,true);out['zero-step simulation freezes barrel']=player._chainSpinT===t;
+ applyPowerup({kind:'weapon',wtype:3});const off=run.weapon===3;applyPowerup({kind:'weapon',wtype:7});out['actual laser-to-chaingun pickup restores mounted weapon']=off&&run.weapon===7&&chaingunMountsVisible();
+ coopOn=true;run2.pilot='yuri';run2.weapon=7;run2.wlevel=1;run2.wlevels=WEAPONS.map(()=>1);player2.reset();player2._chainSpinT=10;
+ withSeat(2,()=>chaingunHeatTick(.1,true));out['P2 rotating barrel does not change P1 clock']=player._chainSpinT===t&&player2._chainSpinT>10;
+ coopOn=false;player.x=160;player.y=400;player._vx=player._vy=0;run.stage=4;
+ eBullets=Array.from({length:8},(_,i)=>({x:160,y:230+i*5,vx:0,vy:5,w:7,h:9}));pw5Collect();out['ordinary incoming warnings work outside Stage6 with bounded count']=PW5.threats.length===2;
+ const moving={x:160,y:400,_vx:0,_vy:6};out['pilot outrunning a round gets no false threat']=pw5Impact(eBullets[0],moving)===null;
+ const old=PW5.threats[0].p;old.dead=true;pw5Collect();out['dead rounds leave warning list immediately']=!PW5.threats.some(q=>q.p===old);
+ const a={x:160,y:100,vx:0,vy:4,w:10,h:100,_hammerLaser:true};out['long beams use their own lane warning instead of pellet asterisks']=pw5Impact(a,player)===null;
+ beginStage(1);return out;
+ })())`,c));for(const [name,value] of Object.entries(out))ok(value,name);
+};

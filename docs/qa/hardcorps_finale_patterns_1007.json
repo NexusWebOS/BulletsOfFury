@@ -1,0 +1,876 @@
+{
+  "checks": [
+    {
+      "ok": true,
+      "name": "host normal: live modules own a full committed signature"
+    },
+    {
+      "ok": true,
+      "name": "host normal: aim commits and donor clock/attack pauses"
+    },
+    {
+      "ok": true,
+      "name": "host normal: animated modular pieces remain finite and opaque"
+    },
+    {
+      "ok": true,
+      "name": "host normal: contact with actual visible attack delivers damage"
+    },
+    {
+      "ok": true,
+      "name": "host normal: recovery removes damage while leaving modules drawn"
+    },
+    {
+      "ok": true,
+      "name": "host normal: destroyed emitters cancel and preserve all nine HP pools"
+    },
+    {
+      "ok": true,
+      "name": "host furious: live modules own a full committed signature"
+    },
+    {
+      "ok": true,
+      "name": "host furious: aim commits and donor clock/attack pauses"
+    },
+    {
+      "ok": true,
+      "name": "host furious: animated modular pieces remain finite and opaque"
+    },
+    {
+      "ok": true,
+      "name": "host furious: contact with actual visible attack delivers damage"
+    },
+    {
+      "ok": true,
+      "name": "host furious: recovery removes damage while leaving modules drawn"
+    },
+    {
+      "ok": true,
+      "name": "host furious: destroyed emitters cancel and preserve all nine HP pools"
+    },
+    {
+      "ok": true,
+      "name": "ghost normal: live modules own a full committed signature"
+    },
+    {
+      "ok": true,
+      "name": "ghost normal: aim commits and donor clock/attack pauses"
+    },
+    {
+      "ok": true,
+      "name": "ghost normal: animated modular pieces remain finite and opaque"
+    },
+    {
+      "ok": true,
+      "name": "ghost normal: contact with actual visible attack delivers damage"
+    },
+    {
+      "ok": true,
+      "name": "ghost normal: recovery removes damage while leaving modules drawn"
+    },
+    {
+      "ok": true,
+      "name": "ghost normal: relay has a real damage-free crossing"
+    },
+    {
+      "ok": true,
+      "name": "ghost normal: destroyed emitters cancel and preserve all nine HP pools"
+    },
+    {
+      "ok": true,
+      "name": "ghost furious: live modules own a full committed signature"
+    },
+    {
+      "ok": true,
+      "name": "ghost furious: aim commits and donor clock/attack pauses"
+    },
+    {
+      "ok": true,
+      "name": "ghost furious: animated modular pieces remain finite and opaque"
+    },
+    {
+      "ok": true,
+      "name": "ghost furious: contact with actual visible attack delivers damage"
+    },
+    {
+      "ok": true,
+      "name": "ghost furious: recovery removes damage while leaving modules drawn"
+    },
+    {
+      "ok": true,
+      "name": "ghost furious: relay has a real damage-free crossing"
+    },
+    {
+      "ok": true,
+      "name": "ghost furious: destroyed emitters cancel and preserve all nine HP pools"
+    },
+    {
+      "ok": true,
+      "name": "home normal: live modules own a full committed signature"
+    },
+    {
+      "ok": true,
+      "name": "home normal: aim commits and donor clock/attack pauses"
+    },
+    {
+      "ok": true,
+      "name": "home normal: animated modular pieces remain finite and opaque"
+    },
+    {
+      "ok": true,
+      "name": "home normal: contact with actual visible attack delivers damage"
+    },
+    {
+      "ok": true,
+      "name": "home normal: recovery removes damage while leaving modules drawn"
+    },
+    {
+      "ok": true,
+      "name": "home normal: destroyed emitters cancel and preserve all nine HP pools"
+    },
+    {
+      "ok": true,
+      "name": "home furious: live modules own a full committed signature"
+    },
+    {
+      "ok": true,
+      "name": "home furious: aim commits and donor clock/attack pauses"
+    },
+    {
+      "ok": true,
+      "name": "home furious: animated modular pieces remain finite and opaque"
+    },
+    {
+      "ok": true,
+      "name": "home furious: contact with actual visible attack delivers damage"
+    },
+    {
+      "ok": true,
+      "name": "home furious: recovery removes damage while leaving modules drawn"
+    },
+    {
+      "ok": true,
+      "name": "home furious: destroyed emitters cancel and preserve all nine HP pools"
+    },
+    {
+      "ok": true,
+      "name": "0 normal: live modules own a full committed signature"
+    },
+    {
+      "ok": true,
+      "name": "0 normal: aim commits and donor clock/attack pauses"
+    },
+    {
+      "ok": true,
+      "name": "0 normal: animated modular pieces remain finite and opaque"
+    },
+    {
+      "ok": true,
+      "name": "0 normal: contact with actual visible attack delivers damage"
+    },
+    {
+      "ok": true,
+      "name": "0 normal: recovery removes damage while leaving modules drawn"
+    },
+    {
+      "ok": true,
+      "name": "0 normal: destroyed emitters cancel and preserve all nine HP pools"
+    },
+    {
+      "ok": true,
+      "name": "0 furious: live modules own a full committed signature"
+    },
+    {
+      "ok": true,
+      "name": "0 furious: aim commits and donor clock/attack pauses"
+    },
+    {
+      "ok": true,
+      "name": "0 furious: animated modular pieces remain finite and opaque"
+    },
+    {
+      "ok": true,
+      "name": "0 furious: contact with actual visible attack delivers damage"
+    },
+    {
+      "ok": true,
+      "name": "0 furious: recovery removes damage while leaving modules drawn"
+    },
+    {
+      "ok": true,
+      "name": "0 furious: destroyed emitters cancel and preserve all nine HP pools"
+    },
+    {
+      "ok": true,
+      "name": "1 normal: live modules own a full committed signature"
+    },
+    {
+      "ok": true,
+      "name": "1 normal: aim commits and donor clock/attack pauses"
+    },
+    {
+      "ok": true,
+      "name": "1 normal: animated modular pieces remain finite and opaque"
+    },
+    {
+      "ok": true,
+      "name": "1 normal: contact with actual visible attack delivers damage"
+    },
+    {
+      "ok": true,
+      "name": "1 normal: recovery removes damage while leaving modules drawn"
+    },
+    {
+      "ok": true,
+      "name": "1 normal: destroyed emitters cancel and preserve all nine HP pools"
+    },
+    {
+      "ok": true,
+      "name": "1 furious: live modules own a full committed signature"
+    },
+    {
+      "ok": true,
+      "name": "1 furious: aim commits and donor clock/attack pauses"
+    },
+    {
+      "ok": true,
+      "name": "1 furious: animated modular pieces remain finite and opaque"
+    },
+    {
+      "ok": true,
+      "name": "1 furious: contact with actual visible attack delivers damage"
+    },
+    {
+      "ok": true,
+      "name": "1 furious: recovery removes damage while leaving modules drawn"
+    },
+    {
+      "ok": true,
+      "name": "1 furious: destroyed emitters cancel and preserve all nine HP pools"
+    },
+    {
+      "ok": true,
+      "name": "2 normal: live modules own a full committed signature"
+    },
+    {
+      "ok": true,
+      "name": "2 normal: aim commits and donor clock/attack pauses"
+    },
+    {
+      "ok": true,
+      "name": "2 normal: animated modular pieces remain finite and opaque"
+    },
+    {
+      "ok": true,
+      "name": "2 normal: contact with actual visible attack delivers damage"
+    },
+    {
+      "ok": true,
+      "name": "2 normal: recovery removes damage while leaving modules drawn"
+    },
+    {
+      "ok": true,
+      "name": "2 normal: destroyed emitters cancel and preserve all nine HP pools"
+    },
+    {
+      "ok": true,
+      "name": "2 furious: live modules own a full committed signature"
+    },
+    {
+      "ok": true,
+      "name": "2 furious: aim commits and donor clock/attack pauses"
+    },
+    {
+      "ok": true,
+      "name": "2 furious: animated modular pieces remain finite and opaque"
+    },
+    {
+      "ok": true,
+      "name": "2 furious: contact with actual visible attack delivers damage"
+    },
+    {
+      "ok": true,
+      "name": "2 furious: recovery removes damage while leaving modules drawn"
+    },
+    {
+      "ok": true,
+      "name": "2 furious: destroyed emitters cancel and preserve all nine HP pools"
+    },
+    {
+      "ok": true,
+      "name": "3 normal: live modules own a full committed signature"
+    },
+    {
+      "ok": true,
+      "name": "3 normal: aim commits and donor clock/attack pauses"
+    },
+    {
+      "ok": true,
+      "name": "3 normal: animated modular pieces remain finite and opaque"
+    },
+    {
+      "ok": true,
+      "name": "3 normal: contact with actual visible attack delivers damage"
+    },
+    {
+      "ok": true,
+      "name": "3 normal: recovery removes damage while leaving modules drawn"
+    },
+    {
+      "ok": true,
+      "name": "3 normal: relay has a real damage-free crossing"
+    },
+    {
+      "ok": true,
+      "name": "3 normal: destroyed emitters cancel and preserve all nine HP pools"
+    },
+    {
+      "ok": true,
+      "name": "3 furious: live modules own a full committed signature"
+    },
+    {
+      "ok": true,
+      "name": "3 furious: aim commits and donor clock/attack pauses"
+    },
+    {
+      "ok": true,
+      "name": "3 furious: animated modular pieces remain finite and opaque"
+    },
+    {
+      "ok": true,
+      "name": "3 furious: contact with actual visible attack delivers damage"
+    },
+    {
+      "ok": true,
+      "name": "3 furious: recovery removes damage while leaving modules drawn"
+    },
+    {
+      "ok": true,
+      "name": "3 furious: relay has a real damage-free crossing"
+    },
+    {
+      "ok": true,
+      "name": "3 furious: destroyed emitters cancel and preserve all nine HP pools"
+    },
+    {
+      "ok": true,
+      "name": "4 normal: live modules own a full committed signature"
+    },
+    {
+      "ok": true,
+      "name": "4 normal: aim commits and donor clock/attack pauses"
+    },
+    {
+      "ok": true,
+      "name": "4 normal: animated modular pieces remain finite and opaque"
+    },
+    {
+      "ok": true,
+      "name": "4 normal: contact with actual visible attack delivers damage"
+    },
+    {
+      "ok": true,
+      "name": "4 normal: recovery removes damage while leaving modules drawn"
+    },
+    {
+      "ok": true,
+      "name": "4 normal: relay has a real damage-free crossing"
+    },
+    {
+      "ok": true,
+      "name": "4 normal: destroyed emitters cancel and preserve all nine HP pools"
+    },
+    {
+      "ok": true,
+      "name": "4 furious: live modules own a full committed signature"
+    },
+    {
+      "ok": true,
+      "name": "4 furious: aim commits and donor clock/attack pauses"
+    },
+    {
+      "ok": true,
+      "name": "4 furious: animated modular pieces remain finite and opaque"
+    },
+    {
+      "ok": true,
+      "name": "4 furious: contact with actual visible attack delivers damage"
+    },
+    {
+      "ok": true,
+      "name": "4 furious: recovery removes damage while leaving modules drawn"
+    },
+    {
+      "ok": true,
+      "name": "4 furious: relay has a real damage-free crossing"
+    },
+    {
+      "ok": true,
+      "name": "4 furious: destroyed emitters cancel and preserve all nine HP pools"
+    },
+    {
+      "ok": true,
+      "name": "5 normal: live modules own a full committed signature"
+    },
+    {
+      "ok": true,
+      "name": "5 normal: aim commits and donor clock/attack pauses"
+    },
+    {
+      "ok": true,
+      "name": "5 normal: animated modular pieces remain finite and opaque"
+    },
+    {
+      "ok": true,
+      "name": "5 normal: contact with actual visible attack delivers damage"
+    },
+    {
+      "ok": true,
+      "name": "5 normal: recovery removes damage while leaving modules drawn"
+    },
+    {
+      "ok": true,
+      "name": "5 normal: destroyed emitters cancel and preserve all nine HP pools"
+    },
+    {
+      "ok": true,
+      "name": "5 furious: live modules own a full committed signature"
+    },
+    {
+      "ok": true,
+      "name": "5 furious: aim commits and donor clock/attack pauses"
+    },
+    {
+      "ok": true,
+      "name": "5 furious: animated modular pieces remain finite and opaque"
+    },
+    {
+      "ok": true,
+      "name": "5 furious: contact with actual visible attack delivers damage"
+    },
+    {
+      "ok": true,
+      "name": "5 furious: recovery removes damage while leaving modules drawn"
+    },
+    {
+      "ok": true,
+      "name": "5 furious: destroyed emitters cancel and preserve all nine HP pools"
+    },
+    {
+      "ok": true,
+      "name": "6 normal: live modules own a full committed signature"
+    },
+    {
+      "ok": true,
+      "name": "6 normal: aim commits and donor clock/attack pauses"
+    },
+    {
+      "ok": true,
+      "name": "6 normal: animated modular pieces remain finite and opaque"
+    },
+    {
+      "ok": true,
+      "name": "6 normal: contact with actual visible attack delivers damage"
+    },
+    {
+      "ok": true,
+      "name": "6 normal: recovery removes damage while leaving modules drawn"
+    },
+    {
+      "ok": true,
+      "name": "6 normal: relay has a real damage-free crossing"
+    },
+    {
+      "ok": true,
+      "name": "6 normal: destroyed emitters cancel and preserve all nine HP pools"
+    },
+    {
+      "ok": true,
+      "name": "6 furious: live modules own a full committed signature"
+    },
+    {
+      "ok": true,
+      "name": "6 furious: aim commits and donor clock/attack pauses"
+    },
+    {
+      "ok": true,
+      "name": "6 furious: animated modular pieces remain finite and opaque"
+    },
+    {
+      "ok": true,
+      "name": "6 furious: contact with actual visible attack delivers damage"
+    },
+    {
+      "ok": true,
+      "name": "6 furious: recovery removes damage while leaving modules drawn"
+    },
+    {
+      "ok": true,
+      "name": "6 furious: relay has a real damage-free crossing"
+    },
+    {
+      "ok": true,
+      "name": "6 furious: destroyed emitters cancel and preserve all nine HP pools"
+    },
+    {
+      "ok": true,
+      "name": "7 normal: live modules own a full committed signature"
+    },
+    {
+      "ok": true,
+      "name": "7 normal: aim commits and donor clock/attack pauses"
+    },
+    {
+      "ok": true,
+      "name": "7 normal: animated modular pieces remain finite and opaque"
+    },
+    {
+      "ok": true,
+      "name": "7 normal: contact with actual visible attack delivers damage"
+    },
+    {
+      "ok": true,
+      "name": "7 normal: recovery removes damage while leaving modules drawn"
+    },
+    {
+      "ok": true,
+      "name": "7 normal: destroyed emitters cancel and preserve all nine HP pools"
+    },
+    {
+      "ok": true,
+      "name": "7 furious: live modules own a full committed signature"
+    },
+    {
+      "ok": true,
+      "name": "7 furious: aim commits and donor clock/attack pauses"
+    },
+    {
+      "ok": true,
+      "name": "7 furious: animated modular pieces remain finite and opaque"
+    },
+    {
+      "ok": true,
+      "name": "7 furious: contact with actual visible attack delivers damage"
+    },
+    {
+      "ok": true,
+      "name": "7 furious: recovery removes damage while leaving modules drawn"
+    },
+    {
+      "ok": true,
+      "name": "7 furious: destroyed emitters cancel and preserve all nine HP pools"
+    },
+    {
+      "ok": true,
+      "name": "host: signature naturally scheduled at source recovery"
+    },
+    {
+      "ok": true,
+      "name": "ghost: signature naturally scheduled at source recovery"
+    },
+    {
+      "ok": true,
+      "name": "home: signature naturally scheduled at source recovery"
+    },
+    {
+      "ok": true,
+      "name": "0: signature naturally scheduled at source recovery"
+    },
+    {
+      "ok": true,
+      "name": "1: signature naturally scheduled at source recovery"
+    },
+    {
+      "ok": true,
+      "name": "2: signature naturally scheduled at source recovery"
+    },
+    {
+      "ok": true,
+      "name": "3: signature naturally scheduled at source recovery"
+    },
+    {
+      "ok": true,
+      "name": "4: signature naturally scheduled at source recovery"
+    },
+    {
+      "ok": true,
+      "name": "5: signature naturally scheduled at source recovery"
+    },
+    {
+      "ok": true,
+      "name": "6: signature naturally scheduled at source recovery"
+    },
+    {
+      "ok": true,
+      "name": "7: signature naturally scheduled at source recovery"
+    },
+    {
+      "ok": true,
+      "name": "slow ship physically dodges the locked strike with ordinary held movement"
+    },
+    {
+      "ok": true,
+      "name": "Hammer 8 remains wholly owned by native source controller"
+    },
+    {
+      "ok": true,
+      "name": "zero browser and renderer errors"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "host",
+      "mode": "fight",
+      "signature": {
+        "event": "signature",
+        "form": "host",
+        "name": "MUTATION SPEAR",
+        "target": [
+          340,
+          377
+        ],
+        "seat": 1,
+        "modules": [
+          "left",
+          "right"
+        ]
+      },
+      "history": [],
+      "donorState": null
+    },
+    {
+      "id": "ghost",
+      "mode": "fight",
+      "signature": {
+        "event": "signature",
+        "form": "ghost",
+        "name": "SPECTRAL RAIL RELAY",
+        "target": [
+          340,
+          377
+        ],
+        "seat": 1,
+        "modules": [
+          "cannon",
+          "eye"
+        ]
+      },
+      "history": [],
+      "donorState": null
+    },
+    {
+      "id": "home",
+      "mode": "fight",
+      "signature": {
+        "event": "signature",
+        "form": "home",
+        "name": "COLOSSUS CROWN GATE",
+        "target": [
+          340,
+          377
+        ],
+        "seat": 1,
+        "modules": [
+          "left",
+          "right"
+        ]
+      },
+      "history": [],
+      "donorState": null
+    },
+    {
+      "id": "0",
+      "mode": "fight",
+      "signature": {
+        "event": "signature",
+        "form": "0",
+        "name": "CHROMIUM PINCER",
+        "target": [
+          340,
+          377
+        ],
+        "seat": 1,
+        "modules": [
+          "left",
+          "right"
+        ]
+      },
+      "history": [],
+      "donorState": null
+    },
+    {
+      "id": "1",
+      "mode": "fight",
+      "signature": {
+        "event": "signature",
+        "form": "1",
+        "name": "SONIC BROADSIDE",
+        "target": [
+          340,
+          377
+        ],
+        "seat": 1,
+        "modules": [
+          "left",
+          "right"
+        ]
+      },
+      "history": [
+        "fight"
+      ],
+      "donorState": "fight"
+    },
+    {
+      "id": "2",
+      "mode": "fight",
+      "signature": {
+        "event": "signature",
+        "form": "2",
+        "name": "FURNACE BELLOWS",
+        "target": [
+          340,
+          377
+        ],
+        "seat": 1,
+        "modules": [
+          "left",
+          "right"
+        ]
+      },
+      "history": [
+        "spin900",
+        "cannon"
+      ],
+      "donorState": "cannon"
+    },
+    {
+      "id": "3",
+      "mode": "fight",
+      "signature": {
+        "event": "signature",
+        "form": "3",
+        "name": "CRYO SHUTTERS",
+        "target": [
+          340,
+          377
+        ],
+        "seat": 1,
+        "modules": [
+          "gunL1",
+          "gunL2",
+          "gunR1",
+          "gunR2"
+        ]
+      },
+      "history": [
+        "recover",
+        "ice-battery1002",
+        "recover"
+      ],
+      "donorState": "recover"
+    },
+    {
+      "id": "4",
+      "mode": "fight",
+      "signature": {
+        "event": "signature",
+        "form": "4",
+        "name": "STORM SCISSORS",
+        "target": [
+          340,
+          377
+        ],
+        "seat": 1,
+        "modules": [
+          "lightning"
+        ]
+      },
+      "history": [
+        "recover",
+        "hc-relay1007",
+        "recover"
+      ],
+      "donorState": "recover"
+    },
+    {
+      "id": "5",
+      "mode": "fight",
+      "signature": {
+        "event": "signature",
+        "form": "5",
+        "name": "SHIELD BAIT / SWORD RIPOSTE",
+        "target": [
+          340,
+          377
+        ],
+        "seat": 1,
+        "modules": [
+          "sword"
+        ]
+      },
+      "history": [
+        "idle",
+        "tell",
+        "active",
+        "recover",
+        "idle"
+      ],
+      "donorState": "warn"
+    },
+    {
+      "id": "6",
+      "mode": "fight",
+      "signature": {
+        "event": "signature",
+        "form": "6",
+        "name": "HARRIER TURBINE PRESS",
+        "target": [
+          340,
+          377
+        ],
+        "seat": 1,
+        "modules": [
+          "fanL",
+          "fanR",
+          "beam"
+        ]
+      },
+      "history": [
+        "fight",
+        "flurry",
+        "spread"
+      ],
+      "donorState": "spread"
+    },
+    {
+      "id": "7",
+      "mode": "fight",
+      "signature": {
+        "event": "signature",
+        "form": "7",
+        "name": "WARDEN CLAW VAULT",
+        "target": [
+          340,
+          377
+        ],
+        "seat": 1,
+        "modules": [
+          "left",
+          "right"
+        ]
+      },
+      "history": [
+        "recover",
+        "chase",
+        "swipeL",
+        "swipeR",
+        "swipeX",
+        "jump",
+        "recover"
+      ],
+      "donorState": "recover"
+    }
+  ],
+  "errors": [],
+  "scope": "Native protected fixtures, positive collision controls, natural source recovery selection and one ordinary slow-ship dodge; not full campaign clears or human balance approval."
+}

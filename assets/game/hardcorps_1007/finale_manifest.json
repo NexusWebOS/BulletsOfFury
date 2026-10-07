@@ -1,0 +1,608 @@
+{
+  "void": [
+    {
+      "key": "hc7_void_0",
+      "path": "assets/game/hardcorps_1007/void_0.png",
+      "w": 314,
+      "h": 314,
+      "sourceBox": [
+        0,
+        0,
+        314,
+        314
+      ],
+      "sha256": "173dda7a212745a5ea6c18f80b7814a442d30fe189a9409763f9da31429b03cd"
+    },
+    {
+      "key": "hc7_void_1",
+      "path": "assets/game/hardcorps_1007/void_1.png",
+      "w": 313,
+      "h": 314,
+      "sourceBox": [
+        314,
+        0,
+        627,
+        314
+      ],
+      "sha256": "0e3a79c2c17fc41753a0dff1ecbc91b10bcfbd9d9cb06dadf3a6286e731fa3b1"
+    },
+    {
+      "key": "hc7_void_2",
+      "path": "assets/game/hardcorps_1007/void_2.png",
+      "w": 313,
+      "h": 314,
+      "sourceBox": [
+        627,
+        0,
+        940,
+        314
+      ],
+      "sha256": "4f48af92c13b2300a01c803d3cbc3c6a68d486a831a5ae3de06aa504e29c6677"
+    },
+    {
+      "key": "hc7_void_3",
+      "path": "assets/game/hardcorps_1007/void_3.png",
+      "w": 314,
+      "h": 314,
+      "sourceBox": [
+        940,
+        0,
+        1254,
+        314
+      ],
+      "sha256": "6c70036c03a118908465421d9e1d60a24f1d0170d51c3895c9809f1a700a3902"
+    },
+    {
+      "key": "hc7_void_4",
+      "path": "assets/game/hardcorps_1007/void_4.png",
+      "w": 314,
+      "h": 313,
+      "sourceBox": [
+        0,
+        314,
+        314,
+        627
+      ],
+      "sha256": "c569749a60fdda995edb3dec465dec3393011328a1ef72ad492b17ebe2e3678c"
+    },
+    {
+      "key": "hc7_void_5",
+      "path": "assets/game/hardcorps_1007/void_5.png",
+      "w": 313,
+      "h": 313,
+      "sourceBox": [
+        314,
+        314,
+        627,
+        627
+      ],
+      "sha256": "2ebb2658427b0639bf3ba25b0b0f577be68d23c36078946d869d2c506ce57aeb"
+    },
+    {
+      "key": "hc7_void_6",
+      "path": "assets/game/hardcorps_1007/void_6.png",
+      "w": 313,
+      "h": 313,
+      "sourceBox": [
+        627,
+        314,
+        940,
+        627
+      ],
+      "sha256": "5aa7a66335c1fb0eabf06a90ef520188363dd7e6a9afc6e7301f9bba07fe514b"
+    },
+    {
+      "key": "hc7_void_7",
+      "path": "assets/game/hardcorps_1007/void_7.png",
+      "w": 314,
+      "h": 313,
+      "sourceBox": [
+        940,
+        314,
+        1254,
+        627
+      ],
+      "sha256": "bf4cba078e78d397633aeed16ba0544b88aef6598b7f2f046a3f8957f68027ff"
+    },
+    {
+      "key": "hc7_void_8",
+      "path": "assets/game/hardcorps_1007/void_8.png",
+      "w": 314,
+      "h": 313,
+      "sourceBox": [
+        0,
+        627,
+        314,
+        940
+      ],
+      "sha256": "4c28e143e9de49514492f746289e65887fd83fe243c96181292689af4bd4ca25"
+    },
+    {
+      "key": "hc7_void_9",
+      "path": "assets/game/hardcorps_1007/void_9.png",
+      "w": 313,
+      "h": 313,
+      "sourceBox": [
+        314,
+        627,
+        627,
+        940
+      ],
+      "sha256": "19201f5aedc6d7279d4b13aa04fd19bcd169cd02355a8f42504842ae830aa764"
+    },
+    {
+      "key": "hc7_void_10",
+      "path": "assets/game/hardcorps_1007/void_10.png",
+      "w": 313,
+      "h": 313,
+      "sourceBox": [
+        627,
+        627,
+        940,
+        940
+      ],
+      "sha256": "9b55e5001f2a6cc41c0d40f516ff6769b136390d428776f52e16e6d8318c7414"
+    },
+    {
+      "key": "hc7_void_11",
+      "path": "assets/game/hardcorps_1007/void_11.png",
+      "w": 314,
+      "h": 313,
+      "sourceBox": [
+        940,
+        627,
+        1254,
+        940
+      ],
+      "sha256": "3a81da20ea8b53ffda739e00f58c2a52690d91eae977e0d6e3f1d6f54d1c81bc"
+    },
+    {
+      "key": "hc7_void_12",
+      "path": "assets/game/hardcorps_1007/void_12.png",
+      "w": 314,
+      "h": 314,
+      "sourceBox": [
+        0,
+        940,
+        314,
+        1254
+      ],
+      "sha256": "be635c4d90f097eefae2db9325c963b8425512b3113e88fdee1edf3ac97d55f6"
+    },
+    {
+      "key": "hc7_void_13",
+      "path": "assets/game/hardcorps_1007/void_13.png",
+      "w": 313,
+      "h": 314,
+      "sourceBox": [
+        314,
+        940,
+        627,
+        1254
+      ],
+      "sha256": "c74221345f8fa504a0eaf6ff867d5a961ca4b158ec551a9d6d07e520efc01568"
+    },
+    {
+      "key": "hc7_void_14",
+      "path": "assets/game/hardcorps_1007/void_14.png",
+      "w": 313,
+      "h": 314,
+      "sourceBox": [
+        627,
+        940,
+        940,
+        1254
+      ],
+      "sha256": "11189009f6bc7f2f48d1ec73844ad64a702bbdb2b9f9d4a0bbc5b946c539aebd"
+    },
+    {
+      "key": "hc7_void_15",
+      "path": "assets/game/hardcorps_1007/void_15.png",
+      "w": 314,
+      "h": 314,
+      "sourceBox": [
+        940,
+        940,
+        1254,
+        1254
+      ],
+      "sha256": "cc493e48246f6cafe9ca8f686dae7a95ec02a2dde6747ec2e9d3092b64fcf8c7"
+    }
+  ],
+  "helix": [
+    {
+      "key": "hc7_helix_0",
+      "path": "assets/game/hardcorps_1007/helix_0.png",
+      "w": 314,
+      "h": 314,
+      "sourceBox": [
+        0,
+        0,
+        314,
+        314
+      ],
+      "sha256": "8edd4ec3457422cea115f50485947ae104645f130dc6f0d9b2438e412130279d"
+    },
+    {
+      "key": "hc7_helix_1",
+      "path": "assets/game/hardcorps_1007/helix_1.png",
+      "w": 313,
+      "h": 314,
+      "sourceBox": [
+        314,
+        0,
+        627,
+        314
+      ],
+      "sha256": "e02ab1287815636a455d07538e6b0cc27a7d78b2d0808a15ea3b03c240fbb14f"
+    },
+    {
+      "key": "hc7_helix_2",
+      "path": "assets/game/hardcorps_1007/helix_2.png",
+      "w": 313,
+      "h": 314,
+      "sourceBox": [
+        627,
+        0,
+        940,
+        314
+      ],
+      "sha256": "e013a83cb804003524b6637300d77da4b2bb3c3132cfae89e0b58ac09bb7d9d6"
+    },
+    {
+      "key": "hc7_helix_3",
+      "path": "assets/game/hardcorps_1007/helix_3.png",
+      "w": 314,
+      "h": 314,
+      "sourceBox": [
+        940,
+        0,
+        1254,
+        314
+      ],
+      "sha256": "7b06ae005bf993af5d1f62a5787fe3e7f64bc79946bf65f6b6ffd165832b8924"
+    },
+    {
+      "key": "hc7_helix_4",
+      "path": "assets/game/hardcorps_1007/helix_4.png",
+      "w": 314,
+      "h": 313,
+      "sourceBox": [
+        0,
+        314,
+        314,
+        627
+      ],
+      "sha256": "661974c1fcb14688d0031418011e565beb77e47705f0e00dc117e15bc846f183"
+    },
+    {
+      "key": "hc7_helix_5",
+      "path": "assets/game/hardcorps_1007/helix_5.png",
+      "w": 313,
+      "h": 313,
+      "sourceBox": [
+        314,
+        314,
+        627,
+        627
+      ],
+      "sha256": "0fe3891577f9123097e1a2f4e339e657c0e0902a2c2d42cdfe1daed10a957bbc"
+    },
+    {
+      "key": "hc7_helix_6",
+      "path": "assets/game/hardcorps_1007/helix_6.png",
+      "w": 313,
+      "h": 313,
+      "sourceBox": [
+        627,
+        314,
+        940,
+        627
+      ],
+      "sha256": "e182cc2c28931e8e2e54bec31f640f819bfa97d579b8963bb8f3dd1b44e41ee3"
+    },
+    {
+      "key": "hc7_helix_7",
+      "path": "assets/game/hardcorps_1007/helix_7.png",
+      "w": 314,
+      "h": 313,
+      "sourceBox": [
+        940,
+        314,
+        1254,
+        627
+      ],
+      "sha256": "3c801fbb9670c1e399a1372dc482900ecee4fc0ef4d4b8bc5336e1eedfd514bc"
+    },
+    {
+      "key": "hc7_helix_8",
+      "path": "assets/game/hardcorps_1007/helix_8.png",
+      "w": 314,
+      "h": 313,
+      "sourceBox": [
+        0,
+        627,
+        314,
+        940
+      ],
+      "sha256": "75d1f2c4363ad187954d145a880f0dd0d41e7fef3e9fbb8896b640573db5d87a"
+    },
+    {
+      "key": "hc7_helix_9",
+      "path": "assets/game/hardcorps_1007/helix_9.png",
+      "w": 313,
+      "h": 313,
+      "sourceBox": [
+        314,
+        627,
+        627,
+        940
+      ],
+      "sha256": "1c546fb1babbb6693bf8010f9c007ec30594863078d29d58dca24bc97f7c3ca2"
+    },
+    {
+      "key": "hc7_helix_10",
+      "path": "assets/game/hardcorps_1007/helix_10.png",
+      "w": 313,
+      "h": 313,
+      "sourceBox": [
+        627,
+        627,
+        940,
+        940
+      ],
+      "sha256": "e9a7808048e6749796193b108763b1ef620316d91ba03a90d3ba4265b9b8dab0"
+    },
+    {
+      "key": "hc7_helix_11",
+      "path": "assets/game/hardcorps_1007/helix_11.png",
+      "w": 314,
+      "h": 313,
+      "sourceBox": [
+        940,
+        627,
+        1254,
+        940
+      ],
+      "sha256": "9d0f41623972e5f52c48a83da3e071189fa6e56a78faabf32e8b8cb25dd9b7bf"
+    },
+    {
+      "key": "hc7_helix_12",
+      "path": "assets/game/hardcorps_1007/helix_12.png",
+      "w": 314,
+      "h": 314,
+      "sourceBox": [
+        0,
+        940,
+        314,
+        1254
+      ],
+      "sha256": "0aa408b141dca7bf41886520fac78d5f846ab87ee2f783a6a1107bb3f08a7869"
+    },
+    {
+      "key": "hc7_helix_13",
+      "path": "assets/game/hardcorps_1007/helix_13.png",
+      "w": 313,
+      "h": 314,
+      "sourceBox": [
+        314,
+        940,
+        627,
+        1254
+      ],
+      "sha256": "bacce279dc9be636745d1641481bde5e498939459959a2f1f93ac81d8f0647f4"
+    },
+    {
+      "key": "hc7_helix_14",
+      "path": "assets/game/hardcorps_1007/helix_14.png",
+      "w": 313,
+      "h": 314,
+      "sourceBox": [
+        627,
+        940,
+        940,
+        1254
+      ],
+      "sha256": "91176993df2ca205bee31c7f550d3d7557bae916b78c6c1896bc478ed983de0e"
+    },
+    {
+      "key": "hc7_helix_15",
+      "path": "assets/game/hardcorps_1007/helix_15.png",
+      "w": 314,
+      "h": 314,
+      "sourceBox": [
+        940,
+        940,
+        1254,
+        1254
+      ],
+      "sha256": "91b269ffa8d1aca61a94bd01c33a2a5fd39baa7260dab79fd37d33b2138807db"
+    }
+  ],
+  "cast": [
+    {
+      "key": "hc7_cast_0",
+      "path": "assets/game/hardcorps_1007/cast_0.png",
+      "w": 444,
+      "h": 444,
+      "sourceBox": [
+        0,
+        0,
+        444,
+        444
+      ],
+      "sha256": "d23cc8c8e11c86b3ac9ceacd639d47b4020821aa7c86feaf1778e8ca0a92f9f9",
+      "px": 0.4954954954954955,
+      "py": 0.49099099099099097,
+      "hand": [
+        121,
+        281
+      ],
+      "head": [
+        370,
+        325
+      ]
+    },
+    {
+      "key": "hc7_cast_1",
+      "path": "assets/game/hardcorps_1007/cast_1.png",
+      "w": 443,
+      "h": 444,
+      "sourceBox": [
+        444,
+        0,
+        887,
+        444
+      ],
+      "sha256": "8f5037aa94f89f49e302825b3c523d3310441eed8818a43c6fea7b4b78ad48cb",
+      "px": 0.4898419864559819,
+      "py": 0.49099099099099097,
+      "hand": [
+        107,
+        199
+      ],
+      "head": [
+        366,
+        325
+      ]
+    },
+    {
+      "key": "hc7_cast_2",
+      "path": "assets/game/hardcorps_1007/cast_2.png",
+      "w": 444,
+      "h": 443,
+      "sourceBox": [
+        0,
+        444,
+        444,
+        887
+      ],
+      "sha256": "84bde9fac8209abd1e72bb09f399d3fcfe76211912227c1ad2201b122b261703",
+      "px": 0.4954954954954955,
+      "py": 0.49435665914221216,
+      "hand": [
+        136,
+        131
+      ],
+      "head": [
+        370,
+        326
+      ]
+    },
+    {
+      "key": "hc7_cast_3",
+      "path": "assets/game/hardcorps_1007/cast_3.png",
+      "w": 443,
+      "h": 443,
+      "sourceBox": [
+        444,
+        444,
+        887,
+        887
+      ],
+      "sha256": "8891a66c8495b92141f653dd7256d2fbfe8e90de44f3a983557f15cddf0b690b",
+      "px": 0.4898419864559819,
+      "py": 0.49435665914221216,
+      "hand": [
+        152,
+        56
+      ],
+      "head": [
+        366,
+        326
+      ]
+    },
+    {
+      "key": "hc7_cast_4",
+      "path": "assets/game/hardcorps_1007/cast_4.png",
+      "w": 444,
+      "h": 443,
+      "sourceBox": [
+        0,
+        887,
+        444,
+        1330
+      ],
+      "sha256": "c0a166e968c1c5d3b107b43ab6ef73f7e72d7783ba48dc623120c7faaac67631",
+      "px": 0.4954954954954955,
+      "py": 0.49887133182844245,
+      "hand": [
+        153,
+        49
+      ],
+      "head": [
+        370,
+        328
+      ]
+    },
+    {
+      "key": "hc7_cast_5",
+      "path": "assets/game/hardcorps_1007/cast_5.png",
+      "w": 443,
+      "h": 443,
+      "sourceBox": [
+        444,
+        887,
+        887,
+        1330
+      ],
+      "sha256": "f7b147f201ca984d9de40ac024a338d39f10e387a96c46ce9356279c70f730a8",
+      "px": 0.48758465011286684,
+      "py": 0.4966139954853273,
+      "hand": [
+        151,
+        48
+      ],
+      "head": [
+        366,
+        328
+      ]
+    },
+    {
+      "key": "hc7_cast_6",
+      "path": "assets/game/hardcorps_1007/cast_6.png",
+      "w": 444,
+      "h": 444,
+      "sourceBox": [
+        0,
+        1330,
+        444,
+        1774
+      ],
+      "sha256": "5ff1049398546b26bb2ea5ba86dcb3b00e6166cb37b579692411b911dd8cbba5",
+      "px": 0.4954954954954955,
+      "py": 0.42342342342342343,
+      "hand": [
+        139,
+        105
+      ],
+      "head": [
+        370,
+        298
+      ]
+    },
+    {
+      "key": "hc7_cast_7",
+      "path": "assets/game/hardcorps_1007/cast_7.png",
+      "w": 443,
+      "h": 444,
+      "sourceBox": [
+        444,
+        1330,
+        887,
+        1774
+      ],
+      "sha256": "6e7d323e7cce782fd050b13c357c7665148e55ac0b21af21f4befcaf11758d58",
+      "px": 0.48758465011286684,
+      "py": 0.42342342342342343,
+      "hand": [
+        119,
+        245
+      ],
+      "head": [
+        366,
+        298
+      ]
+    }
+  ]
+}

@@ -1,0 +1,845 @@
+{
+  "checks": [
+    {
+      "ok": true,
+      "name": "desktop playfield has its final height before game.js arrives"
+    },
+    {
+      "ok": true,
+      "name": "desktop no partially registered runtime frames before final script"
+    },
+    {
+      "ok": true,
+      "name": "desktop zero startup movement through script/font/art load"
+    },
+    {
+      "ok": true,
+      "name": "desktop complete control strip prewarms invisibly during boot"
+    },
+    {
+      "ok": true,
+      "name": "desktop completed menu/control reveal does not shift game"
+    },
+    {
+      "ok": true,
+      "name": "desktop title reveals all six authored hints together"
+    },
+    {
+      "ok": true,
+      "name": "desktop keyboard menu input works after deferred startup"
+    },
+    {
+      "ok": true,
+      "name": "desktop repeated fit/load events preserve identical geometry"
+    },
+    {
+      "ok": true,
+      "name": "desktop warm reload is stable from first paint"
+    },
+    {
+      "ok": true,
+      "name": "fullscreen control still enters fitted fullscreen"
+    },
+    {
+      "ok": true,
+      "name": "leaving fullscreen restores the same shell geometry"
+    },
+    {
+      "ok": true,
+      "name": "resize stays within viewport with correct canvas aspect"
+    },
+    {
+      "ok": true,
+      "name": "campaign full-window layout retains its own viewport"
+    },
+    {
+      "ok": true,
+      "name": "narrow playfield has its final height before game.js arrives"
+    },
+    {
+      "ok": true,
+      "name": "narrow no partially registered runtime frames before final script"
+    },
+    {
+      "ok": true,
+      "name": "narrow zero startup movement through script/font/art load"
+    },
+    {
+      "ok": true,
+      "name": "narrow complete control strip prewarms invisibly during boot"
+    },
+    {
+      "ok": true,
+      "name": "narrow completed menu/control reveal does not shift game"
+    },
+    {
+      "ok": true,
+      "name": "narrow title reveals all six authored hints together"
+    },
+    {
+      "ok": true,
+      "name": "narrow keyboard menu input works after deferred startup"
+    },
+    {
+      "ok": true,
+      "name": "narrow repeated fit/load events preserve identical geometry"
+    },
+    {
+      "ok": true,
+      "name": "narrow warm reload is stable from first paint"
+    },
+    {
+      "ok": true,
+      "name": "wide playfield has its final height before game.js arrives"
+    },
+    {
+      "ok": true,
+      "name": "wide no partially registered runtime frames before final script"
+    },
+    {
+      "ok": true,
+      "name": "wide zero startup movement through script/font/art load"
+    },
+    {
+      "ok": true,
+      "name": "wide complete control strip prewarms invisibly during boot"
+    },
+    {
+      "ok": true,
+      "name": "wide completed menu/control reveal does not shift game"
+    },
+    {
+      "ok": true,
+      "name": "wide title reveals all six authored hints together"
+    },
+    {
+      "ok": true,
+      "name": "wide keyboard menu input works after deferred startup"
+    },
+    {
+      "ok": true,
+      "name": "wide repeated fit/load events preserve identical geometry"
+    },
+    {
+      "ok": true,
+      "name": "wide warm reload is stable from first paint"
+    },
+    {
+      "ok": true,
+      "name": "zero page/console/missing-asset errors"
+    }
+  ],
+  "errors": [],
+  "runs": [
+    {
+      "name": "desktop",
+      "early": {
+        "game-frame": [
+          290,
+          27,
+          700,
+          846
+        ],
+        "screen-area": [
+          290,
+          126,
+          700,
+          747
+        ],
+        "screen": [
+          290,
+          126,
+          700,
+          747
+        ],
+        "hint": [
+          8,
+          872,
+          1264,
+          22
+        ],
+        "hints": 0,
+        "visibility": "hidden",
+        "frames": 0,
+        "classes": ""
+      },
+      "mid": {
+        "game-frame": [
+          290,
+          27,
+          700,
+          846
+        ],
+        "screen-area": [
+          290,
+          126,
+          700,
+          747
+        ],
+        "screen": [
+          290,
+          126,
+          700,
+          747
+        ],
+        "hint": [
+          8,
+          872,
+          1264,
+          22
+        ],
+        "hints": 0,
+        "visibility": "hidden",
+        "frames": 0,
+        "classes": "",
+        "state": "boot"
+      },
+      "boot": {
+        "game-frame": [
+          290,
+          27,
+          700,
+          846
+        ],
+        "screen-area": [
+          290,
+          126,
+          700,
+          747
+        ],
+        "screen": [
+          290,
+          126,
+          700,
+          747
+        ],
+        "hint": [
+          8,
+          872,
+          1264,
+          22
+        ],
+        "hints": 6,
+        "visibility": "hidden",
+        "frames": 29,
+        "classes": "",
+        "state": "boot"
+      },
+      "title": {
+        "game-frame": [
+          290,
+          27,
+          700,
+          846
+        ],
+        "screen-area": [
+          290,
+          126,
+          700,
+          747
+        ],
+        "screen": [
+          290,
+          126,
+          700,
+          747
+        ],
+        "hint": [
+          8,
+          872,
+          1264,
+          22
+        ],
+        "hints": 6,
+        "visibility": "visible",
+        "frames": 420,
+        "classes": "",
+        "state": "title"
+      },
+      "warm": {
+        "game-frame": [
+          290,
+          27,
+          700,
+          846
+        ],
+        "screen-area": [
+          290,
+          126,
+          700,
+          747
+        ],
+        "screen": [
+          290,
+          126,
+          700,
+          747
+        ],
+        "hint": [
+          8,
+          872,
+          1264,
+          22
+        ],
+        "hints": 6,
+        "visibility": "hidden",
+        "frames": 30,
+        "classes": "",
+        "state": "boot"
+      },
+      "geometry": [
+        {
+          "t": 87,
+          "game-frame": [
+            290,
+            27,
+            700,
+            846
+          ],
+          "screen-area": [
+            290,
+            126,
+            700,
+            747
+          ],
+          "screen": [
+            290,
+            126,
+            700,
+            747
+          ],
+          "classes": "",
+          "hints": 0,
+          "hintVisibility": "hidden"
+        },
+        {
+          "t": 1733,
+          "game-frame": [
+            290,
+            27,
+            700,
+            846
+          ],
+          "screen-area": [
+            290,
+            126,
+            700,
+            747
+          ],
+          "screen": [
+            290,
+            126,
+            700,
+            747
+          ],
+          "classes": "",
+          "hints": 0,
+          "hintVisibility": "hidden",
+          "state": "boot"
+        },
+        {
+          "t": 5258,
+          "game-frame": [
+            290,
+            27,
+            700,
+            846
+          ],
+          "screen-area": [
+            290,
+            126,
+            700,
+            747
+          ],
+          "screen": [
+            290,
+            126,
+            700,
+            747
+          ],
+          "classes": "",
+          "hints": 6,
+          "hintVisibility": "hidden",
+          "state": "boot"
+        }
+      ]
+    },
+    {
+      "name": "narrow",
+      "early": {
+        "game-frame": [
+          66.5,
+          266.5,
+          257,
+          311
+        ],
+        "screen-area": [
+          66.5,
+          302.5,
+          257,
+          275
+        ],
+        "screen": [
+          66.5,
+          302.5,
+          257,
+          275
+        ],
+        "hint": [
+          8,
+          816,
+          374,
+          22
+        ],
+        "hints": 0,
+        "visibility": "hidden",
+        "frames": 0,
+        "classes": ""
+      },
+      "mid": {
+        "game-frame": [
+          66.5,
+          266.5,
+          257,
+          311
+        ],
+        "screen-area": [
+          66.5,
+          302.5,
+          257,
+          275
+        ],
+        "screen": [
+          66.5,
+          302.5,
+          257,
+          275
+        ],
+        "hint": [
+          8,
+          816,
+          374,
+          22
+        ],
+        "hints": 0,
+        "visibility": "hidden",
+        "frames": 0,
+        "classes": "",
+        "state": "boot"
+      },
+      "boot": {
+        "game-frame": [
+          66.5,
+          266.5,
+          257,
+          311
+        ],
+        "screen-area": [
+          66.5,
+          302.5,
+          257,
+          275
+        ],
+        "screen": [
+          66.5,
+          302.5,
+          257,
+          275
+        ],
+        "hint": [
+          8,
+          782,
+          374,
+          56
+        ],
+        "hints": 6,
+        "visibility": "hidden",
+        "frames": 29,
+        "classes": "",
+        "state": "boot"
+      },
+      "title": {
+        "game-frame": [
+          66.5,
+          266.5,
+          257,
+          311
+        ],
+        "screen-area": [
+          66.5,
+          302.5,
+          257,
+          275
+        ],
+        "screen": [
+          66.5,
+          302.5,
+          257,
+          275
+        ],
+        "hint": [
+          8,
+          782,
+          374,
+          56
+        ],
+        "hints": 6,
+        "visibility": "visible",
+        "frames": 36,
+        "classes": "",
+        "state": "title"
+      },
+      "warm": {
+        "game-frame": [
+          66.5,
+          266.5,
+          257,
+          311
+        ],
+        "screen-area": [
+          66.5,
+          302.5,
+          257,
+          275
+        ],
+        "screen": [
+          66.5,
+          302.5,
+          257,
+          275
+        ],
+        "hint": [
+          8,
+          782,
+          374,
+          56
+        ],
+        "hints": 6,
+        "visibility": "hidden",
+        "frames": 30,
+        "classes": "",
+        "state": "boot"
+      },
+      "geometry": [
+        {
+          "t": 25,
+          "game-frame": [
+            66.5,
+            266.5,
+            257,
+            311
+          ],
+          "screen-area": [
+            66.5,
+            302.5,
+            257,
+            275
+          ],
+          "screen": [
+            66.5,
+            302.5,
+            257,
+            275
+          ],
+          "classes": "",
+          "hints": 0,
+          "hintVisibility": "hidden"
+        },
+        {
+          "t": 1672,
+          "game-frame": [
+            66.5,
+            266.5,
+            257,
+            311
+          ],
+          "screen-area": [
+            66.5,
+            302.5,
+            257,
+            275
+          ],
+          "screen": [
+            66.5,
+            302.5,
+            257,
+            275
+          ],
+          "classes": "",
+          "hints": 0,
+          "hintVisibility": "hidden",
+          "state": "boot"
+        },
+        {
+          "t": 5220,
+          "game-frame": [
+            66.5,
+            266.5,
+            257,
+            311
+          ],
+          "screen-area": [
+            66.5,
+            302.5,
+            257,
+            275
+          ],
+          "screen": [
+            66.5,
+            302.5,
+            257,
+            275
+          ],
+          "classes": "",
+          "hints": 6,
+          "hintVisibility": "hidden",
+          "state": "boot"
+        }
+      ]
+    },
+    {
+      "name": "wide",
+      "early": {
+        "game-frame": [
+          540,
+          32,
+          840,
+          1016
+        ],
+        "screen-area": [
+          540,
+          152,
+          840,
+          896
+        ],
+        "screen": [
+          540,
+          152,
+          840,
+          896
+        ],
+        "hint": [
+          8,
+          1052,
+          1904,
+          22
+        ],
+        "hints": 0,
+        "visibility": "hidden",
+        "frames": 0,
+        "classes": ""
+      },
+      "mid": {
+        "game-frame": [
+          540,
+          32,
+          840,
+          1016
+        ],
+        "screen-area": [
+          540,
+          152,
+          840,
+          896
+        ],
+        "screen": [
+          540,
+          152,
+          840,
+          896
+        ],
+        "hint": [
+          8,
+          1052,
+          1904,
+          22
+        ],
+        "hints": 0,
+        "visibility": "hidden",
+        "frames": 0,
+        "classes": "",
+        "state": "boot"
+      },
+      "boot": {
+        "game-frame": [
+          540,
+          32,
+          840,
+          1016
+        ],
+        "screen-area": [
+          540,
+          152,
+          840,
+          896
+        ],
+        "screen": [
+          540,
+          152,
+          840,
+          896
+        ],
+        "hint": [
+          8,
+          1052,
+          1904,
+          22
+        ],
+        "hints": 6,
+        "visibility": "hidden",
+        "frames": 29,
+        "classes": "",
+        "state": "boot"
+      },
+      "title": {
+        "game-frame": [
+          540,
+          32,
+          840,
+          1016
+        ],
+        "screen-area": [
+          540,
+          152,
+          840,
+          896
+        ],
+        "screen": [
+          540,
+          152,
+          840,
+          896
+        ],
+        "hint": [
+          8,
+          1052,
+          1904,
+          22
+        ],
+        "hints": 6,
+        "visibility": "visible",
+        "frames": 51,
+        "classes": "",
+        "state": "title"
+      },
+      "warm": {
+        "game-frame": [
+          540,
+          32,
+          840,
+          1016
+        ],
+        "screen-area": [
+          540,
+          152,
+          840,
+          896
+        ],
+        "screen": [
+          540,
+          152,
+          840,
+          896
+        ],
+        "hint": [
+          8,
+          1052,
+          1904,
+          22
+        ],
+        "hints": 6,
+        "visibility": "hidden",
+        "frames": 29,
+        "classes": "",
+        "state": "boot"
+      },
+      "geometry": [
+        {
+          "t": 27,
+          "game-frame": [
+            540,
+            32,
+            840,
+            1016
+          ],
+          "screen-area": [
+            540,
+            152,
+            840,
+            896
+          ],
+          "screen": [
+            540,
+            152,
+            840,
+            896
+          ],
+          "classes": "",
+          "hints": 0,
+          "hintVisibility": "hidden"
+        },
+        {
+          "t": 1672,
+          "game-frame": [
+            540,
+            32,
+            840,
+            1016
+          ],
+          "screen-area": [
+            540,
+            152,
+            840,
+            896
+          ],
+          "screen": [
+            540,
+            152,
+            840,
+            896
+          ],
+          "classes": "",
+          "hints": 0,
+          "hintVisibility": "hidden",
+          "state": "boot"
+        },
+        {
+          "t": 5212,
+          "game-frame": [
+            540,
+            32,
+            840,
+            1016
+          ],
+          "screen-area": [
+            540,
+            152,
+            840,
+            896
+          ],
+          "screen": [
+            540,
+            152,
+            840,
+            896
+          ],
+          "classes": "",
+          "hints": 6,
+          "hintVisibility": "hidden",
+          "state": "boot"
+        }
+      ]
+    }
+  ],
+  "scope": "Real Chromium cold, delayed and warm page navigation; native keyboard/menu and fullscreen; no mocked canvas.",
+  "suite": {
+    "passed": 7681,
+    "failed": 0,
+    "exitCode": 0,
+    "finalBanner": true
+  },
+  "sha256": {
+    "index.html": "ae17fa73cc647539a7979481838654d6a7de789beb3f23f51285c43a4e40b0f4",
+    "assets/game.js": "02f16d1e640c8a41fa5a3c3a37acc179c5bb67897cf458a37a9e14e015232ae4"
+  }
+}

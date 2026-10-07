@@ -1,0 +1,260 @@
+{
+  "checks": [
+    {
+      "ok": true,
+      "name": "Stage 5 easy: four intact modules and committed warning"
+    },
+    {
+      "ok": true,
+      "name": "Stage 5 easy: authored four-way beam draws and releases"
+    },
+    {
+      "ok": true,
+      "name": "Stage 5 easy: four beams fully disappear between sweeps"
+    },
+    {
+      "ok": true,
+      "name": "Stage 5 easy: actual laser collision damages on the visible ray"
+    },
+    {
+      "ok": true,
+      "name": "Stage 5 easy: crossing interval has no invisible damage"
+    },
+    {
+      "ok": true,
+      "name": "Stage 5 easy: exact full revolution ends and clears"
+    },
+    {
+      "ok": true,
+      "name": "Stage 6 easy: four intact modules and committed warning"
+    },
+    {
+      "ok": true,
+      "name": "Stage 6 easy: flak retains exactly one fixed safe lane"
+    },
+    {
+      "ok": true,
+      "name": "Sovereign easy: new cross runs through real shield controller"
+    },
+    {
+      "ok": true,
+      "name": "Sovereign easy: destroying lightning weapon cancels every ray immediately"
+    },
+    {
+      "ok": true,
+      "name": "Stage 5 normal: four intact modules and committed warning"
+    },
+    {
+      "ok": true,
+      "name": "Stage 5 normal: authored four-way beam draws and releases"
+    },
+    {
+      "ok": true,
+      "name": "Stage 5 normal: four beams fully disappear between sweeps"
+    },
+    {
+      "ok": true,
+      "name": "Stage 5 normal: actual laser collision damages on the visible ray"
+    },
+    {
+      "ok": true,
+      "name": "Stage 5 normal: crossing interval has no invisible damage"
+    },
+    {
+      "ok": true,
+      "name": "Stage 5 normal: exact full revolution ends and clears"
+    },
+    {
+      "ok": true,
+      "name": "Stage 6 normal: four intact modules and committed warning"
+    },
+    {
+      "ok": true,
+      "name": "Stage 6 normal: flak retains exactly one fixed safe lane"
+    },
+    {
+      "ok": true,
+      "name": "Sovereign normal: new cross runs through real shield controller"
+    },
+    {
+      "ok": true,
+      "name": "Sovereign normal: destroying lightning weapon cancels every ray immediately"
+    },
+    {
+      "ok": true,
+      "name": "Stage 5 hard: four intact modules and committed warning"
+    },
+    {
+      "ok": true,
+      "name": "Stage 5 hard: authored four-way beam draws and releases"
+    },
+    {
+      "ok": true,
+      "name": "Stage 5 hard: four beams fully disappear between sweeps"
+    },
+    {
+      "ok": true,
+      "name": "Stage 5 hard: actual laser collision damages on the visible ray"
+    },
+    {
+      "ok": true,
+      "name": "Stage 5 hard: crossing interval has no invisible damage"
+    },
+    {
+      "ok": true,
+      "name": "Stage 5 hard: exact full revolution ends and clears"
+    },
+    {
+      "ok": true,
+      "name": "Stage 6 hard: four intact modules and committed warning"
+    },
+    {
+      "ok": true,
+      "name": "Stage 6 hard: flak retains exactly one fixed safe lane"
+    },
+    {
+      "ok": true,
+      "name": "Sovereign hard: new cross runs through real shield controller"
+    },
+    {
+      "ok": true,
+      "name": "Sovereign hard: destroying lightning weapon cancels every ray immediately"
+    },
+    {
+      "ok": true,
+      "name": "Stage 5 furious: four intact modules and committed warning"
+    },
+    {
+      "ok": true,
+      "name": "Stage 5 furious: authored four-way beam draws and releases"
+    },
+    {
+      "ok": true,
+      "name": "Stage 5 furious: four beams fully disappear between sweeps"
+    },
+    {
+      "ok": true,
+      "name": "Stage 5 furious: actual laser collision damages on the visible ray"
+    },
+    {
+      "ok": true,
+      "name": "Stage 5 furious: crossing interval has no invisible damage"
+    },
+    {
+      "ok": true,
+      "name": "Stage 5 furious: exact full revolution ends and clears"
+    },
+    {
+      "ok": true,
+      "name": "Stage 6 furious: four intact modules and committed warning"
+    },
+    {
+      "ok": true,
+      "name": "Stage 6 furious: flak retains exactly one fixed safe lane"
+    },
+    {
+      "ok": true,
+      "name": "Sovereign furious: new cross runs through real shield controller"
+    },
+    {
+      "ok": true,
+      "name": "Sovereign furious: destroying lightning weapon cancels every ray immediately"
+    },
+    {
+      "ok": true,
+      "name": "two surviving space rays share the live opposite cannon"
+    },
+    {
+      "ok": true,
+      "name": "bomber death clears all custom warning/collision state"
+    },
+    {
+      "ok": true,
+      "name": "Herald teaches original attacks before its wing-driven cross"
+    },
+    {
+      "ok": true,
+      "name": "Herald wing disarm cancels its opposite ray pair"
+    },
+    {
+      "ok": true,
+      "name": "broken Herald module stays fully opaque during native falling animation"
+    },
+    {
+      "ok": true,
+      "name": "ordinary movement uses the absent-laser crossing window without damage"
+    },
+    {
+      "ok": true,
+      "name": "Stage 5: natural full book relocates, attacks, and recovers"
+    },
+    {
+      "ok": true,
+      "name": "Stage 6: natural full book relocates, attacks, and recovers"
+    },
+    {
+      "ok": true,
+      "name": "no browser page or console errors"
+    }
+  ],
+  "scenes": [
+    {
+      "stage": 5,
+      "history": [
+        "entry",
+        "hc-relocate",
+        "hc-lances",
+        "hc-recover",
+        "hc-relocate",
+        "hc-cross",
+        "hc-recover",
+        "hc-relocate",
+        "hc-strafe",
+        "hc-recover",
+        "hc-relocate",
+        "hc-lances",
+        "hc-recover",
+        "hc-relocate",
+        "hc-lances"
+      ],
+      "finite": true,
+      "hp": 2050,
+      "mode": "lances"
+    },
+    {
+      "stage": 6,
+      "history": [
+        "entry",
+        "hc-relocate",
+        "hc-flak",
+        "hc-recover",
+        "hc-relocate",
+        "hc-strafe",
+        "hc-recover",
+        "hc-relocate",
+        "hc-lances",
+        "hc-recover",
+        "hc-relocate",
+        "hc-flak",
+        "hc-recover",
+        "hc-relocate",
+        "hc-flak",
+        "hc-recover",
+        "hc-relocate",
+        "hc-strafe",
+        "hc-recover",
+        "hc-relocate",
+        "hc-lances"
+      ],
+      "finite": true,
+      "hp": 2255,
+      "mode": "lances"
+    }
+  ],
+  "draws": {
+    "beam": 1062,
+    "warning": 5645
+  },
+  "errors": [],
+  "scope": "Short native fixtures, positive damage controls and one ordinary movement crossing; not full campaign clears or balance certification."
+}

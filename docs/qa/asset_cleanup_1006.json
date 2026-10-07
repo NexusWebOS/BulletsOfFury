@@ -1,0 +1,7310 @@
+{
+  "date": "2026-10-07",
+  "status": "passed",
+  "assets_before_bytes": 2322608900,
+  "assets_after_bytes": 1280832815,
+  "archive_files": 4981,
+  "archive_bytes": 1044458415,
+  "archive_path": "UNUSED_ASSETS/cleanup_2026-10-06",
+  "atlas": {
+    "files": 4981,
+    "archived_MB": 1044.458415,
+    "removed_portrait_cells": 72,
+    "old_atlas_size": [
+      2975,
+      3300
+    ],
+    "new_atlas_size": [
+      1728,
+      1792
+    ],
+    "atlas_bytes_saved": 9361485,
+    "archive_only_registrations": 983,
+    "removed_unused_music_aliases": [
+      "unused1",
+      "unused2old",
+      "unused10",
+      "unused11",
+      "unused12",
+      "unused4"
+    ]
+  },
+  "full_suite": {
+    "assertions": 7485,
+    "errors": 0,
+    "exit_code": 0,
+    "final_banner": true,
+    "log_sha256": "24d61591db6b3fbf595d64aadb0be509bc3d180da95e48ca2b7c2dcad0e2e0e8"
+  },
+  "source_inputs": {
+    "checks": [
+      "Stage 2: all 200 deployed atlas source keys preserved, no duplicates",
+      "Stage 2: every archived/live source keeps its runtime canvas dimensions",
+      "Stage 3: all 192 deployed atlas source keys preserved, no duplicates",
+      "Stage 3: every archived/live source keeps its runtime canvas dimensions",
+      "Stage 4: all 317 deployed atlas source keys preserved, no duplicates",
+      "Stage 4: every archived/live source keeps its runtime canvas dimensions",
+      "Stage 6: all 307 deployed atlas source keys preserved, no duplicates",
+      "Stage 6: every archived/live source keeps its runtime canvas dimensions",
+      "Stage 7: all 108 deployed atlas source keys preserved, no duplicates",
+      "Stage 7: every archived/live source keeps its runtime canvas dimensions",
+      "Stage 8: all 389 deployed atlas source keys preserved, no duplicates",
+      "Stage 8: every archived/live source keeps its runtime canvas dimensions",
+      "Stage 9: all 108 deployed atlas source keys preserved, no duplicates",
+      "Stage 9: every archived/live source keeps its runtime canvas dimensions",
+      "Stage 5: all 159 archived/live builder sources preserved",
+      "Stage 5: original source dimensions and deterministic key numbering retained",
+      "Archive source enumerator supports nested glob",
+      "Logical source names preserve pre-archive ordering"
+    ],
+    "count": 18
+  },
+  "native": {
+    "checks": [
+      {
+        "ok": true,
+        "name": "axel all 12 portrait and comm poses draw through current renderer"
+      },
+      {
+        "ok": true,
+        "name": "decker all 12 portrait and comm poses draw through current renderer"
+      },
+      {
+        "ok": true,
+        "name": "maverick all 12 portrait and comm poses draw through current renderer"
+      },
+      {
+        "ok": true,
+        "name": "freezer all 12 portrait and comm poses draw through current renderer"
+      },
+      {
+        "ok": true,
+        "name": "juggernaut all 12 portrait and comm poses draw through current renderer"
+      },
+      {
+        "ok": true,
+        "name": "yuri all 12 portrait and comm poses draw through current renderer"
+      },
+      {
+        "ok": true,
+        "name": "lizzie all 12 portrait and comm poses draw through current renderer"
+      },
+      {
+        "ok": true,
+        "name": "falva all 12 portrait and comm poses draw through current renderer"
+      },
+      {
+        "ok": true,
+        "name": "cole all 12 portrait and comm poses draw through current renderer"
+      },
+      {
+        "ok": true,
+        "name": "72 obsolete portrait cells absent from production atlas"
+      },
+      {
+        "ok": true,
+        "name": "unused music aliases removed from playable registry"
+      },
+      {
+        "ok": true,
+        "name": "TITLE renders"
+      },
+      {
+        "ok": true,
+        "name": "DIFF renders"
+      },
+      {
+        "ok": true,
+        "name": "PILOT renders"
+      },
+      {
+        "ok": true,
+        "name": "HELP renders"
+      },
+      {
+        "ok": true,
+        "name": "PASSWORD renders"
+      },
+      {
+        "ok": true,
+        "name": "OPTIONS renders"
+      },
+      {
+        "ok": true,
+        "name": "Stage 1 starts"
+      },
+      {
+        "ok": true,
+        "name": "Stage 1 preload completes with zero failed textures"
+      },
+      {
+        "ok": true,
+        "name": "Stage 2 starts"
+      },
+      {
+        "ok": true,
+        "name": "Stage 2 preload completes with zero failed textures"
+      },
+      {
+        "ok": true,
+        "name": "Stage 3 starts"
+      },
+      {
+        "ok": true,
+        "name": "Stage 3 preload completes with zero failed textures"
+      },
+      {
+        "ok": true,
+        "name": "Stage 4 starts"
+      },
+      {
+        "ok": true,
+        "name": "Stage 4 preload completes with zero failed textures"
+      },
+      {
+        "ok": true,
+        "name": "Stage 5 starts"
+      },
+      {
+        "ok": true,
+        "name": "Stage 5 preload completes with zero failed textures"
+      },
+      {
+        "ok": true,
+        "name": "Stage 6 starts"
+      },
+      {
+        "ok": true,
+        "name": "Stage 6 preload completes with zero failed textures"
+      },
+      {
+        "ok": true,
+        "name": "Stage 7 starts"
+      },
+      {
+        "ok": true,
+        "name": "Stage 7 preload completes with zero failed textures"
+      },
+      {
+        "ok": true,
+        "name": "Stage 8 starts"
+      },
+      {
+        "ok": true,
+        "name": "Stage 8 preload completes with zero failed textures"
+      },
+      {
+        "ok": true,
+        "name": "Stage 9 starts"
+      },
+      {
+        "ok": true,
+        "name": "Stage 9 preload completes with zero failed textures"
+      },
+      {
+        "ok": true,
+        "name": "BOSS1 actual encounter renders"
+      },
+      {
+        "ok": true,
+        "name": "MINI1 actual encounter renders"
+      },
+      {
+        "ok": true,
+        "name": "BOSS2 actual encounter renders"
+      },
+      {
+        "ok": true,
+        "name": "MINI2 actual encounter renders"
+      },
+      {
+        "ok": true,
+        "name": "BOSS3 actual encounter renders"
+      },
+      {
+        "ok": true,
+        "name": "MINI3 actual encounter renders"
+      },
+      {
+        "ok": true,
+        "name": "ALT3 actual encounter renders"
+      },
+      {
+        "ok": true,
+        "name": "BOSS4 actual encounter renders"
+      },
+      {
+        "ok": true,
+        "name": "MINI4 actual encounter renders"
+      },
+      {
+        "ok": true,
+        "name": "BOSS5 actual encounter renders"
+      },
+      {
+        "ok": true,
+        "name": "MINI5 actual encounter renders"
+      },
+      {
+        "ok": true,
+        "name": "BOSS6 actual encounter renders"
+      },
+      {
+        "ok": true,
+        "name": "MINI6 actual encounter renders"
+      },
+      {
+        "ok": true,
+        "name": "ALT6 actual encounter renders"
+      },
+      {
+        "ok": true,
+        "name": "BOSS7 actual encounter renders"
+      },
+      {
+        "ok": true,
+        "name": "MINI7 actual encounter renders"
+      },
+      {
+        "ok": true,
+        "name": "BOSS8 actual encounter renders"
+      },
+      {
+        "ok": true,
+        "name": "MINI8 actual encounter renders"
+      },
+      {
+        "ok": true,
+        "name": "ALT8 actual encounter renders"
+      },
+      {
+        "ok": true,
+        "name": "BOSS9 actual encounter renders"
+      },
+      {
+        "ok": true,
+        "name": "MINI9 actual encounter renders"
+      },
+      {
+        "ok": true,
+        "name": "FINAL1 actual encounter renders"
+      },
+      {
+        "ok": true,
+        "name": "FINAL2 actual encounter renders"
+      },
+      {
+        "ok": true,
+        "name": "FINAL3 actual encounter renders"
+      },
+      {
+        "ok": true,
+        "name": "HOST8 actual encounter renders"
+      },
+      {
+        "ok": true,
+        "name": "HELI8 actual encounter renders"
+      },
+      {
+        "ok": true,
+        "name": "FURN8 actual encounter renders"
+      },
+      {
+        "ok": true,
+        "name": "CRYO8 actual encounter renders"
+      },
+      {
+        "ok": true,
+        "name": "STORM8 actual encounter renders"
+      },
+      {
+        "ok": true,
+        "name": "KNIGHT actual encounter renders"
+      },
+      {
+        "ok": true,
+        "name": "ACE8 actual encounter renders"
+      },
+      {
+        "ok": true,
+        "name": "WARD8 actual encounter renders"
+      },
+      {
+        "ok": true,
+        "name": "HAMR8 actual encounter renders"
+      },
+      {
+        "ok": true,
+        "name": "Production menus and fights never fetch archived artwork"
+      },
+      {
+        "ok": true,
+        "name": "Zero native page, console or missing-asset errors"
+      }
+    ],
+    "errors": [],
+    "archive_requests": [],
+    "captures": [
+      "menu-title",
+      "menu-diff",
+      "menu-pilot",
+      "menu-help",
+      "menu-password",
+      "menu-options",
+      "stage-1",
+      "stage-2",
+      "stage-3",
+      "stage-4",
+      "stage-5",
+      "stage-6",
+      "stage-7",
+      "stage-8",
+      "stage-9",
+      "fight-boss1",
+      "fight-mini1",
+      "fight-boss2",
+      "fight-mini2",
+      "fight-boss3",
+      "fight-mini3",
+      "fight-alt3",
+      "fight-boss4",
+      "fight-mini4",
+      "fight-boss5",
+      "fight-mini5",
+      "fight-boss6",
+      "fight-mini6",
+      "fight-alt6",
+      "fight-boss7",
+      "fight-mini7",
+      "fight-boss8",
+      "fight-mini8",
+      "fight-alt8",
+      "fight-boss9",
+      "fight-mini9",
+      "fight-final1",
+      "fight-final2",
+      "fight-final3",
+      "fight-host8",
+      "fight-heli8",
+      "fight-furn8",
+      "fight-cryo8",
+      "fight-storm8",
+      "fight-knight",
+      "fight-ace8",
+      "fight-ward8",
+      "fight-hamr8"
+    ],
+    "scope": "Protected short native art fixtures, not full campaign clears."
+  },
+  "portable": {
+    "checks": [
+      {
+        "ok": true,
+        "name": "All 3816 runtime files: hashes, HTTP paths and sizes; game JS/HTML unchanged"
+      },
+      {
+        "ok": true,
+        "name": "Audio byte ranges supported"
+      },
+      {
+        "ok": true,
+        "name": "Stage 1 starts"
+      },
+      {
+        "ok": true,
+        "name": "Stage 1 preload completes without missing textures"
+      },
+      {
+        "ok": true,
+        "name": "Stage 2 starts"
+      },
+      {
+        "ok": true,
+        "name": "Stage 2 preload completes without missing textures"
+      },
+      {
+        "ok": true,
+        "name": "Stage 3 starts"
+      },
+      {
+        "ok": true,
+        "name": "Stage 3 preload completes without missing textures"
+      },
+      {
+        "ok": true,
+        "name": "Stage 4 starts"
+      },
+      {
+        "ok": true,
+        "name": "Stage 4 preload completes without missing textures"
+      },
+      {
+        "ok": true,
+        "name": "Stage 5 starts"
+      },
+      {
+        "ok": true,
+        "name": "Stage 5 preload completes without missing textures"
+      },
+      {
+        "ok": true,
+        "name": "Stage 6 starts"
+      },
+      {
+        "ok": true,
+        "name": "Stage 6 preload completes without missing textures"
+      },
+      {
+        "ok": true,
+        "name": "Stage 7 starts"
+      },
+      {
+        "ok": true,
+        "name": "Stage 7 preload completes without missing textures"
+      },
+      {
+        "ok": true,
+        "name": "Stage 8 starts"
+      },
+      {
+        "ok": true,
+        "name": "Stage 8 preload completes without missing textures"
+      },
+      {
+        "ok": true,
+        "name": "Stage 9 starts"
+      },
+      {
+        "ok": true,
+        "name": "Stage 9 preload completes without missing textures"
+      },
+      {
+        "ok": true,
+        "name": "Authored effect decodes: assets/game/contra_fx_1006/boss_signature_fx.png"
+      },
+      {
+        "ok": true,
+        "name": "Authored effect decodes: assets/game/s4_core_revival_1006/core_revival.png"
+      },
+      {
+        "ok": true,
+        "name": "Packaged audio decodes in browser"
+      },
+      {
+        "ok": true,
+        "name": "Zero browser page, console or HTTP errors"
+      }
+    ],
+    "errors": [],
+    "launcher": "Windows BAT -> built-in PowerShell, archive extracted into path with spaces",
+    "audio": {
+      "duration": 0.8,
+      "channels": 2
+    }
+  },
+  "portable_boss4": {
+    "checks": [
+      {
+        "ok": true,
+        "name": "easy 0.75 real threshold starts ship revival"
+      },
+      {
+        "ok": true,
+        "name": "easy 0.75 ship charges before conduit release"
+      },
+      {
+        "ok": true,
+        "name": "easy 0.75 four generated feeds and socket reels draw on actual game context"
+      },
+      {
+        "ok": true,
+        "name": "easy 0.75 revival pulses use moving generator sockets"
+      },
+      {
+        "ok": true,
+        "name": "easy 0.75 four cores return at existing timing with harmless afterglow"
+      },
+      {
+        "ok": true,
+        "name": "easy 0.75 revival ends without lingering or looping"
+      },
+      {
+        "ok": true,
+        "name": "easy 0.5 real threshold starts ship revival"
+      },
+      {
+        "ok": true,
+        "name": "easy 0.5 ship charges before conduit release"
+      },
+      {
+        "ok": true,
+        "name": "easy 0.5 four generated feeds and socket reels draw on actual game context"
+      },
+      {
+        "ok": true,
+        "name": "easy 0.5 revival pulses use moving generator sockets"
+      },
+      {
+        "ok": true,
+        "name": "easy 0.5 four cores return at existing timing with harmless afterglow"
+      },
+      {
+        "ok": true,
+        "name": "easy 0.5 revival ends without lingering or looping"
+      },
+      {
+        "ok": true,
+        "name": "easy 0.25 real threshold starts ship revival"
+      },
+      {
+        "ok": true,
+        "name": "easy 0.25 ship charges before conduit release"
+      },
+      {
+        "ok": true,
+        "name": "easy 0.25 four generated feeds and socket reels draw on actual game context"
+      },
+      {
+        "ok": true,
+        "name": "easy 0.25 revival pulses use moving generator sockets"
+      },
+      {
+        "ok": true,
+        "name": "easy 0.25 four cores return at existing timing with harmless afterglow"
+      },
+      {
+        "ok": true,
+        "name": "easy 0.25 revival ends without lingering or looping"
+      },
+      {
+        "ok": true,
+        "name": "normal 0.75 real threshold starts ship revival"
+      },
+      {
+        "ok": true,
+        "name": "normal 0.75 ship charges before conduit release"
+      },
+      {
+        "ok": true,
+        "name": "normal 0.75 four generated feeds and socket reels draw on actual game context"
+      },
+      {
+        "ok": true,
+        "name": "normal 0.75 revival pulses use moving generator sockets"
+      },
+      {
+        "ok": true,
+        "name": "normal 0.75 four cores return at existing timing with harmless afterglow"
+      },
+      {
+        "ok": true,
+        "name": "normal 0.75 revival ends without lingering or looping"
+      },
+      {
+        "ok": true,
+        "name": "normal 0.5 real threshold starts ship revival"
+      },
+      {
+        "ok": true,
+        "name": "normal 0.5 ship charges before conduit release"
+      },
+      {
+        "ok": true,
+        "name": "normal 0.5 four generated feeds and socket reels draw on actual game context"
+      },
+      {
+        "ok": true,
+        "name": "normal 0.5 revival pulses use moving generator sockets"
+      },
+      {
+        "ok": true,
+        "name": "normal 0.5 four cores return at existing timing with harmless afterglow"
+      },
+      {
+        "ok": true,
+        "name": "normal 0.5 revival ends without lingering or looping"
+      },
+      {
+        "ok": true,
+        "name": "normal 0.25 real threshold starts ship revival"
+      },
+      {
+        "ok": true,
+        "name": "normal 0.25 ship charges before conduit release"
+      },
+      {
+        "ok": true,
+        "name": "normal 0.25 four generated feeds and socket reels draw on actual game context"
+      },
+      {
+        "ok": true,
+        "name": "normal 0.25 revival pulses use moving generator sockets"
+      },
+      {
+        "ok": true,
+        "name": "normal 0.25 four cores return at existing timing with harmless afterglow"
+      },
+      {
+        "ok": true,
+        "name": "normal 0.25 revival ends without lingering or looping"
+      },
+      {
+        "ok": true,
+        "name": "hard 0.75 real threshold starts ship revival"
+      },
+      {
+        "ok": true,
+        "name": "hard 0.75 ship charges before conduit release"
+      },
+      {
+        "ok": true,
+        "name": "hard 0.75 four generated feeds and socket reels draw on actual game context"
+      },
+      {
+        "ok": true,
+        "name": "hard 0.75 revival pulses use moving generator sockets"
+      },
+      {
+        "ok": true,
+        "name": "hard 0.75 four cores return at existing timing with harmless afterglow"
+      },
+      {
+        "ok": true,
+        "name": "hard 0.75 revival ends without lingering or looping"
+      },
+      {
+        "ok": true,
+        "name": "hard 0.5 real threshold starts ship revival"
+      },
+      {
+        "ok": true,
+        "name": "hard 0.5 ship charges before conduit release"
+      },
+      {
+        "ok": true,
+        "name": "hard 0.5 four generated feeds and socket reels draw on actual game context"
+      },
+      {
+        "ok": true,
+        "name": "hard 0.5 revival pulses use moving generator sockets"
+      },
+      {
+        "ok": true,
+        "name": "hard 0.5 four cores return at existing timing with harmless afterglow"
+      },
+      {
+        "ok": true,
+        "name": "hard 0.5 revival ends without lingering or looping"
+      },
+      {
+        "ok": true,
+        "name": "hard 0.25 real threshold starts ship revival"
+      },
+      {
+        "ok": true,
+        "name": "hard 0.25 ship charges before conduit release"
+      },
+      {
+        "ok": true,
+        "name": "hard 0.25 four generated feeds and socket reels draw on actual game context"
+      },
+      {
+        "ok": true,
+        "name": "hard 0.25 revival pulses use moving generator sockets"
+      },
+      {
+        "ok": true,
+        "name": "hard 0.25 four cores return at existing timing with harmless afterglow"
+      },
+      {
+        "ok": true,
+        "name": "hard 0.25 revival ends without lingering or looping"
+      },
+      {
+        "ok": true,
+        "name": "furious 0.75 real threshold starts ship revival"
+      },
+      {
+        "ok": true,
+        "name": "furious 0.75 ship charges before conduit release"
+      },
+      {
+        "ok": true,
+        "name": "furious 0.75 four generated feeds and socket reels draw on actual game context"
+      },
+      {
+        "ok": true,
+        "name": "furious 0.75 revival pulses use moving generator sockets"
+      },
+      {
+        "ok": true,
+        "name": "furious 0.75 four cores return at existing timing with harmless afterglow"
+      },
+      {
+        "ok": true,
+        "name": "furious 0.75 revival ends without lingering or looping"
+      },
+      {
+        "ok": true,
+        "name": "furious 0.5 real threshold starts ship revival"
+      },
+      {
+        "ok": true,
+        "name": "furious 0.5 ship charges before conduit release"
+      },
+      {
+        "ok": true,
+        "name": "furious 0.5 four generated feeds and socket reels draw on actual game context"
+      },
+      {
+        "ok": true,
+        "name": "furious 0.5 revival pulses use moving generator sockets"
+      },
+      {
+        "ok": true,
+        "name": "furious 0.5 four cores return at existing timing with harmless afterglow"
+      },
+      {
+        "ok": true,
+        "name": "furious 0.5 revival ends without lingering or looping"
+      },
+      {
+        "ok": true,
+        "name": "furious 0.25 real threshold starts ship revival"
+      },
+      {
+        "ok": true,
+        "name": "furious 0.25 ship charges before conduit release"
+      },
+      {
+        "ok": true,
+        "name": "furious 0.25 four generated feeds and socket reels draw on actual game context"
+      },
+      {
+        "ok": true,
+        "name": "furious 0.25 revival pulses use moving generator sockets"
+      },
+      {
+        "ok": true,
+        "name": "furious 0.25 four cores return at existing timing with harmless afterglow"
+      },
+      {
+        "ok": true,
+        "name": "furious 0.25 revival ends without lingering or looping"
+      },
+      {
+        "ok": true,
+        "name": "death immediately suppresses charge/conduits/socket effects"
+      },
+      {
+        "ok": true,
+        "name": "inactive field immediately suppresses revival pixels"
+      },
+      {
+        "ok": true,
+        "name": "fresh encounter has no leftover revival"
+      },
+      {
+        "ok": true,
+        "name": "native revival charge sound cue dispatches"
+      },
+      {
+        "ok": true,
+        "name": "zero page or console errors"
+      }
+    ],
+    "captures": {
+      "easy-0.75-charge": {
+        "draws": [
+          {
+            "name": "charge",
+            "u": 0.09259259259259257,
+            "x": 340,
+            "y": 177.28,
+            "sx": 0.6,
+            "sy": 0.6,
+            "alpha": 0.43999999999999995,
+            "source": [
+              61,
+              91,
+              259,
+              250
+            ]
+          }
+        ],
+        "revival": {
+          "t": 0.09999999999999999,
+          "threshold": 0.75,
+          "cycle": 1
+        },
+        "rearming": true,
+        "active": false,
+        "nodes": [
+          {
+            "x": 136,
+            "y": 140,
+            "dead": false,
+            "mat": 0
+          },
+          {
+            "x": 544,
+            "y": 140,
+            "dead": false,
+            "mat": 0
+          },
+          {
+            "x": 136,
+            "y": 296,
+            "dead": false,
+            "mat": 0
+          },
+          {
+            "x": 544,
+            "y": 296,
+            "dead": false,
+            "mat": 0
+          }
+        ],
+        "hp": 1584
+      },
+      "easy-0.75-conduits": {
+        "draws": [
+          {
+            "name": "charge",
+            "u": 0.4012345679012345,
+            "x": 340,
+            "y": 177.28,
+            "sx": 0.6,
+            "sy": 0.6,
+            "alpha": 0.88,
+            "source": [
+              417,
+              85,
+              276,
+              260
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.2971014492753623,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6064059736780293,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              403,
+              484,
+              295,
+              140
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.2971014492753623,
+            "x": 136,
+            "y": 140,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              419,
+              752,
+              263,
+              264
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.2373188405797101,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6064059736780293,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              41,
+              499,
+              297,
+              106
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.2373188405797101,
+            "x": 544,
+            "y": 140,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              72,
+              751,
+              253,
+              268
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.1775362318840579,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6986922856007914,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              41,
+              499,
+              297,
+              106
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.1775362318840579,
+            "x": 136,
+            "y": 296,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              72,
+              751,
+              253,
+              268
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.11775362318840574,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6986922856007914,
+            "sy": 0.18,
+            "alpha": 0.6229166666666665,
+            "source": [
+              41,
+              499,
+              297,
+              106
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.11775362318840574,
+            "x": 544,
+            "y": 296,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.636458333333333,
+            "source": [
+              72,
+              751,
+              253,
+              268
+            ]
+          }
+        ],
+        "revival": {
+          "t": 0.4333333333333333,
+          "threshold": 0.75,
+          "cycle": 1
+        },
+        "rearming": true,
+        "active": false,
+        "nodes": [
+          {
+            "x": 136,
+            "y": 140,
+            "dead": false,
+            "mat": 0.45098039215686253
+          },
+          {
+            "x": 544,
+            "y": 140,
+            "dead": false,
+            "mat": 0.2892156862745096
+          },
+          {
+            "x": 136,
+            "y": 296,
+            "dead": false,
+            "mat": 0.1274509803921567
+          },
+          {
+            "x": 544,
+            "y": 296,
+            "dead": false,
+            "mat": 0
+          }
+        ],
+        "hp": 1584
+      },
+      "easy-0.75-reconstruct": {
+        "draws": [
+          {
+            "name": "charge",
+            "u": 0.7407407407407415,
+            "x": 340,
+            "y": 177.28,
+            "sx": 0.6,
+            "sy": 0.6,
+            "alpha": 0.88,
+            "source": [
+              770,
+              80,
+              274,
+              276
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.6956521739130443,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6064059736780293,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              763,
+              473,
+              293,
+              168
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.6956521739130443,
+            "x": 136,
+            "y": 140,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              777,
+              748,
+              269,
+              276
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.6358695652173922,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6064059736780293,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              763,
+              473,
+              293,
+              168
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.6358695652173922,
+            "x": 544,
+            "y": 140,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              777,
+              748,
+              269,
+              276
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.57608695652174,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6986922856007914,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              763,
+              473,
+              293,
+              168
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.57608695652174,
+            "x": 136,
+            "y": 296,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              777,
+              748,
+              269,
+              276
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.5163043478260878,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6986922856007914,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              763,
+              473,
+              293,
+              168
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.5163043478260878,
+            "x": 544,
+            "y": 296,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              777,
+              748,
+              269,
+              276
+            ]
+          }
+        ],
+        "revival": {
+          "t": 0.8000000000000008,
+          "threshold": 0.75,
+          "cycle": 1
+        },
+        "rearming": true,
+        "active": false,
+        "nodes": [
+          {
+            "x": 136,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 136,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          }
+        ],
+        "hp": 1584
+      },
+      "easy-0.75-restored": {
+        "draws": [
+          {
+            "name": "socket",
+            "u": 1,
+            "x": 136,
+            "y": 140,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              1142,
+              755,
+              264,
+              259
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.9619565217391315,
+            "x": 544,
+            "y": 140,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              1142,
+              755,
+              264,
+              259
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.9021739130434793,
+            "x": 136,
+            "y": 296,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              1142,
+              755,
+              264,
+              259
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.8423913043478272,
+            "x": 544,
+            "y": 296,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              1142,
+              755,
+              264,
+              259
+            ]
+          }
+        ],
+        "revival": {
+          "t": 1.100000000000001,
+          "threshold": 0.75,
+          "cycle": 1
+        },
+        "rearming": false,
+        "active": true,
+        "nodes": [
+          {
+            "x": 136,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 136,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          }
+        ],
+        "hp": 1584
+      },
+      "easy-0.75-finished": {
+        "draws": [],
+        "revival": null,
+        "rearming": false,
+        "active": true,
+        "nodes": [
+          {
+            "x": 136,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 136,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          }
+        ],
+        "hp": 1584
+      },
+      "easy-0.5-charge": {
+        "draws": [
+          {
+            "name": "charge",
+            "u": 0.09259259259259257,
+            "x": 340,
+            "y": 177.28,
+            "sx": 0.6,
+            "sy": 0.6,
+            "alpha": 0.43999999999999995,
+            "source": [
+              61,
+              91,
+              259,
+              250
+            ]
+          }
+        ],
+        "revival": {
+          "t": 0.09999999999999999,
+          "threshold": 0.5,
+          "cycle": 2
+        },
+        "rearming": true,
+        "active": false,
+        "nodes": [
+          {
+            "x": 136,
+            "y": 140,
+            "dead": false,
+            "mat": 0
+          },
+          {
+            "x": 544,
+            "y": 140,
+            "dead": false,
+            "mat": 0
+          },
+          {
+            "x": 136,
+            "y": 296,
+            "dead": false,
+            "mat": 0
+          },
+          {
+            "x": 544,
+            "y": 296,
+            "dead": false,
+            "mat": 0
+          }
+        ],
+        "hp": 1056
+      },
+      "easy-0.5-conduits": {
+        "draws": [
+          {
+            "name": "charge",
+            "u": 0.4012345679012345,
+            "x": 340,
+            "y": 177.28,
+            "sx": 0.6,
+            "sy": 0.6,
+            "alpha": 0.88,
+            "source": [
+              417,
+              85,
+              276,
+              260
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.2971014492753623,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6064059736780293,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              403,
+              484,
+              295,
+              140
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.2971014492753623,
+            "x": 136,
+            "y": 140,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              419,
+              752,
+              263,
+              264
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.2373188405797101,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6064059736780293,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              41,
+              499,
+              297,
+              106
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.2373188405797101,
+            "x": 544,
+            "y": 140,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              72,
+              751,
+              253,
+              268
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.1775362318840579,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6986922856007914,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              41,
+              499,
+              297,
+              106
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.1775362318840579,
+            "x": 136,
+            "y": 296,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              72,
+              751,
+              253,
+              268
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.11775362318840574,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6986922856007914,
+            "sy": 0.18,
+            "alpha": 0.6229166666666665,
+            "source": [
+              41,
+              499,
+              297,
+              106
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.11775362318840574,
+            "x": 544,
+            "y": 296,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.636458333333333,
+            "source": [
+              72,
+              751,
+              253,
+              268
+            ]
+          }
+        ],
+        "revival": {
+          "t": 0.4333333333333333,
+          "threshold": 0.5,
+          "cycle": 2
+        },
+        "rearming": true,
+        "active": false,
+        "nodes": [
+          {
+            "x": 136,
+            "y": 140,
+            "dead": false,
+            "mat": 0.45098039215686253
+          },
+          {
+            "x": 544,
+            "y": 140,
+            "dead": false,
+            "mat": 0.2892156862745096
+          },
+          {
+            "x": 136,
+            "y": 296,
+            "dead": false,
+            "mat": 0.1274509803921567
+          },
+          {
+            "x": 544,
+            "y": 296,
+            "dead": false,
+            "mat": 0
+          }
+        ],
+        "hp": 1056
+      },
+      "easy-0.5-reconstruct": {
+        "draws": [
+          {
+            "name": "charge",
+            "u": 0.7407407407407415,
+            "x": 340,
+            "y": 177.28,
+            "sx": 0.6,
+            "sy": 0.6,
+            "alpha": 0.88,
+            "source": [
+              770,
+              80,
+              274,
+              276
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.6956521739130443,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6064059736780293,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              763,
+              473,
+              293,
+              168
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.6956521739130443,
+            "x": 136,
+            "y": 140,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              777,
+              748,
+              269,
+              276
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.6358695652173922,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6064059736780293,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              763,
+              473,
+              293,
+              168
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.6358695652173922,
+            "x": 544,
+            "y": 140,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              777,
+              748,
+              269,
+              276
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.57608695652174,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6986922856007914,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              763,
+              473,
+              293,
+              168
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.57608695652174,
+            "x": 136,
+            "y": 296,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              777,
+              748,
+              269,
+              276
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.5163043478260878,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6986922856007914,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              763,
+              473,
+              293,
+              168
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.5163043478260878,
+            "x": 544,
+            "y": 296,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              777,
+              748,
+              269,
+              276
+            ]
+          }
+        ],
+        "revival": {
+          "t": 0.8000000000000008,
+          "threshold": 0.5,
+          "cycle": 2
+        },
+        "rearming": true,
+        "active": false,
+        "nodes": [
+          {
+            "x": 136,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 136,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          }
+        ],
+        "hp": 1056
+      },
+      "easy-0.5-restored": {
+        "draws": [
+          {
+            "name": "socket",
+            "u": 1,
+            "x": 136,
+            "y": 140,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              1142,
+              755,
+              264,
+              259
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.9619565217391315,
+            "x": 544,
+            "y": 140,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              1142,
+              755,
+              264,
+              259
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.9021739130434793,
+            "x": 136,
+            "y": 296,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              1142,
+              755,
+              264,
+              259
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.8423913043478272,
+            "x": 544,
+            "y": 296,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              1142,
+              755,
+              264,
+              259
+            ]
+          }
+        ],
+        "revival": {
+          "t": 1.100000000000001,
+          "threshold": 0.5,
+          "cycle": 2
+        },
+        "rearming": false,
+        "active": true,
+        "nodes": [
+          {
+            "x": 136,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 136,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          }
+        ],
+        "hp": 1056
+      },
+      "easy-0.5-finished": {
+        "draws": [],
+        "revival": null,
+        "rearming": false,
+        "active": true,
+        "nodes": [
+          {
+            "x": 136,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 136,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          }
+        ],
+        "hp": 1056
+      },
+      "easy-0.25-charge": {
+        "draws": [
+          {
+            "name": "charge",
+            "u": 0.09259259259259257,
+            "x": 340,
+            "y": 177.28,
+            "sx": 0.6,
+            "sy": 0.6,
+            "alpha": 0.43999999999999995,
+            "source": [
+              61,
+              91,
+              259,
+              250
+            ]
+          }
+        ],
+        "revival": {
+          "t": 0.09999999999999999,
+          "threshold": 0.25,
+          "cycle": 3
+        },
+        "rearming": true,
+        "active": false,
+        "nodes": [
+          {
+            "x": 136,
+            "y": 140,
+            "dead": false,
+            "mat": 0
+          },
+          {
+            "x": 544,
+            "y": 140,
+            "dead": false,
+            "mat": 0
+          },
+          {
+            "x": 136,
+            "y": 296,
+            "dead": false,
+            "mat": 0
+          },
+          {
+            "x": 544,
+            "y": 296,
+            "dead": false,
+            "mat": 0
+          }
+        ],
+        "hp": 528
+      },
+      "easy-0.25-conduits": {
+        "draws": [
+          {
+            "name": "charge",
+            "u": 0.4012345679012345,
+            "x": 340,
+            "y": 177.28,
+            "sx": 0.6,
+            "sy": 0.6,
+            "alpha": 0.88,
+            "source": [
+              417,
+              85,
+              276,
+              260
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.2971014492753623,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6064059736780293,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              403,
+              484,
+              295,
+              140
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.2971014492753623,
+            "x": 136,
+            "y": 140,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              419,
+              752,
+              263,
+              264
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.2373188405797101,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6064059736780293,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              41,
+              499,
+              297,
+              106
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.2373188405797101,
+            "x": 544,
+            "y": 140,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              72,
+              751,
+              253,
+              268
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.1775362318840579,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6986922856007914,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              41,
+              499,
+              297,
+              106
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.1775362318840579,
+            "x": 136,
+            "y": 296,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              72,
+              751,
+              253,
+              268
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.11775362318840574,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6986922856007914,
+            "sy": 0.18,
+            "alpha": 0.6229166666666665,
+            "source": [
+              41,
+              499,
+              297,
+              106
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.11775362318840574,
+            "x": 544,
+            "y": 296,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.636458333333333,
+            "source": [
+              72,
+              751,
+              253,
+              268
+            ]
+          }
+        ],
+        "revival": {
+          "t": 0.4333333333333333,
+          "threshold": 0.25,
+          "cycle": 3
+        },
+        "rearming": true,
+        "active": false,
+        "nodes": [
+          {
+            "x": 136,
+            "y": 140,
+            "dead": false,
+            "mat": 0.45098039215686253
+          },
+          {
+            "x": 544,
+            "y": 140,
+            "dead": false,
+            "mat": 0.2892156862745096
+          },
+          {
+            "x": 136,
+            "y": 296,
+            "dead": false,
+            "mat": 0.1274509803921567
+          },
+          {
+            "x": 544,
+            "y": 296,
+            "dead": false,
+            "mat": 0
+          }
+        ],
+        "hp": 528
+      },
+      "easy-0.25-reconstruct": {
+        "draws": [
+          {
+            "name": "charge",
+            "u": 0.7407407407407415,
+            "x": 340,
+            "y": 177.28,
+            "sx": 0.6,
+            "sy": 0.6,
+            "alpha": 0.88,
+            "source": [
+              770,
+              80,
+              274,
+              276
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.6956521739130443,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6064059736780293,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              763,
+              473,
+              293,
+              168
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.6956521739130443,
+            "x": 136,
+            "y": 140,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              777,
+              748,
+              269,
+              276
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.6358695652173922,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6064059736780293,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              763,
+              473,
+              293,
+              168
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.6358695652173922,
+            "x": 544,
+            "y": 140,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              777,
+              748,
+              269,
+              276
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.57608695652174,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6986922856007914,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              763,
+              473,
+              293,
+              168
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.57608695652174,
+            "x": 136,
+            "y": 296,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              777,
+              748,
+              269,
+              276
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.5163043478260878,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6986922856007914,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              763,
+              473,
+              293,
+              168
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.5163043478260878,
+            "x": 544,
+            "y": 296,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              777,
+              748,
+              269,
+              276
+            ]
+          }
+        ],
+        "revival": {
+          "t": 0.8000000000000008,
+          "threshold": 0.25,
+          "cycle": 3
+        },
+        "rearming": true,
+        "active": false,
+        "nodes": [
+          {
+            "x": 136,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 136,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          }
+        ],
+        "hp": 528
+      },
+      "easy-0.25-restored": {
+        "draws": [
+          {
+            "name": "socket",
+            "u": 1,
+            "x": 136,
+            "y": 140,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              1142,
+              755,
+              264,
+              259
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.9619565217391315,
+            "x": 544,
+            "y": 140,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              1142,
+              755,
+              264,
+              259
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.9021739130434793,
+            "x": 136,
+            "y": 296,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              1142,
+              755,
+              264,
+              259
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.8423913043478272,
+            "x": 544,
+            "y": 296,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              1142,
+              755,
+              264,
+              259
+            ]
+          }
+        ],
+        "revival": {
+          "t": 1.100000000000001,
+          "threshold": 0.25,
+          "cycle": 3
+        },
+        "rearming": false,
+        "active": true,
+        "nodes": [
+          {
+            "x": 136,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 136,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          }
+        ],
+        "hp": 528
+      },
+      "easy-0.25-finished": {
+        "draws": [],
+        "revival": null,
+        "rearming": false,
+        "active": true,
+        "nodes": [
+          {
+            "x": 136,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 136,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          }
+        ],
+        "hp": 528
+      },
+      "normal-0.75-charge": {
+        "draws": [
+          {
+            "name": "charge",
+            "u": 0.09259259259259257,
+            "x": 340,
+            "y": 177.28,
+            "sx": 0.6,
+            "sy": 0.6,
+            "alpha": 0.43999999999999995,
+            "source": [
+              61,
+              91,
+              259,
+              250
+            ]
+          }
+        ],
+        "revival": {
+          "t": 0.09999999999999999,
+          "threshold": 0.75,
+          "cycle": 1
+        },
+        "rearming": true,
+        "active": false,
+        "nodes": [
+          {
+            "x": 136,
+            "y": 140,
+            "dead": false,
+            "mat": 0
+          },
+          {
+            "x": 544,
+            "y": 140,
+            "dead": false,
+            "mat": 0
+          },
+          {
+            "x": 136,
+            "y": 296,
+            "dead": false,
+            "mat": 0
+          },
+          {
+            "x": 544,
+            "y": 296,
+            "dead": false,
+            "mat": 0
+          }
+        ],
+        "hp": 2904
+      },
+      "normal-0.75-conduits": {
+        "draws": [
+          {
+            "name": "charge",
+            "u": 0.4012345679012345,
+            "x": 340,
+            "y": 177.28,
+            "sx": 0.6,
+            "sy": 0.6,
+            "alpha": 0.88,
+            "source": [
+              417,
+              85,
+              276,
+              260
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.2971014492753623,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6064059736780293,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              403,
+              484,
+              295,
+              140
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.2971014492753623,
+            "x": 136,
+            "y": 140,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              419,
+              752,
+              263,
+              264
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.2373188405797101,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6064059736780293,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              41,
+              499,
+              297,
+              106
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.2373188405797101,
+            "x": 544,
+            "y": 140,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              72,
+              751,
+              253,
+              268
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.1775362318840579,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6986922856007914,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              41,
+              499,
+              297,
+              106
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.1775362318840579,
+            "x": 136,
+            "y": 296,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              72,
+              751,
+              253,
+              268
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.11775362318840574,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6986922856007914,
+            "sy": 0.18,
+            "alpha": 0.6229166666666665,
+            "source": [
+              41,
+              499,
+              297,
+              106
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.11775362318840574,
+            "x": 544,
+            "y": 296,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.636458333333333,
+            "source": [
+              72,
+              751,
+              253,
+              268
+            ]
+          }
+        ],
+        "revival": {
+          "t": 0.4333333333333333,
+          "threshold": 0.75,
+          "cycle": 1
+        },
+        "rearming": true,
+        "active": false,
+        "nodes": [
+          {
+            "x": 136,
+            "y": 140,
+            "dead": false,
+            "mat": 0.45098039215686253
+          },
+          {
+            "x": 544,
+            "y": 140,
+            "dead": false,
+            "mat": 0.2892156862745096
+          },
+          {
+            "x": 136,
+            "y": 296,
+            "dead": false,
+            "mat": 0.1274509803921567
+          },
+          {
+            "x": 544,
+            "y": 296,
+            "dead": false,
+            "mat": 0
+          }
+        ],
+        "hp": 2904
+      },
+      "normal-0.75-reconstruct": {
+        "draws": [
+          {
+            "name": "charge",
+            "u": 0.7407407407407415,
+            "x": 340,
+            "y": 177.28,
+            "sx": 0.6,
+            "sy": 0.6,
+            "alpha": 0.88,
+            "source": [
+              770,
+              80,
+              274,
+              276
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.6956521739130443,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6064059736780293,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              763,
+              473,
+              293,
+              168
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.6956521739130443,
+            "x": 136,
+            "y": 140,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              777,
+              748,
+              269,
+              276
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.6358695652173922,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6064059736780293,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              763,
+              473,
+              293,
+              168
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.6358695652173922,
+            "x": 544,
+            "y": 140,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              777,
+              748,
+              269,
+              276
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.57608695652174,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6986922856007914,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              763,
+              473,
+              293,
+              168
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.57608695652174,
+            "x": 136,
+            "y": 296,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              777,
+              748,
+              269,
+              276
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.5163043478260878,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6986922856007914,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              763,
+              473,
+              293,
+              168
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.5163043478260878,
+            "x": 544,
+            "y": 296,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              777,
+              748,
+              269,
+              276
+            ]
+          }
+        ],
+        "revival": {
+          "t": 0.8000000000000008,
+          "threshold": 0.75,
+          "cycle": 1
+        },
+        "rearming": true,
+        "active": false,
+        "nodes": [
+          {
+            "x": 136,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 136,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          }
+        ],
+        "hp": 2904
+      },
+      "normal-0.75-restored": {
+        "draws": [
+          {
+            "name": "socket",
+            "u": 1,
+            "x": 136,
+            "y": 140,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              1142,
+              755,
+              264,
+              259
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.9619565217391315,
+            "x": 544,
+            "y": 140,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              1142,
+              755,
+              264,
+              259
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.9021739130434793,
+            "x": 136,
+            "y": 296,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              1142,
+              755,
+              264,
+              259
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.8423913043478272,
+            "x": 544,
+            "y": 296,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              1142,
+              755,
+              264,
+              259
+            ]
+          }
+        ],
+        "revival": {
+          "t": 1.100000000000001,
+          "threshold": 0.75,
+          "cycle": 1
+        },
+        "rearming": false,
+        "active": true,
+        "nodes": [
+          {
+            "x": 136,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 136,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          }
+        ],
+        "hp": 2904
+      },
+      "normal-0.75-finished": {
+        "draws": [],
+        "revival": null,
+        "rearming": false,
+        "active": true,
+        "nodes": [
+          {
+            "x": 136,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 136,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          }
+        ],
+        "hp": 2904
+      },
+      "normal-0.5-charge": {
+        "draws": [
+          {
+            "name": "charge",
+            "u": 0.09259259259259257,
+            "x": 340,
+            "y": 177.28,
+            "sx": 0.6,
+            "sy": 0.6,
+            "alpha": 0.43999999999999995,
+            "source": [
+              61,
+              91,
+              259,
+              250
+            ]
+          }
+        ],
+        "revival": {
+          "t": 0.09999999999999999,
+          "threshold": 0.5,
+          "cycle": 2
+        },
+        "rearming": true,
+        "active": false,
+        "nodes": [
+          {
+            "x": 136,
+            "y": 140,
+            "dead": false,
+            "mat": 0
+          },
+          {
+            "x": 544,
+            "y": 140,
+            "dead": false,
+            "mat": 0
+          },
+          {
+            "x": 136,
+            "y": 296,
+            "dead": false,
+            "mat": 0
+          },
+          {
+            "x": 544,
+            "y": 296,
+            "dead": false,
+            "mat": 0
+          }
+        ],
+        "hp": 1936
+      },
+      "normal-0.5-conduits": {
+        "draws": [
+          {
+            "name": "charge",
+            "u": 0.4012345679012345,
+            "x": 340,
+            "y": 177.28,
+            "sx": 0.6,
+            "sy": 0.6,
+            "alpha": 0.88,
+            "source": [
+              417,
+              85,
+              276,
+              260
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.2971014492753623,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6064059736780293,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              403,
+              484,
+              295,
+              140
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.2971014492753623,
+            "x": 136,
+            "y": 140,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              419,
+              752,
+              263,
+              264
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.2373188405797101,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6064059736780293,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              41,
+              499,
+              297,
+              106
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.2373188405797101,
+            "x": 544,
+            "y": 140,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              72,
+              751,
+              253,
+              268
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.1775362318840579,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6986922856007914,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              41,
+              499,
+              297,
+              106
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.1775362318840579,
+            "x": 136,
+            "y": 296,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              72,
+              751,
+              253,
+              268
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.11775362318840574,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6986922856007914,
+            "sy": 0.18,
+            "alpha": 0.6229166666666665,
+            "source": [
+              41,
+              499,
+              297,
+              106
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.11775362318840574,
+            "x": 544,
+            "y": 296,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.636458333333333,
+            "source": [
+              72,
+              751,
+              253,
+              268
+            ]
+          }
+        ],
+        "revival": {
+          "t": 0.4333333333333333,
+          "threshold": 0.5,
+          "cycle": 2
+        },
+        "rearming": true,
+        "active": false,
+        "nodes": [
+          {
+            "x": 136,
+            "y": 140,
+            "dead": false,
+            "mat": 0.45098039215686253
+          },
+          {
+            "x": 544,
+            "y": 140,
+            "dead": false,
+            "mat": 0.2892156862745096
+          },
+          {
+            "x": 136,
+            "y": 296,
+            "dead": false,
+            "mat": 0.1274509803921567
+          },
+          {
+            "x": 544,
+            "y": 296,
+            "dead": false,
+            "mat": 0
+          }
+        ],
+        "hp": 1936
+      },
+      "normal-0.5-reconstruct": {
+        "draws": [
+          {
+            "name": "charge",
+            "u": 0.7407407407407415,
+            "x": 340,
+            "y": 177.28,
+            "sx": 0.6,
+            "sy": 0.6,
+            "alpha": 0.88,
+            "source": [
+              770,
+              80,
+              274,
+              276
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.6956521739130443,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6064059736780293,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              763,
+              473,
+              293,
+              168
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.6956521739130443,
+            "x": 136,
+            "y": 140,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              777,
+              748,
+              269,
+              276
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.6358695652173922,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6064059736780293,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              763,
+              473,
+              293,
+              168
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.6358695652173922,
+            "x": 544,
+            "y": 140,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              777,
+              748,
+              269,
+              276
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.57608695652174,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6986922856007914,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              763,
+              473,
+              293,
+              168
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.57608695652174,
+            "x": 136,
+            "y": 296,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              777,
+              748,
+              269,
+              276
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.5163043478260878,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6986922856007914,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              763,
+              473,
+              293,
+              168
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.5163043478260878,
+            "x": 544,
+            "y": 296,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              777,
+              748,
+              269,
+              276
+            ]
+          }
+        ],
+        "revival": {
+          "t": 0.8000000000000008,
+          "threshold": 0.5,
+          "cycle": 2
+        },
+        "rearming": true,
+        "active": false,
+        "nodes": [
+          {
+            "x": 136,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 136,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          }
+        ],
+        "hp": 1936
+      },
+      "normal-0.5-restored": {
+        "draws": [
+          {
+            "name": "socket",
+            "u": 1,
+            "x": 136,
+            "y": 140,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              1142,
+              755,
+              264,
+              259
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.9619565217391315,
+            "x": 544,
+            "y": 140,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              1142,
+              755,
+              264,
+              259
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.9021739130434793,
+            "x": 136,
+            "y": 296,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              1142,
+              755,
+              264,
+              259
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.8423913043478272,
+            "x": 544,
+            "y": 296,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              1142,
+              755,
+              264,
+              259
+            ]
+          }
+        ],
+        "revival": {
+          "t": 1.100000000000001,
+          "threshold": 0.5,
+          "cycle": 2
+        },
+        "rearming": false,
+        "active": true,
+        "nodes": [
+          {
+            "x": 136,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 136,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          }
+        ],
+        "hp": 1936
+      },
+      "normal-0.5-finished": {
+        "draws": [],
+        "revival": null,
+        "rearming": false,
+        "active": true,
+        "nodes": [
+          {
+            "x": 136,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 136,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          }
+        ],
+        "hp": 1936
+      },
+      "normal-0.25-charge": {
+        "draws": [
+          {
+            "name": "charge",
+            "u": 0.09259259259259257,
+            "x": 340,
+            "y": 177.28,
+            "sx": 0.6,
+            "sy": 0.6,
+            "alpha": 0.43999999999999995,
+            "source": [
+              61,
+              91,
+              259,
+              250
+            ]
+          }
+        ],
+        "revival": {
+          "t": 0.09999999999999999,
+          "threshold": 0.25,
+          "cycle": 3
+        },
+        "rearming": true,
+        "active": false,
+        "nodes": [
+          {
+            "x": 136,
+            "y": 140,
+            "dead": false,
+            "mat": 0
+          },
+          {
+            "x": 544,
+            "y": 140,
+            "dead": false,
+            "mat": 0
+          },
+          {
+            "x": 136,
+            "y": 296,
+            "dead": false,
+            "mat": 0
+          },
+          {
+            "x": 544,
+            "y": 296,
+            "dead": false,
+            "mat": 0
+          }
+        ],
+        "hp": 968
+      },
+      "normal-0.25-conduits": {
+        "draws": [
+          {
+            "name": "charge",
+            "u": 0.4012345679012345,
+            "x": 340,
+            "y": 177.28,
+            "sx": 0.6,
+            "sy": 0.6,
+            "alpha": 0.88,
+            "source": [
+              417,
+              85,
+              276,
+              260
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.2971014492753623,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6064059736780293,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              403,
+              484,
+              295,
+              140
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.2971014492753623,
+            "x": 136,
+            "y": 140,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              419,
+              752,
+              263,
+              264
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.2373188405797101,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6064059736780293,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              41,
+              499,
+              297,
+              106
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.2373188405797101,
+            "x": 544,
+            "y": 140,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              72,
+              751,
+              253,
+              268
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.1775362318840579,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6986922856007914,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              41,
+              499,
+              297,
+              106
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.1775362318840579,
+            "x": 136,
+            "y": 296,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              72,
+              751,
+              253,
+              268
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.11775362318840574,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6986922856007914,
+            "sy": 0.18,
+            "alpha": 0.6229166666666665,
+            "source": [
+              41,
+              499,
+              297,
+              106
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.11775362318840574,
+            "x": 544,
+            "y": 296,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.636458333333333,
+            "source": [
+              72,
+              751,
+              253,
+              268
+            ]
+          }
+        ],
+        "revival": {
+          "t": 0.4333333333333333,
+          "threshold": 0.25,
+          "cycle": 3
+        },
+        "rearming": true,
+        "active": false,
+        "nodes": [
+          {
+            "x": 136,
+            "y": 140,
+            "dead": false,
+            "mat": 0.45098039215686253
+          },
+          {
+            "x": 544,
+            "y": 140,
+            "dead": false,
+            "mat": 0.2892156862745096
+          },
+          {
+            "x": 136,
+            "y": 296,
+            "dead": false,
+            "mat": 0.1274509803921567
+          },
+          {
+            "x": 544,
+            "y": 296,
+            "dead": false,
+            "mat": 0
+          }
+        ],
+        "hp": 968
+      },
+      "normal-0.25-reconstruct": {
+        "draws": [
+          {
+            "name": "charge",
+            "u": 0.7407407407407415,
+            "x": 340,
+            "y": 177.28,
+            "sx": 0.6,
+            "sy": 0.6,
+            "alpha": 0.88,
+            "source": [
+              770,
+              80,
+              274,
+              276
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.6956521739130443,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6064059736780293,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              763,
+              473,
+              293,
+              168
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.6956521739130443,
+            "x": 136,
+            "y": 140,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              777,
+              748,
+              269,
+              276
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.6358695652173922,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6064059736780293,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              763,
+              473,
+              293,
+              168
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.6358695652173922,
+            "x": 544,
+            "y": 140,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              777,
+              748,
+              269,
+              276
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.57608695652174,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6986922856007914,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              763,
+              473,
+              293,
+              168
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.57608695652174,
+            "x": 136,
+            "y": 296,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              777,
+              748,
+              269,
+              276
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.5163043478260878,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6986922856007914,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              763,
+              473,
+              293,
+              168
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.5163043478260878,
+            "x": 544,
+            "y": 296,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              777,
+              748,
+              269,
+              276
+            ]
+          }
+        ],
+        "revival": {
+          "t": 0.8000000000000008,
+          "threshold": 0.25,
+          "cycle": 3
+        },
+        "rearming": true,
+        "active": false,
+        "nodes": [
+          {
+            "x": 136,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 136,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          }
+        ],
+        "hp": 968
+      },
+      "normal-0.25-restored": {
+        "draws": [
+          {
+            "name": "socket",
+            "u": 1,
+            "x": 136,
+            "y": 140,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              1142,
+              755,
+              264,
+              259
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.9619565217391315,
+            "x": 544,
+            "y": 140,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              1142,
+              755,
+              264,
+              259
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.9021739130434793,
+            "x": 136,
+            "y": 296,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              1142,
+              755,
+              264,
+              259
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.8423913043478272,
+            "x": 544,
+            "y": 296,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              1142,
+              755,
+              264,
+              259
+            ]
+          }
+        ],
+        "revival": {
+          "t": 1.100000000000001,
+          "threshold": 0.25,
+          "cycle": 3
+        },
+        "rearming": false,
+        "active": true,
+        "nodes": [
+          {
+            "x": 136,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 136,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          }
+        ],
+        "hp": 968
+      },
+      "normal-0.25-finished": {
+        "draws": [],
+        "revival": null,
+        "rearming": false,
+        "active": true,
+        "nodes": [
+          {
+            "x": 136,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 136,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          }
+        ],
+        "hp": 968
+      },
+      "hard-0.75-charge": {
+        "draws": [
+          {
+            "name": "charge",
+            "u": 0.09259259259259257,
+            "x": 340,
+            "y": 177.28,
+            "sx": 0.6,
+            "sy": 0.6,
+            "alpha": 0.43999999999999995,
+            "source": [
+              61,
+              91,
+              259,
+              250
+            ]
+          }
+        ],
+        "revival": {
+          "t": 0.09999999999999999,
+          "threshold": 0.75,
+          "cycle": 1
+        },
+        "rearming": true,
+        "active": false,
+        "nodes": [
+          {
+            "x": 136,
+            "y": 140,
+            "dead": false,
+            "mat": 0
+          },
+          {
+            "x": 544,
+            "y": 140,
+            "dead": false,
+            "mat": 0
+          },
+          {
+            "x": 136,
+            "y": 296,
+            "dead": false,
+            "mat": 0
+          },
+          {
+            "x": 544,
+            "y": 296,
+            "dead": false,
+            "mat": 0
+          }
+        ],
+        "hp": 3630
+      },
+      "hard-0.75-conduits": {
+        "draws": [
+          {
+            "name": "charge",
+            "u": 0.4012345679012345,
+            "x": 340,
+            "y": 177.28,
+            "sx": 0.6,
+            "sy": 0.6,
+            "alpha": 0.88,
+            "source": [
+              417,
+              85,
+              276,
+              260
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.2971014492753623,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6064059736780293,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              403,
+              484,
+              295,
+              140
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.2971014492753623,
+            "x": 136,
+            "y": 140,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              419,
+              752,
+              263,
+              264
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.2373188405797101,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6064059736780293,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              41,
+              499,
+              297,
+              106
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.2373188405797101,
+            "x": 544,
+            "y": 140,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              72,
+              751,
+              253,
+              268
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.1775362318840579,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6986922856007914,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              41,
+              499,
+              297,
+              106
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.1775362318840579,
+            "x": 136,
+            "y": 296,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              72,
+              751,
+              253,
+              268
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.11775362318840574,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6986922856007914,
+            "sy": 0.18,
+            "alpha": 0.6229166666666665,
+            "source": [
+              41,
+              499,
+              297,
+              106
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.11775362318840574,
+            "x": 544,
+            "y": 296,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.636458333333333,
+            "source": [
+              72,
+              751,
+              253,
+              268
+            ]
+          }
+        ],
+        "revival": {
+          "t": 0.4333333333333333,
+          "threshold": 0.75,
+          "cycle": 1
+        },
+        "rearming": true,
+        "active": false,
+        "nodes": [
+          {
+            "x": 136,
+            "y": 140,
+            "dead": false,
+            "mat": 0.45098039215686253
+          },
+          {
+            "x": 544,
+            "y": 140,
+            "dead": false,
+            "mat": 0.2892156862745096
+          },
+          {
+            "x": 136,
+            "y": 296,
+            "dead": false,
+            "mat": 0.1274509803921567
+          },
+          {
+            "x": 544,
+            "y": 296,
+            "dead": false,
+            "mat": 0
+          }
+        ],
+        "hp": 3630
+      },
+      "hard-0.75-reconstruct": {
+        "draws": [
+          {
+            "name": "charge",
+            "u": 0.7407407407407415,
+            "x": 340,
+            "y": 177.28,
+            "sx": 0.6,
+            "sy": 0.6,
+            "alpha": 0.88,
+            "source": [
+              770,
+              80,
+              274,
+              276
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.6956521739130443,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6064059736780293,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              763,
+              473,
+              293,
+              168
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.6956521739130443,
+            "x": 136,
+            "y": 140,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              777,
+              748,
+              269,
+              276
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.6358695652173922,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6064059736780293,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              763,
+              473,
+              293,
+              168
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.6358695652173922,
+            "x": 544,
+            "y": 140,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              777,
+              748,
+              269,
+              276
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.57608695652174,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6986922856007914,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              763,
+              473,
+              293,
+              168
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.57608695652174,
+            "x": 136,
+            "y": 296,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              777,
+              748,
+              269,
+              276
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.5163043478260878,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6986922856007914,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              763,
+              473,
+              293,
+              168
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.5163043478260878,
+            "x": 544,
+            "y": 296,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              777,
+              748,
+              269,
+              276
+            ]
+          }
+        ],
+        "revival": {
+          "t": 0.8000000000000008,
+          "threshold": 0.75,
+          "cycle": 1
+        },
+        "rearming": true,
+        "active": false,
+        "nodes": [
+          {
+            "x": 136,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 136,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          }
+        ],
+        "hp": 3630
+      },
+      "hard-0.75-restored": {
+        "draws": [
+          {
+            "name": "socket",
+            "u": 1,
+            "x": 136,
+            "y": 140,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              1142,
+              755,
+              264,
+              259
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.9619565217391315,
+            "x": 544,
+            "y": 140,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              1142,
+              755,
+              264,
+              259
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.9021739130434793,
+            "x": 136,
+            "y": 296,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              1142,
+              755,
+              264,
+              259
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.8423913043478272,
+            "x": 544,
+            "y": 296,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              1142,
+              755,
+              264,
+              259
+            ]
+          }
+        ],
+        "revival": {
+          "t": 1.100000000000001,
+          "threshold": 0.75,
+          "cycle": 1
+        },
+        "rearming": false,
+        "active": true,
+        "nodes": [
+          {
+            "x": 136,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 136,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          }
+        ],
+        "hp": 3630
+      },
+      "hard-0.75-finished": {
+        "draws": [],
+        "revival": null,
+        "rearming": false,
+        "active": true,
+        "nodes": [
+          {
+            "x": 136,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 136,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          }
+        ],
+        "hp": 3630
+      },
+      "hard-0.5-charge": {
+        "draws": [
+          {
+            "name": "charge",
+            "u": 0.09259259259259257,
+            "x": 340,
+            "y": 177.28,
+            "sx": 0.6,
+            "sy": 0.6,
+            "alpha": 0.43999999999999995,
+            "source": [
+              61,
+              91,
+              259,
+              250
+            ]
+          }
+        ],
+        "revival": {
+          "t": 0.09999999999999999,
+          "threshold": 0.5,
+          "cycle": 2
+        },
+        "rearming": true,
+        "active": false,
+        "nodes": [
+          {
+            "x": 136,
+            "y": 140,
+            "dead": false,
+            "mat": 0
+          },
+          {
+            "x": 544,
+            "y": 140,
+            "dead": false,
+            "mat": 0
+          },
+          {
+            "x": 136,
+            "y": 296,
+            "dead": false,
+            "mat": 0
+          },
+          {
+            "x": 544,
+            "y": 296,
+            "dead": false,
+            "mat": 0
+          }
+        ],
+        "hp": 2420
+      },
+      "hard-0.5-conduits": {
+        "draws": [
+          {
+            "name": "charge",
+            "u": 0.4012345679012345,
+            "x": 340,
+            "y": 177.28,
+            "sx": 0.6,
+            "sy": 0.6,
+            "alpha": 0.88,
+            "source": [
+              417,
+              85,
+              276,
+              260
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.2971014492753623,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6064059736780293,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              403,
+              484,
+              295,
+              140
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.2971014492753623,
+            "x": 136,
+            "y": 140,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              419,
+              752,
+              263,
+              264
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.2373188405797101,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6064059736780293,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              41,
+              499,
+              297,
+              106
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.2373188405797101,
+            "x": 544,
+            "y": 140,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              72,
+              751,
+              253,
+              268
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.1775362318840579,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6986922856007914,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              41,
+              499,
+              297,
+              106
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.1775362318840579,
+            "x": 136,
+            "y": 296,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              72,
+              751,
+              253,
+              268
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.11775362318840574,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6986922856007914,
+            "sy": 0.18,
+            "alpha": 0.6229166666666665,
+            "source": [
+              41,
+              499,
+              297,
+              106
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.11775362318840574,
+            "x": 544,
+            "y": 296,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.636458333333333,
+            "source": [
+              72,
+              751,
+              253,
+              268
+            ]
+          }
+        ],
+        "revival": {
+          "t": 0.4333333333333333,
+          "threshold": 0.5,
+          "cycle": 2
+        },
+        "rearming": true,
+        "active": false,
+        "nodes": [
+          {
+            "x": 136,
+            "y": 140,
+            "dead": false,
+            "mat": 0.45098039215686253
+          },
+          {
+            "x": 544,
+            "y": 140,
+            "dead": false,
+            "mat": 0.2892156862745096
+          },
+          {
+            "x": 136,
+            "y": 296,
+            "dead": false,
+            "mat": 0.1274509803921567
+          },
+          {
+            "x": 544,
+            "y": 296,
+            "dead": false,
+            "mat": 0
+          }
+        ],
+        "hp": 2420
+      },
+      "hard-0.5-reconstruct": {
+        "draws": [
+          {
+            "name": "charge",
+            "u": 0.7407407407407415,
+            "x": 340,
+            "y": 177.28,
+            "sx": 0.6,
+            "sy": 0.6,
+            "alpha": 0.88,
+            "source": [
+              770,
+              80,
+              274,
+              276
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.6956521739130443,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6064059736780293,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              763,
+              473,
+              293,
+              168
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.6956521739130443,
+            "x": 136,
+            "y": 140,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              777,
+              748,
+              269,
+              276
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.6358695652173922,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6064059736780293,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              763,
+              473,
+              293,
+              168
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.6358695652173922,
+            "x": 544,
+            "y": 140,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              777,
+              748,
+              269,
+              276
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.57608695652174,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6986922856007914,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              763,
+              473,
+              293,
+              168
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.57608695652174,
+            "x": 136,
+            "y": 296,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              777,
+              748,
+              269,
+              276
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.5163043478260878,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6986922856007914,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              763,
+              473,
+              293,
+              168
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.5163043478260878,
+            "x": 544,
+            "y": 296,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              777,
+              748,
+              269,
+              276
+            ]
+          }
+        ],
+        "revival": {
+          "t": 0.8000000000000008,
+          "threshold": 0.5,
+          "cycle": 2
+        },
+        "rearming": true,
+        "active": false,
+        "nodes": [
+          {
+            "x": 136,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 136,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          }
+        ],
+        "hp": 2420
+      },
+      "hard-0.5-restored": {
+        "draws": [
+          {
+            "name": "socket",
+            "u": 1,
+            "x": 136,
+            "y": 140,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              1142,
+              755,
+              264,
+              259
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.9619565217391315,
+            "x": 544,
+            "y": 140,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              1142,
+              755,
+              264,
+              259
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.9021739130434793,
+            "x": 136,
+            "y": 296,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              1142,
+              755,
+              264,
+              259
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.8423913043478272,
+            "x": 544,
+            "y": 296,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              1142,
+              755,
+              264,
+              259
+            ]
+          }
+        ],
+        "revival": {
+          "t": 1.100000000000001,
+          "threshold": 0.5,
+          "cycle": 2
+        },
+        "rearming": false,
+        "active": true,
+        "nodes": [
+          {
+            "x": 136,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 136,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          }
+        ],
+        "hp": 2420
+      },
+      "hard-0.5-finished": {
+        "draws": [],
+        "revival": null,
+        "rearming": false,
+        "active": true,
+        "nodes": [
+          {
+            "x": 136,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 136,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          }
+        ],
+        "hp": 2420
+      },
+      "hard-0.25-charge": {
+        "draws": [
+          {
+            "name": "charge",
+            "u": 0.09259259259259257,
+            "x": 340,
+            "y": 177.28,
+            "sx": 0.6,
+            "sy": 0.6,
+            "alpha": 0.43999999999999995,
+            "source": [
+              61,
+              91,
+              259,
+              250
+            ]
+          }
+        ],
+        "revival": {
+          "t": 0.09999999999999999,
+          "threshold": 0.25,
+          "cycle": 3
+        },
+        "rearming": true,
+        "active": false,
+        "nodes": [
+          {
+            "x": 136,
+            "y": 140,
+            "dead": false,
+            "mat": 0
+          },
+          {
+            "x": 544,
+            "y": 140,
+            "dead": false,
+            "mat": 0
+          },
+          {
+            "x": 136,
+            "y": 296,
+            "dead": false,
+            "mat": 0
+          },
+          {
+            "x": 544,
+            "y": 296,
+            "dead": false,
+            "mat": 0
+          }
+        ],
+        "hp": 1210
+      },
+      "hard-0.25-conduits": {
+        "draws": [
+          {
+            "name": "charge",
+            "u": 0.4012345679012345,
+            "x": 340,
+            "y": 177.28,
+            "sx": 0.6,
+            "sy": 0.6,
+            "alpha": 0.88,
+            "source": [
+              417,
+              85,
+              276,
+              260
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.2971014492753623,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6064059736780293,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              403,
+              484,
+              295,
+              140
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.2971014492753623,
+            "x": 136,
+            "y": 140,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              419,
+              752,
+              263,
+              264
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.2373188405797101,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6064059736780293,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              41,
+              499,
+              297,
+              106
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.2373188405797101,
+            "x": 544,
+            "y": 140,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              72,
+              751,
+              253,
+              268
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.1775362318840579,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6986922856007914,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              41,
+              499,
+              297,
+              106
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.1775362318840579,
+            "x": 136,
+            "y": 296,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              72,
+              751,
+              253,
+              268
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.11775362318840574,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6986922856007914,
+            "sy": 0.18,
+            "alpha": 0.6229166666666665,
+            "source": [
+              41,
+              499,
+              297,
+              106
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.11775362318840574,
+            "x": 544,
+            "y": 296,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.636458333333333,
+            "source": [
+              72,
+              751,
+              253,
+              268
+            ]
+          }
+        ],
+        "revival": {
+          "t": 0.4333333333333333,
+          "threshold": 0.25,
+          "cycle": 3
+        },
+        "rearming": true,
+        "active": false,
+        "nodes": [
+          {
+            "x": 136,
+            "y": 140,
+            "dead": false,
+            "mat": 0.45098039215686253
+          },
+          {
+            "x": 544,
+            "y": 140,
+            "dead": false,
+            "mat": 0.2892156862745096
+          },
+          {
+            "x": 136,
+            "y": 296,
+            "dead": false,
+            "mat": 0.1274509803921567
+          },
+          {
+            "x": 544,
+            "y": 296,
+            "dead": false,
+            "mat": 0
+          }
+        ],
+        "hp": 1210
+      },
+      "hard-0.25-reconstruct": {
+        "draws": [
+          {
+            "name": "charge",
+            "u": 0.7407407407407415,
+            "x": 340,
+            "y": 177.28,
+            "sx": 0.6,
+            "sy": 0.6,
+            "alpha": 0.88,
+            "source": [
+              770,
+              80,
+              274,
+              276
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.6956521739130443,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6064059736780293,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              763,
+              473,
+              293,
+              168
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.6956521739130443,
+            "x": 136,
+            "y": 140,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              777,
+              748,
+              269,
+              276
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.6358695652173922,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6064059736780293,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              763,
+              473,
+              293,
+              168
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.6358695652173922,
+            "x": 544,
+            "y": 140,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              777,
+              748,
+              269,
+              276
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.57608695652174,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6986922856007914,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              763,
+              473,
+              293,
+              168
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.57608695652174,
+            "x": 136,
+            "y": 296,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              777,
+              748,
+              269,
+              276
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.5163043478260878,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6986922856007914,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              763,
+              473,
+              293,
+              168
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.5163043478260878,
+            "x": 544,
+            "y": 296,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              777,
+              748,
+              269,
+              276
+            ]
+          }
+        ],
+        "revival": {
+          "t": 0.8000000000000008,
+          "threshold": 0.25,
+          "cycle": 3
+        },
+        "rearming": true,
+        "active": false,
+        "nodes": [
+          {
+            "x": 136,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 136,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          }
+        ],
+        "hp": 1210
+      },
+      "hard-0.25-restored": {
+        "draws": [
+          {
+            "name": "socket",
+            "u": 1,
+            "x": 136,
+            "y": 140,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              1142,
+              755,
+              264,
+              259
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.9619565217391315,
+            "x": 544,
+            "y": 140,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              1142,
+              755,
+              264,
+              259
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.9021739130434793,
+            "x": 136,
+            "y": 296,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              1142,
+              755,
+              264,
+              259
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.8423913043478272,
+            "x": 544,
+            "y": 296,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              1142,
+              755,
+              264,
+              259
+            ]
+          }
+        ],
+        "revival": {
+          "t": 1.100000000000001,
+          "threshold": 0.25,
+          "cycle": 3
+        },
+        "rearming": false,
+        "active": true,
+        "nodes": [
+          {
+            "x": 136,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 136,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          }
+        ],
+        "hp": 1210
+      },
+      "hard-0.25-finished": {
+        "draws": [],
+        "revival": null,
+        "rearming": false,
+        "active": true,
+        "nodes": [
+          {
+            "x": 136,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 136,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          }
+        ],
+        "hp": 1210
+      },
+      "furious-0.75-charge": {
+        "draws": [
+          {
+            "name": "charge",
+            "u": 0.09259259259259257,
+            "x": 340,
+            "y": 177.28,
+            "sx": 0.6,
+            "sy": 0.6,
+            "alpha": 0.43999999999999995,
+            "source": [
+              61,
+              91,
+              259,
+              250
+            ]
+          }
+        ],
+        "revival": {
+          "t": 0.09999999999999999,
+          "threshold": 0.75,
+          "cycle": 1
+        },
+        "rearming": true,
+        "active": false,
+        "nodes": [
+          {
+            "x": 136,
+            "y": 140,
+            "dead": false,
+            "mat": 0
+          },
+          {
+            "x": 544,
+            "y": 140,
+            "dead": false,
+            "mat": 0
+          },
+          {
+            "x": 136,
+            "y": 296,
+            "dead": false,
+            "mat": 0
+          },
+          {
+            "x": 544,
+            "y": 296,
+            "dead": false,
+            "mat": 0
+          }
+        ],
+        "hp": 4290
+      },
+      "furious-0.75-conduits": {
+        "draws": [
+          {
+            "name": "charge",
+            "u": 0.4012345679012345,
+            "x": 340,
+            "y": 177.28,
+            "sx": 0.6,
+            "sy": 0.6,
+            "alpha": 0.88,
+            "source": [
+              417,
+              85,
+              276,
+              260
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.2971014492753623,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6064059736780293,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              403,
+              484,
+              295,
+              140
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.2971014492753623,
+            "x": 136,
+            "y": 140,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              419,
+              752,
+              263,
+              264
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.2373188405797101,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6064059736780293,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              41,
+              499,
+              297,
+              106
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.2373188405797101,
+            "x": 544,
+            "y": 140,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              72,
+              751,
+              253,
+              268
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.1775362318840579,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6986922856007914,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              41,
+              499,
+              297,
+              106
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.1775362318840579,
+            "x": 136,
+            "y": 296,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              72,
+              751,
+              253,
+              268
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.11775362318840574,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6986922856007914,
+            "sy": 0.18,
+            "alpha": 0.6229166666666665,
+            "source": [
+              41,
+              499,
+              297,
+              106
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.11775362318840574,
+            "x": 544,
+            "y": 296,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.636458333333333,
+            "source": [
+              72,
+              751,
+              253,
+              268
+            ]
+          }
+        ],
+        "revival": {
+          "t": 0.4333333333333333,
+          "threshold": 0.75,
+          "cycle": 1
+        },
+        "rearming": true,
+        "active": false,
+        "nodes": [
+          {
+            "x": 136,
+            "y": 140,
+            "dead": false,
+            "mat": 0.45098039215686253
+          },
+          {
+            "x": 544,
+            "y": 140,
+            "dead": false,
+            "mat": 0.2892156862745096
+          },
+          {
+            "x": 136,
+            "y": 296,
+            "dead": false,
+            "mat": 0.1274509803921567
+          },
+          {
+            "x": 544,
+            "y": 296,
+            "dead": false,
+            "mat": 0
+          }
+        ],
+        "hp": 4290
+      },
+      "furious-0.75-reconstruct": {
+        "draws": [
+          {
+            "name": "charge",
+            "u": 0.7407407407407415,
+            "x": 340,
+            "y": 177.28,
+            "sx": 0.6,
+            "sy": 0.6,
+            "alpha": 0.88,
+            "source": [
+              770,
+              80,
+              274,
+              276
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.6956521739130443,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6064059736780293,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              763,
+              473,
+              293,
+              168
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.6956521739130443,
+            "x": 136,
+            "y": 140,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              777,
+              748,
+              269,
+              276
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.6358695652173922,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6064059736780293,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              763,
+              473,
+              293,
+              168
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.6358695652173922,
+            "x": 544,
+            "y": 140,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              777,
+              748,
+              269,
+              276
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.57608695652174,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6986922856007914,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              763,
+              473,
+              293,
+              168
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.57608695652174,
+            "x": 136,
+            "y": 296,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              777,
+              748,
+              269,
+              276
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.5163043478260878,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6986922856007914,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              763,
+              473,
+              293,
+              168
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.5163043478260878,
+            "x": 544,
+            "y": 296,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              777,
+              748,
+              269,
+              276
+            ]
+          }
+        ],
+        "revival": {
+          "t": 0.8000000000000008,
+          "threshold": 0.75,
+          "cycle": 1
+        },
+        "rearming": true,
+        "active": false,
+        "nodes": [
+          {
+            "x": 136,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 136,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          }
+        ],
+        "hp": 4290
+      },
+      "furious-0.75-restored": {
+        "draws": [
+          {
+            "name": "socket",
+            "u": 1,
+            "x": 136,
+            "y": 140,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              1142,
+              755,
+              264,
+              259
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.9619565217391315,
+            "x": 544,
+            "y": 140,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              1142,
+              755,
+              264,
+              259
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.9021739130434793,
+            "x": 136,
+            "y": 296,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              1142,
+              755,
+              264,
+              259
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.8423913043478272,
+            "x": 544,
+            "y": 296,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              1142,
+              755,
+              264,
+              259
+            ]
+          }
+        ],
+        "revival": {
+          "t": 1.100000000000001,
+          "threshold": 0.75,
+          "cycle": 1
+        },
+        "rearming": false,
+        "active": true,
+        "nodes": [
+          {
+            "x": 136,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 136,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          }
+        ],
+        "hp": 4290
+      },
+      "furious-0.75-finished": {
+        "draws": [],
+        "revival": null,
+        "rearming": false,
+        "active": true,
+        "nodes": [
+          {
+            "x": 136,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 136,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          }
+        ],
+        "hp": 4290
+      },
+      "furious-0.5-charge": {
+        "draws": [
+          {
+            "name": "charge",
+            "u": 0.09259259259259257,
+            "x": 340,
+            "y": 177.28,
+            "sx": 0.6,
+            "sy": 0.6,
+            "alpha": 0.43999999999999995,
+            "source": [
+              61,
+              91,
+              259,
+              250
+            ]
+          }
+        ],
+        "revival": {
+          "t": 0.09999999999999999,
+          "threshold": 0.5,
+          "cycle": 2
+        },
+        "rearming": true,
+        "active": false,
+        "nodes": [
+          {
+            "x": 136,
+            "y": 140,
+            "dead": false,
+            "mat": 0
+          },
+          {
+            "x": 544,
+            "y": 140,
+            "dead": false,
+            "mat": 0
+          },
+          {
+            "x": 136,
+            "y": 296,
+            "dead": false,
+            "mat": 0
+          },
+          {
+            "x": 544,
+            "y": 296,
+            "dead": false,
+            "mat": 0
+          }
+        ],
+        "hp": 2860
+      },
+      "furious-0.5-conduits": {
+        "draws": [
+          {
+            "name": "charge",
+            "u": 0.4012345679012345,
+            "x": 340,
+            "y": 177.28,
+            "sx": 0.6,
+            "sy": 0.6,
+            "alpha": 0.88,
+            "source": [
+              417,
+              85,
+              276,
+              260
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.2971014492753623,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6064059736780293,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              403,
+              484,
+              295,
+              140
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.2971014492753623,
+            "x": 136,
+            "y": 140,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              419,
+              752,
+              263,
+              264
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.2373188405797101,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6064059736780293,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              41,
+              499,
+              297,
+              106
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.2373188405797101,
+            "x": 544,
+            "y": 140,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              72,
+              751,
+              253,
+              268
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.1775362318840579,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6986922856007914,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              41,
+              499,
+              297,
+              106
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.1775362318840579,
+            "x": 136,
+            "y": 296,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              72,
+              751,
+              253,
+              268
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.11775362318840574,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6986922856007914,
+            "sy": 0.18,
+            "alpha": 0.6229166666666665,
+            "source": [
+              41,
+              499,
+              297,
+              106
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.11775362318840574,
+            "x": 544,
+            "y": 296,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.636458333333333,
+            "source": [
+              72,
+              751,
+              253,
+              268
+            ]
+          }
+        ],
+        "revival": {
+          "t": 0.4333333333333333,
+          "threshold": 0.5,
+          "cycle": 2
+        },
+        "rearming": true,
+        "active": false,
+        "nodes": [
+          {
+            "x": 136,
+            "y": 140,
+            "dead": false,
+            "mat": 0.45098039215686253
+          },
+          {
+            "x": 544,
+            "y": 140,
+            "dead": false,
+            "mat": 0.2892156862745096
+          },
+          {
+            "x": 136,
+            "y": 296,
+            "dead": false,
+            "mat": 0.1274509803921567
+          },
+          {
+            "x": 544,
+            "y": 296,
+            "dead": false,
+            "mat": 0
+          }
+        ],
+        "hp": 2860
+      },
+      "furious-0.5-reconstruct": {
+        "draws": [
+          {
+            "name": "charge",
+            "u": 0.7407407407407415,
+            "x": 340,
+            "y": 177.28,
+            "sx": 0.6,
+            "sy": 0.6,
+            "alpha": 0.88,
+            "source": [
+              770,
+              80,
+              274,
+              276
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.6956521739130443,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6064059736780293,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              763,
+              473,
+              293,
+              168
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.6956521739130443,
+            "x": 136,
+            "y": 140,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              777,
+              748,
+              269,
+              276
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.6358695652173922,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6064059736780293,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              763,
+              473,
+              293,
+              168
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.6358695652173922,
+            "x": 544,
+            "y": 140,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              777,
+              748,
+              269,
+              276
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.57608695652174,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6986922856007914,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              763,
+              473,
+              293,
+              168
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.57608695652174,
+            "x": 136,
+            "y": 296,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              777,
+              748,
+              269,
+              276
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.5163043478260878,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6986922856007914,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              763,
+              473,
+              293,
+              168
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.5163043478260878,
+            "x": 544,
+            "y": 296,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              777,
+              748,
+              269,
+              276
+            ]
+          }
+        ],
+        "revival": {
+          "t": 0.8000000000000008,
+          "threshold": 0.5,
+          "cycle": 2
+        },
+        "rearming": true,
+        "active": false,
+        "nodes": [
+          {
+            "x": 136,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 136,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          }
+        ],
+        "hp": 2860
+      },
+      "furious-0.5-restored": {
+        "draws": [
+          {
+            "name": "socket",
+            "u": 1,
+            "x": 136,
+            "y": 140,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              1142,
+              755,
+              264,
+              259
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.9619565217391315,
+            "x": 544,
+            "y": 140,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              1142,
+              755,
+              264,
+              259
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.9021739130434793,
+            "x": 136,
+            "y": 296,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              1142,
+              755,
+              264,
+              259
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.8423913043478272,
+            "x": 544,
+            "y": 296,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              1142,
+              755,
+              264,
+              259
+            ]
+          }
+        ],
+        "revival": {
+          "t": 1.100000000000001,
+          "threshold": 0.5,
+          "cycle": 2
+        },
+        "rearming": false,
+        "active": true,
+        "nodes": [
+          {
+            "x": 136,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 136,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          }
+        ],
+        "hp": 2860
+      },
+      "furious-0.5-finished": {
+        "draws": [],
+        "revival": null,
+        "rearming": false,
+        "active": true,
+        "nodes": [
+          {
+            "x": 136,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 136,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          }
+        ],
+        "hp": 2860
+      },
+      "furious-0.25-charge": {
+        "draws": [
+          {
+            "name": "charge",
+            "u": 0.09259259259259257,
+            "x": 340,
+            "y": 177.28,
+            "sx": 0.6,
+            "sy": 0.6,
+            "alpha": 0.43999999999999995,
+            "source": [
+              61,
+              91,
+              259,
+              250
+            ]
+          }
+        ],
+        "revival": {
+          "t": 0.09999999999999999,
+          "threshold": 0.25,
+          "cycle": 3
+        },
+        "rearming": true,
+        "active": false,
+        "nodes": [
+          {
+            "x": 136,
+            "y": 140,
+            "dead": false,
+            "mat": 0
+          },
+          {
+            "x": 544,
+            "y": 140,
+            "dead": false,
+            "mat": 0
+          },
+          {
+            "x": 136,
+            "y": 296,
+            "dead": false,
+            "mat": 0
+          },
+          {
+            "x": 544,
+            "y": 296,
+            "dead": false,
+            "mat": 0
+          }
+        ],
+        "hp": 1430
+      },
+      "furious-0.25-conduits": {
+        "draws": [
+          {
+            "name": "charge",
+            "u": 0.4012345679012345,
+            "x": 340,
+            "y": 177.28,
+            "sx": 0.6,
+            "sy": 0.6,
+            "alpha": 0.88,
+            "source": [
+              417,
+              85,
+              276,
+              260
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.2971014492753623,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6064059736780293,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              403,
+              484,
+              295,
+              140
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.2971014492753623,
+            "x": 136,
+            "y": 140,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              419,
+              752,
+              263,
+              264
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.2373188405797101,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6064059736780293,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              41,
+              499,
+              297,
+              106
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.2373188405797101,
+            "x": 544,
+            "y": 140,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              72,
+              751,
+              253,
+              268
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.1775362318840579,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6986922856007914,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              41,
+              499,
+              297,
+              106
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.1775362318840579,
+            "x": 136,
+            "y": 296,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              72,
+              751,
+              253,
+              268
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.11775362318840574,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6986922856007914,
+            "sy": 0.18,
+            "alpha": 0.6229166666666665,
+            "source": [
+              41,
+              499,
+              297,
+              106
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.11775362318840574,
+            "x": 544,
+            "y": 296,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.636458333333333,
+            "source": [
+              72,
+              751,
+              253,
+              268
+            ]
+          }
+        ],
+        "revival": {
+          "t": 0.4333333333333333,
+          "threshold": 0.25,
+          "cycle": 3
+        },
+        "rearming": true,
+        "active": false,
+        "nodes": [
+          {
+            "x": 136,
+            "y": 140,
+            "dead": false,
+            "mat": 0.45098039215686253
+          },
+          {
+            "x": 544,
+            "y": 140,
+            "dead": false,
+            "mat": 0.2892156862745096
+          },
+          {
+            "x": 136,
+            "y": 296,
+            "dead": false,
+            "mat": 0.1274509803921567
+          },
+          {
+            "x": 544,
+            "y": 296,
+            "dead": false,
+            "mat": 0
+          }
+        ],
+        "hp": 1430
+      },
+      "furious-0.25-reconstruct": {
+        "draws": [
+          {
+            "name": "charge",
+            "u": 0.7407407407407415,
+            "x": 340,
+            "y": 177.28,
+            "sx": 0.6,
+            "sy": 0.6,
+            "alpha": 0.88,
+            "source": [
+              770,
+              80,
+              274,
+              276
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.6956521739130443,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6064059736780293,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              763,
+              473,
+              293,
+              168
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.6956521739130443,
+            "x": 136,
+            "y": 140,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              777,
+              748,
+              269,
+              276
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.6358695652173922,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6064059736780293,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              763,
+              473,
+              293,
+              168
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.6358695652173922,
+            "x": 544,
+            "y": 140,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              777,
+              748,
+              269,
+              276
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.57608695652174,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6986922856007914,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              763,
+              473,
+              293,
+              168
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.57608695652174,
+            "x": 136,
+            "y": 296,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              777,
+              748,
+              269,
+              276
+            ]
+          },
+          {
+            "name": "conduit",
+            "u": 0.5163043478260878,
+            "x": 0,
+            "y": 0,
+            "sx": 0.6986922856007914,
+            "sy": 0.18,
+            "alpha": 0.92,
+            "source": [
+              763,
+              473,
+              293,
+              168
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.5163043478260878,
+            "x": 544,
+            "y": 296,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              777,
+              748,
+              269,
+              276
+            ]
+          }
+        ],
+        "revival": {
+          "t": 0.8000000000000008,
+          "threshold": 0.25,
+          "cycle": 3
+        },
+        "rearming": true,
+        "active": false,
+        "nodes": [
+          {
+            "x": 136,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 136,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          }
+        ],
+        "hp": 1430
+      },
+      "furious-0.25-restored": {
+        "draws": [
+          {
+            "name": "socket",
+            "u": 1,
+            "x": 136,
+            "y": 140,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              1142,
+              755,
+              264,
+              259
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.9619565217391315,
+            "x": 544,
+            "y": 140,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              1142,
+              755,
+              264,
+              259
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.9021739130434793,
+            "x": 136,
+            "y": 296,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              1142,
+              755,
+              264,
+              259
+            ]
+          },
+          {
+            "name": "socket",
+            "u": 0.8423913043478272,
+            "x": 544,
+            "y": 296,
+            "sx": 0.31,
+            "sy": 0.31,
+            "alpha": 0.94,
+            "source": [
+              1142,
+              755,
+              264,
+              259
+            ]
+          }
+        ],
+        "revival": {
+          "t": 1.100000000000001,
+          "threshold": 0.25,
+          "cycle": 3
+        },
+        "rearming": false,
+        "active": true,
+        "nodes": [
+          {
+            "x": 136,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 136,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          }
+        ],
+        "hp": 1430
+      },
+      "furious-0.25-finished": {
+        "draws": [],
+        "revival": null,
+        "rearming": false,
+        "active": true,
+        "nodes": [
+          {
+            "x": 136,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 136,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          }
+        ],
+        "hp": 1430
+      },
+      "death-cancels-revival": {
+        "draws": [],
+        "revival": {
+          "t": 0.4333333333333333,
+          "threshold": 0.75,
+          "cycle": 1
+        },
+        "rearming": true,
+        "active": false,
+        "nodes": [
+          {
+            "x": 136,
+            "y": 140,
+            "dead": false,
+            "mat": 0.45098039215686253
+          },
+          {
+            "x": 544,
+            "y": 140,
+            "dead": false,
+            "mat": 0.2892156862745096
+          },
+          {
+            "x": 136,
+            "y": 296,
+            "dead": false,
+            "mat": 0.1274509803921567
+          },
+          {
+            "x": 544,
+            "y": 296,
+            "dead": false,
+            "mat": 0
+          }
+        ],
+        "hp": 5720
+      },
+      "inactive-cancels-revival": {
+        "draws": [],
+        "revival": {
+          "t": 0.4333333333333333,
+          "threshold": 0.75,
+          "cycle": 1
+        },
+        "rearming": false,
+        "active": false,
+        "nodes": [
+          {
+            "x": 136,
+            "y": 140,
+            "dead": false,
+            "mat": 0.45098039215686253
+          },
+          {
+            "x": 544,
+            "y": 140,
+            "dead": false,
+            "mat": 0.2892156862745096
+          },
+          {
+            "x": 136,
+            "y": 296,
+            "dead": false,
+            "mat": 0.1274509803921567
+          },
+          {
+            "x": 544,
+            "y": 296,
+            "dead": false,
+            "mat": 0
+          }
+        ],
+        "hp": 5720
+      },
+      "fresh-stage-no-revival": {
+        "draws": [],
+        "revival": null,
+        "rearming": false,
+        "active": true,
+        "nodes": [
+          {
+            "x": 136,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 140,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 136,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          },
+          {
+            "x": 544,
+            "y": 296,
+            "dead": false,
+            "mat": 1
+          }
+        ],
+        "hp": 3872
+      }
+    },
+    "scope": "Protected native threshold/visual fixtures; not campaign clears.",
+    "errors": []
+  },
+  "zips": [
+    {
+      "zip": "C:\\Users\\Mike\\Documents\\New project\\output\\BulletsOfFury-Game-and-Audio-2026-10-07.zip",
+      "bytes": 96028909,
+      "MB": 96.028909,
+      "files": 455,
+      "sha256": "34737ce438f51d429ca318889febd501a07aea2302705e50bdf7d062f1240f25"
+    },
+    {
+      "zip": "C:\\Users\\Mike\\Documents\\New project\\output\\BulletsOfFury-Art-Assets-2026-10-07.zip",
+      "bytes": 375049092,
+      "MB": 375.049092,
+      "files": 3366,
+      "sha256": "870cea7c26feb8f8d42f23e141a896f00f918130bb7c3f7ab86028995dbc8e80"
+    }
+  ],
+  "scope": "Complete nine-stage preload and protected short art/encounter fixtures; no full campaign clears or balance claims.",
+  "edited_runtime_hashes": {
+    "assets/manifest.js": "57703ee1f7131529d41fb25a1780f9507a2b694cfa5261b8dbc9127b2ba9c18a",
+    "assets/game.js": "60bb267e1acaef9dab1ffb2e3c018e417d09e9c5f0e3bb444370c93548be0869",
+    "assets/game/atlas/ui_dialogue.png": "5ee327a7227f6ed79b5b65bdd7af0a03c158c08975f7fd3d18d8eb393d6addc1"
+  }
+}

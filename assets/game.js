@@ -4930,9 +4930,13 @@ function menuControlFooter(){
   else if(state==='paused'&&playPause&&playPause.mode==='root') controlHintRow([['pad_dpad','MENU'],['pad_a','SELECT'],['pad_start','RESUME']]);
 }
 function controlHintShellTick(){
-  if(controlHintShellTick.done)return;
   const box=document.getElementById('hint');
   if(!box||typeof box.replaceChildren!=='function')return;
+  // The boot/loading scenes already own their authored Start prompt. Reveal the
+  // complete outside control strip only when the menu/run can actually use it.
+  const visible=state!==GS.BOOT&&state!==GS.LOADING&&state!==GS.ATTRACT;
+  if(box.style)box.style.visibility=visible&&controlHintShellTick.done?'visible':'hidden';
+  if(controlHintShellTick.done)return;
   const items=[['pad_dpad','MOVE'],['pad_a','FIRE / SELECT'],['pad_b','MISSILE / BACK'],['pad_c','RETINA'],['pad_x','CHARGE'],['pad_start','PAUSE / MENU']];
   if(items.some(([key])=>!XART.rdy(key)))return;
   box.replaceChildren();
@@ -4944,6 +4948,7 @@ function controlHintShellTick(){
     const item=document.createElement('span');item.append(canvas,document.createTextNode(label));box.append(item);
   }
   controlHintShellTick.done=true;
+  if(box.style)box.style.visibility=visible?'visible':'hidden';
 }
 
 /* stages whose roadside signs Mike has retired. Drop 0813j: "get rid of the signs ... for stage
@@ -6858,6 +6863,9 @@ cv.width = VW*SS; cv.height = VH*SS;
    are now redundant rather than load-bearing, and the save/restore pairs restore to false. */
 ctx.imageSmoothingEnabled = false;
 function fitCanvas(){
+  // index.html establishes this owner before loading the runtime. Its geometry
+  // is final from first paint; a second host-based calculation caused late jumps.
+  if(typeof window.__bofFit==='function'){window.__bofFit();return;}
   /* ASPECT-LOCKED + CENTRED.
      This used to stretch the canvas to EXACTLY #screen-area's box (width=clientWidth,
      height=clientHeight) and return. Whenever that box's aspect did not match the game's
@@ -10115,6 +10123,7 @@ let player = {
     if(!keepPos){ this.x=(typeof worldWidth==='function'?worldWidth():VW)/2; this.y=VH*0.78; }
     else if(anchor&&Number.isFinite(anchor.x)&&Number.isFinite(anchor.y)){this.x=anchor.x;this.y=anchor.y;}
     this._deathAnchor=null;this._px=this.x;this._py=this.y;this._vx=this._vy=0;
+    this._spin=null;this._chainSpinT=0;this._chainMuzzle=0; // reset every visual weapon owner with the hull
     this.alive=true; this.invuln=120; this.dead=false; this.fireCd=0; this.roll=null; this.somer=null; this._tapL=-9; this._tapR=-9; this._tapU=-9; this._bank=0; this._hx=9; this._hy=10; this._hammerEvap=0; this._eradicated=false;
     /* AFTER the position is set, never before — the zone has to be measured where the player is
        actually going to appear. See clearSpawnZone. */
@@ -33348,6 +33357,9 @@ function stageLoadBegin(n,keys){
   for(const logical of (keys||[])){
     const root=(XART.root?XART.root(logical):logical);
     if(!root||seen[root]||!XART._src[root])continue;
+    /* Archived prototype cells remain available to local art tools. Broad legacy prefix lists
+       must never queue their sheets as production stage dependencies. */
+    if(XART._src[root].startsWith('UNUSED_ASSETS/'))continue;
     seen[root]=1;roots.push(root);
   }
   /* Start the things needed on the first playable frame before secondary animation reels.  Within
@@ -36593,6 +36605,7 @@ function updatePlay(dt){
     }
     if(playerOrbTick(b,dt))continue;
     if(b.kind==='prismRay') prismRaySteer(b,dt);
+    const _roundX=b.x,_roundY=b.y;
     if(b.kind==='missile'){
       b.t=(b.t||0)+dt;
       let tx=null,ty=null,best=1e9;
@@ -36633,7 +36646,9 @@ function updatePlay(dt){
       b.vx=nx-b.x; b.vy=ny-b.y;                   // keep the tangent meaningful for the art
       b.x=nx; b.y=ny;
       b._hz=Math.cos(ang);                        // +1 near side, -1 far side
-    } else { b.x+=b.vx; b.y+=b.vy; }
+    } else { const step=Math.max(0,dt)*60;b.x+=b.vx*step;b.y+=b.vy*step; }
+    if(typeof ec7SweepRound==='function')ec7SweepRound(b,_roundX,_roundY);
+    if(b.kind==='mg'||b.kind==='spread')b.t=(b.t||0)+dt;
     if(b.kind==='nade'){ b.t+=dt; b.vy*=0.985; }
     /* the pellet needs a clock of its own for the trail reel. ⚠ NOT performance.now() — a wall
        clock driving a 4-frame loop is the anti-pattern CLAUDE.md keeps a standing rule about,
@@ -37076,7 +37091,8 @@ function updatePlay(dt){
       }else if(!b._wardenAnchored&&b.t>=1.0){b.x=b._wardenAnchor.x;b.y=b._wardenAnchor.y;b._wardenAnchored=true;}
       if(b._wardenAnchored){b.vx=0;b.vy=0;b.spd=0;_jcManualMove=true;if(b.t>=b._wardenAnchor.life)b.dead=true;}
     }
-    if(!_jcManualMove){b.x+=b.vx;b.y+=b.vy;}
+    const _shotX=b.x,_shotY=b.y;
+    if(!_jcManualMove){const step=Math.max(0,dt)*60;b.x+=b.vx*step;b.y+=b.vy*step;}
     /* ⚠ TESTED PER SEAT, BUT THE ROUND MOVES ONCE (drop 0902f). The `b.x+=b.vx` above is
        deliberately OUTSIDE this loop. Wrapping the whole eBullets loop per seat instead would
        advance every enemy round twice a frame in co-op - doubling every enemy's effective
@@ -37088,8 +37104,9 @@ function updatePlay(dt){
       if(typeof stylishCheck==='function' && stylishCheck(b)) { /* the dodge is scored; the round flies on */ }
       if(player.dead || player.invuln>0) return false;
       const _hx=(player._hx!=null?player._hx:9), _hy=(player._hy!=null?player._hy:10);
-      if(b._ovSonicWave ? ovSonicWaveHit(b,player,_hx,_hy) : b._hammerLaser ? hammerLaserHit(b,targetShip(b.x,b.y),_hx,_hy) : b._frostNoseLaser ? frostNoseLaserHit(b,targetShip(b.x,b.y),_hx,_hy) :
-        (Math.abs(b.x-targetShip(b.x,b.y).x)<(_hx+b.w*0.15) && Math.abs(b.y-targetShip(b.x,b.y).y)<(_hy+b.h*0.15))){
+      if(b._ovSonicWave ? ovSonicWaveHit(b,player,_hx,_hy) : b._hammerLaser ? hammerLaserHit(b,player,_hx,_hy) : b._frostNoseLaser ? frostNoseLaserHit(b,player,_hx,_hy) :
+        (!_jcManualMove&&typeof ec7SegmentBox==='function' ? ec7SegmentBox(_shotX,_shotY,b.x,b.y,player.x,player.y,_hx+b.w*.15,_hy+b.h*.15) :
+         Math.abs(b.x-player.x)<(_hx+b.w*.15)&&Math.abs(b.y-player.y)<(_hy+b.h*.15))){
         /* the magma round lands on its OWN authored impact (Mike, 0819) — `bfx_magma_i`, the third
            plate of the set, a burst that scatters into cooling debris. explode() counts a named
            family's frames itself, so the 6-frame reel needs no table row. */
@@ -45304,7 +45321,7 @@ const FIRETYPES={
      a bullet visibly twist and change silhouette while travelling; the final authored frame is
      the complete projectile and only its launch vector controls its orientation. */
   s1bullet:{art:(b)=>'mgcf_1_5',align:true,h:22,glow:'#ffb52a',glow2:'#fff4c2'},
-  flare: { art:(b)=>'mfx_ea_3_'+(((Math.floor(performance.now()/80)+((b._ph|0)||0))%8)), spin:0, h:15, glow:'#ffd36b'},
+  flare: { art:(b)=>'mfx_ea_3_'+(((Math.floor((b.t||0)*12.5)+((b._ph|0)||0))%8)), spin:0, h:15, glow:'#ffd36b'},
   comet: { art:(b)=>eaCometKey(b.pal||'red', ((b.t||0)*12)|0), align:true, h:20, glow:'#ff8a4a'},
   blast: { art:(b)=>'mfx_bpow_'+({red:0,blue:1,white:2}[b.pal||'red']||0)+'_0', align:false, h:26, glow:'#ffd36b'},
   homing:{ art:(b)=>'mfx_hom_0_'+(((b.t||0)*14|0)%10), align:true, h:18, glow:'#ff6ba0'},
@@ -45317,7 +45334,7 @@ const FIRETYPES={
        dart -> pellet (both are the small aimed round)
        gem, orb -> flare (both were the mid-size ball)
        laser -> missile (the closest lance-shaped survivor) */
-  dart:  { art:(b)=>['mfx_mg_2_0','mfx_mg_2_2'][(Math.floor(performance.now()/70)+((b._ph|0)||0))%2], align:true, h:16, glow:'#ffd36b'},
+  dart:  { art:(b)=>['mfx_mg_2_0','mfx_mg_2_2'][(Math.floor((b.t||0)/.07)+((b._ph|0)||0))%2], align:true, h:16, glow:'#ffd36b'},
   gem:   { art:(b)=>'mfx_ea_3_'+(((b.t||0)*10|0)%8), spin:2.4, h:13, glow:'#9fe6ff'},
   orb:   { art:(b)=>'mfx_ea_3_'+(((b.t||0)*8|0)%8),  spin:0,   h:12, glow:'#ffb04a'},
   laser: { art:(b)=>emrKey(b), align:true, h:20, glow:(b)=>emrGlow(b)},
@@ -45706,7 +45723,7 @@ function drawFireType(b){
   if(typeof XART==='undefined'||!XART.rdy(key)) return false;
   let ang=0;
   if(T.align) ang=Math.atan2(b.vy||1,b.vx||0)-Math.PI/2;
-  else if(T.spin) ang=(performance.now()/1000)*T.spin+((b._ph||0));
+  else if(T.spin) ang=(b.t||0)*T.spin+((b._ph||0));
   if(T._pal && !b.pal) b.pal=T._pal;
   const h=(T.h||14)*(b.szMul||1)*(T._szMul||1);
   /* glow may be a FUNCTION now — the pellet picks its colour from the stage's family, so the
@@ -45737,7 +45754,7 @@ function drawFireType(b){
     const _S=(typeof projShadeFor==='function')?projShadeFor(_mk):null;
     let _a=ang;
     if(_useMagma && _S && _S.spin){
-      const _t=(typeof performance!=='undefined'?performance.now():Date.now())/1000+((b._ph||0)*0.37);
+      const _t=(b.t||0)+((b._ph||0)*0.37);
       _a += _t*_S.spin;
     }
     for(const o of [[-edge,0],[edge,0],[0,-edge],[0,edge],[-edge,-edge],[edge,-edge],[-edge,edge],[edge,edge]])
@@ -45747,7 +45764,7 @@ function drawFireType(b){
       drawMfx(_bk,b.x,b.y,_a,readH,b.tint||null,1,null,null);
       const _prev=ctx.globalCompositeOperation;
       ctx.globalCompositeOperation='lighter';
-      const _t2=(typeof performance!=='undefined'?performance.now():Date.now())/1000+((b._ph||0)*0.37);
+      const _t2=(b.t||0)+((b._ph||0)*0.37);
       drawMfx(_bk,b.x,b.y,_a,readH,      b.tint||null,(_S?_S.pulse:0.36)*(0.72+0.28*Math.sin(_t2*17.0)),null,null);
       drawMfx(_bk,b.x,b.y,_a,readH*0.62, b.tint||null,(_S?_S.core :0.30)*(0.70+0.30*Math.sin(_t2*26.0)),null,null);
       ctx.globalCompositeOperation=_prev;
@@ -45761,7 +45778,7 @@ function drawFireType(b){
        the plate already has and the silhouette never changes. The phase is offset by the round's
        own `_ph` so a volley does not pulse in lockstep, which is the tell that gave the reels
        away in the first place. */
-    const _t=(typeof performance!=='undefined'?performance.now():Date.now())/1000 + ((b._ph||0)*0.37);
+    const _t=(b.t||0) + ((b._ph||0)*0.37);
     if(_shade.spin) ang += _t*_shade.spin;
     drawMfx(key,b.x,b.y,ang,h,b.tint||T._tint||null,1,_gl,_gl);
     const _prev=ctx.globalCompositeOperation;
@@ -74228,7 +74245,7 @@ function drawWorld(dt){
     if(player.out) return;
     drawPlayer();
     if(run.weapon===7&&typeof chaingunMountsDraw==='function')chaingunMountsDraw(dt);
-    if(run.weapon===7&&player._chainMuzzle>0)player._chainMuzzle=Math.max(0,player._chainMuzzle-dt);
+    // The seat-local simulation advances the barrel/muzzle clock; drawing is read-only.
     if(typeof wm26DrawPlayer==='function')wm26DrawPlayer();
     axelMegaShieldDraw();
     if(player._chromeSpreadT>0 && chromeSpreadActive() && typeof XART!=='undefined' && XART.rdy('forge_elem_chrome_laser_0918')){
@@ -78976,7 +78993,11 @@ function loop(now){
   Input.clearTaps();
   requestAnimationFrame(loop);
 }
-requestAnimationFrame(loop);
+// Classic extension scripts patch the same runtime. Start only after the last
+// script has registered, so slow loads cannot expose a partially initialized UI.
+function startGameLoop(){last=performance.now();requestAnimationFrame(loop);}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',startGameLoop,{once:true});
+else startGameLoop();
 
 // safety: clear taps each frame handled above; ensure first-interaction audio
 window.addEventListener('keydown',()=>{ try{ Audio.init(); }catch(_){} },{once:true});
@@ -78991,11 +79012,6 @@ if(window.BOFA && BOFA.music){
   BOFA.music.ironcage=BOFA.music.boss8;
   BOFA.music.boss8p3='assets/game/music/Level8b3.mp3';
   BOFA.music.finalCinematic='assets/game/music/FinalCinematic.mp3';
-  BOFA.music.unused1='assets/game/music/Unused1.mp3';
-  BOFA.music.unused2old='assets/game/music/Unused2.mp3';
-  BOFA.music.unused10='assets/game/music/Unused10.mp3';
-  BOFA.music.unused11='assets/game/music/Unused11.mp3';
-  BOFA.music.unused12='assets/game/music/Unused12.mp3';
   BOFA.music.cinematics='assets/game/music/Cinematics.mp3';
   /* ⚠ THE OPENER'S TRACK, AND IT IS THE ONE FILE THE MANIFEST NEVER REGISTERED (Mike, 0912: "use
      some of our music we didnt map but have"). Measured against the folder rather than chosen by
@@ -79033,7 +79049,6 @@ if(window.BOFA && BOFA.music){
   BOFA.music.mini3='assets/game/music/Level3mb.mp3';
   BOFA.music.boss4='assets/game/music/Level4b.mp3';
   BOFA.music.deathtrap='assets/game/music/Level6.mp3';
-  BOFA.music.unused4='assets/game/music/Unused8.mp3';
   BOFA.music.mini5='assets/game/music/Level5mb.mp3';
   BOFA.music.mini4='assets/game/music/Level4mb.mp3';
   BOFA.music.mini6='assets/game/music/Level6mb.mp3';

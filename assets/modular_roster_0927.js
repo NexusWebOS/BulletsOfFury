@@ -113,7 +113,7 @@ function mr27HelperDraw(b,d){
   const mini=b._s4war.mini,skin=mini?'iron':'storm',size=mini?(d.size||112):96,g=mr27HelperState(d),p=mr27HelperGun(b,d);
   mr27Blit(skin,mini?4:5,{x:d.x,y:d.y,w:size,h:mini?size*.63:size},d.flash);
   if(!g.dead)mr27Blit(skin,mini?5:1,p,d.flash);
-  const core={x:d.x,y:d.y-size*.13,w:size*.16,h:size*.33};if(mini)mr27Blit(skin,3,core,d.flash);else mr27CoreDraw(b,core);
+  const core={x:d.x,y:d.y-size*.13,w:size*.16,h:size*.33,flash:d.flash};if(mini)mr27Blit(skin,3,core,d.flash);else mr27CoreDraw(b,core);
   if(d.shield>0){const k='s4w_lightning_shield_'+Math.floor(b._mr27.clock*12)%12;if(XART.rdy(k)){ctx.save();ctx.globalCompositeOperation='lighter';ctx.globalAlpha=.28;ctx.drawImage(XART.get(k),d.x-size*.57,d.y-size*.57,size*1.14,size*1.14);ctx.restore();}}
 }
 function mr27Over(b){
@@ -121,7 +121,12 @@ function mr27Over(b){
   if(H){
     const key='s4w_lightning_shield_'+Math.floor(b._mr27.clock*12)%12;
     if((H.active||H.breakT>0)&&XART.rdy(key)){const size=b.w*1.25;ctx.save();ctx.globalCompositeOperation='lighter';ctx.globalAlpha=H.active?.34:Math.min(.34,H.breakT*.3);ctx.drawImage(XART.get(key),b.x-size/2,b.y-size/2,size,size);ctx.restore();}
-    for(const n of H.nodes)if(!n.dead){mr27Blit('storm',5,{x:n.x,y:n.y,w:54,h:54},n.flash);mr27CoreDraw(b,{x:n.x,y:n.y,w:15,h:34});}
+    if(H.active||H.rearming)for(const n of H.nodes)if(!n.dead){
+      const mat=H.active?1:clamp(n.materialize||0,0,1);if(mat<=0)continue;
+      ctx.save();ctx.globalAlpha*=mat;
+      mr27Blit('storm',5,{x:n.x,y:n.y,w:54,h:54},n.flash);
+      mr27CoreDraw(b,{x:n.x,y:n.y,w:15,h:34,flash:n.flash});ctx.restore();
+    }
   }
   const list=S.mini?S.drones:S.coreTurrets;for(const d of list||[])if(!d.dead&&(S.mini?d.active>.1:d.materialize>.1))mr27HelperDraw(b,d);
 }
@@ -130,7 +135,8 @@ function mr27Draw(b){
   if(b._l23Beam)l23BossBeamDraw(b);
   const shape=MR27_ART[M.skin].cells[0],scale=Math.min(b.w/shape[2],b.h/shape[3]),form=M.skin==='rime'&&b._s3Nuclear?b._er26.form:null;
   mr27Blit(M.skin,0,{x:b.x,y:b._drawY??b.y,w:shape[2]*scale,h:shape[3]*scale},b.flash,form,b);
-  for(const q of M.parts)if(!q.dead){const p=mr27Shape(b,q.id);mr27Blit(M.skin,p.cell,p,Math.max(q.flash,b.flash||0),form,b);}
+  // The named lightning weapon is drawn once by its dedicated core renderer.
+  for(const q of M.parts)if(!q.dead&&q.id!=='lightning'){const p=mr27Shape(b,q.id);mr27Blit(M.skin,p.cell,p,Math.max(q.flash,b.flash||0),form,b);}
   mr27CoreDraw(b,mr27Shape(b,'core'));
   if(M.skin==='rime'&&b._l23Beam&&!b._l23Beam.released){const B=b._l23Beam,k=clamp(B.t/B.warm,0,1),key='l23fx_rime_orb_'+(Math.floor(M.clock*16)%8);
     if(XART.rdy(key))for(const slot of B.slots){const p=shipBossMount(b,slot),s=12+k*17;ctx.save();ctx.globalAlpha=.5+k*.5;ctx.drawImage(XART.get(key),p.x-s/2,p.y-s/2,s,s);ctx.restore();}}

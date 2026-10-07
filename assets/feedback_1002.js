@@ -196,9 +196,11 @@ const FB1002_CAN_FIRE=mr27CanFire;
 mr27CanFire=function(b,slot){if(b?._ship==='stormsovereign'&&['C','CORE','CL','CR'].includes(slot)&&b._mr27?.parts.find(p=>p.id==='lightning')?.dead)return false;return FB1002_CAN_FIRE(b,slot);};
 mr27CoreDraw=function(b,q){
  if(b._ship!=='stormsovereign')return FB1002_BASE.coreDraw(b,q);
+ // Generator/helper centres use their own geometry and flash, never the hull weapon.
+ if(q.id!=='core')return mr27Blit('storm',3,q,q.flash||0,null,b);
  const part=b._mr27?.parts.find(p=>p.id==='lightning');if(part?.dead)return;
  const B=b._l23Beam,charge=B?clamp(B.t/B.warm,0,1):0,p=mr27Shape(b,'lightning');
- fb1002Cell('lightning_gun',Math.min(3,Math.floor(charge*4)),p.x,p.y,p.w,p.h,b.flash>0?hitFlashColor(b):null);
+ fb1002Cell('lightning_gun',Math.min(3,Math.floor(charge*4)),p.x,p.y,p.w,p.h,part?.flash>0?hitFlashColor(b):null);
 };
 shipBossMount=function(b,slot){if(b?._ship==='stormsovereign'&&slot==='C'&&b._mr27){const p=mr27Shape(b,'lightning');return {x:p.x,y:p.y+p.h*.41};}return FB1002_BASE.mount.apply(this,arguments);};
 mr27Damage=function(b,dmg,x,y){

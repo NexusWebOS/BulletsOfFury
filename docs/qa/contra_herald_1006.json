@@ -1,0 +1,478 @@
+{
+  "date": "2026-10-06",
+  "status": "LOCAL_ONLY_UNCOMMITTED",
+  "encounter": "Stage 8 Herald miniboss; MINI8 password",
+  "sourceStudy": "_STAGING/contra_study_1005/BOSS_FIGHT_ATLAS.md",
+  "productionScope": "Existing approved modular Herald only; four lab bosses are not production encounters.",
+  "regression": {
+    "baselineAssertions": 7407,
+    "finalAssertions": 7445,
+    "newAssertions": 38,
+    "exitCode": 0,
+    "finalBanner": "FALVA/LIZZIE BUILD OK, 0 ERRORS",
+    "logSha256": "54ab86c243fe9f59b1bc427ebb25c1b99467305c130f08e6127adb99ba81be4a"
+  },
+  "native": {
+    "checks": [
+      {
+        "ok": true,
+        "name": "easy real halfway scheduler spawns exactly one modular Herald"
+      },
+      {
+        "ok": true,
+        "name": "easy Herald releases skull volleys and its difficulty-appropriate attacks"
+      },
+      {
+        "ok": true,
+        "name": "easy miniboss fight holds the stage wave clock"
+      },
+      {
+        "ok": true,
+        "name": "normal real halfway scheduler spawns exactly one modular Herald"
+      },
+      {
+        "ok": true,
+        "name": "normal Herald releases skull volleys and its difficulty-appropriate attacks"
+      },
+      {
+        "ok": true,
+        "name": "normal miniboss fight holds the stage wave clock"
+      },
+      {
+        "ok": true,
+        "name": "hard real halfway scheduler spawns exactly one modular Herald"
+      },
+      {
+        "ok": true,
+        "name": "hard Herald releases skull volleys and its difficulty-appropriate attacks"
+      },
+      {
+        "ok": true,
+        "name": "hard miniboss fight holds the stage wave clock"
+      },
+      {
+        "ok": true,
+        "name": "furious real halfway scheduler spawns exactly one modular Herald"
+      },
+      {
+        "ok": true,
+        "name": "furious Herald releases skull volleys and its difficulty-appropriate attacks"
+      },
+      {
+        "ok": true,
+        "name": "furious miniboss fight holds the stage wave clock"
+      },
+      {
+        "ok": true,
+        "name": "first fan releases while second cannon remains warned"
+      },
+      {
+        "ok": true,
+        "name": "second independently scheduled native fan releases"
+      },
+      {
+        "ok": true,
+        "name": "native disarm clears its released projectiles and preserves the opposite cannon"
+      },
+      {
+        "ok": true,
+        "name": "generated joint-break frames actually draw on the game context"
+      },
+      {
+        "ok": true,
+        "name": "easy left edge: slowest pilot escapes the cannon cycle with ordinary keyboard movement"
+      },
+      {
+        "ok": true,
+        "name": "easy right edge: slowest pilot escapes the cannon cycle with ordinary keyboard movement"
+      },
+      {
+        "ok": true,
+        "name": "normal left edge: slowest pilot escapes the cannon cycle with ordinary keyboard movement"
+      },
+      {
+        "ok": true,
+        "name": "normal right edge: slowest pilot escapes the cannon cycle with ordinary keyboard movement"
+      },
+      {
+        "ok": true,
+        "name": "hard left edge: slowest pilot escapes the cannon cycle with ordinary keyboard movement"
+      },
+      {
+        "ok": true,
+        "name": "hard right edge: slowest pilot escapes the cannon cycle with ordinary keyboard movement"
+      },
+      {
+        "ok": true,
+        "name": "furious left edge: slowest pilot escapes the cannon cycle with ordinary keyboard movement"
+      },
+      {
+        "ok": true,
+        "name": "furious right edge: slowest pilot escapes the cannon cycle with ordinary keyboard movement"
+      },
+      {
+        "ok": true,
+        "name": "stationary positive control is hit by the aimed fan with real damage active"
+      },
+      {
+        "ok": true,
+        "name": "all six generated components actually draw on the game context"
+      },
+      {
+        "ok": true,
+        "name": "Herald uses original FOV and original Retina pixels"
+      },
+      {
+        "ok": true,
+        "name": "empty space between modular parts does not damage the pilot"
+      },
+      {
+        "ok": true,
+        "name": "touching the visible core still damages the pilot"
+      },
+      {
+        "ok": true,
+        "name": "wing animates independently of the upright body"
+      },
+      {
+        "ok": true,
+        "name": "an actual curved Retina missile damages the moving cannon"
+      },
+      {
+        "ok": true,
+        "name": "ordinary shots route into the cannon they visibly hit"
+      },
+      {
+        "ok": true,
+        "name": "destroyed cannon detaches, loses its Retina lock and stops firing"
+      },
+      {
+        "ok": true,
+        "name": "destroying a wing removes its beam emitter"
+      },
+      {
+        "ok": true,
+        "name": "separate skull takes weak-point damage"
+      },
+      {
+        "ok": true,
+        "name": "defeat ejects authored components with timed explosion beats"
+      },
+      {
+        "ok": true,
+        "name": "generated casing-breach frames actually draw on the game context"
+      },
+      {
+        "ok": true,
+        "name": "death resolves once and normal stage progression resumes"
+      },
+      {
+        "ok": true,
+        "name": "restored miniboss leads into the existing eight-form modular finale"
+      },
+      {
+        "ok": true,
+        "name": "native charge and module-break audio cues fire"
+      },
+      {
+        "ok": true,
+        "name": "no page or console errors"
+      }
+    ],
+    "easy": {
+      "spawn": 1,
+      "mini": "heralddeath",
+      "active": true,
+      "entered": true,
+      "rig": 6,
+      "hp": 1331,
+      "maxhp": 1331,
+      "boss": false,
+      "trigger": true,
+      "done": false,
+      "combat": {
+        "history": [
+          "skulls",
+          "salvo",
+          "skulls",
+          "salvo"
+        ],
+        "shots": 6,
+        "beams": 0,
+        "scroll": 520.0000000000591,
+        "time": 0,
+        "keys": [
+          "part-wingL",
+          "part-wingR",
+          "part-core",
+          "part-gunL",
+          "part-gunR",
+          "part-head",
+          "original-fov"
+        ]
+      }
+    },
+    "normal": {
+      "spawn": 1,
+      "mini": "heralddeath",
+      "active": true,
+      "entered": true,
+      "rig": 6,
+      "hp": 2796,
+      "maxhp": 2796,
+      "boss": false,
+      "trigger": true,
+      "done": false,
+      "combat": {
+        "history": [
+          "skulls",
+          "lances",
+          "salvo",
+          "skulls"
+        ],
+        "shots": 6,
+        "beams": 2,
+        "scroll": 520.0000000000591,
+        "time": 0,
+        "keys": [
+          "part-wingL",
+          "part-wingR",
+          "part-core",
+          "part-gunL",
+          "part-gunR",
+          "part-head",
+          "original-fov",
+          "original-retina"
+        ]
+      }
+    },
+    "hard": {
+      "spawn": 1,
+      "mini": "heralddeath",
+      "active": true,
+      "entered": true,
+      "rig": 6,
+      "hp": 3075,
+      "maxhp": 3075,
+      "boss": false,
+      "trigger": true,
+      "done": false,
+      "combat": {
+        "history": [
+          "skulls",
+          "lances",
+          "salvo",
+          "skulls",
+          "lances"
+        ],
+        "shots": 10,
+        "beams": 2,
+        "scroll": 520.0000000000591,
+        "time": 0,
+        "keys": [
+          "part-wingL",
+          "part-wingR",
+          "part-core",
+          "part-gunL",
+          "part-gunR",
+          "part-head",
+          "original-fov",
+          "original-retina"
+        ]
+      }
+    },
+    "furious": {
+      "spawn": 1,
+      "mini": "heralddeath",
+      "active": true,
+      "entered": true,
+      "rig": 6,
+      "hp": 3634,
+      "maxhp": 3634,
+      "boss": false,
+      "trigger": true,
+      "done": false,
+      "combat": {
+        "history": [
+          "skulls",
+          "lances",
+          "salvo",
+          "skulls",
+          "lances"
+        ],
+        "shots": 14,
+        "beams": 2,
+        "scroll": 520.0000000000591,
+        "time": 0,
+        "keys": [
+          "part-wingL",
+          "part-wingR",
+          "part-core",
+          "part-gunL",
+          "part-gunR",
+          "part-head",
+          "original-fov",
+          "original-retina"
+        ]
+      }
+    },
+    "edgeMovement": [
+      {
+        "difficulty": "easy",
+        "edge": "left",
+        "contacts": 0,
+        "moved": 540,
+        "dead": false,
+        "roll": false,
+        "flip": false,
+        "base": 2.3920000000000003,
+        "invuln": 0,
+        "maxInvuln": 0,
+        "usedSpecial": false
+      },
+      {
+        "difficulty": "easy",
+        "edge": "right",
+        "contacts": 0,
+        "moved": 540,
+        "dead": false,
+        "roll": false,
+        "flip": false,
+        "base": 2.3920000000000003,
+        "invuln": 0,
+        "maxInvuln": 0,
+        "usedSpecial": false
+      },
+      {
+        "difficulty": "normal",
+        "edge": "left",
+        "contacts": 0,
+        "moved": 540,
+        "dead": false,
+        "roll": false,
+        "flip": false,
+        "base": 2.3920000000000003,
+        "invuln": 0,
+        "maxInvuln": 0,
+        "usedSpecial": false
+      },
+      {
+        "difficulty": "normal",
+        "edge": "right",
+        "contacts": 0,
+        "moved": 540,
+        "dead": false,
+        "roll": false,
+        "flip": false,
+        "base": 2.3920000000000003,
+        "invuln": 0,
+        "maxInvuln": 0,
+        "usedSpecial": false
+      },
+      {
+        "difficulty": "hard",
+        "edge": "left",
+        "contacts": 0,
+        "moved": 540,
+        "dead": false,
+        "roll": false,
+        "flip": false,
+        "base": 2.3920000000000003,
+        "invuln": 0,
+        "maxInvuln": 0,
+        "usedSpecial": false
+      },
+      {
+        "difficulty": "hard",
+        "edge": "right",
+        "contacts": 0,
+        "moved": 540,
+        "dead": false,
+        "roll": false,
+        "flip": false,
+        "base": 2.3920000000000003,
+        "invuln": 0,
+        "maxInvuln": 0,
+        "usedSpecial": false
+      },
+      {
+        "difficulty": "furious",
+        "edge": "left",
+        "contacts": 0,
+        "moved": 540,
+        "dead": false,
+        "roll": false,
+        "flip": false,
+        "base": 2.3920000000000003,
+        "invuln": 0,
+        "maxInvuln": 0,
+        "usedSpecial": false
+      },
+      {
+        "difficulty": "furious",
+        "edge": "right",
+        "contacts": 0,
+        "moved": 540,
+        "dead": false,
+        "roll": false,
+        "flip": false,
+        "base": 2.3920000000000003,
+        "invuln": 0,
+        "maxInvuln": 0,
+        "usedSpecial": false
+      }
+    ],
+    "stationaryControl": {
+      "contacts": 1,
+      "dead": true
+    },
+    "sounds": {
+      "bossWeaponCharge": 33,
+      "bossfireVileexistence": 38,
+      "combatOrb0927": 23,
+      "combatBeam0927": 16,
+      "combatModule0927": 6,
+      "expBig": 1
+    },
+    "scope": "Native fixtures and one ordinary-movement cannon cycle per edge/preset; not campaign clears or complete balance proof.",
+    "errors": []
+  },
+  "hashes": {
+    "assets/herald_1003f.js": "7aeb74152c36355927d2081652f6b0471da8c9175c9c5c0cc2972006f5639af9",
+    "assets/game.js": "f3db5aa53045f5a474f4a6bf4e2d8d046c8add76fdac9ec80f1fa0c93d998dab",
+    "_BUILD_SOURCE/test_fl.js": "423abc6e3d23c00b564ae7e7ada9607531438d0a93a1bb794ec2f43215980e33",
+    "_BUILD_SOURCE/test_herald_1003f.cjs": "457cf5312fc73c17befaee54ba0638ba91250a19e4d5fda75f17ee10897b4885",
+    "_BUILD_SOURCE/probe_contra_herald_1006.py": "b130a963c0cffec29657d0d124e89bf526e386435c8eeacf2f935cd17403ce57",
+    "_BUILD_SOURCE/build_contra_fx_1006.py": "a1c26ad3320ae9bc3a619997d05e0715449836a9b5dbd9a57f97b95d38a6740e",
+    "assets/game/contra_fx_1006/boss_signature_fx.png": "6496b09bbc6882ee22992a1744a575291934bbf45662b45dbb0c86f70c31e444",
+    "assets/game/contra_fx_1006/manifest.json": "1fffc39a747e86c4200198bfc381f8a65cef15afd225a0483fc110abb4f7a202",
+    "assets/data/ART_TAXONOMY.json": "8f353c65501fa3fd7652dca2a8525c77f63ecdd8f361d746defd304bf2e2f784"
+  },
+  "art": {
+    "key": "hc1006_signature",
+    "source": "_ART_SOURCES/contra_fx_1006/boss_signature_fx.png",
+    "sourceSha256": "6496b09bbc6882ee22992a1744a575291934bbf45662b45dbb0c86f70c31e444",
+    "cells": [
+      362,
+      362
+    ],
+    "grid": [
+      4,
+      3
+    ],
+    "usedRows": {
+      "joint": 0,
+      "breach": 2
+    },
+    "unusedRow": 1,
+    "cosmeticOnly": true,
+    "pixelsEdited": false
+  },
+  "review": "_shots/contra_herald_1006/review.html",
+  "limitations": [
+    "Eight movement fixtures cover one skull-cannon cycle each, at the two extreme edges with support fire cleared. They do not prove arbitrary starts, complete encounter balance, campaign clears or co-op escape routes.",
+    "Other native fixtures protect the pilot to inspect attacks and progression. Audio cue dispatch was checked; these muted captures are not an audio audition.",
+    "The generated breach overlaps the existing destruction explosions; the joint discharge is clearer.",
+    "Source timings are proposed BOF tuning, not measured Contra frame timings."
+  ]
+}

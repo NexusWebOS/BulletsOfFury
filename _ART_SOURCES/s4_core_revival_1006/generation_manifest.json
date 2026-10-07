@@ -1,0 +1,22 @@
+{
+  "method": "Built-in image_gen; generation then targeted spacing/progression edit",
+  "selected": "core_revival.png",
+  "selectedSha256": "d66b3a70cb4e5d498a838724cc7360c9c50bbea7e4208ea6db0b4fff2f013e57",
+  "initialCandidate": "revival-first.png",
+  "initialCandidateSha256": "af8b0c38cc6f7fde485c429fed6425e31dd4680c29edc901ee3cce4dfcfaacb1",
+  "generationPrompt": "generation-prompt.txt",
+  "finalEditPrompt": "repair-prompt.txt",
+  "processing": "No raster edits. Exact source PNG copied, measured draw rectangles omit only low-alpha outer wisps.",
+  "measuredNativeSize": [
+    1448,
+    1086
+  ],
+  "grid": [
+    4,
+    3
+  ],
+  "cell": [
+    362,
+    362
+  ]
+}

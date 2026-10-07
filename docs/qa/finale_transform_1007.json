@@ -1,0 +1,312 @@
+{
+  "checks": [
+    {
+      "ok": true,
+      "name": "form 0 disassembly is protected"
+    },
+    {
+      "ok": true,
+      "name": "form 0 transition advances both clocks exactly once"
+    },
+    {
+      "ok": true,
+      "name": "form 0 actual draw stays opaque, twists pieces and omits destroyed module"
+    },
+    {
+      "ok": true,
+      "name": "form 0 returns home without healing any life or replacing saved modules"
+    },
+    {
+      "ok": true,
+      "name": "form 0 physical reassembly restores the same injured form and opaque native cells"
+    },
+    {
+      "ok": true,
+      "name": "form 0 finishes in combat without phase reward"
+    },
+    {
+      "ok": true,
+      "name": "form 1 disassembly is protected"
+    },
+    {
+      "ok": true,
+      "name": "form 1 transition advances both clocks exactly once"
+    },
+    {
+      "ok": true,
+      "name": "form 1 actual draw stays opaque, twists pieces and omits destroyed module"
+    },
+    {
+      "ok": true,
+      "name": "form 1 returns home without healing any life or replacing saved modules"
+    },
+    {
+      "ok": true,
+      "name": "form 1 physical reassembly restores the same injured form and opaque native cells"
+    },
+    {
+      "ok": true,
+      "name": "form 1 finishes in combat without phase reward"
+    },
+    {
+      "ok": true,
+      "name": "form 2 disassembly is protected"
+    },
+    {
+      "ok": true,
+      "name": "form 2 transition advances both clocks exactly once"
+    },
+    {
+      "ok": true,
+      "name": "form 2 actual draw stays opaque, twists pieces and omits destroyed module"
+    },
+    {
+      "ok": true,
+      "name": "form 2 returns home without healing any life or replacing saved modules"
+    },
+    {
+      "ok": true,
+      "name": "form 2 physical reassembly restores the same injured form and opaque native cells"
+    },
+    {
+      "ok": true,
+      "name": "form 2 finishes in combat without phase reward"
+    },
+    {
+      "ok": true,
+      "name": "form 3 disassembly is protected"
+    },
+    {
+      "ok": true,
+      "name": "form 3 transition advances both clocks exactly once"
+    },
+    {
+      "ok": true,
+      "name": "form 3 actual draw stays opaque, twists pieces and omits destroyed module"
+    },
+    {
+      "ok": true,
+      "name": "form 3 returns home without healing any life or replacing saved modules"
+    },
+    {
+      "ok": true,
+      "name": "form 3 physical reassembly restores the same injured form and opaque native cells"
+    },
+    {
+      "ok": true,
+      "name": "form 3 finishes in combat without phase reward"
+    },
+    {
+      "ok": true,
+      "name": "form 4 disassembly is protected"
+    },
+    {
+      "ok": true,
+      "name": "form 4 transition advances both clocks exactly once"
+    },
+    {
+      "ok": true,
+      "name": "form 4 actual draw stays opaque, twists pieces and omits destroyed module"
+    },
+    {
+      "ok": true,
+      "name": "form 4 returns home without healing any life or replacing saved modules"
+    },
+    {
+      "ok": true,
+      "name": "form 4 physical reassembly restores the same injured form and opaque native cells"
+    },
+    {
+      "ok": true,
+      "name": "form 4 finishes in combat without phase reward"
+    },
+    {
+      "ok": true,
+      "name": "form 5 disassembly is protected"
+    },
+    {
+      "ok": true,
+      "name": "form 5 transition advances both clocks exactly once"
+    },
+    {
+      "ok": true,
+      "name": "form 5 actual draw stays opaque, twists pieces and omits destroyed module"
+    },
+    {
+      "ok": true,
+      "name": "form 5 returns home without healing any life or replacing saved modules"
+    },
+    {
+      "ok": true,
+      "name": "form 5 physical reassembly restores the same injured form and opaque native cells"
+    },
+    {
+      "ok": true,
+      "name": "form 5 finishes in combat without phase reward"
+    },
+    {
+      "ok": true,
+      "name": "form 6 disassembly is protected"
+    },
+    {
+      "ok": true,
+      "name": "form 6 transition advances both clocks exactly once"
+    },
+    {
+      "ok": true,
+      "name": "form 6 actual draw stays opaque, twists pieces and omits destroyed module"
+    },
+    {
+      "ok": true,
+      "name": "form 6 returns home without healing any life or replacing saved modules"
+    },
+    {
+      "ok": true,
+      "name": "form 6 physical reassembly restores the same injured form and opaque native cells"
+    },
+    {
+      "ok": true,
+      "name": "form 6 finishes in combat without phase reward"
+    },
+    {
+      "ok": true,
+      "name": "form 7 disassembly is protected"
+    },
+    {
+      "ok": true,
+      "name": "form 7 transition advances both clocks exactly once"
+    },
+    {
+      "ok": true,
+      "name": "form 7 actual draw stays opaque, twists pieces and omits destroyed module"
+    },
+    {
+      "ok": true,
+      "name": "form 7 returns home without healing any life or replacing saved modules"
+    },
+    {
+      "ok": true,
+      "name": "form 7 physical reassembly restores the same injured form and opaque native cells"
+    },
+    {
+      "ok": true,
+      "name": "form 7 finishes in combat without phase reward"
+    },
+    {
+      "ok": true,
+      "name": "form 8 disassembly is protected"
+    },
+    {
+      "ok": true,
+      "name": "form 8 transition advances both clocks exactly once"
+    },
+    {
+      "ok": true,
+      "name": "form 8 actual draw stays opaque, twists pieces and omits destroyed module"
+    },
+    {
+      "ok": true,
+      "name": "form 8 returns home without healing any life or replacing saved modules"
+    },
+    {
+      "ok": true,
+      "name": "form 8 physical reassembly restores the same injured form and opaque native cells"
+    },
+    {
+      "ok": true,
+      "name": "form 8 finishes in combat without phase reward"
+    },
+    {
+      "ok": true,
+      "name": "repeated render calls never advance clocks or heal pools"
+    },
+    {
+      "ok": true,
+      "name": "leaving a transition immediately restores combat renderer"
+    },
+    {
+      "ok": true,
+      "name": "monologue keys combat-body proof"
+    },
+    {
+      "ok": true,
+      "name": "monologue opaque combat-body proof"
+    },
+    {
+      "ok": true,
+      "name": "monologue noOld combat-body proof"
+    },
+    {
+      "ok": true,
+      "name": "monologue restored combat-body proof"
+    },
+    {
+      "ok": true,
+      "name": "unchanged speech held"
+    },
+    {
+      "ok": true,
+      "name": "unchanged speech advanced"
+    },
+    {
+      "ok": true,
+      "name": "unchanged speech finished"
+    },
+    {
+      "ok": true,
+      "name": "unchanged speech verbatim"
+    },
+    {
+      "ok": true,
+      "name": "unchanged speech shriek"
+    },
+    {
+      "ok": true,
+      "name": "death interrupt protected"
+    },
+    {
+      "ok": true,
+      "name": "death interrupt delegates"
+    },
+    {
+      "ok": true,
+      "name": "death interrupt reward"
+    },
+    {
+      "ok": true,
+      "name": "zero page/console/404 errors"
+    }
+  ],
+  "errors": [],
+  "screens": [
+    "form-0-out",
+    "form-0-in",
+    "form-0-ready",
+    "form-1-out",
+    "form-1-in",
+    "form-1-ready",
+    "form-2-out",
+    "form-2-in",
+    "form-2-ready",
+    "form-3-out",
+    "form-3-in",
+    "form-3-ready",
+    "form-4-out",
+    "form-4-in",
+    "form-4-ready",
+    "form-5-out",
+    "form-5-in",
+    "form-5-ready",
+    "form-6-out",
+    "form-6-in",
+    "form-6-ready",
+    "form-7-out",
+    "form-7-in",
+    "form-7-ready",
+    "form-8-out",
+    "form-8-in",
+    "form-8-ready",
+    "combat-body-monologue"
+  ],
+  "scope": "Controlled native transitions and cinematic behavior; no campaign-clear/balance claim."
+}

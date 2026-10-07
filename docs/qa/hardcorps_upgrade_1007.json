@@ -1,0 +1,83 @@
+{
+  "date": "2026-10-07",
+  "suite": {
+    "passed": 7681,
+    "failed": 0,
+    "finalBanner": true
+  },
+  "native": {
+    "engine_combat_1007": {
+      "checks": 34,
+      "failures": 0,
+      "errors": [],
+      "evidence": "_shots/engine_combat_1007/verification.json"
+    },
+    "hardcorps_bosses_1007": {
+      "checks": 49,
+      "failures": 0,
+      "errors": [],
+      "evidence": "_shots/hardcorps_bosses_1007/verification.json"
+    },
+    "lost_airbase_1007": {
+      "checks": 15,
+      "failures": 0,
+      "errors": [],
+      "evidence": "_shots/lost_airbase_1007/verification.json"
+    },
+    "rebel_air_1007": {
+      "checks": 33,
+      "failures": 0,
+      "errors": [],
+      "evidence": "_shots/rebel_air_1007/verification.json"
+    },
+    "hardcorps_finale_patterns_1007": {
+      "checks": 154,
+      "failures": 0,
+      "errors": [],
+      "evidence": "_shots/hardcorps_finale_patterns_1007/verification.json"
+    },
+    "hardcorps_finale_1007": {
+      "checks": 20,
+      "failures": 0,
+      "errors": [],
+      "evidence": "_shots/hardcorps_finale_1007/verification.json"
+    },
+    "finale_transform_1007": {
+      "checks": 69,
+      "failures": 0,
+      "errors": [],
+      "evidence": "_shots/finale_transform_1007/verification.json"
+    },
+    "boss4_render_1006": {
+      "checks": 101,
+      "failures": 0,
+      "errors": [],
+      "evidence": "_shots/boss4_render_1006/verification.json"
+    },
+    "s4_core_revival_1006": {
+      "checks": 77,
+      "failures": 0,
+      "errors": [],
+      "evidence": "_shots/s4_core_revival_1006/verification.json"
+    },
+    "finale_supplemental": {
+      "checks": 11,
+      "failures": 0,
+      "errors": [],
+      "evidence": "_shots/hardcorps_finale_1007/rebel_air_audit.json"
+    }
+  },
+  "nativeChecks": 563,
+  "scope": "Controlled native Chromium encounters, real keyboard evasion and positive damage controls. Not an unassisted full-campaign completion or final balance certification.",
+  "runtimeSHA256": {
+    "game.js": "25c8ec7d60e5e5ffc4f361154acba0a1790eac1db1a83a50779b76b2effb5a8c",
+    "engine_combat_1007.js": "f7ab363ec6d1f3ef9bb2c73e6069f35813092b2d2d840ac0aa8d706d7571ddd2",
+    "hardcorps_bosses_1007.js": "a6d4305e91f9ff629fbf899c7bff86ec11f81e7ed8429d63a3e2d56755293699",
+    "lost_airbase_1007.js": "dd0045759a2c0f68f3f428eadb0d9340ceba9a60db9a95f69b28b860200fbaf8",
+    "rebel_air_1007.js": "f36492a57690c22c9dbc258715d8ce9ce60ad47c9b72a205e4075d15d27ff16f",
+    "hardcorps_finale_patterns_1007.js": "3e067d2ad368344f54c4b4fbd926ed7be290d2d854287707b0764846d8ec5995",
+    "hardcorps_finale_art_1007.js": "06c6c50ab418c6e962c8ace32328a0a82fdc2b9d7bff07a52e032102018acfb0",
+    "hardcorps_finale_1007.js": "38496f5feb2b5d7e657b635a1608f87f0301b97edc2bf5a5688dc7b65a6018fe",
+    "finale_transform_1007.js": "7424d60c26bccf153e980cf93c8f9e0a4c408583711582df894b0e19d2958887"
+  }
+}

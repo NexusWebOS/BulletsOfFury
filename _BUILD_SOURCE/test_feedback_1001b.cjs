@@ -45,7 +45,7 @@ module.exports=function(vm,ctxv,ok){
  ok(out.start===0&&out.none===0,'1001b: the stage-6 turn is still before the choice and at the moment of it');
  ok(out.arenaKey==='assets/game/stagex_coast_1004j/terrain.png'&&fs.existsSync(path.join(ROOT,out.arenaKey||'x')),'1001b: Stage X arena plate is registered and on disk');
  ok(out.arenaWrap,'1001b: the Stage X duel draws its own water-plateau arena, not stage 6');
- const a=png('assets/game/stagex_1001/stagex_arena.png');
+ const a=png(out.arenaKey);
  ok(a[0]===680&&a[1]>=1024,'1001b: the arena plate is 680 wide and tall enough to circle the mountain ('+a.join('x')+')');
  ok(out.noBrake&&out.fullSpeed,'1001b: the stage 7 escape never decelerates once it reaches full speed');
  ok(out.pilotLine,'1001b: the pilot says "WHAT IS THIS?! WHAT IS HAPPENING TO ME?!" as the rift takes them');

@@ -1,0 +1,113 @@
+{
+  "checks": [
+    {
+      "ok": true,
+      "name": "deployed airbase is byte-identical to generated 1024x1536 source"
+    },
+    {
+      "ok": true,
+      "name": "new full-stage master preserves world width and campaign progression range"
+    },
+    {
+      "ok": true,
+      "name": "ordinary stage advances terrain and scheduler together at original 40px/s"
+    },
+    {
+      "ok": true,
+      "name": "ground decals follow the actual moving new terrain"
+    },
+    {
+      "ok": true,
+      "name": "loop edge 0: reflected neighbors meet without a visible horizontal seam"
+    },
+    {
+      "ok": true,
+      "name": "loop edge 1: reflected neighbors meet without a visible horizontal seam"
+    },
+    {
+      "ok": true,
+      "name": "boss engagement retains the exact airbase terrain phase"
+    },
+    {
+      "ok": true,
+      "name": "pursuit runs at 480px/s while boss holds campaign progression"
+    },
+    {
+      "ok": true,
+      "name": "ground displacement remains continuous across chase loop wraps"
+    },
+    {
+      "ok": true,
+      "name": "camera translation reveals different fixed world scenery"
+    },
+    {
+      "ok": true,
+      "name": "player motion cannot drag the terrain side banks"
+    },
+    {
+      "ok": true,
+      "name": "ground vehicles use the measured clear highway through every reflected section"
+    },
+    {
+      "ok": true,
+      "name": "miniboss holds the new terrain at its actual encounter location"
+    },
+    {
+      "ok": true,
+      "name": "stage retry resets loop state without inheriting prior pursuit travel"
+    },
+    {
+      "ok": true,
+      "name": "no browser page or console errors"
+    }
+  ],
+  "sha256": "5f427c1778eee4c98cb684d8f914fa33e70656b7c7e7787262b93d940f5ec371",
+  "normalTravel": {
+    "map": 39.999999999999986,
+    "scroll": 39.999999999999986,
+    "ground": 39.999999999999986,
+    "scorch": 39.99999999999943
+  },
+  "edge0": {
+    "max": 0,
+    "mean": 0,
+    "tiles": [
+      {
+        "n": -1,
+        "y": -764,
+        "h": 1020,
+        "flip": true
+      },
+      {
+        "n": 0,
+        "y": 256,
+        "h": 1020,
+        "flip": false
+      }
+    ]
+  },
+  "edge1": {
+    "max": 0,
+    "mean": 0,
+    "tiles": [
+      {
+        "n": 0,
+        "y": -764,
+        "h": 1020,
+        "flip": false
+      },
+      {
+        "n": 1,
+        "y": 256,
+        "h": 1020,
+        "flip": true
+      }
+    ]
+  },
+  "chase": {
+    "map": 0,
+    "travel": 480,
+    "ground": 480
+  },
+  "errors": []
+}

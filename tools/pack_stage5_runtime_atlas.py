@@ -4,11 +4,12 @@ The original PNGs remain editable source assets.  This emits the shipping atlas 
 cell table consumed by XART, eliminating 159 independent browser image decodes.
 """
 from pathlib import Path
+from art_sources_1006 import ArtSourcePath
 import json
 from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
-GAME = ROOT / "assets" / "game"
+GAME = ArtSourcePath(ROOT / "assets" / "game")
 OUT = GAME / "atlas" / "stage5_runtime_atlas.png"
 MAP = GAME / "atlas" / "stage5_runtime_atlas.js"
 WIDTH = 4096

@@ -4,12 +4,13 @@ Editable source PNGs remain untouched. The emitted JS table lets XART resolve ev
 to a stage-owned sheet and release that sheet when the next mission begins.
 """
 from pathlib import Path
+from art_sources_1006 import ArtSourcePath, source
 import json
 import re
 from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
-GAME = ROOT / "assets" / "game"
+GAME = ArtSourcePath(ROOT / "assets" / "game")
 OUTDIR = GAME / "atlas" / "stage_runtime"
 MAP = GAME / "atlas" / "stage_runtime_atlases.js"
 MAX = 4096
@@ -73,8 +74,11 @@ def stage_items(stage):
         for unit in sorted((GAME / "stage8_symbiote_fleet").iterdir()):
             if not unit.is_dir():
                 continue
-            idle = unit / "idle.png"
-            if idle.exists():
+            try:
+                idle = source(unit / "idle.png")
+            except FileNotFoundError:
+                idle = None
+            if idle is not None:
                 out.append((f"s8nf_{unit.name}_idle", idle))
             for mode in ("muzzle", "projectile"):
                 for i, src in enumerate(sorted(unit.glob(f"{mode}_*.png"))):
@@ -119,7 +123,7 @@ def pack_stage(stage, source_items):
         if key in seen:
             raise RuntimeError(f"duplicate runtime key {key}")
         seen.add(key)
-        opened.append((key, src, Image.open(src).convert("RGBA")))
+        opened.append((key, src, Image.open(source(src)).convert("RGBA")))
     opened.sort(key=lambda row: (-row[2].height, -row[2].width, row[0]))
 
     pages = []

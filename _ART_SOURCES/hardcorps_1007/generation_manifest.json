@@ -1,0 +1,67 @@
+{
+  "generator": "image_gen",
+  "date": "2026-10-07",
+  "policy": "Preserve source; exact grid extraction only. No resampling, masks or pixel repaint.",
+  "sources": {
+    "void": {
+      "path": "_ART_SOURCES/hardcorps_1007/void_source.png",
+      "generatorFile": "exec-cddd7430-d41b-4c72-bd1d-497a3ff6e0c8.png",
+      "sha256": "7069b92401379f941f7e94f5e9129a3dc8c2177ddd5ffc5c8159cf7cac5748db",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "grid": [
+        4,
+        4
+      ],
+      "prompt": "Production animation spritesheet for a 2D Neo Geo / Sega 32X shmup. Redesign reference void as a vastly smoother EVIL CHROMIUM BLACK VORTEX with glossy liquid black-chrome symbiote tendrils and fine silver-white / violet / crimson electrical veins. EXACTLY SIXTEEN equally sized animation frames in a perfectly regular 4 columns by 4 rows grid, square overall sheet. Every tile centers the identical circular vortex at identical scale and pivot with at least 16% transparent empty padding on every side; no clipped strands, no overlap. The animation is ONE continuous smooth 360-degree inward-spinning loop, advancing 22.5 degrees in each successive reading-order frame, maintaining circular silhouette and size. Deep fully opaque near-black center like a hole in space, tightly coiled tubular chrome arms funneling inward, thin sharply defined lightning running through the arms, occasional tiny silver energy shards caught near rim. OPAQUE BLACK MATERIAL and dark interior must stay visible; genuine transparent alpha only outside effect. Strong silver and violet directional highlights, restrained saturated crimson accents, firm dark pixel edges, crisp pixel clusters at game sprite scale. No flat halo, no radial soft glow cloud, no text, labels, borders, character or backdrop. Consistent sequence, not sixteen designs. Preserve overall sinister black/chrome identity of reference while making a fluid stable vortex.",
+      "reference": "assets/game/alien_arena_1005/void_10.png"
+    },
+    "helix": {
+      "path": "_ART_SOURCES/hardcorps_1007/helix_source.png",
+      "generatorFile": "exec-2f20d844-63e3-4166-8323-31938010bc6f.png",
+      "sha256": "7e849cda060bebe41abe929a296feeec2f63af922cd2b2791e61dfa8eb6bbf87",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "grid": [
+        4,
+        4
+      ],
+      "prompt": "Production VFX spritesheet for an evil liquid black-chromium SYMBIOTE TRANSFORMATION spiral in a Neo Geo/Sega32X pixel-art top-down shmup. EXACT SIXTEEN animation frames in a regular 4 columns x 4 rows square grid. Each equally sized cell has the same pivot and scale and 15 percent completely empty transparent padding. Continuous looping motion: three slender glossy black-chrome living ribbons corkscrew around an invisible upright humanoid volume in a spherical HELIX, like a living coiled serpent circling above, behind and below a boss while it changes shape. Interior has large clear transparent openings so underlying boss remains visible. Strong silver beveled highlights with narrow crimson/violet energy veins, dark outlines. Clearly asymmetric spiral with an upper back arc and lower front arc, smoothly advancing rotation through sixteen sequential phases. Thin branching tendrils connect the ribbons; occasional small sharp square code fragments follow the coil. Opaque material, NO aura, NO fuzzy halo, NO circular flat ring, NO neon smoke. Crisp high-detail pixel clusters, production alpha, no characters, no text, numbers, frames or backdrop. All sixteen images are sequential frames of ONE effect, not different designs.",
+      "reference": null
+    },
+    "cast": {
+      "path": "_ART_SOURCES/hardcorps_1007/cast_source.png",
+      "generatorFile": "exec-4ac4a885-b8a9-4cf8-a556-f2fd77d5cb61.png",
+      "sha256": "6daa21ff22b1663b53756a6b0cb322bba514a69fd320635eddcfc916593132bb",
+      "dimensions": [
+        887,
+        1774
+      ],
+      "mode": "RGBA",
+      "grid": [
+        2,
+        4
+      ],
+      "prompt": "Production animation SPRITESHEET of the exact reference black/chrome/red Code Hammer robot casting dark energy. Tall PORTRAIT sheet: EXACTLY TWO COLUMNS and FOUR ROWS, eight cells total. Layout 1024 wide by 2048 tall if possible, each square tile contains ONE complete pose at the SAME SMALL SCALE with 18% EMPTY TRANSPARENT MARGIN on all sides, all feet at consistent baseline and red chest reactor at same x. Entire robot including hammer fits inside every cell without clipping. Eight sequential poses reading order: idle; free RIGHT hand lifts; free hand beside head; free arm fully raised ABOVE HELMET with open claw palm; fully raised palm charges small sharp violet/black knot; full overhead spell release; recoil elbow bends; arm lowers to idle. Opposite hand retains the large crimson-and-black hammer hanging at hip throughout, separate from casting hand. Exact reference silver pointed helmet, evil red eyes, silver-black articulated armor, red round chest reactor and knee emitters, black tendrils at shoulders; fixed 3/4-front slightly overhead camera. Fully opaque character pixels, crisp NeoGeo pixel clusters with thick black outline. Absolutely NO shadows under or around robot, NO blurry glow, NO fog, NO background gradients. Only tiny crisp violet finger sparks in poses 5 and 6. TRUE ALPHA TRANSPARENCY outside the complete robot, NO TEXT, NO grid lines. Make small sprites in generous spaced square slots, not a poster. Eight poses of the same character, identical scale.",
+      "reference": "assets/game/hammer_knight_1005/hammer_0.png"
+    },
+    "stage4_airbase": {
+      "path": "_ART_SOURCES/hardcorps_1007/stage4_airbase.png",
+      "sha256": "5f427c1778eee4c98cb684d8f914fa33e70656b7c7e7787262b93d940f5ec371",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "deployed": "assets/game/hardcorps_1007/stage4_airbase.png",
+      "generatorFile": "exec-fc37b5d0-f130-42f8-95ad-d38bf515d505.png",
+      "reference": "assets/game/stage4_highway_0915.png",
+      "prompt": "Create a replacement production background tile for Bullets of Fury, a top-down vertically scrolling Neo Geo / Sega 32X military shmup. Reference is the CURRENT stage road only for crisp pixel-cluster texture, desert orange sand and asphalt palette. Make a much richer LOST ABANDONED AIRBASE IN THE DESERT, viewed perfectly straight overhead with no perspective/horizon. One tall portrait image 1024x1536 or larger proportional. A broad but readable cracked central highway runs straight vertically from the exact top center to bottom center, with faded yellow divider and road edges at matching positions at both edges so it repeats vertically. Highway connected to looping perimeter access roads bending around sunken hangars, dusty aprons, abandoned fuel tanks, radar dishes, concrete bunkers, wrecked unoccupied aircraft silhouettes, sand drifts and scrub. Facilities mostly on left and right thirds, dark neutral clear central flight area for bullets. Large interesting authored structures and readable terrain, restrained detail not visual noise. Decommissioned airfield, military science-fiction scale, sun-bleached ochre, dusty tan, charcoal tarmac, faded olive metal, cracked concrete. Crisp hand-placed-looking pixel clusters with dark outlines, no painterly blur, no glow. This is a seamless VERTICAL SCROLL TILE: top and bottom 10 percent have the same straight highway and compatible sand and apron areas, no landmark crosses top/bottom seam. No pilots, enemy units, projectiles, HUD, menu, typography or labels. Fill the entire canvas with terrain, no border."
+    }
+  }
+}
