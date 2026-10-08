@@ -1,4 +1,9 @@
 {
+  "ph8_": {
+    "role": "authored_stage_player_hud",
+    "sheet": null,
+    "note": "October 8: compact native player rows cropped from the approved hud_themes_1007 stage_01..09 and stage_x hud-kit-v2 sources. Original RGBA pixels and alpha preserved; no new art generation or shared atlas edits. Owner _BUILD_SOURCE/build_player_hud_1008.py; source/crop/output hashes _ART_SOURCES/player_hud_1008/manifest.json. Runtime player_hud_1008.js draws cached static recesses, native bitmap text, existing icons and clipped authored green/red fill samples. Live stocks, per-seat cooldowns/equipment, radar, locks, specials and timed loans replace concept values. Stage X is owned by Stage 6 for texture retirement. Existing enemy_hud_1007c frames retain actual shield and encounter HP, including independent Rebel pools and the finale's successive colored fills. Verification docs/PLAYER_HUD_1008.md."
+  },
   "aa5_": {
     "role": "alien_arena_parallax_void_code_and_modular_ghost",
     "sheet": null,

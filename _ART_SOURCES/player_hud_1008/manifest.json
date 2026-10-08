@@ -1,0 +1,132 @@
+{
+  "stage_01": {
+    "source": "_ART_SOURCES/hud_themes_1007/stage_01/hud-kit-v2.png",
+    "sha256": "d07a4b50dc2d92734cd16aa2d19d6589dff0fe34793506c3e1539f6d1202719b",
+    "crop": [
+      0,
+      40,
+      1672,
+      269
+    ],
+    "output": "assets/game/levels/stage_01/ui/player_hud_1008.png",
+    "outputSha256": "bce7aad43179a640e41c44b78a31502b337d5ab0861247f82ca216d3fb25080b",
+    "pixelPolicy": "Native pixels and alpha copied unchanged; runtime composites static recesses, live fonts/icons and clipped fill samples."
+  },
+  "stage_02": {
+    "source": "_ART_SOURCES/hud_themes_1007/stage_02/hud-kit-v2.png",
+    "sha256": "978125f5bcae2f89def79c5bd61d08b314dda3e8b0572e90d8704439a2da8bf1",
+    "crop": [
+      0,
+      40,
+      1672,
+      269
+    ],
+    "output": "assets/game/levels/stage_02/ui/player_hud_1008.png",
+    "outputSha256": "a26addeab8b36b3e24f96bd1e3e39afd6539cb52a1e6c441b23a51179e977a7e",
+    "pixelPolicy": "Native pixels and alpha copied unchanged; runtime composites static recesses, live fonts/icons and clipped fill samples."
+  },
+  "stage_03": {
+    "source": "_ART_SOURCES/hud_themes_1007/stage_03/hud-kit-v2.png",
+    "sha256": "bdcf98dbb7a0bb2fce70e82fd786ac3e322098a89d73b780fc5b08057016b9fe",
+    "crop": [
+      0,
+      40,
+      1672,
+      269
+    ],
+    "output": "assets/game/levels/stage_03/ui/player_hud_1008.png",
+    "outputSha256": "7578348621c95e4459d5917a9f5d45571b08df84fee04ee47c2b91f2c1c8e7e0",
+    "pixelPolicy": "Native pixels and alpha copied unchanged; runtime composites static recesses, live fonts/icons and clipped fill samples."
+  },
+  "stage_04": {
+    "source": "_ART_SOURCES/hud_themes_1007/stage_04/hud-kit-v2.png",
+    "sha256": "ab8c65d9c4e27b965e982fc3bc1db3d7252bdd81cccc323d9cb00e4cdec47714",
+    "crop": [
+      0,
+      40,
+      1672,
+      269
+    ],
+    "output": "assets/game/levels/stage_04/ui/player_hud_1008.png",
+    "outputSha256": "9d715501d2478e9cf56eb2c385f96b366fafd40bb3da67c848444e27d0ce1849",
+    "pixelPolicy": "Native pixels and alpha copied unchanged; runtime composites static recesses, live fonts/icons and clipped fill samples."
+  },
+  "stage_05": {
+    "source": "_ART_SOURCES/hud_themes_1007/stage_05/hud-kit-v2.png",
+    "sha256": "472c262705b4891111e9005cab32a9e65994e256887ef69a70675164cc025121",
+    "crop": [
+      0,
+      40,
+      1672,
+      269
+    ],
+    "output": "assets/game/levels/stage_05/ui/player_hud_1008.png",
+    "outputSha256": "b47f6e2019c7f57efe3d7745eea6ad2c112626ae1a67fd44c7b951181c0422c4",
+    "pixelPolicy": "Native pixels and alpha copied unchanged; runtime composites static recesses, live fonts/icons and clipped fill samples."
+  },
+  "stage_06": {
+    "source": "_ART_SOURCES/hud_themes_1007/stage_06/hud-kit-v2.png",
+    "sha256": "96b741ebb921fab2316161fff93aacc1ddbe924cb906d30349d1570ef5013beb",
+    "crop": [
+      0,
+      40,
+      1672,
+      269
+    ],
+    "output": "assets/game/levels/stage_06/ui/player_hud_1008.png",
+    "outputSha256": "6df7cbac2c9c6f5cc9968600169ff03271c67919486399b74ab50a17cf7e636e",
+    "pixelPolicy": "Native pixels and alpha copied unchanged; runtime composites static recesses, live fonts/icons and clipped fill samples."
+  },
+  "stage_07": {
+    "source": "_ART_SOURCES/hud_themes_1007/stage_07/hud-kit-v2.png",
+    "sha256": "1dde9ec445cb08d813d9e8c251ec82109c18f956dc157f189cf1de83090c67b6",
+    "crop": [
+      0,
+      40,
+      1672,
+      269
+    ],
+    "output": "assets/game/levels/stage_07/ui/player_hud_1008.png",
+    "outputSha256": "8130a014e9ce022d587ac9ab051f98aaa1358149c7203d32e440cea0237c08fc",
+    "pixelPolicy": "Native pixels and alpha copied unchanged; runtime composites static recesses, live fonts/icons and clipped fill samples."
+  },
+  "stage_08": {
+    "source": "_ART_SOURCES/hud_themes_1007/stage_08/hud-kit-v2.png",
+    "sha256": "2ea96e7011cc835234a0b09142c716501da048d7e063808c43f2b6ba1f6b7797",
+    "crop": [
+      0,
+      40,
+      1672,
+      269
+    ],
+    "output": "assets/game/levels/stage_08/ui/player_hud_1008.png",
+    "outputSha256": "afd15d1028c1c2bc23864dbc0ee259ebe38189335dde2bb134f3e183225975e0",
+    "pixelPolicy": "Native pixels and alpha copied unchanged; runtime composites static recesses, live fonts/icons and clipped fill samples."
+  },
+  "stage_09": {
+    "source": "_ART_SOURCES/hud_themes_1007/stage_09/hud-kit-v2.png",
+    "sha256": "4b0017e1066b90e6d934728705de47008b96484c244096ca784b671c2abab28a",
+    "crop": [
+      0,
+      40,
+      1672,
+      269
+    ],
+    "output": "assets/game/levels/stage_09/ui/player_hud_1008.png",
+    "outputSha256": "9ce779a416efaf65b4f4588b743e6306fdc47c0dffff1cf03fbf9cd317b863df",
+    "pixelPolicy": "Native pixels and alpha copied unchanged; runtime composites static recesses, live fonts/icons and clipped fill samples."
+  },
+  "stage_x": {
+    "source": "_ART_SOURCES/hud_themes_1007/stage_x/hud-kit-v2.png",
+    "sha256": "bea3aa4741e0b1370af554ad6b0fd5ba8d5a37cc71b411243642c0cc854b51b2",
+    "crop": [
+      0,
+      40,
+      1672,
+      269
+    ],
+    "output": "assets/game/levels/stage_06/ui/player_hud_stagex_1008.png",
+    "outputSha256": "76aaca55d6ba0e4e1a4aa87e01ae56cbe412a8f0457e7cf589b30ee86c96e685",
+    "pixelPolicy": "Native pixels and alpha copied unchanged; runtime composites static recesses, live fonts/icons and clipped fill samples."
+  }
+}

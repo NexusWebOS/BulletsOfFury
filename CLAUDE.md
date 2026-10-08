@@ -1,3 +1,38 @@
+# 2026-10-08 — GitHub publication: live player HUD and encounter bars
+
+Mike authorized publishing the completed HUD integration. Ten authored stage rows
+now show live equipment, stocks, cooldowns, specials, loans, radar and lock state;
+complete miniboss nameplates, co-op rows, independent Rebel bars and Dracodia's
+actual HP pools/eight colored refills are verified. Source crop provenance,
+reproducible builder, native probe and portable QA ship with the runtime.
+See [integration report](docs/PLAYER_HUD_1008.md) and
+[verification results](docs/qa/player_hud_1008.json): 7,952 regression assertions,
+450 native Chromium checks, final success banners and zero errors. Captures use
+protected rendering fixtures, not a new balance sign-off. Base game/test bytes and
+line endings are unchanged. Earlier local HUD notes are verification checkpoints
+for this publication. Unrelated expansion work and scratch remain local.
+
+# 2026-10-08 — Live player HUD and complete encounter bars (LOCAL ONLY)
+
+Mike requested installing the new HUD, boss bars and miniboss bars.
+[Runtime, ownership and verification](docs/PLAYER_HUD_1008.md),
+[portable checks](docs/qa/player_hud_1008.json). Ten compact authored stage rows
+now replace the concept samples with live fonts, icons, stocks, cooldowns,
+specials, timed loans, radar and lock warnings. Fixed 80-pixel solo / 160-pixel
+co-op geometry reserves complete independent rows. Miniboss nameplates now sit
+directly below the player assembly; the existing authored boss/shield/Harrier and
+five Rebel housings remain live. Finale actual pools and eight colored coronation
+refills are preserved. Stage textures and derived HUD caches retire on departure,
+including Stage X under Stage 6 ownership. Original generated pixels/alpha,
+source hashes and reproducible crop builder are retained; no atlas repack.
+Required full suite: 7,952 passes, zero errors, exit 0 and final success banner.
+Native player HUD: 205 checks; enemy HUD: 245 checks; zero page/console
+errors. Captured native stage/pilot/weapon/co-op/finale views were inspected.
+Controlled protected fixtures verify rendering, not unassisted clears or balance.
+Base game and test harness remain byte-identical; index CRLF retained. Review:
+`_shots/player_hud_1008/review.html`. Local only, no commit/push; existing unrelated
+work preserved. Earlier player-HUD-concept notes below are historical checkpoints.
+
 # 2026-10-08 — GitHub publication: organized assets, combat checks and enemy HUD
 
 Mike authorized publishing the current game. This batch includes the completed

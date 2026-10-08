@@ -129,7 +129,7 @@
   <div id="credit-left">COLEFORGE<br>PRODUCTIONS<br><span class="yr">2026</span></div>
   <div id="game-frame">
     <div id="hud-row">
-      <div id="hud-wrap"><canvas id="hud" width="480" height="62"></canvas></div>
+      <div id="hud-wrap"><canvas id="hud" width="480" height="80"></canvas></div>
       <div id="equip-dom"><canvas id="equipcv" width="128" height="128"></canvas></div>
     </div>
     <div id="hud-div"></div>
@@ -230,7 +230,8 @@
      (WIN_L/T/R/B as fractions of a 1448x1086 plate) and positioned #game-frame absolutely into it.
      That is gone. The room is now a plain flex row and the play window is simply sized to fit the
      viewport at the game's own aspect, so what you click is where it looks. */
-  var GW=480, GH=512, HUDH=62, DIVH=6;
+  var GW=480, GH=512, DIVH=6;
+  window.__bofHudHeight=80;
   function fit(){
     var vw=innerWidth, vh=innerHeight;
     function S(id,w,h){ var e=document.getElementById(id); if(e){ e.style.width=w+'px'; e.style.height=h+'px'; } }
@@ -244,6 +245,7 @@
     var reserve = isFS() ? 0 : Math.min(vw*0.34, 420);      // room for the credit rails
     var availW = Math.max(200, vw - reserve);
     var availH = vh * (isFS()? 1.0 : 0.94);
+    var HUDH=window.__bofHudHeight||80;
     var totalH = GH + HUDH + DIVH;
     var sc = Math.min(availW/GW, availH/totalH);
     var gw = Math.round(GW*sc), gh = Math.round(GH*sc);
@@ -447,6 +449,8 @@
 <script src="assets/balance_recovery_1007b.js"></script>
 <script src="assets/enemy_hud_art_1007c.js"></script>
 <script src="assets/enemy_hud_1007c.js"></script>
+<script src="assets/player_hud_art_1008.js"></script>
+<script src="assets/player_hud_1008.js"></script>
 <!-- Campaign world now renders once, on the full-width game canvas. -->
 
 <script>
