@@ -11,9 +11,9 @@ const MAPG_BRIEFINGS=[
  'ASSAULT THE DEATH RUINS AND END FURIOUS DEATH.',
  'ENTER THE SECRET RIFT EARNED THROUGH THE STAGE 5 GATE RUN.'
 ];
-XART._src.mapg_briefing='assets/game/map_briefing_1003g/briefing_blank.png';
-XART._src.mapg_lizzie_frame='assets/game/map_briefing_1003g/lizzie_frame.png';
-XART._src.mapg_lizzie_source='assets/game/pilots_0922/sheets/lizzie_expressions.png';
+XART._src.mapg_briefing='assets/game/shared/campaign/map_briefing_1003g/briefing_blank.png';
+XART._src.mapg_lizzie_frame='assets/game/shared/campaign/map_briefing_1003g/lizzie_frame.png';
+XART._src.mapg_lizzie_source='assets/game/pilots/lizzie/portraits/pilots_0922/sheets/lizzie_expressions.png';
 const MAPG={typing:null,rect:{x:12,y:390,w:456,h:98},panelSource:[0,98,2170,484],portraitCache:new Map()};
 function mapgWarm(){for(const k of ['mapg_briefing','mapg_lizzie_frame','mapg_lizzie_source'])XART.rdy(k);}
 const MAPG_OPEN=openStageSelect;

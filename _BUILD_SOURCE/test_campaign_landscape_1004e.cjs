@@ -19,7 +19,7 @@ module.exports=function(vm,ctxv,ok){
  out['earned bonus portal opens through the existing latch']=cmap2Unlocked(9);campaign.bonusUnlocked=false;
  out['Stage X flight fits both the city and departed Stage 6 region']=cmap2Frame(6,'hub').z>0&&cmap2Frame(6,'hub').z<.34;
  const keys=MAP4E.keys.flatMap(k=>['','_lock','_shadow','_glow'].map(v=>'map4e_region_'+k+v));
- out['every generated region state has a fresh explicit asset key']=keys.every(k=>XART._src[k]?.startsWith(k.startsWith('map4e_region_hq')?'assets/game/campaign_landscape_1004f/':k.startsWith('map4e_region_hub')?'assets/game/campaign_stagex_1004g/':'assets/game/campaign_landscape_1004e/'));
+ out['every generated region state has a fresh explicit asset key']=keys.every(k=>XART._src[k]?.startsWith(k.startsWith('map4e_region_hq')?'assets/game/shared/campaign/campaign_landscape_1004f/':k.startsWith('map4e_region_hub')?'assets/game/shared/campaign/campaign_stagex_1004g/':'assets/game/shared/campaign/campaign_landscape_1004e/'));
  const hub=map4eHubPose(),marker=map4eStageXPoint(),orbit=fr27CoreMapPosition(),expectedOrbit=cmap2ToScreen(hub.x,hub.y-80);
  out['Stage X floats above its fixed landscape anchor']=cmap2World('hub').y-hub.y>100;
  out['Stage X flag and fighter orbits share the floating city pose']=marker.y===hub.y+55&&Math.abs(orbit.y-expectedOrbit.y)<.001;
@@ -40,7 +40,7 @@ module.exports=function(vm,ctxv,ok){
  return out;
 })())`,ctxv));
  for(const [name,pass] of Object.entries(out))ok(pass,name);
- const manifest=JSON.parse(fs.readFileSync(path.join(__dirname,'../assets/game/campaign_landscape_1004e/manifest.json'),'utf8'));
+ const manifest=JSON.parse(fs.readFileSync(path.join(__dirname,'../assets/game/shared/campaign/campaign_landscape_1004e/manifest.json'),'utf8'));
  ok(manifest.sources.length===4&&manifest.sources.every(s=>s.sha256.length===64),'all four authored generation sources have archived hashes');
  const currentFiles=JSON.parse(vm.runInContext('JSON.stringify(MAP4E.keys.flatMap(k=>[\"\",\"_lock\",\"_shadow\",\"_glow\"].map(v=>XART._src[\"map4e_region_\"+k+v])).concat(XART._src.map4e_landscape))',ctxv));
  ok(currentFiles.every(f=>typeof f==='string'&&fs.existsSync(path.join(__dirname,'..',f))),'every currently registered terrain and landmark output exists');

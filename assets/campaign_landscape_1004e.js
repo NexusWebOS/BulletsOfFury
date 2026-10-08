@@ -9,17 +9,17 @@ const MAP4E={w:3200,h:2320,landH:3200*2/3,hub:[1625,1110],hq:[475,350],last:null
 Object.assign(SSEL_POS,{1:[740,640],2:[1540,510],3:[2180,590],4:[2600,1110],
  5:[2610,1690],6:[1640,1840],7:[660,1580],8:[470,1030],9:[2890,270]});
 cmap2Order._o=null;
-XART._src.map4e_landscape='assets/game/campaign_landscape_1004e/landscape.png';
+XART._src.map4e_landscape='assets/game/shared/campaign/campaign_landscape_1004e/landscape.png';
 for(const k of MAP4E.keys)for(const v of ['','_lock','_shadow','_glow'])
- XART._src['map4e_region_'+k+v]='assets/game/campaign_landscape_1004e/region_'+k+v+'.png';
+ XART._src['map4e_region_'+k+v]='assets/game/shared/campaign/campaign_landscape_1004e/region_'+k+v+'.png';
 for(const v of ['','_lock','_shadow','_glow'])
- XART._src['map4e_region_hq'+v]='assets/game/campaign_landscape_1004f/region_hq'+v+'.png';
+ XART._src['map4e_region_hq'+v]='assets/game/shared/campaign/campaign_landscape_1004f/region_hq'+v+'.png';
 for(const v of ['','_lock','_shadow','_glow'])
- XART._src['map4e_region_hub'+v]='assets/game/campaign_stagex_1004g/region_hub'+v+'.png';
-for(const v of ['','_lock'])XART._src['map4f_flagx'+v]='assets/game/campaign_landscape_1004f/flag_x'+v+'.png';
+ XART._src['map4e_region_hub'+v]='assets/game/shared/campaign/campaign_stagex_1004g/region_hub'+v+'.png';
+for(const v of ['','_lock'])XART._src['map4f_flagx'+v]='assets/game/shared/campaign/campaign_landscape_1004f/flag_x'+v+'.png';
 const MAP4F_FLAG_STATES=['av','lock','hi0','hi1','done_gold','done_silver','done_green','white'];
 for(let n=1;n<=9;n++)for(const v of MAP4F_FLAG_STATES)
- XART._src['map4f_flag'+n+'_'+v]='assets/game/campaign_landscape_1004f/flag_'+n+'_'+v+'.png';
+ XART._src['map4f_flag'+n+'_'+v]='assets/game/shared/campaign/campaign_landscape_1004f/flag_'+n+'_'+v+'.png';
 function map4eWarm(){XART.rdy('map4e_landscape');for(const k of MAP4E.keys)
  for(const v of ['','_lock','_shadow','_glow'])XART.rdy('map4e_region_'+k+v);XART.rdy('map4f_flagx');XART.rdy('map4f_flagx_lock');
  if(Rival24.mapAvailable)for(const key of ['gp4_ace_top',...REBEL_SHIPS.map(k=>'rr_ship_'+k)])XART.rdy(key);

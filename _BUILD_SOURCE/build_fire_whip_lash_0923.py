@@ -2,7 +2,7 @@
 from pathlib import Path
 from PIL import Image,ImageSequence
 import numpy as np,json,hashlib
-ROOT=Path(__file__).resolve().parents[1];OUT=ROOT/'assets/game/player_weapons/fire_whip_lash_0923'
+ROOT=Path(__file__).resolve().parents[1];OUT=ROOT/'assets/game/shared/player_weapons/player_weapons/fire_whip_lash_0923'
 def lum(a):return a[...,0]*.299+a[...,1]*.587+a[...,2]*.114
 # Use real game colors: fire-orb gold core and flamethrower orange shadows.
 refs=[np.asarray(Image.open(OUT/(n+'_palette.png')).convert('RGBA')) for n in ['fireorb','flamethrower']]
@@ -39,7 +39,7 @@ for i,raw in enumerate(ImageSequence.Iterator(Image.open(OUT/'animation.webp')))
  yy,xx=np.where(mask);maxreach=max(maxreach,float(np.hypot(xx-192,yy-224).max()))
  name=f'pose_{i}.png';canvas.save(OUT/name);poses.append({'file':name,'anchor':[192,224],'cells':cells})
  frames.append(canvas)
-for i in range(8):recolor(Image.open(ROOT/f'assets/game/laser_round_muzzle_0923/round_{i}.png')).save(OUT/f'muzzle_{i}.png')
+for i in range(8):recolor(Image.open(ROOT/f'assets/game/shared/player_weapons/laser_round_muzzle_0923/round_{i}.png')).save(OUT/f'muzzle_{i}.png')
 runtime={'size':[384,256],'anchor':[192,224],'reach':round(maxreach,3),'frames':[p['cells'] for p in poses]}
 (OUT/'collision.json').write_text(json.dumps(runtime,separators=(',',':'))+'\n')
 manifest={'asset_id':'c1fe952b-34ab-4e7a-843f-0f07643864b7','source_asset_id':'7eebc4c8-e086-42fc-8951-26f5ad1dc255',

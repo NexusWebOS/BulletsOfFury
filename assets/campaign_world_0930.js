@@ -2,7 +2,7 @@
 /* September 30: a single interactive world, with Fury HQ at its centre.
    Geography is decorative. The locked East Coast USA sector never adds an expansion unlock. */
 const MAP30_ART={hq:'fury_hq',east:'eastern_ruins',north:'northern_coast',datawall:'east_coast_binary_rows_v6',home:'northern_hq_island',cove:'island_cove',ruins:'island_ruins'};
-for(const [k,file] of Object.entries(MAP30_ART))XART._src['map30_'+k]='assets/game/campaign_0930/'+file+'.png';
+for(const [k,file] of Object.entries(MAP30_ART))XART._src['map30_'+k]='assets/game/shared/campaign/campaign_0930/'+file+'.png';
 XART._src.map30_datawall=DATAWALL_1001.path;
 const MAP30={westX:35,home:{x:385,y:185,w:205,h:190},ships:new Map(),land:[
  {key:'north',x:690,y:-148,w:1280,h:402},

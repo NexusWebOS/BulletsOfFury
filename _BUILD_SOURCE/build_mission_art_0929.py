@@ -25,7 +25,7 @@ def build(root, art_root, radar, jets):
                 pad=Image.new('RGBA',size);pad.alpha_composite(cell,((size[0]-cell.width)//2,(size[1]-cell.height)//2));cell=pad
             atlas.alpha_composite(cell,(i*size[0],0));frames.append([i*size[0],0,*size])
         atlas.save(out/(name+'.png'))
-        registry[name]={'key':'mission29_'+name,'path':'assets/game/mission_repair_0929/'+name+'.png','frames':frames,'fps':18 if name=='radar' else 1}
+        registry[name]={'key':'mission29_'+name,'path':'assets/game/shared/combat/mission_repair_0929/'+name+'.png','frames':frames,'fps':18 if name=='radar' else 1}
     pack=art_root/'assets/game/weapon_animation_0928'
     families=json.loads((pack/'manifest.json').read_text())['families']
     for name,d in families.items():
@@ -34,7 +34,7 @@ def build(root, art_root, radar, jets):
         boxes=[Image.open(pack/f['file']).getbbox() for f in d['frames']]
         ink=[min(b[0] for b in boxes),min(b[1] for b in boxes),max(b[2] for b in boxes),max(b[3] for b in boxes)]
         ink=[ink[0],ink[1],ink[2]-ink[0],ink[3]-ink[1]]
-        registry[name]={'key':'mission29_'+name,'path':'assets/game/weapon_animation_0928/'+d['atlas'],
+        registry[name]={'key':'mission29_'+name,'path':'assets/game/shared/player_weapons/weapon_animation_0928/'+d['atlas'],
             'frames':[f['rect'] for f in d['frames']],'fps':d['fps'],'ink':ink,'anchor':d['anchor']}
         with Image.open(pack/d['atlas']) as a:
             for x,y,w,h in registry[name]['frames']:assert x+w<=a.width and y+h<=a.height

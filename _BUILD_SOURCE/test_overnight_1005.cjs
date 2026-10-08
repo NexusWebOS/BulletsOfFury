@@ -35,7 +35,7 @@ module.exports=function(vm,c,ok){
  const guarded=q.hp;R.hit=q.i;rebelSquadDamage(boss,q._on5Guard.hp+1);out['live Gang shield breaks independently']=!q._on5Guard&&q.hp===guarded;
  const A={a:Math.PI/4};ra4Helix(R.ships.find(q=>q.key==='jace'),G,A);const ball=G.ord.at(-1);out['Jace helix ball travels fast directly south']=ball.vx===0&&ball.vy===380;
  rg4Round(q,0,6,'mg',{_ra4Slug:true});const slug=eBullets.at(-1);out['Rook special slugs travel south']=slug.vy>0&&Math.abs(slug.vx)<1e-6;
- out['robot chant premix is not used']=BOFA.music.hama==='assets/game/music/HAMA_Instrumental.mp3'&&!hamaRecordedVocals1001();
+ out['robot chant premix is not used']=BOFA.music.hama==='assets/game/shared/audio/music/HAMA_Instrumental.mp3'&&!hamaRecordedVocals1001();
  out['epsilon-width animated beams cannot stall the renderer']=av3Beam(null,10,20,Math.PI/2,500,1e-12,'ice')===false;
  out['invalid beam geometry never enters authored-strip tiling']=av3Beam(null,10,20,Math.PI/2,Infinity,20,'ice')===false;
  out['boss passwords respect six-character input']=Object.keys(ON5_CODES).every(k=>k.length<=6);

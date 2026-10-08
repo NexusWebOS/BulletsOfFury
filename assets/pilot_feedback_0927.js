@@ -31,6 +31,7 @@ function pf27ThrustTick(p,dt,mvx,mvy,rolling){
   const moving=!!(mvx||mvy),target=p.dead||p.out?0:p._chgDash||p._boost?1:rolling?.65:moving?(mvy<0?1:mvy>0?.38:.70):0;
   const old=p._thrustPower||0;p._thrustPower=old+(target-old)*(1-Math.exp(-dt*(target>old?13:7)));
   if(p._thrustPower<.005)p._thrustPower=0;
+  p._thrustFrame=((p._thrustFrame||0)+Math.max(0,dt)*1000/(55-clamp(p._thrustPower,0,1)*23))%6;
 }
 function pf27ThrustPower(){return clamp(player?._thrustPower||0,0,1);}
 function pf27TailParts(key){
@@ -45,7 +46,7 @@ function pf27TailParts(key){
 }
 function pf27PlaneThrustDraw(g,key,x,y,w,h,power){
   const p=clamp(power==null?pf27ThrustPower():power,0,1);if(p<.025)return false;
-  const t=pf27TailParts(key);if(!t)return false;const frame=d27ShipFrame(t.base,Math.floor(performance.now()/(55-p*23)));
+  const t=pf27TailParts(key);if(!t)return false;const frame=d27ShipFrame(t.base,Math.floor(player._thrustFrame??(efxClock*1000/55)));
   g.save();g.imageSmoothingEnabled=false;g.globalCompositeOperation='source-over';g.globalAlpha=1;
   for(const r of t.parts){const dw=r.w*w/t.w*(1+.20*p),dh=r.h*h/t.h*(1+3.2*p),px=x-w/2+(r.x+r.w/2)*w/t.w,py=y-h/2+r.y*h/t.h;
     g.drawImage(frame,r.x,r.y,r.w,r.h,px-dw/2,py,dw,dh);

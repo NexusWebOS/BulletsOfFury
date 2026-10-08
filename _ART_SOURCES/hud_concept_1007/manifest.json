@@ -1,0 +1,81 @@
+{
+  "date": "2026-10-07",
+  "status": "Concept art and source frame; not installed in runtime",
+  "generator": "Built-in image_gen",
+  "source_bytes_unchanged": true,
+  "reference_layout_is_authoritative": true,
+  "files": [
+    {
+      "file": "hud-concept-v1.png",
+      "source": "C:\\Users\\Mike\\.codex\\generated_images\\01a10ef4-27c3-71d2-97c8-0d9fa5c0bb2f\\exec-093b6f0c-ab64-4a87-bf5f-633b87bfa596.png",
+      "width": 2079,
+      "height": 756,
+      "mode": "RGBA",
+      "bytes": 1322007,
+      "sha256": "a85bce0805dacaf094ab1b8033ee3d456556a5566e22108779ed72d12e785f0b",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bounds": [
+        0,
+        8,
+        2078,
+        737
+      ],
+      "transparent_pixels": 792556,
+      "fully_opaque_pixels": 106
+    },
+    {
+      "file": "hud-frame-source-v1.png",
+      "source": "C:\\Users\\Mike\\.codex\\generated_images\\01a10ef4-27c3-71d2-97c8-0d9fa5c0bb2f\\exec-ac909495-c633-4a16-90e5-5b1a26f854e7.png",
+      "width": 2079,
+      "height": 756,
+      "mode": "RGBA",
+      "bytes": 1194180,
+      "sha256": "c1afe000beed0c8b1ad342c08a308be1ebe5da08766f40e6e5821084c33b6b1c",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bounds": [
+        0,
+        0,
+        2049,
+        692
+      ],
+      "transparent_pixels": 804735,
+      "fully_opaque_pixels": 202
+    },
+    {
+      "file": "reference-layout.png",
+      "source": "C:\\Users\\Mike\\Desktop\\New HUD display.png",
+      "width": 1006,
+      "height": 672,
+      "mode": "RGBA",
+      "bytes": 22263,
+      "sha256": "81a744c6905fb465c42a998568a056fa37c29faa4d83c6666fa9587930fb1286",
+      "alpha_extrema": [
+        255,
+        255
+      ],
+      "alpha_bounds": [
+        0,
+        0,
+        1006,
+        672
+      ],
+      "transparent_pixels": 0,
+      "fully_opaque_pixels": 676032
+    },
+    {
+      "file": "reference-current-hud.png",
+      "source": "C:\\Users\\Mike\\Documents\\New project\\output\\hud_concept_1007\\current-game-hud.png",
+      "width": 840,
+      "height": 1016,
+      "mode": "RGB",
+      "bytes": 1538085,
+      "sha256": "316265f34b4e3683510db2cbdfdf3979d2145a7de3eaa172cc0cac4745554706"
+    }
+  ]
+}

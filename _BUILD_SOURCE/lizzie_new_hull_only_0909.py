@@ -50,7 +50,7 @@ from PIL import Image
 ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
 MAN = os.path.join(ROOT, 'assets/manifest.js')
 GAME = os.path.join(ROOT, 'assets/game.js')
-SHEET = os.path.join(ROOT, 'assets/game/atlas/ships/ship_lizzie.png')
+SHEET = os.path.join(ROOT, 'assets/game/pilots/lizzie/ship_frames/ship_lizzie.png')
 PAD = 2
 
 src = io.open(MAN, encoding='utf-8', newline='').read()

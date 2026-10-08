@@ -10,4 +10,4 @@ ok(!/if\(R\.state==='turret'\) rzbFlash/.test(js),'Razorback center turret flash
 ok(/edgeMin:10,edgeMax:42/.test(js)&&/y:\(y!=null\?y:VH\+2\)/.test(js),'Stage 2 vents are confined to bottom-fed lava edge gutters');
 ok(/s2GeyserWarn/.test(js)&&/s2GeyserErupt/.test(js)&&/firewallPass/.test(js),'fire hazard warning, eruption and pass cues are routed');
 ok(/function fztTurnDraw/.test(js)&&/fztTurnDraw\(key,x,y,a,s,alpha,sx,sy,false\)/.test(js),'Furnace body and arms choose authored direction frames');
-for(const f of ['assets/game/ui/bossbar_0918/shield_frame_v2.png','assets/game/sounds/s2_geyser_warn_0918.wav','assets/game/sounds/s2_geyser_erupt_0918.wav','assets/game/rotation_frames_0918/fzt_arm_flame_intact_turn.png'])ok(fs.statSync(path.join(root,f)).size>1000,f+' exists');
+for(const f of ['assets/game/shared/ui/ui/bossbar_0918/shield_frame_v2.png','assets/game/sounds/s2_geyser_warn_0918.wav','assets/game/sounds/s2_geyser_erupt_0918.wav','assets/game/shared/combat/rotation_frames_0918/fzt_arm_flame_intact_turn.png'])ok(fs.statSync(path.join(root,f)).size>1000,f+' exists');

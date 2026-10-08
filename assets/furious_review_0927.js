@@ -46,7 +46,7 @@ ai27End=function(e,previous){
   }
 };
 Object.assign(FR27_BASE,{hammerTick:hammerBossTick,hammerDraw:hammerBossDraw,hammerDamage:hammerBossDamage,recovery:hammerRecoveryTick,breakRecovery:hammerRecoveryBreak,health:bossHealthFraction,healthVisible:bossHealthVisible,gauge:hammerChromiumGaugeFill,head:hammerHeadPoint});
-for(const name of ['chromium_actions','realm_terrain','realm_fleet'])XART._src['fr27_'+name]='assets/game/furious_review_0927/'+name+'.png';
+for(const name of ['chromium_actions','realm_terrain','realm_fleet'])XART._src['fr27_'+name]='assets/game/shared/combat/furious_review_0927/'+name+'.png';
 function fr27Cell(key,col,row,x,y,w,h,alpha,tint){
  if(!XART.rdy(key))return false;const im=tint?xartTint(key,tint,1):XART.get(key);if(!im)return false;const W=im.width||im.naturalWidth,H=im.height||im.naturalHeight;
  const rows=key==='fr27_chromium_actions'?[0,345,680,986,1230]:[0,285,548,899,1254];
@@ -401,7 +401,7 @@ drawS7FinalPortalWorld=function(){
 };
 s7WardenRadioDraw=function(){FR27_BASE.s7Radio();const E=boss?._s7mod?.frExit;if(E&&E.t>21.3){ctx.save();ctx.fillStyle='rgba(0,0,0,'+clamp((E.t-21.3)/1.5,0,1)+')';ctx.fillRect(0,0,VW,VH);ctx.restore();}};
 function fr27CinematicCamera(){const E=run.stage===7&&boss?._s7mod?.frExit;if(!E||E.t<8)return;const z=1+clamp((E.t-8)/6,0,1)*.18;ctx.translate(player.x,player.y);ctx.scale(z,z);ctx.translate(-player.x,-player.y);ctx.translate(0,Math.max(0,(E.startY-player.y)*.66));}
-for(const name of ['stagex_card','stagex_terrain','realm_ordnance','realm_boss'])XART._src['fr27_'+name]='assets/game/furious_review_0927/'+name+'.png';
+for(const name of ['stagex_card','stagex_terrain','realm_ordnance','realm_boss'])XART._src['fr27_'+name]='assets/game/shared/combat/furious_review_0927/'+name+'.png';
 XART._src.r24_card=XART._src.fr27_stagex_card;
 function fr27LoopTerrain(key,scroll){
  if(!XART.rdy(key))return false;const im=XART.get(key),w=worldWidth(),h=w*im.height/im.width,top=viewTopY();
@@ -532,7 +532,7 @@ rebelSquadTick=function(b,dt){
  FR27_REBEL_TICK(b,dt);
  for(const q of R.ships){if(R.frStageX&&!q.dead)q.homeX=worldWidth()/2;if(q.evadeT>0&&!q.frEvading){q.frEvadeCount=(q.frEvadeCount||0)+1;q.frSomersault=q.frEvadeCount%3===0;q.frEvading=true;}if(!(q.evadeT>0))q.frEvading=false;}
 };
-XART._src.fr27_rebel_pitch='assets/game/furious_review_0927/rebel_pitch.png';
+XART._src.fr27_rebel_pitch='assets/game/shared/combat/furious_review_0927/rebel_pitch.png';
 function fr27RebelDrawShip(q){
  const f=q.evadeT>0?Math.min(7,Math.floor((1-q.evadeT/.38)*8)):0,key='rr_roll_'+REBEL_SHIPS[q.i]+'_'+f;
  const k=XART.rdy(key)?key:'rr_ship_'+REBEL_SHIPS[q.i];if(!XART.rdy(k))return;
@@ -565,7 +565,7 @@ vile24Tick=function(b,dt){
  }
  if(P.t>=P.tell+1.25){S.pattern=null;b.fireCd=.7;}
 };
-XART._src.fr28_mutated_vessel='assets/game/stage678_repair_0928/mutated_vessel.png';
+XART._src.fr28_mutated_vessel='assets/game/shared/combat/stage678_repair_0928/mutated_vessel.png';
 function fr28VesselPlate(b,alpha){
  if(!XART.rdy('fr28_mutated_vessel'))return false;const im=XART.get('fr28_mutated_vessel'),w=b.w*1.12,h=b.h*1.12;
  ctx.save();ctx.imageSmoothingEnabled=false;ctx.globalAlpha=alpha==null?1:alpha;
@@ -594,8 +594,8 @@ const FR28_OLD_ALIEN_OBJECTS=l8ObjsDraw;
 l8ObjsDraw=function(){if(run.stage===8&&XART.rdy('fr27_realm_terrain'))return;return FR28_OLD_ALIEN_OBJECTS.apply(this,arguments);};
 
 // Stage 7's replacement cap connects to the existing master with an exact source seam.
-XART._src.fr28_sewer_connector='assets/game/stage678_repair_0928/sewer_connector.png';
-XART._src.fr28_lamprey='assets/game/stage678_repair_0928/lamprey.png';
+XART._src.fr28_sewer_connector='assets/game/shared/combat/stage678_repair_0928/sewer_connector.png';
+XART._src.fr28_lamprey='assets/game/shared/combat/stage678_repair_0928/lamprey.png';
 let fr28SewerPlate=null;
 function fr28SewerMaster(){
  if(fr28SewerPlate)return fr28SewerPlate;
@@ -629,7 +629,7 @@ drawS7Toxic=function(e){
 };
 
 // Restore the authored Stage 8 track rather than the historical Egypt-key alias.
-BOFA.music.realm8='assets/game/music/Level8.mp3';
+BOFA.music.realm8='assets/game/levels/stage_08/audio/music/Level8.mp3';
 STAGES[7].music='realm8';
 if(Snd?.music&&!Snd.music.realm8&&typeof window.Audio==='function'){const track=new window.Audio();track.preload='none';track.src=BOFA.music.realm8;track.loop=true;Snd.music.realm8=track;}
 

@@ -4,7 +4,7 @@ try {
   vm.runInContext('furyLegacyShip=false;furyShipWarm();',ctxv);
   const files309=JSON.parse(vm.runInContext('JSON.stringify(FURY_KEYS.flatMap(k=>[XART._src["fury_"+k]].concat(furyTintedKey(k)?[XART._src["fury_"+k+"_blue"]]:[])))',ctxv));
   ok(files309.every(p=>p&&fs.existsSync(path.join(ROOT,p))),'every new flight, component and effect image/mask exists on disk');
-  ok(fs.readFileSync(path.join(ROOT,'assets/game/furyship_0914/runtime_base.png')).equals(fs.readFileSync(path.join(ROOT,'assets/game/gravity_mode/furyship_somersault_13.png'))),'level-flight plate is the exact approved somersault frame 13');
+  ok(fs.readFileSync(path.join(ROOT,'assets/game/shared/ships/furyship_0914/runtime_base.png')).equals(fs.readFileSync(path.join(ROOT,'assets/game/gravity_mode/furyship_somersault_13.png'))),'level-flight plate is the exact approved somersault frame 13');
   const pitch309=JSON.parse(vm.runInContext('JSON.stringify(Array.from({length:12},(_,i)=>furyShipPose({somer:{t:(i+.1)/12,dur:1}},null)))',ctxv));
   ok(new Set(pitch309.map(p=>p.key)).size===12&&pitch309.every(p=>p.key.startsWith('somersault_')),'a full pitch action selects twelve distinct somersault poses');
   for(const dir of [-1,1]){

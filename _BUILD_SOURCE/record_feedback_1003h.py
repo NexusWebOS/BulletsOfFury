@@ -50,5 +50,5 @@ try:
   b.close()
 finally:
  stop();(O/'motion-errors.json').write_text(json.dumps(errors),encoding='utf-8')
-print(json.dumps({'errors':errors,'videos':['assets/game/feedback_1003h/orbital-aftermath-monochrome.webm','_shots/feedback_1003h/hammer-homecoming.webm','_shots/feedback_1003h/rebel-introductions.webm']}),flush=True)
+print(json.dumps({'errors':errors,'videos':['assets/game/shared/combat/feedback_1003h/orbital-aftermath-monochrome.webm','_shots/feedback_1003h/hammer-homecoming.webm','_shots/feedback_1003h/rebel-introductions.webm']}),flush=True)
 raise SystemExit(1 if errors else 0)

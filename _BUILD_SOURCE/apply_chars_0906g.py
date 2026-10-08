@@ -34,9 +34,9 @@ from PIL import Image
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 GEN = os.path.join(ROOT, '_BUILD_SOURCE/sc_out_0906')
-SHEET = os.path.join(ROOT, 'assets/game/atlas/ui_dialogue.png')
+SHEET = os.path.join(ROOT, 'assets/game/shared/ui/ui_dialogue.png')
 BODIES = os.path.join(ROOT, 'assets/game/pilot_bodies')
-YURI_BODY = os.path.join(ROOT, 'assets/game/yuri_v2/yuri_body_0.png')
+YURI_BODY = os.path.join(ROOT, 'assets/game/pilots/yuri/portraits/yuri_v2/yuri_body_0.png')
 AVATARS = os.path.join(ROOT, 'assets/game/pilot_avatars')
 
 PORTRAITS = {'lizzie': 'port_lizzie_v2.png', 'falva': 'port_falva_v2.png'}

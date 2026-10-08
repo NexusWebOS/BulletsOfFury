@@ -4,7 +4,7 @@ const MAP4H={page:4,xMouse:false,modalMouse:false,resumeX:false,rows:[],base:{
  campaign:campaignMenuInputTick,rivalInput:Rival24.mapInput,rivalBack:Rival24.mapBack,
  apply:campApply,open:openStageSelect,heading:map4eShipHeading,slots:drawCampSlots}};
 for(const v of ['red','white','blue','red_hi','white_hi','blue_hi','flash'])
- XART._src['map4h_slot_'+v]='assets/game/campaign_controls_1004h/slot_'+v+'.png';
+ XART._src['map4h_slot_'+v]='assets/game/shared/campaign/campaign_controls_1004h/slot_'+v+'.png';
 function map4hWarm(){for(const v of ['red','white','blue','red_hi','white_hi','blue_hi','flash'])XART.rdy('map4h_slot_'+v);}
 function map4hLive(){return campPauseIsCampaignScreen()&&!sselZoom&&!riftReturn;}
 function map4hXFocused(){return CF4.focus||MAP4E.xPreview;}

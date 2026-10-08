@@ -21,7 +21,7 @@ EMPTY hands, which the robot toss needs) so the runtime can seat each cell by it
 feet, the same way the Hammer Time troupe sheet is seated.
 
 Writes:
-  assets/game/music/HAMA_Instrumental.mp3   (112k CBR / 44.1 kHz stereo, the house boss format)
+  assets/game/shared/audio/music/HAMA_Instrumental.mp3   (112k CBR / 44.1 kHz stereo, the house boss format)
   assets/hama_art_0928.js                          (HAMA_ART: audio meta, envelope, cues, poses)
 The source upload is not modified. Idempotent: reads only the upload and authored PNGs.
 """
@@ -175,7 +175,7 @@ def main():
     secs = sections(rows, bpm)
     stops = dropouts(env, seconds)
     art = {
-        'audio': {'path': 'assets/game/music/HAMA_Instrumental.mp3', 'seconds': seconds, 'sourceSHA256': sha,
+        'audio': {'path': 'assets/game/shared/audio/music/HAMA_Instrumental.mp3', 'seconds': seconds, 'sourceSHA256': sha,
                   'bpm': round(bpm, 3), 'phase': round(ph, 3), 'envelopeFPS': ENV_FPS,
                   'envelope': [round(float(v), 3) for v in env],
                   'stops': stops, 'sections': secs},

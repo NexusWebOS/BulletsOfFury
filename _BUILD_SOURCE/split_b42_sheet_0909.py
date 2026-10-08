@@ -6,7 +6,7 @@ Mike, 0909: "make a seperate atlas sheet for lizzie's alternate costume ... that
 that will be used in place of her ship if we use the password Bomber when the game loads."
 
 The costume was riding inside ship_lizzie.png, so every player downloaded 17 bomber frames whether
-or not they had ever typed BOMBER. It moves to assets/game/atlas/ships/ship_lizzie_b42.png and is
+or not they had ever typed BOMBER. It moves to assets/game/pilots/lizzie/ship_frames/ship_lizzie_b42.png and is
 loaded only when the skin is actually on.
 
 ⚠ THE SHEET CANNOT BE CHOSEN BY KEY ALONE, WHICH IS WHY THIS NEEDED A LOADER CHANGE TOO.
@@ -30,8 +30,8 @@ from PIL import Image
 ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
 GAME = os.path.join(ROOT, 'assets/game.js')
 MAN = os.path.join(ROOT, 'assets/manifest.js')
-SRC = os.path.join(ROOT, 'assets/game/atlas/ships/ship_lizzie.png')
-OUT = os.path.join(ROOT, 'assets/game/atlas/ships/ship_lizzie_b42.png')
+SRC = os.path.join(ROOT, 'assets/game/pilots/lizzie/ship_frames/ship_lizzie.png')
+OUT = os.path.join(ROOT, 'assets/game/pilots/lizzie/ship_frames/ship_lizzie_b42.png')
 B42J = os.path.join(ROOT, 'assets/data/lizzie_b42_source_rects.json')
 PAD = 2
 

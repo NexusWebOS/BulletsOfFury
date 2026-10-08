@@ -41,7 +41,7 @@ from PIL import Image
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
 GAME = os.path.join(ROOT, 'assets/game.js')
-B42 = os.path.join(ROOT, 'assets/game/atlas/ships/ship_lizzie_b42.png')
+B42 = os.path.join(ROOT, 'assets/game/pilots/lizzie/ship_frames/ship_lizzie_b42.png')
 # the backup lives with the build tooling, NOT in assets/ - anything under assets ships, and a
 # 0.7 MB .preprop riding along in the download is exactly the dead weight this drop removed.
 BAK = os.path.join(ROOT, '_BUILD_SOURCE', '_backups', 'ship_lizzie_b42.png.preprop')

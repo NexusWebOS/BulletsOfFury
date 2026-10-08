@@ -1,0 +1,289 @@
+{
+  "date": "2026-10-07",
+  "generator": "built-in image_gen",
+  "status": "Reviewed concept sheets; not installed in game runtime",
+  "image_count": 10,
+  "component_count": 50,
+  "player_hud_count": 10,
+  "enemy_bar_variants": 40,
+  "images_total_bytes": 16982562,
+  "original_image_bytes_preserved": true,
+  "review_method": "Each generated sheet was visually inspected; RGBA and file integrity checked separately.",
+  "layout_reference": {
+    "file": "_references/airbase-layout-master.png",
+    "source": "C:\\Users\\Mike\\.codex\\generated_images\\01a10ef4-27c3-71d2-97c8-0d9fa5c0bb2f\\exec-d2c46930-296d-4b63-b626-1946fdd8d69a.png",
+    "sha256": "2a3cf9a7e45d6ae0cb68493ac28d89a0d1865acc276364be9195474647058b4b"
+  },
+  "files": [
+    {
+      "stage": "stage_01",
+      "theme": "Jungle",
+      "file": "stage_01/hud-kit-v2.png",
+      "source": "C:\\Users\\Mike\\.codex\\generated_images\\01a10ef4-27c3-71d2-97c8-0d9fa5c0bb2f\\exec-67e42d1e-050d-4b45-ba83-ab04008fd486.png",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGBA",
+      "bytes": 1722707,
+      "sha256": "d07a4b50dc2d92734cd16aa2d19d6589dff0fe34793506c3e1539f6d1202719b",
+      "transparent_pixels": 588171,
+      "components": [
+        "player_hud",
+        "boss_shielded",
+        "boss_unshielded",
+        "miniboss_shielded",
+        "miniboss_unshielded"
+      ],
+      "visual_review": {
+        "five_components": true,
+        "solid_long_meter_fills": true,
+        "shield_absent_in_unshielded_variants": true,
+        "counter_icons_present": true,
+        "distinct_miniboss_endcaps": true,
+        "caution_stripes_only_in_airbase": true
+      }
+    },
+    {
+      "stage": "stage_02",
+      "theme": "Lava",
+      "file": "stage_02/hud-kit-v2.png",
+      "source": "C:\\Users\\Mike\\.codex\\generated_images\\01a10ef4-27c3-71d2-97c8-0d9fa5c0bb2f\\exec-fa5db304-4791-40a0-8aae-32f797fc9092.png",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGBA",
+      "bytes": 1786305,
+      "sha256": "978125f5bcae2f89def79c5bd61d08b314dda3e8b0572e90d8704439a2da8bf1",
+      "transparent_pixels": 565903,
+      "components": [
+        "player_hud",
+        "boss_shielded",
+        "boss_unshielded",
+        "miniboss_shielded",
+        "miniboss_unshielded"
+      ],
+      "visual_review": {
+        "five_components": true,
+        "solid_long_meter_fills": true,
+        "shield_absent_in_unshielded_variants": true,
+        "counter_icons_present": true,
+        "distinct_miniboss_endcaps": true,
+        "caution_stripes_only_in_airbase": true
+      }
+    },
+    {
+      "stage": "stage_03",
+      "theme": "Ice",
+      "file": "stage_03/hud-kit-v2.png",
+      "source": "C:\\Users\\Mike\\.codex\\generated_images\\01a10ef4-27c3-71d2-97c8-0d9fa5c0bb2f\\exec-cc869140-e832-406a-a0ec-e1c3b02e4a2b.png",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGBA",
+      "bytes": 1828238,
+      "sha256": "bdcf98dbb7a0bb2fce70e82fd786ac3e322098a89d73b780fc5b08057016b9fe",
+      "transparent_pixels": 567254,
+      "components": [
+        "player_hud",
+        "boss_shielded",
+        "boss_unshielded",
+        "miniboss_shielded",
+        "miniboss_unshielded"
+      ],
+      "visual_review": {
+        "five_components": true,
+        "solid_long_meter_fills": true,
+        "shield_absent_in_unshielded_variants": true,
+        "counter_icons_present": true,
+        "distinct_miniboss_endcaps": true,
+        "caution_stripes_only_in_airbase": true
+      }
+    },
+    {
+      "stage": "stage_04",
+      "theme": "Airbase",
+      "file": "stage_04/hud-kit-v2.png",
+      "source": "C:\\Users\\Mike\\.codex\\generated_images\\01a10ef4-27c3-71d2-97c8-0d9fa5c0bb2f\\exec-d4f34666-bedc-4b3e-a0f4-89f693ba0024.png",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGBA",
+      "bytes": 1557689,
+      "sha256": "ab8c65d9c4e27b965e982fc3bc1db3d7252bdd81cccc323d9cb00e4cdec47714",
+      "transparent_pixels": 612514,
+      "components": [
+        "player_hud",
+        "boss_shielded",
+        "boss_unshielded",
+        "miniboss_shielded",
+        "miniboss_unshielded"
+      ],
+      "visual_review": {
+        "five_components": true,
+        "solid_long_meter_fills": true,
+        "shield_absent_in_unshielded_variants": true,
+        "counter_icons_present": true,
+        "distinct_miniboss_endcaps": true,
+        "caution_stripes_only_in_airbase": true
+      }
+    },
+    {
+      "stage": "stage_05",
+      "theme": "Space",
+      "file": "stage_05/hud-kit-v2.png",
+      "source": "C:\\Users\\Mike\\.codex\\generated_images\\01a10ef4-27c3-71d2-97c8-0d9fa5c0bb2f\\exec-4e367289-0863-4043-87ac-f696497abd42.png",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGBA",
+      "bytes": 1648668,
+      "sha256": "472c262705b4891111e9005cab32a9e65994e256887ef69a70675164cc025121",
+      "transparent_pixels": 583774,
+      "components": [
+        "player_hud",
+        "boss_shielded",
+        "boss_unshielded",
+        "miniboss_shielded",
+        "miniboss_unshielded"
+      ],
+      "visual_review": {
+        "five_components": true,
+        "solid_long_meter_fills": true,
+        "shield_absent_in_unshielded_variants": true,
+        "counter_icons_present": true,
+        "distinct_miniboss_endcaps": true,
+        "caution_stripes_only_in_airbase": true
+      }
+    },
+    {
+      "stage": "stage_06",
+      "theme": "Sky / rain",
+      "file": "stage_06/hud-kit-v2.png",
+      "source": "C:\\Users\\Mike\\.codex\\generated_images\\01a10ef4-27c3-71d2-97c8-0d9fa5c0bb2f\\exec-d749d185-7c2a-4226-8566-3b93301aa9b7.png",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGBA",
+      "bytes": 1641505,
+      "sha256": "96b741ebb921fab2316161fff93aacc1ddbe924cb906d30349d1570ef5013beb",
+      "transparent_pixels": 584155,
+      "components": [
+        "player_hud",
+        "boss_shielded",
+        "boss_unshielded",
+        "miniboss_shielded",
+        "miniboss_unshielded"
+      ],
+      "visual_review": {
+        "five_components": true,
+        "solid_long_meter_fills": true,
+        "shield_absent_in_unshielded_variants": true,
+        "counter_icons_present": true,
+        "distinct_miniboss_endcaps": true,
+        "caution_stripes_only_in_airbase": true
+      }
+    },
+    {
+      "stage": "stage_07",
+      "theme": "Sewer / toxic",
+      "file": "stage_07/hud-kit-v2.png",
+      "source": "C:\\Users\\Mike\\.codex\\generated_images\\01a10ef4-27c3-71d2-97c8-0d9fa5c0bb2f\\exec-84d7df57-2306-463a-a73d-9cbd3bed561e.png",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGBA",
+      "bytes": 1815691,
+      "sha256": "1dde9ec445cb08d813d9e8c251ec82109c18f956dc157f189cf1de83090c67b6",
+      "transparent_pixels": 536374,
+      "components": [
+        "player_hud",
+        "boss_shielded",
+        "boss_unshielded",
+        "miniboss_shielded",
+        "miniboss_unshielded"
+      ],
+      "visual_review": {
+        "five_components": true,
+        "solid_long_meter_fills": true,
+        "shield_absent_in_unshielded_variants": true,
+        "counter_icons_present": true,
+        "distinct_miniboss_endcaps": true,
+        "caution_stripes_only_in_airbase": true
+      }
+    },
+    {
+      "stage": "stage_08",
+      "theme": "Alien void",
+      "file": "stage_08/hud-kit-v2.png",
+      "source": "C:\\Users\\Mike\\.codex\\generated_images\\01a10ef4-27c3-71d2-97c8-0d9fa5c0bb2f\\exec-925d2498-04d4-468b-9bbc-23cf94ff5eda.png",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGBA",
+      "bytes": 1794809,
+      "sha256": "2ea96e7011cc835234a0b09142c716501da048d7e063808c43f2b6ba1f6b7797",
+      "transparent_pixels": 562623,
+      "components": [
+        "player_hud",
+        "boss_shielded",
+        "boss_unshielded",
+        "miniboss_shielded",
+        "miniboss_unshielded"
+      ],
+      "visual_review": {
+        "five_components": true,
+        "solid_long_meter_fills": true,
+        "shield_absent_in_unshielded_variants": true,
+        "counter_icons_present": true,
+        "distinct_miniboss_endcaps": true,
+        "caution_stripes_only_in_airbase": true
+      }
+    },
+    {
+      "stage": "stage_09",
+      "theme": "Water space",
+      "file": "stage_09/hud-kit-v2.png",
+      "source": "C:\\Users\\Mike\\.codex\\generated_images\\01a10ef4-27c3-71d2-97c8-0d9fa5c0bb2f\\exec-a72be8a1-43ce-4158-8924-1d5cea850217.png",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGBA",
+      "bytes": 1597400,
+      "sha256": "4b0017e1066b90e6d934728705de47008b96484c244096ca784b671c2abab28a",
+      "transparent_pixels": 579495,
+      "components": [
+        "player_hud",
+        "boss_shielded",
+        "boss_unshielded",
+        "miniboss_shielded",
+        "miniboss_unshielded"
+      ],
+      "visual_review": {
+        "five_components": true,
+        "solid_long_meter_fills": true,
+        "shield_absent_in_unshielded_variants": true,
+        "counter_icons_present": true,
+        "distinct_miniboss_endcaps": true,
+        "caution_stripes_only_in_airbase": true
+      }
+    },
+    {
+      "stage": "stage_x",
+      "theme": "Coastal city",
+      "file": "stage_x/hud-kit-v2.png",
+      "source": "C:\\Users\\Mike\\.codex\\generated_images\\01a10ef4-27c3-71d2-97c8-0d9fa5c0bb2f\\exec-6b7d9e33-804e-4f8b-a905-b146434e4204.png",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGBA",
+      "bytes": 1589550,
+      "sha256": "bea3aa4741e0b1370af554ad6b0fd5ba8d5a37cc71b411243642c0cc854b51b2",
+      "transparent_pixels": 597842,
+      "components": [
+        "player_hud",
+        "boss_shielded",
+        "boss_unshielded",
+        "miniboss_shielded",
+        "miniboss_unshielded"
+      ],
+      "visual_review": {
+        "five_components": true,
+        "solid_long_meter_fills": true,
+        "shield_absent_in_unshielded_variants": true,
+        "counter_icons_present": true,
+        "distinct_miniboss_endcaps": true,
+        "caution_stripes_only_in_airbase": true
+      }
+    }
+  ]
+}

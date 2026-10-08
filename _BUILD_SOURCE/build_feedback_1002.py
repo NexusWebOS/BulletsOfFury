@@ -36,7 +36,7 @@ def pack(name,source,rects,anchors=None,grid=False):
         dx,dy=(px-pivots[i][0],py-pivots[i][1]) if anchors else ((cw-c.width)//2,(ch-c.height)//2)
         sheet.alpha_composite(c,(cw*i+dx,dy));frames.append([cw*i,0,cw,ch])
     sheet.save(OUT/(name+'.png'),optimize=True)
-    art[name]={'key':'fb1002_'+name,'path':'assets/game/feedback_1002/'+name+'.png','frames':frames}
+    art[name]={'key':'fb1002_'+name,'path':'assets/game/shared/combat/feedback_1002/'+name+'.png','frames':frames}
     if anchors:art[name]['pivot']=[px,py]
 for name in ['firejet','icebreath','deathbody']:
     im=Image.open(SRC/(name+'.png'));pack(name,name,[[0,0,*im.size]])

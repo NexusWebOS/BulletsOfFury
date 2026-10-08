@@ -6,7 +6,7 @@ harrier and them going over us and stuff").
 Sources (ElevenLabs text-to-sound v2, generated through the ElevenLabs connector, kept verbatim):
   _BUILD_SOURCE/sfx_src_1002/turbulence_carrier_eleven.mp3  heavy buffeting under a passing carrier (2.0 s)
   _BUILD_SOURCE/sfx_src_1002/jetwash_eleven.mp3             a fighter's wake slamming the cockpit (0.48 s)
-Outputs assets/game/sounds/turbulence_carrier_1002.mp3 (seamless loop) and jetwash_1002.mp3 (one-shot).
+Outputs assets/game/shared/audio/sounds/turbulence_carrier_1002.mp3 (seamless loop) and jetwash_1002.mp3 (one-shot).
 
 Mastering, measured against the cues they sit beside (volumedetect): the carrier loop is matched to
 arc_carrier_turbine_0923 (mean -16.8 dB), the jet wash to arc_jet_dash_0923 (mean -18.3 dB), peaks held under

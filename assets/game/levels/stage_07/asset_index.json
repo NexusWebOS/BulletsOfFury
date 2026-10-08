@@ -1,0 +1,2545 @@
+{
+  "owner": "levels/stage_07",
+  "loading": {
+    "boot": "UI, fonts, idle portraits only",
+    "deployment": "selected pilot portraits, shared player weapons, required stage textures",
+    "transition": "release previous stage textures and derived caches; preserve explicitly queued copied-form dependencies",
+    "quality": "automatic native resolution on low-memory/low-core devices; reduce supersampling after sustained slow play frames"
+  },
+  "sharedDependencies": [
+    "shared/fonts",
+    "shared/ui",
+    "shared/player_weapons",
+    "shared/effects",
+    "shared/ships"
+  ],
+  "assets": [
+    {
+      "key": "nst7_master_v3",
+      "root": "nst7_master_v3",
+      "path": "assets/game/levels/stage_07/stage/nst7_master_v3.png",
+      "owner": "levels/stage_07",
+      "cell": null
+    },
+    {
+      "key": "nst7_portal_gate",
+      "root": "nst7_portal_gate",
+      "path": "assets/game/levels/stage_07/effects/nst7_portal_gate.png",
+      "owner": "levels/stage_07",
+      "cell": null
+    },
+    {
+      "key": "nst7_master_v2",
+      "root": "nst7_master_v2",
+      "path": "assets/game/levels/stage_07/stage/nst7_master_v2.png",
+      "owner": "levels/stage_07",
+      "cell": null
+    },
+    {
+      "key": "nst7_master",
+      "root": "nst7_master",
+      "path": "assets/game/levels/stage_07/stage/nst7_master.png",
+      "owner": "levels/stage_07",
+      "cell": null
+    },
+    {
+      "key": "nst7_upper",
+      "root": "nst7_upper",
+      "path": "assets/game/levels/stage_07/stage/nst7_upper.png",
+      "owner": "levels/stage_07",
+      "cell": null
+    },
+    {
+      "key": "nst7_arena",
+      "root": "nca_layout_levels_stage_07_stage_0",
+      "path": "assets/game/levels/stage_07/stage/frames_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "layout_levels_stage_07_stage_0",
+        808,
+        4,
+        800,
+        1000
+      ]
+    },
+    {
+      "key": "nst7_app",
+      "root": "nca_layout_levels_stage_07_stage_0",
+      "path": "assets/game/levels/stage_07/stage/frames_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "layout_levels_stage_07_stage_0",
+        4,
+        4,
+        800,
+        1000
+      ]
+    },
+    {
+      "key": "nst7_exit",
+      "root": "nca_layout_levels_stage_07_stage_0",
+      "path": "assets/game/levels/stage_07/stage/frames_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "layout_levels_stage_07_stage_0",
+        1612,
+        4,
+        800,
+        1000
+      ]
+    },
+    {
+      "key": "nst7_run",
+      "root": "nca_layout_levels_stage_07_stage_0",
+      "path": "assets/game/levels/stage_07/stage/frames_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "layout_levels_stage_07_stage_0",
+        2416,
+        4,
+        800,
+        1000
+      ]
+    },
+    {
+      "key": "nsw_barge_0",
+      "root": "nca_en_s7",
+      "path": "assets/game/levels/stage_07/enemies/en_s7.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "en_s7",
+        0,
+        0,
+        312,
+        435
+      ]
+    },
+    {
+      "key": "nsw_maw_0",
+      "root": "nca_en_s7",
+      "path": "assets/game/levels/stage_07/enemies/en_s7.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "en_s7",
+        314,
+        0,
+        300,
+        405
+      ]
+    },
+    {
+      "key": "nsw_shambler_0",
+      "root": "nca_en_s7",
+      "path": "assets/game/levels/stage_07/enemies/en_s7.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "en_s7",
+        616,
+        0,
+        298,
+        372
+      ]
+    },
+    {
+      "key": "nsw_skimmer_0",
+      "root": "nca_en_s7",
+      "path": "assets/game/levels/stage_07/enemies/en_s7.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "en_s7",
+        0,
+        437,
+        291,
+        367
+      ]
+    },
+    {
+      "key": "nsw_crawler_0",
+      "root": "nca_en_s7",
+      "path": "assets/game/levels/stage_07/enemies/en_s7.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "en_s7",
+        293,
+        437,
+        312,
+        364
+      ]
+    },
+    {
+      "key": "nsw_exca_atk_0",
+      "root": "nca_en_s7",
+      "path": "assets/game/levels/stage_07/enemies/en_s7.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "en_s7",
+        607,
+        437,
+        327,
+        352
+      ]
+    },
+    {
+      "key": "nsw_sentry_0",
+      "root": "nca_en_s7",
+      "path": "assets/game/levels/stage_07/enemies/en_s7.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "en_s7",
+        0,
+        806,
+        309,
+        343
+      ]
+    },
+    {
+      "key": "nsw_combined",
+      "root": "nca_en_s7",
+      "path": "assets/game/levels/stage_07/enemies/en_s7.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "en_s7",
+        311,
+        806,
+        320,
+        256
+      ]
+    },
+    {
+      "key": "nsw_circ_0",
+      "root": "nca_en_s7",
+      "path": "assets/game/levels/stage_07/enemies/en_s7.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "en_s7",
+        633,
+        806,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nsw_circ_1",
+      "root": "nca_en_s7",
+      "path": "assets/game/levels/stage_07/enemies/en_s7.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "en_s7",
+        763,
+        806,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nsw_circ_2",
+      "root": "nca_en_s7",
+      "path": "assets/game/levels/stage_07/enemies/en_s7.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "en_s7",
+        893,
+        806,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nsw_circ_3",
+      "root": "nca_en_s7",
+      "path": "assets/game/levels/stage_07/enemies/en_s7.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "en_s7",
+        0,
+        1151,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nsw_dist_0",
+      "root": "nca_en_s7",
+      "path": "assets/game/levels/stage_07/enemies/en_s7.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "en_s7",
+        130,
+        1151,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nsw_dist_1",
+      "root": "nca_en_s7",
+      "path": "assets/game/levels/stage_07/enemies/en_s7.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "en_s7",
+        260,
+        1151,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nsw_dist_2",
+      "root": "nca_en_s7",
+      "path": "assets/game/levels/stage_07/enemies/en_s7.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "en_s7",
+        390,
+        1151,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nsw_dist_3",
+      "root": "nca_en_s7",
+      "path": "assets/game/levels/stage_07/enemies/en_s7.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "en_s7",
+        520,
+        1151,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nsw_distr_0",
+      "root": "nca_en_s7",
+      "path": "assets/game/levels/stage_07/enemies/en_s7.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "en_s7",
+        650,
+        1151,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nsw_distr_1",
+      "root": "nca_en_s7",
+      "path": "assets/game/levels/stage_07/enemies/en_s7.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "en_s7",
+        780,
+        1151,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nsw_distr_2",
+      "root": "nca_en_s7",
+      "path": "assets/game/levels/stage_07/enemies/en_s7.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "en_s7",
+        910,
+        1151,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nsw_distr_3",
+      "root": "nca_en_s7",
+      "path": "assets/game/levels/stage_07/enemies/en_s7.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "en_s7",
+        0,
+        1281,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nca_en_s7",
+      "root": "nca_en_s7",
+      "path": "assets/game/levels/stage_07/enemies/en_s7.png",
+      "owner": "levels/stage_07",
+      "cell": null
+    },
+    {
+      "key": "nca_layout_levels_stage_07_stage_0",
+      "root": "nca_layout_levels_stage_07_stage_0",
+      "path": "assets/game/levels/stage_07/stage/frames_0.png",
+      "owner": "levels/stage_07",
+      "cell": null
+    },
+    {
+      "key": "overhaul_ground_base_7",
+      "root": "overhaul_ground_base_7",
+      "path": "assets/game/levels/stage_07/enemies/enemy_overhaul_0925/sprites/ground_base_stage7_toxic.png",
+      "owner": "levels/stage_07",
+      "cell": null
+    },
+    {
+      "key": "overhaul_stage7_slime_01",
+      "root": "overhaul_stage7_slime_01",
+      "path": "assets/game/levels/stage_07/enemies/enemy_overhaul_0925/sprites/stage7_slime_01.png",
+      "owner": "levels/stage_07",
+      "cell": null
+    },
+    {
+      "key": "overhaul_toxic_jet",
+      "root": "overhaul_toxic_jet",
+      "path": "assets/game/levels/stage_07/enemies/enemy_overhaul_0925/sprites/stage7_toxic_jet_01.png",
+      "owner": "levels/stage_07",
+      "cell": null
+    },
+    {
+      "key": "overhaul_toxic_core_0",
+      "root": "overhaul_toxic_core_0",
+      "path": "assets/game/levels/stage_07/enemies/enemy_overhaul_0925/sprites/stage7_toxic_core_0.png",
+      "owner": "levels/stage_07",
+      "cell": null
+    },
+    {
+      "key": "overhaul_toxic_core_1",
+      "root": "overhaul_toxic_core_1",
+      "path": "assets/game/levels/stage_07/enemies/enemy_overhaul_0925/sprites/stage7_toxic_core_1.png",
+      "owner": "levels/stage_07",
+      "cell": null
+    },
+    {
+      "key": "overhaul_toxic_core_2",
+      "root": "overhaul_toxic_core_2",
+      "path": "assets/game/levels/stage_07/enemies/enemy_overhaul_0925/sprites/stage7_toxic_core_2.png",
+      "owner": "levels/stage_07",
+      "cell": null
+    },
+    {
+      "key": "overhaul_toxic_core_3",
+      "root": "overhaul_toxic_core_3",
+      "path": "assets/game/levels/stage_07/enemies/enemy_overhaul_0925/sprites/stage7_toxic_core_3.png",
+      "owner": "levels/stage_07",
+      "cell": null
+    },
+    {
+      "key": "overhaul_toxic_core_4",
+      "root": "overhaul_toxic_core_4",
+      "path": "assets/game/levels/stage_07/enemies/enemy_overhaul_0925/sprites/stage7_toxic_core_4.png",
+      "owner": "levels/stage_07",
+      "cell": null
+    },
+    {
+      "key": "overhaul_toxic_core_5",
+      "root": "overhaul_toxic_core_5",
+      "path": "assets/game/levels/stage_07/enemies/enemy_overhaul_0925/sprites/stage7_toxic_core_5.png",
+      "owner": "levels/stage_07",
+      "cell": null
+    },
+    {
+      "key": "overhaul_toxic_core_6",
+      "root": "overhaul_toxic_core_6",
+      "path": "assets/game/levels/stage_07/enemies/enemy_overhaul_0925/sprites/stage7_toxic_core_6.png",
+      "owner": "levels/stage_07",
+      "cell": null
+    },
+    {
+      "key": "overhaul_toxic_core_7",
+      "root": "overhaul_toxic_core_7",
+      "path": "assets/game/levels/stage_07/enemies/enemy_overhaul_0925/sprites/stage7_toxic_core_7.png",
+      "owner": "levels/stage_07",
+      "cell": null
+    },
+    {
+      "key": "overhaul_toxic_exhaust_0",
+      "root": "overhaul_toxic_exhaust_0",
+      "path": "assets/game/levels/stage_07/enemies/enemy_overhaul_0925/sprites/stage7_toxic_exhaust_0.png",
+      "owner": "levels/stage_07",
+      "cell": null
+    },
+    {
+      "key": "overhaul_toxic_exhaust_1",
+      "root": "overhaul_toxic_exhaust_1",
+      "path": "assets/game/levels/stage_07/enemies/enemy_overhaul_0925/sprites/stage7_toxic_exhaust_1.png",
+      "owner": "levels/stage_07",
+      "cell": null
+    },
+    {
+      "key": "overhaul_toxic_exhaust_2",
+      "root": "overhaul_toxic_exhaust_2",
+      "path": "assets/game/levels/stage_07/enemies/enemy_overhaul_0925/sprites/stage7_toxic_exhaust_2.png",
+      "owner": "levels/stage_07",
+      "cell": null
+    },
+    {
+      "key": "overhaul_toxic_exhaust_3",
+      "root": "overhaul_toxic_exhaust_3",
+      "path": "assets/game/levels/stage_07/enemies/enemy_overhaul_0925/sprites/stage7_toxic_exhaust_3.png",
+      "owner": "levels/stage_07",
+      "cell": null
+    },
+    {
+      "key": "overhaul_toxic_exhaust_4",
+      "root": "overhaul_toxic_exhaust_4",
+      "path": "assets/game/levels/stage_07/enemies/enemy_overhaul_0925/sprites/stage7_toxic_exhaust_4.png",
+      "owner": "levels/stage_07",
+      "cell": null
+    },
+    {
+      "key": "overhaul_toxic_exhaust_5",
+      "root": "overhaul_toxic_exhaust_5",
+      "path": "assets/game/levels/stage_07/enemies/enemy_overhaul_0925/sprites/stage7_toxic_exhaust_5.png",
+      "owner": "levels/stage_07",
+      "cell": null
+    },
+    {
+      "key": "overhaul_tank_7_hull",
+      "root": "overhaul_tank_7_hull",
+      "path": "assets/game/levels/stage_07/enemies/enemy_overhaul_0925/sprites/stage7_tank_hull.png",
+      "owner": "levels/stage_07",
+      "cell": null
+    },
+    {
+      "key": "overhaul_tank_7_turret",
+      "root": "overhaul_tank_7_turret",
+      "path": "assets/game/levels/stage_07/enemies/enemy_overhaul_0925/sprites/stage7_tank_turret.png",
+      "owner": "levels/stage_07",
+      "cell": null
+    },
+    {
+      "key": "cin_stage07_approach",
+      "root": "cin_stage07_approach",
+      "path": "assets/game/levels/stage_07/cinematics/cinematic_level_approaches/stage07_not_another_sewer_level_approach.png",
+      "owner": "levels/stage_07",
+      "cell": null
+    },
+    {
+      "key": "cin_stage07_topdown",
+      "root": "cin_stage07_topdown",
+      "path": "assets/game/levels/stage_07/cinematics/cinematic_level_transitions_topdown/stage07_not_another_sewer_level_topdown.png",
+      "owner": "levels/stage_07",
+      "cell": null
+    },
+    {
+      "key": "cfx_stage7_toxic_projectiles_v2",
+      "root": "cfx_stage7_toxic_projectiles_v2",
+      "path": "assets/game/levels/stage_07/projectiles/combat_upgrade_0901/stage7_toxic_projectiles_atlas.png",
+      "owner": "levels/stage_07",
+      "cell": null
+    },
+    {
+      "key": "s7sluice_vent",
+      "root": "s7sluice_vent",
+      "path": "assets/game/levels/stage_07/effects/stage7_sewer_0925/sluice_vent_8f.png",
+      "owner": "levels/stage_07",
+      "cell": null
+    },
+    {
+      "key": "s7sluice_warning",
+      "root": "s7sluice_warning",
+      "path": "assets/game/levels/stage_07/effects/stage7_sewer_0925/sluice_warning_lane.png",
+      "owner": "levels/stage_07",
+      "cell": null
+    },
+    {
+      "key": "cfx_stage7_warden_walk",
+      "root": "cfx_stage7_warden_walk",
+      "path": "assets/game/levels/stage_07/effects/combat_final/stage7_toxic_portal_warden_crawl_spritecook.png",
+      "owner": "levels/stage_07",
+      "cell": null
+    },
+    {
+      "key": "cfx_stage7_warden_teleport",
+      "root": "cfx_stage7_warden_teleport",
+      "path": "assets/game/levels/stage_07/effects/combat_final/stage7_toxic_portal_teleport_atlas.png",
+      "owner": "levels/stage_07",
+      "cell": null
+    },
+    {
+      "key": "cfx_stage7_warden_projectiles",
+      "root": "cfx_stage7_warden_projectiles",
+      "path": "assets/game/levels/stage_07/effects/combat_final/stage7_toxic_portal_projectiles_atlas.png",
+      "owner": "levels/stage_07",
+      "cell": null
+    },
+    {
+      "key": "cfx_stage7_warden_cannon",
+      "root": "cfx_stage7_warden_cannon",
+      "path": "assets/game/levels/stage_07/stage/combat_final/stage7_warden_cannon_barrage_spritecook.png",
+      "owner": "levels/stage_07",
+      "cell": null
+    },
+    {
+      "key": "cfx_stage7_warden_rail",
+      "root": "cfx_stage7_warden_rail",
+      "path": "assets/game/levels/stage_07/stage/combat_final/stage7_warden_rail_charge_spritecook.png",
+      "owner": "levels/stage_07",
+      "cell": null
+    },
+    {
+      "key": "cfx_stage7_warden_shell",
+      "root": "cfx_stage7_warden_shell",
+      "path": "assets/game/levels/stage_07/stage/combat_final/stage7_warden_toxic_pressure_shell_spritecook.png",
+      "owner": "levels/stage_07",
+      "cell": null
+    },
+    {
+      "key": "cfx_stage7_warden_machine_round",
+      "root": "cfx_stage7_warden_machine_round",
+      "path": "assets/game/levels/stage_07/stage/combat_final/stage7_warden_toxic_machine_round_0920.png",
+      "owner": "levels/stage_07",
+      "cell": null
+    },
+    {
+      "key": "cfx_stage7_warden_mine",
+      "root": "cfx_stage7_warden_mine",
+      "path": "assets/game/levels/stage_07/effects/combat_final/stage7_warden_portal_mine_spritecook.png",
+      "owner": "levels/stage_07",
+      "cell": null
+    },
+    {
+      "key": "cfx_stage7_warden_spear",
+      "root": "cfx_stage7_warden_spear",
+      "path": "assets/game/levels/stage_07/stage/combat_final/stage7_warden_rift_rail_spear_spritecook.png",
+      "owner": "levels/stage_07",
+      "cell": null
+    },
+    {
+      "key": "cfx_stage7_warden_roar",
+      "root": "cfx_stage7_warden_roar",
+      "path": "assets/game/levels/stage_07/stage/combat_final/stage7_warden_rear_roar_spritecook.png",
+      "owner": "levels/stage_07",
+      "cell": null
+    },
+    {
+      "key": "cfx_stage7_warden_cripple",
+      "root": "cfx_stage7_warden_cripple",
+      "path": "assets/game/levels/stage_07/stage/combat_final/stage7_warden_crippled_crawl_spritecook.png",
+      "owner": "levels/stage_07",
+      "cell": null
+    },
+    {
+      "key": "cfx_stage7_warden_laststand",
+      "root": "cfx_stage7_warden_laststand",
+      "path": "assets/game/levels/stage_07/stage/combat_final/stage7_warden_last_stand_spritecook.png",
+      "owner": "levels/stage_07",
+      "cell": null
+    },
+    {
+      "key": "s7atk_armored_lamprey_0",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        4,
+        4,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_armored_lamprey_1",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        264,
+        4,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_armored_lamprey_2",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        524,
+        4,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_armored_lamprey_3",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        784,
+        4,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_armored_lamprey_4",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        1044,
+        4,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_armored_lamprey_5",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        1304,
+        4,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_armored_lamprey_6",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        1564,
+        4,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_armored_lamprey_7",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        1824,
+        4,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_armored_sludge_barge_0",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        2084,
+        4,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_armored_sludge_barge_1",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        2344,
+        4,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_armored_sludge_barge_2",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        2604,
+        4,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_armored_sludge_barge_3",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        2864,
+        4,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_armored_sludge_barge_4",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        3124,
+        4,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_armored_sludge_barge_5",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        3384,
+        4,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_armored_sludge_barge_6",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        3644,
+        4,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_armored_sludge_barge_7",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        4,
+        264,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_dual_scoop_dredger_0",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        264,
+        264,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_dual_scoop_dredger_1",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        524,
+        264,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_dual_scoop_dredger_2",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        784,
+        264,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_dual_scoop_dredger_3",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        1044,
+        264,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_dual_scoop_dredger_4",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        1304,
+        264,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_dual_scoop_dredger_5",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        1564,
+        264,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_dual_scoop_dredger_6",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        1824,
+        264,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_dual_scoop_dredger_7",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        2084,
+        264,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_pipe_crawler_0",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        2344,
+        264,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_pipe_crawler_1",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        2604,
+        264,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_pipe_crawler_2",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        2864,
+        264,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_pipe_crawler_3",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        3124,
+        264,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_pipe_crawler_4",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        3384,
+        264,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_pipe_crawler_5",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        3644,
+        264,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_pipe_crawler_6",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        4,
+        524,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_pipe_crawler_7",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        264,
+        524,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_piston_pump_walker_0",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        524,
+        524,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_piston_pump_walker_1",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        784,
+        524,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_piston_pump_walker_2",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        1044,
+        524,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_piston_pump_walker_3",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        1304,
+        524,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_piston_pump_walker_4",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        1564,
+        524,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_piston_pump_walker_5",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        1824,
+        524,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_piston_pump_walker_6",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        2084,
+        524,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_piston_pump_walker_7",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        2344,
+        524,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_sampling_drone_0",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        2604,
+        524,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_sampling_drone_1",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        2864,
+        524,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_sampling_drone_2",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        3124,
+        524,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_sampling_drone_3",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        3384,
+        524,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_sampling_drone_4",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        3644,
+        524,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_sampling_drone_5",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        4,
+        784,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_sampling_drone_6",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        264,
+        784,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_sampling_drone_7",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        524,
+        784,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_sewer_serpent_0",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        784,
+        784,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_sewer_serpent_1",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        1044,
+        784,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_sewer_serpent_2",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        1304,
+        784,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_sewer_serpent_3",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        1564,
+        784,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_sewer_serpent_4",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        1824,
+        784,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_sewer_serpent_5",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        2084,
+        784,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_sewer_serpent_6",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        2344,
+        784,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_sewer_serpent_7",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        2604,
+        784,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_sludge_mine_0",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        2864,
+        784,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_sludge_mine_1",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        3124,
+        784,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_sludge_mine_2",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        3384,
+        784,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_sludge_mine_3",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        3644,
+        784,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_sludge_mine_4",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        4,
+        1044,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_sludge_mine_5",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        264,
+        1044,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_sludge_mine_6",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        524,
+        1044,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_sludge_mine_7",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        784,
+        1044,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_toxic_canister_0",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        1044,
+        1044,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_toxic_canister_1",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        1304,
+        1044,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_toxic_canister_2",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        1564,
+        1044,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_toxic_canister_3",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        1824,
+        1044,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_toxic_canister_4",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        2084,
+        1044,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_toxic_canister_5",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        2344,
+        1044,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_toxic_canister_6",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        2604,
+        1044,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_toxic_canister_7",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        2864,
+        1044,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_toxic_mini_tank_0",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        3124,
+        1044,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_toxic_mini_tank_1",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        3384,
+        1044,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_toxic_mini_tank_2",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        3644,
+        1044,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_toxic_mini_tank_3",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        4,
+        1304,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_toxic_mini_tank_4",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        264,
+        1304,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_toxic_mini_tank_5",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        524,
+        1304,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_toxic_mini_tank_6",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        784,
+        1304,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_toxic_mini_tank_7",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        1044,
+        1304,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_toxic_skimmer_0",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        1304,
+        1304,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_toxic_skimmer_1",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        1564,
+        1304,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_toxic_skimmer_2",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        1824,
+        1304,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_toxic_skimmer_3",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        2084,
+        1304,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_toxic_skimmer_4",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        2344,
+        1304,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_toxic_skimmer_5",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        2604,
+        1304,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_toxic_skimmer_6",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        2864,
+        1304,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7atk_toxic_skimmer_7",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        3124,
+        1304,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7spore_0",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        1564,
+        1564,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7spore_1",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        1824,
+        1564,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7spore_2",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        2604,
+        1564,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7spore_3",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        2864,
+        1564,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7spore_4",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        3124,
+        1564,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7spore_5",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        3384,
+        1564,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7spore_6",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        3644,
+        1564,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7spore_7",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        4,
+        1824,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7spore_8",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        264,
+        1824,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7spore_9",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        524,
+        1824,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7spore_10",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        2084,
+        1564,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s7spore_11",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": [
+        "stage7_runtime_0",
+        2344,
+        1564,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "nca_stage7_runtime_0",
+      "root": "nca_stage7_runtime_0",
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "cell": null
+    },
+    {
+      "key": "s7m_body",
+      "root": "s7m_body",
+      "path": "assets/game/levels/stage_07/stage/stage7_modular_0927/warden_body_open_0927.png",
+      "owner": "levels/stage_07",
+      "cell": null
+    },
+    {
+      "key": "s7m_warden",
+      "root": "s7m_warden",
+      "path": "assets/game/levels/stage_07/stage/stage7_modular_0927/warden_parts.png",
+      "owner": "levels/stage_07",
+      "cell": null
+    },
+    {
+      "key": "s7m_tank",
+      "root": "s7m_tank",
+      "path": "assets/game/levels/stage_07/stage/stage7_modular_0927/tank_parts.png",
+      "owner": "levels/stage_07",
+      "cell": null
+    },
+    {
+      "key": "s7m_portal",
+      "root": "s7m_portal",
+      "path": "assets/game/levels/stage_07/effects/stage7_modular_0927/portal_16.png",
+      "owner": "levels/stage_07",
+      "cell": null
+    },
+    {
+      "key": "s7m_explosion",
+      "root": "s7m_explosion",
+      "path": "assets/game/levels/stage_07/stage/stage7_modular_0927/explosion_16.png",
+      "owner": "levels/stage_07",
+      "cell": null
+    },
+    {
+      "key": "s7m_spew",
+      "root": "s7m_spew",
+      "path": "assets/game/levels/stage_07/stage/stage7_modular_0927/spew_16.png",
+      "owner": "levels/stage_07",
+      "cell": null
+    },
+    {
+      "key": "s7m_orb",
+      "root": "s7m_orb",
+      "path": "assets/game/levels/stage_07/stage/stage7_modular_0927/toxic_orb_8.png",
+      "owner": "levels/stage_07",
+      "cell": null
+    },
+    {
+      "key": "s7m_shield",
+      "root": "s7m_shield",
+      "path": "assets/game/levels/stage_07/stage/stage7_modular_0927/shield_8.png",
+      "owner": "levels/stage_07",
+      "cell": null
+    }
+  ],
+  "files": [
+    {
+      "path": "assets/game/levels/stage_07/audio/music/Level7.mp3",
+      "owner": "levels/stage_07",
+      "bytes": 1993039,
+      "role": "registered runtime asset"
+    },
+    {
+      "path": "assets/game/levels/stage_07/audio/music/Level7b.mp3",
+      "owner": "levels/stage_07",
+      "bytes": 2720811,
+      "role": "registered runtime asset"
+    },
+    {
+      "path": "assets/game/levels/stage_07/audio/music/Level7mb.mp3",
+      "owner": "levels/stage_07",
+      "bytes": 1606993,
+      "role": "registered runtime asset"
+    },
+    {
+      "path": "assets/game/levels/stage_07/cinematics/cinematic_level_approaches/stage07_not_another_sewer_level_approach.png",
+      "owner": "levels/stage_07",
+      "bytes": 2615301,
+      "role": "registered runtime asset",
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "path": "assets/game/levels/stage_07/cinematics/cinematic_level_transitions_topdown/stage07_not_another_sewer_level_topdown.png",
+      "owner": "levels/stage_07",
+      "bytes": 2772826,
+      "role": "registered runtime asset",
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "path": "assets/game/levels/stage_07/effects/combat_final/stage7_toxic_portal_projectiles_atlas.png",
+      "owner": "levels/stage_07",
+      "bytes": 639773,
+      "role": "registered runtime asset",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "path": "assets/game/levels/stage_07/effects/combat_final/stage7_toxic_portal_teleport_atlas.png",
+      "owner": "levels/stage_07",
+      "bytes": 1467683,
+      "role": "registered runtime asset",
+      "width": 1774,
+      "height": 887
+    },
+    {
+      "path": "assets/game/levels/stage_07/effects/combat_final/stage7_toxic_portal_warden_crawl_spritecook.png",
+      "owner": "levels/stage_07",
+      "bytes": 3558718,
+      "role": "registered runtime asset",
+      "width": 5120,
+      "height": 616
+    },
+    {
+      "path": "assets/game/levels/stage_07/effects/combat_final/stage7_warden_portal_mine_spritecook.png",
+      "owner": "levels/stage_07",
+      "bytes": 1606113,
+      "role": "registered runtime asset",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "path": "assets/game/levels/stage_07/effects/nfx_l7portal_0.png",
+      "owner": "levels/stage_07",
+      "bytes": 4138,
+      "role": "source or supporting file",
+      "width": 512,
+      "height": 512
+    },
+    {
+      "path": "assets/game/levels/stage_07/effects/nfx_l7portal_1.png",
+      "owner": "levels/stage_07",
+      "bytes": 26255,
+      "role": "source or supporting file",
+      "width": 512,
+      "height": 512
+    },
+    {
+      "path": "assets/game/levels/stage_07/effects/nfx_l7portal_2.png",
+      "owner": "levels/stage_07",
+      "bytes": 61932,
+      "role": "source or supporting file",
+      "width": 512,
+      "height": 512
+    },
+    {
+      "path": "assets/game/levels/stage_07/effects/nfx_l7portal_3.png",
+      "owner": "levels/stage_07",
+      "bytes": 69956,
+      "role": "source or supporting file",
+      "width": 512,
+      "height": 512
+    },
+    {
+      "path": "assets/game/levels/stage_07/effects/nfx_l7portal_4.png",
+      "owner": "levels/stage_07",
+      "bytes": 72200,
+      "role": "source or supporting file",
+      "width": 512,
+      "height": 512
+    },
+    {
+      "path": "assets/game/levels/stage_07/effects/nfx_l7portal_5.png",
+      "owner": "levels/stage_07",
+      "bytes": 74367,
+      "role": "source or supporting file",
+      "width": 512,
+      "height": 512
+    },
+    {
+      "path": "assets/game/levels/stage_07/effects/nfx_l7portal_6.png",
+      "owner": "levels/stage_07",
+      "bytes": 59537,
+      "role": "source or supporting file",
+      "width": 512,
+      "height": 512
+    },
+    {
+      "path": "assets/game/levels/stage_07/effects/nfx_l7portal_7.png",
+      "owner": "levels/stage_07",
+      "bytes": 6985,
+      "role": "source or supporting file",
+      "width": 512,
+      "height": 512
+    },
+    {
+      "path": "assets/game/levels/stage_07/effects/nst7_portal_gate.png",
+      "owner": "levels/stage_07",
+      "bytes": 304592,
+      "role": "registered runtime asset",
+      "width": 680,
+      "height": 1020
+    },
+    {
+      "path": "assets/game/levels/stage_07/effects/stage7_modular_0927/portal_16.png",
+      "owner": "levels/stage_07",
+      "bytes": 1882698,
+      "role": "registered runtime asset",
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "path": "assets/game/levels/stage_07/effects/stage7_sewer_0925/sluice_vent_8f.png",
+      "owner": "levels/stage_07",
+      "bytes": 925359,
+      "role": "registered runtime asset",
+      "width": 1774,
+      "height": 887
+    },
+    {
+      "path": "assets/game/levels/stage_07/effects/stage7_sewer_0925/sluice_warning_lane.png",
+      "owner": "levels/stage_07",
+      "bytes": 496260,
+      "role": "registered runtime asset",
+      "width": 1983,
+      "height": 793
+    },
+    {
+      "path": "assets/game/levels/stage_07/enemies/atlas/stage_runtime/stage7_runtime_0.png",
+      "owner": "levels/stage_07",
+      "bytes": 3309255,
+      "role": "registered runtime asset",
+      "width": 4096,
+      "height": 2084
+    },
+    {
+      "path": "assets/game/levels/stage_07/enemies/en_s7.png",
+      "owner": "levels/stage_07",
+      "bytes": 804662,
+      "role": "registered runtime asset",
+      "width": 1040,
+      "height": 1411
+    },
+    {
+      "path": "assets/game/levels/stage_07/enemies/enemy_overhaul_0925/sprites/ground_base_stage7_toxic.png",
+      "owner": "levels/stage_07",
+      "bytes": 106284,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/levels/stage_07/enemies/enemy_overhaul_0925/sprites/stage7_slime_01.png",
+      "owner": "levels/stage_07",
+      "bytes": 42579,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/levels/stage_07/enemies/enemy_overhaul_0925/sprites/stage7_tank_hull.png",
+      "owner": "levels/stage_07",
+      "bytes": 158072,
+      "role": "registered runtime asset",
+      "width": 384,
+      "height": 384
+    },
+    {
+      "path": "assets/game/levels/stage_07/enemies/enemy_overhaul_0925/sprites/stage7_tank_turret.png",
+      "owner": "levels/stage_07",
+      "bytes": 76761,
+      "role": "registered runtime asset",
+      "width": 384,
+      "height": 384
+    },
+    {
+      "path": "assets/game/levels/stage_07/enemies/enemy_overhaul_0925/sprites/stage7_toxic_core_0.png",
+      "owner": "levels/stage_07",
+      "bytes": 11099,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/levels/stage_07/enemies/enemy_overhaul_0925/sprites/stage7_toxic_core_1.png",
+      "owner": "levels/stage_07",
+      "bytes": 11779,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/levels/stage_07/enemies/enemy_overhaul_0925/sprites/stage7_toxic_core_2.png",
+      "owner": "levels/stage_07",
+      "bytes": 11860,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/levels/stage_07/enemies/enemy_overhaul_0925/sprites/stage7_toxic_core_3.png",
+      "owner": "levels/stage_07",
+      "bytes": 11677,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/levels/stage_07/enemies/enemy_overhaul_0925/sprites/stage7_toxic_core_4.png",
+      "owner": "levels/stage_07",
+      "bytes": 11544,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/levels/stage_07/enemies/enemy_overhaul_0925/sprites/stage7_toxic_core_5.png",
+      "owner": "levels/stage_07",
+      "bytes": 11755,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/levels/stage_07/enemies/enemy_overhaul_0925/sprites/stage7_toxic_core_6.png",
+      "owner": "levels/stage_07",
+      "bytes": 11561,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/levels/stage_07/enemies/enemy_overhaul_0925/sprites/stage7_toxic_core_7.png",
+      "owner": "levels/stage_07",
+      "bytes": 11154,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/levels/stage_07/enemies/enemy_overhaul_0925/sprites/stage7_toxic_exhaust_0.png",
+      "owner": "levels/stage_07",
+      "bytes": 10461,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/levels/stage_07/enemies/enemy_overhaul_0925/sprites/stage7_toxic_exhaust_1.png",
+      "owner": "levels/stage_07",
+      "bytes": 11968,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/levels/stage_07/enemies/enemy_overhaul_0925/sprites/stage7_toxic_exhaust_2.png",
+      "owner": "levels/stage_07",
+      "bytes": 13577,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/levels/stage_07/enemies/enemy_overhaul_0925/sprites/stage7_toxic_exhaust_3.png",
+      "owner": "levels/stage_07",
+      "bytes": 12606,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/levels/stage_07/enemies/enemy_overhaul_0925/sprites/stage7_toxic_exhaust_4.png",
+      "owner": "levels/stage_07",
+      "bytes": 9895,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/levels/stage_07/enemies/enemy_overhaul_0925/sprites/stage7_toxic_exhaust_5.png",
+      "owner": "levels/stage_07",
+      "bytes": 9006,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/levels/stage_07/enemies/enemy_overhaul_0925/sprites/stage7_toxic_jet_01.png",
+      "owner": "levels/stage_07",
+      "bytes": 42130,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/levels/stage_07/projectiles/combat_upgrade_0901/stage7_toxic_projectiles_atlas.png",
+      "owner": "levels/stage_07",
+      "bytes": 658275,
+      "role": "registered runtime asset",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "path": "assets/game/levels/stage_07/stage/combat_final/stage7_warden_cannon_barrage_spritecook.png",
+      "owner": "levels/stage_07",
+      "bytes": 3172090,
+      "role": "registered runtime asset",
+      "width": 5120,
+      "height": 616
+    },
+    {
+      "path": "assets/game/levels/stage_07/stage/combat_final/stage7_warden_crippled_crawl_spritecook.png",
+      "owner": "levels/stage_07",
+      "bytes": 3498466,
+      "role": "registered runtime asset",
+      "width": 5120,
+      "height": 616
+    },
+    {
+      "path": "assets/game/levels/stage_07/stage/combat_final/stage7_warden_last_stand_spritecook.png",
+      "owner": "levels/stage_07",
+      "bytes": 3387190,
+      "role": "registered runtime asset",
+      "width": 5120,
+      "height": 616
+    },
+    {
+      "path": "assets/game/levels/stage_07/stage/combat_final/stage7_warden_rail_charge_spritecook.png",
+      "owner": "levels/stage_07",
+      "bytes": 2304751,
+      "role": "registered runtime asset",
+      "width": 5120,
+      "height": 616
+    },
+    {
+      "path": "assets/game/levels/stage_07/stage/combat_final/stage7_warden_rear_roar_spritecook.png",
+      "owner": "levels/stage_07",
+      "bytes": 3023262,
+      "role": "registered runtime asset",
+      "width": 5120,
+      "height": 616
+    },
+    {
+      "path": "assets/game/levels/stage_07/stage/combat_final/stage7_warden_rift_rail_spear_spritecook.png",
+      "owner": "levels/stage_07",
+      "bytes": 183728,
+      "role": "registered runtime asset",
+      "width": 992,
+      "height": 992
+    },
+    {
+      "path": "assets/game/levels/stage_07/stage/combat_final/stage7_warden_toxic_machine_round_0920.png",
+      "owner": "levels/stage_07",
+      "bytes": 7310,
+      "role": "registered runtime asset",
+      "width": 87,
+      "height": 44
+    },
+    {
+      "path": "assets/game/levels/stage_07/stage/combat_final/stage7_warden_toxic_pressure_shell_spritecook.png",
+      "owner": "levels/stage_07",
+      "bytes": 1054540,
+      "role": "registered runtime asset",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "path": "assets/game/levels/stage_07/stage/frames_0.png",
+      "owner": "levels/stage_07",
+      "bytes": 823684,
+      "role": "registered runtime asset",
+      "width": 3220,
+      "height": 1008
+    },
+    {
+      "path": "assets/game/levels/stage_07/stage/nst7_master.png",
+      "owner": "levels/stage_07",
+      "bytes": 6734959,
+      "role": "registered runtime asset",
+      "width": 800,
+      "height": 4062
+    },
+    {
+      "path": "assets/game/levels/stage_07/stage/nst7_master_v2.png",
+      "owner": "levels/stage_07",
+      "bytes": 1551633,
+      "role": "registered runtime asset",
+      "width": 680,
+      "height": 3453
+    },
+    {
+      "path": "assets/game/levels/stage_07/stage/nst7_master_v3.png",
+      "owner": "levels/stage_07",
+      "bytes": 1501821,
+      "role": "registered runtime asset",
+      "width": 680,
+      "height": 4716
+    },
+    {
+      "path": "assets/game/levels/stage_07/stage/nst7_upper.png",
+      "owner": "levels/stage_07",
+      "bytes": 2072427,
+      "role": "registered runtime asset",
+      "width": 800,
+      "height": 4062
+    },
+    {
+      "path": "assets/game/levels/stage_07/stage/stage7_modular_0927/explosion_16.png",
+      "owner": "levels/stage_07",
+      "bytes": 1784100,
+      "role": "registered runtime asset",
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "path": "assets/game/levels/stage_07/stage/stage7_modular_0927/shield_8.png",
+      "owner": "levels/stage_07",
+      "bytes": 2021835,
+      "role": "registered runtime asset",
+      "width": 1774,
+      "height": 887
+    },
+    {
+      "path": "assets/game/levels/stage_07/stage/stage7_modular_0927/spew_16.png",
+      "owner": "levels/stage_07",
+      "bytes": 1024883,
+      "role": "registered runtime asset",
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "path": "assets/game/levels/stage_07/stage/stage7_modular_0927/tank_parts.png",
+      "owner": "levels/stage_07",
+      "bytes": 1656041,
+      "role": "registered runtime asset",
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "path": "assets/game/levels/stage_07/stage/stage7_modular_0927/toxic_orb_8.png",
+      "owner": "levels/stage_07",
+      "bytes": 1339984,
+      "role": "registered runtime asset",
+      "width": 1774,
+      "height": 887
+    },
+    {
+      "path": "assets/game/levels/stage_07/stage/stage7_modular_0927/warden_body_open_0927.png",
+      "owner": "levels/stage_07",
+      "bytes": 1922356,
+      "role": "registered runtime asset",
+      "width": 1155,
+      "height": 1362
+    },
+    {
+      "path": "assets/game/levels/stage_07/stage/stage7_modular_0927/warden_parts.png",
+      "owner": "levels/stage_07",
+      "bytes": 2097938,
+      "role": "registered runtime asset",
+      "width": 1536,
+      "height": 1024
+    }
+  ],
+  "audio": {
+    "sfx": {},
+    "music": {
+      "stage7mus": "assets/game/levels/stage_07/audio/music/Level7.mp3",
+      "boss7mus": "assets/game/levels/stage_07/audio/music/Level7b.mp3",
+      "boss7": "assets/game/levels/stage_07/audio/music/Level7b.mp3",
+      "mini7": "assets/game/levels/stage_07/audio/music/Level7mb.mp3"
+    }
+  },
+  "deploymentRoots": [
+    "bof_player_weapon_special_icons_atlas",
+    "nst7_master_v3",
+    "cfx_stage7_warden_walk",
+    "cfx_stage7_toxic_projectiles_v2",
+    "cfx_stage7_warden_teleport",
+    "cfx_stage7_warden_projectiles",
+    "cfx_stage7_warden_cannon",
+    "cfx_stage7_warden_rail",
+    "cfx_stage7_warden_shell",
+    "cfx_stage7_warden_machine_round",
+    "cfx_stage7_warden_mine",
+    "cfx_stage7_warden_spear",
+    "cfx_stage7_warden_roar",
+    "cfx_stage7_warden_cripple",
+    "cfx_stage7_warden_laststand",
+    "pp5_raw_yuri_idle",
+    "nca_stage8_runtime_0",
+    "nca_stage7_runtime_0",
+    "nca_layout_shared_effects_0",
+    "s7sluice_vent",
+    "s7sluice_warning",
+    "nca_en_s7",
+    "bof_player_ordnance_projectiles_atlas",
+    "nca_player_weapons",
+    "pp5_raw_yuri_happy",
+    "pp5_raw_yuri_laugh",
+    "pp5_raw_yuri_anger",
+    "pp5_raw_yuri_sad",
+    "pp5_raw_yuri_crash",
+    "pp5_raw_yuri_victory",
+    "pp5_raw_yuri_talk-closed",
+    "pp5_raw_yuri_talk-small",
+    "pp5_raw_yuri_talk-medium",
+    "pp5_raw_yuri_talk-wide",
+    "pp5_raw_yuri_talk-o",
+    "nca_terrain_liquids",
+    "nca_eproj_shared",
+    "nca_fx_explosions",
+    "nca_fx_debris"
+  ],
+  "audioDescription": "Level music and stage-specific sounds are in audio/. Common music and reusable sounds are registered in BOFA and stored once in shared/audio."
+}

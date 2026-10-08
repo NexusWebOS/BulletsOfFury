@@ -33,8 +33,8 @@ from s9_palette_variants_0905 import core_mask, recolour, quantize, colours
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC = os.path.join(ROOT, 'docs/spritecook_briefs/s9miniboss/pixB.png')
-OUT_PURPLE = os.path.join(ROOT, 'assets/game/stage9_void_rift/enemies/event_horizon_%d.png')
-OUT_BLACK = os.path.join(ROOT, 'assets/game/stage9_void_rift/enemies/event_horizon_blk_%d.png')
+OUT_PURPLE = os.path.join(ROOT, 'assets/game/levels/stage_09/enemies/stage9_void_rift/enemies/event_horizon_%d.png')
+OUT_BLACK = os.path.join(ROOT, 'assets/game/levels/stage_09/enemies/stage9_void_rift/enemies/event_horizon_blk_%d.png')
 N = 7                     # drawS9VoidEnemy indexes % 7
 PAL = 96
 

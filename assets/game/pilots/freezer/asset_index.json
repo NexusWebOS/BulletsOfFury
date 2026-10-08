@@ -1,0 +1,895 @@
+{
+  "owner": "pilots/freezer",
+  "loading": {
+    "boot": "UI, fonts, idle portraits only",
+    "deployment": "selected pilot portraits, shared player weapons, required stage textures",
+    "transition": "release previous stage textures and derived caches; preserve explicitly queued copied-form dependencies",
+    "quality": "automatic native resolution on low-memory/low-core devices; reduce supersampling after sustained slow play frames"
+  },
+  "sharedDependencies": [
+    "shared/fonts",
+    "shared/ui",
+    "shared/player_weapons",
+    "shared/effects",
+    "shared/ships"
+  ],
+  "assets": [
+    {
+      "key": "aintro_freezer",
+      "root": "nca_layout_pilots_freezer_portraits_0",
+      "path": "assets/game/pilots/freezer/portraits/frames_0.png",
+      "owner": "pilots/freezer",
+      "cell": [
+        "layout_pilots_freezer_portraits_0",
+        1790,
+        4,
+        640,
+        480
+      ]
+    },
+    {
+      "key": "pcard_freezer",
+      "root": "nca_layout_pilots_freezer_portraits_0",
+      "path": "assets/game/pilots/freezer/portraits/frames_0.png",
+      "owner": "pilots/freezer",
+      "cell": [
+        "layout_pilots_freezer_portraits_0",
+        4,
+        4,
+        958,
+        718
+      ]
+    },
+    {
+      "key": "nsa_ship_freezer",
+      "root": "nsa_ship_freezer",
+      "path": "assets/game/pilots/freezer/ship_frames/ship_freezer.png",
+      "owner": "pilots/freezer",
+      "cell": null
+    },
+    {
+      "key": "card_freezer",
+      "root": "nca_layout_pilots_freezer_portraits_0",
+      "path": "assets/game/pilots/freezer/portraits/frames_0.png",
+      "owner": "pilots/freezer",
+      "cell": [
+        "layout_pilots_freezer_portraits_0",
+        966,
+        4,
+        820,
+        644
+      ]
+    },
+    {
+      "key": "pose_freezer_0",
+      "root": "nca_layout_pilots_freezer_body_frames_0",
+      "path": "assets/game/pilots/freezer/body_frames/frames_0.png",
+      "owner": "pilots/freezer",
+      "cell": [
+        "layout_pilots_freezer_body_frames_0",
+        4,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "key": "pose_freezer_1",
+      "root": "nca_layout_pilots_freezer_body_frames_0",
+      "path": "assets/game/pilots/freezer/body_frames/frames_0.png",
+      "owner": "pilots/freezer",
+      "cell": [
+        "layout_pilots_freezer_body_frames_0",
+        264,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "key": "pose_freezer_2",
+      "root": "nca_layout_pilots_freezer_body_frames_0",
+      "path": "assets/game/pilots/freezer/body_frames/frames_0.png",
+      "owner": "pilots/freezer",
+      "cell": [
+        "layout_pilots_freezer_body_frames_0",
+        524,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "key": "pose_freezer_3",
+      "root": "nca_layout_pilots_freezer_body_frames_0",
+      "path": "assets/game/pilots/freezer/body_frames/frames_0.png",
+      "owner": "pilots/freezer",
+      "cell": [
+        "layout_pilots_freezer_body_frames_0",
+        784,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "key": "pose_freezer_4",
+      "root": "nca_layout_pilots_freezer_body_frames_0",
+      "path": "assets/game/pilots/freezer/body_frames/frames_0.png",
+      "owner": "pilots/freezer",
+      "cell": [
+        "layout_pilots_freezer_body_frames_0",
+        1044,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "key": "pose_freezer_5",
+      "root": "nca_layout_pilots_freezer_body_frames_0",
+      "path": "assets/game/pilots/freezer/body_frames/frames_0.png",
+      "owner": "pilots/freezer",
+      "cell": [
+        "layout_pilots_freezer_body_frames_0",
+        1304,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "key": "pemb_freezer",
+      "root": "nca_layout_pilots_freezer_portraits_0",
+      "path": "assets/game/pilots/freezer/portraits/frames_0.png",
+      "owner": "pilots/freezer",
+      "cell": [
+        "layout_pilots_freezer_portraits_0",
+        2434,
+        4,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "nthp_freezer_2",
+      "root": "nca_layout_pilots_freezer_abilities_0",
+      "path": "assets/game/pilots/freezer/abilities/frames_0.png",
+      "owner": "pilots/freezer",
+      "cell": [
+        "layout_pilots_freezer_abilities_0",
+        4,
+        4,
+        170,
+        192
+      ]
+    },
+    {
+      "key": "nthp_freezer_1",
+      "root": "nca_layout_pilots_freezer_abilities_0",
+      "path": "assets/game/pilots/freezer/abilities/frames_0.png",
+      "owner": "pilots/freezer",
+      "cell": [
+        "layout_pilots_freezer_abilities_0",
+        178,
+        4,
+        136,
+        158
+      ]
+    },
+    {
+      "key": "nthp_freezer_3",
+      "root": "nca_layout_pilots_freezer_abilities_0",
+      "path": "assets/game/pilots/freezer/abilities/frames_0.png",
+      "owner": "pilots/freezer",
+      "cell": [
+        "layout_pilots_freezer_abilities_0",
+        318,
+        4,
+        81,
+        135
+      ]
+    },
+    {
+      "key": "nthp_freezer_0",
+      "root": "nca_layout_pilots_freezer_abilities_0",
+      "path": "assets/game/pilots/freezer/abilities/frames_0.png",
+      "owner": "pilots/freezer",
+      "cell": [
+        "layout_pilots_freezer_abilities_0",
+        403,
+        4,
+        81,
+        102
+      ]
+    },
+    {
+      "key": "sp_freezer_0",
+      "root": "nca_layout_pilots_freezer_abilities_0",
+      "path": "assets/game/pilots/freezer/abilities/frames_0.png",
+      "owner": "pilots/freezer",
+      "cell": [
+        "layout_pilots_freezer_abilities_0",
+        488,
+        4,
+        64,
+        36
+      ]
+    },
+    {
+      "key": "sp_freezer_1",
+      "root": "nca_layout_pilots_freezer_abilities_0",
+      "path": "assets/game/pilots/freezer/abilities/frames_0.png",
+      "owner": "pilots/freezer",
+      "cell": [
+        "layout_pilots_freezer_abilities_0",
+        556,
+        4,
+        64,
+        36
+      ]
+    },
+    {
+      "key": "sp_freezer_2",
+      "root": "nca_layout_pilots_freezer_abilities_0",
+      "path": "assets/game/pilots/freezer/abilities/frames_0.png",
+      "owner": "pilots/freezer",
+      "cell": [
+        "layout_pilots_freezer_abilities_0",
+        624,
+        4,
+        64,
+        36
+      ]
+    },
+    {
+      "key": "sp_freezer_3",
+      "root": "nca_layout_pilots_freezer_abilities_0",
+      "path": "assets/game/pilots/freezer/abilities/frames_0.png",
+      "owner": "pilots/freezer",
+      "cell": [
+        "layout_pilots_freezer_abilities_0",
+        692,
+        4,
+        64,
+        36
+      ]
+    },
+    {
+      "key": "nca_layout_pilots_freezer_abilities_0",
+      "root": "nca_layout_pilots_freezer_abilities_0",
+      "path": "assets/game/pilots/freezer/abilities/frames_0.png",
+      "owner": "pilots/freezer",
+      "cell": null
+    },
+    {
+      "key": "nca_layout_pilots_freezer_body_frames_0",
+      "root": "nca_layout_pilots_freezer_body_frames_0",
+      "path": "assets/game/pilots/freezer/body_frames/frames_0.png",
+      "owner": "pilots/freezer",
+      "cell": null
+    },
+    {
+      "key": "nca_layout_pilots_freezer_portraits_0",
+      "root": "nca_layout_pilots_freezer_portraits_0",
+      "path": "assets/game/pilots/freezer/portraits/frames_0.png",
+      "owner": "pilots/freezer",
+      "cell": null
+    },
+    {
+      "key": "port_cf_freezer_idle",
+      "root": "port_cf_freezer_idle",
+      "path": "assets/game/pilots/freezer/portraits/pilots_0922/portraits/freezer-idle.png",
+      "owner": "pilots/freezer",
+      "cell": null
+    },
+    {
+      "key": "port_cf_freezer_happy",
+      "root": "port_cf_freezer_happy",
+      "path": "assets/game/pilots/freezer/portraits/pilots_0922/portraits/freezer-happy.png",
+      "owner": "pilots/freezer",
+      "cell": null
+    },
+    {
+      "key": "port_cf_freezer_laugh",
+      "root": "port_cf_freezer_laugh",
+      "path": "assets/game/pilots/freezer/portraits/pilots_0922/portraits/freezer-laugh.png",
+      "owner": "pilots/freezer",
+      "cell": null
+    },
+    {
+      "key": "port_cf_freezer_anger",
+      "root": "port_cf_freezer_anger",
+      "path": "assets/game/pilots/freezer/portraits/pilots_0922/portraits/freezer-anger.png",
+      "owner": "pilots/freezer",
+      "cell": null
+    },
+    {
+      "key": "port_cf_freezer_sad",
+      "root": "port_cf_freezer_sad",
+      "path": "assets/game/pilots/freezer/portraits/pilots_0922/portraits/freezer-sad.png",
+      "owner": "pilots/freezer",
+      "cell": null
+    },
+    {
+      "key": "port_cf_freezer_crash",
+      "root": "port_cf_freezer_crash",
+      "path": "assets/game/pilots/freezer/portraits/pilots_0922/portraits/freezer-crash.png",
+      "owner": "pilots/freezer",
+      "cell": null
+    },
+    {
+      "key": "port_cf_freezer_victory",
+      "root": "port_cf_freezer_victory",
+      "path": "assets/game/pilots/freezer/portraits/pilots_0922/portraits/freezer-victory.png",
+      "owner": "pilots/freezer",
+      "cell": null
+    },
+    {
+      "key": "port_cf_freezer_talk-closed",
+      "root": "port_cf_freezer_talk-closed",
+      "path": "assets/game/pilots/freezer/portraits/pilots_0922/portraits/freezer-talk-closed.png",
+      "owner": "pilots/freezer",
+      "cell": null
+    },
+    {
+      "key": "port_cf_freezer_talk-small",
+      "root": "port_cf_freezer_talk-small",
+      "path": "assets/game/pilots/freezer/portraits/pilots_0922/portraits/freezer-talk-small.png",
+      "owner": "pilots/freezer",
+      "cell": null
+    },
+    {
+      "key": "port_cf_freezer_talk-medium",
+      "root": "port_cf_freezer_talk-medium",
+      "path": "assets/game/pilots/freezer/portraits/pilots_0922/portraits/freezer-talk-medium.png",
+      "owner": "pilots/freezer",
+      "cell": null
+    },
+    {
+      "key": "port_cf_freezer_talk-wide",
+      "root": "port_cf_freezer_talk-wide",
+      "path": "assets/game/pilots/freezer/portraits/pilots_0922/portraits/freezer-talk-wide.png",
+      "owner": "pilots/freezer",
+      "cell": null
+    },
+    {
+      "key": "port_cf_freezer_talk-o",
+      "root": "port_cf_freezer_talk-o",
+      "path": "assets/game/pilots/freezer/portraits/pilots_0922/portraits/freezer-talk-o.png",
+      "owner": "pilots/freezer",
+      "cell": null
+    },
+    {
+      "key": "port_cf_freezer_alert",
+      "root": "port_cf_freezer_alert",
+      "path": "assets/game/pilots/freezer/portraits/pilots_0922/portraits/freezer-crash.png",
+      "owner": "pilots/freezer",
+      "cell": null
+    },
+    {
+      "key": "comm_freezer_alert",
+      "root": "comm_freezer_alert",
+      "path": "assets/game/pilots/freezer/portraits/pilots_0922/comm/comm_freezer_crash.png",
+      "owner": "pilots/freezer",
+      "cell": null
+    },
+    {
+      "key": "cinpose_freezer_1",
+      "root": "cinpose_freezer_1",
+      "path": "assets/game/pilots/freezer/body_frames/cinematic_characters/freezer/poses/01_front_neutral.png",
+      "owner": "pilots/freezer",
+      "cell": null
+    },
+    {
+      "key": "cinpose_freezer_2",
+      "root": "cinpose_freezer_2",
+      "path": "assets/game/pilots/freezer/body_frames/cinematic_characters/freezer/poses/02_front_left_3q.png",
+      "owner": "pilots/freezer",
+      "cell": null
+    },
+    {
+      "key": "cinpose_freezer_3",
+      "root": "cinpose_freezer_3",
+      "path": "assets/game/pilots/freezer/body_frames/cinematic_characters/freezer/poses/03_front_right_3q.png",
+      "owner": "pilots/freezer",
+      "cell": null
+    },
+    {
+      "key": "cinpose_freezer_4",
+      "root": "cinpose_freezer_4",
+      "path": "assets/game/pilots/freezer/body_frames/cinematic_characters/freezer/poses/04_back_neutral.png",
+      "owner": "pilots/freezer",
+      "cell": null
+    },
+    {
+      "key": "cinpose_freezer_5",
+      "root": "cinpose_freezer_5",
+      "path": "assets/game/pilots/freezer/body_frames/cinematic_characters/freezer/poses/05_back_left_3q.png",
+      "owner": "pilots/freezer",
+      "cell": null
+    },
+    {
+      "key": "cinpose_freezer_6",
+      "root": "cinpose_freezer_6",
+      "path": "assets/game/pilots/freezer/body_frames/cinematic_characters/freezer/poses/06_back_right_3q.png",
+      "owner": "pilots/freezer",
+      "cell": null
+    },
+    {
+      "key": "comm_freezer_idle",
+      "root": "comm_freezer_idle",
+      "path": "assets/game/pilots/freezer/portraits/pilots_0922/comm/comm_freezer_idle.png",
+      "owner": "pilots/freezer",
+      "cell": null
+    },
+    {
+      "key": "comm_freezer_happy",
+      "root": "comm_freezer_happy",
+      "path": "assets/game/pilots/freezer/portraits/pilots_0922/comm/comm_freezer_happy.png",
+      "owner": "pilots/freezer",
+      "cell": null
+    },
+    {
+      "key": "comm_freezer_laugh",
+      "root": "comm_freezer_laugh",
+      "path": "assets/game/pilots/freezer/portraits/pilots_0922/comm/comm_freezer_laugh.png",
+      "owner": "pilots/freezer",
+      "cell": null
+    },
+    {
+      "key": "comm_freezer_anger",
+      "root": "comm_freezer_anger",
+      "path": "assets/game/pilots/freezer/portraits/pilots_0922/comm/comm_freezer_anger.png",
+      "owner": "pilots/freezer",
+      "cell": null
+    },
+    {
+      "key": "comm_freezer_sad",
+      "root": "comm_freezer_sad",
+      "path": "assets/game/pilots/freezer/portraits/pilots_0922/comm/comm_freezer_sad.png",
+      "owner": "pilots/freezer",
+      "cell": null
+    },
+    {
+      "key": "comm_freezer_crash",
+      "root": "comm_freezer_crash",
+      "path": "assets/game/pilots/freezer/portraits/pilots_0922/comm/comm_freezer_crash.png",
+      "owner": "pilots/freezer",
+      "cell": null
+    },
+    {
+      "key": "comm_freezer_victory",
+      "root": "comm_freezer_victory",
+      "path": "assets/game/pilots/freezer/portraits/pilots_0922/comm/comm_freezer_victory.png",
+      "owner": "pilots/freezer",
+      "cell": null
+    },
+    {
+      "key": "comm_freezer_talk-closed",
+      "root": "comm_freezer_talk-closed",
+      "path": "assets/game/pilots/freezer/portraits/pilots_0922/comm/comm_freezer_talk-closed.png",
+      "owner": "pilots/freezer",
+      "cell": null
+    },
+    {
+      "key": "comm_freezer_talk-small",
+      "root": "comm_freezer_talk-small",
+      "path": "assets/game/pilots/freezer/portraits/pilots_0922/comm/comm_freezer_talk-small.png",
+      "owner": "pilots/freezer",
+      "cell": null
+    },
+    {
+      "key": "comm_freezer_talk-medium",
+      "root": "comm_freezer_talk-medium",
+      "path": "assets/game/pilots/freezer/portraits/pilots_0922/comm/comm_freezer_talk-medium.png",
+      "owner": "pilots/freezer",
+      "cell": null
+    },
+    {
+      "key": "comm_freezer_talk-wide",
+      "root": "comm_freezer_talk-wide",
+      "path": "assets/game/pilots/freezer/portraits/pilots_0922/comm/comm_freezer_talk-wide.png",
+      "owner": "pilots/freezer",
+      "cell": null
+    },
+    {
+      "key": "comm_freezer_talk-o",
+      "root": "comm_freezer_talk-o",
+      "path": "assets/game/pilots/freezer/portraits/pilots_0922/comm/comm_freezer_talk-o.png",
+      "owner": "pilots/freezer",
+      "cell": null
+    },
+    {
+      "key": "pav_freezer",
+      "root": "pav_freezer",
+      "path": "assets/game/pilots/freezer/portraits/pilots_0922/portraits/freezer-idle.png",
+      "owner": "pilots/freezer",
+      "cell": null
+    },
+    {
+      "key": "freezer_body_0",
+      "root": "freezer_body_0",
+      "path": "assets/game/pilots/freezer/body_frames/pilot_bodies/freezer_body_0.png",
+      "owner": "pilots/freezer",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_freezer_idle",
+      "root": "pp5_raw_freezer_idle",
+      "path": "assets/game/pilots/freezer/portraits/pilots_0922/portraits/freezer-idle.png",
+      "owner": "pilots/freezer",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_freezer_happy",
+      "root": "pp5_raw_freezer_happy",
+      "path": "assets/game/pilots/freezer/portraits/pilots_0922/portraits/freezer-happy.png",
+      "owner": "pilots/freezer",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_freezer_laugh",
+      "root": "pp5_raw_freezer_laugh",
+      "path": "assets/game/pilots/freezer/portraits/pilots_0922/portraits/freezer-laugh.png",
+      "owner": "pilots/freezer",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_freezer_anger",
+      "root": "pp5_raw_freezer_anger",
+      "path": "assets/game/pilots/freezer/portraits/pilots_0922/portraits/freezer-anger.png",
+      "owner": "pilots/freezer",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_freezer_sad",
+      "root": "pp5_raw_freezer_sad",
+      "path": "assets/game/pilots/freezer/portraits/pilots_0922/portraits/freezer-sad.png",
+      "owner": "pilots/freezer",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_freezer_crash",
+      "root": "pp5_raw_freezer_crash",
+      "path": "assets/game/pilots/freezer/portraits/pilots_0922/portraits/freezer-crash.png",
+      "owner": "pilots/freezer",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_freezer_victory",
+      "root": "pp5_raw_freezer_victory",
+      "path": "assets/game/pilots/freezer/portraits/pilots_0922/portraits/freezer-victory.png",
+      "owner": "pilots/freezer",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_freezer_talk-closed",
+      "root": "pp5_raw_freezer_talk-closed",
+      "path": "assets/game/pilots/freezer/portraits/pilots_0922/portraits/freezer-talk-closed.png",
+      "owner": "pilots/freezer",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_freezer_talk-small",
+      "root": "pp5_raw_freezer_talk-small",
+      "path": "assets/game/pilots/freezer/portraits/pilots_0922/portraits/freezer-talk-small.png",
+      "owner": "pilots/freezer",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_freezer_talk-medium",
+      "root": "pp5_raw_freezer_talk-medium",
+      "path": "assets/game/pilots/freezer/portraits/pilots_0922/portraits/freezer-talk-medium.png",
+      "owner": "pilots/freezer",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_freezer_talk-wide",
+      "root": "pp5_raw_freezer_talk-wide",
+      "path": "assets/game/pilots/freezer/portraits/pilots_0922/portraits/freezer-talk-wide.png",
+      "owner": "pilots/freezer",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_freezer_talk-o",
+      "root": "pp5_raw_freezer_talk-o",
+      "path": "assets/game/pilots/freezer/portraits/pilots_0922/portraits/freezer-talk-o.png",
+      "owner": "pilots/freezer",
+      "cell": null
+    }
+  ],
+  "files": [
+    {
+      "path": "assets/game/pilots/freezer/abilities/frames_0.png",
+      "owner": "pilots/freezer",
+      "bytes": 71036,
+      "role": "registered runtime asset",
+      "width": 760,
+      "height": 200
+    },
+    {
+      "path": "assets/game/pilots/freezer/body_frames/cinematic_characters/freezer/poses/01_front_neutral.png",
+      "owner": "pilots/freezer",
+      "bytes": 277918,
+      "role": "registered runtime asset",
+      "width": 335,
+      "height": 724
+    },
+    {
+      "path": "assets/game/pilots/freezer/body_frames/cinematic_characters/freezer/poses/02_front_left_3q.png",
+      "owner": "pilots/freezer",
+      "bytes": 264889,
+      "role": "registered runtime asset",
+      "width": 324,
+      "height": 722
+    },
+    {
+      "path": "assets/game/pilots/freezer/body_frames/cinematic_characters/freezer/poses/03_front_right_3q.png",
+      "owner": "pilots/freezer",
+      "bytes": 253081,
+      "role": "registered runtime asset",
+      "width": 310,
+      "height": 724
+    },
+    {
+      "path": "assets/game/pilots/freezer/body_frames/cinematic_characters/freezer/poses/04_back_neutral.png",
+      "owner": "pilots/freezer",
+      "bytes": 258627,
+      "role": "registered runtime asset",
+      "width": 322,
+      "height": 719
+    },
+    {
+      "path": "assets/game/pilots/freezer/body_frames/cinematic_characters/freezer/poses/05_back_left_3q.png",
+      "owner": "pilots/freezer",
+      "bytes": 237826,
+      "role": "registered runtime asset",
+      "width": 296,
+      "height": 712
+    },
+    {
+      "path": "assets/game/pilots/freezer/body_frames/cinematic_characters/freezer/poses/06_back_right_3q.png",
+      "owner": "pilots/freezer",
+      "bytes": 232068,
+      "role": "registered runtime asset",
+      "width": 324,
+      "height": 712
+    },
+    {
+      "path": "assets/game/pilots/freezer/body_frames/frames_0.png",
+      "owner": "pilots/freezer",
+      "bytes": 385446,
+      "role": "registered runtime asset",
+      "width": 1564,
+      "height": 328
+    },
+    {
+      "path": "assets/game/pilots/freezer/body_frames/pilot_bodies/freezer_body_0.png",
+      "owner": "pilots/freezer",
+      "bytes": 55844,
+      "role": "registered runtime asset",
+      "width": 113,
+      "height": 273
+    },
+    {
+      "path": "assets/game/pilots/freezer/portraits/frames_0.png",
+      "owner": "pilots/freezer",
+      "bytes": 2561923,
+      "role": "registered runtime asset",
+      "width": 2694,
+      "height": 726
+    },
+    {
+      "path": "assets/game/pilots/freezer/portraits/pilots_0922/comm/comm_freezer_anger.png",
+      "owner": "pilots/freezer",
+      "bytes": 42635,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/freezer/portraits/pilots_0922/comm/comm_freezer_crash.png",
+      "owner": "pilots/freezer",
+      "bytes": 42961,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/freezer/portraits/pilots_0922/comm/comm_freezer_happy.png",
+      "owner": "pilots/freezer",
+      "bytes": 42459,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/freezer/portraits/pilots_0922/comm/comm_freezer_idle.png",
+      "owner": "pilots/freezer",
+      "bytes": 42555,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/freezer/portraits/pilots_0922/comm/comm_freezer_laugh.png",
+      "owner": "pilots/freezer",
+      "bytes": 42779,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/freezer/portraits/pilots_0922/comm/comm_freezer_sad.png",
+      "owner": "pilots/freezer",
+      "bytes": 42630,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/freezer/portraits/pilots_0922/comm/comm_freezer_talk-closed.png",
+      "owner": "pilots/freezer",
+      "bytes": 42555,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/freezer/portraits/pilots_0922/comm/comm_freezer_talk-medium.png",
+      "owner": "pilots/freezer",
+      "bytes": 42654,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/freezer/portraits/pilots_0922/comm/comm_freezer_talk-o.png",
+      "owner": "pilots/freezer",
+      "bytes": 42609,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/freezer/portraits/pilots_0922/comm/comm_freezer_talk-small.png",
+      "owner": "pilots/freezer",
+      "bytes": 42561,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/freezer/portraits/pilots_0922/comm/comm_freezer_talk-wide.png",
+      "owner": "pilots/freezer",
+      "bytes": 42571,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/freezer/portraits/pilots_0922/comm/comm_freezer_victory.png",
+      "owner": "pilots/freezer",
+      "bytes": 42897,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/freezer/portraits/pilots_0922/portraits/freezer-anger.png",
+      "owner": "pilots/freezer",
+      "bytes": 142979,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/freezer/portraits/pilots_0922/portraits/freezer-crash.png",
+      "owner": "pilots/freezer",
+      "bytes": 144144,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/freezer/portraits/pilots_0922/portraits/freezer-happy.png",
+      "owner": "pilots/freezer",
+      "bytes": 142484,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/freezer/portraits/pilots_0922/portraits/freezer-idle.png",
+      "owner": "pilots/freezer",
+      "bytes": 142230,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/freezer/portraits/pilots_0922/portraits/freezer-laugh.png",
+      "owner": "pilots/freezer",
+      "bytes": 143058,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/freezer/portraits/pilots_0922/portraits/freezer-sad.png",
+      "owner": "pilots/freezer",
+      "bytes": 143061,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/freezer/portraits/pilots_0922/portraits/freezer-talk-closed.png",
+      "owner": "pilots/freezer",
+      "bytes": 142230,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/freezer/portraits/pilots_0922/portraits/freezer-talk-medium.png",
+      "owner": "pilots/freezer",
+      "bytes": 142848,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/freezer/portraits/pilots_0922/portraits/freezer-talk-o.png",
+      "owner": "pilots/freezer",
+      "bytes": 142626,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/freezer/portraits/pilots_0922/portraits/freezer-talk-small.png",
+      "owner": "pilots/freezer",
+      "bytes": 142646,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/freezer/portraits/pilots_0922/portraits/freezer-talk-wide.png",
+      "owner": "pilots/freezer",
+      "bytes": 142578,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/freezer/portraits/pilots_0922/portraits/freezer-victory.png",
+      "owner": "pilots/freezer",
+      "bytes": 143744,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/freezer/ship_frames/ship_freezer.png",
+      "owner": "pilots/freezer",
+      "bytes": 968414,
+      "role": "registered runtime asset",
+      "width": 1024,
+      "height": 815
+    }
+  ],
+  "audio": {
+    "sfx": {},
+    "music": {}
+  },
+  "frameFolders": [
+    "portraits",
+    "body_frames",
+    "ship_frames",
+    "abilities"
+  ],
+  "furyShip": "Common hull in shared/ships; this pilot applies a runtime palette."
+}

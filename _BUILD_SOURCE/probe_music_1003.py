@@ -13,7 +13,7 @@ with sync_playwright() as pw:
  p.goto('http://127.0.0.1:8794/index.html');p.wait_for_function('()=>window.__bofFrames>3',timeout=120000)
  p.evaluate(sh.TRAP_RAF);p.wait_for_timeout(50);p.mouse.click(500,500)
  p.evaluate('()=>{window.musicCalls1003=[];const start=Audio.startMusic;Audio.startMusic=function(k){musicCalls1003.push(k);return start.apply(this,arguments);};}')
- report['files']=p.evaluate('''async()=>{const c=await(await fetch('assets/game/music/catalog.json')).json();for(const t of c.tracks){const r=await fetch(t.file,{method:'HEAD'});if(!r.ok)throw Error(t.file);}return c.tracks.length;}''')
+ report['files']=p.evaluate('''async()=>{const c=await(await fetch('assets/game/shared/audio/music/catalog.json')).json();for(const t of c.tracks){const r=await fetch(t.file,{method:'HEAD'});if(!r.ok)throw Error(t.file);}return c.tracks.length;}''')
  for stage in [4,6,7,9]:
   p.evaluate(SETUP,{'stage':stage});p.evaluate('()=>{warnKind="sub";warnT=.001;updatePlay(.01);}')
   p.wait_for_function('()=>Snd.cur&&Snd.cur.readyState>=2&&!Snd.cur.paused',timeout=30000)

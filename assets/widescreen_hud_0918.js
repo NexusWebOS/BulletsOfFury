@@ -1,6 +1,6 @@
 (function(){
 'use strict';
-const atlas=new Image();atlas.src='assets/game/ui/widescreen_0918/operations_panels.png';
+const atlas=new Image();atlas.src='assets/game/shared/ui/ui/widescreen_0918/operations_panels.png';
 const room=document.getElementById('room');if(!room)return;
 const left=document.createElement('canvas'),right=document.createElement('canvas'),clock=document.createElement('canvas');
 const mapTop=document.createElement('div');mapTop.id='wide-map-top';room.appendChild(mapTop);
@@ -11,8 +11,8 @@ const bgRect={cell:[27,190,126,211],panel:[1184,90,320,810],clock:[182,680,826,1
 const stageElements=['kinetic','fire','ice','lightning','chrome','dark','toxic','prism','water'];
 const portraits={},ranks={};
 const theaterSlot=new Image(),theaterUnknown=new Image();
-theaterSlot.src='assets/game/ui/widescreen_0930/theater_slot.png';
-theaterUnknown.src='assets/game/ui/widescreen_0930/theater_unknown.png';
+theaterSlot.src='assets/game/shared/ui/ui/widescreen_0930/theater_slot.png';
+theaterUnknown.src='assets/game/shared/ui/ui/widescreen_0930/theater_unknown.png';
 function img(cache,key,path){if(!cache[key]){const im=new Image();im.src=path;cache[key]=im;}return cache[key];}
 function pilotPortraitPath(key){return 'assets/game/pilots_0922/portraits/'+key+'-idle.png';}
 function plate(g,source,x,y,w,h){if(atlas.complete&&atlas.naturalWidth)g.drawImage(atlas,...source,x,y,w,h);}
@@ -51,7 +51,7 @@ function stageGrid(g,w,h,v,box){
   if(theaterSlot.complete&&theaterSlot.naturalWidth)g.drawImage(theaterSlot,x,y0,cellW,cellH);
   if(rank){
    if(symbol(g,'inf_'+stageElements[i],x+cellW/2,y0+cellH*.53,cellH*.44)===false)txt(g,String(st),x+cellW/2,y0+cellH*.56,20,'#adbdcc','center');
-   const file=String(rank).toLowerCase(),im=img(ranks,file,'assets/game/ui/debrief_0916/rankplate_'+file+'.png');
+   const file=String(rank).toLowerCase(),im=img(ranks,file,'assets/game/shared/ui/ui/debrief_0916/rankplate_'+file+'.png');
    if(im.complete&&im.naturalWidth)g.drawImage(im,x+cellW*.36,y0+1,cellW*.28,cellH*.19);
   }else if(theaterUnknown.complete&&theaterUnknown.naturalWidth){
    g.drawImage(theaterUnknown,x+cellW*.34,y0+cellH*.33,cellW*.32,cellH*.43);
@@ -99,7 +99,7 @@ function menuPanel(g,w,h,st){
  if(st==='pilot'){
   try{const p=PILOTS[pilotIndex]||PILOTS[0];key=p.key;name=p.name||p.key.toUpperCase();lines=['PILOT ROSTER','CALLSIGN  '+name.toUpperCase(),'FURY DIVISION','SHIP READY','CONFIRM PILOT','GOOD LUCK'];}catch(_){}
  }
- const port=key==='lizzie'&&typeof mapgLizzieCell==='function'?mapgLizzieCell('idle',false):img(portraits,key,key==='hub'?'assets/game/ui/logo_0916/bof_logo.png':pilotPortraitPath(key));
+ const port=key==='lizzie'&&typeof mapgLizzieCell==='function'?mapgLizzieCell('idle',false):img(portraits,key,key==='hub'?'assets/game/shared/ui/ui/logo_0916/bof_logo.png':pilotPortraitPath(key));
  if(port&&port.complete&&port.naturalWidth){const bx=x+panelW*.16,by=y+panelH*.075,bw=panelW*.68,bh=panelH*.24;
   const scale=Math.min(bw*.94/port.naturalWidth,bh*.94/port.naturalHeight),pw=port.naturalWidth*scale,ph=port.naturalHeight*scale;
   g.drawImage(port,bx+(bw-pw)/2,by+(bh-ph)/2,pw,ph);}

@@ -1,0 +1,895 @@
+{
+  "owner": "pilots/maverick",
+  "loading": {
+    "boot": "UI, fonts, idle portraits only",
+    "deployment": "selected pilot portraits, shared player weapons, required stage textures",
+    "transition": "release previous stage textures and derived caches; preserve explicitly queued copied-form dependencies",
+    "quality": "automatic native resolution on low-memory/low-core devices; reduce supersampling after sustained slow play frames"
+  },
+  "sharedDependencies": [
+    "shared/fonts",
+    "shared/ui",
+    "shared/player_weapons",
+    "shared/effects",
+    "shared/ships"
+  ],
+  "assets": [
+    {
+      "key": "aintro_maverick",
+      "root": "nca_layout_pilots_maverick_portraits_0",
+      "path": "assets/game/pilots/maverick/portraits/frames_0.png",
+      "owner": "pilots/maverick",
+      "cell": [
+        "layout_pilots_maverick_portraits_0",
+        1790,
+        4,
+        640,
+        480
+      ]
+    },
+    {
+      "key": "pcard_maverick",
+      "root": "nca_layout_pilots_maverick_portraits_0",
+      "path": "assets/game/pilots/maverick/portraits/frames_0.png",
+      "owner": "pilots/maverick",
+      "cell": [
+        "layout_pilots_maverick_portraits_0",
+        4,
+        4,
+        958,
+        718
+      ]
+    },
+    {
+      "key": "nsa_ship_maverick",
+      "root": "nsa_ship_maverick",
+      "path": "assets/game/pilots/maverick/ship_frames/ship_maverick.png",
+      "owner": "pilots/maverick",
+      "cell": null
+    },
+    {
+      "key": "card_maverick",
+      "root": "nca_layout_pilots_maverick_portraits_0",
+      "path": "assets/game/pilots/maverick/portraits/frames_0.png",
+      "owner": "pilots/maverick",
+      "cell": [
+        "layout_pilots_maverick_portraits_0",
+        966,
+        4,
+        820,
+        638
+      ]
+    },
+    {
+      "key": "pose_maverick_0",
+      "root": "nca_layout_pilots_maverick_body_frames_0",
+      "path": "assets/game/pilots/maverick/body_frames/frames_0.png",
+      "owner": "pilots/maverick",
+      "cell": [
+        "layout_pilots_maverick_body_frames_0",
+        4,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "key": "pose_maverick_1",
+      "root": "nca_layout_pilots_maverick_body_frames_0",
+      "path": "assets/game/pilots/maverick/body_frames/frames_0.png",
+      "owner": "pilots/maverick",
+      "cell": [
+        "layout_pilots_maverick_body_frames_0",
+        264,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "key": "pose_maverick_2",
+      "root": "nca_layout_pilots_maverick_body_frames_0",
+      "path": "assets/game/pilots/maverick/body_frames/frames_0.png",
+      "owner": "pilots/maverick",
+      "cell": [
+        "layout_pilots_maverick_body_frames_0",
+        524,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "key": "pose_maverick_3",
+      "root": "nca_layout_pilots_maverick_body_frames_0",
+      "path": "assets/game/pilots/maverick/body_frames/frames_0.png",
+      "owner": "pilots/maverick",
+      "cell": [
+        "layout_pilots_maverick_body_frames_0",
+        784,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "key": "pose_maverick_4",
+      "root": "nca_layout_pilots_maverick_body_frames_0",
+      "path": "assets/game/pilots/maverick/body_frames/frames_0.png",
+      "owner": "pilots/maverick",
+      "cell": [
+        "layout_pilots_maverick_body_frames_0",
+        1044,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "key": "pose_maverick_5",
+      "root": "nca_layout_pilots_maverick_body_frames_0",
+      "path": "assets/game/pilots/maverick/body_frames/frames_0.png",
+      "owner": "pilots/maverick",
+      "cell": [
+        "layout_pilots_maverick_body_frames_0",
+        1304,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "key": "nthp_maverick_2",
+      "root": "nca_layout_pilots_maverick_abilities_0",
+      "path": "assets/game/pilots/maverick/abilities/frames_0.png",
+      "owner": "pilots/maverick",
+      "cell": [
+        "layout_pilots_maverick_abilities_0",
+        4,
+        4,
+        170,
+        192
+      ]
+    },
+    {
+      "key": "nthp_maverick_1",
+      "root": "nca_layout_pilots_maverick_abilities_0",
+      "path": "assets/game/pilots/maverick/abilities/frames_0.png",
+      "owner": "pilots/maverick",
+      "cell": [
+        "layout_pilots_maverick_abilities_0",
+        178,
+        4,
+        136,
+        158
+      ]
+    },
+    {
+      "key": "nthp_maverick_3",
+      "root": "nca_layout_pilots_maverick_abilities_0",
+      "path": "assets/game/pilots/maverick/abilities/frames_0.png",
+      "owner": "pilots/maverick",
+      "cell": [
+        "layout_pilots_maverick_abilities_0",
+        318,
+        4,
+        81,
+        135
+      ]
+    },
+    {
+      "key": "nthp_maverick_0",
+      "root": "nca_layout_pilots_maverick_abilities_0",
+      "path": "assets/game/pilots/maverick/abilities/frames_0.png",
+      "owner": "pilots/maverick",
+      "cell": [
+        "layout_pilots_maverick_abilities_0",
+        403,
+        4,
+        81,
+        102
+      ]
+    },
+    {
+      "key": "pemb_maverick",
+      "root": "nca_layout_pilots_maverick_portraits_0",
+      "path": "assets/game/pilots/maverick/portraits/frames_0.png",
+      "owner": "pilots/maverick",
+      "cell": [
+        "layout_pilots_maverick_portraits_0",
+        2434,
+        4,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "sp_maverick_0",
+      "root": "nca_layout_pilots_maverick_abilities_0",
+      "path": "assets/game/pilots/maverick/abilities/frames_0.png",
+      "owner": "pilots/maverick",
+      "cell": [
+        "layout_pilots_maverick_abilities_0",
+        488,
+        4,
+        64,
+        57
+      ]
+    },
+    {
+      "key": "sp_maverick_1",
+      "root": "nca_layout_pilots_maverick_abilities_0",
+      "path": "assets/game/pilots/maverick/abilities/frames_0.png",
+      "owner": "pilots/maverick",
+      "cell": [
+        "layout_pilots_maverick_abilities_0",
+        556,
+        4,
+        64,
+        57
+      ]
+    },
+    {
+      "key": "sp_maverick_2",
+      "root": "nca_layout_pilots_maverick_abilities_0",
+      "path": "assets/game/pilots/maverick/abilities/frames_0.png",
+      "owner": "pilots/maverick",
+      "cell": [
+        "layout_pilots_maverick_abilities_0",
+        624,
+        4,
+        64,
+        57
+      ]
+    },
+    {
+      "key": "sp_maverick_3",
+      "root": "nca_layout_pilots_maverick_abilities_0",
+      "path": "assets/game/pilots/maverick/abilities/frames_0.png",
+      "owner": "pilots/maverick",
+      "cell": [
+        "layout_pilots_maverick_abilities_0",
+        692,
+        4,
+        64,
+        57
+      ]
+    },
+    {
+      "key": "nca_layout_pilots_maverick_abilities_0",
+      "root": "nca_layout_pilots_maverick_abilities_0",
+      "path": "assets/game/pilots/maverick/abilities/frames_0.png",
+      "owner": "pilots/maverick",
+      "cell": null
+    },
+    {
+      "key": "nca_layout_pilots_maverick_body_frames_0",
+      "root": "nca_layout_pilots_maverick_body_frames_0",
+      "path": "assets/game/pilots/maverick/body_frames/frames_0.png",
+      "owner": "pilots/maverick",
+      "cell": null
+    },
+    {
+      "key": "nca_layout_pilots_maverick_portraits_0",
+      "root": "nca_layout_pilots_maverick_portraits_0",
+      "path": "assets/game/pilots/maverick/portraits/frames_0.png",
+      "owner": "pilots/maverick",
+      "cell": null
+    },
+    {
+      "key": "port_cf_maverick_idle",
+      "root": "port_cf_maverick_idle",
+      "path": "assets/game/pilots/maverick/portraits/pilots_0922/portraits/maverick-idle.png",
+      "owner": "pilots/maverick",
+      "cell": null
+    },
+    {
+      "key": "port_cf_maverick_happy",
+      "root": "port_cf_maverick_happy",
+      "path": "assets/game/pilots/maverick/portraits/pilots_0922/portraits/maverick-happy.png",
+      "owner": "pilots/maverick",
+      "cell": null
+    },
+    {
+      "key": "port_cf_maverick_laugh",
+      "root": "port_cf_maverick_laugh",
+      "path": "assets/game/pilots/maverick/portraits/pilots_0922/portraits/maverick-laugh.png",
+      "owner": "pilots/maverick",
+      "cell": null
+    },
+    {
+      "key": "port_cf_maverick_anger",
+      "root": "port_cf_maverick_anger",
+      "path": "assets/game/pilots/maverick/portraits/pilots_0922/portraits/maverick-anger.png",
+      "owner": "pilots/maverick",
+      "cell": null
+    },
+    {
+      "key": "port_cf_maverick_sad",
+      "root": "port_cf_maverick_sad",
+      "path": "assets/game/pilots/maverick/portraits/pilots_0922/portraits/maverick-sad.png",
+      "owner": "pilots/maverick",
+      "cell": null
+    },
+    {
+      "key": "port_cf_maverick_crash",
+      "root": "port_cf_maverick_crash",
+      "path": "assets/game/pilots/maverick/portraits/pilots_0922/portraits/maverick-crash.png",
+      "owner": "pilots/maverick",
+      "cell": null
+    },
+    {
+      "key": "port_cf_maverick_victory",
+      "root": "port_cf_maverick_victory",
+      "path": "assets/game/pilots/maverick/portraits/pilots_0922/portraits/maverick-victory.png",
+      "owner": "pilots/maverick",
+      "cell": null
+    },
+    {
+      "key": "port_cf_maverick_talk-closed",
+      "root": "port_cf_maverick_talk-closed",
+      "path": "assets/game/pilots/maverick/portraits/pilots_0922/portraits/maverick-talk-closed.png",
+      "owner": "pilots/maverick",
+      "cell": null
+    },
+    {
+      "key": "port_cf_maverick_talk-small",
+      "root": "port_cf_maverick_talk-small",
+      "path": "assets/game/pilots/maverick/portraits/pilots_0922/portraits/maverick-talk-small.png",
+      "owner": "pilots/maverick",
+      "cell": null
+    },
+    {
+      "key": "port_cf_maverick_talk-medium",
+      "root": "port_cf_maverick_talk-medium",
+      "path": "assets/game/pilots/maverick/portraits/pilots_0922/portraits/maverick-talk-medium.png",
+      "owner": "pilots/maverick",
+      "cell": null
+    },
+    {
+      "key": "port_cf_maverick_talk-wide",
+      "root": "port_cf_maverick_talk-wide",
+      "path": "assets/game/pilots/maverick/portraits/pilots_0922/portraits/maverick-talk-wide.png",
+      "owner": "pilots/maverick",
+      "cell": null
+    },
+    {
+      "key": "port_cf_maverick_talk-o",
+      "root": "port_cf_maverick_talk-o",
+      "path": "assets/game/pilots/maverick/portraits/pilots_0922/portraits/maverick-talk-o.png",
+      "owner": "pilots/maverick",
+      "cell": null
+    },
+    {
+      "key": "port_cf_maverick_alert",
+      "root": "port_cf_maverick_alert",
+      "path": "assets/game/pilots/maverick/portraits/pilots_0922/portraits/maverick-crash.png",
+      "owner": "pilots/maverick",
+      "cell": null
+    },
+    {
+      "key": "comm_maverick_alert",
+      "root": "comm_maverick_alert",
+      "path": "assets/game/pilots/maverick/portraits/pilots_0922/comm/comm_maverick_crash.png",
+      "owner": "pilots/maverick",
+      "cell": null
+    },
+    {
+      "key": "cinpose_maverick_1",
+      "root": "cinpose_maverick_1",
+      "path": "assets/game/pilots/maverick/body_frames/cinematic_characters/maverick/poses/01_front_neutral.png",
+      "owner": "pilots/maverick",
+      "cell": null
+    },
+    {
+      "key": "cinpose_maverick_2",
+      "root": "cinpose_maverick_2",
+      "path": "assets/game/pilots/maverick/body_frames/cinematic_characters/maverick/poses/02_front_left_3q.png",
+      "owner": "pilots/maverick",
+      "cell": null
+    },
+    {
+      "key": "cinpose_maverick_3",
+      "root": "cinpose_maverick_3",
+      "path": "assets/game/pilots/maverick/body_frames/cinematic_characters/maverick/poses/03_front_right_3q.png",
+      "owner": "pilots/maverick",
+      "cell": null
+    },
+    {
+      "key": "cinpose_maverick_4",
+      "root": "cinpose_maverick_4",
+      "path": "assets/game/pilots/maverick/body_frames/cinematic_characters/maverick/poses/04_back_neutral.png",
+      "owner": "pilots/maverick",
+      "cell": null
+    },
+    {
+      "key": "cinpose_maverick_5",
+      "root": "cinpose_maverick_5",
+      "path": "assets/game/pilots/maverick/body_frames/cinematic_characters/maverick/poses/05_back_left_3q.png",
+      "owner": "pilots/maverick",
+      "cell": null
+    },
+    {
+      "key": "cinpose_maverick_6",
+      "root": "cinpose_maverick_6",
+      "path": "assets/game/pilots/maverick/body_frames/cinematic_characters/maverick/poses/06_back_right_3q.png",
+      "owner": "pilots/maverick",
+      "cell": null
+    },
+    {
+      "key": "comm_maverick_idle",
+      "root": "comm_maverick_idle",
+      "path": "assets/game/pilots/maverick/portraits/pilots_0922/comm/comm_maverick_idle.png",
+      "owner": "pilots/maverick",
+      "cell": null
+    },
+    {
+      "key": "comm_maverick_happy",
+      "root": "comm_maverick_happy",
+      "path": "assets/game/pilots/maverick/portraits/pilots_0922/comm/comm_maverick_happy.png",
+      "owner": "pilots/maverick",
+      "cell": null
+    },
+    {
+      "key": "comm_maverick_laugh",
+      "root": "comm_maverick_laugh",
+      "path": "assets/game/pilots/maverick/portraits/pilots_0922/comm/comm_maverick_laugh.png",
+      "owner": "pilots/maverick",
+      "cell": null
+    },
+    {
+      "key": "comm_maverick_anger",
+      "root": "comm_maverick_anger",
+      "path": "assets/game/pilots/maverick/portraits/pilots_0922/comm/comm_maverick_anger.png",
+      "owner": "pilots/maverick",
+      "cell": null
+    },
+    {
+      "key": "comm_maverick_sad",
+      "root": "comm_maverick_sad",
+      "path": "assets/game/pilots/maverick/portraits/pilots_0922/comm/comm_maverick_sad.png",
+      "owner": "pilots/maverick",
+      "cell": null
+    },
+    {
+      "key": "comm_maverick_crash",
+      "root": "comm_maverick_crash",
+      "path": "assets/game/pilots/maverick/portraits/pilots_0922/comm/comm_maverick_crash.png",
+      "owner": "pilots/maverick",
+      "cell": null
+    },
+    {
+      "key": "comm_maverick_victory",
+      "root": "comm_maverick_victory",
+      "path": "assets/game/pilots/maverick/portraits/pilots_0922/comm/comm_maverick_victory.png",
+      "owner": "pilots/maverick",
+      "cell": null
+    },
+    {
+      "key": "comm_maverick_talk-closed",
+      "root": "comm_maverick_talk-closed",
+      "path": "assets/game/pilots/maverick/portraits/pilots_0922/comm/comm_maverick_talk-closed.png",
+      "owner": "pilots/maverick",
+      "cell": null
+    },
+    {
+      "key": "comm_maverick_talk-small",
+      "root": "comm_maverick_talk-small",
+      "path": "assets/game/pilots/maverick/portraits/pilots_0922/comm/comm_maverick_talk-small.png",
+      "owner": "pilots/maverick",
+      "cell": null
+    },
+    {
+      "key": "comm_maverick_talk-medium",
+      "root": "comm_maverick_talk-medium",
+      "path": "assets/game/pilots/maverick/portraits/pilots_0922/comm/comm_maverick_talk-medium.png",
+      "owner": "pilots/maverick",
+      "cell": null
+    },
+    {
+      "key": "comm_maverick_talk-wide",
+      "root": "comm_maverick_talk-wide",
+      "path": "assets/game/pilots/maverick/portraits/pilots_0922/comm/comm_maverick_talk-wide.png",
+      "owner": "pilots/maverick",
+      "cell": null
+    },
+    {
+      "key": "comm_maverick_talk-o",
+      "root": "comm_maverick_talk-o",
+      "path": "assets/game/pilots/maverick/portraits/pilots_0922/comm/comm_maverick_talk-o.png",
+      "owner": "pilots/maverick",
+      "cell": null
+    },
+    {
+      "key": "pav_maverick",
+      "root": "pav_maverick",
+      "path": "assets/game/pilots/maverick/portraits/pilots_0922/portraits/maverick-idle.png",
+      "owner": "pilots/maverick",
+      "cell": null
+    },
+    {
+      "key": "maverick_body_0",
+      "root": "maverick_body_0",
+      "path": "assets/game/pilots/maverick/body_frames/pilot_bodies/maverick_body_0.png",
+      "owner": "pilots/maverick",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_maverick_idle",
+      "root": "pp5_raw_maverick_idle",
+      "path": "assets/game/pilots/maverick/portraits/pilots_0922/portraits/maverick-idle.png",
+      "owner": "pilots/maverick",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_maverick_happy",
+      "root": "pp5_raw_maverick_happy",
+      "path": "assets/game/pilots/maverick/portraits/pilots_0922/portraits/maverick-happy.png",
+      "owner": "pilots/maverick",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_maverick_laugh",
+      "root": "pp5_raw_maverick_laugh",
+      "path": "assets/game/pilots/maverick/portraits/pilots_0922/portraits/maverick-laugh.png",
+      "owner": "pilots/maverick",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_maverick_anger",
+      "root": "pp5_raw_maverick_anger",
+      "path": "assets/game/pilots/maverick/portraits/pilots_0922/portraits/maverick-anger.png",
+      "owner": "pilots/maverick",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_maverick_sad",
+      "root": "pp5_raw_maverick_sad",
+      "path": "assets/game/pilots/maverick/portraits/pilots_0922/portraits/maverick-sad.png",
+      "owner": "pilots/maverick",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_maverick_crash",
+      "root": "pp5_raw_maverick_crash",
+      "path": "assets/game/pilots/maverick/portraits/pilots_0922/portraits/maverick-crash.png",
+      "owner": "pilots/maverick",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_maverick_victory",
+      "root": "pp5_raw_maverick_victory",
+      "path": "assets/game/pilots/maverick/portraits/pilots_0922/portraits/maverick-victory.png",
+      "owner": "pilots/maverick",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_maverick_talk-closed",
+      "root": "pp5_raw_maverick_talk-closed",
+      "path": "assets/game/pilots/maverick/portraits/pilots_0922/portraits/maverick-talk-closed.png",
+      "owner": "pilots/maverick",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_maverick_talk-small",
+      "root": "pp5_raw_maverick_talk-small",
+      "path": "assets/game/pilots/maverick/portraits/pilots_0922/portraits/maverick-talk-small.png",
+      "owner": "pilots/maverick",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_maverick_talk-medium",
+      "root": "pp5_raw_maverick_talk-medium",
+      "path": "assets/game/pilots/maverick/portraits/pilots_0922/portraits/maverick-talk-medium.png",
+      "owner": "pilots/maverick",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_maverick_talk-wide",
+      "root": "pp5_raw_maverick_talk-wide",
+      "path": "assets/game/pilots/maverick/portraits/pilots_0922/portraits/maverick-talk-wide.png",
+      "owner": "pilots/maverick",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_maverick_talk-o",
+      "root": "pp5_raw_maverick_talk-o",
+      "path": "assets/game/pilots/maverick/portraits/pilots_0922/portraits/maverick-talk-o.png",
+      "owner": "pilots/maverick",
+      "cell": null
+    }
+  ],
+  "files": [
+    {
+      "path": "assets/game/pilots/maverick/abilities/frames_0.png",
+      "owner": "pilots/maverick",
+      "bytes": 83922,
+      "role": "registered runtime asset",
+      "width": 760,
+      "height": 200
+    },
+    {
+      "path": "assets/game/pilots/maverick/body_frames/cinematic_characters/maverick/poses/01_front_neutral.png",
+      "owner": "pilots/maverick",
+      "bytes": 217389,
+      "role": "registered runtime asset",
+      "width": 301,
+      "height": 670
+    },
+    {
+      "path": "assets/game/pilots/maverick/body_frames/cinematic_characters/maverick/poses/02_front_left_3q.png",
+      "owner": "pilots/maverick",
+      "bytes": 213355,
+      "role": "registered runtime asset",
+      "width": 328,
+      "height": 674
+    },
+    {
+      "path": "assets/game/pilots/maverick/body_frames/cinematic_characters/maverick/poses/03_front_right_3q.png",
+      "owner": "pilots/maverick",
+      "bytes": 196148,
+      "role": "registered runtime asset",
+      "width": 348,
+      "height": 655
+    },
+    {
+      "path": "assets/game/pilots/maverick/body_frames/cinematic_characters/maverick/poses/04_back_neutral.png",
+      "owner": "pilots/maverick",
+      "bytes": 205342,
+      "role": "registered runtime asset",
+      "width": 301,
+      "height": 670
+    },
+    {
+      "path": "assets/game/pilots/maverick/body_frames/cinematic_characters/maverick/poses/05_back_left_3q.png",
+      "owner": "pilots/maverick",
+      "bytes": 186746,
+      "role": "registered runtime asset",
+      "width": 285,
+      "height": 665
+    },
+    {
+      "path": "assets/game/pilots/maverick/body_frames/cinematic_characters/maverick/poses/06_back_right_3q.png",
+      "owner": "pilots/maverick",
+      "bytes": 200345,
+      "role": "registered runtime asset",
+      "width": 365,
+      "height": 667
+    },
+    {
+      "path": "assets/game/pilots/maverick/body_frames/frames_0.png",
+      "owner": "pilots/maverick",
+      "bytes": 337782,
+      "role": "registered runtime asset",
+      "width": 1564,
+      "height": 328
+    },
+    {
+      "path": "assets/game/pilots/maverick/body_frames/pilot_bodies/maverick_body_0.png",
+      "owner": "pilots/maverick",
+      "bytes": 54006,
+      "role": "registered runtime asset",
+      "width": 109,
+      "height": 273
+    },
+    {
+      "path": "assets/game/pilots/maverick/portraits/frames_0.png",
+      "owner": "pilots/maverick",
+      "bytes": 2281136,
+      "role": "registered runtime asset",
+      "width": 2694,
+      "height": 726
+    },
+    {
+      "path": "assets/game/pilots/maverick/portraits/pilots_0922/comm/comm_maverick_anger.png",
+      "owner": "pilots/maverick",
+      "bytes": 38511,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/maverick/portraits/pilots_0922/comm/comm_maverick_crash.png",
+      "owner": "pilots/maverick",
+      "bytes": 38869,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/maverick/portraits/pilots_0922/comm/comm_maverick_happy.png",
+      "owner": "pilots/maverick",
+      "bytes": 38317,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/maverick/portraits/pilots_0922/comm/comm_maverick_idle.png",
+      "owner": "pilots/maverick",
+      "bytes": 38366,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/maverick/portraits/pilots_0922/comm/comm_maverick_laugh.png",
+      "owner": "pilots/maverick",
+      "bytes": 38459,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/maverick/portraits/pilots_0922/comm/comm_maverick_sad.png",
+      "owner": "pilots/maverick",
+      "bytes": 38675,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/maverick/portraits/pilots_0922/comm/comm_maverick_talk-closed.png",
+      "owner": "pilots/maverick",
+      "bytes": 38366,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/maverick/portraits/pilots_0922/comm/comm_maverick_talk-medium.png",
+      "owner": "pilots/maverick",
+      "bytes": 38440,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/maverick/portraits/pilots_0922/comm/comm_maverick_talk-o.png",
+      "owner": "pilots/maverick",
+      "bytes": 38396,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/maverick/portraits/pilots_0922/comm/comm_maverick_talk-small.png",
+      "owner": "pilots/maverick",
+      "bytes": 38407,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/maverick/portraits/pilots_0922/comm/comm_maverick_talk-wide.png",
+      "owner": "pilots/maverick",
+      "bytes": 38400,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/maverick/portraits/pilots_0922/comm/comm_maverick_victory.png",
+      "owner": "pilots/maverick",
+      "bytes": 38653,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/maverick/portraits/pilots_0922/portraits/maverick-anger.png",
+      "owner": "pilots/maverick",
+      "bytes": 129327,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/maverick/portraits/pilots_0922/portraits/maverick-crash.png",
+      "owner": "pilots/maverick",
+      "bytes": 130014,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/maverick/portraits/pilots_0922/portraits/maverick-happy.png",
+      "owner": "pilots/maverick",
+      "bytes": 128829,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/maverick/portraits/pilots_0922/portraits/maverick-idle.png",
+      "owner": "pilots/maverick",
+      "bytes": 128872,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/maverick/portraits/pilots_0922/portraits/maverick-laugh.png",
+      "owner": "pilots/maverick",
+      "bytes": 129205,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/maverick/portraits/pilots_0922/portraits/maverick-sad.png",
+      "owner": "pilots/maverick",
+      "bytes": 129260,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/maverick/portraits/pilots_0922/portraits/maverick-talk-closed.png",
+      "owner": "pilots/maverick",
+      "bytes": 128872,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/maverick/portraits/pilots_0922/portraits/maverick-talk-medium.png",
+      "owner": "pilots/maverick",
+      "bytes": 129097,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/maverick/portraits/pilots_0922/portraits/maverick-talk-o.png",
+      "owner": "pilots/maverick",
+      "bytes": 128426,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/maverick/portraits/pilots_0922/portraits/maverick-talk-small.png",
+      "owner": "pilots/maverick",
+      "bytes": 128667,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/maverick/portraits/pilots_0922/portraits/maverick-talk-wide.png",
+      "owner": "pilots/maverick",
+      "bytes": 128876,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/maverick/portraits/pilots_0922/portraits/maverick-victory.png",
+      "owner": "pilots/maverick",
+      "bytes": 129257,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/maverick/ship_frames/ship_maverick.png",
+      "owner": "pilots/maverick",
+      "bytes": 877701,
+      "role": "registered runtime asset",
+      "width": 1024,
+      "height": 884
+    }
+  ],
+  "audio": {
+    "sfx": {},
+    "music": {}
+  },
+  "frameFolders": [
+    "portraits",
+    "body_frames",
+    "ship_frames",
+    "abilities"
+  ],
+  "furyShip": "Common hull in shared/ships; this pilot applies a runtime palette."
+}

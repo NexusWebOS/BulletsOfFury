@@ -3,7 +3,7 @@ from pathlib import Path
 import hashlib,json
 from PIL import Image
 R=Path(__file__).resolve().parents[1]
-p=R/'assets/game/rebel_gang_1004/decker_effects.png'
+p=R/'assets/game/levels/stage_06/boss/rebel_gang_1004/decker_effects.png'
 im=Image.open(p)
 assert im.mode=='RGBA' and im.size==(1536,1024)
 assert im.getchannel('A').getextrema()[0]==0

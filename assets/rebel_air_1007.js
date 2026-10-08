@@ -6,7 +6,7 @@ const RA7_BASE={kind:ra4AttackKind,attack:rg4Attack,tick:rg4AttackTick,gun:ra4Gu
  warning:rg4Warning,ship:fr27RebelDrawShip,rebelTick:rebelSquadTick,rebelDraw:rebelSquadDraw,
  damage:rebelSquadDamage,clear:rg4Clear,begin:beginStage,ace:whvAceTick,aceDraw:whvDrawAce,
  aceDeath:whvAceDeathTick,targets:retinaBossTargets,init:rg4Init,playerHit:playerHit,demoTick:rs1004DemoTick,demoDraw:rs1004DemoDraw};
-XART._src[RA7.sheet]='assets/game/rebel_air_1007/rebel_air.png';
+XART._src[RA7.sheet]='assets/game/levels/stage_06/boss/rebel_air_1007/rebel_air.png';
 function ra7Log(event,data={}){RA7.events.push({event,...data});if(RA7.events.length>180)RA7.events.shift();}
 function ra7Cell(n,x,y,w,h=w,angle=0,alpha=1){if(!XART.rdy(RA7.sheet))return false;
  const im=XART.get(RA7.sheet),cw=im.width/4,ch=im.height/3;ctx.save();ctx.translate(x,y);ctx.rotate(angle);ctx.imageSmoothingEnabled=false;ctx.globalAlpha*=alpha;

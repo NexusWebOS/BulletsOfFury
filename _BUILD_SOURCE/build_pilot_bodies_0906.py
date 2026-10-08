@@ -32,7 +32,7 @@ from PIL import Image
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 GEN = os.path.join(ROOT, '_BUILD_SOURCE/sc_out_0906')
 OUT = os.path.join(ROOT, 'assets/game/pilot_bodies')
-YURI = os.path.join(ROOT, 'assets/game/yuri_v2/yuri_body_0.png')
+YURI = os.path.join(ROOT, 'assets/game/pilots/yuri/portraits/yuri_v2/yuri_body_0.png')
 PILOTS = ['axel', 'decker', 'maverick', 'freezer', 'juggernaut', 'lizzie', 'falva', 'cole']
 
 

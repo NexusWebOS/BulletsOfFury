@@ -15,7 +15,7 @@ validation={'date':'2026-09-13','suite':{'passed':sum(s.startswith('  ok  ')for 
     'baselineFailureNamesNotPresent':gone,'failureNames':failure_lines},
     'browser':probe,'reviewedSourceCommit':'f936f106d85d935aaf518fbac5ab34756bc26724',
     'files':[{'path':str(p.relative_to(root)).replace('\\','/'),'sha256':hashlib.sha256(p.read_bytes()).hexdigest()}
-        for p in [root/'assets/game.js',root/'_BUILD_SOURCE/test_fl.js',root/'assets/game/bosses/tempest/tlvb_hull.png',root/'assets/game/bosses/tempest/tlvb_hull_damaged.png']],
+        for p in [root/'assets/game.js',root/'_BUILD_SOURCE/test_fl.js',root/'assets/game/levels/stage_06/miniboss/bosses/tempest/tlvb_hull.png',root/'assets/game/levels/stage_06/miniboss/bosses/tempest/tlvb_hull_damaged.png']],
     'video':{'path':'_shots/tempest_duo_0913/BulletsOfFury_Stage6_TempestBrothers.mp4',
         'fps':30,'source':'real index.html renderer through Boss Mode warning/spawn route',
         'driver':'invincible pilot with real input and accelerated native hitSubBoss health gates',

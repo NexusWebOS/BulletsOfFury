@@ -7,10 +7,10 @@
 the ship its based off of as reference."
 
 Inputs (never this script's own output):
-  assets/game/mission_repair_0929/bluejets.png   the authored blue stealth jet, frames east/west/south
+  assets/game/shared/combat/mission_repair_0929/bluejets.png   the authored blue stealth jet, frames east/west/south
   _BUILD_SOURCE/stealth_orange_spritecook_1002.png  SpriteCook edit of the blue jet's south frame
                                                     (orange paint, wing gatlings, chin gun)
-Outputs assets/game/stealth_1002/{red,green,orange}.png - 4 cells of 128x128: east, west, south, north.
+Outputs assets/game/levels/stage_06/enemies/stealth_1002/{red,green,orange}.png - 4 cells of 128x128: east, west, south, north.
 
 RED/GREEN are a hue ROTATION of the blue paint only (palette rule: hue moves, saturation and value -
 i.e. the shading - stay); the silver metal, black outlines and orange ordnance accents are untouched.
@@ -20,7 +20,7 @@ NORTH (nose up) is the south cell turned 180 degrees and the orange east/west ar
 import colorsys, os
 from PIL import Image
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
-SRC = os.path.join(ROOT, 'assets/game/mission_repair_0929/bluejets.png')
+SRC = os.path.join(ROOT, 'assets/game/shared/combat/mission_repair_0929/bluejets.png')
 ORANGE = os.path.join(ROOT, '_BUILD_SOURCE/stealth_orange_spritecook_1002.png')
 OUT = os.path.join(ROOT, 'assets/game/stealth_1002')
 TARGET = {'red': 0.995, 'green': 0.33}

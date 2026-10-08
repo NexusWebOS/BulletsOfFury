@@ -132,7 +132,7 @@ hammerState=function(b,state){
    the two at random. If both seats are Cole and Decker: Axel when the lead pilot is a man, the other
    woman (Lizzie <-> Falva) when she is a woman. Never a pilot who is in the air.
    --------------------------------------------------------------------------------------------- */
-{const root='assets/game/dispatch_1002/';
+{const root='assets/game/shared/combat/dispatch_1002/';
  XART._src.fb2_hammer_avatar=root+'hammer_avatar.png';
  for(const p of ['cole','decker','axel','lizzie','falva'])XART._src['fb2_dispatch_'+p]=root+'dispatch_'+p+'.png';}
 const FB2_FEMALE=new Set(['lizzie','falva']);
@@ -251,7 +251,7 @@ drawWorld=function(dt){const r=FB2_WORLD.apply(this,arguments);if(fb2IntroActive
    turrets ... when theyre coming left to right, we should see arrows letting us know its coming left,
    its coming right, its coming down etc with our asterisk and warning box system."
 
-   Art: assets/game/stealth_1002/{red,green,orange}.png (cells east/west/south/north), built by
+   Art: assets/game/levels/stage_06/enemies/stealth_1002/{red,green,orange}.png (cells east/west/south/north), built by
    _BUILD_SOURCE/stealth_jets_1002.py - red/green are hue rotations of the authored blue jet's paint,
    orange is a SpriteCook edit of the blue jet (wing gatlings + chin gun). Baked offline: the 1001 runtime
    swap read pixels with getImageData, which a file:// page refuses.
@@ -269,7 +269,7 @@ drawWorld=function(dt){const r=FB2_WORLD.apply(this,arguments);if(fb2IntroActive
    is GREEN, a Furious machine-gun gate ORANGE, an unarmed gate keeps the authored BLUE.
    --------------------------------------------------------------------------------------------- */
 const FB2_ROLES=['red','green','orange'];
-for(const r of FB2_ROLES)XART._src['fb2_stealth_'+r]='assets/game/stealth_1002/'+r+'.png';
+for(const r of FB2_ROLES)XART._src['fb2_stealth_'+r]='assets/game/levels/stage_06/enemies/stealth_1002/'+r+'.png';
 const FB2_DIR_FRAME={east:0,west:1,south:2,north:3};
 const FB2_DIR_ANG={east:0,west:Math.PI,south:Math.PI/2,north:-Math.PI/2};
 let fb2Flights=[],fb2RoleSerial=0;
@@ -529,7 +529,7 @@ beginStage=function(){fb2Squad={next:3.5,serial:0};return FB2_STAGE2.apply(this,
    scripted on the pilot's own ship), enemy rounds are cleared and nothing can hit the ship meanwhile.
    Speakers are drawn from the nine pilots in the air; nobody speaks a line as two people.
    --------------------------------------------------------------------------------------------- */
-for(let i=0;i<3;i++)XART._src['fb2_cole_rage_'+i]='assets/game/dispatch_1002/cole_rage_'+i+'.png';
+for(let i=0;i<3;i++)XART._src['fb2_cole_rage_'+i]='assets/game/shared/combat/dispatch_1002/cole_rage_'+i+'.png';
 let fb2Talk=null;
 function fb2TalkActive(){return !!(fb2Talk&&!fb2Talk.done&&run.stage===6&&state===GS.PLAY);}
 function fb2TeamPool(){
@@ -674,8 +674,8 @@ function fb2AddSfx(name,uri,tame){
  if(Audio&&Audio.SFX&&!Audio.SFX[name])Audio.SFX[name]=function(){return Snd.play(name);};
  return true;
 }
-fb2AddSfx('turbCarrier1002','assets/game/sounds/turbulence_carrier_1002.mp3',{g:0.62,native:true,min:0.00});
-fb2AddSfx('jetWash1002','assets/game/sounds/jetwash_1002.mp3',{g:0.72,native:true,min:0.28});
+fb2AddSfx('turbCarrier1002','assets/game/shared/audio/sounds/turbulence_carrier_1002.mp3',{g:0.62,native:true,min:0.00});
+fb2AddSfx('jetWash1002','assets/game/shared/audio/sounds/jetwash_1002.mp3',{g:0.72,native:true,min:0.28});
 if(typeof Snd!=='undefined'&&Snd&&Snd.loopOn){
  const FB2_LOOPON=Snd.loopOn,FB2_LOOPOFF=Snd.loopOff;
  Snd.loopOn=function(name,vol){const r=FB2_LOOPON.apply(this,arguments);if(name==='carrierTurbine')FB2_LOOPON.call(this,'turbCarrier1002',vol==null?1:Math.min(1,vol*1.25));return r;};
@@ -710,7 +710,7 @@ updatePlay=function(dt){const r=FB2_UPD5.apply(this,arguments);if(state===GS.PLA
 
    BEAM. Both fusion weapons drew a branching lightning lance: the space-slot Fusion (fusion_0930/beam.png) and
    Cole's level-8 fusion cannon (the green enemy laser, hue-rotated with a CSS filter). Both now draw
-   assets/game/fusion_1002/beam.png - a SpriteCook edit of Falva's own solid laser plate into a pink-violet
+   assets/game/shared/player_weapons/fusion_1002/beam.png - a SpriteCook edit of Falva's own solid laser plate into a pink-violet
    plasma column with a white-hot core and a contained double helix - animated by
    _BUILD_SOURCE/fusion_beam_1002.py so the helix flows up the beam while the silhouette stays fixed. Damage,
    speed, hit width and charge scaling are unchanged; the column fills the width the round already hits with.
@@ -723,8 +723,8 @@ updatePlay=function(dt){const r=FB2_UPD5.apply(this,arguments);if(state===GS.PLA
    FB2_ICON_U x height, centred in that box - and every icon reports the same box width back to its caller.
    An icon with no entry draws exactly as before; add new families by re-running the measuring script.
    --------------------------------------------------------------------------------------------- */
-XART._src.fb2_fusion_beam='assets/game/fusion_1002/beam.png';
-const FB2_BEAM={key:'fb2_fusion_beam',path:'assets/game/fusion_1002/beam.png',frames:[0,1,2,3,4,5,6,7].map(k=>[k*25,0,25,147]),fps:14};
+XART._src.fb2_fusion_beam='assets/game/shared/player_weapons/fusion_1002/beam.png';
+const FB2_BEAM={key:'fb2_fusion_beam',path:'assets/game/shared/player_weapons/fusion_1002/beam.png',frames:[0,1,2,3,4,5,6,7].map(k=>[k*25,0,25,147]),fps:14};
 if(typeof FUSION30_ART!=='undefined')FUSION30_ART.beam=FB2_BEAM;   // fusion30Cell reads the table at call time
 function fb2BeamDraw(x,y,w,h,t){
  if(!XART.rdy(FB2_BEAM.key))return false;const r=FB2_BEAM.frames[Math.floor((t||0)*FB2_BEAM.fps)%8];

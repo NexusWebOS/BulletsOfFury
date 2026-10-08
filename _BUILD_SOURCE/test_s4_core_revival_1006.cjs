@@ -21,6 +21,6 @@ module.exports=function(vm,ctxv,ok){
  o['three clips each have four registered exact cells']=Object.values(S4REV1006_ART.clips).every(c=>c.frames.length===4&&c.frames.every(f=>f.rect.length===4&&f.offset.length===2));
  return o;
 })())`,ctxv));for(const [name,value]of Object.entries(rows))ok(value,name);
- ok(fs.existsSync(path.join(__dirname,'../assets/game/s4_core_revival_1006/core_revival.png')),'generated revival PNG is deployed');
+ ok(fs.existsSync(path.join(__dirname,'../assets/game/levels/stage_04/effects/s4_core_revival_1006/core_revival.png')),'generated revival PNG is deployed');
  ok(fs.existsSync(path.join(__dirname,'../_ART_SOURCES/s4_core_revival_1006/repair-prompt.txt')),'generated revival repair prompt is archived');
 };

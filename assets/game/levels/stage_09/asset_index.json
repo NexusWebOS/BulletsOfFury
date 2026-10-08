@@ -1,0 +1,6349 @@
+{
+  "owner": "levels/stage_09",
+  "loading": {
+    "boot": "UI, fonts, idle portraits only",
+    "deployment": "selected pilot portraits, shared player weapons, required stage textures",
+    "transition": "release previous stage textures and derived caches; preserve explicitly queued copied-form dependencies",
+    "quality": "automatic native resolution on low-memory/low-core devices; reduce supersampling after sustained slow play frames"
+  },
+  "sharedDependencies": [
+    "shared/fonts",
+    "shared/ui",
+    "shared/player_weapons",
+    "shared/effects",
+    "shared/ships"
+  ],
+  "assets": [
+    {
+      "key": "nst9_starfield",
+      "root": "nst9_starfield",
+      "path": "assets/game/levels/stage_09/stage/expansion_v1/space/nst9_starfield.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "ns9c_big_idle",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        970,
+        2120,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "ns9c_big_fire",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        1100,
+        2120,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "ns9c_mega_idle",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        1230,
+        2120,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "ns9c_mega_fire",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        1360,
+        2120,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "ns9c_sm_idle",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        1430,
+        2508,
+        96,
+        96
+      ]
+    },
+    {
+      "key": "ns9c_sm_fire",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        1528,
+        2508,
+        96,
+        96
+      ]
+    },
+    {
+      "key": "ns9e_wskim_idle",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        1490,
+        2120,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "ns9e_wskim_fire",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        1620,
+        2120,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "ns9e_pneedle_idle",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        1750,
+        2120,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "ns9e_pneedle_fire",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        1880,
+        2120,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "ns9e_pmine_idle",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        2010,
+        2120,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "ns9e_pmine_fire",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        2140,
+        2120,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "ns9e_gleech_idle",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        2270,
+        2120,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "ns9e_gleech_fire",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        0,
+        2378,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "ns9e_vmanta_idle",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        130,
+        2378,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "ns9e_vmanta_fire",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        260,
+        2378,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "ns9e_echof_idle",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        390,
+        2378,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "ns9e_echof_fire",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        520,
+        2378,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "ns9e_tsplit_idle",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        650,
+        2378,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "ns9e_tsplit_fire",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        780,
+        2378,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "ns9e_cbreak_idle",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        910,
+        2378,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "ns9e_cbreak_fire",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        1040,
+        2378,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "ns9_comet_lg0_0",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        970,
+        2120,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "ns9_comet_lg0_1",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        1100,
+        2120,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "ns9_comet_lg0_2",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        1170,
+        2378,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "ns9_comet_lg0_3",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        1300,
+        2378,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "ns9_comet_lg1_0",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        1430,
+        2378,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "ns9_comet_lg1_1",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        1560,
+        2378,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "ns9_comet_lg1_2",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        1690,
+        2378,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "ns9_comet_lg1_3",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        1820,
+        2378,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "ns9_comet_lg2_0",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        1230,
+        2120,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "ns9_comet_lg2_1",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        1360,
+        2120,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "ns9_comet_lg2_2",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        1950,
+        2378,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "ns9_comet_lg2_3",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        2080,
+        2378,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "ns9_comet_lg3_0",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        2210,
+        2378,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "ns9_comet_lg3_1",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        0,
+        2508,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "ns9_comet_lg3_2",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        130,
+        2508,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "ns9_comet_lg3_3",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        260,
+        2508,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "ns9_comet_md0_0",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        1430,
+        2508,
+        96,
+        96
+      ]
+    },
+    {
+      "key": "ns9_comet_md0_1",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        1528,
+        2508,
+        96,
+        96
+      ]
+    },
+    {
+      "key": "ns9_comet_md0_2",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        1626,
+        2508,
+        96,
+        96
+      ]
+    },
+    {
+      "key": "ns9_comet_md0_3",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        1724,
+        2508,
+        96,
+        96
+      ]
+    },
+    {
+      "key": "ns9_comet_md1_0",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        1822,
+        2508,
+        96,
+        96
+      ]
+    },
+    {
+      "key": "ns9_comet_md1_1",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        1920,
+        2508,
+        96,
+        96
+      ]
+    },
+    {
+      "key": "ns9_comet_md1_2",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        2018,
+        2508,
+        96,
+        96
+      ]
+    },
+    {
+      "key": "ns9_comet_md1_3",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        2116,
+        2508,
+        96,
+        96
+      ]
+    },
+    {
+      "key": "ns9_comet_md2_0",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        2214,
+        2508,
+        96,
+        96
+      ]
+    },
+    {
+      "key": "ns9_comet_md2_1",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        2312,
+        2508,
+        96,
+        96
+      ]
+    },
+    {
+      "key": "ns9_comet_md2_2",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        0,
+        2638,
+        96,
+        96
+      ]
+    },
+    {
+      "key": "ns9_comet_md2_3",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        98,
+        2638,
+        96,
+        96
+      ]
+    },
+    {
+      "key": "ns9_comet_md3_0",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        196,
+        2638,
+        96,
+        96
+      ]
+    },
+    {
+      "key": "ns9_comet_md3_1",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        294,
+        2638,
+        96,
+        96
+      ]
+    },
+    {
+      "key": "ns9_comet_md3_2",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        392,
+        2638,
+        96,
+        96
+      ]
+    },
+    {
+      "key": "ns9_comet_md3_3",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        490,
+        2638,
+        96,
+        96
+      ]
+    },
+    {
+      "key": "ns9_comet_sm0_0",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        588,
+        2638,
+        64,
+        64
+      ]
+    },
+    {
+      "key": "ns9_comet_sm0_1",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        654,
+        2638,
+        64,
+        64
+      ]
+    },
+    {
+      "key": "ns9_comet_sm0_2",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        720,
+        2638,
+        64,
+        64
+      ]
+    },
+    {
+      "key": "ns9_comet_sm0_3",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        786,
+        2638,
+        64,
+        64
+      ]
+    },
+    {
+      "key": "ns9_comet_sm1_0",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        852,
+        2638,
+        64,
+        64
+      ]
+    },
+    {
+      "key": "ns9_comet_sm1_1",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        918,
+        2638,
+        64,
+        64
+      ]
+    },
+    {
+      "key": "ns9_comet_sm1_2",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        984,
+        2638,
+        64,
+        64
+      ]
+    },
+    {
+      "key": "ns9_comet_sm1_3",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        1050,
+        2638,
+        64,
+        64
+      ]
+    },
+    {
+      "key": "ns9_comet_sm2_0",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        1116,
+        2638,
+        64,
+        64
+      ]
+    },
+    {
+      "key": "ns9_comet_sm2_1",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        1182,
+        2638,
+        64,
+        64
+      ]
+    },
+    {
+      "key": "ns9_comet_sm2_2",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        1248,
+        2638,
+        64,
+        64
+      ]
+    },
+    {
+      "key": "ns9_comet_sm2_3",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        1314,
+        2638,
+        64,
+        64
+      ]
+    },
+    {
+      "key": "ns9_comet_sm3_0",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        1380,
+        2638,
+        64,
+        64
+      ]
+    },
+    {
+      "key": "ns9_comet_sm3_1",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        1446,
+        2638,
+        64,
+        64
+      ]
+    },
+    {
+      "key": "ns9_comet_sm3_2",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        1512,
+        2638,
+        64,
+        64
+      ]
+    },
+    {
+      "key": "ns9_comet_sm3_3",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        1578,
+        2638,
+        64,
+        64
+      ]
+    },
+    {
+      "key": "ns9_comet_sc0_0",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        1644,
+        2638,
+        40,
+        40
+      ]
+    },
+    {
+      "key": "ns9_comet_sc0_1",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        1686,
+        2638,
+        40,
+        40
+      ]
+    },
+    {
+      "key": "ns9_comet_sc0_2",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        1728,
+        2638,
+        40,
+        40
+      ]
+    },
+    {
+      "key": "ns9_comet_sc0_3",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        1770,
+        2638,
+        40,
+        40
+      ]
+    },
+    {
+      "key": "ns9_comet_sc1_0",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        1812,
+        2638,
+        40,
+        40
+      ]
+    },
+    {
+      "key": "ns9_comet_sc1_1",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        1854,
+        2638,
+        40,
+        40
+      ]
+    },
+    {
+      "key": "ns9_comet_sc1_2",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        1896,
+        2638,
+        40,
+        40
+      ]
+    },
+    {
+      "key": "ns9_comet_sc1_3",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        1938,
+        2638,
+        40,
+        40
+      ]
+    },
+    {
+      "key": "ns9_comet_sc2_0",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        1980,
+        2638,
+        40,
+        40
+      ]
+    },
+    {
+      "key": "ns9_comet_sc2_1",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        2022,
+        2638,
+        40,
+        40
+      ]
+    },
+    {
+      "key": "ns9_comet_sc2_2",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        2064,
+        2638,
+        40,
+        40
+      ]
+    },
+    {
+      "key": "ns9_comet_sc2_3",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        2106,
+        2638,
+        40,
+        40
+      ]
+    },
+    {
+      "key": "ns9_comet_sc3_0",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        2148,
+        2638,
+        40,
+        40
+      ]
+    },
+    {
+      "key": "ns9_comet_sc3_1",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        2190,
+        2638,
+        40,
+        40
+      ]
+    },
+    {
+      "key": "ns9_comet_sc3_2",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        2232,
+        2638,
+        40,
+        40
+      ]
+    },
+    {
+      "key": "ns9_comet_sc3_3",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        2274,
+        2638,
+        40,
+        40
+      ]
+    },
+    {
+      "key": "ns9_tidal_intact",
+      "root": "nca_boss_s9",
+      "path": "assets/game/levels/stage_09/boss/boss_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "boss_s9",
+        0,
+        0,
+        320,
+        256
+      ]
+    },
+    {
+      "key": "ns9_tidal_damaged",
+      "root": "nca_boss_s9",
+      "path": "assets/game/levels/stage_09/boss/boss_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "boss_s9",
+        0,
+        258,
+        320,
+        256
+      ]
+    },
+    {
+      "key": "ns9_tidal_critical",
+      "root": "nca_boss_s9",
+      "path": "assets/game/levels/stage_09/boss/boss_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "boss_s9",
+        0,
+        516,
+        320,
+        256
+      ]
+    },
+    {
+      "key": "ns9_warpsen_intact",
+      "root": "nca_mini_s9",
+      "path": "assets/game/levels/stage_09/miniboss/mini_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "mini_s9",
+        0,
+        0,
+        256,
+        192
+      ]
+    },
+    {
+      "key": "ns9_warpsen_damaged",
+      "root": "nca_mini_s9",
+      "path": "assets/game/levels/stage_09/miniboss/mini_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "mini_s9",
+        0,
+        194,
+        256,
+        192
+      ]
+    },
+    {
+      "key": "ns9_warpsen_critical",
+      "root": "nca_mini_s9",
+      "path": "assets/game/levels/stage_09/miniboss/mini_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "mini_s9",
+        0,
+        388,
+        256,
+        192
+      ]
+    },
+    {
+      "key": "ns9e_wskim_0",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        1490,
+        2120,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "ns9e_wskim_1",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        1620,
+        2120,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "ns9e_pneedle_0",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        1750,
+        2120,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "ns9e_pneedle_1",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        1880,
+        2120,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "ns9e_pmine_0",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        2010,
+        2120,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "ns9e_pmine_1",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        2140,
+        2120,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "ns9e_gleech_0",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        2270,
+        2120,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "ns9e_gleech_1",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        0,
+        2378,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "ns9e_vmanta_0",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        130,
+        2378,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "ns9e_vmanta_1",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        260,
+        2378,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "ns9e_echof_0",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        390,
+        2378,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "ns9e_echof_1",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        520,
+        2378,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "ns9e_tsplit_0",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        650,
+        2378,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "ns9e_tsplit_1",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        780,
+        2378,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "ns9e_cbreak_0",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        910,
+        2378,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "ns9e_cbreak_1",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        1040,
+        2378,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "ns9_gate0_0",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        390,
+        2508,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "ns9_gate0_1",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        520,
+        2508,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "ns9_gate0_2",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        650,
+        2508,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "ns9_gate0_3",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        780,
+        2508,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "ns9_gate1_0",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        910,
+        2508,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "ns9_gate1_1",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        1040,
+        2508,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "ns9_gate1_2",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        1170,
+        2508,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "ns9_gate1_3",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        1300,
+        2508,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "ns9_gate2_0",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        1806,
+        1862,
+        192,
+        256
+      ]
+    },
+    {
+      "key": "ns9_gate2_1",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        2000,
+        1862,
+        192,
+        256
+      ]
+    },
+    {
+      "key": "ns9_gate2_2",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        2194,
+        1862,
+        192,
+        256
+      ]
+    },
+    {
+      "key": "ns9_gate2_3",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        0,
+        2120,
+        192,
+        256
+      ]
+    },
+    {
+      "key": "ns9_gate3_0",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        194,
+        2120,
+        192,
+        256
+      ]
+    },
+    {
+      "key": "ns9_gate3_1",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        388,
+        2120,
+        192,
+        256
+      ]
+    },
+    {
+      "key": "ns9_gate3_2",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        582,
+        2120,
+        192,
+        256
+      ]
+    },
+    {
+      "key": "ns9_gate3_3",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        776,
+        2120,
+        192,
+        256
+      ]
+    },
+    {
+      "key": "ns9_gate4_0",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        0,
+        1540,
+        256,
+        320
+      ]
+    },
+    {
+      "key": "ns9_gate4_1",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        258,
+        1540,
+        256,
+        320
+      ]
+    },
+    {
+      "key": "ns9_gate4_2",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        516,
+        1540,
+        256,
+        320
+      ]
+    },
+    {
+      "key": "ns9_gate4_3",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        774,
+        1540,
+        256,
+        320
+      ]
+    },
+    {
+      "key": "ns9_gate5_0",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        1032,
+        1540,
+        256,
+        320
+      ]
+    },
+    {
+      "key": "ns9_gate5_1",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        1290,
+        1540,
+        256,
+        320
+      ]
+    },
+    {
+      "key": "ns9_gate5_2",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        1548,
+        1540,
+        256,
+        320
+      ]
+    },
+    {
+      "key": "ns9_gate5_3",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        1806,
+        1540,
+        256,
+        320
+      ]
+    },
+    {
+      "key": "ns9_wardenL_0",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        2064,
+        1540,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "ns9_wardenL_1",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        0,
+        1862,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "ns9_wardenL_2",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        258,
+        1862,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "ns9_wardenL_3",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        516,
+        1862,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "ns9_wardenR_0",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        774,
+        1862,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "ns9_wardenR_1",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        1032,
+        1862,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "ns9_wardenR_2",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        1290,
+        1862,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "ns9_wardenR_3",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        1548,
+        1862,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "ns9_gatecore_0",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        642,
+        770,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "ns9_gatecore_1",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        1028,
+        770,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "ns9_gatecore_2",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        1414,
+        770,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "ns9_gatecore_3",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        1800,
+        770,
+        384,
+        384
+      ]
+    },
+    {
+      "key": "ns9_s5gate_0",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        0,
+        0,
+        640,
+        768
+      ]
+    },
+    {
+      "key": "ns9_s5gate_1",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        642,
+        0,
+        640,
+        768
+      ]
+    },
+    {
+      "key": "ns9_s5gate_2",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        1284,
+        0,
+        640,
+        768
+      ]
+    },
+    {
+      "key": "ns9_s5gate_3",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "en_s9",
+        0,
+        770,
+        640,
+        768
+      ]
+    },
+    {
+      "key": "nst9_master",
+      "root": "nca_layout_levels_stage_09_stage_0",
+      "path": "assets/game/levels/stage_09/stage/frames_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "layout_levels_stage_09_stage_0",
+        4,
+        4,
+        800,
+        3721
+      ]
+    },
+    {
+      "key": "bfx_cyclone_m_2",
+      "root": "nca_eproj_s9",
+      "path": "assets/game/levels/stage_09/projectiles/eproj_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "eproj_s9",
+        0,
+        0,
+        156,
+        217
+      ]
+    },
+    {
+      "key": "bfx_cyclone_i_2",
+      "root": "nca_eproj_s9",
+      "path": "assets/game/levels/stage_09/projectiles/eproj_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "eproj_s9",
+        158,
+        0,
+        216,
+        214
+      ]
+    },
+    {
+      "key": "bfx_cyclone_m_3",
+      "root": "nca_eproj_s9",
+      "path": "assets/game/levels/stage_09/projectiles/eproj_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "eproj_s9",
+        376,
+        0,
+        185,
+        211
+      ]
+    },
+    {
+      "key": "bfx_cyclone_p_0",
+      "root": "nca_eproj_s9",
+      "path": "assets/game/levels/stage_09/projectiles/eproj_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "eproj_s9",
+        563,
+        0,
+        134,
+        208
+      ]
+    },
+    {
+      "key": "bfx_cyclone_p_1",
+      "root": "nca_eproj_s9",
+      "path": "assets/game/levels/stage_09/projectiles/eproj_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "eproj_s9",
+        699,
+        0,
+        134,
+        208
+      ]
+    },
+    {
+      "key": "bfx_cyclone_p_2",
+      "root": "nca_eproj_s9",
+      "path": "assets/game/levels/stage_09/projectiles/eproj_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "eproj_s9",
+        835,
+        0,
+        134,
+        208
+      ]
+    },
+    {
+      "key": "bfx_cyclone_p_3",
+      "root": "nca_eproj_s9",
+      "path": "assets/game/levels/stage_09/projectiles/eproj_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "eproj_s9",
+        0,
+        219,
+        134,
+        208
+      ]
+    },
+    {
+      "key": "bfx_cyclone_p_4",
+      "root": "nca_eproj_s9",
+      "path": "assets/game/levels/stage_09/projectiles/eproj_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "eproj_s9",
+        136,
+        219,
+        134,
+        208
+      ]
+    },
+    {
+      "key": "bfx_cyclone_p_5",
+      "root": "nca_eproj_s9",
+      "path": "assets/game/levels/stage_09/projectiles/eproj_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "eproj_s9",
+        272,
+        219,
+        134,
+        208
+      ]
+    },
+    {
+      "key": "bfx_cyclone_i_3",
+      "root": "nca_eproj_s9",
+      "path": "assets/game/levels/stage_09/projectiles/eproj_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "eproj_s9",
+        408,
+        219,
+        208,
+        206
+      ]
+    },
+    {
+      "key": "bfx_cyclone_i_4",
+      "root": "nca_eproj_s9",
+      "path": "assets/game/levels/stage_09/projectiles/eproj_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "eproj_s9",
+        618,
+        219,
+        189,
+        198
+      ]
+    },
+    {
+      "key": "bfx_cyclone_i_1",
+      "root": "nca_eproj_s9",
+      "path": "assets/game/levels/stage_09/projectiles/eproj_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "eproj_s9",
+        809,
+        219,
+        200,
+        197
+      ]
+    },
+    {
+      "key": "bfx_cyclone_m_4",
+      "root": "nca_eproj_s9",
+      "path": "assets/game/levels/stage_09/projectiles/eproj_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "eproj_s9",
+        0,
+        429,
+        161,
+        196
+      ]
+    },
+    {
+      "key": "bfx_cyclone_m_5",
+      "root": "nca_eproj_s9",
+      "path": "assets/game/levels/stage_09/projectiles/eproj_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "eproj_s9",
+        163,
+        429,
+        140,
+        188
+      ]
+    },
+    {
+      "key": "bfx_cyclone_m_1",
+      "root": "nca_eproj_s9",
+      "path": "assets/game/levels/stage_09/projectiles/eproj_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "eproj_s9",
+        305,
+        429,
+        127,
+        180
+      ]
+    },
+    {
+      "key": "bfx_cyclone_i_5",
+      "root": "nca_eproj_s9",
+      "path": "assets/game/levels/stage_09/projectiles/eproj_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "eproj_s9",
+        434,
+        429,
+        149,
+        176
+      ]
+    },
+    {
+      "key": "bfx_cyclone_i_0",
+      "root": "nca_eproj_s9",
+      "path": "assets/game/levels/stage_09/projectiles/eproj_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "eproj_s9",
+        812,
+        627,
+        134,
+        138
+      ]
+    },
+    {
+      "key": "bfx_cyclone_m_0",
+      "root": "nca_eproj_s9",
+      "path": "assets/game/levels/stage_09/projectiles/eproj_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "eproj_s9",
+        780,
+        769,
+        69,
+        105
+      ]
+    },
+    {
+      "key": "nbp_9_6",
+      "root": "nca_eproj_s9",
+      "path": "assets/game/levels/stage_09/projectiles/eproj_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "eproj_s9",
+        0,
+        627,
+        810,
+        140
+      ]
+    },
+    {
+      "key": "nbp_9_0",
+      "root": "nca_eproj_s9",
+      "path": "assets/game/levels/stage_09/projectiles/eproj_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "eproj_s9",
+        0,
+        769,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nbp_9_1",
+      "root": "nca_eproj_s9",
+      "path": "assets/game/levels/stage_09/projectiles/eproj_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "eproj_s9",
+        130,
+        769,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nbp_9_2",
+      "root": "nca_eproj_s9",
+      "path": "assets/game/levels/stage_09/projectiles/eproj_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "eproj_s9",
+        260,
+        769,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nbp_9_3",
+      "root": "nca_eproj_s9",
+      "path": "assets/game/levels/stage_09/projectiles/eproj_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "eproj_s9",
+        390,
+        769,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nbp_9_4",
+      "root": "nca_eproj_s9",
+      "path": "assets/game/levels/stage_09/projectiles/eproj_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "eproj_s9",
+        520,
+        769,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nbp_9_5",
+      "root": "nca_eproj_s9",
+      "path": "assets/game/levels/stage_09/projectiles/eproj_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "eproj_s9",
+        650,
+        769,
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nep_9_6",
+      "root": "nca_eproj_s9",
+      "path": "assets/game/levels/stage_09/projectiles/eproj_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "eproj_s9",
+        0,
+        899,
+        426,
+        76
+      ]
+    },
+    {
+      "key": "nep_9_0",
+      "root": "nca_eproj_s9",
+      "path": "assets/game/levels/stage_09/projectiles/eproj_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "eproj_s9",
+        428,
+        899,
+        64,
+        64
+      ]
+    },
+    {
+      "key": "nep_9_1",
+      "root": "nca_eproj_s9",
+      "path": "assets/game/levels/stage_09/projectiles/eproj_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "eproj_s9",
+        494,
+        899,
+        64,
+        64
+      ]
+    },
+    {
+      "key": "nep_9_2",
+      "root": "nca_eproj_s9",
+      "path": "assets/game/levels/stage_09/projectiles/eproj_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "eproj_s9",
+        560,
+        899,
+        64,
+        64
+      ]
+    },
+    {
+      "key": "nep_9_3",
+      "root": "nca_eproj_s9",
+      "path": "assets/game/levels/stage_09/projectiles/eproj_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "eproj_s9",
+        626,
+        899,
+        64,
+        64
+      ]
+    },
+    {
+      "key": "nep_9_4",
+      "root": "nca_eproj_s9",
+      "path": "assets/game/levels/stage_09/projectiles/eproj_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "eproj_s9",
+        692,
+        899,
+        64,
+        64
+      ]
+    },
+    {
+      "key": "nep_9_5",
+      "root": "nca_eproj_s9",
+      "path": "assets/game/levels/stage_09/projectiles/eproj_s9.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "eproj_s9",
+        758,
+        899,
+        64,
+        64
+      ]
+    },
+    {
+      "key": "nca_boss_s9",
+      "root": "nca_boss_s9",
+      "path": "assets/game/levels/stage_09/boss/boss_s9.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "nca_en_s9",
+      "root": "nca_en_s9",
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "nca_eproj_s9",
+      "root": "nca_eproj_s9",
+      "path": "assets/game/levels/stage_09/projectiles/eproj_s9.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "nca_mini_s9",
+      "root": "nca_mini_s9",
+      "path": "assets/game/levels/stage_09/miniboss/mini_s9.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "nca_layout_levels_stage_09_stage_0",
+      "root": "nca_layout_levels_stage_09_stage_0",
+      "path": "assets/game/levels/stage_09/stage/frames_0.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "overhaul_stage9_water_jet_01",
+      "root": "overhaul_stage9_water_jet_01",
+      "path": "assets/game/levels/stage_09/enemies/enemy_overhaul_0925/sprites/stage9_water_jet_01.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "overhaul_stage9_water_alien_01",
+      "root": "overhaul_stage9_water_alien_01",
+      "path": "assets/game/levels/stage_09/enemies/enemy_overhaul_0925/sprites/stage9_water_alien_01.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "overhaul_stage9_water_drone_01",
+      "root": "overhaul_stage9_water_drone_01",
+      "path": "assets/game/levels/stage_09/enemies/enemy_overhaul_0925/sprites/stage9_water_drone_01.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "s9_fusion_portal_0924",
+      "root": "s9_fusion_portal_0924",
+      "path": "assets/game/levels/stage_09/effects/stage9_fusion_0924/tidal_fusion_portal_16.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "nst9_void_loop_0923",
+      "root": "nst9_void_loop_0923",
+      "path": "assets/game/levels/stage_09/stage/space_loops_0923/stage9_loop.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "nca_stage9_runtime_0",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "s9atk_alien_beacon_0",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        4,
+        4,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9atk_alien_beacon_1",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        264,
+        4,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9atk_alien_beacon_2",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        524,
+        4,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9atk_alien_beacon_3",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        784,
+        4,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9atk_alien_beacon_4",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        1044,
+        4,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9atk_alien_beacon_5",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        1304,
+        4,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9atk_alien_beacon_6",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        1564,
+        4,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9atk_alien_beacon_7",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        1824,
+        4,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9atk_comet_skimmer_0",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        264,
+        264,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9atk_comet_skimmer_1",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        524,
+        264,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9atk_comet_skimmer_2",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        784,
+        264,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9atk_comet_skimmer_3",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        1044,
+        264,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9atk_comet_skimmer_4",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        1304,
+        264,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9atk_comet_skimmer_5",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        1564,
+        264,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9atk_comet_skimmer_6",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        1824,
+        264,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9atk_comet_skimmer_7",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        2084,
+        264,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9atk_dimensional_gunship_0",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        2344,
+        264,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9atk_dimensional_gunship_1",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        2604,
+        264,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9atk_dimensional_gunship_2",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        2864,
+        264,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9atk_dimensional_gunship_3",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        3124,
+        264,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9atk_dimensional_gunship_4",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        3384,
+        264,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9atk_dimensional_gunship_5",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        3644,
+        264,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9atk_dimensional_gunship_6",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        4,
+        524,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9atk_dimensional_gunship_7",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        264,
+        524,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9atk_galaxy_interceptor_0",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        524,
+        524,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9atk_galaxy_interceptor_1",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        784,
+        524,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9atk_galaxy_interceptor_2",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        1044,
+        524,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9atk_galaxy_interceptor_3",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        1304,
+        524,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9atk_galaxy_interceptor_4",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        1564,
+        524,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9atk_galaxy_interceptor_5",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        1824,
+        524,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9atk_galaxy_interceptor_6",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        2084,
+        524,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9atk_galaxy_interceptor_7",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        2344,
+        524,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9atk_gate_turret_0",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        784,
+        784,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9atk_gate_turret_1",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        1044,
+        784,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9atk_gate_turret_2",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        1304,
+        784,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9atk_gate_turret_3",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        1564,
+        784,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9atk_gate_turret_4",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        1824,
+        784,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9atk_gate_turret_5",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        2084,
+        784,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9atk_gate_turret_6",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        2344,
+        784,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9atk_gate_turret_7",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        2604,
+        784,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9atk_hyperspace_prism_0",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        1044,
+        1044,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9atk_hyperspace_prism_1",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        1304,
+        1044,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9atk_hyperspace_prism_2",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        1564,
+        1044,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9atk_hyperspace_prism_3",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        1824,
+        1044,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9atk_hyperspace_prism_4",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        2084,
+        1044,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9atk_hyperspace_prism_5",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        2344,
+        1044,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9atk_hyperspace_prism_6",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        2604,
+        1044,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9atk_hyperspace_prism_7",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        2864,
+        1044,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9atk_ring_drone_0",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        1304,
+        1304,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9atk_ring_drone_1",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        1564,
+        1304,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9atk_ring_drone_2",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        1824,
+        1304,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9atk_ring_drone_3",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        2084,
+        1304,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9atk_ring_drone_4",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        2344,
+        1304,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9atk_ring_drone_5",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        2604,
+        1304,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9atk_ring_drone_6",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        2864,
+        1304,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9atk_ring_drone_7",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        3124,
+        1304,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9atk_singularity_mine_0",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        3384,
+        1304,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9atk_singularity_mine_1",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        3644,
+        1304,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9atk_singularity_mine_2",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        4,
+        1564,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9atk_singularity_mine_3",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        264,
+        1564,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9atk_singularity_mine_4",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        524,
+        1564,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9atk_singularity_mine_5",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        784,
+        1564,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9atk_singularity_mine_6",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        1044,
+        1564,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9atk_singularity_mine_7",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        1304,
+        1564,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9lattice_0",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        1564,
+        1564,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9lattice_1",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        1824,
+        1564,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9lattice_2",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        2604,
+        1564,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9lattice_3",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        2864,
+        1564,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9lattice_4",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        3124,
+        1564,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9lattice_5",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        3384,
+        1564,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9lattice_6",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        3644,
+        1564,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9lattice_7",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        4,
+        1824,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9lattice_8",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        264,
+        1824,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9lattice_9",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        524,
+        1824,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9lattice_10",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        2084,
+        1564,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s9lattice_11",
+      "root": "nca_stage9_runtime_0",
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "cell": [
+        "stage9_runtime_0",
+        2344,
+        1564,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "warpvoidmuzzle_0",
+      "root": "warpvoidmuzzle_0",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpvoidmuzzle_0.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "warpvoidmuzzle_1",
+      "root": "warpvoidmuzzle_1",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpvoidmuzzle_1.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "warpvoidmuzzle_2",
+      "root": "warpvoidmuzzle_2",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpvoidmuzzle_2.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "warpvoidmuzzle_3",
+      "root": "warpvoidmuzzle_3",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpvoidmuzzle_3.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "warpvoidmuzzle_4",
+      "root": "warpvoidmuzzle_4",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpvoidmuzzle_4.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "warpvoidmuzzle_5",
+      "root": "warpvoidmuzzle_5",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpvoidmuzzle_5.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "warpcrystallance_0",
+      "root": "warpcrystallance_0",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpcrystallance_0.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "warpcrystallance_1",
+      "root": "warpcrystallance_1",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpcrystallance_1.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "warpcrystallance_2",
+      "root": "warpcrystallance_2",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpcrystallance_2.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "warpcrystallance_3",
+      "root": "warpcrystallance_3",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpcrystallance_3.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "warpcrystallance_4",
+      "root": "warpcrystallance_4",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpcrystallance_4.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "warpcrystallance_5",
+      "root": "warpcrystallance_5",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpcrystallance_5.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "warpcrystallance_6",
+      "root": "warpcrystallance_6",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpcrystallance_6.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "warpcrystallance_7",
+      "root": "warpcrystallance_7",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpcrystallance_7.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "warpcrystalbeam_0",
+      "root": "warpcrystalbeam_0",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpcrystalbeam_0.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "warpcrystalbeam_1",
+      "root": "warpcrystalbeam_1",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpcrystalbeam_1.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "warpcrystalbeam_2",
+      "root": "warpcrystalbeam_2",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpcrystalbeam_2.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "warpcrystalbeam_3",
+      "root": "warpcrystalbeam_3",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpcrystalbeam_3.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "warpcrystalbeam_4",
+      "root": "warpcrystalbeam_4",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpcrystalbeam_4.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "warpcrystalbeam_5",
+      "root": "warpcrystalbeam_5",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpcrystalbeam_5.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "warpcrystalbeam_6",
+      "root": "warpcrystalbeam_6",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpcrystalbeam_6.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "warpcrystalbeam_7",
+      "root": "warpcrystalbeam_7",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpcrystalbeam_7.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "warpcrystalbeamtile_0",
+      "root": "warpcrystalbeamtile_0",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpcrystalbeamtile_0.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "warpcrystalbeamtile_1",
+      "root": "warpcrystalbeamtile_1",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpcrystalbeamtile_1.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "warpcrystalbeamtile_2",
+      "root": "warpcrystalbeamtile_2",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpcrystalbeamtile_2.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "warpcrystalbeamtile_3",
+      "root": "warpcrystalbeamtile_3",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpcrystalbeamtile_3.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "warpcrystalbeamtile_4",
+      "root": "warpcrystalbeamtile_4",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpcrystalbeamtile_4.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "warpcrystalbeamtile_5",
+      "root": "warpcrystalbeamtile_5",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpcrystalbeamtile_5.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "warpcrystalbeamtile_6",
+      "root": "warpcrystalbeamtile_6",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpcrystalbeamtile_6.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "warpcrystalbeamtile_7",
+      "root": "warpcrystalbeamtile_7",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpcrystalbeamtile_7.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "warpcrystalimpact_0",
+      "root": "warpcrystalimpact_0",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpcrystalimpact_0.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "warpcrystalimpact_1",
+      "root": "warpcrystalimpact_1",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpcrystalimpact_1.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "warpcrystalimpact_2",
+      "root": "warpcrystalimpact_2",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpcrystalimpact_2.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "warpcrystalimpact_3",
+      "root": "warpcrystalimpact_3",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpcrystalimpact_3.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "warpcrystalimpact_4",
+      "root": "warpcrystalimpact_4",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpcrystalimpact_4.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "warpcrystalimpact_5",
+      "root": "warpcrystalimpact_5",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpcrystalimpact_5.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "warpcrystalimpact_6",
+      "root": "warpcrystalimpact_6",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpcrystalimpact_6.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "warpcrystalimpact_7",
+      "root": "warpcrystalimpact_7",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpcrystalimpact_7.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "warpriftorb_0",
+      "root": "warpriftorb_0",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpriftorb_0.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "warpriftorb_1",
+      "root": "warpriftorb_1",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpriftorb_1.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "warpriftorb_2",
+      "root": "warpriftorb_2",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpriftorb_2.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "warpriftorb_3",
+      "root": "warpriftorb_3",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpriftorb_3.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "warpriftorb_4",
+      "root": "warpriftorb_4",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpriftorb_4.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "warpriftorb_5",
+      "root": "warpriftorb_5",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpriftorb_5.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "warpriftorb_6",
+      "root": "warpriftorb_6",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpriftorb_6.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "warpriftorb_7",
+      "root": "warpriftorb_7",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpriftorb_7.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "warpprismshard_0",
+      "root": "warpprismshard_0",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpprismshard_0.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "warpprismshard_1",
+      "root": "warpprismshard_1",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpprismshard_1.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "warpprismshard_2",
+      "root": "warpprismshard_2",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpprismshard_2.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "warpprismshard_3",
+      "root": "warpprismshard_3",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpprismshard_3.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "warpprismshard_4",
+      "root": "warpprismshard_4",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpprismshard_4.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "warpprismshard_5",
+      "root": "warpprismshard_5",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpprismshard_5.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "warpprismshard_6",
+      "root": "warpprismshard_6",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpprismshard_6.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "warpprismshard_7",
+      "root": "warpprismshard_7",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpprismshard_7.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "warpsingularity_0",
+      "root": "warpsingularity_0",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpsingularity_0.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "warpsingularity_1",
+      "root": "warpsingularity_1",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpsingularity_1.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "warpsingularity_2",
+      "root": "warpsingularity_2",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpsingularity_2.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "warpsingularity_3",
+      "root": "warpsingularity_3",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpsingularity_3.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "warpsingularity_4",
+      "root": "warpsingularity_4",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpsingularity_4.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "warpsingularity_5",
+      "root": "warpsingularity_5",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpsingularity_5.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "warpsingularity_6",
+      "root": "warpsingularity_6",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpsingularity_6.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "warpsingularity_7",
+      "root": "warpsingularity_7",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpsingularity_7.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "warpsaw_0",
+      "root": "warpsaw_0",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpsaw_0.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "warpsaw_1",
+      "root": "warpsaw_1",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpsaw_1.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "warpsaw_2",
+      "root": "warpsaw_2",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpsaw_2.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "warpsaw_3",
+      "root": "warpsaw_3",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpsaw_3.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "warpsaw_4",
+      "root": "warpsaw_4",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpsaw_4.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "warpsaw_5",
+      "root": "warpsaw_5",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpsaw_5.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "warpsaw_6",
+      "root": "warpsaw_6",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpsaw_6.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "warpsaw_7",
+      "root": "warpsaw_7",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpsaw_7.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "tidalhydromuzzle_0",
+      "root": "tidalhydromuzzle_0",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalhydromuzzle_0.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "tidalhydromuzzle_1",
+      "root": "tidalhydromuzzle_1",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalhydromuzzle_1.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "tidalhydromuzzle_2",
+      "root": "tidalhydromuzzle_2",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalhydromuzzle_2.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "tidalhydromuzzle_3",
+      "root": "tidalhydromuzzle_3",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalhydromuzzle_3.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "tidalhydromuzzle_4",
+      "root": "tidalhydromuzzle_4",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalhydromuzzle_4.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "tidalhydromuzzle_5",
+      "root": "tidalhydromuzzle_5",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalhydromuzzle_5.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "tidaltorpedo_0",
+      "root": "tidaltorpedo_0",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidaltorpedo_0.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "tidaltorpedo_1",
+      "root": "tidaltorpedo_1",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidaltorpedo_1.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "tidaltorpedo_2",
+      "root": "tidaltorpedo_2",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidaltorpedo_2.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "tidaltorpedo_3",
+      "root": "tidaltorpedo_3",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidaltorpedo_3.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "tidaltorpedo_4",
+      "root": "tidaltorpedo_4",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidaltorpedo_4.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "tidaltorpedo_5",
+      "root": "tidaltorpedo_5",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidaltorpedo_5.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "tidaltorpedo_6",
+      "root": "tidaltorpedo_6",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidaltorpedo_6.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "tidaltorpedo_7",
+      "root": "tidaltorpedo_7",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidaltorpedo_7.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "tidalpressurebeam_0",
+      "root": "tidalpressurebeam_0",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalpressurebeam_0.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "tidalpressurebeam_1",
+      "root": "tidalpressurebeam_1",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalpressurebeam_1.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "tidalpressurebeam_2",
+      "root": "tidalpressurebeam_2",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalpressurebeam_2.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "tidalpressurebeam_3",
+      "root": "tidalpressurebeam_3",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalpressurebeam_3.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "tidalpressurebeam_4",
+      "root": "tidalpressurebeam_4",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalpressurebeam_4.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "tidalpressurebeam_5",
+      "root": "tidalpressurebeam_5",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalpressurebeam_5.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "tidalpressurebeam_6",
+      "root": "tidalpressurebeam_6",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalpressurebeam_6.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "tidalpressurebeam_7",
+      "root": "tidalpressurebeam_7",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalpressurebeam_7.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "tidalpressurebeamtile_0",
+      "root": "tidalpressurebeamtile_0",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalpressurebeamtile_0.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "tidalpressurebeamtile_1",
+      "root": "tidalpressurebeamtile_1",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalpressurebeamtile_1.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "tidalpressurebeamtile_2",
+      "root": "tidalpressurebeamtile_2",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalpressurebeamtile_2.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "tidalpressurebeamtile_3",
+      "root": "tidalpressurebeamtile_3",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalpressurebeamtile_3.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "tidalpressurebeamtile_4",
+      "root": "tidalpressurebeamtile_4",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalpressurebeamtile_4.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "tidalpressurebeamtile_5",
+      "root": "tidalpressurebeamtile_5",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalpressurebeamtile_5.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "tidalpressurebeamtile_6",
+      "root": "tidalpressurebeamtile_6",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalpressurebeamtile_6.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "tidalpressurebeamtile_7",
+      "root": "tidalpressurebeamtile_7",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalpressurebeamtile_7.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "tidalgeyserimpact_0",
+      "root": "tidalgeyserimpact_0",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalgeyserimpact_0.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "tidalgeyserimpact_1",
+      "root": "tidalgeyserimpact_1",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalgeyserimpact_1.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "tidalgeyserimpact_2",
+      "root": "tidalgeyserimpact_2",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalgeyserimpact_2.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "tidalgeyserimpact_3",
+      "root": "tidalgeyserimpact_3",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalgeyserimpact_3.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "tidalgeyserimpact_4",
+      "root": "tidalgeyserimpact_4",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalgeyserimpact_4.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "tidalgeyserimpact_5",
+      "root": "tidalgeyserimpact_5",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalgeyserimpact_5.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "tidalgeyserimpact_6",
+      "root": "tidalgeyserimpact_6",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalgeyserimpact_6.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "tidalgeyserimpact_7",
+      "root": "tidalgeyserimpact_7",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalgeyserimpact_7.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "tidalbubblemine_0",
+      "root": "tidalbubblemine_0",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalbubblemine_0.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "tidalbubblemine_1",
+      "root": "tidalbubblemine_1",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalbubblemine_1.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "tidalbubblemine_2",
+      "root": "tidalbubblemine_2",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalbubblemine_2.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "tidalbubblemine_3",
+      "root": "tidalbubblemine_3",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalbubblemine_3.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "tidalbubblemine_4",
+      "root": "tidalbubblemine_4",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalbubblemine_4.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "tidalbubblemine_5",
+      "root": "tidalbubblemine_5",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalbubblemine_5.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "tidalbubblemine_6",
+      "root": "tidalbubblemine_6",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalbubblemine_6.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "tidalbubblemine_7",
+      "root": "tidalbubblemine_7",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalbubblemine_7.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "tidalcutter_0",
+      "root": "tidalcutter_0",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalcutter_0.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "tidalcutter_1",
+      "root": "tidalcutter_1",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalcutter_1.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "tidalcutter_2",
+      "root": "tidalcutter_2",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalcutter_2.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "tidalcutter_3",
+      "root": "tidalcutter_3",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalcutter_3.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "tidalcutter_4",
+      "root": "tidalcutter_4",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalcutter_4.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "tidalcutter_5",
+      "root": "tidalcutter_5",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalcutter_5.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "tidalcutter_6",
+      "root": "tidalcutter_6",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalcutter_6.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "tidalcutter_7",
+      "root": "tidalcutter_7",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalcutter_7.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "tidalmaelstrom_0",
+      "root": "tidalmaelstrom_0",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalmaelstrom_0.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "tidalmaelstrom_1",
+      "root": "tidalmaelstrom_1",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalmaelstrom_1.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "tidalmaelstrom_2",
+      "root": "tidalmaelstrom_2",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalmaelstrom_2.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "tidalmaelstrom_3",
+      "root": "tidalmaelstrom_3",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalmaelstrom_3.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "tidalmaelstrom_4",
+      "root": "tidalmaelstrom_4",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalmaelstrom_4.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "tidalmaelstrom_5",
+      "root": "tidalmaelstrom_5",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalmaelstrom_5.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "tidalmaelstrom_6",
+      "root": "tidalmaelstrom_6",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalmaelstrom_6.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "tidalmaelstrom_7",
+      "root": "tidalmaelstrom_7",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalmaelstrom_7.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "tidalabyssalcrown_0",
+      "root": "tidalabyssalcrown_0",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalabyssalcrown_0.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "tidalabyssalcrown_1",
+      "root": "tidalabyssalcrown_1",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalabyssalcrown_1.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "tidalabyssalcrown_2",
+      "root": "tidalabyssalcrown_2",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalabyssalcrown_2.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "tidalabyssalcrown_3",
+      "root": "tidalabyssalcrown_3",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalabyssalcrown_3.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "tidalabyssalcrown_4",
+      "root": "tidalabyssalcrown_4",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalabyssalcrown_4.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "tidalabyssalcrown_5",
+      "root": "tidalabyssalcrown_5",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalabyssalcrown_5.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "tidalabyssalcrown_6",
+      "root": "tidalabyssalcrown_6",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalabyssalcrown_6.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "tidalabyssalcrown_7",
+      "root": "tidalabyssalcrown_7",
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalabyssalcrown_7.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "nst9_voidwater_master",
+      "root": "nst9_voidwater_master",
+      "path": "assets/game/levels/stage_09/stage/stage9_void_rift/void_rift_water_loop_680x4096.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "ns9x_horizon_0",
+      "root": "ns9x_horizon_0",
+      "path": "assets/game/levels/stage_09/enemies/stage9_void_rift/enemies/event_horizon_0.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "ns9x_horizonblk_0",
+      "root": "ns9x_horizonblk_0",
+      "path": "assets/game/levels/stage_09/enemies/stage9_void_rift/enemies/event_horizon_blk_0.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "ns9x_horizon_1",
+      "root": "ns9x_horizon_1",
+      "path": "assets/game/levels/stage_09/enemies/stage9_void_rift/enemies/event_horizon_1.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "ns9x_horizonblk_1",
+      "root": "ns9x_horizonblk_1",
+      "path": "assets/game/levels/stage_09/enemies/stage9_void_rift/enemies/event_horizon_blk_1.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "ns9x_horizon_2",
+      "root": "ns9x_horizon_2",
+      "path": "assets/game/levels/stage_09/enemies/stage9_void_rift/enemies/event_horizon_2.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "ns9x_horizonblk_2",
+      "root": "ns9x_horizonblk_2",
+      "path": "assets/game/levels/stage_09/enemies/stage9_void_rift/enemies/event_horizon_blk_2.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "ns9x_horizon_3",
+      "root": "ns9x_horizon_3",
+      "path": "assets/game/levels/stage_09/enemies/stage9_void_rift/enemies/event_horizon_3.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "ns9x_horizonblk_3",
+      "root": "ns9x_horizonblk_3",
+      "path": "assets/game/levels/stage_09/enemies/stage9_void_rift/enemies/event_horizon_blk_3.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "ns9x_horizon_4",
+      "root": "ns9x_horizon_4",
+      "path": "assets/game/levels/stage_09/enemies/stage9_void_rift/enemies/event_horizon_4.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "ns9x_horizonblk_4",
+      "root": "ns9x_horizonblk_4",
+      "path": "assets/game/levels/stage_09/enemies/stage9_void_rift/enemies/event_horizon_blk_4.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "ns9x_horizon_5",
+      "root": "ns9x_horizon_5",
+      "path": "assets/game/levels/stage_09/enemies/stage9_void_rift/enemies/event_horizon_5.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "ns9x_horizonblk_5",
+      "root": "ns9x_horizonblk_5",
+      "path": "assets/game/levels/stage_09/enemies/stage9_void_rift/enemies/event_horizon_blk_5.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "ns9x_horizon_6",
+      "root": "ns9x_horizon_6",
+      "path": "assets/game/levels/stage_09/enemies/stage9_void_rift/enemies/event_horizon_6.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "ns9x_horizonblk_6",
+      "root": "ns9x_horizonblk_6",
+      "path": "assets/game/levels/stage_09/enemies/stage9_void_rift/enemies/event_horizon_blk_6.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "ns9x_dreadv",
+      "root": "ns9x_dreadv",
+      "path": "assets/game/levels/stage_09/enemies/stage9_void_rift/enemies/dreadnought_vanguard.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "ns9fx_photon_0",
+      "root": "ns9fx_photon_0",
+      "path": "assets/game/levels/stage_09/stage/stage9_void_rift/fx/photon_0.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "ns9fx_riftshot_0",
+      "root": "ns9fx_riftshot_0",
+      "path": "assets/game/levels/stage_09/stage/stage9_void_rift/fx/riftshot_0.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "ns9fx_photon_1",
+      "root": "ns9fx_photon_1",
+      "path": "assets/game/levels/stage_09/stage/stage9_void_rift/fx/photon_1.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "ns9fx_riftshot_1",
+      "root": "ns9fx_riftshot_1",
+      "path": "assets/game/levels/stage_09/stage/stage9_void_rift/fx/riftshot_1.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "ns9fx_photon_2",
+      "root": "ns9fx_photon_2",
+      "path": "assets/game/levels/stage_09/stage/stage9_void_rift/fx/photon_2.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "ns9fx_riftshot_2",
+      "root": "ns9fx_riftshot_2",
+      "path": "assets/game/levels/stage_09/stage/stage9_void_rift/fx/riftshot_2.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "ns9fx_photon_3",
+      "root": "ns9fx_photon_3",
+      "path": "assets/game/levels/stage_09/stage/stage9_void_rift/fx/photon_3.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "ns9fx_riftshot_3",
+      "root": "ns9fx_riftshot_3",
+      "path": "assets/game/levels/stage_09/stage/stage9_void_rift/fx/riftshot_3.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "ns9fx_photon_4",
+      "root": "ns9fx_photon_4",
+      "path": "assets/game/levels/stage_09/stage/stage9_void_rift/fx/photon_4.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "ns9fx_riftshot_4",
+      "root": "ns9fx_riftshot_4",
+      "path": "assets/game/levels/stage_09/stage/stage9_void_rift/fx/riftshot_4.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "ns9fx_photon_5",
+      "root": "ns9fx_photon_5",
+      "path": "assets/game/levels/stage_09/stage/stage9_void_rift/fx/photon_5.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "ns9fx_riftshot_5",
+      "root": "ns9fx_riftshot_5",
+      "path": "assets/game/levels/stage_09/stage/stage9_void_rift/fx/riftshot_5.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "ns9fx_water_0",
+      "root": "ns9fx_water_0",
+      "path": "assets/game/levels/stage_09/stage/stage9_void_rift/fx/water_splash_0.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "ns9fx_water_1",
+      "root": "ns9fx_water_1",
+      "path": "assets/game/levels/stage_09/stage/stage9_void_rift/fx/water_splash_1.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "ns9fx_water_2",
+      "root": "ns9fx_water_2",
+      "path": "assets/game/levels/stage_09/stage/stage9_void_rift/fx/water_splash_2.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "ns9fx_water_3",
+      "root": "ns9fx_water_3",
+      "path": "assets/game/levels/stage_09/stage/stage9_void_rift/fx/water_splash_3.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "ns9fx_water_4",
+      "root": "ns9fx_water_4",
+      "path": "assets/game/levels/stage_09/stage/stage9_void_rift/fx/water_splash_4.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "ns9fx_water_5",
+      "root": "ns9fx_water_5",
+      "path": "assets/game/levels/stage_09/stage/stage9_void_rift/fx/water_splash_5.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "ns9fx_water_6",
+      "root": "ns9fx_water_6",
+      "path": "assets/game/levels/stage_09/stage/stage9_void_rift/fx/water_splash_6.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "ns9fx_water_7",
+      "root": "ns9fx_water_7",
+      "path": "assets/game/levels/stage_09/stage/stage9_void_rift/fx/water_splash_7.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "cin30_bonus",
+      "root": "cin30_bonus",
+      "path": "assets/game/levels/stage_09/cinematics/cinematic_level_approaches/stage09_the_velocity_void_bonus_approach.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "s9ast_rock_0_idle",
+      "root": "s9ast_rock_0_idle",
+      "path": "assets/game/levels/stage_09/enemies/s9_asteroids_1001/s9ast_rock_0.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "s9ast_rock_1_idle",
+      "root": "s9ast_rock_1_idle",
+      "path": "assets/game/levels/stage_09/enemies/s9_asteroids_1001/s9ast_rock_1.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "s9ast_rock_2_idle",
+      "root": "s9ast_rock_2_idle",
+      "path": "assets/game/levels/stage_09/enemies/s9_asteroids_1001/s9ast_rock_2.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "s9ast_wet_0_idle",
+      "root": "s9ast_wet_0_idle",
+      "path": "assets/game/levels/stage_09/enemies/s9_asteroids_1001/s9ast_wet_0.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "s9ast_wet_1_idle",
+      "root": "s9ast_wet_1_idle",
+      "path": "assets/game/levels/stage_09/enemies/s9_asteroids_1001/s9ast_wet_1.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    },
+    {
+      "key": "s9ast_wet_2_idle",
+      "root": "s9ast_wet_2_idle",
+      "path": "assets/game/levels/stage_09/enemies/s9_asteroids_1001/s9ast_wet_2.png",
+      "owner": "levels/stage_09",
+      "cell": null
+    }
+  ],
+  "files": [
+    {
+      "path": "assets/game/levels/stage_09/audio/music/Level9.mp3",
+      "owner": "levels/stage_09",
+      "bytes": 2128632,
+      "role": "registered runtime asset"
+    },
+    {
+      "path": "assets/game/levels/stage_09/audio/music/Level9b.mp3",
+      "owner": "levels/stage_09",
+      "bytes": 2015271,
+      "role": "registered runtime asset"
+    },
+    {
+      "path": "assets/game/levels/stage_09/audio/music/Level9mb.mp3",
+      "owner": "levels/stage_09",
+      "bytes": 1187894,
+      "role": "registered runtime asset"
+    },
+    {
+      "path": "assets/game/levels/stage_09/boss/boss_s9.png",
+      "owner": "levels/stage_09",
+      "bytes": 256346,
+      "role": "registered runtime asset",
+      "width": 322,
+      "height": 774
+    },
+    {
+      "path": "assets/game/levels/stage_09/cinematics/cinematic_level_approaches/stage09_the_velocity_void_bonus_approach.png",
+      "owner": "levels/stage_09",
+      "bytes": 2801170,
+      "role": "registered runtime asset",
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "path": "assets/game/levels/stage_09/effects/stage9_fusion_0924/tidal_fusion_portal_16.png",
+      "owner": "levels/stage_09",
+      "bytes": 973816,
+      "role": "registered runtime asset",
+      "width": 1256,
+      "height": 1256
+    },
+    {
+      "path": "assets/game/levels/stage_09/enemies/atlas/stage_runtime/stage9_runtime_0.png",
+      "owner": "levels/stage_09",
+      "bytes": 3636356,
+      "role": "registered runtime asset",
+      "width": 4096,
+      "height": 2084
+    },
+    {
+      "path": "assets/game/levels/stage_09/enemies/en_s9.png",
+      "owner": "levels/stage_09",
+      "bytes": 3655239,
+      "role": "registered runtime asset",
+      "width": 2410,
+      "height": 2736
+    },
+    {
+      "path": "assets/game/levels/stage_09/enemies/enemy_overhaul_0925/sprites/stage9_water_alien_01.png",
+      "owner": "levels/stage_09",
+      "bytes": 41537,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/levels/stage_09/enemies/enemy_overhaul_0925/sprites/stage9_water_drone_01.png",
+      "owner": "levels/stage_09",
+      "bytes": 34636,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/levels/stage_09/enemies/enemy_overhaul_0925/sprites/stage9_water_jet_01.png",
+      "owner": "levels/stage_09",
+      "bytes": 38795,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/levels/stage_09/enemies/s9_asteroids_1001/s9ast_rock_0.png",
+      "owner": "levels/stage_09",
+      "bytes": 21191,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/levels/stage_09/enemies/s9_asteroids_1001/s9ast_rock_1.png",
+      "owner": "levels/stage_09",
+      "bytes": 24082,
+      "role": "registered runtime asset",
+      "width": 139,
+      "height": 139
+    },
+    {
+      "path": "assets/game/levels/stage_09/enemies/s9_asteroids_1001/s9ast_rock_2.png",
+      "owner": "levels/stage_09",
+      "bytes": 7057,
+      "role": "registered runtime asset",
+      "width": 68,
+      "height": 68
+    },
+    {
+      "path": "assets/game/levels/stage_09/enemies/s9_asteroids_1001/s9ast_wet_0.png",
+      "owner": "levels/stage_09",
+      "bytes": 59801,
+      "role": "registered runtime asset",
+      "width": 175,
+      "height": 175
+    },
+    {
+      "path": "assets/game/levels/stage_09/enemies/s9_asteroids_1001/s9ast_wet_1.png",
+      "owner": "levels/stage_09",
+      "bytes": 46693,
+      "role": "registered runtime asset",
+      "width": 153,
+      "height": 153
+    },
+    {
+      "path": "assets/game/levels/stage_09/enemies/s9_asteroids_1001/s9ast_wet_2.png",
+      "owner": "levels/stage_09",
+      "bytes": 19402,
+      "role": "registered runtime asset",
+      "width": 86,
+      "height": 86
+    },
+    {
+      "path": "assets/game/levels/stage_09/enemies/stage9_void_rift/enemies/dreadnought_vanguard.png",
+      "owner": "levels/stage_09",
+      "bytes": 32998,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 384
+    },
+    {
+      "path": "assets/game/levels/stage_09/enemies/stage9_void_rift/enemies/event_horizon_0.png",
+      "owner": "levels/stage_09",
+      "bytes": 33876,
+      "role": "registered runtime asset",
+      "width": 164,
+      "height": 199
+    },
+    {
+      "path": "assets/game/levels/stage_09/enemies/stage9_void_rift/enemies/event_horizon_1.png",
+      "owner": "levels/stage_09",
+      "bytes": 33530,
+      "role": "registered runtime asset",
+      "width": 164,
+      "height": 199
+    },
+    {
+      "path": "assets/game/levels/stage_09/enemies/stage9_void_rift/enemies/event_horizon_2.png",
+      "owner": "levels/stage_09",
+      "bytes": 33535,
+      "role": "registered runtime asset",
+      "width": 164,
+      "height": 199
+    },
+    {
+      "path": "assets/game/levels/stage_09/enemies/stage9_void_rift/enemies/event_horizon_3.png",
+      "owner": "levels/stage_09",
+      "bytes": 33604,
+      "role": "registered runtime asset",
+      "width": 164,
+      "height": 199
+    },
+    {
+      "path": "assets/game/levels/stage_09/enemies/stage9_void_rift/enemies/event_horizon_4.png",
+      "owner": "levels/stage_09",
+      "bytes": 33939,
+      "role": "registered runtime asset",
+      "width": 164,
+      "height": 199
+    },
+    {
+      "path": "assets/game/levels/stage_09/enemies/stage9_void_rift/enemies/event_horizon_5.png",
+      "owner": "levels/stage_09",
+      "bytes": 33793,
+      "role": "registered runtime asset",
+      "width": 164,
+      "height": 199
+    },
+    {
+      "path": "assets/game/levels/stage_09/enemies/stage9_void_rift/enemies/event_horizon_6.png",
+      "owner": "levels/stage_09",
+      "bytes": 33913,
+      "role": "registered runtime asset",
+      "width": 164,
+      "height": 199
+    },
+    {
+      "path": "assets/game/levels/stage_09/enemies/stage9_void_rift/enemies/event_horizon_blk_0.png",
+      "owner": "levels/stage_09",
+      "bytes": 20152,
+      "role": "registered runtime asset",
+      "width": 164,
+      "height": 199
+    },
+    {
+      "path": "assets/game/levels/stage_09/enemies/stage9_void_rift/enemies/event_horizon_blk_1.png",
+      "owner": "levels/stage_09",
+      "bytes": 20221,
+      "role": "registered runtime asset",
+      "width": 164,
+      "height": 199
+    },
+    {
+      "path": "assets/game/levels/stage_09/enemies/stage9_void_rift/enemies/event_horizon_blk_2.png",
+      "owner": "levels/stage_09",
+      "bytes": 20334,
+      "role": "registered runtime asset",
+      "width": 164,
+      "height": 199
+    },
+    {
+      "path": "assets/game/levels/stage_09/enemies/stage9_void_rift/enemies/event_horizon_blk_3.png",
+      "owner": "levels/stage_09",
+      "bytes": 20361,
+      "role": "registered runtime asset",
+      "width": 164,
+      "height": 199
+    },
+    {
+      "path": "assets/game/levels/stage_09/enemies/stage9_void_rift/enemies/event_horizon_blk_4.png",
+      "owner": "levels/stage_09",
+      "bytes": 19924,
+      "role": "registered runtime asset",
+      "width": 164,
+      "height": 199
+    },
+    {
+      "path": "assets/game/levels/stage_09/enemies/stage9_void_rift/enemies/event_horizon_blk_5.png",
+      "owner": "levels/stage_09",
+      "bytes": 20140,
+      "role": "registered runtime asset",
+      "width": 164,
+      "height": 199
+    },
+    {
+      "path": "assets/game/levels/stage_09/enemies/stage9_void_rift/enemies/event_horizon_blk_6.png",
+      "owner": "levels/stage_09",
+      "bytes": 20057,
+      "role": "registered runtime asset",
+      "width": 164,
+      "height": 199
+    },
+    {
+      "path": "assets/game/levels/stage_09/miniboss/mini_s9.png",
+      "owner": "levels/stage_09",
+      "bytes": 141614,
+      "role": "registered runtime asset",
+      "width": 258,
+      "height": 582
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/eproj_s9.png",
+      "owner": "levels/stage_09",
+      "bytes": 773391,
+      "role": "registered runtime asset",
+      "width": 1011,
+      "height": 977
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalabyssalcrown_0.png",
+      "owner": "levels/stage_09",
+      "bytes": 5095,
+      "role": "registered runtime asset",
+      "width": 120,
+      "height": 96
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalabyssalcrown_1.png",
+      "owner": "levels/stage_09",
+      "bytes": 5274,
+      "role": "registered runtime asset",
+      "width": 120,
+      "height": 96
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalabyssalcrown_2.png",
+      "owner": "levels/stage_09",
+      "bytes": 5718,
+      "role": "registered runtime asset",
+      "width": 120,
+      "height": 96
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalabyssalcrown_3.png",
+      "owner": "levels/stage_09",
+      "bytes": 5374,
+      "role": "registered runtime asset",
+      "width": 120,
+      "height": 96
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalabyssalcrown_4.png",
+      "owner": "levels/stage_09",
+      "bytes": 5146,
+      "role": "registered runtime asset",
+      "width": 120,
+      "height": 96
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalabyssalcrown_5.png",
+      "owner": "levels/stage_09",
+      "bytes": 5253,
+      "role": "registered runtime asset",
+      "width": 120,
+      "height": 96
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalabyssalcrown_6.png",
+      "owner": "levels/stage_09",
+      "bytes": 5719,
+      "role": "registered runtime asset",
+      "width": 120,
+      "height": 96
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalabyssalcrown_7.png",
+      "owner": "levels/stage_09",
+      "bytes": 5431,
+      "role": "registered runtime asset",
+      "width": 120,
+      "height": 96
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalbubblemine_0.png",
+      "owner": "levels/stage_09",
+      "bytes": 5462,
+      "role": "registered runtime asset",
+      "width": 96,
+      "height": 96
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalbubblemine_1.png",
+      "owner": "levels/stage_09",
+      "bytes": 5958,
+      "role": "registered runtime asset",
+      "width": 96,
+      "height": 96
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalbubblemine_2.png",
+      "owner": "levels/stage_09",
+      "bytes": 6349,
+      "role": "registered runtime asset",
+      "width": 96,
+      "height": 96
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalbubblemine_3.png",
+      "owner": "levels/stage_09",
+      "bytes": 5979,
+      "role": "registered runtime asset",
+      "width": 96,
+      "height": 96
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalbubblemine_4.png",
+      "owner": "levels/stage_09",
+      "bytes": 5552,
+      "role": "registered runtime asset",
+      "width": 96,
+      "height": 96
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalbubblemine_5.png",
+      "owner": "levels/stage_09",
+      "bytes": 5937,
+      "role": "registered runtime asset",
+      "width": 96,
+      "height": 96
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalbubblemine_6.png",
+      "owner": "levels/stage_09",
+      "bytes": 6092,
+      "role": "registered runtime asset",
+      "width": 96,
+      "height": 96
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalbubblemine_7.png",
+      "owner": "levels/stage_09",
+      "bytes": 5810,
+      "role": "registered runtime asset",
+      "width": 96,
+      "height": 96
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalcutter_0.png",
+      "owner": "levels/stage_09",
+      "bytes": 4495,
+      "role": "registered runtime asset",
+      "width": 104,
+      "height": 104
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalcutter_1.png",
+      "owner": "levels/stage_09",
+      "bytes": 4487,
+      "role": "registered runtime asset",
+      "width": 104,
+      "height": 104
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalcutter_2.png",
+      "owner": "levels/stage_09",
+      "bytes": 4421,
+      "role": "registered runtime asset",
+      "width": 104,
+      "height": 104
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalcutter_3.png",
+      "owner": "levels/stage_09",
+      "bytes": 4373,
+      "role": "registered runtime asset",
+      "width": 104,
+      "height": 104
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalcutter_4.png",
+      "owner": "levels/stage_09",
+      "bytes": 4523,
+      "role": "registered runtime asset",
+      "width": 104,
+      "height": 104
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalcutter_5.png",
+      "owner": "levels/stage_09",
+      "bytes": 4404,
+      "role": "registered runtime asset",
+      "width": 104,
+      "height": 104
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalcutter_6.png",
+      "owner": "levels/stage_09",
+      "bytes": 4535,
+      "role": "registered runtime asset",
+      "width": 104,
+      "height": 104
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalcutter_7.png",
+      "owner": "levels/stage_09",
+      "bytes": 4553,
+      "role": "registered runtime asset",
+      "width": 104,
+      "height": 104
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalgeyserimpact_0.png",
+      "owner": "levels/stage_09",
+      "bytes": 533,
+      "role": "registered runtime asset",
+      "width": 120,
+      "height": 96
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalgeyserimpact_1.png",
+      "owner": "levels/stage_09",
+      "bytes": 1680,
+      "role": "registered runtime asset",
+      "width": 120,
+      "height": 96
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalgeyserimpact_2.png",
+      "owner": "levels/stage_09",
+      "bytes": 3351,
+      "role": "registered runtime asset",
+      "width": 120,
+      "height": 96
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalgeyserimpact_3.png",
+      "owner": "levels/stage_09",
+      "bytes": 5187,
+      "role": "registered runtime asset",
+      "width": 120,
+      "height": 96
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalgeyserimpact_4.png",
+      "owner": "levels/stage_09",
+      "bytes": 4463,
+      "role": "registered runtime asset",
+      "width": 120,
+      "height": 96
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalgeyserimpact_5.png",
+      "owner": "levels/stage_09",
+      "bytes": 3073,
+      "role": "registered runtime asset",
+      "width": 120,
+      "height": 96
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalgeyserimpact_6.png",
+      "owner": "levels/stage_09",
+      "bytes": 1722,
+      "role": "registered runtime asset",
+      "width": 120,
+      "height": 96
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalgeyserimpact_7.png",
+      "owner": "levels/stage_09",
+      "bytes": 662,
+      "role": "registered runtime asset",
+      "width": 120,
+      "height": 96
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalhydromuzzle_0.png",
+      "owner": "levels/stage_09",
+      "bytes": 772,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 72
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalhydromuzzle_1.png",
+      "owner": "levels/stage_09",
+      "bytes": 1937,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 72
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalhydromuzzle_2.png",
+      "owner": "levels/stage_09",
+      "bytes": 3909,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 72
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalhydromuzzle_3.png",
+      "owner": "levels/stage_09",
+      "bytes": 5041,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 72
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalhydromuzzle_4.png",
+      "owner": "levels/stage_09",
+      "bytes": 2651,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 72
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalhydromuzzle_5.png",
+      "owner": "levels/stage_09",
+      "bytes": 1143,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 72
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalmaelstrom_0.png",
+      "owner": "levels/stage_09",
+      "bytes": 7030,
+      "role": "registered runtime asset",
+      "width": 104,
+      "height": 104
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalmaelstrom_1.png",
+      "owner": "levels/stage_09",
+      "bytes": 7161,
+      "role": "registered runtime asset",
+      "width": 104,
+      "height": 104
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalmaelstrom_2.png",
+      "owner": "levels/stage_09",
+      "bytes": 6984,
+      "role": "registered runtime asset",
+      "width": 104,
+      "height": 104
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalmaelstrom_3.png",
+      "owner": "levels/stage_09",
+      "bytes": 7151,
+      "role": "registered runtime asset",
+      "width": 104,
+      "height": 104
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalmaelstrom_4.png",
+      "owner": "levels/stage_09",
+      "bytes": 7067,
+      "role": "registered runtime asset",
+      "width": 104,
+      "height": 104
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalmaelstrom_5.png",
+      "owner": "levels/stage_09",
+      "bytes": 7162,
+      "role": "registered runtime asset",
+      "width": 104,
+      "height": 104
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalmaelstrom_6.png",
+      "owner": "levels/stage_09",
+      "bytes": 7108,
+      "role": "registered runtime asset",
+      "width": 104,
+      "height": 104
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalmaelstrom_7.png",
+      "owner": "levels/stage_09",
+      "bytes": 7276,
+      "role": "registered runtime asset",
+      "width": 104,
+      "height": 104
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalpressurebeam_0.png",
+      "owner": "levels/stage_09",
+      "bytes": 3900,
+      "role": "registered runtime asset",
+      "width": 56,
+      "height": 128
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalpressurebeam_1.png",
+      "owner": "levels/stage_09",
+      "bytes": 3868,
+      "role": "registered runtime asset",
+      "width": 56,
+      "height": 128
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalpressurebeam_2.png",
+      "owner": "levels/stage_09",
+      "bytes": 3931,
+      "role": "registered runtime asset",
+      "width": 56,
+      "height": 128
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalpressurebeam_3.png",
+      "owner": "levels/stage_09",
+      "bytes": 3904,
+      "role": "registered runtime asset",
+      "width": 56,
+      "height": 128
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalpressurebeam_4.png",
+      "owner": "levels/stage_09",
+      "bytes": 3830,
+      "role": "registered runtime asset",
+      "width": 56,
+      "height": 128
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalpressurebeam_5.png",
+      "owner": "levels/stage_09",
+      "bytes": 3975,
+      "role": "registered runtime asset",
+      "width": 56,
+      "height": 128
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalpressurebeam_6.png",
+      "owner": "levels/stage_09",
+      "bytes": 3931,
+      "role": "registered runtime asset",
+      "width": 56,
+      "height": 128
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalpressurebeam_7.png",
+      "owner": "levels/stage_09",
+      "bytes": 3928,
+      "role": "registered runtime asset",
+      "width": 56,
+      "height": 128
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalpressurebeamtile_0.png",
+      "owner": "levels/stage_09",
+      "bytes": 302,
+      "role": "registered runtime asset",
+      "width": 32,
+      "height": 64
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalpressurebeamtile_1.png",
+      "owner": "levels/stage_09",
+      "bytes": 306,
+      "role": "registered runtime asset",
+      "width": 32,
+      "height": 64
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalpressurebeamtile_2.png",
+      "owner": "levels/stage_09",
+      "bytes": 298,
+      "role": "registered runtime asset",
+      "width": 32,
+      "height": 64
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalpressurebeamtile_3.png",
+      "owner": "levels/stage_09",
+      "bytes": 291,
+      "role": "registered runtime asset",
+      "width": 32,
+      "height": 64
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalpressurebeamtile_4.png",
+      "owner": "levels/stage_09",
+      "bytes": 301,
+      "role": "registered runtime asset",
+      "width": 32,
+      "height": 64
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalpressurebeamtile_5.png",
+      "owner": "levels/stage_09",
+      "bytes": 298,
+      "role": "registered runtime asset",
+      "width": 32,
+      "height": 64
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalpressurebeamtile_6.png",
+      "owner": "levels/stage_09",
+      "bytes": 297,
+      "role": "registered runtime asset",
+      "width": 32,
+      "height": 64
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidalpressurebeamtile_7.png",
+      "owner": "levels/stage_09",
+      "bytes": 290,
+      "role": "registered runtime asset",
+      "width": 32,
+      "height": 64
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidaltorpedo_0.png",
+      "owner": "levels/stage_09",
+      "bytes": 1911,
+      "role": "registered runtime asset",
+      "width": 40,
+      "height": 88
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidaltorpedo_1.png",
+      "owner": "levels/stage_09",
+      "bytes": 1989,
+      "role": "registered runtime asset",
+      "width": 40,
+      "height": 88
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidaltorpedo_2.png",
+      "owner": "levels/stage_09",
+      "bytes": 2058,
+      "role": "registered runtime asset",
+      "width": 40,
+      "height": 88
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidaltorpedo_3.png",
+      "owner": "levels/stage_09",
+      "bytes": 2019,
+      "role": "registered runtime asset",
+      "width": 40,
+      "height": 88
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidaltorpedo_4.png",
+      "owner": "levels/stage_09",
+      "bytes": 1824,
+      "role": "registered runtime asset",
+      "width": 40,
+      "height": 88
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidaltorpedo_5.png",
+      "owner": "levels/stage_09",
+      "bytes": 2058,
+      "role": "registered runtime asset",
+      "width": 40,
+      "height": 88
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidaltorpedo_6.png",
+      "owner": "levels/stage_09",
+      "bytes": 2058,
+      "role": "registered runtime asset",
+      "width": 40,
+      "height": 88
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/tidaltorpedo_7.png",
+      "owner": "levels/stage_09",
+      "bytes": 2028,
+      "role": "registered runtime asset",
+      "width": 40,
+      "height": 88
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpcrystalbeam_0.png",
+      "owner": "levels/stage_09",
+      "bytes": 4366,
+      "role": "registered runtime asset",
+      "width": 56,
+      "height": 128
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpcrystalbeam_1.png",
+      "owner": "levels/stage_09",
+      "bytes": 4641,
+      "role": "registered runtime asset",
+      "width": 56,
+      "height": 128
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpcrystalbeam_2.png",
+      "owner": "levels/stage_09",
+      "bytes": 4606,
+      "role": "registered runtime asset",
+      "width": 56,
+      "height": 128
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpcrystalbeam_3.png",
+      "owner": "levels/stage_09",
+      "bytes": 4450,
+      "role": "registered runtime asset",
+      "width": 56,
+      "height": 128
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpcrystalbeam_4.png",
+      "owner": "levels/stage_09",
+      "bytes": 4268,
+      "role": "registered runtime asset",
+      "width": 56,
+      "height": 128
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpcrystalbeam_5.png",
+      "owner": "levels/stage_09",
+      "bytes": 4528,
+      "role": "registered runtime asset",
+      "width": 56,
+      "height": 128
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpcrystalbeam_6.png",
+      "owner": "levels/stage_09",
+      "bytes": 4606,
+      "role": "registered runtime asset",
+      "width": 56,
+      "height": 128
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpcrystalbeam_7.png",
+      "owner": "levels/stage_09",
+      "bytes": 4609,
+      "role": "registered runtime asset",
+      "width": 56,
+      "height": 128
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpcrystalbeamtile_0.png",
+      "owner": "levels/stage_09",
+      "bytes": 310,
+      "role": "registered runtime asset",
+      "width": 32,
+      "height": 64
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpcrystalbeamtile_1.png",
+      "owner": "levels/stage_09",
+      "bytes": 313,
+      "role": "registered runtime asset",
+      "width": 32,
+      "height": 64
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpcrystalbeamtile_2.png",
+      "owner": "levels/stage_09",
+      "bytes": 302,
+      "role": "registered runtime asset",
+      "width": 32,
+      "height": 64
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpcrystalbeamtile_3.png",
+      "owner": "levels/stage_09",
+      "bytes": 296,
+      "role": "registered runtime asset",
+      "width": 32,
+      "height": 64
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpcrystalbeamtile_4.png",
+      "owner": "levels/stage_09",
+      "bytes": 307,
+      "role": "registered runtime asset",
+      "width": 32,
+      "height": 64
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpcrystalbeamtile_5.png",
+      "owner": "levels/stage_09",
+      "bytes": 305,
+      "role": "registered runtime asset",
+      "width": 32,
+      "height": 64
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpcrystalbeamtile_6.png",
+      "owner": "levels/stage_09",
+      "bytes": 303,
+      "role": "registered runtime asset",
+      "width": 32,
+      "height": 64
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpcrystalbeamtile_7.png",
+      "owner": "levels/stage_09",
+      "bytes": 294,
+      "role": "registered runtime asset",
+      "width": 32,
+      "height": 64
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpcrystalimpact_0.png",
+      "owner": "levels/stage_09",
+      "bytes": 369,
+      "role": "registered runtime asset",
+      "width": 112,
+      "height": 88
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpcrystalimpact_1.png",
+      "owner": "levels/stage_09",
+      "bytes": 1219,
+      "role": "registered runtime asset",
+      "width": 112,
+      "height": 88
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpcrystalimpact_2.png",
+      "owner": "levels/stage_09",
+      "bytes": 2637,
+      "role": "registered runtime asset",
+      "width": 112,
+      "height": 88
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpcrystalimpact_3.png",
+      "owner": "levels/stage_09",
+      "bytes": 4422,
+      "role": "registered runtime asset",
+      "width": 112,
+      "height": 88
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpcrystalimpact_4.png",
+      "owner": "levels/stage_09",
+      "bytes": 3700,
+      "role": "registered runtime asset",
+      "width": 112,
+      "height": 88
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpcrystalimpact_5.png",
+      "owner": "levels/stage_09",
+      "bytes": 2317,
+      "role": "registered runtime asset",
+      "width": 112,
+      "height": 88
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpcrystalimpact_6.png",
+      "owner": "levels/stage_09",
+      "bytes": 1257,
+      "role": "registered runtime asset",
+      "width": 112,
+      "height": 88
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpcrystalimpact_7.png",
+      "owner": "levels/stage_09",
+      "bytes": 497,
+      "role": "registered runtime asset",
+      "width": 112,
+      "height": 88
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpcrystallance_0.png",
+      "owner": "levels/stage_09",
+      "bytes": 2892,
+      "role": "registered runtime asset",
+      "width": 48,
+      "height": 96
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpcrystallance_1.png",
+      "owner": "levels/stage_09",
+      "bytes": 3071,
+      "role": "registered runtime asset",
+      "width": 48,
+      "height": 96
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpcrystallance_2.png",
+      "owner": "levels/stage_09",
+      "bytes": 3148,
+      "role": "registered runtime asset",
+      "width": 48,
+      "height": 96
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpcrystallance_3.png",
+      "owner": "levels/stage_09",
+      "bytes": 3059,
+      "role": "registered runtime asset",
+      "width": 48,
+      "height": 96
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpcrystallance_4.png",
+      "owner": "levels/stage_09",
+      "bytes": 2900,
+      "role": "registered runtime asset",
+      "width": 48,
+      "height": 96
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpcrystallance_5.png",
+      "owner": "levels/stage_09",
+      "bytes": 3031,
+      "role": "registered runtime asset",
+      "width": 48,
+      "height": 96
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpcrystallance_6.png",
+      "owner": "levels/stage_09",
+      "bytes": 3146,
+      "role": "registered runtime asset",
+      "width": 48,
+      "height": 96
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpcrystallance_7.png",
+      "owner": "levels/stage_09",
+      "bytes": 3014,
+      "role": "registered runtime asset",
+      "width": 48,
+      "height": 96
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpprismshard_0.png",
+      "owner": "levels/stage_09",
+      "bytes": 1294,
+      "role": "registered runtime asset",
+      "width": 32,
+      "height": 64
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpprismshard_1.png",
+      "owner": "levels/stage_09",
+      "bytes": 1338,
+      "role": "registered runtime asset",
+      "width": 32,
+      "height": 64
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpprismshard_2.png",
+      "owner": "levels/stage_09",
+      "bytes": 1360,
+      "role": "registered runtime asset",
+      "width": 32,
+      "height": 64
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpprismshard_3.png",
+      "owner": "levels/stage_09",
+      "bytes": 1333,
+      "role": "registered runtime asset",
+      "width": 32,
+      "height": 64
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpprismshard_4.png",
+      "owner": "levels/stage_09",
+      "bytes": 1288,
+      "role": "registered runtime asset",
+      "width": 32,
+      "height": 64
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpprismshard_5.png",
+      "owner": "levels/stage_09",
+      "bytes": 1361,
+      "role": "registered runtime asset",
+      "width": 32,
+      "height": 64
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpprismshard_6.png",
+      "owner": "levels/stage_09",
+      "bytes": 1360,
+      "role": "registered runtime asset",
+      "width": 32,
+      "height": 64
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpprismshard_7.png",
+      "owner": "levels/stage_09",
+      "bytes": 1367,
+      "role": "registered runtime asset",
+      "width": 32,
+      "height": 64
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpriftorb_0.png",
+      "owner": "levels/stage_09",
+      "bytes": 8886,
+      "role": "registered runtime asset",
+      "width": 96,
+      "height": 96
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpriftorb_1.png",
+      "owner": "levels/stage_09",
+      "bytes": 8812,
+      "role": "registered runtime asset",
+      "width": 96,
+      "height": 96
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpriftorb_2.png",
+      "owner": "levels/stage_09",
+      "bytes": 8950,
+      "role": "registered runtime asset",
+      "width": 96,
+      "height": 96
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpriftorb_3.png",
+      "owner": "levels/stage_09",
+      "bytes": 8513,
+      "role": "registered runtime asset",
+      "width": 96,
+      "height": 96
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpriftorb_4.png",
+      "owner": "levels/stage_09",
+      "bytes": 8972,
+      "role": "registered runtime asset",
+      "width": 96,
+      "height": 96
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpriftorb_5.png",
+      "owner": "levels/stage_09",
+      "bytes": 8745,
+      "role": "registered runtime asset",
+      "width": 96,
+      "height": 96
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpriftorb_6.png",
+      "owner": "levels/stage_09",
+      "bytes": 8697,
+      "role": "registered runtime asset",
+      "width": 96,
+      "height": 96
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpriftorb_7.png",
+      "owner": "levels/stage_09",
+      "bytes": 8808,
+      "role": "registered runtime asset",
+      "width": 96,
+      "height": 96
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpsaw_0.png",
+      "owner": "levels/stage_09",
+      "bytes": 8443,
+      "role": "registered runtime asset",
+      "width": 104,
+      "height": 104
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpsaw_1.png",
+      "owner": "levels/stage_09",
+      "bytes": 8244,
+      "role": "registered runtime asset",
+      "width": 104,
+      "height": 104
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpsaw_2.png",
+      "owner": "levels/stage_09",
+      "bytes": 8441,
+      "role": "registered runtime asset",
+      "width": 104,
+      "height": 104
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpsaw_3.png",
+      "owner": "levels/stage_09",
+      "bytes": 8165,
+      "role": "registered runtime asset",
+      "width": 104,
+      "height": 104
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpsaw_4.png",
+      "owner": "levels/stage_09",
+      "bytes": 8368,
+      "role": "registered runtime asset",
+      "width": 104,
+      "height": 104
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpsaw_5.png",
+      "owner": "levels/stage_09",
+      "bytes": 7887,
+      "role": "registered runtime asset",
+      "width": 104,
+      "height": 104
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpsaw_6.png",
+      "owner": "levels/stage_09",
+      "bytes": 8543,
+      "role": "registered runtime asset",
+      "width": 104,
+      "height": 104
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpsaw_7.png",
+      "owner": "levels/stage_09",
+      "bytes": 8127,
+      "role": "registered runtime asset",
+      "width": 104,
+      "height": 104
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpsingularity_0.png",
+      "owner": "levels/stage_09",
+      "bytes": 725,
+      "role": "registered runtime asset",
+      "width": 112,
+      "height": 112
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpsingularity_1.png",
+      "owner": "levels/stage_09",
+      "bytes": 2304,
+      "role": "registered runtime asset",
+      "width": 112,
+      "height": 112
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpsingularity_2.png",
+      "owner": "levels/stage_09",
+      "bytes": 5211,
+      "role": "registered runtime asset",
+      "width": 112,
+      "height": 112
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpsingularity_3.png",
+      "owner": "levels/stage_09",
+      "bytes": 7696,
+      "role": "registered runtime asset",
+      "width": 112,
+      "height": 112
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpsingularity_4.png",
+      "owner": "levels/stage_09",
+      "bytes": 9025,
+      "role": "registered runtime asset",
+      "width": 112,
+      "height": 112
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpsingularity_5.png",
+      "owner": "levels/stage_09",
+      "bytes": 7547,
+      "role": "registered runtime asset",
+      "width": 112,
+      "height": 112
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpsingularity_6.png",
+      "owner": "levels/stage_09",
+      "bytes": 4624,
+      "role": "registered runtime asset",
+      "width": 112,
+      "height": 112
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpsingularity_7.png",
+      "owner": "levels/stage_09",
+      "bytes": 1942,
+      "role": "registered runtime asset",
+      "width": 112,
+      "height": 112
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpvoidmuzzle_0.png",
+      "owner": "levels/stage_09",
+      "bytes": 556,
+      "role": "registered runtime asset",
+      "width": 112,
+      "height": 72
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpvoidmuzzle_1.png",
+      "owner": "levels/stage_09",
+      "bytes": 1721,
+      "role": "registered runtime asset",
+      "width": 112,
+      "height": 72
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpvoidmuzzle_2.png",
+      "owner": "levels/stage_09",
+      "bytes": 3246,
+      "role": "registered runtime asset",
+      "width": 112,
+      "height": 72
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpvoidmuzzle_3.png",
+      "owner": "levels/stage_09",
+      "bytes": 4259,
+      "role": "registered runtime asset",
+      "width": 112,
+      "height": 72
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpvoidmuzzle_4.png",
+      "owner": "levels/stage_09",
+      "bytes": 2380,
+      "role": "registered runtime asset",
+      "width": 112,
+      "height": 72
+    },
+    {
+      "path": "assets/game/levels/stage_09/projectiles/s9_attacks/warpvoidmuzzle_5.png",
+      "owner": "levels/stage_09",
+      "bytes": 901,
+      "role": "registered runtime asset",
+      "width": 112,
+      "height": 72
+    },
+    {
+      "path": "assets/game/levels/stage_09/stage/expansion_v1/space/nst9_starfield.png",
+      "owner": "levels/stage_09",
+      "bytes": 1350339,
+      "role": "registered runtime asset",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "path": "assets/game/levels/stage_09/stage/frames_0.png",
+      "owner": "levels/stage_09",
+      "bytes": 4885629,
+      "role": "registered runtime asset",
+      "width": 808,
+      "height": 3729
+    },
+    {
+      "path": "assets/game/levels/stage_09/stage/space_loops_0923/stage9_loop.png",
+      "owner": "levels/stage_09",
+      "bytes": 2667890,
+      "role": "registered runtime asset",
+      "width": 680,
+      "height": 2720
+    },
+    {
+      "path": "assets/game/levels/stage_09/stage/stage9_void_rift/fx/photon_0.png",
+      "owner": "levels/stage_09",
+      "bytes": 188,
+      "role": "registered runtime asset",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "path": "assets/game/levels/stage_09/stage/stage9_void_rift/fx/photon_1.png",
+      "owner": "levels/stage_09",
+      "bytes": 216,
+      "role": "registered runtime asset",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "path": "assets/game/levels/stage_09/stage/stage9_void_rift/fx/photon_2.png",
+      "owner": "levels/stage_09",
+      "bytes": 241,
+      "role": "registered runtime asset",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "path": "assets/game/levels/stage_09/stage/stage9_void_rift/fx/photon_3.png",
+      "owner": "levels/stage_09",
+      "bytes": 267,
+      "role": "registered runtime asset",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "path": "assets/game/levels/stage_09/stage/stage9_void_rift/fx/photon_4.png",
+      "owner": "levels/stage_09",
+      "bytes": 241,
+      "role": "registered runtime asset",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "path": "assets/game/levels/stage_09/stage/stage9_void_rift/fx/photon_5.png",
+      "owner": "levels/stage_09",
+      "bytes": 216,
+      "role": "registered runtime asset",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "path": "assets/game/levels/stage_09/stage/stage9_void_rift/fx/riftshot_0.png",
+      "owner": "levels/stage_09",
+      "bytes": 197,
+      "role": "registered runtime asset",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "path": "assets/game/levels/stage_09/stage/stage9_void_rift/fx/riftshot_1.png",
+      "owner": "levels/stage_09",
+      "bytes": 213,
+      "role": "registered runtime asset",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "path": "assets/game/levels/stage_09/stage/stage9_void_rift/fx/riftshot_2.png",
+      "owner": "levels/stage_09",
+      "bytes": 222,
+      "role": "registered runtime asset",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "path": "assets/game/levels/stage_09/stage/stage9_void_rift/fx/riftshot_3.png",
+      "owner": "levels/stage_09",
+      "bytes": 252,
+      "role": "registered runtime asset",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "path": "assets/game/levels/stage_09/stage/stage9_void_rift/fx/riftshot_4.png",
+      "owner": "levels/stage_09",
+      "bytes": 222,
+      "role": "registered runtime asset",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "path": "assets/game/levels/stage_09/stage/stage9_void_rift/fx/riftshot_5.png",
+      "owner": "levels/stage_09",
+      "bytes": 213,
+      "role": "registered runtime asset",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "path": "assets/game/levels/stage_09/stage/stage9_void_rift/fx/water_splash_0.png",
+      "owner": "levels/stage_09",
+      "bytes": 533,
+      "role": "registered runtime asset",
+      "width": 120,
+      "height": 96
+    },
+    {
+      "path": "assets/game/levels/stage_09/stage/stage9_void_rift/fx/water_splash_1.png",
+      "owner": "levels/stage_09",
+      "bytes": 1680,
+      "role": "registered runtime asset",
+      "width": 120,
+      "height": 96
+    },
+    {
+      "path": "assets/game/levels/stage_09/stage/stage9_void_rift/fx/water_splash_2.png",
+      "owner": "levels/stage_09",
+      "bytes": 3351,
+      "role": "registered runtime asset",
+      "width": 120,
+      "height": 96
+    },
+    {
+      "path": "assets/game/levels/stage_09/stage/stage9_void_rift/fx/water_splash_3.png",
+      "owner": "levels/stage_09",
+      "bytes": 5187,
+      "role": "registered runtime asset",
+      "width": 120,
+      "height": 96
+    },
+    {
+      "path": "assets/game/levels/stage_09/stage/stage9_void_rift/fx/water_splash_4.png",
+      "owner": "levels/stage_09",
+      "bytes": 4463,
+      "role": "registered runtime asset",
+      "width": 120,
+      "height": 96
+    },
+    {
+      "path": "assets/game/levels/stage_09/stage/stage9_void_rift/fx/water_splash_5.png",
+      "owner": "levels/stage_09",
+      "bytes": 3073,
+      "role": "registered runtime asset",
+      "width": 120,
+      "height": 96
+    },
+    {
+      "path": "assets/game/levels/stage_09/stage/stage9_void_rift/fx/water_splash_6.png",
+      "owner": "levels/stage_09",
+      "bytes": 1722,
+      "role": "registered runtime asset",
+      "width": 120,
+      "height": 96
+    },
+    {
+      "path": "assets/game/levels/stage_09/stage/stage9_void_rift/fx/water_splash_7.png",
+      "owner": "levels/stage_09",
+      "bytes": 662,
+      "role": "registered runtime asset",
+      "width": 120,
+      "height": 96
+    },
+    {
+      "path": "assets/game/levels/stage_09/stage/stage9_void_rift/void_rift_water_loop_680x4096.png",
+      "owner": "levels/stage_09",
+      "bytes": 4857444,
+      "role": "registered runtime asset",
+      "width": 680,
+      "height": 4096
+    }
+  ],
+  "audio": {
+    "sfx": {},
+    "music": {
+      "boss9": "assets/game/levels/stage_09/audio/music/Level9b.mp3",
+      "lordofshadows": "assets/game/levels/stage_09/audio/music/Level9.mp3",
+      "mini9": "assets/game/levels/stage_09/audio/music/Level9mb.mp3"
+    }
+  },
+  "deploymentRoots": [
+    "bof_player_weapon_special_icons_atlas",
+    "ngm_space_atlas",
+    "nst9_voidwater_master",
+    "pp5_raw_yuri_idle",
+    "nfx_s5gate96_0",
+    "nca_stage9_runtime_0",
+    "nca_layout_levels_stage_09_stage_0",
+    "nca_layout_shared_effects_0",
+    "nca_en_s9",
+    "nca_eproj_s9",
+    "bof_player_ordnance_projectiles_atlas",
+    "nca_player_weapons",
+    "pp5_raw_yuri_happy",
+    "pp5_raw_yuri_laugh",
+    "pp5_raw_yuri_anger",
+    "pp5_raw_yuri_sad",
+    "pp5_raw_yuri_crash",
+    "pp5_raw_yuri_victory",
+    "pp5_raw_yuri_talk-closed",
+    "pp5_raw_yuri_talk-small",
+    "pp5_raw_yuri_talk-medium",
+    "pp5_raw_yuri_talk-wide",
+    "pp5_raw_yuri_talk-o",
+    "nst9_void_loop_0923",
+    "nfx_s5gate96_1",
+    "nfx_s5gate96_2",
+    "nfx_s5gate96_3",
+    "nfx_s5gate96_4",
+    "nfx_s5gate96_5",
+    "nfx_s5gate96_6",
+    "nfx_s5gate96_7",
+    "nst9_starfield",
+    "nca_fx_explosions",
+    "nca_fx_debris"
+  ],
+  "audioDescription": "Level music and stage-specific sounds are in audio/. Common music and reusable sounds are registered in BOFA and stored once in shared/audio."
+}

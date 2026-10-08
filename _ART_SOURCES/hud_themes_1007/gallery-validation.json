@@ -1,0 +1,71 @@
+{
+  "themes": [
+    {
+      "stage": "stage_01",
+      "loaded": true,
+      "png_link": true,
+      "prompt_link": true
+    },
+    {
+      "stage": "stage_02",
+      "loaded": true,
+      "png_link": true,
+      "prompt_link": true
+    },
+    {
+      "stage": "stage_03",
+      "loaded": true,
+      "png_link": true,
+      "prompt_link": true
+    },
+    {
+      "stage": "stage_04",
+      "loaded": true,
+      "png_link": true,
+      "prompt_link": true
+    },
+    {
+      "stage": "stage_05",
+      "loaded": true,
+      "png_link": true,
+      "prompt_link": true
+    },
+    {
+      "stage": "stage_06",
+      "loaded": true,
+      "png_link": true,
+      "prompt_link": true
+    },
+    {
+      "stage": "stage_07",
+      "loaded": true,
+      "png_link": true,
+      "prompt_link": true
+    },
+    {
+      "stage": "stage_08",
+      "loaded": true,
+      "png_link": true,
+      "prompt_link": true
+    },
+    {
+      "stage": "stage_09",
+      "loaded": true,
+      "png_link": true,
+      "prompt_link": true
+    },
+    {
+      "stage": "stage_x",
+      "loaded": true,
+      "png_link": true,
+      "prompt_link": true
+    }
+  ],
+  "all_images_loaded": true,
+  "all_prompt_links_work": true,
+  "native_width": 480,
+  "mobile_width": 390,
+  "mobile_no_horizontal_overflow": true,
+  "errors": [],
+  "scope": "Art gallery verification, not gameplay or performance testing"
+}

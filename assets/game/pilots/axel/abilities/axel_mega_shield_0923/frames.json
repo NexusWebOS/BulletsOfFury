@@ -1,0 +1,73 @@
+{
+  "size": [
+    256,
+    256
+  ],
+  "scale": 0.45,
+  "frames": [
+    {
+      "file": "assets/game/pilots/axel/abilities/axel_mega_shield_0923/shield_0.png",
+      "anchor": [
+        128,
+        128
+      ],
+      "sha12": "c4206baad767"
+    },
+    {
+      "file": "assets/game/pilots/axel/abilities/axel_mega_shield_0923/shield_1.png",
+      "anchor": [
+        128,
+        128
+      ],
+      "sha12": "2c198f0b323b"
+    },
+    {
+      "file": "assets/game/pilots/axel/abilities/axel_mega_shield_0923/shield_2.png",
+      "anchor": [
+        128,
+        128
+      ],
+      "sha12": "d99b6646658f"
+    },
+    {
+      "file": "assets/game/pilots/axel/abilities/axel_mega_shield_0923/shield_3.png",
+      "anchor": [
+        128,
+        128
+      ],
+      "sha12": "b8d93cdeb0fb"
+    },
+    {
+      "file": "assets/game/pilots/axel/abilities/axel_mega_shield_0923/shield_4.png",
+      "anchor": [
+        128,
+        128
+      ],
+      "sha12": "d35b15617e41"
+    },
+    {
+      "file": "assets/game/pilots/axel/abilities/axel_mega_shield_0923/shield_5.png",
+      "anchor": [
+        128,
+        128
+      ],
+      "sha12": "1ad0d599ccab"
+    },
+    {
+      "file": "assets/game/pilots/axel/abilities/axel_mega_shield_0923/shield_6.png",
+      "anchor": [
+        128,
+        128
+      ],
+      "sha12": "ac417d9b36bb"
+    },
+    {
+      "file": "assets/game/pilots/axel/abilities/axel_mega_shield_0923/shield_7.png",
+      "anchor": [
+        128,
+        128
+      ],
+      "sha12": "bec3c2a9ff02"
+    }
+  ]
+}

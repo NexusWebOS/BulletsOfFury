@@ -26,7 +26,7 @@ first, and each one is a trap for any future stepped probe, not just this one:
   A. STEPPING GIVES THE BROWSER NO TIME TO DECODE AN IMAGE.  shoot.STEP advances a synthetic clock
      inside one tight JS loop, so a 58-second run finishes in milliseconds of wall time. The whole
      void roster is CELLS OF ONE ATLAS - BOFX.cells['ns9e_wskim_idle'] = ['en_s9',1490,2120,...] -
-     and `assets/game/atlas/en_s9.png` was still decoding for every frame of the run. Measured:
+     and `assets/game/levels/stage_09/enemies/en_s9.png` was still decoding for every frame of the run. Measured:
      rawComplete=false, naturalWidth=0, ZERO network requests, and `XART.rdy` false on all eight
      specialists for the entire run... then TRUE after a 1.5s real wait. The first version of this
      probe reported "** NOT DRAWN **" for nine units that were fine. So: the atlas is warmed and

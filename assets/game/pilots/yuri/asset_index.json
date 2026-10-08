@@ -1,0 +1,1196 @@
+{
+  "owner": "pilots/yuri",
+  "loading": {
+    "boot": "UI, fonts, idle portraits only",
+    "deployment": "selected pilot portraits, shared player weapons, required stage textures",
+    "transition": "release previous stage textures and derived caches; preserve explicitly queued copied-form dependencies",
+    "quality": "automatic native resolution on low-memory/low-core devices; reduce supersampling after sustained slow play frames"
+  },
+  "sharedDependencies": [
+    "shared/fonts",
+    "shared/ui",
+    "shared/player_weapons",
+    "shared/effects",
+    "shared/ships"
+  ],
+  "assets": [
+    {
+      "key": "aintro_yuri",
+      "root": "nca_layout_pilots_yuri_portraits_0",
+      "path": "assets/game/pilots/yuri/portraits/frames_0.png",
+      "owner": "pilots/yuri",
+      "cell": [
+        "layout_pilots_yuri_portraits_0",
+        1790,
+        4,
+        640,
+        480
+      ]
+    },
+    {
+      "key": "pcard_yuri",
+      "root": "nca_layout_pilots_yuri_portraits_0",
+      "path": "assets/game/pilots/yuri/portraits/frames_0.png",
+      "owner": "pilots/yuri",
+      "cell": [
+        "layout_pilots_yuri_portraits_0",
+        4,
+        4,
+        958,
+        718
+      ]
+    },
+    {
+      "key": "nsa_ship_yuri",
+      "root": "nsa_ship_yuri",
+      "path": "assets/game/pilots/yuri/ship_frames/ship_yuri.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    },
+    {
+      "key": "card_yuri",
+      "root": "nca_layout_pilots_yuri_portraits_0",
+      "path": "assets/game/pilots/yuri/portraits/frames_0.png",
+      "owner": "pilots/yuri",
+      "cell": [
+        "layout_pilots_yuri_portraits_0",
+        966,
+        4,
+        820,
+        614
+      ]
+    },
+    {
+      "key": "pose_yuri_0",
+      "root": "nca_layout_pilots_yuri_body_frames_0",
+      "path": "assets/game/pilots/yuri/body_frames/frames_0.png",
+      "owner": "pilots/yuri",
+      "cell": [
+        "layout_pilots_yuri_body_frames_0",
+        4,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "key": "pose_yuri_1",
+      "root": "nca_layout_pilots_yuri_body_frames_0",
+      "path": "assets/game/pilots/yuri/body_frames/frames_0.png",
+      "owner": "pilots/yuri",
+      "cell": [
+        "layout_pilots_yuri_body_frames_0",
+        264,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "key": "pose_yuri_2",
+      "root": "nca_layout_pilots_yuri_body_frames_0",
+      "path": "assets/game/pilots/yuri/body_frames/frames_0.png",
+      "owner": "pilots/yuri",
+      "cell": [
+        "layout_pilots_yuri_body_frames_0",
+        524,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "key": "pose_yuri_3",
+      "root": "nca_layout_pilots_yuri_body_frames_0",
+      "path": "assets/game/pilots/yuri/body_frames/frames_0.png",
+      "owner": "pilots/yuri",
+      "cell": [
+        "layout_pilots_yuri_body_frames_0",
+        784,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "key": "pose_yuri_4",
+      "root": "nca_layout_pilots_yuri_body_frames_0",
+      "path": "assets/game/pilots/yuri/body_frames/frames_0.png",
+      "owner": "pilots/yuri",
+      "cell": [
+        "layout_pilots_yuri_body_frames_0",
+        1044,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "key": "pose_yuri_5",
+      "root": "nca_layout_pilots_yuri_body_frames_0",
+      "path": "assets/game/pilots/yuri/body_frames/frames_0.png",
+      "owner": "pilots/yuri",
+      "cell": [
+        "layout_pilots_yuri_body_frames_0",
+        1304,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "key": "nthp_yuri_2",
+      "root": "nca_layout_pilots_yuri_abilities_0",
+      "path": "assets/game/pilots/yuri/abilities/frames_0.png",
+      "owner": "pilots/yuri",
+      "cell": [
+        "layout_pilots_yuri_abilities_0",
+        4,
+        4,
+        170,
+        192
+      ]
+    },
+    {
+      "key": "nthp_yuri_1",
+      "root": "nca_layout_pilots_yuri_abilities_0",
+      "path": "assets/game/pilots/yuri/abilities/frames_0.png",
+      "owner": "pilots/yuri",
+      "cell": [
+        "layout_pilots_yuri_abilities_0",
+        178,
+        4,
+        136,
+        158
+      ]
+    },
+    {
+      "key": "nthp_yuri_3",
+      "root": "nca_layout_pilots_yuri_abilities_0",
+      "path": "assets/game/pilots/yuri/abilities/frames_0.png",
+      "owner": "pilots/yuri",
+      "cell": [
+        "layout_pilots_yuri_abilities_0",
+        318,
+        4,
+        81,
+        135
+      ]
+    },
+    {
+      "key": "nthp_yuri_0",
+      "root": "nca_layout_pilots_yuri_abilities_0",
+      "path": "assets/game/pilots/yuri/abilities/frames_0.png",
+      "owner": "pilots/yuri",
+      "cell": [
+        "layout_pilots_yuri_abilities_0",
+        403,
+        4,
+        81,
+        102
+      ]
+    },
+    {
+      "key": "pemb_yuri",
+      "root": "nca_layout_pilots_yuri_portraits_0",
+      "path": "assets/game/pilots/yuri/portraits/frames_0.png",
+      "owner": "pilots/yuri",
+      "cell": [
+        "layout_pilots_yuri_portraits_0",
+        2434,
+        4,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "sp_yuri_0",
+      "root": "nca_layout_pilots_yuri_abilities_0",
+      "path": "assets/game/pilots/yuri/abilities/frames_0.png",
+      "owner": "pilots/yuri",
+      "cell": [
+        "layout_pilots_yuri_abilities_0",
+        488,
+        4,
+        64,
+        52
+      ]
+    },
+    {
+      "key": "sp_yuri_1",
+      "root": "nca_layout_pilots_yuri_abilities_0",
+      "path": "assets/game/pilots/yuri/abilities/frames_0.png",
+      "owner": "pilots/yuri",
+      "cell": [
+        "layout_pilots_yuri_abilities_0",
+        556,
+        4,
+        64,
+        52
+      ]
+    },
+    {
+      "key": "sp_yuri_2",
+      "root": "nca_layout_pilots_yuri_abilities_0",
+      "path": "assets/game/pilots/yuri/abilities/frames_0.png",
+      "owner": "pilots/yuri",
+      "cell": [
+        "layout_pilots_yuri_abilities_0",
+        624,
+        4,
+        64,
+        52
+      ]
+    },
+    {
+      "key": "sp_yuri_3",
+      "root": "nca_layout_pilots_yuri_abilities_0",
+      "path": "assets/game/pilots/yuri/abilities/frames_0.png",
+      "owner": "pilots/yuri",
+      "cell": [
+        "layout_pilots_yuri_abilities_0",
+        692,
+        4,
+        64,
+        52
+      ]
+    },
+    {
+      "key": "nca_layout_pilots_yuri_abilities_0",
+      "root": "nca_layout_pilots_yuri_abilities_0",
+      "path": "assets/game/pilots/yuri/abilities/frames_0.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    },
+    {
+      "key": "nca_layout_pilots_yuri_body_frames_0",
+      "root": "nca_layout_pilots_yuri_body_frames_0",
+      "path": "assets/game/pilots/yuri/body_frames/frames_0.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    },
+    {
+      "key": "nca_layout_pilots_yuri_portraits_0",
+      "root": "nca_layout_pilots_yuri_portraits_0",
+      "path": "assets/game/pilots/yuri/portraits/frames_0.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    },
+    {
+      "key": "micon_lightningorb_1",
+      "root": "micon_lightningorb_1",
+      "path": "assets/game/pilots/yuri/abilities/yuri_lightning_orb_0916/lightning_orb_icon_1.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    },
+    {
+      "key": "ylo_orb_1",
+      "root": "ylo_orb_1",
+      "path": "assets/game/pilots/yuri/abilities/yuri_lightning_orb_0916/lightning_orb_1.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    },
+    {
+      "key": "ylo_bolt_1",
+      "root": "ylo_bolt_1",
+      "path": "assets/game/pilots/yuri/abilities/yuri_lightning_orb_0916/lightning_bolt_1.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    },
+    {
+      "key": "micon_lightningorb_2",
+      "root": "micon_lightningorb_2",
+      "path": "assets/game/pilots/yuri/abilities/yuri_lightning_orb_0916/lightning_orb_icon_2.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    },
+    {
+      "key": "ylo_orb_2",
+      "root": "ylo_orb_2",
+      "path": "assets/game/pilots/yuri/abilities/yuri_lightning_orb_0916/lightning_orb_2.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    },
+    {
+      "key": "ylo_bolt_2",
+      "root": "ylo_bolt_2",
+      "path": "assets/game/pilots/yuri/abilities/yuri_lightning_orb_0916/lightning_bolt_2.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    },
+    {
+      "key": "micon_lightningorb_3",
+      "root": "micon_lightningorb_3",
+      "path": "assets/game/pilots/yuri/abilities/yuri_lightning_orb_0916/lightning_orb_icon_3.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    },
+    {
+      "key": "ylo_orb_3",
+      "root": "ylo_orb_3",
+      "path": "assets/game/pilots/yuri/abilities/yuri_lightning_orb_0916/lightning_orb_3.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    },
+    {
+      "key": "ylo_bolt_3",
+      "root": "ylo_bolt_3",
+      "path": "assets/game/pilots/yuri/abilities/yuri_lightning_orb_0916/lightning_bolt_3.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    },
+    {
+      "key": "micon_lightningorb_4",
+      "root": "micon_lightningorb_4",
+      "path": "assets/game/pilots/yuri/abilities/yuri_lightning_orb_0916/lightning_orb_icon_4.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    },
+    {
+      "key": "ylo_orb_4",
+      "root": "ylo_orb_4",
+      "path": "assets/game/pilots/yuri/abilities/yuri_lightning_orb_0916/lightning_orb_4.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    },
+    {
+      "key": "ylo_bolt_4",
+      "root": "ylo_bolt_4",
+      "path": "assets/game/pilots/yuri/abilities/yuri_lightning_orb_0916/lightning_bolt_4.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    },
+    {
+      "key": "micon_lightningorb_5",
+      "root": "micon_lightningorb_5",
+      "path": "assets/game/pilots/yuri/abilities/yuri_lightning_orb_0916/lightning_orb_icon_5.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    },
+    {
+      "key": "ylo_orb_5",
+      "root": "ylo_orb_5",
+      "path": "assets/game/pilots/yuri/abilities/yuri_lightning_orb_0916/lightning_orb_5.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    },
+    {
+      "key": "ylo_bolt_5",
+      "root": "ylo_bolt_5",
+      "path": "assets/game/pilots/yuri/abilities/yuri_lightning_orb_0916/lightning_bolt_5.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    },
+    {
+      "key": "port_cf_yuri_idle",
+      "root": "port_cf_yuri_idle",
+      "path": "assets/game/pilots/yuri/portraits/pilots_0922/portraits/yuri-idle.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    },
+    {
+      "key": "port_cf_yuri_happy",
+      "root": "port_cf_yuri_happy",
+      "path": "assets/game/pilots/yuri/portraits/pilots_0922/portraits/yuri-happy.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    },
+    {
+      "key": "port_cf_yuri_laugh",
+      "root": "port_cf_yuri_laugh",
+      "path": "assets/game/pilots/yuri/portraits/pilots_0922/portraits/yuri-laugh.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    },
+    {
+      "key": "port_cf_yuri_anger",
+      "root": "port_cf_yuri_anger",
+      "path": "assets/game/pilots/yuri/portraits/pilots_0922/portraits/yuri-anger.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    },
+    {
+      "key": "port_cf_yuri_sad",
+      "root": "port_cf_yuri_sad",
+      "path": "assets/game/pilots/yuri/portraits/pilots_0922/portraits/yuri-sad.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    },
+    {
+      "key": "port_cf_yuri_crash",
+      "root": "port_cf_yuri_crash",
+      "path": "assets/game/pilots/yuri/portraits/pilots_0922/portraits/yuri-crash.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    },
+    {
+      "key": "port_cf_yuri_victory",
+      "root": "port_cf_yuri_victory",
+      "path": "assets/game/pilots/yuri/portraits/pilots_0922/portraits/yuri-victory.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    },
+    {
+      "key": "port_cf_yuri_talk-closed",
+      "root": "port_cf_yuri_talk-closed",
+      "path": "assets/game/pilots/yuri/portraits/pilots_0922/portraits/yuri-talk-closed.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    },
+    {
+      "key": "port_cf_yuri_talk-small",
+      "root": "port_cf_yuri_talk-small",
+      "path": "assets/game/pilots/yuri/portraits/pilots_0922/portraits/yuri-talk-small.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    },
+    {
+      "key": "port_cf_yuri_talk-medium",
+      "root": "port_cf_yuri_talk-medium",
+      "path": "assets/game/pilots/yuri/portraits/pilots_0922/portraits/yuri-talk-medium.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    },
+    {
+      "key": "port_cf_yuri_talk-wide",
+      "root": "port_cf_yuri_talk-wide",
+      "path": "assets/game/pilots/yuri/portraits/pilots_0922/portraits/yuri-talk-wide.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    },
+    {
+      "key": "port_cf_yuri_talk-o",
+      "root": "port_cf_yuri_talk-o",
+      "path": "assets/game/pilots/yuri/portraits/pilots_0922/portraits/yuri-talk-o.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    },
+    {
+      "key": "port_cf_yuri_alert",
+      "root": "port_cf_yuri_alert",
+      "path": "assets/game/pilots/yuri/portraits/pilots_0922/portraits/yuri-crash.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    },
+    {
+      "key": "comm_yuri_alert",
+      "root": "comm_yuri_alert",
+      "path": "assets/game/pilots/yuri/portraits/pilots_0922/comm/comm_yuri_crash.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    },
+    {
+      "key": "cinpose_yuri_1",
+      "root": "cinpose_yuri_1",
+      "path": "assets/game/pilots/yuri/body_frames/cinematic_characters/yuri/poses/01_front_neutral.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    },
+    {
+      "key": "cinpose_yuri_2",
+      "root": "cinpose_yuri_2",
+      "path": "assets/game/pilots/yuri/body_frames/cinematic_characters/yuri/poses/02_front_left_3q.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    },
+    {
+      "key": "cinpose_yuri_3",
+      "root": "cinpose_yuri_3",
+      "path": "assets/game/pilots/yuri/body_frames/cinematic_characters/yuri/poses/03_front_right_3q.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    },
+    {
+      "key": "cinpose_yuri_4",
+      "root": "cinpose_yuri_4",
+      "path": "assets/game/pilots/yuri/body_frames/cinematic_characters/yuri/poses/04_back_neutral.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    },
+    {
+      "key": "cinpose_yuri_5",
+      "root": "cinpose_yuri_5",
+      "path": "assets/game/pilots/yuri/body_frames/cinematic_characters/yuri/poses/05_back_left_3q.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    },
+    {
+      "key": "cinpose_yuri_6",
+      "root": "cinpose_yuri_6",
+      "path": "assets/game/pilots/yuri/body_frames/cinematic_characters/yuri/poses/06_back_right_3q.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    },
+    {
+      "key": "yuri_avatar",
+      "root": "yuri_avatar",
+      "path": "assets/game/pilots/yuri/portraits/yuri_v2/yuri_avatar.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    },
+    {
+      "key": "yuri_v2_idle",
+      "root": "yuri_v2_idle",
+      "path": "assets/game/pilots/yuri/portraits/pilots_0922/portraits/yuri-idle.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    },
+    {
+      "key": "yuri_v2_anger",
+      "root": "yuri_v2_anger",
+      "path": "assets/game/pilots/yuri/portraits/pilots_0922/portraits/yuri-anger.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    },
+    {
+      "key": "yuri_v2_smile",
+      "root": "yuri_v2_smile",
+      "path": "assets/game/pilots/yuri/portraits/pilots_0922/portraits/yuri-happy.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    },
+    {
+      "key": "yuri_v2_crash",
+      "root": "yuri_v2_crash",
+      "path": "assets/game/pilots/yuri/portraits/pilots_0922/portraits/yuri-crash.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    },
+    {
+      "key": "yuri_v2_sad",
+      "root": "yuri_v2_sad",
+      "path": "assets/game/pilots/yuri/portraits/pilots_0922/portraits/yuri-sad.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    },
+    {
+      "key": "yuri_v2_laugh",
+      "root": "yuri_v2_laugh",
+      "path": "assets/game/pilots/yuri/portraits/pilots_0922/portraits/yuri-laugh.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    },
+    {
+      "key": "yuri_v2_victory",
+      "root": "yuri_v2_victory",
+      "path": "assets/game/pilots/yuri/portraits/pilots_0922/portraits/yuri-victory.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    },
+    {
+      "key": "comm_yuri_idle",
+      "root": "comm_yuri_idle",
+      "path": "assets/game/pilots/yuri/portraits/pilots_0922/comm/comm_yuri_idle.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    },
+    {
+      "key": "comm_yuri_happy",
+      "root": "comm_yuri_happy",
+      "path": "assets/game/pilots/yuri/portraits/pilots_0922/comm/comm_yuri_happy.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    },
+    {
+      "key": "comm_yuri_laugh",
+      "root": "comm_yuri_laugh",
+      "path": "assets/game/pilots/yuri/portraits/pilots_0922/comm/comm_yuri_laugh.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    },
+    {
+      "key": "comm_yuri_anger",
+      "root": "comm_yuri_anger",
+      "path": "assets/game/pilots/yuri/portraits/pilots_0922/comm/comm_yuri_anger.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    },
+    {
+      "key": "comm_yuri_sad",
+      "root": "comm_yuri_sad",
+      "path": "assets/game/pilots/yuri/portraits/pilots_0922/comm/comm_yuri_sad.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    },
+    {
+      "key": "comm_yuri_crash",
+      "root": "comm_yuri_crash",
+      "path": "assets/game/pilots/yuri/portraits/pilots_0922/comm/comm_yuri_crash.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    },
+    {
+      "key": "comm_yuri_victory",
+      "root": "comm_yuri_victory",
+      "path": "assets/game/pilots/yuri/portraits/pilots_0922/comm/comm_yuri_victory.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    },
+    {
+      "key": "comm_yuri_talk-closed",
+      "root": "comm_yuri_talk-closed",
+      "path": "assets/game/pilots/yuri/portraits/pilots_0922/comm/comm_yuri_talk-closed.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    },
+    {
+      "key": "comm_yuri_talk-small",
+      "root": "comm_yuri_talk-small",
+      "path": "assets/game/pilots/yuri/portraits/pilots_0922/comm/comm_yuri_talk-small.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    },
+    {
+      "key": "comm_yuri_talk-medium",
+      "root": "comm_yuri_talk-medium",
+      "path": "assets/game/pilots/yuri/portraits/pilots_0922/comm/comm_yuri_talk-medium.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    },
+    {
+      "key": "comm_yuri_talk-wide",
+      "root": "comm_yuri_talk-wide",
+      "path": "assets/game/pilots/yuri/portraits/pilots_0922/comm/comm_yuri_talk-wide.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    },
+    {
+      "key": "comm_yuri_talk-o",
+      "root": "comm_yuri_talk-o",
+      "path": "assets/game/pilots/yuri/portraits/pilots_0922/comm/comm_yuri_talk-o.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    },
+    {
+      "key": "pav_yuri",
+      "root": "pav_yuri",
+      "path": "assets/game/pilots/yuri/portraits/pilots_0922/portraits/yuri-idle.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    },
+    {
+      "key": "yuri_body_0",
+      "root": "yuri_body_0",
+      "path": "assets/game/pilots/yuri/body_frames/pilot_bodies/yuri_body_0.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_yuri_idle",
+      "root": "pp5_raw_yuri_idle",
+      "path": "assets/game/pilots/yuri/portraits/pilots_0922/portraits/yuri-idle.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_yuri_happy",
+      "root": "pp5_raw_yuri_happy",
+      "path": "assets/game/pilots/yuri/portraits/pilots_0922/portraits/yuri-happy.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_yuri_laugh",
+      "root": "pp5_raw_yuri_laugh",
+      "path": "assets/game/pilots/yuri/portraits/pilots_0922/portraits/yuri-laugh.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_yuri_anger",
+      "root": "pp5_raw_yuri_anger",
+      "path": "assets/game/pilots/yuri/portraits/pilots_0922/portraits/yuri-anger.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_yuri_sad",
+      "root": "pp5_raw_yuri_sad",
+      "path": "assets/game/pilots/yuri/portraits/pilots_0922/portraits/yuri-sad.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_yuri_crash",
+      "root": "pp5_raw_yuri_crash",
+      "path": "assets/game/pilots/yuri/portraits/pilots_0922/portraits/yuri-crash.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_yuri_victory",
+      "root": "pp5_raw_yuri_victory",
+      "path": "assets/game/pilots/yuri/portraits/pilots_0922/portraits/yuri-victory.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_yuri_talk-closed",
+      "root": "pp5_raw_yuri_talk-closed",
+      "path": "assets/game/pilots/yuri/portraits/pilots_0922/portraits/yuri-talk-closed.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_yuri_talk-small",
+      "root": "pp5_raw_yuri_talk-small",
+      "path": "assets/game/pilots/yuri/portraits/pilots_0922/portraits/yuri-talk-small.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_yuri_talk-medium",
+      "root": "pp5_raw_yuri_talk-medium",
+      "path": "assets/game/pilots/yuri/portraits/pilots_0922/portraits/yuri-talk-medium.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_yuri_talk-wide",
+      "root": "pp5_raw_yuri_talk-wide",
+      "path": "assets/game/pilots/yuri/portraits/pilots_0922/portraits/yuri-talk-wide.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_yuri_talk-o",
+      "root": "pp5_raw_yuri_talk-o",
+      "path": "assets/game/pilots/yuri/portraits/pilots_0922/portraits/yuri-talk-o.png",
+      "owner": "pilots/yuri",
+      "cell": null
+    }
+  ],
+  "files": [
+    {
+      "path": "assets/game/pilots/yuri/abilities/frames_0.png",
+      "owner": "pilots/yuri",
+      "bytes": 74925,
+      "role": "registered runtime asset",
+      "width": 760,
+      "height": 200
+    },
+    {
+      "path": "assets/game/pilots/yuri/abilities/yuri_lightning_orb_0916/lightning_bolt_1.png",
+      "owner": "pilots/yuri",
+      "bytes": 1069,
+      "role": "registered runtime asset",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "path": "assets/game/pilots/yuri/abilities/yuri_lightning_orb_0916/lightning_bolt_2.png",
+      "owner": "pilots/yuri",
+      "bytes": 1205,
+      "role": "registered runtime asset",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "path": "assets/game/pilots/yuri/abilities/yuri_lightning_orb_0916/lightning_bolt_3.png",
+      "owner": "pilots/yuri",
+      "bytes": 1281,
+      "role": "registered runtime asset",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "path": "assets/game/pilots/yuri/abilities/yuri_lightning_orb_0916/lightning_bolt_4.png",
+      "owner": "pilots/yuri",
+      "bytes": 1429,
+      "role": "registered runtime asset",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "path": "assets/game/pilots/yuri/abilities/yuri_lightning_orb_0916/lightning_bolt_5.png",
+      "owner": "pilots/yuri",
+      "bytes": 1389,
+      "role": "registered runtime asset",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "path": "assets/game/pilots/yuri/abilities/yuri_lightning_orb_0916/lightning_orb_1.png",
+      "owner": "pilots/yuri",
+      "bytes": 1463,
+      "role": "registered runtime asset",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "path": "assets/game/pilots/yuri/abilities/yuri_lightning_orb_0916/lightning_orb_2.png",
+      "owner": "pilots/yuri",
+      "bytes": 2240,
+      "role": "registered runtime asset",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "path": "assets/game/pilots/yuri/abilities/yuri_lightning_orb_0916/lightning_orb_3.png",
+      "owner": "pilots/yuri",
+      "bytes": 2400,
+      "role": "registered runtime asset",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "path": "assets/game/pilots/yuri/abilities/yuri_lightning_orb_0916/lightning_orb_4.png",
+      "owner": "pilots/yuri",
+      "bytes": 2960,
+      "role": "registered runtime asset",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "path": "assets/game/pilots/yuri/abilities/yuri_lightning_orb_0916/lightning_orb_5.png",
+      "owner": "pilots/yuri",
+      "bytes": 3729,
+      "role": "registered runtime asset",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "path": "assets/game/pilots/yuri/abilities/yuri_lightning_orb_0916/lightning_orb_icon_1.png",
+      "owner": "pilots/yuri",
+      "bytes": 7788,
+      "role": "registered runtime asset",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "path": "assets/game/pilots/yuri/abilities/yuri_lightning_orb_0916/lightning_orb_icon_2.png",
+      "owner": "pilots/yuri",
+      "bytes": 8083,
+      "role": "registered runtime asset",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "path": "assets/game/pilots/yuri/abilities/yuri_lightning_orb_0916/lightning_orb_icon_3.png",
+      "owner": "pilots/yuri",
+      "bytes": 8272,
+      "role": "registered runtime asset",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "path": "assets/game/pilots/yuri/abilities/yuri_lightning_orb_0916/lightning_orb_icon_4.png",
+      "owner": "pilots/yuri",
+      "bytes": 8294,
+      "role": "registered runtime asset",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "path": "assets/game/pilots/yuri/abilities/yuri_lightning_orb_0916/lightning_orb_icon_5.png",
+      "owner": "pilots/yuri",
+      "bytes": 8351,
+      "role": "registered runtime asset",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "path": "assets/game/pilots/yuri/abilities/yuri_lightning_orb_0916/spritecook-assets.json",
+      "owner": "pilots/yuri",
+      "bytes": 2054,
+      "role": "source or supporting file"
+    },
+    {
+      "path": "assets/game/pilots/yuri/body_frames/cinematic_characters/yuri/poses/01_front_neutral.png",
+      "owner": "pilots/yuri",
+      "bytes": 211733,
+      "role": "registered runtime asset",
+      "width": 304,
+      "height": 678
+    },
+    {
+      "path": "assets/game/pilots/yuri/body_frames/cinematic_characters/yuri/poses/02_front_left_3q.png",
+      "owner": "pilots/yuri",
+      "bytes": 208848,
+      "role": "registered runtime asset",
+      "width": 397,
+      "height": 679
+    },
+    {
+      "path": "assets/game/pilots/yuri/body_frames/cinematic_characters/yuri/poses/03_front_right_3q.png",
+      "owner": "pilots/yuri",
+      "bytes": 202713,
+      "role": "registered runtime asset",
+      "width": 355,
+      "height": 669
+    },
+    {
+      "path": "assets/game/pilots/yuri/body_frames/cinematic_characters/yuri/poses/04_back_neutral.png",
+      "owner": "pilots/yuri",
+      "bytes": 196746,
+      "role": "registered runtime asset",
+      "width": 292,
+      "height": 673
+    },
+    {
+      "path": "assets/game/pilots/yuri/body_frames/cinematic_characters/yuri/poses/05_back_left_3q.png",
+      "owner": "pilots/yuri",
+      "bytes": 178051,
+      "role": "registered runtime asset",
+      "width": 293,
+      "height": 664
+    },
+    {
+      "path": "assets/game/pilots/yuri/body_frames/cinematic_characters/yuri/poses/06_back_right_3q.png",
+      "owner": "pilots/yuri",
+      "bytes": 186641,
+      "role": "registered runtime asset",
+      "width": 362,
+      "height": 657
+    },
+    {
+      "path": "assets/game/pilots/yuri/body_frames/frames_0.png",
+      "owner": "pilots/yuri",
+      "bytes": 333078,
+      "role": "registered runtime asset",
+      "width": 1564,
+      "height": 328
+    },
+    {
+      "path": "assets/game/pilots/yuri/body_frames/pilot_bodies/yuri_body_0.png",
+      "owner": "pilots/yuri",
+      "bytes": 60128,
+      "role": "registered runtime asset",
+      "width": 125,
+      "height": 273
+    },
+    {
+      "path": "assets/game/pilots/yuri/portraits/frames_0.png",
+      "owner": "pilots/yuri",
+      "bytes": 2156944,
+      "role": "registered runtime asset",
+      "width": 2694,
+      "height": 726
+    },
+    {
+      "path": "assets/game/pilots/yuri/portraits/pilots_0922/comm/comm_yuri_anger.png",
+      "owner": "pilots/yuri",
+      "bytes": 38104,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/yuri/portraits/pilots_0922/comm/comm_yuri_crash.png",
+      "owner": "pilots/yuri",
+      "bytes": 37563,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/yuri/portraits/pilots_0922/comm/comm_yuri_happy.png",
+      "owner": "pilots/yuri",
+      "bytes": 37871,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/yuri/portraits/pilots_0922/comm/comm_yuri_idle.png",
+      "owner": "pilots/yuri",
+      "bytes": 38886,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/yuri/portraits/pilots_0922/comm/comm_yuri_laugh.png",
+      "owner": "pilots/yuri",
+      "bytes": 37738,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/yuri/portraits/pilots_0922/comm/comm_yuri_sad.png",
+      "owner": "pilots/yuri",
+      "bytes": 37964,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/yuri/portraits/pilots_0922/comm/comm_yuri_talk-closed.png",
+      "owner": "pilots/yuri",
+      "bytes": 38886,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/yuri/portraits/pilots_0922/comm/comm_yuri_talk-medium.png",
+      "owner": "pilots/yuri",
+      "bytes": 36667,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/yuri/portraits/pilots_0922/comm/comm_yuri_talk-o.png",
+      "owner": "pilots/yuri",
+      "bytes": 36715,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/yuri/portraits/pilots_0922/comm/comm_yuri_talk-small.png",
+      "owner": "pilots/yuri",
+      "bytes": 37173,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/yuri/portraits/pilots_0922/comm/comm_yuri_talk-wide.png",
+      "owner": "pilots/yuri",
+      "bytes": 36959,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/yuri/portraits/pilots_0922/comm/comm_yuri_victory.png",
+      "owner": "pilots/yuri",
+      "bytes": 37572,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/yuri/portraits/pilots_0922/portraits/yuri-anger.png",
+      "owner": "pilots/yuri",
+      "bytes": 126062,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/yuri/portraits/pilots_0922/portraits/yuri-crash.png",
+      "owner": "pilots/yuri",
+      "bytes": 124642,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/yuri/portraits/pilots_0922/portraits/yuri-happy.png",
+      "owner": "pilots/yuri",
+      "bytes": 125965,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/yuri/portraits/pilots_0922/portraits/yuri-idle.png",
+      "owner": "pilots/yuri",
+      "bytes": 129071,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/yuri/portraits/pilots_0922/portraits/yuri-laugh.png",
+      "owner": "pilots/yuri",
+      "bytes": 124864,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/yuri/portraits/pilots_0922/portraits/yuri-sad.png",
+      "owner": "pilots/yuri",
+      "bytes": 125717,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/yuri/portraits/pilots_0922/portraits/yuri-talk-closed.png",
+      "owner": "pilots/yuri",
+      "bytes": 129071,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/yuri/portraits/pilots_0922/portraits/yuri-talk-medium.png",
+      "owner": "pilots/yuri",
+      "bytes": 122235,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/yuri/portraits/pilots_0922/portraits/yuri-talk-o.png",
+      "owner": "pilots/yuri",
+      "bytes": 121923,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/yuri/portraits/pilots_0922/portraits/yuri-talk-small.png",
+      "owner": "pilots/yuri",
+      "bytes": 123046,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/yuri/portraits/pilots_0922/portraits/yuri-talk-wide.png",
+      "owner": "pilots/yuri",
+      "bytes": 122180,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/yuri/portraits/pilots_0922/portraits/yuri-victory.png",
+      "owner": "pilots/yuri",
+      "bytes": 123381,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/yuri/portraits/yuri_v2/_keys.json",
+      "owner": "pilots/yuri",
+      "bytes": 757,
+      "role": "source or supporting file"
+    },
+    {
+      "path": "assets/game/pilots/yuri/portraits/yuri_v2/yuri_avatar.png",
+      "owner": "pilots/yuri",
+      "bytes": 1020002,
+      "role": "registered runtime asset",
+      "width": 937,
+      "height": 929
+    },
+    {
+      "path": "assets/game/pilots/yuri/ship_frames/ship_yuri.png",
+      "owner": "pilots/yuri",
+      "bytes": 933277,
+      "role": "registered runtime asset",
+      "width": 1024,
+      "height": 914
+    }
+  ],
+  "audio": {
+    "sfx": {},
+    "music": {}
+  },
+  "frameFolders": [
+    "portraits",
+    "body_frames",
+    "ship_frames",
+    "abilities"
+  ],
+  "furyShip": "Common hull in shared/ships; this pilot applies a runtime palette."
+}

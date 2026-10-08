@@ -1,0 +1,895 @@
+{
+  "owner": "pilots/decker",
+  "loading": {
+    "boot": "UI, fonts, idle portraits only",
+    "deployment": "selected pilot portraits, shared player weapons, required stage textures",
+    "transition": "release previous stage textures and derived caches; preserve explicitly queued copied-form dependencies",
+    "quality": "automatic native resolution on low-memory/low-core devices; reduce supersampling after sustained slow play frames"
+  },
+  "sharedDependencies": [
+    "shared/fonts",
+    "shared/ui",
+    "shared/player_weapons",
+    "shared/effects",
+    "shared/ships"
+  ],
+  "assets": [
+    {
+      "key": "aintro_decker",
+      "root": "nca_layout_pilots_decker_portraits_0",
+      "path": "assets/game/pilots/decker/portraits/frames_0.png",
+      "owner": "pilots/decker",
+      "cell": [
+        "layout_pilots_decker_portraits_0",
+        1790,
+        4,
+        640,
+        480
+      ]
+    },
+    {
+      "key": "pcard_decker",
+      "root": "nca_layout_pilots_decker_portraits_0",
+      "path": "assets/game/pilots/decker/portraits/frames_0.png",
+      "owner": "pilots/decker",
+      "cell": [
+        "layout_pilots_decker_portraits_0",
+        4,
+        4,
+        958,
+        718
+      ]
+    },
+    {
+      "key": "nsa_ship_decker",
+      "root": "nsa_ship_decker",
+      "path": "assets/game/pilots/decker/ship_frames/ship_decker.png",
+      "owner": "pilots/decker",
+      "cell": null
+    },
+    {
+      "key": "card_decker",
+      "root": "nca_layout_pilots_decker_portraits_0",
+      "path": "assets/game/pilots/decker/portraits/frames_0.png",
+      "owner": "pilots/decker",
+      "cell": [
+        "layout_pilots_decker_portraits_0",
+        966,
+        4,
+        820,
+        652
+      ]
+    },
+    {
+      "key": "pose_decker_0",
+      "root": "nca_layout_pilots_decker_body_frames_0",
+      "path": "assets/game/pilots/decker/body_frames/frames_0.png",
+      "owner": "pilots/decker",
+      "cell": [
+        "layout_pilots_decker_body_frames_0",
+        4,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "key": "pose_decker_1",
+      "root": "nca_layout_pilots_decker_body_frames_0",
+      "path": "assets/game/pilots/decker/body_frames/frames_0.png",
+      "owner": "pilots/decker",
+      "cell": [
+        "layout_pilots_decker_body_frames_0",
+        264,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "key": "pose_decker_2",
+      "root": "nca_layout_pilots_decker_body_frames_0",
+      "path": "assets/game/pilots/decker/body_frames/frames_0.png",
+      "owner": "pilots/decker",
+      "cell": [
+        "layout_pilots_decker_body_frames_0",
+        524,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "key": "pose_decker_3",
+      "root": "nca_layout_pilots_decker_body_frames_0",
+      "path": "assets/game/pilots/decker/body_frames/frames_0.png",
+      "owner": "pilots/decker",
+      "cell": [
+        "layout_pilots_decker_body_frames_0",
+        784,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "key": "pose_decker_4",
+      "root": "nca_layout_pilots_decker_body_frames_0",
+      "path": "assets/game/pilots/decker/body_frames/frames_0.png",
+      "owner": "pilots/decker",
+      "cell": [
+        "layout_pilots_decker_body_frames_0",
+        1044,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "key": "pose_decker_5",
+      "root": "nca_layout_pilots_decker_body_frames_0",
+      "path": "assets/game/pilots/decker/body_frames/frames_0.png",
+      "owner": "pilots/decker",
+      "cell": [
+        "layout_pilots_decker_body_frames_0",
+        1304,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "key": "pemb_decker",
+      "root": "nca_layout_pilots_decker_portraits_0",
+      "path": "assets/game/pilots/decker/portraits/frames_0.png",
+      "owner": "pilots/decker",
+      "cell": [
+        "layout_pilots_decker_portraits_0",
+        2434,
+        4,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "nthp_decker_2",
+      "root": "nca_layout_pilots_decker_abilities_0",
+      "path": "assets/game/pilots/decker/abilities/frames_0.png",
+      "owner": "pilots/decker",
+      "cell": [
+        "layout_pilots_decker_abilities_0",
+        4,
+        4,
+        170,
+        192
+      ]
+    },
+    {
+      "key": "nthp_decker_1",
+      "root": "nca_layout_pilots_decker_abilities_0",
+      "path": "assets/game/pilots/decker/abilities/frames_0.png",
+      "owner": "pilots/decker",
+      "cell": [
+        "layout_pilots_decker_abilities_0",
+        178,
+        4,
+        136,
+        158
+      ]
+    },
+    {
+      "key": "nthp_decker_3",
+      "root": "nca_layout_pilots_decker_abilities_0",
+      "path": "assets/game/pilots/decker/abilities/frames_0.png",
+      "owner": "pilots/decker",
+      "cell": [
+        "layout_pilots_decker_abilities_0",
+        318,
+        4,
+        81,
+        135
+      ]
+    },
+    {
+      "key": "nthp_decker_0",
+      "root": "nca_layout_pilots_decker_abilities_0",
+      "path": "assets/game/pilots/decker/abilities/frames_0.png",
+      "owner": "pilots/decker",
+      "cell": [
+        "layout_pilots_decker_abilities_0",
+        403,
+        4,
+        81,
+        102
+      ]
+    },
+    {
+      "key": "sp_decker_0",
+      "root": "nca_layout_pilots_decker_abilities_0",
+      "path": "assets/game/pilots/decker/abilities/frames_0.png",
+      "owner": "pilots/decker",
+      "cell": [
+        "layout_pilots_decker_abilities_0",
+        488,
+        4,
+        55,
+        64
+      ]
+    },
+    {
+      "key": "sp_decker_1",
+      "root": "nca_layout_pilots_decker_abilities_0",
+      "path": "assets/game/pilots/decker/abilities/frames_0.png",
+      "owner": "pilots/decker",
+      "cell": [
+        "layout_pilots_decker_abilities_0",
+        547,
+        4,
+        55,
+        64
+      ]
+    },
+    {
+      "key": "sp_decker_2",
+      "root": "nca_layout_pilots_decker_abilities_0",
+      "path": "assets/game/pilots/decker/abilities/frames_0.png",
+      "owner": "pilots/decker",
+      "cell": [
+        "layout_pilots_decker_abilities_0",
+        606,
+        4,
+        55,
+        64
+      ]
+    },
+    {
+      "key": "sp_decker_3",
+      "root": "nca_layout_pilots_decker_abilities_0",
+      "path": "assets/game/pilots/decker/abilities/frames_0.png",
+      "owner": "pilots/decker",
+      "cell": [
+        "layout_pilots_decker_abilities_0",
+        665,
+        4,
+        55,
+        64
+      ]
+    },
+    {
+      "key": "nca_layout_pilots_decker_abilities_0",
+      "root": "nca_layout_pilots_decker_abilities_0",
+      "path": "assets/game/pilots/decker/abilities/frames_0.png",
+      "owner": "pilots/decker",
+      "cell": null
+    },
+    {
+      "key": "nca_layout_pilots_decker_body_frames_0",
+      "root": "nca_layout_pilots_decker_body_frames_0",
+      "path": "assets/game/pilots/decker/body_frames/frames_0.png",
+      "owner": "pilots/decker",
+      "cell": null
+    },
+    {
+      "key": "nca_layout_pilots_decker_portraits_0",
+      "root": "nca_layout_pilots_decker_portraits_0",
+      "path": "assets/game/pilots/decker/portraits/frames_0.png",
+      "owner": "pilots/decker",
+      "cell": null
+    },
+    {
+      "key": "port_cf_decker_idle",
+      "root": "port_cf_decker_idle",
+      "path": "assets/game/pilots/decker/portraits/pilots_0922/portraits/decker-idle.png",
+      "owner": "pilots/decker",
+      "cell": null
+    },
+    {
+      "key": "port_cf_decker_happy",
+      "root": "port_cf_decker_happy",
+      "path": "assets/game/pilots/decker/portraits/pilots_0922/portraits/decker-happy.png",
+      "owner": "pilots/decker",
+      "cell": null
+    },
+    {
+      "key": "port_cf_decker_laugh",
+      "root": "port_cf_decker_laugh",
+      "path": "assets/game/pilots/decker/portraits/pilots_0922/portraits/decker-laugh.png",
+      "owner": "pilots/decker",
+      "cell": null
+    },
+    {
+      "key": "port_cf_decker_anger",
+      "root": "port_cf_decker_anger",
+      "path": "assets/game/pilots/decker/portraits/pilots_0922/portraits/decker-anger.png",
+      "owner": "pilots/decker",
+      "cell": null
+    },
+    {
+      "key": "port_cf_decker_sad",
+      "root": "port_cf_decker_sad",
+      "path": "assets/game/pilots/decker/portraits/pilots_0922/portraits/decker-sad.png",
+      "owner": "pilots/decker",
+      "cell": null
+    },
+    {
+      "key": "port_cf_decker_crash",
+      "root": "port_cf_decker_crash",
+      "path": "assets/game/pilots/decker/portraits/pilots_0922/portraits/decker-crash.png",
+      "owner": "pilots/decker",
+      "cell": null
+    },
+    {
+      "key": "port_cf_decker_victory",
+      "root": "port_cf_decker_victory",
+      "path": "assets/game/pilots/decker/portraits/pilots_0922/portraits/decker-victory.png",
+      "owner": "pilots/decker",
+      "cell": null
+    },
+    {
+      "key": "port_cf_decker_talk-closed",
+      "root": "port_cf_decker_talk-closed",
+      "path": "assets/game/pilots/decker/portraits/pilots_0922/portraits/decker-talk-closed.png",
+      "owner": "pilots/decker",
+      "cell": null
+    },
+    {
+      "key": "port_cf_decker_talk-small",
+      "root": "port_cf_decker_talk-small",
+      "path": "assets/game/pilots/decker/portraits/pilots_0922/portraits/decker-talk-small.png",
+      "owner": "pilots/decker",
+      "cell": null
+    },
+    {
+      "key": "port_cf_decker_talk-medium",
+      "root": "port_cf_decker_talk-medium",
+      "path": "assets/game/pilots/decker/portraits/pilots_0922/portraits/decker-talk-medium.png",
+      "owner": "pilots/decker",
+      "cell": null
+    },
+    {
+      "key": "port_cf_decker_talk-wide",
+      "root": "port_cf_decker_talk-wide",
+      "path": "assets/game/pilots/decker/portraits/pilots_0922/portraits/decker-talk-wide.png",
+      "owner": "pilots/decker",
+      "cell": null
+    },
+    {
+      "key": "port_cf_decker_talk-o",
+      "root": "port_cf_decker_talk-o",
+      "path": "assets/game/pilots/decker/portraits/pilots_0922/portraits/decker-talk-o.png",
+      "owner": "pilots/decker",
+      "cell": null
+    },
+    {
+      "key": "port_cf_decker_alert",
+      "root": "port_cf_decker_alert",
+      "path": "assets/game/pilots/decker/portraits/pilots_0922/portraits/decker-crash.png",
+      "owner": "pilots/decker",
+      "cell": null
+    },
+    {
+      "key": "comm_decker_alert",
+      "root": "comm_decker_alert",
+      "path": "assets/game/pilots/decker/portraits/pilots_0922/comm/comm_decker_crash.png",
+      "owner": "pilots/decker",
+      "cell": null
+    },
+    {
+      "key": "cinpose_decker_1",
+      "root": "cinpose_decker_1",
+      "path": "assets/game/pilots/decker/body_frames/cinematic_characters/decker/poses/01_front_neutral.png",
+      "owner": "pilots/decker",
+      "cell": null
+    },
+    {
+      "key": "cinpose_decker_2",
+      "root": "cinpose_decker_2",
+      "path": "assets/game/pilots/decker/body_frames/cinematic_characters/decker/poses/02_front_left_3q.png",
+      "owner": "pilots/decker",
+      "cell": null
+    },
+    {
+      "key": "cinpose_decker_3",
+      "root": "cinpose_decker_3",
+      "path": "assets/game/pilots/decker/body_frames/cinematic_characters/decker/poses/03_front_right_3q.png",
+      "owner": "pilots/decker",
+      "cell": null
+    },
+    {
+      "key": "cinpose_decker_4",
+      "root": "cinpose_decker_4",
+      "path": "assets/game/pilots/decker/body_frames/cinematic_characters/decker/poses/04_back_neutral.png",
+      "owner": "pilots/decker",
+      "cell": null
+    },
+    {
+      "key": "cinpose_decker_5",
+      "root": "cinpose_decker_5",
+      "path": "assets/game/pilots/decker/body_frames/cinematic_characters/decker/poses/05_back_left_3q.png",
+      "owner": "pilots/decker",
+      "cell": null
+    },
+    {
+      "key": "cinpose_decker_6",
+      "root": "cinpose_decker_6",
+      "path": "assets/game/pilots/decker/body_frames/cinematic_characters/decker/poses/06_back_right_3q.png",
+      "owner": "pilots/decker",
+      "cell": null
+    },
+    {
+      "key": "comm_decker_idle",
+      "root": "comm_decker_idle",
+      "path": "assets/game/pilots/decker/portraits/pilots_0922/comm/comm_decker_idle.png",
+      "owner": "pilots/decker",
+      "cell": null
+    },
+    {
+      "key": "comm_decker_happy",
+      "root": "comm_decker_happy",
+      "path": "assets/game/pilots/decker/portraits/pilots_0922/comm/comm_decker_happy.png",
+      "owner": "pilots/decker",
+      "cell": null
+    },
+    {
+      "key": "comm_decker_laugh",
+      "root": "comm_decker_laugh",
+      "path": "assets/game/pilots/decker/portraits/pilots_0922/comm/comm_decker_laugh.png",
+      "owner": "pilots/decker",
+      "cell": null
+    },
+    {
+      "key": "comm_decker_anger",
+      "root": "comm_decker_anger",
+      "path": "assets/game/pilots/decker/portraits/pilots_0922/comm/comm_decker_anger.png",
+      "owner": "pilots/decker",
+      "cell": null
+    },
+    {
+      "key": "comm_decker_sad",
+      "root": "comm_decker_sad",
+      "path": "assets/game/pilots/decker/portraits/pilots_0922/comm/comm_decker_sad.png",
+      "owner": "pilots/decker",
+      "cell": null
+    },
+    {
+      "key": "comm_decker_crash",
+      "root": "comm_decker_crash",
+      "path": "assets/game/pilots/decker/portraits/pilots_0922/comm/comm_decker_crash.png",
+      "owner": "pilots/decker",
+      "cell": null
+    },
+    {
+      "key": "comm_decker_victory",
+      "root": "comm_decker_victory",
+      "path": "assets/game/pilots/decker/portraits/pilots_0922/comm/comm_decker_victory.png",
+      "owner": "pilots/decker",
+      "cell": null
+    },
+    {
+      "key": "comm_decker_talk-closed",
+      "root": "comm_decker_talk-closed",
+      "path": "assets/game/pilots/decker/portraits/pilots_0922/comm/comm_decker_talk-closed.png",
+      "owner": "pilots/decker",
+      "cell": null
+    },
+    {
+      "key": "comm_decker_talk-small",
+      "root": "comm_decker_talk-small",
+      "path": "assets/game/pilots/decker/portraits/pilots_0922/comm/comm_decker_talk-small.png",
+      "owner": "pilots/decker",
+      "cell": null
+    },
+    {
+      "key": "comm_decker_talk-medium",
+      "root": "comm_decker_talk-medium",
+      "path": "assets/game/pilots/decker/portraits/pilots_0922/comm/comm_decker_talk-medium.png",
+      "owner": "pilots/decker",
+      "cell": null
+    },
+    {
+      "key": "comm_decker_talk-wide",
+      "root": "comm_decker_talk-wide",
+      "path": "assets/game/pilots/decker/portraits/pilots_0922/comm/comm_decker_talk-wide.png",
+      "owner": "pilots/decker",
+      "cell": null
+    },
+    {
+      "key": "comm_decker_talk-o",
+      "root": "comm_decker_talk-o",
+      "path": "assets/game/pilots/decker/portraits/pilots_0922/comm/comm_decker_talk-o.png",
+      "owner": "pilots/decker",
+      "cell": null
+    },
+    {
+      "key": "pav_decker",
+      "root": "pav_decker",
+      "path": "assets/game/pilots/decker/portraits/pilots_0922/portraits/decker-idle.png",
+      "owner": "pilots/decker",
+      "cell": null
+    },
+    {
+      "key": "decker_body_0",
+      "root": "decker_body_0",
+      "path": "assets/game/pilots/decker/body_frames/pilot_bodies/decker_body_0.png",
+      "owner": "pilots/decker",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_decker_idle",
+      "root": "pp5_raw_decker_idle",
+      "path": "assets/game/pilots/decker/portraits/pilots_0922/portraits/decker-idle.png",
+      "owner": "pilots/decker",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_decker_happy",
+      "root": "pp5_raw_decker_happy",
+      "path": "assets/game/pilots/decker/portraits/pilots_0922/portraits/decker-happy.png",
+      "owner": "pilots/decker",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_decker_laugh",
+      "root": "pp5_raw_decker_laugh",
+      "path": "assets/game/pilots/decker/portraits/pilots_0922/portraits/decker-laugh.png",
+      "owner": "pilots/decker",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_decker_anger",
+      "root": "pp5_raw_decker_anger",
+      "path": "assets/game/pilots/decker/portraits/pilots_0922/portraits/decker-anger.png",
+      "owner": "pilots/decker",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_decker_sad",
+      "root": "pp5_raw_decker_sad",
+      "path": "assets/game/pilots/decker/portraits/pilots_0922/portraits/decker-sad.png",
+      "owner": "pilots/decker",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_decker_crash",
+      "root": "pp5_raw_decker_crash",
+      "path": "assets/game/pilots/decker/portraits/pilots_0922/portraits/decker-crash.png",
+      "owner": "pilots/decker",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_decker_victory",
+      "root": "pp5_raw_decker_victory",
+      "path": "assets/game/pilots/decker/portraits/pilots_0922/portraits/decker-victory.png",
+      "owner": "pilots/decker",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_decker_talk-closed",
+      "root": "pp5_raw_decker_talk-closed",
+      "path": "assets/game/pilots/decker/portraits/pilots_0922/portraits/decker-talk-closed.png",
+      "owner": "pilots/decker",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_decker_talk-small",
+      "root": "pp5_raw_decker_talk-small",
+      "path": "assets/game/pilots/decker/portraits/pilots_0922/portraits/decker-talk-small.png",
+      "owner": "pilots/decker",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_decker_talk-medium",
+      "root": "pp5_raw_decker_talk-medium",
+      "path": "assets/game/pilots/decker/portraits/pilots_0922/portraits/decker-talk-medium.png",
+      "owner": "pilots/decker",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_decker_talk-wide",
+      "root": "pp5_raw_decker_talk-wide",
+      "path": "assets/game/pilots/decker/portraits/pilots_0922/portraits/decker-talk-wide.png",
+      "owner": "pilots/decker",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_decker_talk-o",
+      "root": "pp5_raw_decker_talk-o",
+      "path": "assets/game/pilots/decker/portraits/pilots_0922/portraits/decker-talk-o.png",
+      "owner": "pilots/decker",
+      "cell": null
+    }
+  ],
+  "files": [
+    {
+      "path": "assets/game/pilots/decker/abilities/frames_0.png",
+      "owner": "pilots/decker",
+      "bytes": 80421,
+      "role": "registered runtime asset",
+      "width": 724,
+      "height": 200
+    },
+    {
+      "path": "assets/game/pilots/decker/body_frames/cinematic_characters/decker/poses/01_front_neutral.png",
+      "owner": "pilots/decker",
+      "bytes": 238168,
+      "role": "registered runtime asset",
+      "width": 332,
+      "height": 748
+    },
+    {
+      "path": "assets/game/pilots/decker/body_frames/cinematic_characters/decker/poses/02_front_left_3q.png",
+      "owner": "pilots/decker",
+      "bytes": 235594,
+      "role": "registered runtime asset",
+      "width": 318,
+      "height": 742
+    },
+    {
+      "path": "assets/game/pilots/decker/body_frames/cinematic_characters/decker/poses/03_front_right_3q.png",
+      "owner": "pilots/decker",
+      "bytes": 248395,
+      "role": "registered runtime asset",
+      "width": 328,
+      "height": 740
+    },
+    {
+      "path": "assets/game/pilots/decker/body_frames/cinematic_characters/decker/poses/04_back_neutral.png",
+      "owner": "pilots/decker",
+      "bytes": 246110,
+      "role": "registered runtime asset",
+      "width": 303,
+      "height": 737
+    },
+    {
+      "path": "assets/game/pilots/decker/body_frames/cinematic_characters/decker/poses/05_back_left_3q.png",
+      "owner": "pilots/decker",
+      "bytes": 228932,
+      "role": "registered runtime asset",
+      "width": 299,
+      "height": 735
+    },
+    {
+      "path": "assets/game/pilots/decker/body_frames/cinematic_characters/decker/poses/06_back_right_3q.png",
+      "owner": "pilots/decker",
+      "bytes": 244198,
+      "role": "registered runtime asset",
+      "width": 313,
+      "height": 737
+    },
+    {
+      "path": "assets/game/pilots/decker/body_frames/frames_0.png",
+      "owner": "pilots/decker",
+      "bytes": 367845,
+      "role": "registered runtime asset",
+      "width": 1564,
+      "height": 328
+    },
+    {
+      "path": "assets/game/pilots/decker/body_frames/pilot_bodies/decker_body_0.png",
+      "owner": "pilots/decker",
+      "bytes": 57224,
+      "role": "registered runtime asset",
+      "width": 111,
+      "height": 273
+    },
+    {
+      "path": "assets/game/pilots/decker/portraits/frames_0.png",
+      "owner": "pilots/decker",
+      "bytes": 2584747,
+      "role": "registered runtime asset",
+      "width": 2694,
+      "height": 726
+    },
+    {
+      "path": "assets/game/pilots/decker/portraits/pilots_0922/comm/comm_decker_anger.png",
+      "owner": "pilots/decker",
+      "bytes": 39515,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/decker/portraits/pilots_0922/comm/comm_decker_crash.png",
+      "owner": "pilots/decker",
+      "bytes": 39465,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/decker/portraits/pilots_0922/comm/comm_decker_happy.png",
+      "owner": "pilots/decker",
+      "bytes": 39361,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/decker/portraits/pilots_0922/comm/comm_decker_idle.png",
+      "owner": "pilots/decker",
+      "bytes": 39376,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/decker/portraits/pilots_0922/comm/comm_decker_laugh.png",
+      "owner": "pilots/decker",
+      "bytes": 39606,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/decker/portraits/pilots_0922/comm/comm_decker_sad.png",
+      "owner": "pilots/decker",
+      "bytes": 39185,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/decker/portraits/pilots_0922/comm/comm_decker_talk-closed.png",
+      "owner": "pilots/decker",
+      "bytes": 39376,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/decker/portraits/pilots_0922/comm/comm_decker_talk-medium.png",
+      "owner": "pilots/decker",
+      "bytes": 39045,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/decker/portraits/pilots_0922/comm/comm_decker_talk-o.png",
+      "owner": "pilots/decker",
+      "bytes": 39082,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/decker/portraits/pilots_0922/comm/comm_decker_talk-small.png",
+      "owner": "pilots/decker",
+      "bytes": 39000,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/decker/portraits/pilots_0922/comm/comm_decker_talk-wide.png",
+      "owner": "pilots/decker",
+      "bytes": 39173,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/decker/portraits/pilots_0922/comm/comm_decker_victory.png",
+      "owner": "pilots/decker",
+      "bytes": 39344,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/decker/portraits/pilots_0922/portraits/decker-anger.png",
+      "owner": "pilots/decker",
+      "bytes": 131543,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/decker/portraits/pilots_0922/portraits/decker-crash.png",
+      "owner": "pilots/decker",
+      "bytes": 131613,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/decker/portraits/pilots_0922/portraits/decker-happy.png",
+      "owner": "pilots/decker",
+      "bytes": 131407,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/decker/portraits/pilots_0922/portraits/decker-idle.png",
+      "owner": "pilots/decker",
+      "bytes": 131542,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/decker/portraits/pilots_0922/portraits/decker-laugh.png",
+      "owner": "pilots/decker",
+      "bytes": 132346,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/decker/portraits/pilots_0922/portraits/decker-sad.png",
+      "owner": "pilots/decker",
+      "bytes": 130591,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/decker/portraits/pilots_0922/portraits/decker-talk-closed.png",
+      "owner": "pilots/decker",
+      "bytes": 131542,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/decker/portraits/pilots_0922/portraits/decker-talk-medium.png",
+      "owner": "pilots/decker",
+      "bytes": 130141,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/decker/portraits/pilots_0922/portraits/decker-talk-o.png",
+      "owner": "pilots/decker",
+      "bytes": 129848,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/decker/portraits/pilots_0922/portraits/decker-talk-small.png",
+      "owner": "pilots/decker",
+      "bytes": 130245,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/decker/portraits/pilots_0922/portraits/decker-talk-wide.png",
+      "owner": "pilots/decker",
+      "bytes": 130794,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/decker/portraits/pilots_0922/portraits/decker-victory.png",
+      "owner": "pilots/decker",
+      "bytes": 131046,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/decker/ship_frames/ship_decker.png",
+      "owner": "pilots/decker",
+      "bytes": 892434,
+      "role": "registered runtime asset",
+      "width": 1024,
+      "height": 941
+    }
+  ],
+  "audio": {
+    "sfx": {},
+    "music": {}
+  },
+  "frameFolders": [
+    "portraits",
+    "body_frames",
+    "ship_frames",
+    "abilities"
+  ],
+  "furyShip": "Common hull in shared/ships; this pilot applies a runtime palette."
+}

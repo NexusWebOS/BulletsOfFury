@@ -1,6 +1,6 @@
 """beatmap9.py - measure a song's tempo, beat grid, bars and section energy. Writes beatmap9.json.
 
-    python beatmap9.py assets/game/music/Level6.mp3 [--out beatmap9.json] [--bpm-lo 70 --bpm-hi 190]
+    python beatmap9.py assets/game/levels/stage_06/audio/music/Level6.mp3 [--out beatmap9.json] [--bpm-lo 70 --bpm-hi 190]
 
 Spectral-flux onset envelope -> autocorrelation for the period -> a phase fit of the beat grid to the onsets.
 Bars are four beats from the downbeat whose phase carries the most low-band energy. Every bar gets its RMS,

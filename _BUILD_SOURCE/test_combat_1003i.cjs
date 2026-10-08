@@ -20,6 +20,6 @@ module.exports=function(vm,ctxv,ok){
  const n=AV3.events.length;for(let i=0;i<20;i++)av3Sound('target_acquire',1,.5);out['one warning volley cannot layer twenty copies of the acquisition sound']=AV3.events.length<=n+1;
  return out;})())`,ctxv));
  for(const [n,v]of Object.entries(result))ok(v,n);
- const masters=JSON.parse(fs.readFileSync(path.join(__dirname,'../assets/game/combat_1003i/audio-masters.json'),'utf8'));
+ const masters=JSON.parse(fs.readFileSync(path.join(__dirname,'../assets/game/shared/combat/combat_1003i/audio-masters.json'),'utf8'));
  ok(masters.length===20&&masters.every(m=>m.clippedSamples===0&&m.peak<.9),'twenty mastered generated cues have headroom and no clipped decoded samples');
 };

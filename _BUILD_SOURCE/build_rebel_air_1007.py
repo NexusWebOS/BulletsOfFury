@@ -17,7 +17,7 @@ for n,name in enumerate(names):
     bbox=alpha.point(lambda a:255 if a>32 else 0).getbbox()
     assert bbox and bbox[2]-bbox[0]>40 and bbox[3]-bbox[1]>60
     cells[name]={'rect':[x,y,362,362],'alphaBounds':list(bbox),'pivot':[181,181]}
-manifest={'key':'ra7_air','path':'assets/game/rebel_air_1007/rebel_air.png','nativeSize':[1448,1086],
+manifest={'key':'ra7_air','path':'assets/game/levels/stage_06/boss/rebel_air_1007/rebel_air.png','nativeSize':[1448,1086],
  'grid':[4,3],'cellSize':[362,362],'sha256':sha,'cells':cells,'processing':'Exact source byte copy, no raster editing',
  'source':'_ART_SOURCES/rebel_air_1007/rebel_air.png','prompt':'_ART_SOURCES/rebel_air_1007/prompt.txt',
  'notes':'Hook modules articulate independently. Nyx uses the same eight ribbon cells for clipped back/front depth passes.'}

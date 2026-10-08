@@ -22,7 +22,7 @@ muzzles=[[[x-151,y-124,302,248] for x in [213,512,810]] for y in [137,378,626,87
 rig={'parts':parts,'beams':beam,'muzzles':muzzles,'colors':['fire','ice','toxic','void','red','gold']}
 (A/'cells.json').write_text(json.dumps(rig,indent=2)+'\n')
 (R/'assets/combat_art_1003i.js').write_text("'use strict';\nconst AV3_ART="+json.dumps(rig,separators=(',',':'))+';\n',encoding='utf-8')
-(A/'manifest.json').write_text(json.dumps({'images':images,'cells':'assets/game/combat_1003i/cells.json'},indent=2)+'\n')
+(A/'manifest.json').write_text(json.dumps({'images':images,'cells':'assets/game/shared/combat/combat_1003i/cells.json'},indent=2)+'\n')
 jobs=json.loads((R/'_shots/combat_1003i/downloads_complete.json').read_text())
 assert len(jobs)==len({j['name'] for j in jobs})==20, 'Every sound family must appear exactly once'
 audio=[]

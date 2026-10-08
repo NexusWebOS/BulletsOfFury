@@ -73,7 +73,7 @@ bg6LoopDraw=function(img,key,scroll,drawW,winH,dstY){
    drifting slowly up and down the plate so the peak never leaves the fight.
    --------------------------------------------------------------------------------------------- */
 // Generated terrain-only coastal city. Native alpha exposes the authored water reel.
-XART._src.sx1001_arena='assets/game/stagex_coast_1004j/terrain.png';
+XART._src.sx1001_arena='assets/game/levels/stage_x/stage/stagex_coast_1004j/terrain.png';
 const SX4J_WATER_KEYS=['nwl_water_0','nwl_water_1','nwl_water_2','nwl_water_3'];
 let sx1001T=0;
 function stageXArenaReady(){
@@ -139,7 +139,7 @@ beginStage=function(num){sx1001T=0;const r=FB1001_BEGIN.apply(this,arguments);st
    fireball; the rift water-rock units wear the watery plates too.
    --------------------------------------------------------------------------------------------- */
 const S9AST_ROCK=['s9ast_rock_0','s9ast_rock_1','s9ast_rock_2'],S9AST_WET=['s9ast_wet_0','s9ast_wet_1','s9ast_wet_2'];
-for(const k of [...S9AST_ROCK,...S9AST_WET]){XART._src[k+'_idle']='assets/game/s9_asteroids_1001/'+k+'.png';ENEMY_ART[k]=k;}
+for(const k of [...S9AST_ROCK,...S9AST_WET]){XART._src[k+'_idle']='assets/game/levels/stage_09/enemies/s9_asteroids_1001/'+k+'.png';ENEMY_ART[k]=k;}
 function s9AstWarm(){for(const k of [...S9AST_ROCK,...S9AST_WET])XART.rdy(k+'_idle');}
 let s9AstSerial=0;
 spawnS9Meteor=function(x,y,scale,vx,vy){

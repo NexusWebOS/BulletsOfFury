@@ -10,10 +10,10 @@ assert g.count(old)==1;g=g.replace(old,new)
 old="    enemyMachineShotHeavy:'assets/game/sounds/enemy_machine_shot_heavy.wav',"
 new=old+"""
     tlvJetCharge:'assets/game/sounds/boss_weapon_charge.wav',
-    tlvJetReady:'assets/game/sounds/retina_charge.mp3',
-    tlvJetTurn:'assets/game/sounds/nsp_rcs_thruster.mp3',
-    tlvJetThrust:'assets/game/sounds/nsp_booster_ignite.mp3',
-    tlvJetEngine:'assets/game/sounds/nsp_engine_loop.mp3',
+    tlvJetReady:'assets/game/shared/audio/sounds/retina_charge.mp3',
+    tlvJetTurn:'assets/game/shared/audio/sounds/nsp_rcs_thruster.mp3',
+    tlvJetThrust:'assets/game/shared/audio/sounds/nsp_booster_ignite.mp3',
+    tlvJetEngine:'assets/game/shared/audio/sounds/nsp_engine_loop.mp3',
     tlvJetBrake:'assets/game/sounds/brake.wav',"""
 assert g.count(old)==1;g=g.replace(old,new)
 old="    enemyMachineShotHeavy:{g:0.50, lp:6800, min:0.15},"

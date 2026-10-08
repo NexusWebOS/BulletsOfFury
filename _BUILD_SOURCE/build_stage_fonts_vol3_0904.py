@@ -48,7 +48,7 @@ import io, json, os, sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PACK = r"C:\sf3\CF_BOFStageFonts-Vol.3"
 OUT_PNG = os.path.join(ROOT, 'assets', 'game', 'atlas', 'fonts_stage_vol3.png')
-OUT_REL = 'assets/game/atlas/fonts_stage_vol3.png'
+OUT_REL = 'assets/game/shared/atlases/fonts_stage_vol3.png'
 OLD_PNG = os.path.join(ROOT, 'assets', 'game', 'atlas', 'fonts_stage_v4.png')
 PAD = 2
 

@@ -11,9 +11,9 @@ def replace(old, new):
     assert data.count(old) == 1, (old[:100], data.count(old))
     data = data.replace(old, new, 1)
 
-replace("  X._src['cinbg_jungle']='assets/game/cinematic_level_approaches/stage01_rumble_in_the_jungle_approach.png';",
-        "  X._src['cinbg_jungle']='assets/game/cinematic_level_approaches/stage01_rumble_in_the_jungle_approach.png';\n"
-        "  X._src['cinbg_stage1_route']='assets/game/mapJungle.png';")
+replace("  X._src['cinbg_jungle']='assets/game/levels/stage_01/cinematics/cinematic_level_approaches/stage01_rumble_in_the_jungle_approach.png';",
+        "  X._src['cinbg_jungle']='assets/game/levels/stage_01/cinematics/cinematic_level_approaches/stage01_rumble_in_the_jungle_approach.png';\n"
+        "  X._src['cinbg_stage1_route']='assets/game/shared/combat/mapJungle.png';")
 replace("const dialogueViewW=(typeof state!=='undefined' && state===GS.CAMPAIGNINTRO)?cutsceneViewWidth():VW;",
         "const dialogueViewW=(typeof state!=='undefined' && (state===GS.CAMPAIGNINTRO ||\n"
         "      (state===GS.CUTSCENE && hqMode==='bridge')))?cutsceneViewWidth():VW;")

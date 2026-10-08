@@ -14,14 +14,14 @@ def rep(old, new, count=1):
     s = s.replace(old, new)
 
 # ---- art
-rep("""  X._src['loadout_bays_0917b']='assets/game/ui/forge_0917b/loadout_bays.png';
-""", """  X._src['loadout_bays_0917b']='assets/game/ui/forge_0917b/loadout_bays.png';
+rep("""  X._src['loadout_bays_0917b']='assets/game/shared/ui/ui/forge_0917b/loadout_bays.png';
+""", """  X._src['loadout_bays_0917b']='assets/game/shared/ui/ui/forge_0917b/loadout_bays.png';
   /* 0917c: POWERS GAINED's own plate (same family), the FURIOUS coin, the two bombs, the score bullets */
-  X._src['powers_bays_0917c']='assets/game/ui/forge_0917b/powers_bays.png';
-  X._src['fury_coin_0917c']='assets/game/ui/pickups_0917b/fury_coin.png';
-  X._src['fury_bomb_0917c']='assets/game/ui/pickups_0917b/fury_bomb.png';
-  X._src['timed_bomb_0917c']='assets/game/ui/pickups_0917b/timed_bomb.png';
-  for(const _v of [100,250,500,1000]) X._src['score_bullet_'+_v]='assets/game/ui/pickups_0917b/score_'+_v+'.png';
+  X._src['powers_bays_0917c']='assets/game/shared/ui/ui/forge_0917b/powers_bays.png';
+  X._src['fury_coin_0917c']='assets/game/shared/ui/ui/pickups_0917b/fury_coin.png';
+  X._src['fury_bomb_0917c']='assets/game/shared/ui/ui/pickups_0917b/fury_bomb.png';
+  X._src['timed_bomb_0917c']='assets/game/shared/ui/ui/pickups_0917b/timed_bomb.png';
+  for(const _v of [100,250,500,1000]) X._src['score_bullet_'+_v]='assets/game/shared/ui/ui/pickups_0917b/score_'+_v+'.png';
 """)
 
 # ---- the POWERS state

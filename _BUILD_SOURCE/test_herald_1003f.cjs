@@ -44,5 +44,5 @@ module.exports=function(vm,ctxv,ok){
  }
  return o;})())`,ctxv));
  for(const [name,pass]of Object.entries(rows))ok(pass,name);
- for(const p of ['assets/game/herald_1003f/parts.png','assets/game/herald_1003f/manifest.json','assets/game/contra_fx_1006/boss_signature_fx.png','assets/game/contra_fx_1006/manifest.json'])ok(fs.existsSync(path.join(__dirname,'..',p)),'Herald generated art is packaged: '+p);
+ for(const p of ['assets/game/levels/stage_08/miniboss/herald_1003f/parts.png','assets/game/levels/stage_08/miniboss/herald_1003f/manifest.json','assets/game/shared/effects/contra_fx_1006/boss_signature_fx.png','assets/game/shared/effects/contra_fx_1006/manifest.json'])ok(fs.existsSync(path.join(__dirname,'..',p)),'Herald generated art is packaged: '+p);
 };

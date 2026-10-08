@@ -1,0 +1,52 @@
+[
+  {
+    "id": "stage_01",
+    "name": "Jungle",
+    "theme": "Deep olive military metal, warm aged bronze edges, small moss seams and restrained vine wraps only on outer corners. Boss endcaps use embossed fern/leaf vent shapes and angular jungle armor; miniboss endcaps use smaller copper strap brackets and leaf-shaped vent cuts. Green framing must stay darker than the luminous maneuver bars. No warning triangles and NO diagonal caution stripes."
+  },
+  {
+    "id": "stage_02",
+    "name": "Lava",
+    "theme": "Blackened forged iron and charcoal basalt armor, ember-orange seams contained inside edge cracks, copper rivets. Boss endcaps look like heavy furnace seals with a subtle molten core inset; miniboss endcaps use compact heat-sink fins and small rectangular exhaust slots. No free-standing flames, no scorched text, and NO caution stripes."
+  },
+  {
+    "id": "stage_03",
+    "name": "Ice",
+    "theme": "Frosted blue steel and pale silver bevels, restrained crystalline ice growing only along outer corner edges. Boss endcaps use faceted icy keystones; miniboss endcaps are compact hexagonal snowflake vents with little frost teeth. Keep all instrument recesses dark for readable text. NO caution stripes."
+  },
+  {
+    "id": "stage_04",
+    "name": "Airbase",
+    "theme": "Keep the approved gunmetal/steel military frame, amber hardware lamps, worn bolts and subtle desert sand wear. Boss endcaps may keep the familiar black/yellow caution stripes. Miniboss uses compact riveted aviation plates and stamped wing emblems, without caution stripes."
+  },
+  {
+    "id": "stage_05",
+    "name": "Space",
+    "theme": "Deep midnight-indigo spacecraft alloy, polished silver/chrome rail edges, a few inset cold-white navigation lights, restrained violet edge reflections. Boss endcaps use orbital-ring emblems around dark round reactor plugs; miniboss endcaps use compact faceted satellite radiator brackets. No background stars outside the frame and NO caution stripes."
+  },
+  {
+    "id": "stage_06",
+    "name": "Sky / rain",
+    "theme": "Storm-slate blue and brushed aviation silver, subtle rain beads on exposed metal, waterproof black gaskets, restrained electric-blue seam highlights. Boss endcaps have engraved angular lightning motifs and aircraft air-intake geometry; miniboss has compact wingtip fins and rain-channel vents. No clouds obscuring panels, no falling particles, NO caution stripes."
+  },
+  {
+    "id": "stage_07",
+    "name": "Sewer / toxic",
+    "theme": "Oxidized industrial copper and corroded dark iron, contained acid-green fluid windows and tiny slime beads at outside seams. Boss endcaps resemble sealed pipe valves and pressure flanges; miniboss endcaps resemble smaller filter canisters with a small biohazard emblem. Muted rusty metal keeps bright green maneuver bars readable. No spill across gauges and NO diagonal caution stripes."
+  },
+  {
+    "id": "stage_08",
+    "name": "Alien void",
+    "theme": "Obsidian chitin fused with evil dark chromium, purple iridescent edges and restrained magenta veins contained in the frame. Boss endcaps use symmetrical alien rib plates and small black-violet crystalline eyes; miniboss uses sleeker curled chitin talons and elliptical organic sockets. Instrument interiors remain technical, rectangular and readable. No tentacles across fills, NO caution stripes."
+  },
+  {
+    "id": "stage_09",
+    "name": "Water space",
+    "theme": "Abyssal navy spacecraft metal with pearlescent silver and luminous turquoise trim, tiny contained bubble-like stars inside narrow glass rim inlays. Blend orbital technology with deep-water pressure hulls. Boss endcaps use circular sealed porthole emblems and wave-crest engraving; miniboss endcaps use smaller swept hydrodynamic fins and round pressure bolts. No water background, no giant bubbles, NO caution stripes."
+  },
+  {
+    "id": "stage_x",
+    "name": "Coastal city",
+    "theme": "Coastal-defense naval blue and warm ivory painted armor, teal glass accents and restrained copper trim. Boss endcaps use geometric harbor/city skyline embossing and small port beacon lights; miniboss uses compact bridge-rivet brackets and navigation buoy emblems. Maritime city infrastructure rather than a jungle, keep dark instrument screens. NO caution stripes."
+  }
+]

@@ -73,7 +73,7 @@ for at,end in [(101.596,115.44-1.25*P),(145.051,158.64-1.25*P)]:
  for i,t in enumerate(np.arange(at,end,2*P)):cap(t,min(t+2*P,end),'OH! OH-OH!','boss' if i%2 else 'crew')
 assert all(e['label'] in {'chorus','breakdown chant'} for e in events)
 assert all(c['text'] in {'CANT TOUCH THIS','OH! OH-OH!'} for c in captions)
-music=decode(R/'assets/game/music/HAMA_Instrumental.mp3',2);bed=np.zeros_like(voc);bed[:min(N,len(music))]=music[:N]
+music=decode(R/'assets/game/shared/audio/music/HAMA_Instrumental.mp3',2);bed=np.zeros_like(voc);bed[:min(N,len(music))]=music[:N]
 # Slow, short duck envelopes; no frame-by-frame pumping or separate drifting player.
 duck=np.ones(N,dtype=np.float32)*.82
 for e in events:

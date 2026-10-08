@@ -1,0 +1,895 @@
+{
+  "owner": "pilots/juggernaut",
+  "loading": {
+    "boot": "UI, fonts, idle portraits only",
+    "deployment": "selected pilot portraits, shared player weapons, required stage textures",
+    "transition": "release previous stage textures and derived caches; preserve explicitly queued copied-form dependencies",
+    "quality": "automatic native resolution on low-memory/low-core devices; reduce supersampling after sustained slow play frames"
+  },
+  "sharedDependencies": [
+    "shared/fonts",
+    "shared/ui",
+    "shared/player_weapons",
+    "shared/effects",
+    "shared/ships"
+  ],
+  "assets": [
+    {
+      "key": "aintro_juggernaut",
+      "root": "nca_layout_pilots_juggernaut_portraits_0",
+      "path": "assets/game/pilots/juggernaut/portraits/frames_0.png",
+      "owner": "pilots/juggernaut",
+      "cell": [
+        "layout_pilots_juggernaut_portraits_0",
+        1790,
+        4,
+        640,
+        480
+      ]
+    },
+    {
+      "key": "pcard_juggernaut",
+      "root": "nca_layout_pilots_juggernaut_portraits_0",
+      "path": "assets/game/pilots/juggernaut/portraits/frames_0.png",
+      "owner": "pilots/juggernaut",
+      "cell": [
+        "layout_pilots_juggernaut_portraits_0",
+        4,
+        4,
+        958,
+        718
+      ]
+    },
+    {
+      "key": "nsa_ship_juggernaut",
+      "root": "nsa_ship_juggernaut",
+      "path": "assets/game/pilots/juggernaut/ship_frames/ship_juggernaut.png",
+      "owner": "pilots/juggernaut",
+      "cell": null
+    },
+    {
+      "key": "card_juggernaut",
+      "root": "nca_layout_pilots_juggernaut_portraits_0",
+      "path": "assets/game/pilots/juggernaut/portraits/frames_0.png",
+      "owner": "pilots/juggernaut",
+      "cell": [
+        "layout_pilots_juggernaut_portraits_0",
+        966,
+        4,
+        820,
+        643
+      ]
+    },
+    {
+      "key": "pose_juggernaut_0",
+      "root": "nca_layout_pilots_juggernaut_body_frames_0",
+      "path": "assets/game/pilots/juggernaut/body_frames/frames_0.png",
+      "owner": "pilots/juggernaut",
+      "cell": [
+        "layout_pilots_juggernaut_body_frames_0",
+        4,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "key": "pose_juggernaut_1",
+      "root": "nca_layout_pilots_juggernaut_body_frames_0",
+      "path": "assets/game/pilots/juggernaut/body_frames/frames_0.png",
+      "owner": "pilots/juggernaut",
+      "cell": [
+        "layout_pilots_juggernaut_body_frames_0",
+        264,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "key": "pose_juggernaut_2",
+      "root": "nca_layout_pilots_juggernaut_body_frames_0",
+      "path": "assets/game/pilots/juggernaut/body_frames/frames_0.png",
+      "owner": "pilots/juggernaut",
+      "cell": [
+        "layout_pilots_juggernaut_body_frames_0",
+        524,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "key": "pose_juggernaut_3",
+      "root": "nca_layout_pilots_juggernaut_body_frames_0",
+      "path": "assets/game/pilots/juggernaut/body_frames/frames_0.png",
+      "owner": "pilots/juggernaut",
+      "cell": [
+        "layout_pilots_juggernaut_body_frames_0",
+        784,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "key": "pose_juggernaut_4",
+      "root": "nca_layout_pilots_juggernaut_body_frames_0",
+      "path": "assets/game/pilots/juggernaut/body_frames/frames_0.png",
+      "owner": "pilots/juggernaut",
+      "cell": [
+        "layout_pilots_juggernaut_body_frames_0",
+        1044,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "key": "pose_juggernaut_5",
+      "root": "nca_layout_pilots_juggernaut_body_frames_0",
+      "path": "assets/game/pilots/juggernaut/body_frames/frames_0.png",
+      "owner": "pilots/juggernaut",
+      "cell": [
+        "layout_pilots_juggernaut_body_frames_0",
+        1304,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "key": "nthp_juggernaut_2",
+      "root": "nca_layout_pilots_juggernaut_abilities_0",
+      "path": "assets/game/pilots/juggernaut/abilities/frames_0.png",
+      "owner": "pilots/juggernaut",
+      "cell": [
+        "layout_pilots_juggernaut_abilities_0",
+        4,
+        4,
+        170,
+        192
+      ]
+    },
+    {
+      "key": "nthp_juggernaut_1",
+      "root": "nca_layout_pilots_juggernaut_abilities_0",
+      "path": "assets/game/pilots/juggernaut/abilities/frames_0.png",
+      "owner": "pilots/juggernaut",
+      "cell": [
+        "layout_pilots_juggernaut_abilities_0",
+        178,
+        4,
+        136,
+        158
+      ]
+    },
+    {
+      "key": "nthp_juggernaut_3",
+      "root": "nca_layout_pilots_juggernaut_abilities_0",
+      "path": "assets/game/pilots/juggernaut/abilities/frames_0.png",
+      "owner": "pilots/juggernaut",
+      "cell": [
+        "layout_pilots_juggernaut_abilities_0",
+        318,
+        4,
+        81,
+        135
+      ]
+    },
+    {
+      "key": "nthp_juggernaut_0",
+      "root": "nca_layout_pilots_juggernaut_abilities_0",
+      "path": "assets/game/pilots/juggernaut/abilities/frames_0.png",
+      "owner": "pilots/juggernaut",
+      "cell": [
+        "layout_pilots_juggernaut_abilities_0",
+        403,
+        4,
+        81,
+        102
+      ]
+    },
+    {
+      "key": "pemb_juggernaut",
+      "root": "nca_layout_pilots_juggernaut_portraits_0",
+      "path": "assets/game/pilots/juggernaut/portraits/frames_0.png",
+      "owner": "pilots/juggernaut",
+      "cell": [
+        "layout_pilots_juggernaut_portraits_0",
+        2434,
+        4,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "sp_juggernaut_0",
+      "root": "nca_layout_pilots_juggernaut_abilities_0",
+      "path": "assets/game/pilots/juggernaut/abilities/frames_0.png",
+      "owner": "pilots/juggernaut",
+      "cell": [
+        "layout_pilots_juggernaut_abilities_0",
+        488,
+        4,
+        64,
+        62
+      ]
+    },
+    {
+      "key": "sp_juggernaut_1",
+      "root": "nca_layout_pilots_juggernaut_abilities_0",
+      "path": "assets/game/pilots/juggernaut/abilities/frames_0.png",
+      "owner": "pilots/juggernaut",
+      "cell": [
+        "layout_pilots_juggernaut_abilities_0",
+        556,
+        4,
+        64,
+        62
+      ]
+    },
+    {
+      "key": "sp_juggernaut_2",
+      "root": "nca_layout_pilots_juggernaut_abilities_0",
+      "path": "assets/game/pilots/juggernaut/abilities/frames_0.png",
+      "owner": "pilots/juggernaut",
+      "cell": [
+        "layout_pilots_juggernaut_abilities_0",
+        624,
+        4,
+        64,
+        62
+      ]
+    },
+    {
+      "key": "sp_juggernaut_3",
+      "root": "nca_layout_pilots_juggernaut_abilities_0",
+      "path": "assets/game/pilots/juggernaut/abilities/frames_0.png",
+      "owner": "pilots/juggernaut",
+      "cell": [
+        "layout_pilots_juggernaut_abilities_0",
+        692,
+        4,
+        64,
+        62
+      ]
+    },
+    {
+      "key": "nca_layout_pilots_juggernaut_abilities_0",
+      "root": "nca_layout_pilots_juggernaut_abilities_0",
+      "path": "assets/game/pilots/juggernaut/abilities/frames_0.png",
+      "owner": "pilots/juggernaut",
+      "cell": null
+    },
+    {
+      "key": "nca_layout_pilots_juggernaut_body_frames_0",
+      "root": "nca_layout_pilots_juggernaut_body_frames_0",
+      "path": "assets/game/pilots/juggernaut/body_frames/frames_0.png",
+      "owner": "pilots/juggernaut",
+      "cell": null
+    },
+    {
+      "key": "nca_layout_pilots_juggernaut_portraits_0",
+      "root": "nca_layout_pilots_juggernaut_portraits_0",
+      "path": "assets/game/pilots/juggernaut/portraits/frames_0.png",
+      "owner": "pilots/juggernaut",
+      "cell": null
+    },
+    {
+      "key": "port_cf_juggernaut_idle",
+      "root": "port_cf_juggernaut_idle",
+      "path": "assets/game/pilots/juggernaut/portraits/pilots_0922/portraits/juggernaut-idle.png",
+      "owner": "pilots/juggernaut",
+      "cell": null
+    },
+    {
+      "key": "port_cf_juggernaut_happy",
+      "root": "port_cf_juggernaut_happy",
+      "path": "assets/game/pilots/juggernaut/portraits/pilots_0922/portraits/juggernaut-happy.png",
+      "owner": "pilots/juggernaut",
+      "cell": null
+    },
+    {
+      "key": "port_cf_juggernaut_laugh",
+      "root": "port_cf_juggernaut_laugh",
+      "path": "assets/game/pilots/juggernaut/portraits/pilots_0922/portraits/juggernaut-laugh.png",
+      "owner": "pilots/juggernaut",
+      "cell": null
+    },
+    {
+      "key": "port_cf_juggernaut_anger",
+      "root": "port_cf_juggernaut_anger",
+      "path": "assets/game/pilots/juggernaut/portraits/pilots_0922/portraits/juggernaut-anger.png",
+      "owner": "pilots/juggernaut",
+      "cell": null
+    },
+    {
+      "key": "port_cf_juggernaut_sad",
+      "root": "port_cf_juggernaut_sad",
+      "path": "assets/game/pilots/juggernaut/portraits/pilots_0922/portraits/juggernaut-sad.png",
+      "owner": "pilots/juggernaut",
+      "cell": null
+    },
+    {
+      "key": "port_cf_juggernaut_crash",
+      "root": "port_cf_juggernaut_crash",
+      "path": "assets/game/pilots/juggernaut/portraits/pilots_0922/portraits/juggernaut-crash.png",
+      "owner": "pilots/juggernaut",
+      "cell": null
+    },
+    {
+      "key": "port_cf_juggernaut_victory",
+      "root": "port_cf_juggernaut_victory",
+      "path": "assets/game/pilots/juggernaut/portraits/pilots_0922/portraits/juggernaut-victory.png",
+      "owner": "pilots/juggernaut",
+      "cell": null
+    },
+    {
+      "key": "port_cf_juggernaut_talk-closed",
+      "root": "port_cf_juggernaut_talk-closed",
+      "path": "assets/game/pilots/juggernaut/portraits/pilots_0922/portraits/juggernaut-talk-closed.png",
+      "owner": "pilots/juggernaut",
+      "cell": null
+    },
+    {
+      "key": "port_cf_juggernaut_talk-small",
+      "root": "port_cf_juggernaut_talk-small",
+      "path": "assets/game/pilots/juggernaut/portraits/pilots_0922/portraits/juggernaut-talk-small.png",
+      "owner": "pilots/juggernaut",
+      "cell": null
+    },
+    {
+      "key": "port_cf_juggernaut_talk-medium",
+      "root": "port_cf_juggernaut_talk-medium",
+      "path": "assets/game/pilots/juggernaut/portraits/pilots_0922/portraits/juggernaut-talk-medium.png",
+      "owner": "pilots/juggernaut",
+      "cell": null
+    },
+    {
+      "key": "port_cf_juggernaut_talk-wide",
+      "root": "port_cf_juggernaut_talk-wide",
+      "path": "assets/game/pilots/juggernaut/portraits/pilots_0922/portraits/juggernaut-talk-wide.png",
+      "owner": "pilots/juggernaut",
+      "cell": null
+    },
+    {
+      "key": "port_cf_juggernaut_talk-o",
+      "root": "port_cf_juggernaut_talk-o",
+      "path": "assets/game/pilots/juggernaut/portraits/pilots_0922/portraits/juggernaut-talk-o.png",
+      "owner": "pilots/juggernaut",
+      "cell": null
+    },
+    {
+      "key": "port_cf_juggernaut_alert",
+      "root": "port_cf_juggernaut_alert",
+      "path": "assets/game/pilots/juggernaut/portraits/pilots_0922/portraits/juggernaut-crash.png",
+      "owner": "pilots/juggernaut",
+      "cell": null
+    },
+    {
+      "key": "comm_juggernaut_alert",
+      "root": "comm_juggernaut_alert",
+      "path": "assets/game/pilots/juggernaut/portraits/pilots_0922/comm/comm_juggernaut_crash.png",
+      "owner": "pilots/juggernaut",
+      "cell": null
+    },
+    {
+      "key": "cinpose_juggernaut_1",
+      "root": "cinpose_juggernaut_1",
+      "path": "assets/game/pilots/juggernaut/body_frames/cinematic_characters/juggernaut/poses/01_front_neutral.png",
+      "owner": "pilots/juggernaut",
+      "cell": null
+    },
+    {
+      "key": "cinpose_juggernaut_2",
+      "root": "cinpose_juggernaut_2",
+      "path": "assets/game/pilots/juggernaut/body_frames/cinematic_characters/juggernaut/poses/02_front_left_3q.png",
+      "owner": "pilots/juggernaut",
+      "cell": null
+    },
+    {
+      "key": "cinpose_juggernaut_3",
+      "root": "cinpose_juggernaut_3",
+      "path": "assets/game/pilots/juggernaut/body_frames/cinematic_characters/juggernaut/poses/03_front_right_3q.png",
+      "owner": "pilots/juggernaut",
+      "cell": null
+    },
+    {
+      "key": "cinpose_juggernaut_4",
+      "root": "cinpose_juggernaut_4",
+      "path": "assets/game/pilots/juggernaut/body_frames/cinematic_characters/juggernaut/poses/04_back_neutral.png",
+      "owner": "pilots/juggernaut",
+      "cell": null
+    },
+    {
+      "key": "cinpose_juggernaut_5",
+      "root": "cinpose_juggernaut_5",
+      "path": "assets/game/pilots/juggernaut/body_frames/cinematic_characters/juggernaut/poses/05_back_left_3q.png",
+      "owner": "pilots/juggernaut",
+      "cell": null
+    },
+    {
+      "key": "cinpose_juggernaut_6",
+      "root": "cinpose_juggernaut_6",
+      "path": "assets/game/pilots/juggernaut/body_frames/cinematic_characters/juggernaut/poses/06_back_right_3q.png",
+      "owner": "pilots/juggernaut",
+      "cell": null
+    },
+    {
+      "key": "comm_juggernaut_idle",
+      "root": "comm_juggernaut_idle",
+      "path": "assets/game/pilots/juggernaut/portraits/pilots_0922/comm/comm_juggernaut_idle.png",
+      "owner": "pilots/juggernaut",
+      "cell": null
+    },
+    {
+      "key": "comm_juggernaut_happy",
+      "root": "comm_juggernaut_happy",
+      "path": "assets/game/pilots/juggernaut/portraits/pilots_0922/comm/comm_juggernaut_happy.png",
+      "owner": "pilots/juggernaut",
+      "cell": null
+    },
+    {
+      "key": "comm_juggernaut_laugh",
+      "root": "comm_juggernaut_laugh",
+      "path": "assets/game/pilots/juggernaut/portraits/pilots_0922/comm/comm_juggernaut_laugh.png",
+      "owner": "pilots/juggernaut",
+      "cell": null
+    },
+    {
+      "key": "comm_juggernaut_anger",
+      "root": "comm_juggernaut_anger",
+      "path": "assets/game/pilots/juggernaut/portraits/pilots_0922/comm/comm_juggernaut_anger.png",
+      "owner": "pilots/juggernaut",
+      "cell": null
+    },
+    {
+      "key": "comm_juggernaut_sad",
+      "root": "comm_juggernaut_sad",
+      "path": "assets/game/pilots/juggernaut/portraits/pilots_0922/comm/comm_juggernaut_sad.png",
+      "owner": "pilots/juggernaut",
+      "cell": null
+    },
+    {
+      "key": "comm_juggernaut_crash",
+      "root": "comm_juggernaut_crash",
+      "path": "assets/game/pilots/juggernaut/portraits/pilots_0922/comm/comm_juggernaut_crash.png",
+      "owner": "pilots/juggernaut",
+      "cell": null
+    },
+    {
+      "key": "comm_juggernaut_victory",
+      "root": "comm_juggernaut_victory",
+      "path": "assets/game/pilots/juggernaut/portraits/pilots_0922/comm/comm_juggernaut_victory.png",
+      "owner": "pilots/juggernaut",
+      "cell": null
+    },
+    {
+      "key": "comm_juggernaut_talk-closed",
+      "root": "comm_juggernaut_talk-closed",
+      "path": "assets/game/pilots/juggernaut/portraits/pilots_0922/comm/comm_juggernaut_talk-closed.png",
+      "owner": "pilots/juggernaut",
+      "cell": null
+    },
+    {
+      "key": "comm_juggernaut_talk-small",
+      "root": "comm_juggernaut_talk-small",
+      "path": "assets/game/pilots/juggernaut/portraits/pilots_0922/comm/comm_juggernaut_talk-small.png",
+      "owner": "pilots/juggernaut",
+      "cell": null
+    },
+    {
+      "key": "comm_juggernaut_talk-medium",
+      "root": "comm_juggernaut_talk-medium",
+      "path": "assets/game/pilots/juggernaut/portraits/pilots_0922/comm/comm_juggernaut_talk-medium.png",
+      "owner": "pilots/juggernaut",
+      "cell": null
+    },
+    {
+      "key": "comm_juggernaut_talk-wide",
+      "root": "comm_juggernaut_talk-wide",
+      "path": "assets/game/pilots/juggernaut/portraits/pilots_0922/comm/comm_juggernaut_talk-wide.png",
+      "owner": "pilots/juggernaut",
+      "cell": null
+    },
+    {
+      "key": "comm_juggernaut_talk-o",
+      "root": "comm_juggernaut_talk-o",
+      "path": "assets/game/pilots/juggernaut/portraits/pilots_0922/comm/comm_juggernaut_talk-o.png",
+      "owner": "pilots/juggernaut",
+      "cell": null
+    },
+    {
+      "key": "pav_juggernaut",
+      "root": "pav_juggernaut",
+      "path": "assets/game/pilots/juggernaut/portraits/pilots_0922/portraits/juggernaut-idle.png",
+      "owner": "pilots/juggernaut",
+      "cell": null
+    },
+    {
+      "key": "juggernaut_body_0",
+      "root": "juggernaut_body_0",
+      "path": "assets/game/pilots/juggernaut/body_frames/pilot_bodies/juggernaut_body_0.png",
+      "owner": "pilots/juggernaut",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_juggernaut_idle",
+      "root": "pp5_raw_juggernaut_idle",
+      "path": "assets/game/pilots/juggernaut/portraits/pilots_0922/portraits/juggernaut-idle.png",
+      "owner": "pilots/juggernaut",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_juggernaut_happy",
+      "root": "pp5_raw_juggernaut_happy",
+      "path": "assets/game/pilots/juggernaut/portraits/pilots_0922/portraits/juggernaut-happy.png",
+      "owner": "pilots/juggernaut",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_juggernaut_laugh",
+      "root": "pp5_raw_juggernaut_laugh",
+      "path": "assets/game/pilots/juggernaut/portraits/pilots_0922/portraits/juggernaut-laugh.png",
+      "owner": "pilots/juggernaut",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_juggernaut_anger",
+      "root": "pp5_raw_juggernaut_anger",
+      "path": "assets/game/pilots/juggernaut/portraits/pilots_0922/portraits/juggernaut-anger.png",
+      "owner": "pilots/juggernaut",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_juggernaut_sad",
+      "root": "pp5_raw_juggernaut_sad",
+      "path": "assets/game/pilots/juggernaut/portraits/pilots_0922/portraits/juggernaut-sad.png",
+      "owner": "pilots/juggernaut",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_juggernaut_crash",
+      "root": "pp5_raw_juggernaut_crash",
+      "path": "assets/game/pilots/juggernaut/portraits/pilots_0922/portraits/juggernaut-crash.png",
+      "owner": "pilots/juggernaut",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_juggernaut_victory",
+      "root": "pp5_raw_juggernaut_victory",
+      "path": "assets/game/pilots/juggernaut/portraits/pilots_0922/portraits/juggernaut-victory.png",
+      "owner": "pilots/juggernaut",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_juggernaut_talk-closed",
+      "root": "pp5_raw_juggernaut_talk-closed",
+      "path": "assets/game/pilots/juggernaut/portraits/pilots_0922/portraits/juggernaut-talk-closed.png",
+      "owner": "pilots/juggernaut",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_juggernaut_talk-small",
+      "root": "pp5_raw_juggernaut_talk-small",
+      "path": "assets/game/pilots/juggernaut/portraits/pilots_0922/portraits/juggernaut-talk-small.png",
+      "owner": "pilots/juggernaut",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_juggernaut_talk-medium",
+      "root": "pp5_raw_juggernaut_talk-medium",
+      "path": "assets/game/pilots/juggernaut/portraits/pilots_0922/portraits/juggernaut-talk-medium.png",
+      "owner": "pilots/juggernaut",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_juggernaut_talk-wide",
+      "root": "pp5_raw_juggernaut_talk-wide",
+      "path": "assets/game/pilots/juggernaut/portraits/pilots_0922/portraits/juggernaut-talk-wide.png",
+      "owner": "pilots/juggernaut",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_juggernaut_talk-o",
+      "root": "pp5_raw_juggernaut_talk-o",
+      "path": "assets/game/pilots/juggernaut/portraits/pilots_0922/portraits/juggernaut-talk-o.png",
+      "owner": "pilots/juggernaut",
+      "cell": null
+    }
+  ],
+  "files": [
+    {
+      "path": "assets/game/pilots/juggernaut/abilities/frames_0.png",
+      "owner": "pilots/juggernaut",
+      "bytes": 85876,
+      "role": "registered runtime asset",
+      "width": 760,
+      "height": 200
+    },
+    {
+      "path": "assets/game/pilots/juggernaut/body_frames/cinematic_characters/juggernaut/poses/01_front_neutral.png",
+      "owner": "pilots/juggernaut",
+      "bytes": 213738,
+      "role": "registered runtime asset",
+      "width": 305,
+      "height": 569
+    },
+    {
+      "path": "assets/game/pilots/juggernaut/body_frames/cinematic_characters/juggernaut/poses/02_front_left_3q.png",
+      "owner": "pilots/juggernaut",
+      "bytes": 214062,
+      "role": "registered runtime asset",
+      "width": 334,
+      "height": 626
+    },
+    {
+      "path": "assets/game/pilots/juggernaut/body_frames/cinematic_characters/juggernaut/poses/03_front_right_3q.png",
+      "owner": "pilots/juggernaut",
+      "bytes": 193719,
+      "role": "registered runtime asset",
+      "width": 328,
+      "height": 562
+    },
+    {
+      "path": "assets/game/pilots/juggernaut/body_frames/cinematic_characters/juggernaut/poses/04_back_neutral.png",
+      "owner": "pilots/juggernaut",
+      "bytes": 206224,
+      "role": "registered runtime asset",
+      "width": 311,
+      "height": 567
+    },
+    {
+      "path": "assets/game/pilots/juggernaut/body_frames/cinematic_characters/juggernaut/poses/05_back_left_3q.png",
+      "owner": "pilots/juggernaut",
+      "bytes": 183552,
+      "role": "registered runtime asset",
+      "width": 294,
+      "height": 564
+    },
+    {
+      "path": "assets/game/pilots/juggernaut/body_frames/cinematic_characters/juggernaut/poses/06_back_right_3q.png",
+      "owner": "pilots/juggernaut",
+      "bytes": 168643,
+      "role": "registered runtime asset",
+      "width": 317,
+      "height": 548
+    },
+    {
+      "path": "assets/game/pilots/juggernaut/body_frames/frames_0.png",
+      "owner": "pilots/juggernaut",
+      "bytes": 464761,
+      "role": "registered runtime asset",
+      "width": 1564,
+      "height": 328
+    },
+    {
+      "path": "assets/game/pilots/juggernaut/body_frames/pilot_bodies/juggernaut_body_0.png",
+      "owner": "pilots/juggernaut",
+      "bytes": 66883,
+      "role": "registered runtime asset",
+      "width": 136,
+      "height": 273
+    },
+    {
+      "path": "assets/game/pilots/juggernaut/portraits/frames_0.png",
+      "owner": "pilots/juggernaut",
+      "bytes": 2761189,
+      "role": "registered runtime asset",
+      "width": 2694,
+      "height": 726
+    },
+    {
+      "path": "assets/game/pilots/juggernaut/portraits/pilots_0922/comm/comm_juggernaut_anger.png",
+      "owner": "pilots/juggernaut",
+      "bytes": 40161,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/juggernaut/portraits/pilots_0922/comm/comm_juggernaut_crash.png",
+      "owner": "pilots/juggernaut",
+      "bytes": 40203,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/juggernaut/portraits/pilots_0922/comm/comm_juggernaut_happy.png",
+      "owner": "pilots/juggernaut",
+      "bytes": 40173,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/juggernaut/portraits/pilots_0922/comm/comm_juggernaut_idle.png",
+      "owner": "pilots/juggernaut",
+      "bytes": 40154,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/juggernaut/portraits/pilots_0922/comm/comm_juggernaut_laugh.png",
+      "owner": "pilots/juggernaut",
+      "bytes": 40391,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/juggernaut/portraits/pilots_0922/comm/comm_juggernaut_sad.png",
+      "owner": "pilots/juggernaut",
+      "bytes": 40041,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/juggernaut/portraits/pilots_0922/comm/comm_juggernaut_talk-closed.png",
+      "owner": "pilots/juggernaut",
+      "bytes": 40154,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/juggernaut/portraits/pilots_0922/comm/comm_juggernaut_talk-medium.png",
+      "owner": "pilots/juggernaut",
+      "bytes": 39867,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/juggernaut/portraits/pilots_0922/comm/comm_juggernaut_talk-o.png",
+      "owner": "pilots/juggernaut",
+      "bytes": 40017,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/juggernaut/portraits/pilots_0922/comm/comm_juggernaut_talk-small.png",
+      "owner": "pilots/juggernaut",
+      "bytes": 39853,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/juggernaut/portraits/pilots_0922/comm/comm_juggernaut_talk-wide.png",
+      "owner": "pilots/juggernaut",
+      "bytes": 39872,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/juggernaut/portraits/pilots_0922/comm/comm_juggernaut_victory.png",
+      "owner": "pilots/juggernaut",
+      "bytes": 40256,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/juggernaut/portraits/pilots_0922/portraits/juggernaut-anger.png",
+      "owner": "pilots/juggernaut",
+      "bytes": 135157,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/juggernaut/portraits/pilots_0922/portraits/juggernaut-crash.png",
+      "owner": "pilots/juggernaut",
+      "bytes": 135205,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/juggernaut/portraits/pilots_0922/portraits/juggernaut-happy.png",
+      "owner": "pilots/juggernaut",
+      "bytes": 134973,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/juggernaut/portraits/pilots_0922/portraits/juggernaut-idle.png",
+      "owner": "pilots/juggernaut",
+      "bytes": 134965,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/juggernaut/portraits/pilots_0922/portraits/juggernaut-laugh.png",
+      "owner": "pilots/juggernaut",
+      "bytes": 135475,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/juggernaut/portraits/pilots_0922/portraits/juggernaut-sad.png",
+      "owner": "pilots/juggernaut",
+      "bytes": 134684,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/juggernaut/portraits/pilots_0922/portraits/juggernaut-talk-closed.png",
+      "owner": "pilots/juggernaut",
+      "bytes": 134965,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/juggernaut/portraits/pilots_0922/portraits/juggernaut-talk-medium.png",
+      "owner": "pilots/juggernaut",
+      "bytes": 134305,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/juggernaut/portraits/pilots_0922/portraits/juggernaut-talk-o.png",
+      "owner": "pilots/juggernaut",
+      "bytes": 134395,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/juggernaut/portraits/pilots_0922/portraits/juggernaut-talk-small.png",
+      "owner": "pilots/juggernaut",
+      "bytes": 134201,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/juggernaut/portraits/pilots_0922/portraits/juggernaut-talk-wide.png",
+      "owner": "pilots/juggernaut",
+      "bytes": 134575,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/juggernaut/portraits/pilots_0922/portraits/juggernaut-victory.png",
+      "owner": "pilots/juggernaut",
+      "bytes": 135137,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/juggernaut/ship_frames/ship_juggernaut.png",
+      "owner": "pilots/juggernaut",
+      "bytes": 978833,
+      "role": "registered runtime asset",
+      "width": 1070,
+      "height": 974
+    }
+  ],
+  "audio": {
+    "sfx": {},
+    "music": {}
+  },
+  "frameFolders": [
+    "portraits",
+    "body_frames",
+    "ship_frames",
+    "abilities"
+  ],
+  "furyShip": "Common hull in shared/ships; this pilot applies a runtime palette."
+}

@@ -16,7 +16,7 @@ module.exports=function testArchmageBoomerangVisual(vm,ctxv,ok){
       const reels=calls.blit.length===3&&calls.blit.every(q=>q.key==='twirl_throw_0922')&&calls.blit[0].frame<calls.blit[1].frame&&calls.blit[1].frame<calls.blit[2].frame;
       calls.blit.length=0;boss._hammer.state='throw';boss._hammer.throw={x:326,y:360,angle:2,trail:[{x:318,y:340,angle:1.8},{x:305,y:315,angle:1.5},{x:288,y:286,angle:1.2},{x:268,y:252,angle:.9},{x:244,y:216,angle:.6},{x:220,y:184,angle:.3}]};hammerBossDraw(boss);
       const echoes=calls.blit.filter(q=>q.key==='hammer_spin'),afterimages=echoes.length===4&&echoes.slice(0,-1).every(q=>q.alpha>0&&q.alpha<=.22)&&echoes[echoes.length-1].alpha===1;
-      const assets=XART._src.arch_twirl_throw==='assets/game/stage5_archmage_0916/twirl_throw.png'&&XART._src.arch_hammer_spin==='assets/game/stage5_archmage_0916/hammer_spin.png';
+      const assets=XART._src.arch_twirl_throw==='assets/game/levels/stage_05/boss/stage5_archmage_0916/twirl_throw.png'&&XART._src.arch_hammer_spin==='assets/game/levels/stage_05/boss/stage5_archmage_0916/hammer_spin.png';
       return JSON.stringify({warning:warning,reticles:reticles,reels:reels,afterimages:afterimages,assets:assets,name:boss.name==='CHROME HAMMER ARCHMAGE'});
     }finally{combatWarningDraw=save.draw;hammerGroundReticleDraw=save.ret;archBlit=save.blit;hammerFrame=save.frame;boss=save.boss;diffKey=save.diff;}
   })()`,ctxv));

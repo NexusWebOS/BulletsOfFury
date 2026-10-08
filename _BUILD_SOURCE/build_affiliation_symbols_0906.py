@@ -144,7 +144,7 @@ def main():
     os.makedirs(OUT, exist_ok=True)
     for slug, im in made.items():
         im.save(os.path.join(OUT, 'affil_%s.png' % slug))
-    print('wrote %d emblems to assets/game/affiliations/' % len(made))
+    print('wrote %d emblems to assets/game/shared/ui/affiliations/' % len(made))
     return 0
 
 

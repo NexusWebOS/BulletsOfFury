@@ -18,8 +18,8 @@ function furyShipWarm(){
  if(typeof XART==='undefined')return;
  for(const k of FURY_KEYS){
   const stem=k==='base'?'runtime_base':k;
-  XART._src['fury_'+k]='assets/game/furyship_0914/'+stem+'.png';XART._touch('fury_'+k);
-  if(furyTintedKey(k)){XART._src['fury_'+k+'_blue']='assets/game/furyship_0914/'+stem+'_blue.png';XART._touch('fury_'+k+'_blue');}
+  XART._src['fury_'+k]='assets/game/shared/ships/furyship_0914/'+stem+'.png';XART._touch('fury_'+k);
+  if(furyTintedKey(k)){XART._src['fury_'+k+'_blue']='assets/game/shared/ships/furyship_0914/'+stem+'_blue.png';XART._touch('fury_'+k+'_blue');}
  }
 }
 function furyShipReady(){

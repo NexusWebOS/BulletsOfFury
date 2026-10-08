@@ -1,0 +1,6017 @@
+{
+  "passed": 245,
+  "failed": [],
+  "errors": [],
+  "elapsed": 23.7,
+  "shots": [
+    "level_01_boss.png",
+    "level_01_mini.png",
+    "level_02_boss.png",
+    "level_02_mini.png",
+    "level_03_boss.png",
+    "level_03_mini.png",
+    "level_04_boss.png",
+    "level_04_mini.png",
+    "level_05_boss.png",
+    "level_05_mini.png",
+    "level_06_boss.png",
+    "level_06_mini.png",
+    "level_07_boss.png",
+    "level_07_mini.png",
+    "level_08_boss.png",
+    "level_08_mini.png",
+    "level_09_boss.png",
+    "level_09_mini.png",
+    "rebels_stage_06.png",
+    "rebels_stage_x.png",
+    "harrier_stage_06.png",
+    "harrier_stage_x.png"
+  ],
+  "checks": [
+    {
+      "pass": true,
+      "check": "Stage 1: required assets ready",
+      "detail": {
+        "ready": true,
+        "progress": 1,
+        "loaded": 49,
+        "failed": 0,
+        "total": 49
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 1: correct live boss palette",
+      "detail": {
+        "theme": "stage_01",
+        "variant": "boss",
+        "frac": 0.57,
+        "shield": null,
+        "x": 22,
+        "y": 8,
+        "w": 436,
+        "h": 39
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 1: preceding stage HUD textures retired",
+      "detail": []
+    },
+    {
+      "pass": true,
+      "check": "Stage 1: boss pixels at 0%",
+      "detail": {
+        "variant": "boss",
+        "frac": 0,
+        "left": [
+          21,
+          22,
+          21,
+          255
+        ],
+        "right": [
+          21,
+          22,
+          21,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 1: boss pixels at 25%",
+      "detail": {
+        "variant": "boss",
+        "frac": 0.25,
+        "left": [
+          3,
+          216,
+          3,
+          255
+        ],
+        "right": [
+          21,
+          22,
+          21,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 1: boss pixels at 50%",
+      "detail": {
+        "variant": "boss",
+        "frac": 0.5,
+        "left": [
+          3,
+          216,
+          3,
+          255
+        ],
+        "right": [
+          21,
+          22,
+          21,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 1: boss pixels at 75%",
+      "detail": {
+        "variant": "boss",
+        "frac": 0.75,
+        "left": [
+          3,
+          216,
+          3,
+          255
+        ],
+        "right": [
+          21,
+          22,
+          21,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 1: boss pixels at 100%",
+      "detail": {
+        "variant": "boss",
+        "frac": 1,
+        "left": [
+          3,
+          216,
+          3,
+          255
+        ],
+        "right": [
+          4,
+          220,
+          2,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 1: bossShield pixels at 0%",
+      "detail": {
+        "variant": "bossShield",
+        "frac": 0,
+        "left": [
+          19,
+          21,
+          20,
+          255
+        ],
+        "right": [
+          21,
+          22,
+          22,
+          255
+        ],
+        "shield": {
+          "left": [
+            0,
+            47,
+            49,
+            255
+          ],
+          "right": [
+            0,
+            50,
+            50,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 1: bossShield pixels at 25%",
+      "detail": {
+        "variant": "bossShield",
+        "frac": 0.25,
+        "left": [
+          7,
+          225,
+          4,
+          255
+        ],
+        "right": [
+          21,
+          22,
+          22,
+          255
+        ],
+        "shield": {
+          "left": [
+            2,
+            240,
+            251,
+            255
+          ],
+          "right": [
+            0,
+            50,
+            50,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 1: bossShield pixels at 50%",
+      "detail": {
+        "variant": "bossShield",
+        "frac": 0.5,
+        "left": [
+          7,
+          225,
+          4,
+          255
+        ],
+        "right": [
+          21,
+          22,
+          22,
+          255
+        ],
+        "shield": {
+          "left": [
+            2,
+            240,
+            251,
+            255
+          ],
+          "right": [
+            0,
+            50,
+            50,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 1: bossShield pixels at 75%",
+      "detail": {
+        "variant": "bossShield",
+        "frac": 0.75,
+        "left": [
+          7,
+          225,
+          4,
+          255
+        ],
+        "right": [
+          21,
+          22,
+          22,
+          255
+        ],
+        "shield": {
+          "left": [
+            2,
+            240,
+            251,
+            255
+          ],
+          "right": [
+            0,
+            50,
+            50,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 1: bossShield pixels at 100%",
+      "detail": {
+        "variant": "bossShield",
+        "frac": 1,
+        "left": [
+          7,
+          225,
+          4,
+          255
+        ],
+        "right": [
+          5,
+          223,
+          2,
+          255
+        ],
+        "shield": {
+          "left": [
+            2,
+            240,
+            251,
+            255
+          ],
+          "right": [
+            2,
+            238,
+            251,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 1: mini pixels at 0%",
+      "detail": {
+        "variant": "mini",
+        "frac": 0,
+        "left": [
+          21,
+          22,
+          21,
+          255
+        ],
+        "right": [
+          21,
+          22,
+          21,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 1: mini pixels at 25%",
+      "detail": {
+        "variant": "mini",
+        "frac": 0.25,
+        "left": [
+          3,
+          214,
+          1,
+          255
+        ],
+        "right": [
+          21,
+          22,
+          21,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 1: mini pixels at 50%",
+      "detail": {
+        "variant": "mini",
+        "frac": 0.5,
+        "left": [
+          3,
+          214,
+          1,
+          255
+        ],
+        "right": [
+          21,
+          22,
+          21,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 1: mini pixels at 75%",
+      "detail": {
+        "variant": "mini",
+        "frac": 0.75,
+        "left": [
+          3,
+          214,
+          1,
+          255
+        ],
+        "right": [
+          21,
+          22,
+          21,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 1: mini pixels at 100%",
+      "detail": {
+        "variant": "mini",
+        "frac": 1,
+        "left": [
+          3,
+          214,
+          1,
+          255
+        ],
+        "right": [
+          4,
+          219,
+          2,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 1: miniShield pixels at 0%",
+      "detail": {
+        "variant": "miniShield",
+        "frac": 0,
+        "left": [
+          21,
+          23,
+          21,
+          255
+        ],
+        "right": [
+          21,
+          23,
+          21,
+          255
+        ],
+        "shield": {
+          "left": [
+            0,
+            36,
+            37,
+            255
+          ],
+          "right": [
+            0,
+            36,
+            36,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 1: miniShield pixels at 25%",
+      "detail": {
+        "variant": "miniShield",
+        "frac": 0.25,
+        "left": [
+          6,
+          218,
+          4,
+          255
+        ],
+        "right": [
+          21,
+          23,
+          21,
+          255
+        ],
+        "shield": {
+          "left": [
+            1,
+            241,
+            246,
+            255
+          ],
+          "right": [
+            0,
+            36,
+            36,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 1: miniShield pixels at 50%",
+      "detail": {
+        "variant": "miniShield",
+        "frac": 0.5,
+        "left": [
+          6,
+          218,
+          4,
+          255
+        ],
+        "right": [
+          21,
+          23,
+          21,
+          255
+        ],
+        "shield": {
+          "left": [
+            1,
+            241,
+            246,
+            255
+          ],
+          "right": [
+            0,
+            36,
+            36,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 1: miniShield pixels at 75%",
+      "detail": {
+        "variant": "miniShield",
+        "frac": 0.75,
+        "left": [
+          6,
+          218,
+          4,
+          255
+        ],
+        "right": [
+          21,
+          23,
+          21,
+          255
+        ],
+        "shield": {
+          "left": [
+            1,
+            241,
+            246,
+            255
+          ],
+          "right": [
+            0,
+            36,
+            36,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 1: miniShield pixels at 100%",
+      "detail": {
+        "variant": "miniShield",
+        "frac": 1,
+        "left": [
+          6,
+          218,
+          4,
+          255
+        ],
+        "right": [
+          6,
+          217,
+          5,
+          255
+        ],
+        "shield": {
+          "left": [
+            1,
+            241,
+            246,
+            255
+          ],
+          "right": [
+            2,
+            243,
+            248,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 1: live miniboss palette",
+      "detail": {
+        "theme": "stage_01",
+        "variant": "mini",
+        "frac": 1,
+        "shield": null,
+        "x": 91,
+        "y": 15,
+        "w": 298,
+        "h": 41
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 2: required assets ready",
+      "detail": {
+        "ready": true,
+        "progress": 1,
+        "loaded": 35,
+        "failed": 0,
+        "total": 35
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 2: correct live boss palette",
+      "detail": {
+        "theme": "stage_02",
+        "variant": "bossShield",
+        "frac": 1,
+        "shield": 1,
+        "x": 22,
+        "y": 4,
+        "w": 436,
+        "h": 47
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 2: preceding stage HUD textures retired",
+      "detail": []
+    },
+    {
+      "pass": true,
+      "check": "Stage 2: boss pixels at 0%",
+      "detail": {
+        "variant": "boss",
+        "frac": 0,
+        "left": [
+          22,
+          21,
+          22,
+          255
+        ],
+        "right": [
+          23,
+          22,
+          22,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 2: boss pixels at 25%",
+      "detail": {
+        "variant": "boss",
+        "frac": 0.25,
+        "left": [
+          250,
+          39,
+          31,
+          255
+        ],
+        "right": [
+          23,
+          22,
+          22,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 2: boss pixels at 50%",
+      "detail": {
+        "variant": "boss",
+        "frac": 0.5,
+        "left": [
+          250,
+          39,
+          31,
+          255
+        ],
+        "right": [
+          23,
+          22,
+          22,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 2: boss pixels at 75%",
+      "detail": {
+        "variant": "boss",
+        "frac": 0.75,
+        "left": [
+          250,
+          39,
+          31,
+          255
+        ],
+        "right": [
+          23,
+          22,
+          22,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 2: boss pixels at 100%",
+      "detail": {
+        "variant": "boss",
+        "frac": 1,
+        "left": [
+          250,
+          39,
+          31,
+          255
+        ],
+        "right": [
+          250,
+          40,
+          32,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 2: bossShield pixels at 0%",
+      "detail": {
+        "variant": "bossShield",
+        "frac": 0,
+        "left": [
+          23,
+          22,
+          23,
+          255
+        ],
+        "right": [
+          25,
+          25,
+          25,
+          255
+        ],
+        "shield": {
+          "left": [
+            0,
+            31,
+            32,
+            255
+          ],
+          "right": [
+            0,
+            31,
+            32,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 2: bossShield pixels at 25%",
+      "detail": {
+        "variant": "bossShield",
+        "frac": 0.25,
+        "left": [
+          250,
+          37,
+          31,
+          255
+        ],
+        "right": [
+          25,
+          25,
+          25,
+          255
+        ],
+        "shield": {
+          "left": [
+            0,
+            230,
+            243,
+            255
+          ],
+          "right": [
+            0,
+            31,
+            32,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 2: bossShield pixels at 50%",
+      "detail": {
+        "variant": "bossShield",
+        "frac": 0.5,
+        "left": [
+          250,
+          37,
+          31,
+          255
+        ],
+        "right": [
+          25,
+          25,
+          25,
+          255
+        ],
+        "shield": {
+          "left": [
+            0,
+            230,
+            243,
+            255
+          ],
+          "right": [
+            0,
+            31,
+            32,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 2: bossShield pixels at 75%",
+      "detail": {
+        "variant": "bossShield",
+        "frac": 0.75,
+        "left": [
+          250,
+          37,
+          31,
+          255
+        ],
+        "right": [
+          25,
+          25,
+          25,
+          255
+        ],
+        "shield": {
+          "left": [
+            0,
+            230,
+            243,
+            255
+          ],
+          "right": [
+            0,
+            31,
+            32,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 2: bossShield pixels at 100%",
+      "detail": {
+        "variant": "bossShield",
+        "frac": 1,
+        "left": [
+          250,
+          37,
+          31,
+          255
+        ],
+        "right": [
+          250,
+          33,
+          28,
+          255
+        ],
+        "shield": {
+          "left": [
+            0,
+            230,
+            243,
+            255
+          ],
+          "right": [
+            0,
+            231,
+            243,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 2: mini pixels at 0%",
+      "detail": {
+        "variant": "mini",
+        "frac": 0,
+        "left": [
+          22,
+          22,
+          22,
+          255
+        ],
+        "right": [
+          23,
+          23,
+          23,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 2: mini pixels at 25%",
+      "detail": {
+        "variant": "mini",
+        "frac": 0.25,
+        "left": [
+          251,
+          49,
+          38,
+          255
+        ],
+        "right": [
+          23,
+          23,
+          23,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 2: mini pixels at 50%",
+      "detail": {
+        "variant": "mini",
+        "frac": 0.5,
+        "left": [
+          251,
+          49,
+          38,
+          255
+        ],
+        "right": [
+          23,
+          23,
+          23,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 2: mini pixels at 75%",
+      "detail": {
+        "variant": "mini",
+        "frac": 0.75,
+        "left": [
+          251,
+          49,
+          38,
+          255
+        ],
+        "right": [
+          23,
+          23,
+          23,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 2: mini pixels at 100%",
+      "detail": {
+        "variant": "mini",
+        "frac": 1,
+        "left": [
+          251,
+          49,
+          38,
+          255
+        ],
+        "right": [
+          250,
+          48,
+          37,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 2: miniShield pixels at 0%",
+      "detail": {
+        "variant": "miniShield",
+        "frac": 0,
+        "left": [
+          23,
+          23,
+          23,
+          255
+        ],
+        "right": [
+          23,
+          23,
+          23,
+          255
+        ],
+        "shield": {
+          "left": [
+            0,
+            23,
+            24,
+            255
+          ],
+          "right": [
+            0,
+            24,
+            26,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 2: miniShield pixels at 25%",
+      "detail": {
+        "variant": "miniShield",
+        "frac": 0.25,
+        "left": [
+          250,
+          62,
+          46,
+          255
+        ],
+        "right": [
+          23,
+          23,
+          23,
+          255
+        ],
+        "shield": {
+          "left": [
+            0,
+            241,
+            247,
+            255
+          ],
+          "right": [
+            0,
+            24,
+            26,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 2: miniShield pixels at 50%",
+      "detail": {
+        "variant": "miniShield",
+        "frac": 0.5,
+        "left": [
+          250,
+          62,
+          46,
+          255
+        ],
+        "right": [
+          23,
+          23,
+          23,
+          255
+        ],
+        "shield": {
+          "left": [
+            0,
+            241,
+            247,
+            255
+          ],
+          "right": [
+            0,
+            24,
+            26,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 2: miniShield pixels at 75%",
+      "detail": {
+        "variant": "miniShield",
+        "frac": 0.75,
+        "left": [
+          250,
+          62,
+          46,
+          255
+        ],
+        "right": [
+          23,
+          23,
+          23,
+          255
+        ],
+        "shield": {
+          "left": [
+            0,
+            241,
+            247,
+            255
+          ],
+          "right": [
+            0,
+            24,
+            26,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 2: miniShield pixels at 100%",
+      "detail": {
+        "variant": "miniShield",
+        "frac": 1,
+        "left": [
+          250,
+          62,
+          46,
+          255
+        ],
+        "right": [
+          252,
+          63,
+          47,
+          255
+        ],
+        "shield": {
+          "left": [
+            0,
+            241,
+            247,
+            255
+          ],
+          "right": [
+            0,
+            240,
+            245,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 2: live miniboss palette",
+      "detail": {
+        "theme": "stage_02",
+        "variant": "mini",
+        "frac": 0.42,
+        "shield": null,
+        "x": 91,
+        "y": 15,
+        "w": 298,
+        "h": 41
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 3: required assets ready",
+      "detail": {
+        "ready": true,
+        "progress": 1,
+        "loaded": 40,
+        "failed": 0,
+        "total": 40
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 3: correct live boss palette",
+      "detail": {
+        "theme": "stage_03",
+        "variant": "boss",
+        "frac": 0.57,
+        "shield": null,
+        "x": 22,
+        "y": 8,
+        "w": 436,
+        "h": 39
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 3: preceding stage HUD textures retired",
+      "detail": []
+    },
+    {
+      "pass": true,
+      "check": "Stage 3: boss pixels at 0%",
+      "detail": {
+        "variant": "boss",
+        "frac": 0,
+        "left": [
+          16,
+          22,
+          26,
+          255
+        ],
+        "right": [
+          14,
+          20,
+          25,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 3: boss pixels at 25%",
+      "detail": {
+        "variant": "boss",
+        "frac": 0.25,
+        "left": [
+          129,
+          218,
+          249,
+          255
+        ],
+        "right": [
+          14,
+          20,
+          25,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 3: boss pixels at 50%",
+      "detail": {
+        "variant": "boss",
+        "frac": 0.5,
+        "left": [
+          129,
+          218,
+          249,
+          255
+        ],
+        "right": [
+          14,
+          20,
+          25,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 3: boss pixels at 75%",
+      "detail": {
+        "variant": "boss",
+        "frac": 0.75,
+        "left": [
+          129,
+          218,
+          249,
+          255
+        ],
+        "right": [
+          14,
+          20,
+          25,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 3: boss pixels at 100%",
+      "detail": {
+        "variant": "boss",
+        "frac": 1,
+        "left": [
+          129,
+          218,
+          249,
+          255
+        ],
+        "right": [
+          128,
+          217,
+          248,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 3: bossShield pixels at 0%",
+      "detail": {
+        "variant": "bossShield",
+        "frac": 0,
+        "left": [
+          15,
+          21,
+          26,
+          255
+        ],
+        "right": [
+          14,
+          21,
+          27,
+          255
+        ],
+        "shield": {
+          "left": [
+            0,
+            39,
+            46,
+            255
+          ],
+          "right": [
+            0,
+            38,
+            44,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 3: bossShield pixels at 25%",
+      "detail": {
+        "variant": "bossShield",
+        "frac": 0.25,
+        "left": [
+          133,
+          224,
+          249,
+          255
+        ],
+        "right": [
+          14,
+          21,
+          27,
+          255
+        ],
+        "shield": {
+          "left": [
+            2,
+            237,
+            251,
+            255
+          ],
+          "right": [
+            0,
+            38,
+            44,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 3: bossShield pixels at 50%",
+      "detail": {
+        "variant": "bossShield",
+        "frac": 0.5,
+        "left": [
+          133,
+          224,
+          249,
+          255
+        ],
+        "right": [
+          14,
+          21,
+          27,
+          255
+        ],
+        "shield": {
+          "left": [
+            2,
+            237,
+            251,
+            255
+          ],
+          "right": [
+            0,
+            38,
+            44,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 3: bossShield pixels at 75%",
+      "detail": {
+        "variant": "bossShield",
+        "frac": 0.75,
+        "left": [
+          133,
+          224,
+          249,
+          255
+        ],
+        "right": [
+          14,
+          21,
+          27,
+          255
+        ],
+        "shield": {
+          "left": [
+            2,
+            237,
+            251,
+            255
+          ],
+          "right": [
+            0,
+            38,
+            44,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 3: bossShield pixels at 100%",
+      "detail": {
+        "variant": "bossShield",
+        "frac": 1,
+        "left": [
+          133,
+          224,
+          249,
+          255
+        ],
+        "right": [
+          132,
+          222,
+          248,
+          255
+        ],
+        "shield": {
+          "left": [
+            2,
+            237,
+            251,
+            255
+          ],
+          "right": [
+            3,
+            238,
+            252,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 3: mini pixels at 0%",
+      "detail": {
+        "variant": "mini",
+        "frac": 0,
+        "left": [
+          13,
+          18,
+          23,
+          255
+        ],
+        "right": [
+          14,
+          19,
+          24,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 3: mini pixels at 25%",
+      "detail": {
+        "variant": "mini",
+        "frac": 0.25,
+        "left": [
+          135,
+          225,
+          249,
+          255
+        ],
+        "right": [
+          14,
+          19,
+          24,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 3: mini pixels at 50%",
+      "detail": {
+        "variant": "mini",
+        "frac": 0.5,
+        "left": [
+          135,
+          225,
+          249,
+          255
+        ],
+        "right": [
+          14,
+          19,
+          24,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 3: mini pixels at 75%",
+      "detail": {
+        "variant": "mini",
+        "frac": 0.75,
+        "left": [
+          135,
+          225,
+          249,
+          255
+        ],
+        "right": [
+          14,
+          19,
+          24,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 3: mini pixels at 100%",
+      "detail": {
+        "variant": "mini",
+        "frac": 1,
+        "left": [
+          135,
+          225,
+          249,
+          255
+        ],
+        "right": [
+          135,
+          224,
+          249,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 3: miniShield pixels at 0%",
+      "detail": {
+        "variant": "miniShield",
+        "frac": 0,
+        "left": [
+          15,
+          20,
+          26,
+          255
+        ],
+        "right": [
+          15,
+          21,
+          26,
+          255
+        ],
+        "shield": {
+          "left": [
+            0,
+            33,
+            39,
+            255
+          ],
+          "right": [
+            0,
+            33,
+            39,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 3: miniShield pixels at 25%",
+      "detail": {
+        "variant": "miniShield",
+        "frac": 0.25,
+        "left": [
+          130,
+          224,
+          250,
+          255
+        ],
+        "right": [
+          15,
+          21,
+          26,
+          255
+        ],
+        "shield": {
+          "left": [
+            1,
+            245,
+            250,
+            255
+          ],
+          "right": [
+            0,
+            33,
+            39,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 3: miniShield pixels at 50%",
+      "detail": {
+        "variant": "miniShield",
+        "frac": 0.5,
+        "left": [
+          130,
+          224,
+          250,
+          255
+        ],
+        "right": [
+          15,
+          21,
+          26,
+          255
+        ],
+        "shield": {
+          "left": [
+            1,
+            245,
+            250,
+            255
+          ],
+          "right": [
+            0,
+            33,
+            39,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 3: miniShield pixels at 75%",
+      "detail": {
+        "variant": "miniShield",
+        "frac": 0.75,
+        "left": [
+          130,
+          224,
+          250,
+          255
+        ],
+        "right": [
+          15,
+          21,
+          26,
+          255
+        ],
+        "shield": {
+          "left": [
+            1,
+            245,
+            250,
+            255
+          ],
+          "right": [
+            0,
+            33,
+            39,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 3: miniShield pixels at 100%",
+      "detail": {
+        "variant": "miniShield",
+        "frac": 1,
+        "left": [
+          130,
+          224,
+          250,
+          255
+        ],
+        "right": [
+          131,
+          222,
+          250,
+          255
+        ],
+        "shield": {
+          "left": [
+            1,
+            245,
+            250,
+            255
+          ],
+          "right": [
+            1,
+            243,
+            251,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 3: live miniboss palette",
+      "detail": {
+        "theme": "stage_03",
+        "variant": "mini",
+        "frac": 0.42,
+        "shield": null,
+        "x": 91,
+        "y": 15,
+        "w": 298,
+        "h": 41
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 4: required assets ready",
+      "detail": {
+        "ready": true,
+        "progress": 1,
+        "loaded": 29,
+        "failed": 0,
+        "total": 29
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 4: correct live boss palette",
+      "detail": {
+        "theme": "stage_04",
+        "variant": "bossShield",
+        "frac": 0.57,
+        "shield": 1,
+        "x": 22,
+        "y": 4,
+        "w": 436,
+        "h": 47
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 4: preceding stage HUD textures retired",
+      "detail": []
+    },
+    {
+      "pass": true,
+      "check": "Stage 4: boss pixels at 0%",
+      "detail": {
+        "variant": "boss",
+        "frac": 0,
+        "left": [
+          21,
+          22,
+          23,
+          255
+        ],
+        "right": [
+          22,
+          22,
+          22,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 4: boss pixels at 25%",
+      "detail": {
+        "variant": "boss",
+        "frac": 0.25,
+        "left": [
+          212,
+          153,
+          96,
+          255
+        ],
+        "right": [
+          22,
+          22,
+          22,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 4: boss pixels at 50%",
+      "detail": {
+        "variant": "boss",
+        "frac": 0.5,
+        "left": [
+          212,
+          153,
+          96,
+          255
+        ],
+        "right": [
+          22,
+          22,
+          22,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 4: boss pixels at 75%",
+      "detail": {
+        "variant": "boss",
+        "frac": 0.75,
+        "left": [
+          212,
+          153,
+          96,
+          255
+        ],
+        "right": [
+          22,
+          22,
+          22,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 4: boss pixels at 100%",
+      "detail": {
+        "variant": "boss",
+        "frac": 1,
+        "left": [
+          212,
+          153,
+          96,
+          255
+        ],
+        "right": [
+          212,
+          153,
+          95,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 4: bossShield pixels at 0%",
+      "detail": {
+        "variant": "bossShield",
+        "frac": 0,
+        "left": [
+          21,
+          21,
+          23,
+          255
+        ],
+        "right": [
+          23,
+          22,
+          24,
+          255
+        ],
+        "shield": {
+          "left": [
+            1,
+            38,
+            40,
+            255
+          ],
+          "right": [
+            0,
+            39,
+            41,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 4: bossShield pixels at 25%",
+      "detail": {
+        "variant": "bossShield",
+        "frac": 0.25,
+        "left": [
+          217,
+          159,
+          101,
+          255
+        ],
+        "right": [
+          23,
+          22,
+          24,
+          255
+        ],
+        "shield": {
+          "left": [
+            0,
+            231,
+            246,
+            255
+          ],
+          "right": [
+            0,
+            39,
+            41,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 4: bossShield pixels at 50%",
+      "detail": {
+        "variant": "bossShield",
+        "frac": 0.5,
+        "left": [
+          217,
+          159,
+          101,
+          255
+        ],
+        "right": [
+          23,
+          22,
+          24,
+          255
+        ],
+        "shield": {
+          "left": [
+            0,
+            231,
+            246,
+            255
+          ],
+          "right": [
+            0,
+            39,
+            41,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 4: bossShield pixels at 75%",
+      "detail": {
+        "variant": "bossShield",
+        "frac": 0.75,
+        "left": [
+          217,
+          159,
+          101,
+          255
+        ],
+        "right": [
+          23,
+          22,
+          24,
+          255
+        ],
+        "shield": {
+          "left": [
+            0,
+            231,
+            246,
+            255
+          ],
+          "right": [
+            0,
+            39,
+            41,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 4: bossShield pixels at 100%",
+      "detail": {
+        "variant": "bossShield",
+        "frac": 1,
+        "left": [
+          217,
+          159,
+          101,
+          255
+        ],
+        "right": [
+          214,
+          157,
+          98,
+          255
+        ],
+        "shield": {
+          "left": [
+            0,
+            231,
+            246,
+            255
+          ],
+          "right": [
+            0,
+            232,
+            247,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 4: mini pixels at 0%",
+      "detail": {
+        "variant": "mini",
+        "frac": 0,
+        "left": [
+          21,
+          20,
+          23,
+          255
+        ],
+        "right": [
+          21,
+          22,
+          21,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 4: mini pixels at 25%",
+      "detail": {
+        "variant": "mini",
+        "frac": 0.25,
+        "left": [
+          215,
+          153,
+          95,
+          255
+        ],
+        "right": [
+          21,
+          22,
+          21,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 4: mini pixels at 50%",
+      "detail": {
+        "variant": "mini",
+        "frac": 0.5,
+        "left": [
+          215,
+          153,
+          95,
+          255
+        ],
+        "right": [
+          21,
+          22,
+          21,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 4: mini pixels at 75%",
+      "detail": {
+        "variant": "mini",
+        "frac": 0.75,
+        "left": [
+          215,
+          153,
+          95,
+          255
+        ],
+        "right": [
+          21,
+          22,
+          21,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 4: mini pixels at 100%",
+      "detail": {
+        "variant": "mini",
+        "frac": 1,
+        "left": [
+          215,
+          153,
+          95,
+          255
+        ],
+        "right": [
+          213,
+          152,
+          95,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 4: miniShield pixels at 0%",
+      "detail": {
+        "variant": "miniShield",
+        "frac": 0,
+        "left": [
+          22,
+          23,
+          23,
+          255
+        ],
+        "right": [
+          23,
+          23,
+          23,
+          255
+        ],
+        "shield": {
+          "left": [
+            0,
+            38,
+            42,
+            255
+          ],
+          "right": [
+            0,
+            38,
+            43,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 4: miniShield pixels at 25%",
+      "detail": {
+        "variant": "miniShield",
+        "frac": 0.25,
+        "left": [
+          213,
+          152,
+          94,
+          255
+        ],
+        "right": [
+          23,
+          23,
+          23,
+          255
+        ],
+        "shield": {
+          "left": [
+            0,
+            238,
+            241,
+            255
+          ],
+          "right": [
+            0,
+            38,
+            43,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 4: miniShield pixels at 50%",
+      "detail": {
+        "variant": "miniShield",
+        "frac": 0.5,
+        "left": [
+          213,
+          152,
+          94,
+          255
+        ],
+        "right": [
+          23,
+          23,
+          23,
+          255
+        ],
+        "shield": {
+          "left": [
+            0,
+            238,
+            241,
+            255
+          ],
+          "right": [
+            0,
+            38,
+            43,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 4: miniShield pixels at 75%",
+      "detail": {
+        "variant": "miniShield",
+        "frac": 0.75,
+        "left": [
+          213,
+          152,
+          94,
+          255
+        ],
+        "right": [
+          23,
+          23,
+          23,
+          255
+        ],
+        "shield": {
+          "left": [
+            0,
+            238,
+            241,
+            255
+          ],
+          "right": [
+            0,
+            38,
+            43,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 4: miniShield pixels at 100%",
+      "detail": {
+        "variant": "miniShield",
+        "frac": 1,
+        "left": [
+          213,
+          152,
+          94,
+          255
+        ],
+        "right": [
+          212,
+          149,
+          91,
+          255
+        ],
+        "shield": {
+          "left": [
+            0,
+            238,
+            241,
+            255
+          ],
+          "right": [
+            1,
+            236,
+            239,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 4: live miniboss palette",
+      "detail": {
+        "theme": "stage_04",
+        "variant": "mini",
+        "frac": 0.42,
+        "shield": null,
+        "x": 91,
+        "y": 15,
+        "w": 298,
+        "h": 41
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 5: required assets ready",
+      "detail": {
+        "ready": true,
+        "progress": 1,
+        "loaded": 67,
+        "failed": 0,
+        "total": 67
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 5: correct live boss palette",
+      "detail": {
+        "theme": "stage_05",
+        "variant": "boss",
+        "frac": 0.57,
+        "shield": null,
+        "x": 22,
+        "y": 8,
+        "w": 436,
+        "h": 39
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 5: preceding stage HUD textures retired",
+      "detail": []
+    },
+    {
+      "pass": true,
+      "check": "Stage 5: boss pixels at 0%",
+      "detail": {
+        "variant": "boss",
+        "frac": 0,
+        "left": [
+          12,
+          14,
+          16,
+          255
+        ],
+        "right": [
+          11,
+          14,
+          16,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 5: boss pixels at 25%",
+      "detail": {
+        "variant": "boss",
+        "frac": 0.25,
+        "left": [
+          187,
+          132,
+          246,
+          255
+        ],
+        "right": [
+          11,
+          14,
+          16,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 5: boss pixels at 50%",
+      "detail": {
+        "variant": "boss",
+        "frac": 0.5,
+        "left": [
+          187,
+          132,
+          246,
+          255
+        ],
+        "right": [
+          11,
+          14,
+          16,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 5: boss pixels at 75%",
+      "detail": {
+        "variant": "boss",
+        "frac": 0.75,
+        "left": [
+          187,
+          132,
+          246,
+          255
+        ],
+        "right": [
+          11,
+          14,
+          16,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 5: boss pixels at 100%",
+      "detail": {
+        "variant": "boss",
+        "frac": 1,
+        "left": [
+          187,
+          132,
+          246,
+          255
+        ],
+        "right": [
+          187,
+          131,
+          248,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 5: bossShield pixels at 0%",
+      "detail": {
+        "variant": "bossShield",
+        "frac": 0,
+        "left": [
+          12,
+          13,
+          15,
+          255
+        ],
+        "right": [
+          13,
+          13,
+          15,
+          255
+        ],
+        "shield": {
+          "left": [
+            0,
+            32,
+            31,
+            255
+          ],
+          "right": [
+            0,
+            34,
+            33,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 5: bossShield pixels at 25%",
+      "detail": {
+        "variant": "bossShield",
+        "frac": 0.25,
+        "left": [
+          187,
+          132,
+          247,
+          255
+        ],
+        "right": [
+          13,
+          13,
+          15,
+          255
+        ],
+        "shield": {
+          "left": [
+            1,
+            239,
+            249,
+            255
+          ],
+          "right": [
+            0,
+            34,
+            33,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 5: bossShield pixels at 50%",
+      "detail": {
+        "variant": "bossShield",
+        "frac": 0.5,
+        "left": [
+          187,
+          132,
+          247,
+          255
+        ],
+        "right": [
+          13,
+          13,
+          15,
+          255
+        ],
+        "shield": {
+          "left": [
+            1,
+            239,
+            249,
+            255
+          ],
+          "right": [
+            0,
+            34,
+            33,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 5: bossShield pixels at 75%",
+      "detail": {
+        "variant": "bossShield",
+        "frac": 0.75,
+        "left": [
+          187,
+          132,
+          247,
+          255
+        ],
+        "right": [
+          13,
+          13,
+          15,
+          255
+        ],
+        "shield": {
+          "left": [
+            1,
+            239,
+            249,
+            255
+          ],
+          "right": [
+            0,
+            34,
+            33,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 5: bossShield pixels at 100%",
+      "detail": {
+        "variant": "bossShield",
+        "frac": 1,
+        "left": [
+          187,
+          132,
+          247,
+          255
+        ],
+        "right": [
+          186,
+          130,
+          246,
+          255
+        ],
+        "shield": {
+          "left": [
+            1,
+            239,
+            249,
+            255
+          ],
+          "right": [
+            2,
+            234,
+            247,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 5: mini pixels at 0%",
+      "detail": {
+        "variant": "mini",
+        "frac": 0,
+        "left": [
+          13,
+          14,
+          16,
+          255
+        ],
+        "right": [
+          14,
+          15,
+          17,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 5: mini pixels at 25%",
+      "detail": {
+        "variant": "mini",
+        "frac": 0.25,
+        "left": [
+          186,
+          125,
+          243,
+          255
+        ],
+        "right": [
+          14,
+          15,
+          17,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 5: mini pixels at 50%",
+      "detail": {
+        "variant": "mini",
+        "frac": 0.5,
+        "left": [
+          186,
+          125,
+          243,
+          255
+        ],
+        "right": [
+          14,
+          15,
+          17,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 5: mini pixels at 75%",
+      "detail": {
+        "variant": "mini",
+        "frac": 0.75,
+        "left": [
+          186,
+          125,
+          243,
+          255
+        ],
+        "right": [
+          14,
+          15,
+          17,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 5: mini pixels at 100%",
+      "detail": {
+        "variant": "mini",
+        "frac": 1,
+        "left": [
+          186,
+          125,
+          243,
+          255
+        ],
+        "right": [
+          184,
+          121,
+          243,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 5: miniShield pixels at 0%",
+      "detail": {
+        "variant": "miniShield",
+        "frac": 0,
+        "left": [
+          13,
+          15,
+          16,
+          255
+        ],
+        "right": [
+          13,
+          15,
+          15,
+          255
+        ],
+        "shield": {
+          "left": [
+            0,
+            30,
+            29,
+            255
+          ],
+          "right": [
+            0,
+            30,
+            29,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 5: miniShield pixels at 25%",
+      "detail": {
+        "variant": "miniShield",
+        "frac": 0.25,
+        "left": [
+          190,
+          144,
+          244,
+          255
+        ],
+        "right": [
+          13,
+          15,
+          15,
+          255
+        ],
+        "shield": {
+          "left": [
+            0,
+            223,
+            239,
+            255
+          ],
+          "right": [
+            0,
+            30,
+            29,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 5: miniShield pixels at 50%",
+      "detail": {
+        "variant": "miniShield",
+        "frac": 0.5,
+        "left": [
+          190,
+          144,
+          244,
+          255
+        ],
+        "right": [
+          13,
+          15,
+          15,
+          255
+        ],
+        "shield": {
+          "left": [
+            0,
+            223,
+            239,
+            255
+          ],
+          "right": [
+            0,
+            30,
+            29,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 5: miniShield pixels at 75%",
+      "detail": {
+        "variant": "miniShield",
+        "frac": 0.75,
+        "left": [
+          190,
+          144,
+          244,
+          255
+        ],
+        "right": [
+          13,
+          15,
+          15,
+          255
+        ],
+        "shield": {
+          "left": [
+            0,
+            223,
+            239,
+            255
+          ],
+          "right": [
+            0,
+            30,
+            29,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 5: miniShield pixels at 100%",
+      "detail": {
+        "variant": "miniShield",
+        "frac": 1,
+        "left": [
+          190,
+          144,
+          244,
+          255
+        ],
+        "right": [
+          190,
+          143,
+          244,
+          255
+        ],
+        "shield": {
+          "left": [
+            0,
+            223,
+            239,
+            255
+          ],
+          "right": [
+            1,
+            221,
+            238,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 5: live miniboss palette",
+      "detail": {
+        "theme": "stage_05",
+        "variant": "mini",
+        "frac": 0.42,
+        "shield": null,
+        "x": 91,
+        "y": 15,
+        "w": 298,
+        "h": 41
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 6: required assets ready",
+      "detail": {
+        "ready": true,
+        "progress": 1,
+        "loaded": 157,
+        "failed": 0,
+        "total": 157
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 6: correct live boss palette",
+      "detail": {
+        "theme": "stage_06",
+        "variant": "boss",
+        "frac": 0.57,
+        "shield": null,
+        "x": 22,
+        "y": 8,
+        "w": 436,
+        "h": 39
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 6: preceding stage HUD textures retired",
+      "detail": []
+    },
+    {
+      "pass": true,
+      "check": "Stage 6: boss pixels at 0%",
+      "detail": {
+        "variant": "boss",
+        "frac": 0,
+        "left": [
+          16,
+          18,
+          19,
+          255
+        ],
+        "right": [
+          16,
+          19,
+          20,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 6: boss pixels at 25%",
+      "detail": {
+        "variant": "boss",
+        "frac": 0.25,
+        "left": [
+          22,
+          85,
+          247,
+          255
+        ],
+        "right": [
+          16,
+          19,
+          20,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 6: boss pixels at 50%",
+      "detail": {
+        "variant": "boss",
+        "frac": 0.5,
+        "left": [
+          22,
+          85,
+          247,
+          255
+        ],
+        "right": [
+          16,
+          19,
+          20,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 6: boss pixels at 75%",
+      "detail": {
+        "variant": "boss",
+        "frac": 0.75,
+        "left": [
+          22,
+          85,
+          247,
+          255
+        ],
+        "right": [
+          16,
+          19,
+          20,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 6: boss pixels at 100%",
+      "detail": {
+        "variant": "boss",
+        "frac": 1,
+        "left": [
+          22,
+          85,
+          247,
+          255
+        ],
+        "right": [
+          24,
+          80,
+          248,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 6: bossShield pixels at 0%",
+      "detail": {
+        "variant": "bossShield",
+        "frac": 0,
+        "left": [
+          18,
+          19,
+          20,
+          255
+        ],
+        "right": [
+          17,
+          19,
+          21,
+          255
+        ],
+        "shield": {
+          "left": [
+            1,
+            42,
+            45,
+            255
+          ],
+          "right": [
+            0,
+            42,
+            43,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 6: bossShield pixels at 25%",
+      "detail": {
+        "variant": "bossShield",
+        "frac": 0.25,
+        "left": [
+          25,
+          93,
+          249,
+          255
+        ],
+        "right": [
+          17,
+          19,
+          21,
+          255
+        ],
+        "shield": {
+          "left": [
+            0,
+            232,
+            245,
+            255
+          ],
+          "right": [
+            0,
+            42,
+            43,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 6: bossShield pixels at 50%",
+      "detail": {
+        "variant": "bossShield",
+        "frac": 0.5,
+        "left": [
+          25,
+          93,
+          249,
+          255
+        ],
+        "right": [
+          17,
+          19,
+          21,
+          255
+        ],
+        "shield": {
+          "left": [
+            0,
+            232,
+            245,
+            255
+          ],
+          "right": [
+            0,
+            42,
+            43,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 6: bossShield pixels at 75%",
+      "detail": {
+        "variant": "bossShield",
+        "frac": 0.75,
+        "left": [
+          25,
+          93,
+          249,
+          255
+        ],
+        "right": [
+          17,
+          19,
+          21,
+          255
+        ],
+        "shield": {
+          "left": [
+            0,
+            232,
+            245,
+            255
+          ],
+          "right": [
+            0,
+            42,
+            43,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 6: bossShield pixels at 100%",
+      "detail": {
+        "variant": "bossShield",
+        "frac": 1,
+        "left": [
+          25,
+          93,
+          249,
+          255
+        ],
+        "right": [
+          24,
+          85,
+          248,
+          255
+        ],
+        "shield": {
+          "left": [
+            0,
+            232,
+            245,
+            255
+          ],
+          "right": [
+            0,
+            234,
+            249,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 6: mini pixels at 0%",
+      "detail": {
+        "variant": "mini",
+        "frac": 0,
+        "left": [
+          16,
+          16,
+          17,
+          255
+        ],
+        "right": [
+          16,
+          17,
+          17,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 6: mini pixels at 25%",
+      "detail": {
+        "variant": "mini",
+        "frac": 0.25,
+        "left": [
+          24,
+          95,
+          247,
+          255
+        ],
+        "right": [
+          16,
+          17,
+          17,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 6: mini pixels at 50%",
+      "detail": {
+        "variant": "mini",
+        "frac": 0.5,
+        "left": [
+          24,
+          95,
+          247,
+          255
+        ],
+        "right": [
+          16,
+          17,
+          17,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 6: mini pixels at 75%",
+      "detail": {
+        "variant": "mini",
+        "frac": 0.75,
+        "left": [
+          24,
+          95,
+          247,
+          255
+        ],
+        "right": [
+          16,
+          17,
+          17,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 6: mini pixels at 100%",
+      "detail": {
+        "variant": "mini",
+        "frac": 1,
+        "left": [
+          24,
+          95,
+          247,
+          255
+        ],
+        "right": [
+          23,
+          99,
+          247,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 6: miniShield pixels at 0%",
+      "detail": {
+        "variant": "miniShield",
+        "frac": 0,
+        "left": [
+          16,
+          18,
+          19,
+          255
+        ],
+        "right": [
+          16,
+          18,
+          19,
+          255
+        ],
+        "shield": {
+          "left": [
+            0,
+            35,
+            38,
+            255
+          ],
+          "right": [
+            0,
+            34,
+            37,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 6: miniShield pixels at 25%",
+      "detail": {
+        "variant": "miniShield",
+        "frac": 0.25,
+        "left": [
+          22,
+          91,
+          247,
+          255
+        ],
+        "right": [
+          16,
+          18,
+          19,
+          255
+        ],
+        "shield": {
+          "left": [
+            0,
+            236,
+            244,
+            255
+          ],
+          "right": [
+            0,
+            34,
+            37,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 6: miniShield pixels at 50%",
+      "detail": {
+        "variant": "miniShield",
+        "frac": 0.5,
+        "left": [
+          22,
+          91,
+          247,
+          255
+        ],
+        "right": [
+          16,
+          18,
+          19,
+          255
+        ],
+        "shield": {
+          "left": [
+            0,
+            236,
+            244,
+            255
+          ],
+          "right": [
+            0,
+            34,
+            37,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 6: miniShield pixels at 75%",
+      "detail": {
+        "variant": "miniShield",
+        "frac": 0.75,
+        "left": [
+          22,
+          91,
+          247,
+          255
+        ],
+        "right": [
+          16,
+          18,
+          19,
+          255
+        ],
+        "shield": {
+          "left": [
+            0,
+            236,
+            244,
+            255
+          ],
+          "right": [
+            0,
+            34,
+            37,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 6: miniShield pixels at 100%",
+      "detail": {
+        "variant": "miniShield",
+        "frac": 1,
+        "left": [
+          22,
+          91,
+          247,
+          255
+        ],
+        "right": [
+          21,
+          93,
+          248,
+          255
+        ],
+        "shield": {
+          "left": [
+            0,
+            236,
+            244,
+            255
+          ],
+          "right": [
+            0,
+            227,
+            236,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 6: live miniboss palette",
+      "detail": {
+        "theme": "stage_06",
+        "variant": "mini",
+        "frac": 0.42,
+        "shield": null,
+        "x": 91,
+        "y": 15,
+        "w": 298,
+        "h": 41
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 7: required assets ready",
+      "detail": {
+        "ready": true,
+        "progress": 1,
+        "loaded": 40,
+        "failed": 0,
+        "total": 40
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 7: correct live boss palette",
+      "detail": {
+        "theme": "stage_07",
+        "variant": "boss",
+        "frac": 0.57,
+        "shield": null,
+        "x": 22,
+        "y": 8,
+        "w": 436,
+        "h": 39
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 7: preceding stage HUD textures retired",
+      "detail": []
+    },
+    {
+      "pass": true,
+      "check": "Stage 7: boss pixels at 0%",
+      "detail": {
+        "variant": "boss",
+        "frac": 0,
+        "left": [
+          14,
+          16,
+          16,
+          255
+        ],
+        "right": [
+          14,
+          17,
+          16,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 7: boss pixels at 25%",
+      "detail": {
+        "variant": "boss",
+        "frac": 0.25,
+        "left": [
+          188,
+          242,
+          5,
+          255
+        ],
+        "right": [
+          14,
+          17,
+          16,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 7: boss pixels at 50%",
+      "detail": {
+        "variant": "boss",
+        "frac": 0.5,
+        "left": [
+          188,
+          242,
+          5,
+          255
+        ],
+        "right": [
+          14,
+          17,
+          16,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 7: boss pixels at 75%",
+      "detail": {
+        "variant": "boss",
+        "frac": 0.75,
+        "left": [
+          188,
+          242,
+          5,
+          255
+        ],
+        "right": [
+          14,
+          17,
+          16,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 7: boss pixels at 100%",
+      "detail": {
+        "variant": "boss",
+        "frac": 1,
+        "left": [
+          188,
+          242,
+          5,
+          255
+        ],
+        "right": [
+          189,
+          243,
+          6,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 7: bossShield pixels at 0%",
+      "detail": {
+        "variant": "bossShield",
+        "frac": 0,
+        "left": [
+          15,
+          16,
+          16,
+          255
+        ],
+        "right": [
+          15,
+          17,
+          16,
+          255
+        ],
+        "shield": {
+          "left": [
+            0,
+            32,
+            31,
+            255
+          ],
+          "right": [
+            0,
+            32,
+            31,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 7: bossShield pixels at 25%",
+      "detail": {
+        "variant": "bossShield",
+        "frac": 0.25,
+        "left": [
+          190,
+          243,
+          6,
+          255
+        ],
+        "right": [
+          15,
+          17,
+          16,
+          255
+        ],
+        "shield": {
+          "left": [
+            0,
+            236,
+            247,
+            255
+          ],
+          "right": [
+            0,
+            32,
+            31,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 7: bossShield pixels at 50%",
+      "detail": {
+        "variant": "bossShield",
+        "frac": 0.5,
+        "left": [
+          190,
+          243,
+          6,
+          255
+        ],
+        "right": [
+          15,
+          17,
+          16,
+          255
+        ],
+        "shield": {
+          "left": [
+            0,
+            236,
+            247,
+            255
+          ],
+          "right": [
+            0,
+            32,
+            31,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 7: bossShield pixels at 75%",
+      "detail": {
+        "variant": "bossShield",
+        "frac": 0.75,
+        "left": [
+          190,
+          243,
+          6,
+          255
+        ],
+        "right": [
+          15,
+          17,
+          16,
+          255
+        ],
+        "shield": {
+          "left": [
+            0,
+            236,
+            247,
+            255
+          ],
+          "right": [
+            0,
+            32,
+            31,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 7: bossShield pixels at 100%",
+      "detail": {
+        "variant": "bossShield",
+        "frac": 1,
+        "left": [
+          190,
+          243,
+          6,
+          255
+        ],
+        "right": [
+          191,
+          244,
+          7,
+          255
+        ],
+        "shield": {
+          "left": [
+            0,
+            236,
+            247,
+            255
+          ],
+          "right": [
+            0,
+            235,
+            245,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 7: mini pixels at 0%",
+      "detail": {
+        "variant": "mini",
+        "frac": 0,
+        "left": [
+          15,
+          16,
+          16,
+          255
+        ],
+        "right": [
+          14,
+          16,
+          15,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 7: mini pixels at 25%",
+      "detail": {
+        "variant": "mini",
+        "frac": 0.25,
+        "left": [
+          189,
+          242,
+          4,
+          255
+        ],
+        "right": [
+          14,
+          16,
+          15,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 7: mini pixels at 50%",
+      "detail": {
+        "variant": "mini",
+        "frac": 0.5,
+        "left": [
+          189,
+          242,
+          4,
+          255
+        ],
+        "right": [
+          14,
+          16,
+          15,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 7: mini pixels at 75%",
+      "detail": {
+        "variant": "mini",
+        "frac": 0.75,
+        "left": [
+          189,
+          242,
+          4,
+          255
+        ],
+        "right": [
+          14,
+          16,
+          15,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 7: mini pixels at 100%",
+      "detail": {
+        "variant": "mini",
+        "frac": 1,
+        "left": [
+          189,
+          242,
+          4,
+          255
+        ],
+        "right": [
+          189,
+          241,
+          4,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 7: miniShield pixels at 0%",
+      "detail": {
+        "variant": "miniShield",
+        "frac": 0,
+        "left": [
+          14,
+          17,
+          16,
+          255
+        ],
+        "right": [
+          14,
+          17,
+          17,
+          255
+        ],
+        "shield": {
+          "left": [
+            0,
+            33,
+            33,
+            255
+          ],
+          "right": [
+            0,
+            34,
+            34,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 7: miniShield pixels at 25%",
+      "detail": {
+        "variant": "miniShield",
+        "frac": 0.25,
+        "left": [
+          190,
+          242,
+          9,
+          255
+        ],
+        "right": [
+          14,
+          17,
+          17,
+          255
+        ],
+        "shield": {
+          "left": [
+            5,
+            247,
+            251,
+            255
+          ],
+          "right": [
+            0,
+            34,
+            34,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 7: miniShield pixels at 50%",
+      "detail": {
+        "variant": "miniShield",
+        "frac": 0.5,
+        "left": [
+          190,
+          242,
+          9,
+          255
+        ],
+        "right": [
+          14,
+          17,
+          17,
+          255
+        ],
+        "shield": {
+          "left": [
+            5,
+            247,
+            251,
+            255
+          ],
+          "right": [
+            0,
+            34,
+            34,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 7: miniShield pixels at 75%",
+      "detail": {
+        "variant": "miniShield",
+        "frac": 0.75,
+        "left": [
+          190,
+          242,
+          9,
+          255
+        ],
+        "right": [
+          14,
+          17,
+          17,
+          255
+        ],
+        "shield": {
+          "left": [
+            5,
+            247,
+            251,
+            255
+          ],
+          "right": [
+            0,
+            34,
+            34,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 7: miniShield pixels at 100%",
+      "detail": {
+        "variant": "miniShield",
+        "frac": 1,
+        "left": [
+          190,
+          242,
+          9,
+          255
+        ],
+        "right": [
+          191,
+          242,
+          11,
+          255
+        ],
+        "shield": {
+          "left": [
+            5,
+            247,
+            251,
+            255
+          ],
+          "right": [
+            7,
+            247,
+            251,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 7: live miniboss palette",
+      "detail": {
+        "theme": "stage_07",
+        "variant": "mini",
+        "frac": 0.42,
+        "shield": null,
+        "x": 91,
+        "y": 15,
+        "w": 298,
+        "h": 41
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 8: required assets ready",
+      "detail": {
+        "ready": true,
+        "progress": 1,
+        "loaded": 78,
+        "failed": 0,
+        "total": 78
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 8: correct live boss palette",
+      "detail": {
+        "theme": "stage_08",
+        "variant": "boss",
+        "frac": 0.57,
+        "shield": null,
+        "x": 22,
+        "y": 8,
+        "w": 436,
+        "h": 39
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 8: preceding stage HUD textures retired",
+      "detail": []
+    },
+    {
+      "pass": true,
+      "check": "Stage 8: boss pixels at 0%",
+      "detail": {
+        "variant": "boss",
+        "frac": 0,
+        "left": [
+          22,
+          22,
+          24,
+          255
+        ],
+        "right": [
+          22,
+          22,
+          24,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 8: boss pixels at 25%",
+      "detail": {
+        "variant": "boss",
+        "frac": 0.25,
+        "left": [
+          131,
+          1,
+          81,
+          255
+        ],
+        "right": [
+          22,
+          22,
+          24,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 8: boss pixels at 50%",
+      "detail": {
+        "variant": "boss",
+        "frac": 0.5,
+        "left": [
+          131,
+          1,
+          81,
+          255
+        ],
+        "right": [
+          22,
+          22,
+          24,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 8: boss pixels at 75%",
+      "detail": {
+        "variant": "boss",
+        "frac": 0.75,
+        "left": [
+          131,
+          1,
+          81,
+          255
+        ],
+        "right": [
+          22,
+          22,
+          24,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 8: boss pixels at 100%",
+      "detail": {
+        "variant": "boss",
+        "frac": 1,
+        "left": [
+          131,
+          1,
+          81,
+          255
+        ],
+        "right": [
+          163,
+          2,
+          80,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 8: bossShield pixels at 0%",
+      "detail": {
+        "variant": "bossShield",
+        "frac": 0,
+        "left": [
+          21,
+          21,
+          23,
+          255
+        ],
+        "right": [
+          21,
+          22,
+          24,
+          255
+        ],
+        "shield": {
+          "left": [
+            0,
+            33,
+            38,
+            255
+          ],
+          "right": [
+            0,
+            34,
+            39,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 8: bossShield pixels at 25%",
+      "detail": {
+        "variant": "bossShield",
+        "frac": 0.25,
+        "left": [
+          117,
+          1,
+          95,
+          255
+        ],
+        "right": [
+          21,
+          22,
+          24,
+          255
+        ],
+        "shield": {
+          "left": [
+            0,
+            232,
+            247,
+            255
+          ],
+          "right": [
+            0,
+            34,
+            39,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 8: bossShield pixels at 50%",
+      "detail": {
+        "variant": "bossShield",
+        "frac": 0.5,
+        "left": [
+          117,
+          1,
+          95,
+          255
+        ],
+        "right": [
+          21,
+          22,
+          24,
+          255
+        ],
+        "shield": {
+          "left": [
+            0,
+            232,
+            247,
+            255
+          ],
+          "right": [
+            0,
+            34,
+            39,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 8: bossShield pixels at 75%",
+      "detail": {
+        "variant": "bossShield",
+        "frac": 0.75,
+        "left": [
+          117,
+          1,
+          95,
+          255
+        ],
+        "right": [
+          21,
+          22,
+          24,
+          255
+        ],
+        "shield": {
+          "left": [
+            0,
+            232,
+            247,
+            255
+          ],
+          "right": [
+            0,
+            34,
+            39,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 8: bossShield pixels at 100%",
+      "detail": {
+        "variant": "bossShield",
+        "frac": 1,
+        "left": [
+          117,
+          1,
+          95,
+          255
+        ],
+        "right": [
+          131,
+          1,
+          94,
+          255
+        ],
+        "shield": {
+          "left": [
+            0,
+            232,
+            247,
+            255
+          ],
+          "right": [
+            0,
+            231,
+            246,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 8: mini pixels at 0%",
+      "detail": {
+        "variant": "mini",
+        "frac": 0,
+        "left": [
+          20,
+          20,
+          22,
+          255
+        ],
+        "right": [
+          20,
+          20,
+          23,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 8: mini pixels at 25%",
+      "detail": {
+        "variant": "mini",
+        "frac": 0.25,
+        "left": [
+          86,
+          1,
+          86,
+          255
+        ],
+        "right": [
+          20,
+          20,
+          23,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 8: mini pixels at 50%",
+      "detail": {
+        "variant": "mini",
+        "frac": 0.5,
+        "left": [
+          86,
+          1,
+          86,
+          255
+        ],
+        "right": [
+          20,
+          20,
+          23,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 8: mini pixels at 75%",
+      "detail": {
+        "variant": "mini",
+        "frac": 0.75,
+        "left": [
+          86,
+          1,
+          86,
+          255
+        ],
+        "right": [
+          20,
+          20,
+          23,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 8: mini pixels at 100%",
+      "detail": {
+        "variant": "mini",
+        "frac": 1,
+        "left": [
+          86,
+          1,
+          86,
+          255
+        ],
+        "right": [
+          87,
+          1,
+          90,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 8: miniShield pixels at 0%",
+      "detail": {
+        "variant": "miniShield",
+        "frac": 0,
+        "left": [
+          19,
+          20,
+          22,
+          255
+        ],
+        "right": [
+          20,
+          20,
+          21,
+          255
+        ],
+        "shield": {
+          "left": [
+            0,
+            25,
+            27,
+            255
+          ],
+          "right": [
+            0,
+            25,
+            27,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 8: miniShield pixels at 25%",
+      "detail": {
+        "variant": "miniShield",
+        "frac": 0.25,
+        "left": [
+          130,
+          3,
+          74,
+          255
+        ],
+        "right": [
+          20,
+          20,
+          21,
+          255
+        ],
+        "shield": {
+          "left": [
+            4,
+            243,
+            251,
+            255
+          ],
+          "right": [
+            0,
+            25,
+            27,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 8: miniShield pixels at 50%",
+      "detail": {
+        "variant": "miniShield",
+        "frac": 0.5,
+        "left": [
+          130,
+          3,
+          74,
+          255
+        ],
+        "right": [
+          20,
+          20,
+          21,
+          255
+        ],
+        "shield": {
+          "left": [
+            4,
+            243,
+            251,
+            255
+          ],
+          "right": [
+            0,
+            25,
+            27,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 8: miniShield pixels at 75%",
+      "detail": {
+        "variant": "miniShield",
+        "frac": 0.75,
+        "left": [
+          130,
+          3,
+          74,
+          255
+        ],
+        "right": [
+          20,
+          20,
+          21,
+          255
+        ],
+        "shield": {
+          "left": [
+            4,
+            243,
+            251,
+            255
+          ],
+          "right": [
+            0,
+            25,
+            27,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 8: miniShield pixels at 100%",
+      "detail": {
+        "variant": "miniShield",
+        "frac": 1,
+        "left": [
+          130,
+          3,
+          74,
+          255
+        ],
+        "right": [
+          167,
+          2,
+          70,
+          255
+        ],
+        "shield": {
+          "left": [
+            4,
+            243,
+            251,
+            255
+          ],
+          "right": [
+            3,
+            242,
+            249,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 8: live miniboss palette",
+      "detail": {
+        "theme": "stage_08",
+        "variant": "mini",
+        "frac": 0.42,
+        "shield": null,
+        "x": 91,
+        "y": 15,
+        "w": 298,
+        "h": 41
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 9: required assets ready",
+      "detail": {
+        "ready": true,
+        "progress": 1,
+        "loaded": 35,
+        "failed": 0,
+        "total": 35
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 9: correct live boss palette",
+      "detail": {
+        "theme": "stage_09",
+        "variant": "boss",
+        "frac": 1,
+        "shield": null,
+        "x": 22,
+        "y": 8,
+        "w": 436,
+        "h": 39
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 9: preceding stage HUD textures retired",
+      "detail": []
+    },
+    {
+      "pass": true,
+      "check": "Stage 9: boss pixels at 0%",
+      "detail": {
+        "variant": "boss",
+        "frac": 0,
+        "left": [
+          4,
+          15,
+          25,
+          255
+        ],
+        "right": [
+          3,
+          14,
+          24,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 9: boss pixels at 25%",
+      "detail": {
+        "variant": "boss",
+        "frac": 0.25,
+        "left": [
+          2,
+          156,
+          248,
+          255
+        ],
+        "right": [
+          3,
+          14,
+          24,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 9: boss pixels at 50%",
+      "detail": {
+        "variant": "boss",
+        "frac": 0.5,
+        "left": [
+          2,
+          156,
+          248,
+          255
+        ],
+        "right": [
+          3,
+          14,
+          24,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 9: boss pixels at 75%",
+      "detail": {
+        "variant": "boss",
+        "frac": 0.75,
+        "left": [
+          2,
+          156,
+          248,
+          255
+        ],
+        "right": [
+          3,
+          14,
+          24,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 9: boss pixels at 100%",
+      "detail": {
+        "variant": "boss",
+        "frac": 1,
+        "left": [
+          2,
+          156,
+          248,
+          255
+        ],
+        "right": [
+          1,
+          156,
+          248,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 9: bossShield pixels at 0%",
+      "detail": {
+        "variant": "bossShield",
+        "frac": 0,
+        "left": [
+          2,
+          14,
+          24,
+          255
+        ],
+        "right": [
+          3,
+          15,
+          25,
+          255
+        ],
+        "shield": {
+          "left": [
+            0,
+            28,
+            35,
+            255
+          ],
+          "right": [
+            0,
+            29,
+            35,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 9: bossShield pixels at 25%",
+      "detail": {
+        "variant": "bossShield",
+        "frac": 0.25,
+        "left": [
+          9,
+          172,
+          246,
+          255
+        ],
+        "right": [
+          3,
+          15,
+          25,
+          255
+        ],
+        "shield": {
+          "left": [
+            2,
+            239,
+            250,
+            255
+          ],
+          "right": [
+            0,
+            29,
+            35,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 9: bossShield pixels at 50%",
+      "detail": {
+        "variant": "bossShield",
+        "frac": 0.5,
+        "left": [
+          9,
+          172,
+          246,
+          255
+        ],
+        "right": [
+          3,
+          15,
+          25,
+          255
+        ],
+        "shield": {
+          "left": [
+            2,
+            239,
+            250,
+            255
+          ],
+          "right": [
+            0,
+            29,
+            35,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 9: bossShield pixels at 75%",
+      "detail": {
+        "variant": "bossShield",
+        "frac": 0.75,
+        "left": [
+          9,
+          172,
+          246,
+          255
+        ],
+        "right": [
+          3,
+          15,
+          25,
+          255
+        ],
+        "shield": {
+          "left": [
+            2,
+            239,
+            250,
+            255
+          ],
+          "right": [
+            0,
+            29,
+            35,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 9: bossShield pixels at 100%",
+      "detail": {
+        "variant": "bossShield",
+        "frac": 1,
+        "left": [
+          9,
+          172,
+          246,
+          255
+        ],
+        "right": [
+          10,
+          172,
+          249,
+          255
+        ],
+        "shield": {
+          "left": [
+            2,
+            239,
+            250,
+            255
+          ],
+          "right": [
+            2,
+            238,
+            249,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 9: mini pixels at 0%",
+      "detail": {
+        "variant": "mini",
+        "frac": 0,
+        "left": [
+          3,
+          14,
+          24,
+          255
+        ],
+        "right": [
+          3,
+          15,
+          24,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 9: mini pixels at 25%",
+      "detail": {
+        "variant": "mini",
+        "frac": 0.25,
+        "left": [
+          5,
+          168,
+          248,
+          255
+        ],
+        "right": [
+          3,
+          15,
+          24,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 9: mini pixels at 50%",
+      "detail": {
+        "variant": "mini",
+        "frac": 0.5,
+        "left": [
+          5,
+          168,
+          248,
+          255
+        ],
+        "right": [
+          3,
+          15,
+          24,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 9: mini pixels at 75%",
+      "detail": {
+        "variant": "mini",
+        "frac": 0.75,
+        "left": [
+          5,
+          168,
+          248,
+          255
+        ],
+        "right": [
+          3,
+          15,
+          24,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 9: mini pixels at 100%",
+      "detail": {
+        "variant": "mini",
+        "frac": 1,
+        "left": [
+          5,
+          168,
+          248,
+          255
+        ],
+        "right": [
+          7,
+          169,
+          249,
+          255
+        ],
+        "shield": null
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 9: miniShield pixels at 0%",
+      "detail": {
+        "variant": "miniShield",
+        "frac": 0,
+        "left": [
+          4,
+          15,
+          25,
+          255
+        ],
+        "right": [
+          4,
+          16,
+          24,
+          255
+        ],
+        "shield": {
+          "left": [
+            0,
+            28,
+            35,
+            255
+          ],
+          "right": [
+            0,
+            28,
+            36,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 9: miniShield pixels at 25%",
+      "detail": {
+        "variant": "miniShield",
+        "frac": 0.25,
+        "left": [
+          6,
+          172,
+          248,
+          255
+        ],
+        "right": [
+          4,
+          16,
+          24,
+          255
+        ],
+        "shield": {
+          "left": [
+            1,
+            238,
+            249,
+            255
+          ],
+          "right": [
+            0,
+            28,
+            36,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 9: miniShield pixels at 50%",
+      "detail": {
+        "variant": "miniShield",
+        "frac": 0.5,
+        "left": [
+          6,
+          172,
+          248,
+          255
+        ],
+        "right": [
+          4,
+          16,
+          24,
+          255
+        ],
+        "shield": {
+          "left": [
+            1,
+            238,
+            249,
+            255
+          ],
+          "right": [
+            0,
+            28,
+            36,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 9: miniShield pixels at 75%",
+      "detail": {
+        "variant": "miniShield",
+        "frac": 0.75,
+        "left": [
+          6,
+          172,
+          248,
+          255
+        ],
+        "right": [
+          4,
+          16,
+          24,
+          255
+        ],
+        "shield": {
+          "left": [
+            1,
+            238,
+            249,
+            255
+          ],
+          "right": [
+            0,
+            28,
+            36,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 9: miniShield pixels at 100%",
+      "detail": {
+        "variant": "miniShield",
+        "frac": 1,
+        "left": [
+          6,
+          172,
+          248,
+          255
+        ],
+        "right": [
+          6,
+          170,
+          246,
+          255
+        ],
+        "shield": {
+          "left": [
+            1,
+            238,
+            249,
+            255
+          ],
+          "right": [
+            2,
+            238,
+            249,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "pass": true,
+      "check": "Stage 9: live miniboss palette",
+      "detail": {
+        "theme": "stage_09",
+        "variant": "mini",
+        "frac": 0.42,
+        "shield": null,
+        "x": 91,
+        "y": 15,
+        "w": 298,
+        "h": 41
+      }
+    },
+    {
+      "pass": true,
+      "check": "easy Rebels Stage 6: five independent fills",
+      "detail": {
+        "bars": [
+          {
+            "pilot": "voss",
+            "frac": 0.2,
+            "x": 171,
+            "y": 112,
+            "w": 78,
+            "h": 9
+          },
+          {
+            "pilot": "nyx",
+            "frac": 0.35,
+            "x": 236,
+            "y": 157,
+            "w": 78,
+            "h": 9
+          },
+          {
+            "pilot": "rook",
+            "frac": 0.5,
+            "x": 301,
+            "y": 112,
+            "w": 78,
+            "h": 9
+          },
+          {
+            "pilot": "kaia",
+            "frac": 0.6499999999999999,
+            "x": 366,
+            "y": 157,
+            "w": 78,
+            "h": 9
+          },
+          {
+            "pilot": "jace",
+            "frac": 0.8,
+            "x": 431,
+            "y": 112,
+            "w": 78,
+            "h": 9
+          }
+        ],
+        "health": [
+          0.2,
+          0.35,
+          0.5,
+          0.6499999999999999,
+          0.8
+        ]
+      }
+    },
+    {
+      "pass": true,
+      "check": "easy Rebels None: hidden on cloak/death",
+      "detail": [
+        "voss",
+        "rook",
+        "kaia"
+      ]
+    },
+    {
+      "pass": true,
+      "check": "easy Rebels Stage X: five independent fills",
+      "detail": {
+        "bars": [
+          {
+            "pilot": "voss",
+            "frac": 0.2,
+            "x": 171,
+            "y": 112,
+            "w": 78,
+            "h": 9
+          },
+          {
+            "pilot": "nyx",
+            "frac": 0.35,
+            "x": 236,
+            "y": 157,
+            "w": 78,
+            "h": 9
+          },
+          {
+            "pilot": "rook",
+            "frac": 0.5,
+            "x": 301,
+            "y": 112,
+            "w": 78,
+            "h": 9
+          },
+          {
+            "pilot": "kaia",
+            "frac": 0.6499999999999999,
+            "x": 366,
+            "y": 157,
+            "w": 78,
+            "h": 9
+          },
+          {
+            "pilot": "jace",
+            "frac": 0.8,
+            "x": 431,
+            "y": 112,
+            "w": 78,
+            "h": 9
+          }
+        ],
+        "health": [
+          0.2,
+          0.35,
+          0.5,
+          0.6499999999999999,
+          0.8
+        ]
+      }
+    },
+    {
+      "pass": true,
+      "check": "easy Rebels right: hidden on cloak/death",
+      "detail": [
+        "voss",
+        "rook",
+        "kaia"
+      ]
+    },
+    {
+      "pass": true,
+      "check": "normal Rebels Stage 6: five independent fills",
+      "detail": {
+        "bars": [
+          {
+            "pilot": "voss",
+            "frac": 0.20000000000000004,
+            "x": 171,
+            "y": 112,
+            "w": 78,
+            "h": 9
+          },
+          {
+            "pilot": "nyx",
+            "frac": 0.3499999999999999,
+            "x": 236,
+            "y": 157,
+            "w": 78,
+            "h": 9
+          },
+          {
+            "pilot": "rook",
+            "frac": 0.5,
+            "x": 301,
+            "y": 112,
+            "w": 78,
+            "h": 9
+          },
+          {
+            "pilot": "kaia",
+            "frac": 0.6499999999999999,
+            "x": 366,
+            "y": 157,
+            "w": 78,
+            "h": 9
+          },
+          {
+            "pilot": "jace",
+            "frac": 0.8000000000000002,
+            "x": 431,
+            "y": 112,
+            "w": 78,
+            "h": 9
+          }
+        ],
+        "health": [
+          0.20000000000000004,
+          0.3499999999999999,
+          0.5,
+          0.6499999999999999,
+          0.8000000000000002
+        ]
+      }
+    },
+    {
+      "pass": true,
+      "check": "normal Rebels None: hidden on cloak/death",
+      "detail": [
+        "voss",
+        "rook",
+        "kaia"
+      ]
+    },
+    {
+      "pass": true,
+      "check": "normal Rebels Stage X: five independent fills",
+      "detail": {
+        "bars": [
+          {
+            "pilot": "voss",
+            "frac": 0.20000000000000004,
+            "x": 171,
+            "y": 112,
+            "w": 78,
+            "h": 9
+          },
+          {
+            "pilot": "nyx",
+            "frac": 0.3499999999999999,
+            "x": 236,
+            "y": 157,
+            "w": 78,
+            "h": 9
+          },
+          {
+            "pilot": "rook",
+            "frac": 0.5,
+            "x": 301,
+            "y": 112,
+            "w": 78,
+            "h": 9
+          },
+          {
+            "pilot": "kaia",
+            "frac": 0.6499999999999999,
+            "x": 366,
+            "y": 157,
+            "w": 78,
+            "h": 9
+          },
+          {
+            "pilot": "jace",
+            "frac": 0.8000000000000002,
+            "x": 431,
+            "y": 112,
+            "w": 78,
+            "h": 9
+          }
+        ],
+        "health": [
+          0.20000000000000004,
+          0.3499999999999999,
+          0.5,
+          0.6499999999999999,
+          0.8000000000000002
+        ]
+      }
+    },
+    {
+      "pass": true,
+      "check": "normal Rebels right: hidden on cloak/death",
+      "detail": [
+        "voss",
+        "rook",
+        "kaia"
+      ]
+    },
+    {
+      "pass": true,
+      "check": "hard Rebels Stage 6: five independent fills",
+      "detail": {
+        "bars": [
+          {
+            "pilot": "voss",
+            "frac": 0.2,
+            "x": 171,
+            "y": 112,
+            "w": 78,
+            "h": 9
+          },
+          {
+            "pilot": "nyx",
+            "frac": 0.35,
+            "x": 236,
+            "y": 157,
+            "w": 78,
+            "h": 9
+          },
+          {
+            "pilot": "rook",
+            "frac": 0.5,
+            "x": 301,
+            "y": 112,
+            "w": 78,
+            "h": 9
+          },
+          {
+            "pilot": "kaia",
+            "frac": 0.6499999999999999,
+            "x": 366,
+            "y": 157,
+            "w": 78,
+            "h": 9
+          },
+          {
+            "pilot": "jace",
+            "frac": 0.8,
+            "x": 431,
+            "y": 112,
+            "w": 78,
+            "h": 9
+          }
+        ],
+        "health": [
+          0.2,
+          0.35,
+          0.5,
+          0.6499999999999999,
+          0.8
+        ]
+      }
+    },
+    {
+      "pass": true,
+      "check": "hard Rebels None: hidden on cloak/death",
+      "detail": [
+        "voss",
+        "rook",
+        "kaia"
+      ]
+    },
+    {
+      "pass": true,
+      "check": "hard Rebels Stage X: five independent fills",
+      "detail": {
+        "bars": [
+          {
+            "pilot": "voss",
+            "frac": 0.2,
+            "x": 171,
+            "y": 112,
+            "w": 78,
+            "h": 9
+          },
+          {
+            "pilot": "nyx",
+            "frac": 0.35,
+            "x": 236,
+            "y": 157,
+            "w": 78,
+            "h": 9
+          },
+          {
+            "pilot": "rook",
+            "frac": 0.5,
+            "x": 301,
+            "y": 112,
+            "w": 78,
+            "h": 9
+          },
+          {
+            "pilot": "kaia",
+            "frac": 0.6499999999999999,
+            "x": 366,
+            "y": 157,
+            "w": 78,
+            "h": 9
+          },
+          {
+            "pilot": "jace",
+            "frac": 0.8,
+            "x": 431,
+            "y": 112,
+            "w": 78,
+            "h": 9
+          }
+        ],
+        "health": [
+          0.2,
+          0.35,
+          0.5,
+          0.6499999999999999,
+          0.8
+        ]
+      }
+    },
+    {
+      "pass": true,
+      "check": "hard Rebels right: hidden on cloak/death",
+      "detail": [
+        "voss",
+        "rook",
+        "kaia"
+      ]
+    },
+    {
+      "pass": true,
+      "check": "furious Rebels Stage 6: five independent fills",
+      "detail": {
+        "bars": [
+          {
+            "pilot": "voss",
+            "frac": 0.2,
+            "x": 171,
+            "y": 112,
+            "w": 78,
+            "h": 9
+          },
+          {
+            "pilot": "nyx",
+            "frac": 0.35,
+            "x": 236,
+            "y": 157,
+            "w": 78,
+            "h": 9
+          },
+          {
+            "pilot": "rook",
+            "frac": 0.5,
+            "x": 301,
+            "y": 112,
+            "w": 78,
+            "h": 9
+          },
+          {
+            "pilot": "kaia",
+            "frac": 0.6499999999999999,
+            "x": 366,
+            "y": 157,
+            "w": 78,
+            "h": 9
+          },
+          {
+            "pilot": "jace",
+            "frac": 0.8,
+            "x": 431,
+            "y": 112,
+            "w": 78,
+            "h": 9
+          }
+        ],
+        "health": [
+          0.2,
+          0.35,
+          0.5,
+          0.6499999999999999,
+          0.8
+        ]
+      }
+    },
+    {
+      "pass": true,
+      "check": "furious Rebels None: hidden on cloak/death",
+      "detail": [
+        "voss",
+        "rook",
+        "kaia"
+      ]
+    },
+    {
+      "pass": true,
+      "check": "furious Rebels Stage X: five independent fills",
+      "detail": {
+        "bars": [
+          {
+            "pilot": "voss",
+            "frac": 0.2,
+            "x": 171,
+            "y": 112,
+            "w": 78,
+            "h": 9
+          },
+          {
+            "pilot": "nyx",
+            "frac": 0.35,
+            "x": 236,
+            "y": 157,
+            "w": 78,
+            "h": 9
+          },
+          {
+            "pilot": "rook",
+            "frac": 0.5,
+            "x": 301,
+            "y": 112,
+            "w": 78,
+            "h": 9
+          },
+          {
+            "pilot": "kaia",
+            "frac": 0.6499999999999999,
+            "x": 366,
+            "y": 157,
+            "w": 78,
+            "h": 9
+          },
+          {
+            "pilot": "jace",
+            "frac": 0.8,
+            "x": 431,
+            "y": 112,
+            "w": 78,
+            "h": 9
+          }
+        ],
+        "health": [
+          0.2,
+          0.35,
+          0.5,
+          0.6499999999999999,
+          0.8
+        ]
+      }
+    },
+    {
+      "pass": true,
+      "check": "furious Rebels right: hidden on cloak/death",
+      "detail": [
+        "voss",
+        "rook",
+        "kaia"
+      ]
+    },
+    {
+      "pass": true,
+      "check": "Harrier routing None",
+      "detail": {
+        "theme": "stage_06",
+        "variant": "boss",
+        "frac": 0.65,
+        "shield": null,
+        "x": 22,
+        "y": 8,
+        "w": 436,
+        "h": 39
+      }
+    },
+    {
+      "pass": true,
+      "check": "Harrier routing left",
+      "detail": {
+        "theme": "harrier",
+        "variant": "boss",
+        "frac": 0.65,
+        "shield": null,
+        "x": 22,
+        "y": 2,
+        "w": 436,
+        "h": 53
+      }
+    },
+    {
+      "pass": true,
+      "check": "Gallery stage_01",
+      "detail": {
+        "w": 1672,
+        "h": 941,
+        "images": 1
+      }
+    },
+    {
+      "pass": true,
+      "check": "Gallery stage_02",
+      "detail": {
+        "w": 1670,
+        "h": 941,
+        "images": 1
+      }
+    },
+    {
+      "pass": true,
+      "check": "Gallery stage_03",
+      "detail": {
+        "w": 1671,
+        "h": 941,
+        "images": 1
+      }
+    },
+    {
+      "pass": true,
+      "check": "Gallery stage_04",
+      "detail": {
+        "w": 1672,
+        "h": 941,
+        "images": 1
+      }
+    },
+    {
+      "pass": true,
+      "check": "Gallery stage_05",
+      "detail": {
+        "w": 1672,
+        "h": 941,
+        "images": 1
+      }
+    },
+    {
+      "pass": true,
+      "check": "Gallery stage_06",
+      "detail": {
+        "w": 1672,
+        "h": 941,
+        "images": 1
+      }
+    },
+    {
+      "pass": true,
+      "check": "Gallery stage_07",
+      "detail": {
+        "w": 1672,
+        "h": 941,
+        "images": 1
+      }
+    },
+    {
+      "pass": true,
+      "check": "Gallery stage_08",
+      "detail": {
+        "w": 1672,
+        "h": 941,
+        "images": 1
+      }
+    },
+    {
+      "pass": true,
+      "check": "Gallery stage_09",
+      "detail": {
+        "w": 1672,
+        "h": 941,
+        "images": 1
+      }
+    },
+    {
+      "pass": true,
+      "check": "Gallery stage_x",
+      "detail": {
+        "w": 2172,
+        "h": 724,
+        "images": 1
+      }
+    },
+    {
+      "pass": true,
+      "check": "Gallery rebels",
+      "detail": {
+        "w": 1536,
+        "h": 1024,
+        "images": 1
+      }
+    }
+  ]
+}

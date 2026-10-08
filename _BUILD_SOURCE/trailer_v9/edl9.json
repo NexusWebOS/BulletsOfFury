@@ -4463,7 +4463,7 @@
   "length": 135.13333333333333,
   "t0": 3.2,
   "takes_dir": "/home/user/BulletsOfFury/_BUILD_SOURCE/trailer_v9/takes9",
-  "song": "/home/user/BulletsOfFury/assets/game/music/Level6.mp3",
+  "song": "/home/user/BulletsOfFury/assets/game/levels/stage_06/audio/music/Level6.mp3",
   "song_gain_db": -6.3,
   "song_fade_in": 0.02,
   "song_fade_out": [
@@ -4471,7 +4471,7 @@
    114.16666666666667
   ],
   "music2": {
-   "file": "/home/user/BulletsOfFury/assets/game/music/HAMA_Instrumental.mp3",
+   "file": "/home/user/BulletsOfFury/assets/game/shared/audio/music/HAMA_Instrumental.mp3",
    "t": 119.51666666666667,
    "src": 108.3833,
    "fade_in": 0.02,
@@ -4483,104 +4483,104 @@
    "match_offset_db": -3.0
   },
   "chime": {
-   "file": "/home/user/BulletsOfFury/assets/game/sounds/cf_boot.mp3",
+   "file": "/home/user/BulletsOfFury/assets/game/shared/audio/sounds/cf_boot.mp3",
    "t": 0.45,
    "gain_db": -0.6
   },
   "sfx": [
    {
     "t": 114.5167,
-    "file": "/home/user/BulletsOfFury/assets/game/sounds/dialogue_letter_0924.wav",
+    "file": "/home/user/BulletsOfFury/assets/game/shared/audio/sounds/dialogue_letter_0924.wav",
     "gain_db": -4.0
    },
    {
     "t": 114.5887,
-    "file": "/home/user/BulletsOfFury/assets/game/sounds/dialogue_letter_0924.wav",
+    "file": "/home/user/BulletsOfFury/assets/game/shared/audio/sounds/dialogue_letter_0924.wav",
     "gain_db": -4.0
    },
    {
     "t": 114.6607,
-    "file": "/home/user/BulletsOfFury/assets/game/sounds/dialogue_letter_0924.wav",
+    "file": "/home/user/BulletsOfFury/assets/game/shared/audio/sounds/dialogue_letter_0924.wav",
     "gain_db": -4.0
    },
    {
     "t": 114.7327,
-    "file": "/home/user/BulletsOfFury/assets/game/sounds/dialogue_letter_0924.wav",
+    "file": "/home/user/BulletsOfFury/assets/game/shared/audio/sounds/dialogue_letter_0924.wav",
     "gain_db": -4.0
    },
    {
     "t": 114.8047,
-    "file": "/home/user/BulletsOfFury/assets/game/sounds/dialogue_letter_0924.wav",
+    "file": "/home/user/BulletsOfFury/assets/game/shared/audio/sounds/dialogue_letter_0924.wav",
     "gain_db": -4.0
    },
    {
     "t": 114.9487,
-    "file": "/home/user/BulletsOfFury/assets/game/sounds/dialogue_letter_0924.wav",
+    "file": "/home/user/BulletsOfFury/assets/game/shared/audio/sounds/dialogue_letter_0924.wav",
     "gain_db": -4.0
    },
    {
     "t": 115.0207,
-    "file": "/home/user/BulletsOfFury/assets/game/sounds/dialogue_letter_0924.wav",
+    "file": "/home/user/BulletsOfFury/assets/game/shared/audio/sounds/dialogue_letter_0924.wav",
     "gain_db": -4.0
    },
    {
     "t": 115.0927,
-    "file": "/home/user/BulletsOfFury/assets/game/sounds/dialogue_letter_0924.wav",
+    "file": "/home/user/BulletsOfFury/assets/game/shared/audio/sounds/dialogue_letter_0924.wav",
     "gain_db": -4.0
    },
    {
     "t": 115.2367,
-    "file": "/home/user/BulletsOfFury/assets/game/sounds/dialogue_letter_0924.wav",
+    "file": "/home/user/BulletsOfFury/assets/game/shared/audio/sounds/dialogue_letter_0924.wav",
     "gain_db": -4.0
    },
    {
     "t": 115.3087,
-    "file": "/home/user/BulletsOfFury/assets/game/sounds/dialogue_letter_0924.wav",
+    "file": "/home/user/BulletsOfFury/assets/game/shared/audio/sounds/dialogue_letter_0924.wav",
     "gain_db": -4.0
    },
    {
     "t": 115.3807,
-    "file": "/home/user/BulletsOfFury/assets/game/sounds/dialogue_letter_0924.wav",
+    "file": "/home/user/BulletsOfFury/assets/game/shared/audio/sounds/dialogue_letter_0924.wav",
     "gain_db": -4.0
    },
    {
     "t": 115.5247,
-    "file": "/home/user/BulletsOfFury/assets/game/sounds/dialogue_letter_0924.wav",
+    "file": "/home/user/BulletsOfFury/assets/game/shared/audio/sounds/dialogue_letter_0924.wav",
     "gain_db": -4.0
    },
    {
     "t": 115.5967,
-    "file": "/home/user/BulletsOfFury/assets/game/sounds/dialogue_letter_0924.wav",
+    "file": "/home/user/BulletsOfFury/assets/game/shared/audio/sounds/dialogue_letter_0924.wav",
     "gain_db": -4.0
    },
    {
     "t": 115.6687,
-    "file": "/home/user/BulletsOfFury/assets/game/sounds/dialogue_letter_0924.wav",
+    "file": "/home/user/BulletsOfFury/assets/game/shared/audio/sounds/dialogue_letter_0924.wav",
     "gain_db": -4.0
    },
    {
     "t": 115.7407,
-    "file": "/home/user/BulletsOfFury/assets/game/sounds/dialogue_letter_0924.wav",
+    "file": "/home/user/BulletsOfFury/assets/game/shared/audio/sounds/dialogue_letter_0924.wav",
     "gain_db": -4.0
    },
    {
     "t": 115.8127,
-    "file": "/home/user/BulletsOfFury/assets/game/sounds/dialogue_letter_0924.wav",
+    "file": "/home/user/BulletsOfFury/assets/game/shared/audio/sounds/dialogue_letter_0924.wav",
     "gain_db": -4.0
    },
    {
     "t": 117.2667,
-    "file": "/home/user/BulletsOfFury/assets/game/sfx_0927/hammer_slam.mp3",
+    "file": "/home/user/BulletsOfFury/assets/game/shared/audio/sfx_0927/hammer_slam.mp3",
     "gain_db": -7.0
    },
    {
     "t": 118.3167,
-    "file": "/home/user/BulletsOfFury/assets/game/sfx_0927/hammer_slam.mp3",
+    "file": "/home/user/BulletsOfFury/assets/game/shared/audio/sfx_0927/hammer_slam.mp3",
     "gain_db": -5.0
    },
    {
     "t": 118.3367,
-    "file": "/home/user/BulletsOfFury/assets/game/sounds/expBig.mp3",
+    "file": "/home/user/BulletsOfFury/assets/game/shared/audio/sounds/expBig.mp3",
     "gain_db": -9.0
    }
   ],

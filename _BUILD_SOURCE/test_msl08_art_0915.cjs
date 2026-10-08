@@ -7,8 +7,8 @@ const result=vm.runInContext(\`(()=>{
  const checks=[];const check=(v,n)=>{checks.push({name:n,ok:!!v});if(!v)throw Error(n);};
  const tiers=['super','ultra','uber'];
  for(const tier of tiers){
-  check(XART._src['missile_'+tier+'_icon_0915']==='assets/game/ui/missile_tiers_0915/'+tier+'_icon.png',tier+' upgrade icon registered');
-  check(XART._src['missile_'+tier+'_box_0915']==='assets/game/ui/missile_tiers_0915/'+tier+'_box.png',tier+' missile box registered');
+  check(XART._src['missile_'+tier+'_icon_0915']==='assets/game/shared/ui/ui/missile_tiers_0915/'+tier+'_icon.png',tier+' upgrade icon registered');
+  check(XART._src['missile_'+tier+'_box_0915']==='assets/game/shared/ui/ui/missile_tiers_0915/'+tier+'_box.png',tier+' missile box registered');
  }
  const oldR=XART.rdy,oldG=XART.get,oldD=ctx.drawImage,calls=[];
  XART.rdy=k=>/^missile_(super|ultra|uber)_(icon|box)_0915$/.test(k);

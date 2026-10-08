@@ -6,7 +6,7 @@
   },
   "cf1004_": {
     "role": "cole_laser_fusion_and_diamond_cloak_effect",
-    "sheet": "assets/game/cole_fusion_1004l/weapons.png; cloak.png",
+    "sheet": "assets/game/pilots/cole/abilities/cole_fusion_1004l/weapons.png; cloak.png",
     "note": "October 4l: generated authored yellow/black lasers, triple purple Fusion helix, hollow charge aura, shatter impacts, fragments and muzzle; separate crystal-diamond cloak reel. Original imagegen RGBA preserved. Registration and measured cells owned by _BUILD_SOURCE/import_cole_fusion_1004l.py; source briefs/hash manifest in _ART_SOURCES/cole_fusion_1004l. Runtime cole_fusion_1004l.js and rebel_showcase_1004l.js; native evidence docs/qa/cole_rebel_1004l.json."
   },
   "cf4_": {
@@ -21,7 +21,7 @@
   },
   "rg4_": {
     "role": "rebel_encounter_effects",
-    "sheet": "assets/game/rebel_gang_1004/decker_effects.png",
+    "sheet": "assets/game/levels/stage_06/boss/rebel_gang_1004/decker_effects.png",
     "note": "October 4: builtin imagegen RGBA, source unchanged, four rows of six centered 256px cells. Shield wave, cloak swirl, cloak reveal and chromium-style charge. Registration owned by _BUILD_SOURCE/import_rebel_gang_1004.py. Prompt docs/rebel_gang_prompts_1004.json. Original whole rr_ship/rr_roll ships, nfrb roller, florb helper, arch_blaster_gun attachments, and original Retina/asterisk warnings reused."
   },
   "av3_": {
@@ -32,12 +32,12 @@
   "mapg_": {
     "role": "campaign_ui_portrait",
     "sheet": null,
-    "note": "October 3g: generated blank gunmetal mission frame and complete golden Lizzie portrait bezel. Original Lizzie expression sheet supplies character and mouth pixels; cached menu/comm composites hold frame/body fixed while speaking. Source pixels preserved. Runtime map_briefing_1003g.js, owner build_map_briefing_1003g.py, prompt/source _ART_SOURCES/map_briefing_1003g, deployed assets/game/map_briefing_1003g/manifest.json. Stages 1-9/Stage X use live centered game fonts over blank art; old nss text plates remain archived and registered, not used in live map briefing."
+    "note": "October 3g: generated blank gunmetal mission frame and complete golden Lizzie portrait bezel. Original Lizzie expression sheet supplies character and mouth pixels; cached menu/comm composites hold frame/body fixed while speaking. Source pixels preserved. Runtime map_briefing_1003g.js, owner build_map_briefing_1003g.py, prompt/source _ART_SOURCES/map_briefing_1003g, deployed assets/game/shared/campaign/map_briefing_1003g/manifest.json. Stages 1-9/Stage X use live centered game fonts over blank art; old nss text plates remain archived and registered, not used in live map briefing."
   },
   "hc1006_": {
     "role": "boss_cosmetic_effect",
     "sheet": null,
-    "note": "October 6 Contra study transfer: original transparent joint-discharge/break and casing-breach clips. Used on the approved modular Herald only; cosmetic, no collision. Native 1448x1086 source, 4x3 grid, 362px cells. Source copied unchanged; owning builder _BUILD_SOURCE/build_contra_fx_1006.py, deployed manifest assets/game/contra_fx_1006/manifest.json. Contact row preserved but unused here."
+    "note": "October 6 Contra study transfer: original transparent joint-discharge/break and casing-breach clips. Used on the approved modular Herald only; cosmetic, no collision. Native 1448x1086 source, 4x3 grid, 362px cells. Source copied unchanged; owning builder _BUILD_SOURCE/build_contra_fx_1006.py, deployed manifest assets/game/shared/effects/contra_fx_1006/manifest.json. Contact row preserved but unused here."
   },
   "hd1003_": {
     "role": "miniboss_modular",
@@ -47,7 +47,7 @@
   "cwd_": {
     "role": "boss_shield_effect",
     "sheet": null,
-    "note": "October 3d: built-in generated blue/chrome and red horizontal binary rows/rims; eight independent impact frames; eight overload/shatter frames; twelve vertical reconstruction frames. Animated row strips and ballistic digit fragments preserve original source pixels. New runtime codewall_1003d.js uses shared draw/collision/Retina geometry and attaches red projection to modular knight shield. Supersedes old wall/shatter/spherical transformation in the live eight-form finale. Owner build_codewall_1003d.py; measured runtime manifest assets/game/codewall_1003d/manifest.json; prompts and source hashes _ART_SOURCES/codewall_1003d. Native QA docs/qa/codewall_1003d.json."
+    "note": "October 3d: built-in generated blue/chrome and red horizontal binary rows/rims; eight independent impact frames; eight overload/shatter frames; twelve vertical reconstruction frames. Animated row strips and ballistic digit fragments preserve original source pixels. New runtime codewall_1003d.js uses shared draw/collision/Retina geometry and attaches red projection to modular knight shield. Supersedes old wall/shatter/spherical transformation in the live eight-form finale. Owner build_codewall_1003d.py; measured runtime manifest assets/game/levels/stage_08/effects/codewall_1003d/manifest.json; prompts and source hashes _ART_SOURCES/codewall_1003d. Native QA docs/qa/codewall_1003d.json."
   },
   "fmc_": {
     "role": "boss_component_effect",
@@ -57,17 +57,17 @@
   "finale1003b_": {
     "role": "boss",
     "sheet": null,
-    "note": "Preserved superseded whole-plate concept reels: Furnace, Cryo Hive, Storm Organism, Void Harrier and Last Warden. Four states each. October 3c user explicitly requested every transformation modular; live component art is now fmc_. These original reels remain as source references and historical verification, are not drawn or warmed by the final modular runtime. Owner build_finale_1003b.py; unchanged source PNGs/hashes in _ART_SOURCES/finale_1003b and assets/game/finale_1003b/manifest.json."
+    "note": "Preserved superseded whole-plate concept reels: Furnace, Cryo Hive, Storm Organism, Void Harrier and Last Warden. Four states each. October 3c user explicitly requested every transformation modular; live component art is now fmc_. These original reels remain as source references and historical verification, are not drawn or warmed by the final modular runtime. Owner build_finale_1003b.py; unchanged source PNGs/hashes in _ART_SOURCES/finale_1003b and assets/game/levels/stage_08/boss/finale_1003b/manifest.json."
   },
   "mm1003_": {
     "role": "enemy_modular",
     "sheet": null,
-    "note": "Seven Mike-selected Monster Mutator designs only. Approved final palettes and silhouettes; Hexpyre/Rifle Locust/Hellhugger component sheets with shared draw, lock and damage geometry. Stage 7/8 existing spawn slots. Owning importer: _BUILD_SOURCE/build_mutator_1003.py. Source art unchanged; assets/game/mutator_1003/manifest.json records hashes and source pivots."
+    "note": "Seven Mike-selected Monster Mutator designs only. Approved final palettes and silhouettes; Hexpyre/Rifle Locust/Hellhugger component sheets with shared draw, lock and damage geometry. Stage 7/8 existing spawn slots. Owning importer: _BUILD_SOURCE/build_mutator_1003.py. Source art unchanged; assets/game/shared/combat/mutator_1003/manifest.json records hashes and source pivots."
   },
   "s81003_": {
     "role": "boss_enemy_effect",
     "sheet": null,
-    "note": "Stage 8 built-in image generation: knight 12 poses, growing downward-flow binary wall 12, upright code teleport 8, transformation 12, three alien units 4 each, alien/code beams 8, FOV/Retina/orbs 12, impact 8, radial shatter 16 and 4 extracted shard cells. 100 generated frames plus 4 crops. Inspected in native Chromium, including full-body coverage and outward debris. Owning workflow: _BUILD_SOURCE/build_stage8_1003.py; manifest: assets/game/stage8_1003/manifest.json; prompts/source: _ART_SOURCES/stage8_1003; runtime: assets/stage8_1003.js. Details: docs/STAGE8_CODE_KNIGHT_1003.md. No shared atlas replacement. October 3e: Mike reverted warning/Retina visuals to the original shared combatWarningDraw and groundTargetReticleDraw system; frames 0-7 of the new FOV sheet are no longer used by live Stage 8 warnings. Projectile frames remain separate. See docs/GASLINE_ORIGINAL_WARNINGS_1003E.md. October 3f: original warning routing now lives at its shared source, including all Stage 7/8 mutants and aliens; ordinary emitters pass their own enemy reference and preload original reticles before any boss. Retired FOV-sheet warning frames 0-7 have no live callers."
+    "note": "Stage 8 built-in image generation: knight 12 poses, growing downward-flow binary wall 12, upright code teleport 8, transformation 12, three alien units 4 each, alien/code beams 8, FOV/Retina/orbs 12, impact 8, radial shatter 16 and 4 extracted shard cells. 100 generated frames plus 4 crops. Inspected in native Chromium, including full-body coverage and outward debris. Owning workflow: _BUILD_SOURCE/build_stage8_1003.py; manifest: assets/game/levels/stage_08/stage/stage8_1003/manifest.json; prompts/source: _ART_SOURCES/stage8_1003; runtime: assets/stage8_1003.js. Details: docs/STAGE8_CODE_KNIGHT_1003.md. No shared atlas replacement. October 3e: Mike reverted warning/Retina visuals to the original shared combatWarningDraw and groundTargetReticleDraw system; frames 0-7 of the new FOV sheet are no longer used by live Stage 8 warnings. Projectile frames remain separate. See docs/GASLINE_ORIGINAL_WARNINGS_1003E.md. October 3f: original warning routing now lives at its shared source, including all Stage 7/8 mutants and aliens; ordinary emitters pass their own enemy reference and preload original reticles before any boss. Retired FOV-sheet warning frames 0-7 have no live callers."
   },
   "arch_arsenal_cast_0926": {
     "role": "boss",
@@ -132,7 +132,7 @@
   "enemy_burn_0922_": {
     "role": "effect",
     "sheet": null,
-    "note": "Eight generated transparent hull-wrapping burn frames. Shared 128px anchors; flameDraw palette retained per enemy. Source and prompt in assets/game/fx_burn_0922/provenance.json."
+    "note": "Eight generated transparent hull-wrapping burn frames. Shared 128px anchors; flameDraw palette retained per enemy. Source and prompt in assets/game/shared/effects/fx_burn_0922/provenance.json."
   },
   "_README": "Prefix -> role, named by Mike from the 0807y contact sheet. THIS IS THE SOURCE OF TRUTH. Filenames in this project have lied four separate times in one session (slatejet=debris, nxp_smoke=explosion, nqm_vent=a vent port, nrb=helix mass). Do not infer a role from a key name again \u00e2\u20ac\u201d look it up here, and if it is not here, render it and ask.",
   "?": {
@@ -352,7 +352,7 @@
   "rr_ship_": {
     "role": "enemyship_master",
     "sheet": null,
-    "note": "Roaming Rebels south-facing overhead ship masters, 0922. Five distinct generated designs; opaque hulls and alpha backgrounds. Art/editor library only; existing Stage 6 encounter unchanged. See assets/game/roaming_rebels_0922/roster.json."
+    "note": "Roaming Rebels south-facing overhead ship masters, 0922. Five distinct generated designs; opaque hulls and alpha backgrounds. Art/editor library only; existing Stage 6 encounter unchanged. See assets/game/levels/stage_06/boss/roaming_rebels_0922/roster.json."
   },
   "rr_portrait_": {
     "role": "dialogue_portrait",
@@ -362,7 +362,7 @@
   "port_cf_": {
     "role": "pilot_portrait",
     "sheet": null,
-    "note": "0922 replacement nine-pilot expression pack. Supplied new Cole likeness and ZIP poses; current Yuri mohawk identity. Source art and prompts at assets/game/pilots_0922/provenance.json. Legacy port_/face_ requests redirect before atlas lookup."
+    "note": "0922 replacement nine-pilot expression pack. Supplied new Cole likeness and ZIP poses; current Yuri mohawk identity. Source art and prompts at assets/game/shared/combat/pilots_0922/provenance.json. Legacy port_/face_ requests redirect before atlas lookup."
   },
   "comm_": {
     "role": "dialogue_portrait",
@@ -377,7 +377,7 @@
   "fire_whip_pose_": {
     "role": "player_whip_full_pose_animation",
     "sheet": null,
-    "note": "0923 current Firewhip: 24 full lash poses: 16 GPT2.5 wide-sweep frames plus eight retained curl frames, one whole draw per frame, flame shaft swings around a fixed muzzle at the ship nose. No strip deformation or mirroring. Matching alpha-derived collision masks. Source and palette provenance: assets/game/player_weapons/fire_whip_sweep_0923/manifest.json."
+    "note": "0923 current Firewhip: 24 full lash poses: 16 GPT2.5 wide-sweep frames plus eight retained curl frames, one whole draw per frame, flame shaft swings around a fixed muzzle at the ship nose. No strip deformation or mirroring. Matching alpha-derived collision masks. Source and palette provenance: assets/game/shared/player_weapons/player_weapons/fire_whip_sweep_0923/manifest.json."
   },
   "fire_whip_muzzle_": {
     "role": "player_whip_muzzle_animation",
@@ -387,12 +387,12 @@
   "fire_whip_flame_": {
     "role": "player_curved_laser_animation",
     "sheet": null,
-    "note": "0923 earlier eight-frame straight flame reel, retained as source/history. Superseded in live Firewhip by fire_whip_pose_ full authored lash animation. Manifest: assets/game/player_weapons/fire_whip_0923/manifest.json."
+    "note": "0923 earlier eight-frame straight flame reel, retained as source/history. Superseded in live Firewhip by fire_whip_pose_ full authored lash animation. Manifest: assets/game/shared/player_weapons/player_weapons/fire_whip_0923/manifest.json."
   },
   "forge_chamber_modular_0923": {
     "role": "forge_menu_background",
     "sheet": null,
-    "note": "0923 GPT 2.5 regenerated chamber: five empty bays, empty dedicated scrollbar lane, wide live preview. Geometry and provenance in assets/game/ui/forge_modular_0923/manifest.json."
+    "note": "0923 GPT 2.5 regenerated chamber: five empty bays, empty dedicated scrollbar lane, wide live preview. Geometry and provenance in assets/game/shared/ui/ui/forge_modular_0923/manifest.json."
   },
   "forge_scroll_": {
     "role": "modular_scrollbar_controls",
@@ -457,7 +457,7 @@
   "s7m_body": {
     "role": "boss_component",
     "sheet": null,
-    "note": "Generated replacement Warden body with exposed laser socket, no baked faceplate. Separate existing mask slides upward. assets/game/stage7_modular_0927/warden_body_open_0927.png; docs/stage7_modular_art_0927.json."
+    "note": "Generated replacement Warden body with exposed laser socket, no baked faceplate. Separate existing mask slides upward. assets/game/levels/stage_07/stage/stage7_modular_0927/warden_body_open_0927.png; docs/stage7_modular_art_0927.json."
   },
   "polish_ordnance": {
     "role": "projectile",
@@ -567,7 +567,7 @@
   "ra4_": {
     "role": "rebel_personal_arsenals_ui_and_effects",
     "sheet": null,
-    "note": "October 4: generated five boxes and five hex special icons, six-frame turbo wakes/nova bursts/rocket pods/missiles. Authored Maverick ball and charge palette swaps preserve alpha, luminance and neutral outlines. Whole Rebel hulls retained. Owning workflow _BUILD_SOURCE/build_rebel_arsenal_1004c.py; measured cells, provenance and palette metrics assets/game/rebel_arsenal_1004c/manifest.json."
+    "note": "October 4: generated five boxes and five hex special icons, six-frame turbo wakes/nova bursts/rocket pods/missiles. Authored Maverick ball and charge palette swaps preserve alpha, luminance and neutral outlines. Whole Rebel hulls retained. Owning workflow _BUILD_SOURCE/build_rebel_arsenal_1004c.py; measured cells, provenance and palette metrics assets/game/levels/stage_06/boss/rebel_arsenal_1004c/manifest.json."
   },
   "map4e_": {
     "role": "campaign_landscape",

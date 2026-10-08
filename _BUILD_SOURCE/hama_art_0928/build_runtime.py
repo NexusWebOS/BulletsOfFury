@@ -16,13 +16,13 @@ def build(root, art_root=None):
         'helper_lasso_360': {0:[55,27,121,89],11:[49,27,111,88]},
         'helper_airborne_tumble': {0:[54,33,121,93],7:[56,40,115,96]},
     }
-    out = {'version':1, 'source':'assets/game/hama_art_0928/manifest.json', 'families':{}}
+    out = {'version':1, 'source':'assets/game/levels/stage_05/boss/hama_art_0928/manifest.json', 'families':{}}
     for name, d in families.items():
         # Superseded silver moonwalks stay in the source pack as unused art.
         # The shield rise must not change the boss's regular appearance.
         if name.startswith('armored_moonwalk_'): continue
         out['families'][name] = {
-            'key':'hama29_'+name, 'path':'assets/game/hama_art_0928/'+d['atlas'],
+            'key':'hama29_'+name, 'path':'assets/game/levels/stage_05/boss/hama_art_0928/'+d['atlas'],
             'size':d['size'], 'anchor':d['anchor'], 'fps':d['fps'],
             'frames':[f['rect'] for f in d['frames']], 'events':d['events'],
             'heads':heads.get(name,{}),

@@ -1,0 +1,1178 @@
+{
+  "owner": "pilots/cole",
+  "loading": {
+    "boot": "UI, fonts, idle portraits only",
+    "deployment": "selected pilot portraits, shared player weapons, required stage textures",
+    "transition": "release previous stage textures and derived caches; preserve explicitly queued copied-form dependencies",
+    "quality": "automatic native resolution on low-memory/low-core devices; reduce supersampling after sustained slow play frames"
+  },
+  "sharedDependencies": [
+    "shared/fonts",
+    "shared/ui",
+    "shared/player_weapons",
+    "shared/effects",
+    "shared/ships"
+  ],
+  "assets": [
+    {
+      "key": "aintro_cole",
+      "root": "nca_layout_pilots_cole_portraits_0",
+      "path": "assets/game/pilots/cole/portraits/frames_0.png",
+      "owner": "pilots/cole",
+      "cell": [
+        "layout_pilots_cole_portraits_0",
+        3151,
+        4,
+        640,
+        480
+      ]
+    },
+    {
+      "key": "card_cole_locked",
+      "root": "nca_layout_pilots_cole_portraits_0",
+      "path": "assets/game/pilots/cole/portraits/frames_0.png",
+      "owner": "pilots/cole",
+      "cell": [
+        "layout_pilots_cole_portraits_0",
+        4,
+        4,
+        1357,
+        1065
+      ]
+    },
+    {
+      "key": "pcard_cole",
+      "root": "nca_layout_pilots_cole_portraits_0",
+      "path": "assets/game/pilots/cole/portraits/frames_0.png",
+      "owner": "pilots/cole",
+      "cell": [
+        "layout_pilots_cole_portraits_0",
+        1365,
+        4,
+        958,
+        718
+      ]
+    },
+    {
+      "key": "nsa_ship_cole",
+      "root": "nsa_ship_cole",
+      "path": "assets/game/pilots/cole/ship_frames/ship_cole.png",
+      "owner": "pilots/cole",
+      "cell": null
+    },
+    {
+      "key": "card_cole",
+      "root": "nca_layout_pilots_cole_portraits_0",
+      "path": "assets/game/pilots/cole/portraits/frames_0.png",
+      "owner": "pilots/cole",
+      "cell": [
+        "layout_pilots_cole_portraits_0",
+        2327,
+        4,
+        820,
+        643
+      ]
+    },
+    {
+      "key": "pose_cole_0",
+      "root": "nca_layout_pilots_cole_body_frames_0",
+      "path": "assets/game/pilots/cole/body_frames/frames_0.png",
+      "owner": "pilots/cole",
+      "cell": [
+        "layout_pilots_cole_body_frames_0",
+        4,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "key": "pose_cole_1",
+      "root": "nca_layout_pilots_cole_body_frames_0",
+      "path": "assets/game/pilots/cole/body_frames/frames_0.png",
+      "owner": "pilots/cole",
+      "cell": [
+        "layout_pilots_cole_body_frames_0",
+        264,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "key": "pose_cole_2",
+      "root": "nca_layout_pilots_cole_body_frames_0",
+      "path": "assets/game/pilots/cole/body_frames/frames_0.png",
+      "owner": "pilots/cole",
+      "cell": [
+        "layout_pilots_cole_body_frames_0",
+        524,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "key": "pose_cole_3",
+      "root": "nca_layout_pilots_cole_body_frames_0",
+      "path": "assets/game/pilots/cole/body_frames/frames_0.png",
+      "owner": "pilots/cole",
+      "cell": [
+        "layout_pilots_cole_body_frames_0",
+        784,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "key": "pose_cole_4",
+      "root": "nca_layout_pilots_cole_body_frames_0",
+      "path": "assets/game/pilots/cole/body_frames/frames_0.png",
+      "owner": "pilots/cole",
+      "cell": [
+        "layout_pilots_cole_body_frames_0",
+        1044,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "key": "pose_cole_5",
+      "root": "nca_layout_pilots_cole_body_frames_0",
+      "path": "assets/game/pilots/cole/body_frames/frames_0.png",
+      "owner": "pilots/cole",
+      "cell": [
+        "layout_pilots_cole_body_frames_0",
+        1304,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "key": "nsw_box_cole",
+      "root": "nca_layout_pilots_cole_abilities_0",
+      "path": "assets/game/pilots/cole/abilities/frames_0.png",
+      "owner": "pilots/cole",
+      "cell": [
+        "layout_pilots_cole_abilities_0",
+        4,
+        4,
+        400,
+        400
+      ]
+    },
+    {
+      "key": "pemb_cole",
+      "root": "nca_layout_pilots_cole_portraits_0",
+      "path": "assets/game/pilots/cole/portraits/frames_0.png",
+      "owner": "pilots/cole",
+      "cell": [
+        "layout_pilots_cole_portraits_0",
+        3795,
+        4,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "nthp_cole_2",
+      "root": "nca_layout_pilots_cole_abilities_0",
+      "path": "assets/game/pilots/cole/abilities/frames_0.png",
+      "owner": "pilots/cole",
+      "cell": [
+        "layout_pilots_cole_abilities_0",
+        408,
+        4,
+        170,
+        192
+      ]
+    },
+    {
+      "key": "nthp_cole_1",
+      "root": "nca_layout_pilots_cole_abilities_0",
+      "path": "assets/game/pilots/cole/abilities/frames_0.png",
+      "owner": "pilots/cole",
+      "cell": [
+        "layout_pilots_cole_abilities_0",
+        582,
+        4,
+        136,
+        158
+      ]
+    },
+    {
+      "key": "nthp_cole_3",
+      "root": "nca_layout_pilots_cole_abilities_0",
+      "path": "assets/game/pilots/cole/abilities/frames_0.png",
+      "owner": "pilots/cole",
+      "cell": [
+        "layout_pilots_cole_abilities_0",
+        722,
+        4,
+        81,
+        135
+      ]
+    },
+    {
+      "key": "nthp_cole_0",
+      "root": "nca_layout_pilots_cole_abilities_0",
+      "path": "assets/game/pilots/cole/abilities/frames_0.png",
+      "owner": "pilots/cole",
+      "cell": [
+        "layout_pilots_cole_abilities_0",
+        807,
+        4,
+        81,
+        102
+      ]
+    },
+    {
+      "key": "sp_cole_0",
+      "root": "nca_layout_pilots_cole_abilities_0",
+      "path": "assets/game/pilots/cole/abilities/frames_0.png",
+      "owner": "pilots/cole",
+      "cell": [
+        "layout_pilots_cole_abilities_0",
+        892,
+        4,
+        64,
+        51
+      ]
+    },
+    {
+      "key": "sp_cole_1",
+      "root": "nca_layout_pilots_cole_abilities_0",
+      "path": "assets/game/pilots/cole/abilities/frames_0.png",
+      "owner": "pilots/cole",
+      "cell": [
+        "layout_pilots_cole_abilities_0",
+        960,
+        4,
+        64,
+        51
+      ]
+    },
+    {
+      "key": "sp_cole_2",
+      "root": "nca_layout_pilots_cole_abilities_0",
+      "path": "assets/game/pilots/cole/abilities/frames_0.png",
+      "owner": "pilots/cole",
+      "cell": [
+        "layout_pilots_cole_abilities_0",
+        1028,
+        4,
+        64,
+        51
+      ]
+    },
+    {
+      "key": "sp_cole_3",
+      "root": "nca_layout_pilots_cole_abilities_0",
+      "path": "assets/game/pilots/cole/abilities/frames_0.png",
+      "owner": "pilots/cole",
+      "cell": [
+        "layout_pilots_cole_abilities_0",
+        1096,
+        4,
+        64,
+        51
+      ]
+    },
+    {
+      "key": "nca_layout_pilots_cole_abilities_0",
+      "root": "nca_layout_pilots_cole_abilities_0",
+      "path": "assets/game/pilots/cole/abilities/frames_0.png",
+      "owner": "pilots/cole",
+      "cell": null
+    },
+    {
+      "key": "nca_layout_pilots_cole_body_frames_0",
+      "root": "nca_layout_pilots_cole_body_frames_0",
+      "path": "assets/game/pilots/cole/body_frames/frames_0.png",
+      "owner": "pilots/cole",
+      "cell": null
+    },
+    {
+      "key": "nca_layout_pilots_cole_portraits_0",
+      "root": "nca_layout_pilots_cole_portraits_0",
+      "path": "assets/game/pilots/cole/portraits/frames_0.png",
+      "owner": "pilots/cole",
+      "cell": null
+    },
+    {
+      "key": "port_cf_cole_idle",
+      "root": "port_cf_cole_idle",
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/portraits/cole-idle.png",
+      "owner": "pilots/cole",
+      "cell": null
+    },
+    {
+      "key": "port_cf_cole_happy",
+      "root": "port_cf_cole_happy",
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/portraits/cole-happy.png",
+      "owner": "pilots/cole",
+      "cell": null
+    },
+    {
+      "key": "port_cf_cole_laugh",
+      "root": "port_cf_cole_laugh",
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/portraits/cole-laugh.png",
+      "owner": "pilots/cole",
+      "cell": null
+    },
+    {
+      "key": "port_cf_cole_anger",
+      "root": "port_cf_cole_anger",
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/portraits/cole-anger.png",
+      "owner": "pilots/cole",
+      "cell": null
+    },
+    {
+      "key": "port_cf_cole_sad",
+      "root": "port_cf_cole_sad",
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/portraits/cole-sad.png",
+      "owner": "pilots/cole",
+      "cell": null
+    },
+    {
+      "key": "port_cf_cole_crash",
+      "root": "port_cf_cole_crash",
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/portraits/cole-crash.png",
+      "owner": "pilots/cole",
+      "cell": null
+    },
+    {
+      "key": "port_cf_cole_victory",
+      "root": "port_cf_cole_victory",
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/portraits/cole-victory.png",
+      "owner": "pilots/cole",
+      "cell": null
+    },
+    {
+      "key": "port_cf_cole_talk-closed",
+      "root": "port_cf_cole_talk-closed",
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/portraits/cole-talk-closed.png",
+      "owner": "pilots/cole",
+      "cell": null
+    },
+    {
+      "key": "port_cf_cole_talk-small",
+      "root": "port_cf_cole_talk-small",
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/portraits/cole-talk-small.png",
+      "owner": "pilots/cole",
+      "cell": null
+    },
+    {
+      "key": "port_cf_cole_talk-medium",
+      "root": "port_cf_cole_talk-medium",
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/portraits/cole-talk-medium.png",
+      "owner": "pilots/cole",
+      "cell": null
+    },
+    {
+      "key": "port_cf_cole_talk-wide",
+      "root": "port_cf_cole_talk-wide",
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/portraits/cole-talk-wide.png",
+      "owner": "pilots/cole",
+      "cell": null
+    },
+    {
+      "key": "port_cf_cole_talk-o",
+      "root": "port_cf_cole_talk-o",
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/portraits/cole-talk-o.png",
+      "owner": "pilots/cole",
+      "cell": null
+    },
+    {
+      "key": "port_cf_cole_alert",
+      "root": "port_cf_cole_alert",
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/portraits/cole-crash.png",
+      "owner": "pilots/cole",
+      "cell": null
+    },
+    {
+      "key": "comm_cole_alert",
+      "root": "comm_cole_alert",
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/comm/comm_cole_crash.png",
+      "owner": "pilots/cole",
+      "cell": null
+    },
+    {
+      "key": "port_cf_cole_neutral",
+      "root": "port_cf_cole_neutral",
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/portraits/cole-neutral.png",
+      "owner": "pilots/cole",
+      "cell": null
+    },
+    {
+      "key": "comm_cole_neutral",
+      "root": "comm_cole_neutral",
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/comm/comm_cole_neutral.png",
+      "owner": "pilots/cole",
+      "cell": null
+    },
+    {
+      "key": "port_cf_cole_smirking",
+      "root": "port_cf_cole_smirking",
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/portraits/cole-smirking.png",
+      "owner": "pilots/cole",
+      "cell": null
+    },
+    {
+      "key": "comm_cole_smirking",
+      "root": "comm_cole_smirking",
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/comm/comm_cole_smirking.png",
+      "owner": "pilots/cole",
+      "cell": null
+    },
+    {
+      "key": "port_cf_cole_brooding",
+      "root": "port_cf_cole_brooding",
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/portraits/cole-brooding.png",
+      "owner": "pilots/cole",
+      "cell": null
+    },
+    {
+      "key": "comm_cole_brooding",
+      "root": "comm_cole_brooding",
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/comm/comm_cole_brooding.png",
+      "owner": "pilots/cole",
+      "cell": null
+    },
+    {
+      "key": "port_cf_cole_sunglasses",
+      "root": "port_cf_cole_sunglasses",
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/portraits/cole-sunglasses.png",
+      "owner": "pilots/cole",
+      "cell": null
+    },
+    {
+      "key": "comm_cole_sunglasses",
+      "root": "comm_cole_sunglasses",
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/comm/comm_cole_sunglasses.png",
+      "owner": "pilots/cole",
+      "cell": null
+    },
+    {
+      "key": "port_cf_cole_shout",
+      "root": "port_cf_cole_shout",
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/portraits/cole-shout.png",
+      "owner": "pilots/cole",
+      "cell": null
+    },
+    {
+      "key": "comm_cole_shout",
+      "root": "comm_cole_shout",
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/comm/comm_cole_shout.png",
+      "owner": "pilots/cole",
+      "cell": null
+    },
+    {
+      "key": "port_cf_cole_smile-shades",
+      "root": "port_cf_cole_smile-shades",
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/portraits/cole-smile-shades.png",
+      "owner": "pilots/cole",
+      "cell": null
+    },
+    {
+      "key": "comm_cole_smile-shades",
+      "root": "comm_cole_smile-shades",
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/comm/comm_cole_smile-shades.png",
+      "owner": "pilots/cole",
+      "cell": null
+    },
+    {
+      "key": "port_cf_cole_salute",
+      "root": "port_cf_cole_salute",
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/portraits/cole-salute.png",
+      "owner": "pilots/cole",
+      "cell": null
+    },
+    {
+      "key": "comm_cole_salute",
+      "root": "comm_cole_salute",
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/comm/comm_cole_salute.png",
+      "owner": "pilots/cole",
+      "cell": null
+    },
+    {
+      "key": "port_cf_cole_thinking",
+      "root": "port_cf_cole_thinking",
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/portraits/cole-thinking.png",
+      "owner": "pilots/cole",
+      "cell": null
+    },
+    {
+      "key": "comm_cole_thinking",
+      "root": "comm_cole_thinking",
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/comm/comm_cole_thinking.png",
+      "owner": "pilots/cole",
+      "cell": null
+    },
+    {
+      "key": "comm_cole_idle",
+      "root": "comm_cole_idle",
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/comm/comm_cole_idle.png",
+      "owner": "pilots/cole",
+      "cell": null
+    },
+    {
+      "key": "comm_cole_happy",
+      "root": "comm_cole_happy",
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/comm/comm_cole_happy.png",
+      "owner": "pilots/cole",
+      "cell": null
+    },
+    {
+      "key": "comm_cole_laugh",
+      "root": "comm_cole_laugh",
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/comm/comm_cole_laugh.png",
+      "owner": "pilots/cole",
+      "cell": null
+    },
+    {
+      "key": "comm_cole_anger",
+      "root": "comm_cole_anger",
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/comm/comm_cole_anger.png",
+      "owner": "pilots/cole",
+      "cell": null
+    },
+    {
+      "key": "comm_cole_sad",
+      "root": "comm_cole_sad",
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/comm/comm_cole_sad.png",
+      "owner": "pilots/cole",
+      "cell": null
+    },
+    {
+      "key": "comm_cole_crash",
+      "root": "comm_cole_crash",
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/comm/comm_cole_crash.png",
+      "owner": "pilots/cole",
+      "cell": null
+    },
+    {
+      "key": "comm_cole_victory",
+      "root": "comm_cole_victory",
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/comm/comm_cole_victory.png",
+      "owner": "pilots/cole",
+      "cell": null
+    },
+    {
+      "key": "comm_cole_talk-closed",
+      "root": "comm_cole_talk-closed",
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/comm/comm_cole_talk-closed.png",
+      "owner": "pilots/cole",
+      "cell": null
+    },
+    {
+      "key": "comm_cole_talk-small",
+      "root": "comm_cole_talk-small",
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/comm/comm_cole_talk-small.png",
+      "owner": "pilots/cole",
+      "cell": null
+    },
+    {
+      "key": "comm_cole_talk-medium",
+      "root": "comm_cole_talk-medium",
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/comm/comm_cole_talk-medium.png",
+      "owner": "pilots/cole",
+      "cell": null
+    },
+    {
+      "key": "comm_cole_talk-wide",
+      "root": "comm_cole_talk-wide",
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/comm/comm_cole_talk-wide.png",
+      "owner": "pilots/cole",
+      "cell": null
+    },
+    {
+      "key": "comm_cole_talk-o",
+      "root": "comm_cole_talk-o",
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/comm/comm_cole_talk-o.png",
+      "owner": "pilots/cole",
+      "cell": null
+    },
+    {
+      "key": "pav_cole",
+      "root": "pav_cole",
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/portraits/cole-idle.png",
+      "owner": "pilots/cole",
+      "cell": null
+    },
+    {
+      "key": "cole_body_0",
+      "root": "cole_body_0",
+      "path": "assets/game/pilots/cole/body_frames/pilot_bodies/cole_body_0.png",
+      "owner": "pilots/cole",
+      "cell": null
+    },
+    {
+      "key": "cole_body_0922",
+      "root": "cole_body_0922",
+      "path": "assets/game/pilots/cole/body_frames/pilots_0922/bodies/cole.png",
+      "owner": "pilots/cole",
+      "cell": null
+    },
+    {
+      "key": "cf1004_weapons",
+      "root": "cf1004_weapons",
+      "path": "assets/game/pilots/cole/abilities/cole_fusion_1004l/weapons.png",
+      "owner": "pilots/cole",
+      "cell": null
+    },
+    {
+      "key": "cf1004_cloak",
+      "root": "cf1004_cloak",
+      "path": "assets/game/pilots/cole/abilities/cole_fusion_1004l/cloak.png",
+      "owner": "pilots/cole",
+      "cell": null
+    },
+    {
+      "key": "cp5_raw_idle",
+      "root": "cp5_raw_idle",
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/portraits/cole-idle.png",
+      "owner": "pilots/cole",
+      "cell": null
+    },
+    {
+      "key": "cp5_raw_happy",
+      "root": "cp5_raw_happy",
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/portraits/cole-happy.png",
+      "owner": "pilots/cole",
+      "cell": null
+    },
+    {
+      "key": "cp5_raw_laugh",
+      "root": "cp5_raw_laugh",
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/portraits/cole-laugh.png",
+      "owner": "pilots/cole",
+      "cell": null
+    },
+    {
+      "key": "cp5_raw_anger",
+      "root": "cp5_raw_anger",
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/portraits/cole-anger.png",
+      "owner": "pilots/cole",
+      "cell": null
+    },
+    {
+      "key": "cp5_raw_sad",
+      "root": "cp5_raw_sad",
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/portraits/cole-sad.png",
+      "owner": "pilots/cole",
+      "cell": null
+    },
+    {
+      "key": "cp5_raw_crash",
+      "root": "cp5_raw_crash",
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/portraits/cole-crash.png",
+      "owner": "pilots/cole",
+      "cell": null
+    },
+    {
+      "key": "cp5_raw_victory",
+      "root": "cp5_raw_victory",
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/portraits/cole-victory.png",
+      "owner": "pilots/cole",
+      "cell": null
+    },
+    {
+      "key": "cp5_raw_talk-closed",
+      "root": "cp5_raw_talk-closed",
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/portraits/cole-talk-closed.png",
+      "owner": "pilots/cole",
+      "cell": null
+    },
+    {
+      "key": "cp5_raw_talk-small",
+      "root": "cp5_raw_talk-small",
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/portraits/cole-talk-small.png",
+      "owner": "pilots/cole",
+      "cell": null
+    },
+    {
+      "key": "cp5_raw_talk-medium",
+      "root": "cp5_raw_talk-medium",
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/portraits/cole-talk-medium.png",
+      "owner": "pilots/cole",
+      "cell": null
+    },
+    {
+      "key": "cp5_raw_talk-wide",
+      "root": "cp5_raw_talk-wide",
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/portraits/cole-talk-wide.png",
+      "owner": "pilots/cole",
+      "cell": null
+    },
+    {
+      "key": "cp5_raw_talk-o",
+      "root": "cp5_raw_talk-o",
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/portraits/cole-talk-o.png",
+      "owner": "pilots/cole",
+      "cell": null
+    },
+    {
+      "key": "cp5_raw_neutral",
+      "root": "cp5_raw_neutral",
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/portraits/cole-neutral.png",
+      "owner": "pilots/cole",
+      "cell": null
+    },
+    {
+      "key": "cp5_raw_smirking",
+      "root": "cp5_raw_smirking",
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/portraits/cole-smirking.png",
+      "owner": "pilots/cole",
+      "cell": null
+    },
+    {
+      "key": "cp5_raw_brooding",
+      "root": "cp5_raw_brooding",
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/portraits/cole-brooding.png",
+      "owner": "pilots/cole",
+      "cell": null
+    },
+    {
+      "key": "cp5_raw_sunglasses",
+      "root": "cp5_raw_sunglasses",
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/portraits/cole-sunglasses.png",
+      "owner": "pilots/cole",
+      "cell": null
+    },
+    {
+      "key": "cp5_raw_shout",
+      "root": "cp5_raw_shout",
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/portraits/cole-shout.png",
+      "owner": "pilots/cole",
+      "cell": null
+    },
+    {
+      "key": "cp5_raw_smile-shades",
+      "root": "cp5_raw_smile-shades",
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/portraits/cole-smile-shades.png",
+      "owner": "pilots/cole",
+      "cell": null
+    },
+    {
+      "key": "cp5_raw_salute",
+      "root": "cp5_raw_salute",
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/portraits/cole-salute.png",
+      "owner": "pilots/cole",
+      "cell": null
+    },
+    {
+      "key": "cp5_raw_thinking",
+      "root": "cp5_raw_thinking",
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/portraits/cole-thinking.png",
+      "owner": "pilots/cole",
+      "cell": null
+    }
+  ],
+  "files": [
+    {
+      "path": "assets/game/pilots/cole/abilities/cole_fusion_1004l/cloak.png",
+      "owner": "pilots/cole",
+      "bytes": 1512867,
+      "role": "registered runtime asset",
+      "width": 2172,
+      "height": 724
+    },
+    {
+      "path": "assets/game/pilots/cole/abilities/cole_fusion_1004l/manifest.json",
+      "owner": "pilots/cole",
+      "bytes": 4236,
+      "role": "source or supporting file"
+    },
+    {
+      "path": "assets/game/pilots/cole/abilities/cole_fusion_1004l/weapons.png",
+      "owner": "pilots/cole",
+      "bytes": 1434217,
+      "role": "registered runtime asset",
+      "width": 948,
+      "height": 1659
+    },
+    {
+      "path": "assets/game/pilots/cole/abilities/frames_0.png",
+      "owner": "pilots/cole",
+      "bytes": 125326,
+      "role": "registered runtime asset",
+      "width": 1164,
+      "height": 408
+    },
+    {
+      "path": "assets/game/pilots/cole/body_frames/frames_0.png",
+      "owner": "pilots/cole",
+      "bytes": 389799,
+      "role": "registered runtime asset",
+      "width": 1564,
+      "height": 328
+    },
+    {
+      "path": "assets/game/pilots/cole/body_frames/pilot_bodies/cole_body_0.png",
+      "owner": "pilots/cole",
+      "bytes": 57979,
+      "role": "registered runtime asset",
+      "width": 119,
+      "height": 273
+    },
+    {
+      "path": "assets/game/pilots/cole/body_frames/pilots_0922/bodies/cole.png",
+      "owner": "pilots/cole",
+      "bytes": 552749,
+      "role": "registered runtime asset",
+      "width": 512,
+      "height": 1024
+    },
+    {
+      "path": "assets/game/pilots/cole/portraits/frames_0.png",
+      "owner": "pilots/cole",
+      "bytes": 4160008,
+      "role": "registered runtime asset",
+      "width": 4055,
+      "height": 1073
+    },
+    {
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/comm/comm_cole_anger.png",
+      "owner": "pilots/cole",
+      "bytes": 41936,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/comm/comm_cole_brooding.png",
+      "owner": "pilots/cole",
+      "bytes": 37008,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/comm/comm_cole_crash.png",
+      "owner": "pilots/cole",
+      "bytes": 42169,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/comm/comm_cole_happy.png",
+      "owner": "pilots/cole",
+      "bytes": 36050,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/comm/comm_cole_idle.png",
+      "owner": "pilots/cole",
+      "bytes": 37170,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/comm/comm_cole_laugh.png",
+      "owner": "pilots/cole",
+      "bytes": 42426,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/comm/comm_cole_neutral.png",
+      "owner": "pilots/cole",
+      "bytes": 37170,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/comm/comm_cole_sad.png",
+      "owner": "pilots/cole",
+      "bytes": 37008,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/comm/comm_cole_salute.png",
+      "owner": "pilots/cole",
+      "bytes": 38240,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/comm/comm_cole_shout.png",
+      "owner": "pilots/cole",
+      "bytes": 37541,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/comm/comm_cole_smile-shades.png",
+      "owner": "pilots/cole",
+      "bytes": 37229,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/comm/comm_cole_smirking.png",
+      "owner": "pilots/cole",
+      "bytes": 36050,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/comm/comm_cole_sunglasses.png",
+      "owner": "pilots/cole",
+      "bytes": 36488,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/comm/comm_cole_talk-closed.png",
+      "owner": "pilots/cole",
+      "bytes": 37170,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/comm/comm_cole_talk-medium.png",
+      "owner": "pilots/cole",
+      "bytes": 41645,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/comm/comm_cole_talk-o.png",
+      "owner": "pilots/cole",
+      "bytes": 42048,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/comm/comm_cole_talk-small.png",
+      "owner": "pilots/cole",
+      "bytes": 42048,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/comm/comm_cole_talk-wide.png",
+      "owner": "pilots/cole",
+      "bytes": 42198,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/comm/comm_cole_thinking.png",
+      "owner": "pilots/cole",
+      "bytes": 36748,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/comm/comm_cole_victory.png",
+      "owner": "pilots/cole",
+      "bytes": 38240,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/portraits/cole-anger.png",
+      "owner": "pilots/cole",
+      "bytes": 138536,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/portraits/cole-brooding.png",
+      "owner": "pilots/cole",
+      "bytes": 121831,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/portraits/cole-crash.png",
+      "owner": "pilots/cole",
+      "bytes": 139361,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/portraits/cole-happy.png",
+      "owner": "pilots/cole",
+      "bytes": 117667,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/portraits/cole-idle.png",
+      "owner": "pilots/cole",
+      "bytes": 120641,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/portraits/cole-laugh.png",
+      "owner": "pilots/cole",
+      "bytes": 140354,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/portraits/cole-neutral.png",
+      "owner": "pilots/cole",
+      "bytes": 120641,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/portraits/cole-sad.png",
+      "owner": "pilots/cole",
+      "bytes": 121831,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/portraits/cole-salute.png",
+      "owner": "pilots/cole",
+      "bytes": 125051,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/portraits/cole-shout.png",
+      "owner": "pilots/cole",
+      "bytes": 123022,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/portraits/cole-smile-shades.png",
+      "owner": "pilots/cole",
+      "bytes": 122502,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/portraits/cole-smirking.png",
+      "owner": "pilots/cole",
+      "bytes": 117667,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/portraits/cole-sunglasses.png",
+      "owner": "pilots/cole",
+      "bytes": 117738,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/portraits/cole-talk-closed.png",
+      "owner": "pilots/cole",
+      "bytes": 120641,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/portraits/cole-talk-medium.png",
+      "owner": "pilots/cole",
+      "bytes": 137185,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/portraits/cole-talk-o.png",
+      "owner": "pilots/cole",
+      "bytes": 138322,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/portraits/cole-talk-small.png",
+      "owner": "pilots/cole",
+      "bytes": 138918,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/portraits/cole-talk-wide.png",
+      "owner": "pilots/cole",
+      "bytes": 139047,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/portraits/cole-thinking.png",
+      "owner": "pilots/cole",
+      "bytes": 122847,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/cole/portraits/pilots_0922/portraits/cole-victory.png",
+      "owner": "pilots/cole",
+      "bytes": 125051,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/cole/ship_frames/ship_cole.png",
+      "owner": "pilots/cole",
+      "bytes": 976071,
+      "role": "registered runtime asset",
+      "width": 1094,
+      "height": 963
+    }
+  ],
+  "audio": {
+    "sfx": {},
+    "music": {}
+  },
+  "frameFolders": [
+    "portraits",
+    "body_frames",
+    "ship_frames",
+    "abilities"
+  ],
+  "furyShip": "Common hull in shared/ships; this pilot applies a runtime palette."
+}

@@ -1,0 +1,854 @@
+{
+  "owner": "pilots/lizzie",
+  "loading": {
+    "boot": "UI, fonts, idle portraits only",
+    "deployment": "selected pilot portraits, shared player weapons, required stage textures",
+    "transition": "release previous stage textures and derived caches; preserve explicitly queued copied-form dependencies",
+    "quality": "automatic native resolution on low-memory/low-core devices; reduce supersampling after sustained slow play frames"
+  },
+  "sharedDependencies": [
+    "shared/fonts",
+    "shared/ui",
+    "shared/player_weapons",
+    "shared/effects",
+    "shared/ships"
+  ],
+  "assets": [
+    {
+      "key": "aintro_lizzie",
+      "root": "nca_layout_pilots_lizzie_portraits_0",
+      "path": "assets/game/pilots/lizzie/portraits/frames_0.png",
+      "owner": "pilots/lizzie",
+      "cell": [
+        "layout_pilots_lizzie_portraits_0",
+        1928,
+        4,
+        640,
+        480
+      ]
+    },
+    {
+      "key": "card_lizzie",
+      "root": "nca_layout_pilots_lizzie_portraits_0",
+      "path": "assets/game/pilots/lizzie/portraits/frames_0.png",
+      "owner": "pilots/lizzie",
+      "cell": [
+        "layout_pilots_lizzie_portraits_0",
+        4,
+        4,
+        958,
+        718
+      ]
+    },
+    {
+      "key": "pcard_lizzie",
+      "root": "nca_layout_pilots_lizzie_portraits_0",
+      "path": "assets/game/pilots/lizzie/portraits/frames_0.png",
+      "owner": "pilots/lizzie",
+      "cell": [
+        "layout_pilots_lizzie_portraits_0",
+        966,
+        4,
+        958,
+        718
+      ]
+    },
+    {
+      "key": "nsa_ship_lizzie",
+      "root": "nsa_ship_lizzie",
+      "path": "assets/game/pilots/lizzie/ship_frames/ship_lizzie.png",
+      "owner": "pilots/lizzie",
+      "cell": null
+    },
+    {
+      "key": "nsa_ship_lizzie_b42",
+      "root": "nsa_ship_lizzie_b42",
+      "path": "assets/game/pilots/lizzie/ship_frames/ship_lizzie_b42.png",
+      "owner": "pilots/lizzie",
+      "cell": null
+    },
+    {
+      "key": "pose_lizzie_0",
+      "root": "nca_layout_pilots_lizzie_body_frames_0",
+      "path": "assets/game/pilots/lizzie/body_frames/frames_0.png",
+      "owner": "pilots/lizzie",
+      "cell": [
+        "layout_pilots_lizzie_body_frames_0",
+        4,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "key": "pose_lizzie_1",
+      "root": "nca_layout_pilots_lizzie_body_frames_0",
+      "path": "assets/game/pilots/lizzie/body_frames/frames_0.png",
+      "owner": "pilots/lizzie",
+      "cell": [
+        "layout_pilots_lizzie_body_frames_0",
+        264,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "key": "pose_lizzie_2",
+      "root": "nca_layout_pilots_lizzie_body_frames_0",
+      "path": "assets/game/pilots/lizzie/body_frames/frames_0.png",
+      "owner": "pilots/lizzie",
+      "cell": [
+        "layout_pilots_lizzie_body_frames_0",
+        524,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "key": "pose_lizzie_3",
+      "root": "nca_layout_pilots_lizzie_body_frames_0",
+      "path": "assets/game/pilots/lizzie/body_frames/frames_0.png",
+      "owner": "pilots/lizzie",
+      "cell": [
+        "layout_pilots_lizzie_body_frames_0",
+        784,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "key": "pose_lizzie_4",
+      "root": "nca_layout_pilots_lizzie_body_frames_0",
+      "path": "assets/game/pilots/lizzie/body_frames/frames_0.png",
+      "owner": "pilots/lizzie",
+      "cell": [
+        "layout_pilots_lizzie_body_frames_0",
+        1044,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "key": "pose_lizzie_5",
+      "root": "nca_layout_pilots_lizzie_body_frames_0",
+      "path": "assets/game/pilots/lizzie/body_frames/frames_0.png",
+      "owner": "pilots/lizzie",
+      "cell": [
+        "layout_pilots_lizzie_body_frames_0",
+        1304,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "key": "nsw_box_lizzie",
+      "root": "nca_layout_pilots_lizzie_abilities_0",
+      "path": "assets/game/pilots/lizzie/abilities/frames_0.png",
+      "owner": "pilots/lizzie",
+      "cell": [
+        "layout_pilots_lizzie_abilities_0",
+        4,
+        4,
+        400,
+        400
+      ]
+    },
+    {
+      "key": "nthp_lizzie_2",
+      "root": "nca_layout_pilots_lizzie_abilities_0",
+      "path": "assets/game/pilots/lizzie/abilities/frames_0.png",
+      "owner": "pilots/lizzie",
+      "cell": [
+        "layout_pilots_lizzie_abilities_0",
+        408,
+        4,
+        151,
+        205
+      ]
+    },
+    {
+      "key": "nthp_lizzie_1",
+      "root": "nca_layout_pilots_lizzie_abilities_0",
+      "path": "assets/game/pilots/lizzie/abilities/frames_0.png",
+      "owner": "pilots/lizzie",
+      "cell": [
+        "layout_pilots_lizzie_abilities_0",
+        563,
+        4,
+        103,
+        164
+      ]
+    },
+    {
+      "key": "nthp_lizzie_3",
+      "root": "nca_layout_pilots_lizzie_abilities_0",
+      "path": "assets/game/pilots/lizzie/abilities/frames_0.png",
+      "owner": "pilots/lizzie",
+      "cell": [
+        "layout_pilots_lizzie_abilities_0",
+        670,
+        4,
+        82,
+        148
+      ]
+    },
+    {
+      "key": "nthp_lizzie_0",
+      "root": "nca_layout_pilots_lizzie_abilities_0",
+      "path": "assets/game/pilots/lizzie/abilities/frames_0.png",
+      "owner": "pilots/lizzie",
+      "cell": [
+        "layout_pilots_lizzie_abilities_0",
+        756,
+        4,
+        66,
+        114
+      ]
+    },
+    {
+      "key": "pemb_lizzie",
+      "root": "nca_layout_pilots_lizzie_portraits_0",
+      "path": "assets/game/pilots/lizzie/portraits/frames_0.png",
+      "owner": "pilots/lizzie",
+      "cell": [
+        "layout_pilots_lizzie_portraits_0",
+        2572,
+        4,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "sp_lizzie_0",
+      "root": "nca_layout_pilots_lizzie_abilities_0",
+      "path": "assets/game/pilots/lizzie/abilities/frames_0.png",
+      "owner": "pilots/lizzie",
+      "cell": [
+        "layout_pilots_lizzie_abilities_0",
+        826,
+        4,
+        140,
+        109
+      ]
+    },
+    {
+      "key": "sp_lizzie_1",
+      "root": "nca_layout_pilots_lizzie_abilities_0",
+      "path": "assets/game/pilots/lizzie/abilities/frames_0.png",
+      "owner": "pilots/lizzie",
+      "cell": [
+        "layout_pilots_lizzie_abilities_0",
+        970,
+        4,
+        140,
+        109
+      ]
+    },
+    {
+      "key": "sp_lizzie_2",
+      "root": "nca_layout_pilots_lizzie_abilities_0",
+      "path": "assets/game/pilots/lizzie/abilities/frames_0.png",
+      "owner": "pilots/lizzie",
+      "cell": [
+        "layout_pilots_lizzie_abilities_0",
+        1114,
+        4,
+        140,
+        109
+      ]
+    },
+    {
+      "key": "sp_lizzie_3",
+      "root": "nca_layout_pilots_lizzie_abilities_0",
+      "path": "assets/game/pilots/lizzie/abilities/frames_0.png",
+      "owner": "pilots/lizzie",
+      "cell": [
+        "layout_pilots_lizzie_abilities_0",
+        1258,
+        4,
+        140,
+        109
+      ]
+    },
+    {
+      "key": "nca_layout_pilots_lizzie_abilities_0",
+      "root": "nca_layout_pilots_lizzie_abilities_0",
+      "path": "assets/game/pilots/lizzie/abilities/frames_0.png",
+      "owner": "pilots/lizzie",
+      "cell": null
+    },
+    {
+      "key": "nca_layout_pilots_lizzie_body_frames_0",
+      "root": "nca_layout_pilots_lizzie_body_frames_0",
+      "path": "assets/game/pilots/lizzie/body_frames/frames_0.png",
+      "owner": "pilots/lizzie",
+      "cell": null
+    },
+    {
+      "key": "nca_layout_pilots_lizzie_portraits_0",
+      "root": "nca_layout_pilots_lizzie_portraits_0",
+      "path": "assets/game/pilots/lizzie/portraits/frames_0.png",
+      "owner": "pilots/lizzie",
+      "cell": null
+    },
+    {
+      "key": "port_cf_lizzie_idle",
+      "root": "port_cf_lizzie_idle",
+      "path": "assets/game/pilots/lizzie/portraits/pilots_0922/portraits/lizzie-idle.png",
+      "owner": "pilots/lizzie",
+      "cell": null
+    },
+    {
+      "key": "port_cf_lizzie_happy",
+      "root": "port_cf_lizzie_happy",
+      "path": "assets/game/pilots/lizzie/portraits/pilots_0922/portraits/lizzie-happy.png",
+      "owner": "pilots/lizzie",
+      "cell": null
+    },
+    {
+      "key": "port_cf_lizzie_laugh",
+      "root": "port_cf_lizzie_laugh",
+      "path": "assets/game/pilots/lizzie/portraits/pilots_0922/portraits/lizzie-laugh.png",
+      "owner": "pilots/lizzie",
+      "cell": null
+    },
+    {
+      "key": "port_cf_lizzie_anger",
+      "root": "port_cf_lizzie_anger",
+      "path": "assets/game/pilots/lizzie/portraits/pilots_0922/portraits/lizzie-anger.png",
+      "owner": "pilots/lizzie",
+      "cell": null
+    },
+    {
+      "key": "port_cf_lizzie_sad",
+      "root": "port_cf_lizzie_sad",
+      "path": "assets/game/pilots/lizzie/portraits/pilots_0922/portraits/lizzie-sad.png",
+      "owner": "pilots/lizzie",
+      "cell": null
+    },
+    {
+      "key": "port_cf_lizzie_crash",
+      "root": "port_cf_lizzie_crash",
+      "path": "assets/game/pilots/lizzie/portraits/pilots_0922/portraits/lizzie-crash.png",
+      "owner": "pilots/lizzie",
+      "cell": null
+    },
+    {
+      "key": "port_cf_lizzie_victory",
+      "root": "port_cf_lizzie_victory",
+      "path": "assets/game/pilots/lizzie/portraits/pilots_0922/portraits/lizzie-victory.png",
+      "owner": "pilots/lizzie",
+      "cell": null
+    },
+    {
+      "key": "port_cf_lizzie_talk-closed",
+      "root": "port_cf_lizzie_talk-closed",
+      "path": "assets/game/pilots/lizzie/portraits/pilots_0922/portraits/lizzie-talk-closed.png",
+      "owner": "pilots/lizzie",
+      "cell": null
+    },
+    {
+      "key": "port_cf_lizzie_talk-small",
+      "root": "port_cf_lizzie_talk-small",
+      "path": "assets/game/pilots/lizzie/portraits/pilots_0922/portraits/lizzie-talk-small.png",
+      "owner": "pilots/lizzie",
+      "cell": null
+    },
+    {
+      "key": "port_cf_lizzie_talk-medium",
+      "root": "port_cf_lizzie_talk-medium",
+      "path": "assets/game/pilots/lizzie/portraits/pilots_0922/portraits/lizzie-talk-medium.png",
+      "owner": "pilots/lizzie",
+      "cell": null
+    },
+    {
+      "key": "port_cf_lizzie_talk-wide",
+      "root": "port_cf_lizzie_talk-wide",
+      "path": "assets/game/pilots/lizzie/portraits/pilots_0922/portraits/lizzie-talk-wide.png",
+      "owner": "pilots/lizzie",
+      "cell": null
+    },
+    {
+      "key": "port_cf_lizzie_talk-o",
+      "root": "port_cf_lizzie_talk-o",
+      "path": "assets/game/pilots/lizzie/portraits/pilots_0922/portraits/lizzie-talk-o.png",
+      "owner": "pilots/lizzie",
+      "cell": null
+    },
+    {
+      "key": "port_cf_lizzie_alert",
+      "root": "port_cf_lizzie_alert",
+      "path": "assets/game/pilots/lizzie/portraits/pilots_0922/portraits/lizzie-crash.png",
+      "owner": "pilots/lizzie",
+      "cell": null
+    },
+    {
+      "key": "comm_lizzie_alert",
+      "root": "comm_lizzie_alert",
+      "path": "assets/game/pilots/lizzie/portraits/pilots_0922/comm/comm_lizzie_crash.png",
+      "owner": "pilots/lizzie",
+      "cell": null
+    },
+    {
+      "key": "cinpose_lizzie_1",
+      "root": "cinpose_lizzie_1",
+      "path": "assets/game/pilots/lizzie/body_frames/cinematic_characters/lizzie/poses/01_front_neutral.png",
+      "owner": "pilots/lizzie",
+      "cell": null
+    },
+    {
+      "key": "cinpose_lizzie_2",
+      "root": "cinpose_lizzie_2",
+      "path": "assets/game/pilots/lizzie/body_frames/cinematic_characters/lizzie/poses/02_front_left_3q.png",
+      "owner": "pilots/lizzie",
+      "cell": null
+    },
+    {
+      "key": "cinpose_lizzie_3",
+      "root": "cinpose_lizzie_3",
+      "path": "assets/game/pilots/lizzie/body_frames/cinematic_characters/lizzie/poses/03_front_right_3q.png",
+      "owner": "pilots/lizzie",
+      "cell": null
+    },
+    {
+      "key": "cinpose_lizzie_4",
+      "root": "cinpose_lizzie_4",
+      "path": "assets/game/pilots/lizzie/body_frames/cinematic_characters/lizzie/poses/04_back_neutral.png",
+      "owner": "pilots/lizzie",
+      "cell": null
+    },
+    {
+      "key": "cinpose_lizzie_5",
+      "root": "cinpose_lizzie_5",
+      "path": "assets/game/pilots/lizzie/body_frames/cinematic_characters/lizzie/poses/05_back_left_3q.png",
+      "owner": "pilots/lizzie",
+      "cell": null
+    },
+    {
+      "key": "cinpose_lizzie_6",
+      "root": "cinpose_lizzie_6",
+      "path": "assets/game/pilots/lizzie/body_frames/cinematic_characters/lizzie/poses/06_back_right_3q.png",
+      "owner": "pilots/lizzie",
+      "cell": null
+    },
+    {
+      "key": "comm_lizzie_idle",
+      "root": "comm_lizzie_idle",
+      "path": "assets/game/pilots/lizzie/portraits/pilots_0922/comm/comm_lizzie_idle.png",
+      "owner": "pilots/lizzie",
+      "cell": null
+    },
+    {
+      "key": "comm_lizzie_happy",
+      "root": "comm_lizzie_happy",
+      "path": "assets/game/pilots/lizzie/portraits/pilots_0922/comm/comm_lizzie_happy.png",
+      "owner": "pilots/lizzie",
+      "cell": null
+    },
+    {
+      "key": "comm_lizzie_laugh",
+      "root": "comm_lizzie_laugh",
+      "path": "assets/game/pilots/lizzie/portraits/pilots_0922/comm/comm_lizzie_laugh.png",
+      "owner": "pilots/lizzie",
+      "cell": null
+    },
+    {
+      "key": "comm_lizzie_anger",
+      "root": "comm_lizzie_anger",
+      "path": "assets/game/pilots/lizzie/portraits/pilots_0922/comm/comm_lizzie_anger.png",
+      "owner": "pilots/lizzie",
+      "cell": null
+    },
+    {
+      "key": "comm_lizzie_sad",
+      "root": "comm_lizzie_sad",
+      "path": "assets/game/pilots/lizzie/portraits/pilots_0922/comm/comm_lizzie_sad.png",
+      "owner": "pilots/lizzie",
+      "cell": null
+    },
+    {
+      "key": "comm_lizzie_crash",
+      "root": "comm_lizzie_crash",
+      "path": "assets/game/pilots/lizzie/portraits/pilots_0922/comm/comm_lizzie_crash.png",
+      "owner": "pilots/lizzie",
+      "cell": null
+    },
+    {
+      "key": "comm_lizzie_victory",
+      "root": "comm_lizzie_victory",
+      "path": "assets/game/pilots/lizzie/portraits/pilots_0922/comm/comm_lizzie_victory.png",
+      "owner": "pilots/lizzie",
+      "cell": null
+    },
+    {
+      "key": "comm_lizzie_talk-closed",
+      "root": "comm_lizzie_talk-closed",
+      "path": "assets/game/pilots/lizzie/portraits/pilots_0922/comm/comm_lizzie_talk-closed.png",
+      "owner": "pilots/lizzie",
+      "cell": null
+    },
+    {
+      "key": "comm_lizzie_talk-small",
+      "root": "comm_lizzie_talk-small",
+      "path": "assets/game/pilots/lizzie/portraits/pilots_0922/comm/comm_lizzie_talk-small.png",
+      "owner": "pilots/lizzie",
+      "cell": null
+    },
+    {
+      "key": "comm_lizzie_talk-medium",
+      "root": "comm_lizzie_talk-medium",
+      "path": "assets/game/pilots/lizzie/portraits/pilots_0922/comm/comm_lizzie_talk-medium.png",
+      "owner": "pilots/lizzie",
+      "cell": null
+    },
+    {
+      "key": "comm_lizzie_talk-wide",
+      "root": "comm_lizzie_talk-wide",
+      "path": "assets/game/pilots/lizzie/portraits/pilots_0922/comm/comm_lizzie_talk-wide.png",
+      "owner": "pilots/lizzie",
+      "cell": null
+    },
+    {
+      "key": "comm_lizzie_talk-o",
+      "root": "comm_lizzie_talk-o",
+      "path": "assets/game/pilots/lizzie/portraits/pilots_0922/comm/comm_lizzie_talk-o.png",
+      "owner": "pilots/lizzie",
+      "cell": null
+    },
+    {
+      "key": "pav_lizzie",
+      "root": "pav_lizzie",
+      "path": "assets/game/pilots/lizzie/portraits/pilots_0922/portraits/lizzie-idle.png",
+      "owner": "pilots/lizzie",
+      "cell": null
+    },
+    {
+      "key": "lizzie_body_0",
+      "root": "lizzie_body_0",
+      "path": "assets/game/pilots/lizzie/body_frames/pilot_bodies/lizzie_body_0.png",
+      "owner": "pilots/lizzie",
+      "cell": null
+    },
+    {
+      "key": "mapg_lizzie_source",
+      "root": "mapg_lizzie_source",
+      "path": "assets/game/pilots/lizzie/portraits/pilots_0922/sheets/lizzie_expressions.png",
+      "owner": "pilots/lizzie",
+      "cell": null
+    }
+  ],
+  "files": [
+    {
+      "path": "assets/game/pilots/lizzie/abilities/frames_0.png",
+      "owner": "pilots/lizzie",
+      "bytes": 228823,
+      "role": "registered runtime asset",
+      "width": 1402,
+      "height": 408
+    },
+    {
+      "path": "assets/game/pilots/lizzie/body_frames/cinematic_characters/lizzie/poses/01_front_neutral.png",
+      "owner": "pilots/lizzie",
+      "bytes": 222323,
+      "role": "registered runtime asset",
+      "width": 291,
+      "height": 700
+    },
+    {
+      "path": "assets/game/pilots/lizzie/body_frames/cinematic_characters/lizzie/poses/02_front_left_3q.png",
+      "owner": "pilots/lizzie",
+      "bytes": 234324,
+      "role": "registered runtime asset",
+      "width": 412,
+      "height": 709
+    },
+    {
+      "path": "assets/game/pilots/lizzie/body_frames/cinematic_characters/lizzie/poses/03_front_right_3q.png",
+      "owner": "pilots/lizzie",
+      "bytes": 218330,
+      "role": "registered runtime asset",
+      "width": 295,
+      "height": 715
+    },
+    {
+      "path": "assets/game/pilots/lizzie/body_frames/cinematic_characters/lizzie/poses/04_back_neutral.png",
+      "owner": "pilots/lizzie",
+      "bytes": 209450,
+      "role": "registered runtime asset",
+      "width": 285,
+      "height": 702
+    },
+    {
+      "path": "assets/game/pilots/lizzie/body_frames/cinematic_characters/lizzie/poses/05_back_left_3q.png",
+      "owner": "pilots/lizzie",
+      "bytes": 192742,
+      "role": "registered runtime asset",
+      "width": 289,
+      "height": 697
+    },
+    {
+      "path": "assets/game/pilots/lizzie/body_frames/cinematic_characters/lizzie/poses/06_back_right_3q.png",
+      "owner": "pilots/lizzie",
+      "bytes": 206075,
+      "role": "registered runtime asset",
+      "width": 315,
+      "height": 696
+    },
+    {
+      "path": "assets/game/pilots/lizzie/body_frames/frames_0.png",
+      "owner": "pilots/lizzie",
+      "bytes": 344414,
+      "role": "registered runtime asset",
+      "width": 1564,
+      "height": 328
+    },
+    {
+      "path": "assets/game/pilots/lizzie/body_frames/pilot_bodies/lizzie_body_0.png",
+      "owner": "pilots/lizzie",
+      "bytes": 53976,
+      "role": "registered runtime asset",
+      "width": 102,
+      "height": 273
+    },
+    {
+      "path": "assets/game/pilots/lizzie/portraits/frames_0.png",
+      "owner": "pilots/lizzie",
+      "bytes": 2892934,
+      "role": "registered runtime asset",
+      "width": 2832,
+      "height": 726
+    },
+    {
+      "path": "assets/game/pilots/lizzie/portraits/pilots_0922/comm/comm_lizzie_anger.png",
+      "owner": "pilots/lizzie",
+      "bytes": 45070,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/lizzie/portraits/pilots_0922/comm/comm_lizzie_crash.png",
+      "owner": "pilots/lizzie",
+      "bytes": 44994,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/lizzie/portraits/pilots_0922/comm/comm_lizzie_happy.png",
+      "owner": "pilots/lizzie",
+      "bytes": 45164,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/lizzie/portraits/pilots_0922/comm/comm_lizzie_idle.png",
+      "owner": "pilots/lizzie",
+      "bytes": 45026,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/lizzie/portraits/pilots_0922/comm/comm_lizzie_laugh.png",
+      "owner": "pilots/lizzie",
+      "bytes": 45111,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/lizzie/portraits/pilots_0922/comm/comm_lizzie_sad.png",
+      "owner": "pilots/lizzie",
+      "bytes": 44836,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/lizzie/portraits/pilots_0922/comm/comm_lizzie_talk-closed.png",
+      "owner": "pilots/lizzie",
+      "bytes": 45026,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/lizzie/portraits/pilots_0922/comm/comm_lizzie_talk-medium.png",
+      "owner": "pilots/lizzie",
+      "bytes": 44797,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/lizzie/portraits/pilots_0922/comm/comm_lizzie_talk-o.png",
+      "owner": "pilots/lizzie",
+      "bytes": 44603,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/lizzie/portraits/pilots_0922/comm/comm_lizzie_talk-small.png",
+      "owner": "pilots/lizzie",
+      "bytes": 44738,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/lizzie/portraits/pilots_0922/comm/comm_lizzie_talk-wide.png",
+      "owner": "pilots/lizzie",
+      "bytes": 44716,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/lizzie/portraits/pilots_0922/comm/comm_lizzie_victory.png",
+      "owner": "pilots/lizzie",
+      "bytes": 44927,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/lizzie/portraits/pilots_0922/portraits/lizzie-anger.png",
+      "owner": "pilots/lizzie",
+      "bytes": 157013,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/lizzie/portraits/pilots_0922/portraits/lizzie-crash.png",
+      "owner": "pilots/lizzie",
+      "bytes": 155789,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/lizzie/portraits/pilots_0922/portraits/lizzie-happy.png",
+      "owner": "pilots/lizzie",
+      "bytes": 157459,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/lizzie/portraits/pilots_0922/portraits/lizzie-idle.png",
+      "owner": "pilots/lizzie",
+      "bytes": 157247,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/lizzie/portraits/pilots_0922/portraits/lizzie-laugh.png",
+      "owner": "pilots/lizzie",
+      "bytes": 156699,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/lizzie/portraits/pilots_0922/portraits/lizzie-sad.png",
+      "owner": "pilots/lizzie",
+      "bytes": 155477,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/lizzie/portraits/pilots_0922/portraits/lizzie-talk-closed.png",
+      "owner": "pilots/lizzie",
+      "bytes": 157247,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/lizzie/portraits/pilots_0922/portraits/lizzie-talk-medium.png",
+      "owner": "pilots/lizzie",
+      "bytes": 154959,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/lizzie/portraits/pilots_0922/portraits/lizzie-talk-o.png",
+      "owner": "pilots/lizzie",
+      "bytes": 154209,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/lizzie/portraits/pilots_0922/portraits/lizzie-talk-small.png",
+      "owner": "pilots/lizzie",
+      "bytes": 154670,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/lizzie/portraits/pilots_0922/portraits/lizzie-talk-wide.png",
+      "owner": "pilots/lizzie",
+      "bytes": 154382,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/lizzie/portraits/pilots_0922/portraits/lizzie-victory.png",
+      "owner": "pilots/lizzie",
+      "bytes": 155630,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/lizzie/portraits/pilots_0922/sheets/lizzie_expressions.png",
+      "owner": "pilots/lizzie",
+      "bytes": 3373688,
+      "role": "registered runtime asset",
+      "width": 1448,
+      "height": 1086
+    },
+    {
+      "path": "assets/game/pilots/lizzie/ship_frames/ship_lizzie.png",
+      "owner": "pilots/lizzie",
+      "bytes": 1042305,
+      "role": "registered runtime asset",
+      "width": 1086,
+      "height": 1282
+    },
+    {
+      "path": "assets/game/pilots/lizzie/ship_frames/ship_lizzie_b42.png",
+      "owner": "pilots/lizzie",
+      "bytes": 1425663,
+      "role": "registered runtime asset",
+      "width": 1024,
+      "height": 2216
+    }
+  ],
+  "audio": {
+    "sfx": {},
+    "music": {}
+  },
+  "frameFolders": [
+    "portraits",
+    "body_frames",
+    "ship_frames",
+    "abilities"
+  ],
+  "furyShip": "Common hull in shared/ships; this pilot applies a runtime palette."
+}

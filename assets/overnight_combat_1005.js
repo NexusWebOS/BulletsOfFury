@@ -99,7 +99,7 @@ ht27Attack=function(b,d){const n=d.attack%6;if(n===4||n===5){d.attack++;d.mode='
   if(n===4)hammerChainStart(b);else hammerSpellStart(b);return;
  }return ON5C.attack.apply(this,arguments);};
 // Restore the retained instrumental, never the premix containing robot chants.
-BOFA.music.hama='assets/game/music/HAMA_Instrumental.mp3';
+BOFA.music.hama='assets/game/shared/audio/music/HAMA_Instrumental.mp3';
 if(Snd?.music.hama){const m=Snd.music.hama;m.pause();m.src=BOFA.music.hama;m.preload='none';m.loop=true;}
 hamaRecordedVocals1001=function(){return false;};
 hamaSing=function(){};

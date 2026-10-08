@@ -2,7 +2,7 @@ from PIL import Image, ImageFilter
 import os
 
 SP = r"C:\Users\Mdogg\AppData\Local\Temp\claude\C--Users-Mdogg-Desktop-BOF-CODE\f429a46f-41c1-456b-b987-467a8756afca\scratchpad"
-SRC = 'assets/game/jungle800_rc2_master.png'
+SRC = 'assets/game/shared/combat/jungle800_rc2_master.png'
 im = Image.open(SRC).convert('RGB')
 W, H = im.size
 

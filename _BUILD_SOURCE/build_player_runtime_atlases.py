@@ -182,10 +182,10 @@ class SourceBank:
             return self.open_path(rel).copy()
 
         code_owned = {
-            **{f"mgcf_{level}_{frame}": f"assets/game/fx_0825/mg_bullet_{level}_{frame}.png"
+            **{f"mgcf_{level}_{frame}": f"assets/game/shared/effects/fx_0825/mg_bullet_{level}_{frame}.png"
                for level in range(1, 6) for frame in range(6)},
-            "fx0825_ice_orb": "assets/game/fx_0825/ice_orb.png",
-            "fx0825_ice_shard": "assets/game/fx_0825/ice_shard.png",
+            "fx0825_ice_orb": "assets/game/shared/effects/fx_0825/ice_orb.png",
+            "fx0825_ice_shard": "assets/game/shared/effects/fx_0825/ice_shard.png",
         }
         if key in code_owned:
             return self.open_path(code_owned[key]).copy()
@@ -263,7 +263,7 @@ def build_icon_runtime(icon_builder, bofx: dict) -> list[dict]:
         entries.append({"key": key, "id": row["id"], "category": row["category"],
                         "label": row["label"], "rect": rect})
 
-    bofx.setdefault("img", {})[ICON_ATLAS_KEY] = "assets/game/atlas/bof_player_weapon_special_icons.png"
+    bofx.setdefault("img", {})[ICON_ATLAS_KEY] = "assets/game/shared/atlases/bof_player_weapon_special_icons.png"
     icons = bofx.setdefault("icons", {})
     for row in entries:
         rect = row["rect"] + [ICON_ATLAS_KEY]
@@ -324,13 +324,13 @@ def build_projectile_runtime(bank: SourceBank, bofx: dict) -> list[dict]:
         raise RuntimeError(f"projectile atlas is {atlas.size}; active set exceeds the 4096px texture gate")
     atlas.save(PROJECTILE_ATLAS)
 
-    bofx.setdefault("img", {})[PROJECTILE_ATLAS_KEY] = "assets/game/atlas/bof_player_ordnance_projectiles.png"
+    bofx.setdefault("img", {})[PROJECTILE_ATLAS_KEY] = "assets/game/shared/atlases/bof_player_ordnance_projectiles.png"
     playercells = bofx.setdefault("playercells", {})
     entries = []
     for key, image in images:
         sx, sy, width, height = placements[key]
         playercells[key] = [PROJECTILE_ATLAS_KEY, sx, sy, width, height, 0, 0, width, height]
-        bofx.setdefault("img", {})[key] = "assets/game/atlas/bof_player_ordnance_projectiles.png"
+        bofx.setdefault("img", {})[key] = "assets/game/shared/atlases/bof_player_ordnance_projectiles.png"
         bofx.get("cells", {}).pop(key, None)
         entries.append({"key": key, "category": category_for_projectile(key),
                         "rect": [sx, sy, width, height], "canvas": [width, height]})

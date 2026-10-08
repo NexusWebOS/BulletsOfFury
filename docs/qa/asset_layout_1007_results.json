@@ -1,0 +1,392 @@
+{
+  "date": "2026-10-07",
+  "scope": "Owned file layout, canonical loading, stage retirement and render-quality behavior; protected render fixtures, not campaign clears.",
+  "migration": {
+    "movedFiles": 3943,
+    "losslessCells": 400,
+    "retiredMixedAtlases": 7,
+    "preservedSharedCellAliases": 50
+  },
+  "baseline": {
+    "images": 642,
+    "rgbaReferenceBytes": 931544632,
+    "uniqueURLs": 577,
+    "uniqueRGBAEstimate": 908601856,
+    "rotationBytes": 0,
+    "managed": null
+  },
+  "current": {
+    "images": 16,
+    "rgbaReferenceBytes": 168469988,
+    "uniqueURLs": 16,
+    "uniqueRGBAEstimate": 168469988,
+    "rotationBytes": 0,
+    "managed": {
+      "decodedImages": 16,
+      "decodedRGBAEstimate": 168469988,
+      "cells": 7,
+      "cellRGBAEstimate": 7064656
+    }
+  },
+  "browserChecks": {
+    "chromium": {
+      "checks": 70,
+      "failed": [],
+      "errors": [],
+      "archiveRequests": []
+    },
+    "firefox": {
+      "checks": 41,
+      "failed": [],
+      "errors": [],
+      "archiveRequests": []
+    },
+    "webkit": {
+      "checks": 41,
+      "failed": [],
+      "errors": [],
+      "archiveRequests": []
+    }
+  },
+  "contracts": {
+    "checks": [
+      {
+        "ok": true,
+        "name": "chromium aliases share one Image object"
+      },
+      {
+        "ok": true,
+        "name": "chromium release invalidates all aliases and reloads cleanly"
+      },
+      {
+        "ok": true,
+        "name": "chromium transition/reentry stage 1"
+      },
+      {
+        "ok": true,
+        "name": "chromium transition/reentry stage 4"
+      },
+      {
+        "ok": true,
+        "name": "chromium transition/reentry stage 8"
+      },
+      {
+        "ok": true,
+        "name": "chromium transition/reentry stage 1"
+      },
+      {
+        "ok": true,
+        "name": "chromium stage changes retire owned textures"
+      },
+      {
+        "ok": true,
+        "name": "chromium 60 Hz preserves supersampling"
+      },
+      {
+        "ok": true,
+        "name": "chromium sustained 40 Hz switches to native pixels"
+      },
+      {
+        "ok": true,
+        "name": "chromium explicit high quality remains locked"
+      },
+      {
+        "ok": true,
+        "name": "chromium low-spec auto quality"
+      },
+      {
+        "ok": true,
+        "name": "chromium low-spec high quality"
+      },
+      {
+        "ok": true,
+        "name": "chromium low-spec performance quality"
+      },
+      {
+        "ok": true,
+        "name": "firefox aliases share one Image object"
+      },
+      {
+        "ok": true,
+        "name": "firefox release invalidates all aliases and reloads cleanly"
+      },
+      {
+        "ok": true,
+        "name": "firefox transition/reentry stage 1"
+      },
+      {
+        "ok": true,
+        "name": "firefox transition/reentry stage 4"
+      },
+      {
+        "ok": true,
+        "name": "firefox transition/reentry stage 8"
+      },
+      {
+        "ok": true,
+        "name": "firefox transition/reentry stage 1"
+      },
+      {
+        "ok": true,
+        "name": "firefox stage changes retire owned textures"
+      },
+      {
+        "ok": true,
+        "name": "firefox 60 Hz preserves supersampling"
+      },
+      {
+        "ok": true,
+        "name": "firefox sustained 40 Hz switches to native pixels"
+      },
+      {
+        "ok": true,
+        "name": "firefox explicit high quality remains locked"
+      },
+      {
+        "ok": true,
+        "name": "firefox low-spec auto quality"
+      },
+      {
+        "ok": true,
+        "name": "firefox low-spec high quality"
+      },
+      {
+        "ok": true,
+        "name": "firefox low-spec performance quality"
+      },
+      {
+        "ok": true,
+        "name": "webkit aliases share one Image object"
+      },
+      {
+        "ok": true,
+        "name": "webkit release invalidates all aliases and reloads cleanly"
+      },
+      {
+        "ok": true,
+        "name": "webkit transition/reentry stage 1"
+      },
+      {
+        "ok": true,
+        "name": "webkit transition/reentry stage 4"
+      },
+      {
+        "ok": true,
+        "name": "webkit transition/reentry stage 8"
+      },
+      {
+        "ok": true,
+        "name": "webkit transition/reentry stage 1"
+      },
+      {
+        "ok": true,
+        "name": "webkit stage changes retire owned textures"
+      },
+      {
+        "ok": true,
+        "name": "webkit 60 Hz preserves supersampling"
+      },
+      {
+        "ok": true,
+        "name": "webkit sustained 40 Hz switches to native pixels"
+      },
+      {
+        "ok": true,
+        "name": "webkit explicit high quality remains locked"
+      },
+      {
+        "ok": true,
+        "name": "webkit low-spec auto quality"
+      },
+      {
+        "ok": true,
+        "name": "webkit low-spec high quality"
+      },
+      {
+        "ok": true,
+        "name": "webkit low-spec performance quality"
+      }
+    ],
+    "errors": [],
+    "cadence": [
+      {
+        "engine": "chromium",
+        "medianMs": 16.699999999999818,
+        "p95Ms": 33.29999999999927,
+        "ss": 2
+      },
+      {
+        "engine": "firefox",
+        "medianMs": 16.68000000000029,
+        "p95Ms": 50,
+        "ss": 2
+      },
+      {
+        "engine": "webkit",
+        "medianMs": 16,
+        "p95Ms": 46,
+        "ss": 2
+      }
+    ]
+  },
+  "builderInputs": [
+    {
+      "stage": 2,
+      "editableInputs": 200
+    },
+    {
+      "stage": 3,
+      "editableInputs": 192
+    },
+    {
+      "stage": 4,
+      "editableInputs": 319
+    },
+    {
+      "stage": 6,
+      "editableInputs": 307
+    },
+    {
+      "stage": 7,
+      "editableInputs": 108
+    },
+    {
+      "stage": 8,
+      "editableInputs": 389
+    },
+    {
+      "stage": 9,
+      "editableInputs": 108
+    },
+    {
+      "output": "assets\\game\\shared\\atlases\\stage_runtime_atlases.js"
+    },
+    {
+      "output": "assets\\game\\levels\\stage_05\\enemies\\stage5_runtime_atlas.js"
+    },
+    {
+      "output": "assets\\game\\levels\\stage_05\\enemies\\stage5_runtime_atlas.png"
+    }
+  ],
+  "renderSubmission": [
+    {
+      "stage": 1,
+      "timing": {
+        "median": 0.8999999761581421,
+        "p95": 3.6999999284744263,
+        "max": 153.39999997615814,
+        "ss": 2
+      },
+      "memory": {
+        "images": 252,
+        "rgbaReferenceBytes": 746748472,
+        "uniqueURLs": 252,
+        "uniqueRGBAEstimate": 746748472,
+        "rotationBytes": 5493328,
+        "managed": {
+          "decodedImages": 252,
+          "decodedRGBAEstimate": 746748472,
+          "cells": 75,
+          "cellRGBAEstimate": 20681596
+        }
+      },
+      "loading": {
+        "ready": true,
+        "progress": 1,
+        "loaded": 48,
+        "failed": 0,
+        "total": 48
+      },
+      "geometry": []
+    },
+    {
+      "stage": 4,
+      "timing": {
+        "median": 1.5,
+        "p95": 37.39999997615814,
+        "max": 76.59999990463257,
+        "ss": 2
+      },
+      "memory": {
+        "images": 246,
+        "rgbaReferenceBytes": 897977108,
+        "uniqueURLs": 246,
+        "uniqueRGBAEstimate": 897977108,
+        "rotationBytes": 11422496,
+        "managed": {
+          "decodedImages": 246,
+          "decodedRGBAEstimate": 897977108,
+          "cells": 107,
+          "cellRGBAEstimate": 31874604
+        }
+      },
+      "loading": {
+        "ready": true,
+        "progress": 1,
+        "loaded": 28,
+        "failed": 0,
+        "total": 28
+      },
+      "geometry": []
+    },
+    {
+      "stage": 8,
+      "timing": {
+        "median": 2.399999976158142,
+        "p95": 38.299999952316284,
+        "max": 57.89999997615814,
+        "ss": 2
+      },
+      "memory": {
+        "images": 636,
+        "rgbaReferenceBytes": 1580227964,
+        "uniqueURLs": 636,
+        "uniqueRGBAEstimate": 1580227964,
+        "rotationBytes": 0,
+        "managed": {
+          "decodedImages": 636,
+          "decodedRGBAEstimate": 1580227964,
+          "cells": 150,
+          "cellRGBAEstimate": 26058892
+        }
+      },
+      "loading": {
+        "ready": true,
+        "progress": 1,
+        "loaded": 77,
+        "failed": 0,
+        "total": 77
+      },
+      "geometry": []
+    }
+  ],
+  "memoryCaveat": "RGBA estimate of retained unique images; excludes process, driver and actual GPU allocations.",
+  "runtimeSHA256": {
+    "assets/game.js": "812e40144f9ee3b82d1e325cc1ab6e7dad0283234ce3be4101db357bdc71b58c",
+    "assets/asset_paths_1007.js": "a49f5e2347601a7af0b61aad865f66b158e6638b6906b3cafc7c1402125792e1",
+    "assets/asset_memory_1007.js": "9a72fac7161576b856822ecd31a0ce3e2e430c1173bdd360cdbfa80166b8c9e5",
+    "assets/pilot_portraits_1005.js": "ce76087f3ddb74ff3c31adbfd5d23a98dc4707e8a6e7d11486f0c111207c389f",
+    "assets/cole_portraits_1005.js": "ac1cb6cc23a0184d107e41ba61f347a76e917787042518138ff61d5d5e3d290f",
+    "index.html": "64769d5b22f54fd448238fac54d14f074651d68beea94e47acd6357c902da0bc",
+    "assets/manifest.js": "d802b23b7efc764dc400983d0488aa8e234af320fe1bf62ecb7e991014f4aa8a"
+  },
+  "nativeErrors": [],
+  "assetLibrary": {
+    "physicalFiles": 3970,
+    "logicalFrames": 11621,
+    "preview": "on-demand image or authored atlas crop",
+    "verified": [
+      "owner filter",
+      "search",
+      "physical files",
+      "logical frames",
+      "texture preview"
+    ]
+  },
+  "regression": {
+    "assertions": 7697,
+    "errors": 0,
+    "exitCode": 0,
+    "banner": "FALVA/LIZZIE BUILD OK, 0 ERRORS"
+  }
+}

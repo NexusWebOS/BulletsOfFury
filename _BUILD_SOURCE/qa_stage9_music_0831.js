@@ -46,7 +46,7 @@ const server=http.createServer((req,res)=>{
   const rival=await playback('rival');
   const report={bonus,rival,errors};
   console.log(JSON.stringify(report,null,2));
-  const expected='assets/game/music/Rival.mp3';
+  const expected='assets/game/shared/audio/music/Rival.mp3';
   const ok=[bonus,rival].every(x=>x.src===expected&&x.currentTime>0.05&&!x.paused&&
     x.readyState>=2&&x.isCurrent)&&!errors.length;
   await browser.close();server.close();if(!ok)process.exitCode=1;

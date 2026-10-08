@@ -11,8 +11,8 @@ const GP4_BASE={begin:beginStage,update:updatePlay,world:drawWorld,enemy:drawEne
 // comes from the same approved blue Nightwing source family, including damage.
 for(const [k,file] of [['top','ace_top'],['belly','ace_belly'],['damaged','ace_damaged'],
  ...Array.from({length:8},(_,i)=>['br'+i,'ace_br'+i]),...Array.from({length:8},(_,i)=>['so'+i,'ace_so'+i])])
- XART._src['gp4_ace_'+k]='assets/game/bosses/skycarrier/'+file+'.png';
-for(const m of ['body','wingL','wingR'])for(const v of ['','_dmg'])XART._src['gp4_acem_'+m+v]='assets/game/bosses/skycarrier/ace_mod_'+m+v+'.png';
+ XART._src['gp4_ace_'+k]='assets/game/levels/stage_06/boss/bosses/skycarrier/'+file+'.png';
+for(const m of ['body','wingL','wingR'])for(const v of ['','_dmg'])XART._src['gp4_acem_'+m+v]='assets/game/levels/stage_06/boss/bosses/skycarrier/ace_mod_'+m+v+'.png';
 function gp4AceWarm(){
  for(const k of Object.keys(XART._src))if(k.startsWith('gp4_ace')||k.startsWith('sky4i_'))XART.rdy(k);
 }
@@ -283,9 +283,9 @@ mm1003Tick=function(e,dt){const A=e._mm1003;if(!A)return GP4_MM_TICK.apply(this,
 const GP4_MAP_KEYS=[1,2,3,4,5,6,7,8,'hub'];
 // Generated sheet order: infernal ruins -> 8, desert highway -> 4, orbital port -> 5.
 const GP4_MAP_FILE={1:1,2:2,3:3,4:5,5:8,6:6,7:7,8:4,hub:'hub'};
-XART._src.gp4_bridge='assets/game/gameplay_1004/bridge.png';XART.rdy('gp4_bridge');
+XART._src.gp4_bridge='assets/game/shared/campaign/gameplay_1004/bridge.png';XART.rdy('gp4_bridge');
 for(const k of GP4_MAP_KEYS)for(const v of ['','_lock','_shadow','_glow']){
- const key='gp4_island_'+k+v;XART._src[key]='assets/game/gameplay_1004/island_'+GP4_MAP_FILE[k]+v+'.png';XART.rdy(key);
+ const key='gp4_island_'+k+v;XART._src[key]='assets/game/shared/campaign/gameplay_1004/island_'+GP4_MAP_FILE[k]+v+'.png';XART.rdy(key);
 }
 Object.assign(SSEL_POS,{1:[350,250],2:[700,250],3:[1050,250],4:[1050,600],5:[1050,950],6:[700,950],7:[350,950],8:[350,600]});
 cmap2Order._o=null;

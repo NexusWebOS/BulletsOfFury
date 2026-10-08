@@ -77,7 +77,7 @@ def main():
     print('\n--- XART registration (paste into game.js) ---')
     print('  const S9A_REELS={' + ','.join("%s:%d" % (p, n) for p, n in reg) + '};')
     print("  for(const _k in S9A_REELS) for(let _i=0;_i<S9A_REELS[_k];_i++)")
-    print("    X._src[_k+'_'+_i]='assets/game/s9_attacks/'+_k+'_'+_i+'.png';")
+    print("    X._src[_k+'_'+_i]='assets/game/levels/stage_09/projectiles/s9_attacks/'+_k+'_'+_i+'.png';")
     print('\n' + ('WROTE ' + DST if write else 'DRY RUN - pass --write'))
 
 

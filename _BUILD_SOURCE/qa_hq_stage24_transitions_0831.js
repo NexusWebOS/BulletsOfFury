@@ -15,7 +15,7 @@ function pngInfo(path) {
   return { width: b.readUInt32BE(16), height: b.readUInt32BE(20), colorType: b[25] };
 }
 
-const hq = pngInfo('assets/game/cinematic/hq_command_deck_v2.png');
+const hq = pngInfo('assets/game/shared/cinematics/cinematic/hq_command_deck_v2.png');
 ok('HQ cinematic plate is full-resolution 4:3', hq.width === 1448 && hq.height === 1086,
   `${hq.width}x${hq.height}`);
 ok('HQ cinematic plate is registered', /cut_furyhq_command_center[^\n]*hq_command_deck_v2\.png/.test(src));
@@ -47,7 +47,7 @@ for (const degrees of [-35, 0, 35]) {
 }
 
 for (let i = 0; i < 8; i++) {
-  const path = `assets/game/stage4_warfare/s4w_spread_round_${String(i).padStart(2, '0')}.png`;
+  const path = `assets/game/levels/stage_04/boss/stage4_warfare/s4w_spread_round_${String(i).padStart(2, '0')}.png`;
   const p = pngInfo(path);
   ok(`Stage 4 projectile frame ${i} is normalized transparent 96x96`,
     p.width === 96 && p.height === 96 && p.colorType === 6,

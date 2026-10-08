@@ -1,0 +1,4860 @@
+{
+  "owner": "levels/stage_03",
+  "loading": {
+    "boot": "UI, fonts, idle portraits only",
+    "deployment": "selected pilot portraits, shared player weapons, required stage textures",
+    "transition": "release previous stage textures and derived caches; preserve explicitly queued copied-form dependencies",
+    "quality": "automatic native resolution on low-memory/low-core devices; reduce supersampling after sustained slow play frames"
+  },
+  "sharedDependencies": [
+    "shared/fonts",
+    "shared/ui",
+    "shared/player_weapons",
+    "shared/effects",
+    "shared/ships"
+  ],
+  "assets": [
+    {
+      "key": "nst3_master",
+      "root": "nst3_master",
+      "path": "assets/game/levels/stage_03/stage/nst3_master_v2.png",
+      "owner": "levels/stage_03",
+      "cell": null
+    },
+    {
+      "key": "lvl3_master",
+      "root": "nca_layout_levels_stage_03_stage_0",
+      "path": "assets/game/levels/stage_03/stage/frames_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "layout_levels_stage_03_stage_0",
+        808,
+        4,
+        325,
+        2600
+      ]
+    },
+    {
+      "key": "nst3_upper",
+      "root": "nca_layout_levels_stage_03_stage_0",
+      "path": "assets/game/levels/stage_03/stage/frames_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "layout_levels_stage_03_stage_0",
+        4,
+        4,
+        800,
+        3400
+      ]
+    },
+    {
+      "key": "bfx_glacier_m_5",
+      "root": "nca_eproj_s3",
+      "path": "assets/game/levels/stage_03/projectiles/eproj_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "eproj_s3",
+        0,
+        0,
+        172,
+        306
+      ]
+    },
+    {
+      "key": "bfx_glacier_p_0",
+      "root": "nca_eproj_s3",
+      "path": "assets/game/levels/stage_03/projectiles/eproj_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "eproj_s3",
+        174,
+        0,
+        77,
+        285
+      ]
+    },
+    {
+      "key": "bfx_glacier_p_1",
+      "root": "nca_eproj_s3",
+      "path": "assets/game/levels/stage_03/projectiles/eproj_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "eproj_s3",
+        253,
+        0,
+        77,
+        285
+      ]
+    },
+    {
+      "key": "bfx_glacier_p_2",
+      "root": "nca_eproj_s3",
+      "path": "assets/game/levels/stage_03/projectiles/eproj_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "eproj_s3",
+        332,
+        0,
+        77,
+        285
+      ]
+    },
+    {
+      "key": "bfx_glacier_p_3",
+      "root": "nca_eproj_s3",
+      "path": "assets/game/levels/stage_03/projectiles/eproj_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "eproj_s3",
+        411,
+        0,
+        77,
+        285
+      ]
+    },
+    {
+      "key": "bfx_glacier_p_4",
+      "root": "nca_eproj_s3",
+      "path": "assets/game/levels/stage_03/projectiles/eproj_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "eproj_s3",
+        490,
+        0,
+        77,
+        285
+      ]
+    },
+    {
+      "key": "bfx_glacier_p_5",
+      "root": "nca_eproj_s3",
+      "path": "assets/game/levels/stage_03/projectiles/eproj_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "eproj_s3",
+        569,
+        0,
+        77,
+        285
+      ]
+    },
+    {
+      "key": "bfx_glacier_m_4",
+      "root": "nca_eproj_s3",
+      "path": "assets/game/levels/stage_03/projectiles/eproj_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "eproj_s3",
+        648,
+        0,
+        262,
+        260
+      ]
+    },
+    {
+      "key": "bfx_cryo_p_0",
+      "root": "nca_eproj_s3",
+      "path": "assets/game/levels/stage_03/projectiles/eproj_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "eproj_s3",
+        912,
+        0,
+        130,
+        257
+      ]
+    },
+    {
+      "key": "bfx_cryo_p_1",
+      "root": "nca_eproj_s3",
+      "path": "assets/game/levels/stage_03/projectiles/eproj_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "eproj_s3",
+        1044,
+        0,
+        130,
+        257
+      ]
+    },
+    {
+      "key": "bfx_cryo_p_2",
+      "root": "nca_eproj_s3",
+      "path": "assets/game/levels/stage_03/projectiles/eproj_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "eproj_s3",
+        0,
+        308,
+        130,
+        257
+      ]
+    },
+    {
+      "key": "bfx_cryo_p_3",
+      "root": "nca_eproj_s3",
+      "path": "assets/game/levels/stage_03/projectiles/eproj_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "eproj_s3",
+        132,
+        308,
+        130,
+        257
+      ]
+    },
+    {
+      "key": "bfx_cryo_p_4",
+      "root": "nca_eproj_s3",
+      "path": "assets/game/levels/stage_03/projectiles/eproj_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "eproj_s3",
+        264,
+        308,
+        130,
+        257
+      ]
+    },
+    {
+      "key": "bfx_cryo_p_5",
+      "root": "nca_eproj_s3",
+      "path": "assets/game/levels/stage_03/projectiles/eproj_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "eproj_s3",
+        396,
+        308,
+        130,
+        257
+      ]
+    },
+    {
+      "key": "bfx_glacier_m_2",
+      "root": "nca_eproj_s3",
+      "path": "assets/game/levels/stage_03/projectiles/eproj_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "eproj_s3",
+        528,
+        308,
+        134,
+        253
+      ]
+    },
+    {
+      "key": "bfx_glacier_m_3",
+      "root": "nca_eproj_s3",
+      "path": "assets/game/levels/stage_03/projectiles/eproj_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "eproj_s3",
+        664,
+        308,
+        194,
+        239
+      ]
+    },
+    {
+      "key": "bfx_glacier_i_2",
+      "root": "nca_eproj_s3",
+      "path": "assets/game/levels/stage_03/projectiles/eproj_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "eproj_s3",
+        860,
+        308,
+        235,
+        236
+      ]
+    },
+    {
+      "key": "bfx_glacier_i_3",
+      "root": "nca_eproj_s3",
+      "path": "assets/game/levels/stage_03/projectiles/eproj_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "eproj_s3",
+        0,
+        567,
+        208,
+        232
+      ]
+    },
+    {
+      "key": "bfx_cryo_i_1",
+      "root": "nca_eproj_s3",
+      "path": "assets/game/levels/stage_03/projectiles/eproj_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "eproj_s3",
+        210,
+        567,
+        229,
+        228
+      ]
+    },
+    {
+      "key": "bfx_glacier_i_5",
+      "root": "nca_eproj_s3",
+      "path": "assets/game/levels/stage_03/projectiles/eproj_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "eproj_s3",
+        441,
+        567,
+        231,
+        218
+      ]
+    },
+    {
+      "key": "bfx_glacier_i_4",
+      "root": "nca_eproj_s3",
+      "path": "assets/game/levels/stage_03/projectiles/eproj_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "eproj_s3",
+        674,
+        567,
+        205,
+        212
+      ]
+    },
+    {
+      "key": "bfx_cryo_i_2",
+      "root": "nca_eproj_s3",
+      "path": "assets/game/levels/stage_03/projectiles/eproj_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "eproj_s3",
+        881,
+        567,
+        218,
+        205
+      ]
+    },
+    {
+      "key": "bfx_glacier_i_1",
+      "root": "nca_eproj_s3",
+      "path": "assets/game/levels/stage_03/projectiles/eproj_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "eproj_s3",
+        0,
+        801,
+        190,
+        202
+      ]
+    },
+    {
+      "key": "bfx_cryo_m_2",
+      "root": "nca_eproj_s3",
+      "path": "assets/game/levels/stage_03/projectiles/eproj_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "eproj_s3",
+        192,
+        801,
+        208,
+        198
+      ]
+    },
+    {
+      "key": "bfx_glacier_m_1",
+      "root": "nca_eproj_s3",
+      "path": "assets/game/levels/stage_03/projectiles/eproj_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "eproj_s3",
+        402,
+        801,
+        135,
+        194
+      ]
+    },
+    {
+      "key": "bfx_cryo_i_3",
+      "root": "nca_eproj_s3",
+      "path": "assets/game/levels/stage_03/projectiles/eproj_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "eproj_s3",
+        539,
+        801,
+        212,
+        189
+      ]
+    },
+    {
+      "key": "bfx_cryo_m_3",
+      "root": "nca_eproj_s3",
+      "path": "assets/game/levels/stage_03/projectiles/eproj_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "eproj_s3",
+        753,
+        801,
+        199,
+        188
+      ]
+    },
+    {
+      "key": "bfx_cryo_i_0",
+      "root": "nca_eproj_s3",
+      "path": "assets/game/levels/stage_03/projectiles/eproj_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "eproj_s3",
+        0,
+        1005,
+        179,
+        183
+      ]
+    },
+    {
+      "key": "bfx_cryo_i_5",
+      "root": "nca_eproj_s3",
+      "path": "assets/game/levels/stage_03/projectiles/eproj_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "eproj_s3",
+        954,
+        801,
+        182,
+        183
+      ]
+    },
+    {
+      "key": "bfx_cryo_m_5",
+      "root": "nca_eproj_s3",
+      "path": "assets/game/levels/stage_03/projectiles/eproj_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "eproj_s3",
+        181,
+        1005,
+        186,
+        177
+      ]
+    },
+    {
+      "key": "bfx_cryo_m_4",
+      "root": "nca_eproj_s3",
+      "path": "assets/game/levels/stage_03/projectiles/eproj_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "eproj_s3",
+        369,
+        1005,
+        188,
+        174
+      ]
+    },
+    {
+      "key": "bfx_cryo_m_1",
+      "root": "nca_eproj_s3",
+      "path": "assets/game/levels/stage_03/projectiles/eproj_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "eproj_s3",
+        559,
+        1005,
+        169,
+        160
+      ]
+    },
+    {
+      "key": "bfx_cryo_m_0",
+      "root": "nca_eproj_s3",
+      "path": "assets/game/levels/stage_03/projectiles/eproj_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "eproj_s3",
+        730,
+        1005,
+        139,
+        139
+      ]
+    },
+    {
+      "key": "bfx_glacier_i_0",
+      "root": "nca_eproj_s3",
+      "path": "assets/game/levels/stage_03/projectiles/eproj_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "eproj_s3",
+        871,
+        1005,
+        120,
+        124
+      ]
+    },
+    {
+      "key": "bfx_cryo_i_4",
+      "root": "nca_eproj_s3",
+      "path": "assets/game/levels/stage_03/projectiles/eproj_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "eproj_s3",
+        993,
+        1005,
+        197,
+        107
+      ]
+    },
+    {
+      "key": "bfx_glacier_m_0",
+      "root": "nca_eproj_s3",
+      "path": "assets/game/levels/stage_03/projectiles/eproj_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "eproj_s3",
+        0,
+        1190,
+        88,
+        80
+      ]
+    },
+    {
+      "key": "nvi1_dama_c",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        252,
+        0,
+        297,
+        306
+      ]
+    },
+    {
+      "key": "nvi0_dama_c",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        0,
+        0,
+        250,
+        307
+      ]
+    },
+    {
+      "key": "ac7_intact_c",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        400,
+        1406,
+        124,
+        120
+      ]
+    },
+    {
+      "key": "ac7_intact_l",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        526,
+        1406,
+        124,
+        120
+      ]
+    },
+    {
+      "key": "ac7_intact_r",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        526,
+        1406,
+        124,
+        120
+      ]
+    },
+    {
+      "key": "ac7_intact_hl",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        652,
+        1406,
+        124,
+        120
+      ]
+    },
+    {
+      "key": "ac7_intact_hr",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        652,
+        1406,
+        124,
+        120
+      ]
+    },
+    {
+      "key": "nvi0_crit_c",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        551,
+        0,
+        202,
+        262
+      ]
+    },
+    {
+      "key": "nvi0_intact_c",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        755,
+        0,
+        202,
+        248
+      ]
+    },
+    {
+      "key": "ac3_intact_c",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        880,
+        1210,
+        104,
+        124
+      ]
+    },
+    {
+      "key": "ac3_intact_l",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        986,
+        1210,
+        104,
+        124
+      ]
+    },
+    {
+      "key": "ac3_intact_r",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        986,
+        1210,
+        104,
+        124
+      ]
+    },
+    {
+      "key": "ac3_intact_hl",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        1092,
+        1210,
+        104,
+        124
+      ]
+    },
+    {
+      "key": "ac3_intact_hr",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        1092,
+        1210,
+        104,
+        124
+      ]
+    },
+    {
+      "key": "ac10_intact_c",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        1410,
+        1210,
+        98,
+        124
+      ]
+    },
+    {
+      "key": "ac10_intact_l",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        0,
+        1406,
+        98,
+        124
+      ]
+    },
+    {
+      "key": "ac10_intact_r",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        0,
+        1406,
+        98,
+        124
+      ]
+    },
+    {
+      "key": "ac10_intact_hl",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        100,
+        1406,
+        98,
+        124
+      ]
+    },
+    {
+      "key": "ac10_intact_hr",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        100,
+        1406,
+        98,
+        124
+      ]
+    },
+    {
+      "key": "nvi1_intact_c",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        1380,
+        999,
+        188,
+        194
+      ]
+    },
+    {
+      "key": "nvi1_crit_c",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        0,
+        1210,
+        188,
+        194
+      ]
+    },
+    {
+      "key": "ac3_inta_c",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        880,
+        1210,
+        104,
+        124
+      ]
+    },
+    {
+      "key": "ac3_dama_c",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        1304,
+        1210,
+        104,
+        124
+      ]
+    },
+    {
+      "key": "ac3_crit_c",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        1198,
+        1210,
+        104,
+        124
+      ]
+    },
+    {
+      "key": "ac10_inta_c",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        1410,
+        1210,
+        98,
+        124
+      ]
+    },
+    {
+      "key": "ac10_dama_c",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        200,
+        1406,
+        98,
+        124
+      ]
+    },
+    {
+      "key": "ac10_crit_c",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        300,
+        1406,
+        98,
+        124
+      ]
+    },
+    {
+      "key": "ac7_inta_c",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        400,
+        1406,
+        124,
+        120
+      ]
+    },
+    {
+      "key": "ac7_dama_c",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        778,
+        1406,
+        124,
+        120
+      ]
+    },
+    {
+      "key": "ac7_crit_c",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        904,
+        1406,
+        124,
+        120
+      ]
+    },
+    {
+      "key": "nsb_cryo_spear",
+      "root": "nca_mini_s3",
+      "path": "assets/game/levels/stage_03/miniboss/mini_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "mini_s3",
+        0,
+        0,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "nsb_rimewall_critical",
+      "root": "nca_boss_s3",
+      "path": "assets/game/levels/stage_03/boss/boss_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "boss_s3",
+        0,
+        0,
+        242,
+        256
+      ]
+    },
+    {
+      "key": "nsb_rimewall_damaged",
+      "root": "nca_boss_s3",
+      "path": "assets/game/levels/stage_03/boss/boss_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "boss_s3",
+        0,
+        258,
+        241,
+        256
+      ]
+    },
+    {
+      "key": "nsb_rimewall_intact",
+      "root": "nca_boss_s3",
+      "path": "assets/game/levels/stage_03/boss/boss_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "boss_s3",
+        244,
+        0,
+        242,
+        256
+      ]
+    },
+    {
+      "key": "nef_s3_frozen_turret_intact_idle",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        959,
+        0,
+        223,
+        228
+      ]
+    },
+    {
+      "key": "nef_s3_frozen_turret_intact",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        959,
+        0,
+        223,
+        228
+      ]
+    },
+    {
+      "key": "nef_s3_frozen_turret_damaged_idle",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        1184,
+        0,
+        223,
+        228
+      ]
+    },
+    {
+      "key": "nef_s3_frozen_turret_damaged",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        1184,
+        0,
+        223,
+        228
+      ]
+    },
+    {
+      "key": "nef_s3_frozen_turret_critical_idle",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        0,
+        309,
+        223,
+        228
+      ]
+    },
+    {
+      "key": "nef_s3_frozen_turret_critical",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        0,
+        309,
+        223,
+        228
+      ]
+    },
+    {
+      "key": "nef_s3_snow_tank_intact_idle",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        225,
+        309,
+        216,
+        228
+      ]
+    },
+    {
+      "key": "nef_s3_snow_tank_intact",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        225,
+        309,
+        216,
+        228
+      ]
+    },
+    {
+      "key": "nef_s3_snow_tank_damaged_idle",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        443,
+        309,
+        216,
+        228
+      ]
+    },
+    {
+      "key": "nef_s3_snow_tank_damaged",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        443,
+        309,
+        216,
+        228
+      ]
+    },
+    {
+      "key": "nef_s3_snow_tank_critical_idle",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        661,
+        309,
+        216,
+        228
+      ]
+    },
+    {
+      "key": "nef_s3_snow_tank_critical",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        661,
+        309,
+        216,
+        228
+      ]
+    },
+    {
+      "key": "nef_s3_aa_sled_intact_idle",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        879,
+        309,
+        203,
+        228
+      ]
+    },
+    {
+      "key": "nef_s3_aa_sled_intact",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        879,
+        309,
+        203,
+        228
+      ]
+    },
+    {
+      "key": "nef_s3_aa_sled_damaged_idle",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        1084,
+        309,
+        203,
+        228
+      ]
+    },
+    {
+      "key": "nef_s3_aa_sled_damaged",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        1084,
+        309,
+        203,
+        228
+      ]
+    },
+    {
+      "key": "nef_s3_aa_sled_critical_idle",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        1289,
+        309,
+        203,
+        228
+      ]
+    },
+    {
+      "key": "nef_s3_aa_sled_critical",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        1289,
+        309,
+        203,
+        228
+      ]
+    },
+    {
+      "key": "nef_s3_ice_crawler_intact_idle",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        0,
+        539,
+        202,
+        228
+      ]
+    },
+    {
+      "key": "nef_s3_ice_crawler_intact",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        0,
+        539,
+        202,
+        228
+      ]
+    },
+    {
+      "key": "nef_s3_ice_crawler_damaged_idle",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        204,
+        539,
+        202,
+        228
+      ]
+    },
+    {
+      "key": "nef_s3_ice_crawler_damaged",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        204,
+        539,
+        202,
+        228
+      ]
+    },
+    {
+      "key": "nef_s3_ice_crawler_critical_idle",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        408,
+        539,
+        202,
+        228
+      ]
+    },
+    {
+      "key": "nef_s3_ice_crawler_critical",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        408,
+        539,
+        202,
+        228
+      ]
+    },
+    {
+      "key": "nef_s3_cryo_barge_intact_idle",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        612,
+        539,
+        163,
+        228
+      ]
+    },
+    {
+      "key": "nef_s3_cryo_barge_intact",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        612,
+        539,
+        163,
+        228
+      ]
+    },
+    {
+      "key": "nef_s3_cryo_barge_damaged_idle",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        777,
+        539,
+        163,
+        228
+      ]
+    },
+    {
+      "key": "nef_s3_cryo_barge_damaged",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        777,
+        539,
+        163,
+        228
+      ]
+    },
+    {
+      "key": "nef_s3_cryo_barge_critical_idle",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        942,
+        539,
+        163,
+        228
+      ]
+    },
+    {
+      "key": "nef_s3_cryo_barge_critical",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        942,
+        539,
+        163,
+        228
+      ]
+    },
+    {
+      "key": "nef_s3_explosive_cryo_canister_intact_idle",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        1107,
+        539,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s3_explosive_cryo_canister_intact",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        1107,
+        539,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s3_explosive_cryo_canister_damaged_idle",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        1254,
+        539,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s3_explosive_cryo_canister_damaged",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        1254,
+        539,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s3_explosive_cryo_canister_critical_idle",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        1401,
+        539,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s3_explosive_cryo_canister_critical",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        1401,
+        539,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s3_tracked_frost_artillery_intact_idle",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        0,
+        769,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s3_tracked_frost_artillery_intact",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        0,
+        769,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s3_tracked_frost_artillery_damaged_idle",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        147,
+        769,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s3_tracked_frost_artillery_damaged",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        147,
+        769,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s3_tracked_frost_artillery_critical_idle",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        294,
+        769,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s3_tracked_frost_artillery_critical",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        294,
+        769,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s3_snowmobile_gunner_intact_idle",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        441,
+        769,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s3_snowmobile_gunner_intact",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        441,
+        769,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s3_snowmobile_gunner_damaged_idle",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        588,
+        769,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s3_snowmobile_gunner_damaged",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        588,
+        769,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s3_snowmobile_gunner_critical_idle",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        735,
+        769,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s3_snowmobile_gunner_critical",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        735,
+        769,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s3_shard_mine_intact_idle",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        882,
+        769,
+        228,
+        219
+      ]
+    },
+    {
+      "key": "nef_s3_shard_mine_intact",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        882,
+        769,
+        228,
+        219
+      ]
+    },
+    {
+      "key": "nef_s3_shard_mine_damaged_idle",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        1112,
+        769,
+        228,
+        219
+      ]
+    },
+    {
+      "key": "nef_s3_shard_mine_damaged",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        1112,
+        769,
+        228,
+        219
+      ]
+    },
+    {
+      "key": "nef_s3_shard_mine_critical_idle",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        1342,
+        769,
+        228,
+        219
+      ]
+    },
+    {
+      "key": "nef_s3_shard_mine_critical",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        1342,
+        769,
+        228,
+        219
+      ]
+    },
+    {
+      "key": "nef_s3_elite_ice_interceptor_intact_idle",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        0,
+        999,
+        228,
+        209
+      ]
+    },
+    {
+      "key": "nef_s3_elite_ice_interceptor_intact",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        0,
+        999,
+        228,
+        209
+      ]
+    },
+    {
+      "key": "nef_s3_elite_ice_interceptor_damaged_idle",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        230,
+        999,
+        228,
+        209
+      ]
+    },
+    {
+      "key": "nef_s3_elite_ice_interceptor_damaged",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        230,
+        999,
+        228,
+        209
+      ]
+    },
+    {
+      "key": "nef_s3_elite_ice_interceptor_critical_idle",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        460,
+        999,
+        228,
+        209
+      ]
+    },
+    {
+      "key": "nef_s3_elite_ice_interceptor_critical",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        460,
+        999,
+        228,
+        209
+      ]
+    },
+    {
+      "key": "nef_s3_ice_skimmer_intact_idle",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        690,
+        999,
+        228,
+        197
+      ]
+    },
+    {
+      "key": "nef_s3_ice_skimmer_intact",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        690,
+        999,
+        228,
+        197
+      ]
+    },
+    {
+      "key": "nef_s3_ice_skimmer_damaged_idle",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        920,
+        999,
+        228,
+        197
+      ]
+    },
+    {
+      "key": "nef_s3_ice_skimmer_damaged",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        920,
+        999,
+        228,
+        197
+      ]
+    },
+    {
+      "key": "nef_s3_ice_skimmer_critical_idle",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        1150,
+        999,
+        228,
+        197
+      ]
+    },
+    {
+      "key": "nef_s3_ice_skimmer_critical",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        1150,
+        999,
+        228,
+        197
+      ]
+    },
+    {
+      "key": "nef_s3_glacier_drone_intact_idle",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        190,
+        1210,
+        228,
+        179
+      ]
+    },
+    {
+      "key": "nef_s3_glacier_drone_intact",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        190,
+        1210,
+        228,
+        179
+      ]
+    },
+    {
+      "key": "nef_s3_glacier_drone_damaged_idle",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        420,
+        1210,
+        228,
+        179
+      ]
+    },
+    {
+      "key": "nef_s3_glacier_drone_damaged",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        420,
+        1210,
+        228,
+        179
+      ]
+    },
+    {
+      "key": "nef_s3_glacier_drone_critical_idle",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        650,
+        1210,
+        228,
+        179
+      ]
+    },
+    {
+      "key": "nef_s3_glacier_drone_critical",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "en_s3",
+        650,
+        1210,
+        228,
+        179
+      ]
+    },
+    {
+      "key": "nca_boss_s3",
+      "root": "nca_boss_s3",
+      "path": "assets/game/levels/stage_03/boss/boss_s3.png",
+      "owner": "levels/stage_03",
+      "cell": null
+    },
+    {
+      "key": "nca_en_s3",
+      "root": "nca_en_s3",
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "cell": null
+    },
+    {
+      "key": "nca_eproj_s3",
+      "root": "nca_eproj_s3",
+      "path": "assets/game/levels/stage_03/projectiles/eproj_s3.png",
+      "owner": "levels/stage_03",
+      "cell": null
+    },
+    {
+      "key": "nca_mini_s3",
+      "root": "nca_mini_s3",
+      "path": "assets/game/levels/stage_03/miniboss/mini_s3.png",
+      "owner": "levels/stage_03",
+      "cell": null
+    },
+    {
+      "key": "nca_layout_levels_stage_03_stage_0",
+      "root": "nca_layout_levels_stage_03_stage_0",
+      "path": "assets/game/levels/stage_03/stage/frames_0.png",
+      "owner": "levels/stage_03",
+      "cell": null
+    },
+    {
+      "key": "frost_furious_beam_0920",
+      "root": "frost_furious_beam_0920",
+      "path": "assets/game/levels/stage_03/boss/bosses/frost/frost_furious_beam_0920.png",
+      "owner": "levels/stage_03",
+      "cell": null
+    },
+    {
+      "key": "overhaul_ground_base_3",
+      "root": "overhaul_ground_base_3",
+      "path": "assets/game/levels/stage_03/enemies/enemy_overhaul_0925/sprites/ground_base_stage3_ice.png",
+      "owner": "levels/stage_03",
+      "cell": null
+    },
+    {
+      "key": "overhaul_stage3_ice_jet_01",
+      "root": "overhaul_stage3_ice_jet_01",
+      "path": "assets/game/levels/stage_03/enemies/enemy_overhaul_0925/sprites/stage3_ice_jet_01.png",
+      "owner": "levels/stage_03",
+      "cell": null
+    },
+    {
+      "key": "overhaul_stage3_ice_jet_02",
+      "root": "overhaul_stage3_ice_jet_02",
+      "path": "assets/game/levels/stage_03/enemies/enemy_overhaul_0925/sprites/stage3_ice_jet_02.png",
+      "owner": "levels/stage_03",
+      "cell": null
+    },
+    {
+      "key": "overhaul_stage3_ice_drone_01",
+      "root": "overhaul_stage3_ice_drone_01",
+      "path": "assets/game/levels/stage_03/enemies/enemy_overhaul_0925/sprites/stage3_ice_drone_01.png",
+      "owner": "levels/stage_03",
+      "cell": null
+    },
+    {
+      "key": "s3thermo_strike_jet",
+      "root": "s3thermo_strike_jet",
+      "path": "assets/game/levels/stage_03/boss/bosses/stage3_thermo/strike_jet.png",
+      "owner": "levels/stage_03",
+      "cell": null
+    },
+    {
+      "key": "s3thermo_thermocloud",
+      "root": "s3thermo_thermocloud",
+      "path": "assets/game/levels/stage_03/boss/bosses/stage3_thermo/thermocloud.png",
+      "owner": "levels/stage_03",
+      "cell": null
+    },
+    {
+      "key": "s3thermo_therno_robonoid",
+      "root": "s3thermo_therno_robonoid",
+      "path": "assets/game/levels/stage_03/boss/bosses/stage3_thermo/therno_robonoid.png",
+      "owner": "levels/stage_03",
+      "cell": null
+    },
+    {
+      "key": "s3thermo_nuclear_fire",
+      "root": "s3thermo_nuclear_fire",
+      "path": "assets/game/levels/stage_03/boss/bosses/stage3_thermo/nuclear_fire.png",
+      "owner": "levels/stage_03",
+      "cell": null
+    },
+    {
+      "key": "s3thermo_ice_orb",
+      "root": "s3thermo_ice_orb",
+      "path": "assets/game/levels/stage_03/boss/bosses/stage3_thermo/ice_orb.png",
+      "owner": "levels/stage_03",
+      "cell": null
+    },
+    {
+      "key": "s3thermo_thermo_orb",
+      "root": "s3thermo_thermo_orb",
+      "path": "assets/game/levels/stage_03/boss/bosses/stage3_thermo/thermo_orb.png",
+      "owner": "levels/stage_03",
+      "cell": null
+    },
+    {
+      "key": "s3thermo_ice_shards",
+      "root": "s3thermo_ice_shards",
+      "path": "assets/game/levels/stage_03/boss/bosses/stage3_thermo/ice_shards.png",
+      "owner": "levels/stage_03",
+      "cell": null
+    },
+    {
+      "key": "s3thermo_fire_disintegrate",
+      "root": "s3thermo_fire_disintegrate",
+      "path": "assets/game/levels/stage_03/boss/bosses/stage3_thermo/fire_disintegrate.png",
+      "owner": "levels/stage_03",
+      "cell": null
+    },
+    {
+      "key": "s3thermo_nuclear_retina",
+      "root": "s3thermo_nuclear_retina",
+      "path": "assets/game/levels/stage_03/boss/bosses/stage3_thermo/nuclear_retina.png",
+      "owner": "levels/stage_03",
+      "cell": null
+    },
+    {
+      "key": "s3thermo_thermocloud_idle_sheet",
+      "root": "s3thermo_thermocloud_idle_sheet",
+      "path": "assets/game/levels/stage_03/boss/bosses/stage3_thermo/thermocloud_idle_sheet.png",
+      "owner": "levels/stage_03",
+      "cell": null
+    },
+    {
+      "key": "s3thermo_thermocloud_attack_sheet",
+      "root": "s3thermo_thermocloud_attack_sheet",
+      "path": "assets/game/levels/stage_03/boss/bosses/stage3_thermo/thermocloud_attack_sheet.png",
+      "owner": "levels/stage_03",
+      "cell": null
+    },
+    {
+      "key": "s3thermo_therno_attack_sheet",
+      "root": "s3thermo_therno_attack_sheet",
+      "path": "assets/game/levels/stage_03/boss/bosses/stage3_thermo/therno_attack_sheet.png",
+      "owner": "levels/stage_03",
+      "cell": null
+    },
+    {
+      "key": "s3thermo_nuclear_fire_sheet",
+      "root": "s3thermo_nuclear_fire_sheet",
+      "path": "assets/game/levels/stage_03/boss/bosses/stage3_thermo/nuclear_fire_sheet.png",
+      "owner": "levels/stage_03",
+      "cell": null
+    },
+    {
+      "key": "s3atk_mine_0",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        524,
+        524,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s3atk_mine_1",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        784,
+        524,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s3atk_mine_2",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        1044,
+        524,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s3atk_mine_3",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        1304,
+        524,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s3atk_mine_4",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        1564,
+        524,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s3atk_mine_5",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        1824,
+        524,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s3atk_mine_6",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        2084,
+        524,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s3atk_mine_7",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        2344,
+        524,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s3atk_interceptor_0",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        2344,
+        264,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s3atk_interceptor_1",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        2604,
+        264,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s3atk_interceptor_2",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        2864,
+        264,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s3atk_interceptor_3",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        3124,
+        264,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s3atk_interceptor_4",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        3384,
+        264,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s3atk_interceptor_5",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        3644,
+        264,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s3atk_interceptor_6",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        4,
+        524,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s3atk_interceptor_7",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        264,
+        524,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s3atk_sled_0",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        2604,
+        524,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s3atk_sled_1",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        2864,
+        524,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s3atk_sled_2",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        3124,
+        524,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s3atk_sled_3",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        3384,
+        524,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s3atk_sled_4",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        3644,
+        524,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s3atk_sled_5",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        4,
+        784,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s3atk_sled_6",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        264,
+        784,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s3atk_sled_7",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        524,
+        784,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s3atk_snowmobile_0",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        784,
+        784,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s3atk_snowmobile_1",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        1044,
+        784,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s3atk_snowmobile_2",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        1304,
+        784,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s3atk_snowmobile_3",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        1564,
+        784,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s3atk_snowmobile_4",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        1824,
+        784,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s3atk_snowmobile_5",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        2084,
+        784,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s3atk_snowmobile_6",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        2344,
+        784,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s3atk_snowmobile_7",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        2604,
+        784,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s3atk_crawler_0",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        264,
+        264,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s3atk_crawler_1",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        524,
+        264,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s3atk_crawler_2",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        784,
+        264,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s3atk_crawler_3",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        1044,
+        264,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s3atk_crawler_4",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        1304,
+        264,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s3atk_crawler_5",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        1564,
+        264,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s3atk_crawler_6",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        1824,
+        264,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s3atk_crawler_7",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        2084,
+        264,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s3atk_tank_0",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        2864,
+        784,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s3atk_tank_1",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        3124,
+        784,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s3atk_tank_2",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        3384,
+        784,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s3atk_tank_3",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        3644,
+        784,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s3atk_tank_4",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        4,
+        1044,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s3atk_tank_5",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        264,
+        1044,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s3atk_tank_6",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        524,
+        1044,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s3atk_tank_7",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        784,
+        1044,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s3atk_barge_0",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        2084,
+        4,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s3atk_barge_1",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        2344,
+        4,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s3atk_barge_2",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        2604,
+        4,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s3atk_barge_3",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        2864,
+        4,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s3atk_barge_4",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        3124,
+        4,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s3atk_barge_5",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        3384,
+        4,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s3atk_barge_6",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        3644,
+        4,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s3atk_barge_7",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        4,
+        264,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s3atk_artillery_0",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        4,
+        4,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s3atk_artillery_1",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        264,
+        4,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s3atk_artillery_2",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        524,
+        4,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s3atk_artillery_3",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        784,
+        4,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s3atk_artillery_4",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        1044,
+        4,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s3atk_artillery_5",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        1304,
+        4,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s3atk_artillery_6",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        1564,
+        4,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s3atk_artillery_7",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        1824,
+        4,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "s3dmg_mine_damaged_0",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        468,
+        2232,
+        228,
+        219
+      ]
+    },
+    {
+      "key": "s3dmg_mine_damaged_1",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        700,
+        2232,
+        228,
+        219
+      ]
+    },
+    {
+      "key": "s3dmg_mine_damaged_2",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        932,
+        2232,
+        228,
+        219
+      ]
+    },
+    {
+      "key": "s3dmg_mine_damaged_3",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        1164,
+        2232,
+        228,
+        219
+      ]
+    },
+    {
+      "key": "s3dmg_mine_damaged_4",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        1396,
+        2232,
+        228,
+        219
+      ]
+    },
+    {
+      "key": "s3dmg_mine_damaged_5",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        1628,
+        2232,
+        228,
+        219
+      ]
+    },
+    {
+      "key": "s3dmg_mine_damaged_6",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        1860,
+        2232,
+        228,
+        219
+      ]
+    },
+    {
+      "key": "s3dmg_mine_damaged_7",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        2092,
+        2232,
+        228,
+        219
+      ]
+    },
+    {
+      "key": "s3dmg_mine_critical_0",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        2686,
+        2000,
+        228,
+        219
+      ]
+    },
+    {
+      "key": "s3dmg_mine_critical_1",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        2918,
+        2000,
+        228,
+        219
+      ]
+    },
+    {
+      "key": "s3dmg_mine_critical_2",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        3150,
+        2000,
+        228,
+        219
+      ]
+    },
+    {
+      "key": "s3dmg_mine_critical_3",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        3382,
+        2000,
+        228,
+        219
+      ]
+    },
+    {
+      "key": "s3dmg_mine_critical_4",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        3614,
+        2000,
+        228,
+        219
+      ]
+    },
+    {
+      "key": "s3dmg_mine_critical_5",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        3846,
+        2000,
+        228,
+        219
+      ]
+    },
+    {
+      "key": "s3dmg_mine_critical_6",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        4,
+        2232,
+        228,
+        219
+      ]
+    },
+    {
+      "key": "s3dmg_mine_critical_7",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        236,
+        2232,
+        228,
+        219
+      ]
+    },
+    {
+      "key": "s3dmg_interceptor_damaged_0",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        236,
+        2455,
+        228,
+        209
+      ]
+    },
+    {
+      "key": "s3dmg_interceptor_damaged_1",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        468,
+        2455,
+        228,
+        209
+      ]
+    },
+    {
+      "key": "s3dmg_interceptor_damaged_2",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        700,
+        2455,
+        228,
+        209
+      ]
+    },
+    {
+      "key": "s3dmg_interceptor_damaged_3",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        932,
+        2455,
+        228,
+        209
+      ]
+    },
+    {
+      "key": "s3dmg_interceptor_damaged_4",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        1164,
+        2455,
+        228,
+        209
+      ]
+    },
+    {
+      "key": "s3dmg_interceptor_damaged_5",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        1396,
+        2455,
+        228,
+        209
+      ]
+    },
+    {
+      "key": "s3dmg_interceptor_damaged_6",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        1628,
+        2455,
+        228,
+        209
+      ]
+    },
+    {
+      "key": "s3dmg_interceptor_damaged_7",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        1860,
+        2455,
+        228,
+        209
+      ]
+    },
+    {
+      "key": "s3dmg_interceptor_critical_0",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        2324,
+        2232,
+        228,
+        209
+      ]
+    },
+    {
+      "key": "s3dmg_interceptor_critical_1",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        2556,
+        2232,
+        228,
+        209
+      ]
+    },
+    {
+      "key": "s3dmg_interceptor_critical_2",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        2788,
+        2232,
+        228,
+        209
+      ]
+    },
+    {
+      "key": "s3dmg_interceptor_critical_3",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        3020,
+        2232,
+        228,
+        209
+      ]
+    },
+    {
+      "key": "s3dmg_interceptor_critical_4",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        3252,
+        2232,
+        228,
+        209
+      ]
+    },
+    {
+      "key": "s3dmg_interceptor_critical_5",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        3484,
+        2232,
+        228,
+        209
+      ]
+    },
+    {
+      "key": "s3dmg_interceptor_critical_6",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        3716,
+        2232,
+        228,
+        209
+      ]
+    },
+    {
+      "key": "s3dmg_interceptor_critical_7",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        4,
+        2455,
+        228,
+        209
+      ]
+    },
+    {
+      "key": "s3dmg_sled_damaged_0",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        2320,
+        1304,
+        203,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_sled_damaged_1",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        2527,
+        1304,
+        203,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_sled_damaged_2",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        2734,
+        1304,
+        203,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_sled_damaged_3",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        2941,
+        1304,
+        203,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_sled_damaged_4",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        3148,
+        1304,
+        203,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_sled_damaged_5",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        3355,
+        1304,
+        203,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_sled_damaged_6",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        3562,
+        1304,
+        203,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_sled_damaged_7",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        3769,
+        1304,
+        203,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_sled_critical_0",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        664,
+        1304,
+        203,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_sled_critical_1",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        871,
+        1304,
+        203,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_sled_critical_2",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        1078,
+        1304,
+        203,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_sled_critical_3",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        1285,
+        1304,
+        203,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_sled_critical_4",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        1492,
+        1304,
+        203,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_sled_critical_5",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        1699,
+        1304,
+        203,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_sled_critical_6",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        1906,
+        1304,
+        203,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_sled_critical_7",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        2113,
+        1304,
+        203,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_snowmobile_damaged_0",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        1494,
+        2000,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_snowmobile_damaged_1",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        1643,
+        2000,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_snowmobile_damaged_2",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        1792,
+        2000,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_snowmobile_damaged_3",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        1941,
+        2000,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_snowmobile_damaged_4",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        2090,
+        2000,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_snowmobile_damaged_5",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        2239,
+        2000,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_snowmobile_damaged_6",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        2388,
+        2000,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_snowmobile_damaged_7",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        2537,
+        2000,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_snowmobile_critical_0",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        302,
+        2000,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_snowmobile_critical_1",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        451,
+        2000,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_snowmobile_critical_2",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        600,
+        2000,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_snowmobile_critical_3",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        749,
+        2000,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_snowmobile_critical_4",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        898,
+        2000,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_snowmobile_critical_5",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        1047,
+        2000,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_snowmobile_critical_6",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        1196,
+        2000,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_snowmobile_critical_7",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        1345,
+        2000,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_crawler_damaged_0",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        1652,
+        1536,
+        202,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_crawler_damaged_1",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        1858,
+        1536,
+        202,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_crawler_damaged_2",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        2064,
+        1536,
+        202,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_crawler_damaged_3",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        2270,
+        1536,
+        202,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_crawler_damaged_4",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        2476,
+        1536,
+        202,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_crawler_damaged_5",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        2682,
+        1536,
+        202,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_crawler_damaged_6",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        2888,
+        1536,
+        202,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_crawler_damaged_7",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        3094,
+        1536,
+        202,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_crawler_critical_0",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        4,
+        1536,
+        202,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_crawler_critical_1",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        210,
+        1536,
+        202,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_crawler_critical_2",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        416,
+        1536,
+        202,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_crawler_critical_3",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        622,
+        1536,
+        202,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_crawler_critical_4",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        828,
+        1536,
+        202,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_crawler_critical_5",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        1034,
+        1536,
+        202,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_crawler_critical_6",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        1240,
+        1536,
+        202,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_crawler_critical_7",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        1446,
+        1536,
+        202,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_tank_damaged_0",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        2804,
+        1044,
+        216,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_tank_damaged_1",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        3024,
+        1044,
+        216,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_tank_damaged_2",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        3244,
+        1044,
+        216,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_tank_damaged_3",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        3464,
+        1044,
+        216,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_tank_damaged_4",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        3684,
+        1044,
+        216,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_tank_damaged_5",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        4,
+        1304,
+        216,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_tank_damaged_6",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        224,
+        1304,
+        216,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_tank_damaged_7",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        444,
+        1304,
+        216,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_tank_critical_0",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        1044,
+        1044,
+        216,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_tank_critical_1",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        1264,
+        1044,
+        216,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_tank_critical_2",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        1484,
+        1044,
+        216,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_tank_critical_3",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        1704,
+        1044,
+        216,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_tank_critical_4",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        1924,
+        1044,
+        216,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_tank_critical_5",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        2144,
+        1044,
+        216,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_tank_critical_6",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        2364,
+        1044,
+        216,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_tank_critical_7",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        2584,
+        1044,
+        216,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_barge_damaged_0",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        672,
+        1768,
+        163,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_barge_damaged_1",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        839,
+        1768,
+        163,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_barge_damaged_2",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        1006,
+        1768,
+        163,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_barge_damaged_3",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        1173,
+        1768,
+        163,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_barge_damaged_4",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        1340,
+        1768,
+        163,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_barge_damaged_5",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        1507,
+        1768,
+        163,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_barge_damaged_6",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        1674,
+        1768,
+        163,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_barge_damaged_7",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        1841,
+        1768,
+        163,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_barge_critical_0",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        3300,
+        1536,
+        163,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_barge_critical_1",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        3467,
+        1536,
+        163,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_barge_critical_2",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        3634,
+        1536,
+        163,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_barge_critical_3",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        3801,
+        1536,
+        163,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_barge_critical_4",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        4,
+        1768,
+        163,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_barge_critical_5",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        171,
+        1768,
+        163,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_barge_critical_6",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        338,
+        1768,
+        163,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_barge_critical_7",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        505,
+        1768,
+        163,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_artillery_damaged_0",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        3200,
+        1768,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_artillery_damaged_1",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        3349,
+        1768,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_artillery_damaged_2",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        3498,
+        1768,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_artillery_damaged_3",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        3647,
+        1768,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_artillery_damaged_4",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        3796,
+        1768,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_artillery_damaged_5",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        3945,
+        1768,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_artillery_damaged_6",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        4,
+        2000,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_artillery_damaged_7",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        153,
+        2000,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_artillery_critical_0",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        2008,
+        1768,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_artillery_critical_1",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        2157,
+        1768,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_artillery_critical_2",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        2306,
+        1768,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_artillery_critical_3",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        2455,
+        1768,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_artillery_critical_4",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        2604,
+        1768,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_artillery_critical_5",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        2753,
+        1768,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_artillery_critical_6",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        2902,
+        1768,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "s3dmg_artillery_critical_7",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": [
+        "stage3_runtime_0",
+        3051,
+        1768,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nca_stage3_runtime_0",
+      "root": "nca_stage3_runtime_0",
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "cell": null
+    },
+    {
+      "key": "polish_ice_ordnance",
+      "root": "polish_ice_ordnance",
+      "path": "assets/game/levels/stage_03/projectiles/projectiles_0927/stage3_ordnance.png",
+      "owner": "levels/stage_03",
+      "cell": null
+    }
+  ],
+  "files": [
+    {
+      "path": "assets/game/levels/stage_03/audio/music/Level3.mp3",
+      "owner": "levels/stage_03",
+      "bytes": 667838,
+      "role": "registered runtime asset"
+    },
+    {
+      "path": "assets/game/levels/stage_03/audio/music/Level3b.mp3",
+      "owner": "levels/stage_03",
+      "bytes": 2577662,
+      "role": "registered runtime asset"
+    },
+    {
+      "path": "assets/game/levels/stage_03/audio/music/Level3mb.mp3",
+      "owner": "levels/stage_03",
+      "bytes": 1958078,
+      "role": "registered runtime asset"
+    },
+    {
+      "path": "assets/game/levels/stage_03/audio/sounds/stage3_atomic_siren.mp3",
+      "owner": "levels/stage_03",
+      "bytes": 65781,
+      "role": "source or supporting file"
+    },
+    {
+      "path": "assets/game/levels/stage_03/boss/boss_s3.png",
+      "owner": "levels/stage_03",
+      "bytes": 341826,
+      "role": "registered runtime asset",
+      "width": 488,
+      "height": 516
+    },
+    {
+      "path": "assets/game/levels/stage_03/boss/bosses/frost/frost_furious_beam_0920.png",
+      "owner": "levels/stage_03",
+      "bytes": 464724,
+      "role": "registered runtime asset",
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "path": "assets/game/levels/stage_03/boss/bosses/stage3_thermo/fire_disintegrate.png",
+      "owner": "levels/stage_03",
+      "bytes": 144648,
+      "role": "registered runtime asset",
+      "width": 248,
+      "height": 248
+    },
+    {
+      "path": "assets/game/levels/stage_03/boss/bosses/stage3_thermo/ice_orb.png",
+      "owner": "levels/stage_03",
+      "bytes": 79180,
+      "role": "registered runtime asset",
+      "width": 192,
+      "height": 192
+    },
+    {
+      "path": "assets/game/levels/stage_03/boss/bosses/stage3_thermo/ice_shards.png",
+      "owner": "levels/stage_03",
+      "bytes": 26947,
+      "role": "registered runtime asset",
+      "width": 126,
+      "height": 126
+    },
+    {
+      "path": "assets/game/levels/stage_03/boss/bosses/stage3_thermo/nuclear_fire.png",
+      "owner": "levels/stage_03",
+      "bytes": 309869,
+      "role": "registered runtime asset",
+      "width": 384,
+      "height": 384
+    },
+    {
+      "path": "assets/game/levels/stage_03/boss/bosses/stage3_thermo/nuclear_fire_sheet.png",
+      "owner": "levels/stage_03",
+      "bytes": 563410,
+      "role": "registered runtime asset",
+      "width": 2560,
+      "height": 320
+    },
+    {
+      "path": "assets/game/levels/stage_03/boss/bosses/stage3_thermo/nuclear_retina.png",
+      "owner": "levels/stage_03",
+      "bytes": 3034,
+      "role": "registered runtime asset",
+      "width": 32,
+      "height": 32
+    },
+    {
+      "path": "assets/game/levels/stage_03/boss/bosses/stage3_thermo/strike_jet.png",
+      "owner": "levels/stage_03",
+      "bytes": 90473,
+      "role": "registered runtime asset",
+      "width": 246,
+      "height": 246
+    },
+    {
+      "path": "assets/game/levels/stage_03/boss/bosses/stage3_thermo/thermo_orb.png",
+      "owner": "levels/stage_03",
+      "bytes": 84209,
+      "role": "registered runtime asset",
+      "width": 224,
+      "height": 224
+    },
+    {
+      "path": "assets/game/levels/stage_03/boss/bosses/stage3_thermo/thermocloud.png",
+      "owner": "levels/stage_03",
+      "bytes": 152126,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/levels/stage_03/boss/bosses/stage3_thermo/thermocloud_attack_sheet.png",
+      "owner": "levels/stage_03",
+      "bytes": 243094,
+      "role": "registered runtime asset",
+      "width": 2304,
+      "height": 288
+    },
+    {
+      "path": "assets/game/levels/stage_03/boss/bosses/stage3_thermo/thermocloud_idle_sheet.png",
+      "owner": "levels/stage_03",
+      "bytes": 334953,
+      "role": "registered runtime asset",
+      "width": 2304,
+      "height": 288
+    },
+    {
+      "path": "assets/game/levels/stage_03/boss/bosses/stage3_thermo/therno_attack_sheet.png",
+      "owner": "levels/stage_03",
+      "bytes": 382352,
+      "role": "registered runtime asset",
+      "width": 2560,
+      "height": 320
+    },
+    {
+      "path": "assets/game/levels/stage_03/boss/bosses/stage3_thermo/therno_robonoid.png",
+      "owner": "levels/stage_03",
+      "bytes": 299926,
+      "role": "registered runtime asset",
+      "width": 384,
+      "height": 384
+    },
+    {
+      "path": "assets/game/levels/stage_03/enemies/atlas/stage_runtime/stage3_runtime_0.png",
+      "owner": "levels/stage_03",
+      "bytes": 7012366,
+      "role": "registered runtime asset",
+      "width": 4096,
+      "height": 2668
+    },
+    {
+      "path": "assets/game/levels/stage_03/enemies/en_s3.png",
+      "owner": "levels/stage_03",
+      "bytes": 3189048,
+      "role": "registered runtime asset",
+      "width": 1572,
+      "height": 1532
+    },
+    {
+      "path": "assets/game/levels/stage_03/enemies/enemy_overhaul_0925/sprites/ground_base_stage3_ice.png",
+      "owner": "levels/stage_03",
+      "bytes": 103154,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/levels/stage_03/enemies/enemy_overhaul_0925/sprites/stage3_ice_drone_01.png",
+      "owner": "levels/stage_03",
+      "bytes": 36073,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/levels/stage_03/enemies/enemy_overhaul_0925/sprites/stage3_ice_jet_01.png",
+      "owner": "levels/stage_03",
+      "bytes": 45039,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/levels/stage_03/enemies/enemy_overhaul_0925/sprites/stage3_ice_jet_02.png",
+      "owner": "levels/stage_03",
+      "bytes": 38496,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/levels/stage_03/miniboss/mini_s3.png",
+      "owner": "levels/stage_03",
+      "bytes": 37747,
+      "role": "registered runtime asset",
+      "width": 258,
+      "height": 258
+    },
+    {
+      "path": "assets/game/levels/stage_03/projectiles/eproj_s3.png",
+      "owner": "levels/stage_03",
+      "bytes": 1229761,
+      "role": "registered runtime asset",
+      "width": 1192,
+      "height": 1272
+    },
+    {
+      "path": "assets/game/levels/stage_03/projectiles/projectiles_0927/stage3_ordnance.png",
+      "owner": "levels/stage_03",
+      "bytes": 2009379,
+      "role": "registered runtime asset",
+      "width": 1024,
+      "height": 1920
+    },
+    {
+      "path": "assets/game/levels/stage_03/stage/frames_0.png",
+      "owner": "levels/stage_03",
+      "bytes": 4140925,
+      "role": "registered runtime asset",
+      "width": 1137,
+      "height": 3408
+    },
+    {
+      "path": "assets/game/levels/stage_03/stage/nst3_master_v2.png",
+      "owner": "levels/stage_03",
+      "bytes": 3198016,
+      "role": "registered runtime asset",
+      "width": 680,
+      "height": 4080
+    },
+    {
+      "path": "assets/game/levels/stage_03/stage/stage3.png",
+      "owner": "levels/stage_03",
+      "bytes": 1439094,
+      "role": "source or supporting file",
+      "width": 1024,
+      "height": 1122
+    }
+  ],
+  "audio": {
+    "sfx": {},
+    "music": {
+      "lvl3": "assets/game/levels/stage_03/audio/music/Level3.mp3",
+      "boss3": "assets/game/levels/stage_03/audio/music/Level3b.mp3",
+      "mini3": "assets/game/levels/stage_03/audio/music/Level3mb.mp3"
+    }
+  },
+  "deploymentRoots": [
+    "bof_player_weapon_special_icons_atlas",
+    "nst3_master",
+    "nsb_frost_cruiser",
+    "pp5_raw_yuri_idle",
+    "nca_stage3_runtime_0",
+    "nca_stage2_runtime_0",
+    "nca_layout_shared_effects_0",
+    "s3thermo_strike_jet",
+    "s3thermo_thermocloud",
+    "s3thermo_therno_robonoid",
+    "s3thermo_nuclear_fire",
+    "s3thermo_ice_orb",
+    "s3thermo_thermo_orb",
+    "s3thermo_ice_shards",
+    "s3thermo_fire_disintegrate",
+    "s3thermo_nuclear_retina",
+    "s3thermo_thermocloud_idle_sheet",
+    "s3thermo_thermocloud_attack_sheet",
+    "s3thermo_therno_attack_sheet",
+    "s3thermo_nuclear_fire_sheet",
+    "nca_en_s3",
+    "nca_eproj_s3",
+    "bof_player_ordnance_projectiles_atlas",
+    "nca_player_weapons",
+    "pp5_raw_yuri_happy",
+    "pp5_raw_yuri_laugh",
+    "pp5_raw_yuri_anger",
+    "pp5_raw_yuri_sad",
+    "pp5_raw_yuri_crash",
+    "pp5_raw_yuri_victory",
+    "pp5_raw_yuri_talk-closed",
+    "pp5_raw_yuri_talk-small",
+    "pp5_raw_yuri_talk-medium",
+    "pp5_raw_yuri_talk-wide",
+    "pp5_raw_yuri_talk-o",
+    "nca_terrain_liquids",
+    "nca_boss_s3",
+    "nca_fx_explosions",
+    "nca_fx_debris"
+  ],
+  "audioDescription": "Level music and stage-specific sounds are in audio/. Common music and reusable sounds are registered in BOFA and stored once in shared/audio."
+}

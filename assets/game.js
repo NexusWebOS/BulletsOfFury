@@ -11,30 +11,30 @@
 
 /* Register the hand-authored 96px 3/4 warp reel before XART snapshots BOFX.img. */
 if(typeof window!=='undefined' && window.BOFX && BOFX.img){
-  for(let i=0;i<8;i++) BOFX.img['nfx_s5gate96_'+i]='assets/game/warp_gate96/nfx_s5gate96_'+i+'.png';
-  for(let i=0;i<16;i++) BOFX.img['nfx_warp_tunnel_'+i]='assets/game/warp_fx/warp_tunnel_'+String(i).padStart(2,'0')+'.png';
+  for(let i=0;i<8;i++) BOFX.img['nfx_s5gate96_'+i]='assets/game/levels/stage_05/stage/warp_gate96/nfx_s5gate96_'+i+'.png';
+  for(let i=0;i<16;i++) BOFX.img['nfx_warp_tunnel_'+i]='assets/game/shared/effects/warp_fx/warp_tunnel_'+String(i).padStart(2,'0')+'.png';
   /* the RAZORBACK sonic siege tank (0912r) - Mike's approved pack, neon green palette-swapped to forest
      green by _BUILD_SOURCE/forest_swap_0912p.py. Loose files: the rig is 25 parts at their own pivots. */
   for(const _rz of ['hull_0','hull_1','hull_2','hull_3','hull_4','hull_5','hull_6','hull_7','hull_base','turret','turret_damaged',
     'machinegun','missile_pod','rotor','tread','wreck','debris','sonic_bullet','sonic_wave','sonic_ring','razor_missile',
     'sonic_charge','muzzle','sonic_impact','dust']){
-      BOFX.img['rzb_'+_rz]='assets/game/bosses/razorback/rzb_'+_rz+'.png';
-      BOFX.img['rzbf_'+_rz]='assets/game/bosses/razorback_furious/rzbf_'+_rz+'.png';
+      BOFX.img['rzb_'+_rz]='assets/game/levels/stage_01/miniboss/bosses/razorback/rzb_'+_rz+'.png';
+      BOFX.img['rzbf_'+_rz]='assets/game/levels/stage_01/miniboss/bosses/razorback_furious/rzbf_'+_rz+'.png';
     }
   /* the FURNACE TYRANT (0912t) - Mike's approved Chainborn encounter, 45 of its 56 plates. Its own shield set is
      deliberately NOT shipped: he asked for the Magma Ward's fire shield instead of the pack's. */
-  for(const _fz of ['body_intact', 'body_damaged', 'body_exposed', 'body_wreck', 'arm_flame_intact', 'arm_flame_damaged', 'arm_flame_exposed', 'arm_cannon_intact', 'arm_cannon_damaged', 'arm_cannon_exposed', 'debris_flame', 'debris_cannon', 'body_rotor', 'body_rotor_damaged', 'flame_jet_0', 'flame_jet_1', 'charge_0', 'charge_1', 'charge_2', 'cannon_flash', 'fireball_0', 'fireball_1', 'fireball_impact', 'damage_smoke_0', 'damage_smoke_1', 'damage_fire_0', 'damage_fire_1', 'boss_explosion', 'overload_wave', 'torso_yaw_0', 'torso_yaw_1', 'torso_yaw_2', 'torso_yaw_3', 'torso_yaw_4', 'torso_yaw_5', 'torso_yaw_6', 'torso_yaw_7', 'head_intact', 'head_damaged', 'head_charged', 'head_wreck', 'chain_link', 'chain_edge', 'laser_muzzle', 'fire_laser']) BOFX.img['fzt_'+_fz]='assets/game/bosses/furnace/fzt_'+_fz+'.png';
-  BOFX.img.fzt_fire_laser_0920='assets/game/bosses/furnace/fzt_fire_laser_0920.png';
+  for(const _fz of ['body_intact', 'body_damaged', 'body_exposed', 'body_wreck', 'arm_flame_intact', 'arm_flame_damaged', 'arm_flame_exposed', 'arm_cannon_intact', 'arm_cannon_damaged', 'arm_cannon_exposed', 'debris_flame', 'debris_cannon', 'body_rotor', 'body_rotor_damaged', 'flame_jet_0', 'flame_jet_1', 'charge_0', 'charge_1', 'charge_2', 'cannon_flash', 'fireball_0', 'fireball_1', 'fireball_impact', 'damage_smoke_0', 'damage_smoke_1', 'damage_fire_0', 'damage_fire_1', 'boss_explosion', 'overload_wave', 'torso_yaw_0', 'torso_yaw_1', 'torso_yaw_2', 'torso_yaw_3', 'torso_yaw_4', 'torso_yaw_5', 'torso_yaw_6', 'torso_yaw_7', 'head_intact', 'head_damaged', 'head_charged', 'head_wreck', 'chain_link', 'chain_edge', 'laser_muzzle', 'fire_laser']) BOFX.img['fzt_'+_fz]='assets/game/levels/stage_02/boss/bosses/furnace/fzt_'+_fz+'.png';
+  BOFX.img.fzt_fire_laser_0920='assets/game/levels/stage_02/boss/bosses/furnace/fzt_fire_laser_0920.png';
   for(const _family of ['beam','muzzle','impact','tip'])for(let _frame=0;_frame<4;_frame++)
-    BOFX.img['fzt_eye_'+_family+'_'+_frame]='assets/game/bosses/furnace/eye_laser_0924/'+_family+'_'+_frame+'.png';
-  BOFX.img.frost_furious_beam_0920='assets/game/bosses/frost/frost_furious_beam_0920.png';
+    BOFX.img['fzt_eye_'+_family+'_'+_frame]='assets/game/levels/stage_02/boss/bosses/furnace/eye_laser_0924/'+_family+'_'+_frame+'.png';
+  BOFX.img.frost_furious_beam_0920='assets/game/levels/stage_03/boss/bosses/frost/frost_furious_beam_0920.png';
   for(const _gs of [1,2,3,4,6,7,8])
     BOFX.img['overhaul_ground_base_'+_gs]='assets/game/enemy_overhaul_0925/sprites/ground_base_stage'+_gs+'_'+({1:'jungle',2:'volcano',3:'ice',4:'desert',6:'city',7:'toxic',8:'alien'}[_gs])+'.png';
   for(const _gh of ['mg','missile','laser','sonic'])
     BOFX.img['overhaul_ground_head_'+_gh]='assets/game/enemy_overhaul_0925/sprites/ground_head_'+_gh+'.png';
   for(const _plate of ['stage2_fire_jet_01','stage2_fire_jet_02','stage3_ice_jet_01','stage3_ice_jet_02','stage3_ice_drone_01','stage4_war_drone_01','stage5_space_drone_01','stage6_storm_drone_01','stage7_slime_01','stage8_alien_jet_01','stage8_alien_drone_01','stage9_water_jet_01','stage9_water_alien_01','stage9_water_drone_01'])
     BOFX.img['overhaul_'+_plate]='assets/game/enemy_overhaul_0925/sprites/'+_plate+'.png';
-  BOFX.img.overhaul_toxic_jet='assets/game/enemy_overhaul_0925/sprites/stage7_toxic_jet_01.png';
+  BOFX.img.overhaul_toxic_jet='assets/game/levels/stage_07/enemies/enemy_overhaul_0925/sprites/stage7_toxic_jet_01.png';
   for(let _tc=0;_tc<8;_tc++)BOFX.img['overhaul_toxic_core_'+_tc]='assets/game/enemy_overhaul_0925/sprites/stage7_toxic_core_'+_tc+'.png';
   for(let _te=0;_te<6;_te++)BOFX.img['overhaul_toxic_exhaust_'+_te]='assets/game/enemy_overhaul_0925/sprites/stage7_toxic_exhaust_'+_te+'.png';
   for(const _jv of ['desert','black','snow'])
@@ -49,29 +49,29 @@ if(typeof window!=='undefined' && window.BOFX && BOFX.img){
   for(const _tankStage of [1,4,7])for(const _part of ['hull','turret'])
     BOFX.img['overhaul_tank_'+_tankStage+'_'+_part]='assets/game/enemy_overhaul_0925/sprites/stage'+_tankStage+'_tank_'+_part+'.png';
   for(const _s3 of ['strike_jet','thermocloud','therno_robonoid','nuclear_fire','ice_orb','thermo_orb','ice_shards','fire_disintegrate','nuclear_retina'])
-    BOFX.img['s3thermo_'+_s3]='assets/game/bosses/stage3_thermo/'+_s3+'.png';
+    BOFX.img['s3thermo_'+_s3]='assets/game/levels/stage_03/boss/bosses/stage3_thermo/'+_s3+'.png';
   for(const _s3s of ['thermocloud_idle_sheet','thermocloud_attack_sheet','therno_attack_sheet','nuclear_fire_sheet'])
-    BOFX.img['s3thermo_'+_s3s]='assets/game/bosses/stage3_thermo/'+_s3s+'.png';
+    BOFX.img['s3thermo_'+_s3s]='assets/game/levels/stage_03/boss/bosses/stage3_thermo/'+_s3s+'.png';
   /* the TEMPEST LEVIATHAN (0913b) - Mike's approved jet-duel pack, its red paint palette-swapped to black/dark gray by
      _BUILD_SOURCE/tempest_blackswap_0912u.py. Two hull plates and four ordnance plates. The pack's explosion-0..7 are
      deliberately NOT shipped: they ARE this game's nxp_barrage_0..7, which the rig asks XART for instead. */
-  for(const _tl of ['hull','hull_damaged','beam','charge','bolt','needle']) BOFX.img['tlv_'+_tl]='assets/game/bosses/tempest/tlv_'+_tl+'.png';
-  for(const _tl of ['hull','hull_damaged']) BOFX.img['tlvb_'+_tl]='assets/game/bosses/tempest/tlvb_'+_tl+'.png';
+  for(const _tl of ['hull','hull_damaged','beam','charge','bolt','needle']) BOFX.img['tlv_'+_tl]='assets/game/levels/stage_06/miniboss/bosses/tempest/tlv_'+_tl+'.png';
+  for(const _tl of ['hull','hull_damaged']) BOFX.img['tlvb_'+_tl]='assets/game/levels/stage_06/miniboss/bosses/tempest/tlvb_'+_tl+'.png';
   for(const _ship of ['black','silver']){
     for(const _state of ['intact','damaged']) for(let _i=0;_i<8;_i++)
-      BOFX.img['tempestduo_'+_ship+'_'+_state+'_'+_i]='assets/game/bosses/tempest/directional_0923/'+_ship+'_'+_state+'_'+_i+'.png';
-    for(let _i=0;_i<4;_i++) BOFX.img['tempestduo_'+_ship+'_pitch_'+_i]='assets/game/bosses/tempest/directional_0923/'+_ship+'_pitch_'+_i+'.png';
+      BOFX.img['tempestduo_'+_ship+'_'+_state+'_'+_i]='assets/game/levels/stage_06/miniboss/bosses/tempest/directional_0923/'+_ship+'_'+_state+'_'+_i+'.png';
+    for(let _i=0;_i<4;_i++) BOFX.img['tempestduo_'+_ship+'_pitch_'+_i]='assets/game/levels/stage_06/miniboss/bosses/tempest/directional_0923/'+_ship+'_pitch_'+_i+'.png';
   }
   /* the WARHIVE CARRIER + NIGHTWING ACE (0918) - SpriteCook plates, palette-locked; see warhiveInit */
   for(const [_wk,_wf] of [['whv_closed','carrier_closed'],['whv_open','carrier_open'],['whv_broken','carrier_broken'],['whv_fan','carrier_fan'],
     ['whv_twreck','carrier_thruster_wreck'],['whv_ace','ace_top'],['whv_ace_belly','ace_belly'],['whv_ace_dmg','ace_damaged'],
-    ['xelite_hivewing_idle','elite_jet'],['xelite_hivewing_fire','elite_jet'],['xelite_hivewing_death','elite_jet'],['xelite_hivewing','elite_jet']]) BOFX.img[_wk]='assets/game/bosses/skycarrier/'+_wf+'.png';
+    ['xelite_hivewing_idle','elite_jet'],['xelite_hivewing_fire','elite_jet'],['xelite_hivewing_death','elite_jet'],['xelite_hivewing','elite_jet']]) BOFX.img[_wk]='assets/game/levels/stage_06/boss/bosses/skycarrier/'+_wf+'.png';
   for(const _r of ['ghost','ouroboros','phantom']){
-    BOFX.img['s6rebel_'+_r]='assets/game/bosses/rebel_squad_0920/'+_r+'_threequarter.png';
+    BOFX.img['s6rebel_'+_r]='assets/game/levels/stage_06/boss/bosses/rebel_squad_0920/'+_r+'_threequarter.png';
     for(const _pose of ['idle','bank_l','bank_r','roll_l','roll_r','belly','som_0','som_1','som_2','som_3','dash_0','dash_1','dash_2','dash_3'])
-      BOFX.img['s6rebel_'+_r+'_'+_pose]='assets/game/bosses/rebel_squad_0920/frames/'+_r+'_'+_pose+'.png';
+      BOFX.img['s6rebel_'+_r+'_'+_pose]='assets/game/levels/stage_06/boss/bosses/rebel_squad_0920/frames/'+_r+'_'+_pose+'.png';
   }
-  for(let i=0;i<8;i++){ BOFX.img['whv_ace_br'+i]='assets/game/bosses/skycarrier/ace_br'+i+'.png'; BOFX.img['whv_ace_so'+i]='assets/game/bosses/skycarrier/ace_so'+i+'.png'; }
+  for(let i=0;i<8;i++){ BOFX.img['whv_ace_br'+i]='assets/game/levels/stage_06/boss/bosses/skycarrier/ace_br'+i+'.png'; BOFX.img['whv_ace_so'+i]='assets/game/levels/stage_06/boss/bosses/skycarrier/ace_so'+i+'.png'; }
 }
 
 const VW = 480, VH = 512;                 // internal virtual resolution (camera window)
@@ -1493,7 +1493,7 @@ function updateCamX(){
 const HUDH = 62;                           // HUD strip height (separate canvas)
 const cv = document.getElementById('screen');
 cv.width = VW; cv.height = VH;
-const ctx = cv.getContext('2d');
+const ctx = cv.getContext('2d',{alpha:false});
 /* THE ENEMY-SHEET WIRING IS NOT INSTALLED (drop 0806s) — but the mechanism is now known.
 
    0806a shipped per-stage enemy sheets by expanding a descriptor in a wrapper on ONE ctx. It
@@ -1620,7 +1620,7 @@ const PLAY={x:4,y:46,w:VW-8,h:VH-52};
 const ASSETS=(function(){
   const A={ready:false,frames:{},img:null,logo:null,banner:null,boot:null,menu:null,map:null,map2:null,crater:null,ooze:[],hud:null,
            mapJungle:null,mapVolcano:null,mapIce:null,starrealm:null,starplanets:null,water:[],iceWater:[],lava:[],cards:[],splash:null,menuLogo:null};
-  function mk(d,m){ if(!d)return null; const im=new Image(); im.src=(typeof d==='string'&&d.lastIndexOf('assets/',0)===0)?d:('data:'+m+';base64,'+d); return im; }
+  function mk(d,m){ if(!d)return null; const im=new Image();im.decoding='async'; im.src=(typeof d==='string'&&d.lastIndexOf('assets/',0)===0)?(typeof bofAssetPath==='function'?bofAssetPath(d):d):('data:'+m+';base64,'+d); return im; }
   if(window.BOF){
     A.frames=BOF.frames||{};
     A.img=mk(BOF.atlas,'image/png'); A.logo=mk(BOF.logo,'image/png'); A.banner=mk(BOF.banner,'image/png');
@@ -1933,8 +1933,13 @@ function drawNewBoss(b){
 })();
 
 const XART=(function(){
-  const X={img:{}};
-  function mk(o){ if(!o) return null; const im=new Image(); im.src=(typeof o==='string')?o:('data:'+o.m+';base64,'+o.d); return im; }
+  const X={img:{}};const _imageURLs=new Map();
+  function mk(o){
+    if(!o)return null;
+    const src=typeof o==='string'?(typeof bofAssetPath==='function'?bofAssetPath(o):o):('data:'+o.m+';base64,'+o.d);
+    if(_imageURLs.has(src))return _imageURLs.get(src);
+    const im=new Image();im.decoding='async';_imageURLs.set(src,im);im.src=src;return im;
+  }
   /* LAZY LOADING (drop 0724db).
      This used to build a new Image() for EVERY key the moment the file parsed. The manifest has
      grown to 7,166 images totalling 295 MB, so that fired 7,166 simultaneous requests before the
@@ -1978,16 +1983,21 @@ const XART=(function(){
      The BOSS sheets (87, 88) are deliberately NOT here: they are 10MB between them and are not
      needed until the end of a stage, by which point lazy loading has had minutes. Preloading
      them would put that on the boot path for no gain. */
-  const PRELOAD = /^(comm_[a-z]+_idle|yuri_v2_|cf_boot|cf_logo|logo|startile|newbootimage|bootimage|scard_1|bof_player_(?:weapon_special_icons|ordnance_projectiles)_atlas|ship_|port_|card_|face_|menu|btn_|nui_|nhxv_|nhxsb_|nfw_|nfx_(?:warp_tunnel|s5gate96)_|nca_(?:s1combatfx|en_s1|8[7-9])|aintro_)/;
+  const PRELOAD = /^(comm_[a-z]+_idle|yuri_v2_|cf_boot|cf_logo|logo|startile|newbootimage|bootimage|scard_1|bof_player_(?:weapon_special_icons|ordnance_projectiles)_atlas|ship_|port_cf_[a-z]+_idle$|card_|face_|menu|btn_|nui_|nhxv_|nhxsb_|nfw_|nfx_(?:warp_tunnel|s5gate96)_|nca_(?:s1combatfx|en_s1|8[7-9])|aintro_)/;
   X._src = (window.BOFX && BOFX.img) ? BOFX.img : {};
+  if(typeof bofAssetPath==='function'){
+    for(const k in X._src)X._src[k]=bofAssetPath(X._src[k]);
+    X._src=new Proxy(X._src,{set(target,key,value){target[key]=bofAssetPath(value);return true;}});
+    if(window.BOFX)BOFX.img=X._src;
+  }
   /* Approved close-camera Fury HQ command deck.  Keep the stable runtime key so every existing
      campaign scene inherits the new room without duplicating story data or carrying the former
      low-resolution command-centre plate. */
-  X._src['cut_furyhq_command_center']='assets/game/cinematic/hq_command_deck_v2.png';
+  X._src['cut_furyhq_command_center']='assets/game/shared/cinematics/cinematic/hq_command_deck_v2.png';
   /* Falva's packed dialogue cell was only a faint magenta wireframe. Use the full-strength
      569x321 machined frame palette-swapped from Axel's matching geometry instead. Removing the
      generated cell entry is intentional: packed cells win over loose image registrations. */
-  X._src['dlg_falva']='assets/game/ui/dialogue/dlg_falva.png';
+  X._src['dlg_falva']='assets/game/shared/ui/ui/dialogue/dlg_falva.png';
   if(window.BOFX&&BOFX.cells) delete BOFX.cells['dlg_falva'];
   /* ============================================================
      TWO AUTHORED HULLS REGISTERED IN CODE, NOT IN THE MANIFEST (drop 0812h)
@@ -2006,41 +2016,41 @@ const XART=(function(){
      ⚠ REGISTERED HERE RATHER THAN IN manifest.js, WHICH IS GENERATED — its own first line says
      so, and 0810h lost work to editing it. `_src` is a plain key->path map, so adding to it in
      code is the same registration by a route that survives the next regeneration. ============================================================ */
-  X._src['nsb_jungle_cruiser'] = 'assets/game/nsb_jungle_cruiser.png';
-  X._src['nsb_frost_cruiser']  = 'assets/game/nsb_frost_cruiser.png';   // the same hull swapped to ice (0912s, _BUILD_SOURCE/ice_swap_0912s.py)
-  X._src['nsb_olive_carrier']  = 'assets/game/nsb_olive_carrier.png';
-  X._src['lock_frame_0922']='assets/game/ui/lock_0922/frame.png';
-  X._src['s4w_warden_gunner_0919']='assets/game/stage4_warfare/s4w_warden_gunner_0919.png';
-  X._src['s4w_warden_rocketeer_0919']='assets/game/stage4_warfare/s4w_warden_rocketeer_0919.png';
+  X._src['nsb_jungle_cruiser'] = 'assets/game/shared/combat/nsb_jungle_cruiser.png';
+  X._src['nsb_frost_cruiser']  = 'assets/game/shared/combat/nsb_frost_cruiser.png';   // the same hull swapped to ice (0912s, _BUILD_SOURCE/ice_swap_0912s.py)
+  X._src['nsb_olive_carrier']  = 'assets/game/shared/combat/nsb_olive_carrier.png';
+  X._src['lock_frame_0922']='assets/game/shared/ui/ui/lock_0922/frame.png';
+  X._src['s4w_warden_gunner_0919']='assets/game/levels/stage_04/boss/stage4_warfare/s4w_warden_gunner_0919.png';
+  X._src['s4w_warden_rocketeer_0919']='assets/game/levels/stage_04/boss/stage4_warfare/s4w_warden_rocketeer_0919.png';
   /* Stage-8 symbiote finale: loose, lazy-loaded authored plates. The manifest is generated. */
-  const _vroot='assets/game/final_boss_0924/';
+  const _vroot='assets/game/levels/stage_08/boss/final_boss_0924/';
   for(const k of ['form2_body','form2_cannon_arm','form2_rocket_arm','robot_takeover_sheet','weapons_sheet','shield_sheet','void_death_sheet','ground_portal_rise_sheet','ground_portal_beam_sheet'])X._src['vile24_'+k]=_vroot+k+'.png';
   X._src.vile24_portal_sheet=_vroot+'portal_sheet_0925.png';
-  const _vc='assets/game/final_boss_concepts/obsidian_form_0924/';
+  const _vc='assets/game/levels/stage_08/boss/final_boss_concepts/obsidian_form_0924/';
   X._src.vile24_form1_body=_vc+'modular/form1_body.png';
   X._src.vile24_form1_rocket_arm=_vc+'modular/form1_rocket_arm.png';
   X._src.vile24_robot_gray=_vc+'robot_merge/robot_gray.png';
   X._src.vile24_alien_final=_vc+'obsidian_alien_face.png';
   for(let i=0;i<6;i++)X._src['vile24_ball_'+i]=_vc+'rolling/rolling_0'+i+'.png';
-  const _v25='assets/game/final_boss_0925_patterns/';
+  const _v25='assets/game/levels/stage_08/boss/final_boss_0925_patterns/';
   for(const k of ['ghost_claw','ghost_wall_left','phantom_skull','void_knight','shadow_interceptor',
                   'phantom_ground_portal','void_knight_slash','form1_hyper_cannon_arm'])X._src['vile25_'+k]=_v25+k+'.png';
   X._src.bof_cover_b='docs/marketing_0916/cover_b_raw.png';
-  X._src.r24_panel='assets/game/rival_fight_0924/ally_select_panel.png';
-  X._src.r24_card='assets/game/rival_fight_0924/rival_fight_card.png';
-  X._src.s9_fusion_portal_0924='assets/game/stage9_fusion_0924/tidal_fusion_portal_16.png';
+  X._src.r24_panel='assets/game/levels/stage_06/boss/rival_fight_0924/ally_select_panel.png';
+  X._src.r24_card='assets/game/levels/stage_06/boss/rival_fight_0924/rival_fight_card.png';
+  X._src.s9_fusion_portal_0924='assets/game/levels/stage_09/effects/stage9_fusion_0924/tidal_fusion_portal_16.png';
   /* CAMPAIGN MAP v2 PIECES (0912v). Code-owned for the same reason as the hulls above. Baked from
      SpriteCook plates by _BUILD_SOURCE/campaign_map_v2_0912v.py; `cm2_` keeps them off PRELOAD,
      and cmap2Warm touches them from the hub, a screen before the map needs them. */
   for(const _cm of ['1','2','3','4','5','6','7','8','9','hub'])
-    for(const _v of ['','_lock','_glow','_shadow']) X._src['cm2_isl_'+_cm+_v]='assets/game/campaign_map_v2/isl_'+_cm+_v+'.png';
+    for(const _v of ['','_lock','_glow','_shadow']) X._src['cm2_isl_'+_cm+_v]='assets/game/shared/campaign/campaign_map_v2/isl_'+_cm+_v+'.png';
   for(let _c=0;_c<7;_c++){
-    X._src['cm2_cloud_'+_c]='assets/game/campaign_map_v2/cloud_'+_c+'.png';
-    X._src['cm2_cloud_'+_c+'_shadow']='assets/game/campaign_map_v2/cloud_'+_c+'_shadow.png';
+    X._src['cm2_cloud_'+_c]='assets/game/shared/campaign/campaign_map_v2/cloud_'+_c+'.png';
+    X._src['cm2_cloud_'+_c+'_shadow']='assets/game/shared/campaign/campaign_map_v2/cloud_'+_c+'_shadow.png';
   }
-  X._src['dlg_rect_0914']='assets/game/dialogue_0914/frame.png';
-  for(const k of ['ship','ball','leap','charge','reticle','boomerang_body','boomerang_hammer'])X._src['hammer_'+k]='assets/game/stage5_hammer/'+k+'.png';
-  const _archRoot='assets/game/stage5_archmage_0916/';
+  X._src['dlg_rect_0914']='assets/game/shared/ui/dialogue_0914/frame.png';
+  for(const k of ['ship','ball','leap','charge','reticle','boomerang_body','boomerang_hammer'])X._src['hammer_'+k]='assets/game/levels/stage_05/boss/stage5_hammer/'+k+'.png';
+  const _archRoot='assets/game/levels/stage_05/boss/stage5_archmage_0916/';
   for(const k of ['master','idle','twirl_throw','ship_transform','spiked_ball','chaingun_detach_fire','chaingun_break_enrage','dual_uzi_assault','spell_raise','death','effects','hammer','hammer_spin','heat_meter','chaingun_icons'])X._src['arch_'+k]=_archRoot+k+'.png';
   X._src.arch_stun_0920=_archRoot+'stun_0920.png';
   X._src.arch_combat_0923=_archRoot+'combat_0923/poses.png';
@@ -2050,55 +2060,55 @@ const XART=(function(){
   X._src.arch_whirlwind_0926=_archRoot+'combat_0926/whirlwind_v2.png';
   X._src.arch_orbital_sweep_0926=_archRoot+'combat_0926/hammer_strike_v2.png';
   X._src.arch_chromium_beam_0926=_archRoot+'combat_0926/chromium_beam.png';
-  X._src.late_campaign_flight_0926='assets/game/projectiles_0926/late_campaign_flight.png';
+  X._src.late_campaign_flight_0926='assets/game/shared/player_weapons/projectiles_0926/late_campaign_flight.png';
   X._src.arch_leap_strike_0922=_archRoot+'leap_strike_0922.png';
   X._src.arch_twirl_throw_0922=_archRoot+'twirl_throw_0922.png';
   X._src.arch_pilot_eradication=_archRoot+'fx_0923/pilot_eradication.png';
   X._src.arch_leap_shock=_archRoot+'fx_0923/hammer_leap_shock.png';
   for(const family of ['body','gun','fx'])for(let f=0;f<8;f++)X._src['arch_blaster_'+family+'_'+f]=_archRoot+'blaster_0922/'+family+'_'+f+'.png';
-  X._src.arsenal_frame_0922='assets/game/ui/arsenal_0922/frame.png';
+  X._src.arsenal_frame_0922='assets/game/shared/ui/ui/arsenal_0922/frame.png';
   for(let i=1;i<=5;i++)X._src['micon_chaingun_'+i]=_archRoot+'chaingun_icon_'+i+'.png';
   /* THE FORGE'S OWN ICONS (0917): one badge per element x forgeable slot, generated against the
      authored badge strip (docs/proofs/forge_icons_0917). Loose files under NEW keys - a cell beats
      the loose-file cache, so they could not share a tier icon's key. weaponIconKey prefers them
      for a forged slot. */
   for(const _fe of ['fire','ice','lightning','prism','toxic','kinetic','chrome','water','dark'])
-    for(const _fs of [0,1,2,3,4,5,6,7,8]){ X._src['micon_forge_'+_fe+'_'+_fs]='assets/game/ui/forge_0917/micon_forge_'+_fe+'_'+_fs+'.png';
-      for(let _fl=2;_fl<=5;_fl++) X._src['micon_forge_'+_fe+'_'+_fs+'_'+_fl]='assets/game/ui/forge_0917/micon_forge_'+_fe+'_'+_fs+'_'+_fl+'.png'; }
-  X._src.fx_ground_strikes_0916='assets/game/shared_targeting_0916/elemental_ground_strikes.png';
-  const _yloRoot='assets/game/yuri_lightning_orb_0916/';
+    for(const _fs of [0,1,2,3,4,5,6,7,8]){ X._src['micon_forge_'+_fe+'_'+_fs]='assets/game/shared/ui/ui/forge_0917/micon_forge_'+_fe+'_'+_fs+'.png';
+      for(let _fl=2;_fl<=5;_fl++) X._src['micon_forge_'+_fe+'_'+_fs+'_'+_fl]='assets/game/shared/ui/ui/forge_0917/micon_forge_'+_fe+'_'+_fs+'_'+_fl+'.png'; }
+  X._src.fx_ground_strikes_0916='assets/game/shared/effects/shared_targeting_0916/elemental_ground_strikes.png';
+  const _yloRoot='assets/game/pilots/yuri/abilities/yuri_lightning_orb_0916/';
   for(let i=1;i<=5;i++){
     X._src['micon_lightningorb_'+i]=_yloRoot+'lightning_orb_icon_'+i+'.png';
     X._src['ylo_orb_'+i]=_yloRoot+'lightning_orb_'+i+'.png';
     X._src['ylo_bolt_'+i]=_yloRoot+'lightning_bolt_'+i+'.png';
   }
-  X._src.fx_ground_target_reticle='assets/game/stage5_hammer/reticle.png';
+  X._src.fx_ground_target_reticle='assets/game/levels/stage_05/boss/stage5_hammer/reticle.png';
   // Authored hull banks, headings and complete flight maneuvers; no CSS/canvas hull rotation.
   for(let v=0;v<4;v++)for(const [pose,n] of [['bank',3],['roll',8],['pitch',8],['turn',8]])for(let f=0;f<n;f++)
-    X._src['furyjet_'+v+'_'+pose+'_'+f]='assets/game/fury_fleet_0922/jet_'+v+'_'+pose+'_'+f+'.png';
-  for(let v=0;v<2;v++)for(let f=0;f<3;f++)X._src['furyboat_'+v+'_'+f]='assets/game/fury_fleet_0922/boat_'+v+'_'+f+'.png';
-  for(let f=0;f<6;f++)for(const side of ['left','right'])X._src['furyboat_rack_'+side+'_'+f]='assets/game/fury_fleet_0922/boat_rack_'+side+'_'+f+'.png';
-  for(let state=0;state<2;state++)for(let f=0;f<5;f++)X._src['furyboat_turret_'+state+'_'+f]='assets/game/fury_fleet_0922/boat_turret_'+state+'_'+f+'.png';
+    X._src['furyjet_'+v+'_'+pose+'_'+f]='assets/game/shared/ships/fury_fleet_0922/jet_'+v+'_'+pose+'_'+f+'.png';
+  for(let v=0;v<2;v++)for(let f=0;f<3;f++)X._src['furyboat_'+v+'_'+f]='assets/game/shared/ships/fury_fleet_0922/boat_'+v+'_'+f+'.png';
+  for(let f=0;f<6;f++)for(const side of ['left','right'])X._src['furyboat_rack_'+side+'_'+f]='assets/game/shared/ships/fury_fleet_0922/boat_rack_'+side+'_'+f+'.png';
+  for(let state=0;state<2;state++)for(let f=0;f<5;f++)X._src['furyboat_turret_'+state+'_'+f]='assets/game/shared/ships/fury_fleet_0922/boat_turret_'+state+'_'+f+'.png';
 
-  X._src['s4_chase_0915']='assets/game/stage4_highway_0915.png';
-  X._src['pause_button_0915']='assets/game/ui/pause_0915/button.png';
-  X._src['mode_life_up_0915']='assets/game/ui/pickups_0915/life_up_wings.png';
-  X._src['mode_continue_up_0915']='assets/game/ui/pickups_0915/continue_up.png';
-  const _turn0918='assets/game/rotation_frames_0918/';
+  X._src['s4_chase_0915']='assets/game/levels/stage_04/stage/stage4_highway_0915.png';
+  X._src['pause_button_0915']='assets/game/shared/ui/ui/pause_0915/button.png';
+  X._src['mode_life_up_0915']='assets/game/shared/ui/ui/pickups_0915/life_up_wings.png';
+  X._src['mode_continue_up_0915']='assets/game/shared/ui/ui/pickups_0915/continue_up.png';
+  const _turn0918='assets/game/shared/combat/rotation_frames_0918/';
   for(const [_tk,_tf] of Object.entries({turn_life_0918:'life_up_turn.png',turn_continue_0918:'continue_up_turn.png',turn_spacehelper_0918:'space_helper_turn.png',turn_spaceakimbo_0918:'space_akimbo_turn.png',turn_spacemine_0918:'space_mine_turn.png',turn_furybomb_0918:'fury_bomb_turn.png',turn_timebomb_0918:'timed_bomb_turn.png',turn_score_100_0918:'score_100_turn.png',turn_score_250_0918:'score_250_turn.png',turn_score_500_0918:'score_500_turn.png',turn_score_1000_0918:'score_1000_turn.png'}))X._src[_tk]=_turn0918+_tf;
   for(const _e of ['fire','ice','lightning','prism','toxic','kinetic','chrome','water','dark'])X._src['turn_inf_'+_e+'_0918']=_turn0918+'inf_'+_e+'_turn.png';
   for(const _f of ['arm_flame_intact','arm_flame_damaged','arm_flame_exposed','arm_cannon_intact','arm_cannon_damaged','arm_cannon_exposed','body_intact','body_damaged','body_exposed','body_wreck','body_rotor','body_rotor_damaged'])X._src['fzt_'+_f+'_turn0918']=_turn0918+'fzt_'+_f+'_turn.png';
-  X._src.bmbar_frame_shield_v2='assets/game/ui/bossbar_0918/shield_frame_v2.png';
+  X._src.bmbar_frame_shield_v2='assets/game/shared/ui/ui/bossbar_0918/shield_frame_v2.png';
   for(const [theme,file] of [['volcano','volcano_red'],['steel','level5_steel']]){
     X._src['bmbar_frame_shield_'+theme]='assets/game/ui/bossbar_0918/shield_frame_'+file+'.png';
     for(const state of ['over','hex','plasma','low'])X._src['bmbar_shield_'+theme+'_fill_'+state]='assets/game/ui/bossbar_0918/shield_fill_'+file+'_'+state+'.png';
   }
   for(const tier of ['super','ultra','uber']){
-    X._src['missile_'+tier+'_icon_0915']='assets/game/ui/missile_tiers_0915/'+tier+'_icon_v4.png';
-    X._src['missile_'+tier+'_box_0915']='assets/game/ui/missile_tiers_0915/'+tier+'_box_v4.png';
+    X._src['missile_'+tier+'_icon_0915']='assets/game/shared/ui/ui/missile_tiers_0915/'+tier+'_icon_v4.png';
+    X._src['missile_'+tier+'_box_0915']='assets/game/shared/ui/ui/missile_tiers_0915/'+tier+'_box_v4.png';
   }
-  X._src.missile_base_m_box_0924='assets/game/ui/missile_tiers_0915/base_m_box_v4.png';
-  const _hqSpaceRoot='assets/game/ui/space_armory_0915/';
+  X._src.missile_base_m_box_0924='assets/game/shared/ui/ui/missile_tiers_0915/base_m_box_v4.png';
+  const _hqSpaceRoot='assets/game/shared/ui/ui/space_armory_0915/';
   X._src.hq_space_box_0915=_hqSpaceRoot+'fury_hq_box.png';
   X._src.hq_space_helper_icon_0915=_hqSpaceRoot+'helper_orb_icon.png';
   X._src.hq_space_akimbo_icon_0915=_hqSpaceRoot+'akimbo_icon.png';
@@ -2107,7 +2117,7 @@ const XART=(function(){
   X._src.hq_space_mine_0915=_hqSpaceRoot+'proximity_mine.png';
   X._src.hq_space_shrapnel_long_0915=_hqSpaceRoot+'shrapnel_long.png';
   X._src.hq_space_shrapnel_forked_0915=_hqSpaceRoot+'shrapnel_forked.png';
-  const _inputPromptRoot='assets/game/ui/input_prompts_0915/';
+  const _inputPromptRoot='assets/game/shared/ui/ui/input_prompts_0915/';
   for(const [_key,_file] of Object.entries({
     input_mouse_neutral_0915:'mouse_neutral.png',input_mouse_left_0915:'mouse_left_click.png',
     input_mouse_right_0915:'mouse_right_click.png',input_mouse_wheel_0915:'mouse_wheel.png',
@@ -2126,16 +2136,16 @@ const XART=(function(){
   /* the debrief plate (Mike, 0916: "we need to generate a new stat screen"). Authored as ONE
      plate with its bays cut into it, so the screen is art rather than a frame with text floated
      over it - which is what the 9-sliced statscreen had become. */
-  X._src['statpanel_0916']='assets/game/ui/debrief_0916/stat_panel.png';
+  X._src['statpanel_0916']='assets/game/shared/ui/ui/debrief_0916/stat_panel.png';
   /* ⚠ THE FULL-SCREEN PLATE (Mike, 0916: "This should be a full screen generated graphic that
      fills the entire 640x480 screen"). The framed plate above left the screen's own background
      showing around it; this one is edge to edge, so the debrief IS the picture. */
-  X._src['statpanel_full_0916']='assets/game/ui/debrief_0916/stat_panel_full.png';
+  X._src['statpanel_full_0916']='assets/game/shared/ui/ui/debrief_0916/stat_panel_full.png';
   /* THE NEW WORDMARK (Mike, 0916: "this is the new game logo. Use this as the new logo after you
      clean it up"). Keyed from its magenta by a border flood - 2 enclosed key pixels left, 6 of
      interior magenta - and the 3,650px pink rim converted to a black edge, never deleted, per the
      standing halo rule. nbl_logo on ui_menu_1 stays as the decode fallback. */
-  X._src['nbl_logo_0916']='assets/game/ui/logo_0916/bof_logo.png';
+  X._src['nbl_logo_0916']='assets/game/shared/ui/ui/logo_0916/bof_logo.png';
   /* the fifth difficulty's plate (Mike, 0916: "Insanity - a 5th difficulty and 5th difficulty button
      you should generate"). A LOOSE FILE under a key no atlas cell owns - diff_easy..diff_furious are
      cells on ui_menu_1, and cells are checked before the loose-file cache (0912m).
@@ -2147,52 +2157,52 @@ const XART=(function(){
      ui_menu_1 and cells are checked before the loose-file cache (0912m), so a loose file registered
      under those names would be silently ignored and the screen would go on drawing the old plates. */
   for(const _d of ['easy','normal','hard','furious','insanity'])
-    X._src['diff_'+_d+'_0916']='assets/game/ui/diff_0916/diff_'+_d+'.png';
+    X._src['diff_'+_d+'_0916']='assets/game/shared/ui/ui/diff_0916/diff_'+_d+'.png';
   /* the eight infusion badges (0917), one sheet sliced on its own alpha gutters so they share a ring
      and a bevel. ⚠ THE FIRST VARIATION BAKED THE PROMPT'S OWN WORDS INTO THE BADGES ("FLAME",
      "ICE CRYSTAL"...) - the 0916 medal-sheet trap, read before slicing, the other variation shipped. */
   for(const _e of ['fire','ice','lightning','prism','toxic','kinetic','water','dark','chrome'])
-    X._src['inf_'+_e]='assets/game/ui/infusion_0917/inf_'+_e+'.png';
+    X._src['inf_'+_e]='assets/game/shared/ui/ui/infusion_0917/inf_'+_e+'.png';
   /* THE FORGE SEQUENCE'S TWO PLATES (0917b). SpriteCook, 1376x768 = the debrief's own 477:266 aspect,
      so they fill the cinematic viewport edge to edge with no distortion. The chamber is a 1:1 EDIT of
      the 0916 concept plate Mike liked (edit_asset_id, every socket emptied), the bays are generated
      against it as a reference so the two read as one family. */
-  X._src['forge_chamber_0917b']='assets/game/ui/forge_0917b/forge_chamber.png';
-  X._src['forge_element_rail_0919']='assets/game/ui/forge_0919/forge_element_rail_9.png';
-  X._src['forge_chamber_modular_0923']='assets/game/ui/forge_modular_0923/concept.png';
-  ['track_top','track_middle','track_bottom','thumb_normal','thumb_hover','thumb_pressed','button_normal','button_hover'].forEach(function(k){X._src['forge_scroll_'+k]='assets/game/ui/forge_modular_0923/scroll_'+k+'.png';});
-  X._src['loadout_bays_0917b']='assets/game/ui/forge_0917b/loadout_bays.png';
-  X._src['forge_loadout_0918']='assets/game/ui/forge_0918/forge_loadout.png';
-  X._src['weapon_found_0918']='assets/game/ui/forge_0918/weapon_found.png';
-  X._src['magma_orb_0918']='assets/game/player_weapons/magma_orb_0918/magma_orb.png';
-  X._src['forge_orbs_0919']='assets/game/player_weapons/forge_orbs_0919/element_orbs.png';
-  X._src['mav_lances_0919']='assets/game/player_weapons/maverick_lances_0919.png';
-  X._src['yuri_storm_icon_0919']='assets/game/special_icons/yuri_thunder_storm_0919.png';
-  X._src['forge_lightning_stream_0919']='assets/game/player_weapons/forge_lightning_stream_0919.png';
-  X._src['forge_ice_lance_0919']='assets/game/player_weapons/forge_ice_lance_0919.png';
-  X._src['forge_dark_void_0919']='assets/game/player_weapons/forge_dark_void_0919.png';
-  X._src['forge_missiles_0919']='assets/game/player_weapons/forge_missiles_0919/element_missiles.png';
-  X._src['toxic_orb_0919']='assets/game/player_weapons/toxic_orb_0919/toxic_orb.png';
+  X._src['forge_chamber_0917b']='assets/game/shared/ui/ui/forge_0917b/forge_chamber.png';
+  X._src['forge_element_rail_0919']='assets/game/shared/ui/ui/forge_0919/forge_element_rail_9.png';
+  X._src['forge_chamber_modular_0923']='assets/game/shared/ui/ui/forge_modular_0923/concept.png';
+  ['track_top','track_middle','track_bottom','thumb_normal','thumb_hover','thumb_pressed','button_normal','button_hover'].forEach(function(k){X._src['forge_scroll_'+k]='assets/game/shared/ui/ui/forge_modular_0923/scroll_'+k+'.png';});
+  X._src['loadout_bays_0917b']='assets/game/shared/ui/ui/forge_0917b/loadout_bays.png';
+  X._src['forge_loadout_0918']='assets/game/shared/ui/ui/forge_0918/forge_loadout.png';
+  X._src['weapon_found_0918']='assets/game/shared/ui/ui/forge_0918/weapon_found.png';
+  X._src['magma_orb_0918']='assets/game/shared/player_weapons/player_weapons/magma_orb_0918/magma_orb.png';
+  X._src['forge_orbs_0919']='assets/game/shared/player_weapons/player_weapons/forge_orbs_0919/element_orbs.png';
+  X._src['mav_lances_0919']='assets/game/shared/player_weapons/player_weapons/maverick_lances_0919.png';
+  X._src['yuri_storm_icon_0919']='assets/game/shared/player_weapons/special_icons/yuri_thunder_storm_0919.png';
+  X._src['forge_lightning_stream_0919']='assets/game/shared/player_weapons/player_weapons/forge_lightning_stream_0919.png';
+  X._src['forge_ice_lance_0919']='assets/game/shared/player_weapons/player_weapons/forge_ice_lance_0919.png';
+  X._src['forge_dark_void_0919']='assets/game/shared/player_weapons/player_weapons/forge_dark_void_0919.png';
+  X._src['forge_missiles_0919']='assets/game/shared/player_weapons/player_weapons/forge_missiles_0919/element_missiles.png';
+  X._src['toxic_orb_0919']='assets/game/shared/player_weapons/player_weapons/toxic_orb_0919/toxic_orb.png';
   for(const _e of ['ice','lightning','prism','toxic','kinetic','water','chrome','dark']){
-    X._src['forge_elem_'+_e+'_bullet_0918']='assets/game/player_weapons/forge_elements_0918/'+_e+'_bullet.png';
-    X._src['forge_elem_'+_e+'_laser_0918']='assets/game/player_weapons/forge_elements_0918/'+_e+'_laser.png';
+    X._src['forge_elem_'+_e+'_bullet_0918']='assets/game/shared/player_weapons/player_weapons/forge_elements_0918/'+_e+'_bullet.png';
+    X._src['forge_elem_'+_e+'_laser_0918']='assets/game/shared/player_weapons/player_weapons/forge_elements_0918/'+_e+'_laser.png';
   }
-  const _forgeFire='assets/game/player_weapons/forge_fire_0918/';
+  const _forgeFire='assets/game/shared/player_weapons/player_weapons/forge_fire_0918/';
   X._src.forge_fire_slug_0918=_forgeFire+'fire_rotary_slug.png';
   X._src.forge_fire_laser_0918=_forgeFire+'fire_laser_column.png';
   X._src.forge_fire_blast_0918=_forgeFire+'fire_magma_blast.png';
   /* 0917c: POWERS GAINED's own plate (same family), the FURIOUS coin, the two bombs, the score bullets */
-  X._src['powers_single_0919']='assets/game/ui/forge_0917b/powers_single_0919.png';
-  X._src['fury_coin_0917c']='assets/game/ui/pickups_0917b/fury_coin.png';
-  X._src['fury_bomb_0917c']='assets/game/ui/pickups_0917b/fury_bomb.png';
-  X._src['timed_bomb_0917c']='assets/game/ui/pickups_0917b/timed_bomb.png';
-  for(const _v of [100,250,500,1000]) X._src['score_bullet_'+_v]='assets/game/ui/pickups_0917b/score_'+_v+'.png';
+  X._src['powers_single_0919']='assets/game/shared/ui/ui/forge_0917b/powers_single_0919.png';
+  X._src['fury_coin_0917c']='assets/game/shared/ui/ui/pickups_0917b/fury_coin.png';
+  X._src['fury_bomb_0917c']='assets/game/shared/ui/ui/pickups_0917b/fury_bomb.png';
+  X._src['timed_bomb_0917c']='assets/game/shared/ui/ui/pickups_0917b/timed_bomb.png';
+  for(const _v of [100,250,500,1000]) X._src['score_bullet_'+_v]='assets/game/shared/ui/ui/pickups_0917b/score_'+_v+'.png';
   /* 0918: the generated effect animations - 8-frame horizontal strips (fx_install_0918.py) */
-  for(const _e of ['fire','ice','lightning','prism','toxic','kinetic','water','chrome','dark']) X._src['efx_burst_'+_e]='assets/game/fx_0918/efx_burst_'+_e+'.png';
-  X._src['efx_burn']='assets/game/fx_0918/efx_burn.png';
-  for(let i=0;i<8;i++) X._src['enemy_burn_0922_'+i]='assets/game/fx_burn_0922/burn_'+i+'.png';
-  for(const _g of ['fire','water','lightning']) X._src['efx_geyser_'+_g]='assets/game/fx_0918/efx_geyser_'+_g+'.png';
-  X._src['efx_debris_0']='assets/game/fx_0918/efx_debris_0.png'; X._src['efx_debris_1']='assets/game/fx_0918/efx_debris_1.png';
+  for(const _e of ['fire','ice','lightning','prism','toxic','kinetic','water','chrome','dark']) X._src['efx_burst_'+_e]='assets/game/shared/effects/fx_0918/efx_burst_'+_e+'.png';
+  X._src['efx_burn']='assets/game/shared/effects/fx_0918/efx_burn.png';
+  for(let i=0;i<8;i++) X._src['enemy_burn_0922_'+i]='assets/game/shared/effects/fx_burn_0922/burn_'+i+'.png';
+  for(const _g of ['fire','water','lightning']) X._src['efx_geyser_'+_g]='assets/game/shared/effects/fx_0918/efx_geyser_'+_g+'.png';
+  X._src['efx_debris_0']='assets/game/shared/effects/fx_0918/efx_debris_0.png'; X._src['efx_debris_1']='assets/game/shared/effects/fx_0918/efx_debris_1.png';
   /* THE WHOLE TITLE MENU, REGENERATED AS ONE SHEET (Mike, 0916: "Regenerate all my other buttons
      here to match the current style of Bullets of Fury and proper reference of ships and pilots
      please. The help button also is too large compared to the rest.").
@@ -2211,45 +2221,45 @@ const XART=(function(){
      rather than from its own output - a script that consumes its own output is not idempotent
      (0907u, where exactly that made a plate worse on every run). */
   for(const _b of ['newgame','password','options','help','armory','achievements','credits','exit'])
-    X._src['btn_'+_b+'_0916']='assets/game/ui/title_0916/btn_'+_b+'_lit.png';
+    X._src['btn_'+_b+'_0916']='assets/game/shared/ui/ui/title_0916/btn_'+_b+'_lit.png';
   /* the achievement plaques: nine medals generated as ONE sheet and sliced on its own alpha
      gutters, so they share a light source and a bevel weight by construction (ach_plaques_0916.py) */
   for(const _p of ['campaign_clear','stage_clear','stage_nodeath','stage_nomissile','boss_hard',
                    'boss_furious','boss_speed','weapon_max','run_no_continue'])
-    X._src['ach_plq_'+_p]='assets/game/ui/awards_0916/ach_'+_p+'.png';
+    X._src['ach_plq_'+_p]='assets/game/shared/ui/ui/awards_0916/ach_'+_p+'.png';
   /* the escape arrow for the Stage-4 giant strike (S4-16). ONE plate, drawn mirrored on the left,
      because a flipped pair is what Mike asked for and two files would be two things to keep in
      step. Pointing RIGHT as authored. */
-  X._src['warn_escape_arrow_0916']='assets/game/ui/warn_0916/escape_arrow.png';
+  X._src['warn_escape_arrow_0916']='assets/game/shared/ui/ui/warn_0916/escape_arrow.png';
   /* the rank badges (Mike, 0916: "Make the Rank lettering generated graphics"). One plate per
      letter, each in its own metal: F molten, S gold, A silver, B bronze, C steel, D scorched
      iron, L cracked grey. */
-  for(const _rk of ['f','s','a','b','c','d','l']) X._src['rank_'+_rk+'_0916']='assets/game/ui/debrief_0916/rank_'+_rk+'.png';
+  for(const _rk of ['f','s','a','b','c','d','l']) X._src['rank_'+_rk+'_0916']='assets/game/shared/ui/ui/debrief_0916/rank_'+_rk+'.png';
   /* MIKE'S OWN RANK PLATES (0916): shield + word in one authored graphic, keyed from his magenta
      plates. The enclosed key between LOSER's chains was punched to alpha (10,311px the border flood
      could not reach) and the pink fringe beside it converted to a black edge. The small badges
      above stay as the decode fallback. */
-  for(const _rk of ['f','s','a','b','c','d','l']) X._src['rankplate_'+_rk+'_0916']='assets/game/ui/debrief_0916/rankplate_'+_rk+'.png';
+  for(const _rk of ['f','s','a','b','c','d','l']) X._src['rankplate_'+_rk+'_0916']='assets/game/shared/ui/ui/debrief_0916/rankplate_'+_rk+'.png';
   /* ⚠ AND THE SAME PLATES CUT AT THEIR OWN WAIST. The debrief has a square bay for the shield and a
      strip for the word, so each half is stored separately - cut at the row where the shield's point
      meets the banner (the minimum-ink row between 55% and 85% of the plate), with a few pixels of
      overlap kept on both pieces so neither loses its edge. */
   for(const _rk of ['f','s','a','b','c','d','l']){
-    X._src['rankshield_'+_rk+'_0916']='assets/game/ui/debrief_0916/rankshield_'+_rk+'.png';
-    X._src['rankword_'+_rk+'_0916']='assets/game/ui/debrief_0916/rankword_'+_rk+'.png';
+    X._src['rankshield_'+_rk+'_0916']='assets/game/shared/ui/ui/debrief_0916/rankshield_'+_rk+'.png';
+    X._src['rankword_'+_rk+'_0916']='assets/game/shared/ui/ui/debrief_0916/rankword_'+_rk+'.png';
   }
-  X._src['mode_boss_rush_0915']='assets/game/ui/modes_0915/boss_rush.png';
-  X._src['mode_time_attack_0915']='assets/game/ui/modes_0915/time_attack.png';
+  X._src['mode_boss_rush_0915']='assets/game/shared/ui/ui/modes_0915/boss_rush.png';
+  X._src['mode_time_attack_0915']='assets/game/shared/ui/ui/modes_0915/time_attack.png';
   /* NEW GAME + (0917) - unlocked by the same final-clear signal as the bonus modes; the one mode
      in which DARK MATTER infusions can drop (infusionGateOpen). */
-  X._src['mode_ngplus_0917']='assets/game/ui/modes_0917/new_game_plus.png';
-  X._src['mode_lock_nexus_0915']='assets/game/ui/modes_0915/nexus_chains.webp';
-  for(const _f of ['ocean','bar','btn_save','btn_load','btn_exit']) X._src['cm2_'+_f]='assets/game/campaign_map_v2/'+_f+'.png';
-  X._src['cm2_ocean']='assets/game/campaign_map_v2/ocean_seamless_0920.png';
+  X._src['mode_ngplus_0917']='assets/game/shared/ui/ui/modes_0917/new_game_plus.png';
+  X._src['mode_lock_nexus_0915']='assets/game/shared/ui/ui/modes_0915/nexus_chains.webp';
+  for(const _f of ['ocean','bar','btn_save','btn_load','btn_exit']) X._src['cm2_'+_f]='assets/game/shared/campaign/campaign_map_v2/'+_f+'.png';
+  X._src['cm2_ocean']='assets/game/shared/campaign/campaign_map_v2/ocean_seamless_0920.png';
   /* LASER MIST REWARD ATLAS (0902). One decoded sheet owns the five pickup plates, twenty
      travelling-water frames and all impact/ripple/bubble animation. Runtime rects below keep
      the generated cells padded; no loose duplicate images are loaded. */
-  X._src['bof_laser_mist_weapon_atlas']='assets/game/laser_mist/bof_laser_mist_weapon_atlas.png';
+  X._src['bof_laser_mist_weapon_atlas']='assets/game/shared/player_weapons/laser_mist/bof_laser_mist_weapon_atlas.png';
   /* MAGMA WARD'S AUTHORED STAGE-2 FIRE KIT (0830). Loose registrations are intentional:
      manifest.js is generated, while these normalized frames live in a source-controlled runtime
      folder and must survive the next catalog rebuild. Every family has a fixed anchor/box. */
@@ -2294,21 +2304,21 @@ const XART=(function(){
     X._src['port_cf_cole_'+em]='assets/game/pilots_0922/portraits/cole-'+em+'.png';
     X._src['comm_cole_'+em]='assets/game/pilots_0922/comm/comm_cole_'+em+'.png';
   }
-  X._src.fire_whip_fx_0919='assets/game/player_weapons/fire_whip_0919/fire_whip_fx.png';
-  for(let f=0;f<8;f++)X._src['fire_whip_flame_'+f]='assets/game/player_weapons/fire_whip_0923/flame_'+f+'.png';
-  for(let f=0;f<24;f++)X._src['fire_whip_pose_'+f]='assets/game/player_weapons/fire_whip_sweep_0923/pose_'+f+'.png';
-  for(let f=0;f<8;f++)X._src['fire_whip_muzzle_'+f]='assets/game/player_weapons/fire_whip_lash_0923/muzzle_'+f+'.png';
-  X._src.micon_firewhip_0919='assets/game/player_weapons/fire_whip_0919/fire_whip_icon.png';
-  X._src.fire_whip_icons_0919='assets/game/player_weapons/fire_whip_0919/fire_whip_tiers.png';
+  X._src.fire_whip_fx_0919='assets/game/shared/player_weapons/player_weapons/fire_whip_0919/fire_whip_fx.png';
+  for(let f=0;f<8;f++)X._src['fire_whip_flame_'+f]='assets/game/shared/player_weapons/player_weapons/fire_whip_0923/flame_'+f+'.png';
+  for(let f=0;f<24;f++)X._src['fire_whip_pose_'+f]='assets/game/shared/player_weapons/player_weapons/fire_whip_sweep_0923/pose_'+f+'.png';
+  for(let f=0;f<8;f++)X._src['fire_whip_muzzle_'+f]='assets/game/shared/player_weapons/player_weapons/fire_whip_lash_0923/muzzle_'+f+'.png';
+  X._src.micon_firewhip_0919='assets/game/shared/player_weapons/player_weapons/fire_whip_0919/fire_whip_icon.png';
+  X._src.fire_whip_icons_0919='assets/game/shared/player_weapons/player_weapons/fire_whip_0919/fire_whip_tiers.png';
   /* Cinematics use the same current player atlas as gameplay and pilot select.
      Retired cinematic cutouts remain archived on disk, but are not loaded. */
   // Reusable isometric Fury HQ and the orbital-infection origin sequence.
-  const _originRoot='assets/game/cinematic_campaign/symbiote_origin_0923/';
+  const _originRoot='assets/game/shared/cinematics/cinematic_campaign/symbiote_origin_0923/';
   X._src['cinbg_fury_hq']=_originRoot+'fury_hq_isometric.png';
   X._src['cinbg_hq_aerial']=_originRoot+'fury_hq_isometric.png';
   X._src['cin_origin_hq_iso']=_originRoot+'fury_hq_isometric.png';
-  X._src['cin_origin_symbiote']='assets/game/cinematic_campaign/war_origin_0924/symbiote_two_eyes_native_0924.png';
-  const _originReelRoot='assets/game/cinematic_campaign/symbiote_origin_0924/';
+  X._src['cin_origin_symbiote']='assets/game/shared/cinematics/cinematic_campaign/war_origin_0924/symbiote_two_eyes_native_0924.png';
+  const _originReelRoot='assets/game/shared/cinematics/cinematic_campaign/symbiote_origin_0924/';
   X._src.cin_origin_blackhole_0924=_originReelRoot+'01_black_hole_opens.png';
   X._src.cin_origin_emerges_0924=_originReelRoot+'02_symbiote_emerges.png';
   X._src.cin_origin_contact_0924=_originReelRoot+'03_first_contact.png';
@@ -2317,7 +2327,7 @@ const XART=(function(){
   X._src['cin_origin_radio']=_originRoot+'radio_dispatch.png';
   X._src['cin_origin_tower']=_originRoot+'tower_dispatch.png';
   X._src['cin_origin_land']=_originRoot+'land_takeover.png';
-  const _warRoot='assets/game/cinematic_campaign/war_origin_0924/';
+  const _warRoot='assets/game/shared/cinematics/cinematic_campaign/war_origin_0924/';
   for(const _scene of ['earth_peace','civilian_collapse','city_air_attack','suburban_tanks','naval_exchange','rebel_shadow'])
     X._src['cin_war_'+_scene]=_warRoot+_scene+'_native.png';
   for(let _f=1;_f<=4;_f++)X._src['cin_federation_station_'+_f]=_warRoot+'federation_station_'+String(_f).padStart(2,'0')+'.png';
@@ -2338,8 +2348,8 @@ const XART=(function(){
     '04_back_neutral','05_back_left_3q','06_back_right_3q'];
   for(const _pk of ['axel','decker','maverick','freezer','juggernaut','yuri','lizzie','falva','cole'])
     for(let _i=0;_i<_cinPoseNames.length;_i++)
-      X._src['cinpose_'+_pk+'_'+(_i+1)]=_pk==='cole'?'assets/game/cinematic_campaign/cole_0924/'+_cinPoseNames[_i]+'.png':'assets/game/cinematic_characters/'+_pk+'/poses/'+_cinPoseNames[_i]+'.png';
-  const _coleSceneRoot='assets/game/cinematic_campaign/cole_0924/';
+      X._src['cinpose_'+_pk+'_'+(_i+1)]=_pk==='cole'?'assets/game/shared/cinematics/cinematic_campaign/cole_0924/'+_cinPoseNames[_i]+'.png':'assets/game/cinematic_characters/'+_pk+'/poses/'+_cinPoseNames[_i]+'.png';
+  const _coleSceneRoot='assets/game/shared/cinematics/cinematic_campaign/cole_0924/';
   X._src.cin_cole_decker_hug_0924=_coleSceneRoot+'cole_decker_hug.png';
   X._src.cin_cole_typing_0924=_coleSceneRoot+'cole_typing.png';
   X._src.cin_decker_typing_0924=_coleSceneRoot+'decker_typing.png';
@@ -2347,42 +2357,42 @@ const XART=(function(){
   X._src.cin_decker_shocked_0924=_coleSceneRoot+'decker_shocked.png';
   X._src.hud_radar_bezel_0924=_warRoot+'radar_bezel_native.png';
   X._src.hud_equip_frame_0924=_warRoot+'equip_frame_native.png';
-  X._src.cin_stage07_approach='assets/game/cinematic_level_approaches/stage07_not_another_sewer_level_approach.png';
-  X._src.cin_stage07_topdown='assets/game/cinematic_level_transitions_topdown/stage07_not_another_sewer_level_topdown.png';
+  X._src.cin_stage07_approach='assets/game/levels/stage_07/cinematics/cinematic_level_approaches/stage07_not_another_sewer_level_approach.png';
+  X._src.cin_stage07_topdown='assets/game/levels/stage_07/cinematics/cinematic_level_transitions_topdown/stage07_not_another_sewer_level_topdown.png';
   X._src['cin_cockpit_front_fighter']=_originRoot+'fighter_cockpit_front.png';
   X._src['cin_cockpit_front_space']=_originRoot+'space_cockpit_front.png';
   X._src['cin_cockpit_pov_magenta']=_originRoot+'pilot_pov_magenta.png';
-  X._src.cin_pilot_axel_open='assets/game/cinematic_campaign/pilot_cam_0923/axel_open.png';
-  X._src.cin_pilot_axel_helmet='assets/game/cinematic_campaign/pilot_cam_0923/axel_helmet.png';
+  X._src.cin_pilot_axel_open='assets/game/shared/cinematics/cinematic_campaign/pilot_cam_0923/axel_open.png';
+  X._src.cin_pilot_axel_helmet='assets/game/shared/cinematics/cinematic_campaign/pilot_cam_0923/axel_helmet.png';
   for(const _pk of ['cole','decker','falva','freezer','juggernaut','lizzie','maverick','yuri']){
     for(const _pose of ['open','helmet'])
-      X._src['cin_pilot_'+_pk+'_'+_pose]='assets/game/cinematic_campaign/pilot_cam_0923/'+_pk+'_'+_pose+'.png';
+      X._src['cin_pilot_'+_pk+'_'+_pose]='assets/game/shared/cinematics/cinematic_campaign/pilot_cam_0923/'+_pk+'_'+_pose+'.png';
   }
-  X._src.cin_terrain_jungle_loop='assets/game/space_loops_0923/jungle_loop.png';
-  X._src.bg_stage05_loop_0923='assets/game/space_loops_0923/stage5_loop.png';
-  X._src.nst9_void_loop_0923='assets/game/space_loops_0923/stage9_loop.png';
-  X._src['cpov_male_hand']='assets/game/cockpit_pov_0923/male_hand_strip.png';
-  X._src['cpov_female_hand']='assets/game/cockpit_pov_0923/female_hand_strip.png';
-  X._src['cinbg_hq_beach']='assets/game/cinematic_campaign/exteriors_generated_official/02_fury_hq_beach_approach_official_generated.png';
-  X._src['cinbg_hq_gate']='assets/game/cinematic_campaign/exteriors_generated_official/03_fury_hq_jungle_gate_official_generated.png';
-  X._src['cinbg_jungle']='assets/game/cinematic_level_approaches/stage01_rumble_in_the_jungle_approach.png';
-  X._src['cinbg_stage1_route']='assets/game/mapJungle.png';
-  X._src['cinbg_hq_warroom']='assets/game/cinematic_backgrounds/fury_hq/04_strategic_war_room.png';
-  X._src['cin_cockpit_frame']='assets/game/cinematic_campaign/solo_cockpit_frame.png';
+  X._src.cin_terrain_jungle_loop='assets/game/shared/combat/space_loops_0923/jungle_loop.png';
+  X._src.bg_stage05_loop_0923='assets/game/levels/stage_05/stage/space_loops_0923/stage5_loop.png';
+  X._src.nst9_void_loop_0923='assets/game/levels/stage_09/stage/space_loops_0923/stage9_loop.png';
+  X._src['cpov_male_hand']='assets/game/shared/cinematics/cockpit_pov_0923/male_hand_strip.png';
+  X._src['cpov_female_hand']='assets/game/shared/cinematics/cockpit_pov_0923/female_hand_strip.png';
+  X._src['cinbg_hq_beach']='assets/game/shared/cinematics/cinematic_campaign/exteriors_generated_official/02_fury_hq_beach_approach_official_generated.png';
+  X._src['cinbg_hq_gate']='assets/game/shared/cinematics/cinematic_campaign/exteriors_generated_official/03_fury_hq_jungle_gate_official_generated.png';
+  X._src['cinbg_jungle']='assets/game/levels/stage_01/cinematics/cinematic_level_approaches/stage01_rumble_in_the_jungle_approach.png';
+  X._src['cinbg_stage1_route']='assets/game/shared/combat/mapJungle.png';
+  X._src['cinbg_hq_warroom']='assets/game/shared/cinematics/cinematic_backgrounds/fury_hq/04_strategic_war_room.png';
+  X._src['cin_cockpit_frame']='assets/game/shared/cinematics/cinematic_campaign/solo_cockpit_frame.png';
   /* ENDING CINEMATIC (0902). Keep these code-owned like the other cinematic plates: manifest.js
      is generated and must not be the only place that knows the finale exists. The two creature
      files are true RGBA cutouts; the HQ and satellite dish remain RGB background masters. */
-  X._src['cinend_hq_restored']='assets/game/cinematic_campaign/ending_generated/ending_fury_hq_restored_dawn_v1.png';
-  X._src['cinend_satellite_dish']='assets/game/cinematic_campaign/ending_generated/ending_damaged_satellite_dish_v1.png';
-  X._src['cinend_symbiote_survivor']='assets/game/cinematic_campaign/ending_generated/ending_symbiote_ooze_survivor_rgba_v2.png';
-  X._src['cinend_bof2_shadow']='assets/game/cinematic_campaign/ending_generated/ending_bof2_shadow_mech_rgba_v2.png';
-  X._src['cinend_deep_space']='assets/game/cinematic_campaign/ending_generated/ending_deep_space_starfield_v1.png';
+  X._src['cinend_hq_restored']='assets/game/shared/cinematics/cinematic_campaign/ending_generated/ending_fury_hq_restored_dawn_v1.png';
+  X._src['cinend_satellite_dish']='assets/game/shared/cinematics/cinematic_campaign/ending_generated/ending_damaged_satellite_dish_v1.png';
+  X._src['cinend_symbiote_survivor']='assets/game/shared/cinematics/cinematic_campaign/ending_generated/ending_symbiote_ooze_survivor_rgba_v2.png';
+  X._src['cinend_bof2_shadow']='assets/game/shared/cinematics/cinematic_campaign/ending_generated/ending_bof2_shadow_mech_rgba_v2.png';
+  X._src['cinend_deep_space']='assets/game/shared/cinematics/cinematic_campaign/ending_generated/ending_deep_space_starfield_v1.png';
   /* Campaign prologue plates. The beach and gate are establishing VIEWS only; aircraft are never
      composited over either perspective. The complete squad and command table give the history
      room to introduce FURY as people rather than reducing the organization to one building. */
-  X._src['cinintro_team']='assets/game/cinematic_campaign/cutscenes/lounge_and_alliances/06_full_earth_division_lounge.png';
-  X._src['cinintro_command']='assets/game/cinematic_campaign/cutscenes/lounge_and_alliances/04_command_table_cole_decker_juggernaut.png';
-  X._src['cinintro_lab']='assets/game/cinematic_campaign/cutscenes/lounge_and_alliances/07_cole_decker_restricted_prototype_lab.png';
+  X._src['cinintro_team']='assets/game/shared/cinematics/cinematic_campaign/cutscenes/lounge_and_alliances/06_full_earth_division_lounge.png';
+  X._src['cinintro_command']='assets/game/shared/cinematics/cinematic_campaign/cutscenes/lounge_and_alliances/04_command_table_cole_decker_juggernaut.png';
+  X._src['cinintro_lab']='assets/game/shared/cinematics/cinematic_campaign/cutscenes/lounge_and_alliances/07_cole_decker_restricted_prototype_lab.png';
   /* ⚠ FOUR OF THE SEVEN HQ INTERIORS WERE REGISTERED NOWHERE, AND NEITHER WAS A SINGLE SEATED POSE.
      Mike: "there were ones where we re-did the inside of the HQ and had them standing in a giant
      command room or sitting in the break room instead."
@@ -2391,19 +2401,19 @@ const XART=(function(){
      three plates were registered and used only as still backdrops in the campaign prologue, four
      were registered nowhere at all, and none of the nine poses was - most of a finished art drop
      unreachable from the game. Registered here; used by HQ_ROOM below. */
-  X._src['cinhq_brotherhood']='assets/game/cinematic_campaign/cutscenes/lounge_and_alliances/01_brotherhood_axel_freezer_lounge.png';
-  X._src['cinhq_princesses']='assets/game/cinematic_campaign/cutscenes/lounge_and_alliances/02_princesses_falva_lizzie_lounge.png';
-  X._src['cinhq_lonewolves']='assets/game/cinematic_campaign/cutscenes/lounge_and_alliances/03_lone_wolves_yuri_maverick_lounge.png';
-  X._src['cinhq_storytime']='assets/game/cinematic_campaign/cutscenes/lounge_and_alliances/05_juggernaut_storytime.png';
+  X._src['cinhq_brotherhood']='assets/game/shared/cinematics/cinematic_campaign/cutscenes/lounge_and_alliances/01_brotherhood_axel_freezer_lounge.png';
+  X._src['cinhq_princesses']='assets/game/shared/cinematics/cinematic_campaign/cutscenes/lounge_and_alliances/02_princesses_falva_lizzie_lounge.png';
+  X._src['cinhq_lonewolves']='assets/game/shared/cinematics/cinematic_campaign/cutscenes/lounge_and_alliances/03_lone_wolves_yuri_maverick_lounge.png';
+  X._src['cinhq_storytime']='assets/game/shared/cinematics/cinematic_campaign/cutscenes/lounge_and_alliances/05_juggernaut_storytime.png';
   X._src['cinhq_command']=X._src['cinintro_command'];
   X._src['cinhq_lounge']=X._src['cinintro_team'];
   X._src['cinhq_lab']=X._src['cinintro_lab'];
   for(const _sp of ['axel','cole','decker','falva','freezer','juggernaut','lizzie','maverick','yuri'])
-    X._src['cinseat_'+_sp]='assets/game/cinematic_campaign/seated_poses/'+_sp+'_seated_rgba.png';
+    X._src['cinseat_'+_sp]='assets/game/shared/cinematics/cinematic_campaign/seated_poses/'+_sp+'_seated_rgba.png';
   /* 0903: the stage-6 cloud plates are cells on fx_weather now (the loose bg6/ files are gone), so the
      cinematic aliases point at the same cells. The loose path stays as the fallback for an old manifest. */
-  if(window.BOFX&&BOFX.cells&&BOFX.cells['bg6_cloud_day_1']) BOFX.cells['cincloud_day']=BOFX.cells['bg6_cloud_day_1']; else X._src['cincloud_day']='assets/game/bg6/bg6_cloud_day_1.png';
-  if(window.BOFX&&BOFX.cells&&BOFX.cells['bg6_cloud_storm_0']) BOFX.cells['cincloud_storm']=BOFX.cells['bg6_cloud_storm_0']; else X._src['cincloud_storm']='assets/game/bg6/bg6_cloud_storm_0.png';
+  if(window.BOFX&&BOFX.cells&&BOFX.cells['bg6_cloud_day_1']) BOFX.cells['cincloud_day']=BOFX.cells['bg6_cloud_day_1']; else X._src['cincloud_day']='assets/game/levels/stage_06/stage/bg6/bg6_cloud_day_1.png';
+  if(window.BOFX&&BOFX.cells&&BOFX.cells['bg6_cloud_storm_0']) BOFX.cells['cincloud_storm']=BOFX.cells['bg6_cloud_storm_0']; else X._src['cincloud_storm']='assets/game/levels/stage_06/stage/bg6/bg6_cloud_storm_0.png';
   /* ⚠ THE CUTSCENE HOSTILES ARE THEIR OWN PLATES NOW (0905m, backlog item 2). Mike: "use our
      pseudo-3d graphics" in the shootdown beats. These three keys BORROWED live gameplay sprites
      from stages 5 and 8, and every one of those is STRICT TOP-DOWN - so the beats drew flat
@@ -2417,57 +2427,57 @@ const XART=(function(){
      The three-quarter views were generated from those same top-downs as edits, to the
      cinematic_ships pack's own contract (see cinematic_ships/GENERATION_PROMPTS.md), so the
      hostiles and the hero ships share one perspective language. */
-  X._src['cinhostile_scout']='assets/game/cinematic_ships/hostiles/cinhostile_scout.png';
-  X._src['cinhostile_bone']='assets/game/cinematic_ships/hostiles/cinhostile_bone.png';
-  X._src['cinhostile_heavy']='assets/game/cinematic_ships/hostiles/cinhostile_heavy.png';
+  X._src['cinhostile_scout']='assets/game/shared/ships/cinematic_ships/hostiles/cinhostile_scout.png';
+  X._src['cinhostile_bone']='assets/game/shared/ships/cinematic_ships/hostiles/cinhostile_bone.png';
+  X._src['cinhostile_heavy']='assets/game/shared/ships/cinematic_ships/hostiles/cinhostile_heavy.png';
   for(let _cf=0;_cf<8;_cf++){
     const _ef=String(_cf*4).padStart(2,'0');
-    X._src['cinfx_airburst_'+_cf]='assets/game/generated_cinematic/explosions/airburst/192x192/frames/frame_'+_ef+'.png';
-    X._src['cinfx_laser_'+_cf]='assets/game/boss_projectile_overhaul/bpfx_proj_laser_'+_cf+'.png';
-    X._src['cinfx_missile_'+_cf]='assets/game/boss_projectile_overhaul/bpfx_proj_missile_'+_cf+'.png';
+    X._src['cinfx_airburst_'+_cf]='assets/game/shared/cinematics/generated_cinematic/explosions/airburst/192x192/frames/frame_'+_ef+'.png';
+    X._src['cinfx_laser_'+_cf]='assets/game/shared/player_weapons/boss_projectile_overhaul/bpfx_proj_laser_'+_cf+'.png';
+    X._src['cinfx_missile_'+_cf]='assets/game/shared/player_weapons/boss_projectile_overhaul/bpfx_proj_missile_'+_cf+'.png';
   }
   /* FINAL COMBAT PASS (0901). These are deliberately code-owned loose atlases: manifest.js is
      generated and must never be the only place that knows about a boss mechanic. The atlas
      coordinates are resolved at draw time, keeping one decoded texture per family instead of
      multiplying the Stage 5-7 pass into dozens of loose frames. */
-  X._src['cfx_stage5_xeno_projectiles']='assets/game/combat_final/stage5_xeno_projectiles_atlas.png';
+  X._src['cfx_stage5_xeno_projectiles']='assets/game/levels/stage_05/projectiles/combat_final/stage5_xeno_projectiles_atlas.png';
   /* 0901 projectile rebuild. These atlases are packed from measured alpha bounds with fixed
      gutters; never cut their generated presentation sheets directly. */
-  X._src['cfx_stage2_volcanic_projectiles']='assets/game/combat_upgrade_0901/stage2_volcanic_projectiles_atlas.png';
-  X._src['cfx_stage4_chain_lightning']='assets/game/combat_upgrade_0901/stage4_chain_lightning_atlas.png';
-  X._src['cfx_stage5_alien_projectiles_v2']='assets/game/combat_upgrade_0901/stage5_alien_projectiles_atlas.png';
-  X._src['cfx_stage7_toxic_projectiles_v2']='assets/game/combat_upgrade_0901/stage7_toxic_projectiles_atlas.png';
-  X._src.s7sluice_vent='assets/game/stage7_sewer_0925/sluice_vent_8f.png';
-  X._src.s7sluice_warning='assets/game/stage7_sewer_0925/sluice_warning_lane.png';
-  X._src['cfx_stage8_symbiote_projectiles']='assets/game/combat_upgrade_0901/stage8_symbiote_projectiles_atlas.png';
-  X._src['cfx_stage6_carrier_shield']='assets/game/combat_final/stage6_carrier_shield_atlas.png';
+  X._src['cfx_stage2_volcanic_projectiles']='assets/game/levels/stage_02/projectiles/combat_upgrade_0901/stage2_volcanic_projectiles_atlas.png';
+  X._src['cfx_stage4_chain_lightning']='assets/game/levels/stage_04/stage/combat_upgrade_0901/stage4_chain_lightning_atlas.png';
+  X._src['cfx_stage5_alien_projectiles_v2']='assets/game/levels/stage_05/projectiles/combat_upgrade_0901/stage5_alien_projectiles_atlas.png';
+  X._src['cfx_stage7_toxic_projectiles_v2']='assets/game/levels/stage_07/projectiles/combat_upgrade_0901/stage7_toxic_projectiles_atlas.png';
+  X._src.s7sluice_vent='assets/game/levels/stage_07/effects/stage7_sewer_0925/sluice_vent_8f.png';
+  X._src.s7sluice_warning='assets/game/levels/stage_07/effects/stage7_sewer_0925/sluice_warning_lane.png';
+  X._src['cfx_stage8_symbiote_projectiles']='assets/game/levels/stage_08/projectiles/combat_upgrade_0901/stage8_symbiote_projectiles_atlas.png';
+  X._src['cfx_stage6_carrier_shield']='assets/game/levels/stage_06/stage/combat_final/stage6_carrier_shield_atlas.png';
   /* the circular enemy shield shell (SpriteCook, 0904e) - ONE plate, recoloured per family */
-  X._src['nes_bubble_0']='assets/game/enemy_shields/nes_bubble_0.png';
-  X._src['nes_bubble_volt_0']='assets/game/enemy_shields/nes_bubble_volt_0.png';
+  X._src['nes_bubble_0']='assets/game/shared/effects/enemy_shields/nes_bubble_0.png';
+  X._src['nes_bubble_volt_0']='assets/game/shared/effects/enemy_shields/nes_bubble_volt_0.png';
   /* BLACKSTEEL RAPTOR, rebuilt at 2x with per-wing damage states (SpriteCook, 0904k). All four
      plates were aligned to the SAME 363x488 footprint inside a 512 canvas before import - the
      generator crops each edit to its own bbox, so unaligned states would make the jet JUMP the
      instant a wing broke. */
-  X._src['nsb_rap_intact']='assets/game/stage6_raptor/nsb_rap_intact.png';
-  X._src['nsb_rap_wl']='assets/game/stage6_raptor/nsb_rap_wl.png';
-  X._src['nsb_rap_wr']='assets/game/stage6_raptor/nsb_rap_wr.png';
-  X._src['nsb_rap_crit']='assets/game/stage6_raptor/nsb_rap_crit.png';
-  X._src['nsb_bossfield_0']='assets/game/enemy_shields/nsb_bossfield_0.png';
-  X._src['nes_bubble_fire_0']='assets/game/enemy_shields/nes_bubble_fire_0.png';
-  X._src['nes_bubble_ice_0']='assets/game/enemy_shields/nes_bubble_ice_0.png';
-  X._src['nes_bubble_void_0']='assets/game/enemy_shields/nes_bubble_void_0.png';
-  X._src['cfx_stage7_warden_walk']='assets/game/combat_final/stage7_toxic_portal_warden_crawl_spritecook.png';
-  X._src['cfx_stage7_warden_teleport']='assets/game/combat_final/stage7_toxic_portal_teleport_atlas.png';
-  X._src['cfx_stage7_warden_projectiles']='assets/game/combat_final/stage7_toxic_portal_projectiles_atlas.png';
-  X._src['cfx_stage7_warden_cannon']='assets/game/combat_final/stage7_warden_cannon_barrage_spritecook.png';
-  X._src['cfx_stage7_warden_rail']='assets/game/combat_final/stage7_warden_rail_charge_spritecook.png';
-  X._src['cfx_stage7_warden_shell']='assets/game/combat_final/stage7_warden_toxic_pressure_shell_spritecook.png';
-  X._src['cfx_stage7_warden_machine_round']='assets/game/combat_final/stage7_warden_toxic_machine_round_0920.png';
-  X._src['cfx_stage7_warden_mine']='assets/game/combat_final/stage7_warden_portal_mine_spritecook.png';
-  X._src['cfx_stage7_warden_spear']='assets/game/combat_final/stage7_warden_rift_rail_spear_spritecook.png';
-  X._src['cfx_stage7_warden_roar']='assets/game/combat_final/stage7_warden_rear_roar_spritecook.png';
-  X._src['cfx_stage7_warden_cripple']='assets/game/combat_final/stage7_warden_crippled_crawl_spritecook.png';
-  X._src['cfx_stage7_warden_laststand']='assets/game/combat_final/stage7_warden_last_stand_spritecook.png';
+  X._src['nsb_rap_intact']='assets/game/levels/stage_06/boss/stage6_raptor/nsb_rap_intact.png';
+  X._src['nsb_rap_wl']='assets/game/levels/stage_06/boss/stage6_raptor/nsb_rap_wl.png';
+  X._src['nsb_rap_wr']='assets/game/levels/stage_06/boss/stage6_raptor/nsb_rap_wr.png';
+  X._src['nsb_rap_crit']='assets/game/levels/stage_06/boss/stage6_raptor/nsb_rap_crit.png';
+  X._src['nsb_bossfield_0']='assets/game/shared/effects/enemy_shields/nsb_bossfield_0.png';
+  X._src['nes_bubble_fire_0']='assets/game/shared/effects/enemy_shields/nes_bubble_fire_0.png';
+  X._src['nes_bubble_ice_0']='assets/game/shared/effects/enemy_shields/nes_bubble_ice_0.png';
+  X._src['nes_bubble_void_0']='assets/game/shared/effects/enemy_shields/nes_bubble_void_0.png';
+  X._src['cfx_stage7_warden_walk']='assets/game/levels/stage_07/effects/combat_final/stage7_toxic_portal_warden_crawl_spritecook.png';
+  X._src['cfx_stage7_warden_teleport']='assets/game/levels/stage_07/effects/combat_final/stage7_toxic_portal_teleport_atlas.png';
+  X._src['cfx_stage7_warden_projectiles']='assets/game/levels/stage_07/effects/combat_final/stage7_toxic_portal_projectiles_atlas.png';
+  X._src['cfx_stage7_warden_cannon']='assets/game/levels/stage_07/stage/combat_final/stage7_warden_cannon_barrage_spritecook.png';
+  X._src['cfx_stage7_warden_rail']='assets/game/levels/stage_07/stage/combat_final/stage7_warden_rail_charge_spritecook.png';
+  X._src['cfx_stage7_warden_shell']='assets/game/levels/stage_07/stage/combat_final/stage7_warden_toxic_pressure_shell_spritecook.png';
+  X._src['cfx_stage7_warden_machine_round']='assets/game/levels/stage_07/stage/combat_final/stage7_warden_toxic_machine_round_0920.png';
+  X._src['cfx_stage7_warden_mine']='assets/game/levels/stage_07/effects/combat_final/stage7_warden_portal_mine_spritecook.png';
+  X._src['cfx_stage7_warden_spear']='assets/game/levels/stage_07/stage/combat_final/stage7_warden_rift_rail_spear_spritecook.png';
+  X._src['cfx_stage7_warden_roar']='assets/game/levels/stage_07/stage/combat_final/stage7_warden_rear_roar_spritecook.png';
+  X._src['cfx_stage7_warden_cripple']='assets/game/levels/stage_07/stage/combat_final/stage7_warden_crippled_crawl_spritecook.png';
+  X._src['cfx_stage7_warden_laststand']='assets/game/levels/stage_07/stage/combat_final/stage7_warden_last_stand_spritecook.png';
   /* 0825 LEVEL-6 FLEET + APPROVED PROJECTILES. The aircraft palettes are baked files rather
      than runtime overlays, and every damage state is registered independently. */
   for(let _fh=0;_fh<3;_fh++) for(const _fp of ['steel','royal','blackice'])
@@ -2476,21 +2486,21 @@ const XART=(function(){
       X._src[_fk]='assets/game/l6_fleet/'+_fk+'.png';
     }
   for(let _ml=1;_ml<=5;_ml++) for(let _mf=0;_mf<6;_mf++)
-    X._src['mgcf_'+_ml+'_'+_mf]='assets/game/fx_0825/mg_bullet_'+_ml+'_'+_mf+'.png';
-  X._src['fx0825_lava_comet']='assets/game/fx_0825/lava_comet.png';
-  X._src['fx0825_lava_fireball']='assets/game/fx_0825/lava_fireball.png';
-  X._src['bg_stage01_runway_transition']='assets/game/bg_stage01_runway_transition.jpg';
+    X._src['mgcf_'+_ml+'_'+_mf]='assets/game/shared/effects/fx_0825/mg_bullet_'+_ml+'_'+_mf+'.png';
+  X._src['fx0825_lava_comet']='assets/game/shared/effects/fx_0825/lava_comet.png';
+  X._src['fx0825_lava_fireball']='assets/game/shared/effects/fx_0825/lava_fireball.png';
+  X._src['bg_stage01_runway_transition']='assets/game/levels/stage_01/stage/bg_stage01_runway_transition.jpg';
   /* BOSS/ELITE PROJECTILE OVERHAUL (0829). Four generated Neo-Geo ammunition families and four
      matching muzzle families, each with a fixed 128px pivot and eight real-alpha frames.  These
      replace the programmer-drawn polygons used by the Stage 2-9 combat passes. */
   const _BPFX_FAMILIES=['kinetic','laser','missile','void'];
   for(const _bf of _BPFX_FAMILIES) for(let _ff=0;_ff<8;_ff++){
-    X._src['bpfx_proj_'+_bf+'_'+_ff]='assets/game/boss_projectile_overhaul/bpfx_proj_'+_bf+'_'+_ff+'.png';
-    X._src['bpfx_muzzle_'+_bf+'_'+_ff]='assets/game/boss_projectile_overhaul/bpfx_muzzle_'+_bf+'_'+_ff+'.png';
+    X._src['bpfx_proj_'+_bf+'_'+_ff]='assets/game/shared/player_weapons/boss_projectile_overhaul/bpfx_proj_'+_bf+'_'+_ff+'.png';
+    X._src['bpfx_muzzle_'+_bf+'_'+_ff]='assets/game/shared/player_weapons/boss_projectile_overhaul/bpfx_muzzle_'+_bf+'_'+_ff+'.png';
   }
   /* STAGE-1 COMBAT IDENTITY. One 192px-cell sheet replaces loose military rounds and adds the
      Jungle Cruiser/Overlord wind language. Keep the cell map code-owned: manifest.js is generated. */
-  X._src['nca_s1combatfx']='assets/game/atlas/stage1_combat_fx.png';
+  X._src['nca_s1combatfx']='assets/game/levels/stage_01/stage/stage1_combat_fx.png';
   if(window.BOFX&&BOFX.cells){
     const _s1fxRows=['jungle_missile','cannon_shell','military_muzzle','rotary_muzzle','flak_impact',
                      'green_laser','wind_blade','wind_vortex','green_impact'];
@@ -2537,7 +2547,7 @@ const XART=(function(){
      hero avatar and the seven full-body cinematic poses are new art with no existing slot, so
      they register as loose files. yuri_body_0..6 are: idle, point, arm-across, salute, arms-out,
      side profile, and the back view with the CF jacket logo. */
-  X._src.yuri_avatar='assets/game/yuri_v2/yuri_avatar.png';
+  X._src.yuri_avatar='assets/game/pilots/yuri/portraits/yuri_v2/yuri_avatar.png';
   for(const em of ['idle','anger','smile','crash','sad','laugh','victory'])
     X._src['yuri_v2_'+em]='assets/game/pilots_0922/portraits/yuri-'+(em==='smile'?'happy':em)+'.png';
   for(const pk of _CF_PORTRAIT_PILOTS)for(const em of _CF_PORTRAIT_POSES)
@@ -2568,66 +2578,66 @@ const XART=(function(){
      Yuri's _0 moved to pilot_bodies/ with the rest, so the nine are one folder and one loop. */
   for(const _pb of ['axel','decker','maverick','freezer','juggernaut','lizzie','falva','cole','yuri'])
     X._src[_pb+'_body_0']='assets/game/pilot_bodies/'+_pb+'_body_0.png';
-  X._src.cole_body_0922='assets/game/pilots_0922/bodies/cole.png';
+  X._src.cole_body_0922='assets/game/pilots/cole/body_frames/pilots_0922/bodies/cole.png';
   // Roaming Rebels: generated master art, available to previews/editors without changing encounters.
-  X._src.rr_roster_0922='assets/game/roaming_rebels_0922/masters/roaming_rebels_roster.png';
+  X._src.rr_roster_0922='assets/game/levels/stage_06/boss/roaming_rebels_0922/masters/roaming_rebels_roster.png';
   for(const id of ['voss_iron_vulture','nyx_ghostknife','rook_breachhammer','kaia_signal_wraith','jace_razorjack'])
-    X._src['rr_ship_'+id]='assets/game/roaming_rebels_0922/ships/'+id+'.png';
+    X._src['rr_ship_'+id]='assets/game/levels/stage_06/boss/roaming_rebels_0922/ships/'+id+'.png';
   for(const id of ['voss_iron_vulture','nyx_ghostknife','rook_breachhammer','kaia_signal_wraith','jace_razorjack'])for(let f=0;f<8;f++)
-    X._src['rr_roll_'+id+'_'+f]='assets/game/roaming_rebels_0922/roll/'+id+'_'+f+'.png';
+    X._src['rr_roll_'+id+'_'+f]='assets/game/levels/stage_06/boss/roaming_rebels_0922/roll/'+id+'_'+f+'.png';
   for(const id of ['voss','nyx','rook','kaia','jace'])
-    X._src['rr_portrait_'+id]='assets/game/roaming_rebels_0922/portraits/'+id+'.png';
+    X._src['rr_portrait_'+id]='assets/game/levels/stage_06/boss/roaming_rebels_0922/portraits/'+id+'.png';
   /* ⚠ SIX AFFILIATION EMBLEMS FOR NINE PILOTS, KEYED BY FACTION AND NOT BY PILOT. Two pilots
      fly AIRFORCE, two are INDEPENDENT, two are PRINCESSES OF THE SKY - a faction badge is worn
      by its members, so keying these per pilot would have produced two different Airforce
      badges and made the roster read as nine loners instead of six factions. */
   for(const _af of ['airforce','matrix','independent','brotherhood','princesses','forge'])
-    X._src['affil_'+_af]='assets/game/affiliations/affil_'+_af+'.png';
+    X._src['affil_'+_af]='assets/game/shared/ui/affiliations/affil_'+_af+'.png';
   /* ⚠ MIKE'S NEW FLAMETHROWER PLUME AND ITS IMPACT (0906): "I want to use this for
      flamethrower instead of what we have ... good replacement here." Four plume frames and a
      four-frame impact star, cut by _BUILD_SOURCE/import_flame_v2_0906.py. Registered as a NEW
      family so nfw_wall_0..7 stays live as the fallback and the ICE reel is untouched. */
   for(let _f2=0;_f2<4;_f2++){
-    X._src['nfw2_'+_f2]='assets/game/flame_v2/nfw2_'+_f2+'.png';
-    X._src['nfx2_'+_f2]='assets/game/flame_v2/nfx2_'+_f2+'.png';
+    X._src['nfw2_'+_f2]='assets/game/shared/player_weapons/flame_v2/nfw2_'+_f2+'.png';
+    X._src['nfx2_'+_f2]='assets/game/shared/player_weapons/flame_v2/nfx2_'+_f2+'.png';
   }
-  X._src.s4w_boss_idle='assets/game/stage4_warfare/s4w_boss_idle.png';
-  X._src.s4w_power_node='assets/game/stage4_warfare/s4w_power_node.png';
-  X._src.s4w_drone_body='assets/game/stage4_warfare/s4w_drone_body.png';
-  X._src.s4w_drone_barrel='assets/game/stage4_warfare/s4w_drone_barrel.png';
+  X._src.s4w_boss_idle='assets/game/levels/stage_04/boss/stage4_warfare/s4w_boss_idle.png';
+  X._src.s4w_power_node='assets/game/levels/stage_04/boss/stage4_warfare/s4w_power_node.png';
+  X._src.s4w_drone_body='assets/game/levels/stage_04/boss/stage4_warfare/s4w_drone_body.png';
+  X._src.s4w_drone_barrel='assets/game/levels/stage_04/boss/stage4_warfare/s4w_drone_barrel.png';
   for(let _s4w=0;_s4w<12;_s4w++){
     const _n=String(_s4w).padStart(2,'0');
-    X._src['s4w_boss_flight_'+_s4w]='assets/game/stage4_warfare/s4w_boss_flight_'+_n+'.png';
-    X._src['s4w_boss_charge_'+_s4w]='assets/game/stage4_warfare/s4w_boss_charge_'+_n+'.png';
-    X._src['s4w_boss_energized_'+_s4w]='assets/game/stage4_warfare/s4w_boss_energized_'+_n+'.png';
-    X._src['s4w_lightning_orb_'+_s4w]='assets/game/stage4_warfare/s4w_lightning_orb_'+_n+'.png';
-    X._src['s4w_lightning_shield_'+_s4w]='assets/game/stage4_warfare/s4w_lightning_shield_'+_n+'.png';
-    X._src['s4w_node_teleport_'+_s4w]='assets/game/stage4_warfare/s4w_node_teleport_'+_n+'.png';
+    X._src['s4w_boss_flight_'+_s4w]='assets/game/levels/stage_04/boss/stage4_warfare/s4w_boss_flight_'+_n+'.png';
+    X._src['s4w_boss_charge_'+_s4w]='assets/game/levels/stage_04/boss/stage4_warfare/s4w_boss_charge_'+_n+'.png';
+    X._src['s4w_boss_energized_'+_s4w]='assets/game/levels/stage_04/boss/stage4_warfare/s4w_boss_energized_'+_n+'.png';
+    X._src['s4w_lightning_orb_'+_s4w]='assets/game/levels/stage_04/boss/stage4_warfare/s4w_lightning_orb_'+_n+'.png';
+    X._src['s4w_lightning_shield_'+_s4w]='assets/game/levels/stage_04/boss/stage4_warfare/s4w_lightning_shield_'+_n+'.png';
+    X._src['s4w_node_teleport_'+_s4w]='assets/game/levels/stage_04/boss/stage4_warfare/s4w_node_teleport_'+_n+'.png';
   }
   for(let _s4w=0;_s4w<16;_s4w++){
     const _n=String(_s4w).padStart(2,'0');
-    X._src['s4w_power_node_'+_s4w]='assets/game/stage4_warfare/s4w_power_node_'+_n+'.png';
-    X._src['s4w_lightning_ball_'+_s4w]='assets/game/stage4_warfare/s4w_lightning_ball_'+_n+'.png';
+    X._src['s4w_power_node_'+_s4w]='assets/game/levels/stage_04/boss/stage4_warfare/s4w_power_node_'+_n+'.png';
+    X._src['s4w_lightning_ball_'+_s4w]='assets/game/levels/stage_04/boss/stage4_warfare/s4w_lightning_ball_'+_n+'.png';
   }
   for(let _s4w=0;_s4w<8;_s4w++){
     const _n=String(_s4w).padStart(2,'0');
-    X._src['s4w_drone_barrel_'+_s4w]='assets/game/stage4_warfare/s4w_drone_barrel_'+_n+'.png';
-    X._src['s4w_spread_round_'+_s4w]='assets/game/stage4_warfare/s4w_spread_round_'+_n+'.png';
-    X._src['s4w_lightning_lance_'+_s4w]='assets/game/stage4_warfare/s4w_lightning_lance_'+_n+'.png';
-    X._src['s4w_muzzle_mg_'+_s4w]='assets/game/stage4_warfare/s4w_muzzle_mg_'+_n+'.png';
-    X._src['s4w_muzzle_orb_'+_s4w]='assets/game/stage4_warfare/s4w_muzzle_orb_'+_n+'.png';
-    X._src['s4w_muzzle_lightning_'+_s4w]='assets/game/stage4_warfare/s4w_muzzle_lightning_'+_n+'.png';
-    X._src['s4w_final_chaingun_'+_s4w]='assets/game/stage4_warfare/s4w_final_chaingun_'+_n+'.png';
-    X._src['s4w_final_chaingun_core_'+_s4w]='assets/game/stage4_warfare/s4w_final_chaingun_core_'+_n+'.png';
-    X._src['s4w_helper_core_left_'+_s4w]='assets/game/stage4_warfare/s4w_helper_core_left_'+_n+'.png';
-    X._src['s4w_helper_core_right_'+_s4w]='assets/game/stage4_warfare/s4w_helper_core_right_'+_n+'.png';
-    X._src['s4w_helper_dual_'+_s4w]='assets/game/stage4_warfare/s4w_helper_dual_'+_n+'.png';
-    X._src['s4w_helper_dual_hot_'+_s4w]='assets/game/stage4_warfare/s4w_helper_dual_hot_'+_n+'.png';
-    X._src['s4w_lightning_mg_round_'+_s4w]='assets/game/stage4_warfare/s4w_lightning_mg_round_'+_n+'.png';
+    X._src['s4w_drone_barrel_'+_s4w]='assets/game/levels/stage_04/boss/stage4_warfare/s4w_drone_barrel_'+_n+'.png';
+    X._src['s4w_spread_round_'+_s4w]='assets/game/levels/stage_04/boss/stage4_warfare/s4w_spread_round_'+_n+'.png';
+    X._src['s4w_lightning_lance_'+_s4w]='assets/game/levels/stage_04/boss/stage4_warfare/s4w_lightning_lance_'+_n+'.png';
+    X._src['s4w_muzzle_mg_'+_s4w]='assets/game/levels/stage_04/boss/stage4_warfare/s4w_muzzle_mg_'+_n+'.png';
+    X._src['s4w_muzzle_orb_'+_s4w]='assets/game/levels/stage_04/boss/stage4_warfare/s4w_muzzle_orb_'+_n+'.png';
+    X._src['s4w_muzzle_lightning_'+_s4w]='assets/game/levels/stage_04/boss/stage4_warfare/s4w_muzzle_lightning_'+_n+'.png';
+    X._src['s4w_final_chaingun_'+_s4w]='assets/game/levels/stage_04/boss/stage4_warfare/s4w_final_chaingun_'+_n+'.png';
+    X._src['s4w_final_chaingun_core_'+_s4w]='assets/game/levels/stage_04/boss/stage4_warfare/s4w_final_chaingun_core_'+_n+'.png';
+    X._src['s4w_helper_core_left_'+_s4w]='assets/game/levels/stage_04/boss/stage4_warfare/s4w_helper_core_left_'+_n+'.png';
+    X._src['s4w_helper_core_right_'+_s4w]='assets/game/levels/stage_04/boss/stage4_warfare/s4w_helper_core_right_'+_n+'.png';
+    X._src['s4w_helper_dual_'+_s4w]='assets/game/levels/stage_04/boss/stage4_warfare/s4w_helper_dual_'+_n+'.png';
+    X._src['s4w_helper_dual_hot_'+_s4w]='assets/game/levels/stage_04/boss/stage4_warfare/s4w_helper_dual_hot_'+_n+'.png';
+    X._src['s4w_lightning_mg_round_'+_s4w]='assets/game/levels/stage_04/boss/stage4_warfare/s4w_lightning_mg_round_'+_n+'.png';
   }
   for(let _s4w=0;_s4w<6;_s4w++){
     const _n=String(_s4w).padStart(2,'0');
-    X._src['s4w_mg_round_'+_s4w]='assets/game/stage4_warfare/s4w_mg_round_'+_n+'.png';
+    X._src['s4w_mg_round_'+_s4w]='assets/game/levels/stage_04/boss/stage4_warfare/s4w_mg_round_'+_n+'.png';
   }
   /* STAGE-6 HEAVY TURBULENCE REELS (0829). The approved pack's animated contact carries the
      twelve native storm hulls as one lossless eight-frame strip.  They are recovered at one
@@ -2635,10 +2645,10 @@ const XART=(function(){
   /* STAGE-6 CONTINUOUS BLUE SKY (0829). One approved blue plate is extended to a real 680x5000
      world and exported as five inspectable 1000px sections. Clouds are baked stills: they travel
      only because the level scrolls, never because an animation or parallax clock moves them. */
-  X._src['stage6_blue_master']='assets/game/stage6_blue_master.png';
+  X._src['stage6_blue_master']='assets/game/levels/stage_06/stage/stage6_blue_master.png';
   for(let _s6s=1;_s6s<=5;_s6s++){
     const _sn=String(_s6s).padStart(2,'0');
-    X._src['stage6_blue_'+_sn]='assets/game/stage6_blue/stage6_blue_'+_sn+'.png';
+    X._src['stage6_blue_'+_sn]='assets/game/levels/stage_06/stage/stage6_blue/stage6_blue_'+_sn+'.png';
   }
   const _S6_ATTACK_UNITS=['cloud_lancer','cyclone_interceptor','four_engine_bomber','lightning_mine',
     'lightning_skimmer','storm_buoy','storm_dart',
@@ -2679,7 +2689,7 @@ const XART=(function(){
   /* Stage 5 ships as one decoded combat texture.  The loose files above remain the editable
      source-of-truth and fallback registrations; BOFX.cells wins in XART._touch, so the browser
      fetches this atlas rather than 159 separate frames during a run. */
-  X._src['nca_stage5_runtime_atlas']='assets/game/atlas/stage5_runtime_atlas.png';
+  X._src['nca_stage5_runtime_atlas']='assets/game/levels/stage_05/enemies/stage5_runtime_atlas.png';
   if(window.BOF_STAGE5_CELLS&&window.BOFX&&BOFX.cells){
     for(const _s5cell in BOF_STAGE5_CELLS)BOFX.cells[_s5cell]=BOF_STAGE5_CELLS[_s5cell];
   }
@@ -2693,7 +2703,7 @@ const XART=(function(){
   // A single authored south-facing fleet overrides the older packed idle hulls.
   for(const art of ['storm_dart','cloud_lancer','thunder_fighter','lightning_skimmer','cyclone_interceptor','four_engine_bomber']){
     const key='s6atk_'+art+'_0';delete BOFX.cells[key];
-    X._src[key]='assets/game/stage6_fleet_0927/'+(art==='four_engine_bomber'?'bomber':'interceptor')+'.png';
+    X._src[key]='assets/game/levels/stage_06/enemies/stage6_fleet_0927/'+(art==='four_engine_bomber'?'bomber':'interceptor')+'.png';
   }
   for(const _s9u of _S9_ATTACK_UNITS) for(let _s9f=0;_s9f<8;_s9f++){
     const _n=String(_s9f+1).padStart(2,'0');
@@ -2718,25 +2728,25 @@ const XART=(function(){
   const _S8_SYM_FLEET=['armored_gunship','needle_interceptor','scout_drone','solar_corvette',
     'spread_wing_fighter','stealth_crescent'];
   for(const _u of _S8_SYM_FLEET){
-    X._src['s8nf_'+_u+'_idle']='assets/game/stage8_symbiote_fleet/'+_u+'/idle.png';
+    X._src['s8nf_'+_u+'_idle']='assets/game/levels/stage_08/enemies/stage8_symbiote_fleet/'+_u+'/idle.png';
     for(let _f=0;_f<4;_f++){const _n=String(_f+1).padStart(2,'0');
-      X._src['s8nf_'+_u+'_muzzle_'+_f]='assets/game/stage8_symbiote_fleet/'+_u+'/muzzle_'+_n+'.png';
-      X._src['s8nf_'+_u+'_projectile_'+_f]='assets/game/stage8_symbiote_fleet/'+_u+'/projectile_'+_n+'.png';
+      X._src['s8nf_'+_u+'_muzzle_'+_f]='assets/game/levels/stage_08/enemies/stage8_symbiote_fleet/'+_u+'/muzzle_'+_n+'.png';
+      X._src['s8nf_'+_u+'_projectile_'+_f]='assets/game/levels/stage_08/enemies/stage8_symbiote_fleet/'+_u+'/projectile_'+_n+'.png';
     }
   }
-  for(let _f=0;_f<4;_f++)X._src['s8symboss_form_'+_f]='assets/game/stage8_symbiote_boss/form_'+(_f+1)+'.png';
+  for(let _f=0;_f<4;_f++)X._src['s8symboss_form_'+_f]='assets/game/levels/stage_08/boss/stage8_symbiote_boss/form_'+(_f+1)+'.png';
   for(let _f=0;_f<16;_f++){
     const _n=String(_f+1).padStart(2,'0');
-    X._src['s8symboss_entrance_'+_f]='assets/game/stage8_symbiote_boss/entrance_'+_n+'.png';
+    X._src['s8symboss_entrance_'+_f]='assets/game/levels/stage_08/boss/stage8_symbiote_boss/entrance_'+_n+'.png';
   }
   for(let _f=0;_f<16;_f++){const _n=String(_f+1).padStart(2,'0');
     X._src['s8rift_'+_f]='assets/game/stage8_furious_rift/'+_n+'.png';}
-  X._src['nst8_sky_crimson']='assets/game/stage8_environment_crimson/nst8_sky_master.png';
+  X._src['nst8_sky_crimson']='assets/game/levels/stage_08/stage/stage8_environment_crimson/nst8_sky_master.png';
   for(let _f=0;_f<6;_f++){
-    X._src['nl8c_lg_'+_f]='assets/game/stage8_environment_crimson/nl8_lg_'+_f+'.png';
-    X._src['nl8c_rim_'+_f]='assets/game/stage8_environment_crimson/nl8_rim_'+_f+'.png';
+    X._src['nl8c_lg_'+_f]='assets/game/levels/stage_08/stage/stage8_environment_crimson/nl8_lg_'+_f+'.png';
+    X._src['nl8c_rim_'+_f]='assets/game/levels/stage_08/stage/stage8_environment_crimson/nl8_rim_'+_f+'.png';
   }
-  for(let _f=0;_f<12;_f++)X._src['nl8c_prop_'+_f]='assets/game/stage8_environment_crimson/nl8_prop_'+_f+'.png';
+  for(let _f=0;_f<12;_f++)X._src['nl8c_prop_'+_f]='assets/game/levels/stage_08/stage/stage8_environment_crimson/nl8_prop_'+_f+'.png';
   const _S6_MEGA_FRAMES={stormnode:8,stormlink:6,prismmuzzle:8,prismbolt:8,prismbeam:6,
     cyclonemuzzle:8,cyclonetracer:8,flakshell:8,flakburst:8,gravitymine:8,gravityripple:10,
     'omegabomb-hostile':8,'omegabomb-reflected':8,bombwarning:8,bombshield:8,bombignition:8,
@@ -2752,17 +2762,17 @@ const XART=(function(){
   const _CH_GROUP_COUNTS={ship:6,plasma:4,missile:4,lance:4,sideflash:4,
                           launchflash:4,charge:4,warp:8,beam:4,sidelaser:4,impact:4};
   for(const _cg in _CH_GROUP_COUNTS) for(let _ci=0;_ci<_CH_GROUP_COUNTS[_cg];_ci++)
-    X._src['ch_'+_cg+'_'+_ci]='assets/game/chaos_harrier/ch_'+_cg+'_'+_ci+'.png';
-  X._src['ch_ship_glow']='assets/game/chaos_harrier/ch_ship_glow.png';
+    X._src['ch_'+_cg+'_'+_ci]='assets/game/levels/stage_05/miniboss/chaos_harrier/ch_'+_cg+'_'+_ci+'.png';
+  X._src['ch_ship_glow']='assets/game/levels/stage_05/miniboss/chaos_harrier/ch_ship_glow.png';
   // Generated MK II components: four authored states per part; no baked-in beams.
   for(const part of ['hull','gun','emitter','thruster'])for(let f=0;f<4;f++)
-    X._src['ch2_'+part+'_'+f]='assets/game/chaos_harrier/mk2_0923/'+part+'_'+f+'.png';
-  for(let f=0;f<8;f++)X._src['axel_mega_shield_'+f]='assets/game/axel_mega_shield_0923/shield_'+f+'.png';
-  for(let f=0;f<8;f++)X._src['laser_round_muzzle_'+f]='assets/game/laser_round_muzzle_0923/round_'+f+'.png';
+    X._src['ch2_'+part+'_'+f]='assets/game/levels/stage_05/miniboss/chaos_harrier/mk2_0923/'+part+'_'+f+'.png';
+  for(let f=0;f<8;f++)X._src['axel_mega_shield_'+f]='assets/game/pilots/axel/abilities/axel_mega_shield_0923/shield_'+f+'.png';
+  for(let f=0;f<8;f++)X._src['laser_round_muzzle_'+f]='assets/game/shared/player_weapons/laser_round_muzzle_0923/round_'+f+'.png';
   /* Mike's own stat-screen plate (drop 0904ad). Every slot on the debrief screen is authored INTO
      this frame; nothing about it is drawn in code. Stored at 960x720 so it blits 1:1 into the 2x
      backing store at its drawn size, rather than being minified from 1448px every frame. */
-  X._src['statpanel_cf']='assets/game/ui/statpanel_cf.png';
+  X._src['statpanel_cf']='assets/game/shared/ui/ui/statpanel_cf.png';
   /* ============================================================
      ⚠ SIXTEEN s6mb_ FAMILIES WERE ASKED FOR BY NAME AND NONE OF THEM EXISTED (drop 0904aa)
 
@@ -2795,40 +2805,40 @@ const XART=(function(){
     tidalhydromuzzle:6,tidaltorpedo:8,tidalpressurebeam:8,tidalpressurebeamtile:8,
     tidalgeyserimpact:8,tidalbubblemine:8,tidalcutter:8,tidalmaelstrom:8,tidalabyssalcrown:8};
   for(const _k in S9A_REELS) for(let _i=0;_i<S9A_REELS[_k];_i++)
-    X._src[_k+'_'+_i]='assets/game/s9_attacks/'+_k+'_'+_i+'.png';
+    X._src[_k+'_'+_i]='assets/game/levels/stage_09/projectiles/s9_attacks/'+_k+'_'+_i+'.png';
   /* CF_EnemyTeleportFX-Vol.1, the chaosharrier-phase-rift family (drop 0904w). Eight authored
      frames - sparks, slit open, aperture open, aperture full, phase flash, aperture collapse,
      slit collapse, residue - trimmed to their ink and centred in 256px cells on import. The old
      ch_warp_0..7 reel stays registered; this one is drawn over it because it is the effect Mike
      supplied for exactly this enemy. */
-  for(let _cr=0;_cr<8;_cr++) X._src['chrift_'+_cr]='assets/game/chaos_harrier_rift/chrift_'+_cr+'.png';
+  for(let _cr=0;_cr<8;_cr++) X._src['chrift_'+_cr]='assets/game/levels/stage_05/effects/chaos_harrier_rift/chrift_'+_cr+'.png';
   /* The supplied official BONUS STAGE card. Keep this registration beside the other code-owned
      assets so regenerating manifest.js cannot silently replace it with the text fallback again. */
-  X._src['scard_9'] = 'assets/game/bonus_stage_card.png';
+  X._src['scard_9'] = 'assets/game/shared/ui/bonus_stage_card.png';
   /* VELOCITY VOID + GRAVITY MODE V2 (0827). The one atlas contains Mike's recovered Fury ship,
      GPT-authored transformation plates, twin thrusters, and all three space-only weapon sets.
      Keeping this as one decoded texture replaces the old loose pseudo-3D ship/thruster pack. */
-  X._src['nst9_voidwater_master']='assets/game/stage9_void_rift/void_rift_water_loop_680x4096.png';
-  X._src['ngm_space_atlas']='assets/game/atlas/bof_gravity_mode_space_weapons.png';
+  X._src['nst9_voidwater_master']='assets/game/levels/stage_09/stage/stage9_void_rift/void_rift_water_loop_680x4096.png';
+  X._src['ngm_space_atlas']='assets/game/shared/atlases/bof_gravity_mode_space_weapons.png';
   /* THE MID-BOSS REEL (0905). Both skins are seven frames because drawS9VoidEnemy and the
      Event Horizon's own draw both index `% 7`; an eighth frame would be silently unreachable and
      the loop would stutter at the wrap. The black set is the second-phase skin Mike asked for -
      "a black variant of it 1|1" - and is derived from the same plate, so the two reels share one
      silhouette and swapping between them cannot move the hitbox. */
   for(let _vh=0;_vh<7;_vh++){
-    X._src['ns9x_horizon_'+_vh]='assets/game/stage9_void_rift/enemies/event_horizon_'+_vh+'.png';
-    X._src['ns9x_horizonblk_'+_vh]='assets/game/stage9_void_rift/enemies/event_horizon_blk_'+_vh+'.png';
+    X._src['ns9x_horizon_'+_vh]='assets/game/levels/stage_09/enemies/stage9_void_rift/enemies/event_horizon_'+_vh+'.png';
+    X._src['ns9x_horizonblk_'+_vh]='assets/game/levels/stage_09/enemies/stage9_void_rift/enemies/event_horizon_blk_'+_vh+'.png';
   }
-  X._src['ns9x_dreadv']='assets/game/stage9_void_rift/enemies/dreadnought_vanguard.png';
+  X._src['ns9x_dreadv']='assets/game/levels/stage_09/enemies/stage9_void_rift/enemies/dreadnought_vanguard.png';
   for(let _vf=0;_vf<6;_vf++){
-    X._src['ns9fx_photon_'+_vf]='assets/game/stage9_void_rift/fx/photon_'+_vf+'.png';
-    X._src['ns9fx_riftshot_'+_vf]='assets/game/stage9_void_rift/fx/riftshot_'+_vf+'.png';
+    X._src['ns9fx_photon_'+_vf]='assets/game/levels/stage_09/stage/stage9_void_rift/fx/photon_'+_vf+'.png';
+    X._src['ns9fx_riftshot_'+_vf]='assets/game/levels/stage_09/stage/stage9_void_rift/fx/riftshot_'+_vf+'.png';
   }
   for(let _vs=0;_vs<8;_vs++)
-    X._src['ns9fx_water_'+_vs]='assets/game/stage9_void_rift/fx/water_splash_'+_vs+'.png';
+    X._src['ns9fx_water_'+_vs]='assets/game/levels/stage_09/stage/stage9_void_rift/fx/water_splash_'+_vs+'.png';
   /* HERALD OF DEATH — generated Stage 8 Hellwing Death Carrier action pack. */
   {
-    const R='assets/game/herald_of_death/';
+    const R='assets/game/levels/stage_08/miniboss/herald_of_death/';
     const put=(k,p)=>{ X._src[k]=R+p; };
     const actions=[['idle',6],['movement',7],['primary_attack',6],['special_attack',6],
                    ['hit_reaction',4],['damage_transition',6],['destruction',8]];
@@ -3072,6 +3082,7 @@ const XART=(function(){
       if(cell===undefined && (window.BOFX&&BOFX.ships&&BOFX.ships[k])) return null;
     }
     const src=X._src[k];
+    if(src&&typeof bofAssetLoadingAllowed==='function'&&!bofAssetLoadingAllowed(src))return null;
     X.img[k]= src ? mk(src) : null;
     return X.img[k];
   };
@@ -3102,11 +3113,19 @@ const XART=(function(){
   };
   X.releaseRoot=function(root){
     if(!root)return;
-    if(X.img[root]!==undefined)delete X.img[root];
+    const path=typeof bofAssetPath==='function'?bofAssetPath(X._src[root]):X._src[root];
+    for(const key in X.img){const src=typeof bofAssetPath==='function'?bofAssetPath(X._src[key]):X._src[key];if(key===root||(path&&src===path))delete X.img[key];}
+    if(path)_imageURLs.delete(path);
     /* General atlas cells are real canvases after first use; release only those belonging to the
        retired stage texture. Shared player/ship sheets are never passed here. */
     for(const k in _genCells)if(X.root(k)===root)delete _genCells[k];
     for(const k in _eCellCache)if(X.root(k)===root)delete _eCellCache[k];
+  };
+  X.memoryInfo=function(){
+    let decodedBytes=0,decodedImages=0,cellBytes=0,cells=0;
+    for(const im of _imageURLs.values()){if(im.complete&&im.naturalWidth>0){decodedImages++;decodedBytes+=im.naturalWidth*im.naturalHeight*4;}}
+    for(const cache of [_genCells,_playerCells,_shipCells])for(const im of Object.values(cache)){if(im){cells++;cellBytes+=(im.width||0)*(im.height||0)*4;}}
+    return {decodedImages,decodedRGBAEstimate:decodedBytes,cells,cellRGBAEstimate:cellBytes};
   };
   /* ⚠ THESE TWO READ THE CACHE DIRECTLY AND THAT IS WHY THE GAME WENT BLACK (drop 0806y).
 
@@ -3794,8 +3813,8 @@ function _liquidFrames(key){
    handoff calls them "an intentionally replaceable keyed area", and the flood-fill de-key on
    registration is what opens them. */
 // which master key + liquid family + fallback fill for the current stage
-function _levelCfg(){
-  switch(run.stage){
+function _levelCfg(stage=run.stage){
+  switch(stage){
     // STAGE 1 LIQUID: swapped to nlq2_water on Mike's explicit go-ahead. The standing never-touch
     // rule still holds for everything else on this stage — master, roster, font are UNCHANGED.
     // Only the liquid bed moved, from the legacy fx_water to the seam-healed 128px set (wrap
@@ -4338,7 +4357,7 @@ function drawClouds(dt){
     if(NSD_CLOUD_GREY[st] && c.k.indexOf('nsd_fog_')===0 && typeof xartTint==='function'){
       const _g=xartTint(c.k,'#9aa4b0',0.72); if(_g) im=_g;
     }
-    const h=im.naturalHeight*c.s*0.45, w=im.naturalWidth*c.s*0.45;
+    const h=(im.naturalHeight||im.height)*c.s*0.45, w=(im.naturalWidth||im.width)*c.s*0.45;
     let sy=c.y-scroll;
     const cfg=_levelCfg(); const H=(cfg&&cfg.h)||4800;
     sy=((sy%H)+H)%H;                                  // wrap so the sky never runs out
@@ -6824,13 +6843,14 @@ function drawHUDFramed(){
   for(let i=0;i<slots.length;i++){ if(slots[i]&&ASSETS.has(slots[i])) ASSETS.blit(slots[i],sx[i],460,30,30); }
 }
 
-/* Start in the authored supersampled mode.  If PLAY sustains sub-30fps for more than a short
+/* Start in the authored supersampled mode.  If PLAY sustains frames slower than 19ms for more than a short
    spike, the governor drops the backing store to native 480x512 (CSS remains pixel-perfect).
    That removes 75% of canvas fill work on a laptop without changing simulation speed, hitboxes,
    timing or layout. `?quality=high` locks SS=2; `?quality=performance` starts native. */
 let _renderQuality='auto';
 try{_renderQuality=(new URLSearchParams(location.search).get('quality')||'auto').toLowerCase();}catch(_rq){}
-let SS = _renderQuality==='performance'?1:2;
+let _lowMemoryDevice=false;try{_lowMemoryDevice=(navigator.deviceMemory>0&&navigator.deviceMemory<=4)||(navigator.hardwareConcurrency>0&&navigator.hardwareConcurrency<=4);}catch(_hw){}
+let SS = _renderQuality==='performance'||(_renderQuality==='auto'&&_lowMemoryDevice)?1:2;
 let _renderSlowT=0,_renderScaleChanged=SS===1;
 function setRenderScale(scale){
   scale=scale<=1?1:2;if(scale===SS)return;
@@ -6840,7 +6860,7 @@ function renderPerformanceTick(rawDt){
   if(_renderQuality==='high'||_renderScaleChanged||SS<=1)return;
   if(state!==GS.PLAY||stateT<1.25){_renderSlowT=Math.max(0,_renderSlowT-.05);return;}
   const d=Math.max(0,Math.min(rawDt||0,.25));
-  _renderSlowT=d>.034?_renderSlowT+d:Math.max(0,_renderSlowT-d*.70);
+  _renderSlowT=d>.019?_renderSlowT+d:Math.max(0,_renderSlowT-d*.70);
   if(_renderSlowT>1.20){
     _renderScaleChanged=true;setRenderScale(1);
     try{if(typeof floatText==='function')floatText(VW/2,PLAY.y+28,'PERFORMANCE MODE','#8fdfff');}catch(_pm){}
@@ -15080,10 +15100,10 @@ if(typeof XART!=='undefined' && XART._src){
      critical. All three were re-aligned to one 492px footprint on import, because SpriteCook
      crops each edit to its own bbox and unaligned states make the hull jump when it degrades.
      ============================================================ */
-  XART._src.nsb_spawncarrier_intact_v2='assets/game/stage8_herald/herald_intact.png';
-  XART._src.nsb_spawncarrier_damaged_v2='assets/game/stage8_herald/herald_damaged.png';
-  XART._src.nsb_spawncarrier_critical_v2='assets/game/stage8_herald/herald_critical.png';
-  XART._src.herald_bolt_0='assets/game/stage8_herald/herald_bolt_0.png';
+  XART._src.nsb_spawncarrier_intact_v2='assets/game/levels/stage_08/miniboss/stage8_herald/herald_intact.png';
+  XART._src.nsb_spawncarrier_damaged_v2='assets/game/levels/stage_08/miniboss/stage8_herald/herald_damaged.png';
+  XART._src.nsb_spawncarrier_critical_v2='assets/game/levels/stage_08/miniboss/stage8_herald/herald_critical.png';
+  XART._src.herald_bolt_0='assets/game/levels/stage_08/miniboss/stage8_herald/herald_bolt_0.png';
   /* ⚠ 18 GENERATED FX FRAMES REGISTERED HERE WERE NEVER DRAWN BY ANYTHING. bfx_spawn_p/m/i_0..5
      were loaded on every stage-8 entry and referenced by exactly one line - this one. Mike:
      "it should just use our explosion frames we already have hardwired into the engine ... for
@@ -18479,7 +18499,7 @@ function l23ProjectileDraw(b){
   const im=XART.get(key),size=b._s3Giant?[132,132]:({inferno_mg:[18,34],inferno_shotgun:[34,46],cryo_ball:[34,34],rime_orb:[58,58]}[b._l23fx]||[36,36]);
   ctx.save();ctx.translate(Math.round(b.x),Math.round(b.y));
   if(b._s3StaticSpin)ctx.rotate((b.t||0)*4.8);
-  else if(b._l23fx!=='cryo_ball'&&b._l23fx!=='rime_orb')ctx.rotate(Math.atan2(b.vy||1,b.vx||0)-Math.PI/2);
+  else if(b._l23fx!=='cryo_ball'&&b._l23fx!=='rime_orb')ctx.rotate(Math.atan2(b.vy??1,b.vx??0)-Math.PI/2);
   ctx.drawImage(im,-size[0]/2,-size[1]/2,size[0],size[1]);
   if(b._s3LaserBall){
     /* Same authored pixels, fixed footprint: a stepped additive pulse makes the dark-blue ball
@@ -26165,7 +26185,7 @@ const _gaugeLag = {};
    swapping to get what we need ... we do not want to shrink it."
 
    Two frames and six fills ship in CF_BossModeAssets-Vol.1/Loading, baked to one small sheet
-   (assets/game/atlas/ui_bossbar.png, 704x258) at the size the HUD actually draws them so nothing
+   (assets/game/shared/ui/ui_bossbar.png, 704x258) at the size the HUD actually draws them so nothing
    is resampled 4.6x at runtime:
 
      BOSS      bmbar_frame_boss  the orange-lit rails       + bmbar_fill_seg  the hazard stripes
@@ -28106,10 +28126,10 @@ function flameDraw(f){
        diff 0) with zero partial-alpha pixels. That fixed mask is the whole point — only the
        internal charge veins and light bands move, so the plume never crawls or jitters.
        75ms/frame as specified. Falls back to the old reel if it has not decoded. */
-    const _nibrF='nibr_'+(Math.floor((typeof performance!=='undefined'?performance.now():0)/75)%8);
+    const _nibrF='nibr_'+projectileVisualFrame(f,1000/75,8);
     if(XART.rdy(_nibrF)) _fk=_nibrF;
     else if(f._rollT < 1) _fk='nib_roll_'+clamp(Math.floor(f._rollT*8),0,7);
-    else             _fk='nib_hold_'+(Math.floor((typeof performance!=='undefined'?performance.now():0)/85)%6);
+    else             _fk='nib_hold_'+projectileVisualFrame(f,1000/85,6);
     if(!XART.rdy(_fk)) _fk='nib_roll_7';
     if(!XART.rdy(_fk)) _fk='nib_wall_0';
   } else {
@@ -28126,9 +28146,9 @@ function flameDraw(f){
        ("make it a solid 100% image when I hold it") and he should see it before it is called
        finished. Freezing it again is one line: pin the index to 0. */
     const _f2n=4;
-    _fk='nfw2_'+(Math.floor((typeof performance!=='undefined'?performance.now():0)/71)%_f2n);
+    _fk='nfw2_'+projectileVisualFrame(f,1000/71,_f2n);
     if(!XART.rdy(_fk)){
-      _fk='nfw_wall_'+(Math.floor((typeof performance!=='undefined'?performance.now():0)/71)%_nf);
+      _fk='nfw_wall_'+projectileVisualFrame(f,1000/71,_nf);
       if(!XART.rdy(_fk)) _fk='nfw_wall_0';
     }
   }
@@ -33526,6 +33546,13 @@ function warmStage(n){
   // the older ship-boss art namespaces. Decode them during stage entry.
   if(n===3)addPrefix('s3thermo_');
   if(n===8)addPrefix('vile24_');
+  // Named roster roots are mandatory before the first enemy can appear.
+  addPrefix('nca_en_s'+n);addPrefix('nca_eproj_s'+n);
+  add('bof_player_weapon_special_icons_atlas');add('bof_player_ordnance_projectiles_atlas');add('nca_player_weapons');
+  // Portrait speech reels decode during deployment, rather than on the first spoken syllable.
+  const portraitPilots=new Set([run.pilot]);if(typeof coopActive==='function'&&coopActive()&&typeof p2Pilot==='function')portraitPilots.add(p2Pilot().key);
+  if(n===6)for(const P of PILOTS)portraitPilots.add(P.key);
+  for(const k in XART._src)if((/^pp5_raw_/.test(k)&&portraitPilots.has(k.split('_')[2]))||(/^cp5_raw_/.test(k)&&portraitPilots.has('cole')))add(k);
   // 1. anything living in this stage's folder
   const folder=new RegExp('levels/level'+n+'/|stages/'+n+'/');
   for(const k in XART._src) if(folder.test(XART._src[k])) add(k);
@@ -36043,6 +36070,7 @@ function updatePlay(dt){
      it is ever mis-attributed. */
   const _SPECIAL_KINDS={atom:1,venomx:1,colefuse:1,helix:1,hxspiral:1,chain:1,orb:1,firray:1,sonic:1,roller:1,spaceHelperBeam:1,spaceShrapnel:1};
   for(const b of pBullets){
+    if(!b.dead&&!(b._launchDelay>0))b._visualAge=projectileVisualAge(b)+dt;
     _dmgSrc = (b.kind==='missile') ? 'missile' : (_SPECIAL_KINDS[b.kind] ? 'special' : null);
     _dmgBullet=b;
     /* the infusion rides the round: stamped once, the first frame it is live. `_inf===null` on a
@@ -36822,10 +36850,11 @@ function updatePlay(dt){
   for(const b of eBullets){
     if(b.dead)continue;
     if(typeof s3kOrdnanceRules==='function')s3kOrdnanceRules(b);
-    if(b._megaReflected){shooterSet(b._megaSeat);try{axelMegaReturnTick(b,dt);}finally{shooterSet(1);}continue;}
+    if(b._megaReflected){b._visualAge=projectileVisualAge(b)+dt;shooterSet(b._megaSeat);try{axelMegaReturnTick(b,dt);}finally{shooterSet(1);}continue;}
     let reflected=false;for(const seat of seatList())withSeat(seat,()=>{if(!reflected)reflected=axelMegaReflect(b);});
     if(reflected)continue;
     if(_tslow) continue;
+    b._visualAge=projectileVisualAge(b)+dt;
     b.t=(b.t||0)+dt;
     if(b._s4wKind&&typeof stage4WarfareProjectileTick==='function')stage4WarfareProjectileTick(b,dt);
     let _jcManualMove=false;
@@ -40132,7 +40161,7 @@ function updateOverlordX(b, dt){
    over a nacelle when it dies. Nothing comes off; the objectives are hit regions on the plate,
    the same shape as the Doomsday Carrier's bays that Mike asked for.
 
-   Art: assets/game/bosses/skycarrier/ (SpriteCook 0918, palette-locked, dither off). The escort
+   Art: assets/game/levels/stage_06/boss/bosses/skycarrier/ (SpriteCook 0918, palette-locked, dither off). The escort
    is a NEW ELITEX row, 'hivewing', with NO shield (Mike 0918) and its own elite squadron pattern (hivewingTick).
    The ace's barrel roll and somersault are derived from its authored TOP and BELLY views by
    foreshortening between them - generate the views, derive the rotation (0906y).
@@ -40163,7 +40192,7 @@ function warhiveInit(b){
   const tMax=Math.round(520*(easy?0.8:1)*(hard?1.25:1)*(fur?1.08:1));
   b.name='WARHIVE CARRIER'; b.enter=false; b._noHit=false;
   b.w=WHV_PLATE.w*WHV_S; b.h=WHV_PLATE.h*WHV_S;
-  b._whv={mode:'carrier', st:'descend', t:0, hard:hard, fur:fur, cycle:0,
+  b._whv={mode:'carrier', st:'descend', t:0, dy:0, hard:hard, fur:fur, cycle:0,
     cx:(typeof camLeftX==='function'?camLeftX():0)+VW/2, cy:WHV_AWAY_Y, y0:WHV_AWAY_Y,
     parts:{L:{hp:tMax,max:tMax,dead:false,fl:0}, R:{hp:tMax,max:tMax,dead:false,fl:0}, door:{hp:Math.round(tMax/2),max:Math.round(tMax/2),dead:false,fl:0}},
     doorOpen:false, fanA:0, fanV:0, jets:[], launched:0, jetN:hard?8:6, launchCd:0,
@@ -41322,6 +41351,7 @@ function updateEffects(dt){
        negative t flowed straight into ctx.arc's radius and threw, killing the
        whole frame (drop 0801ew). */
     if(p._delay>0){ p._delay-=dt; continue; }
+    if(p._dbrKey){deathDebrisTick(p,dt);continue;}
     p.t+=dt; p.x+=(p.vx||0); p.y+=(p.vy||0); if(p.grav)p.vy=(p.vy||0)+p.grav; if(p.vx)p.vx*=0.98;
     /* ⚠ THE EXPIRY TEST HAS TO RUN BEFORE ANYTHING CAN SKIP IT (re-fixed drop 0814a).
 
@@ -42177,7 +42207,7 @@ const GRAVITY_PILOT_LUM={
 let SPACE_ATLAS_FRAMES=(typeof BOF_GRAVITY_ATLAS!=='undefined'&&BOF_GRAVITY_ATLAS.frames)?BOF_GRAVITY_ATLAS.frames:null;
 const _spaceAtlasCache={};
 try{ if(!SPACE_ATLAS_FRAMES)
-  fetch('assets/game/atlas/bof_gravity_mode_space_weapons.json')
+  fetch('assets/game/shared/atlases/bof_gravity_mode_space_weapons.json')
     .then(r=>r.ok?r.json():null).then(j=>{ if(j&&j.frames) SPACE_ATLAS_FRAMES=j.frames; }).catch(()=>{});
 }catch(e){}
 function spaceAtlasRect(key){ return SPACE_ATLAS_FRAMES&&SPACE_ATLAS_FRAMES[key]; }
@@ -42341,8 +42371,8 @@ function furyShipWarm(){
  if(typeof XART==='undefined')return;
  for(const k of FURY_KEYS){
   const stem=k==='base'?'runtime_base':k;
-  XART._src['fury_'+k]='assets/game/furyship_0914/'+stem+'.png';XART._touch('fury_'+k);
-  if(furyTintedKey(k)){XART._src['fury_'+k+'_blue']='assets/game/furyship_0914/'+stem+'_blue.png';XART._touch('fury_'+k+'_blue');}
+  XART._src['fury_'+k]='assets/game/shared/ships/furyship_0914/'+stem+'.png';XART._touch('fury_'+k);
+  if(furyTintedKey(k)){XART._src['fury_'+k+'_blue']='assets/game/shared/ships/furyship_0914/'+stem+'_blue.png';XART._touch('fury_'+k+'_blue');}
  }
 }
 function furyShipReady(){
@@ -42585,7 +42615,7 @@ function gravityDeathSpinDraw(s){
   ctx.save();
   ctx.globalAlpha=1-0.35*k;
   ctx.translate(player.x,player.y); ctx.rotate(a);
-  const tf='thruster_'+(Math.floor(performance.now()/70)%4), tr=spaceAtlasRect(tf);
+  const tf='thruster_'+(Math.floor(efxClock*1000/70)%4), tr=spaceAtlasRect(tf);
   if(tr){ const th=size*0.58, tw=th*(tr.w/tr.h);
     ctx.save(); ctx.globalCompositeOperation='lighter'; spaceAtlasDraw(ctx,tf,0,size*0.55,tw,th,true,pk); ctx.restore(); }
   spaceAtlasDraw(ctx,'ship_base',0,0,w,size,true,pk);
@@ -42718,7 +42748,7 @@ function gravityModeDrawShip(drawX,drawY,drawSize,planeH){
        frame. The roll outranks the flip, as it does for the plane (they cannot both be live). */
     const soKey=(phase==='active'&&forcedRoll==null&&!player.roll)?spaceSomerFrameKey():null;
     const soF=soKey?(+soKey.slice(-2)):-1, soV=soKey?SPACE_SO_VSC[soF]:1, soW=soKey?SPACE_SO_HSC[soF]:1;
-    const tf='thruster_'+(Math.floor(performance.now()/70)%4),tr=spaceAtlasRect(tf);
+    const tf='thruster_'+(Math.floor(efxClock*1000/70)%4),tr=spaceAtlasRect(tf);
     if(tr){ const th=size*0.58,tw=th*(tr.w/tr.h)*soW;
       ctx.save();ctx.globalCompositeOperation='lighter';const plume=spaceAtlasCanvas(tf,pilot);if(plume&&typeof pf27SpacePlumeDraw==='function')pf27SpacePlumeDraw(ctx,plume,x-tw/2,y+size*.55*soV-th*soV/2,tw,th*soV);else spaceAtlasDraw(ctx,tf,x,y+size*0.55*soV,tw,th*soV,true,pilot);ctx.restore(); }
     let key='ship_base';
@@ -42743,7 +42773,7 @@ function gravityModeDrawShip(drawX,drawY,drawSize,planeH){
            I go left and right, the directions are reverse in-game of how I'm facing." This path
            short-circuits the whole per-pilot flip system - _drawPlayerCore returns early into
            gravityModeDrawShip on stages 5 and 9 - so it was wrong for ALL NINE pilots, not one.
-           Measured off assets/game/atlas/bof_gravity_mode_space_weapons.png, nose-vs-body ink
+           Measured off assets/game/shared/atlases/bof_gravity_mode_space_weapons.png, nose-vs-body ink
            centroid, all twelve plates: ship_bank_l1/l2/l3 carry the nose swung RIGHT
            (+0.150/+0.183/+0.183) and ship_bank_r1/r2/r3 carry it swung LEFT
            (-0.153/-0.192/-0.123). The six _blue palette masks agree in sign on every frame
@@ -42917,7 +42947,7 @@ const SHIP_GLOW_SEQ = ['', 'g1', '', 'g2'];   // 0 -> flare -> 0 -> settle
 const SHIP_GLOW_MS  = 70;
 function shipGlowKey(key){
   if(!SHIP_FLAME_BAKED || !key) return key;
-  const ph=SHIP_GLOW_SEQ[((performance.now()/SHIP_GLOW_MS)|0)%SHIP_GLOW_SEQ.length];
+  const ph=SHIP_GLOW_SEQ[((efxClock*1000/SHIP_GLOW_MS)|0)%SHIP_GLOW_SEQ.length];
   if(!ph) return key;
   const k2=key+'_'+ph;
   return (typeof BOFX!=='undefined' && BOFX.ships && BOFX.ships[k2]) ? k2 : key;
@@ -44855,7 +44885,8 @@ function xartTint(key,tint,alpha){
   const ck=key+'|'+tint+'|'+(alpha==null?0.75:alpha);
   if(_mfxtc[ck]) return _mfxtc[ck];
   const im=XART.get(key), c=document.createElement('canvas');
-  c.width=im.naturalWidth; c.height=im.naturalHeight;
+  c.width=im.naturalWidth||im.width; c.height=im.naturalHeight||im.height;
+  c.naturalWidth=c.width;c.naturalHeight=c.height;c.complete=true;
   const x=c.getContext('2d');
   x.drawImage(im,0,0);
   x.globalCompositeOperation='source-atop'; x.globalAlpha=(alpha==null?0.75:alpha);
@@ -45496,7 +45527,7 @@ function drawStage2Projectile(b, role){
   const poly=(pts,fill)=>{ctx.beginPath();ctx.moveTo(pts[0][0],pts[0][1]);for(let i=1;i<pts.length;i++)ctx.lineTo(pts[i][0],pts[i][1]);ctx.closePath();ctx.fillStyle=fill;ctx.fill();};
   const circ=(x,y,r,fill)=>{ctx.beginPath();ctx.arc(x,y,r,0,TAU);ctx.fillStyle=fill;ctx.fill();};
   ctx.save();ctx.translate(Math.round(b.x),Math.round(b.y));
-  ctx.rotate(Math.atan2(b.vy||1,b.vx||0)-Math.PI/2);ctx.scale(mul,mul);
+  ctx.rotate(Math.atan2(b.vy??1,b.vx??0)-Math.PI/2);ctx.scale(mul,mul);
   /* Volcano Maw used to fall through the premium `laser` family, making a molten vent throw
      electric-blue shots. Keep its three-lobed breath silhouette but palette it as fire: a hard
      near-black rim for lava readability, red body, orange core and hot cream centre. */
@@ -45557,20 +45588,20 @@ function drawStage4WarfareProjectile(b){
   if(role==='machine')return drawMfx('mgcf_1_5',b.x,b.y,Math.atan2(b.vy,b.vx)-Math.PI/2,20,null,1,'#ffd36b');
   if(role==='rocket')return drawMfx('bpfx_proj_missile_0',b.x,b.y,Math.atan2(b.vy,b.vx)-Math.PI/2,42,null,1,null);
   if(role==='lightning'&&typeof combatAtlasDraw==='function'){
-    const mul=b.szMul||1,fi=(Math.floor(t*20)%8),ang=Math.atan2(b.vy||1,b.vx||0)-Math.PI/2;
+    const mul=b.szMul||1,fi=(Math.floor(t*20)%8),ang=Math.atan2(b.vy??1,b.vx??0)-Math.PI/2;
     /* Lightning only: the firing hardware remains on the boss hull. The 4x2 sheet is packed into
        tall cells with 40px minimum gutters, so side forks cannot be shaved during animation. */
     return combatAtlasDraw('cfx_stage4_chain_lightning',4,2,fi,b.x,b.y,62*mul,108*mul,{angle:ang});
   }
   let key,h,round=false;
   if(role==='mg'){key='s4w_mg_round_'+(Math.floor(t*30)%6);h=28;}
-  else if(role==='lightningmg'){key='s4w_lightning_mg_round_'+(Math.floor(t*34)%8);h=34;}
+  else if(role==='lightningmg'){key='s4w_lightning_mg_round_'+(Math.floor(t*34)%7);h=34;} // cell 7 is fully transparent; never loop a live shot through it
   else if(role==='spread'){key='s4w_spread_round_'+(Math.floor(t*18)%8);h=38;}
   else if(role==='orb'){key='s4w_lightning_ball_'+(Math.floor(t*18)%16);h=62;round=true;}
   else{key='s4w_lightning_lance_'+(Math.floor(t*20)%8);h=54;}
   if(!XART.rdy(key))return false;const im=XART.get(key),mul=b.szMul||1,w=h*(im.naturalWidth/Math.max(1,im.naturalHeight))*mul;h*=mul;
   ctx.save();ctx.translate(Math.round(b.x),Math.round(b.y));
-  if(!round)ctx.rotate(Math.atan2(b.vy||1,b.vx||0)-Math.PI/2);
+  if(!round)ctx.rotate(Math.atan2(b.vy??1,b.vx??0)-Math.PI/2);
   ctx.drawImage(im,-w/2,-h/2,w,h);ctx.restore();return true;
 }
 /* Authored fallback reels for the late campaign. Encounter-specific art still wins
@@ -45616,7 +45647,7 @@ function drawBossProjectileArt(b,family){
   if(!family||typeof XART==='undefined')return false;
   const key='bpfx_proj_'+family+'_'+(((b.t||0)*16|0)%8);
   const h=({kinetic:34,laser:46,missile:48,void:38}[family]||38)*(b.szMul||1);
-  const ang=family==='void'?(b.t||0)*1.65:Math.atan2(b.vy||1,b.vx||0)-Math.PI/2;
+  const ang=family==='void'?(b.t||0)*1.65:Math.atan2(b.vy??1,b.vx??0)-Math.PI/2;
   return drawMfx(key,b.x,b.y,ang,h,null,1,null,null);
 }
 const CFX_STAGE_PROJECTILE=Object.freeze({
@@ -45651,22 +45682,55 @@ const CFX_STAGE_PROJECTILE=Object.freeze({
   s8rift:    ['cfx_stage8_symbiote_projectiles',8,6,'spin',94],
   s8parasite:['cfx_stage8_symbiote_projectiles',8,7,'spin',84]
 });
+/* Flight age is independent of each weapon's damage/fuse clock. Render never
+   advances it, and zero is a valid age (including after a pause or fresh launch). */
+function projectileVisualAge(b){
+  return Math.max(0,Number.isFinite(b._visualAge)?b._visualAge:Number.isFinite(b.t)?b.t:Number.isFinite(b.anim)?b.anim:0);
+}
+function projectileVisualFrame(b,fps,count,phase=0){
+  const n=Math.floor(projectileVisualAge(b)*fps+phase+1e-9);
+  return ((n%count)+count)%count;
+}
+/* These four sheets contain charge/size alternatives, not flight animation.
+   Source pivots are measured in the selected 256px cell: the blade rotates
+   around its red core, and the toxic missile around its hull, not its exhaust. */
+const CFX_FLIGHT_PIVOT={s7bio:[128/256,100/256],s8blade:[102/256,131/256],s8parasite:[140/256,110/256]};
+const CFX_FLIGHT_LIGHT=new Map();
+function cfxFlightLight(key,rows,index){
+  const id=key+':'+index;if(CFX_FLIGHT_LIGHT.has(id))return CFX_FLIGHT_LIGHT.get(id);
+  if(!XART.rdy(key))return null;
+  const im=XART.get(key),w=(im.naturalWidth||im.width)/4,h=(im.naturalHeight||im.height)/rows;
+  const c=document.createElement('canvas');c.width=w;c.height=h;
+  const g=c.getContext('2d',{willReadFrequently:true});g.drawImage(im,(index%4)*w,Math.floor(index/4)*h,w,h,0,0,w,h);
+  const pixels=g.getImageData(0,0,w,h),d=pixels.data;
+  for(let i=0;i<d.length;i+=4){
+    const hi=Math.max(d[i],d[i+1],d[i+2]),lo=Math.min(d[i],d[i+1],d[i+2]);
+    // Retain colored energy and bright metal. Black outlines stay black;
+    // transparent gutters never acquire any pixels from this light layer.
+    d[i+3]=Math.round(d[i+3]*clamp((hi-70)/130,0,1)*(hi-lo>18||lo>140?1:.25));
+  }
+  g.putImageData(pixels,0,0);CFX_FLIGHT_LIGHT.set(id,c);return c;
+}
 function drawCfxStageProjectile(b){
   const S=b&&CFX_STAGE_PROJECTILE[b.kind];if(!S||typeof combatAtlasDraw!=='function')return false;
-  const fixed=/^s5/.test(b.kind)?1:stage2FlightFrame(b.kind),fi=fixed==null?((b.t||0)*14|0)%4:fixed,mul=b.szMul||1,a=Math.atan2(b.vy||1,b.vx||0);
-  /* Generated directional art is either authored pointing north (`up`) or east (`right`). Keep
-     that source orientation explicit instead of making every missile inherit the same 90deg bug. */
-  const angle=S[3]==='spin'?(b.t||0)*2.25:(S[3]==='right'?a:a+Math.PI/2);
-  const drawn=combatAtlasDraw(S[0],4,S[1],S[2]*4+fi,b.x,b.y,S[4]*mul,S[4]*mul,{angle:angle});
-  if(drawn&&fixed!=null){
-    /* These columns are size/charge examples, not onion-aligned flight frames. Keep the
-       authored second cell throughout flight, including the lava saws. Only its pixels glow:
-       four discrete light levels and a hard-edged band, with no blur or changing footprint. */
-    const size=S[4]*mul,tick=Math.floor((b.t||0)*12),light=[.12,.22,.34,.22][((tick%4)+4)%4];
-    ctx.save();ctx.translate(b.x,b.y);ctx.rotate(angle);
-    combatAtlasDraw(S[0],4,S[1],S[2]*4+fi,0,0,size,size,{blend:'lighter',alpha:light});
-    ctx.beginPath();const row=(tick*6)%Math.ceil(size);ctx.rect(-size/2,-size/2+row,size,6);ctx.clip();
-    combatAtlasDraw(S[0],4,S[1],S[2]*4+fi,0,0,size,size,{blend:'lighter',alpha:.32});ctx.restore();
+  const fi=1,mul=b.szMul||1,t=projectileVisualAge(b),a=Math.atan2(b.vy??1,b.vx??0);
+  const angle=S[3]==='spin'?t*2.25:(S[3]==='right'?a:a+Math.PI/2),size=S[4]*mul;
+  const pivot=CFX_FLIGHT_PIVOT[b.kind]||[.5,.5],dx=(.5-pivot[0])*size,dy=(.5-pivot[1])*size;
+  const x=b.x+Math.cos(angle)*dx-Math.sin(angle)*dy,y=b.y+Math.sin(angle)*dx+Math.cos(angle)*dy;
+  const drawn=combatAtlasDraw(S[0],4,S[1],S[2]*4+fi,x,y,size,size,{angle});
+  if(drawn){
+    const light=cfxFlightLight(S[0],S[1],S[2]*4+fi);
+    if(light){
+      ctx.save();ctx.translate(x,y);ctx.rotate(angle);ctx.imageSmoothingEnabled=false;
+      const sourceAlpha=ctx.globalAlpha;ctx.globalCompositeOperation='lighter';ctx.globalAlpha=sourceAlpha*(.12+.13*(.5+.5*Math.sin(t*7)));
+      ctx.drawImage(light,-size/2,-size/2,size,size);
+      // A pixel-stepped highlight sweeps through the source interior; the body
+      // and both cores retain exactly the same geometry throughout its cycle.
+      ctx.globalAlpha=sourceAlpha*.28;ctx.beginPath();
+      const row=Math.floor((t*.72%1)*light.height/2)*2;
+      ctx.rect(-size/2,-size/2+row/light.height*size,size,Math.max(2,12/light.height*size));ctx.clip();
+      ctx.drawImage(light,-size/2,-size/2,size,size);ctx.restore();
+    }
   }
   return drawn;
 }
@@ -45679,7 +45743,7 @@ function drawCombatFinalProjectile(b){
   if(b&&b._s7modOrb)return s7mBlit('orb',Math.floor((b.t||0)*12)%8,b.x,b.y,32,32,0,1);
   if(!b||typeof combatAtlasDraw!=='function')return false;
   if(drawCfxStageProjectile(b))return true;
-  const ang=Math.atan2(b.vy||1,b.vx||0)-Math.PI/2;
+  const ang=Math.atan2(b.vy??1,b.vx??0)-Math.PI/2;
   if(b._s7warden){
     const role=b._s7warden,mul=b.szMul||1;
     if(role==='mine')return combatAtlasDraw('cfx_stage7_warden_mine',1,1,0,b.x,b.y,50*mul,50*mul,{angle:(b.t||0)*.72,smooth:true});
@@ -45722,7 +45786,7 @@ function drawFireType(b){
   if(_shade) key=projStaticKey(key);
   if(typeof XART==='undefined'||!XART.rdy(key)) return false;
   let ang=0;
-  if(T.align) ang=Math.atan2(b.vy||1,b.vx||0)-Math.PI/2;
+  if(T.align) ang=Math.atan2(b.vy??1,b.vx??0)-Math.PI/2;
   else if(T.spin) ang=(b.t||0)*T.spin+((b._ph||0));
   if(T._pal && !b.pal) b.pal=T._pal;
   const h=(T.h||14)*(b.szMul||1)*(T._szMul||1);
@@ -50334,7 +50398,7 @@ function drawBullets(){
         continue;
       }
       // ---- fallback: the old laser reel, if the helix pack is absent ----
-      let k='lzr_'+lv+'_'+(((performance.now()/28)|0 + (b._fl||0))%7);
+      let k='lzr_'+lv+'_'+projectileVisualFrame(b,1000/28,7,b._fl||0);
       if(typeof XART==='undefined' || !XART.rdy(k)) k='lzr_1_0';
       if(typeof XART!=='undefined' && XART.rdy(k)){
         const im=XART.get(k);
@@ -50486,7 +50550,7 @@ function drawBullets(){
         ctx.drawImage(_sw, -w/2, -h/2, w, h);
         ctx.restore();
       } else {
-        const _k='nadb_'+(((performance.now()/60)|0)%12);
+        const _k='nadb_'+projectileVisualFrame(b,1000/60,12);
         if(typeof XART!=='undefined' && XART.rdy(_k)){
           const im=XART.get(_k);
           ctx.save(); ctx.globalCompositeOperation='lighter';
@@ -50605,7 +50669,7 @@ function drawBullets(){
       ctx.globalAlpha=1;
       if(typeof XART!=='undefined' && XART.rdy('lz_bomb')){
         const im=XART.get('lz_bomb'), h=32, w=h*(im.naturalWidth/im.naturalHeight);
-        ctx.shadowColor='#ffc21a'; ctx.shadowBlur=10+6*Math.abs(Math.sin(performance.now()/110));
+        ctx.shadowColor='#ffc21a'; ctx.shadowBlur=10+6*Math.abs(Math.sin(projectileVisualAge(b)*1000/110));
         ctx.drawImage(im,-w/2,-h/2,w,h);
       } else { ctx.fillStyle='#ffc21a'; ctx.shadowColor='#ffc21a'; ctx.shadowBlur=10; ctx.fillRect(-5,-13,10,26); }
       ctx.restore(); continue; }
@@ -50723,7 +50787,7 @@ function drawBullets(){
         ctx.restore(); continue;
       }
       // Legacy fallback only while the approved plate is still decoding.
-      const _nio='nio_'+(Math.floor((b.t||performance.now()/1000)*12)%8);
+      const _nio='nio_'+projectileVisualFrame(b,12,8);
       if(typeof XART!=='undefined' && XART.rdy(_nio)){ const im=XART.get(_nio), s=(b.w*1.9)/Math.max(im.naturalWidth,im.naturalHeight); ctx.drawImage(im,-im.naturalWidth*s/2,-im.naturalHeight*s/2,im.naturalWidth*s,im.naturalHeight*s); ctx.restore(); continue; }
       const fk='iceorb_'+((((b.frame|0)%4)+4)%4);
       if(typeof XART!=='undefined' && XART.rdy(fk)){ const im=XART.get(fk), s=(b.w*1.7)/Math.max(im.naturalWidth,im.naturalHeight); ctx.drawImage(im,-im.naturalWidth*s/2,-im.naturalHeight*s/2,im.naturalWidth*s,im.naturalHeight*s); }
@@ -50766,7 +50830,7 @@ function drawBullets(){
       ctx.save(); ctx.translate(b.x,b.y); ctx.rotate((b.ang||0)+Math.PI/2);
       ctx.shadowColor=_fire?'#ffb347':'#dff4ff'; ctx.shadowBlur=_fire?8:6;
       if(_fire){
-        const _flv=clamp(b.lv||1,1,5), _ff=Math.floor(performance.now()/70 + ((b.ang||0)*3|0))%8;
+        const _flv=clamp(b.lv||1,1,5), _ff=projectileVisualFrame(b,1000/70,8,(b.ang||0)*3|0);
         const _fk='nfb_fl'+_flv+'_'+_ff;
         if(typeof XART!=='undefined' && XART.rdy(_fk)){
           const im=XART.get(_fk), s=(17+_flv*2.2)/Math.max(im.naturalWidth,im.naturalHeight);
@@ -50782,7 +50846,7 @@ function drawBullets(){
         ctx.drawImage(im,-w/2,-h/2,w,h); ctx.restore(); continue;
       }
       // v2.2 FROZEN ORB: per-level animated crystal (radius+shard coverage grow with level)
-      const _ilv=clamp(b.lv||1,1,5), _if=Math.floor(performance.now()/80 + ((b.ang||0)*3|0))%6, _ik='nio_'+_ilv+'_'+_if;
+      const _ilv=clamp(b.lv||1,1,5), _if=projectileVisualFrame(b,1000/80,6,(b.ang||0)*3|0), _ik='nio_'+_ilv+'_'+_if;
       if(typeof XART!=='undefined' && XART.rdy(_ik)){ const im=XART.get(_ik), s=(16+_ilv*2.2)/Math.max(im.naturalWidth,im.naturalHeight); ctx.drawImage(im,-im.naturalWidth*s/2,-im.naturalHeight*s/2,im.naturalWidth*s,im.naturalHeight*s); ctx.restore(); continue; }
       // fallback: icicle shards from the ice pack (tip at TOP in the art -> tip leads along ang)
       const _sk='iceshard_'+((((b.ang||0)*7)|0)%4+4)%4;
@@ -50859,7 +50923,7 @@ function drawBullets(){
          else. Here the fix is to HOLD on a frame that IS ready rather than abandon the reel -
          once any frame has decoded the beam stays the authored beam, and the animation resumes on
          its own as the rest arrive. */
-      let _nb='nlz_'+lv+'_b'+(((performance.now()/70)|0)%6);
+      let _nb='nlz_'+lv+'_b'+projectileVisualFrame(b,1000/70,6);
       if(typeof XART!=='undefined' && !XART.rdy(_nb)){
         for(let _f=0;_f<6;_f++){ const _c='nlz_'+lv+'_b'+_f; if(XART.rdy(_c)){ _nb=_c; break; } }
       }
@@ -50923,7 +50987,7 @@ function drawBullets(){
       }
       }   // end v2.2-vs-legacy beam base
       // ---- ANIMATED FLUID FX overlay: outer undulating glow + inner scrolling energy pulses ----
-      const now=performance.now();
+      const now=projectileVisualAge(b)*1000;
       ctx.globalCompositeOperation='lighter';
       if(!_v22beam){   // Mike 0719: no glow when the animated v2.2 beam is live
         // outer: wavering side glow that breathes in/out
@@ -51372,11 +51436,11 @@ function drawBullets(){
           }
         } }
       // v2.2 dart (sliced center dart from the volley master) gets first pick
-      { const _nf=Math.floor(performance.now()/70 + (b._sf||0))%6, _nk='nsp_'+(_spLv+1)+'_'+_nf;
+      { const _nf=projectileVisualFrame(b,1000/70,6,b._sf||0), _nk='nsp_'+(_spLv+1)+'_'+_nf;
         if(typeof XART!=='undefined' && XART.rdy(_nk)){
           if(drawMfx(_nk, b.x, b.y, Math.atan2(b.vy,b.vx)+Math.PI/2, 15+_spLv*2, null, 1)) continue;
         } }
-      const _spN=5, _spF=Math.floor(performance.now()/70 + (b._sf||0))%_spN;   // ~14fps flicker
+      const _spN=5, _spF=projectileVisualFrame(b,1000/70,_spN,b._sf||0);   // ~14fps flicker
       let _spKey=null;
       if(typeof XART!=='undefined'){
         for(let t=0;t<_spN;t++){ const k='spr_'+_spLv+'_'+((_spF+t)%_spN); if(XART.rdy(k)){ _spKey=k; break; } }
@@ -51663,7 +51727,7 @@ function drawBullets(){
       ctx.restore(); continue;
     }
     if(b.kind==='plasma'){ ctx.fillStyle='#c46bff'; circle(b.x,b.y,4); ctx.fillStyle='#f0d0ff'; circle(b.x,b.y,2); }
-    else if(b.kind==='ice'){ ctx.save(); ctx.translate(b.x,b.y); ctx.rotate(performance.now()/200); ctx.fillStyle='#9fe6ff'; ctx.fillRect(-3,-3,6,6); ctx.fillStyle='#eafcff'; ctx.fillRect(-1.4,-1.4,2.8,2.8); ctx.restore(); }
+    else if(b.kind==='ice'){ ctx.save(); ctx.translate(b.x,b.y); ctx.rotate(projectileVisualAge(b)*5); ctx.fillStyle='#9fe6ff'; ctx.fillRect(-3,-3,6,6); ctx.fillStyle='#eafcff'; ctx.fillRect(-1.4,-1.4,2.8,2.8); ctx.restore(); }
     else if(b.kind==='shell'){ if(ASSETS.has('t_shell')){ ctx.save(); ctx.translate(b.x,b.y); ctx.rotate(Math.atan2(b.vy,b.vx)+Math.PI/2); const d=ASSETS.dims('t_shell'), s=15/Math.max(d.w,d.h); ASSETS.blit('t_shell',0,0,d.w*s,d.h*s); ctx.restore(); } else { ctx.fillStyle='#ffb04a'; circle(b.x,b.y,4.2); ctx.fillStyle='#5a3010'; circle(b.x,b.y,1.8); } }
     else if(b.kind==='emissile'||b.kind==='erocket'){
       const _ea=(b.ang!=null?b.ang:Math.atan2(b.vy,b.vx));
@@ -52334,6 +52398,7 @@ function _drawEffectsInner(){
   }
   // particles
   for(const p of particles){
+    if(p._dbrKey)continue; // authored hull fragments have their own drawDeathDebris pass
     if(p._lmBubble){
       const k=clamp(1-p.t/p.life,0,1),s=(p.r||12)*(.72+.32*Math.sin(Math.PI*k));
       ctx.save();ctx.translate(p.x,p.y);ctx.rotate((p._lmRot||0)+p.t*.8);ctx.globalAlpha=k;
@@ -59631,6 +59696,14 @@ function spawnDeathDebris(e, cls){
   return made;
 }
 
+function deathDebrisTick(p,dt){
+  // Hull fragments are launched in pixels/second. Integrate drag in seconds,
+  // independently of the legacy sparks that still store pixels/frame.
+  const drag=1.2,decay=Math.exp(-drag*dt),travel=-Math.expm1(-drag*dt)/drag;
+  p.t+=dt;p.x+=(p.vx||0)*travel;p.y+=(p.vy||0)*travel;
+  p.vx=(p.vx||0)*decay;p.vy=(p.vy||0)*decay;
+  if(p.t>=p.life)p.dead=true;
+}
 function drawDeathDebris(){
   if(typeof XART==='undefined') return;
   for(const p of particles){
@@ -66332,7 +66405,7 @@ function drawOpening(dt){
    on the stages to go stage to stage, or button to button if you go up to the buttons."
 
    The 640x480 plate becomes ten islands, an ocean tile, seven clouds and a button bar - SpriteCook
-   plates baked by _BUILD_SOURCE/campaign_map_v2_0912v.py into assets/game/campaign_map_v2/. The
+   plates baked by _BUILD_SOURCE/campaign_map_v2_0912v.py into assets/game/shared/campaign/campaign_map_v2/. The
    islands keep the plate's composition: world = SSEL_POS*CM2_K + CM2_O is a UNIFORM scale, so the
    screen-direction navigator (sselMoveHorizontal) sees exactly the relations it always saw and
    the §243 regression (Left from stage 6 flying right) cannot come back through the new layout.
@@ -72129,7 +72202,7 @@ function fontCapH(art){
    caps-only. The BMF path deliberately does NOT — sentence case is the reason this pack exists.
    ============================================================ */
 const BMF_FACES = {
-  dialogue:'assets/game/fonts/fury-dialogue-font/fury-dialogue-font',
+  dialogue:'assets/game/shared/fonts/fonts/fury-dialogue-font/fury-dialogue-font',
   /* ⚠ THE 2x CUTSCENE FACE SHIPPED IN THE SAME PACK AND WAS NEVER IMPORTED (drop 0904x).
      CF_BOFDialogueFont-Vol.1 carries TWO variants. The dialogue face on disk is byte-identical to
      the pack's (md5 2a41b64549, verified before touching anything) so there was nothing to update
@@ -72138,7 +72211,7 @@ const BMF_FACES = {
      It matters because the cutscene surfaces were MAGNIFYING the 20x22 gameplay face to fill a
      640x480 plate. Nearest-neighbour magnification of a beveled face turns its 1px highlight into
      a 2px block; the authored 2x cells carry the bevel at that size instead of inventing it. */
-  cutscene:'assets/game/fonts/fury-cutscene-font/fury-cutscene-font',
+  cutscene:'assets/game/shared/fonts/fonts/fury-cutscene-font/fury-cutscene-font',
 };
 if(typeof window!=='undefined'&&window.BOF_COMMAND_FONTS)
   Object.assign(BMF_FACES,window.BOF_COMMAND_FONTS.faces);
@@ -75516,6 +75589,7 @@ function updateFlyoverLiveFx(dt){
   explosions=explosions.filter(ex=>!ex.dead);
   for(const p of particles){
     if(p._delay>0){ p._delay-=dt; continue; }
+    if(p._dbrKey){deathDebrisTick(p,dt);continue;}
     p.t+=dt; p.x+=(p.vx||0); p.y+=(p.vy||0);
     if(p.grav) p.vy=(p.vy||0)+p.grav;
     if(p.vx) p.vx*=0.98;
@@ -78106,8 +78180,8 @@ function drawLoadout(dt){
     destroys everything including boxes and pills."
    "Score Point graphics that can be bonus pickups when we kill enemies. Im thinking bullets with #'s"
 
-   Art: SpriteCook, assets/game/ui/forge_0917b/powers_bays.png (the Forge family, 477:266) and
-   assets/game/ui/pickups_0917b/ (coin, fury bomb, timed bomb, four score bullets).
+   Art: SpriteCook, assets/game/shared/ui/ui/forge_0917b/powers_bays.png (the Forge family, 477:266) and
+   assets/game/shared/ui/ui/pickups_0917b/ (coin, fury bomb, timed bomb, four score bullets).
    ============================================================ */
 
 /* ---- THE FURIOUS COIN ------------------------------------------------------------------------- */
@@ -78872,7 +78946,8 @@ function loop(now){
      it outside would have left the larger half of the risk uncovered. A bad frame now costs one
      frame and is reported once, instead of costing the session. */
   try{
-    if(state===GS.PLAY){ updatePlay(dt); }
+    if(state===GS.PLAY){ if(typeof combatFrame==='function')combatFrame(rawDt);else updatePlay(dt); }
+    else if(typeof combatClockReset==='function')combatClockReset();
   }catch(_updErr){
     if(!loop._uReported){ loop._uReported=true; try{ console.error('update error in state', state, _updErr); }catch(e){} }
   }
@@ -78990,12 +79065,13 @@ function loop(now){
     if(state===GS.PLAY) Snd.loopTick(dt); else Snd.loopStopAll();
   }
   try{ if(typeof ambTick==='function') ambTick(); }catch(_amb){}
-  Input.clearTaps();
+  // Keep a new input edge until the next 60 Hz combat tick on fast displays.
+  if(state!==GS.PLAY||typeof BOF_COMBAT_CLOCK==='undefined'||BOF_COMBAT_CLOCK.steps>0)Input.clearTaps();
   requestAnimationFrame(loop);
 }
 // Classic extension scripts patch the same runtime. Start only after the last
 // script has registered, so slow loads cannot expose a partially initialized UI.
-function startGameLoop(){last=performance.now();requestAnimationFrame(loop);}
+function startGameLoop(){window.__bofAssetRuntimeReady=true;last=performance.now();requestAnimationFrame(loop);}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',startGameLoop,{once:true});
 else startGameLoop();
 
@@ -79007,18 +79083,18 @@ window.addEventListener('pointerdown',()=>{ try{ Audio.init(); }catch(_){} },{on
 /* Code-owned because assets/manifest.js is generated. Keep the game's dialogue cinematics on
    their own score without replacing stage, boss, menu, campaign-map, or credits music. */
 if(window.BOFA && BOFA.music){
-  BOFA.music.stage7mus='assets/game/music/Level7.mp3';
-  BOFA.music.boss8='assets/game/music/Level8b.mp3';
+  BOFA.music.stage7mus='assets/game/levels/stage_07/audio/music/Level7.mp3';
+  BOFA.music.boss8='assets/game/levels/stage_08/audio/music/Level8b.mp3';
   BOFA.music.ironcage=BOFA.music.boss8;
-  BOFA.music.boss8p3='assets/game/music/Level8b3.mp3';
-  BOFA.music.finalCinematic='assets/game/music/FinalCinematic.mp3';
-  BOFA.music.cinematics='assets/game/music/Cinematics.mp3';
+  BOFA.music.boss8p3='assets/game/levels/stage_08/audio/music/Level8b3.mp3';
+  BOFA.music.finalCinematic='assets/game/shared/audio/music/FinalCinematic.mp3';
+  BOFA.music.cinematics='assets/game/shared/audio/music/Cinematics.mp3';
   /* ⚠ THE OPENER'S TRACK, AND IT IS THE ONE FILE THE MANIFEST NEVER REGISTERED (Mike, 0912: "use
      some of our music we didnt map but have"). Measured against the folder rather than chosen by
      ear: of the 27 files in assets/game/music, exactly two were absent from BOFA.music -
      cinematics_rapbeat, which the line above claims, and this one. Code-owned for the same reason
      that one is: manifest.js is generated and has reverted hand-edited audio mappings before. */
-  BOFA.music.opener='assets/game/music/Opening.mp3';
+  BOFA.music.opener='assets/game/shared/audio/music/Opening.mp3';
   /* ⚠ THE STAGE-2 AND STAGE-4 FIGHT THEMES (Mike, 0912), code-owned for the same reason as the two above.
        "use fireboss for fireboss mini boss fight theme, store the miniboss fight theme and name it
         unused_fire. Use bossfight3 for the 2nd level boss fight theme, store the 2nd level boss fight
@@ -79038,174 +79114,174 @@ if(window.BOFA && BOFA.music){
        at the house format, 112k CBR 44.1 kHz stereo, from Mike's original WAVs. */
   /* Stage 1 boss: Mike's helicopterboss.mp3, encoded for browser playback. Previous
      Stage 1 boss theme (minderaser) is archived as unused_x; mini1 remains fireboss. */
-  BOFA.music.boss1='assets/game/music/Level1b.mp3';
+  BOFA.music.boss1='assets/game/levels/stage_01/audio/music/Level1b.mp3';
   BOFA.music.boss=BOFA.music.boss1;
-  BOFA.music.mini1='assets/game/music/Level1mb.mp3';
-  BOFA.music.mini2='assets/game/music/Level2mb.mp3';
-  BOFA.music.boss2='assets/game/music/Level2b.mp3';
+  BOFA.music.mini1='assets/game/levels/stage_01/audio/music/Level1mb.mp3';
+  BOFA.music.mini2='assets/game/levels/stage_02/audio/music/Level2mb.mp3';
+  BOFA.music.boss2='assets/game/levels/stage_02/audio/music/Level2b.mp3';
   /* Stage 3's new main fight theme; the prior Cryo Behemoth track is archived.
      The miniboss uses the field score so Pandemonium is reserved for the boss. */
-  BOFA.music.boss3='assets/game/music/Level3b.mp3';
-  BOFA.music.mini3='assets/game/music/Level3mb.mp3';
-  BOFA.music.boss4='assets/game/music/Level4b.mp3';
-  BOFA.music.deathtrap='assets/game/music/Level6.mp3';
-  BOFA.music.mini5='assets/game/music/Level5mb.mp3';
-  BOFA.music.mini4='assets/game/music/Level4mb.mp3';
-  BOFA.music.mini6='assets/game/music/Level6mb.mp3';
-  BOFA.music.mini7='assets/game/music/Level7mb.mp3';
-  BOFA.music.mini9='assets/game/music/Level9mb.mp3';
-  BOFA.music.boss8p2='assets/game/music/Level8b2.mp3';
-  BOFA.music.boss5='assets/game/music/Level5b.mp3';
+  BOFA.music.boss3='assets/game/levels/stage_03/audio/music/Level3b.mp3';
+  BOFA.music.mini3='assets/game/levels/stage_03/audio/music/Level3mb.mp3';
+  BOFA.music.boss4='assets/game/levels/stage_04/audio/music/Level4b.mp3';
+  BOFA.music.deathtrap='assets/game/levels/stage_06/audio/music/Level6.mp3';
+  BOFA.music.mini5='assets/game/levels/stage_05/audio/music/Level5mb.mp3';
+  BOFA.music.mini4='assets/game/levels/stage_04/audio/music/Level4mb.mp3';
+  BOFA.music.mini6='assets/game/levels/stage_06/audio/music/Level6mb.mp3';
+  BOFA.music.mini7='assets/game/levels/stage_07/audio/music/Level7mb.mp3';
+  BOFA.music.mini9='assets/game/levels/stage_09/audio/music/Level9mb.mp3';
+  BOFA.music.boss8p2='assets/game/levels/stage_08/audio/music/Level8b2.mp3';
+  BOFA.music.boss5='assets/game/levels/stage_05/audio/music/Level5b.mp3';
 }
 if(window.BOFA && BOFA.sfx){
   Object.assign(BOFA.sfx, {
-    stage6FalseClearScratch:'assets/game/sounds/stage6_false_clear_scratch.wav',
+    stage6FalseClearScratch:'assets/game/levels/stage_06/audio/sounds/stage6_false_clear_scratch.wav',
     /* ColeForge 0920: new owned weapon, hazard, boss, and enemy cues. */
-    cfComboFire:'assets/game/sounds/cf_combo_fire_0920.mp3',
-    cfComboIce:'assets/game/sounds/cf_combo_ice_0920.mp3',
-    cfComboLightning:'assets/game/sounds/cf_combo_lightning_0920.mp3',
-    cfComboPrism:'assets/game/sounds/cf_combo_prism_0920.mp3',
-    cfComboToxic:'assets/game/sounds/cf_combo_toxic_0920.mp3',
-    cfComboKinetic:'assets/game/sounds/cf_combo_kinetic_0920.mp3',
-    cfComboChrome:'assets/game/sounds/cf_combo_chrome_0920.mp3',
-    cfComboWater:'assets/game/sounds/cf_combo_water_0920.mp3',
-    cfComboDark:'assets/game/sounds/cf_combo_dark_0920.mp3',
-    cfComboThermoshock:'assets/game/sounds/cf_combo_thermoshock_0920.mp3',
-    cfFireWave:'assets/game/sounds/cf_fire_wave_0920.mp3',
-    cfFireBurst:'assets/game/sounds/cf_fire_burst_0920.mp3',
-    cfFireGeyser:'assets/game/sounds/cf_fire_geyser_0920.mp3',
-    cfShieldDestroy:'assets/game/sounds/cf_shield_destroy_0920.mp3',
-    cfBossRazorback:'assets/game/sounds/cf_boss_razorback_0920.mp3',
-    cfBossOverlord:'assets/game/sounds/cf_boss_overlord_0920.mp3',
-    cfBossWarden:'assets/game/sounds/cf_boss_warden_0920.mp3',
-    cfEnemyFlame:'assets/game/sounds/cf_enemy_flame_0920.mp3',
-    cfEnemyIce:'assets/game/sounds/cf_enemy_ice_0920.mp3',
-    cfEnemyElectric:'assets/game/sounds/cf_enemy_electric_0920.mp3',
+    cfComboFire:'assets/game/shared/audio/sounds/cf_combo_fire_0920.mp3',
+    cfComboIce:'assets/game/shared/audio/sounds/cf_combo_ice_0920.mp3',
+    cfComboLightning:'assets/game/shared/audio/sounds/cf_combo_lightning_0920.mp3',
+    cfComboPrism:'assets/game/shared/audio/sounds/cf_combo_prism_0920.mp3',
+    cfComboToxic:'assets/game/shared/audio/sounds/cf_combo_toxic_0920.mp3',
+    cfComboKinetic:'assets/game/shared/audio/sounds/cf_combo_kinetic_0920.mp3',
+    cfComboChrome:'assets/game/shared/audio/sounds/cf_combo_chrome_0920.mp3',
+    cfComboWater:'assets/game/shared/audio/sounds/cf_combo_water_0920.mp3',
+    cfComboDark:'assets/game/shared/audio/sounds/cf_combo_dark_0920.mp3',
+    cfComboThermoshock:'assets/game/shared/audio/sounds/cf_combo_thermoshock_0920.mp3',
+    cfFireWave:'assets/game/shared/audio/sounds/cf_fire_wave_0920.mp3',
+    cfFireBurst:'assets/game/shared/audio/sounds/cf_fire_burst_0920.mp3',
+    cfFireGeyser:'assets/game/shared/audio/sounds/cf_fire_geyser_0920.mp3',
+    cfShieldDestroy:'assets/game/shared/audio/sounds/cf_shield_destroy_0920.mp3',
+    cfBossRazorback:'assets/game/shared/audio/sounds/cf_boss_razorback_0920.mp3',
+    cfBossOverlord:'assets/game/shared/audio/sounds/cf_boss_overlord_0920.mp3',
+    cfBossWarden:'assets/game/shared/audio/sounds/cf_boss_warden_0920.mp3',
+    cfEnemyFlame:'assets/game/shared/audio/sounds/cf_enemy_flame_0920.mp3',
+    cfEnemyIce:'assets/game/shared/audio/sounds/cf_enemy_ice_0920.mp3',
+    cfEnemyElectric:'assets/game/shared/audio/sounds/cf_enemy_electric_0920.mp3',
     /* Replace the old tonal enemyShoot.mp3 catch-all with a short mechanical weapon transient.
        Named elemental/boss families below still keep their own sound identities. */
-    enemyShoot:'assets/game/sounds/enemy_machine_shot_light.mp3',
-    machineGun:'assets/game/sounds/jet_machinegun_shot_01.mp3',
-    heavyMachineGun:'assets/game/sounds/reviewed_lizzie_heavy_mg.mp3',
-    enemyMachineGunLight:'assets/game/sounds/enemy_machine_shot_light.mp3',
-    enemyMachineGunHeavy:'assets/game/sounds/reviewed_enemy_heavy_mg.mp3',
-    enemyMachineGunBurst:'assets/game/sounds/reviewed_enemy_heavy_mg.mp3',
+    enemyShoot:'assets/game/shared/audio/sounds/enemy_machine_shot_light.mp3',
+    machineGun:'assets/game/shared/audio/sounds/jet_machinegun_shot_01.mp3',
+    heavyMachineGun:'assets/game/shared/audio/sounds/reviewed_lizzie_heavy_mg.mp3',
+    enemyMachineGunLight:'assets/game/shared/audio/sounds/enemy_machine_shot_light.mp3',
+    enemyMachineGunHeavy:'assets/game/shared/audio/sounds/reviewed_enemy_heavy_mg.mp3',
+    enemyMachineGunBurst:'assets/game/shared/audio/sounds/reviewed_enemy_heavy_mg.mp3',
     /* the Tempest Leviathan's plasma bolts (0913b): the pack's own heavy machine-shot, already on disk and byte-identical
        (sha256 438a3008...). TAME-gated below - a key with no row plays every round raw. */
-    enemyMachineShotHeavy:'assets/game/sounds/enemy_machine_shot_heavy.mp3',
-    tlvJetCharge:'assets/game/sounds/boss_weapon_charge.mp3',
-    tlvJetReady:'assets/game/sounds/retina_charge.mp3',
-    tlvJetTurn:'assets/game/sounds/nsp_rcs_thruster.mp3',
-    tlvJetThrust:'assets/game/sounds/nsp_booster_ignite.mp3',
-    tlvJetEngine:'assets/game/sounds/nsp_engine_loop.mp3',
-    rzbTankRoll:'assets/game/sounds/rzb_tank_tread_loop_0919.mp3',
-    tlvJetBrake:'assets/game/sounds/brake.mp3',
-    dkBuck:'assets/game/sounds/reviewed_decker_shotgun.mp3',
-    dkShell:'assets/game/sounds/reviewed_decker_shell_eject.mp3',
-    dkReload:'assets/game/sounds/reviewed_decker_reload.mp3',
+    enemyMachineShotHeavy:'assets/game/shared/audio/sounds/enemy_machine_shot_heavy.mp3',
+    tlvJetCharge:'assets/game/shared/audio/sounds/boss_weapon_charge.mp3',
+    tlvJetReady:'assets/game/shared/audio/sounds/retina_charge.mp3',
+    tlvJetTurn:'assets/game/shared/audio/sounds/nsp_rcs_thruster.mp3',
+    tlvJetThrust:'assets/game/shared/audio/sounds/nsp_booster_ignite.mp3',
+    tlvJetEngine:'assets/game/shared/audio/sounds/nsp_engine_loop.mp3',
+    rzbTankRoll:'assets/game/shared/audio/sounds/rzb_tank_tread_loop_0919.mp3',
+    tlvJetBrake:'assets/game/shared/audio/sounds/brake.mp3',
+    dkBuck:'assets/game/shared/audio/sounds/reviewed_decker_shotgun.mp3',
+    dkShell:'assets/game/shared/audio/sounds/reviewed_decker_shell_eject.mp3',
+    dkReload:'assets/game/shared/audio/sounds/reviewed_decker_reload.mp3',
     /* 0913 authored weapon mixes: every cue owns a gain and retrigger gate below. */
-    colePressureStart:'assets/game/sounds/cole_pressure_start_0913.mp3',
-    colePressureLoop:'assets/game/sounds/cole_pressure_loop_0913.mp3',
-    colePressureRelease:'assets/game/sounds/cole_pressure_release_0913.mp3',
-    colePressureImpact:'assets/game/sounds/cole_pressure_impact_0913.mp3',
-    juggernautChargeStart:'assets/game/sounds/juggernaut_charge_start_0913.mp3',
-    juggernautChargeLoop:'assets/game/sounds/juggernaut_charge_loop_0913.mp3',
-    juggernautRamLaunch:'assets/game/sounds/juggernaut_ram_launch_0913.mp3',
-    juggernautRamLoop:'assets/game/sounds/juggernaut_ram_loop_0913.mp3',
-    juggernautRamImpact:'assets/game/sounds/juggernaut_wreck_hit_0913.mp3',
-    juggernautRamStop:'assets/game/sounds/juggernaut_ram_stop_0913.mp3',
-    juggernautChains:'assets/game/sounds/juggernaut_chains_0913.mp3',
-    juggernautWreckHit:'assets/game/sounds/juggernaut_wreck_hit_0913.mp3',
-    juggernautWreckBlock:'assets/game/sounds/juggernaut_wreck_block_0913.mp3',
-    laserMistFire:'assets/game/sounds/laser_mist_fire_0913.mp3',
-    laserMistSplit:'assets/game/sounds/laser_mist_split_0913.mp3',
-    laserMistBloom:'assets/game/sounds/laser_mist_bloom_0913.mp3',
-    laserMistImpact:'assets/game/sounds/laser_mist_impact_0913.mp3',
-    coleSonicBoom:'assets/game/sounds/reviewed_cole_sonic_release.mp3',
+    colePressureStart:'assets/game/shared/audio/sounds/cole_pressure_start_0913.mp3',
+    colePressureLoop:'assets/game/shared/audio/sounds/cole_pressure_loop_0913.mp3',
+    colePressureRelease:'assets/game/shared/audio/sounds/cole_pressure_release_0913.mp3',
+    colePressureImpact:'assets/game/shared/audio/sounds/cole_pressure_impact_0913.mp3',
+    juggernautChargeStart:'assets/game/shared/audio/sounds/juggernaut_charge_start_0913.mp3',
+    juggernautChargeLoop:'assets/game/shared/audio/sounds/juggernaut_charge_loop_0913.mp3',
+    juggernautRamLaunch:'assets/game/shared/audio/sounds/juggernaut_ram_launch_0913.mp3',
+    juggernautRamLoop:'assets/game/shared/audio/sounds/juggernaut_ram_loop_0913.mp3',
+    juggernautRamImpact:'assets/game/shared/audio/sounds/juggernaut_wreck_hit_0913.mp3',
+    juggernautRamStop:'assets/game/shared/audio/sounds/juggernaut_ram_stop_0913.mp3',
+    juggernautChains:'assets/game/shared/audio/sounds/juggernaut_chains_0913.mp3',
+    juggernautWreckHit:'assets/game/shared/audio/sounds/juggernaut_wreck_hit_0913.mp3',
+    juggernautWreckBlock:'assets/game/shared/audio/sounds/juggernaut_wreck_block_0913.mp3',
+    laserMistFire:'assets/game/shared/audio/sounds/laser_mist_fire_0913.mp3',
+    laserMistSplit:'assets/game/shared/audio/sounds/laser_mist_split_0913.mp3',
+    laserMistBloom:'assets/game/shared/audio/sounds/laser_mist_bloom_0913.mp3',
+    laserMistImpact:'assets/game/shared/audio/sounds/laser_mist_impact_0913.mp3',
+    coleSonicBoom:'assets/game/shared/audio/sounds/reviewed_cole_sonic_release.mp3',
     /* THE DEADLY SONIC BOOM (Mike, 0917): two cues, one family, generated through the gated sheet
        _BUILD_SOURCE/sfx/sonic.json - the first pair was refused as pure bass (0.016 above 2 kHz), the
        shipped pair peaks 1% / 24% in with 0.89 of its energy above 2 kHz. Full charge / half charge. */
-    coleSonicFull:'assets/game/sounds/cole_sonic_full.mp3',
-    coleSonicHalf:'assets/game/sounds/cole_sonic_half.mp3',
-    sonicChargeStart:'assets/game/sounds/reviewed_cole_sonic_charge_start.mp3',
-    sonicChargeLoop:'assets/game/sounds/reviewed_cole_sonic_charge_loop.mp3',
-    laserBeamStart:'assets/game/sounds/reviewed_player_laser_beam_start.mp3',
-    laserBeamLoop:'assets/game/sounds/reviewed_player_laser_beam_loop.mp3',
-    laserBeamEnd:'assets/game/sounds/reviewed_player_laser_beam_end.mp3',
-    laserBeamHit:'assets/game/sounds/shield_hit_light.mp3',
-    flameThrowerStart:'assets/game/sounds/reviewed_flamethrower_start.mp3',
-    flameThrowerLoop:'assets/game/sounds/reviewed_flamethrower_loop.mp3',
-    flameThrowerEnd:'assets/game/sounds/reviewed_flamethrower_end.mp3',
-    magmaWardFlameLoop:'assets/game/sounds/reviewed_flamethrower_loop.mp3',
-    flameHit:'assets/game/sounds/explosion_air_small_01.mp3',
-    iceBreathStart:'assets/game/sounds/ice_breath_start.mp3',
-    iceBreathLoop:'assets/game/sounds/ice_breath_loop.mp3',
-    iceBreathEnd:'assets/game/sounds/ice_breath_release.mp3',
-    iceBreathHit:'assets/game/sounds/enemy_ice_bolt.mp3',
-    fireIceChargeStart:'assets/game/sounds/ice_breath_start.mp3',
-    fireIceOrbLaunch:'assets/game/sounds/nsp_charge_release.mp3',
-    fireIceOrbImpact:'assets/game/sounds/cf_combo_thermoshock_0920.mp3',
-    laserCannon:'assets/game/sounds/reviewed_laser_cannon.mp3',
-    spaceLaserCannon:'assets/game/sounds/reviewed_laser_cannon.mp3',
-    spaceLaserHit:'assets/game/sounds/shield_hit_light.mp3',
-    spaceShadowCharge:'assets/game/sounds/alert_beam_charge.mp3',
+    coleSonicFull:'assets/game/shared/audio/sounds/cole_sonic_full.mp3',
+    coleSonicHalf:'assets/game/shared/audio/sounds/cole_sonic_half.mp3',
+    sonicChargeStart:'assets/game/shared/audio/sounds/reviewed_cole_sonic_charge_start.mp3',
+    sonicChargeLoop:'assets/game/shared/audio/sounds/reviewed_cole_sonic_charge_loop.mp3',
+    laserBeamStart:'assets/game/shared/audio/sounds/reviewed_player_laser_beam_start.mp3',
+    laserBeamLoop:'assets/game/shared/audio/sounds/reviewed_player_laser_beam_loop.mp3',
+    laserBeamEnd:'assets/game/shared/audio/sounds/reviewed_player_laser_beam_end.mp3',
+    laserBeamHit:'assets/game/shared/audio/sounds/shield_hit_light.mp3',
+    flameThrowerStart:'assets/game/shared/audio/sounds/reviewed_flamethrower_start.mp3',
+    flameThrowerLoop:'assets/game/shared/audio/sounds/reviewed_flamethrower_loop.mp3',
+    flameThrowerEnd:'assets/game/shared/audio/sounds/reviewed_flamethrower_end.mp3',
+    magmaWardFlameLoop:'assets/game/shared/audio/sounds/reviewed_flamethrower_loop.mp3',
+    flameHit:'assets/game/shared/audio/sounds/explosion_air_small_01.mp3',
+    iceBreathStart:'assets/game/shared/audio/sounds/ice_breath_start.mp3',
+    iceBreathLoop:'assets/game/shared/audio/sounds/ice_breath_loop.mp3',
+    iceBreathEnd:'assets/game/shared/audio/sounds/ice_breath_release.mp3',
+    iceBreathHit:'assets/game/shared/audio/sounds/enemy_ice_bolt.mp3',
+    fireIceChargeStart:'assets/game/shared/audio/sounds/ice_breath_start.mp3',
+    fireIceOrbLaunch:'assets/game/shared/audio/sounds/nsp_charge_release.mp3',
+    fireIceOrbImpact:'assets/game/shared/audio/sounds/cf_combo_thermoshock_0920.mp3',
+    laserCannon:'assets/game/shared/audio/sounds/reviewed_laser_cannon.mp3',
+    spaceLaserCannon:'assets/game/shared/audio/sounds/reviewed_laser_cannon.mp3',
+    spaceLaserHit:'assets/game/shared/audio/sounds/shield_hit_light.mp3',
+    spaceShadowCharge:'assets/game/shared/audio/sounds/alert_beam_charge.mp3',
     // Fusion uses its own charge/launch pair; legacy event keys preserve save/editor compatibility.
-    spaceShadowRelease:'assets/game/sounds/arc_fusion_beam_0923.mp3',
+    spaceShadowRelease:'assets/game/shared/audio/sounds/arc_fusion_beam_0923.mp3',
     /* THE ORB'S IMPACT HAD A 454 ms SWELL (drop 0903q). spaceImpact() fires this cue on the frame of
        contact - the delay Mike heard was in the sample: explosion_plasma.mp3 peaks at 454 ms, under a
        reviewed launch cue that does not reach -12 dB until 928 ms. reviewed_shadow_orb_impact.mp3 is
        the same plasma burst cut 60 ms ahead of its peak (4 ms fade-in, normalised), so the hit lands
        with the flash. explosion_plasma.mp3 is untouched; swap this line back and nothing else moves. */
-    spaceShadowHit:'assets/game/sounds/reviewed_shadow_orb_impact.mp3',
-    spaceVolleyLaunch:'assets/game/sounds/nsp_rocket_launch.mp3',
-    spaceVolleyHit:'assets/game/sounds/explosion_air_medium.mp3',
-    enemyPulseLaserBlue:'assets/game/sounds/reviewed_enemy_laser.mp3',
-    enemyPulseLaserRed:'assets/game/sounds/reviewed_enemy_laser.mp3',
-    enemyPulseLaserAlien:'assets/game/sounds/reviewed_enemy_laser.mp3',
-    enemyHeavyLaser:'assets/game/sounds/reviewed_enemy_laser.mp3',
-    enemyScatterLaser:'assets/game/sounds/reviewed_enemy_laser.mp3',
-    laserShot:'assets/game/sounds/reviewed_enemy_laser.mp3',
-    enemyFlameBolt:'assets/game/sounds/cf_enemy_flame_0920.mp3',
-    enemyIceBolt:'assets/game/sounds/cf_enemy_ice_0920.mp3',
-    enemyElectricBolt:'assets/game/sounds/cf_enemy_electric_0920.mp3',
-    enemyRailCannon:'assets/game/sounds/enemy_rail_cannon.mp3',
-    enemyBossCannon:'assets/game/sounds/enemy_boss_cannon.mp3',
-    explosionAirSmall01:'assets/game/sounds/explosion_air_small_01.mp3',
-    explosionAirSmall02:'assets/game/sounds/explosion_air_small_02.mp3',
-    explosionAirMedium:'assets/game/sounds/explosion_air_medium.mp3',
-    explosionAirLarge:'assets/game/sounds/explosion_air_large.mp3',
-    explosionTankCookoff:'assets/game/sounds/explosion_tank_cookoff.mp3',
-    explosionJetBreakup:'assets/game/sounds/explosion_jet_breakup.mp3',
-    explosionFuelAir:'assets/game/sounds/explosion_fuel_air.mp3',
-    explosionBossCore:'assets/game/sounds/explosion_boss_core.mp3',
-    explosionPlasma:'assets/game/sounds/explosion_plasma.mp3',
-    explosionElectrical:'assets/game/sounds/explosion_electrical.mp3',
-    explosionIceBurst:'assets/game/sounds/explosion_ice_burst.mp3',
-    explosionChain:'assets/game/sounds/explosion_chain_sequence.mp3',
-    bossWeaponCharge:'assets/game/sounds/boss_weapon_charge.mp3',
-    hammerLeap:'assets/game/sounds/hammer_leap_0923.mp3',
-    hammerImpact:'assets/game/sounds/hammer_impact_0923.mp3',
-    hammerChaingun:'assets/game/sounds/hammer_chaingun_0923.mp3',
-    hammerEradCharge:'assets/game/sounds/hammer_erad_charge_0923.mp3',
-    hammerEradBlast:'assets/game/sounds/hammer_erad_blast_0923.mp3',
-    shieldHitLight:'assets/game/sounds/shield_hit_light.mp3',
-    shieldHitHeavy:'assets/game/sounds/shield_hit_heavy.mp3',
-    shieldBreakCombat:'assets/game/sounds/shield_break_combat.mp3',
-    debrisMetal:'assets/game/sounds/debris_scatter_metal.mp3',
-    projectileRicochet:'assets/game/sounds/projectile_ricochet.mp3',
-    atomicLaunch:'assets/game/sounds/reviewed_lizzie_atom_launch.mp3',
-    atomicDetonate:'assets/game/sounds/reviewed_lizzie_atom_impact.mp3',
-    stage3AtomicSiren:'assets/game/sounds/stage3_atomic_siren.mp3',
-    megaShieldPickup:'assets/game/sounds/reviewed_axel_mega_shield.mp3',
-    specialAbilityPickup:'assets/game/sounds/reviewed_special_pickup.mp3',
-    helixChargeStart:'assets/game/sounds/reviewed_maverick_charge_build.mp3',
-    helixCharge:'assets/game/sounds/reviewed_maverick_charge_loop.mp3',
-    maverickHelixRelease:'assets/game/sounds/reviewed_maverick_helix_release.mp3',
+    spaceShadowHit:'assets/game/shared/audio/sounds/reviewed_shadow_orb_impact.mp3',
+    spaceVolleyLaunch:'assets/game/shared/audio/sounds/nsp_rocket_launch.mp3',
+    spaceVolleyHit:'assets/game/shared/audio/sounds/explosion_air_medium.mp3',
+    enemyPulseLaserBlue:'assets/game/shared/audio/sounds/reviewed_enemy_laser.mp3',
+    enemyPulseLaserRed:'assets/game/shared/audio/sounds/reviewed_enemy_laser.mp3',
+    enemyPulseLaserAlien:'assets/game/shared/audio/sounds/reviewed_enemy_laser.mp3',
+    enemyHeavyLaser:'assets/game/shared/audio/sounds/reviewed_enemy_laser.mp3',
+    enemyScatterLaser:'assets/game/shared/audio/sounds/reviewed_enemy_laser.mp3',
+    laserShot:'assets/game/shared/audio/sounds/reviewed_enemy_laser.mp3',
+    enemyFlameBolt:'assets/game/shared/audio/sounds/cf_enemy_flame_0920.mp3',
+    enemyIceBolt:'assets/game/shared/audio/sounds/cf_enemy_ice_0920.mp3',
+    enemyElectricBolt:'assets/game/shared/audio/sounds/cf_enemy_electric_0920.mp3',
+    enemyRailCannon:'assets/game/shared/audio/sounds/enemy_rail_cannon.mp3',
+    enemyBossCannon:'assets/game/shared/audio/sounds/enemy_boss_cannon.mp3',
+    explosionAirSmall01:'assets/game/shared/audio/sounds/explosion_air_small_01.mp3',
+    explosionAirSmall02:'assets/game/shared/audio/sounds/explosion_air_small_02.mp3',
+    explosionAirMedium:'assets/game/shared/audio/sounds/explosion_air_medium.mp3',
+    explosionAirLarge:'assets/game/shared/audio/sounds/explosion_air_large.mp3',
+    explosionTankCookoff:'assets/game/shared/audio/sounds/explosion_tank_cookoff.mp3',
+    explosionJetBreakup:'assets/game/shared/audio/sounds/explosion_jet_breakup.mp3',
+    explosionFuelAir:'assets/game/shared/audio/sounds/explosion_fuel_air.mp3',
+    explosionBossCore:'assets/game/shared/audio/sounds/explosion_boss_core.mp3',
+    explosionPlasma:'assets/game/shared/audio/sounds/explosion_plasma.mp3',
+    explosionElectrical:'assets/game/shared/audio/sounds/explosion_electrical.mp3',
+    explosionIceBurst:'assets/game/shared/audio/sounds/explosion_ice_burst.mp3',
+    explosionChain:'assets/game/shared/audio/sounds/explosion_chain_sequence.mp3',
+    bossWeaponCharge:'assets/game/shared/audio/sounds/boss_weapon_charge.mp3',
+    hammerLeap:'assets/game/shared/audio/sounds/hammer_leap_0923.mp3',
+    hammerImpact:'assets/game/shared/audio/sounds/hammer_impact_0923.mp3',
+    hammerChaingun:'assets/game/shared/audio/sounds/hammer_chaingun_0923.mp3',
+    hammerEradCharge:'assets/game/shared/audio/sounds/hammer_erad_charge_0923.mp3',
+    hammerEradBlast:'assets/game/shared/audio/sounds/hammer_erad_blast_0923.mp3',
+    shieldHitLight:'assets/game/shared/audio/sounds/shield_hit_light.mp3',
+    shieldHitHeavy:'assets/game/shared/audio/sounds/shield_hit_heavy.mp3',
+    shieldBreakCombat:'assets/game/shared/audio/sounds/shield_break_combat.mp3',
+    debrisMetal:'assets/game/shared/audio/sounds/debris_scatter_metal.mp3',
+    projectileRicochet:'assets/game/shared/audio/sounds/projectile_ricochet.mp3',
+    atomicLaunch:'assets/game/shared/audio/sounds/reviewed_lizzie_atom_launch.mp3',
+    atomicDetonate:'assets/game/shared/audio/sounds/reviewed_lizzie_atom_impact.mp3',
+    stage3AtomicSiren:'assets/game/levels/stage_03/audio/sounds/stage3_atomic_siren.mp3',
+    megaShieldPickup:'assets/game/shared/audio/sounds/reviewed_axel_mega_shield.mp3',
+    specialAbilityPickup:'assets/game/shared/audio/sounds/reviewed_special_pickup.mp3',
+    helixChargeStart:'assets/game/shared/audio/sounds/reviewed_maverick_charge_build.mp3',
+    helixCharge:'assets/game/shared/audio/sounds/reviewed_maverick_charge_loop.mp3',
+    maverickHelixRelease:'assets/game/shared/audio/sounds/reviewed_maverick_helix_release.mp3',
     /* Keep unrelated charge systems out of Maverick's new two-part bed. */
-    fusionChargeLoop:'assets/game/sounds/nsp_bof2_charge_shot.mp3',
-    fireIceChargeLoop:'assets/game/sounds/nsp_bof2_charge_shot.mp3',
-    gravityTransform:'assets/game/sounds/reviewed_ship_fusion_sequence.mp3',
-    gravityFuse:'assets/game/sounds/reviewed_ship_fusion_lock.mp3',
-    amb_storm:'assets/game/sounds/reviewed_stage6_wind_loop.mp3',
+    fusionChargeLoop:'assets/game/shared/audio/sounds/nsp_bof2_charge_shot.mp3',
+    fireIceChargeLoop:'assets/game/shared/audio/sounds/nsp_bof2_charge_shot.mp3',
+    gravityTransform:'assets/game/shared/audio/sounds/reviewed_ship_fusion_sequence.mp3',
+    gravityFuse:'assets/game/shared/audio/sounds/reviewed_ship_fusion_lock.mp3',
+    amb_storm:'assets/game/levels/stage_06/audio/sounds/reviewed_stage6_wind_loop.mp3',
 
     /* ============================================================
        THE 0912j ELEVENLABS SET. Mike: "get rid of those annoying sounds I've complained about and
@@ -79225,75 +79301,75 @@ if(window.BOFA && BOFA.sfx){
        rather than faded, and an impact must carry real energy above 2kHz. See _BUILD_SOURCE/
        sfx_gen.py, and _BUILD_SOURCE/sfx_proof.py for the rendered waveform/spectrogram proof.
        ============================================================ */
-    shieldHitLight:'assets/game/sounds/shield_hit_light.mp3',
-    shieldHitHeavy:'assets/game/sounds/shield_hit_heavy.mp3',
-    shieldBreakCombat:'assets/game/sounds/cf_shield_destroy_0920.mp3',
-    shieldGraze:'assets/game/sounds/shield_graze.mp3',
-    shieldUp:'assets/game/sounds/shield_up.mp3',
-    shieldLow:'assets/game/sounds/shield_low.mp3',
-    shieldBossAbsorb:'assets/game/sounds/shield_boss_absorb.mp3',
+    shieldHitLight:'assets/game/shared/audio/sounds/shield_hit_light.mp3',
+    shieldHitHeavy:'assets/game/shared/audio/sounds/shield_hit_heavy.mp3',
+    shieldBreakCombat:'assets/game/shared/audio/sounds/cf_shield_destroy_0920.mp3',
+    shieldGraze:'assets/game/shared/audio/sounds/shield_graze.mp3',
+    shieldUp:'assets/game/shared/audio/sounds/shield_up.mp3',
+    shieldLow:'assets/game/shared/audio/sounds/shield_low.mp3',
+    shieldBossAbsorb:'assets/game/shared/audio/sounds/shield_boss_absorb.mp3',
 
     /* one signature ordnance voice per stage boss - see BOSS_KIND_SFX */
     /* 0914 encounter-owned reports; matching TAME rows prevent per-round stacking. */
-    razorbackGun:'assets/game/sounds/reviewed_enemy_heavy_mg.mp3',
-    razorbackPressure:'assets/game/sounds/cf_boss_razorback_0920.mp3',
-    razorbackCharge:'assets/game/sounds/cole_pressure_start_0913.mp3',
-    razorbackRocket:'assets/game/sounds/nsp_rocket_launch.mp3',
-    razorbackRam:'assets/game/sounds/juggernaut_ram_launch_0913.mp3',
-    overlordGun:'assets/game/sounds/reviewed_enemy_heavy_mg.mp3',
-    overlordRocket:'assets/game/sounds/arc_overlord_missiles_0923.mp3',
-    overlordLance:'assets/game/sounds/cf_boss_overlord_0920.mp3',
-    overlordWind:'assets/game/sounds/arc_overlord_sonic_0923.mp3',
-    overlordCharge:'assets/game/sounds/furnace_power_surge.mp3',
-    overlordRotor:'assets/game/sounds/overlord_helicopter_rotor.mp3',
-    wardenGun:'assets/game/sounds/reviewed_enemy_heavy_mg.mp3',
-    wardenCenterGun:'assets/game/sounds/enemy_machine_shot_light.mp3',
-    wardenRocket:'assets/game/sounds/nsp_rocket_launch.mp3',
-    wardenRackCharge:'assets/game/sounds/furnace_servo_whirr.mp3',
-    sovereignDive:'assets/game/sounds/juggernaut_charge_start_0913.mp3',
-    sovereignFlyby:'assets/game/sounds/juggernaut_ram_launch_0913.mp3',
-    sovereignContact:'assets/game/sounds/shield_hit_heavy.mp3',
-    sovereignIntercept:'assets/game/sounds/enemy_electric_bolt.mp3',
-    sovereignBreak:'assets/game/sounds/expBig.mp3',
-    sovereignHelperGun:'assets/game/sounds/enemy_machine_shot_heavy.mp3',
-    sovereignHeat:'assets/game/sounds/furnace_servo_whirr.mp3',
-    sovereignWindup:'assets/game/sounds/furnace_power_surge.mp3',
-    sovereignLaser:'assets/game/sounds/cf_boss_warden_0920.mp3',
-    bossfireDamkeeper:'assets/game/sounds/bossfire_damkeeper.mp3',
-    bossfireInfernoreaver:'assets/game/sounds/arc_magma_orb_0923.mp3',
-    bossfireCryospear:'assets/game/sounds/arc_cryo_beam_0923.mp3',
-    bossfireStormsovereign:'assets/game/sounds/arc_warship_core_blast_0923.mp3',
-    bossfireXenoregent:'assets/game/sounds/arc_void_orb_0923.mp3',
-    bossfireDoomsdaycarrier:'assets/game/sounds/arc_carrier_cluster_0923.mp3',
-    bossfireSludgeemperor:'assets/game/sounds/arc_sludge_projectile_0923.mp3',
-    bossfireVileexistence:'assets/game/sounds/arc_void_spectral_0923.mp3',
-    bossfireTidalfusion:'assets/game/sounds/arc_tidal_wave_0923.mp3',
+    razorbackGun:'assets/game/shared/audio/sounds/reviewed_enemy_heavy_mg.mp3',
+    razorbackPressure:'assets/game/shared/audio/sounds/cf_boss_razorback_0920.mp3',
+    razorbackCharge:'assets/game/shared/audio/sounds/cole_pressure_start_0913.mp3',
+    razorbackRocket:'assets/game/shared/audio/sounds/nsp_rocket_launch.mp3',
+    razorbackRam:'assets/game/shared/audio/sounds/juggernaut_ram_launch_0913.mp3',
+    overlordGun:'assets/game/shared/audio/sounds/reviewed_enemy_heavy_mg.mp3',
+    overlordRocket:'assets/game/shared/audio/sounds/arc_overlord_missiles_0923.mp3',
+    overlordLance:'assets/game/shared/audio/sounds/cf_boss_overlord_0920.mp3',
+    overlordWind:'assets/game/shared/audio/sounds/arc_overlord_sonic_0923.mp3',
+    overlordCharge:'assets/game/shared/audio/sounds/furnace_power_surge.mp3',
+    overlordRotor:'assets/game/shared/audio/sounds/overlord_helicopter_rotor.mp3',
+    wardenGun:'assets/game/shared/audio/sounds/reviewed_enemy_heavy_mg.mp3',
+    wardenCenterGun:'assets/game/shared/audio/sounds/enemy_machine_shot_light.mp3',
+    wardenRocket:'assets/game/shared/audio/sounds/nsp_rocket_launch.mp3',
+    wardenRackCharge:'assets/game/shared/audio/sounds/furnace_servo_whirr.mp3',
+    sovereignDive:'assets/game/shared/audio/sounds/juggernaut_charge_start_0913.mp3',
+    sovereignFlyby:'assets/game/shared/audio/sounds/juggernaut_ram_launch_0913.mp3',
+    sovereignContact:'assets/game/shared/audio/sounds/shield_hit_heavy.mp3',
+    sovereignIntercept:'assets/game/shared/audio/sounds/enemy_electric_bolt.mp3',
+    sovereignBreak:'assets/game/shared/audio/sounds/expBig.mp3',
+    sovereignHelperGun:'assets/game/shared/audio/sounds/enemy_machine_shot_heavy.mp3',
+    sovereignHeat:'assets/game/shared/audio/sounds/furnace_servo_whirr.mp3',
+    sovereignWindup:'assets/game/shared/audio/sounds/furnace_power_surge.mp3',
+    sovereignLaser:'assets/game/shared/audio/sounds/cf_boss_warden_0920.mp3',
+    bossfireDamkeeper:'assets/game/shared/audio/sounds/bossfire_damkeeper.mp3',
+    bossfireInfernoreaver:'assets/game/shared/audio/sounds/arc_magma_orb_0923.mp3',
+    bossfireCryospear:'assets/game/shared/audio/sounds/arc_cryo_beam_0923.mp3',
+    bossfireStormsovereign:'assets/game/shared/audio/sounds/arc_warship_core_blast_0923.mp3',
+    bossfireXenoregent:'assets/game/shared/audio/sounds/arc_void_orb_0923.mp3',
+    bossfireDoomsdaycarrier:'assets/game/shared/audio/sounds/arc_carrier_cluster_0923.mp3',
+    bossfireSludgeemperor:'assets/game/shared/audio/sounds/arc_sludge_projectile_0923.mp3',
+    bossfireVileexistence:'assets/game/shared/audio/sounds/arc_void_spectral_0923.mp3',
+    bossfireTidalfusion:'assets/game/shared/audio/sounds/arc_tidal_wave_0923.mp3',
 
-    alertBossIncoming:'assets/game/sounds/alert_boss_incoming.mp3',
-    alertDanger:'assets/game/sounds/alert_danger.mp3',
-    alertLockon:'assets/game/sounds/alert_lockon.mp3',
+    alertBossIncoming:'assets/game/shared/audio/sounds/alert_boss_incoming.mp3',
+    alertDanger:'assets/game/shared/audio/sounds/alert_danger.mp3',
+    alertLockon:'assets/game/shared/audio/sounds/alert_lockon.mp3',
     /* THE RETINA LOCK's beep (0912) - one short tick, rescheduled faster as a launch closes in */
-    retinaLockBeep:'assets/game/sounds/nsp_console_beep.mp3',
+    retinaLockBeep:'assets/game/shared/audio/sounds/nsp_console_beep.mp3',
     /* the FURNACE TYRANT (0912t): the pack's six synthesized assembly cues, plus the shipped samples it layered */
-    furnaceChainLaunch:'assets/game/sounds/furnace_chain_launch.mp3',
-    furnaceChainReel:'assets/game/sounds/furnace_chain_reel.mp3',
-    furnaceArmLock:'assets/game/sounds/furnace_arm_lock.mp3',
-    furnacePowerSurge:'assets/game/sounds/furnace_power_surge.mp3',
-    furnaceReactorHum:'assets/game/sounds/furnace_reactor_hum.mp3',
-    furnaceServo:'assets/game/sounds/furnace_servo_whirr.mp3',
-    furnaceFlameIgnite:'assets/game/sounds/flamethrower_ignite.mp3',
-    furnaceFlameRelease:'assets/game/sounds/flamethrower_release.mp3',
-    furnaceLaserStart:'assets/game/sounds/laser_beam_start.mp3',
-    furnaceLaserCharge:'assets/game/sounds/furnace_laser_charge_0924.wav',
-    furnaceLaserBurst:'assets/game/sounds/furnace_laser_burst_0924.wav',
-    dialogueLetter:'assets/game/sounds/dialogue_letter_0924.wav',
-    furnaceLaserEnd:'assets/game/sounds/laser_beam_end.mp3',
-    furnaceHeavyLaser:'assets/game/sounds/enemy_heavy_laser.mp3',
-    alertBeamCharge:'assets/game/sounds/alert_beam_charge.mp3',
-    firewallArrive:'assets/game/sounds/cf_fire_wave_0920.mp3',
-    firewallPass:'assets/game/sounds/firewall_pass.mp3',
-    s2GeyserWarn:'assets/game/sounds/s2_geyser_warn_0918.mp3',
-    s2GeyserErupt:'assets/game/sounds/cf_fire_geyser_0920.mp3',
+    furnaceChainLaunch:'assets/game/shared/audio/sounds/furnace_chain_launch.mp3',
+    furnaceChainReel:'assets/game/shared/audio/sounds/furnace_chain_reel.mp3',
+    furnaceArmLock:'assets/game/shared/audio/sounds/furnace_arm_lock.mp3',
+    furnacePowerSurge:'assets/game/shared/audio/sounds/furnace_power_surge.mp3',
+    furnaceReactorHum:'assets/game/shared/audio/sounds/furnace_reactor_hum.mp3',
+    furnaceServo:'assets/game/shared/audio/sounds/furnace_servo_whirr.mp3',
+    furnaceFlameIgnite:'assets/game/shared/audio/sounds/flamethrower_ignite.mp3',
+    furnaceFlameRelease:'assets/game/shared/audio/sounds/flamethrower_release.mp3',
+    furnaceLaserStart:'assets/game/shared/audio/sounds/laser_beam_start.mp3',
+    furnaceLaserCharge:'assets/game/shared/audio/sounds/furnace_laser_charge_0924.wav',
+    furnaceLaserBurst:'assets/game/shared/audio/sounds/furnace_laser_burst_0924.wav',
+    dialogueLetter:'assets/game/shared/audio/sounds/dialogue_letter_0924.wav',
+    furnaceLaserEnd:'assets/game/shared/audio/sounds/laser_beam_end.mp3',
+    furnaceHeavyLaser:'assets/game/shared/audio/sounds/enemy_heavy_laser.mp3',
+    alertBeamCharge:'assets/game/shared/audio/sounds/alert_beam_charge.mp3',
+    firewallArrive:'assets/game/shared/audio/sounds/cf_fire_wave_0920.mp3',
+    firewallPass:'assets/game/shared/audio/sounds/firewall_pass.mp3',
+    s2GeyserWarn:'assets/game/levels/stage_02/audio/sounds/s2_geyser_warn_0918.mp3',
+    s2GeyserErupt:'assets/game/shared/audio/sounds/cf_fire_geyser_0920.mp3',
 
     /* ============================================================
        TWENTY CUES THE CODE ASKS FOR AND THE ENGINE DOES NOT HAVE (drop 0912k)
@@ -79314,57 +79390,57 @@ if(window.BOFA && BOFA.sfx){
        equivalent in the library at all and are newly generated - see _BUILD_SOURCE/sfx/creature.json.
        ⚠ EVERY ONE OF THESE NEEDS A TAME ROW TOO. See the note at A.TAME.
        ============================================================ */
-    explodeBig:'assets/game/sounds/explosion_boss_core.mp3',
-    explosion:'assets/game/sounds/explosion_air_medium.mp3',
-    enemyBossHit:'assets/game/sounds/explosion_air_small_01.mp3',
-    missileHit:'assets/game/sounds/arc_retina_missile_hit_0923.mp3',
-    grenadeHit:'assets/game/sounds/explosion_fuel_air.mp3',
-    fireOrbImpact:'assets/game/sounds/cf_fire_burst_0920.mp3',
-    iceOrbImpact:'assets/game/sounds/explosion_ice_burst.mp3',
-    boom:'assets/game/sounds/explosion_air_large.mp3',
-    nuclearDetonate:'assets/game/sounds/explosion_chain_sequence.mp3',
-    nuclearLaunch:'assets/game/sounds/nsp_rocket_launch.mp3',
-    chargeStart:'assets/game/sounds/boss_weapon_charge.mp3',
-    rank:'assets/game/sounds/stats_bar.mp3',
-    bodyDrop:'assets/game/sounds/debris_scatter_metal.mp3',
-    coreUnlocked:'assets/game/sounds/nsp_docking_clamp.mp3',
-    flameOut:'assets/game/sounds/reviewed_flamethrower_end.mp3',
-    iceBreathStop:'assets/game/sounds/ice_breath_release.mp3',
+    explodeBig:'assets/game/shared/audio/sounds/explosion_boss_core.mp3',
+    explosion:'assets/game/shared/audio/sounds/explosion_air_medium.mp3',
+    enemyBossHit:'assets/game/shared/audio/sounds/explosion_air_small_01.mp3',
+    missileHit:'assets/game/shared/audio/sounds/arc_retina_missile_hit_0923.mp3',
+    grenadeHit:'assets/game/shared/audio/sounds/explosion_fuel_air.mp3',
+    fireOrbImpact:'assets/game/shared/audio/sounds/cf_fire_burst_0920.mp3',
+    iceOrbImpact:'assets/game/shared/audio/sounds/explosion_ice_burst.mp3',
+    boom:'assets/game/shared/audio/sounds/explosion_air_large.mp3',
+    nuclearDetonate:'assets/game/shared/audio/sounds/explosion_chain_sequence.mp3',
+    nuclearLaunch:'assets/game/shared/audio/sounds/nsp_rocket_launch.mp3',
+    chargeStart:'assets/game/shared/audio/sounds/boss_weapon_charge.mp3',
+    rank:'assets/game/shared/audio/sounds/stats_bar.mp3',
+    bodyDrop:'assets/game/shared/audio/sounds/debris_scatter_metal.mp3',
+    coreUnlocked:'assets/game/shared/audio/sounds/nsp_docking_clamp.mp3',
+    flameOut:'assets/game/shared/audio/sounds/reviewed_flamethrower_end.mp3',
+    iceBreathStop:'assets/game/shared/audio/sounds/ice_breath_release.mp3',
 
     /* the nine that had nothing to borrow - there is no creature roar, no mech footfall and no
        teleport anywhere in the 164-file library. These are the boss-PRESENCE cues, and their
        absence is why the Colossus, the Olive Warden and the Toxic Portal Warden move and attack
        without ever sounding alive. */
-    mechRoar:'assets/game/sounds/mechRoar.mp3',
-    mechScream:'assets/game/sounds/mechScream.mp3',
-    mechFootWhir:'assets/game/sounds/mechFootWhir.mp3',
-    wardenRoar:'assets/game/sounds/wardenRoar.mp3',
-    wardenScream:'assets/game/sounds/wardenScream.mp3',
-    symbioteWarcry:'assets/game/sounds/symbiote_warcry_0924.wav',
-    clank:'assets/game/sounds/clank.mp3',
-    enemyToxicSpit:'assets/game/sounds/enemyToxicSpit.mp3',
-    teleportIn:'assets/game/sounds/teleportIn.mp3',
-    teleportOut:'assets/game/sounds/teleportOut.mp3',
+    mechRoar:'assets/game/shared/audio/sounds/mechRoar.mp3',
+    mechScream:'assets/game/shared/audio/sounds/mechScream.mp3',
+    mechFootWhir:'assets/game/shared/audio/sounds/mechFootWhir.mp3',
+    wardenRoar:'assets/game/shared/audio/sounds/wardenRoar.mp3',
+    wardenScream:'assets/game/shared/audio/sounds/wardenScream.mp3',
+    symbioteWarcry:'assets/game/shared/audio/sounds/symbiote_warcry_0924.wav',
+    clank:'assets/game/shared/audio/sounds/clank.mp3',
+    enemyToxicSpit:'assets/game/shared/audio/sounds/enemyToxicSpit.mp3',
+    teleportIn:'assets/game/shared/audio/sounds/teleportIn.mp3',
+    teleportOut:'assets/game/shared/audio/sounds/teleportOut.mp3',
      /* ElevenLabs 0923: encounter-specific arcade attacks and warp drive. */
-     quadCharge:'assets/game/sounds/arc_quad_charge_0923.mp3',
-     quadFire:'assets/game/sounds/arc_quad_fire_0923.mp3',
-     magmaOrb:'assets/game/sounds/arc_magma_orb_0923.mp3',
-     magmaGeyser:'assets/game/sounds/arc_magma_geyser_0923.mp3',
-     cryoOrb:'assets/game/sounds/arc_cryo_orb_0923.mp3',
-     warshipCoreCharge:'assets/game/sounds/arc_warship_core_charge_0923.mp3',
-     hammerSpin:'assets/game/sounds/arc_hammer_spin_0923.mp3',
-     hammerThrow:'assets/game/sounds/arc_hammer_throw_0923.mp3',
-     hammerCatch:'assets/game/sounds/arc_hammer_catch_0923.mp3',
-     stealthDecloak:'assets/game/sounds/arc_stealth_decloak_0923.mp3',
-     jetDash:'assets/game/sounds/arc_jet_dash_0923.mp3',
-     groundBombLock:'assets/game/sounds/arc_ground_bomb_lock_0923.mp3',
-     groundBombImpact:'assets/game/sounds/arc_ground_bomb_impact_0923.mp3',
-     carrierTurbine:'assets/game/sounds/arc_carrier_turbine_0923.mp3',
-     wardenRail:'assets/game/sounds/arc_warden_rail_0923.mp3',
-     fusionBeam:'assets/game/sounds/arc_fusion_beam_0923.mp3',
-     warpCharge:'assets/game/sounds/arc_warp_charge_0923.mp3',
-     warpGate:'assets/game/sounds/arc_warp_gate_0923.mp3',
-     warpBurst:'assets/game/sounds/arc_warp_burst_0923.mp3',
+     quadCharge:'assets/game/shared/audio/sounds/arc_quad_charge_0923.mp3',
+     quadFire:'assets/game/shared/audio/sounds/arc_quad_fire_0923.mp3',
+     magmaOrb:'assets/game/shared/audio/sounds/arc_magma_orb_0923.mp3',
+     magmaGeyser:'assets/game/shared/audio/sounds/arc_magma_geyser_0923.mp3',
+     cryoOrb:'assets/game/shared/audio/sounds/arc_cryo_orb_0923.mp3',
+     warshipCoreCharge:'assets/game/shared/audio/sounds/arc_warship_core_charge_0923.mp3',
+     hammerSpin:'assets/game/shared/audio/sounds/arc_hammer_spin_0923.mp3',
+     hammerThrow:'assets/game/shared/audio/sounds/arc_hammer_throw_0923.mp3',
+     hammerCatch:'assets/game/shared/audio/sounds/arc_hammer_catch_0923.mp3',
+     stealthDecloak:'assets/game/shared/audio/sounds/arc_stealth_decloak_0923.mp3',
+     jetDash:'assets/game/shared/audio/sounds/arc_jet_dash_0923.mp3',
+     groundBombLock:'assets/game/shared/audio/sounds/arc_ground_bomb_lock_0923.mp3',
+     groundBombImpact:'assets/game/shared/audio/sounds/arc_ground_bomb_impact_0923.mp3',
+     carrierTurbine:'assets/game/shared/audio/sounds/arc_carrier_turbine_0923.mp3',
+     wardenRail:'assets/game/shared/audio/sounds/arc_warden_rail_0923.mp3',
+     fusionBeam:'assets/game/shared/audio/sounds/arc_fusion_beam_0923.mp3',
+     warpCharge:'assets/game/shared/audio/sounds/arc_warp_charge_0923.mp3',
+     warpGate:'assets/game/shared/audio/sounds/arc_warp_gate_0923.mp3',
+     warpBurst:'assets/game/shared/audio/sounds/arc_warp_burst_0923.mp3',
   });
 }
 

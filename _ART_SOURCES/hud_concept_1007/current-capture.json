@@ -1,0 +1,10 @@
+{
+  "setup": {
+    "ok": true,
+    "log": [],
+    "state": "play"
+  },
+  "bossLaunch": true,
+  "stageAssetsReady": true,
+  "errors": []
+}

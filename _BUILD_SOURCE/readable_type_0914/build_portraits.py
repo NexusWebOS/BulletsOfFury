@@ -13,12 +13,12 @@ for p in pilots:
  for pose in poses:
   if p=='yuri':
    emotion='smile'if pose=='happy'else'idle'if pose.startswith('talk')else pose
-   src=R/f'assets/game/yuri_v2/port_yuri_{emotion}.png'
+   src=R/f'assets/game/pilots/yuri/portraits/yuri_v2/port_yuri_{emotion}.png'
   else:src=R/f'assets/game/pilot_portraits/{p}-{pose}.png'
   im=Image.open(src).convert('RGBA')
   if p!='yuri':im=im.crop((16,16,im.width-16,im.height-16))
   im.thumbnail((56,56),Image.Resampling.NEAREST)
   cv=Image.new('RGBA',(64,64),(6,9,15,255));cv.alpha_composite(im,((64-im.width)//2,(64-im.height)//2));cv.alpha_composite(frame)
-  key=f'comm_{p}_{pose}';cv.save(O/(key+'.png'));sources[key]={'image':f'assets/game/comm_portraits_0914/{key}.png','source':src.relative_to(R).as_posix()}
+  key=f'comm_{p}_{pose}';cv.save(O/(key+'.png'));sources[key]={'image':f'assets/game/shared/ui/comm_portraits_0914/{key}.png','source':src.relative_to(R).as_posix()}
 (O/'sources.json').write_text(json.dumps(sources,indent=2)+'\n')
 print('Normalized',len(sources),'compact portraits from authored assets; Yuri uses v2 only.')

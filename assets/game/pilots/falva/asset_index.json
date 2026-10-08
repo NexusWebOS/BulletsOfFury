@@ -1,0 +1,895 @@
+{
+  "owner": "pilots/falva",
+  "loading": {
+    "boot": "UI, fonts, idle portraits only",
+    "deployment": "selected pilot portraits, shared player weapons, required stage textures",
+    "transition": "release previous stage textures and derived caches; preserve explicitly queued copied-form dependencies",
+    "quality": "automatic native resolution on low-memory/low-core devices; reduce supersampling after sustained slow play frames"
+  },
+  "sharedDependencies": [
+    "shared/fonts",
+    "shared/ui",
+    "shared/player_weapons",
+    "shared/effects",
+    "shared/ships"
+  ],
+  "assets": [
+    {
+      "key": "aintro_falva",
+      "root": "nca_layout_pilots_falva_portraits_0",
+      "path": "assets/game/pilots/falva/portraits/frames_0.png",
+      "owner": "pilots/falva",
+      "cell": [
+        "layout_pilots_falva_portraits_0",
+        1928,
+        4,
+        640,
+        480
+      ]
+    },
+    {
+      "key": "card_falva",
+      "root": "nca_layout_pilots_falva_portraits_0",
+      "path": "assets/game/pilots/falva/portraits/frames_0.png",
+      "owner": "pilots/falva",
+      "cell": [
+        "layout_pilots_falva_portraits_0",
+        4,
+        4,
+        958,
+        718
+      ]
+    },
+    {
+      "key": "pcard_falva",
+      "root": "nca_layout_pilots_falva_portraits_0",
+      "path": "assets/game/pilots/falva/portraits/frames_0.png",
+      "owner": "pilots/falva",
+      "cell": [
+        "layout_pilots_falva_portraits_0",
+        966,
+        4,
+        958,
+        718
+      ]
+    },
+    {
+      "key": "nsa_ship_falva",
+      "root": "nsa_ship_falva",
+      "path": "assets/game/pilots/falva/ship_frames/ship_falva.png",
+      "owner": "pilots/falva",
+      "cell": null
+    },
+    {
+      "key": "pose_falva_0",
+      "root": "nca_layout_pilots_falva_body_frames_0",
+      "path": "assets/game/pilots/falva/body_frames/frames_0.png",
+      "owner": "pilots/falva",
+      "cell": [
+        "layout_pilots_falva_body_frames_0",
+        4,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "key": "pose_falva_1",
+      "root": "nca_layout_pilots_falva_body_frames_0",
+      "path": "assets/game/pilots/falva/body_frames/frames_0.png",
+      "owner": "pilots/falva",
+      "cell": [
+        "layout_pilots_falva_body_frames_0",
+        264,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "key": "pose_falva_2",
+      "root": "nca_layout_pilots_falva_body_frames_0",
+      "path": "assets/game/pilots/falva/body_frames/frames_0.png",
+      "owner": "pilots/falva",
+      "cell": [
+        "layout_pilots_falva_body_frames_0",
+        524,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "key": "pose_falva_3",
+      "root": "nca_layout_pilots_falva_body_frames_0",
+      "path": "assets/game/pilots/falva/body_frames/frames_0.png",
+      "owner": "pilots/falva",
+      "cell": [
+        "layout_pilots_falva_body_frames_0",
+        784,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "key": "pose_falva_4",
+      "root": "nca_layout_pilots_falva_body_frames_0",
+      "path": "assets/game/pilots/falva/body_frames/frames_0.png",
+      "owner": "pilots/falva",
+      "cell": [
+        "layout_pilots_falva_body_frames_0",
+        1044,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "key": "pose_falva_5",
+      "root": "nca_layout_pilots_falva_body_frames_0",
+      "path": "assets/game/pilots/falva/body_frames/frames_0.png",
+      "owner": "pilots/falva",
+      "cell": [
+        "layout_pilots_falva_body_frames_0",
+        1304,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "key": "pemb_falva",
+      "root": "nca_layout_pilots_falva_portraits_0",
+      "path": "assets/game/pilots/falva/portraits/frames_0.png",
+      "owner": "pilots/falva",
+      "cell": [
+        "layout_pilots_falva_portraits_0",
+        2572,
+        4,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "nthp_falva_2",
+      "root": "nca_layout_pilots_falva_abilities_0",
+      "path": "assets/game/pilots/falva/abilities/frames_0.png",
+      "owner": "pilots/falva",
+      "cell": [
+        "layout_pilots_falva_abilities_0",
+        4,
+        4,
+        170,
+        192
+      ]
+    },
+    {
+      "key": "nthp_falva_1",
+      "root": "nca_layout_pilots_falva_abilities_0",
+      "path": "assets/game/pilots/falva/abilities/frames_0.png",
+      "owner": "pilots/falva",
+      "cell": [
+        "layout_pilots_falva_abilities_0",
+        178,
+        4,
+        136,
+        158
+      ]
+    },
+    {
+      "key": "nthp_falva_3",
+      "root": "nca_layout_pilots_falva_abilities_0",
+      "path": "assets/game/pilots/falva/abilities/frames_0.png",
+      "owner": "pilots/falva",
+      "cell": [
+        "layout_pilots_falva_abilities_0",
+        778,
+        4,
+        81,
+        135
+      ]
+    },
+    {
+      "key": "nthp_falva_0",
+      "root": "nca_layout_pilots_falva_abilities_0",
+      "path": "assets/game/pilots/falva/abilities/frames_0.png",
+      "owner": "pilots/falva",
+      "cell": [
+        "layout_pilots_falva_abilities_0",
+        863,
+        4,
+        81,
+        102
+      ]
+    },
+    {
+      "key": "sp_falva_0",
+      "root": "nca_layout_pilots_falva_abilities_0",
+      "path": "assets/game/pilots/falva/abilities/frames_0.png",
+      "owner": "pilots/falva",
+      "cell": [
+        "layout_pilots_falva_abilities_0",
+        318,
+        4,
+        111,
+        140
+      ]
+    },
+    {
+      "key": "sp_falva_1",
+      "root": "nca_layout_pilots_falva_abilities_0",
+      "path": "assets/game/pilots/falva/abilities/frames_0.png",
+      "owner": "pilots/falva",
+      "cell": [
+        "layout_pilots_falva_abilities_0",
+        433,
+        4,
+        111,
+        140
+      ]
+    },
+    {
+      "key": "sp_falva_2",
+      "root": "nca_layout_pilots_falva_abilities_0",
+      "path": "assets/game/pilots/falva/abilities/frames_0.png",
+      "owner": "pilots/falva",
+      "cell": [
+        "layout_pilots_falva_abilities_0",
+        548,
+        4,
+        111,
+        140
+      ]
+    },
+    {
+      "key": "sp_falva_3",
+      "root": "nca_layout_pilots_falva_abilities_0",
+      "path": "assets/game/pilots/falva/abilities/frames_0.png",
+      "owner": "pilots/falva",
+      "cell": [
+        "layout_pilots_falva_abilities_0",
+        663,
+        4,
+        111,
+        140
+      ]
+    },
+    {
+      "key": "nca_layout_pilots_falva_abilities_0",
+      "root": "nca_layout_pilots_falva_abilities_0",
+      "path": "assets/game/pilots/falva/abilities/frames_0.png",
+      "owner": "pilots/falva",
+      "cell": null
+    },
+    {
+      "key": "nca_layout_pilots_falva_body_frames_0",
+      "root": "nca_layout_pilots_falva_body_frames_0",
+      "path": "assets/game/pilots/falva/body_frames/frames_0.png",
+      "owner": "pilots/falva",
+      "cell": null
+    },
+    {
+      "key": "nca_layout_pilots_falva_portraits_0",
+      "root": "nca_layout_pilots_falva_portraits_0",
+      "path": "assets/game/pilots/falva/portraits/frames_0.png",
+      "owner": "pilots/falva",
+      "cell": null
+    },
+    {
+      "key": "port_cf_falva_idle",
+      "root": "port_cf_falva_idle",
+      "path": "assets/game/pilots/falva/portraits/pilots_0922/portraits/falva-idle.png",
+      "owner": "pilots/falva",
+      "cell": null
+    },
+    {
+      "key": "port_cf_falva_happy",
+      "root": "port_cf_falva_happy",
+      "path": "assets/game/pilots/falva/portraits/pilots_0922/portraits/falva-happy.png",
+      "owner": "pilots/falva",
+      "cell": null
+    },
+    {
+      "key": "port_cf_falva_laugh",
+      "root": "port_cf_falva_laugh",
+      "path": "assets/game/pilots/falva/portraits/pilots_0922/portraits/falva-laugh.png",
+      "owner": "pilots/falva",
+      "cell": null
+    },
+    {
+      "key": "port_cf_falva_anger",
+      "root": "port_cf_falva_anger",
+      "path": "assets/game/pilots/falva/portraits/pilots_0922/portraits/falva-anger.png",
+      "owner": "pilots/falva",
+      "cell": null
+    },
+    {
+      "key": "port_cf_falva_sad",
+      "root": "port_cf_falva_sad",
+      "path": "assets/game/pilots/falva/portraits/pilots_0922/portraits/falva-sad.png",
+      "owner": "pilots/falva",
+      "cell": null
+    },
+    {
+      "key": "port_cf_falva_crash",
+      "root": "port_cf_falva_crash",
+      "path": "assets/game/pilots/falva/portraits/pilots_0922/portraits/falva-crash.png",
+      "owner": "pilots/falva",
+      "cell": null
+    },
+    {
+      "key": "port_cf_falva_victory",
+      "root": "port_cf_falva_victory",
+      "path": "assets/game/pilots/falva/portraits/pilots_0922/portraits/falva-victory.png",
+      "owner": "pilots/falva",
+      "cell": null
+    },
+    {
+      "key": "port_cf_falva_talk-closed",
+      "root": "port_cf_falva_talk-closed",
+      "path": "assets/game/pilots/falva/portraits/pilots_0922/portraits/falva-talk-closed.png",
+      "owner": "pilots/falva",
+      "cell": null
+    },
+    {
+      "key": "port_cf_falva_talk-small",
+      "root": "port_cf_falva_talk-small",
+      "path": "assets/game/pilots/falva/portraits/pilots_0922/portraits/falva-talk-small.png",
+      "owner": "pilots/falva",
+      "cell": null
+    },
+    {
+      "key": "port_cf_falva_talk-medium",
+      "root": "port_cf_falva_talk-medium",
+      "path": "assets/game/pilots/falva/portraits/pilots_0922/portraits/falva-talk-medium.png",
+      "owner": "pilots/falva",
+      "cell": null
+    },
+    {
+      "key": "port_cf_falva_talk-wide",
+      "root": "port_cf_falva_talk-wide",
+      "path": "assets/game/pilots/falva/portraits/pilots_0922/portraits/falva-talk-wide.png",
+      "owner": "pilots/falva",
+      "cell": null
+    },
+    {
+      "key": "port_cf_falva_talk-o",
+      "root": "port_cf_falva_talk-o",
+      "path": "assets/game/pilots/falva/portraits/pilots_0922/portraits/falva-talk-o.png",
+      "owner": "pilots/falva",
+      "cell": null
+    },
+    {
+      "key": "port_cf_falva_alert",
+      "root": "port_cf_falva_alert",
+      "path": "assets/game/pilots/falva/portraits/pilots_0922/portraits/falva-crash.png",
+      "owner": "pilots/falva",
+      "cell": null
+    },
+    {
+      "key": "comm_falva_alert",
+      "root": "comm_falva_alert",
+      "path": "assets/game/pilots/falva/portraits/pilots_0922/comm/comm_falva_crash.png",
+      "owner": "pilots/falva",
+      "cell": null
+    },
+    {
+      "key": "cinpose_falva_1",
+      "root": "cinpose_falva_1",
+      "path": "assets/game/pilots/falva/body_frames/cinematic_characters/falva/poses/01_front_neutral.png",
+      "owner": "pilots/falva",
+      "cell": null
+    },
+    {
+      "key": "cinpose_falva_2",
+      "root": "cinpose_falva_2",
+      "path": "assets/game/pilots/falva/body_frames/cinematic_characters/falva/poses/02_front_left_3q.png",
+      "owner": "pilots/falva",
+      "cell": null
+    },
+    {
+      "key": "cinpose_falva_3",
+      "root": "cinpose_falva_3",
+      "path": "assets/game/pilots/falva/body_frames/cinematic_characters/falva/poses/03_front_right_3q.png",
+      "owner": "pilots/falva",
+      "cell": null
+    },
+    {
+      "key": "cinpose_falva_4",
+      "root": "cinpose_falva_4",
+      "path": "assets/game/pilots/falva/body_frames/cinematic_characters/falva/poses/04_back_neutral.png",
+      "owner": "pilots/falva",
+      "cell": null
+    },
+    {
+      "key": "cinpose_falva_5",
+      "root": "cinpose_falva_5",
+      "path": "assets/game/pilots/falva/body_frames/cinematic_characters/falva/poses/05_back_left_3q.png",
+      "owner": "pilots/falva",
+      "cell": null
+    },
+    {
+      "key": "cinpose_falva_6",
+      "root": "cinpose_falva_6",
+      "path": "assets/game/pilots/falva/body_frames/cinematic_characters/falva/poses/06_back_right_3q.png",
+      "owner": "pilots/falva",
+      "cell": null
+    },
+    {
+      "key": "comm_falva_idle",
+      "root": "comm_falva_idle",
+      "path": "assets/game/pilots/falva/portraits/pilots_0922/comm/comm_falva_idle.png",
+      "owner": "pilots/falva",
+      "cell": null
+    },
+    {
+      "key": "comm_falva_happy",
+      "root": "comm_falva_happy",
+      "path": "assets/game/pilots/falva/portraits/pilots_0922/comm/comm_falva_happy.png",
+      "owner": "pilots/falva",
+      "cell": null
+    },
+    {
+      "key": "comm_falva_laugh",
+      "root": "comm_falva_laugh",
+      "path": "assets/game/pilots/falva/portraits/pilots_0922/comm/comm_falva_laugh.png",
+      "owner": "pilots/falva",
+      "cell": null
+    },
+    {
+      "key": "comm_falva_anger",
+      "root": "comm_falva_anger",
+      "path": "assets/game/pilots/falva/portraits/pilots_0922/comm/comm_falva_anger.png",
+      "owner": "pilots/falva",
+      "cell": null
+    },
+    {
+      "key": "comm_falva_sad",
+      "root": "comm_falva_sad",
+      "path": "assets/game/pilots/falva/portraits/pilots_0922/comm/comm_falva_sad.png",
+      "owner": "pilots/falva",
+      "cell": null
+    },
+    {
+      "key": "comm_falva_crash",
+      "root": "comm_falva_crash",
+      "path": "assets/game/pilots/falva/portraits/pilots_0922/comm/comm_falva_crash.png",
+      "owner": "pilots/falva",
+      "cell": null
+    },
+    {
+      "key": "comm_falva_victory",
+      "root": "comm_falva_victory",
+      "path": "assets/game/pilots/falva/portraits/pilots_0922/comm/comm_falva_victory.png",
+      "owner": "pilots/falva",
+      "cell": null
+    },
+    {
+      "key": "comm_falva_talk-closed",
+      "root": "comm_falva_talk-closed",
+      "path": "assets/game/pilots/falva/portraits/pilots_0922/comm/comm_falva_talk-closed.png",
+      "owner": "pilots/falva",
+      "cell": null
+    },
+    {
+      "key": "comm_falva_talk-small",
+      "root": "comm_falva_talk-small",
+      "path": "assets/game/pilots/falva/portraits/pilots_0922/comm/comm_falva_talk-small.png",
+      "owner": "pilots/falva",
+      "cell": null
+    },
+    {
+      "key": "comm_falva_talk-medium",
+      "root": "comm_falva_talk-medium",
+      "path": "assets/game/pilots/falva/portraits/pilots_0922/comm/comm_falva_talk-medium.png",
+      "owner": "pilots/falva",
+      "cell": null
+    },
+    {
+      "key": "comm_falva_talk-wide",
+      "root": "comm_falva_talk-wide",
+      "path": "assets/game/pilots/falva/portraits/pilots_0922/comm/comm_falva_talk-wide.png",
+      "owner": "pilots/falva",
+      "cell": null
+    },
+    {
+      "key": "comm_falva_talk-o",
+      "root": "comm_falva_talk-o",
+      "path": "assets/game/pilots/falva/portraits/pilots_0922/comm/comm_falva_talk-o.png",
+      "owner": "pilots/falva",
+      "cell": null
+    },
+    {
+      "key": "pav_falva",
+      "root": "pav_falva",
+      "path": "assets/game/pilots/falva/portraits/pilots_0922/portraits/falva-idle.png",
+      "owner": "pilots/falva",
+      "cell": null
+    },
+    {
+      "key": "falva_body_0",
+      "root": "falva_body_0",
+      "path": "assets/game/pilots/falva/body_frames/pilot_bodies/falva_body_0.png",
+      "owner": "pilots/falva",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_falva_idle",
+      "root": "pp5_raw_falva_idle",
+      "path": "assets/game/pilots/falva/portraits/pilots_0922/portraits/falva-idle.png",
+      "owner": "pilots/falva",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_falva_happy",
+      "root": "pp5_raw_falva_happy",
+      "path": "assets/game/pilots/falva/portraits/pilots_0922/portraits/falva-happy.png",
+      "owner": "pilots/falva",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_falva_laugh",
+      "root": "pp5_raw_falva_laugh",
+      "path": "assets/game/pilots/falva/portraits/pilots_0922/portraits/falva-laugh.png",
+      "owner": "pilots/falva",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_falva_anger",
+      "root": "pp5_raw_falva_anger",
+      "path": "assets/game/pilots/falva/portraits/pilots_0922/portraits/falva-anger.png",
+      "owner": "pilots/falva",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_falva_sad",
+      "root": "pp5_raw_falva_sad",
+      "path": "assets/game/pilots/falva/portraits/pilots_0922/portraits/falva-sad.png",
+      "owner": "pilots/falva",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_falva_crash",
+      "root": "pp5_raw_falva_crash",
+      "path": "assets/game/pilots/falva/portraits/pilots_0922/portraits/falva-crash.png",
+      "owner": "pilots/falva",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_falva_victory",
+      "root": "pp5_raw_falva_victory",
+      "path": "assets/game/pilots/falva/portraits/pilots_0922/portraits/falva-victory.png",
+      "owner": "pilots/falva",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_falva_talk-closed",
+      "root": "pp5_raw_falva_talk-closed",
+      "path": "assets/game/pilots/falva/portraits/pilots_0922/portraits/falva-talk-closed.png",
+      "owner": "pilots/falva",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_falva_talk-small",
+      "root": "pp5_raw_falva_talk-small",
+      "path": "assets/game/pilots/falva/portraits/pilots_0922/portraits/falva-talk-small.png",
+      "owner": "pilots/falva",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_falva_talk-medium",
+      "root": "pp5_raw_falva_talk-medium",
+      "path": "assets/game/pilots/falva/portraits/pilots_0922/portraits/falva-talk-medium.png",
+      "owner": "pilots/falva",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_falva_talk-wide",
+      "root": "pp5_raw_falva_talk-wide",
+      "path": "assets/game/pilots/falva/portraits/pilots_0922/portraits/falva-talk-wide.png",
+      "owner": "pilots/falva",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_falva_talk-o",
+      "root": "pp5_raw_falva_talk-o",
+      "path": "assets/game/pilots/falva/portraits/pilots_0922/portraits/falva-talk-o.png",
+      "owner": "pilots/falva",
+      "cell": null
+    }
+  ],
+  "files": [
+    {
+      "path": "assets/game/pilots/falva/abilities/frames_0.png",
+      "owner": "pilots/falva",
+      "bytes": 151532,
+      "role": "registered runtime asset",
+      "width": 948,
+      "height": 200
+    },
+    {
+      "path": "assets/game/pilots/falva/body_frames/cinematic_characters/falva/poses/01_front_neutral.png",
+      "owner": "pilots/falva",
+      "bytes": 198262,
+      "role": "registered runtime asset",
+      "width": 275,
+      "height": 651
+    },
+    {
+      "path": "assets/game/pilots/falva/body_frames/cinematic_characters/falva/poses/02_front_left_3q.png",
+      "owner": "pilots/falva",
+      "bytes": 194377,
+      "role": "registered runtime asset",
+      "width": 272,
+      "height": 657
+    },
+    {
+      "path": "assets/game/pilots/falva/body_frames/cinematic_characters/falva/poses/03_front_right_3q.png",
+      "owner": "pilots/falva",
+      "bytes": 195609,
+      "role": "registered runtime asset",
+      "width": 294,
+      "height": 657
+    },
+    {
+      "path": "assets/game/pilots/falva/body_frames/cinematic_characters/falva/poses/04_back_neutral.png",
+      "owner": "pilots/falva",
+      "bytes": 194739,
+      "role": "registered runtime asset",
+      "width": 267,
+      "height": 649
+    },
+    {
+      "path": "assets/game/pilots/falva/body_frames/cinematic_characters/falva/poses/05_back_left_3q.png",
+      "owner": "pilots/falva",
+      "bytes": 186608,
+      "role": "registered runtime asset",
+      "width": 274,
+      "height": 651
+    },
+    {
+      "path": "assets/game/pilots/falva/body_frames/cinematic_characters/falva/poses/06_back_right_3q.png",
+      "owner": "pilots/falva",
+      "bytes": 199004,
+      "role": "registered runtime asset",
+      "width": 329,
+      "height": 647
+    },
+    {
+      "path": "assets/game/pilots/falva/body_frames/frames_0.png",
+      "owner": "pilots/falva",
+      "bytes": 350408,
+      "role": "registered runtime asset",
+      "width": 1564,
+      "height": 328
+    },
+    {
+      "path": "assets/game/pilots/falva/body_frames/pilot_bodies/falva_body_0.png",
+      "owner": "pilots/falva",
+      "bytes": 53365,
+      "role": "registered runtime asset",
+      "width": 105,
+      "height": 273
+    },
+    {
+      "path": "assets/game/pilots/falva/portraits/frames_0.png",
+      "owner": "pilots/falva",
+      "bytes": 3026269,
+      "role": "registered runtime asset",
+      "width": 2832,
+      "height": 726
+    },
+    {
+      "path": "assets/game/pilots/falva/portraits/pilots_0922/comm/comm_falva_anger.png",
+      "owner": "pilots/falva",
+      "bytes": 36742,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 122
+    },
+    {
+      "path": "assets/game/pilots/falva/portraits/pilots_0922/comm/comm_falva_crash.png",
+      "owner": "pilots/falva",
+      "bytes": 36466,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 122
+    },
+    {
+      "path": "assets/game/pilots/falva/portraits/pilots_0922/comm/comm_falva_happy.png",
+      "owner": "pilots/falva",
+      "bytes": 36480,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 122
+    },
+    {
+      "path": "assets/game/pilots/falva/portraits/pilots_0922/comm/comm_falva_idle.png",
+      "owner": "pilots/falva",
+      "bytes": 36620,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 122
+    },
+    {
+      "path": "assets/game/pilots/falva/portraits/pilots_0922/comm/comm_falva_laugh.png",
+      "owner": "pilots/falva",
+      "bytes": 36760,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 122
+    },
+    {
+      "path": "assets/game/pilots/falva/portraits/pilots_0922/comm/comm_falva_sad.png",
+      "owner": "pilots/falva",
+      "bytes": 36470,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 122
+    },
+    {
+      "path": "assets/game/pilots/falva/portraits/pilots_0922/comm/comm_falva_talk-closed.png",
+      "owner": "pilots/falva",
+      "bytes": 36620,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 122
+    },
+    {
+      "path": "assets/game/pilots/falva/portraits/pilots_0922/comm/comm_falva_talk-medium.png",
+      "owner": "pilots/falva",
+      "bytes": 36337,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 122
+    },
+    {
+      "path": "assets/game/pilots/falva/portraits/pilots_0922/comm/comm_falva_talk-o.png",
+      "owner": "pilots/falva",
+      "bytes": 36316,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 122
+    },
+    {
+      "path": "assets/game/pilots/falva/portraits/pilots_0922/comm/comm_falva_talk-small.png",
+      "owner": "pilots/falva",
+      "bytes": 36243,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 122
+    },
+    {
+      "path": "assets/game/pilots/falva/portraits/pilots_0922/comm/comm_falva_talk-wide.png",
+      "owner": "pilots/falva",
+      "bytes": 36323,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 122
+    },
+    {
+      "path": "assets/game/pilots/falva/portraits/pilots_0922/comm/comm_falva_victory.png",
+      "owner": "pilots/falva",
+      "bytes": 36539,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 122
+    },
+    {
+      "path": "assets/game/pilots/falva/portraits/pilots_0922/portraits/falva-anger.png",
+      "owner": "pilots/falva",
+      "bytes": 120676,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 244
+    },
+    {
+      "path": "assets/game/pilots/falva/portraits/pilots_0922/portraits/falva-crash.png",
+      "owner": "pilots/falva",
+      "bytes": 120199,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 244
+    },
+    {
+      "path": "assets/game/pilots/falva/portraits/pilots_0922/portraits/falva-happy.png",
+      "owner": "pilots/falva",
+      "bytes": 120133,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 244
+    },
+    {
+      "path": "assets/game/pilots/falva/portraits/pilots_0922/portraits/falva-idle.png",
+      "owner": "pilots/falva",
+      "bytes": 120232,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 244
+    },
+    {
+      "path": "assets/game/pilots/falva/portraits/pilots_0922/portraits/falva-laugh.png",
+      "owner": "pilots/falva",
+      "bytes": 120569,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 244
+    },
+    {
+      "path": "assets/game/pilots/falva/portraits/pilots_0922/portraits/falva-sad.png",
+      "owner": "pilots/falva",
+      "bytes": 119798,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 244
+    },
+    {
+      "path": "assets/game/pilots/falva/portraits/pilots_0922/portraits/falva-talk-closed.png",
+      "owner": "pilots/falva",
+      "bytes": 120232,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 244
+    },
+    {
+      "path": "assets/game/pilots/falva/portraits/pilots_0922/portraits/falva-talk-medium.png",
+      "owner": "pilots/falva",
+      "bytes": 119584,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 244
+    },
+    {
+      "path": "assets/game/pilots/falva/portraits/pilots_0922/portraits/falva-talk-o.png",
+      "owner": "pilots/falva",
+      "bytes": 119406,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 244
+    },
+    {
+      "path": "assets/game/pilots/falva/portraits/pilots_0922/portraits/falva-talk-small.png",
+      "owner": "pilots/falva",
+      "bytes": 119639,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 244
+    },
+    {
+      "path": "assets/game/pilots/falva/portraits/pilots_0922/portraits/falva-talk-wide.png",
+      "owner": "pilots/falva",
+      "bytes": 119944,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 244
+    },
+    {
+      "path": "assets/game/pilots/falva/portraits/pilots_0922/portraits/falva-victory.png",
+      "owner": "pilots/falva",
+      "bytes": 120206,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 244
+    },
+    {
+      "path": "assets/game/pilots/falva/ship_frames/ship_falva.png",
+      "owner": "pilots/falva",
+      "bytes": 1013225,
+      "role": "registered runtime asset",
+      "width": 1024,
+      "height": 1080
+    }
+  ],
+  "audio": {
+    "sfx": {},
+    "music": {}
+  },
+  "frameFolders": [
+    "portraits",
+    "body_frames",
+    "ship_frames",
+    "abilities"
+  ],
+  "furyShip": "Common hull in shared/ships; this pilot applies a runtime palette."
+}

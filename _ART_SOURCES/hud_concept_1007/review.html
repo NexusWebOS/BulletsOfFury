@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bullets of Fury · HUD concept</title>
+<style>
+:root{color-scheme:dark;--bg:#10151b;--panel:#1b232c;--ink:#f0f3f5;--muted:#aebbc7;--accent:#ffc24e}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,sans-serif}
+main{max-width:1440px;margin:auto;padding:32px 24px 64px}header{max-width:850px;margin-bottom:24px}
+h1{font-size:clamp(25px,3vw,38px);line-height:1.1;margin:0 0 12px}h2{font-size:20px;margin:0 0 12px}
+p{margin:8px 0 16px;color:var(--muted)}a{color:var(--accent)}.eyebrow{color:var(--accent);font-size:12px;letter-spacing:.15em;text-transform:uppercase}
+.art{background:#05080c;border:1px solid #364554;overflow:hidden}.art img{display:block;width:100%;height:auto;image-rendering:pixelated}
+section{margin:32px 0}.tools{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:12px 0}.tools label{font-size:14px;color:var(--muted)}
+button{border:1px solid #657585;background:#27313d;color:var(--ink);padding:8px 14px;cursor:pointer;font:inherit;border-radius:3px}button[aria-pressed=true]{border-color:var(--accent);color:var(--accent)}
+.grid{display:grid;grid-template-columns:1.2fr 1fr;gap:24px;align-items:start}.grid img{display:block;width:100%;height:auto}
+figure{margin:0;background:var(--panel);padding:14px;border:1px solid #344352}figcaption{margin-bottom:12px;color:var(--muted)}
+.note{border-left:3px solid var(--accent);padding:0 16px;max-width:950px}
+table{border-collapse:collapse;width:100%;font-size:14px}td,th{text-align:left;border-bottom:1px solid #344352;padding:9px 8px}
+.light .art{background:#dfe4e7}.native .art{max-width:480px}.native .art img{image-rendering:pixelated}
+@media(max-width:760px){main{padding:24px 12px}.grid{grid-template-columns:1fr}table{font-size:12px}td,th{padding:8px 4px}}
+</style>
+<main>
+<header><div class="eyebrow">Bullets of Fury · Art study · October 7, 2026</div>
+<h1>Your layout, in BOF's metal and pixel style</h1>
+<p>One top assembly, three lower tabs, and a separate boss lane directly underneath. Generated concept artwork; the live game still uses the existing HUD.</p>
+</header>
+<div class="tools" aria-label="Preview controls"><button id="dark" aria-pressed="true">Dark backing</button><button id="light" aria-pressed="false">Light backing</button><button id="native" aria-pressed="false">480 px width</button><a href="README.md">Design and integration notes</a></div>
+<section><h2>Finished concept</h2><div class="art"><img src="hud-concept-v1.png" alt="Generated HUD following Mike's sketch: green roll and somersault, lives tab, weapon square, central Chain Lightning meter and speed/shield tab, radar, lock-on, missiles tab, and Storm Sovereign boss lane beneath."></div>
+<p>Sample values and icon. The boss's cyan shield line belongs to the boss lane; player shield pips remain in the center tab.</p></section>
+<section><h2>Empty frame source</h2><div class="art"><img src="hud-frame-source-v1.png" alt="Matching generated HUD frame with blank text areas, empty tracks, weapon and radar windows, and no live data."></div>
+<p>Actual transparency. Text, icons and changing fills should be drawn separately from this frame. Decorative segment counts and the padded source canvas need final preparation before runtime integration.</p></section>
+<section class="grid"><figure><figcaption>Mike's original layout</figcaption><img src="reference-layout.png" alt="The supplied gray HUD layout sketch."></figure>
+<figure><figcaption>Current game · native Chromium capture</figcaption><img src="reference-current-hud.png" alt="The current Storm Sovereign fight, showing a top statistics strip, large boss and shield bars over the fight, and separate bottom combat overlays."></figure></section>
+<section><h2>What moves</h2><table><thead><tr><th>Information</th><th>Current</th><th>Concept</th></tr></thead><tbody>
+<tr><td>Roll / somersault</td><td>Bottom left</td><td>Upper left, above lives</td></tr>
+<tr><td>Weapon</td><td>Bottom-right icon and top pips</td><td>Dedicated square</td></tr>
+<tr><td>Special ability</td><td>Bottom center</td><td>Named center meter</td></tr>
+<tr><td>Speed / player shield</td><td>Top equipment box</td><td>Center lower tab</td></tr>
+<tr><td>Radar / lock / missiles</td><td>Split across top and bottom</td><td>Right-hand cluster</td></tr>
+<tr><td>Boss / boss shield</td><td>Large overlays on the fight</td><td>One lane beneath the player HUD</td></tr>
+</tbody></table></section>
+<p class="note">This is a reviewed concept, not an installed game interface. Keep the original sketch's compact proportions for implementation. Preserve scoring, timing, co-op ownership and all live resource behavior. Reserve the HUD space at load time so it cannot cause another layout jump.</p>
+<p><a href="hud-concept-v1.png">Concept PNG</a> · <a href="hud-frame-source-v1.png">Frame PNG</a> · <a href="prompts.json">Exact generation prompts</a> · <a href="manifest.json">Asset metadata</a></p>
+</main>
+<script>
+const buttons={dark:document.querySelector('#dark'),light:document.querySelector('#light'),native:document.querySelector('#native')};
+for(const mode of ['dark','light']) buttons[mode].onclick=()=>{document.body.classList.toggle('light',mode==='light');buttons.dark.setAttribute('aria-pressed',String(mode==='dark'));buttons.light.setAttribute('aria-pressed',String(mode==='light'));};
+buttons.native.onclick=()=>{const active=document.body.classList.toggle('native');buttons.native.setAttribute('aria-pressed',String(active));};
+</script></html>

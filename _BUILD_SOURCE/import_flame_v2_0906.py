@@ -152,7 +152,7 @@ def main():
     for name, frames in fam.items():
         for i, f in enumerate(frames):
             f.save(os.path.join(OUT, '%s_%d.png' % (name, i))); n += 1
-    print('\nwrote %d files to assets/game/flame_v2/' % n)
+    print('\nwrote %d files to assets/game/shared/player_weapons/flame_v2/' % n)
     return 0
 
 

@@ -3,10 +3,10 @@
    owned by the engine: A/Start can never grant, erase or duplicate an upgrade. */
 const BOFCinematicDirector=(()=>{
  const pilots=['axel','freezer','lizzie','falva','yuri','maverick','cole','decker','juggernaut'];
- const root='assets/game/cinema_0930/';
+ const root='assets/game/shared/cinematics/cinema_0930/';
  for(const key of ['cronos','decker','yuri'])XART._src['cin30_'+key]=root+key+'.png';
- XART._src.cin_stage08_approach='assets/game/cinematic_level_approaches/stage08_furious_death_approach.png';
- XART._src.cin30_bonus='assets/game/cinematic_level_approaches/stage09_the_velocity_void_bonus_approach.png';
+ XART._src.cin_stage08_approach='assets/game/levels/stage_08/cinematics/cinematic_level_approaches/stage08_furious_death_approach.png';
+ XART._src.cin30_bonus='assets/game/levels/stage_09/cinematics/cinematic_level_approaches/stage09_the_velocity_void_bonus_approach.png';
  let scene=null;
  const oldStory=window.BOFCampaignStory;
  const originalScript=oldStory&&oldStory.script;

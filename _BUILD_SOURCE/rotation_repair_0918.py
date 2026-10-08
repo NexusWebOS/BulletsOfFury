@@ -51,18 +51,18 @@ def directional_strip(src: Path, dst: str, pivot: tuple[int, int], frames: int =
 
 
 PICKUPS = {
-    "life_up_turn.png": "assets/game/ui/pickups_0915/life_up_wings.png",
-    "continue_up_turn.png": "assets/game/ui/pickups_0915/continue_up.png",
-    "space_helper_turn.png": "assets/game/ui/space_armory_0915/helper_orb_icon.png",
-    "space_akimbo_turn.png": "assets/game/ui/space_armory_0915/akimbo_icon.png",
-    "space_mine_turn.png": "assets/game/ui/space_armory_0915/proximity_mine_icon.png",
-    "fury_bomb_turn.png": "assets/game/ui/pickups_0917b/fury_bomb.png",
-    "timed_bomb_turn.png": "assets/game/ui/pickups_0917b/timed_bomb.png",
+    "life_up_turn.png": "assets/game/shared/ui/ui/pickups_0915/life_up_wings.png",
+    "continue_up_turn.png": "assets/game/shared/ui/ui/pickups_0915/continue_up.png",
+    "space_helper_turn.png": "assets/game/shared/ui/ui/space_armory_0915/helper_orb_icon.png",
+    "space_akimbo_turn.png": "assets/game/shared/ui/ui/space_armory_0915/akimbo_icon.png",
+    "space_mine_turn.png": "assets/game/shared/ui/ui/space_armory_0915/proximity_mine_icon.png",
+    "fury_bomb_turn.png": "assets/game/shared/ui/ui/pickups_0917b/fury_bomb.png",
+    "timed_bomb_turn.png": "assets/game/shared/ui/ui/pickups_0917b/timed_bomb.png",
 }
 for value in (100, 250, 500, 1000):
-    PICKUPS[f"score_{value}_turn.png"] = f"assets/game/ui/pickups_0917b/score_{value}.png"
+    PICKUPS[f"score_{value}_turn.png"] = f"assets/game/shared/ui/ui/pickups_0917b/score_{value}.png"
 for elem in ("fire", "ice", "lightning", "prism", "toxic", "kinetic", "chrome", "water", "dark"):
-    PICKUPS[f"inf_{elem}_turn.png"] = f"assets/game/ui/infusion_0917/inf_{elem}.png"
+    PICKUPS[f"inf_{elem}_turn.png"] = f"assets/game/shared/ui/ui/infusion_0917/inf_{elem}.png"
 for out_name, rel in PICKUPS.items():
     coin_strip(ROOT / rel, out_name)
 

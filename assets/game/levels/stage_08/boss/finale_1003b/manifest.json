@@ -1,0 +1,72 @@
+{
+  "furnace": {
+    "key": "finale1003b_furnace",
+    "path": "assets/game/levels/stage_08/boss/finale_1003b/furnace.png",
+    "cw": 627,
+    "ch": 627,
+    "cols": 2,
+    "frames": 4,
+    "size": [
+      1254,
+      1254
+    ],
+    "source": "_ART_SOURCES/finale_1003b/furnace.png",
+    "sha256": "cefddeeddd2d1ad8273c1495ac2fd067736ffc21770d064c601caefb21e0bb83"
+  },
+  "cryo": {
+    "key": "finale1003b_cryo",
+    "path": "assets/game/levels/stage_08/boss/finale_1003b/cryo.png",
+    "cw": 627,
+    "ch": 627,
+    "cols": 2,
+    "frames": 4,
+    "size": [
+      1254,
+      1254
+    ],
+    "source": "_ART_SOURCES/finale_1003b/cryo.png",
+    "sha256": "4e8a2dde6f4c93fe1ad29767c466361187d4428578efb489bc2e0d223f5a9057"
+  },
+  "storm": {
+    "key": "finale1003b_storm",
+    "path": "assets/game/levels/stage_08/boss/finale_1003b/storm.png",
+    "cw": 627,
+    "ch": 627,
+    "cols": 2,
+    "frames": 4,
+    "size": [
+      1254,
+      1254
+    ],
+    "source": "_ART_SOURCES/finale_1003b/storm.png",
+    "sha256": "9125460aa7e07bd2aca5f63423e2edad64b9606b868fcbc3030c686a3cff8015"
+  },
+  "harrier": {
+    "key": "finale1003b_harrier",
+    "path": "assets/game/levels/stage_08/boss/finale_1003b/harrier.png",
+    "cw": 627,
+    "ch": 627,
+    "cols": 2,
+    "frames": 4,
+    "size": [
+      1254,
+      1254
+    ],
+    "source": "_ART_SOURCES/finale_1003b/harrier.png",
+    "sha256": "efb86b921ff631b5ae57f46d1fb71d9a4bb8ce136628f53f3fb3042d6573c5b7"
+  },
+  "warden": {
+    "key": "finale1003b_warden",
+    "path": "assets/game/levels/stage_08/boss/finale_1003b/warden.png",
+    "cw": 627,
+    "ch": 627,
+    "cols": 2,
+    "frames": 4,
+    "size": [
+      1254,
+      1254
+    ],
+    "source": "_ART_SOURCES/finale_1003b/warden.png",
+    "sha256": "0643399ef508fa35dad1a1e14c7cfed58fdb95a59e997ae331e05968b30725f2"
+  }
+}

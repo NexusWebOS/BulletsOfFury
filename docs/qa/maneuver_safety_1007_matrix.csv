@@ -1,0 +1,173 @@
+encounter,stage,scope,difficulty,clears,trials,clear_percent,visit_survivals,visit_survival_percent,deaths,outcomes,source_group
+STAGE1,1,complete stage,easy,0,1,0.0,0,0.0,8,continue,final_a
+STAGE1,1,complete stage,normal,0,1,0.0,0,0.0,6,continue,final_a
+STAGE1,1,complete stage,hard,0,1,0.0,0,0.0,5,continue,final_b
+STAGE1,1,complete stage,furious,0,1,0.0,0,0.0,4,continue,final_b
+MINI1,1,encounter,easy,1,1,100.0,1,100.0,0,encounter-defeated,final_a
+MINI1,1,encounter,normal,0,1,0.0,0,0.0,6,continue,final_a
+MINI1,1,encounter,hard,0,1,0.0,0,0.0,4,continue,final_b
+MINI1,1,encounter,furious,0,1,0.0,0,0.0,4,continue,final_b
+BOSS1,1,encounter,easy,1,1,100.0,1,100.0,3,encounter-defeated,final_a
+BOSS1,1,encounter,normal,0,1,0.0,0,0.0,6,continue,final_a
+BOSS1,1,encounter,hard,0,1,0.0,0,0.0,4,continue,final_b
+BOSS1,1,encounter,furious,0,1,0.0,0,0.0,4,continue,final_b
+STAGE2,2,complete stage,easy,0,1,0.0,0,0.0,8,continue,final_a
+STAGE2,2,complete stage,normal,0,1,0.0,0,0.0,6,continue,final_a
+STAGE2,2,complete stage,hard,0,1,0.0,0,0.0,4,continue,final_b
+STAGE2,2,complete stage,furious,0,1,0.0,0,0.0,4,continue,final_b
+MINI2,2,encounter,easy,1,1,100.0,1,100.0,0,encounter-defeated,final_a
+MINI2,2,encounter,normal,0,1,0.0,0,0.0,6,continue,final_a
+MINI2,2,encounter,hard,0,1,0.0,0,0.0,4,continue,final_b
+MINI2,2,encounter,furious,0,1,0.0,0,0.0,4,continue,final_b
+BOSS2,2,encounter,easy,0,1,0.0,0,0.0,8,continue,final_a
+BOSS2,2,encounter,normal,0,1,0.0,0,0.0,6,continue,final_a
+BOSS2,2,encounter,hard,0,1,0.0,0,0.0,4,continue,final_b
+BOSS2,2,encounter,furious,0,1,0.0,0,0.0,4,continue,final_b
+STAGE3,3,complete stage,easy,1,1,100.0,1,100.0,5,flyover,final_a
+STAGE3,3,complete stage,normal,0,1,0.0,0,0.0,6,continue,final_a
+STAGE3,3,complete stage,hard,0,1,0.0,0,0.0,4,continue,final_b
+STAGE3,3,complete stage,furious,0,1,0.0,0,0.0,4,continue,final_b
+MINI3,3,encounter,easy,1,1,100.0,1,100.0,4,encounter-defeated,final_a
+MINI3,3,encounter,normal,0,1,0.0,0,0.0,6,continue,final_a
+MINI3,3,encounter,hard,0,1,0.0,0,0.0,4,continue,final_b
+MINI3,3,encounter,furious,0,1,0.0,0,0.0,4,continue,final_b
+ALT3,3,encounter,easy,1,1,100.0,1,100.0,3,encounter-defeated,final_a
+ALT3,3,encounter,normal,1,1,100.0,1,100.0,2,encounter-defeated,final_a
+ALT3,3,encounter,hard,1,1,100.0,1,100.0,0,encounter-defeated,final_b
+ALT3,3,encounter,furious,0,1,0.0,0,0.0,4,continue,final_b
+BOSS3,3,encounter,easy,1,1,100.0,1,100.0,0,encounter-defeated,final_a
+BOSS3,3,encounter,normal,1,1,100.0,1,100.0,0,encounter-defeated,final_a
+BOSS3,3,encounter,hard,1,1,100.0,1,100.0,3,encounter-defeated,final_b
+BOSS3,3,encounter,furious,0,1,0.0,0,0.0,4,continue,final_b
+STAGE4,4,complete stage,easy,0,1,0.0,0,0.0,9,continue,release_affected
+STAGE4,4,complete stage,normal,0,1,0.0,0,0.0,6,continue,release_affected
+STAGE4,4,complete stage,hard,0,1,0.0,0,0.0,4,continue,release_affected
+STAGE4,4,complete stage,furious,0,1,0.0,0,0.0,4,continue,release_affected
+MINI4,4,encounter,easy,1,1,100.0,1,100.0,2,encounter-defeated,final_a
+MINI4,4,encounter,normal,0,1,0.0,0,0.0,6,continue,final_a
+MINI4,4,encounter,hard,0,1,0.0,0,0.0,4,continue,final_b
+MINI4,4,encounter,furious,0,1,0.0,0,0.0,4,continue,final_b
+BOSS4,4,encounter,easy,0,1,0.0,0,0.0,8,continue,release_affected
+BOSS4,4,encounter,normal,0,1,0.0,0,0.0,6,continue,release_affected
+BOSS4,4,encounter,hard,0,1,0.0,0,0.0,4,continue,release_affected
+BOSS4,4,encounter,furious,0,1,0.0,0,0.0,4,continue,release_affected
+STAGE5,5,complete stage,easy,1,1,100.0,1,100.0,4,stageclear,final_a
+STAGE5,5,complete stage,normal,0,1,0.0,0,0.0,6,continue,final_a
+STAGE5,5,complete stage,hard,0,1,0.0,0,0.0,4,continue,final_b
+STAGE5,5,complete stage,furious,0,1,0.0,0,0.0,4,continue,final_b
+MINI5,5,encounter,easy,1,1,100.0,1,100.0,0,encounter-defeated,final_a
+MINI5,5,encounter,normal,1,1,100.0,1,100.0,0,encounter-defeated,final_a
+MINI5,5,encounter,hard,1,1,100.0,1,100.0,0,encounter-defeated,final_b
+MINI5,5,encounter,furious,1,1,100.0,1,100.0,0,encounter-defeated,final_b
+BOSS5,5,encounter,easy,0,1,0.0,0,0.0,8,continue,final_a
+BOSS5,5,encounter,normal,0,1,0.0,0,0.0,6,continue,final_a
+BOSS5,5,encounter,hard,0,1,0.0,0,0.0,4,continue,final_b
+BOSS5,5,encounter,furious,0,1,0.0,0,0.0,4,continue,final_b
+STAGE6,6,complete stage,easy,1,1,100.0,1,100.0,0,flyover,final_a
+STAGE6,6,complete stage,normal,1,1,100.0,1,100.0,0,flyover,final_a
+STAGE6,6,complete stage,hard,0,1,0.0,0,0.0,4,continue,final_b
+STAGE6,6,complete stage,furious,0,1,0.0,0,0.0,4,continue,final_b
+MINI6,6,encounter,easy,1,1,100.0,1,100.0,0,encounter-defeated,final_a
+MINI6,6,encounter,normal,1,1,100.0,1,100.0,0,encounter-defeated,final_a
+MINI6,6,encounter,hard,1,1,100.0,1,100.0,0,encounter-defeated,final_b
+MINI6,6,encounter,furious,1,1,100.0,1,100.0,0,encounter-defeated,final_b
+ALT6,6,encounter,easy,1,1,100.0,1,100.0,0,encounter-defeated,final_a
+ALT6,6,encounter,normal,1,1,100.0,1,100.0,2,encounter-defeated,final_a
+ALT6,6,encounter,hard,1,1,100.0,1,100.0,3,encounter-defeated,final_b
+ALT6,6,encounter,furious,0,1,0.0,0,0.0,4,continue,final_b
+BOSS6,6,encounter,easy,1,1,100.0,1,100.0,0,encounter-defeated,final_a
+BOSS6,6,encounter,normal,1,1,100.0,1,100.0,5,encounter-defeated,final_a
+BOSS6,6,encounter,hard,0,1,0.0,0,0.0,4,continue,final_b
+BOSS6,6,encounter,furious,0,1,0.0,0,0.0,4,continue,final_b
+ace,6,encounter,easy,2,2,100.0,2,100.0,0,encounter-defeated / encounter-defeated,variants
+ace,6,encounter,normal,2,2,100.0,2,100.0,0,encounter-defeated / encounter-defeated,variants
+ace,6,encounter,hard,0,2,0.0,0,0.0,8,continue / continue,variants
+ace,6,encounter,furious,0,2,0.0,0,0.0,8,continue / continue,variants
+harrier,6,carrier phase,easy,2,2,100.0,2,100.0,0,encounter-defeated / encounter-defeated,variants
+harrier,6,carrier phase,normal,2,2,100.0,2,100.0,6,encounter-defeated / encounter-defeated,variants
+harrier,6,carrier phase,hard,0,2,0.0,0,0.0,8,continue / continue,variants
+harrier,6,carrier phase,furious,0,2,0.0,0,0.0,8,continue / continue,variants
+STAGE7,7,complete stage,easy,1,1,100.0,1,100.0,2,warpentry,final_a
+STAGE7,7,complete stage,normal,1,1,100.0,1,100.0,4,warpentry,final_a
+STAGE7,7,complete stage,hard,0,1,0.0,0,0.0,4,continue,final_b
+STAGE7,7,complete stage,furious,0,1,0.0,0,0.0,4,continue,final_b
+MINI7,7,encounter,easy,1,1,100.0,1,100.0,0,encounter-defeated,final_a
+MINI7,7,encounter,normal,1,1,100.0,1,100.0,1,encounter-defeated,final_a
+MINI7,7,encounter,hard,1,1,100.0,1,100.0,3,encounter-defeated,final_b
+MINI7,7,encounter,furious,0,1,0.0,0,0.0,4,continue,final_b
+BOSS7,7,encounter,easy,1,1,100.0,1,100.0,1,encounter-defeated,final_a
+BOSS7,7,encounter,normal,1,1,100.0,1,100.0,4,encounter-defeated,final_a
+BOSS7,7,encounter,hard,0,1,0.0,0,0.0,4,continue,final_b
+BOSS7,7,encounter,furious,0,1,0.0,0,0.0,4,continue,final_b
+STAGE8,8,complete stage,easy,0,1,0.0,0,0.0,8,continue,final_a
+STAGE8,8,complete stage,normal,0,1,0.0,0,0.0,6,continue,final_a
+STAGE8,8,complete stage,hard,0,1,0.0,0,0.0,4,continue,final_b
+STAGE8,8,complete stage,furious,0,1,0.0,0,0.0,4,continue,final_b
+MINI8,8,encounter,easy,1,1,100.0,1,100.0,0,encounter-defeated,final_a
+MINI8,8,encounter,normal,1,1,100.0,1,100.0,2,encounter-defeated,final_a
+MINI8,8,encounter,hard,1,1,100.0,1,100.0,0,encounter-defeated,final_b
+MINI8,8,encounter,furious,0,1,0.0,0,0.0,4,continue,final_b
+FINAL1,8,form/phase visit,easy,1,1,100.0,1,100.0,1,phase-depleted,final_a
+FINAL1,8,form/phase visit,normal,1,1,100.0,1,100.0,5,phase-depleted,final_a
+FINAL1,8,form/phase visit,hard,0,1,0.0,0,0.0,4,continue,final_b
+FINAL1,8,form/phase visit,furious,0,1,0.0,0,0.0,4,continue,final_b
+FINAL2,8,form/phase visit,easy,1,1,100.0,1,100.0,0,phase-depleted,final_a
+FINAL2,8,form/phase visit,normal,1,1,100.0,1,100.0,3,phase-depleted,final_a
+FINAL2,8,form/phase visit,hard,0,1,0.0,0,0.0,4,continue,final_b
+FINAL2,8,form/phase visit,furious,0,1,0.0,0,0.0,4,continue,final_b
+FINAL3,8,form/phase visit,easy,1,1,100.0,1,100.0,1,phase-depleted,final_a
+FINAL3,8,form/phase visit,normal,0,1,0.0,1,100.0,1,form-transition,final_a
+FINAL3,8,form/phase visit,hard,0,1,0.0,0,0.0,4,continue,final_b
+FINAL3,8,form/phase visit,furious,0,1,0.0,0,0.0,4,continue,final_b
+HOST8,8,form/phase visit,easy,1,1,100.0,1,100.0,0,phase-depleted,final_a
+HOST8,8,form/phase visit,normal,0,1,0.0,1,100.0,0,form-transition,final_a
+HOST8,8,form/phase visit,hard,0,1,0.0,1,100.0,1,form-transition,final_b
+HOST8,8,form/phase visit,furious,0,1,0.0,1,100.0,0,form-transition,final_b
+HELI8,8,form/phase visit,easy,1,1,100.0,1,100.0,0,phase-depleted,final_a
+HELI8,8,form/phase visit,normal,0,1,0.0,1,100.0,1,form-transition,final_a
+HELI8,8,form/phase visit,hard,0,1,0.0,1,100.0,3,form-transition,final_b
+HELI8,8,form/phase visit,furious,0,1,0.0,1,100.0,3,form-transition,final_b
+FURN8,8,form/phase visit,easy,0,1,0.0,1,100.0,3,form-transition,final_a
+FURN8,8,form/phase visit,normal,0,1,0.0,1,100.0,3,form-transition,final_a
+FURN8,8,form/phase visit,hard,0,1,0.0,1,100.0,2,form-transition,final_b
+FURN8,8,form/phase visit,furious,0,1,0.0,1,100.0,3,form-transition,final_b
+CRYO8,8,form/phase visit,easy,0,1,0.0,1,100.0,1,form-transition,final_a
+CRYO8,8,form/phase visit,normal,0,1,0.0,1,100.0,2,form-transition,final_a
+CRYO8,8,form/phase visit,hard,0,1,0.0,0,0.0,4,continue,final_b
+CRYO8,8,form/phase visit,furious,0,1,0.0,1,100.0,3,form-transition,final_b
+STORM8,8,form/phase visit,easy,0,1,0.0,1,100.0,2,form-transition,release_affected
+STORM8,8,form/phase visit,normal,0,1,0.0,1,100.0,4,form-transition,release_affected
+STORM8,8,form/phase visit,hard,0,1,0.0,1,100.0,2,form-transition,release_affected
+STORM8,8,form/phase visit,furious,0,1,0.0,0,0.0,4,continue,release_affected
+KNIGHT,8,form/phase visit,easy,1,1,100.0,1,100.0,0,phase-depleted,final_a
+KNIGHT,8,form/phase visit,normal,0,1,0.0,1,100.0,3,form-transition,final_a
+KNIGHT,8,form/phase visit,hard,0,1,0.0,1,100.0,0,form-transition,final_b
+KNIGHT,8,form/phase visit,furious,0,1,0.0,0,0.0,4,continue,final_b
+ACE8,8,form/phase visit,easy,1,1,100.0,1,100.0,0,phase-depleted,final_a
+ACE8,8,form/phase visit,normal,0,1,0.0,1,100.0,0,form-transition,final_a
+ACE8,8,form/phase visit,hard,0,1,0.0,0,0.0,4,continue,final_b
+ACE8,8,form/phase visit,furious,0,1,0.0,0,0.0,4,continue,final_b
+WARD8,8,form/phase visit,easy,0,1,0.0,1,100.0,1,form-transition,final_a
+WARD8,8,form/phase visit,normal,0,1,0.0,1,100.0,1,form-transition,final_a
+WARD8,8,form/phase visit,hard,0,1,0.0,1,100.0,3,form-transition,final_b
+WARD8,8,form/phase visit,furious,0,1,0.0,0,0.0,4,continue,final_b
+HAMR8,8,form/phase visit,easy,0,1,0.0,1,100.0,2,form-transition,final_a
+HAMR8,8,form/phase visit,normal,0,1,0.0,1,100.0,2,form-transition,final_a
+HAMR8,8,form/phase visit,hard,0,1,0.0,1,100.0,2,form-transition,final_b
+HAMR8,8,form/phase visit,furious,0,1,0.0,1,100.0,3,form-transition,final_b
+FULLFINAL,8,complete finale,easy,0,1,0.0,0,0.0,8,continue,final_a
+FULLFINAL,8,complete finale,normal,0,1,0.0,0,0.0,6,continue,final_a
+FULLFINAL,8,complete finale,hard,0,1,0.0,0,0.0,4,continue,final_b
+FULLFINAL,8,complete finale,furious,0,1,0.0,0,0.0,4,continue,final_b
+STAGE9,9,complete stage,easy,1,1,100.0,1,100.0,5,flyover,final_a
+STAGE9,9,complete stage,normal,1,1,100.0,1,100.0,4,flyover,final_a
+STAGE9,9,complete stage,hard,0,1,0.0,0,0.0,6,continue,final_b
+STAGE9,9,complete stage,furious,0,1,0.0,0,0.0,6,continue,final_b
+MINI9,9,encounter,easy,1,1,100.0,1,100.0,0,encounter-defeated,final_a
+MINI9,9,encounter,normal,1,1,100.0,1,100.0,0,encounter-defeated,final_a
+MINI9,9,encounter,hard,1,1,100.0,1,100.0,0,encounter-defeated,final_b
+MINI9,9,encounter,furious,0,1,0.0,0,0.0,6,continue,final_b
+BOSS9,9,encounter,easy,1,1,100.0,1,100.0,5,encounter-defeated,final_a
+BOSS9,9,encounter,normal,1,1,100.0,1,100.0,1,encounter-defeated,final_a
+BOSS9,9,encounter,hard,1,1,100.0,1,100.0,0,encounter-defeated,final_b
+BOSS9,9,encounter,furious,0,1,0.0,0,0.0,6,continue,final_b

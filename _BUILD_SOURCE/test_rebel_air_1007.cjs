@@ -55,7 +55,7 @@ module.exports=function(vm,ctxv,ok){
  beginStage(1);out['fresh stage clears death and tether session state']=RA7.deaths.length===0&&!player._ra7Caught;
  return out;})())`,ctxv));
  for(const [name,value] of Object.entries(out))ok(value,name);
- const manifest=JSON.parse(fs.readFileSync(path.join(__dirname,'../assets/game/rebel_air_1007/manifest.json'),'utf8'));
+ const manifest=JSON.parse(fs.readFileSync(path.join(__dirname,'../assets/game/levels/stage_06/boss/rebel_air_1007/manifest.json'),'utf8'));
  ok(Object.keys(manifest.cells).length===12&&manifest.nativeSize.join('x')==='1448x1086','twelve authored cells retain native dimensions');
- const crypto=require('crypto');ok(crypto.createHash('sha256').update(fs.readFileSync(path.join(__dirname,'../assets/game/rebel_air_1007/rebel_air.png'))).digest('hex')===manifest.sha256,'deployed native-alpha art matches its generated source hash');
+ const crypto=require('crypto');ok(crypto.createHash('sha256').update(fs.readFileSync(path.join(__dirname,'../assets/game/levels/stage_06/boss/rebel_air_1007/rebel_air.png'))).digest('hex')===manifest.sha256,'deployed native-alpha art matches its generated source hash');
 };

@@ -1,0 +1,11 @@
+{
+ "yuri_avatar": "assets/game/pilots/yuri/portraits/yuri_v2/yuri_avatar.png",
+ "port_yuri_idle": "assets/game/pilots/yuri/portraits/yuri_v2/port_yuri_idle.png",
+ "port_yuri_anger": "assets/game/pilots/yuri/portraits/yuri_v2/port_yuri_anger.png",
+ "port_yuri_smile": "assets/game/pilots/yuri/portraits/yuri_v2/port_yuri_smile.png",
+ "port_yuri_crash": "assets/game/pilots/yuri/portraits/yuri_v2/port_yuri_crash.png",
+ "port_yuri_sad": "assets/game/pilots/yuri/portraits/yuri_v2/port_yuri_sad.png",
+ "port_yuri_laugh": "assets/game/pilots/yuri/portraits/yuri_v2/port_yuri_laugh.png",
+ "port_yuri_victory": "assets/game/pilots/yuri/portraits/yuri_v2/port_yuri_victory.png",
+ "yuri_body_0": "assets/game/pilots/yuri/body_frames/pilot_bodies/yuri_body_0.png"
+}

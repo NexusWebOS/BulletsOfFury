@@ -13,14 +13,14 @@ def replace_once(before: str, after: str) -> None:
 
 
 replace_once(
-    "  BOFX.img.overhaul_toxic_jet='assets/game/enemy_overhaul_0925/sprites/stage7_toxic_jet_01.png';",
+    "  BOFX.img.overhaul_toxic_jet='assets/game/levels/stage_07/enemies/enemy_overhaul_0925/sprites/stage7_toxic_jet_01.png';",
     "  for(const _plate of ['stage2_fire_jet_01','stage2_fire_jet_02','stage3_ice_jet_01',"
     "'stage3_ice_jet_02','stage3_ice_drone_01','stage4_war_drone_01',"
     "'stage5_space_drone_01','stage6_storm_drone_01','stage7_slime_01',"
     "'stage8_alien_jet_01','stage8_alien_drone_01','stage9_water_jet_01',"
     "'stage9_water_alien_01','stage9_water_drone_01'])\n"
     "    BOFX.img['overhaul_'+_plate]='assets/game/enemy_overhaul_0925/sprites/'+_plate+'.png';\n"
-    "  BOFX.img.overhaul_toxic_jet='assets/game/enemy_overhaul_0925/sprites/stage7_toxic_jet_01.png';",
+    "  BOFX.img.overhaul_toxic_jet='assets/game/levels/stage_07/enemies/enemy_overhaul_0925/sprites/stage7_toxic_jet_01.png';",
 )
 
 replace_once(

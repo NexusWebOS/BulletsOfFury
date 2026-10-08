@@ -41,7 +41,15 @@ flameDraw=function(b){
 chaingunRoundDraw=function(b){
  const lv=clamp(b.lv||1,1,5),col=wlvGlow(lv),name=b._inf?'chaingun_round_'+b._inf:'chaingun_round';
  ctx.save();ctx.translate(b.x,b.y);ctx.rotate(Math.atan2(b.vy,b.vx)+Math.PI/2);
- const r=repair30Cell(name,(b.t||efxClock),0,0,8+lv*.9,25+lv*2.5,true,b._inf?null:col);ctx.restore();return r;
+ // The four base columns shrink the metal casing; they are charge/size
+ // alternatives, not stable flight frames. Keep the complete first tracer.
+ const t=projectileVisualAge(b),w=8+lv*.9,h=25+lv*2.5,palette=b._inf?null:col;
+ const r=repair30Cell(name,0,0,0,w,h,true,palette);
+ if(r){const alpha=ctx.globalAlpha;ctx.globalCompositeOperation='lighter';
+  ctx.globalAlpha=alpha*(.10+.08*(.5+.5*Math.sin(t*12)));repair30Cell(name,0,0,0,w,h,true,palette);
+  ctx.globalAlpha=alpha*.22;ctx.beginPath();ctx.rect(-w/2,-h/2+(t*1.2%1)*h,w,3);ctx.clip();repair30Cell(name,0,0,0,w,h,true,palette);
+ }
+ ctx.restore();return r;
 };
 chaingunMountsDraw=function(dt){
  if(!chaingunMountsVisible())return;

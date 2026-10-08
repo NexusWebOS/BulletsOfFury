@@ -40,6 +40,6 @@ module.exports=function(vm,ctxv,ok){
   for(const k of Object.keys(labels))ok(q[k],labels[k]);
   const artRoot=path.join(__dirname,'..','assets','game','expansion_v1','ships_south');
   for(const name of ['razorback','emberwing','glacierlance','furytalon','voidreaver','tempest','ironserpent','nighthammer','solarwarden']){
-    ok(fs.existsSync(path.join(artRoot,'xelite_'+name+'.png')),'authored elite plate exists: '+name);
+    ok(fs.existsSync(path.join(__dirname,'..',vm.runInContext('bofAssetPath('+JSON.stringify('assets/game/expansion_v1/ships_south/xelite_'+name+'.png')+')',ctxv))),'authored elite plate exists: '+name);
   }
 };

@@ -47,6 +47,6 @@ if b'assets/rebel_arsenal_1004c.js' not in b:
  assert b.count(needle)==1
  p.write_bytes(b.replace(needle,needle+b'\r\n<script src="assets/rebel_arsenal_art_1004c.js"></script>\r\n<script src="assets/rebel_arsenal_1004c.js"></script>'))
 p=R/'assets/data/ART_TAXONOMY.json';taxonomy=json.loads(p.read_text(encoding='utf-8'))
-taxonomy['ra4_']={'role':'rebel_personal_arsenals_ui_and_effects','sheet':None,'note':'October 4: generated five boxes and five hex special icons, six-frame turbo wakes/nova bursts/rocket pods/missiles. Authored Maverick ball and charge palette swaps preserve alpha, luminance and neutral outlines. Whole Rebel hulls retained. Owning workflow _BUILD_SOURCE/build_rebel_arsenal_1004c.py; measured cells, provenance and palette metrics assets/game/rebel_arsenal_1004c/manifest.json.'}
+taxonomy['ra4_']={'role':'rebel_personal_arsenals_ui_and_effects','sheet':None,'note':'October 4: generated five boxes and five hex special icons, six-frame turbo wakes/nova bursts/rocket pods/missiles. Authored Maverick ball and charge palette swaps preserve alpha, luminance and neutral outlines. Whole Rebel hulls retained. Owning workflow _BUILD_SOURCE/build_rebel_arsenal_1004c.py; measured cells, provenance and palette metrics assets/game/levels/stage_06/boss/rebel_arsenal_1004c/manifest.json.'}
 p.write_text(json.dumps(taxonomy,indent=2)+'\n',encoding='utf-8')
 print('Registered 10 generated UI assets, 24 effect cells, and 12 measured palette swaps.')

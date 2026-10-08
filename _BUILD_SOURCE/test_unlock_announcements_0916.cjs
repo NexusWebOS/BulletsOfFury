@@ -11,7 +11,7 @@ module.exports=function testUnlockAnnouncements(vm,ctxv,ok){
   ok(rows(5,'maverick').includes('CHAINGUN')&&rows(9,'cole').includes('LASER MIST'),'stages 5 and 9 announce their actual weapon systems');
   ok(rows(5,'cole')==='[]','Cole keeps his MG / fusion-cannon line, so stage 5 announces no chaingun to him (Mike 0928)');
   ok(rows(3,'cole')==='[]','a stage with no weapon grant skips the page');
-  ok(R("XART._src.weapon_found_0918==='assets/game/ui/forge_0918/weapon_found.png'"),'the dedicated generated Weapon Found plate is registered');
+  ok(R("XART._src.weapon_found_0918==='assets/game/shared/ui/ui/forge_0918/weapon_found.png'"),'the dedicated generated Weapon Found plate is registered');
   const us=R('unlocksStart.toString()'),du=R('drawUnlocks.toString()');
   ok(us.includes("XART.rdy('weapon_found_0918')"),'the screen warms its plate before entering');
   ok(du.includes("XART.rdy('weapon_found_0918')")&&du.includes('ctx.drawImage(plate'),'the screen draws the authored full-frame plate');

@@ -7,7 +7,7 @@ assert all(c['ok'] for c in report['checks']) and not report['errors']
 log=(O/'suite.log').read_text();assert 'FALVA/LIZZIE BUILD OK, 0 ERRORS' in log
 count=len(re.findall(r'^\s*ok\s',log,re.M));assert count==7177
 stealth=(O/'stealth.log').read_text();assert "errors []" in stealth and "PASS []" in stealth
-art=json.loads((R/'assets/game/sky_repair_1004i/manifest.json').read_text())
+art=json.loads((R/'assets/game/levels/stage_06/boss/sky_repair_1004i/manifest.json').read_text())
 assert all(s['alpha_identical'] and s['max_luminance_rounding_error']<.51 for s in art['sources'])
 qa={'date':'2026-10-04','scope':'Stage X password/campaign arenas, consistent blue larger ace and white hits, arcade bomber durability',
     'suite':{'assertions':count,'exit':0,'final_summary':'FALVA/LIZZIE BUILD OK, 0 ERRORS'},

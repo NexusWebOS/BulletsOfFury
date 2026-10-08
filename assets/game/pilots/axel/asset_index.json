@@ -1,0 +1,1027 @@
+{
+  "owner": "pilots/axel",
+  "loading": {
+    "boot": "UI, fonts, idle portraits only",
+    "deployment": "selected pilot portraits, shared player weapons, required stage textures",
+    "transition": "release previous stage textures and derived caches; preserve explicitly queued copied-form dependencies",
+    "quality": "automatic native resolution on low-memory/low-core devices; reduce supersampling after sustained slow play frames"
+  },
+  "sharedDependencies": [
+    "shared/fonts",
+    "shared/ui",
+    "shared/player_weapons",
+    "shared/effects",
+    "shared/ships"
+  ],
+  "assets": [
+    {
+      "key": "aintro_axel",
+      "root": "nca_layout_pilots_axel_portraits_0",
+      "path": "assets/game/pilots/axel/portraits/frames_0.png",
+      "owner": "pilots/axel",
+      "cell": [
+        "layout_pilots_axel_portraits_0",
+        1790,
+        4,
+        640,
+        480
+      ]
+    },
+    {
+      "key": "pcard_axel",
+      "root": "nca_layout_pilots_axel_portraits_0",
+      "path": "assets/game/pilots/axel/portraits/frames_0.png",
+      "owner": "pilots/axel",
+      "cell": [
+        "layout_pilots_axel_portraits_0",
+        4,
+        4,
+        958,
+        718
+      ]
+    },
+    {
+      "key": "nsa_ship_axel",
+      "root": "nsa_ship_axel",
+      "path": "assets/game/pilots/axel/ship_frames/ship_axel.png",
+      "owner": "pilots/axel",
+      "cell": null
+    },
+    {
+      "key": "card_axel",
+      "root": "nca_layout_pilots_axel_portraits_0",
+      "path": "assets/game/pilots/axel/portraits/frames_0.png",
+      "owner": "pilots/axel",
+      "cell": [
+        "layout_pilots_axel_portraits_0",
+        966,
+        4,
+        820,
+        631
+      ]
+    },
+    {
+      "key": "pose_axel_0",
+      "root": "nca_layout_pilots_axel_body_frames_0",
+      "path": "assets/game/pilots/axel/body_frames/frames_0.png",
+      "owner": "pilots/axel",
+      "cell": [
+        "layout_pilots_axel_body_frames_0",
+        4,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "key": "pose_axel_1",
+      "root": "nca_layout_pilots_axel_body_frames_0",
+      "path": "assets/game/pilots/axel/body_frames/frames_0.png",
+      "owner": "pilots/axel",
+      "cell": [
+        "layout_pilots_axel_body_frames_0",
+        264,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "key": "pose_axel_2",
+      "root": "nca_layout_pilots_axel_body_frames_0",
+      "path": "assets/game/pilots/axel/body_frames/frames_0.png",
+      "owner": "pilots/axel",
+      "cell": [
+        "layout_pilots_axel_body_frames_0",
+        524,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "key": "pose_axel_3",
+      "root": "nca_layout_pilots_axel_body_frames_0",
+      "path": "assets/game/pilots/axel/body_frames/frames_0.png",
+      "owner": "pilots/axel",
+      "cell": [
+        "layout_pilots_axel_body_frames_0",
+        784,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "key": "pose_axel_4",
+      "root": "nca_layout_pilots_axel_body_frames_0",
+      "path": "assets/game/pilots/axel/body_frames/frames_0.png",
+      "owner": "pilots/axel",
+      "cell": [
+        "layout_pilots_axel_body_frames_0",
+        1044,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "key": "pose_axel_5",
+      "root": "nca_layout_pilots_axel_body_frames_0",
+      "path": "assets/game/pilots/axel/body_frames/frames_0.png",
+      "owner": "pilots/axel",
+      "cell": [
+        "layout_pilots_axel_body_frames_0",
+        1304,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "key": "pemb_axel",
+      "root": "nca_layout_pilots_axel_portraits_0",
+      "path": "assets/game/pilots/axel/portraits/frames_0.png",
+      "owner": "pilots/axel",
+      "cell": [
+        "layout_pilots_axel_portraits_0",
+        2434,
+        4,
+        256,
+        256
+      ]
+    },
+    {
+      "key": "nthp_axel_2",
+      "root": "nca_layout_pilots_axel_abilities_0",
+      "path": "assets/game/pilots/axel/abilities/frames_0.png",
+      "owner": "pilots/axel",
+      "cell": [
+        "layout_pilots_axel_abilities_0",
+        4,
+        4,
+        170,
+        192
+      ]
+    },
+    {
+      "key": "nthp_axel_1",
+      "root": "nca_layout_pilots_axel_abilities_0",
+      "path": "assets/game/pilots/axel/abilities/frames_0.png",
+      "owner": "pilots/axel",
+      "cell": [
+        "layout_pilots_axel_abilities_0",
+        178,
+        4,
+        136,
+        158
+      ]
+    },
+    {
+      "key": "nthp_axel_3",
+      "root": "nca_layout_pilots_axel_abilities_0",
+      "path": "assets/game/pilots/axel/abilities/frames_0.png",
+      "owner": "pilots/axel",
+      "cell": [
+        "layout_pilots_axel_abilities_0",
+        318,
+        4,
+        81,
+        135
+      ]
+    },
+    {
+      "key": "nthp_axel_0",
+      "root": "nca_layout_pilots_axel_abilities_0",
+      "path": "assets/game/pilots/axel/abilities/frames_0.png",
+      "owner": "pilots/axel",
+      "cell": [
+        "layout_pilots_axel_abilities_0",
+        403,
+        4,
+        67,
+        84
+      ]
+    },
+    {
+      "key": "sp_axel_0",
+      "root": "nca_layout_pilots_axel_abilities_0",
+      "path": "assets/game/pilots/axel/abilities/frames_0.png",
+      "owner": "pilots/axel",
+      "cell": [
+        "layout_pilots_axel_abilities_0",
+        474,
+        4,
+        64,
+        41
+      ]
+    },
+    {
+      "key": "sp_axel_1",
+      "root": "nca_layout_pilots_axel_abilities_0",
+      "path": "assets/game/pilots/axel/abilities/frames_0.png",
+      "owner": "pilots/axel",
+      "cell": [
+        "layout_pilots_axel_abilities_0",
+        542,
+        4,
+        64,
+        41
+      ]
+    },
+    {
+      "key": "sp_axel_2",
+      "root": "nca_layout_pilots_axel_abilities_0",
+      "path": "assets/game/pilots/axel/abilities/frames_0.png",
+      "owner": "pilots/axel",
+      "cell": [
+        "layout_pilots_axel_abilities_0",
+        610,
+        4,
+        64,
+        41
+      ]
+    },
+    {
+      "key": "sp_axel_3",
+      "root": "nca_layout_pilots_axel_abilities_0",
+      "path": "assets/game/pilots/axel/abilities/frames_0.png",
+      "owner": "pilots/axel",
+      "cell": [
+        "layout_pilots_axel_abilities_0",
+        678,
+        4,
+        64,
+        41
+      ]
+    },
+    {
+      "key": "nca_layout_pilots_axel_abilities_0",
+      "root": "nca_layout_pilots_axel_abilities_0",
+      "path": "assets/game/pilots/axel/abilities/frames_0.png",
+      "owner": "pilots/axel",
+      "cell": null
+    },
+    {
+      "key": "nca_layout_pilots_axel_body_frames_0",
+      "root": "nca_layout_pilots_axel_body_frames_0",
+      "path": "assets/game/pilots/axel/body_frames/frames_0.png",
+      "owner": "pilots/axel",
+      "cell": null
+    },
+    {
+      "key": "nca_layout_pilots_axel_portraits_0",
+      "root": "nca_layout_pilots_axel_portraits_0",
+      "path": "assets/game/pilots/axel/portraits/frames_0.png",
+      "owner": "pilots/axel",
+      "cell": null
+    },
+    {
+      "key": "port_cf_axel_idle",
+      "root": "port_cf_axel_idle",
+      "path": "assets/game/pilots/axel/portraits/pilots_0922/portraits/axel-idle.png",
+      "owner": "pilots/axel",
+      "cell": null
+    },
+    {
+      "key": "port_cf_axel_happy",
+      "root": "port_cf_axel_happy",
+      "path": "assets/game/pilots/axel/portraits/pilots_0922/portraits/axel-happy.png",
+      "owner": "pilots/axel",
+      "cell": null
+    },
+    {
+      "key": "port_cf_axel_laugh",
+      "root": "port_cf_axel_laugh",
+      "path": "assets/game/pilots/axel/portraits/pilots_0922/portraits/axel-laugh.png",
+      "owner": "pilots/axel",
+      "cell": null
+    },
+    {
+      "key": "port_cf_axel_anger",
+      "root": "port_cf_axel_anger",
+      "path": "assets/game/pilots/axel/portraits/pilots_0922/portraits/axel-anger.png",
+      "owner": "pilots/axel",
+      "cell": null
+    },
+    {
+      "key": "port_cf_axel_sad",
+      "root": "port_cf_axel_sad",
+      "path": "assets/game/pilots/axel/portraits/pilots_0922/portraits/axel-sad.png",
+      "owner": "pilots/axel",
+      "cell": null
+    },
+    {
+      "key": "port_cf_axel_crash",
+      "root": "port_cf_axel_crash",
+      "path": "assets/game/pilots/axel/portraits/pilots_0922/portraits/axel-crash.png",
+      "owner": "pilots/axel",
+      "cell": null
+    },
+    {
+      "key": "port_cf_axel_victory",
+      "root": "port_cf_axel_victory",
+      "path": "assets/game/pilots/axel/portraits/pilots_0922/portraits/axel-victory.png",
+      "owner": "pilots/axel",
+      "cell": null
+    },
+    {
+      "key": "port_cf_axel_talk-closed",
+      "root": "port_cf_axel_talk-closed",
+      "path": "assets/game/pilots/axel/portraits/pilots_0922/portraits/axel-talk-closed.png",
+      "owner": "pilots/axel",
+      "cell": null
+    },
+    {
+      "key": "port_cf_axel_talk-small",
+      "root": "port_cf_axel_talk-small",
+      "path": "assets/game/pilots/axel/portraits/pilots_0922/portraits/axel-talk-small.png",
+      "owner": "pilots/axel",
+      "cell": null
+    },
+    {
+      "key": "port_cf_axel_talk-medium",
+      "root": "port_cf_axel_talk-medium",
+      "path": "assets/game/pilots/axel/portraits/pilots_0922/portraits/axel-talk-medium.png",
+      "owner": "pilots/axel",
+      "cell": null
+    },
+    {
+      "key": "port_cf_axel_talk-wide",
+      "root": "port_cf_axel_talk-wide",
+      "path": "assets/game/pilots/axel/portraits/pilots_0922/portraits/axel-talk-wide.png",
+      "owner": "pilots/axel",
+      "cell": null
+    },
+    {
+      "key": "port_cf_axel_talk-o",
+      "root": "port_cf_axel_talk-o",
+      "path": "assets/game/pilots/axel/portraits/pilots_0922/portraits/axel-talk-o.png",
+      "owner": "pilots/axel",
+      "cell": null
+    },
+    {
+      "key": "port_cf_axel_alert",
+      "root": "port_cf_axel_alert",
+      "path": "assets/game/pilots/axel/portraits/pilots_0922/portraits/axel-crash.png",
+      "owner": "pilots/axel",
+      "cell": null
+    },
+    {
+      "key": "comm_axel_alert",
+      "root": "comm_axel_alert",
+      "path": "assets/game/pilots/axel/portraits/pilots_0922/comm/comm_axel_crash.png",
+      "owner": "pilots/axel",
+      "cell": null
+    },
+    {
+      "key": "cinpose_axel_1",
+      "root": "cinpose_axel_1",
+      "path": "assets/game/pilots/axel/body_frames/cinematic_characters/axel/poses/01_front_neutral.png",
+      "owner": "pilots/axel",
+      "cell": null
+    },
+    {
+      "key": "cinpose_axel_2",
+      "root": "cinpose_axel_2",
+      "path": "assets/game/pilots/axel/body_frames/cinematic_characters/axel/poses/02_front_left_3q.png",
+      "owner": "pilots/axel",
+      "cell": null
+    },
+    {
+      "key": "cinpose_axel_3",
+      "root": "cinpose_axel_3",
+      "path": "assets/game/pilots/axel/body_frames/cinematic_characters/axel/poses/03_front_right_3q.png",
+      "owner": "pilots/axel",
+      "cell": null
+    },
+    {
+      "key": "cinpose_axel_4",
+      "root": "cinpose_axel_4",
+      "path": "assets/game/pilots/axel/body_frames/cinematic_characters/axel/poses/04_back_neutral.png",
+      "owner": "pilots/axel",
+      "cell": null
+    },
+    {
+      "key": "cinpose_axel_5",
+      "root": "cinpose_axel_5",
+      "path": "assets/game/pilots/axel/body_frames/cinematic_characters/axel/poses/05_back_left_3q.png",
+      "owner": "pilots/axel",
+      "cell": null
+    },
+    {
+      "key": "cinpose_axel_6",
+      "root": "cinpose_axel_6",
+      "path": "assets/game/pilots/axel/body_frames/cinematic_characters/axel/poses/06_back_right_3q.png",
+      "owner": "pilots/axel",
+      "cell": null
+    },
+    {
+      "key": "comm_axel_idle",
+      "root": "comm_axel_idle",
+      "path": "assets/game/pilots/axel/portraits/pilots_0922/comm/comm_axel_idle.png",
+      "owner": "pilots/axel",
+      "cell": null
+    },
+    {
+      "key": "comm_axel_happy",
+      "root": "comm_axel_happy",
+      "path": "assets/game/pilots/axel/portraits/pilots_0922/comm/comm_axel_happy.png",
+      "owner": "pilots/axel",
+      "cell": null
+    },
+    {
+      "key": "comm_axel_laugh",
+      "root": "comm_axel_laugh",
+      "path": "assets/game/pilots/axel/portraits/pilots_0922/comm/comm_axel_laugh.png",
+      "owner": "pilots/axel",
+      "cell": null
+    },
+    {
+      "key": "comm_axel_anger",
+      "root": "comm_axel_anger",
+      "path": "assets/game/pilots/axel/portraits/pilots_0922/comm/comm_axel_anger.png",
+      "owner": "pilots/axel",
+      "cell": null
+    },
+    {
+      "key": "comm_axel_sad",
+      "root": "comm_axel_sad",
+      "path": "assets/game/pilots/axel/portraits/pilots_0922/comm/comm_axel_sad.png",
+      "owner": "pilots/axel",
+      "cell": null
+    },
+    {
+      "key": "comm_axel_crash",
+      "root": "comm_axel_crash",
+      "path": "assets/game/pilots/axel/portraits/pilots_0922/comm/comm_axel_crash.png",
+      "owner": "pilots/axel",
+      "cell": null
+    },
+    {
+      "key": "comm_axel_victory",
+      "root": "comm_axel_victory",
+      "path": "assets/game/pilots/axel/portraits/pilots_0922/comm/comm_axel_victory.png",
+      "owner": "pilots/axel",
+      "cell": null
+    },
+    {
+      "key": "comm_axel_talk-closed",
+      "root": "comm_axel_talk-closed",
+      "path": "assets/game/pilots/axel/portraits/pilots_0922/comm/comm_axel_talk-closed.png",
+      "owner": "pilots/axel",
+      "cell": null
+    },
+    {
+      "key": "comm_axel_talk-small",
+      "root": "comm_axel_talk-small",
+      "path": "assets/game/pilots/axel/portraits/pilots_0922/comm/comm_axel_talk-small.png",
+      "owner": "pilots/axel",
+      "cell": null
+    },
+    {
+      "key": "comm_axel_talk-medium",
+      "root": "comm_axel_talk-medium",
+      "path": "assets/game/pilots/axel/portraits/pilots_0922/comm/comm_axel_talk-medium.png",
+      "owner": "pilots/axel",
+      "cell": null
+    },
+    {
+      "key": "comm_axel_talk-wide",
+      "root": "comm_axel_talk-wide",
+      "path": "assets/game/pilots/axel/portraits/pilots_0922/comm/comm_axel_talk-wide.png",
+      "owner": "pilots/axel",
+      "cell": null
+    },
+    {
+      "key": "comm_axel_talk-o",
+      "root": "comm_axel_talk-o",
+      "path": "assets/game/pilots/axel/portraits/pilots_0922/comm/comm_axel_talk-o.png",
+      "owner": "pilots/axel",
+      "cell": null
+    },
+    {
+      "key": "pav_axel",
+      "root": "pav_axel",
+      "path": "assets/game/pilots/axel/portraits/pilots_0922/portraits/axel-idle.png",
+      "owner": "pilots/axel",
+      "cell": null
+    },
+    {
+      "key": "axel_body_0",
+      "root": "axel_body_0",
+      "path": "assets/game/pilots/axel/body_frames/pilot_bodies/axel_body_0.png",
+      "owner": "pilots/axel",
+      "cell": null
+    },
+    {
+      "key": "axel_mega_shield_0",
+      "root": "axel_mega_shield_0",
+      "path": "assets/game/pilots/axel/abilities/axel_mega_shield_0923/shield_0.png",
+      "owner": "pilots/axel",
+      "cell": null
+    },
+    {
+      "key": "axel_mega_shield_1",
+      "root": "axel_mega_shield_1",
+      "path": "assets/game/pilots/axel/abilities/axel_mega_shield_0923/shield_1.png",
+      "owner": "pilots/axel",
+      "cell": null
+    },
+    {
+      "key": "axel_mega_shield_2",
+      "root": "axel_mega_shield_2",
+      "path": "assets/game/pilots/axel/abilities/axel_mega_shield_0923/shield_2.png",
+      "owner": "pilots/axel",
+      "cell": null
+    },
+    {
+      "key": "axel_mega_shield_3",
+      "root": "axel_mega_shield_3",
+      "path": "assets/game/pilots/axel/abilities/axel_mega_shield_0923/shield_3.png",
+      "owner": "pilots/axel",
+      "cell": null
+    },
+    {
+      "key": "axel_mega_shield_4",
+      "root": "axel_mega_shield_4",
+      "path": "assets/game/pilots/axel/abilities/axel_mega_shield_0923/shield_4.png",
+      "owner": "pilots/axel",
+      "cell": null
+    },
+    {
+      "key": "axel_mega_shield_5",
+      "root": "axel_mega_shield_5",
+      "path": "assets/game/pilots/axel/abilities/axel_mega_shield_0923/shield_5.png",
+      "owner": "pilots/axel",
+      "cell": null
+    },
+    {
+      "key": "axel_mega_shield_6",
+      "root": "axel_mega_shield_6",
+      "path": "assets/game/pilots/axel/abilities/axel_mega_shield_0923/shield_6.png",
+      "owner": "pilots/axel",
+      "cell": null
+    },
+    {
+      "key": "axel_mega_shield_7",
+      "root": "axel_mega_shield_7",
+      "path": "assets/game/pilots/axel/abilities/axel_mega_shield_0923/shield_7.png",
+      "owner": "pilots/axel",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_axel_idle",
+      "root": "pp5_raw_axel_idle",
+      "path": "assets/game/pilots/axel/portraits/pilots_0922/portraits/axel-idle.png",
+      "owner": "pilots/axel",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_axel_happy",
+      "root": "pp5_raw_axel_happy",
+      "path": "assets/game/pilots/axel/portraits/pilots_0922/portraits/axel-happy.png",
+      "owner": "pilots/axel",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_axel_laugh",
+      "root": "pp5_raw_axel_laugh",
+      "path": "assets/game/pilots/axel/portraits/pilots_0922/portraits/axel-laugh.png",
+      "owner": "pilots/axel",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_axel_anger",
+      "root": "pp5_raw_axel_anger",
+      "path": "assets/game/pilots/axel/portraits/pilots_0922/portraits/axel-anger.png",
+      "owner": "pilots/axel",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_axel_sad",
+      "root": "pp5_raw_axel_sad",
+      "path": "assets/game/pilots/axel/portraits/pilots_0922/portraits/axel-sad.png",
+      "owner": "pilots/axel",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_axel_crash",
+      "root": "pp5_raw_axel_crash",
+      "path": "assets/game/pilots/axel/portraits/pilots_0922/portraits/axel-crash.png",
+      "owner": "pilots/axel",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_axel_victory",
+      "root": "pp5_raw_axel_victory",
+      "path": "assets/game/pilots/axel/portraits/pilots_0922/portraits/axel-victory.png",
+      "owner": "pilots/axel",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_axel_talk-closed",
+      "root": "pp5_raw_axel_talk-closed",
+      "path": "assets/game/pilots/axel/portraits/pilots_0922/portraits/axel-talk-closed.png",
+      "owner": "pilots/axel",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_axel_talk-small",
+      "root": "pp5_raw_axel_talk-small",
+      "path": "assets/game/pilots/axel/portraits/pilots_0922/portraits/axel-talk-small.png",
+      "owner": "pilots/axel",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_axel_talk-medium",
+      "root": "pp5_raw_axel_talk-medium",
+      "path": "assets/game/pilots/axel/portraits/pilots_0922/portraits/axel-talk-medium.png",
+      "owner": "pilots/axel",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_axel_talk-wide",
+      "root": "pp5_raw_axel_talk-wide",
+      "path": "assets/game/pilots/axel/portraits/pilots_0922/portraits/axel-talk-wide.png",
+      "owner": "pilots/axel",
+      "cell": null
+    },
+    {
+      "key": "pp5_raw_axel_talk-o",
+      "root": "pp5_raw_axel_talk-o",
+      "path": "assets/game/pilots/axel/portraits/pilots_0922/portraits/axel-talk-o.png",
+      "owner": "pilots/axel",
+      "cell": null
+    }
+  ],
+  "files": [
+    {
+      "path": "assets/game/pilots/axel/abilities/axel_mega_shield_0923/frames.json",
+      "owner": "pilots/axel",
+      "bytes": 1520,
+      "role": "source or supporting file"
+    },
+    {
+      "path": "assets/game/pilots/axel/abilities/axel_mega_shield_0923/provenance.json",
+      "owner": "pilots/axel",
+      "bytes": 1301,
+      "role": "source or supporting file"
+    },
+    {
+      "path": "assets/game/pilots/axel/abilities/axel_mega_shield_0923/shield_0.png",
+      "owner": "pilots/axel",
+      "bytes": 69071,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/axel/abilities/axel_mega_shield_0923/shield_1.png",
+      "owner": "pilots/axel",
+      "bytes": 70460,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/axel/abilities/axel_mega_shield_0923/shield_2.png",
+      "owner": "pilots/axel",
+      "bytes": 70622,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/axel/abilities/axel_mega_shield_0923/shield_3.png",
+      "owner": "pilots/axel",
+      "bytes": 69449,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/axel/abilities/axel_mega_shield_0923/shield_4.png",
+      "owner": "pilots/axel",
+      "bytes": 70815,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/axel/abilities/axel_mega_shield_0923/shield_5.png",
+      "owner": "pilots/axel",
+      "bytes": 70593,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/axel/abilities/axel_mega_shield_0923/shield_6.png",
+      "owner": "pilots/axel",
+      "bytes": 72878,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/axel/abilities/axel_mega_shield_0923/shield_7.png",
+      "owner": "pilots/axel",
+      "bytes": 71864,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/axel/abilities/frames_0.png",
+      "owner": "pilots/axel",
+      "bytes": 73411,
+      "role": "registered runtime asset",
+      "width": 746,
+      "height": 200
+    },
+    {
+      "path": "assets/game/pilots/axel/body_frames/cinematic_characters/axel/poses/01_front_neutral.png",
+      "owner": "pilots/axel",
+      "bytes": 211431,
+      "role": "registered runtime asset",
+      "width": 314,
+      "height": 612
+    },
+    {
+      "path": "assets/game/pilots/axel/body_frames/cinematic_characters/axel/poses/02_front_left_3q.png",
+      "owner": "pilots/axel",
+      "bytes": 210175,
+      "role": "registered runtime asset",
+      "width": 333,
+      "height": 614
+    },
+    {
+      "path": "assets/game/pilots/axel/body_frames/cinematic_characters/axel/poses/03_front_right_3q.png",
+      "owner": "pilots/axel",
+      "bytes": 199635,
+      "role": "registered runtime asset",
+      "width": 318,
+      "height": 620
+    },
+    {
+      "path": "assets/game/pilots/axel/body_frames/cinematic_characters/axel/poses/04_back_neutral.png",
+      "owner": "pilots/axel",
+      "bytes": 196583,
+      "role": "registered runtime asset",
+      "width": 301,
+      "height": 619
+    },
+    {
+      "path": "assets/game/pilots/axel/body_frames/cinematic_characters/axel/poses/05_back_left_3q.png",
+      "owner": "pilots/axel",
+      "bytes": 189133,
+      "role": "registered runtime asset",
+      "width": 315,
+      "height": 616
+    },
+    {
+      "path": "assets/game/pilots/axel/body_frames/cinematic_characters/axel/poses/06_back_right_3q.png",
+      "owner": "pilots/axel",
+      "bytes": 200616,
+      "role": "registered runtime asset",
+      "width": 353,
+      "height": 609
+    },
+    {
+      "path": "assets/game/pilots/axel/body_frames/frames_0.png",
+      "owner": "pilots/axel",
+      "bytes": 417216,
+      "role": "registered runtime asset",
+      "width": 1564,
+      "height": 328
+    },
+    {
+      "path": "assets/game/pilots/axel/body_frames/pilot_bodies/axel_body_0.png",
+      "owner": "pilots/axel",
+      "bytes": 61867,
+      "role": "registered runtime asset",
+      "width": 129,
+      "height": 273
+    },
+    {
+      "path": "assets/game/pilots/axel/portraits/frames_0.png",
+      "owner": "pilots/axel",
+      "bytes": 2341815,
+      "role": "registered runtime asset",
+      "width": 2694,
+      "height": 726
+    },
+    {
+      "path": "assets/game/pilots/axel/portraits/pilots_0922/comm/comm_axel_anger.png",
+      "owner": "pilots/axel",
+      "bytes": 40672,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/axel/portraits/pilots_0922/comm/comm_axel_crash.png",
+      "owner": "pilots/axel",
+      "bytes": 40746,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/axel/portraits/pilots_0922/comm/comm_axel_happy.png",
+      "owner": "pilots/axel",
+      "bytes": 40447,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/axel/portraits/pilots_0922/comm/comm_axel_idle.png",
+      "owner": "pilots/axel",
+      "bytes": 40591,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/axel/portraits/pilots_0922/comm/comm_axel_laugh.png",
+      "owner": "pilots/axel",
+      "bytes": 40661,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/axel/portraits/pilots_0922/comm/comm_axel_sad.png",
+      "owner": "pilots/axel",
+      "bytes": 40588,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/axel/portraits/pilots_0922/comm/comm_axel_talk-closed.png",
+      "owner": "pilots/axel",
+      "bytes": 40591,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/axel/portraits/pilots_0922/comm/comm_axel_talk-medium.png",
+      "owner": "pilots/axel",
+      "bytes": 40459,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/axel/portraits/pilots_0922/comm/comm_axel_talk-o.png",
+      "owner": "pilots/axel",
+      "bytes": 40493,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/axel/portraits/pilots_0922/comm/comm_axel_talk-small.png",
+      "owner": "pilots/axel",
+      "bytes": 40443,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/axel/portraits/pilots_0922/comm/comm_axel_talk-wide.png",
+      "owner": "pilots/axel",
+      "bytes": 40629,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/axel/portraits/pilots_0922/comm/comm_axel_victory.png",
+      "owner": "pilots/axel",
+      "bytes": 40772,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/game/pilots/axel/portraits/pilots_0922/portraits/axel-anger.png",
+      "owner": "pilots/axel",
+      "bytes": 137959,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/axel/portraits/pilots_0922/portraits/axel-crash.png",
+      "owner": "pilots/axel",
+      "bytes": 138659,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/axel/portraits/pilots_0922/portraits/axel-happy.png",
+      "owner": "pilots/axel",
+      "bytes": 137815,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/axel/portraits/pilots_0922/portraits/axel-idle.png",
+      "owner": "pilots/axel",
+      "bytes": 137933,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/axel/portraits/pilots_0922/portraits/axel-laugh.png",
+      "owner": "pilots/axel",
+      "bytes": 137840,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/axel/portraits/pilots_0922/portraits/axel-sad.png",
+      "owner": "pilots/axel",
+      "bytes": 137955,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/axel/portraits/pilots_0922/portraits/axel-talk-closed.png",
+      "owner": "pilots/axel",
+      "bytes": 137933,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/axel/portraits/pilots_0922/portraits/axel-talk-medium.png",
+      "owner": "pilots/axel",
+      "bytes": 137217,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/axel/portraits/pilots_0922/portraits/axel-talk-o.png",
+      "owner": "pilots/axel",
+      "bytes": 137199,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/axel/portraits/pilots_0922/portraits/axel-talk-small.png",
+      "owner": "pilots/axel",
+      "bytes": 137443,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/axel/portraits/pilots_0922/portraits/axel-talk-wide.png",
+      "owner": "pilots/axel",
+      "bytes": 137562,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/axel/portraits/pilots_0922/portraits/axel-victory.png",
+      "owner": "pilots/axel",
+      "bytes": 138060,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/pilots/axel/ship_frames/ship_axel.png",
+      "owner": "pilots/axel",
+      "bytes": 750427,
+      "role": "registered runtime asset",
+      "width": 1024,
+      "height": 821
+    }
+  ],
+  "audio": {
+    "sfx": {},
+    "music": {}
+  },
+  "frameFolders": [
+    "portraits",
+    "body_frames",
+    "ship_frames",
+    "abilities"
+  ],
+  "furyShip": "Common hull in shared/ships; this pilot applies a runtime palette."
+}

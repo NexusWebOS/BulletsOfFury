@@ -5,7 +5,7 @@ from PIL import Image
 
 root=Path(__file__).resolve().parents[1]
 source=root/'_ART_SOURCES/campaign_0930/northern_hq_island.png'
-out=root/'assets/game/campaign_0930/northern_hq_island.png'
+out=root/'assets/game/shared/campaign/campaign_0930/northern_hq_island.png'
 im=Image.open(source).convert('RGBA')
 assert im.size==(1254,1254)
 box=im.getchannel('A').getbbox()

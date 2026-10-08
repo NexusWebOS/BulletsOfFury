@@ -237,8 +237,8 @@ er26WarTick=function(b,dt){
   const E=M.ram1002||(M.ram1002={t:0,state:'tell',ox:b.x,oy:b.y,tx:player.x,ty:player.y-32});E.t+=dt;
   const noWeapons=alive.length===0;
   if(noWeapons){b._s4war.shield.active=false;b.flash=.10;b._hitFlashColor='#ff3737';if((E.t*12|0)!==E.smoke){E.smoke=E.t*12|0;addTrail(b.x+rnd(-b.w*.2,b.w*.2),b.y+b.h*.22,null,'missile');}}
-  const warm=diffKey==='easy'?1.4:[1.05,.9,.78][n];
-  if(E.state==='tell'){combatWarningTick(b,'ram1002',E.t,warm);R.warnings=[{x:b.x,y:b.y,angle:Math.atan2(E.ty-b.y,E.tx-b.x),width:b.w*.55,progress:E.t/warm}];
+  const baseWarm=diffKey==='easy'?1.4:[1.05,.9,.78][n],warm=typeof maneuverRamWarm==='function'?maneuverRamWarm(b,baseWarm,E):baseWarm;
+  if(E.state==='tell'){combatWarningTick(b,'ram1002',E.t,warm);R.warnings=[{x:b.x,y:b.y,angle:Math.atan2(E.ty-b.y,E.tx-b.x),width:typeof maneuverRamWidth==='function'?maneuverRamWidth(b):b.w*.55,laneShape:'line',progress:E.t/warm}];
    if(E.t>=warm){E.state='drive';E.t=0;E.ox=b.x;E.oy=b.y;Audio.SFX.bossRoar?.();}}
   else if(E.state==='drive'){const p=clamp(E.t/.6,0,1),u=p*p*(3-2*p);b.x=lerp(E.ox,clamp(E.tx,camLeftX()+b.w*.4,camRightX()-b.w*.4),u);b.y=lerp(E.oy,Math.min(E.ty,VH*.72),u);
    if(player.invuln<=0&&!player.dead&&Math.hypot(player.x-b.x,player.y-b.y)<b.w*.42)playerHit();

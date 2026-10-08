@@ -38,8 +38,8 @@ def dam_band():
     """the rows where the two plates disagree strongly = the dam itself"""
     from PIL import Image, ImageChops
     import numpy as np
-    a = Image.open(os.path.join(GAME, 'assets/game/jungle800_v3_intact.png')).convert('RGB')
-    b = Image.open(os.path.join(GAME, 'assets/game/jungle800_v3_destroyed.png')).convert('RGB')
+    a = Image.open(os.path.join(GAME, 'assets/game/shared/combat/jungle800_v3_intact.png')).convert('RGB')
+    b = Image.open(os.path.join(GAME, 'assets/game/shared/combat/jungle800_v3_destroyed.png')).convert('RGB')
     d = np.array(ImageChops.difference(a, b)).sum(axis=2)
     rows = (d > 90).sum(axis=1)
     # ⚠ A LOW THRESHOLD SPREADS THE ANSWER ACROSS THE WHOLE PLATE. At `rows>20` this reported the

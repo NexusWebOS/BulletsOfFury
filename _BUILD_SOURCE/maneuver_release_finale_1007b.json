@@ -1,0 +1,23 @@
+[
+  {
+    "id": "FULLFINAL-easy-cruise-811",
+    "code": "FINAL1",
+    "stage": 8,
+    "diff": "easy",
+    "pilot": "yuri",
+    "level": 5,
+    "seed": 811,
+    "seconds": 1800,
+    "learned": true,
+    "competent": true,
+    "reaction": 0.25,
+    "decision": 0.1,
+    "sequence": true,
+    "capture": true,
+    "margin": 10,
+    "weapon": 3,
+    "speed": 1,
+    "missileLevel": 3,
+    "cruise": true
+  }
+]

@@ -10,7 +10,7 @@ He asked "show me the art we have first". Three panels, all from the plates on d
   C  ALREADY CUT BY MIKE     - the four whose art is still on disk but which he rejected by name.
 
 ⚠ THE PROTOTYPE PLATES ARE ATLAS CELLS, NOT LOOSE FILES. BOFX.cells['ns9e_wskim_idle'] is
-['en_s9',1490,2120,128,128] - a crop out of assets/game/atlas/en_s9.png. Reading the manifest's
+['en_s9',1490,2120,128,128] - a crop out of assets/game/levels/stage_09/enemies/en_s9.png. Reading the manifest's
 BOFX.img entry instead gives the path of the WHOLE 4096px sheet, and pasting that would put the
 entire atlas in every slot. The rects come from a node dump of BOFX.cells.
 
@@ -22,7 +22,7 @@ from PIL import Image, ImageDraw, ImageFont
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CELLS = json.load(open('/tmp/ns9e_cells.json'))
-ATLAS = Image.open(os.path.join(ROOT, 'assets/game/atlas/en_s9.png')).convert('RGBA')
+ATLAS = Image.open(os.path.join(ROOT, 'assets/game/levels/stage_09/enemies/en_s9.png')).convert('RGBA')
 
 # name, hp, behaviour, shield  - straight from S9_UNITS in game.js
 PROTO = [
@@ -35,9 +35,9 @@ PROTO = [
     ('tsplit',  42, 'halves into 2 needles', 'ion',   'cell'),
     ('cbreak',  52, 'narrow weave, tanky',   None,    'cell'),
     ('horizon', 88, 'apex drone, 5-wide',    'violet',
-     'assets/game/stage9_void_rift/enemies/event_horizon_0.png'),
+     'assets/game/levels/stage_09/enemies/stage9_void_rift/enemies/event_horizon_0.png'),
     ('dreadv', 130, 'apex, 7-wide @0.78s',   'prism',
-     'assets/game/stage9_void_rift/enemies/dreadnought_vanguard.png'),
+     'assets/game/levels/stage_09/enemies/stage9_void_rift/enemies/dreadnought_vanguard.png'),
 ]
 
 LIVE = [

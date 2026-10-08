@@ -3,7 +3,7 @@
     python brand9.py
 
   cf_logo.png            the ColeForge Phoenix engine plate (BOFX cell cf_logo)
-  bof_logo.png           the 0916 wordmark (assets/game/ui/logo_0916/bof_logo.png, loose)
+  bof_logo.png           the 0916 wordmark (assets/game/shared/ui/ui/logo_0916/bof_logo.png, loose)
   pose_<pilot>.png       each pilot's standing figure (pose_<pilot>_0, 256x320)
   pav_<pilot>.png        each pilot's avatar (pav_<pilot>)
   copyright.png          "(c) 2026 COLEFORGE PRODUCTIONS" - the stage face has no (c) glyph, so the mark is the

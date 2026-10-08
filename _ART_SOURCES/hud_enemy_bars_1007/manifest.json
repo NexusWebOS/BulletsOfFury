@@ -1,0 +1,79 @@
+[
+  {
+    "id": "stage_01",
+    "path": "assets/game/levels/stage_01/ui/enemy_bars_1007c.png",
+    "original": "C:\\Users\\Mike\\.codex\\generated_images\\01a10ef4-27c3-71d2-97c8-0d9fa5c0bb2f\\exec-b4c8869a-7aae-4737-bdae-3a23f1fb1c63.png",
+    "bytes": 1731773,
+    "sha256": "f9d2b4ca88d1181b5c9c5da4a8d5ec33e80e78c9595bcf8211a99094f65d0226"
+  },
+  {
+    "id": "stage_02",
+    "path": "assets/game/levels/stage_02/ui/enemy_bars_1007c.png",
+    "original": "C:\\Users\\Mike\\.codex\\generated_images\\01a10ef4-27c3-71d2-97c8-0d9fa5c0bb2f\\exec-7161a38e-4af2-48f3-9b31-42993fbc447a.png",
+    "bytes": 1747415,
+    "sha256": "92e6b71ed917e6818b27baead2e0fdc0dd814e132adcf0fb73523ea8d7b583c5"
+  },
+  {
+    "id": "stage_03",
+    "path": "assets/game/levels/stage_03/ui/enemy_bars_1007c.png",
+    "original": "C:\\Users\\Mike\\.codex\\generated_images\\01a10ef4-27c3-71d2-97c8-0d9fa5c0bb2f\\exec-b7e9655e-741b-4be5-a10b-a8739da97fac.png",
+    "bytes": 1842383,
+    "sha256": "4b1ddf3f35d64555a5f10375ca070a5fa757b0994eec74600c1031f90ab72459"
+  },
+  {
+    "id": "stage_04",
+    "path": "assets/game/levels/stage_04/ui/enemy_bars_1007c.png",
+    "original": "C:\\Users\\Mike\\.codex\\generated_images\\01a10ef4-27c3-71d2-97c8-0d9fa5c0bb2f\\exec-235a49c2-98ba-4859-8dbf-f5193fa90a16.png",
+    "bytes": 1625728,
+    "sha256": "7bf5afc43ce706a10edfe7a2553f635ee27e38e51c5ee2b242ce10b43a638089"
+  },
+  {
+    "id": "stage_05",
+    "path": "assets/game/levels/stage_05/ui/enemy_bars_1007c.png",
+    "original": "C:\\Users\\Mike\\.codex\\generated_images\\01a10ef4-27c3-71d2-97c8-0d9fa5c0bb2f\\exec-78b22af5-3f01-46cf-be60-abeae0c0af13.png",
+    "bytes": 1704958,
+    "sha256": "3c4dfc66ecc40333ba2a8da25039e1bc4d59e245494ab03b6a52b069a50c5a1a"
+  },
+  {
+    "id": "stage_06",
+    "path": "assets/game/levels/stage_06/ui/enemy_bars_1007c.png",
+    "original": "C:\\Users\\Mike\\.codex\\generated_images\\01a10ef4-27c3-71d2-97c8-0d9fa5c0bb2f\\exec-f549ed36-bf20-49c2-a205-7fb135ce4a0c.png",
+    "bytes": 1700396,
+    "sha256": "50b3e2e08e405712853c12bd64d55cb0dca04f126f0d7cb9fba61717bab7246b"
+  },
+  {
+    "id": "stage_07",
+    "path": "assets/game/levels/stage_07/ui/enemy_bars_1007c.png",
+    "original": "C:\\Users\\Mike\\.codex\\generated_images\\01a10ef4-27c3-71d2-97c8-0d9fa5c0bb2f\\exec-22452556-7bd9-4fe7-9e49-a8b71896151a.png",
+    "bytes": 1782147,
+    "sha256": "c40adb537895d4c2b05a3475d601af88b3e3434fd17e624324f8552ed3b749fe"
+  },
+  {
+    "id": "stage_08",
+    "path": "assets/game/levels/stage_08/ui/enemy_bars_1007c.png",
+    "original": "C:\\Users\\Mike\\.codex\\generated_images\\01a10ef4-27c3-71d2-97c8-0d9fa5c0bb2f\\exec-29d9d6af-11b5-4e72-baeb-bed339c75ab0.png",
+    "bytes": 1851266,
+    "sha256": "bbf26549c3c37b23e62ae9637d7955d6c90eadd843f8e21f22073f0cb9df0a31"
+  },
+  {
+    "id": "stage_09",
+    "path": "assets/game/levels/stage_09/ui/enemy_bars_1007c.png",
+    "original": "C:\\Users\\Mike\\.codex\\generated_images\\01a10ef4-27c3-71d2-97c8-0d9fa5c0bb2f\\exec-03616b32-3e7a-444d-8879-ee67694ce2de.png",
+    "bytes": 1673563,
+    "sha256": "0d2758b9cb2d8e9f72f1e8d86229ac91f2f211d981865dc883a08bba12e9cf90"
+  },
+  {
+    "id": "rebels",
+    "path": "assets/game/levels/stage_06/ui/rebel_bars_1007c.png",
+    "original": "C:\\Users\\Mike\\.codex\\generated_images\\01a10ef4-27c3-71d2-97c8-0d9fa5c0bb2f\\exec-aedd7747-aa05-444f-b2c3-29da9afc514c.png",
+    "bytes": 1969064,
+    "sha256": "b9abaa246ffb800f25a3e793656d2ca9de1763cb7683358326cde0c630beccfc"
+  },
+  {
+    "id": "harrier",
+    "path": "assets/game/levels/stage_06/ui/harrier_bars_1007c.png",
+    "original": "C:\\Users\\Mike\\.codex\\generated_images\\01a10ef4-27c3-71d2-97c8-0d9fa5c0bb2f\\exec-b8d2da04-213e-43f0-b70c-c0a00e06bfcb.png",
+    "bytes": 1277047,
+    "sha256": "2cdf166cc9ebf95801bd31ba2c51c345616525f52c809b73bdff6936f9b4df36"
+  }
+]

@@ -1,0 +1,54 @@
+{
+  "images": [
+    {
+      "name": "reaver_parts",
+      "prompt": "Use case: stylized-concept. Production 16-bit pixel-art modular enemy component sheet for Bullets of Fury. The attached reference is the current Inferno Reaver miniboss: preserve its black volcanic metal, orange molten cracks, fighter silhouette and sharply pointed nose. Regenerate it as SIX clean separate game components, NOT an assembled ship. On genuine transparent alpha background, exact 3 columns by 2 rows, equal square cells, generous empty gutters, no text or labels. Top left: narrow central fuselage with pointed nose, lava reactor, sockets but NO wings and NO side cannons. Top middle: left swept volcanic armored wing only, complete inner connection. Top right: right mirrored swept wing only. Bottom left: left long articulated downward-firing double cannon assembly only, with orange energized muzzle and armored hinge near top. Bottom middle: right long cannon assembly only, mirrored. Bottom right: central nose reactor/emitter module only. Each part complete, isolated, orthographic top-down with nose/barrels pointing down-screen, matching source pixels and shading, no baked shadows, no extra assembled ship, no background checkerboard. All parts intended to attach and move independently in a game.",
+      "reference": "C:/Users/Mdogg/Desktop/BOF-CODE/BulletsOfFury/_shots/combat_1003i/inferno-reference.png",
+      "source": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0e3c8-265d-7731-8ffe-ee42ebb5ba3c\\exec-d51a07d1-8cab-4ed7-b7d5-e8e9b2eecd7b.png",
+      "file": "assets/game/shared/combat/combat_1003i/reaver_parts.png",
+      "sha256": "5adf3a8a731df5865aea97256a1eb648114f68a5264a2142d6a73c30a5268b37",
+      "size": [
+        1254,
+        1254
+      ],
+      "active": true
+    },
+    {
+      "name": "laser_beams",
+      "prompt": "Use case: stylized-concept. Create an authored high quality 16-bit arcade sci-fi continuous LASER BEAM TEXTURE sprite sheet, genuine transparent alpha. EXACT grid 3 columns by 6 rows, 18 isolated horizontal beam strips. Each row has three successive subtle animated pulse poses of the SAME laser, each centered in its cell and pointing from left to right. Row1 molten orange/gold; Row2 icy bright cyan/blue; Row3 acid neon green; Row4 cosmic violet/purple; Row5 red/crimson; Row6 electric gold/yellow. Every beam is a strong solid white-hot narrow central core surrounded by layered pixel plasma ribbons and sharply defined colored edges. Texture fills the middle 80 percent width and middle 35 percent height of each cell. Parallel width along strip, seamless straight ends suitable for tiling, no rounded projectile tips and no muzzle blobs. Crisp pixel clusters and controlled luminous edge pixels, no smeary photographic haze, no stars or letters, no guns, no scene, no fake checkerboard. Keep ample transparent gutters between all 18 strips; consistent thickness and axis across all three columns. This sheet is game-ready source art for continuous boss lasers, not an illustration.",
+      "source": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0e3c8-265d-7731-8ffe-ee42ebb5ba3c\\exec-4f5a73d9-f321-4e59-a0e2-e1cabeedab0c.png",
+      "file": "assets/game/shared/combat/combat_1003i/laser_beams.png",
+      "sha256": "aa268d0750fb200c27a001059884b70a1842fd415cd17b9971411ba83c19d527",
+      "size": [
+        1247,
+        1261
+      ],
+      "active": true
+    },
+    {
+      "name": "laser_muzzles",
+      "prompt": "Use case: stylized-concept. Create an authored high quality 16-bit arcade sci-fi LASER MUZZLE FLASH sprite sheet on genuine transparent alpha. EXACT grid 3 columns by 6 rows. Each row shows three successive animated poses of a laser emitter bloom from compact compression ring to brilliant radial discharge to smaller residual corona. Row1 orange/gold fire; Row2 cyan/blue ice; Row3 acid neon green; Row4 violet/purple cosmic; Row5 red/crimson; Row6 electric gold/yellow. Eighteen isolated circular flashes, each perfectly centered in equal cells with wide transparent gutters. Bright white-hot tiny central source, concentric jagged plasma ring, short six-to-eight pointed star lobes, readable crisp chunky pixel clusters. Keep every flash self-contained, no beams, no weapons, no backgrounds, no letters, no perspective, no checkerboard. Matched family of game sprites with steady anchor for muzzle animation attached to articulated boss weapons.",
+      "source": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0e3c8-265d-7731-8ffe-ee42ebb5ba3c\\exec-829441eb-9e66-4666-8caf-bc666fce840a.png",
+      "file": "assets/game/shared/combat/combat_1003i/laser_muzzles.png",
+      "sha256": "1da9d7c6688d4c18664b09631a8ce21ef4800bf8dce2038a4b73bf2d12a39866",
+      "size": [
+        1024,
+        1536
+      ],
+      "active": true
+    },
+    {
+      "name": "laser_muzzles_edit",
+      "prompt": "Edit this laser muzzle sprite sheet: remove ALL background including the colored cloudy haze between and behind the flashes. Output genuine transparent alpha with clean tightly bounded individual sprites. Preserve exactly the 3 columns by 6 rows, all eighteen centers and their spacing, orange/cyan/green/violet/red/yellow row colors, bright white centers, pixelart plasma rings and short pointed lobes. Delete haze and ambient glow outside the sharp pixel silhouettes. Do not replace the background with black, checkerboard, white or any color. All space between the sprites must have alpha=0. Do not add or rearrange anything.",
+      "source": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0e3c8-265d-7731-8ffe-ee42ebb5ba3c\\exec-776fd0b7-ffd4-469e-b987-523a82348994.png",
+      "file": "assets/game/shared/combat/combat_1003i/laser_muzzles_edit.png",
+      "sha256": "e371249981236cba0315e5c89c8a1fbfee1d469906f11917eee859f2e4d32023",
+      "size": [
+        1024,
+        1536
+      ],
+      "active": false
+    }
+  ],
+  "cells": "assets/game/shared/combat/combat_1003i/cells.json"
+}

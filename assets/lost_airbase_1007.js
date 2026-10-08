@@ -2,7 +2,7 @@
 /* Authored abandoned desert airbase. One native PNG powers the entire stage and
    continuous pursuit; alternating vertical reflections join identical edge rows.
    This replaces the terrain renderer only. Wave/spawn progression stays mapScroll. */
-const LA1007={key:'la1007_airbase',path:'assets/game/hardcorps_1007/stage4_airbase.png',
+const LA1007={key:'la1007_airbase',path:'assets/game/levels/stage_04/stage/hardcorps_1007/stage4_airbase.png',
  sourceW:1024,sourceH:1536,worldW:680,scrollLen:3568,scroll:0,mapPrev:null,draws:0,tiles:[]};
 XART._src[LA1007.key]=LA1007.path;
 // Register the loose master for data-only tools as well as runtime XART.

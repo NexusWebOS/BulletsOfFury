@@ -15,9 +15,9 @@ def replace_once(old: str, new: str) -> None:
 
 
 replace_once(
-    "  BOFX.img.fzt_fire_laser_0920='assets/game/bosses/furnace/fzt_fire_laser_0920.png';",
-    "  BOFX.img.fzt_fire_laser_0920='assets/game/bosses/furnace/fzt_fire_laser_0920.png';\n"
-    "  BOFX.img.frost_furious_beam_0920='assets/game/bosses/frost/frost_furious_beam_0920.png';",
+    "  BOFX.img.fzt_fire_laser_0920='assets/game/levels/stage_02/boss/bosses/furnace/fzt_fire_laser_0920.png';",
+    "  BOFX.img.fzt_fire_laser_0920='assets/game/levels/stage_02/boss/bosses/furnace/fzt_fire_laser_0920.png';\n"
+    "  BOFX.img.frost_furious_beam_0920='assets/game/levels/stage_03/boss/bosses/frost/frost_furious_beam_0920.png';",
 )
 
 replace_once(

@@ -5,8 +5,8 @@ path = Path('assets/game.js')
 data = path.read_bytes()
 assert b'\r\n' not in data
 
-old = b"  X._src['cfx_stage7_warden_shell']='assets/game/combat_final/stage7_warden_toxic_pressure_shell_spritecook.png';"
-new = old + b"\n  X._src['cfx_stage7_warden_machine_round']='assets/game/combat_final/stage7_warden_toxic_machine_round_0920.png';"
+old = b"  X._src['cfx_stage7_warden_shell']='assets/game/levels/stage_07/stage/combat_final/stage7_warden_toxic_pressure_shell_spritecook.png';"
+new = old + b"\n  X._src['cfx_stage7_warden_machine_round']='assets/game/levels/stage_07/stage/combat_final/stage7_warden_toxic_machine_round_0920.png';"
 assert data.count(old) == 1
 data = data.replace(old, new, 1)
 

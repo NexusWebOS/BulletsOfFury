@@ -78,14 +78,14 @@ module.exports=function(vm,ctxv,ok){
  ok(out.arcadeSilent&&out.campaignCronos,'1002 B: arcade keeps him silent; the campaign keeps the Cronos reveal');
  ok(out.holdT<2,'1002 B: he holds the unfolded plate below 2.0 s, where the base makes him hittable');
  for(const f of ['hammer_avatar','dispatch_cole','dispatch_decker','dispatch_axel','dispatch_lizzie','dispatch_falva']){
-  const s=png('assets/game/dispatch_1002/'+f+'.png');ok(s[0]>=126&&s[0]<=128&&s[1]>=122&&s[1]<=128,'1002 B: '+f+' is a comm-box sized plate ('+s.join('x')+')');}
+  const s=png('assets/game/shared/combat/dispatch_1002/'+f+'.png');ok(s[0]>=126&&s[0]<=128&&s[1]>=122&&s[1]<=128,'1002 B: '+f+' is a comm-box sized plate ('+s.join('x')+')');}
  ok(out.roleBomb==='green'&&out.roleSide==='green'&&out.roleMG==='orange'&&out.roleBlue===null,
    '1002 C: the assault squadron wears its role - bombers green, a Furious gun gate orange, an unarmed gate blue');
  ok(out.bomberNull&&out.bomberPlanned,'1002 C: a stage-6 s6bomber spawns nothing and plans a warned stealth flight instead');
  ok(out.strikePlanned,'1002 C: the cardinal strike passes are planned stealth flights too');
  ok(new Set(out.roles).size===2,'1002 C: consecutive flights rotate their roles ('+out.roles+')');
  ok(out.strikeWrapped,'1002 C: the strike tick hands a stealth jet to its own role tick');
- for(const r of ['red','green','orange']){const s=png('assets/game/stealth_1002/'+r+'.png');ok(s[0]===512&&s[1]===128,'1002 C: the '+r+' stealth sheet is four 128px headings ('+s.join('x')+')');}
+ for(const r of ['red','green','orange']){const s=png('assets/game/levels/stage_06/enemies/stealth_1002/'+r+'.png');ok(s[0]===512&&s[1]===128,'1002 C: the '+r+' stealth sheet is four 128px headings ('+s.join('x')+')');}
  ok(out.faceDown,'1002 D: the escort heading helper faces nose-south for a southward vector');
  ok(out.diveHeld,'1002 D: the escort dive is held for its own warned tell, not the base 0.4 s flash');
  ok(out.plays,'1002 D: the squadron brain rotates pincer, missile and bracket plays');
@@ -94,10 +94,10 @@ module.exports=function(vm,ctxv,ok){
  ok(out.teamNotCole&&out.uniqueTeam>=5,'1002 E: the heads-down lines come from the team, at least five different pilots ('+out.uniqueTeam+')');
  ok(out.shocked>=4,'1002 E: the team reacts in shock after the demo');
  ok(out.callistoText==='SECRET WEAPON CALLISTOWEAPON STATUS = ACTIVATED','1002 E: the banner reads SECRET WEAPON CALLISTO / WEAPON STATUS = ACTIVATED');
- for(let i=0;i<3;i++){const s=png('assets/game/dispatch_1002/cole_rage_'+i+'.png');ok(s[0]===128&&s[1]===128,'1002 E: cole_rage_'+i+' is 128x128');}
- for(const f of ['turbulence_carrier_1002.mp3','jetwash_1002.mp3'])ok(fs.statSync(path.join(ROOT,'assets/game/sounds',f)).size>4000,'1002 F: '+f+' ships');
+ for(let i=0;i<3;i++){const s=png('assets/game/shared/combat/dispatch_1002/cole_rage_'+i+'.png');ok(s[0]===128&&s[1]===128,'1002 E: cole_rage_'+i+' is 128x128');}
+ for(const f of ['turbulence_carrier_1002.mp3','jetwash_1002.mp3'])ok(fs.statSync(path.join(ROOT,vm.runInContext('bofAssetPath('+JSON.stringify('assets/game/sounds/'+f)+')',ctxv))).size>4000,'1002 F: '+f+' ships');
  /* G - the solid fusion beam and the unified icon box */
- {const s=png('assets/game/fusion_1002/beam.png');ok(s[0]===200&&s[1]===147,'1002 G: the fusion beam is eight 25x147 frames of one solid column ('+s.join('x')+')');}
+ {const s=png('assets/game/shared/player_weapons/fusion_1002/beam.png');ok(s[0]===200&&s[1]===147,'1002 G: the fusion beam is eight 25x147 frames of one solid column ('+s.join('x')+')');}
  ok(fs.existsSync(path.join(ROOT,'_BUILD_SOURCE/fusion_beam_spritecook_1002.png')),'1002 G: the SpriteCook source plate (an edit of Falva\'s laser) is kept beside its build script');
  const ink=html.indexOf('assets/icon_ink_1002.js');ok(ink>0&&ink<i2,'1002 G: the icon ink table loads before feedback_1002.js');
  let inkErr=null;try{vm.runInContext(fs.readFileSync(path.join(ROOT,'assets/icon_ink_1002.js'),'utf8').replace('const ICON_INK_1002=','this.ICON_INK_1002_T='),ctxv);}catch(e){inkErr=String(e);}

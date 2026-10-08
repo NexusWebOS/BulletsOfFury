@@ -4,7 +4,7 @@ import hashlib,json,subprocess
 import imageio_ffmpeg
 R=Path(__file__).resolve().parents[1]
 src=Path('C:/Users/Mdogg/Desktop/Gasline.wav')
-dst=R/'assets/game/music/LevelX.mp3'
+dst=R/'assets/game/levels/stage_x/audio/music/LevelX.mp3'
 ff=imageio_ffmpeg.get_ffmpeg_exe()
 args=[ff,'-hide_banner','-loglevel','error','-y','-i',str(src),'-map','0:a:0','-map_metadata','-1','-codec:a','libmp3lame','-b:a','256k','-metadata','title=Gasline','-metadata','album=Bullets of Fury - Stage X',str(dst)]
 subprocess.run(args,check=True)

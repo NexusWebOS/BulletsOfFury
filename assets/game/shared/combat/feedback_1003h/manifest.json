@@ -1,0 +1,111 @@
+{
+  "assets": [
+    {
+      "name": "portrait_voss",
+      "file": "assets/game/shared/combat/feedback_1003h/portrait_voss.png",
+      "width": 2172,
+      "height": 724,
+      "sha256": "1e9b17aa6a6a41b6746f4d8f5bfcb5270b895e74c14942dd11fa20c2ef971f70",
+      "active": true
+    },
+    {
+      "name": "portrait_nyx",
+      "file": "assets/game/shared/combat/feedback_1003h/portrait_nyx.png",
+      "width": 2172,
+      "height": 724,
+      "sha256": "d5e91ed298110744536eaaa96ba5eeabeda1f4a48622daffd9c3b17fc523f47d",
+      "active": true
+    },
+    {
+      "name": "portrait_rook",
+      "file": "assets/game/shared/combat/feedback_1003h/portrait_rook.png",
+      "width": 2172,
+      "height": 724,
+      "sha256": "d4ab0cc1b2c9e57c3f2ac4892c9ce5c8000a572bd1551c2e226c598abb065706",
+      "active": true
+    },
+    {
+      "name": "portrait_kaia",
+      "file": "assets/game/shared/combat/feedback_1003h/portrait_kaia.png",
+      "width": 2172,
+      "height": 724,
+      "sha256": "a257708044873b61b32a57f2ffce20311ea82c70981356959c8ebfb44b369977",
+      "active": true
+    },
+    {
+      "name": "portrait_jace",
+      "file": "assets/game/shared/combat/feedback_1003h/portrait_jace.png",
+      "width": 2172,
+      "height": 724,
+      "sha256": "e43d0321deaef9b8bcd9906b20526c4a4856abb49c9954d4452650b3b1e455b4",
+      "active": true
+    },
+    {
+      "name": "hammer_portrait",
+      "file": "assets/game/shared/combat/feedback_1003h/hammer_portrait.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "2560f316368744c9a879e7be48785dd5038c6978e2dee1370288ee1bd11ff917",
+      "active": true
+    },
+    {
+      "name": "orbital_overhead",
+      "file": "assets/game/shared/combat/feedback_1003h/orbital_overhead.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "7aeb9d9530f8d8c54f3f3b9b7a2fdf07df7056285d9c8a953e0b41a3e7a73f40",
+      "active": false
+    },
+    {
+      "name": "earth_surface",
+      "file": "assets/game/shared/combat/feedback_1003h/earth_surface.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "2f24ba70a4d2a287cb27dc55b7ec885088880663d34f54d6ab3a2390889eced2",
+      "active": false
+    },
+    {
+      "name": "hammer_closeup",
+      "file": "assets/game/shared/combat/feedback_1003h/hammer_closeup.png",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "2f1f79f47ba941a38cff090afb76d185cd8ae4575dfe2a18b01cd66416ff1e6d",
+      "active": true
+    },
+    {
+      "name": "earth",
+      "file": "assets/game/shared/combat/feedback_1003h/earth.png",
+      "width": 1312,
+      "height": 1199,
+      "sha256": "82a9f2c0dda79f8e5c10c991349446c720ecb471d723de1b43cf61df53bd6ba9",
+      "active": true
+    },
+    {
+      "name": "orbital_overhead_v2",
+      "file": "assets/game/shared/combat/feedback_1003h/orbital_overhead_v2.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "814bc9b95b4cdea4d42909228dda485622a2dafeca224cd12fbb5bb1b02088b1",
+      "active": true
+    },
+    {
+      "name": "earth_surface_v2",
+      "file": "assets/game/shared/combat/feedback_1003h/earth_surface_v2.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "da159aa8a3d9e7fa6a93f8ed51c5c801b4c39c2487c2579ed917844edb71b41d",
+      "active": true
+    },
+    {
+      "name": "orbital_aftermath",
+      "file": "assets/game/shared/combat/feedback_1003h/orbital_aftermath.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "311a5285ccad56aae996aa14437c85f8a0b5484e08e2c88eea879eb3dd2313bd",
+      "active": true
+    }
+  ],
+  "runtime": "assets/feedback_1003h.js",
+  "source": "_ART_SOURCES/feedback_1003h/generation.json",
+  "notes": "Original outputs unchanged. Neutral portrait bounds and uneven rebel pitch bounds are measured in runtime. Closeup is a 2x2 equal grid. Current Furyship reference is furyship_0914/runtime_base.png; legacy-ship cinematic attempts preserved but not loaded."
+}

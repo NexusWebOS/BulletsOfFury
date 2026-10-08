@@ -150,7 +150,7 @@ with sync_playwright() as pw:
       for(const k of MENU_KEYS){
         const live=XART.get(k); if(!live) continue;
         const name=k.slice(4,-5);
-        let src; try{ src=await load('assets/game/ui/title_0916/btn_'+name+'.png'); }catch(e){ continue; }
+        let src; try{ src=await load('assets/game/shared/ui/ui/title_0916/btn_'+name+'.png'); }catch(e){ continue; }
         const A=grab(live), B=grab(src);
         if(A.w!==B.w||A.h!==B.h){ out[k]={sizeMismatch:[A.w,A.h,B.w,B.h]}; continue; }
         const lamp=[], text=[], was=[], wasT=[];

@@ -318,9 +318,9 @@ rep("  if(typeof forgeEntry==='function'){ const _fe=forgeEntry(w); if(_fe && _f
     "    const _fk='micon_forge_'+_fe.elem+'_'+w, _fl=_fe.lv|0;\n"
     "    if(_fl>1 && XART._src[_fk+'_'+_fl]) return _fk+'_'+_fl;      /* the level's own badge (II..V), when its plate landed */\n"
     "    if(XART._src[_fk]) return _fk; } }\n")
-rep("    for(const _fs of [0,1,2,3,5,7]) X._src['micon_forge_'+_fe+'_'+_fs]='assets/game/ui/forge_0917/micon_forge_'+_fe+'_'+_fs+'.png';\n",
-    "    for(const _fs of [0,1,2,3,5,7]){ X._src['micon_forge_'+_fe+'_'+_fs]='assets/game/ui/forge_0917/micon_forge_'+_fe+'_'+_fs+'.png';\n"
-    "      for(let _fl=2;_fl<=5;_fl++) X._src['micon_forge_'+_fe+'_'+_fs+'_'+_fl]='assets/game/ui/forge_0917/micon_forge_'+_fe+'_'+_fs+'_'+_fl+'.png'; }\n")
+rep("    for(const _fs of [0,1,2,3,5,7]) X._src['micon_forge_'+_fe+'_'+_fs]='assets/game/shared/ui/ui/forge_0917/micon_forge_'+_fe+'_'+_fs+'.png';\n",
+    "    for(const _fs of [0,1,2,3,5,7]){ X._src['micon_forge_'+_fe+'_'+_fs]='assets/game/shared/ui/ui/forge_0917/micon_forge_'+_fe+'_'+_fs+'.png';\n"
+    "      for(let _fl=2;_fl<=5;_fl++) X._src['micon_forge_'+_fe+'_'+_fs+'_'+_fl]='assets/game/shared/ui/ui/forge_0917/micon_forge_'+_fe+'_'+_fs+'_'+_fl+'.png'; }\n")
 
 open(p, 'wb').write(s.encode('utf-8'))
 print('patched: score bank + exchange, armory levels, INFUSION_MAX 5, round scaling, game-over line, vault rows, GS.ARMORY, forge hook, icon levels')

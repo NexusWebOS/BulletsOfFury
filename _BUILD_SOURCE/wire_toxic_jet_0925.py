@@ -12,7 +12,7 @@ def replace_once(old, new):
 
 replace_once(
     "  for(const _jv of ['desert','black','snow'])",
-    "  BOFX.img.overhaul_toxic_jet='assets/game/enemy_overhaul_0925/sprites/stage7_toxic_jet_01.png';\n"
+    "  BOFX.img.overhaul_toxic_jet='assets/game/levels/stage_07/enemies/enemy_overhaul_0925/sprites/stage7_toxic_jet_01.png';\n"
     "  for(let _tc=0;_tc<8;_tc++)BOFX.img['overhaul_toxic_core_'+_tc]='assets/game/enemy_overhaul_0925/sprites/stage7_toxic_core_'+_tc+'.png';\n"
     "  for(let _te=0;_te<6;_te++)BOFX.img['overhaul_toxic_exhaust_'+_te]='assets/game/enemy_overhaul_0925/sprites/stage7_toxic_exhaust_'+_te+'.png';\n"
     "  for(const _jv of ['desert','black','snow'])"

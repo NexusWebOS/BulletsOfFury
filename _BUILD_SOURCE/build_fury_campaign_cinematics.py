@@ -317,7 +317,7 @@ def lounge_scene(background: Image.Image, seated: dict[str, Image.Image], placem
 
 def build_lounge_scenes(seated: dict[str, Image.Image], crest: Image.Image) -> dict:
     LOUNGE.mkdir(parents=True, exist_ok=True)
-    lounge = Image.open(ROOT / "assets/game/cinematic_backgrounds/fury_hq/08_squad_ready_room.png").convert("RGB")
+    lounge = Image.open(ROOT / "assets/game/shared/cinematics/cinematic_backgrounds/fury_hq/08_squad_ready_room.png").convert("RGB")
     specs = {
         "01_brotherhood_axel_freezer_lounge.png": (
             [("axel", 655, 875, 540), ("freezer", 1040, 875, 545)],
@@ -363,7 +363,7 @@ def build_lounge_scenes(seated: dict[str, Image.Image], crest: Image.Image) -> d
 
     # Separate restricted-access story beat for Cole and Decker.
     lab = Image.open(INPUTS / "secret_prototype_lab_rgb.png").convert("RGBA")
-    decker = Image.open(ROOT / "assets/game/cinematic_characters/decker/poses/01_front_neutral.png").convert("RGBA")
+    decker = Image.open(ROOT / "assets/game/pilots/decker/body_frames/cinematic_characters/decker/poses/01_front_neutral.png").convert("RGBA")
     cole = Image.open(ROOT / "assets/game/cinematic_characters/cole/poses/01_front_neutral.png").convert("RGBA")
     place_character(lab, decker, 350, 885, 650)
     place_character(lab, cole, 1330, 885, 660)
@@ -382,12 +382,12 @@ def build_lounge_scenes(seated: dict[str, Image.Image], crest: Image.Image) -> d
 def build_pilot_scenes(exterior_entries: dict) -> dict:
     PILOTS.mkdir(parents=True, exist_ok=True)
     bg = {
-        "launch": ROOT / "assets/game/cinematic_backgrounds/fury_hq/01_launch_bay_runway.png",
-        "command": ROOT / "assets/game/cinematic_backgrounds/fury_hq/02_command_deck_nine.png",
-        "briefing": ROOT / "assets/game/cinematic_backgrounds/fury_hq/03_briefing_classroom.png",
-        "armory": ROOT / "assets/game/cinematic_backgrounds/fury_hq/05_armory_gear_bay.png",
-        "ready": ROOT / "assets/game/cinematic_backgrounds/fury_hq/08_squad_ready_room.png",
-        "observation": ROOT / "assets/game/cinematic_backgrounds/fury_hq/09_observation_deck.png",
+        "launch": ROOT / "assets/game/shared/cinematics/cinematic_backgrounds/fury_hq/01_launch_bay_runway.png",
+        "command": ROOT / "assets/game/shared/cinematics/cinematic_backgrounds/fury_hq/02_command_deck_nine.png",
+        "briefing": ROOT / "assets/game/shared/cinematics/cinematic_backgrounds/fury_hq/03_briefing_classroom.png",
+        "armory": ROOT / "assets/game/shared/cinematics/cinematic_backgrounds/fury_hq/05_armory_gear_bay.png",
+        "ready": ROOT / "assets/game/shared/cinematics/cinematic_backgrounds/fury_hq/08_squad_ready_room.png",
+        "observation": ROOT / "assets/game/shared/cinematics/cinematic_backgrounds/fury_hq/09_observation_deck.png",
         "lab": INPUTS / "secret_prototype_lab_rgb.png",
         "jungle": ROOT / exterior_entries["03_fury_hq_jungle_gate_banner"]["file"],
         "beach": ROOT / exterior_entries["02_fury_hq_beach_approach_banner"]["file"],
@@ -540,7 +540,7 @@ def main() -> None:
             "mode": "built-in ImageGen reference mode for official branding and exterior signage; deterministic Pillow compositing for character staging",
             "identity_policy": "seated poses generated from the approved six-pose character masters",
             "text_policy": "official FURY HQ and EARTH DIVISION lettering is generated as an integrated physical part of every approved insignia and exterior sign",
-            "prompt_record": "assets/game/cinematic_campaign/GENERATION_PROMPTS.md",
+            "prompt_record": "assets/game/shared/cinematics/cinematic_campaign/GENERATION_PROMPTS.md",
         },
     }
     OUT.mkdir(parents=True, exist_ok=True)

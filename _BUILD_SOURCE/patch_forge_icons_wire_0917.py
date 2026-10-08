@@ -28,7 +28,7 @@ add1 = n1 + ("  /* THE FORGE'S OWN ICONS (0917): one badge per element x forgeab
              "     the loose-file cache, so they could not share a tier icon's key. weaponIconKey prefers them\n"
              "     for a forged slot. */\n"
              "  for(const _fe of ['fire','ice','lightning','prism','toxic','kinetic','chrome','water','dark'])\n"
-             "    for(const _fs of [0,1,2,3,5,7]) X._src['micon_forge_'+_fe+'_'+_fs]='assets/game/ui/forge_0917/micon_forge_'+_fe+'_'+_fs+'.png';\n")
+             "    for(const _fs of [0,1,2,3,5,7]) X._src['micon_forge_'+_fe+'_'+_fs]='assets/game/shared/ui/ui/forge_0917/micon_forge_'+_fe+'_'+_fs+'.png';\n")
 assert s.count(n1) == 1, 'chaingun icon registration line not found once'
 if 'micon_forge_' not in s:
     s = s.replace(n1, add1)

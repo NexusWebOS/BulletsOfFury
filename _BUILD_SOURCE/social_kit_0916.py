@@ -3,7 +3,7 @@
 Builds every avatar / banner / thumbnail plate the YouTube, X and Instagram
 pages need, from the SHIPPED art only:
 
-    assets/game/ui/logo_0916/bof_logo.png   the authored wordmark (magenta already keyed)
+    assets/game/shared/ui/ui/logo_0916/bof_logo.png   the authored wordmark (magenta already keyed)
     docs/marketing_0916/cover_b_with_logo.png   the cover painting
 
 Nothing here is generated or invented -- it is crop, scale and composite, so the

@@ -9,7 +9,7 @@ sys.path.insert(0,str(ROOT/'_BUILD_SOURCE'))
 import shoot
 from playwright.sync_api import sync_playwright
 OUT=ROOT/'_shots/furyship_0914'
-pack=json.loads((ROOT/'assets/game/furyship_0914/pack.json').read_text())
+pack=json.loads((ROOT/'assets/game/shared/ships/furyship_0914/pack.json').read_text())
 port, shutdown=shoot.serve(str(ROOT))
 errors=[]
 try:
@@ -22,18 +22,18 @@ try:
   page.wait_for_function('()=>(window.__bofFrames|0)>4',timeout=120000)
   page.evaluate(shoot.TRAP_RAF)
   page.evaluate('''pack=>{
-   for(const [k,v] of Object.entries(pack.frames))XART._src['qa_fury_'+k]='assets/game/furyship_0914/'+v.path;
+   for(const [k,v] of Object.entries(pack.frames))XART._src['qa_fury_'+k]='assets/game/shared/ships/furyship_0914/'+v.path;
    XART._src.qa_fury_reference=pack.reference;
    window.__furyKeys=Object.keys(pack.frames);
    for(const k of __furyKeys)XART._touch('qa_fury_'+k);
    XART._touch('qa_fury_reference');
   }''',pack)
   page.wait_for_function('()=>__furyKeys.every(k=>XART.rdy("qa_fury_"+k))&&XART.rdy("qa_fury_reference")',timeout=120000)
-  page.add_script_tag(path=str(ROOT/'assets/game/furyship_0914/catalog.js'))
-  page.add_script_tag(path=str(ROOT/'assets/game/furyship_0914/palette.js'))
+  page.add_script_tag(path=str(ROOT/'assets/game/shared/ships/furyship_0914/catalog.js'))
+  page.add_script_tag(path=str(ROOT/'assets/game/shared/ships/furyship_0914/palette.js'))
   page.evaluate('''()=>{
    window.__maskPaths=Object.values(FURYSHIP_CANDIDATES.frames).map(f=>f.paletteMask).filter(Boolean);
-   for(const path of __maskPaths){const key='qa_fury_'+path.replace('.png','');XART._src[key]='assets/game/furyship_0914/'+path;XART._touch(key);}
+   for(const path of __maskPaths){const key='qa_fury_'+path.replace('.png','');XART._src[key]='assets/game/shared/ships/furyship_0914/'+path;XART._touch(key);}
    window.__furyResolve=path=>{const key='qa_fury_'+path.replace('.png','');return XART.rdy(key)?XART.get(key):null;};
   }''')
   page.wait_for_function('()=>__maskPaths.every(p=>!!__furyResolve(p))',timeout=120000)

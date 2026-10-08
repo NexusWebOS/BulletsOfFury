@@ -37,7 +37,7 @@ for key, file in patch.items():
     music[key] = "assets/game/music/" + file
 music["boss"] = music["boss1"]
 music["ironcage"] = music["boss8"]
-music["mini1"] = "assets/game/music/Level1mb.mp3"
+music["mini1"] = "assets/game/levels/stage_01/audio/music/Level1mb.mp3"
 music["mini2"] = music["mini1"]
 music["mini3"] = music["lvl3"]
 

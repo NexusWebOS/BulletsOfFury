@@ -1,5 +1,5 @@
 const fs=require('fs'),path=require('path');const root=path.resolve(__dirname,'..');
-const src=fs.readFileSync(path.join(root,'assets/game.js'),'utf8'),meta=JSON.parse(fs.readFileSync(path.join(root,'assets/game/stage5_hammer/reticle_ground_0915.json'),'utf8'));
+const src=fs.readFileSync(path.join(root,'assets/game.js'),'utf8'),meta=JSON.parse(fs.readFileSync(path.join(root,'assets/game/levels/stage_05/boss/stage5_hammer/reticle_ground_0915.json'),'utf8'));
 let passed=0,failed=0,checks=[];function ok(name,v){checks.push({name,ok:!!v});v?passed++:failed++;}
 for(const f of ['reticle.png','reticle_ground_source_0915.png','reticle_topdown_original_0915.png','reticle_ground_0915.json'])ok(f+' exists',fs.existsSync(path.join(root,'assets/game/stage5_hammer',f)));
 ok('ground reticle is a wide floor ellipse',meta.aspect>1.8);

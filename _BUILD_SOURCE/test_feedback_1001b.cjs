@@ -12,7 +12,7 @@ module.exports=function(vm,ctxv,ok){
  const html=fs.readFileSync(path.join(ROOT,'index.html'),'utf8');
  const iw=html.indexOf('assets/feedback_1001b.js'),ic=html.indexOf('assets/campaign_world_0930.js'),ih=html.indexOf('assets/widescreen_hud_0918.js');
  ok(iw>ic&&iw<ih,'1001b: index.html loads it after the campaign world and before the widescreen HUD');
- const png=f=>{const b=fs.readFileSync(path.join(ROOT,f));return [b.readUInt32BE(16),b.readUInt32BE(20)];};
+ const png=f=>{const b=fs.readFileSync(path.join(ROOT,vm.runInContext('bofAssetPath('+JSON.stringify(f)+')',ctxv)));return [b.readUInt32BE(16),b.readUInt32BE(20)];};
  /* Falva: one 256x244 box on every frame (was 256 tall with the next cell's rail, or cut 11/22 rows low) */
  const falva=['idle','anger','crash','happy','laugh','sad','victory','talk-closed','talk-small','talk-medium','talk-wide','talk-o'];
  ok(falva.every(n=>{const s=png('assets/game/pilots_0922/portraits/falva-'+n+'.png');return s[0]===256&&s[1]===244;}),
@@ -43,7 +43,7 @@ module.exports=function(vm,ctxv,ok){
  ok(out.flashSolid,'1001b: the bomber flash is a FULL hit-colour flood of the plate, not a 74% wash');
  ok(out.left===340&&out.right===-340,'1001b: choosing LEFT slides the stage-6 world +340, RIGHT -340 ('+out.left+'/'+out.right+')');
  ok(out.start===0&&out.none===0,'1001b: the stage-6 turn is still before the choice and at the moment of it');
- ok(out.arenaKey==='assets/game/stagex_coast_1004j/terrain.png'&&fs.existsSync(path.join(ROOT,out.arenaKey||'x')),'1001b: Stage X arena plate is registered and on disk');
+ ok(out.arenaKey==='assets/game/levels/stage_x/stage/stagex_coast_1004j/terrain.png'&&fs.existsSync(path.join(ROOT,out.arenaKey||'x')),'1001b: Stage X arena plate is registered and on disk');
  ok(out.arenaWrap,'1001b: the Stage X duel draws its own water-plateau arena, not stage 6');
  const a=png(out.arenaKey);
  ok(a[0]===680&&a[1]>=1024,'1001b: the arena plate is 680 wide and tall enough to circle the mountain ('+a.join('x')+')');

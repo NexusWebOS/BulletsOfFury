@@ -88,7 +88,7 @@ def main():
 
     loose = []
     for rel in ('assets/game/pilot_avatars/pav_maverick.png',
-                'assets/game/pilot_bodies/maverick_body_0.png'):
+                'assets/game/pilots/maverick/body_frames/pilot_bodies/maverick_body_0.png'):
         p = os.path.join(ROOT, rel)
         if not os.path.exists(p):
             print('   MISSING %s' % rel); continue

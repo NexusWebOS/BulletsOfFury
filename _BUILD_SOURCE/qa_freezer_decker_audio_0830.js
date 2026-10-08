@@ -16,8 +16,8 @@ for(const file of [
   'assets/game/sounds/reviewed_decker_shotgun.wav',
   'assets/game/sounds/reviewed_decker_shell_eject.wav',
   'assets/game/sounds/reviewed_decker_reload.wav',
-  'assets/game/sounds/nsp_bof2_charge_shot.mp3',
-  'assets/game/sounds/nsp_charge_release.mp3',
+  'assets/game/shared/audio/sounds/nsp_bof2_charge_shot.mp3',
+  'assets/game/shared/audio/sounds/nsp_charge_release.mp3',
 ]) ok(fs.existsSync(path.join(root,file)),`missing audio asset: ${file}`);
 
 has("dkBuck:'assets/game/sounds/reviewed_decker_shotgun.wav'",'Decker blast is not on the real sample');
@@ -27,8 +27,8 @@ has('run._dkReloadCue=0.10;','Decker reload is not scheduled after the blast');
 has('Audio.SFX.dkReload) Audio.SFX.dkReload();','Decker reload event has no audible dispatch');
 
 has("fireIceChargeStart:'assets/game/sounds/ice_breath_start.wav'",'Thermoshock charge-start cue is missing');
-has("fireIceChargeLoop:'assets/game/sounds/nsp_bof2_charge_shot.mp3'",'Thermoshock charge loop is missing');
-has("fireIceOrbLaunch:'assets/game/sounds/nsp_charge_release.mp3'",'Thermoshock release cue is missing');
+has("fireIceChargeLoop:'assets/game/shared/audio/sounds/nsp_bof2_charge_shot.mp3'",'Thermoshock charge loop is missing');
+has("fireIceOrbLaunch:'assets/game/shared/audio/sounds/nsp_charge_release.mp3'",'Thermoshock release cue is missing');
 has("Snd.loopPrepare('fireIceChargeLoop')",'Thermoshock charge loop is not warmed');
 has("Audio.SFX.fireIceChargeStart||Audio.SFX.iceBreathStart",'Thermoshock charge start is not dispatched');
 has("if(!_ts && Audio.SFX.nsp_charge_release)",'Thermoshock release still stacks the generic cue');

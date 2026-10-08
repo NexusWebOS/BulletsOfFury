@@ -6,7 +6,7 @@ metrics and runtime registration are emitted together by this owning workflow.
 from pathlib import Path
 import json,math
 from PIL import Image,ImageDraw
-R=Path(__file__).resolve().parents[2];O=R/'assets/game/fonts/command_0914';O.mkdir(exist_ok=True)
+R=Path(__file__).resolve().parents[2];O=R/'assets/game/shared/fonts/fonts/command_0914';O.mkdir(exist_ok=True)
 # Five-column master cuts: open counters, distinct 0/O and 1/I, full uppercase coverage.
 ROWS={
 'A':'01110 11011 11011 11111 11011 11011 11011',
@@ -123,7 +123,7 @@ def build(key,cfg):
  glyphs[' ']={'sprite_rect':[0,0,0,0],'bounds_in_cell':[0,0,0,0],'x_advance':3 if dialogue else 3*sx}
  for a,b in {'\u2019':"'",'\u2018':"'",'\u201c':'"','\u201d':'"','\u2013':'-','\u2014':'-','\u00d7':'X','\u2026':'.'}.items():glyphs[a]=glyphs[b];font[a]=font[b]
  m={'schema':'coleforge.bitmap-font.v2','family':name,'capsOnly':True,'line_height':8 if dialogue else cap,'baseline':7 if dialogue else cap-pad,'glyphs':glyphs,'source':'Hand-authored editable pixel masks in build_fonts.py','texture_filter':'nearest'}
- path='assets/game/fonts/command_0914/'+key
+ path='assets/game/shared/fonts/fonts/command_0914/'+key
  sheet.save(O/(key+'-alpha.png'));(O/(key+'-map.json')).write_text(json.dumps(m,indent=2)+'\n')
  return m,{'atlas':path+'-alpha.png','frames':frames,'font':font,'ride':ride},path
 maps={};arts={};paths={}

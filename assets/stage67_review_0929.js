@@ -581,7 +581,7 @@ drawAtomBooms=function(){
 for(const [k,f] of [['whv_closed_w','carrier_closed_wells'],['whv_open_w','carrier_open_wells'],['whv_broken_w','carrier_broken_wells'],
   ['whv_well','carrier_well'],['whv_cannon','carrier_cannon'],['whv_acem_body','ace_mod_body'],['whv_acem_wingL','ace_mod_wingL'],['whv_acem_wingR','ace_mod_wingR'],
   ['whv_acem_body_dmg','ace_mod_body_dmg'],['whv_acem_wingL_dmg','ace_mod_wingL_dmg'],['whv_acem_wingR_dmg','ace_mod_wingR_dmg']])
-  XART._src[k]='assets/game/bosses/skycarrier/'+f+'.png';
+  XART._src[k]='assets/game/levels/stage_06/boss/bosses/skycarrier/'+f+'.png';
 const S67C={FAN_D:58,WELL_D:60,CAN_W:34,CAN_H:59.5,CAN_IN:30,CAN_OUT:84};
 const S67_WHV_WARM=whvWarm;
 whvWarm=function(){S67_WHV_WARM();for(const k of ['whv_closed_w','whv_open_w','whv_broken_w','whv_well','whv_cannon','tlv_beam','mission29_beam_lightning','whv_acem_body','whv_acem_wingL','whv_acem_wingR','whv_acem_body_dmg','whv_acem_wingL_dmg','whv_acem_wingR_dmg'])try{XART.rdy(k);}catch(_w){}};

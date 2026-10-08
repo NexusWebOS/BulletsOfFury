@@ -11,7 +11,7 @@ from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
 RAW = ROOT / "_shots"
-OUT = ROOT / "assets/game/bosses/rebel_squad_0920/frames"
+OUT = ROOT / "assets/game/levels/stage_06/boss/bosses/rebel_squad_0920/frames"
 SIZE = 256
 INK = 236
 

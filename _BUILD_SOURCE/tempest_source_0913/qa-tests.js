@@ -6,7 +6,7 @@ console.log('=== 294. Tempest brothers ===');
   ok(vm.runInContext("SUBBOSS[6].kind==='tempestbrothers'&&ALTBOSS[6].kind==='blacksteel'",ctxv),'Stage 6 fields the approved brothers and retains Blacksteel');
   ok(vm.runInContext("D.ships.length===2&&D.ai.black!==D.ai.gray&&D.ai.black.rig!==D.ai.gray.rig",ctxv),'two independent ships and aperture pools');
   ok(vm.runInContext("b.hp===b.maxhp&&D.ai.black.hp===8000&&D.ai.gray.hp===8000",ctxv),'combined bar starts full after the native encounter HP floor');
-  ok(vm.runInContext("BOFX.img.tlvb_hull&&BOFX.img.tlvb_hull_damaged",ctxv)&&fs.existsSync(path.join(ROOT,'assets/game/bosses/tempest/tlvb_hull.png'))&&fs.existsSync(path.join(ROOT,'assets/game/bosses/tempest/tlvb_hull_damaged.png')),'both authored gray hull states are registered and on disk');
+  ok(vm.runInContext("BOFX.img.tlvb_hull&&BOFX.img.tlvb_hull_damaged",ctxv)&&fs.existsSync(path.join(ROOT,'assets/game/levels/stage_06/miniboss/bosses/tempest/tlvb_hull.png'))&&fs.existsSync(path.join(ROOT,'assets/game/levels/stage_06/miniboss/bosses/tempest/tlvb_hull_damaged.png')),'both authored gray hull states are registered and on disk');
   ok(vm.runInContext("bossmodeArtKeys('tempestbrothers').some(k=>k==='tlvb_hull')&&debugFightFor(6,'mini').name==='TEMPEST LEVIATHAN BROTHERS'",ctxv),'Boss Mode names and browses both brothers');
   vm.runInContext("D.ai.black.enter('chase');D.ai.gray.enter('chase');D.ai.black.boss.x=200;D.ai.gray.boss.x=700;D.ai.black.boss.y=D.ai.gray.boss.y=230;D.ai.black.vulnerable=D.ai.gray.vulnerable=true;tempestBrothersSync(b);",ctxv);
   ok(vm.runInContext("tempestBrothersPartAt(b,D.ships[0].x,D.ships[0].y)==='Bhull'&&tempestBrothersPartAt(b,D.ships[1].x,D.ships[1].y)==='Ghull'",ctxv),'hull hits identify the correct brother');

@@ -14,6 +14,6 @@ def build():
   if not box: raise ValueError('Empty '+name)
   im=im.crop(box);im.thumbnail((640,560),Image.Resampling.NEAREST)
   im.save(OUT/(name+'.png'),optimize=True)
-  data[name]={'path':'assets/game/cinema_0930/'+name+'.png','width':im.width,'height':im.height}
+  data[name]={'path':'assets/game/shared/cinematics/cinema_0930/'+name+'.png','width':im.width,'height':im.height}
  (OUT/'manifest.json').write_text(json.dumps(data,indent=2)+'\n')
 if __name__=='__main__':build()

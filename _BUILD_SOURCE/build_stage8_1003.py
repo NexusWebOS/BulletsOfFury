@@ -42,7 +42,7 @@ for name,uid in FILES.items():
  sheet=Image.new('RGBA',(cw*cols,ch*rows))
  for i,cell in enumerate(cells):sheet.paste(cell,((i%cols)*cw,(i//cols)*ch))
  sheet.save(DST/(name+'.png'),optimize=True)
- meta[name]={'key':'s81003_'+name,'path':'assets/game/stage8_1003/'+name+'.png','cw':cw,'ch':ch,'cols':cols,'frames':len(cells),'source':str(source.relative_to(R)).replace('\\','/'),'source_sha256':hashlib.sha256(source.read_bytes()).hexdigest(),'source_size':[W,H]}
+ meta[name]={'key':'s81003_'+name,'path':'assets/game/levels/stage_08/stage/stage8_1003/'+name+'.png','cw':cw,'ch':ch,'cols':cols,'frames':len(cells),'source':str(source.relative_to(R)).replace('\\','/'),'source_sha256':hashlib.sha256(source.read_bytes()).hexdigest(),'source_size':[W,H]}
  # Four isolated crystal/code chunks from late shatter cells. Crop only:
  # particle motion comes from the runtime; all visible shapes are generated.
  if name=='shatter':
@@ -51,7 +51,7 @@ for name,uid in FILES.items():
   for j,box in enumerate(boxes):
    tile=im.crop(box);tile.thumbnail((80,80),Image.Resampling.LANCZOS);out.paste(tile,(j*96+(96-tile.width)//2,(96-tile.height)//2))
   out.save(DST/'shards.png',optimize=True)
-  meta['shards']={'key':'s81003_shards','path':'assets/game/stage8_1003/shards.png','cw':96,'ch':96,'cols':4,'frames':4,'source':meta[name]['source'],'sourceBoxes':boxes,'source_sha256':meta[name]['source_sha256']}
+  meta['shards']={'key':'s81003_shards','path':'assets/game/levels/stage_08/stage/stage8_1003/shards.png','cw':96,'ch':96,'cols':4,'frames':4,'source':meta[name]['source'],'sourceBoxes':boxes,'source_sha256':meta[name]['source_sha256']}
 (DST/'manifest.json').write_text(json.dumps(meta,indent=2)+'\n',encoding='utf-8')
 (R/'assets/stage8_art_1003.js').write_text('/* Generated reels; owning importer: build_stage8_1003.py. */\nconst S81003_ART='+json.dumps(meta,separators=(',',':'))+';\n',encoding='utf-8',newline='\n')
 print('Imported',sum(a['frames'] for a in meta.values()),'RGBA frames in',len(meta),'families')

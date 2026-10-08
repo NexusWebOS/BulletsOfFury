@@ -165,10 +165,11 @@ function run(file, label) {
   catch (e) { errors.push(`[${label}] ${e.message}`); }
 }
 
+run('assets/asset_paths_1007.js', 'asset paths');
 run('assets/manifest.js', 'manifest');
 run('assets/stagefonts_v4.js', 'stage_fonts');
-run('assets/game/fonts/bmf_maps.js', 'bmf_maps');
-run('assets/game/fonts/command_0914/fonts.js', 'command_fonts');
+run('assets/game/shared/fonts/fonts/bmf_maps.js', 'bmf_maps');
+run('assets/game/shared/fonts/fonts/command_0914/fonts.js', 'command_fonts');
 /* MUST MATCH index.html's SCRIPT ORDER (drop 0801kl). section_geom.js defines
    window.BOFSG, the measured placement of every section of the eight 0801hm bodies.
    sxPackDraw composites the body from it and sxHit attributes shots with it. Leaving
@@ -176,9 +177,9 @@ run('assets/game/fonts/command_0914/fonts.js', 'command_fonts');
    — which is the whole reason "a harness pass is not a game pass" keeps being true. */
 run('assets/section_geom.js', 'section_geom');
 /* Packed runtime sources must match index.html before the engine registers its cells. */
-run('assets/game/atlas/bof_gravity_mode_space_weapons.js', 'gravity_atlas');
-run('assets/game/atlas/stage_runtime_atlases.js', 'stage_runtime_atlases');
-run('assets/game/atlas/stage5_runtime_atlas.js', 'stage5_runtime_atlas');
+run('assets/game/shared/atlases/bof_gravity_mode_space_weapons.js', 'gravity_atlas');
+run('assets/game/shared/atlases/stage_runtime_atlases.js', 'stage_runtime_atlases');
+run('assets/game/levels/stage_05/enemies/stage5_runtime_atlas.js', 'stage5_runtime_atlas');
 run('assets/audio_feedback_0927.js', 'audio_feedback');
 run('assets/game.js', 'game');
 run('assets/combat_polish_0927b.js', 'combat_polish');
@@ -2335,7 +2336,7 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   {
     const _cfg1=vm.runInContext("JSON.stringify({m:_levelCfg(1).master,h:_levelCfg(1).h,w:_levelCfg(1).plateW})", ctxv);
     const _c=JSON.parse(_cfg1);
-    const _rel='assets/game/'+_c.m+'.png';
+    const _rel=vm.runInContext('bofAssetPath('+JSON.stringify('assets/game/'+_c.m+'.png')+')',ctxv);
     let _dim=null;
     try{ const b=fs.readFileSync(ROOT+'/'+_rel); _dim=[b.readUInt32BE(16), b.readUInt32BE(20)]; }catch(e){}
     ok(!!_dim, 'stage-1 master resolves to a real PNG on disk ('+_rel+')');
@@ -4962,7 +4963,7 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
      'stage 6 loops its blue master continuously through the climb');
   ok(vm.runInContext("_levelCfg().h===5000 && _levelCfg().continuousBoss===true", ctxv),
      'its 5000px gameplay remains continuous through the boss');
-  ok([1,2,3,4,5].every(function(n){var s=pngSize('assets/game/stage6_blue/stage6_blue_0'+n+'.png');return s&&s.w===680&&s.h===1000;}),
+  ok([1,2,3,4,5].every(function(n){var s=pngSize('assets/game/levels/stage_06/stage/stage6_blue/stage6_blue_0'+n+'.png');return s&&s.w===680&&s.h===1000;}),
      'the master is exported as five real 680x1000 sections');
   ok(vm.runInContext("BG6_CLOUD_LAYERS.length===4 && bg6CloudsDraw.toString().includes('scroll*L.vy') && bg6CloudsDraw.toString().includes('t*L.vx')", ctxv),
      'Stage 6 clouds drift independently in both axes above the blue master');
@@ -5160,8 +5161,8 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   ok(_gArt.indexOf('w * frac')>0 && _gDrawn.indexOf('w * frac')>0, 'the gauge drains BY FRACTION rather than scaling one bar - on the art path and the fallback');
   ok(_gArt.indexOf('frac<=0.25')>0 && _gDrawn.indexOf('frac<=0.25')>0, 'and the authored pulse plays under 25% on both');
   ok(/ctx\.clip\(\)/.test(_gArt) && !/drawImage\([^)]*fw\*frac/.test(_gArt), 'the art fill is CLIPPED at the fraction, never drawn narrower (Mike: "we do not want to shrink it")');
-  ok(vm.runInContext("BOFX.img['nca_ui_bossbar']==='assets/game/atlas/ui_bossbar.png' && ['bmbar_frame_boss','bmbar_frame_mini','bmbar_fill_seg','bmbar_fill_grey','bmbar_fill_orange','bmbar_fill_red','bmbar_fill_cyan','bmbar_fill_green'].every(function(k){ return BOFX.cells[k] && BOFX.cells[k][0]==='ui_bossbar'; })", ctxv), 'the two frames and six fills of the pack are registered as cells on ui_bossbar');
-  ok(fs.existsSync(ROOT+'/assets/game/atlas/ui_bossbar.png'), 'and the sheet is on disk');
+  ok(vm.runInContext("BOFX.img['nca_ui_bossbar']==='assets/game/shared/ui/ui_bossbar.png' && ['bmbar_frame_boss','bmbar_frame_mini','bmbar_fill_seg','bmbar_fill_grey','bmbar_fill_orange','bmbar_fill_red','bmbar_fill_cyan','bmbar_fill_green'].every(function(k){ return BOFX.cells[k] && BOFX.cells[k][0]==='ui_bossbar'; })", ctxv), 'the two frames and six fills of the pack are registered as cells on ui_bossbar');
+  ok(fs.existsSync(ROOT+'/assets/game/shared/ui/ui_bossbar.png'), 'and the sheet is on disk');
   ok(vm.runInContext("[1,2,3,4,5,6,7,8,9].every(function(n){ return BMBAR_STAGE[n] && (BMBAR_STAGE[n].plate||BMBAR_STAGE[n].hex); })", ctxv), 'every stage names its fill: an authored plate or a palette swap');
   ok(vm.runInContext("BMBAR_STAGE[1].plate==='green' && BMBAR_STAGE[2].plate==='orange' && BMBAR_STAGE[3].plate==='cyan' && BMBAR_STAGE[8].plate==='red'", ctxv), 'stages that match an authored fill use it untouched');
   /* 0910c: the fill goes in the BLACK, measured per frame - not the whole opening, which still
@@ -5432,7 +5433,7 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   ok(vm.runInContext("XART.rdy('stage6_blue_master')", ctxv), 'the 680x5000 stage-6 blue master is registered');
   var _g8=fs.readFileSync(ROOT+'/assets/game.js','utf8');
   ok(_g8.indexOf("case 6: return {master:'stage6_blue_master'")>0, 'and is the gameplay source of truth');
-  ok([1,2,3,4,5].every(function(n){return fs.existsSync(ROOT+'/assets/game/stage6_blue/stage6_blue_0'+n+'.png');}),
+  ok([1,2,3,4,5].every(function(n){return fs.existsSync(ROOT+'/assets/game/levels/stage_06/stage/stage6_blue/stage6_blue_0'+n+'.png');}),
      'all five 1000px editing/QA sections exist');
   ok(_g8.indexOf("const STAGE6_TRANSITION_SKY='stage6_blue_master'")>0,
      'the launch transition uses the same master as gameplay');
@@ -5581,14 +5582,14 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   ok(_wrong.length===0, 'all 8 stages play their reassigned track'+(_wrong.length?(' — '+_wrong.join(', ')):''));
   ok(String(_M['lvl6']).indexOf('Level8.mp3')>0, 'the former Stage 8 theme is retained for credits');
   ok(String(_M['boss6mus']).indexOf('Level6b.mp3')>0, 'level 6 boss = Battle in the Sky');
-  ok(_M.boss7==='assets/game/music/Level7b.mp3' && _M.boss7mus===_M.boss7 && _M.mini7==='assets/game/music/Level7mb.mp3' && !_M.unused13, 'level 7 boss = Reaperman, with the former theme assigned to its miniboss');
-  ok(_M['rival']==='assets/game/music/Rival.mp3' && _M['bonus']===_M['rival'],
+  ok(_M.boss7==='assets/game/levels/stage_07/audio/music/Level7b.mp3' && _M.boss7mus===_M.boss7 && _M.mini7==='assets/game/levels/stage_07/audio/music/Level7mb.mp3' && !_M.unused13, 'level 7 boss = Reaperman, with the former theme assigned to its miniboss');
+  ok(_M['rival']==='assets/game/shared/audio/music/Rival.mp3' && _M['bonus']===_M['rival'],
      'stage 9 gameplay + rival sequence = Rival Dog Showdown');
   ok(String(_M['password']).indexOf('Password_StageClear.mp3')>0, 'password doubles as the stage-clear track');
   // music lives in one place now
-  ok(fs.existsSync(ROOT+'/assets/game/music'), 'music is consolidated in assets/game/music');
-  ok(Object.values(_M).every(function(v){ return String(v).indexOf('assets/game/music/')===0; }),
-     'and every registered track resolves inside it');
+  ok(fs.existsSync(ROOT+'/assets/game/shared/audio/music'), 'music is consolidated in shared/audio/music');
+  ok(Object.values(_M).every(function(v){ return /^assets\/game\/(shared\/audio|levels\/stage_[0-9x]+\/audio)\//.test(String(v)) && fs.existsSync(path.join(ROOT,v)); }),
+     'every registered track resolves inside shared or level-owned audio');
   // CAMPAIGN BOOT types with sound
   ok(_g9.indexOf('LETTER BY LETTER, WITH SOUND')>0, 'the campaign boot log types character by character');
   ok(_g9.indexOf('const CPS=34')>0, 'at a fixed character rate');
@@ -5894,7 +5895,7 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   /* GF monkey-patched ctx.fillText and belonged to the retired sprite/password-font generation.
      The live game now opts individual dialogue surfaces into the authored BMF face, so the test
      must protect that explicit renderer instead of resurrecting a deleted global wrapper. */
-  var _bmf126=fs.readFileSync(path.join(ROOT,'assets/game/fonts/bmf_maps.js'),'utf8');
+  var _bmf126=fs.readFileSync(path.join(ROOT,'assets/game/shared/fonts/fonts/bmf_maps.js'),'utf8');
   var _maps126=JSON.parse(_bmf126.replace(/^window\.BOF_BMF_MAPS=/,'').replace(/;\s*$/,''));
   var _d126=_maps126.dialogue;
   ok(!!(_d126&&_d126.glyphs), 'the embedded dialogue bitmap map exists');
@@ -7892,8 +7893,8 @@ console.log("=== 162. projectile family + orientation ===");
      the same 25 files. With the art pointing down, all three use one convention. */
   ok(_g162.indexOf("drawMfx('mfx_mg_'+_mgRow+'_'+_mgCol, b.x, b.y, -Math.PI/2")<0,
      'the player MG no longer carries the -PI/2 that compensated for horizontal art');
-  ok(_g162.indexOf("if(T.align) ang=Math.atan2(b.vy||1,b.vx||0)-Math.PI/2;")>0,
-     'and FIRETYPES align is untouched — the art was moved to match it, not the reverse');
+  ok(_g162.indexOf("if(T.align) ang=Math.atan2(b.vy??1,b.vx??0)-Math.PI/2;")>0,
+     'FIRETYPES retains the source-down alignment and preserves zero velocity components');
 }
 
 // ===== 163. SHIP BANKING + THE PALETTE COLLAPSE (drop 0805h) =====
@@ -9177,7 +9178,7 @@ console.log("=== 186. player / enemy / game ===");
      stage-6 cloud plates into terrain_masters / fx_weather as cells — Mike asked for clouds to
      have their own atlas — and a cell canvas draws whole at the view rect exactly as the loose
      plate did (pixel identity checked per cell). The empty folders were removed with the files. */
-  var _reqSub=['atlas','fonts','music','sounds','fx_0825','l6_fleet','pilot_portraits'];
+  var _reqSub=['pilots','levels','shared'];
   ok(_reqSub.every(function(n){return _sub.indexOf(n)>=0;}),
      'game/ holds every required runtime asset bucket ('+_sub.join(',')+')');
 
@@ -11022,7 +11023,7 @@ console.log("=== 216. dialogue/stage fonts only ===");
 
   var _g216=fs.readFileSync(ROOT+'/assets/game.js','utf8');
   ok(!/\b(?:ASSETS|A|BOF)\.bofFont\b/.test(_g216), 'no live game path can load the retired family');
-  for(var _i=1;_i<=8;_i++) ok(!fs.existsSync(ROOT+'/assets/game/fonts/bof_font'+_i+'.png'),
+  for(var _i=1;_i<=8;_i++) ok(!fs.existsSync(ROOT+'/assets/game/shared/fonts/fonts/bof_font'+_i+'.png'),
     'retired compact sheet '+_i+' is deleted from disk');
 
   /* ============================================================
@@ -12125,13 +12126,13 @@ console.log("=== 240. launch, lava, audio and dialogue regressions ===");
      _s240.indexOf("Audio.SFX.expBig=function(){ Snd.play('expBig'); }")>0 &&
      _s240.indexOf("_sfxVariant(['explosionAirSmall01'")<0,
      'enemy and boss deaths use the original shipped explosion sounds again');
-  ok(_s240.indexOf("flameHit:'assets/game/sounds/explosion_air_small_01.mp3'")>0 &&
+  ok(_s240.indexOf("flameHit:'assets/game/shared/audio/sounds/explosion_air_small_01.mp3'")>0 &&
      _s240.indexOf("flameHit:            {g:0.75, boost:1.15, lp:5200, min:0.09}")>0 &&
      _s240.indexOf('function flameContactSound()')>0 &&
      (_s240.match(/flameContactSound\(\);/g)||[]).length>=6,
      'the flamethrower alone keeps a new, throttled contact/kill transient');
 
-  var _bmf240=fs.readFileSync(path.join(ROOT,'assets/game/fonts/bmf_maps.js'),'utf8');
+  var _bmf240=fs.readFileSync(path.join(ROOT,'assets/game/shared/fonts/fonts/bmf_maps.js'),'utf8');
   var _map240=JSON.parse(_bmf240.replace(/^window\.BOF_BMF_MAPS=/,'').replace(/;\s*$/,''));
   var _html240=fs.readFileSync(path.join(ROOT,'index.html'),'utf8');
   /* ⚠ THIS PINNED `!_map240.cutscene` - THE ABSENCE OF A FACE, NOT A RULE (repointed 0904x).
@@ -12146,7 +12147,7 @@ console.log("=== 240. launch, lava, audio and dialogue regressions ===");
   ok(!!(_map240.dialogue&&_map240.dialogue.glyphs&&_map240.dialogue.glyphs.a) &&
      !!(_map240.cutscene&&_map240.cutscene.glyphs&&_map240.cutscene.glyphs.a) &&
      _map240.cutscene.line_height===2*_map240.dialogue.line_height &&
-     _html240.indexOf('assets/game/fonts/bmf_maps.js')>0 &&
+     _html240.indexOf('assets/game/shared/fonts/fonts/bmf_maps.js')>0 &&
      _s240.indexOf('window.BOF_BMF_MAPS')>0,
      'both embedded lowercase faces load even under file://, the cutscene one at exactly 2x');
   ok(_s240.indexOf("function msgFaceBig(){ return msgFaceUse('cutscene') || msgFaceUse('dialogue'); }")>0 &&
@@ -12608,7 +12609,7 @@ console.log("=== 254. production player atlases and frame preservation ===");
   var _gWarm=fs.readFileSync(ROOT+'/assets/game.js','utf8');
   ok(_gWarm.indexOf("'bof_player_ships_barrel_rolls_atlas'")<0,
      'and nothing in game.js warms it any more — warmPlayerAtlases takes the seats own sheets');
-  var _shotMeta254=JSON.parse(fs.readFileSync(path.join(ROOT,'assets','game','atlas','bof_player_ordnance_projectiles.json'),'utf8'));
+  var _shotMeta254=JSON.parse(fs.readFileSync(path.join(ROOT, 'assets/game/shared/atlases/bof_player_ordnance_projectiles.json'),'utf8'));
   ok(_shotMeta254.count===505 && Object.keys(_b254.playercells).length===505,
      'the ordnance/projectile atlas carries all 505 active animation and support cells');
   ok(Object.keys(_b254.ships).every(function(k){
@@ -12727,7 +12728,7 @@ console.log("=== 257. Gravity Mode space armory I-V ===");
      _arm257.indexOf('function spaceVolleyAutoTick(')>=0 && _arm257.indexOf("if(w===0)spaceLaserFire()")>=0,
      'Volley Missiles are a passive auto-fire rack and cannot occupy the primary fire-button slot');
 
-  var _atlas257=JSON.parse(fs.readFileSync(path.join(ROOT,'assets','game','atlas','bof_gravity_mode_space_weapons.json'),'utf8')).frames;
+  var _atlas257=JSON.parse(fs.readFileSync(path.join(ROOT, 'assets/game/shared/atlases/bof_gravity_mode_space_weapons.json'),'utf8')).frames;
   var _missing257=[];
   for(var _lv257=1;_lv257<=5;_lv257++){
     ['laser_icon_','shadow_icon_','volley_icon_'].forEach(function(k){if(!_atlas257[k+_lv257])_missing257.push(k+_lv257);});
@@ -13025,10 +13026,10 @@ console.log("=== 263. unskippable stage dialogue and Stage 5 HQ copy ===");
 // ===== 264. STAGE-1 PLATFORM AI + JUNGLE COMMAND WEAPONS =====
 console.log("=== 264. Stage-1 platform AI and Jungle command weapons ===");
 {
-  var _meta264=JSON.parse(fs.readFileSync(path.join(ROOT,'assets','game','atlas','stage1_combat_fx.json'),'utf8'));
+  var _meta264=JSON.parse(fs.readFileSync(path.join(ROOT, 'assets/game/levels/stage_01/stage/stage1_combat_fx.json'),'utf8'));
   ok(fs.existsSync(path.join(ROOT,_meta264.atlas)) && Object.keys(_meta264.rects).length===54,
      'the production Stage-1 combat atlas packs all 54 transparent projectile/muzzle/impact cells');
-  ok(vm.runInContext("(function(){var n=0;for(var k in BOFX.cells)if(k.indexOf('s1fx_')===0)n++;return n===54&&XART._src.nca_s1combatfx==='assets/game/atlas/stage1_combat_fx.png';})()",ctxv),
+  ok(vm.runInContext("(function(){var n=0;for(var k in BOFX.cells)if(k.indexOf('s1fx_')===0)n++;return n===54&&XART._src.nca_s1combatfx==='assets/game/levels/stage_01/stage/stage1_combat_fx.png';})()",ctxv),
      'all Stage-1 combat cells route through one eager production texture');
   ok(vm.runInContext("['s1cannon','s1jungleMissile','s1greenLaser','s1windBlade','s1windVortex'].every(function(k){return !!FIRETYPES[k];})",ctxv),
      'heavy shell, Jungle missile, green laser, wind blade and wind vortex each own animated fire types');
@@ -13067,7 +13068,7 @@ console.log("=== 264. Stage-1 platform AI and Jungle command weapons ===");
 // ===== 265. STAGE-1 VFX EDGE SAFETY + OVERLORD HUNTER FLIGHT =====
 console.log("=== 265. Stage-1 VFX edge safety and Overlord hunter flight ===");
 {
-  var _meta265=JSON.parse(fs.readFileSync(path.join(ROOT,'assets','game','atlas','stage1_combat_fx.json'),'utf8'));
+  var _meta265=JSON.parse(fs.readFileSync(path.join(ROOT, 'assets/game/levels/stage_01/stage/stage1_combat_fx.json'),'utf8'));
   var _srcRoot265=path.join(ROOT,'_ART_SOURCES','stage1_ai_fx','spaced_v2');
   ok(_meta265.source_edge_guard===20&&_meta265.atlas_edge_guard===20,
      'the atlas builder records both 20px source and packed-cell guards');
@@ -14056,7 +14057,7 @@ console.log("=== 278. lizzie B-42 alternate costume ===");
   var _dw2=vm.runInContext("drawWorld.toString()", ctxv);
   ok(_dw2.indexOf('sceneDrawWorld()')>0 && _dw2.indexOf('sceneDrawWorld()')>_dw2.indexOf('drawSubBoss()'), 'the field draws zone telegraphs after the units');
   ok(vm.runInContext("['bmfx_fov_red_wide','bmfx_fov_green_tall','bmfx_alert_yellow_danger','bmfx_alert_red_incoming_projectile','bmfx_badge_red','bmfx_badge_green'].every(function(k){ return BOFX.cells[k]&&BOFX.cells[k][0]==='ui_bossmode_fx'; }) && !!BOFX.img['nca_ui_bossmode_fx']", ctxv), 'the pack FOV cones, alerts and badges are registered as in-game cells');
-  ok(fs.existsSync(path.join(ROOT,'assets/game/atlas/ui_bossmode_fx.png')), 'and the sheet is on disk');
+  ok(fs.existsSync(path.join(ROOT,'assets/game/shared/ui/ui_bossmode_fx.png')), 'and the sheet is on disk');
   /* a live fight, then a scene laid on it */
   ok(vm.runInContext("(function(){ try{ ASSETS.ready=true; return debugStartFight(debugFightFor(2,'boss')); }catch(e){ return 'threw '+e.message; } })()", ctxv)===true, 'stage-2 boss fight up for the scene');
   vm.runInContext("for(var f=0;f<260;f++){ try{ updatePlay(1/60); }catch(e){} }", ctxv);
@@ -14164,7 +14165,7 @@ console.log("=== 278. lizzie B-42 alternate costume ===");
   ['jwb_ball','jwb_ball_hot','jwb_link','jwb_burst','jchg_0','jchg_1','jchg_2','jchg_3'].forEach(function(k){
     ok(vm.runInContext("!!(BOFX.cells && BOFX.cells['"+k+"'])", ctxv), 'the '+k+' cell is registered');
   });
-  ok(fs.existsSync(path.join(ROOT,'assets/game/atlas/jugg_charge_wreck.png')), 'their atlas ships');
+  ok(fs.existsSync(path.join(ROOT,'assets/game/shared/atlases/jugg_charge_wreck.png')), 'their atlas ships');
 
   /* ---- the arcade opener ---- */
   ok(vm.runInContext("GS.OPENER==='opener' && GS.INTRO==='intro' && GS.OPENER!==GS.INTRO", ctxv),
@@ -14186,7 +14187,7 @@ console.log("=== 278. lizzie B-42 alternate costume ===");
      'the nine-screen finale is 3 that fall, 3 that finish a boss, 3 that fly out - '+_acts.join(','));
   ok(vm.runInContext("!!(window.BOFA && BOFA.music && BOFA.music.opener && /Opening\.mp3$/.test(BOFA.music.opener))", ctxv),
      'it runs on the one track the manifest never mapped');
-  ok(fs.existsSync(path.join(ROOT,'assets/game/music/Opening.mp3')), 'and that file is actually there');
+  ok(fs.existsSync(path.join(ROOT,'assets/game/shared/audio/music/Opening.mp3')), 'and that file is actually there');
    /* Cinematic and opening ships use the current gameplay atlas. */
    ok(vm.runInContext("OPN_SIL_KEY('axel')==='ship_axel_pv2' && cinShipKey('axel',1)==='ship_axel_pv2'", ctxv),
       'the opening and cinematic ships resolve to current gameplay airframes');
@@ -14213,7 +14214,7 @@ console.log("=== 278. lizzie B-42 alternate costume ===");
      && (_s281.match(/titleMenuLayout\(\)/g)||[]).length>=4,
      'the title draw loop and the mouse hit-test both read one measured layout, not a literal');
   ok(vm.runInContext("!!(BOFX.cells && BOFX.cells['btn_help'])", ctxv), 'the HELP plate is registered');
-  ok(fs.existsSync(path.join(ROOT,'assets/game/atlas/ui_help.png')), 'the help atlas ships');
+  ok(fs.existsSync(path.join(ROOT,'assets/game/shared/ui/ui_help.png')), 'the help atlas ships');
   ['pad_a','pad_b','pad_c','pad_x','pad_y','pad_z','pad_start','pad_select','pad_dpad','pad_stick'].forEach(function(k){
     ok(vm.runInContext("!!(BOFX.cells && BOFX.cells['"+k+"'])", ctxv), 'the '+k+' glyph is registered');
   });
@@ -14532,7 +14533,7 @@ console.log("=== 278. lizzie B-42 alternate costume ===");
   var _tame = _g285.slice(_g285.indexOf('A.TAME = {'));
   ok(/retinaLockBeep:\s*\{[^}]*min:0\.0[0-9]+/.test(_tame), 'the beep has a SHORT TAME gate, so it can beep rapidly');
   ok(/retinaCharge:\s*\{[^}]*min:0\.[5-9]/.test(_tame), 'and the retina noise a LONG one, so a wave locking at once plays it once');
-  ok(/retinaLockBeep:'assets\/game\/sounds\/nsp_console_beep\.mp3'/.test(_g285), 'the beep is registered in the code-owned block');
+  ok(_g285.includes("retinaLockBeep:'"+vm.runInContext("bofAssetPath('assets/game/sounds/nsp_console_beep.mp3')",ctxv)+"'"), 'the beep is registered in the code-owned block');
 
   ok(fs.existsSync(path.join(ROOT, '_BUILD_SOURCE/probe_retina_lock_0912q.py')),
      'probe_retina_lock_0912q.py drives every clause of the rule in real Chromium');
@@ -14586,7 +14587,7 @@ console.log("=== 278. lizzie B-42 alternate costume ===");
   /* --- the frost cruiser --- */
   var _jcs = (_g286.match(/b\._ship==='junglecruiser'/g) || []).length;
   ok(_jcs <= 1, 'no branch tests the Jungle Cruiser by its bare kind any more - they all ask jcShip(b) (' + _jcs + ' left)');
-  ok(vm.runInContext("SHIPBOSS.frostcruiser.key", ctxv) === 'nsb_frost_cruiser' && fs.existsSync(path.join(ROOT, 'assets/game/nsb_frost_cruiser.png')),
+  ok(vm.runInContext("SHIPBOSS.frostcruiser.key", ctxv) === 'nsb_frost_cruiser' && fs.existsSync(path.join(ROOT, 'assets/game/shared/combat/nsb_frost_cruiser.png')),
      'the frost cruiser draws its own recoloured plate, and the file is on disk');
   ok(vm.runInContext("JSON.stringify(SHIPBOSS.frostcruiser.mounts)===JSON.stringify(SHIPBOSS.junglecruiser.mounts)", ctxv),
      'on exactly the Jungle Cruiser mounts, so every muzzle stays bolted to the same pixels');
@@ -14831,7 +14832,7 @@ console.log("=== 278. lizzie B-42 alternate costume ===");
 
   /* ---- the sound ---- */
   ok(vm.runInContext("String(BOFA.sfx.enemyMachineShotHeavy||'').indexOf('enemy_machine_shot_heavy.mp3')>=0", ctxv) &&
-     fs.existsSync(path.join(ROOT, 'assets/game/sounds/enemy_machine_shot_heavy.mp3')),
+     fs.existsSync(path.join(ROOT, 'assets/game/shared/audio/sounds/enemy_machine_shot_heavy.mp3')),
      'the bolt voice enemyMachineShotHeavy is registered in the code-owned sfx block, and its file is on disk');
   ok(vm.runInContext("!!(Snd.TAME.enemyMachineShotHeavy && Snd.TAME.enemyMachineShotHeavy.min>=0.1 && Snd.TAME.enemyMachineShotHeavy.min<0.16)", ctxv),
      'and it has a TAME row whose gate sits under the 0.16s rapid beat (0912j: a key with no row plays raw)');
@@ -15080,14 +15081,14 @@ console.log("=== 278. lizzie B-42 alternate costume ===");
     + "return c[1]>c[0]&&c[1]>c[2] && m[2]>150 && m[1]>150 && m[0]<120;})()", ctxv),
      "Cole's ship is green as his plane is, and Maverick's is teal - not Cole's green (0906g)");
   /* ---- the pitch reel, in the atlas the page loads ---- */
-  var _atl293 = JSON.parse(fs.readFileSync(path.join(ROOT, 'assets/game/atlas/bof_gravity_mode_space_weapons.json'), 'utf8')).frames;
-  var _js293 = fs.readFileSync(path.join(ROOT, 'assets/game/atlas/bof_gravity_mode_space_weapons.js'), 'utf8');
+  var _atl293 = JSON.parse(fs.readFileSync(path.join(ROOT, 'assets/game/shared/atlases/bof_gravity_mode_space_weapons.json'), 'utf8')).frames;
+  var _js293 = fs.readFileSync(path.join(ROOT, 'assets/game/shared/atlases/bof_gravity_mode_space_weapons.js'), 'utf8');
   var _so293 = [0, 1, 2, 3, 4, 5, 6, 7].map(function (i) { return 'ship_so_0' + i; });
   ok(_so293.every(function (k) { return _atl293[k] && _atl293[k + '_blue'] && _js293.indexOf('"' + k + '":') > 0 && _js293.indexOf('"' + k + '_blue":') > 0; }),
      'the space atlas carries the eight pitch frames and their palette masks, in the .json AND the .js index.html loads');
   ok(_so293.every(function (k) { return _atl293[k].w === _atl293.ship_so_00.w && _atl293[k].h === _atl293.ship_base.h; }),
      "all eight on ONE canvas at ship_base's height, so the draw's scale-to-height keeps the collapse");
-  var _pngH293 = pngSize('assets/game/atlas/bof_gravity_mode_space_weapons.png').h;
+  var _pngH293 = pngSize('assets/game/shared/atlases/bof_gravity_mode_space_weapons.png').h;
   ok(Object.keys(_atl293).every(function (k) { return _atl293[k].y + _atl293[k].h <= _pngH293; }), 'and every rect lies inside the PNG');
   ok(_gd293.indexOf('spaceSomerFrameKey()') > 0 && _gd293.indexOf('SPACE_SO_VSC[') > 0 && _gd293.indexOf("'ship_roll_'+String(player.roll") > 0,
      'a somersault in space draws the pitch reel with the plume collapsing on it; the roll keeps its own reel (0912a: so IS NOT br)');
@@ -15118,7 +15119,7 @@ console.log('=== 294. Tempest brothers ===');
   ok(vm.runInContext("SUBBOSS[6].kind==='siegebomber'&&ALTBOSS[6].kind==='blacksteel'",ctxv),'Stage 6 fields the bomber and retains Blacksteel');
   ok(vm.runInContext("D.ships.length===2&&D.ai.black!==D.ai.gray&&D.ai.black.rig!==D.ai.gray.rig",ctxv),'two independent ships and aperture pools');
   ok(vm.runInContext("b.hp===b.maxhp&&D.ai.black.hp===8000&&D.ai.gray.hp===8000",ctxv),'combined bar starts full after the native encounter HP floor');
-  ok(vm.runInContext("BOFX.img.tlvb_hull&&BOFX.img.tlvb_hull_damaged",ctxv)&&fs.existsSync(path.join(ROOT,'assets/game/bosses/tempest/tlvb_hull.png'))&&fs.existsSync(path.join(ROOT,'assets/game/bosses/tempest/tlvb_hull_damaged.png')),'both authored gray hull states are registered and on disk');
+  ok(vm.runInContext("BOFX.img.tlvb_hull&&BOFX.img.tlvb_hull_damaged",ctxv)&&fs.existsSync(path.join(ROOT,'assets/game/levels/stage_06/miniboss/bosses/tempest/tlvb_hull.png'))&&fs.existsSync(path.join(ROOT,'assets/game/levels/stage_06/miniboss/bosses/tempest/tlvb_hull_damaged.png')),'both authored gray hull states are registered and on disk');
   ok(vm.runInContext("bossmodeArtKeys('tempestbrothers').some(k=>k==='tlvb_hull')&&debugFightFor(6,'mini').name==='ECLIPSE SIEGE BOMBER'",ctxv),'Legacy brothers retain their art while Boss Mode lists the new Stage 6 bomber');
   vm.runInContext("D.ai.black.enter('chase');D.ai.gray.enter('chase');D.ai.black.boss.x=200;D.ai.gray.boss.x=700;D.ai.black.boss.y=D.ai.gray.boss.y=230;D.ai.black.vulnerable=D.ai.gray.vulnerable=true;tempestBrothersSync(b);",ctxv);
   ok(vm.runInContext("tempestBrothersPartAt(b,D.ships[0].x,D.ships[0].y)==='Bhull'&&tempestBrothersPartAt(b,D.ships[1].x,D.ships[1].y)==='Ghull'",ctxv),'hull hits identify the correct brother');
@@ -15282,7 +15283,7 @@ console.log('=== 297. Razorback and Tempest weapon geometry; Cole impact sound =
   ok(vm.runInContext("mist298.dead&&R.pools.left<before298&&pImpacts.length>0",ctxv),'a live rotated gun still receives mist damage and a real wet impact');
   vm.runInContext("weaponFeedbackSound=oldSound298;pBullets=[];pImpacts=[];particles=[];sonicTrail=[];run.sonicT=0;special=null;subBoss=null;subBossActive=false;player._chgDash=null;player._chgOn=false;Snd.loopStopAll();",ctxv);
   var audio298=JSON.parse(fs.readFileSync(path.join(ROOT,'_BUILD_SOURCE/weapon_feedback_0913/audio-build.json'),'utf8'));
-  ok(Object.values(audio298).every(a=>fs.existsSync(path.join(ROOT,a.file.replace(/\.wav$/i,'.mp3')))&&a.peak<.8&&a.rms>0),'all sixteen authored sound mixes exist with measured headroom');
+  ok(Object.values(audio298).every(a=>fs.existsSync(path.join(ROOT,vm.runInContext('bofAssetPath('+JSON.stringify(a.file.replace(/\.wav$/i,'.mp3'))+')',ctxv)))&&a.peak<.8&&a.rms>0),'all sixteen authored sound mixes exist with measured headroom');
   ok(vm.runInContext("Object.keys(BOFA.sfx).filter(k=>/^(colePressure|juggernaut|laserMist)/.test(k)).every(k=>Snd.TAME[k]&&Snd.TAME[k].g<=.85&&typeof Snd.TAME[k].min==='number')",ctxv),'every new sound route has an explicit gain and retrigger policy');
 }
 
@@ -15681,7 +15682,7 @@ try {
   const files309=JSON.parse(vm.runInContext('JSON.stringify(FURY_KEYS.flatMap(k=>[XART._src["fury_"+k]].concat(furyTintedKey(k)?[XART._src["fury_"+k+"_blue"]]:[])))',ctxv));
   ok(files309.every(p=>p&&fs.existsSync(path.join(ROOT,p))),'every new flight, component and effect image/mask exists on disk');
   // Pin the approved donor's SHA-256 so a fresh checkout needs no local unused-assets archive.
-  ok(require('crypto').createHash('sha256').update(fs.readFileSync(path.join(ROOT,'assets/game/furyship_0914/runtime_base.png'))).digest('hex')==='95a0afa9fdf7bad73c6303bf9976b8385dc3b7bff0fd87f95515af677d6b1acf','level-flight plate is the exact approved somersault frame 13');
+  ok(require('crypto').createHash('sha256').update(fs.readFileSync(path.join(ROOT,'assets/game/shared/ships/furyship_0914/runtime_base.png'))).digest('hex')==='95a0afa9fdf7bad73c6303bf9976b8385dc3b7bff0fd87f95515af677d6b1acf','level-flight plate is the exact approved somersault frame 13');
   const pitch309=JSON.parse(vm.runInContext('JSON.stringify(Array.from({length:12},(_,i)=>furyShipPose({somer:{t:(i+.1)/12,dur:1}},null)))',ctxv));
   ok(new Set(pitch309.map(p=>p.key)).size===12&&pitch309.every(p=>p.key.startsWith('somersault_')),'a full pitch action selects twelve distinct somersault poses');
   for(const dir of [-1,1]){
@@ -15835,6 +15836,9 @@ require('./test_rebel_air_1007.cjs')(vm,ctxv,ok);
 require('./test_hardcorps_finale_patterns_1007.cjs')(vm,ctxv,ok);
 require('./test_hardcorps_finale_1007.cjs')(vm,ctxv,ok);
 require('./test_finale_transform_1007.cjs')(vm,ctxv,ok);
+require('./test_projectile_animation_1007.cjs')(vm,ctxv,ok);
+require('./test_maneuver_safety_1007.cjs')(vm,ctxv,ok);
+require('./test_balance_recovery_1007b.cjs')(vm,ctxv,ok);
 console.log('\n============================================');
 if (errors.length) { console.log('FAILED — ' + errors.length + ' error(s):'); errors.forEach(e => console.log('  ' + e)); process.exit(1); }
 

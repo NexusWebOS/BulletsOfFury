@@ -57,9 +57,9 @@ NAMES = {
  'unused12 - stage1b-old.mp3':'Unused12.mp3',
 }
 MOVED = {
- 'assets/game/hama_vocals_1001/hama_mike_robot_mix_1001_v3.mp3':'assets/game/music/HAMA.mp3',
- 'assets/game/hama_vocals_1001/hama_mike_robot_mix_1001_v2.mp3':'assets/game/music/HAMA_Previous_v2.mp3',
- 'assets/game/hama_vocals_1001/hama_mike_robot_mix_1001.mp3':'assets/game/music/HAMA_Previous_v1.mp3',
+ 'assets/game/shared/audio/hama_vocals_1001/hama_mike_robot_mix_1001_v3.mp3':'assets/game/shared/audio/music/HAMA.mp3',
+ 'assets/game/shared/audio/hama_vocals_1001/hama_mike_robot_mix_1001_v2.mp3':'assets/game/music/HAMA_Previous_v2.mp3',
+ 'assets/game/shared/audio/hama_vocals_1001/hama_mike_robot_mix_1001.mp3':'assets/game/music/HAMA_Previous_v1.mp3',
 }
 ASSIGN = {'mini4':'Level4mb.mp3','mini6':'Level6mb.mp3','mini7':'Level7mb.mp3',
           'mini9':'Level9mb.mp3','boss8p2':'Level8b2.mp3'}
@@ -95,7 +95,7 @@ def organize():
     p=R/'assets/game.js';data=p.read_bytes()
     for key in REMOVE:
         data=re.sub(rb"  BOFA\.music\."+key.encode()+rb"='[^']*';\n",b'',data)
-    marker=b"  BOFA.music.mini5='assets/game/music/Level5mb.mp3';"
+    marker=b"  BOFA.music.mini5='assets/game/levels/stage_05/audio/music/Level5mb.mp3';"
     if b'BOFA.music.mini4=' not in data:
         extra='\n'.join("  BOFA.music.%s='assets/game/music/%s';"%(k,v) for k,v in ASSIGN.items())
         data=data.replace(marker,marker+b'\n'+extra.encode())
@@ -108,10 +108,10 @@ def organize():
     game=(R/'assets/game.js').read_text(encoding='utf-8')
     for k,v in re.findall(r"BOFA\.music\.([\w]+)='([^']+)'",game):routes[k]=v
     routes.update({k:'assets/game/music/'+v for k,v in ASSIGN.items()})
-    routes.update({'boss5':'assets/game/music/Level5b.mp3','mini2':'assets/game/music/Level2mb.mp3',
-                  'mini3':'assets/game/music/Level3mb.mp3','stagex':'assets/game/music/LevelX.mp3',
-                  'hammerTime':'assets/game/music/HammerTime.mp3','hama':'assets/game/music/HAMA.mp3',
-                  'realm8':'assets/game/music/Level8.mp3'})
+    routes.update({'boss5':'assets/game/levels/stage_05/audio/music/Level5b.mp3','mini2':'assets/game/levels/stage_02/audio/music/Level2mb.mp3',
+                  'mini3':'assets/game/levels/stage_03/audio/music/Level3mb.mp3','stagex':'assets/game/levels/stage_x/audio/music/LevelX.mp3',
+                  'hammerTime':'assets/game/shared/audio/music/HammerTime.mp3','hama':'assets/game/shared/audio/music/HAMA.mp3',
+                  'realm8':'assets/game/levels/stage_08/audio/music/Level8.mp3'})
     assert all((R/v).is_file() for v in routes.values())
     encoded=json.dumps(obj,separators=(',',':'),ensure_ascii=True)
     updated=src[:start]+encoded+src[start+used:]

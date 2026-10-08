@@ -1,0 +1,192 @@
+{
+  "knight": {
+    "key": "s81003_knight",
+    "path": "assets/game/levels/stage_08/stage/stage8_1003/knight.png",
+    "cw": 336,
+    "ch": 336,
+    "cols": 4,
+    "frames": 12,
+    "source": "_ART_SOURCES/stage8_1003/knight.png",
+    "source_sha256": "dac177be8ca4962fd233ca2c5be15e5c958973cbf297e5bd22aae0a4b1088550",
+    "source_size": [
+      1254,
+      1254
+    ]
+  },
+  "wall": {
+    "key": "s81003_wall",
+    "path": "assets/game/levels/stage_08/stage/stage8_1003/wall.png",
+    "cw": 192,
+    "ch": 256,
+    "cols": 4,
+    "frames": 12,
+    "source": "_ART_SOURCES/stage8_1003/wall.png",
+    "source_sha256": "9454ca519901ebb34f3ab4a38e8f14181eb90e4f36fa8e83b58e932090dffeaa",
+    "source_size": [
+      1254,
+      1254
+    ]
+  },
+  "teleport": {
+    "key": "s81003_teleport",
+    "path": "assets/game/levels/stage_08/stage/stage8_1003/teleport.png",
+    "cw": 160,
+    "ch": 336,
+    "cols": 4,
+    "frames": 8,
+    "source": "_ART_SOURCES/stage8_1003/teleport.png",
+    "source_sha256": "3ffd8e94bd1b1814630b7dda387a864fbd58358206246b869a41de5f562c07c3",
+    "source_size": [
+      1254,
+      1254
+    ]
+  },
+  "morph": {
+    "key": "s81003_morph",
+    "path": "assets/game/levels/stage_08/stage/stage8_1003/morph.png",
+    "cw": 256,
+    "ch": 336,
+    "cols": 4,
+    "frames": 12,
+    "source": "_ART_SOURCES/stage8_1003/morph.png",
+    "source_sha256": "5572b4360d10b35116a70fb55b3f2cf3332cce0b5a417e6815e494cb7f40b318",
+    "source_size": [
+      1254,
+      1254
+    ]
+  },
+  "gravity": {
+    "key": "s81003_gravity",
+    "path": "assets/game/levels/stage_08/stage/stage8_1003/gravity.png",
+    "cw": 216,
+    "ch": 288,
+    "cols": 4,
+    "frames": 4,
+    "source": "_ART_SOURCES/stage8_1003/gravity.png",
+    "source_sha256": "f3032f6ab03c0a55cd8e69fabf03a9136fcb1a5c6bc902df92ee2f0e4d5cb757",
+    "source_size": [
+      2172,
+      724
+    ]
+  },
+  "stalker": {
+    "key": "s81003_stalker",
+    "path": "assets/game/levels/stage_08/stage/stage8_1003/stalker.png",
+    "cw": 216,
+    "ch": 288,
+    "cols": 4,
+    "frames": 4,
+    "source": "_ART_SOURCES/stage8_1003/stalker.png",
+    "source_sha256": "90d4b1e2e1be262924573dc8be8e8a1e40a58d18dd957464d1fcfd199b47c329",
+    "source_size": [
+      2172,
+      724
+    ]
+  },
+  "prism": {
+    "key": "s81003_prism",
+    "path": "assets/game/levels/stage_08/stage/stage8_1003/prism.png",
+    "cw": 216,
+    "ch": 288,
+    "cols": 4,
+    "frames": 4,
+    "source": "_ART_SOURCES/stage8_1003/prism.png",
+    "source_sha256": "e6440793afc1841936137a04a6cf0fadf58ee419936b785bf9a9793e7c1d138c",
+    "source_size": [
+      2172,
+      724
+    ]
+  },
+  "beams": {
+    "key": "s81003_beams",
+    "path": "assets/game/levels/stage_08/stage/stage8_1003/beams.png",
+    "cw": 112,
+    "ch": 448,
+    "cols": 4,
+    "frames": 8,
+    "source": "_ART_SOURCES/stage8_1003/beams.png",
+    "source_sha256": "2688ac4556ddececf1de8fb7bc7e7ad42399e1328af6c3e348363894cba6361f",
+    "source_size": [
+      1024,
+      1536
+    ]
+  },
+  "fov": {
+    "key": "s81003_fov",
+    "path": "assets/game/levels/stage_08/stage/stage8_1003/fov.png",
+    "cw": 192,
+    "ch": 256,
+    "cols": 4,
+    "frames": 12,
+    "source": "_ART_SOURCES/stage8_1003/fov.png",
+    "source_sha256": "0f90653c462eebb3f48dcc17b0323591f4eda85a009d9dd60439af33e561546b",
+    "source_size": [
+      1254,
+      1254
+    ]
+  },
+  "impact": {
+    "key": "s81003_impact",
+    "path": "assets/game/levels/stage_08/stage/stage8_1003/impact.png",
+    "cw": 256,
+    "ch": 256,
+    "cols": 4,
+    "frames": 8,
+    "source": "_ART_SOURCES/stage8_1003/impact.png",
+    "source_sha256": "d7135d8ca3af30858c7246cd69f002c441f14b4ba3a72161dd1f9e980ea1c07a",
+    "source_size": [
+      1774,
+      887
+    ]
+  },
+  "shatter": {
+    "key": "s81003_shatter",
+    "path": "assets/game/levels/stage_08/stage/stage8_1003/shatter.png",
+    "cw": 256,
+    "ch": 256,
+    "cols": 4,
+    "frames": 16,
+    "source": "_ART_SOURCES/stage8_1003/shatter.png",
+    "source_sha256": "75fab76703833a5858ef24898f9cdb1379058e512b543d61e397a984d8c6e1f5",
+    "source_size": [
+      1254,
+      1254
+    ]
+  },
+  "shards": {
+    "key": "s81003_shards",
+    "path": "assets/game/levels/stage_08/stage/stage8_1003/shards.png",
+    "cw": 96,
+    "ch": 96,
+    "cols": 4,
+    "frames": 4,
+    "source": "_ART_SOURCES/stage8_1003/shatter.png",
+    "sourceBoxes": [
+      [
+        351,
+        953,
+        450,
+        1052
+      ],
+      [
+        491,
+        975,
+        584,
+        1080
+      ],
+      [
+        359,
+        1103,
+        454,
+        1200
+      ],
+      [
+        480,
+        1108,
+        574,
+        1202
+      ]
+    ],
+    "source_sha256": "75fab76703833a5858ef24898f9cdb1379058e512b543d61e397a984d8c6e1f5"
+  }
+}

@@ -18,7 +18,7 @@ const DR5_BASE={tick:r30Tick,draw:r30DrawBoss,encounter:j3Encounter,break:r30Bre
  final:j3FinalDeath,world:drawWorld,begin:beginStage,player:drawPlayer,controls:s6OpeningControlsLocked,
  hit:playerHit,shoot:pShoot,touch:XART._touch,blit:r30Blit,mimic:j3Mimic};
 for(const cells of Object.values(DR5_ART))for(const a of cells)XART._src[a.key]=a.path;
-function dr5RegisterAudio(){if(typeof Snd==='undefined'||!Snd)return;const key='dracodiaShriek',uri='assets/game/dracodia_1005/dracodia_shriek.mp3',list=[],slots=[];
+function dr5RegisterAudio(){if(typeof Snd==='undefined'||!Snd)return;const key='dracodiaShriek',uri='assets/game/levels/stage_08/audio/dracodia_1005/dracodia_shriek.mp3',list=[],slots=[];
  BOFA.sfx[key]=uri;for(let i=0;i<2;i++)Object.defineProperty(list,i,{enumerable:true,get(){if(!slots[i])slots[i]={el:new window.Audio(),uri,attached:false,used:0};return Snd._touchVoice(slots[i]);}});
  Snd.pools[key]={list,slots,i:0};Snd.TAME[key]={g:.82,native:true,min:1.8};Audio.SFX[key]=()=>Snd.play(key);
 }

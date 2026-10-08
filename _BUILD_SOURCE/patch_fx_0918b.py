@@ -22,9 +22,9 @@ def rep(old, new, count=1):
     n = s.count(old); assert n == count, 'anchor %d (want %d): %r' % (n, count, old[:90]); s = s.replace(old, new)
 
 # ---- art
-rep("""  for(const _g of ['fire','water','lightning']) X._src['efx_geyser_'+_g]='assets/game/fx_0918/efx_geyser_'+_g+'.png';
-""", """  for(const _g of ['fire','water','lightning']) X._src['efx_geyser_'+_g]='assets/game/fx_0918/efx_geyser_'+_g+'.png';
-  X._src['efx_debris_0']='assets/game/fx_0918/efx_debris_0.png'; X._src['efx_debris_1']='assets/game/fx_0918/efx_debris_1.png';
+rep("""  for(const _g of ['fire','water','lightning']) X._src['efx_geyser_'+_g]='assets/game/shared/effects/fx_0918/efx_geyser_'+_g+'.png';
+""", """  for(const _g of ['fire','water','lightning']) X._src['efx_geyser_'+_g]='assets/game/shared/effects/fx_0918/efx_geyser_'+_g+'.png';
+  X._src['efx_debris_0']='assets/game/shared/effects/fx_0918/efx_debris_0.png'; X._src['efx_debris_1']='assets/game/shared/effects/fx_0918/efx_debris_1.png';
 """)
 
 # ---- geyserSpawn returns the column; a HOSTILE column burns the player instead of enemies

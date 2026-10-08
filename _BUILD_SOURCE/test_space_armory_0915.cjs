@@ -10,7 +10,7 @@ const result=vm.runInContext(\`(()=>{
   hq_space_akimbo_icon_0915:'akimbo_icon.png',hq_space_mine_icon_0915:'proximity_mine_icon.png',
   hq_space_helper_0915:'helper_orb.png',hq_space_mine_0915:'proximity_mine.png',
   hq_space_shrapnel_long_0915:'shrapnel_long.png',hq_space_shrapnel_forked_0915:'shrapnel_forked.png'};
- for(const k in art)check(XART._src[k]==='assets/game/ui/space_armory_0915/'+art[k],k+' registered');
+ for(const k in art)check(XART._src[k]==='assets/game/shared/ui/ui/space_armory_0915/'+art[k],k+' registered');
  run.stage=5;run.spaceMode=true;run.spaceLevels=[3,3,3];run.spaceWeapon=0;run.spaceAkimbo=0;
  enemies.length=0;powerups.length=0;pBullets.length=0;spaceHelpers.length=0;spaceMines.length=0;boss=null;bossActive=false;
  run._spaceArmoryBag=[];const bag=[spaceArmoryRoll(),spaceArmoryRoll(),spaceArmoryRoll()];

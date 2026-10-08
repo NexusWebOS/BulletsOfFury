@@ -10,7 +10,7 @@ page='''<!doctype html><meta charset="utf-8"><title>Stage X arenas and blue figh
 <iframe id="game" src="../../index.html?build=stagex-coast-1004j-review"></iframe>
 <p><small>Furious practice. Demo saves use a separate namespace. The linked game uses your actual campaign saves.</small></p>
 <div class="pair"><img src="arena-XHARR.png" alt="Harrier carrier over Stage X mountain and water"><img src="arena-XREBEL.png" alt="Five rebels over the Stage X arena"></div>
-<p>Animated water beneath a fixed terrain crop:</p><img src="water-animation.gif" alt="Native animated water beneath the fixed mountain and coast"><p>The terrain-only layer (checkerboard indicates transparency):</p><img style="max-width:680px;background:repeating-conic-gradient(#242833 0% 25%,#111724 0% 50%) 0 / 24px 24px" src="../../assets/game/stagex_coast_1004j/terrain.png" alt="Coastal city terrain with no painted water or waterfalls">
+<p>Animated water beneath a fixed terrain crop:</p><img src="water-animation.gif" alt="Native animated water beneath the fixed mountain and coast"><p>The terrain-only layer (checkerboard indicates transparency):</p><img style="max-width:680px;background:repeating-conic-gradient(#242833 0% 25%,#111724 0% 50%) 0 / 24px 24px" src="../../assets/game/levels/stage_x/stage/stagex_coast_1004j/terrain.png" alt="Coastal city terrain with no painted water or waterfalls">
 </main><script>
 const frame=document.querySelector('#game');let initialized=false;
 function ready(){try{return frame.contentWindow.__bofFrames>4}catch(e){return false}}

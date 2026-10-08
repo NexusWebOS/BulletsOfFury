@@ -38,4 +38,4 @@ XART._touch=function(k){
  }
  return PP5_TOUCH.apply(this,arguments);
 };
-for(const p of Object.keys(PP5.mouths).filter(p=>p!=='lizzie'))for(const em of ['idle','talk-closed','talk-small','talk-medium','talk-wide','talk-o'])XART.rdy('pp5_raw_'+p+'_'+em);
+for(const p of Object.keys(PP5.mouths).filter(p=>p!=='lizzie'))for(const em of ['idle'])XART.rdy('pp5_raw_'+p+'_'+em);

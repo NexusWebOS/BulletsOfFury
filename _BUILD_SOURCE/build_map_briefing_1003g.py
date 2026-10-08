@@ -12,8 +12,8 @@ for name,rect in rects.items():
  assert im.mode=='RGBA' and x+w<=im.width and y+h<=im.height
  manifest['assets'].append({'path':dst.relative_to(R).as_posix(),'source':src.relative_to(R).as_posix(),
   'rect':rect,'size':list(im.size),'sha256':hashlib.sha256(src.read_bytes()).hexdigest()})
-manifest['lizzie']={'source':'assets/game/pilots_0922/sheets/lizzie_expressions.png',
- 'sha256':hashlib.sha256((R/'assets/game/pilots_0922/sheets/lizzie_expressions.png').read_bytes()).hexdigest(),
+manifest['lizzie']={'source':'assets/game/pilots/lizzie/portraits/pilots_0922/sheets/lizzie_expressions.png',
+ 'sha256':hashlib.sha256((R/'assets/game/pilots/lizzie/portraits/pilots_0922/sheets/lizzie_expressions.png').read_bytes()).hexdigest(),
  'runtime':'assets/map_briefing_1003g.js','method':'Original portrait interior and mouth pixels drawn into fixed generated bezel; no per-frame bounds, scale, body or border change while speaking. Legacy menu and comm keys route through XART._touch. Original files preserved.'}
 (D/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n',encoding='utf-8')
 print('Packaged two unchanged generated plates and recorded original Lizzie source.')

@@ -116,7 +116,7 @@ function d27ShipFrames(key){
   }
   D27_SHIP_CACHE.set(id,frames);return frames;
 }
-function d27ShipFrame(key,phase){const frames=d27ShipFrames(key);return frames?frames[((phase==null?Math.floor(performance.now()/55):phase)%6+6)%6]:null;}
+function d27ShipFrame(key,phase){const frames=d27ShipFrames(key);return frames?frames[((phase==null?Math.floor(efxClock*1000/55):phase)%6+6)%6]:null;}
 XART.get=function(key){return d27ShipFrame(key)||D27_RAW_GET(key);};
 
 function d27FuriousBomber(b){return !!b?._bomber?.space&&(diffKey==='furious'||diffKey==='insanity');}

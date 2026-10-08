@@ -5,7 +5,7 @@ probe_tempest_0913b.py - THE TEMPEST LEVIATHAN, STAGE 6's MINIBOSS JET DUEL, IN 
     python3 _BUILD_SOURCE/probe_tempest_0913b.py                  # proofs -> docs/proofs/tempest_0913b/
     python3 _BUILD_SOURCE/probe_tempest_0913b.py --out DIR --overlay DIR [--repo REPO]
         --overlay serves every file under DIR in place of the repo's copy at the same path (DIR/assets/game.js,
-        DIR/assets/game/bosses/tempest/tlv_*.png), so a patch can be proved BEFORE it is applied. The integrator,
+        DIR/assets/game/levels/stage_06/miniboss/bosses/tempest/tlv_*.png), so a patch can be proved BEFORE it is applied. The integrator,
         running it inside the patched repo, passes neither.
 
 Mike, 0912: "this is our new mini-boss and fighting style for level 6's miniboss" and "Showcase the new level 6

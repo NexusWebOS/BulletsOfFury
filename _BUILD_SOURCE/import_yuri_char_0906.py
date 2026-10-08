@@ -224,16 +224,16 @@ def main():
         return 0
 
     avc.save(os.path.join(OUT, 'yuri_avatar.png'))
-    made['yuri_avatar'] = 'assets/game/yuri_v2/yuri_avatar.png'
+    made['yuri_avatar'] = 'assets/game/pilots/yuri/portraits/yuri_v2/yuri_avatar.png'
     for i, slot in EMO.items():
         emo[i].save(os.path.join(OUT, 'port_yuri_%s.png' % slot))
-        made['port_yuri_%s' % slot] = 'assets/game/yuri_v2/port_yuri_%s.png' % slot
+        made['port_yuri_%s' % slot] = 'assets/game/pilots/yuri/portraits/yuri_v2/port_yuri_%s.png' % slot
     for i, b in enumerate(bodies):
         b.save(os.path.join(OUT, 'yuri_body_%d.png' % i))
-        made['yuri_body_%d' % i] = 'assets/game/yuri_v2/yuri_body_%d.png' % i
-    print('wrote %d files to assets/game/yuri_v2/' % len(made))
+        made['yuri_body_%d' % i] = 'assets/game/pilots/yuri/portraits/yuri_v2/yuri_body_%d.png' % i
+    print('wrote %d files to assets/game/pilots/yuri/portraits/yuri_v2/' % len(made))
     json.dump(made, open(os.path.join(OUT, '_keys.json'), 'w'), indent=1)
-    print('key -> path map written to assets/game/yuri_v2/_keys.json')
+    print('key -> path map written to assets/game/pilots/yuri/portraits/yuri_v2/_keys.json')
     return 0
 
 

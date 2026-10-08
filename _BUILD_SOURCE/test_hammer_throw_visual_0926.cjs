@@ -16,7 +16,7 @@ module.exports=function testHammerThrowVisual(vm,ctxv,ok){
    h.state='throw';h.t=.4;h.throw={x:326,y:360,angle:2,trail:Array.from({length:5},(_,i)=>({x:320-i*12,y:350-i*20,angle:2-i*.2}))};hammerBossDraw(boss);
    o.afterimages=calls.flight.length===3&&calls.flight.slice(0,-1).every(q=>q.a===.09)&&calls.flight[2].a===1;
    o.emptyHand=calls.reel[calls.reel.length-1].key==='arch_hammer_throw_0926'&&calls.reel[calls.reel.length-1].f===0;
-   o.assets=['hammer_throw','hammer_overhead','hammer_flight','storm_charge','hammer_lightning','chromium_spike'].every(k=>XART._src['arch_'+k+'_0926']==='assets/game/stage5_archmage_0916/combat_0926/'+(k==='chromium_spike'?'chromium_spike_tall_v2':k)+'.png');
+   o.assets=['hammer_throw','hammer_overhead','hammer_flight','storm_charge','hammer_lightning','chromium_spike'].every(k=>XART._src['arch_'+k+'_0926']==='assets/game/levels/stage_05/boss/stage5_archmage_0916/combat_0926/'+(k==='chromium_spike'?'chromium_spike_tall_v2':k)+'.png');
    return JSON.stringify(o);
   }finally{boss=save.boss;combatWarningDraw=save.draw;hammerGroundReticleDraw=save.ret;hammerReelDraw=save.reel;hammerFlightDraw=save.flight;hammerFrame=save.frame;}
  })()`,ctxv));for(const[k,v]of Object.entries(out))ok(v,'Hammer throw visuals: '+k);

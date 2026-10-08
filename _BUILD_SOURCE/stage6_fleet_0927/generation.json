@@ -4,7 +4,7 @@
   "prompt": "Production game sprite sheet for Bullets of Fury, hardcore 16-bit arcade vertical shoot-em-up. Transparent background. Exactly TWO isolated top-down enemy aircraft, side by side, generous transparent gutters, no text, no UI. Both perfectly vertical noses pointing SOUTH/down toward player; symmetrical consistent overhead orthographic view, no perspective, no banking or tilt. Left: lean swept-wing dark gunmetal interceptor with red cockpit and orange engine vents, two compact cannons at nose, physically coherent wings and machinery. Right: heavier bomber from exactly same military design family, dark gunmetal and red cockpit, broader wings, twin outer missile pods with rockets facing down, compact underside bomb bay and beefy rear engines. Crisp pixel-art edges and clustered highlights at native 16-bit style, tiny rivets, warm copper accents, readable silhouettes. Do not add colored glows around hulls, no shadows on background. Entire aircraft fit frame uncropped, facing identical south direction. Each sprite about 256 pixels tall; sheet 1024x512.",
   "import": "Split at x=800; crop alpha bounds; fit within 256x256 with nearest-neighbor sampling; preserve alpha.",
   "runtime": [
-    "assets/game/stage6_fleet_0927/interceptor.png",
-    "assets/game/stage6_fleet_0927/bomber.png"
+    "assets/game/levels/stage_06/enemies/stage6_fleet_0927/interceptor.png",
+    "assets/game/levels/stage_06/enemies/stage6_fleet_0927/bomber.png"
   ]
 }

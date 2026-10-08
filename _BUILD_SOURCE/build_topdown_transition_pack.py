@@ -129,11 +129,11 @@ def main() -> None:
             "no_baked_text_logos_or_ui": True,
         },
         "stages": entries,
-        "interaction_zones": "assets/game/cinematic_level_transitions_topdown/interaction_zones.json",
+        "interaction_zones": "assets/game/shared/cinematics/cinematic_level_transitions_topdown/interaction_zones.json",
         "preview": contact.relative_to(ROOT).as_posix(),
         "generation": {
             "mode": "built-in ImageGen reference workflow",
-            "prompt_record": "assets/game/cinematic_level_transitions_topdown/GENERATION_PROMPTS.md",
+            "prompt_record": "assets/game/shared/cinematics/cinematic_level_transitions_topdown/GENERATION_PROMPTS.md",
         },
     }
     (OUT / "interaction_zones.json").write_text(json.dumps(zones, indent=2) + "\n", encoding="utf-8")

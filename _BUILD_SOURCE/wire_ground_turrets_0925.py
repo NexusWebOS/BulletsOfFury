@@ -11,12 +11,12 @@ def replace_once(old, new):
     data = data.replace(before, new.encode("utf-8"), 1)
 
 replace_once(
-    "  BOFX.img.overhaul_toxic_jet='assets/game/enemy_overhaul_0925/sprites/stage7_toxic_jet_01.png';",
+    "  BOFX.img.overhaul_toxic_jet='assets/game/levels/stage_07/enemies/enemy_overhaul_0925/sprites/stage7_toxic_jet_01.png';",
     "  for(const _gs of [1,2,3,4,6,7,8])\n"
     "    BOFX.img['overhaul_ground_base_'+_gs]='assets/game/enemy_overhaul_0925/sprites/ground_base_stage'+_gs+'_'+({1:'jungle',2:'volcano',3:'ice',4:'desert',6:'city',7:'toxic',8:'alien'}[_gs])+'.png';\n"
     "  for(const _gh of ['mg','missile','laser','sonic'])\n"
     "    BOFX.img['overhaul_ground_head_'+_gh]='assets/game/enemy_overhaul_0925/sprites/ground_head_'+_gh+'.png';\n"
-    "  BOFX.img.overhaul_toxic_jet='assets/game/enemy_overhaul_0925/sprites/stage7_toxic_jet_01.png';"
+    "  BOFX.img.overhaul_toxic_jet='assets/game/levels/stage_07/enemies/enemy_overhaul_0925/sprites/stage7_toxic_jet_01.png';"
 )
 replace_once(
     "function _planSorted(P,stageNum){\n  if(Number.isFinite(stageNum)) difficultyElitePlan(P,stageNum);",

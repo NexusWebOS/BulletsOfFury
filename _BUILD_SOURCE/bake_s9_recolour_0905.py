@@ -31,7 +31,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from s9_palette_variants_0905 import recolour, drop_strays, colours
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-ATLAS = os.path.join(ROOT, 'assets/game/atlas/en_s9.png')
+ATLAS = os.path.join(ROOT, 'assets/game/levels/stage_09/enemies/en_s9.png')
 BACKUP = ATLAS + '.bak-0905recolour'
 
 ASSIGN = {'wskim': 'blue', 'pneedle': 'lightgray', 'pmine': 'asis', 'gleech': 'neonred',

@@ -3,7 +3,7 @@ from pathlib import Path
 import json,hashlib
 from PIL import Image
 ROOT=Path(__file__).resolve().parents[1]
-OUT=ROOT/'assets/game/chaos_harrier/mk2_0923'
+OUT=ROOT/'assets/game/levels/stage_05/miniboss/chaos_harrier/mk2_0923'
 im=Image.open(OUT/'frames_source.png').convert('RGBA')
 cols=[0,545,1050,1550,2048]
 rows=[0,570,1135,1560,2048]

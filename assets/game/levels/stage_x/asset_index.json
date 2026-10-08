@@ -1,0 +1,55 @@
+{
+  "owner": "levels/stage_x",
+  "loading": {
+    "boot": "UI, fonts, idle portraits only",
+    "deployment": "selected pilot portraits, shared player weapons, required stage textures",
+    "transition": "release previous stage textures and derived caches; preserve explicitly queued copied-form dependencies",
+    "quality": "automatic native resolution on low-memory/low-core devices; reduce supersampling after sustained slow play frames"
+  },
+  "sharedDependencies": [
+    "shared/fonts",
+    "shared/ui",
+    "shared/player_weapons",
+    "shared/effects",
+    "shared/ships"
+  ],
+  "assets": [
+    {
+      "key": "sx1001_arena",
+      "root": "sx1001_arena",
+      "path": "assets/game/levels/stage_x/stage/stagex_coast_1004j/terrain.png",
+      "owner": "levels/stage_x",
+      "cell": null
+    }
+  ],
+  "files": [
+    {
+      "path": "assets/game/levels/stage_x/audio/music/LevelX.mp3",
+      "owner": "levels/stage_x",
+      "bytes": 2829412,
+      "role": "registered runtime asset"
+    },
+    {
+      "path": "assets/game/levels/stage_x/stage/stagex_coast_1004j/manifest.json",
+      "owner": "levels/stage_x",
+      "bytes": 567,
+      "role": "source or supporting file"
+    },
+    {
+      "path": "assets/game/levels/stage_x/stage/stagex_coast_1004j/terrain.png",
+      "owner": "levels/stage_x",
+      "bytes": 1452077,
+      "role": "registered runtime asset",
+      "width": 680,
+      "height": 1218
+    }
+  ],
+  "audio": {
+    "sfx": {},
+    "music": {
+      "stagex": "assets/game/levels/stage_x/audio/music/LevelX.mp3"
+    }
+  },
+  "deploymentRoots": [],
+  "audioDescription": "Level music and stage-specific sounds are in audio/. Common music and reusable sounds are registered in BOFA and stored once in shared/audio."
+}

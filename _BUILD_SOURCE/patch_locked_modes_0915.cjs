@@ -17,13 +17,13 @@ function once(oldText,newText,label){
   game=parts[0]+newText+parts[1];
 }
 
-once("  X._src['pause_button_0915']='assets/game/ui/pause_0915/button.png';\n",
-"  X._src['pause_button_0915']='assets/game/ui/pause_0915/button.png';\n"+
+once("  X._src['pause_button_0915']='assets/game/shared/ui/ui/pause_0915/button.png';\n",
+"  X._src['pause_button_0915']='assets/game/shared/ui/ui/pause_0915/button.png';\n"+
 "  /* Generated mode plates use a source crop because the generator baked a checkerboard beyond\n"+
 "     their beveled frames. The exact Nexus II chain plate is clipped over the same silhouette. */\n"+
-"  X._src['mode_boss_rush_0915']='assets/game/ui/modes_0915/boss_rush.png';\n"+
-"  X._src['mode_time_attack_0915']='assets/game/ui/modes_0915/time_attack.png';\n"+
-"  X._src['mode_lock_nexus_0915']='assets/game/ui/modes_0915/nexus_chains.webp';\n",'mode art registrations');
+"  X._src['mode_boss_rush_0915']='assets/game/shared/ui/ui/modes_0915/boss_rush.png';\n"+
+"  X._src['mode_time_attack_0915']='assets/game/shared/ui/ui/modes_0915/time_attack.png';\n"+
+"  X._src['mode_lock_nexus_0915']='assets/game/shared/ui/ui/modes_0915/nexus_chains.webp';\n",'mode art registrations');
 
 once("const WEAPONS=['MACHINE GUN','SPREAD FIRE','MISSILES','LASER','FLAMETHROWER','ICE ORB','LASER MIST'];\n",
 "/* Boss Rush and Time Attack are account-level unlocks earned only by clearing the final\n"+

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""probe_404stage.py - who asks for assets/game/stage1.png?
+"""probe_404stage.py - who asks for assets/game/levels/stage_01/stage/stage1.png?
 
 The stage-select screen 404s on it and draws an empty preview card over the map (visible in
 docs/proofs/stagesel_mouse_0812b.png, bottom-left). grep finds no such path in game.js, the

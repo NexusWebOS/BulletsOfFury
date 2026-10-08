@@ -2,12 +2,12 @@
 /* Mike's October 3 combat pass. Generated art stays unchanged on disk. Each
    moving Reaver module owns its draw, hardpoint, collision and Retina target. */
 const AV3={clock:0,events:[],last:new Map(),seen:new WeakSet(),loops:new Set(),cells:new Map(),draws:{}};
-for(const key of ['reaver_parts','laser_beams','laser_muzzles'])XART._src['av3_'+key]='assets/game/combat_1003i/'+key+'.png';
+for(const key of ['reaver_parts','laser_beams','laser_muzzles'])XART._src['av3_'+key]='assets/game/shared/combat/combat_1003i/'+key+'.png';
 const AV3_CUES=['laser_charge','laser_burn','laser_release','fusion_cannon','cole_laser6','cole_laser7','target_acquire','teleport_out','teleport_in','firewall_launch','firewall_burn','toxic_spit','alien_orb','claw_lunge','impact_metal','impact_energy','impact_flesh','code_shatter','module_break','gravity_pulse'];
 function av3Warm(){for(const key of ['reaver_parts','laser_beams','laser_muzzles'])XART.rdy('av3_'+key);}
 function av3RegisterAudio(){
  if(typeof Snd==='undefined'||!Snd)return;
- for(const name of AV3_CUES){const key='av3_'+name,uri='assets/game/combat_1003i/'+name+'.mp3';
+ for(const name of AV3_CUES){const key='av3_'+name,uri='assets/game/shared/combat/combat_1003i/'+name+'.mp3';
   BOFA.sfx[key]=uri;const list=[],slots=[];
   for(let i=0;i<3;i++)Object.defineProperty(list,i,{enumerable:true,get(){if(!slots[i])slots[i]={el:new window.Audio(),uri,attached:false,used:0};return Snd._touchVoice(slots[i]);}});
   Snd.pools[key]={list,slots,i:0};Snd.TAME[key]={g:/impact/.test(name)?.60:/burn|cole_laser/.test(name)?.68:.82,native:true,min:/impact/.test(name)?.10:/charge|target/.test(name)?.45:.13};

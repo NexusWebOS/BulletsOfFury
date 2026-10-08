@@ -4,7 +4,7 @@ module.exports=function(vm,ctxv,ok,nativePlayerHit){
   vm.runInContext(fs.readFileSync(path.join(__dirname,'../assets',f),'utf8'),ctxv,{filename:f});
  console.log('=== 380. Fusion overload, upgrade previews, modular replacements and fitted art ===');
  for(const pack of ['fusion_0930','repair_0930','encounters_0930']){
-  const data=JSON.parse(fs.readFileSync(path.join(__dirname,'../assets/game',pack,'manifest.json')));
+  const data=JSON.parse(fs.readFileSync(path.join(__dirname,'..',vm.runInContext('bofAssetPath('+JSON.stringify('assets/game/'+pack+'/manifest.json')+')',ctxv))));
   for(const [name,a] of Object.entries(data)){
    const p=path.join(__dirname,'..',a.path),png=fs.readFileSync(p),w=png.readUInt32BE(16),h=png.readUInt32BE(20);
    ok(a.frames.every(r=>r[0]>=0&&r[1]>=0&&r[2]>0&&r[3]>0&&r[0]+r[2]<=w&&r[1]+r[3]<=h),pack+'/'+name+' atlas rectangles are in bounds');

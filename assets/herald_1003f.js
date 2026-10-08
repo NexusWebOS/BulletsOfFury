@@ -3,7 +3,7 @@
    and make it modular. This named exception supersedes the old whole-plate rule. */
 XART._src[HD1003_ART.key]=HD1003_ART.path;
 // Original effects from the close Contra study; unchanged native RGBA source.
-const HC1006_FX={key:'hc1006_signature',path:'assets/game/contra_fx_1006/boss_signature_fx.png',cell:362,clips:{joint:{row:0,dur:.65,pivot:.58},breach:{row:2,dur:1,pivot:.50}}};
+const HC1006_FX={key:'hc1006_signature',path:'assets/game/shared/effects/contra_fx_1006/boss_signature_fx.png',cell:362,clips:{joint:{row:0,dur:.65,pivot:.58},breach:{row:2,dur:1,pivot:.50}}};
 XART._src[HC1006_FX.key]=HC1006_FX.path;
 SUBBOSS[8]={kind:'heralddeath',at:ALTBOSS[8].at,afterScroll:ALTBOSS[8].afterScroll};
 const HD1003_BASE={begin:beginStage,spawn:spawnSubBoss__inner,move:shipBossManoeuvre,

@@ -1,8 +1,8 @@
 "use strict";
 /* Mike's September 27 gameplay/Armory pass. Authored art, shared strike warnings. */
-const POLISH_ART={armory:'assets/game/polish_0927b/armory.png',bomber:'assets/game/polish_0927b/bomber.png',warning:'assets/game/polish_0927b/warning.png',ordnance:'assets/game/projectiles_0927/stage4_ordnance.png'};
+const POLISH_ART={armory:'assets/game/shared/combat/polish_0927b/armory.png',bomber:'assets/game/shared/combat/polish_0927b/bomber.png',warning:'assets/game/shared/combat/polish_0927b/warning.png',ordnance:'assets/game/levels/stage_04/projectiles/projectiles_0927/stage4_ordnance.png'};
 for(const [k,v] of Object.entries(POLISH_ART))XART._src['polish_'+k]=v;
-XART._src.polish_ice_ordnance='assets/game/projectiles_0927/stage3_ordnance.png';
+XART._src.polish_ice_ordnance='assets/game/levels/stage_03/projectiles/projectiles_0927/stage3_ordnance.png';
 const POLISH_CELLS={armory:[[225,48,422,406],[892,47,424,409],[225,564,422,402],[895,565,417,403]],bomber:[[8,4,977,601],[1047,28,206,574],[351,615,237,535],[790,685,322,429]],warning:[[196,88,274,679],[750,88,274,679],[1304,88,274,679]]};
 const POLISH_CACHE={};
 function polishStage4Projectile(b,role){
@@ -11,7 +11,7 @@ function polishStage4Projectile(b,role){
   const im=XART.get('polish_ordnance'),frame=Math.floor((b.t||0)*18+(b._ph||0))%4,
     h=({steel:36,brass:30,rocket:46,missile:50,bomb:48,rail:42}[role])*(b.szMul||1),scale=h/256;
   ctx.save();ctx.imageSmoothingEnabled=false;ctx.translate(Math.round(b.x),Math.round(b.y));
-  ctx.rotate(Math.atan2(b.vy||1,b.vx||0)-Math.PI/2);
+  ctx.rotate(Math.atan2(b.vy??1,b.vx??0)-Math.PI/2);
   ctx.drawImage(im,frame*256,row*320,256,320,-128*scale,-230*scale,h,320*scale);ctx.restore();return true;
 }
 function polishStage3Projectile(b,role){
@@ -20,7 +20,7 @@ function polishStage3Projectile(b,role){
   const frame=Math.floor((b.t||0)*18+(b._ph||0))%4,im=XART.get('polish_ice_ordnance'),
     scale=({shard:44,lance:48,tracer:34,mortar:40,shell:48,wave:42}[role])*(b.szMul||1)/256;
   ctx.save();ctx.imageSmoothingEnabled=false;ctx.translate(Math.round(b.x),Math.round(b.y));
-  ctx.rotate(Math.atan2(b.vy||1,b.vx||0)-Math.PI/2);
+  ctx.rotate(Math.atan2(b.vy??1,b.vx??0)-Math.PI/2);
   ctx.drawImage(im,frame*256,row*320,256,320,-128*scale,-230*scale,256*scale,320*scale);ctx.restore();return true;
 }
 function polishCell(name,i){

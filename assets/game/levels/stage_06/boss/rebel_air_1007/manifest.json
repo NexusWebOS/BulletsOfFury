@@ -1,0 +1,239 @@
+{
+  "key": "ra7_air",
+  "path": "assets/game/levels/stage_06/boss/rebel_air_1007/rebel_air.png",
+  "nativeSize": [
+    1448,
+    1086
+  ],
+  "grid": [
+    4,
+    3
+  ],
+  "cellSize": [
+    362,
+    362
+  ],
+  "sha256": "5090844963aec3d25c2a8a5f70355a569dfaf457389b7b6728ed5852910cc045",
+  "cells": {
+    "winch": {
+      "rect": [
+        0,
+        0,
+        362,
+        362
+      ],
+      "alphaBounds": [
+        45,
+        47,
+        331,
+        335
+      ],
+      "pivot": [
+        181,
+        181
+      ]
+    },
+    "hook_open": {
+      "rect": [
+        362,
+        0,
+        362,
+        362
+      ],
+      "alphaBounds": [
+        52,
+        40,
+        310,
+        322
+      ],
+      "pivot": [
+        181,
+        181
+      ]
+    },
+    "chain_link": {
+      "rect": [
+        724,
+        0,
+        362,
+        362
+      ],
+      "alphaBounds": [
+        133,
+        67,
+        228,
+        302
+      ],
+      "pivot": [
+        181,
+        181
+      ]
+    },
+    "hook_closed": {
+      "rect": [
+        1086,
+        0,
+        362,
+        362
+      ],
+      "alphaBounds": [
+        101,
+        39,
+        262,
+        309
+      ],
+      "pivot": [
+        181,
+        181
+      ]
+    },
+    "nyx_spiral_0": {
+      "rect": [
+        0,
+        362,
+        362,
+        362
+      ],
+      "alphaBounds": [
+        67,
+        14,
+        295,
+        328
+      ],
+      "pivot": [
+        181,
+        181
+      ]
+    },
+    "nyx_spiral_1": {
+      "rect": [
+        362,
+        362,
+        362,
+        362
+      ],
+      "alphaBounds": [
+        67,
+        13,
+        292,
+        327
+      ],
+      "pivot": [
+        181,
+        181
+      ]
+    },
+    "nyx_spiral_2": {
+      "rect": [
+        724,
+        362,
+        362,
+        362
+      ],
+      "alphaBounds": [
+        68,
+        14,
+        298,
+        325
+      ],
+      "pivot": [
+        181,
+        181
+      ]
+    },
+    "nyx_spiral_3": {
+      "rect": [
+        1086,
+        362,
+        362,
+        362
+      ],
+      "alphaBounds": [
+        68,
+        13,
+        302,
+        325
+      ],
+      "pivot": [
+        181,
+        181
+      ]
+    },
+    "nyx_spiral_4": {
+      "rect": [
+        0,
+        724,
+        362,
+        362
+      ],
+      "alphaBounds": [
+        52,
+        13,
+        299,
+        325
+      ],
+      "pivot": [
+        181,
+        181
+      ]
+    },
+    "nyx_spiral_5": {
+      "rect": [
+        362,
+        724,
+        362,
+        362
+      ],
+      "alphaBounds": [
+        68,
+        9,
+        295,
+        328
+      ],
+      "pivot": [
+        181,
+        181
+      ]
+    },
+    "nyx_spiral_6": {
+      "rect": [
+        724,
+        724,
+        362,
+        362
+      ],
+      "alphaBounds": [
+        68,
+        10,
+        298,
+        332
+      ],
+      "pivot": [
+        181,
+        181
+      ]
+    },
+    "nyx_spiral_7": {
+      "rect": [
+        1086,
+        724,
+        362,
+        362
+      ],
+      "alphaBounds": [
+        67,
+        7,
+        301,
+        328
+      ],
+      "pivot": [
+        181,
+        181
+      ]
+    }
+  },
+  "processing": "Exact source byte copy, no raster editing",
+  "source": "_ART_SOURCES/rebel_air_1007/rebel_air.png",
+  "prompt": "_ART_SOURCES/rebel_air_1007/prompt.txt",
+  "notes": "Hook modules articulate independently. Nyx uses the same eight ribbon cells for clipped back/front depth passes."
+}

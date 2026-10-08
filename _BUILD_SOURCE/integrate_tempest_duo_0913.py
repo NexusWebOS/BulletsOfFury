@@ -30,8 +30,8 @@ if 'const TEMPEST_DUO_AI=' in g:
     game.write_bytes(g.replace('\r\n','\n').encode('utf-8'))
     print('Refreshed native adapter; excluded standalone step/input/escape methods.')
     raise SystemExit(0)
-change("  for(const _tl of ['hull','hull_damaged','beam','charge','bolt','needle']) BOFX.img['tlv_'+_tl]='assets/game/bosses/tempest/tlv_'+_tl+'.png';",
-       "  for(const _tl of ['hull','hull_damaged','beam','charge','bolt','needle']) BOFX.img['tlv_'+_tl]='assets/game/bosses/tempest/tlv_'+_tl+'.png';\n  for(const _tl of ['hull','hull_damaged']) BOFX.img['tlvb_'+_tl]='assets/game/bosses/tempest/tlvb_'+_tl+'.png';")
+change("  for(const _tl of ['hull','hull_damaged','beam','charge','bolt','needle']) BOFX.img['tlv_'+_tl]='assets/game/levels/stage_06/miniboss/bosses/tempest/tlv_'+_tl+'.png';",
+       "  for(const _tl of ['hull','hull_damaged','beam','charge','bolt','needle']) BOFX.img['tlv_'+_tl]='assets/game/levels/stage_06/miniboss/bosses/tempest/tlv_'+_tl+'.png';\n  for(const _tl of ['hull','hull_damaged']) BOFX.img['tlvb_'+_tl]='assets/game/levels/stage_06/miniboss/bosses/tempest/tlvb_'+_tl+'.png';")
 change("6:{at:0.45, kind:'tempestleviathan', afterScroll:1121}", "6:{at:0.45, kind:'tempestbrothers', afterScroll:1121}")
 change("// Mike 0912: the TEMPEST LEVIATHAN jet duel is stage 6's miniboss; the Blacksteel Raptor is ALTBOSS[6]",
        "// Mike 0913: the approved black/gray Tempest brothers share stage 6; Blacksteel remains ALTBOSS[6]")

@@ -37,7 +37,7 @@ the commit the pixels can be restored from):
   Small doubtful families are KEPT in misc rather than quarantined - the saving is not worth a blank.
 
 SHEET INDEX IS A NAME NOW. BOFX.cells rows are [sheet, x, y, w, h] and the loader resolves the sheet
-as 'nca_'+sheet, so a row of ['en_s1', ...] reads assets/game/atlas/en_s1.png through the img key
+as 'nca_'+sheet, so a row of ['en_s1', ...] reads assets/game/levels/stage_01/enemies/en_s1.png through the img key
 'nca_en_s1'. 'nca_s1combatfx' already used this route, so no loader change is needed.
 """
 import io, os, re, sys, json, math, struct, subprocess, collections, bisect

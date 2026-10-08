@@ -6,8 +6,8 @@ from pathlib import Path
 from PIL import Image
 import numpy as np,json,hashlib,argparse
 ROOT=Path(__file__).resolve().parents[1]
-OLD=ROOT/'assets/game/player_weapons/fire_whip_lash_0923'
-OUT=ROOT/'assets/game/player_weapons/fire_whip_sweep_0923'
+OLD=ROOT/'assets/game/shared/player_weapons/player_weapons/fire_whip_lash_0923'
+OUT=ROOT/'assets/game/shared/player_weapons/player_weapons/fire_whip_sweep_0923'
 def lum(a):return a[...,0]*.299+a[...,1]*.587+a[...,2]*.114
 refs=[np.asarray(Image.open(OLD/(n+'_palette.png')).convert('RGBA')) for n in ['fireorb','flamethrower']]
 pool=np.concatenate([a[a[:,:,3]>200,:3] for a in refs]).astype(float)
@@ -60,7 +60,7 @@ if argparse.ArgumentParser().parse_known_args()[1]==['--install']:
  p=ROOT/'assets/game.js';s=p.read_bytes().decode('utf-8')
  start=s.index('const FIRE_WHIP_POSES=');end=s.index('\nfunction fireWhipFrame',start)
  s=s[:start]+'const FIRE_WHIP_POSES='+json.dumps(meta,separators=(',',':'))+';'+s[end:]
- s=s.replace("f<16;f++)X._src['fire_whip_pose_'+f]='assets/game/player_weapons/fire_whip_lash_0923/pose_'", "f<24;f++)X._src['fire_whip_pose_'+f]='assets/game/player_weapons/fire_whip_sweep_0923/pose_'")
+ s=s.replace("f<16;f++)X._src['fire_whip_pose_'+f]='assets/game/shared/player_weapons/player_weapons/fire_whip_lash_0923/pose_'", "f<24;f++)X._src['fire_whip_pose_'+f]='assets/game/shared/player_weapons/player_weapons/fire_whip_sweep_0923/pose_'")
  s=s.replace("f<16;f++)XART.rdy('fire_whip_pose_'+f)","f<FIRE_WHIP_POSES.frames.length;f++)XART.rdy('fire_whip_pose_'+f)")
  s=s.replace("i<16;i++)XART.rdy('fire_whip_pose_'+i)","i<FIRE_WHIP_POSES.frames.length;i++)XART.rdy('fire_whip_pose_'+i)")
  s=s.replace('return Math.min(15,Math.floor(phase*8));','return Math.min(FIRE_WHIP_POSES.frames.length-1,Math.floor(phase*FIRE_WHIP_POSES.frames.length/2));')

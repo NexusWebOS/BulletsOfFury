@@ -74,7 +74,7 @@ try:
   # The flame's lower shaft must bend both directions while the source and flash stay on the nose.
   def ink_x(frame,lo,hi):
    import numpy as np
-   a=np.asarray(Image.open(ROOT/f'assets/game/player_weapons/fire_whip_sweep_0923/pose_{frame}.png'))[:,:,3]
+   a=np.asarray(Image.open(ROOT/f'assets/game/shared/player_weapons/player_weapons/fire_whip_sweep_0923/pose_{frame}.png'))[:,:,3]
    yy,xx=np.where(a[lo:hi]>96)
    return float(xx.mean()-192)
   results['hinge']={'baseLeft':ink_x(0,204,220),'baseRight':ink_x(11,204,220),'shaftLeft':ink_x(0,160,184),'shaftRight':ink_x(11,160,184)}

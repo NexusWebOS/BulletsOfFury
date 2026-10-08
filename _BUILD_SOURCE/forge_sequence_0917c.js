@@ -11,8 +11,8 @@
     destroys everything including boxes and pills."
    "Score Point graphics that can be bonus pickups when we kill enemies. Im thinking bullets with #'s"
 
-   Art: SpriteCook, assets/game/ui/forge_0917b/powers_bays.png (the Forge family, 477:266) and
-   assets/game/ui/pickups_0917b/ (coin, fury bomb, timed bomb, four score bullets).
+   Art: SpriteCook, assets/game/shared/ui/ui/forge_0917b/powers_bays.png (the Forge family, 477:266) and
+   assets/game/shared/ui/ui/pickups_0917b/ (coin, fury bomb, timed bomb, four score bullets).
    ============================================================ */
 
 /* ---- THE FURIOUS COIN ------------------------------------------------------------------------- */

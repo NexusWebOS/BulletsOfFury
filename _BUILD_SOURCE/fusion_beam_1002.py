@@ -7,7 +7,7 @@ falva's laser beams, but more 'Fusion' energy like while still pinkishpurple."
 
 Source: _BUILD_SOURCE/fusion_beam_spritecook_1002.png - a SpriteCook EDIT of Falva's own laser plate (fllaser_0),
 so it keeps her solid capsule: a pink-violet sheath, a white-hot core and a contained double helix of plasma.
-Output: assets/game/fusion_1002/beam.png, an 8-frame horizontal strip (one cell per frame, tight to the ink).
+Output: assets/game/shared/player_weapons/fusion_1002/beam.png, an 8-frame horizontal strip (one cell per frame, tight to the ink).
 
 The animation is the helix FLOWING up the beam: one period of the helix (measured by autocorrelation) is tiled
 down the interior (inside the 3 px sheath, between the two caps), offset by one eighth of a period per frame. The
@@ -20,7 +20,7 @@ import numpy as np
 from PIL import Image
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 SRC = os.path.join(ROOT, '_BUILD_SOURCE/fusion_beam_spritecook_1002.png')
-OUT = os.path.join(ROOT, 'assets/game/fusion_1002/beam.png')
+OUT = os.path.join(ROOT, 'assets/game/shared/player_weapons/fusion_1002/beam.png')
 N = 8
 
 

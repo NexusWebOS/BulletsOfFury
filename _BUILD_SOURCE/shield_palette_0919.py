@@ -40,7 +40,7 @@ variant('level5').save(DIR / 'shield_frame_level5_steel.png')
 
 # Four atlas fill states, cropped at their manifest coordinates.
 from PIL import Image as _Image
-_atlas=_Image.open('assets/game/atlas/ui_bossbar.png').convert('RGBA')
+_atlas=_Image.open('assets/game/shared/ui/ui_bossbar.png').convert('RGBA')
 for _theme,_tag in [('volcano','volcano_red'),('level5','level5_steel')]:
     for _state,_y in [('over',358),('hex',373),('plasma',388),('low',403)]:
         img=_atlas.crop((2,_y,580,_y+13))

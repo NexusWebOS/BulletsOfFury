@@ -9,12 +9,12 @@ def rep(old, new, count=1):
     n = s.count(old); assert n == count, 'anchor %d (want %d): %r' % (n, count, old[:90]); s = s.replace(old, new)
 
 # ---- art
-rep("""  for(const _v of [100,250,500,1000]) X._src['score_bullet_'+_v]='assets/game/ui/pickups_0917b/score_'+_v+'.png';
-""", """  for(const _v of [100,250,500,1000]) X._src['score_bullet_'+_v]='assets/game/ui/pickups_0917b/score_'+_v+'.png';
+rep("""  for(const _v of [100,250,500,1000]) X._src['score_bullet_'+_v]='assets/game/shared/ui/ui/pickups_0917b/score_'+_v+'.png';
+""", """  for(const _v of [100,250,500,1000]) X._src['score_bullet_'+_v]='assets/game/shared/ui/ui/pickups_0917b/score_'+_v+'.png';
   /* 0918: the generated effect animations - 8-frame horizontal strips (fx_install_0918.py) */
-  for(const _e of ['fire','ice','lightning','prism','toxic','kinetic','water','chrome','dark']) X._src['efx_burst_'+_e]='assets/game/fx_0918/efx_burst_'+_e+'.png';
-  X._src['efx_burn']='assets/game/fx_0918/efx_burn.png';
-  for(const _g of ['fire','water','lightning']) X._src['efx_geyser_'+_g]='assets/game/fx_0918/efx_geyser_'+_g+'.png';
+  for(const _e of ['fire','ice','lightning','prism','toxic','kinetic','water','chrome','dark']) X._src['efx_burst_'+_e]='assets/game/shared/effects/fx_0918/efx_burst_'+_e+'.png';
+  X._src['efx_burn']='assets/game/shared/effects/fx_0918/efx_burn.png';
+  for(const _g of ['fire','water','lightning']) X._src['efx_geyser_'+_g]='assets/game/shared/effects/fx_0918/efx_geyser_'+_g+'.png';
 """)
 
 # ---- the geyser becomes a real column that takes up a section of the screen

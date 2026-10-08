@@ -11,7 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def verify_characters() -> dict:
-    manifest_path = ROOT / "assets/game/cinematic_characters/manifest.json"
+    manifest_path = ROOT / "assets/game/shared/cinematics/cinematic_characters/manifest.json"
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     checked = 0
     for character in manifest["characters"]:
@@ -29,7 +29,7 @@ def verify_characters() -> dict:
 
 
 def verify_backgrounds() -> dict:
-    manifest_path = ROOT / "assets/game/cinematic_backgrounds/fury_hq/manifest.json"
+    manifest_path = ROOT / "assets/game/shared/cinematics/cinematic_backgrounds/fury_hq/manifest.json"
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     for scene in manifest["scenes"]:
         path = ROOT / scene["file"]
@@ -40,7 +40,7 @@ def verify_backgrounds() -> dict:
 
 
 def verify_explosions() -> dict:
-    manifest_path = ROOT / "assets/game/generated_cinematic/manifest.json"
+    manifest_path = ROOT / "assets/game/shared/cinematics/generated_cinematic/manifest.json"
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     checked = 0
     final_visibility: dict[str, int] = {}

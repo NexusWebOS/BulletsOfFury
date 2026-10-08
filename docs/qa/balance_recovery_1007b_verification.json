@@ -1,0 +1,16 @@
+{
+  "regressionAssertions": 7952,
+  "regressionExitCode": 0,
+  "syntaxExitCode": 0,
+  "whitespaceCheckExitCode": 0,
+  "whitespacePolicy": "cr-at-eol recognizes repository-required Windows line endings",
+  "existingRuntimeFilesChanged": [],
+  "newRuntimeFiles": [
+    "assets/balance_recovery_1007b.js"
+  ],
+  "newLayerSHA256": "36e663a18e035e32475724fb2c42622a1d1269cb704c9218c27726226c8c03be",
+  "browserChecks": 168,
+  "browserErrors": 0,
+  "gitCommitOrPush": false,
+  "finalVerificationScreensCompleted": true
+}

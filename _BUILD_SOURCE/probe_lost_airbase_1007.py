@@ -14,7 +14,7 @@ def frames(p,n):
 def shot(p,name):
  p.evaluate('()=>{shake=0;ctx.setTransform(SS,0,0,SS,0,0);drawWorld(0);}')
  (O/(name+'.png')).write_bytes(base64.b64decode(p.evaluate('()=>cv.toDataURL().split(",")[1]')))
-src=R/'_ART_SOURCES/hardcorps_1007/stage4_airbase.png';dst=R/'assets/game/hardcorps_1007/stage4_airbase.png'
+src=R/'_ART_SOURCES/hardcorps_1007/stage4_airbase.png';dst=R/'assets/game/levels/stage_04/stage/hardcorps_1007/stage4_airbase.png'
 ck(src.read_bytes()==dst.read_bytes(),'deployed airbase is byte-identical to generated 1024x1536 source')
 report['sha256']=hashlib.sha256(dst.read_bytes()).hexdigest()
 port,stop=sh.serve(str(R));http.server.SimpleHTTPRequestHandler.log_message=lambda *a,**k:None

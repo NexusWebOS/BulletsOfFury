@@ -12,7 +12,7 @@ for node in tree.body:
  if isinstance(node,ast.Assign) and any(isinstance(n,ast.Name) and n.id=='all_roots' for n in node.targets):break
  nodes.append(node)
 scope={'__file__':str(file)};exec(compile(ast.Module(body=nodes,type_ignores=[]),str(file),'exec'),scope)
-s=(R/'assets/game/atlas/stage_runtime_atlases.js').read_text();meta=json.JSONDecoder().raw_decode(s[s.index('=')+1:])[0]
+s=(R/'assets/game/shared/atlases/stage_runtime_atlases.js').read_text();meta=json.JSONDecoder().raw_decode(s[s.index('=')+1:])[0]
 for stage in [2,3,4,6,7,8,9]:
  rows=scope['stage_items'](stage);keys=[k for k,p in rows]
  expected={k for k,c in meta['cells'].items() if c[0].startswith('stage'+str(stage)+'_runtime_')}
@@ -26,7 +26,7 @@ for node in tree.body:
  if isinstance(node,ast.Assign) and any(isinstance(n,ast.Name) and n.id=='opened' for n in node.targets):break
  nodes.append(node)
 scope={'__file__':str(file)};exec(compile(ast.Module(body=nodes,type_ignores=[]),str(file),'exec'),scope)
-s=(R/'assets/game/atlas/stage5_runtime_atlas.js').read_text();meta=json.JSONDecoder().raw_decode(s[s.index('=')+1:])[0];keys=[k for k,p in scope['items']]
+s=(R/'assets/game/levels/stage_05/enemies/stage5_runtime_atlas.js').read_text();meta=json.JSONDecoder().raw_decode(s[s.index('=')+1:])[0];keys=[k for k,p in scope['items']]
 ck(set(keys)==set(meta) and len(keys)==len(meta),f'Stage 5: all {len(keys)} archived/live builder sources preserved')
 for key,path in scope['items']:
  with Image.open(path) as im:assert list(im.size)==meta[key][3:],key

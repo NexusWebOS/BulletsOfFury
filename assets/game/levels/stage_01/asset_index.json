@@ -1,0 +1,4948 @@
+{
+  "owner": "levels/stage_01",
+  "loading": {
+    "boot": "UI, fonts, idle portraits only",
+    "deployment": "selected pilot portraits, shared player weapons, required stage textures",
+    "transition": "release previous stage textures and derived caches; preserve explicitly queued copied-form dependencies",
+    "quality": "automatic native resolution on low-memory/low-core devices; reduce supersampling after sustained slow play frames"
+  },
+  "sharedDependencies": [
+    "shared/fonts",
+    "shared/ui",
+    "shared/player_weapons",
+    "shared/effects",
+    "shared/ships"
+  ],
+  "assets": [
+    {
+      "key": "ndam_intact",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        768,
+        0,
+        244,
+        350
+      ]
+    },
+    {
+      "key": "ndam_damaged",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        0,
+        0,
+        254,
+        350
+      ]
+    },
+    {
+      "key": "ndam_breach",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        256,
+        0,
+        254,
+        350
+      ]
+    },
+    {
+      "key": "ndam_destroyed",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        512,
+        0,
+        254,
+        350
+      ]
+    },
+    {
+      "key": "bg_stage01_intact",
+      "root": "bg_stage01_intact",
+      "path": "assets/game/levels/stage_01/stage/bg_stage01_intact.png",
+      "owner": "levels/stage_01",
+      "cell": null
+    },
+    {
+      "key": "bg_stage01_destroyed",
+      "root": "bg_stage01_destroyed",
+      "path": "assets/game/levels/stage_01/stage/bg_stage01_destroyed.png",
+      "owner": "levels/stage_01",
+      "cell": null
+    },
+    {
+      "key": "lvl1_master",
+      "root": "nca_layout_levels_stage_01_stage_0",
+      "path": "assets/game/levels/stage_01/stage/frames_0.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "layout_levels_stage_01_stage_0",
+        4,
+        4,
+        325,
+        2600
+      ]
+    },
+    {
+      "key": "nst1_upper",
+      "root": "nst1_upper",
+      "path": "assets/game/levels/stage_01/stage/nst1_upper.png",
+      "owner": "levels/stage_01",
+      "cell": null
+    },
+    {
+      "key": "bfx_warhawk_p_0",
+      "root": "nca_eproj_s1",
+      "path": "assets/game/levels/stage_01/projectiles/eproj_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "eproj_s1",
+        0,
+        0,
+        67,
+        338
+      ]
+    },
+    {
+      "key": "bfx_warhawk_p_1",
+      "root": "nca_eproj_s1",
+      "path": "assets/game/levels/stage_01/projectiles/eproj_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "eproj_s1",
+        69,
+        0,
+        67,
+        338
+      ]
+    },
+    {
+      "key": "bfx_warhawk_p_2",
+      "root": "nca_eproj_s1",
+      "path": "assets/game/levels/stage_01/projectiles/eproj_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "eproj_s1",
+        138,
+        0,
+        67,
+        338
+      ]
+    },
+    {
+      "key": "bfx_warhawk_p_3",
+      "root": "nca_eproj_s1",
+      "path": "assets/game/levels/stage_01/projectiles/eproj_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "eproj_s1",
+        207,
+        0,
+        67,
+        338
+      ]
+    },
+    {
+      "key": "bfx_warhawk_p_4",
+      "root": "nca_eproj_s1",
+      "path": "assets/game/levels/stage_01/projectiles/eproj_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "eproj_s1",
+        276,
+        0,
+        67,
+        338
+      ]
+    },
+    {
+      "key": "bfx_warhawk_p_5",
+      "root": "nca_eproj_s1",
+      "path": "assets/game/levels/stage_01/projectiles/eproj_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "eproj_s1",
+        345,
+        0,
+        67,
+        338
+      ]
+    },
+    {
+      "key": "bfx_warhawk_i_2",
+      "root": "nca_eproj_s1",
+      "path": "assets/game/levels/stage_01/projectiles/eproj_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "eproj_s1",
+        414,
+        0,
+        197,
+        269
+      ]
+    },
+    {
+      "key": "bfx_warhawk_i_3",
+      "root": "nca_eproj_s1",
+      "path": "assets/game/levels/stage_01/projectiles/eproj_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "eproj_s1",
+        0,
+        340,
+        207,
+        254
+      ]
+    },
+    {
+      "key": "bfx_warhawk_m_3",
+      "root": "nca_eproj_s1",
+      "path": "assets/game/levels/stage_01/projectiles/eproj_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "eproj_s1",
+        209,
+        340,
+        188,
+        229
+      ]
+    },
+    {
+      "key": "bfx_warhawk_i_4",
+      "root": "nca_eproj_s1",
+      "path": "assets/game/levels/stage_01/projectiles/eproj_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "eproj_s1",
+        399,
+        340,
+        167,
+        225
+      ]
+    },
+    {
+      "key": "bfx_warhawk_m_4",
+      "root": "nca_eproj_s1",
+      "path": "assets/game/levels/stage_01/projectiles/eproj_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "eproj_s1",
+        568,
+        340,
+        177,
+        221
+      ]
+    },
+    {
+      "key": "bfx_warhawk_m_2",
+      "root": "nca_eproj_s1",
+      "path": "assets/game/levels/stage_01/projectiles/eproj_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "eproj_s1",
+        0,
+        596,
+        149,
+        211
+      ]
+    },
+    {
+      "key": "bfx_warhawk_m_5",
+      "root": "nca_eproj_s1",
+      "path": "assets/game/levels/stage_01/projectiles/eproj_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "eproj_s1",
+        151,
+        596,
+        158,
+        196
+      ]
+    },
+    {
+      "key": "bfx_warhawk_i_1",
+      "root": "nca_eproj_s1",
+      "path": "assets/game/levels/stage_01/projectiles/eproj_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "eproj_s1",
+        311,
+        596,
+        143,
+        193
+      ]
+    },
+    {
+      "key": "bfx_warhawk_i_5",
+      "root": "nca_eproj_s1",
+      "path": "assets/game/levels/stage_01/projectiles/eproj_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "eproj_s1",
+        456,
+        596,
+        126,
+        167
+      ]
+    },
+    {
+      "key": "bfx_warhawk_m_1",
+      "root": "nca_eproj_s1",
+      "path": "assets/game/levels/stage_01/projectiles/eproj_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "eproj_s1",
+        584,
+        596,
+        113,
+        156
+      ]
+    },
+    {
+      "key": "bfx_warhawk_i_0",
+      "root": "nca_eproj_s1",
+      "path": "assets/game/levels/stage_01/projectiles/eproj_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "eproj_s1",
+        0,
+        809,
+        92,
+        120
+      ]
+    },
+    {
+      "key": "bfx_warhawk_m_0",
+      "root": "nca_eproj_s1",
+      "path": "assets/game/levels/stage_01/projectiles/eproj_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "eproj_s1",
+        94,
+        809,
+        62,
+        65
+      ]
+    },
+    {
+      "key": "ovrotor_00",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        1014,
+        0,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "ovrotor_01",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        776,
+        740,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "ovrotor_02",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        970,
+        740,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "ovrotor_03",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        1208,
+        0,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "ovrotor_04",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        1164,
+        740,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "ovrotor_05",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        1358,
+        740,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "ovrotor_06",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        1402,
+        0,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "ovrotor_07",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        1552,
+        740,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "ovrotor_08",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        0,
+        934,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "ovrotor_09",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        1596,
+        0,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "ovrotor_10",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        194,
+        934,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "ovrotor_11",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        388,
+        934,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "ovrotor_12",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        0,
+        352,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "ovrotor_13",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        582,
+        934,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "ovrotor_14",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        776,
+        934,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "ovrotor_15",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        194,
+        352,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "ovrotor_16",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        970,
+        934,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "ovrotor_17",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        1164,
+        934,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "ovrotor_18",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        388,
+        352,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "ovrotor_19",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        1358,
+        934,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "ovrotor_20",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        1552,
+        934,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "ovrotor_21",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        582,
+        352,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "ovrotor_22",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        0,
+        1128,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "ovrotor_23",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        194,
+        1128,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "ovrotor_24",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        776,
+        352,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "ovrotor_25",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        388,
+        1128,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "ovrotor_26",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        582,
+        1128,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "ovrotor_27",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        970,
+        352,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "ovrotor_28",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        776,
+        1128,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "ovrotor_29",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        970,
+        1128,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "ovrotor_30",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        1164,
+        352,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "ovrotor_31",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        1164,
+        1128,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "ovrotor_32",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        1358,
+        1128,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "ovrotor_33",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        1358,
+        352,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "ovrotor_34",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        1552,
+        1128,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "tk1_inta_n",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        882,
+        1895,
+        124,
+        124
+      ]
+    },
+    {
+      "key": "tk1_inta_e",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1008,
+        1895,
+        124,
+        124
+      ]
+    },
+    {
+      "key": "tk1_inta_s",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        504,
+        1895,
+        124,
+        124
+      ]
+    },
+    {
+      "key": "tk1_inta_w",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1134,
+        1895,
+        124,
+        124
+      ]
+    },
+    {
+      "key": "tk1_dama_n",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1260,
+        1895,
+        124,
+        124
+      ]
+    },
+    {
+      "key": "tk1_dama_e",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1386,
+        1895,
+        124,
+        124
+      ]
+    },
+    {
+      "key": "tk1_dama_s",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        630,
+        1895,
+        124,
+        124
+      ]
+    },
+    {
+      "key": "tk1_dama_w",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1512,
+        1895,
+        124,
+        124
+      ]
+    },
+    {
+      "key": "tk1_crit_n",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1638,
+        1895,
+        124,
+        124
+      ]
+    },
+    {
+      "key": "tk1_crit_e",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1764,
+        1895,
+        124,
+        124
+      ]
+    },
+    {
+      "key": "tk1_crit_s",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        756,
+        1895,
+        124,
+        124
+      ]
+    },
+    {
+      "key": "tk1_crit_w",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1890,
+        1895,
+        124,
+        124
+      ]
+    },
+    {
+      "key": "ovrotor_35",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        0,
+        1322,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "ovrotor_36",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        1552,
+        352,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "ovrotor_37",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        194,
+        1322,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "ovrotor_38",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        388,
+        1322,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "ovrotor_39",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        0,
+        546,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "ovrotor_40",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        582,
+        1322,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "ovrotor_41",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        776,
+        1322,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "ovrotor_42",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        194,
+        546,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "ovrotor_43",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        970,
+        1322,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "ovrotor_44",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        1164,
+        1322,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "ovrotor_45",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        388,
+        546,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "ovrotor_46",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        1358,
+        1322,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "ovrotor_47",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        1552,
+        1322,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "ovrotor_48",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        582,
+        546,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "ovrotor_49",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        0,
+        1516,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "ovrotor_50",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        194,
+        1516,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "ovrotor_51",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        776,
+        546,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "ovrotor_52",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        388,
+        1516,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "ovrotor_53",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        582,
+        1516,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "ovrotor_54",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        970,
+        546,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "ovrotor_55",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        776,
+        1516,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "ovrotor_56",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        970,
+        1516,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "ovrotor_57",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        1164,
+        546,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "ovrotor_58",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        1164,
+        1516,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "ovrotor_59",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        1358,
+        1516,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "ovrotor_60",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        1358,
+        546,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "ovrotor_61",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        1552,
+        1516,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "ovrotor_62",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        0,
+        1710,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "ovrotor_63",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        1552,
+        546,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "ovrotor_64",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        194,
+        1710,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "ovrotor_65",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        388,
+        1710,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "ovrotor_66",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        0,
+        740,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "ovrotor_67",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        582,
+        1710,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "ovrotor_68",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        776,
+        1710,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "ovrotor_69",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        194,
+        740,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "ovrotor_70",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        970,
+        1710,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "ovrotor_71",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        1164,
+        1710,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "ovbody_intact",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        388,
+        740,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "ovbody_critical",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        582,
+        740,
+        192,
+        192
+      ]
+    },
+    {
+      "key": "mlaunch_0",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        1358,
+        1710,
+        80,
+        80
+      ]
+    },
+    {
+      "key": "mlaunch_1",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        1440,
+        1710,
+        80,
+        80
+      ]
+    },
+    {
+      "key": "mlaunch_2",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        1522,
+        1710,
+        80,
+        80
+      ]
+    },
+    {
+      "key": "mlaunch_3",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        1604,
+        1710,
+        80,
+        80
+      ]
+    },
+    {
+      "key": "mlaunch_4",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        1686,
+        1710,
+        80,
+        80
+      ]
+    },
+    {
+      "key": "mlaunch_5",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        1768,
+        1710,
+        80,
+        80
+      ]
+    },
+    {
+      "key": "mlaunch_6",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "boss_s1",
+        0,
+        1904,
+        80,
+        80
+      ]
+    },
+    {
+      "key": "s1_boat_patrol_blk",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        0,
+        0,
+        129,
+        280
+      ]
+    },
+    {
+      "key": "s1_boat_patrol_flash",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        131,
+        0,
+        129,
+        280
+      ]
+    },
+    {
+      "key": "s1_jet_bomber_blk",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        393,
+        0,
+        310,
+        272
+      ]
+    },
+    {
+      "key": "s1_jet_bomber_flash",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        705,
+        0,
+        310,
+        272
+      ]
+    },
+    {
+      "key": "s1_tank_heavy_blk",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1329,
+        0,
+        196,
+        267
+      ]
+    },
+    {
+      "key": "s1_tank_heavy_flash",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1527,
+        0,
+        196,
+        267
+      ]
+    },
+    {
+      "key": "s1_jet_delta_blk",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1923,
+        0,
+        233,
+        259
+      ]
+    },
+    {
+      "key": "s1_jet_delta_flash",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        0,
+        282,
+        233,
+        259
+      ]
+    },
+    {
+      "key": "s1_boat_gun_blk",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        470,
+        282,
+        140,
+        257
+      ]
+    },
+    {
+      "key": "s1_boat_gun_flash",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        612,
+        282,
+        140,
+        257
+      ]
+    },
+    {
+      "key": "s1_truck_missile_blk",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        896,
+        282,
+        169,
+        252
+      ]
+    },
+    {
+      "key": "s1_truck_missile_flash",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1067,
+        282,
+        169,
+        252
+      ]
+    },
+    {
+      "key": "s1_tank_apc_blk",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1409,
+        282,
+        153,
+        246
+      ]
+    },
+    {
+      "key": "s1_tank_apc_flash",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1564,
+        282,
+        153,
+        246
+      ]
+    },
+    {
+      "key": "s1_barrel_fire_flash",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1874,
+        282,
+        119,
+        232
+      ]
+    },
+    {
+      "key": "s1_barrel_oil_flash",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1610,
+        1693,
+        113,
+        188
+      ]
+    },
+    {
+      "key": "s1_tank_light_blk",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1840,
+        1693,
+        134,
+        183
+      ]
+    },
+    {
+      "key": "s1_tank_light_flash",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1976,
+        1693,
+        134,
+        183
+      ]
+    },
+    {
+      "key": "s1_mine_water_flash",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        136,
+        1895,
+        182,
+        179
+      ]
+    },
+    {
+      "key": "nca_79",
+      "root": "nca_79",
+      "path": "assets/game/levels/stage_01/stage/stage1roster.png",
+      "owner": "levels/stage_01",
+      "cell": null
+    },
+    {
+      "key": "s1_boat_patrol_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        262,
+        0,
+        129,
+        280
+      ]
+    },
+    {
+      "key": "s1_jet_bomber_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1017,
+        0,
+        310,
+        272
+      ]
+    },
+    {
+      "key": "s1_tank_heavy_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1725,
+        0,
+        196,
+        267
+      ]
+    },
+    {
+      "key": "s1_jet_delta_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        235,
+        282,
+        233,
+        259
+      ]
+    },
+    {
+      "key": "s1_boat_gun_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        754,
+        282,
+        140,
+        257
+      ]
+    },
+    {
+      "key": "s1_truck_missile_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1238,
+        282,
+        169,
+        252
+      ]
+    },
+    {
+      "key": "s1_tank_apc_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1719,
+        282,
+        153,
+        246
+      ]
+    },
+    {
+      "key": "s1_barrel_fire_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1995,
+        282,
+        119,
+        232
+      ]
+    },
+    {
+      "key": "s1_barrel_oil_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1725,
+        1693,
+        113,
+        188
+      ]
+    },
+    {
+      "key": "s1_tank_light_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        0,
+        1895,
+        134,
+        183
+      ]
+    },
+    {
+      "key": "s1_mine_water_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        320,
+        1895,
+        182,
+        179
+      ]
+    },
+    {
+      "key": "s1_boat_patrol_blk_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        0,
+        0,
+        129,
+        280
+      ]
+    },
+    {
+      "key": "s1_jet_bomber_blk_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        393,
+        0,
+        310,
+        272
+      ]
+    },
+    {
+      "key": "s1_tank_heavy_blk_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1329,
+        0,
+        196,
+        267
+      ]
+    },
+    {
+      "key": "s1_jet_delta_blk_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1923,
+        0,
+        233,
+        259
+      ]
+    },
+    {
+      "key": "s1_boat_gun_blk_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        470,
+        282,
+        140,
+        257
+      ]
+    },
+    {
+      "key": "s1_truck_missile_blk_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        896,
+        282,
+        169,
+        252
+      ]
+    },
+    {
+      "key": "s1_tank_apc_blk_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1409,
+        282,
+        153,
+        246
+      ]
+    },
+    {
+      "key": "s1_tank_light_blk_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1840,
+        1693,
+        134,
+        183
+      ]
+    },
+    {
+      "key": "nef_s1_camo_attack_jet_intact_blk_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        0,
+        543,
+        205,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_camo_attack_jet_intact_blk",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        0,
+        543,
+        205,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_camo_attack_jet_damaged_blk_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        207,
+        543,
+        205,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_camo_attack_jet_damaged_blk",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        207,
+        543,
+        205,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_camo_attack_jet_critical_blk_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        414,
+        543,
+        205,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_camo_attack_jet_critical_blk",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        414,
+        543,
+        205,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_camo_attack_jet_intact_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        621,
+        543,
+        205,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_camo_attack_jet_intact",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        621,
+        543,
+        205,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_camo_attack_jet_damaged_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        828,
+        543,
+        205,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_camo_attack_jet_damaged",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        828,
+        543,
+        205,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_camo_attack_jet_critical_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1035,
+        543,
+        205,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_camo_attack_jet_critical",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1035,
+        543,
+        205,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_jungle_tank_intact_blk_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1242,
+        543,
+        167,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_jungle_tank_intact_blk",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1242,
+        543,
+        167,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_jungle_tank_damaged_blk_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1411,
+        543,
+        167,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_jungle_tank_damaged_blk",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1411,
+        543,
+        167,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_jungle_tank_critical_blk_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1580,
+        543,
+        167,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_jungle_tank_critical_blk",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1580,
+        543,
+        167,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_jungle_mini_tank_intact_blk_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1749,
+        543,
+        167,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_jungle_mini_tank_intact_blk",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1749,
+        543,
+        167,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_jungle_mini_tank_damaged_blk_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1918,
+        543,
+        167,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_jungle_mini_tank_damaged_blk",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1918,
+        543,
+        167,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_jungle_mini_tank_critical_blk_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        0,
+        773,
+        167,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_jungle_mini_tank_critical_blk",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        0,
+        773,
+        167,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_jungle_tank_intact_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        169,
+        773,
+        167,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_jungle_tank_intact",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        169,
+        773,
+        167,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_jungle_tank_damaged_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        338,
+        773,
+        167,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_jungle_tank_damaged",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        338,
+        773,
+        167,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_jungle_tank_critical_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        507,
+        773,
+        167,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_jungle_tank_critical",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        507,
+        773,
+        167,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_jungle_mini_tank_intact_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        676,
+        773,
+        167,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_jungle_mini_tank_intact",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        676,
+        773,
+        167,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_jungle_mini_tank_damaged_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        845,
+        773,
+        167,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_jungle_mini_tank_damaged",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        845,
+        773,
+        167,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_jungle_mini_tank_critical_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1014,
+        773,
+        167,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_jungle_mini_tank_critical",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1014,
+        773,
+        167,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_rocket_buggy_intact_blk_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1183,
+        773,
+        153,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_rocket_buggy_intact_blk",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1183,
+        773,
+        153,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_rocket_buggy_damaged_blk_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1338,
+        773,
+        153,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_rocket_buggy_damaged_blk",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1338,
+        773,
+        153,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_rocket_buggy_critical_blk_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1493,
+        773,
+        153,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_rocket_buggy_critical_blk",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1493,
+        773,
+        153,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_rocket_buggy_intact_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1648,
+        773,
+        153,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_rocket_buggy_intact",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1648,
+        773,
+        153,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_rocket_buggy_damaged_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1803,
+        773,
+        153,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_rocket_buggy_damaged",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1803,
+        773,
+        153,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_rocket_buggy_critical_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1958,
+        773,
+        153,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_rocket_buggy_critical",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1958,
+        773,
+        153,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_jungle_apc_intact_blk_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        0,
+        1003,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_jungle_apc_intact_blk",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        0,
+        1003,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_jungle_apc_damaged_blk_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        147,
+        1003,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_jungle_apc_damaged_blk",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        147,
+        1003,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_jungle_apc_critical_blk_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        294,
+        1003,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_jungle_apc_critical_blk",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        294,
+        1003,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_river_patrol_boat_intact_blk_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        441,
+        1003,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_river_patrol_boat_intact_blk",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        441,
+        1003,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_river_patrol_boat_damaged_blk_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        588,
+        1003,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_river_patrol_boat_damaged_blk",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        588,
+        1003,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_river_patrol_boat_critical_blk_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        735,
+        1003,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_river_patrol_boat_critical_blk",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        735,
+        1003,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_missile_gunboat_intact_blk_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        882,
+        1003,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_missile_gunboat_intact_blk",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        882,
+        1003,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_missile_gunboat_damaged_blk_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1029,
+        1003,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_missile_gunboat_damaged_blk",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1029,
+        1003,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_missile_gunboat_critical_blk_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1176,
+        1003,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_missile_gunboat_critical_blk",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1176,
+        1003,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_landing_craft_intact_blk_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1323,
+        1003,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_landing_craft_intact_blk",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1323,
+        1003,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_landing_craft_damaged_blk_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1470,
+        1003,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_landing_craft_damaged_blk",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1470,
+        1003,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_landing_craft_critical_blk_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1617,
+        1003,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_landing_craft_critical_blk",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1617,
+        1003,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_river_corvette_intact_blk_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1764,
+        1003,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_river_corvette_intact_blk",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1764,
+        1003,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_river_corvette_damaged_blk_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1911,
+        1003,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_river_corvette_damaged_blk",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1911,
+        1003,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_river_corvette_critical_blk_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        2058,
+        1003,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_river_corvette_critical_blk",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        2058,
+        1003,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_jungle_apc_intact_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        0,
+        1233,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_jungle_apc_intact",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        0,
+        1233,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_jungle_apc_damaged_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        147,
+        1233,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_jungle_apc_damaged",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        147,
+        1233,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_jungle_apc_critical_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        294,
+        1233,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_jungle_apc_critical",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        294,
+        1233,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_river_patrol_boat_intact_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        441,
+        1233,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_river_patrol_boat_intact",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        441,
+        1233,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_river_patrol_boat_damaged_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        588,
+        1233,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_river_patrol_boat_damaged",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        588,
+        1233,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_river_patrol_boat_critical_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        735,
+        1233,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_river_patrol_boat_critical",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        735,
+        1233,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_missile_gunboat_intact_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        882,
+        1233,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_missile_gunboat_intact",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        882,
+        1233,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_missile_gunboat_damaged_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1029,
+        1233,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_missile_gunboat_damaged",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1029,
+        1233,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_missile_gunboat_critical_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1176,
+        1233,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_missile_gunboat_critical",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1176,
+        1233,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_landing_craft_intact_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1323,
+        1233,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_landing_craft_intact",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1323,
+        1233,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_landing_craft_damaged_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1470,
+        1233,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_landing_craft_damaged",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1470,
+        1233,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_landing_craft_critical_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1617,
+        1233,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_landing_craft_critical",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1617,
+        1233,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_river_corvette_intact_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1764,
+        1233,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_river_corvette_intact",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1764,
+        1233,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_river_corvette_damaged_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1911,
+        1233,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_river_corvette_damaged",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1911,
+        1233,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_river_corvette_critical_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        2058,
+        1233,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_river_corvette_critical",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        2058,
+        1233,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_fuel_barrel_intact_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        0,
+        1463,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_fuel_barrel_intact",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        0,
+        1463,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_fuel_barrel_damaged_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        147,
+        1463,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_fuel_barrel_damaged",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        147,
+        1463,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_fuel_barrel_critical_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        294,
+        1463,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_fuel_barrel_critical",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        294,
+        1463,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_fuel_tank_intact_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        441,
+        1463,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_fuel_tank_intact",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        441,
+        1463,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_fuel_tank_damaged_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        588,
+        1463,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_fuel_tank_damaged",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        588,
+        1463,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_fuel_tank_critical_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        735,
+        1463,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_fuel_tank_critical",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        735,
+        1463,
+        145,
+        228
+      ]
+    },
+    {
+      "key": "nef_s1_river_mine_intact_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        882,
+        1463,
+        228,
+        224
+      ]
+    },
+    {
+      "key": "nef_s1_river_mine_intact",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        882,
+        1463,
+        228,
+        224
+      ]
+    },
+    {
+      "key": "nef_s1_river_mine_damaged_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1112,
+        1463,
+        228,
+        224
+      ]
+    },
+    {
+      "key": "nef_s1_river_mine_damaged",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1112,
+        1463,
+        228,
+        224
+      ]
+    },
+    {
+      "key": "nef_s1_river_mine_critical_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1342,
+        1463,
+        228,
+        224
+      ]
+    },
+    {
+      "key": "nef_s1_river_mine_critical",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1342,
+        1463,
+        228,
+        224
+      ]
+    },
+    {
+      "key": "nef_s1_jungle_bomber_intact_blk_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1572,
+        1463,
+        228,
+        200
+      ]
+    },
+    {
+      "key": "nef_s1_jungle_bomber_intact_blk",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1572,
+        1463,
+        228,
+        200
+      ]
+    },
+    {
+      "key": "nef_s1_jungle_bomber_damaged_blk_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1802,
+        1463,
+        228,
+        200
+      ]
+    },
+    {
+      "key": "nef_s1_jungle_bomber_damaged_blk",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1802,
+        1463,
+        228,
+        200
+      ]
+    },
+    {
+      "key": "nef_s1_jungle_bomber_critical_blk_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        0,
+        1693,
+        228,
+        200
+      ]
+    },
+    {
+      "key": "nef_s1_jungle_bomber_critical_blk",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        0,
+        1693,
+        228,
+        200
+      ]
+    },
+    {
+      "key": "nef_s1_jungle_bomber_intact_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        230,
+        1693,
+        228,
+        200
+      ]
+    },
+    {
+      "key": "nef_s1_jungle_bomber_intact",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        230,
+        1693,
+        228,
+        200
+      ]
+    },
+    {
+      "key": "nef_s1_jungle_bomber_damaged_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        460,
+        1693,
+        228,
+        200
+      ]
+    },
+    {
+      "key": "nef_s1_jungle_bomber_damaged",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        460,
+        1693,
+        228,
+        200
+      ]
+    },
+    {
+      "key": "nef_s1_jungle_bomber_critical_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        690,
+        1693,
+        228,
+        200
+      ]
+    },
+    {
+      "key": "nef_s1_jungle_bomber_critical",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        690,
+        1693,
+        228,
+        200
+      ]
+    },
+    {
+      "key": "nef_s1_ammo_crate_intact_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        920,
+        1693,
+        228,
+        200
+      ]
+    },
+    {
+      "key": "nef_s1_ammo_crate_intact",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        920,
+        1693,
+        228,
+        200
+      ]
+    },
+    {
+      "key": "nef_s1_ammo_crate_damaged_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1150,
+        1693,
+        228,
+        200
+      ]
+    },
+    {
+      "key": "nef_s1_ammo_crate_damaged",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1150,
+        1693,
+        228,
+        200
+      ]
+    },
+    {
+      "key": "nef_s1_ammo_crate_critical_idle",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1380,
+        1693,
+        228,
+        200
+      ]
+    },
+    {
+      "key": "nef_s1_ammo_crate_critical",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": [
+        "en_s1",
+        1380,
+        1693,
+        228,
+        200
+      ]
+    },
+    {
+      "key": "nca_boss_s1",
+      "root": "nca_boss_s1",
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "cell": null
+    },
+    {
+      "key": "nca_en_s1",
+      "root": "nca_en_s1",
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "cell": null
+    },
+    {
+      "key": "nca_eproj_s1",
+      "root": "nca_eproj_s1",
+      "path": "assets/game/levels/stage_01/projectiles/eproj_s1.png",
+      "owner": "levels/stage_01",
+      "cell": null
+    },
+    {
+      "key": "nca_layout_levels_stage_01_stage_0",
+      "root": "nca_layout_levels_stage_01_stage_0",
+      "path": "assets/game/levels/stage_01/stage/frames_0.png",
+      "owner": "levels/stage_01",
+      "cell": null
+    },
+    {
+      "key": "rzb_hull_0",
+      "root": "rzb_hull_0",
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback/rzb_hull_0.png",
+      "owner": "levels/stage_01",
+      "cell": null
+    },
+    {
+      "key": "rzbf_hull_0",
+      "root": "rzbf_hull_0",
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback_furious/rzbf_hull_0.png",
+      "owner": "levels/stage_01",
+      "cell": null
+    },
+    {
+      "key": "rzb_hull_1",
+      "root": "rzb_hull_1",
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback/rzb_hull_1.png",
+      "owner": "levels/stage_01",
+      "cell": null
+    },
+    {
+      "key": "rzbf_hull_1",
+      "root": "rzbf_hull_1",
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback_furious/rzbf_hull_1.png",
+      "owner": "levels/stage_01",
+      "cell": null
+    },
+    {
+      "key": "rzb_hull_2",
+      "root": "rzb_hull_2",
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback/rzb_hull_2.png",
+      "owner": "levels/stage_01",
+      "cell": null
+    },
+    {
+      "key": "rzbf_hull_2",
+      "root": "rzbf_hull_2",
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback_furious/rzbf_hull_2.png",
+      "owner": "levels/stage_01",
+      "cell": null
+    },
+    {
+      "key": "rzb_hull_3",
+      "root": "rzb_hull_3",
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback/rzb_hull_3.png",
+      "owner": "levels/stage_01",
+      "cell": null
+    },
+    {
+      "key": "rzbf_hull_3",
+      "root": "rzbf_hull_3",
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback_furious/rzbf_hull_3.png",
+      "owner": "levels/stage_01",
+      "cell": null
+    },
+    {
+      "key": "rzb_hull_4",
+      "root": "rzb_hull_4",
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback/rzb_hull_4.png",
+      "owner": "levels/stage_01",
+      "cell": null
+    },
+    {
+      "key": "rzbf_hull_4",
+      "root": "rzbf_hull_4",
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback_furious/rzbf_hull_4.png",
+      "owner": "levels/stage_01",
+      "cell": null
+    },
+    {
+      "key": "rzb_hull_5",
+      "root": "rzb_hull_5",
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback/rzb_hull_5.png",
+      "owner": "levels/stage_01",
+      "cell": null
+    },
+    {
+      "key": "rzbf_hull_5",
+      "root": "rzbf_hull_5",
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback_furious/rzbf_hull_5.png",
+      "owner": "levels/stage_01",
+      "cell": null
+    },
+    {
+      "key": "rzb_hull_6",
+      "root": "rzb_hull_6",
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback/rzb_hull_6.png",
+      "owner": "levels/stage_01",
+      "cell": null
+    },
+    {
+      "key": "rzbf_hull_6",
+      "root": "rzbf_hull_6",
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback_furious/rzbf_hull_6.png",
+      "owner": "levels/stage_01",
+      "cell": null
+    },
+    {
+      "key": "rzb_hull_7",
+      "root": "rzb_hull_7",
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback/rzb_hull_7.png",
+      "owner": "levels/stage_01",
+      "cell": null
+    },
+    {
+      "key": "rzbf_hull_7",
+      "root": "rzbf_hull_7",
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback_furious/rzbf_hull_7.png",
+      "owner": "levels/stage_01",
+      "cell": null
+    },
+    {
+      "key": "rzb_hull_base",
+      "root": "rzb_hull_base",
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback/rzb_hull_base.png",
+      "owner": "levels/stage_01",
+      "cell": null
+    },
+    {
+      "key": "rzbf_hull_base",
+      "root": "rzbf_hull_base",
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback_furious/rzbf_hull_base.png",
+      "owner": "levels/stage_01",
+      "cell": null
+    },
+    {
+      "key": "rzb_turret",
+      "root": "rzb_turret",
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback/rzb_turret.png",
+      "owner": "levels/stage_01",
+      "cell": null
+    },
+    {
+      "key": "rzbf_turret",
+      "root": "rzbf_turret",
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback_furious/rzbf_turret.png",
+      "owner": "levels/stage_01",
+      "cell": null
+    },
+    {
+      "key": "rzb_turret_damaged",
+      "root": "rzb_turret_damaged",
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback/rzb_turret_damaged.png",
+      "owner": "levels/stage_01",
+      "cell": null
+    },
+    {
+      "key": "rzbf_turret_damaged",
+      "root": "rzbf_turret_damaged",
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback_furious/rzbf_turret_damaged.png",
+      "owner": "levels/stage_01",
+      "cell": null
+    },
+    {
+      "key": "rzb_machinegun",
+      "root": "rzb_machinegun",
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback/rzb_machinegun.png",
+      "owner": "levels/stage_01",
+      "cell": null
+    },
+    {
+      "key": "rzbf_machinegun",
+      "root": "rzbf_machinegun",
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback_furious/rzbf_machinegun.png",
+      "owner": "levels/stage_01",
+      "cell": null
+    },
+    {
+      "key": "rzb_missile_pod",
+      "root": "rzb_missile_pod",
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback/rzb_missile_pod.png",
+      "owner": "levels/stage_01",
+      "cell": null
+    },
+    {
+      "key": "rzbf_missile_pod",
+      "root": "rzbf_missile_pod",
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback_furious/rzbf_missile_pod.png",
+      "owner": "levels/stage_01",
+      "cell": null
+    },
+    {
+      "key": "rzb_rotor",
+      "root": "rzb_rotor",
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback/rzb_rotor.png",
+      "owner": "levels/stage_01",
+      "cell": null
+    },
+    {
+      "key": "rzbf_rotor",
+      "root": "rzbf_rotor",
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback_furious/rzbf_rotor.png",
+      "owner": "levels/stage_01",
+      "cell": null
+    },
+    {
+      "key": "rzb_tread",
+      "root": "rzb_tread",
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback/rzb_tread.png",
+      "owner": "levels/stage_01",
+      "cell": null
+    },
+    {
+      "key": "rzbf_tread",
+      "root": "rzbf_tread",
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback_furious/rzbf_tread.png",
+      "owner": "levels/stage_01",
+      "cell": null
+    },
+    {
+      "key": "rzb_wreck",
+      "root": "rzb_wreck",
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback/rzb_wreck.png",
+      "owner": "levels/stage_01",
+      "cell": null
+    },
+    {
+      "key": "rzbf_wreck",
+      "root": "rzbf_wreck",
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback_furious/rzbf_wreck.png",
+      "owner": "levels/stage_01",
+      "cell": null
+    },
+    {
+      "key": "rzb_debris",
+      "root": "rzb_debris",
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback/rzb_debris.png",
+      "owner": "levels/stage_01",
+      "cell": null
+    },
+    {
+      "key": "rzbf_debris",
+      "root": "rzbf_debris",
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback_furious/rzbf_debris.png",
+      "owner": "levels/stage_01",
+      "cell": null
+    },
+    {
+      "key": "rzb_sonic_bullet",
+      "root": "rzb_sonic_bullet",
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback/rzb_sonic_bullet.png",
+      "owner": "levels/stage_01",
+      "cell": null
+    },
+    {
+      "key": "rzbf_sonic_bullet",
+      "root": "rzbf_sonic_bullet",
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback_furious/rzbf_sonic_bullet.png",
+      "owner": "levels/stage_01",
+      "cell": null
+    },
+    {
+      "key": "rzb_sonic_wave",
+      "root": "rzb_sonic_wave",
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback/rzb_sonic_wave.png",
+      "owner": "levels/stage_01",
+      "cell": null
+    },
+    {
+      "key": "rzbf_sonic_wave",
+      "root": "rzbf_sonic_wave",
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback_furious/rzbf_sonic_wave.png",
+      "owner": "levels/stage_01",
+      "cell": null
+    },
+    {
+      "key": "rzb_sonic_ring",
+      "root": "rzb_sonic_ring",
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback/rzb_sonic_ring.png",
+      "owner": "levels/stage_01",
+      "cell": null
+    },
+    {
+      "key": "rzbf_sonic_ring",
+      "root": "rzbf_sonic_ring",
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback_furious/rzbf_sonic_ring.png",
+      "owner": "levels/stage_01",
+      "cell": null
+    },
+    {
+      "key": "rzb_razor_missile",
+      "root": "rzb_razor_missile",
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback/rzb_razor_missile.png",
+      "owner": "levels/stage_01",
+      "cell": null
+    },
+    {
+      "key": "rzbf_razor_missile",
+      "root": "rzbf_razor_missile",
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback_furious/rzbf_razor_missile.png",
+      "owner": "levels/stage_01",
+      "cell": null
+    },
+    {
+      "key": "rzb_sonic_charge",
+      "root": "rzb_sonic_charge",
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback/rzb_sonic_charge.png",
+      "owner": "levels/stage_01",
+      "cell": null
+    },
+    {
+      "key": "rzbf_sonic_charge",
+      "root": "rzbf_sonic_charge",
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback_furious/rzbf_sonic_charge.png",
+      "owner": "levels/stage_01",
+      "cell": null
+    },
+    {
+      "key": "rzb_muzzle",
+      "root": "rzb_muzzle",
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback/rzb_muzzle.png",
+      "owner": "levels/stage_01",
+      "cell": null
+    },
+    {
+      "key": "rzbf_muzzle",
+      "root": "rzbf_muzzle",
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback_furious/rzbf_muzzle.png",
+      "owner": "levels/stage_01",
+      "cell": null
+    },
+    {
+      "key": "rzb_sonic_impact",
+      "root": "rzb_sonic_impact",
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback/rzb_sonic_impact.png",
+      "owner": "levels/stage_01",
+      "cell": null
+    },
+    {
+      "key": "rzbf_sonic_impact",
+      "root": "rzbf_sonic_impact",
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback_furious/rzbf_sonic_impact.png",
+      "owner": "levels/stage_01",
+      "cell": null
+    },
+    {
+      "key": "rzb_dust",
+      "root": "rzb_dust",
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback/rzb_dust.png",
+      "owner": "levels/stage_01",
+      "cell": null
+    },
+    {
+      "key": "rzbf_dust",
+      "root": "rzbf_dust",
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback_furious/rzbf_dust.png",
+      "owner": "levels/stage_01",
+      "cell": null
+    },
+    {
+      "key": "overhaul_ground_base_1",
+      "root": "overhaul_ground_base_1",
+      "path": "assets/game/levels/stage_01/enemies/enemy_overhaul_0925/sprites/ground_base_stage1_jungle.png",
+      "owner": "levels/stage_01",
+      "cell": null
+    },
+    {
+      "key": "overhaul_tank_1_hull",
+      "root": "overhaul_tank_1_hull",
+      "path": "assets/game/levels/stage_01/enemies/enemy_overhaul_0925/sprites/stage1_tank_hull.png",
+      "owner": "levels/stage_01",
+      "cell": null
+    },
+    {
+      "key": "overhaul_tank_1_turret",
+      "root": "overhaul_tank_1_turret",
+      "path": "assets/game/levels/stage_01/enemies/enemy_overhaul_0925/sprites/stage1_tank_turret.png",
+      "owner": "levels/stage_01",
+      "cell": null
+    },
+    {
+      "key": "cinbg_jungle",
+      "root": "cinbg_jungle",
+      "path": "assets/game/levels/stage_01/cinematics/cinematic_level_approaches/stage01_rumble_in_the_jungle_approach.png",
+      "owner": "levels/stage_01",
+      "cell": null
+    },
+    {
+      "key": "bg_stage01_runway_transition",
+      "root": "bg_stage01_runway_transition",
+      "path": "assets/game/levels/stage_01/stage/bg_stage01_runway_transition.jpg",
+      "owner": "levels/stage_01",
+      "cell": null
+    },
+    {
+      "key": "nca_s1combatfx",
+      "root": "nca_s1combatfx",
+      "path": "assets/game/levels/stage_01/stage/stage1_combat_fx.png",
+      "owner": "levels/stage_01",
+      "cell": null
+    }
+  ],
+  "files": [
+    {
+      "path": "assets/game/levels/stage_01/audio/music/Level1.mp3",
+      "owner": "levels/stage_01",
+      "bytes": 2337690,
+      "role": "registered runtime asset"
+    },
+    {
+      "path": "assets/game/levels/stage_01/audio/music/Level1b.mp3",
+      "owner": "levels/stage_01",
+      "bytes": 3121155,
+      "role": "registered runtime asset"
+    },
+    {
+      "path": "assets/game/levels/stage_01/audio/music/Level1mb.mp3",
+      "owner": "levels/stage_01",
+      "bytes": 1921872,
+      "role": "registered runtime asset"
+    },
+    {
+      "path": "assets/game/levels/stage_01/boss/boss_s1.png",
+      "owner": "levels/stage_01",
+      "bytes": 1463325,
+      "role": "registered runtime asset",
+      "width": 1850,
+      "height": 1986
+    },
+    {
+      "path": "assets/game/levels/stage_01/cinematics/cinematic_level_approaches/stage01_rumble_in_the_jungle_approach.png",
+      "owner": "levels/stage_01",
+      "bytes": 2989789,
+      "role": "registered runtime asset",
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "path": "assets/game/levels/stage_01/enemies/en_s1.png",
+      "owner": "levels/stage_01",
+      "bytes": 5217181,
+      "role": "registered runtime asset",
+      "width": 2205,
+      "height": 2080
+    },
+    {
+      "path": "assets/game/levels/stage_01/enemies/enemy_overhaul_0925/sprites/ground_base_stage1_jungle.png",
+      "owner": "levels/stage_01",
+      "bytes": 105478,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/levels/stage_01/enemies/enemy_overhaul_0925/sprites/stage1_tank_hull.png",
+      "owner": "levels/stage_01",
+      "bytes": 150489,
+      "role": "registered runtime asset",
+      "width": 384,
+      "height": 384
+    },
+    {
+      "path": "assets/game/levels/stage_01/enemies/enemy_overhaul_0925/sprites/stage1_tank_turret.png",
+      "owner": "levels/stage_01",
+      "bytes": 65347,
+      "role": "registered runtime asset",
+      "width": 384,
+      "height": 384
+    },
+    {
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback/rzb_debris.png",
+      "owner": "levels/stage_01",
+      "bytes": 73484,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback/rzb_dust.png",
+      "owner": "levels/stage_01",
+      "bytes": 66361,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback/rzb_hull_0.png",
+      "owner": "levels/stage_01",
+      "bytes": 119745,
+      "role": "registered runtime asset",
+      "width": 400,
+      "height": 400
+    },
+    {
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback/rzb_hull_1.png",
+      "owner": "levels/stage_01",
+      "bytes": 134467,
+      "role": "registered runtime asset",
+      "width": 400,
+      "height": 400
+    },
+    {
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback/rzb_hull_2.png",
+      "owner": "levels/stage_01",
+      "bytes": 119182,
+      "role": "registered runtime asset",
+      "width": 400,
+      "height": 400
+    },
+    {
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback/rzb_hull_3.png",
+      "owner": "levels/stage_01",
+      "bytes": 134778,
+      "role": "registered runtime asset",
+      "width": 400,
+      "height": 400
+    },
+    {
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback/rzb_hull_4.png",
+      "owner": "levels/stage_01",
+      "bytes": 119798,
+      "role": "registered runtime asset",
+      "width": 400,
+      "height": 400
+    },
+    {
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback/rzb_hull_5.png",
+      "owner": "levels/stage_01",
+      "bytes": 134340,
+      "role": "registered runtime asset",
+      "width": 400,
+      "height": 400
+    },
+    {
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback/rzb_hull_6.png",
+      "owner": "levels/stage_01",
+      "bytes": 119165,
+      "role": "registered runtime asset",
+      "width": 400,
+      "height": 400
+    },
+    {
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback/rzb_hull_7.png",
+      "owner": "levels/stage_01",
+      "bytes": 134906,
+      "role": "registered runtime asset",
+      "width": 400,
+      "height": 400
+    },
+    {
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback/rzb_hull_base.png",
+      "owner": "levels/stage_01",
+      "bytes": 117262,
+      "role": "registered runtime asset",
+      "width": 320,
+      "height": 320
+    },
+    {
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback/rzb_machinegun.png",
+      "owner": "levels/stage_01",
+      "bytes": 15367,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 160
+    },
+    {
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback/rzb_missile_pod.png",
+      "owner": "levels/stage_01",
+      "bytes": 17001,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 160
+    },
+    {
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback/rzb_muzzle.png",
+      "owner": "levels/stage_01",
+      "bytes": 49255,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback/rzb_razor_missile.png",
+      "owner": "levels/stage_01",
+      "bytes": 38054,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback/rzb_rotor.png",
+      "owner": "levels/stage_01",
+      "bytes": 11750,
+      "role": "registered runtime asset",
+      "width": 96,
+      "height": 96
+    },
+    {
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback/rzb_sonic_bullet.png",
+      "owner": "levels/stage_01",
+      "bytes": 48927,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback/rzb_sonic_charge.png",
+      "owner": "levels/stage_01",
+      "bytes": 77169,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback/rzb_sonic_impact.png",
+      "owner": "levels/stage_01",
+      "bytes": 97002,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback/rzb_sonic_ring.png",
+      "owner": "levels/stage_01",
+      "bytes": 66032,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback/rzb_sonic_wave.png",
+      "owner": "levels/stage_01",
+      "bytes": 74200,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback/rzb_tread.png",
+      "owner": "levels/stage_01",
+      "bytes": 23036,
+      "role": "registered runtime asset",
+      "width": 64,
+      "height": 192
+    },
+    {
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback/rzb_turret.png",
+      "owner": "levels/stage_01",
+      "bytes": 77899,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 320
+    },
+    {
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback/rzb_turret_damaged.png",
+      "owner": "levels/stage_01",
+      "bytes": 83061,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 320
+    },
+    {
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback/rzb_wreck.png",
+      "owner": "levels/stage_01",
+      "bytes": 134883,
+      "role": "registered runtime asset",
+      "width": 320,
+      "height": 320
+    },
+    {
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback_furious/rzbf_debris.png",
+      "owner": "levels/stage_01",
+      "bytes": 71372,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback_furious/rzbf_dust.png",
+      "owner": "levels/stage_01",
+      "bytes": 64945,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback_furious/rzbf_hull_0.png",
+      "owner": "levels/stage_01",
+      "bytes": 115238,
+      "role": "registered runtime asset",
+      "width": 400,
+      "height": 400
+    },
+    {
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback_furious/rzbf_hull_1.png",
+      "owner": "levels/stage_01",
+      "bytes": 136377,
+      "role": "registered runtime asset",
+      "width": 400,
+      "height": 400
+    },
+    {
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback_furious/rzbf_hull_2.png",
+      "owner": "levels/stage_01",
+      "bytes": 115116,
+      "role": "registered runtime asset",
+      "width": 400,
+      "height": 400
+    },
+    {
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback_furious/rzbf_hull_3.png",
+      "owner": "levels/stage_01",
+      "bytes": 137495,
+      "role": "registered runtime asset",
+      "width": 400,
+      "height": 400
+    },
+    {
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback_furious/rzbf_hull_4.png",
+      "owner": "levels/stage_01",
+      "bytes": 115277,
+      "role": "registered runtime asset",
+      "width": 400,
+      "height": 400
+    },
+    {
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback_furious/rzbf_hull_5.png",
+      "owner": "levels/stage_01",
+      "bytes": 136222,
+      "role": "registered runtime asset",
+      "width": 400,
+      "height": 400
+    },
+    {
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback_furious/rzbf_hull_6.png",
+      "owner": "levels/stage_01",
+      "bytes": 115201,
+      "role": "registered runtime asset",
+      "width": 400,
+      "height": 400
+    },
+    {
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback_furious/rzbf_hull_7.png",
+      "owner": "levels/stage_01",
+      "bytes": 137402,
+      "role": "registered runtime asset",
+      "width": 400,
+      "height": 400
+    },
+    {
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback_furious/rzbf_hull_base.png",
+      "owner": "levels/stage_01",
+      "bytes": 113979,
+      "role": "registered runtime asset",
+      "width": 320,
+      "height": 320
+    },
+    {
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback_furious/rzbf_machinegun.png",
+      "owner": "levels/stage_01",
+      "bytes": 14902,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 160
+    },
+    {
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback_furious/rzbf_missile_pod.png",
+      "owner": "levels/stage_01",
+      "bytes": 15867,
+      "role": "registered runtime asset",
+      "width": 128,
+      "height": 160
+    },
+    {
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback_furious/rzbf_muzzle.png",
+      "owner": "levels/stage_01",
+      "bytes": 47260,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback_furious/rzbf_razor_missile.png",
+      "owner": "levels/stage_01",
+      "bytes": 35872,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback_furious/rzbf_rotor.png",
+      "owner": "levels/stage_01",
+      "bytes": 11355,
+      "role": "registered runtime asset",
+      "width": 96,
+      "height": 96
+    },
+    {
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback_furious/rzbf_sonic_bullet.png",
+      "owner": "levels/stage_01",
+      "bytes": 42332,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback_furious/rzbf_sonic_charge.png",
+      "owner": "levels/stage_01",
+      "bytes": 66496,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback_furious/rzbf_sonic_impact.png",
+      "owner": "levels/stage_01",
+      "bytes": 85844,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback_furious/rzbf_sonic_ring.png",
+      "owner": "levels/stage_01",
+      "bytes": 58925,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback_furious/rzbf_sonic_wave.png",
+      "owner": "levels/stage_01",
+      "bytes": 63687,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback_furious/rzbf_tread.png",
+      "owner": "levels/stage_01",
+      "bytes": 23250,
+      "role": "registered runtime asset",
+      "width": 64,
+      "height": 192
+    },
+    {
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback_furious/rzbf_turret.png",
+      "owner": "levels/stage_01",
+      "bytes": 72335,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 320
+    },
+    {
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback_furious/rzbf_turret_damaged.png",
+      "owner": "levels/stage_01",
+      "bytes": 77837,
+      "role": "registered runtime asset",
+      "width": 256,
+      "height": 320
+    },
+    {
+      "path": "assets/game/levels/stage_01/miniboss/bosses/razorback_furious/rzbf_wreck.png",
+      "owner": "levels/stage_01",
+      "bytes": 132796,
+      "role": "registered runtime asset",
+      "width": 320,
+      "height": 320
+    },
+    {
+      "path": "assets/game/levels/stage_01/projectiles/eproj_s1.png",
+      "owner": "levels/stage_01",
+      "bytes": 544713,
+      "role": "registered runtime asset",
+      "width": 747,
+      "height": 931
+    },
+    {
+      "path": "assets/game/levels/stage_01/stage/bg_stage01_destroyed.png",
+      "owner": "levels/stage_01",
+      "bytes": 573915,
+      "role": "registered runtime asset",
+      "width": 680,
+      "height": 4212
+    },
+    {
+      "path": "assets/game/levels/stage_01/stage/bg_stage01_intact.png",
+      "owner": "levels/stage_01",
+      "bytes": 568408,
+      "role": "registered runtime asset",
+      "width": 680,
+      "height": 4212
+    },
+    {
+      "path": "assets/game/levels/stage_01/stage/bg_stage01_runway_transition.jpg",
+      "owner": "levels/stage_01",
+      "bytes": 315772,
+      "role": "registered runtime asset",
+      "width": 360,
+      "height": 1984
+    },
+    {
+      "path": "assets/game/levels/stage_01/stage/frames_0.png",
+      "owner": "levels/stage_01",
+      "bytes": 2050468,
+      "role": "registered runtime asset",
+      "width": 333,
+      "height": 2608
+    },
+    {
+      "path": "assets/game/levels/stage_01/stage/nst1_upper.png",
+      "owner": "levels/stage_01",
+      "bytes": 3008695,
+      "role": "registered runtime asset",
+      "width": 800,
+      "height": 4800
+    },
+    {
+      "path": "assets/game/levels/stage_01/stage/stage1.png",
+      "owner": "levels/stage_01",
+      "bytes": 1212503,
+      "role": "source or supporting file",
+      "width": 1024,
+      "height": 1090
+    },
+    {
+      "path": "assets/game/levels/stage_01/stage/stage1_combat_fx.json",
+      "owner": "levels/stage_01",
+      "bytes": 5212,
+      "role": "source or supporting file"
+    },
+    {
+      "path": "assets/game/levels/stage_01/stage/stage1_combat_fx.png",
+      "owner": "levels/stage_01",
+      "bytes": 571077,
+      "role": "registered runtime asset",
+      "width": 1152,
+      "height": 1728
+    },
+    {
+      "path": "assets/game/levels/stage_01/stage/stage1roster.png",
+      "owner": "levels/stage_01",
+      "bytes": 1477767,
+      "role": "registered runtime asset",
+      "width": 1152,
+      "height": 1261
+    }
+  ],
+  "audio": {
+    "sfx": {},
+    "music": {
+      "lvl1": "assets/game/levels/stage_01/audio/music/Level1.mp3",
+      "stage": "assets/game/levels/stage_01/audio/music/Level1.mp3",
+      "jungle": "assets/game/levels/stage_01/audio/music/Level1.mp3",
+      "boss": "assets/game/levels/stage_01/audio/music/Level1b.mp3",
+      "boss1": "assets/game/levels/stage_01/audio/music/Level1b.mp3",
+      "mini1": "assets/game/levels/stage_01/audio/music/Level1mb.mp3"
+    }
+  },
+  "deploymentRoots": [
+    "bof_player_weapon_special_icons_atlas",
+    "pp5_raw_yuri_idle",
+    "bg_stage01_intact",
+    "nca_layout_shared_effects_0",
+    "rzb_hull_0",
+    "nca_en_s1",
+    "nca_eproj_s1",
+    "bof_player_ordnance_projectiles_atlas",
+    "nca_player_weapons",
+    "pp5_raw_yuri_happy",
+    "pp5_raw_yuri_laugh",
+    "pp5_raw_yuri_anger",
+    "pp5_raw_yuri_sad",
+    "pp5_raw_yuri_crash",
+    "pp5_raw_yuri_victory",
+    "pp5_raw_yuri_talk-closed",
+    "pp5_raw_yuri_talk-small",
+    "pp5_raw_yuri_talk-medium",
+    "pp5_raw_yuri_talk-wide",
+    "pp5_raw_yuri_talk-o",
+    "nca_terrain_liquids",
+    "nca_s1combatfx",
+    "nca_fx_explosions",
+    "rzb_hull_1",
+    "rzb_hull_2",
+    "rzb_hull_3",
+    "rzb_hull_4",
+    "rzb_hull_5",
+    "rzb_hull_6",
+    "rzb_hull_7",
+    "rzb_hull_base",
+    "rzb_turret",
+    "rzb_turret_damaged",
+    "rzb_machinegun",
+    "rzb_missile_pod",
+    "rzb_rotor",
+    "rzb_tread",
+    "rzb_wreck",
+    "rzb_debris",
+    "rzb_sonic_bullet",
+    "rzb_sonic_wave",
+    "rzb_sonic_ring",
+    "rzb_razor_missile",
+    "rzb_sonic_charge",
+    "rzb_muzzle",
+    "rzb_sonic_impact",
+    "rzb_dust",
+    "nca_fx_debris"
+  ],
+  "audioDescription": "Level music and stage-specific sounds are in audio/. Common music and reusable sounds are registered in BOFA and stored once in shared/audio."
+}

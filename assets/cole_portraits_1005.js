@@ -5,7 +5,7 @@ const CP5={cache:new Map(),poses:['idle','happy','laugh','anger','sad','crash','
  'talk-closed','talk-small','talk-medium','talk-wide','talk-o','neutral','smirking',
  'brooding','sunglasses','shout','smile-shades','salute','thinking']};
 for(const em of CP5.poses)XART._src['cp5_raw_'+em]='assets/game/pilots_0922/portraits/cole-'+em+'.png';
-for(let i=0;i<3;i++)XART._src['cp5_rage_'+i]='assets/game/dispatch_1002/cole_rage_'+i+'.png';
+for(let i=0;i<3;i++)XART._src['cp5_rage_'+i]='assets/game/shared/combat/dispatch_1002/cole_rage_'+i+'.png';
 function cp5Cell(em,comm,rage){
  const id=em+':'+comm+':'+rage;if(CP5.cache.has(id))return CP5.cache.get(id);
  const baseKey=rage?'cp5_rage_2':'cp5_raw_idle';
@@ -41,4 +41,4 @@ XART._touch=function(k){
  const rage=/^fb2_cole_rage_([0-2])$/.exec(k||'');if(rage)return cp5Cell(rage[1],false,true);
  return CP5_TOUCH.apply(this,arguments);
 };
-for(const em of ['idle','talk-closed','talk-small','talk-medium','talk-wide','talk-o'])XART.rdy('cp5_raw_'+em);
+for(const em of ['idle'])XART.rdy('cp5_raw_'+em);

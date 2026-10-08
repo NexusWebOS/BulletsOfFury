@@ -1,6 +1,6 @@
 """campaign_map_v2_0912v.py - bake the SpriteCook campaign-map pieces into game-ready sprites.
 
-    python _BUILD_SOURCE/campaign_map_v2_0912v.py <src_dir>          # bake into assets/game/campaign_map_v2/
+    python _BUILD_SOURCE/campaign_map_v2_0912v.py <src_dir>          # bake into assets/game/shared/campaign/campaign_map_v2/
     python _BUILD_SOURCE/campaign_map_v2_0912v.py <src_dir> --check  # report only, write nothing
 
 Mike (0912v): "Use spritecook, regenerate the entire map but this time as seperate pieces, a parallax

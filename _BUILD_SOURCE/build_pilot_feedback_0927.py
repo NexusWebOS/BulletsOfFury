@@ -6,7 +6,7 @@ import json,shutil
 ROOT=Path(__file__).resolve().parent.parent
 info=json.loads((ROOT/'docs/pilot_feedback_art_0927.json').read_text(encoding='utf-8'))
 source=Path('C:/Users/Mdogg/.codex/generated_images/01a0e3c8-265d-7731-8ffe-ee42ebb5ba3c')/info['source']
-dest=ROOT/'assets/game/pilot_feedback_0927/ice_breath.png'
+dest=ROOT/'assets/game/shared/combat/pilot_feedback_0927/ice_breath.png'
 if source.exists():
  dest.parent.mkdir(parents=True,exist_ok=True)
  shutil.copyfile(source,dest)

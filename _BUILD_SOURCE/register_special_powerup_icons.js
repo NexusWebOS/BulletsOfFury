@@ -45,7 +45,7 @@ const maverickLances = Object.fromEntries(Array.from({length:5}, (_, index) => {
 }));
 
 for (const [key, file] of Object.entries(files)) {
-  BOFX.img[key] = `assets/game/special_icons/${file}`;
+  BOFX.img[key] = `assets/game/shared/player_weapons/special_icons/${file}`;
 }
 for (const [key, file] of Object.entries(maverickLasers)) {
   BOFX.img[key] = `assets/game/maverick_laser_icons/${file}`;

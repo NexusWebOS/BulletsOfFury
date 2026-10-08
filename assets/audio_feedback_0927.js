@@ -1,7 +1,7 @@
 "use strict";
 // Finished ElevenLabs recordings layered/mastered with Mike's ColeForge SFX engine.
 // Loaded before game.js so lazy audio pools receive the final paths on first creation.
-const AUDIO_0927_ROOT='assets/game/sfx_0927/';
+const AUDIO_0927_ROOT='assets/game/shared/audio/sfx_0927/';
 const AUDIO_0927_GROUPS={
   missile_auto_1:['missile','spaceVolleyLaunch','volleyLaunch','nuclearLaunch','enemyMissile'],
   boss_charge:['bossWeaponCharge','chargeStart','furnaceLaserCharge','warshipCoreCharge','hammerEradCharge','quadCharge'],

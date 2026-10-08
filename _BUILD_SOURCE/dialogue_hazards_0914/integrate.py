@@ -11,7 +11,7 @@ def rep(a,b):
 def block(start,end,new):
  global s
  a=s.index(start);b=s.index(end,a);s=s[:a]+new+'\n'+s[b:]
-rep("  for(const _f of ['ocean','bar','btn_save','btn_load','btn_exit'])", "  X._src['dlg_rect_0914']='assets/game/dialogue_0914/frame.png';\n  for(const _f of ['ocean','bar','btn_save','btn_load','btn_exit'])")
+rep("  for(const _f of ['ocean','bar','btn_save','btn_load','btn_exit'])", "  X._src['dlg_rect_0914']='assets/game/shared/ui/dialogue_0914/frame.png';\n  for(const _f of ['ocean','bar','btn_save','btn_load','btn_exit'])")
 rep('function dlgBox(o){',(R/'_BUILD_SOURCE/dialogue_hazards_0914/frame.js').read_text()+'\nfunction dlgBox(o){')
 rep("  const _portK=(_isPilot && typeof pilotPortrait==='function')", "  const _portK=o.portraitKey || ((_isPilot && typeof pilotPortrait==='function')")
 rep("? pilotPortrait(_pk, _talking?'talk':(o.emo||'idle')) : null;", "? pilotPortrait(_pk, _talking?'talk':(o.emo||'idle')) : null);")

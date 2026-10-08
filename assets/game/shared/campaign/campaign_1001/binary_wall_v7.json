@@ -1,0 +1,116 @@
+{
+  "path": "assets/game/shared/campaign/campaign_1001/binary_wall_v7.png",
+  "width": 1254,
+  "height": 1254,
+  "columns": 4,
+  "count": 8,
+  "fps": 6,
+  "aspect": 0.5,
+  "frames": [
+    {
+      "rect": [
+        0,
+        0,
+        314,
+        627
+      ],
+      "sha256": "99e4d5dfa01e63fdcf93f912b3a75efdf3403ecbe71f898c29eed96e04df0c6d",
+      "alpha": [
+        0,
+        255
+      ]
+    },
+    {
+      "rect": [
+        314,
+        0,
+        313,
+        627
+      ],
+      "sha256": "f4acd82e0ae240e498ee2a452e0f87df73b4e7584d5b8d6ae26914eea7dc69ce",
+      "alpha": [
+        0,
+        255
+      ]
+    },
+    {
+      "rect": [
+        627,
+        0,
+        313,
+        627
+      ],
+      "sha256": "fd3fee41050c836c981ced448811aa770b8fe34a67f0505384154c42ef6d2f96",
+      "alpha": [
+        0,
+        255
+      ]
+    },
+    {
+      "rect": [
+        940,
+        0,
+        314,
+        627
+      ],
+      "sha256": "c3b282336eea425db7f3d809dd0d4fe1c4215442a893fe8073e184497606ffd6",
+      "alpha": [
+        0,
+        255
+      ]
+    },
+    {
+      "rect": [
+        0,
+        627,
+        314,
+        627
+      ],
+      "sha256": "467a7353999882c31d38dd9c2dd7f12dd39411e50b28ec9f1a7d653946574d0a",
+      "alpha": [
+        0,
+        255
+      ]
+    },
+    {
+      "rect": [
+        314,
+        627,
+        313,
+        627
+      ],
+      "sha256": "a746a9b179e1314e024c8c906f2a3f79d980f1b3734810ffb5ad13d7fab31474",
+      "alpha": [
+        0,
+        255
+      ]
+    },
+    {
+      "rect": [
+        627,
+        627,
+        313,
+        627
+      ],
+      "sha256": "e84e2ab2aa848ca9adf35ed0fa45fbbb22f9426708d58d287e8488feca80c217",
+      "alpha": [
+        0,
+        255
+      ]
+    },
+    {
+      "rect": [
+        940,
+        627,
+        314,
+        627
+      ],
+      "sha256": "41fc6cfb3167b046d2488de9dab29542a303df09e026d0677dcbab5385bd73b1",
+      "alpha": [
+        0,
+        255
+      ]
+    }
+  ],
+  "motion": "Eight generated binary-row/scan-packet frames; stationary panel destination. Original alpha retained."
+}

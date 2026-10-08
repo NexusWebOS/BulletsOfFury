@@ -73,7 +73,7 @@ Rival24.mapBack=function(){if(CF4.focus&&Input.menuBack()){CF4.focus=false;sselC
 
 // Generated poses are separate torso and leg plates. Head, arms and weapons stay articulated.
 for(const part of ['core','legL','legR'])for(let f=0;f<4;f++){
- const name=part+'_'+f,key='cf4_'+name;XART._src[key]='assets/game/campaign_focus_1004b/'+name+'.png';
+ const name=part+'_'+f,key='cf4_'+name;XART._src[key]='assets/game/shared/campaign/campaign_focus_1004b/'+name+'.png';
  FMC_ART[key]={key,path:XART._src[key],rects:{}};XART.rdy(key);
 }
 function cf4Knight(b){const J=j3State(b);return J?.mimic===5?J.gp4Donors?.[5]?.p._hammer:null;}

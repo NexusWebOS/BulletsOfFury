@@ -25,7 +25,7 @@ q = {
     'review': '_shots/campaign_controls_1004h/review.html',
     'live_game': 'index.html?build=campaign-controls-1004h',
     'review_storage_namespace': 'bof_map_review_1004h_',
-    'art': 'assets/game/campaign_controls_1004h/manifest.json',
+    'art': 'assets/game/shared/campaign/campaign_controls_1004h/manifest.json',
     'prompt': '_ART_SOURCES/campaign_controls_1004h/prompt.json',
     'screenshots_inspected': ['save-slots.png', 'load-slots.png', 'compact-save.png', 'pointer-save.png', 'auto-load.png', 'hub-save.png'],
     'limitations': 'Normalized gamepad events are injected, not physical hardware. No full campaign-clear or combat-balance claim.',

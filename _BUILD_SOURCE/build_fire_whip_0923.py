@@ -2,7 +2,7 @@
 from pathlib import Path
 from PIL import Image
 import hashlib,json
-ROOT=Path(__file__).resolve().parents[1];OUT=ROOT/'assets/game/player_weapons/fire_whip_0923'
+ROOT=Path(__file__).resolve().parents[1];OUT=ROOT/'assets/game/shared/player_weapons/player_weapons/fire_whip_0923'
 im=Image.open(OUT/'source.png').convert('RGBA');frames=[]
 for i in range(8):
  x0,x1=round(i%4*im.width/4),round((i%4+1)*im.width/4)

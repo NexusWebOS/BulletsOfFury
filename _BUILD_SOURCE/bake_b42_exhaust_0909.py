@@ -33,8 +33,8 @@ from PIL import Image
 ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
 GAME = os.path.join(ROOT, 'assets/game.js')
 MAN = os.path.join(ROOT, 'assets/manifest.js')
-LIZ = os.path.join(ROOT, 'assets/game/atlas/ships/ship_lizzie.png')
-B42 = os.path.join(ROOT, 'assets/game/atlas/ships/ship_lizzie_b42.png')
+LIZ = os.path.join(ROOT, 'assets/game/pilots/lizzie/ship_frames/ship_lizzie.png')
+B42 = os.path.join(ROOT, 'assets/game/pilots/lizzie/ship_frames/ship_lizzie_b42.png')
 BAK = os.path.join(ROOT, '_BUILD_SOURCE', '_backups', 'ship_lizzie_b42.png.prebake')
 LEVELISH = ['', '_nf', '_l', '_r', '_pv0', '_pv1', '_pv2', '_pv3', '_pv4']
 

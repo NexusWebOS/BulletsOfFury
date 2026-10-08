@@ -22,14 +22,14 @@ def rep(old, new, count=1):
     s = s.replace(old, new)
 
 # ---------------------------------------------------------------- E1 registration
-rep("""    X._src['inf_'+_e]='assets/game/ui/infusion_0917/inf_'+_e+'.png';
-""", """    X._src['inf_'+_e]='assets/game/ui/infusion_0917/inf_'+_e+'.png';
+rep("""    X._src['inf_'+_e]='assets/game/shared/ui/ui/infusion_0917/inf_'+_e+'.png';
+""", """    X._src['inf_'+_e]='assets/game/shared/ui/ui/infusion_0917/inf_'+_e+'.png';
   /* THE FORGE SEQUENCE'S TWO PLATES (0917b). SpriteCook, 1376x768 = the debrief's own 477:266 aspect,
      so they fill the cinematic viewport edge to edge with no distortion. The chamber is a 1:1 EDIT of
      the 0916 concept plate Mike liked (edit_asset_id, every socket emptied), the bays are generated
      against it as a reference so the two read as one family. */
-  X._src['forge_chamber_0917b']='assets/game/ui/forge_0917b/forge_chamber.png';
-  X._src['loadout_bays_0917b']='assets/game/ui/forge_0917b/loadout_bays.png';
+  X._src['forge_chamber_0917b']='assets/game/shared/ui/ui/forge_0917b/forge_chamber.png';
+  X._src['loadout_bays_0917b']='assets/game/shared/ui/ui/forge_0917b/loadout_bays.png';
 """)
 
 # ---------------------------------------------------------------- E2 GS enum + the one predicate

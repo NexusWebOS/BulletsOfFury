@@ -25,8 +25,8 @@ module.exports=function testHammerBoomerang(vm,ctxv,ok){
       boss._hammer.t=1.61;hammerBossTick(boss,.01);o.alternates=boss._hammer.state==='warn';
       let hits=0;playerHit=function(){hits++;player.invuln=40;};player.dead=false;player.invuln=0;player.x=220;player.y=300;
       const q={x:220,y:300,hitCd:0};o.hazard=hammerBoomerangHit(q,.016)&&hits===1&&q.hitCd===.82;
-      o.assets=XART._src.hammer_boomerang_body==='assets/game/stage5_hammer/boomerang_body.png'&&
-        XART._src.hammer_boomerang_hammer==='assets/game/stage5_hammer/boomerang_hammer.png';
+      o.assets=XART._src.hammer_boomerang_body==='assets/game/levels/stage_05/boss/stage5_hammer/boomerang_body.png'&&
+        XART._src.hammer_boomerang_hammer==='assets/game/levels/stage_05/boss/stage5_hammer/boomerang_hammer.png';
       o.timing=HAMMER_SPIN_TIME===1.55&&HAMMER_OUT_TIME===.70&&HAMMER_RETURN_SPEED===315;
       o.soundBeats=Object.values(sounds).every(n=>n===1);
       return JSON.stringify(o);

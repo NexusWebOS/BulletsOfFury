@@ -37,7 +37,7 @@ for name,filename in files.items():
   if name in centers and i<len(centers[name]):
    x,y=centers[name][i];px=(x-rect[0]+16)/padded.width;py=(y-rect[1]+16)/padded.height
   else: px=py=.5
-  a={'key':'hk5_'+name+'_'+str(i),'path':'assets/game/hammer_knight_1005/'+name+'_'+str(i)+'.png','w':padded.width,'h':padded.height,'px':px,'py':py}
+  a={'key':'hk5_'+name+'_'+str(i),'path':'assets/game/levels/stage_08/boss/hammer_knight_1005/'+name+'_'+str(i)+'.png','w':padded.width,'h':padded.height,'px':px,'py':py}
   if name=='hammer':
    heads=[(298,226),(559,37),(962,32),(1383,247),(289,484),(452,378),(789,404),(1470,376),(369,618),(578,530),(981,718),(1460,715),(312,947),(507,778),(823,883),(1469,885)]
    hx,hy=heads[i];a['head']=[hx-rect[0]+16,hy-rect[1]+16]
@@ -49,7 +49,7 @@ for name,filename in files.items():
   # empty-handed robot AND draw the older blue campaign hammer over it.
   rect=(1381,804,1536,958);cell=im.crop(rect);padded=Image.new('RGBA',(cell.width+32,cell.height+32));padded.alpha_composite(cell,(16,16));padded.save(OUT/'hammer_16.png',optimize=True)
   px=(1469-rect[0]+16)/padded.width;py=(885-rect[1]+16)/padded.height
-  art[name].append({'key':'hk5_hammer_16','path':'assets/game/hammer_knight_1005/hammer_16.png','w':padded.width,'h':padded.height,'px':px,'py':py})
+  art[name].append({'key':'hk5_hammer_16','path':'assets/game/levels/stage_08/boss/hammer_knight_1005/hammer_16.png','w':padded.width,'h':padded.height,'px':px,'py':py})
   manifest['cells'][name].append({'frame':16,'sourceRect':rect,'alphaBounds':padded.getbbox(),'anchor':[px,py]})
 (R/'assets/hammer_knight_art_1005.js').write_text('"use strict";\nconst HK5_ART='+json.dumps(art,separators=(',',':'))+';\n',encoding='utf-8')
 (SRC/'manifest.json').write_text(json.dumps(manifest,indent=2),encoding='utf-8')

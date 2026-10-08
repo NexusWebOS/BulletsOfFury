@@ -1,0 +1,548 @@
+{
+  "tank_hull": {
+    "key": "enc30_tank_hull",
+    "path": "assets/game/shared/combat/encounters_0930/tank_hull.png",
+    "frames": [
+      [
+        0,
+        0,
+        128,
+        144
+      ],
+      [
+        128,
+        0,
+        128,
+        144
+      ]
+    ],
+    "size": [
+      128,
+      144
+    ],
+    "anchor": [
+      64,
+      76
+    ]
+  },
+  "tank_turret": {
+    "key": "enc30_tank_turret",
+    "path": "assets/game/shared/combat/encounters_0930/tank_turret.png",
+    "frames": [
+      [
+        0,
+        0,
+        128,
+        144
+      ],
+      [
+        128,
+        0,
+        128,
+        144
+      ]
+    ],
+    "size": [
+      128,
+      144
+    ],
+    "anchor": [
+      64,
+      65
+    ]
+  },
+  "tank_pod_l": {
+    "key": "enc30_tank_pod_l",
+    "path": "assets/game/shared/combat/encounters_0930/tank_pod_l.png",
+    "frames": [
+      [
+        0,
+        0,
+        40,
+        72
+      ]
+    ],
+    "size": [
+      40,
+      72
+    ],
+    "anchor": [
+      20.0,
+      36.0
+    ]
+  },
+  "tank_pod_r": {
+    "key": "enc30_tank_pod_r",
+    "path": "assets/game/shared/combat/encounters_0930/tank_pod_r.png",
+    "frames": [
+      [
+        0,
+        0,
+        40,
+        72
+      ]
+    ],
+    "size": [
+      40,
+      72
+    ],
+    "anchor": [
+      20.0,
+      36.0
+    ]
+  },
+  "jet": {
+    "key": "enc30_jet",
+    "path": "assets/game/shared/combat/encounters_0930/jet.png",
+    "frames": [
+      [
+        0,
+        0,
+        120,
+        144
+      ],
+      [
+        120,
+        0,
+        120,
+        144
+      ],
+      [
+        240,
+        0,
+        120,
+        144
+      ]
+    ],
+    "size": [
+      120,
+      144
+    ],
+    "anchor": [
+      60,
+      72
+    ]
+  },
+  "jet_laser": {
+    "key": "enc30_jet_laser",
+    "path": "assets/game/shared/combat/encounters_0930/jet_laser.png",
+    "frames": [
+      [
+        0,
+        0,
+        36,
+        60
+      ]
+    ],
+    "size": [
+      36,
+      60
+    ],
+    "anchor": [
+      18.0,
+      30.0
+    ]
+  },
+  "jet_missile": {
+    "key": "enc30_jet_missile",
+    "path": "assets/game/shared/combat/encounters_0930/jet_missile.png",
+    "frames": [
+      [
+        0,
+        0,
+        36,
+        60
+      ]
+    ],
+    "size": [
+      36,
+      60
+    ],
+    "anchor": [
+      18.0,
+      30.0
+    ]
+  },
+  "jet_rotary": {
+    "key": "enc30_jet_rotary",
+    "path": "assets/game/shared/combat/encounters_0930/jet_rotary.png",
+    "frames": [
+      [
+        0,
+        0,
+        36,
+        60
+      ]
+    ],
+    "size": [
+      36,
+      60
+    ],
+    "anchor": [
+      18.0,
+      30.0
+    ]
+  },
+  "ace": {
+    "key": "enc30_ace",
+    "path": "assets/game/shared/combat/encounters_0930/ace.png",
+    "frames": [
+      [
+        0,
+        0,
+        176,
+        184
+      ],
+      [
+        176,
+        0,
+        176,
+        184
+      ],
+      [
+        352,
+        0,
+        176,
+        184
+      ],
+      [
+        528,
+        0,
+        176,
+        184
+      ],
+      [
+        704,
+        0,
+        176,
+        184
+      ],
+      [
+        880,
+        0,
+        176,
+        184
+      ],
+      [
+        1056,
+        0,
+        176,
+        184
+      ],
+      [
+        1232,
+        0,
+        176,
+        184
+      ],
+      [
+        1408,
+        0,
+        176,
+        184
+      ],
+      [
+        1584,
+        0,
+        176,
+        184
+      ],
+      [
+        1760,
+        0,
+        176,
+        184
+      ],
+      [
+        1936,
+        0,
+        176,
+        184
+      ],
+      [
+        2112,
+        0,
+        176,
+        184
+      ],
+      [
+        2288,
+        0,
+        176,
+        184
+      ],
+      [
+        2464,
+        0,
+        176,
+        184
+      ],
+      [
+        2640,
+        0,
+        176,
+        184
+      ],
+      [
+        2816,
+        0,
+        176,
+        184
+      ],
+      [
+        2992,
+        0,
+        176,
+        184
+      ],
+      [
+        3168,
+        0,
+        176,
+        184
+      ],
+      [
+        3344,
+        0,
+        176,
+        184
+      ]
+    ],
+    "size": [
+      176,
+      184
+    ],
+    "anchor": [
+      88.0,
+      92.0
+    ]
+  },
+  "ace_wing_l": {
+    "key": "enc30_ace_wing_l",
+    "path": "assets/game/shared/combat/encounters_0930/ace_wing_l.png",
+    "frames": [
+      [
+        0,
+        0,
+        176,
+        184
+      ]
+    ],
+    "size": [
+      176,
+      184
+    ]
+  },
+  "ace_body": {
+    "key": "enc30_ace_body",
+    "path": "assets/game/shared/combat/encounters_0930/ace_body.png",
+    "frames": [
+      [
+        0,
+        0,
+        176,
+        184
+      ]
+    ],
+    "size": [
+      176,
+      184
+    ]
+  },
+  "ace_wing_r": {
+    "key": "enc30_ace_wing_r",
+    "path": "assets/game/shared/combat/encounters_0930/ace_wing_r.png",
+    "frames": [
+      [
+        0,
+        0,
+        176,
+        184
+      ]
+    ],
+    "size": [
+      176,
+      184
+    ]
+  },
+  "ace_wing_l_damage": {
+    "key": "enc30_ace_wing_l_damage",
+    "path": "assets/game/shared/combat/encounters_0930/ace_wing_l_damage.png",
+    "frames": [
+      [
+        0,
+        0,
+        176,
+        184
+      ]
+    ],
+    "size": [
+      176,
+      184
+    ]
+  },
+  "ace_body_damage": {
+    "key": "enc30_ace_body_damage",
+    "path": "assets/game/shared/combat/encounters_0930/ace_body_damage.png",
+    "frames": [
+      [
+        0,
+        0,
+        176,
+        184
+      ]
+    ],
+    "size": [
+      176,
+      184
+    ]
+  },
+  "ace_wing_r_damage": {
+    "key": "enc30_ace_wing_r_damage",
+    "path": "assets/game/shared/combat/encounters_0930/ace_wing_r_damage.png",
+    "frames": [
+      [
+        0,
+        0,
+        176,
+        184
+      ]
+    ],
+    "size": [
+      176,
+      184
+    ]
+  },
+  "bomber": {
+    "key": "enc30_bomber",
+    "path": "assets/game/shared/combat/encounters_0930/bomber.png",
+    "frames": [
+      [
+        0,
+        0,
+        192,
+        200
+      ],
+      [
+        192,
+        0,
+        192,
+        200
+      ],
+      [
+        384,
+        0,
+        192,
+        200
+      ],
+      [
+        576,
+        0,
+        192,
+        200
+      ]
+    ],
+    "size": [
+      192,
+      200
+    ],
+    "anchor": [
+      96,
+      100
+    ]
+  },
+  "vent_body": {
+    "key": "enc30_vent_body",
+    "path": "assets/game/shared/combat/encounters_0930/vent_body.png",
+    "frames": [
+      [
+        0,
+        0,
+        116,
+        180
+      ]
+    ],
+    "size": [
+      116,
+      180
+    ],
+    "anchor": [
+      104,
+      100
+    ]
+  },
+  "vent_fluid": {
+    "key": "enc30_vent_fluid",
+    "path": "assets/game/shared/combat/encounters_0930/vent_fluid.png",
+    "frames": [
+      [
+        0,
+        0,
+        180,
+        100
+      ],
+      [
+        180,
+        0,
+        180,
+        100
+      ],
+      [
+        360,
+        0,
+        180,
+        100
+      ],
+      [
+        540,
+        0,
+        180,
+        100
+      ],
+      [
+        720,
+        0,
+        180,
+        100
+      ],
+      [
+        900,
+        0,
+        180,
+        100
+      ],
+      [
+        1080,
+        0,
+        180,
+        100
+      ],
+      [
+        1260,
+        0,
+        180,
+        100
+      ]
+    ],
+    "size": [
+      180,
+      100
+    ]
+  },
+  "entry": {
+    "key": "enc30_entry",
+    "path": "assets/game/shared/combat/encounters_0930/sewer_entry.png",
+    "frames": [
+      [
+        0,
+        0,
+        680,
+        1120
+      ]
+    ],
+    "size": [
+      680,
+      1120
+    ]
+  }
+}

@@ -11,8 +11,8 @@ def replace_once(old, new):
     data = data.replace(before, new.encode("utf-8"), 1)
 
 replace_once(
-    "  BOFX.img.frost_furious_beam_0920='assets/game/bosses/frost/frost_furious_beam_0920.png';",
-    "  BOFX.img.frost_furious_beam_0920='assets/game/bosses/frost/frost_furious_beam_0920.png';\n"
+    "  BOFX.img.frost_furious_beam_0920='assets/game/levels/stage_03/boss/bosses/frost/frost_furious_beam_0920.png';",
+    "  BOFX.img.frost_furious_beam_0920='assets/game/levels/stage_03/boss/bosses/frost/frost_furious_beam_0920.png';\n"
     "  for(const _tankStage of [1,4,7])for(const _part of ['hull','turret'])\n"
     "    BOFX.img['overhaul_tank_'+_tankStage+'_'+_part]='assets/game/enemy_overhaul_0925/sprites/stage'+_tankStage+'_tank_'+_part+'.png';"
 )

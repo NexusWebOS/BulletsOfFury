@@ -8,7 +8,7 @@ const RG4_BASE={tick:rebelSquadTick,damage:rebelSquadDamage,ship:fr27RebelDrawSh
  update:updatePlay,world:drawWorld,locked:h3Locked,hold:Input.hold,wingTick:s6WingTick,wingDraw:s6WingDraw,
  playerDraw:drawPlayer,playerHit:playerHit,targets:retinaBossTargets,projectile:drawCombatFinalProjectile,begin:beginStage,pods:chaingunMountsVisible};
 const RG4={draws:{},events:[],sheet:'rg4_decker_effects'};
-XART._src[RG4.sheet]='assets/game/rebel_gang_1004/decker_effects.png';
+XART._src[RG4.sheet]='assets/game/levels/stage_06/boss/rebel_gang_1004/decker_effects.png';
 function rg4State(){return state===GS.PLAY&&bossActive&&boss&&!boss.dead?boss._rebels?.gang1004:null;}
 function rg4Scene(){return rg4State()?.scene||null;}
 function rg4Log(G,event,data={}){const e={event,t:G.age,...data};G.events.push(e);if(G.events.length>160)G.events.shift();RG4.events.push(e);if(RG4.events.length>240)RG4.events.shift();}

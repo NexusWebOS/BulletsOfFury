@@ -5,7 +5,7 @@ from PIL import Image
 R=Path(__file__).resolve().parents[1]
 p=argparse.ArgumentParser();p.add_argument('--source',type=Path);a=p.parse_args()
 src=R/'_ART_SOURCES/hardcorps_1007/stage4_airbase.png'
-dst=R/'assets/game/hardcorps_1007/stage4_airbase.png'
+dst=R/'assets/game/levels/stage_04/stage/hardcorps_1007/stage4_airbase.png'
 if a.source:
  assert a.source.is_file();src.parent.mkdir(parents=True,exist_ok=True)
  if src.exists():assert src.read_bytes()==a.source.read_bytes(),'Refuse to replace a different archived source'

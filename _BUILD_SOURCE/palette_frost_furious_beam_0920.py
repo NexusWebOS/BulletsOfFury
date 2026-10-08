@@ -10,8 +10,8 @@ from PIL import Image
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE = ROOT / "assets/game/bosses/furnace/fzt_fire_laser_0920.png"
-TARGET = ROOT / "assets/game/bosses/frost/frost_furious_beam_0920.png"
+SOURCE = ROOT / "assets/game/levels/stage_02/boss/bosses/furnace/fzt_fire_laser_0920.png"
+TARGET = ROOT / "assets/game/levels/stage_03/boss/bosses/frost/frost_furious_beam_0920.png"
 
 
 def main() -> None:

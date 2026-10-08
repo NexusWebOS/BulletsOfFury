@@ -1,0 +1,8754 @@
+{
+  "version": 1,
+  "date": "2026-09-28",
+  "status": "graphics-only; not installed in game runtime",
+  "method": "built-in image_gen; import uses Pillow only to slice/pad/pack authored pixels",
+  "elements": [
+    "fire",
+    "ice",
+    "lightning",
+    "kinetic",
+    "chrome",
+    "dark",
+    "toxic",
+    "prism",
+    "water"
+  ],
+  "pilots": [
+    "axel",
+    "decker",
+    "maverick",
+    "freezer",
+    "juggernaut",
+    "yuri",
+    "lizzie",
+    "falva",
+    "cole"
+  ],
+  "families": {
+    "chaingun_mount_axel_left": {
+      "atlas": "assets/game/shared/player_weapons/weapon_animation_0928/chaingun_mount_axel_left/atlas.png",
+      "size": [
+        64,
+        96
+      ],
+      "fps": 1,
+      "loop": false,
+      "anchor": [
+        32,
+        88
+      ],
+      "source": "mounts",
+      "notes": "Fixed armored housing. Rear mount anchor; barrel couples to front socket.",
+      "frames": [
+        {
+          "file": "chaingun_mount_axel_left/00.png",
+          "rect": [
+            2,
+            2,
+            64,
+            96
+          ],
+          "sourceCell": [
+            0,
+            0,
+            209,
+            418
+          ],
+          "sourceAlphaBounds": [
+            53,
+            93,
+            200,
+            387
+          ],
+          "scale": 0.272108843537415,
+          "offset": [
+            12,
+            8
+          ]
+        }
+      ],
+      "barrelSocket": [
+        32,
+        18
+      ]
+    },
+    "chaingun_mount_axel_right": {
+      "atlas": "assets/game/shared/player_weapons/weapon_animation_0928/chaingun_mount_axel_right/atlas.png",
+      "size": [
+        64,
+        96
+      ],
+      "fps": 1,
+      "loop": false,
+      "anchor": [
+        32,
+        88
+      ],
+      "source": "mounts",
+      "notes": "Fixed armored housing. Rear mount anchor; barrel couples to front socket.",
+      "frames": [
+        {
+          "file": "chaingun_mount_axel_right/00.png",
+          "rect": [
+            2,
+            2,
+            64,
+            96
+          ],
+          "sourceCell": [
+            209,
+            0,
+            209,
+            418
+          ],
+          "sourceAlphaBounds": [
+            60,
+            94,
+            208,
+            387
+          ],
+          "scale": 0.27303754266211605,
+          "offset": [
+            12,
+            8
+          ]
+        }
+      ],
+      "barrelSocket": [
+        32,
+        18
+      ]
+    },
+    "chaingun_mount_decker_left": {
+      "atlas": "assets/game/shared/player_weapons/weapon_animation_0928/chaingun_mount_decker_left/atlas.png",
+      "size": [
+        64,
+        96
+      ],
+      "fps": 1,
+      "loop": false,
+      "anchor": [
+        32,
+        88
+      ],
+      "source": "mounts",
+      "notes": "Fixed armored housing. Rear mount anchor; barrel couples to front socket.",
+      "frames": [
+        {
+          "file": "chaingun_mount_decker_left/00.png",
+          "rect": [
+            2,
+            2,
+            64,
+            96
+          ],
+          "sourceCell": [
+            418,
+            0,
+            209,
+            418
+          ],
+          "sourceAlphaBounds": [
+            33,
+            93,
+            175,
+            387
+          ],
+          "scale": 0.272108843537415,
+          "offset": [
+            12,
+            8
+          ]
+        }
+      ],
+      "barrelSocket": [
+        32,
+        18
+      ]
+    },
+    "chaingun_mount_decker_right": {
+      "atlas": "assets/game/shared/player_weapons/weapon_animation_0928/chaingun_mount_decker_right/atlas.png",
+      "size": [
+        64,
+        96
+      ],
+      "fps": 1,
+      "loop": false,
+      "anchor": [
+        32,
+        88
+      ],
+      "source": "mounts",
+      "notes": "Fixed armored housing. Rear mount anchor; barrel couples to front socket.",
+      "frames": [
+        {
+          "file": "chaingun_mount_decker_right/00.png",
+          "rect": [
+            2,
+            2,
+            64,
+            96
+          ],
+          "sourceCell": [
+            627,
+            0,
+            209,
+            418
+          ],
+          "sourceAlphaBounds": [
+            33,
+            94,
+            175,
+            387
+          ],
+          "scale": 0.27303754266211605,
+          "offset": [
+            12,
+            8
+          ]
+        }
+      ],
+      "barrelSocket": [
+        32,
+        18
+      ]
+    },
+    "chaingun_mount_maverick_left": {
+      "atlas": "assets/game/shared/player_weapons/weapon_animation_0928/chaingun_mount_maverick_left/atlas.png",
+      "size": [
+        64,
+        96
+      ],
+      "fps": 1,
+      "loop": false,
+      "anchor": [
+        32,
+        88
+      ],
+      "source": "mounts",
+      "notes": "Fixed armored housing. Rear mount anchor; barrel couples to front socket.",
+      "frames": [
+        {
+          "file": "chaingun_mount_maverick_left/00.png",
+          "rect": [
+            2,
+            2,
+            64,
+            96
+          ],
+          "sourceCell": [
+            836,
+            0,
+            209,
+            418
+          ],
+          "sourceAlphaBounds": [
+            0,
+            93,
+            148,
+            387
+          ],
+          "scale": 0.272108843537415,
+          "offset": [
+            12,
+            8
+          ]
+        }
+      ],
+      "barrelSocket": [
+        32,
+        18
+      ]
+    },
+    "chaingun_mount_maverick_right": {
+      "atlas": "assets/game/shared/player_weapons/weapon_animation_0928/chaingun_mount_maverick_right/atlas.png",
+      "size": [
+        64,
+        96
+      ],
+      "fps": 1,
+      "loop": false,
+      "anchor": [
+        32,
+        88
+      ],
+      "source": "mounts",
+      "notes": "Fixed armored housing. Rear mount anchor; barrel couples to front socket.",
+      "frames": [
+        {
+          "file": "chaingun_mount_maverick_right/00.png",
+          "rect": [
+            2,
+            2,
+            64,
+            96
+          ],
+          "sourceCell": [
+            1045,
+            0,
+            209,
+            418
+          ],
+          "sourceAlphaBounds": [
+            7,
+            94,
+            155,
+            387
+          ],
+          "scale": 0.27303754266211605,
+          "offset": [
+            12,
+            8
+          ]
+        }
+      ],
+      "barrelSocket": [
+        32,
+        18
+      ]
+    },
+    "chaingun_mount_freezer_left": {
+      "atlas": "assets/game/shared/player_weapons/weapon_animation_0928/chaingun_mount_freezer_left/atlas.png",
+      "size": [
+        64,
+        96
+      ],
+      "fps": 1,
+      "loop": false,
+      "anchor": [
+        32,
+        88
+      ],
+      "source": "mounts",
+      "notes": "Fixed armored housing. Rear mount anchor; barrel couples to front socket.",
+      "frames": [
+        {
+          "file": "chaingun_mount_freezer_left/00.png",
+          "rect": [
+            2,
+            2,
+            64,
+            96
+          ],
+          "sourceCell": [
+            0,
+            418,
+            209,
+            418
+          ],
+          "sourceAlphaBounds": [
+            53,
+            67,
+            200,
+            361
+          ],
+          "scale": 0.272108843537415,
+          "offset": [
+            12,
+            8
+          ]
+        }
+      ],
+      "barrelSocket": [
+        32,
+        18
+      ]
+    },
+    "chaingun_mount_freezer_right": {
+      "atlas": "assets/game/shared/player_weapons/weapon_animation_0928/chaingun_mount_freezer_right/atlas.png",
+      "size": [
+        64,
+        96
+      ],
+      "fps": 1,
+      "loop": false,
+      "anchor": [
+        32,
+        88
+      ],
+      "source": "mounts",
+      "notes": "Fixed armored housing. Rear mount anchor; barrel couples to front socket.",
+      "frames": [
+        {
+          "file": "chaingun_mount_freezer_right/00.png",
+          "rect": [
+            2,
+            2,
+            64,
+            96
+          ],
+          "sourceCell": [
+            209,
+            418,
+            209,
+            418
+          ],
+          "sourceAlphaBounds": [
+            60,
+            67,
+            208,
+            360
+          ],
+          "scale": 0.27303754266211605,
+          "offset": [
+            12,
+            8
+          ]
+        }
+      ],
+      "barrelSocket": [
+        32,
+        18
+      ]
+    },
+    "chaingun_mount_juggernaut_left": {
+      "atlas": "assets/game/shared/player_weapons/weapon_animation_0928/chaingun_mount_juggernaut_left/atlas.png",
+      "size": [
+        64,
+        96
+      ],
+      "fps": 1,
+      "loop": false,
+      "anchor": [
+        32,
+        88
+      ],
+      "source": "mounts",
+      "notes": "Fixed armored housing. Rear mount anchor; barrel couples to front socket.",
+      "frames": [
+        {
+          "file": "chaingun_mount_juggernaut_left/00.png",
+          "rect": [
+            2,
+            2,
+            64,
+            96
+          ],
+          "sourceCell": [
+            418,
+            418,
+            209,
+            418
+          ],
+          "sourceAlphaBounds": [
+            33,
+            67,
+            175,
+            361
+          ],
+          "scale": 0.272108843537415,
+          "offset": [
+            12,
+            8
+          ]
+        }
+      ],
+      "barrelSocket": [
+        32,
+        18
+      ]
+    },
+    "chaingun_mount_juggernaut_right": {
+      "atlas": "assets/game/shared/player_weapons/weapon_animation_0928/chaingun_mount_juggernaut_right/atlas.png",
+      "size": [
+        64,
+        96
+      ],
+      "fps": 1,
+      "loop": false,
+      "anchor": [
+        32,
+        88
+      ],
+      "source": "mounts",
+      "notes": "Fixed armored housing. Rear mount anchor; barrel couples to front socket.",
+      "frames": [
+        {
+          "file": "chaingun_mount_juggernaut_right/00.png",
+          "rect": [
+            2,
+            2,
+            64,
+            96
+          ],
+          "sourceCell": [
+            627,
+            418,
+            209,
+            418
+          ],
+          "sourceAlphaBounds": [
+            33,
+            67,
+            175,
+            361
+          ],
+          "scale": 0.272108843537415,
+          "offset": [
+            12,
+            8
+          ]
+        }
+      ],
+      "barrelSocket": [
+        32,
+        18
+      ]
+    },
+    "chaingun_mount_yuri_left": {
+      "atlas": "assets/game/shared/player_weapons/weapon_animation_0928/chaingun_mount_yuri_left/atlas.png",
+      "size": [
+        64,
+        96
+      ],
+      "fps": 1,
+      "loop": false,
+      "anchor": [
+        32,
+        88
+      ],
+      "source": "mounts",
+      "notes": "Fixed armored housing. Rear mount anchor; barrel couples to front socket.",
+      "frames": [
+        {
+          "file": "chaingun_mount_yuri_left/00.png",
+          "rect": [
+            2,
+            2,
+            64,
+            96
+          ],
+          "sourceCell": [
+            836,
+            418,
+            209,
+            418
+          ],
+          "sourceAlphaBounds": [
+            0,
+            67,
+            148,
+            361
+          ],
+          "scale": 0.272108843537415,
+          "offset": [
+            12,
+            8
+          ]
+        }
+      ],
+      "barrelSocket": [
+        32,
+        18
+      ]
+    },
+    "chaingun_mount_yuri_right": {
+      "atlas": "assets/game/shared/player_weapons/weapon_animation_0928/chaingun_mount_yuri_right/atlas.png",
+      "size": [
+        64,
+        96
+      ],
+      "fps": 1,
+      "loop": false,
+      "anchor": [
+        32,
+        88
+      ],
+      "source": "mounts",
+      "notes": "Fixed armored housing. Rear mount anchor; barrel couples to front socket.",
+      "frames": [
+        {
+          "file": "chaingun_mount_yuri_right/00.png",
+          "rect": [
+            2,
+            2,
+            64,
+            96
+          ],
+          "sourceCell": [
+            1045,
+            418,
+            209,
+            418
+          ],
+          "sourceAlphaBounds": [
+            8,
+            67,
+            155,
+            360
+          ],
+          "scale": 0.27303754266211605,
+          "offset": [
+            12,
+            8
+          ]
+        }
+      ],
+      "barrelSocket": [
+        32,
+        18
+      ]
+    },
+    "chaingun_mount_lizzie_left": {
+      "atlas": "assets/game/shared/player_weapons/weapon_animation_0928/chaingun_mount_lizzie_left/atlas.png",
+      "size": [
+        64,
+        96
+      ],
+      "fps": 1,
+      "loop": false,
+      "anchor": [
+        32,
+        88
+      ],
+      "source": "mounts",
+      "notes": "Fixed armored housing. Rear mount anchor; barrel couples to front socket.",
+      "frames": [
+        {
+          "file": "chaingun_mount_lizzie_left/00.png",
+          "rect": [
+            2,
+            2,
+            64,
+            96
+          ],
+          "sourceCell": [
+            0,
+            836,
+            209,
+            418
+          ],
+          "sourceAlphaBounds": [
+            53,
+            41,
+            200,
+            335
+          ],
+          "scale": 0.272108843537415,
+          "offset": [
+            12,
+            8
+          ]
+        }
+      ],
+      "barrelSocket": [
+        32,
+        18
+      ]
+    },
+    "chaingun_mount_lizzie_right": {
+      "atlas": "assets/game/shared/player_weapons/weapon_animation_0928/chaingun_mount_lizzie_right/atlas.png",
+      "size": [
+        64,
+        96
+      ],
+      "fps": 1,
+      "loop": false,
+      "anchor": [
+        32,
+        88
+      ],
+      "source": "mounts",
+      "notes": "Fixed armored housing. Rear mount anchor; barrel couples to front socket.",
+      "frames": [
+        {
+          "file": "chaingun_mount_lizzie_right/00.png",
+          "rect": [
+            2,
+            2,
+            64,
+            96
+          ],
+          "sourceCell": [
+            209,
+            836,
+            209,
+            418
+          ],
+          "sourceAlphaBounds": [
+            60,
+            41,
+            208,
+            335
+          ],
+          "scale": 0.272108843537415,
+          "offset": [
+            12,
+            8
+          ]
+        }
+      ],
+      "barrelSocket": [
+        32,
+        18
+      ]
+    },
+    "chaingun_mount_falva_left": {
+      "atlas": "assets/game/shared/player_weapons/weapon_animation_0928/chaingun_mount_falva_left/atlas.png",
+      "size": [
+        64,
+        96
+      ],
+      "fps": 1,
+      "loop": false,
+      "anchor": [
+        32,
+        88
+      ],
+      "source": "mounts",
+      "notes": "Fixed armored housing. Rear mount anchor; barrel couples to front socket.",
+      "frames": [
+        {
+          "file": "chaingun_mount_falva_left/00.png",
+          "rect": [
+            2,
+            2,
+            64,
+            96
+          ],
+          "sourceCell": [
+            418,
+            836,
+            209,
+            418
+          ],
+          "sourceAlphaBounds": [
+            33,
+            42,
+            175,
+            335
+          ],
+          "scale": 0.27303754266211605,
+          "offset": [
+            12,
+            8
+          ]
+        }
+      ],
+      "barrelSocket": [
+        32,
+        18
+      ]
+    },
+    "chaingun_mount_falva_right": {
+      "atlas": "assets/game/shared/player_weapons/weapon_animation_0928/chaingun_mount_falva_right/atlas.png",
+      "size": [
+        64,
+        96
+      ],
+      "fps": 1,
+      "loop": false,
+      "anchor": [
+        32,
+        88
+      ],
+      "source": "mounts",
+      "notes": "Fixed armored housing. Rear mount anchor; barrel couples to front socket.",
+      "frames": [
+        {
+          "file": "chaingun_mount_falva_right/00.png",
+          "rect": [
+            2,
+            2,
+            64,
+            96
+          ],
+          "sourceCell": [
+            627,
+            836,
+            209,
+            418
+          ],
+          "sourceAlphaBounds": [
+            33,
+            41,
+            175,
+            335
+          ],
+          "scale": 0.272108843537415,
+          "offset": [
+            12,
+            8
+          ]
+        }
+      ],
+      "barrelSocket": [
+        32,
+        18
+      ]
+    },
+    "chaingun_mount_cole_left": {
+      "atlas": "assets/game/shared/player_weapons/weapon_animation_0928/chaingun_mount_cole_left/atlas.png",
+      "size": [
+        64,
+        96
+      ],
+      "fps": 1,
+      "loop": false,
+      "anchor": [
+        32,
+        88
+      ],
+      "source": "mounts",
+      "notes": "Fixed armored housing. Rear mount anchor; barrel couples to front socket.",
+      "frames": [
+        {
+          "file": "chaingun_mount_cole_left/00.png",
+          "rect": [
+            2,
+            2,
+            64,
+            96
+          ],
+          "sourceCell": [
+            836,
+            836,
+            209,
+            418
+          ],
+          "sourceAlphaBounds": [
+            0,
+            41,
+            148,
+            335
+          ],
+          "scale": 0.272108843537415,
+          "offset": [
+            12,
+            8
+          ]
+        }
+      ],
+      "barrelSocket": [
+        32,
+        18
+      ]
+    },
+    "chaingun_mount_cole_right": {
+      "atlas": "assets/game/shared/player_weapons/weapon_animation_0928/chaingun_mount_cole_right/atlas.png",
+      "size": [
+        64,
+        96
+      ],
+      "fps": 1,
+      "loop": false,
+      "anchor": [
+        32,
+        88
+      ],
+      "source": "mounts",
+      "notes": "Fixed armored housing. Rear mount anchor; barrel couples to front socket.",
+      "frames": [
+        {
+          "file": "chaingun_mount_cole_right/00.png",
+          "rect": [
+            2,
+            2,
+            64,
+            96
+          ],
+          "sourceCell": [
+            1045,
+            836,
+            209,
+            418
+          ],
+          "sourceAlphaBounds": [
+            8,
+            41,
+            155,
+            335
+          ],
+          "scale": 0.272108843537415,
+          "offset": [
+            12,
+            8
+          ]
+        }
+      ],
+      "barrelSocket": [
+        32,
+        18
+      ]
+    },
+    "chaingun_barrel_top": {
+      "atlas": "assets/game/shared/player_weapons/weapon_animation_0928/chaingun_barrel_top/atlas.png",
+      "size": [
+        64,
+        112
+      ],
+      "fps": 20,
+      "loop": true,
+      "anchor": [
+        32,
+        104
+      ],
+      "source": "barrels",
+      "notes": "Axial rotation frames. Rear coupling anchor. Bank/underside are authored views, not yaw rotation.",
+      "frames": [
+        {
+          "file": "chaingun_barrel_top/00.png",
+          "rect": [
+            2,
+            2,
+            64,
+            112
+          ],
+          "sourceCell": [
+            0,
+            0,
+            186,
+            229
+          ],
+          "sourceAlphaBounds": [
+            45,
+            31,
+            146,
+            220
+          ],
+          "scale": 0.44036697247706424,
+          "offset": [
+            10,
+            21
+          ]
+        },
+        {
+          "file": "chaingun_barrel_top/01.png",
+          "rect": [
+            70,
+            2,
+            64,
+            112
+          ],
+          "sourceCell": [
+            186,
+            0,
+            160,
+            229
+          ],
+          "sourceAlphaBounds": [
+            25,
+            39,
+            128,
+            220
+          ],
+          "scale": 0.44036697247706424,
+          "offset": [
+            9,
+            24
+          ]
+        },
+        {
+          "file": "chaingun_barrel_top/02.png",
+          "rect": [
+            138,
+            2,
+            64,
+            112
+          ],
+          "sourceCell": [
+            346,
+            0,
+            155,
+            229
+          ],
+          "sourceAlphaBounds": [
+            26,
+            42,
+            130,
+            220
+          ],
+          "scale": 0.44036697247706424,
+          "offset": [
+            9,
+            26
+          ]
+        },
+        {
+          "file": "chaingun_barrel_top/03.png",
+          "rect": [
+            206,
+            2,
+            64,
+            112
+          ],
+          "sourceCell": [
+            501,
+            0,
+            147,
+            229
+          ],
+          "sourceAlphaBounds": [
+            16,
+            48,
+            118,
+            220
+          ],
+          "scale": 0.44036697247706424,
+          "offset": [
+            9,
+            28
+          ]
+        },
+        {
+          "file": "chaingun_barrel_top/04.png",
+          "rect": [
+            274,
+            2,
+            64,
+            112
+          ],
+          "sourceCell": [
+            648,
+            0,
+            149,
+            229
+          ],
+          "sourceAlphaBounds": [
+            13,
+            48,
+            120,
+            220
+          ],
+          "scale": 0.44036697247706424,
+          "offset": [
+            8,
+            28
+          ]
+        },
+        {
+          "file": "chaingun_barrel_top/05.png",
+          "rect": [
+            342,
+            2,
+            64,
+            112
+          ],
+          "sourceCell": [
+            797,
+            0,
+            149,
+            229
+          ],
+          "sourceAlphaBounds": [
+            18,
+            47,
+            118,
+            220
+          ],
+          "scale": 0.44036697247706424,
+          "offset": [
+            10,
+            28
+          ]
+        },
+        {
+          "file": "chaingun_barrel_top/06.png",
+          "rect": [
+            410,
+            2,
+            64,
+            112
+          ],
+          "sourceCell": [
+            946,
+            0,
+            148,
+            229
+          ],
+          "sourceAlphaBounds": [
+            23,
+            48,
+            127,
+            220
+          ],
+          "scale": 0.44036697247706424,
+          "offset": [
+            9,
+            28
+          ]
+        },
+        {
+          "file": "chaingun_barrel_top/07.png",
+          "rect": [
+            478,
+            2,
+            64,
+            112
+          ],
+          "sourceCell": [
+            1094,
+            0,
+            160,
+            229
+          ],
+          "sourceAlphaBounds": [
+            27,
+            47,
+            129,
+            220
+          ],
+          "scale": 0.44036697247706424,
+          "offset": [
+            9,
+            28
+          ]
+        },
+        {
+          "file": "chaingun_barrel_top/08.png",
+          "rect": [
+            2,
+            118,
+            64,
+            112
+          ],
+          "sourceCell": [
+            0,
+            229,
+            186,
+            207
+          ],
+          "sourceAlphaBounds": [
+            42,
+            9,
+            151,
+            191
+          ],
+          "scale": 0.44036697247706424,
+          "offset": [
+            8,
+            24
+          ]
+        },
+        {
+          "file": "chaingun_barrel_top/09.png",
+          "rect": [
+            70,
+            118,
+            64,
+            112
+          ],
+          "sourceCell": [
+            186,
+            229,
+            160,
+            207
+          ],
+          "sourceAlphaBounds": [
+            23,
+            13,
+            129,
+            191
+          ],
+          "scale": 0.44036697247706424,
+          "offset": [
+            8,
+            26
+          ]
+        },
+        {
+          "file": "chaingun_barrel_top/10.png",
+          "rect": [
+            138,
+            118,
+            64,
+            112
+          ],
+          "sourceCell": [
+            346,
+            229,
+            155,
+            207
+          ],
+          "sourceAlphaBounds": [
+            25,
+            17,
+            130,
+            191
+          ],
+          "scale": 0.44036697247706424,
+          "offset": [
+            9,
+            27
+          ]
+        },
+        {
+          "file": "chaingun_barrel_top/11.png",
+          "rect": [
+            206,
+            118,
+            64,
+            112
+          ],
+          "sourceCell": [
+            501,
+            229,
+            147,
+            207
+          ],
+          "sourceAlphaBounds": [
+            13,
+            17,
+            121,
+            191
+          ],
+          "scale": 0.44036697247706424,
+          "offset": [
+            8,
+            27
+          ]
+        },
+        {
+          "file": "chaingun_barrel_top/12.png",
+          "rect": [
+            274,
+            118,
+            64,
+            112
+          ],
+          "sourceCell": [
+            648,
+            229,
+            149,
+            207
+          ],
+          "sourceAlphaBounds": [
+            18,
+            16,
+            121,
+            191
+          ],
+          "scale": 0.44036697247706424,
+          "offset": [
+            9,
+            27
+          ]
+        },
+        {
+          "file": "chaingun_barrel_top/13.png",
+          "rect": [
+            342,
+            118,
+            64,
+            112
+          ],
+          "sourceCell": [
+            797,
+            229,
+            149,
+            207
+          ],
+          "sourceAlphaBounds": [
+            17,
+            16,
+            123,
+            191
+          ],
+          "scale": 0.44036697247706424,
+          "offset": [
+            8,
+            27
+          ]
+        },
+        {
+          "file": "chaingun_barrel_top/14.png",
+          "rect": [
+            410,
+            118,
+            64,
+            112
+          ],
+          "sourceCell": [
+            946,
+            229,
+            148,
+            207
+          ],
+          "sourceAlphaBounds": [
+            18,
+            15,
+            125,
+            191
+          ],
+          "scale": 0.44036697247706424,
+          "offset": [
+            8,
+            26
+          ]
+        },
+        {
+          "file": "chaingun_barrel_top/15.png",
+          "rect": [
+            478,
+            118,
+            64,
+            112
+          ],
+          "sourceCell": [
+            1094,
+            229,
+            160,
+            207
+          ],
+          "sourceAlphaBounds": [
+            27,
+            17,
+            127,
+            191
+          ],
+          "scale": 0.44036697247706424,
+          "offset": [
+            10,
+            27
+          ]
+        }
+      ]
+    },
+    "chaingun_barrel_bank": {
+      "atlas": "assets/game/shared/player_weapons/weapon_animation_0928/chaingun_barrel_bank/atlas.png",
+      "size": [
+        64,
+        112
+      ],
+      "fps": 20,
+      "loop": true,
+      "anchor": [
+        32,
+        104
+      ],
+      "source": "barrels",
+      "notes": "Axial rotation frames. Rear coupling anchor. Bank/underside are authored views, not yaw rotation.",
+      "frames": [
+        {
+          "file": "chaingun_barrel_bank/00.png",
+          "rect": [
+            2,
+            2,
+            64,
+            112
+          ],
+          "sourceCell": [
+            0,
+            436,
+            186,
+            214
+          ],
+          "sourceAlphaBounds": [
+            47,
+            18,
+            166,
+            199
+          ],
+          "scale": 0.40336134453781514,
+          "offset": [
+            8,
+            31
+          ]
+        },
+        {
+          "file": "chaingun_barrel_bank/01.png",
+          "rect": [
+            70,
+            2,
+            64,
+            112
+          ],
+          "sourceCell": [
+            186,
+            436,
+            160,
+            214
+          ],
+          "sourceAlphaBounds": [
+            27,
+            20,
+            143,
+            199
+          ],
+          "scale": 0.40336134453781514,
+          "offset": [
+            8,
+            32
+          ]
+        },
+        {
+          "file": "chaingun_barrel_bank/02.png",
+          "rect": [
+            138,
+            2,
+            64,
+            112
+          ],
+          "sourceCell": [
+            346,
+            436,
+            155,
+            214
+          ],
+          "sourceAlphaBounds": [
+            25,
+            22,
+            143,
+            199
+          ],
+          "scale": 0.40336134453781514,
+          "offset": [
+            8,
+            33
+          ]
+        },
+        {
+          "file": "chaingun_barrel_bank/03.png",
+          "rect": [
+            206,
+            2,
+            64,
+            112
+          ],
+          "sourceCell": [
+            501,
+            436,
+            147,
+            214
+          ],
+          "sourceAlphaBounds": [
+            21,
+            22,
+            136,
+            199
+          ],
+          "scale": 0.40336134453781514,
+          "offset": [
+            9,
+            33
+          ]
+        },
+        {
+          "file": "chaingun_barrel_bank/04.png",
+          "rect": [
+            274,
+            2,
+            64,
+            112
+          ],
+          "sourceCell": [
+            648,
+            436,
+            149,
+            214
+          ],
+          "sourceAlphaBounds": [
+            15,
+            20,
+            132,
+            199
+          ],
+          "scale": 0.40336134453781514,
+          "offset": [
+            8,
+            32
+          ]
+        },
+        {
+          "file": "chaingun_barrel_bank/05.png",
+          "rect": [
+            342,
+            2,
+            64,
+            112
+          ],
+          "sourceCell": [
+            797,
+            436,
+            149,
+            214
+          ],
+          "sourceAlphaBounds": [
+            18,
+            19,
+            127,
+            199
+          ],
+          "scale": 0.40336134453781514,
+          "offset": [
+            10,
+            31
+          ]
+        },
+        {
+          "file": "chaingun_barrel_bank/06.png",
+          "rect": [
+            410,
+            2,
+            64,
+            112
+          ],
+          "sourceCell": [
+            946,
+            436,
+            148,
+            214
+          ],
+          "sourceAlphaBounds": [
+            22,
+            19,
+            125,
+            199
+          ],
+          "scale": 0.40336134453781514,
+          "offset": [
+            11,
+            31
+          ]
+        },
+        {
+          "file": "chaingun_barrel_bank/07.png",
+          "rect": [
+            478,
+            2,
+            64,
+            112
+          ],
+          "sourceCell": [
+            1094,
+            436,
+            160,
+            214
+          ],
+          "sourceAlphaBounds": [
+            24,
+            19,
+            129,
+            199
+          ],
+          "scale": 0.40336134453781514,
+          "offset": [
+            11,
+            31
+          ]
+        },
+        {
+          "file": "chaingun_barrel_bank/08.png",
+          "rect": [
+            2,
+            118,
+            64,
+            112
+          ],
+          "sourceCell": [
+            0,
+            650,
+            186,
+            205
+          ],
+          "sourceAlphaBounds": [
+            48,
+            15,
+            158,
+            192
+          ],
+          "scale": 0.40336134453781514,
+          "offset": [
+            10,
+            33
+          ]
+        },
+        {
+          "file": "chaingun_barrel_bank/09.png",
+          "rect": [
+            70,
+            118,
+            64,
+            112
+          ],
+          "sourceCell": [
+            186,
+            650,
+            160,
+            205
+          ],
+          "sourceAlphaBounds": [
+            23,
+            15,
+            129,
+            192
+          ],
+          "scale": 0.40336134453781514,
+          "offset": [
+            10,
+            33
+          ]
+        },
+        {
+          "file": "chaingun_barrel_bank/10.png",
+          "rect": [
+            138,
+            118,
+            64,
+            112
+          ],
+          "sourceCell": [
+            346,
+            650,
+            155,
+            205
+          ],
+          "sourceAlphaBounds": [
+            25,
+            16,
+            130,
+            192
+          ],
+          "scale": 0.40336134453781514,
+          "offset": [
+            11,
+            33
+          ]
+        },
+        {
+          "file": "chaingun_barrel_bank/11.png",
+          "rect": [
+            206,
+            118,
+            64,
+            112
+          ],
+          "sourceCell": [
+            501,
+            650,
+            147,
+            205
+          ],
+          "sourceAlphaBounds": [
+            18,
+            15,
+            118,
+            192
+          ],
+          "scale": 0.40336134453781514,
+          "offset": [
+            12,
+            33
+          ]
+        },
+        {
+          "file": "chaingun_barrel_bank/12.png",
+          "rect": [
+            274,
+            118,
+            64,
+            112
+          ],
+          "sourceCell": [
+            648,
+            650,
+            149,
+            205
+          ],
+          "sourceAlphaBounds": [
+            21,
+            15,
+            130,
+            192
+          ],
+          "scale": 0.40336134453781514,
+          "offset": [
+            10,
+            33
+          ]
+        },
+        {
+          "file": "chaingun_barrel_bank/13.png",
+          "rect": [
+            342,
+            118,
+            64,
+            112
+          ],
+          "sourceCell": [
+            797,
+            650,
+            149,
+            205
+          ],
+          "sourceAlphaBounds": [
+            22,
+            15,
+            131,
+            192
+          ],
+          "scale": 0.40336134453781514,
+          "offset": [
+            10,
+            33
+          ]
+        },
+        {
+          "file": "chaingun_barrel_bank/14.png",
+          "rect": [
+            410,
+            118,
+            64,
+            112
+          ],
+          "sourceCell": [
+            946,
+            650,
+            148,
+            205
+          ],
+          "sourceAlphaBounds": [
+            28,
+            15,
+            130,
+            192
+          ],
+          "scale": 0.40336134453781514,
+          "offset": [
+            11,
+            33
+          ]
+        },
+        {
+          "file": "chaingun_barrel_bank/15.png",
+          "rect": [
+            478,
+            118,
+            64,
+            112
+          ],
+          "sourceCell": [
+            1094,
+            650,
+            160,
+            205
+          ],
+          "sourceAlphaBounds": [
+            30,
+            14,
+            129,
+            192
+          ],
+          "scale": 0.40336134453781514,
+          "offset": [
+            12,
+            32
+          ]
+        }
+      ]
+    },
+    "chaingun_barrel_underside": {
+      "atlas": "assets/game/shared/player_weapons/weapon_animation_0928/chaingun_barrel_underside/atlas.png",
+      "size": [
+        64,
+        112
+      ],
+      "fps": 20,
+      "loop": true,
+      "anchor": [
+        32,
+        104
+      ],
+      "source": "barrels",
+      "notes": "Axial rotation frames. Rear coupling anchor. Bank/underside are authored views, not yaw rotation.",
+      "frames": [
+        {
+          "file": "chaingun_barrel_underside/00.png",
+          "rect": [
+            2,
+            2,
+            64,
+            112
+          ],
+          "sourceCell": [
+            0,
+            855,
+            186,
+            185
+          ],
+          "sourceAlphaBounds": [
+            47,
+            14,
+            145,
+            174
+          ],
+          "scale": 0.46153846153846156,
+          "offset": [
+            9,
+            30
+          ]
+        },
+        {
+          "file": "chaingun_barrel_underside/01.png",
+          "rect": [
+            70,
+            2,
+            64,
+            112
+          ],
+          "sourceCell": [
+            186,
+            855,
+            160,
+            185
+          ],
+          "sourceAlphaBounds": [
+            23,
+            14,
+            121,
+            174
+          ],
+          "scale": 0.46153846153846156,
+          "offset": [
+            9,
+            30
+          ]
+        },
+        {
+          "file": "chaingun_barrel_underside/02.png",
+          "rect": [
+            138,
+            2,
+            64,
+            112
+          ],
+          "sourceCell": [
+            346,
+            855,
+            155,
+            185
+          ],
+          "sourceAlphaBounds": [
+            26,
+            16,
+            125,
+            173
+          ],
+          "scale": 0.46153846153846156,
+          "offset": [
+            9,
+            32
+          ]
+        },
+        {
+          "file": "chaingun_barrel_underside/03.png",
+          "rect": [
+            206,
+            2,
+            64,
+            112
+          ],
+          "sourceCell": [
+            501,
+            855,
+            147,
+            185
+          ],
+          "sourceAlphaBounds": [
+            16,
+            14,
+            117,
+            173
+          ],
+          "scale": 0.46153846153846156,
+          "offset": [
+            8,
+            31
+          ]
+        },
+        {
+          "file": "chaingun_barrel_underside/04.png",
+          "rect": [
+            274,
+            2,
+            64,
+            112
+          ],
+          "sourceCell": [
+            648,
+            855,
+            149,
+            185
+          ],
+          "sourceAlphaBounds": [
+            18,
+            14,
+            120,
+            174
+          ],
+          "scale": 0.46153846153846156,
+          "offset": [
+            8,
+            30
+          ]
+        },
+        {
+          "file": "chaingun_barrel_underside/05.png",
+          "rect": [
+            342,
+            2,
+            64,
+            112
+          ],
+          "sourceCell": [
+            797,
+            855,
+            149,
+            185
+          ],
+          "sourceAlphaBounds": [
+            19,
+            14,
+            118,
+            174
+          ],
+          "scale": 0.46153846153846156,
+          "offset": [
+            9,
+            30
+          ]
+        },
+        {
+          "file": "chaingun_barrel_underside/06.png",
+          "rect": [
+            410,
+            2,
+            64,
+            112
+          ],
+          "sourceCell": [
+            946,
+            855,
+            148,
+            185
+          ],
+          "sourceAlphaBounds": [
+            22,
+            14,
+            122,
+            173
+          ],
+          "scale": 0.46153846153846156,
+          "offset": [
+            9,
+            31
+          ]
+        },
+        {
+          "file": "chaingun_barrel_underside/07.png",
+          "rect": [
+            478,
+            2,
+            64,
+            112
+          ],
+          "sourceCell": [
+            1094,
+            855,
+            160,
+            185
+          ],
+          "sourceAlphaBounds": [
+            25,
+            14,
+            125,
+            174
+          ],
+          "scale": 0.46153846153846156,
+          "offset": [
+            9,
+            30
+          ]
+        },
+        {
+          "file": "chaingun_barrel_underside/08.png",
+          "rect": [
+            2,
+            118,
+            64,
+            112
+          ],
+          "sourceCell": [
+            0,
+            1040,
+            186,
+            214
+          ],
+          "sourceAlphaBounds": [
+            44,
+            10,
+            146,
+            169
+          ],
+          "scale": 0.46153846153846156,
+          "offset": [
+            8,
+            31
+          ]
+        },
+        {
+          "file": "chaingun_barrel_underside/09.png",
+          "rect": [
+            70,
+            118,
+            64,
+            112
+          ],
+          "sourceCell": [
+            186,
+            1040,
+            160,
+            214
+          ],
+          "sourceAlphaBounds": [
+            21,
+            10,
+            122,
+            169
+          ],
+          "scale": 0.46153846153846156,
+          "offset": [
+            8,
+            31
+          ]
+        },
+        {
+          "file": "chaingun_barrel_underside/10.png",
+          "rect": [
+            138,
+            118,
+            64,
+            112
+          ],
+          "sourceCell": [
+            346,
+            1040,
+            155,
+            214
+          ],
+          "sourceAlphaBounds": [
+            18,
+            10,
+            120,
+            169
+          ],
+          "scale": 0.46153846153846156,
+          "offset": [
+            8,
+            31
+          ]
+        },
+        {
+          "file": "chaingun_barrel_underside/11.png",
+          "rect": [
+            206,
+            118,
+            64,
+            112
+          ],
+          "sourceCell": [
+            501,
+            1040,
+            147,
+            214
+          ],
+          "sourceAlphaBounds": [
+            16,
+            10,
+            120,
+            169
+          ],
+          "scale": 0.46153846153846156,
+          "offset": [
+            8,
+            31
+          ]
+        },
+        {
+          "file": "chaingun_barrel_underside/12.png",
+          "rect": [
+            274,
+            118,
+            64,
+            112
+          ],
+          "sourceCell": [
+            648,
+            1040,
+            149,
+            214
+          ],
+          "sourceAlphaBounds": [
+            23,
+            10,
+            125,
+            169
+          ],
+          "scale": 0.46153846153846156,
+          "offset": [
+            8,
+            31
+          ]
+        },
+        {
+          "file": "chaingun_barrel_underside/13.png",
+          "rect": [
+            342,
+            118,
+            64,
+            112
+          ],
+          "sourceCell": [
+            797,
+            1040,
+            149,
+            214
+          ],
+          "sourceAlphaBounds": [
+            20,
+            8,
+            122,
+            169
+          ],
+          "scale": 0.46153846153846156,
+          "offset": [
+            8,
+            30
+          ]
+        },
+        {
+          "file": "chaingun_barrel_underside/14.png",
+          "rect": [
+            410,
+            118,
+            64,
+            112
+          ],
+          "sourceCell": [
+            946,
+            1040,
+            148,
+            214
+          ],
+          "sourceAlphaBounds": [
+            22,
+            8,
+            126,
+            169
+          ],
+          "scale": 0.46153846153846156,
+          "offset": [
+            8,
+            30
+          ]
+        },
+        {
+          "file": "chaingun_barrel_underside/15.png",
+          "rect": [
+            478,
+            118,
+            64,
+            112
+          ],
+          "sourceCell": [
+            1094,
+            1040,
+            160,
+            214
+          ],
+          "sourceAlphaBounds": [
+            20,
+            8,
+            123,
+            169
+          ],
+          "scale": 0.46153846153846156,
+          "offset": [
+            8,
+            30
+          ]
+        }
+      ]
+    },
+    "orb_fire": {
+      "atlas": "assets/game/shared/player_weapons/weapon_animation_0928/orb_fire/atlas.png",
+      "size": [
+        96,
+        96
+      ],
+      "fps": 10,
+      "loop": true,
+      "anchor": [
+        48,
+        48
+      ],
+      "source": "orbs_a",
+      "notes": "Authored elemental frame reel. Fixed center/origin; do not canvas-rotate or independently rescale frames.",
+      "frames": [
+        {
+          "file": "orb_fire/00.png",
+          "rect": [
+            2,
+            2,
+            96,
+            96
+          ],
+          "sourceCell": [
+            0,
+            0,
+            256,
+            256
+          ],
+          "sourceAlphaBounds": [
+            23,
+            34,
+            243,
+            252
+          ],
+          "scale": 0.36363636363636365,
+          "offset": [
+            8,
+            8
+          ]
+        },
+        {
+          "file": "orb_fire/01.png",
+          "rect": [
+            102,
+            2,
+            96,
+            96
+          ],
+          "sourceCell": [
+            256,
+            0,
+            256,
+            256
+          ],
+          "sourceAlphaBounds": [
+            22,
+            33,
+            240,
+            252
+          ],
+          "scale": 0.36363636363636365,
+          "offset": [
+            8,
+            8
+          ]
+        },
+        {
+          "file": "orb_fire/02.png",
+          "rect": [
+            202,
+            2,
+            96,
+            96
+          ],
+          "sourceCell": [
+            512,
+            0,
+            256,
+            256
+          ],
+          "sourceAlphaBounds": [
+            18,
+            34,
+            236,
+            252
+          ],
+          "scale": 0.36363636363636365,
+          "offset": [
+            8,
+            8
+          ]
+        },
+        {
+          "file": "orb_fire/03.png",
+          "rect": [
+            302,
+            2,
+            96,
+            96
+          ],
+          "sourceCell": [
+            768,
+            0,
+            256,
+            256
+          ],
+          "sourceAlphaBounds": [
+            16,
+            34,
+            234,
+            252
+          ],
+          "scale": 0.36363636363636365,
+          "offset": [
+            8,
+            8
+          ]
+        },
+        {
+          "file": "orb_fire/04.png",
+          "rect": [
+            402,
+            2,
+            96,
+            96
+          ],
+          "sourceCell": [
+            0,
+            256,
+            256,
+            256
+          ],
+          "sourceAlphaBounds": [
+            24,
+            24,
+            243,
+            241
+          ],
+          "scale": 0.36363636363636365,
+          "offset": [
+            8,
+            8
+          ]
+        },
+        {
+          "file": "orb_fire/05.png",
+          "rect": [
+            502,
+            2,
+            96,
+            96
+          ],
+          "sourceCell": [
+            256,
+            256,
+            256,
+            256
+          ],
+          "sourceAlphaBounds": [
+            22,
+            24,
+            240,
+            241
+          ],
+          "scale": 0.36363636363636365,
+          "offset": [
+            8,
+            8
+          ]
+        },
+        {
+          "file": "orb_fire/06.png",
+          "rect": [
+            602,
+            2,
+            96,
+            96
+          ],
+          "sourceCell": [
+            512,
+            256,
+            256,
+            256
+          ],
+          "sourceAlphaBounds": [
+            17,
+            24,
+            236,
+            241
+          ],
+          "scale": 0.36363636363636365,
+          "offset": [
+            8,
+            8
+          ]
+        },
+        {
+          "file": "orb_fire/07.png",
+          "rect": [
+            702,
+            2,
+            96,
+            96
+          ],
+          "sourceCell": [
+            768,
+            256,
+            256,
+            256
+          ],
+          "sourceAlphaBounds": [
+            16,
+            23,
+            234,
+            242
+          ],
+          "scale": 0.36363636363636365,
+          "offset": [
+            8,
+            8
+          ]
+        }
+      ]
+    },
+    "orb_ice": {
+      "atlas": "assets/game/shared/player_weapons/weapon_animation_0928/orb_ice/atlas.png",
+      "size": [
+        96,
+        96
+      ],
+      "fps": 10,
+      "loop": true,
+      "anchor": [
+        48,
+        48
+      ],
+      "source": "orbs_a",
+      "notes": "Authored elemental frame reel. Fixed center/origin; do not canvas-rotate or independently rescale frames.",
+      "frames": [
+        {
+          "file": "orb_ice/00.png",
+          "rect": [
+            2,
+            2,
+            96,
+            96
+          ],
+          "sourceCell": [
+            0,
+            512,
+            256,
+            256
+          ],
+          "sourceAlphaBounds": [
+            24,
+            18,
+            250,
+            243
+          ],
+          "scale": 0.35398230088495575,
+          "offset": [
+            8,
+            8
+          ]
+        },
+        {
+          "file": "orb_ice/01.png",
+          "rect": [
+            102,
+            2,
+            96,
+            96
+          ],
+          "sourceCell": [
+            256,
+            512,
+            256,
+            256
+          ],
+          "sourceAlphaBounds": [
+            22,
+            19,
+            241,
+            242
+          ],
+          "scale": 0.35398230088495575,
+          "offset": [
+            9,
+            8
+          ]
+        },
+        {
+          "file": "orb_ice/02.png",
+          "rect": [
+            202,
+            2,
+            96,
+            96
+          ],
+          "sourceCell": [
+            512,
+            512,
+            256,
+            256
+          ],
+          "sourceAlphaBounds": [
+            17,
+            19,
+            237,
+            242
+          ],
+          "scale": 0.35398230088495575,
+          "offset": [
+            9,
+            8
+          ]
+        },
+        {
+          "file": "orb_ice/03.png",
+          "rect": [
+            302,
+            2,
+            96,
+            96
+          ],
+          "sourceCell": [
+            768,
+            512,
+            256,
+            256
+          ],
+          "sourceAlphaBounds": [
+            14,
+            19,
+            234,
+            242
+          ],
+          "scale": 0.35398230088495575,
+          "offset": [
+            9,
+            8
+          ]
+        },
+        {
+          "file": "orb_ice/04.png",
+          "rect": [
+            402,
+            2,
+            96,
+            96
+          ],
+          "sourceCell": [
+            0,
+            768,
+            256,
+            256
+          ],
+          "sourceAlphaBounds": [
+            24,
+            12,
+            247,
+            234
+          ],
+          "scale": 0.35398230088495575,
+          "offset": [
+            8,
+            8
+          ]
+        },
+        {
+          "file": "orb_ice/05.png",
+          "rect": [
+            502,
+            2,
+            96,
+            96
+          ],
+          "sourceCell": [
+            256,
+            768,
+            256,
+            256
+          ],
+          "sourceAlphaBounds": [
+            21,
+            12,
+            241,
+            234
+          ],
+          "scale": 0.35398230088495575,
+          "offset": [
+            9,
+            8
+          ]
+        },
+        {
+          "file": "orb_ice/06.png",
+          "rect": [
+            602,
+            2,
+            96,
+            96
+          ],
+          "sourceCell": [
+            512,
+            768,
+            256,
+            256
+          ],
+          "sourceAlphaBounds": [
+            17,
+            12,
+            236,
+            234
+          ],
+          "scale": 0.35398230088495575,
+          "offset": [
+            9,
+            8
+          ]
+        },
+        {
+          "file": "orb_ice/07.png",
+          "rect": [
+            702,
+            2,
+            96,
+            96
+          ],
+          "sourceCell": [
+            768,
+            768,
+            256,
+            256
+          ],
+          "sourceAlphaBounds": [
+            14,
+            12,
+            234,
+            234
+          ],
+          "scale": 0.35398230088495575,
+          "offset": [
+            9,
+            8
+          ]
+        }
+      ]
+    },
+    "orb_lightning": {
+      "atlas": "assets/game/shared/player_weapons/weapon_animation_0928/orb_lightning/atlas.png",
+      "size": [
+        96,
+        96
+      ],
+      "fps": 10,
+      "loop": true,
+      "anchor": [
+        48,
+        48
+      ],
+      "source": "orbs_a",
+      "notes": "Authored elemental frame reel. Fixed center/origin; do not canvas-rotate or independently rescale frames.",
+      "frames": [
+        {
+          "file": "orb_lightning/00.png",
+          "rect": [
+            2,
+            2,
+            96,
+            96
+          ],
+          "sourceCell": [
+            0,
+            1024,
+            256,
+            256
+          ],
+          "sourceAlphaBounds": [
+            24,
+            5,
+            247,
+            256
+          ],
+          "scale": 0.3187250996015936,
+          "offset": [
+            12,
+            8
+          ]
+        },
+        {
+          "file": "orb_lightning/01.png",
+          "rect": [
+            102,
+            2,
+            96,
+            96
+          ],
+          "sourceCell": [
+            256,
+            1024,
+            256,
+            256
+          ],
+          "sourceAlphaBounds": [
+            21,
+            6,
+            241,
+            256
+          ],
+          "scale": 0.3187250996015936,
+          "offset": [
+            13,
+            8
+          ]
+        },
+        {
+          "file": "orb_lightning/02.png",
+          "rect": [
+            202,
+            2,
+            96,
+            96
+          ],
+          "sourceCell": [
+            512,
+            1024,
+            256,
+            256
+          ],
+          "sourceAlphaBounds": [
+            17,
+            6,
+            236,
+            256
+          ],
+          "scale": 0.3187250996015936,
+          "offset": [
+            13,
+            8
+          ]
+        },
+        {
+          "file": "orb_lightning/03.png",
+          "rect": [
+            302,
+            2,
+            96,
+            96
+          ],
+          "sourceCell": [
+            768,
+            1024,
+            256,
+            256
+          ],
+          "sourceAlphaBounds": [
+            13,
+            6,
+            234,
+            256
+          ],
+          "scale": 0.3187250996015936,
+          "offset": [
+            13,
+            8
+          ]
+        },
+        {
+          "file": "orb_lightning/04.png",
+          "rect": [
+            402,
+            2,
+            96,
+            96
+          ],
+          "sourceCell": [
+            0,
+            1280,
+            256,
+            256
+          ],
+          "sourceAlphaBounds": [
+            24,
+            0,
+            247,
+            219
+          ],
+          "scale": 0.3187250996015936,
+          "offset": [
+            12,
+            13
+          ]
+        },
+        {
+          "file": "orb_lightning/05.png",
+          "rect": [
+            502,
+            2,
+            96,
+            96
+          ],
+          "sourceCell": [
+            256,
+            1280,
+            256,
+            256
+          ],
+          "sourceAlphaBounds": [
+            22,
+            0,
+            241,
+            218
+          ],
+          "scale": 0.3187250996015936,
+          "offset": [
+            13,
+            13
+          ]
+        },
+        {
+          "file": "orb_lightning/06.png",
+          "rect": [
+            602,
+            2,
+            96,
+            96
+          ],
+          "sourceCell": [
+            512,
+            1280,
+            256,
+            256
+          ],
+          "sourceAlphaBounds": [
+            17,
+            0,
+            236,
+            218
+          ],
+          "scale": 0.3187250996015936,
+          "offset": [
+            13,
+            13
+          ]
+        },
+        {
+          "file": "orb_lightning/07.png",
+          "rect": [
+            702,
+            2,
+            96,
+            96
+          ],
+          "sourceCell": [
+            768,
+            1280,
+            256,
+            256
+          ],
+          "sourceAlphaBounds": [
+            14,
+            0,
+            234,
+            218
+          ],
+          "scale": 0.3187250996015936,
+          "offset": [
+            13,
+            13
+          ]
+        }
+      ]
+    },
+    "orb_kinetic": {
+      "atlas": "assets/game/shared/player_weapons/weapon_animation_0928/orb_kinetic/atlas.png",
+      "size": [
+        96,
+        96
+      ],
+      "fps": 10,
+      "loop": true,
+      "anchor": [
+        48,
+        48
+      ],
+      "source": "orbs_b",
+      "notes": "Authored elemental frame reel. Fixed center/origin; do not canvas-rotate or independently rescale frames.",
+      "frames": [
+        {
+          "file": "orb_kinetic/00.png",
+          "rect": [
+            2,
+            2,
+            96,
+            96
+          ],
+          "sourceCell": [
+            0,
+            0,
+            256,
+            256
+          ],
+          "sourceAlphaBounds": [
+            16,
+            29,
+            243,
+            252
+          ],
+          "scale": 0.3524229074889868,
+          "offset": [
+            8,
+            8
+          ]
+        },
+        {
+          "file": "orb_kinetic/01.png",
+          "rect": [
+            102,
+            2,
+            96,
+            96
+          ],
+          "sourceCell": [
+            256,
+            0,
+            256,
+            256
+          ],
+          "sourceAlphaBounds": [
+            15,
+            28,
+            241,
+            251
+          ],
+          "scale": 0.3524229074889868,
+          "offset": [
+            8,
+            8
+          ]
+        },
+        {
+          "file": "orb_kinetic/02.png",
+          "rect": [
+            202,
+            2,
+            96,
+            96
+          ],
+          "sourceCell": [
+            512,
+            0,
+            256,
+            256
+          ],
+          "sourceAlphaBounds": [
+            15,
+            28,
+            241,
+            252
+          ],
+          "scale": 0.3524229074889868,
+          "offset": [
+            8,
+            8
+          ]
+        },
+        {
+          "file": "orb_kinetic/03.png",
+          "rect": [
+            302,
+            2,
+            96,
+            96
+          ],
+          "sourceCell": [
+            768,
+            0,
+            256,
+            256
+          ],
+          "sourceAlphaBounds": [
+            15,
+            27,
+            240,
+            251
+          ],
+          "scale": 0.3524229074889868,
+          "offset": [
+            8,
+            8
+          ]
+        },
+        {
+          "file": "orb_kinetic/04.png",
+          "rect": [
+            402,
+            2,
+            96,
+            96
+          ],
+          "sourceCell": [
+            0,
+            256,
+            256,
+            256
+          ],
+          "sourceAlphaBounds": [
+            17,
+            14,
+            243,
+            238
+          ],
+          "scale": 0.3524229074889868,
+          "offset": [
+            8,
+            8
+          ]
+        },
+        {
+          "file": "orb_kinetic/05.png",
+          "rect": [
+            502,
+            2,
+            96,
+            96
+          ],
+          "sourceCell": [
+            256,
+            256,
+            256,
+            256
+          ],
+          "sourceAlphaBounds": [
+            15,
+            14,
+            241,
+            238
+          ],
+          "scale": 0.3524229074889868,
+          "offset": [
+            8,
+            8
+          ]
+        },
+        {
+          "file": "orb_kinetic/06.png",
+          "rect": [
+            602,
+            2,
+            96,
+            96
+          ],
+          "sourceCell": [
+            512,
+            256,
+            256,
+            256
+          ],
+          "sourceAlphaBounds": [
+            15,
+            14,
+            241,
+            238
+          ],
+          "scale": 0.3524229074889868,
+          "offset": [
+            8,
+            8
+          ]
+        },
+        {
+          "file": "orb_kinetic/07.png",
+          "rect": [
+            702,
+            2,
+            96,
+            96
+          ],
+          "sourceCell": [
+            768,
+            256,
+            256,
+            256
+          ],
+          "sourceAlphaBounds": [
+            14,
+            14,
+            240,
+            238
+          ],
+          "scale": 0.3524229074889868,
+          "offset": [
+            8,
+            8
+          ]
+        }
+      ]
+    },
+    "orb_chrome": {
+      "atlas": "assets/game/shared/player_weapons/weapon_animation_0928/orb_chrome/atlas.png",
+      "size": [
+        96,
+        96
+      ],
+      "fps": 10,
+      "loop": true,
+      "anchor": [
+        48,
+        48
+      ],
+      "source": "orbs_b",
+      "notes": "Authored elemental frame reel. Fixed center/origin; do not canvas-rotate or independently rescale frames.",
+      "frames": [
+        {
+          "file": "orb_chrome/00.png",
+          "rect": [
+            2,
+            2,
+            96,
+            96
+          ],
+          "sourceCell": [
+            0,
+            512,
+            256,
+            256
+          ],
+          "sourceAlphaBounds": [
+            17,
+            10,
+            243,
+            235
+          ],
+          "scale": 0.35398230088495575,
+          "offset": [
+            8,
+            8
+          ]
+        },
+        {
+          "file": "orb_chrome/01.png",
+          "rect": [
+            102,
+            2,
+            96,
+            96
+          ],
+          "sourceCell": [
+            256,
+            512,
+            256,
+            256
+          ],
+          "sourceAlphaBounds": [
+            15,
+            10,
+            241,
+            235
+          ],
+          "scale": 0.35398230088495575,
+          "offset": [
+            8,
+            8
+          ]
+        },
+        {
+          "file": "orb_chrome/02.png",
+          "rect": [
+            202,
+            2,
+            96,
+            96
+          ],
+          "sourceCell": [
+            512,
+            512,
+            256,
+            256
+          ],
+          "sourceAlphaBounds": [
+            16,
+            10,
+            241,
+            235
+          ],
+          "scale": 0.35398230088495575,
+          "offset": [
+            8,
+            8
+          ]
+        },
+        {
+          "file": "orb_chrome/03.png",
+          "rect": [
+            302,
+            2,
+            96,
+            96
+          ],
+          "sourceCell": [
+            768,
+            512,
+            256,
+            256
+          ],
+          "sourceAlphaBounds": [
+            14,
+            10,
+            240,
+            235
+          ],
+          "scale": 0.35398230088495575,
+          "offset": [
+            8,
+            8
+          ]
+        },
+        {
+          "file": "orb_chrome/04.png",
+          "rect": [
+            402,
+            2,
+            96,
+            96
+          ],
+          "sourceCell": [
+            0,
+            768,
+            256,
+            256
+          ],
+          "sourceAlphaBounds": [
+            17,
+            5,
+            243,
+            228
+          ],
+          "scale": 0.35398230088495575,
+          "offset": [
+            8,
+            8
+          ]
+        },
+        {
+          "file": "orb_chrome/05.png",
+          "rect": [
+            502,
+            2,
+            96,
+            96
+          ],
+          "sourceCell": [
+            256,
+            768,
+            256,
+            256
+          ],
+          "sourceAlphaBounds": [
+            15,
+            5,
+            241,
+            228
+          ],
+          "scale": 0.35398230088495575,
+          "offset": [
+            8,
+            8
+          ]
+        },
+        {
+          "file": "orb_chrome/06.png",
+          "rect": [
+            602,
+            2,
+            96,
+            96
+          ],
+          "sourceCell": [
+            512,
+            768,
+            256,
+            256
+          ],
+          "sourceAlphaBounds": [
+            15,
+            4,
+            241,
+            228
+          ],
+          "scale": 0.35398230088495575,
+          "offset": [
+            8,
+            8
+          ]
+        },
+        {
+          "file": "orb_chrome/07.png",
+          "rect": [
+            702,
+            2,
+            96,
+            96
+          ],
+          "sourceCell": [
+            768,
+            768,
+            256,
+            256
+          ],
+          "sourceAlphaBounds": [
+            14,
+            4,
+            240,
+            228
+          ],
+          "scale": 0.35398230088495575,
+          "offset": [
+            8,
+            8
+          ]
+        }
+      ]
+    },
+    "orb_dark": {
+      "atlas": "assets/game/shared/player_weapons/weapon_animation_0928/orb_dark/atlas.png",
+      "size": [
+        96,
+        96
+      ],
+      "fps": 10,
+      "loop": true,
+      "anchor": [
+        48,
+        48
+      ],
+      "source": "orbs_b",
+      "notes": "Authored elemental frame reel. Fixed center/origin; do not canvas-rotate or independently rescale frames.",
+      "frames": [
+        {
+          "file": "orb_dark/00.png",
+          "rect": [
+            2,
+            2,
+            96,
+            96
+          ],
+          "sourceCell": [
+            0,
+            1024,
+            256,
+            256
+          ],
+          "sourceAlphaBounds": [
+            17,
+            2,
+            243,
+            256
+          ],
+          "scale": 0.31496062992125984,
+          "offset": [
+            12,
+            8
+          ]
+        },
+        {
+          "file": "orb_dark/01.png",
+          "rect": [
+            102,
+            2,
+            96,
+            96
+          ],
+          "sourceCell": [
+            256,
+            1024,
+            256,
+            256
+          ],
+          "sourceAlphaBounds": [
+            15,
+            2,
+            241,
+            256
+          ],
+          "scale": 0.31496062992125984,
+          "offset": [
+            12,
+            8
+          ]
+        },
+        {
+          "file": "orb_dark/02.png",
+          "rect": [
+            202,
+            2,
+            96,
+            96
+          ],
+          "sourceCell": [
+            512,
+            1024,
+            256,
+            256
+          ],
+          "sourceAlphaBounds": [
+            15,
+            2,
+            239,
+            256
+          ],
+          "scale": 0.31496062992125984,
+          "offset": [
+            12,
+            8
+          ]
+        },
+        {
+          "file": "orb_dark/03.png",
+          "rect": [
+            302,
+            2,
+            96,
+            96
+          ],
+          "sourceCell": [
+            768,
+            1024,
+            256,
+            256
+          ],
+          "sourceAlphaBounds": [
+            13,
+            2,
+            240,
+            256
+          ],
+          "scale": 0.31496062992125984,
+          "offset": [
+            12,
+            8
+          ]
+        },
+        {
+          "file": "orb_dark/04.png",
+          "rect": [
+            402,
+            2,
+            96,
+            96
+          ],
+          "sourceCell": [
+            0,
+            1280,
+            256,
+            256
+          ],
+          "sourceAlphaBounds": [
+            17,
+            0,
+            243,
+            209
+          ],
+          "scale": 0.31496062992125984,
+          "offset": [
+            12,
+            15
+          ]
+        },
+        {
+          "file": "orb_dark/05.png",
+          "rect": [
+            502,
+            2,
+            96,
+            96
+          ],
+          "sourceCell": [
+            256,
+            1280,
+            256,
+            256
+          ],
+          "sourceAlphaBounds": [
+            15,
+            0,
+            239,
+            209
+          ],
+          "scale": 0.31496062992125984,
+          "offset": [
+            12,
+            15
+          ]
+        },
+        {
+          "file": "orb_dark/06.png",
+          "rect": [
+            602,
+            2,
+            96,
+            96
+          ],
+          "sourceCell": [
+            512,
+            1280,
+            256,
+            256
+          ],
+          "sourceAlphaBounds": [
+            13,
+            0,
+            237,
+            209
+          ],
+          "scale": 0.31496062992125984,
+          "offset": [
+            12,
+            15
+          ]
+        },
+        {
+          "file": "orb_dark/07.png",
+          "rect": [
+            702,
+            2,
+            96,
+            96
+          ],
+          "sourceCell": [
+            768,
+            1280,
+            256,
+            256
+          ],
+          "sourceAlphaBounds": [
+            13,
+            0,
+            240,
+            210
+          ],
+          "scale": 0.31496062992125984,
+          "offset": [
+            12,
+            15
+          ]
+        }
+      ]
+    },
+    "orb_toxic": {
+      "atlas": "assets/game/shared/player_weapons/weapon_animation_0928/orb_toxic/atlas.png",
+      "size": [
+        96,
+        96
+      ],
+      "fps": 10,
+      "loop": true,
+      "anchor": [
+        48,
+        48
+      ],
+      "source": "orbs_c",
+      "notes": "Authored elemental frame reel. Fixed center/origin; do not canvas-rotate or independently rescale frames.",
+      "frames": [
+        {
+          "file": "orb_toxic/00.png",
+          "rect": [
+            2,
+            2,
+            96,
+            96
+          ],
+          "sourceCell": [
+            0,
+            0,
+            256,
+            256
+          ],
+          "sourceAlphaBounds": [
+            25,
+            46,
+            242,
+            256
+          ],
+          "scale": 0.321285140562249,
+          "offset": [
+            13,
+            14
+          ]
+        },
+        {
+          "file": "orb_toxic/01.png",
+          "rect": [
+            102,
+            2,
+            96,
+            96
+          ],
+          "sourceCell": [
+            256,
+            0,
+            256,
+            256
+          ],
+          "sourceAlphaBounds": [
+            22,
+            43,
+            237,
+            256
+          ],
+          "scale": 0.321285140562249,
+          "offset": [
+            13,
+            14
+          ]
+        },
+        {
+          "file": "orb_toxic/02.png",
+          "rect": [
+            202,
+            2,
+            96,
+            96
+          ],
+          "sourceCell": [
+            512,
+            0,
+            256,
+            256
+          ],
+          "sourceAlphaBounds": [
+            16,
+            43,
+            235,
+            256
+          ],
+          "scale": 0.321285140562249,
+          "offset": [
+            13,
+            14
+          ]
+        },
+        {
+          "file": "orb_toxic/03.png",
+          "rect": [
+            302,
+            2,
+            96,
+            96
+          ],
+          "sourceCell": [
+            768,
+            0,
+            256,
+            256
+          ],
+          "sourceAlphaBounds": [
+            8,
+            43,
+            227,
+            256
+          ],
+          "scale": 0.321285140562249,
+          "offset": [
+            13,
+            14
+          ]
+        },
+        {
+          "file": "orb_toxic/04.png",
+          "rect": [
+            402,
+            2,
+            96,
+            96
+          ],
+          "sourceCell": [
+            0,
+            256,
+            256,
+            256
+          ],
+          "sourceAlphaBounds": [
+            25,
+            0,
+            245,
+            246
+          ],
+          "scale": 0.321285140562249,
+          "offset": [
+            12,
+            8
+          ]
+        },
+        {
+          "file": "orb_toxic/05.png",
+          "rect": [
+            502,
+            2,
+            96,
+            96
+          ],
+          "sourceCell": [
+            256,
+            256,
+            256,
+            256
+          ],
+          "sourceAlphaBounds": [
+            22,
+            0,
+            236,
+            249
+          ],
+          "scale": 0.321285140562249,
+          "offset": [
+            13,
+            8
+          ]
+        },
+        {
+          "file": "orb_toxic/06.png",
+          "rect": [
+            602,
+            2,
+            96,
+            96
+          ],
+          "sourceCell": [
+            512,
+            256,
+            256,
+            256
+          ],
+          "sourceAlphaBounds": [
+            16,
+            0,
+            234,
+            249
+          ],
+          "scale": 0.321285140562249,
+          "offset": [
+            13,
+            8
+          ]
+        },
+        {
+          "file": "orb_toxic/07.png",
+          "rect": [
+            702,
+            2,
+            96,
+            96
+          ],
+          "sourceCell": [
+            768,
+            256,
+            256,
+            256
+          ],
+          "sourceAlphaBounds": [
+            10,
+            0,
+            231,
+            249
+          ],
+          "scale": 0.321285140562249,
+          "offset": [
+            12,
+            8
+          ]
+        }
+      ]
+    },
+    "orb_prism": {
+      "atlas": "assets/game/shared/player_weapons/weapon_animation_0928/orb_prism/atlas.png",
+      "size": [
+        96,
+        96
+      ],
+      "fps": 10,
+      "loop": true,
+      "anchor": [
+        48,
+        48
+      ],
+      "source": "orbs_c",
+      "notes": "Authored elemental frame reel. Fixed center/origin; do not canvas-rotate or independently rescale frames.",
+      "frames": [
+        {
+          "file": "orb_prism/00.png",
+          "rect": [
+            2,
+            2,
+            96,
+            96
+          ],
+          "sourceCell": [
+            0,
+            512,
+            256,
+            256
+          ],
+          "sourceAlphaBounds": [
+            24,
+            23,
+            242,
+            240
+          ],
+          "scale": 0.3669724770642202,
+          "offset": [
+            8,
+            8
+          ]
+        },
+        {
+          "file": "orb_prism/01.png",
+          "rect": [
+            102,
+            2,
+            96,
+            96
+          ],
+          "sourceCell": [
+            256,
+            512,
+            256,
+            256
+          ],
+          "sourceAlphaBounds": [
+            20,
+            23,
+            238,
+            240
+          ],
+          "scale": 0.3669724770642202,
+          "offset": [
+            8,
+            8
+          ]
+        },
+        {
+          "file": "orb_prism/02.png",
+          "rect": [
+            202,
+            2,
+            96,
+            96
+          ],
+          "sourceCell": [
+            512,
+            512,
+            256,
+            256
+          ],
+          "sourceAlphaBounds": [
+            16,
+            23,
+            234,
+            240
+          ],
+          "scale": 0.3669724770642202,
+          "offset": [
+            8,
+            8
+          ]
+        },
+        {
+          "file": "orb_prism/03.png",
+          "rect": [
+            302,
+            2,
+            96,
+            96
+          ],
+          "sourceCell": [
+            768,
+            512,
+            256,
+            256
+          ],
+          "sourceAlphaBounds": [
+            12,
+            23,
+            229,
+            240
+          ],
+          "scale": 0.3669724770642202,
+          "offset": [
+            8,
+            8
+          ]
+        },
+        {
+          "file": "orb_prism/04.png",
+          "rect": [
+            402,
+            2,
+            96,
+            96
+          ],
+          "sourceCell": [
+            0,
+            768,
+            256,
+            256
+          ],
+          "sourceAlphaBounds": [
+            23,
+            12,
+            240,
+            230
+          ],
+          "scale": 0.3669724770642202,
+          "offset": [
+            8,
+            8
+          ]
+        },
+        {
+          "file": "orb_prism/05.png",
+          "rect": [
+            502,
+            2,
+            96,
+            96
+          ],
+          "sourceCell": [
+            256,
+            768,
+            256,
+            256
+          ],
+          "sourceAlphaBounds": [
+            20,
+            12,
+            238,
+            230
+          ],
+          "scale": 0.3669724770642202,
+          "offset": [
+            8,
+            8
+          ]
+        },
+        {
+          "file": "orb_prism/06.png",
+          "rect": [
+            602,
+            2,
+            96,
+            96
+          ],
+          "sourceCell": [
+            512,
+            768,
+            256,
+            256
+          ],
+          "sourceAlphaBounds": [
+            16,
+            13,
+            232,
+            230
+          ],
+          "scale": 0.3669724770642202,
+          "offset": [
+            8,
+            8
+          ]
+        },
+        {
+          "file": "orb_prism/07.png",
+          "rect": [
+            702,
+            2,
+            96,
+            96
+          ],
+          "sourceCell": [
+            768,
+            768,
+            256,
+            256
+          ],
+          "sourceAlphaBounds": [
+            10,
+            13,
+            226,
+            230
+          ],
+          "scale": 0.3669724770642202,
+          "offset": [
+            8,
+            8
+          ]
+        }
+      ]
+    },
+    "orb_water": {
+      "atlas": "assets/game/shared/player_weapons/weapon_animation_0928/orb_water/atlas.png",
+      "size": [
+        96,
+        96
+      ],
+      "fps": 10,
+      "loop": true,
+      "anchor": [
+        48,
+        48
+      ],
+      "source": "orbs_c",
+      "notes": "Authored elemental frame reel. Fixed center/origin; do not canvas-rotate or independently rescale frames.",
+      "frames": [
+        {
+          "file": "orb_water/00.png",
+          "rect": [
+            2,
+            2,
+            96,
+            96
+          ],
+          "sourceCell": [
+            0,
+            1024,
+            256,
+            256
+          ],
+          "sourceAlphaBounds": [
+            20,
+            7,
+            242,
+            256
+          ],
+          "scale": 0.3187250996015936,
+          "offset": [
+            12,
+            8
+          ]
+        },
+        {
+          "file": "orb_water/01.png",
+          "rect": [
+            102,
+            2,
+            96,
+            96
+          ],
+          "sourceCell": [
+            256,
+            1024,
+            256,
+            256
+          ],
+          "sourceAlphaBounds": [
+            22,
+            5,
+            239,
+            256
+          ],
+          "scale": 0.3187250996015936,
+          "offset": [
+            13,
+            8
+          ]
+        },
+        {
+          "file": "orb_water/02.png",
+          "rect": [
+            202,
+            2,
+            96,
+            96
+          ],
+          "sourceCell": [
+            512,
+            1024,
+            256,
+            256
+          ],
+          "sourceAlphaBounds": [
+            15,
+            7,
+            235,
+            256
+          ],
+          "scale": 0.3187250996015936,
+          "offset": [
+            13,
+            8
+          ]
+        },
+        {
+          "file": "orb_water/03.png",
+          "rect": [
+            302,
+            2,
+            96,
+            96
+          ],
+          "sourceCell": [
+            768,
+            1024,
+            256,
+            256
+          ],
+          "sourceAlphaBounds": [
+            11,
+            7,
+            234,
+            256
+          ],
+          "scale": 0.3187250996015936,
+          "offset": [
+            12,
+            8
+          ]
+        },
+        {
+          "file": "orb_water/04.png",
+          "rect": [
+            402,
+            2,
+            96,
+            96
+          ],
+          "sourceCell": [
+            0,
+            1280,
+            256,
+            256
+          ],
+          "sourceAlphaBounds": [
+            24,
+            0,
+            243,
+            210
+          ],
+          "scale": 0.3187250996015936,
+          "offset": [
+            13,
+            14
+          ]
+        },
+        {
+          "file": "orb_water/05.png",
+          "rect": [
+            502,
+            2,
+            96,
+            96
+          ],
+          "sourceCell": [
+            256,
+            1280,
+            256,
+            256
+          ],
+          "sourceAlphaBounds": [
+            21,
+            0,
+            239,
+            210
+          ],
+          "scale": 0.3187250996015936,
+          "offset": [
+            13,
+            14
+          ]
+        },
+        {
+          "file": "orb_water/06.png",
+          "rect": [
+            602,
+            2,
+            96,
+            96
+          ],
+          "sourceCell": [
+            512,
+            1280,
+            256,
+            256
+          ],
+          "sourceAlphaBounds": [
+            15,
+            0,
+            235,
+            210
+          ],
+          "scale": 0.3187250996015936,
+          "offset": [
+            13,
+            14
+          ]
+        },
+        {
+          "file": "orb_water/07.png",
+          "rect": [
+            702,
+            2,
+            96,
+            96
+          ],
+          "sourceCell": [
+            768,
+            1280,
+            256,
+            256
+          ],
+          "sourceAlphaBounds": [
+            10,
+            0,
+            228,
+            210
+          ],
+          "scale": 0.3187250996015936,
+          "offset": [
+            13,
+            14
+          ]
+        }
+      ]
+    },
+    "beam_fire": {
+      "atlas": "assets/game/shared/player_weapons/weapon_animation_0928/beam_fire/atlas.png",
+      "size": [
+        128,
+        320
+      ],
+      "fps": 12,
+      "loop": true,
+      "anchor": [
+        64,
+        312
+      ],
+      "source": "beams_a",
+      "notes": "Authored elemental frame reel. Fixed center/origin; do not canvas-rotate or independently rescale frames.",
+      "frames": [
+        {
+          "file": "beam_fire/00.png",
+          "rect": [
+            2,
+            2,
+            128,
+            320
+          ],
+          "sourceCell": [
+            0,
+            0,
+            256,
+            510
+          ],
+          "sourceAlphaBounds": [
+            65,
+            8,
+            184,
+            504
+          ],
+          "scale": 0.6104417670682731,
+          "offset": [
+            27,
+            9
+          ]
+        },
+        {
+          "file": "beam_fire/01.png",
+          "rect": [
+            134,
+            2,
+            128,
+            320
+          ],
+          "sourceCell": [
+            256,
+            0,
+            256,
+            510
+          ],
+          "sourceAlphaBounds": [
+            58,
+            7,
+            202,
+            503
+          ],
+          "scale": 0.6104417670682731,
+          "offset": [
+            20,
+            9
+          ]
+        },
+        {
+          "file": "beam_fire/02.png",
+          "rect": [
+            266,
+            2,
+            128,
+            320
+          ],
+          "sourceCell": [
+            512,
+            0,
+            256,
+            510
+          ],
+          "sourceAlphaBounds": [
+            56,
+            6,
+            202,
+            504
+          ],
+          "scale": 0.6104417670682731,
+          "offset": [
+            19,
+            8
+          ]
+        },
+        {
+          "file": "beam_fire/03.png",
+          "rect": [
+            398,
+            2,
+            128,
+            320
+          ],
+          "sourceCell": [
+            768,
+            0,
+            256,
+            510
+          ],
+          "sourceAlphaBounds": [
+            52,
+            6,
+            202,
+            503
+          ],
+          "scale": 0.6104417670682731,
+          "offset": [
+            18,
+            9
+          ]
+        }
+      ]
+    },
+    "beam_ice": {
+      "atlas": "assets/game/shared/player_weapons/weapon_animation_0928/beam_ice/atlas.png",
+      "size": [
+        128,
+        320
+      ],
+      "fps": 12,
+      "loop": true,
+      "anchor": [
+        64,
+        312
+      ],
+      "source": "beams_a",
+      "notes": "Authored elemental frame reel. Fixed center/origin; do not canvas-rotate or independently rescale frames.",
+      "frames": [
+        {
+          "file": "beam_ice/00.png",
+          "rect": [
+            2,
+            2,
+            128,
+            320
+          ],
+          "sourceCell": [
+            0,
+            510,
+            256,
+            511
+          ],
+          "sourceAlphaBounds": [
+            65,
+            7,
+            189,
+            506
+          ],
+          "scale": 0.5714285714285714,
+          "offset": [
+            28,
+            27
+          ]
+        },
+        {
+          "file": "beam_ice/01.png",
+          "rect": [
+            134,
+            2,
+            128,
+            320
+          ],
+          "sourceCell": [
+            256,
+            510,
+            256,
+            511
+          ],
+          "sourceAlphaBounds": [
+            49,
+            7,
+            198,
+            506
+          ],
+          "scale": 0.5714285714285714,
+          "offset": [
+            21,
+            27
+          ]
+        },
+        {
+          "file": "beam_ice/02.png",
+          "rect": [
+            266,
+            2,
+            128,
+            320
+          ],
+          "sourceCell": [
+            512,
+            510,
+            256,
+            511
+          ],
+          "sourceAlphaBounds": [
+            38,
+            6,
+            207,
+            506
+          ],
+          "scale": 0.5714285714285714,
+          "offset": [
+            15,
+            26
+          ]
+        },
+        {
+          "file": "beam_ice/03.png",
+          "rect": [
+            398,
+            2,
+            128,
+            320
+          ],
+          "sourceCell": [
+            768,
+            510,
+            256,
+            511
+          ],
+          "sourceAlphaBounds": [
+            27,
+            6,
+            223,
+            506
+          ],
+          "scale": 0.5714285714285714,
+          "offset": [
+            8,
+            26
+          ]
+        }
+      ]
+    },
+    "beam_lightning": {
+      "atlas": "assets/game/shared/player_weapons/weapon_animation_0928/beam_lightning/atlas.png",
+      "size": [
+        128,
+        320
+      ],
+      "fps": 12,
+      "loop": true,
+      "anchor": [
+        64,
+        312
+      ],
+      "source": "beams_a",
+      "notes": "Authored elemental frame reel. Fixed center/origin; do not canvas-rotate or independently rescale frames.",
+      "frames": [
+        {
+          "file": "beam_lightning/00.png",
+          "rect": [
+            2,
+            2,
+            128,
+            320
+          ],
+          "sourceCell": [
+            0,
+            1021,
+            256,
+            515
+          ],
+          "sourceAlphaBounds": [
+            81,
+            8,
+            179,
+            508
+          ],
+          "scale": 0.6055776892430279,
+          "offset": [
+            34,
+            9
+          ]
+        },
+        {
+          "file": "beam_lightning/01.png",
+          "rect": [
+            134,
+            2,
+            128,
+            320
+          ],
+          "sourceCell": [
+            256,
+            1021,
+            256,
+            515
+          ],
+          "sourceAlphaBounds": [
+            62,
+            6,
+            205,
+            508
+          ],
+          "scale": 0.6055776892430279,
+          "offset": [
+            20,
+            8
+          ]
+        },
+        {
+          "file": "beam_lightning/02.png",
+          "rect": [
+            266,
+            2,
+            128,
+            320
+          ],
+          "sourceCell": [
+            512,
+            1021,
+            256,
+            515
+          ],
+          "sourceAlphaBounds": [
+            46,
+            8,
+            214,
+            508
+          ],
+          "scale": 0.6055776892430279,
+          "offset": [
+            13,
+            9
+          ]
+        },
+        {
+          "file": "beam_lightning/03.png",
+          "rect": [
+            398,
+            2,
+            128,
+            320
+          ],
+          "sourceCell": [
+            768,
+            1021,
+            256,
+            515
+          ],
+          "sourceAlphaBounds": [
+            41,
+            7,
+            217,
+            509
+          ],
+          "scale": 0.6055776892430279,
+          "offset": [
+            10,
+            8
+          ]
+        }
+      ]
+    },
+    "beam_kinetic": {
+      "atlas": "assets/game/shared/player_weapons/weapon_animation_0928/beam_kinetic/atlas.png",
+      "size": [
+        128,
+        320
+      ],
+      "fps": 12,
+      "loop": true,
+      "anchor": [
+        64,
+        312
+      ],
+      "source": "beams_b",
+      "notes": "Authored elemental frame reel. Fixed center/origin; do not canvas-rotate or independently rescale frames.",
+      "frames": [
+        {
+          "file": "beam_kinetic/00.png",
+          "rect": [
+            2,
+            2,
+            128,
+            320
+          ],
+          "sourceCell": [
+            0,
+            0,
+            256,
+            507
+          ],
+          "sourceAlphaBounds": [
+            96,
+            16,
+            191,
+            497
+          ],
+          "scale": 0.632016632016632,
+          "offset": [
+            34,
+            8
+          ]
+        },
+        {
+          "file": "beam_kinetic/01.png",
+          "rect": [
+            134,
+            2,
+            128,
+            320
+          ],
+          "sourceCell": [
+            256,
+            0,
+            256,
+            507
+          ],
+          "sourceAlphaBounds": [
+            86,
+            16,
+            191,
+            497
+          ],
+          "scale": 0.632016632016632,
+          "offset": [
+            31,
+            8
+          ]
+        },
+        {
+          "file": "beam_kinetic/02.png",
+          "rect": [
+            266,
+            2,
+            128,
+            320
+          ],
+          "sourceCell": [
+            512,
+            0,
+            256,
+            507
+          ],
+          "sourceAlphaBounds": [
+            66,
+            16,
+            185,
+            497
+          ],
+          "scale": 0.632016632016632,
+          "offset": [
+            26,
+            8
+          ]
+        },
+        {
+          "file": "beam_kinetic/03.png",
+          "rect": [
+            398,
+            2,
+            128,
+            320
+          ],
+          "sourceCell": [
+            768,
+            0,
+            256,
+            507
+          ],
+          "sourceAlphaBounds": [
+            42,
+            16,
+            169,
+            497
+          ],
+          "scale": 0.632016632016632,
+          "offset": [
+            24,
+            8
+          ]
+        }
+      ]
+    },
+    "beam_chrome": {
+      "atlas": "assets/game/shared/player_weapons/weapon_animation_0928/beam_chrome/atlas.png",
+      "size": [
+        128,
+        320
+      ],
+      "fps": 12,
+      "loop": true,
+      "anchor": [
+        64,
+        312
+      ],
+      "source": "beams_b",
+      "notes": "Authored elemental frame reel. Fixed center/origin; do not canvas-rotate or independently rescale frames.",
+      "frames": [
+        {
+          "file": "beam_chrome/00.png",
+          "rect": [
+            2,
+            2,
+            128,
+            320
+          ],
+          "sourceCell": [
+            0,
+            507,
+            256,
+            501
+          ],
+          "sourceAlphaBounds": [
+            88,
+            12,
+            203,
+            495
+          ],
+          "scale": 0.628099173553719,
+          "offset": [
+            28,
+            9
+          ]
+        },
+        {
+          "file": "beam_chrome/01.png",
+          "rect": [
+            134,
+            2,
+            128,
+            320
+          ],
+          "sourceCell": [
+            256,
+            507,
+            256,
+            501
+          ],
+          "sourceAlphaBounds": [
+            66,
+            13,
+            205,
+            495
+          ],
+          "scale": 0.628099173553719,
+          "offset": [
+            20,
+            9
+          ]
+        },
+        {
+          "file": "beam_chrome/02.png",
+          "rect": [
+            266,
+            2,
+            128,
+            320
+          ],
+          "sourceCell": [
+            512,
+            507,
+            256,
+            501
+          ],
+          "sourceAlphaBounds": [
+            54,
+            12,
+            200,
+            495
+          ],
+          "scale": 0.628099173553719,
+          "offset": [
+            18,
+            9
+          ]
+        },
+        {
+          "file": "beam_chrome/03.png",
+          "rect": [
+            398,
+            2,
+            128,
+            320
+          ],
+          "sourceCell": [
+            768,
+            507,
+            256,
+            501
+          ],
+          "sourceAlphaBounds": [
+            35,
+            11,
+            181,
+            495
+          ],
+          "scale": 0.628099173553719,
+          "offset": [
+            18,
+            8
+          ]
+        }
+      ]
+    },
+    "beam_dark": {
+      "atlas": "assets/game/shared/player_weapons/weapon_animation_0928/beam_dark/atlas.png",
+      "size": [
+        128,
+        320
+      ],
+      "fps": 12,
+      "loop": true,
+      "anchor": [
+        64,
+        312
+      ],
+      "source": "beams_b",
+      "notes": "Authored elemental frame reel. Fixed center/origin; do not canvas-rotate or independently rescale frames.",
+      "frames": [
+        {
+          "file": "beam_dark/00.png",
+          "rect": [
+            2,
+            2,
+            128,
+            320
+          ],
+          "sourceCell": [
+            0,
+            1008,
+            256,
+            528
+          ],
+          "sourceAlphaBounds": [
+            77,
+            9,
+            212,
+            505
+          ],
+          "scale": 0.6104417670682731,
+          "offset": [
+            23,
+            9
+          ]
+        },
+        {
+          "file": "beam_dark/01.png",
+          "rect": [
+            134,
+            2,
+            128,
+            320
+          ],
+          "sourceCell": [
+            256,
+            1008,
+            256,
+            528
+          ],
+          "sourceAlphaBounds": [
+            64,
+            8,
+            215,
+            506
+          ],
+          "scale": 0.6104417670682731,
+          "offset": [
+            18,
+            8
+          ]
+        },
+        {
+          "file": "beam_dark/02.png",
+          "rect": [
+            266,
+            2,
+            128,
+            320
+          ],
+          "sourceCell": [
+            512,
+            1008,
+            256,
+            528
+          ],
+          "sourceAlphaBounds": [
+            49,
+            8,
+            203,
+            505
+          ],
+          "scale": 0.6104417670682731,
+          "offset": [
+            17,
+            9
+          ]
+        },
+        {
+          "file": "beam_dark/03.png",
+          "rect": [
+            398,
+            2,
+            128,
+            320
+          ],
+          "sourceCell": [
+            768,
+            1008,
+            256,
+            528
+          ],
+          "sourceAlphaBounds": [
+            27,
+            8,
+            190,
+            506
+          ],
+          "scale": 0.6104417670682731,
+          "offset": [
+            14,
+            8
+          ]
+        }
+      ]
+    },
+    "beam_toxic": {
+      "atlas": "assets/game/shared/player_weapons/weapon_animation_0928/beam_toxic/atlas.png",
+      "size": [
+        128,
+        320
+      ],
+      "fps": 12,
+      "loop": true,
+      "anchor": [
+        64,
+        312
+      ],
+      "source": "beams_c",
+      "notes": "Authored elemental frame reel. Fixed center/origin; do not canvas-rotate or independently rescale frames.",
+      "frames": [
+        {
+          "file": "beam_toxic/00.png",
+          "rect": [
+            2,
+            2,
+            128,
+            320
+          ],
+          "sourceCell": [
+            0,
+            0,
+            256,
+            516
+          ],
+          "sourceAlphaBounds": [
+            54,
+            34,
+            220,
+            496
+          ],
+          "scale": 0.658008658008658,
+          "offset": [
+            9,
+            8
+          ]
+        },
+        {
+          "file": "beam_toxic/01.png",
+          "rect": [
+            134,
+            2,
+            128,
+            320
+          ],
+          "sourceCell": [
+            256,
+            0,
+            256,
+            516
+          ],
+          "sourceAlphaBounds": [
+            48,
+            34,
+            205,
+            496
+          ],
+          "scale": 0.658008658008658,
+          "offset": [
+            12,
+            8
+          ]
+        },
+        {
+          "file": "beam_toxic/02.png",
+          "rect": [
+            266,
+            2,
+            128,
+            320
+          ],
+          "sourceCell": [
+            512,
+            0,
+            256,
+            516
+          ],
+          "sourceAlphaBounds": [
+            38,
+            34,
+            204,
+            496
+          ],
+          "scale": 0.658008658008658,
+          "offset": [
+            9,
+            8
+          ]
+        },
+        {
+          "file": "beam_toxic/03.png",
+          "rect": [
+            398,
+            2,
+            128,
+            320
+          ],
+          "sourceCell": [
+            768,
+            0,
+            256,
+            516
+          ],
+          "sourceAlphaBounds": [
+            35,
+            34,
+            199,
+            496
+          ],
+          "scale": 0.658008658008658,
+          "offset": [
+            10,
+            8
+          ]
+        }
+      ]
+    },
+    "beam_prism": {
+      "atlas": "assets/game/shared/player_weapons/weapon_animation_0928/beam_prism/atlas.png",
+      "size": [
+        128,
+        320
+      ],
+      "fps": 12,
+      "loop": true,
+      "anchor": [
+        64,
+        312
+      ],
+      "source": "beams_c",
+      "notes": "Authored elemental frame reel. Fixed center/origin; do not canvas-rotate or independently rescale frames.",
+      "frames": [
+        {
+          "file": "beam_prism/00.png",
+          "rect": [
+            2,
+            2,
+            128,
+            320
+          ],
+          "sourceCell": [
+            0,
+            516,
+            256,
+            508
+          ],
+          "sourceAlphaBounds": [
+            65,
+            19,
+            223,
+            491
+          ],
+          "scale": 0.6021505376344086,
+          "offset": [
+            16,
+            28
+          ]
+        },
+        {
+          "file": "beam_prism/01.png",
+          "rect": [
+            134,
+            2,
+            128,
+            320
+          ],
+          "sourceCell": [
+            256,
+            516,
+            256,
+            508
+          ],
+          "sourceAlphaBounds": [
+            48,
+            19,
+            212,
+            491
+          ],
+          "scale": 0.6021505376344086,
+          "offset": [
+            14,
+            28
+          ]
+        },
+        {
+          "file": "beam_prism/02.png",
+          "rect": [
+            266,
+            2,
+            128,
+            320
+          ],
+          "sourceCell": [
+            512,
+            516,
+            256,
+            508
+          ],
+          "sourceAlphaBounds": [
+            38,
+            19,
+            211,
+            491
+          ],
+          "scale": 0.6021505376344086,
+          "offset": [
+            12,
+            28
+          ]
+        },
+        {
+          "file": "beam_prism/03.png",
+          "rect": [
+            398,
+            2,
+            128,
+            320
+          ],
+          "sourceCell": [
+            768,
+            516,
+            256,
+            508
+          ],
+          "sourceAlphaBounds": [
+            25,
+            20,
+            211,
+            491
+          ],
+          "scale": 0.6021505376344086,
+          "offset": [
+            8,
+            28
+          ]
+        }
+      ]
+    },
+    "beam_water": {
+      "atlas": "assets/game/shared/player_weapons/weapon_animation_0928/beam_water/atlas.png",
+      "size": [
+        128,
+        320
+      ],
+      "fps": 12,
+      "loop": true,
+      "anchor": [
+        64,
+        312
+      ],
+      "source": "beams_c",
+      "notes": "Authored elemental frame reel. Fixed center/origin; do not canvas-rotate or independently rescale frames.",
+      "frames": [
+        {
+          "file": "beam_water/00.png",
+          "rect": [
+            2,
+            2,
+            128,
+            320
+          ],
+          "sourceCell": [
+            0,
+            1024,
+            256,
+            512
+          ],
+          "sourceAlphaBounds": [
+            51,
+            19,
+            223,
+            489
+          ],
+          "scale": 0.5743589743589743,
+          "offset": [
+            14,
+            42
+          ]
+        },
+        {
+          "file": "beam_water/01.png",
+          "rect": [
+            134,
+            2,
+            128,
+            320
+          ],
+          "sourceCell": [
+            256,
+            1024,
+            256,
+            512
+          ],
+          "sourceAlphaBounds": [
+            47,
+            19,
+            225,
+            489
+          ],
+          "scale": 0.5743589743589743,
+          "offset": [
+            13,
+            42
+          ]
+        },
+        {
+          "file": "beam_water/02.png",
+          "rect": [
+            266,
+            2,
+            128,
+            320
+          ],
+          "sourceCell": [
+            512,
+            1024,
+            256,
+            512
+          ],
+          "sourceAlphaBounds": [
+            37,
+            19,
+            218,
+            489
+          ],
+          "scale": 0.5743589743589743,
+          "offset": [
+            12,
+            42
+          ]
+        },
+        {
+          "file": "beam_water/03.png",
+          "rect": [
+            398,
+            2,
+            128,
+            320
+          ],
+          "sourceCell": [
+            768,
+            1024,
+            256,
+            512
+          ],
+          "sourceAlphaBounds": [
+            19,
+            19,
+            214,
+            489
+          ],
+          "scale": 0.5743589743589743,
+          "offset": [
+            8,
+            42
+          ]
+        }
+      ]
+    },
+    "cast_fire": {
+      "atlas": "assets/game/shared/player_weapons/weapon_animation_0928/cast_fire/atlas.png",
+      "size": [
+        160,
+        320
+      ],
+      "fps": 12,
+      "loop": true,
+      "anchor": [
+        80,
+        312
+      ],
+      "source": "casts_a",
+      "notes": "Authored elemental frame reel. Fixed center/origin; do not canvas-rotate or independently rescale frames.",
+      "frames": [
+        {
+          "file": "cast_fire/00.png",
+          "rect": [
+            2,
+            2,
+            160,
+            320
+          ],
+          "sourceCell": [
+            0,
+            0,
+            256,
+            514
+          ],
+          "sourceAlphaBounds": [
+            35,
+            17,
+            233,
+            507
+          ],
+          "scale": 0.6204081632653061,
+          "offset": [
+            18,
+            8
+          ]
+        },
+        {
+          "file": "cast_fire/01.png",
+          "rect": [
+            166,
+            2,
+            160,
+            320
+          ],
+          "sourceCell": [
+            256,
+            0,
+            256,
+            514
+          ],
+          "sourceAlphaBounds": [
+            35,
+            17,
+            228,
+            507
+          ],
+          "scale": 0.6204081632653061,
+          "offset": [
+            20,
+            8
+          ]
+        },
+        {
+          "file": "cast_fire/02.png",
+          "rect": [
+            330,
+            2,
+            160,
+            320
+          ],
+          "sourceCell": [
+            512,
+            0,
+            256,
+            514
+          ],
+          "sourceAlphaBounds": [
+            34,
+            17,
+            229,
+            507
+          ],
+          "scale": 0.6204081632653061,
+          "offset": [
+            19,
+            8
+          ]
+        },
+        {
+          "file": "cast_fire/03.png",
+          "rect": [
+            494,
+            2,
+            160,
+            320
+          ],
+          "sourceCell": [
+            768,
+            0,
+            256,
+            514
+          ],
+          "sourceAlphaBounds": [
+            27,
+            18,
+            224,
+            507
+          ],
+          "scale": 0.6204081632653061,
+          "offset": [
+            19,
+            9
+          ]
+        }
+      ]
+    },
+    "cast_ice": {
+      "atlas": "assets/game/shared/player_weapons/weapon_animation_0928/cast_ice/atlas.png",
+      "size": [
+        160,
+        320
+      ],
+      "fps": 12,
+      "loop": true,
+      "anchor": [
+        80,
+        312
+      ],
+      "source": "casts_a",
+      "notes": "Authored elemental frame reel. Fixed center/origin; do not canvas-rotate or independently rescale frames.",
+      "frames": [
+        {
+          "file": "cast_ice/00.png",
+          "rect": [
+            2,
+            2,
+            160,
+            320
+          ],
+          "sourceCell": [
+            0,
+            514,
+            256,
+            506
+          ],
+          "sourceAlphaBounds": [
+            31,
+            8,
+            239,
+            501
+          ],
+          "scale": 0.6166328600405679,
+          "offset": [
+            16,
+            8
+          ]
+        },
+        {
+          "file": "cast_ice/01.png",
+          "rect": [
+            166,
+            2,
+            160,
+            320
+          ],
+          "sourceCell": [
+            256,
+            514,
+            256,
+            506
+          ],
+          "sourceAlphaBounds": [
+            41,
+            8,
+            232,
+            501
+          ],
+          "scale": 0.6166328600405679,
+          "offset": [
+            21,
+            8
+          ]
+        },
+        {
+          "file": "cast_ice/02.png",
+          "rect": [
+            330,
+            2,
+            160,
+            320
+          ],
+          "sourceCell": [
+            512,
+            514,
+            256,
+            506
+          ],
+          "sourceAlphaBounds": [
+            37,
+            8,
+            233,
+            501
+          ],
+          "scale": 0.6166328600405679,
+          "offset": [
+            19,
+            8
+          ]
+        },
+        {
+          "file": "cast_ice/03.png",
+          "rect": [
+            494,
+            2,
+            160,
+            320
+          ],
+          "sourceCell": [
+            768,
+            514,
+            256,
+            506
+          ],
+          "sourceAlphaBounds": [
+            41,
+            8,
+            222,
+            501
+          ],
+          "scale": 0.6166328600405679,
+          "offset": [
+            24,
+            8
+          ]
+        }
+      ]
+    },
+    "cast_lightning": {
+      "atlas": "assets/game/shared/player_weapons/weapon_animation_0928/cast_lightning/atlas.png",
+      "size": [
+        160,
+        320
+      ],
+      "fps": 12,
+      "loop": true,
+      "anchor": [
+        80,
+        312
+      ],
+      "source": "casts_a",
+      "notes": "Authored elemental frame reel. Fixed center/origin; do not canvas-rotate or independently rescale frames.",
+      "frames": [
+        {
+          "file": "cast_lightning/00.png",
+          "rect": [
+            2,
+            2,
+            160,
+            320
+          ],
+          "sourceCell": [
+            0,
+            1020,
+            256,
+            516
+          ],
+          "sourceAlphaBounds": [
+            34,
+            5,
+            230,
+            509
+          ],
+          "scale": 0.6031746031746031,
+          "offset": [
+            21,
+            8
+          ]
+        },
+        {
+          "file": "cast_lightning/01.png",
+          "rect": [
+            166,
+            2,
+            160,
+            320
+          ],
+          "sourceCell": [
+            256,
+            1020,
+            256,
+            516
+          ],
+          "sourceAlphaBounds": [
+            51,
+            5,
+            228,
+            509
+          ],
+          "scale": 0.6031746031746031,
+          "offset": [
+            26,
+            8
+          ]
+        },
+        {
+          "file": "cast_lightning/02.png",
+          "rect": [
+            330,
+            2,
+            160,
+            320
+          ],
+          "sourceCell": [
+            512,
+            1020,
+            256,
+            516
+          ],
+          "sourceAlphaBounds": [
+            42,
+            5,
+            220,
+            509
+          ],
+          "scale": 0.6031746031746031,
+          "offset": [
+            26,
+            8
+          ]
+        },
+        {
+          "file": "cast_lightning/03.png",
+          "rect": [
+            494,
+            2,
+            160,
+            320
+          ],
+          "sourceCell": [
+            768,
+            1020,
+            256,
+            516
+          ],
+          "sourceAlphaBounds": [
+            42,
+            5,
+            212,
+            509
+          ],
+          "scale": 0.6031746031746031,
+          "offset": [
+            28,
+            8
+          ]
+        }
+      ]
+    },
+    "cast_kinetic": {
+      "atlas": "assets/game/shared/player_weapons/weapon_animation_0928/cast_kinetic/atlas.png",
+      "size": [
+        160,
+        320
+      ],
+      "fps": 12,
+      "loop": true,
+      "anchor": [
+        80,
+        312
+      ],
+      "source": "casts_b",
+      "notes": "Authored elemental frame reel. Fixed center/origin; do not canvas-rotate or independently rescale frames.",
+      "frames": [
+        {
+          "file": "cast_kinetic/00.png",
+          "rect": [
+            2,
+            2,
+            160,
+            320
+          ],
+          "sourceCell": [
+            0,
+            0,
+            256,
+            515
+          ],
+          "sourceAlphaBounds": [
+            55,
+            20,
+            196,
+            507
+          ],
+          "scale": 0.6104417670682731,
+          "offset": [
+            37,
+            15
+          ]
+        },
+        {
+          "file": "cast_kinetic/01.png",
+          "rect": [
+            166,
+            2,
+            160,
+            320
+          ],
+          "sourceCell": [
+            256,
+            0,
+            256,
+            515
+          ],
+          "sourceAlphaBounds": [
+            43,
+            16,
+            220,
+            507
+          ],
+          "scale": 0.6104417670682731,
+          "offset": [
+            26,
+            12
+          ]
+        },
+        {
+          "file": "cast_kinetic/02.png",
+          "rect": [
+            330,
+            2,
+            160,
+            320
+          ],
+          "sourceCell": [
+            512,
+            0,
+            256,
+            515
+          ],
+          "sourceAlphaBounds": [
+            32,
+            9,
+            220,
+            507
+          ],
+          "scale": 0.6104417670682731,
+          "offset": [
+            22,
+            8
+          ]
+        },
+        {
+          "file": "cast_kinetic/03.png",
+          "rect": [
+            494,
+            2,
+            160,
+            320
+          ],
+          "sourceCell": [
+            768,
+            0,
+            256,
+            515
+          ],
+          "sourceAlphaBounds": [
+            11,
+            9,
+            239,
+            507
+          ],
+          "scale": 0.6104417670682731,
+          "offset": [
+            10,
+            8
+          ]
+        }
+      ]
+    },
+    "cast_chrome": {
+      "atlas": "assets/game/shared/player_weapons/weapon_animation_0928/cast_chrome/atlas.png",
+      "size": [
+        160,
+        320
+      ],
+      "fps": 12,
+      "loop": true,
+      "anchor": [
+        80,
+        312
+      ],
+      "source": "casts_b",
+      "notes": "Authored elemental frame reel. Fixed center/origin; do not canvas-rotate or independently rescale frames.",
+      "frames": [
+        {
+          "file": "cast_chrome/00.png",
+          "rect": [
+            2,
+            2,
+            160,
+            320
+          ],
+          "sourceCell": [
+            0,
+            515,
+            256,
+            506
+          ],
+          "sourceAlphaBounds": [
+            44,
+            14,
+            206,
+            505
+          ],
+          "scale": 0.6104417670682731,
+          "offset": [
+            30,
+            12
+          ]
+        },
+        {
+          "file": "cast_chrome/01.png",
+          "rect": [
+            166,
+            2,
+            160,
+            320
+          ],
+          "sourceCell": [
+            256,
+            515,
+            256,
+            506
+          ],
+          "sourceAlphaBounds": [
+            40,
+            9,
+            221,
+            505
+          ],
+          "scale": 0.6104417670682731,
+          "offset": [
+            25,
+            9
+          ]
+        },
+        {
+          "file": "cast_chrome/02.png",
+          "rect": [
+            330,
+            2,
+            160,
+            320
+          ],
+          "sourceCell": [
+            512,
+            515,
+            256,
+            506
+          ],
+          "sourceAlphaBounds": [
+            27,
+            7,
+            230,
+            505
+          ],
+          "scale": 0.6104417670682731,
+          "offset": [
+            18,
+            8
+          ]
+        },
+        {
+          "file": "cast_chrome/03.png",
+          "rect": [
+            494,
+            2,
+            160,
+            320
+          ],
+          "sourceCell": [
+            768,
+            515,
+            256,
+            506
+          ],
+          "sourceAlphaBounds": [
+            13,
+            15,
+            228,
+            505
+          ],
+          "scale": 0.6104417670682731,
+          "offset": [
+            14,
+            13
+          ]
+        }
+      ]
+    },
+    "cast_dark": {
+      "atlas": "assets/game/shared/player_weapons/weapon_animation_0928/cast_dark/atlas.png",
+      "size": [
+        160,
+        320
+      ],
+      "fps": 12,
+      "loop": true,
+      "anchor": [
+        80,
+        312
+      ],
+      "source": "casts_b",
+      "notes": "Authored elemental frame reel. Fixed center/origin; do not canvas-rotate or independently rescale frames.",
+      "frames": [
+        {
+          "file": "cast_dark/00.png",
+          "rect": [
+            2,
+            2,
+            160,
+            320
+          ],
+          "sourceCell": [
+            0,
+            1021,
+            256,
+            515
+          ],
+          "sourceAlphaBounds": [
+            50,
+            16,
+            211,
+            508
+          ],
+          "scale": 0.5984251968503937,
+          "offset": [
+            32,
+            18
+          ]
+        },
+        {
+          "file": "cast_dark/01.png",
+          "rect": [
+            166,
+            2,
+            160,
+            320
+          ],
+          "sourceCell": [
+            256,
+            1021,
+            256,
+            515
+          ],
+          "sourceAlphaBounds": [
+            36,
+            16,
+            221,
+            508
+          ],
+          "scale": 0.5984251968503937,
+          "offset": [
+            24,
+            18
+          ]
+        },
+        {
+          "file": "cast_dark/02.png",
+          "rect": [
+            330,
+            2,
+            160,
+            320
+          ],
+          "sourceCell": [
+            512,
+            1021,
+            256,
+            515
+          ],
+          "sourceAlphaBounds": [
+            22,
+            0,
+            229,
+            508
+          ],
+          "scale": 0.5984251968503937,
+          "offset": [
+            18,
+            8
+          ]
+        },
+        {
+          "file": "cast_dark/03.png",
+          "rect": [
+            494,
+            2,
+            160,
+            320
+          ],
+          "sourceCell": [
+            768,
+            1021,
+            256,
+            515
+          ],
+          "sourceAlphaBounds": [
+            19,
+            2,
+            233,
+            508
+          ],
+          "scale": 0.5984251968503937,
+          "offset": [
+            16,
+            9
+          ]
+        }
+      ]
+    },
+    "cast_toxic": {
+      "atlas": "assets/game/shared/player_weapons/weapon_animation_0928/cast_toxic/atlas.png",
+      "size": [
+        160,
+        320
+      ],
+      "fps": 12,
+      "loop": true,
+      "anchor": [
+        80,
+        312
+      ],
+      "source": "casts_c",
+      "notes": "Authored elemental frame reel. Fixed center/origin; do not canvas-rotate or independently rescale frames.",
+      "frames": [
+        {
+          "file": "cast_toxic/00.png",
+          "rect": [
+            2,
+            2,
+            160,
+            320
+          ],
+          "sourceCell": [
+            0,
+            0,
+            256,
+            504
+          ],
+          "sourceAlphaBounds": [
+            24,
+            17,
+            235,
+            498
+          ],
+          "scale": 0.632016632016632,
+          "offset": [
+            13,
+            8
+          ]
+        },
+        {
+          "file": "cast_toxic/01.png",
+          "rect": [
+            166,
+            2,
+            160,
+            320
+          ],
+          "sourceCell": [
+            256,
+            0,
+            256,
+            504
+          ],
+          "sourceAlphaBounds": [
+            19,
+            17,
+            242,
+            498
+          ],
+          "scale": 0.632016632016632,
+          "offset": [
+            9,
+            8
+          ]
+        },
+        {
+          "file": "cast_toxic/02.png",
+          "rect": [
+            330,
+            2,
+            160,
+            320
+          ],
+          "sourceCell": [
+            512,
+            0,
+            256,
+            504
+          ],
+          "sourceAlphaBounds": [
+            21,
+            17,
+            231,
+            498
+          ],
+          "scale": 0.632016632016632,
+          "offset": [
+            13,
+            8
+          ]
+        },
+        {
+          "file": "cast_toxic/03.png",
+          "rect": [
+            494,
+            2,
+            160,
+            320
+          ],
+          "sourceCell": [
+            768,
+            0,
+            256,
+            504
+          ],
+          "sourceAlphaBounds": [
+            23,
+            17,
+            226,
+            498
+          ],
+          "scale": 0.632016632016632,
+          "offset": [
+            16,
+            8
+          ]
+        }
+      ]
+    },
+    "cast_prism": {
+      "atlas": "assets/game/shared/player_weapons/weapon_animation_0928/cast_prism/atlas.png",
+      "size": [
+        160,
+        320
+      ],
+      "fps": 12,
+      "loop": true,
+      "anchor": [
+        80,
+        312
+      ],
+      "source": "casts_c",
+      "notes": "Authored elemental frame reel. Fixed center/origin; do not canvas-rotate or independently rescale frames.",
+      "frames": [
+        {
+          "file": "cast_prism/00.png",
+          "rect": [
+            2,
+            2,
+            160,
+            320
+          ],
+          "sourceCell": [
+            0,
+            504,
+            256,
+            511
+          ],
+          "sourceAlphaBounds": [
+            26,
+            6,
+            241,
+            504
+          ],
+          "scale": 0.6104417670682731,
+          "offset": [
+            14,
+            8
+          ]
+        },
+        {
+          "file": "cast_prism/01.png",
+          "rect": [
+            166,
+            2,
+            160,
+            320
+          ],
+          "sourceCell": [
+            256,
+            504,
+            256,
+            511
+          ],
+          "sourceAlphaBounds": [
+            26,
+            6,
+            241,
+            504
+          ],
+          "scale": 0.6104417670682731,
+          "offset": [
+            14,
+            8
+          ]
+        },
+        {
+          "file": "cast_prism/02.png",
+          "rect": [
+            330,
+            2,
+            160,
+            320
+          ],
+          "sourceCell": [
+            512,
+            504,
+            256,
+            511
+          ],
+          "sourceAlphaBounds": [
+            17,
+            6,
+            234,
+            504
+          ],
+          "scale": 0.6104417670682731,
+          "offset": [
+            14,
+            8
+          ]
+        },
+        {
+          "file": "cast_prism/03.png",
+          "rect": [
+            494,
+            2,
+            160,
+            320
+          ],
+          "sourceCell": [
+            768,
+            504,
+            256,
+            511
+          ],
+          "sourceAlphaBounds": [
+            13,
+            6,
+            228,
+            504
+          ],
+          "scale": 0.6104417670682731,
+          "offset": [
+            14,
+            8
+          ]
+        }
+      ]
+    },
+    "cast_water": {
+      "atlas": "assets/game/shared/player_weapons/weapon_animation_0928/cast_water/atlas.png",
+      "size": [
+        160,
+        320
+      ],
+      "fps": 12,
+      "loop": true,
+      "anchor": [
+        80,
+        312
+      ],
+      "source": "casts_c",
+      "notes": "Authored elemental frame reel. Fixed center/origin; do not canvas-rotate or independently rescale frames.",
+      "frames": [
+        {
+          "file": "cast_water/00.png",
+          "rect": [
+            2,
+            2,
+            160,
+            320
+          ],
+          "sourceCell": [
+            0,
+            1015,
+            256,
+            521
+          ],
+          "sourceAlphaBounds": [
+            23,
+            7,
+            243,
+            505
+          ],
+          "scale": 0.6104417670682731,
+          "offset": [
+            13,
+            8
+          ]
+        },
+        {
+          "file": "cast_water/01.png",
+          "rect": [
+            166,
+            2,
+            160,
+            320
+          ],
+          "sourceCell": [
+            256,
+            1015,
+            256,
+            521
+          ],
+          "sourceAlphaBounds": [
+            23,
+            10,
+            237,
+            505
+          ],
+          "scale": 0.6104417670682731,
+          "offset": [
+            14,
+            10
+          ]
+        },
+        {
+          "file": "cast_water/02.png",
+          "rect": [
+            330,
+            2,
+            160,
+            320
+          ],
+          "sourceCell": [
+            512,
+            1015,
+            256,
+            521
+          ],
+          "sourceAlphaBounds": [
+            13,
+            14,
+            238,
+            505
+          ],
+          "scale": 0.6104417670682731,
+          "offset": [
+            11,
+            12
+          ]
+        },
+        {
+          "file": "cast_water/03.png",
+          "rect": [
+            494,
+            2,
+            160,
+            320
+          ],
+          "sourceCell": [
+            768,
+            1015,
+            256,
+            521
+          ],
+          "sourceAlphaBounds": [
+            17,
+            7,
+            235,
+            505
+          ],
+          "scale": 0.6104417670682731,
+          "offset": [
+            13,
+            8
+          ]
+        }
+      ]
+    },
+    "orb_hit_fire": {
+      "atlas": "assets/game/shared/player_weapons/weapon_animation_0928/orb_hit_fire/atlas.png",
+      "size": [
+        160,
+        160
+      ],
+      "fps": 16,
+      "loop": false,
+      "anchor": [
+        80,
+        80
+      ],
+      "source": "orb_hits_a_padded",
+      "notes": "Authored elemental frame reel. Fixed center/origin; do not canvas-rotate or independently rescale frames.",
+      "frames": [
+        {
+          "file": "orb_hit_fire/00.png",
+          "rect": [
+            2,
+            2,
+            160,
+            160
+          ],
+          "sourceCell": [
+            0,
+            0,
+            314,
+            418
+          ],
+          "sourceAlphaBounds": [
+            77,
+            195,
+            229,
+            362
+          ],
+          "scale": 0.549618320610687,
+          "offset": [
+            38,
+            34
+          ]
+        },
+        {
+          "file": "orb_hit_fire/01.png",
+          "rect": [
+            166,
+            2,
+            160,
+            160
+          ],
+          "sourceCell": [
+            314,
+            0,
+            313,
+            418
+          ],
+          "sourceAlphaBounds": [
+            31,
+            135,
+            279,
+            397
+          ],
+          "scale": 0.549618320610687,
+          "offset": [
+            12,
+            8
+          ]
+        },
+        {
+          "file": "orb_hit_fire/02.png",
+          "rect": [
+            330,
+            2,
+            160,
+            160
+          ],
+          "sourceCell": [
+            627,
+            0,
+            313,
+            418
+          ],
+          "sourceAlphaBounds": [
+            45,
+            150,
+            269,
+            390
+          ],
+          "scale": 0.549618320610687,
+          "offset": [
+            18,
+            14
+          ]
+        },
+        {
+          "file": "orb_hit_fire/03.png",
+          "rect": [
+            494,
+            2,
+            160,
+            160
+          ],
+          "sourceCell": [
+            940,
+            0,
+            314,
+            418
+          ],
+          "sourceAlphaBounds": [
+            44,
+            168,
+            248,
+            380
+          ],
+          "scale": 0.549618320610687,
+          "offset": [
+            24,
+            21
+          ]
+        }
+      ]
+    },
+    "orb_hit_ice": {
+      "atlas": "assets/game/shared/player_weapons/weapon_animation_0928/orb_hit_ice/atlas.png",
+      "size": [
+        160,
+        160
+      ],
+      "fps": 16,
+      "loop": false,
+      "anchor": [
+        80,
+        80
+      ],
+      "source": "orb_hits_a_padded",
+      "notes": "Authored elemental frame reel. Fixed center/origin; do not canvas-rotate or independently rescale frames.",
+      "frames": [
+        {
+          "file": "orb_hit_ice/00.png",
+          "rect": [
+            2,
+            2,
+            160,
+            160
+          ],
+          "sourceCell": [
+            0,
+            418,
+            314,
+            418
+          ],
+          "sourceAlphaBounds": [
+            68,
+            155,
+            238,
+            316
+          ],
+          "scale": 0.5142857142857142,
+          "offset": [
+            36,
+            38
+          ]
+        },
+        {
+          "file": "orb_hit_ice/01.png",
+          "rect": [
+            166,
+            2,
+            160,
+            160
+          ],
+          "sourceCell": [
+            314,
+            418,
+            313,
+            418
+          ],
+          "sourceAlphaBounds": [
+            23,
+            88,
+            276,
+            368
+          ],
+          "scale": 0.5142857142857142,
+          "offset": [
+            15,
+            8
+          ]
+        },
+        {
+          "file": "orb_hit_ice/02.png",
+          "rect": [
+            330,
+            2,
+            160,
+            160
+          ],
+          "sourceCell": [
+            627,
+            418,
+            313,
+            418
+          ],
+          "sourceAlphaBounds": [
+            39,
+            100,
+            278,
+            363
+          ],
+          "scale": 0.5142857142857142,
+          "offset": [
+            18,
+            12
+          ]
+        },
+        {
+          "file": "orb_hit_ice/03.png",
+          "rect": [
+            494,
+            2,
+            160,
+            160
+          ],
+          "sourceCell": [
+            940,
+            418,
+            314,
+            418
+          ],
+          "sourceAlphaBounds": [
+            57,
+            124,
+            248,
+            346
+          ],
+          "scale": 0.5142857142857142,
+          "offset": [
+            31,
+            23
+          ]
+        }
+      ]
+    },
+    "orb_hit_lightning": {
+      "atlas": "assets/game/shared/player_weapons/weapon_animation_0928/orb_hit_lightning/atlas.png",
+      "size": [
+        160,
+        160
+      ],
+      "fps": 16,
+      "loop": false,
+      "anchor": [
+        80,
+        80
+      ],
+      "source": "orb_hits_a_padded",
+      "notes": "Authored elemental frame reel. Fixed center/origin; do not canvas-rotate or independently rescale frames.",
+      "frames": [
+        {
+          "file": "orb_hit_lightning/00.png",
+          "rect": [
+            2,
+            2,
+            160,
+            160
+          ],
+          "sourceCell": [
+            0,
+            836,
+            314,
+            418
+          ],
+          "sourceAlphaBounds": [
+            74,
+            110,
+            245,
+            297
+          ],
+          "scale": 0.5124555160142349,
+          "offset": [
+            36,
+            32
+          ]
+        },
+        {
+          "file": "orb_hit_lightning/01.png",
+          "rect": [
+            166,
+            2,
+            160,
+            160
+          ],
+          "sourceCell": [
+            314,
+            836,
+            313,
+            418
+          ],
+          "sourceAlphaBounds": [
+            24,
+            48,
+            277,
+            329
+          ],
+          "scale": 0.5124555160142349,
+          "offset": [
+            15,
+            8
+          ]
+        },
+        {
+          "file": "orb_hit_lightning/02.png",
+          "rect": [
+            330,
+            2,
+            160,
+            160
+          ],
+          "sourceCell": [
+            627,
+            836,
+            313,
+            418
+          ],
+          "sourceAlphaBounds": [
+            42,
+            69,
+            292,
+            325
+          ],
+          "scale": 0.5124555160142349,
+          "offset": [
+            16,
+            14
+          ]
+        },
+        {
+          "file": "orb_hit_lightning/03.png",
+          "rect": [
+            494,
+            2,
+            160,
+            160
+          ],
+          "sourceCell": [
+            940,
+            836,
+            314,
+            418
+          ],
+          "sourceAlphaBounds": [
+            65,
+            94,
+            250,
+            298
+          ],
+          "scale": 0.5124555160142349,
+          "offset": [
+            32,
+            27
+          ]
+        }
+      ]
+    },
+    "orb_hit_kinetic": {
+      "atlas": "assets/game/shared/player_weapons/weapon_animation_0928/orb_hit_kinetic/atlas.png",
+      "size": [
+        160,
+        160
+      ],
+      "fps": 16,
+      "loop": false,
+      "anchor": [
+        80,
+        80
+      ],
+      "source": "orb_hits_b_padded",
+      "notes": "Authored elemental frame reel. Fixed center/origin; do not canvas-rotate or independently rescale frames.",
+      "frames": [
+        {
+          "file": "orb_hit_kinetic/00.png",
+          "rect": [
+            2,
+            2,
+            160,
+            160
+          ],
+          "sourceCell": [
+            0,
+            0,
+            314,
+            418
+          ],
+          "sourceAlphaBounds": [
+            78,
+            189,
+            237,
+            352
+          ],
+          "scale": 0.5806451612903226,
+          "offset": [
+            34,
+            32
+          ]
+        },
+        {
+          "file": "orb_hit_kinetic/01.png",
+          "rect": [
+            166,
+            2,
+            160,
+            160
+          ],
+          "sourceCell": [
+            314,
+            0,
+            313,
+            418
+          ],
+          "sourceAlphaBounds": [
+            43,
+            141,
+            258,
+            389
+          ],
+          "scale": 0.5806451612903226,
+          "offset": [
+            17,
+            8
+          ]
+        },
+        {
+          "file": "orb_hit_kinetic/02.png",
+          "rect": [
+            330,
+            2,
+            160,
+            160
+          ],
+          "sourceCell": [
+            627,
+            0,
+            313,
+            418
+          ],
+          "sourceAlphaBounds": [
+            48,
+            162,
+            264,
+            375
+          ],
+          "scale": 0.5806451612903226,
+          "offset": [
+            17,
+            18
+          ]
+        },
+        {
+          "file": "orb_hit_kinetic/03.png",
+          "rect": [
+            494,
+            2,
+            160,
+            160
+          ],
+          "sourceCell": [
+            940,
+            0,
+            314,
+            418
+          ],
+          "sourceAlphaBounds": [
+            64,
+            168,
+            237,
+            373
+          ],
+          "scale": 0.5806451612903226,
+          "offset": [
+            30,
+            20
+          ]
+        }
+      ]
+    },
+    "orb_hit_chrome": {
+      "atlas": "assets/game/shared/player_weapons/weapon_animation_0928/orb_hit_chrome/atlas.png",
+      "size": [
+        160,
+        160
+      ],
+      "fps": 16,
+      "loop": false,
+      "anchor": [
+        80,
+        80
+      ],
+      "source": "orb_hits_b_padded",
+      "notes": "Authored elemental frame reel. Fixed center/origin; do not canvas-rotate or independently rescale frames.",
+      "frames": [
+        {
+          "file": "orb_hit_chrome/00.png",
+          "rect": [
+            2,
+            2,
+            160,
+            160
+          ],
+          "sourceCell": [
+            0,
+            418,
+            314,
+            418
+          ],
+          "sourceAlphaBounds": [
+            83,
+            153,
+            242,
+            330
+          ],
+          "scale": 0.5806451612903226,
+          "offset": [
+            34,
+            28
+          ]
+        },
+        {
+          "file": "orb_hit_chrome/01.png",
+          "rect": [
+            166,
+            2,
+            160,
+            160
+          ],
+          "sourceCell": [
+            314,
+            418,
+            313,
+            418
+          ],
+          "sourceAlphaBounds": [
+            40,
+            114,
+            263,
+            362
+          ],
+          "scale": 0.5806451612903226,
+          "offset": [
+            15,
+            8
+          ]
+        },
+        {
+          "file": "orb_hit_chrome/02.png",
+          "rect": [
+            330,
+            2,
+            160,
+            160
+          ],
+          "sourceCell": [
+            627,
+            418,
+            313,
+            418
+          ],
+          "sourceAlphaBounds": [
+            53,
+            134,
+            269,
+            351
+          ],
+          "scale": 0.5806451612903226,
+          "offset": [
+            17,
+            17
+          ]
+        },
+        {
+          "file": "orb_hit_chrome/03.png",
+          "rect": [
+            494,
+            2,
+            160,
+            160
+          ],
+          "sourceCell": [
+            940,
+            418,
+            314,
+            418
+          ],
+          "sourceAlphaBounds": [
+            75,
+            170,
+            246,
+            336
+          ],
+          "scale": 0.5806451612903226,
+          "offset": [
+            30,
+            32
+          ]
+        }
+      ]
+    },
+    "orb_hit_dark": {
+      "atlas": "assets/game/shared/player_weapons/weapon_animation_0928/orb_hit_dark/atlas.png",
+      "size": [
+        160,
+        160
+      ],
+      "fps": 16,
+      "loop": false,
+      "anchor": [
+        80,
+        80
+      ],
+      "source": "orb_hits_b_padded",
+      "notes": "Authored elemental frame reel. Fixed center/origin; do not canvas-rotate or independently rescale frames.",
+      "frames": [
+        {
+          "file": "orb_hit_dark/00.png",
+          "rect": [
+            2,
+            2,
+            160,
+            160
+          ],
+          "sourceCell": [
+            0,
+            836,
+            314,
+            418
+          ],
+          "sourceAlphaBounds": [
+            83,
+            120,
+            245,
+            292
+          ],
+          "scale": 0.6486486486486487,
+          "offset": [
+            27,
+            24
+          ]
+        },
+        {
+          "file": "orb_hit_dark/01.png",
+          "rect": [
+            166,
+            2,
+            160,
+            160
+          ],
+          "sourceCell": [
+            314,
+            836,
+            313,
+            418
+          ],
+          "sourceAlphaBounds": [
+            46,
+            87,
+            254,
+            309
+          ],
+          "scale": 0.6486486486486487,
+          "offset": [
+            12,
+            8
+          ]
+        },
+        {
+          "file": "orb_hit_dark/02.png",
+          "rect": [
+            330,
+            2,
+            160,
+            160
+          ],
+          "sourceCell": [
+            627,
+            836,
+            313,
+            418
+          ],
+          "sourceAlphaBounds": [
+            53,
+            92,
+            263,
+            292
+          ],
+          "scale": 0.6486486486486487,
+          "offset": [
+            12,
+            15
+          ]
+        },
+        {
+          "file": "orb_hit_dark/03.png",
+          "rect": [
+            494,
+            2,
+            160,
+            160
+          ],
+          "sourceCell": [
+            940,
+            836,
+            314,
+            418
+          ],
+          "sourceAlphaBounds": [
+            68,
+            127,
+            244,
+            284
+          ],
+          "scale": 0.6486486486486487,
+          "offset": [
+            23,
+            29
+          ]
+        }
+      ]
+    },
+    "orb_hit_toxic": {
+      "atlas": "assets/game/shared/player_weapons/weapon_animation_0928/orb_hit_toxic/atlas.png",
+      "size": [
+        160,
+        160
+      ],
+      "fps": 16,
+      "loop": false,
+      "anchor": [
+        80,
+        80
+      ],
+      "source": "orb_hits_c_padded",
+      "notes": "Authored elemental frame reel. Fixed center/origin; do not canvas-rotate or independently rescale frames.",
+      "frames": [
+        {
+          "file": "orb_hit_toxic/00.png",
+          "rect": [
+            2,
+            2,
+            160,
+            160
+          ],
+          "sourceCell": [
+            0,
+            0,
+            314,
+            418
+          ],
+          "sourceAlphaBounds": [
+            92,
+            194,
+            244,
+            365
+          ],
+          "scale": 0.6666666666666666,
+          "offset": [
+            29,
+            23
+          ]
+        },
+        {
+          "file": "orb_hit_toxic/01.png",
+          "rect": [
+            166,
+            2,
+            160,
+            160
+          ],
+          "sourceCell": [
+            314,
+            0,
+            313,
+            418
+          ],
+          "sourceAlphaBounds": [
+            53,
+            162,
+            259,
+            378
+          ],
+          "scale": 0.6666666666666666,
+          "offset": [
+            11,
+            8
+          ]
+        },
+        {
+          "file": "orb_hit_toxic/02.png",
+          "rect": [
+            330,
+            2,
+            160,
+            160
+          ],
+          "sourceCell": [
+            627,
+            0,
+            313,
+            418
+          ],
+          "sourceAlphaBounds": [
+            52,
+            181,
+            253,
+            374
+          ],
+          "scale": 0.6666666666666666,
+          "offset": [
+            13,
+            15
+          ]
+        },
+        {
+          "file": "orb_hit_toxic/03.png",
+          "rect": [
+            494,
+            2,
+            160,
+            160
+          ],
+          "sourceCell": [
+            940,
+            0,
+            314,
+            418
+          ],
+          "sourceAlphaBounds": [
+            58,
+            199,
+            214,
+            371
+          ],
+          "scale": 0.6666666666666666,
+          "offset": [
+            28,
+            22
+          ]
+        }
+      ]
+    },
+    "orb_hit_prism": {
+      "atlas": "assets/game/shared/player_weapons/weapon_animation_0928/orb_hit_prism/atlas.png",
+      "size": [
+        160,
+        160
+      ],
+      "fps": 16,
+      "loop": false,
+      "anchor": [
+        80,
+        80
+      ],
+      "source": "orb_hits_c_padded",
+      "notes": "Authored elemental frame reel. Fixed center/origin; do not canvas-rotate or independently rescale frames.",
+      "frames": [
+        {
+          "file": "orb_hit_prism/00.png",
+          "rect": [
+            2,
+            2,
+            160,
+            160
+          ],
+          "sourceCell": [
+            0,
+            418,
+            314,
+            418
+          ],
+          "sourceAlphaBounds": [
+            87,
+            134,
+            243,
+            300
+          ],
+          "scale": 0.602510460251046,
+          "offset": [
+            33,
+            30
+          ]
+        },
+        {
+          "file": "orb_hit_prism/01.png",
+          "rect": [
+            166,
+            2,
+            160,
+            160
+          ],
+          "sourceCell": [
+            314,
+            418,
+            313,
+            418
+          ],
+          "sourceAlphaBounds": [
+            46,
+            95,
+            264,
+            334
+          ],
+          "scale": 0.602510460251046,
+          "offset": [
+            14,
+            8
+          ]
+        },
+        {
+          "file": "orb_hit_prism/02.png",
+          "rect": [
+            330,
+            2,
+            160,
+            160
+          ],
+          "sourceCell": [
+            627,
+            418,
+            313,
+            418
+          ],
+          "sourceAlphaBounds": [
+            58,
+            117,
+            264,
+            327
+          ],
+          "scale": 0.602510460251046,
+          "offset": [
+            18,
+            16
+          ]
+        },
+        {
+          "file": "orb_hit_prism/03.png",
+          "rect": [
+            494,
+            2,
+            160,
+            160
+          ],
+          "sourceCell": [
+            940,
+            418,
+            314,
+            418
+          ],
+          "sourceAlphaBounds": [
+            80,
+            143,
+            227,
+            308
+          ],
+          "scale": 0.602510460251046,
+          "offset": [
+            35,
+            30
+          ]
+        }
+      ]
+    },
+    "orb_hit_water": {
+      "atlas": "assets/game/shared/player_weapons/weapon_animation_0928/orb_hit_water/atlas.png",
+      "size": [
+        160,
+        160
+      ],
+      "fps": 16,
+      "loop": false,
+      "anchor": [
+        80,
+        80
+      ],
+      "source": "orb_hits_c_padded",
+      "notes": "Authored elemental frame reel. Fixed center/origin; do not canvas-rotate or independently rescale frames.",
+      "frames": [
+        {
+          "file": "orb_hit_water/00.png",
+          "rect": [
+            2,
+            2,
+            160,
+            160
+          ],
+          "sourceCell": [
+            0,
+            836,
+            314,
+            418
+          ],
+          "sourceAlphaBounds": [
+            87,
+            74,
+            244,
+            244
+          ],
+          "scale": 0.64,
+          "offset": [
+            30,
+            25
+          ]
+        },
+        {
+          "file": "orb_hit_water/01.png",
+          "rect": [
+            166,
+            2,
+            160,
+            160
+          ],
+          "sourceCell": [
+            314,
+            836,
+            313,
+            418
+          ],
+          "sourceAlphaBounds": [
+            42,
+            43,
+            262,
+            268
+          ],
+          "scale": 0.64,
+          "offset": [
+            9,
+            8
+          ]
+        },
+        {
+          "file": "orb_hit_water/02.png",
+          "rect": [
+            330,
+            2,
+            160,
+            160
+          ],
+          "sourceCell": [
+            627,
+            836,
+            313,
+            418
+          ],
+          "sourceAlphaBounds": [
+            53,
+            54,
+            257,
+            263
+          ],
+          "scale": 0.64,
+          "offset": [
+            14,
+            13
+          ]
+        },
+        {
+          "file": "orb_hit_water/03.png",
+          "rect": [
+            494,
+            2,
+            160,
+            160
+          ],
+          "sourceCell": [
+            940,
+            836,
+            314,
+            418
+          ],
+          "sourceAlphaBounds": [
+            72,
+            74,
+            233,
+            252
+          ],
+          "scale": 0.64,
+          "offset": [
+            28,
+            23
+          ]
+        }
+      ]
+    },
+    "chaingun_round": {
+      "atlas": "assets/game/shared/player_weapons/weapon_animation_0928/chaingun_round/atlas.png",
+      "size": [
+        48,
+        80
+      ],
+      "fps": 16,
+      "loop": true,
+      "anchor": [
+        24,
+        6
+      ],
+      "source": "ballistic",
+      "notes": "Projectile tip anchor; short animated tracer.",
+      "frames": [
+        {
+          "file": "chaingun_round/00.png",
+          "rect": [
+            2,
+            2,
+            48,
+            80
+          ],
+          "sourceCell": [
+            0,
+            0,
+            314,
+            251
+          ],
+          "sourceAlphaBounds": [
+            137,
+            59,
+            177,
+            244
+          ],
+          "scale": 0.33663366336633666,
+          "offset": [
+            17,
+            6
+          ]
+        },
+        {
+          "file": "chaingun_round/01.png",
+          "rect": [
+            54,
+            2,
+            48,
+            80
+          ],
+          "sourceCell": [
+            314,
+            0,
+            313,
+            251
+          ],
+          "sourceAlphaBounds": [
+            136,
+            48,
+            177,
+            243
+          ],
+          "scale": 0.33663366336633666,
+          "offset": [
+            17,
+            6
+          ]
+        },
+        {
+          "file": "chaingun_round/02.png",
+          "rect": [
+            106,
+            2,
+            48,
+            80
+          ],
+          "sourceCell": [
+            627,
+            0,
+            313,
+            251
+          ],
+          "sourceAlphaBounds": [
+            137,
+            41,
+            177,
+            243
+          ],
+          "scale": 0.33663366336633666,
+          "offset": [
+            17,
+            6
+          ]
+        },
+        {
+          "file": "chaingun_round/03.png",
+          "rect": [
+            158,
+            2,
+            48,
+            80
+          ],
+          "sourceCell": [
+            940,
+            0,
+            314,
+            251
+          ],
+          "sourceAlphaBounds": [
+            140,
+            41,
+            174,
+            243
+          ],
+          "scale": 0.33663366336633666,
+          "offset": [
+            18,
+            6
+          ]
+        }
+      ]
+    },
+    "chaingun_muzzle": {
+      "atlas": "assets/game/shared/player_weapons/weapon_animation_0928/chaingun_muzzle/atlas.png",
+      "size": [
+        96,
+        144
+      ],
+      "fps": 24,
+      "loop": false,
+      "anchor": [
+        48,
+        136
+      ],
+      "source": "ballistic",
+      "notes": "Directional flash with firing origin at bottom.",
+      "frames": [
+        {
+          "file": "chaingun_muzzle/00.png",
+          "rect": [
+            2,
+            2,
+            96,
+            144
+          ],
+          "sourceCell": [
+            0,
+            251,
+            314,
+            251
+          ],
+          "sourceAlphaBounds": [
+            95,
+            100,
+            221,
+            230
+          ],
+          "scale": 0.6060606060606061,
+          "offset": [
+            10,
+            57
+          ]
+        },
+        {
+          "file": "chaingun_muzzle/01.png",
+          "rect": [
+            102,
+            2,
+            96,
+            144
+          ],
+          "sourceCell": [
+            314,
+            251,
+            313,
+            251
+          ],
+          "sourceAlphaBounds": [
+            91,
+            33,
+            223,
+            230
+          ],
+          "scale": 0.6060606060606061,
+          "offset": [
+            8,
+            17
+          ]
+        },
+        {
+          "file": "chaingun_muzzle/02.png",
+          "rect": [
+            202,
+            2,
+            96,
+            144
+          ],
+          "sourceCell": [
+            627,
+            251,
+            313,
+            251
+          ],
+          "sourceAlphaBounds": [
+            95,
+            41,
+            222,
+            230
+          ],
+          "scale": 0.6060606060606061,
+          "offset": [
+            9,
+            21
+          ]
+        },
+        {
+          "file": "chaingun_muzzle/03.png",
+          "rect": [
+            302,
+            2,
+            96,
+            144
+          ],
+          "sourceCell": [
+            940,
+            251,
+            314,
+            251
+          ],
+          "sourceAlphaBounds": [
+            97,
+            75,
+            218,
+            230
+          ],
+          "scale": 0.6060606060606061,
+          "offset": [
+            11,
+            42
+          ]
+        },
+        {
+          "file": "chaingun_muzzle/04.png",
+          "rect": [
+            402,
+            2,
+            96,
+            144
+          ],
+          "sourceCell": [
+            0,
+            502,
+            314,
+            250
+          ],
+          "sourceAlphaBounds": [
+            98,
+            56,
+            213,
+            231
+          ],
+          "scale": 0.6060606060606061,
+          "offset": [
+            13,
+            30
+          ]
+        },
+        {
+          "file": "chaingun_muzzle/05.png",
+          "rect": [
+            502,
+            2,
+            96,
+            144
+          ],
+          "sourceCell": [
+            314,
+            502,
+            313,
+            250
+          ],
+          "sourceAlphaBounds": [
+            111,
+            60,
+            201,
+            231
+          ],
+          "scale": 0.6060606060606061,
+          "offset": [
+            20,
+            32
+          ]
+        },
+        {
+          "file": "chaingun_muzzle/06.png",
+          "rect": [
+            602,
+            2,
+            96,
+            144
+          ],
+          "sourceCell": [
+            627,
+            502,
+            313,
+            250
+          ],
+          "sourceAlphaBounds": [
+            109,
+            77,
+            203,
+            230
+          ],
+          "scale": 0.6060606060606061,
+          "offset": [
+            19,
+            43
+          ]
+        },
+        {
+          "file": "chaingun_muzzle/07.png",
+          "rect": [
+            702,
+            2,
+            96,
+            144
+          ],
+          "sourceCell": [
+            940,
+            502,
+            314,
+            250
+          ],
+          "sourceAlphaBounds": [
+            115,
+            88,
+            190,
+            230
+          ],
+          "scale": 0.6060606060606061,
+          "offset": [
+            25,
+            50
+          ]
+        }
+      ]
+    },
+    "chaingun_impact": {
+      "atlas": "assets/game/shared/player_weapons/weapon_animation_0928/chaingun_impact/atlas.png",
+      "size": [
+        160,
+        160
+      ],
+      "fps": 24,
+      "loop": false,
+      "anchor": [
+        80,
+        80
+      ],
+      "source": "ballistic",
+      "notes": "Metal shrapnel and penetrating impact.",
+      "frames": [
+        {
+          "file": "chaingun_impact/00.png",
+          "rect": [
+            2,
+            2,
+            160,
+            160
+          ],
+          "sourceCell": [
+            0,
+            752,
+            314,
+            251
+          ],
+          "sourceAlphaBounds": [
+            68,
+            36,
+            245,
+            231
+          ],
+          "scale": 0.6728971962616822,
+          "offset": [
+            20,
+            14
+          ]
+        },
+        {
+          "file": "chaingun_impact/01.png",
+          "rect": [
+            166,
+            2,
+            160,
+            160
+          ],
+          "sourceCell": [
+            314,
+            752,
+            313,
+            251
+          ],
+          "sourceAlphaBounds": [
+            59,
+            36,
+            261,
+            231
+          ],
+          "scale": 0.6728971962616822,
+          "offset": [
+            12,
+            14
+          ]
+        },
+        {
+          "file": "chaingun_impact/02.png",
+          "rect": [
+            330,
+            2,
+            160,
+            160
+          ],
+          "sourceCell": [
+            627,
+            752,
+            313,
+            251
+          ],
+          "sourceAlphaBounds": [
+            61,
+            24,
+            257,
+            231
+          ],
+          "scale": 0.6728971962616822,
+          "offset": [
+            14,
+            10
+          ]
+        },
+        {
+          "file": "chaingun_impact/03.png",
+          "rect": [
+            494,
+            2,
+            160,
+            160
+          ],
+          "sourceCell": [
+            940,
+            752,
+            314,
+            251
+          ],
+          "sourceAlphaBounds": [
+            49,
+            49,
+            263,
+            226
+          ],
+          "scale": 0.6728971962616822,
+          "offset": [
+            8,
+            20
+          ]
+        },
+        {
+          "file": "chaingun_impact/04.png",
+          "rect": [
+            658,
+            2,
+            160,
+            160
+          ],
+          "sourceCell": [
+            0,
+            1003,
+            314,
+            251
+          ],
+          "sourceAlphaBounds": [
+            86,
+            41,
+            232,
+            219
+          ],
+          "scale": 0.6728971962616822,
+          "offset": [
+            31,
+            20
+          ]
+        },
+        {
+          "file": "chaingun_impact/05.png",
+          "rect": [
+            822,
+            2,
+            160,
+            160
+          ],
+          "sourceCell": [
+            314,
+            1003,
+            313,
+            251
+          ],
+          "sourceAlphaBounds": [
+            79,
+            56,
+            234,
+            220
+          ],
+          "scale": 0.6728971962616822,
+          "offset": [
+            28,
+            25
+          ]
+        },
+        {
+          "file": "chaingun_impact/06.png",
+          "rect": [
+            986,
+            2,
+            160,
+            160
+          ],
+          "sourceCell": [
+            627,
+            1003,
+            313,
+            251
+          ],
+          "sourceAlphaBounds": [
+            104,
+            67,
+            218,
+            212
+          ],
+          "scale": 0.6728971962616822,
+          "offset": [
+            41,
+            31
+          ]
+        },
+        {
+          "file": "chaingun_impact/07.png",
+          "rect": [
+            1150,
+            2,
+            160,
+            160
+          ],
+          "sourceCell": [
+            940,
+            1003,
+            314,
+            251
+          ],
+          "sourceAlphaBounds": [
+            121,
+            102,
+            190,
+            216
+          ],
+          "scale": 0.6728971962616822,
+          "offset": [
+            57,
+            41
+          ]
+        }
+      ]
+    },
+    "chaingun_round_fire": {
+      "atlas": "assets/game/shared/player_weapons/weapon_animation_0928/chaingun_round_fire/atlas.png",
+      "size": [
+        48,
+        96
+      ],
+      "fps": 1,
+      "loop": false,
+      "anchor": [
+        24,
+        6
+      ],
+      "source": "round_elements",
+      "notes": "Single directional infused ballistic round; inherits MG element in runtime.",
+      "frames": [
+        {
+          "file": "chaingun_round_fire/00.png",
+          "rect": [
+            2,
+            2,
+            48,
+            96
+          ],
+          "sourceCell": [
+            0,
+            0,
+            475,
+            432
+          ],
+          "sourceAlphaBounds": [
+            263,
+            15,
+            407,
+            422
+          ],
+          "scale": 0.20638820638820637,
+          "offset": [
+            9,
+            6
+          ]
+        }
+      ]
+    },
+    "chaingun_round_ice": {
+      "atlas": "assets/game/shared/player_weapons/weapon_animation_0928/chaingun_round_ice/atlas.png",
+      "size": [
+        48,
+        96
+      ],
+      "fps": 1,
+      "loop": false,
+      "anchor": [
+        24,
+        6
+      ],
+      "source": "round_elements",
+      "notes": "Single directional infused ballistic round; inherits MG element in runtime.",
+      "frames": [
+        {
+          "file": "chaingun_round_ice/00.png",
+          "rect": [
+            2,
+            2,
+            48,
+            96
+          ],
+          "sourceCell": [
+            475,
+            0,
+            293,
+            432
+          ],
+          "sourceAlphaBounds": [
+            81,
+            15,
+            222,
+            416
+          ],
+          "scale": 0.20947630922693267,
+          "offset": [
+            9,
+            6
+          ]
+        }
+      ]
+    },
+    "chaingun_round_lightning": {
+      "atlas": "assets/game/shared/player_weapons/weapon_animation_0928/chaingun_round_lightning/atlas.png",
+      "size": [
+        48,
+        96
+      ],
+      "fps": 1,
+      "loop": false,
+      "anchor": [
+        24,
+        6
+      ],
+      "source": "round_elements",
+      "notes": "Single directional infused ballistic round; inherits MG element in runtime.",
+      "frames": [
+        {
+          "file": "chaingun_round_lightning/00.png",
+          "rect": [
+            2,
+            2,
+            48,
+            96
+          ],
+          "sourceCell": [
+            768,
+            0,
+            486,
+            432
+          ],
+          "sourceAlphaBounds": [
+            80,
+            15,
+            231,
+            426
+          ],
+          "scale": 0.20437956204379562,
+          "offset": [
+            8,
+            6
+          ]
+        }
+      ]
+    },
+    "chaingun_round_kinetic": {
+      "atlas": "assets/game/shared/player_weapons/weapon_animation_0928/chaingun_round_kinetic/atlas.png",
+      "size": [
+        48,
+        96
+      ],
+      "fps": 1,
+      "loop": false,
+      "anchor": [
+        24,
+        6
+      ],
+      "source": "round_elements",
+      "notes": "Single directional infused ballistic round; inherits MG element in runtime.",
+      "frames": [
+        {
+          "file": "chaingun_round_kinetic/00.png",
+          "rect": [
+            2,
+            2,
+            48,
+            96
+          ],
+          "sourceCell": [
+            0,
+            432,
+            475,
+            392
+          ],
+          "sourceAlphaBounds": [
+            227,
+            3,
+            425,
+            388
+          ],
+          "scale": 0.18181818181818182,
+          "offset": [
+            6,
+            6
+          ]
+        }
+      ]
+    },
+    "chaingun_round_chrome": {
+      "atlas": "assets/game/shared/player_weapons/weapon_animation_0928/chaingun_round_chrome/atlas.png",
+      "size": [
+        48,
+        96
+      ],
+      "fps": 1,
+      "loop": false,
+      "anchor": [
+        24,
+        6
+      ],
+      "source": "round_elements",
+      "notes": "Single directional infused ballistic round; inherits MG element in runtime.",
+      "frames": [
+        {
+          "file": "chaingun_round_chrome/00.png",
+          "rect": [
+            2,
+            2,
+            48,
+            96
+          ],
+          "sourceCell": [
+            475,
+            432,
+            293,
+            392
+          ],
+          "sourceAlphaBounds": [
+            87,
+            4,
+            218,
+            384
+          ],
+          "scale": 0.22105263157894736,
+          "offset": [
+            9,
+            6
+          ]
+        }
+      ]
+    },
+    "chaingun_round_dark": {
+      "atlas": "assets/game/shared/player_weapons/weapon_animation_0928/chaingun_round_dark/atlas.png",
+      "size": [
+        48,
+        96
+      ],
+      "fps": 1,
+      "loop": false,
+      "anchor": [
+        24,
+        6
+      ],
+      "source": "round_elements",
+      "notes": "Single directional infused ballistic round; inherits MG element in runtime.",
+      "frames": [
+        {
+          "file": "chaingun_round_dark/00.png",
+          "rect": [
+            2,
+            2,
+            48,
+            96
+          ],
+          "sourceCell": [
+            768,
+            432,
+            486,
+            392
+          ],
+          "sourceAlphaBounds": [
+            85,
+            4,
+            234,
+            392
+          ],
+          "scale": 0.21649484536082475,
+          "offset": [
+            8,
+            6
+          ]
+        }
+      ]
+    },
+    "chaingun_round_toxic": {
+      "atlas": "assets/game/shared/player_weapons/weapon_animation_0928/chaingun_round_toxic/atlas.png",
+      "size": [
+        48,
+        96
+      ],
+      "fps": 1,
+      "loop": false,
+      "anchor": [
+        24,
+        6
+      ],
+      "source": "round_elements",
+      "notes": "Single directional infused ballistic round; inherits MG element in runtime.",
+      "frames": [
+        {
+          "file": "chaingun_round_toxic/00.png",
+          "rect": [
+            2,
+            2,
+            48,
+            96
+          ],
+          "sourceCell": [
+            0,
+            824,
+            475,
+            430
+          ],
+          "sourceAlphaBounds": [
+            258,
+            7,
+            399,
+            419
+          ],
+          "scale": 0.20388349514563106,
+          "offset": [
+            9,
+            6
+          ]
+        }
+      ]
+    },
+    "chaingun_round_prism": {
+      "atlas": "assets/game/shared/player_weapons/weapon_animation_0928/chaingun_round_prism/atlas.png",
+      "size": [
+        48,
+        96
+      ],
+      "fps": 1,
+      "loop": false,
+      "anchor": [
+        24,
+        6
+      ],
+      "source": "round_elements",
+      "notes": "Single directional infused ballistic round; inherits MG element in runtime.",
+      "frames": [
+        {
+          "file": "chaingun_round_prism/00.png",
+          "rect": [
+            2,
+            2,
+            48,
+            96
+          ],
+          "sourceCell": [
+            475,
+            824,
+            293,
+            430
+          ],
+          "sourceAlphaBounds": [
+            95,
+            7,
+            207,
+            410
+          ],
+          "scale": 0.20843672456575682,
+          "offset": [
+            12,
+            6
+          ]
+        }
+      ]
+    },
+    "chaingun_round_water": {
+      "atlas": "assets/game/shared/player_weapons/weapon_animation_0928/chaingun_round_water/atlas.png",
+      "size": [
+        48,
+        96
+      ],
+      "fps": 1,
+      "loop": false,
+      "anchor": [
+        24,
+        6
+      ],
+      "source": "round_elements",
+      "notes": "Single directional infused ballistic round; inherits MG element in runtime.",
+      "frames": [
+        {
+          "file": "chaingun_round_water/00.png",
+          "rect": [
+            2,
+            2,
+            48,
+            96
+          ],
+          "sourceCell": [
+            768,
+            824,
+            486,
+            430
+          ],
+          "sourceAlphaBounds": [
+            72,
+            7,
+            225,
+            421
+          ],
+          "scale": 0.2028985507246377,
+          "offset": [
+            8,
+            6
+          ]
+        }
+      ]
+    },
+    "chromium_activation_hammer_only": {
+      "atlas": "assets/game/shared/player_weapons/weapon_animation_0928/chromium_activation_hammer_only/atlas.png",
+      "size": [
+        320,
+        480
+      ],
+      "fps": 10,
+      "loop": false,
+      "anchor": [
+        160,
+        468
+      ],
+      "source": "chromium_corrected",
+      "notes": "Correct current hammer-only boss. Neutral, hand rise, silver lightning, armor coating, armored settle. No back chaingun.",
+      "frames": [
+        {
+          "file": "chromium_activation_hammer_only/00.png",
+          "rect": [
+            2,
+            2,
+            320,
+            480
+          ],
+          "sourceCell": [
+            0,
+            0,
+            314,
+            373
+          ],
+          "sourceAlphaBounds": [
+            15,
+            102,
+            270,
+            373
+          ],
+          "scale": 1.0313588850174216,
+          "offset": [
+            18,
+            189
+          ]
+        },
+        {
+          "file": "chromium_activation_hammer_only/01.png",
+          "rect": [
+            326,
+            2,
+            320,
+            480
+          ],
+          "sourceCell": [
+            314,
+            0,
+            313,
+            373
+          ],
+          "sourceAlphaBounds": [
+            14,
+            102,
+            276,
+            373
+          ],
+          "scale": 1.0313588850174216,
+          "offset": [
+            16,
+            189
+          ]
+        },
+        {
+          "file": "chromium_activation_hammer_only/02.png",
+          "rect": [
+            650,
+            2,
+            320,
+            480
+          ],
+          "sourceCell": [
+            627,
+            0,
+            313,
+            373
+          ],
+          "sourceAlphaBounds": [
+            12,
+            102,
+            296,
+            373
+          ],
+          "scale": 1.0313588850174216,
+          "offset": [
+            15,
+            189
+          ]
+        },
+        {
+          "file": "chromium_activation_hammer_only/03.png",
+          "rect": [
+            974,
+            2,
+            320,
+            480
+          ],
+          "sourceCell": [
+            940,
+            0,
+            314,
+            373
+          ],
+          "sourceAlphaBounds": [
+            5,
+            24,
+            277,
+            373
+          ],
+          "scale": 1.0313588850174216,
+          "offset": [
+            13,
+            108
+          ]
+        },
+        {
+          "file": "chromium_activation_hammer_only/04.png",
+          "rect": [
+            1298,
+            2,
+            320,
+            480
+          ],
+          "sourceCell": [
+            0,
+            373,
+            314,
+            432
+          ],
+          "sourceAlphaBounds": [
+            10,
+            0,
+            291,
+            423
+          ],
+          "scale": 1.0313588850174216,
+          "offset": [
+            9,
+            32
+          ]
+        },
+        {
+          "file": "chromium_activation_hammer_only/05.png",
+          "rect": [
+            1622,
+            2,
+            320,
+            480
+          ],
+          "sourceCell": [
+            314,
+            373,
+            313,
+            432
+          ],
+          "sourceAlphaBounds": [
+            8,
+            0,
+            286,
+            423
+          ],
+          "scale": 1.0313588850174216,
+          "offset": [
+            11,
+            32
+          ]
+        },
+        {
+          "file": "chromium_activation_hammer_only/06.png",
+          "rect": [
+            1946,
+            2,
+            320,
+            480
+          ],
+          "sourceCell": [
+            627,
+            373,
+            313,
+            432
+          ],
+          "sourceAlphaBounds": [
+            7,
+            76,
+            294,
+            423
+          ],
+          "scale": 1.0313588850174216,
+          "offset": [
+            11,
+            110
+          ]
+        },
+        {
+          "file": "chromium_activation_hammer_only/07.png",
+          "rect": [
+            2270,
+            2,
+            320,
+            480
+          ],
+          "sourceCell": [
+            940,
+            373,
+            314,
+            432
+          ],
+          "sourceAlphaBounds": [
+            1,
+            77,
+            283,
+            423
+          ],
+          "scale": 1.0313588850174216,
+          "offset": [
+            6,
+            111
+          ]
+        },
+        {
+          "file": "chromium_activation_hammer_only/08.png",
+          "rect": [
+            2,
+            486,
+            320,
+            480
+          ],
+          "sourceCell": [
+            0,
+            805,
+            314,
+            449
+          ],
+          "sourceAlphaBounds": [
+            10,
+            6,
+            289,
+            387
+          ],
+          "scale": 1.0313588850174216,
+          "offset": [
+            11,
+            75
+          ]
+        },
+        {
+          "file": "chromium_activation_hammer_only/09.png",
+          "rect": [
+            326,
+            486,
+            320,
+            480
+          ],
+          "sourceCell": [
+            314,
+            805,
+            313,
+            449
+          ],
+          "sourceAlphaBounds": [
+            7,
+            49,
+            289,
+            387
+          ],
+          "scale": 1.0313588850174216,
+          "offset": [
+            10,
+            119
+          ]
+        },
+        {
+          "file": "chromium_activation_hammer_only/10.png",
+          "rect": [
+            650,
+            486,
+            320,
+            480
+          ],
+          "sourceCell": [
+            627,
+            805,
+            313,
+            449
+          ],
+          "sourceAlphaBounds": [
+            7,
+            119,
+            290,
+            388
+          ],
+          "scale": 1.0313588850174216,
+          "offset": [
+            11,
+            191
+          ]
+        },
+        {
+          "file": "chromium_activation_hammer_only/11.png",
+          "rect": [
+            974,
+            486,
+            320,
+            480
+          ],
+          "sourceCell": [
+            940,
+            805,
+            314,
+            449
+          ],
+          "sourceAlphaBounds": [
+            4,
+            119,
+            268,
+            389
+          ],
+          "scale": 1.0313588850174216,
+          "offset": [
+            11,
+            190
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -14,7 +14,7 @@ Everything here is DERIVED from authored plates - nothing is painted or procedur
   ace_mod_<body|wingL|wingR>[_dmg].png   the Nightwing Ace cut at its wing roots (x 63 / 137 of 200) so the
                              wings can foreshorten independently in a bank; drawn together unmodified they
                              reproduce the plate exactly (asserted)
-Run from the repo root. Writes into assets/game/bosses/skycarrier/.
+Run from the repo root. Writes into assets/game/levels/stage_06/boss/bosses/skycarrier/.
 """
 import os, math, colorsys
 from PIL import Image

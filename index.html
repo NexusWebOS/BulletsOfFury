@@ -6,7 +6,7 @@
 <title>Bullets of Fury</title>
 <style>
   /* Command Signal shares the uppercase bitmap dialogue letterforms with legacy canvas text. */
-  @font-face{ font-family:'BOFmil'; src:url('assets/game/fonts/command_0914/BOFCommandSignal.ttf') format('truetype'); font-display:swap; }
+  @font-face{ font-family:'BOFmil'; src:url('assets/game/shared/fonts/fonts/command_0914/BOFCommandSignal.ttf') format('truetype'); font-display:swap; }
   html,body{margin:0;padding:0;height:100%;background:#05060a;overflow:hidden;
     font-family:"Courier New",monospace;color:#cfd6e0;-webkit-user-select:none;user-select:none;touch-action:none;}
   /* ROOM: a simple centred row — credits, game, credits. No cabinet, no filtered ancestor. */
@@ -53,7 +53,7 @@
   #wide-map-world{position:fixed;inset:0;display:none;z-index:0;pointer-events:none;image-rendering:pixelated;}
   .wide-overlay{position:fixed;display:none;z-index:2;pointer-events:none;image-rendering:pixelated;filter:drop-shadow(0 8px 20px rgba(0,0,0,.75));}
   #wide-clock{z-index:4;}
-  #wide-map-top{position:fixed;display:none;z-index:2;pointer-events:none;background:#0a1a2b url('assets/game/campaign_map_v2/ocean.png') center/cover no-repeat;}
+  #wide-map-top{position:fixed;display:none;z-index:2;pointer-events:none;background:#0a1a2b url('assets/game/shared/campaign/campaign_map_v2/ocean.png') center/cover no-repeat;}
   body.wide-map #room{background:#04102a;}
   body.wide-map #game-frame{box-shadow:none;background:transparent;width:93.75vh !important;height:100vh !important;}
   body.wide-map #hud-row,body.wide-map #hud-div{display:none !important;}
@@ -315,19 +315,20 @@
   L();
 })();
 </script>
+<script src="assets/asset_paths_1007.js"></script>
 <script src="assets/manifest.js"></script>
 <script src="assets/stagefonts_v4.js"></script>
-<script src="assets/game/fonts/bmf_maps.js"></script>
-<script src="assets/game/fonts/command_0914/fonts.js"></script>
+<script src="assets/game/shared/fonts/fonts/bmf_maps.js"></script>
+<script src="assets/game/shared/fonts/fonts/command_0914/fonts.js"></script>
 <!-- Measured section geometry for the eight 0801hm miniboss bodies (window.BOFSG).
      Must load BEFORE game.js: sxDraw composites the body from its section plates
      using these offsets, and sxHit attributes shots with these centroids. -->
 <script src="assets/section_geom.js"></script>
 <!-- Gravity Mode atlas metadata is a classic script so direct file:// play works too; fetch()
      cannot read a neighbouring JSON file in that mode. The texture itself is still one atlas. -->
-<script src="assets/game/atlas/bof_gravity_mode_space_weapons.js"></script>
-<script src="assets/game/atlas/stage_runtime_atlases.js"></script>
-<script src="assets/game/atlas/stage5_runtime_atlas.js"></script>
+<script src="assets/game/shared/atlases/bof_gravity_mode_space_weapons.js"></script>
+<script src="assets/game/shared/atlases/stage_runtime_atlases.js"></script>
+<script src="assets/game/levels/stage_05/enemies/stage5_runtime_atlas.js"></script>
 <script src="assets/audio_feedback_0927.js"></script>
 <script src="assets/game.js"></script>
 <script src="assets/campaign_story_0924.js"></script>
@@ -441,6 +442,11 @@
 <script src="assets/widescreen_hud_0918.js"></script>
 <script src="assets/online-config.js"></script>
 <script src="assets/online.js"></script>
+<script src="assets/asset_memory_1007.js"></script>
+<script src="assets/maneuver_safety_1007.js"></script>
+<script src="assets/balance_recovery_1007b.js"></script>
+<script src="assets/enemy_hud_art_1007c.js"></script>
+<script src="assets/enemy_hud_1007c.js"></script>
 <!-- Campaign world now renders once, on the full-width game canvas. -->
 
 <script>

@@ -1,6 +1,6 @@
 /* Optional Stage-6 Harrier-route consequence: five scattered rivals, two selected wingmen. */
 // Mike's Stage X score. Keep the regular Stage 6 boss music independently mapped.
-BOFA.music.stagex='assets/game/music/LevelX.mp3';
+BOFA.music.stagex='assets/game/levels/stage_x/audio/music/LevelX.mp3';
 if(Snd){const m=new window.Audio();m.preload='none';m.src=BOFA.music.stagex;m.loop=true;Snd.music.stagex=m;}
 const Rival24=(()=>{
   const STAGES_AT=[6,6,6,6,6];

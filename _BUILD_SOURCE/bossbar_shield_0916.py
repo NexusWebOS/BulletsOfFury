@@ -7,7 +7,7 @@ bossbar_shield_0916.py - THE SHIELD GETS ITS OWN BAR, AND THE FILLS BECOME OURS.
 Mike, 0916: "Shield should get it's own shield like boss bar, not the same as the boss bar. our own
 custom solid/shield fills too. and Shield should be colored Blue as text."
 
-Builds four things and appends them to assets/game/atlas/ui_bossbar.png:
+Builds four things and appends them to assets/game/shared/ui/ui_bossbar.png:
 
   bmbar_frame_shield   700x33  the shield's OWN bar
   bmbar_tab_shield     204x30  its tab, built from that frame's own bands

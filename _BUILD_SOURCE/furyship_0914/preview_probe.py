@@ -14,7 +14,7 @@ try:
   page=browser.new_page(viewport={'width':1100,'height':1000})
   page.on('pageerror',lambda e:errors.append(str(e)))
   page.on('console',lambda m:errors.append(m.text) if m.type=='error' else None)
-  page.goto(f'http://127.0.0.1:{port}/assets/game/furyship_0914/preview.html',wait_until='networkidle')
+  page.goto(f'http://127.0.0.1:{port}/assets/game/shared/ships/furyship_0914/preview.html',wait_until='networkidle')
   for name in ['nose','hull','wing_left','wing_right','engine_left','engine_right','assembly','veil','speed','thrusters','roll','somersault']:
    page.select_option('#family',name)
    page.wait_for_timeout(100)

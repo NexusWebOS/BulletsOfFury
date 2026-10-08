@@ -4,7 +4,7 @@ Editable source PNGs remain untouched. The emitted JS table lets XART resolve ev
 to a stage-owned sheet and release that sheet when the next mission begins.
 """
 from pathlib import Path
-from art_sources_1006 import ArtSourcePath, source
+from art_sources_1006 import ArtSourcePath, source, output_path
 import json
 import re
 from PIL import Image
@@ -12,7 +12,7 @@ from PIL import Image
 ROOT = Path(__file__).resolve().parents[1]
 GAME = ArtSourcePath(ROOT / "assets" / "game")
 OUTDIR = GAME / "atlas" / "stage_runtime"
-MAP = GAME / "atlas" / "stage_runtime_atlases.js"
+MAP = output_path(GAME / "atlas" / "stage_runtime_atlases.js")
 MAX = 4096
 PAD = 4
 
@@ -160,7 +160,8 @@ def pack_stage(stage, source_items):
             atlas.alpha_composite(im, (px, py))
             cells[key] = [sheet, px, py, im.width, im.height]
         rel = Path("assets/game/atlas/stage_runtime") / f"{sheet}.png"
-        dest = ROOT / rel
+        dest = ROOT / "assets" / "game" / "levels" / f"stage_{stage:02}" / "enemies" / "atlas" / "stage_runtime" / f"{sheet}.png"
+        rel = dest.relative_to(ROOT)
         dest.parent.mkdir(parents=True, exist_ok=True)
         atlas.save(dest, optimize=True, compress_level=9)
         roots[root_key] = rel.as_posix()

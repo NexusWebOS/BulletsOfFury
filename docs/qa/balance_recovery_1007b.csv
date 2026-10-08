@@ -1,0 +1,65 @@
+group,profile,id,stage,difficulty,pilot,primary,level,speed,seed,reaction,decision,kind,clear,outcome,state,seconds,deaths,credits_used,credit_limit,reserves,remaining_hp,mini_clears
+tactical_before,Paired bosses / before,BOSS2-easy-repro-811,2,easy,juggernaut,0,3,0,811,0.25,0.1,boss,False,continue,continue,113.42,8,0,,0,617,
+tactical_before,Paired bosses / before,BOSS4-easy-repro-811,4,easy,juggernaut,0,3,0,811,0.25,0.1,boss,False,continue,continue,164.05,8,0,,0,1025,
+tactical_before,Paired bosses / before,BOSS5-easy-repro-811,5,easy,juggernaut,0,3,0,811,0.25,0.1,boss,True,encounter-defeated,play,127.47,1,0,,6,0,
+tactical_before,Paired bosses / before,BOSS2-normal-repro-811,2,normal,juggernaut,0,3,0,811,0.25,0.1,boss,False,continue,continue,149.18,6,0,,0,1605,
+tactical_before,Paired bosses / before,BOSS4-normal-repro-811,4,normal,juggernaut,0,3,0,811,0.25,0.1,boss,False,continue,continue,195.92,6,0,,0,1409,
+tactical_before,Paired bosses / before,BOSS5-normal-repro-811,5,normal,juggernaut,0,3,0,811,0.25,0.1,boss,False,continue,continue,210.15,6,0,,0,6506.76,
+tactical_before,Paired bosses / before,BOSS2-hard-repro-811,2,hard,juggernaut,0,3,0,811,0.25,0.1,boss,False,continue,continue,62.63,4,0,,0,3433,
+tactical_before,Paired bosses / before,BOSS4-hard-repro-811,4,hard,juggernaut,0,3,0,811,0.25,0.1,boss,False,continue,continue,161.95,4,0,,0,2420,
+tactical_before,Paired bosses / before,BOSS5-hard-repro-811,5,hard,juggernaut,0,3,0,811,0.25,0.1,boss,False,continue,continue,127.68,4,0,,0,17112.92,
+tactical_before,Paired bosses / before,BOSS2-furious-repro-811,2,furious,juggernaut,0,3,0,811,0.25,0.1,boss,False,continue,continue,61.85,4,0,,0,3572,
+tactical_before,Paired bosses / before,BOSS4-furious-repro-811,4,furious,juggernaut,0,3,0,811,0.25,0.1,boss,False,continue,continue,64.23,4,0,,0,5213,
+tactical_before,Paired bosses / before,BOSS5-furious-repro-811,5,furious,juggernaut,0,3,0,811,0.25,0.1,boss,False,continue,continue,195.67,4,0,,0,8499.01,
+tactical_after,Paired bosses / after,BOSS2-easy-repro-811,2,easy,juggernaut,0,3,0,811,0.25,0.1,boss,True,encounter-defeated,play,100.27,4,0,,3,0,
+tactical_after,Paired bosses / after,BOSS4-easy-repro-811,4,easy,juggernaut,0,3,0,811,0.25,0.1,boss,False,continue,continue,159.78,8,0,,0,604.92,
+tactical_after,Paired bosses / after,BOSS5-easy-repro-811,5,easy,juggernaut,0,3,0,811,0.25,0.1,boss,True,encounter-defeated,play,103.83,1,0,,6,0,
+tactical_after,Paired bosses / after,BOSS2-normal-repro-811,2,normal,juggernaut,0,3,0,811,0.25,0.1,boss,False,continue,continue,209.37,6,0,,0,131.0,
+tactical_after,Paired bosses / after,BOSS4-normal-repro-811,4,normal,juggernaut,0,3,0,811,0.25,0.1,boss,False,continue,continue,131.1,6,0,,0,1253.7,
+tactical_after,Paired bosses / after,BOSS5-normal-repro-811,5,normal,juggernaut,0,3,0,811,0.25,0.1,boss,True,encounter-defeated,play,134.02,1,0,,4,0,
+tactical_after,Paired bosses / after,BOSS2-hard-repro-811,2,hard,juggernaut,0,3,0,811,0.25,0.1,boss,False,continue,continue,58.3,4,0,,0,2183,
+tactical_after,Paired bosses / after,BOSS4-hard-repro-811,4,hard,juggernaut,0,3,0,811,0.25,0.1,boss,False,continue,continue,112.57,4,0,,0,2515.5,
+tactical_after,Paired bosses / after,BOSS5-hard-repro-811,5,hard,juggernaut,0,3,0,811,0.25,0.1,boss,False,continue,continue,127.67,4,0,,0,12312.5,
+tactical_after,Paired bosses / after,BOSS2-furious-repro-811,2,furious,juggernaut,0,3,0,811,0.25,0.1,boss,False,continue,continue,54.0,4,0,,0,2572,
+tactical_after,Paired bosses / after,BOSS4-furious-repro-811,4,furious,juggernaut,0,3,0,811,0.25,0.1,boss,False,continue,continue,63.3,4,0,,0,3773.0,
+tactical_after,Paired bosses / after,BOSS5-furious-repro-811,5,furious,juggernaut,0,3,0,811,0.25,0.1,boss,False,continue,continue,207.48,4,0,,0,5624.13,
+credit_stages_hard,Equipped full stages / Hard / finite credits,STAGE1-hard-credits-811,1,hard,yuri,3,5,1,811,0.25,0.1,full-stage,False,gameover,gameover,387.25,16,3,3,0,1468.59,razorback
+credit_stages_hard,Equipped full stages / Hard / finite credits,STAGE2-hard-credits-811,2,hard,yuri,3,5,1,811,0.25,0.1,full-stage,False,gameover,gameover,177.25,16,3,3,0,448.6,
+credit_stages_hard,Equipped full stages / Hard / finite credits,STAGE3-hard-credits-811,3,hard,yuri,3,5,1,811,0.25,0.1,full-stage,True,flyover,flyover,357.65,17,4,4,2,0,frostcruiser
+credit_stages_hard,Equipped full stages / Hard / finite credits,STAGE4-hard-credits-811,4,hard,yuri,3,5,1,811,0.25,0.1,full-stage,False,gameover,gameover,346.07,16,3,3,0,2651.7,olivewarden
+credit_stages_hard,Equipped full stages / Hard / finite credits,STAGE5-hard-credits-811,5,hard,yuri,3,5,1,811,0.25,0.1,full-stage,True,stageclear,stageclear,285.13,4,1,3,3,0,spacebomber
+credit_stages_hard,Equipped full stages / Hard / finite credits,STAGE6-hard-credits-811,6,hard,yuri,3,5,1,811,0.25,0.1,full-stage,False,gameover,gameover,369.02,16,3,3,0,1269.79,siegebomber
+credit_stages_hard,Equipped full stages / Hard / finite credits,STAGE7-hard-credits-811,7,hard,yuri,3,5,1,811,0.25,0.1,full-stage,False,gameover,gameover,288.0,16,3,3,0,2926.6,dualscoopdredger
+credit_stages_hard,Equipped full stages / Hard / finite credits,STAGE8-hard-credits-811,8,hard,yuri,3,5,1,811,0.25,0.1,full-stage,False,gameover,gameover,584.02,16,3,3,0,6240.6,heralddeath
+credit_stages_hard,Equipped full stages / Hard / finite credits,STAGE9-hard-credits-811,9,hard,yuri,3,5,1,811,0.25,0.1,full-stage,True,flyover,flyover,356.35,12,2,3,1,0,voidhorizon
+credit_stages_furious,Equipped full stages / Furious / finite credits,STAGE1-furious-credits-811,1,furious,yuri,3,5,1,811,0.25,0.1,full-stage,False,gameover,gameover,114.28,8,1,1,0,1076,
+credit_stages_furious,Equipped full stages / Furious / finite credits,STAGE2-furious-credits-811,2,furious,yuri,3,5,1,811,0.25,0.1,full-stage,False,gameover,gameover,51.9,8,1,1,0,1762,
+credit_stages_furious,Equipped full stages / Furious / finite credits,STAGE3-furious-credits-811,3,furious,yuri,3,5,1,811,0.25,0.1,full-stage,False,gameover,gameover,127.17,8,1,1,0,4490,frostcruiser
+credit_stages_furious,Equipped full stages / Furious / finite credits,STAGE4-furious-credits-811,4,furious,yuri,3,5,1,811,0.25,0.1,full-stage,False,gameover,gameover,79.82,8,1,1,0,3068,
+credit_stages_furious,Equipped full stages / Furious / finite credits,STAGE5-furious-credits-811,5,furious,yuri,3,5,1,811,0.25,0.1,full-stage,False,gameover,gameover,241.35,8,1,1,0,18211.4,spacebomber
+credit_stages_furious,Equipped full stages / Furious / finite credits,STAGE6-furious-credits-811,6,furious,yuri,3,5,1,811,0.25,0.1,full-stage,False,gameover,gameover,249.3,9,1,1,0,0,siegebomber
+credit_stages_furious,Equipped full stages / Furious / finite credits,STAGE7-furious-credits-811,7,furious,yuri,3,5,1,811,0.25,0.1,full-stage,False,gameover,gameover,215.13,8,1,1,0,5574.85,dualscoopdredger
+credit_stages_furious,Equipped full stages / Furious / finite credits,STAGE8-furious-credits-811,8,furious,yuri,3,5,1,811,0.25,0.1,full-stage,False,gameover,gameover,430.85,8,1,1,0,3276.9,heralddeath
+credit_stages_furious,Equipped full stages / Furious / finite credits,STAGE9-furious-credits-811,9,furious,yuri,3,5,1,811,0.25,0.1,full-stage,False,gameover,gameover,220.12,10,1,1,0,8498.74,voidhorizon
+world_stage2_candidate,Stage 2 / hazard-aware / before environmental pacing,STAGE2-hard-world-aware-811,2,hard,yuri,3,5,1,811,0.25,0.1,full-stage,False,gameover,gameover,323.88,16,3,3,0,1918.2,magmaward
+world_stage2_candidate,Stage 2 / hazard-aware / before environmental pacing,STAGE2-furious-world-aware-811,2,furious,yuri,3,5,1,811,0.25,0.1,full-stage,False,gameover,gameover,89.82,8,1,1,0,2317,
+world_stage2_pacing,Stage 2 / hazard-aware / after environmental pacing,STAGE2-hard-world-aware-811,2,hard,yuri,3,5,1,811,0.25,0.1,full-stage,True,flyover,flyover,323.13,13,3,3,2,0,magmaward
+world_stage2_pacing,Stage 2 / hazard-aware / after environmental pacing,STAGE2-furious-world-aware-811,2,furious,yuri,3,5,1,811,0.25,0.1,full-stage,False,gameover,gameover,148.0,8,1,1,0,2039,
+world_stage2_release,Playable build / hazard-aware Hard Stage 2,STAGE2-hard-world-aware-811,2,hard,yuri,3,5,1,811,0.25,0.1,full-stage,True,flyover,flyover,440.13,14,3,3,1,0,magmaward
+credit_bosses_release,Playable build / slow-pilot bosses / finite credits,BOSS4-easy-credits-811,4,easy,juggernaut,0,3,0,811,0.25,0.1,boss,True,encounter-defeated,play,368.5,20,2,7,3,0,
+credit_bosses_release,Playable build / slow-pilot bosses / finite credits,BOSS2-normal-credits-811,2,normal,juggernaut,0,3,0,811,0.25,0.1,boss,True,encounter-defeated,play,291.0,10,1,5,1,0,
+credit_bosses_release,Playable build / slow-pilot bosses / finite credits,BOSS4-normal-credits-811,4,normal,juggernaut,0,3,0,811,0.25,0.1,boss,True,encounter-defeated,play,383.18,26,4,5,3,0,
+credit_bosses_release,Playable build / slow-pilot bosses / finite credits,BOSS5-normal-credits-811,5,normal,juggernaut,0,3,0,811,0.25,0.1,boss,True,encounter-defeated,play,134.02,1,0,5,4,0,
+credit_bosses_release,Playable build / slow-pilot bosses / finite credits,BOSS2-hard-credits-811,2,hard,juggernaut,0,3,0,811,0.25,0.1,boss,True,encounter-defeated,play,213.7,9,2,3,2,0,
+credit_bosses_release,Playable build / slow-pilot bosses / finite credits,BOSS4-hard-credits-811,4,hard,juggernaut,0,3,0,811,0.25,0.1,boss,False,gameover,gameover,390.37,16,3,3,0,1004,
+credit_bosses_release,Playable build / slow-pilot bosses / finite credits,BOSS5-hard-credits-811,5,hard,juggernaut,0,3,0,811,0.25,0.1,boss,True,encounter-defeated,play,217.93,6,1,3,1,0,
+credit_bosses_release,Playable build / slow-pilot bosses / finite credits,BOSS2-furious-credits-811,2,furious,juggernaut,0,3,0,811,0.25,0.1,boss,False,gameover,gameover,84.58,8,1,1,0,1910,
+credit_bosses_release,Playable build / slow-pilot bosses / finite credits,BOSS4-furious-credits-811,4,furious,juggernaut,0,3,0,811,0.25,0.1,boss,False,gameover,gameover,150.78,8,1,1,0,2941,
+credit_bosses_release,Playable build / slow-pilot bosses / finite credits,BOSS5-furious-credits-811,5,furious,juggernaut,0,3,0,811,0.25,0.1,boss,False,gameover,gameover,247.37,8,1,1,0,3663.91,
+sovereign_ram_budget,Uninstalled helper-pause experiment / Hard and Furious,BOSS4-hard-ram-budget-811,4,hard,juggernaut,0,3,0,811,0.25,0.1,boss,False,gameover,gameover,323.62,16,3,3,0,897.5,
+sovereign_ram_budget,Uninstalled helper-pause experiment / Hard and Furious,BOSS4-furious-ram-budget-811,4,furious,juggernaut,0,3,0,811,0.25,0.1,boss,False,gameover,gameover,150.78,8,1,1,0,2941,
+finale_v3,Historical v3 candidate / equipped full finale / starting lives,FULLFINAL-easy-cruise-811,8,easy,yuri,3,5,1,811,0.25,0.1,full-finale,True,phase-depleted,stageclear,535.15,6,0,,1,0,
+finale_v3,Historical v3 candidate / equipped full finale / starting lives,FULLFINAL-normal-cruise-811,8,normal,yuri,3,5,1,811,0.25,0.1,full-finale,False,continue,continue,328.45,6,0,,0,1693.5,
+finale_v3,Historical v3 candidate / equipped full finale / starting lives,FULLFINAL-hard-cruise-811,8,hard,yuri,3,5,1,811,0.25,0.1,full-finale,False,continue,continue,130.15,4,0,,0,1827.35,
+finale_v3,Historical v3 candidate / equipped full finale / starting lives,FULLFINAL-furious-cruise-811,8,furious,yuri,3,5,1,811,0.25,0.1,full-finale,False,continue,continue,82.35,4,0,,0,2529.35,
+finale_release,Playable build / equipped full Easy finale / starting lives,FULLFINAL-easy-cruise-811,8,easy,yuri,3,5,1,811,0.25,0.1,full-finale,True,phase-depleted,stageclear,535.15,6,0,,1,0,

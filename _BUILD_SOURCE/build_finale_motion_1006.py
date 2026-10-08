@@ -26,7 +26,7 @@ for i,(box,core,head,name) in enumerate(zip(boxes,cores,heads,names)):
  cell=im.crop(rect);pad=12
  out=Image.new('RGBA',(cell.width+pad*2,cell.height+pad*2));out.alpha_composite(cell,(pad,pad))
  path=O/f'hammer_motion_{i}.png';out.save(path,optimize=True)
- a={'key':f'f6_hammer_motion_{i}','path':f'assets/game/finale_motion_1006/hammer_motion_{i}.png',
+ a={'key':f'f6_hammer_motion_{i}','path':f'assets/game/levels/stage_08/boss/finale_motion_1006/hammer_motion_{i}.png',
   'w':out.width,'h':out.height,'px':(core[0]-rect[0]+pad)/out.width,'py':(core[1]-rect[1]+pad)/out.height,'name':name,
   'head':None if head is None else [head[0]-rect[0]+pad,head[1]-rect[1]+pad]}
  art.append(a);cells.append({**a,'sourceRect':rect,'alphaBounds':out.getbbox(),'sha256':hashlib.sha256(path.read_bytes()).hexdigest()})

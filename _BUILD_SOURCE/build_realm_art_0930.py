@@ -13,7 +13,7 @@ def save(key,im,limit=384,grid=False):
  scale=min(1,limit/max(im.size));im=im.resize((round(im.width*scale),round(im.height*scale)),Image.Resampling.NEAREST)
  # Fixed transparent padding avoids loss of tip pixels at a transformed edge.
  out=Image.new('RGBA',(im.width+8,im.height+8));out.paste(im,(4,4));out.save(DST/(key+'.png'),optimize=True)
- meta[key]={'path':'assets/game/realm_0930/'+key+'.png','w':out.width,'h':out.height,'sourceBox':list(box)}
+ meta[key]={'path':'assets/game/shared/combat/realm_0930/'+key+'.png','w':out.width,'h':out.height,'sourceBox':list(box)}
 for name,file in FILES.items():
  src=SRC/(name+'.png');im=Image.open(src).convert('RGBA')
  if name in ('fx','walls'):

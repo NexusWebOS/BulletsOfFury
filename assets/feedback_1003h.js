@@ -3,7 +3,7 @@
    Art inputs and exact generation prompts: _ART_SOURCES/feedback_1003h/generation.json. */
 const H3_ART=['portrait_voss','portrait_nyx','portrait_rook','portrait_kaia','portrait_jace',
  'hammer_portrait','orbital_overhead_v2','earth_surface_v2','hammer_closeup','earth','orbital_aftermath'];
-for(const k of H3_ART)XART._src['h3_'+k]='assets/game/feedback_1003h/'+k+'.png';
+for(const k of H3_ART)XART._src['h3_'+k]='assets/game/shared/combat/feedback_1003h/'+k+'.png';
 const H3={ending:null,release:false,demo:false,portraits:new Map(),lastMusic:null};
 function h3Warm(){for(const k of H3_ART)XART.rdy('h3_'+k);for(const k of ['red','green','orange'])XART.rdy('fb2_stealth_'+k);furyShipWarm();}
 const H3_PORTRAITS={voss:[24,74,519,541],nyx:[32,87,510,515],rook:[23,90,520,501],kaia:[33,108,507,492],jace:[22,83,521,515]};
