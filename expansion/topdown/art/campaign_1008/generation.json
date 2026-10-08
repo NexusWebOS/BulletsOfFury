@@ -1,0 +1,9 @@
+{
+  "tool": "imagegen built-in",
+  "source": "rebel_ground_source.png",
+  "prompt": "Top-down orthographic BOF industrial coastal tank battlefield: open center lane, rail logistics district, north circular factory marshalling arena; olive edges, steel-gray concrete, orange hazard markings; no baked dynamic walls or tanks.",
+  "normalizedSize": [
+    800,
+    2400
+  ]
+}

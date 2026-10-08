@@ -1,6 +1,6 @@
 # Bullets of Fury — Overdrive expansion art
 
-This folder holds the Overdrive expansion art, including Hotwire, Phoenix, Niel and the Machinists. It is an asset package for review and future gameplay integration; the current game does not load these assets yet.
+This folder holds the Overdrive expansion art, including Hotwire, Phoenix, Niel and the Machinists. The standalone [Ground Operations build](topdown/README.md) now uses these packs in playable Levels 2–4. Integration into the base game's flight campaign remains separate.
 
 | Folder | Contents |
 | --- | --- |
@@ -11,6 +11,7 @@ This folder holds the Overdrive expansion art, including Hotwire, Phoenix, Niel 
 | `ground/` | Three modular tank families, four helmeted infantry bodies, ground pickups and effects, G.O.D Burst, and an interactive candidate-art viewer |
 | `coastline/` | Miami campaign-map extension across the ocean, compound and highway level icons, arrival/departure background plates, and mission beats |
 | `onfoot/` | On-foot HUD, Miami beach/park/fortress stage concept, player actions, six handheld weapons and boxes, ammo, enemies, effects and FOV cues |
+| `topdown/` | Playable ground campaign: Level 2/The Warrior, Level 3/Miami infantry, Level 4/hostile Machinist tanks with Hotwire, Phoenix or Niel support; current controls and verification in `README.md` |
 | `windstorm_machinists/` | Niel/Windstorm, grounded Machinists crew, three modular tanks and effects, track phases, dedicated allies, shared stealth interactions and a consolidated coverage index |
 
 The latest [coverage index](windstorm_machinists/COVERAGE.md) links the saved graphics for the expansion requests and identifies later engine integration work.

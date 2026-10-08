@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bullets of Fury: Overdrive - Ground Operations</title>
+<style>
+  @font-face { font-family: BOFCommand; src: url('../../assets/game/shared/fonts/fonts/command_0914/BOFCommandSignal.ttf'); }
+  html, body { margin: 0; height: 100%; background: #000; overflow: hidden; }
+  body { display: flex; align-items: center; justify-content: center; }
+  canvas { image-rendering: pixelated; image-rendering: crisp-edges; display: block; cursor: crosshair; touch-action: none; }
+</style>
+</head>
+<body>
+<canvas id="screen" width="960" height="720"></canvas>
+<!-- Bullets of Fury's own manifest: every sprite this page draws is resolved through it -->
+<script src="../../assets/manifest.js"></script>
+<script src="art/ground_1008/manifest.js?v=overdrive1008-final"></script>
+<script src="art/campaign_1008/manifest.js?v=overdrive1008-final"></script>
+<script>
+  // every module is loaded with the build stamp, so a browser never runs a stale copy after an edit
+  (function () {
+    var V = 'overdrive1008-final', files = ['art', 'core', 'stealth', 'tank', 'structures', 'boss_warrior', 'level2_map', 'level2_data', 'campaign', 'boss_machinists', 'main'];
+    files.forEach(function (f) { document.write('<script src="js/' + f + '.js?v=' + V + '"><\/script>'); });
+  }());
+</script>
+</body>
+</html>

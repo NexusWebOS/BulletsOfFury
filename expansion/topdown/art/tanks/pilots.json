@@ -1,0 +1,46 @@
+{
+ "axel": {
+  "family": "assault",
+  "color": "#348dff"
+ },
+ "cole": {
+  "family": "assault",
+  "color": "#7ad63a"
+ },
+ "maverick": {
+  "family": "assault",
+  "color": "#3ad6c8"
+ },
+ "decker": {
+  "family": "assault",
+  "color": "#ffe030"
+ },
+ "yuri": {
+  "family": "assault",
+  "color": "#ff3030"
+ },
+ "freezer": {
+  "family": "assault",
+  "color": "#a060ff"
+ },
+ "juggernaut": {
+  "family": "siege",
+  "color": "#e0662a"
+ },
+ "lizzie": {
+  "family": "panzer",
+  "color": "#b88a1c"
+ },
+ "falva": {
+  "family": "panzer",
+  "color": "#ff2a8f"
+ },
+ "hotwire": {
+  "family": "panzer",
+  "color": "#31d6e8"
+ },
+ "phoenix": {
+  "family": "siege",
+  "color": "#b84320"
+ }
+}

@@ -1,0 +1,500 @@
+{
+  "tool": "built-in image_gen",
+  "assets": {
+    "huntsman_hull": {
+      "file": "huntsman_hull.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        137,
+        148
+      ]
+    },
+    "huntsman_turret": {
+      "file": "huntsman_turret.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128,
+        184
+      ]
+    },
+    "huntsman_pod_l": {
+      "file": "huntsman_pod_l.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        120,
+        136
+      ]
+    },
+    "huntsman_pod_r": {
+      "file": "huntsman_pod_r.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        137,
+        126
+      ]
+    },
+    "huntsman_damaged": {
+      "file": "huntsman_damaged.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        137,
+        148
+      ]
+    },
+    "huntsman_wreck": {
+      "file": "huntsman_wreck.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        137,
+        148
+      ]
+    },
+    "warrior_hull": {
+      "file": "warrior_hull.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        127,
+        156
+      ]
+    },
+    "warrior_helmet": {
+      "file": "warrior_helmet.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        126,
+        226
+      ]
+    },
+    "warrior_arm_l": {
+      "file": "warrior_arm_l.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        225,
+        96
+      ]
+    },
+    "warrior_arm_r": {
+      "file": "warrior_arm_r.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        32,
+        60
+      ]
+    },
+    "warrior_damaged": {
+      "file": "warrior_damaged.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        127,
+        128
+      ]
+    },
+    "warrior_wreck": {
+      "file": "warrior_wreck.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        127,
+        128
+      ]
+    },
+    "warehouse_intact": {
+      "file": "warehouse_intact.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128.0,
+        128.0
+      ]
+    },
+    "warehouse_damaged": {
+      "file": "warehouse_damaged.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128.0,
+        128.0
+      ]
+    },
+    "warehouse_rubble": {
+      "file": "warehouse_rubble.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128.0,
+        128.0
+      ]
+    },
+    "roof_fragment": {
+      "file": "roof_fragment.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128.0,
+        128.0
+      ]
+    },
+    "relay_intact": {
+      "file": "relay_intact.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128.0,
+        128.0
+      ]
+    },
+    "relay_damaged": {
+      "file": "relay_damaged.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128.0,
+        128.0
+      ]
+    },
+    "relay_rubble": {
+      "file": "relay_rubble.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128.0,
+        128.0
+      ]
+    },
+    "wall_fragment": {
+      "file": "wall_fragment.png",
+      "size": [
+        256,
+        256
+      ],
+      "anchor": [
+        128.0,
+        128.0
+      ]
+    },
+    "tank_charge_0": {
+      "file": "tank_charge_0.png",
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64.0,
+        64.0
+      ]
+    },
+    "tank_charge_1": {
+      "file": "tank_charge_1.png",
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64.0,
+        64.0
+      ]
+    },
+    "tank_charge_2": {
+      "file": "tank_charge_2.png",
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64.0,
+        64.0
+      ]
+    },
+    "tank_charge_3": {
+      "file": "tank_charge_3.png",
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64.0,
+        64.0
+      ]
+    },
+    "tank_missile_0": {
+      "file": "tank_missile_0.png",
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64.0,
+        64.0
+      ]
+    },
+    "tank_missile_1": {
+      "file": "tank_missile_1.png",
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64.0,
+        64.0
+      ]
+    },
+    "tank_missile_2": {
+      "file": "tank_missile_2.png",
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64.0,
+        64.0
+      ]
+    },
+    "tank_missile_3": {
+      "file": "tank_missile_3.png",
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64.0,
+        64.0
+      ]
+    },
+    "tank_laser_gold": {
+      "file": "tank_laser_gold.png",
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64.0,
+        64.0
+      ]
+    },
+    "tank_laser_silver": {
+      "file": "tank_laser_silver.png",
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64.0,
+        64.0
+      ]
+    },
+    "tank_laser_crimson": {
+      "file": "tank_laser_crimson.png",
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64.0,
+        64.0
+      ]
+    },
+    "tank_ap": {
+      "file": "tank_ap.png",
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64.0,
+        64.0
+      ]
+    },
+    "concrete_break_0": {
+      "file": "concrete_break_0.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96.0,
+        96.0
+      ]
+    },
+    "concrete_break_1": {
+      "file": "concrete_break_1.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96.0,
+        96.0
+      ]
+    },
+    "concrete_break_2": {
+      "file": "concrete_break_2.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96.0,
+        96.0
+      ]
+    },
+    "concrete_break_3": {
+      "file": "concrete_break_3.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96.0,
+        96.0
+      ]
+    },
+    "concrete_dust_0": {
+      "file": "concrete_dust_0.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96.0,
+        96.0
+      ]
+    },
+    "concrete_dust_1": {
+      "file": "concrete_dust_1.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96.0,
+        96.0
+      ]
+    },
+    "concrete_dust_2": {
+      "file": "concrete_dust_2.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96.0,
+        96.0
+      ]
+    },
+    "concrete_dust_3": {
+      "file": "concrete_dust_3.png",
+      "size": [
+        192,
+        192
+      ],
+      "anchor": [
+        96.0,
+        96.0
+      ]
+    },
+    "barrier_intact": {
+      "file": "barrier_intact.png",
+      "size": [
+        256,
+        192
+      ],
+      "anchor": [
+        128.0,
+        96.0
+      ]
+    },
+    "barrier_damaged": {
+      "file": "barrier_damaged.png",
+      "size": [
+        256,
+        192
+      ],
+      "anchor": [
+        128.0,
+        96.0
+      ]
+    },
+    "barrier_rubble": {
+      "file": "barrier_rubble.png",
+      "size": [
+        256,
+        192
+      ],
+      "anchor": [
+        128.0,
+        96.0
+      ]
+    },
+    "concrete_fragment": {
+      "file": "concrete_fragment.png",
+      "size": [
+        256,
+        192
+      ],
+      "anchor": [
+        128.0,
+        96.0
+      ]
+    },
+    "compound_ground": {
+      "file": "compound_ground.png",
+      "size": [
+        800,
+        3600
+      ],
+      "anchor": [
+        400.0,
+        1800.0
+      ]
+    }
+  }
+}

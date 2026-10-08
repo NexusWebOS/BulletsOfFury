@@ -1,0 +1,20 @@
+{
+  "tool": "imagegen built-in",
+  "stage4": {
+    "source": "rebel_ground_source.png",
+    "prompt": "Bullets of Fury Overdrive game asset: a full top-down, orthographic, pixel-art industrial coastal tank battlefield terrain plate, 1024 by 1536 portrait, no perspective, no text, no people, no vehicles. Dark outlines, crisp dense 1990s arcade painted pixels, gritty steel gray concrete, muted olive foliage, orange hazard accents. SOUTH at bottom is coastal military loading road, middle is railway logistics district, NORTH at top is a wide open circular factory marshalling yard where three rebel tanks can maneuver. Main unobstructed driving corridor centered x=35%-65% must connect bottom to top. Concrete traversable yards on both sides x=10%-90%, road crossings, old rail stripes, recessed drains. Hard boundaries only at extreme left/right edges; colorful shipping containers and factory roofs sit outside playable x=10%-90% boundary. Do not paint any buildings, rocks, debris, tank cover, walls, crates or obstructions into the broad open main paths/yards; those will be separate destructible sprites. Topmost arena occupies full upper 30% and is broad gray concrete, with south entry across center. Authored detailed texture but clear movement lanes and no raised platform perspective. Match the BOF classic warm ordnance and military grit. This is environment art only.",
+    "normalizedSize": [
+      800,
+      2400
+    ]
+  },
+  "stage3": {
+    "source": "miami_open_source.png",
+    "reference": "expansion/onfoot/stage/miami_infiltration.png",
+    "prompt": "Edit this exact authored Bullets of Fury top-down Miami environment. Preserve its original overhead layout, pixel art, palette, beach, pools, foliage, fortress brick walls, road and all other details. At the NORTH/top center only, remove the CLOSED steel gate and its two gate pillars from the painted background. Continue the gray access road seamlessly through that central gap to the north edge. Keep neighboring brick fortress walls and side turrets intact. The center opening should extend across approximately source x=190 to x=325, y=30 to y=110. We will render separate open/closed gate sprites and collision there in the game, so the terrain underneath must show an unobstructed gray roadway, with no gate bars, doors, pillar shadows or closure. Do not add anything else, do not change perspective or palette, retain the portrait stage composition.",
+    "normalizedSize": [
+      800,
+      1200
+    ]
+  }
+}

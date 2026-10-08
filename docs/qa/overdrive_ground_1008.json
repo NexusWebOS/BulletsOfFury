@@ -1,0 +1,236 @@
+{
+  "date": "2026-10-08",
+  "scope": "Standalone Overdrive ground expansion, Levels 2-4",
+  "base": {
+    "syntax": "passed",
+    "fullSuiteAssertions": 7952,
+    "errors": 0,
+    "exitCode": 0,
+    "finalSummary": "FALVA/LIZZIE BUILD OK"
+  },
+  "nativeChromium": {
+    "verification.json": {
+      "checks": [
+        {
+          "name": "all generated loose assets decoded",
+          "passed": true
+        },
+        {
+          "name": "actual Start opens briefing",
+          "passed": true
+        },
+        {
+          "name": "actual Start deploys into ground stage",
+          "passed": true
+        },
+        {
+          "name": "direction change moves immediately instead of waiting to turn",
+          "passed": true
+        },
+        {
+          "name": "sideways strafe retains hull while turret rotates and fires",
+          "passed": true
+        },
+        {
+          "name": "charged shot seats tank backward then delivers turret-aligned recoil",
+          "passed": true
+        },
+        {
+          "name": "laser tier 1 uses decoded gold tank art",
+          "passed": true
+        },
+        {
+          "name": "laser tier 2 uses decoded silver tank art",
+          "passed": true
+        },
+        {
+          "name": "laser tier 3 uses decoded crimson tank art",
+          "passed": true
+        },
+        {
+          "name": "tank missile rack launches three distinct physical rounds",
+          "passed": true
+        },
+        {
+          "name": "building collapse clears movement/LOS and settles opaque fragments",
+          "passed": true
+        },
+        {
+          "name": "swept high-speed shot breaks thin concrete cover",
+          "passed": true
+        },
+        {
+          "name": "arena entry creates The Warrior with no Razorback reuse",
+          "passed": true
+        },
+        {
+          "name": "boss turns chassis sideways while upper body keeps fighting",
+          "passed": true
+        },
+        {
+          "name": "actual boss ram shatters arena wall and opens its collision space",
+          "passed": true
+        },
+        {
+          "name": "module break cancels owned shots and detaches exact solid rotating arm",
+          "passed": true
+        },
+        {
+          "name": "modular fight concludes with grounded wreck and mission results",
+          "passed": true
+        },
+        {
+          "name": "restart restores scenery and retires old combat effects",
+          "passed": true
+        },
+        {
+          "name": "Help opens control mapping without losing play state",
+          "passed": true
+        },
+        {
+          "name": "logical B returns from Help",
+          "passed": true
+        },
+        {
+          "name": "tank death stays anchored through its burning spin",
+          "passed": true
+        },
+        {
+          "name": "720-degree spin commits one crash, shock ring and solid wreck",
+          "passed": true
+        },
+        {
+          "name": "zero page/console/missing-asset errors",
+          "passed": true
+        }
+      ],
+      "errors": []
+    },
+    "campaign_verification.json": {
+      "checks": [
+        {
+          "name": "all campaign authored art decodes",
+          "passed": true
+        },
+        {
+          "name": "real stage selector deploys Level 3 briefing",
+          "passed": true
+        },
+        {
+          "name": "infantry uses authored body with one-hit life rule",
+          "passed": true
+        },
+        {
+          "name": "authored park collision retains a connected route to the fortress",
+          "passed": true
+        },
+        {
+          "name": "actual mouse fire consumes ammo while running and aiming separately",
+          "passed": true
+        },
+        {
+          "name": "reload transfers finite reserve into the magazine once",
+          "passed": true
+        },
+        {
+          "name": "empty gun never creates free ammunition or damage",
+          "passed": true
+        },
+        {
+          "name": "grenade commits one consumable at release and detonates once",
+          "passed": true
+        },
+        {
+          "name": "prone movement is slower and does not grant universal invisibility",
+          "passed": true
+        },
+        {
+          "name": "one actual hostile projectile causes death and checkpoint life loss",
+          "passed": true
+        },
+        {
+          "name": "six authored guns acquire finite magazines and reserves",
+          "passed": true
+        },
+        {
+          "name": "breakable weapon box emits its fixed drop exactly once",
+          "passed": true
+        },
+        {
+          "name": "fortress gate has real movement and projectile collision",
+          "passed": true
+        },
+        {
+          "name": "defeating three sentries opens collision, vision and gate art",
+          "passed": true
+        },
+        {
+          "name": "walking through north exit completes infantry mission",
+          "passed": true
+        },
+        {
+          "name": "campaign Start advances Level 3 results to Level 4",
+          "passed": true
+        },
+        {
+          "name": "briefing D-pad changes selected companion to Phoenix",
+          "passed": true
+        },
+        {
+          "name": "second tank mission contains three additional armor roles",
+          "passed": true
+        },
+        {
+          "name": "hotwire companion has decoded tank and matching avatar",
+          "passed": true
+        },
+        {
+          "name": "phoenix companion has decoded tank and matching avatar",
+          "passed": true
+        },
+        {
+          "name": "niel companion has decoded tank and matching avatar",
+          "passed": true
+        },
+        {
+          "name": "Machinists arena spawns all three independent rebel tanks",
+          "passed": true
+        },
+        {
+          "name": "rogue squad targets and fires at the nearby companion",
+          "passed": true
+        },
+        {
+          "name": "rogue squad also retargets and attacks the player",
+          "passed": true
+        },
+        {
+          "name": "independent track phases derive from actual chassis travel",
+          "passed": true
+        },
+        {
+          "name": "turret break cancels its fire and detaches matching opaque module",
+          "passed": true
+        },
+        {
+          "name": "downed tank companion visibly regroups and resumes support",
+          "passed": true
+        },
+        {
+          "name": "all three modular tank deaths lead to mission completion and wrecks",
+          "passed": true
+        },
+        {
+          "name": "zero page, console or missing-asset errors",
+          "passed": true
+        }
+      ],
+      "errors": []
+    }
+  },
+  "limits": "Protected mechanics/rendering fixtures; unassisted clears and final difficulty balance are not established.",
+  "probes": [
+    "expansion/topdown/_research/probe_ground_1008.py",
+    "expansion/topdown/_research/probe_campaign_1008.py"
+  ]
+}
