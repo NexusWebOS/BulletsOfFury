@@ -1,0 +1,20 @@
+{
+  "version": 4,
+  "bridgeRect": [
+    800,
+    1105,
+    560,
+    215
+  ],
+  "newExports": 4,
+  "totalManifestAssets": 79,
+  "bridgeTransparency": 88845,
+  "boatTerrainCollisionCheck": {
+    "stepsPerFullOrbit": 360,
+    "footprintPointsPerStep": 17,
+    "method": "Boat circumcircle against full terrain alpha, including collapsed bridge",
+    "collisions": [],
+    "collisionCount": 0
+  },
+  "issues": []
+}

@@ -1,0 +1,16 @@
+{
+  "date": "2026-09-30",
+  "url": "http://127.0.0.1:8770/preview.html",
+  "checks": {
+    "new_island_position_and_composite_visually_reviewed": true,
+    "comet_and_miami_visible_together_in_preview": true,
+    "comet_and_new_expansion_focus_controls_verified_in_test_tab": true,
+    "all_27_dom_images_loaded": true,
+    "horizontal_page_overflow": false,
+    "browser_warnings_or_errors": [],
+    "javascript_syntax_checks": "passed",
+    "all_three_boat_orbits_clear_of_terrain": true
+  },
+  "boat_validation": "See verification_v3.json: 360 orbit positions per boat with 17 conservative footprint samples per position.",
+  "scope": "Map assets and animated preview only. No engine or playable campaign integration."
+}

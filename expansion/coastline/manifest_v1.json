@@ -1,0 +1,131 @@
+{
+  "version": 1,
+  "project": "Bullets of Fury — Overdrive",
+  "region": "Miami coast",
+  "status": "Generated art candidates, not integrated gameplay",
+  "mapLayout": {
+    "canvas": [
+      2560,
+      1280
+    ],
+    "coast": {
+      "rect": [
+        70,
+        45,
+        780,
+        1040
+      ]
+    },
+    "originalCampaign": {
+      "origin": [
+        1580,
+        230
+      ],
+      "scale": 0.96,
+      "positionSource": "Current game SSEL_POS / CM2_K 1.45 / offset 10"
+    },
+    "nodes": {
+      "od01": [
+        604,
+        850
+      ],
+      "od02": [
+        505,
+        665
+      ]
+    },
+    "direction": "Existing islands on right → long water crossing left → compound → north gate and highway"
+  },
+  "assets": [
+    {
+      "file": "assets/miami_coast_region.png",
+      "role": "Transparent campaign region",
+      "source": "source/miami_coast_region.png",
+      "width": 768,
+      "height": 1024,
+      "transparentPixels": 229576,
+      "partialAlphaPixels": 556719,
+      "sha256": "62c8e797b305521d8c5d23f8c0945c14b7e93931261e925fdf29a8c7ba6c87aa"
+    },
+    {
+      "file": "assets/level_01_compound.png",
+      "role": "Campaign level icon; 190 logical pixels at 2x",
+      "source": "source/level_01_compound.png",
+      "width": 380,
+      "height": 380,
+      "transparentPixels": 83020,
+      "partialAlphaPixels": 61353,
+      "sha256": "5457b21757cf281f04a8b5c07d0903110e6049a94421e68fc82d8a60932f945c"
+    },
+    {
+      "file": "assets/level_01_compound_128.png",
+      "role": "Thumbnail",
+      "source": "source/level_01_compound.png",
+      "width": 128,
+      "height": 128,
+      "transparentPixels": 11156,
+      "partialAlphaPixels": 5228,
+      "sha256": "d889ad49f8d79925dccf702ddc18c1d08f610d8c8e91ae1cfc2b0a43ca8a98e6"
+    },
+    {
+      "file": "assets/level_02_gate_highway.png",
+      "role": "Campaign level icon; 190 logical pixels at 2x",
+      "source": "source/level_02_gate_highway.png",
+      "width": 380,
+      "height": 380,
+      "transparentPixels": 63649,
+      "partialAlphaPixels": 80729,
+      "sha256": "222f074e77246f6dc186080bbdac0938499a4194f9ec136166bc451b94599f0f"
+    },
+    {
+      "file": "assets/level_02_gate_highway_128.png",
+      "role": "Thumbnail",
+      "source": "source/level_02_gate_highway.png",
+      "width": 128,
+      "height": 128,
+      "transparentPixels": 9505,
+      "partialAlphaPixels": 6879,
+      "sha256": "25dde5f4d43564684cbd9328c27fd95aa3fbf3691712712e504c94c54a1d7abe"
+    },
+    {
+      "file": "assets/level_01_ocean_approach.png",
+      "role": "Finite transition background candidate; not seamless",
+      "source": "source/level_01_ocean_approach.png",
+      "width": 480,
+      "height": 720,
+      "transparentPixels": 0,
+      "partialAlphaPixels": 0,
+      "sha256": "cdc45ffd895e55323200f8e999c6f2f91d128dcd9e6aa6f3fb7b4e93bcc9d793"
+    },
+    {
+      "file": "assets/level_02_coastal_highway.png",
+      "role": "Finite transition background candidate; not seamless",
+      "source": "source/level_02_coastal_highway.png",
+      "width": 480,
+      "height": 720,
+      "transparentPixels": 0,
+      "partialAlphaPixels": 0,
+      "sha256": "686c82df444613acf263c6d706f83f25fa3484eb4dcaa4114e93e2fde0377ae8"
+    },
+    {
+      "file": "assets/connecting_map_clean.png",
+      "role": "Campaign layout composite; labels and routes separate",
+      "source": "Existing campaign island references + new coast region",
+      "width": 2560,
+      "height": 1280,
+      "transparentPixels": 0,
+      "partialAlphaPixels": 0,
+      "sha256": "9f6fca36be1ceb2fe7d0410f15ea8d5de93b0e6e734fc398bbe8f9ebb75b07e0"
+    },
+    {
+      "file": "assets/connecting_map_route.png",
+      "role": "Review composite with proposed route and two mission markers",
+      "source": "connecting_map_clean.png + connecting_route.svg",
+      "width": 2560,
+      "height": 1280,
+      "transparentPixels": 0,
+      "partialAlphaPixels": 0,
+      "sha256": "dcc4980e2c96cebca8c0123bc8919aa5bf6957d73c8407dc61a9b31c03c6100e"
+    }
+  ]
+}

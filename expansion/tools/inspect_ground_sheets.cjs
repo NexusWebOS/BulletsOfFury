@@ -1,0 +1,4 @@
+const fs=require('fs'),path=require('path'),sharp=require('sharp');
+const root=path.resolve(__dirname,'../ground/source');
+function runs(values,min=3){let out=[];for(let i=0;i<values.length;i++)if(values[i]){if(!out.length||i>out.at(-1)[1]+1)out.push([i,i]);else out.at(-1)[1]=i}return out.filter(r=>r[1]-r[0]+1>=min)}
+(async()=>{for(const file of fs.readdirSync(root).filter(f=>/infantry_.*actions/.test(f))){const {data,info}=await sharp(path.join(root,file)).raw().toBuffer({resolveWithObject:true});const ys=Array.from({length:info.height},(_,y)=>{let n=0;for(let x=0;x<info.width;x++)if(data[(y*info.width+x)*4+3]>64)n++;return n>0});const yr=runs(ys);const rows=yr.map(([t,b])=>({y:[t,b],x:runs(Array.from({length:info.width},(_,x)=>{let n=0;for(let y=t;y<=b;y++)if(data[(y*info.width+x)*4+3]>64)n++;return n>0}))}));console.log(JSON.stringify({file,size:[info.width,info.height],rows}));}})();

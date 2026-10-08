@@ -1,0 +1,146 @@
+{
+  "expansion": "Bullets of Fury — Overdrive",
+  "region": "Miami coast, Florida",
+  "status": "Five-section ground map and post-level-5 sky-map concept. No gameplay or campaign progression integration.",
+  "canon": {
+    "hotwireAndPhoenix": "Independent fighters pursuing their own cause, caught in the wider conflict. They hold an abandoned military compound together and help the player bring tanks online.",
+    "enemyContext": "The symbiote has spread globally across Earth. Symbiotic alien ships attack on the ocean approach.",
+    "shipStatus": "The player's ship is shot down into the compound just before entry. The player survives because Hotwire and Phoenix rescue them. The ship is temporarily unavailable while they attempt repairs.",
+    "transition": "The rescued pilot receives a tank and leaves through the base's north gate, follows the coast, and heads inland toward Miami.",
+    "laterContinuity": "The later tank-destruction / on-foot infiltration / jet-recovery mission is a separate event. Do not merge it into this arrival mission."
+  },
+  "missions": [
+    {
+      "id": "od01",
+      "number": 1,
+      "title": "Coastal Lifeline",
+      "titleStatus": "Working title",
+      "mode": "Flight → scripted rescue",
+      "location": "Atlantic approach / abandoned military compound",
+      "objective": "Cross the water and reach the military compound.",
+      "icon": "assets/level_01_compound.png",
+      "plate": "assets/level_01_ocean_approach.png",
+      "beats": [
+        "Fly far left/west from the existing campaign across open Atlantic water.",
+        "Symbiotic alien ships ambush the player before the coastline.",
+        "Hotwire and Phoenix make radio contact, welcome the arrival, and open the way inside.",
+        "Immediately before entry, a hostile shot downs the player's ship into the base.",
+        "Hotwire and Phoenix rescue the pilot and recover the damaged aircraft.",
+        "They attempt ship repairs and bring the pilot's assigned tank online."
+      ],
+      "dialogueDraft": [
+        {
+          "speaker": "Hotwire",
+          "line": "Phoenix, that's a pilot out there! Thank God someone showed up. Bring them in!"
+        },
+        {
+          "speaker": "Phoenix",
+          "line": "We've got the gate. Head for the hangar—we'll cover you."
+        },
+        {
+          "speaker": "Hotwire",
+          "line": "Incoming! Break—"
+        },
+        {
+          "event": "The ship is hit before entry and crashes into the compound. Both allies rescue the pilot."
+        },
+        {
+          "speaker": "Phoenix",
+          "line": "Easy. We got you. You're inside the base."
+        },
+        {
+          "speaker": "Hotwire",
+          "line": "Your ship's in rough shape. We'll see what we can fix. Until then, let's get you a tank."
+        }
+      ]
+    },
+    {
+      "id": "od02",
+      "number": 2,
+      "title": "Coast Under Siege",
+      "titleStatus": "Working title",
+      "mode": "Tank • air and ground threats",
+      "location": "North gate / coastal highway / Miami approach",
+      "objective": "Leave the compound, push up the coast, and reach the road inland toward Miami.",
+      "icon": "assets/level_02_gate_highway.png",
+      "plate": "assets/level_02_coastal_highway.png",
+      "beats": [
+        "The tank rolls out through the open military exit gate.",
+        "Palm trees, beaches, sand, ocean and Miami architecture establish the new region.",
+        "Ground units attack on the road and from its margins.",
+        "Air units attack across the coast while the player remains in a ground tank.",
+        "The road continues north along the water and turns inland toward Miami."
+      ],
+      "dialogueDraft": [
+        {
+          "speaker": "Hotwire",
+          "line": "Tank's online. Take the north gate and stay on the coast road."
+        },
+        {
+          "speaker": "Phoenix",
+          "line": "That highway leads into Miami. Keep watching the sky—they're hitting the ground too."
+        }
+      ]
+    },
+    {
+      "id": "od03",
+      "number": 3,
+      "title": "Bridge to Miami",
+      "titleStatus": "Working title",
+      "mode": "Ground route",
+      "location": "Causeway bridge leading into Miami",
+      "objective": "Cross the bridge and enter Miami.",
+      "icon": "assets/v8/level_03_bridge.png",
+      "beats": [
+        "The third expansion level takes place on the bridge leading to Miami.",
+        "The far end of the crossing delivers the player to the city."
+      ],
+      "dialogueDraft": []
+    },
+    {
+      "id": "od04",
+      "number": 4,
+      "title": "Center of Miami",
+      "titleStatus": "Working title",
+      "mode": "City center",
+      "location": "Central Miami",
+      "objective": "Push through the center of Miami.",
+      "icon": "assets/v8/level_04_miami_center.png",
+      "beats": [
+        "The fourth expansion level moves into the center of Miami.",
+        "The route then turns toward the southern plateau."
+      ],
+      "dialogueDraft": []
+    },
+    {
+      "id": "od05",
+      "number": 5,
+      "title": "The Plateau",
+      "titleStatus": "Working title",
+      "mode": "Plateau boss",
+      "location": "Central plateau in the southern islands",
+      "objective": "Reach the plateau and face the level-five boss.",
+      "icon": "assets/v8/level_05_plateau.png",
+      "beats": [
+        "The fifth expansion level takes place on the intact plateau.",
+        "The level-five boss introduces G.O.D Burst: atom-wave and split-burst particles under intense magnetic energy.",
+        "After level five, a lightning storm destroys the plateau.",
+        "A giant alien fortress erupts from the shattered mesa and rises into the sky.",
+        "The campaign map shifts above the clouds for the next chapter."
+      ],
+      "dialogueDraft": []
+    }
+  ],
+  "productionNotes": [
+    "Mission names and dialogue are drafts; the user's story beats above are the canon.",
+    "Do not depict Hotwire or Phoenix as rogue or rebel faction members.",
+    "Arrival crash is a story transition, not a normal death/game-over. Exact implementation remains future work.",
+    "Campaign route endpoint at the old island cluster is a layout proposal; its unlock trigger and exact existing stage attachment are not chosen here.",
+    "This map represents game geography, not a navigational map of real Miami.",
+    "The two background plates are finite illustrated transition sections, not seamless tiles, collision maps or complete scrolling levels.",
+    "The arrival source includes a small decorative tank in the side service bay and fixed defense guns. Treat them as scenery unless extracted and replaced during production.",
+    "The highway source has a narrow central carriageway. Future playable stage assembly must add wide road/shoulder tiles for bullet-dodging space; do not infer collision bounds from the image.",
+    "Sections 03–05 have map markers and location beats only; enemy layouts and playfield art remain open.",
+    "The post-level-5 storm, fortress rise and sky map are a visual campaign-map transition. Future sky-level nodes and unlock rules are not defined."
+  ]
+}

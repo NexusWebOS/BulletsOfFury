@@ -1,0 +1,16 @@
+{
+  "date": "2026-09-30",
+  "browser": "Codex in-app Chromium",
+  "url": "http://127.0.0.1:8770/preview.html",
+  "checks": {
+    "map_composite_visually_reviewed": true,
+    "transparent_icons_visually_reviewed": true,
+    "all_four_dom_images_loaded_at_expected_sizes": true,
+    "both_mission_selections_updated_briefing_and_dialogue": true,
+    "coast_focus_visually_reviewed": true,
+    "full_connection_restored": true,
+    "javascript_syntax_checks_passed": true,
+    "browser_warnings_or_errors": []
+  },
+  "scope": "Asset preview only. No gameplay verification or integration claimed."
+}

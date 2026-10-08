@@ -1,0 +1,41 @@
+[
+  {
+    "name": "west_runs",
+    "refs": [
+      "C:/Users/Mike/Documents/New project/expansion/windstorm_machinists/source/stealth_regular_4dir.png",
+      "C:/Users/Mike/Documents/New project/expansion/windstorm_machinists/source/stealth_heavy_4dir.png",
+      "C:/Users/Mike/Documents/New project/expansion/windstorm_machinists/source/stealth_female_4dir.png",
+      "C:/Users/Mike/Documents/New project/expansion/windstorm_machinists/source/stealth_phoenix_4dir.png",
+      "C:/Users/Mike/Documents/New project/expansion/windstorm_machinists/source/stealth_hotwire_4dir.png"
+    ],
+    "prompt": "Production 16-bit pixel-art six-character animation sheet based on the five supplied character references: regular, heavy, female, Phoenix, Hotwire. Transparent. EXACTLY 6 columns and 6 rows =36 separate frames. Six chronological frames per row of an IN-PLACE RUN CYCLE FACING WEST/LEFT with compact rifle held forward pointing LEFT in both hands. Fixed top-down 3/4 camera as reference. Every row is ONE character throughout the six gait phases, no character mixing or size change. Deep alternating strides, clear planted/passing/flight phases, smooth six-to-one wrap. Standing running height, not crouch-walk, no crawling. Same scale and root position per cell, 1536x1536 square sheet, generous transparent gutters, no cell bleeding, no text/grid/shadows/smears/effects. Row1 Regular soldier from reference1 cobalt blue and ivory helmeted armor amber visor. Row2 large broad heavy JUGGERNAUT body from reference2 same cobalt/ivory/amber scheme, noticeably bulky shoulders. Row3 athletic tall slim broadshouldered male using a taller, athletic variation of regular reference1 in same cobalt/ivory/amber. Row4 slender female body from reference3 same cobalt/ivory/amber. Row5 PHOENIX reference4 charcoal, ember-red and gold armor with golden visor, phoenix shoulder emblem. Row6 HOTWIRE reference5 charcoal/copper-orange armor, cyan visor and cables, orange helmet stripe. Everyone HELMET ON. Preserve distinctive body builds, costume and rifle in each row. Do not mirror the reference badges into nonsensical placements; draw actual west-facing silhouettes. All heads, barrels and feet stay fully inside each equal cell.",
+    "output": "C:\\Users\\Mike\\.codex\\generated_images\\01a0f036-546a-7e23-9f3a-463bc4985c5c\\exec-f1d6e580-8153-4a38-aa37-cf9d3955a203.png"
+  },
+  {
+    "name": "machinists_icons_v3",
+    "refs": [
+      "C:/Users/Mike/Documents/New project/expansion/windstorm_machinists/reference/ui_match_v2/maverick_icon.png",
+      "C:/Users/Mike/Documents/New project/expansion/windstorm_machinists/source/windstorm_icon_v2.png"
+    ],
+    "prompt": "Create three NEW Bullets of Fury Overdrive special ability badge sprites using EXACTLY the supplied reference icon style and silhouette. Horizontal 3-column by 1-row sheet on transparent, three well-separated equal-size hexagonal badges. Same metallic silver/gunmetal double hexagon rims, small brass corner rivets, black glass interior, tiny emissive edge details, crisp 16-bit pixel art suitable for 112x112 export. Point-up hexagons, slim frame, NOT square or octagonal boxes. LEFT Wren BASTION: red/orange concentric electromagnetic shield with simple glowing shield emblem. MIDDLE Rolf VECTOR SPLITTER: three vivid cyan rail-energy lances diverging up-left, straight-up, up-right from one emitter; clear three-way shape. RIGHT Chaz REDLINE BREACH: fiery orange forward chevron/boost flame blasting through a broken arc, clear icon silhouette. All three match rim geometry, zoom, material and pixel density of reference. No text, labels, scenery, checkerboard or outer glow outside rims. Keep comfortable empty margins between whole icons. Native transparent alpha.",
+    "output": "C:\\Users\\Mike\\.codex\\generated_images\\01a0f036-546a-7e23-9f3a-463bc4985c5c\\exec-b7cd6503-d3b3-43e6-b415-bf92d765ec48.png"
+  },
+  {
+    "name": "machinists_boxes_v3",
+    "refs": [
+      "C:/Users/Mike/Documents/New project/expansion/windstorm_machinists/reference/ui_match_v2/maverick_box.png",
+      "C:/Users/Mike/Documents/New project/expansion/windstorm_machinists/source/windstorm_box_v2.png"
+    ],
+    "prompt": "Create three NEW Bullets of Fury Overdrive ability pickup BOX sprites matching EXACTLY the physical industrial vented pickup in the two reference images. Transparent horizontal3-column1-row sheet,three evenly-spaced isolated front-facing boxes at SAME SCALE. Each box is slightly taller than wide, four massive angled cornerplates with large round bolts, raised three-slot vents centered top/bottom, dark chunky double beveled black/gunmetal inner octagonal glass screen, reinforced side rails. Hard pixel-art edges, dithered highlights, saturated 16-bit arcade sprite shading, simple chunky readable shapes. NOT ornate gold medieval frames, NOT smooth vector art. LEFT Wren BASTION: crimson-red outer casing, ember accents, glowing simple orange-red EM shield on black display. MIDDLE Rolf VECTOR SPLITTER: cyan/steel-blue outer casing, electric cyan accents, three energy lances diverging up-left/up/up-right on display. RIGHT Chaz REDLINE BREACH: burnt-orange/yellow casing, blazing orange forward chevron/boost flame punching through a broken ring on black display. Geometry and vents must match reference. Symbols must be simple and legible. No words, letters, numbers, floor, cast shadow, particle effects outside chassis, or checkerboard. Fully visible full boxes with clear margins. Intended standalone360x400each.",
+    "output": "C:\\Users\\Mike\\.codex\\generated_images\\01a0f036-546a-7e23-9f3a-463bc4985c5c\\exec-6a68da95-3ee5-45d4-bd11-2138651b9ea5.png"
+  },
+  {
+    "name": "enemy_patrol_north_fix",
+    "refs": [
+      "C:/Users/Mike/Documents/New project/expansion/windstorm_machinists/source/enemy_scout_patrol.png",
+      "C:/Users/Mike/Documents/New project/expansion/windstorm_machinists/source/enemy_heavy_patrol.png"
+    ],
+    "prompt": "Correct the NORTH direction of these two robot types. Make EXACTLY6 columns by2 rows =12 separate sprites on transparent,1536x512 landscape sheet. Row1 slim scout with rifle;row2 broad heavy with TWIN arm cannons. SIX-frame IN-PLACE WALK NORTH away from camera per row, alternating left/right footfall loops. Fixed high top-down3/4 view. CRITICAL: Every sprite is a REAR VIEW: smooth BACK of robot helmet, rear neck, BACKPACK and spine exhaust panels visible. There are NO FACES, NO EYES, NO CYAN FRONT VISORS and NO RED CHEST REACTOR visible. The front of the robot faces the TOP edge away from viewer. Forearm weapons extend NORTH on sides of body, feet point UP. Scout holds rifle pointing up, heavy has TWO arm cannons pointing up. Do NOT reproduce the erroneous front-facing frames of reference. Keep original charcoal armor and bright MAGENTA infected cracks, cyan rear power conduits; broad heavy much thicker than scout. Same exact bodybuild and size within each row, root at equal cell centers, no drifting, generous cell margins. Crisp Overdrive16-bit pixel clusters, transparent all around, no shadows, labels, grid or scenery. Six distinct gait phases.",
+    "output": "C:\\Users\\Mike\\.codex\\generated_images\\01a0f036-546a-7e23-9f3a-463bc4985c5c\\exec-1790f9b2-6a4d-4162-a17f-72427939c7a6.png"
+  }
+]

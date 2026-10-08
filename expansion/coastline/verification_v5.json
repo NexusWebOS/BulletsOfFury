@@ -1,0 +1,27 @@
+{
+  "version": 5,
+  "bridgeRect": [
+    210,
+    390,
+    400,
+    500
+  ],
+  "shieldRect": [
+    375,
+    540,
+    100,
+    150
+  ],
+  "newExports": 5,
+  "totalManifestAssets": 80,
+  "bridgeTransparency": 148354,
+  "shieldTransparency": 8673,
+  "boatTerrainCollisionCheck": {
+    "stepsPerFullOrbit": 360,
+    "footprintPointsPerStep": 17,
+    "method": "Boat circumcircle against full terrain alpha, including both new bridges",
+    "collisions": [],
+    "collisionCount": 0
+  },
+  "issues": []
+}

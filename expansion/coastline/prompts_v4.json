@@ -1,0 +1,13 @@
+{
+  "tool": "built-in image_gen",
+  "references": [
+    "reference/bridge_gap_review.png (cropped map placement reference)",
+    "source/city_bridge_v2.png (existing map bridge style reference)"
+  ],
+  "sourceMaster": "source/collapsed_bridge_v4.png",
+  "prompts": [
+    "Create one isolated transparent 16-bit pixel-art isometric campaign-map object: a destroyed coastal bridge that once connected the alien-comet island on the left to the lush Miami island on the right. Match the existing northern bridge's pixel architecture and the map shore palettes. Two damaged concrete road approaches align on the same descending-to-right axis, with alien corruption on the left and a tropical access ramp on the right. The center is catastrophically collapsed with jagged slabs, snapped guardrails, supports and rubble. No water backdrop, text, UI, vehicles or continuous drivable span.",
+    "Edit the transparent collapsed bridge asset to widen its missing middle span to roughly one third of its width. Move the two surviving halves farther apart along the same axis, preserving the isometric pixel style, island abutments, rubble and mostly transparent channel."
+  ],
+  "note": "The second generated image was selected. The build script resizes and composites that source without repainting it."
+}

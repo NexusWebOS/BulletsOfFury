@@ -1,0 +1,18 @@
+{
+  "generator": "built-in image_gen",
+  "date": "2026-09-30",
+  "referenceRoles": {
+    "assets/level_01_compound.png": "style and icon scale reference",
+    "assets/level_02_gate_highway.png": "style and icon scale reference",
+    "assets/v2/city_bridge.png": "level 03 bridge subject reference",
+    "assets/v2/major_city.png": "level 04 downtown subject reference",
+    "assets/v2/central_plateau.png": "level 05 and fortress subject reference",
+    "reference/plateau_level_05_request.png": "user-provided plateau placement reference"
+  },
+  "prompts": {
+    "level_03_bridge_v8": "Use case: stylized-concept. Independent floating section 03 campaign-map icon. Single compact isometric 16-bit pixel-art miniature of the long concrete causeway bridge leading from the Miami coast into the city. Existing section 01/02 icons set style, pixel scale, silhouette, shadow and 380x380 composition; city_bridge is the subject reference. Diagonal road from lower-right toward upper-left, visible supports, asphalt markings, sea spray and small rocky landing tabs, tropical palms only at landings. Readable at 190px. Genuine transparent background, generous alpha margin. No ocean rectangle, UI, number, flag, text, people, vehicles, clouds or background scene.",
+    "level_04_miami_v8": "Use case: stylized-concept. Independent floating section 04 campaign-map icon. Single compact isometric 16-bit pixel-art miniature of central Miami: dense Art Deco streets, varied downtown towers, palm-lined roads and central plaza, with subtle violet alien growth at far edges. Match section 01/02 icons' camera angle, hard pixel clusters, outlines, silhouette and transparent 380x380 composition. Use existing major-city plate as subject and palette reference; create a compact new marker rather than another full city plate. Readable at 190px. No rectangular ocean, labels, number, flag, route, UI, characters or tanks.",
+    "level_05_plateau_v8": "Use case: stylized-concept. Independent floating section 05 campaign-map icon before the storm. Show the same intact green central plateau, broad open grassy summit, steep tan cliff tiers and palms, with a small hovering atom-wave/magnetic-energy corona above its center: concentric violet and electric-blue arcs around a bright controlled core hinting at G.O.D Burst. No lightning damage, alien fortress or ruined summit. Match existing section icons' camera angle, hard pixel clusters, dark outlines, centered 380x380 transparent composition and 190px readability. No rectangular water or sky background, text, numbers, flags, people, vehicles or UI.",
+    "plateau_fortress_v8": "Use case: precise-object-edit. Edit the supplied central plateau into its post-level-5 state. Same isolated isometric mesa after a cataclysmic lightning storm: shattered summit, black-violet fissures, broken palms and a giant vertically rising alien fortress of basalt and biomechanical metal with angular spires and luminous violet core. The complete tower dominates but the original stepped cliff base and surf rim remain recognizable. Same 16-bit miniature pixel-art perspective, hard clusters and dark outlines. Tall centered complete silhouette, genuine transparent background. Storm animation remains separate: no sky backdrop, rectangular ocean, drawn rain, cloud, free lightning bolt, text, flag, number, HUD, human or vehicle."
+  }
+}

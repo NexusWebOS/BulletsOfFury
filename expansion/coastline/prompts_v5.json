@@ -1,0 +1,17 @@
+{
+  "tool": "built-in image_gen",
+  "references": [
+    "reference/portal_bridge_request.png (user's placement crop)",
+    "reference/portal_bridge_gap_review.png (clean map placement crop)",
+    "source/city_bridge_v2.png (isometric bridge style reference)"
+  ],
+  "sourceMasters": [
+    "source/portal_bridge_v5.png",
+    "source/portal_shield_v5.png"
+  ],
+  "prompts": [
+    "Create a single transparent 16-bit isometric city-to-comet-island bridge sprite, top city to bottom corrupted shore, in the pictured water gap. Place a giant upright black-violet void portal at the roadway midpoint, with alien pylons, a clear cyan-violet protective energy shield, and road continuing through the portal. Preserve separate original city-to-Miami and collapsed Miami crossings on the map; no water backdrop, UI, vehicles or clouds in the sprite.",
+    "Using the generated bridge as style and shape reference, create only the luminous protective portal shield as an isolated transparent effect: tall faceted cyan-violet arch with electric rim and transparent center, no road, land, portal interior or background."
+  ],
+  "note": "The bridge source contains the portal and a static halo. The independent shield source supplies an additional pulsing effect layer in the browser preview."
+}

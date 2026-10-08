@@ -1,0 +1,19 @@
+{
+  "date": "2026-09-30",
+  "browser": "Codex in-app Chromium",
+  "url": "http://127.0.0.1:8770/preview.html",
+  "checks": {
+    "terrain_and_object_composite_visually_reviewed": true,
+    "hovering_icon_detail_visually_reviewed": true,
+    "coast_south_and_city_focus_controls_worked": true,
+    "locked_and_cleared_flag_controls_selected": true,
+    "animation_pause_and_resume_controls_worked": true,
+    "boats_and_drones_seen_at_different_positions": true,
+    "dom_images_loaded": 20,
+    "failed_dom_images": [],
+    "horizontal_page_overflow": false,
+    "browser_warnings_or_errors": [],
+    "full_connection_and_animation_restored": true
+  },
+  "scope": "Asset and animated preview validation only. No game-engine integration or playable level testing."
+}

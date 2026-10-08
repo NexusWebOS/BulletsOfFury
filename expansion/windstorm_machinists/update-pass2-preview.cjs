@@ -1,0 +1,17 @@
+const fs=require('fs'),path=require('path'),p=path.join(__dirname,'preview.html');let s=fs.readFileSync(p,'utf8');
+function replace(a,b){if(!s.includes(a))throw Error('Missing preview anchor '+a.slice(0,80));s=s.replace(a,b);}
+replace('<section class="panel hero">','<section class="panel" id="pass2"><h2>Directional movement &amp; robot patrol pass</h2><p>Four-direction crouch-walking and prone fire for all four shared bodies, Phoenix and Hotwire; west-facing runs; scout and heavy robot patrol, fire and destruction sequences. The Machinists now have matching portrait frames, hex badges and vented ability boxes.</p><div class="row"><a href="#stealthlab">Try the animation viewer</a><a href="PASS_2.md">Pass notes</a><a href="passes-2-generation.json">Generation record</a></div><details><summary>View directional pose contact sheet</summary><img class="wide" src="previews/pass2_directional.png" alt="Six actor families compared in four crouch and four prone firing directions"></details><details><summary>View robot patrol and combat contact sheet</summary><img class="wide" src="previews/pass2_enemies.png" alt="Scout and heavy robot patrol, fire and destruction animation rows"></details><details><summary>View Machinist portrait, icon and box set</summary><img class="wide" src="previews/machinists_ui_v3.png" alt="Wren, Rolf and Chaz in the canonical portrait frame beside hex abilities and vented pickups"></details></section><section class="panel hero">');
+for(const who of ['wren','rolf','chaz']){
+ replace('src="identity/'+who+'_portrait.png"','src="identity/'+who+'_portrait_v3.png"');
+ const a='<a href="identity/'+who+'_front.png">Full crew pose</a>';
+ replace(a,'<div class="shipline"><img class="icon" src="ui/'+who+'_special_icon.png" alt="'+who+' ability hex badge"><img class="icon" src="ui/'+who+'_special_box.png" alt="'+who+' vented ability box"></div>'+a);
+}
+replace('<section class="panel"><h2>Allies and shared stealth actions</h2>','<section class="panel" id="stealthlab"><h2>Players, allies and alien robots</h2>');
+replace('<option value="female">Female · shared player</option>','<option value="female">Female · shared player</option><option value="enemy_scout">Alien scout robot</option><option value="enemy_heavy">Alien heavy robot</option>');
+replace("['ally','player_interaction'].includes", "['ally','player_interaction','enemy'].includes");
+replace("$('paletteSelect').disabled=['phoenix','hotwire'].includes($('actorSelect').value)","$('paletteSelect').disabled=!['regular','heavy','athletic','female'].includes($('actorSelect').value)");
+replace("props:'Doors, healing & icons',fx:","props:'Doors & healing',enemies:'Alien robots',fx:");
+replace('Earlier movement and combat actions are linked for shared bodies.', 'Four-direction crouch/prone-fire, west runs and robot patrol/combat are now available. Earlier movement and combat actions are linked for shared bodies.');
+replace('510 exported graphics · 26 preserved generation masters · built-in image_gen. Generated motion remains subject to art cleanup.', 'Expansion art review · built-in image_gen. Generated motion remains subject to art cleanup.');
+replace("function loop(t){tankDraw(t)","document.querySelector('footer').textContent=Object.keys(M.frames).length+' indexed graphics · '+Object.keys(M.sequences).length+' sequence definitions · Graphics only; motion remains subject to art cleanup.';\nfunction loop(t){tankDraw(t)");
+fs.writeFileSync(p,s);console.log('Updated directional/enemy/UI art viewer');
