@@ -1,0 +1,1 @@
+PW() { echo "debugFight = null; coopOn = false; run.mode='arcade'; setState(GS.PASSWORD); pwInput = '$1'; submitPassword(); pilotIndex = PILOTS.findIndex(p => p.key === '$2'); startRun(PENDING_STAGE); try{floaters.length=0;story=null;}catch(_){}; return [state, run.stage, !!boss, boss&&boss.kind];"; }
