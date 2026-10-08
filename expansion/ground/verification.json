@@ -1,0 +1,15 @@
+{
+  "date": "2026-09-30",
+  "normalizedPNGs": 199,
+  "groups": {
+    "tanks": 27,
+    "fx": 42,
+    "pickups": 18,
+    "infantry": 112
+  },
+  "sequences": 41,
+  "pilots": 11,
+  "issues": [],
+  "browserReview": "Local review page loaded 199 PNGs; tank assembly/palettes, infantry roll/prone inspected; browser error/warning log empty.",
+  "runtimeIntegration": false
+}

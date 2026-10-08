@@ -1,0 +1,32 @@
+{
+  "version": 7,
+  "frameCount": 6,
+  "frameSize": [
+    256,
+    256
+  ],
+  "fps": 8,
+  "frameDurationMs": 125,
+  "uniqueFrames": 6,
+  "pairDifferences": [
+    10.571894327799479,
+    10.758219401041666,
+    10.610254923502604,
+    10.558766682942709,
+    10.844451904296875,
+    10.709950764973959
+  ],
+  "seamDifferences": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "terrainAlphaDifferences": 0,
+  "shorelinePixelsPaletteSwapped": 249717,
+  "totalManifestAssets": 93,
+  "newExports": 13,
+  "issues": []
+}

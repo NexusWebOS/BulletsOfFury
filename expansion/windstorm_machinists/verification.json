@@ -1,0 +1,9051 @@
+{
+  "sourceAlpha": [
+    {
+      "file": "source/niel_ship_ui.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "zeroAlphaPixels": 947596
+    },
+    {
+      "file": "source/windstorm_fx.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "zeroAlphaPixels": 805576
+    },
+    {
+      "file": "source/tank_wren.png",
+      "size": [
+        1774,
+        887
+      ],
+      "zeroAlphaPixels": 862749
+    },
+    {
+      "file": "source/tank_rolf.png",
+      "size": [
+        1774,
+        887
+      ],
+      "zeroAlphaPixels": 928905
+    },
+    {
+      "file": "source/tank_chaz.png",
+      "size": [
+        1774,
+        887
+      ],
+      "zeroAlphaPixels": 832206
+    },
+    {
+      "file": "source/ally_phoenix.png",
+      "size": [
+        1222,
+        1287
+      ],
+      "zeroAlphaPixels": 997326
+    },
+    {
+      "file": "source/ally_hotwire.png",
+      "size": [
+        1222,
+        1287
+      ],
+      "zeroAlphaPixels": 984271
+    },
+    {
+      "file": "source/ally_north_correction.png",
+      "size": [
+        1774,
+        887
+      ],
+      "zeroAlphaPixels": 1218841
+    },
+    {
+      "file": "source/interactions_regular.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "zeroAlphaPixels": 1045423
+    },
+    {
+      "file": "source/interactions_heavy.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "zeroAlphaPixels": 972622
+    },
+    {
+      "file": "source/interactions_athletic.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "zeroAlphaPixels": 1029181
+    },
+    {
+      "file": "source/interactions_female.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "zeroAlphaPixels": 1035652
+    },
+    {
+      "file": "source/machinists_fx.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "zeroAlphaPixels": 1082865
+    },
+    {
+      "file": "source/stealth_props.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "zeroAlphaPixels": 853123
+    },
+    {
+      "file": "source/ally_phoenix_completion.png",
+      "size": [
+        1086,
+        1448
+      ],
+      "zeroAlphaPixels": 915215
+    },
+    {
+      "file": "source/ally_hotwire_completion.png",
+      "size": [
+        1086,
+        1448
+      ],
+      "zeroAlphaPixels": 909118
+    },
+    {
+      "file": "source/ally_directional_fire.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "zeroAlphaPixels": 1075260
+    },
+    {
+      "file": "source/tank_wren_tracks.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "zeroAlphaPixels": 676356
+    },
+    {
+      "file": "source/tank_rolf_tracks.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "zeroAlphaPixels": 765166
+    },
+    {
+      "file": "source/tank_chaz_tracks.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "zeroAlphaPixels": 733817
+    },
+    {
+      "file": "source/stealth_regular_4dir.png",
+      "size": [
+        1086,
+        1448
+      ],
+      "zeroAlphaPixels": 990258
+    },
+    {
+      "file": "source/stealth_heavy_4dir.png",
+      "size": [
+        1086,
+        1448
+      ],
+      "zeroAlphaPixels": 815063
+    },
+    {
+      "file": "source/stealth_athletic_4dir.png",
+      "size": [
+        1086,
+        1448
+      ],
+      "zeroAlphaPixels": 975654
+    },
+    {
+      "file": "source/stealth_female_4dir.png",
+      "size": [
+        1086,
+        1448
+      ],
+      "zeroAlphaPixels": 962708
+    },
+    {
+      "file": "source/stealth_phoenix_4dir.png",
+      "size": [
+        1086,
+        1448
+      ],
+      "zeroAlphaPixels": 944988
+    },
+    {
+      "file": "source/stealth_hotwire_4dir.png",
+      "size": [
+        1086,
+        1448
+      ],
+      "zeroAlphaPixels": 1016052
+    },
+    {
+      "file": "source/west_runs.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "zeroAlphaPixels": 903571
+    },
+    {
+      "file": "source/enemy_scout_patrol.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "zeroAlphaPixels": 983437
+    },
+    {
+      "file": "source/enemy_heavy_patrol.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "zeroAlphaPixels": 776080
+    },
+    {
+      "file": "source/enemy_patrol_north_fix.png",
+      "size": [
+        2172,
+        724
+      ],
+      "zeroAlphaPixels": 1030651
+    },
+    {
+      "file": "source/machinists_icons_v3.png",
+      "size": [
+        2172,
+        724
+      ],
+      "zeroAlphaPixels": 746099
+    },
+    {
+      "file": "source/machinists_boxes_v3.png",
+      "size": [
+        2172,
+        724
+      ],
+      "zeroAlphaPixels": 249745
+    }
+  ],
+  "extractionWarnings": [
+    {
+      "source": "source/machinists_fx.png",
+      "bounds": [
+        810,
+        181,
+        960,
+        509
+      ],
+      "reason": "joined alpha regions split at grid cell boundary"
+    }
+  ],
+  "frameChecks": [
+    {
+      "id": "niel_portrait",
+      "nonzeroAlphaPixels": 65536,
+      "borderAlphaPixels": 1020,
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "niel_full_body",
+      "nonzeroAlphaPixels": 79265,
+      "borderAlphaPixels": 300,
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "niel_front",
+      "nonzeroAlphaPixels": 79477,
+      "borderAlphaPixels": 41,
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "niel_smile",
+      "nonzeroAlphaPixels": 65536,
+      "borderAlphaPixels": 1020,
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "niel_combat",
+      "nonzeroAlphaPixels": 65536,
+      "borderAlphaPixels": 1020,
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "niel_avatar",
+      "nonzeroAlphaPixels": 65536,
+      "borderAlphaPixels": 1020,
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "niel_ship_idle",
+      "nonzeroAlphaPixels": 8145,
+      "borderAlphaPixels": 0,
+      "size": [
+        192,
+        192
+      ]
+    },
+    {
+      "id": "niel_ship_bank_left",
+      "nonzeroAlphaPixels": 7940,
+      "borderAlphaPixels": 0,
+      "size": [
+        192,
+        192
+      ]
+    },
+    {
+      "id": "niel_ship_bank_right",
+      "nonzeroAlphaPixels": 8110,
+      "borderAlphaPixels": 0,
+      "size": [
+        192,
+        192
+      ]
+    },
+    {
+      "id": "niel_ship_damaged",
+      "nonzeroAlphaPixels": 8149,
+      "borderAlphaPixels": 0,
+      "size": [
+        192,
+        192
+      ]
+    },
+    {
+      "id": "windstorm_icon",
+      "nonzeroAlphaPixels": 6134,
+      "borderAlphaPixels": 0,
+      "size": [
+        112,
+        112
+      ]
+    },
+    {
+      "id": "windstorm_box",
+      "nonzeroAlphaPixels": 128946,
+      "borderAlphaPixels": 0,
+      "size": [
+        360,
+        400
+      ]
+    },
+    {
+      "id": "windstorm_tornado_0",
+      "nonzeroAlphaPixels": 7065,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "windstorm_tornado_1",
+      "nonzeroAlphaPixels": 7027,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "windstorm_tornado_2",
+      "nonzeroAlphaPixels": 7082,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "windstorm_tornado_3",
+      "nonzeroAlphaPixels": 7221,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "windstorm_tornado_4",
+      "nonzeroAlphaPixels": 7167,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "windstorm_tornado_5",
+      "nonzeroAlphaPixels": 6918,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "windstorm_volley_0",
+      "nonzeroAlphaPixels": 8055,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "windstorm_volley_1",
+      "nonzeroAlphaPixels": 7886,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "windstorm_volley_2",
+      "nonzeroAlphaPixels": 8149,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "windstorm_volley_3",
+      "nonzeroAlphaPixels": 7880,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "windstorm_volley_4",
+      "nonzeroAlphaPixels": 8069,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "windstorm_volley_5",
+      "nonzeroAlphaPixels": 7705,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "windstorm_impact_0",
+      "nonzeroAlphaPixels": 3221,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "windstorm_impact_1",
+      "nonzeroAlphaPixels": 6651,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "windstorm_impact_2",
+      "nonzeroAlphaPixels": 9087,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "windstorm_impact_3",
+      "nonzeroAlphaPixels": 10485,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "windstorm_impact_4",
+      "nonzeroAlphaPixels": 10033,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "windstorm_impact_5",
+      "nonzeroAlphaPixels": 4638,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "windstorm_charge_0",
+      "nonzeroAlphaPixels": 2556,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "windstorm_charge_1",
+      "nonzeroAlphaPixels": 5289,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "windstorm_charge_2",
+      "nonzeroAlphaPixels": 7190,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "windstorm_charge_3",
+      "nonzeroAlphaPixels": 8158,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "windstorm_charge_4",
+      "nonzeroAlphaPixels": 8595,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "windstorm_charge_5",
+      "nonzeroAlphaPixels": 9056,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "tank_wren_concept",
+      "nonzeroAlphaPixels": 10483,
+      "borderAlphaPixels": 0,
+      "size": [
+        192,
+        192
+      ]
+    },
+    {
+      "id": "tank_wren_hull",
+      "nonzeroAlphaPixels": 7638,
+      "borderAlphaPixels": 0,
+      "size": [
+        192,
+        192
+      ]
+    },
+    {
+      "id": "tank_wren_turret",
+      "nonzeroAlphaPixels": 4754,
+      "borderAlphaPixels": 0,
+      "size": [
+        192,
+        192
+      ]
+    },
+    {
+      "id": "tank_wren_left_track",
+      "nonzeroAlphaPixels": 3431,
+      "borderAlphaPixels": 0,
+      "size": [
+        192,
+        192
+      ]
+    },
+    {
+      "id": "tank_wren_right_track",
+      "nonzeroAlphaPixels": 3662,
+      "borderAlphaPixels": 0,
+      "size": [
+        192,
+        192
+      ]
+    },
+    {
+      "id": "tank_wren_damaged_hull",
+      "nonzeroAlphaPixels": 7778,
+      "borderAlphaPixels": 0,
+      "size": [
+        192,
+        192
+      ]
+    },
+    {
+      "id": "tank_wren_wreck",
+      "nonzeroAlphaPixels": 9703,
+      "borderAlphaPixels": 0,
+      "size": [
+        192,
+        192
+      ]
+    },
+    {
+      "id": "tank_wren_special_module",
+      "nonzeroAlphaPixels": 4135,
+      "borderAlphaPixels": 0,
+      "size": [
+        192,
+        192
+      ]
+    },
+    {
+      "id": "tank_wren_hull_layer",
+      "nonzeroAlphaPixels": 8300,
+      "borderAlphaPixels": 0,
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "tank_wren_damaged_hull_layer",
+      "nonzeroAlphaPixels": 8477,
+      "borderAlphaPixels": 0,
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "tank_wren_left_track_layer",
+      "nonzeroAlphaPixels": 3418,
+      "borderAlphaPixels": 0,
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "tank_wren_right_track_layer",
+      "nonzeroAlphaPixels": 3340,
+      "borderAlphaPixels": 0,
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "tank_wren_turret_layer",
+      "nonzeroAlphaPixels": 5146,
+      "borderAlphaPixels": 0,
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "tank_wren_special_module_layer",
+      "nonzeroAlphaPixels": 426,
+      "borderAlphaPixels": 0,
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "tank_wren_assembled",
+      "nonzeroAlphaPixels": 15454,
+      "borderAlphaPixels": 0,
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "tank_wren_damaged",
+      "nonzeroAlphaPixels": 15606,
+      "borderAlphaPixels": 0,
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "tank_rolf_concept",
+      "nonzeroAlphaPixels": 9852,
+      "borderAlphaPixels": 0,
+      "size": [
+        192,
+        192
+      ]
+    },
+    {
+      "id": "tank_rolf_hull",
+      "nonzeroAlphaPixels": 7012,
+      "borderAlphaPixels": 0,
+      "size": [
+        192,
+        192
+      ]
+    },
+    {
+      "id": "tank_rolf_turret",
+      "nonzeroAlphaPixels": 4196,
+      "borderAlphaPixels": 0,
+      "size": [
+        192,
+        192
+      ]
+    },
+    {
+      "id": "tank_rolf_left_track",
+      "nonzeroAlphaPixels": 3391,
+      "borderAlphaPixels": 0,
+      "size": [
+        192,
+        192
+      ]
+    },
+    {
+      "id": "tank_rolf_right_track",
+      "nonzeroAlphaPixels": 3424,
+      "borderAlphaPixels": 0,
+      "size": [
+        192,
+        192
+      ]
+    },
+    {
+      "id": "tank_rolf_damaged_hull",
+      "nonzeroAlphaPixels": 7322,
+      "borderAlphaPixels": 0,
+      "size": [
+        192,
+        192
+      ]
+    },
+    {
+      "id": "tank_rolf_wreck",
+      "nonzeroAlphaPixels": 8643,
+      "borderAlphaPixels": 0,
+      "size": [
+        192,
+        192
+      ]
+    },
+    {
+      "id": "tank_rolf_special_module",
+      "nonzeroAlphaPixels": 3094,
+      "borderAlphaPixels": 0,
+      "size": [
+        192,
+        192
+      ]
+    },
+    {
+      "id": "tank_rolf_hull_layer",
+      "nonzeroAlphaPixels": 6772,
+      "borderAlphaPixels": 0,
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "tank_rolf_damaged_hull_layer",
+      "nonzeroAlphaPixels": 7005,
+      "borderAlphaPixels": 0,
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "tank_rolf_left_track_layer",
+      "nonzeroAlphaPixels": 2846,
+      "borderAlphaPixels": 0,
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "tank_rolf_right_track_layer",
+      "nonzeroAlphaPixels": 2799,
+      "borderAlphaPixels": 0,
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "tank_rolf_turret_layer",
+      "nonzeroAlphaPixels": 4077,
+      "borderAlphaPixels": 0,
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "tank_rolf_special_module_layer",
+      "nonzeroAlphaPixels": 529,
+      "borderAlphaPixels": 0,
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "tank_rolf_assembled",
+      "nonzeroAlphaPixels": 12152,
+      "borderAlphaPixels": 0,
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "tank_rolf_damaged",
+      "nonzeroAlphaPixels": 12200,
+      "borderAlphaPixels": 0,
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "tank_chaz_concept",
+      "nonzeroAlphaPixels": 10708,
+      "borderAlphaPixels": 0,
+      "size": [
+        192,
+        192
+      ]
+    },
+    {
+      "id": "tank_chaz_hull",
+      "nonzeroAlphaPixels": 8106,
+      "borderAlphaPixels": 0,
+      "size": [
+        192,
+        192
+      ]
+    },
+    {
+      "id": "tank_chaz_turret",
+      "nonzeroAlphaPixels": 4952,
+      "borderAlphaPixels": 0,
+      "size": [
+        192,
+        192
+      ]
+    },
+    {
+      "id": "tank_chaz_left_track",
+      "nonzeroAlphaPixels": 3800,
+      "borderAlphaPixels": 0,
+      "size": [
+        192,
+        192
+      ]
+    },
+    {
+      "id": "tank_chaz_right_track",
+      "nonzeroAlphaPixels": 3809,
+      "borderAlphaPixels": 0,
+      "size": [
+        192,
+        192
+      ]
+    },
+    {
+      "id": "tank_chaz_damaged_hull",
+      "nonzeroAlphaPixels": 8333,
+      "borderAlphaPixels": 0,
+      "size": [
+        192,
+        192
+      ]
+    },
+    {
+      "id": "tank_chaz_wreck",
+      "nonzeroAlphaPixels": 9299,
+      "borderAlphaPixels": 0,
+      "size": [
+        192,
+        192
+      ]
+    },
+    {
+      "id": "tank_chaz_special_module",
+      "nonzeroAlphaPixels": 4790,
+      "borderAlphaPixels": 0,
+      "size": [
+        192,
+        192
+      ]
+    },
+    {
+      "id": "tank_chaz_hull_layer",
+      "nonzeroAlphaPixels": 4880,
+      "borderAlphaPixels": 0,
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "tank_chaz_damaged_hull_layer",
+      "nonzeroAlphaPixels": 5048,
+      "borderAlphaPixels": 0,
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "tank_chaz_left_track_layer",
+      "nonzeroAlphaPixels": 2028,
+      "borderAlphaPixels": 0,
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "tank_chaz_right_track_layer",
+      "nonzeroAlphaPixels": 2031,
+      "borderAlphaPixels": 0,
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "tank_chaz_turret_layer",
+      "nonzeroAlphaPixels": 2961,
+      "borderAlphaPixels": 0,
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "tank_chaz_special_module_layer",
+      "nonzeroAlphaPixels": 489,
+      "borderAlphaPixels": 0,
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "tank_chaz_assembled",
+      "nonzeroAlphaPixels": 8944,
+      "borderAlphaPixels": 0,
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "tank_chaz_damaged",
+      "nonzeroAlphaPixels": 9033,
+      "borderAlphaPixels": 0,
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "phoenix_idle_north_draft",
+      "nonzeroAlphaPixels": 708,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_idle_east",
+      "nonzeroAlphaPixels": 724,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_idle_south",
+      "nonzeroAlphaPixels": 739,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_idle_west",
+      "nonzeroAlphaPixels": 698,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_crouch_east",
+      "nonzeroAlphaPixels": 685,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_prone_east",
+      "nonzeroAlphaPixels": 649,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_run_east_0",
+      "nonzeroAlphaPixels": 658,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_run_east_1",
+      "nonzeroAlphaPixels": 676,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_run_east_2",
+      "nonzeroAlphaPixels": 617,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_run_north_draft_0",
+      "nonzeroAlphaPixels": 564,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_run_north_draft_1",
+      "nonzeroAlphaPixels": 546,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_run_north_draft_2",
+      "nonzeroAlphaPixels": 589,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_run_south_0",
+      "nonzeroAlphaPixels": 567,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_run_south_1",
+      "nonzeroAlphaPixels": 563,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_run_south_2",
+      "nonzeroAlphaPixels": 574,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_wall_tap_0",
+      "nonzeroAlphaPixels": 599,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_wall_tap_1",
+      "nonzeroAlphaPixels": 621,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_wall_tap_2",
+      "nonzeroAlphaPixels": 555,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_door_0",
+      "nonzeroAlphaPixels": 628,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_door_1",
+      "nonzeroAlphaPixels": 608,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_door_2",
+      "nonzeroAlphaPixels": 594,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_cover_lean_0",
+      "nonzeroAlphaPixels": 615,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_cover_lean_1",
+      "nonzeroAlphaPixels": 642,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_cover_lean_2",
+      "nonzeroAlphaPixels": 553,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_crawl_0",
+      "nonzeroAlphaPixels": 636,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_crawl_1",
+      "nonzeroAlphaPixels": 646,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_crawl_2",
+      "nonzeroAlphaPixels": 649,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_aim_fire_0",
+      "nonzeroAlphaPixels": 602,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_aim_fire_1",
+      "nonzeroAlphaPixels": 606,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_aim_fire_2",
+      "nonzeroAlphaPixels": 553,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_heal_0",
+      "nonzeroAlphaPixels": 618,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_heal_1",
+      "nonzeroAlphaPixels": 646,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_heal_2",
+      "nonzeroAlphaPixels": 639,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_signal_0",
+      "nonzeroAlphaPixels": 792,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_signal_1",
+      "nonzeroAlphaPixels": 700,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_signal_2",
+      "nonzeroAlphaPixels": 656,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_idle_north_draft",
+      "nonzeroAlphaPixels": 610,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_idle_east",
+      "nonzeroAlphaPixels": 678,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_idle_south",
+      "nonzeroAlphaPixels": 608,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_idle_west",
+      "nonzeroAlphaPixels": 645,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_crouch_east",
+      "nonzeroAlphaPixels": 645,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_prone_east",
+      "nonzeroAlphaPixels": 721,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_run_east_0",
+      "nonzeroAlphaPixels": 622,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_run_east_1",
+      "nonzeroAlphaPixels": 671,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_run_east_2",
+      "nonzeroAlphaPixels": 718,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_run_north_draft_0",
+      "nonzeroAlphaPixels": 559,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_run_north_draft_1",
+      "nonzeroAlphaPixels": 570,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_run_north_draft_2",
+      "nonzeroAlphaPixels": 576,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_run_south_0",
+      "nonzeroAlphaPixels": 647,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_run_south_1",
+      "nonzeroAlphaPixels": 634,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_run_south_2",
+      "nonzeroAlphaPixels": 655,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_wall_tap_0",
+      "nonzeroAlphaPixels": 580,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_wall_tap_1",
+      "nonzeroAlphaPixels": 635,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_wall_tap_2",
+      "nonzeroAlphaPixels": 606,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_door_0",
+      "nonzeroAlphaPixels": 621,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_door_1",
+      "nonzeroAlphaPixels": 679,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_door_2",
+      "nonzeroAlphaPixels": 714,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_cover_lean_0",
+      "nonzeroAlphaPixels": 604,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_cover_lean_1",
+      "nonzeroAlphaPixels": 659,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_cover_lean_2",
+      "nonzeroAlphaPixels": 560,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_crawl_0",
+      "nonzeroAlphaPixels": 631,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_crawl_1",
+      "nonzeroAlphaPixels": 592,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_crawl_2",
+      "nonzeroAlphaPixels": 597,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_aim_fire_0",
+      "nonzeroAlphaPixels": 631,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_aim_fire_1",
+      "nonzeroAlphaPixels": 714,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_aim_fire_2",
+      "nonzeroAlphaPixels": 644,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_heal_0",
+      "nonzeroAlphaPixels": 718,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_heal_1",
+      "nonzeroAlphaPixels": 720,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_heal_2",
+      "nonzeroAlphaPixels": 722,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_signal_0",
+      "nonzeroAlphaPixels": 775,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_signal_1",
+      "nonzeroAlphaPixels": 737,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_signal_2",
+      "nonzeroAlphaPixels": 630,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_idle_north",
+      "nonzeroAlphaPixels": 659,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_run_north_0",
+      "nonzeroAlphaPixels": 656,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_run_north_1",
+      "nonzeroAlphaPixels": 613,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_run_north_2",
+      "nonzeroAlphaPixels": 620,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_idle_north",
+      "nonzeroAlphaPixels": 541,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_run_north_0",
+      "nonzeroAlphaPixels": 539,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_run_north_1",
+      "nonzeroAlphaPixels": 533,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_run_north_2",
+      "nonzeroAlphaPixels": 569,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_wall_tap_east_0",
+      "nonzeroAlphaPixels": 794,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_wall_tap_east_1",
+      "nonzeroAlphaPixels": 795,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_wall_tap_east_2",
+      "nonzeroAlphaPixels": 755,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_wall_tap_north_0",
+      "nonzeroAlphaPixels": 748,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_wall_tap_north_1",
+      "nonzeroAlphaPixels": 788,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_wall_tap_north_2",
+      "nonzeroAlphaPixels": 710,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_door_east_0",
+      "nonzeroAlphaPixels": 830,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_door_east_1",
+      "nonzeroAlphaPixels": 802,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_door_east_2",
+      "nonzeroAlphaPixels": 825,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_door_north_0",
+      "nonzeroAlphaPixels": 741,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_door_north_1",
+      "nonzeroAlphaPixels": 812,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_door_north_2",
+      "nonzeroAlphaPixels": 740,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_wall_lean_0",
+      "nonzeroAlphaPixels": 809,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_wall_lean_1",
+      "nonzeroAlphaPixels": 872,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_wall_lean_2",
+      "nonzeroAlphaPixels": 805,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_crate_peek_0",
+      "nonzeroAlphaPixels": 666,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_crate_peek_1",
+      "nonzeroAlphaPixels": 849,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_crate_peek_2",
+      "nonzeroAlphaPixels": 728,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_heal_0",
+      "nonzeroAlphaPixels": 882,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_heal_1",
+      "nonzeroAlphaPixels": 921,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_heal_2",
+      "nonzeroAlphaPixels": 823,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_noise_toss_0",
+      "nonzeroAlphaPixels": 825,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_noise_toss_1",
+      "nonzeroAlphaPixels": 752,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_noise_toss_2",
+      "nonzeroAlphaPixels": 777,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_wall_tap_east_0",
+      "nonzeroAlphaPixels": 957,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_wall_tap_east_1",
+      "nonzeroAlphaPixels": 932,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_wall_tap_east_2",
+      "nonzeroAlphaPixels": 935,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_wall_tap_north_0",
+      "nonzeroAlphaPixels": 867,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_wall_tap_north_1",
+      "nonzeroAlphaPixels": 861,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_wall_tap_north_2",
+      "nonzeroAlphaPixels": 869,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_door_east_0",
+      "nonzeroAlphaPixels": 946,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_door_east_1",
+      "nonzeroAlphaPixels": 918,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_door_east_2",
+      "nonzeroAlphaPixels": 954,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_door_north_0",
+      "nonzeroAlphaPixels": 805,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_door_north_1",
+      "nonzeroAlphaPixels": 836,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_door_north_2",
+      "nonzeroAlphaPixels": 817,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_wall_lean_0",
+      "nonzeroAlphaPixels": 843,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_wall_lean_1",
+      "nonzeroAlphaPixels": 984,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_wall_lean_2",
+      "nonzeroAlphaPixels": 928,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_crate_peek_0",
+      "nonzeroAlphaPixels": 754,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_crate_peek_1",
+      "nonzeroAlphaPixels": 904,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_crate_peek_2",
+      "nonzeroAlphaPixels": 817,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_heal_0",
+      "nonzeroAlphaPixels": 897,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_heal_1",
+      "nonzeroAlphaPixels": 901,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_heal_2",
+      "nonzeroAlphaPixels": 1059,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_noise_toss_0",
+      "nonzeroAlphaPixels": 999,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_noise_toss_1",
+      "nonzeroAlphaPixels": 1004,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_noise_toss_2",
+      "nonzeroAlphaPixels": 956,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_wall_tap_east_0",
+      "nonzeroAlphaPixels": 815,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_wall_tap_east_1",
+      "nonzeroAlphaPixels": 920,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_wall_tap_east_2",
+      "nonzeroAlphaPixels": 872,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_wall_tap_north_0",
+      "nonzeroAlphaPixels": 746,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_wall_tap_north_1",
+      "nonzeroAlphaPixels": 832,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_wall_tap_north_2",
+      "nonzeroAlphaPixels": 796,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_door_east_0",
+      "nonzeroAlphaPixels": 884,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_door_east_1",
+      "nonzeroAlphaPixels": 878,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_door_east_2",
+      "nonzeroAlphaPixels": 844,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_door_north_0",
+      "nonzeroAlphaPixels": 764,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_door_north_1",
+      "nonzeroAlphaPixels": 787,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_door_north_2",
+      "nonzeroAlphaPixels": 690,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_wall_lean_0",
+      "nonzeroAlphaPixels": 777,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_wall_lean_1",
+      "nonzeroAlphaPixels": 902,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_wall_lean_2",
+      "nonzeroAlphaPixels": 762,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_crate_peek_0",
+      "nonzeroAlphaPixels": 689,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_crate_peek_1",
+      "nonzeroAlphaPixels": 920,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_crate_peek_2",
+      "nonzeroAlphaPixels": 718,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_heal_0",
+      "nonzeroAlphaPixels": 886,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_heal_1",
+      "nonzeroAlphaPixels": 862,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_heal_2",
+      "nonzeroAlphaPixels": 871,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_noise_toss_0",
+      "nonzeroAlphaPixels": 842,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_noise_toss_1",
+      "nonzeroAlphaPixels": 891,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_noise_toss_2",
+      "nonzeroAlphaPixels": 830,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_wall_tap_east_0",
+      "nonzeroAlphaPixels": 796,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_wall_tap_east_1",
+      "nonzeroAlphaPixels": 843,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_wall_tap_east_2",
+      "nonzeroAlphaPixels": 826,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_wall_tap_north_0",
+      "nonzeroAlphaPixels": 760,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_wall_tap_north_1",
+      "nonzeroAlphaPixels": 777,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_wall_tap_north_2",
+      "nonzeroAlphaPixels": 741,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_door_east_0",
+      "nonzeroAlphaPixels": 874,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_door_east_1",
+      "nonzeroAlphaPixels": 819,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_door_east_2",
+      "nonzeroAlphaPixels": 808,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_door_north_0",
+      "nonzeroAlphaPixels": 777,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_door_north_1",
+      "nonzeroAlphaPixels": 758,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_door_north_2",
+      "nonzeroAlphaPixels": 758,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_wall_lean_0",
+      "nonzeroAlphaPixels": 822,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_wall_lean_1",
+      "nonzeroAlphaPixels": 815,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_wall_lean_2",
+      "nonzeroAlphaPixels": 775,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_crate_peek_0",
+      "nonzeroAlphaPixels": 747,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_crate_peek_1",
+      "nonzeroAlphaPixels": 807,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_crate_peek_2",
+      "nonzeroAlphaPixels": 733,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_heal_0",
+      "nonzeroAlphaPixels": 935,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_heal_1",
+      "nonzeroAlphaPixels": 841,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_heal_2",
+      "nonzeroAlphaPixels": 855,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_noise_toss_0",
+      "nonzeroAlphaPixels": 875,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_noise_toss_1",
+      "nonzeroAlphaPixels": 894,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_noise_toss_2",
+      "nonzeroAlphaPixels": 844,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "wren_projectile",
+      "nonzeroAlphaPixels": 1930,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "wren_muzzle_0",
+      "nonzeroAlphaPixels": 1770,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "wren_muzzle_1",
+      "nonzeroAlphaPixels": 2487,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "wren_muzzle_2",
+      "nonzeroAlphaPixels": 3270,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "wren_impact_0",
+      "nonzeroAlphaPixels": 2842,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "wren_impact_1",
+      "nonzeroAlphaPixels": 2531,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "wren_special_0",
+      "nonzeroAlphaPixels": 1009,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "wren_special_1",
+      "nonzeroAlphaPixels": 2326,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "wren_special_2",
+      "nonzeroAlphaPixels": 3549,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "wren_special_3",
+      "nonzeroAlphaPixels": 4603,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "wren_special_4",
+      "nonzeroAlphaPixels": 5663,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "wren_special_5",
+      "nonzeroAlphaPixels": 4471,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "rolf_projectile",
+      "nonzeroAlphaPixels": 1244,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "rolf_muzzle_0",
+      "nonzeroAlphaPixels": 1438,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "rolf_muzzle_1",
+      "nonzeroAlphaPixels": 2200,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "rolf_muzzle_2",
+      "nonzeroAlphaPixels": 3701,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "rolf_impact_0",
+      "nonzeroAlphaPixels": 4025,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "rolf_impact_1",
+      "nonzeroAlphaPixels": 2931,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "rolf_special_0",
+      "nonzeroAlphaPixels": 1374,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "rolf_special_1",
+      "nonzeroAlphaPixels": 2634,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "rolf_special_2",
+      "nonzeroAlphaPixels": 3884,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "rolf_special_3",
+      "nonzeroAlphaPixels": 4079,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "rolf_special_4",
+      "nonzeroAlphaPixels": 5343,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "rolf_special_5",
+      "nonzeroAlphaPixels": 2444,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "chaz_projectile",
+      "nonzeroAlphaPixels": 1346,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "chaz_muzzle_0",
+      "nonzeroAlphaPixels": 1707,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "chaz_muzzle_1",
+      "nonzeroAlphaPixels": 2740,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "chaz_muzzle_2",
+      "nonzeroAlphaPixels": 3691,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "chaz_impact_0",
+      "nonzeroAlphaPixels": 4717,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "chaz_impact_1",
+      "nonzeroAlphaPixels": 5499,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "chaz_special_0",
+      "nonzeroAlphaPixels": 3259,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "chaz_special_1",
+      "nonzeroAlphaPixels": 5064,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "chaz_special_2",
+      "nonzeroAlphaPixels": 6093,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "chaz_special_3",
+      "nonzeroAlphaPixels": 5445,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "chaz_special_4",
+      "nonzeroAlphaPixels": 4596,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "chaz_special_5",
+      "nonzeroAlphaPixels": 3921,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "door_locked",
+      "nonzeroAlphaPixels": 10802,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "door_unlocked",
+      "nonzeroAlphaPixels": 10752,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "door_ajar",
+      "nonzeroAlphaPixels": 9961,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "door_open",
+      "nonzeroAlphaPixels": 7282,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "tap_spark",
+      "nonzeroAlphaPixels": 2130,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "sound_ring_0",
+      "nonzeroAlphaPixels": 2369,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "sound_ring_1",
+      "nonzeroAlphaPixels": 4285,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "sound_ring_2",
+      "nonzeroAlphaPixels": 4773,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "medkit_pickup",
+      "nonzeroAlphaPixels": 4104,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "medkit_open",
+      "nonzeroAlphaPixels": 6076,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "heal_pulse_0",
+      "nonzeroAlphaPixels": 3923,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "heal_pulse_1",
+      "nonzeroAlphaPixels": 6020,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "machinists_badge",
+      "nonzeroAlphaPixels": 10257,
+      "borderAlphaPixels": 0,
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "id": "wren_special_icon",
+      "nonzeroAlphaPixels": 5942,
+      "borderAlphaPixels": 0,
+      "size": [
+        112,
+        112
+      ]
+    },
+    {
+      "id": "rolf_special_icon",
+      "nonzeroAlphaPixels": 5939,
+      "borderAlphaPixels": 0,
+      "size": [
+        112,
+        112
+      ]
+    },
+    {
+      "id": "chaz_special_icon",
+      "nonzeroAlphaPixels": 5963,
+      "borderAlphaPixels": 0,
+      "size": [
+        112,
+        112
+      ]
+    },
+    {
+      "id": "phoenix_grenade_throw_0",
+      "nonzeroAlphaPixels": 719,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_grenade_throw_1",
+      "nonzeroAlphaPixels": 730,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_grenade_throw_2",
+      "nonzeroAlphaPixels": 768,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_grenade_throw_3",
+      "nonzeroAlphaPixels": 729,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_grenade_throw_4",
+      "nonzeroAlphaPixels": 673,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_grenade_throw_5",
+      "nonzeroAlphaPixels": 700,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_roll_to_prone_0",
+      "nonzeroAlphaPixels": 673,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_roll_to_prone_1",
+      "nonzeroAlphaPixels": 635,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_roll_to_prone_2",
+      "nonzeroAlphaPixels": 509,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_roll_to_prone_3",
+      "nonzeroAlphaPixels": 640,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_roll_to_prone_4",
+      "nonzeroAlphaPixels": 559,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_roll_to_prone_5",
+      "nonzeroAlphaPixels": 701,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_roll_to_stand_0",
+      "nonzeroAlphaPixels": 701,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_roll_to_stand_1",
+      "nonzeroAlphaPixels": 598,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_roll_to_stand_2",
+      "nonzeroAlphaPixels": 582,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_roll_to_stand_3",
+      "nonzeroAlphaPixels": 700,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_roll_to_stand_4",
+      "nonzeroAlphaPixels": 712,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_roll_to_stand_5",
+      "nonzeroAlphaPixels": 714,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_hit_0",
+      "nonzeroAlphaPixels": 887,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_hit_1",
+      "nonzeroAlphaPixels": 853,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_hit_2",
+      "nonzeroAlphaPixels": 685,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_stun_0",
+      "nonzeroAlphaPixels": 702,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_stun_1",
+      "nonzeroAlphaPixels": 610,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_stun_2",
+      "nonzeroAlphaPixels": 764,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_death_0",
+      "nonzeroAlphaPixels": 872,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_death_1",
+      "nonzeroAlphaPixels": 807,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_death_2",
+      "nonzeroAlphaPixels": 724,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_death_3",
+      "nonzeroAlphaPixels": 740,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_death_4",
+      "nonzeroAlphaPixels": 642,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_death_5",
+      "nonzeroAlphaPixels": 614,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_revive_0",
+      "nonzeroAlphaPixels": 601,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_revive_1",
+      "nonzeroAlphaPixels": 614,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_revive_2",
+      "nonzeroAlphaPixels": 653,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_revive_3",
+      "nonzeroAlphaPixels": 727,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_revive_4",
+      "nonzeroAlphaPixels": 746,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_revive_5",
+      "nonzeroAlphaPixels": 687,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_powerup_0",
+      "nonzeroAlphaPixels": 694,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_powerup_1",
+      "nonzeroAlphaPixels": 673,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_powerup_2",
+      "nonzeroAlphaPixels": 666,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_assist_heal_0",
+      "nonzeroAlphaPixels": 665,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_assist_heal_1",
+      "nonzeroAlphaPixels": 684,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_assist_heal_2",
+      "nonzeroAlphaPixels": 714,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_duck_to_prone_0",
+      "nonzeroAlphaPixels": 709,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_duck_to_prone_1",
+      "nonzeroAlphaPixels": 634,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_duck_to_prone_2",
+      "nonzeroAlphaPixels": 609,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_recovery_0",
+      "nonzeroAlphaPixels": 729,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_recovery_1",
+      "nonzeroAlphaPixels": 699,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_recovery_2",
+      "nonzeroAlphaPixels": 725,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_grenade_throw_0",
+      "nonzeroAlphaPixels": 767,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_grenade_throw_1",
+      "nonzeroAlphaPixels": 823,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_grenade_throw_2",
+      "nonzeroAlphaPixels": 792,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_grenade_throw_3",
+      "nonzeroAlphaPixels": 795,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_grenade_throw_4",
+      "nonzeroAlphaPixels": 813,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_grenade_throw_5",
+      "nonzeroAlphaPixels": 723,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_roll_to_prone_0",
+      "nonzeroAlphaPixels": 696,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_roll_to_prone_1",
+      "nonzeroAlphaPixels": 686,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_roll_to_prone_2",
+      "nonzeroAlphaPixels": 598,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_roll_to_prone_3",
+      "nonzeroAlphaPixels": 639,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_roll_to_prone_4",
+      "nonzeroAlphaPixels": 711,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_roll_to_prone_5",
+      "nonzeroAlphaPixels": 658,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_roll_to_stand_0",
+      "nonzeroAlphaPixels": 657,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_roll_to_stand_1",
+      "nonzeroAlphaPixels": 668,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_roll_to_stand_2",
+      "nonzeroAlphaPixels": 676,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_roll_to_stand_3",
+      "nonzeroAlphaPixels": 765,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_roll_to_stand_4",
+      "nonzeroAlphaPixels": 724,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_roll_to_stand_5",
+      "nonzeroAlphaPixels": 776,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_hit_0",
+      "nonzeroAlphaPixels": 734,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_hit_1",
+      "nonzeroAlphaPixels": 832,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_hit_2",
+      "nonzeroAlphaPixels": 754,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_stun_0",
+      "nonzeroAlphaPixels": 663,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_stun_1",
+      "nonzeroAlphaPixels": 628,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_stun_2",
+      "nonzeroAlphaPixels": 826,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_death_0",
+      "nonzeroAlphaPixels": 830,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_death_1",
+      "nonzeroAlphaPixels": 802,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_death_2",
+      "nonzeroAlphaPixels": 680,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_death_3",
+      "nonzeroAlphaPixels": 685,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_death_4",
+      "nonzeroAlphaPixels": 592,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_death_5",
+      "nonzeroAlphaPixels": 562,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_revive_0",
+      "nonzeroAlphaPixels": 605,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_revive_1",
+      "nonzeroAlphaPixels": 570,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_revive_2",
+      "nonzeroAlphaPixels": 582,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_revive_3",
+      "nonzeroAlphaPixels": 642,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_revive_4",
+      "nonzeroAlphaPixels": 799,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_revive_5",
+      "nonzeroAlphaPixels": 759,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_powerup_0",
+      "nonzeroAlphaPixels": 647,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_powerup_1",
+      "nonzeroAlphaPixels": 629,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_powerup_2",
+      "nonzeroAlphaPixels": 649,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_assist_heal_0",
+      "nonzeroAlphaPixels": 707,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_assist_heal_1",
+      "nonzeroAlphaPixels": 716,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_assist_heal_2",
+      "nonzeroAlphaPixels": 761,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_duck_to_prone_0",
+      "nonzeroAlphaPixels": 634,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_duck_to_prone_1",
+      "nonzeroAlphaPixels": 577,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_duck_to_prone_2",
+      "nonzeroAlphaPixels": 643,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_recovery_0",
+      "nonzeroAlphaPixels": 606,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_recovery_1",
+      "nonzeroAlphaPixels": 620,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_recovery_2",
+      "nonzeroAlphaPixels": 704,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_aim_fire_north_0",
+      "nonzeroAlphaPixels": 706,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_aim_fire_north_1",
+      "nonzeroAlphaPixels": 763,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_aim_fire_north_2",
+      "nonzeroAlphaPixels": 694,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_aim_fire_north_3",
+      "nonzeroAlphaPixels": 762,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_aim_fire_north_4",
+      "nonzeroAlphaPixels": 682,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_aim_fire_north_5",
+      "nonzeroAlphaPixels": 706,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_aim_fire_south_0",
+      "nonzeroAlphaPixels": 667,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_aim_fire_south_1",
+      "nonzeroAlphaPixels": 709,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_aim_fire_south_2",
+      "nonzeroAlphaPixels": 653,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_aim_fire_south_3",
+      "nonzeroAlphaPixels": 708,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_aim_fire_south_4",
+      "nonzeroAlphaPixels": 665,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_aim_fire_south_5",
+      "nonzeroAlphaPixels": 656,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_aim_fire_north_0",
+      "nonzeroAlphaPixels": 763,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_aim_fire_north_1",
+      "nonzeroAlphaPixels": 787,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_aim_fire_north_2",
+      "nonzeroAlphaPixels": 702,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_aim_fire_north_3",
+      "nonzeroAlphaPixels": 788,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_aim_fire_north_4",
+      "nonzeroAlphaPixels": 769,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_aim_fire_north_5",
+      "nonzeroAlphaPixels": 734,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_aim_fire_south_0",
+      "nonzeroAlphaPixels": 661,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_aim_fire_south_1",
+      "nonzeroAlphaPixels": 733,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_aim_fire_south_2",
+      "nonzeroAlphaPixels": 685,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_aim_fire_south_3",
+      "nonzeroAlphaPixels": 737,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_aim_fire_south_4",
+      "nonzeroAlphaPixels": 713,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_aim_fire_south_5",
+      "nonzeroAlphaPixels": 658,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "tank_wren_left_track_move_0",
+      "nonzeroAlphaPixels": 5306,
+      "borderAlphaPixels": 0,
+      "size": [
+        192,
+        192
+      ]
+    },
+    {
+      "id": "tank_wren_left_track_move_1",
+      "nonzeroAlphaPixels": 5417,
+      "borderAlphaPixels": 0,
+      "size": [
+        192,
+        192
+      ]
+    },
+    {
+      "id": "tank_wren_left_track_move_2",
+      "nonzeroAlphaPixels": 5290,
+      "borderAlphaPixels": 0,
+      "size": [
+        192,
+        192
+      ]
+    },
+    {
+      "id": "tank_wren_left_track_move_3",
+      "nonzeroAlphaPixels": 5352,
+      "borderAlphaPixels": 0,
+      "size": [
+        192,
+        192
+      ]
+    },
+    {
+      "id": "tank_wren_left_track_move_4",
+      "nonzeroAlphaPixels": 5332,
+      "borderAlphaPixels": 0,
+      "size": [
+        192,
+        192
+      ]
+    },
+    {
+      "id": "tank_wren_left_track_move_5",
+      "nonzeroAlphaPixels": 5343,
+      "borderAlphaPixels": 0,
+      "size": [
+        192,
+        192
+      ]
+    },
+    {
+      "id": "tank_wren_right_track_move_0",
+      "nonzeroAlphaPixels": 5485,
+      "borderAlphaPixels": 0,
+      "size": [
+        192,
+        192
+      ]
+    },
+    {
+      "id": "tank_wren_right_track_move_1",
+      "nonzeroAlphaPixels": 5411,
+      "borderAlphaPixels": 0,
+      "size": [
+        192,
+        192
+      ]
+    },
+    {
+      "id": "tank_wren_right_track_move_2",
+      "nonzeroAlphaPixels": 5448,
+      "borderAlphaPixels": 0,
+      "size": [
+        192,
+        192
+      ]
+    },
+    {
+      "id": "tank_wren_right_track_move_3",
+      "nonzeroAlphaPixels": 5482,
+      "borderAlphaPixels": 0,
+      "size": [
+        192,
+        192
+      ]
+    },
+    {
+      "id": "tank_wren_right_track_move_4",
+      "nonzeroAlphaPixels": 5461,
+      "borderAlphaPixels": 0,
+      "size": [
+        192,
+        192
+      ]
+    },
+    {
+      "id": "tank_wren_right_track_move_5",
+      "nonzeroAlphaPixels": 5351,
+      "borderAlphaPixels": 0,
+      "size": [
+        192,
+        192
+      ]
+    },
+    {
+      "id": "tank_wren_left_track_move_0_layer",
+      "nonzeroAlphaPixels": 3392,
+      "borderAlphaPixels": 0,
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "tank_wren_left_track_move_1_layer",
+      "nonzeroAlphaPixels": 3426,
+      "borderAlphaPixels": 0,
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "tank_wren_left_track_move_2_layer",
+      "nonzeroAlphaPixels": 3389,
+      "borderAlphaPixels": 0,
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "tank_wren_left_track_move_3_layer",
+      "nonzeroAlphaPixels": 3426,
+      "borderAlphaPixels": 0,
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "tank_wren_left_track_move_4_layer",
+      "nonzeroAlphaPixels": 3436,
+      "borderAlphaPixels": 0,
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "tank_wren_left_track_move_5_layer",
+      "nonzeroAlphaPixels": 3415,
+      "borderAlphaPixels": 0,
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "tank_wren_right_track_move_0_layer",
+      "nonzeroAlphaPixels": 3444,
+      "borderAlphaPixels": 0,
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "tank_wren_right_track_move_1_layer",
+      "nonzeroAlphaPixels": 3394,
+      "borderAlphaPixels": 0,
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "tank_wren_right_track_move_2_layer",
+      "nonzeroAlphaPixels": 3401,
+      "borderAlphaPixels": 0,
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "tank_wren_right_track_move_3_layer",
+      "nonzeroAlphaPixels": 3428,
+      "borderAlphaPixels": 0,
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "tank_wren_right_track_move_4_layer",
+      "nonzeroAlphaPixels": 3416,
+      "borderAlphaPixels": 0,
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "tank_wren_right_track_move_5_layer",
+      "nonzeroAlphaPixels": 3391,
+      "borderAlphaPixels": 0,
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "tank_rolf_left_track_move_0",
+      "nonzeroAlphaPixels": 4792,
+      "borderAlphaPixels": 0,
+      "size": [
+        192,
+        192
+      ]
+    },
+    {
+      "id": "tank_rolf_left_track_move_1",
+      "nonzeroAlphaPixels": 4817,
+      "borderAlphaPixels": 0,
+      "size": [
+        192,
+        192
+      ]
+    },
+    {
+      "id": "tank_rolf_left_track_move_2",
+      "nonzeroAlphaPixels": 4893,
+      "borderAlphaPixels": 0,
+      "size": [
+        192,
+        192
+      ]
+    },
+    {
+      "id": "tank_rolf_left_track_move_3",
+      "nonzeroAlphaPixels": 4869,
+      "borderAlphaPixels": 0,
+      "size": [
+        192,
+        192
+      ]
+    },
+    {
+      "id": "tank_rolf_left_track_move_4",
+      "nonzeroAlphaPixels": 4814,
+      "borderAlphaPixels": 0,
+      "size": [
+        192,
+        192
+      ]
+    },
+    {
+      "id": "tank_rolf_left_track_move_5",
+      "nonzeroAlphaPixels": 4894,
+      "borderAlphaPixels": 0,
+      "size": [
+        192,
+        192
+      ]
+    },
+    {
+      "id": "tank_rolf_right_track_move_0",
+      "nonzeroAlphaPixels": 4866,
+      "borderAlphaPixels": 0,
+      "size": [
+        192,
+        192
+      ]
+    },
+    {
+      "id": "tank_rolf_right_track_move_1",
+      "nonzeroAlphaPixels": 4892,
+      "borderAlphaPixels": 0,
+      "size": [
+        192,
+        192
+      ]
+    },
+    {
+      "id": "tank_rolf_right_track_move_2",
+      "nonzeroAlphaPixels": 4885,
+      "borderAlphaPixels": 0,
+      "size": [
+        192,
+        192
+      ]
+    },
+    {
+      "id": "tank_rolf_right_track_move_3",
+      "nonzeroAlphaPixels": 5029,
+      "borderAlphaPixels": 0,
+      "size": [
+        192,
+        192
+      ]
+    },
+    {
+      "id": "tank_rolf_right_track_move_4",
+      "nonzeroAlphaPixels": 5040,
+      "borderAlphaPixels": 0,
+      "size": [
+        192,
+        192
+      ]
+    },
+    {
+      "id": "tank_rolf_right_track_move_5",
+      "nonzeroAlphaPixels": 4927,
+      "borderAlphaPixels": 0,
+      "size": [
+        192,
+        192
+      ]
+    },
+    {
+      "id": "tank_rolf_left_track_move_0_layer",
+      "nonzeroAlphaPixels": 2860,
+      "borderAlphaPixels": 0,
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "tank_rolf_left_track_move_1_layer",
+      "nonzeroAlphaPixels": 2883,
+      "borderAlphaPixels": 0,
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "tank_rolf_left_track_move_2_layer",
+      "nonzeroAlphaPixels": 2822,
+      "borderAlphaPixels": 0,
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "tank_rolf_left_track_move_3_layer",
+      "nonzeroAlphaPixels": 2819,
+      "borderAlphaPixels": 0,
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "tank_rolf_left_track_move_4_layer",
+      "nonzeroAlphaPixels": 2808,
+      "borderAlphaPixels": 0,
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "tank_rolf_left_track_move_5_layer",
+      "nonzeroAlphaPixels": 2852,
+      "borderAlphaPixels": 0,
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "tank_rolf_right_track_move_0_layer",
+      "nonzeroAlphaPixels": 2836,
+      "borderAlphaPixels": 0,
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "tank_rolf_right_track_move_1_layer",
+      "nonzeroAlphaPixels": 2834,
+      "borderAlphaPixels": 0,
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "tank_rolf_right_track_move_2_layer",
+      "nonzeroAlphaPixels": 2826,
+      "borderAlphaPixels": 0,
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "tank_rolf_right_track_move_3_layer",
+      "nonzeroAlphaPixels": 2847,
+      "borderAlphaPixels": 0,
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "tank_rolf_right_track_move_4_layer",
+      "nonzeroAlphaPixels": 2835,
+      "borderAlphaPixels": 0,
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "tank_rolf_right_track_move_5_layer",
+      "nonzeroAlphaPixels": 2836,
+      "borderAlphaPixels": 0,
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "tank_chaz_left_track_move_0",
+      "nonzeroAlphaPixels": 5078,
+      "borderAlphaPixels": 0,
+      "size": [
+        192,
+        192
+      ]
+    },
+    {
+      "id": "tank_chaz_left_track_move_1",
+      "nonzeroAlphaPixels": 5094,
+      "borderAlphaPixels": 0,
+      "size": [
+        192,
+        192
+      ]
+    },
+    {
+      "id": "tank_chaz_left_track_move_2",
+      "nonzeroAlphaPixels": 5130,
+      "borderAlphaPixels": 0,
+      "size": [
+        192,
+        192
+      ]
+    },
+    {
+      "id": "tank_chaz_left_track_move_3",
+      "nonzeroAlphaPixels": 5127,
+      "borderAlphaPixels": 0,
+      "size": [
+        192,
+        192
+      ]
+    },
+    {
+      "id": "tank_chaz_left_track_move_4",
+      "nonzeroAlphaPixels": 5083,
+      "borderAlphaPixels": 0,
+      "size": [
+        192,
+        192
+      ]
+    },
+    {
+      "id": "tank_chaz_left_track_move_5",
+      "nonzeroAlphaPixels": 5075,
+      "borderAlphaPixels": 0,
+      "size": [
+        192,
+        192
+      ]
+    },
+    {
+      "id": "tank_chaz_right_track_move_0",
+      "nonzeroAlphaPixels": 5080,
+      "borderAlphaPixels": 0,
+      "size": [
+        192,
+        192
+      ]
+    },
+    {
+      "id": "tank_chaz_right_track_move_1",
+      "nonzeroAlphaPixels": 5117,
+      "borderAlphaPixels": 0,
+      "size": [
+        192,
+        192
+      ]
+    },
+    {
+      "id": "tank_chaz_right_track_move_2",
+      "nonzeroAlphaPixels": 5087,
+      "borderAlphaPixels": 0,
+      "size": [
+        192,
+        192
+      ]
+    },
+    {
+      "id": "tank_chaz_right_track_move_3",
+      "nonzeroAlphaPixels": 5094,
+      "borderAlphaPixels": 0,
+      "size": [
+        192,
+        192
+      ]
+    },
+    {
+      "id": "tank_chaz_right_track_move_4",
+      "nonzeroAlphaPixels": 5111,
+      "borderAlphaPixels": 0,
+      "size": [
+        192,
+        192
+      ]
+    },
+    {
+      "id": "tank_chaz_right_track_move_5",
+      "nonzeroAlphaPixels": 5116,
+      "borderAlphaPixels": 0,
+      "size": [
+        192,
+        192
+      ]
+    },
+    {
+      "id": "tank_chaz_left_track_move_0_layer",
+      "nonzeroAlphaPixels": 2077,
+      "borderAlphaPixels": 0,
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "tank_chaz_left_track_move_1_layer",
+      "nonzeroAlphaPixels": 2075,
+      "borderAlphaPixels": 0,
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "tank_chaz_left_track_move_2_layer",
+      "nonzeroAlphaPixels": 2092,
+      "borderAlphaPixels": 0,
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "tank_chaz_left_track_move_3_layer",
+      "nonzeroAlphaPixels": 2098,
+      "borderAlphaPixels": 0,
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "tank_chaz_left_track_move_4_layer",
+      "nonzeroAlphaPixels": 2085,
+      "borderAlphaPixels": 0,
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "tank_chaz_left_track_move_5_layer",
+      "nonzeroAlphaPixels": 2068,
+      "borderAlphaPixels": 0,
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "tank_chaz_right_track_move_0_layer",
+      "nonzeroAlphaPixels": 2067,
+      "borderAlphaPixels": 0,
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "tank_chaz_right_track_move_1_layer",
+      "nonzeroAlphaPixels": 2071,
+      "borderAlphaPixels": 0,
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "tank_chaz_right_track_move_2_layer",
+      "nonzeroAlphaPixels": 2087,
+      "borderAlphaPixels": 0,
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "tank_chaz_right_track_move_3_layer",
+      "nonzeroAlphaPixels": 2088,
+      "borderAlphaPixels": 0,
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "tank_chaz_right_track_move_4_layer",
+      "nonzeroAlphaPixels": 2098,
+      "borderAlphaPixels": 0,
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "tank_chaz_right_track_move_5_layer",
+      "nonzeroAlphaPixels": 2090,
+      "borderAlphaPixels": 0,
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "regular_crouch_walk_north_0",
+      "nonzeroAlphaPixels": 622,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_crouch_walk_north_1",
+      "nonzeroAlphaPixels": 614,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_crouch_walk_north_2",
+      "nonzeroAlphaPixels": 645,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_crouch_walk_north_3",
+      "nonzeroAlphaPixels": 622,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_crouch_walk_north_4",
+      "nonzeroAlphaPixels": 632,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_crouch_walk_north_5",
+      "nonzeroAlphaPixels": 660,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_crouch_walk_east_0",
+      "nonzeroAlphaPixels": 611,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_crouch_walk_east_1",
+      "nonzeroAlphaPixels": 641,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_crouch_walk_east_2",
+      "nonzeroAlphaPixels": 662,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_crouch_walk_east_3",
+      "nonzeroAlphaPixels": 620,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_crouch_walk_east_4",
+      "nonzeroAlphaPixels": 620,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_crouch_walk_east_5",
+      "nonzeroAlphaPixels": 634,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_crouch_walk_south_0",
+      "nonzeroAlphaPixels": 581,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_crouch_walk_south_1",
+      "nonzeroAlphaPixels": 618,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_crouch_walk_south_2",
+      "nonzeroAlphaPixels": 584,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_crouch_walk_south_3",
+      "nonzeroAlphaPixels": 624,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_crouch_walk_south_4",
+      "nonzeroAlphaPixels": 574,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_crouch_walk_south_5",
+      "nonzeroAlphaPixels": 581,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_crouch_walk_west_0",
+      "nonzeroAlphaPixels": 623,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_crouch_walk_west_1",
+      "nonzeroAlphaPixels": 610,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_crouch_walk_west_2",
+      "nonzeroAlphaPixels": 615,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_crouch_walk_west_3",
+      "nonzeroAlphaPixels": 644,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_crouch_walk_west_4",
+      "nonzeroAlphaPixels": 607,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_crouch_walk_west_5",
+      "nonzeroAlphaPixels": 609,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_prone_fire_north_0",
+      "nonzeroAlphaPixels": 710,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_prone_fire_north_1",
+      "nonzeroAlphaPixels": 716,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_prone_fire_north_2",
+      "nonzeroAlphaPixels": 672,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_prone_fire_north_3",
+      "nonzeroAlphaPixels": 733,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_prone_fire_north_4",
+      "nonzeroAlphaPixels": 715,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_prone_fire_north_5",
+      "nonzeroAlphaPixels": 696,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_prone_fire_east_0",
+      "nonzeroAlphaPixels": 539,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_prone_fire_east_1",
+      "nonzeroAlphaPixels": 535,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_prone_fire_east_2",
+      "nonzeroAlphaPixels": 504,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_prone_fire_east_3",
+      "nonzeroAlphaPixels": 549,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_prone_fire_east_4",
+      "nonzeroAlphaPixels": 505,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_prone_fire_east_5",
+      "nonzeroAlphaPixels": 499,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_prone_fire_south_0",
+      "nonzeroAlphaPixels": 613,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_prone_fire_south_1",
+      "nonzeroAlphaPixels": 716,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_prone_fire_south_2",
+      "nonzeroAlphaPixels": 653,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_prone_fire_south_3",
+      "nonzeroAlphaPixels": 640,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_prone_fire_south_4",
+      "nonzeroAlphaPixels": 630,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_prone_fire_south_5",
+      "nonzeroAlphaPixels": 603,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_prone_fire_west_0",
+      "nonzeroAlphaPixels": 516,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_prone_fire_west_1",
+      "nonzeroAlphaPixels": 561,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_prone_fire_west_2",
+      "nonzeroAlphaPixels": 532,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_prone_fire_west_3",
+      "nonzeroAlphaPixels": 537,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_prone_fire_west_4",
+      "nonzeroAlphaPixels": 512,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_prone_fire_west_5",
+      "nonzeroAlphaPixels": 457,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_crouch_walk_north_0",
+      "nonzeroAlphaPixels": 912,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_crouch_walk_north_1",
+      "nonzeroAlphaPixels": 907,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_crouch_walk_north_2",
+      "nonzeroAlphaPixels": 970,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_crouch_walk_north_3",
+      "nonzeroAlphaPixels": 891,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_crouch_walk_north_4",
+      "nonzeroAlphaPixels": 932,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_crouch_walk_north_5",
+      "nonzeroAlphaPixels": 909,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_crouch_walk_east_0",
+      "nonzeroAlphaPixels": 898,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_crouch_walk_east_1",
+      "nonzeroAlphaPixels": 900,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_crouch_walk_east_2",
+      "nonzeroAlphaPixels": 894,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_crouch_walk_east_3",
+      "nonzeroAlphaPixels": 919,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_crouch_walk_east_4",
+      "nonzeroAlphaPixels": 882,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_crouch_walk_east_5",
+      "nonzeroAlphaPixels": 899,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_crouch_walk_south_0",
+      "nonzeroAlphaPixels": 830,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_crouch_walk_south_1",
+      "nonzeroAlphaPixels": 761,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_crouch_walk_south_2",
+      "nonzeroAlphaPixels": 753,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_crouch_walk_south_3",
+      "nonzeroAlphaPixels": 800,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_crouch_walk_south_4",
+      "nonzeroAlphaPixels": 827,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_crouch_walk_south_5",
+      "nonzeroAlphaPixels": 819,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_crouch_walk_west_0",
+      "nonzeroAlphaPixels": 899,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_crouch_walk_west_1",
+      "nonzeroAlphaPixels": 892,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_crouch_walk_west_2",
+      "nonzeroAlphaPixels": 888,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_crouch_walk_west_3",
+      "nonzeroAlphaPixels": 895,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_crouch_walk_west_4",
+      "nonzeroAlphaPixels": 884,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_crouch_walk_west_5",
+      "nonzeroAlphaPixels": 903,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_prone_fire_north_0",
+      "nonzeroAlphaPixels": 842,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_prone_fire_north_1",
+      "nonzeroAlphaPixels": 848,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_prone_fire_north_2",
+      "nonzeroAlphaPixels": 822,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_prone_fire_north_3",
+      "nonzeroAlphaPixels": 882,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_prone_fire_north_4",
+      "nonzeroAlphaPixels": 853,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_prone_fire_north_5",
+      "nonzeroAlphaPixels": 830,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_prone_fire_east_0",
+      "nonzeroAlphaPixels": 611,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_prone_fire_east_1",
+      "nonzeroAlphaPixels": 598,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_prone_fire_east_2",
+      "nonzeroAlphaPixels": 589,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_prone_fire_east_3",
+      "nonzeroAlphaPixels": 605,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_prone_fire_east_4",
+      "nonzeroAlphaPixels": 600,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_prone_fire_east_5",
+      "nonzeroAlphaPixels": 590,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_prone_fire_south_0",
+      "nonzeroAlphaPixels": 721,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_prone_fire_south_1",
+      "nonzeroAlphaPixels": 821,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_prone_fire_south_2",
+      "nonzeroAlphaPixels": 752,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_prone_fire_south_3",
+      "nonzeroAlphaPixels": 765,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_prone_fire_south_4",
+      "nonzeroAlphaPixels": 770,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_prone_fire_south_5",
+      "nonzeroAlphaPixels": 738,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_prone_fire_west_0",
+      "nonzeroAlphaPixels": 637,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_prone_fire_west_1",
+      "nonzeroAlphaPixels": 655,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_prone_fire_west_2",
+      "nonzeroAlphaPixels": 617,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_prone_fire_west_3",
+      "nonzeroAlphaPixels": 663,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_prone_fire_west_4",
+      "nonzeroAlphaPixels": 662,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_prone_fire_west_5",
+      "nonzeroAlphaPixels": 635,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_crouch_walk_north_0",
+      "nonzeroAlphaPixels": 637,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_crouch_walk_north_1",
+      "nonzeroAlphaPixels": 596,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_crouch_walk_north_2",
+      "nonzeroAlphaPixels": 604,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_crouch_walk_north_3",
+      "nonzeroAlphaPixels": 608,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_crouch_walk_north_4",
+      "nonzeroAlphaPixels": 605,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_crouch_walk_north_5",
+      "nonzeroAlphaPixels": 570,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_crouch_walk_east_0",
+      "nonzeroAlphaPixels": 653,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_crouch_walk_east_1",
+      "nonzeroAlphaPixels": 655,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_crouch_walk_east_2",
+      "nonzeroAlphaPixels": 685,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_crouch_walk_east_3",
+      "nonzeroAlphaPixels": 667,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_crouch_walk_east_4",
+      "nonzeroAlphaPixels": 657,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_crouch_walk_east_5",
+      "nonzeroAlphaPixels": 656,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_crouch_walk_south_0",
+      "nonzeroAlphaPixels": 597,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_crouch_walk_south_1",
+      "nonzeroAlphaPixels": 606,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_crouch_walk_south_2",
+      "nonzeroAlphaPixels": 613,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_crouch_walk_south_3",
+      "nonzeroAlphaPixels": 594,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_crouch_walk_south_4",
+      "nonzeroAlphaPixels": 620,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_crouch_walk_south_5",
+      "nonzeroAlphaPixels": 588,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_crouch_walk_west_0",
+      "nonzeroAlphaPixels": 637,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_crouch_walk_west_1",
+      "nonzeroAlphaPixels": 618,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_crouch_walk_west_2",
+      "nonzeroAlphaPixels": 648,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_crouch_walk_west_3",
+      "nonzeroAlphaPixels": 657,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_crouch_walk_west_4",
+      "nonzeroAlphaPixels": 581,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_crouch_walk_west_5",
+      "nonzeroAlphaPixels": 629,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_prone_fire_north_0",
+      "nonzeroAlphaPixels": 727,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_prone_fire_north_1",
+      "nonzeroAlphaPixels": 735,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_prone_fire_north_2",
+      "nonzeroAlphaPixels": 734,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_prone_fire_north_3",
+      "nonzeroAlphaPixels": 782,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_prone_fire_north_4",
+      "nonzeroAlphaPixels": 723,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_prone_fire_north_5",
+      "nonzeroAlphaPixels": 710,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_prone_fire_east_0",
+      "nonzeroAlphaPixels": 529,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_prone_fire_east_1",
+      "nonzeroAlphaPixels": 528,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_prone_fire_east_2",
+      "nonzeroAlphaPixels": 499,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_prone_fire_east_3",
+      "nonzeroAlphaPixels": 534,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_prone_fire_east_4",
+      "nonzeroAlphaPixels": 508,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_prone_fire_east_5",
+      "nonzeroAlphaPixels": 509,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_prone_fire_south_0",
+      "nonzeroAlphaPixels": 697,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_prone_fire_south_1",
+      "nonzeroAlphaPixels": 775,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_prone_fire_south_2",
+      "nonzeroAlphaPixels": 739,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_prone_fire_south_3",
+      "nonzeroAlphaPixels": 754,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_prone_fire_south_4",
+      "nonzeroAlphaPixels": 737,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_prone_fire_south_5",
+      "nonzeroAlphaPixels": 727,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_prone_fire_west_0",
+      "nonzeroAlphaPixels": 521,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_prone_fire_west_1",
+      "nonzeroAlphaPixels": 522,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_prone_fire_west_2",
+      "nonzeroAlphaPixels": 510,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_prone_fire_west_3",
+      "nonzeroAlphaPixels": 536,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_prone_fire_west_4",
+      "nonzeroAlphaPixels": 523,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_prone_fire_west_5",
+      "nonzeroAlphaPixels": 484,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_crouch_walk_north_0",
+      "nonzeroAlphaPixels": 610,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_crouch_walk_north_1",
+      "nonzeroAlphaPixels": 645,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_crouch_walk_north_2",
+      "nonzeroAlphaPixels": 614,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_crouch_walk_north_3",
+      "nonzeroAlphaPixels": 618,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_crouch_walk_north_4",
+      "nonzeroAlphaPixels": 643,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_crouch_walk_north_5",
+      "nonzeroAlphaPixels": 612,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_crouch_walk_east_0",
+      "nonzeroAlphaPixels": 670,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_crouch_walk_east_1",
+      "nonzeroAlphaPixels": 674,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_crouch_walk_east_2",
+      "nonzeroAlphaPixels": 672,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_crouch_walk_east_3",
+      "nonzeroAlphaPixels": 723,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_crouch_walk_east_4",
+      "nonzeroAlphaPixels": 689,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_crouch_walk_east_5",
+      "nonzeroAlphaPixels": 644,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_crouch_walk_south_0",
+      "nonzeroAlphaPixels": 632,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_crouch_walk_south_1",
+      "nonzeroAlphaPixels": 597,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_crouch_walk_south_2",
+      "nonzeroAlphaPixels": 600,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_crouch_walk_south_3",
+      "nonzeroAlphaPixels": 570,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_crouch_walk_south_4",
+      "nonzeroAlphaPixels": 579,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_crouch_walk_south_5",
+      "nonzeroAlphaPixels": 576,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_crouch_walk_west_0",
+      "nonzeroAlphaPixels": 656,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_crouch_walk_west_1",
+      "nonzeroAlphaPixels": 662,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_crouch_walk_west_2",
+      "nonzeroAlphaPixels": 660,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_crouch_walk_west_3",
+      "nonzeroAlphaPixels": 652,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_crouch_walk_west_4",
+      "nonzeroAlphaPixels": 680,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_crouch_walk_west_5",
+      "nonzeroAlphaPixels": 663,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_prone_fire_north_0",
+      "nonzeroAlphaPixels": 692,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_prone_fire_north_1",
+      "nonzeroAlphaPixels": 782,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_prone_fire_north_2",
+      "nonzeroAlphaPixels": 684,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_prone_fire_north_3",
+      "nonzeroAlphaPixels": 744,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_prone_fire_north_4",
+      "nonzeroAlphaPixels": 711,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_prone_fire_north_5",
+      "nonzeroAlphaPixels": 696,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_prone_fire_east_0",
+      "nonzeroAlphaPixels": 555,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_prone_fire_east_1",
+      "nonzeroAlphaPixels": 569,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_prone_fire_east_2",
+      "nonzeroAlphaPixels": 518,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_prone_fire_east_3",
+      "nonzeroAlphaPixels": 571,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_prone_fire_east_4",
+      "nonzeroAlphaPixels": 522,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_prone_fire_east_5",
+      "nonzeroAlphaPixels": 529,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_prone_fire_south_0",
+      "nonzeroAlphaPixels": 627,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_prone_fire_south_1",
+      "nonzeroAlphaPixels": 724,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_prone_fire_south_2",
+      "nonzeroAlphaPixels": 643,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_prone_fire_south_3",
+      "nonzeroAlphaPixels": 743,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_prone_fire_south_4",
+      "nonzeroAlphaPixels": 656,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_prone_fire_south_5",
+      "nonzeroAlphaPixels": 651,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_prone_fire_west_0",
+      "nonzeroAlphaPixels": 566,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_prone_fire_west_1",
+      "nonzeroAlphaPixels": 613,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_prone_fire_west_2",
+      "nonzeroAlphaPixels": 545,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_prone_fire_west_3",
+      "nonzeroAlphaPixels": 598,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_prone_fire_west_4",
+      "nonzeroAlphaPixels": 535,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_prone_fire_west_5",
+      "nonzeroAlphaPixels": 584,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_crouch_walk_north_0",
+      "nonzeroAlphaPixels": 689,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_crouch_walk_north_1",
+      "nonzeroAlphaPixels": 707,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_crouch_walk_north_2",
+      "nonzeroAlphaPixels": 718,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_crouch_walk_north_3",
+      "nonzeroAlphaPixels": 682,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_crouch_walk_north_4",
+      "nonzeroAlphaPixels": 729,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_crouch_walk_north_5",
+      "nonzeroAlphaPixels": 666,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_crouch_walk_east_0",
+      "nonzeroAlphaPixels": 719,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_crouch_walk_east_1",
+      "nonzeroAlphaPixels": 723,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_crouch_walk_east_2",
+      "nonzeroAlphaPixels": 646,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_crouch_walk_east_3",
+      "nonzeroAlphaPixels": 684,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_crouch_walk_east_4",
+      "nonzeroAlphaPixels": 578,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_crouch_walk_east_5",
+      "nonzeroAlphaPixels": 666,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_crouch_walk_south_0",
+      "nonzeroAlphaPixels": 650,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_crouch_walk_south_1",
+      "nonzeroAlphaPixels": 613,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_crouch_walk_south_2",
+      "nonzeroAlphaPixels": 615,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_crouch_walk_south_3",
+      "nonzeroAlphaPixels": 628,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_crouch_walk_south_4",
+      "nonzeroAlphaPixels": 656,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_crouch_walk_south_5",
+      "nonzeroAlphaPixels": 626,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_crouch_walk_west_0",
+      "nonzeroAlphaPixels": 674,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_crouch_walk_west_1",
+      "nonzeroAlphaPixels": 660,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_crouch_walk_west_2",
+      "nonzeroAlphaPixels": 648,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_crouch_walk_west_3",
+      "nonzeroAlphaPixels": 681,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_crouch_walk_west_4",
+      "nonzeroAlphaPixels": 691,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_crouch_walk_west_5",
+      "nonzeroAlphaPixels": 702,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_prone_fire_north_0",
+      "nonzeroAlphaPixels": 649,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_prone_fire_north_1",
+      "nonzeroAlphaPixels": 699,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_prone_fire_north_2",
+      "nonzeroAlphaPixels": 664,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_prone_fire_north_3",
+      "nonzeroAlphaPixels": 726,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_prone_fire_north_4",
+      "nonzeroAlphaPixels": 654,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_prone_fire_north_5",
+      "nonzeroAlphaPixels": 669,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_prone_fire_east_0",
+      "nonzeroAlphaPixels": 567,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_prone_fire_east_1",
+      "nonzeroAlphaPixels": 610,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_prone_fire_east_2",
+      "nonzeroAlphaPixels": 584,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_prone_fire_east_3",
+      "nonzeroAlphaPixels": 577,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_prone_fire_east_4",
+      "nonzeroAlphaPixels": 564,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_prone_fire_east_5",
+      "nonzeroAlphaPixels": 549,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_prone_fire_south_0",
+      "nonzeroAlphaPixels": 707,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_prone_fire_south_1",
+      "nonzeroAlphaPixels": 762,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_prone_fire_south_2",
+      "nonzeroAlphaPixels": 724,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_prone_fire_south_3",
+      "nonzeroAlphaPixels": 761,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_prone_fire_south_4",
+      "nonzeroAlphaPixels": 728,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_prone_fire_south_5",
+      "nonzeroAlphaPixels": 735,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_prone_fire_west_0",
+      "nonzeroAlphaPixels": 564,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_prone_fire_west_1",
+      "nonzeroAlphaPixels": 582,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_prone_fire_west_2",
+      "nonzeroAlphaPixels": 541,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_prone_fire_west_3",
+      "nonzeroAlphaPixels": 585,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_prone_fire_west_4",
+      "nonzeroAlphaPixels": 575,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_prone_fire_west_5",
+      "nonzeroAlphaPixels": 555,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_crouch_walk_north_0",
+      "nonzeroAlphaPixels": 572,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_crouch_walk_north_1",
+      "nonzeroAlphaPixels": 526,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_crouch_walk_north_2",
+      "nonzeroAlphaPixels": 560,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_crouch_walk_north_3",
+      "nonzeroAlphaPixels": 520,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_crouch_walk_north_4",
+      "nonzeroAlphaPixels": 546,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_crouch_walk_north_5",
+      "nonzeroAlphaPixels": 573,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_crouch_walk_east_0",
+      "nonzeroAlphaPixels": 613,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_crouch_walk_east_1",
+      "nonzeroAlphaPixels": 636,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_crouch_walk_east_2",
+      "nonzeroAlphaPixels": 654,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_crouch_walk_east_3",
+      "nonzeroAlphaPixels": 625,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_crouch_walk_east_4",
+      "nonzeroAlphaPixels": 627,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_crouch_walk_east_5",
+      "nonzeroAlphaPixels": 637,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_crouch_walk_south_0",
+      "nonzeroAlphaPixels": 566,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_crouch_walk_south_1",
+      "nonzeroAlphaPixels": 548,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_crouch_walk_south_2",
+      "nonzeroAlphaPixels": 519,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_crouch_walk_south_3",
+      "nonzeroAlphaPixels": 551,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_crouch_walk_south_4",
+      "nonzeroAlphaPixels": 532,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_crouch_walk_south_5",
+      "nonzeroAlphaPixels": 575,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_crouch_walk_west_0",
+      "nonzeroAlphaPixels": 616,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_crouch_walk_west_1",
+      "nonzeroAlphaPixels": 640,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_crouch_walk_west_2",
+      "nonzeroAlphaPixels": 618,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_crouch_walk_west_3",
+      "nonzeroAlphaPixels": 633,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_crouch_walk_west_4",
+      "nonzeroAlphaPixels": 660,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_crouch_walk_west_5",
+      "nonzeroAlphaPixels": 606,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_prone_fire_north_0",
+      "nonzeroAlphaPixels": 677,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_prone_fire_north_1",
+      "nonzeroAlphaPixels": 690,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_prone_fire_north_2",
+      "nonzeroAlphaPixels": 672,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_prone_fire_north_3",
+      "nonzeroAlphaPixels": 698,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_prone_fire_north_4",
+      "nonzeroAlphaPixels": 664,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_prone_fire_north_5",
+      "nonzeroAlphaPixels": 676,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_prone_fire_east_0",
+      "nonzeroAlphaPixels": 528,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_prone_fire_east_1",
+      "nonzeroAlphaPixels": 534,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_prone_fire_east_2",
+      "nonzeroAlphaPixels": 482,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_prone_fire_east_3",
+      "nonzeroAlphaPixels": 525,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_prone_fire_east_4",
+      "nonzeroAlphaPixels": 470,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_prone_fire_east_5",
+      "nonzeroAlphaPixels": 485,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_prone_fire_south_0",
+      "nonzeroAlphaPixels": 627,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_prone_fire_south_1",
+      "nonzeroAlphaPixels": 655,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_prone_fire_south_2",
+      "nonzeroAlphaPixels": 661,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_prone_fire_south_3",
+      "nonzeroAlphaPixels": 704,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_prone_fire_south_4",
+      "nonzeroAlphaPixels": 639,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_prone_fire_south_5",
+      "nonzeroAlphaPixels": 651,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_prone_fire_west_0",
+      "nonzeroAlphaPixels": 521,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_prone_fire_west_1",
+      "nonzeroAlphaPixels": 511,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_prone_fire_west_2",
+      "nonzeroAlphaPixels": 464,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_prone_fire_west_3",
+      "nonzeroAlphaPixels": 520,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_prone_fire_west_4",
+      "nonzeroAlphaPixels": 479,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_prone_fire_west_5",
+      "nonzeroAlphaPixels": 458,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_run_west_0",
+      "nonzeroAlphaPixels": 632,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_run_west_1",
+      "nonzeroAlphaPixels": 611,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_run_west_2",
+      "nonzeroAlphaPixels": 665,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_run_west_3",
+      "nonzeroAlphaPixels": 649,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_run_west_4",
+      "nonzeroAlphaPixels": 640,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "regular_run_west_5",
+      "nonzeroAlphaPixels": 630,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_run_west_0",
+      "nonzeroAlphaPixels": 931,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_run_west_1",
+      "nonzeroAlphaPixels": 908,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_run_west_2",
+      "nonzeroAlphaPixels": 939,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_run_west_3",
+      "nonzeroAlphaPixels": 901,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_run_west_4",
+      "nonzeroAlphaPixels": 930,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "heavy_run_west_5",
+      "nonzeroAlphaPixels": 896,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_run_west_0",
+      "nonzeroAlphaPixels": 661,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_run_west_1",
+      "nonzeroAlphaPixels": 698,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_run_west_2",
+      "nonzeroAlphaPixels": 695,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_run_west_3",
+      "nonzeroAlphaPixels": 673,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_run_west_4",
+      "nonzeroAlphaPixels": 697,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "athletic_run_west_5",
+      "nonzeroAlphaPixels": 698,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_run_west_0",
+      "nonzeroAlphaPixels": 610,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_run_west_1",
+      "nonzeroAlphaPixels": 629,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_run_west_2",
+      "nonzeroAlphaPixels": 653,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_run_west_3",
+      "nonzeroAlphaPixels": 642,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_run_west_4",
+      "nonzeroAlphaPixels": 662,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "female_run_west_5",
+      "nonzeroAlphaPixels": 596,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_run_west_0",
+      "nonzeroAlphaPixels": 814,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_run_west_1",
+      "nonzeroAlphaPixels": 767,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_run_west_2",
+      "nonzeroAlphaPixels": 804,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_run_west_3",
+      "nonzeroAlphaPixels": 771,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_run_west_4",
+      "nonzeroAlphaPixels": 779,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "phoenix_run_west_5",
+      "nonzeroAlphaPixels": 827,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_run_west_0",
+      "nonzeroAlphaPixels": 823,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_run_west_1",
+      "nonzeroAlphaPixels": 742,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_run_west_2",
+      "nonzeroAlphaPixels": 822,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_run_west_3",
+      "nonzeroAlphaPixels": 766,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_run_west_4",
+      "nonzeroAlphaPixels": 801,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "hotwire_run_west_5",
+      "nonzeroAlphaPixels": 841,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_scout_patrol_north_draft_0",
+      "nonzeroAlphaPixels": 628,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_scout_patrol_north_draft_1",
+      "nonzeroAlphaPixels": 661,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_scout_patrol_north_draft_2",
+      "nonzeroAlphaPixels": 686,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_scout_patrol_north_draft_3",
+      "nonzeroAlphaPixels": 641,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_scout_patrol_north_draft_4",
+      "nonzeroAlphaPixels": 695,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_scout_patrol_north_draft_5",
+      "nonzeroAlphaPixels": 657,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_scout_patrol_east_0",
+      "nonzeroAlphaPixels": 716,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_scout_patrol_east_1",
+      "nonzeroAlphaPixels": 742,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_scout_patrol_east_2",
+      "nonzeroAlphaPixels": 691,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_scout_patrol_east_3",
+      "nonzeroAlphaPixels": 705,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_scout_patrol_east_4",
+      "nonzeroAlphaPixels": 760,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_scout_patrol_east_5",
+      "nonzeroAlphaPixels": 754,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_scout_patrol_south_0",
+      "nonzeroAlphaPixels": 754,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_scout_patrol_south_1",
+      "nonzeroAlphaPixels": 737,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_scout_patrol_south_2",
+      "nonzeroAlphaPixels": 737,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_scout_patrol_south_3",
+      "nonzeroAlphaPixels": 734,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_scout_patrol_south_4",
+      "nonzeroAlphaPixels": 722,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_scout_patrol_south_5",
+      "nonzeroAlphaPixels": 698,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_scout_patrol_west_0",
+      "nonzeroAlphaPixels": 807,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_scout_patrol_west_1",
+      "nonzeroAlphaPixels": 752,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_scout_patrol_west_2",
+      "nonzeroAlphaPixels": 734,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_scout_patrol_west_3",
+      "nonzeroAlphaPixels": 743,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_scout_patrol_west_4",
+      "nonzeroAlphaPixels": 695,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_scout_patrol_west_5",
+      "nonzeroAlphaPixels": 773,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_scout_fire_east_0",
+      "nonzeroAlphaPixels": 751,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_scout_fire_east_1",
+      "nonzeroAlphaPixels": 818,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_scout_fire_east_2",
+      "nonzeroAlphaPixels": 759,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_scout_fire_east_3",
+      "nonzeroAlphaPixels": 834,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_scout_fire_east_4",
+      "nonzeroAlphaPixels": 761,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_scout_fire_east_5",
+      "nonzeroAlphaPixels": 733,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_scout_hit_death_east_0",
+      "nonzeroAlphaPixels": 983,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_scout_hit_death_east_1",
+      "nonzeroAlphaPixels": 903,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_scout_hit_death_east_2",
+      "nonzeroAlphaPixels": 922,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_scout_hit_death_east_3",
+      "nonzeroAlphaPixels": 832,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_scout_hit_death_east_4",
+      "nonzeroAlphaPixels": 735,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_scout_hit_death_east_5",
+      "nonzeroAlphaPixels": 748,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_heavy_patrol_north_draft_0",
+      "nonzeroAlphaPixels": 1172,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_heavy_patrol_north_draft_1",
+      "nonzeroAlphaPixels": 1159,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_heavy_patrol_north_draft_2",
+      "nonzeroAlphaPixels": 1151,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_heavy_patrol_north_draft_3",
+      "nonzeroAlphaPixels": 1187,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_heavy_patrol_north_draft_4",
+      "nonzeroAlphaPixels": 1204,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_heavy_patrol_north_draft_5",
+      "nonzeroAlphaPixels": 1180,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_heavy_patrol_east_0",
+      "nonzeroAlphaPixels": 1254,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_heavy_patrol_east_1",
+      "nonzeroAlphaPixels": 1229,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_heavy_patrol_east_2",
+      "nonzeroAlphaPixels": 1227,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_heavy_patrol_east_3",
+      "nonzeroAlphaPixels": 1178,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_heavy_patrol_east_4",
+      "nonzeroAlphaPixels": 1265,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_heavy_patrol_east_5",
+      "nonzeroAlphaPixels": 1157,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_heavy_patrol_south_0",
+      "nonzeroAlphaPixels": 1200,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_heavy_patrol_south_1",
+      "nonzeroAlphaPixels": 1153,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_heavy_patrol_south_2",
+      "nonzeroAlphaPixels": 1183,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_heavy_patrol_south_3",
+      "nonzeroAlphaPixels": 1195,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_heavy_patrol_south_4",
+      "nonzeroAlphaPixels": 1172,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_heavy_patrol_south_5",
+      "nonzeroAlphaPixels": 1173,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_heavy_patrol_west_0",
+      "nonzeroAlphaPixels": 1203,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_heavy_patrol_west_1",
+      "nonzeroAlphaPixels": 1259,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_heavy_patrol_west_2",
+      "nonzeroAlphaPixels": 1151,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_heavy_patrol_west_3",
+      "nonzeroAlphaPixels": 1189,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_heavy_patrol_west_4",
+      "nonzeroAlphaPixels": 1232,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_heavy_patrol_west_5",
+      "nonzeroAlphaPixels": 1207,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_heavy_fire_east_0",
+      "nonzeroAlphaPixels": 1245,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_heavy_fire_east_1",
+      "nonzeroAlphaPixels": 1304,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_heavy_fire_east_2",
+      "nonzeroAlphaPixels": 1198,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_heavy_fire_east_3",
+      "nonzeroAlphaPixels": 1322,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_heavy_fire_east_4",
+      "nonzeroAlphaPixels": 1249,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_heavy_fire_east_5",
+      "nonzeroAlphaPixels": 1143,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_heavy_hit_death_east_0",
+      "nonzeroAlphaPixels": 1366,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_heavy_hit_death_east_1",
+      "nonzeroAlphaPixels": 1347,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_heavy_hit_death_east_2",
+      "nonzeroAlphaPixels": 1102,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_heavy_hit_death_east_3",
+      "nonzeroAlphaPixels": 1091,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_heavy_hit_death_east_4",
+      "nonzeroAlphaPixels": 1169,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_heavy_hit_death_east_5",
+      "nonzeroAlphaPixels": 1300,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_scout_patrol_north_0",
+      "nonzeroAlphaPixels": 542,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_scout_patrol_north_1",
+      "nonzeroAlphaPixels": 541,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_scout_patrol_north_2",
+      "nonzeroAlphaPixels": 510,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_scout_patrol_north_3",
+      "nonzeroAlphaPixels": 493,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_scout_patrol_north_4",
+      "nonzeroAlphaPixels": 537,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_scout_patrol_north_5",
+      "nonzeroAlphaPixels": 553,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_heavy_patrol_north_0",
+      "nonzeroAlphaPixels": 997,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_heavy_patrol_north_1",
+      "nonzeroAlphaPixels": 1014,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_heavy_patrol_north_2",
+      "nonzeroAlphaPixels": 968,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_heavy_patrol_north_3",
+      "nonzeroAlphaPixels": 952,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_heavy_patrol_north_4",
+      "nonzeroAlphaPixels": 1014,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "enemy_heavy_patrol_north_5",
+      "nonzeroAlphaPixels": 1015,
+      "borderAlphaPixels": 0,
+      "size": [
+        96,
+        96
+      ]
+    },
+    {
+      "id": "wren_special_box",
+      "nonzeroAlphaPixels": 123183,
+      "borderAlphaPixels": 0,
+      "size": [
+        360,
+        400
+      ]
+    },
+    {
+      "id": "rolf_special_box",
+      "nonzeroAlphaPixels": 123847,
+      "borderAlphaPixels": 0,
+      "size": [
+        360,
+        400
+      ]
+    },
+    {
+      "id": "chaz_special_box",
+      "nonzeroAlphaPixels": 123211,
+      "borderAlphaPixels": 0,
+      "size": [
+        360,
+        400
+      ]
+    },
+    {
+      "id": "wren_portrait",
+      "nonzeroAlphaPixels": 65536,
+      "borderAlphaPixels": 1020,
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "wren_avatar",
+      "nonzeroAlphaPixels": 65536,
+      "borderAlphaPixels": 1020,
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "wren_front",
+      "nonzeroAlphaPixels": 97721,
+      "borderAlphaPixels": 0,
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "rolf_portrait",
+      "nonzeroAlphaPixels": 65536,
+      "borderAlphaPixels": 1020,
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "rolf_avatar",
+      "nonzeroAlphaPixels": 65536,
+      "borderAlphaPixels": 1020,
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "rolf_front",
+      "nonzeroAlphaPixels": 90879,
+      "borderAlphaPixels": 0,
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "chaz_portrait",
+      "nonzeroAlphaPixels": 65536,
+      "borderAlphaPixels": 1020,
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "chaz_avatar",
+      "nonzeroAlphaPixels": 65536,
+      "borderAlphaPixels": 1020,
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": "chaz_front",
+      "nonzeroAlphaPixels": 86721,
+      "borderAlphaPixels": 0,
+      "size": [
+        512,
+        512
+      ]
+    }
+  ],
+  "browserReview": {
+    "date": "2026-10-07",
+    "url": "http://127.0.0.1:8771/windstorm_machinists/preview.html",
+    "checks": [
+      "Heavy robot north rear-view selected and rendered",
+      "Regular prone east aim and muzzle-flash frames inspected",
+      "Niel shared-body palette inspected",
+      "Hotwire west run rendered",
+      "No captured browser console errors"
+    ],
+    "screenshot": "previews/pass2_browser_review.jpg",
+    "consoleErrors": []
+  },
+  "uiStyleMatch": {
+    "frameSize": [
+      256,
+      256
+    ],
+    "frameAlphaUnchanged": true,
+    "iconSize": [
+      112,
+      112
+    ],
+    "boxSize": [
+      360,
+      400
+    ],
+    "portraitSize": [
+      256,
+      256
+    ],
+    "referencesFrom": "2026-10-06 portable build; exact authored frame template",
+    "runtimeRegistered": false
+  },
+  "machinistsUi": [
+    {
+      "pilot": "wren",
+      "frameAlphaUnchanged": true,
+      "portrait": [
+        256,
+        256
+      ],
+      "icon": [
+        112,
+        112
+      ],
+      "box": [
+        360,
+        400
+      ]
+    },
+    {
+      "pilot": "rolf",
+      "frameAlphaUnchanged": true,
+      "portrait": [
+        256,
+        256
+      ],
+      "icon": [
+        112,
+        112
+      ],
+      "box": [
+        360,
+        400
+      ]
+    },
+    {
+      "pilot": "chaz",
+      "frameAlphaUnchanged": true,
+      "portrait": [
+        256,
+        256
+      ],
+      "icon": [
+        112,
+        112
+      ],
+      "box": [
+        360,
+        400
+      ]
+    }
+  ],
+  "totals": {
+    "frames": 924,
+    "sequences": 168,
+    "sourceMasters": 39
+  },
+  "missingReferences": [],
+  "pass2": {
+    "date": "2026-10-07",
+    "sourceMasters": 12,
+    "newSourceExports": 414,
+    "newSequences": 66,
+    "allNewExportsNonempty": true,
+    "allNewExportsClearBorders": true,
+    "allNewSequencePhasesDistinct": true,
+    "portraitFrameAlphaUnchanged": true,
+    "sequenceChecks": [
+      {
+        "id": "regular_crouch_walk_north",
+        "frames": 6,
+        "distinctHashes": 6
+      },
+      {
+        "id": "regular_crouch_walk_east",
+        "frames": 6,
+        "distinctHashes": 6
+      },
+      {
+        "id": "regular_crouch_walk_south",
+        "frames": 6,
+        "distinctHashes": 6
+      },
+      {
+        "id": "regular_crouch_walk_west",
+        "frames": 6,
+        "distinctHashes": 6
+      },
+      {
+        "id": "regular_prone_fire_north",
+        "frames": 6,
+        "distinctHashes": 6
+      },
+      {
+        "id": "regular_prone_fire_east",
+        "frames": 6,
+        "distinctHashes": 6
+      },
+      {
+        "id": "regular_prone_fire_south",
+        "frames": 6,
+        "distinctHashes": 6
+      },
+      {
+        "id": "regular_prone_fire_west",
+        "frames": 6,
+        "distinctHashes": 6
+      },
+      {
+        "id": "heavy_crouch_walk_north",
+        "frames": 6,
+        "distinctHashes": 6
+      },
+      {
+        "id": "heavy_crouch_walk_east",
+        "frames": 6,
+        "distinctHashes": 6
+      },
+      {
+        "id": "heavy_crouch_walk_south",
+        "frames": 6,
+        "distinctHashes": 6
+      },
+      {
+        "id": "heavy_crouch_walk_west",
+        "frames": 6,
+        "distinctHashes": 6
+      },
+      {
+        "id": "heavy_prone_fire_north",
+        "frames": 6,
+        "distinctHashes": 6
+      },
+      {
+        "id": "heavy_prone_fire_east",
+        "frames": 6,
+        "distinctHashes": 6
+      },
+      {
+        "id": "heavy_prone_fire_south",
+        "frames": 6,
+        "distinctHashes": 6
+      },
+      {
+        "id": "heavy_prone_fire_west",
+        "frames": 6,
+        "distinctHashes": 6
+      },
+      {
+        "id": "athletic_crouch_walk_north",
+        "frames": 6,
+        "distinctHashes": 6
+      },
+      {
+        "id": "athletic_crouch_walk_east",
+        "frames": 6,
+        "distinctHashes": 6
+      },
+      {
+        "id": "athletic_crouch_walk_south",
+        "frames": 6,
+        "distinctHashes": 6
+      },
+      {
+        "id": "athletic_crouch_walk_west",
+        "frames": 6,
+        "distinctHashes": 6
+      },
+      {
+        "id": "athletic_prone_fire_north",
+        "frames": 6,
+        "distinctHashes": 6
+      },
+      {
+        "id": "athletic_prone_fire_east",
+        "frames": 6,
+        "distinctHashes": 6
+      },
+      {
+        "id": "athletic_prone_fire_south",
+        "frames": 6,
+        "distinctHashes": 6
+      },
+      {
+        "id": "athletic_prone_fire_west",
+        "frames": 6,
+        "distinctHashes": 6
+      },
+      {
+        "id": "female_crouch_walk_north",
+        "frames": 6,
+        "distinctHashes": 6
+      },
+      {
+        "id": "female_crouch_walk_east",
+        "frames": 6,
+        "distinctHashes": 6
+      },
+      {
+        "id": "female_crouch_walk_south",
+        "frames": 6,
+        "distinctHashes": 6
+      },
+      {
+        "id": "female_crouch_walk_west",
+        "frames": 6,
+        "distinctHashes": 6
+      },
+      {
+        "id": "female_prone_fire_north",
+        "frames": 6,
+        "distinctHashes": 6
+      },
+      {
+        "id": "female_prone_fire_east",
+        "frames": 6,
+        "distinctHashes": 6
+      },
+      {
+        "id": "female_prone_fire_south",
+        "frames": 6,
+        "distinctHashes": 6
+      },
+      {
+        "id": "female_prone_fire_west",
+        "frames": 6,
+        "distinctHashes": 6
+      },
+      {
+        "id": "phoenix_crouch_walk_north",
+        "frames": 6,
+        "distinctHashes": 6
+      },
+      {
+        "id": "phoenix_crouch_walk_east",
+        "frames": 5,
+        "distinctHashes": 5
+      },
+      {
+        "id": "phoenix_crouch_walk_south",
+        "frames": 5,
+        "distinctHashes": 5
+      },
+      {
+        "id": "phoenix_crouch_walk_west",
+        "frames": 6,
+        "distinctHashes": 6
+      },
+      {
+        "id": "phoenix_prone_fire_north",
+        "frames": 6,
+        "distinctHashes": 6
+      },
+      {
+        "id": "phoenix_prone_fire_east",
+        "frames": 6,
+        "distinctHashes": 6
+      },
+      {
+        "id": "phoenix_prone_fire_south",
+        "frames": 6,
+        "distinctHashes": 6
+      },
+      {
+        "id": "phoenix_prone_fire_west",
+        "frames": 6,
+        "distinctHashes": 6
+      },
+      {
+        "id": "hotwire_crouch_walk_north",
+        "frames": 6,
+        "distinctHashes": 6
+      },
+      {
+        "id": "hotwire_crouch_walk_east",
+        "frames": 6,
+        "distinctHashes": 6
+      },
+      {
+        "id": "hotwire_crouch_walk_south",
+        "frames": 6,
+        "distinctHashes": 6
+      },
+      {
+        "id": "hotwire_crouch_walk_west",
+        "frames": 6,
+        "distinctHashes": 6
+      },
+      {
+        "id": "hotwire_prone_fire_north",
+        "frames": 6,
+        "distinctHashes": 6
+      },
+      {
+        "id": "hotwire_prone_fire_east",
+        "frames": 6,
+        "distinctHashes": 6
+      },
+      {
+        "id": "hotwire_prone_fire_south",
+        "frames": 6,
+        "distinctHashes": 6
+      },
+      {
+        "id": "hotwire_prone_fire_west",
+        "frames": 6,
+        "distinctHashes": 6
+      },
+      {
+        "id": "regular_run_west",
+        "frames": 6,
+        "distinctHashes": 6
+      },
+      {
+        "id": "heavy_run_west",
+        "frames": 6,
+        "distinctHashes": 6
+      },
+      {
+        "id": "athletic_run_west",
+        "frames": 6,
+        "distinctHashes": 6
+      },
+      {
+        "id": "female_run_west",
+        "frames": 6,
+        "distinctHashes": 6
+      },
+      {
+        "id": "phoenix_run_west",
+        "frames": 6,
+        "distinctHashes": 6
+      },
+      {
+        "id": "hotwire_run_west",
+        "frames": 6,
+        "distinctHashes": 6
+      },
+      {
+        "id": "enemy_scout_patrol_east",
+        "frames": 6,
+        "distinctHashes": 6
+      },
+      {
+        "id": "enemy_scout_patrol_south",
+        "frames": 6,
+        "distinctHashes": 6
+      },
+      {
+        "id": "enemy_scout_patrol_west",
+        "frames": 6,
+        "distinctHashes": 6
+      },
+      {
+        "id": "enemy_scout_fire_east",
+        "frames": 6,
+        "distinctHashes": 6
+      },
+      {
+        "id": "enemy_scout_hit_death_east",
+        "frames": 6,
+        "distinctHashes": 6
+      },
+      {
+        "id": "enemy_heavy_patrol_east",
+        "frames": 6,
+        "distinctHashes": 6
+      },
+      {
+        "id": "enemy_heavy_patrol_south",
+        "frames": 6,
+        "distinctHashes": 6
+      },
+      {
+        "id": "enemy_heavy_patrol_west",
+        "frames": 6,
+        "distinctHashes": 6
+      },
+      {
+        "id": "enemy_heavy_fire_east",
+        "frames": 6,
+        "distinctHashes": 6
+      },
+      {
+        "id": "enemy_heavy_hit_death_east",
+        "frames": 6,
+        "distinctHashes": 6
+      },
+      {
+        "id": "enemy_scout_patrol_north",
+        "frames": 6,
+        "distinctHashes": 6
+      },
+      {
+        "id": "enemy_heavy_patrol_north",
+        "frames": 6,
+        "distinctHashes": 6
+      }
+    ],
+    "visualReview": [
+      "Three generated contact sheets inspected at output size",
+      "North enemy correction shows helmet backs and rear spine panels",
+      "Phoenix east/south crouch phase with wrong facing excluded",
+      "Machinist approved faces retained in exact canonical frame"
+    ],
+    "limitations": [
+      "Generated pose/scale drift and roots need final pixel cleanup",
+      "Some crouch phases read as low walking",
+      "Enemy south patrol carries weapon up; aimed south fire still needs separate art",
+      "Not an eight-direction production set; gameplay remains unimplemented"
+    ]
+  },
+  "rosterV4": [
+    {
+      "pilot": "wren",
+      "appearance": "black/white armor; gray android face and black crewcut",
+      "frameAlphaUnchanged": true
+    },
+    {
+      "pilot": "rolf",
+      "appearance": "blue hair and blue outfit",
+      "frameAlphaUnchanged": true
+    },
+    {
+      "pilot": "chaz",
+      "appearance": "blond hair, red forehead bandana and red outfit",
+      "frameAlphaUnchanged": true
+    }
+  ]
+}

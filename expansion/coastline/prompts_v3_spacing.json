@@ -1,0 +1,4 @@
+{
+  "generator": "built-in image_gen",
+  "prompt": "Use case: precise-object-edit. Keep the exact six sprites from the supplied transparent sheet, unchanged in design, texture and color. Fix the LAYOUT ONLY to allow clean independent extraction. Put each object inside a strict 3 columns by 2 rows grid, each cell exactly one third image width by one half image height. SCALE EVERY OBJECT DOWN TO 65% OF ITS CURRENT SIZE within its cell. Center each in its own equal cell. Large completely empty transparent gutters must separate every silhouette, stray cloud wisp, spore, foam speck and rock of one object from all others. Top row storm cloud / pale ash cloud / curling spore cloud. Bottom row comet reef / broken ship / dead palm islet. No object may cross a cell boundary. Preserve all parts without clipping. True transparent alpha background; no text, lines or grid. No soft glow backdrop."
+}

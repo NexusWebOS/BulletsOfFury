@@ -1,0 +1,52 @@
+{
+  "version": 8,
+  "sections": [
+    {
+      "number": 1,
+      "name": "Military compound",
+      "center": [
+        1555,
+        1385
+      ]
+    },
+    {
+      "number": 2,
+      "name": "North gate / highway",
+      "center": [
+        1400,
+        1135
+      ]
+    },
+    {
+      "number": 3,
+      "name": "Bridge to Miami",
+      "center": [
+        1020,
+        670
+      ]
+    },
+    {
+      "number": 4,
+      "name": "Center of Miami",
+      "center": [
+        420,
+        280
+      ]
+    },
+    {
+      "number": 5,
+      "name": "The Plateau",
+      "center": [
+        1540,
+        1910
+      ]
+    }
+  ],
+  "postLevel5": "lightning storm > shattered plateau > fortress > sky map",
+  "skyFutureNodesDefined": false,
+  "poststormChangedPixels": 193242,
+  "waterFramesPreserved": 6,
+  "assets": 100,
+  "newExports": 9,
+  "issues": []
+}

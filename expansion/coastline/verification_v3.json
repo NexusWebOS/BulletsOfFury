@@ -1,0 +1,14 @@
+{
+  "newExports": 10,
+  "totalManifestAssets": 75,
+  "boats": 3,
+  "drones": 6,
+  "cloudPlacements": 11,
+  "boatRouteCheck": {
+    "stepsPerFullOrbit": 360,
+    "pointsPerStep": 17,
+    "method": "Conservative circumcircle of boat sprite against terrain alpha, including reefs and wreckage",
+    "collisions": []
+  },
+  "issues": []
+}

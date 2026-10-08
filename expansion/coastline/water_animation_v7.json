@@ -1,0 +1,19 @@
+{
+  "frameWidth": 256,
+  "frameHeight": 256,
+  "frameCount": 6,
+  "fps": 8,
+  "frameDurationMs": 125,
+  "loop": true,
+  "spritesheet": "assets/v7/sludge_water_6f.png",
+  "frames": [
+    "assets/v7/water_frame_00.png",
+    "assets/v7/water_frame_01.png",
+    "assets/v7/water_frame_02.png",
+    "assets/v7/water_frame_03.png",
+    "assets/v7/water_frame_04.png",
+    "assets/v7/water_frame_05.png"
+  ],
+  "sheetLayout": "horizontal, left to right",
+  "terrainOverlay": "assets/v7/terrain_overlay.png"
+}

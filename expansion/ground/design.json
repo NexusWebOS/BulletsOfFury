@@ -1,0 +1,148 @@
+{
+  "status": "art_candidates_not_integrated",
+  "scope": {
+    "newMainLevels": 8,
+    "bonusLevels": 1,
+    "groundLevelsPerPath": [
+      2,
+      3
+    ],
+    "buildLevelNow": false
+  },
+  "mission": {
+    "objective": "Break into the robotic alien base and recover your jet",
+    "entry": "Tank is destroyed during the ground mission; pilot continues on foot",
+    "playerDamage": "one_hit_kill",
+    "enemyDamage": "per-enemy HP; some enemies can survive multiple hits",
+    "ammo": "finite weapon ammunition; collect ground ammo and weapon crates",
+    "movement": [
+      "run",
+      "aim/shoot",
+      "roll",
+      "prone"
+    ],
+    "stealth": "light Metal Gear-inspired detection/cover; arcade combat remains central"
+  },
+  "tankFamilies": {
+    "siege": {
+      "pilots": [
+        "juggernaut",
+        "phoenix"
+      ],
+      "reference": "Dune 2000 Harkonnen Devastator",
+      "modules": [
+        "hull",
+        "turret",
+        "left_track",
+        "right_track",
+        "damaged_hull",
+        "wreck"
+      ],
+      "weapons": "paired heavy cannons"
+    },
+    "assault": {
+      "pilots": [
+        "axel",
+        "cole",
+        "decker",
+        "freezer",
+        "maverick",
+        "yuri"
+      ],
+      "reference": "BattleTanx M1A1 / chunky arcade main battle tank",
+      "weapons": "single main cannon with coaxial gun"
+    },
+    "panzer": {
+      "pilots": [
+        "falva",
+        "lizzie",
+        "hotwire"
+      ],
+      "reference": "angular Panzer hull, side skirts and long cannon",
+      "weapons": "long precision cannon"
+    }
+  },
+  "infantryFamilies": {
+    "heavy": [
+      "juggernaut"
+    ],
+    "athletic": [
+      "axel",
+      "phoenix"
+    ],
+    "female": [
+      "falva",
+      "lizzie",
+      "hotwire"
+    ],
+    "regular": [
+      "cole",
+      "decker",
+      "freezer",
+      "maverick",
+      "yuri"
+    ]
+  },
+  "element": {
+    "id": "god_burst",
+    "name": "G.O.D Burst",
+    "expansion": "Godly Over-Powered Destruction",
+    "source": "expansion level 5 boss",
+    "motifs": [
+      "atom split",
+      "particle burst",
+      "atom waves",
+      "intense magnetic energy"
+    ],
+    "palette": [
+      "pearl white",
+      "cyan",
+      "violet",
+      "gold particles"
+    ]
+  },
+  "proposedEngineContracts": {
+    "vehicle": [
+      "separate hullHeading and aimHeading",
+      "turret pivot and muzzle sockets in manifest",
+      "tread animation rate from movement",
+      "pilot palette applied only to paint mask",
+      "damage and wreck visuals independent of weapon effects"
+    ],
+    "infantry": [
+      "facing independent of velocity where art allows",
+      "collision footprint distinct from visual bounds",
+      "prone changes posture/height with explicit collision rules",
+      "roll timing and any invulnerability require gameplay tuning",
+      "one-hit lethal damage; avoid creating health-upgrade pickups"
+    ],
+    "stealth": [
+      "view cone / line of sight",
+      "noise events from running/shooting",
+      "unaware / suspicious / alerted",
+      "cover collision and occlusion"
+    ],
+    "mission": [
+      "vehicle -> tank loss -> infantry -> base breach -> jet recovered",
+      "safe transition point for player after tank explosion",
+      "do not mark mission complete until recovered jet is entered"
+    ]
+  },
+  "unresolvedGameplayDecisions": [
+    "final tank names and balance",
+    "roll invulnerability window",
+    "prone bullet-height rules",
+    "ammo reserves and empty-ammo fallback",
+    "stage route placement and stealth penalties"
+  ],
+  "references": [
+    {
+      "title": "Dune 2000 manual",
+      "url": "https://www.bestoldgames.net/download/games/dune-2000/dune-2000-win-manual.pdf"
+    },
+    {
+      "title": "BattleTanx Global Assault manual",
+      "url": "https://www.videogamemanual.com/ps1/BattleTanx%20-%20Global%20Assault%20%28USA%29.pdf"
+    }
+  ]
+}

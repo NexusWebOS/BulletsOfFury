@@ -1,0 +1,1978 @@
+{
+  "version": 8,
+  "project": "Bullets of Fury — Overdrive",
+  "status": "Art and animated map preview; no game runtime integration",
+  "mapLayout": {
+    "canvas": [
+      3328,
+      2304
+    ],
+    "terrain": [
+      {
+        "id": "city",
+        "file": "assets/v2/major_city.png",
+        "rect": [
+          90,
+          40,
+          680,
+          544
+        ]
+      },
+      {
+        "id": "bridge",
+        "file": "assets/v2/city_bridge.png",
+        "rect": [
+          674,
+          490,
+          600,
+          400
+        ]
+      },
+      {
+        "id": "coast",
+        "file": "assets/v2/coast_terrain.png",
+        "rect": [
+          1145,
+          770,
+          660,
+          880
+        ]
+      },
+      {
+        "id": "beach",
+        "file": "assets/v2/island_beach.png",
+        "rect": [
+          950,
+          1730,
+          260,
+          230
+        ]
+      },
+      {
+        "id": "lagoon",
+        "file": "assets/v2/island_lagoon.png",
+        "rect": [
+          1760,
+          1760,
+          280,
+          240
+        ]
+      },
+      {
+        "id": "ruins",
+        "file": "assets/v2/island_ruins.png",
+        "rect": [
+          890,
+          2030,
+          280,
+          260
+        ]
+      },
+      {
+        "id": "cove",
+        "file": "assets/v2/island_cove.png",
+        "rect": [
+          1820,
+          2060,
+          280,
+          240
+        ]
+      },
+      {
+        "id": "plateau",
+        "file": "assets/v2/central_plateau.png",
+        "rect": [
+          1370,
+          1895,
+          340,
+          320
+        ]
+      },
+      {
+        "id": "old_9",
+        "file": "reference/isl_9.png",
+        "rect": [
+          3031,
+          748,
+          117,
+          117
+        ]
+      },
+      {
+        "id": "old_2",
+        "file": "reference/isl_2.png",
+        "rect": [
+          2627,
+          728,
+          171,
+          171
+        ]
+      },
+      {
+        "id": "old_1",
+        "file": "reference/isl_1.png",
+        "rect": [
+          2410,
+          776,
+          171,
+          171
+        ]
+      },
+      {
+        "id": "old_3",
+        "file": "reference/isl_3.png",
+        "rect": [
+          2833,
+          776,
+          171,
+          171
+        ]
+      },
+      {
+        "id": "old_hub",
+        "file": "reference/isl_hub.png",
+        "rect": [
+          2628,
+          921,
+          216,
+          216
+        ]
+      },
+      {
+        "id": "old_8",
+        "file": "reference/isl_8.png",
+        "rect": [
+          2372,
+          952,
+          171,
+          171
+        ]
+      },
+      {
+        "id": "old_4",
+        "file": "reference/isl_4.png",
+        "rect": [
+          2928,
+          956,
+          171,
+          171
+        ]
+      },
+      {
+        "id": "old_7",
+        "file": "reference/isl_7.png",
+        "rect": [
+          2432,
+          1131,
+          171,
+          171
+        ]
+      },
+      {
+        "id": "old_5",
+        "file": "reference/isl_5.png",
+        "rect": [
+          2902,
+          1132,
+          171,
+          171
+        ]
+      },
+      {
+        "id": "old_6",
+        "file": "reference/isl_6.png",
+        "rect": [
+          2674,
+          1147,
+          171,
+          171
+        ]
+      },
+      {
+        "id": "cometIsland",
+        "file": "assets/v3/comet_island.png",
+        "rect": [
+          110,
+          780,
+          880,
+          920
+        ]
+      },
+      {
+        "id": "reefNorth",
+        "file": "assets/v3/comet_reef.png",
+        "rect": [
+          165,
+          660,
+          135,
+          135
+        ]
+      },
+      {
+        "id": "reefSouth",
+        "file": "assets/v3/comet_reef.png",
+        "rect": [
+          780,
+          1700,
+          125,
+          125
+        ]
+      },
+      {
+        "id": "shipwreck",
+        "file": "assets/v3/corrupted_shipwreck.png",
+        "rect": [
+          1030,
+          1510,
+          165,
+          120
+        ]
+      },
+      {
+        "id": "deadIslet",
+        "file": "assets/v3/dead_palm_islet.png",
+        "rect": [
+          185,
+          1660,
+          140,
+          150
+        ]
+      },
+      {
+        "id": "collapsedBridge",
+        "file": "assets/v4/collapsed_bridge.png",
+        "rect": [
+          800,
+          1105,
+          560,
+          215
+        ]
+      },
+      {
+        "id": "portalBridge",
+        "file": "assets/v5/portal_bridge.png",
+        "rect": [
+          210,
+          390,
+          400,
+          500
+        ]
+      }
+    ],
+    "nodes": [
+      {
+        "id": "od01",
+        "number": 1,
+        "name": "Military compound",
+        "file": "assets/level_01_compound.png",
+        "center": [
+          1555,
+          1385
+        ],
+        "size": 244,
+        "ground": [
+          1555,
+          1515
+        ],
+        "flag": [
+          1605,
+          1445
+        ],
+        "hover": 18
+      },
+      {
+        "id": "od02",
+        "number": 2,
+        "name": "North gate / highway",
+        "file": "assets/level_02_gate_highway.png",
+        "center": [
+          1400,
+          1135
+        ],
+        "size": 230,
+        "ground": [
+          1400,
+          1260
+        ],
+        "flag": [
+          1450,
+          1200
+        ],
+        "hover": 18
+      },
+      {
+        "id": "od03",
+        "number": 3,
+        "name": "Bridge to Miami",
+        "file": "assets/v8/level_03_bridge.png",
+        "center": [
+          1020,
+          670
+        ],
+        "size": 236,
+        "ground": [
+          1020,
+          800
+        ],
+        "flag": [
+          1080,
+          705
+        ],
+        "hover": 18
+      },
+      {
+        "id": "od04",
+        "number": 4,
+        "name": "Center of Miami",
+        "file": "assets/v8/level_04_miami_center.png",
+        "center": [
+          420,
+          280
+        ],
+        "size": 242,
+        "ground": [
+          420,
+          430
+        ],
+        "flag": [
+          485,
+          330
+        ],
+        "hover": 18
+      },
+      {
+        "id": "od05",
+        "number": 5,
+        "name": "The Plateau",
+        "file": "assets/v8/level_05_plateau.png",
+        "center": [
+          1540,
+          1910
+        ],
+        "size": 245,
+        "ground": [
+          1540,
+          2060
+        ],
+        "flag": [
+          1600,
+          1970
+        ],
+        "hover": 18
+      }
+    ],
+    "originalFlags": [
+      {
+        "number": 2,
+        "at": [
+          2712.5,
+          847.7
+        ]
+      },
+      {
+        "number": 1,
+        "at": [
+          2495.5,
+          895.7
+        ]
+      },
+      {
+        "number": 3,
+        "at": [
+          2918.5,
+          895.7
+        ]
+      },
+      {
+        "number": 8,
+        "at": [
+          2457.5,
+          1071.7
+        ]
+      },
+      {
+        "number": 4,
+        "at": [
+          3013.5,
+          1075.7
+        ]
+      },
+      {
+        "number": 7,
+        "at": [
+          2517.5,
+          1250.7
+        ]
+      },
+      {
+        "number": 5,
+        "at": [
+          2987.5,
+          1251.7
+        ]
+      },
+      {
+        "number": 6,
+        "at": [
+          2759.5,
+          1266.7
+        ]
+      }
+    ],
+    "ambient": [
+      {
+        "id": "motorboat",
+        "sprite": "boat_motor",
+        "center": [
+          490,
+          1920
+        ],
+        "radius": [
+          260,
+          85
+        ],
+        "speed": 0.11,
+        "phase": 0.4,
+        "size": [
+          38,
+          64
+        ],
+        "type": "boat"
+      },
+      {
+        "id": "patrolboat",
+        "sprite": "boat_patrol",
+        "center": [
+          1055,
+          1405
+        ],
+        "radius": [
+          20,
+          45
+        ],
+        "speed": -0.095,
+        "phase": 2.2,
+        "size": [
+          38,
+          70
+        ],
+        "type": "boat"
+      },
+      {
+        "id": "cargoboat",
+        "sprite": "boat_cargo",
+        "center": [
+          660,
+          650
+        ],
+        "radius": [
+          60,
+          25
+        ],
+        "speed": 0.07,
+        "phase": 2.8,
+        "size": [
+          48,
+          84
+        ],
+        "type": "boat"
+      },
+      {
+        "id": "comet_scout",
+        "sprite": "drone_scout",
+        "center": [
+          550,
+          1140
+        ],
+        "radius": [
+          440,
+          285
+        ],
+        "speed": 0.19,
+        "phase": 0.1,
+        "size": [
+          57,
+          66
+        ],
+        "type": "drone"
+      },
+      {
+        "id": "comet_manta",
+        "sprite": "drone_manta",
+        "center": [
+          600,
+          1270
+        ],
+        "radius": [
+          480,
+          375
+        ],
+        "speed": -0.14,
+        "phase": 3.7,
+        "size": [
+          79,
+          72
+        ],
+        "type": "drone"
+      },
+      {
+        "id": "bridge_trident",
+        "sprite": "drone_trident",
+        "center": [
+          1030,
+          830
+        ],
+        "radius": [
+          430,
+          180
+        ],
+        "speed": 0.17,
+        "phase": 2.5,
+        "size": [
+          68,
+          72
+        ],
+        "type": "drone"
+      },
+      {
+        "id": "coastal_scout",
+        "sprite": "drone_scout",
+        "center": [
+          1530,
+          1230
+        ],
+        "radius": [
+          290,
+          345
+        ],
+        "speed": 0.23,
+        "phase": 1.1,
+        "size": [
+          57,
+          66
+        ],
+        "type": "drone"
+      },
+      {
+        "id": "southern_manta",
+        "sprite": "drone_manta",
+        "center": [
+          1280,
+          1920
+        ],
+        "radius": [
+          430,
+          220
+        ],
+        "speed": 0.14,
+        "phase": 4.5,
+        "size": [
+          79,
+          72
+        ],
+        "type": "drone"
+      },
+      {
+        "id": "city_trident",
+        "sprite": "drone_trident",
+        "center": [
+          470,
+          360
+        ],
+        "radius": [
+          380,
+          240
+        ],
+        "speed": -0.12,
+        "phase": 0.4,
+        "size": [
+          62,
+          66
+        ],
+        "type": "drone"
+      },
+      {
+        "id": "cloud_a",
+        "sprite": "cloud_long",
+        "center": [
+          1210,
+          650
+        ],
+        "speed": 8,
+        "phase": 0,
+        "size": [
+          340,
+          212
+        ],
+        "type": "cloud",
+        "drift": 90
+      },
+      {
+        "id": "cloud_b",
+        "sprite": "cloud_cumulus",
+        "center": [
+          2050,
+          710
+        ],
+        "speed": -6,
+        "phase": 0,
+        "size": [
+          220,
+          187
+        ],
+        "type": "cloud",
+        "drift": 90
+      },
+      {
+        "id": "cloud_d",
+        "sprite": "cloud_storm",
+        "center": [
+          1960,
+          1990
+        ],
+        "speed": -4,
+        "phase": 0,
+        "size": [
+          300,
+          199
+        ],
+        "type": "cloud",
+        "drift": 90
+      },
+      {
+        "id": "cloud_e",
+        "sprite": "cloud_cumulus",
+        "center": [
+          680,
+          2200
+        ],
+        "speed": 7,
+        "phase": 0,
+        "size": [
+          235,
+          200
+        ],
+        "type": "cloud",
+        "drift": 90
+      },
+      {
+        "id": "north_ash",
+        "sprite": "cloud_ashen",
+        "center": [
+          760,
+          960
+        ],
+        "speed": 4,
+        "phase": 0.6,
+        "drift": 65,
+        "size": [
+          310,
+          217
+        ],
+        "type": "cloud"
+      },
+      {
+        "id": "western_storm",
+        "sprite": "cloud_comet_storm",
+        "center": [
+          155,
+          1020
+        ],
+        "speed": 3,
+        "phase": 0.8,
+        "drift": 35,
+        "size": [
+          260,
+          182
+        ],
+        "type": "cloud"
+      },
+      {
+        "id": "eastern_storm",
+        "sprite": "cloud_comet_storm",
+        "center": [
+          1010,
+          840
+        ],
+        "speed": -4,
+        "phase": 2.2,
+        "drift": 70,
+        "size": [
+          260,
+          182
+        ],
+        "type": "cloud"
+      },
+      {
+        "id": "southern_ash",
+        "sprite": "cloud_ashen",
+        "center": [
+          690,
+          1720
+        ],
+        "speed": 5,
+        "phase": 1.5,
+        "drift": 85,
+        "size": [
+          260,
+          182
+        ],
+        "type": "cloud"
+      },
+      {
+        "id": "western_spores",
+        "sprite": "cloud_spores",
+        "center": [
+          140,
+          1400
+        ],
+        "speed": 2,
+        "phase": 2.1,
+        "drift": 25,
+        "size": [
+          180,
+          188
+        ],
+        "type": "cloud"
+      },
+      {
+        "id": "eastern_spores",
+        "sprite": "cloud_spores",
+        "center": [
+          1030,
+          1530
+        ],
+        "speed": -3,
+        "phase": 0.7,
+        "drift": 35,
+        "size": [
+          185,
+          193
+        ],
+        "type": "cloud"
+      },
+      {
+        "id": "southern_cumulus",
+        "sprite": "cloud_cumulus",
+        "center": [
+          430,
+          2000
+        ],
+        "speed": 5,
+        "phase": 0.3,
+        "drift": 100,
+        "size": [
+          230,
+          195
+        ],
+        "type": "cloud"
+      }
+    ],
+    "flightRoute": "M2440 1340 C2300 1520 2030 1580 1800 1520 S1690 1460 1610 1450",
+    "regions": {
+      "coast": [
+        1145,
+        770,
+        660,
+        880
+      ],
+      "northwestCity": [
+        90,
+        40,
+        680,
+        544
+      ],
+      "bridge": [
+        674,
+        490,
+        600,
+        400
+      ],
+      "southernArchipelago": [
+        890,
+        1730,
+        1210,
+        570
+      ],
+      "cometIsland": [
+        110,
+        780,
+        880,
+        920
+      ],
+      "collapsedBridge": [
+        800,
+        1105,
+        560,
+        215
+      ],
+      "portalBridge": [
+        210,
+        390,
+        400,
+        500
+      ]
+    },
+    "iconBehavior": "Independent sprites hover over grass; original numbered flags remain attached to each sprite.",
+    "flagStates": {
+      "available": "av",
+      "selected": [
+        "hi0",
+        "hi1"
+      ],
+      "locked": "lock",
+      "completed": "done"
+    },
+    "ambientBehavior": "All three boats patrol western water. Six drones orbit the new expansion regions. Eleven cloud objects drift independently around coast and comet island.",
+    "baseImage": "assets/v7/world_terrain.png",
+    "focusBoxes": {
+      "full": [
+        0,
+        0,
+        3328,
+        2304
+      ],
+      "coast": [
+        1060,
+        840,
+        1000,
+        880
+      ],
+      "south": [
+        760,
+        1670,
+        1450,
+        634
+      ],
+      "city": [
+        20,
+        0,
+        1320,
+        960
+      ],
+      "comet": [
+        0,
+        620,
+        2050,
+        1170
+      ],
+      "expansion": [
+        0,
+        30,
+        2110,
+        2274
+      ],
+      "crossing": [
+        660,
+        930,
+        930,
+        650
+      ],
+      "portal": [
+        130,
+        330,
+        780,
+        660
+      ],
+      "bridgeMiami": [
+        720,
+        400,
+        700,
+        610
+      ],
+      "downtown": [
+        70,
+        50,
+        760,
+        650
+      ],
+      "plateau": [
+        1210,
+        1550,
+        730,
+        700
+      ],
+      "fortress": [
+        1160,
+        1430,
+        790,
+        820
+      ],
+      "sky": [
+        850,
+        550,
+        1600,
+        1550
+      ]
+    },
+    "effects": [
+      {
+        "id": "voidPortalShield",
+        "sprite": "portal_shield",
+        "rect": [
+          375,
+          540,
+          100,
+          150
+        ],
+        "type": "shield",
+        "pulseSpeed": 2.3
+      }
+    ],
+    "waterPalette": {
+      "type": "sludge",
+      "source": "reference/existing_ocean.png",
+      "tile": "assets/v6/sludge_ocean.png",
+      "method": "Blue and cyan water hues shifted to deep moss and toxic olive while retaining pixel texture"
+    },
+    "weather": {
+      "type": "rain",
+      "count": 1250,
+      "wind": -42,
+      "speed": [
+        185,
+        320
+      ],
+      "toggleDefault": true
+    },
+    "terrainOverlay": "assets/v7/terrain_overlay.png",
+    "waterAnimation": {
+      "frameWidth": 256,
+      "frameHeight": 256,
+      "frameCount": 6,
+      "fps": 8,
+      "frameDurationMs": 125,
+      "loop": true,
+      "spritesheet": "assets/v7/sludge_water_6f.png",
+      "frames": [
+        "assets/v7/water_frame_00.png",
+        "assets/v7/water_frame_01.png",
+        "assets/v7/water_frame_02.png",
+        "assets/v7/water_frame_03.png",
+        "assets/v7/water_frame_04.png",
+        "assets/v7/water_frame_05.png"
+      ],
+      "sheetLayout": "horizontal, left to right",
+      "terrainOverlay": "assets/v7/terrain_overlay.png"
+    },
+    "postStormTerrainOverlay": "assets/v8/poststorm_terrain_overlay.png",
+    "postStormBaseImage": "assets/v8/poststorm_world_terrain.png",
+    "skyMap": {
+      "baseImage": "assets/v8/sky_map_base.png",
+      "anchor": "assets/v8/plateau_fortress.png",
+      "futureNodesDefined": false
+    }
+  },
+  "assets": [
+    {
+      "id": "coast_terrain",
+      "file": "assets/v2/coast_terrain.png",
+      "width": 660,
+      "height": 880,
+      "transparentPixels": 151198,
+      "role": "Terrain, no baked mission landmarks",
+      "source": "source/coast_terrain_v2.png",
+      "sha256": "c5fcce7ce938b4aca085368e64d96ad4005aeabb2c6204c9a741155e5c4a1355"
+    },
+    {
+      "id": "major_city",
+      "file": "assets/v2/major_city.png",
+      "width": 680,
+      "height": 544,
+      "transparentPixels": 118301,
+      "role": "Northwest city region",
+      "source": "source/major_city_v2.png",
+      "sha256": "abf0ddae4fff34dbfca2ea5931665de865370e27d21051e1820d007983a6156c"
+    },
+    {
+      "id": "city_bridge",
+      "file": "assets/v2/city_bridge.png",
+      "width": 600,
+      "height": 400,
+      "transparentPixels": 209341,
+      "role": "Separate northwest causeway",
+      "source": "source/city_bridge_v2.png",
+      "sha256": "cba61700fcd8af40af6fd256752be7bb2710c6b2e4740807d51cc213a75d4060"
+    },
+    {
+      "id": "island_beach",
+      "file": "assets/v2/island_beach.png",
+      "width": 260,
+      "height": 230,
+      "transparentPixels": 29259,
+      "role": "Separate southern island",
+      "source": "source/southern_islands_v2.png",
+      "sha256": "a6aef8c13d5ce6542b86eac11cb7838c357af3b1f75dc414d284c9f5b627e6bf"
+    },
+    {
+      "id": "island_lagoon",
+      "file": "assets/v2/island_lagoon.png",
+      "width": 280,
+      "height": 240,
+      "transparentPixels": 29067,
+      "role": "Separate southern island",
+      "source": "source/southern_islands_v2.png",
+      "sha256": "46b96dca5e0329ca223c4d5182bb515b949d43f110756f862154c33ba170a8ea"
+    },
+    {
+      "id": "island_ruins",
+      "file": "assets/v2/island_ruins.png",
+      "width": 280,
+      "height": 260,
+      "transparentPixels": 31025,
+      "role": "Separate southern island",
+      "source": "source/southern_islands_v2.png",
+      "sha256": "80166b37c5ebb9d950ab76c58d31f9609a42e66d3e95b914a2e1703ab977d866"
+    },
+    {
+      "id": "island_cove",
+      "file": "assets/v2/island_cove.png",
+      "width": 280,
+      "height": 240,
+      "transparentPixels": 28761,
+      "role": "Separate southern island",
+      "source": "source/southern_islands_v2.png",
+      "sha256": "b0abe8cf58c3ec506f9c4020b13c6806c4e05421a1e666e384a5140e950cb4e8"
+    },
+    {
+      "id": "central_plateau",
+      "file": "assets/v2/central_plateau.png",
+      "width": 340,
+      "height": 320,
+      "transparentPixels": 48983,
+      "role": "Separate southern island",
+      "source": "source/southern_islands_v2.png",
+      "sha256": "97ed1e73da1b93f99014cf03954b6d96cfdf03b7c303b103c9b2d3a386da79ee"
+    },
+    {
+      "id": "cloud_long",
+      "file": "assets/v2/cloud_long.png",
+      "width": 256,
+      "height": 160,
+      "transparentPixels": 22002,
+      "role": "Independent ambient map object",
+      "source": "source/map_objects_v2.png",
+      "sha256": "d9d8cc2873e042b6a2a42c1c3585af2507c17fabbb37d74c9824e690655f6a0f"
+    },
+    {
+      "id": "cloud_cumulus",
+      "file": "assets/v2/cloud_cumulus.png",
+      "width": 200,
+      "height": 170,
+      "transparentPixels": 14235,
+      "role": "Independent ambient map object",
+      "source": "source/map_objects_v2.png",
+      "sha256": "916eef9bdfe1ccb5e3b0ab707103d0019b573d0329ae8615a7fe810eeb2333ec"
+    },
+    {
+      "id": "cloud_storm",
+      "file": "assets/v2/cloud_storm.png",
+      "width": 256,
+      "height": 170,
+      "transparentPixels": 18024,
+      "role": "Independent ambient map object",
+      "source": "source/map_objects_v2.png",
+      "sha256": "c3140bea815c96f5e8cf2d10030e149491ee47a7686b1d6e2fecfb1f8239af8c"
+    },
+    {
+      "id": "boat_motor",
+      "file": "assets/v2/boat_motor.png",
+      "width": 72,
+      "height": 120,
+      "transparentPixels": 5116,
+      "role": "Independent ambient map object",
+      "source": "source/map_objects_v2.png",
+      "sha256": "0e3042d4d0e40bcc192cdb32ed893ad1b6d042b85bf9e2c9e975f6ae8d31a7d6"
+    },
+    {
+      "id": "boat_patrol",
+      "file": "assets/v2/boat_patrol.png",
+      "width": 72,
+      "height": 132,
+      "transparentPixels": 5077,
+      "role": "Independent ambient map object",
+      "source": "source/map_objects_v2.png",
+      "sha256": "ed75e1520aaca422f443a79268ea8bae88d0890ab72a3eabdcaf6fa73c707d4c"
+    },
+    {
+      "id": "boat_cargo",
+      "file": "assets/v2/boat_cargo.png",
+      "width": 80,
+      "height": 140,
+      "transparentPixels": 5812,
+      "role": "Independent ambient map object",
+      "source": "source/map_objects_v2.png",
+      "sha256": "cb47ec7fc9b85b758a8052ca4a349d29e486950d523071ff171064c2b92357fa"
+    },
+    {
+      "id": "drone_scout",
+      "file": "assets/v2/drone_scout.png",
+      "width": 96,
+      "height": 112,
+      "transparentPixels": 5335,
+      "role": "Independent ambient map object",
+      "source": "source/map_objects_v2.png",
+      "sha256": "5207842ae9e4bb9ea76bd2a6ded3abdcbe52e5ebabf586bd81015fc35d8a23a9"
+    },
+    {
+      "id": "drone_trident",
+      "file": "assets/v2/drone_trident.png",
+      "width": 112,
+      "height": 120,
+      "transparentPixels": 7723,
+      "role": "Independent ambient map object",
+      "source": "source/map_objects_v2.png",
+      "sha256": "400b8ad9de92724397cea36d53bdd3f8104e1e0cca7f36b79efd4c236cbb7eaa"
+    },
+    {
+      "id": "drone_manta",
+      "file": "assets/v2/drone_manta.png",
+      "width": 132,
+      "height": 120,
+      "transparentPixels": 9473,
+      "role": "Independent ambient map object",
+      "source": "source/map_objects_v2.png",
+      "sha256": "1759bde98194ffbe043495a4433894dd370da8bff40853b34e6374f203028dd1"
+    },
+    {
+      "id": "nss_flag1_av",
+      "file": "assets/v2/nss_flag1_av.png",
+      "width": 40,
+      "height": 48,
+      "transparentPixels": 1420,
+      "role": "Existing original campaign flag/cursor",
+      "source": "Original game atlas ui_map_1 / nss_flag1_av",
+      "sha256": "833d988b1d761c2728238e1d425eaffa2d4f952833183bda90ad7d80b9dbfefd"
+    },
+    {
+      "id": "nss_flag1_done",
+      "file": "assets/v2/nss_flag1_done.png",
+      "width": 40,
+      "height": 48,
+      "transparentPixels": 1394,
+      "role": "Existing original campaign flag/cursor",
+      "source": "Original game atlas ui_map_1 / nss_flag1_done",
+      "sha256": "0196c60cce235efd4fc2ac147273fb0145c6c8b66552e96991f267da196202b1"
+    },
+    {
+      "id": "nss_flag1_lock",
+      "file": "assets/v2/nss_flag1_lock.png",
+      "width": 40,
+      "height": 48,
+      "transparentPixels": 1348,
+      "role": "Existing original campaign flag/cursor",
+      "source": "Original game atlas ui_map_1 / nss_flag1_lock",
+      "sha256": "4da56c8555db56b45b258d850cb0450812d75b2b18ee1807a414d02c06882bf3"
+    },
+    {
+      "id": "nss_flag1_hi0",
+      "file": "assets/v2/nss_flag1_hi0.png",
+      "width": 40,
+      "height": 48,
+      "transparentPixels": 1156,
+      "role": "Existing original campaign flag/cursor",
+      "source": "Original game atlas ui_map_1 / nss_flag1_hi0",
+      "sha256": "0174bcb2162ea73117a3c68c50dca15175c9498049c38dc8f682cc530634b1aa"
+    },
+    {
+      "id": "nss_flag1_hi1",
+      "file": "assets/v2/nss_flag1_hi1.png",
+      "width": 40,
+      "height": 48,
+      "transparentPixels": 1156,
+      "role": "Existing original campaign flag/cursor",
+      "source": "Original game atlas ui_map_1 / nss_flag1_hi1",
+      "sha256": "ce46d7b8f5ce39ca1940c22779bcc7e49640e06fa39ed07ea15d802e0e643109"
+    },
+    {
+      "id": "nss_flag2_av",
+      "file": "assets/v2/nss_flag2_av.png",
+      "width": 40,
+      "height": 48,
+      "transparentPixels": 1420,
+      "role": "Existing original campaign flag/cursor",
+      "source": "Original game atlas ui_map_1 / nss_flag2_av",
+      "sha256": "d405d29bee6c82214a3ad0d2fd9b2e2adac7bdcae87dba4c9b0173b9d92b39ff"
+    },
+    {
+      "id": "nss_flag2_done",
+      "file": "assets/v2/nss_flag2_done.png",
+      "width": 40,
+      "height": 48,
+      "transparentPixels": 1394,
+      "role": "Existing original campaign flag/cursor",
+      "source": "Original game atlas ui_map_1 / nss_flag2_done",
+      "sha256": "d5a75aee5d0813214217a3795e211b0b1f4539c554e19d60fbb9ced8f649adda"
+    },
+    {
+      "id": "nss_flag2_lock",
+      "file": "assets/v2/nss_flag2_lock.png",
+      "width": 40,
+      "height": 48,
+      "transparentPixels": 1348,
+      "role": "Existing original campaign flag/cursor",
+      "source": "Original game atlas ui_map_1 / nss_flag2_lock",
+      "sha256": "3ebf43f4b43baf054cbc28eb2839f915e8aec326b88a14d227b54978f6e23db8"
+    },
+    {
+      "id": "nss_flag2_hi0",
+      "file": "assets/v2/nss_flag2_hi0.png",
+      "width": 40,
+      "height": 48,
+      "transparentPixels": 1156,
+      "role": "Existing original campaign flag/cursor",
+      "source": "Original game atlas ui_map_1 / nss_flag2_hi0",
+      "sha256": "95937c91a2db58a911feeca80508b37a4c083e0c66cb6c2f01b894a8aaf3ec06"
+    },
+    {
+      "id": "nss_flag2_hi1",
+      "file": "assets/v2/nss_flag2_hi1.png",
+      "width": 40,
+      "height": 48,
+      "transparentPixels": 1156,
+      "role": "Existing original campaign flag/cursor",
+      "source": "Original game atlas ui_map_1 / nss_flag2_hi1",
+      "sha256": "db2248722f7727f22e2c808d0501bf37e4b34c2ccb9a7181303d8392f1a63ceb"
+    },
+    {
+      "id": "nss_flag3_av",
+      "file": "assets/v2/nss_flag3_av.png",
+      "width": 40,
+      "height": 48,
+      "transparentPixels": 1420,
+      "role": "Existing original campaign flag/cursor",
+      "source": "Original game atlas ui_map_1 / nss_flag3_av",
+      "sha256": "d2a9d6fa31c00a9fdd5d20d67e469631a591144d69865a6b7815013feacef13a"
+    },
+    {
+      "id": "nss_flag3_done",
+      "file": "assets/v2/nss_flag3_done.png",
+      "width": 40,
+      "height": 48,
+      "transparentPixels": 1394,
+      "role": "Existing original campaign flag/cursor",
+      "source": "Original game atlas ui_map_1 / nss_flag3_done",
+      "sha256": "7a2de361d285c406c835fccbd458f9f38b80013eec79e7422a8d42efcef7009f"
+    },
+    {
+      "id": "nss_flag3_lock",
+      "file": "assets/v2/nss_flag3_lock.png",
+      "width": 40,
+      "height": 48,
+      "transparentPixels": 1348,
+      "role": "Existing original campaign flag/cursor",
+      "source": "Original game atlas ui_map_1 / nss_flag3_lock",
+      "sha256": "75686092b70e1a9f3ef86474ad66c65ecd70260f7f05fb116fbb520e79afead5"
+    },
+    {
+      "id": "nss_flag3_hi0",
+      "file": "assets/v2/nss_flag3_hi0.png",
+      "width": 40,
+      "height": 48,
+      "transparentPixels": 1156,
+      "role": "Existing original campaign flag/cursor",
+      "source": "Original game atlas ui_map_1 / nss_flag3_hi0",
+      "sha256": "fdc50c2be9b1d4487eba1f102bd40603cc40cf7e3252fec17afc916af2828472"
+    },
+    {
+      "id": "nss_flag3_hi1",
+      "file": "assets/v2/nss_flag3_hi1.png",
+      "width": 40,
+      "height": 48,
+      "transparentPixels": 1156,
+      "role": "Existing original campaign flag/cursor",
+      "source": "Original game atlas ui_map_1 / nss_flag3_hi1",
+      "sha256": "4dae2b8bda75bba7799e5c8f173c934005765e5d58468ff4fbc1e54332bf3934"
+    },
+    {
+      "id": "nss_flag4_av",
+      "file": "assets/v2/nss_flag4_av.png",
+      "width": 40,
+      "height": 48,
+      "transparentPixels": 1420,
+      "role": "Existing original campaign flag/cursor",
+      "source": "Original game atlas ui_map_1 / nss_flag4_av",
+      "sha256": "cf47aad75e2e62dd5c8663cf112389a6d8da901af07945d50a2e70c3d804f494"
+    },
+    {
+      "id": "nss_flag4_done",
+      "file": "assets/v2/nss_flag4_done.png",
+      "width": 40,
+      "height": 48,
+      "transparentPixels": 1394,
+      "role": "Existing original campaign flag/cursor",
+      "source": "Original game atlas ui_map_1 / nss_flag4_done",
+      "sha256": "2fd8642085d1a8dde02fc3fd292d4815da2527b4314ee4d7ed2f7a656202e101"
+    },
+    {
+      "id": "nss_flag4_lock",
+      "file": "assets/v2/nss_flag4_lock.png",
+      "width": 40,
+      "height": 48,
+      "transparentPixels": 1348,
+      "role": "Existing original campaign flag/cursor",
+      "source": "Original game atlas ui_map_1 / nss_flag4_lock",
+      "sha256": "6419996588908692daa5b64f7e18136d350be7b7d729fea43b53e17ed2f4334a"
+    },
+    {
+      "id": "nss_flag4_hi0",
+      "file": "assets/v2/nss_flag4_hi0.png",
+      "width": 40,
+      "height": 48,
+      "transparentPixels": 1156,
+      "role": "Existing original campaign flag/cursor",
+      "source": "Original game atlas ui_map_1 / nss_flag4_hi0",
+      "sha256": "a1b1761633832125afb96575a43b89cb44aca11c0a98d3559ac4f53e99f2a35f"
+    },
+    {
+      "id": "nss_flag4_hi1",
+      "file": "assets/v2/nss_flag4_hi1.png",
+      "width": 40,
+      "height": 48,
+      "transparentPixels": 1156,
+      "role": "Existing original campaign flag/cursor",
+      "source": "Original game atlas ui_map_1 / nss_flag4_hi1",
+      "sha256": "dd851e98bd66a2a18df5ac3b422039bfc9cfd7c34cb18a580db34d1ed5194986"
+    },
+    {
+      "id": "nss_flag5_av",
+      "file": "assets/v2/nss_flag5_av.png",
+      "width": 40,
+      "height": 48,
+      "transparentPixels": 1420,
+      "role": "Existing original campaign flag/cursor",
+      "source": "Original game atlas ui_map_1 / nss_flag5_av",
+      "sha256": "ba1a0c5814041aafffb91cf8fc8a4e14d8d88f7200160df788531cf3cef1971b"
+    },
+    {
+      "id": "nss_flag5_done",
+      "file": "assets/v2/nss_flag5_done.png",
+      "width": 40,
+      "height": 48,
+      "transparentPixels": 1394,
+      "role": "Existing original campaign flag/cursor",
+      "source": "Original game atlas ui_map_1 / nss_flag5_done",
+      "sha256": "0fe64442c25a7134a3f8ebeec5d23fa1747924611898bed4058a7e08f894dcd5"
+    },
+    {
+      "id": "nss_flag5_lock",
+      "file": "assets/v2/nss_flag5_lock.png",
+      "width": 40,
+      "height": 48,
+      "transparentPixels": 1348,
+      "role": "Existing original campaign flag/cursor",
+      "source": "Original game atlas ui_map_1 / nss_flag5_lock",
+      "sha256": "cce23a0e356e57bddfc7bd430c34959eb7f418def27e8823ed1e27feb1a81ad9"
+    },
+    {
+      "id": "nss_flag5_hi0",
+      "file": "assets/v2/nss_flag5_hi0.png",
+      "width": 40,
+      "height": 48,
+      "transparentPixels": 1156,
+      "role": "Existing original campaign flag/cursor",
+      "source": "Original game atlas ui_map_1 / nss_flag5_hi0",
+      "sha256": "341c332ecc21c48949524dc345a154ec1774b5764f8b54d1cfaddc6fc07bb7d8"
+    },
+    {
+      "id": "nss_flag5_hi1",
+      "file": "assets/v2/nss_flag5_hi1.png",
+      "width": 40,
+      "height": 48,
+      "transparentPixels": 1156,
+      "role": "Existing original campaign flag/cursor",
+      "source": "Original game atlas ui_map_1 / nss_flag5_hi1",
+      "sha256": "67d81c5e3f301696959c4ff16e2610baf7a8367476f87defd0ac608598af2288"
+    },
+    {
+      "id": "nss_flag6_av",
+      "file": "assets/v2/nss_flag6_av.png",
+      "width": 40,
+      "height": 48,
+      "transparentPixels": 1420,
+      "role": "Existing original campaign flag/cursor",
+      "source": "Original game atlas ui_map_1 / nss_flag6_av",
+      "sha256": "b63dbcc5b4c94d2942fc4e3cb435bd0f7be8a44184428d6763f08128944fc3e8"
+    },
+    {
+      "id": "nss_flag6_done",
+      "file": "assets/v2/nss_flag6_done.png",
+      "width": 40,
+      "height": 48,
+      "transparentPixels": 1394,
+      "role": "Existing original campaign flag/cursor",
+      "source": "Original game atlas ui_map_1 / nss_flag6_done",
+      "sha256": "9827b0ea6e97043a67ec9e44d8ebe19cdb1f4b110c6fa8000fa28dfbf1610b9f"
+    },
+    {
+      "id": "nss_flag6_lock",
+      "file": "assets/v2/nss_flag6_lock.png",
+      "width": 40,
+      "height": 48,
+      "transparentPixels": 1348,
+      "role": "Existing original campaign flag/cursor",
+      "source": "Original game atlas ui_map_1 / nss_flag6_lock",
+      "sha256": "eab17cb65425341d35e81e02c517973db57fc180b4d1bf7ad716a222f9ba439d"
+    },
+    {
+      "id": "nss_flag6_hi0",
+      "file": "assets/v2/nss_flag6_hi0.png",
+      "width": 40,
+      "height": 48,
+      "transparentPixels": 1156,
+      "role": "Existing original campaign flag/cursor",
+      "source": "Original game atlas ui_map_1 / nss_flag6_hi0",
+      "sha256": "d76470a14928152cbe4a011caf8e0b7c22fd2d47f2b45e496816c0cb79abf2fe"
+    },
+    {
+      "id": "nss_flag6_hi1",
+      "file": "assets/v2/nss_flag6_hi1.png",
+      "width": 40,
+      "height": 48,
+      "transparentPixels": 1156,
+      "role": "Existing original campaign flag/cursor",
+      "source": "Original game atlas ui_map_1 / nss_flag6_hi1",
+      "sha256": "ad6b7e4a3f351f988dc6cd96faba284491b76317cdd62c31afb352d4c4bf3c8b"
+    },
+    {
+      "id": "nss_flag7_av",
+      "file": "assets/v2/nss_flag7_av.png",
+      "width": 40,
+      "height": 48,
+      "transparentPixels": 1420,
+      "role": "Existing original campaign flag/cursor",
+      "source": "Original game atlas ui_map_1 / nss_flag7_av",
+      "sha256": "08adf2a37ec1da1b01904f091cdb66236895e18d40f89be0d2519c0f42c9d94c"
+    },
+    {
+      "id": "nss_flag7_done",
+      "file": "assets/v2/nss_flag7_done.png",
+      "width": 40,
+      "height": 48,
+      "transparentPixels": 1394,
+      "role": "Existing original campaign flag/cursor",
+      "source": "Original game atlas ui_map_1 / nss_flag7_done",
+      "sha256": "0c1150220c746e404a0683da71d316a89ae01eaf404fd1a3fe19c7f9751f79e0"
+    },
+    {
+      "id": "nss_flag7_lock",
+      "file": "assets/v2/nss_flag7_lock.png",
+      "width": 40,
+      "height": 48,
+      "transparentPixels": 1348,
+      "role": "Existing original campaign flag/cursor",
+      "source": "Original game atlas ui_map_1 / nss_flag7_lock",
+      "sha256": "1e3df5b271960444851bf378341a7bf5090b91563d46c83ba8be5cc75a9a7ae7"
+    },
+    {
+      "id": "nss_flag7_hi0",
+      "file": "assets/v2/nss_flag7_hi0.png",
+      "width": 40,
+      "height": 48,
+      "transparentPixels": 1156,
+      "role": "Existing original campaign flag/cursor",
+      "source": "Original game atlas ui_map_1 / nss_flag7_hi0",
+      "sha256": "81effbb8409e3c3bae146e3a2f41eb78ee4aafa6a5505be5d18f1623cc94312f"
+    },
+    {
+      "id": "nss_flag7_hi1",
+      "file": "assets/v2/nss_flag7_hi1.png",
+      "width": 40,
+      "height": 48,
+      "transparentPixels": 1156,
+      "role": "Existing original campaign flag/cursor",
+      "source": "Original game atlas ui_map_1 / nss_flag7_hi1",
+      "sha256": "f845e834f2d5d518a80a5ada8db972f84dd1e46c6d28fbdadbab3c3f48af5163"
+    },
+    {
+      "id": "nss_flag8_av",
+      "file": "assets/v2/nss_flag8_av.png",
+      "width": 40,
+      "height": 48,
+      "transparentPixels": 1420,
+      "role": "Existing original campaign flag/cursor",
+      "source": "Original game atlas ui_map_1 / nss_flag8_av",
+      "sha256": "81d331f7ed4b20a0d5d98c32d3b1b252a3548f7668a30425721f10968de289d2"
+    },
+    {
+      "id": "nss_flag8_done",
+      "file": "assets/v2/nss_flag8_done.png",
+      "width": 40,
+      "height": 48,
+      "transparentPixels": 1394,
+      "role": "Existing original campaign flag/cursor",
+      "source": "Original game atlas ui_map_1 / nss_flag8_done",
+      "sha256": "e2635dd33a5b42ddb107fa47cccf373b35201c04824a28fcc63fb814e781beb1"
+    },
+    {
+      "id": "nss_flag8_lock",
+      "file": "assets/v2/nss_flag8_lock.png",
+      "width": 40,
+      "height": 48,
+      "transparentPixels": 1348,
+      "role": "Existing original campaign flag/cursor",
+      "source": "Original game atlas ui_map_1 / nss_flag8_lock",
+      "sha256": "2a75870b26ca9007ab697fd037e6000ca7e3df76d7ec93aff8e2ac89c8412bd4"
+    },
+    {
+      "id": "nss_flag8_hi0",
+      "file": "assets/v2/nss_flag8_hi0.png",
+      "width": 40,
+      "height": 48,
+      "transparentPixels": 1156,
+      "role": "Existing original campaign flag/cursor",
+      "source": "Original game atlas ui_map_1 / nss_flag8_hi0",
+      "sha256": "0d1eedd2a0c3ed4e04b2b1f2065f15739a0c9d9ec60a9710b1ed78086010e77d"
+    },
+    {
+      "id": "nss_flag8_hi1",
+      "file": "assets/v2/nss_flag8_hi1.png",
+      "width": 40,
+      "height": 48,
+      "transparentPixels": 1156,
+      "role": "Existing original campaign flag/cursor",
+      "source": "Original game atlas ui_map_1 / nss_flag8_hi1",
+      "sha256": "58d2ac616bced582520961b5e8410998ac124f510c2f4a196b4e3c080e591cae"
+    },
+    {
+      "id": "nss_cursor_0",
+      "file": "assets/v2/nss_cursor_0.png",
+      "width": 48,
+      "height": 48,
+      "transparentPixels": 2010,
+      "role": "Existing original campaign flag/cursor",
+      "source": "Original game atlas ui_map_1 / nss_cursor_0",
+      "sha256": "75ec0997fc645486b20cb294a77a06c31b77abba36ae00c27f51be790cccfb00"
+    },
+    {
+      "id": "nss_cursor_1",
+      "file": "assets/v2/nss_cursor_1.png",
+      "width": 48,
+      "height": 48,
+      "transparentPixels": 2010,
+      "role": "Existing original campaign flag/cursor",
+      "source": "Original game atlas ui_map_1 / nss_cursor_1",
+      "sha256": "d50bc15625ad9a38275c8bcd0753e0882b406b520fe28f224a8a54e061c312b2"
+    },
+    {
+      "id": "nss_cursor_2",
+      "file": "assets/v2/nss_cursor_2.png",
+      "width": 48,
+      "height": 48,
+      "transparentPixels": 2010,
+      "role": "Existing original campaign flag/cursor",
+      "source": "Original game atlas ui_map_1 / nss_cursor_2",
+      "sha256": "f977291e004a30ace1a701132bd1f7b2e12f13c920133bd11e74c60c82c36e27"
+    },
+    {
+      "id": "nss_cursor_3",
+      "file": "assets/v2/nss_cursor_3.png",
+      "width": 48,
+      "height": 48,
+      "transparentPixels": 2010,
+      "role": "Existing original campaign flag/cursor",
+      "source": "Original game atlas ui_map_1 / nss_cursor_3",
+      "sha256": "457bd8915b98972e39c09f58b73cba6c3545cd8404b711dd4613d6d4f72312f4"
+    },
+    {
+      "id": "nss_cursor_4",
+      "file": "assets/v2/nss_cursor_4.png",
+      "width": 48,
+      "height": 48,
+      "transparentPixels": 2010,
+      "role": "Existing original campaign flag/cursor",
+      "source": "Original game atlas ui_map_1 / nss_cursor_4",
+      "sha256": "75ec0997fc645486b20cb294a77a06c31b77abba36ae00c27f51be790cccfb00"
+    },
+    {
+      "id": "nss_cursor_5",
+      "file": "assets/v2/nss_cursor_5.png",
+      "width": 48,
+      "height": 48,
+      "transparentPixels": 2010,
+      "role": "Existing original campaign flag/cursor",
+      "source": "Original game atlas ui_map_1 / nss_cursor_5",
+      "sha256": "d50bc15625ad9a38275c8bcd0753e0882b406b520fe28f224a8a54e061c312b2"
+    },
+    {
+      "id": "nss_cursor_6",
+      "file": "assets/v2/nss_cursor_6.png",
+      "width": 48,
+      "height": 48,
+      "transparentPixels": 2010,
+      "role": "Existing original campaign flag/cursor",
+      "source": "Original game atlas ui_map_1 / nss_cursor_6",
+      "sha256": "f977291e004a30ace1a701132bd1f7b2e12f13c920133bd11e74c60c82c36e27"
+    },
+    {
+      "id": "nss_cursor_7",
+      "file": "assets/v2/nss_cursor_7.png",
+      "width": 48,
+      "height": 48,
+      "transparentPixels": 2010,
+      "role": "Existing original campaign flag/cursor",
+      "source": "Original game atlas ui_map_1 / nss_cursor_7",
+      "sha256": "457bd8915b98972e39c09f58b73cba6c3545cd8404b711dd4613d6d4f72312f4"
+    },
+    {
+      "id": "comet_island",
+      "file": "assets/v3/comet_island.png",
+      "width": 880,
+      "height": 920,
+      "transparentPixels": 250367,
+      "role": "Comet-struck coastal region",
+      "source": "source/comet_island_v3.png",
+      "sha256": "c23aec9616a4932c770baed8d351d6aebef9aa74d2c8671aab73b4237de285b3"
+    },
+    {
+      "id": "cloud_comet_storm",
+      "file": "assets/v3/cloud_comet_storm.png",
+      "width": 300,
+      "height": 210,
+      "transparentPixels": 31425,
+      "role": "Independent ambient map object",
+      "source": "source/comet_surrounds_v3.png",
+      "sha256": "44fa7efad9f2415fc9cbb0821c6cdd458e91e800e5d99a73819c82ba7ca05a67"
+    },
+    {
+      "id": "cloud_ashen",
+      "file": "assets/v3/cloud_ashen.png",
+      "width": 300,
+      "height": 210,
+      "transparentPixels": 40211,
+      "role": "Independent ambient map object",
+      "source": "source/comet_surrounds_v3.png",
+      "sha256": "f08a695880aafa4d02ab05b1ede686c12b908062e7a0920ac69d60c46f3a001e"
+    },
+    {
+      "id": "cloud_spores",
+      "file": "assets/v3/cloud_spores.png",
+      "width": 230,
+      "height": 240,
+      "transparentPixels": 25855,
+      "role": "Independent ambient map object",
+      "source": "source/comet_surrounds_v3.png",
+      "sha256": "b9dc8926a4db3f1f8adb602b1a7674fafa9f84ed746bc3f07a44b18d973878aa"
+    },
+    {
+      "id": "comet_reef",
+      "file": "assets/v3/comet_reef.png",
+      "width": 150,
+      "height": 150,
+      "transparentPixels": 12015,
+      "role": "Corrupted coastal surround",
+      "source": "source/comet_surrounds_v3.png",
+      "sha256": "8b0611096bd59aca7cf3a8c75dbeb5512028d7370ea95bd1650aaa14b8fe052c"
+    },
+    {
+      "id": "corrupted_shipwreck",
+      "file": "assets/v3/corrupted_shipwreck.png",
+      "width": 200,
+      "height": 145,
+      "transparentPixels": 16047,
+      "role": "Corrupted coastal surround",
+      "source": "source/comet_surrounds_v3.png",
+      "sha256": "af975276fc801fbe4ea68310d98bc5d8396efdb0d17f19322e62b37b8d2d7e80"
+    },
+    {
+      "id": "dead_palm_islet",
+      "file": "assets/v3/dead_palm_islet.png",
+      "width": 155,
+      "height": 165,
+      "transparentPixels": 13259,
+      "role": "Corrupted coastal surround",
+      "source": "source/comet_surrounds_v3.png",
+      "sha256": "07cc5ee46438fd12ee98ea318711630651ee9ca292d66aca73d0cf4630d849a6"
+    },
+    {
+      "id": "western_expansion_review",
+      "file": "assets/v3/western_expansion_review.png",
+      "width": 2050,
+      "height": 1630,
+      "transparentPixels": 0,
+      "role": "Comet island and surrounding expansion detail",
+      "source": "world_review.png",
+      "sha256": "c40380c91fd4ccbcd941e55c35cd3839f98e3dc9f18265134d5fde5908973f49"
+    },
+    {
+      "id": "collapsed_bridge",
+      "file": "assets/v4/collapsed_bridge.png",
+      "width": 560,
+      "height": 215,
+      "transparentPixels": 88845,
+      "role": "Collapsed coastal crossing",
+      "source": "source/collapsed_bridge_v4.png",
+      "sha256": "a9ad0757ac4e65b657eb2d5f4469acbc4fe3b82d48c4d58d41b2816c19264ba2"
+    },
+    {
+      "id": "collapsed_crossing_review",
+      "file": "assets/v4/collapsed_crossing_review.png",
+      "width": 930,
+      "height": 650,
+      "transparentPixels": 0,
+      "role": "Collapsed bridge and both island shores detail",
+      "source": "world_review.png",
+      "sha256": "ea3fca82566cc7b2f4231a7f9c031e7efe4f30bd686e015b1ea93b9659797d5c"
+    },
+    {
+      "id": "portal_bridge",
+      "file": "assets/v5/portal_bridge.png",
+      "width": 400,
+      "height": 500,
+      "transparentPixels": 148354,
+      "role": "Void portal bridge",
+      "source": "source/portal_bridge_v5.png",
+      "sha256": "2847908ecc026d6d6a413703cdc53e4998acfa082fd183381ee7a313e7f48930"
+    },
+    {
+      "id": "portal_shield",
+      "file": "assets/v5/portal_shield.png",
+      "width": 100,
+      "height": 150,
+      "transparentPixels": 8673,
+      "role": "Independent portal shield effect",
+      "source": "source/portal_shield_v5.png",
+      "sha256": "9a6d9a1b51964ccc03f63112fcb70f4378bfbd917583d34ae6bc6d24967b1c34"
+    },
+    {
+      "id": "portal_bridge_review",
+      "file": "assets/v5/portal_bridge_review.png",
+      "width": 780,
+      "height": 660,
+      "transparentPixels": 0,
+      "role": "Void portal bridge between city and comet shores",
+      "source": "world_review.png",
+      "sha256": "43991b8449b2621973e11b3d2c77128cc0b8b0740a3c6879f3fe79eedfdfe44d"
+    },
+    {
+      "id": "sludge_ocean",
+      "file": "assets/v6/sludge_ocean.png",
+      "width": 512,
+      "height": 512,
+      "transparentPixels": 0,
+      "role": "Sludge water palette tile",
+      "source": "reference/existing_ocean.png",
+      "sha256": "9272c1a68697f851ab35dfdd1c48c4e7a38da3111b83cd2e5d6cfbeb4efcac44"
+    },
+    {
+      "id": "sludge_portal_review",
+      "file": "assets/v6/sludge_portal_review.png",
+      "width": 1100,
+      "height": 850,
+      "transparentPixels": 0,
+      "role": "Rainy sludge water around portal and coast",
+      "source": "world_review.png",
+      "sha256": "2ca2976491e69a753c43d21038f467e80e0551220b5cd734dfbe5d58d138cb7f"
+    },
+    {
+      "id": "water_frame_00",
+      "file": "assets/v7/water_frame_00.png",
+      "width": 256,
+      "height": 256,
+      "transparentPixels": 0,
+      "role": "Animated sludge water frame",
+      "source": "assets/v6/sludge_ocean.png",
+      "sha256": "43dc047d51ac3497e1b6f4994f1e8f8d44488e6c2c5d47216d0191e5759af6ca"
+    },
+    {
+      "id": "water_frame_01",
+      "file": "assets/v7/water_frame_01.png",
+      "width": 256,
+      "height": 256,
+      "transparentPixels": 0,
+      "role": "Animated sludge water frame",
+      "source": "assets/v6/sludge_ocean.png",
+      "sha256": "4c58f88ec4c285a4d1cad6d4a8d04fd8dc446bae681f6c78e5f0214ae0d34eae"
+    },
+    {
+      "id": "water_frame_02",
+      "file": "assets/v7/water_frame_02.png",
+      "width": 256,
+      "height": 256,
+      "transparentPixels": 0,
+      "role": "Animated sludge water frame",
+      "source": "assets/v6/sludge_ocean.png",
+      "sha256": "7e9dc6a0d2d5cad7af3ec615b00ffc19a04fbe6a900ffe97132e07bd7cd63a9e"
+    },
+    {
+      "id": "water_frame_03",
+      "file": "assets/v7/water_frame_03.png",
+      "width": 256,
+      "height": 256,
+      "transparentPixels": 0,
+      "role": "Animated sludge water frame",
+      "source": "assets/v6/sludge_ocean.png",
+      "sha256": "342811b2e38bc1fe0c5ae4dcd63e497a59779e328d1b76090b960e28295fc5d5"
+    },
+    {
+      "id": "water_frame_04",
+      "file": "assets/v7/water_frame_04.png",
+      "width": 256,
+      "height": 256,
+      "transparentPixels": 0,
+      "role": "Animated sludge water frame",
+      "source": "assets/v6/sludge_ocean.png",
+      "sha256": "89f7bc96959a0ad2059079d6edd9ba8d7b85a3a70f9a838a236b0f55a7ae34bf"
+    },
+    {
+      "id": "water_frame_05",
+      "file": "assets/v7/water_frame_05.png",
+      "width": 256,
+      "height": 256,
+      "transparentPixels": 0,
+      "role": "Animated sludge water frame",
+      "source": "assets/v6/sludge_ocean.png",
+      "sha256": "27cc3bdbbe8af75969e9c917b6c04e18fa15e3c9968b47ee6279bb8749184f04"
+    },
+    {
+      "id": "sludge_water_6f",
+      "file": "assets/v7/sludge_water_6f.png",
+      "width": 1536,
+      "height": 256,
+      "transparentPixels": 0,
+      "role": "Six-frame animated water spritesheet",
+      "source": "water_frame_00 through water_frame_05",
+      "sha256": "c5b387036b80ae423832428f0c3417861a16a813e22bd3917861e6a1bec906cc"
+    },
+    {
+      "id": "water_frame_contact",
+      "file": "assets/v7/water_frame_contact.png",
+      "width": 768,
+      "height": 512,
+      "transparentPixels": 0,
+      "role": "Six-frame water contact sheet",
+      "source": "water_frame_00 through water_frame_05",
+      "sha256": "01fe9fb09a3397ad0eafd3787e312c1748986883ed3bbaf4bfdfd5e67324f35d"
+    },
+    {
+      "id": "water_tiling_review",
+      "file": "assets/v7/water_tiling_review.png",
+      "width": 768,
+      "height": 768,
+      "transparentPixels": 0,
+      "role": "Frame zero repeated 3 by 3 for seam review",
+      "source": "water_frame_00.png",
+      "sha256": "f78d2238d0b439a9627adde13b431e05aa68406bcad8927311bfd8068f0b5b84"
+    },
+    {
+      "id": "terrain_overlay",
+      "file": "assets/v7/terrain_overlay.png",
+      "width": 3328,
+      "height": 2304,
+      "transparentPixels": 5930325,
+      "role": "Transparent terrain over animated water",
+      "source": "Version 6 terrain layout, shoreline palette",
+      "sha256": "896b870f4345e9153a14cf024fb87f177a5a6d5cedd7ef20ee36a9be9e933eb2"
+    },
+    {
+      "id": "animated_water_review",
+      "file": "assets/v7/animated_water_review.png",
+      "width": 1100,
+      "height": 850,
+      "transparentPixels": 0,
+      "role": "Six-frame sludge water in the western expansion",
+      "source": "world_review.png",
+      "sha256": "155800f254411372049abb5a47decf3da14f1bcb05d4128f81b0060907e64cac"
+    },
+    {
+      "id": "level_03_bridge",
+      "file": "assets/v8/level_03_bridge.png",
+      "width": 380,
+      "height": 380,
+      "transparentPixels": 115926,
+      "role": "Floating section 03 bridge icon",
+      "source": "source/level_03_bridge_v8.png",
+      "sha256": "e68b5f148201282edf2c2f04e0ae56f7f015a46ff02e1d7d4921048806e9503c"
+    },
+    {
+      "id": "level_04_miami_center",
+      "file": "assets/v8/level_04_miami_center.png",
+      "width": 380,
+      "height": 380,
+      "transparentPixels": 59699,
+      "role": "Floating section 04 city-center icon",
+      "source": "source/level_04_miami_v8.png",
+      "sha256": "0df9a7db37900628ed5a914f33daf32f0064e6bd2b8f92cada40e2bf9aa4eab1"
+    },
+    {
+      "id": "level_05_plateau",
+      "file": "assets/v8/level_05_plateau.png",
+      "width": 380,
+      "height": 380,
+      "transparentPixels": 60674,
+      "role": "Floating section 05 plateau boss icon",
+      "source": "source/level_05_plateau_v8.png",
+      "sha256": "640303f0bd46f95525209910f7bbea893e20fa40a49b55bc12feadd8673b1d8f"
+    },
+    {
+      "id": "plateau_fortress",
+      "file": "assets/v8/plateau_fortress.png",
+      "width": 560,
+      "height": 630,
+      "transparentPixels": 159820,
+      "role": "Post-level-5 shattered plateau and sky fortress",
+      "source": "source/plateau_fortress_v8.png",
+      "sha256": "84ca6f2c9d31ec4d8ae2cf1da5abb472f5560fe49aa9228ce3eab526370c07f1"
+    },
+    {
+      "id": "poststorm_terrain_overlay",
+      "file": "assets/v8/poststorm_terrain_overlay.png",
+      "width": 3328,
+      "height": 2304,
+      "transparentPixels": 5797871,
+      "role": "Transparent post-level-5 terrain overlay",
+      "source": "Version 7 terrain without plateau plus fortress",
+      "sha256": "3b34242fae7ec4294bb2c3d5600540280f0e6a39d3e7c30f059cbfefe0d5e19c"
+    },
+    {
+      "id": "poststorm_world_terrain",
+      "file": "assets/v8/poststorm_world_terrain.png",
+      "width": 3328,
+      "height": 2304,
+      "transparentPixels": 0,
+      "role": "Post-level-5 world first water frame",
+      "source": "poststorm_terrain_overlay plus water_frame_00",
+      "sha256": "4134ca4685d42d772ee20aa0872d13e4b7a85633b79bd4b7b2728ed53ee47607"
+    },
+    {
+      "id": "sky_map_base",
+      "file": "assets/v8/sky_map_base.png",
+      "width": 3328,
+      "height": 2304,
+      "transparentPixels": 0,
+      "role": "Above-cloud campaign map vista",
+      "source": "plateau_fortress plus existing cloud sprites",
+      "sha256": "4b012f83365c3873fc07e0ba554c622a8543f46b01f6a768a09b4bfde4bb58aa"
+    },
+    {
+      "id": "world_review",
+      "file": "assets/v8/world_review.png",
+      "width": 3328,
+      "height": 2304,
+      "transparentPixels": 0,
+      "role": "Five-section ground map review",
+      "source": "Version 7 map plus sections 03–05",
+      "sha256": "c959592d53be4cfceb99553dc58062ee3e632b62a2b8ff1b086f42f447a62915"
+    },
+    {
+      "id": "poststorm_world_review",
+      "file": "assets/v8/poststorm_world_review.png",
+      "width": 3328,
+      "height": 2304,
+      "transparentPixels": 0,
+      "role": "Fortress aftermath map review",
+      "source": "Poststorm terrain plus section flags",
+      "sha256": "f7a534d4c6bf89669e3f98ae9612af1a7ad54317412d71f1e412585baa410cbd"
+    }
+  ],
+  "revisionNotes": [
+    "New comet-struck giant island placed in user-indicated western water below the bridge.",
+    "No new numbered level assigned to this geography. Sections 1 and 2 keep their separate hovering icons and original flags.",
+    "The existing green coast, northwest city/bridge, southern islands and original campaign remain in their previous positions.",
+    "A separately exported, visibly impassable collapsed crossing now links the comet island and Miami coast. The intact northern city bridge and both level icons are unchanged.",
+    "A second bridge links the northern city to the comet island through a giant void portal. Its cyan-violet protective shield is an independently exported pulsing map layer.",
+    "The world water is palette-swapped to dark moss and toxic olive sludge. Animated diagonal rain covers the map, with a preview toggle.",
+    "The sludge ocean now animates with six seamless 256x256 frames at eight frames per second beneath a static transparent land overlay.",
+    "Sections 03–05: bridge to Miami, center of Miami, plateau. After section 05 a lightning storm destroys the plateau, raises an alien fortress, and shifts the campaign-map preview above the clouds."
+  ]
+}

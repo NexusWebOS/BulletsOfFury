@@ -1,0 +1,41 @@
+{
+  "tool": "built-in image_gen",
+  "date": "2026-10-07",
+  "reason": "Match the current game pilot portrait, hex special icon and vented pickup housing styles.",
+  "jobs": [
+    {
+      "name": "windstorm_icon_v2",
+      "refs": [
+        "C:/Users/Mike/Documents/New project/expansion/windstorm_machinists/reference/ui_match_v2/maverick_icon.png",
+        "C:/Users/Mike/Documents/New project/expansion/windstorm_machinists/reference/ui_match_v2/freezer_icon.png"
+      ],
+      "transparent": true,
+      "prompt": "Use case: precise-object-edit. Create the WINDSTORM ability HUD badge for Bullets of Fury Overdrive, matching the exact established HUD icon family shown in these two reference images. ONE badge only, centered on transparent alpha. A flat point-up regular HEXAGON with six angled outer sides, thin double gunmetal silver bevel rim and small brass corner fasteners; black/deep navy inset. The hexagonal silhouette and frame thickness must closely match reference one. No square frame, no round frame, no oversized armor corners, no extra projections. Inside, replace the DNA/clock imagery with a single unmistakable white and luminous seafoam-green MINI TORNADO: wide curled swirling cap, 3 clearly separated tapering spiral ribbons, narrow funnel tip below, a few small curved wind strokes. The tornado occupies the same area as the emblem in reference one; entirely contained inside the hexagon, no large glow outside. Match the crisp 16-bit low-resolution pixel clusters and restrained glow of the reference, designed to read at 112x112 pixels. Render a clean 672x672 pixel-art master equivalent to a 112x112 icon at 6x nearest-neighbor scale, not smooth HD illustration. One uniform pixel scale. No text, labels, numbers or roman numeral plate. Transparent outside the hex badge.",
+      "original": "C:\\Users\\Mike\\.codex\\generated_images\\01a0f036-546a-7e23-9f3a-463bc4985c5c\\exec-ae2b84c9-81d9-440a-a3dc-20d9af4bc892.png",
+      "workspace": "source/windstorm_icon_v2.png"
+    },
+    {
+      "name": "windstorm_box_v2",
+      "refs": [
+        "C:/Users/Mike/Documents/New project/expansion/windstorm_machinists/reference/ui_match_v2/maverick_box.png",
+        "C:/Users/Mike/Documents/New project/expansion/windstorm_machinists/ship/windstorm_box.png"
+      ],
+      "transparent": true,
+      "prompt": "Use case: precise-object-edit. Rework the second image's Windstorm pickup into the EXISTING game's special pickup box family shown by FIRST image. FIRST image is the authoritative housing geometry/material/rendering reference. Second image supplies only wind emblem and Niel color identity; discard its round center and white/gold protruding pod corners. Output ONE straight-on square industrial SPECIAL PICKUP CRATE on transparent background. Match the first image's overall tall-ish rectangular proportions (approximately 360 wide x400 high), four chamfered armored corner caps with big dark bolts, paired horizontal black bars along top/bottom, central vent block top and bottom, black ribbed side columns, octagonal inner beveled rectangular SCREEN. Square outer housing; the screen is NOT circular. Recolor painted green housing to dark sea-green / teal with bright mint indicator slits, weathered neutral gunmetal and silver edge highlights. Very limited antique-gold accent fasteners, no large pearl-white corner modules. Interior screen deep navy black with faint vertical technical scan lines. Main emblem is the bright white/seafoam tapered WIND TORNADO used by Niel: wide curling cap and several spiral ribbons tapering to narrow bottom tip, readable as air, not DNA, water or lightning. No words or numbers. Crisp rich 16-bit arcade pixel art, chunky fixed-size pixel clusters and black outlines matching FIRST reference, no smooth 3D render. Entire box fully visible with even slim transparent outer padding. No other assets.",
+      "original": "C:\\Users\\Mike\\.codex\\generated_images\\01a0f036-546a-7e23-9f3a-463bc4985c5c\\exec-5f5ea21b-778c-44a8-8bb8-7ee3eea6a06d.png",
+      "workspace": "source/windstorm_box_v2.png"
+    },
+    {
+      "name": "niel_portrait_inner_v2",
+      "refs": [
+        "C:/Users/Mike/Documents/New project/expansion/windstorm_machinists/identity/niel_portrait.png",
+        "C:/Users/Mike/Documents/New project/expansion/windstorm_machinists/reference/ui_match_v2/cole_portrait.png",
+        "C:/Users/Mike/Documents/New project/expansion/windstorm_machinists/reference/ui_match_v2/maverick_portrait.png"
+      ],
+      "transparent": false,
+      "prompt": "Use case: identity-preserve. FIRST image is NIEL / WINDSTORM's already approved identity. Images two and three are the CURRENT Bullets of Fury pilot portraits and establish the pixel rendering and head/shoulder scale. Create only Niel's BORDERLESS inner portrait so it can be composited underneath the game's exact authored frame. No frame of any kind. Retain this exact character and visual identity: Hispanic Italian sophisticated eccentric man mid-30s, warm olive skin, slicked-back dark hair with faded sides and the loose front curl, sharply groomed beard/moustache, distinctive confident knowing expression, realistic facial proportions, same three-quarter facing right pose. Preserve his pearl-white and charcoal pilot armor, sea-green scarf/collar and antique-gold spiral shoulder insignia. Do not redesign his face, age, hair, costume, ethnicity, or expression, and do not turn him into Cole or Maverick. Match references two/three's crisp 256-pixel era sprite portrait rendering, coarse deliberate shaded pixel clusters, limited ramps, dark outlines and high-contrast angular facial planes. Head-and-shoulders bust with whole hairstyle visible and a small breathing margin above hair, shoulders visible at bottom; face fills similar fraction as the current pilot examples. Faint dark navy cockpit shapes behind him, subdued so face dominates. Output a square full-bleed BORDERLESS portrait with dark navy background everywhere around the bust. No outer rail, corners, border, interface, writing or transparency. The existing frame will be added separately without changing its geometry. No smooth airbrushed skin, anime features, photorealism, or new equipment.",
+      "original": "C:\\Users\\Mike\\.codex\\generated_images\\01a0f036-546a-7e23-9f3a-463bc4985c5c\\exec-afe7c2f1-a6df-4558-8169-66bd8e3e9624.png",
+      "workspace": "source/niel_portrait_inner_v2.png"
+    }
+  ]
+}

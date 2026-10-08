@@ -1,0 +1,114 @@
+{
+  "sources": [
+    {
+      "file": "source/regular.png",
+      "width": 1222,
+      "height": 1287,
+      "transparentPixels": 886876,
+      "hasRealAlpha": true
+    },
+    {
+      "file": "source/heavy.png",
+      "width": 1222,
+      "height": 1287,
+      "transparentPixels": 773945,
+      "hasRealAlpha": true
+    },
+    {
+      "file": "source/athletic.png",
+      "width": 1222,
+      "height": 1287,
+      "transparentPixels": 870757,
+      "hasRealAlpha": true
+    },
+    {
+      "file": "source/female.png",
+      "width": 1222,
+      "height": 1287,
+      "transparentPixels": 855093,
+      "hasRealAlpha": true
+    },
+    {
+      "file": "source/weapons.png",
+      "width": 1402,
+      "height": 1122,
+      "transparentPixels": 799595,
+      "hasRealAlpha": true
+    },
+    {
+      "file": "source/props.png",
+      "width": 1447,
+      "height": 1087,
+      "transparentPixels": 893112,
+      "hasRealAlpha": true
+    },
+    {
+      "file": "source/enemies.png",
+      "width": 1277,
+      "height": 1232,
+      "transparentPixels": 819614,
+      "hasRealAlpha": true
+    },
+    {
+      "file": "source/fx.png",
+      "width": 1536,
+      "height": 1024,
+      "transparentPixels": 757679,
+      "hasRealAlpha": true
+    },
+    {
+      "file": "source/stealth.png",
+      "width": 1536,
+      "height": 1024,
+      "transparentPixels": 933749,
+      "hasRealAlpha": true
+    }
+  ],
+  "frames": 278,
+  "missingCells": [],
+  "joinedComponents": [
+    {
+      "source": "source/heavy.png",
+      "name": "heavy",
+      "bounds": [
+        811,
+        937,
+        1215,
+        1268
+      ]
+    }
+  ],
+  "notes": [
+    "Soft alpha preserved, not flattened.",
+    "Original generated sheets are authoritative; frame crops need pose-root and directional cleanup."
+  ],
+  "validation": {
+    "checkedAt": "2026-10-04",
+    "missing": [],
+    "badDimensions": [],
+    "opaqueBorders": [],
+    "zeroContent": [],
+    "hudClearCenter": {
+      "rectangle": [
+        80,
+        170,
+        350,
+        430
+      ],
+      "nonzeroAlphaPixels": 0
+    },
+    "framesChecked": 278,
+    "sequencesChecked": 57
+  },
+  "browserReview": {
+    "url": "http://127.0.0.1:8771/onfoot/preview.html",
+    "verified": [
+      "page_loaded",
+      "Juggernaut_palette_selects_heavy_body",
+      "roll_to_prone_frame_playback",
+      "alert_FOV_scan_playback",
+      "enemy_gallery_switch"
+    ],
+    "consoleErrors": 0
+  }
+}

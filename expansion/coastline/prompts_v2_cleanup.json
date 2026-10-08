@@ -1,0 +1,4 @@
+{
+  "generator": "built-in image_gen",
+  "prompt": "Use case: background-extraction. EDIT THIS EXACT FIVE-ISLAND SHEET. Keep all five islands and their positions, pixel art, shapes, palms, rock faces, ruins and plateau exactly unchanged. REMOVE ALL of the soft blurry olive-green and blue-cyan glowing backdrop around them. Empty space and gutters must be perfectly transparent alpha 0. Cut precisely around each island's crisp white surf outline; keep only the narrow hard-edged turquoise water fringe touching the island and the enclosed lagoon. NO soft glow, shadow, fog, gradient backdrop or colored background whatsoever. Preserve transparent negative space between individual rocks. Do not replace background with black/checkerboard artwork. True transparent image with five crisp isolated islands."
+}
