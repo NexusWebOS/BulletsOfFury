@@ -1,0 +1,7 @@
+takes10/
+brand/
+survey/
+*.log
+board.jpg
+__pycache__/
+segments/
