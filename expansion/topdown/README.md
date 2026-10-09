@@ -21,6 +21,7 @@ results advances Level 2 → Level 3 → Level 4. Each stage is also directly se
 | Level 2 — Iron Infiltration | Smooth Fury tank movement, independent turret aim, sideways strafe, destructible buildings, concrete cover, charged cannon recoil, tank homing missiles. **The Warrior** has an original helmet/torso, two arms and a chassis, lateral broadside movement, bullet/laser/missile volleys and a warned cover-breaking ram. No boss charge orbs. |
 | Level 3 — Boots on the Ground | Authored Miami beach → palm park → fortress route. One damaging hit consumes a life. Six guns with finite magazines/reserves, manual reload, prone/crawl, vulnerable roll, committed grenade throw, stealth, tall-stack occlusion and fixed weapon-box drops. Defeat three sentries, then walk through the opened north gate. |
 | Level 4 — Machinists: Rebel Siege | New coastal rail/factory battlefield and rocket, rail and siege tank roles. Wren/Foundry, Rolf/Vector and Chaz/Redline are hostile tanks. Select **Hotwire, Phoenix or Niel** as your teammate. The squad attacks both of you; your teammate follows, fires and regroups after being disabled. |
+| Level 5 — Museum of Violence | Mercs × Demolition Man × Contra Hard Corps × MGS on foot. Push-scroll that never scrolls back; A+B / G Mega Crash (3 bombs); POW; a boardable exhibit Fury tank that ejects you alive. Smash-TV Hall of Arms that locks for three waves; 31 shootable exhibits (23 with fixed contents); five hostages (do not shoot them). Four A–D gun slots, death loses only the gun in hand. Three routes: stealth gallery (laser tripwires, cameras), prone-only duct, armour hall. CQC from behind, found bodies, alarm panels as the only reinforcement source. Boss THE EXHIBIT: three Hard Corps forms. See [docs/MUSEUM_STUDY_1009.md](../../docs/MUSEUM_STUDY_1009.md). |
 
 Machinist tracks, hulls, turrets and rear modules use the existing calibrated
 layer canvases. Track phases follow travel distance. Breaking a part cancels its
@@ -58,6 +59,8 @@ Full keyboard/gamepad mapping is available with **F1** in the build.
 ```powershell
 python expansion/topdown/_research/build_ground_1008.py
 python expansion/topdown/_research/build_campaign_1008.py
+python expansion/topdown/_research/build_museum_1009.py      # Level 5 plate + exhibits
+python expansion/topdown/_research/check_museum_1009.py      # Level 5 collision overlay
 ```
 
 These builders own loose expansion exports and their manifests. They preserve
@@ -78,6 +81,7 @@ Run native probes from the repository root:
 ```powershell
 python expansion/topdown/_research/probe_ground_1008.py
 python expansion/topdown/_research/probe_campaign_1008.py
+python expansion/topdown/_research/probe_museum_1009.py      # Level 5: 28 checks
 ```
 
 Evidence lives in ignored `_shots/ground_1008/`. Protected fixtures isolate

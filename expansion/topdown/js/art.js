@@ -17,6 +17,7 @@
   for (const [key, meta] of Object.entries((root.TD_CAMPAIGN_ART || {}).frames || {})) LOOSE[key] = meta.file;
   LOOSE.pav_niel = 'expansion/windstorm_machinists/identity/niel_avatar_v2.png';
   for (const [key, meta] of Object.entries(root.TD_GROUND_ART || {})) LOOSE[key] = 'expansion/topdown/art/ground_1008/' + meta.file;
+  for (const [key, meta] of Object.entries(root.TD_MUSEUM_ART || {})) LOOSE[key] = meta.file;   // 1009 Level 5 museum
   for (const k of ['debris', 'dust', 'hull_0', 'hull_1', 'hull_2', 'hull_3', 'hull_4', 'hull_5', 'hull_6', 'hull_7', 'hull_base',
     'machinegun', 'missile_pod', 'muzzle', 'razor_missile', 'rotor', 'sonic_bullet', 'sonic_charge', 'sonic_impact', 'sonic_ring',
     'sonic_wave', 'tread', 'turret', 'turret_damaged', 'wreck']) LOOSE['rzb_' + k] = 'assets/game/levels/stage_01/miniboss/bosses/razorback/rzb_' + k + '.png';
@@ -25,7 +26,7 @@
     life_up: 'assets/game/shared/ui/ui/pickups_0915/life_up_wings.png',
     score_100: 'assets/game/shared/ui/ui/pickups_0917b/score_100.png', score_250: 'assets/game/shared/ui/ui/pickups_0917b/score_250.png',
     score_500: 'assets/game/shared/ui/ui/pickups_0917b/score_500.png', score_1000: 'assets/game/shared/ui/ui/pickups_0917b/score_1000.png',
-    fury_bomb: 'assets/game/shared/ui/ui/pickups_0917b/fury_bomb.png', logo: 'assets/game/shared/ui/ui/logo_0916/bof_logo.png',
+    fury_bomb: 'assets/game/shared/ui/ui/pickups_0917b/fury_bomb.png', pow_badge: 'assets/game/shared/ui/ui/infusion_0917/inf_kinetic.png', logo: 'assets/game/shared/ui/ui/logo_0916/bof_logo.png',
     overdrive: 'expansion/concept/overdrive_word_overlay.png',
     target_retina: 'assets/game/levels/stage_03/boss/bosses/stage3_thermo/nuclear_retina.png',
     // 1008g: the ground pack. Player tanks are baked per pilot paint; enemies are the on-foot alien tanks

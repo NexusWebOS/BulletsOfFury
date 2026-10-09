@@ -1,3 +1,14 @@
+# 2026-10-09 — Level 5 MUSEUM OF VIOLENCE (Mercs x Demolition Man x Hard Corps x MGS)
+
+Mike asked to study Mercs, Demolition Man (museum stage) and Contra Hard Corps and merge them with the
+stealth layer in the top-down section. New on-foot mission in `expansion/topdown/` (js/museum.js,
+museum_place.js, level5_data.js, boss_exhibit.js; art/museum_1009 from SpriteCook, 10 credits left).
+No ROM/emulator here and no decompilation: systems are original, written from published behaviour plus
+DESIGN.md's earlier SegaScope numbers. Read [docs/MUSEUM_STUDY_1009.md](docs/MUSEUM_STUDY_1009.md).
+Mission hooks in main.js gate everything on the mission; rect type 'd' = prone-only duct; World.navR is
+per mission (14 tanks, 9 museum). Probe 28/28 zero errors; old probes 29/29 and 23/23 via a favicon stub
+(this Chromium logs the favicon 404 without a URL). Base game untouched.
+
 # 2026-10-08 — GitHub publication: live player HUD and encounter bars
 
 Mike authorized publishing the completed HUD integration. Ten authored stage rows

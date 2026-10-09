@@ -1,0 +1,189 @@
+{
+ "museum_ground": {
+  "file": "expansion/topdown/art/museum_1009/museum_ground.png",
+  "size": [
+   800,
+   1422
+  ],
+  "anchor": [
+   400,
+   711
+  ]
+ },
+ "mx_statue": {
+  "file": "expansion/topdown/art/museum_1009/mx_statue.png",
+  "size": [
+   105,
+   122
+  ],
+  "anchor": [
+   52.5,
+   100
+  ]
+ },
+ "mx_statue_broken": {
+  "file": "expansion/topdown/art/museum_1009/mx_statue_broken.png",
+  "size": [
+   105,
+   122
+  ],
+  "anchor": [
+   52.5,
+   100
+  ]
+ },
+ "mx_rifle_case": {
+  "file": "expansion/topdown/art/museum_1009/mx_rifle_case.png",
+  "size": [
+   118,
+   94
+  ],
+  "anchor": [
+   59.0,
+   77
+  ]
+ },
+ "mx_rifle_case_broken": {
+  "file": "expansion/topdown/art/museum_1009/mx_rifle_case_broken.png",
+  "size": [
+   118,
+   94
+  ],
+  "anchor": [
+   59.0,
+   77
+  ]
+ },
+ "mx_vase": {
+  "file": "expansion/topdown/art/museum_1009/mx_vase.png",
+  "size": [
+   89,
+   124
+  ],
+  "anchor": [
+   44.5,
+   102
+  ]
+ },
+ "mx_vase_broken": {
+  "file": "expansion/topdown/art/museum_1009/mx_vase_broken.png",
+  "size": [
+   89,
+   124
+  ],
+  "anchor": [
+   44.5,
+   102
+  ]
+ },
+ "mx_painting": {
+  "file": "expansion/topdown/art/museum_1009/mx_painting.png",
+  "size": [
+   116,
+   130
+  ],
+  "anchor": [
+   58.0,
+   107
+  ]
+ },
+ "mx_painting_broken": {
+  "file": "expansion/topdown/art/museum_1009/mx_painting_broken.png",
+  "size": [
+   116,
+   130
+  ],
+  "anchor": [
+   58.0,
+   107
+  ]
+ },
+ "mx_alarm": {
+  "file": "expansion/topdown/art/museum_1009/mx_alarm.png",
+  "size": [
+   94,
+   119
+  ],
+  "anchor": [
+   47.0,
+   98
+  ]
+ },
+ "mx_alarm_broken": {
+  "file": "expansion/topdown/art/museum_1009/mx_alarm_broken.png",
+  "size": [
+   94,
+   119
+  ],
+  "anchor": [
+   47.0,
+   98
+  ]
+ },
+ "mx_laser_post": {
+  "file": "expansion/topdown/art/museum_1009/mx_laser_post.png",
+  "size": [
+   84,
+   120
+  ],
+  "anchor": [
+   42.0,
+   98
+  ]
+ },
+ "mx_laser_post_broken": {
+  "file": "expansion/topdown/art/museum_1009/mx_laser_post_broken.png",
+  "size": [
+   84,
+   120
+  ],
+  "anchor": [
+   42.0,
+   98
+  ]
+ },
+ "mx_rope": {
+  "file": "expansion/topdown/art/museum_1009/mx_rope.png",
+  "size": [
+   117,
+   86
+  ],
+  "anchor": [
+   58.5,
+   71
+  ]
+ },
+ "mx_rope_broken": {
+  "file": "expansion/topdown/art/museum_1009/mx_rope_broken.png",
+  "size": [
+   117,
+   86
+  ],
+  "anchor": [
+   58.5,
+   71
+  ]
+ },
+ "mx_plasma_case": {
+  "file": "expansion/topdown/art/museum_1009/mx_plasma_case.png",
+  "size": [
+   120,
+   102
+  ],
+  "anchor": [
+   60.0,
+   84
+  ]
+ },
+ "mx_plasma_case_broken": {
+  "file": "expansion/topdown/art/museum_1009/mx_plasma_case_broken.png",
+  "size": [
+   120,
+   102
+  ],
+  "anchor": [
+   60.0,
+   84
+  ]
+ }
+}

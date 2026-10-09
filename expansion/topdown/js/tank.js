@@ -316,7 +316,7 @@
   };
 
   // ------------------------------------------------------------------ props
-  const PROP = {
+  const PROP = TD.PROP = {   // 1009: a mission may register its own kinds (draw / onBreak / broken)
     barrel: { key: 'nef_s1_fuel_barrel_', hp: 3, r: 13, s: 0.16 },
     crate: { key: 'gp_ammo_crate_', hp: 4, r: 15, s: 0.5 },
     pbox: { key: 'gp_weapon_crate_', hp: 2, r: 13, s: 0.44 },
@@ -327,14 +327,17 @@
     q.hp -= dmg; q.flash = 0.1;
     if (q.hp > 0) return;
     q.dead = true;
+    if (PROP[q.kind].onBreak) { PROP[q.kind].onBreak(G, q); return; }
     if (q.kind === 'barrel') {
       FX.boom(q.x, q.y, 120, 'nxp_dense_'); FX.ring(q.x, q.y, 0.6); A.play('expB'); Cam.kick(6);
       TD.blast(G, q.x, q.y, 64, 5, true);
     } else { FX.boom(q.x, q.y, 50, 'nxp_clus_'); FX.debris(q.x, q.y, 0.22); A.play('expS'); TD.dropPickup(G, q.x, q.y, q.drop); }
   };
   TD.drawProp = function (ctx, q) {
+    const P = PROP[q.kind];
+    if (P.draw) { P.draw(ctx, q); return; }
     if (q.dead) return;
-    const P = PROP[q.kind], st = q.hp > q.max * 0.66 ? 'intact' : q.hp > q.max * 0.33 ? 'damaged' : 'critical';
+    const st = q.hp > q.max * 0.66 ? 'intact' : q.hp > q.max * 0.33 ? 'damaged' : 'critical';
     const key = P.still ? P.key : P.key + st;
     ART.draw(ctx, key, q.x + 3, q.y + 4, { s: P.s, tint: '#000000', alpha: 0.3 });
     ART.draw(ctx, key, q.x, q.y, { s: P.s, flash: q.flash > 0 ? 1 : 0 });

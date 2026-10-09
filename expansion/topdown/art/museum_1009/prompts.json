@@ -1,0 +1,21 @@
+{
+ "tool": "SpriteCook generate_game_art",
+ "plate": {
+  "asset_id": "72fe11d1-edfe-4741-9292-4297e39e9a78",
+  "model": "gpt-image-2",
+  "resolution": "2K",
+  "aspect": "9:16",
+  "prompt": "Full top-down orthographic museum-of-violence interior: lobby, Hall of Arms, west art-gallery maze and east vehicle exhibit hall split by a central wall, rotunda atrium, grand hall boss arena (see manifest history)."
+ },
+ "plate_edit": {
+  "asset_id": "5225c727-376a-4e37-a282-874ab3b3330a",
+  "edit_of": "72fe11d1-edfe-4741-9292-4297e39e9a78",
+  "prompt": "Cut a left and a right doorway through the rotunda ring into the gallery and the vehicle hall; keep everything else."
+ },
+ "props": {
+  "asset_id": "72b109df-0c32-418f-8491-3d8d921e3d98",
+  "model": "gpt-image-2.5-flare",
+  "resolution": "2K",
+  "prompt": "4x4 top-down museum exhibit props, intact/broken pairs: statue, rifle case, vase, painting panel, alarm panel, laser tripwire post, velvet rope, plasma weapon case."
+ }
+}

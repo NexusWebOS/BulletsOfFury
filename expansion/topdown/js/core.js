@@ -27,9 +27,9 @@
     up: ['arrowup', 'w'], down: ['arrowdown', 's'], left: ['arrowleft', 'a'], right: ['arrowright', 'd'],
     A: ['j', 'z'], B: ['k', 'x'], C: ['l', 'c', 'shift'], X: ['h', 'v', ' '], Y: ['u'], Z: ['i', 'n'],
     aimLeft: ['q'], aimRight: ['e'], back: ['b', 'escape'], help: ['f1', '?'], start: ['enter', 'p'],
-    reload: ['r'], prone: ['f'], tapWall: ['t'],
+    reload: ['r'], prone: ['f'], tapWall: ['t'], crash: ['g'], exitVehicle: ['o'],
   };
-  const PAD = { A: [0], B: [1], C: [5, 7], X: [2], Y: [3], Z: [4, 6], start: [9], back: [8] };
+  const PAD = { A: [0], B: [1], C: [5, 7], X: [2], Y: [3], Z: [4, 6], start: [9], back: [8], exitVehicle: [8] };
   const keys = {}, prev = {};
   root.addEventListener('keydown', e => { const k = e.key.toLowerCase(); keys[k] = true; if (k.startsWith('arrow') || k === ' ') e.preventDefault(); TD.Audio.unlock(); });
   root.addEventListener('keyup', e => { keys[e.key.toLowerCase()] = false; });
@@ -139,7 +139,7 @@
       this.w = w; this.h = h; this.rects = rects.map(r => ({ x0: r[0], y0: r[1], x1: r[2], y1: r[3], t: r[4] }));
       this.buckets = []; for (let i = 0; i <= Math.ceil(h / this.BK); i++) this.buckets.push([]);
       for (const r of this.rects) for (let b = Math.floor(r.y0 / this.BK); b <= Math.floor(r.y1 / this.BK); b++) if (this.buckets[b]) this.buckets[b].push(r);
-      this.smokes = []; Nav.build();
+      this.smokes = []; this.navR = 14; Nav.build();
     },
     near(y0, y1) {
       const out = new Set();
@@ -152,7 +152,7 @@
       if (o.x < r) { o.x = r; hit = true; } if (o.x > this.w - r) { o.x = this.w - r; hit = true; }
       if (o.y < r) { o.y = r; hit = true; } if (o.y > this.h - r) { o.y = this.h - r; hit = true; }
       for (const q of this.near(o.y - r, o.y + r)) {
-        if (q.dead || (q.t === 'h' && !blocksHedge)) continue;
+        if (q.dead || (q.t === 'h' && !blocksHedge) || (q.t === 'd' && o.stance === 'prone')) continue;   // 'd' duct: crawl only
         const cx = M.clamp(o.x, q.x0, q.x1), cy = M.clamp(o.y, q.y0, q.y1), dx = o.x - cx, dy = o.y - cy, d2 = dx * dx + dy * dy;
         if (d2 >= r * r) continue;
         hit = true;
@@ -173,7 +173,7 @@
       for (const q of this.near(Math.min(ay, by), Math.max(ay, by))) {
         if (q.dead) continue;
         if (q.t === 'v') continue;
-        if (q.t === 'h' && ((ax >= q.x0 && ax <= q.x1 && ay >= q.y0 && ay <= q.y1) || (bx >= q.x0 && bx <= q.x1 && by >= q.y0 && by <= q.y1))) continue;
+        if ((q.t === 'h' || q.t === 'd') && ((ax >= q.x0 && ax <= q.x1 && ay >= q.y0 && ay <= q.y1) || (bx >= q.x0 && bx <= q.x1 && by >= q.y0 && by <= q.y1))) continue;
         if (segRect(ax, ay, bx, by, q)) return false;
       }
       for (const s of this.smokes) if (segCircle(ax, ay, bx, by, s.x, s.y, s.r * Math.min(1, s.t / 0.6))) return false;
@@ -205,7 +205,8 @@
       this.walk = new Uint8Array(this.cols * this.rows);
       for (let r = 0; r < this.rows; r++) for (let c = 0; c < this.cols; c++) {
         const x = c * C + C / 2, y = r * C + C / 2; let ok = 1;
-        for (const q of World.near(y - 14, y + 14)) if (!q.dead && (q.t === 'b' || q.t === 'v') && x + 14 > q.x0 && x - 14 < q.x1 && y + 14 > q.y0 && y - 14 < q.y1) { ok = 0; break; }
+        const R = World.navR;   // clearance: 14 for tanks; an infantry mission narrows it (museum galleries)
+        for (const q of World.near(y - R, y + R)) if (!q.dead && (q.t === 'b' || q.t === 'v' || q.t === 'd') && x + R > q.x0 && x - R < q.x1 && y + R > q.y0 && y - R < q.y1) { ok = 0; break; }
         this.walk[r * this.cols + c] = ok;
       }
       this.fields = {};

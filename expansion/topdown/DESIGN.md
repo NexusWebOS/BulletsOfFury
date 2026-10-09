@@ -1,5 +1,13 @@
 # Overdrive Ground Operations: design notes
 
+## October 9, 2026 — Level 5, Museum of Violence
+
+The Demolition Man museum stage, Mercs, Contra Hard Corps and the MGS layer merged into one on-foot
+mission. What came from which game, the engine hooks, the art and the verification are in
+[docs/MUSEUM_STUDY_1009.md](../../docs/MUSEUM_STUDY_1009.md). This answers the §1 table's open row for
+Demolition Man. Its systems were written from the game's published behaviour (no cartridge or
+emulator here), on top of the earlier SegaScope measurements below.
+
 ## October 8, 2026 — current implementation
 
 All three missions are playable in the standalone build. See [README.md](README.md)
