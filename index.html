@@ -21,7 +21,7 @@
     display:flex;flex-direction:column;align-items:flex-start;}
   #hud-row{display:flex;flex-direction:row;align-items:flex-start;justify-content:flex-start;flex:0 0 auto;}
   #hud-wrap{position:relative;flex:0 0 auto;background:#000;}
-  #hud-wrap canvas{display:block;width:100%;height:100%;}
+  #hud-wrap canvas{display:block;width:100%;height:100%;image-rendering:pixelated;}
   #equip-dom{position:relative;flex:0 0 auto;pointer-events:none;}
   #equip-dom{display:none;} /* compact equipped socket now lives in the three-part in-play HUD */
   #equip-dom canvas{display:block;width:100%;height:100%;image-rendering:pixelated;}
@@ -83,7 +83,6 @@
      from the CABINET's box instead of the viewport — and since the cabinet is flex-centred inside
      #room, that offset pushed the whole game across. Clearing the filter (and collapsing the
      cabinet, which is invisible in fullscreen anyway) makes fixed mean fixed again. */
-  body.fs
   body.fs #stage{gap:0 !important;}
   body.fs #hint{display:none;}
   body.fs #fs-btn{opacity:0.25;}
@@ -129,7 +128,7 @@
   <div id="credit-left">COLEFORGE<br>PRODUCTIONS<br><span class="yr">2026</span></div>
   <div id="game-frame">
     <div id="hud-row">
-      <div id="hud-wrap"><canvas id="hud" width="480" height="80"></canvas></div>
+      <div id="hud-wrap"><canvas id="hud" width="480" height="104"></canvas></div>
       <div id="equip-dom"><canvas id="equipcv" width="128" height="128"></canvas></div>
     </div>
     <div id="hud-div"></div>
@@ -230,8 +229,8 @@
      (WIN_L/T/R/B as fractions of a 1448x1086 plate) and positioned #game-frame absolutely into it.
      That is gone. The room is now a plain flex row and the play window is simply sized to fit the
      viewport at the game's own aspect, so what you click is where it looks. */
-  var GW=480, GH=512, DIVH=6;
-  window.__bofHudHeight=80;
+  var GW=480, GH=512, DIVH=2;
+  window.__bofHudHeight=104;
   function fit(){
     var vw=innerWidth, vh=innerHeight;
     function S(id,w,h){ var e=document.getElementById(id); if(e){ e.style.width=w+'px'; e.style.height=h+'px'; } }
@@ -242,14 +241,21 @@
       if(scr0){scr0.style.width=vw+'px';scr0.style.height=vh+'px';}
       return;
     }
-    var reserve = isFS() ? 0 : Math.min(vw*0.34, 420);      // room for the credit rails
+    var reserve = isFS() || vw<=820 ? 0 : Math.min(vw*0.34, 420);      // room for the credit rails
     var availW = Math.max(200, vw - reserve);
-    var availH = vh * (isFS()? 1.0 : 0.94);
-    var HUDH=window.__bofHudHeight||80;
-    var totalH = GH + HUDH + DIVH;
+    var availH = vh; // the browser bay uses every available vertical pixel
+    // Wide gameplay and menus have different HUD visibility. Read that
+    // actual visibility before fitting so a hidden row cannot squeeze menus.
+    if(isFS()&&vw>=1150){try{document.body.classList.toggle('wide-playing',['play','paused','continue','stageclear','gameover'].indexOf(state)>=0);}catch(e){}}
+    var hudShown=getComputedStyle(document.getElementById('hud-row')).display!=='none';
+    var HUDH=hudShown?(window.__bofHudHeight||104):0;
+    var totalH = GH + HUDH + (hudShown?DIVH:0);
     var sc = Math.min(availW/GW, availH/totalH);
-    var gw = Math.round(GW*sc), gh = Math.round(GH*sc);
-    var hh = Math.round(HUDH*sc), dh = Math.round(DIVH*sc);
+    var gw = Math.floor(GW*sc);
+    var hh = Math.round(HUDH*sc), dh = hudShown?Math.max(1,Math.round(DIVH*sc)):0;
+    // Allocate the final screen from the shared budget: three independent
+    // rounded heights could exceed the viewport and clip its first/last pixel.
+    var gh = Math.max(1,Math.floor(totalH*sc+1e-6)-hh-dh);
     var gf=document.getElementById('game-frame');
     if(gf){ gf.style.position='relative'; gf.style.left='0px'; gf.style.top='0px'; }
     S('game-frame', gw, gh+hh+dh);
@@ -285,7 +291,8 @@
   }
   function toggleFS(){
     if(inNativeFS()){ exitFS(); }
-    else { try{ var p=requestFS(fsElement()); if(p&&p.catch) p.catch(function(){ /* fallback: CSS-only fill */ document.body.classList.add('fs'); syncFSicon(); L(); }); }catch(e){ document.body.classList.add('fs'); } }
+    else if(document.body.classList.contains('fs')){document.body.classList.remove('fs');syncFSicon();L();}
+    else { try{ var p=requestFS(fsElement());if(!p&&!inNativeFS()){document.body.classList.add('fs');syncFSicon();L();} if(p&&p.catch) p.catch(function(){ /* fallback: CSS-only fill */ document.body.classList.add('fs'); syncFSicon(); L(); }); }catch(e){ document.body.classList.add('fs');syncFSicon();L(); } }
   }
   function syncFSicon(){
     var on=document.body.classList.contains('fs');
@@ -332,7 +339,7 @@
 <script src="assets/game/shared/atlases/stage_runtime_atlases.js"></script>
 <script src="assets/game/levels/stage_05/enemies/stage5_runtime_atlas.js"></script>
 <script src="assets/audio_feedback_0927.js"></script>
-<script src="assets/game.js"></script>
+<script src="assets/game.js?v=fullscreen-hud-1008b"></script>
 <script src="assets/campaign_story_0924.js"></script>
 <script src="assets/vile_finale_0924.js"></script>
 <script src="assets/rival_fight_0924.js"></script>
@@ -441,7 +448,7 @@
 <script src="assets/campaign_flags_art_1004f.js"></script>
 <script src="assets/campaign_landscape_1004e.js"></script>
 <script src="assets/campaign_controls_1004h.js"></script>
-<script src="assets/widescreen_hud_0918.js"></script>
+<script src="assets/widescreen_hud_0918.js?v=score-readable-1008c"></script>
 <script src="assets/online-config.js"></script>
 <script src="assets/online.js"></script>
 <script src="assets/asset_memory_1007.js"></script>
@@ -450,7 +457,7 @@
 <script src="assets/enemy_hud_art_1007c.js"></script>
 <script src="assets/enemy_hud_1007c.js"></script>
 <script src="assets/player_hud_art_1008.js"></script>
-<script src="assets/player_hud_1008.js"></script>
+<script src="assets/player_hud_1008.js?v=lock-crosshair-1008e"></script>
 <!-- Campaign world now renders once, on the full-width game canvas. -->
 
 <script>

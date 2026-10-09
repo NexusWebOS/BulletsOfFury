@@ -4,6 +4,12 @@ Mike requested wiring the generated player HUD, boss bars and miniboss bars into
 the game. All nine stage themes and the Stage X theme now use the compact authored
 five-panel top assembly, with live game values replacing the concept examples.
 
+Readability/fullscreen follow-up: [October 8 browser/HUD pass](FULLSCREEN_HUD_1008B.md).
+Score follow-up: solo/co-op reserve 104/208 logical rows with a 2× dense backing canvas.
+Score/high score use separate 12px lines, comma grouping and no leading-zero padding.
+The non-playable footer is 34px tall, with 7px labels and equally legible 12px
+special status values; all three lanes have vertical padding.
+
 ## Installed behavior
 
 - Roll and somersault tracks show actual cooldown availability and refill as the
@@ -18,10 +24,11 @@ five-panel top assembly, with live game values replacing the concept examples.
 - Radar uses real world targets, camera bounds and player positions. Cloaked/dead
   Rebels are suppressed. The incoming-lock capsule reads the existing lock states
   and uses their warning cadence; lock timing, targeting and audio are unchanged.
+  The authored crosshair stays visible in silver for NO LOCK and turns red on lock.
 - Lives, missiles, five speed/shield equipment pips, score and high score remain
   live. Existing encounter clocks and widescreen side panels are retained.
-- Solo reserves 80 native pixels before assets decode; co-op reserves two complete
-  80-pixel rows, reading each seat independently and restoring the main seat.
+- Solo reserves 104 logical pixels before assets decode; co-op reserves two complete
+  104-pixel rows, reading each seat independently and restoring the main seat.
   Showing a boss or draining a meter never resizes the shell.
 - Previous bottom equipment/radar/maneuver/special panels are replaced by the top
   assembly. Gameplay effects, Cole's world-space overcharge gauge and alerts,
@@ -42,7 +49,7 @@ are recorded in `_ART_SOURCES/player_hud_1008/manifest.json`; the owning reprodu
 builder is `_BUILD_SOURCE/build_player_hud_1008.py`.
 
 `assets/player_hud_art_1008.js` registers the crops. The runtime caches each selected
-assembly at 480×70 and composites native bitmap letters, existing icons and clipped
+assembly at 960×140 backing (480×70 logical) and composites native bitmap letters, existing icons and clipped
 authored strip samples. It does not load all ten concept sheets. Stage ownership
 retires outgoing source textures and derived canvases; Stage X's row is explicitly
 owned by Stage 6. Repeated drawing reuses the static cache and does not advance

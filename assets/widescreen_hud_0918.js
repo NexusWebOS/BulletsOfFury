@@ -14,7 +14,7 @@ const theaterSlot=new Image(),theaterUnknown=new Image();
 theaterSlot.src='assets/game/shared/ui/ui/widescreen_0930/theater_slot.png';
 theaterUnknown.src='assets/game/shared/ui/ui/widescreen_0930/theater_unknown.png';
 function img(cache,key,path){if(!cache[key]){const im=new Image();im.src=path;cache[key]=im;}return cache[key];}
-function pilotPortraitPath(key){return 'assets/game/pilots_0922/portraits/'+key+'-idle.png';}
+function pilotPortraitPath(key){return 'assets/game/pilots/'+key+'/portraits/pilots_0922/portraits/'+key+'-idle.png';}
 function plate(g,source,x,y,w,h){if(atlas.complete&&atlas.naturalWidth)g.drawImage(atlas,...source,x,y,w,h);}
 /* Engine UI rule: permanent HUD, leaderboard and side-panel copy uses the authored
    wide Command Alloy face. Dialogue copy keeps Command Signal inside conversations. */
@@ -73,7 +73,9 @@ function leaderboard(g,w,h,v){
  scores.sort((a,b)=>b.score-a.score);scores=scores.slice(0,4);
  scores.forEach((e,i)=>{const yy=y+panelH*(.397+i*.095);
   txt(g,(i+1)+'. '+e.name,x+panelW*.18,yy,Math.max(10,Math.min(14,panelW*.037)),'#c4d3e2');
-  txt(g,String(e.score).padStart(8,'0'),x+panelW*.82,yy,Math.max(10,Math.min(14,panelW*.037)),'#f3cf86','right');});
+  const score=Number(e.score).toLocaleString('en-US'),size=Math.max(12,Math.min(20,panelW*.052));
+  const measured=bmfMeasure(uiFace(),score,size)||score.length*size*.7;
+  txt(g,score,x+panelW*.82,yy,Math.min(size,size*panelW*.40/Math.max(1,measured)),'#f3cf86','right');});
  txt(g,live?'COLEFORGE LIVE':'ON THIS DEVICE',w/2,y+panelH*.89,Math.max(10,Math.min(13,panelW*.036)),'#94a9b7','center');
 }
 function rightPanel(g,w,h,v,isMap){
@@ -87,7 +89,7 @@ function rightPanel(g,w,h,v,isMap){
  const rows=[['SCORE',v.score.toLocaleString()],['FURY PTS',v.points],['ACHIEVEMENT PTS',v.total],['LIVES / CONT',v.lives+' / '+v.continues],['DIFFICULTY',v.diff],['OBJECTIVE',v.objective]];
  rows.forEach((row,i)=>{const yy=y+panelH*(.396+i*.095),fs=Math.max(10,Math.min(15,panelW*.047));
   txt(g,row[0],x+panelW/2,yy-panelH*.013,fs*.8,'#8bbbcf','center');
-  const val=String(row[1]),f=val.length>20?Math.max(8,fs*.68):fs;
+  const val=String(row[1]),f=row[0]==='SCORE'?Math.min(23,fs*1.45):val.length>20?Math.max(8,fs*.68):fs;
   txt(g,val,x+panelW/2,yy+panelH*.016,f,'#f2f6fb','center');});
 }
 function menuPanel(g,w,h,st){

@@ -6717,12 +6717,34 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   /* The nine assertions that used to live here all defended the CABINET layout — its window rect,
      its drop-shadow filter, its fullscreen margin juggling. That layout is gone, so they are
      replaced by checks on the one that took its place. */
-  ok(_html.indexOf('var reserve = isFS() ? 0 :')>0, 'the rails are given room in windowed mode and none in fullscreen');
+  // Run the shipped fitter: visibility and rounding now affect the shell,
+  // so literal searches for the former layout expression are insufficient.
+  function _fitShell(w,h,full,hudShown){
+    var nodes={};
+    var env={innerWidth:w,innerHeight:h,window:{},state:hudShown?'play':'title',
+      isFS:function(){return full;},
+      getComputedStyle:function(){return {display:hudShown?'flex':'none'};},
+      document:{body:{classList:{contains:function(c){return c==='fs'&&full;},toggle:function(){}}},
+        getElementById:function(id){return nodes[id]||(nodes[id]={style:{}});}}};
+    var fitSource=_html.slice(_html.indexOf('var GW=480'),_html.indexOf('var L = fit;'));
+    vm.runInNewContext(fitSource+'\nfit();',env);
+    return {width:parseFloat(nodes['game-frame'].style.width),height:parseFloat(nodes['game-frame'].style.height),
+      hud:parseFloat(nodes['hud-row'].style.height),divider:parseFloat(nodes['hud-div'].style.height),
+      screen:parseFloat(nodes['screen'].style.height)};
+  }
+  var _windowFit=_fitShell(1000,2000,false,true),_fullFit=_fitShell(1000,2000,true,true),
+      _narrowFit=_fitShell(390,844,false,true),_heightFit=_fitShell(1366,768,true,true),
+      _menuFit=_fitShell(1920,1080,true,false);
+  ok(_windowFit.width<_fullFit.width&&_fullFit.width===1000&&_narrowFit.width===390,
+     'desktop rails get room; fullscreen and hidden narrow rails reserve none');
   ok(_html.indexOf("gf.style.position='relative'")>0, 'the frame is laid out in normal flow, not positioned into a rect');
   ok(_html.indexOf("sa.style.marginLeft='0px'")>0, 'and the old cabinet centring margin is cleared');
   ok(_html.indexOf('body.fs #credit-left, body.fs #credit-right{display:none;}')>0, 'the rails hide in fullscreen');
   ok(_html.indexOf('@media (max-width:820px){ #credit-left,#credit-right{display:none;} }')>0, 'and on narrow screens, so they never squeeze the game');
-  ok(_html.indexOf('var totalH = GH + HUDH + DIVH;')>0, 'the fit accounts for the HUD and the divider');
+  ok(_heightFit.height===768&&_heightFit.hud>0&&_heightFit.divider>0&&
+     _heightFit.hud+_heightFit.divider+_heightFit.screen===768&&
+     _menuFit.hud===0&&_menuFit.divider===0&&_menuFit.screen===1080,
+     'the visible HUD and divider fit the exact height; hidden menu HUD reserves none');
   ok(_html.indexOf('Math.min(availW/GW, availH/totalH)')>0, 'and scales on whichever axis binds, so the frame cannot exceed the viewport');
 
 

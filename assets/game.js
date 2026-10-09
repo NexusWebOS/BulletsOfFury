@@ -79056,7 +79056,7 @@ function loop(now){
   catch(_selErr){ try{ console.error('selFlash tick error', _selErr); }catch(_){} }
   try{ if(typeof selFlashDraw==='function') selFlashDraw(); }
   catch(_selErr2){ try{ console.error('selFlash draw error', _selErr2); }catch(_){} }
-  if(hudctx){ hudctx.clearRect(0,0,VW,HUDH); if(state===GS.PLAY||state==='paused'){ hudctx.save();hudctx.globalAlpha*=s6OpeningHudAlpha();if(typeof drawHUDStrip==='function') drawHUDStrip(hudctx);hudctx.restore(); } }
+  if(hudctx){ hudctx.clearRect(0,0,hudcv.width,hudcv.height); if(state===GS.PLAY||state==='paused'){ hudctx.save();hudctx.globalAlpha*=s6OpeningHudAlpha();if(typeof drawHUDStrip==='function') drawHUDStrip(hudctx);hudctx.restore(); } }
   try{ debugRecFrame(); }catch(_recFrame){}   // the clip takes hud + equip + play, in that order (0910d)
   /* SUSTAINED SFX BEDS (drop 0730a). Held weapons keep their loop alive by calling loopOn every
      time they fire; this is what fades one out once they stop. It has to run OUTSIDE the play

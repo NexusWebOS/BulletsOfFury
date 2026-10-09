@@ -1,3 +1,62 @@
+# 2026-10-09 — GitHub publication: fullscreen and readable HUD
+
+Mike authorized publishing the completed fullscreen/HUD improvements. Browser
+and native fullscreen use the full available height at the original playfield
+aspect; menus and mobile layouts have no hidden HUD reserve. Dense 2x bitmap
+rendering retains letter detail. Scores use large comma-grouped number lines,
+and the 34px non-playable footer fits large scores and equally legible special
+counts/charge readouts. Solo/co-op reserve 104/208 logical pixels. The lock box
+always shows the authored crosshair: silver when idle, red on a live lock.
+Corrected side portrait paths, concept-label cleanup, actual HUD canvas clearing
+and rounding/fallback exit behavior. PLAY_OVERDRIVE.bat is included.
+Native HUD: 205/205; fullscreen Chromium/Firefox/WebKit: 51/51; footer pixel
+bounds: 12/12, zero browser errors. Full base suite completed with exit 0 and
+the final zero-error banner. Syntax checks passed; real captures inspected.
+Reports: docs/FULLSCREEN_HUD_1008B.md and docs/PLAYER_HUD_1008.md.
+Two former source-text layout assertions now execute the shipped fitter to
+verify actual desktop/mobile/fullscreen width and visible/hidden HUD height.
+Separate Overdrive development and Contra scratch are preserved locally.
+Earlier LOCAL ONLY HUD entries below are historical verification checkpoints.
+
+# 2026-10-08 — expanded non-playable score/special strip
+
+Mike requested more black HUD space for scores and specials such as nukes.
+Footer expanded from 20 to 34 logical pixels, with padded 7px labels and 12px
+score/high-score/special values in three independent lanes. Housing remains
+70px; total solo row is 104px, co-op 208px; dense backing 960x208 / 960x416.
+Initial HTML reserves the same dimensions. Fixed floating-point budget rounding
+that otherwise left a 1px gap at 1366x768. No combat or asset changes.
+Native HUD 205/205; Chromium/Firefox/WebKit fullscreen 51/51; focused footer
+pixel checks 12/12 (nukes, A-bombs, full charge, long scores, co-op); zero errors.
+Inspected captures: `_shots/fullscreen_hud_1008/footer_status` and
+`_shots/fullscreen_hud_1008/footer_expanded`. Local only, no commit/push.
+
+# 2026-10-08 — clearer score readout
+
+Mike found the small footer score hard to read. Score/high score now have
+separate 12px number lines (formerly 7px), comma grouping and no leading-zero
+padding. Pilot/score labels remain above the numbers; special status has its
+own center lane. HUD row is now 90 logical pixels, reserved from initial HTML
+layout; solo backing 960x180, co-op 960x360. Sidebar and leaderboard score
+numbers are larger too. Fullscreen still fills the viewport height and keeps
+the playfield aspect. Native HUD 205/205, fullscreen across three browsers
+51/51, zero errors; syntax passes, final pixels inspected under
+`_shots/fullscreen_hud_1008/score_final`. Local only, no commit/push.
+
+# 2026-10-08 — fullscreen and HUD readability
+
+Mike requested full-height browser/fullscreen and clearer new HUD lettering.
+[Report](docs/FULLSCREEN_HUD_1008B.md): shared exact viewport-height budget,
+2px divider, no hidden menu/mobile rail space, working F/native/fallback exit,
+2× HUD backing (same logical layout), bitmap rounding on the dense grid,
+concept-label fragment removal, opaque status backing and pilot-owned side
+portrait paths. No art or combat changes; main loop clears the actual HUD
+dimensions. Full base suite exit 0/final zero-error banner; native HUD 205/205;
+Chromium/Firefox/WebKit fullscreen 51/51, zero browser/asset errors. Screenshots
+inspected under `_shots/fullscreen_hud_1008` and `_shots/player_hud_1008`.
+Installed in `C:/Users/Mike/Desktop/Github Coding/BulletsOfFury`; local only,
+no commit/push. Preserve the local Overdrive launcher and Contra study scratch.
+
 # 2026-10-08 — GitHub publication: live player HUD and encounter bars
 
 Mike authorized publishing the completed HUD integration. Ten authored stage rows

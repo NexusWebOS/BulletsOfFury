@@ -38,17 +38,17 @@ try:
    draw();shot(f'stage_{n:02d}_boss')
    q=p.evaluate('()=>({visible:bossHealthVisible(B),bar:EH7.lastBoss,frac:bossHealthFraction(B)})')
    check(q['visible'] and q['bar'] and q['bar']['theme']==f'stage_{n:02d}' and abs(q['bar']['frac']-q['frac'])<1e-8,f'Stage {n}: complete live boss lane with actual encounter HP',q)
-   q=p.evaluate('()=>({hud:PH8.last[0],theme:ph8Theme(),height:hudcv.height,rows:PH8.rows,ready:XART.rdy(PH8_ART[ph8Theme()].key),old:Object.keys(XART.img).filter(k=>k.startsWith("ph8_stage_")&&!ph8Keys(run.stage).includes(k))})')
-   check(q['ready'] and q['theme']==f'stage_{n:02d}' and q['height']==80 and q['rows']==1,f'Stage {n}: authored top row, reserved geometry',q)
+   q=p.evaluate('()=>({hud:PH8.last[0],theme:ph8Theme(),height:hudcv.height/PH8.scale,rows:PH8.rows,ready:XART.rdy(PH8_ART[ph8Theme()].key),old:Object.keys(XART.img).filter(k=>k.startsWith("ph8_stage_")&&!ph8Keys(run.stage).includes(k))})')
+   check(q['ready'] and q['theme']==f'stage_{n:02d}' and q['height']==104 and q['rows']==1,f'Stage {n}: authored top row, reserved geometry',q)
    v=q['hud'];check(v['lives']==7 and v['missiles']==12 and v['speed']==3 and v['shield']==4 and abs(v['roll']-.35)<1e-6 and abs(v['resource']-.6)<1e-6,f'Stage {n}: actual stocks/equipment/cooldowns/special',v)
    check(not q['old'],f'Stage {n}: preceding HUD roots retired',q['old'])
    # Fraction sampling is through the actual hud context and authored source strip.
-   pixels=p.evaluate('''()=>{const f=ph8Frame(ph8Theme()),out=[];for(const well of ['roll','somer','special'])for(const frac of [0,.25,.5,1]){
-    hudctx.clearRect(0,0,VW,80);hudctx.drawImage(f.canvas,0,0);ph8Fill(hudctx,f,well,frac,well==='special'?'red':'green');const r=f.rect[well];
-    const at=t=>Array.from(hudctx.getImageData(Math.round(r[0]+r[2]*t),Math.floor(r[1]+r[3]*.5),1,1).data);
-    let stale=0;if(frac===0)for(let y=Math.ceil(r[1]);y<r[1]+r[3]-1;y++){const c=hudctx.getImageData(Math.round(r[0]+r[2]*.3),y,1,1).data;if(Math.max(...c.slice(0,3))>110&&Math.max(...c.slice(0,3))-Math.min(...c.slice(0,3))>55)stale++;}
+   pixels=p.evaluate('''()=>{hudctx.save();hudctx.setTransform(PH8.scale,0,0,PH8.scale,0,0);const f=ph8Frame(ph8Theme()),out=[];for(const well of ['roll','somer','special'])for(const frac of [0,.25,.5,1]){
+    hudctx.clearRect(0,0,VW,80);hudctx.drawImage(f.canvas,0,0,VW,PH8.row);ph8Fill(hudctx,f,well,frac,well==='special'?'red':'green');const r=f.rect[well];
+    const at=t=>Array.from(hudctx.getImageData(Math.round((r[0]+r[2]*t)*PH8.scale),Math.floor((r[1]+r[3]*.5)*PH8.scale),1,1).data);
+    let stale=0;if(frac===0)for(let y=Math.ceil(r[1]);y<r[1]+r[3]-1;y++){const c=hudctx.getImageData(Math.round((r[0]+r[2]*.3)*PH8.scale),Math.round(y*PH8.scale),1,1).data;if(Math.max(...c.slice(0,3))>110&&Math.max(...c.slice(0,3))-Math.min(...c.slice(0,3))>55)stale++;}
     out.push({well,frac,left:at(.12),right:at(.87),stale});
-   }return out;}''')
+   }hudctx.restore();return out;}''')
    for z in pixels:
     lit=lambda a:max(a[:3])>110 and max(a[:3])-min(a[:3])>55
     check(lit(z['left'])==(z['frac']>.12) and lit(z['right'])==(z['frac']>.87) and z['stale']==0,f'Stage {n}: {z["well"]} continuous live pixels at {z["frac"]}',z)
@@ -90,15 +90,15 @@ try:
    # Use the real co-op creation path, not fake DOM canvases or copied renderer logic.
    p.evaluate('(c)=>BAL7.setup(c)',{'stage':6,'kind':'warhive','pilot':'cole','diff':'normal','seconds':10,'coop':True});ready()
    p.evaluate('()=>{run2.pilot="maverick";p2Index=PILOTS.findIndex(p=>p.key===run2.pilot);PILOTMOD2={...PILOTS[p2Index]};run2.lives=2;run2.bombs=4;run2.weapon=1;run2.wlevel=3;run.lives=6;run.bombs=11;player2._rollCool=BR_COOL*.8;player._rollCool=0;}');draw();shot('coop')
-   q=p.evaluate('()=>({rows:PH8.last,h:hudcv.height,geometry:window.__bofHudHeight,seat:_seat,main:run.pilot})');check(len(q['rows'])==2 and q['h']==160 and q['geometry']==160,'Co-op reserves two complete independent rows',q)
+   q=p.evaluate('()=>({rows:PH8.last,h:hudcv.height/PH8.scale,geometry:window.__bofHudHeight,seat:_seat,main:run.pilot})');check(len(q['rows'])==2 and q['h']==208 and q['geometry']==208,'Co-op reserves two complete independent rows',q)
    check(q['rows'][0]['lives']==6 and q['rows'][1]['lives']==2 and q['rows'][0]['missiles']==11 and q['rows'][1]['missiles']==4 and q['seat']==1,'Co-op reads both stocks and restores original seat',q)
-   p.evaluate('()=>{coopOn=false;}');draw();check(p.evaluate('hudcv.height===80&&window.__bofHudHeight===80'),'Solo row size restored on co-op exit')
+   p.evaluate('()=>{coopOn=false;}');draw();check(p.evaluate('hudcv.height===104*PH8.scale&&window.__bofHudHeight===104'),'Solo row size restored on co-op exit')
    # Narrow and fullscreen geometry: only genuine resize/seat-count changes
    # may resize the shell; async ready and drains cannot move it.
    for width,height in [(480,760),(390,844),(1600,1000)]:
     p.set_viewport_size({'width':width,'height':height});p.evaluate('()=>window.__bofFit()');draw();shot('viewport_'+str(width))
     q=p.evaluate('()=>{const a=document.getElementById("game-frame").getBoundingClientRect(),b=document.getElementById("hud").getBoundingClientRect();return{left:a.left,right:a.right,w:innerWidth,hud:b.height,ratio:b.width/b.height};}')
-    check(q['left']>=-1 and q['right']<=width+1 and abs(q['ratio']-6)<.15,'Complete fixed native HUD at viewport '+str(width),q)
+    check(q['left']>=-1 and q['right']<=width+1 and abs(q['ratio']-480/104)<.15,'Complete fixed native HUD at viewport '+str(width),q)
    p.set_viewport_size({'width':1600,'height':1000});p.evaluate('()=>{document.body.classList.add("fs","wide-playing");window.__bofFit();}');draw();shot('fullscreen')
    check(p.evaluate('getComputedStyle(document.getElementById("hud-row")).display')!='none','Fullscreen keeps top HUD')
    before=p.evaluate('JSON.stringify(ph8Values())');p.evaluate('()=>{for(let i=0;i<100;i++)drawHUDStrip(hudctx);}');check(p.evaluate('JSON.stringify(ph8Values())')==before,'Repeated render calls do not advance clocks or mutate combat')

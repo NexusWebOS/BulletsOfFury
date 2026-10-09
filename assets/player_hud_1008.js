@@ -1,6 +1,6 @@
 'use strict';
 /* Mike's five-panel authored top HUD. UI reads state; drawing never changes combat. */
-const PH8={height:80,row:70,cache:new Map(),rows:1,last:[],draws:0};
+const PH8={height:104,row:70,scale:2,cache:new Map(),rows:1,last:[],draws:0};
 const PH8_BASE={strip:drawHUDStrip,overlay:drawHUDOverlay,special:drawSpecialHUD,loans:drawHeavyTurretHUD,
  load:stageLoadBegin,retire:bofDerivedCachesRetire,state:setState,begin:beginStage,start:startRun,bar:drawHealthBarV2};
 for(const a of Object.values(PH8_ART))XART._src[a.key]=a.path;
@@ -9,20 +9,20 @@ function ph8Keys(n){return [PH8_ART['stage_'+String(n).padStart(2,'0')]?.key,...
 stageLoadBegin=function(n,keys){return PH8_BASE.load.call(this,n,[...new Set([...(keys||[]),...ph8Keys(n)])]);};
 bofDerivedCachesRetire=function(){PH8.cache.clear();PH8.last=[];return PH8_BASE.retire.apply(this,arguments);};
 function ph8Sync(){const rows=seatList().length,h=PH8.height*rows;PH8.rows=rows;
- if(hudcv&&hudcv.height!==h){hudcv.height=h;hudcv.width=VW;}
+ if(hudcv&&(hudcv.height!==h*PH8.scale||hudcv.width!==VW*PH8.scale)){hudcv.height=h*PH8.scale;hudcv.width=VW*PH8.scale;}
  if(window.__bofHudHeight!==h){window.__bofHudHeight=h;if(window.__bofFit)window.__bofFit();}
 }
 setState=function(){const r=PH8_BASE.state.apply(this,arguments);ph8Sync();return r;};
 beginStage=function(){const r=PH8_BASE.begin.apply(this,arguments);ph8Sync();return r;};
 startRun=function(){const r=PH8_BASE.start.apply(this,arguments);ph8Sync();return r;};
 function ph8Frame(theme){if(PH8.cache.has(theme))return PH8.cache.get(theme);const a=PH8_ART[theme];if(!a||!XART.rdy(a.key))return null;
- const source=XART.get(a.key),canvas=document.createElement('canvas');canvas.width=VW;canvas.height=PH8.row;
- const g=canvas.getContext('2d');g.imageSmoothingEnabled=true;g.drawImage(source,0,0,VW,PH8.row);
+ const source=XART.get(a.key),canvas=document.createElement('canvas');canvas.width=VW*PH8.scale;canvas.height=PH8.row*PH8.scale;
+ const g=canvas.getContext('2d');g.scale(PH8.scale,PH8.scale);g.imageSmoothingEnabled=true;g.drawImage(source,0,0,VW,PH8.row);
  const sx=VW/a.w,sy=PH8.row/a.h,local=r=>[r[0]*sx,(r[1]-a.sourceY)*sy,r[2]*sx,r[3]*sy];
  const empty=r=>{const q=local(r);g.clearRect(...q);g.drawImage(source,a.emptyX,a.special[1]-a.sourceY,4,a.special[3],...q);return q;};
  const d=a.offset;
  // Remove all illustration values/names/icons with the authored dark recess.
- const boxes={rollLabel:[80,a.rollLabelTop,282,23],somerLabel:[80,a.somerLabelTop,282,24],
+ const boxes={rollLabel:[80,a.rollLabelTop-10,282,26],somerLabel:[80,a.somerLabelTop-10,282,26],
   weapon:[417,130+d,112,123],name:[653,108+d,390,45],specialIcon:[609,116+d,29,29],
   radar:[1097,132+d,133,124],lock:[1329,147+d,241,56],
   lives:[137,253+d,204,43],missiles:[1325,253+d,268,43],
@@ -34,7 +34,10 @@ function ph8Frame(theme){if(PH8.cache.has(theme))return PH8.cache.get(theme);con
 function ph8Text(g,s,x,y,size,max,align='center'){
  if(!s)return;const face=window.BOF_UI_FACE||'game',text=String(s).toUpperCase();
  const measure=bmfMeasure(face,text,size),fs=Math.min(size,size*max/Math.max(1,measure));
- bmfDrawOn(g,face,text,x,y,fs,align);
+ // Let the bitmap renderer round on the denser HUD grid, not the
+ // 480px playfield grid: small outlined letters keep their strokes.
+ const d=PH8.scale;g.save();g.scale(1/d,1/d);
+ bmfDrawOn(g,face,text,Math.round(x*d),Math.round(y*d),fs*d,align);g.restore();
 }
 function ph8Centered(g,text,r,size=7){ph8Text(g,text,r[0]+r[2]/2,r[1]+r[3]/2,size,r[2]-2);}
 function ph8Fill(g,f,well,frac,col){const r=f.rect[well],a=f.a,src=well==='special'?a.special:well==='somer'?a.somer:a.roll;
@@ -78,10 +81,11 @@ function ph8Radar(g,r){const x=r[0],y=r[1],w=r[2],h=r[3];g.save();g.beginPath();
  for(const seat of seatList()){const p=seatShip(seat);if(p&&!p.dead)plot(p.x,p.y,seat===_seat?'#8dff68':'#63dfff',2);}
  g.restore();
 }
-function ph8Row(g,f,v){g.drawImage(f.canvas,0,0);const r=f.rect;
+function ph8Score(n){return String(Math.max(0,Math.floor(Number(n)||0))).replace(/\B(?=(\d{3})+(?!\d))/g,',');}
+function ph8Row(g,f,v){g.drawImage(f.canvas,0,0,VW,PH8.row);const r=f.rect;
  ph8Centered(g,v.rollAvailable?'ROLL':'ROLL LOCKED',r.rollLabel,7);ph8Fill(g,f,'roll',v.rollAvailable?v.roll:0,'green');
  ph8Centered(g,v.somerAvailable?'SOMERSAULT':'SOMERSAULT --',r.somerLabel,7);ph8Fill(g,f,'somer',v.somer,'green');
- ph8Centered(g,v.name,r.name,7);ph8Fill(g,f,'special',v.resource,'red');
+ ph8Centered(g,v.name,r.name,8);ph8Fill(g,f,'special',v.resource,'red');
  ph8Icon(g,specialArtKey('spicon_'+v.pilot),r.specialIcon[0]+r.specialIcon[2]/2,r.specialIcon[1]+r.specialIcon[3]/2,8);
  const wx=r.weapon[0]+r.weapon[2]/2,wy=r.weapon[1]+r.weapon[3]*.43;
  if(v.weapon.reel)cf1004Cell(v.weapon.reel,CF1004.clock,wx,wy,v.weapon.lv>=8?13:9,23,0,g);
@@ -92,11 +96,20 @@ function ph8Row(g,f,v){g.drawImage(f.canvas,0,0);const r=f.rect;
  ph8Counter(g,r.lives,'LIVES','nli_'+i,v.lives);ph8Counter(g,r.missiles,'MISSILES','nmi_'+i,v.missiles);
  ph8Radar(g,r.radar);
  const blink=v.lock&&Math.floor(performance.now()/(Math.max(.055,_lockHudGap)*1000))%2===0;
- if(v.lock)ph8Icon(g,'retm_0',r.lock[0]+7,r.lock[1]+r.lock[3]/2,10);
- ph8Text(g,v.lock?'LOCK-ON!':'NO LOCK',r.lock[0]+r.lock[2]/2+3,r.lock[1]+r.lock[3]/2,8,r.lock[2]-20);
+ // Keep the authored crosshair visible at rest; the live lock turns it red.
+ if(XART.rdy('retm_0')){
+  const ret=xartPalette('retm_0',v.lock?'#ff2929':'#b2c5d5')||XART.get('retm_0');
+  const h=Math.min(12,r.lock[3]-2),w=h*ret.width/ret.height;
+  g.drawImage(ret,r.lock[0]+8-w/2,r.lock[1]+(r.lock[3]-h)/2,w,h);
+ }
+ ph8Text(g,v.lock?'LOCK-ON!':'NO LOCK',r.lock[0]+r.lock[2]/2+8,r.lock[1]+r.lock[3]/2,8,r.lock[2]-20);
  if(blink){g.strokeStyle='#ff4a3e';g.lineWidth=1;g.strokeRect(r.lock[0],r.lock[1],r.lock[2],r.lock[3]);}
- ph8Text(g,(PH8.rows>1?'P'+v.seat+' ':'')+v.pilot.toUpperCase()+'  '+String(v.score).padStart(7,'0'),4,75,7,170,'left');
- ph8Text(g,v.dead?'SHIP LOST':v.detail,VW/2,75,6,130);
+ g.fillStyle='#07101a';g.fillRect(0,PH8.row,VW,PH8.height-PH8.row);
+ g.fillStyle='#263e50';g.fillRect(0,PH8.row,VW,.5);
+ ph8Text(g,(PH8.rows>1?'P'+v.seat+' ':'')+v.pilot.toUpperCase()+' SCORE',6,79,7,150,'left');
+ ph8Text(g,ph8Score(v.score),6,94,12,150,'left');
+ ph8Text(g,'SPECIAL',VW/2,79,7,150);
+ ph8Text(g,v.dead?'SHIP LOST':v.detail,VW/2,94,12,150);
  // Loans remain visible even while the native special is active: miniature
  // approved badges and independently draining strips inside its title window.
  if(v.loans.length){const width=Math.min(22,r.name[2]/v.loans.length);
@@ -104,11 +117,13 @@ function ph8Row(g,f,v){g.drawImage(f.canvas,0,0);const r=f.rect;
    ph8Icon(g,loan.icon,x+3,r.name[1]+r.name[3]-3,5);
    g.save();g.beginPath();g.rect(x+7,r.name[1]+r.name[3]-4,(width-8)*clamp(loan.frac,0,1),2);g.clip();
    g.drawImage(f.source,f.a.redX,f.a.special[1]-f.a.sourceY,4,f.a.special[3],x+7,r.name[1]+r.name[3]-4,width-8,2);g.restore();}}
- ph8Text(g,'HI '+String(Math.max(run.score,highScore)).padStart(7,'0'),VW-4,75,7,125,'right');
+ ph8Text(g,'HIGH SCORE',VW-6,79,7,150,'right');
+ ph8Text(g,ph8Score(Math.max(v.score,highScore)),VW-6,94,12,150,'right');
 }
-drawHUDStrip=function(g){ph8Sync();g.clearRect(0,0,VW,hudcv?hudcv.height:PH8.height*PH8.rows);PH8.last=[];
- const f=ph8Frame(ph8Theme());if(!f)return;
- for(const seat of seatList())withSeat(seat,()=>{const v=ph8Values();g.save();g.translate(0,(seat-1)*PH8.height);ph8Row(g,f,v);g.restore();PH8.last.push(v);});PH8.draws++;
+drawHUDStrip=function(g){ph8Sync();g.save();g.setTransform(1,0,0,1,0,0);
+ g.clearRect(0,0,VW*PH8.scale,PH8.height*PH8.rows*PH8.scale);g.scale(PH8.scale,PH8.scale);g.imageSmoothingEnabled=false;PH8.last=[];
+ const f=ph8Frame(ph8Theme());if(!f){g.restore();return;}
+ for(const seat of seatList())withSeat(seat,()=>{const v=ph8Values();g.save();g.translate(0,(seat-1)*PH8.height);ph8Row(g,f,v);g.restore();PH8.last.push(v);});PH8.draws++;g.restore();
 };
 drawHUDOverlay=function(){
  if(boss&&bossActive&&bossHealthVisible(boss))drawHealthBarV2('boss',bossHealthFraction(boss),VW/2,27,VW-44);
