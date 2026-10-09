@@ -1,0 +1,2297 @@
+{
+  "date": "2026-10-09",
+  "base_commit": "d87ed6a8ab18d2e0e3b7cd235cf6651d2f681f90",
+  "runtime_cells": {
+    "boss": 64,
+    "stage1": 48
+  },
+  "stage1_composite_cells": 116,
+  "syntax": {
+    "assets/game.js": 0,
+    "assets/boss_motion_1009.js": 0,
+    "assets/boss_motion_art_1009.js": 0,
+    "assets/stage1_motion_1009.js": 0,
+    "assets/stage1_motion_art_1009.js": 0
+  },
+  "base_suite": {
+    "assertions_passed": 7952,
+    "exit_code": 0,
+    "final_summary": "FALVA/LIZZIE BUILD OK, 0 ERRORS",
+    "log_sha256": "64975a2c360588f57a3025c12499d2c3cb46fa1d942796eba26d8147636b126d"
+  },
+  "native": {
+    "boss_motion": {
+      "passed": 18,
+      "failed": [],
+      "errors": [],
+      "checks": [
+        {
+          "name": "64 authored cells load through XART",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "Every affected boss stage queues its new frames before play",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "Hammer acts and ruptures before cutaways",
+          "pass": true,
+          "data": [
+            {
+              "event": "hammer-authored-rupture",
+              "t": 4.866666666666655
+            }
+          ]
+        },
+        {
+          "name": "Spike preview and target stay at bottom",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "Escaping upward triggers authored counter",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "Dracodia physical pattern emits no replacement volleys",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "Every Dracodia acting pose retains its attached head",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "Below half of active form adds four warned strikes",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "Broken Dracodia arm removed from physical rig",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "Warden uses generated claw cells",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "Destroyed Warden claw cancels its pending strike",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "Warden landing uses new gravel reel",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "Warden converges guns and alternates owned rounds",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "cryospear turret charge renders",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "frostcruiser turret charge renders",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "stormsovereign turret charge renders",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "Ordinary pellets stay non-interceptable",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "No page, console or asset errors",
+          "pass": true,
+          "data": []
+        }
+      ],
+      "shots": [
+        "hammer-death-0.png",
+        "hammer-death-1.png",
+        "hammer-death-2.png",
+        "hammer-death-3.png",
+        "hammer-death-4.png",
+        "hammer-death-5.png",
+        "hammer-death-6.png",
+        "hammer-death-7.png"
+      ],
+      "videos": [
+        "hammer-death.mp4",
+        "hammer-counter.mp4",
+        "dracodia-claws.mp4",
+        "dracodia-enraged.mp4",
+        "warden-claws.mp4",
+        "warden-leap.mp4",
+        "warden-battery.mp4",
+        "turrets-cryospear.mp4",
+        "turrets-frostcruiser.mp4",
+        "turrets-stormsovereign.mp4"
+      ]
+    },
+    "counter_edges": {
+      "passed": 22,
+      "failed": [],
+      "errors": [],
+      "checks": [
+        {
+          "name": "easy left camera, swipe -1: warn/strike/recover",
+          "pass": true,
+          "data": {
+            "started": true,
+            "side": -1,
+            "tell": 1.6,
+            "before": {
+              "t": 1.5999999999999992,
+              "f": 5
+            },
+            "active": {
+              "x": 129.60000000000002,
+              "y": 205.6,
+              "f": 7
+            },
+            "done": true,
+            "band": [
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              }
+            ],
+            "left": 0,
+            "right": 480
+          }
+        },
+        {
+          "name": "easy left camera, swipe 1: warn/strike/recover",
+          "pass": true,
+          "data": {
+            "started": true,
+            "side": 1,
+            "tell": 1.6,
+            "before": {
+              "t": 1.5999999999999992,
+              "f": 1
+            },
+            "active": {
+              "x": 351,
+              "y": 217.6,
+              "f": 3
+            },
+            "done": true,
+            "band": [
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              }
+            ],
+            "left": 0,
+            "right": 480
+          }
+        },
+        {
+          "name": "easy right camera, swipe -1: warn/strike/recover",
+          "pass": true,
+          "data": {
+            "started": true,
+            "side": -1,
+            "tell": 1.6,
+            "before": {
+              "t": 1.5999999999999992,
+              "f": 5
+            },
+            "active": {
+              "x": 329.6,
+              "y": 205.6,
+              "f": 7
+            },
+            "done": true,
+            "band": [
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              }
+            ],
+            "left": 200,
+            "right": 680
+          }
+        },
+        {
+          "name": "easy right camera, swipe 1: warn/strike/recover",
+          "pass": true,
+          "data": {
+            "started": true,
+            "side": 1,
+            "tell": 1.6,
+            "before": {
+              "t": 1.5999999999999992,
+              "f": 1
+            },
+            "active": {
+              "x": 551,
+              "y": 217.6,
+              "f": 3
+            },
+            "done": true,
+            "band": [
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              }
+            ],
+            "left": 200,
+            "right": 680
+          }
+        },
+        {
+          "name": "normal left camera, swipe -1: warn/strike/recover",
+          "pass": true,
+          "data": {
+            "started": true,
+            "side": -1,
+            "tell": 1.6,
+            "before": {
+              "t": 1.5999999999999992,
+              "f": 5
+            },
+            "active": {
+              "x": 129.60000000000002,
+              "y": 205.6,
+              "f": 7
+            },
+            "done": true,
+            "band": [
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              }
+            ],
+            "left": 0,
+            "right": 480
+          }
+        },
+        {
+          "name": "normal left camera, swipe 1: warn/strike/recover",
+          "pass": true,
+          "data": {
+            "started": true,
+            "side": 1,
+            "tell": 1.6,
+            "before": {
+              "t": 1.5999999999999992,
+              "f": 1
+            },
+            "active": {
+              "x": 351,
+              "y": 217.6,
+              "f": 3
+            },
+            "done": true,
+            "band": [
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              }
+            ],
+            "left": 0,
+            "right": 480
+          }
+        },
+        {
+          "name": "normal right camera, swipe -1: warn/strike/recover",
+          "pass": true,
+          "data": {
+            "started": true,
+            "side": -1,
+            "tell": 1.6,
+            "before": {
+              "t": 1.5999999999999992,
+              "f": 5
+            },
+            "active": {
+              "x": 329.6,
+              "y": 205.6,
+              "f": 7
+            },
+            "done": true,
+            "band": [
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              }
+            ],
+            "left": 200,
+            "right": 680
+          }
+        },
+        {
+          "name": "normal right camera, swipe 1: warn/strike/recover",
+          "pass": true,
+          "data": {
+            "started": true,
+            "side": 1,
+            "tell": 1.6,
+            "before": {
+              "t": 1.5999999999999992,
+              "f": 1
+            },
+            "active": {
+              "x": 551,
+              "y": 217.6,
+              "f": 3
+            },
+            "done": true,
+            "band": [
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              }
+            ],
+            "left": 200,
+            "right": 680
+          }
+        },
+        {
+          "name": "hard left camera, swipe -1: warn/strike/recover",
+          "pass": true,
+          "data": {
+            "started": true,
+            "side": -1,
+            "tell": 1.6,
+            "before": {
+              "t": 1.5999999999999992,
+              "f": 5
+            },
+            "active": {
+              "x": 129.60000000000002,
+              "y": 205.6,
+              "f": 7
+            },
+            "done": true,
+            "band": [
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              }
+            ],
+            "left": 0,
+            "right": 480
+          }
+        },
+        {
+          "name": "hard left camera, swipe 1: warn/strike/recover",
+          "pass": true,
+          "data": {
+            "started": true,
+            "side": 1,
+            "tell": 1.6,
+            "before": {
+              "t": 1.5999999999999992,
+              "f": 1
+            },
+            "active": {
+              "x": 351,
+              "y": 217.6,
+              "f": 3
+            },
+            "done": true,
+            "band": [
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              }
+            ],
+            "left": 0,
+            "right": 480
+          }
+        },
+        {
+          "name": "hard right camera, swipe -1: warn/strike/recover",
+          "pass": true,
+          "data": {
+            "started": true,
+            "side": -1,
+            "tell": 1.6,
+            "before": {
+              "t": 1.5999999999999992,
+              "f": 5
+            },
+            "active": {
+              "x": 329.6,
+              "y": 205.6,
+              "f": 7
+            },
+            "done": true,
+            "band": [
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              }
+            ],
+            "left": 200,
+            "right": 680
+          }
+        },
+        {
+          "name": "hard right camera, swipe 1: warn/strike/recover",
+          "pass": true,
+          "data": {
+            "started": true,
+            "side": 1,
+            "tell": 1.6,
+            "before": {
+              "t": 1.5999999999999992,
+              "f": 1
+            },
+            "active": {
+              "x": 551,
+              "y": 217.6,
+              "f": 3
+            },
+            "done": true,
+            "band": [
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              }
+            ],
+            "left": 200,
+            "right": 680
+          }
+        },
+        {
+          "name": "furious left camera, swipe -1: warn/strike/recover",
+          "pass": true,
+          "data": {
+            "started": true,
+            "side": -1,
+            "tell": 1.35,
+            "before": {
+              "t": 1.3333333333333335,
+              "f": 5
+            },
+            "active": {
+              "x": 129.59319773973027,
+              "y": 205.6072557442877,
+              "f": 7
+            },
+            "done": true,
+            "band": [
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              }
+            ],
+            "left": 0,
+            "right": 480
+          }
+        },
+        {
+          "name": "furious left camera, swipe 1: warn/strike/recover",
+          "pass": true,
+          "data": {
+            "started": true,
+            "side": 1,
+            "tell": 1.35,
+            "before": {
+              "t": 1.3333333333333335,
+              "f": 1
+            },
+            "active": {
+              "x": 351.00680226026975,
+              "y": 217.6072557442877,
+              "f": 3
+            },
+            "done": true,
+            "band": [
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              }
+            ],
+            "left": 0,
+            "right": 480
+          }
+        },
+        {
+          "name": "furious right camera, swipe -1: warn/strike/recover",
+          "pass": true,
+          "data": {
+            "started": true,
+            "side": -1,
+            "tell": 1.35,
+            "before": {
+              "t": 1.3333333333333335,
+              "f": 5
+            },
+            "active": {
+              "x": 329.59319773973033,
+              "y": 205.6072557442877,
+              "f": 7
+            },
+            "done": true,
+            "band": [
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              }
+            ],
+            "left": 200,
+            "right": 680
+          }
+        },
+        {
+          "name": "furious right camera, swipe 1: warn/strike/recover",
+          "pass": true,
+          "data": {
+            "started": true,
+            "side": 1,
+            "tell": 1.35,
+            "before": {
+              "t": 1.3333333333333335,
+              "f": 1
+            },
+            "active": {
+              "x": 551.0068022602698,
+              "y": 217.6072557442877,
+              "f": 3
+            },
+            "done": true,
+            "band": [
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              }
+            ],
+            "left": 200,
+            "right": 680
+          }
+        },
+        {
+          "name": "insanity left camera, swipe -1: warn/strike/recover",
+          "pass": true,
+          "data": {
+            "started": true,
+            "side": -1,
+            "tell": 1.6,
+            "before": {
+              "t": 1.5999999999999992,
+              "f": 5
+            },
+            "active": {
+              "x": 129.60000000000002,
+              "y": 205.6,
+              "f": 7
+            },
+            "done": true,
+            "band": [
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              }
+            ],
+            "left": 0,
+            "right": 480
+          }
+        },
+        {
+          "name": "insanity left camera, swipe 1: warn/strike/recover",
+          "pass": true,
+          "data": {
+            "started": true,
+            "side": 1,
+            "tell": 1.6,
+            "before": {
+              "t": 1.5999999999999992,
+              "f": 1
+            },
+            "active": {
+              "x": 351,
+              "y": 217.6,
+              "f": 3
+            },
+            "done": true,
+            "band": [
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              }
+            ],
+            "left": 0,
+            "right": 480
+          }
+        },
+        {
+          "name": "insanity right camera, swipe -1: warn/strike/recover",
+          "pass": true,
+          "data": {
+            "started": true,
+            "side": -1,
+            "tell": 1.6,
+            "before": {
+              "t": 1.5999999999999992,
+              "f": 5
+            },
+            "active": {
+              "x": 329.6,
+              "y": 205.6,
+              "f": 7
+            },
+            "done": true,
+            "band": [
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              }
+            ],
+            "left": 200,
+            "right": 680
+          }
+        },
+        {
+          "name": "insanity right camera, swipe 1: warn/strike/recover",
+          "pass": true,
+          "data": {
+            "started": true,
+            "side": 1,
+            "tell": 1.6,
+            "before": {
+              "t": 1.5999999999999992,
+              "f": 1
+            },
+            "active": {
+              "x": 551,
+              "y": 217.6,
+              "f": 3
+            },
+            "done": true,
+            "band": [
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              },
+              {
+                "top": 334.4,
+                "bottom": 500
+              }
+            ],
+            "left": 200,
+            "right": 680
+          }
+        },
+        {
+          "name": "Destroyed Sovereign turret cannot fire or present a charge",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "No page or console errors",
+          "pass": true,
+          "data": []
+        }
+      ]
+    },
+    "stage1": {
+      "passed": 35,
+      "failed": [],
+      "errors": [],
+      "checks": [
+        {
+          "name": "All 48 moving-part cells and four-frame muzzle aliases load",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "s1tankheavy has eight distinct idle cells",
+          "pass": true,
+          "data": 8
+        },
+        {
+          "name": "s1tankheavy has four distinct fire cells",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "s1tankheavy body retains visible white hit flash",
+          "pass": true,
+          "data": 0.999
+        },
+        {
+          "name": "s1tanklight has eight distinct idle cells",
+          "pass": true,
+          "data": 8
+        },
+        {
+          "name": "s1tanklight has four distinct fire cells",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "s1tanklight body retains visible white hit flash",
+          "pass": true,
+          "data": 1.0
+        },
+        {
+          "name": "s1tankapc has eight distinct idle cells",
+          "pass": true,
+          "data": 8
+        },
+        {
+          "name": "s1tankapc has four distinct fire cells",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "s1tankapc body retains visible white hit flash",
+          "pass": true,
+          "data": 1.0
+        },
+        {
+          "name": "s1truckmissile has eight distinct idle cells",
+          "pass": true,
+          "data": 8
+        },
+        {
+          "name": "s1truckmissile has four distinct fire cells",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "s1truckmissile body retains visible white hit flash",
+          "pass": true,
+          "data": 0.987
+        },
+        {
+          "name": "s1boatpatrol has eight distinct idle cells",
+          "pass": true,
+          "data": 8
+        },
+        {
+          "name": "s1boatpatrol has four distinct fire cells",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "s1boatpatrol body retains visible white hit flash",
+          "pass": true,
+          "data": 0.721
+        },
+        {
+          "name": "s1boatgun has eight distinct idle cells",
+          "pass": true,
+          "data": 8
+        },
+        {
+          "name": "s1boatgun has four distinct fire cells",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "s1boatgun body retains visible white hit flash",
+          "pass": true,
+          "data": 0.482
+        },
+        {
+          "name": "s1corvette has eight distinct idle cells",
+          "pass": true,
+          "data": 8
+        },
+        {
+          "name": "s1corvette has four distinct fire cells",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "s1corvette body retains visible white hit flash",
+          "pass": true,
+          "data": 0.683
+        },
+        {
+          "name": "s1landingcraft has eight distinct idle cells",
+          "pass": true,
+          "data": 8
+        },
+        {
+          "name": "s1landingcraft body retains visible white hit flash",
+          "pass": true,
+          "data": 0.936
+        },
+        {
+          "name": "s1jetdelta has eight distinct idle cells",
+          "pass": true,
+          "data": 8
+        },
+        {
+          "name": "s1jetdelta has four distinct fire cells",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "s1jetdelta body retains visible white hit flash",
+          "pass": true,
+          "data": 0.938
+        },
+        {
+          "name": "s1jetbomber has eight distinct idle cells",
+          "pass": true,
+          "data": 8
+        },
+        {
+          "name": "s1jetbomber has four distinct fire cells",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "s1jetbomber body retains visible white hit flash",
+          "pass": true,
+          "data": 0.966
+        },
+        {
+          "name": "Tank turret still aims independently in both directions",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "Boat weapons retain their own destructible HP and ready/launch/reload states",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "Buggy launches real rocket from authored roof tube",
+          "pass": true,
+          "data": null
+        },
+        {
+          "name": "Stage 1 live controllers fire during full-engine gameplay",
+          "pass": true,
+          "data": {
+            "shots": 160,
+            "draws": {
+              "wake": 4980,
+              "exhaust": 5804,
+              "hull": 6008,
+              "turret": 6008,
+              "buggy_idle": 304
+            },
+            "types": [
+              "s1boatpatrol",
+              "s1corvette",
+              "s1jetbomber",
+              "s1jetdelta",
+              "s1jetdelta_b",
+              "s1tankapc",
+              "s1tankheavy",
+              "s1tanklight"
+            ]
+          }
+        },
+        {
+          "name": "No page, console or asset errors",
+          "pass": true,
+          "data": []
+        }
+      ]
+    }
+  },
+  "existing_stage3_regression": {
+    "passed": 49,
+    "exit_code": 0,
+    "checks": [
+      "OK mg survives mg",
+      "OK mg survives spread",
+      "OK mg survives beam",
+      "OK mg survives flame",
+      "OK mg survives orb",
+      "OK mg survives missile",
+      "OK groundup survives mg",
+      "OK groundup survives spread",
+      "OK groundup survives beam",
+      "OK groundup survives flame",
+      "OK groundup survives orb",
+      "OK groundup survives missile",
+      "OK shell survives mg",
+      "OK shell survives spread",
+      "OK shell survives beam",
+      "OK shell survives flame",
+      "OK shell survives orb",
+      "OK shell survives missile",
+      "OK Axel shield retains its gun-pellet reflection",
+      "OK chrome defense retains its gun-pellet reflection",
+      "OK bomb blast retains its gun-pellet clear",
+      "OK fire ball intercepted by mg",
+      "OK fire ball intercepted by spread",
+      "OK fire ball intercepted by beam",
+      "OK fire ball intercepted by flame",
+      "OK fire ball intercepted by orb",
+      "OK fire ball intercepted by missile",
+      "OK ice ball intercepted by mg",
+      "OK ice ball intercepted by spread",
+      "OK ice ball intercepted by beam",
+      "OK ice ball intercepted by flame",
+      "OK ice ball intercepted by orb",
+      "OK ice ball intercepted by missile",
+      "OK making elemental balls shootable preserves authored velocity",
+      "OK real held flamethrower intercepts across its entire visible plume",
+      "OK actual turret geometry moves into orbit",
+      "OK orbit uses real undestroyable gun streams",
+      "OK orbiting gun remains hittable",
+      "OK actual player shot damages a deployed orbital turret",
+      "OK turrets return without changing HP",
+      "OK four real missiles launch from paired rocket banks",
+      "OK charged laser FOV tracks during early warmup",
+      "OK laser locks its heading before release",
+      "OK miniboss holds through charge warning",
+      "OK miniboss makes an actual high-speed charge",
+      "OK all nine spread flashes attach to authored noses",
+      "OK frostcruiser completes live old and new attacks",
+      "OK cryospear completes live old and new attacks",
+      "OK zero page and console errors"
+    ]
+  },
+  "native_passed": 75,
+  "limits": [
+    "Protected focused captures are not full unassisted encounter clears or a campaign balance sign-off.",
+    "Stage 1 uses the real full frame loop; boss focused clips advance their real updatePlay owners.",
+    "Separate staged/unstaged guide work and unrelated scratch are preserved outside the publication."
+  ],
+  "publication_files": {
+    "index.html": {
+      "bytes": 29934,
+      "sha256": "ab79dfcacee6fd81c6294695a21668303918ab683e9cbd41dfa3b673e96a63a7"
+    },
+    "assets/data/ART_TAXONOMY.json": {
+      "bytes": 46725,
+      "sha256": "fba28922cf2f9ab74c8b0ec84a77a1cb0591a749876a71506cc4102e3eff1a30"
+    },
+    "assets/boss_motion_1009.js": {
+      "bytes": 18359,
+      "sha256": "276b0bb11e3a6ffc0f0084c9f75cac7d3517c6bc3051a5dae0c6925c30987102"
+    },
+    "assets/boss_motion_art_1009.js": {
+      "bytes": 11734,
+      "sha256": "7fd5147afb64b9a0676f22c05c43de6715106a5a47a764087bf370369e9a1811"
+    },
+    "assets/stage1_motion_1009.js": {
+      "bytes": 5328,
+      "sha256": "e67441ae35d2e1ea809b912fd14b1356f4d722cdb7677435af5c461ca91f733f"
+    },
+    "assets/stage1_motion_art_1009.js": {
+      "bytes": 9539,
+      "sha256": "26529510853e34d192e1aefcb449aebe16d9a33e8f67d159d0105bb86beef5a0"
+    },
+    "assets/game/shared/combat/boss_motion_1009/dracodia_arms_0.png": {
+      "bytes": 192483,
+      "sha256": "e212e8bfef7866987b1292e46d1c0e7001faea321417e17d5bbd2a3874110793"
+    },
+    "assets/game/shared/combat/boss_motion_1009/dracodia_arms_1.png": {
+      "bytes": 146272,
+      "sha256": "74b5ea3e603c1e21bba2ba8dd64dc5db0e192598c34d0f2391964587696fd9e2"
+    },
+    "assets/game/shared/combat/boss_motion_1009/dracodia_arms_2.png": {
+      "bytes": 240736,
+      "sha256": "c64e354e1d77487673aa2412796ff1de3de801dc00d55149b85325a8cf2cbb78"
+    },
+    "assets/game/shared/combat/boss_motion_1009/dracodia_arms_3.png": {
+      "bytes": 208562,
+      "sha256": "4d1eef6b22ab8f7bfa30614685cc3717c0ad4a2210dfec670d958ac698880582"
+    },
+    "assets/game/shared/combat/boss_motion_1009/dracodia_arms_4.png": {
+      "bytes": 195396,
+      "sha256": "a9008f1b9dd4ae397b72a8b743d2954bde8788329a656337608746f0638ebc4f"
+    },
+    "assets/game/shared/combat/boss_motion_1009/dracodia_arms_5.png": {
+      "bytes": 151944,
+      "sha256": "e8f586438bb417d914d16a0616c48a6bc6cb07f40a810aea54c1bb45c9911aa3"
+    },
+    "assets/game/shared/combat/boss_motion_1009/dracodia_arms_6.png": {
+      "bytes": 248805,
+      "sha256": "5a3e78bcf65cfe254c423a4ad56ba5b384defecc1c76090ec6b26c3185a9e601"
+    },
+    "assets/game/shared/combat/boss_motion_1009/dracodia_arms_7.png": {
+      "bytes": 214324,
+      "sha256": "baa1c49d7a94cb15a5a14dc6079208125f4bf74f52be258f7c4117c98c40e9d2"
+    },
+    "assets/game/shared/combat/boss_motion_1009/dracodia_core_0.png": {
+      "bytes": 335289,
+      "sha256": "f264a3acc3b13e7146a33c3e35bacf96a109fa887f5311310f5a8002f4cfd077"
+    },
+    "assets/game/shared/combat/boss_motion_1009/dracodia_core_1.png": {
+      "bytes": 329289,
+      "sha256": "68645927e180b6b42285cd29e3ac4d441638d9c38568596a72eb164e77994d8a"
+    },
+    "assets/game/shared/combat/boss_motion_1009/dracodia_core_2.png": {
+      "bytes": 333402,
+      "sha256": "913ff58881b80ab66449efa3cc7436576ba9a11c68ff40c90eae4965d54476c1"
+    },
+    "assets/game/shared/combat/boss_motion_1009/dracodia_core_3.png": {
+      "bytes": 345119,
+      "sha256": "fbd977da130a810490b43a9835943f5427c9bd0e47681363f2899a679d91c4b9"
+    },
+    "assets/game/shared/combat/boss_motion_1009/dracodia_core_4.png": {
+      "bytes": 330807,
+      "sha256": "736696687243145252d3bd8ee77d747c1396dd53f5236e5d6a1015c86311e93a"
+    },
+    "assets/game/shared/combat/boss_motion_1009/dracodia_core_5.png": {
+      "bytes": 325565,
+      "sha256": "1c9e445e8301d65de2a406cc1185cf0cd9f6c7ab4b005bc543d14fc7d40231fd"
+    },
+    "assets/game/shared/combat/boss_motion_1009/dracodia_core_6.png": {
+      "bytes": 327641,
+      "sha256": "05fa0c92c72a51e04b0348217952b4b194f668820f48acefcf3fbc8fca38ebbe"
+    },
+    "assets/game/shared/combat/boss_motion_1009/dracodia_core_7.png": {
+      "bytes": 324966,
+      "sha256": "c91db269525b61b18266200413a20eebd390f49ebb59420b3c96ee52f6868edb"
+    },
+    "assets/game/shared/combat/boss_motion_1009/hammer_counter_0.png": {
+      "bytes": 190281,
+      "sha256": "046e989384e8f02d0f48a14306a9dc826edc5d499f71172972ca278cf36a661f"
+    },
+    "assets/game/shared/combat/boss_motion_1009/hammer_counter_1.png": {
+      "bytes": 188404,
+      "sha256": "5b8b63abf98687b400fa523c4f6befefd5a63e303d87b2c1243e0b4dcb0a14fc"
+    },
+    "assets/game/shared/combat/boss_motion_1009/hammer_counter_2.png": {
+      "bytes": 234838,
+      "sha256": "351db2da88670264dbb350055bdf83ae1a55f2c635286d99d5daebe4099d7810"
+    },
+    "assets/game/shared/combat/boss_motion_1009/hammer_counter_3.png": {
+      "bytes": 200339,
+      "sha256": "188e52d34288d75cdd78a1016a434897f997f3c0f218e124a303b5bfd2876e4a"
+    },
+    "assets/game/shared/combat/boss_motion_1009/hammer_counter_4.png": {
+      "bytes": 191251,
+      "sha256": "5b65ac0a447e66277b411eb19dbea29b5646d55d9b889968c1f0315593377c73"
+    },
+    "assets/game/shared/combat/boss_motion_1009/hammer_counter_5.png": {
+      "bytes": 180659,
+      "sha256": "9a93a2b87a5f0182b91709f1167435ed0f9e00f1b1ddaac2b50baeb0fc1d8e06"
+    },
+    "assets/game/shared/combat/boss_motion_1009/hammer_counter_6.png": {
+      "bytes": 235717,
+      "sha256": "93d26bbbb72a8418236aa5e380610b4d2dfc87caaa8efe0a9ced0ec020c72c8e"
+    },
+    "assets/game/shared/combat/boss_motion_1009/hammer_counter_7.png": {
+      "bytes": 193375,
+      "sha256": "9b39708a98b32ca977e6dad719ec322c016176083da9d464f1c730853dfff28d"
+    },
+    "assets/game/shared/combat/boss_motion_1009/hammer_death_0.png": {
+      "bytes": 264050,
+      "sha256": "885c1c12b38bb865670bef51cfe27b3ab0a5a2e5edd3673109fe3de7bdc2c0ae"
+    },
+    "assets/game/shared/combat/boss_motion_1009/hammer_death_1.png": {
+      "bytes": 249649,
+      "sha256": "7bcd81becffc42046afd2255ed3b0787a210407cd5ad01f46ef7edf43a0c452f"
+    },
+    "assets/game/shared/combat/boss_motion_1009/hammer_death_2.png": {
+      "bytes": 239470,
+      "sha256": "b2c52f973026c323f6fd4c0cee7429272df2798d6f18bd4955384039f0858354"
+    },
+    "assets/game/shared/combat/boss_motion_1009/hammer_death_3.png": {
+      "bytes": 244489,
+      "sha256": "f7223129761a183e8918c17bfb6852ca35e38cf5d50a56e61a7e4ac64200e1c1"
+    },
+    "assets/game/shared/combat/boss_motion_1009/hammer_death_4.png": {
+      "bytes": 261496,
+      "sha256": "02a66ed107bb0031d88d7a37a7ff4f5228a7b65d02176c578c23c2b789891bfc"
+    },
+    "assets/game/shared/combat/boss_motion_1009/hammer_death_5.png": {
+      "bytes": 284273,
+      "sha256": "81a2756e72f98a3666cba8c5760434550eaf1e7793723da309bd453e4975f060"
+    },
+    "assets/game/shared/combat/boss_motion_1009/hammer_death_6.png": {
+      "bytes": 334473,
+      "sha256": "6d86b58d8e1a83e162f2df7c862c299606cc6e52902a4ef1468e51fc87d5c0df"
+    },
+    "assets/game/shared/combat/boss_motion_1009/hammer_death_7.png": {
+      "bytes": 408310,
+      "sha256": "b78b0ec908cff5dec7cfa63c907a178cefd64f3ab994672306e49fd9b9dd6841"
+    },
+    "assets/game/shared/combat/boss_motion_1009/landing_0.png": {
+      "bytes": 51092,
+      "sha256": "dc1c459f5bd951650723d282952af02e947acd91e155c9bef54dfb183b46970d"
+    },
+    "assets/game/shared/combat/boss_motion_1009/landing_1.png": {
+      "bytes": 78092,
+      "sha256": "c0e356cd0a02f5024dbf5371c88e15236866d93d3d7cbfac2a2c006c26e395a8"
+    },
+    "assets/game/shared/combat/boss_motion_1009/landing_2.png": {
+      "bytes": 157377,
+      "sha256": "3eb2ba4663ecbf93d301d39644c30eeaf6dd72b39dc1a143c7587faf21aab0b1"
+    },
+    "assets/game/shared/combat/boss_motion_1009/landing_3.png": {
+      "bytes": 218976,
+      "sha256": "9eb476380b756aeb9f45502bd0aaf3d670cc92d738d5c8b1efefc5a08f263d9c"
+    },
+    "assets/game/shared/combat/boss_motion_1009/landing_4.png": {
+      "bytes": 179664,
+      "sha256": "e9af0bee33d7a16dbcf2c7b671398f58e1c29cf29c3b404b2808bd7096c320b5"
+    },
+    "assets/game/shared/combat/boss_motion_1009/landing_5.png": {
+      "bytes": 129112,
+      "sha256": "f93f7b4e9af3410ced782faf57058be5fab031589d167ea9fb7764d7917e46e6"
+    },
+    "assets/game/shared/combat/boss_motion_1009/landing_6.png": {
+      "bytes": 92459,
+      "sha256": "b72ffe13c7069763de53d5843d869faf0ea5a698a810a1b399adb78a23699bef"
+    },
+    "assets/game/shared/combat/boss_motion_1009/landing_7.png": {
+      "bytes": 57851,
+      "sha256": "12637e73be4ef87e43b4b2be686f9eb673fc67d41f79f4ac407f5dafce2b2d9e"
+    },
+    "assets/game/shared/combat/boss_motion_1009/spider_claws_0.png": {
+      "bytes": 192325,
+      "sha256": "6fb560c8cbc2eb20938fb0aee4d0c4cccc52bde585c08a0ec099d181e2443a5d"
+    },
+    "assets/game/shared/combat/boss_motion_1009/spider_claws_1.png": {
+      "bytes": 174548,
+      "sha256": "81e7c1e98b9ce89ad2282e6e93e0d4af8cd47eb532d188c47e11897eef29d955"
+    },
+    "assets/game/shared/combat/boss_motion_1009/spider_claws_2.png": {
+      "bytes": 273346,
+      "sha256": "6256fcaa769847363f099dd779ad3ebd09b8d8e5758f61dab8dcf556836d0280"
+    },
+    "assets/game/shared/combat/boss_motion_1009/spider_claws_3.png": {
+      "bytes": 253315,
+      "sha256": "c891c1766f1fbe009917346fb3e90b62d9b7474621ebbbdcdc30eda9dc122a6d"
+    },
+    "assets/game/shared/combat/boss_motion_1009/spider_claws_4.png": {
+      "bytes": 207523,
+      "sha256": "06f6d7a135e63e7e8798d48f418060318cb6358c8a95811885d8ce902b89da6a"
+    },
+    "assets/game/shared/combat/boss_motion_1009/spider_claws_5.png": {
+      "bytes": 160141,
+      "sha256": "79000df1daffef00fa817c332d8d15325c835dd3d1b51bc5a5691f878ae3db58"
+    },
+    "assets/game/shared/combat/boss_motion_1009/spider_claws_6.png": {
+      "bytes": 265585,
+      "sha256": "de25d5489ae4d279f0f6857f5488c9533d4fce153dfb522d91bd4f14fc53f70f"
+    },
+    "assets/game/shared/combat/boss_motion_1009/spider_claws_7.png": {
+      "bytes": 230234,
+      "sha256": "e2f3df106a5eda9de24de42b6b85a3f3f5efb013ea3203ec7f0e8c49f538fd77"
+    },
+    "assets/game/shared/combat/boss_motion_1009/spider_legs_0.png": {
+      "bytes": 190498,
+      "sha256": "ec557b1333e3425d5a565ca8ca05b0436d9f68dcb2ef0708a77393243020e3f2"
+    },
+    "assets/game/shared/combat/boss_motion_1009/spider_legs_1.png": {
+      "bytes": 160543,
+      "sha256": "d641a23c0b0b2061399abf595a2a1c97e56a089667eba53e5d33ab8265f215b9"
+    },
+    "assets/game/shared/combat/boss_motion_1009/spider_legs_2.png": {
+      "bytes": 207178,
+      "sha256": "9755ee1ce1dafd9dcde8fc10988fc991bce762a76b58f1cfa089574fa6510775"
+    },
+    "assets/game/shared/combat/boss_motion_1009/spider_legs_3.png": {
+      "bytes": 208088,
+      "sha256": "c9305b6944bd3ff6d2cfe0bcf5c2463a4d8a7f6d509460034b7d27ea231bbde2"
+    },
+    "assets/game/shared/combat/boss_motion_1009/spider_legs_4.png": {
+      "bytes": 183157,
+      "sha256": "59b8209750da7a652ca5e4238a1605476464089a2e4b3fd19afe980b99383da5"
+    },
+    "assets/game/shared/combat/boss_motion_1009/spider_legs_5.png": {
+      "bytes": 161142,
+      "sha256": "9459f2755b2e486500b9e683e425dedd9da43fb0871bda1f9f244dc07d53bd8c"
+    },
+    "assets/game/shared/combat/boss_motion_1009/spider_legs_6.png": {
+      "bytes": 207733,
+      "sha256": "b9275deba33e3d553a058ef573b4231ceaa5a17a73eef2da93a582beca4225b8"
+    },
+    "assets/game/shared/combat/boss_motion_1009/spider_legs_7.png": {
+      "bytes": 208377,
+      "sha256": "625702c54ed9c0027116be3af16316d096e6ee9ba4becfa2195946b2e2fdabe7"
+    },
+    "assets/game/shared/combat/boss_motion_1009/turret_charge_0.png": {
+      "bytes": 117674,
+      "sha256": "a841fe6c9a0332faa3ffdde144851e7b3e34f72369ea71ce008e26cfbc785599"
+    },
+    "assets/game/shared/combat/boss_motion_1009/turret_charge_1.png": {
+      "bytes": 151663,
+      "sha256": "08e13303155e8b90e765b1eae4d726dfa2c13a8776105d63354771cd2bbf8723"
+    },
+    "assets/game/shared/combat/boss_motion_1009/turret_charge_2.png": {
+      "bytes": 222566,
+      "sha256": "28915da34522dc312796cf0a4182e8418b33a399636707b5cef66a4d68c7c99f"
+    },
+    "assets/game/shared/combat/boss_motion_1009/turret_charge_3.png": {
+      "bytes": 279365,
+      "sha256": "350d3548d49ef0057cbd8536edd2deab867e4b537704764189dfcda8976a1575"
+    },
+    "assets/game/shared/combat/boss_motion_1009/turret_charge_4.png": {
+      "bytes": 118997,
+      "sha256": "5cb6c2dc59d5d220c1a1d4b9d44a33bc0f4cc4d897eef0b90b7b7b6979acb1ca"
+    },
+    "assets/game/shared/combat/boss_motion_1009/turret_charge_5.png": {
+      "bytes": 151344,
+      "sha256": "4bbd0762790f10b9285c6a149d34b805cd7a85ef8a38efcc1c374ec773197c39"
+    },
+    "assets/game/shared/combat/boss_motion_1009/turret_charge_6.png": {
+      "bytes": 224135,
+      "sha256": "611c9be7a8cb243297c5b2d5a16cc73e19bc60be0280b471d976cd643284757c"
+    },
+    "assets/game/shared/combat/boss_motion_1009/turret_charge_7.png": {
+      "bytes": 281951,
+      "sha256": "24cd707e1a52e988f47ddd7e62ac08999296d4c79b1ed59a257c9ab48567a47c"
+    },
+    "assets/game/shared/combat/stage1_motion_1009/buggy_fire_0.png": {
+      "bytes": 127356,
+      "sha256": "43aadeeb8d0d26d260b9a07fd7af0a44d4bd159e8b89465248a87317ec408b07"
+    },
+    "assets/game/shared/combat/stage1_motion_1009/buggy_fire_1.png": {
+      "bytes": 129607,
+      "sha256": "031854ea136b45a74175f731b6bbcb726ae7b2e2769368d5074a236c2b1fded1"
+    },
+    "assets/game/shared/combat/stage1_motion_1009/buggy_fire_2.png": {
+      "bytes": 127199,
+      "sha256": "3295015e61a9600b1e271d471fd3079f096e3e8c3e56f88690b022b6008471c8"
+    },
+    "assets/game/shared/combat/stage1_motion_1009/buggy_fire_3.png": {
+      "bytes": 127088,
+      "sha256": "aeeac7c0edead7b8a2d735c11301729e8db432414723d18fe27a68158c7fb3a6"
+    },
+    "assets/game/shared/combat/stage1_motion_1009/buggy_idle_0.png": {
+      "bytes": 116620,
+      "sha256": "62efae1a58b5c234818fc75fbbf3ec992b102a72bdee67f405337124ffc00944"
+    },
+    "assets/game/shared/combat/stage1_motion_1009/buggy_idle_1.png": {
+      "bytes": 116444,
+      "sha256": "e7164f9ee0c8d1deea2227906e30810092c9edd7bc295e30dd51e4379535b5e3"
+    },
+    "assets/game/shared/combat/stage1_motion_1009/buggy_idle_2.png": {
+      "bytes": 116993,
+      "sha256": "e2364d7a5fd042bd2009dc6cd63821b84195d6dbdafa0de04984d1cf14d5ff09"
+    },
+    "assets/game/shared/combat/stage1_motion_1009/buggy_idle_3.png": {
+      "bytes": 117134,
+      "sha256": "8332ea11a1a95637873e97b106b0c9ece55e5262d95c3603c7f28240f8b38cea"
+    },
+    "assets/game/shared/combat/stage1_motion_1009/buggy_idle_4.png": {
+      "bytes": 116412,
+      "sha256": "cb1633f3a4714ada131fc3e00ec2eb1c0788dbc1334328f2d02ee2ba83e3a3da"
+    },
+    "assets/game/shared/combat/stage1_motion_1009/buggy_idle_5.png": {
+      "bytes": 116247,
+      "sha256": "6639928704f18da81ea496af936919f0f614d39a9f8f7abce6a6aac85ebaf92d"
+    },
+    "assets/game/shared/combat/stage1_motion_1009/buggy_idle_6.png": {
+      "bytes": 117161,
+      "sha256": "f3e7d47bbc7516f5245b27f5f35eba70fe4a4369e8191b13cf3ad7bc47527e7a"
+    },
+    "assets/game/shared/combat/stage1_motion_1009/buggy_idle_7.png": {
+      "bytes": 116555,
+      "sha256": "ada876786e23adbc416c43e736d1cfedbd8d569008a743e3e39ecb83066f935a"
+    },
+    "assets/game/shared/combat/stage1_motion_1009/exhaust_0.png": {
+      "bytes": 31513,
+      "sha256": "3ee28df6d9378b5101961be54482dd2683ad0ed6f146523eae6ab1117c539f58"
+    },
+    "assets/game/shared/combat/stage1_motion_1009/exhaust_1.png": {
+      "bytes": 47495,
+      "sha256": "a6f86ff43b34192e574dca009f6f3043a193758a0b7eac7a088a196919bb69ce"
+    },
+    "assets/game/shared/combat/stage1_motion_1009/exhaust_2.png": {
+      "bytes": 50249,
+      "sha256": "abf02874103a703a7447d61dc6d27527fae8b2bd19bf99d1aaa7695a338de718"
+    },
+    "assets/game/shared/combat/stage1_motion_1009/exhaust_3.png": {
+      "bytes": 46030,
+      "sha256": "13a5893481c6d12b102b20ffd273309991c402b6f6538d6c81cb3159f0b48ab4"
+    },
+    "assets/game/shared/combat/stage1_motion_1009/exhaust_4.png": {
+      "bytes": 66059,
+      "sha256": "cfbc2863c0d764bf92cc76d08bf31713bf6a8ab4817415dc2daf8b445f144891"
+    },
+    "assets/game/shared/combat/stage1_motion_1009/exhaust_5.png": {
+      "bytes": 47179,
+      "sha256": "571c98dd410c959f1dee14894fba7b5d73ced697564469184169cb3a09f8d739"
+    },
+    "assets/game/shared/combat/stage1_motion_1009/exhaust_6.png": {
+      "bytes": 34800,
+      "sha256": "ab771ce142ffc7fc2fc204c1f6bf34f6bdd26fb47b828305b1bfa543ed778055"
+    },
+    "assets/game/shared/combat/stage1_motion_1009/exhaust_7.png": {
+      "bytes": 31404,
+      "sha256": "6bd3e497fcc86df7ac345cf97dc8fbe6c87a1a4243cf8797d3920f2814756f2d"
+    },
+    "assets/game/shared/combat/stage1_motion_1009/hull_0.png": {
+      "bytes": 96023,
+      "sha256": "0ec48cbfa2b3977a1c8163889d5bd82f945675758d620f93a0387df5ab38f562"
+    },
+    "assets/game/shared/combat/stage1_motion_1009/hull_1.png": {
+      "bytes": 96058,
+      "sha256": "55c7698027283d658dba68d261ff0032b29c7cbc0a9ab4979570cb959c94cd66"
+    },
+    "assets/game/shared/combat/stage1_motion_1009/hull_2.png": {
+      "bytes": 96078,
+      "sha256": "b0bff562d160417b66fb772ca3e629098eb0ff1577c8e5053621775b6a3615d4"
+    },
+    "assets/game/shared/combat/stage1_motion_1009/hull_3.png": {
+      "bytes": 95983,
+      "sha256": "b0ab747da5d34032b9ca104aacbab8add8597857901a99adcc834cf66014b29e"
+    },
+    "assets/game/shared/combat/stage1_motion_1009/hull_4.png": {
+      "bytes": 96285,
+      "sha256": "ed821eb6c69409d3eda4aad9865a3dd33082d9f69e953abdae34ac76f0f2e0ae"
+    },
+    "assets/game/shared/combat/stage1_motion_1009/hull_5.png": {
+      "bytes": 95831,
+      "sha256": "925db21c01f072b4eac4ee9977b86762ab8982ed6f81b1817ea424623e3f12bf"
+    },
+    "assets/game/shared/combat/stage1_motion_1009/hull_6.png": {
+      "bytes": 95874,
+      "sha256": "e34e181a5d8efd81c57e9962d236bd2a4e0ba3d1c8b0dcc8739cbad88828c726"
+    },
+    "assets/game/shared/combat/stage1_motion_1009/hull_7.png": {
+      "bytes": 95573,
+      "sha256": "5e0d3eab195a8bc0952be5203a3cc5bce37cb643076398cf420c537e49846894"
+    },
+    "assets/game/shared/combat/stage1_motion_1009/muzzle_0.png": {
+      "bytes": 39326,
+      "sha256": "c0d15b767c94f06279b0859f6157573144ceca30ab7c4da06c9788e6b8b68332"
+    },
+    "assets/game/shared/combat/stage1_motion_1009/muzzle_1.png": {
+      "bytes": 44533,
+      "sha256": "91846c0f1d9daf48ce284c61d9e3dc57cd45476207c69c1ccb15ca1ef5c28084"
+    },
+    "assets/game/shared/combat/stage1_motion_1009/muzzle_2.png": {
+      "bytes": 26899,
+      "sha256": "b410cd14da58e166b481131fade65ffd4eefeff6a988a35c3bfad6b4814960fa"
+    },
+    "assets/game/shared/combat/stage1_motion_1009/muzzle_3.png": {
+      "bytes": 11154,
+      "sha256": "69c45162982d0b071004abeedafa56424af19d467bfb924040ce1c7e69c9dbd0"
+    },
+    "assets/game/shared/combat/stage1_motion_1009/muzzle_4.png": {
+      "bytes": 35133,
+      "sha256": "8f5406673bcc3e23d95dedd5ba3fdd15d282ae7615a9fd0652bcf589b737b542"
+    },
+    "assets/game/shared/combat/stage1_motion_1009/muzzle_5.png": {
+      "bytes": 43875,
+      "sha256": "41abe4b9249ca2bb366b102a0c6765ceaf318eaa0b10e8d0cd6dd0566e7f5061"
+    },
+    "assets/game/shared/combat/stage1_motion_1009/muzzle_6.png": {
+      "bytes": 28549,
+      "sha256": "df08016e2afe861aaada278fb2f0c015e6107f9c62e7df38a6216341f3df956d"
+    },
+    "assets/game/shared/combat/stage1_motion_1009/muzzle_7.png": {
+      "bytes": 10639,
+      "sha256": "fd188927904f1092d752a5a122ca5098c141f76d1c88bfb379e8f8f2679295ec"
+    },
+    "assets/game/shared/combat/stage1_motion_1009/turret_0.png": {
+      "bytes": 60840,
+      "sha256": "e4bc51ba7a4a5e3c8e340e538a1c954825b1a026c7261ef7af212c3d016c1455"
+    },
+    "assets/game/shared/combat/stage1_motion_1009/turret_1.png": {
+      "bytes": 58002,
+      "sha256": "7332058f50503eda11b9bb61b07c212964503ca20568852f17434c6b5f9b8774"
+    },
+    "assets/game/shared/combat/stage1_motion_1009/turret_2.png": {
+      "bytes": 55900,
+      "sha256": "6b54b2c4494f013befe5c10b3955181fdcda01a0605904777a3a19a49cea4464"
+    },
+    "assets/game/shared/combat/stage1_motion_1009/turret_3.png": {
+      "bytes": 60194,
+      "sha256": "c7f8a8f6717145d369fac9ed92a7cf9b6cb5d05ea3fea17c6c49c43e015466ff"
+    },
+    "assets/game/shared/combat/stage1_motion_1009/wake_0.png": {
+      "bytes": 53914,
+      "sha256": "5f91ba9e99fbf53b01040968df11713253a659d00c0767ce6070537aceded6fa"
+    },
+    "assets/game/shared/combat/stage1_motion_1009/wake_1.png": {
+      "bytes": 67256,
+      "sha256": "b55a1912f71a3ad4f0880c5a5e558f735cc6661c67407e19aaa901e976051ef3"
+    },
+    "assets/game/shared/combat/stage1_motion_1009/wake_2.png": {
+      "bytes": 95203,
+      "sha256": "540e99c10b4b5aad3c7ec9b02775c638135a8202886235056adcf342509f3698"
+    },
+    "assets/game/shared/combat/stage1_motion_1009/wake_3.png": {
+      "bytes": 119897,
+      "sha256": "b71ec4fde26490c06c3c2954c2193aa8604e8c805a9f9267f22cbc277d64f113"
+    },
+    "assets/game/shared/combat/stage1_motion_1009/wake_4.png": {
+      "bytes": 111819,
+      "sha256": "2e3f0f14dcfda680bc2bfc39a9a2ad219f4b577f2c26ebfc15ac18f839e85e81"
+    },
+    "assets/game/shared/combat/stage1_motion_1009/wake_5.png": {
+      "bytes": 92705,
+      "sha256": "38c094a0a39d8dd487617ae85b5dd5e4350e9de394491c0146add905bf0b332f"
+    },
+    "assets/game/shared/combat/stage1_motion_1009/wake_6.png": {
+      "bytes": 75046,
+      "sha256": "f030a23d964fb8fe1e8890a1a92ea06e63d2d099dda9393a5f76432ce6543fc4"
+    },
+    "assets/game/shared/combat/stage1_motion_1009/wake_7.png": {
+      "bytes": 53957,
+      "sha256": "c0bffc5e67217bed1156a0b9aad25e5bc0d2da2cbce84f8b4b0d2101dc80cfb7"
+    },
+    "_ART_SOURCES/boss_motion_1009/dracodia-core-prompt.json": {
+      "bytes": 1897,
+      "sha256": "ae2fc1fb58f691ec65689d5da8c943d084c67120ceea8cd1885fcf9d572a4d88"
+    },
+    "_ART_SOURCES/boss_motion_1009/dracodia_arms.png": {
+      "bytes": 2172121,
+      "sha256": "e6674088c5f289f1e7d39d84b16fe2f4c0b457a2b1e0583a8c92e5fccfe95f15"
+    },
+    "_ART_SOURCES/boss_motion_1009/dracodia_core.png": {
+      "bytes": 2740592,
+      "sha256": "897c629f9493063976b53f6b40454ab98a676c8d3094b8c548b86ceaea0d3c3b"
+    },
+    "_ART_SOURCES/boss_motion_1009/effects-prompts.json": {
+      "bytes": 2308,
+      "sha256": "703e314a18ca57c6302fc46aa711adba4ba3fced6fbaf1dc8599b9f424759f81"
+    },
+    "_ART_SOURCES/boss_motion_1009/hammer_counter.png": {
+      "bytes": 1684507,
+      "sha256": "6855dbc4bec23610cad5f02a4e49198e7e1330ecb1b03adf0b3dad6f3462a7f4"
+    },
+    "_ART_SOURCES/boss_motion_1009/hammer_death.png": {
+      "bytes": 2526057,
+      "sha256": "8a3d0e56f7f5b821cd42ae43e1dc269198cd1e1dedf4518a7bc92296ad2a6f4c"
+    },
+    "_ART_SOURCES/boss_motion_1009/landing.png": {
+      "bytes": 1087057,
+      "sha256": "3ade81cbcb34bbac2f0e5d3528e4b276b33be4fe0d3cd3c0994cc847ed5018f2"
+    },
+    "_ART_SOURCES/boss_motion_1009/manifest.json": {
+      "bytes": 23174,
+      "sha256": "a342afbc4a1cdd5825750391d4df5300e63c8e10e6a5557553a64c31510f860b"
+    },
+    "_ART_SOURCES/boss_motion_1009/prompts.json": {
+      "bytes": 7319,
+      "sha256": "9e2b869b7d2e4d992ab7bab55409338aa4551ec7980d5fde97d7fb32aef179c6"
+    },
+    "_ART_SOURCES/boss_motion_1009/spider_claws.png": {
+      "bytes": 2083033,
+      "sha256": "3cbaf597a297a68d6fed98e0d22c3b6f262e2abf27cacc9118fc9ea41c65d736"
+    },
+    "_ART_SOURCES/boss_motion_1009/spider_legs.png": {
+      "bytes": 2063977,
+      "sha256": "5171a50030ab57c66aa2d12a55d0669172f641eb5b92a4e60d315305b306c731"
+    },
+    "_ART_SOURCES/boss_motion_1009/turret_charge.png": {
+      "bytes": 1734702,
+      "sha256": "e108fcd775249f65aec356c1e8edc2c945270412cf16c0692c6275d87bb4becc"
+    },
+    "_ART_SOURCES/stage1_motion_1009/live-prompts.json": {
+      "bytes": 9863,
+      "sha256": "d920414c38f3709b8d44ca658e1b87ec8926ac4480fcbab22461ecc5e5ec5342"
+    },
+    "_ART_SOURCES/stage1_motion_1009/live-manifest.json": {
+      "bytes": 17192,
+      "sha256": "d0cad233b51d3669869bc910458a5f9facd5c752f8007bf01fdcb3cd55c0f4c6"
+    },
+    "_ART_SOURCES/stage1_motion_1009/live_reference/furyboat_0_0.png": {
+      "bytes": 9176,
+      "sha256": "08dced773165cbeb6b27472c9174ca5c01086e7a59783b0711f3d655c5e73a96"
+    },
+    "_ART_SOURCES/stage1_motion_1009/live_reference/furyboat_1_0.png": {
+      "bytes": 20805,
+      "sha256": "d295b34ae525c30c9f06c8cc32083ba6c131cc81320736c2dd2293a99fc34b2c"
+    },
+    "_ART_SOURCES/stage1_motion_1009/live_reference/furyjet_0_bank_0.png": {
+      "bytes": 15931,
+      "sha256": "1c0f35b6874e42b827f9865b6ff5e245e780ae3bb88cad87eb8fb64d5fcf1322"
+    },
+    "_ART_SOURCES/stage1_motion_1009/live_reference/furyjet_1_bank_0.png": {
+      "bytes": 21968,
+      "sha256": "2195379a94a9b558d376ab91fab44fe819a34df57d6c0181620b87b060809662"
+    },
+    "_ART_SOURCES/stage1_motion_1009/live_reference/furyjet_2_bank_0.png": {
+      "bytes": 17918,
+      "sha256": "8e0b4224a37dd91b2688a9ba3fae2afda7dcae3d243b736b09c972a598899c98"
+    },
+    "_ART_SOURCES/stage1_motion_1009/live_reference/furyjet_3_bank_0.png": {
+      "bytes": 21483,
+      "sha256": "ac46e4d89d20ed388f12a7e81fc7e033bfe19278b0728965ea600211ef39240f"
+    },
+    "_ART_SOURCES/stage1_motion_1009/live_reference/manifest.json": {
+      "bytes": 2393,
+      "sha256": "484ab0d37aa65c1a06141cd879714ea87cb434ca9b88b343dd6becf0be6c129e"
+    },
+    "_ART_SOURCES/stage1_motion_1009/live_reference/overhaul_tank_1_hull.png": {
+      "bytes": 183017,
+      "sha256": "79852b36abae9074c8ceb7c933be04be68855a4007daaf0fcaab19c53b05e715"
+    },
+    "_ART_SOURCES/stage1_motion_1009/live_reference/overhaul_tank_1_turret.png": {
+      "bytes": 77440,
+      "sha256": "87da34bbd9f767aee83c5cafbbf37fe7258fdb3d0d37d8ba6c8c2671ea5cc816"
+    },
+    "_ART_SOURCES/stage1_motion_1009/live_reference/s1boatgun.png": {
+      "bytes": 28725,
+      "sha256": "4aed82573eacf6770dedf268c6b238e30098f00654231d109cf323ffd229b339"
+    },
+    "_ART_SOURCES/stage1_motion_1009/live_reference/s1boatpatrol.png": {
+      "bytes": 55066,
+      "sha256": "bc64a6bbdd3c23d81e45cb06cc23bce87d66d9817e549ee0c37ea3df3a9f5f03"
+    },
+    "_ART_SOURCES/stage1_motion_1009/live_reference/s1corvette.png": {
+      "bytes": 58844,
+      "sha256": "d4c4202721d2757e5933a3d75bacc1c7331a9c033e913df7cede7dfd64a7ab15"
+    },
+    "_ART_SOURCES/stage1_motion_1009/live_reference/s1jetbomber.png": {
+      "bytes": 45303,
+      "sha256": "6120680995672425c0963644ca9003d0c17725a5a34dc5a305d3880e5ff476c5"
+    },
+    "_ART_SOURCES/stage1_motion_1009/live_reference/s1jetdelta.png": {
+      "bytes": 35986,
+      "sha256": "a5972529784ae521c1a97467671c576dea4cdbafbf3d67c21a875519b9b0d639"
+    },
+    "_ART_SOURCES/stage1_motion_1009/live_reference/s1landingcraft.png": {
+      "bytes": 73898,
+      "sha256": "640a65859cfbfb71875d4eb2b41089e8af9325d1e04ac04ddc19d31ba3991298"
+    },
+    "_ART_SOURCES/stage1_motion_1009/live_reference/s1tankapc.png": {
+      "bytes": 206374,
+      "sha256": "9e93c4317368e0fcde2b7fa2a91bd2697003543a36b7e44d530bcd65234801e9"
+    },
+    "_ART_SOURCES/stage1_motion_1009/live_reference/s1tankheavy.png": {
+      "bytes": 207811,
+      "sha256": "7a757fa606bafa335ecfbf10c34a531dfc81c8c351af101274531f383783be27"
+    },
+    "_ART_SOURCES/stage1_motion_1009/live_reference/s1tanklight.png": {
+      "bytes": 185900,
+      "sha256": "9b4a60987255c35e5c644e52194cf02cc132ad6ac08c090185714cc99a9d5a8e"
+    },
+    "_ART_SOURCES/stage1_motion_1009/live_reference/s1truckmissile.png": {
+      "bytes": 111295,
+      "sha256": "70020dcedcf19495f1a7e6e5308c73738e07fe0b0299c9b16575d988d48c88b1"
+    },
+    "_ART_SOURCES/stage1_motion_1009/returned_live/manifest.json": {
+      "bytes": 1546,
+      "sha256": "8c410aba72a09e9f25426515dafab75ab02f30aa13bd190f4754b9d7b08a3c0e"
+    },
+    "_ART_SOURCES/stage1_motion_1009/returned_live/s1boatgun__fire_intact__01-04.png": {
+      "bytes": 78823,
+      "sha256": "0f880f81800fc414b89c2c903e4063edd2c418757db4b4bc7c3285cec4f58585"
+    },
+    "_ART_SOURCES/stage1_motion_1009/returned_live/s1boatgun__idle_intact__01-08.png": {
+      "bytes": 247053,
+      "sha256": "6f21341f865aa164405c566e6c700437e975ee037fad32c69a09c5bc807a3278"
+    },
+    "_ART_SOURCES/stage1_motion_1009/returned_live/s1boatpatrol__fire_intact__01-04.png": {
+      "bytes": 93647,
+      "sha256": "888c228f313c9d9655c363c004fb7f1db6d3101f2ca2a482e4b5b1c1a287d4cc"
+    },
+    "_ART_SOURCES/stage1_motion_1009/returned_live/s1boatpatrol__idle_intact__01-08.png": {
+      "bytes": 326395,
+      "sha256": "a345594027e0a1170270061e8e90025e93600a4f082bf656507f2c5aa92e34cf"
+    },
+    "_ART_SOURCES/stage1_motion_1009/returned_live/s1corvette__fire_intact__01-04.png": {
+      "bytes": 94689,
+      "sha256": "b340fc0fd3073fede487a097510b766d3d559e504ada438a1c3f90eee04bf222"
+    },
+    "_ART_SOURCES/stage1_motion_1009/returned_live/s1corvette__idle_intact__01-08.png": {
+      "bytes": 330474,
+      "sha256": "4a7a9b6867e167d8578fc6213878a9f9e464d53508c02e4aca1037651ef610b5"
+    },
+    "_ART_SOURCES/stage1_motion_1009/returned_live/s1jetbomber__fire_intact__01-04.png": {
+      "bytes": 66711,
+      "sha256": "b823098ad25011b57f3e714cabc665afc87af6ca83e7daddcd3f2df4fc34074f"
+    },
+    "_ART_SOURCES/stage1_motion_1009/returned_live/s1jetbomber__idle_intact__01-08.png": {
+      "bytes": 102568,
+      "sha256": "682eaa69ffce235c7918733e4a09d6d65600e8046b6628117e40a30a4664304b"
+    },
+    "_ART_SOURCES/stage1_motion_1009/returned_live/s1jetdelta__fire_intact__01-04.png": {
+      "bytes": 50065,
+      "sha256": "f6a9c233ce121353d69df498c762c5073291d6a3d67bf28dbb7b80e312ba8d8d"
+    },
+    "_ART_SOURCES/stage1_motion_1009/returned_live/s1jetdelta__idle_intact__01-08.png": {
+      "bytes": 77131,
+      "sha256": "0c11a2540ce00f24a26937b758906d9cfa249e2a8842d8bf4b07ce4bc164eb4b"
+    },
+    "_ART_SOURCES/stage1_motion_1009/returned_live/s1landingcraft__idle_intact__01-08.png": {
+      "bytes": 156174,
+      "sha256": "33ad14a9e6d54d35252c160e5aa7ee4fa90c35d70d6363c46f29e466d66bf135"
+    },
+    "_ART_SOURCES/stage1_motion_1009/returned_live/s1tankapc__fire_intact__01-04.png": {
+      "bytes": 283780,
+      "sha256": "5786d24b844a73ea5b6e4d3f236d8377b91afd07481f124a2c20845ecbfe75ae"
+    },
+    "_ART_SOURCES/stage1_motion_1009/returned_live/s1tankapc__idle_intact__01-08.png": {
+      "bytes": 537808,
+      "sha256": "cfdc9ee215fa69fb4eaf29ee6933c03a45251d8839e107df127765e611cac351"
+    },
+    "_ART_SOURCES/stage1_motion_1009/returned_live/s1tankheavy__fire_intact__01-04.png": {
+      "bytes": 291903,
+      "sha256": "a4d55346dd9f4284d7ff56c9e7fb5fe5ef5adc9738e9c5b8389a398cba60f1a0"
+    },
+    "_ART_SOURCES/stage1_motion_1009/returned_live/s1tankheavy__idle_intact__01-08.png": {
+      "bytes": 549832,
+      "sha256": "2f7a92019de50dc443dfb0e6c114ffd14f8d15e9c35e64fb1cf8da7541c91881"
+    },
+    "_ART_SOURCES/stage1_motion_1009/returned_live/s1tanklight__fire_intact__01-04.png": {
+      "bytes": 272353,
+      "sha256": "cdcdf463797f629e49155bba540170ad8cef76c79e1c259fb59d550f7d74614c"
+    },
+    "_ART_SOURCES/stage1_motion_1009/returned_live/s1tanklight__idle_intact__01-08.png": {
+      "bytes": 454305,
+      "sha256": "5472efeb10dce2c9aa20265a9465be274b6b9bcce450b19ce569076969f6bb99"
+    },
+    "_ART_SOURCES/stage1_motion_1009/returned_live/s1truckmissile__fire_intact__01-04.png": {
+      "bytes": 340541,
+      "sha256": "7bf4402b7f99416c3dedf280e82faf6fe7f0b31b56163565cef7d57cd4b6cdea"
+    },
+    "_ART_SOURCES/stage1_motion_1009/returned_live/s1truckmissile__idle_intact__01-08.png": {
+      "bytes": 636692,
+      "sha256": "da00c80ed50ffd0cf7290fd2a467d5bbd7f7f3d7210a8e931b94d77e0b39c6da"
+    },
+    "_ART_SOURCES/stage1_motion_1009/edit_canvas/overhaul_tank_1_hull.png": {
+      "bytes": 171073,
+      "sha256": "c606ee0721bc5df8ccbb9735f8ed588ad3fc28380e6fe8aabe92179e2fac10ba"
+    },
+    "_ART_SOURCES/stage1_motion_1009/edit_canvas/overhaul_tank_1_turret.png": {
+      "bytes": 68982,
+      "sha256": "9f3f336c3de0886dbf33156868ee3eb133ba5ed2c9bbf78b702da9aa50668fee"
+    },
+    "_ART_SOURCES/stage1_motion_1009/edit_canvas/s1truckmissile.png": {
+      "bytes": 127930,
+      "sha256": "eba7b8a4ab88a11d25f72f8e613eb0fc796700b31eb01c2a9411e2c359a7ad92"
+    },
+    "_BUILD_SOURCE/build_boss_motion_1009.py": {
+      "bytes": 6484,
+      "sha256": "01f4543b1135d24d47968aff83aac46da7bb69d929856361c708945847d2be41"
+    },
+    "_BUILD_SOURCE/build_stage1_motion_1009.py": {
+      "bytes": 3922,
+      "sha256": "c7c054155497becd7ce69dce22e7d0a197d1c96ab96a7dbe147b6cded56fd8ac"
+    },
+    "_BUILD_SOURCE/build_motion_review_1009.py": {
+      "bytes": 7450,
+      "sha256": "39ae5d1abb9f0eb01b6b04c43cfbb77bd6e85f99944bfbba3cf8d42892bd6ce5"
+    },
+    "_BUILD_SOURCE/stage1_motion_canvases_1009.py": {
+      "bytes": 944,
+      "sha256": "25340b700e32fd650da40c544e8d487802c94c5d70c34d04527000cd45977c5f"
+    },
+    "_BUILD_SOURCE/probe_boss_motion_1009.py": {
+      "bytes": 8994,
+      "sha256": "86b4901acc704ceaa8bcc5cd2c07d804bc625dc535503a47e2be9c4759023d0e"
+    },
+    "_BUILD_SOURCE/probe_boss_motion_edges_1009.py": {
+      "bytes": 3869,
+      "sha256": "4403642fd689a427a8db1bef4b7abba94363b69e1b50031e5ca56055a8e02211"
+    },
+    "_BUILD_SOURCE/probe_stage1_motion_1009.py": {
+      "bytes": 9994,
+      "sha256": "67f77824a913ae4a0917990099dc9f2344d3807316708478874579dbb486e485"
+    },
+    "_BUILD_SOURCE/probe_stage1_references_1009.py": {
+      "bytes": 3223,
+      "sha256": "f61c4df5da3cf0acb6c637a2c0d0fd0dc1613f6e00db5dcb96f11a1f025faefa"
+    },
+    "docs/MOTION_PUBLICATION_1009.md": {
+      "bytes": 4084,
+      "sha256": "c1a3832ddd411a0d20849a3f7ef453c1aef7917e700090f90b9234db1be63cb0"
+    },
+    "docs/STAGE1_MOTION_1009.md": {
+      "bytes": 5217,
+      "sha256": "45f652061fd7965fb5c04b6ce73b626c8f72c9f9c7cb4d4753082496f3709656"
+    },
+    "docs/feedback/BOSS_DIRECTION_1009.md": {
+      "bytes": 15442,
+      "sha256": "ffaae9f8a6fe9d6c9402fe3f4f97420e42788b3a264aebc038e7639b89a4426d"
+    },
+    "_ART_SOURCES/stage1_motion_1009/returned/s1_live_hull.png": {
+      "bytes": 758581,
+      "sha256": "802aaa93ad870cd0c1cb4b01aa2ca94d23c863f9bcb6a7a062be93bd8f59915c"
+    },
+    "_ART_SOURCES/stage1_motion_1009/returned/s1_live_turret.png": {
+      "bytes": 424903,
+      "sha256": "af809cb4cea9c7319326c3c9c32d289642632351ffa94ca1d7a492232c3c0127"
+    },
+    "_ART_SOURCES/stage1_motion_1009/returned/s1_buggy_idle.png": {
+      "bytes": 995591,
+      "sha256": "557f8eee0470eb4e202c8877828bddea902e174c20aff9eaa05974dd49d5b92c"
+    },
+    "_ART_SOURCES/stage1_motion_1009/returned/s1_buggy_fire.png": {
+      "bytes": 1034040,
+      "sha256": "e36ad177bc4673e9271e4c2ee838a86a78eb578aed91b994454de52545e4ec0f"
+    },
+    "_ART_SOURCES/stage1_motion_1009/returned/s1_wake.png": {
+      "bytes": 1099775,
+      "sha256": "cce46e043ce030064dce1dbc0f23467d14248520317d6955ed0e11e05bcd37a0"
+    },
+    "_ART_SOURCES/stage1_motion_1009/returned/s1_exhaust.png": {
+      "bytes": 483751,
+      "sha256": "e336ae8a9b0d8aea0b394655a1eec9740f4461e2f6ac696ec8d5a7fe64d0e9e2"
+    },
+    "_ART_SOURCES/stage1_motion_1009/returned/s1_muzzles.png": {
+      "bytes": 369856,
+      "sha256": "92bf1a45ff8436f4ff1fa3d299ea36d094e6e5bb85e47560d1a08507cf381200"
+    }
+  }
+}

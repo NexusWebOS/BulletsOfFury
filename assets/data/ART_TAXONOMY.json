@@ -1,4 +1,14 @@
 {
+  "bm9_": {
+    "role": "authored_boss_motion_and_charge_reels",
+    "sheet": null,
+    "note": "October 9: eight accepted built-in imagegen RGBA source reels, 64 native loose frames. Hammer intact two-arm/head death and directional counter; Dracodia attached-head torso acting and separate left/right physical claws; Warden forelimb slashes, rear-leg leap poses and gravel landing; gold/ice turret charges. Rejected duplicate-arm and forked-claw candidates are not shipped. Owner _BUILD_SOURCE/build_boss_motion_1009.py writes cells and assets/boss_motion_art_1009.js together. Exact prompts and measured source/pivot/tip registrations in _ART_SOURCES/boss_motion_1009/. Runtime boss_motion_1009.js preserves encounter HP, module owners and existing sound/warning art; queues stage dependencies before play. Direction and QA docs/feedback/BOSS_DIRECTION_1009.md. No shared atlas changes."
+  },
+  "s1m_": {
+    "role": "current_stage1_authored_vehicle_motion_and_muzzles",
+    "sheet": null,
+    "note": "October 9: seven accepted built-in imagegen RGBA source sheets, 48 loose moving-part cells. Current green modular tank hull/turret, current NEF missile buggy idle/fire, transparent boat wakes, aircraft tail exhaust, four kinetic and four rocket muzzle frames. Original Fury Fleet hulls, aiming/deployed/destroyed boat weapons, jet banks/rolls and ordnance are retained. Landing craft and static props keep their existing attack roles. Owner _BUILD_SOURCE/build_stage1_motion_1009.py writes cells and assets/stage1_motion_art_1009.js; exact edit prompts and measured shared pivots in _ART_SOURCES/stage1_motion_1009/live-prompts.json and live-manifest.json. Runtime stage1_motion_1009.js. Actual renderer exports 8-idle/4-fire composite reels for the ten current vehicles to returned_live; runtime parts remain independent. Older ZIP-design candidates are not wired. QA docs/STAGE1_MOTION_1009.md. No shared atlas changes."
+  },
   "ph8_": {
     "role": "authored_stage_player_hud",
     "sheet": null,
