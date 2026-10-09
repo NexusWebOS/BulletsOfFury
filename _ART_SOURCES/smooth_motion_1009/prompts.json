@@ -1,0 +1,144 @@
+{
+  "electric": {
+    "mode": "generation_with_style_reference",
+    "transparent_background": true,
+    "prompt": "Use case: stylized-concept. Production Bullets of Fury 16-bit Neo Geo arcade electrical explosion sprite strip. Input image is STYLE reference only: match its bright blue/chrome-white branching electrical blast and violet reactor accents. Generate ONE horizontal strip of EXACTLY EIGHT equally sized square cells, transparent background. An electric exploding shock ring seen face-on, with hollow center. Cell1 compact thin jagged blue ring; 2 expands with branching white electric filaments; 3 larger ring pulses white; 4 largest corona sheds sharp blue sparks; 5 ring cracks into eight outward fragments; 6 arcs and fragments scatter; 7 scattered blue ion flecks; 8 a few final crisp sparks. Continuous outward explosion, not eight identical circles. Same centered anchor, generous margin, no clipping, no scenery, no robot, no text, no labels, no black backdrop. Crisp pixel clusters with stepped highlights, dramatic authored firework energy, NO smooth vector outline, NO blurry painted haze. Entire reel per one image, layout 8 columns x1 row, transparent alpha.",
+    "tool": "image_gen.imagegen",
+    "returned_file": "returned/electric_rings.png",
+    "reference_files": [
+      "reference/style_hammer_burst.png"
+    ]
+  },
+  "s2replace": {
+    "mode": "edit",
+    "transparent_background": true,
+    "prompt": "Production game sprite animation, Bullets of Fury, excellent Neo Geo 16-bit pixel art. The two input images are design references: volcanic disc drone and eruption pod (second image). Generate two upgraded NEW small volcanic enemy designs, a stronger detailed charcoal-black plated radial heat drone with eight brass armored spokes, and a compact twin-sponson furnace sentry with a single orange reactor. Retain volcanic orange/brass/chrome materials, dark readable outlines, downward front-facing overhead camera, symmetric readable silhouettes, not a character face or demon. Layout EXACTLY TWO ROWS of EIGHT equal square cells each (16 cells total), row1 radial heat drone, row2 furnace sentry. Each row one seamless eight-frame idle loop: rigid chassis and central position identical every cell, only articulated vent shutters open and close, inner rotor blades turn, orange furnace fire flickers; no entire body spinning, no banking, no morphing or changing guns, no muzzle flashes. Cells1..8 progressively complete cycle, exact shared size and center for all poses, empty margins. Transparent background real alpha, no text, no labels, no scenery, no UI. Crisp stepped pixel clusters and chrome highlights, compact sprites suitable 70px gameplay, no blur, no smooth vector glow. The reactor/shutters animate smoothly, chassis does not wobble.",
+    "tool": "image_gen.imagegen",
+    "returned_file": "returned/stage2_replacements.png",
+    "reference_files": [
+      "reference/stage2_disc.png",
+      "reference/stage2_eye.png"
+    ]
+  },
+  "s3replace": {
+    "mode": "edit",
+    "transparent_background": true,
+    "prompt": "Production Neo Geo 16-bit Bullets of Fury game sprites. Input references show our current blue/chrome ice mine and ice interceptor. Replace these small units with detailed NEW arctic defense designs: ROW1 an angular ice-blue/chrome floating shard sentry, four compact jointed stabilizers and bright cyan recessed core, distinctive diamond armored silhouette. ROW2 a blue/chrome arrowhead twin-engine ice interceptor pointed SOUTH, swept armored wings and twin rear exhaust sockets at the TOP. Preserve stage arctic blues and whites, sharp black outline, solid mechanical proportions. One sprite sheet EXACTLY TWO ROWS with EIGHT square cells per row, 16 cells, equal cell spacing and generous transparent gutters. Eight-frame smooth idle/flight loops. ROW1 ONLY stabilizer joints articulate very slightly and inner core iris cycles; hull stays same shape, location, camera, size. ROW2 ONLY rear engine shutters/icy exhaust pulse subtly; entire hull locked in place, no rolling, no yaw, no resizing. Full loop cells1..8, unique in-betweens, not identical copies. Fixed top-down arcade camera, high quality crisp pixel clusters and chunky chrome highlights, no text, labels or scene. Real transparent alpha. No connected silhouettes between cells. No muzzle flash or projectiles. No external halo that hides the hull. Chassis does not wobble.",
+    "tool": "image_gen.imagegen",
+    "returned_file": "returned/stage3_replacements.png",
+    "reference_files": [
+      "reference/stage3_s3mine.png",
+      "reference/stage3_s3interceptor.png"
+    ]
+  },
+  "jets": {
+    "mode": "edit",
+    "transparent_background": true,
+    "prompt": "Identity-preserving sprite animation edit. Our Bullets of Fury existing assets are the edit targets, not inspiration for replacements. Input1 is black/chrome/red storm fighter, input2 black/orange volcanic jet. Output ONE sheet with TWO rows of EIGHT equal square cells, 16 cells. ROW1 exactly Input1 storm jet, ROW2 exactly Input2 volcanic jet, both pointed DOWN/SOUTH as shown. Preserve every rigid hull panel, wing outline, nose, cockpit, gun count, color and camera. Do not add any guns/limbs/spikes, do not rotate or yaw whole hull, no bank, no resizing. Animate ONLY the pair of orange rear engine rings at TOP of both jets with eight smoothly connected shutters and tiny short exhaust tongues emerging UP behind the tail. Frames1 and8 are compatible loop endpoints, intermediate shutters/flames gradually increase and relax. Hull parked at exact same shared pivot in every cell. Fixed overhead arcade camera; upgrade clarity of pixel clusters and chrome highlights to high quality Neo Geo 16-bit; no watercolor, blur or glow hiding parts. Large empty gutter between all sprites, no touching other cells, no text, no labels, no missiles or muzzle flashes. True transparent alpha background. Exact 2x8 grid; one full eight-frame loop for each referenced aircraft.",
+    "tool": "image_gen.imagegen",
+    "returned_file": "returned/jet_motion.png",
+    "reference_files": [
+      "reference/stage6_s6lancer.png",
+      "reference/stage2_skim.png"
+    ]
+  },
+  "ground": {
+    "mode": "edit",
+    "transparent_background": true,
+    "prompt": "Identity-preserving production sprite animation edit for Bullets of Fury. The two input images are EDIT TARGETS, current shipped actors, not general inspiration. Output EXACTLY TWO ROWS with EIGHT cells per row, 16 cells total, on genuinely transparent alpha. ROW1 exactly first reference actor. ROW2 exactly second reference actor. Preserve rigid hull, shape, palette, panel lines, gun count, overhead camera and facing direction. Preserve every unique identifying detail. NO new arms, no guns added, no whole hull rotation, banking, yaw or resizing, no floating drift, no scenery, text or labels, no muzzle flash or ordnance. Each row one eight-frame smoothly looping moving-part idle reel. All cells have the same shared body-center pivot, generous gutters, no clipped pixels or connected neighboring sprites. Frame1 neutral, 2-4 gradual movement, 5 peak, 6-8 gradual return. Crisp high quality Neo Geo 16-bit pixel clusters and chrome highlights; no blurry photoreal brushwork or halo. Chassis must remain rigid and fixed exactly in each cell. Only the specified moving parts change: ROW1 desert tank HULL ONLY: eight small tread shoe rotations, tiny gradual amber lamp pulse and radiator shutter breath; the round turret hole remains empty. NO turret or guns attached to first row. ROW2 current olive dual-antenna desert tractor: gently rolling tracks, tiny mechanical vibration of antenna tips, smoothly pulsing amber vents; two existing antennas and weapons retained, no additional weapons. Top-down both point SOUTH/down. IMPORTANT: Return EXACT eight columns, equal 8x2 grid with wide gutters. Identity and scale same in all eight cells.",
+    "tool": "image_gen.imagegen",
+    "returned_file": "returned/ground_motion.png",
+    "reference_files": [
+      "reference/native_desert_hull.png",
+      "reference/stage4_s4tractor.png"
+    ]
+  },
+  "orbital": {
+    "mode": "edit",
+    "transparent_background": true,
+    "prompt": "Identity-preserving production sprite animation edit for Bullets of Fury. The two input images are EDIT TARGETS, current shipped actors, not general inspiration. Output EXACTLY TWO ROWS with EIGHT cells per row, 16 cells total, on genuinely transparent alpha. ROW1 exactly first reference actor. ROW2 exactly second reference actor. Preserve rigid hull, shape, palette, panel lines, gun count, overhead camera and facing direction. Preserve every unique identifying detail. NO new arms, no guns added, no whole hull rotation, banking, yaw or resizing, no floating drift, no scenery, text or labels, no muzzle flash or ordnance. Each row one eight-frame smoothly looping moving-part idle reel. All cells have the same shared body-center pivot, generous gutters, no clipped pixels or connected neighboring sprites. Frame1 neutral, 2-4 gradual movement, 5 peak, 6-8 gradual return. Crisp high quality Neo Geo 16-bit pixel clusters and chrome highlights; no blurry photoreal brushwork or halo. Chassis must remain rigid and fixed exactly in each cell. Only the specified moving parts change: ROW1 purple-metal orbital frigate with red reactor, four swept outer prongs and two downward guns. Only reactor iris diaphragms breathe subtly, vents pulse red, side prong tip hinges flex 1-2 pixels, two gun barrel recoil mechanisms idle fixed. ROW2 long purple-metal orbital rammer with pointed nose DOWN, red reactor and two side spherical nacelles. Only reactor iris breathes, side-nacelle shutters cycle, tiny tail thruster flicker upward. Eight evenly spaced columns per row with wide gutters, precisely fixed fuselage scale/pivot, no frame changing entire silhouette or losing prongs. Do not brighten panels so much they lose original deep purple palette.",
+    "tool": "image_gen.imagegen",
+    "returned_file": "returned/orbital_motion.png",
+    "reference_files": [
+      "reference/stage5_s5frigate.png",
+      "reference/stage5_s5rammer.png"
+    ]
+  },
+  "toxic": {
+    "mode": "edit",
+    "transparent_background": true,
+    "prompt": "Identity-preserving production sprite animation edit for Bullets of Fury. The two input images are EDIT TARGETS, current shipped actors, not general inspiration. Output EXACTLY TWO ROWS with EIGHT cells per row, 16 cells total, on genuinely transparent alpha. ROW1 exactly first reference actor. ROW2 exactly second reference actor. Preserve rigid hull, shape, palette, panel lines, gun count, overhead camera and facing direction. Preserve every unique identifying detail. NO new arms, no guns added, no whole hull rotation, banking, yaw or resizing, no floating drift, no scenery, text or labels, no muzzle flash or ordnance. Each row one eight-frame smoothly looping moving-part idle reel. All cells have the same shared body-center pivot, generous gutters, no clipped pixels or connected neighboring sprites. Frame1 neutral, 2-4 gradual movement, 5 peak, 6-8 gradual return. Crisp high quality Neo Geo 16-bit pixel clusters and chrome highlights; no blurry photoreal brushwork or halo. Chassis must remain rigid and fixed exactly in each cell. Only the specified moving parts change: ROW1 toxic pipe crawler: segmented olive/brass long body and purple flanges, facing down. The body stays fixed; eight smooth gradual gait steps move ONLY its existing three left/right pairs of small feet and tiny underside pump hose, green vent pulses dim-bright-dim. ROW2 toxic piston walker: four existing articulated metal legs, round green grated belly and olive/purple armor. ONLY four foot tips and knee pistons walk a gentle alternate gait while the round body stays fixed in the same position; green grille shutters subtly breathe. NO new legs or amputated feet. No green blobs/projectiles. Eight columns, two rows, leave at least 15% transparent gutter to each side of every sprite and 12% above/below, no overlapping adjacent cells.",
+    "tool": "image_gen.imagegen",
+    "returned_file": "returned/toxic_motion.png",
+    "reference_files": [
+      "reference/stage7_s7pipe.png",
+      "reference/stage7_s7walker.png"
+    ]
+  },
+  "alien": {
+    "mode": "edit",
+    "transparent_background": true,
+    "prompt": "Identity-preserving production sprite animation edit for Bullets of Fury. The two input images are EDIT TARGETS, current shipped actors, not general inspiration. Output EXACTLY TWO ROWS with EIGHT cells per row, 16 cells total, on genuinely transparent alpha. ROW1 exactly first reference actor. ROW2 exactly second reference actor. Preserve rigid hull, shape, palette, panel lines, gun count, overhead camera and facing direction. Preserve every unique identifying detail. NO new arms, no guns added, no whole hull rotation, banking, yaw or resizing, no floating drift, no scenery, text or labels, no muzzle flash or ordnance. Each row one eight-frame smoothly looping moving-part idle reel. All cells have the same shared body-center pivot, generous gutters, no clipped pixels or connected neighboring sprites. Frame1 neutral, 2-4 gradual movement, 5 peak, 6-8 gradual return. Crisp high quality Neo Geo 16-bit pixel clusters and chrome highlights; no blurry photoreal brushwork or halo. Chassis must remain rigid and fixed exactly in each cell. Only the specified moving parts change: ROW1 black/chrome alien needle fighter: two purple eyes remain purple, elongated triangular nose DOWN and all sweeping wing prongs retained, animate only tiny purple iris core shutters and two small rear fin hinges by 1-2px, no new engine jets. ROW2 black/chrome blue-lit tentacle alien stalker: rigid horned manta body and central blue eye fixed; four EXISTING tentacles undulate smoothly in 8 phases with a coherent traveling wave from their tips, central iris pulses gently. Keep blue separate from purple, preserve original count of horns and tentacles. No beam, plasma ball, projectile, smoke or label. Very wide transparent gutters in exact 8-column TWO-row sheet; each full sprite comfortably smaller than its cell.",
+    "tool": "image_gen.imagegen",
+    "returned_file": "returned/alien_motion.png",
+    "reference_files": [
+      "reference/stage8_s8interceptor.png",
+      "reference/stage8_s8hunter.png"
+    ]
+  },
+  "pilots1": {
+    "mode": "edit",
+    "transparent_background": true,
+    "prompt": "Identity-preserving production sprite animation edit for Bullets of Fury. The two input images are EDIT TARGETS, current shipped actors, not general inspiration. Output EXACTLY TWO ROWS with EIGHT cells per row, 16 cells total, on genuinely transparent alpha. ROW1 exactly first reference actor. ROW2 exactly second reference actor. Preserve rigid hull, shape, palette, panel lines, gun count, overhead camera and facing direction. Preserve every unique identifying detail. NO new arms, no guns added, no whole hull rotation, banking, yaw or resizing, no floating drift, no scenery, text or labels, no muzzle flash or ordnance. Each row one eight-frame smoothly looping moving-part idle reel. All cells have the same shared body-center pivot, generous gutters, no clipped pixels or connected neighboring sprites. Frame1 neutral, 2-4 gradual movement, 5 peak, 6-8 gradual return. Crisp high quality Neo Geo 16-bit pixel clusters and chrome highlights; no blurry photoreal brushwork or halo. Chassis must remain rigid and fixed exactly in each cell. Only the specified moving parts change: This time the targets are the PLAYER aircraft in steady northbound flight. ROW1 Axel exactly current blue classic swept jet, single rear engine. ROW2 Cole exactly current green and black narrow fighter, two rear engines. Nose points NORTH/UP every frame. Only rear turbine nozzle shutters breathe 1-2 pixels and engine flames gently flicker in EIGHT smooth phases while the rigid hull, nose, cockpit, wing tips and weapons never move, bank or resize. Match their blue vs green palettes exactly. Fixed body pivot and wide transparent gutters. Keep the same tail engine count and short plume locations of the reference; no new weapons, no muzzle flashes.",
+    "tool": "image_gen.imagegen",
+    "returned_file": "returned/pilots1.png",
+    "reference_files": [
+      "reference/pilot_axel.png",
+      "reference/pilot_cole.png"
+    ]
+  },
+  "pilots2": {
+    "mode": "edit",
+    "transparent_background": true,
+    "prompt": "Identity-preserving production sprite animation edit for Bullets of Fury. The two input images are EDIT TARGETS, current shipped actors, not general inspiration. Output EXACTLY TWO ROWS with EIGHT cells per row, 16 cells total, on genuinely transparent alpha. ROW1 exactly first reference actor. ROW2 exactly second reference actor. Preserve rigid hull, shape, palette, panel lines, gun count, overhead camera and facing direction. Preserve every unique identifying detail. NO new arms, no guns added, no whole hull rotation, banking, yaw or resizing, no floating drift, no scenery, text or labels, no muzzle flash or ordnance. Each row one eight-frame smoothly looping moving-part idle reel. All cells have the same shared body-center pivot, generous gutters, no clipped pixels or connected neighboring sprites. Frame1 neutral, 2-4 gradual movement, 5 peak, 6-8 gradual return. Crisp high quality Neo Geo 16-bit pixel clusters and chrome highlights; no blurry photoreal brushwork or halo. Chassis must remain rigid and fixed exactly in each cell. Only the specified moving parts change: Player northbound planes, not enemies. ROW1 Decker exactly current matte black/yellow swept fighter with single center engine. ROW2 Falva exactly current white/hot-pink swept fighter with black purple canopy and single center engine. Nose UP in all frames. Only tiny rear nozzle vanes and short original flame flutter in eight gradual loop steps; tiny existing ailerons deflect a pixel, returning by frame8. Hull scale/pivot/cockpit/wing tips all fixed. Original yellow/black vs white/pink colors unchanged. No whole-body bank, bounce or new attachment. Exact eight columns TWO rows with generous transparent gutters, bodies occupy at most 80% of cell width.",
+    "tool": "image_gen.imagegen",
+    "returned_file": "returned/pilots2.png",
+    "reference_files": [
+      "reference/pilot_decker.png",
+      "reference/pilot_falva.png"
+    ]
+  },
+  "pilots3": {
+    "mode": "edit",
+    "transparent_background": true,
+    "prompt": "Identity-preserving production sprite animation edit for Bullets of Fury. The two input images are EDIT TARGETS, current shipped actors, not general inspiration. Output EXACTLY TWO ROWS with EIGHT cells per row, 16 cells total, on genuinely transparent alpha. ROW1 exactly first reference actor. ROW2 exactly second reference actor. Preserve rigid hull, shape, palette, panel lines, gun count, overhead camera and facing direction. Preserve every unique identifying detail. NO new arms, no guns added, no whole hull rotation, banking, yaw or resizing, no floating drift, no scenery, text or labels, no muzzle flash or ordnance. Each row one eight-frame smoothly looping moving-part idle reel. All cells have the same shared body-center pivot, generous gutters, no clipped pixels or connected neighboring sprites. Frame1 neutral, 2-4 gradual movement, 5 peak, 6-8 gradual return. Crisp high quality Neo Geo 16-bit pixel clusters and chrome highlights; no blurry photoreal brushwork or halo. Chassis must remain rigid and fixed exactly in each cell. Only the specified moving parts change: Player northbound aircraft. ROW1 Freezer exactly current white and purple curved-wing space fighter with amber side mechanisms and single center rear engine. ROW2 Juggernaut exactly current heavy brass/bronze swept bomber with broad shoulders, orange cockpit and TWO rear engines. Noses UP and rigid, no banking, no bounce. Only nozzle breathing, short rear exhaust 8 smooth flutter phases and existing tiny rear control-surface movements. Keep all body landmarks and color panels fixed. Do NOT copy any stray magenta, red or cyan pixels OUTSIDE the opaque source hull: those are transparency-key remnants, not glowing outlines. No outline glow or bright red rim. Native dark outline, genuinely clean transparent alpha, extra-wide gutters between 8 columns in TWO rows.",
+    "tool": "image_gen.imagegen",
+    "returned_file": "returned/pilots3.png",
+    "reference_files": [
+      "reference/pilot_freezer.png",
+      "reference/pilot_juggernaut.png"
+    ]
+  },
+  "pilots4": {
+    "mode": "edit",
+    "transparent_background": true,
+    "prompt": "Identity-preserving production sprite animation edit for Bullets of Fury. The two input images are EDIT TARGETS, current shipped actors, not general inspiration. Output EXACTLY TWO ROWS with EIGHT cells per row, 16 cells total, on genuinely transparent alpha. ROW1 exactly first reference actor. ROW2 exactly second reference actor. Preserve rigid hull, shape, palette, panel lines, gun count, overhead camera and facing direction. Preserve every unique identifying detail. NO new arms, no guns added, no whole hull rotation, banking, yaw or resizing, no floating drift, no scenery, text or labels, no muzzle flash or ordnance. Each row one eight-frame smoothly looping moving-part idle reel. All cells have the same shared body-center pivot, generous gutters, no clipped pixels or connected neighboring sprites. Frame1 neutral, 2-4 gradual movement, 5 peak, 6-8 gradual return. Crisp high quality Neo Geo 16-bit pixel clusters and chrome highlights; no blurry photoreal brushwork or halo. Chassis must remain rigid and fixed exactly in each cell. Only the specified moving parts change: Player northbound aircraft. ROW1 Lizzie exactly current gold swept jet with white central canopy and two rear engine pods. ROW2 Maverick exactly current dark chrome/teal curved-wing craft with large cyan canopy and two rear engines. Nose NORTH/UP, hull/canopy/wing tips fixed every cell. Only gently breathing rear nozzle vanes and eight short exhaust flutter phases, tiny existing tail control surfaces deflect a pixel and return. Keep gold vs teal identity. No whole-body rotation or wobble, no new weapons. Clean alpha, exclude stray color-key rim pixels from the refs. Exact two rows EIGHT columns, generous blank gutters with no touching sprites.",
+    "tool": "image_gen.imagegen",
+    "returned_file": "returned/pilots4.png",
+    "reference_files": [
+      "reference/pilot_lizzie.png",
+      "reference/pilot_maverick.png"
+    ]
+  },
+  "pilots5": {
+    "mode": "edit",
+    "transparent_background": true,
+    "prompt": "Identity-preserving production sprite animation edit for Bullets of Fury. The two input images are EDIT TARGETS, current shipped actors, not general inspiration. Output EXACTLY TWO ROWS with EIGHT cells per row, 16 cells total, on genuinely transparent alpha. ROW1 exactly first reference actor. ROW2 exactly second reference actor. Preserve rigid hull, shape, palette, panel lines, gun count, overhead camera and facing direction. Preserve every unique identifying detail. NO new arms, no guns added, no whole hull rotation, banking, yaw or resizing, no floating drift, no scenery, text or labels, no muzzle flash or ordnance. Each row one eight-frame smoothly looping moving-part idle reel. All cells have the same shared body-center pivot, generous gutters, no clipped pixels or connected neighboring sprites. Frame1 neutral, 2-4 gradual movement, 5 peak, 6-8 gradual return. Crisp high quality Neo Geo 16-bit pixel clusters and chrome highlights; no blurry photoreal brushwork or halo. Chassis must remain rigid and fixed exactly in each cell. Only the specified moving parts change: ROW1 current Yuri northbound fighter exactly: red and matte black swept twin-engine plane, red canopy, nose UP. ROW2 CURRENT Fury spaceship exactly: white/chrome and cobalt/teal twin-engine craft with two forward guns and cyan central canopy, nose UP. Do not use the retired spaceship design or redesign either actor. ONLY nozzle shutters and short tail flames breathe in eight smooth phases; subtle existing control-surface hinge movement, no body bank/bounce, rigid silhouette and exact fixed shared pivot. Keep red/black vs white/blue palettes and all actual weapons/mounts. Genuinely clean alpha, no fringe or colored edge halo. Exact eight columns TWO rows, generous transparent padding.",
+    "tool": "image_gen.imagegen",
+    "returned_file": "returned/pilots5.png",
+    "reference_files": [
+      "reference/pilot_yuri.png",
+      "reference/furyship.png"
+    ]
+  }
+}

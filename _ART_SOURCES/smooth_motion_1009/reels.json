@@ -1,0 +1,292 @@
+{
+  "heat_disc": {
+    "file": "stage2_replacements.png",
+    "count": 8,
+    "cols": 8,
+    "rows": 2,
+    "start": 0
+  },
+  "furnace_pod": {
+    "file": "stage2_replacements.png",
+    "count": 8,
+    "cols": 8,
+    "rows": 2,
+    "start": 8
+  },
+  "shard_sentry": {
+    "file": "stage3_replacements.png",
+    "count": 8,
+    "cols": 8,
+    "rows": 2,
+    "start": 0
+  },
+  "ice_patrol": {
+    "file": "stage3_replacements.png",
+    "count": 8,
+    "cols": 8,
+    "rows": 2,
+    "start": 8
+  },
+  "storm_jet": {
+    "file": "jet_motion.png",
+    "count": 8,
+    "cols": 8,
+    "rows": 2,
+    "start": 0,
+    "align": true,
+    "actors": [
+      [
+        6,
+        "s6lancer"
+      ],
+      [
+        6,
+        "s6cyclone"
+      ],
+      [
+        6,
+        "s6skimmer"
+      ],
+      [
+        6,
+        "s6dart"
+      ],
+      [
+        6,
+        "s6thunder"
+      ]
+    ]
+  },
+  "thermal_jet": {
+    "file": "jet_motion.png",
+    "count": 8,
+    "cols": 8,
+    "rows": 2,
+    "start": 8,
+    "align": true,
+    "actors": [
+      [
+        2,
+        "skim"
+      ]
+    ]
+  },
+  "desert_hull": {
+    "file": "ground_motion.png",
+    "count": 8,
+    "cols": 8,
+    "rows": 2,
+    "start": 0,
+    "align": true,
+    "targetRef": "native_desert_hull.png"
+  },
+  "desert_tractor": {
+    "file": "ground_motion.png",
+    "count": 8,
+    "cols": 8,
+    "rows": 2,
+    "start": 8,
+    "align": true,
+    "actors": [
+      [
+        4,
+        "s4tractor"
+      ]
+    ]
+  },
+  "orbital_frigate": {
+    "file": "orbital_motion.png",
+    "count": 8,
+    "cols": 8,
+    "rows": 2,
+    "start": 0,
+    "align": true,
+    "actors": [
+      [
+        5,
+        "s5frigate"
+      ]
+    ]
+  },
+  "orbital_rammer": {
+    "file": "orbital_motion.png",
+    "count": 8,
+    "cols": 8,
+    "rows": 2,
+    "start": 8,
+    "align": true,
+    "actors": [
+      [
+        5,
+        "s5rammer"
+      ]
+    ]
+  },
+  "toxic_pipe": {
+    "file": "toxic_motion.png",
+    "count": 8,
+    "cols": 8,
+    "rows": 2,
+    "start": 0,
+    "align": true,
+    "actors": [
+      [
+        7,
+        "s7pipe"
+      ]
+    ]
+  },
+  "toxic_walker": {
+    "file": "toxic_motion.png",
+    "count": 8,
+    "cols": 8,
+    "rows": 2,
+    "start": 8,
+    "align": true,
+    "actors": [
+      [
+        7,
+        "s7walker"
+      ]
+    ]
+  },
+  "alien_fighter": {
+    "file": "alien_motion.png",
+    "count": 8,
+    "cols": 8,
+    "rows": 2,
+    "start": 0,
+    "align": true,
+    "actors": [
+      [
+        8,
+        "s8interceptor"
+      ],
+      [
+        8,
+        "s8parasite"
+      ],
+      [
+        8,
+        "s8skull"
+      ],
+      [
+        8,
+        "s8symbiote"
+      ],
+      [
+        8,
+        "s8spread"
+      ],
+      [
+        8,
+        "s8crescent"
+      ]
+    ]
+  },
+  "alien_stalker": {
+    "file": "alien_motion.png",
+    "count": 8,
+    "cols": 8,
+    "rows": 2,
+    "start": 8,
+    "align": true,
+    "actors": [
+      [
+        8,
+        "s8hunter"
+      ]
+    ]
+  },
+  "pilot_axel": {
+    "file": "pilots1.png",
+    "count": 8,
+    "cols": 8,
+    "rows": 2,
+    "start": 0,
+    "align": true,
+    "targetRef": "native_pilot_axel.png"
+  },
+  "pilot_cole": {
+    "file": "pilots1.png",
+    "count": 8,
+    "cols": 8,
+    "rows": 2,
+    "start": 8,
+    "align": true,
+    "targetRef": "native_pilot_cole.png"
+  },
+  "pilot_decker": {
+    "file": "pilots2.png",
+    "count": 8,
+    "cols": 8,
+    "rows": 2,
+    "start": 0,
+    "align": true,
+    "targetRef": "native_pilot_decker.png"
+  },
+  "pilot_falva": {
+    "file": "pilots2.png",
+    "count": 8,
+    "cols": 8,
+    "rows": 2,
+    "start": 8,
+    "align": true,
+    "targetRef": "native_pilot_falva.png"
+  },
+  "pilot_freezer": {
+    "file": "pilots3.png",
+    "count": 8,
+    "cols": 8,
+    "rows": 2,
+    "start": 0,
+    "align": true,
+    "targetRef": "native_pilot_freezer.png"
+  },
+  "pilot_juggernaut": {
+    "file": "pilots3.png",
+    "count": 8,
+    "cols": 8,
+    "rows": 2,
+    "start": 8,
+    "align": true,
+    "targetRef": "native_pilot_juggernaut.png"
+  },
+  "pilot_lizzie": {
+    "file": "pilots4.png",
+    "count": 8,
+    "cols": 8,
+    "rows": 2,
+    "start": 0,
+    "align": true,
+    "targetRef": "native_pilot_lizzie.png"
+  },
+  "pilot_maverick": {
+    "file": "pilots4.png",
+    "count": 8,
+    "cols": 8,
+    "rows": 2,
+    "start": 8,
+    "align": true,
+    "targetRef": "native_pilot_maverick.png"
+  },
+  "pilot_yuri": {
+    "file": "pilots5.png",
+    "count": 8,
+    "cols": 8,
+    "rows": 2,
+    "start": 0,
+    "align": true,
+    "targetRef": "native_pilot_yuri.png"
+  },
+  "furyship": {
+    "file": "pilots5.png",
+    "count": 8,
+    "cols": 8,
+    "rows": 2,
+    "start": 8,
+    "align": true,
+    "targetRef": "native_furyship.png",
+    "paletteMask": true
+  }
+}

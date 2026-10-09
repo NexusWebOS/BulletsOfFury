@@ -55,7 +55,7 @@ try:
   check('Every affected boss stage queues its new frames before play',p.evaluate('()=>[3,4,5,7,8].every(n=>{stageLoadBegin(n,[]);return bm9StageNames(n).flatMap(name=>BM9_ART[name].map(a=>a.key)).every(k=>_stageLoads[n].keys.includes(k));})'))
   setup({'stage':5,'kind':'chromehammer'})
   p.evaluate('()=>{B.dead=true;B.dying=0;h3EndingStart(B);}')
-  clip('hammer-death',8.1,'h3EndingTick(1/60);')
+  clip('hammer-death',18.0,'h3EndingTick(1/60);')
   check('Hammer acts and ruptures before cutaways',p.evaluate('()=>B._hammer.bm9Rupture&&H3.ending?.phase==="overhead"'),p.evaluate('BM9.events'))
   for f,t in enumerate([.2,.8,1.4,1.9,2.5,3.2,4.2,5.0]):
    p.evaluate('(t)=>{B.dying=t;H3.ending.engineDeath=t;H3.ending.phase="engineDeath";whiteBlast=0;}',t);shot('hammer-death-'+str(f))

@@ -1,0 +1,4614 @@
+{
+  "electric_ring": [
+    {
+      "key": "sm10_electric_ring_0",
+      "path": "assets/game/shared/combat/smooth_motion_1009/electric_ring_0.png",
+      "w": 416,
+      "h": 480,
+      "pivot": [
+        208,
+        240
+      ],
+      "rect": [
+        0,
+        140,
+        238,
+        620
+      ],
+      "sourcePivot": [
+        127,
+        391.5
+      ]
+    },
+    {
+      "key": "sm10_electric_ring_1",
+      "path": "assets/game/shared/combat/smooth_motion_1009/electric_ring_1.png",
+      "w": 416,
+      "h": 480,
+      "pivot": [
+        208,
+        240
+      ],
+      "rect": [
+        238,
+        140,
+        501,
+        620
+      ],
+      "sourcePivot": [
+        376,
+        384
+      ]
+    },
+    {
+      "key": "sm10_electric_ring_2",
+      "path": "assets/game/shared/combat/smooth_motion_1009/electric_ring_2.png",
+      "w": 416,
+      "h": 480,
+      "pivot": [
+        208,
+        240
+      ],
+      "rect": [
+        501,
+        140,
+        766,
+        620
+      ],
+      "sourcePivot": [
+        633.5,
+        384
+      ]
+    },
+    {
+      "key": "sm10_electric_ring_3",
+      "path": "assets/game/shared/combat/smooth_motion_1009/electric_ring_3.png",
+      "w": 416,
+      "h": 480,
+      "pivot": [
+        208,
+        240
+      ],
+      "rect": [
+        766,
+        140,
+        1103,
+        620
+      ],
+      "sourcePivot": [
+        934.5,
+        379.5
+      ]
+    },
+    {
+      "key": "sm10_electric_ring_4",
+      "path": "assets/game/shared/combat/smooth_motion_1009/electric_ring_4.png",
+      "w": 416,
+      "h": 480,
+      "pivot": [
+        208,
+        240
+      ],
+      "rect": [
+        1103,
+        140,
+        1400,
+        620
+      ],
+      "sourcePivot": [
+        1251.5,
+        388
+      ]
+    },
+    {
+      "key": "sm10_electric_ring_5",
+      "path": "assets/game/shared/combat/smooth_motion_1009/electric_ring_5.png",
+      "w": 416,
+      "h": 480,
+      "pivot": [
+        208,
+        240
+      ],
+      "rect": [
+        1400,
+        140,
+        1666,
+        620
+      ],
+      "sourcePivot": [
+        1533,
+        388.5
+      ]
+    },
+    {
+      "key": "sm10_electric_ring_6",
+      "path": "assets/game/shared/combat/smooth_motion_1009/electric_ring_6.png",
+      "w": 416,
+      "h": 480,
+      "pivot": [
+        208,
+        240
+      ],
+      "rect": [
+        1666,
+        140,
+        1939,
+        620
+      ],
+      "sourcePivot": [
+        1797.5,
+        386.5
+      ]
+    },
+    {
+      "key": "sm10_electric_ring_7",
+      "path": "assets/game/shared/combat/smooth_motion_1009/electric_ring_7.png",
+      "w": 416,
+      "h": 480,
+      "pivot": [
+        208,
+        240
+      ],
+      "rect": [
+        1939,
+        140,
+        2172,
+        620
+      ],
+      "sourcePivot": [
+        2055,
+        384
+      ]
+    }
+  ],
+  "heat_disc": [
+    {
+      "key": "sm10_heat_disc_0",
+      "path": "assets/game/shared/combat/smooth_motion_1009/heat_disc_0.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256.0,
+        333.5
+      ],
+      "rect": [
+        0,
+        0,
+        222,
+        444
+      ],
+      "inkW": 222,
+      "inkH": 221,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_heat_disc_1",
+      "path": "assets/game/shared/combat/smooth_motion_1009/heat_disc_1.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256.0,
+        333.5
+      ],
+      "rect": [
+        222,
+        0,
+        444,
+        444
+      ],
+      "inkW": 222,
+      "inkH": 221,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_heat_disc_2",
+      "path": "assets/game/shared/combat/smooth_motion_1009/heat_disc_2.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256.0,
+        333.5
+      ],
+      "rect": [
+        444,
+        0,
+        665,
+        444
+      ],
+      "inkW": 222,
+      "inkH": 221,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_heat_disc_3",
+      "path": "assets/game/shared/combat/smooth_motion_1009/heat_disc_3.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256.0,
+        333.5
+      ],
+      "rect": [
+        665,
+        0,
+        887,
+        444
+      ],
+      "inkW": 222,
+      "inkH": 221,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_heat_disc_4",
+      "path": "assets/game/shared/combat/smooth_motion_1009/heat_disc_4.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256.0,
+        333.5
+      ],
+      "rect": [
+        887,
+        0,
+        1109,
+        444
+      ],
+      "inkW": 222,
+      "inkH": 221,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_heat_disc_5",
+      "path": "assets/game/shared/combat/smooth_motion_1009/heat_disc_5.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256.0,
+        333.5
+      ],
+      "rect": [
+        1109,
+        0,
+        1330,
+        444
+      ],
+      "inkW": 222,
+      "inkH": 221,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_heat_disc_6",
+      "path": "assets/game/shared/combat/smooth_motion_1009/heat_disc_6.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256.0,
+        333.5
+      ],
+      "rect": [
+        1330,
+        0,
+        1552,
+        444
+      ],
+      "inkW": 222,
+      "inkH": 221,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_heat_disc_7",
+      "path": "assets/game/shared/combat/smooth_motion_1009/heat_disc_7.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256.0,
+        333.5
+      ],
+      "rect": [
+        1552,
+        0,
+        1774,
+        444
+      ],
+      "inkW": 222,
+      "inkH": 221,
+      "registration": [
+        0,
+        0
+      ]
+    }
+  ],
+  "furnace_pod": [
+    {
+      "key": "sm10_furnace_pod_0",
+      "path": "assets/game/shared/combat/smooth_motion_1009/furnace_pod_0.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        255.5,
+        192.5
+      ],
+      "rect": [
+        0,
+        444,
+        222,
+        887
+      ],
+      "inkW": 217,
+      "inkH": 205,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_furnace_pod_1",
+      "path": "assets/game/shared/combat/smooth_motion_1009/furnace_pod_1.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        255.5,
+        192.5
+      ],
+      "rect": [
+        222,
+        444,
+        444,
+        887
+      ],
+      "inkW": 217,
+      "inkH": 205,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_furnace_pod_2",
+      "path": "assets/game/shared/combat/smooth_motion_1009/furnace_pod_2.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        255.5,
+        192.5
+      ],
+      "rect": [
+        444,
+        444,
+        665,
+        887
+      ],
+      "inkW": 217,
+      "inkH": 205,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_furnace_pod_3",
+      "path": "assets/game/shared/combat/smooth_motion_1009/furnace_pod_3.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        255.5,
+        192.5
+      ],
+      "rect": [
+        665,
+        444,
+        887,
+        887
+      ],
+      "inkW": 217,
+      "inkH": 205,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_furnace_pod_4",
+      "path": "assets/game/shared/combat/smooth_motion_1009/furnace_pod_4.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        255.5,
+        192.5
+      ],
+      "rect": [
+        887,
+        444,
+        1109,
+        887
+      ],
+      "inkW": 217,
+      "inkH": 205,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_furnace_pod_5",
+      "path": "assets/game/shared/combat/smooth_motion_1009/furnace_pod_5.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        255.5,
+        192.5
+      ],
+      "rect": [
+        1109,
+        444,
+        1330,
+        887
+      ],
+      "inkW": 217,
+      "inkH": 205,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_furnace_pod_6",
+      "path": "assets/game/shared/combat/smooth_motion_1009/furnace_pod_6.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        255.5,
+        192.5
+      ],
+      "rect": [
+        1330,
+        444,
+        1552,
+        887
+      ],
+      "inkW": 217,
+      "inkH": 205,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_furnace_pod_7",
+      "path": "assets/game/shared/combat/smooth_motion_1009/furnace_pod_7.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        255.5,
+        192.5
+      ],
+      "rect": [
+        1552,
+        444,
+        1774,
+        887
+      ],
+      "inkW": 217,
+      "inkH": 205,
+      "registration": [
+        0,
+        0
+      ]
+    }
+  ],
+  "shard_sentry": [
+    {
+      "key": "sm10_shard_sentry_0",
+      "path": "assets/game/shared/combat/smooth_motion_1009/shard_sentry_0.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256.0,
+        311.5
+      ],
+      "rect": [
+        0,
+        0,
+        222,
+        444
+      ],
+      "inkW": 192,
+      "inkH": 211,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_shard_sentry_1",
+      "path": "assets/game/shared/combat/smooth_motion_1009/shard_sentry_1.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256.0,
+        311.5
+      ],
+      "rect": [
+        222,
+        0,
+        444,
+        444
+      ],
+      "inkW": 192,
+      "inkH": 211,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_shard_sentry_2",
+      "path": "assets/game/shared/combat/smooth_motion_1009/shard_sentry_2.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256.0,
+        311.5
+      ],
+      "rect": [
+        444,
+        0,
+        665,
+        444
+      ],
+      "inkW": 192,
+      "inkH": 211,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_shard_sentry_3",
+      "path": "assets/game/shared/combat/smooth_motion_1009/shard_sentry_3.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256.0,
+        311.5
+      ],
+      "rect": [
+        665,
+        0,
+        887,
+        444
+      ],
+      "inkW": 192,
+      "inkH": 211,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_shard_sentry_4",
+      "path": "assets/game/shared/combat/smooth_motion_1009/shard_sentry_4.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256.0,
+        311.5
+      ],
+      "rect": [
+        887,
+        0,
+        1109,
+        444
+      ],
+      "inkW": 192,
+      "inkH": 211,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_shard_sentry_5",
+      "path": "assets/game/shared/combat/smooth_motion_1009/shard_sentry_5.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256.0,
+        311.5
+      ],
+      "rect": [
+        1109,
+        0,
+        1330,
+        444
+      ],
+      "inkW": 192,
+      "inkH": 211,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_shard_sentry_6",
+      "path": "assets/game/shared/combat/smooth_motion_1009/shard_sentry_6.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256.0,
+        311.5
+      ],
+      "rect": [
+        1330,
+        0,
+        1552,
+        444
+      ],
+      "inkW": 192,
+      "inkH": 211,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_shard_sentry_7",
+      "path": "assets/game/shared/combat/smooth_motion_1009/shard_sentry_7.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256.0,
+        311.5
+      ],
+      "rect": [
+        1552,
+        0,
+        1774,
+        444
+      ],
+      "inkW": 192,
+      "inkH": 211,
+      "registration": [
+        0,
+        0
+      ]
+    }
+  ],
+  "ice_patrol": [
+    {
+      "key": "sm10_ice_patrol_0",
+      "path": "assets/game/shared/combat/smooth_motion_1009/ice_patrol_0.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256.0,
+        232.5
+      ],
+      "rect": [
+        0,
+        444,
+        222,
+        887
+      ],
+      "inkW": 204,
+      "inkH": 251,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_ice_patrol_1",
+      "path": "assets/game/shared/combat/smooth_motion_1009/ice_patrol_1.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256.0,
+        232.5
+      ],
+      "rect": [
+        222,
+        444,
+        444,
+        887
+      ],
+      "inkW": 204,
+      "inkH": 251,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_ice_patrol_2",
+      "path": "assets/game/shared/combat/smooth_motion_1009/ice_patrol_2.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256.0,
+        232.5
+      ],
+      "rect": [
+        444,
+        444,
+        665,
+        887
+      ],
+      "inkW": 204,
+      "inkH": 251,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_ice_patrol_3",
+      "path": "assets/game/shared/combat/smooth_motion_1009/ice_patrol_3.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256.0,
+        232.5
+      ],
+      "rect": [
+        665,
+        444,
+        887,
+        887
+      ],
+      "inkW": 204,
+      "inkH": 251,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_ice_patrol_4",
+      "path": "assets/game/shared/combat/smooth_motion_1009/ice_patrol_4.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256.0,
+        232.5
+      ],
+      "rect": [
+        887,
+        444,
+        1109,
+        887
+      ],
+      "inkW": 204,
+      "inkH": 251,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_ice_patrol_5",
+      "path": "assets/game/shared/combat/smooth_motion_1009/ice_patrol_5.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256.0,
+        232.5
+      ],
+      "rect": [
+        1109,
+        444,
+        1330,
+        887
+      ],
+      "inkW": 204,
+      "inkH": 251,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_ice_patrol_6",
+      "path": "assets/game/shared/combat/smooth_motion_1009/ice_patrol_6.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256.0,
+        232.5
+      ],
+      "rect": [
+        1330,
+        444,
+        1552,
+        887
+      ],
+      "inkW": 204,
+      "inkH": 251,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_ice_patrol_7",
+      "path": "assets/game/shared/combat/smooth_motion_1009/ice_patrol_7.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256.0,
+        232.5
+      ],
+      "rect": [
+        1552,
+        444,
+        1774,
+        887
+      ],
+      "inkW": 204,
+      "inkH": 251,
+      "registration": [
+        0,
+        0
+      ]
+    }
+  ],
+  "storm_jet": [
+    {
+      "key": "sm10_storm_jet_0",
+      "path": "assets/game/shared/combat/smooth_motion_1009/storm_jet_0.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256.5,
+        280.0
+      ],
+      "rect": [
+        0,
+        0,
+        248,
+        396
+      ],
+      "inkW": 243,
+      "inkH": 282,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_storm_jet_1",
+      "path": "assets/game/shared/combat/smooth_motion_1009/storm_jet_1.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256.5,
+        280.0
+      ],
+      "rect": [
+        248,
+        0,
+        496,
+        396
+      ],
+      "inkW": 243,
+      "inkH": 282,
+      "registration": [
+        1,
+        0
+      ]
+    },
+    {
+      "key": "sm10_storm_jet_2",
+      "path": "assets/game/shared/combat/smooth_motion_1009/storm_jet_2.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256.5,
+        280.0
+      ],
+      "rect": [
+        496,
+        0,
+        744,
+        396
+      ],
+      "inkW": 243,
+      "inkH": 282,
+      "registration": [
+        2,
+        0
+      ]
+    },
+    {
+      "key": "sm10_storm_jet_3",
+      "path": "assets/game/shared/combat/smooth_motion_1009/storm_jet_3.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256.5,
+        280.0
+      ],
+      "rect": [
+        744,
+        0,
+        992,
+        396
+      ],
+      "inkW": 243,
+      "inkH": 282,
+      "registration": [
+        2,
+        0
+      ]
+    },
+    {
+      "key": "sm10_storm_jet_4",
+      "path": "assets/game/shared/combat/smooth_motion_1009/storm_jet_4.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256.5,
+        280.0
+      ],
+      "rect": [
+        992,
+        0,
+        1239,
+        396
+      ],
+      "inkW": 243,
+      "inkH": 282,
+      "registration": [
+        4,
+        0
+      ]
+    },
+    {
+      "key": "sm10_storm_jet_5",
+      "path": "assets/game/shared/combat/smooth_motion_1009/storm_jet_5.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256.5,
+        280.0
+      ],
+      "rect": [
+        1239,
+        0,
+        1487,
+        396
+      ],
+      "inkW": 243,
+      "inkH": 282,
+      "registration": [
+        4,
+        0
+      ]
+    },
+    {
+      "key": "sm10_storm_jet_6",
+      "path": "assets/game/shared/combat/smooth_motion_1009/storm_jet_6.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256.5,
+        280.0
+      ],
+      "rect": [
+        1487,
+        0,
+        1735,
+        396
+      ],
+      "inkW": 243,
+      "inkH": 282,
+      "registration": [
+        5,
+        0
+      ]
+    },
+    {
+      "key": "sm10_storm_jet_7",
+      "path": "assets/game/shared/combat/smooth_motion_1009/storm_jet_7.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256.5,
+        280.0
+      ],
+      "rect": [
+        1735,
+        0,
+        1983,
+        396
+      ],
+      "inkW": 243,
+      "inkH": 282,
+      "registration": [
+        6,
+        0
+      ]
+    }
+  ],
+  "thermal_jet": [
+    {
+      "key": "sm10_thermal_jet_0",
+      "path": "assets/game/shared/combat/smooth_motion_1009/thermal_jet_0.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        257.0,
+        263.0
+      ],
+      "rect": [
+        0,
+        396,
+        248,
+        793
+      ],
+      "inkW": 236,
+      "inkH": 214,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_thermal_jet_1",
+      "path": "assets/game/shared/combat/smooth_motion_1009/thermal_jet_1.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        257.0,
+        263.0
+      ],
+      "rect": [
+        248,
+        396,
+        496,
+        793
+      ],
+      "inkW": 236,
+      "inkH": 214,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_thermal_jet_2",
+      "path": "assets/game/shared/combat/smooth_motion_1009/thermal_jet_2.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        257.0,
+        263.0
+      ],
+      "rect": [
+        496,
+        396,
+        744,
+        793
+      ],
+      "inkW": 236,
+      "inkH": 214,
+      "registration": [
+        2,
+        0
+      ]
+    },
+    {
+      "key": "sm10_thermal_jet_3",
+      "path": "assets/game/shared/combat/smooth_motion_1009/thermal_jet_3.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        257.0,
+        263.0
+      ],
+      "rect": [
+        744,
+        396,
+        992,
+        793
+      ],
+      "inkW": 236,
+      "inkH": 214,
+      "registration": [
+        3,
+        0
+      ]
+    },
+    {
+      "key": "sm10_thermal_jet_4",
+      "path": "assets/game/shared/combat/smooth_motion_1009/thermal_jet_4.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        257.0,
+        263.0
+      ],
+      "rect": [
+        992,
+        396,
+        1239,
+        793
+      ],
+      "inkW": 236,
+      "inkH": 214,
+      "registration": [
+        5,
+        0
+      ]
+    },
+    {
+      "key": "sm10_thermal_jet_5",
+      "path": "assets/game/shared/combat/smooth_motion_1009/thermal_jet_5.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        257.0,
+        263.0
+      ],
+      "rect": [
+        1239,
+        396,
+        1487,
+        793
+      ],
+      "inkW": 236,
+      "inkH": 214,
+      "registration": [
+        5,
+        0
+      ]
+    },
+    {
+      "key": "sm10_thermal_jet_6",
+      "path": "assets/game/shared/combat/smooth_motion_1009/thermal_jet_6.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        257.0,
+        263.0
+      ],
+      "rect": [
+        1487,
+        396,
+        1735,
+        793
+      ],
+      "inkW": 236,
+      "inkH": 214,
+      "registration": [
+        6,
+        0
+      ]
+    },
+    {
+      "key": "sm10_thermal_jet_7",
+      "path": "assets/game/shared/combat/smooth_motion_1009/thermal_jet_7.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        257.0,
+        263.0
+      ],
+      "rect": [
+        1735,
+        396,
+        1983,
+        793
+      ],
+      "inkW": 236,
+      "inkH": 214,
+      "registration": [
+        7,
+        0
+      ]
+    }
+  ],
+  "desert_hull": [
+    {
+      "key": "sm10_desert_hull_0",
+      "path": "assets/game/shared/combat/smooth_motion_1009/desert_hull_0.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192.0,
+        192.0
+      ],
+      "rect": [
+        0,
+        0,
+        272,
+        362
+      ],
+      "inkW": 246,
+      "inkH": 304,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_desert_hull_1",
+      "path": "assets/game/shared/combat/smooth_motion_1009/desert_hull_1.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192.0,
+        192.0
+      ],
+      "rect": [
+        272,
+        0,
+        543,
+        362
+      ],
+      "inkW": 246,
+      "inkH": 304,
+      "registration": [
+        4,
+        0
+      ]
+    },
+    {
+      "key": "sm10_desert_hull_2",
+      "path": "assets/game/shared/combat/smooth_motion_1009/desert_hull_2.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192.0,
+        192.0
+      ],
+      "rect": [
+        543,
+        0,
+        814,
+        362
+      ],
+      "inkW": 246,
+      "inkH": 304,
+      "registration": [
+        7,
+        0
+      ]
+    },
+    {
+      "key": "sm10_desert_hull_3",
+      "path": "assets/game/shared/combat/smooth_motion_1009/desert_hull_3.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192.0,
+        192.0
+      ],
+      "rect": [
+        814,
+        0,
+        1086,
+        362
+      ],
+      "inkW": 246,
+      "inkH": 304,
+      "registration": [
+        7,
+        0
+      ]
+    },
+    {
+      "key": "sm10_desert_hull_4",
+      "path": "assets/game/shared/combat/smooth_motion_1009/desert_hull_4.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192.0,
+        192.0
+      ],
+      "rect": [
+        1086,
+        0,
+        1358,
+        362
+      ],
+      "inkW": 246,
+      "inkH": 304,
+      "registration": [
+        7,
+        0
+      ]
+    },
+    {
+      "key": "sm10_desert_hull_5",
+      "path": "assets/game/shared/combat/smooth_motion_1009/desert_hull_5.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192.0,
+        192.0
+      ],
+      "rect": [
+        1358,
+        0,
+        1629,
+        362
+      ],
+      "inkW": 246,
+      "inkH": 304,
+      "registration": [
+        7,
+        0
+      ]
+    },
+    {
+      "key": "sm10_desert_hull_6",
+      "path": "assets/game/shared/combat/smooth_motion_1009/desert_hull_6.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192.0,
+        192.0
+      ],
+      "rect": [
+        1629,
+        0,
+        1900,
+        362
+      ],
+      "inkW": 246,
+      "inkH": 304,
+      "registration": [
+        7,
+        0
+      ]
+    },
+    {
+      "key": "sm10_desert_hull_7",
+      "path": "assets/game/shared/combat/smooth_motion_1009/desert_hull_7.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192.0,
+        192.0
+      ],
+      "rect": [
+        1900,
+        0,
+        2172,
+        362
+      ],
+      "inkW": 246,
+      "inkH": 304,
+      "registration": [
+        7,
+        0
+      ]
+    }
+  ],
+  "desert_tractor": [
+    {
+      "key": "sm10_desert_tractor_0",
+      "path": "assets/game/shared/combat/smooth_motion_1009/desert_tractor_0.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        255.0,
+        241.0
+      ],
+      "rect": [
+        0,
+        362,
+        272,
+        724
+      ],
+      "inkW": 236,
+      "inkH": 288,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_desert_tractor_1",
+      "path": "assets/game/shared/combat/smooth_motion_1009/desert_tractor_1.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        255.0,
+        241.0
+      ],
+      "rect": [
+        272,
+        362,
+        543,
+        724
+      ],
+      "inkW": 236,
+      "inkH": 288,
+      "registration": [
+        2,
+        0
+      ]
+    },
+    {
+      "key": "sm10_desert_tractor_2",
+      "path": "assets/game/shared/combat/smooth_motion_1009/desert_tractor_2.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        255.0,
+        241.0
+      ],
+      "rect": [
+        543,
+        362,
+        814,
+        724
+      ],
+      "inkW": 236,
+      "inkH": 288,
+      "registration": [
+        6,
+        0
+      ]
+    },
+    {
+      "key": "sm10_desert_tractor_3",
+      "path": "assets/game/shared/combat/smooth_motion_1009/desert_tractor_3.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        255.0,
+        241.0
+      ],
+      "rect": [
+        814,
+        362,
+        1086,
+        724
+      ],
+      "inkW": 236,
+      "inkH": 288,
+      "registration": [
+        7,
+        0
+      ]
+    },
+    {
+      "key": "sm10_desert_tractor_4",
+      "path": "assets/game/shared/combat/smooth_motion_1009/desert_tractor_4.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        255.0,
+        241.0
+      ],
+      "rect": [
+        1086,
+        362,
+        1358,
+        724
+      ],
+      "inkW": 236,
+      "inkH": 288,
+      "registration": [
+        7,
+        0
+      ]
+    },
+    {
+      "key": "sm10_desert_tractor_5",
+      "path": "assets/game/shared/combat/smooth_motion_1009/desert_tractor_5.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        255.0,
+        241.0
+      ],
+      "rect": [
+        1358,
+        362,
+        1629,
+        724
+      ],
+      "inkW": 236,
+      "inkH": 288,
+      "registration": [
+        7,
+        0
+      ]
+    },
+    {
+      "key": "sm10_desert_tractor_6",
+      "path": "assets/game/shared/combat/smooth_motion_1009/desert_tractor_6.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        255.0,
+        241.0
+      ],
+      "rect": [
+        1629,
+        362,
+        1900,
+        724
+      ],
+      "inkW": 236,
+      "inkH": 288,
+      "registration": [
+        7,
+        0
+      ]
+    },
+    {
+      "key": "sm10_desert_tractor_7",
+      "path": "assets/game/shared/combat/smooth_motion_1009/desert_tractor_7.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        255.0,
+        241.0
+      ],
+      "rect": [
+        1900,
+        362,
+        2172,
+        724
+      ],
+      "inkW": 236,
+      "inkH": 288,
+      "registration": [
+        1,
+        0
+      ]
+    }
+  ],
+  "orbital_frigate": [
+    {
+      "key": "sm10_orbital_frigate_0",
+      "path": "assets/game/shared/combat/smooth_motion_1009/orbital_frigate_0.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256.5,
+        257.5
+      ],
+      "rect": [
+        0,
+        0,
+        222,
+        444
+      ],
+      "inkW": 221,
+      "inkH": 235,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_orbital_frigate_1",
+      "path": "assets/game/shared/combat/smooth_motion_1009/orbital_frigate_1.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256.5,
+        257.5
+      ],
+      "rect": [
+        222,
+        0,
+        444,
+        444
+      ],
+      "inkW": 221,
+      "inkH": 235,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_orbital_frigate_2",
+      "path": "assets/game/shared/combat/smooth_motion_1009/orbital_frigate_2.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256.5,
+        257.5
+      ],
+      "rect": [
+        444,
+        0,
+        665,
+        444
+      ],
+      "inkW": 221,
+      "inkH": 235,
+      "registration": [
+        1,
+        1
+      ]
+    },
+    {
+      "key": "sm10_orbital_frigate_3",
+      "path": "assets/game/shared/combat/smooth_motion_1009/orbital_frigate_3.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256.5,
+        257.5
+      ],
+      "rect": [
+        665,
+        0,
+        887,
+        444
+      ],
+      "inkW": 221,
+      "inkH": 235,
+      "registration": [
+        -1,
+        0
+      ]
+    },
+    {
+      "key": "sm10_orbital_frigate_4",
+      "path": "assets/game/shared/combat/smooth_motion_1009/orbital_frigate_4.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256.5,
+        257.5
+      ],
+      "rect": [
+        887,
+        0,
+        1109,
+        444
+      ],
+      "inkW": 221,
+      "inkH": 235,
+      "registration": [
+        0,
+        2
+      ]
+    },
+    {
+      "key": "sm10_orbital_frigate_5",
+      "path": "assets/game/shared/combat/smooth_motion_1009/orbital_frigate_5.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256.5,
+        257.5
+      ],
+      "rect": [
+        1109,
+        0,
+        1330,
+        444
+      ],
+      "inkW": 221,
+      "inkH": 235,
+      "registration": [
+        0,
+        2
+      ]
+    },
+    {
+      "key": "sm10_orbital_frigate_6",
+      "path": "assets/game/shared/combat/smooth_motion_1009/orbital_frigate_6.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256.5,
+        257.5
+      ],
+      "rect": [
+        1330,
+        0,
+        1552,
+        444
+      ],
+      "inkW": 221,
+      "inkH": 235,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_orbital_frigate_7",
+      "path": "assets/game/shared/combat/smooth_motion_1009/orbital_frigate_7.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256.5,
+        257.5
+      ],
+      "rect": [
+        1552,
+        0,
+        1774,
+        444
+      ],
+      "inkW": 221,
+      "inkH": 235,
+      "registration": [
+        0,
+        0
+      ]
+    }
+  ],
+  "orbital_rammer": [
+    {
+      "key": "sm10_orbital_rammer_0",
+      "path": "assets/game/shared/combat/smooth_motion_1009/orbital_rammer_0.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256.5,
+        218.0
+      ],
+      "rect": [
+        0,
+        444,
+        222,
+        887
+      ],
+      "inkW": 215,
+      "inkH": 296,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_orbital_rammer_1",
+      "path": "assets/game/shared/combat/smooth_motion_1009/orbital_rammer_1.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256.5,
+        218.0
+      ],
+      "rect": [
+        222,
+        444,
+        444,
+        887
+      ],
+      "inkW": 215,
+      "inkH": 296,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_orbital_rammer_2",
+      "path": "assets/game/shared/combat/smooth_motion_1009/orbital_rammer_2.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256.5,
+        218.0
+      ],
+      "rect": [
+        444,
+        444,
+        665,
+        887
+      ],
+      "inkW": 215,
+      "inkH": 296,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_orbital_rammer_3",
+      "path": "assets/game/shared/combat/smooth_motion_1009/orbital_rammer_3.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256.5,
+        218.0
+      ],
+      "rect": [
+        665,
+        444,
+        887,
+        887
+      ],
+      "inkW": 215,
+      "inkH": 296,
+      "registration": [
+        -1,
+        0
+      ]
+    },
+    {
+      "key": "sm10_orbital_rammer_4",
+      "path": "assets/game/shared/combat/smooth_motion_1009/orbital_rammer_4.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256.5,
+        218.0
+      ],
+      "rect": [
+        887,
+        444,
+        1109,
+        887
+      ],
+      "inkW": 215,
+      "inkH": 296,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_orbital_rammer_5",
+      "path": "assets/game/shared/combat/smooth_motion_1009/orbital_rammer_5.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256.5,
+        218.0
+      ],
+      "rect": [
+        1109,
+        444,
+        1330,
+        887
+      ],
+      "inkW": 215,
+      "inkH": 296,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_orbital_rammer_6",
+      "path": "assets/game/shared/combat/smooth_motion_1009/orbital_rammer_6.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256.5,
+        218.0
+      ],
+      "rect": [
+        1330,
+        444,
+        1552,
+        887
+      ],
+      "inkW": 215,
+      "inkH": 296,
+      "registration": [
+        -1,
+        0
+      ]
+    },
+    {
+      "key": "sm10_orbital_rammer_7",
+      "path": "assets/game/shared/combat/smooth_motion_1009/orbital_rammer_7.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256.5,
+        218.0
+      ],
+      "rect": [
+        1552,
+        444,
+        1774,
+        887
+      ],
+      "inkW": 215,
+      "inkH": 296,
+      "registration": [
+        -1,
+        0
+      ]
+    }
+  ],
+  "toxic_pipe": [
+    {
+      "key": "sm10_toxic_pipe_0",
+      "path": "assets/game/shared/combat/smooth_motion_1009/toxic_pipe_0.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        257.0,
+        286.0
+      ],
+      "rect": [
+        0,
+        0,
+        222,
+        444
+      ],
+      "inkW": 166,
+      "inkH": 314,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_toxic_pipe_1",
+      "path": "assets/game/shared/combat/smooth_motion_1009/toxic_pipe_1.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        257.0,
+        286.0
+      ],
+      "rect": [
+        222,
+        0,
+        444,
+        444
+      ],
+      "inkW": 166,
+      "inkH": 314,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_toxic_pipe_2",
+      "path": "assets/game/shared/combat/smooth_motion_1009/toxic_pipe_2.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        257.0,
+        286.0
+      ],
+      "rect": [
+        444,
+        0,
+        665,
+        444
+      ],
+      "inkW": 166,
+      "inkH": 314,
+      "registration": [
+        1,
+        0
+      ]
+    },
+    {
+      "key": "sm10_toxic_pipe_3",
+      "path": "assets/game/shared/combat/smooth_motion_1009/toxic_pipe_3.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        257.0,
+        286.0
+      ],
+      "rect": [
+        665,
+        0,
+        887,
+        444
+      ],
+      "inkW": 166,
+      "inkH": 314,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_toxic_pipe_4",
+      "path": "assets/game/shared/combat/smooth_motion_1009/toxic_pipe_4.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        257.0,
+        286.0
+      ],
+      "rect": [
+        887,
+        0,
+        1109,
+        444
+      ],
+      "inkW": 166,
+      "inkH": 314,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_toxic_pipe_5",
+      "path": "assets/game/shared/combat/smooth_motion_1009/toxic_pipe_5.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        257.0,
+        286.0
+      ],
+      "rect": [
+        1109,
+        0,
+        1330,
+        444
+      ],
+      "inkW": 166,
+      "inkH": 314,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_toxic_pipe_6",
+      "path": "assets/game/shared/combat/smooth_motion_1009/toxic_pipe_6.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        257.0,
+        286.0
+      ],
+      "rect": [
+        1330,
+        0,
+        1552,
+        444
+      ],
+      "inkW": 166,
+      "inkH": 314,
+      "registration": [
+        -1,
+        0
+      ]
+    },
+    {
+      "key": "sm10_toxic_pipe_7",
+      "path": "assets/game/shared/combat/smooth_motion_1009/toxic_pipe_7.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        257.0,
+        286.0
+      ],
+      "rect": [
+        1552,
+        0,
+        1774,
+        444
+      ],
+      "inkW": 166,
+      "inkH": 314,
+      "registration": [
+        0,
+        0
+      ]
+    }
+  ],
+  "toxic_walker": [
+    {
+      "key": "sm10_toxic_walker_0",
+      "path": "assets/game/shared/combat/smooth_motion_1009/toxic_walker_0.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256.5,
+        241.0
+      ],
+      "rect": [
+        0,
+        444,
+        222,
+        887
+      ],
+      "inkW": 211,
+      "inkH": 306,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_toxic_walker_1",
+      "path": "assets/game/shared/combat/smooth_motion_1009/toxic_walker_1.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256.5,
+        241.0
+      ],
+      "rect": [
+        222,
+        444,
+        444,
+        887
+      ],
+      "inkW": 211,
+      "inkH": 306,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_toxic_walker_2",
+      "path": "assets/game/shared/combat/smooth_motion_1009/toxic_walker_2.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256.5,
+        241.0
+      ],
+      "rect": [
+        444,
+        444,
+        665,
+        887
+      ],
+      "inkW": 211,
+      "inkH": 306,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_toxic_walker_3",
+      "path": "assets/game/shared/combat/smooth_motion_1009/toxic_walker_3.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256.5,
+        241.0
+      ],
+      "rect": [
+        665,
+        444,
+        887,
+        887
+      ],
+      "inkW": 211,
+      "inkH": 306,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_toxic_walker_4",
+      "path": "assets/game/shared/combat/smooth_motion_1009/toxic_walker_4.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256.5,
+        241.0
+      ],
+      "rect": [
+        887,
+        444,
+        1109,
+        887
+      ],
+      "inkW": 211,
+      "inkH": 306,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_toxic_walker_5",
+      "path": "assets/game/shared/combat/smooth_motion_1009/toxic_walker_5.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256.5,
+        241.0
+      ],
+      "rect": [
+        1109,
+        444,
+        1330,
+        887
+      ],
+      "inkW": 211,
+      "inkH": 306,
+      "registration": [
+        1,
+        0
+      ]
+    },
+    {
+      "key": "sm10_toxic_walker_6",
+      "path": "assets/game/shared/combat/smooth_motion_1009/toxic_walker_6.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256.5,
+        241.0
+      ],
+      "rect": [
+        1330,
+        444,
+        1552,
+        887
+      ],
+      "inkW": 211,
+      "inkH": 306,
+      "registration": [
+        -1,
+        0
+      ]
+    },
+    {
+      "key": "sm10_toxic_walker_7",
+      "path": "assets/game/shared/combat/smooth_motion_1009/toxic_walker_7.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256.5,
+        241.0
+      ],
+      "rect": [
+        1552,
+        444,
+        1774,
+        887
+      ],
+      "inkW": 211,
+      "inkH": 306,
+      "registration": [
+        0,
+        0
+      ]
+    }
+  ],
+  "alien_fighter": [
+    {
+      "key": "sm10_alien_fighter_0",
+      "path": "assets/game/shared/combat/smooth_motion_1009/alien_fighter_0.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256.0,
+        273.0
+      ],
+      "rect": [
+        0,
+        0,
+        248,
+        396
+      ],
+      "inkW": 210,
+      "inkH": 246,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_alien_fighter_1",
+      "path": "assets/game/shared/combat/smooth_motion_1009/alien_fighter_1.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256.0,
+        273.0
+      ],
+      "rect": [
+        248,
+        0,
+        496,
+        396
+      ],
+      "inkW": 210,
+      "inkH": 246,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_alien_fighter_2",
+      "path": "assets/game/shared/combat/smooth_motion_1009/alien_fighter_2.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256.0,
+        273.0
+      ],
+      "rect": [
+        496,
+        0,
+        744,
+        396
+      ],
+      "inkW": 210,
+      "inkH": 246,
+      "registration": [
+        1,
+        0
+      ]
+    },
+    {
+      "key": "sm10_alien_fighter_3",
+      "path": "assets/game/shared/combat/smooth_motion_1009/alien_fighter_3.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256.0,
+        273.0
+      ],
+      "rect": [
+        744,
+        0,
+        992,
+        396
+      ],
+      "inkW": 210,
+      "inkH": 246,
+      "registration": [
+        1,
+        0
+      ]
+    },
+    {
+      "key": "sm10_alien_fighter_4",
+      "path": "assets/game/shared/combat/smooth_motion_1009/alien_fighter_4.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256.0,
+        273.0
+      ],
+      "rect": [
+        992,
+        0,
+        1239,
+        396
+      ],
+      "inkW": 210,
+      "inkH": 246,
+      "registration": [
+        1,
+        0
+      ]
+    },
+    {
+      "key": "sm10_alien_fighter_5",
+      "path": "assets/game/shared/combat/smooth_motion_1009/alien_fighter_5.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256.0,
+        273.0
+      ],
+      "rect": [
+        1239,
+        0,
+        1487,
+        396
+      ],
+      "inkW": 210,
+      "inkH": 246,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_alien_fighter_6",
+      "path": "assets/game/shared/combat/smooth_motion_1009/alien_fighter_6.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256.0,
+        273.0
+      ],
+      "rect": [
+        1487,
+        0,
+        1735,
+        396
+      ],
+      "inkW": 210,
+      "inkH": 246,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_alien_fighter_7",
+      "path": "assets/game/shared/combat/smooth_motion_1009/alien_fighter_7.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256.0,
+        273.0
+      ],
+      "rect": [
+        1735,
+        0,
+        1983,
+        396
+      ],
+      "inkW": 210,
+      "inkH": 246,
+      "registration": [
+        0,
+        1
+      ]
+    }
+  ],
+  "alien_stalker": [
+    {
+      "key": "sm10_alien_stalker_0",
+      "path": "assets/game/shared/combat/smooth_motion_1009/alien_stalker_0.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256.0,
+        247.0
+      ],
+      "rect": [
+        0,
+        396,
+        248,
+        793
+      ],
+      "inkW": 216,
+      "inkH": 264,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_alien_stalker_1",
+      "path": "assets/game/shared/combat/smooth_motion_1009/alien_stalker_1.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256.0,
+        247.0
+      ],
+      "rect": [
+        248,
+        396,
+        496,
+        793
+      ],
+      "inkW": 216,
+      "inkH": 264,
+      "registration": [
+        0,
+        1
+      ]
+    },
+    {
+      "key": "sm10_alien_stalker_2",
+      "path": "assets/game/shared/combat/smooth_motion_1009/alien_stalker_2.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256.0,
+        247.0
+      ],
+      "rect": [
+        496,
+        396,
+        744,
+        793
+      ],
+      "inkW": 216,
+      "inkH": 264,
+      "registration": [
+        0,
+        1
+      ]
+    },
+    {
+      "key": "sm10_alien_stalker_3",
+      "path": "assets/game/shared/combat/smooth_motion_1009/alien_stalker_3.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256.0,
+        247.0
+      ],
+      "rect": [
+        744,
+        396,
+        992,
+        793
+      ],
+      "inkW": 216,
+      "inkH": 264,
+      "registration": [
+        1,
+        1
+      ]
+    },
+    {
+      "key": "sm10_alien_stalker_4",
+      "path": "assets/game/shared/combat/smooth_motion_1009/alien_stalker_4.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256.0,
+        247.0
+      ],
+      "rect": [
+        992,
+        396,
+        1239,
+        793
+      ],
+      "inkW": 216,
+      "inkH": 264,
+      "registration": [
+        0,
+        2
+      ]
+    },
+    {
+      "key": "sm10_alien_stalker_5",
+      "path": "assets/game/shared/combat/smooth_motion_1009/alien_stalker_5.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256.0,
+        247.0
+      ],
+      "rect": [
+        1239,
+        396,
+        1487,
+        793
+      ],
+      "inkW": 216,
+      "inkH": 264,
+      "registration": [
+        0,
+        1
+      ]
+    },
+    {
+      "key": "sm10_alien_stalker_6",
+      "path": "assets/game/shared/combat/smooth_motion_1009/alien_stalker_6.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256.0,
+        247.0
+      ],
+      "rect": [
+        1487,
+        396,
+        1735,
+        793
+      ],
+      "inkW": 216,
+      "inkH": 264,
+      "registration": [
+        0,
+        1
+      ]
+    },
+    {
+      "key": "sm10_alien_stalker_7",
+      "path": "assets/game/shared/combat/smooth_motion_1009/alien_stalker_7.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256.0,
+        247.0
+      ],
+      "rect": [
+        1735,
+        396,
+        1983,
+        793
+      ],
+      "inkW": 216,
+      "inkH": 264,
+      "registration": [
+        0,
+        0
+      ]
+    }
+  ],
+  "pilot_axel": [
+    {
+      "key": "sm10_pilot_axel_0",
+      "path": "assets/game/shared/combat/smooth_motion_1009/pilot_axel_0.png",
+      "w": 190,
+      "h": 224,
+      "pivot": [
+        95.0,
+        112.0
+      ],
+      "rect": [
+        0,
+        0,
+        222,
+        444
+      ],
+      "inkW": 136,
+      "inkH": 155,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_pilot_axel_1",
+      "path": "assets/game/shared/combat/smooth_motion_1009/pilot_axel_1.png",
+      "w": 190,
+      "h": 224,
+      "pivot": [
+        95.0,
+        112.0
+      ],
+      "rect": [
+        222,
+        0,
+        444,
+        444
+      ],
+      "inkW": 136,
+      "inkH": 155,
+      "registration": [
+        3,
+        0
+      ]
+    },
+    {
+      "key": "sm10_pilot_axel_2",
+      "path": "assets/game/shared/combat/smooth_motion_1009/pilot_axel_2.png",
+      "w": 190,
+      "h": 224,
+      "pivot": [
+        95.0,
+        112.0
+      ],
+      "rect": [
+        444,
+        0,
+        665,
+        444
+      ],
+      "inkW": 136,
+      "inkH": 155,
+      "registration": [
+        6,
+        0
+      ]
+    },
+    {
+      "key": "sm10_pilot_axel_3",
+      "path": "assets/game/shared/combat/smooth_motion_1009/pilot_axel_3.png",
+      "w": 190,
+      "h": 224,
+      "pivot": [
+        95.0,
+        112.0
+      ],
+      "rect": [
+        665,
+        0,
+        887,
+        444
+      ],
+      "inkW": 136,
+      "inkH": 155,
+      "registration": [
+        7,
+        0
+      ]
+    },
+    {
+      "key": "sm10_pilot_axel_4",
+      "path": "assets/game/shared/combat/smooth_motion_1009/pilot_axel_4.png",
+      "w": 190,
+      "h": 224,
+      "pivot": [
+        95.0,
+        112.0
+      ],
+      "rect": [
+        887,
+        0,
+        1109,
+        444
+      ],
+      "inkW": 136,
+      "inkH": 155,
+      "registration": [
+        7,
+        0
+      ]
+    },
+    {
+      "key": "sm10_pilot_axel_5",
+      "path": "assets/game/shared/combat/smooth_motion_1009/pilot_axel_5.png",
+      "w": 190,
+      "h": 224,
+      "pivot": [
+        95.0,
+        112.0
+      ],
+      "rect": [
+        1109,
+        0,
+        1330,
+        444
+      ],
+      "inkW": 136,
+      "inkH": 155,
+      "registration": [
+        5,
+        2
+      ]
+    },
+    {
+      "key": "sm10_pilot_axel_6",
+      "path": "assets/game/shared/combat/smooth_motion_1009/pilot_axel_6.png",
+      "w": 190,
+      "h": 224,
+      "pivot": [
+        95.0,
+        112.0
+      ],
+      "rect": [
+        1330,
+        0,
+        1552,
+        444
+      ],
+      "inkW": 136,
+      "inkH": 155,
+      "registration": [
+        7,
+        0
+      ]
+    },
+    {
+      "key": "sm10_pilot_axel_7",
+      "path": "assets/game/shared/combat/smooth_motion_1009/pilot_axel_7.png",
+      "w": 190,
+      "h": 224,
+      "pivot": [
+        95.0,
+        112.0
+      ],
+      "rect": [
+        1552,
+        0,
+        1774,
+        444
+      ],
+      "inkW": 136,
+      "inkH": 155,
+      "registration": [
+        -6,
+        0
+      ]
+    }
+  ],
+  "pilot_cole": [
+    {
+      "key": "sm10_pilot_cole_0",
+      "path": "assets/game/shared/combat/smooth_motion_1009/pilot_cole_0.png",
+      "w": 193,
+      "h": 232,
+      "pivot": [
+        96.5,
+        116.0
+      ],
+      "rect": [
+        0,
+        444,
+        222,
+        887
+      ],
+      "inkW": 148,
+      "inkH": 204,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_pilot_cole_1",
+      "path": "assets/game/shared/combat/smooth_motion_1009/pilot_cole_1.png",
+      "w": 193,
+      "h": 232,
+      "pivot": [
+        96.5,
+        116.0
+      ],
+      "rect": [
+        222,
+        444,
+        444,
+        887
+      ],
+      "inkW": 148,
+      "inkH": 204,
+      "registration": [
+        3,
+        0
+      ]
+    },
+    {
+      "key": "sm10_pilot_cole_2",
+      "path": "assets/game/shared/combat/smooth_motion_1009/pilot_cole_2.png",
+      "w": 193,
+      "h": 232,
+      "pivot": [
+        96.5,
+        116.0
+      ],
+      "rect": [
+        444,
+        444,
+        665,
+        887
+      ],
+      "inkW": 148,
+      "inkH": 204,
+      "registration": [
+        7,
+        0
+      ]
+    },
+    {
+      "key": "sm10_pilot_cole_3",
+      "path": "assets/game/shared/combat/smooth_motion_1009/pilot_cole_3.png",
+      "w": 193,
+      "h": 232,
+      "pivot": [
+        96.5,
+        116.0
+      ],
+      "rect": [
+        665,
+        444,
+        887,
+        887
+      ],
+      "inkW": 148,
+      "inkH": 204,
+      "registration": [
+        7,
+        0
+      ]
+    },
+    {
+      "key": "sm10_pilot_cole_4",
+      "path": "assets/game/shared/combat/smooth_motion_1009/pilot_cole_4.png",
+      "w": 193,
+      "h": 232,
+      "pivot": [
+        96.5,
+        116.0
+      ],
+      "rect": [
+        887,
+        444,
+        1109,
+        887
+      ],
+      "inkW": 148,
+      "inkH": 204,
+      "registration": [
+        7,
+        0
+      ]
+    },
+    {
+      "key": "sm10_pilot_cole_5",
+      "path": "assets/game/shared/combat/smooth_motion_1009/pilot_cole_5.png",
+      "w": 193,
+      "h": 232,
+      "pivot": [
+        96.5,
+        116.0
+      ],
+      "rect": [
+        1109,
+        444,
+        1330,
+        887
+      ],
+      "inkW": 148,
+      "inkH": 204,
+      "registration": [
+        7,
+        0
+      ]
+    },
+    {
+      "key": "sm10_pilot_cole_6",
+      "path": "assets/game/shared/combat/smooth_motion_1009/pilot_cole_6.png",
+      "w": 193,
+      "h": 232,
+      "pivot": [
+        96.5,
+        116.0
+      ],
+      "rect": [
+        1330,
+        444,
+        1552,
+        887
+      ],
+      "inkW": 148,
+      "inkH": 204,
+      "registration": [
+        3,
+        0
+      ]
+    },
+    {
+      "key": "sm10_pilot_cole_7",
+      "path": "assets/game/shared/combat/smooth_motion_1009/pilot_cole_7.png",
+      "w": 193,
+      "h": 232,
+      "pivot": [
+        96.5,
+        116.0
+      ],
+      "rect": [
+        1552,
+        444,
+        1774,
+        887
+      ],
+      "inkW": 148,
+      "inkH": 204,
+      "registration": [
+        -7,
+        3
+      ]
+    }
+  ],
+  "pilot_decker": [
+    {
+      "key": "sm10_pilot_decker_0",
+      "path": "assets/game/shared/combat/smooth_motion_1009/pilot_decker_0.png",
+      "w": 200,
+      "h": 230,
+      "pivot": [
+        100.0,
+        115.0
+      ],
+      "rect": [
+        0,
+        0,
+        222,
+        444
+      ],
+      "inkW": 157,
+      "inkH": 202,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_pilot_decker_1",
+      "path": "assets/game/shared/combat/smooth_motion_1009/pilot_decker_1.png",
+      "w": 200,
+      "h": 230,
+      "pivot": [
+        100.0,
+        115.0
+      ],
+      "rect": [
+        222,
+        0,
+        444,
+        444
+      ],
+      "inkW": 157,
+      "inkH": 202,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_pilot_decker_2",
+      "path": "assets/game/shared/combat/smooth_motion_1009/pilot_decker_2.png",
+      "w": 200,
+      "h": 230,
+      "pivot": [
+        100.0,
+        115.0
+      ],
+      "rect": [
+        444,
+        0,
+        665,
+        444
+      ],
+      "inkW": 157,
+      "inkH": 202,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_pilot_decker_3",
+      "path": "assets/game/shared/combat/smooth_motion_1009/pilot_decker_3.png",
+      "w": 200,
+      "h": 230,
+      "pivot": [
+        100.0,
+        115.0
+      ],
+      "rect": [
+        665,
+        0,
+        887,
+        444
+      ],
+      "inkW": 157,
+      "inkH": 202,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_pilot_decker_4",
+      "path": "assets/game/shared/combat/smooth_motion_1009/pilot_decker_4.png",
+      "w": 200,
+      "h": 230,
+      "pivot": [
+        100.0,
+        115.0
+      ],
+      "rect": [
+        887,
+        0,
+        1109,
+        444
+      ],
+      "inkW": 157,
+      "inkH": 202,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_pilot_decker_5",
+      "path": "assets/game/shared/combat/smooth_motion_1009/pilot_decker_5.png",
+      "w": 200,
+      "h": 230,
+      "pivot": [
+        100.0,
+        115.0
+      ],
+      "rect": [
+        1109,
+        0,
+        1330,
+        444
+      ],
+      "inkW": 157,
+      "inkH": 202,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_pilot_decker_6",
+      "path": "assets/game/shared/combat/smooth_motion_1009/pilot_decker_6.png",
+      "w": 200,
+      "h": 230,
+      "pivot": [
+        100.0,
+        115.0
+      ],
+      "rect": [
+        1330,
+        0,
+        1552,
+        444
+      ],
+      "inkW": 157,
+      "inkH": 202,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_pilot_decker_7",
+      "path": "assets/game/shared/combat/smooth_motion_1009/pilot_decker_7.png",
+      "w": 200,
+      "h": 230,
+      "pivot": [
+        100.0,
+        115.0
+      ],
+      "rect": [
+        1552,
+        0,
+        1774,
+        444
+      ],
+      "inkW": 157,
+      "inkH": 202,
+      "registration": [
+        0,
+        0
+      ]
+    }
+  ],
+  "pilot_falva": [
+    {
+      "key": "sm10_pilot_falva_0",
+      "path": "assets/game/shared/combat/smooth_motion_1009/pilot_falva_0.png",
+      "w": 204,
+      "h": 238,
+      "pivot": [
+        102.0,
+        119.0
+      ],
+      "rect": [
+        0,
+        444,
+        222,
+        887
+      ],
+      "inkW": 169,
+      "inkH": 206,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_pilot_falva_1",
+      "path": "assets/game/shared/combat/smooth_motion_1009/pilot_falva_1.png",
+      "w": 204,
+      "h": 238,
+      "pivot": [
+        102.0,
+        119.0
+      ],
+      "rect": [
+        222,
+        444,
+        444,
+        887
+      ],
+      "inkW": 169,
+      "inkH": 206,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_pilot_falva_2",
+      "path": "assets/game/shared/combat/smooth_motion_1009/pilot_falva_2.png",
+      "w": 204,
+      "h": 238,
+      "pivot": [
+        102.0,
+        119.0
+      ],
+      "rect": [
+        444,
+        444,
+        665,
+        887
+      ],
+      "inkW": 169,
+      "inkH": 206,
+      "registration": [
+        1,
+        0
+      ]
+    },
+    {
+      "key": "sm10_pilot_falva_3",
+      "path": "assets/game/shared/combat/smooth_motion_1009/pilot_falva_3.png",
+      "w": 204,
+      "h": 238,
+      "pivot": [
+        102.0,
+        119.0
+      ],
+      "rect": [
+        665,
+        444,
+        887,
+        887
+      ],
+      "inkW": 169,
+      "inkH": 206,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_pilot_falva_4",
+      "path": "assets/game/shared/combat/smooth_motion_1009/pilot_falva_4.png",
+      "w": 204,
+      "h": 238,
+      "pivot": [
+        102.0,
+        119.0
+      ],
+      "rect": [
+        887,
+        444,
+        1109,
+        887
+      ],
+      "inkW": 169,
+      "inkH": 206,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_pilot_falva_5",
+      "path": "assets/game/shared/combat/smooth_motion_1009/pilot_falva_5.png",
+      "w": 204,
+      "h": 238,
+      "pivot": [
+        102.0,
+        119.0
+      ],
+      "rect": [
+        1109,
+        444,
+        1330,
+        887
+      ],
+      "inkW": 169,
+      "inkH": 206,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_pilot_falva_6",
+      "path": "assets/game/shared/combat/smooth_motion_1009/pilot_falva_6.png",
+      "w": 204,
+      "h": 238,
+      "pivot": [
+        102.0,
+        119.0
+      ],
+      "rect": [
+        1330,
+        444,
+        1552,
+        887
+      ],
+      "inkW": 169,
+      "inkH": 206,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_pilot_falva_7",
+      "path": "assets/game/shared/combat/smooth_motion_1009/pilot_falva_7.png",
+      "w": 204,
+      "h": 238,
+      "pivot": [
+        102.0,
+        119.0
+      ],
+      "rect": [
+        1552,
+        444,
+        1774,
+        887
+      ],
+      "inkW": 169,
+      "inkH": 206,
+      "registration": [
+        0,
+        0
+      ]
+    }
+  ],
+  "pilot_freezer": [
+    {
+      "key": "sm10_pilot_freezer_0",
+      "path": "assets/game/shared/combat/smooth_motion_1009/pilot_freezer_0.png",
+      "w": 183,
+      "h": 194,
+      "pivot": [
+        91.5,
+        97.0
+      ],
+      "rect": [
+        0,
+        0,
+        222,
+        444
+      ],
+      "inkW": 144,
+      "inkH": 166,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_pilot_freezer_1",
+      "path": "assets/game/shared/combat/smooth_motion_1009/pilot_freezer_1.png",
+      "w": 183,
+      "h": 194,
+      "pivot": [
+        91.5,
+        97.0
+      ],
+      "rect": [
+        222,
+        0,
+        444,
+        444
+      ],
+      "inkW": 144,
+      "inkH": 166,
+      "registration": [
+        1,
+        0
+      ]
+    },
+    {
+      "key": "sm10_pilot_freezer_2",
+      "path": "assets/game/shared/combat/smooth_motion_1009/pilot_freezer_2.png",
+      "w": 183,
+      "h": 194,
+      "pivot": [
+        91.5,
+        97.0
+      ],
+      "rect": [
+        444,
+        0,
+        665,
+        444
+      ],
+      "inkW": 144,
+      "inkH": 166,
+      "registration": [
+        1,
+        0
+      ]
+    },
+    {
+      "key": "sm10_pilot_freezer_3",
+      "path": "assets/game/shared/combat/smooth_motion_1009/pilot_freezer_3.png",
+      "w": 183,
+      "h": 194,
+      "pivot": [
+        91.5,
+        97.0
+      ],
+      "rect": [
+        665,
+        0,
+        887,
+        444
+      ],
+      "inkW": 144,
+      "inkH": 166,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_pilot_freezer_4",
+      "path": "assets/game/shared/combat/smooth_motion_1009/pilot_freezer_4.png",
+      "w": 183,
+      "h": 194,
+      "pivot": [
+        91.5,
+        97.0
+      ],
+      "rect": [
+        887,
+        0,
+        1109,
+        444
+      ],
+      "inkW": 144,
+      "inkH": 166,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_pilot_freezer_5",
+      "path": "assets/game/shared/combat/smooth_motion_1009/pilot_freezer_5.png",
+      "w": 183,
+      "h": 194,
+      "pivot": [
+        91.5,
+        97.0
+      ],
+      "rect": [
+        1109,
+        0,
+        1330,
+        444
+      ],
+      "inkW": 144,
+      "inkH": 166,
+      "registration": [
+        1,
+        0
+      ]
+    },
+    {
+      "key": "sm10_pilot_freezer_6",
+      "path": "assets/game/shared/combat/smooth_motion_1009/pilot_freezer_6.png",
+      "w": 183,
+      "h": 194,
+      "pivot": [
+        91.5,
+        97.0
+      ],
+      "rect": [
+        1330,
+        0,
+        1552,
+        444
+      ],
+      "inkW": 144,
+      "inkH": 166,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_pilot_freezer_7",
+      "path": "assets/game/shared/combat/smooth_motion_1009/pilot_freezer_7.png",
+      "w": 183,
+      "h": 194,
+      "pivot": [
+        91.5,
+        97.0
+      ],
+      "rect": [
+        1552,
+        0,
+        1774,
+        444
+      ],
+      "inkW": 144,
+      "inkH": 166,
+      "registration": [
+        0,
+        0
+      ]
+    }
+  ],
+  "pilot_juggernaut": [
+    {
+      "key": "sm10_pilot_juggernaut_0",
+      "path": "assets/game/shared/combat/smooth_motion_1009/pilot_juggernaut_0.png",
+      "w": 200,
+      "h": 205,
+      "pivot": [
+        100.0,
+        102.5
+      ],
+      "rect": [
+        0,
+        444,
+        222,
+        887
+      ],
+      "inkW": 164,
+      "inkH": 169,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_pilot_juggernaut_1",
+      "path": "assets/game/shared/combat/smooth_motion_1009/pilot_juggernaut_1.png",
+      "w": 200,
+      "h": 205,
+      "pivot": [
+        100.0,
+        102.5
+      ],
+      "rect": [
+        222,
+        444,
+        444,
+        887
+      ],
+      "inkW": 164,
+      "inkH": 169,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_pilot_juggernaut_2",
+      "path": "assets/game/shared/combat/smooth_motion_1009/pilot_juggernaut_2.png",
+      "w": 200,
+      "h": 205,
+      "pivot": [
+        100.0,
+        102.5
+      ],
+      "rect": [
+        444,
+        444,
+        665,
+        887
+      ],
+      "inkW": 164,
+      "inkH": 169,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_pilot_juggernaut_3",
+      "path": "assets/game/shared/combat/smooth_motion_1009/pilot_juggernaut_3.png",
+      "w": 200,
+      "h": 205,
+      "pivot": [
+        100.0,
+        102.5
+      ],
+      "rect": [
+        665,
+        444,
+        887,
+        887
+      ],
+      "inkW": 164,
+      "inkH": 169,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_pilot_juggernaut_4",
+      "path": "assets/game/shared/combat/smooth_motion_1009/pilot_juggernaut_4.png",
+      "w": 200,
+      "h": 205,
+      "pivot": [
+        100.0,
+        102.5
+      ],
+      "rect": [
+        887,
+        444,
+        1109,
+        887
+      ],
+      "inkW": 164,
+      "inkH": 169,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_pilot_juggernaut_5",
+      "path": "assets/game/shared/combat/smooth_motion_1009/pilot_juggernaut_5.png",
+      "w": 200,
+      "h": 205,
+      "pivot": [
+        100.0,
+        102.5
+      ],
+      "rect": [
+        1109,
+        444,
+        1330,
+        887
+      ],
+      "inkW": 164,
+      "inkH": 169,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_pilot_juggernaut_6",
+      "path": "assets/game/shared/combat/smooth_motion_1009/pilot_juggernaut_6.png",
+      "w": 200,
+      "h": 205,
+      "pivot": [
+        100.0,
+        102.5
+      ],
+      "rect": [
+        1330,
+        444,
+        1552,
+        887
+      ],
+      "inkW": 164,
+      "inkH": 169,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_pilot_juggernaut_7",
+      "path": "assets/game/shared/combat/smooth_motion_1009/pilot_juggernaut_7.png",
+      "w": 200,
+      "h": 205,
+      "pivot": [
+        100.0,
+        102.5
+      ],
+      "rect": [
+        1552,
+        444,
+        1774,
+        887
+      ],
+      "inkW": 164,
+      "inkH": 169,
+      "registration": [
+        -1,
+        0
+      ]
+    }
+  ],
+  "pilot_lizzie": [
+    {
+      "key": "sm10_pilot_lizzie_0",
+      "path": "assets/game/shared/combat/smooth_motion_1009/pilot_lizzie_0.png",
+      "w": 224,
+      "h": 243,
+      "pivot": [
+        112.0,
+        121.5
+      ],
+      "rect": [
+        0,
+        0,
+        222,
+        444
+      ],
+      "inkW": 158,
+      "inkH": 202,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_pilot_lizzie_1",
+      "path": "assets/game/shared/combat/smooth_motion_1009/pilot_lizzie_1.png",
+      "w": 224,
+      "h": 243,
+      "pivot": [
+        112.0,
+        121.5
+      ],
+      "rect": [
+        222,
+        0,
+        444,
+        444
+      ],
+      "inkW": 158,
+      "inkH": 202,
+      "registration": [
+        4,
+        0
+      ]
+    },
+    {
+      "key": "sm10_pilot_lizzie_2",
+      "path": "assets/game/shared/combat/smooth_motion_1009/pilot_lizzie_2.png",
+      "w": 224,
+      "h": 243,
+      "pivot": [
+        112.0,
+        121.5
+      ],
+      "rect": [
+        444,
+        0,
+        665,
+        444
+      ],
+      "inkW": 158,
+      "inkH": 202,
+      "registration": [
+        5,
+        0
+      ]
+    },
+    {
+      "key": "sm10_pilot_lizzie_3",
+      "path": "assets/game/shared/combat/smooth_motion_1009/pilot_lizzie_3.png",
+      "w": 224,
+      "h": 243,
+      "pivot": [
+        112.0,
+        121.5
+      ],
+      "rect": [
+        665,
+        0,
+        887,
+        444
+      ],
+      "inkW": 158,
+      "inkH": 202,
+      "registration": [
+        6,
+        0
+      ]
+    },
+    {
+      "key": "sm10_pilot_lizzie_4",
+      "path": "assets/game/shared/combat/smooth_motion_1009/pilot_lizzie_4.png",
+      "w": 224,
+      "h": 243,
+      "pivot": [
+        112.0,
+        121.5
+      ],
+      "rect": [
+        887,
+        0,
+        1109,
+        444
+      ],
+      "inkW": 158,
+      "inkH": 202,
+      "registration": [
+        7,
+        0
+      ]
+    },
+    {
+      "key": "sm10_pilot_lizzie_5",
+      "path": "assets/game/shared/combat/smooth_motion_1009/pilot_lizzie_5.png",
+      "w": 224,
+      "h": 243,
+      "pivot": [
+        112.0,
+        121.5
+      ],
+      "rect": [
+        1109,
+        0,
+        1330,
+        444
+      ],
+      "inkW": 158,
+      "inkH": 202,
+      "registration": [
+        7,
+        0
+      ]
+    },
+    {
+      "key": "sm10_pilot_lizzie_6",
+      "path": "assets/game/shared/combat/smooth_motion_1009/pilot_lizzie_6.png",
+      "w": 224,
+      "h": 243,
+      "pivot": [
+        112.0,
+        121.5
+      ],
+      "rect": [
+        1330,
+        0,
+        1552,
+        444
+      ],
+      "inkW": 158,
+      "inkH": 202,
+      "registration": [
+        7,
+        -3
+      ]
+    },
+    {
+      "key": "sm10_pilot_lizzie_7",
+      "path": "assets/game/shared/combat/smooth_motion_1009/pilot_lizzie_7.png",
+      "w": 224,
+      "h": 243,
+      "pivot": [
+        112.0,
+        121.5
+      ],
+      "rect": [
+        1552,
+        0,
+        1774,
+        444
+      ],
+      "inkW": 158,
+      "inkH": 202,
+      "registration": [
+        7,
+        0
+      ]
+    }
+  ],
+  "pilot_maverick": [
+    {
+      "key": "sm10_pilot_maverick_0",
+      "path": "assets/game/shared/combat/smooth_motion_1009/pilot_maverick_0.png",
+      "w": 200,
+      "h": 211,
+      "pivot": [
+        100.0,
+        105.5
+      ],
+      "rect": [
+        0,
+        444,
+        222,
+        887
+      ],
+      "inkW": 159,
+      "inkH": 184,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_pilot_maverick_1",
+      "path": "assets/game/shared/combat/smooth_motion_1009/pilot_maverick_1.png",
+      "w": 200,
+      "h": 211,
+      "pivot": [
+        100.0,
+        105.5
+      ],
+      "rect": [
+        222,
+        444,
+        444,
+        887
+      ],
+      "inkW": 159,
+      "inkH": 184,
+      "registration": [
+        2,
+        0
+      ]
+    },
+    {
+      "key": "sm10_pilot_maverick_2",
+      "path": "assets/game/shared/combat/smooth_motion_1009/pilot_maverick_2.png",
+      "w": 200,
+      "h": 211,
+      "pivot": [
+        100.0,
+        105.5
+      ],
+      "rect": [
+        444,
+        444,
+        665,
+        887
+      ],
+      "inkW": 159,
+      "inkH": 184,
+      "registration": [
+        4,
+        0
+      ]
+    },
+    {
+      "key": "sm10_pilot_maverick_3",
+      "path": "assets/game/shared/combat/smooth_motion_1009/pilot_maverick_3.png",
+      "w": 200,
+      "h": 211,
+      "pivot": [
+        100.0,
+        105.5
+      ],
+      "rect": [
+        665,
+        444,
+        887,
+        887
+      ],
+      "inkW": 159,
+      "inkH": 184,
+      "registration": [
+        5,
+        0
+      ]
+    },
+    {
+      "key": "sm10_pilot_maverick_4",
+      "path": "assets/game/shared/combat/smooth_motion_1009/pilot_maverick_4.png",
+      "w": 200,
+      "h": 211,
+      "pivot": [
+        100.0,
+        105.5
+      ],
+      "rect": [
+        887,
+        444,
+        1109,
+        887
+      ],
+      "inkW": 159,
+      "inkH": 184,
+      "registration": [
+        7,
+        0
+      ]
+    },
+    {
+      "key": "sm10_pilot_maverick_5",
+      "path": "assets/game/shared/combat/smooth_motion_1009/pilot_maverick_5.png",
+      "w": 200,
+      "h": 211,
+      "pivot": [
+        100.0,
+        105.5
+      ],
+      "rect": [
+        1109,
+        444,
+        1330,
+        887
+      ],
+      "inkW": 159,
+      "inkH": 184,
+      "registration": [
+        7,
+        0
+      ]
+    },
+    {
+      "key": "sm10_pilot_maverick_6",
+      "path": "assets/game/shared/combat/smooth_motion_1009/pilot_maverick_6.png",
+      "w": 200,
+      "h": 211,
+      "pivot": [
+        100.0,
+        105.5
+      ],
+      "rect": [
+        1330,
+        444,
+        1552,
+        887
+      ],
+      "inkW": 159,
+      "inkH": 184,
+      "registration": [
+        7,
+        0
+      ]
+    },
+    {
+      "key": "sm10_pilot_maverick_7",
+      "path": "assets/game/shared/combat/smooth_motion_1009/pilot_maverick_7.png",
+      "w": 200,
+      "h": 211,
+      "pivot": [
+        100.0,
+        105.5
+      ],
+      "rect": [
+        1552,
+        444,
+        1774,
+        887
+      ],
+      "inkW": 159,
+      "inkH": 184,
+      "registration": [
+        7,
+        0
+      ]
+    }
+  ],
+  "pilot_yuri": [
+    {
+      "key": "sm10_pilot_yuri_0",
+      "path": "assets/game/shared/combat/smooth_motion_1009/pilot_yuri_0.png",
+      "w": 209,
+      "h": 229,
+      "pivot": [
+        104.5,
+        114.5
+      ],
+      "rect": [
+        0,
+        0,
+        222,
+        444
+      ],
+      "inkW": 145,
+      "inkH": 179,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_pilot_yuri_1",
+      "path": "assets/game/shared/combat/smooth_motion_1009/pilot_yuri_1.png",
+      "w": 209,
+      "h": 229,
+      "pivot": [
+        104.5,
+        114.5
+      ],
+      "rect": [
+        222,
+        0,
+        444,
+        444
+      ],
+      "inkW": 145,
+      "inkH": 179,
+      "registration": [
+        1,
+        0
+      ]
+    },
+    {
+      "key": "sm10_pilot_yuri_2",
+      "path": "assets/game/shared/combat/smooth_motion_1009/pilot_yuri_2.png",
+      "w": 209,
+      "h": 229,
+      "pivot": [
+        104.5,
+        114.5
+      ],
+      "rect": [
+        444,
+        0,
+        665,
+        444
+      ],
+      "inkW": 145,
+      "inkH": 179,
+      "registration": [
+        2,
+        0
+      ]
+    },
+    {
+      "key": "sm10_pilot_yuri_3",
+      "path": "assets/game/shared/combat/smooth_motion_1009/pilot_yuri_3.png",
+      "w": 209,
+      "h": 229,
+      "pivot": [
+        104.5,
+        114.5
+      ],
+      "rect": [
+        665,
+        0,
+        887,
+        444
+      ],
+      "inkW": 145,
+      "inkH": 179,
+      "registration": [
+        2,
+        0
+      ]
+    },
+    {
+      "key": "sm10_pilot_yuri_4",
+      "path": "assets/game/shared/combat/smooth_motion_1009/pilot_yuri_4.png",
+      "w": 209,
+      "h": 229,
+      "pivot": [
+        104.5,
+        114.5
+      ],
+      "rect": [
+        887,
+        0,
+        1109,
+        444
+      ],
+      "inkW": 145,
+      "inkH": 179,
+      "registration": [
+        2,
+        0
+      ]
+    },
+    {
+      "key": "sm10_pilot_yuri_5",
+      "path": "assets/game/shared/combat/smooth_motion_1009/pilot_yuri_5.png",
+      "w": 209,
+      "h": 229,
+      "pivot": [
+        104.5,
+        114.5
+      ],
+      "rect": [
+        1109,
+        0,
+        1330,
+        444
+      ],
+      "inkW": 145,
+      "inkH": 179,
+      "registration": [
+        3,
+        0
+      ]
+    },
+    {
+      "key": "sm10_pilot_yuri_6",
+      "path": "assets/game/shared/combat/smooth_motion_1009/pilot_yuri_6.png",
+      "w": 209,
+      "h": 229,
+      "pivot": [
+        104.5,
+        114.5
+      ],
+      "rect": [
+        1330,
+        0,
+        1552,
+        444
+      ],
+      "inkW": 145,
+      "inkH": 179,
+      "registration": [
+        3,
+        0
+      ]
+    },
+    {
+      "key": "sm10_pilot_yuri_7",
+      "path": "assets/game/shared/combat/smooth_motion_1009/pilot_yuri_7.png",
+      "w": 209,
+      "h": 229,
+      "pivot": [
+        104.5,
+        114.5
+      ],
+      "rect": [
+        1552,
+        0,
+        1774,
+        444
+      ],
+      "inkW": 145,
+      "inkH": 179,
+      "registration": [
+        4,
+        0
+      ]
+    }
+  ],
+  "furyship": [
+    {
+      "key": "sm10_furyship_0",
+      "path": "assets/game/shared/combat/smooth_motion_1009/furyship_0.png",
+      "w": 128,
+      "h": 128,
+      "pivot": [
+        64.0,
+        64.0
+      ],
+      "rect": [
+        0,
+        444,
+        222,
+        887
+      ],
+      "inkW": 90,
+      "inkH": 114,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_furyship_1",
+      "path": "assets/game/shared/combat/smooth_motion_1009/furyship_1.png",
+      "w": 128,
+      "h": 128,
+      "pivot": [
+        64.0,
+        64.0
+      ],
+      "rect": [
+        222,
+        444,
+        444,
+        887
+      ],
+      "inkW": 90,
+      "inkH": 114,
+      "registration": [
+        1,
+        0
+      ]
+    },
+    {
+      "key": "sm10_furyship_2",
+      "path": "assets/game/shared/combat/smooth_motion_1009/furyship_2.png",
+      "w": 128,
+      "h": 128,
+      "pivot": [
+        64.0,
+        64.0
+      ],
+      "rect": [
+        444,
+        444,
+        665,
+        887
+      ],
+      "inkW": 90,
+      "inkH": 114,
+      "registration": [
+        2,
+        0
+      ]
+    },
+    {
+      "key": "sm10_furyship_3",
+      "path": "assets/game/shared/combat/smooth_motion_1009/furyship_3.png",
+      "w": 128,
+      "h": 128,
+      "pivot": [
+        64.0,
+        64.0
+      ],
+      "rect": [
+        665,
+        444,
+        887,
+        887
+      ],
+      "inkW": 90,
+      "inkH": 114,
+      "registration": [
+        2,
+        0
+      ]
+    },
+    {
+      "key": "sm10_furyship_4",
+      "path": "assets/game/shared/combat/smooth_motion_1009/furyship_4.png",
+      "w": 128,
+      "h": 128,
+      "pivot": [
+        64.0,
+        64.0
+      ],
+      "rect": [
+        887,
+        444,
+        1109,
+        887
+      ],
+      "inkW": 90,
+      "inkH": 114,
+      "registration": [
+        2,
+        0
+      ]
+    },
+    {
+      "key": "sm10_furyship_5",
+      "path": "assets/game/shared/combat/smooth_motion_1009/furyship_5.png",
+      "w": 128,
+      "h": 128,
+      "pivot": [
+        64.0,
+        64.0
+      ],
+      "rect": [
+        1109,
+        444,
+        1330,
+        887
+      ],
+      "inkW": 90,
+      "inkH": 114,
+      "registration": [
+        4,
+        0
+      ]
+    },
+    {
+      "key": "sm10_furyship_6",
+      "path": "assets/game/shared/combat/smooth_motion_1009/furyship_6.png",
+      "w": 128,
+      "h": 128,
+      "pivot": [
+        64.0,
+        64.0
+      ],
+      "rect": [
+        1330,
+        444,
+        1552,
+        887
+      ],
+      "inkW": 90,
+      "inkH": 114,
+      "registration": [
+        3,
+        0
+      ]
+    },
+    {
+      "key": "sm10_furyship_7",
+      "path": "assets/game/shared/combat/smooth_motion_1009/furyship_7.png",
+      "w": 128,
+      "h": 128,
+      "pivot": [
+        64.0,
+        64.0
+      ],
+      "rect": [
+        1552,
+        444,
+        1774,
+        887
+      ],
+      "inkW": 90,
+      "inkH": 114,
+      "registration": [
+        6,
+        0
+      ]
+    }
+  ],
+  "furyship_blue": [
+    {
+      "key": "sm10_furyship_blue_0",
+      "path": "assets/game/shared/combat/smooth_motion_1009/furyship_blue_0.png",
+      "w": 128,
+      "h": 128,
+      "pivot": [
+        64.0,
+        64.0
+      ],
+      "rect": [
+        0,
+        444,
+        222,
+        887
+      ],
+      "inkW": 90,
+      "inkH": 114,
+      "registration": [
+        0,
+        0
+      ]
+    },
+    {
+      "key": "sm10_furyship_blue_1",
+      "path": "assets/game/shared/combat/smooth_motion_1009/furyship_blue_1.png",
+      "w": 128,
+      "h": 128,
+      "pivot": [
+        64.0,
+        64.0
+      ],
+      "rect": [
+        222,
+        444,
+        444,
+        887
+      ],
+      "inkW": 90,
+      "inkH": 114,
+      "registration": [
+        1,
+        0
+      ]
+    },
+    {
+      "key": "sm10_furyship_blue_2",
+      "path": "assets/game/shared/combat/smooth_motion_1009/furyship_blue_2.png",
+      "w": 128,
+      "h": 128,
+      "pivot": [
+        64.0,
+        64.0
+      ],
+      "rect": [
+        444,
+        444,
+        665,
+        887
+      ],
+      "inkW": 90,
+      "inkH": 114,
+      "registration": [
+        2,
+        0
+      ]
+    },
+    {
+      "key": "sm10_furyship_blue_3",
+      "path": "assets/game/shared/combat/smooth_motion_1009/furyship_blue_3.png",
+      "w": 128,
+      "h": 128,
+      "pivot": [
+        64.0,
+        64.0
+      ],
+      "rect": [
+        665,
+        444,
+        887,
+        887
+      ],
+      "inkW": 90,
+      "inkH": 114,
+      "registration": [
+        2,
+        0
+      ]
+    },
+    {
+      "key": "sm10_furyship_blue_4",
+      "path": "assets/game/shared/combat/smooth_motion_1009/furyship_blue_4.png",
+      "w": 128,
+      "h": 128,
+      "pivot": [
+        64.0,
+        64.0
+      ],
+      "rect": [
+        887,
+        444,
+        1109,
+        887
+      ],
+      "inkW": 90,
+      "inkH": 114,
+      "registration": [
+        2,
+        0
+      ]
+    },
+    {
+      "key": "sm10_furyship_blue_5",
+      "path": "assets/game/shared/combat/smooth_motion_1009/furyship_blue_5.png",
+      "w": 128,
+      "h": 128,
+      "pivot": [
+        64.0,
+        64.0
+      ],
+      "rect": [
+        1109,
+        444,
+        1330,
+        887
+      ],
+      "inkW": 90,
+      "inkH": 114,
+      "registration": [
+        4,
+        0
+      ]
+    },
+    {
+      "key": "sm10_furyship_blue_6",
+      "path": "assets/game/shared/combat/smooth_motion_1009/furyship_blue_6.png",
+      "w": 128,
+      "h": 128,
+      "pivot": [
+        64.0,
+        64.0
+      ],
+      "rect": [
+        1330,
+        444,
+        1552,
+        887
+      ],
+      "inkW": 90,
+      "inkH": 114,
+      "registration": [
+        3,
+        0
+      ]
+    },
+    {
+      "key": "sm10_furyship_blue_7",
+      "path": "assets/game/shared/combat/smooth_motion_1009/furyship_blue_7.png",
+      "w": 128,
+      "h": 128,
+      "pivot": [
+        64.0,
+        64.0
+      ],
+      "rect": [
+        1552,
+        444,
+        1774,
+        887
+      ],
+      "inkW": 90,
+      "inkH": 114,
+      "registration": [
+        6,
+        0
+      ]
+    }
+  ]
+}

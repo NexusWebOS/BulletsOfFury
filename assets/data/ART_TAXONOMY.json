@@ -1,4 +1,9 @@
 {
+  "sm10_": {
+    "role": "authored_enemy_ship_motion_and_hammer_electric_farewell",
+    "sheet": null,
+    "note": "October 9: thirteen accepted built-in imagegen RGBA sheets, 208 loose normalized cells. Four new volcanic/arctic small-enemy designs; eight-frame fixed-chassis loops for 24 current enemy roster slots across Stages 2-8, including independent original desert tank turret; eight neutral-flight frames for all nine pilot ships and Furyship with original nozzle/muzzle rigs, native canvas dimensions and pilot palettes. Hammer last words, portrait-to-white/window fade, original Retina reactor lock, player missile impact, nine successive authored electrical bursts/rings, then existing whole two-arm/head acted death and cutaways. Source frames/prompts/crops/registration and SHA256s in _ART_SOURCES/smooth_motion_1009/. Owning builder _BUILD_SOURCE/build_smooth_motion_1009.py writes cells and assets/smooth_motion_art_1009.js together. Runtime assets/smooth_motion_1009.js preserves attack controllers, HP, original damage effects and white hit flashes; direction selected from Stage 6 flight state, never transient spin. No shared atlas edits. Scope/QA docs/SMOOTH_MOTION_1009.md; further unique roster families and bank/roll in-betweens remain future motion work."
+  },
   "bm9_": {
     "role": "authored_boss_motion_and_charge_reels",
     "sheet": null,
