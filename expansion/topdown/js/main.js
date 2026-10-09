@@ -379,10 +379,17 @@
 
   // ------------------------------------------------------------------ loop
   let last = performance.now(), acc = 0, frozen = false;
+  const pace = { avg: 1 / 60, phase: 0 };
   function frame(now) {
     if (!frozen) {
-      acc += Math.min(0.1, (now - last) / 1000); last = now;
-      while (acc >= 1 / TD.HZ) { step(); acc -= 1 / TD.HZ; }
+      // 1009 cadence lock (see assets/frame_pacing_1009.js): one tick per frame at 60 Hz, one per k frames at 120/240 Hz;
+      // the accumulator only for rates with no clean ratio. A 60 Hz display no longer flips between 0- and 2-tick frames.
+      const dt = Math.min(0.1, Math.max(0, (now - last) / 1000)), T = 1 / TD.HZ; last = now; pace.avg += (dt - pace.avg) * 0.06;
+      const r = pace.avg / T, n = Math.round(r), k = Math.round(1 / r); let ticks;
+      if (n >= 1 && n <= 3 && Math.abs(r - n) < 0.07 * n) { acc = 0; ticks = Math.max(1, Math.min(3, Math.round(dt / T))); }
+      else if (k >= 2 && k <= 4 && Math.abs(1 / r - k) < 0.07 * k) { acc = 0; if (dt > pace.avg * 1.6) { pace.phase = 0; ticks = Math.min(3, Math.round(dt / T)); } else { pace.phase = (pace.phase + 1) % k; ticks = pace.phase ? 0 : 1; } }
+      else { acc += dt; ticks = 0; while (acc >= T && ticks < 6) { ticks++; acc -= T; } }
+      for (let i = 0; i < ticks; i++) step();
       render();
     }
     root.requestAnimationFrame(frame);

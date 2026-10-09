@@ -89,7 +89,9 @@
     const g = get(key); if (!g) return false;
     const s = o.s == null ? 1 : o.s, sx = o.sx == null ? s : o.sx, sy = o.sy == null ? s : o.sy;
     const ax = o.ax == null ? g.sw / 2 : o.ax, ay = o.ay == null ? g.sh / 2 : o.ay;
-    ctx.save(); ctx.translate(x, y); if (o.a) ctx.rotate(o.a);
+    // 1009: whole world pixels, like an arcade sprite chip - every sprite lands on the same grid as the scrolled
+    // background (the camera is rounded in main.js), so nothing shimmers a pixel against the floor while it moves.
+    ctx.save(); ctx.translate(Math.round(x), Math.round(y)); if (o.a) ctx.rotate(o.a);
     if (o.alpha != null) ctx.globalAlpha *= o.alpha;
     if (o.comp) ctx.globalCompositeOperation = o.comp;
     if (o.tint) { const t = silhouette(key, o.tint); if (t) ctx.drawImage(t, -ax * sx, -ay * sy, g.sw * sx, g.sh * sy); }

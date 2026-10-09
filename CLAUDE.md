@@ -1,3 +1,11 @@
+# 2026-10-09 — frame pacing: one logic tick per displayed frame
+
+Mike wants Shadow Gangs Zero's Neo Geo smoothness. The 60 Hz combat clock's accumulator split ticks 0/2 on
+51% of frames at an exact 60 Hz display (probe_pacing_1009.py). assets/frame_pacing_1009.js (after
+maneuver_safety_1007.js) locks cadence to the display; expansion/topdown main.js does the same and ART.draw
+rounds sprites to world pixels. Suite 7,952/0 + banner; expansion probes 28/29/23 all pass.
+Read [docs/FRAME_PACING_1009.md](docs/FRAME_PACING_1009.md). Do not reintroduce a bare accumulator.
+
 # 2026-10-09 — Level 5 MUSEUM OF VIOLENCE (Mercs x Demolition Man x Hard Corps x MGS)
 
 Mike asked to study Mercs, Demolition Man (museum stage) and Contra Hard Corps and merge them with the
