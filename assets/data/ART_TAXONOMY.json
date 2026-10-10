@@ -1,4 +1,15 @@
 {
+  "af10_": {
+    "role": "authored_32_frame_hammer_death_and_module_explosions",
+    "sheet": null,
+    "note": "October 10: 96 unique loose RGBA frames:32 electric corona rings,32 violet/orange plasma explosions,32 fire/smoke shock rings. Built-in imagegen extended the approved eight-frame designs. Accepted sources are electric_ring_32_clean.png,plasma_blast_32_padded.png,fire_ring_32_clean.png in _ART_SOURCES/arcade_finish_1010/returned; rejected opaque/clipped/count-mismatched alternatives remain archived and unregistered. Equal 4x8 cells, verified clear source borders, common scale, fixed centers, no duplicate interpolation or procedural sprite painting. Owner _BUILD_SOURCE/build_arcade_finish_1010.py updates assets/arcade_finish_art_1010.js and loose cells together. Runtime smooth_motion_1009.js owns Hammer engine death without legacy grey smoke discs/star bursts. The isolated Stage I preview also uses these reels for module breakup. QA docs/ARCADE_MOTION_1010.md."
+  },
+  "ac10_": {
+    "role": "authored_elemental_jets_and_preview_only_stage1_modular_candidates",
+    "sheet": null,
+    "note": "October 10: large south-facing fire/ice fighters each have16 authored fixed-chassis frames in assets/game/shared/combat/arcade_jets_1010. Shipping registry assets/arcade_jets_art_1010.js; runtime arcade_combat_1010.js. Shieldless small flyers use a warned locked kamikaze dive and native contact explosion. Mountain geysers launch inward from upper sides using the original authored fire column rotated90 degrees. Stage I green Razorback, red Furious Razorback and Overlord candidate hulls have16 frames each plus twelve independent four-frame module banks, including separate rotor. Preview candidates are loaded ONLY by docs/previews/neo_geo_stage1_1010/index.html; existing encounters are not replaced. Owning builder _BUILD_SOURCE/build_arcade_candidates_1010.py registers source/cell changes together. Exact imagegen prompts, original engine reference exports, fixed mount registrations and hashes in _ART_SOURCES/arcade_candidates_1010/. No shared atlas changes."
+  },
+
   "sm10_": {
     "role": "authored_enemy_ship_motion_and_hammer_electric_farewell",
     "sheet": null,

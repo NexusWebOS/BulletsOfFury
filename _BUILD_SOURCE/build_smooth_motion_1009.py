@@ -7,22 +7,29 @@ ROOT=Path(__file__).resolve().parents[1];SRC=ROOT/'_ART_SOURCES/smooth_motion_10
 DEST=ROOT/'assets/game/shared/combat/smooth_motion_1009';DEST.mkdir(parents=True,exist_ok=True)
 OUT=ROOT/'_shots/smooth_motion_1009';OUT.mkdir(parents=True,exist_ok=True)
 manifest={};targets=[]
-def registration(cells,ink):
- # Register only the fixed central chassis; moving feet, wing tips and exhaust
- # are excluded. One scale serves the reel, never a per-frame silhouette fit.
- base=np.array(cells[0]);l,t,r,b=map(int,ink);x0=l+(r-l)//3;x1=r-(r-l)//3;y0=t+(b-t)//4;y1=t+(b-t)*3//4
- patch=base[y0:y1,x0:x1,:3].astype(float);mask=base[y0:y1,x0:x1,3]>160
+def registration(cells,ink,fixture=None):
+ # Register the fixed central chassis, excluding moving feet, tips and exhaust.
+ # Masked FFT translation searches the actual cell; the old +/-7px search
+ # saturated while the generated grid accumulated up to 33px of displacement.
+ # Scale stays common to the reel. Padding prevents circular edge wrap.
+ h=max(c.height for c in cells);w=max(c.width for c in cells);shape=(2*h,2*w)
+ base=np.zeros((h,w,4),float);src=np.array(cells[0]);base[:src.shape[0],:src.shape[1]]=src
+ l,t,r,b=map(int,ink);mask=np.zeros((h,w));x0=l+(r-l)//3;x1=r-(r-l)//3;y0=t+(b-t)//4;y1=t+(b-t)*3//4
+ if fixture:x0,y0,x1,y1=map(int,fixture)
+ mask[y0:y1,x0:x1]=base[y0:y1,x0:x1,3]>160
  if not mask.any():return [(0,0)]*len(cells)
- shifts=[(0,0)]
+ def fft(q):return np.fft.rfft2(q,shape)
+ def corr(f,g):return np.fft.irfft2(f*np.conj(g),shape)
+ mf=fft(mask);tf=[fft(base[:,:,c]*mask) for c in range(3)]
+ shifts=[(0,0)];limit=min(64,w//3,h//3);indices=np.arange(-limit,limit+1);iy=indices%shape[0];ix=indices%shape[1]
  for cell in cells[1:]:
-  a=np.array(cell);best=(float('inf'),0,0)
-  for dy in range(-7,8):
-   for dx in range(-7,8):
-    if min(y0+dy,x0+dx)<0 or y1+dy>a.shape[0] or x1+dx>a.shape[1]:continue
-    sample=a[y0+dy:y1+dy,x0+dx:x1+dx,:3].astype(float)
-    cost=np.abs(sample-patch)[mask].mean()+.16*(abs(dx)+abs(dy))
-    if cost<best[0]:best=(cost,dx,dy)
-  shifts.append((-best[1],-best[2]))
+  a=np.zeros_like(base);src=np.array(cell);a[:src.shape[0],:src.shape[1]]=src
+  cost=corr(mf,fft(np.sum(a[:,:,:3]**2,axis=2)))
+  for c in range(3):cost-=2*corr(tf[c],fft(a[:,:,c]))
+  search=cost[np.ix_(iy,ix)]/(mask.sum()*3)+.025*(abs(indices[:,None])+abs(indices[None,:]))
+  y,x=np.unravel_index(np.argmin(search),search.shape);shift=(int(indices[x]),int(indices[y]))
+  if max(map(abs,shift))>=limit:raise ValueError('Chassis registration hit search limit; inspect/regenerate the source reel.')
+  shifts.append(shift)
  return shifts
 im=Image.open(SRC/'returned/electric_rings.png').convert('RGBA')
 # This reel's expansion is drawn across unequal widths, measured per-frame.
@@ -53,7 +60,7 @@ if config.exists():
   cells=[]
   for rect in cuts:
    cell=raw.crop(rect);a=np.array(cell);a[:,:,3][a[:,:,3]<64]=0;cells.append(Image.fromarray(a))
-  shifts=registration(cells,ink) if spec.get('align') else [(0,0)]*len(cells)
+  shifts=registration(cells,ink)
   native=Image.open(SRC/'reference'/spec['targetRef']).convert('RGBA') if spec.get('targetRef') else None
   if native:
    target=native.getchannel('A').point(lambda a:255 if a>160 else 0).getbbox();origin=cells[0].getchannel('A').point(lambda a:255 if a>160 else 0).getbbox()
@@ -67,6 +74,14 @@ if config.exists():
    canvas=Image.new('RGBA',size);ox=(size[0]-cell.width)//2;oy=(size[1]-cell.height)//2;canvas.alpha_composite(cell,(ox+round(shifts[i][0]*k),oy+round(shifts[i][1]*k)))
    pivot=spec.get('pivot',[(ink[0]+ink[2])/2,(ink[1]+ink[3])/2]);pivot=[ox+pivot[0]*k,oy+pivot[1]*k]
    path=DEST/f'{name}_{i}.png';canvas.save(path,optimize=True);frames.append({'key':f'sm10_{name}_{i}','path':path.relative_to(ROOT).as_posix(),'w':size[0],'h':size[1],'pivot':pivot,'rect':rect,'inkW':(ink[2]-ink[0])*k,'inkH':(ink[3]-ink[1])*k,'registration':shifts[i]})
+  if name=='furyship':
+   # Nearest-neighbour reduction can round a subpixel source translation into
+   # one native pixel. Register the final cockpit/centre plates after scaling,
+   # using the same immutable core window checked in the Chromium pixel probe.
+   ims=[Image.open(ROOT/f['path']).convert('RGBA') for f in frames];w,h=ims[0].size
+   corrections=registration(ims,[0,0,w,h],[w*.3125,h*.3125,w*.6771,h*.6771])
+   for f,im,(dx,dy) in zip(frames,ims,corrections):
+    out=Image.new('RGBA',im.size);out.alpha_composite(im,(dx,dy));out.save(ROOT/f['path'],optimize=True);f['nativeRegistration']=[dx,dy]
   manifest[name]=frames
   if spec.get('paletteMask'):
    masks=[]
@@ -94,6 +109,6 @@ proof={'tool':'image_gen.imagegen','creative_sources':hashes(sorted((SRC/'return
  'outputs':hashes([ROOT/f['path'] for bank in manifest.values() for f in bank]),
  'registry_sha256':hashlib.sha256((ROOT/'assets/smooth_motion_art_1009.js').read_bytes()).hexdigest(),
  'cell_count':sum(map(len,manifest.values())),
- 'normalization':'Alpha below 64 cleared; common reel scale; fixed-chassis translation registration only; native ship canvases and original nozzle rigs retained. Cobalt-only Furyship value masks support the existing pilot palette owner. No procedural sprite painting.'}
+ 'normalization':'Alpha below 64 cleared; common reel scale; masked FFT fixed-chassis translation registration on EVERY actor reel; native ship canvases and original nozzle rigs retained. Cobalt-only Furyship value masks support the existing pilot palette owner. No procedural sprite painting.'}
 (SRC/'provenance.json').write_text(json.dumps(proof,indent=2)+'\n',encoding='utf-8')
 print('Built',sum(map(len,manifest.values())),'authored cells')

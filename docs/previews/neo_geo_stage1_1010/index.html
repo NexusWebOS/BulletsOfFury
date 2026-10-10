@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bullets of Fury · Stage I modular preview</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#070d17;color:#d7edf1;font:15px/1.5 system-ui,sans-serif}main{max-width:1350px;margin:auto;padding:24px}h1{font-size:24px;margin:0 0 8px}p{color:#9eb5c7;margin:8px 0 20px}.layout{display:grid;grid-template-columns:minmax(400px,1fr) 300px;gap:24px}.viewport{background:#020509;border:1px solid #29465b;aspect-ratio:4/3;overflow:hidden}iframe{width:100%;height:100%;border:0}.controls{padding:18px;background:#101d2b;border:1px solid #29465b}button,select{background:#173049;color:#e7f6ff;border:1px solid #436d8e;border-radius:3px;padding:10px 12px;cursor:pointer;font:inherit}button:hover{background:#245373}button.active{border-color:#74f2c5;color:#aaffdb}nav{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}label{display:block;margin:14px 0}input[type=range]{width:100%}.row{display:flex;gap:8px;margin:12px 0}.status{font:12px/1.7 ui-monospace,monospace;white-space:pre-line;color:#86d7ee}.note{border-top:1px solid #29465b;padding-top:15px;font-size:13px}a{color:#7adfd3}@media(max-width:760px){.layout{display:block}.viewport{min-height:450px}.controls{margin-top:16px}}
+</style>
+<main><h1>Stage I · Neo Geo modular preview</h1><p>Three candidate assemblies, animated inside the game's renderer. The campaign still uses the current encounters.</p>
+<nav id="choices"><button data-unit="razorback" class="active">Razorback</button><button data-unit="furious_razorback">Furious Razorback</button><button data-unit="overlord">Overlord</button></nav>
+<div class="layout"><div class="viewport"><iframe id="game" title="Native game preview" src="../../../index.html"></iframe></div>
+<aside class="controls"><div id="status" class="status">Loading native renderer…</div><div class="row"><button id="play">Pause</button><button id="reset">Restore modules</button></div>
+<label>Animation speed <input id="speed" type="range" min="0.25" max="1.5" step="0.25" value="1"></label>
+<label><input id="original" type="checkbox"> Show current encounter for comparison</label>
+<label><input id="anchors" type="checkbox"> Show fixed module anchors</label>
+<p class="note">Click a module to break it off. It spins away and bursts into the new 32-frame effects.</p><div id="modules"></div>
+<p class="note">16 authored hull frames per candidate. Independent four-frame weapon cycles, separate rotating rotor and turbine. No candidate boss art is loaded by the shipping game.</p>
+</aside></div></main>
+<script>
+let g,ready=false;const frame=document.querySelector('#game'),status=document.querySelector('#status');
+const call=code=>g?.eval(code),modules=document.querySelector('#modules');
+function updateModules(){if(!ready)return;modules.replaceChildren();for(const m of call('PV10.rig().map(p=>({id:p.id,label:p.label}))')){const b=document.createElement('button');b.textContent='Break '+m.label;b.style.margin='4px';b.onclick=()=>call('PV10.break('+JSON.stringify(m.id)+')');modules.append(b);}}
+frame.addEventListener('load',async()=>{g=frame.contentWindow;const timer=setInterval(async()=>{if(!call('typeof ASSETS!=="undefined"&&typeof AC10!=="undefined"&&window.__bofFrames>4'))return;clearInterval(timer);try{const [data,code]=await Promise.all(['candidate_art.js','preview_runtime.js'].map(p=>fetch(p).then(r=>r.text())));const s=g.document.createElement('script');s.textContent=data+'\n'+code;g.document.head.append(s);ready=true;updateModules();}catch(e){status.textContent=String(e);}},100);});
+document.querySelector('#choices').onclick=e=>{const b=e.target.closest('[data-unit]');if(!b||!ready)return;call('PV10.choose('+JSON.stringify(b.dataset.unit)+')');for(const q of document.querySelectorAll('[data-unit]'))q.classList.toggle('active',q===b);updateModules();};
+document.querySelector('#play').onclick=e=>{if(!ready)return;const paused=call('PV10.paused=!PV10.paused');e.target.textContent=paused?'Play':'Pause';};
+document.querySelector('#reset').onclick=()=>call('PV10.restore()');document.querySelector('#speed').oninput=e=>call('PV10.speed='+Number(e.target.value));
+document.querySelector('#original').onchange=e=>call('PV10.original='+e.target.checked);document.querySelector('#anchors').onchange=e=>call('PV10.anchors='+e.target.checked);
+setInterval(()=>{if(!ready)return;const q=call('({unit:PV10.unit,frame:Math.floor(PV10.t*16)%16+1,loaded:PV10.ready(),gone:PV10.gone.size,modules:PV10.rig().length})');status.textContent=(q.loaded?'READY':'LOADING ART')+' · '+q.unit+'\nHULL FRAME '+String(q.frame).padStart(2,'0')+' / 16\nMODULES '+(q.modules-q.gone)+' / '+q.modules+' attached';},100);
+</script></html>

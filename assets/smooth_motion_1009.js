@@ -5,6 +5,12 @@ const SM10={events:[],clock:0,base:{start:h3EndingStart,tick:h3EndingTick,draw:h
  deathTick:hammerBossDeathTick,deathDraw:fb1002HammerDeathDraw,load:stageLoadBegin,begin:beginStage,touch:XART._touch,
  enemy:drawEnemy,play:updatePlay,tank:drawModularTank,get:XART.get,fury:furyShipCanvas},furyCache:{}};
 for(const bank of Object.values(SM10_ART))for(const a of bank)XART._src[a.key]=a.path;
+for(const bank of Object.values(AF10_ART))for(const a of bank)XART._src[a.key]=a.path;
+function af10Warm(){for(const bank of Object.values(AF10_ART))for(const a of bank)XART.rdy(a.key);}
+function af10Ready(){return Object.values(AF10_ART).flat().every(a=>XART.rdy(a.key));}
+function af10Cell(name,age,life,x,y,size){if(age<0||age>=life)return false;const bank=AF10_ART[name],a=bank?.[Math.min(bank.length-1,Math.floor(age/life*bank.length))];
+ if(!a||!XART.rdy(a.key))return false;ctx.save();ctx.imageSmoothingEnabled=false;
+ const k=size/256;ctx.drawImage(XART.get(a.key),x-a.pivot[0]*k,y-a.pivot[1]*k,a.w*k,a.h*k);ctx.restore();return true;}
 function sm10Warm(names){for(const n of names)for(const a of SM10_ART[n]||[])XART.rdy(a.key);}
 function sm10Log(event,data={}){SM10.events.push({event,...data});if(SM10.events.length>240)SM10.events.shift();}
 function sm10Cell(name,i,x,y,size,flash=0){const a=SM10_ART[name]?.[i];if(!a||!XART.rdy(a.key))return false;
@@ -13,12 +19,12 @@ function sm10Cell(name,i,x,y,size,flash=0){const a=SM10_ART[name]?.[i];if(!a||!X
 function sm10StageBanks(n){return [...Object.keys(SM10_ART).filter(k=>k.startsWith('pilot_')||k.startsWith('furyship')),
  ...({2:['heat_disc','furnace_pod','thermal_jet'],3:['shard_sentry','ice_patrol'],4:['desert_hull','desert_tractor'],
  5:['electric_ring','orbital_frigate','orbital_rammer'],6:['storm_jet'],7:['toxic_pipe','toxic_walker'],8:['alien_fighter','alien_stalker']}[n]||[])];}
-stageLoadBegin=function(n,keys){return SM10.base.load.call(this,n,[...(keys||[]),...sm10StageBanks(n).flatMap(name=>(SM10_ART[name]||[]).map(a=>a.key))]);};
-beginStage=function(n){const r=SM10.base.begin.apply(this,arguments);SM10.clock=0;SM10.events=[];sm10Warm(sm10StageBanks(n));return r;};
+stageLoadBegin=function(n,keys){return SM10.base.load.call(this,n,[...(keys||[]),...sm10StageBanks(n).flatMap(name=>(SM10_ART[name]||[]).map(a=>a.key)),...(n===5?Object.values(AF10_ART).flat().map(a=>a.key):[])]);};
+beginStage=function(n){const r=SM10.base.begin.apply(this,arguments);SM10.clock=0;SM10.events=[];sm10Warm(sm10StageBanks(n));if(n===5)af10Warm();return r;};
 updatePlay=function(dt){const r=SM10.base.play.apply(this,arguments);if(state===GS.PLAY)SM10.clock+=dt;return r;};
 function sm10Core(b){return{x:b.x+17,y:b.y-26};} // measured reactor pivot of hammer_death reel
 h3EndingStart=function(b){SM10.base.start(b);const e=H3.ending;e.sm10={phase:'words',t:0,line:0,shown:0,portrait:0,window:1};
- delete e.engineDeath;e.phase='lastWords';b.dying=0;sm10Log('hammer-last-words');sm10Warm(['electric_ring']);XART.rdy('fb1002_hammer_portrait');XART.rdy('nbret_'+_pilotKey());};
+ delete e.engineDeath;e.phase='lastWords';b.dying=0;sm10Log('hammer-last-words');af10Warm();XART.rdy('fb1002_hammer_portrait');XART.rdy('nbret_'+_pilotKey());};
 XART._touch=function(k){if(k!=='sm10_hammer_portrait')return SM10.base.touch.apply(this,arguments);
  if(!XART.rdy('fb1002_hammer_portrait'))return null;const im=XART.get('fb1002_hammer_portrait'),c=document.createElement('canvas');
  c.width=im.width;c.height=im.height;const g=c.getContext('2d');g.drawImage(im,0,0);
@@ -29,7 +35,7 @@ function sm10Phase(e,phase){e.sm10.phase=phase;e.sm10.t=0;sm10Log('hammer-'+phas
  if(phase==='lock')Audio.SFX.retinaCharge?.();if(phase==='missile')Audio.SFX.retinaLockBeep?.();}
 h3EndingTick=function(dt){const e=H3.ending,Q=e?.sm10;if(!Q)return SM10.base.tick.apply(this,arguments);
  if(Q.phase==='death')return SM10.base.tick.apply(this,arguments);
- const ready=XART.rdy('fb1002_hammer_portrait')&&furyShipReady();if(!ready)return;
+ const ready=XART.rdy('fb1002_hammer_portrait')&&furyShipReady()&&af10Ready();if(!ready)return;
  Q.t+=dt;stageEnding=0;whiteBlast=0;shake=0;_stage5SpaceScroll+=dt*12;efxTick(dt);
  if(Q.phase==='words'){const line=SM10_LAST_WORDS[Q.line],n=Math.min(line.length,Math.floor(Q.t*32));dialogueLetterTicks(line,Q.shown,n);Q.shown=n;
   if(Q.t>=line.length/32+2){if(Q.line===0){Q.line=1;Q.t=0;Q.shown=0;}else sm10Phase(e,'portraitWhite');}}
@@ -43,7 +49,14 @@ h3EndingTick=function(dt){const e=H3.ending,Q=e?.sm10;if(!Q)return SM10.base.tic
 function sm10Missile(Q,b){const c=sm10Core(b),u=clamp(Q.t/.65,0,1),x=lerp(Q.from.x,c.x,u),y=lerp(Q.from.y,c.y,u),a=Math.atan2(c.y-Q.from.y,c.x-Q.from.x);
  ctx.save();ctx.translate(x,y);ctx.rotate(a+Math.PI/2);const f=Math.floor(Q.t*16)%4;
  spaceAtlasDraw(ctx,'volley_3_trail_'+f,0,18,20,36,true,null);spaceAtlasDraw(ctx,'volley_3_missile_0',0,0,22,36,true,null);ctx.restore();}
-h3EndingDraw=function(){const e=H3.ending,Q=e?.sm10;if(!Q||Q.phase==='death')return SM10.base.draw.apply(this,arguments);
+h3EndingDraw=function(){const e=H3.ending,Q=e?.sm10;if(!Q)return SM10.base.draw.apply(this,arguments);
+ if(Q.phase==='death'){
+  if(e.phase!=='engineDeath')return SM10.base.draw.apply(this,arguments);
+  ctx.save();worldXformEscape();ctx.save();ctx.translate(-camX,0);drawBG(0);fb1002HammerDeathDraw(e.boss);
+  furyShipDrawFlight(player.x,Math.min(player.y,VH*.78),SPACE_SHIP_SIZE*1.5,_pilotKey(),{key:'base'},e.engineDeath);ctx.restore();
+  if(whiteBlast>0){ctx.fillStyle='rgba(255,255,255,'+whiteBlast+')';ctx.fillRect(0,0,VW,VH);}
+  if(e.engineDeath>7){ctx.fillStyle='rgba(0,0,0,'+clamp(e.engineDeath-7,0,1)+')';ctx.fillRect(0,0,VW,VH);}ctx.restore();return;
+ }
  ctx.save();worldXformEscape();ctx.save();ctx.translate(-camX,0);drawBG(0);bm9Draw('hammer_death',0,e.boss.x+17,e.boss.y-26,.57);
  furyShipDrawFlight(player.x,Math.min(player.y,VH*.78),SPACE_SHIP_SIZE*1.5,_pilotKey(),{key:'base'},Q.t);
  const c=sm10Core(e.boss);if(Q.phase==='lock'||Q.phase==='missile')drawBossRetina(e.boss,c.x,c.y,Q.phase==='lock'?(1-clamp(Q.t/.9,0,1))*TAU:0,1);
@@ -54,17 +67,26 @@ h3EndingDraw=function(){const e=H3.ending,Q=e?.sm10;if(!Q||Q.phase==='death')ret
 /* Replace random death pops with individually timed, seated authored blasts.
    Rings shatter into authored electric fragments; sprite cells remain opaque. */
 hammerBossDeathTick=function(b,dt){const q=H3.ending?.sm10;if(!fb1002NormalHammer(b)||q?.phase!=='death')return SM10.base.deathTick.apply(this,arguments);
- const h=b._hammer;if(!h.sm10Death){h.sm10Death=true;h.deathEvents1002=['hammer-core'];h.deathFx1002=[];}
- const r=SM10.base.deathTick.apply(this,arguments);h.deathFx1002=[];
+ const h=b._hammer;if(!h.sm10Death){h.sm10Death=true;h.deathEvents1002=['hammer-core'];h.deathFx1002=[];
+  groundTargetingCancel(b);eBullets=eBullets.filter(q=>!q._boss);h.stormWaves=[];h.throw=null;}
+ b.dying+=dt;const t=b.dying;
  for(let i=0;i<9;i++){const at=.12+i*.46;if(b.dying>=at&&!h.deathEvents1002.includes('sm10-'+i)){
   h.deathEvents1002.push('sm10-'+i);Audio.SFX.shieldBreakCombat?.();sm10Log('hammer-electrical-pop',{i,at});}}
- return r;};
-fb1002HammerDeathDraw=function(b){const r=SM10.base.deathDraw.apply(this,arguments);if(!b._hammer?.sm10Death)return r;
- const t=b.dying;for(let i=0;i<9;i++){const age=t-(.12+i*.46);if(age<0||age>=1.0)continue;
-  const a=i*2.399,x=b.x+17+Math.cos(a)*(i?72:0),y=b.y-26+Math.sin(a)*(i?90:0),size=100+(i%3)*22;
-  fb1002Cell('electrical',Math.min(15,Math.floor(age*16)),x,y,size,size,null,0,1);
-  sm10Cell('electric_ring',Math.min(7,Math.floor(age*8)),x,y,size*1.8);}
- return r;};
+ if(t>=2.55&&!h.sm10Scream){h.sm10Scream=true;Audio.SFX.bossRoar?.();Audio.SFX.hammerImpact?.();}
+ if(t>=4.85&&!h.bm9Rupture){h.bm9Rupture=true;Audio.SFX.expBig?.();bm9Log('hammer-authored-rupture',{t});sm10Log('hammer-plasma-rupture');}
+ whiteBlast=t>=4.85&&t<5.03?.32*(1-(t-4.85)/.18):0;
+ shake=Math.max(shake,t<6.2?Math.min(14,2+t*1.8):0);
+};
+fb1002HammerDeathDraw=function(b){if(!b._hammer?.sm10Death)return SM10.base.deathDraw.apply(this,arguments);
+ const t=b.dying,f=t<.55?0:t<1.15?1:t<1.75?2:t<2.30?3:t<2.85?4:t<3.7?5:t<4.85?6:7;
+ if(t<5.55)bm9Draw('hammer_death',f,b.x+17+Math.sin(t*41)*Math.max(0,t-2.8),b.y-26,.57);
+ for(let i=0;i<9;i++){const age=t-(.12+i*.46),a=i*2.399,x=b.x+17+Math.cos(a)*(i?72:0),y=b.y-26+Math.sin(a)*(i?90:0);
+  af10Cell('electric_ring',age,1.45,x,y,165+(i%3)*18);}
+ for(let i=0;i<6;i++){const age=t-(3.55+i*.28),a=i*2.4;
+  af10Cell('plasma_blast',age,2.05,b.x+17+Math.sin(a)*65,b.y-26+Math.cos(a)*80,125+(i%2)*24);}
+ af10Cell('fire_ring',t-4.85,2.05,b.x+17,b.y-26,340);
+ af10Cell('plasma_blast',t-4.85,2.05,b.x+17,b.y-26,275);
+};
 
 const SM10_ENEMIES={2:{disc:{bank:'heat_disc',h:77},eye:{bank:'furnace_pod',h:73}},
  3:{s3mine:{bank:'shard_sentry',h:80},s3interceptor:{bank:'ice_patrol',h:88}}};

@@ -1,0 +1,1371 @@
+{
+  "passed": 63,
+  "failed": [],
+  "errors": [],
+  "checks": [
+    {
+      "name": "heat_disc fixed core stays registered",
+      "pass": true,
+      "data": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "furnace_pod fixed core stays registered",
+      "pass": true,
+      "data": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "shard_sentry fixed core stays registered",
+      "pass": true,
+      "data": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "ice_patrol fixed core stays registered",
+      "pass": true,
+      "data": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "storm_jet fixed core stays registered",
+      "pass": true,
+      "data": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "thermal_jet fixed core stays registered",
+      "pass": true,
+      "data": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "desert_hull fixed core stays registered",
+      "pass": true,
+      "data": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          -1,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "desert_tractor fixed core stays registered",
+      "pass": true,
+      "data": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "orbital_frigate fixed core stays registered",
+      "pass": true,
+      "data": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "orbital_rammer fixed core stays registered",
+      "pass": true,
+      "data": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "toxic_pipe fixed core stays registered",
+      "pass": true,
+      "data": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "toxic_walker fixed core stays registered",
+      "pass": true,
+      "data": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "alien_fighter fixed core stays registered",
+      "pass": true,
+      "data": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "alien_stalker fixed core stays registered",
+      "pass": true,
+      "data": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "pilot_axel fixed core stays registered",
+      "pass": true,
+      "data": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          -2,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "pilot_cole fixed core stays registered",
+      "pass": true,
+      "data": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          -2,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "pilot_decker fixed core stays registered",
+      "pass": true,
+      "data": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "pilot_falva fixed core stays registered",
+      "pass": true,
+      "data": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          -2,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "pilot_freezer fixed core stays registered",
+      "pass": true,
+      "data": [
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "pilot_juggernaut fixed core stays registered",
+      "pass": true,
+      "data": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "pilot_lizzie fixed core stays registered",
+      "pass": true,
+      "data": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          -2,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "pilot_maverick fixed core stays registered",
+      "pass": true,
+      "data": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          -2,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "pilot_yuri fixed core stays registered",
+      "pass": true,
+      "data": [
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "furyship fixed core stays registered",
+      "pass": true,
+      "data": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "electric_ring has 32 distinct native frames",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "plasma_blast has 32 distinct native frames",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "fire_ring has 32 distinct native frames",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "ash shieldless warned locked dive",
+      "pass": true,
+      "data": {
+        "shield": false,
+        "phase": "ram",
+        "speed": 300,
+        "locked": true,
+        "bullets": 0
+      }
+    },
+    {
+      "name": "skim shieldless warned locked dive",
+      "pass": true,
+      "data": {
+        "shield": false,
+        "phase": "ram",
+        "speed": 300,
+        "locked": true,
+        "bullets": 0
+      }
+    },
+    {
+      "name": "disc shieldless warned locked dive",
+      "pass": true,
+      "data": {
+        "shield": false,
+        "phase": "ram",
+        "speed": 300,
+        "locked": true,
+        "bullets": 0
+      }
+    },
+    {
+      "name": "eye shieldless warned locked dive",
+      "pass": true,
+      "data": {
+        "shield": false,
+        "phase": "ram",
+        "speed": 300,
+        "locked": true,
+        "bullets": 0
+      }
+    },
+    {
+      "name": "lance shieldless warned locked dive",
+      "pass": true,
+      "data": {
+        "shield": false,
+        "phase": "ram",
+        "speed": 300,
+        "locked": true,
+        "bullets": 0
+      }
+    },
+    {
+      "name": "Stage 2 kamikaze contact uses native explosion",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "Stage 2 large jet 16 distinct south-facing frames",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "Stage 2 large jet visibly flashes white",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "Stage 2 jet uses six-shot gun bursts",
+      "pass": true,
+      "data": {
+        "shots": 6,
+        "kinds": [
+          "s2needle"
+        ],
+        "hp": 6,
+        "pattern": "volc"
+      }
+    },
+    {
+      "name": "Stage 2 new jet is an ordinary lock target",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "Stage 2 queues three jets with finite wave clocks",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "s3mine shieldless warned locked dive",
+      "pass": true,
+      "data": {
+        "shield": false,
+        "phase": "ram",
+        "speed": 300,
+        "locked": true,
+        "bullets": 0
+      }
+    },
+    {
+      "name": "s3interceptor shieldless warned locked dive",
+      "pass": true,
+      "data": {
+        "shield": false,
+        "phase": "ram",
+        "speed": 300,
+        "locked": true,
+        "bullets": 0
+      }
+    },
+    {
+      "name": "Stage 3 kamikaze contact uses native explosion",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "Stage 3 large jet 16 distinct south-facing frames",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "Stage 3 large jet visibly flashes white",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "Stage 3 jet uses six-shot gun bursts",
+      "pass": true,
+      "data": {
+        "shots": 6,
+        "kinds": [
+          "s3shard"
+        ],
+        "hp": 9,
+        "pattern": "s3ice"
+      }
+    },
+    {
+      "name": "Stage 3 new jet is an ordinary lock target",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "Stage 3 queues three jets with finite wave clocks",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "Volcano vent launches from upper side and faces inward",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "Geyser native pixels are horizontal",
+      "pass": true,
+      "data": [
+        461,
+        209
+      ]
+    },
+    {
+      "name": "Horizontal damage matches rendered lane",
+      "pass": true,
+      "data": {
+        "inLane": 1,
+        "outside": 0
+      }
+    },
+    {
+      "name": "Horizontal release survives full geyser cap",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "razorback keeps separately rendered modules",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "razorback sixteen native hull frames keep their fixed mount",
+      "pass": true,
+      "data": [
+        [
+          0,
+          0
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          -1,
+          -1
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          -1,
+          -1
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          -1,
+          -1
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          -1,
+          -1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          -1,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "razorback module detaches without hiding hull",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "razorback detached module explodes without fading",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "furious_razorback keeps separately rendered modules",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "furious_razorback sixteen native hull frames keep their fixed mount",
+      "pass": true,
+      "data": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "furious_razorback module detaches without hiding hull",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "furious_razorback detached module explodes without fading",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "overlord keeps separately rendered modules",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "overlord sixteen native hull frames keep their fixed mount",
+      "pass": true,
+      "data": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          -1,
+          -1
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          -1,
+          -1
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "overlord module detaches without hiding hull",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "overlord detached module explodes without fading",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "No page, console or asset errors",
+      "pass": true,
+      "data": []
+    }
+  ]
+}
