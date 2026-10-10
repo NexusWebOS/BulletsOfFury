@@ -54,6 +54,7 @@
       u.shots++;u.recoil=4;FX.boom(p.x,p.y,50,'wm_'+u.crew+'_muzzle_',3);A.play(k==='missile'?'missile':k==='laser'?'laser':'eshot',.5);
     }
     squad.alive=()=>!squad.dead&&squad.state!=='enter';
+    squad.retinaTargets=()=>squad.tanks.filter(u=>!u.dead).flatMap(u=>Object.keys(u.parts).filter(p=>u.parts[p]>0).map(p=>({id:u.crew+':'+p,point:()=>geo(u,p),valid:()=>squad.alive()&&!u.dead&&u.parts[p]>0})));
     squad.hpFrac=()=>squad.tanks.reduce((sum,u)=>sum+Object.values(u.parts).reduce((n,v)=>n+Math.max(0,v),0),0)/(202*3);
     squad.aim=(sx,sy)=>squad.tanks.filter(u=>!u.dead).flatMap(u=>['turret','hull'].filter(p=>u.parts[p]>0).map(p=>geo(u,p))).sort((a,b)=>M.dist(sx,sy,a.x,a.y)-M.dist(sx,sy,b.x,b.y))[0];
     squad.hit=function(sx,sy,r,dmg,shot){

@@ -1,3 +1,27 @@
+# 2026-10-10 — orb rework (LOCAL ONLY)
+
+Mike: orbs were the weakest weapons and some "just disappear with no effects". [Report](docs/ORBS_1010.md);
+probe `_BUILD_SOURCE/probe_orbs_1010.py`. Owner `assets/orbs_1010.js` (after feedback_1009.js) replaces
+playerOrbTick and wraps Yuri's lightning orb. Per-level damage table, element-specific blasts, every
+ending detonates (externally deleted orbs too), contact hits carry the orb's element, orbs lean toward
+live targets and hit any solid part inside their radius. pShoot: 1/2/3 orbs at lv1/3/5, 0.3 s relaunch
+gap. Traps: orb contact tested only its centre (passed through the Razorback's sealed plate); Stage 6's
+opening locks all weapons (s6OpeningEnd does not clear it in probes, set s6Opening=null). Suite 7,952/0.
+
+# 2026-10-09 — feedback pass: Level 5 local, HUD to the bottom, Stage 1/2/4 fixes (LOCAL ONLY)
+
+Mike's playtest list. [Report](docs/FEEDBACK_1009.md); probe `_BUILD_SOURCE/probe_feedback_1009.py`
+(map, stage1, s1boss, s2boss, clear, hud, s4barrels). Merged `origin/claude/sweet-mayer-oaj2q4`
+(Level 5 museum, frame pacing, boss bars, finale forms) into the local tree file by file. Local
+expansion work is kept. Pre-merge snapshot: stash "pre-level5-merge safety 1009". Expansion Level 3
+is `hidden:true` (menu/progression only, nothing deleted). New owners: `assets/feedback_1009.js`
+(loaded last) and `assets/campaign_follow_1009.js`. HUD: `#hud` is now an off-screen surface; the
+score strip copies to `#hud-top`, the housing to `#hud-bot` under the playfield, and `fit()` splits
+the budget. Traps worth knowing: the Stage 1 land mask cached the old 800x3616 map whenever the plate
+decoded late (every boat beached); `enemySeparate` landed whole corrections in one frame (the
+"jerking"); jetTick's last branch fires for `_atk:'none'`; the catch-all exit push moves any
+non-prop after 9 s. No art generated (bomber art and jet roll reels still need it). Not committed.
+
 # 2026-10-09 — GitHub publication: fullscreen and readable HUD
 
 Mike authorized publishing the completed fullscreen/HUD improvements. Browser

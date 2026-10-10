@@ -17,6 +17,7 @@
   for (const [key, meta] of Object.entries((root.TD_CAMPAIGN_ART || {}).frames || {})) LOOSE[key] = meta.file;
   LOOSE.pav_niel = 'expansion/windstorm_machinists/identity/niel_avatar_v2.png';
   for (const [key, meta] of Object.entries(root.TD_GROUND_ART || {})) LOOSE[key] = 'expansion/topdown/art/ground_1008/' + meta.file;
+  for (const [key, meta] of Object.entries(root.TD_MUSEUM_ART || {})) LOOSE[key] = meta.file;   // 1009 Level 5 museum
   for (const k of ['debris', 'dust', 'hull_0', 'hull_1', 'hull_2', 'hull_3', 'hull_4', 'hull_5', 'hull_6', 'hull_7', 'hull_base',
     'machinegun', 'missile_pod', 'muzzle', 'razor_missile', 'rotor', 'sonic_bullet', 'sonic_charge', 'sonic_impact', 'sonic_ring',
     'sonic_wave', 'tread', 'turret', 'turret_damaged', 'wreck']) LOOSE['rzb_' + k] = 'assets/game/levels/stage_01/miniboss/bosses/razorback/rzb_' + k + '.png';
@@ -25,7 +26,7 @@
     life_up: 'assets/game/shared/ui/ui/pickups_0915/life_up_wings.png',
     score_100: 'assets/game/shared/ui/ui/pickups_0917b/score_100.png', score_250: 'assets/game/shared/ui/ui/pickups_0917b/score_250.png',
     score_500: 'assets/game/shared/ui/ui/pickups_0917b/score_500.png', score_1000: 'assets/game/shared/ui/ui/pickups_0917b/score_1000.png',
-    fury_bomb: 'assets/game/shared/ui/ui/pickups_0917b/fury_bomb.png', logo: 'assets/game/shared/ui/ui/logo_0916/bof_logo.png',
+    fury_bomb: 'assets/game/shared/ui/ui/pickups_0917b/fury_bomb.png', pow_badge: 'assets/game/shared/ui/ui/infusion_0917/inf_kinetic.png', logo: 'assets/game/shared/ui/ui/logo_0916/bof_logo.png',
     overdrive: 'expansion/concept/overdrive_word_overlay.png',
     target_retina: 'assets/game/levels/stage_03/boss/bosses/stage3_thermo/nuclear_retina.png',
     // 1008g: the ground pack. Player tanks are baked per pilot paint; enemies are the on-foot alien tanks
@@ -41,6 +42,9 @@
     ...Object.fromEntries(['base', 'north', 'fire', 'damaged', 'wreck'].map(k => ['oft_' + k, 'expansion/onfoot/enemies/turret_' + k + '.png'])),
     hotwire_idle: 'expansion/pilot_avatars/hotwire-idle.png', phoenix_idle: 'expansion/pilot_avatars/phoenix-idle.png',
   });
+  for(const p of ['cole','axel','maverick','decker','yuri','freezer','juggernaut','lizzie','falva'])LOOSE['select_body_'+p]='assets/game/pilots/'+p+'/body_frames/pilot_bodies/'+p+'_body_0.png';
+  LOOSE.select_body_cole='assets/game/pilots/cole/body_frames/pilots_0922/bodies/cole.png';
+  LOOSE.select_body_hotwire='expansion/concept/hotwire_front_neutral.png';LOOSE.select_body_phoenix='expansion/concept/phoenix_front_neutral.png';LOOSE.select_body_niel='expansion/windstorm_machinists/identity/niel_front.png';
   const images = {};
   function image(path) {
     let im = images[path];
@@ -88,7 +92,9 @@
     const g = get(key); if (!g) return false;
     const s = o.s == null ? 1 : o.s, sx = o.sx == null ? s : o.sx, sy = o.sy == null ? s : o.sy;
     const ax = o.ax == null ? g.sw / 2 : o.ax, ay = o.ay == null ? g.sh / 2 : o.ay;
-    ctx.save(); ctx.translate(x, y); if (o.a) ctx.rotate(o.a);
+    // 1009: whole world pixels, like an arcade sprite chip - every sprite lands on the same grid as the scrolled
+    // background (the camera is rounded in main.js), so nothing shimmers a pixel against the floor while it moves.
+    ctx.save(); ctx.translate(Math.round(x), Math.round(y)); if (o.a) ctx.rotate(o.a);
     if (o.alpha != null) ctx.globalAlpha *= o.alpha;
     if (o.comp) ctx.globalCompositeOperation = o.comp;
     if (o.tint) { const t = silhouette(key, o.tint); if (t) ctx.drawImage(t, -ax * sx, -ay * sy, g.sw * sx, g.sh * sy); }

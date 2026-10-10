@@ -1,0 +1,5155 @@
+{
+ "clips": [
+  {
+   "t0": 0.0,
+   "t1": 1.5166666666666666,
+   "panes": [],
+   "layers": [
+    {
+     "kind": "image",
+     "src": "brand/cf_logo.png",
+     "x": 960.0,
+     "y": 530,
+     "prescale": 0.62,
+     "anchor": "c",
+     "t_in": 0.08333333333333333,
+     "t_out": 1.4833333333333334,
+     "in": "fade",
+     "out": "fade",
+     "shadow": true,
+     "resample": "lanczos",
+     "drift": 0.015,
+     "fade": 0.45,
+     "fade_out": 0.25
+    }
+   ],
+   "label": "COLEFORGE"
+  },
+  {
+   "t0": 1.5166666666666666,
+   "t1": 2.25,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "Z_forms",
+     "src": 2340,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.15,
+      "ease": "inout",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "cold open Z_forms"
+  },
+  {
+   "t0": 2.25,
+   "t1": 2.9833333333333334,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "M_uber",
+     "src": 36,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.0,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "cold open M_uber"
+  },
+  {
+   "t0": 2.9833333333333334,
+   "t1": 3.716666666666667,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "S6R_rebfight",
+     "src": 903,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.1,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "cold open S6R_rebfight"
+  },
+  {
+   "t0": 3.716666666666667,
+   "t1": 4.45,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "B_s5b",
+     "src": 0,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.2,
+      "s1": 1.35,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": "target",
+      "track_x": false,
+      "lead": 150
+     }
+    }
+   ],
+   "layers": [],
+   "label": "cold open B_s5b"
+  },
+  {
+   "t0": 4.45,
+   "t1": 5.183333333333334,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "V_sov_furious",
+     "src": 1353,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.0,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "cold open V_sov_furious"
+  },
+  {
+   "t0": 5.183333333333334,
+   "t1": 5.933333333333334,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "B_s2b",
+     "src": 408,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.1,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "cold open B_s2b"
+  },
+  {
+   "t0": 5.933333333333334,
+   "t1": 6.666666666666667,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "Z_drone",
+     "src": 711,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.1,
+      "s1": 1.25,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": "target",
+      "track_x": false,
+      "lead": 140
+     }
+    }
+   ],
+   "layers": [],
+   "label": "cold open Z_drone"
+  },
+  {
+   "t0": 6.666666666666667,
+   "t1": 7.4,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "B_s7b",
+     "src": 270,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.0,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "cold open B_s7b"
+  },
+  {
+   "t0": 7.4,
+   "t1": 8.866666666666667,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "Z_void",
+     "src": 900,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.08,
+      "ease": "inout",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "the void: Dracodia speaks"
+  },
+  {
+   "t0": 8.866666666666667,
+   "t1": 11.816666666666666,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "A_title",
+     "src": 40,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.25,
+      "s1": 1.32,
+      "ease": "inout",
+      "cx": 480,
+      "cy": 600,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     },
+     "desat": 0.4,
+     "tint": [
+      0,
+      0,
+      0,
+      0.72
+     ]
+    }
+   ],
+   "layers": [
+    {
+     "kind": "image",
+     "src": "brand/bof_logo.png",
+     "x": 960.0,
+     "y": 520,
+     "prescale": 0.8,
+     "anchor": "c",
+     "t_in": 8.866666666666667,
+     "t_out": 11.816666666666666,
+     "in": "slam",
+     "out": "cut",
+     "shadow": true,
+     "resample": "lanczos",
+     "drift": 0.02,
+     "fade": 0.25,
+     "fade_out": 0.2
+    }
+   ],
+   "label": "BULLETS OF FURY slam"
+  },
+  {
+   "t0": 11.816666666666666,
+   "t1": 13.283333333333333,
+   "panes": [],
+   "layers": [
+    {
+     "kind": "image",
+     "src": "brand/body_axel.png",
+     "x": 106.66666666666667,
+     "y": 760,
+     "prescale": 1.575091575091575,
+     "anchor": "c",
+     "t_in": 11.816666666666666,
+     "t_out": 13.283333333333333,
+     "in": "rise",
+     "out": "cut",
+     "shadow": true,
+     "resample": "lanczos",
+     "drift": 0.0,
+     "fade": 0.25,
+     "fade_out": 0.2
+    },
+    {
+     "kind": "image",
+     "src": "brand/pav_axel.png",
+     "x": 106.66666666666667,
+     "y": 420,
+     "prescale": 0.75,
+     "anchor": "c",
+     "t_in": 11.816666666666666,
+     "t_out": 13.283333333333333,
+     "in": "rise",
+     "out": "cut",
+     "shadow": true,
+     "resample": "nearest",
+     "drift": 0.0,
+     "fade": 0.25,
+     "fade_out": 0.2
+    },
+    {
+     "kind": "image",
+     "src": "brand/body_decker.png",
+     "x": 320.0,
+     "y": 760,
+     "prescale": 1.575091575091575,
+     "anchor": "c",
+     "t_in": 11.9,
+     "t_out": 13.283333333333333,
+     "in": "rise",
+     "out": "cut",
+     "shadow": true,
+     "resample": "lanczos",
+     "drift": 0.0,
+     "fade": 0.25,
+     "fade_out": 0.2
+    },
+    {
+     "kind": "image",
+     "src": "brand/pav_decker.png",
+     "x": 320.0,
+     "y": 420,
+     "prescale": 0.75,
+     "anchor": "c",
+     "t_in": 11.9,
+     "t_out": 13.283333333333333,
+     "in": "rise",
+     "out": "cut",
+     "shadow": true,
+     "resample": "nearest",
+     "drift": 0.0,
+     "fade": 0.25,
+     "fade_out": 0.2
+    },
+    {
+     "kind": "image",
+     "src": "brand/body_maverick.png",
+     "x": 533.3333333333334,
+     "y": 760,
+     "prescale": 1.575091575091575,
+     "anchor": "c",
+     "t_in": 12.0,
+     "t_out": 13.283333333333333,
+     "in": "rise",
+     "out": "cut",
+     "shadow": true,
+     "resample": "lanczos",
+     "drift": 0.0,
+     "fade": 0.25,
+     "fade_out": 0.2
+    },
+    {
+     "kind": "image",
+     "src": "brand/pav_maverick.png",
+     "x": 533.3333333333334,
+     "y": 420,
+     "prescale": 0.75,
+     "anchor": "c",
+     "t_in": 12.0,
+     "t_out": 13.283333333333333,
+     "in": "rise",
+     "out": "cut",
+     "shadow": true,
+     "resample": "nearest",
+     "drift": 0.0,
+     "fade": 0.25,
+     "fade_out": 0.2
+    },
+    {
+     "kind": "image",
+     "src": "brand/body_freezer.png",
+     "x": 746.6666666666666,
+     "y": 760,
+     "prescale": 1.575091575091575,
+     "anchor": "c",
+     "t_in": 12.083333333333334,
+     "t_out": 13.283333333333333,
+     "in": "rise",
+     "out": "cut",
+     "shadow": true,
+     "resample": "lanczos",
+     "drift": 0.0,
+     "fade": 0.25,
+     "fade_out": 0.2
+    },
+    {
+     "kind": "image",
+     "src": "brand/pav_freezer.png",
+     "x": 746.6666666666666,
+     "y": 420,
+     "prescale": 0.75,
+     "anchor": "c",
+     "t_in": 12.083333333333334,
+     "t_out": 13.283333333333333,
+     "in": "rise",
+     "out": "cut",
+     "shadow": true,
+     "resample": "nearest",
+     "drift": 0.0,
+     "fade": 0.25,
+     "fade_out": 0.2
+    },
+    {
+     "kind": "image",
+     "src": "brand/body_juggernaut.png",
+     "x": 960.0,
+     "y": 760,
+     "prescale": 1.575091575091575,
+     "anchor": "c",
+     "t_in": 12.183333333333334,
+     "t_out": 13.283333333333333,
+     "in": "rise",
+     "out": "cut",
+     "shadow": true,
+     "resample": "lanczos",
+     "drift": 0.0,
+     "fade": 0.25,
+     "fade_out": 0.2
+    },
+    {
+     "kind": "image",
+     "src": "brand/pav_juggernaut.png",
+     "x": 960.0,
+     "y": 420,
+     "prescale": 0.75,
+     "anchor": "c",
+     "t_in": 12.183333333333334,
+     "t_out": 13.283333333333333,
+     "in": "rise",
+     "out": "cut",
+     "shadow": true,
+     "resample": "nearest",
+     "drift": 0.0,
+     "fade": 0.25,
+     "fade_out": 0.2
+    },
+    {
+     "kind": "image",
+     "src": "brand/body_yuri.png",
+     "x": 1173.3333333333333,
+     "y": 760,
+     "prescale": 1.575091575091575,
+     "anchor": "c",
+     "t_in": 12.266666666666667,
+     "t_out": 13.283333333333333,
+     "in": "rise",
+     "out": "cut",
+     "shadow": true,
+     "resample": "lanczos",
+     "drift": 0.0,
+     "fade": 0.25,
+     "fade_out": 0.2
+    },
+    {
+     "kind": "image",
+     "src": "brand/pav_yuri.png",
+     "x": 1173.3333333333333,
+     "y": 420,
+     "prescale": 0.75,
+     "anchor": "c",
+     "t_in": 12.266666666666667,
+     "t_out": 13.283333333333333,
+     "in": "rise",
+     "out": "cut",
+     "shadow": true,
+     "resample": "nearest",
+     "drift": 0.0,
+     "fade": 0.25,
+     "fade_out": 0.2
+    },
+    {
+     "kind": "image",
+     "src": "brand/body_lizzie.png",
+     "x": 1386.6666666666667,
+     "y": 760,
+     "prescale": 1.575091575091575,
+     "anchor": "c",
+     "t_in": 12.366666666666667,
+     "t_out": 13.283333333333333,
+     "in": "rise",
+     "out": "cut",
+     "shadow": true,
+     "resample": "lanczos",
+     "drift": 0.0,
+     "fade": 0.25,
+     "fade_out": 0.2
+    },
+    {
+     "kind": "image",
+     "src": "brand/pav_lizzie.png",
+     "x": 1386.6666666666667,
+     "y": 420,
+     "prescale": 0.75,
+     "anchor": "c",
+     "t_in": 12.366666666666667,
+     "t_out": 13.283333333333333,
+     "in": "rise",
+     "out": "cut",
+     "shadow": true,
+     "resample": "nearest",
+     "drift": 0.0,
+     "fade": 0.25,
+     "fade_out": 0.2
+    },
+    {
+     "kind": "image",
+     "src": "brand/body_falva.png",
+     "x": 1600.0,
+     "y": 760,
+     "prescale": 1.575091575091575,
+     "anchor": "c",
+     "t_in": 12.45,
+     "t_out": 13.283333333333333,
+     "in": "rise",
+     "out": "cut",
+     "shadow": true,
+     "resample": "lanczos",
+     "drift": 0.0,
+     "fade": 0.25,
+     "fade_out": 0.2
+    },
+    {
+     "kind": "image",
+     "src": "brand/pav_falva.png",
+     "x": 1600.0,
+     "y": 420,
+     "prescale": 0.75,
+     "anchor": "c",
+     "t_in": 12.45,
+     "t_out": 13.283333333333333,
+     "in": "rise",
+     "out": "cut",
+     "shadow": true,
+     "resample": "nearest",
+     "drift": 0.0,
+     "fade": 0.25,
+     "fade_out": 0.2
+    },
+    {
+     "kind": "image",
+     "src": "brand/body_cole.png",
+     "x": 1813.3333333333333,
+     "y": 760,
+     "prescale": 0.4236453201970443,
+     "anchor": "c",
+     "t_in": 12.55,
+     "t_out": 13.283333333333333,
+     "in": "rise",
+     "out": "cut",
+     "shadow": true,
+     "resample": "lanczos",
+     "drift": 0.0,
+     "fade": 0.25,
+     "fade_out": 0.2
+    },
+    {
+     "kind": "image",
+     "src": "brand/pav_cole.png",
+     "x": 1813.3333333333333,
+     "y": 420,
+     "prescale": 0.75,
+     "anchor": "c",
+     "t_in": 12.55,
+     "t_out": 13.283333333333333,
+     "in": "rise",
+     "out": "cut",
+     "shadow": true,
+     "resample": "nearest",
+     "drift": 0.0,
+     "fade": 0.25,
+     "fade_out": 0.2
+    },
+    {
+     "kind": "text",
+     "text": "9 PILOTS",
+     "face": "final",
+     "height": 150,
+     "x": 960.0,
+     "y": 200,
+     "anchor": "c",
+     "t_in": 11.816666666666666,
+     "t_out": 13.283333333333333,
+     "in": "slam",
+     "out": "cut",
+     "fade": 0.25,
+     "fade_out": 0.2,
+     "drift": 0.0
+    }
+   ],
+   "label": "9 PILOTS line-up"
+  },
+  {
+   "t0": 13.283333333333333,
+   "t1": 14.016666666666667,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "P_cole",
+     "src": 69,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.1,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": "player",
+      "track_x": false,
+      "lead": -220
+     }
+    }
+   ],
+   "layers": [
+    {
+     "kind": "text",
+     "text": "COLE",
+     "face": "final",
+     "height": 110,
+     "x": 960.0,
+     "y": 88,
+     "anchor": "c",
+     "t_in": 13.283333333333333,
+     "t_out": 14.016666666666667,
+     "in": "slam",
+     "out": "cut",
+     "fade": 0.25,
+     "fade_out": 0.2,
+     "drift": 0.0,
+     "tint": "#7ad63a",
+     "band": 0.55
+    },
+    {
+     "kind": "image",
+     "src": "brand/pav_cole.png",
+     "x": 250,
+     "y": 820,
+     "prescale": 1.05,
+     "anchor": "c",
+     "t_in": 13.283333333333333,
+     "t_out": 14.016666666666667,
+     "in": "slide-l",
+     "out": "cut",
+     "shadow": true,
+     "resample": "nearest",
+     "drift": 0.0,
+     "fade": 0.25,
+     "fade_out": 0.2
+    },
+    {
+     "kind": "image",
+     "src": "brand/body_cole.png",
+     "x": 1700,
+     "y": 640,
+     "prescale": 0.5517241379310345,
+     "anchor": "c",
+     "t_in": 13.283333333333333,
+     "t_out": 14.016666666666667,
+     "in": "slide-r",
+     "out": "cut",
+     "shadow": true,
+     "resample": "lanczos",
+     "drift": 0.0,
+     "fade": 0.25,
+     "fade_out": 0.2
+    }
+   ],
+   "label": "cole special"
+  },
+  {
+   "t0": 14.016666666666667,
+   "t1": 14.75,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "P_lizzie",
+     "src": 78,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.1,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": "player",
+      "track_x": false,
+      "lead": -220
+     }
+    }
+   ],
+   "layers": [
+    {
+     "kind": "text",
+     "text": "LIZZIE",
+     "face": "final",
+     "height": 110,
+     "x": 960.0,
+     "y": 88,
+     "anchor": "c",
+     "t_in": 14.016666666666667,
+     "t_out": 14.75,
+     "in": "slam",
+     "out": "cut",
+     "fade": 0.25,
+     "fade_out": 0.2,
+     "drift": 0.0,
+     "tint": "#ffc21a",
+     "band": 0.55
+    },
+    {
+     "kind": "image",
+     "src": "brand/pav_lizzie.png",
+     "x": 250,
+     "y": 820,
+     "prescale": 1.05,
+     "anchor": "c",
+     "t_in": 14.016666666666667,
+     "t_out": 14.75,
+     "in": "slide-l",
+     "out": "cut",
+     "shadow": true,
+     "resample": "nearest",
+     "drift": 0.0,
+     "fade": 0.25,
+     "fade_out": 0.2
+    },
+    {
+     "kind": "image",
+     "src": "brand/body_lizzie.png",
+     "x": 1700,
+     "y": 640,
+     "prescale": 2.051282051282051,
+     "anchor": "c",
+     "t_in": 14.016666666666667,
+     "t_out": 14.75,
+     "in": "slide-r",
+     "out": "cut",
+     "shadow": true,
+     "resample": "lanczos",
+     "drift": 0.0,
+     "fade": 0.25,
+     "fade_out": 0.2
+    }
+   ],
+   "label": "lizzie special"
+  },
+  {
+   "t0": 14.75,
+   "t1": 15.483333333333333,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "P_juggernaut",
+     "src": 9,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.1,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": "player",
+      "track_x": false,
+      "lead": -220
+     }
+    }
+   ],
+   "layers": [
+    {
+     "kind": "text",
+     "text": "JUGGERNAUT",
+     "face": "final",
+     "height": 110,
+     "x": 960.0,
+     "y": 88,
+     "anchor": "c",
+     "t_in": 14.75,
+     "t_out": 15.483333333333333,
+     "in": "slam",
+     "out": "cut",
+     "fade": 0.25,
+     "fade_out": 0.2,
+     "drift": 0.0,
+     "tint": "#c08a3a",
+     "band": 0.55
+    },
+    {
+     "kind": "image",
+     "src": "brand/pav_juggernaut.png",
+     "x": 250,
+     "y": 820,
+     "prescale": 1.05,
+     "anchor": "c",
+     "t_in": 14.75,
+     "t_out": 15.483333333333333,
+     "in": "slide-l",
+     "out": "cut",
+     "shadow": true,
+     "resample": "nearest",
+     "drift": 0.0,
+     "fade": 0.25,
+     "fade_out": 0.2
+    },
+    {
+     "kind": "image",
+     "src": "brand/body_juggernaut.png",
+     "x": 1700,
+     "y": 640,
+     "prescale": 2.051282051282051,
+     "anchor": "c",
+     "t_in": 14.75,
+     "t_out": 15.483333333333333,
+     "in": "slide-r",
+     "out": "cut",
+     "shadow": true,
+     "resample": "lanczos",
+     "drift": 0.0,
+     "fade": 0.25,
+     "fade_out": 0.2
+    }
+   ],
+   "label": "juggernaut special"
+  },
+  {
+   "t0": 15.483333333333333,
+   "t1": 16.216666666666665,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "P_falva",
+     "src": 96,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.1,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": "player",
+      "track_x": false,
+      "lead": -220
+     }
+    }
+   ],
+   "layers": [
+    {
+     "kind": "text",
+     "text": "FALVA",
+     "face": "final",
+     "height": 110,
+     "x": 960.0,
+     "y": 88,
+     "anchor": "c",
+     "t_in": 15.483333333333333,
+     "t_out": 16.216666666666665,
+     "in": "slam",
+     "out": "cut",
+     "fade": 0.25,
+     "fade_out": 0.2,
+     "drift": 0.0,
+     "tint": "#ff2a8f",
+     "band": 0.55
+    },
+    {
+     "kind": "image",
+     "src": "brand/pav_falva.png",
+     "x": 250,
+     "y": 820,
+     "prescale": 1.05,
+     "anchor": "c",
+     "t_in": 15.483333333333333,
+     "t_out": 16.216666666666665,
+     "in": "slide-l",
+     "out": "cut",
+     "shadow": true,
+     "resample": "nearest",
+     "drift": 0.0,
+     "fade": 0.25,
+     "fade_out": 0.2
+    },
+    {
+     "kind": "image",
+     "src": "brand/body_falva.png",
+     "x": 1700,
+     "y": 640,
+     "prescale": 2.051282051282051,
+     "anchor": "c",
+     "t_in": 15.483333333333333,
+     "t_out": 16.216666666666665,
+     "in": "slide-r",
+     "out": "cut",
+     "shadow": true,
+     "resample": "lanczos",
+     "drift": 0.0,
+     "fade": 0.25,
+     "fade_out": 0.2
+    }
+   ],
+   "label": "falva special"
+  },
+  {
+   "t0": 16.216666666666665,
+   "t1": 16.966666666666665,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "P_maverick",
+     "src": 111,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.1,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": "player",
+      "track_x": false,
+      "lead": -220
+     }
+    }
+   ],
+   "layers": [
+    {
+     "kind": "text",
+     "text": "MAVERICK",
+     "face": "final",
+     "height": 110,
+     "x": 960.0,
+     "y": 88,
+     "anchor": "c",
+     "t_in": 16.216666666666665,
+     "t_out": 16.966666666666665,
+     "in": "slam",
+     "out": "cut",
+     "fade": 0.25,
+     "fade_out": 0.2,
+     "drift": 0.0,
+     "tint": "#3ad6c8",
+     "band": 0.55
+    },
+    {
+     "kind": "image",
+     "src": "brand/pav_maverick.png",
+     "x": 250,
+     "y": 820,
+     "prescale": 1.05,
+     "anchor": "c",
+     "t_in": 16.216666666666665,
+     "t_out": 16.966666666666665,
+     "in": "slide-l",
+     "out": "cut",
+     "shadow": true,
+     "resample": "nearest",
+     "drift": 0.0,
+     "fade": 0.25,
+     "fade_out": 0.2
+    },
+    {
+     "kind": "image",
+     "src": "brand/body_maverick.png",
+     "x": 1700,
+     "y": 640,
+     "prescale": 2.051282051282051,
+     "anchor": "c",
+     "t_in": 16.216666666666665,
+     "t_out": 16.966666666666665,
+     "in": "slide-r",
+     "out": "cut",
+     "shadow": true,
+     "resample": "lanczos",
+     "drift": 0.0,
+     "fade": 0.25,
+     "fade_out": 0.2
+    }
+   ],
+   "label": "maverick special"
+  },
+  {
+   "t0": 16.966666666666665,
+   "t1": 17.7,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "P_yuri",
+     "src": 81,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.1,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": "player",
+      "track_x": false,
+      "lead": -220
+     }
+    }
+   ],
+   "layers": [
+    {
+     "kind": "text",
+     "text": "YURI",
+     "face": "final",
+     "height": 110,
+     "x": 960.0,
+     "y": 88,
+     "anchor": "c",
+     "t_in": 16.966666666666665,
+     "t_out": 17.7,
+     "in": "slam",
+     "out": "cut",
+     "fade": 0.25,
+     "fade_out": 0.2,
+     "drift": 0.0,
+     "tint": "#e23a3a",
+     "band": 0.55
+    },
+    {
+     "kind": "image",
+     "src": "brand/pav_yuri.png",
+     "x": 250,
+     "y": 820,
+     "prescale": 1.05,
+     "anchor": "c",
+     "t_in": 16.966666666666665,
+     "t_out": 17.7,
+     "in": "slide-l",
+     "out": "cut",
+     "shadow": true,
+     "resample": "nearest",
+     "drift": 0.0,
+     "fade": 0.25,
+     "fade_out": 0.2
+    },
+    {
+     "kind": "image",
+     "src": "brand/body_yuri.png",
+     "x": 1700,
+     "y": 640,
+     "prescale": 2.051282051282051,
+     "anchor": "c",
+     "t_in": 16.966666666666665,
+     "t_out": 17.7,
+     "in": "slide-r",
+     "out": "cut",
+     "shadow": true,
+     "resample": "lanczos",
+     "drift": 0.0,
+     "fade": 0.25,
+     "fade_out": 0.2
+    }
+   ],
+   "label": "yuri special"
+  },
+  {
+   "t0": 17.7,
+   "t1": 18.433333333333334,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "P_decker",
+     "src": 96,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.1,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": "player",
+      "track_x": false,
+      "lead": -220
+     }
+    }
+   ],
+   "layers": [
+    {
+     "kind": "text",
+     "text": "DECKER",
+     "face": "final",
+     "height": 110,
+     "x": 960.0,
+     "y": 88,
+     "anchor": "c",
+     "t_in": 17.7,
+     "t_out": 18.433333333333334,
+     "in": "slam",
+     "out": "cut",
+     "fade": 0.25,
+     "fade_out": 0.2,
+     "drift": 0.0,
+     "tint": "#ffd24a",
+     "band": 0.55
+    },
+    {
+     "kind": "image",
+     "src": "brand/pav_decker.png",
+     "x": 250,
+     "y": 820,
+     "prescale": 1.05,
+     "anchor": "c",
+     "t_in": 17.7,
+     "t_out": 18.433333333333334,
+     "in": "slide-l",
+     "out": "cut",
+     "shadow": true,
+     "resample": "nearest",
+     "drift": 0.0,
+     "fade": 0.25,
+     "fade_out": 0.2
+    },
+    {
+     "kind": "image",
+     "src": "brand/body_decker.png",
+     "x": 1700,
+     "y": 640,
+     "prescale": 2.051282051282051,
+     "anchor": "c",
+     "t_in": 17.7,
+     "t_out": 18.433333333333334,
+     "in": "slide-r",
+     "out": "cut",
+     "shadow": true,
+     "resample": "lanczos",
+     "drift": 0.0,
+     "fade": 0.25,
+     "fade_out": 0.2
+    }
+   ],
+   "label": "decker special"
+  },
+  {
+   "t0": 18.433333333333334,
+   "t1": 19.166666666666668,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "P_freezer",
+     "src": 69,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.1,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": "player",
+      "track_x": false,
+      "lead": -220
+     }
+    }
+   ],
+   "layers": [
+    {
+     "kind": "text",
+     "text": "FREEZER",
+     "face": "final",
+     "height": 110,
+     "x": 960.0,
+     "y": 88,
+     "anchor": "c",
+     "t_in": 18.433333333333334,
+     "t_out": 19.166666666666668,
+     "in": "slam",
+     "out": "cut",
+     "fade": 0.25,
+     "fade_out": 0.2,
+     "drift": 0.0,
+     "tint": "#6fd0ff",
+     "band": 0.55
+    },
+    {
+     "kind": "image",
+     "src": "brand/pav_freezer.png",
+     "x": 250,
+     "y": 820,
+     "prescale": 1.05,
+     "anchor": "c",
+     "t_in": 18.433333333333334,
+     "t_out": 19.166666666666668,
+     "in": "slide-l",
+     "out": "cut",
+     "shadow": true,
+     "resample": "nearest",
+     "drift": 0.0,
+     "fade": 0.25,
+     "fade_out": 0.2
+    },
+    {
+     "kind": "image",
+     "src": "brand/body_freezer.png",
+     "x": 1700,
+     "y": 640,
+     "prescale": 2.051282051282051,
+     "anchor": "c",
+     "t_in": 18.433333333333334,
+     "t_out": 19.166666666666668,
+     "in": "slide-r",
+     "out": "cut",
+     "shadow": true,
+     "resample": "lanczos",
+     "drift": 0.0,
+     "fade": 0.25,
+     "fade_out": 0.2
+    }
+   ],
+   "label": "freezer special"
+  },
+  {
+   "t0": 19.166666666666668,
+   "t1": 19.9,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "P_axel",
+     "src": 18,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.1,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": "player",
+      "track_x": false,
+      "lead": -220
+     }
+    }
+   ],
+   "layers": [
+    {
+     "kind": "text",
+     "text": "AXEL",
+     "face": "final",
+     "height": 110,
+     "x": 960.0,
+     "y": 88,
+     "anchor": "c",
+     "t_in": 19.166666666666668,
+     "t_out": 19.9,
+     "in": "slam",
+     "out": "cut",
+     "fade": 0.25,
+     "fade_out": 0.2,
+     "drift": 0.0,
+     "tint": "#3a8aff",
+     "band": 0.55
+    },
+    {
+     "kind": "image",
+     "src": "brand/pav_axel.png",
+     "x": 250,
+     "y": 820,
+     "prescale": 1.05,
+     "anchor": "c",
+     "t_in": 19.166666666666668,
+     "t_out": 19.9,
+     "in": "slide-l",
+     "out": "cut",
+     "shadow": true,
+     "resample": "nearest",
+     "drift": 0.0,
+     "fade": 0.25,
+     "fade_out": 0.2
+    },
+    {
+     "kind": "image",
+     "src": "brand/body_axel.png",
+     "x": 1700,
+     "y": 640,
+     "prescale": 2.051282051282051,
+     "anchor": "c",
+     "t_in": 19.166666666666668,
+     "t_out": 19.9,
+     "in": "slide-r",
+     "out": "cut",
+     "shadow": true,
+     "resample": "lanczos",
+     "drift": 0.0,
+     "fade": 0.25,
+     "fade_out": 0.2
+    }
+   ],
+   "label": "axel special"
+  },
+  {
+   "t0": 19.9,
+   "t1": 22.1,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "C_mapfly",
+     "src": 10,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.1,
+      "ease": "inout",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     },
+     "desat": 0.3,
+     "tint": [
+      0,
+      0,
+      0,
+      0.5
+     ]
+    }
+   ],
+   "layers": [
+    {
+     "kind": "text",
+     "text": "10 STAGES",
+     "face": "final",
+     "height": 170,
+     "x": 960.0,
+     "y": 540,
+     "anchor": "c",
+     "t_in": 19.9,
+     "t_out": 22.1,
+     "in": "slam",
+     "out": "cut",
+     "fade": 0.25,
+     "fade_out": 0.2,
+     "drift": 0.0,
+     "band": 0.5
+    }
+   ],
+   "label": "10 STAGES over the campaign map"
+  },
+  {
+   "t0": 22.1,
+   "t1": 22.483333333333334,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "F_card_s1",
+     "src": 48,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.28,
+      "s1": 1.32,
+      "ease": "out",
+      "cx": 480,
+      "cy": 505,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "stage 1 card"
+  },
+  {
+   "t0": 22.483333333333334,
+   "t1": 22.85,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "G_s1",
+     "src": 141,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.0,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "stage 1 play"
+  },
+  {
+   "t0": 22.85,
+   "t1": 23.216666666666665,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "F_card_s2",
+     "src": 48,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.28,
+      "s1": 1.32,
+      "ease": "out",
+      "cx": 480,
+      "cy": 505,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "stage 2 card"
+  },
+  {
+   "t0": 23.216666666666665,
+   "t1": 23.583333333333332,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "G_s2",
+     "src": 45,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.0,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "stage 2 play"
+  },
+  {
+   "t0": 23.583333333333332,
+   "t1": 23.95,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "F_card_s3",
+     "src": 48,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.28,
+      "s1": 1.32,
+      "ease": "out",
+      "cx": 480,
+      "cy": 505,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "stage 3 card"
+  },
+  {
+   "t0": 23.95,
+   "t1": 24.316666666666666,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "G_s3",
+     "src": 39,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.0,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "stage 3 play"
+  },
+  {
+   "t0": 24.316666666666666,
+   "t1": 24.683333333333334,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "F_card_s4",
+     "src": 48,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.28,
+      "s1": 1.32,
+      "ease": "out",
+      "cx": 480,
+      "cy": 505,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "stage 4 card"
+  },
+  {
+   "t0": 24.683333333333334,
+   "t1": 25.05,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "G_s4",
+     "src": 9,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.0,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "stage 4 play"
+  },
+  {
+   "t0": 25.05,
+   "t1": 25.416666666666668,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "F_card_s5",
+     "src": 48,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.28,
+      "s1": 1.32,
+      "ease": "out",
+      "cx": 480,
+      "cy": 505,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "stage 5 card"
+  },
+  {
+   "t0": 25.416666666666668,
+   "t1": 25.783333333333335,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "G_s5",
+     "src": 210,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.0,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "stage 5 play"
+  },
+  {
+   "t0": 25.783333333333335,
+   "t1": 26.15,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "F_card_s6",
+     "src": 48,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.28,
+      "s1": 1.32,
+      "ease": "out",
+      "cx": 480,
+      "cy": 505,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "stage 6 card"
+  },
+  {
+   "t0": 26.15,
+   "t1": 26.516666666666666,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "S6R_assault",
+     "src": 645,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.0,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "stage 6 play"
+  },
+  {
+   "t0": 26.516666666666666,
+   "t1": 26.883333333333333,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "F_card_s7",
+     "src": 48,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.28,
+      "s1": 1.32,
+      "ease": "out",
+      "cx": 480,
+      "cy": 505,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "stage 7 card"
+  },
+  {
+   "t0": 26.883333333333333,
+   "t1": 27.25,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "G_s7",
+     "src": 42,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.0,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "stage 7 play"
+  },
+  {
+   "t0": 27.25,
+   "t1": 27.616666666666667,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "F_card_s8b",
+     "src": 48,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.28,
+      "s1": 1.32,
+      "ease": "out",
+      "cx": 480,
+      "cy": 505,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "stage 8 card"
+  },
+  {
+   "t0": 27.616666666666667,
+   "t1": 28.0,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "G_s8",
+     "src": 90,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.0,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "stage 8 play"
+  },
+  {
+   "t0": 28.0,
+   "t1": 28.366666666666667,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "X_rival_map",
+     "src": 150,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.15,
+      "s1": 1.2,
+      "ease": "out",
+      "cx": 480,
+      "cy": 700,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [
+    {
+     "kind": "text",
+     "text": "STAGE X",
+     "face": "final",
+     "height": 150,
+     "x": 960.0,
+     "y": 420,
+     "anchor": "c",
+     "t_in": 28.0,
+     "t_out": 28.366666666666667,
+     "in": "slam",
+     "out": "cut",
+     "fade": 0.25,
+     "fade_out": 0.2,
+     "drift": 0.0,
+     "band": 0.5
+    }
+   ],
+   "label": "STAGE X on the map"
+  },
+  {
+   "t0": 28.366666666666667,
+   "t1": 28.733333333333334,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "X_rx_duel",
+     "src": 693,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.0,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "STAGE X duel"
+  },
+  {
+   "t0": 28.733333333333334,
+   "t1": 29.1,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "F_card_s9",
+     "src": 48,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.28,
+      "s1": 1.32,
+      "ease": "out",
+      "cx": 480,
+      "cy": 505,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "stage 9 card"
+  },
+  {
+   "t0": 29.1,
+   "t1": 29.466666666666665,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "G_s9",
+     "src": 129,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.0,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "stage 9 play"
+  },
+  {
+   "t0": 29.466666666666665,
+   "t1": 30.933333333333334,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "V_rzb_normal",
+     "src": 110,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.06,
+      "ease": "inout",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [
+    {
+     "kind": "text",
+     "text": "EASY / NORMAL",
+     "face": "6",
+     "height": 130,
+     "x": 960.0,
+     "y": 965,
+     "anchor": "c",
+     "t_in": 29.466666666666665,
+     "t_out": 30.933333333333334,
+     "in": "slam",
+     "out": "cut",
+     "fade": 0.25,
+     "fade_out": 0.2,
+     "drift": 0.0,
+     "band": 0.6
+    }
+   ],
+   "label": "difficulty EASY / NORMAL"
+  },
+  {
+   "t0": 30.933333333333334,
+   "t1": 32.4,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "V_rzb_hard",
+     "src": 200,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.06,
+      "ease": "inout",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [
+    {
+     "kind": "text",
+     "text": "HARD",
+     "face": "final",
+     "height": 130,
+     "x": 960.0,
+     "y": 965,
+     "anchor": "c",
+     "t_in": 30.933333333333334,
+     "t_out": 32.4,
+     "in": "slam",
+     "out": "cut",
+     "fade": 0.25,
+     "fade_out": 0.2,
+     "drift": 0.0,
+     "band": 0.6
+    }
+   ],
+   "label": "difficulty HARD"
+  },
+  {
+   "t0": 32.4,
+   "t1": 33.88333333333333,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "V_rzb_furious",
+     "src": 227,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.06,
+      "ease": "inout",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [
+    {
+     "kind": "text",
+     "text": "FURIOUS",
+     "face": "2",
+     "height": 130,
+     "x": 960.0,
+     "y": 965,
+     "anchor": "c",
+     "t_in": 32.4,
+     "t_out": 33.88333333333333,
+     "in": "slam",
+     "out": "cut",
+     "fade": 0.25,
+     "fade_out": 0.2,
+     "drift": 0.0,
+     "band": 0.6
+    }
+   ],
+   "label": "difficulty FURIOUS"
+  },
+  {
+   "t0": 33.88333333333333,
+   "t1": 35.35,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      640,
+      1080
+     ],
+     "take": "V_rzb_normal",
+     "src": 201,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.0,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     },
+     "gain": 0.4,
+     "border": [
+      8,
+      8,
+      12
+     ]
+    },
+    {
+     "rect": [
+      640,
+      0,
+      640,
+      1080
+     ],
+     "take": "V_rzb_hard",
+     "src": 330,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.0,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     },
+     "gain": 0.4,
+     "border": [
+      8,
+      8,
+      12
+     ]
+    },
+    {
+     "rect": [
+      1280,
+      0,
+      640,
+      1080
+     ],
+     "take": "V_rzb_furious",
+     "src": 120,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.0,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     },
+     "gain": 0.5,
+     "border": [
+      8,
+      8,
+      12
+     ]
+    }
+   ],
+   "layers": [
+    {
+     "kind": "text",
+     "text": "EASY / NORMAL",
+     "face": "6",
+     "height": 70,
+     "x": 320.0,
+     "y": 1000,
+     "anchor": "c",
+     "t_in": 33.88333333333333,
+     "t_out": 35.35,
+     "in": "slam",
+     "out": "cut",
+     "fade": 0.25,
+     "fade_out": 0.2,
+     "drift": 0.0
+    },
+    {
+     "kind": "text",
+     "text": "HARD",
+     "face": "final",
+     "height": 84,
+     "x": 960.0,
+     "y": 1000,
+     "anchor": "c",
+     "t_in": 33.88333333333333,
+     "t_out": 35.35,
+     "in": "slam",
+     "out": "cut",
+     "fade": 0.25,
+     "fade_out": 0.2,
+     "drift": 0.0
+    },
+    {
+     "kind": "text",
+     "text": "FURIOUS",
+     "face": "2",
+     "height": 84,
+     "x": 1600.0,
+     "y": 1000,
+     "anchor": "c",
+     "t_in": 33.88333333333333,
+     "t_out": 35.35,
+     "in": "slam",
+     "out": "cut",
+     "fade": 0.25,
+     "fade_out": 0.2,
+     "drift": 0.0
+    }
+   ],
+   "label": "difficulty triptych"
+  },
+  {
+   "t0": 35.35,
+   "t1": 35.71666666666667,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      960,
+      1080
+     ],
+     "take": "V_frost_normal",
+     "src": 162,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.0,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     },
+     "gain": 0.45,
+     "border": [
+      8,
+      8,
+      12
+     ]
+    },
+    {
+     "rect": [
+      960,
+      0,
+      960,
+      1080
+     ],
+     "take": "V_frost_hard",
+     "src": 54,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.0,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     },
+     "gain": 0.45,
+     "border": [
+      8,
+      8,
+      12
+     ]
+    }
+   ],
+   "layers": [
+    {
+     "kind": "text",
+     "text": "NORMAL",
+     "face": "6",
+     "height": 70,
+     "x": 480.0,
+     "y": 1000,
+     "anchor": "c",
+     "t_in": 35.35,
+     "t_out": 35.71666666666667,
+     "in": "slam",
+     "out": "cut",
+     "fade": 0.25,
+     "fade_out": 0.2,
+     "drift": 0.0
+    },
+    {
+     "kind": "text",
+     "text": "HARD",
+     "face": "final",
+     "height": 80,
+     "x": 1440.0,
+     "y": 1000,
+     "anchor": "c",
+     "t_in": 35.35,
+     "t_out": 35.71666666666667,
+     "in": "slam",
+     "out": "cut",
+     "fade": 0.25,
+     "fade_out": 0.2,
+     "drift": 0.0
+    }
+   ],
+   "label": "frost cruiser normal | hard"
+  },
+  {
+   "t0": 35.71666666666667,
+   "t1": 37.18333333333333,
+   "panes": [],
+   "layers": [],
+   "label": "20 BOSSES (break)"
+  },
+  {
+   "t0": 37.18333333333333,
+   "t1": 38.28333333333333,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "V_sov_furious",
+     "src": 1431,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.0,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [
+    {
+     "kind": "text",
+     "text": "FURIOUS",
+     "face": "2",
+     "height": 110,
+     "x": 960.0,
+     "y": 980,
+     "anchor": "c",
+     "t_in": 37.18333333333333,
+     "t_out": 38.28333333333333,
+     "in": "slam",
+     "out": "cut",
+     "fade": 0.25,
+     "fade_out": 0.2,
+     "drift": 0.0
+    }
+   ],
+   "label": "FURIOUS: the Storm Sovereign"
+  },
+  {
+   "t0": 38.28333333333333,
+   "t1": 39.03333333333333,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "B_s1b",
+     "src": 471,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.1,
+      "ease": "inout",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "boss montage B_s1b"
+  },
+  {
+   "t0": 39.03333333333333,
+   "t1": 39.766666666666666,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "B_s2m",
+     "src": 183,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.15,
+      "s1": 1.3,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": "target",
+      "track_x": false,
+      "lead": 150
+     }
+    }
+   ],
+   "layers": [],
+   "label": "boss montage B_s2m"
+  },
+  {
+   "t0": 39.766666666666666,
+   "t1": 40.5,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "B_s2b",
+     "src": 213,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.1,
+      "ease": "inout",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "boss montage B_s2b"
+  },
+  {
+   "t0": 40.5,
+   "t1": 41.233333333333334,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "V_frost_hard",
+     "src": 258,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.15,
+      "s1": 1.3,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": "target",
+      "track_x": false,
+      "lead": 150
+     }
+    }
+   ],
+   "layers": [],
+   "label": "boss montage V_frost_hard"
+  },
+  {
+   "t0": 41.233333333333334,
+   "t1": 41.96666666666667,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "B_s3b",
+     "src": 111,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.1,
+      "ease": "inout",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "boss montage B_s3b"
+  },
+  {
+   "t0": 41.96666666666667,
+   "t1": 42.7,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "B_s4m",
+     "src": 198,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.15,
+      "s1": 1.3,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": "target",
+      "track_x": false,
+      "lead": 150
+     }
+    }
+   ],
+   "layers": [],
+   "label": "boss montage B_s4m"
+  },
+  {
+   "t0": 42.7,
+   "t1": 43.43333333333333,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "B_s4b",
+     "src": 102,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.1,
+      "ease": "inout",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "boss montage B_s4b"
+  },
+  {
+   "t0": 43.43333333333333,
+   "t1": 44.166666666666664,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "B_s5b",
+     "src": 510,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.15,
+      "s1": 1.3,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": "target",
+      "track_x": false,
+      "lead": 150
+     }
+    }
+   ],
+   "layers": [],
+   "label": "boss montage B_s5b"
+  },
+  {
+   "t0": 44.166666666666664,
+   "t1": 44.916666666666664,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "B_s5m",
+     "src": 123,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.1,
+      "ease": "inout",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "boss montage B_s5m"
+  },
+  {
+   "t0": 44.916666666666664,
+   "t1": 45.65,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "S6L_harrier",
+     "src": 1121,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.15,
+      "s1": 1.3,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": "target",
+      "track_x": false,
+      "lead": 150
+     }
+    }
+   ],
+   "layers": [],
+   "label": "boss montage S6L_harrier"
+  },
+  {
+   "t0": 45.65,
+   "t1": 46.38333333333333,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "B_s7m",
+     "src": 246,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.1,
+      "ease": "inout",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "boss montage B_s7m"
+  },
+  {
+   "t0": 46.38333333333333,
+   "t1": 47.11666666666667,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "B_s7b",
+     "src": 183,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.15,
+      "s1": 1.3,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": "target",
+      "track_x": false,
+      "lead": 150
+     }
+    }
+   ],
+   "layers": [],
+   "label": "boss montage B_s7b"
+  },
+  {
+   "t0": 47.11666666666667,
+   "t1": 47.85,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "B_s8m",
+     "src": 69,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.1,
+      "ease": "inout",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "boss montage B_s8m"
+  },
+  {
+   "t0": 47.85,
+   "t1": 48.583333333333336,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "B_s9m",
+     "src": 210,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.15,
+      "s1": 1.3,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": "target",
+      "track_x": false,
+      "lead": 150
+     }
+    }
+   ],
+   "layers": [],
+   "label": "boss montage B_s9m"
+  },
+  {
+   "t0": 48.583333333333336,
+   "t1": 49.31666666666667,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "B_s9b",
+     "src": 135,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.1,
+      "ease": "inout",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "boss montage B_s9b"
+  },
+  {
+   "t0": 49.31666666666667,
+   "t1": 50.06666666666667,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "V_ovl_furious",
+     "src": 48,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.15,
+      "s1": 1.3,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": "target",
+      "track_x": false,
+      "lead": 150
+     }
+    }
+   ],
+   "layers": [],
+   "label": "boss montage V_ovl_furious"
+  },
+  {
+   "t0": 50.06666666666667,
+   "t1": 51.53333333333333,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "M_uber",
+     "src": 210,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.15,
+      "ease": "inout",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [
+    {
+     "kind": "text",
+     "text": "LOCK ON",
+     "face": "final",
+     "height": 120,
+     "x": 960.0,
+     "y": 880,
+     "anchor": "c",
+     "t_in": 50.06666666666667,
+     "t_out": 50.8,
+     "in": "slam",
+     "out": "cut",
+     "fade": 0.25,
+     "fade_out": 0.2,
+     "drift": 0.0
+    },
+    {
+     "kind": "text",
+     "text": "LET IT RAIN",
+     "face": "2",
+     "height": 120,
+     "x": 960.0,
+     "y": 880,
+     "anchor": "c",
+     "t_in": 50.8,
+     "t_out": 51.53333333333333,
+     "in": "slam",
+     "out": "cut",
+     "fade": 0.25,
+     "fade_out": 0.2,
+     "drift": 0.0
+    }
+   ],
+   "label": "UBER missiles on Retina locks"
+  },
+  {
+   "t0": 51.53333333333333,
+   "t1": 52.266666666666666,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "M_rack",
+     "src": 204,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.0,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "ultra missile salvo"
+  },
+  {
+   "t0": 52.266666666666666,
+   "t1": 53.0,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "M_cole",
+     "src": 144,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.1,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "Cole nuclear strikes"
+  },
+  {
+   "t0": 53.0,
+   "t1": 54.46666666666667,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "C_mapfly",
+     "src": 250,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.1,
+      "ease": "inout",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     },
+     "desat": 0.2,
+     "tint": [
+      0,
+      0,
+      0,
+      0.4
+     ]
+    }
+   ],
+   "layers": [
+    {
+     "kind": "text",
+     "text": "1 HELL OF A",
+     "face": "final",
+     "height": 110,
+     "x": 960.0,
+     "y": 430,
+     "anchor": "c",
+     "t_in": 53.0,
+     "t_out": 54.46666666666667,
+     "in": "slam",
+     "out": "cut",
+     "fade": 0.25,
+     "fade_out": 0.2,
+     "drift": 0.0,
+     "band": 0.5
+    },
+    {
+     "kind": "text",
+     "text": "CAMPAIGN",
+     "face": "2",
+     "height": 180,
+     "x": 960.0,
+     "y": 590,
+     "anchor": "c",
+     "t_in": 53.0,
+     "t_out": 54.46666666666667,
+     "in": "slam",
+     "out": "cut",
+     "fade": 0.25,
+     "fade_out": 0.2,
+     "drift": 0.0
+    }
+   ],
+   "label": "1 HELL OF A CAMPAIGN"
+  },
+  {
+   "t0": 54.46666666666667,
+   "t1": 55.95,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "S6R_allies",
+     "src": 456,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.12,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": "player",
+      "track_x": false,
+      "lead": -180
+     }
+    }
+   ],
+   "layers": [],
+   "label": "S6: the allies join"
+  },
+  {
+   "t0": 55.95,
+   "t1": 57.416666666666664,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "S6L_open",
+     "src": 470,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.0,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "S6: the carrier flyover"
+  },
+  {
+   "t0": 57.416666666666664,
+   "t1": 58.88333333333333,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "S6R_rebintro",
+     "src": 325,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.08,
+      "ease": "inout",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "REBELS: Voss"
+  },
+  {
+   "t0": 58.88333333333333,
+   "t1": 60.35,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "S6R_rebintro",
+     "src": 925,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.08,
+      "s1": 1.0,
+      "ease": "inout",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "REBELS: Nyx"
+  },
+  {
+   "t0": 60.35,
+   "t1": 61.833333333333336,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "S6L_choice",
+     "src": 20,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.35,
+      "s1": 1.5,
+      "ease": "inout",
+      "cx": 480,
+      "cy": 486,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "S6: CHOOSE YOUR PURSUIT"
+  },
+  {
+   "t0": 61.833333333333336,
+   "t1": 63.3,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      960,
+      1080
+     ],
+     "take": "S6L_choice",
+     "src": 200,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.0,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     },
+     "gain": 0.5,
+     "border": [
+      8,
+      8,
+      12
+     ]
+    },
+    {
+     "rect": [
+      960,
+      0,
+      960,
+      1080
+     ],
+     "take": "S6R_choice",
+     "src": 200,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.0,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     },
+     "gain": 0.5,
+     "border": [
+      8,
+      8,
+      12
+     ]
+    }
+   ],
+   "layers": [
+    {
+     "kind": "text",
+     "text": "LEFT",
+     "face": "6",
+     "height": 120,
+     "x": 480.0,
+     "y": 960,
+     "anchor": "c",
+     "t_in": 61.833333333333336,
+     "t_out": 63.3,
+     "in": "slam",
+     "out": "cut",
+     "fade": 0.25,
+     "fade_out": 0.2,
+     "drift": 0.0
+    },
+    {
+     "kind": "text",
+     "text": "RIGHT",
+     "face": "2",
+     "height": 120,
+     "x": 1440.0,
+     "y": 960,
+     "anchor": "c",
+     "t_in": 61.833333333333336,
+     "t_out": 63.3,
+     "in": "slam",
+     "out": "cut",
+     "fade": 0.25,
+     "fade_out": 0.2,
+     "drift": 0.0
+    }
+   ],
+   "label": "LEFT | RIGHT"
+  },
+  {
+   "t0": 63.3,
+   "t1": 64.76666666666667,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "S6L_harrier",
+     "src": 555,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.0,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [
+    {
+     "kind": "text",
+     "text": "THE HARRIER",
+     "face": "6",
+     "height": 100,
+     "x": 960.0,
+     "y": 980,
+     "anchor": "c",
+     "t_in": 63.3,
+     "t_out": 64.76666666666667,
+     "in": "slam",
+     "out": "cut",
+     "fade": 0.25,
+     "fade_out": 0.2,
+     "drift": 0.0
+    }
+   ],
+   "label": "the HARRIER"
+  },
+  {
+   "t0": 64.76666666666667,
+   "t1": 66.23333333333333,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "S6R_rebfight",
+     "src": 204,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.05,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [
+    {
+     "kind": "text",
+     "text": "THE REBELS",
+     "face": "2",
+     "height": 100,
+     "x": 960.0,
+     "y": 980,
+     "anchor": "c",
+     "t_in": 64.76666666666667,
+     "t_out": 66.23333333333333,
+     "in": "slam",
+     "out": "cut",
+     "fade": 0.25,
+     "fade_out": 0.2,
+     "drift": 0.0
+    }
+   ],
+   "label": "THE REBELS: five against five"
+  },
+  {
+   "t0": 66.23333333333333,
+   "t1": 66.98333333333333,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "S6L_harrier",
+     "src": 1168,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.1,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "the Harrier falls"
+  },
+  {
+   "t0": 66.98333333333333,
+   "t1": 67.71666666666667,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "S6R_rebfight",
+     "src": 1432,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.1,
+      "s1": 1.25,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": "player",
+      "track_x": false,
+      "lead": -200
+     }
+    }
+   ],
+   "layers": [],
+   "label": "Rebel fury"
+  },
+  {
+   "t0": 67.71666666666667,
+   "t1": 69.18333333333334,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "Z_drone",
+     "src": 72,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.1,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [
+    {
+     "kind": "text",
+     "text": "THE FINAL FIGHT",
+     "face": "2",
+     "height": 100,
+     "x": 960.0,
+     "y": 980,
+     "anchor": "c",
+     "t_in": 67.71666666666667,
+     "t_out": 69.18333333333334,
+     "in": "slam",
+     "out": "cut",
+     "fade": 0.25,
+     "fade_out": 0.2,
+     "drift": 0.0
+    }
+   ],
+   "label": "finale: the mutated drone"
+  },
+  {
+   "t0": 69.18333333333334,
+   "t1": 70.65,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "Z_ghost",
+     "src": 120,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.1,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "finale: the ghost in the code"
+  },
+  {
+   "t0": 70.65,
+   "t1": 72.11666666666666,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "Z_void",
+     "src": 60,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.12,
+      "ease": "inout",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [
+    {
+     "kind": "text",
+     "text": "INTO THE VOID",
+     "face": "final",
+     "height": 100,
+     "x": 960.0,
+     "y": 980,
+     "anchor": "c",
+     "t_in": 70.65,
+     "t_out": 72.11666666666666,
+     "in": "slam",
+     "out": "cut",
+     "fade": 0.25,
+     "fade_out": 0.2,
+     "drift": 0.0
+    }
+   ],
+   "label": "the void opens"
+  },
+  {
+   "t0": 72.11666666666666,
+   "t1": 73.6,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "Z_void",
+     "src": 300,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.1,
+      "s1": 1.2,
+      "ease": "inout",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "DRACODIA"
+  },
+  {
+   "t0": 73.6,
+   "t1": 74.33333333333333,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "Z_forms",
+     "src": 160,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.15,
+      "s1": 1.25,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": "target",
+      "track_x": false,
+      "lead": 150
+     }
+    }
+   ],
+   "layers": [],
+   "label": "Dracodia form 1"
+  },
+  {
+   "t0": 74.33333333333333,
+   "t1": 75.06666666666666,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "Z_forms",
+     "src": 606,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.12,
+      "ease": "inout",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "Dracodia form 2"
+  },
+  {
+   "t0": 75.06666666666666,
+   "t1": 75.8,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "Z_forms",
+     "src": 799,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.15,
+      "s1": 1.25,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": "target",
+      "track_x": false,
+      "lead": 150
+     }
+    }
+   ],
+   "layers": [],
+   "label": "Dracodia form 3"
+  },
+  {
+   "t0": 75.8,
+   "t1": 76.53333333333333,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "Z_forms",
+     "src": 1320,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.12,
+      "ease": "inout",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "Dracodia form 4"
+  },
+  {
+   "t0": 76.53333333333333,
+   "t1": 77.26666666666667,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "Z_forms",
+     "src": 1477,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.15,
+      "s1": 1.25,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": "target",
+      "track_x": false,
+      "lead": 150
+     }
+    }
+   ],
+   "layers": [],
+   "label": "Dracodia form 5"
+  },
+  {
+   "t0": 77.26666666666667,
+   "t1": 78.01666666666667,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "Z_forms",
+     "src": 1938,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.12,
+      "ease": "inout",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "Dracodia form 6"
+  },
+  {
+   "t0": 78.01666666666667,
+   "t1": 78.75,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "Z_forms",
+     "src": 2104,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.15,
+      "s1": 1.25,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": "target",
+      "track_x": false,
+      "lead": 150
+     }
+    }
+   ],
+   "layers": [],
+   "label": "Dracodia form 7"
+  },
+  {
+   "t0": 78.75,
+   "t1": 79.48333333333333,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "Z_forms",
+     "src": 2655,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.12,
+      "ease": "inout",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "Dracodia form 8"
+  },
+  {
+   "t0": 79.48333333333333,
+   "t1": 80.95,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "Z_death",
+     "src": 30,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.1,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "Dracodia ruptures"
+  },
+  {
+   "t0": 80.95,
+   "t1": 83.9,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "Z_death",
+     "src": 626,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.1,
+      "s1": 1.0,
+      "ease": "inout",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     }
+    }
+   ],
+   "layers": [],
+   "label": "the destruction"
+  },
+  {
+   "t0": 83.9,
+   "t1": 84.08333333333333,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "B_s4b",
+     "src": 9,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.0,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     },
+     "desat": 0.1
+    }
+   ],
+   "layers": [],
+   "label": "recap B_s4b"
+  },
+  {
+   "t0": 84.08333333333333,
+   "t1": 84.26666666666667,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "P_cole",
+     "src": 240,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.0,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     },
+     "desat": 0.1
+    }
+   ],
+   "layers": [],
+   "label": "recap P_cole"
+  },
+  {
+   "t0": 84.26666666666667,
+   "t1": 84.45,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "S6R_rebfight",
+     "src": 438,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.0,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     },
+     "desat": 0.1
+    }
+   ],
+   "layers": [],
+   "label": "recap S6R_rebfight"
+  },
+  {
+   "t0": 84.45,
+   "t1": 84.63333333333334,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "P_freezer",
+     "src": 6,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.0,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     },
+     "desat": 0.1
+    }
+   ],
+   "layers": [],
+   "label": "recap P_freezer"
+  },
+  {
+   "t0": 84.63333333333334,
+   "t1": 84.81666666666666,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "X_rx_duel",
+     "src": 516,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.0,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     },
+     "desat": 0.1
+    }
+   ],
+   "layers": [],
+   "label": "recap X_rx_duel"
+  },
+  {
+   "t0": 84.81666666666666,
+   "t1": 85.0,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "M_uber",
+     "src": 147,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.0,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     },
+     "desat": 0.1
+    }
+   ],
+   "layers": [],
+   "label": "recap M_uber"
+  },
+  {
+   "t0": 85.0,
+   "t1": 85.18333333333334,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "B_s9b",
+     "src": 372,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.0,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     },
+     "desat": 0.1
+    }
+   ],
+   "layers": [],
+   "label": "recap B_s9b"
+  },
+  {
+   "t0": 85.18333333333334,
+   "t1": 85.36666666666666,
+   "panes": [
+    {
+     "rect": [
+      0,
+      0,
+      1920,
+      1080
+     ],
+     "take": "P_yuri",
+     "src": 0,
+     "speed": 1.0,
+     "bg": "blur",
+     "cam": {
+      "s0": 1.0,
+      "s1": 1.0,
+      "ease": "out",
+      "cx": 480,
+      "cy": 512,
+      "track": null,
+      "track_x": false,
+      "lead": 0
+     },
+     "desat": 0.1
+    }
+   ],
+   "layers": [],
+   "label": "recap P_yuri"
+  },
+  {
+   "t0": 85.45,
+   "t1": 86.01666666666667,
+   "panes": [],
+   "layers": [],
+   "label": "silence"
+  },
+  {
+   "t0": 86.01666666666667,
+   "t1": 92.41666666666667,
+   "panes": [],
+   "layers": [
+    {
+     "kind": "image",
+     "src": "brand/bof_logo.png",
+     "x": 960.0,
+     "y": 400,
+     "prescale": 0.66,
+     "anchor": "c",
+     "t_in": 86.01666666666667,
+     "t_out": 92.41666666666667,
+     "in": "slam",
+     "out": "cut",
+     "shadow": true,
+     "resample": "lanczos",
+     "drift": 0.008,
+     "fade": 0.25,
+     "fade_out": 0.2
+    },
+    {
+     "kind": "text",
+     "text": "11.1.26",
+     "face": "final",
+     "height": 110,
+     "x": 960.0,
+     "y": 735,
+     "anchor": "c",
+     "t_in": 86.61666666666666,
+     "t_out": 92.41666666666667,
+     "in": "rise",
+     "out": "cut",
+     "fade": 0.25,
+     "fade_out": 0.2,
+     "drift": 0.0
+    },
+    {
+     "kind": "text",
+     "text": "STEAM / PC / MAC / LINUX",
+     "face": "6",
+     "height": 58,
+     "x": 960.0,
+     "y": 855,
+     "anchor": "c",
+     "t_in": 87.11666666666666,
+     "t_out": 92.41666666666667,
+     "in": "fade",
+     "out": "cut",
+     "fade": 0.25,
+     "fade_out": 0.2,
+     "drift": 0.0
+    },
+    {
+     "kind": "image",
+     "src": "brand/copyright.png",
+     "x": 960.0,
+     "y": 965,
+     "prescale": 0.8,
+     "anchor": "c",
+     "t_in": 87.61666666666666,
+     "t_out": 92.41666666666667,
+     "in": "fade",
+     "out": "cut",
+     "shadow": false,
+     "resample": "lanczos",
+     "drift": 0.0,
+     "fade": 0.25,
+     "fade_out": 0.2
+    }
+   ],
+   "label": "logo card",
+   "fade_out": 1.4
+  }
+ ],
+ "overlays": [
+  {
+   "kind": "text",
+   "text": "2",
+   "face": "final",
+   "height": 150,
+   "x": 533.0,
+   "y": 540,
+   "anchor": "l",
+   "t_in": 35.766666666666666,
+   "t_out": 35.833333333333336,
+   "in": "cut",
+   "out": "cut",
+   "fade": 0.25,
+   "fade_out": 0.2,
+   "drift": 0.0
+  },
+  {
+   "kind": "text",
+   "text": "20",
+   "face": "final",
+   "height": 150,
+   "x": 533.0,
+   "y": 540,
+   "anchor": "l",
+   "t_in": 35.833333333333336,
+   "t_out": 35.9,
+   "in": "cut",
+   "out": "cut",
+   "fade": 0.25,
+   "fade_out": 0.2,
+   "drift": 0.0
+  },
+  {
+   "kind": "text",
+   "text": "20 B",
+   "face": "final",
+   "height": 150,
+   "x": 533.0,
+   "y": 540,
+   "anchor": "l",
+   "t_in": 35.9,
+   "t_out": 36.05,
+   "in": "cut",
+   "out": "cut",
+   "fade": 0.25,
+   "fade_out": 0.2,
+   "drift": 0.0
+  },
+  {
+   "kind": "text",
+   "text": "20 BO",
+   "face": "final",
+   "height": 150,
+   "x": 533.0,
+   "y": 540,
+   "anchor": "l",
+   "t_in": 36.05,
+   "t_out": 36.11666666666667,
+   "in": "cut",
+   "out": "cut",
+   "fade": 0.25,
+   "fade_out": 0.2,
+   "drift": 0.0
+  },
+  {
+   "kind": "text",
+   "text": "20 BOS",
+   "face": "final",
+   "height": 150,
+   "x": 533.0,
+   "y": 540,
+   "anchor": "l",
+   "t_in": 36.11666666666667,
+   "t_out": 36.18333333333333,
+   "in": "cut",
+   "out": "cut",
+   "fade": 0.25,
+   "fade_out": 0.2,
+   "drift": 0.0
+  },
+  {
+   "kind": "text",
+   "text": "20 BOSS",
+   "face": "final",
+   "height": 150,
+   "x": 533.0,
+   "y": 540,
+   "anchor": "l",
+   "t_in": 36.18333333333333,
+   "t_out": 36.25,
+   "in": "cut",
+   "out": "cut",
+   "fade": 0.25,
+   "fade_out": 0.2,
+   "drift": 0.0
+  },
+  {
+   "kind": "text",
+   "text": "20 BOSSE",
+   "face": "final",
+   "height": 150,
+   "x": 533.0,
+   "y": 540,
+   "anchor": "l",
+   "t_in": 36.25,
+   "t_out": 36.333333333333336,
+   "in": "cut",
+   "out": "cut",
+   "fade": 0.25,
+   "fade_out": 0.2,
+   "drift": 0.0
+  },
+  {
+   "kind": "text",
+   "text": "20 BOSSES",
+   "face": "final",
+   "height": 150,
+   "x": 533.0,
+   "y": 540,
+   "anchor": "l",
+   "t_in": 36.333333333333336,
+   "t_out": 37.18333333333333,
+   "in": "cut",
+   "out": "fade",
+   "fade": 0.25,
+   "fade_out": 0.2,
+   "drift": 0.0
+  },
+  {
+   "kind": "text",
+   "text": "9 PILOTS",
+   "face": "final",
+   "height": 92,
+   "x": 960.0,
+   "y": 300,
+   "anchor": "c",
+   "t_in": 83.9,
+   "t_out": 85.45,
+   "in": "slam",
+   "out": "cut",
+   "fade": 0.25,
+   "fade_out": 0.2,
+   "drift": 0.0,
+   "band": 0.5
+  },
+  {
+   "kind": "text",
+   "text": "10 STAGES",
+   "face": "final",
+   "height": 92,
+   "x": 960.0,
+   "y": 450,
+   "anchor": "c",
+   "t_in": 84.26666666666667,
+   "t_out": 85.45,
+   "in": "slam",
+   "out": "cut",
+   "fade": 0.25,
+   "fade_out": 0.2,
+   "drift": 0.0,
+   "band": 0.5
+  },
+  {
+   "kind": "text",
+   "text": "20 BOSSES",
+   "face": "final",
+   "height": 92,
+   "x": 960.0,
+   "y": 600,
+   "anchor": "c",
+   "t_in": 84.63333333333334,
+   "t_out": 85.45,
+   "in": "slam",
+   "out": "cut",
+   "fade": 0.25,
+   "fade_out": 0.2,
+   "drift": 0.0,
+   "band": 0.5
+  },
+  {
+   "kind": "text",
+   "text": "1 HELL OF A CAMPAIGN",
+   "face": "2",
+   "height": 92,
+   "x": 960.0,
+   "y": 750,
+   "anchor": "c",
+   "t_in": 85.0,
+   "t_out": 85.45,
+   "in": "slam",
+   "out": "cut",
+   "fade": 0.25,
+   "fade_out": 0.2,
+   "drift": 0.0,
+   "band": 0.5
+  }
+ ],
+ "hits": [
+  {
+   "t": 1.5166666666666666,
+   "kind": "punch",
+   "dur": 0.12,
+   "amp": 0.03
+  },
+  {
+   "t": 2.25,
+   "kind": "punch",
+   "dur": 0.12,
+   "amp": 0.03
+  },
+  {
+   "t": 2.9833333333333334,
+   "kind": "punch",
+   "dur": 0.12,
+   "amp": 0.03
+  },
+  {
+   "t": 3.716666666666667,
+   "kind": "punch",
+   "dur": 0.12,
+   "amp": 0.03
+  },
+  {
+   "t": 4.45,
+   "kind": "punch",
+   "dur": 0.12,
+   "amp": 0.03
+  },
+  {
+   "t": 5.183333333333334,
+   "kind": "punch",
+   "dur": 0.12,
+   "amp": 0.03
+  },
+  {
+   "t": 5.933333333333334,
+   "kind": "punch",
+   "dur": 0.12,
+   "amp": 0.03
+  },
+  {
+   "t": 6.666666666666667,
+   "kind": "punch",
+   "dur": 0.12,
+   "amp": 0.03
+  },
+  {
+   "t": 1.5166666666666666,
+   "kind": "flash",
+   "dur": 0.16,
+   "amp": 0.8
+  },
+  {
+   "t": 8.866666666666667,
+   "kind": "flash",
+   "dur": 0.2,
+   "amp": 1.0
+  },
+  {
+   "t": 8.866666666666667,
+   "kind": "shake",
+   "dur": 0.5,
+   "amp": 18
+  },
+  {
+   "t": 11.816666666666666,
+   "kind": "flash",
+   "dur": 0.14,
+   "amp": 0.75
+  },
+  {
+   "t": 13.283333333333333,
+   "kind": "punch",
+   "dur": 0.14,
+   "amp": 0.035
+  },
+  {
+   "t": 14.016666666666667,
+   "kind": "punch",
+   "dur": 0.14,
+   "amp": 0.035
+  },
+  {
+   "t": 14.75,
+   "kind": "punch",
+   "dur": 0.14,
+   "amp": 0.035
+  },
+  {
+   "t": 15.483333333333333,
+   "kind": "punch",
+   "dur": 0.14,
+   "amp": 0.035
+  },
+  {
+   "t": 16.216666666666665,
+   "kind": "punch",
+   "dur": 0.14,
+   "amp": 0.035
+  },
+  {
+   "t": 16.966666666666665,
+   "kind": "punch",
+   "dur": 0.14,
+   "amp": 0.035
+  },
+  {
+   "t": 17.7,
+   "kind": "punch",
+   "dur": 0.14,
+   "amp": 0.035
+  },
+  {
+   "t": 18.433333333333334,
+   "kind": "punch",
+   "dur": 0.14,
+   "amp": 0.035
+  },
+  {
+   "t": 19.166666666666668,
+   "kind": "punch",
+   "dur": 0.14,
+   "amp": 0.035
+  },
+  {
+   "t": 19.9,
+   "kind": "flash",
+   "dur": 0.14,
+   "amp": 0.75
+  },
+  {
+   "t": 22.1,
+   "kind": "punch",
+   "dur": 0.12,
+   "amp": 0.03
+  },
+  {
+   "t": 22.85,
+   "kind": "punch",
+   "dur": 0.12,
+   "amp": 0.03
+  },
+  {
+   "t": 23.583333333333332,
+   "kind": "punch",
+   "dur": 0.12,
+   "amp": 0.03
+  },
+  {
+   "t": 24.316666666666666,
+   "kind": "punch",
+   "dur": 0.12,
+   "amp": 0.03
+  },
+  {
+   "t": 25.05,
+   "kind": "punch",
+   "dur": 0.12,
+   "amp": 0.03
+  },
+  {
+   "t": 25.783333333333335,
+   "kind": "punch",
+   "dur": 0.12,
+   "amp": 0.03
+  },
+  {
+   "t": 26.516666666666666,
+   "kind": "punch",
+   "dur": 0.12,
+   "amp": 0.03
+  },
+  {
+   "t": 27.25,
+   "kind": "punch",
+   "dur": 0.12,
+   "amp": 0.03
+  },
+  {
+   "t": 28.0,
+   "kind": "punch",
+   "dur": 0.12,
+   "amp": 0.03
+  },
+  {
+   "t": 28.733333333333334,
+   "kind": "punch",
+   "dur": 0.12,
+   "amp": 0.03
+  },
+  {
+   "t": 29.466666666666665,
+   "kind": "flash",
+   "dur": 0.12,
+   "amp": 0.55
+  },
+  {
+   "t": 30.933333333333334,
+   "kind": "flash",
+   "dur": 0.12,
+   "amp": 0.55
+  },
+  {
+   "t": 32.4,
+   "kind": "flash",
+   "dur": 0.12,
+   "amp": 0.55
+  },
+  {
+   "t": 33.88333333333333,
+   "kind": "punch",
+   "dur": 0.2,
+   "amp": 0.04
+  },
+  {
+   "t": 37.18333333333333,
+   "kind": "flash",
+   "dur": 0.18,
+   "amp": 0.9
+  },
+  {
+   "t": 37.18333333333333,
+   "kind": "shake",
+   "dur": 0.4,
+   "amp": 12
+  },
+  {
+   "t": 38.28333333333333,
+   "kind": "punch",
+   "dur": 0.12,
+   "amp": 0.03
+  },
+  {
+   "t": 39.03333333333333,
+   "kind": "punch",
+   "dur": 0.12,
+   "amp": 0.03
+  },
+  {
+   "t": 39.766666666666666,
+   "kind": "punch",
+   "dur": 0.12,
+   "amp": 0.03
+  },
+  {
+   "t": 40.5,
+   "kind": "punch",
+   "dur": 0.12,
+   "amp": 0.03
+  },
+  {
+   "t": 41.233333333333334,
+   "kind": "punch",
+   "dur": 0.12,
+   "amp": 0.03
+  },
+  {
+   "t": 41.96666666666667,
+   "kind": "punch",
+   "dur": 0.12,
+   "amp": 0.03
+  },
+  {
+   "t": 42.7,
+   "kind": "punch",
+   "dur": 0.12,
+   "amp": 0.03
+  },
+  {
+   "t": 43.43333333333333,
+   "kind": "punch",
+   "dur": 0.12,
+   "amp": 0.03
+  },
+  {
+   "t": 44.166666666666664,
+   "kind": "punch",
+   "dur": 0.12,
+   "amp": 0.03
+  },
+  {
+   "t": 44.916666666666664,
+   "kind": "punch",
+   "dur": 0.12,
+   "amp": 0.03
+  },
+  {
+   "t": 45.65,
+   "kind": "punch",
+   "dur": 0.12,
+   "amp": 0.03
+  },
+  {
+   "t": 46.38333333333333,
+   "kind": "punch",
+   "dur": 0.12,
+   "amp": 0.03
+  },
+  {
+   "t": 47.11666666666667,
+   "kind": "punch",
+   "dur": 0.12,
+   "amp": 0.03
+  },
+  {
+   "t": 47.85,
+   "kind": "punch",
+   "dur": 0.12,
+   "amp": 0.03
+  },
+  {
+   "t": 48.583333333333336,
+   "kind": "punch",
+   "dur": 0.12,
+   "amp": 0.03
+  },
+  {
+   "t": 49.31666666666667,
+   "kind": "punch",
+   "dur": 0.12,
+   "amp": 0.03
+  },
+  {
+   "t": 38.28333333333333,
+   "kind": "flash",
+   "dur": 0.18,
+   "amp": 0.85
+  },
+  {
+   "t": 44.166666666666664,
+   "kind": "flash",
+   "dur": 0.12,
+   "amp": 0.5
+  },
+  {
+   "t": 50.06666666666667,
+   "kind": "flash",
+   "dur": 0.14,
+   "amp": 0.7
+  },
+  {
+   "t": 53.0,
+   "kind": "flash",
+   "dur": 0.18,
+   "amp": 0.85
+  },
+  {
+   "t": 53.0,
+   "kind": "shake",
+   "dur": 0.4,
+   "amp": 12
+  },
+  {
+   "t": 61.833333333333336,
+   "kind": "flash",
+   "dur": 0.2,
+   "amp": 0.9
+  },
+  {
+   "t": 61.833333333333336,
+   "kind": "shake",
+   "dur": 0.5,
+   "amp": 14
+  },
+  {
+   "t": 67.71666666666667,
+   "kind": "flash",
+   "dur": 0.16,
+   "amp": 0.8
+  },
+  {
+   "t": 70.65,
+   "kind": "shake",
+   "dur": 0.5,
+   "amp": 10
+  },
+  {
+   "t": 72.11666666666666,
+   "kind": "flash",
+   "dur": 0.2,
+   "amp": 0.9
+  },
+  {
+   "t": 73.6,
+   "kind": "punch",
+   "dur": 0.14,
+   "amp": 0.035
+  },
+  {
+   "t": 74.33333333333333,
+   "kind": "punch",
+   "dur": 0.14,
+   "amp": 0.035
+  },
+  {
+   "t": 75.06666666666666,
+   "kind": "punch",
+   "dur": 0.14,
+   "amp": 0.035
+  },
+  {
+   "t": 75.8,
+   "kind": "punch",
+   "dur": 0.14,
+   "amp": 0.035
+  },
+  {
+   "t": 76.53333333333333,
+   "kind": "punch",
+   "dur": 0.14,
+   "amp": 0.035
+  },
+  {
+   "t": 77.26666666666667,
+   "kind": "punch",
+   "dur": 0.14,
+   "amp": 0.035
+  },
+  {
+   "t": 78.01666666666667,
+   "kind": "punch",
+   "dur": 0.14,
+   "amp": 0.035
+  },
+  {
+   "t": 78.75,
+   "kind": "punch",
+   "dur": 0.14,
+   "amp": 0.035
+  },
+  {
+   "t": 73.6,
+   "kind": "flash",
+   "dur": 0.16,
+   "amp": 0.7
+  },
+  {
+   "t": 76.53333333333333,
+   "kind": "flash",
+   "dur": 0.12,
+   "amp": 0.5
+  },
+  {
+   "t": 79.48333333333333,
+   "kind": "flash",
+   "dur": 0.2,
+   "amp": 0.9
+  },
+  {
+   "t": 79.48333333333333,
+   "kind": "shake",
+   "dur": 0.8,
+   "amp": 16
+  },
+  {
+   "t": 82.41666666666667,
+   "kind": "flash",
+   "dur": 0.2,
+   "amp": 0.7
+  },
+  {
+   "t": 83.9,
+   "kind": "punch",
+   "dur": 0.12,
+   "amp": 0.03
+  },
+  {
+   "t": 84.26666666666667,
+   "kind": "punch",
+   "dur": 0.12,
+   "amp": 0.03
+  },
+  {
+   "t": 84.63333333333334,
+   "kind": "punch",
+   "dur": 0.12,
+   "amp": 0.03
+  },
+  {
+   "t": 85.0,
+   "kind": "punch",
+   "dur": 0.12,
+   "amp": 0.03
+  },
+  {
+   "t": 86.01666666666667,
+   "kind": "flash",
+   "dur": 0.22,
+   "amp": 1.0
+  },
+  {
+   "t": 86.01666666666667,
+   "kind": "shake",
+   "dur": 0.45,
+   "amp": 16
+  }
+ ],
+ "audio": {
+  "length": 92.41666666666667,
+  "t0": 0.0,
+  "takes_dir": "/home/user/BulletsOfFury/_BUILD_SOURCE/trailer_v10/takes10",
+  "song": "/home/user/BulletsOfFury/assets/game/music/LevelX.mp3",
+  "song_gain_db": -6.3,
+  "song_fade_in": 0.01,
+  "song_fade_out": null,
+  "music2": null,
+  "chime": {
+   "file": "/home/user/BulletsOfFury/assets/game/sounds/cf_boot.mp3",
+   "t": 0.05,
+   "gain_db": -12.0
+  },
+  "sfx": [
+   {
+    "t": 35.7667,
+    "file": "/home/user/BulletsOfFury/assets/game/sounds/dialogue_letter_0924.wav",
+    "gain_db": -4.0
+   },
+   {
+    "t": 35.8367,
+    "file": "/home/user/BulletsOfFury/assets/game/sounds/dialogue_letter_0924.wav",
+    "gain_db": -4.0
+   },
+   {
+    "t": 35.9067,
+    "file": "/home/user/BulletsOfFury/assets/game/sounds/dialogue_letter_0924.wav",
+    "gain_db": -4.0
+   },
+   {
+    "t": 36.0467,
+    "file": "/home/user/BulletsOfFury/assets/game/sounds/dialogue_letter_0924.wav",
+    "gain_db": -4.0
+   },
+   {
+    "t": 36.1167,
+    "file": "/home/user/BulletsOfFury/assets/game/sounds/dialogue_letter_0924.wav",
+    "gain_db": -4.0
+   },
+   {
+    "t": 36.1867,
+    "file": "/home/user/BulletsOfFury/assets/game/sounds/dialogue_letter_0924.wav",
+    "gain_db": -4.0
+   },
+   {
+    "t": 36.2567,
+    "file": "/home/user/BulletsOfFury/assets/game/sounds/dialogue_letter_0924.wav",
+    "gain_db": -4.0
+   },
+   {
+    "t": 36.3267,
+    "file": "/home/user/BulletsOfFury/assets/game/sounds/dialogue_letter_0924.wav",
+    "gain_db": -4.0
+   }
+  ],
+  "fade_out": 0.8
+ }
+}

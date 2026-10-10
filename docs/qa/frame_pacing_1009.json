@@ -1,0 +1,94 @@
+{
+ "before": {
+  "60": {
+   "frames": 450,
+   "off_cadence_frames": 231,
+   "zero_tick": 115,
+   "double_tick": 116,
+   "expect": "one tick every frame",
+   "world_dx_per_tick": 3.51
+  },
+  "59.94": {
+   "frames": 450,
+   "off_cadence_frames": 0,
+   "zero_tick": 0,
+   "double_tick": 0,
+   "expect": "one tick every frame",
+   "world_dx_per_tick": 3.51
+  },
+  "120": {
+   "frames": 450,
+   "off_cadence_frames": 0,
+   "zero_tick": 225,
+   "double_tick": 0,
+   "expect": "ideal 0.500 ticks/frame cadence",
+   "world_dx_per_tick": 3.51
+  },
+  "144": {
+   "frames": 450,
+   "off_cadence_frames": 0,
+   "zero_tick": 262,
+   "double_tick": 0,
+   "expect": "ideal 0.417 ticks/frame cadence",
+   "world_dx_per_tick": 3.51
+  },
+  "60 hitchy": {
+   "frames": 450,
+   "off_cadence_frames": 0,
+   "zero_tick": 0,
+   "double_tick": 0,
+   "expect": "one tick every frame",
+   "world_dx_per_tick": 3.51
+  },
+  "errors": []
+ },
+ "after": {
+  "60": {
+   "frames": 450,
+   "off_cadence_frames": 0,
+   "zero_tick": 0,
+   "double_tick": 0,
+   "expect": "one tick every frame",
+   "world_dx_per_tick": 3.51
+  },
+  "59.94": {
+   "frames": 450,
+   "off_cadence_frames": 0,
+   "zero_tick": 0,
+   "double_tick": 0,
+   "expect": "one tick every frame",
+   "world_dx_per_tick": 3.51
+  },
+  "120": {
+   "frames": 450,
+   "off_cadence_frames": 0,
+   "zero_tick": 225,
+   "double_tick": 0,
+   "expect": "ideal 0.500 ticks/frame cadence",
+   "world_dx_per_tick": 3.51
+  },
+  "144": {
+   "frames": 450,
+   "off_cadence_frames": 0,
+   "zero_tick": 263,
+   "double_tick": 0,
+   "expect": "ideal 0.417 ticks/frame cadence",
+   "world_dx_per_tick": 3.51
+  },
+  "60 hitchy": {
+   "frames": 450,
+   "off_cadence_frames": 1,
+   "zero_tick": 1,
+   "double_tick": 0,
+   "expect": "one tick every frame",
+   "world_dx_per_tick": 3.51
+  },
+  "errors": []
+ },
+ "suite": "7952 ok, 0 errors, FALVA/LIZZIE BUILD OK",
+ "expansion_probes": {
+  "museum": "28/28",
+  "campaign": "29/29",
+  "ground": "23/23"
+ }
+}

@@ -35,19 +35,19 @@
   });
   function reload(p, G) {
     const gun = p.weapons[p.wi], def = TD.FOOT_GUNS[gun.id];
-    if (p.reload || p.action || gun.ammo >= def.cap || !gun.reserve) return;
+    if (p.reload || p.action || p.roll>0 || gun.ammo >= def.cap || !gun.reserve) return;
     p.reload = 1.15; p.reloadGun = gun; G.say('RELOADING',p); A.play('blip');
   }
   function fireFoot(p, G) {
     const gun = p.weapons[p.wi], def = TD.FOOT_GUNS[gun.id];
     if (gun.ammo <= 0) { if (p.fireCd <= 0) { G.say(gun.reserve ? 'RELOAD' : 'OUT OF AMMO',p); p.fireCd=25; } return; }
-    gun.ammo--; p.fireCd=def.cd;
-    const forward = M.fwd(p.aim), x = p.x + forward[0]*15, y = p.y + forward[1]*15;
+    const lv=gun.lv||1; gun.ammo--; p.fireCd=Math.max(3,Math.round(def.cd*(1-.12*(lv-1))));
+    const socket=TD.footSocket(p),x=socket.x,y=socket.y;
     // A blocked hand socket cannot shoot through a wall when pressed against cover.
     if (W.rayBlock(p.x,p.y,x,y)) { FX.boom(p.x,p.y,18,'gfx_impact_',6); return; }
     for (const delta of def.fan || [0]) {
       const a=p.aim+delta, f=M.fwd(a);
-      G.shots.push({ k:def.k,x,y,a,vx:f[0]*def.speed,vy:f[1]*def.speed,dmg:def.damage,life:60,r:3,
+      G.shots.push({ k:def.k,x,y,a,vx:f[0]*def.speed,vy:f[1]*def.speed,dmg:def.damage*(1+.4*(lv-1)),life:60,r:3,
         pierce:def.pierce||0,splash:def.splash,sdmg:4,lv:1,t:0,napalm:gun.id==='napalm_launcher' });
     }
     FX.flash(x,y,p.aim,.1); A.play(def.k==='laser'?'laser':def.splash?'cannon':'mg',.55);
@@ -57,29 +57,30 @@
     if (p.dead) return; p.footTime+=dt;
     p.inv=Math.max(0,p.inv-1); p.flash=Math.max(0,p.flash-dt); p.fireCd=Math.max(0,p.fireCd-1);
     const [dx,dy]=I.dir(), len=Math.hypot(dx,dy)||1, aim=I.aim(p);
-    if (aim!=null) {p.aim=M.turnTo(p.aim,aim,.25);p.manualAim=60;}
+    if (aim!=null) {p.aim=I.state.directionalFire?aim:M.turnTo(p.aim,aim,.25);p.manualAim=60;}
     else if (I.down('aimLeft')||I.down('aimRight')) {p.aim+=(I.down('aimRight')?1:-1)*.09;p.manualAim=120;}
     else if (p.manualAim>0) p.manualAim--;
     else if ((dx||dy)&&!I.down('C')) p.aim=M.angTo(0,0,dx,dy);
     if (dx||dy) p.a=M.angTo(0,0,dx,dy);
-    if (I.tap('prone') || I.tap('C')) p.stance=p.stance==='prone'?'stand':'prone';
-    if (I.tap('X') && !p.action && !p.reload && p.roll<=0) {p.roll=.42;p.rollAim=(dx||dy)?p.a:p.aim;}
+    if (!p.action && p.roll<=0 && (I.tap('prone') || I.tap('C'))) p.stance=p.stance==='prone'?'stand':'prone';
+    if (I.tap('X') && !p.action && !p.reload && p.roll<=0) {p.roll=.5;p.rollAim=(dx||dy)?p.a:p.aim;p.rollStance=p.stance;}
     const speed=p.roll>0?5.1:p.stance==='prone'?.85:2.35;
     const v=p.roll>0?M.fwd(p.rollAim):[dx/len,dy/len];
     p.vx=v[0]*speed;p.vy=v[1]*speed;p.moving=Math.hypot(p.vx,p.vy)>.1;
-    if (!p.action) {p.x+=p.vx;p.y+=p.vy;} W.collide(p,p.r,false);
-    for(const q of G.props) if(!q.dead) TD.pushOut(p,q);
-    p.roll=Math.max(0,p.roll-dt); p.hidden=!!W.inType(p.x,p.y,'h');
+    if (!p.action) {p.x+=p.vx;p.y+=p.vy;} else {p.vx=0;p.vy=0;p.moving=false;}
+    for(let pass=0;pass<3;pass++){for(const q of G.props)if(!q.dead)TD.pushOut(p,q);W.collide(p,p.r,false);}
+    p.roll=Math.max(0,p.roll-dt); p.hidden=!!W.inType(p.x,p.y,'h')||!!W.inType(p.x,p.y,'d');
     if (I.tap('reload') || I.tap('B')) reload(p,G);
+    // Level 5 only (Hard Corps four slots): Tab / wheel / pad Mode+B cycles A-D. Levels 2-4 keep no swapping.
+    if (p.slots4 && (I.tap('swap')||I.state.wheel) && !p.reload && !p.action && p.weapons.length>1) p.wi=(p.wi+1)%p.weapons.length;
     if (p.reload>0 && (p.reload-=dt)<=0) {
       const w=p.reloadGun,def=TD.FOOT_GUNS[w.id],n=Math.min(def.cap-w.ammo,w.reserve);
       w.ammo+=n;w.reserve-=n;p.reload=0;p.reloadGun=null;A.play('pick');
     }
-    if ((I.tap('Z')||I.state.wheel) && !p.reload && !p.action) p.wi=(p.wi+1)%p.weapons.length;
-    if (I.tap('Y') && p.smoke>0 && !p.action && !p.reload) p.action={kind:'grenade',t:0,committed:false,aim:p.aim};
+    if (I.tap('Y') && p.smoke>0 && !p.action && !p.reload && p.roll<=0) p.action={kind:'grenade',t:0,committed:false,aim:p.aim};
     if (p.action) {
       const action=p.action; action.t+=dt;
-      // Dedicated six-frame throw: release at authored frame 4; inventory commits once.
+      // Authored three-frame throw: release during frame 2; inventory commits once.
       if (!action.committed && action.t>=.3) {
         action.committed=true;p.smoke--; const f=M.fwd(action.aim);
         G.footGrenades.push({x:p.x,y:p.y,tx:p.x+f[0]*115,ty:p.y+f[1]*115,t:0,done:false}); A.play('missile',.4);
@@ -91,26 +92,34 @@
       if(W.solidAt(x,y)){TD.Stealth.noise(x,y,180,.25,G.units);G.say('TAP',p);A.play('blip',.2);}
     }
   };
-  TD.drawFoot = function(ctx,p,o) {
-    const t=p.footTime||0,body=TD.bodyOf(p.pilot),dir=direction(p.moving?p.a:p.aim);
-    let key='fp_'+p.pilot+'_aim_'+({north:0,east:1,south:2,west:3}[direction(p.aim)]);
-    if (p.moving) key='fp_'+p.pilot+'_run_'+dir+'_'+(Math.floor(t*9)%4);
-    if (p.stance==='prone') {
-      const poses=SEQ['wm_'+body+'_prone_fire_'+dir].frames;
-      const def=TD.FOOT_GUNS[p.weapons[p.wi].id],firing=p.fireCd>def.cd-6;
+  // All pose art already carries its gun. Aim the complete authored pose;
+  // never draw a second pickup icon orbiting an unrelated running heading.
+  TD.footPose=function(p){
+    const t=p.footTime||0,dir=direction(p.aim),angles={south:0,west:Math.PI/2,north:Math.PI,east:-Math.PI/2};
+    let key='fp_'+p.pilot+'_aim_'+({north:0,east:1,south:2,west:3}[dir]),angle=M.wrap(p.aim-angles[dir]);
+    if(p.moving)key='fp_'+p.pilot+'_run_'+dir+'_'+(Math.floor(t*9)%4);
+    if(p.stance==='prone'){
+      const poses=SEQ['fa_'+p.pilot+'_prone_fire_'+dir].frames,def=TD.FOOT_GUNS[p.weapons[p.wi].id],firing=p.fireCd>def.cd-6;
       key=poses[firing?1:p.moving?[0,2,4][Math.floor(t*6)%3]:0];
     }
-    if(p.roll>0) key=anim('of_'+body+'_roll_to_stand',.42-p.roll,false);
-    if(p.action) key=anim('of_'+body+'_grenade_throw',p.action.t,false);
-    if(p.dead) key=anim('of_'+body+'_death',p.deadT||0,false);
-    frame(ctx,key,p.x+2,p.y+3,{s:.75,tint:'#000',alpha:.3});
-    frame(ctx,key,p.x,p.y,{s:.75,flash:o&&o.flash||0});
-    if (!p.dead&&!p.action&&p.roll<=0) {
-      const f=M.fwd(p.aim); frame(ctx,'of_'+p.weapons[p.wi].id+'_pickup',p.x+f[0]*8,p.y+f[1]*8,{s:.13,a:p.aim+Math.PI/2});
-    }
+    if(p.roll>0){key=anim('fa_'+p.pilot+'_roll_to_'+(p.rollStance==='prone'?'prone':'stand'),.5-p.roll,false);angle=p.rollAim+Math.PI/2;}
+    if(p.action){key=anim('fa_'+p.pilot+'_grenade_throw',p.action.t,false);angle=p.action.aim+Math.PI/2;}
+    if(p.dead){key=anim('fa_'+p.pilot+'_death',p.deadT||0,false);angle=p.aim+Math.PI/2;}
+    return {key,angle,scale:.75};
   };
+  TD.footSocket=function(p){
+    const pose=TD.footPose(p),meta=FR[pose.key],point=meta.muzzle||meta.anchor;
+    const x=(point[0]-meta.anchor[0])*pose.scale,y=(point[1]-meta.anchor[1])*pose.scale,c=Math.cos(pose.angle),s=Math.sin(pose.angle);
+    return {x:p.x+x*c-y*s,y:p.y+x*s+y*c,key:pose.key};
+  };
+  TD.drawFoot=function(ctx,p,o){
+    const pose=TD.footPose(p),opts={s:pose.scale,a:pose.angle};
+    frame(ctx,pose.key,p.x+2,p.y+3,Object.assign({},opts,{tint:'#000',alpha:.3}));
+    frame(ctx,pose.key,p.x,p.y,Object.assign({},opts,{flash:o&&o.flash||0}));
+  };
+  TD.FOOT_EXTRA=['pow','crash','life','score'];   // 1009 museum: Mercs POW, Mega Crash stock, 1UP, score
   TD.footDrop=function(G,x,y,kind) {
-    if (!TD.FOOT_GUNS[kind]) kind=kind==='smoke'||kind==='grenades'?'grenades':'ammo';
+    if (!TD.FOOT_GUNS[kind]&&!TD.FOOT_EXTRA.includes(kind)) kind=kind==='smoke'||kind==='grenades'?'grenades':'ammo';
     G.pickups.push({kind,x,y,t:0,foot:true});
   };
   TD.footPickups=function(G,dt) {
@@ -118,13 +127,22 @@
     for(const k of G.pickups) {
       k.t+=dt;if(p.dead||M.dist(k.x,k.y,p.x,p.y)>22)continue;k.dead=true;A.play('pick');
       const d=TD.FOOT_GUNS[k.kind];
-      if(d){let w=p.weapons.find(q=>q.id===k.kind);if(!w){w={id:k.kind,lv:1,ammo:d.cap,reserve:d.reserve};p.weapons.push(w);}else w.reserve+=d.reserve;p.wi=p.weapons.indexOf(w);G.say(d.name,p);}
+      if(d&&p.slots4){let w=p.weapons.find(q=>q.id===k.kind);
+        // Hard Corps: four carried weapons (A-D); a fifth replaces the one in hand
+        if(!w){w={id:k.kind,lv:1,ammo:d.cap,reserve:d.reserve};if(p.weapons.length>=4)p.weapons[p.wi]=w;else p.weapons.push(w);}else w.reserve+=d.reserve;p.wi=p.weapons.indexOf(w);G.say(d.name,p);}
+      else if(d){const old=p.weapons[p.wi];p.weapons=[{id:k.kind,lv:1,ammo:d.cap,reserve:d.reserve+(old.id===k.kind?old.reserve:0)}];p.wi=0;p.reload=0;p.reloadGun=null;G.say(d.name,p);}
+      else if(k.kind==='pow'){const w=p.weapons[p.wi];w.lv=Math.min(3,(w.lv||1)+1);G.say('POW - '+TD.FOOT_GUNS[w.id].name+' LV'+w.lv,p);}
+      else if(k.kind==='crash'){G.crash=Math.min(5,(G.crash||0)+1);G.say('MEGA CRASH +1',p);}
+      else if(k.kind==='life'){G.lives++;G.say('1UP',p);}
+      else if(k.kind==='score'){G.score+=1000;G.say('+1000',p);}
       else if(k.kind==='grenades'){p.smoke=Math.min(9,p.smoke+3);G.say('GRENADES +3',p);}
       else {const w=p.weapons[p.wi];w.reserve+=TD.FOOT_GUNS[w.id].cap*3;G.say('AMMO',p);}
     }
     G.pickups=G.pickups.filter(k=>!k.dead);
   };
-  TD.drawFootPickup=(ctx,k)=>frame(ctx,'of_'+(TD.FOOT_GUNS[k.kind]?k.kind+'_pickup':k.kind==='grenades'?'grenade_bundle':TD.game.player.weapons[TD.game.player.wi].id+'_ammo'),k.x,k.y,{s:.25});
+  const EXTRA_ART={pow:['pow_badge',.42],crash:['fury_bomb',.16],life:['life_up',.22],score:['score_1000',.24]};
+  TD.drawFootPickup=(ctx,k)=>{const e=EXTRA_ART[k.kind];if(e){ART.draw(ctx,e[0],k.x,k.y+Math.sin(k.t*4)*2,{s:e[1]});return;}
+    const p=TD.game.player;frame(ctx,'of_'+(TD.FOOT_GUNS[k.kind]?k.kind+'_pickup':k.kind==='grenades'?'grenade_bundle':(q=>q.weapons[q.wi]||q.weapons[0])(p.onfoot?p:TD.game.footSave||p).id+'_ammo'),k.x,k.y,{s:.25});};
   const base={vis:{range:230,half:.65},prefer:[95,180],gun:'burst',cd:1.8,r:11,speed:.85,ds:.75};
   TD.ET.robotScout=Object.assign({},base,{foot:'scout',art:'of_scout_south',wreck:'of_scout_wreck',hp:4,score:350});
   TD.ET.robotHeavy=Object.assign({},base,{foot:'heavy',art:'of_heavy_robot_south',wreck:'of_heavy_robot_wreck',hp:10,score:700,speed:.6,gun:'twin',cd:2.8,r:14});
@@ -172,10 +190,12 @@
   const n=Math.PI;
   TD.MISSIONS=[
     {id:2,mode:'tank',map:TD.LEVEL2_MAP,data:TD.LEVEL2_DATA,boss:TD.makeWarrior},
-    {id:3,mode:'foot',map:{key:'miami_ground',w:800,h:1200,rects:[
+    // 1009: Level 3 is shelved (Mike: too janky to play). hidden keeps it out of the menu and the
+    // clear -> next chain; the mission, map and art stay intact for when it comes back.
+    {id:3,hidden:true,mode:'foot',map:{key:'miami_ground',w:800,h:1200,rects:[
       [0,0,285,155,'b'],[520,0,800,155,'b'],[0,155,85,700,'b'],[715,155,800,1200,'v'],
-      [115,465,270,635,'v'],[545,465,690,635,'v'],[0,700,105,1200,'b'],
-      [310,415,445,610,'b'],[320,675,420,795,'h'],[105,810,300,945,'b'],[490,800,655,985,'b'],
+      [96,475,219,553,'v'],[182,553,219,601,'v'],[582,474,704,553,'v'],[582,553,620,601,'v'],[0,700,105,1200,'b'],
+      [355,444,437,532,'b'],[337,460,459,518,'b'],[325,480,471,502,'b'],[320,675,420,795,'h'],[105,810,300,945,'b'],[490,800,655,985,'b'],
       // Painted tall stacks: independently authored footprint and sight blockers.
       [265,192,306,218,'b'],[214,244,247,272,'b'],[483,202,539,228,'b'],[595,277,633,305,'b'],
       [173,331,231,359,'b'],[523,425,569,453,'b'],[273,600,320,628,'b'],[434,660,494,688,'b'],
@@ -216,7 +236,7 @@
     for(const g of G.footGrenades){const q=Math.min(1,g.t/.65),x=M.lerp(g.x,g.tx,q),y=M.lerp(g.y,g.ty,q);frame(ctx,'of_grenade',x,y-Math.sin(q*Math.PI)*32,{s:.28,a:g.t*14});}
   };
   TD.drawFootCover=function(ctx,G){
-    if(!G.player.onfoot)return;const plate=ART.get('miami_ground');if(!plate)return;
+    if(!G.player.onfoot||G.mission!==3)return;const plate=ART.get('miami_ground');if(!plate)return;
     const actors=[G.player,...G.units.filter(u=>!u.dead)];
     for(const [x0,y0,x1,y1] of MIAMI_COVER)if(actors.some(p=>p.x+p.r>x0&&p.x-p.r<x1&&p.y>y0-18&&p.y<y1-18)){
       // Redraw the exact authored tall-stack pixels above a pilot behind its base.
@@ -225,6 +245,7 @@
   };
   TD.CAMPAIGN_WARM=['miami_ground','rebel_ground','of_fortress_gate_closed','of_fortress_gate_open',
     ...Object.keys(FR).filter(k=>k.startsWith('wm_tank_')&&k.includes('_layer')),
+    ...Object.keys(FR).filter(k=>k.startsWith('fa_')),
     ...Object.keys(FR).filter(k=>k.startsWith('fp_')||k.startsWith('pt_niel_')||/^of_.*(pickup|ammo|grenade|wreck)$/.test(k)),
     ...['scout','heavy'].flatMap(b=>DIR.flatMap(d=>SEQ['wm_enemy_'+b+'_patrol_'+d].frames)),
     ...['regular','heavy','athletic','female'].flatMap(b=>['death','roll_to_stand'].flatMap(a=>SEQ['of_'+b+'_'+a].frames)),

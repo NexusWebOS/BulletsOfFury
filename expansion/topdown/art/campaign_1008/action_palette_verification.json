@@ -1,0 +1,2165 @@
+{
+ "checks": [
+  {
+   "frame": "fa_axel_prone_fire_north_0",
+   "alpha_unchanged": true,
+   "source_sha256": "57f55c0b2629d0e3f87ac2bb51b13443ca001274f9ccf587ba653294bf197391"
+  },
+  {
+   "frame": "fa_axel_prone_fire_north_1",
+   "alpha_unchanged": true,
+   "source_sha256": "14a59d9f658d9d10b9ab83279bf726eda737c7293ae19cfc20d6e23490317444"
+  },
+  {
+   "frame": "fa_axel_prone_fire_north_2",
+   "alpha_unchanged": true,
+   "source_sha256": "f4425d1eebc3f12aae9d82867e270c206be104e4c9f6c64bc92ee6fc352c49f2"
+  },
+  {
+   "frame": "fa_axel_prone_fire_north_3",
+   "alpha_unchanged": true,
+   "source_sha256": "362d464bd726ef60f6804af15ad5b1990ed66314d589980ad54bc53d935c78ed"
+  },
+  {
+   "frame": "fa_axel_prone_fire_north_4",
+   "alpha_unchanged": true,
+   "source_sha256": "a9b011f5de92f79b30e5f0c608a7dc4523a66cbe820ecf51737ec1fae92d1107"
+  },
+  {
+   "frame": "fa_axel_prone_fire_north_5",
+   "alpha_unchanged": true,
+   "source_sha256": "7b19159c1b2c0142057d2eb4ed56f1de23ea36f889d2de5c03e611875869d57b"
+  },
+  {
+   "frame": "fa_axel_prone_fire_east_0",
+   "alpha_unchanged": true,
+   "source_sha256": "d8d596ce88ab2b17662f3018691c107133e9d20e4f9ec8b96433e8153e899e4b"
+  },
+  {
+   "frame": "fa_axel_prone_fire_east_1",
+   "alpha_unchanged": true,
+   "source_sha256": "b9380f539b54070efcbeb4e3fcfbf8c8d9a3d92ec81c7d9e425c0163f64fcc3d"
+  },
+  {
+   "frame": "fa_axel_prone_fire_east_2",
+   "alpha_unchanged": true,
+   "source_sha256": "17f2fad86d531063f86d757632577bb4487758d703380f5df1ca1b1267a9d55b"
+  },
+  {
+   "frame": "fa_axel_prone_fire_east_3",
+   "alpha_unchanged": true,
+   "source_sha256": "187548b009e57e5898032372342ef2a5f93ceb8dc2cdb8de5419fb4c8d7de96a"
+  },
+  {
+   "frame": "fa_axel_prone_fire_east_4",
+   "alpha_unchanged": true,
+   "source_sha256": "6a06c97c0f5a76fec8121148cebec98f414181187f0a8cd30cb60fea0de1cb4f"
+  },
+  {
+   "frame": "fa_axel_prone_fire_east_5",
+   "alpha_unchanged": true,
+   "source_sha256": "ad7084c07d5f7c4360058875c0c375560475ac8ff5bae07c5a88ec3628ab768f"
+  },
+  {
+   "frame": "fa_axel_prone_fire_south_0",
+   "alpha_unchanged": true,
+   "source_sha256": "85d08901118f6e550bc2d61380ca211aa7016b7e88f1da1e57ea6b1d6d3ce028"
+  },
+  {
+   "frame": "fa_axel_prone_fire_south_1",
+   "alpha_unchanged": true,
+   "source_sha256": "d86d36718f244c27cfffe0978920e58e82e3633397b404000662865ae32ea75e"
+  },
+  {
+   "frame": "fa_axel_prone_fire_south_2",
+   "alpha_unchanged": true,
+   "source_sha256": "78ac838bc299a51f97fefe5a349d4862d127cef8a682776e51cf22f90649e478"
+  },
+  {
+   "frame": "fa_axel_prone_fire_south_3",
+   "alpha_unchanged": true,
+   "source_sha256": "de535c88380ea5798a1f021606db48ebff2750fc31bc2c9307bcc556d608b126"
+  },
+  {
+   "frame": "fa_axel_prone_fire_south_4",
+   "alpha_unchanged": true,
+   "source_sha256": "53c82cf5371568a1cce5e41d2bd010f18b063089c7746674748d6f7a6d1cd7d3"
+  },
+  {
+   "frame": "fa_axel_prone_fire_south_5",
+   "alpha_unchanged": true,
+   "source_sha256": "478b5ff1b78a2ab7e5500f86b272fc1612608ffd7e4c13e9d8ea9b1b682a853c"
+  },
+  {
+   "frame": "fa_axel_prone_fire_west_0",
+   "alpha_unchanged": true,
+   "source_sha256": "a22237d5acc9b098f87efa4b73c71930249f7cc0abc3eef2724a28a05718dcac"
+  },
+  {
+   "frame": "fa_axel_prone_fire_west_1",
+   "alpha_unchanged": true,
+   "source_sha256": "dc490ef2c19c6399aa0aa4f7d580bb0d10b12f4ef834642b4d5e6ae7f74d22c4"
+  },
+  {
+   "frame": "fa_axel_prone_fire_west_2",
+   "alpha_unchanged": true,
+   "source_sha256": "1734bb2b5fbafeb6e742b35ffd072861b2bc827a8948de84ecb7a557383292d0"
+  },
+  {
+   "frame": "fa_axel_prone_fire_west_3",
+   "alpha_unchanged": true,
+   "source_sha256": "b08edd70ad3823d7f07ebedd61c4abd5c30a322cb0be0dc7c66c531e3f40d97e"
+  },
+  {
+   "frame": "fa_axel_prone_fire_west_4",
+   "alpha_unchanged": true,
+   "source_sha256": "cc066f03b70a05704ba9435e2822740d3fbf703f7bd603f4d09a299ce3161d75"
+  },
+  {
+   "frame": "fa_axel_prone_fire_west_5",
+   "alpha_unchanged": true,
+   "source_sha256": "c01ace941e3a8100fb819ff9dbef638c2ba9f25135ae35a3f40233c54a8e8fca"
+  },
+  {
+   "frame": "fa_axel_roll_to_stand_0",
+   "alpha_unchanged": true,
+   "source_sha256": "228cc3ccaeebdb73292997c4e30d7fe284dee8224533806eb76e67d57c1b3a4c"
+  },
+  {
+   "frame": "fa_axel_roll_to_stand_1",
+   "alpha_unchanged": true,
+   "source_sha256": "12a3773a194b14f733bebc97734f2f6224eab705dd8af3fd064b88cd342371a3"
+  },
+  {
+   "frame": "fa_axel_roll_to_stand_2",
+   "alpha_unchanged": true,
+   "source_sha256": "a367560f0042d0f18ccf6ea43046602b9523d665bcaa93c637c2a77e50fa10a6"
+  },
+  {
+   "frame": "fa_axel_roll_to_prone_0",
+   "alpha_unchanged": true,
+   "source_sha256": "29f9081b54a821339a71b96db3f8cfb945b26257eb419801d9ac4547c913d542"
+  },
+  {
+   "frame": "fa_axel_roll_to_prone_1",
+   "alpha_unchanged": true,
+   "source_sha256": "6529461a210798e7df09dd8b2314d477cdd5f5f7e508562cadc2a0ca55e3efb5"
+  },
+  {
+   "frame": "fa_axel_roll_to_prone_2",
+   "alpha_unchanged": true,
+   "source_sha256": "8ec48d99782efa0ee26a04c79788953bf14fd4ac0613d6ff753303ef155a1a36"
+  },
+  {
+   "frame": "fa_axel_grenade_throw_0",
+   "alpha_unchanged": true,
+   "source_sha256": "f7be376238571d547202d34589a2c4554c5e5754b47829f68e06186ea7a9c09c"
+  },
+  {
+   "frame": "fa_axel_grenade_throw_1",
+   "alpha_unchanged": true,
+   "source_sha256": "2061685fefff6e0915e669f5ce2b5135847bac2856c58fe11e6eff5c4a4378ae"
+  },
+  {
+   "frame": "fa_axel_grenade_throw_2",
+   "alpha_unchanged": true,
+   "source_sha256": "b885dde4f676e4532020892d6ba2db0ff6fd1a90a0067501a78f19de2a66a551"
+  },
+  {
+   "frame": "fa_axel_death_0",
+   "alpha_unchanged": true,
+   "source_sha256": "f84e957c608c61398d5596e3f0fc732cc0ea12ae939b2f83e083f8421fc7f497"
+  },
+  {
+   "frame": "fa_axel_death_1",
+   "alpha_unchanged": true,
+   "source_sha256": "44f4c1ad8cfb1e4cb4deb2d84d524373db22feae44dcd9d13d224a1729b0f304"
+  },
+  {
+   "frame": "fa_axel_death_2",
+   "alpha_unchanged": true,
+   "source_sha256": "087fb8e5b651729499fe7455afcbe5fd3ea5ba5d5b5c0e2387b7cc2209e6b9d6"
+  },
+  {
+   "frame": "fa_cole_prone_fire_north_0",
+   "alpha_unchanged": true,
+   "source_sha256": "5a878f88aeb958c8f09bbe825a18a8d62c539a069fdfcd9600a2fb3906adb5c3"
+  },
+  {
+   "frame": "fa_cole_prone_fire_north_1",
+   "alpha_unchanged": true,
+   "source_sha256": "909db1dfef6803d989cd463520e7629a4625c1608b86fabcc578fbe89cf03b59"
+  },
+  {
+   "frame": "fa_cole_prone_fire_north_2",
+   "alpha_unchanged": true,
+   "source_sha256": "b6266cff4d3823e7ca8af2fbf599cc8af6a7d34defc7c372f56a4500d386edd7"
+  },
+  {
+   "frame": "fa_cole_prone_fire_north_3",
+   "alpha_unchanged": true,
+   "source_sha256": "b998e597c4640d85ca09b4ce5aaf6594881c62a70d57b731fc0e0a712658711e"
+  },
+  {
+   "frame": "fa_cole_prone_fire_north_4",
+   "alpha_unchanged": true,
+   "source_sha256": "7ac7f767c6a29065f3559ad9edb0c0e4590bbbf094c4350ed3d6ef6b3cecf18b"
+  },
+  {
+   "frame": "fa_cole_prone_fire_north_5",
+   "alpha_unchanged": true,
+   "source_sha256": "d00a833add13213eeac08fd66af1e018120f5257c39b0c874272fe42dc8edda1"
+  },
+  {
+   "frame": "fa_cole_prone_fire_east_0",
+   "alpha_unchanged": true,
+   "source_sha256": "167ce9342767ff03b456cfcdd7e0da57cea0aadadcc34e445aa0665f822a4a39"
+  },
+  {
+   "frame": "fa_cole_prone_fire_east_1",
+   "alpha_unchanged": true,
+   "source_sha256": "1b41263d30ca49ceb3820b563a529a32e24939447cdf137cf276575949aa268b"
+  },
+  {
+   "frame": "fa_cole_prone_fire_east_2",
+   "alpha_unchanged": true,
+   "source_sha256": "a2bdf28edb4fb4dab4a448dc5df8b721184d8455eafd36b7080e7fa370b976b8"
+  },
+  {
+   "frame": "fa_cole_prone_fire_east_3",
+   "alpha_unchanged": true,
+   "source_sha256": "6eaa4822dae6f1220c75bbd8ee1cc485f68d16b57c6db44f390765d0efbfaa10"
+  },
+  {
+   "frame": "fa_cole_prone_fire_east_4",
+   "alpha_unchanged": true,
+   "source_sha256": "b87856fe68056948a5a748f93c523db0ed1bd40fbd6f31206da34d60791ac261"
+  },
+  {
+   "frame": "fa_cole_prone_fire_east_5",
+   "alpha_unchanged": true,
+   "source_sha256": "2b2ec28859dee10392cfb0ddd1e923a7b937e0a0dc023701c36d31982c758642"
+  },
+  {
+   "frame": "fa_cole_prone_fire_south_0",
+   "alpha_unchanged": true,
+   "source_sha256": "6793c9954b39c24796e6e562aebc4e0c11de40fe36ebc23108c18b4921fde989"
+  },
+  {
+   "frame": "fa_cole_prone_fire_south_1",
+   "alpha_unchanged": true,
+   "source_sha256": "dc13ed8ea60e512a16e082285ac53219ec245ecd5b998fa855464511763134a5"
+  },
+  {
+   "frame": "fa_cole_prone_fire_south_2",
+   "alpha_unchanged": true,
+   "source_sha256": "1908b84b20e365f863c44873498a212e99f3cf9839d8af0f988868411b0d9bc7"
+  },
+  {
+   "frame": "fa_cole_prone_fire_south_3",
+   "alpha_unchanged": true,
+   "source_sha256": "0aa1c427b0f1e3d1c0d5882ca808bd06543df684741d33aea5b6e0a13c5b749c"
+  },
+  {
+   "frame": "fa_cole_prone_fire_south_4",
+   "alpha_unchanged": true,
+   "source_sha256": "b4ba3138db72ff6d44b13c55e283cb6eeb62afa193fd037f8b7ace26f7ffdb9b"
+  },
+  {
+   "frame": "fa_cole_prone_fire_south_5",
+   "alpha_unchanged": true,
+   "source_sha256": "5e6211e89092cd71b7dfef0bdcfec480eff8d4f46ef87e3fca7314124f61f891"
+  },
+  {
+   "frame": "fa_cole_prone_fire_west_0",
+   "alpha_unchanged": true,
+   "source_sha256": "a6d161488b8023efe483ae3483e776a5b64028acfaf8cb5dd9d0a29bb85ca22a"
+  },
+  {
+   "frame": "fa_cole_prone_fire_west_1",
+   "alpha_unchanged": true,
+   "source_sha256": "87da909e0de30ed639e1472e83d388062b60301710ac76867890115c1663edcb"
+  },
+  {
+   "frame": "fa_cole_prone_fire_west_2",
+   "alpha_unchanged": true,
+   "source_sha256": "61bbcd63326b7d0928f0c3aee517a9953e3e472cc317bc03e78e6ad32355edd4"
+  },
+  {
+   "frame": "fa_cole_prone_fire_west_3",
+   "alpha_unchanged": true,
+   "source_sha256": "600e3bc9f49f01957bf4b6cb8fbd4c05a165b46c4a8efc781eda4b86069016fb"
+  },
+  {
+   "frame": "fa_cole_prone_fire_west_4",
+   "alpha_unchanged": true,
+   "source_sha256": "129946ff501a8c01406522b2790d4a06bcf9e1b945735b80222e52a1259074e7"
+  },
+  {
+   "frame": "fa_cole_prone_fire_west_5",
+   "alpha_unchanged": true,
+   "source_sha256": "428a85412a215ff38291f65bb1fbe770e24690a10f1a2b4a740a438fc8935af7"
+  },
+  {
+   "frame": "fa_cole_roll_to_stand_0",
+   "alpha_unchanged": true,
+   "source_sha256": "06cf752a52a23afd4f0f0972c3842f348ebfa404f91faafb32b77249afd5af28"
+  },
+  {
+   "frame": "fa_cole_roll_to_stand_1",
+   "alpha_unchanged": true,
+   "source_sha256": "9f72667c91da0027581645b8f7d29997f351ed0ec2fae929dbfa10b82d81cd92"
+  },
+  {
+   "frame": "fa_cole_roll_to_stand_2",
+   "alpha_unchanged": true,
+   "source_sha256": "049f2bd649edf33473da8447135ace59a0f35d810913cd79231864b9a237e454"
+  },
+  {
+   "frame": "fa_cole_roll_to_prone_0",
+   "alpha_unchanged": true,
+   "source_sha256": "bf191efe277d2889248f2b27666bcb43b2e47d266cc90000da92863293b3d4f9"
+  },
+  {
+   "frame": "fa_cole_roll_to_prone_1",
+   "alpha_unchanged": true,
+   "source_sha256": "4c88cea052e5990c89d516db760b8bdab2f27ae5e793a0f8327fc43fe55bec80"
+  },
+  {
+   "frame": "fa_cole_roll_to_prone_2",
+   "alpha_unchanged": true,
+   "source_sha256": "b22448e11ecdf2a598b80baae1fac4e8b8df4b7d2e4dd7fa6a1e8cca94215d47"
+  },
+  {
+   "frame": "fa_cole_grenade_throw_0",
+   "alpha_unchanged": true,
+   "source_sha256": "578d28d4fae977af0320852e0e59309b8e1093475816c6f6eac3617a5e04b0b6"
+  },
+  {
+   "frame": "fa_cole_grenade_throw_1",
+   "alpha_unchanged": true,
+   "source_sha256": "8ddd68fadd834a10379d7ce9ecc70414c5f444e2d21e1b67173ca83ce29fda09"
+  },
+  {
+   "frame": "fa_cole_grenade_throw_2",
+   "alpha_unchanged": true,
+   "source_sha256": "6adc56456bc66452ede8cf6e49b6289fa70a653382b0b87707634d5c191d32c1"
+  },
+  {
+   "frame": "fa_cole_death_0",
+   "alpha_unchanged": true,
+   "source_sha256": "a4aba3e3533e0249870273c7300b003ee522c1535bd123a6612c6273edf8f730"
+  },
+  {
+   "frame": "fa_cole_death_1",
+   "alpha_unchanged": true,
+   "source_sha256": "5d04ba42fb33f613559b44767be530a69fa2cd89c7125c2e5a6b6dfc4872429e"
+  },
+  {
+   "frame": "fa_cole_death_2",
+   "alpha_unchanged": true,
+   "source_sha256": "973c0417f4f295724d502a22feaf711d0e8ac47ca4574fb6ca9e8920bbc4af8a"
+  },
+  {
+   "frame": "fa_maverick_prone_fire_north_0",
+   "alpha_unchanged": true,
+   "source_sha256": "5a878f88aeb958c8f09bbe825a18a8d62c539a069fdfcd9600a2fb3906adb5c3"
+  },
+  {
+   "frame": "fa_maverick_prone_fire_north_1",
+   "alpha_unchanged": true,
+   "source_sha256": "909db1dfef6803d989cd463520e7629a4625c1608b86fabcc578fbe89cf03b59"
+  },
+  {
+   "frame": "fa_maverick_prone_fire_north_2",
+   "alpha_unchanged": true,
+   "source_sha256": "b6266cff4d3823e7ca8af2fbf599cc8af6a7d34defc7c372f56a4500d386edd7"
+  },
+  {
+   "frame": "fa_maverick_prone_fire_north_3",
+   "alpha_unchanged": true,
+   "source_sha256": "b998e597c4640d85ca09b4ce5aaf6594881c62a70d57b731fc0e0a712658711e"
+  },
+  {
+   "frame": "fa_maverick_prone_fire_north_4",
+   "alpha_unchanged": true,
+   "source_sha256": "7ac7f767c6a29065f3559ad9edb0c0e4590bbbf094c4350ed3d6ef6b3cecf18b"
+  },
+  {
+   "frame": "fa_maverick_prone_fire_north_5",
+   "alpha_unchanged": true,
+   "source_sha256": "d00a833add13213eeac08fd66af1e018120f5257c39b0c874272fe42dc8edda1"
+  },
+  {
+   "frame": "fa_maverick_prone_fire_east_0",
+   "alpha_unchanged": true,
+   "source_sha256": "167ce9342767ff03b456cfcdd7e0da57cea0aadadcc34e445aa0665f822a4a39"
+  },
+  {
+   "frame": "fa_maverick_prone_fire_east_1",
+   "alpha_unchanged": true,
+   "source_sha256": "1b41263d30ca49ceb3820b563a529a32e24939447cdf137cf276575949aa268b"
+  },
+  {
+   "frame": "fa_maverick_prone_fire_east_2",
+   "alpha_unchanged": true,
+   "source_sha256": "a2bdf28edb4fb4dab4a448dc5df8b721184d8455eafd36b7080e7fa370b976b8"
+  },
+  {
+   "frame": "fa_maverick_prone_fire_east_3",
+   "alpha_unchanged": true,
+   "source_sha256": "6eaa4822dae6f1220c75bbd8ee1cc485f68d16b57c6db44f390765d0efbfaa10"
+  },
+  {
+   "frame": "fa_maverick_prone_fire_east_4",
+   "alpha_unchanged": true,
+   "source_sha256": "b87856fe68056948a5a748f93c523db0ed1bd40fbd6f31206da34d60791ac261"
+  },
+  {
+   "frame": "fa_maverick_prone_fire_east_5",
+   "alpha_unchanged": true,
+   "source_sha256": "2b2ec28859dee10392cfb0ddd1e923a7b937e0a0dc023701c36d31982c758642"
+  },
+  {
+   "frame": "fa_maverick_prone_fire_south_0",
+   "alpha_unchanged": true,
+   "source_sha256": "6793c9954b39c24796e6e562aebc4e0c11de40fe36ebc23108c18b4921fde989"
+  },
+  {
+   "frame": "fa_maverick_prone_fire_south_1",
+   "alpha_unchanged": true,
+   "source_sha256": "dc13ed8ea60e512a16e082285ac53219ec245ecd5b998fa855464511763134a5"
+  },
+  {
+   "frame": "fa_maverick_prone_fire_south_2",
+   "alpha_unchanged": true,
+   "source_sha256": "1908b84b20e365f863c44873498a212e99f3cf9839d8af0f988868411b0d9bc7"
+  },
+  {
+   "frame": "fa_maverick_prone_fire_south_3",
+   "alpha_unchanged": true,
+   "source_sha256": "0aa1c427b0f1e3d1c0d5882ca808bd06543df684741d33aea5b6e0a13c5b749c"
+  },
+  {
+   "frame": "fa_maverick_prone_fire_south_4",
+   "alpha_unchanged": true,
+   "source_sha256": "b4ba3138db72ff6d44b13c55e283cb6eeb62afa193fd037f8b7ace26f7ffdb9b"
+  },
+  {
+   "frame": "fa_maverick_prone_fire_south_5",
+   "alpha_unchanged": true,
+   "source_sha256": "5e6211e89092cd71b7dfef0bdcfec480eff8d4f46ef87e3fca7314124f61f891"
+  },
+  {
+   "frame": "fa_maverick_prone_fire_west_0",
+   "alpha_unchanged": true,
+   "source_sha256": "a6d161488b8023efe483ae3483e776a5b64028acfaf8cb5dd9d0a29bb85ca22a"
+  },
+  {
+   "frame": "fa_maverick_prone_fire_west_1",
+   "alpha_unchanged": true,
+   "source_sha256": "87da909e0de30ed639e1472e83d388062b60301710ac76867890115c1663edcb"
+  },
+  {
+   "frame": "fa_maverick_prone_fire_west_2",
+   "alpha_unchanged": true,
+   "source_sha256": "61bbcd63326b7d0928f0c3aee517a9953e3e472cc317bc03e78e6ad32355edd4"
+  },
+  {
+   "frame": "fa_maverick_prone_fire_west_3",
+   "alpha_unchanged": true,
+   "source_sha256": "600e3bc9f49f01957bf4b6cb8fbd4c05a165b46c4a8efc781eda4b86069016fb"
+  },
+  {
+   "frame": "fa_maverick_prone_fire_west_4",
+   "alpha_unchanged": true,
+   "source_sha256": "129946ff501a8c01406522b2790d4a06bcf9e1b945735b80222e52a1259074e7"
+  },
+  {
+   "frame": "fa_maverick_prone_fire_west_5",
+   "alpha_unchanged": true,
+   "source_sha256": "428a85412a215ff38291f65bb1fbe770e24690a10f1a2b4a740a438fc8935af7"
+  },
+  {
+   "frame": "fa_maverick_roll_to_stand_0",
+   "alpha_unchanged": true,
+   "source_sha256": "06cf752a52a23afd4f0f0972c3842f348ebfa404f91faafb32b77249afd5af28"
+  },
+  {
+   "frame": "fa_maverick_roll_to_stand_1",
+   "alpha_unchanged": true,
+   "source_sha256": "9f72667c91da0027581645b8f7d29997f351ed0ec2fae929dbfa10b82d81cd92"
+  },
+  {
+   "frame": "fa_maverick_roll_to_stand_2",
+   "alpha_unchanged": true,
+   "source_sha256": "049f2bd649edf33473da8447135ace59a0f35d810913cd79231864b9a237e454"
+  },
+  {
+   "frame": "fa_maverick_roll_to_prone_0",
+   "alpha_unchanged": true,
+   "source_sha256": "bf191efe277d2889248f2b27666bcb43b2e47d266cc90000da92863293b3d4f9"
+  },
+  {
+   "frame": "fa_maverick_roll_to_prone_1",
+   "alpha_unchanged": true,
+   "source_sha256": "4c88cea052e5990c89d516db760b8bdab2f27ae5e793a0f8327fc43fe55bec80"
+  },
+  {
+   "frame": "fa_maverick_roll_to_prone_2",
+   "alpha_unchanged": true,
+   "source_sha256": "b22448e11ecdf2a598b80baae1fac4e8b8df4b7d2e4dd7fa6a1e8cca94215d47"
+  },
+  {
+   "frame": "fa_maverick_grenade_throw_0",
+   "alpha_unchanged": true,
+   "source_sha256": "578d28d4fae977af0320852e0e59309b8e1093475816c6f6eac3617a5e04b0b6"
+  },
+  {
+   "frame": "fa_maverick_grenade_throw_1",
+   "alpha_unchanged": true,
+   "source_sha256": "8ddd68fadd834a10379d7ce9ecc70414c5f444e2d21e1b67173ca83ce29fda09"
+  },
+  {
+   "frame": "fa_maverick_grenade_throw_2",
+   "alpha_unchanged": true,
+   "source_sha256": "6adc56456bc66452ede8cf6e49b6289fa70a653382b0b87707634d5c191d32c1"
+  },
+  {
+   "frame": "fa_maverick_death_0",
+   "alpha_unchanged": true,
+   "source_sha256": "a4aba3e3533e0249870273c7300b003ee522c1535bd123a6612c6273edf8f730"
+  },
+  {
+   "frame": "fa_maverick_death_1",
+   "alpha_unchanged": true,
+   "source_sha256": "5d04ba42fb33f613559b44767be530a69fa2cd89c7125c2e5a6b6dfc4872429e"
+  },
+  {
+   "frame": "fa_maverick_death_2",
+   "alpha_unchanged": true,
+   "source_sha256": "973c0417f4f295724d502a22feaf711d0e8ac47ca4574fb6ca9e8920bbc4af8a"
+  },
+  {
+   "frame": "fa_decker_prone_fire_north_0",
+   "alpha_unchanged": true,
+   "source_sha256": "5a878f88aeb958c8f09bbe825a18a8d62c539a069fdfcd9600a2fb3906adb5c3"
+  },
+  {
+   "frame": "fa_decker_prone_fire_north_1",
+   "alpha_unchanged": true,
+   "source_sha256": "909db1dfef6803d989cd463520e7629a4625c1608b86fabcc578fbe89cf03b59"
+  },
+  {
+   "frame": "fa_decker_prone_fire_north_2",
+   "alpha_unchanged": true,
+   "source_sha256": "b6266cff4d3823e7ca8af2fbf599cc8af6a7d34defc7c372f56a4500d386edd7"
+  },
+  {
+   "frame": "fa_decker_prone_fire_north_3",
+   "alpha_unchanged": true,
+   "source_sha256": "b998e597c4640d85ca09b4ce5aaf6594881c62a70d57b731fc0e0a712658711e"
+  },
+  {
+   "frame": "fa_decker_prone_fire_north_4",
+   "alpha_unchanged": true,
+   "source_sha256": "7ac7f767c6a29065f3559ad9edb0c0e4590bbbf094c4350ed3d6ef6b3cecf18b"
+  },
+  {
+   "frame": "fa_decker_prone_fire_north_5",
+   "alpha_unchanged": true,
+   "source_sha256": "d00a833add13213eeac08fd66af1e018120f5257c39b0c874272fe42dc8edda1"
+  },
+  {
+   "frame": "fa_decker_prone_fire_east_0",
+   "alpha_unchanged": true,
+   "source_sha256": "167ce9342767ff03b456cfcdd7e0da57cea0aadadcc34e445aa0665f822a4a39"
+  },
+  {
+   "frame": "fa_decker_prone_fire_east_1",
+   "alpha_unchanged": true,
+   "source_sha256": "1b41263d30ca49ceb3820b563a529a32e24939447cdf137cf276575949aa268b"
+  },
+  {
+   "frame": "fa_decker_prone_fire_east_2",
+   "alpha_unchanged": true,
+   "source_sha256": "a2bdf28edb4fb4dab4a448dc5df8b721184d8455eafd36b7080e7fa370b976b8"
+  },
+  {
+   "frame": "fa_decker_prone_fire_east_3",
+   "alpha_unchanged": true,
+   "source_sha256": "6eaa4822dae6f1220c75bbd8ee1cc485f68d16b57c6db44f390765d0efbfaa10"
+  },
+  {
+   "frame": "fa_decker_prone_fire_east_4",
+   "alpha_unchanged": true,
+   "source_sha256": "b87856fe68056948a5a748f93c523db0ed1bd40fbd6f31206da34d60791ac261"
+  },
+  {
+   "frame": "fa_decker_prone_fire_east_5",
+   "alpha_unchanged": true,
+   "source_sha256": "2b2ec28859dee10392cfb0ddd1e923a7b937e0a0dc023701c36d31982c758642"
+  },
+  {
+   "frame": "fa_decker_prone_fire_south_0",
+   "alpha_unchanged": true,
+   "source_sha256": "6793c9954b39c24796e6e562aebc4e0c11de40fe36ebc23108c18b4921fde989"
+  },
+  {
+   "frame": "fa_decker_prone_fire_south_1",
+   "alpha_unchanged": true,
+   "source_sha256": "dc13ed8ea60e512a16e082285ac53219ec245ecd5b998fa855464511763134a5"
+  },
+  {
+   "frame": "fa_decker_prone_fire_south_2",
+   "alpha_unchanged": true,
+   "source_sha256": "1908b84b20e365f863c44873498a212e99f3cf9839d8af0f988868411b0d9bc7"
+  },
+  {
+   "frame": "fa_decker_prone_fire_south_3",
+   "alpha_unchanged": true,
+   "source_sha256": "0aa1c427b0f1e3d1c0d5882ca808bd06543df684741d33aea5b6e0a13c5b749c"
+  },
+  {
+   "frame": "fa_decker_prone_fire_south_4",
+   "alpha_unchanged": true,
+   "source_sha256": "b4ba3138db72ff6d44b13c55e283cb6eeb62afa193fd037f8b7ace26f7ffdb9b"
+  },
+  {
+   "frame": "fa_decker_prone_fire_south_5",
+   "alpha_unchanged": true,
+   "source_sha256": "5e6211e89092cd71b7dfef0bdcfec480eff8d4f46ef87e3fca7314124f61f891"
+  },
+  {
+   "frame": "fa_decker_prone_fire_west_0",
+   "alpha_unchanged": true,
+   "source_sha256": "a6d161488b8023efe483ae3483e776a5b64028acfaf8cb5dd9d0a29bb85ca22a"
+  },
+  {
+   "frame": "fa_decker_prone_fire_west_1",
+   "alpha_unchanged": true,
+   "source_sha256": "87da909e0de30ed639e1472e83d388062b60301710ac76867890115c1663edcb"
+  },
+  {
+   "frame": "fa_decker_prone_fire_west_2",
+   "alpha_unchanged": true,
+   "source_sha256": "61bbcd63326b7d0928f0c3aee517a9953e3e472cc317bc03e78e6ad32355edd4"
+  },
+  {
+   "frame": "fa_decker_prone_fire_west_3",
+   "alpha_unchanged": true,
+   "source_sha256": "600e3bc9f49f01957bf4b6cb8fbd4c05a165b46c4a8efc781eda4b86069016fb"
+  },
+  {
+   "frame": "fa_decker_prone_fire_west_4",
+   "alpha_unchanged": true,
+   "source_sha256": "129946ff501a8c01406522b2790d4a06bcf9e1b945735b80222e52a1259074e7"
+  },
+  {
+   "frame": "fa_decker_prone_fire_west_5",
+   "alpha_unchanged": true,
+   "source_sha256": "428a85412a215ff38291f65bb1fbe770e24690a10f1a2b4a740a438fc8935af7"
+  },
+  {
+   "frame": "fa_decker_roll_to_stand_0",
+   "alpha_unchanged": true,
+   "source_sha256": "06cf752a52a23afd4f0f0972c3842f348ebfa404f91faafb32b77249afd5af28"
+  },
+  {
+   "frame": "fa_decker_roll_to_stand_1",
+   "alpha_unchanged": true,
+   "source_sha256": "9f72667c91da0027581645b8f7d29997f351ed0ec2fae929dbfa10b82d81cd92"
+  },
+  {
+   "frame": "fa_decker_roll_to_stand_2",
+   "alpha_unchanged": true,
+   "source_sha256": "049f2bd649edf33473da8447135ace59a0f35d810913cd79231864b9a237e454"
+  },
+  {
+   "frame": "fa_decker_roll_to_prone_0",
+   "alpha_unchanged": true,
+   "source_sha256": "bf191efe277d2889248f2b27666bcb43b2e47d266cc90000da92863293b3d4f9"
+  },
+  {
+   "frame": "fa_decker_roll_to_prone_1",
+   "alpha_unchanged": true,
+   "source_sha256": "4c88cea052e5990c89d516db760b8bdab2f27ae5e793a0f8327fc43fe55bec80"
+  },
+  {
+   "frame": "fa_decker_roll_to_prone_2",
+   "alpha_unchanged": true,
+   "source_sha256": "b22448e11ecdf2a598b80baae1fac4e8b8df4b7d2e4dd7fa6a1e8cca94215d47"
+  },
+  {
+   "frame": "fa_decker_grenade_throw_0",
+   "alpha_unchanged": true,
+   "source_sha256": "578d28d4fae977af0320852e0e59309b8e1093475816c6f6eac3617a5e04b0b6"
+  },
+  {
+   "frame": "fa_decker_grenade_throw_1",
+   "alpha_unchanged": true,
+   "source_sha256": "8ddd68fadd834a10379d7ce9ecc70414c5f444e2d21e1b67173ca83ce29fda09"
+  },
+  {
+   "frame": "fa_decker_grenade_throw_2",
+   "alpha_unchanged": true,
+   "source_sha256": "6adc56456bc66452ede8cf6e49b6289fa70a653382b0b87707634d5c191d32c1"
+  },
+  {
+   "frame": "fa_decker_death_0",
+   "alpha_unchanged": true,
+   "source_sha256": "a4aba3e3533e0249870273c7300b003ee522c1535bd123a6612c6273edf8f730"
+  },
+  {
+   "frame": "fa_decker_death_1",
+   "alpha_unchanged": true,
+   "source_sha256": "5d04ba42fb33f613559b44767be530a69fa2cd89c7125c2e5a6b6dfc4872429e"
+  },
+  {
+   "frame": "fa_decker_death_2",
+   "alpha_unchanged": true,
+   "source_sha256": "973c0417f4f295724d502a22feaf711d0e8ac47ca4574fb6ca9e8920bbc4af8a"
+  },
+  {
+   "frame": "fa_yuri_prone_fire_north_0",
+   "alpha_unchanged": true,
+   "source_sha256": "5a878f88aeb958c8f09bbe825a18a8d62c539a069fdfcd9600a2fb3906adb5c3"
+  },
+  {
+   "frame": "fa_yuri_prone_fire_north_1",
+   "alpha_unchanged": true,
+   "source_sha256": "909db1dfef6803d989cd463520e7629a4625c1608b86fabcc578fbe89cf03b59"
+  },
+  {
+   "frame": "fa_yuri_prone_fire_north_2",
+   "alpha_unchanged": true,
+   "source_sha256": "b6266cff4d3823e7ca8af2fbf599cc8af6a7d34defc7c372f56a4500d386edd7"
+  },
+  {
+   "frame": "fa_yuri_prone_fire_north_3",
+   "alpha_unchanged": true,
+   "source_sha256": "b998e597c4640d85ca09b4ce5aaf6594881c62a70d57b731fc0e0a712658711e"
+  },
+  {
+   "frame": "fa_yuri_prone_fire_north_4",
+   "alpha_unchanged": true,
+   "source_sha256": "7ac7f767c6a29065f3559ad9edb0c0e4590bbbf094c4350ed3d6ef6b3cecf18b"
+  },
+  {
+   "frame": "fa_yuri_prone_fire_north_5",
+   "alpha_unchanged": true,
+   "source_sha256": "d00a833add13213eeac08fd66af1e018120f5257c39b0c874272fe42dc8edda1"
+  },
+  {
+   "frame": "fa_yuri_prone_fire_east_0",
+   "alpha_unchanged": true,
+   "source_sha256": "167ce9342767ff03b456cfcdd7e0da57cea0aadadcc34e445aa0665f822a4a39"
+  },
+  {
+   "frame": "fa_yuri_prone_fire_east_1",
+   "alpha_unchanged": true,
+   "source_sha256": "1b41263d30ca49ceb3820b563a529a32e24939447cdf137cf276575949aa268b"
+  },
+  {
+   "frame": "fa_yuri_prone_fire_east_2",
+   "alpha_unchanged": true,
+   "source_sha256": "a2bdf28edb4fb4dab4a448dc5df8b721184d8455eafd36b7080e7fa370b976b8"
+  },
+  {
+   "frame": "fa_yuri_prone_fire_east_3",
+   "alpha_unchanged": true,
+   "source_sha256": "6eaa4822dae6f1220c75bbd8ee1cc485f68d16b57c6db44f390765d0efbfaa10"
+  },
+  {
+   "frame": "fa_yuri_prone_fire_east_4",
+   "alpha_unchanged": true,
+   "source_sha256": "b87856fe68056948a5a748f93c523db0ed1bd40fbd6f31206da34d60791ac261"
+  },
+  {
+   "frame": "fa_yuri_prone_fire_east_5",
+   "alpha_unchanged": true,
+   "source_sha256": "2b2ec28859dee10392cfb0ddd1e923a7b937e0a0dc023701c36d31982c758642"
+  },
+  {
+   "frame": "fa_yuri_prone_fire_south_0",
+   "alpha_unchanged": true,
+   "source_sha256": "6793c9954b39c24796e6e562aebc4e0c11de40fe36ebc23108c18b4921fde989"
+  },
+  {
+   "frame": "fa_yuri_prone_fire_south_1",
+   "alpha_unchanged": true,
+   "source_sha256": "dc13ed8ea60e512a16e082285ac53219ec245ecd5b998fa855464511763134a5"
+  },
+  {
+   "frame": "fa_yuri_prone_fire_south_2",
+   "alpha_unchanged": true,
+   "source_sha256": "1908b84b20e365f863c44873498a212e99f3cf9839d8af0f988868411b0d9bc7"
+  },
+  {
+   "frame": "fa_yuri_prone_fire_south_3",
+   "alpha_unchanged": true,
+   "source_sha256": "0aa1c427b0f1e3d1c0d5882ca808bd06543df684741d33aea5b6e0a13c5b749c"
+  },
+  {
+   "frame": "fa_yuri_prone_fire_south_4",
+   "alpha_unchanged": true,
+   "source_sha256": "b4ba3138db72ff6d44b13c55e283cb6eeb62afa193fd037f8b7ace26f7ffdb9b"
+  },
+  {
+   "frame": "fa_yuri_prone_fire_south_5",
+   "alpha_unchanged": true,
+   "source_sha256": "5e6211e89092cd71b7dfef0bdcfec480eff8d4f46ef87e3fca7314124f61f891"
+  },
+  {
+   "frame": "fa_yuri_prone_fire_west_0",
+   "alpha_unchanged": true,
+   "source_sha256": "a6d161488b8023efe483ae3483e776a5b64028acfaf8cb5dd9d0a29bb85ca22a"
+  },
+  {
+   "frame": "fa_yuri_prone_fire_west_1",
+   "alpha_unchanged": true,
+   "source_sha256": "87da909e0de30ed639e1472e83d388062b60301710ac76867890115c1663edcb"
+  },
+  {
+   "frame": "fa_yuri_prone_fire_west_2",
+   "alpha_unchanged": true,
+   "source_sha256": "61bbcd63326b7d0928f0c3aee517a9953e3e472cc317bc03e78e6ad32355edd4"
+  },
+  {
+   "frame": "fa_yuri_prone_fire_west_3",
+   "alpha_unchanged": true,
+   "source_sha256": "600e3bc9f49f01957bf4b6cb8fbd4c05a165b46c4a8efc781eda4b86069016fb"
+  },
+  {
+   "frame": "fa_yuri_prone_fire_west_4",
+   "alpha_unchanged": true,
+   "source_sha256": "129946ff501a8c01406522b2790d4a06bcf9e1b945735b80222e52a1259074e7"
+  },
+  {
+   "frame": "fa_yuri_prone_fire_west_5",
+   "alpha_unchanged": true,
+   "source_sha256": "428a85412a215ff38291f65bb1fbe770e24690a10f1a2b4a740a438fc8935af7"
+  },
+  {
+   "frame": "fa_yuri_roll_to_stand_0",
+   "alpha_unchanged": true,
+   "source_sha256": "06cf752a52a23afd4f0f0972c3842f348ebfa404f91faafb32b77249afd5af28"
+  },
+  {
+   "frame": "fa_yuri_roll_to_stand_1",
+   "alpha_unchanged": true,
+   "source_sha256": "9f72667c91da0027581645b8f7d29997f351ed0ec2fae929dbfa10b82d81cd92"
+  },
+  {
+   "frame": "fa_yuri_roll_to_stand_2",
+   "alpha_unchanged": true,
+   "source_sha256": "049f2bd649edf33473da8447135ace59a0f35d810913cd79231864b9a237e454"
+  },
+  {
+   "frame": "fa_yuri_roll_to_prone_0",
+   "alpha_unchanged": true,
+   "source_sha256": "bf191efe277d2889248f2b27666bcb43b2e47d266cc90000da92863293b3d4f9"
+  },
+  {
+   "frame": "fa_yuri_roll_to_prone_1",
+   "alpha_unchanged": true,
+   "source_sha256": "4c88cea052e5990c89d516db760b8bdab2f27ae5e793a0f8327fc43fe55bec80"
+  },
+  {
+   "frame": "fa_yuri_roll_to_prone_2",
+   "alpha_unchanged": true,
+   "source_sha256": "b22448e11ecdf2a598b80baae1fac4e8b8df4b7d2e4dd7fa6a1e8cca94215d47"
+  },
+  {
+   "frame": "fa_yuri_grenade_throw_0",
+   "alpha_unchanged": true,
+   "source_sha256": "578d28d4fae977af0320852e0e59309b8e1093475816c6f6eac3617a5e04b0b6"
+  },
+  {
+   "frame": "fa_yuri_grenade_throw_1",
+   "alpha_unchanged": true,
+   "source_sha256": "8ddd68fadd834a10379d7ce9ecc70414c5f444e2d21e1b67173ca83ce29fda09"
+  },
+  {
+   "frame": "fa_yuri_grenade_throw_2",
+   "alpha_unchanged": true,
+   "source_sha256": "6adc56456bc66452ede8cf6e49b6289fa70a653382b0b87707634d5c191d32c1"
+  },
+  {
+   "frame": "fa_yuri_death_0",
+   "alpha_unchanged": true,
+   "source_sha256": "a4aba3e3533e0249870273c7300b003ee522c1535bd123a6612c6273edf8f730"
+  },
+  {
+   "frame": "fa_yuri_death_1",
+   "alpha_unchanged": true,
+   "source_sha256": "5d04ba42fb33f613559b44767be530a69fa2cd89c7125c2e5a6b6dfc4872429e"
+  },
+  {
+   "frame": "fa_yuri_death_2",
+   "alpha_unchanged": true,
+   "source_sha256": "973c0417f4f295724d502a22feaf711d0e8ac47ca4574fb6ca9e8920bbc4af8a"
+  },
+  {
+   "frame": "fa_freezer_prone_fire_north_0",
+   "alpha_unchanged": true,
+   "source_sha256": "5a878f88aeb958c8f09bbe825a18a8d62c539a069fdfcd9600a2fb3906adb5c3"
+  },
+  {
+   "frame": "fa_freezer_prone_fire_north_1",
+   "alpha_unchanged": true,
+   "source_sha256": "909db1dfef6803d989cd463520e7629a4625c1608b86fabcc578fbe89cf03b59"
+  },
+  {
+   "frame": "fa_freezer_prone_fire_north_2",
+   "alpha_unchanged": true,
+   "source_sha256": "b6266cff4d3823e7ca8af2fbf599cc8af6a7d34defc7c372f56a4500d386edd7"
+  },
+  {
+   "frame": "fa_freezer_prone_fire_north_3",
+   "alpha_unchanged": true,
+   "source_sha256": "b998e597c4640d85ca09b4ce5aaf6594881c62a70d57b731fc0e0a712658711e"
+  },
+  {
+   "frame": "fa_freezer_prone_fire_north_4",
+   "alpha_unchanged": true,
+   "source_sha256": "7ac7f767c6a29065f3559ad9edb0c0e4590bbbf094c4350ed3d6ef6b3cecf18b"
+  },
+  {
+   "frame": "fa_freezer_prone_fire_north_5",
+   "alpha_unchanged": true,
+   "source_sha256": "d00a833add13213eeac08fd66af1e018120f5257c39b0c874272fe42dc8edda1"
+  },
+  {
+   "frame": "fa_freezer_prone_fire_east_0",
+   "alpha_unchanged": true,
+   "source_sha256": "167ce9342767ff03b456cfcdd7e0da57cea0aadadcc34e445aa0665f822a4a39"
+  },
+  {
+   "frame": "fa_freezer_prone_fire_east_1",
+   "alpha_unchanged": true,
+   "source_sha256": "1b41263d30ca49ceb3820b563a529a32e24939447cdf137cf276575949aa268b"
+  },
+  {
+   "frame": "fa_freezer_prone_fire_east_2",
+   "alpha_unchanged": true,
+   "source_sha256": "a2bdf28edb4fb4dab4a448dc5df8b721184d8455eafd36b7080e7fa370b976b8"
+  },
+  {
+   "frame": "fa_freezer_prone_fire_east_3",
+   "alpha_unchanged": true,
+   "source_sha256": "6eaa4822dae6f1220c75bbd8ee1cc485f68d16b57c6db44f390765d0efbfaa10"
+  },
+  {
+   "frame": "fa_freezer_prone_fire_east_4",
+   "alpha_unchanged": true,
+   "source_sha256": "b87856fe68056948a5a748f93c523db0ed1bd40fbd6f31206da34d60791ac261"
+  },
+  {
+   "frame": "fa_freezer_prone_fire_east_5",
+   "alpha_unchanged": true,
+   "source_sha256": "2b2ec28859dee10392cfb0ddd1e923a7b937e0a0dc023701c36d31982c758642"
+  },
+  {
+   "frame": "fa_freezer_prone_fire_south_0",
+   "alpha_unchanged": true,
+   "source_sha256": "6793c9954b39c24796e6e562aebc4e0c11de40fe36ebc23108c18b4921fde989"
+  },
+  {
+   "frame": "fa_freezer_prone_fire_south_1",
+   "alpha_unchanged": true,
+   "source_sha256": "dc13ed8ea60e512a16e082285ac53219ec245ecd5b998fa855464511763134a5"
+  },
+  {
+   "frame": "fa_freezer_prone_fire_south_2",
+   "alpha_unchanged": true,
+   "source_sha256": "1908b84b20e365f863c44873498a212e99f3cf9839d8af0f988868411b0d9bc7"
+  },
+  {
+   "frame": "fa_freezer_prone_fire_south_3",
+   "alpha_unchanged": true,
+   "source_sha256": "0aa1c427b0f1e3d1c0d5882ca808bd06543df684741d33aea5b6e0a13c5b749c"
+  },
+  {
+   "frame": "fa_freezer_prone_fire_south_4",
+   "alpha_unchanged": true,
+   "source_sha256": "b4ba3138db72ff6d44b13c55e283cb6eeb62afa193fd037f8b7ace26f7ffdb9b"
+  },
+  {
+   "frame": "fa_freezer_prone_fire_south_5",
+   "alpha_unchanged": true,
+   "source_sha256": "5e6211e89092cd71b7dfef0bdcfec480eff8d4f46ef87e3fca7314124f61f891"
+  },
+  {
+   "frame": "fa_freezer_prone_fire_west_0",
+   "alpha_unchanged": true,
+   "source_sha256": "a6d161488b8023efe483ae3483e776a5b64028acfaf8cb5dd9d0a29bb85ca22a"
+  },
+  {
+   "frame": "fa_freezer_prone_fire_west_1",
+   "alpha_unchanged": true,
+   "source_sha256": "87da909e0de30ed639e1472e83d388062b60301710ac76867890115c1663edcb"
+  },
+  {
+   "frame": "fa_freezer_prone_fire_west_2",
+   "alpha_unchanged": true,
+   "source_sha256": "61bbcd63326b7d0928f0c3aee517a9953e3e472cc317bc03e78e6ad32355edd4"
+  },
+  {
+   "frame": "fa_freezer_prone_fire_west_3",
+   "alpha_unchanged": true,
+   "source_sha256": "600e3bc9f49f01957bf4b6cb8fbd4c05a165b46c4a8efc781eda4b86069016fb"
+  },
+  {
+   "frame": "fa_freezer_prone_fire_west_4",
+   "alpha_unchanged": true,
+   "source_sha256": "129946ff501a8c01406522b2790d4a06bcf9e1b945735b80222e52a1259074e7"
+  },
+  {
+   "frame": "fa_freezer_prone_fire_west_5",
+   "alpha_unchanged": true,
+   "source_sha256": "428a85412a215ff38291f65bb1fbe770e24690a10f1a2b4a740a438fc8935af7"
+  },
+  {
+   "frame": "fa_freezer_roll_to_stand_0",
+   "alpha_unchanged": true,
+   "source_sha256": "06cf752a52a23afd4f0f0972c3842f348ebfa404f91faafb32b77249afd5af28"
+  },
+  {
+   "frame": "fa_freezer_roll_to_stand_1",
+   "alpha_unchanged": true,
+   "source_sha256": "9f72667c91da0027581645b8f7d29997f351ed0ec2fae929dbfa10b82d81cd92"
+  },
+  {
+   "frame": "fa_freezer_roll_to_stand_2",
+   "alpha_unchanged": true,
+   "source_sha256": "049f2bd649edf33473da8447135ace59a0f35d810913cd79231864b9a237e454"
+  },
+  {
+   "frame": "fa_freezer_roll_to_prone_0",
+   "alpha_unchanged": true,
+   "source_sha256": "bf191efe277d2889248f2b27666bcb43b2e47d266cc90000da92863293b3d4f9"
+  },
+  {
+   "frame": "fa_freezer_roll_to_prone_1",
+   "alpha_unchanged": true,
+   "source_sha256": "4c88cea052e5990c89d516db760b8bdab2f27ae5e793a0f8327fc43fe55bec80"
+  },
+  {
+   "frame": "fa_freezer_roll_to_prone_2",
+   "alpha_unchanged": true,
+   "source_sha256": "b22448e11ecdf2a598b80baae1fac4e8b8df4b7d2e4dd7fa6a1e8cca94215d47"
+  },
+  {
+   "frame": "fa_freezer_grenade_throw_0",
+   "alpha_unchanged": true,
+   "source_sha256": "578d28d4fae977af0320852e0e59309b8e1093475816c6f6eac3617a5e04b0b6"
+  },
+  {
+   "frame": "fa_freezer_grenade_throw_1",
+   "alpha_unchanged": true,
+   "source_sha256": "8ddd68fadd834a10379d7ce9ecc70414c5f444e2d21e1b67173ca83ce29fda09"
+  },
+  {
+   "frame": "fa_freezer_grenade_throw_2",
+   "alpha_unchanged": true,
+   "source_sha256": "6adc56456bc66452ede8cf6e49b6289fa70a653382b0b87707634d5c191d32c1"
+  },
+  {
+   "frame": "fa_freezer_death_0",
+   "alpha_unchanged": true,
+   "source_sha256": "a4aba3e3533e0249870273c7300b003ee522c1535bd123a6612c6273edf8f730"
+  },
+  {
+   "frame": "fa_freezer_death_1",
+   "alpha_unchanged": true,
+   "source_sha256": "5d04ba42fb33f613559b44767be530a69fa2cd89c7125c2e5a6b6dfc4872429e"
+  },
+  {
+   "frame": "fa_freezer_death_2",
+   "alpha_unchanged": true,
+   "source_sha256": "973c0417f4f295724d502a22feaf711d0e8ac47ca4574fb6ca9e8920bbc4af8a"
+  },
+  {
+   "frame": "fa_juggernaut_prone_fire_north_0",
+   "alpha_unchanged": true,
+   "source_sha256": "8b2489bd641f0a7572ab13871458add6a8798f82cdce6108586304daa1aa647e"
+  },
+  {
+   "frame": "fa_juggernaut_prone_fire_north_1",
+   "alpha_unchanged": true,
+   "source_sha256": "fae3cad14b551e6cbc6c088f5dbc04a7687cbe7d0e889d2d0790b316404e1908"
+  },
+  {
+   "frame": "fa_juggernaut_prone_fire_north_2",
+   "alpha_unchanged": true,
+   "source_sha256": "29dc39c811c55a49d5be8c268ba2f2c50413c1263511510486e9cda439ff1113"
+  },
+  {
+   "frame": "fa_juggernaut_prone_fire_north_3",
+   "alpha_unchanged": true,
+   "source_sha256": "c05bab7840d61ec262049c990aa25084ec300a2967980daa27e47404c4647f95"
+  },
+  {
+   "frame": "fa_juggernaut_prone_fire_north_4",
+   "alpha_unchanged": true,
+   "source_sha256": "1a0832c7cdcafbdd3cff0e6ed410b2934410a291d108a6feb903c36c032aa356"
+  },
+  {
+   "frame": "fa_juggernaut_prone_fire_north_5",
+   "alpha_unchanged": true,
+   "source_sha256": "0dbec6a27e5484bd6e18a2ff9d0dc2170a44faded58d785ae3a3ad01523dae63"
+  },
+  {
+   "frame": "fa_juggernaut_prone_fire_east_0",
+   "alpha_unchanged": true,
+   "source_sha256": "e9f45fccc5ba6b9a2157d81e0be67972615abf99d1d2fb271c50d5cfeb302101"
+  },
+  {
+   "frame": "fa_juggernaut_prone_fire_east_1",
+   "alpha_unchanged": true,
+   "source_sha256": "bd861bd657a88aea45fcc34d58011df6d2940502fe67318bb9574c51c7dc13fb"
+  },
+  {
+   "frame": "fa_juggernaut_prone_fire_east_2",
+   "alpha_unchanged": true,
+   "source_sha256": "143e5cb753aa3c1e0938def74d5aba575b3f59037e671864a88c890b3618b9c6"
+  },
+  {
+   "frame": "fa_juggernaut_prone_fire_east_3",
+   "alpha_unchanged": true,
+   "source_sha256": "b5edda8a79e16811cb3d7dc15433bfa525bfb4a9774f80948591c57227079808"
+  },
+  {
+   "frame": "fa_juggernaut_prone_fire_east_4",
+   "alpha_unchanged": true,
+   "source_sha256": "a370c7f109bc027dce4f1e2c74fab2318bdf082d5f1e3049bff9a3bf8eb82650"
+  },
+  {
+   "frame": "fa_juggernaut_prone_fire_east_5",
+   "alpha_unchanged": true,
+   "source_sha256": "1b36742cf1e7f5af67d9279057482e8ff98b49e2abeb9535fdae39dcbc51a2bb"
+  },
+  {
+   "frame": "fa_juggernaut_prone_fire_south_0",
+   "alpha_unchanged": true,
+   "source_sha256": "bc48a9f8b6a121536720f6e43962244e12bc9b73963b024dd373bbb05a91303b"
+  },
+  {
+   "frame": "fa_juggernaut_prone_fire_south_1",
+   "alpha_unchanged": true,
+   "source_sha256": "9a50414cd0186a55b398005f76cb4ef5b2500a03b8effa4db29cd3625ead505d"
+  },
+  {
+   "frame": "fa_juggernaut_prone_fire_south_2",
+   "alpha_unchanged": true,
+   "source_sha256": "2b263c0a8aff6ad98f870b3bfde5991d562a666897f5eecb79cd8c37a1f05706"
+  },
+  {
+   "frame": "fa_juggernaut_prone_fire_south_3",
+   "alpha_unchanged": true,
+   "source_sha256": "93444c8cf8fe31b2ad16420feee26d48a512f638aa410650a4cc85204fff05e0"
+  },
+  {
+   "frame": "fa_juggernaut_prone_fire_south_4",
+   "alpha_unchanged": true,
+   "source_sha256": "97b45ef9977328abcc34a4ef7167c97c1d2fe3a8da57a262fe8a2d3c4893e362"
+  },
+  {
+   "frame": "fa_juggernaut_prone_fire_south_5",
+   "alpha_unchanged": true,
+   "source_sha256": "ecc402820f04f4f59e90f322ec653820b2b18fd34d066a4780a732bb3893cf8d"
+  },
+  {
+   "frame": "fa_juggernaut_prone_fire_west_0",
+   "alpha_unchanged": true,
+   "source_sha256": "2ff733b2a611eead787cd937c953350b76eaaa3525801a0697309d8f7ac1c8ef"
+  },
+  {
+   "frame": "fa_juggernaut_prone_fire_west_1",
+   "alpha_unchanged": true,
+   "source_sha256": "9313d3b525282439eb7ab1e0f2fa9a2e883ab6396deb987436d72347f564298d"
+  },
+  {
+   "frame": "fa_juggernaut_prone_fire_west_2",
+   "alpha_unchanged": true,
+   "source_sha256": "8b7e588ead5a65b6190267f370090f2eaf50035dd4222837d2cdd471cb85700a"
+  },
+  {
+   "frame": "fa_juggernaut_prone_fire_west_3",
+   "alpha_unchanged": true,
+   "source_sha256": "800b2955c87eab0059e497ef269ea4d83d9ba46aa3e8a99c6ce96e885cf49666"
+  },
+  {
+   "frame": "fa_juggernaut_prone_fire_west_4",
+   "alpha_unchanged": true,
+   "source_sha256": "d3a0123ac881392693c6e83694cc5e228482d991b5ccc2abbc00af6ce855e3fd"
+  },
+  {
+   "frame": "fa_juggernaut_prone_fire_west_5",
+   "alpha_unchanged": true,
+   "source_sha256": "ca13bf2cb7a4cb11a35bd6be576b45a6148347d2b57f41845d01bb870a23c82d"
+  },
+  {
+   "frame": "fa_juggernaut_roll_to_stand_0",
+   "alpha_unchanged": true,
+   "source_sha256": "24050d42dbeed27abe93fb10e5b423f563673e9d331c10ab3f25807f6c6a7ff9"
+  },
+  {
+   "frame": "fa_juggernaut_roll_to_stand_1",
+   "alpha_unchanged": true,
+   "source_sha256": "34339af274f1852f75077716a5bba85889ad744fc73182e5bda083e499b772f7"
+  },
+  {
+   "frame": "fa_juggernaut_roll_to_stand_2",
+   "alpha_unchanged": true,
+   "source_sha256": "956f66431a8a6026ff208e197a0ab991c640b1242400f6a35cc2e6328c9cbe6d"
+  },
+  {
+   "frame": "fa_juggernaut_roll_to_prone_0",
+   "alpha_unchanged": true,
+   "source_sha256": "89de210b7b1d08aa67c41824e098df2d430ebd8163b27d10bc393ed2dc42fb31"
+  },
+  {
+   "frame": "fa_juggernaut_roll_to_prone_1",
+   "alpha_unchanged": true,
+   "source_sha256": "d43c6d00af69994b4d9f152e6be43336fc370068b310f3eb56fb3534b6255217"
+  },
+  {
+   "frame": "fa_juggernaut_roll_to_prone_2",
+   "alpha_unchanged": true,
+   "source_sha256": "f300f62358a0b7642f04ad25dd588406a4582055408af0653669d0000571761a"
+  },
+  {
+   "frame": "fa_juggernaut_grenade_throw_0",
+   "alpha_unchanged": true,
+   "source_sha256": "43a8d71c3ed2959e1db1f519f4689f81a6bc0a1b6271f9de355a5d74247ba4cf"
+  },
+  {
+   "frame": "fa_juggernaut_grenade_throw_1",
+   "alpha_unchanged": true,
+   "source_sha256": "17d5796be1f1409d75cf9211da6916b0cc00f2585995c9e1ad76990c92240bd9"
+  },
+  {
+   "frame": "fa_juggernaut_grenade_throw_2",
+   "alpha_unchanged": true,
+   "source_sha256": "978d596afff4790c7b47350282ae0b06ecaf7d711ed0e0a70d9492c035a823d7"
+  },
+  {
+   "frame": "fa_juggernaut_death_0",
+   "alpha_unchanged": true,
+   "source_sha256": "7972013487a8eb31fcb59ca1a07f4120a4777a4b0a8287e49a2c1f42ea3c9153"
+  },
+  {
+   "frame": "fa_juggernaut_death_1",
+   "alpha_unchanged": true,
+   "source_sha256": "a55dda112f7e7c19ab46e3378b85291bfbe260750dbde44c106d19368d8c7209"
+  },
+  {
+   "frame": "fa_juggernaut_death_2",
+   "alpha_unchanged": true,
+   "source_sha256": "9d3ff4c3628d37fe1e97f7e490e6776057e1189090a9f1eb021f09395a317773"
+  },
+  {
+   "frame": "fa_lizzie_prone_fire_north_0",
+   "alpha_unchanged": true,
+   "source_sha256": "1cafcf28f4996fa68aee91c58a174a312c46d427ca979068706ac7a1034bac38"
+  },
+  {
+   "frame": "fa_lizzie_prone_fire_north_1",
+   "alpha_unchanged": true,
+   "source_sha256": "6cc3c6f1738604103ed3b882b5519a4bd97d00bb162762a46292c7d7eed08f70"
+  },
+  {
+   "frame": "fa_lizzie_prone_fire_north_2",
+   "alpha_unchanged": true,
+   "source_sha256": "19829df9741b69f3743ea4b8b71d6960601bbe083c0d54dac32b550968d6478d"
+  },
+  {
+   "frame": "fa_lizzie_prone_fire_north_3",
+   "alpha_unchanged": true,
+   "source_sha256": "87d0ba786606305e663d377d111962778e0d71ca9aa86bb109b7e08c21762bd6"
+  },
+  {
+   "frame": "fa_lizzie_prone_fire_north_4",
+   "alpha_unchanged": true,
+   "source_sha256": "5e18bdb9ad30bb1f9a4d5eec0668413362e21c29c67d21f70650ab3b68d5d1be"
+  },
+  {
+   "frame": "fa_lizzie_prone_fire_north_5",
+   "alpha_unchanged": true,
+   "source_sha256": "2b8711e76853c5a4f84315acf13fba77eac9198139ed157888420e5b48cc848d"
+  },
+  {
+   "frame": "fa_lizzie_prone_fire_east_0",
+   "alpha_unchanged": true,
+   "source_sha256": "da2a7121cd1b5de1df54fcf98e79a13e13af40b51b29475e1357efeadd99f58e"
+  },
+  {
+   "frame": "fa_lizzie_prone_fire_east_1",
+   "alpha_unchanged": true,
+   "source_sha256": "76a89b2bb5ec07c93829fe107ccde5d30f21dfb4779360ce4788baefadd866fd"
+  },
+  {
+   "frame": "fa_lizzie_prone_fire_east_2",
+   "alpha_unchanged": true,
+   "source_sha256": "894407d9171420522427a39716b30f40787c9db2f41a8e2a43a30111361ac643"
+  },
+  {
+   "frame": "fa_lizzie_prone_fire_east_3",
+   "alpha_unchanged": true,
+   "source_sha256": "4383a119755c6365a37ea6afe80c28a192e66d52d74416c96f6b00ac837d7c6a"
+  },
+  {
+   "frame": "fa_lizzie_prone_fire_east_4",
+   "alpha_unchanged": true,
+   "source_sha256": "069657995b65f38975a0c5928575bfdf96401ad5617ff007918befe176c9b791"
+  },
+  {
+   "frame": "fa_lizzie_prone_fire_east_5",
+   "alpha_unchanged": true,
+   "source_sha256": "050c435544650d4d83d2741214e4b6d04cf0fb26078527497b2388da9f1c6c61"
+  },
+  {
+   "frame": "fa_lizzie_prone_fire_south_0",
+   "alpha_unchanged": true,
+   "source_sha256": "9a73672a8ab127417bbd5ef9b6969273791c2f8fe6952b3108d892bfd2696779"
+  },
+  {
+   "frame": "fa_lizzie_prone_fire_south_1",
+   "alpha_unchanged": true,
+   "source_sha256": "1b11404188f6193f9bc2ebe74d12f93a8d35bef76c0d37bd6fd37bb19e06b077"
+  },
+  {
+   "frame": "fa_lizzie_prone_fire_south_2",
+   "alpha_unchanged": true,
+   "source_sha256": "a5ff68ca65126d38727d14f5092f3dc8ca831b5afb666aa94562f2e279c29ccb"
+  },
+  {
+   "frame": "fa_lizzie_prone_fire_south_3",
+   "alpha_unchanged": true,
+   "source_sha256": "9a177094e080da80d1b60ada150fe56820698613558a1e2d360949e7b1959c0f"
+  },
+  {
+   "frame": "fa_lizzie_prone_fire_south_4",
+   "alpha_unchanged": true,
+   "source_sha256": "0d7c49a81f2995f4f6cd4294aaf4d96ac497cecfe3766975c797432897d599cd"
+  },
+  {
+   "frame": "fa_lizzie_prone_fire_south_5",
+   "alpha_unchanged": true,
+   "source_sha256": "e83d0d1571a6fd624497f8800b8f468097f7d406a8ded98cfcab04aa9c3de850"
+  },
+  {
+   "frame": "fa_lizzie_prone_fire_west_0",
+   "alpha_unchanged": true,
+   "source_sha256": "5c08c775607db8853df93b75a17eaabca6de7e06bd1f810481c50082c0598758"
+  },
+  {
+   "frame": "fa_lizzie_prone_fire_west_1",
+   "alpha_unchanged": true,
+   "source_sha256": "1c7ed89b07381daf25b50f7e981e0271fd3bb6d4e2031e319ce23a936a0a4f3e"
+  },
+  {
+   "frame": "fa_lizzie_prone_fire_west_2",
+   "alpha_unchanged": true,
+   "source_sha256": "1dade02ce46f9bbdfb42f59293895d31d69a62c82aff756e3c02f8da6361bd35"
+  },
+  {
+   "frame": "fa_lizzie_prone_fire_west_3",
+   "alpha_unchanged": true,
+   "source_sha256": "8608998511ead6346c904b17fd290d495e03d9375e22fa3baac637914089f6a7"
+  },
+  {
+   "frame": "fa_lizzie_prone_fire_west_4",
+   "alpha_unchanged": true,
+   "source_sha256": "97098cafb35cb73fb7fcb5b46f9eefdee7b312347bbe956088f53527711fd57a"
+  },
+  {
+   "frame": "fa_lizzie_prone_fire_west_5",
+   "alpha_unchanged": true,
+   "source_sha256": "66d98921ad39c9e57da9feaecb1bba805e2b6fdc8b0411cf4a794f965c851b9b"
+  },
+  {
+   "frame": "fa_lizzie_roll_to_stand_0",
+   "alpha_unchanged": true,
+   "source_sha256": "abf7467d39ec5fddaf20b5bb68ffdb2f1fc6036ccee01c96446b175a414fcad6"
+  },
+  {
+   "frame": "fa_lizzie_roll_to_stand_1",
+   "alpha_unchanged": true,
+   "source_sha256": "3ce9b9a411ff17587ffb43c5d60851849fcd2cec9803586bf39565fc6b21d0b3"
+  },
+  {
+   "frame": "fa_lizzie_roll_to_stand_2",
+   "alpha_unchanged": true,
+   "source_sha256": "f8ce90c7dbd574670dc544bbe720e15f00a19e142219a36cbd2443718f24f440"
+  },
+  {
+   "frame": "fa_lizzie_roll_to_prone_0",
+   "alpha_unchanged": true,
+   "source_sha256": "a07c3f1296888d7ec168dde0de92df9b9faff3425a1eb5bf7b322739f6988405"
+  },
+  {
+   "frame": "fa_lizzie_roll_to_prone_1",
+   "alpha_unchanged": true,
+   "source_sha256": "be0bbe0c5ac0e52eb92df68a102a4bc341c7f6d703affd89fa5e30e53e3b1452"
+  },
+  {
+   "frame": "fa_lizzie_roll_to_prone_2",
+   "alpha_unchanged": true,
+   "source_sha256": "5f7da869b33a99ebf3120fac33fe86bfc7deb6079b51b6e5f4e99a345eb0317d"
+  },
+  {
+   "frame": "fa_lizzie_grenade_throw_0",
+   "alpha_unchanged": true,
+   "source_sha256": "2aca7e6bd3270c79c806eb8c93be5130b652fd5183042a1f334523a62b4fcd14"
+  },
+  {
+   "frame": "fa_lizzie_grenade_throw_1",
+   "alpha_unchanged": true,
+   "source_sha256": "febdc746c780e9a99fe3f7d28e41c2db2b3bfa5a9f9717ccff03c0ea544b140a"
+  },
+  {
+   "frame": "fa_lizzie_grenade_throw_2",
+   "alpha_unchanged": true,
+   "source_sha256": "dc8bb31bf9325754d65f90bfc6d0a27f4158e51dcd9ff17d8c7ea8fae80737c0"
+  },
+  {
+   "frame": "fa_lizzie_death_0",
+   "alpha_unchanged": true,
+   "source_sha256": "e18443dd131e8142fe5b859fffaa7a88433afcf26163fe77a335205ca02691f6"
+  },
+  {
+   "frame": "fa_lizzie_death_1",
+   "alpha_unchanged": true,
+   "source_sha256": "105048697c6576698a4f08e8ecfd64069c93ecf3356f26e2446dba7bb287c4ae"
+  },
+  {
+   "frame": "fa_lizzie_death_2",
+   "alpha_unchanged": true,
+   "source_sha256": "6c8b8d5b43b7890049aad8848ff1b7eb7bd4fef559bed89b77449485a96e6fa8"
+  },
+  {
+   "frame": "fa_falva_prone_fire_north_0",
+   "alpha_unchanged": true,
+   "source_sha256": "1cafcf28f4996fa68aee91c58a174a312c46d427ca979068706ac7a1034bac38"
+  },
+  {
+   "frame": "fa_falva_prone_fire_north_1",
+   "alpha_unchanged": true,
+   "source_sha256": "6cc3c6f1738604103ed3b882b5519a4bd97d00bb162762a46292c7d7eed08f70"
+  },
+  {
+   "frame": "fa_falva_prone_fire_north_2",
+   "alpha_unchanged": true,
+   "source_sha256": "19829df9741b69f3743ea4b8b71d6960601bbe083c0d54dac32b550968d6478d"
+  },
+  {
+   "frame": "fa_falva_prone_fire_north_3",
+   "alpha_unchanged": true,
+   "source_sha256": "87d0ba786606305e663d377d111962778e0d71ca9aa86bb109b7e08c21762bd6"
+  },
+  {
+   "frame": "fa_falva_prone_fire_north_4",
+   "alpha_unchanged": true,
+   "source_sha256": "5e18bdb9ad30bb1f9a4d5eec0668413362e21c29c67d21f70650ab3b68d5d1be"
+  },
+  {
+   "frame": "fa_falva_prone_fire_north_5",
+   "alpha_unchanged": true,
+   "source_sha256": "2b8711e76853c5a4f84315acf13fba77eac9198139ed157888420e5b48cc848d"
+  },
+  {
+   "frame": "fa_falva_prone_fire_east_0",
+   "alpha_unchanged": true,
+   "source_sha256": "da2a7121cd1b5de1df54fcf98e79a13e13af40b51b29475e1357efeadd99f58e"
+  },
+  {
+   "frame": "fa_falva_prone_fire_east_1",
+   "alpha_unchanged": true,
+   "source_sha256": "76a89b2bb5ec07c93829fe107ccde5d30f21dfb4779360ce4788baefadd866fd"
+  },
+  {
+   "frame": "fa_falva_prone_fire_east_2",
+   "alpha_unchanged": true,
+   "source_sha256": "894407d9171420522427a39716b30f40787c9db2f41a8e2a43a30111361ac643"
+  },
+  {
+   "frame": "fa_falva_prone_fire_east_3",
+   "alpha_unchanged": true,
+   "source_sha256": "4383a119755c6365a37ea6afe80c28a192e66d52d74416c96f6b00ac837d7c6a"
+  },
+  {
+   "frame": "fa_falva_prone_fire_east_4",
+   "alpha_unchanged": true,
+   "source_sha256": "069657995b65f38975a0c5928575bfdf96401ad5617ff007918befe176c9b791"
+  },
+  {
+   "frame": "fa_falva_prone_fire_east_5",
+   "alpha_unchanged": true,
+   "source_sha256": "050c435544650d4d83d2741214e4b6d04cf0fb26078527497b2388da9f1c6c61"
+  },
+  {
+   "frame": "fa_falva_prone_fire_south_0",
+   "alpha_unchanged": true,
+   "source_sha256": "9a73672a8ab127417bbd5ef9b6969273791c2f8fe6952b3108d892bfd2696779"
+  },
+  {
+   "frame": "fa_falva_prone_fire_south_1",
+   "alpha_unchanged": true,
+   "source_sha256": "1b11404188f6193f9bc2ebe74d12f93a8d35bef76c0d37bd6fd37bb19e06b077"
+  },
+  {
+   "frame": "fa_falva_prone_fire_south_2",
+   "alpha_unchanged": true,
+   "source_sha256": "a5ff68ca65126d38727d14f5092f3dc8ca831b5afb666aa94562f2e279c29ccb"
+  },
+  {
+   "frame": "fa_falva_prone_fire_south_3",
+   "alpha_unchanged": true,
+   "source_sha256": "9a177094e080da80d1b60ada150fe56820698613558a1e2d360949e7b1959c0f"
+  },
+  {
+   "frame": "fa_falva_prone_fire_south_4",
+   "alpha_unchanged": true,
+   "source_sha256": "0d7c49a81f2995f4f6cd4294aaf4d96ac497cecfe3766975c797432897d599cd"
+  },
+  {
+   "frame": "fa_falva_prone_fire_south_5",
+   "alpha_unchanged": true,
+   "source_sha256": "e83d0d1571a6fd624497f8800b8f468097f7d406a8ded98cfcab04aa9c3de850"
+  },
+  {
+   "frame": "fa_falva_prone_fire_west_0",
+   "alpha_unchanged": true,
+   "source_sha256": "5c08c775607db8853df93b75a17eaabca6de7e06bd1f810481c50082c0598758"
+  },
+  {
+   "frame": "fa_falva_prone_fire_west_1",
+   "alpha_unchanged": true,
+   "source_sha256": "1c7ed89b07381daf25b50f7e981e0271fd3bb6d4e2031e319ce23a936a0a4f3e"
+  },
+  {
+   "frame": "fa_falva_prone_fire_west_2",
+   "alpha_unchanged": true,
+   "source_sha256": "1dade02ce46f9bbdfb42f59293895d31d69a62c82aff756e3c02f8da6361bd35"
+  },
+  {
+   "frame": "fa_falva_prone_fire_west_3",
+   "alpha_unchanged": true,
+   "source_sha256": "8608998511ead6346c904b17fd290d495e03d9375e22fa3baac637914089f6a7"
+  },
+  {
+   "frame": "fa_falva_prone_fire_west_4",
+   "alpha_unchanged": true,
+   "source_sha256": "97098cafb35cb73fb7fcb5b46f9eefdee7b312347bbe956088f53527711fd57a"
+  },
+  {
+   "frame": "fa_falva_prone_fire_west_5",
+   "alpha_unchanged": true,
+   "source_sha256": "66d98921ad39c9e57da9feaecb1bba805e2b6fdc8b0411cf4a794f965c851b9b"
+  },
+  {
+   "frame": "fa_falva_roll_to_stand_0",
+   "alpha_unchanged": true,
+   "source_sha256": "abf7467d39ec5fddaf20b5bb68ffdb2f1fc6036ccee01c96446b175a414fcad6"
+  },
+  {
+   "frame": "fa_falva_roll_to_stand_1",
+   "alpha_unchanged": true,
+   "source_sha256": "3ce9b9a411ff17587ffb43c5d60851849fcd2cec9803586bf39565fc6b21d0b3"
+  },
+  {
+   "frame": "fa_falva_roll_to_stand_2",
+   "alpha_unchanged": true,
+   "source_sha256": "f8ce90c7dbd574670dc544bbe720e15f00a19e142219a36cbd2443718f24f440"
+  },
+  {
+   "frame": "fa_falva_roll_to_prone_0",
+   "alpha_unchanged": true,
+   "source_sha256": "a07c3f1296888d7ec168dde0de92df9b9faff3425a1eb5bf7b322739f6988405"
+  },
+  {
+   "frame": "fa_falva_roll_to_prone_1",
+   "alpha_unchanged": true,
+   "source_sha256": "be0bbe0c5ac0e52eb92df68a102a4bc341c7f6d703affd89fa5e30e53e3b1452"
+  },
+  {
+   "frame": "fa_falva_roll_to_prone_2",
+   "alpha_unchanged": true,
+   "source_sha256": "5f7da869b33a99ebf3120fac33fe86bfc7deb6079b51b6e5f4e99a345eb0317d"
+  },
+  {
+   "frame": "fa_falva_grenade_throw_0",
+   "alpha_unchanged": true,
+   "source_sha256": "2aca7e6bd3270c79c806eb8c93be5130b652fd5183042a1f334523a62b4fcd14"
+  },
+  {
+   "frame": "fa_falva_grenade_throw_1",
+   "alpha_unchanged": true,
+   "source_sha256": "febdc746c780e9a99fe3f7d28e41c2db2b3bfa5a9f9717ccff03c0ea544b140a"
+  },
+  {
+   "frame": "fa_falva_grenade_throw_2",
+   "alpha_unchanged": true,
+   "source_sha256": "dc8bb31bf9325754d65f90bfc6d0a27f4158e51dcd9ff17d8c7ea8fae80737c0"
+  },
+  {
+   "frame": "fa_falva_death_0",
+   "alpha_unchanged": true,
+   "source_sha256": "e18443dd131e8142fe5b859fffaa7a88433afcf26163fe77a335205ca02691f6"
+  },
+  {
+   "frame": "fa_falva_death_1",
+   "alpha_unchanged": true,
+   "source_sha256": "105048697c6576698a4f08e8ecfd64069c93ecf3356f26e2446dba7bb287c4ae"
+  },
+  {
+   "frame": "fa_falva_death_2",
+   "alpha_unchanged": true,
+   "source_sha256": "6c8b8d5b43b7890049aad8848ff1b7eb7bd4fef559bed89b77449485a96e6fa8"
+  },
+  {
+   "frame": "fa_hotwire_prone_fire_north_0",
+   "alpha_unchanged": true,
+   "source_sha256": "1cafcf28f4996fa68aee91c58a174a312c46d427ca979068706ac7a1034bac38"
+  },
+  {
+   "frame": "fa_hotwire_prone_fire_north_1",
+   "alpha_unchanged": true,
+   "source_sha256": "6cc3c6f1738604103ed3b882b5519a4bd97d00bb162762a46292c7d7eed08f70"
+  },
+  {
+   "frame": "fa_hotwire_prone_fire_north_2",
+   "alpha_unchanged": true,
+   "source_sha256": "19829df9741b69f3743ea4b8b71d6960601bbe083c0d54dac32b550968d6478d"
+  },
+  {
+   "frame": "fa_hotwire_prone_fire_north_3",
+   "alpha_unchanged": true,
+   "source_sha256": "87d0ba786606305e663d377d111962778e0d71ca9aa86bb109b7e08c21762bd6"
+  },
+  {
+   "frame": "fa_hotwire_prone_fire_north_4",
+   "alpha_unchanged": true,
+   "source_sha256": "5e18bdb9ad30bb1f9a4d5eec0668413362e21c29c67d21f70650ab3b68d5d1be"
+  },
+  {
+   "frame": "fa_hotwire_prone_fire_north_5",
+   "alpha_unchanged": true,
+   "source_sha256": "2b8711e76853c5a4f84315acf13fba77eac9198139ed157888420e5b48cc848d"
+  },
+  {
+   "frame": "fa_hotwire_prone_fire_east_0",
+   "alpha_unchanged": true,
+   "source_sha256": "da2a7121cd1b5de1df54fcf98e79a13e13af40b51b29475e1357efeadd99f58e"
+  },
+  {
+   "frame": "fa_hotwire_prone_fire_east_1",
+   "alpha_unchanged": true,
+   "source_sha256": "76a89b2bb5ec07c93829fe107ccde5d30f21dfb4779360ce4788baefadd866fd"
+  },
+  {
+   "frame": "fa_hotwire_prone_fire_east_2",
+   "alpha_unchanged": true,
+   "source_sha256": "894407d9171420522427a39716b30f40787c9db2f41a8e2a43a30111361ac643"
+  },
+  {
+   "frame": "fa_hotwire_prone_fire_east_3",
+   "alpha_unchanged": true,
+   "source_sha256": "4383a119755c6365a37ea6afe80c28a192e66d52d74416c96f6b00ac837d7c6a"
+  },
+  {
+   "frame": "fa_hotwire_prone_fire_east_4",
+   "alpha_unchanged": true,
+   "source_sha256": "069657995b65f38975a0c5928575bfdf96401ad5617ff007918befe176c9b791"
+  },
+  {
+   "frame": "fa_hotwire_prone_fire_east_5",
+   "alpha_unchanged": true,
+   "source_sha256": "050c435544650d4d83d2741214e4b6d04cf0fb26078527497b2388da9f1c6c61"
+  },
+  {
+   "frame": "fa_hotwire_prone_fire_south_0",
+   "alpha_unchanged": true,
+   "source_sha256": "9a73672a8ab127417bbd5ef9b6969273791c2f8fe6952b3108d892bfd2696779"
+  },
+  {
+   "frame": "fa_hotwire_prone_fire_south_1",
+   "alpha_unchanged": true,
+   "source_sha256": "1b11404188f6193f9bc2ebe74d12f93a8d35bef76c0d37bd6fd37bb19e06b077"
+  },
+  {
+   "frame": "fa_hotwire_prone_fire_south_2",
+   "alpha_unchanged": true,
+   "source_sha256": "a5ff68ca65126d38727d14f5092f3dc8ca831b5afb666aa94562f2e279c29ccb"
+  },
+  {
+   "frame": "fa_hotwire_prone_fire_south_3",
+   "alpha_unchanged": true,
+   "source_sha256": "9a177094e080da80d1b60ada150fe56820698613558a1e2d360949e7b1959c0f"
+  },
+  {
+   "frame": "fa_hotwire_prone_fire_south_4",
+   "alpha_unchanged": true,
+   "source_sha256": "0d7c49a81f2995f4f6cd4294aaf4d96ac497cecfe3766975c797432897d599cd"
+  },
+  {
+   "frame": "fa_hotwire_prone_fire_south_5",
+   "alpha_unchanged": true,
+   "source_sha256": "e83d0d1571a6fd624497f8800b8f468097f7d406a8ded98cfcab04aa9c3de850"
+  },
+  {
+   "frame": "fa_hotwire_prone_fire_west_0",
+   "alpha_unchanged": true,
+   "source_sha256": "5c08c775607db8853df93b75a17eaabca6de7e06bd1f810481c50082c0598758"
+  },
+  {
+   "frame": "fa_hotwire_prone_fire_west_1",
+   "alpha_unchanged": true,
+   "source_sha256": "1c7ed89b07381daf25b50f7e981e0271fd3bb6d4e2031e319ce23a936a0a4f3e"
+  },
+  {
+   "frame": "fa_hotwire_prone_fire_west_2",
+   "alpha_unchanged": true,
+   "source_sha256": "1dade02ce46f9bbdfb42f59293895d31d69a62c82aff756e3c02f8da6361bd35"
+  },
+  {
+   "frame": "fa_hotwire_prone_fire_west_3",
+   "alpha_unchanged": true,
+   "source_sha256": "8608998511ead6346c904b17fd290d495e03d9375e22fa3baac637914089f6a7"
+  },
+  {
+   "frame": "fa_hotwire_prone_fire_west_4",
+   "alpha_unchanged": true,
+   "source_sha256": "97098cafb35cb73fb7fcb5b46f9eefdee7b312347bbe956088f53527711fd57a"
+  },
+  {
+   "frame": "fa_hotwire_prone_fire_west_5",
+   "alpha_unchanged": true,
+   "source_sha256": "66d98921ad39c9e57da9feaecb1bba805e2b6fdc8b0411cf4a794f965c851b9b"
+  },
+  {
+   "frame": "fa_hotwire_roll_to_stand_0",
+   "alpha_unchanged": true,
+   "source_sha256": "abf7467d39ec5fddaf20b5bb68ffdb2f1fc6036ccee01c96446b175a414fcad6"
+  },
+  {
+   "frame": "fa_hotwire_roll_to_stand_1",
+   "alpha_unchanged": true,
+   "source_sha256": "3ce9b9a411ff17587ffb43c5d60851849fcd2cec9803586bf39565fc6b21d0b3"
+  },
+  {
+   "frame": "fa_hotwire_roll_to_stand_2",
+   "alpha_unchanged": true,
+   "source_sha256": "f8ce90c7dbd574670dc544bbe720e15f00a19e142219a36cbd2443718f24f440"
+  },
+  {
+   "frame": "fa_hotwire_roll_to_prone_0",
+   "alpha_unchanged": true,
+   "source_sha256": "a07c3f1296888d7ec168dde0de92df9b9faff3425a1eb5bf7b322739f6988405"
+  },
+  {
+   "frame": "fa_hotwire_roll_to_prone_1",
+   "alpha_unchanged": true,
+   "source_sha256": "be0bbe0c5ac0e52eb92df68a102a4bc341c7f6d703affd89fa5e30e53e3b1452"
+  },
+  {
+   "frame": "fa_hotwire_roll_to_prone_2",
+   "alpha_unchanged": true,
+   "source_sha256": "5f7da869b33a99ebf3120fac33fe86bfc7deb6079b51b6e5f4e99a345eb0317d"
+  },
+  {
+   "frame": "fa_hotwire_grenade_throw_0",
+   "alpha_unchanged": true,
+   "source_sha256": "2aca7e6bd3270c79c806eb8c93be5130b652fd5183042a1f334523a62b4fcd14"
+  },
+  {
+   "frame": "fa_hotwire_grenade_throw_1",
+   "alpha_unchanged": true,
+   "source_sha256": "febdc746c780e9a99fe3f7d28e41c2db2b3bfa5a9f9717ccff03c0ea544b140a"
+  },
+  {
+   "frame": "fa_hotwire_grenade_throw_2",
+   "alpha_unchanged": true,
+   "source_sha256": "dc8bb31bf9325754d65f90bfc6d0a27f4158e51dcd9ff17d8c7ea8fae80737c0"
+  },
+  {
+   "frame": "fa_hotwire_death_0",
+   "alpha_unchanged": true,
+   "source_sha256": "e18443dd131e8142fe5b859fffaa7a88433afcf26163fe77a335205ca02691f6"
+  },
+  {
+   "frame": "fa_hotwire_death_1",
+   "alpha_unchanged": true,
+   "source_sha256": "105048697c6576698a4f08e8ecfd64069c93ecf3356f26e2446dba7bb287c4ae"
+  },
+  {
+   "frame": "fa_hotwire_death_2",
+   "alpha_unchanged": true,
+   "source_sha256": "6c8b8d5b43b7890049aad8848ff1b7eb7bd4fef559bed89b77449485a96e6fa8"
+  },
+  {
+   "frame": "fa_phoenix_prone_fire_north_0",
+   "alpha_unchanged": true,
+   "source_sha256": "57f55c0b2629d0e3f87ac2bb51b13443ca001274f9ccf587ba653294bf197391"
+  },
+  {
+   "frame": "fa_phoenix_prone_fire_north_1",
+   "alpha_unchanged": true,
+   "source_sha256": "14a59d9f658d9d10b9ab83279bf726eda737c7293ae19cfc20d6e23490317444"
+  },
+  {
+   "frame": "fa_phoenix_prone_fire_north_2",
+   "alpha_unchanged": true,
+   "source_sha256": "f4425d1eebc3f12aae9d82867e270c206be104e4c9f6c64bc92ee6fc352c49f2"
+  },
+  {
+   "frame": "fa_phoenix_prone_fire_north_3",
+   "alpha_unchanged": true,
+   "source_sha256": "362d464bd726ef60f6804af15ad5b1990ed66314d589980ad54bc53d935c78ed"
+  },
+  {
+   "frame": "fa_phoenix_prone_fire_north_4",
+   "alpha_unchanged": true,
+   "source_sha256": "a9b011f5de92f79b30e5f0c608a7dc4523a66cbe820ecf51737ec1fae92d1107"
+  },
+  {
+   "frame": "fa_phoenix_prone_fire_north_5",
+   "alpha_unchanged": true,
+   "source_sha256": "7b19159c1b2c0142057d2eb4ed56f1de23ea36f889d2de5c03e611875869d57b"
+  },
+  {
+   "frame": "fa_phoenix_prone_fire_east_0",
+   "alpha_unchanged": true,
+   "source_sha256": "d8d596ce88ab2b17662f3018691c107133e9d20e4f9ec8b96433e8153e899e4b"
+  },
+  {
+   "frame": "fa_phoenix_prone_fire_east_1",
+   "alpha_unchanged": true,
+   "source_sha256": "b9380f539b54070efcbeb4e3fcfbf8c8d9a3d92ec81c7d9e425c0163f64fcc3d"
+  },
+  {
+   "frame": "fa_phoenix_prone_fire_east_2",
+   "alpha_unchanged": true,
+   "source_sha256": "17f2fad86d531063f86d757632577bb4487758d703380f5df1ca1b1267a9d55b"
+  },
+  {
+   "frame": "fa_phoenix_prone_fire_east_3",
+   "alpha_unchanged": true,
+   "source_sha256": "187548b009e57e5898032372342ef2a5f93ceb8dc2cdb8de5419fb4c8d7de96a"
+  },
+  {
+   "frame": "fa_phoenix_prone_fire_east_4",
+   "alpha_unchanged": true,
+   "source_sha256": "6a06c97c0f5a76fec8121148cebec98f414181187f0a8cd30cb60fea0de1cb4f"
+  },
+  {
+   "frame": "fa_phoenix_prone_fire_east_5",
+   "alpha_unchanged": true,
+   "source_sha256": "ad7084c07d5f7c4360058875c0c375560475ac8ff5bae07c5a88ec3628ab768f"
+  },
+  {
+   "frame": "fa_phoenix_prone_fire_south_0",
+   "alpha_unchanged": true,
+   "source_sha256": "85d08901118f6e550bc2d61380ca211aa7016b7e88f1da1e57ea6b1d6d3ce028"
+  },
+  {
+   "frame": "fa_phoenix_prone_fire_south_1",
+   "alpha_unchanged": true,
+   "source_sha256": "d86d36718f244c27cfffe0978920e58e82e3633397b404000662865ae32ea75e"
+  },
+  {
+   "frame": "fa_phoenix_prone_fire_south_2",
+   "alpha_unchanged": true,
+   "source_sha256": "78ac838bc299a51f97fefe5a349d4862d127cef8a682776e51cf22f90649e478"
+  },
+  {
+   "frame": "fa_phoenix_prone_fire_south_3",
+   "alpha_unchanged": true,
+   "source_sha256": "de535c88380ea5798a1f021606db48ebff2750fc31bc2c9307bcc556d608b126"
+  },
+  {
+   "frame": "fa_phoenix_prone_fire_south_4",
+   "alpha_unchanged": true,
+   "source_sha256": "53c82cf5371568a1cce5e41d2bd010f18b063089c7746674748d6f7a6d1cd7d3"
+  },
+  {
+   "frame": "fa_phoenix_prone_fire_south_5",
+   "alpha_unchanged": true,
+   "source_sha256": "478b5ff1b78a2ab7e5500f86b272fc1612608ffd7e4c13e9d8ea9b1b682a853c"
+  },
+  {
+   "frame": "fa_phoenix_prone_fire_west_0",
+   "alpha_unchanged": true,
+   "source_sha256": "a22237d5acc9b098f87efa4b73c71930249f7cc0abc3eef2724a28a05718dcac"
+  },
+  {
+   "frame": "fa_phoenix_prone_fire_west_1",
+   "alpha_unchanged": true,
+   "source_sha256": "dc490ef2c19c6399aa0aa4f7d580bb0d10b12f4ef834642b4d5e6ae7f74d22c4"
+  },
+  {
+   "frame": "fa_phoenix_prone_fire_west_2",
+   "alpha_unchanged": true,
+   "source_sha256": "1734bb2b5fbafeb6e742b35ffd072861b2bc827a8948de84ecb7a557383292d0"
+  },
+  {
+   "frame": "fa_phoenix_prone_fire_west_3",
+   "alpha_unchanged": true,
+   "source_sha256": "b08edd70ad3823d7f07ebedd61c4abd5c30a322cb0be0dc7c66c531e3f40d97e"
+  },
+  {
+   "frame": "fa_phoenix_prone_fire_west_4",
+   "alpha_unchanged": true,
+   "source_sha256": "cc066f03b70a05704ba9435e2822740d3fbf703f7bd603f4d09a299ce3161d75"
+  },
+  {
+   "frame": "fa_phoenix_prone_fire_west_5",
+   "alpha_unchanged": true,
+   "source_sha256": "c01ace941e3a8100fb819ff9dbef638c2ba9f25135ae35a3f40233c54a8e8fca"
+  },
+  {
+   "frame": "fa_phoenix_roll_to_stand_0",
+   "alpha_unchanged": true,
+   "source_sha256": "228cc3ccaeebdb73292997c4e30d7fe284dee8224533806eb76e67d57c1b3a4c"
+  },
+  {
+   "frame": "fa_phoenix_roll_to_stand_1",
+   "alpha_unchanged": true,
+   "source_sha256": "12a3773a194b14f733bebc97734f2f6224eab705dd8af3fd064b88cd342371a3"
+  },
+  {
+   "frame": "fa_phoenix_roll_to_stand_2",
+   "alpha_unchanged": true,
+   "source_sha256": "a367560f0042d0f18ccf6ea43046602b9523d665bcaa93c637c2a77e50fa10a6"
+  },
+  {
+   "frame": "fa_phoenix_roll_to_prone_0",
+   "alpha_unchanged": true,
+   "source_sha256": "29f9081b54a821339a71b96db3f8cfb945b26257eb419801d9ac4547c913d542"
+  },
+  {
+   "frame": "fa_phoenix_roll_to_prone_1",
+   "alpha_unchanged": true,
+   "source_sha256": "6529461a210798e7df09dd8b2314d477cdd5f5f7e508562cadc2a0ca55e3efb5"
+  },
+  {
+   "frame": "fa_phoenix_roll_to_prone_2",
+   "alpha_unchanged": true,
+   "source_sha256": "8ec48d99782efa0ee26a04c79788953bf14fd4ac0613d6ff753303ef155a1a36"
+  },
+  {
+   "frame": "fa_phoenix_grenade_throw_0",
+   "alpha_unchanged": true,
+   "source_sha256": "f7be376238571d547202d34589a2c4554c5e5754b47829f68e06186ea7a9c09c"
+  },
+  {
+   "frame": "fa_phoenix_grenade_throw_1",
+   "alpha_unchanged": true,
+   "source_sha256": "2061685fefff6e0915e669f5ce2b5135847bac2856c58fe11e6eff5c4a4378ae"
+  },
+  {
+   "frame": "fa_phoenix_grenade_throw_2",
+   "alpha_unchanged": true,
+   "source_sha256": "b885dde4f676e4532020892d6ba2db0ff6fd1a90a0067501a78f19de2a66a551"
+  },
+  {
+   "frame": "fa_phoenix_death_0",
+   "alpha_unchanged": true,
+   "source_sha256": "f84e957c608c61398d5596e3f0fc732cc0ea12ae939b2f83e083f8421fc7f497"
+  },
+  {
+   "frame": "fa_phoenix_death_1",
+   "alpha_unchanged": true,
+   "source_sha256": "44f4c1ad8cfb1e4cb4deb2d84d524373db22feae44dcd9d13d224a1729b0f304"
+  },
+  {
+   "frame": "fa_phoenix_death_2",
+   "alpha_unchanged": true,
+   "source_sha256": "087fb8e5b651729499fe7455afcbe5fd3ea5ba5d5b5c0e2387b7cc2209e6b9d6"
+  },
+  {
+   "frame": "fa_niel_prone_fire_north_0",
+   "alpha_unchanged": true,
+   "source_sha256": "5a878f88aeb958c8f09bbe825a18a8d62c539a069fdfcd9600a2fb3906adb5c3"
+  },
+  {
+   "frame": "fa_niel_prone_fire_north_1",
+   "alpha_unchanged": true,
+   "source_sha256": "909db1dfef6803d989cd463520e7629a4625c1608b86fabcc578fbe89cf03b59"
+  },
+  {
+   "frame": "fa_niel_prone_fire_north_2",
+   "alpha_unchanged": true,
+   "source_sha256": "b6266cff4d3823e7ca8af2fbf599cc8af6a7d34defc7c372f56a4500d386edd7"
+  },
+  {
+   "frame": "fa_niel_prone_fire_north_3",
+   "alpha_unchanged": true,
+   "source_sha256": "b998e597c4640d85ca09b4ce5aaf6594881c62a70d57b731fc0e0a712658711e"
+  },
+  {
+   "frame": "fa_niel_prone_fire_north_4",
+   "alpha_unchanged": true,
+   "source_sha256": "7ac7f767c6a29065f3559ad9edb0c0e4590bbbf094c4350ed3d6ef6b3cecf18b"
+  },
+  {
+   "frame": "fa_niel_prone_fire_north_5",
+   "alpha_unchanged": true,
+   "source_sha256": "d00a833add13213eeac08fd66af1e018120f5257c39b0c874272fe42dc8edda1"
+  },
+  {
+   "frame": "fa_niel_prone_fire_east_0",
+   "alpha_unchanged": true,
+   "source_sha256": "167ce9342767ff03b456cfcdd7e0da57cea0aadadcc34e445aa0665f822a4a39"
+  },
+  {
+   "frame": "fa_niel_prone_fire_east_1",
+   "alpha_unchanged": true,
+   "source_sha256": "1b41263d30ca49ceb3820b563a529a32e24939447cdf137cf276575949aa268b"
+  },
+  {
+   "frame": "fa_niel_prone_fire_east_2",
+   "alpha_unchanged": true,
+   "source_sha256": "a2bdf28edb4fb4dab4a448dc5df8b721184d8455eafd36b7080e7fa370b976b8"
+  },
+  {
+   "frame": "fa_niel_prone_fire_east_3",
+   "alpha_unchanged": true,
+   "source_sha256": "6eaa4822dae6f1220c75bbd8ee1cc485f68d16b57c6db44f390765d0efbfaa10"
+  },
+  {
+   "frame": "fa_niel_prone_fire_east_4",
+   "alpha_unchanged": true,
+   "source_sha256": "b87856fe68056948a5a748f93c523db0ed1bd40fbd6f31206da34d60791ac261"
+  },
+  {
+   "frame": "fa_niel_prone_fire_east_5",
+   "alpha_unchanged": true,
+   "source_sha256": "2b2ec28859dee10392cfb0ddd1e923a7b937e0a0dc023701c36d31982c758642"
+  },
+  {
+   "frame": "fa_niel_prone_fire_south_0",
+   "alpha_unchanged": true,
+   "source_sha256": "6793c9954b39c24796e6e562aebc4e0c11de40fe36ebc23108c18b4921fde989"
+  },
+  {
+   "frame": "fa_niel_prone_fire_south_1",
+   "alpha_unchanged": true,
+   "source_sha256": "dc13ed8ea60e512a16e082285ac53219ec245ecd5b998fa855464511763134a5"
+  },
+  {
+   "frame": "fa_niel_prone_fire_south_2",
+   "alpha_unchanged": true,
+   "source_sha256": "1908b84b20e365f863c44873498a212e99f3cf9839d8af0f988868411b0d9bc7"
+  },
+  {
+   "frame": "fa_niel_prone_fire_south_3",
+   "alpha_unchanged": true,
+   "source_sha256": "0aa1c427b0f1e3d1c0d5882ca808bd06543df684741d33aea5b6e0a13c5b749c"
+  },
+  {
+   "frame": "fa_niel_prone_fire_south_4",
+   "alpha_unchanged": true,
+   "source_sha256": "b4ba3138db72ff6d44b13c55e283cb6eeb62afa193fd037f8b7ace26f7ffdb9b"
+  },
+  {
+   "frame": "fa_niel_prone_fire_south_5",
+   "alpha_unchanged": true,
+   "source_sha256": "5e6211e89092cd71b7dfef0bdcfec480eff8d4f46ef87e3fca7314124f61f891"
+  },
+  {
+   "frame": "fa_niel_prone_fire_west_0",
+   "alpha_unchanged": true,
+   "source_sha256": "a6d161488b8023efe483ae3483e776a5b64028acfaf8cb5dd9d0a29bb85ca22a"
+  },
+  {
+   "frame": "fa_niel_prone_fire_west_1",
+   "alpha_unchanged": true,
+   "source_sha256": "87da909e0de30ed639e1472e83d388062b60301710ac76867890115c1663edcb"
+  },
+  {
+   "frame": "fa_niel_prone_fire_west_2",
+   "alpha_unchanged": true,
+   "source_sha256": "61bbcd63326b7d0928f0c3aee517a9953e3e472cc317bc03e78e6ad32355edd4"
+  },
+  {
+   "frame": "fa_niel_prone_fire_west_3",
+   "alpha_unchanged": true,
+   "source_sha256": "600e3bc9f49f01957bf4b6cb8fbd4c05a165b46c4a8efc781eda4b86069016fb"
+  },
+  {
+   "frame": "fa_niel_prone_fire_west_4",
+   "alpha_unchanged": true,
+   "source_sha256": "129946ff501a8c01406522b2790d4a06bcf9e1b945735b80222e52a1259074e7"
+  },
+  {
+   "frame": "fa_niel_prone_fire_west_5",
+   "alpha_unchanged": true,
+   "source_sha256": "428a85412a215ff38291f65bb1fbe770e24690a10f1a2b4a740a438fc8935af7"
+  },
+  {
+   "frame": "fa_niel_roll_to_stand_0",
+   "alpha_unchanged": true,
+   "source_sha256": "06cf752a52a23afd4f0f0972c3842f348ebfa404f91faafb32b77249afd5af28"
+  },
+  {
+   "frame": "fa_niel_roll_to_stand_1",
+   "alpha_unchanged": true,
+   "source_sha256": "9f72667c91da0027581645b8f7d29997f351ed0ec2fae929dbfa10b82d81cd92"
+  },
+  {
+   "frame": "fa_niel_roll_to_stand_2",
+   "alpha_unchanged": true,
+   "source_sha256": "049f2bd649edf33473da8447135ace59a0f35d810913cd79231864b9a237e454"
+  },
+  {
+   "frame": "fa_niel_roll_to_prone_0",
+   "alpha_unchanged": true,
+   "source_sha256": "bf191efe277d2889248f2b27666bcb43b2e47d266cc90000da92863293b3d4f9"
+  },
+  {
+   "frame": "fa_niel_roll_to_prone_1",
+   "alpha_unchanged": true,
+   "source_sha256": "4c88cea052e5990c89d516db760b8bdab2f27ae5e793a0f8327fc43fe55bec80"
+  },
+  {
+   "frame": "fa_niel_roll_to_prone_2",
+   "alpha_unchanged": true,
+   "source_sha256": "b22448e11ecdf2a598b80baae1fac4e8b8df4b7d2e4dd7fa6a1e8cca94215d47"
+  },
+  {
+   "frame": "fa_niel_grenade_throw_0",
+   "alpha_unchanged": true,
+   "source_sha256": "578d28d4fae977af0320852e0e59309b8e1093475816c6f6eac3617a5e04b0b6"
+  },
+  {
+   "frame": "fa_niel_grenade_throw_1",
+   "alpha_unchanged": true,
+   "source_sha256": "8ddd68fadd834a10379d7ce9ecc70414c5f444e2d21e1b67173ca83ce29fda09"
+  },
+  {
+   "frame": "fa_niel_grenade_throw_2",
+   "alpha_unchanged": true,
+   "source_sha256": "6adc56456bc66452ede8cf6e49b6289fa70a653382b0b87707634d5c191d32c1"
+  },
+  {
+   "frame": "fa_niel_death_0",
+   "alpha_unchanged": true,
+   "source_sha256": "a4aba3e3533e0249870273c7300b003ee522c1535bd123a6612c6273edf8f730"
+  },
+  {
+   "frame": "fa_niel_death_1",
+   "alpha_unchanged": true,
+   "source_sha256": "5d04ba42fb33f613559b44767be530a69fa2cd89c7125c2e5a6b6dfc4872429e"
+  },
+  {
+   "frame": "fa_niel_death_2",
+   "alpha_unchanged": true,
+   "source_sha256": "973c0417f4f295724d502a22feaf711d0e8ac47ca4574fb6ca9e8920bbc4af8a"
+  }
+ ],
+ "all_alpha_unchanged": true
+}

@@ -25,7 +25,9 @@
   #equip-dom{position:relative;flex:0 0 auto;pointer-events:none;}
   #equip-dom{display:none;} /* compact equipped socket now lives in the three-part in-play HUD */
   #equip-dom canvas{display:block;width:100%;height:100%;image-rendering:pixelated;}
-  #hud-div{flex:0 0 auto;width:100%;height:3px;background:#2a2d33;box-shadow:0 1px 0 #15171b;}
+  #hud-div,#hud-div2{flex:0 0 auto;width:100%;height:3px;background:#2a2d33;box-shadow:0 1px 0 #15171b;}
+  #hud-bottom{position:relative;flex:0 0 auto;background:#000;}
+  #hud-bottom canvas{display:block;width:100%;height:100%;image-rendering:pixelated;}
   #screen-area{position:relative;flex:0 0 auto;width:100%;overflow:hidden;}
   /* The canvas is sized in JS by fitCanvas() (aspect-locked) and CENTRED here. It used to be
      forced to width:100%;height:100%, which stretched it to whatever shape #screen-area was and
@@ -56,18 +58,20 @@
   #wide-map-top{position:fixed;display:none;z-index:2;pointer-events:none;background:#0a1a2b url('assets/game/shared/campaign/campaign_map_v2/ocean.png') center/cover no-repeat;}
   body.wide-map #room{background:#04102a;}
   body.wide-map #game-frame{box-shadow:none;background:transparent;width:93.75vh !important;height:100vh !important;}
-  body.wide-map #hud-row,body.wide-map #hud-div{display:none !important;}
+  body.wide-map #hud-row,body.wide-map #hud-div,body.wide-map #hud-bottom,body.wide-map #hud-div2{display:none !important;}
   body.wide-map #screen-area,body.wide-map #screen{width:100% !important;height:100% !important;}
   body.campaign-full #room{display:block;background:#04102a;}
   body.campaign-full #marquee,body.campaign-full .side,body.campaign-full #credit-left,body.campaign-full #credit-right,
-  body.campaign-full #hud-row,body.campaign-full #hud-div,body.campaign-full #hint{display:none !important;}
+  body.campaign-full #hud-row,body.campaign-full #hud-div,body.campaign-full #hud-bottom,body.campaign-full #hud-div2,body.campaign-full #hint{display:none !important;}
   body.campaign-full #game-frame{position:fixed !important;inset:0 !important;width:100vw !important;height:100vh !important;box-shadow:none;}
   body.campaign-full #screen-area{position:fixed;inset:0;width:100vw !important;height:100vh !important;margin:0 !important;}
   body.campaign-full #screen{width:100vw !important;height:min(100vh,106.666667vw) !important;}
   /* Wide menus and the boot plate own the full middle bay; gameplay retains the top HUD. */
   @media(min-width:1150px){
     body.fs:not(.wide-playing):not(.wide-map):not(.cinematic-full) #hud-row,
-    body.fs:not(.wide-playing):not(.wide-map):not(.cinematic-full) #hud-div{display:none !important;}
+    body.fs:not(.wide-playing):not(.wide-map):not(.cinematic-full) #hud-div,
+    body.fs:not(.wide-playing):not(.wide-map):not(.cinematic-full) #hud-bottom,
+    body.fs:not(.wide-playing):not(.wide-map):not(.cinematic-full) #hud-div2{display:none !important;}
     body.fs:not(.wide-playing):not(.wide-map):not(.cinematic-full) #screen-area,
     body.fs:not(.wide-playing):not(.wide-map):not(.cinematic-full) #screen{width:100% !important;height:100% !important;}
   }
@@ -109,6 +113,8 @@
   body.cinematic-full #credit-right,
   body.cinematic-full #hud-row,
   body.cinematic-full #hud-div,
+  body.cinematic-full #hud-bottom,
+  body.cinematic-full #hud-div2,
   body.cinematic-full #fs-btn,
   body.cinematic-full #hint{display:none !important;}
   body.cinematic-full #game-frame{position:fixed !important;inset:0 !important;width:100vw !important;
@@ -128,11 +134,16 @@
   <div id="credit-left">COLEFORGE<br>PRODUCTIONS<br><span class="yr">2026</span></div>
   <div id="game-frame">
     <div id="hud-row">
-      <div id="hud-wrap"><canvas id="hud" width="480" height="104"></canvas></div>
+      <!-- 1009: the HUD draws to #hud off screen; feedback_1009.js copies its score strip to #hud-top
+           (above the playfield) and its five-panel housing to #hud-bot (below it). -->
+      <canvas id="hud" width="480" height="104" style="display:none"></canvas>
+      <div id="hud-wrap"><canvas id="hud-top" width="960" height="68"></canvas></div>
       <div id="equip-dom"><canvas id="equipcv" width="128" height="128"></canvas></div>
     </div>
     <div id="hud-div"></div>
     <div id="screen-area"><canvas id="screen" width="480" height="512"></canvas></div>
+    <div id="hud-div2"></div>
+    <div id="hud-bottom"><canvas id="hud-bot" width="960" height="140"></canvas></div>
   </div>
   <div id="credit-right">A GAME BY<br>MIKE<br><span class="nick">&ldquo;FORGEMASTER&rdquo;</span><br>COLE</div>
 </div>
@@ -236,35 +247,46 @@
     function S(id,w,h){ var e=document.getElementById(id); if(e){ e.style.width=w+'px'; e.style.height=h+'px'; } }
     if(document.body.classList.contains('cinematic-full')||document.body.classList.contains('campaign-full')){
       var gf0=document.getElementById('game-frame'),sa0=document.getElementById('screen-area'),scr0=document.getElementById('screen');
-      if(gf0){gf0.style.position='fixed';gf0.style.left='0px';gf0.style.top='0px';gf0.style.width=vw+'px';gf0.style.height=vh+'px';}
+      if(gf0){gf0.style.marginBottom='0px';gf0.style.position='fixed';gf0.style.left='0px';gf0.style.top='0px';gf0.style.width=vw+'px';gf0.style.height=vh+'px';}
       if(sa0){sa0.style.width=vw+'px';sa0.style.height=vh+'px';sa0.style.marginLeft='0px';}
       if(scr0){scr0.style.width=vw+'px';scr0.style.height=vh+'px';}
       return;
     }
     var reserve = isFS() || vw<=820 ? 0 : Math.min(vw*0.34, 420);      // room for the credit rails
     var availW = Math.max(200, vw - reserve);
-    var availH = vh; // the browser bay uses every available vertical pixel
+    /* 1009: the five-panel HUD now sits at the bottom of the frame, where the fixed control-hint
+       strip (#hint, 22px at bottom:6px) would cover it. Keep that strip's height clear of the frame
+       whenever it can be on screen; fullscreen hides the strip and keeps every pixel. */
+    var hintEl=document.getElementById('hint'), hintH=(!isFS()&&hintEl&&getComputedStyle(hintEl).display!=='none')?30:0;
+    var availH = vh - hintH; // the browser bay uses every other vertical pixel
     // Wide gameplay and menus have different HUD visibility. Read that
     // actual visibility before fitting so a hidden row cannot squeeze menus.
     if(isFS()&&vw>=1150){try{document.body.classList.toggle('wide-playing',['play','paused','continue','stageclear','gameover'].indexOf(state)>=0);}catch(e){}}
     var hudShown=getComputedStyle(document.getElementById('hud-row')).display!=='none';
     var HUDH=hudShown?(window.__bofHudHeight||104):0;
-    var totalH = GH + HUDH + (hudShown?DIVH:0);
+    var totalH = GH + HUDH + (hudShown?2*DIVH:0);
     var sc = Math.min(availW/GW, availH/totalH);
     var gw = Math.floor(GW*sc);
-    var hh = Math.round(HUDH*sc), dh = hudShown?Math.max(1,Math.round(DIVH*sc)):0;
-    // Allocate the final screen from the shared budget: three independent
+    /* 1009: each 104px seat row is a 70px housing (now under the playfield) and a 34px score
+       strip (still on top). The total budget is unchanged; it is split, not grown. */
+    var rowsH = HUDH>0 ? HUDH/104 : 0, topL = 34*rowsH, botL = HUDH-topL;
+    var hh = Math.round(topL*sc), hb = Math.round(botL*sc), dh = hudShown?Math.max(1,Math.round(DIVH*sc)):0;
+    // Allocate the final screen from the shared budget: independent
     // rounded heights could exceed the viewport and clip its first/last pixel.
-    var gh = Math.max(1,Math.floor(totalH*sc+1e-6)-hh-dh);
+    var gh = Math.max(1,Math.floor(totalH*sc+1e-6)-hh-hb-2*dh);
     var gf=document.getElementById('game-frame');
-    if(gf){ gf.style.position='relative'; gf.style.left='0px'; gf.style.top='0px'; }
-    S('game-frame', gw, gh+hh+dh);
+    if(gf){ gf.style.position='relative'; gf.style.left='0px'; gf.style.top='0px'; gf.style.marginBottom=hintH+'px'; }
+    S('game-frame', gw, gh+hh+hb+2*dh);
     S('hud-row', gw, hh); S('hud-wrap', gw, hh);
-    S('hud-div', gw, dh);
+    S('hud-div', gw, dh); S('hud-div2', gw, dh); S('hud-bottom', gw, hb);
+    var hbRow=document.getElementById('hud-bottom'), hd2=document.getElementById('hud-div2');
+    if(hbRow) hbRow.style.display = hudShown ? '' : 'none';
+    if(hd2) hd2.style.display = hudShown ? '' : 'none';
     S('screen-area', gw, gh);
     var sa=document.getElementById('screen-area'); if(sa) sa.style.marginLeft='0px';
     var scr=document.getElementById('screen'); if(scr){ scr.style.width=gw+'px'; scr.style.height=gh+'px'; }
-    var hud=document.getElementById('hud');     if(hud){ hud.style.width=gw+'px';  hud.style.height=hh+'px'; }
+    var hud=document.getElementById('hud-top'); if(hud){ hud.style.width=gw+'px';  hud.style.height=hh+'px'; }
+    var hbot=document.getElementById('hud-bot'); if(hbot){ hbot.style.width=gw+'px'; hbot.style.height=hb+'px'; }
   }
   /* The old layout function was named L and the listeners still referenced it; my replacement is
      fit(). Aliasing keeps every existing call site working instead of hunting them all. */
@@ -448,6 +470,7 @@
 <script src="assets/campaign_flags_art_1004f.js"></script>
 <script src="assets/campaign_landscape_1004e.js"></script>
 <script src="assets/campaign_controls_1004h.js"></script>
+<script src="assets/campaign_follow_1009.js"></script>
 <script src="assets/boss_motion_art_1009.js"></script>
 <script src="assets/boss_motion_1009.js"></script>
 <script src="assets/stage1_motion_art_1009.js"></script>
@@ -459,11 +482,16 @@
 <script src="assets/online.js"></script>
 <script src="assets/asset_memory_1007.js"></script>
 <script src="assets/maneuver_safety_1007.js"></script>
+<script src="assets/frame_pacing_1009.js"></script>
 <script src="assets/balance_recovery_1007b.js"></script>
 <script src="assets/enemy_hud_art_1007c.js"></script>
 <script src="assets/enemy_hud_1007c.js"></script>
 <script src="assets/player_hud_art_1008.js"></script>
 <script src="assets/player_hud_1008.js?v=lock-crosshair-1008e"></script>
+<script src="assets/boss_bars_1008.js"></script>
+<script src="assets/finale_forms_1008.js"></script>
+<script src="assets/feedback_1009.js"></script>
+<script src="assets/orbs_1010.js"></script>
 <!-- Campaign world now renders once, on the full-width game canvas. -->
 
 <script>

@@ -3,7 +3,7 @@
  *
  * PLAYER: immediate smooth movement, independent turret aim, and C hull lock for sideways strafe.
  * Separate calibrated hull and turret layers share the authored socket. VULCAN / CRASH / LASER /
- * HOMING) on A, the main cannon on B with recoil, a charged piercing round on X, smoke on Y, Z swaps.
+ * HOMING) on A, the main cannon on B with recoil, a charged piercing round on X, smoke on Y, Retina on I / controller Z. Pickups replace the equipped gun.
  *
  * ENEMIES see through the stealth module's cones and hunt with the flow field. A shot that lands on
  * a unit that has not noticed you (green cone) deals double damage - the sneak strike.
@@ -31,7 +31,7 @@
 
   // 1008g: the Overdrive ground tanks. 192 px north-facing canvases, hull centre (96,124) on every family;
   // the turret shares the canvas, so it sits in its socket by construction. a=0 faces south here.
-  TD.PILOTS = ['cole', 'axel', 'maverick', 'decker', 'yuri', 'freezer', 'juggernaut', 'phoenix', 'lizzie', 'falva', 'hotwire'];
+  TD.PILOTS = ['cole', 'axel', 'maverick', 'decker', 'yuri', 'freezer', 'juggernaut', 'lizzie', 'falva', 'hotwire', 'phoenix', 'niel'];
   TD.FAMILY = { siege: ['juggernaut', 'phoenix'], panzer: ['lizzie', 'falva', 'hotwire'] };
   TD.familyOf = pk => TD.FAMILY.siege.includes(pk) ? 'siege' : TD.FAMILY.panzer.includes(pk) ? 'panzer' : 'assault';
   const MUZZLE = { siege: 30, assault: 38, panzer: 45 };    // native muzzle distance from the hull centre, halved to draw scale
@@ -97,6 +97,7 @@
     p.fireCd = def.cd[lv - 1];
   }
   function fireCannon(p, G, power) {
+    if (TD.Retina.fire(p, G, power)) return;
     const aim = p.aim, [fx, fy] = M.fwd(aim), md = TD.muzzleDist(p), mx = p.x + fx * md, my = p.y + fy * md, big = power >= 1;
     shot(G.shots, { k: 'shell', x: mx, y: my, vx: fx * 15.6, vy: fy * 15.6, a: aim, dmg: big ? 14 : 6, life: 30, r: big ? 9 : 5, splash: big ? 56 : 34, sdmg: big ? 6 : 3, pierce: big ? 3 : 0, big });
     p.recoil = big ? 10 : 6; p.kickAim = aim; p.vx -= fx * (big ? 4.2 : 2.3); p.vy -= fy * (big ? 4.2 : 2.3); Cam.kick(big ? 5 : 2);
@@ -109,7 +110,7 @@
   // ------------------------------------------------------------------ the player tank
   TD.makePlayer = (x, y) => ({
     x, y, vx: 0, vy: 0, r: 20, a: Math.PI, aim: Math.PI, manualAim: 0, hp: 12, max: 12, inv: 90, flash: 0, recoil: 0, fireCd: 0, canCd: 0, charge: 0,
-    smoke: 3, weapons: [{ id: 'vulcan', lv: 1 }], wi: 0, dead: false, hidden: false, moving: false, pilot: TD.pilot || 'cole', speed: 2.7,
+    smoke: 3, missiles: 6, retina: null, weapons: [{ id: 'vulcan', lv: 1 }], wi: 0, dead: false, hidden: false, moving: false, pilot: TD.pilot || 'cole', speed: 2.7,
   });
   TD.playerTick = function (p, G, dt) {
     if (p.onfoot) return TD.footTick(p, G, dt);
@@ -128,11 +129,11 @@
       if (diff < 2.65) p.a = M.turnTo(p.a, want, 0.12);
     }
     const aim = I.aim(p);
-    if (aim != null) { p.aim = M.turnTo(p.aim, aim, 0.18); p.manualAim = 30; }
+    if (aim != null) { p.aim = I.state.directionalFire ? aim : M.turnTo(p.aim, aim, 0.18); p.manualAim = 30; }
     else if (I.down('aimLeft') || I.down('aimRight')) {
       p.aim += (I.down('aimRight') ? 1 : -1) * 0.07; p.manualAim = 120;
     } else if (p.manualAim > 0) p.manualAim--;
-    else if (!lock) p.aim = M.turnTo(p.aim, p.a, 0.12);
+    else if (!lock && !I.down("retina")) p.aim = M.turnTo(p.aim, p.a, 0.12);
     p.moving = Math.hypot(p.vx, p.vy) > 0.15;
     p.x += p.vx; p.y += p.vy;
     // Charge tension gently seats the whole tank behind the bore, while firing
@@ -143,8 +144,8 @@
     W.collide(p, p.r, false);
     p.hidden = !!W.inType(p.x, p.y, 'h');
     // weapons
-    if (I.state.wheel || I.tap('Z')) { if (p.weapons.length > 1) { p.wi = (p.wi + (I.state.wheel < 0 ? -1 : 1) + p.weapons.length) % p.weapons.length; A.play('blip'); } }
     if (p.fireCd > 0) p.fireCd--; if (p.canCd > 0) p.canCd--;
+    TD.Retina.tick(p, G, dt);
     if (I.down('A') && p.fireCd <= 0) firePrimary(p, G);
     if (I.tap('B') && p.canCd <= 0 && !I.down('X')) fireCannon(p, G, 0);
     if (I.down('X') && p.canCd <= 0) { if (p.charge === 0) A.play('charge'); p.charge = Math.min(72, p.charge + 1); }
@@ -316,7 +317,7 @@
   };
 
   // ------------------------------------------------------------------ props
-  const PROP = {
+  const PROP = TD.PROP = {   // 1009: a mission may register its own kinds (draw / onBreak / broken)
     barrel: { key: 'nef_s1_fuel_barrel_', hp: 3, r: 13, s: 0.16 },
     crate: { key: 'gp_ammo_crate_', hp: 4, r: 15, s: 0.5 },
     pbox: { key: 'gp_weapon_crate_', hp: 2, r: 13, s: 0.44 },
@@ -327,14 +328,17 @@
     q.hp -= dmg; q.flash = 0.1;
     if (q.hp > 0) return;
     q.dead = true;
+    if (PROP[q.kind].onBreak) { PROP[q.kind].onBreak(G, q); return; }
     if (q.kind === 'barrel') {
       FX.boom(q.x, q.y, 120, 'nxp_dense_'); FX.ring(q.x, q.y, 0.6); A.play('expB'); Cam.kick(6);
       TD.blast(G, q.x, q.y, 64, 5, true);
     } else { FX.boom(q.x, q.y, 50, 'nxp_clus_'); FX.debris(q.x, q.y, 0.22); A.play('expS'); TD.dropPickup(G, q.x, q.y, q.drop); }
   };
   TD.drawProp = function (ctx, q) {
+    const P = PROP[q.kind];
+    if (P.draw) { P.draw(ctx, q); return; }
     if (q.dead) return;
-    const P = PROP[q.kind], st = q.hp > q.max * 0.66 ? 'intact' : q.hp > q.max * 0.33 ? 'damaged' : 'critical';
+    const st = q.hp > q.max * 0.66 ? 'intact' : q.hp > q.max * 0.33 ? 'damaged' : 'critical';
     const key = P.still ? P.key : P.key + st;
     ART.draw(ctx, key, q.x + 3, q.y + 4, { s: P.s, tint: '#000000', alpha: 0.3 });
     ART.draw(ctx, key, q.x, q.y, { s: P.s, flash: q.flash > 0 ? 1 : 0 });
@@ -362,13 +366,11 @@
       if (!p.dead && M.dist(k.x, k.y, p.x, p.y) < p.r + 14) {
         k.dead = true; A.play('pick');
         if (WPN[k.kind]) {
-          const have = p.weapons.find(w => w.id === k.kind);
-          if (have) { have.lv = Math.min(3, have.lv + 1); p.wi = p.weapons.indexOf(have); }
-          else if (p.weapons.length < 4) { p.weapons.push({ id: k.kind, lv: 1 }); p.wi = p.weapons.length - 1; }
-          else { p.weapons[p.wi] = { id: k.kind, lv: 1 }; }
+          const current=p.weapons[p.wi];
+          p.weapons=[{id:k.kind,lv:current.id===k.kind?Math.min(3,current.lv+1):1}];p.wi=0;
           G.say(WPN[k.kind].name + ' LV' + p.weapons[p.wi].lv, p);
         } else if (k.kind === 'repair') { p.hp = Math.min(p.max, p.hp + 4); G.say('ARMOR +4', p); }
-        else if (k.kind === 'smoke') { p.smoke = Math.min(5, p.smoke + 2); G.say('SMOKE +2', p); }
+        else if (k.kind === 'smoke') { p.smoke = Math.min(5, p.smoke + 2);p.missiles=Math.min(12,p.missiles+3);G.say('SMOKE +2 / MISSILES +3',p); }
         else if (k.kind === 'life') { G.lives++; G.say('1UP', p); }
         else { G.score += 1000; G.say('+1000', p); }
       }
@@ -391,7 +393,11 @@
     const p = G.player;
     for (const s of G.shots) {
       s.t++;
-      if (s.homing) {
+      if (s.retinaTarget) {
+        if(s.retinaTarget.valid()){const q=s.retinaTarget.point();if(!W.rayBlock(s.x,s.y,q.x,q.y))s.a=M.turnTo(s.a,M.angTo(s.x,s.y,q.x,q.y),.12);}
+        const speed=Math.min(8,Math.hypot(s.vx,s.vy)+.2),f=M.fwd(s.a);s.vx=f[0]*speed;s.vy=f[1]*speed;
+        if(s.t%3===0)FX.smoke(s.x-f[0]*10,s.y-f[1]*10,.05,.35);
+      } else if (s.homing) {
         let best = null, bd = 360;
         const consider = u => { const d = M.dist(s.x, s.y, u.x, u.y);
           if (d < bd && Math.abs(M.wrap(M.angTo(s.x, s.y, u.x, u.y) - s.a)) < 1.35 && !W.rayBlock(s.x, s.y, u.x, u.y)) { bd = d; best = u; } };

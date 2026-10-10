@@ -1,0 +1,140 @@
+{
+  "checks": [
+    {
+      "name": "boot opens pilot selection with all twelve avatars and full bodies decoded",
+      "passed": true
+    },
+    {
+      "name": "roster has exactly two horizontal rows of six",
+      "passed": true
+    },
+    {
+      "name": "D-pad down preserves the column on the second pilot row",
+      "passed": true
+    },
+    {
+      "name": "left wraps within the row to Niel",
+      "passed": true
+    },
+    {
+      "name": "mouse roster click selects without launching",
+      "passed": true
+    },
+    {
+      "name": "Start confirms pilot before mission selection",
+      "passed": true
+    },
+    {
+      "name": "logical B returns mission selector to pilot selection",
+      "passed": true
+    },
+    {
+      "name": "pilot selection reaches playable Level 2 with chosen pilot",
+      "passed": true
+    },
+    {
+      "name": "D-pad drives east while X independently fires north with zero axes",
+      "passed": true
+    },
+    {
+      "name": "adjacent X and Y produce exact northwest diagonal fire",
+      "passed": true
+    },
+    {
+      "name": "controller C holds charge and releases the powerful cannon",
+      "passed": true
+    },
+    {
+      "name": "Mode holds the tank hull while D-pad strafes",
+      "passed": true
+    },
+    {
+      "name": "Mode plus Z throws one smoke grenade",
+      "passed": true
+    },
+    {
+      "name": "keyboard I and mouse wheel cannot swap tank weapons",
+      "passed": true
+    },
+    {
+      "name": "new tank weapon pickup replaces the gun without storing a swap inventory",
+      "passed": true
+    },
+    {
+      "name": "holding controller Z acquires a visible enemy after the lock delay",
+      "passed": true
+    },
+    {
+      "name": "C releases a Retina missile, consumes one stock, hits the locked enemy and Z release clears lock",
+      "passed": true
+    },
+    {
+      "name": "Retina refuses enemies behind solid cover",
+      "passed": true
+    },
+    {
+      "name": "Warrior entry and fight retain camera zoom exactly one",
+      "passed": true
+    },
+    {
+      "name": "Warrior Retina exposes individual live modular parts",
+      "passed": true
+    },
+    {
+      "name": "Machinists fight retains camera zoom exactly one",
+      "passed": true
+    },
+    {
+      "name": "destroyed modular parts invalidate their committed Retina target",
+      "passed": true
+    },
+    {
+      "name": "infantry pickups replace the gun and wheel/keyboard cannot swap it",
+      "passed": true
+    },
+    {
+      "name": "stick-free directional fire also works while running on foot",
+      "passed": true
+    },
+    {
+      "name": "Mode plus A reloads and Mode plus X toggles prone without firing",
+      "passed": true
+    },
+    {
+      "name": "setup learns D-pad and all eight physical buttons on a nonstandard mapping",
+      "passed": true
+    },
+    {
+      "name": "learned Start closes setup and restores gameplay",
+      "passed": true
+    },
+    {
+      "name": "learned controller mapping drives and fires with no analog axes",
+      "passed": true
+    },
+    {
+      "name": "zero browser, console and missing-asset errors",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "hardware": "Synthetic Gamepad API reports; physical M30 not connected",
+  "base_suite": {
+    "exit_code": 1,
+    "failures": [
+      "the rails are given room in windowed mode and none in fullscreen",
+      "the fit accounts for the HUD and the divider"
+    ],
+    "scope": "Current base-game HUD work outside this expansion revision"
+  },
+  "other_expansion_probes": {
+    "Warrior": {
+      "passed": 23,
+      "total": 23
+    },
+    "campaign": {
+      "passed": 29,
+      "total": 29
+    }
+  }
+}

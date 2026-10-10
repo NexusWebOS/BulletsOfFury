@@ -1,4 +1,18 @@
+> October 8 revision: current controls and mission flow are in [README.md](README.md).
+> Pilot selection now boots first with two rows of six. Boss fights retain normal
+> scale. Pickups replace the equipped gun; the former swap inventory is retired.
+> Six-button controllers use independent D-pad movement and directional face-button
+> fire, with C charge and Z Retina. The research notes below preserve earlier design history.
+
 # Overdrive Ground Operations: design notes
+
+## October 9, 2026 — Level 5, Museum of Violence
+
+The Demolition Man museum stage, Mercs, Contra Hard Corps and the MGS layer merged into one on-foot
+mission. What came from which game, the engine hooks, the art and the verification are in
+[docs/MUSEUM_STUDY_1009.md](../../docs/MUSEUM_STUDY_1009.md). This answers the §1 table's open row for
+Demolition Man. Its systems were written from the game's published behaviour (no cartridge or
+emulator here), on top of the earlier SegaScope measurements below.
 
 ## October 8, 2026 — current implementation
 

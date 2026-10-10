@@ -55,6 +55,42 @@ for pilot,p in pilots.items():
         name=pilot+'_'+key[len(body)+1:]+'.png'
         paint(Image.open(ROOT/'expansion/ground'/meta['path']).convert('RGBA'),p).save(OUT/name)
         frames['fp_'+pilot+'_'+key[len(body)+1:]]={'file':'expansion/topdown/art/campaign_1008/'+name,'anchor':meta['pivot']}
+# The ground pack's west run is a mirrored east sequence, not loose west files.
+# Materialize that contract so runtime keys are valid in all four directions.
+from PIL import ImageOps
+for pilot,p in pilots.items():
+    for i in range(4):
+        east=frames['fp_'+pilot+'_run_east_'+str(i)];im=Image.open(ROOT/east['file']).convert('RGBA')
+        name=pilot+'_run_west_'+str(i)+'.png';ImageOps.mirror(im).save(OUT/name)
+        frames['fp_'+pilot+'_run_west_'+str(i)]={'file':'expansion/topdown/art/campaign_1008/'+name,
+            'anchor':[im.width-east['anchor'][0],east['anchor'][1]],'mirrored_source':east['file'],'pilot':pilot,'palette':p['color']}
+# Every gameplay action uses the same pilot paint as idle/run; shared blue
+# source sheets are retained unchanged. Keep each authored canvas and root pivot.
+import hashlib
+action_checks=[]
+for pilot,p in pilots.items():
+    body=p['body']
+    requests=[('wm_'+body+'_prone_fire_'+d,'prone_fire_'+d) for d in ['north','east','south','west']]
+    requests += [('of_'+body+'_'+a,a) for a in ['roll_to_stand','roll_to_prone','grenade_throw','death']]
+    for source_seq,action in requests:
+        source=sequences[source_seq];ids=[]
+        for i,key in enumerate(source['frames']):
+            meta=frames[key];original=Image.open(ROOT/meta['file']).convert('RGBA')
+            rendered=paint(original.copy(),p);name=pilot+'_'+action+'_'+str(i)+'.png';rendered.save(OUT/name)
+            ident='fa_'+pilot+'_'+action+'_'+str(i);ids.append(ident)
+            frames[ident]={'file':'expansion/topdown/art/campaign_1008/'+name,'anchor':meta['anchor'],
+                'source':meta['file'],'pilot':pilot,'palette':p['color'],'size':list(original.size)}
+            action_checks.append({'frame':ident,'alpha_unchanged':original.getchannel('A').tobytes()==rendered.getchannel('A').tobytes(),
+                'source_sha256':hashlib.sha256((ROOT/meta['file']).read_bytes()).hexdigest()})
+        sequences['fa_'+pilot+'_'+action]=dict(source,frames=ids)
+# Calibrated muzzle points use the same frame, scale, anchor and rotation as drawing.
+for key,meta in frames.items():
+    if key.startswith('fp_') or key.startswith('fa_') and '_prone_fire_' in key:
+        im=Image.open(ROOT/meta['file']).convert('RGBA');box=im.getbbox();ax,ay=meta['anchor']
+        if '_aim_' in key: direction=['north','east','south','west'][int(key.rsplit('_',1)[1])]
+        else: direction=key.split('_')[-2]
+        meta['muzzle']={'north':[ax,box[1]+1],'east':[box[2]-2,ay],'south':[ax,box[3]-2],'west':[box[0]+1,ay]}[direction]
+(OUT/'action_palette_verification.json').write_text(json.dumps({'checks':action_checks,'all_alpha_unchanged':all(q['alpha_unchanged'] for q in action_checks)},indent=1)+'\n',encoding='utf-8')
 data={'frames':frames,'sequences':sequences,'pilots':pilots,'tanks':packs['windstorm_machinists']['tanks']}
 (OUT/'manifest.json').write_text(json.dumps(data,indent=1)+'\n')
 (OUT/'manifest.js').write_text('window.TD_CAMPAIGN_ART='+json.dumps(data,separators=(',',':'))+';\n')

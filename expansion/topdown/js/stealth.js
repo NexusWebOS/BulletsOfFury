@@ -100,6 +100,14 @@
       const alpha = mode === 'patrol' ? 0.5 : mode === 'alert' ? 0.85 : 0.75;
       ART.draw(ctx, 'bmfx_fov_' + col + '_' + shape, u.x, u.y, { a: u.look, sx, sy, ax: P.ax, ay: P.ay, alpha });
     },
+    drawGroundCones(ctx,units,t){
+      // Composite the whole group once so overlapping alerts cannot hide the map.
+      if(!this.coneCanvas){this.coneCanvas=document.createElement('canvas');this.coneCanvas.width=TD.VW;this.coneCanvas.height=TD.VH;}
+      const c=this.coneCanvas.getContext('2d');c.setTransform(1,0,0,1,0,0);c.clearRect(0,0,TD.VW,TD.VH);c.imageSmoothingEnabled=false;
+      c.translate(-TD.Cam.x,-TD.Cam.y);
+      for(const u of units)this.drawCone(c,u,t);
+      ctx.save();ctx.globalAlpha*=.30;ctx.drawImage(this.coneCanvas,TD.Cam.x,TD.Cam.y);ctx.restore();
+    },
     drawMark(ctx, u, t) {
       if (u.dead || !u.vis) return;
       const y = u.y - (u.markY || 34);

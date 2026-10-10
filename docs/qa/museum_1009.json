@@ -1,0 +1,254 @@
+{
+ "checks": [
+  {
+   "name": "museum plate, exhibits, hostages and exhibit tank art all decode",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "title shows a fourth card and deploys Level 5 briefing",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "on foot with four Hard Corps slots and three Mega Crash bombs",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "every route reaches the grand hall from the lobby (nav field)",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "the duct is solid standing, open prone",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "shot exhibit breaks once, stays as a broken plate and drops its fixed item",
+   "passed": true,
+   "detail": {
+    "dead": true,
+    "once": true,
+    "kind": "grenades",
+    "exhibits": 1
+   }
+  },
+  {
+   "name": "walking to a bound hostage frees them and they hand over their reward",
+   "passed": true,
+   "detail": {
+    "state": "freed",
+    "rescued": 1,
+    "drop": true
+   }
+  },
+  {
+   "name": "a player round that hits a hostage kills them for -5000",
+   "passed": true,
+   "detail": {
+    "state": "dead",
+    "lost": 1,
+    "penalty": 5000
+   }
+  },
+  {
+   "name": "Hall of Arms locks with laser curtains and spawns its first wave",
+   "passed": true,
+   "detail": {
+    "state": "locked",
+    "solid": true,
+    "spawned": 3,
+    "a0": 0
+   }
+  },
+  {
+   "name": "three waves clear, curtains drop, GHOST alert count restored",
+   "passed": true,
+   "detail": {
+    "state": "clear",
+    "waves": 3,
+    "open": true,
+    "alerts": 0,
+    "phase": "CAUTION"
+   }
+  },
+  {
+   "name": "A+B Mega Crash spends one bomb, clears on-screen enemies and rounds, does not reload",
+   "passed": true,
+   "detail": {
+    "used": 1,
+    "dead": true,
+    "eshots": 0,
+    "reload": 0,
+    "inv": true
+   }
+  },
+  {
+   "name": "CQC from behind takes a guard down silently (no round fired, no noise)",
+   "passed": true,
+   "detail": {
+    "dead": true,
+    "shots": 0,
+    "heard": false,
+    "cqc": 1
+   }
+  },
+  {
+   "name": "a guard who sees a fallen guard investigates and the museum goes to CAUTION",
+   "passed": true,
+   "detail": {
+    "mode": "suspect",
+    "phase": "CAUTION",
+    "found": true
+   }
+  },
+  {
+   "name": "prone crawls under a live laser; standing in it raises ALERT",
+   "passed": true,
+   "detail": {
+    "prone": {
+     "trips": 0,
+     "x": 217.1980342364266
+    },
+    "standing": "ALERT",
+    "trips": 1,
+    "alerts": 1
+   }
+  },
+  {
+   "name": "alarm panels call reinforcements; breaking them stops the calls",
+   "passed": true,
+   "detail": {
+    "before": true,
+    "after": false
+   }
+  },
+  {
+   "name": "prone pilot crawls up the duct and is hidden inside it",
+   "passed": true,
+   "detail": {
+    "y": 671.8467565984174,
+    "x": 400,
+    "hidden": true
+   }
+  },
+  {
+   "name": "walking into the exhibit tank boards it; hits land on its armour",
+   "passed": true,
+   "detail": {
+    "board": true,
+    "hp": 14,
+    "armour": 9,
+    "lives": 3
+   }
+  },
+  {
+   "name": "a destroyed tank ejects the pilot alive (no life lost) and leaves its wreck",
+   "passed": true,
+   "detail": {
+    "ejected": true,
+    "lives": true,
+    "deaths": true,
+    "wreck": true,
+    "gone": true
+   }
+  },
+  {
+   "name": "one hit kills; respawn keeps every gun except the one in hand, at the death point",
+   "passed": true,
+   "detail": {
+    "dead": true,
+    "ids": [
+     "desert_eagle",
+     "rocket_launcher"
+    ],
+    "x": 600,
+    "y": 520,
+    "alive": true
+   }
+  },
+  {
+   "name": "a fifth gun replaces the one in hand (four slots)",
+   "passed": true,
+   "detail": [
+    "desert_eagle",
+    "rocket_launcher",
+    "minigun",
+    "spread_shotgun"
+   ]
+  },
+  {
+   "name": "push-scroll never scrolls back and keeps the pilot on screen",
+   "passed": true,
+   "detail": {
+    "top": 226,
+    "after": 226,
+    "py": 574,
+    "bottom": 586
+   }
+  },
+  {
+   "name": "crossing into the grand hall wakes THE EXHIBIT",
+   "passed": true,
+   "detail": {
+    "name": "THE EXHIBIT",
+    "state": "enter"
+   }
+  },
+  {
+   "name": "breaking both missile pods tears it off the plinth (form 2 BREAKOUT)",
+   "passed": true,
+   "detail": {
+    "f1": 1,
+    "f2": 2,
+    "hp": 0.88
+   }
+  },
+  {
+   "name": "the warned ram runs green-yellow-red, then stalls on the wall with the hull open",
+   "passed": true,
+   "detail": {
+    "stall": true,
+    "seenRed": true,
+    "state": "recover"
+   }
+  },
+  {
+   "name": "turret down -> form 3 OVERDRIVE (stalled hull took double of the 15% armour rate)",
+   "passed": true,
+   "detail": {
+    "stalledDmg": 3,
+    "form": 3
+   }
+  },
+  {
+   "name": "the sonic wall leaves one crossing hole",
+   "passed": true,
+   "detail": {
+    "n": 16,
+    "gap": 90
+   }
+  },
+  {
+   "name": "destroying the hull clears the mission with hostage and exhibit tallies",
+   "passed": true,
+   "detail": {
+    "state": "clear",
+    "rows": [
+     "HOSTAGES",
+     "RESCUE BONUS",
+     "EXHIBITS"
+    ]
+   }
+  },
+  {
+   "name": "zero page, console and HTTP errors",
+   "passed": true,
+   "detail": []
+  }
+ ],
+ "passed": 28,
+ "total": 28
+}

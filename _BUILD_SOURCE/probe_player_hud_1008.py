@@ -97,7 +97,7 @@ try:
    # may resize the shell; async ready and drains cannot move it.
    for width,height in [(480,760),(390,844),(1600,1000)]:
     p.set_viewport_size({'width':width,'height':height});p.evaluate('()=>window.__bofFit()');draw();shot('viewport_'+str(width))
-    q=p.evaluate('()=>{const a=document.getElementById("game-frame").getBoundingClientRect(),b=document.getElementById("hud").getBoundingClientRect();return{left:a.left,right:a.right,w:innerWidth,hud:b.height,ratio:b.width/b.height};}')
+    q=p.evaluate('()=>{const a=document.getElementById("game-frame").getBoundingClientRect(),b=document.getElementById("hud-top").getBoundingClientRect(),c=document.getElementById("hud-bot").getBoundingClientRect();return{left:a.left,right:a.right,w:innerWidth,hud:b.height+c.height,ratio:b.width/(b.height+c.height)};}')   # 1009: score strip on top, housing under the playfield
     check(q['left']>=-1 and q['right']<=width+1 and abs(q['ratio']-480/104)<.15,'Complete fixed native HUD at viewport '+str(width),q)
    p.set_viewport_size({'width':1600,'height':1000});p.evaluate('()=>{document.body.classList.add("fs","wide-playing");window.__bofFit();}');draw();shot('fullscreen')
    check(p.evaluate('getComputedStyle(document.getElementById("hud-row")).display')!='none','Fullscreen keeps top HUD')

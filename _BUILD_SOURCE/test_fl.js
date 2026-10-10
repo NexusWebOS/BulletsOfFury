@@ -4592,14 +4592,16 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
     ok(seenTypes.has('s1tankapc'), 'stage 1: the sand tanks spawn during the live stage ('+Array.from(seenTypes).join(', ')+')');
     ok(!!tank && tank.sc>=860, 'stage 1: tanks land ON SHORE, after the 4212px plate clears its 800px water leg');
     ok(sawSub && tank && subScroll>tank.sc, 'stage 1: the miniboss arrives AFTER the tanks');
-    ok(vm.runInContext("buildStagePlan(1).filter(function(w){return w.fn._s1Ground;}).length===6 && buildStagePlan(1).filter(function(w){return w.fn._s1Ground;}).every(function(w){return w.fn._s1Pressure>=3&&w.fn._s1Pressure<=4;})",ctxv),
-       'stage 1: all six annotated tank files are terrain-gated with explicit pressure budgets');
+    /* 1009: the two coast markers whose hulls beached are tank files now (Mike: "those should be
+       tanks, not boats"), so eight ground files carry the terrain gate. */
+    ok(vm.runInContext("buildStagePlan(1).filter(function(w){return w.fn._s1Ground;}).length===8 && buildStagePlan(1).filter(function(w){return w.fn._s1Ground;}).every(function(w){return w.fn._s1Pressure>=3&&w.fn._s1Pressure<=4;})",ctxv),
+       'stage 1: all eight annotated tank files (six plus the two coast files) are terrain-gated with explicit pressure budgets');
     ok(vm.runInContext("SUBBOSS[1].afterWaveTime===34 && SUBBOSS[1].afterScroll===1400",ctxv),
        'stage 1: the miniboss gate sits after fast-jet ripple two');
     var mapped=JSON.parse(vm.runInContext("(function(){var p=buildStagePlan(1),out=[];for(var i=0;i<p.length;i++){mapScroll=p[i].fn._s1MapScroll||0;enemies.length=0;p[i].fn();out.push(enemies.map(function(e){return {t:e.type,x:e.x,y:e.y,bw:e.w,bh:e.h,u:e._unitSquare||0,v:e._vkind||'',w:e._s1Wave||0,k:!!e._s1Kamikaze,r:e._s1LeadRank};}));}return JSON.stringify(out);})()",ctxv));
-    var water=mapped.slice(0,6).reduce(function(a,b){return a.concat(b);},[]);
-    ok(water.length===10 && water.every(function(e){return /^s1boat|^s1corvette/.test(e.t);}),
-       'stage 1: all ten water markers are boats, including the corrected black marker and two left boats');
+    var water=mapped.slice(0,4).reduce(function(a,b){return a.concat(b);},[]);
+    ok(water.length===6 && water.every(function(e){return /^s1boat|^s1corvette/.test(e.t);}),
+       'stage 1: all six open-water markers are boats, including the two left boats (1009: the coast pair became tanks)');
     var fast=mapped.reduce(function(a,b){return a.concat(b);},[]).filter(function(e){return e.w>0;});
     ok(new Set(fast.map(function(e){return e.w;})).size===5 && fast.length>=25 && fast.length<=30 &&
        [1,2,3,4,5].every(function(w){var row=fast.filter(function(e){return e.w===w;});return row.length>=5&&row.length<=6&&row.some(function(e){return e.r===0;});}),
@@ -4617,8 +4619,8 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
       if(Math.abs(A.x-B.x)<=(A.bw+B.bw)/2 && Math.abs(A.y-B.y)<=(A.bh+B.bh)/2) tankTouch=true;
     }});
     ok(!tankTouch, 'stage 1: no two tanks in any authored file touch or share a square footprint');
-    ok(vm.runInContext("STAGES[0].length===82 && buildStagePlan(1).length===21 && buildStagePlan(1).filter(function(w){return w.fn._modGroundTurret;}).length===2",ctxv),
-       'stage 1: 19 map beats and 2 grounded turret beats reach the dam at 82 seconds');
+    ok(vm.runInContext("STAGES[0].length===82 && buildStagePlan(1).length===23 && buildStagePlan(1).filter(function(w){return w.fn._modGroundTurret;}).length===2",ctxv),
+       'stage 1: 21 map beats (1009 adds two side-swoop jet pairs) and 2 grounded turret beats reach the dam at 82 seconds');
     ok(order.some(function(o){return o.t==='s1jetdelta';}), 'stage 1 contains the fast delta-jet ripple');
     /* ENTRY DIRECTION AND PROJECTILES (drop 0801kf). Mike: "planes flying in from
        the bottom of the screen when I said the top", "your using the old bullets",
@@ -6729,7 +6731,8 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
     var fitSource=_html.slice(_html.indexOf('var GW=480'),_html.indexOf('var L = fit;'));
     vm.runInNewContext(fitSource+'\nfit();',env);
     return {width:parseFloat(nodes['game-frame'].style.width),height:parseFloat(nodes['game-frame'].style.height),
-      hud:parseFloat(nodes['hud-row'].style.height),divider:parseFloat(nodes['hud-div'].style.height),
+      hud:parseFloat(nodes['hud-row'].style.height)+(parseFloat((nodes['hud-bottom']||{style:{}}).style.height)||0),
+      divider:parseFloat(nodes['hud-div'].style.height)+(parseFloat((nodes['hud-div2']||{style:{}}).style.height)||0),
       screen:parseFloat(nodes['screen'].style.height)};
   }
   var _windowFit=_fitShell(1000,2000,false,true),_fullFit=_fitShell(1000,2000,true,true),
@@ -11902,7 +11905,7 @@ console.log("=== 230. Stage-1 gunfighters + scoped loopcharge/homing ===");
      now showcases one of the eight distinct hull controllers rather than padding density with
      aliases; concurrency still comes from the authored formations inside those rows. */
   ok(_p3.s3===12, 'stage 3 fields eight ice waves, two new drone waves and two ground turrets ('+_p3.s3+' waves)');
-  ok(_p3.s1===21, 'stage 1 uses 19 authored map beats and two ground turrets ('+_p3.s1+')');
+  ok(_p3.s1===23, 'stage 1 uses 21 authored map beats and two ground turrets ('+_p3.s1+')');
   ok(vm.runInContext("DIFFS.normal.density===1.00", ctxv),
      'NORMAL density is raised to 1.00 — "increase the amount of enemies"');
   ok(vm.runInContext('stageAiProfile(1).cap>=9 && stageAiProfile(3).cap>=6 && stageAiProfile(9).cap>=stageAiProfile(3).cap',ctxv) &&

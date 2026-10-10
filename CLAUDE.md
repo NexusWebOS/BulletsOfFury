@@ -1,3 +1,61 @@
+# 2026-10-10 — orb rework (LOCAL ONLY)
+
+Mike: orbs were the weakest weapons and some "just disappear with no effects". [Report](docs/ORBS_1010.md);
+probe `_BUILD_SOURCE/probe_orbs_1010.py`. Owner `assets/orbs_1010.js` (after feedback_1009.js) replaces
+playerOrbTick and wraps Yuri's lightning orb. Per-level damage table, element-specific blasts, every
+ending detonates (externally deleted orbs too), contact hits carry the orb's element, orbs lean toward
+live targets and hit any solid part inside their radius. pShoot: 1/2/3 orbs at lv1/3/5, 0.3 s relaunch
+gap. Traps: orb contact tested only its centre (passed through the Razorback's sealed plate); Stage 6's
+opening locks all weapons (s6OpeningEnd does not clear it in probes, set s6Opening=null). Suite 7,952/0.
+
+# 2026-10-09 — feedback pass: Level 5 local, HUD to the bottom, Stage 1/2/4 fixes (LOCAL ONLY)
+
+Mike's playtest list. [Report](docs/FEEDBACK_1009.md); probe `_BUILD_SOURCE/probe_feedback_1009.py`
+(map, stage1, s1boss, s2boss, clear, hud, s4barrels). Merged `origin/claude/sweet-mayer-oaj2q4`
+(Level 5 museum, frame pacing, boss bars, finale forms) into the local tree file by file. Local
+expansion work is kept. Pre-merge snapshot: stash "pre-level5-merge safety 1009". Expansion Level 3
+is `hidden:true` (menu/progression only, nothing deleted). New owners: `assets/feedback_1009.js`
+(loaded last) and `assets/campaign_follow_1009.js`. HUD: `#hud` is now an off-screen surface; the
+score strip copies to `#hud-top`, the housing to `#hud-bot` under the playfield, and `fit()` splits
+the budget. Traps worth knowing: the Stage 1 land mask cached the old 800x3616 map whenever the plate
+decoded late (every boat beached); `enemySeparate` landed whole corrections in one frame (the
+"jerking"); jetTick's last branch fires for `_atk:'none'`; the catch-all exit push moves any
+non-prop after 9 s. No art generated (bomber art and jet roll reels still need it). Not committed.
+
+# 2026-10-09 — frame pacing: one logic tick per displayed frame
+
+Mike wants Shadow Gangs Zero's Neo Geo smoothness. The 60 Hz combat clock's accumulator split ticks 0/2 on
+51% of frames at an exact 60 Hz display (probe_pacing_1009.py). assets/frame_pacing_1009.js (after
+maneuver_safety_1007.js) locks cadence to the display; expansion/topdown main.js does the same and ART.draw
+rounds sprites to world pixels. Suite 7,952/0 + banner; expansion probes 28/29/23 all pass.
+Read [docs/FRAME_PACING_1009.md](docs/FRAME_PACING_1009.md). Do not reintroduce a bare accumulator.
+
+# 2026-10-09 — Level 5 MUSEUM OF VIOLENCE (Mercs x Demolition Man x Hard Corps x MGS)
+
+Mike asked to study Mercs, Demolition Man (museum stage) and Contra Hard Corps and merge them with the
+stealth layer in the top-down section. New on-foot mission in `expansion/topdown/` (js/museum.js,
+museum_place.js, level5_data.js, boss_exhibit.js; art/museum_1009 from SpriteCook, 10 credits left).
+No ROM/emulator here and no decompilation: systems are original, written from published behaviour plus
+DESIGN.md's earlier SegaScope numbers. Read [docs/MUSEUM_STUDY_1009.md](docs/MUSEUM_STUDY_1009.md).
+Mission hooks in main.js gate everything on the mission; rect type 'd' = prone-only duct; World.navR is
+per mission (14 tanks, 9 museum). Probe 28/28 zero errors; old probes 29/29 and 23/23 via a favicon stub
+(this Chromium logs the favicon 404 without a URL). Base game untouched.
+
+# 2026-10-08 — GitHub publication: live player HUD and encounter bars
+
+Mike authorized publishing the completed HUD integration. Ten authored stage rows
+now show live equipment, stocks, cooldowns, specials, loans, radar and lock state;
+complete miniboss nameplates, co-op rows, independent Rebel bars and Dracodia's
+actual HP pools/eight colored refills are verified. Source crop provenance,
+reproducible builder, native probe and portable QA ship with the runtime.
+See [integration report](docs/PLAYER_HUD_1008.md) and
+[verification results](docs/qa/player_hud_1008.json): 7,952 regression assertions,
+450 native Chromium checks, final success banners and zero errors. Captures use
+protected rendering fixtures, not a new balance sign-off. Base game/test bytes and
+line endings are unchanged. Earlier local HUD notes are verification checkpoints
+for this publication. Unrelated expansion work and scratch remain local.
+
+
 # 2026-10-09 — GitHub publication: fullscreen and readable HUD
 
 Mike authorized publishing the completed fullscreen/HUD improvements. Browser

@@ -1,0 +1,88 @@
+{
+  "checks": [
+    {
+      "name": "continuous keyboard route reaches (400, 640)",
+      "passed": true
+    },
+    {
+      "name": "continuous keyboard route reaches (500, 640)",
+      "passed": true
+    },
+    {
+      "name": "continuous keyboard route reaches (500, 420)",
+      "passed": true
+    },
+    {
+      "name": "continuous keyboard route reaches (400, 410)",
+      "passed": true
+    },
+    {
+      "name": "continuous keyboard route reaches (400, 170)",
+      "passed": true
+    },
+    {
+      "name": "fortress still blocks the exit until its sentries die",
+      "passed": true
+    },
+    {
+      "name": "actual walking crosses the unlocked north gate",
+      "passed": true
+    },
+    {
+      "name": "continuous beach-to-gate traversal completes the mission",
+      "passed": true
+    },
+    {
+      "name": "all recolored action frames preserve source alpha",
+      "passed": true
+    },
+    {
+      "name": "all twelve pilots use decoded matching-palette poses through every heading and prone/standing transition",
+      "passed": true
+    },
+    {
+      "name": "real prone key, west crawl and stand while moving retain valid colored poses for every pilot",
+      "passed": true
+    },
+    {
+      "name": "real roll input returns cleanly to both standing and prone stances",
+      "passed": true
+    },
+    {
+      "name": "running east while aiming north draws one north-facing held gun with its body and shadow",
+      "passed": true
+    },
+    {
+      "name": "actual bullet starts at the same rotated muzzle as the rendered pose",
+      "passed": true
+    },
+    {
+      "name": "roll, grenade and death keep the selected pilot palette and authored orientation",
+      "passed": true
+    },
+    {
+      "name": "nine overlapping alert cones retain at least 70 percent of the visible map background",
+      "passed": true
+    },
+    {
+      "name": "zero browser, console and missing-asset errors",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "route_fixture": "Real keyboard movement, incidental enemies disabled, legitimate sentry gate still exercised",
+  "regression_totals": {
+    "infantry_repair": 17,
+    "campaign": 29,
+    "controls": 29,
+    "tank": 23,
+    "total": 98
+  },
+  "base_suite": {
+    "exit_code": 1,
+    "unchanged_failures": [
+      "the rails are given room in windowed mode and none in fullscreen",
+      "the fit accounts for the HUD and the divider"
+    ]
+  }
+}

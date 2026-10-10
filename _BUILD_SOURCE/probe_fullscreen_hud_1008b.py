@@ -45,7 +45,7 @@ try:
     page.screenshot(path=str(OUT/f'{engine}_{width}.png'))
    page.keyboard.press('f');check(engine+' F exits CSS fallback',page.evaluate('!document.body.classList.contains("fs")'))
    page.set_viewport_size({'width':1920,'height':1080});page.evaluate('__bofFit()')
-   check(engine+' browser mode also fills available height',page.evaluate('Math.abs(document.getElementById("game-frame").getBoundingClientRect().height-innerHeight)<1'))
+   check(engine+' browser mode also fills available height',page.evaluate('(()=>{const f=document.getElementById("game-frame");return Math.abs(f.getBoundingClientRect().height+parseFloat(getComputedStyle(f).marginBottom||0)-innerHeight)<1;})()'))   # 1009: the control-hint strip keeps its own 30px under the bottom HUD
    page.evaluate('setState(GS.TITLE)');page.evaluate(shoot.STEP,2)
    check(engine+' menu clears the full dense HUD backing',page.evaluate('()=>!Array.from(hudctx.getImageData(0,0,hudcv.width,hudcv.height).data).some(Boolean)'))
    page.evaluate('document.body.classList.add("fs");__bofFit()');page.evaluate(shoot.STEP,2)

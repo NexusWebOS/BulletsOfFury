@@ -21,75 +21,86 @@
   };
   M.turnTo = (a, target, rate) => { const d = M.wrap(target - a); return Math.abs(d) <= rate ? target : a + Math.sign(d) * rate; };
 
-  // ------------------------------------------------------------------ input (Genesis 6-button)
-  // A fire, B cannon, C strafe-lock, X charge, Y smoke, Z weapon swap, START.
+  // Stick-free six-button controls. Movement and firing direction are independent.
   const BIND = TD.BIND = {
-    up: ['arrowup', 'w'], down: ['arrowdown', 's'], left: ['arrowleft', 'a'], right: ['arrowright', 'd'],
-    A: ['j', 'z'], B: ['k', 'x'], C: ['l', 'c', 'shift'], X: ['h', 'v', ' '], Y: ['u'], Z: ['i', 'n'],
-    aimLeft: ['q'], aimRight: ['e'], back: ['b', 'escape'], help: ['f1', '?'], start: ['enter', 'p'],
-    reload: ['r'], prone: ['f'], tapWall: ['t'],
+    up:['arrowup','w'],down:['arrowdown','s'],left:['arrowleft','a'],right:['arrowright','d'],
+    A:['j','z'],B:['k','x'],C:['l','c','shift'],X:['h','v',' '],Y:['u'],retina:['i','n'],
+    aimLeft:['q'],aimRight:['e'],back:['b','escape'],help:['f1','?'],setup:['f2'],start:['enter','p'],
+    reload:['r'],prone:['f'],tapWall:['t'],crash:['g'],exitVehicle:['o'],swap:['tab'],
   };
-  const PAD = { A: [0], B: [1], C: [5, 7], X: [2], Y: [3], Z: [4, 6], start: [9], back: [8] };
-  const keys = {}, prev = {};
-  root.addEventListener('keydown', e => { const k = e.key.toLowerCase(); keys[k] = true; if (k.startsWith('arrow') || k === ' ') e.preventDefault(); TD.Audio.unlock(); });
-  root.addEventListener('keyup', e => { keys[e.key.toLowerCase()] = false; });
-  root.addEventListener('blur', () => { for (const k in keys) keys[k] = false; pointer.buttons = {}; });
-  const pointer = { active: false, x: 0, y: 0, buttons: {} };
-  const screen = document.getElementById('screen');
-  function locate(e) {
-    const r = screen.getBoundingClientRect();
-    pointer.x = (e.clientX - r.left) * TD.VW / r.width;
-    pointer.y = (e.clientY - r.top) * TD.VH / r.height;
-    pointer.active = pointer.x >= 0 && pointer.y >= 0 && pointer.x < TD.VW && pointer.y < TD.VH;
-  }
-  screen.addEventListener('pointermove', locate);
-  screen.addEventListener('pointerdown', e => { locate(e); pointer.buttons[e.button] = true; TD.Audio.unlock(); e.preventDefault(); });
-  root.addEventListener('pointerup', e => { delete pointer.buttons[e.button]; });
-  screen.addEventListener('pointerleave', () => { pointer.active = false; });
-  screen.addEventListener('contextmenu', e => e.preventDefault());
-  let wheel = 0;
-  root.addEventListener('wheel', e => { wheel += Math.sign(e.deltaY); }, { passive: true });
-  const pad = { b: [], ax: [0, 0], aim: null };
-  function pollPad() {
-    const ps = root.navigator.getGamepads ? root.navigator.getGamepads() : [];
-    pad.b = []; pad.ax = [0, 0]; pad.aim = null;
-    for (const p of ps) if (p) {
-      p.buttons.forEach((b, i) => { if (b.pressed) pad.b[i] = true; });
-      if (Math.abs(p.axes[0]) > 0.35) pad.ax[0] = p.axes[0]; if (Math.abs(p.axes[1]) > 0.35) pad.ax[1] = p.axes[1];
-      if (p.buttons[12] && p.buttons[12].pressed) pad.ax[1] = -1; if (p.buttons[13] && p.buttons[13].pressed) pad.ax[1] = 1;
-      if (p.buttons[14] && p.buttons[14].pressed) pad.ax[0] = -1; if (p.buttons[15] && p.buttons[15].pressed) pad.ax[0] = 1;
-      if (Math.hypot(p.axes[2] || 0, p.axes[3] || 0) > 0.25) pad.aim = [p.axes[2], p.axes[3]];
-      break;
-    }
-  }
-  const Input = TD.Input = {
-    state: {}, last: {}, pointer,
-    update() {
-      pollPad();
-      this.last = this.state; const s = {};
-      for (const a in BIND) s[a] = BIND[a].some(k => keys[k]);
-      for (const a in PAD) if (PAD[a].some(i => pad.b[i])) s[a] = true;
-      if(pad.b[1])s.back=true;
-      if (pointer.buttons[0]) s.A = true;
-      if (pointer.buttons[2]) s.X = true;
-      if (pointer.buttons[1]) s.Y = true;
-      s.aim = pad.aim;
-      if (pad.ax[0] < 0) s.left = true; if (pad.ax[0] > 0) s.right = true;
-      if (pad.ax[1] < 0) s.up = true; if (pad.ax[1] > 0) s.down = true;
-      s.wheel = wheel; wheel = 0;
-      this.state = s;
+  const keys = {}, pointer = {active:false,x:0,y:0,buttons:{}}, screen=document.getElementById('screen');
+  root.addEventListener('keydown',e=>{const k=e.key.toLowerCase();keys[k]=true;if(k.startsWith('arrow')||[' ','f1','f2'].includes(k))e.preventDefault();TD.Audio.unlock();});
+  root.addEventListener('keyup',e=>{keys[e.key.toLowerCase()]=false;});
+  root.addEventListener('blur',()=>{for(const k in keys)keys[k]=false;pointer.buttons={};pointer.active=false;});
+  function locate(e){const r=screen.getBoundingClientRect();pointer.x=(e.clientX-r.left)*TD.VW/r.width;pointer.y=(e.clientY-r.top)*TD.VH/r.height;pointer.active=pointer.x>=0&&pointer.y>=0&&pointer.x<TD.VW&&pointer.y<TD.VH;}
+  screen.addEventListener('pointermove',locate);
+  screen.addEventListener('pointerdown',e=>{locate(e);pointer.buttons[e.button]=true;TD.Audio.unlock();e.preventDefault();});
+  root.addEventListener('pointerup',e=>{delete pointer.buttons[e.button];});
+  screen.addEventListener('pointerleave',()=>{pointer.active=false;});
+  screen.addEventListener('contextmenu',e=>e.preventDefault());
+  const DEFAULT_PAD={A:0,B:1,C:5,X:2,Y:3,Z:4,mode:8,start:9};
+  const SETUP_STEPS=['up','down','left','right','A','B','C','X','Y','Z','mode','start'];
+  let wheel=0;root.addEventListener('wheel',e=>{wheel+=Math.sign(e.deltaY);},{passive:true});
+  let queuedClick=false;screen.addEventListener("pointerdown",e=>{if(e.button===0)queuedClick=true;});
+  let activePad=null, profile=DEFAULT_PAD, saved={}, previousId=null;
+  try{saved=JSON.parse(localStorage.getItem('bof_td_controllers')||'{}');}catch(e){}
+  const Input=TD.Input={
+    state:{},last:{},pointer,setup:null,padId:null,
+    beginSetup(){this.setup={i:0,bindings:{},neutral:false,done:false};},
+    update(){
+      const pads=root.navigator.getGamepads?root.navigator.getGamepads():[];
+      activePad=Array.from(pads).find(p=>p&&p.connected!==false)||null;
+      this.padId=activePad?activePad.id:null;
+      if(this.padId!==previousId){profile=saved[this.padId]||DEFAULT_PAD;previousId=this.padId;}
+      const held=i=>!!(activePad&&activePad.buttons[i]&&activePad.buttons[i].pressed);
+      const mapped=name=>{const b=profile[name];return typeof b==='number'?held(b):b&&b.axis!=null?((activePad.axes[b.axis]||0)*b.sign>.55):false;};
+      this.last=this.state;const s={};for(const a in BIND)s[a]=BIND[a].some(k=>keys[k]);
+      if(this.setup){
+        if(this.setup.done)s.start||=mapped("start");
+        const q=this.setup;
+        if(s.back){this.setup=null;this.state=s;return;}
+        if(activePad&&!q.done){
+          const buttons=activePad.buttons.map((b,i)=>b.pressed?i:-1).filter(i=>i>=0);
+          const axes=activePad.axes.map((v,i)=>Math.abs(v)>.65&&Math.abs(v)<=1?{axis:i,sign:Math.sign(v)}:null).filter(Boolean);
+          // Hat axes often rest at >1. Ignore those; mapped D-pad buttons remain supported.
+          if(!buttons.length&&!axes.length)q.neutral=true;
+          else if(q.neutral){const move=q.i<4, binding=buttons.length===1?buttons[0]:move&&axes.length===1?axes[0]:null;
+            if(binding!=null){q.bindings[SETUP_STEPS[q.i++]]=binding;q.neutral=false;
+              if(q.i===SETUP_STEPS.length){profile=q.bindings;saved[activePad.id]=profile;try{localStorage.setItem('bof_td_controllers',JSON.stringify(saved));}catch(e){}q.done=true;}
+            }
+          }
+        }
+        this.state=s;return;
+      }
+      const menu=!TD.game||TD.game.state!=='play',mode=mapped('mode');
+      if(activePad){
+        if(activePad.buttons[12]?.pressed||mapped('up'))s.up=true;
+        if(activePad.buttons[13]?.pressed||mapped('down'))s.down=true;
+        if(activePad.buttons[14]?.pressed||mapped('left'))s.left=true;
+        if(activePad.buttons[15]?.pressed||mapped('right'))s.right=true;
+        // Default M30 X-input D-pad can emulate the left stick. Learned profiles take precedence.
+        if(profile===DEFAULT_PAD){const ax=activePad.axes[0]||0,ay=activePad.axes[1]||0;if(ax<-.35)s.left=true;if(ax>.35)s.right=true;if(ay<-.35)s.up=true;if(ay>.35)s.down=true;}
+        if(mapped('start'))s.start=true;
+        if(menu){s.A||=mapped('A');s.back||=mapped('B')||mode;s.setup||=mode&&mapped('start');}
+        else{
+          const foot=TD.game.player?.onfoot;
+          if(mode){s.C=!foot||s.C;s.Y||=!foot&&mapped('Z');s.reload||=foot&&mapped('A');s.prone||=foot&&mapped('X');s.tapWall||=foot&&mapped('Y');s.swap||=foot&&mapped('B');s.crash||=foot&&mapped('C');s.exitVehicle||=!foot&&mapped('B');}
+          const dx=(mapped('B')?1:0)-(mapped('Y')?1:0),dy=(mapped('A')?1:0)-(mapped('X')?1:0);
+          if(!mode&&(dx||dy)){s.aim=[dx,dy];s.A=true;s.directionalFire=true;}
+          s.X||=mapped('C');if(!mode){if(foot)s.Y||=mapped('Z');else s.retina||=mapped('Z');}
+        }
+        if(Object.values(s).some(Boolean))TD.Audio.unlock();
+      }
+      s.wheel=wheel;wheel=0;s.click=!!pointer.buttons[0]||queuedClick;queuedClick=false;if(pointer.buttons[0])s.A=true;
+      if(pointer.buttons[2])s.X=true;if(pointer.buttons[1])s.Y=true;
+      s.padActive=!!activePad&&(!!s.aim||!!s.up||!!s.down||!!s.left||!!s.right||mapped("Z")||mapped("C"));
+      this.state=s;
     },
-    down(a) { return !!this.state[a]; },
-    tap(a) { return !!this.state[a] && !this.last[a]; },
-    released(a) { return !this.state[a] && !!this.last[a]; },
-    dir() { const s = this.state; return [(s.right ? 1 : 0) - (s.left ? 1 : 0), (s.down ? 1 : 0) - (s.up ? 1 : 0)]; },
-    aim(p) {
-      if (this.state.aim) return M.angTo(0, 0, ...this.state.aim);
-      if (pointer.active) return M.angTo(p.x, p.y, pointer.x / TD.Cam.zoom + TD.Cam.x, pointer.y / TD.Cam.zoom + TD.Cam.y);
-      return null;
-    },
-    // menus: any face button confirms (0918f lesson), B / back / escape never does
-    confirm() { return this.tap('A') || this.tap('C') || this.tap('X') || this.tap('start'); },
+    down(a){return !!this.state[a];},tap(a){return !!this.state[a]&&!this.last[a];},released(a){return !this.state[a]&&!!this.last[a];},
+    dir(){const s=this.state;return[(s.right?1:0)-(s.left?1:0),(s.down?1:0)-(s.up?1:0)];},
+    aim(p){if(this.state.aim)return TD.M.angTo(0,0,...this.state.aim);if(pointer.active&&!this.state.padActive)return TD.M.angTo(p.x,p.y,pointer.x/TD.Cam.zoom+TD.Cam.x,pointer.y/TD.Cam.zoom+TD.Cam.y);return null;},
+    confirm(){return this.tap('A')||this.tap('start');},
+    setupLabel(){return this.setup?.done?'SAVED - RELEASE START, THEN PRESS START':!activePad?'CONNECT YOUR CONTROLLER':('PRESS '+SETUP_STEPS[this.setup?.i||0].toUpperCase());},
   };
 
   // ------------------------------------------------------------------ audio (BOF's own samples)
@@ -139,7 +150,7 @@
       this.w = w; this.h = h; this.rects = rects.map(r => ({ x0: r[0], y0: r[1], x1: r[2], y1: r[3], t: r[4] }));
       this.buckets = []; for (let i = 0; i <= Math.ceil(h / this.BK); i++) this.buckets.push([]);
       for (const r of this.rects) for (let b = Math.floor(r.y0 / this.BK); b <= Math.floor(r.y1 / this.BK); b++) if (this.buckets[b]) this.buckets[b].push(r);
-      this.smokes = []; Nav.build();
+      this.smokes = []; this.navR = 14; Nav.build();
     },
     near(y0, y1) {
       const out = new Set();
@@ -152,7 +163,7 @@
       if (o.x < r) { o.x = r; hit = true; } if (o.x > this.w - r) { o.x = this.w - r; hit = true; }
       if (o.y < r) { o.y = r; hit = true; } if (o.y > this.h - r) { o.y = this.h - r; hit = true; }
       for (const q of this.near(o.y - r, o.y + r)) {
-        if (q.dead || (q.t === 'h' && !blocksHedge)) continue;
+        if (q.dead || (q.t === 'h' && !blocksHedge) || (q.t === 'd' && o.stance === 'prone')) continue;   // 'd' duct: crawl only
         const cx = M.clamp(o.x, q.x0, q.x1), cy = M.clamp(o.y, q.y0, q.y1), dx = o.x - cx, dy = o.y - cy, d2 = dx * dx + dy * dy;
         if (d2 >= r * r) continue;
         hit = true;
@@ -173,7 +184,7 @@
       for (const q of this.near(Math.min(ay, by), Math.max(ay, by))) {
         if (q.dead) continue;
         if (q.t === 'v') continue;
-        if (q.t === 'h' && ((ax >= q.x0 && ax <= q.x1 && ay >= q.y0 && ay <= q.y1) || (bx >= q.x0 && bx <= q.x1 && by >= q.y0 && by <= q.y1))) continue;
+        if ((q.t === 'h' || q.t === 'd') && ((ax >= q.x0 && ax <= q.x1 && ay >= q.y0 && ay <= q.y1) || (bx >= q.x0 && bx <= q.x1 && by >= q.y0 && by <= q.y1))) continue;
         if (segRect(ax, ay, bx, by, q)) return false;
       }
       for (const s of this.smokes) if (segCircle(ax, ay, bx, by, s.x, s.y, s.r * Math.min(1, s.t / 0.6))) return false;
@@ -205,7 +216,8 @@
       this.walk = new Uint8Array(this.cols * this.rows);
       for (let r = 0; r < this.rows; r++) for (let c = 0; c < this.cols; c++) {
         const x = c * C + C / 2, y = r * C + C / 2; let ok = 1;
-        for (const q of World.near(y - 14, y + 14)) if (!q.dead && (q.t === 'b' || q.t === 'v') && x + 14 > q.x0 && x - 14 < q.x1 && y + 14 > q.y0 && y - 14 < q.y1) { ok = 0; break; }
+        const R = World.navR;   // clearance: 14 for tanks; an infantry mission narrows it (museum galleries)
+        for (const q of World.near(y - R, y + R)) if (!q.dead && (q.t === 'b' || q.t === 'v' || q.t === 'd') && x + R > q.x0 && x - R < q.x1 && y + R > q.y0 && y - R < q.y1) { ok = 0; break; }
         this.walk[r * this.cols + c] = ok;
       }
       this.fields = {};

@@ -15,12 +15,13 @@
 <canvas id="screen" width="960" height="720"></canvas>
 <!-- Bullets of Fury's own manifest: every sprite this page draws is resolved through it -->
 <script src="../../assets/manifest.js"></script>
-<script src="art/ground_1008/manifest.js?v=overdrive1008-final"></script>
-<script src="art/campaign_1008/manifest.js?v=overdrive1008-final"></script>
+<script src="art/ground_1008/manifest.js?v=overdrive1009-museum"></script>
+<script src="art/campaign_1008/manifest.js?v=overdrive1009-museum"></script>
+<script src="art/museum_1009/manifest.js?v=overdrive1009-museum"></script>
 <script>
   // every module is loaded with the build stamp, so a browser never runs a stale copy after an edit
   (function () {
-    var V = 'overdrive1008-final', files = ['art', 'core', 'stealth', 'tank', 'structures', 'boss_warrior', 'level2_map', 'level2_data', 'campaign', 'boss_machinists', 'main'];
+    var V = 'overdrive1009-museum', files = ['art', 'core', 'stealth', 'tank', 'structures', 'boss_warrior', 'level2_map', 'level2_data', 'campaign', 'boss_machinists', 'retina', 'pilot', 'level5_data', 'museum_place', 'museum', 'boss_exhibit', 'main'];
     files.forEach(function (f) { document.write('<script src="js/' + f + '.js?v=' + V + '"><\/script>'); });
   }());
 </script>

@@ -25,6 +25,7 @@
     B.position = key => B.world(PARTS[key].hx, PARTS[key].hy, key === 'hull');
     B.muzzle = key => B.world(PARTS[key].mx, PARTS[key].my);
     B.alive = () => !B.dead && B.state !== 'enter';
+    B.retinaTargets=()=>Object.keys(PARTS).filter(k=>B.parts[k]>0).map(k=>({id:'warrior:'+k,point:()=>B.position(k),valid:()=>B.alive()&&B.parts[k]>0}));
     B.hpFrac = () => Object.keys(B.parts).reduce((n, k) => n + Math.max(0, B.parts[k]), 0) / 356;
     B.aim = (sx, sy) => Object.keys(PARTS).filter(k => B.parts[k] > 0)
       .map(k => B.position(k)).sort((a, b) => M.dist(sx, sy, a.x, a.y) - M.dist(sx, sy, b.x, b.y))[0];

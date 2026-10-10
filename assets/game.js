@@ -3467,6 +3467,7 @@ function uiRect(screenKey, elKey, fallback){
   return o ? {x:o.x,y:o.y,w:o.w,h:o.h} : fallback;
 }
 let flyoverT=0, flyoverScroll=0, flyoverStartX=0, flyoverStartY=0;
+const FLYOVER_HOVER_INPUT=false;   // 1009: the stage-clear hover ignores the stick
 let damBroken=false;   // stage-1: flips true when the dam boss dies -> swap to map1-4 under the white fade
 /* animated terrain underlay: tile water/lava frames, flowing DOWNWARD with the advance */
 /* ON-SCREEN LIQUID PROBE (drop 0801ez). Five attempts at this from my side have
@@ -13978,10 +13979,15 @@ function buildStagePlan(stageNum){
     atMap(3360,()=>{ spawnEnemy('s1boatgun',lane(.78),-52,{});
                      spawnEnemy('s1boatpatrol',lane(.34),-92,{}); },{sea:true});
     atMap(3200,()=>{ spawnEnemy('s1corvette',lane(.63),-58,{}); },{sea:true});
-    atMap(3050,()=>{ spawnEnemy('s1boatgun',lane(.28),-54,{});
-                     spawnEnemy('s1boatpatrol',lane(.72),-88,{}); },{sea:true});
-    atMap(2910,()=>{ spawnEnemy('s1corvette',lane(.48),-60,{});
-                     spawnEnemy('s1boatgun',lane(.84),-96,{}); },{sea:true});
+    /* 1009 (Mike: "no boats on land... coming up the coast those should be tanks, not boats"):
+       these two markers sit where the shoreline arrives, so their hulls beached and slid down over
+       the jungle. They are armour on the beach now; the open-water boats above are unchanged. */
+    atMap(3050,()=>tankFile([[.28,'s1tanklight'],[.72,'s1tankapc']]),{ground:true,pressure:3});
+    atMap(2910,()=>tankFile([[.48,'s1tankheavy','jungleMissile'],[.84,'s1tanklight']]),{ground:true,pressure:3});
+
+    /* 1009 (Mike): two jets swing in from the left and right edges, carve down and dive off the
+       bottom - somersault, guns and a missile. The pair is owned by feedback_1009.js. */
+    atMap(3130,()=>{ if(typeof fb9SwoopPair==='function') fb9SwoopPair(); },{pressure:4});
 
     /* COAST / JUNGLE — yellow jet ripple one, lane-locked armour, then ripple two. */
     atMap(2760,()=>jetRipple([.17,.38,.62,.83],
@@ -14004,6 +14010,7 @@ function buildStagePlan(stageNum){
     atMap(1810,()=>tankFile([[.16,'s1tankheavy','jungleMissile'],[.42,'s1tanklight'],
                              [.68,'s1tankapc'],[.86,'s1truckmissile','jungleMissile']]),
       {ground:true,pressure:4});
+    atMap(1700,()=>{ if(typeof fb9SwoopPair==='function') fb9SwoopPair(); },{pressure:4});
     atMap(1590,()=>jetRipple([.12,.34,.60,.88],
       ['s1jetdelta_b','s1jetdelta','s1jetbomber','s1jetdelta']),{pressure:6});
     atMap(1400,()=>tankFile([[.26,'s1tankapc'],[.52,'s1tankheavy','jungleMissile'],[.78,'s1tanklight']]),
@@ -29706,11 +29713,14 @@ function pShoot(){
   } else if(w===6){ // LASER MIST — Stage-9 victory reward, three lanes and two real split beats
     laserMistFire(lv);
   } else if(w===5){ // ICE ORB — D2 frozen-orb: spins upward, sprays shards, pierces; one orb at a time (two at lv5)
-    const maxOrbs = lv>=5?2:1;
-    let live=0; for(const b of pBullets){ if(b.kind==='orb') live++; }
-    if(live<maxOrbs){
+    /* 1010 (Mike: orbs were the most underwhelming weapon): two orbs in the air from level 3, three
+       at level 5. Damage, blasts and element behaviour are owned by assets/orbs_1010.js. */
+    const maxOrbs = lv>=5?3:lv>=3?2:1;
+    let live=0; for(const b of pBullets){ if(b.kind==='orb'&&!b.dead) live++; }
+    // a contact orb that bursts point-blank comes straight back; 0.3 s keeps it a cannon, not a hose
+    if(live<maxOrbs && !(player._orbCd>0)){ player._orbCd=0.3;
       const shardN=(({1:3,2:5,3:7,4:9,5:9})[lv]||3)+(forgeActiveTier(5)>=3?2:0);
-      const vx=(maxOrbs>1)?(live===0?-1.5:1.5):0;
+      const vx=(maxOrbs>1)?[-1.5,1.5,0][live]||0:0;
       /* `_ts` rides on the orb rather than being re-asked at draw time — an orb already in
          flight when the slot changes must keep being the orb it was launched as. Same reason
          `lv` is captured here and not read off `run` by the draw. */
@@ -75466,9 +75476,11 @@ function drawFlyover(dt){
      A HOVER beat is added in front of the climb - the ship sits and idles while
      the last blasts die out, the music cuts, and only then does it go. */
   const HOVER=HOVER_T;                           // seconds of hanging while the clear title types
-  /* The fly-off hover is still playable. Stop accepting input at the first climb frame,
-     then use the pilot's last position as the takeoff origin. */
-  if(flyoverT<HOVER && !player.dead){
+  /* The fly-off hover is NOT playable (Mike, 1009: "we should not be able to move when that pause
+     and the music kicks in... I was able to slide over and it just looked weird"). The clear
+     title and music own these seconds; the ship holds where the fight left it and then climbs.
+     FLYOVER_HOVER_INPUT restores the old steerable hover if it is ever wanted back. */
+  if(FLYOVER_HOVER_INPUT && flyoverT<HOVER && !player.dead){
     let mx=0,my=0;
     if(Input.hold(1,'left')) mx--;
     if(Input.hold(1,'right')) mx++;
