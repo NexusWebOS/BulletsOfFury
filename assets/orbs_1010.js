@@ -120,6 +120,7 @@ function fb10HitEncounter(b,dmg,x,y,radius){
 }
 function fb10Blast(b,x,y,why){
  if(b._fb10Ended)return;b._fb10Ended=why||true;
+ if(why==='impact')player._orbCd=Math.max(player._orbCd||0,.3);   // relaunch gap after a contact burst
  const F=fb10Init(b),k=F.k,lv=fb10Lv(b),r=F.r,dmg=F.blast,col=FB10_COLOR[k];
  // the blast itself: falloff from full at the centre to 60% at the rim
  fb10As(b,()=>{for(const e of enemies){if(e.dead||e._dyingT!=null)continue;
@@ -292,4 +293,4 @@ updatePlay=function(dt){
  return r;
 };
 const FB10_BEGIN=beginStage;
-beginStage=function(){fb10Clouds=[];return FB10_BEGIN.apply(this,arguments);};
+beginStage=function(){fb10Clouds=[];if(typeof player!=='undefined'&&player)player._orbCd=0;return FB10_BEGIN.apply(this,arguments);};

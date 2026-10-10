@@ -87,7 +87,7 @@ ROW = r"""(seconds)=>{
     for(const e of T){e.x=e.__home.x;e.y=e.__home.y;e.t=0;}
     player.invuln=1e9;player.x=worldWidth()/2;player.y=VH-70;Input.keys['j']=true;__frame();}
   Input.keys['j']=false;
-  return {dealt:T.reduce((a,e)=>a+(1e6-e.hp),0),log:__orbLog.slice()};
+  return {dealt:T.reduce((a,e)=>a+(1e6-e.hp),0),log:__orbLog.slice(),targets:T.length};
 }"""
 
 FIGHT = r"""([kind,which,seconds])=>{
@@ -149,7 +149,7 @@ def main():
                     r = pg.evaluate(ROW, 6)
                     why, silent = summarize(r['log'])
                     results['row'][name] = {'dps': round(r['dealt'] / 6, 1), 'orbs': len(r['log']), 'endings': why, 'silent': len(silent), 'silentSample': silent[:3]}
-                    print(f"ROW {name:16s} dps {r['dealt']/6:7.1f} orbs {len(r['log']):3d} silent {len(silent):3d} {json.dumps(why)[:240]}", flush=True)
+                    print(f"ROW {name:16s} targets {r.get('targets')} dps {r['dealt']/6:7.1f} orbs {len(r['log']):3d} silent {len(silent):3d} {json.dumps(why)[:240]}", flush=True)
                 results['row_errors'] = errs[:5]
                 pg.close()
             if MODE in ('bosses', 'all'):

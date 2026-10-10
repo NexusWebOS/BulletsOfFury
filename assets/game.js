@@ -29717,8 +29717,9 @@ function pShoot(){
        at level 5. Damage, blasts and element behaviour are owned by assets/orbs_1010.js. */
     const maxOrbs = lv>=5?3:lv>=3?2:1;
     let live=0; for(const b of pBullets){ if(b.kind==='orb'&&!b.dead) live++; }
-    // a contact orb that bursts point-blank comes straight back; 0.3 s keeps it a cannon, not a hose
-    if(live<maxOrbs && !(player._orbCd>0)){ player._orbCd=0.3;
+    // a contact orb that bursts point-blank would come straight back; orbs_1010.js starts a 0.3 s gap
+    // when one bursts on contact, so it stays a cannon, not a hose
+    if(live<maxOrbs && !(player._orbCd>0)){
       const shardN=(({1:3,2:5,3:7,4:9,5:9})[lv]||3)+(forgeActiveTier(5)>=3?2:0);
       const vx=(maxOrbs>1)?[-1.5,1.5,0][live]||0:0;
       /* `_ts` rides on the orb rather than being re-asked at draw time — an orb already in
