@@ -1,0 +1,3900 @@
+{
+  "source": {
+    "file": "C:/Users/Mdogg/Videos/2026-10-10 21-25-04.mp4",
+    "duration": 2266.70875,
+    "sha256": "6f2ec89aa1af4f12ca374edce7cfab6c1dcbdfe3fa0a831518640563c0c71bbd",
+    "timeline_captures": 151
+  },
+  "verification": {
+    "full_suite_final_summary": "FALVA/LIZZIE BUILD OK, 0 ERRORS",
+    "passing_assertions": 8414,
+    "native_reports": {
+      "verified": {
+        "passed": 27,
+        "failed": 0,
+        "checks": [
+          {
+            "name": "yuri shield draws against its actual opaque hull",
+            "passed": true,
+            "data": {
+              "hull": {
+                "w": 145,
+                "h": 179,
+                "x": 4,
+                "y": -4,
+                "sourceH": 229
+              },
+              "draws": 3
+            }
+          },
+          {
+            "name": "falva shield draws against its actual opaque hull",
+            "passed": true,
+            "data": {
+              "hull": {
+                "w": 169,
+                "h": 206,
+                "x": 2.5,
+                "y": -6,
+                "sourceH": 238
+              },
+              "draws": 6
+            }
+          },
+          {
+            "name": "cole shield draws against its actual opaque hull",
+            "passed": true,
+            "data": {
+              "hull": {
+                "w": 148,
+                "h": 204,
+                "x": -0.5,
+                "y": -6,
+                "sourceH": 232
+              },
+              "draws": 9
+            }
+          },
+          {
+            "name": "maverick shield draws against its actual opaque hull",
+            "passed": true,
+            "data": {
+              "hull": {
+                "w": 159,
+                "h": 184,
+                "x": 13.5,
+                "y": 0.5,
+                "sourceH": 211
+              },
+              "draws": 12
+            }
+          },
+          {
+            "name": "axel shield draws against its actual opaque hull",
+            "passed": true,
+            "data": {
+              "hull": {
+                "w": 136,
+                "h": 155,
+                "x": 1,
+                "y": 1.5,
+                "sourceH": 224
+              },
+              "draws": 15
+            }
+          },
+          {
+            "name": "juggernaut shield draws against its actual opaque hull",
+            "passed": true,
+            "data": {
+              "hull": {
+                "w": 164,
+                "h": 169,
+                "x": 11,
+                "y": 0,
+                "sourceH": 205
+              },
+              "draws": 18
+            }
+          },
+          {
+            "name": "lizzie shield draws against its actual opaque hull",
+            "passed": true,
+            "data": {
+              "hull": {
+                "w": 158,
+                "h": 202,
+                "x": 11,
+                "y": -3.5,
+                "sourceH": 243
+              },
+              "draws": 21
+            }
+          },
+          {
+            "name": "decker shield draws against its actual opaque hull",
+            "passed": true,
+            "data": {
+              "hull": {
+                "w": 157,
+                "h": 202,
+                "x": 9.5,
+                "y": 6,
+                "sourceH": 230
+              },
+              "draws": 24
+            }
+          },
+          {
+            "name": "freezer shield draws against its actual opaque hull",
+            "passed": true,
+            "data": {
+              "hull": {
+                "w": 144,
+                "h": 166,
+                "x": 1.5,
+                "y": 0,
+                "sourceH": 194
+              },
+              "draws": 27
+            }
+          },
+          {
+            "name": "Forged Ice Laser creates and automatically stamps a continuous damaging beam",
+            "passed": true,
+            "data": {
+              "bullets": [
+                {
+                  "inf": "ice",
+                  "w": 26,
+                  "top": -20,
+                  "bot": 385.36
+                }
+              ],
+              "draws": 1
+            }
+          },
+          {
+            "name": "Atomic impact owns the trigger, then immediately restores the normal gun",
+            "passed": true,
+            "data": {
+              "muted": true,
+              "restored": true
+            }
+          },
+          {
+            "name": "Frost Cruiser nuclear reveal naturally returns to a hittable actor",
+            "passed": true,
+            "data": {
+              "noHit": false,
+              "revealed": true,
+              "mode": "elite-ball1002"
+            }
+          },
+          {
+            "name": "Real hits dismantle both Frost guns and leave three physical core attacks",
+            "passed": true,
+            "data": {
+              "guns": [
+                true,
+                true
+              ],
+              "history": [
+                "recover",
+                "elite-ball1002",
+                "recover",
+                "recover",
+                "p2-core-laser",
+                "recover",
+                "form-change",
+                "p2-core-charge",
+                "recover",
+                "p2-core-balls"
+              ],
+              "events": [
+                {
+                  "event": "attack",
+                  "ship": "frostcruiser",
+                  "mode": "p2-core-laser",
+                  "warm": 1.05
+                },
+                {
+                  "event": "attack",
+                  "ship": "frostcruiser",
+                  "mode": "p2-core-charge",
+                  "warm": 1.05
+                },
+                {
+                  "event": "attack",
+                  "ship": "frostcruiser",
+                  "mode": "p2-core-balls",
+                  "warm": 1.05
+                }
+              ]
+            }
+          },
+          {
+            "name": "Storm Sovereign has one attack owner and retains its generator objectives",
+            "passed": true,
+            "data": {
+              "shield": true,
+              "ram": null,
+              "mode": "p2-battery"
+            }
+          },
+          {
+            "name": "Storm Sovereign can be completed through generators, rearm cycles and core damage",
+            "passed": true,
+            "data": {
+              "dead": true,
+              "hp": -98856,
+              "defeated": true,
+              "cycles": 3,
+              "threshold": 3
+            }
+          },
+          {
+            "name": "Three space hulls execute actual ranged salvos",
+            "passed": true,
+            "data": {
+              "events": [
+                {
+                  "event": "space-salvo",
+                  "ship": "s5frigate",
+                  "shots": 4
+                },
+                {
+                  "event": "space-salvo",
+                  "ship": "s5gravity",
+                  "shots": 11
+                },
+                {
+                  "event": "space-salvo",
+                  "ship": "s5station",
+                  "shots": 6
+                },
+                {
+                  "event": "space-salvo",
+                  "ship": "s5frigate",
+                  "shots": 4
+                },
+                {
+                  "event": "space-salvo",
+                  "ship": "s5gravity",
+                  "shots": 0
+                },
+                {
+                  "event": "space-salvo",
+                  "ship": "s5station",
+                  "shots": 6
+                },
+                {
+                  "event": "space-salvo",
+                  "ship": "s5frigate",
+                  "shots": 4
+                },
+                {
+                  "event": "space-salvo",
+                  "ship": "s5gravity",
+                  "shots": 11
+                },
+                {
+                  "event": "space-salvo",
+                  "ship": "s5station",
+                  "shots": 1
+                },
+                {
+                  "event": "space-salvo",
+                  "ship": "s5frigate",
+                  "shots": 4
+                }
+              ],
+              "shots": 5
+            }
+          },
+          {
+            "name": "Hammer retains his entire current combat pose for his last words",
+            "passed": true,
+            "data": {
+              "core": {
+                "x": 340,
+                "y": 174.08
+              },
+              "phase": "words"
+            }
+          },
+          {
+            "name": "After the in-game rupture the repeated dying close-up is skipped",
+            "passed": true,
+            "data": {
+              "phase": "aftermath",
+              "t": 20.466666666666498,
+              "events": [
+                {
+                  "event": "hammer-windowOut"
+                },
+                {
+                  "event": "hammer-lock"
+                },
+                {
+                  "event": "hammer-missile"
+                },
+                {
+                  "event": "hammer-core-impact",
+                  "x": 340,
+                  "y": 174.08
+                },
+                {
+                  "event": "hammer-death"
+                },
+                {
+                  "event": "hammer-electrical-pop",
+                  "i": 0,
+                  "at": 0.12
+                },
+                {
+                  "event": "hammer-electrical-pop",
+                  "i": 1,
+                  "at": 0.5800000000000001
+                },
+                {
+                  "event": "hammer-electrical-pop",
+                  "i": 2,
+                  "at": 1.04
+                },
+                {
+                  "event": "hammer-electrical-pop",
+                  "i": 3,
+                  "at": 1.5
+                },
+                {
+                  "event": "hammer-electrical-pop",
+                  "i": 4,
+                  "at": 1.96
+                },
+                {
+                  "event": "hammer-electrical-pop",
+                  "i": 5,
+                  "at": 2.4200000000000004
+                },
+                {
+                  "event": "hammer-electrical-pop",
+                  "i": 6,
+                  "at": 2.8800000000000003
+                },
+                {
+                  "event": "hammer-electrical-pop",
+                  "i": 7,
+                  "at": 3.3400000000000003
+                },
+                {
+                  "event": "hammer-electrical-pop",
+                  "i": 8,
+                  "at": 3.8000000000000003
+                },
+                {
+                  "event": "hammer-plasma-rupture"
+                }
+              ]
+            }
+          },
+          {
+            "name": "A stale bonus boolean cannot open bonus modes without completion evidence",
+            "passed": true,
+            "data": [
+              {
+                "mode": "campaign",
+                "open": true
+              },
+              {
+                "mode": "arcade",
+                "open": true
+              },
+              {
+                "mode": "coop",
+                "open": true
+              },
+              {
+                "mode": "bossrush",
+                "open": false
+              },
+              {
+                "mode": "timeattack",
+                "open": false
+              }
+            ]
+          },
+          {
+            "name": "Valid completion enables both visible playable cards",
+            "passed": true,
+            "data": [
+              true,
+              true
+            ]
+          },
+          {
+            "name": "Boss Rush starts from the actual menu confirm action",
+            "passed": true,
+            "data": {
+              "state": "diff",
+              "pending": "bossrush"
+            }
+          },
+          {
+            "name": "Boss Rush loads its real first boss",
+            "passed": true,
+            "data": {
+              "active": "bossrush",
+              "boss": "damkeeper",
+              "stage": 1,
+              "score": 0
+            }
+          },
+          {
+            "name": "Rush result/confirm traverses all nine encounters and stores its own completed record",
+            "passed": true,
+            "data": {
+              "routes": [
+                {
+                  "index": 0,
+                  "stage": 1,
+                  "boss": "damkeeper",
+                  "code": "BOSS1"
+                },
+                {
+                  "index": 1,
+                  "stage": 2,
+                  "boss": "infernoreaver",
+                  "code": "BOSS2"
+                },
+                {
+                  "index": 2,
+                  "stage": 3,
+                  "boss": "cryospear",
+                  "code": "BOSS3"
+                },
+                {
+                  "index": 3,
+                  "stage": 4,
+                  "boss": "stormsovereign",
+                  "code": "BOSS4"
+                },
+                {
+                  "index": 4,
+                  "stage": 5,
+                  "boss": "chromehammer",
+                  "code": "BOSS5"
+                },
+                {
+                  "index": 5,
+                  "stage": 6,
+                  "boss": null,
+                  "code": "HARR6"
+                },
+                {
+                  "index": 6,
+                  "stage": 6,
+                  "boss": null,
+                  "code": "REBEL6"
+                },
+                {
+                  "index": 7,
+                  "stage": 7,
+                  "boss": "sludgeemperor",
+                  "code": "BOSS7"
+                },
+                {
+                  "index": 8,
+                  "stage": 8,
+                  "boss": "vileexistence",
+                  "code": "BOSS8"
+                }
+              ],
+              "result": {
+                "state": "p2result",
+                "result": {
+                  "complete": true,
+                  "success": true,
+                  "intermission": false,
+                  "mode": "bossrush",
+                  "elapsed": 2.833333333334154,
+                  "score": 450
+                },
+                "record": "{\"elapsed\":2.833333333334154,\"score\":450,\"at\":1791689001243}"
+              }
+            }
+          },
+          {
+            "name": "Time Attack advances during play and holds during Pause",
+            "passed": true,
+            "data": {
+              "before": 1.0833333333336475,
+              "after": 1.0833333333336475
+            }
+          },
+          {
+            "name": "Time Attack has a distinct loss result",
+            "passed": true,
+            "data": {
+              "state": "p2result",
+              "result": {
+                "complete": true,
+                "success": false,
+                "intermission": false,
+                "mode": "timeattack",
+                "elapsed": 1.0833333333336475,
+                "score": 0
+              }
+            }
+          },
+          {
+            "name": "Local co-op fires independently for two selected pilots",
+            "passed": true,
+            "data": {
+              "seats": [
+                1,
+                2
+              ],
+              "shots": [
+                1,
+                2
+              ],
+              "lives": [
+                5,
+                5
+              ],
+              "pilots": [
+                "lizzie",
+                "decker"
+              ],
+              "born": [
+                [
+                  {
+                    "x": 340,
+                    "y": 385.36,
+                    "kind": "mg"
+                  }
+                ],
+                [
+                  {
+                    "x": 276.5,
+                    "y": 385.36,
+                    "kind": "mg"
+                  },
+                  {
+                    "x": 283.5,
+                    "y": 385.36,
+                    "kind": "mg"
+                  }
+                ]
+              ]
+            }
+          },
+          {
+            "name": "No page, console, renderer or asset errors",
+            "passed": true,
+            "data": []
+          }
+        ],
+        "errors": [],
+        "shots": [
+          "shield-yuri.png",
+          "shield-falva.png",
+          "shield-cole.png",
+          "shield-maverick.png",
+          "shield-axel.png",
+          "shield-juggernaut.png",
+          "shield-lizzie.png",
+          "shield-decker.png",
+          "shield-freezer.png",
+          "ice-laser.png",
+          "atomic-cloud.png",
+          "frost-core.png",
+          "storm-warning.png",
+          "storm-defeated.png",
+          "space-formations.png",
+          "hammer-last-words.png",
+          "hammer-core-lock.png",
+          "hammer-missile.png",
+          "hammer-rupture.png",
+          "unlocked-modes.png",
+          "boss-rush-first.png",
+          "boss-rush-result.png",
+          "time-attack-result.png",
+          "local-coop.png"
+        ]
+      },
+      "presentation": {
+        "passed": 16,
+        "failed": 0,
+        "checks": [
+          {
+            "name": "The firewall arrival calls its real decoded non-muted sample on wave birth",
+            "passed": true,
+            "data": {
+              "calls": [
+                "firewall-arrival"
+              ],
+              "media": [
+                {
+                  "src": "firewall_launch.mp3",
+                  "volume": 0.328,
+                  "ready": 0
+                }
+              ],
+              "pool": [
+                {
+                  "ready": 4,
+                  "volume": 0.328,
+                  "error": null,
+                  "paused": false,
+                  "duration": 1.2
+                },
+                {
+                  "ready": 4,
+                  "volume": 1,
+                  "error": null,
+                  "paused": true,
+                  "duration": 1.2
+                },
+                {
+                  "ready": 4,
+                  "volume": 1,
+                  "error": null,
+                  "paused": true,
+                  "duration": 1.2
+                }
+              ]
+            }
+          },
+          {
+            "name": "Fire Orb contact draws the opaque 32-pose impact at the actual hit point",
+            "passed": true,
+            "data": {
+              "draws": 13,
+              "event": {
+                "event": "orb-impact",
+                "element": "fire",
+                "x": 340,
+                "y": 279.36,
+                "radius": 104,
+                "reason": "impact"
+              }
+            }
+          },
+          {
+            "name": "The real Furnace beam draws the32-frame column and16-frame flared core connection",
+            "passed": true,
+            "data": {
+              "beam": 8,
+              "muzzle": 8,
+              "root": 8
+            }
+          },
+          {
+            "name": "The Ice Laser preview runs the real animated laser after a space stage and restores the live hull",
+            "passed": true,
+            "data": {
+              "err": null,
+              "beams": [
+                {
+                  "inf": "ice",
+                  "age": 0.7166666666666672
+                }
+              ],
+              "stage": 5,
+              "space": true,
+              "held": true
+            }
+          },
+          {
+            "name": "Stage Clear hides the gameplay HUD before laying out its menu",
+            "passed": true,
+            "data": {
+              "hud": "hidden",
+              "state": "stageclear",
+              "stageClear": true
+            }
+          },
+          {
+            "name": "Rebel pursuit has four allies plus the player, five opponents and no storm-platform briefing",
+            "passed": true,
+            "data": {
+              "friends": [
+                "axel",
+                "cole",
+                "decker",
+                "falva"
+              ],
+              "hostiles": [
+                "voss",
+                "nyx",
+                "rook",
+                "kaia",
+                "jace"
+              ],
+              "stormStory": false,
+              "card": [
+                "REBEL FURY SQUADRON",
+                "FIVE HOSTILE FIGHTERS. STOLEN FURY TECHNOLOGY."
+              ]
+            }
+          },
+          {
+            "name": "cloak: the authored demo actually forms and releases",
+            "passed": true,
+            "data": {
+              "demo": "cloak",
+              "released": true,
+              "cloak": 10,
+              "ball": null,
+              "turbo": null,
+              "fx": []
+            }
+          },
+          {
+            "name": "helix: the authored demo actually forms and releases",
+            "passed": true,
+            "data": {
+              "demo": "helix",
+              "released": true,
+              "cloak": null,
+              "ball": 204,
+              "turbo": null,
+              "fx": []
+            }
+          },
+          {
+            "name": "Jace displays the new centered 32-frame molten ball",
+            "passed": true,
+            "data": {
+              "demo": "helix",
+              "released": true,
+              "cloak": null,
+              "ball": 204,
+              "turbo": null,
+              "fx": []
+            }
+          },
+          {
+            "name": "turbo: the authored demo actually forms and releases",
+            "passed": true,
+            "data": {
+              "demo": "turbo",
+              "released": true,
+              "cloak": null,
+              "ball": 204,
+              "turbo": 136,
+              "fx": [
+                {
+                  "kind": "dash",
+                  "vx": null,
+                  "vy": null
+                },
+                {
+                  "kind": "dash",
+                  "vx": null,
+                  "vy": null
+                },
+                {
+                  "kind": "dash",
+                  "vx": null,
+                  "vy": null
+                },
+                {
+                  "kind": "dash",
+                  "vx": null,
+                  "vy": null
+                },
+                {
+                  "kind": "dash",
+                  "vx": null,
+                  "vy": null
+                },
+                {
+                  "kind": "dash",
+                  "vx": null,
+                  "vy": null
+                },
+                {
+                  "kind": "dash",
+                  "vx": null,
+                  "vy": null
+                },
+                {
+                  "kind": "dash",
+                  "vx": null,
+                  "vy": null
+                },
+                {
+                  "kind": "dash",
+                  "vx": null,
+                  "vy": null
+                },
+                {
+                  "kind": "dash",
+                  "vx": null,
+                  "vy": null
+                }
+              ]
+            }
+          },
+          {
+            "name": "Voss displays the onion-registered charge reel",
+            "passed": true,
+            "data": {
+              "demo": "turbo",
+              "released": true,
+              "cloak": null,
+              "ball": 204,
+              "turbo": 136,
+              "fx": [
+                {
+                  "kind": "dash",
+                  "vx": null,
+                  "vy": null
+                },
+                {
+                  "kind": "dash",
+                  "vx": null,
+                  "vy": null
+                },
+                {
+                  "kind": "dash",
+                  "vx": null,
+                  "vy": null
+                },
+                {
+                  "kind": "dash",
+                  "vx": null,
+                  "vy": null
+                },
+                {
+                  "kind": "dash",
+                  "vx": null,
+                  "vy": null
+                },
+                {
+                  "kind": "dash",
+                  "vx": null,
+                  "vy": null
+                },
+                {
+                  "kind": "dash",
+                  "vx": null,
+                  "vy": null
+                },
+                {
+                  "kind": "dash",
+                  "vx": null,
+                  "vy": null
+                },
+                {
+                  "kind": "dash",
+                  "vx": null,
+                  "vy": null
+                },
+                {
+                  "kind": "dash",
+                  "vx": null,
+                  "vy": null
+                }
+              ]
+            }
+          },
+          {
+            "name": "Decker casts a visible personal shield on the five-ship formation",
+            "passed": true,
+            "data": {
+              "scanner": "kaia",
+              "members": [
+                "decker",
+                "lizzie",
+                "cole",
+                "axel",
+                "falva"
+              ],
+              "draws": 175
+            }
+          },
+          {
+            "name": "Kaia scans the cloaked formation using her teal retinal art",
+            "passed": true,
+            "data": {
+              "scanner": "kaia",
+              "color": "#25d9bd",
+              "draws": 125
+            }
+          },
+          {
+            "name": "Harrier pursuit is solo and owns the weather briefing",
+            "passed": true,
+            "data": {
+              "allies": 0,
+              "briefing": "P2.S06.HARRIER",
+              "card": [
+                "HARRIER PURSUIT",
+                "DESTROY THE CANNON BANKS. WATCH FOR THE ELITE FIGHTER."
+              ]
+            }
+          },
+          {
+            "name": "Harrier remains live through native laser closures and elite warnings",
+            "passed": true,
+            "data": {
+              "frames": 3562,
+              "boss": "warhive",
+              "threats": 1,
+              "warningDraws": 250,
+              "errors": null
+            }
+          },
+          {
+            "name": "No page, console, renderer or asset errors",
+            "passed": true,
+            "data": []
+          }
+        ],
+        "errors": [],
+        "shots": [
+          "firewall-arrival.png",
+          "fire-orb-impact.png",
+          "kinetic-orb-impact.png",
+          "furnace-boss.png",
+          "furnace-fire-laser.png",
+          "ice-preview-after-space.png",
+          "stage-clear-no-bottom-artifact.png",
+          "rebel-cloak-charge.png",
+          "rebel-cloak-release.png",
+          "rebel-helix-charge.png",
+          "rebel-helix-release.png",
+          "rebel-turbo-charge.png",
+          "rebel-turbo-release.png",
+          "decker-personal-shield-wave.png",
+          "kaia-teal-radar-scan.png",
+          "radio-nyx.png",
+          "radio-kaia.png",
+          "radio-jace.png",
+          "radio-rook.png",
+          "radio-decker.png",
+          "radio-voss.png",
+          "harrier-pursuit.png",
+          "harrier-elite-warnings.png"
+        ]
+      },
+      "finishing": {
+        "passed": 6,
+        "failed": 0,
+        "checks": [
+          {
+            "name": "Hammer crest reaches the arena top with the same uniformly scaled visible and lethal shaft",
+            "passed": true,
+            "data": {
+              "top": 0,
+              "viewTop": 0,
+              "scaleEqual": true,
+              "live": true,
+              "lanes": 8
+            }
+          },
+          {
+            "name": "Earth keeps its camera center while the actual pilot ship shrinks and flies toward it",
+            "passed": true,
+            "data": {
+              "earth": [
+                [
+                  187.2,
+                  49.60000000000001,
+                  105.6,
+                  105.6
+                ],
+                [
+                  182.4,
+                  44.80000000000001,
+                  115.19999999999999,
+                  115.19999999999999
+                ],
+                [
+                  177.61769999999999,
+                  40.0177,
+                  124.76460000000002,
+                  124.76460000000002
+                ]
+              ],
+              "flights": [
+                {
+                  "x": 240,
+                  "y": 348.16,
+                  "size": 72,
+                  "pilot": "lizzie"
+                },
+                {
+                  "x": 240,
+                  "y": 225.28000000000003,
+                  "size": 37.5,
+                  "pilot": "lizzie"
+                },
+                {
+                  "x": 240,
+                  "y": 102.85312000000002,
+                  "size": 3.1272187499999973,
+                  "pilot": "lizzie"
+                }
+              ]
+            }
+          },
+          {
+            "name": "Stage Clear has no equipment row or reserved HUD gap",
+            "passed": true,
+            "data": {
+              "row": "hidden",
+              "bottom": "none",
+              "screen": 900,
+              "frame": 900
+            }
+          },
+          {
+            "name": "The campaign map remains interactive after the slower entry zoom",
+            "passed": true,
+            "data": {
+              "state": "stagesel",
+              "loading": true,
+              "zoom": 0.6192324214065645,
+              "errors": null
+            }
+          },
+          {
+            "name": "Real bomber actors draw palette variants of the actual opening stealth fighter facing south",
+            "passed": true,
+            "data": [
+              {
+                "palette": "green",
+                "key": "p2_stealth_green_idle",
+                "facing": "south",
+                "hp": 6,
+                "size": 104
+              },
+              {
+                "palette": "red",
+                "key": "p2_stealth_red_idle",
+                "facing": "south",
+                "hp": 6,
+                "size": 104
+              }
+            ]
+          },
+          {
+            "name": "No page, console, renderer or asset errors",
+            "passed": true,
+            "data": []
+          }
+        ],
+        "errors": [],
+        "shots": [
+          "hammer-full-height-spike.png",
+          "earth-0.png",
+          "earth-4.png",
+          "earth-7-8.png",
+          "stage-clear-full-screen.png",
+          "campaign-zoom.png",
+          "red-green-stealth-bombers.png"
+        ]
+      },
+      "diagnostic": {
+        "events": [
+          {
+            "state": "play",
+            "errors": null,
+            "last": "carrier",
+            "screen": [
+              null,
+              480,
+              512
+            ],
+            "menus": [
+              {
+                "mode": "campaign",
+                "open": true
+              },
+              {
+                "mode": "arcade",
+                "open": true
+              },
+              {
+                "mode": "coop",
+                "open": true
+              },
+              {
+                "mode": "bossrush",
+                "open": false
+              },
+              {
+                "mode": "timeattack",
+                "open": false
+              }
+            ]
+          }
+        ],
+        "errors": []
+      },
+      "review": {
+        "passed": 25,
+        "failed": 0,
+        "checks": [
+          {
+            "name": "atom: every pose renders with ten clear pixels on all borders",
+            "passed": true,
+            "data": []
+          },
+          {
+            "name": "atom: one fixed camera, scale and physical anchor across every pose",
+            "passed": true,
+            "data": {
+              "k": 0.8733624454148472,
+              "cx": 215.12663755458516,
+              "cy": 410.75982532751095
+            }
+          },
+          {
+            "name": "jace: every pose renders with ten clear pixels on all borders",
+            "passed": true,
+            "data": []
+          },
+          {
+            "name": "jace: one fixed camera, scale and physical anchor across every pose",
+            "passed": true,
+            "data": {
+              "k": 1.5625,
+              "cx": 216,
+              "cy": 214.4375
+            }
+          },
+          {
+            "name": "maverick: every pose renders with ten clear pixels on all borders",
+            "passed": true,
+            "data": []
+          },
+          {
+            "name": "maverick: one fixed camera, scale and physical anchor across every pose",
+            "passed": true,
+            "data": {
+              "k": 1.5625,
+              "cx": 216,
+              "cy": 214.4375
+            }
+          },
+          {
+            "name": "maverick_full: every pose renders with ten clear pixels on all borders",
+            "passed": true,
+            "data": []
+          },
+          {
+            "name": "maverick_full: one fixed camera, scale and physical anchor across every pose",
+            "passed": true,
+            "data": {
+              "k": 1.5625,
+              "cx": 216,
+              "cy": 214.4375
+            }
+          },
+          {
+            "name": "fire: every pose renders with ten clear pixels on all borders",
+            "passed": true,
+            "data": []
+          },
+          {
+            "name": "fire: one fixed camera, scale and physical anchor across every pose",
+            "passed": true,
+            "data": {
+              "k": 1,
+              "cx": 216,
+              "cy": 378
+            }
+          },
+          {
+            "name": "fire_root: every pose renders with ten clear pixels on all borders",
+            "passed": true,
+            "data": []
+          },
+          {
+            "name": "fire_root: one fixed camera, scale and physical anchor across every pose",
+            "passed": true,
+            "data": {
+              "k": 1.3289036544850499,
+              "cx": 215.33554817275748,
+              "cy": 372.1461794019933
+            }
+          },
+          {
+            "name": "fire_tip: every pose renders with ten clear pixels on all borders",
+            "passed": true,
+            "data": []
+          },
+          {
+            "name": "fire_tip: one fixed camera, scale and physical anchor across every pose",
+            "passed": true,
+            "data": {
+              "k": 1.3793103448275863,
+              "cx": 205.6551724137931,
+              "cy": 29.793103448275843
+            }
+          },
+          {
+            "name": "stealth_roll: every pose renders with ten clear pixels on all borders",
+            "passed": true,
+            "data": []
+          },
+          {
+            "name": "stealth_roll: one fixed camera, scale and physical anchor across every pose",
+            "passed": true,
+            "data": {
+              "k": 1.7543859649122806,
+              "cx": 203.71929824561403,
+              "cy": 216
+            }
+          },
+          {
+            "name": "stealth_somer: every pose renders with ten clear pixels on all borders",
+            "passed": true,
+            "data": []
+          },
+          {
+            "name": "stealth_somer: one fixed camera, scale and physical anchor across every pose",
+            "passed": true,
+            "data": {
+              "k": 1.9900497512437811,
+              "cx": 216.99502487562188,
+              "cy": 216.99502487562188
+            }
+          },
+          {
+            "name": "stealth: every pose renders with ten clear pixels on all borders",
+            "passed": true,
+            "data": []
+          },
+          {
+            "name": "stealth: one fixed camera, scale and physical anchor across every pose",
+            "passed": true,
+            "data": {
+              "k": 1.9801980198019802,
+              "cx": 233.82178217821783,
+              "cy": 216
+            }
+          },
+          {
+            "name": "shield: every pose renders with ten clear pixels on all borders",
+            "passed": true,
+            "data": []
+          },
+          {
+            "name": "shield: one fixed camera, scale and physical anchor across every pose",
+            "passed": true,
+            "data": {
+              "k": 0.9569377990430622,
+              "cx": 216,
+              "cy": 216
+            }
+          },
+          {
+            "name": "Onion control actually overlays neighboring registered poses",
+            "passed": true
+          },
+          {
+            "name": "Review includes all original captures and the corrected live art evidence",
+            "passed": true
+          },
+          {
+            "name": "No page, console or missing asset errors",
+            "passed": true,
+            "data": []
+          }
+        ],
+        "errors": []
+      },
+      "onion_correction_1011": {
+        "passed": 8,
+        "failed": 0,
+        "checks": [
+          {
+            "name": "Live XART blue fighter pixels match the exact opening whv_ace",
+            "passed": true,
+            "data": {
+              "mismatch": 0,
+              "alpha": 0,
+              "paint": [
+                11544,
+                11544
+              ],
+              "other": 0,
+              "lum": 0.45819999999999084,
+              "source": "assets/game/levels/stage_06/boss/bosses/skycarrier/ace_top.png"
+            }
+          },
+          {
+            "name": "Red/green swaps preserve alpha, silhouettes, non-paint pixels and luminance",
+            "passed": true,
+            "data": {
+              "mismatch": 0,
+              "alpha": 0,
+              "paint": [
+                11544,
+                11544
+              ],
+              "other": 0,
+              "lum": 0.45819999999999084,
+              "source": "assets/game/levels/stage_06/boss/bosses/skycarrier/ace_top.png"
+            }
+          },
+          {
+            "name": "Real enemy draws use the correct fighter bank in south/east/west flight",
+            "passed": true,
+            "data": [
+              {
+                "key": "p2_stealth_green_idle",
+                "facing": "south",
+                "role": "green"
+              },
+              {
+                "key": "p2_stealth_red_idle",
+                "facing": "south",
+                "role": "red"
+              },
+              {
+                "key": "p2_stealth_green_idle",
+                "facing": "east",
+                "role": "green"
+              },
+              {
+                "key": "p2_stealth_red_idle",
+                "facing": "west",
+                "role": "red"
+              }
+            ]
+          },
+          {
+            "name": "Opening fly-past keeps its original authored pair",
+            "passed": true,
+            "data": {
+              "phase": "intercept",
+              "jets": 2
+            }
+          },
+          {
+            "name": "Native fire beam visibly expands from a narrow core into the large column",
+            "passed": true,
+            "data": {
+              "start": 32,
+              "mid": 86,
+              "full": 111,
+              "root": 1,
+              "profile": {
+                "root": 15.4,
+                "half": 105,
+                "depth": 99.60000000000001
+              }
+            }
+          },
+          {
+            "name": "Furnace actual core attack uses the new flared animated root",
+            "passed": true,
+            "data": {
+              "root": 9,
+              "beams": 1,
+              "width": 91.08037430711745,
+              "kind": "core"
+            }
+          },
+          {
+            "name": "Live atomic renderer plays all32 corrected keys with one fixed ground anchor and aspect",
+            "passed": true,
+            "data": [
+              {
+                "key": "p2_atom_00",
+                "args": [
+                  220,
+                  109.60000000000002,
+                  240,
+                  360
+                ]
+              }
+            ]
+          },
+          {
+            "name": "No page, console, renderer or missing-asset errors",
+            "passed": true,
+            "data": []
+          }
+        ],
+        "errors": []
+      },
+      "drawn_motion_1011": {
+        "passed": 20,
+        "failed": 0,
+        "checks": [
+          {
+            "name": "blue roll: all16 actual plates render through the game context, unclipped at a fixed physical pivot",
+            "passed": true,
+            "data": [
+              {
+                "key": "p2_stealth_roll_blue_00",
+                "pixels": 15539,
+                "edge": 0,
+                "bounds": [
+                  52,
+                  31,
+                  234,
+                  225
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_roll_blue_01",
+                "pixels": 12567,
+                "edge": 0,
+                "bounds": [
+                  62,
+                  30,
+                  207,
+                  225
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_roll_blue_02",
+                "pixels": 11871,
+                "edge": 0,
+                "bounds": [
+                  65,
+                  31,
+                  201,
+                  226
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_roll_blue_03",
+                "pixels": 10835,
+                "edge": 0,
+                "bounds": [
+                  58,
+                  32,
+                  193,
+                  224
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_roll_blue_04",
+                "pixels": 6064,
+                "edge": 0,
+                "bounds": [
+                  99,
+                  29,
+                  149,
+                  226
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_roll_blue_05",
+                "pixels": 9532,
+                "edge": 0,
+                "bounds": [
+                  77,
+                  29,
+                  188,
+                  226
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_roll_blue_06",
+                "pixels": 13732,
+                "edge": 0,
+                "bounds": [
+                  44,
+                  30,
+                  191,
+                  226
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_roll_blue_07",
+                "pixels": 11493,
+                "edge": 0,
+                "bounds": [
+                  63,
+                  29,
+                  189,
+                  226
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_roll_blue_08",
+                "pixels": 15453,
+                "edge": 0,
+                "bounds": [
+                  52,
+                  32,
+                  234,
+                  223
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_roll_blue_09",
+                "pixels": 11969,
+                "edge": 0,
+                "bounds": [
+                  53,
+                  30,
+                  191,
+                  224
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_roll_blue_10",
+                "pixels": 11494,
+                "edge": 0,
+                "bounds": [
+                  57,
+                  31,
+                  184,
+                  226
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_roll_blue_11",
+                "pixels": 10107,
+                "edge": 0,
+                "bounds": [
+                  64,
+                  30,
+                  182,
+                  225
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_roll_blue_12",
+                "pixels": 6266,
+                "edge": 0,
+                "bounds": [
+                  105,
+                  31,
+                  157,
+                  224
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_roll_blue_13",
+                "pixels": 11566,
+                "edge": 0,
+                "bounds": [
+                  60,
+                  31,
+                  191,
+                  224
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_roll_blue_14",
+                "pixels": 12410,
+                "edge": 0,
+                "bounds": [
+                  47,
+                  31,
+                  185,
+                  223
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_roll_blue_15",
+                "pixels": 15826,
+                "edge": 0,
+                "bounds": [
+                  21,
+                  31,
+                  203,
+                  224
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              }
+            ]
+          },
+          {
+            "name": "red roll: all16 actual plates render through the game context, unclipped at a fixed physical pivot",
+            "passed": true,
+            "data": [
+              {
+                "key": "p2_stealth_roll_red_00",
+                "pixels": 15522,
+                "edge": 0,
+                "bounds": [
+                  52,
+                  31,
+                  234,
+                  225
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_roll_red_01",
+                "pixels": 12554,
+                "edge": 0,
+                "bounds": [
+                  62,
+                  30,
+                  207,
+                  225
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_roll_red_02",
+                "pixels": 11844,
+                "edge": 0,
+                "bounds": [
+                  65,
+                  31,
+                  201,
+                  225
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_roll_red_03",
+                "pixels": 10828,
+                "edge": 0,
+                "bounds": [
+                  58,
+                  32,
+                  193,
+                  224
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_roll_red_04",
+                "pixels": 6062,
+                "edge": 0,
+                "bounds": [
+                  99,
+                  29,
+                  149,
+                  226
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_roll_red_05",
+                "pixels": 9514,
+                "edge": 0,
+                "bounds": [
+                  77,
+                  29,
+                  188,
+                  226
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_roll_red_06",
+                "pixels": 13717,
+                "edge": 0,
+                "bounds": [
+                  44,
+                  30,
+                  191,
+                  226
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_roll_red_07",
+                "pixels": 11479,
+                "edge": 0,
+                "bounds": [
+                  63,
+                  29,
+                  189,
+                  226
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_roll_red_08",
+                "pixels": 15434,
+                "edge": 0,
+                "bounds": [
+                  52,
+                  32,
+                  234,
+                  223
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_roll_red_09",
+                "pixels": 11957,
+                "edge": 0,
+                "bounds": [
+                  54,
+                  30,
+                  191,
+                  224
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_roll_red_10",
+                "pixels": 11480,
+                "edge": 0,
+                "bounds": [
+                  57,
+                  31,
+                  184,
+                  226
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_roll_red_11",
+                "pixels": 10103,
+                "edge": 0,
+                "bounds": [
+                  64,
+                  30,
+                  182,
+                  225
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_roll_red_12",
+                "pixels": 6271,
+                "edge": 0,
+                "bounds": [
+                  105,
+                  31,
+                  157,
+                  224
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_roll_red_13",
+                "pixels": 11549,
+                "edge": 0,
+                "bounds": [
+                  60,
+                  31,
+                  191,
+                  224
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_roll_red_14",
+                "pixels": 12394,
+                "edge": 0,
+                "bounds": [
+                  47,
+                  31,
+                  185,
+                  223
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_roll_red_15",
+                "pixels": 15818,
+                "edge": 0,
+                "bounds": [
+                  21,
+                  32,
+                  203,
+                  224
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              }
+            ]
+          },
+          {
+            "name": "green roll: all16 actual plates render through the game context, unclipped at a fixed physical pivot",
+            "passed": true,
+            "data": [
+              {
+                "key": "p2_stealth_roll_green_00",
+                "pixels": 14898,
+                "edge": 0,
+                "bounds": [
+                  52,
+                  31,
+                  233,
+                  224
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_roll_green_01",
+                "pixels": 11961,
+                "edge": 0,
+                "bounds": [
+                  63,
+                  32,
+                  207,
+                  225
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_roll_green_02",
+                "pixels": 11310,
+                "edge": 0,
+                "bounds": [
+                  65,
+                  32,
+                  200,
+                  225
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_roll_green_03",
+                "pixels": 10360,
+                "edge": 0,
+                "bounds": [
+                  59,
+                  32,
+                  193,
+                  224
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_roll_green_04",
+                "pixels": 5798,
+                "edge": 0,
+                "bounds": [
+                  100,
+                  30,
+                  149,
+                  226
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_roll_green_05",
+                "pixels": 9093,
+                "edge": 0,
+                "bounds": [
+                  77,
+                  30,
+                  187,
+                  225
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_roll_green_06",
+                "pixels": 13221,
+                "edge": 0,
+                "bounds": [
+                  44,
+                  30,
+                  190,
+                  225
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_roll_green_07",
+                "pixels": 11031,
+                "edge": 0,
+                "bounds": [
+                  64,
+                  30,
+                  189,
+                  226
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_roll_green_08",
+                "pixels": 14812,
+                "edge": 0,
+                "bounds": [
+                  52,
+                  32,
+                  233,
+                  222
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_roll_green_09",
+                "pixels": 11394,
+                "edge": 0,
+                "bounds": [
+                  54,
+                  31,
+                  190,
+                  224
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_roll_green_10",
+                "pixels": 11022,
+                "edge": 0,
+                "bounds": [
+                  57,
+                  32,
+                  183,
+                  225
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_roll_green_11",
+                "pixels": 9668,
+                "edge": 0,
+                "bounds": [
+                  64,
+                  31,
+                  181,
+                  225
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_roll_green_12",
+                "pixels": 5981,
+                "edge": 0,
+                "bounds": [
+                  106,
+                  31,
+                  157,
+                  223
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_roll_green_13",
+                "pixels": 11089,
+                "edge": 0,
+                "bounds": [
+                  61,
+                  31,
+                  191,
+                  223
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_roll_green_14",
+                "pixels": 11844,
+                "edge": 0,
+                "bounds": [
+                  47,
+                  31,
+                  184,
+                  223
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_roll_green_15",
+                "pixels": 15135,
+                "edge": 0,
+                "bounds": [
+                  22,
+                  32,
+                  203,
+                  224
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              }
+            ]
+          },
+          {
+            "name": "orange roll: all16 actual plates render through the game context, unclipped at a fixed physical pivot",
+            "passed": true,
+            "data": [
+              {
+                "key": "p2_stealth_roll_orange_00",
+                "pixels": 15794,
+                "edge": 0,
+                "bounds": [
+                  22,
+                  32,
+                  201,
+                  224
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_roll_orange_01",
+                "pixels": 15038,
+                "edge": 0,
+                "bounds": [
+                  65,
+                  35,
+                  240,
+                  222
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_roll_orange_02",
+                "pixels": 14420,
+                "edge": 0,
+                "bounds": [
+                  78,
+                  35,
+                  248,
+                  219
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_roll_orange_03",
+                "pixels": 12764,
+                "edge": 0,
+                "bounds": [
+                  79,
+                  34,
+                  231,
+                  221
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_roll_orange_04",
+                "pixels": 6044,
+                "edge": 0,
+                "bounds": [
+                  103,
+                  31,
+                  172,
+                  225
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_roll_orange_05",
+                "pixels": 9188,
+                "edge": 0,
+                "bounds": [
+                  73,
+                  32,
+                  172,
+                  223
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_roll_orange_06",
+                "pixels": 10732,
+                "edge": 0,
+                "bounds": [
+                  51,
+                  32,
+                  177,
+                  224
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_roll_orange_07",
+                "pixels": 12482,
+                "edge": 0,
+                "bounds": [
+                  50,
+                  33,
+                  198,
+                  223
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_roll_orange_08",
+                "pixels": 14739,
+                "edge": 0,
+                "bounds": [
+                  49,
+                  37,
+                  229,
+                  219
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_roll_orange_09",
+                "pixels": 13766,
+                "edge": 0,
+                "bounds": [
+                  59,
+                  37,
+                  223,
+                  219
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_roll_orange_10",
+                "pixels": 12179,
+                "edge": 0,
+                "bounds": [
+                  72,
+                  37,
+                  212,
+                  217
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_roll_orange_11",
+                "pixels": 9108,
+                "edge": 0,
+                "bounds": [
+                  71,
+                  37,
+                  183,
+                  218
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_roll_orange_12",
+                "pixels": 6348,
+                "edge": 0,
+                "bounds": [
+                  79,
+                  32,
+                  154,
+                  223
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_roll_orange_13",
+                "pixels": 11705,
+                "edge": 0,
+                "bounds": [
+                  79,
+                  32,
+                  219,
+                  222
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_roll_orange_14",
+                "pixels": 12806,
+                "edge": 0,
+                "bounds": [
+                  79,
+                  33,
+                  229,
+                  222
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_roll_orange_15",
+                "pixels": 15447,
+                "edge": 0,
+                "bounds": [
+                  25,
+                  32,
+                  200,
+                  223
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              }
+            ]
+          },
+          {
+            "name": "blue somer: all16 actual plates render through the game context, unclipped at a fixed physical pivot",
+            "passed": true,
+            "data": [
+              {
+                "key": "p2_stealth_somer_blue_00",
+                "pixels": 16235,
+                "edge": 0,
+                "bounds": [
+                  34,
+                  30,
+                  221,
+                  223
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_somer_blue_01",
+                "pixels": 15534,
+                "edge": 0,
+                "bounds": [
+                  33,
+                  39,
+                  222,
+                  216
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_somer_blue_02",
+                "pixels": 13322,
+                "edge": 0,
+                "bounds": [
+                  34,
+                  48,
+                  222,
+                  208
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_somer_blue_03",
+                "pixels": 11085,
+                "edge": 0,
+                "bounds": [
+                  34,
+                  64,
+                  223,
+                  191
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_somer_blue_04",
+                "pixels": 6421,
+                "edge": 0,
+                "bounds": [
+                  32,
+                  82,
+                  222,
+                  174
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_somer_blue_05",
+                "pixels": 8907,
+                "edge": 0,
+                "bounds": [
+                  32,
+                  72,
+                  222,
+                  183
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_somer_blue_06",
+                "pixels": 10911,
+                "edge": 0,
+                "bounds": [
+                  33,
+                  62,
+                  222,
+                  191
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_somer_blue_07",
+                "pixels": 12285,
+                "edge": 0,
+                "bounds": [
+                  33,
+                  51,
+                  220,
+                  204
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_somer_blue_08",
+                "pixels": 16301,
+                "edge": 0,
+                "bounds": [
+                  34,
+                  33,
+                  221,
+                  222
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_somer_blue_09",
+                "pixels": 12136,
+                "edge": 0,
+                "bounds": [
+                  34,
+                  49,
+                  221,
+                  203
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_somer_blue_10",
+                "pixels": 10289,
+                "edge": 0,
+                "bounds": [
+                  36,
+                  63,
+                  221,
+                  193
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_somer_blue_11",
+                "pixels": 8583,
+                "edge": 0,
+                "bounds": [
+                  33,
+                  74,
+                  222,
+                  182
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_somer_blue_12",
+                "pixels": 5653,
+                "edge": 0,
+                "bounds": [
+                  33,
+                  84,
+                  224,
+                  170
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_somer_blue_13",
+                "pixels": 8360,
+                "edge": 0,
+                "bounds": [
+                  34,
+                  74,
+                  220,
+                  180
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_somer_blue_14",
+                "pixels": 11948,
+                "edge": 0,
+                "bounds": [
+                  34,
+                  55,
+                  221,
+                  200
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_somer_blue_15",
+                "pixels": 15761,
+                "edge": 0,
+                "bounds": [
+                  34,
+                  34,
+                  221,
+                  222
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              }
+            ]
+          },
+          {
+            "name": "red somer: all16 actual plates render through the game context, unclipped at a fixed physical pivot",
+            "passed": true,
+            "data": [
+              {
+                "key": "p2_stealth_somer_red_00",
+                "pixels": 16223,
+                "edge": 0,
+                "bounds": [
+                  34,
+                  30,
+                  221,
+                  223
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_somer_red_01",
+                "pixels": 15529,
+                "edge": 0,
+                "bounds": [
+                  33,
+                  39,
+                  222,
+                  216
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_somer_red_02",
+                "pixels": 13317,
+                "edge": 0,
+                "bounds": [
+                  34,
+                  48,
+                  222,
+                  208
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_somer_red_03",
+                "pixels": 11086,
+                "edge": 0,
+                "bounds": [
+                  34,
+                  64,
+                  223,
+                  191
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_somer_red_04",
+                "pixels": 6425,
+                "edge": 0,
+                "bounds": [
+                  32,
+                  82,
+                  222,
+                  174
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_somer_red_05",
+                "pixels": 8905,
+                "edge": 0,
+                "bounds": [
+                  32,
+                  72,
+                  222,
+                  185
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_somer_red_06",
+                "pixels": 10911,
+                "edge": 0,
+                "bounds": [
+                  32,
+                  62,
+                  222,
+                  192
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_somer_red_07",
+                "pixels": 12274,
+                "edge": 0,
+                "bounds": [
+                  33,
+                  51,
+                  220,
+                  204
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_somer_red_08",
+                "pixels": 16294,
+                "edge": 0,
+                "bounds": [
+                  34,
+                  33,
+                  221,
+                  222
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_somer_red_09",
+                "pixels": 12128,
+                "edge": 0,
+                "bounds": [
+                  34,
+                  49,
+                  221,
+                  203
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_somer_red_10",
+                "pixels": 10286,
+                "edge": 0,
+                "bounds": [
+                  36,
+                  63,
+                  221,
+                  193
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_somer_red_11",
+                "pixels": 8575,
+                "edge": 0,
+                "bounds": [
+                  33,
+                  74,
+                  222,
+                  182
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_somer_red_12",
+                "pixels": 5652,
+                "edge": 0,
+                "bounds": [
+                  33,
+                  84,
+                  224,
+                  170
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_somer_red_13",
+                "pixels": 8359,
+                "edge": 0,
+                "bounds": [
+                  34,
+                  74,
+                  220,
+                  180
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_somer_red_14",
+                "pixels": 11955,
+                "edge": 0,
+                "bounds": [
+                  34,
+                  55,
+                  221,
+                  200
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_somer_red_15",
+                "pixels": 15763,
+                "edge": 0,
+                "bounds": [
+                  34,
+                  34,
+                  221,
+                  222
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              }
+            ]
+          },
+          {
+            "name": "green somer: all16 actual plates render through the game context, unclipped at a fixed physical pivot",
+            "passed": true,
+            "data": [
+              {
+                "key": "p2_stealth_somer_green_00",
+                "pixels": 15631,
+                "edge": 0,
+                "bounds": [
+                  34,
+                  30,
+                  220,
+                  223
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_somer_green_01",
+                "pixels": 14892,
+                "edge": 0,
+                "bounds": [
+                  33,
+                  40,
+                  221,
+                  216
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_somer_green_02",
+                "pixels": 12760,
+                "edge": 0,
+                "bounds": [
+                  34,
+                  49,
+                  222,
+                  207
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_somer_green_03",
+                "pixels": 10638,
+                "edge": 0,
+                "bounds": [
+                  34,
+                  66,
+                  222,
+                  191
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_somer_green_04",
+                "pixels": 5987,
+                "edge": 0,
+                "bounds": [
+                  32,
+                  82,
+                  222,
+                  174
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_somer_green_05",
+                "pixels": 8421,
+                "edge": 0,
+                "bounds": [
+                  33,
+                  72,
+                  222,
+                  183
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_somer_green_06",
+                "pixels": 10465,
+                "edge": 0,
+                "bounds": [
+                  33,
+                  62,
+                  222,
+                  191
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_somer_green_07",
+                "pixels": 11758,
+                "edge": 0,
+                "bounds": [
+                  33,
+                  51,
+                  220,
+                  203
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_somer_green_08",
+                "pixels": 15649,
+                "edge": 0,
+                "bounds": [
+                  34,
+                  33,
+                  221,
+                  222
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_somer_green_09",
+                "pixels": 11618,
+                "edge": 0,
+                "bounds": [
+                  35,
+                  50,
+                  221,
+                  203
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_somer_green_10",
+                "pixels": 9791,
+                "edge": 0,
+                "bounds": [
+                  36,
+                  63,
+                  221,
+                  193
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_somer_green_11",
+                "pixels": 8152,
+                "edge": 0,
+                "bounds": [
+                  34,
+                  74,
+                  222,
+                  182
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_somer_green_12",
+                "pixels": 5295,
+                "edge": 0,
+                "bounds": [
+                  33,
+                  84,
+                  223,
+                  170
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_somer_green_13",
+                "pixels": 7864,
+                "edge": 0,
+                "bounds": [
+                  34,
+                  74,
+                  219,
+                  180
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_somer_green_14",
+                "pixels": 11434,
+                "edge": 0,
+                "bounds": [
+                  35,
+                  55,
+                  221,
+                  198
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_somer_green_15",
+                "pixels": 15139,
+                "edge": 0,
+                "bounds": [
+                  34,
+                  34,
+                  221,
+                  220
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              }
+            ]
+          },
+          {
+            "name": "orange somer: all16 actual plates render through the game context, unclipped at a fixed physical pivot",
+            "passed": true,
+            "data": [
+              {
+                "key": "p2_stealth_somer_orange_00",
+                "pixels": 11009,
+                "edge": 0,
+                "bounds": [
+                  52,
+                  43,
+                  202,
+                  211
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_somer_orange_01",
+                "pixels": 10951,
+                "edge": 0,
+                "bounds": [
+                  45,
+                  52,
+                  211,
+                  204
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_somer_orange_02",
+                "pixels": 9832,
+                "edge": 0,
+                "bounds": [
+                  43,
+                  60,
+                  214,
+                  195
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_somer_orange_03",
+                "pixels": 9868,
+                "edge": 0,
+                "bounds": [
+                  39,
+                  62,
+                  216,
+                  193
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_somer_orange_04",
+                "pixels": 5641,
+                "edge": 0,
+                "bounds": [
+                  33,
+                  80,
+                  221,
+                  177
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_somer_orange_05",
+                "pixels": 8109,
+                "edge": 0,
+                "bounds": [
+                  31,
+                  72,
+                  224,
+                  183
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_somer_orange_06",
+                "pixels": 9697,
+                "edge": 0,
+                "bounds": [
+                  27,
+                  67,
+                  227,
+                  191
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_somer_orange_07",
+                "pixels": 10626,
+                "edge": 0,
+                "bounds": [
+                  36,
+                  55,
+                  219,
+                  199
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_somer_orange_08",
+                "pixels": 12516,
+                "edge": 0,
+                "bounds": [
+                  43,
+                  42,
+                  212,
+                  212
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_somer_orange_09",
+                "pixels": 11330,
+                "edge": 0,
+                "bounds": [
+                  37,
+                  53,
+                  217,
+                  202
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_somer_orange_10",
+                "pixels": 9736,
+                "edge": 0,
+                "bounds": [
+                  36,
+                  64,
+                  218,
+                  190
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_somer_orange_11",
+                "pixels": 8910,
+                "edge": 0,
+                "bounds": [
+                  42,
+                  65,
+                  213,
+                  188
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_somer_orange_12",
+                "pixels": 5746,
+                "edge": 0,
+                "bounds": [
+                  34,
+                  83,
+                  220,
+                  172
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_somer_orange_13",
+                "pixels": 9713,
+                "edge": 0,
+                "bounds": [
+                  41,
+                  64,
+                  215,
+                  192
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_somer_orange_14",
+                "pixels": 9478,
+                "edge": 0,
+                "bounds": [
+                  46,
+                  61,
+                  211,
+                  194
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              },
+              {
+                "key": "p2_stealth_somer_orange_15",
+                "pixels": 10767,
+                "edge": 0,
+                "bounds": [
+                  52,
+                  45,
+                  203,
+                  210
+                ],
+                "pivot": [
+                  128,
+                  128
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Live Stage6 fighter renderer selects all128 correct role/move views without a shape transform",
+            "passed": true,
+            "data": []
+          },
+          {
+            "name": "Harrier elite controller actually advances the new rigid roll views during its existing dodge",
+            "passed": true,
+            "data": [
+              "p2_stealth_roll_blue_00",
+              "p2_stealth_roll_blue_01",
+              "p2_stealth_roll_blue_02",
+              "p2_stealth_roll_blue_04",
+              "p2_stealth_roll_blue_05",
+              "p2_stealth_roll_blue_06",
+              "p2_stealth_roll_blue_07",
+              "p2_stealth_roll_blue_08",
+              "p2_stealth_roll_blue_09",
+              "p2_stealth_roll_blue_11",
+              "p2_stealth_roll_blue_12",
+              "p2_stealth_roll_blue_13"
+            ]
+          },
+          {
+            "name": "Harrier elite controller advances the new front/rear/belly somersault views",
+            "passed": true,
+            "data": [
+              "p2_stealth_somer_blue_00",
+              "p2_stealth_somer_blue_01",
+              "p2_stealth_somer_blue_02",
+              "p2_stealth_somer_blue_03",
+              "p2_stealth_somer_blue_04",
+              "p2_stealth_somer_blue_05",
+              "p2_stealth_somer_blue_06",
+              "p2_stealth_somer_blue_06",
+              "p2_stealth_somer_blue_07",
+              "p2_stealth_somer_blue_08",
+              "p2_stealth_somer_blue_09",
+              "p2_stealth_somer_blue_10",
+              "p2_stealth_somer_blue_11",
+              "p2_stealth_somer_blue_12",
+              "p2_stealth_somer_blue_12",
+              "p2_stealth_somer_blue_13"
+            ]
+          },
+          {
+            "name": "Elite fast banking and inverted posture also avoid the old warped bank plates",
+            "passed": true,
+            "data": {
+              "bank": "p2_stealth_roll_blue_01",
+              "inverted": "p2_stealth_roll_blue_08"
+            }
+          },
+          {
+            "name": "Both carrier-launched fighters use drawn rotational views in the actual opening cinematic",
+            "passed": true,
+            "data": [
+              "p2_stealth_roll_blue_12",
+              "p2_stealth_roll_blue_11"
+            ]
+          },
+          {
+            "name": "Maverick forms the new green sphere in the actual player charge draw",
+            "passed": true,
+            "data": 1
+          },
+          {
+            "name": "Full-charge release travels as the animated purple/blue sphere, retaining the real helix projectile",
+            "passed": true,
+            "data": {
+              "rounds": [
+                {
+                  "full": true,
+                  "y": 335.36,
+                  "air": 0.13333333333333333
+                }
+              ],
+              "draws": 6
+            }
+          },
+          {
+            "name": "Travelling helix ball displays every one of the32 overdrive poses at a constant registered size",
+            "passed": true,
+            "data": [
+              {
+                "key": "p2_maverick_full_00",
+                "args": [
+                  126.875,
+                  146.875,
+                  146.25,
+                  146.25
+                ]
+              },
+              {
+                "key": "p2_maverick_full_01",
+                "args": [
+                  126.875,
+                  146.875,
+                  146.25,
+                  146.25
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Actual fire renderer draws the flowing core connection and new organic terminal crown together",
+            "passed": true,
+            "data": {
+              "root": 1,
+              "tip": 1,
+              "beam": 1
+            }
+          },
+          {
+            "name": "Actual atomic strike renders all32 progressively expanding and dispersing poses",
+            "passed": true,
+            "data": null
+          },
+          {
+            "name": "Both Maverick palettes retain Jace sphere luminance and physical coverage in native pixels",
+            "passed": true,
+            "data": {
+              "luminanceOutliers": 0,
+              "alphaOutliers": 0
+            }
+          },
+          {
+            "name": "No page, console, renderer or missing-asset errors",
+            "passed": true,
+            "data": []
+          }
+        ],
+        "errors": []
+      }
+    }
+  },
+  "art": {
+    "shield": {
+      "frames": 9,
+      "size": [
+        432,
+        432
+      ],
+      "pivot": [
+        216,
+        216
+      ],
+      "unique_hashes": 9
+    },
+    "jace": {
+      "frames": 32,
+      "size": [
+        256,
+        256
+      ],
+      "pivot": [
+        128,
+        128
+      ],
+      "unique_hashes": 32
+    },
+    "atom": {
+      "frames": 32,
+      "size": [
+        384,
+        576
+      ],
+      "pivot": [
+        192,
+        480
+      ],
+      "unique_hashes": 32
+    },
+    "fire": {
+      "frames": 32,
+      "size": [
+        384,
+        384
+      ],
+      "pivot": [
+        192,
+        280
+      ],
+      "unique_hashes": 32
+    },
+    "fire_root": {
+      "frames": 16,
+      "size": [
+        384,
+        384
+      ],
+      "pivot": [
+        192,
+        320
+      ],
+      "unique_hashes": 16
+    },
+    "stealth": {
+      "frames": 8,
+      "size": [
+        256,
+        256
+      ],
+      "pivot": [
+        128,
+        128
+      ],
+      "unique_hashes": 7
+    },
+    "stealth_roll": {
+      "frames": 64,
+      "size": [
+        256,
+        256
+      ],
+      "pivot": [
+        128,
+        128
+      ],
+      "unique_hashes": 64
+    },
+    "stealth_somer": {
+      "frames": 64,
+      "size": [
+        256,
+        256
+      ],
+      "pivot": [
+        128,
+        128
+      ],
+      "unique_hashes": 64
+    },
+    "fire_tip": {
+      "frames": 16,
+      "size": [
+        384,
+        384
+      ],
+      "pivot": [
+        192,
+        64
+      ],
+      "unique_hashes": 16
+    },
+    "maverick": {
+      "frames": 32,
+      "size": [
+        288,
+        288
+      ],
+      "pivot": [
+        144,
+        144
+      ],
+      "unique_hashes": 32
+    },
+    "maverick_full": {
+      "frames": 32,
+      "size": [
+        288,
+        288
+      ],
+      "pivot": [
+        144,
+        144
+      ],
+      "unique_hashes": 32
+    }
+  },
+  "screenshot_gallery": [
+    {
+      "title": "Personal gold shield",
+      "image": "shield-lizzie.webp",
+      "native_source": "_shots/part2_1010/verified/shield-lizzie.png",
+      "sha256": "db7f9c1b890efec1c17471cc5e8c09956f22c960d7d4bb81cfabf5086f24b897"
+    },
+    {
+      "title": "Live Ice Laser",
+      "image": "ice-laser.webp",
+      "native_source": "_shots/part2_1010/verified/ice-laser.png",
+      "sha256": "15877712f29e1da712f7b5bcbd877269a80d2c43312f5d0b4a6da32993c4dc61"
+    },
+    {
+      "title": "Hammer core lock",
+      "image": "hammer-core-lock.webp",
+      "native_source": "_shots/part2_1010/verified/hammer-core-lock.png",
+      "sha256": "df5673541752fe4a4cd7783d7deda0dd0914c5db9ff750f5042d9b61e5d9679d"
+    },
+    {
+      "title": "Pilot missile",
+      "image": "hammer-missile.webp",
+      "native_source": "_shots/part2_1010/verified/hammer-missile.png",
+      "sha256": "7fce6752a70595ca06e94722078a7a90d4e1e42cf859db58675b5d281145776d"
+    },
+    {
+      "title": "Hammer destruction",
+      "image": "hammer-rupture.webp",
+      "native_source": "_shots/part2_1010/verified/hammer-rupture.png",
+      "sha256": "92133d03877ad1793d21846b3d1fa7c2079137ed5291695490dd6e31f0abca32"
+    },
+    {
+      "title": "Storm generator defeat",
+      "image": "storm-defeated.webp",
+      "native_source": "_shots/part2_1010/verified/storm-defeated.png",
+      "sha256": "37b80e227bfc257732ba2652f80f10ec5bfc8a675875c297e3bf11fc11eb6a6f"
+    },
+    {
+      "title": "Two-seat local co-op",
+      "image": "local-coop.webp",
+      "native_source": "_shots/part2_1010/verified/local-coop.png",
+      "sha256": "7038c3762fdbbac86030f1cc12ce724bf6a8e65564116582c336d403d9434df7"
+    },
+    {
+      "title": "Earned bonus modes",
+      "image": "unlocked-modes.webp",
+      "native_source": "_shots/part2_1010/verified/unlocked-modes.png",
+      "sha256": "e926dc590f2aee9e9082aca234ede5bd03c89d6aa38abffdf519180847d99da0"
+    },
+    {
+      "title": "Furnace 32-frame fire laser",
+      "image": "furnace-fire-laser.webp",
+      "native_source": "_shots/part2_1010/presentation/furnace-fire-laser.png",
+      "sha256": "4972034a036573ca880062a45dfcc75bc631abc32ef250be19078c05c8e324c4"
+    },
+    {
+      "title": "Fire Orb contact",
+      "image": "fire-orb-impact.webp",
+      "native_source": "_shots/part2_1010/presentation/fire-orb-impact.png",
+      "sha256": "ce3b092c85a85ace36dd64c168f7dbbae316205dbf0543aac53fae3c7a96394b"
+    },
+    {
+      "title": "Kinetic contact",
+      "image": "kinetic-orb-impact.webp",
+      "native_source": "_shots/part2_1010/presentation/kinetic-orb-impact.png",
+      "sha256": "49c91ba38dd34a3b2b9dac7cd3407624142d7c4f62d5c7551943b2a0fc16377f"
+    },
+    {
+      "title": "Jace registered sphere",
+      "image": "rebel-helix-charge.webp",
+      "native_source": "_shots/part2_1010/presentation/rebel-helix-charge.png",
+      "sha256": "8aac3c6135df8bf68f22ac7db897e9aac0fc51d7a3e5aa3cd195eed61e78da6b"
+    },
+    {
+      "title": "Voss turbo",
+      "image": "rebel-turbo-release.webp",
+      "native_source": "_shots/part2_1010/presentation/rebel-turbo-release.png",
+      "sha256": "66f9e45d58e72d6d2fccddcf0910f0d299c718bd80e800e87e243fbc7ca21218"
+    },
+    {
+      "title": "Decker personal shields",
+      "image": "decker-personal-shield-wave.webp",
+      "native_source": "_shots/part2_1010/presentation/decker-personal-shield-wave.png",
+      "sha256": "9a78626084169f5221c22bb8f4e0428e04857c4bf6e80e630f5a1c3d123cb0cf"
+    },
+    {
+      "title": "Kaia teal scanner",
+      "image": "kaia-teal-radar-scan.webp",
+      "native_source": "_shots/part2_1010/presentation/kaia-teal-radar-scan.png",
+      "sha256": "b1260192c4a39e48f3647c56e365d6fcfbbfe2bc1a98bb41f7a18de6d332e651"
+    },
+    {
+      "title": "Nyx purple dialogue",
+      "image": "radio-nyx.webp",
+      "native_source": "_shots/part2_1010/presentation/radio-nyx.png",
+      "sha256": "22986c23ea12e16c16708e9735bfa2d1b4a27491241f7c67f6b1515d697738b3"
+    },
+    {
+      "title": "Kaia teal dialogue",
+      "image": "radio-kaia.webp",
+      "native_source": "_shots/part2_1010/presentation/radio-kaia.png",
+      "sha256": "78ef3c66e7e38fdc211e79639f901939702edccc4446c3e5df6ddd832af53cc9"
+    },
+    {
+      "title": "Jace red dialogue",
+      "image": "radio-jace.webp",
+      "native_source": "_shots/part2_1010/presentation/radio-jace.png",
+      "sha256": "6f8d426649aa4befe7b8728d580504a95256e753b5fe93ad84f11217f20d3178"
+    },
+    {
+      "title": "Rook orange dialogue",
+      "image": "radio-rook.webp",
+      "native_source": "_shots/part2_1010/presentation/radio-rook.png",
+      "sha256": "bccf9acd3b8a52354af33f97db103c0446b79c6808fbbc55d13f2a78f270ef34"
+    },
+    {
+      "title": "Voss neon-red dialogue",
+      "image": "radio-voss.webp",
+      "native_source": "_shots/part2_1010/presentation/radio-voss.png",
+      "sha256": "77e8f9889e9a937ae63fff2a46d5810741defbf237bc48d6c8b5970a6bd27f4b"
+    },
+    {
+      "title": "Harrier readable fire",
+      "image": "harrier-elite-warnings.webp",
+      "native_source": "_shots/part2_1010/presentation/harrier-elite-warnings.png",
+      "sha256": "4573ac5473d907a28da02ed0e521fe2ef10b36ea60c666bfa508f77ce4fbe9a8"
+    },
+    {
+      "title": "Hammer full-height shaft",
+      "image": "hammer-full-height-spike.webp",
+      "native_source": "_shots/part2_1010/finishing/hammer-full-height-spike.png",
+      "sha256": "1bebdae331229c3b85d05fe49e4db9d8f465b78a6d965c4443e80db4e7e18c8e"
+    },
+    {
+      "title": "Earth approach begins",
+      "image": "earth-0.webp",
+      "native_source": "_shots/part2_1010/finishing/earth-0.png",
+      "sha256": "2f7d7f2df3b8385549959c91c41f73c0d576709192fbcb326946c777e2c94540"
+    },
+    {
+      "title": "Earth approach midpoint",
+      "image": "earth-4.webp",
+      "native_source": "_shots/part2_1010/finishing/earth-4.png",
+      "sha256": "bc994958452be72b0c48c7541d08071904298fa60eeda98bf72f9bc118f83763"
+    },
+    {
+      "title": "Earth arrival",
+      "image": "earth-7-8.webp",
+      "native_source": "_shots/part2_1010/finishing/earth-7-8.png",
+      "sha256": "8268fd676155345b40e2da27586758c6db3461ccdcf39947af6df3d52ae9ed28"
+    },
+    {
+      "title": "Stage Clear without equipment gap",
+      "image": "stage-clear-full-screen.webp",
+      "native_source": "_shots/part2_1010/finishing/stage-clear-full-screen.png",
+      "sha256": "9a33555e6ee5931d8367f4e291d0fc0e6532cdd5a51714df6b0f0c138657f99f"
+    },
+    {
+      "title": "Closer campaign view",
+      "image": "campaign-zoom.webp",
+      "native_source": "_shots/part2_1010/finishing/campaign-zoom.png",
+      "sha256": "5b9892e44ca768912f116ca6a0a68ad045ce28e64305f3ece6cc4f1f144f076b"
+    },
+    {
+      "title": "Opening stealth fighter: red and green palette variants",
+      "image": "red-green-stealth-bombers.webp",
+      "native_source": "_shots/part2_1010/finishing/red-green-stealth-bombers.png",
+      "sha256": "fc7ddd4b265d91efd001fdc280a6a690fcd6b8d0845c42c21a067d3f95f93471"
+    },
+    {
+      "title": "Original blue opening fighters",
+      "image": "original-opening-fighters.webp",
+      "native_source": "_shots/part2_1011/original-opening-fighters.png",
+      "sha256": "13f69f9c9c71bb3a5f888a6aa81b2d0583c2e5945ef3e604d8c5958f1a9ef28a"
+    },
+    {
+      "title": "Exact red/green variants in four flight lanes",
+      "image": "actual-stealth-four-directions.webp",
+      "native_source": "_shots/part2_1011/actual-stealth-four-directions.png",
+      "sha256": "b3ac3cd0c27bd3a1f8c20a2eb6af12b7c5451947511da2cdf0619698bf915c52"
+    },
+    {
+      "title": "Corrected atomic cloud in the running game",
+      "image": "atomic-live-ground.webp",
+      "native_source": "_shots/part2_1011/atomic-live-ground.png",
+      "sha256": "02e34e5bdd275b12817fc29f9ec776e61e565b3c00ca315afc0098854db71949"
+    },
+    {
+      "title": "Harrier elite: drawn roll",
+      "image": "elite-live-roll.webp",
+      "native_source": "_shots/part2_motion_1011/elite-live-roll.png",
+      "sha256": "5f6cef27613560af2199e9a3d69b8ba54b00265c6090b04738bb89357cc61c27"
+    },
+    {
+      "title": "Harrier elite: drawn somersault",
+      "image": "elite-live-somersault.webp",
+      "native_source": "_shots/part2_motion_1011/elite-live-somersault.png",
+      "sha256": "0a75e926df730cee7ad24d3ec88f599e607377b7c158bfe3796f11e9434d43cf"
+    },
+    {
+      "title": "Carrier-launched fighters: opposite rolls",
+      "image": "carrier-live-rolls.webp",
+      "native_source": "_shots/part2_motion_1011/carrier-live-rolls.png",
+      "sha256": "6435fe878fb97a48cb08d49cff7cfb6e38b8eb2bdb20c2a5b0da5400071657d3"
+    },
+    {
+      "title": "Maverick: green helix charge",
+      "image": "maverick-live-green-charge.webp",
+      "native_source": "_shots/part2_motion_1011/maverick-live-green-charge.png",
+      "sha256": "41ce173476dbc45167639e583382bef165346a7883fa878e97104211b8725819"
+    },
+    {
+      "title": "Maverick: purple/blue helix release",
+      "image": "maverick-live-overdrive-flight.webp",
+      "native_source": "_shots/part2_motion_1011/maverick-live-overdrive-flight.png",
+      "sha256": "16f5dcd943489160b3174906e08d0a602ccf43eed062342005e777b642a2543b"
+    },
+    {
+      "title": "Complete fire: root, stream and crown",
+      "image": "complete-fire-native.webp",
+      "native_source": "_shots/part2_motion_1011/complete-fire-native.png",
+      "sha256": "ec544e706402e5389636a668d68dc243b9db42f7cd1c5541edc3fc2c9b05f47f"
+    },
+    {
+      "title": "New progressive atomic cloud",
+      "image": "atomic-live-peak.webp",
+      "native_source": "_shots/part2_motion_1011/atomic-live-peak.png",
+      "sha256": "bc4a50055b45adce2d5a71313a24293df88c30e4742c7a8a66c0fe3c5756cd38"
+    },
+    {
+      "title": "All16 red rigid roll views",
+      "image": "red-roll-native.webp",
+      "native_source": "_shots/part2_motion_1011/red-roll-native.png",
+      "sha256": "6dae807d48b06501a5a2d0cf2334aabcdb1b4fc30d528e3306360956c95dc114"
+    },
+    {
+      "title": "All16 blue somersault views",
+      "image": "blue-somer-native.webp",
+      "native_source": "_shots/part2_motion_1011/blue-somer-native.png",
+      "sha256": "3cb8e42d9dcee19446d0cf7dcfccc3d5a105f2e20f91b20a60c3731d34204004"
+    }
+  ],
+  "limits": [
+    "Protected encounter fixtures are not a human Furious campaign clear.",
+    "Boss Rush handoffs used real result handlers; the probe did not naturally defeat all nine bosses.",
+    "Online co-op connector is wired; a second remote client was not paired.",
+    "Local co-op enemy primary aim retains the existing P1 bias."
+  ]
+}

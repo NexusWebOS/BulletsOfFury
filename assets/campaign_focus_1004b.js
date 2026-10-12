@@ -52,7 +52,7 @@ Object.defineProperties(Rival24,{
 });
 Rival24.mapDraw=function(dt){if(!cf4Pending())return CF4_BASE.map(dt);if(sselBoot>0)return;
  CF4.mapT+=dt||0;CF4.flight+=dt||0;const h=cf4Hub(),o=sselFlagScreenXY(6);if(!h)return;
- const harrier=campaign.stageX1004.route==='left',keys=harrier?['gp4_ace_top']:REBEL_SHIPS.map(k=>'rr_ship_'+k);
+ const harrier=campaign.stageX1004.route==='left',keys=harrier?['whv_closed']:REBEL_SHIPS.map(k=>'rr_ship_'+k);
  keys.forEach((key,i)=>{if(!XART.rdy(key))return;const im=XART.get(key),a=CF4.mapT*.65+i*TAU/keys.length,
   u=clamp((CF4.flight-i*.14)/2.7,0,1),e=u*u*(3-2*u),tx=h.x+Math.cos(a)*85,ty=h.y+Math.sin(a)*38,
   x=lerp(o?.x||h.x,tx,e),y=lerp(o?.y||h.y,ty,e)-Math.sin(u*Math.PI)*65,z=harrier?50:30;
@@ -65,8 +65,8 @@ Rival24.mapDraw=function(dt){if(!cf4Pending())return CF4_BASE.map(dt);if(sselBoo
 Rival24.mapInput=function(){if(!cf4Pending())return CF4_BASE.input();if(CF4.flight<3.2)return true;
  const h=cf4Hub(),m=Input.mouse||{},hit=typeof map4eStageXAt==='function'?map4eStageXAt(m.x,m.y):h&&Math.abs(m.x-h.x)<105&&Math.abs(m.y-h.y)<60;
  if(m.down&&!CF4.mouse&&hit){CF4.mouse=true;if(CF4.focus)cf4LaunchX();else{CF4.previous=sselCursor;CF4.focus=true;}return true;}CF4.mouse=!!m.down;
- if(!CF4.focus){if(Input.menuDown()){CF4.previous=sselCursor;CF4.focus=true;Audio.SFX.blip();return true;}return false;}
- if(Input.menuUp()||Input.menuBack()){CF4.focus=false;sselCursor=CF4.previous;Audio.SFX.blip();return true;}
+ if(!CF4.focus){if(sselCursor===6&&Input.menuUp()){CF4.previous=sselCursor;CF4.focus=true;Audio.SFX.blip();return true;}return false;}
+ if(Input.menuDown()||Input.menuBack()){CF4.focus=false;sselCursor=6;Audio.SFX.blip();return true;}
  if(Input.menuConfirm())cf4LaunchX();return true;
 };
 Rival24.mapBack=function(){if(CF4.focus&&Input.menuBack()){CF4.focus=false;sselCursor=CF4.previous;return true;}return CF4_BASE.back();};

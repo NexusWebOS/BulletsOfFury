@@ -1,0 +1,74 @@
+{
+  "stealth_roll": {
+    "frames": 64,
+    "unique_hashes": 64,
+    "union_bounds": [
+      21,
+      29,
+      249,
+      227
+    ],
+    "padded_edges": true,
+    "common_scale": true
+  },
+  "stealth_somer": {
+    "frames": 64,
+    "unique_hashes": 64,
+    "union_bounds": [
+      27,
+      29,
+      228,
+      226
+    ],
+    "padded_edges": true,
+    "common_scale": true
+  },
+  "fire_tip": {
+    "frames": 16,
+    "unique_hashes": 16,
+    "union_bounds": [
+      90,
+      54,
+      309,
+      344
+    ],
+    "padded_edges": true,
+    "common_scale": true
+  },
+  "atom": {
+    "frames": 32,
+    "unique_hashes": 32,
+    "union_bounds": [
+      21,
+      28,
+      365,
+      486
+    ],
+    "padded_edges": true,
+    "common_scale": true
+  },
+  "maverick": {
+    "frames": 32,
+    "unique_hashes": 32,
+    "union_bounds": [
+      16,
+      18,
+      272,
+      272
+    ],
+    "padded_edges": true,
+    "common_scale": true
+  },
+  "maverick_full": {
+    "frames": 32,
+    "unique_hashes": 32,
+    "union_bounds": [
+      16,
+      18,
+      272,
+      272
+    ],
+    "padded_edges": true,
+    "common_scale": true
+  }
+}

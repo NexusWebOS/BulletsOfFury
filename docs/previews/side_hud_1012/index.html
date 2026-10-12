@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bullets of Fury · Side HUD concepts</title><link rel="stylesheet" href="review.css"></head>
+<body><main>
+<header><div><p class="eyebrow">BULLETS OF FURY / ARMORED COMMAND / 12 OCT 2026</p><h1>Side command.</h1><p class="intro">Five generated HUD concepts. A full-height battlefield, framed by square instruments and side bars.</p></div><span class="stamp">CONCEPT REVIEW<br>Choose the direction</span></header>
+<nav id="concepts" aria-label="HUD concepts"></nav>
+<section class="viewer" aria-labelledby="conceptTitle">
+ <div class="viewer-heading"><div><span id="number" class="eyebrow">01 / 05</span><h2 id="conceptTitle">Loading concepts…</h2></div><div class="actions"><button id="full" type="button">Fullscreen preview</button><button id="download" type="button">Save mockup PNG</button></div></div>
+ <div class="controls"><fieldset><legend>Scene</legend><button data-scene="gameplay" aria-pressed="true">Gameplay</button><button data-scene="fly-in" aria-pressed="false">Intro fly-in</button><button data-scene="continue" aria-pressed="false">Continue</button></fieldset><label>Stocks <select id="stocks"><option value="normal">Normal</option><option value="low">Low / locked on</option><option value="empty">Empty</option></select></label><label><input id="motion" type="checkbox" checked> Radar sweep</label></div>
+ <div id="screen"><canvas id="preview" width="2048" height="1152" aria-label="Selected generated side HUD surrounding a native game capture"></canvas></div>
+ <div class="caption"><p id="note"></p><p><strong>Same field in every scene.</strong> Gameplay, fly-in and continue retain one proportional 480 × 512 field, using the full preview height.</p></div>
+ <p id="status" role="status">Loading generated art and native game references…</p>
+</section>
+<section class="layout-notes" aria-label="Layout"><div><span class="eyebrow">LEFT / FLIGHT & LOADOUT</span><p>Score & high score · Roll · Somersault · Equipped weapon<br>Speed and shield bars remain visible.</p></div><div><span class="eyebrow">RIGHT / TACTICAL & STOCKS</span><p>Radar · Special ability · Lives · Missiles · Lock-on<br>Large stock digits sit beside their native game icons.</p></div></section>
+<section><div class="section-heading"><h2>Compare the five.</h2><p>The same gameplay capture and example values in every option.</p></div><div id="gallery"></div></section>
+<footer><p>Review mockups with generated housing art, actual game icons and the Command Alloy font. Scene backgrounds are native captures; radar and meters demonstrate presentation. The live game awaits your concept choice.</p><a href="../../../_ART_SOURCES/side_hud_1012/prompts.json">Generation prompts</a><a href="../../../_ART_SOURCES/side_hud_1012/registration.json">Asset registration</a><a href="../../SIDE_HUD_CONCEPTS_1012.md">Design & sizing notes</a></footer>
+</main><script src="review.js"></script></body></html>

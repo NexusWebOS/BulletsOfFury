@@ -54,7 +54,7 @@
       if (u.aware >= 0.3) { u.mode = 'suspect'; u.goal = { x: h.x, y: h.y }; u.suspectT = 4; }
     },
     raise(u, p, units) {
-      if (this.phase !== 'ALERT') { this.alerts++; TD.Audio.play('alert'); TD.game && TD.game.say('!', u); }
+      if (this.phase !== 'ALERT') { this.alerts++; TD.Audio.play('gd_spotted'); TD.Audio.play('alert', .65); TD.game && TD.game.say('!', u); }
       this.phase = 'ALERT'; this.timer = this.T.ALERT; this.lastKnown = { x: p.x, y: p.y };
       for (const o of units) if (!o.dead && o.vis && M.dist(o.x, o.y, p.x, p.y) < (o.radio || 700)) { o.mode = 'alert'; o.aware = 1; o.goal = { x: p.x, y: p.y }; }
     },

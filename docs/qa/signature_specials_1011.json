@@ -1,0 +1,1069 @@
+{
+  "date": "2026-10-11T06:38:49.361123+00:00",
+  "request": "Stage X enhances all nine pilot specials; enemy Rebels own their signatures; opening boxes deliver native specials.",
+  "owners": [
+    "assets/signature_specials_1011.js",
+    "_BUILD_SOURCE/test_signature_specials_1011.cjs",
+    "_BUILD_SOURCE/probe_signature_specials_1011.py",
+    "_BUILD_SOURCE/probe_signature_secondary_1011.py",
+    "_BUILD_SOURCE/build_signature_review_1011.py",
+    "_BUILD_SOURCE/probe_signature_review_1011.py"
+  ],
+  "hashes": {
+    "assets/signature_specials_1011.js": "65e9ef0ca9a2d6aeab816c2179cf63bcb5969cd62dc87c21f4d92f6c0ce88329",
+    "_BUILD_SOURCE/test_signature_specials_1011.cjs": "256e2df293f22f03f02df5c7c7c570d672fbae55e6c874f5c5d0e9d28f481ac1",
+    "_BUILD_SOURCE/probe_signature_specials_1011.py": "460e196420abe397b182560f1fa14954daf241a5b1d8a6f74131125197690914",
+    "_BUILD_SOURCE/probe_signature_secondary_1011.py": "35606bbafde5369f8c66267feba42793d8c9797bed039ffc26d3c796ca4cc4fd",
+    "_BUILD_SOURCE/build_signature_review_1011.py": "1fabd7964a5c8c2baa2a40e47f3da6d07cc3a6b1ede4bfc352f9d803cc0f5d3d",
+    "_BUILD_SOURCE/probe_signature_review_1011.py": "562b0960a5b2b359018710227882b0f0235000f225e7bc27989c245e7ae921e6"
+  },
+  "regression": {
+    "passed": 8468,
+    "failed": 0,
+    "exit_code": 0,
+    "final_summary": "FALVA/LIZZIE BUILD OK, 0 ERRORS"
+  },
+  "native": {
+    "passed": 53,
+    "failed": 0,
+    "checks": [
+      {
+        "name": "axel: an authored unopened box visibly descends before activation",
+        "passed": true,
+        "data": {
+          "boxes": [
+            {
+              "pilot": "axel",
+              "y": 218.5,
+              "open": false
+            }
+          ],
+          "special": null,
+          "draws": 85
+        }
+      },
+      {
+        "name": "axel: actual arrival and collection activates its own base special",
+        "passed": true,
+        "data": {
+          "pilot": "axel",
+          "dur": 15,
+          "level": 1,
+          "boxes": 0,
+          "grants": 1,
+          "name": "MEGA SHIELD"
+        }
+      },
+      {
+        "name": "decker: an authored unopened box visibly descends before activation",
+        "passed": true,
+        "data": {
+          "boxes": [
+            {
+              "pilot": "decker",
+              "y": 218.5,
+              "open": false
+            }
+          ],
+          "special": null,
+          "draws": 247
+        }
+      },
+      {
+        "name": "decker: actual arrival and collection activates its own base special",
+        "passed": true,
+        "data": {
+          "pilot": "decker",
+          "dur": 15,
+          "level": 1,
+          "boxes": 0,
+          "grants": 1,
+          "name": "CLOAKING SYSTEM"
+        }
+      },
+      {
+        "name": "maverick: an authored unopened box visibly descends before activation",
+        "passed": true,
+        "data": {
+          "boxes": [
+            {
+              "pilot": "maverick",
+              "y": 218.5,
+              "open": false
+            }
+          ],
+          "special": null,
+          "draws": 409
+        }
+      },
+      {
+        "name": "maverick: actual arrival and collection activates its own base special",
+        "passed": true,
+        "data": {
+          "pilot": "maverick",
+          "dur": 15,
+          "level": 1,
+          "boxes": 0,
+          "grants": 1,
+          "name": "HELIX BEAM"
+        }
+      },
+      {
+        "name": "maverick: keyboard hold and release emits its real level 1 charged attack",
+        "passed": true,
+        "data": {
+          "shot": {
+            "kind": "venomx",
+            "damage": 70,
+            "level": 1,
+            "full": true
+          },
+          "expected": 70
+        }
+      },
+      {
+        "name": "freezer: an authored unopened box visibly descends before activation",
+        "passed": true,
+        "data": {
+          "boxes": [
+            {
+              "pilot": "freezer",
+              "y": 218.5,
+              "open": false
+            }
+          ],
+          "special": null,
+          "draws": 571
+        }
+      },
+      {
+        "name": "freezer: actual arrival and collection activates its own base special",
+        "passed": true,
+        "data": {
+          "pilot": "freezer",
+          "dur": 15,
+          "level": 1,
+          "boxes": 0,
+          "grants": 1,
+          "name": "TIME FREEZE + THERMOSHOCK"
+        }
+      },
+      {
+        "name": "juggernaut: an authored unopened box visibly descends before activation",
+        "passed": true,
+        "data": {
+          "boxes": [
+            {
+              "pilot": "juggernaut",
+              "y": 218.5,
+              "open": false
+            }
+          ],
+          "special": null,
+          "draws": 733
+        }
+      },
+      {
+        "name": "juggernaut: actual arrival and collection activates its own base special",
+        "passed": true,
+        "data": {
+          "pilot": "juggernaut",
+          "dur": 15,
+          "level": 1,
+          "boxes": 0,
+          "grants": 1,
+          "name": "WRECKING BALL"
+        }
+      },
+      {
+        "name": "yuri: an authored unopened box visibly descends before activation",
+        "passed": true,
+        "data": {
+          "boxes": [
+            {
+              "pilot": "yuri",
+              "y": 218.5,
+              "open": false
+            }
+          ],
+          "special": null,
+          "draws": 895
+        }
+      },
+      {
+        "name": "yuri: actual arrival and collection activates its own base special",
+        "passed": true,
+        "data": {
+          "pilot": "yuri",
+          "dur": 15,
+          "level": 1,
+          "boxes": 0,
+          "grants": 1,
+          "name": "CHAIN LIGHTNING"
+        }
+      },
+      {
+        "name": "cole: an authored unopened box visibly descends before activation",
+        "passed": true,
+        "data": {
+          "boxes": [
+            {
+              "pilot": "cole",
+              "y": 218.5,
+              "open": false
+            }
+          ],
+          "special": null,
+          "draws": 1057
+        }
+      },
+      {
+        "name": "cole: actual arrival and collection activates its own base special",
+        "passed": true,
+        "data": {
+          "pilot": "cole",
+          "dur": 15,
+          "level": 1,
+          "boxes": 0,
+          "grants": 1,
+          "name": "NUKE STRIKE"
+        }
+      },
+      {
+        "name": "lizzie: an authored unopened box visibly descends before activation",
+        "passed": true,
+        "data": {
+          "boxes": [
+            {
+              "pilot": "lizzie",
+              "y": 218.5,
+              "open": false
+            }
+          ],
+          "special": null,
+          "draws": 1219
+        }
+      },
+      {
+        "name": "lizzie: actual arrival and collection activates its own base special",
+        "passed": true,
+        "data": {
+          "pilot": "lizzie",
+          "dur": 15,
+          "level": 1,
+          "boxes": 0,
+          "grants": 1,
+          "name": "ATOM BOMB"
+        }
+      },
+      {
+        "name": "falva: an authored unopened box visibly descends before activation",
+        "passed": true,
+        "data": {
+          "boxes": [
+            {
+              "pilot": "falva",
+              "y": 218.5,
+              "open": false
+            }
+          ],
+          "special": null,
+          "draws": 1381
+        }
+      },
+      {
+        "name": "falva: actual arrival and collection activates its own base special",
+        "passed": true,
+        "data": {
+          "pilot": "falva",
+          "dur": 15,
+          "level": 1,
+          "boxes": 0,
+          "grants": 1,
+          "name": "ROLLER BALL"
+        }
+      },
+      {
+        "name": "falva: keyboard hold and release emits its real level 1 charged attack",
+        "passed": true,
+        "data": {
+          "shot": {
+            "kind": "roller",
+            "damage": 12,
+            "level": 1,
+            "full": true
+          },
+          "expected": 12
+        }
+      },
+      {
+        "name": "Co-op independently collects Cole and Lizzie supplies without replacing either ability",
+        "passed": true,
+        "data": {
+          "p1": "cole",
+          "p2": "lizzie",
+          "t1": 9.799999999999741,
+          "t2": 9.799999999999741,
+          "boxes": 0
+        }
+      },
+      {
+        "name": "Stage X arrival records the real boss but grants no enhanced ability",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "voss: real enemy AI collects, warns and releases its personal signature",
+        "passed": true,
+        "data": {
+          "started": [
+            {
+              "event": "rebel-signature-start",
+              "pilot": "voss",
+              "kind": "turbo",
+              "name": "TURBO OVERDRIVE"
+            },
+            {
+              "event": "rebel-signature-start",
+              "pilot": "nyx",
+              "kind": "cloak",
+              "name": "GHOSTKNIFE CLOAK"
+            },
+            {
+              "event": "rebel-signature-start",
+              "pilot": "rook",
+              "kind": "slug",
+              "name": "HEAVY GUN BARRAGE"
+            },
+            {
+              "event": "rebel-signature-start",
+              "pilot": "kaia",
+              "kind": "rockets",
+              "name": "TWIN SEEKER RACK"
+            },
+            {
+              "event": "rebel-signature-start",
+              "pilot": "jace",
+              "kind": "helix",
+              "name": "MOLTEN HELIX NOVA"
+            }
+          ],
+          "released": [
+            {
+              "event": "specialRelease",
+              "t": 2.9999999999999942,
+              "pilot": "voss",
+              "kind": "turbo"
+            },
+            {
+              "event": "specialRelease",
+              "t": 9.600000000000056,
+              "pilot": "nyx",
+              "kind": "cloak"
+            },
+            {
+              "event": "specialRelease",
+              "t": 16.716666666667,
+              "pilot": "rook",
+              "kind": "slug"
+            },
+            {
+              "event": "specialRelease",
+              "t": 21.400000000000066,
+              "pilot": "kaia",
+              "kind": "rockets"
+            },
+            {
+              "event": "specialRelease",
+              "t": 26.283333333333122,
+              "pilot": "jace",
+              "kind": "helix"
+            }
+          ],
+          "draws": {
+            "opening": 1782,
+            "voss": 333,
+            "nyx": 382,
+            "rook": 181,
+            "kaia": 224,
+            "jace": 140
+          }
+        }
+      },
+      {
+        "name": "nyx: real enemy AI collects, warns and releases its personal signature",
+        "passed": true,
+        "data": {
+          "started": [
+            {
+              "event": "rebel-signature-start",
+              "pilot": "voss",
+              "kind": "turbo",
+              "name": "TURBO OVERDRIVE"
+            },
+            {
+              "event": "rebel-signature-start",
+              "pilot": "nyx",
+              "kind": "cloak",
+              "name": "GHOSTKNIFE CLOAK"
+            },
+            {
+              "event": "rebel-signature-start",
+              "pilot": "rook",
+              "kind": "slug",
+              "name": "HEAVY GUN BARRAGE"
+            },
+            {
+              "event": "rebel-signature-start",
+              "pilot": "kaia",
+              "kind": "rockets",
+              "name": "TWIN SEEKER RACK"
+            },
+            {
+              "event": "rebel-signature-start",
+              "pilot": "jace",
+              "kind": "helix",
+              "name": "MOLTEN HELIX NOVA"
+            }
+          ],
+          "released": [
+            {
+              "event": "specialRelease",
+              "t": 2.9999999999999942,
+              "pilot": "voss",
+              "kind": "turbo"
+            },
+            {
+              "event": "specialRelease",
+              "t": 9.600000000000056,
+              "pilot": "nyx",
+              "kind": "cloak"
+            },
+            {
+              "event": "specialRelease",
+              "t": 16.716666666667,
+              "pilot": "rook",
+              "kind": "slug"
+            },
+            {
+              "event": "specialRelease",
+              "t": 21.400000000000066,
+              "pilot": "kaia",
+              "kind": "rockets"
+            },
+            {
+              "event": "specialRelease",
+              "t": 26.283333333333122,
+              "pilot": "jace",
+              "kind": "helix"
+            }
+          ],
+          "draws": {
+            "opening": 1782,
+            "voss": 333,
+            "nyx": 382,
+            "rook": 181,
+            "kaia": 224,
+            "jace": 140
+          }
+        }
+      },
+      {
+        "name": "rook: real enemy AI collects, warns and releases its personal signature",
+        "passed": true,
+        "data": {
+          "started": [
+            {
+              "event": "rebel-signature-start",
+              "pilot": "voss",
+              "kind": "turbo",
+              "name": "TURBO OVERDRIVE"
+            },
+            {
+              "event": "rebel-signature-start",
+              "pilot": "nyx",
+              "kind": "cloak",
+              "name": "GHOSTKNIFE CLOAK"
+            },
+            {
+              "event": "rebel-signature-start",
+              "pilot": "rook",
+              "kind": "slug",
+              "name": "HEAVY GUN BARRAGE"
+            },
+            {
+              "event": "rebel-signature-start",
+              "pilot": "kaia",
+              "kind": "rockets",
+              "name": "TWIN SEEKER RACK"
+            },
+            {
+              "event": "rebel-signature-start",
+              "pilot": "jace",
+              "kind": "helix",
+              "name": "MOLTEN HELIX NOVA"
+            }
+          ],
+          "released": [
+            {
+              "event": "specialRelease",
+              "t": 2.9999999999999942,
+              "pilot": "voss",
+              "kind": "turbo"
+            },
+            {
+              "event": "specialRelease",
+              "t": 9.600000000000056,
+              "pilot": "nyx",
+              "kind": "cloak"
+            },
+            {
+              "event": "specialRelease",
+              "t": 16.716666666667,
+              "pilot": "rook",
+              "kind": "slug"
+            },
+            {
+              "event": "specialRelease",
+              "t": 21.400000000000066,
+              "pilot": "kaia",
+              "kind": "rockets"
+            },
+            {
+              "event": "specialRelease",
+              "t": 26.283333333333122,
+              "pilot": "jace",
+              "kind": "helix"
+            }
+          ],
+          "draws": {
+            "opening": 1782,
+            "voss": 333,
+            "nyx": 382,
+            "rook": 181,
+            "kaia": 224,
+            "jace": 140
+          }
+        }
+      },
+      {
+        "name": "kaia: real enemy AI collects, warns and releases its personal signature",
+        "passed": true,
+        "data": {
+          "started": [
+            {
+              "event": "rebel-signature-start",
+              "pilot": "voss",
+              "kind": "turbo",
+              "name": "TURBO OVERDRIVE"
+            },
+            {
+              "event": "rebel-signature-start",
+              "pilot": "nyx",
+              "kind": "cloak",
+              "name": "GHOSTKNIFE CLOAK"
+            },
+            {
+              "event": "rebel-signature-start",
+              "pilot": "rook",
+              "kind": "slug",
+              "name": "HEAVY GUN BARRAGE"
+            },
+            {
+              "event": "rebel-signature-start",
+              "pilot": "kaia",
+              "kind": "rockets",
+              "name": "TWIN SEEKER RACK"
+            },
+            {
+              "event": "rebel-signature-start",
+              "pilot": "jace",
+              "kind": "helix",
+              "name": "MOLTEN HELIX NOVA"
+            }
+          ],
+          "released": [
+            {
+              "event": "specialRelease",
+              "t": 2.9999999999999942,
+              "pilot": "voss",
+              "kind": "turbo"
+            },
+            {
+              "event": "specialRelease",
+              "t": 9.600000000000056,
+              "pilot": "nyx",
+              "kind": "cloak"
+            },
+            {
+              "event": "specialRelease",
+              "t": 16.716666666667,
+              "pilot": "rook",
+              "kind": "slug"
+            },
+            {
+              "event": "specialRelease",
+              "t": 21.400000000000066,
+              "pilot": "kaia",
+              "kind": "rockets"
+            },
+            {
+              "event": "specialRelease",
+              "t": 26.283333333333122,
+              "pilot": "jace",
+              "kind": "helix"
+            }
+          ],
+          "draws": {
+            "opening": 1782,
+            "voss": 333,
+            "nyx": 382,
+            "rook": 181,
+            "kaia": 224,
+            "jace": 140
+          }
+        }
+      },
+      {
+        "name": "jace: real enemy AI collects, warns and releases its personal signature",
+        "passed": true,
+        "data": {
+          "started": [
+            {
+              "event": "rebel-signature-start",
+              "pilot": "voss",
+              "kind": "turbo",
+              "name": "TURBO OVERDRIVE"
+            },
+            {
+              "event": "rebel-signature-start",
+              "pilot": "nyx",
+              "kind": "cloak",
+              "name": "GHOSTKNIFE CLOAK"
+            },
+            {
+              "event": "rebel-signature-start",
+              "pilot": "rook",
+              "kind": "slug",
+              "name": "HEAVY GUN BARRAGE"
+            },
+            {
+              "event": "rebel-signature-start",
+              "pilot": "kaia",
+              "kind": "rockets",
+              "name": "TWIN SEEKER RACK"
+            },
+            {
+              "event": "rebel-signature-start",
+              "pilot": "jace",
+              "kind": "helix",
+              "name": "MOLTEN HELIX NOVA"
+            }
+          ],
+          "released": [
+            {
+              "event": "specialRelease",
+              "t": 2.9999999999999942,
+              "pilot": "voss",
+              "kind": "turbo"
+            },
+            {
+              "event": "specialRelease",
+              "t": 9.600000000000056,
+              "pilot": "nyx",
+              "kind": "cloak"
+            },
+            {
+              "event": "specialRelease",
+              "t": 16.716666666667,
+              "pilot": "rook",
+              "kind": "slug"
+            },
+            {
+              "event": "specialRelease",
+              "t": 21.400000000000066,
+              "pilot": "kaia",
+              "kind": "rockets"
+            },
+            {
+              "event": "specialRelease",
+              "t": 26.283333333333122,
+              "pilot": "jace",
+              "kind": "helix"
+            }
+          ],
+          "draws": {
+            "opening": 1782,
+            "voss": 333,
+            "nyx": 382,
+            "rook": 181,
+            "kaia": 224,
+            "jace": 140
+          }
+        }
+      },
+      {
+        "name": "The actual Stage X encounter reaches its defeat state before the reward",
+        "passed": true,
+        "data": {
+          "dead": true,
+          "hp": 0,
+          "defeated": true,
+          "alive": [],
+          "proof": true
+        }
+      },
+      {
+        "name": "Stage X defeat permanently earns Signature Mk II exactly once",
+        "passed": true,
+        "data": {
+          "earned": true,
+          "receipt": {
+            "version": 1,
+            "stage": "X",
+            "route": "right",
+            "boss": "rebelsquad",
+            "earned": true,
+            "at": 1791699935152,
+            "pilot": "cole",
+            "difficulty": "normal"
+          },
+          "repeat": false
+        }
+      },
+      {
+        "name": "The actual campaign map visibly paints the Signature Mk II reward",
+        "passed": true,
+        "data": {
+          "key": "fs11-mk2",
+          "count": 159,
+          "reward": true
+        }
+      },
+      {
+        "name": "axel: its next real opening pickup uses the earned Mk II upgrade",
+        "passed": true,
+        "data": {
+          "pilot": "axel",
+          "dur": 20,
+          "level": 2,
+          "name": "MEGA SHIELD MK II",
+          "strikes": 0,
+          "chain": 1,
+          "time": 1
+        }
+      },
+      {
+        "name": "axel: the actual HUD paints its native special icon",
+        "passed": true,
+        "data": {
+          "expected": "special_icon_axel_mega_shield",
+          "matched": 1
+        }
+      },
+      {
+        "name": "decker: its next real opening pickup uses the earned Mk II upgrade",
+        "passed": true,
+        "data": {
+          "pilot": "decker",
+          "dur": 20,
+          "level": 2,
+          "name": "CLOAKING SYSTEM MK II",
+          "strikes": 0,
+          "chain": 1,
+          "time": 1
+        }
+      },
+      {
+        "name": "decker: the actual HUD paints its native special icon",
+        "passed": true,
+        "data": {
+          "expected": "special_icon_decker_cloaking_system",
+          "matched": 1
+        }
+      },
+      {
+        "name": "maverick: its next real opening pickup uses the earned Mk II upgrade",
+        "passed": true,
+        "data": {
+          "pilot": "maverick",
+          "dur": 20,
+          "level": 2,
+          "name": "HELIX BEAM MK II",
+          "strikes": 0,
+          "chain": 1,
+          "time": 1
+        }
+      },
+      {
+        "name": "maverick: the actual HUD paints its native special icon",
+        "passed": true,
+        "data": {
+          "expected": "special_icon_maverick_helix_beam",
+          "matched": 1
+        }
+      },
+      {
+        "name": "maverick: keyboard hold and release emits its real level 2 charged attack",
+        "passed": true,
+        "data": {
+          "shot": {
+            "kind": "venomx",
+            "damage": 87.5,
+            "level": 2,
+            "full": true
+          },
+          "expected": 87.5
+        }
+      },
+      {
+        "name": "freezer: its next real opening pickup uses the earned Mk II upgrade",
+        "passed": true,
+        "data": {
+          "pilot": "freezer",
+          "dur": 20,
+          "level": 2,
+          "name": "THERMOSHOCK MK II",
+          "strikes": 0,
+          "chain": 1,
+          "time": 0.4
+        }
+      },
+      {
+        "name": "freezer: the actual HUD paints its native special icon",
+        "passed": true,
+        "data": {
+          "expected": "special_icon_freezer_time_freeze",
+          "matched": 1
+        }
+      },
+      {
+        "name": "juggernaut: its next real opening pickup uses the earned Mk II upgrade",
+        "passed": true,
+        "data": {
+          "pilot": "juggernaut",
+          "dur": 20,
+          "level": 2,
+          "name": "WRECKING BALL MK II",
+          "strikes": 0,
+          "chain": 1,
+          "time": 1
+        }
+      },
+      {
+        "name": "juggernaut: the actual HUD paints its native special icon",
+        "passed": true,
+        "data": {
+          "expected": "special_icon_juggernaut_wrecking_ball",
+          "matched": 1
+        }
+      },
+      {
+        "name": "yuri: its next real opening pickup uses the earned Mk II upgrade",
+        "passed": true,
+        "data": {
+          "pilot": "yuri",
+          "dur": 20,
+          "level": 2,
+          "name": "CHAIN LIGHTNING MK II",
+          "strikes": 0,
+          "chain": 2,
+          "time": 1
+        }
+      },
+      {
+        "name": "yuri: the actual HUD paints its native special icon",
+        "passed": true,
+        "data": {
+          "expected": "special_icon_yuri_chain_lightning",
+          "matched": 1
+        }
+      },
+      {
+        "name": "cole: its next real opening pickup uses the earned Mk II upgrade",
+        "passed": true,
+        "data": {
+          "pilot": "cole",
+          "dur": 20,
+          "level": 2,
+          "name": "NUKE STRIKE MK II",
+          "strikes": 5,
+          "chain": 1,
+          "time": 1
+        }
+      },
+      {
+        "name": "cole: the actual HUD paints its native special icon",
+        "passed": true,
+        "data": {
+          "expected": "special_icon_cole_nuclear_warheads",
+          "matched": 1
+        }
+      },
+      {
+        "name": "lizzie: its next real opening pickup uses the earned Mk II upgrade",
+        "passed": true,
+        "data": {
+          "pilot": "lizzie",
+          "dur": 20,
+          "level": 2,
+          "name": "ATOM BOMB MK II",
+          "strikes": 5,
+          "chain": 1,
+          "time": 1
+        }
+      },
+      {
+        "name": "lizzie: the actual HUD paints its native special icon",
+        "passed": true,
+        "data": {
+          "expected": "special_icon_lizzie_atom_bomb",
+          "matched": 1
+        }
+      },
+      {
+        "name": "falva: its next real opening pickup uses the earned Mk II upgrade",
+        "passed": true,
+        "data": {
+          "pilot": "falva",
+          "dur": 20,
+          "level": 2,
+          "name": "ROLLER BALL MK II",
+          "strikes": 0,
+          "chain": 1,
+          "time": 1
+        }
+      },
+      {
+        "name": "falva: the actual HUD paints its native special icon",
+        "passed": true,
+        "data": {
+          "expected": "special_icon_falva_roller_ball",
+          "matched": 1
+        }
+      },
+      {
+        "name": "falva: keyboard hold and release emits its real level 2 charged attack",
+        "passed": true,
+        "data": {
+          "shot": {
+            "kind": "roller",
+            "damage": 15,
+            "level": 2,
+            "full": true
+          },
+          "expected": 15
+        }
+      },
+      {
+        "name": "The real campaign save/apply path retains the reward",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "A fresh game boot restores the earned profile unlock",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "No page, console, asset or renderer errors",
+        "passed": true,
+        "data": []
+      }
+    ],
+    "errors": []
+  },
+  "focused_native": {
+    "passed": 4,
+    "failed": 0,
+    "checks": [
+      {
+        "name": "Voss secondary Fusion retains exactly one correct callout",
+        "passed": true,
+        "data": {
+          "name": "FUSION CANNON",
+          "labels": [
+            "FUSION CANNON"
+          ],
+          "paint": 25
+        }
+      },
+      {
+        "name": "The actual campaign font painter renders the Fusion callout without browser errors",
+        "passed": true,
+        "data": {
+          "name": "FUSION CANNON",
+          "labels": [
+            "FUSION CANNON"
+          ],
+          "paint": 25
+        }
+      },
+      {
+        "name": "P2 Falva keeps her helper alongside P1 Cole after real opening deliveries",
+        "passed": true,
+        "data": {
+          "p1": "cole",
+          "p2": "falva",
+          "helpers": 1,
+          "draws": 2,
+          "dx": 41.191268240818204,
+          "dy": 39.72612587935572
+        }
+      },
+      {
+        "name": "The real world pass paints the authored orbiting ball in P2 seat context",
+        "passed": true,
+        "data": {
+          "p1": "cole",
+          "p2": "falva",
+          "helpers": 1,
+          "draws": 2,
+          "dx": 41.191268240818204,
+          "dy": 39.72612587935572
+        }
+      }
+    ],
+    "errors": []
+  },
+  "scope": "Protected controlled Chromium scenarios. Natural Rebel AI releases; accelerated real damage/physical death clear on the right Stage X route. Left reward gate covered in the suite.",
+  "resolved": [
+    "P2 pickup replaced the global P1 special: seat-owned abilities and timers now remain independent.",
+    "Atlas icon readiness needed the owning sheet, and the native fixture needed the actual pilot menu index.",
+    "Gang shields absorb a hit before hull damage; the clear now uses repeated real hits.",
+    "The map capture waits for authored assets and full live typing; its complete reward copy is159 characters.",
+    "Secondary Fusion keeps its correct single callout; attached co-op effects now use both seats in their existing render passes."
+  ],
+  "git": "Local only; HEAD7539951 unchanged; existing staged/unstaged/untracked work preserved.",
+  "preview": {
+    "passed": 6,
+    "failed": 0,
+    "checks": [
+      {
+        "name": "Review lists nine upgrades and five enemy signatures",
+        "passed": true
+      },
+      {
+        "name": "All27 pilot pictures load through the actual selector and buttons",
+        "passed": true
+      },
+      {
+        "name": "All five enemy capture selections load",
+        "passed": true
+      },
+      {
+        "name": "Stage X reward and co-op evidence images also load",
+        "passed": true
+      },
+      {
+        "name": "The complete review fits a narrow viewport",
+        "passed": true
+      },
+      {
+        "name": "No preview page, console or missing-asset errors",
+        "passed": true
+      }
+    ],
+    "errors": []
+  }
+}

@@ -1,0 +1,18 @@
+[
+  {
+    "name": "sonic_track_right16",
+    "file": "sonic_track_right16.png",
+    "prompt": "Animate ONLY this ONE right-side tank track module. Generate a clean spritesheet of EXACTLY 16 individual frames in a 4-column, 4-row uniform grid. Every frame must preserve this exact right-side asymmetry: the cyan-light vertical armor guard stays on the RIGHT EDGE and the inward mounting lug stays on the LEFT EDGE. ALL SIXTEEN frames face down with the same outline, orientation, position and size, as copies of the reference metal guard. NEVER mirror ANY frame. No left-side track. Only animate the central black linked tread belt forward through sixteen subtly different sequential positions for a seamless loop. Do not animate, resize, move, flip or rotate the enclosing metal guard. Detailed chrome/graphite/cyan Bullets of Fury Neo-Geo HD arcade sprite artwork, transparent background, generous padding between identical equal cells. No labels, no text, no other modules."
+  },
+  {
+    "name": "devastator_weapon_padded16",
+    "file": "devastator_weapon_padded16.png",
+    "prompt": "Repair the layout of this exact Devastator twin-cannon animation, preserving its beautiful graphite/red detailed Bullets of Fury Neo-Geo art. EXACTLY sixteen weapon frames on a SQUARE transparent sheet with 4 columns x 4 rows and IDENTICAL square cells. The entire weapon WITH its longest downward flame must fit safely within each cell with 20 percent empty padding on every side. Draw each weapon smaller inside its cell if needed to make room for the flame. Frame 1 to16 all use the SAME rear gimbal mount position and same size. No flames or smoke may overlap another frame, no cropping any silhouette. Keep ONLY the isolated twin cannon, never a hull. Four frames charge red, four frames alternate left/right orange-white downward plasma muzzle flare with heavy recoil, four frames smoke and cool, four frames recover. This turret faces DOWN, receiver stays stationary. Two barrels always, no third barrel. No grid, labels, text, backdrop or shadow fog. Do not change the design. This is a padded production spritesheet, not a montage."
+  },
+  {
+    "name": "sonic_tracks_mixed_repair",
+    "file": "sonic_tracks_mixed_repair.png",
+    "prompt": "Correct this animation sheet by creating exactly SIXTEEN individual RIGHT-side track modules, in a regular 4 columns by 4 rows grid. Each of the 16 cells contains ONE complete right track, no pairs, no extra pieces. Use the reference's platinum/chrome dark graphite track with small cyan running lights, its inward-facing mounting lug, crisp detailed Bullets of Fury Neo-Geo HD pixel art. Same top-down perspective, same forward-down orientation, identical guard outline and metal chassis size/position centered in each cell. Only the linked tread belts move between frames 1 through 16, advancing one small tread step continuously then looping. Never move, turn, resize or bob the track guard. Transparent background, generous equal gaps and all silhouettes fully inside their cell. No text, no numbering, no labels, no painted grid. Exact 16 frame single module reel.",
+    "rejected": "Alternating left and right guard orientation; retained as a source return, not registered."
+  }
+]

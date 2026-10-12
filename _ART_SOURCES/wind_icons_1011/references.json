@@ -1,0 +1,110 @@
+[
+  {
+    "slot": 0,
+    "file": "assets/game/shared/ui/ui/forge_0917/micon_forge_fire_0.png",
+    "sha256": "8f1e0aa5b2bb06d91f84e8dec3dd5d130e2e36a7dd47a251b052cf34d7c204d5",
+    "native_size": [
+      100,
+      112
+    ]
+  },
+  {
+    "slot": 1,
+    "file": "assets/game/shared/ui/ui/forge_0917/micon_forge_fire_1.png",
+    "sha256": "2b735cf5eaf67935e3461b3b7c3d337f278fa4a8b5d0c5feec91adf613e25e6c",
+    "native_size": [
+      99,
+      112
+    ]
+  },
+  {
+    "slot": 2,
+    "file": "assets/game/shared/ui/ui/forge_0917/micon_forge_fire_2.png",
+    "sha256": "53c5acb83c096946dffaf2e37ab93a9a48f9a4ca8c13b9fb6e294b615e4c2bb7",
+    "native_size": [
+      100,
+      112
+    ]
+  },
+  {
+    "slot": 3,
+    "file": "assets/game/shared/ui/ui/forge_0917/micon_forge_fire_3.png",
+    "sha256": "55dd84a6fbfb82309902492128cf45bf388807da409e745f3d8102298301fa65",
+    "native_size": [
+      103,
+      112
+    ]
+  },
+  {
+    "slot": 4,
+    "file": "assets/game/shared/ui/ui/forge_0917/micon_forge_fire_4.png",
+    "sha256": "1f1ed2c2677eeca1eb76acb645f408b1962611c60f417edecb7c161b363279d9",
+    "native_size": [
+      107,
+      112
+    ]
+  },
+  {
+    "slot": 5,
+    "file": "assets/game/shared/ui/ui/forge_0917/micon_forge_fire_5.png",
+    "sha256": "5946e281fb40bbcfd2424ce3949f32641eee7fe447eef923284d1ed9ddb18124",
+    "native_size": [
+      103,
+      112
+    ]
+  },
+  {
+    "slot": 6,
+    "file": "assets/game/shared/ui/ui/forge_0917/micon_forge_fire_6.png",
+    "sha256": "b35f22aad5e451916f4572308606f501bc2f82c35ac5ae83f2a717f3b1f6fc2e",
+    "native_size": [
+      109,
+      112
+    ]
+  },
+  {
+    "slot": 7,
+    "file": "assets/game/shared/ui/ui/forge_0917/micon_forge_fire_7.png",
+    "sha256": "7778464afa7fb90c4cbe8cee96e81bb4c600a5f833788091dd872938ee872be6",
+    "native_size": [
+      111,
+      112
+    ]
+  },
+  {
+    "slot": 8,
+    "file": "assets/game/shared/ui/ui/forge_0917/micon_forge_fire_8.png",
+    "sha256": "cc1a7a79c6cab547bbb2de8bef8dee2bceb135970dbc5cd510dee889f79531ff",
+    "native_size": [
+      110,
+      112
+    ]
+  },
+  {
+    "element": "fire",
+    "file": "assets/game/shared/ui/ui/infusion_0917/inf_fire.png",
+    "sha256": "b042719506de4f2c4a90459e8516eea1e4283eeba1070bf86387bb10c6177d2e",
+    "native_size": [
+      56,
+      65
+    ]
+  },
+  {
+    "element": "ice",
+    "file": "assets/game/shared/ui/ui/infusion_0917/inf_ice.png",
+    "sha256": "7748ca1602a139503cae1bfda19f54456d4ad8f275b8fae0658468e27f7b04f0",
+    "native_size": [
+      53,
+      65
+    ]
+  },
+  {
+    "element": "prism",
+    "file": "assets/game/shared/ui/ui/infusion_0917/inf_prism.png",
+    "sha256": "020c811816fb92a6f805238cc76afd4b1ed4827fae04e05aea6ced4ccd390886",
+    "native_size": [
+      56,
+      65
+    ]
+  }
+]

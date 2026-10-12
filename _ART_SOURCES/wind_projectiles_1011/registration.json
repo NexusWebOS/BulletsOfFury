@@ -1,0 +1,6721 @@
+{
+  "banks": {
+    "bullets": [
+      {
+        "key": "wp11_bullets_00",
+        "path": "assets/game/shared/player_weapons/wind_1011/bullets_00.png",
+        "slot": 0,
+        "name": "Gale Slugs",
+        "frame": 0,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "source": "wind_projectiles_1011/bullets_raw.png",
+        "source_rect": [
+          0,
+          0,
+          314,
+          314
+        ],
+        "source_pivot": [
+          171.0,
+          129.5
+        ],
+        "physical_rect": [
+          148,
+          81,
+          194,
+          179
+        ],
+        "content_rect": [
+          104,
+          77,
+          222,
+          310
+        ],
+        "translation": [
+          28,
+          36
+        ],
+        "scale": 0.5874730021598272,
+        "sha256": "939f06bcfb84d179b866bed4ae26f0bba16231b3a195fb1b1479be3148ac665f",
+        "source_sha256": "c1d3b3a783dc8692bb661350f2d2529b91a5f7a9f59e58a4bf3c2808e1c08a72",
+        "body_height": 56.98488120950324
+      },
+      {
+        "key": "wp11_bullets_01",
+        "path": "assets/game/shared/player_weapons/wind_1011/bullets_01.png",
+        "slot": 0,
+        "name": "Gale Slugs",
+        "frame": 1,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "source": "wind_projectiles_1011/bullets_raw.png",
+        "source_rect": [
+          314,
+          0,
+          627,
+          314
+        ],
+        "source_pivot": [
+          167.5,
+          129.5
+        ],
+        "physical_rect": [
+          144,
+          81,
+          191,
+          179
+        ],
+        "content_rect": [
+          101,
+          77,
+          224,
+          301
+        ],
+        "translation": [
+          30,
+          36
+        ],
+        "scale": 0.5874730021598272,
+        "sha256": "ea85ac6eefd8e433538daddf6d8b461c58f5ffb3c0aea68a5a3df7c93734e611",
+        "source_sha256": "c1d3b3a783dc8692bb661350f2d2529b91a5f7a9f59e58a4bf3c2808e1c08a72",
+        "body_height": 56.98488120950324
+      },
+      {
+        "key": "wp11_bullets_02",
+        "path": "assets/game/shared/player_weapons/wind_1011/bullets_02.png",
+        "slot": 0,
+        "name": "Gale Slugs",
+        "frame": 2,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "source": "wind_projectiles_1011/bullets_raw.png",
+        "source_rect": [
+          627,
+          0,
+          940,
+          314
+        ],
+        "source_pivot": [
+          162.0,
+          129.5
+        ],
+        "physical_rect": [
+          138,
+          81,
+          186,
+          179
+        ],
+        "content_rect": [
+          99,
+          77,
+          231,
+          312
+        ],
+        "translation": [
+          33,
+          36
+        ],
+        "scale": 0.5874730021598272,
+        "sha256": "0a94de0ccdabd39e78fea93c16dc832ba8fd5f3fb1efb58f27d871fafb324924",
+        "source_sha256": "c1d3b3a783dc8692bb661350f2d2529b91a5f7a9f59e58a4bf3c2808e1c08a72",
+        "body_height": 56.98488120950324
+      },
+      {
+        "key": "wp11_bullets_03",
+        "path": "assets/game/shared/player_weapons/wind_1011/bullets_03.png",
+        "slot": 0,
+        "name": "Gale Slugs",
+        "frame": 3,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "source": "wind_projectiles_1011/bullets_raw.png",
+        "source_rect": [
+          940,
+          0,
+          1254,
+          314
+        ],
+        "source_pivot": [
+          143.5,
+          129.5
+        ],
+        "physical_rect": [
+          120,
+          81,
+          167,
+          179
+        ],
+        "content_rect": [
+          85,
+          77,
+          219,
+          304
+        ],
+        "translation": [
+          44,
+          36
+        ],
+        "scale": 0.5874730021598272,
+        "sha256": "d1f05b25673866953c83ac409f87d7c5d1a231577eec22b0d08756c74f7a292b",
+        "source_sha256": "c1d3b3a783dc8692bb661350f2d2529b91a5f7a9f59e58a4bf3c2808e1c08a72",
+        "body_height": 56.98488120950324
+      },
+      {
+        "key": "wp11_bullets_04",
+        "path": "assets/game/shared/player_weapons/wind_1011/bullets_04.png",
+        "slot": 0,
+        "name": "Gale Slugs",
+        "frame": 4,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "source": "wind_projectiles_1011/bullets_raw.png",
+        "source_rect": [
+          0,
+          314,
+          314,
+          627
+        ],
+        "source_pivot": [
+          170.0,
+          104.5
+        ],
+        "physical_rect": [
+          146,
+          56,
+          194,
+          153
+        ],
+        "content_rect": [
+          117,
+          52,
+          230,
+          295
+        ],
+        "translation": [
+          28,
+          51
+        ],
+        "scale": 0.5874730021598272,
+        "sha256": "b238e0d9e14683ab780762f8877bb8af8fb55b2da8bc0b16e0dad9e100c26d3c",
+        "source_sha256": "c1d3b3a783dc8692bb661350f2d2529b91a5f7a9f59e58a4bf3c2808e1c08a72",
+        "body_height": 56.98488120950324
+      },
+      {
+        "key": "wp11_bullets_05",
+        "path": "assets/game/shared/player_weapons/wind_1011/bullets_05.png",
+        "slot": 0,
+        "name": "Gale Slugs",
+        "frame": 5,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "source": "wind_projectiles_1011/bullets_raw.png",
+        "source_rect": [
+          314,
+          314,
+          627,
+          627
+        ],
+        "source_pivot": [
+          167.0,
+          104.5
+        ],
+        "physical_rect": [
+          143,
+          56,
+          191,
+          152
+        ],
+        "content_rect": [
+          105,
+          53,
+          230,
+          298
+        ],
+        "translation": [
+          30,
+          51
+        ],
+        "scale": 0.5874730021598272,
+        "sha256": "bc9e88046528d3c47cdfcca13a094b1d4108646d4d97482e23cad9e0e2416002",
+        "source_sha256": "c1d3b3a783dc8692bb661350f2d2529b91a5f7a9f59e58a4bf3c2808e1c08a72",
+        "body_height": 56.98488120950324
+      },
+      {
+        "key": "wp11_bullets_06",
+        "path": "assets/game/shared/player_weapons/wind_1011/bullets_06.png",
+        "slot": 0,
+        "name": "Gale Slugs",
+        "frame": 6,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "source": "wind_projectiles_1011/bullets_raw.png",
+        "source_rect": [
+          627,
+          314,
+          940,
+          627
+        ],
+        "source_pivot": [
+          162.0,
+          104.5
+        ],
+        "physical_rect": [
+          138,
+          56,
+          186,
+          153
+        ],
+        "content_rect": [
+          105,
+          52,
+          227,
+          295
+        ],
+        "translation": [
+          33,
+          51
+        ],
+        "scale": 0.5874730021598272,
+        "sha256": "043aff3615b2abda487b0b905089cc511c23e05a99061193872312cf08123683",
+        "source_sha256": "c1d3b3a783dc8692bb661350f2d2529b91a5f7a9f59e58a4bf3c2808e1c08a72",
+        "body_height": 56.98488120950324
+      },
+      {
+        "key": "wp11_bullets_07",
+        "path": "assets/game/shared/player_weapons/wind_1011/bullets_07.png",
+        "slot": 0,
+        "name": "Gale Slugs",
+        "frame": 7,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "source": "wind_projectiles_1011/bullets_raw.png",
+        "source_rect": [
+          940,
+          314,
+          1254,
+          627
+        ],
+        "source_pivot": [
+          143.0,
+          104.5
+        ],
+        "physical_rect": [
+          119,
+          56,
+          167,
+          153
+        ],
+        "content_rect": [
+          80,
+          52,
+          208,
+          298
+        ],
+        "translation": [
+          44,
+          51
+        ],
+        "scale": 0.5874730021598272,
+        "sha256": "0f93ab8547ed6524226422cc014a1680dc3047a1c48d2edfff8f37924bb90a98",
+        "source_sha256": "c1d3b3a783dc8692bb661350f2d2529b91a5f7a9f59e58a4bf3c2808e1c08a72",
+        "body_height": 56.98488120950324
+      },
+      {
+        "key": "wp11_bullets_08",
+        "path": "assets/game/shared/player_weapons/wind_1011/bullets_08.png",
+        "slot": 0,
+        "name": "Gale Slugs",
+        "frame": 8,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "source": "wind_projectiles_1011/bullets_raw.png",
+        "source_rect": [
+          0,
+          627,
+          314,
+          940
+        ],
+        "source_pivot": [
+          170.0,
+          81.5
+        ],
+        "physical_rect": [
+          146,
+          33,
+          194,
+          129
+        ],
+        "content_rect": [
+          99,
+          29,
+          235,
+          313
+        ],
+        "translation": [
+          28,
+          64
+        ],
+        "scale": 0.5874730021598272,
+        "sha256": "a0ad5089f683abc1078687f553ecd57fc2c3ffc6bd2f16b9ef0fb8f42c88fd01",
+        "source_sha256": "c1d3b3a783dc8692bb661350f2d2529b91a5f7a9f59e58a4bf3c2808e1c08a72",
+        "body_height": 56.98488120950324
+      },
+      {
+        "key": "wp11_bullets_09",
+        "path": "assets/game/shared/player_weapons/wind_1011/bullets_09.png",
+        "slot": 0,
+        "name": "Gale Slugs",
+        "frame": 9,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "source": "wind_projectiles_1011/bullets_raw.png",
+        "source_rect": [
+          314,
+          627,
+          627,
+          940
+        ],
+        "source_pivot": [
+          167.0,
+          81.5
+        ],
+        "physical_rect": [
+          143,
+          33,
+          191,
+          129
+        ],
+        "content_rect": [
+          98,
+          29,
+          230,
+          313
+        ],
+        "translation": [
+          30,
+          64
+        ],
+        "scale": 0.5874730021598272,
+        "sha256": "78f9e8e38a547963706ad7aea36d32bdc9ef860b3f297ba27902a60354da79c2",
+        "source_sha256": "c1d3b3a783dc8692bb661350f2d2529b91a5f7a9f59e58a4bf3c2808e1c08a72",
+        "body_height": 56.98488120950324
+      },
+      {
+        "key": "wp11_bullets_10",
+        "path": "assets/game/shared/player_weapons/wind_1011/bullets_10.png",
+        "slot": 0,
+        "name": "Gale Slugs",
+        "frame": 10,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "source": "wind_projectiles_1011/bullets_raw.png",
+        "source_rect": [
+          627,
+          627,
+          940,
+          940
+        ],
+        "source_pivot": [
+          162.0,
+          81.5
+        ],
+        "physical_rect": [
+          138,
+          33,
+          186,
+          129
+        ],
+        "content_rect": [
+          93,
+          29,
+          225,
+          313
+        ],
+        "translation": [
+          33,
+          64
+        ],
+        "scale": 0.5874730021598272,
+        "sha256": "61581892c918d84de422f137bff7bcc899a59341669d36c80d6837d2b4e6d9d5",
+        "source_sha256": "c1d3b3a783dc8692bb661350f2d2529b91a5f7a9f59e58a4bf3c2808e1c08a72",
+        "body_height": 56.98488120950324
+      },
+      {
+        "key": "wp11_bullets_11",
+        "path": "assets/game/shared/player_weapons/wind_1011/bullets_11.png",
+        "slot": 0,
+        "name": "Gale Slugs",
+        "frame": 11,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "source": "wind_projectiles_1011/bullets_raw.png",
+        "source_rect": [
+          940,
+          627,
+          1254,
+          940
+        ],
+        "source_pivot": [
+          143.0,
+          81.5
+        ],
+        "physical_rect": [
+          119,
+          33,
+          167,
+          129
+        ],
+        "content_rect": [
+          71,
+          29,
+          207,
+          313
+        ],
+        "translation": [
+          44,
+          64
+        ],
+        "scale": 0.5874730021598272,
+        "sha256": "bbee36af6698184b4f36b8791a326ed9fad4b7dce6cc05d86f07d41295fbe5b6",
+        "source_sha256": "c1d3b3a783dc8692bb661350f2d2529b91a5f7a9f59e58a4bf3c2808e1c08a72",
+        "body_height": 56.98488120950324
+      },
+      {
+        "key": "wp11_bullets_12",
+        "path": "assets/game/shared/player_weapons/wind_1011/bullets_12.png",
+        "slot": 0,
+        "name": "Gale Slugs",
+        "frame": 12,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "source": "wind_projectiles_1011/bullets_raw.png",
+        "source_rect": [
+          0,
+          940,
+          314,
+          1254
+        ],
+        "source_pivot": [
+          170.0,
+          49.5
+        ],
+        "physical_rect": [
+          146,
+          1,
+          194,
+          98
+        ],
+        "content_rect": [
+          104,
+          0,
+          232,
+          217
+        ],
+        "translation": [
+          28,
+          83
+        ],
+        "scale": 0.5874730021598272,
+        "sha256": "52cd8b3735186b21b22f35a67407173067ef0b97a8cf059d38ce8a66f3c4563b",
+        "source_sha256": "c1d3b3a783dc8692bb661350f2d2529b91a5f7a9f59e58a4bf3c2808e1c08a72",
+        "body_height": 56.98488120950324
+      },
+      {
+        "key": "wp11_bullets_13",
+        "path": "assets/game/shared/player_weapons/wind_1011/bullets_13.png",
+        "slot": 0,
+        "name": "Gale Slugs",
+        "frame": 13,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "source": "wind_projectiles_1011/bullets_raw.png",
+        "source_rect": [
+          314,
+          940,
+          627,
+          1254
+        ],
+        "source_pivot": [
+          167.0,
+          49.5
+        ],
+        "physical_rect": [
+          143,
+          1,
+          191,
+          98
+        ],
+        "content_rect": [
+          108,
+          0,
+          230,
+          225
+        ],
+        "translation": [
+          30,
+          83
+        ],
+        "scale": 0.5874730021598272,
+        "sha256": "8629145e32a6fd205fa3040aaa3fa33e70f70cbd72ee86f046567c98b5e68cfa",
+        "source_sha256": "c1d3b3a783dc8692bb661350f2d2529b91a5f7a9f59e58a4bf3c2808e1c08a72",
+        "body_height": 56.98488120950324
+      },
+      {
+        "key": "wp11_bullets_14",
+        "path": "assets/game/shared/player_weapons/wind_1011/bullets_14.png",
+        "slot": 0,
+        "name": "Gale Slugs",
+        "frame": 14,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "source": "wind_projectiles_1011/bullets_raw.png",
+        "source_rect": [
+          627,
+          940,
+          940,
+          1254
+        ],
+        "source_pivot": [
+          162.0,
+          49.5
+        ],
+        "physical_rect": [
+          138,
+          1,
+          186,
+          98
+        ],
+        "content_rect": [
+          96,
+          0,
+          228,
+          221
+        ],
+        "translation": [
+          33,
+          83
+        ],
+        "scale": 0.5874730021598272,
+        "sha256": "723ed448148e3b9ea73e99ab395d4855997d3988ce4b32b82cc7aa01782af7a3",
+        "source_sha256": "c1d3b3a783dc8692bb661350f2d2529b91a5f7a9f59e58a4bf3c2808e1c08a72",
+        "body_height": 56.98488120950324
+      },
+      {
+        "key": "wp11_bullets_15",
+        "path": "assets/game/shared/player_weapons/wind_1011/bullets_15.png",
+        "slot": 0,
+        "name": "Gale Slugs",
+        "frame": 15,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "source": "wind_projectiles_1011/bullets_raw.png",
+        "source_rect": [
+          940,
+          940,
+          1254,
+          1254
+        ],
+        "source_pivot": [
+          143.5,
+          49.5
+        ],
+        "physical_rect": [
+          120,
+          1,
+          167,
+          98
+        ],
+        "content_rect": [
+          91,
+          0,
+          202,
+          228
+        ],
+        "translation": [
+          44,
+          83
+        ],
+        "scale": 0.5874730021598272,
+        "sha256": "485d8208de2524b7ee253468e48d04731af2082baa7572a0e753f90673d9a5e3",
+        "source_sha256": "c1d3b3a783dc8692bb661350f2d2529b91a5f7a9f59e58a4bf3c2808e1c08a72",
+        "body_height": 56.98488120950324
+      }
+    ],
+    "spread": [
+      {
+        "key": "wp11_spread_00",
+        "path": "assets/game/shared/player_weapons/wind_1011/spread_00.png",
+        "slot": 1,
+        "name": "Gust Fan",
+        "frame": 0,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "source": "wind_projectiles_1011/spread_raw.png",
+        "source_rect": [
+          0,
+          0,
+          314,
+          314
+        ],
+        "source_pivot": [
+          181.5,
+          138.25
+        ],
+        "physical_rect": [
+          162,
+          107,
+          201,
+          168
+        ],
+        "content_rect": [
+          137,
+          96,
+          227,
+          287
+        ],
+        "translation": [
+          -27,
+          -6
+        ],
+        "scale": 0.8566929133858268,
+        "sha256": "4f4888030d8614519fa2920592396ae2435b2a8fb56ace1325701247a17991af",
+        "source_sha256": "c6ef03fe3786f3a4d4ea4ab3c111167baee2684c47ef45865fcbd461782aa536",
+        "body_height": 53.54330708661417
+      },
+      {
+        "key": "wp11_spread_01",
+        "path": "assets/game/shared/player_weapons/wind_1011/spread_01.png",
+        "slot": 1,
+        "name": "Gust Fan",
+        "frame": 1,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "source": "wind_projectiles_1011/spread_raw.png",
+        "source_rect": [
+          314,
+          0,
+          627,
+          314
+        ],
+        "source_pivot": [
+          163.0,
+          130.25
+        ],
+        "physical_rect": [
+          145,
+          99,
+          181,
+          168
+        ],
+        "content_rect": [
+          104,
+          96,
+          222,
+          289
+        ],
+        "translation": [
+          -12,
+          0
+        ],
+        "scale": 0.8566929133858268,
+        "sha256": "ae5f7b04eedf67beb936d69ae7e679a1e358bd0cf2eced37fe632968802a99dd",
+        "source_sha256": "c6ef03fe3786f3a4d4ea4ab3c111167baee2684c47ef45865fcbd461782aa536",
+        "body_height": 53.54330708661417
+      },
+      {
+        "key": "wp11_spread_02",
+        "path": "assets/game/shared/player_weapons/wind_1011/spread_02.png",
+        "slot": 1,
+        "name": "Gust Fan",
+        "frame": 2,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "source": "wind_projectiles_1011/spread_raw.png",
+        "source_rect": [
+          627,
+          0,
+          940,
+          314
+        ],
+        "source_pivot": [
+          147.0,
+          136.25
+        ],
+        "physical_rect": [
+          129,
+          105,
+          165,
+          168
+        ],
+        "content_rect": [
+          79,
+          96,
+          215,
+          288
+        ],
+        "translation": [
+          2,
+          -5
+        ],
+        "scale": 0.8566929133858268,
+        "sha256": "f47035871e58e0d108fac81c747d167f1d593dd901312cedf4b0a58a5342ea9e",
+        "source_sha256": "c6ef03fe3786f3a4d4ea4ab3c111167baee2684c47ef45865fcbd461782aa536",
+        "body_height": 53.54330708661417
+      },
+      {
+        "key": "wp11_spread_03",
+        "path": "assets/game/shared/player_weapons/wind_1011/spread_03.png",
+        "slot": 1,
+        "name": "Gust Fan",
+        "frame": 3,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "source": "wind_projectiles_1011/spread_raw.png",
+        "source_rect": [
+          940,
+          0,
+          1254,
+          314
+        ],
+        "source_pivot": [
+          132.0,
+          135.25
+        ],
+        "physical_rect": [
+          113,
+          104,
+          151,
+          168
+        ],
+        "content_rect": [
+          55,
+          96,
+          205,
+          288
+        ],
+        "translation": [
+          15,
+          -4
+        ],
+        "scale": 0.8566929133858268,
+        "sha256": "4cf1cf4d78501ada9f2e636f149ce866565314aaff9c211369f759c7027fc7d5",
+        "source_sha256": "c6ef03fe3786f3a4d4ea4ab3c111167baee2684c47ef45865fcbd461782aa536",
+        "body_height": 53.54330708661417
+      },
+      {
+        "key": "wp11_spread_04",
+        "path": "assets/game/shared/player_weapons/wind_1011/spread_04.png",
+        "slot": 1,
+        "name": "Gust Fan",
+        "frame": 4,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "source": "wind_projectiles_1011/spread_raw.png",
+        "source_rect": [
+          0,
+          314,
+          314,
+          627
+        ],
+        "source_pivot": [
+          179.0,
+          119.25
+        ],
+        "physical_rect": [
+          162,
+          88,
+          196,
+          150
+        ],
+        "content_rect": [
+          107,
+          78,
+          248,
+          271
+        ],
+        "translation": [
+          -25,
+          10
+        ],
+        "scale": 0.8566929133858268,
+        "sha256": "b1a8b0825795984ac1dfa020b0fd2a9dd1d35637dc04209d3f70a3860449d560",
+        "source_sha256": "c6ef03fe3786f3a4d4ea4ab3c111167baee2684c47ef45865fcbd461782aa536",
+        "body_height": 53.54330708661417
+      },
+      {
+        "key": "wp11_spread_05",
+        "path": "assets/game/shared/player_weapons/wind_1011/spread_05.png",
+        "slot": 1,
+        "name": "Gust Fan",
+        "frame": 5,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "source": "wind_projectiles_1011/spread_raw.png",
+        "source_rect": [
+          314,
+          314,
+          627,
+          627
+        ],
+        "source_pivot": [
+          164.0,
+          118.25
+        ],
+        "physical_rect": [
+          145,
+          87,
+          183,
+          150
+        ],
+        "content_rect": [
+          94,
+          77,
+          229,
+          272
+        ],
+        "translation": [
+          -12,
+          11
+        ],
+        "scale": 0.8566929133858268,
+        "sha256": "701f3f606d15dbb086e0ee4f794ef475621a095661865374f47d1de0beec0225",
+        "source_sha256": "c6ef03fe3786f3a4d4ea4ab3c111167baee2684c47ef45865fcbd461782aa536",
+        "body_height": 53.54330708661417
+      },
+      {
+        "key": "wp11_spread_06",
+        "path": "assets/game/shared/player_weapons/wind_1011/spread_06.png",
+        "slot": 1,
+        "name": "Gust Fan",
+        "frame": 6,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "source": "wind_projectiles_1011/spread_raw.png",
+        "source_rect": [
+          627,
+          314,
+          940,
+          627
+        ],
+        "source_pivot": [
+          149.0,
+          118.25
+        ],
+        "physical_rect": [
+          131,
+          87,
+          167,
+          150
+        ],
+        "content_rect": [
+          67,
+          75,
+          226,
+          272
+        ],
+        "translation": [
+          0,
+          11
+        ],
+        "scale": 0.8566929133858268,
+        "sha256": "fda19e63e9228c27f2a7a6130f1a98bd5d3361676e29725d7b70fbc4e5ff8bb6",
+        "source_sha256": "c6ef03fe3786f3a4d4ea4ab3c111167baee2684c47ef45865fcbd461782aa536",
+        "body_height": 53.54330708661417
+      },
+      {
+        "key": "wp11_spread_07",
+        "path": "assets/game/shared/player_weapons/wind_1011/spread_07.png",
+        "slot": 1,
+        "name": "Gust Fan",
+        "frame": 7,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "source": "wind_projectiles_1011/spread_raw.png",
+        "source_rect": [
+          940,
+          314,
+          1254,
+          627
+        ],
+        "source_pivot": [
+          132.0,
+          121.25
+        ],
+        "physical_rect": [
+          113,
+          90,
+          151,
+          150
+        ],
+        "content_rect": [
+          46,
+          78,
+          207,
+          272
+        ],
+        "translation": [
+          15,
+          8
+        ],
+        "scale": 0.8566929133858268,
+        "sha256": "ce507366cf76464bacc94cabe54a978d0b358b43a3d749e943171d4936aaf637",
+        "source_sha256": "c6ef03fe3786f3a4d4ea4ab3c111167baee2684c47ef45865fcbd461782aa536",
+        "body_height": 53.54330708661417
+      },
+      {
+        "key": "wp11_spread_08",
+        "path": "assets/game/shared/player_weapons/wind_1011/spread_08.png",
+        "slot": 1,
+        "name": "Gust Fan",
+        "frame": 8,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "source": "wind_projectiles_1011/spread_raw.png",
+        "source_rect": [
+          0,
+          627,
+          314,
+          940
+        ],
+        "source_pivot": [
+          181.5,
+          102.25
+        ],
+        "physical_rect": [
+          162,
+          71,
+          201,
+          133
+        ],
+        "content_rect": [
+          107,
+          46,
+          258,
+          253
+        ],
+        "translation": [
+          -27,
+          24
+        ],
+        "scale": 0.8566929133858268,
+        "sha256": "2ad024ca75245ddc652d7d29eb60e9ea71b88189508a079d815809eba52e63a4",
+        "source_sha256": "c6ef03fe3786f3a4d4ea4ab3c111167baee2684c47ef45865fcbd461782aa536",
+        "body_height": 53.54330708661417
+      },
+      {
+        "key": "wp11_spread_09",
+        "path": "assets/game/shared/player_weapons/wind_1011/spread_09.png",
+        "slot": 1,
+        "name": "Gust Fan",
+        "frame": 9,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "source": "wind_projectiles_1011/spread_raw.png",
+        "source_rect": [
+          314,
+          627,
+          627,
+          940
+        ],
+        "source_pivot": [
+          164.0,
+          101.25
+        ],
+        "physical_rect": [
+          145,
+          70,
+          183,
+          133
+        ],
+        "content_rect": [
+          72,
+          50,
+          242,
+          254
+        ],
+        "translation": [
+          -12,
+          25
+        ],
+        "scale": 0.8566929133858268,
+        "sha256": "84addb325cd808bf2d02b8f8c22e3b4eff4e76b9e1d702b274a060e3266f99ce",
+        "source_sha256": "c6ef03fe3786f3a4d4ea4ab3c111167baee2684c47ef45865fcbd461782aa536",
+        "body_height": 53.54330708661417
+      },
+      {
+        "key": "wp11_spread_10",
+        "path": "assets/game/shared/player_weapons/wind_1011/spread_10.png",
+        "slot": 1,
+        "name": "Gust Fan",
+        "frame": 10,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "source": "wind_projectiles_1011/spread_raw.png",
+        "source_rect": [
+          627,
+          627,
+          940,
+          940
+        ],
+        "source_pivot": [
+          147.0,
+          102.25
+        ],
+        "physical_rect": [
+          129,
+          71,
+          165,
+          133
+        ],
+        "content_rect": [
+          67,
+          50,
+          228,
+          254
+        ],
+        "translation": [
+          2,
+          24
+        ],
+        "scale": 0.8566929133858268,
+        "sha256": "133e42a7e371b1803890cffb2225f21d9bfd8aed182c0f8499fce842f827d1e1",
+        "source_sha256": "c6ef03fe3786f3a4d4ea4ab3c111167baee2684c47ef45865fcbd461782aa536",
+        "body_height": 53.54330708661417
+      },
+      {
+        "key": "wp11_spread_11",
+        "path": "assets/game/shared/player_weapons/wind_1011/spread_11.png",
+        "slot": 1,
+        "name": "Gust Fan",
+        "frame": 11,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "source": "wind_projectiles_1011/spread_raw.png",
+        "source_rect": [
+          940,
+          627,
+          1254,
+          940
+        ],
+        "source_pivot": [
+          132.0,
+          103.25
+        ],
+        "physical_rect": [
+          113,
+          72,
+          151,
+          133
+        ],
+        "content_rect": [
+          52,
+          53,
+          210,
+          253
+        ],
+        "translation": [
+          15,
+          24
+        ],
+        "scale": 0.8566929133858268,
+        "sha256": "d4d93bf3fac351575c23104630d200d8f1c7532eabad3fc90f47e079448b241c",
+        "source_sha256": "c6ef03fe3786f3a4d4ea4ab3c111167baee2684c47ef45865fcbd461782aa536",
+        "body_height": 53.54330708661417
+      },
+      {
+        "key": "wp11_spread_12",
+        "path": "assets/game/shared/player_weapons/wind_1011/spread_12.png",
+        "slot": 1,
+        "name": "Gust Fan",
+        "frame": 12,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "source": "wind_projectiles_1011/spread_raw.png",
+        "source_rect": [
+          0,
+          940,
+          314,
+          1254
+        ],
+        "source_pivot": [
+          182.5,
+          87.25
+        ],
+        "physical_rect": [
+          164,
+          56,
+          201,
+          115
+        ],
+        "content_rect": [
+          122,
+          43,
+          242,
+          234
+        ],
+        "translation": [
+          -28,
+          37
+        ],
+        "scale": 0.8566929133858268,
+        "sha256": "b051206920f60dc54c40b562d14019e2531ecb424a9a16e33e565f7d7dff754e",
+        "source_sha256": "c6ef03fe3786f3a4d4ea4ab3c111167baee2684c47ef45865fcbd461782aa536",
+        "body_height": 53.54330708661417
+      },
+      {
+        "key": "wp11_spread_13",
+        "path": "assets/game/shared/player_weapons/wind_1011/spread_13.png",
+        "slot": 1,
+        "name": "Gust Fan",
+        "frame": 13,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "source": "wind_projectiles_1011/spread_raw.png",
+        "source_rect": [
+          314,
+          940,
+          627,
+          1254
+        ],
+        "source_pivot": [
+          163.0,
+          79.25
+        ],
+        "physical_rect": [
+          145,
+          48,
+          181,
+          115
+        ],
+        "content_rect": [
+          100,
+          42,
+          224,
+          235
+        ],
+        "translation": [
+          -12,
+          44
+        ],
+        "scale": 0.8566929133858268,
+        "sha256": "98f22fa5a1aefda6e4134d6da5b719e6c579502c4dad1eeb1bc50dfb5b6fbdfd",
+        "source_sha256": "c6ef03fe3786f3a4d4ea4ab3c111167baee2684c47ef45865fcbd461782aa536",
+        "body_height": 53.54330708661417
+      },
+      {
+        "key": "wp11_spread_14",
+        "path": "assets/game/shared/player_weapons/wind_1011/spread_14.png",
+        "slot": 1,
+        "name": "Gust Fan",
+        "frame": 14,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "source": "wind_projectiles_1011/spread_raw.png",
+        "source_rect": [
+          627,
+          940,
+          940,
+          1254
+        ],
+        "source_pivot": [
+          146.5,
+          84.25
+        ],
+        "physical_rect": [
+          129,
+          53,
+          164,
+          115
+        ],
+        "content_rect": [
+          82,
+          42,
+          207,
+          235
+        ],
+        "translation": [
+          2,
+          40
+        ],
+        "scale": 0.8566929133858268,
+        "sha256": "9ebb9a6007fa525f6907df99aa27223ac3917c38b54a1621b6afc4f4a5b7ce2f",
+        "source_sha256": "c6ef03fe3786f3a4d4ea4ab3c111167baee2684c47ef45865fcbd461782aa536",
+        "body_height": 53.54330708661417
+      },
+      {
+        "key": "wp11_spread_15",
+        "path": "assets/game/shared/player_weapons/wind_1011/spread_15.png",
+        "slot": 1,
+        "name": "Gust Fan",
+        "frame": 15,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "source": "wind_projectiles_1011/spread_raw.png",
+        "source_rect": [
+          940,
+          940,
+          1254,
+          1254
+        ],
+        "source_pivot": [
+          131.5,
+          79.25
+        ],
+        "physical_rect": [
+          112,
+          48,
+          151,
+          115
+        ],
+        "content_rect": [
+          86,
+          42,
+          176,
+          234
+        ],
+        "translation": [
+          15,
+          44
+        ],
+        "scale": 0.8566929133858268,
+        "sha256": "28c3744d48a10fd211d1ad9c0d8bddfc83964b6cf25474407539bc4d9ba0e935",
+        "source_sha256": "c6ef03fe3786f3a4d4ea4ab3c111167baee2684c47ef45865fcbd461782aa536",
+        "body_height": 53.54330708661417
+      }
+    ],
+    "missile": [
+      {
+        "key": "wp11_missile_00",
+        "path": "assets/game/shared/player_weapons/wind_1011/missile_00.png",
+        "slot": 2,
+        "name": "Cyclone Rack",
+        "frame": 0,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "source": "wind_projectiles_1011/missile_raw.png",
+        "source_rect": [
+          0,
+          0,
+          314,
+          314
+        ],
+        "source_pivot": [
+          158.5,
+          108.5
+        ],
+        "physical_rect": [
+          136,
+          37,
+          181,
+          181
+        ],
+        "content_rect": [
+          105,
+          34,
+          212,
+          300
+        ],
+        "translation": [
+          20,
+          38
+        ],
+        "scale": 0.681704260651629,
+        "sha256": "6743b5d9ff9e0cba811c6bf562b0aa694336426e65a484dff5b6da133a67fb8e",
+        "source_sha256": "4745f384406836feb9d3be6d63988dcd3b66b3269d767ec3f5ea5f9fa3a3f963",
+        "body_height": 97.48370927318295
+      },
+      {
+        "key": "wp11_missile_01",
+        "path": "assets/game/shared/player_weapons/wind_1011/missile_01.png",
+        "slot": 2,
+        "name": "Cyclone Rack",
+        "frame": 1,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "source": "wind_projectiles_1011/missile_raw.png",
+        "source_rect": [
+          314,
+          0,
+          627,
+          314
+        ],
+        "source_pivot": [
+          158.5,
+          108.5
+        ],
+        "physical_rect": [
+          136,
+          37,
+          181,
+          180
+        ],
+        "content_rect": [
+          104,
+          34,
+          211,
+          303
+        ],
+        "translation": [
+          20,
+          38
+        ],
+        "scale": 0.681704260651629,
+        "sha256": "75ad9d119b200eaa26b83c1d1b703c35c400e0bfcfcc0370ab216b0d6831c982",
+        "source_sha256": "4745f384406836feb9d3be6d63988dcd3b66b3269d767ec3f5ea5f9fa3a3f963",
+        "body_height": 97.48370927318295
+      },
+      {
+        "key": "wp11_missile_02",
+        "path": "assets/game/shared/player_weapons/wind_1011/missile_02.png",
+        "slot": 2,
+        "name": "Cyclone Rack",
+        "frame": 2,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "source": "wind_projectiles_1011/missile_raw.png",
+        "source_rect": [
+          627,
+          0,
+          940,
+          314
+        ],
+        "source_pivot": [
+          159.0,
+          108.5
+        ],
+        "physical_rect": [
+          136,
+          37,
+          182,
+          181
+        ],
+        "content_rect": [
+          87,
+          34,
+          216,
+          306
+        ],
+        "translation": [
+          20,
+          38
+        ],
+        "scale": 0.681704260651629,
+        "sha256": "289e6caa10239571009448cdd98ee40354861142c22824a67e129dee000b68b6",
+        "source_sha256": "4745f384406836feb9d3be6d63988dcd3b66b3269d767ec3f5ea5f9fa3a3f963",
+        "body_height": 97.48370927318295
+      },
+      {
+        "key": "wp11_missile_03",
+        "path": "assets/game/shared/player_weapons/wind_1011/missile_03.png",
+        "slot": 2,
+        "name": "Cyclone Rack",
+        "frame": 3,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "source": "wind_projectiles_1011/missile_raw.png",
+        "source_rect": [
+          940,
+          0,
+          1254,
+          314
+        ],
+        "source_pivot": [
+          160.0,
+          108.5
+        ],
+        "physical_rect": [
+          137,
+          37,
+          183,
+          180
+        ],
+        "content_rect": [
+          99,
+          34,
+          216,
+          308
+        ],
+        "translation": [
+          19,
+          38
+        ],
+        "scale": 0.681704260651629,
+        "sha256": "49a549a01aa9d5ff063183fcfaa5ce5feb5e4d9f43a886c3bd907a4ba043d6ac",
+        "source_sha256": "4745f384406836feb9d3be6d63988dcd3b66b3269d767ec3f5ea5f9fa3a3f963",
+        "body_height": 97.48370927318295
+      },
+      {
+        "key": "wp11_missile_04",
+        "path": "assets/game/shared/player_weapons/wind_1011/missile_04.png",
+        "slot": 2,
+        "name": "Cyclone Rack",
+        "frame": 4,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "source": "wind_projectiles_1011/missile_raw.png",
+        "source_rect": [
+          0,
+          314,
+          314,
+          627
+        ],
+        "source_pivot": [
+          159.0,
+          110.5
+        ],
+        "physical_rect": [
+          136,
+          39,
+          182,
+          180
+        ],
+        "content_rect": [
+          70,
+          33,
+          238,
+          308
+        ],
+        "translation": [
+          20,
+          37
+        ],
+        "scale": 0.681704260651629,
+        "sha256": "ef9bc9eb456c36b9d7fb2f30d0a78156a0cb12f9c43c6d667ee84cf48529c9cc",
+        "source_sha256": "4745f384406836feb9d3be6d63988dcd3b66b3269d767ec3f5ea5f9fa3a3f963",
+        "body_height": 97.48370927318295
+      },
+      {
+        "key": "wp11_missile_05",
+        "path": "assets/game/shared/player_weapons/wind_1011/missile_05.png",
+        "slot": 2,
+        "name": "Cyclone Rack",
+        "frame": 5,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "source": "wind_projectiles_1011/missile_raw.png",
+        "source_rect": [
+          314,
+          314,
+          627,
+          627
+        ],
+        "source_pivot": [
+          158.5,
+          110.5
+        ],
+        "physical_rect": [
+          136,
+          39,
+          181,
+          180
+        ],
+        "content_rect": [
+          68,
+          33,
+          247,
+          308
+        ],
+        "translation": [
+          20,
+          37
+        ],
+        "scale": 0.681704260651629,
+        "sha256": "a705ea9804001b463cf96ea6ae6ec23e4fc836d6a36e3286aa126d3b1874bb3a",
+        "source_sha256": "4745f384406836feb9d3be6d63988dcd3b66b3269d767ec3f5ea5f9fa3a3f963",
+        "body_height": 97.48370927318295
+      },
+      {
+        "key": "wp11_missile_06",
+        "path": "assets/game/shared/player_weapons/wind_1011/missile_06.png",
+        "slot": 2,
+        "name": "Cyclone Rack",
+        "frame": 6,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "source": "wind_projectiles_1011/missile_raw.png",
+        "source_rect": [
+          627,
+          314,
+          940,
+          627
+        ],
+        "source_pivot": [
+          159.0,
+          108.5
+        ],
+        "physical_rect": [
+          136,
+          37,
+          182,
+          180
+        ],
+        "content_rect": [
+          66,
+          34,
+          242,
+          308
+        ],
+        "translation": [
+          20,
+          38
+        ],
+        "scale": 0.681704260651629,
+        "sha256": "f17d133ed64c71ab65271d5d20da54c2f7375252c0fb4b47aa36c21fb75b8b03",
+        "source_sha256": "4745f384406836feb9d3be6d63988dcd3b66b3269d767ec3f5ea5f9fa3a3f963",
+        "body_height": 97.48370927318295
+      },
+      {
+        "key": "wp11_missile_07",
+        "path": "assets/game/shared/player_weapons/wind_1011/missile_07.png",
+        "slot": 2,
+        "name": "Cyclone Rack",
+        "frame": 7,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "source": "wind_projectiles_1011/missile_raw.png",
+        "source_rect": [
+          940,
+          314,
+          1254,
+          627
+        ],
+        "source_pivot": [
+          159.5,
+          108.5
+        ],
+        "physical_rect": [
+          137,
+          37,
+          182,
+          180
+        ],
+        "content_rect": [
+          70,
+          33,
+          233,
+          308
+        ],
+        "translation": [
+          19,
+          38
+        ],
+        "scale": 0.681704260651629,
+        "sha256": "9c557ac5ec61832af4b27c3ee00ba823e4b5e0d323b7ee12cc43ca2399054b1d",
+        "source_sha256": "4745f384406836feb9d3be6d63988dcd3b66b3269d767ec3f5ea5f9fa3a3f963",
+        "body_height": 97.48370927318295
+      },
+      {
+        "key": "wp11_missile_08",
+        "path": "assets/game/shared/player_weapons/wind_1011/missile_08.png",
+        "slot": 2,
+        "name": "Cyclone Rack",
+        "frame": 8,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "source": "wind_projectiles_1011/missile_raw.png",
+        "source_rect": [
+          0,
+          627,
+          314,
+          940
+        ],
+        "source_pivot": [
+          158.5,
+          108.5
+        ],
+        "physical_rect": [
+          136,
+          37,
+          181,
+          180
+        ],
+        "content_rect": [
+          78,
+          34,
+          244,
+          307
+        ],
+        "translation": [
+          20,
+          38
+        ],
+        "scale": 0.681704260651629,
+        "sha256": "b6cc7bd4a09f57c68bd46576b2368e6081b0b339301472081ffb4e9109081f7b",
+        "source_sha256": "4745f384406836feb9d3be6d63988dcd3b66b3269d767ec3f5ea5f9fa3a3f963",
+        "body_height": 97.48370927318295
+      },
+      {
+        "key": "wp11_missile_09",
+        "path": "assets/game/shared/player_weapons/wind_1011/missile_09.png",
+        "slot": 2,
+        "name": "Cyclone Rack",
+        "frame": 9,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "source": "wind_projectiles_1011/missile_raw.png",
+        "source_rect": [
+          314,
+          627,
+          627,
+          940
+        ],
+        "source_pivot": [
+          158.5,
+          108.5
+        ],
+        "physical_rect": [
+          136,
+          37,
+          181,
+          180
+        ],
+        "content_rect": [
+          68,
+          34,
+          236,
+          303
+        ],
+        "translation": [
+          20,
+          38
+        ],
+        "scale": 0.681704260651629,
+        "sha256": "16a81f82f459a73c4e7c4e1390d615b065dee3104eb074358b9c8c7806c23110",
+        "source_sha256": "4745f384406836feb9d3be6d63988dcd3b66b3269d767ec3f5ea5f9fa3a3f963",
+        "body_height": 97.48370927318295
+      },
+      {
+        "key": "wp11_missile_10",
+        "path": "assets/game/shared/player_weapons/wind_1011/missile_10.png",
+        "slot": 2,
+        "name": "Cyclone Rack",
+        "frame": 10,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "source": "wind_projectiles_1011/missile_raw.png",
+        "source_rect": [
+          627,
+          627,
+          940,
+          940
+        ],
+        "source_pivot": [
+          159.0,
+          108.5
+        ],
+        "physical_rect": [
+          136,
+          37,
+          182,
+          180
+        ],
+        "content_rect": [
+          73,
+          34,
+          248,
+          305
+        ],
+        "translation": [
+          20,
+          38
+        ],
+        "scale": 0.681704260651629,
+        "sha256": "ac8f03f41deb3903217ce8a4136433ba82af60332abcd9ff57b81115c25d0792",
+        "source_sha256": "4745f384406836feb9d3be6d63988dcd3b66b3269d767ec3f5ea5f9fa3a3f963",
+        "body_height": 97.48370927318295
+      },
+      {
+        "key": "wp11_missile_11",
+        "path": "assets/game/shared/player_weapons/wind_1011/missile_11.png",
+        "slot": 2,
+        "name": "Cyclone Rack",
+        "frame": 11,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "source": "wind_projectiles_1011/missile_raw.png",
+        "source_rect": [
+          940,
+          627,
+          1254,
+          940
+        ],
+        "source_pivot": [
+          160.0,
+          107.5
+        ],
+        "physical_rect": [
+          137,
+          36,
+          183,
+          180
+        ],
+        "content_rect": [
+          66,
+          34,
+          233,
+          307
+        ],
+        "translation": [
+          19,
+          39
+        ],
+        "scale": 0.681704260651629,
+        "sha256": "5dd9b21030c9fd8c7ae941c3ecbaefd9c998e1684bebf6218e750f2ecb612004",
+        "source_sha256": "4745f384406836feb9d3be6d63988dcd3b66b3269d767ec3f5ea5f9fa3a3f963",
+        "body_height": 97.48370927318295
+      },
+      {
+        "key": "wp11_missile_12",
+        "path": "assets/game/shared/player_weapons/wind_1011/missile_12.png",
+        "slot": 2,
+        "name": "Cyclone Rack",
+        "frame": 12,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "source": "wind_projectiles_1011/missile_raw.png",
+        "source_rect": [
+          0,
+          940,
+          314,
+          1254
+        ],
+        "source_pivot": [
+          158.5,
+          113.5
+        ],
+        "physical_rect": [
+          136,
+          42,
+          181,
+          181
+        ],
+        "content_rect": [
+          90,
+          35,
+          228,
+          300
+        ],
+        "translation": [
+          20,
+          35
+        ],
+        "scale": 0.681704260651629,
+        "sha256": "8e36dd8c1ab7b6f8ea07c1712086a42ab56644f1c4362afbf79b72082591035e",
+        "source_sha256": "4745f384406836feb9d3be6d63988dcd3b66b3269d767ec3f5ea5f9fa3a3f963",
+        "body_height": 97.48370927318295
+      },
+      {
+        "key": "wp11_missile_13",
+        "path": "assets/game/shared/player_weapons/wind_1011/missile_13.png",
+        "slot": 2,
+        "name": "Cyclone Rack",
+        "frame": 13,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "source": "wind_projectiles_1011/missile_raw.png",
+        "source_rect": [
+          314,
+          940,
+          627,
+          1254
+        ],
+        "source_pivot": [
+          158.0,
+          109.5
+        ],
+        "physical_rect": [
+          135,
+          38,
+          181,
+          181
+        ],
+        "content_rect": [
+          95,
+          34,
+          214,
+          298
+        ],
+        "translation": [
+          20,
+          37
+        ],
+        "scale": 0.681704260651629,
+        "sha256": "2894ebea9fa61356befb152a0601e1aaa2737311f15c532bc466d44d1f3443ca",
+        "source_sha256": "4745f384406836feb9d3be6d63988dcd3b66b3269d767ec3f5ea5f9fa3a3f963",
+        "body_height": 97.48370927318295
+      },
+      {
+        "key": "wp11_missile_14",
+        "path": "assets/game/shared/player_weapons/wind_1011/missile_14.png",
+        "slot": 2,
+        "name": "Cyclone Rack",
+        "frame": 14,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "source": "wind_projectiles_1011/missile_raw.png",
+        "source_rect": [
+          627,
+          940,
+          940,
+          1254
+        ],
+        "source_pivot": [
+          159.0,
+          113.5
+        ],
+        "physical_rect": [
+          136,
+          42,
+          182,
+          181
+        ],
+        "content_rect": [
+          94,
+          35,
+          225,
+          298
+        ],
+        "translation": [
+          20,
+          35
+        ],
+        "scale": 0.681704260651629,
+        "sha256": "fb6a82d4a6349a75cd39e66ad8f435d8cd9834a307a2d034c4d6541184285607",
+        "source_sha256": "4745f384406836feb9d3be6d63988dcd3b66b3269d767ec3f5ea5f9fa3a3f963",
+        "body_height": 97.48370927318295
+      },
+      {
+        "key": "wp11_missile_15",
+        "path": "assets/game/shared/player_weapons/wind_1011/missile_15.png",
+        "slot": 2,
+        "name": "Cyclone Rack",
+        "frame": 15,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "source": "wind_projectiles_1011/missile_raw.png",
+        "source_rect": [
+          940,
+          940,
+          1254,
+          1254
+        ],
+        "source_pivot": [
+          159.0,
+          111.5
+        ],
+        "physical_rect": [
+          136,
+          40,
+          182,
+          181
+        ],
+        "content_rect": [
+          106,
+          34,
+          212,
+          299
+        ],
+        "translation": [
+          20,
+          36
+        ],
+        "scale": 0.681704260651629,
+        "sha256": "3b8a20ffdefe0b5a30a87ce9a22f7ec9ba0ff23b0786eda895719ea16dd62edd",
+        "source_sha256": "4745f384406836feb9d3be6d63988dcd3b66b3269d767ec3f5ea5f9fa3a3f963",
+        "body_height": 97.48370927318295
+      }
+    ],
+    "laser": [
+      {
+        "key": "wp11_laser_00",
+        "path": "assets/game/shared/player_weapons/wind_1011/laser_00.png",
+        "slot": 3,
+        "name": "Wind Lance",
+        "frame": 0,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          192
+        ],
+        "source": "wind_projectiles_1011/laser_raw.png",
+        "source_rect": [
+          0,
+          0,
+          314,
+          314
+        ],
+        "source_pivot": [
+          157.6060606060606,
+          260.0
+        ],
+        "physical_rect": null,
+        "content_rect": [
+          109,
+          29,
+          209,
+          292
+        ],
+        "translation": [
+          3,
+          -14
+        ],
+        "scale": 0.7931034482758621,
+        "sha256": "9b9741d9c80139efc72b8b7bc242f600a719d9291b2e75fb09451d314857c554",
+        "source_sha256": "f6f21de68c4be8057680c40c920218c3b4b95890291eb932022197a16fb01145",
+        "body_rect": [
+          104,
+          68,
+          48,
+          96
+        ],
+        "tip_rect": [
+          64,
+          8,
+          128,
+          76
+        ],
+        "root_rect": [
+          56,
+          158,
+          144,
+          90
+        ]
+      },
+      {
+        "key": "wp11_laser_01",
+        "path": "assets/game/shared/player_weapons/wind_1011/laser_01.png",
+        "slot": 3,
+        "name": "Wind Lance",
+        "frame": 1,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          192
+        ],
+        "source": "wind_projectiles_1011/laser_raw.png",
+        "source_rect": [
+          314,
+          0,
+          627,
+          314
+        ],
+        "source_pivot": [
+          158.88235294117646,
+          260.0
+        ],
+        "physical_rect": null,
+        "content_rect": [
+          107,
+          29,
+          204,
+          292
+        ],
+        "translation": [
+          2,
+          -14
+        ],
+        "scale": 0.7931034482758621,
+        "sha256": "0227edc08b15cceedbd6b9a0bcfb1ac1db83c165931c5a123e1121633e2032b6",
+        "source_sha256": "f6f21de68c4be8057680c40c920218c3b4b95890291eb932022197a16fb01145",
+        "body_rect": [
+          104,
+          68,
+          48,
+          96
+        ],
+        "tip_rect": [
+          64,
+          8,
+          128,
+          76
+        ],
+        "root_rect": [
+          56,
+          158,
+          144,
+          90
+        ]
+      },
+      {
+        "key": "wp11_laser_02",
+        "path": "assets/game/shared/player_weapons/wind_1011/laser_02.png",
+        "slot": 3,
+        "name": "Wind Lance",
+        "frame": 2,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          192
+        ],
+        "source": "wind_projectiles_1011/laser_raw.png",
+        "source_rect": [
+          627,
+          0,
+          940,
+          314
+        ],
+        "source_pivot": [
+          159.28947368421052,
+          260.0
+        ],
+        "physical_rect": null,
+        "content_rect": [
+          107,
+          29,
+          205,
+          292
+        ],
+        "translation": [
+          2,
+          -14
+        ],
+        "scale": 0.7931034482758621,
+        "sha256": "767cbcb186df2fe9b985b2904c407e1db2f53ead838724294405ccea38e91cbb",
+        "source_sha256": "f6f21de68c4be8057680c40c920218c3b4b95890291eb932022197a16fb01145",
+        "body_rect": [
+          104,
+          68,
+          48,
+          96
+        ],
+        "tip_rect": [
+          64,
+          8,
+          128,
+          76
+        ],
+        "root_rect": [
+          56,
+          158,
+          144,
+          90
+        ]
+      },
+      {
+        "key": "wp11_laser_03",
+        "path": "assets/game/shared/player_weapons/wind_1011/laser_03.png",
+        "slot": 3,
+        "name": "Wind Lance",
+        "frame": 3,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          192
+        ],
+        "source": "wind_projectiles_1011/laser_raw.png",
+        "source_rect": [
+          940,
+          0,
+          1254,
+          314
+        ],
+        "source_pivot": [
+          158.7027027027027,
+          260.0
+        ],
+        "physical_rect": null,
+        "content_rect": [
+          105,
+          29,
+          203,
+          292
+        ],
+        "translation": [
+          2,
+          -14
+        ],
+        "scale": 0.7931034482758621,
+        "sha256": "b0ea38e18a0a2c84360e4f303b793a86c4b67fb9f27d56b9155136ae5fc33742",
+        "source_sha256": "f6f21de68c4be8057680c40c920218c3b4b95890291eb932022197a16fb01145",
+        "body_rect": [
+          104,
+          68,
+          48,
+          96
+        ],
+        "tip_rect": [
+          64,
+          8,
+          128,
+          76
+        ],
+        "root_rect": [
+          56,
+          158,
+          144,
+          90
+        ]
+      },
+      {
+        "key": "wp11_laser_04",
+        "path": "assets/game/shared/player_weapons/wind_1011/laser_04.png",
+        "slot": 3,
+        "name": "Wind Lance",
+        "frame": 4,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          192
+        ],
+        "source": "wind_projectiles_1011/laser_raw.png",
+        "source_rect": [
+          0,
+          314,
+          314,
+          627
+        ],
+        "source_pivot": [
+          157.40816326530611,
+          258.5
+        ],
+        "physical_rect": null,
+        "content_rect": [
+          105,
+          28,
+          206,
+          292
+        ],
+        "translation": [
+          3,
+          -13
+        ],
+        "scale": 0.7931034482758621,
+        "sha256": "e9c305b137d554bab9ef07b8da5d5752f8dfa5d96b68fb472bdd6f00e0297c1d",
+        "source_sha256": "f6f21de68c4be8057680c40c920218c3b4b95890291eb932022197a16fb01145",
+        "body_rect": [
+          104,
+          68,
+          48,
+          96
+        ],
+        "tip_rect": [
+          64,
+          8,
+          128,
+          76
+        ],
+        "root_rect": [
+          56,
+          158,
+          144,
+          90
+        ]
+      },
+      {
+        "key": "wp11_laser_05",
+        "path": "assets/game/shared/player_weapons/wind_1011/laser_05.png",
+        "slot": 3,
+        "name": "Wind Lance",
+        "frame": 5,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          192
+        ],
+        "source": "wind_projectiles_1011/laser_raw.png",
+        "source_rect": [
+          314,
+          314,
+          627,
+          627
+        ],
+        "source_pivot": [
+          160.38235294117646,
+          259.0
+        ],
+        "physical_rect": null,
+        "content_rect": [
+          104,
+          28,
+          204,
+          292
+        ],
+        "translation": [
+          1,
+          -13
+        ],
+        "scale": 0.7931034482758621,
+        "sha256": "0512ed3df9b5c6bdbc724f74db143393aac38b0bcd4019a71e2e85e558187682",
+        "source_sha256": "f6f21de68c4be8057680c40c920218c3b4b95890291eb932022197a16fb01145",
+        "body_rect": [
+          104,
+          68,
+          48,
+          96
+        ],
+        "tip_rect": [
+          64,
+          8,
+          128,
+          76
+        ],
+        "root_rect": [
+          56,
+          158,
+          144,
+          90
+        ]
+      },
+      {
+        "key": "wp11_laser_06",
+        "path": "assets/game/shared/player_weapons/wind_1011/laser_06.png",
+        "slot": 3,
+        "name": "Wind Lance",
+        "frame": 6,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          192
+        ],
+        "source": "wind_projectiles_1011/laser_raw.png",
+        "source_rect": [
+          627,
+          314,
+          940,
+          627
+        ],
+        "source_pivot": [
+          156.52380952380952,
+          259.5
+        ],
+        "physical_rect": null,
+        "content_rect": [
+          105,
+          28,
+          208,
+          292
+        ],
+        "translation": [
+          4,
+          -14
+        ],
+        "scale": 0.7931034482758621,
+        "sha256": "d160f9555c874afa9c4401a10d9fd0e2b6809414d785db4b923970c140b45291",
+        "source_sha256": "f6f21de68c4be8057680c40c920218c3b4b95890291eb932022197a16fb01145",
+        "body_rect": [
+          104,
+          68,
+          48,
+          96
+        ],
+        "tip_rect": [
+          64,
+          8,
+          128,
+          76
+        ],
+        "root_rect": [
+          56,
+          158,
+          144,
+          90
+        ]
+      },
+      {
+        "key": "wp11_laser_07",
+        "path": "assets/game/shared/player_weapons/wind_1011/laser_07.png",
+        "slot": 3,
+        "name": "Wind Lance",
+        "frame": 7,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          192
+        ],
+        "source": "wind_projectiles_1011/laser_raw.png",
+        "source_rect": [
+          940,
+          314,
+          1254,
+          627
+        ],
+        "source_pivot": [
+          159.07692307692307,
+          259.5
+        ],
+        "physical_rect": null,
+        "content_rect": [
+          107,
+          28,
+          210,
+          292
+        ],
+        "translation": [
+          2,
+          -14
+        ],
+        "scale": 0.7931034482758621,
+        "sha256": "11fbdfc29271167e3cdd271b141c41854d3fad27a0c594e18561f562e4bb229f",
+        "source_sha256": "f6f21de68c4be8057680c40c920218c3b4b95890291eb932022197a16fb01145",
+        "body_rect": [
+          104,
+          68,
+          48,
+          96
+        ],
+        "tip_rect": [
+          64,
+          8,
+          128,
+          76
+        ],
+        "root_rect": [
+          56,
+          158,
+          144,
+          90
+        ]
+      },
+      {
+        "key": "wp11_laser_08",
+        "path": "assets/game/shared/player_weapons/wind_1011/laser_08.png",
+        "slot": 3,
+        "name": "Wind Lance",
+        "frame": 8,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          192
+        ],
+        "source": "wind_projectiles_1011/laser_raw.png",
+        "source_rect": [
+          0,
+          627,
+          314,
+          940
+        ],
+        "source_pivot": [
+          162.66666666666666,
+          260.0
+        ],
+        "physical_rect": null,
+        "content_rect": [
+          105,
+          29,
+          211,
+          292
+        ],
+        "translation": [
+          -1,
+          -14
+        ],
+        "scale": 0.7931034482758621,
+        "sha256": "f7f47314fa3b02bdb4513f1b4217bf75c9151a0400f03983651def382368ddbf",
+        "source_sha256": "f6f21de68c4be8057680c40c920218c3b4b95890291eb932022197a16fb01145",
+        "body_rect": [
+          104,
+          68,
+          48,
+          96
+        ],
+        "tip_rect": [
+          64,
+          8,
+          128,
+          76
+        ],
+        "root_rect": [
+          56,
+          158,
+          144,
+          90
+        ]
+      },
+      {
+        "key": "wp11_laser_09",
+        "path": "assets/game/shared/player_weapons/wind_1011/laser_09.png",
+        "slot": 3,
+        "name": "Wind Lance",
+        "frame": 9,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          192
+        ],
+        "source": "wind_projectiles_1011/laser_raw.png",
+        "source_rect": [
+          314,
+          627,
+          627,
+          940
+        ],
+        "source_pivot": [
+          156.89473684210526,
+          260.0
+        ],
+        "physical_rect": null,
+        "content_rect": [
+          104,
+          29,
+          210,
+          292
+        ],
+        "translation": [
+          4,
+          -14
+        ],
+        "scale": 0.7931034482758621,
+        "sha256": "555bf2c15bd6d2b139a0f3995fb27b6c6f9ac4ec53addbacf8ae234521627e1a",
+        "source_sha256": "f6f21de68c4be8057680c40c920218c3b4b95890291eb932022197a16fb01145",
+        "body_rect": [
+          104,
+          68,
+          48,
+          96
+        ],
+        "tip_rect": [
+          64,
+          8,
+          128,
+          76
+        ],
+        "root_rect": [
+          56,
+          158,
+          144,
+          90
+        ]
+      },
+      {
+        "key": "wp11_laser_10",
+        "path": "assets/game/shared/player_weapons/wind_1011/laser_10.png",
+        "slot": 3,
+        "name": "Wind Lance",
+        "frame": 10,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          192
+        ],
+        "source": "wind_projectiles_1011/laser_raw.png",
+        "source_rect": [
+          627,
+          627,
+          940,
+          940
+        ],
+        "source_pivot": [
+          158.54054054054055,
+          260.0
+        ],
+        "physical_rect": null,
+        "content_rect": [
+          104,
+          29,
+          208,
+          292
+        ],
+        "translation": [
+          2,
+          -14
+        ],
+        "scale": 0.7931034482758621,
+        "sha256": "64f061e8035d98e98ff42ba8cce1518dc87e79be702aa88a13e00fa05ceb52e9",
+        "source_sha256": "f6f21de68c4be8057680c40c920218c3b4b95890291eb932022197a16fb01145",
+        "body_rect": [
+          104,
+          68,
+          48,
+          96
+        ],
+        "tip_rect": [
+          64,
+          8,
+          128,
+          76
+        ],
+        "root_rect": [
+          56,
+          158,
+          144,
+          90
+        ]
+      },
+      {
+        "key": "wp11_laser_11",
+        "path": "assets/game/shared/player_weapons/wind_1011/laser_11.png",
+        "slot": 3,
+        "name": "Wind Lance",
+        "frame": 11,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          192
+        ],
+        "source": "wind_projectiles_1011/laser_raw.png",
+        "source_rect": [
+          940,
+          627,
+          1254,
+          940
+        ],
+        "source_pivot": [
+          160.18421052631578,
+          260.0
+        ],
+        "physical_rect": null,
+        "content_rect": [
+          107,
+          29,
+          209,
+          292
+        ],
+        "translation": [
+          1,
+          -14
+        ],
+        "scale": 0.7931034482758621,
+        "sha256": "555deea98933cc27b21de2e4b4a5d7edb1450e7a311bbc14046aed344526890b",
+        "source_sha256": "f6f21de68c4be8057680c40c920218c3b4b95890291eb932022197a16fb01145",
+        "body_rect": [
+          104,
+          68,
+          48,
+          96
+        ],
+        "tip_rect": [
+          64,
+          8,
+          128,
+          76
+        ],
+        "root_rect": [
+          56,
+          158,
+          144,
+          90
+        ]
+      },
+      {
+        "key": "wp11_laser_12",
+        "path": "assets/game/shared/player_weapons/wind_1011/laser_12.png",
+        "slot": 3,
+        "name": "Wind Lance",
+        "frame": 12,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          192
+        ],
+        "source": "wind_projectiles_1011/laser_raw.png",
+        "source_rect": [
+          0,
+          940,
+          314,
+          1254
+        ],
+        "source_pivot": [
+          160.88095238095238,
+          260.5
+        ],
+        "physical_rect": null,
+        "content_rect": [
+          111,
+          29,
+          207,
+          294
+        ],
+        "translation": [
+          0,
+          -15
+        ],
+        "scale": 0.7931034482758621,
+        "sha256": "c635b16231b545f80350e8ab4261c2360be54b24da36d2e9ba5856ca622149af",
+        "source_sha256": "f6f21de68c4be8057680c40c920218c3b4b95890291eb932022197a16fb01145",
+        "body_rect": [
+          104,
+          68,
+          48,
+          96
+        ],
+        "tip_rect": [
+          64,
+          8,
+          128,
+          76
+        ],
+        "root_rect": [
+          56,
+          158,
+          144,
+          90
+        ]
+      },
+      {
+        "key": "wp11_laser_13",
+        "path": "assets/game/shared/player_weapons/wind_1011/laser_13.png",
+        "slot": 3,
+        "name": "Wind Lance",
+        "frame": 13,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          192
+        ],
+        "source": "wind_projectiles_1011/laser_raw.png",
+        "source_rect": [
+          314,
+          940,
+          627,
+          1254
+        ],
+        "source_pivot": [
+          156.2,
+          260.5
+        ],
+        "physical_rect": null,
+        "content_rect": [
+          108,
+          30,
+          201,
+          294
+        ],
+        "translation": [
+          4,
+          -15
+        ],
+        "scale": 0.7931034482758621,
+        "sha256": "a0e30c20de0a955f15c057cb537203ebcef7506d4dc03bea1711e0c14af7c3e6",
+        "source_sha256": "f6f21de68c4be8057680c40c920218c3b4b95890291eb932022197a16fb01145",
+        "body_rect": [
+          104,
+          68,
+          48,
+          96
+        ],
+        "tip_rect": [
+          64,
+          8,
+          128,
+          76
+        ],
+        "root_rect": [
+          56,
+          158,
+          144,
+          90
+        ]
+      },
+      {
+        "key": "wp11_laser_14",
+        "path": "assets/game/shared/player_weapons/wind_1011/laser_14.png",
+        "slot": 3,
+        "name": "Wind Lance",
+        "frame": 14,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          192
+        ],
+        "source": "wind_projectiles_1011/laser_raw.png",
+        "source_rect": [
+          627,
+          940,
+          940,
+          1254
+        ],
+        "source_pivot": [
+          158.7741935483871,
+          261.0
+        ],
+        "physical_rect": null,
+        "content_rect": [
+          109,
+          29,
+          206,
+          294
+        ],
+        "translation": [
+          2,
+          -15
+        ],
+        "scale": 0.7931034482758621,
+        "sha256": "3e4b7bff7be7a122295621a09b51804fdaec0345785e5696a728c7cc7fcd19c5",
+        "source_sha256": "f6f21de68c4be8057680c40c920218c3b4b95890291eb932022197a16fb01145",
+        "body_rect": [
+          104,
+          68,
+          48,
+          96
+        ],
+        "tip_rect": [
+          64,
+          8,
+          128,
+          76
+        ],
+        "root_rect": [
+          56,
+          158,
+          144,
+          90
+        ]
+      },
+      {
+        "key": "wp11_laser_15",
+        "path": "assets/game/shared/player_weapons/wind_1011/laser_15.png",
+        "slot": 3,
+        "name": "Wind Lance",
+        "frame": 15,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          192
+        ],
+        "source": "wind_projectiles_1011/laser_raw.png",
+        "source_rect": [
+          940,
+          940,
+          1254,
+          1254
+        ],
+        "source_pivot": [
+          155.0,
+          259.0
+        ],
+        "physical_rect": null,
+        "content_rect": [
+          109,
+          29,
+          209,
+          294
+        ],
+        "translation": [
+          5,
+          -13
+        ],
+        "scale": 0.7931034482758621,
+        "sha256": "17b5f9391eb3aa99d7fec0e39ab14d81f4ef7fc157fdc0710a278f58e0bd673b",
+        "source_sha256": "f6f21de68c4be8057680c40c920218c3b4b95890291eb932022197a16fb01145",
+        "body_rect": [
+          104,
+          68,
+          48,
+          96
+        ],
+        "tip_rect": [
+          64,
+          8,
+          128,
+          76
+        ],
+        "root_rect": [
+          56,
+          158,
+          144,
+          90
+        ]
+      }
+    ],
+    "gust": [
+      {
+        "key": "wp11_gust_00",
+        "path": "assets/game/shared/player_weapons/wind_1011/gust_00.png",
+        "slot": 4,
+        "name": "Gust Torrent",
+        "frame": 0,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          192
+        ],
+        "source": "wind_projectiles_1011/gust_raw.png",
+        "source_rect": [
+          0,
+          0,
+          314,
+          314
+        ],
+        "source_pivot": [
+          156.5,
+          227
+        ],
+        "physical_rect": [
+          138,
+          227,
+          175,
+          273
+        ],
+        "content_rect": [
+          79,
+          19,
+          248,
+          298
+        ],
+        "translation": [
+          10,
+          20
+        ],
+        "scale": 0.7567567567567568,
+        "sha256": "79583369d996ee2dd72e40ac88064271f0e741c7c38910e0536cd39efd5e8449",
+        "source_sha256": "dacbf039d58c91e179bcafc927d3f3aecd474782cadaca54e33effa87f0d731a",
+        "draw_rect": [
+          0,
+          0,
+          256,
+          192
+        ]
+      },
+      {
+        "key": "wp11_gust_01",
+        "path": "assets/game/shared/player_weapons/wind_1011/gust_01.png",
+        "slot": 4,
+        "name": "Gust Torrent",
+        "frame": 1,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          192
+        ],
+        "source": "wind_projectiles_1011/gust_raw.png",
+        "source_rect": [
+          314,
+          0,
+          627,
+          314
+        ],
+        "source_pivot": [
+          164.5,
+          227
+        ],
+        "physical_rect": [
+          154,
+          227,
+          175,
+          273
+        ],
+        "content_rect": [
+          68,
+          19,
+          248,
+          298
+        ],
+        "translation": [
+          4,
+          20
+        ],
+        "scale": 0.7567567567567568,
+        "sha256": "34582c6d2e890c04b1f043d8859e6f1e17d91007a8a5938c6295e591d7220b1d",
+        "source_sha256": "dacbf039d58c91e179bcafc927d3f3aecd474782cadaca54e33effa87f0d731a",
+        "draw_rect": [
+          0,
+          0,
+          256,
+          192
+        ]
+      },
+      {
+        "key": "wp11_gust_02",
+        "path": "assets/game/shared/player_weapons/wind_1011/gust_02.png",
+        "slot": 4,
+        "name": "Gust Torrent",
+        "frame": 2,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          192
+        ],
+        "source": "wind_projectiles_1011/gust_raw.png",
+        "source_rect": [
+          627,
+          0,
+          940,
+          314
+        ],
+        "source_pivot": [
+          165.5,
+          233
+        ],
+        "physical_rect": [
+          156,
+          233,
+          175,
+          273
+        ],
+        "content_rect": [
+          56,
+          20,
+          256,
+          298
+        ],
+        "translation": [
+          3,
+          16
+        ],
+        "scale": 0.7567567567567568,
+        "sha256": "2923c3636227eb361904cdb79da6058030f8f9fe0a53a2776161c8cb5c32ef86",
+        "source_sha256": "dacbf039d58c91e179bcafc927d3f3aecd474782cadaca54e33effa87f0d731a",
+        "draw_rect": [
+          0,
+          0,
+          256,
+          192
+        ]
+      },
+      {
+        "key": "wp11_gust_03",
+        "path": "assets/game/shared/player_weapons/wind_1011/gust_03.png",
+        "slot": 4,
+        "name": "Gust Torrent",
+        "frame": 3,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          192
+        ],
+        "source": "wind_projectiles_1011/gust_raw.png",
+        "source_rect": [
+          940,
+          0,
+          1254,
+          314
+        ],
+        "source_pivot": [
+          167.5,
+          230
+        ],
+        "physical_rect": [
+          159,
+          230,
+          176,
+          273
+        ],
+        "content_rect": [
+          43,
+          21,
+          272,
+          298
+        ],
+        "translation": [
+          1,
+          18
+        ],
+        "scale": 0.7567567567567568,
+        "sha256": "a28c4f089590d696658481448514ffaf31201e53f886fd3065e0b15ba10aeeb8",
+        "source_sha256": "dacbf039d58c91e179bcafc927d3f3aecd474782cadaca54e33effa87f0d731a",
+        "draw_rect": [
+          0,
+          0,
+          256,
+          192
+        ]
+      },
+      {
+        "key": "wp11_gust_04",
+        "path": "assets/game/shared/player_weapons/wind_1011/gust_04.png",
+        "slot": 4,
+        "name": "Gust Torrent",
+        "frame": 4,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          192
+        ],
+        "source": "wind_projectiles_1011/gust_raw.png",
+        "source_rect": [
+          0,
+          314,
+          314,
+          627
+        ],
+        "source_pivot": [
+          165.0,
+          234
+        ],
+        "physical_rect": [
+          155,
+          234,
+          175,
+          272
+        ],
+        "content_rect": [
+          55,
+          18,
+          259,
+          297
+        ],
+        "translation": [
+          3,
+          15
+        ],
+        "scale": 0.7567567567567568,
+        "sha256": "0e270884a75e559f57e96c206ed7cdf780cb59d3bb5a57f5189c3f105b1e490f",
+        "source_sha256": "dacbf039d58c91e179bcafc927d3f3aecd474782cadaca54e33effa87f0d731a",
+        "draw_rect": [
+          0,
+          0,
+          256,
+          192
+        ]
+      },
+      {
+        "key": "wp11_gust_05",
+        "path": "assets/game/shared/player_weapons/wind_1011/gust_05.png",
+        "slot": 4,
+        "name": "Gust Torrent",
+        "frame": 5,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          192
+        ],
+        "source": "wind_projectiles_1011/gust_raw.png",
+        "source_rect": [
+          314,
+          314,
+          627,
+          627
+        ],
+        "source_pivot": [
+          166.5,
+          226
+        ],
+        "physical_rect": [
+          158,
+          226,
+          175,
+          272
+        ],
+        "content_rect": [
+          57,
+          18,
+          261,
+          297
+        ],
+        "translation": [
+          2,
+          21
+        ],
+        "scale": 0.7567567567567568,
+        "sha256": "6e379860d25e60051b128a60abb7333107dd750975686e630e7cc516014ac077",
+        "source_sha256": "dacbf039d58c91e179bcafc927d3f3aecd474782cadaca54e33effa87f0d731a",
+        "draw_rect": [
+          0,
+          0,
+          256,
+          192
+        ]
+      },
+      {
+        "key": "wp11_gust_06",
+        "path": "assets/game/shared/player_weapons/wind_1011/gust_06.png",
+        "slot": 4,
+        "name": "Gust Torrent",
+        "frame": 6,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          192
+        ],
+        "source": "wind_projectiles_1011/gust_raw.png",
+        "source_rect": [
+          627,
+          314,
+          940,
+          627
+        ],
+        "source_pivot": [
+          167.0,
+          231
+        ],
+        "physical_rect": [
+          159,
+          231,
+          175,
+          272
+        ],
+        "content_rect": [
+          48,
+          17,
+          256,
+          297
+        ],
+        "translation": [
+          2,
+          17
+        ],
+        "scale": 0.7567567567567568,
+        "sha256": "3145c40ca8cbad87cac73fe9b5e4829e34bd54ab3b7dcf21e2deb556a0122606",
+        "source_sha256": "dacbf039d58c91e179bcafc927d3f3aecd474782cadaca54e33effa87f0d731a",
+        "draw_rect": [
+          0,
+          0,
+          256,
+          192
+        ]
+      },
+      {
+        "key": "wp11_gust_07",
+        "path": "assets/game/shared/player_weapons/wind_1011/gust_07.png",
+        "slot": 4,
+        "name": "Gust Torrent",
+        "frame": 7,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          192
+        ],
+        "source": "wind_projectiles_1011/gust_raw.png",
+        "source_rect": [
+          940,
+          314,
+          1254,
+          627
+        ],
+        "source_pivot": [
+          167.5,
+          232
+        ],
+        "physical_rect": [
+          159,
+          232,
+          176,
+          272
+        ],
+        "content_rect": [
+          57,
+          18,
+          271,
+          297
+        ],
+        "translation": [
+          1,
+          16
+        ],
+        "scale": 0.7567567567567568,
+        "sha256": "c0dab2eb120976c0562ecf44803e647ffbdef9034f91e47fe4b6b344d3df35d3",
+        "source_sha256": "dacbf039d58c91e179bcafc927d3f3aecd474782cadaca54e33effa87f0d731a",
+        "draw_rect": [
+          0,
+          0,
+          256,
+          192
+        ]
+      },
+      {
+        "key": "wp11_gust_08",
+        "path": "assets/game/shared/player_weapons/wind_1011/gust_08.png",
+        "slot": 4,
+        "name": "Gust Torrent",
+        "frame": 8,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          192
+        ],
+        "source": "wind_projectiles_1011/gust_raw.png",
+        "source_rect": [
+          0,
+          627,
+          314,
+          940
+        ],
+        "source_pivot": [
+          156.5,
+          229
+        ],
+        "physical_rect": [
+          138,
+          229,
+          175,
+          273
+        ],
+        "content_rect": [
+          52,
+          18,
+          259,
+          298
+        ],
+        "translation": [
+          10,
+          19
+        ],
+        "scale": 0.7567567567567568,
+        "sha256": "272e19ac901b2c069851604e48a33a2320fd95b2315a7aedbc69f6ce43ef3c1a",
+        "source_sha256": "dacbf039d58c91e179bcafc927d3f3aecd474782cadaca54e33effa87f0d731a",
+        "draw_rect": [
+          0,
+          0,
+          256,
+          192
+        ]
+      },
+      {
+        "key": "wp11_gust_09",
+        "path": "assets/game/shared/player_weapons/wind_1011/gust_09.png",
+        "slot": 4,
+        "name": "Gust Torrent",
+        "frame": 9,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          192
+        ],
+        "source": "wind_projectiles_1011/gust_raw.png",
+        "source_rect": [
+          314,
+          627,
+          627,
+          940
+        ],
+        "source_pivot": [
+          156.5,
+          229
+        ],
+        "physical_rect": [
+          138,
+          229,
+          175,
+          273
+        ],
+        "content_rect": [
+          50,
+          19,
+          261,
+          298
+        ],
+        "translation": [
+          10,
+          19
+        ],
+        "scale": 0.7567567567567568,
+        "sha256": "8d2ef9c07a5e6bde75433ab95ccf5ff4005e1acac9fe618d27e9c939c8fa37b1",
+        "source_sha256": "dacbf039d58c91e179bcafc927d3f3aecd474782cadaca54e33effa87f0d731a",
+        "draw_rect": [
+          0,
+          0,
+          256,
+          192
+        ]
+      },
+      {
+        "key": "wp11_gust_10",
+        "path": "assets/game/shared/player_weapons/wind_1011/gust_10.png",
+        "slot": 4,
+        "name": "Gust Torrent",
+        "frame": 10,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          192
+        ],
+        "source": "wind_projectiles_1011/gust_raw.png",
+        "source_rect": [
+          627,
+          627,
+          940,
+          940
+        ],
+        "source_pivot": [
+          156.5,
+          230
+        ],
+        "physical_rect": [
+          138,
+          230,
+          175,
+          273
+        ],
+        "content_rect": [
+          48,
+          18,
+          268,
+          298
+        ],
+        "translation": [
+          10,
+          18
+        ],
+        "scale": 0.7567567567567568,
+        "sha256": "1453cea83699f2b9cd436d6c60fb53a58b1f5f87290d85c183a5862557d61619",
+        "source_sha256": "dacbf039d58c91e179bcafc927d3f3aecd474782cadaca54e33effa87f0d731a",
+        "draw_rect": [
+          0,
+          0,
+          256,
+          192
+        ]
+      },
+      {
+        "key": "wp11_gust_11",
+        "path": "assets/game/shared/player_weapons/wind_1011/gust_11.png",
+        "slot": 4,
+        "name": "Gust Torrent",
+        "frame": 11,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          192
+        ],
+        "source": "wind_projectiles_1011/gust_raw.png",
+        "source_rect": [
+          940,
+          627,
+          1254,
+          940
+        ],
+        "source_pivot": [
+          157.5,
+          229
+        ],
+        "physical_rect": [
+          139,
+          229,
+          176,
+          273
+        ],
+        "content_rect": [
+          57,
+          18,
+          258,
+          298
+        ],
+        "translation": [
+          9,
+          19
+        ],
+        "scale": 0.7567567567567568,
+        "sha256": "185d5115c82d5a64f346c7e8078b12f3479a778e39619cb4a9fc8cae19c656b1",
+        "source_sha256": "dacbf039d58c91e179bcafc927d3f3aecd474782cadaca54e33effa87f0d731a",
+        "draw_rect": [
+          0,
+          0,
+          256,
+          192
+        ]
+      },
+      {
+        "key": "wp11_gust_12",
+        "path": "assets/game/shared/player_weapons/wind_1011/gust_12.png",
+        "slot": 4,
+        "name": "Gust Torrent",
+        "frame": 12,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          192
+        ],
+        "source": "wind_projectiles_1011/gust_raw.png",
+        "source_rect": [
+          0,
+          940,
+          314,
+          1254
+        ],
+        "source_pivot": [
+          167.0,
+          230
+        ],
+        "physical_rect": [
+          159,
+          230,
+          175,
+          273
+        ],
+        "content_rect": [
+          72,
+          17,
+          245,
+          298
+        ],
+        "translation": [
+          2,
+          18
+        ],
+        "scale": 0.7567567567567568,
+        "sha256": "027875e3af2f1833214230e862ee8b9283e712a5a41afc0c203b16077070befc",
+        "source_sha256": "dacbf039d58c91e179bcafc927d3f3aecd474782cadaca54e33effa87f0d731a",
+        "draw_rect": [
+          0,
+          0,
+          256,
+          192
+        ]
+      },
+      {
+        "key": "wp11_gust_13",
+        "path": "assets/game/shared/player_weapons/wind_1011/gust_13.png",
+        "slot": 4,
+        "name": "Gust Torrent",
+        "frame": 13,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          192
+        ],
+        "source": "wind_projectiles_1011/gust_raw.png",
+        "source_rect": [
+          314,
+          940,
+          627,
+          1254
+        ],
+        "source_pivot": [
+          166.5,
+          227
+        ],
+        "physical_rect": [
+          158,
+          227,
+          175,
+          273
+        ],
+        "content_rect": [
+          68,
+          18,
+          240,
+          298
+        ],
+        "translation": [
+          2,
+          20
+        ],
+        "scale": 0.7567567567567568,
+        "sha256": "ae381ecf510cf9f55da9429458ba6742800f23088276bde47c0af052fa8c76c4",
+        "source_sha256": "dacbf039d58c91e179bcafc927d3f3aecd474782cadaca54e33effa87f0d731a",
+        "draw_rect": [
+          0,
+          0,
+          256,
+          192
+        ]
+      },
+      {
+        "key": "wp11_gust_14",
+        "path": "assets/game/shared/player_weapons/wind_1011/gust_14.png",
+        "slot": 4,
+        "name": "Gust Torrent",
+        "frame": 14,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          192
+        ],
+        "source": "wind_projectiles_1011/gust_raw.png",
+        "source_rect": [
+          627,
+          940,
+          940,
+          1254
+        ],
+        "source_pivot": [
+          167.0,
+          234
+        ],
+        "physical_rect": [
+          159,
+          234,
+          175,
+          273
+        ],
+        "content_rect": [
+          72,
+          17,
+          243,
+          298
+        ],
+        "translation": [
+          2,
+          15
+        ],
+        "scale": 0.7567567567567568,
+        "sha256": "eba3cdd2210d63057431d9d17d1011620dcf6d5789ba735b89fc48c8ab7c2a4a",
+        "source_sha256": "dacbf039d58c91e179bcafc927d3f3aecd474782cadaca54e33effa87f0d731a",
+        "draw_rect": [
+          0,
+          0,
+          256,
+          192
+        ]
+      },
+      {
+        "key": "wp11_gust_15",
+        "path": "assets/game/shared/player_weapons/wind_1011/gust_15.png",
+        "slot": 4,
+        "name": "Gust Torrent",
+        "frame": 15,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          192
+        ],
+        "source": "wind_projectiles_1011/gust_raw.png",
+        "source_rect": [
+          940,
+          940,
+          1254,
+          1254
+        ],
+        "source_pivot": [
+          165.0,
+          224
+        ],
+        "physical_rect": [
+          154,
+          224,
+          176,
+          273
+        ],
+        "content_rect": [
+          75,
+          18,
+          237,
+          298
+        ],
+        "translation": [
+          3,
+          22
+        ],
+        "scale": 0.7567567567567568,
+        "sha256": "435bb21ddf967f8f4be96bab1c4ff165523704a3853ceb23500c173b89d17951",
+        "source_sha256": "dacbf039d58c91e179bcafc927d3f3aecd474782cadaca54e33effa87f0d731a",
+        "draw_rect": [
+          0,
+          0,
+          256,
+          192
+        ]
+      }
+    ],
+    "tornado": [
+      {
+        "key": "wp11_tornado_00",
+        "path": "assets/game/shared/player_weapons/wind_1011/tornado_00.png",
+        "slot": 5,
+        "name": "Tornado Orb",
+        "frame": 0,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "source": "wind_projectiles_1011/tornado_raw.png",
+        "source_rect": [
+          0,
+          0,
+          314,
+          314
+        ],
+        "source_pivot": [
+          162.0,
+          156.0
+        ],
+        "physical_rect": null,
+        "content_rect": [
+          46,
+          57,
+          295,
+          300
+        ],
+        "translation": [
+          -6,
+          -1
+        ],
+        "scale": 0.8275862068965517,
+        "sha256": "fabccf79f0e8f954f51c8ee039d68e0524763d7e1aa2c4796a3cb8c42f2230f1",
+        "source_sha256": "bfa0f62dfb25e44053d435592711f7fc8d68c8ceac944cd05d22ff8a82570425"
+      },
+      {
+        "key": "wp11_tornado_01",
+        "path": "assets/game/shared/player_weapons/wind_1011/tornado_01.png",
+        "slot": 5,
+        "name": "Tornado Orb",
+        "frame": 1,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "source": "wind_projectiles_1011/tornado_raw.png",
+        "source_rect": [
+          314,
+          0,
+          627,
+          314
+        ],
+        "source_pivot": [
+          154.0,
+          156.0
+        ],
+        "physical_rect": null,
+        "content_rect": [
+          35,
+          56,
+          284,
+          295
+        ],
+        "translation": [
+          1,
+          -1
+        ],
+        "scale": 0.8275862068965517,
+        "sha256": "4ce8499f6cc88b553251eef7d4cd40eb2ac90d06dcf4fc6c3a3de13b1b28bdee",
+        "source_sha256": "bfa0f62dfb25e44053d435592711f7fc8d68c8ceac944cd05d22ff8a82570425"
+      },
+      {
+        "key": "wp11_tornado_02",
+        "path": "assets/game/shared/player_weapons/wind_1011/tornado_02.png",
+        "slot": 5,
+        "name": "Tornado Orb",
+        "frame": 2,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "source": "wind_projectiles_1011/tornado_raw.png",
+        "source_rect": [
+          627,
+          0,
+          940,
+          314
+        ],
+        "source_pivot": [
+          145.0,
+          156.0
+        ],
+        "physical_rect": null,
+        "content_rect": [
+          30,
+          56,
+          278,
+          299
+        ],
+        "translation": [
+          8,
+          -1
+        ],
+        "scale": 0.8275862068965517,
+        "sha256": "02925a1977ed6a117af865c943c6c0465fe49487a96f0185e829484472f05c50",
+        "source_sha256": "bfa0f62dfb25e44053d435592711f7fc8d68c8ceac944cd05d22ff8a82570425"
+      },
+      {
+        "key": "wp11_tornado_03",
+        "path": "assets/game/shared/player_weapons/wind_1011/tornado_03.png",
+        "slot": 5,
+        "name": "Tornado Orb",
+        "frame": 3,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "source": "wind_projectiles_1011/tornado_raw.png",
+        "source_rect": [
+          940,
+          0,
+          1254,
+          314
+        ],
+        "source_pivot": [
+          139.0,
+          156.0
+        ],
+        "physical_rect": null,
+        "content_rect": [
+          18,
+          58,
+          269,
+          299
+        ],
+        "translation": [
+          13,
+          -1
+        ],
+        "scale": 0.8275862068965517,
+        "sha256": "a1a517287dbe7a33bd46cb4a1fad39083b6ae5f70ddc8191fb797b357845929e",
+        "source_sha256": "bfa0f62dfb25e44053d435592711f7fc8d68c8ceac944cd05d22ff8a82570425"
+      },
+      {
+        "key": "wp11_tornado_04",
+        "path": "assets/game/shared/player_weapons/wind_1011/tornado_04.png",
+        "slot": 5,
+        "name": "Tornado Orb",
+        "frame": 4,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "source": "wind_projectiles_1011/tornado_raw.png",
+        "source_rect": [
+          0,
+          314,
+          314,
+          627
+        ],
+        "source_pivot": [
+          163.0,
+          148.0
+        ],
+        "physical_rect": null,
+        "content_rect": [
+          43,
+          44,
+          293,
+          286
+        ],
+        "translation": [
+          -7,
+          6
+        ],
+        "scale": 0.8275862068965517,
+        "sha256": "36ef3e65f975a55d778d9df4d4bdfde361ee67b3d6e5fbd3bd1fb8ab483a8c5e",
+        "source_sha256": "bfa0f62dfb25e44053d435592711f7fc8d68c8ceac944cd05d22ff8a82570425"
+      },
+      {
+        "key": "wp11_tornado_05",
+        "path": "assets/game/shared/player_weapons/wind_1011/tornado_05.png",
+        "slot": 5,
+        "name": "Tornado Orb",
+        "frame": 5,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "source": "wind_projectiles_1011/tornado_raw.png",
+        "source_rect": [
+          314,
+          314,
+          627,
+          627
+        ],
+        "source_pivot": [
+          157.0,
+          149.0
+        ],
+        "physical_rect": null,
+        "content_rect": [
+          40,
+          42,
+          282,
+          286
+        ],
+        "translation": [
+          -2,
+          5
+        ],
+        "scale": 0.8275862068965517,
+        "sha256": "3fc7f4513ae15ed2a769fda8821022c18e1635225e0de99c3a1ad1bcc7cd5fb2",
+        "source_sha256": "bfa0f62dfb25e44053d435592711f7fc8d68c8ceac944cd05d22ff8a82570425"
+      },
+      {
+        "key": "wp11_tornado_06",
+        "path": "assets/game/shared/player_weapons/wind_1011/tornado_06.png",
+        "slot": 5,
+        "name": "Tornado Orb",
+        "frame": 6,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "source": "wind_projectiles_1011/tornado_raw.png",
+        "source_rect": [
+          627,
+          314,
+          940,
+          627
+        ],
+        "source_pivot": [
+          145.0,
+          148.0
+        ],
+        "physical_rect": null,
+        "content_rect": [
+          30,
+          45,
+          276,
+          286
+        ],
+        "translation": [
+          8,
+          6
+        ],
+        "scale": 0.8275862068965517,
+        "sha256": "ce63723b76d9dbd3501f217f40b95855b58c686604b78001a19d26789efdef0d",
+        "source_sha256": "bfa0f62dfb25e44053d435592711f7fc8d68c8ceac944cd05d22ff8a82570425"
+      },
+      {
+        "key": "wp11_tornado_07",
+        "path": "assets/game/shared/player_weapons/wind_1011/tornado_07.png",
+        "slot": 5,
+        "name": "Tornado Orb",
+        "frame": 7,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "source": "wind_projectiles_1011/tornado_raw.png",
+        "source_rect": [
+          940,
+          314,
+          1254,
+          627
+        ],
+        "source_pivot": [
+          140.0,
+          149.0
+        ],
+        "physical_rect": null,
+        "content_rect": [
+          25,
+          44,
+          270,
+          286
+        ],
+        "translation": [
+          12,
+          5
+        ],
+        "scale": 0.8275862068965517,
+        "sha256": "2e512f0fd3b63ffe3575d65f163ead465dac75636656d3e2e3ef12f984f2bd7a",
+        "source_sha256": "bfa0f62dfb25e44053d435592711f7fc8d68c8ceac944cd05d22ff8a82570425"
+      },
+      {
+        "key": "wp11_tornado_08",
+        "path": "assets/game/shared/player_weapons/wind_1011/tornado_08.png",
+        "slot": 5,
+        "name": "Tornado Orb",
+        "frame": 8,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "source": "wind_projectiles_1011/tornado_raw.png",
+        "source_rect": [
+          0,
+          627,
+          314,
+          940
+        ],
+        "source_pivot": [
+          161.0,
+          136.0
+        ],
+        "physical_rect": null,
+        "content_rect": [
+          44,
+          27,
+          294,
+          277
+        ],
+        "translation": [
+          -5,
+          15
+        ],
+        "scale": 0.8275862068965517,
+        "sha256": "370c8fef4a0747e137dcd19c00443b8a7d0c7642c41f6e6e48d764fd97fd2693",
+        "source_sha256": "bfa0f62dfb25e44053d435592711f7fc8d68c8ceac944cd05d22ff8a82570425"
+      },
+      {
+        "key": "wp11_tornado_09",
+        "path": "assets/game/shared/player_weapons/wind_1011/tornado_09.png",
+        "slot": 5,
+        "name": "Tornado Orb",
+        "frame": 9,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "source": "wind_projectiles_1011/tornado_raw.png",
+        "source_rect": [
+          314,
+          627,
+          627,
+          940
+        ],
+        "source_pivot": [
+          153.0,
+          136.0
+        ],
+        "physical_rect": null,
+        "content_rect": [
+          40,
+          25,
+          285,
+          271
+        ],
+        "translation": [
+          1,
+          15
+        ],
+        "scale": 0.8275862068965517,
+        "sha256": "aeaf44a0626db70c47e608beab79d980869c51164fab0884df1bb43f47ddf625",
+        "source_sha256": "bfa0f62dfb25e44053d435592711f7fc8d68c8ceac944cd05d22ff8a82570425"
+      },
+      {
+        "key": "wp11_tornado_10",
+        "path": "assets/game/shared/player_weapons/wind_1011/tornado_10.png",
+        "slot": 5,
+        "name": "Tornado Orb",
+        "frame": 10,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "source": "wind_projectiles_1011/tornado_raw.png",
+        "source_rect": [
+          627,
+          627,
+          940,
+          940
+        ],
+        "source_pivot": [
+          145.0,
+          136.0
+        ],
+        "physical_rect": null,
+        "content_rect": [
+          28,
+          25,
+          273,
+          277
+        ],
+        "translation": [
+          8,
+          15
+        ],
+        "scale": 0.8275862068965517,
+        "sha256": "be662639d661763402a4c8d518de22fb0ed0f96689b56a66ee7f10650bb651d5",
+        "source_sha256": "bfa0f62dfb25e44053d435592711f7fc8d68c8ceac944cd05d22ff8a82570425"
+      },
+      {
+        "key": "wp11_tornado_11",
+        "path": "assets/game/shared/player_weapons/wind_1011/tornado_11.png",
+        "slot": 5,
+        "name": "Tornado Orb",
+        "frame": 11,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "source": "wind_projectiles_1011/tornado_raw.png",
+        "source_rect": [
+          940,
+          627,
+          1254,
+          940
+        ],
+        "source_pivot": [
+          139.0,
+          136.0
+        ],
+        "physical_rect": null,
+        "content_rect": [
+          22,
+          30,
+          273,
+          277
+        ],
+        "translation": [
+          13,
+          15
+        ],
+        "scale": 0.8275862068965517,
+        "sha256": "dd28a2fc128fceb457b5631576f24b8e982f50b36730754608d0328c781c8706",
+        "source_sha256": "bfa0f62dfb25e44053d435592711f7fc8d68c8ceac944cd05d22ff8a82570425"
+      },
+      {
+        "key": "wp11_tornado_12",
+        "path": "assets/game/shared/player_weapons/wind_1011/tornado_12.png",
+        "slot": 5,
+        "name": "Tornado Orb",
+        "frame": 12,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "source": "wind_projectiles_1011/tornado_raw.png",
+        "source_rect": [
+          0,
+          940,
+          314,
+          1254
+        ],
+        "source_pivot": [
+          161.0,
+          120.0
+        ],
+        "physical_rect": null,
+        "content_rect": [
+          47,
+          13,
+          294,
+          265
+        ],
+        "translation": [
+          -5,
+          29
+        ],
+        "scale": 0.8275862068965517,
+        "sha256": "e79a6cfe654b76f441e4a31c1a2ee597042420fe9e2cbe70b4a55740d6ba3e5f",
+        "source_sha256": "bfa0f62dfb25e44053d435592711f7fc8d68c8ceac944cd05d22ff8a82570425"
+      },
+      {
+        "key": "wp11_tornado_13",
+        "path": "assets/game/shared/player_weapons/wind_1011/tornado_13.png",
+        "slot": 5,
+        "name": "Tornado Orb",
+        "frame": 13,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "source": "wind_projectiles_1011/tornado_raw.png",
+        "source_rect": [
+          314,
+          940,
+          627,
+          1254
+        ],
+        "source_pivot": [
+          154.0,
+          120.0
+        ],
+        "physical_rect": null,
+        "content_rect": [
+          40,
+          18,
+          282,
+          262
+        ],
+        "translation": [
+          1,
+          29
+        ],
+        "scale": 0.8275862068965517,
+        "sha256": "9cb9d8f9890d2331d629118a962897b1d8a7c90619c44b9d79eb9a08126cc426",
+        "source_sha256": "bfa0f62dfb25e44053d435592711f7fc8d68c8ceac944cd05d22ff8a82570425"
+      },
+      {
+        "key": "wp11_tornado_14",
+        "path": "assets/game/shared/player_weapons/wind_1011/tornado_14.png",
+        "slot": 5,
+        "name": "Tornado Orb",
+        "frame": 14,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "source": "wind_projectiles_1011/tornado_raw.png",
+        "source_rect": [
+          627,
+          940,
+          940,
+          1254
+        ],
+        "source_pivot": [
+          145.0,
+          120.0
+        ],
+        "physical_rect": null,
+        "content_rect": [
+          30,
+          17,
+          274,
+          257
+        ],
+        "translation": [
+          8,
+          29
+        ],
+        "scale": 0.8275862068965517,
+        "sha256": "bba0b6f9e4ce34b2cac9d8cc5ec5425c28c1a1f131c758b8d6e2fd46af7bfbb0",
+        "source_sha256": "bfa0f62dfb25e44053d435592711f7fc8d68c8ceac944cd05d22ff8a82570425"
+      },
+      {
+        "key": "wp11_tornado_15",
+        "path": "assets/game/shared/player_weapons/wind_1011/tornado_15.png",
+        "slot": 5,
+        "name": "Tornado Orb",
+        "frame": 15,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "source": "wind_projectiles_1011/tornado_raw.png",
+        "source_rect": [
+          940,
+          940,
+          1254,
+          1254
+        ],
+        "source_pivot": [
+          139.0,
+          120.0
+        ],
+        "physical_rect": null,
+        "content_rect": [
+          25,
+          14,
+          270,
+          259
+        ],
+        "translation": [
+          13,
+          29
+        ],
+        "scale": 0.8275862068965517,
+        "sha256": "e062a8473fdbbfe6e11a413b4b94a4d8687aecb3026c3aba86219e6d08009080",
+        "source_sha256": "bfa0f62dfb25e44053d435592711f7fc8d68c8ceac944cd05d22ff8a82570425"
+      }
+    ],
+    "mist": [
+      {
+        "key": "wp11_mist_00",
+        "path": "assets/game/shared/player_weapons/wind_1011/mist_00.png",
+        "slot": 6,
+        "name": "Storm Mist",
+        "frame": 0,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "source": "wind_projectiles_1011/mist_raw.png",
+        "source_rect": [
+          0,
+          0,
+          314,
+          314
+        ],
+        "source_pivot": [
+          156.0,
+          182.0
+        ],
+        "physical_rect": null,
+        "content_rect": [
+          118,
+          40,
+          196,
+          302
+        ],
+        "translation": [
+          -4,
+          -26
+        ],
+        "scale": 0.8450704225352113,
+        "sha256": "6e2f1248f8bc78a607d0466289145b4081edbe42a6339dba5f6fe6cc67dc5931",
+        "source_sha256": "1781b1cbc3aae2c39e83e7d9f709f20305967b2ad9813d2f065337a3c01b3462"
+      },
+      {
+        "key": "wp11_mist_01",
+        "path": "assets/game/shared/player_weapons/wind_1011/mist_01.png",
+        "slot": 6,
+        "name": "Storm Mist",
+        "frame": 1,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "source": "wind_projectiles_1011/mist_raw.png",
+        "source_rect": [
+          314,
+          0,
+          627,
+          314
+        ],
+        "source_pivot": [
+          156.0,
+          182.0
+        ],
+        "physical_rect": null,
+        "content_rect": [
+          105,
+          40,
+          203,
+          303
+        ],
+        "translation": [
+          -4,
+          -26
+        ],
+        "scale": 0.8450704225352113,
+        "sha256": "d21c2ce41d9d02e814bbd9fe672084f0d7a023de90b4996259a05d8429c967e6",
+        "source_sha256": "1781b1cbc3aae2c39e83e7d9f709f20305967b2ad9813d2f065337a3c01b3462"
+      },
+      {
+        "key": "wp11_mist_02",
+        "path": "assets/game/shared/player_weapons/wind_1011/mist_02.png",
+        "slot": 6,
+        "name": "Storm Mist",
+        "frame": 2,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "source": "wind_projectiles_1011/mist_raw.png",
+        "source_rect": [
+          627,
+          0,
+          940,
+          314
+        ],
+        "source_pivot": [
+          156.0,
+          182.0
+        ],
+        "physical_rect": null,
+        "content_rect": [
+          100,
+          40,
+          215,
+          304
+        ],
+        "translation": [
+          -4,
+          -26
+        ],
+        "scale": 0.8450704225352113,
+        "sha256": "160f4179e6099e75af28f67bfb81370540e9b1680a902e78623ef46e3f6d9415",
+        "source_sha256": "1781b1cbc3aae2c39e83e7d9f709f20305967b2ad9813d2f065337a3c01b3462"
+      },
+      {
+        "key": "wp11_mist_03",
+        "path": "assets/game/shared/player_weapons/wind_1011/mist_03.png",
+        "slot": 6,
+        "name": "Storm Mist",
+        "frame": 3,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "source": "wind_projectiles_1011/mist_raw.png",
+        "source_rect": [
+          940,
+          0,
+          1254,
+          314
+        ],
+        "source_pivot": [
+          157.0,
+          182.0
+        ],
+        "physical_rect": null,
+        "content_rect": [
+          94,
+          40,
+          227,
+          303
+        ],
+        "translation": [
+          -5,
+          -26
+        ],
+        "scale": 0.8450704225352113,
+        "sha256": "232321bc6520cedd850d2f557d384e3ea4a2991767c0d6b8e8a648786ef2686a",
+        "source_sha256": "1781b1cbc3aae2c39e83e7d9f709f20305967b2ad9813d2f065337a3c01b3462"
+      },
+      {
+        "key": "wp11_mist_04",
+        "path": "assets/game/shared/player_weapons/wind_1011/mist_04.png",
+        "slot": 6,
+        "name": "Storm Mist",
+        "frame": 4,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "source": "wind_projectiles_1011/mist_raw.png",
+        "source_rect": [
+          0,
+          314,
+          314,
+          627
+        ],
+        "source_pivot": [
+          156.0,
+          181.0
+        ],
+        "physical_rect": null,
+        "content_rect": [
+          86,
+          40,
+          219,
+          303
+        ],
+        "translation": [
+          -4,
+          -25
+        ],
+        "scale": 0.8450704225352113,
+        "sha256": "2a42db0fc82a9266254260235ac0447bff1b9bb2c396a521f499743a811ac907",
+        "source_sha256": "1781b1cbc3aae2c39e83e7d9f709f20305967b2ad9813d2f065337a3c01b3462"
+      },
+      {
+        "key": "wp11_mist_05",
+        "path": "assets/game/shared/player_weapons/wind_1011/mist_05.png",
+        "slot": 6,
+        "name": "Storm Mist",
+        "frame": 5,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "source": "wind_projectiles_1011/mist_raw.png",
+        "source_rect": [
+          314,
+          314,
+          627,
+          627
+        ],
+        "source_pivot": [
+          156.0,
+          181.0
+        ],
+        "physical_rect": null,
+        "content_rect": [
+          89,
+          40,
+          228,
+          303
+        ],
+        "translation": [
+          -4,
+          -25
+        ],
+        "scale": 0.8450704225352113,
+        "sha256": "27e7c37aac8f22c36db773496fb5e649613d0636c493a5b8aac15d01f81302f9",
+        "source_sha256": "1781b1cbc3aae2c39e83e7d9f709f20305967b2ad9813d2f065337a3c01b3462"
+      },
+      {
+        "key": "wp11_mist_06",
+        "path": "assets/game/shared/player_weapons/wind_1011/mist_06.png",
+        "slot": 6,
+        "name": "Storm Mist",
+        "frame": 6,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "source": "wind_projectiles_1011/mist_raw.png",
+        "source_rect": [
+          627,
+          314,
+          940,
+          627
+        ],
+        "source_pivot": [
+          156.0,
+          181.0
+        ],
+        "physical_rect": null,
+        "content_rect": [
+          86,
+          40,
+          229,
+          303
+        ],
+        "translation": [
+          -4,
+          -25
+        ],
+        "scale": 0.8450704225352113,
+        "sha256": "ab79db077722e36a45f490825b86b020601a20907c9face5811375ee762374a3",
+        "source_sha256": "1781b1cbc3aae2c39e83e7d9f709f20305967b2ad9813d2f065337a3c01b3462"
+      },
+      {
+        "key": "wp11_mist_07",
+        "path": "assets/game/shared/player_weapons/wind_1011/mist_07.png",
+        "slot": 6,
+        "name": "Storm Mist",
+        "frame": 7,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "source": "wind_projectiles_1011/mist_raw.png",
+        "source_rect": [
+          940,
+          314,
+          1254,
+          627
+        ],
+        "source_pivot": [
+          157.0,
+          181.0
+        ],
+        "physical_rect": null,
+        "content_rect": [
+          90,
+          40,
+          234,
+          303
+        ],
+        "translation": [
+          -5,
+          -25
+        ],
+        "scale": 0.8450704225352113,
+        "sha256": "3eef9e62464b1dfcd9ceb86fd8343804b5b96da2e16cade9d7f44f7740c04e09",
+        "source_sha256": "1781b1cbc3aae2c39e83e7d9f709f20305967b2ad9813d2f065337a3c01b3462"
+      },
+      {
+        "key": "wp11_mist_08",
+        "path": "assets/game/shared/player_weapons/wind_1011/mist_08.png",
+        "slot": 6,
+        "name": "Storm Mist",
+        "frame": 8,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "source": "wind_projectiles_1011/mist_raw.png",
+        "source_rect": [
+          0,
+          627,
+          314,
+          940
+        ],
+        "source_pivot": [
+          156.0,
+          182.0
+        ],
+        "physical_rect": null,
+        "content_rect": [
+          88,
+          40,
+          232,
+          303
+        ],
+        "translation": [
+          -4,
+          -26
+        ],
+        "scale": 0.8450704225352113,
+        "sha256": "28d7591bce992bb6a283905c87207691f129fa79e736b5cd7cf47d95dc2cd17b",
+        "source_sha256": "1781b1cbc3aae2c39e83e7d9f709f20305967b2ad9813d2f065337a3c01b3462"
+      },
+      {
+        "key": "wp11_mist_09",
+        "path": "assets/game/shared/player_weapons/wind_1011/mist_09.png",
+        "slot": 6,
+        "name": "Storm Mist",
+        "frame": 9,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "source": "wind_projectiles_1011/mist_raw.png",
+        "source_rect": [
+          314,
+          627,
+          627,
+          940
+        ],
+        "source_pivot": [
+          156.0,
+          182.0
+        ],
+        "physical_rect": null,
+        "content_rect": [
+          86,
+          40,
+          223,
+          303
+        ],
+        "translation": [
+          -4,
+          -26
+        ],
+        "scale": 0.8450704225352113,
+        "sha256": "fceb393107b2c8b3638aba1f45dba07a913354cf684ec0deb68a8adbac37f3af",
+        "source_sha256": "1781b1cbc3aae2c39e83e7d9f709f20305967b2ad9813d2f065337a3c01b3462"
+      },
+      {
+        "key": "wp11_mist_10",
+        "path": "assets/game/shared/player_weapons/wind_1011/mist_10.png",
+        "slot": 6,
+        "name": "Storm Mist",
+        "frame": 10,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "source": "wind_projectiles_1011/mist_raw.png",
+        "source_rect": [
+          627,
+          627,
+          940,
+          940
+        ],
+        "source_pivot": [
+          155.0,
+          182.0
+        ],
+        "physical_rect": null,
+        "content_rect": [
+          76,
+          40,
+          232,
+          303
+        ],
+        "translation": [
+          -3,
+          -26
+        ],
+        "scale": 0.8450704225352113,
+        "sha256": "47319e7cbd47ff248c8ea556f99ca9fd7b1484b7e1dfbe181ccf1cf236e32f37",
+        "source_sha256": "1781b1cbc3aae2c39e83e7d9f709f20305967b2ad9813d2f065337a3c01b3462"
+      },
+      {
+        "key": "wp11_mist_11",
+        "path": "assets/game/shared/player_weapons/wind_1011/mist_11.png",
+        "slot": 6,
+        "name": "Storm Mist",
+        "frame": 11,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "source": "wind_projectiles_1011/mist_raw.png",
+        "source_rect": [
+          940,
+          627,
+          1254,
+          940
+        ],
+        "source_pivot": [
+          157.0,
+          182.0
+        ],
+        "physical_rect": null,
+        "content_rect": [
+          97,
+          40,
+          224,
+          303
+        ],
+        "translation": [
+          -5,
+          -26
+        ],
+        "scale": 0.8450704225352113,
+        "sha256": "d11c9d5e67d1a0eedd45cde9e95d038f897b46b834034c66dfbf357d1d32206b",
+        "source_sha256": "1781b1cbc3aae2c39e83e7d9f709f20305967b2ad9813d2f065337a3c01b3462"
+      },
+      {
+        "key": "wp11_mist_12",
+        "path": "assets/game/shared/player_weapons/wind_1011/mist_12.png",
+        "slot": 6,
+        "name": "Storm Mist",
+        "frame": 12,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "source": "wind_projectiles_1011/mist_raw.png",
+        "source_rect": [
+          0,
+          940,
+          314,
+          1254
+        ],
+        "source_pivot": [
+          156.0,
+          182.0
+        ],
+        "physical_rect": null,
+        "content_rect": [
+          117,
+          41,
+          195,
+          301
+        ],
+        "translation": [
+          -4,
+          -26
+        ],
+        "scale": 0.8450704225352113,
+        "sha256": "5236f72d5f7e2adad34fc0d48a343ee6db22287122913e50e695f4d095820a9c",
+        "source_sha256": "1781b1cbc3aae2c39e83e7d9f709f20305967b2ad9813d2f065337a3c01b3462"
+      },
+      {
+        "key": "wp11_mist_13",
+        "path": "assets/game/shared/player_weapons/wind_1011/mist_13.png",
+        "slot": 6,
+        "name": "Storm Mist",
+        "frame": 13,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "source": "wind_projectiles_1011/mist_raw.png",
+        "source_rect": [
+          314,
+          940,
+          627,
+          1254
+        ],
+        "source_pivot": [
+          156.0,
+          182.0
+        ],
+        "physical_rect": null,
+        "content_rect": [
+          105,
+          41,
+          208,
+          301
+        ],
+        "translation": [
+          -4,
+          -26
+        ],
+        "scale": 0.8450704225352113,
+        "sha256": "69c888d86808078242e0b458c571d8f3c1547c98ec37dcf03e505d4ce6cc7c6b",
+        "source_sha256": "1781b1cbc3aae2c39e83e7d9f709f20305967b2ad9813d2f065337a3c01b3462"
+      },
+      {
+        "key": "wp11_mist_14",
+        "path": "assets/game/shared/player_weapons/wind_1011/mist_14.png",
+        "slot": 6,
+        "name": "Storm Mist",
+        "frame": 14,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "source": "wind_projectiles_1011/mist_raw.png",
+        "source_rect": [
+          627,
+          940,
+          940,
+          1254
+        ],
+        "source_pivot": [
+          156.0,
+          182.0
+        ],
+        "physical_rect": null,
+        "content_rect": [
+          110,
+          41,
+          209,
+          301
+        ],
+        "translation": [
+          -4,
+          -26
+        ],
+        "scale": 0.8450704225352113,
+        "sha256": "1e403ddbad79eb5a7f536d50ae6d673e7ca73b2a7bb4aaf0fc6a3e90ceb98e3b",
+        "source_sha256": "1781b1cbc3aae2c39e83e7d9f709f20305967b2ad9813d2f065337a3c01b3462"
+      },
+      {
+        "key": "wp11_mist_15",
+        "path": "assets/game/shared/player_weapons/wind_1011/mist_15.png",
+        "slot": 6,
+        "name": "Storm Mist",
+        "frame": 15,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "source": "wind_projectiles_1011/mist_raw.png",
+        "source_rect": [
+          940,
+          940,
+          1254,
+          1254
+        ],
+        "source_pivot": [
+          157.0,
+          182.0
+        ],
+        "physical_rect": null,
+        "content_rect": [
+          116,
+          41,
+          200,
+          301
+        ],
+        "translation": [
+          -5,
+          -26
+        ],
+        "scale": 0.8450704225352113,
+        "sha256": "9a4d1796c0e390d95e5817634baa1e40267e648efc28775e18e87c124a9ac8fc",
+        "source_sha256": "1781b1cbc3aae2c39e83e7d9f709f20305967b2ad9813d2f065337a3c01b3462"
+      }
+    ],
+    "heavy": [
+      {
+        "key": "wp11_heavy_00",
+        "path": "assets/game/shared/player_weapons/wind_1011/heavy_00.png",
+        "slot": 7,
+        "name": "Gale Gatling",
+        "frame": 0,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "source": "wind_projectiles_1011/heavy_raw.png",
+        "source_rect": [
+          0,
+          0,
+          314,
+          314
+        ],
+        "source_pivot": [
+          157.0,
+          91.0
+        ],
+        "physical_rect": [
+          128,
+          44,
+          186,
+          124
+        ],
+        "content_rect": [
+          92,
+          39,
+          220,
+          296
+        ],
+        "translation": [
+          24,
+          52
+        ],
+        "scale": 0.6601941747572816,
+        "sha256": "12d140c2019794ca45ef53c5d989baed47f67ad9e870b7abee2455ffcf2eb24b",
+        "source_sha256": "8aacaa5dd533035463da2bfb43a24fbc9a4c14726dc988a61e3aec02b9289f5f",
+        "body_height": 62.05825242718447
+      },
+      {
+        "key": "wp11_heavy_01",
+        "path": "assets/game/shared/player_weapons/wind_1011/heavy_01.png",
+        "slot": 7,
+        "name": "Gale Gatling",
+        "frame": 1,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "source": "wind_projectiles_1011/heavy_raw.png",
+        "source_rect": [
+          314,
+          0,
+          627,
+          314
+        ],
+        "source_pivot": [
+          157.0,
+          91.0
+        ],
+        "physical_rect": [
+          127,
+          44,
+          187,
+          154
+        ],
+        "content_rect": [
+          88,
+          39,
+          221,
+          296
+        ],
+        "translation": [
+          24,
+          52
+        ],
+        "scale": 0.6601941747572816,
+        "sha256": "46a48398ff08afcf568c3db5ab3f633262e73add31410623c38d4d12d0a2c4de",
+        "source_sha256": "8aacaa5dd533035463da2bfb43a24fbc9a4c14726dc988a61e3aec02b9289f5f",
+        "body_height": 62.05825242718447
+      },
+      {
+        "key": "wp11_heavy_02",
+        "path": "assets/game/shared/player_weapons/wind_1011/heavy_02.png",
+        "slot": 7,
+        "name": "Gale Gatling",
+        "frame": 2,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "source": "wind_projectiles_1011/heavy_raw.png",
+        "source_rect": [
+          627,
+          0,
+          940,
+          314
+        ],
+        "source_pivot": [
+          156.5,
+          91.0
+        ],
+        "physical_rect": [
+          127,
+          44,
+          186,
+          163
+        ],
+        "content_rect": [
+          90,
+          39,
+          229,
+          296
+        ],
+        "translation": [
+          25,
+          52
+        ],
+        "scale": 0.6601941747572816,
+        "sha256": "19381b6a85097ed22389f782a830793b5a36e32ce1feeb8c1afe7417883afbab",
+        "source_sha256": "8aacaa5dd533035463da2bfb43a24fbc9a4c14726dc988a61e3aec02b9289f5f",
+        "body_height": 62.05825242718447
+      },
+      {
+        "key": "wp11_heavy_03",
+        "path": "assets/game/shared/player_weapons/wind_1011/heavy_03.png",
+        "slot": 7,
+        "name": "Gale Gatling",
+        "frame": 3,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "source": "wind_projectiles_1011/heavy_raw.png",
+        "source_rect": [
+          940,
+          0,
+          1254,
+          314
+        ],
+        "source_pivot": [
+          158.0,
+          91.0
+        ],
+        "physical_rect": [
+          128,
+          44,
+          188,
+          154
+        ],
+        "content_rect": [
+          87,
+          39,
+          230,
+          296
+        ],
+        "translation": [
+          24,
+          52
+        ],
+        "scale": 0.6601941747572816,
+        "sha256": "b04cc3c609d18987774fff973df92a1ae9288a41a20952572472c6e385f1acc3",
+        "source_sha256": "8aacaa5dd533035463da2bfb43a24fbc9a4c14726dc988a61e3aec02b9289f5f",
+        "body_height": 62.05825242718447
+      },
+      {
+        "key": "wp11_heavy_04",
+        "path": "assets/game/shared/player_weapons/wind_1011/heavy_04.png",
+        "slot": 7,
+        "name": "Gale Gatling",
+        "frame": 4,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "source": "wind_projectiles_1011/heavy_raw.png",
+        "source_rect": [
+          0,
+          314,
+          314,
+          627
+        ],
+        "source_pivot": [
+          157.0,
+          90.0
+        ],
+        "physical_rect": [
+          128,
+          43,
+          186,
+          123
+        ],
+        "content_rect": [
+          81,
+          39,
+          242,
+          296
+        ],
+        "translation": [
+          24,
+          53
+        ],
+        "scale": 0.6601941747572816,
+        "sha256": "031af2ab2cc1a9a8fc9e140c94732637bb91ff6b128a46a7f7255451356f1e03",
+        "source_sha256": "8aacaa5dd533035463da2bfb43a24fbc9a4c14726dc988a61e3aec02b9289f5f",
+        "body_height": 62.05825242718447
+      },
+      {
+        "key": "wp11_heavy_05",
+        "path": "assets/game/shared/player_weapons/wind_1011/heavy_05.png",
+        "slot": 7,
+        "name": "Gale Gatling",
+        "frame": 5,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "source": "wind_projectiles_1011/heavy_raw.png",
+        "source_rect": [
+          314,
+          314,
+          627,
+          627
+        ],
+        "source_pivot": [
+          156.5,
+          90.0
+        ],
+        "physical_rect": [
+          128,
+          43,
+          185,
+          123
+        ],
+        "content_rect": [
+          78,
+          39,
+          244,
+          296
+        ],
+        "translation": [
+          25,
+          53
+        ],
+        "scale": 0.6601941747572816,
+        "sha256": "b9ecb740a705ecdd39a3bed321c900ee4a97f64d3f8f872891f8b1844cb1df97",
+        "source_sha256": "8aacaa5dd533035463da2bfb43a24fbc9a4c14726dc988a61e3aec02b9289f5f",
+        "body_height": 62.05825242718447
+      },
+      {
+        "key": "wp11_heavy_06",
+        "path": "assets/game/shared/player_weapons/wind_1011/heavy_06.png",
+        "slot": 7,
+        "name": "Gale Gatling",
+        "frame": 6,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "source": "wind_projectiles_1011/heavy_raw.png",
+        "source_rect": [
+          627,
+          314,
+          940,
+          627
+        ],
+        "source_pivot": [
+          157.0,
+          90.0
+        ],
+        "physical_rect": [
+          128,
+          43,
+          186,
+          123
+        ],
+        "content_rect": [
+          67,
+          39,
+          243,
+          296
+        ],
+        "translation": [
+          24,
+          53
+        ],
+        "scale": 0.6601941747572816,
+        "sha256": "24d9c11056db454d5459d5eaf4b1afffbd6e4be8fa95a413fc00849d919f9040",
+        "source_sha256": "8aacaa5dd533035463da2bfb43a24fbc9a4c14726dc988a61e3aec02b9289f5f",
+        "body_height": 62.05825242718447
+      },
+      {
+        "key": "wp11_heavy_07",
+        "path": "assets/game/shared/player_weapons/wind_1011/heavy_07.png",
+        "slot": 7,
+        "name": "Gale Gatling",
+        "frame": 7,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "source": "wind_projectiles_1011/heavy_raw.png",
+        "source_rect": [
+          940,
+          314,
+          1254,
+          627
+        ],
+        "source_pivot": [
+          157.5,
+          90.0
+        ],
+        "physical_rect": [
+          129,
+          43,
+          186,
+          123
+        ],
+        "content_rect": [
+          60,
+          39,
+          249,
+          296
+        ],
+        "translation": [
+          24,
+          53
+        ],
+        "scale": 0.6601941747572816,
+        "sha256": "4293e017d713f0b7b66598af0f37e269adae8669bfbdd3230a3f5ace8aae6a71",
+        "source_sha256": "8aacaa5dd533035463da2bfb43a24fbc9a4c14726dc988a61e3aec02b9289f5f",
+        "body_height": 62.05825242718447
+      },
+      {
+        "key": "wp11_heavy_08",
+        "path": "assets/game/shared/player_weapons/wind_1011/heavy_08.png",
+        "slot": 7,
+        "name": "Gale Gatling",
+        "frame": 8,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "source": "wind_projectiles_1011/heavy_raw.png",
+        "source_rect": [
+          0,
+          627,
+          314,
+          940
+        ],
+        "source_pivot": [
+          157.0,
+          90.0
+        ],
+        "physical_rect": [
+          128,
+          43,
+          186,
+          153
+        ],
+        "content_rect": [
+          47,
+          39,
+          264,
+          296
+        ],
+        "translation": [
+          24,
+          53
+        ],
+        "scale": 0.6601941747572816,
+        "sha256": "abb8f93a241df33d0a7b084c0f910075bdc4b15dd62bd28bbc4ce02a7a4c8e67",
+        "source_sha256": "8aacaa5dd533035463da2bfb43a24fbc9a4c14726dc988a61e3aec02b9289f5f",
+        "body_height": 62.05825242718447
+      },
+      {
+        "key": "wp11_heavy_09",
+        "path": "assets/game/shared/player_weapons/wind_1011/heavy_09.png",
+        "slot": 7,
+        "name": "Gale Gatling",
+        "frame": 9,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "source": "wind_projectiles_1011/heavy_raw.png",
+        "source_rect": [
+          314,
+          627,
+          627,
+          940
+        ],
+        "source_pivot": [
+          157.0,
+          90.0
+        ],
+        "physical_rect": [
+          127,
+          43,
+          187,
+          152
+        ],
+        "content_rect": [
+          51,
+          39,
+          269,
+          296
+        ],
+        "translation": [
+          24,
+          53
+        ],
+        "scale": 0.6601941747572816,
+        "sha256": "9bb87371cd9b538a76bec95566ec2f18a06c6598996a168d69d1e3c1d39221c9",
+        "source_sha256": "8aacaa5dd533035463da2bfb43a24fbc9a4c14726dc988a61e3aec02b9289f5f",
+        "body_height": 62.05825242718447
+      },
+      {
+        "key": "wp11_heavy_10",
+        "path": "assets/game/shared/player_weapons/wind_1011/heavy_10.png",
+        "slot": 7,
+        "name": "Gale Gatling",
+        "frame": 10,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "source": "wind_projectiles_1011/heavy_raw.png",
+        "source_rect": [
+          627,
+          627,
+          940,
+          940
+        ],
+        "source_pivot": [
+          157.0,
+          90.0
+        ],
+        "physical_rect": [
+          128,
+          43,
+          186,
+          153
+        ],
+        "content_rect": [
+          48,
+          39,
+          270,
+          296
+        ],
+        "translation": [
+          24,
+          53
+        ],
+        "scale": 0.6601941747572816,
+        "sha256": "75044c09b304558a5fee335df394c7bda19403fb6334a31321a6c2a02f44e7cb",
+        "source_sha256": "8aacaa5dd533035463da2bfb43a24fbc9a4c14726dc988a61e3aec02b9289f5f",
+        "body_height": 62.05825242718447
+      },
+      {
+        "key": "wp11_heavy_11",
+        "path": "assets/game/shared/player_weapons/wind_1011/heavy_11.png",
+        "slot": 7,
+        "name": "Gale Gatling",
+        "frame": 11,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "source": "wind_projectiles_1011/heavy_raw.png",
+        "source_rect": [
+          940,
+          627,
+          1254,
+          940
+        ],
+        "source_pivot": [
+          158.0,
+          90.0
+        ],
+        "physical_rect": [
+          128,
+          43,
+          188,
+          151
+        ],
+        "content_rect": [
+          50,
+          39,
+          264,
+          296
+        ],
+        "translation": [
+          24,
+          53
+        ],
+        "scale": 0.6601941747572816,
+        "sha256": "e763a02b48359db029068b2fc6f4292b7350ec019ea73ea0287df484a37574f5",
+        "source_sha256": "8aacaa5dd533035463da2bfb43a24fbc9a4c14726dc988a61e3aec02b9289f5f",
+        "body_height": 62.05825242718447
+      },
+      {
+        "key": "wp11_heavy_12",
+        "path": "assets/game/shared/player_weapons/wind_1011/heavy_12.png",
+        "slot": 7,
+        "name": "Gale Gatling",
+        "frame": 12,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "source": "wind_projectiles_1011/heavy_raw.png",
+        "source_rect": [
+          0,
+          940,
+          314,
+          1254
+        ],
+        "source_pivot": [
+          157.0,
+          91.0
+        ],
+        "physical_rect": [
+          128,
+          44,
+          186,
+          124
+        ],
+        "content_rect": [
+          86,
+          40,
+          232,
+          296
+        ],
+        "translation": [
+          24,
+          52
+        ],
+        "scale": 0.6601941747572816,
+        "sha256": "7b4132a377f5c12abd6d10aeee9210a577c132664253fc2620c2a7b63a4e0877",
+        "source_sha256": "8aacaa5dd533035463da2bfb43a24fbc9a4c14726dc988a61e3aec02b9289f5f",
+        "body_height": 62.05825242718447
+      },
+      {
+        "key": "wp11_heavy_13",
+        "path": "assets/game/shared/player_weapons/wind_1011/heavy_13.png",
+        "slot": 7,
+        "name": "Gale Gatling",
+        "frame": 13,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "source": "wind_projectiles_1011/heavy_raw.png",
+        "source_rect": [
+          314,
+          940,
+          627,
+          1254
+        ],
+        "source_pivot": [
+          156.5,
+          91.0
+        ],
+        "physical_rect": [
+          128,
+          44,
+          185,
+          124
+        ],
+        "content_rect": [
+          88,
+          40,
+          233,
+          296
+        ],
+        "translation": [
+          25,
+          52
+        ],
+        "scale": 0.6601941747572816,
+        "sha256": "974feb4782cfc54d7b926c29d8fa0660b89873eab568809b2e0bcdf61b43df00",
+        "source_sha256": "8aacaa5dd533035463da2bfb43a24fbc9a4c14726dc988a61e3aec02b9289f5f",
+        "body_height": 62.05825242718447
+      },
+      {
+        "key": "wp11_heavy_14",
+        "path": "assets/game/shared/player_weapons/wind_1011/heavy_14.png",
+        "slot": 7,
+        "name": "Gale Gatling",
+        "frame": 14,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "source": "wind_projectiles_1011/heavy_raw.png",
+        "source_rect": [
+          627,
+          940,
+          940,
+          1254
+        ],
+        "source_pivot": [
+          158.0,
+          91.0
+        ],
+        "physical_rect": [
+          128,
+          44,
+          188,
+          154
+        ],
+        "content_rect": [
+          94,
+          40,
+          227,
+          296
+        ],
+        "translation": [
+          24,
+          52
+        ],
+        "scale": 0.6601941747572816,
+        "sha256": "caa059d4d00f2f1bf8803f493807243f4155ebe0a0aba25c30db42ae2ff1c649",
+        "source_sha256": "8aacaa5dd533035463da2bfb43a24fbc9a4c14726dc988a61e3aec02b9289f5f",
+        "body_height": 62.05825242718447
+      },
+      {
+        "key": "wp11_heavy_15",
+        "path": "assets/game/shared/player_weapons/wind_1011/heavy_15.png",
+        "slot": 7,
+        "name": "Gale Gatling",
+        "frame": 15,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          112
+        ],
+        "source": "wind_projectiles_1011/heavy_raw.png",
+        "source_rect": [
+          940,
+          940,
+          1254,
+          1254
+        ],
+        "source_pivot": [
+          157.5,
+          91.0
+        ],
+        "physical_rect": [
+          129,
+          44,
+          186,
+          124
+        ],
+        "content_rect": [
+          92,
+          40,
+          221,
+          296
+        ],
+        "translation": [
+          24,
+          52
+        ],
+        "scale": 0.6601941747572816,
+        "sha256": "724b0ee6902f56eada448a9c9bc802fa3f2f968e4098031951a03971b427a61d",
+        "source_sha256": "8aacaa5dd533035463da2bfb43a24fbc9a4c14726dc988a61e3aec02b9289f5f",
+        "body_height": 62.05825242718447
+      }
+    ],
+    "electric": [
+      {
+        "key": "wp11_electric_00",
+        "path": "assets/game/shared/player_weapons/wind_1011/electric_00.png",
+        "slot": 8,
+        "name": "Cyclone Sphere",
+        "frame": 0,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "source": "wind_projectiles_1011/electric_raw.png",
+        "source_rect": [
+          0,
+          0,
+          314,
+          314
+        ],
+        "source_pivot": [
+          171.0,
+          201.0
+        ],
+        "physical_rect": [
+          160,
+          192,
+          182,
+          210
+        ],
+        "content_rect": [
+          64,
+          60,
+          284,
+          314
+        ],
+        "translation": [
+          20,
+          1
+        ],
+        "scale": 0.631578947368421,
+        "sha256": "6c7393934fbc6012291ca98e71566b72f21c61a3842775f7b6ed2591690fed34",
+        "source_sha256": "b5489ec36fa6b5b12d6cb57398aa76f928bb862e9631cff49c070b03f132aa22"
+      },
+      {
+        "key": "wp11_electric_01",
+        "path": "assets/game/shared/player_weapons/wind_1011/electric_01.png",
+        "slot": 8,
+        "name": "Cyclone Sphere",
+        "frame": 1,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "source": "wind_projectiles_1011/electric_raw.png",
+        "source_rect": [
+          314,
+          0,
+          627,
+          314
+        ],
+        "source_pivot": [
+          161.0,
+          201.0
+        ],
+        "physical_rect": [
+          156,
+          172,
+          176,
+          210
+        ],
+        "content_rect": [
+          61,
+          60,
+          269,
+          314
+        ],
+        "translation": [
+          26,
+          1
+        ],
+        "scale": 0.631578947368421,
+        "sha256": "b34c3b58faf011690c114843fbe49a44f50e8561b63f53bbfb92b1f6e8fddbb3",
+        "source_sha256": "b5489ec36fa6b5b12d6cb57398aa76f928bb862e9631cff49c070b03f132aa22"
+      },
+      {
+        "key": "wp11_electric_02",
+        "path": "assets/game/shared/player_weapons/wind_1011/electric_02.png",
+        "slot": 8,
+        "name": "Cyclone Sphere",
+        "frame": 2,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "source": "wind_projectiles_1011/electric_raw.png",
+        "source_rect": [
+          627,
+          0,
+          940,
+          314
+        ],
+        "source_pivot": [
+          153.0,
+          202.0
+        ],
+        "physical_rect": [
+          148,
+          170,
+          168,
+          209
+        ],
+        "content_rect": [
+          46,
+          60,
+          280,
+          314
+        ],
+        "translation": [
+          31,
+          0
+        ],
+        "scale": 0.631578947368421,
+        "sha256": "ca262ac7c77caf0233f6437a9dabb67acec86ac3a9f4cdabb37c59c7ae287e9b",
+        "source_sha256": "b5489ec36fa6b5b12d6cb57398aa76f928bb862e9631cff49c070b03f132aa22"
+      },
+      {
+        "key": "wp11_electric_03",
+        "path": "assets/game/shared/player_weapons/wind_1011/electric_03.png",
+        "slot": 8,
+        "name": "Cyclone Sphere",
+        "frame": 3,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "source": "wind_projectiles_1011/electric_raw.png",
+        "source_rect": [
+          940,
+          0,
+          1254,
+          314
+        ],
+        "source_pivot": [
+          146.0,
+          202.0
+        ],
+        "physical_rect": [
+          138,
+          168,
+          161,
+          208
+        ],
+        "content_rect": [
+          50,
+          59,
+          268,
+          314
+        ],
+        "translation": [
+          36,
+          0
+        ],
+        "scale": 0.631578947368421,
+        "sha256": "d48182d75d861c8b9cb2554521880d24ed8e03d9ab212efe19af441177f7fd92",
+        "source_sha256": "b5489ec36fa6b5b12d6cb57398aa76f928bb862e9631cff49c070b03f132aa22"
+      },
+      {
+        "key": "wp11_electric_04",
+        "path": "assets/game/shared/player_weapons/wind_1011/electric_04.png",
+        "slot": 8,
+        "name": "Cyclone Sphere",
+        "frame": 4,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "source": "wind_projectiles_1011/electric_raw.png",
+        "source_rect": [
+          0,
+          314,
+          314,
+          627
+        ],
+        "source_pivot": [
+          171.0,
+          189.0
+        ],
+        "physical_rect": [
+          156,
+          158,
+          187,
+          199
+        ],
+        "content_rect": [
+          52,
+          0,
+          280,
+          312
+        ],
+        "translation": [
+          20,
+          9
+        ],
+        "scale": 0.631578947368421,
+        "sha256": "f9978c6730ff7bb22f36a89f9ff189abb6f1fdbc290735e86c0e4f4e7034a935",
+        "source_sha256": "b5489ec36fa6b5b12d6cb57398aa76f928bb862e9631cff49c070b03f132aa22"
+      },
+      {
+        "key": "wp11_electric_05",
+        "path": "assets/game/shared/player_weapons/wind_1011/electric_05.png",
+        "slot": 8,
+        "name": "Cyclone Sphere",
+        "frame": 5,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "source": "wind_projectiles_1011/electric_raw.png",
+        "source_rect": [
+          314,
+          314,
+          627,
+          627
+        ],
+        "source_pivot": [
+          161.0,
+          190.0
+        ],
+        "physical_rect": [
+          169,
+          158,
+          176,
+          184
+        ],
+        "content_rect": [
+          41,
+          0,
+          271,
+          309
+        ],
+        "translation": [
+          26,
+          8
+        ],
+        "scale": 0.631578947368421,
+        "sha256": "1bd970cbff941774be5c04bd86d93c04b3c75a842603fb08c328d5b93c9b6dc2",
+        "source_sha256": "b5489ec36fa6b5b12d6cb57398aa76f928bb862e9631cff49c070b03f132aa22"
+      },
+      {
+        "key": "wp11_electric_06",
+        "path": "assets/game/shared/player_weapons/wind_1011/electric_06.png",
+        "slot": 8,
+        "name": "Cyclone Sphere",
+        "frame": 6,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "source": "wind_projectiles_1011/electric_raw.png",
+        "source_rect": [
+          627,
+          314,
+          940,
+          627
+        ],
+        "source_pivot": [
+          153.0,
+          190.0
+        ],
+        "physical_rect": [
+          147,
+          156,
+          169,
+          198
+        ],
+        "content_rect": [
+          38,
+          0,
+          271,
+          311
+        ],
+        "translation": [
+          31,
+          8
+        ],
+        "scale": 0.631578947368421,
+        "sha256": "1410c65077d570ed8d70919cdc8c6565ee17b98202b92ee22b38fd7e7ebc2782",
+        "source_sha256": "b5489ec36fa6b5b12d6cb57398aa76f928bb862e9631cff49c070b03f132aa22"
+      },
+      {
+        "key": "wp11_electric_07",
+        "path": "assets/game/shared/player_weapons/wind_1011/electric_07.png",
+        "slot": 8,
+        "name": "Cyclone Sphere",
+        "frame": 7,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "source": "wind_projectiles_1011/electric_raw.png",
+        "source_rect": [
+          940,
+          314,
+          1254,
+          627
+        ],
+        "source_pivot": [
+          146.0,
+          190.0
+        ],
+        "physical_rect": [
+          139,
+          157,
+          162,
+          198
+        ],
+        "content_rect": [
+          32,
+          0,
+          275,
+          311
+        ],
+        "translation": [
+          36,
+          8
+        ],
+        "scale": 0.631578947368421,
+        "sha256": "a4ccd73eb6f4ed68b1d44cc82c4ccdb548d05e884ed7c6cd4b1b740ca429a798",
+        "source_sha256": "b5489ec36fa6b5b12d6cb57398aa76f928bb862e9631cff49c070b03f132aa22"
+      },
+      {
+        "key": "wp11_electric_08",
+        "path": "assets/game/shared/player_weapons/wind_1011/electric_08.png",
+        "slot": 8,
+        "name": "Cyclone Sphere",
+        "frame": 8,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "source": "wind_projectiles_1011/electric_raw.png",
+        "source_rect": [
+          0,
+          627,
+          314,
+          940
+        ],
+        "source_pivot": [
+          171.0,
+          177.0
+        ],
+        "physical_rect": [
+          172,
+          162,
+          186,
+          179
+        ],
+        "content_rect": [
+          47,
+          33,
+          287,
+          296
+        ],
+        "translation": [
+          20,
+          16
+        ],
+        "scale": 0.631578947368421,
+        "sha256": "ae720440e7da5c03d8929038608c6c6a2f3c5343e3bc1eb2986ef97b71a16475",
+        "source_sha256": "b5489ec36fa6b5b12d6cb57398aa76f928bb862e9631cff49c070b03f132aa22"
+      },
+      {
+        "key": "wp11_electric_09",
+        "path": "assets/game/shared/player_weapons/wind_1011/electric_09.png",
+        "slot": 8,
+        "name": "Cyclone Sphere",
+        "frame": 9,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "source": "wind_projectiles_1011/electric_raw.png",
+        "source_rect": [
+          314,
+          627,
+          627,
+          940
+        ],
+        "source_pivot": [
+          161.0,
+          177.0
+        ],
+        "physical_rect": [
+          168,
+          143,
+          176,
+          166
+        ],
+        "content_rect": [
+          36,
+          33,
+          289,
+          297
+        ],
+        "translation": [
+          26,
+          16
+        ],
+        "scale": 0.631578947368421,
+        "sha256": "e6504b4b6c1ed613cb43c097030775f1fc6be8aee11e629f9ceecf129140bf07",
+        "source_sha256": "b5489ec36fa6b5b12d6cb57398aa76f928bb862e9631cff49c070b03f132aa22"
+      },
+      {
+        "key": "wp11_electric_10",
+        "path": "assets/game/shared/player_weapons/wind_1011/electric_10.png",
+        "slot": 8,
+        "name": "Cyclone Sphere",
+        "frame": 10,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "source": "wind_projectiles_1011/electric_raw.png",
+        "source_rect": [
+          627,
+          627,
+          940,
+          940
+        ],
+        "source_pivot": [
+          153.0,
+          177.0
+        ],
+        "physical_rect": [
+          150,
+          153,
+          167,
+          184
+        ],
+        "content_rect": [
+          35,
+          32,
+          284,
+          302
+        ],
+        "translation": [
+          31,
+          16
+        ],
+        "scale": 0.631578947368421,
+        "sha256": "a44bdd07e228d71b2e1bbdb22924c72e30edd0a3b37232a67c305d6e96716a2e",
+        "source_sha256": "b5489ec36fa6b5b12d6cb57398aa76f928bb862e9631cff49c070b03f132aa22"
+      },
+      {
+        "key": "wp11_electric_11",
+        "path": "assets/game/shared/player_weapons/wind_1011/electric_11.png",
+        "slot": 8,
+        "name": "Cyclone Sphere",
+        "frame": 11,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "source": "wind_projectiles_1011/electric_raw.png",
+        "source_rect": [
+          940,
+          627,
+          1254,
+          940
+        ],
+        "source_pivot": [
+          146.0,
+          177.0
+        ],
+        "physical_rect": [
+          151,
+          142,
+          162,
+          166
+        ],
+        "content_rect": [
+          30,
+          33,
+          274,
+          298
+        ],
+        "translation": [
+          36,
+          16
+        ],
+        "scale": 0.631578947368421,
+        "sha256": "d77c726d6fcd34e4bfb577354aab73f4c89bdb298f3ebcc3505bdf37753580c9",
+        "source_sha256": "b5489ec36fa6b5b12d6cb57398aa76f928bb862e9631cff49c070b03f132aa22"
+      },
+      {
+        "key": "wp11_electric_12",
+        "path": "assets/game/shared/player_weapons/wind_1011/electric_12.png",
+        "slot": 8,
+        "name": "Cyclone Sphere",
+        "frame": 12,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "source": "wind_projectiles_1011/electric_raw.png",
+        "source_rect": [
+          0,
+          940,
+          314,
+          1254
+        ],
+        "source_pivot": [
+          171.0,
+          154.0
+        ],
+        "physical_rect": [
+          157,
+          134,
+          185,
+          162
+        ],
+        "content_rect": [
+          64,
+          20,
+          277,
+          276
+        ],
+        "translation": [
+          20,
+          31
+        ],
+        "scale": 0.631578947368421,
+        "sha256": "90f2021ec03a271f12ff1bd2ca80b4c7b9edd1ba7a00cb040d735215532d2766",
+        "source_sha256": "b5489ec36fa6b5b12d6cb57398aa76f928bb862e9631cff49c070b03f132aa22"
+      },
+      {
+        "key": "wp11_electric_13",
+        "path": "assets/game/shared/player_weapons/wind_1011/electric_13.png",
+        "slot": 8,
+        "name": "Cyclone Sphere",
+        "frame": 13,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "source": "wind_projectiles_1011/electric_raw.png",
+        "source_rect": [
+          314,
+          940,
+          627,
+          1254
+        ],
+        "source_pivot": [
+          161.0,
+          154.0
+        ],
+        "physical_rect": [
+          159,
+          127,
+          177,
+          158
+        ],
+        "content_rect": [
+          62,
+          24,
+          271,
+          275
+        ],
+        "translation": [
+          26,
+          31
+        ],
+        "scale": 0.631578947368421,
+        "sha256": "ac7069a6f4895bfd3e7e817e7874cd824228c491c7dbf8b5ca4c3d2640800fcb",
+        "source_sha256": "b5489ec36fa6b5b12d6cb57398aa76f928bb862e9631cff49c070b03f132aa22"
+      },
+      {
+        "key": "wp11_electric_14",
+        "path": "assets/game/shared/player_weapons/wind_1011/electric_14.png",
+        "slot": 8,
+        "name": "Cyclone Sphere",
+        "frame": 14,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "source": "wind_projectiles_1011/electric_raw.png",
+        "source_rect": [
+          627,
+          940,
+          940,
+          1254
+        ],
+        "source_pivot": [
+          153.0,
+          154.0
+        ],
+        "physical_rect": [
+          161,
+          126,
+          168,
+          143
+        ],
+        "content_rect": [
+          37,
+          26,
+          266,
+          271
+        ],
+        "translation": [
+          31,
+          31
+        ],
+        "scale": 0.631578947368421,
+        "sha256": "e6364a0d79a96baf055ec3f0a822b863cabb63f1015ec91f0f59e3cf7fba0246",
+        "source_sha256": "b5489ec36fa6b5b12d6cb57398aa76f928bb862e9631cff49c070b03f132aa22"
+      },
+      {
+        "key": "wp11_electric_15",
+        "path": "assets/game/shared/player_weapons/wind_1011/electric_15.png",
+        "slot": 8,
+        "name": "Cyclone Sphere",
+        "frame": 15,
+        "fps": 24,
+        "w": 256,
+        "h": 256,
+        "pivot": [
+          128,
+          128
+        ],
+        "source": "wind_projectiles_1011/electric_raw.png",
+        "source_rect": [
+          940,
+          940,
+          1254,
+          1254
+        ],
+        "source_pivot": [
+          146.0,
+          155.0
+        ],
+        "physical_rect": [
+          158,
+          130,
+          161,
+          140
+        ],
+        "content_rect": [
+          42,
+          20,
+          262,
+          276
+        ],
+        "translation": [
+          36,
+          30
+        ],
+        "scale": 0.631578947368421,
+        "sha256": "f7a93dfc29b366af40d972c52d5e02ad0a528287a6ff39b7dae1db787229371b",
+        "source_sha256": "b5489ec36fa6b5b12d6cb57398aa76f928bb862e9631cff49c070b03f132aa22"
+      }
+    ]
+  },
+  "audit": {
+    "bullets": {
+      "frames": 16,
+      "resolution": [
+        256,
+        256
+      ],
+      "pivot": [
+        128,
+        112
+      ],
+      "common_scale": 0.5874730021598272,
+      "raw_size": [
+        1254,
+        1254
+      ],
+      "raw_sha256": "c1d3b3a783dc8692bb661350f2d2529b91a5f7a9f59e58a4bf3c2808e1c08a72"
+    },
+    "spread": {
+      "frames": 16,
+      "resolution": [
+        256,
+        256
+      ],
+      "pivot": [
+        128,
+        112
+      ],
+      "common_scale": 0.8566929133858268,
+      "raw_size": [
+        1254,
+        1254
+      ],
+      "raw_sha256": "c6ef03fe3786f3a4d4ea4ab3c111167baee2684c47ef45865fcbd461782aa536"
+    },
+    "missile": {
+      "frames": 16,
+      "resolution": [
+        256,
+        256
+      ],
+      "pivot": [
+        128,
+        112
+      ],
+      "common_scale": 0.681704260651629,
+      "raw_size": [
+        1254,
+        1254
+      ],
+      "raw_sha256": "4745f384406836feb9d3be6d63988dcd3b66b3269d767ec3f5ea5f9fa3a3f963"
+    },
+    "laser": {
+      "frames": 16,
+      "resolution": [
+        256,
+        256
+      ],
+      "pivot": [
+        128,
+        192
+      ],
+      "common_scale": 0.7931034482758621,
+      "raw_size": [
+        1254,
+        1254
+      ],
+      "raw_sha256": "f6f21de68c4be8057680c40c920218c3b4b95890291eb932022197a16fb01145"
+    },
+    "gust": {
+      "frames": 16,
+      "resolution": [
+        256,
+        256
+      ],
+      "pivot": [
+        128,
+        192
+      ],
+      "common_scale": 0.7567567567567568,
+      "raw_size": [
+        1254,
+        1254
+      ],
+      "raw_sha256": "dacbf039d58c91e179bcafc927d3f3aecd474782cadaca54e33effa87f0d731a"
+    },
+    "tornado": {
+      "frames": 16,
+      "resolution": [
+        256,
+        256
+      ],
+      "pivot": [
+        128,
+        128
+      ],
+      "common_scale": 0.8275862068965517,
+      "raw_size": [
+        1254,
+        1254
+      ],
+      "raw_sha256": "bfa0f62dfb25e44053d435592711f7fc8d68c8ceac944cd05d22ff8a82570425"
+    },
+    "mist": {
+      "frames": 16,
+      "resolution": [
+        256,
+        256
+      ],
+      "pivot": [
+        128,
+        128
+      ],
+      "common_scale": 0.8450704225352113,
+      "raw_size": [
+        1254,
+        1254
+      ],
+      "raw_sha256": "1781b1cbc3aae2c39e83e7d9f709f20305967b2ad9813d2f065337a3c01b3462"
+    },
+    "heavy": {
+      "frames": 16,
+      "resolution": [
+        256,
+        256
+      ],
+      "pivot": [
+        128,
+        112
+      ],
+      "common_scale": 0.6601941747572816,
+      "raw_size": [
+        1254,
+        1254
+      ],
+      "raw_sha256": "8aacaa5dd533035463da2bfb43a24fbc9a4c14726dc988a61e3aec02b9289f5f"
+    },
+    "electric": {
+      "frames": 16,
+      "resolution": [
+        256,
+        256
+      ],
+      "pivot": [
+        128,
+        128
+      ],
+      "common_scale": 0.631578947368421,
+      "raw_size": [
+        1254,
+        1254
+      ],
+      "raw_sha256": "b5489ec36fa6b5b12d6cb57398aa76f928bb862e9631cff49c070b03f132aa22"
+    }
+  }
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "label": "Electric corona",
+    "path": "assets/game/shared/combat/arcade_finish_1010/electric_ring_10.png",
+    "sha256": "4012ea3cc5b67e4332c78fd6740846926e2929034608057d4d4e9d13ebb2ba85",
+    "export": "_ART_SOURCES/portals_bof_1011/reference/0-electric_ring_10.png"
+  },
+  {
+    "label": "Plasma detonation",
+    "path": "assets/game/shared/combat/arcade_finish_1010/plasma_blast_12.png",
+    "sha256": "5b429d6efc6ebe593c07a08a922d788e06991d543976cb9253b05594b48c7bd1",
+    "export": "_ART_SOURCES/portals_bof_1011/reference/1-plasma_blast_12.png"
+  },
+  {
+    "label": "Alien material",
+    "path": "assets/game/levels/stage_08/stage/alien_arena_1005/void_10.png",
+    "sha256": "71ff095c10baa513a8c41912f9d60384f3ea4b99189b49ee5db385ca42cb3091",
+    "export": "_ART_SOURCES/portals_bof_1011/reference/2-void_10.png"
+  },
+  {
+    "label": "Armored machinery",
+    "path": "_ART_SOURCES/playthrough_1011/references/aa5_ghost_0.png",
+    "sha256": "67c50f1e05a51790c15568910b1b20e2e51a82ed9bad76097873c274e61c7761",
+    "export": "_ART_SOURCES/portals_bof_1011/reference/3-aa5_ghost_0.png"
+  },
+  {
+    "label": "Wind emerald",
+    "path": "assets/game/shared/player_weapons/wind_1011/tornado_08.png",
+    "sha256": "370c8fef4a0747e137dcd19c00443b8a7d0c7642c41f6e6e48d764fd97fd2693",
+    "export": "_ART_SOURCES/portals_bof_1011/reference/4-tornado_08.png"
+  },
+  {
+    "label": "Chrome symbiote",
+    "path": "_ART_SOURCES/hardcorps_1007/void_source.png",
+    "sha256": "7069b92401379f941f7e94f5e9129a3dc8c2177ddd5ffc5c8159cf7cac5748db",
+    "export": "_ART_SOURCES/portals_bof_1011/reference/5-void_source.png"
+  }
+]

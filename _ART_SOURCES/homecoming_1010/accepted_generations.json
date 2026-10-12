@@ -1,0 +1,114 @@
+[
+  {
+    "asset": "cole_flight_raw",
+    "source": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0e3c8-265d-7731-8ffe-ee42ebb5ba3c\\exec-9c899338-85ea-4b34-ba30-7c3847187fd4.png",
+    "accepted": true,
+    "reason": "Accepted; native all-frame pixel verification passed",
+    "source_sha256": "06cf63a2a5bf6f1599f8257a0f94b6fedc442801c8b68435a719a02bde0ae2ce"
+  },
+  {
+    "asset": "axel_flight_raw",
+    "source": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0e3c8-265d-7731-8ffe-ee42ebb5ba3c\\exec-604d883f-087d-4201-80ed-2bba9c52e8ac.png",
+    "accepted": true,
+    "reason": "Accepted; native all-frame pixel verification passed",
+    "source_sha256": "a2b7a9100babb9eafbc40c92be43121b745cabaa4430a8fd17720367b1d6e302"
+  },
+  {
+    "asset": "freezer_flight_raw",
+    "source": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0e3c8-265d-7731-8ffe-ee42ebb5ba3c\\exec-63532020-61a4-4784-b9e1-fbdf4720ccb5.png",
+    "accepted": true,
+    "reason": "Accepted; native all-frame pixel verification passed",
+    "source_sha256": "a19715682322e08e85734ddd7ad510ee680898e718b40afdafefd8a35ba3be2b"
+  },
+  {
+    "asset": "yuri_flight_raw",
+    "source": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0e3c8-265d-7731-8ffe-ee42ebb5ba3c\\exec-4b85035e-d03b-4ad2-abdd-81eac0a0c8c3.png",
+    "accepted": true,
+    "reason": "Accepted; native all-frame pixel verification passed",
+    "source_sha256": "2597becf5f8a66859a7442fe9be685489ac6f6f72a1e51106a3e0e5afa1aa523"
+  },
+  {
+    "asset": "maverick_flight_raw",
+    "source": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0e3c8-265d-7731-8ffe-ee42ebb5ba3c\\exec-87fbf9f6-665e-4c97-b9b2-e6d47cc599ee.png",
+    "accepted": true,
+    "reason": "Accepted; native all-frame pixel verification passed",
+    "source_sha256": "55c6bca59cf785046c20065ad097058f076455d027fa26a0b4b7ada06f4fd43c"
+  },
+  {
+    "asset": "falva_flight_raw",
+    "source": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0e3c8-265d-7731-8ffe-ee42ebb5ba3c\\exec-7881b036-6031-45d2-a1b1-ad1f9957c4eb.png",
+    "accepted": true,
+    "reason": "Accepted; native all-frame pixel verification passed",
+    "source_sha256": "090a6d9d4d6df4bee8d0f89e250d1fa88db05cea304d998ead3f3cbd53733462"
+  },
+  {
+    "asset": "lizzie_flight_raw",
+    "source": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0e3c8-265d-7731-8ffe-ee42ebb5ba3c\\exec-21559ac0-437d-4665-89ee-a1ebc29622aa.png",
+    "accepted": false,
+    "reason": "Archived first pass; wing margins corrected before shipping",
+    "source_sha256": "13c6d80fb9c377169da43baa4ff5f9fc96bc0e3953b6d7c176e83197875b4e73"
+  },
+  {
+    "asset": "decker_flight_raw",
+    "source": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0e3c8-265d-7731-8ffe-ee42ebb5ba3c\\exec-80f172ee-d1d6-4c16-b754-fd4a96ac2084.png",
+    "accepted": false,
+    "reason": "Archived first pass; wing margins corrected before shipping",
+    "source_sha256": "9de18fdfafc48207f3709d9e06bc57204019bacb8b35f357408880da7e0e35c7"
+  },
+  {
+    "asset": "juggernaut_flight_raw",
+    "source": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0e3c8-265d-7731-8ffe-ee42ebb5ba3c\\exec-281404f9-27f3-4a4d-a24e-d3f539bd4b02.png",
+    "accepted": false,
+    "reason": "Archived first pass; wing margins corrected before shipping",
+    "source_sha256": "009e38e160e7c3f087bc9bed1e586433f91f88dcd7cce90e5ff366bb6775ad68"
+  },
+  {
+    "asset": "space_raw",
+    "source": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0e3c8-265d-7731-8ffe-ee42ebb5ba3c\\exec-9b6696de-f2ec-442f-b95a-a85980b4c141.png",
+    "accepted": true,
+    "reason": "Accepted; native all-frame pixel verification passed",
+    "source_sha256": "3fd80b082e8243f687bc4c39fceb9b17e14f59da58bbe1e6d64224bf15fdf5b8"
+  },
+  {
+    "asset": "earth_raw",
+    "source": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0e3c8-265d-7731-8ffe-ee42ebb5ba3c\\exec-7df7340f-0afb-4d7c-9a0f-cfc8fbc22cff.png",
+    "accepted": true,
+    "reason": "Accepted; native all-frame pixel verification passed",
+    "source_sha256": "1cdecb12866ad8274922f528ad05394220721fddacf531d65c84c2191d229216"
+  },
+  {
+    "asset": "infection_raw",
+    "source": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0e3c8-265d-7731-8ffe-ee42ebb5ba3c\\exec-3f07eec9-7322-42d3-afb2-4496fa8cd791.png",
+    "accepted": true,
+    "reason": "Accepted; native all-frame pixel verification passed",
+    "source_sha256": "eefdd6cff47a4bf359639d3c43f82f5fd593b683972aa4f39310f6d40fd62a9c"
+  },
+  {
+    "asset": "infected_detail_raw",
+    "source": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0e3c8-265d-7731-8ffe-ee42ebb5ba3c\\exec-3160dfc8-1ca1-4f3b-b12a-db903dd3c202.png",
+    "accepted": true,
+    "reason": "Accepted; native all-frame pixel verification passed",
+    "source_sha256": "2011b7634d7c11218278ed7e3f6acaadd9b01d6cebe72ef4f1a18f36c76ec96c"
+  },
+  {
+    "asset": "lizzie_flight_clean",
+    "source": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0e3c8-265d-7731-8ffe-ee42ebb5ba3c\\exec-68b86c07-f925-483a-afb6-f47e4824a12a.png",
+    "accepted": true,
+    "reason": "Accepted; native all-frame pixel verification passed",
+    "source_sha256": "8b4a85ea9028f8741b36fccf2927dc1e9198498f2ad64e17416f8420cf2462af"
+  },
+  {
+    "asset": "decker_flight_clean",
+    "source": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0e3c8-265d-7731-8ffe-ee42ebb5ba3c\\exec-5e3c2b3b-b8fb-4098-98f9-bd4c4832b1d8.png",
+    "accepted": true,
+    "reason": "Accepted; native all-frame pixel verification passed",
+    "source_sha256": "2340d0c9136823bb0c8d41330f29261580333041df2625b726b1d081efd31b30"
+  },
+  {
+    "asset": "juggernaut_flight_clean",
+    "source": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0e3c8-265d-7731-8ffe-ee42ebb5ba3c\\exec-5ce2687d-2f31-4787-b740-b697451a213f.png",
+    "accepted": true,
+    "reason": "Accepted; native all-frame pixel verification passed",
+    "source_sha256": "549e7bc1e8526163b71e8c75cc68212918bf4dbee4f7d80a47129d225d47b2e2"
+  }
+]

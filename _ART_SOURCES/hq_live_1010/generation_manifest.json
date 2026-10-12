@@ -1,0 +1,1020 @@
+{
+  "tool": "built-in image_gen",
+  "sources": [
+    {
+      "name": "background",
+      "path": "_ART_SOURCES/hq_live_1010/background_raw.png",
+      "sha256": "67ffc661f3ede6d12d3e01e548af4b61e2695d3ebaee3ad9fe0d9f6696eebc64",
+      "size": [
+        1672,
+        941
+      ]
+    },
+    {
+      "name": "radar",
+      "path": "_ART_SOURCES/hq_live_1010/radar_raw.png",
+      "sha256": "e5603ec578aa73b8f1442b88b64d8da82b8e217b02fa6a4b4fb33c03e7d3bd76",
+      "size": [
+        1774,
+        887
+      ]
+    }
+  ],
+  "shipping_assets": [
+    {
+      "key": "hq10_background_00",
+      "path": "assets/game/shared/cinematics/hq_live_1010/background_00.png",
+      "w": 840,
+      "h": 472,
+      "pivot": [
+        420,
+        236
+      ],
+      "source_rect": [
+        0,
+        0,
+        836,
+        470
+      ],
+      "source_pivot": [
+        418,
+        235
+      ],
+      "translation": [
+        2,
+        1
+      ],
+      "scale": 1,
+      "sha256": "6cb0b088fc471cb4a2555b4ae3a5a5b2d16544e923502682827c8878dae2967c"
+    },
+    {
+      "key": "hq10_background_01",
+      "path": "assets/game/shared/cinematics/hq_live_1010/background_01.png",
+      "w": 840,
+      "h": 472,
+      "pivot": [
+        420,
+        236
+      ],
+      "source_rect": [
+        836,
+        0,
+        1672,
+        470
+      ],
+      "source_pivot": [
+        418,
+        235
+      ],
+      "translation": [
+        2,
+        1
+      ],
+      "scale": 1,
+      "sha256": "c0509a5bd13f581a1a1793801fb75e19b73b3deccd5515a20ecf9ee6aa4c5a6f"
+    },
+    {
+      "key": "hq10_background_02",
+      "path": "assets/game/shared/cinematics/hq_live_1010/background_02.png",
+      "w": 840,
+      "h": 472,
+      "pivot": [
+        420,
+        236
+      ],
+      "source_rect": [
+        0,
+        470,
+        836,
+        941
+      ],
+      "source_pivot": [
+        418,
+        235
+      ],
+      "translation": [
+        2,
+        1
+      ],
+      "scale": 1,
+      "sha256": "2554d523526f307855b83319e4bfdde67332714f055accf80d5b686d20a12677"
+    },
+    {
+      "key": "hq10_background_03",
+      "path": "assets/game/shared/cinematics/hq_live_1010/background_03.png",
+      "w": 840,
+      "h": 472,
+      "pivot": [
+        420,
+        236
+      ],
+      "source_rect": [
+        836,
+        470,
+        1672,
+        941
+      ],
+      "source_pivot": [
+        418,
+        235
+      ],
+      "translation": [
+        2,
+        1
+      ],
+      "scale": 1,
+      "sha256": "1e2ac73d4a589aa62d58562e11a321e2551e58b101c811cc64ae19f52335a51e"
+    },
+    {
+      "key": "hq10_radar_00",
+      "path": "assets/game/shared/cinematics/hq_live_1010/radar_00.png",
+      "w": 256,
+      "h": 256,
+      "pivot": [
+        128,
+        128
+      ],
+      "source_rect": [
+        0,
+        0,
+        222,
+        222
+      ],
+      "source_pivot": [
+        111,
+        112
+      ],
+      "translation": [
+        17,
+        16
+      ],
+      "scale": 1,
+      "sha256": "265f617d299b6150ed14a62e98aafca46f8b6866d88f37f95ceccf0fb7bab3fe"
+    },
+    {
+      "key": "hq10_radar_01",
+      "path": "assets/game/shared/cinematics/hq_live_1010/radar_01.png",
+      "w": 256,
+      "h": 256,
+      "pivot": [
+        128,
+        128
+      ],
+      "source_rect": [
+        222,
+        0,
+        444,
+        222
+      ],
+      "source_pivot": [
+        111,
+        111
+      ],
+      "translation": [
+        17,
+        17
+      ],
+      "scale": 1,
+      "sha256": "3778cd1b883b850c4cc8510a63b65fca0d8ac173b728fb9739f79ba2b1d6b9c9"
+    },
+    {
+      "key": "hq10_radar_02",
+      "path": "assets/game/shared/cinematics/hq_live_1010/radar_02.png",
+      "w": 256,
+      "h": 256,
+      "pivot": [
+        128,
+        128
+      ],
+      "source_rect": [
+        444,
+        0,
+        665,
+        222
+      ],
+      "source_pivot": [
+        111,
+        111
+      ],
+      "translation": [
+        17,
+        17
+      ],
+      "scale": 1,
+      "sha256": "80572efe3d64cc8d40ac0eb883a8b8bea15d9bf5a2c769ff41a0a10e0c5a7693"
+    },
+    {
+      "key": "hq10_radar_03",
+      "path": "assets/game/shared/cinematics/hq_live_1010/radar_03.png",
+      "w": 256,
+      "h": 256,
+      "pivot": [
+        128,
+        128
+      ],
+      "source_rect": [
+        665,
+        0,
+        887,
+        222
+      ],
+      "source_pivot": [
+        111,
+        111
+      ],
+      "translation": [
+        17,
+        17
+      ],
+      "scale": 1,
+      "sha256": "59d1c06a3a145a4fc0cf23c9733ae8e07d52626cf427f932014fec26a623b544"
+    },
+    {
+      "key": "hq10_radar_04",
+      "path": "assets/game/shared/cinematics/hq_live_1010/radar_04.png",
+      "w": 256,
+      "h": 256,
+      "pivot": [
+        128,
+        128
+      ],
+      "source_rect": [
+        887,
+        0,
+        1109,
+        222
+      ],
+      "source_pivot": [
+        111,
+        111
+      ],
+      "translation": [
+        17,
+        17
+      ],
+      "scale": 1,
+      "sha256": "1b4fdbbd848c74111087320f3f60fe17ed15b41c35d38c5347a0282b7d20202b"
+    },
+    {
+      "key": "hq10_radar_05",
+      "path": "assets/game/shared/cinematics/hq_live_1010/radar_05.png",
+      "w": 256,
+      "h": 256,
+      "pivot": [
+        128,
+        128
+      ],
+      "source_rect": [
+        1109,
+        0,
+        1330,
+        222
+      ],
+      "source_pivot": [
+        111,
+        111
+      ],
+      "translation": [
+        17,
+        17
+      ],
+      "scale": 1,
+      "sha256": "415bb9e35c96c642affc38b709d02c6b423481b638029d0511429ec2b666a838"
+    },
+    {
+      "key": "hq10_radar_06",
+      "path": "assets/game/shared/cinematics/hq_live_1010/radar_06.png",
+      "w": 256,
+      "h": 256,
+      "pivot": [
+        128,
+        128
+      ],
+      "source_rect": [
+        1330,
+        0,
+        1552,
+        222
+      ],
+      "source_pivot": [
+        111,
+        111
+      ],
+      "translation": [
+        17,
+        17
+      ],
+      "scale": 1,
+      "sha256": "2d50d788cc7e1247b59fe0f988b72a615563ed663eb5fee468f40a8b688cfedf"
+    },
+    {
+      "key": "hq10_radar_07",
+      "path": "assets/game/shared/cinematics/hq_live_1010/radar_07.png",
+      "w": 256,
+      "h": 256,
+      "pivot": [
+        128,
+        128
+      ],
+      "source_rect": [
+        1552,
+        0,
+        1774,
+        222
+      ],
+      "source_pivot": [
+        111,
+        111
+      ],
+      "translation": [
+        17,
+        17
+      ],
+      "scale": 1,
+      "sha256": "a5412a2214a318e01f76bdf3614f9ce65da1d0605792b3b534e056610059390b"
+    },
+    {
+      "key": "hq10_radar_08",
+      "path": "assets/game/shared/cinematics/hq_live_1010/radar_08.png",
+      "w": 256,
+      "h": 256,
+      "pivot": [
+        128,
+        128
+      ],
+      "source_rect": [
+        0,
+        222,
+        222,
+        444
+      ],
+      "source_pivot": [
+        111,
+        110
+      ],
+      "translation": [
+        17,
+        18
+      ],
+      "scale": 1,
+      "sha256": "8ab7547332621ae20084eec701ea45937b30523675061a711c4c88210a9ced8d"
+    },
+    {
+      "key": "hq10_radar_09",
+      "path": "assets/game/shared/cinematics/hq_live_1010/radar_09.png",
+      "w": 256,
+      "h": 256,
+      "pivot": [
+        128,
+        128
+      ],
+      "source_rect": [
+        222,
+        222,
+        444,
+        444
+      ],
+      "source_pivot": [
+        111,
+        110
+      ],
+      "translation": [
+        17,
+        18
+      ],
+      "scale": 1,
+      "sha256": "fda4266d3061eda8403698a98fb98d9851bb3374783425eadf1ced4717dfcf28"
+    },
+    {
+      "key": "hq10_radar_10",
+      "path": "assets/game/shared/cinematics/hq_live_1010/radar_10.png",
+      "w": 256,
+      "h": 256,
+      "pivot": [
+        128,
+        128
+      ],
+      "source_rect": [
+        444,
+        222,
+        665,
+        444
+      ],
+      "source_pivot": [
+        111,
+        110
+      ],
+      "translation": [
+        17,
+        18
+      ],
+      "scale": 1,
+      "sha256": "5032e872fbccd52b75ca61fc284ab711af0ab550af94220744edfb750fd79312"
+    },
+    {
+      "key": "hq10_radar_11",
+      "path": "assets/game/shared/cinematics/hq_live_1010/radar_11.png",
+      "w": 256,
+      "h": 256,
+      "pivot": [
+        128,
+        128
+      ],
+      "source_rect": [
+        665,
+        222,
+        887,
+        444
+      ],
+      "source_pivot": [
+        111,
+        110
+      ],
+      "translation": [
+        17,
+        18
+      ],
+      "scale": 1,
+      "sha256": "d1e3f1331b61efa806931c80531b284e70e006b2c69d4c1fdac4b3f3e61b3b9d"
+    },
+    {
+      "key": "hq10_radar_12",
+      "path": "assets/game/shared/cinematics/hq_live_1010/radar_12.png",
+      "w": 256,
+      "h": 256,
+      "pivot": [
+        128,
+        128
+      ],
+      "source_rect": [
+        887,
+        222,
+        1109,
+        444
+      ],
+      "source_pivot": [
+        111,
+        110
+      ],
+      "translation": [
+        17,
+        18
+      ],
+      "scale": 1,
+      "sha256": "ee338ec927799ec787bde8d841334c6c6857ff5fe7a7a367a0fd151dfc43bc77"
+    },
+    {
+      "key": "hq10_radar_13",
+      "path": "assets/game/shared/cinematics/hq_live_1010/radar_13.png",
+      "w": 256,
+      "h": 256,
+      "pivot": [
+        128,
+        128
+      ],
+      "source_rect": [
+        1109,
+        222,
+        1330,
+        444
+      ],
+      "source_pivot": [
+        111,
+        110
+      ],
+      "translation": [
+        17,
+        18
+      ],
+      "scale": 1,
+      "sha256": "991d7e4812998d367c9fc839bbbd8d87fc7b7401308acd09ca07ecb139a49d61"
+    },
+    {
+      "key": "hq10_radar_14",
+      "path": "assets/game/shared/cinematics/hq_live_1010/radar_14.png",
+      "w": 256,
+      "h": 256,
+      "pivot": [
+        128,
+        128
+      ],
+      "source_rect": [
+        1330,
+        222,
+        1552,
+        444
+      ],
+      "source_pivot": [
+        111,
+        110
+      ],
+      "translation": [
+        17,
+        18
+      ],
+      "scale": 1,
+      "sha256": "84667ac68df42dbf0974162638f74e892ec942dab727da5fc1dc644e5ac5a1d6"
+    },
+    {
+      "key": "hq10_radar_15",
+      "path": "assets/game/shared/cinematics/hq_live_1010/radar_15.png",
+      "w": 256,
+      "h": 256,
+      "pivot": [
+        128,
+        128
+      ],
+      "source_rect": [
+        1552,
+        222,
+        1774,
+        444
+      ],
+      "source_pivot": [
+        111,
+        111
+      ],
+      "translation": [
+        17,
+        17
+      ],
+      "scale": 1,
+      "sha256": "0e5d8b1e5c66f0dd70aafb8c35bf1ce8a98bd5451b421d4897411d7cbcb62678"
+    },
+    {
+      "key": "hq10_radar_16",
+      "path": "assets/game/shared/cinematics/hq_live_1010/radar_16.png",
+      "w": 256,
+      "h": 256,
+      "pivot": [
+        128,
+        128
+      ],
+      "source_rect": [
+        0,
+        444,
+        222,
+        665
+      ],
+      "source_pivot": [
+        111,
+        110
+      ],
+      "translation": [
+        17,
+        18
+      ],
+      "scale": 1,
+      "sha256": "70339eac71a2e21d1cfa59f1f822627161c13f5eca814e257e8baede0c65f209"
+    },
+    {
+      "key": "hq10_radar_17",
+      "path": "assets/game/shared/cinematics/hq_live_1010/radar_17.png",
+      "w": 256,
+      "h": 256,
+      "pivot": [
+        128,
+        128
+      ],
+      "source_rect": [
+        222,
+        444,
+        444,
+        665
+      ],
+      "source_pivot": [
+        111,
+        110
+      ],
+      "translation": [
+        17,
+        18
+      ],
+      "scale": 1,
+      "sha256": "d41c7aff6474d53d71db7368befb02fdfac22800b6a03a83409a0636b71d58bc"
+    },
+    {
+      "key": "hq10_radar_18",
+      "path": "assets/game/shared/cinematics/hq_live_1010/radar_18.png",
+      "w": 256,
+      "h": 256,
+      "pivot": [
+        128,
+        128
+      ],
+      "source_rect": [
+        444,
+        444,
+        665,
+        665
+      ],
+      "source_pivot": [
+        110,
+        110
+      ],
+      "translation": [
+        18,
+        18
+      ],
+      "scale": 1,
+      "sha256": "5849f1442c7a7eacc0d5576ef662af34c86f231e3d2fb147a9f6491ed0fa7cb5"
+    },
+    {
+      "key": "hq10_radar_19",
+      "path": "assets/game/shared/cinematics/hq_live_1010/radar_19.png",
+      "w": 256,
+      "h": 256,
+      "pivot": [
+        128,
+        128
+      ],
+      "source_rect": [
+        665,
+        444,
+        887,
+        665
+      ],
+      "source_pivot": [
+        111,
+        110
+      ],
+      "translation": [
+        17,
+        18
+      ],
+      "scale": 1,
+      "sha256": "9e1e1c604ba2d5dc746026de385ee2643fa2dfbf170649f439ff9d128357bad7"
+    },
+    {
+      "key": "hq10_radar_20",
+      "path": "assets/game/shared/cinematics/hq_live_1010/radar_20.png",
+      "w": 256,
+      "h": 256,
+      "pivot": [
+        128,
+        128
+      ],
+      "source_rect": [
+        887,
+        444,
+        1109,
+        665
+      ],
+      "source_pivot": [
+        111,
+        110
+      ],
+      "translation": [
+        17,
+        18
+      ],
+      "scale": 1,
+      "sha256": "53c25f9a5175fa4d6161da64006ea92e448628d0608d0eb594160262d773b228"
+    },
+    {
+      "key": "hq10_radar_21",
+      "path": "assets/game/shared/cinematics/hq_live_1010/radar_21.png",
+      "w": 256,
+      "h": 256,
+      "pivot": [
+        128,
+        128
+      ],
+      "source_rect": [
+        1109,
+        444,
+        1330,
+        665
+      ],
+      "source_pivot": [
+        110,
+        110
+      ],
+      "translation": [
+        18,
+        18
+      ],
+      "scale": 1,
+      "sha256": "70056bbf82e11b8949e0b7e1ad1eb5ccb947a8ce2dc6871212a469e832757d9a"
+    },
+    {
+      "key": "hq10_radar_22",
+      "path": "assets/game/shared/cinematics/hq_live_1010/radar_22.png",
+      "w": 256,
+      "h": 256,
+      "pivot": [
+        128,
+        128
+      ],
+      "source_rect": [
+        1330,
+        444,
+        1552,
+        665
+      ],
+      "source_pivot": [
+        111,
+        110
+      ],
+      "translation": [
+        17,
+        18
+      ],
+      "scale": 1,
+      "sha256": "0cc860955f486c00ae77a6100679cefd8ff7a97c6be104cda7821763302b44b1"
+    },
+    {
+      "key": "hq10_radar_23",
+      "path": "assets/game/shared/cinematics/hq_live_1010/radar_23.png",
+      "w": 256,
+      "h": 256,
+      "pivot": [
+        128,
+        128
+      ],
+      "source_rect": [
+        1552,
+        444,
+        1774,
+        665
+      ],
+      "source_pivot": [
+        111,
+        109
+      ],
+      "translation": [
+        17,
+        19
+      ],
+      "scale": 1,
+      "sha256": "4619a9f43ee9d0f405f420b160dafb88f9cf80332946addab7cad794512d2806"
+    },
+    {
+      "key": "hq10_radar_24",
+      "path": "assets/game/shared/cinematics/hq_live_1010/radar_24.png",
+      "w": 256,
+      "h": 256,
+      "pivot": [
+        128,
+        128
+      ],
+      "source_rect": [
+        0,
+        665,
+        222,
+        887
+      ],
+      "source_pivot": [
+        111,
+        110
+      ],
+      "translation": [
+        17,
+        18
+      ],
+      "scale": 1,
+      "sha256": "bbbe87616dbda31f7b0f5d6931e6f3a3584573b47b43a14c60e44df5945f242e"
+    },
+    {
+      "key": "hq10_radar_25",
+      "path": "assets/game/shared/cinematics/hq_live_1010/radar_25.png",
+      "w": 256,
+      "h": 256,
+      "pivot": [
+        128,
+        128
+      ],
+      "source_rect": [
+        222,
+        665,
+        444,
+        887
+      ],
+      "source_pivot": [
+        111,
+        110
+      ],
+      "translation": [
+        17,
+        18
+      ],
+      "scale": 1,
+      "sha256": "0ce9dc005ba905da88d4393ef7011333ca6bf5b05f7034246c5756de23516317"
+    },
+    {
+      "key": "hq10_radar_26",
+      "path": "assets/game/shared/cinematics/hq_live_1010/radar_26.png",
+      "w": 256,
+      "h": 256,
+      "pivot": [
+        128,
+        128
+      ],
+      "source_rect": [
+        444,
+        665,
+        665,
+        887
+      ],
+      "source_pivot": [
+        110,
+        110
+      ],
+      "translation": [
+        18,
+        18
+      ],
+      "scale": 1,
+      "sha256": "e8ab90e047cf1f8c3e9abcf03a3b5fb4382d7b0f05d788d93261ecc7839b22fc"
+    },
+    {
+      "key": "hq10_radar_27",
+      "path": "assets/game/shared/cinematics/hq_live_1010/radar_27.png",
+      "w": 256,
+      "h": 256,
+      "pivot": [
+        128,
+        128
+      ],
+      "source_rect": [
+        665,
+        665,
+        887,
+        887
+      ],
+      "source_pivot": [
+        111,
+        110
+      ],
+      "translation": [
+        17,
+        18
+      ],
+      "scale": 1,
+      "sha256": "20f2e9a5a7710cd3554dd244b021b37b53efc45afa6a09f17c3749e9a6df3639"
+    },
+    {
+      "key": "hq10_radar_28",
+      "path": "assets/game/shared/cinematics/hq_live_1010/radar_28.png",
+      "w": 256,
+      "h": 256,
+      "pivot": [
+        128,
+        128
+      ],
+      "source_rect": [
+        887,
+        665,
+        1109,
+        887
+      ],
+      "source_pivot": [
+        110,
+        110
+      ],
+      "translation": [
+        18,
+        18
+      ],
+      "scale": 1,
+      "sha256": "9d54f0405f3868b8d928e0e4ac1d39ab9e4a4f4ea698d43dd7a3db73dfd6246e"
+    },
+    {
+      "key": "hq10_radar_29",
+      "path": "assets/game/shared/cinematics/hq_live_1010/radar_29.png",
+      "w": 256,
+      "h": 256,
+      "pivot": [
+        128,
+        128
+      ],
+      "source_rect": [
+        1109,
+        665,
+        1330,
+        887
+      ],
+      "source_pivot": [
+        111,
+        110
+      ],
+      "translation": [
+        17,
+        18
+      ],
+      "scale": 1,
+      "sha256": "528afcdc327330c1aeffa992d27310ba85070a42fb62fd6c1f0092627a35cfd6"
+    },
+    {
+      "key": "hq10_radar_30",
+      "path": "assets/game/shared/cinematics/hq_live_1010/radar_30.png",
+      "w": 256,
+      "h": 256,
+      "pivot": [
+        128,
+        128
+      ],
+      "source_rect": [
+        1330,
+        665,
+        1552,
+        887
+      ],
+      "source_pivot": [
+        111,
+        110
+      ],
+      "translation": [
+        17,
+        18
+      ],
+      "scale": 1,
+      "sha256": "29c02de23d71a544928c0fb0d6542852c4d8b98fabf5cdf2652bf8a959a1d186"
+    },
+    {
+      "key": "hq10_radar_31",
+      "path": "assets/game/shared/cinematics/hq_live_1010/radar_31.png",
+      "w": 256,
+      "h": 256,
+      "pivot": [
+        128,
+        128
+      ],
+      "source_rect": [
+        1552,
+        665,
+        1774,
+        887
+      ],
+      "source_pivot": [
+        111,
+        110
+      ],
+      "translation": [
+        17,
+        18
+      ],
+      "scale": 1,
+      "sha256": "11887633d4eecd71fc82d1df7bce448d53084f3eb8a44bc88990e992fe992a13"
+    }
+  ],
+  "reference_manifest": "references/manifest.json",
+  "normalization": "Measured origin; crop/pad/translation only at scale 1. Runtime clips the authored acquisition field to progressively fill it; generated sweep frames animate the held scan.",
+  "prompts": [
+    {
+      "name": "background",
+      "prompt": "Use case: precise-object-edit. Production Bullets of Fury cinematic environment plates.\nEDIT TARGET Image 1 is the approved four-panel HQ storyboard. SUPPORTING IDENTITY REFERENCES Image 2 is the actual nine in-game pilot ships, row-major Cole, Axel, Freezer, Yuri, Maverick, Falva, Lizzie, Decker, Juggernaut. Image 3 is the actual authored red stealth fighter sheet. These exact ships will be drawn as live sprites by the game; no replacement aircraft designs.\nFRAME FORMAT: Four equal 840 x 472 environment frames arranged as an exact 2-column, 2-row sheet, 1680 x 944 overall. Fixed plate proportions. No separators, gutters, captions, words or watermark. Opaque scenery.\nKeep the approved HD Neo Geo pixel-art detail, vivid blue water, cliffs, tropical Fury HQ building, blue radar globe, hangars, weather, composition and lighting.\nMake ONLY these edits:\nTop-left arrival: remove the entire large green aircraft, its smoke and its thruster plume. Cleanly reconstruct the runway and HQ scenery behind it. Leave open air above the runway for the game's exact player ship to land.\nTop-right attack: remove every airborne aircraft, airborne missile, airborne laser streak and aerial plume. Keep the authored coastal HQ damage, burning structures and environmental smoke. Leave sky and coastline space for real game fighter sprites and real explosions.\nBottom-left control room: preserve the room and big island geography display. Remove ALL baked red plane marks, red dots, targeting brackets and purple alien pulse graphics from all displays. Keep clean dim cyan/blue island geography and very faint technical grids. The center screen must be a flat rectangular live map from normalized x=.20 to .80 and y=.12 to .58 of its individual frame, with no perspective tilt. Left and right round radar displays are clean dark empty circles with subtle stationary etched rings, ready for separately animated scan overlays. No people. This will be an interactive map; all contacts, beeps, waves, status text and scanning will be added live in the game.\nBottom-right launch: remove all FIVE large aircraft in the foreground and all their thrusters. Remove small parked jets too. Reconstruct blue ocean underneath. Keep HQ/coast and open foreground so the game can launch the EXACT ships from Image 2. Do not redraw any ship.\nDeliver the same four environments fully restored underneath the removed elements. Do not add aircraft, boats, labels or character designs. Sharp authored pixel clusters; avoid blurred digital painting."
+    },
+    {
+      "name": "radar",
+      "prompt": "Use case: stylized-concept. Production sprite animation asset for the Bullets of Fury live HQ radar cinematic.\nFRAME FORMAT: EXACTLY 32 frames, eight columns by four rows, 256 x 256 per cell, total 2048 x 1024. Even cells, no gutters. TRUE transparent background and transparent inter-frame padding. Common fixed center pivot at (128,128), identical scale. Flat face-on screen overlay, no perspective. Same ring dimensions in EVERY frame.\nSupporting reference Image 1 is the newly cleaned HQ storyboard; use the blue-green CRT display style. Image 2 is the exact actual game pilot ship roster. The ships are only visual-world reference; do NOT draw any ships, contacts or symbols into this radar overlay; the runtime will supply those exact aircraft.\nRender a crisp HD Neo Geo 16-bit emerald/cyan radar hologram sweep, extremely readable fine pixel rings and restrained green light. Outer ring diameter 224 pixels. No black rectangle, no console bezel, no scenery, no text, no numbers, no aircraft, no dots, no purple effects, no white lens bloom.\nFrame order:\nFrames 0-7: a charging radar acquisition disk progressively fills clockwise from a tiny wedge to the complete circular green phosphor field; fine cyan range rings become live in place. Transparent dim sectors ahead of the filling wedge.\nFrames 8-31: seamless 24-frame clockwise rotating radar sweep. One luminous thin radial beam with a 60-degree translucent green trail. The rings, cross axes and origin stay stationary; only the beam and phosphor trail rotate. Frame 8 points straight up and later frames advance clockwise evenly, frame31 just before a complete rotation so wrapping to frame8 is clean. Medium transparency everywhere except sharp ring/sweep edge so map geography underneath remains visible. Exact 32 separate cells, no repeats, no drifting ring, no explosions."
+    }
+  ],
+  "identity_reference": {
+    "path": "_ART_SOURCES/hq_live_1010/references/actual_pilot_ships.png",
+    "sha256": "e39680368f65105cadf4816321c303d51968588f4202081763566517a1792a8c",
+    "order": [
+      "cole",
+      "axel",
+      "freezer",
+      "yuri",
+      "maverick",
+      "falva",
+      "lizzie",
+      "decker",
+      "juggernaut"
+    ],
+    "role": "Exact game-context XART/drawImage exports; supporting references in both generation calls. Runtime reuses the actual aircraft sprites."
+  },
+  "inputs": {
+    "background": [
+      {
+        "path": "_ART_SOURCES/audio_1010/hq_story_raw.png",
+        "role": "edit target",
+        "sha256": "c609b68fa20b91cf7a3a69a0c9216aee203e845ffe0fafe7bc09b5cae7cf1bd1"
+      },
+      {
+        "path": "_ART_SOURCES/hq_live_1010/references/actual_pilot_ships.png",
+        "role": "actual game ship identity reference",
+        "sha256": "e39680368f65105cadf4816321c303d51968588f4202081763566517a1792a8c"
+      },
+      {
+        "path": "_ART_SOURCES/hq_live_1010/references/fb2_stealth_red.png",
+        "role": "actual game stealth identity reference",
+        "sha256": "a453e8bad07bfc022e9a630270e0fe8704ca751196d0cb9b7cc70ae35eac02b1"
+      }
+    ],
+    "radar": [
+      {
+        "path": "_ART_SOURCES/hq_live_1010/background_raw.png",
+        "role": "accepted HQ visual style",
+        "sha256": "67ffc661f3ede6d12d3e01e548af4b61e2695d3ebaee3ad9fe0d9f6696eebc64"
+      },
+      {
+        "path": "_ART_SOURCES/hq_live_1010/references/actual_pilot_ships.png",
+        "role": "actual game ship identity reference",
+        "sha256": "e39680368f65105cadf4816321c303d51968588f4202081763566517a1792a8c"
+      }
+    ]
+  }
+}

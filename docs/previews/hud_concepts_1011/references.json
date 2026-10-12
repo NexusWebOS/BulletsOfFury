@@ -1,0 +1,41 @@
+{
+  "icons": [
+    {
+      "id": "lives",
+      "key": "nli_2",
+      "ink": 5726
+    },
+    {
+      "id": "missiles",
+      "key": "nmi_2",
+      "ink": 2609
+    },
+    {
+      "id": "weapon",
+      "key": "micon_mg_1",
+      "ink": 7806
+    },
+    {
+      "id": "special",
+      "key": "special_icon_cole_nuclear_warheads",
+      "ink": 6953
+    },
+    {
+      "id": "lock",
+      "key": "retm_0",
+      "ink": 4123
+    }
+  ],
+  "font": {
+    "name": "Command Alloy",
+    "source": "assets/game/shared/fonts/fonts/command_0914/game-alpha.png"
+  },
+  "screenshotSource": "_shots/signature_specials_1011",
+  "playfieldCrop": [
+    212,
+    59,
+    676,
+    724
+  ],
+  "errors": []
+}

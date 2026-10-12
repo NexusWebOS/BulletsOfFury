@@ -117,7 +117,7 @@ function clockPanel(g,w,h){plate(g,bgRect.clock,0,0,w,h);const now=new Date();
 let last=0,prev='';
 function tick(now){requestAnimationFrame(tick);if(now-last<180)return;last=now;
  const st=current(),map=st==='stagesel',playing=['play','paused','continue','stageclear','gameover'].includes(st);
- const wide=innerWidth>=1150&&(map||document.body.classList.contains('fs'))&&!document.body.classList.contains('cinematic-full');
+ const wide=innerWidth>=1150&&(map||document.body.classList.contains('fs'))&&!document.body.classList.contains('cinematic-full')&&!window.__bofSideHudOwnsLayout;
  document.body.classList.toggle('wide-map',wide&&map);
  document.body.classList.toggle('wide-playing',wide&&playing);
  const nativeMapW=innerHeight*480/512;
@@ -129,14 +129,17 @@ function tick(now){requestAnimationFrame(tick);if(now-last<180)return;last=now;
  for(const [c,sideName] of [[left,'left'],[right,'right']]){
   const width=map&&sideName==='left'?Math.min(720,Math.max(side,Math.floor(innerWidth*.39))):side;
   const x=sideName==='left'?(map?8:Math.max(8,Math.floor(frame.left-side-8))):Math.min(innerWidth-side-8,Math.ceil(frame.right+8));
-  c.style.left=x+'px';c.style.top=top+'px';c.style.width=width+'px';c.style.height=h+'px';
-  if(c.width!==width||c.height!==h){c.width=width;c.height=h;}
+  // Scale the entire authored 320x810 panel together, including its content.
+  // A wider rail adds margin; it cannot stretch the border away from its widgets.
+  const k=Math.min(width/320,h/810),dw=Math.round(320*k),dh=Math.round(810*k);
+  c.style.left=Math.round(x+(width-dw)/2)+'px';c.style.top=Math.round(top+(h-dh)/2)+'px';c.style.width=dw+'px';c.style.height=dh+'px';
+  if(c.width!==320||c.height!==810){c.width=320;c.height=810;}
  }
  if(map){mapTop.style.left=Math.round(frame.left)+'px';mapTop.style.top=Math.round(frame.top)+'px';mapTop.style.width=Math.round(frame.width)+'px';mapTop.style.height=Math.round(frame.width*68/480)+'px';
   const cw=Math.min(400,Math.floor(frame.width*.58)),ch=Math.floor(cw*130/826);clock.width=cw;clock.height=ch;
   clock.style.width=cw+'px';clock.style.height=ch+'px';clock.style.left=Math.round(frame.left+(frame.width-cw)/2)+'px';
   const barBottom=typeof CM2_BAR!=='undefined'?(cmap2BarY()+CM2_BAR.h):45;
-  clock.style.top=Math.round(frame.top+frame.width*(barBottom-5)/480)+'px';}
+  clock.style.top=Math.round(frame.top+frame.width*(barBottom-24)/480)+'px';}
  L.clearRect(0,0,left.width,left.height);R.clearRect(0,0,right.width,right.height);
  const v=values();
  if(map){rightPanel(R,right.width,right.height,v,true);T.clearRect(0,0,clock.width,clock.height);clockPanel(T,clock.width,clock.height);}

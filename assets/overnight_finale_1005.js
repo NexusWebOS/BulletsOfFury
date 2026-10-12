@@ -100,17 +100,18 @@ r30DrawBoss=function(b){const J=j3State(b),S=b?._r30;if(!J)return ON5F.draw.appl
 // The first two outer bosses are independent threatening encounter books.
 r30Attack=function(b){const J=j3State(b),S=b?._r30;if(!J||J.encounter>=2)return ON5F.attack.apply(this,arguments);
  const ghost=J.encounter===1,book=ghost?['ghostVolley','ghostDive','ghostLance','ghostOrbit']:['hostGuns','hostClaws','hostLance','hostOrbit'];
- const type=book[S.seq++%book.length],P=S.attack={on5:true,type,lanes:[],t:0,tell:diffKey==='easy'?1.5:1.15,active:type.endsWith('Lance')?1.0:2.8,next:0,fired:0,
+ const type=book[S.seq++%book.length],P=S.attack={on5:true,type,lanes:[],t:0,tell:diffKey==='easy'?1.5:1.15,active:type.endsWith('Lance')?1.35:type==='hostClaws'?1.75:2.35,next:0,fired:0,
   tx:clamp(player.x,camLeftX()+55,camRightX()-55),ty:clamp(player.y,250,VH-65),fromX:b.x,fromY:b.y};
  if(type.endsWith('Lance'))P.lanes=[-1,1].map(s=>({...s81003Lane(b.x+s*54,b.y+48,P.tx+s*46,P.ty,16),tx:P.tx+s*46,ty:P.ty}));
- if(!ghost&&type.endsWith('Orbit'))on5Shield(b,'blue',Math.ceil(b.maxhp*.045));
+ if(type.endsWith('Orbit')){P.download=true;P.tell=2.2;}
  r30Sound('bossWeaponCharge');j3Log(b,'attack',{type});
 };
 r30AttackTick=function(b,dt){const S=b._r30,P=S.attack;if(!P?.on5)return ON5F.attackTick.apply(this,arguments);P.t+=dt;const u=P.t-P.tell;
  combatWarningTick(b,'on5-'+S.seq,Math.min(P.t,P.tell),P.tell);if(u<0)return;
  if(P.type.endsWith('Lance')&&!P.fired){P.fired++;for(const L of P.lanes)s81003Beam(b,L,'code',P.active);r30Sound('combatBeam0927');}
  else if(P.type==='hostClaws'||P.type==='ghostDive'){
-  const Q=r30Pose(b);for(const seat of seatList())withSeat(seat,()=>{if(Math.hypot(player.x-Q.x,player.y-Q.y)<(P.type==='hostClaws'?57:42))playerHit('symbiote lunge');});
+  const Q=r30Pose(b),tips=P.type==='hostClaws'?r30Parts(b).filter(v=>['left','right'].includes(v.p.id)).map(v=>({x:v.x-Math.sin(v.rot)*v.h*.36,y:v.y+Math.cos(v.rot)*v.h*.36})):[Q];
+  for(const tip of tips)for(const seat of seatList())withSeat(seat,()=>{if(!player.dead&&Math.hypot(player.x-tip.x,player.y-tip.y)<(P.type==='hostClaws'?29:42))playerHit('symbiote lunge');});
   if(u>=P.next){P.next=u+.58;const a=Math.atan2(P.ty-Q.y,P.tx-Q.x);for(const d of [-.30,.30])f1003bShot(b,Q.x,Q.y+48,a+d,3.3,'code');}
  }else if(u>=P.next&&!P.type.endsWith('Lance')){
   P.next=u+(P.type.endsWith('Orbit')?.88:.42);P.fired++;
@@ -118,10 +119,10 @@ r30AttackTick=function(b,dt){const S=b._r30,P=S.attack;if(!P?.on5)return ON5F.at
   else for(const s of [-1,1]){const x=b.x+s*66,y=b.y+65,a=Math.atan2(P.ty-y,P.tx-x);for(const d of (P.type==='ghostVolley'?[-.23,0,.23]:[-.11,.11]))f1003bShot(b,x,y,a+d,3.7,'code');}
   r30Sound('enemyBossCannon');
  }
- if(u>=P.active){S.attack=null;S.cd=diffKey==='easy'?1.4:1.05;S.ghostHidden=false;}
+ if(u>=P.active){S.attack=null;S.cd=diffKey==='easy'?1.2:diffKey==='normal'?.72:.55;S.ghostHidden=false;}
 };
 r30Pose=function(b){const P=b?._r30?.attack;if(P?.on5){const u=clamp((P.t-P.tell)/P.active,0,1),dash=['hostClaws','ghostDive'].includes(P.type),k=dash?Math.sin(u*Math.PI):0;
- return{x:lerp(b.x,P.tx,k),y:lerp(b.y,P.ty-35,k),angle:0,alpha:1,scale:1,shape:j3State(b).encounter===1?'ghost':'host'};}return ON5F.pose.apply(this,arguments);};
+ return{x:lerp(b.x,P.tx,k),y:lerp(b.y,P.ty-(P.type==='hostClaws'?108:35),k),angle:0,alpha:1,scale:1,shape:j3State(b).encounter===1?'ghost':'host'};}return ON5F.pose.apply(this,arguments);};
 // Intact authored knight body. Weapons remain independently targetable.
 fmcAlive=function(b,id){if(j3State(b)?.mimic===5&&['head','legL','legR','swordArm','shieldArm'].includes(id))return b.parts.some(p=>p.id==='core'&&!p.destroyed);return ON5F.alive.apply(this,arguments);};
 function on5KnightFrame(b){const K=b._r30.on5Knight,h=cf4Knight(b);if(K)return K.phase==='tell'?4:K.kind==='bash'?5:6;

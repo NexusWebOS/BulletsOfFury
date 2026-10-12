@@ -1,0 +1,52 @@
+{
+  "tool": "built-in image_gen",
+  "date": "2026-10-11",
+  "prompt": "FRAME FORMAT: Deliver 1536 × 1024 pixels, exactly two columns by two rows of identical 768 × 512 transparent cells, fixed centered pivots at each cell's (384,256), even gutters. Four production UI buttons for Bullets of Fury Overdrive. The supplied RESUME plate is the style and geometry reference. Each button must be 720 × 152 pixels, centered in its cell; preserve the reference's straight wide horizontal proportions, riveted dark steel bevels, black icon socket on left, illustrated inset, huge readable thick black-outlined arcade lettering, bright lamps at both ends, orange Overdrive heat seams. Nothing crosses cell boundaries. Exact row-major labels: RETURN TO MAIN MENU (warm white lettering, return arrow in left icon socket, compound road inset); FULLSCREEN (cyan lettering, expand-screen icon, blue technical inset); WINDOWED (amber lettering, smaller-window icon, blue technical inset); LOCKED (violet/white lettering, closed padlock icon, dark technical inset). The complete RETURN TO MAIN MENU label must fit on one line. Text must be exact, readable and fully inside each plate. Hard crisp pixel illustration matching the source, not photoreal, no extra labels, no scenery outside plates, true alpha outside art. Same scale and physical pivot across all four buttons.",
+  "reference": "expansion/topdown/art/menu_1011/od_btn_resume.png",
+  "source": "expansion/topdown/art/menu_1011/source/missing_buttons_1011.png",
+  "actualMasterSize": [
+    1536,
+    1024
+  ],
+  "frameFormat": [
+    768,
+    192
+  ],
+  "pivots": [
+    384,
+    96
+  ],
+  "keys": [
+    "od_btn_return_to_main_menu",
+    "od_btn_fullscreen",
+    "od_btn_windowed",
+    "od_btn_locked"
+  ],
+  "sourceCrops": [
+    [
+      0,
+      204,
+      768,
+      192
+    ],
+    [
+      768,
+      204,
+      768,
+      192
+    ],
+    [
+      0,
+      620,
+      768,
+      192
+    ],
+    [
+      768,
+      620,
+      768,
+      192
+    ]
+  ],
+  "uniformScale": 1
+}

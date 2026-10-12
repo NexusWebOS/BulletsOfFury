@@ -1,0 +1,23 @@
+[
+  {
+    "name": "sonic_hull16",
+    "refs": [
+      "reference/sonic_hull.png"
+    ],
+    "prompt": "Use case precise-object-edit. EXACTLY sixteen frames, FOUR COLUMNS BY FOUR ROWS. Animate this exact bare sonic tank hull, same cyan-platinum overhead south-facing identity. Fixed chassis geometry and EMPTY weapon sockets, no tracks or guns. Only authored cooling shutters and cyan internal lamps animate, smooth sequential16 phase loop. Cell dimensions equal, complete hull in each cell with 25% clear margin. NO surrounding haze, NO painted dark background, NO drop shadow, true alpha-zero transparent background. Pixel art rich Neo Geo clusters and sharp dark outlines. Chassis stays precisely same scale and mount location, no bobbing/rotation/drift. All16 frames present, all fourth-row cells filled, no text."
+  },
+  {
+    "name": "sonic_tracks16",
+    "refs": [
+      "returned/sonic_kit.png"
+    ],
+    "prompt": "Use case precise-object-edit. EXACTLY16 consecutive animation frames in FOUR COLUMNS BY FOUR ROWS. Each frame contains TWO isolated tread modules of the sonic tank reference: LEFT track and RIGHT track, with transparent gap where the entire hull would be. No central hull, no guns. Same cyan/white graphite tank kit, same overhead perspective, nose down. Both armored outer track guards stay fixed and internal tread links move by a small step in each of16 frames, looping smoothly. Put BOTH treads in EVERY one of sixteen cells. Generous transparent borders, no surrounding fog, shadow or scenery. True RGBA alpha-zero background. Fully authored detailed Neo Geo pixel art, consistent scale, left/right pivots stationary. No text."
+  },
+  {
+    "name": "devastator_tracks16",
+    "refs": [
+      "returned/devastator_kit.png"
+    ],
+    "prompt": "Use case precise-object-edit. EXACTLY16 consecutive animation frames in FOUR COLUMNS BY FOUR ROWS. Each frame contains BOTH isolated armored tread modules: LEFT and RIGHT Devastator treads from reference, gap between completely TRANSPARENT, no chassis/guns. This means32 total individual tread sprites arranged as16 PAIRS. Include a PAIR in every cell, all four columns all four rows. Left/right guards fixed, only moving16 small phases of belt teeth and red vent pulses. Same dark graphite red/chrome identity and overhead down-facing tank. Equal cells, same scale, generous clear gutter. True transparent alpha-zero background, NO painted red glow/haze, no shadow, no checkerboard. Neo Geo pixel art. No text."
+  }
+]

@@ -134,7 +134,7 @@ rg4HealthBars=function(b){RA4.bars=[];for(const q of b._rebels.ships){const P=ra
  const im=ra4Image('icon_'+q.key);ra4Blit(im,P.x-P.w/2-9,P.y,16,16);
  ctx.save();ctx.fillStyle='#030810';ctx.fillRect(P.x-P.w/2-1,P.y-1,P.w+2,7);ctx.fillStyle='#34404d';ctx.fillRect(P.x-P.w/2,P.y,P.w,5);ctx.fillStyle=RA4_COLORS[q.key];ctx.fillRect(P.x-P.w/2,P.y,P.w*clamp(q.hp/q.max,0,1),5);ctx.restore();campText(q.key.toUpperCase(),P.x,P.y-7,7,'#edf6ff');
  }};
-function ra4LockWarning(A){if(!A.locked)return;const p=A.target.ref,f=Math.floor(A.t*11)%4,im=retinaTinted(A.t/A.warm>.8?'retB':'retA',f,'yuri');
+function ra4LockWarning(A,pilot='kaia'){if(!A.locked)return;const p=A.target.ref,f=Math.floor(A.t*11)%4,im=retinaTinted(A.t/A.warm>.8?'retB':'retA',f,pilot);
  ra4Blit(im,p.x,p.y,46,46);}
 rg4Warning=function(q,A){if(!['turbo','ram','slug','rockets','helix','cloak'].includes(A.kind))return RA4_BASE.warning.apply(this,arguments);
  if(!['charge','row'].includes(A.phase)||A.kind==='cloak')return;const p=clamp(A.t/A.warm,0,1);
@@ -143,11 +143,13 @@ rg4Warning=function(q,A){if(!['turbo','ram','slug','rockets','helix','cloak'].in
  combatWarningDraw(q,{x,y,ex,ey,len:row?Math.abs(ex-x):undefined,width:['turbo','ram'].includes(A.kind)?55:A.kind==='helix'?48:26,progress:p,fieldOnly:true});
  if(row)ctx.restore();
  const key='bmfx_alert_'+l23FovPhase(p)+'_impact_imminent';if(XART.rdy(key))ra4Blit(XART.get(key),row?camLeftX()+viewW()/2:q.x,row?y:q.y+40,30,30);
- if(A.kind==='rockets')ra4LockWarning(A);
+ if(A.kind==='rockets')ra4LockWarning(A,q.key);
 };
 fr27RebelDrawShip=function(q){const G=rg4State(),A=q.rg4?.act;if(!G?.arsenal1004c)return RA4_BASE.ship.apply(this,arguments);
  const cloak=q.frCloak>0;if(cloak){const key='rr_ship_'+REBEL_SHIPS[q.i],im=XART.rdy(key)?XART.get(key):null,w=SHIP_DRAW_H*1.5,h=im?w*im.height/im.width:80;
-  ra4Blit(im,q.x,q.y,w,h,0,.055+.035*Math.sin(G.age*9));rg4Cell(1,Math.floor(G.age*10)%6,q.x,q.y,w*.95,h,.12);
+  // The transition diamond is drawn by the charge controller. Once cloaked,
+  // keep only her faint hull trace; never loop the bright forming effect.
+  ra4Blit(im,q.x,q.y,w,h,0,.055+.035*Math.sin(G.age*9));
   if(q.flash>0)ra4Blit(xartTint(key,'#ffffff',1),q.x,q.y,w,h,0,Math.min(1,q.flash*9));
  }else RA4_BASE.ship.apply(this,arguments);
  if(q.dead)return;

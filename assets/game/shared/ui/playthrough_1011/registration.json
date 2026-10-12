@@ -1,0 +1,41 @@
+{
+  "brand-plaque": {
+    "path": "assets/game/shared/ui/playthrough_1011/brand-plaque.png",
+    "w": 536,
+    "h": 640,
+    "sourceRect": [
+      43,
+      139,
+      1043,
+      1332
+    ],
+    "scale": 0.5364626990779547,
+    "sha256": "2dde7a145b8ef652057de2a294db432661e51b959f25854b48863938203043b5"
+  },
+  "author-plaque": {
+    "path": "assets/game/shared/ui/playthrough_1011/author-plaque.png",
+    "w": 532,
+    "h": 640,
+    "sourceRect": [
+      42,
+      138,
+      1044,
+      1343
+    ],
+    "scale": 0.5311203319502075,
+    "sha256": "5214256f66fe405a1ac89efba2ab5506fc4cc42ba86356a3a4485143c0f91eb8"
+  },
+  "fullscreen-button": {
+    "path": "assets/game/shared/ui/playthrough_1011/fullscreen-button.png",
+    "w": 128,
+    "h": 124,
+    "sourceRect": [
+      93,
+      112,
+      1161,
+      1137
+    ],
+    "scale": 0.1198501872659176,
+    "sha256": "f2b1da9c93cb7ec767dde31b90e45bd9905e8a7ec4ab4620a2272eb68aead88e"
+  }
+}

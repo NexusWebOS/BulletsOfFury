@@ -1,0 +1,59 @@
+{
+  "captures": {
+    "gameplay": {
+      "state": "play",
+      "backing": [
+        960,
+        1024
+      ],
+      "logical": [
+        480,
+        512
+      ],
+      "screen": [
+        614,
+        136,
+        692,
+        738
+      ],
+      "classes": ""
+    },
+    "fly-in": {
+      "state": "launch",
+      "backing": [
+        960,
+        1024
+      ],
+      "logical": [
+        480,
+        512
+      ],
+      "screen": [
+        614,
+        136,
+        692,
+        738
+      ],
+      "classes": ""
+    },
+    "continue": {
+      "state": "continue",
+      "backing": [
+        960,
+        1024
+      ],
+      "logical": [
+        480,
+        512
+      ],
+      "screen": [
+        468,
+        0,
+        984,
+        1050
+      ],
+      "classes": ""
+    }
+  },
+  "errors": []
+}

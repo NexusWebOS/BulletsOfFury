@@ -96,8 +96,11 @@ function mm1003Fire(e){
  }else if(D.attack==='siege'&&A.fired<2&&A.age>=A.fired*.58){
   const side=A.fired?1:-1,x=e.x+side*e.w*.36,y=e.y+e.h*.21;
   for(const off of [-.16,0,.16])shot(x,y,aimed(x,y)+off,'fire',true);A.fired++;r30Sound('combatOrb0927');
- }else if(D.attack==='ram'&&A.fired===0){
-  for(const side of [-1,1]){const x=e.x+side*e.w*.35,y=e.y+e.h*.15;shot(x,y,Math.PI/2+side*.2,'fire',true);}A.fired=1;r30Sound('combatOrb0927');
+ }else if(D.attack==='ram'&&A.fired<3&&A.age>=A.fired*.20){
+  // The retreat opens space for a complete alternating two-gun salvo.
+  const side=A.fired%2?-1:1,x=e.x+side*e.w*.35,y=e.y+e.h*.15;
+  for(const off of [-.10,.10])shot(x,y,aimed(x,y)+off,'fire',true);
+  A.fired++;r30Sound('combatOrb0927');
  }
 }
 function mm1003Tick(e,dt){
@@ -108,10 +111,13 @@ function mm1003Tick(e,dt){
  if(A.phase==='entry'){if(mm1003Move(e,A.homeX,A.homeY,speed,dt))mm1003Set(e,'rest');return;}
  if(A.phase==='leave'){e.y+=speed*dt;if(e.y>VH+70)e.dead=true;return;}
  if(A.phase==='rest'){
+  const T=targetShip(e.x,e.y);
+  // A pilot above its old home must not strand the heavy in a silent wait.
+  A.homeY=clamp(Math.min(A.homeY,T.y-120),viewTopY()+e.h*.65,viewTopY()+viewH()*.38);
   mm1003Move(e,A.homeX,A.homeY,speed,dt);A.cd-=dt;
   if(mm1003Disarmed(e)||A.cycles>=3||A.t>19){mm1003Set(e,'leave');return;}
   const busy=enemies.filter(q=>q!==e&&mm1003Alive(q)&&(['tell','fire','dash'].includes(q._mm1003?.phase)||['tell','fire'].includes(q._orbit1003?.phase))).length;
-  if(A.cd<=0&&busy<(diffKey==='easy'?1:diffKey==='furious'?3:2)&&e.y<targetShip(e.x,e.y).y-95&&e.x>=camLeftX()+e.w*.45&&e.x<=camRightX()-e.w*.45)mm1003Warning(e);
+  if(A.cd<=0&&busy<(diffKey==='easy'?1:diffKey==='furious'?3:2)&&Math.hypot(T.x-e.x,T.y-e.y)>100&&e.x>=camLeftX()+e.w*.45&&e.x<=camRightX()-e.w*.45)mm1003Warning(e);
   return;
  }
  if(A.phase==='tell'){
@@ -128,14 +134,15 @@ function mm1003Tick(e,dt){
   // The native anti-point-blank gate correctly blocks firing on top of the pilot.
   // Withdraw visibly before the two plasma shots, keeping that safety rule.
   mm1003Move(e,A.homeX,A.homeY,145,dt);
-  const T=targetShip(e.x,e.y);if(Math.hypot(T.x-e.x,T.y-e.y)>120&&A.age>.65)mm1003Set(e,'fire');
+  const T=targetShip(e.x,e.y);if(Math.hypot(T.x-e.x,T.y-e.y)>120&&A.age>.45){A.target={x:T.x,y:T.y};mm1003Set(e,'fire');}
+  else if(A.age>1.6){A.homeY=Math.max(viewTopY()+e.h*.65,Math.min(A.homeY,T.y-140));if(A.age>2.4)mm1003Set(e,'recover');}
   return;
  }
  if(A.phase==='fire'){mm1003Fire(e);if(A.age>(D.attack==='rifle'?1.12:D.attack==='siege'?1.1:.7))mm1003Set(e,'recover');return;}
  if(A.phase==='recover'){
   // Returning to the firing pocket never follows the player or adds a second ram.
   if(D.attack==='claw'){if(A.age>1.0)mm1003Set(e,'leave');}
-  else{mm1003Move(e,A.homeX,A.homeY,70,dt);if(A.age>1.35){A.cd=D.cool*(diffKey==='furious'?.75:diffKey==='easy'?1.3:1);A.homeX=clamp(A.homeX+(A.cycles%2?36:-36),camLeftX()+e.w*.65,camRightX()-e.w*.65);mm1003Set(e,'rest');}}
+  else{mm1003Move(e,A.homeX,A.homeY,110,dt);if(A.age>.8){A.cd=D.cool*(diffKey==='furious'?.55:diffKey==='hard'?.70:diffKey==='easy'?1.1:.85);A.homeX=clamp(A.homeX+(A.cycles%2?36:-36),camLeftX()+e.w*.65,camRightX()-e.w*.65);mm1003Set(e,'rest');}}
  }
 }
 function mm1003Blit(key,part,x,y,scale,angle=0,tint=null,alpha=1){

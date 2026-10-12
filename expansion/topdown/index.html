@@ -6,24 +6,41 @@
 <title>Bullets of Fury: Overdrive - Ground Operations</title>
 <style>
   @font-face { font-family: BOFCommand; src: url('../../assets/game/shared/fonts/fonts/command_0914/BOFCommandSignal.ttf'); }
+  @font-face { font-family: BOFmil; src: url('../../assets/game/shared/fonts/fonts/command_0914/BOFCommandSignal.ttf'); }
   html, body { margin: 0; height: 100%; background: #000; overflow: hidden; }
   body { display: flex; align-items: center; justify-content: center; }
   canvas { image-rendering: pixelated; image-rendering: crisp-edges; display: block; cursor: crosshair; touch-action: none; }
+  #fs-btn { position:fixed;right:10px;top:10px;width:144px;padding:0;border:0;background:none;cursor:pointer;z-index:3; }
+  #fs-btn img { width:100%;display:block;image-rendering:pixelated; }
+  #fs-btn:focus-visible { outline:2px solid #ffc270;outline-offset:3px; }
+  body.playing #fs-btn { opacity:0;pointer-events:none; }
 </style>
 </head>
 <body>
 <canvas id="screen" width="960" height="720"></canvas>
+<button id="fs-btn" type="button" aria-label="Enter fullscreen" aria-pressed="false"><img src="art/menu_1011/od_btn_fullscreen.png" alt="Fullscreen"></button>
 <!-- Bullets of Fury's own manifest: every sprite this page draws is resolved through it -->
 <script src="../../assets/manifest.js"></script>
+<script>window.BOF=window.BOF||{};</script>
+<script src="../../assets/stagefonts_v4.js"></script>
+<script>window.BOF_BMF_MAPS={};</script>
+<script src="../../assets/game/shared/fonts/fonts/command_0914/fonts.js"></script>
+<script src="art/menu_1011/manifest.js?v=overdrive1011-restored"></script>
+<script src="art/menu_1011/original_pilot_data.js?v=overdrive1011-menu-r1"></script>
 <script src="art/ground_1008/manifest.js?v=overdrive1009-museum"></script>
 <script src="art/campaign_1008/manifest.js?v=overdrive1009-museum"></script>
 <script src="art/museum_1009/manifest.js?v=overdrive1009-museum"></script>
+<script src="art/warrior_1011/manifest.js?v=overdrive1011-warrior"></script>
+<script src="art/warrior_mk2_1011/manifest.js?v=overdrive1011-menu-r1"></script>
+<script src="art/boss_intro_1011/manifest.js?v=overdrive1011-boss-intro"></script>
+<script src="audio/chip_1011/manifest.js?v=overdrive1011-menu-r1"></script>
 <script>
   // every module is loaded with the build stamp, so a browser never runs a stale copy after an edit
   (function () {
-    var V = 'overdrive1009-museum', files = ['art', 'core', 'stealth', 'tank', 'structures', 'boss_warrior', 'level2_map', 'level2_data', 'campaign', 'boss_machinists', 'retina', 'pilot', 'level5_data', 'museum_place', 'museum', 'boss_exhibit', 'main'];
+    var V = 'overdrive1012-retina-r1', files = ['art', 'core', 'audio_1011', 'stealth', 'tank', 'structures', 'boss_warrior', 'level2_map', 'level2_data', 'campaign', 'boss_machinists', 'retina', 'pilot', 'level5_data', 'museum_place', 'museum', 'boss_exhibit', 'frontend_1011', 'original_options_1011', 'fullscreen_1011', 'boss_intro_1011', 'main'];
     files.forEach(function (f) { document.write('<script src="js/' + f + '.js?v=' + V + '"><\/script>'); });
   }());
 </script>
+<script src="../../assets/general_achievements_1011.js"></script>
 </body>
 </html>

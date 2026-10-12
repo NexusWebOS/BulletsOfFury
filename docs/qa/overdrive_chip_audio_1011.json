@@ -1,0 +1,927 @@
+{
+  "date": "2026-10-11",
+  "scope": "Standalone Overdrive approved ColeForge chip sound pass",
+  "approval": {
+    "bank": "BOF_Chip_Library_1011",
+    "copiedVerbatimCues": 81,
+    "excludedUnapprovedCues": 43,
+    "groundCues": 18,
+    "scoreBulletCues": 4,
+    "firewallPitchPreservingVariantsSeconds": [
+      1,
+      2,
+      4,
+      8
+    ],
+    "externalLibraryModified": false,
+    "baseGameAudioModified": false
+  },
+  "syntax": "assets/game.js and every standalone expansion JS passed node --check",
+  "nativeChromium": {
+    "passed": 43,
+    "failed": 0,
+    "checks": [
+      {
+        "name": "81 approved shipping MP3s match their source hashes",
+        "passed": true
+      },
+      {
+        "name": "43 unapproved sounds and all genre banks remain excluded",
+        "passed": true
+      },
+      {
+        "name": "all four score cues and every ground cue are imported",
+        "passed": true
+      },
+      {
+        "name": "boot waits for a real input before unlocking sound",
+        "passed": true
+      },
+      {
+        "name": "pilot/mission selection, equipment confirmation and launch use their chip cues",
+        "passed": true
+      },
+      {
+        "name": "all 81 approved sounds decode and advance in real Chromium",
+        "passed": true
+      },
+      {
+        "name": "registered loop flags and voice gains reach the actual media elements",
+        "passed": true
+      },
+      {
+        "name": "tank idle has one decoded engine loop and no tread/servo loop",
+        "passed": true
+      },
+      {
+        "name": "sideways movement and independent aim own separate playing tread/servo loops",
+        "passed": true
+      },
+      {
+        "name": "boost release starts one chargeDash cue and speeds up the moving loops",
+        "passed": true
+      },
+      {
+        "name": "release stops tread/servo voices while the engine returns to idle",
+        "passed": true
+      },
+      {
+        "name": "a tank pushing into solid cover does not keep a travelling tread loop",
+        "passed": true
+      },
+      {
+        "name": "a real uncharged cannon release uses the tank cannon sample",
+        "passed": true
+      },
+      {
+        "name": "charged armor-piercing release uses railCannon and retains physical recoil",
+        "passed": true
+      },
+      {
+        "name": "actual homing launch and contact use distinct launch/impact samples",
+        "passed": true
+      },
+      {
+        "name": "enemy destruction has its approved enemyDie cue",
+        "passed": true
+      },
+      {
+        "name": "rammed concrete, buildings and crates have distinct demolition cues",
+        "passed": true
+      },
+      {
+        "name": "weapon, ammunition, extra-life and score pickups use their individual cues",
+        "passed": true
+      },
+      {
+        "name": "native detection starts spotted/alert cues and an owner-controlled base alarm",
+        "passed": true
+      },
+      {
+        "name": "the alarm stops when detection changes from ALERT to EVASION",
+        "passed": true
+      },
+      {
+        "name": "Start/pause releases every effect loop immediately",
+        "passed": true
+      },
+      {
+        "name": "resuming restarts current movement loops without duplicate voices",
+        "passed": true
+      },
+      {
+        "name": "fatal damage uses playerDeath and stops live vehicle loops",
+        "passed": true
+      },
+      {
+        "name": "losing focus suspends effects and releases all loops",
+        "passed": true
+      },
+      {
+        "name": "focus restores the live engine without changing combat state",
+        "passed": true
+      },
+      {
+        "name": "The Warrior bullet volleys use quadFire",
+        "passed": true
+      },
+      {
+        "name": "The Warrior visor volley uses the approved heavy enemy laser",
+        "passed": true
+      },
+      {
+        "name": "The Warrior missile salvo uses missileLaunch",
+        "passed": true
+      },
+      {
+        "name": "boss destruction uses expBoss while the supplied Warrior music retains its owner",
+        "passed": true
+      },
+      {
+        "name": "Wren Bastion has a static loop and a heavy shield-impact cue",
+        "passed": true
+      },
+      {
+        "name": "breaking the Bastion module plays shieldBreak and stops its own static",
+        "passed": true
+      },
+      {
+        "name": "Museum foot movement alternates actual footstep A/B cues without a tank engine",
+        "passed": true
+      },
+      {
+        "name": "infantry cover and rifle fire use their ground cues",
+        "passed": true
+      },
+      {
+        "name": "empty magazine reports error and completed reload reports ammunition",
+        "passed": true
+      },
+      {
+        "name": "firewall hook uses a pitch-preserved stretched span at an audible media rate",
+        "passed": true
+      },
+      {
+        "name": "firewall duration finishes naturally and releases its owner",
+        "passed": true
+      },
+      {
+        "name": "firewall audio stops immediately when its bounds leave the screen",
+        "passed": true
+      },
+      {
+        "name": "firewall impact/death cancels a sustained voice",
+        "passed": true
+      },
+      {
+        "name": "pausing also cancels the firewall owner voice",
+        "passed": true
+      },
+      {
+        "name": "rapid impacts reuse at most four voices instead of stacking new media elements",
+        "passed": true
+      },
+      {
+        "name": "sound runtime reports no missing-file, decode or playback errors",
+        "passed": true
+      },
+      {
+        "name": "the portable file:// expansion actually plays its chip MP3s",
+        "passed": true
+      },
+      {
+        "name": "native pages have zero page, console and asset errors",
+        "passed": true
+      }
+    ],
+    "errors": [],
+    "runtimeAudioErrors": [],
+    "actualPlayedMedia": [
+      {
+        "key": "error",
+        "duration": 0.454376,
+        "time": 0.005818,
+        "loop": false,
+        "volume": 0.30400000000000005
+      },
+      {
+        "key": "enemyDie",
+        "duration": 0.286667,
+        "time": 0.005818,
+        "loop": false,
+        "volume": 0.384
+      },
+      {
+        "key": "alert",
+        "duration": 0.973016,
+        "time": 0.005821,
+        "loop": false,
+        "volume": 0.384
+      },
+      {
+        "key": "shieldBreak",
+        "duration": 0.42,
+        "time": 0.005829,
+        "loop": false,
+        "volume": 0.24
+      },
+      {
+        "key": "bombDrop",
+        "duration": 1.399977,
+        "time": 0.005826,
+        "loop": false,
+        "volume": 0.30400000000000005
+      },
+      {
+        "key": "forgeWeld",
+        "duration": 1.054036,
+        "time": 0.005825,
+        "loop": false,
+        "volume": 0.336
+      },
+      {
+        "key": "forgeComplete",
+        "duration": 0.919637,
+        "time": 0.005826,
+        "loop": false,
+        "volume": 0.336
+      },
+      {
+        "key": "weaponFound",
+        "duration": 1.1,
+        "time": 0.005825,
+        "loop": false,
+        "volume": 0.336
+      },
+      {
+        "key": "loadoutSelect",
+        "duration": 0.09093,
+        "time": 0.011559,
+        "loop": false,
+        "volume": 0.336
+      },
+      {
+        "key": "loadoutEquip",
+        "duration": 0.224104,
+        "time": 0.011557,
+        "loop": false,
+        "volume": 0.336
+      },
+      {
+        "key": "loadoutLaunch",
+        "duration": 0.771111,
+        "time": 0.011564,
+        "loop": false,
+        "volume": 0.336
+      },
+      {
+        "key": "element_lightning_hit",
+        "duration": 0.158957,
+        "time": 0.011555,
+        "loop": false,
+        "volume": 0.24
+      },
+      {
+        "key": "geyserLightning",
+        "duration": 0.603333,
+        "time": 0.01155,
+        "loop": false,
+        "volume": 0.30400000000000005
+      },
+      {
+        "key": "scoreBullet100",
+        "duration": 0.766667,
+        "time": 0.011552,
+        "loop": false,
+        "volume": 0.36000000000000004
+      },
+      {
+        "key": "scoreBullet250",
+        "duration": 0.8,
+        "time": 0.008688,
+        "loop": false,
+        "volume": 0.36000000000000004
+      },
+      {
+        "key": "scoreBullet500",
+        "duration": 0.883333,
+        "time": 0.008688,
+        "loop": false,
+        "volume": 0.36000000000000004
+      },
+      {
+        "key": "scoreBullet1000",
+        "duration": 1.05,
+        "time": 0.017703,
+        "loop": false,
+        "volume": 0.36000000000000004
+      },
+      {
+        "key": "stylishDodge",
+        "duration": 1,
+        "time": 0.017703,
+        "loop": false,
+        "volume": 0.36000000000000004
+      },
+      {
+        "key": "furiousCoin",
+        "duration": 1,
+        "time": 0.017703,
+        "loop": false,
+        "volume": 0.36000000000000004
+      },
+      {
+        "key": "achievement",
+        "duration": 1.086395,
+        "time": 0.017702,
+        "loop": false,
+        "volume": 0.36000000000000004
+      },
+      {
+        "key": "timedBombBeep",
+        "duration": 0.160204,
+        "time": 0.017701,
+        "loop": false,
+        "volume": 0.30400000000000005
+      },
+      {
+        "key": "timedBombBlast",
+        "duration": 1.636667,
+        "time": 0.017701,
+        "loop": false,
+        "volume": 0.30400000000000005
+      },
+      {
+        "key": "chargeDash",
+        "duration": 0.638889,
+        "time": 0.015805,
+        "loop": false,
+        "volume": 0.336
+      },
+      {
+        "key": "enemyLaser",
+        "duration": 0.225556,
+        "time": 0.015804,
+        "loop": false,
+        "volume": 0.30400000000000005
+      },
+      {
+        "key": "missileLaunch",
+        "duration": 0.438458,
+        "time": 0.011834,
+        "loop": false,
+        "volume": 0.4
+      },
+      {
+        "key": "nuclearLaunch",
+        "duration": 1.514671,
+        "time": 0.007871,
+        "loop": false,
+        "volume": 0.30400000000000005
+      },
+      {
+        "key": "bossCannon",
+        "duration": 0.255102,
+        "time": 0.007868,
+        "loop": false,
+        "volume": 0.41600000000000004
+      },
+      {
+        "key": "railCannon",
+        "duration": 0.291519,
+        "time": 0.00787,
+        "loop": false,
+        "volume": 0.496
+      },
+      {
+        "key": "impactMetal",
+        "duration": 0.20322,
+        "time": 0.007871,
+        "loop": false,
+        "volume": 0.24
+      },
+      {
+        "key": "firewallLaunch",
+        "duration": 0.67,
+        "time": 0.007869,
+        "loop": false,
+        "volume": 0.4
+      },
+      {
+        "key": "missileHit",
+        "duration": 0.386667,
+        "time": 0.007868,
+        "loop": false,
+        "volume": 0.4
+      },
+      {
+        "key": "bombDropLegacy",
+        "duration": 0.986667,
+        "time": 0.006824,
+        "loop": false,
+        "volume": 0.30400000000000005
+      },
+      {
+        "key": "extraLife",
+        "duration": 1.140431,
+        "time": 0.018014,
+        "loop": false,
+        "volume": 0.30400000000000005
+      },
+      {
+        "key": "playerDeath",
+        "duration": 1.153333,
+        "time": 0.018014,
+        "loop": false,
+        "volume": 0.52
+      },
+      {
+        "key": "decker_shell",
+        "duration": 0.17483,
+        "time": 0.016774,
+        "loop": false,
+        "volume": 0.30400000000000005
+      },
+      {
+        "key": "enemyHeavyLaser",
+        "duration": 0.458186,
+        "time": 0.016778,
+        "loop": false,
+        "volume": 0.34400000000000003
+      },
+      {
+        "key": "quadFire",
+        "duration": 0.22551,
+        "time": 0.016772,
+        "loop": false,
+        "volume": 0.336
+      },
+      {
+        "key": "furnaceLaserBurst",
+        "duration": 0.525601,
+        "time": 0.016774,
+        "loop": false,
+        "volume": 0.30400000000000005
+      },
+      {
+        "key": "hammerEradBlast",
+        "duration": 0.836984,
+        "time": 0.01677,
+        "loop": false,
+        "volume": 0.30400000000000005
+      },
+      {
+        "key": "shieldHitLight",
+        "duration": 0.123333,
+        "time": 0.016771,
+        "loop": false,
+        "volume": 0.24
+      },
+      {
+        "key": "laserBeamHit",
+        "duration": 0.125578,
+        "time": 0.007963,
+        "loop": false,
+        "volume": 0.24
+      },
+      {
+        "key": "shieldImpact",
+        "duration": 0.139025,
+        "time": 0.007963,
+        "loop": false,
+        "volume": 0.24
+      },
+      {
+        "key": "shieldImpactHeavy",
+        "duration": 0.203923,
+        "time": 0.007961,
+        "loop": false,
+        "volume": 0.24
+      },
+      {
+        "key": "shieldDeflect",
+        "duration": 0.125669,
+        "time": 0.007963,
+        "loop": false,
+        "volume": 0.24
+      },
+      {
+        "key": "blocked",
+        "duration": 0.254422,
+        "time": 0.007254,
+        "loop": false,
+        "volume": 0.30400000000000005
+      },
+      {
+        "key": "slice",
+        "duration": 0.35619,
+        "time": 0.007254,
+        "loop": false,
+        "volume": 0.30400000000000005
+      },
+      {
+        "key": "douse",
+        "duration": 0.553333,
+        "time": 0.007253,
+        "loop": false,
+        "volume": 0.30400000000000005
+      },
+      {
+        "key": "freeze",
+        "duration": 1.148821,
+        "time": 0.007248,
+        "loop": false,
+        "volume": 0.30400000000000005
+      },
+      {
+        "key": "lockon",
+        "duration": 0.191927,
+        "time": 0.015457,
+        "loop": false,
+        "volume": 0.30400000000000005
+      },
+      {
+        "key": "expBoss",
+        "duration": 2.286667,
+        "time": 0.015458,
+        "loop": false,
+        "volume": 0.5599999999999999
+      },
+      {
+        "key": "expIce",
+        "duration": 1.5,
+        "time": 0.015455,
+        "loop": false,
+        "volume": 0.30400000000000005
+      },
+      {
+        "key": "enemyLightningChaingun",
+        "duration": 0.541927,
+        "time": 0.015457,
+        "loop": false,
+        "volume": 0.30400000000000005
+      },
+      {
+        "key": "gravityShoot",
+        "duration": 0.192358,
+        "time": 0.015459,
+        "loop": false,
+        "volume": 0.30400000000000005
+      },
+      {
+        "key": "gravitySnap",
+        "duration": 0.139637,
+        "time": 0.015459,
+        "loop": false,
+        "volume": 0.30400000000000005
+      },
+      {
+        "key": "gravityLock",
+        "duration": 0.236213,
+        "time": 0.01161,
+        "loop": false,
+        "volume": 0.30400000000000005
+      },
+      {
+        "key": "gravityScatter",
+        "duration": 0.192132,
+        "time": 0.01161,
+        "loop": false,
+        "volume": 0.30400000000000005
+      },
+      {
+        "key": "gravityChargeBand",
+        "duration": 1.166735,
+        "time": 0.009379,
+        "loop": false,
+        "volume": 0.30400000000000005
+      },
+      {
+        "key": "shadowCharge",
+        "duration": 1.320408,
+        "time": 0.006465,
+        "loop": false,
+        "volume": 0.30400000000000005
+      },
+      {
+        "key": "shadowRelease",
+        "duration": 0.67,
+        "time": 0.006463,
+        "loop": false,
+        "volume": 0.30400000000000005
+      },
+      {
+        "key": "laserMistUnlock",
+        "duration": 1.268345,
+        "time": 0.006456,
+        "loop": false,
+        "volume": 0.30400000000000005
+      },
+      {
+        "key": "furyPartArrival",
+        "duration": 0.174762,
+        "time": 0.006461,
+        "loop": false,
+        "volume": 0.30400000000000005
+      },
+      {
+        "key": "bossShieldTeleport",
+        "duration": 1.1,
+        "time": 0.006459,
+        "loop": false,
+        "volume": 0.24
+      },
+      {
+        "key": "bossShieldStatic",
+        "duration": 1.066667,
+        "time": 0.006457,
+        "loop": true,
+        "volume": 0.144
+      },
+      {
+        "key": "gd_tankEngineLoop",
+        "duration": 2.066667,
+        "time": 0.006474,
+        "loop": true,
+        "volume": 0.17600000000000002
+      },
+      {
+        "key": "gd_tankTreadLoop",
+        "duration": 2.041338,
+        "time": 0.017821,
+        "loop": true,
+        "volume": 0.16000000000000003
+      },
+      {
+        "key": "gd_turretTraverse",
+        "duration": 1.066667,
+        "time": 0.01782,
+        "loop": true,
+        "volume": 0.136
+      },
+      {
+        "key": "gd_tankCannon",
+        "duration": 0.290181,
+        "time": 0.01161,
+        "loop": false,
+        "volume": 0.496
+      },
+      {
+        "key": "gd_shellImpact",
+        "duration": 0.603333,
+        "time": 0.01161,
+        "loop": false,
+        "volume": 0.4
+      },
+      {
+        "key": "gd_footstepA",
+        "duration": 0.074921,
+        "time": 0.01161,
+        "loop": false,
+        "volume": 0.192
+      },
+      {
+        "key": "gd_footstepB",
+        "duration": 0.072653,
+        "time": 0.01161,
+        "loop": false,
+        "volume": 0.192
+      },
+      {
+        "key": "gd_soldierRifle",
+        "duration": 0.108367,
+        "time": 0.01161,
+        "loop": false,
+        "volume": 0.30400000000000005
+      },
+      {
+        "key": "gd_soldierDown",
+        "duration": 1.133333,
+        "time": 0.01161,
+        "loop": false,
+        "volume": 0.336
+      },
+      {
+        "key": "gd_spotted",
+        "duration": 0.412268,
+        "time": 0.007726,
+        "loop": false,
+        "volume": 0.4
+      },
+      {
+        "key": "gd_alarmLoop",
+        "duration": 1.7,
+        "time": 0.007722,
+        "loop": true,
+        "volume": 0.2
+      },
+      {
+        "key": "gd_coverEnter",
+        "duration": 0.103333,
+        "time": 0.007715,
+        "loop": false,
+        "volume": 0.30400000000000005
+      },
+      {
+        "key": "gd_doorOpen",
+        "duration": 0.42,
+        "time": 0.007717,
+        "loop": false,
+        "volume": 0.30400000000000005
+      },
+      {
+        "key": "gd_wallBreak",
+        "duration": 0.503333,
+        "time": 0.006842,
+        "loop": false,
+        "volume": 0.41600000000000004
+      },
+      {
+        "key": "gd_buildingCollapse",
+        "duration": 2.286667,
+        "time": 0.006842,
+        "loop": false,
+        "volume": 0.44000000000000006
+      },
+      {
+        "key": "gd_crateBreak",
+        "duration": 0.158277,
+        "time": 0.006843,
+        "loop": false,
+        "volume": 0.32000000000000006
+      },
+      {
+        "key": "gd_mineArm",
+        "duration": 0.1578,
+        "time": 0.006843,
+        "loop": false,
+        "volume": 0.30400000000000005
+      },
+      {
+        "key": "gd_ammoPickup",
+        "duration": 0.310068,
+        "time": 0.015453,
+        "loop": false,
+        "volume": 0.30400000000000005
+      }
+    ],
+    "fileSchemePlaybackPassed": true
+  },
+  "warriorRegression": {
+    "checks": [
+      {
+        "name": "all six rebuilt modules decode as even fixed 512x512 canvases",
+        "passed": true
+      },
+      {
+        "name": "hull damage and wreck share the intact mounting pivot and scale",
+        "passed": true
+      },
+      {
+        "name": "holding R produces over 1.9x measured travel with authored track dust",
+        "passed": true
+      },
+      {
+        "name": "releasing movement brakes the boosted tank promptly",
+        "passed": true
+      },
+      {
+        "name": "boost spends no energy at rest, exhausts, requires release and refills",
+        "passed": true
+      },
+      {
+        "name": "boosting sideways retains independent turret rotation and gun fire",
+        "passed": true
+      },
+      {
+        "name": "full-speed boost cannot tunnel through a four-pixel concrete wall",
+        "passed": true
+      },
+      {
+        "name": "Mode+C boosts while D-pad strafes and X fires north without cannon charge",
+        "passed": true
+      },
+      {
+        "name": "unmodified controller C still charges and releases the cannon",
+        "passed": true
+      },
+      {
+        "name": "window blur releases boost and movement safely",
+        "passed": true
+      },
+      {
+        "name": "actual Warrior entry starts Mike's decoded stereo boss track",
+        "passed": true
+      },
+      {
+        "name": "supplied track loops through its end during the active fight",
+        "passed": true
+      },
+      {
+        "name": "Warrior spans over 400 world pixels with a larger 286-pixel chassis",
+        "passed": true
+      },
+      {
+        "name": "1:1 duel camera shows both the new boss and player in the arena",
+        "passed": true
+      },
+      {
+        "name": "larger Warrior still launches physical twin-arm homing volleys",
+        "passed": true
+      },
+      {
+        "name": "real boost escapes a committed Warrior ram with collision and damage enabled",
+        "passed": true
+      },
+      {
+        "name": "rebuilt arm detaches with exact mounted art, angle, pivot and scale",
+        "passed": true
+      },
+      {
+        "name": "large arm rotates, falls and settles as an unfaded authored wreck",
+        "passed": true
+      },
+      {
+        "name": "Warrior defeat stops boss music and transitions to clear music/results",
+        "passed": true
+      },
+      {
+        "name": "mission restart restores a full tank boost meter",
+        "passed": true
+      },
+      {
+        "name": "Help still opens and retains the gameplay return path",
+        "passed": true
+      },
+      {
+        "name": "zero page, console and missing-asset errors",
+        "passed": true
+      }
+    ],
+    "passed": 22,
+    "failed": 0,
+    "errors": []
+  },
+  "baseSuite": {
+    "passedAssertions": 8687,
+    "failedAssertions": 5,
+    "failures": [
+      "all 10 supplied toxic-sewer unit types appeared in the run (saw: s7lamprey,s7barge,s7pipe,s7sampler,s7serpent,s7mine,s7canister,s7tank,s7skimmer)",
+      "Decker is labelled CLOAKING SYSTEM consistently on the select metadata and pilot card",
+      "Juggernaut displays WRECKING BALL on both surfaces",
+      "Stage 6 schedules all twelve supplied Heavy Turbulence airframes",
+      "Stage 7 schedules all eleven supplied toxic-sewer field units"
+    ],
+    "exitCode": 1,
+    "finalSummary": "FAILED \u2014 5 error(s)",
+    "harnessLoadsStandaloneExpansion": false
+  },
+  "previousBaseComparison": {
+    "record": "docs/qa/overdrive_warrior_1011.json",
+    "passedAssertions": 8683,
+    "failedAssertions": 9,
+    "recurringNames": [
+      "Decker is labelled CLOAKING SYSTEM consistently on the select metadata and pilot card",
+      "Juggernaut displays WRECKING BALL on both surfaces"
+    ],
+    "namesNotInPreviousRecord": [
+      "all 10 supplied toxic-sewer unit types appeared in the run (saw: s7lamprey,s7barge,s7pipe,s7sampler,s7serpent,s7mine,s7canister,s7tank,s7skimmer)",
+      "Stage 6 schedules all twelve supplied Heavy Turbulence airframes",
+      "Stage 7 schedules all eleven supplied toxic-sewer field units"
+    ],
+    "qualification": "The shared base build changed during this session. The sound pass edits standalone expansion files; no green base suite or base failure repair is claimed."
+  },
+  "screenshotsInspected": [
+    "tank_boost.png",
+    "concrete_demolition.png",
+    "warrior_sound_volley.png",
+    "museum_footsteps.png",
+    "death_spin.png"
+  ],
+  "evidenceDirectory": "_shots/chip_audio_1011/",
+  "limits": [
+    "Protected gameplay fixtures; no unassisted campaign clear claim.",
+    "Media decoding and playback verified; Mike owns mix approval.",
+    "Travelling firewall is absent from current ground gameplay. Its duration/owner hook is tested with a bounded owner fixture.",
+    "Approved effects for unimplemented Forge, elements, gravity, shadow, timed bombs and other abilities are registered for later integration.",
+    "Local changes are uncommitted and unpushed."
+  ],
+  "sourceSha256": {
+    "expansion/topdown/js/audio_1011.js": "9ab362b2d976b37b94e99645698031cb6bfc478338f9e8336cba2182925bc582",
+    "expansion/topdown/js/core.js": "d6f6e8b62c973ee7d1b0d87d132cd163c43822052ae23868ecb972c1e372c109",
+    "expansion/topdown/js/main.js": "98955e66eb69506dc397bd5c9ba38c04a9dd9525c9ddae133f5e3bf2d86f82cb",
+    "expansion/topdown/js/tank.js": "62b5ff63e1017f3535030e2aafa3ea23bb5387f309b53df04cc3962ebbc8abb8",
+    "expansion/topdown/js/campaign.js": "13bed88e49d4a4c547346bafc0034c726ca324a9fcd6e6fc5557dc97785f13ba",
+    "expansion/topdown/js/stealth.js": "8a761651bf80c131cb56123d3dbd73e111c286f51233a603a01b6560a2298f26",
+    "expansion/topdown/js/structures.js": "fae976b2cc6bbc23cb1a31612bc101c3234549d9fc690216abf4d1dfde1c4da2",
+    "expansion/topdown/js/retina.js": "478b0a4a05e397cecf8d04554fd2b701d2e6d0b4e61227da61a8623e65194a18",
+    "expansion/topdown/js/boss_warrior.js": "216aface0d69126e2d1e56e016d21638824cd0a42d0d1980580b2f0dc8afd16b",
+    "expansion/topdown/js/boss_machinists.js": "88c34487d144db73ba985214a48373d5c5498b7c6525ce4975d27254e1fb69a7",
+    "expansion/topdown/js/boss_exhibit.js": "64ac7bc31f093153fe9f7b7b003e970a5fb738d2421a4ae8dd69e41234af388f",
+    "expansion/topdown/js/museum.js": "a72dc3fb7e3ff97c639079868fd5f61d411266dbaed82d2d7bf13598c20f6024",
+    "expansion/topdown/index.html": "09c80c600aef4911b9fa290b45caff15fb874bfbbb942da4492b0f14a5df0c50",
+    "expansion/topdown/audio/chip_1011/manifest.json": "15b626c4c164baaecc3442b49c4f588a2cb675e52a1cd3b16a310e38769fb0a6",
+    "expansion/topdown/_research/build_chip_audio_1011.py": "43e38b54adddad47532585c7e76659a1838ead26bb3c660ce19cedb2bcf6892d",
+    "expansion/topdown/_research/probe_chip_audio_1011.py": "094b73fe282f7423b608330d99de9aacf25598df151cf186cdd593ee63dc8657"
+  }
+}

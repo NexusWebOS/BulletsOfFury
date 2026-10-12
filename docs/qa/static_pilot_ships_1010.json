@@ -1,0 +1,257 @@
+{
+  "date": "2026-10-10",
+  "request": "Correct Cole ship likeness; original static ship images permitted",
+  "active_keys": [
+    "ship_cole_so6",
+    "ship_cole_so2",
+    "ship_axel_so6",
+    "ship_axel_so2",
+    "ship_freezer_so6",
+    "ship_freezer_so2",
+    "ship_yuri_so6",
+    "ship_yuri_so2",
+    "ship_maverick_so6",
+    "ship_maverick_so2",
+    "ship_falva_so6",
+    "ship_falva_so2",
+    "ship_lizzie_so6",
+    "ship_lizzie_so2",
+    "ship_decker_so6",
+    "ship_decker_so2",
+    "ship_juggernaut_so6",
+    "ship_juggernaut_so2"
+  ],
+  "syntax": {
+    "files": [
+      "assets/game.js",
+      "assets/homecoming_1010.js",
+      "assets/hq_landing_1010.js",
+      "assets/survivor_1010.js"
+    ],
+    "exit_code": 0
+  },
+  "suite": {
+    "assertions": 8335,
+    "exit_code": 0,
+    "final_summary": "FALVA/LIZZIE BUILD OK, 0 ERRORS",
+    "summary_reached": true
+  },
+  "native": {
+    "passed": 27,
+    "failed": 0,
+    "errors": []
+  },
+  "camera": {
+    "passed": 32,
+    "failed": 0,
+    "errors": []
+  },
+  "preview": {
+    "passed": 14,
+    "failed": 0,
+    "errors": []
+  },
+  "pixel_proof": {
+    "name": "All eighteen active static views are pixel-identical to the original in-game ship images",
+    "passed": true,
+    "data": [
+      {
+        "pilot": "cole",
+        "view": "front",
+        "key": "ship_cole_so6",
+        "changed": 0
+      },
+      {
+        "pilot": "cole",
+        "view": "rear",
+        "key": "ship_cole_so2",
+        "changed": 0
+      },
+      {
+        "pilot": "axel",
+        "view": "front",
+        "key": "ship_axel_so6",
+        "changed": 0
+      },
+      {
+        "pilot": "axel",
+        "view": "rear",
+        "key": "ship_axel_so2",
+        "changed": 0
+      },
+      {
+        "pilot": "freezer",
+        "view": "front",
+        "key": "ship_freezer_so6",
+        "changed": 0
+      },
+      {
+        "pilot": "freezer",
+        "view": "rear",
+        "key": "ship_freezer_so2",
+        "changed": 0
+      },
+      {
+        "pilot": "yuri",
+        "view": "front",
+        "key": "ship_yuri_so6",
+        "changed": 0
+      },
+      {
+        "pilot": "yuri",
+        "view": "rear",
+        "key": "ship_yuri_so2",
+        "changed": 0
+      },
+      {
+        "pilot": "maverick",
+        "view": "front",
+        "key": "ship_maverick_so6",
+        "changed": 0
+      },
+      {
+        "pilot": "maverick",
+        "view": "rear",
+        "key": "ship_maverick_so2",
+        "changed": 0
+      },
+      {
+        "pilot": "falva",
+        "view": "front",
+        "key": "ship_falva_so6",
+        "changed": 0
+      },
+      {
+        "pilot": "falva",
+        "view": "rear",
+        "key": "ship_falva_so2",
+        "changed": 0
+      },
+      {
+        "pilot": "lizzie",
+        "view": "front",
+        "key": "ship_lizzie_so6",
+        "changed": 0
+      },
+      {
+        "pilot": "lizzie",
+        "view": "rear",
+        "key": "ship_lizzie_so2",
+        "changed": 0
+      },
+      {
+        "pilot": "decker",
+        "view": "front",
+        "key": "ship_decker_so6",
+        "changed": 0
+      },
+      {
+        "pilot": "decker",
+        "view": "rear",
+        "key": "ship_decker_so2",
+        "changed": 0
+      },
+      {
+        "pilot": "juggernaut",
+        "view": "front",
+        "key": "ship_juggernaut_so6",
+        "changed": 0
+      },
+      {
+        "pilot": "juggernaut",
+        "view": "rear",
+        "key": "ship_juggernaut_so2",
+        "changed": 0
+      }
+    ]
+  },
+  "landing_continuity": {
+    "name": "Approach and landing share one continuous static image, position and size",
+    "passed": true,
+    "data": [
+      {
+        "pilot": "cole",
+        "dx": 0,
+        "dy": 3.444029061938636e-09,
+        "widthDelta": 2.298463641636772e-09
+      },
+      {
+        "pilot": "axel",
+        "dx": 0,
+        "dy": 3.444029061938636e-09,
+        "widthDelta": 2.298463641636772e-09
+      },
+      {
+        "pilot": "freezer",
+        "dx": 0,
+        "dy": 3.444029061938636e-09,
+        "widthDelta": 2.298463641636772e-09
+      },
+      {
+        "pilot": "yuri",
+        "dx": 0,
+        "dy": 3.444029061938636e-09,
+        "widthDelta": 2.298463641636772e-09
+      },
+      {
+        "pilot": "maverick",
+        "dx": 0,
+        "dy": 3.444029061938636e-09,
+        "widthDelta": 2.298463641636772e-09
+      },
+      {
+        "pilot": "falva",
+        "dx": 0,
+        "dy": 3.444029061938636e-09,
+        "widthDelta": 2.298463641636772e-09
+      },
+      {
+        "pilot": "lizzie",
+        "dx": 0,
+        "dy": 3.444029061938636e-09,
+        "widthDelta": 2.298463641636772e-09
+      },
+      {
+        "pilot": "decker",
+        "dx": 0,
+        "dy": 3.444029061938636e-09,
+        "widthDelta": 2.298463641636772e-09
+      },
+      {
+        "pilot": "juggernaut",
+        "dx": 0,
+        "dy": 3.444029061938636e-09,
+        "widthDelta": 2.298463641636772e-09
+      }
+    ]
+  },
+  "recording": {
+    "path": "_shots/static_ships_1010/recording/homecoming.mp4",
+    "sha256": "cc696b9ca7b3817a7add9b5f90d8f11fa05b4eecb7c1eff9b29aebe327342f27",
+    "seconds": 43.61,
+    "audio": {
+      "tracks": 1,
+      "peak": 0.396881103515625
+    },
+    "stills": "_shots/static_ships_1010/recording/film_stills.jpg"
+  },
+  "archives": {
+    "generated_aircraft_cells": 432,
+    "preserved": true,
+    "live_dependency_lists_exclude_them": true
+  },
+  "source_integrity": {
+    "assets/game.js": {
+      "sha256": "5c500ab584b433a33f5b10b5630ba4dff7e5b2964e07f912983073ff0f6de6d6",
+      "crlf": 0
+    },
+    "_BUILD_SOURCE/test_fl.js": {
+      "sha256": "a9f67d2fa38452c2b90c3a49821e7ca225e125288bf55bf2f1aa525884a21191",
+      "crlf": 15874
+    }
+  },
+  "local_only": true,
+  "limitations": [
+    "Static aircraft have no new articulated gear/canopy animation; pilot/door/portal/camera/effects remain animated."
+  ]
+}

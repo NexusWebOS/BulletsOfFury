@@ -194,8 +194,8 @@ drawPlayer=function(){if(dr5Locked()){
 drawWorld=function(dt){const r=DR5_BASE.world.apply(this,arguments),b=boss,D=j3State(b)?.dr5,R=D?.radio;if(!R||!dr5Locked())return r;
  const alien=R.who==='DRACODIA',shown=R.text.slice(0,Math.floor(R.t*34));let face=R.face;
  const talking=alien&&shown.length<R.text.length,talk=talking?(Math.floor(R.t*7)%2?2:1):0;
- const jitter=alien?(face===5?Math.sin(R.t*67)*3:Math.sin(R.t*29)*.8):0;
+ const jitter=0; // Recording 58:54: the window stays anchored; the portrait still talks.
  dlgBox({who:R.who,portrait:alien?false:R.who.toLowerCase(),portraitKey:alien?'dr5_face_'+face+(talk?'_t'+talk:''):undefined,full:R.text,shown,forceShown:true,
- tint:alien?'#69f6bc':'#d9e8ff',fade:1,pw:VW*.94,ph:VH*.25,x:VW*.03+jitter,y:VH*.62,screenSpace:true});
+ tint:alien?'#ff354b':'#d9e8ff',fade:1,pw:VW*.94,ph:VH*.25,x:VW*.03+jitter,y:VH*.62,screenSpace:true});
  return r;
 };

@@ -150,7 +150,7 @@
         if (R.t >= 1.05) {
           const m = fwdFrom({ x: R.x, y: R.y }, R.turret, 142 * S);
           for (const s of [-0.2, 0, 0.2]) { const a = R.turret + s, [fx, fy] = M.fwd(a); G.eshots.push({ k: 'shell', x: m.x, y: m.y, vx: fx * 5.4, vy: fy * 5.4, a, dmg: 2, life: 130, r: 7, t: 0 }); }
-          R.recoil = 12; Cam.kick(5); A.play('cannon'); FX.flash(m.x, m.y, R.turret, 0.4); FX.smoke(m.x, m.y, 0.2, 0.8);
+          R.recoil = 12; Cam.kick(5); A.play('bossCannon'); FX.flash(m.x, m.y, R.turret, 0.4); FX.smoke(m.x, m.y, 0.2, 0.8);
           set('recover'); R.cool = 0.85;
         }
       } else if (R.state === 'rack') {
@@ -174,7 +174,7 @@
             const a = (i / n) * Math.PI * 2 + R.novaRot * 0.2, [fx, fy] = M.fwd(a);
             G.eshots.push({ k: 'sonic', x: R.x, y: R.y, vx: fx * 3.0, vy: fy * 3.0, a, dmg: 2, life: 170, r: 7, t: 0, over: true });
           }
-          R.novaRot += 5; FX.ring(R.x, R.y, 0.6); A.play('laser'); Cam.kick(3);
+          R.novaRot += 5; FX.ring(R.x, R.y, 0.6); A.play('enemyHeavyLaser'); Cam.kick(3);
           set('recover'); R.cool = 0.95;
         }
       } else if (R.state === 'wave') {
@@ -184,7 +184,7 @@
         if (R.t >= 1.2) {
           for (let x = AR.x0 - 40; x <= AR.x1 + 40; x += 30) if (Math.abs(x - R.waveRow.hole) > 34)
             G.eshots.push({ k: 'wave', x, y: R.waveRow.y, vx: 0, vy: 2.5, a: 0, dmg: 2, life: 200, r: 9, t: 0, over: true });
-          A.play('laser', 0.8); Cam.kick(4); R.waveRow = null; set('recover'); R.cool = 1.0;
+          A.play('enemyLaser', 0.8); Cam.kick(4); R.waveRow = null; set('recover'); R.cool = 1.0;
         }
       } else if (R.state === 'ram') {
         // green: still tracking / yellow: locked / red: coming. Then a straight charge that stalls on the wall.

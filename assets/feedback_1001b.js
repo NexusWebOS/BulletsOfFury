@@ -207,7 +207,7 @@ fr27Exit=function(b,dt){
   /* radio */
   if(E.beat===0&&t>=.1){E.beat=1;s7pSay(missionRadioWho('DECKER'),'SELF-DESTRUCT SEQUENCE IN THAT THING! GO!',1.7);s7WardenMechSound('scream');}
   if(E.beat===1&&t>=1.7){E.beat=2;s7pSay(missionRadioWho('COLE'),"IT'S GONNA BLOW! PUNCH IT!",1.1);}
-  if(E.beat===2&&t>=C.OPEN){E.beat=3;s7pSay(String(run.pilot||'').toUpperCase(),'WHAT IS THIS?! WHAT IS HAPPENING TO ME?!',2.1);}
+  if(E.beat===2&&t>=C.OPEN){E.beat=3;s7pSay(String(run.pilot||'').toUpperCase(),'NO!',2.1);}
   if(E.beat===3&&E.entry&&E.entry.gone&&t>=E.entry.goneAt+.7){E.beat=4;s7pSay(missionRadioWho('DECKER'),name+', NOOOOOOOOOOOOOOO!',2.4);}
   if(E.beat===4&&E.entry&&t>=E.entry.goneAt+3.2){E.beat=5;s7pSay(missionRadioWho('COLE'),'WHERE DID THEY GO? ARE THEY ALL RIGHT? CHECK THE RADAR, NOW!',3.0);}
   if(F.radio){F.radio.t+=dt;F.radio.typed+=dt*46;if(F.radio.t>F.radio.dur)F.radio=null;}
@@ -238,7 +238,7 @@ fr27Exit=function(b,dt){
     for(const p of powerups)if(!p.dead&&p.kind!=='forgecombo')p.dead=true;
     if(!P.gone){
       player.x=lerp(P.x0,E.portalX,e);player.y=lerp(P.y0,E.portalYNow,e);player._thrustPower=1;
-      P.scale=1-.9*clamp((u-.3)/.7,0,1);P.spin=u*u*TAU*1.6;E.zoom=1+.16*(u*(2-u));F.shipHidden=true;
+      P.scale=1-.9*clamp((u-.3)/.7,0,1);P.spin=0;E.zoom=1+.16*(u*(2-u));F.shipHidden=true;
       if(u>=1){P.gone=true;P.goneAt=t;E.closeT=t;E.whiteFlash=.6;
         s67Anchor(()=>{if(typeof efxBurst==='function')efxBurst('toxic',E.portalX,E.portalYNow,140);if(typeof spawnShockRing==='function')spawnShockRing(E.portalX,E.portalYNow,170,'fire');});
         (Audio.SFX.teleportIn||Audio.SFX.warpGate||function(){})();}

@@ -1,18 +1,27 @@
 /*
  * Bullets of Fury: Overdrive - top-down ground stages. The game: states, loop, HUD, mission flow.
- *   load -> title (stage select) -> brief -> play <-> pause -> clear / gameover
+ *   load -> startup -> title -> difficulty -> original pilot roster -> campaign
  * A fixed 60 Hz step drives everything; window.TDGAME exposes step(n) and the state for probes.
  */
 (function (root) {
   'use strict';
   const TD = root.TD, M = TD.M, W = TD.World, A = TD.Audio, FX = TD.FX, Cam = TD.Cam, I = TD.Input, S = TD.Stealth;
-  const VW = TD.VW, VH = TD.VH;
+  let VW = TD.VW, VH = TD.VH;
   const cv = document.getElementById('screen'), ctx = cv.getContext('2d');
   let SC = 2;
   function fit() {
-    const k = Math.max(1, Math.floor(Math.min(root.innerWidth / VW, (root.innerHeight - 4) / VH)));
-    SC = Math.max(2, k); cv.width = VW * SC; cv.height = VH * SC;
-    cv.style.width = VW * k + 'px'; cv.style.height = VH * k + 'px';
+    // A close 640x480 field fills the window proportionally. The cinematic
+    // zoom changes the camera only; boss entry never resizes the canvas.
+    const wide = TD.game?.mission === 2;
+    TD.VW = VW = wide ? 640 : 480; TD.VH = VH = wide ? 480 : 360;
+    const menu=TD.Frontend?.isMenu(TD.game?.state),view=TD.Frontend?.viewport(TD.game?.state),w=menu?view.w:VW,h=menu?view.h:VH;
+    document.body.classList.toggle('playing',TD.game?.state==='play');
+    // Use the available window continuously; rounding down used to halve
+    // the displayed tank/HUD when a taller view fell below the 2x threshold.
+    const k = Math.min(root.innerWidth / w, (root.innerHeight - 4) / h);
+    TD.Display = { w, h, scale: k };
+    SC = Math.max(2, Math.ceil(k)); cv.width = w * SC; cv.height = h * SC;
+    cv.style.width = w * k + 'px'; cv.style.height = h * k + 'px';
   }
   root.addEventListener('resize', fit); fit();
 
@@ -26,6 +35,10 @@
     'nxp_dense_3', 'nxp_clus_3', 'rzb_dust', 'rzb_muzzle', 'rzb_hull_0', 'rzb_turret', 'mfx_mg_2_4', 'mfx_mg_0_4', 'nlz_slug', 'logo',
     'nef_s1_fuel_barrel_intact', 'nef_s1_ammo_crate_intact', 'crate6_0', 'micon_mg_1', 'bmbar_frame_boss', 'bmbar_fill_red', 'bmbar_tab_boss'];
   const TITLE = 'IRON INFILTRATION';
+  WARM.push(...(TD.FRONT_WARM||[]));
+  WARM.push(...Object.keys(root.TD_WARRIOR_ART.assets));
+  WARM.push(...TD.BossIntro.warm);
+  WARM.push(...TD.Retina.warm);
   TD.pilot = 'cole';
   try { const s = localStorage.getItem('bof_td_pilot'); if (s && TD.PILOTS.includes(s)) TD.pilot = s; } catch (e) {}
 
@@ -35,22 +48,26 @@
     boss: null, msgs: [], score: 0, kills: 0, deaths: 0, lives: 3, cp: null, time: 0, extra: 0, reinfT: 0, sel: 0, paused: false,
     say(text, at) { this.msgs.push({ text, x: at ? at.x : this.player.x, y: at ? at.y - 40 : this.player.y - 40, t: 0 }); },
     playerDied() {
-      const p = this.player; p.dead = true; p.deadT = 0; this.deaths++;
+      const p = this.player; p.dead = true; p.deadT = 0; this.deaths++; A.stopLoops(); A.play('playerDeath');
       if (p.onfoot) { p.reload=0; p.reloadGun=null; p.action=null; A.play('hit'); return; }
-      p.deathStart=p.a;p.crashed=false;p.charge=0;p.retina=null;FX.boom(p.x,p.y,50,'gfx_impact_',6);A.play('hit');
+      p.deathStart=p.a;p.crashed=false;p.charge=0;p.retina=null;p.boosting=false;FX.boom(p.x,p.y,50,'gfx_impact_',6);A.play('hit');
     },
-    bossDown() { this.bossDeadT = 0; this.score += 30000; },
+    bossDown() { this.bossDeadT = 0; this.score += 30000; A.play('expBoss'); },
   };
 
   // Selectable missions skip any marked hidden (Level 3, shelved 1009); G.sel stays an index into TD.MISSIONS.
   function stepMission(from, d) { const n = TD.MISSIONS.length; let i = from; for (let k = 0; k < n; k++) { i = (i + d + n) % n; if (!TD.MISSIONS[i].hidden) return i; } return from; }
   TD.stepMission = stepMission;
   function start() {
+    TD.Frontend.ensureDifficulty();
+    A.reset();
     MISSION = TD.MISSIONS[G.sel] || TD.MISSIONS[0]; MAP = MISSION.map; DATA = MISSION.data;
     W.load(MAP.w, MAP.h, MAP.rects);
     S.reset(); S.alerts = 0;
     Object.assign(G, { units: [], shots: [], eshots: [], props: [], structures: [], pickups: [], wrecks: [], grenades: [], msgs: [], boss: null, bossDeadT: null,
-      score: 0, kills: 0, deaths: 0, lives: 3, time: 0, extra: 0, reinfT: 0, structuresBroken: 0, ally: null, footGrenades: [], burns: [], mission: MISSION.id });
+      score: 0, kills: 0, deaths: 0, lives: TD.DIFFICULTIES[TD.difficulty||'normal'].lives, time: 0, extra: 0, reinfT: 0, structuresBroken: 0, ally: null, footGrenades: [], burns: [], mission: MISSION.id,boostTime:0,cruiseTime:0,cruiseAim:null,cqcKills:0 });
+    G.bossIntro = null; G.introFireLatch = false; I.combatLatch.clear();
+    fit();
     FX.list = []; Cam.zoom = 1;
     G.player = (MISSION.mode === 'foot' ? TD.makeFootPlayer : TD.makePlayer)(DATA.start.x, DATA.start.y); G.player.a = DATA.start.a;
     G.player.aim = G.player.a;
@@ -64,8 +81,9 @@
     if (MISSION.setup) MISSION.setup(G, DATA);
     TD.Nav.build(); W.navDirty = false;
     Cam.minY = 0; Cam.maxY = 1e9; Cam.x = G.player.x - VW / 2; Cam.y = G.player.y - VH / 2; Cam.follow(G.player.x, G.player.y, 1);
+    TD.Achievements.unlock('deploy');
   }
-  function setState(s) { G.state = s; G.stateT = 0; }
+  function setState(s) { if (s !== 'play') A.stopEffects(); G.state = s; G.stateT = 0; fit(); }
 
   function respawn() {
     const p = G.player, cp = G.cp;
@@ -74,7 +92,7 @@
     if(p.onfoot){const fresh=TD.makeFootPlayer(cp.x,cp.y);if(MISSION.respawn)MISSION.respawn(G,p,fresh);Object.assign(p,fresh,{pilot:TD.pilot,inv:150,aim:Math.PI});G.eshots=[];return;}
     const keep = p.weapons.filter((w, i) => i !== p.wi || w.id === 'vulcan');    // Hard Corps: you lose the gun you were holding
     if (!keep.length) keep.push({ id: 'vulcan', lv: 1 });
-    Object.assign(p, { x: cp.x, y: cp.y, a: Math.PI, aim: Math.PI, vx: 0, vy: 0, manualAim: 0, hp: p.max, inv: 150, dead: false, recoil: 0, charge: 0, retina: null, weapons: keep, wi: 0, smoke: Math.max(p.smoke, 2) });
+    Object.assign(p, { x: cp.x, y: cp.y, a: Math.PI, aim: Math.PI, vx: 0, vy: 0, manualAim: 0, hp: p.max, inv: 150, dead: false, recoil: 0, charge: 0, retina: null, drive: 1, boosting: false, boostLocked: false,cruising:false,cruiseDir:null,lastDrive:null, weapons: keep, wi: 0, smoke: Math.max(p.smoke, 2) });
     if (G.boss && G.boss.alive()) { p.x = 400; p.y = 635; G.boss.cooldown = 1.4; G.boss.state = 'recover'; G.boss.t = 0; }
     G.eshots = [];
     if (S.phase === 'ALERT' || S.phase === 'EVASION') { S.phase = 'CAUTION'; S.timer = S.T.CAUTION; }
@@ -84,55 +102,43 @@
   // ------------------------------------------------------------------ step
   function step() {
     const dt = 1 / TD.HZ;
-    I.update(); G.t++; G.stateT += dt;
+    I.update(); G.t++; G.stateT += dt; if (G.state !== 'play') A.scene(G, dt);
+    if(TD.Frontend.step(G,dt))return;
     if(G.state==='padsetup'){if(!I.setup||I.setup.done&&I.tap('start')){I.setup=null;setState(G.setupReturn||'pilot');}return;}
-    if(I.tap('setup')&&G.state!=='load'){G.setupReturn=G.state;I.beginSetup();setState('padsetup');return;}
+    if(I.tap('setup')&&G.state!=='load'){TD.Frontend.returnTo=G.state==='play'?'pause':'title';TD.Frontend.setupReturn=TD.Frontend.returnTo;I.beginSetup();TD.Frontend.go('padsetup');return;}
     if (G.state === 'help') { if (I.tap('back') || I.tap('help') || I.tap('start')) setState(G.helpReturn || 'title'); return; }
-    if (I.tap('help') && G.state !== 'load') { G.helpReturn = G.state; setState('help'); return; }
+    if (I.tap('help') && G.state !== 'load') { TD.Frontend.returnTo=G.state==='play'?'pause':'title';TD.Frontend.go('help'); return; }
     if (G.state === 'load') {
       ART.warm(WARM);
-      if (ART.progress(WARM) >= 1 || G.stateT > 12) setState('pilot');
-      return;
-    }
-    if (G.state === 'pilot') {
-      const old=TD.PILOTS.indexOf(TD.pilot),row=Math.floor(old/6),col=old%6;
-      let next=old;
-      if(I.tap('left'))next=row*6+(col+5)%6;
-      if(I.tap('right'))next=row*6+(col+1)%6;
-      if(I.tap('up')||I.tap('down'))next=(1-row)*6+col;
-      if(I.tap('click')){const p=I.pointer;const hit=TD.pilotRects.findIndex(r=>p.x>=r[0]&&p.x<r[0]+r[2]&&p.y>=r[1]&&p.y<r[1]+r[3]);if(hit>=0)next=hit;}
-      if(next!==old){TD.pilot=TD.PILOTS[next];A.play('blip');try{localStorage.setItem('bof_td_pilot',TD.pilot);}catch(e){}}
-      if(!I.down('click')&&I.confirm()){setState('title');A.play('intro');}
-      return;
-    }
-    if (G.state === 'title') {
-      if(I.tap('back')){setState('pilot');return;}
-      if (TD.MISSIONS[G.sel].hidden) G.sel = stepMission(G.sel, 1);
-      if (I.tap('left') || I.tap('up')) { G.sel = stepMission(G.sel, -1); A.play('blip'); }
-      if (I.tap('right') || I.tap('down')) { G.sel = stepMission(G.sel, 1); A.play('blip'); }
-      if (I.confirm()) {
-        start(); setState('brief'); A.play('intro'); A.playMusic('level2');
-      }
-      if (G.lockedT > 0) G.lockedT -= dt;
+      if (ART.progress(WARM) >= 1 || G.stateT > 12) TD.Frontend.boot();
       return;
     }
     if (G.state === 'brief') {
       ART.warm(['rzb_hull_' + 0, 'rzb_machinegun', 'rzb_missile_pod', 'rzb_rotor', 'rzb_tread', 'rzb_razor_missile', 'rzb_sonic_bullet', 'rzb_sonic_charge', 'rzb_wreck']);
       Cam.follow(G.player.x, G.player.y - 60, 0.05);
-      if(I.tap('back')){setState('pilot');return;}
-      if(MISSION.id===4&&(I.tap('up')||I.tap('down'))){TD.companion=TD.COMPANIONS[(TD.COMPANIONS.indexOf(TD.companion)+1)%3];G.ally.pilot=TD.companion;A.play('blip');}
-      if (G.stateT > 0.6 && I.confirm()) setState('play');
+      if(I.tap('back')){TD.Frontend.go('pilot');return;}
+      if(MISSION.id===4&&(I.tap('up')||I.tap('down'))){TD.companion=TD.COMPANIONS[(TD.COMPANIONS.indexOf(TD.companion)+1)%3];G.ally.pilot=TD.companion;A.play('loadoutSelect');}
+      if (G.stateT > 0.6 && I.confirm()) { setState('play'); A.play('loadoutLaunch'); }
       return;
     }
-    if (G.state === 'gameover') { if (G.stateT > 1.5 && I.confirm()) setState('title'); return; }
-    if (G.state === 'clear') { if (G.stateT > 2.5 && I.confirm()) {const nx=stepMission(G.sel,1);if(nx>G.sel){G.sel=nx;start();setState('brief');A.playMusic('level2');}else setState('title');} return; }
+    if (G.state === 'gameover') { if (G.stateT > 1.5 && I.confirm()){TD.Frontend.returnTo='title';TD.Frontend.go('title');} return; }
+    if (G.state === 'clear') { if (G.stateT > 2.5 && I.confirm()) {const nx=stepMission(G.sel,1);if(nx>G.sel){G.sel=nx;TD.Frontend.launch();}else{TD.Frontend.returnTo='title';TD.Frontend.go('title');}} return; }
     if (G.state === 'pause') { if (I.tap('start')) setState('play'); return; }
-    if (I.tap('start')) { setState('pause'); return; }
+    if (TD.BossIntro.active(G) && G.bossIntro.phase === 'card' && !I.down('click') && I.confirm()) {
+      TD.BossIntro.continue(G); TD.BossIntro.update(G, dt); return;
+    }
+    if (I.tap('start')) {
+      if (TD.BossIntro.active(G) && TD.BossIntro.continue(G)) { /* dossier Continue */ }
+      else { TD.Frontend.returnTo='pause';TD.Frontend.go('pause'); return; }
+    }
+
+    if (TD.BossIntro.active(G)) { TD.BossIntro.update(G, dt); return; }
 
     // ---- play
     G.time += dt;
     if (MISSION.pre) MISSION.pre(G, dt);
     const p = G.player;
+    G.introFireLatch = I.combatLatch.size > 0;
     if (!p.dead) TD.playerTick(p, G, dt);
     else {
       p.deadT+=dt;
@@ -141,8 +147,9 @@
         else if(!p.crashed&&G.t%8===0){FX.boom(p.x,p.y,45,'nex_fireball_',4);FX.smoke(p.x,p.y,.15,.6);}}
       if(p.deadT>1.85)respawn();
     }
-    for (const u of G.units) TD.unitTick(u, G, dt);
-    if (G.boss) G.boss.tick(dt);
+    const enemyDt=dt*TD.DIFFICULTIES[TD.difficulty||'normal'].tempo;
+    for (const u of G.units) TD.unitTick(u, G, enemyDt);
+    if (G.boss) G.boss.tick(G.boss.state==='enter'?dt:enemyDt);
     S.tick(dt, G.units, p);
     TD.shotTick(G);
     TD.pickupTick(G, dt);
@@ -181,7 +188,10 @@
     // the boss
     if (!G.boss && p.y < DATA.bossLine && !p.dead) {
       G.boss = MISSION.boss(G, DATA.boss.x, DATA.boss.y); Cam.maxY = MISSION.id===3||MISSION.pushScroll?MAP.h:795; A.stopMusic(); A.play('warn');
-      G.say('WARNING - '+G.boss.name, { x: 400, y: DATA.bossLine-70 }); G.ghost = S.alerts === 0;
+      fit();
+      if (MISSION.id === 2) TD.BossIntro.start(G, G.boss.introProfile());
+      if (MISSION.id !== 2) G.say('WARNING - '+G.boss.name, { x: 400, y: DATA.bossLine-70 });
+      G.ghost = S.alerts === 0;
     }
     if (G.boss) { p.y = Math.min(p.y, DATA.bossLine + 10); }
     if (G.bossDeadT != null && (G.bossDeadT += dt) > 3) { setState('clear'); A.playMusic('clear'); finishScore(); }
@@ -189,9 +199,10 @@
     for (const m of G.msgs) m.t += dt; G.msgs = G.msgs.filter(m => m.t < 1.6);
     const [fx, fy] = M.fwd(p.aim);
     Cam.zoom = 1;
-    Cam.follow(p.x + fx * 24 + p.vx * 12, p.y + fy * 24 + p.vy * 12, 0.12);
+    if (MISSION.id === 2 && G.boss && !G.boss.wrecked) G.boss.followCamera(p);
+    else Cam.follow(p.x + fx * 24 + p.vx * 12, p.y + fy * 24 + p.vy * 12, 0.12);
     if (MISSION.cam) MISSION.cam(G);
-    Cam.shake *= 0.86;
+    Cam.shake *= 0.86; A.scene(G, dt);TD.Achievements.tick(G,dt);
   }
   function finishScore() {
     const R = G.results = { time: G.time, kills: G.kills, alerts: S.alerts, deaths: G.deaths, ghost: G.ghost };
@@ -199,8 +210,9 @@
     R.ghostBonus = G.ghost ? 25000 : 0;
     R.noDeath = G.deaths === 0 ? 10000 : 0;
     G.score += R.timeBonus + R.ghostBonus + R.noDeath;
-    if (MISSION.score) MISSION.score(G, R);
+    if (MISSION.score) MISSION.score(G, R); if (R.ghost || R.noDeath) A.play('achievement');
     R.rank = G.deaths >= 5 ? 'l' : G.score >= 90000 ? 's' : G.score >= 70000 ? 'a' : G.score >= 52000 ? 'b' : G.score >= 38000 ? 'c' : 'd';
+    TD.Frontend.saveClear(G);
   }
 
   // ------------------------------------------------------------------ draw
@@ -277,11 +289,15 @@
     text('ARMOR', 12, 15, 9, '#9fe0ff');
     for (let i = 0; i < p.max; i++) { ctx.fillStyle = i < p.hp ? (p.hp <= 3 ? (Math.floor(t * 6) % 2 ? '#ff4030' : '#ffb030') : '#3fe07a') : '#22302a'; ctx.fillRect(12 + i * 10, 22, 8, 7); }
     text('x' + Math.max(0, G.lives), 12, 40, 10, '#fff'); text('SMOKE ' + p.smoke, 50, 40, 9, '#c8d2c8');
+    ctx.fillStyle = 'rgba(0,0,0,0.65)'; ctx.fillRect(6, 51, 132, 17);
+    text(p.boosting ? 'OVERDRIVE' : p.drive < 0.99 ? 'RECHARGING' : 'DRIVE READY', 12, 59, 7, p.boosting ? '#ffd060' : '#9fe0ff');
+    ctx.fillStyle = '#26352e'; ctx.fillRect(88, 56, 44, 6);
+    ctx.fillStyle = p.boosting ? '#ffd060' : '#3fe07a'; ctx.fillRect(88, 56, 44 * p.drive, 6);
     // weapons
     const w = p.weapons[p.wi];
     ART.draw(ctx, TD.iconFor(w.id, w.lv), 162, 28, { s: 0.42 });
     text(TD.WPN[w.id].name + ' LV' + w.lv, 186, 20, 10, '#ffd060');
-    text('RETINA '+(p.retina?.locked?'LOCK':I.down('retina')?'SCAN':'READY')+'  M'+p.missiles,186,36,8,p.retina?.locked?'#7dffa0':'#9fe0ff');
+    text('RETINA '+(p.retina?.locked?'LOCK '+Math.ceil(p.retina.lockT):p.retina?.phase==='seek'?'SEEK':'READY')+'  M'+p.missiles,186,36,8,p.retina?.locked?'#7dffa0':'#9fe0ff');
     if (p.charge > 0) { ctx.fillStyle = '#000'; ctx.fillRect(186, 44, 62, 5); ctx.fillStyle = p.charge >= 40 ? '#b6ff3a' : '#6c8f30'; ctx.fillRect(187, 45, 60 * p.charge / 72, 3); }
     // phase
     if (G.boss && !G.boss.dead) drawBossBar();
@@ -290,7 +306,7 @@
       if (S.phase !== 'ALERT' || Math.floor(t * 4) % 2) text(S.phase, VW / 2, 16, 14, col, 'center');
       text(S.timer.toFixed(2), VW / 2, 32, 11, col, 'center');
     }
-    S.drawRadar(ctx, p, G.units, t, VW - 104, 6, 98);
+    if (G.mission !== 2 || !G.boss) S.drawRadar(ctx, p, G.units, t, VW - 104, 6, 98);
     text(String(G.score).padStart(7, '0'), VW - 8, VH - 12, 12, '#fff', 'right');
     if (p.hidden && !p.dead) text('HIDDEN', 12, VH - 12, 10, '#7dffa0');
     if(G.ally){ART.draw(ctx,'pav_'+G.ally.pilot,25,VH-45,{s:.16});text(G.ally.pilot.toUpperCase(),52,VH-52,8,'#7deacc');text(G.ally.dead?'REGROUPING':G.ally.hp+' / '+G.ally.max,52,VH-37,8,'#fff');}
@@ -302,37 +318,12 @@
     if (fill) ctx.drawImage(fill.im, fill.sx, fill.sy, fill.sw * f, fill.sh, x + 61 * sc, y + 10 * sc, 578 * sc * f, 13 * sc);
     text(B.name || 'THE WARRIOR', x + w / 2, y - 7, 9, '#ffcc66', 'center');
   }
-  function drawTitle() {
-    const t = G.t / 60;
-    ctx.fillStyle = '#05080a'; ctx.fillRect(0, 0, VW, VH);
-    const pl = ART.get(MAP.key);
-    if (pl) { const sy = (t * 20) % (MAP.h - VH * 2); ctx.globalAlpha = 0.45; ctx.drawImage(pl.im, pl.sx + 100, pl.sy + MAP.h - VH * 2 - sy, 600, VH * 1.25, -60, 0, VW + 120, VH * 1.5); ctx.globalAlpha = 1; }
-    ART.draw(ctx, 'logo', VW / 2, 60, { s: 0.15 });
-    ART.draw(ctx, 'overdrive', VW / 2, 112, { s: 0.09 });
-    text('GROUND OPERATIONS', VW / 2, 146, 13, '#ffd060', 'center');
-    const cards = [['LEVEL 2', TITLE, 'FURY TANK', 'tank'], ['LEVEL 3', 'BOOTS ON THE GROUND', 'RUN AND GUN', 'foot'], ['LEVEL 4', 'MACHINISTS', 'REBEL TANK SQUAD', 'squad'], ['LEVEL 5', 'MUSEUM OF VIOLENCE', 'MERCS X STEALTH', 'museum']];
-    // cards[i] belongs to TD.MISSIONS[i]; hidden missions keep their card out of the row
-    const shown = cards.map((c, i) => [c, i]).filter(([, i]) => TD.MISSIONS[i] && !TD.MISSIONS[i].hidden);
-    const pitch = VW / shown.length, half = Math.min(72, pitch / 2 - 6);
-    shown.forEach(([c, i], slot) => {
-      const cx = pitch / 2 + slot * pitch, cy = 236, on = G.sel === i;
-      ctx.fillStyle = on ? 'rgba(40,60,30,0.85)' : 'rgba(10,14,12,0.8)'; ctx.fillRect(cx-half,cy-66,half*2,132);
-      ctx.strokeStyle = on ? (Math.floor(t*4)%2?'#ffe060':'#ff9a30'):'#3a463c';ctx.lineWidth=2;ctx.strokeRect(cx-half,cy-66,half*2,132);
-      text(c[0],cx,cy-54,11,'#9fe0ff','center');text(c[1],cx,cy-40,8,'#fff','center');
-      if(c[3]==='tank')TD.drawPlayerTank(ctx,{pilot:TD.pilot,x:cx,y:cy+4,a:Math.PI,hp:1,max:1});
-      if(c[3]==='museum'){ART.draw(ctx,'mx_statue',cx,cy+6,{s:.42});TD.drawFoot(ctx,{pilot:TD.pilot,x:cx+18,y:cy+16,a:Math.PI,aim:Math.PI,moving:false,footTime:t,weapons:[{id:'minigun'}],wi:0,stance:'stand'});}
-      if(c[3]==='foot')TD.drawFoot(ctx,{pilot:TD.pilot,x:cx,y:cy+4,a:Math.PI,aim:Math.PI,moving:true,footTime:t,weapons:[{id:'desert_eagle'}],wi:0,stance:'stand'});
-      if(c[3]==='squad')TD.drawModTank(ctx,{x:cx,y:cy+10,a:Math.PI,look:Math.PI,hp:100,max:100},'wren',.55);
-      text(c[2],cx,cy+54,8,'#ffd060','center');
-    });
-    if (G.lockedT > 0) text('LEVEL 3 IS BEING BUILT NEXT', VW / 2, 318, 10, '#ff8060', 'center');
-    if (Math.floor(t * 2) % 2) ART.draw(ctx, 'pad_start', VW / 2, 333, { s: 0.16 });
-    text('F1: HELP / CONTROLS', VW / 2, 352, 8, '#9aa89a', 'center');
-  }
   function drawBrief() {
     drawWorld();
-    ctx.fillStyle = 'rgba(0,0,0,0.62)'; ctx.fillRect(0, 0, VW, VH);
-    text(DATA.title, VW / 2, 34, 12, '#9fe0ff', 'center'); text(DATA.name, VW / 2, 56, 20, '#ffd060', 'center');
+    ctx.fillStyle = 'rgba(0,0,0,0.62)'; ctx.fillRect(0, 0, TD.VW, TD.VH);
+    ctx.save(); ctx.translate((TD.VW - 480) / 2, (TD.VH - 360) / 2);
+    const VW = 480, VH = 360;
+    TD.Text.fit(ctx,text,DATA.title,[20,24,440,20],12,'#9fe0ff');TD.Text.fit(ctx,text,DATA.name,[20,42,440,28],20,'#ffd060');
     const pk=G.player.pilot,fam=TD.familyOf(pk),t=G.t/60;
     ART.draw(ctx,'pav_'+pk,VW/2-70,104,{s:.25});
     if(G.player.onfoot)TD.drawFoot(ctx,Object.assign({},G.player,{x:VW/2+60,y:108,moving:true,footTime:t}));
@@ -341,23 +332,28 @@
     if(MISSION.id===4){ART.draw(ctx,'pad_dpad',168,248,{s:.07});text('PARTNER: '+TD.companion.toUpperCase(),VW/2+10,248,10,'#7deacc','center');}
     const typed = Math.floor(G.stateT * 40);
     let n = 0;
-    DATA.brief.forEach((line, i) => { const s = line.slice(0, Math.max(0, typed - n)); n += line.length; text(s, VW / 2, 198 + i * 15, 10, '#e8efe8', 'center'); });
+    DATA.brief.forEach((line,i)=>{const s=line.slice(0,Math.max(0,typed-n));n+=line.length;TD.Text.fit(ctx,text,s,[20,190+i*15,440,16],10,'#e8efe8');});
     const keys=MISSION.keys?MISSION.keys:G.player.onfoot?[['x','FIRE NORTH'],['y','FIRE WEST'],['z','GRENADE'],['a','FIRE SOUTH'],['b','FIRE EAST'],['c','ROLL']]:[['x','FIRE NORTH'],['y','FIRE WEST'],['z','RETINA'],['a','FIRE SOUTH'],['b','FIRE EAST'],['c','CHARGE']];
     keys.forEach((k,i)=>{const x=44+(i%3)*148,y=273+Math.floor(i/3)*24;ART.draw(ctx,'pad_'+k[0],x,y,{s:.1});text(k[1],x+13,y,9,'#c8d2c8');});
     text('D-PAD: MOVE   MODE + START: CONTROLLER SETUP',VW/2,318,8,'#9fe0ff','center');
     if (G.stateT > 0.6 && Math.floor(G.t / 30) % 2) ART.draw(ctx, 'pad_start', VW / 2, 338, { s: 0.16 });
+    ctx.restore();
   }
   function drawResults() {
     drawWorld();
-    ctx.fillStyle = 'rgba(0,0,0,0.7)'; ctx.fillRect(0, 0, VW, VH);
+    ctx.fillStyle = 'rgba(0,0,0,0.7)'; ctx.fillRect(0, 0, TD.VW, TD.VH);
     const R = G.results; if (!R) return;
+    ctx.save(); ctx.translate((TD.VW - 480) / 2, (TD.VH - 360) / 2);
+    const VW = 480, VH = 360;
     text('MISSION COMPLETE', VW / 2, 40, 20, '#ffd060', 'center');
     const rows = [['TIME', Math.floor(R.time / 60) + 'M ' + String(Math.floor(R.time % 60)).padStart(2, '0') + 'S'], ['KILLS', R.kills], ['ALERTS', R.alerts], ['DEATHS', R.deaths],
       ['TIME BONUS', R.timeBonus], ['GHOST BONUS', R.ghost ? R.ghostBonus : 'ALERTED'], ['NO DEATH', R.noDeath], ...(R.extraRows || []), ['SCORE', G.score]];
     const pitch = rows.length > 8 ? 236 / rows.length : 26;
     rows.forEach((r, i) => { if (G.stateT > 0.3 + i * 0.25) { text(r[0], 110, 82 + i * pitch, 12, '#9fe0ff'); text(String(r[1]), 300, 82 + i * pitch, 12, '#fff', 'right'); } });
     if (G.stateT > 2.4) ART.draw(ctx, 'rank_' + R.rank, 390, 180, { s: 0.42 });
-    if (G.stateT > 2.5 && Math.floor(G.t / 30) % 2) ART.draw(ctx,'pad_start',VW/2,340,{s:.16});
+    text('OVERDRIVE PASSWORD: '+R.password,VW/2,319,9,'#ffe09a','center');
+    if (G.stateT > 2.5 && Math.floor(G.t / 30) % 2) ART.draw(ctx,'pad_start',VW/2,343,{s:.13});
+    ctx.restore();
   }
   function render() {
     ctx.setTransform(SC, 0, 0, SC, 0, 0); ctx.imageSmoothingEnabled = false;
@@ -368,20 +364,22 @@
       if (!root.BOFX) text('MANIFEST NOT FOUND - OPEN THROUGH THE BOF FOLDER', VW / 2, VH / 2 + 30, 10, '#ff6040', 'center');
       return;
     }
-    if(G.state==='pilot')return TD.drawPilotSelect(ctx,text,G);
+    if(TD.Frontend.draw(ctx,text,G))return;
     if(G.state==='padsetup'){ctx.fillStyle='#080c11';ctx.fillRect(0,0,VW,VH);text('SIX BUTTON CONTROLLER SETUP',VW/2,48,15,'#ffd060','center');text(I.setupLabel(),VW/2,145,14,'#fff','center');text('RELEASE BETWEEN EACH INPUT',VW/2,192,10,'#9fe0ff','center');text('D-PAD, SIX FACE BUTTONS, MODE, START',VW/2,220,9,'#9fe0ff','center');text('ESCAPE: CANCEL',VW/2,315,9,'#9aa89a','center');return;}
-    if (G.state === 'title') return drawTitle();
     if (G.state === 'help') {
       ctx.fillStyle = '#080c11'; ctx.fillRect(0, 0, VW, VH); text('GROUND CONTROLS', VW / 2, 28, 18, '#ffd060', 'center');
-      const rows = MISSION.help ? MISSION.help : ['WASD / D-PAD: MOVE', 'MOUSE / Q-E: AIM; LEFT MOUSE / J: FIRE', 'PAD X / A / Y / B: FIRE NORTH / SOUTH / WEST / EAST', 'TWO ADJACENT FIRE BUTTONS: DIAGONAL FIRE', 'TANK C: HOLD CHARGE, RELEASE CANNON', 'TANK Z / KEY I: HOLD RETINA; C FIRES LOCKED MISSILE', 'TANK MODE: HULL LOCK; MODE + Z: SMOKE', 'ON FOOT C: ROLL; Z: GRENADE', 'ON FOOT MODE + A / X / Y: RELOAD / PRONE / TAP', 'PICKUPS EQUIP THE GUN; NO WEAPON SWAPPING', 'ENTER / START: PAUSE; B: BACK IN MENUS', 'F2 OR MODE + START: LEARN CONTROLLER BUTTONS'];
-      rows.forEach((s, i) => text(s, VW / 2, 62 + i * 21, i === 5 ? 8 : 9, '#d2e3da', 'center'));
+      const rows = MISSION.help ? MISSION.help : ['WASD / D-PAD: MOVE', 'MOUSE / Q-E: AIM; LEFT MOUSE / J: FIRE', 'PAD X / A / Y / B: FIRE NORTH / SOUTH / WEST / EAST', 'TWO ADJACENT FIRE BUTTONS: DIAGONAL FIRE', 'TANK C: HOLD CHARGE, RELEASE CANNON', 'TANK Z / KEY I: HOLD RETINA; C FIRES LOCKED MISSILE', 'TANK MODE: HULL LOCK; MODE + Z: SMOKE', 'TANK R / MODE + C: HOLD SPEED BOOST', 'ON FOOT C: ROLL; Z: GRENADE', 'ON FOOT MODE + A / X / Y: RELOAD / PRONE / TAP', 'PICKUPS EQUIP THE GUN; NO WEAPON SWAPPING', 'ENTER / START: PAUSE; B: BACK IN MENUS', 'F2 OR MODE + START: LEARN CONTROLLER BUTTONS'];
+      rows.forEach((s, i) => text(s, VW / 2, 62 + i * 19, i === 5 ? 8 : 9, '#d2e3da', 'center'));
       ART.draw(ctx, 'pad_b', VW / 2 - 30, 334, { s: 0.1 }); text('BACK', VW / 2 + 5, 334, 10, '#fff'); return;
     }
     if (G.state === 'brief') return drawBrief();
     if (G.state === 'clear') return drawResults();
-    drawWorld(); drawHUD();
+    drawWorld();
+    if (TD.BossIntro.active(G)) { TD.BossIntro.draw(ctx, text, G); return; }
+    drawHUD();
     if (G.state === 'pause') { ctx.fillStyle = 'rgba(0,0,0,0.5)'; ctx.fillRect(0, 0, VW, VH); text('PAUSED', VW / 2, VH / 2, 22, '#fff', 'center'); }
     if (G.state === 'gameover') { ctx.fillStyle = 'rgba(40,0,0,0.6)'; ctx.fillRect(0, 0, VW, VH); text('GAME OVER', VW / 2, VH / 2, 26, '#ff4030', 'center'); }
+    TD.Frontend.toast(ctx,text,G,1/60);
   }
 
   // ------------------------------------------------------------------ loop
@@ -404,6 +402,7 @@
   root.requestAnimationFrame(frame);
   root.TDGAME = {
     G, step(n) { for (let i = 0; i < (n || 1); i++) step(); render(); }, freeze(b) { frozen = b !== false; last = performance.now(); },
-    start() { start(); setState('play'); }, render,
+    start() { start(); setState('play'); },render,resize:fit,
+    launchBrief(){start();setState('brief');A.playMusic('level2');},resume(){setState('play');},
   };
 }(window));

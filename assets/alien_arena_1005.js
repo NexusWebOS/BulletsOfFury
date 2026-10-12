@@ -58,7 +58,7 @@ on5IntroDraw=function(b){const S=b._r30,t=S.t;if(S.mode==='voidIntro1005'){
  }return AA5_BASE.intro.apply(this,arguments);
 };
 drawWorld=function(dt){const r=AA5_BASE.world.apply(this,arguments),b=boss,S=b?._r30;
- if(S?.mode==='voidIntro1005'&&S.t<3.5){const t=S.t,alpha=t<2.2?clamp((t-.35)/1.3,0,1):clamp((3.5-t)/1.3,0,1);
+ if(S?.mode==='voidIntro1005'&&S.t<3.5&&!j3State(b)?.pt11Portal){const t=S.t,alpha=t<2.2?clamp((t-.35)/1.3,0,1):clamp((3.5-t)/1.3,0,1);
   ctx.save();ctx.setTransform(SS,0,0,SS,0,0);ctx.globalAlpha=alpha;ctx.fillStyle='#000';ctx.fillRect(0,0,VW,VH);
   const size=Math.max(VW,VH)*(.35+clamp(t/2.2,0,1)*2.4);
   aa5Cell('void',Math.min(11,Math.floor(t*4)),VW/2,VH*.42,size,size,t*.12,1);ctx.restore();
@@ -126,7 +126,7 @@ r30AttackTick=function(b,dt){const S=b._r30,P=S.attack;if(!P?.aa5)return AA5_BAS
  P.t+=dt;const u=P.t-P.tell;combatWarningTick(b,'aa5-'+S.seq,Math.min(P.t,P.tell),P.tell);if(u<0)return;
  const Q=r30Pose(b);
  if(P.type==='ghostRail'||P.type==='hostCross'){
-  if(!P.step){P.step++;if(P.type!=='ghostRail'||b.parts.some(p=>p.id==='cannon'&&!p.destroyed))for(const L of P.lanes)s81003Beam(b,L,'code',1.05);r30Sound('combatBeam0927');}
+  if(!P.step){P.step++;for(const L of P.lanes)if(P.type!=='ghostRail'||b.parts.some(p=>p.id===L.module&&!p.destroyed))s81003Beam(b,L,'code',1.05);r30Sound('combatBeam0927');}
  }else if(u>=P.next){P.next=u+(P.type==='ghostWarp'?.8:.60);P.step++;
   const claws=aa5Ghost(b)?aa5GhostRig(b).filter(v=>v.p.id.startsWith('claw')):[{x:Q.x-65,y:Q.y+60},{x:Q.x+65,y:Q.y+60}];
   for(const v of claws){const a=Math.atan2(P.ty-v.y,P.tx-v.x);for(const off of [-.16,.16])f1003bShot(b,v.x,v.y,a+off,4.2,'code');}

@@ -1,0 +1,43 @@
+{
+  "date": "2026-10-11",
+  "owner": "Mike requested the original BOF call followed by his Overdrive recording with matching reverb/echo",
+  "reference": "assets/game/shared/audio/sounds/announce.mp3",
+  "referenceSha256": "9efdf50c15b891d13804b339706800830848cd2746f58d2d9c9ad3e4516ed01f",
+  "source": "source/overdrive.wav",
+  "sourceSha256": "e1723586c20a23f5bd4ef8b1af7bca3f5e5631fd799b36c49cfccf555d0fe113",
+  "runtime": "overdrive-reverb_1011.mp3",
+  "runtimeSha256": "9153f017adbb1fa13770479c54db1dd155d9845811ecea5384397717962f8905",
+  "preview": "overdrive-intro-preview_1011.mp3",
+  "roomFilter": "highpass=f=50,lowpass=f=11500,aecho=0.9:1:65|109|157|223|337|461|674|912:0.1|0.08|0.06|0.05|0.22|0.14|0.09|0.05",
+  "normalizationFilter": "loudnorm=I=-16.31:TP=-1.2:LRA=11:measured_I=-18.46:measured_TP=-4.46:measured_LRA=0.80:measured_thresh=-30.19:offset=-2.18:linear=true",
+  "referenceLoudness": {
+    "input_i": "-16.31",
+    "input_tp": "-1.05",
+    "input_lra": "0.00",
+    "input_thresh": "-27.68",
+    "output_i": "-24.00",
+    "output_tp": "-8.74",
+    "output_lra": "0.00",
+    "output_thresh": "-35.37",
+    "normalization_type": "linear",
+    "target_offset": "-0.00"
+  },
+  "processedLoudness": {
+    "input_i": "-16.30",
+    "input_tp": "-2.30",
+    "input_lra": "0.80",
+    "input_thresh": "-28.02",
+    "output_i": "-21.82",
+    "output_tp": "-7.81",
+    "output_lra": "0.00",
+    "output_thresh": "-33.54",
+    "normalization_type": "dynamic",
+    "target_offset": "-2.18"
+  },
+  "pitch": "Unchanged, playback rate 1; no generated or substituted voice",
+  "order": [
+    "Original announce.mp3",
+    "Enhanced overdrive-reverb_1011.mp3"
+  ],
+  "timing": "Second call starts on the first media ended event; title music waits for the final echo tail"
+}

@@ -1,0 +1,916 @@
+{
+  "date": "2026-10-10",
+  "task": "Selected pilot Furyship landing and walking into Fury HQ",
+  "tool": "built-in image_gen",
+  "reference": "Actual native current Furyship and nine accepted pilot bodies; supplied sunset references",
+  "baseline_regression": {
+    "passed": 8174,
+    "failed": 0
+  },
+  "final_regression": {
+    "passed": 8243,
+    "failed_names": [],
+    "final_success": true,
+    "exit_code": 0
+  },
+  "registered_frames": 328,
+  "source_files": 16,
+  "native": {
+    "passed": 18,
+    "failed": 0,
+    "checks": [
+      {
+        "name": "Cold homecoming acquires all selected-pilot art before advancing",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Grounded ship remains exactly stationary through exit, walk and entry",
+        "passed": true,
+        "data": [
+          {
+            "x": 364,
+            "y": 299.21518644067794,
+            "footY": 330.56,
+            "scale": 0.7289491525423729
+          },
+          {
+            "x": 364,
+            "y": 299.21518644067794,
+            "footY": 330.56,
+            "scale": 0.7289491525423729
+          },
+          {
+            "x": 364,
+            "y": 299.21518644067794,
+            "footY": 330.56,
+            "scale": 0.7289491525423729
+          },
+          {
+            "x": 364,
+            "y": 299.21518644067794,
+            "footY": 330.56,
+            "scale": 0.7289491525423729
+          }
+        ]
+      },
+      {
+        "name": "Landing struts touch down before the pilot exits",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "HQ door is fully open before the pilot reaches its threshold",
+        "passed": true,
+        "data": {
+          "pilot": "cole",
+          "t": 21.45,
+          "phase": "walk",
+          "background": 1,
+          "shipFrame": 15,
+          "actorFrame": 2,
+          "actorClip": "walk",
+          "grounded": true,
+          "entered": false,
+          "doorFrame": 15,
+          "ship": {
+            "x": 364,
+            "y": 299.21518644067794,
+            "footY": 330.56,
+            "scale": 0.7289491525423729
+          },
+          "actor": {
+            "foot": {
+              "x": 396.8368103174883,
+              "y": 213.37578178794183
+            },
+            "height": 21.505277338877338,
+            "inside": false,
+            "q": 0.6554054054054053
+          },
+          "rect": {
+            "x": 35.9728813559322,
+            "y": 8,
+            "w": 656.0542372881356,
+            "h": 368.64
+          }
+        }
+      },
+      {
+        "name": "Pilot enters the building instead of fading on the apron",
+        "passed": true,
+        "data": {
+          "pilot": "cole",
+          "t": 24.2,
+          "phase": "inside",
+          "background": 1,
+          "shipFrame": 15,
+          "actorFrame": null,
+          "actorClip": null,
+          "grounded": true,
+          "entered": true,
+          "doorFrame": 15,
+          "ship": {
+            "x": 364,
+            "y": 299.21518644067794,
+            "footY": 330.56,
+            "scale": 0.7289491525423729
+          },
+          "actor": null,
+          "rect": {
+            "x": 35.9728813559322,
+            "y": 8,
+            "w": 656.0542372881356,
+            "h": 368.64
+          }
+        }
+      },
+      {
+        "name": "Actual pilot pixels remain visible around the nose and into the open doorway",
+        "passed": true,
+        "data": [
+          {
+            "time": 18.6,
+            "changed_pixels": 732
+          },
+          {
+            "time": 20.4,
+            "changed_pixels": 597
+          },
+          {
+            "time": 21.3,
+            "changed_pixels": 492
+          },
+          {
+            "time": 22.2,
+            "changed_pixels": 458
+          },
+          {
+            "time": 23.0,
+            "changed_pixels": 261
+          }
+        ]
+      },
+      {
+        "name": "Bounded loading fallback never restores the retired parked planes",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "All new actor and ship cells include their entire visible silhouette",
+        "passed": true,
+        "data": {
+          "cole": {
+            "walk": {
+              "height": 206,
+              "foot": 88
+            },
+            "ship": [
+              62,
+              80,
+              259,
+              232
+            ]
+          },
+          "axel": {
+            "walk": {
+              "height": 213,
+              "foot": 93
+            },
+            "ship": [
+              56,
+              74,
+              259,
+              229
+            ]
+          },
+          "freezer": {
+            "walk": {
+              "height": 207,
+              "foot": 89
+            },
+            "ship": [
+              58,
+              77,
+              260,
+              234
+            ]
+          },
+          "yuri": {
+            "walk": {
+              "height": 219,
+              "foot": 94
+            },
+            "ship": [
+              61,
+              73,
+              257,
+              233
+            ]
+          },
+          "maverick": {
+            "walk": {
+              "height": 207,
+              "foot": 89
+            },
+            "ship": [
+              49,
+              72,
+              258,
+              229
+            ]
+          },
+          "falva": {
+            "walk": {
+              "height": 210,
+              "foot": 92
+            },
+            "ship": [
+              61,
+              80,
+              260,
+              235
+            ]
+          },
+          "lizzie": {
+            "walk": {
+              "height": 206,
+              "foot": 86
+            },
+            "ship": [
+              62,
+              69,
+              261,
+              231
+            ]
+          },
+          "decker": {
+            "walk": {
+              "height": 214,
+              "foot": 91
+            },
+            "ship": [
+              61,
+              83,
+              263,
+              232
+            ]
+          },
+          "juggernaut": {
+            "walk": {
+              "height": 208,
+              "foot": 89
+            },
+            "ship": [
+              55,
+              76,
+              262,
+              237
+            ]
+          }
+        }
+      },
+      {
+        "name": "All nine selected pilots render their own landing, exit and walk pixels",
+        "passed": true,
+        "data": {
+          "hl10_space_00": 21,
+          "fury_base|cole": 6,
+          "hl10_space_01": 1,
+          "hl10_background_00": 2,
+          "hl10_cole_landing_01": 2,
+          "hl10_background_01": 60,
+          "hl10_shadow_00": 1,
+          "hl10_door_00": 43,
+          "hl10_cole_landing_02": 1,
+          "hl10_shadow_02": 1,
+          "hl10_cole_landing_07": 1,
+          "hl10_shadow_03": 58,
+          "hl10_downwash_01": 1,
+          "hl10_cole_landing_08": 1,
+          "hl10_cole_landing_15": 33,
+          "hl10_cole_exit_01": 1,
+          "hl10_cole_exit_06": 1,
+          "hl10_cole_walk_00": 6,
+          "hl10_door_15": 14,
+          "hl10_cole_walk_04": 4,
+          "hl10_cole_exit_07": 1,
+          "hl10_cole_walk_05": 3,
+          "hl10_cole_walk_02": 1,
+          "hl10_door_05": 3,
+          "hl10_cole_walk_03": 2,
+          "hl10_cole_exit_03": 1,
+          "fury_base|axel": 2,
+          "hl10_axel_landing_15": 3,
+          "hl10_axel_walk_04": 1,
+          "hl10_axel_exit_03": 1,
+          "fury_base|freezer": 2,
+          "hl10_freezer_landing_15": 3,
+          "hl10_freezer_walk_04": 1,
+          "hl10_freezer_exit_03": 1,
+          "fury_base|yuri": 2,
+          "hl10_yuri_landing_15": 3,
+          "hl10_yuri_walk_04": 1,
+          "hl10_yuri_exit_03": 1,
+          "fury_base|maverick": 2,
+          "hl10_maverick_landing_15": 3,
+          "hl10_maverick_walk_04": 1,
+          "hl10_maverick_exit_03": 1,
+          "fury_base|falva": 2,
+          "hl10_falva_landing_15": 3,
+          "hl10_falva_walk_04": 1,
+          "hl10_falva_exit_03": 1,
+          "fury_base|lizzie": 2,
+          "hl10_lizzie_landing_15": 3,
+          "hl10_lizzie_walk_04": 1,
+          "hl10_lizzie_exit_03": 1,
+          "fury_base|decker": 2,
+          "hl10_decker_landing_15": 3,
+          "hl10_decker_walk_04": 1,
+          "hl10_decker_exit_03": 1,
+          "fury_base|juggernaut": 2,
+          "hl10_juggernaut_landing_15": 3,
+          "hl10_juggernaut_walk_04": 1,
+          "hl10_juggernaut_exit_03": 1
+        }
+      },
+      {
+        "name": "Earth return uses the current selected Furyship, not a baked green jet",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Landing sounds fire once at their physical events",
+        "passed": true,
+        "data": [
+          "gear",
+          "touchdown",
+          "hatch"
+        ]
+      },
+      {
+        "name": "Extra redraws cannot replay landing sounds",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "True ending continues into the original survivor sequence after entering HQ",
+        "passed": true,
+        "data": {
+          "t": 26.549999999999986,
+          "state": "victory",
+          "dish": 26.4,
+          "survivor": true
+        }
+      },
+      {
+        "name": "Ordinary ending reaches its final card only after the full homecoming",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Arcade still opens directly on its score/end card",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Narrow cinematic keeps aircraft, characters and doorway evenly proportioned",
+        "passed": true,
+        "data": {
+          "x": 1.7582417582417582,
+          "y": 1.7578125
+        }
+      },
+      {
+        "name": "Narrow viewport contains the entire landing pad",
+        "passed": true,
+        "data": {
+          "x": 0,
+          "y": 8,
+          "w": 273,
+          "h": 153.4
+        }
+      },
+      {
+        "name": "No page, console or asset errors",
+        "passed": true,
+        "data": []
+      }
+    ],
+    "errors": []
+  },
+  "preview": {
+    "passed": 8,
+    "failed": 0,
+    "checks": [
+      {
+        "name": "Preview opens the grounded ship in the actual ending renderer",
+        "passed": true,
+        "data": {
+          "pilot": "cole",
+          "t": 11.2,
+          "phase": "landing",
+          "background": 1,
+          "shipFrame": 8,
+          "actorFrame": null,
+          "actorClip": null,
+          "grounded": true,
+          "entered": false,
+          "doorFrame": 0,
+          "ship": {
+            "x": 463,
+            "y": 299.21518644067794,
+            "footY": 330.56,
+            "scale": 0.7289491525423729
+          },
+          "actor": null,
+          "rect": {
+            "x": 134.9728813559322,
+            "y": 8,
+            "w": 656.0542372881356,
+            "h": 368.64
+          }
+        }
+      },
+      {
+        "name": "Pilot chooser displays all nine real body and aircraft banks",
+        "passed": true,
+        "data": [
+          "cole",
+          "axel",
+          "freezer",
+          "yuri",
+          "maverick",
+          "falva",
+          "lizzie",
+          "decker",
+          "juggernaut"
+        ]
+      },
+      {
+        "name": "Pause freezes the actual landing clock",
+        "passed": true,
+        "data": {
+          "before": 9.549999999999999,
+          "after": 9.549999999999999
+        }
+      },
+      {
+        "name": "Timeline seeks to a visible doorway walk",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Play restarts the full escape-to-HQ homecoming with working audio",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Review holds on HQ instead of running past the review endpoint",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Narrow review keeps the selected ship evenly proportioned",
+        "passed": true,
+        "data": {
+          "x": 1.1428571428571428,
+          "y": 1.142578125
+        }
+      },
+      {
+        "name": "Review has no page, console or asset errors",
+        "passed": true,
+        "data": []
+      }
+    ],
+    "errors": []
+  },
+  "prior_hq_live": {
+    "passed": 25,
+    "failed": 0,
+    "checks": [
+      {
+        "name": "HQ arrival draws the actual authored Cole ship",
+        "passed": true,
+        "data": {
+          "key": "hq10_background_00",
+          "ships": 51,
+          "rect": {
+            "x": 45.08474576271192,
+            "y": 0,
+            "w": 637.8305084745762,
+            "h": 358.4
+          }
+        }
+      },
+      {
+        "name": "Landing advances on the live cinematic clock",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "HQ attack uses the actual red and green stealth fighter plates",
+        "passed": true,
+        "data": {
+          "red": 730,
+          "green": 292
+        }
+      },
+      {
+        "name": "Radar fills progressively before entering the held sweep",
+        "passed": true,
+        "data": {
+          "time": 0.850000000000002,
+          "seen": 4,
+          "radar": 153
+        }
+      },
+      {
+        "name": "Held radar discovers moving tracks and plays authored contact beeps",
+        "passed": true,
+        "data": {
+          "seen": 18,
+          "contacts": 18,
+          "sounds": [
+            {
+              "event": "sound",
+              "cue": "contact",
+              "name": "retinaLockBeep",
+              "available": true
+            },
+            {
+              "event": "sound",
+              "cue": "contact",
+              "name": "retinaLockBeep",
+              "available": true
+            },
+            {
+              "event": "sound",
+              "cue": "contact",
+              "name": "retinaLockBeep",
+              "available": true
+            },
+            {
+              "event": "sound",
+              "cue": "contact",
+              "name": "retinaLockBeep",
+              "available": true
+            },
+            {
+              "event": "sound",
+              "cue": "contact",
+              "name": "retinaLockBeep",
+              "available": true
+            },
+            {
+              "event": "sound",
+              "cue": "contact",
+              "name": "retinaLockBeep",
+              "available": true
+            }
+          ]
+        }
+      },
+      {
+        "name": "Both lower signal instruments render the authored animated waveform",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Map ships change geographic position between native frames",
+        "passed": true,
+        "data": 0.024697989997772257
+      },
+      {
+        "name": "Directional input selects a contact without advancing dialogue",
+        "passed": true,
+        "data": {
+          "selected": 17,
+          "beat": 2
+        }
+      },
+      {
+        "name": "A begins a real acquisition scan instead of skipping the map",
+        "passed": true,
+        "data": {
+          "beat": 2,
+          "scan": {
+            "index": 17,
+            "t": 0
+          }
+        }
+      },
+      {
+        "name": "Scan completion marks the selected contact and ends the progress phase",
+        "passed": true,
+        "data": {
+          "confirmed": true,
+          "scan": null,
+          "events": [
+            {
+              "event": "scan-complete",
+              "id": "maverick"
+            }
+          ]
+        }
+      },
+      {
+        "name": "Alien interference becomes a separate discovered signal",
+        "passed": true,
+        "data": {
+          "signal": true,
+          "t": 8.133333333333004
+        }
+      },
+      {
+        "name": "Pointer hit testing uses the full cinematic viewport and scans its contact",
+        "passed": true,
+        "data": {
+          "selected": 14,
+          "scan": {
+            "index": 14,
+            "t": 0.01666666666666606
+          },
+          "beat": 2
+        }
+      },
+      {
+        "name": "Drawing the map again cannot duplicate sounds",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "B returns from radar inspection to dialogue without skipping the beat",
+        "passed": true,
+        "data": {
+          "beat": 2,
+          "controls": false,
+          "scan": null
+        }
+      },
+      {
+        "name": "A resumes the ordinary cinematic continuation after Back",
+        "passed": true,
+        "data": {
+          "beat": 3,
+          "background": "hq10_background_03"
+        }
+      },
+      {
+        "name": "Scramble renders five unique actual pilot ships",
+        "passed": true,
+        "data": {
+          "formation": [
+            "cole",
+            "axel",
+            "yuri",
+            "maverick",
+            "lizzie"
+          ],
+          "draws": {
+            "ship_cole": 952,
+            "background": 1122,
+            "fb2_stealth_red": 4173,
+            "fb2_stealth_green": 2277,
+            "radar": 1578,
+            "signal": 988,
+            "map": 494,
+            "ship_lizzie": 674,
+            "ship_axel": 624,
+            "ship_yuri": 594,
+            "ship_maverick": 564
+          }
+        }
+      },
+      {
+        "name": "Start still skips the scene and calls its continuation exactly once",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Radar remains active for its specified reading interval",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Radar progresses automatically into the scramble",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "All nine landing variants draw their own exact authored airframes",
+        "passed": true,
+        "data": {
+          "ship_cole": 1945,
+          "background": 2888,
+          "fb2_stealth_red": 11265,
+          "fb2_stealth_green": 6289,
+          "radar": 4338,
+          "signal": 2828,
+          "map": 1414,
+          "ship_lizzie": 1700,
+          "ship_axel": 1588,
+          "ship_yuri": 1519,
+          "ship_maverick": 1469,
+          "ship_freezer": 91,
+          "ship_falva": 91,
+          "ship_decker": 91,
+          "ship_juggernaut": 91
+        }
+      },
+      {
+        "name": "Narrow viewport keeps the full radar housing above the dialogue",
+        "passed": true,
+        "data": {
+          "W": 273,
+          "rect": {
+            "x": 0,
+            "y": 102.49999999999999,
+            "w": 273,
+            "h": 153.4
+          },
+          "map": {
+            "x": 52.962,
+            "y": 119.68079999999999,
+            "w": 161.07,
+            "h": 77.0068
+          },
+          "H": 512
+        }
+      },
+      {
+        "name": "Narrow cinematic preserves ship, radar and portrait proportions in actual CSS pixels",
+        "passed": true,
+        "data": {
+          "x": 1.7582417582417582,
+          "y": 1.7578125
+        }
+      },
+      {
+        "name": "Narrow-view pointer still selects the intended ship",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "All requested radar sounds exist in the actual audio bank",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "No page, console or asset errors",
+        "passed": true,
+        "data": []
+      }
+    ],
+    "errors": []
+  },
+  "recording": {
+    "samples": [
+      {
+        "time": 0.05,
+        "phase": "escape",
+        "ship": null,
+        "actor": null
+      },
+      {
+        "time": 3.009699999988077,
+        "phase": "earth",
+        "ship": null,
+        "actor": null
+      },
+      {
+        "time": 6.001499999999998,
+        "phase": "approach",
+        "ship": null,
+        "actor": null
+      },
+      {
+        "time": 9.41009999999404,
+        "phase": "landing",
+        "ship": {
+          "x": 364,
+          "y": 200.15648877252895,
+          "footY": 330.56,
+          "scale": 0.5467315450170029
+        },
+        "actor": null
+      },
+      {
+        "time": 13.602299999982128,
+        "phase": "exit",
+        "ship": {
+          "x": 364,
+          "y": 299.21518644067794,
+          "footY": 330.56,
+          "scale": 0.7289491525423729
+        },
+        "actor": {
+          "foot": {
+            "x": 409.9238567352221,
+            "y": 295.5392662697009
+          },
+          "height": 29.4912,
+          "inside": false,
+          "q": 0.0007666666607093475
+        }
+      },
+      {
+        "time": 16.610299999982104,
+        "phase": "walk",
+        "ship": {
+          "x": 364,
+          "y": 299.21518644067794,
+          "footY": 330.56,
+          "scale": 0.7289491525423729
+        },
+        "actor": {
+          "foot": {
+            "x": 444.17939525399265,
+            "y": 332.65516627111356
+          },
+          "height": 29.47195848651992,
+          "inside": false,
+          "q": 0.0013918918894732831
+        }
+      },
+      {
+        "time": 24.002499999999575,
+        "phase": "inside",
+        "ship": {
+          "x": 364,
+          "y": 299.21518644067794,
+          "footY": 330.56,
+          "scale": 0.7289491525423729
+        },
+        "actor": null
+      }
+    ],
+    "seconds": 26.28059999999404,
+    "endingTime": 26.257999999999477,
+    "events": [
+      {
+        "event": "sound",
+        "cue": "approach",
+        "name": "thruster",
+        "available": true
+      },
+      {
+        "event": "sound",
+        "cue": "gear",
+        "name": "furyPartArrival",
+        "available": true
+      },
+      {
+        "event": "sound",
+        "cue": "touchdown",
+        "name": "gravityLock",
+        "available": true
+      },
+      {
+        "event": "sound",
+        "cue": "hatch",
+        "name": "furyPartArrival",
+        "available": true
+      },
+      {
+        "event": "sound",
+        "cue": "door",
+        "name": "select",
+        "available": true
+      },
+      {
+        "event": "sound",
+        "cue": "welcome",
+        "name": "blip",
+        "available": true
+      }
+    ],
+    "audioTracks": 0,
+    "errors": [],
+    "note": "Actual engine canvas/clock. Silent recording; the interactive preview plays the original sound cues."
+  },
+  "line_endings": {
+    "assets/game.js": {
+      "crlf": 0,
+      "bare_lf": 80247,
+      "sha256": "35fa3cf2075fa8f9277604d5b6f135127512efaf1bb411e60455a808c26e1c1f"
+    },
+    "_BUILD_SOURCE/test_fl.js": {
+      "crlf": 15873,
+      "bare_lf": 0,
+      "sha256": "179ed96a67165be7374fb9d9be9ee660ad77ad99792c219ea7832be36ea3a21f"
+    }
+  },
+  "sources": "_ART_SOURCES/hq_landing_1010/generation_manifest.json",
+  "prompts": [
+    "_ART_SOURCES/hq_landing_1010/final_prompts.json",
+    "_ART_SOURCES/hq_landing_1010/correction_prompts.json"
+  ],
+  "review": "docs/previews/hq_landing_1010/index.html",
+  "git": "Local only; no commit/push. Existing staged 7/8 and prior files preserved.",
+  "limits": [
+    "Controlled ending/review fixtures, not campaign balance or hardware/gamepad verdict",
+    "MP4/WebM recording is silent; interactive review uses original audio cues"
+  ]
+}

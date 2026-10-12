@@ -14,9 +14,11 @@
   'use strict';
   const BASE = '../../';
   const LOOSE = {};
+  for(const [key,meta] of Object.entries((root.TD_UI_ART||{}).assets||{})) LOOSE[key]=meta.file;
   for (const [key, meta] of Object.entries((root.TD_CAMPAIGN_ART || {}).frames || {})) LOOSE[key] = meta.file;
   LOOSE.pav_niel = 'expansion/windstorm_machinists/identity/niel_avatar_v2.png';
   for (const [key, meta] of Object.entries(root.TD_GROUND_ART || {})) LOOSE[key] = 'expansion/topdown/art/ground_1008/' + meta.file;
+  for (const [key, meta] of Object.entries((root.TD_WARRIOR_ART || {}).assets || {})) LOOSE[key] = meta.file;
   for (const [key, meta] of Object.entries(root.TD_MUSEUM_ART || {})) LOOSE[key] = meta.file;   // 1009 Level 5 museum
   for (const k of ['debris', 'dust', 'hull_0', 'hull_1', 'hull_2', 'hull_3', 'hull_4', 'hull_5', 'hull_6', 'hull_7', 'hull_base',
     'machinegun', 'missile_pod', 'muzzle', 'razor_missile', 'rotor', 'sonic_bullet', 'sonic_charge', 'sonic_impact', 'sonic_ring',
@@ -28,6 +30,9 @@
     score_500: 'assets/game/shared/ui/ui/pickups_0917b/score_500.png', score_1000: 'assets/game/shared/ui/ui/pickups_0917b/score_1000.png',
     fury_bomb: 'assets/game/shared/ui/ui/pickups_0917b/fury_bomb.png', pow_badge: 'assets/game/shared/ui/ui/infusion_0917/inf_kinetic.png', logo: 'assets/game/shared/ui/ui/logo_0916/bof_logo.png',
     overdrive: 'expansion/concept/overdrive_word_overlay.png',
+    bof_cover_b:'docs/marketing_0916/cover_b_raw.png',
+    ship_hotwire:'expansion/concept/hotwire_ship_top.png',ship_phoenix:'expansion/concept/phoenix_ship_top.png',ship_niel:'expansion/windstorm_machinists/ship/niel_ship_idle.png',
+    spicon_hotwire:'expansion/specials/ui/spicon_hotwire.png',spicon_phoenix:'expansion/specials/ui/spicon_phoenix.png',spicon_niel:'expansion/windstorm_machinists/ui/spicon_niel_v2.png',
     target_retina: 'assets/game/levels/stage_03/boss/bosses/stage3_thermo/nuclear_retina.png',
     // 1008g: the ground pack. Player tanks are baked per pilot paint; enemies are the on-foot alien tanks
     ...Object.fromEntries(['axel', 'cole', 'maverick', 'decker', 'yuri', 'freezer', 'juggernaut', 'phoenix', 'lizzie', 'falva', 'hotwire']
@@ -43,6 +48,7 @@
     hotwire_idle: 'expansion/pilot_avatars/hotwire-idle.png', phoenix_idle: 'expansion/pilot_avatars/phoenix-idle.png',
   });
   for(const p of ['cole','axel','maverick','decker','yuri','freezer','juggernaut','lizzie','falva'])LOOSE['select_body_'+p]='assets/game/pilots/'+p+'/body_frames/pilot_bodies/'+p+'_body_0.png';
+  for(const p of ['airforce','matrix','independent','brotherhood','princesses','forge'])LOOSE['affil_'+p]='assets/game/shared/ui/affiliations/affil_'+p+'.png';
   LOOSE.select_body_cole='assets/game/pilots/cole/body_frames/pilots_0922/bodies/cole.png';
   LOOSE.select_body_hotwire='expansion/concept/hotwire_front_neutral.png';LOOSE.select_body_phoenix='expansion/concept/phoenix_front_neutral.png';LOOSE.select_body_niel='expansion/windstorm_machinists/identity/niel_front.png';
   const images = {};
@@ -55,6 +61,9 @@
 
   function resolve(key) {
     const X = root.BOFX; if (!X) return null;
+    const ui=(root.TD_UI_ART||{}).assets?.[key];if(ui)return{path:ui.file,sx:0,sy:0,sw:ui.size[0],sh:ui.size[1]};
+    if(key.startsWith('od_font_')){const f=root.BOF?.stageFontV4?.final,r=f?.frames[key.slice(8)];if(r)return{path:f.atlas,sx:r[0],sy:r[1],sw:r[2],sh:r[3]};}
+    const ship=X.ships?.[key];if(ship){const pk=/^ship_([a-z]+)/.exec(key)?.[1];return{path:X.img['nsa_ship_'+pk],sx:ship[0],sy:ship[1],sw:ship[2],sh:ship[3]};}
     const c = X.cells[key];
     if (c) return { path: X.img['nca_' + c[0]] || X.img[c[0]], sx: c[1], sy: c[2], sw: c[3], sh: c[4] };
     const pc = X.playercells && X.playercells[key];
@@ -97,11 +106,15 @@
     ctx.save(); ctx.translate(Math.round(x), Math.round(y)); if (o.a) ctx.rotate(o.a);
     if (o.alpha != null) ctx.globalAlpha *= o.alpha;
     if (o.comp) ctx.globalCompositeOperation = o.comp;
-    if (o.tint) { const t = silhouette(key, o.tint); if (t) ctx.drawImage(t, -ax * sx, -ay * sy, g.sw * sx, g.sh * sy); }
+    if (o.palette) { const t = palette(key, o.palette); if (t) ctx.drawImage(t, -ax * sx, -ay * sy, g.sw * sx, g.sh * sy); }
+    else if (o.tint) { const t = silhouette(key, o.tint); if (t) ctx.drawImage(t, -ax * sx, -ay * sy, g.sw * sx, g.sh * sy); }
     else ctx.drawImage(g.im, g.sx, g.sy, g.sw, g.sh, -ax * sx, -ay * sy, g.sw * sx, g.sh * sy);
     if (o.flash > 0) { const w = silhouette(key, '#ffffff'); if (w) { ctx.globalAlpha *= Math.min(1, o.flash); ctx.drawImage(w, -ax * sx, -ay * sy, g.sw * sx, g.sh * sy); } }
     ctx.restore(); return true;
   }
   function size(key) { const g = get(key); return g ? [g.sw, g.sh] : null; }
-  root.ART = { get, has, warm, progress, draw, size, silhouette, image, ok, BASE };
+  // Same multiply/mask/specular path as BOF's nuoTinted Retina masters.
+  const palettes = {};
+  function palette(key, col) { const id=key+'|'+col;if(palettes[id])return palettes[id];const g=get(key);if(!g)return null;const cv=document.createElement('canvas');cv.width=g.sw;cv.height=g.sh;const c=cv.getContext('2d');const source=()=>c.drawImage(g.im,g.sx,g.sy,g.sw,g.sh,0,0,g.sw,g.sh);source();c.globalCompositeOperation='multiply';c.fillStyle=col;c.fillRect(0,0,g.sw,g.sh);c.globalCompositeOperation='destination-in';source();c.globalCompositeOperation='lighter';c.globalAlpha=.34;source();return palettes[id]=cv; }
+  root.ART = { get, has, warm, progress, draw, size, silhouette, palette, image, ok, BASE };
 }(window));

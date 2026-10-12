@@ -1,0 +1,35 @@
+{
+  "atom": {
+    "frames": 32,
+    "unique_hashes": 32,
+    "union_bounds": [
+      32,
+      90,
+      357,
+      482
+    ],
+    "padded_edges": true
+  },
+  "fire": {
+    "frames": 32,
+    "unique_hashes": 32,
+    "union_bounds": [
+      139,
+      128,
+      248,
+      347
+    ],
+    "padded_edges": true
+  },
+  "fire_root": {
+    "frames": 16,
+    "unique_hashes": 16,
+    "union_bounds": [
+      55,
+      52,
+      330,
+      353
+    ],
+    "padded_edges": true
+  }
+}

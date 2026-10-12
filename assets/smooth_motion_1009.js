@@ -22,9 +22,10 @@ function sm10StageBanks(n){return [...Object.keys(SM10_ART).filter(k=>k.startsWi
 stageLoadBegin=function(n,keys){return SM10.base.load.call(this,n,[...(keys||[]),...sm10StageBanks(n).flatMap(name=>(SM10_ART[name]||[]).map(a=>a.key)),...(n===5?Object.values(AF10_ART).flat().map(a=>a.key):[])]);};
 beginStage=function(n){const r=SM10.base.begin.apply(this,arguments);SM10.clock=0;SM10.events=[];sm10Warm(sm10StageBanks(n));if(n===5)af10Warm();return r;};
 updatePlay=function(dt){const r=SM10.base.play.apply(this,arguments);if(state===GS.PLAY)SM10.clock+=dt;return r;};
-function sm10Core(b){return{x:b.x+17,y:b.y-26};} // measured reactor pivot of hammer_death reel
-h3EndingStart=function(b){SM10.base.start(b);const e=H3.ending;e.sm10={phase:'words',t:0,line:0,shown:0,portrait:0,window:1};
- delete e.engineDeath;e.phase='lastWords';b.dying=0;sm10Log('hammer-last-words');af10Warm();XART.rdy('fb1002_hammer_portrait');XART.rdy('nbret_'+_pilotKey());};
+function sm10Core(b){const hold=H3.ending?.sm10?.hold;return hold?{x:hold.x,y:hold.y}:{x:b.x+17,y:b.y-26};}
+h3EndingStart=function(b){const hold={...b,dead:false,dying:0,flash:0,_hammer:{...b._hammer}};
+ SM10.base.start(b);const e=H3.ending;e.sm10={phase:'words',t:0,line:0,shown:0,portrait:0,window:1,hold};
+ delete e.engineDeath;e.phase='lastWords';b.dying=0;sm10Log('hammer-last-words');af10Warm();XART.rdy('fb1002_hammer_portrait');XART.rdy('nbret_'+_pilotKey());XART.rdy(pilotMissileKey(true));};
 XART._touch=function(k){if(k!=='sm10_hammer_portrait')return SM10.base.touch.apply(this,arguments);
  if(!XART.rdy('fb1002_hammer_portrait'))return null;const im=XART.get('fb1002_hammer_portrait'),c=document.createElement('canvas');
  c.width=im.width;c.height=im.height;const g=c.getContext('2d');g.drawImage(im,0,0);
@@ -34,7 +35,12 @@ const SM10_LAST_WORDS=['This cannot be..','You were a worthy opponent, mortal.']
 function sm10Phase(e,phase){e.sm10.phase=phase;e.sm10.t=0;sm10Log('hammer-'+phase);
  if(phase==='lock')Audio.SFX.retinaCharge?.();if(phase==='missile')Audio.SFX.retinaLockBeep?.();}
 h3EndingTick=function(dt){const e=H3.ending,Q=e?.sm10;if(!Q)return SM10.base.tick.apply(this,arguments);
- if(Q.phase==='death')return SM10.base.tick.apply(this,arguments);
+ if(Q.phase==='death'){
+  // One acted death precedes the orbital/Earth aftermath. Do not replay a
+  // second dying Hammer close-up after that complete in-engine destruction.
+  if(e.engineDeath==null&&e.t+dt>=9.5&&e.t<17.5){e.t=17.5-dt;e.events.add('shock');e.events.add('head-blast');}
+  return SM10.base.tick.apply(this,arguments);
+ }
  const ready=XART.rdy('fb1002_hammer_portrait')&&furyShipReady()&&af10Ready();if(!ready)return;
  Q.t+=dt;stageEnding=0;whiteBlast=0;shake=0;_stage5SpaceScroll+=dt*12;efxTick(dt);
  if(Q.phase==='words'){const line=SM10_LAST_WORDS[Q.line],n=Math.min(line.length,Math.floor(Q.t*32));dialogueLetterTicks(line,Q.shown,n);Q.shown=n;
@@ -47,6 +53,8 @@ h3EndingTick=function(dt){const e=H3.ending,Q=e?.sm10;if(!Q)return SM10.base.tic
   sm10Phase(e,'death');e.engineDeath=0;e.phase='engineDeath';e.boss.dying=0;shake=12;}
 };
 function sm10Missile(Q,b){const c=sm10Core(b),u=clamp(Q.t/.65,0,1),x=lerp(Q.from.x,c.x,u),y=lerp(Q.from.y,c.y,u),a=Math.atan2(c.y-Q.from.y,c.x-Q.from.x);
+ const key=pilotMissileKey(true),size=manualMissileSpec(run.missileTier).size;
+ if(drawMfx(key,x,y,a,14*size,null,1,'#ffb04a'))return;
  ctx.save();ctx.translate(x,y);ctx.rotate(a+Math.PI/2);const f=Math.floor(Q.t*16)%4;
  spaceAtlasDraw(ctx,'volley_3_trail_'+f,0,18,20,36,true,null);spaceAtlasDraw(ctx,'volley_3_missile_0',0,0,22,36,true,null);ctx.restore();}
 h3EndingDraw=function(){const e=H3.ending,Q=e?.sm10;if(!Q)return SM10.base.draw.apply(this,arguments);
@@ -57,7 +65,7 @@ h3EndingDraw=function(){const e=H3.ending,Q=e?.sm10;if(!Q)return SM10.base.draw.
   if(whiteBlast>0){ctx.fillStyle='rgba(255,255,255,'+whiteBlast+')';ctx.fillRect(0,0,VW,VH);}
   if(e.engineDeath>7){ctx.fillStyle='rgba(0,0,0,'+clamp(e.engineDeath-7,0,1)+')';ctx.fillRect(0,0,VW,VH);}ctx.restore();return;
  }
- ctx.save();worldXformEscape();ctx.save();ctx.translate(-camX,0);drawBG(0);bm9Draw('hammer_death',0,e.boss.x+17,e.boss.y-26,.57);
+ ctx.save();worldXformEscape();ctx.save();ctx.translate(-camX,0);drawBG(0);hammerBossDraw(Q.hold);
  furyShipDrawFlight(player.x,Math.min(player.y,VH*.78),SPACE_SHIP_SIZE*1.5,_pilotKey(),{key:'base'},Q.t);
  const c=sm10Core(e.boss);if(Q.phase==='lock'||Q.phase==='missile')drawBossRetina(e.boss,c.x,c.y,Q.phase==='lock'?(1-clamp(Q.t/.9,0,1))*TAU:0,1);
  if(Q.phase==='missile')sm10Missile(Q,e.boss);ctx.restore();

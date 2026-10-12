@@ -1,0 +1,6 @@
+{
+  "name": "gate-energy-opaque",
+  "prompt": "Use case: precise-object-edit. Change ONLY the tiny central round opening in EACH of these32 purple membrane frames: that round opening must be truly OPAQUE BLACK (RGBA alpha255), not transparent. Preserve all existing purple plasma texture, branching lightning, chronological phase motion, the32 equal cells in4columns8rows, color, size and position. The opaque black center is part of the energy material and remains at exactly the same center in every frame. Preserve genuine transparency OUTSIDE every tall rectangular membrane. Do not flatten the outside background to black and do not change the artwork or margins. No alpha holes inside the rectangle; each full rectangular membrane including its center must be opaque. Exact32frames, not fewer. No labels, extra shapes, scenery or checkerboard.",
+  "reference": "_ART_SOURCES/portals_bof_1011/returned/gate-energy.png",
+  "generatorFile": "exec-61401962-4c9a-43c2-b22e-a7de0a3cd676.png"
+}

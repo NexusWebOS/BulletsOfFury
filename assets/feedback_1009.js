@@ -24,17 +24,18 @@ ensureS1LandMasks=function(){
 
 /* ---------------------------------------------------------------- Stage 1 miniboss (Razorback)
    "Do not allow the level one mini boss's sonic projectiles to be shootable."
-   Measured on Normal and Furious: player fire never destroyed an rzbSonic orb, but it did shoot
-   down the razor missiles that the hull launches straight out of the same green charge glow (27
-   of them in a 40-second Furious fight). So every Razorback round is now weapon-proof: no
-   interception, no lock-on target and no Retina reticle. Dodging is the counterplay. */
+   October 10 correction: Furious razor missiles are interceptable again. The sonic
+   rounds remain weapon-proof; the earlier blanket rule also prevented missile
+   acceleration/Retina steering because those share the interception update. */
 const FB9_RZB={shot:rzbShot,missile:rzbMissile,intercept:enemyOrdnanceCanIntercept,sprite:rzbSprite,
  muzzle:wm26Draw,draw:razorbackDraw};
 function fb9RzbProof(from){for(let i=from;i<eBullets.length;i++){const q=eBullets[i];
- if(q&&q._rzb){q._weaponProof=true;q._shootable=false;q.hp=undefined;q._fb9RzbProof=true;}}}
+ if(q&&q._rzb){const missile=q.kind==='rzbMissile'&&q._rzbFurious;
+  q._weaponProof=!missile;q._shootable=!!missile;q.hp=missile?1:undefined;q._fb9RzbProof=!missile;
+  q._s3kOriginalProof=!missile;}}}
 rzbShot=function(){const n=eBullets.length,r=FB9_RZB.shot.apply(this,arguments);fb9RzbProof(n);return r;};
 rzbMissile=function(){const n=eBullets.length,r=FB9_RZB.missile.apply(this,arguments);fb9RzbProof(n);return r;};
-enemyOrdnanceCanIntercept=function(q){return q&&q._fb9RzbProof?false:FB9_RZB.intercept.apply(this,arguments);};
+enemyOrdnanceCanIntercept=function(q){return q&&(q._fb9RzbProof||q._ovSonicWave)?false:FB9_RZB.intercept.apply(this,arguments);};
 
 /* "Palette swap his charge up on Furious to be red instead of green."
    The charge draw asked rzbSprite for tint '#ff1838', but rzbSprite only recognises 'furious'
@@ -209,7 +210,9 @@ function fb9SwoopDraw(e){
  const S=e._fb9Swoop,v=Math.max(0,furyJetVariant(e)),key='furyjet_'+v+'_bank_0';
  if(!XART.rdy(key))return false;
  const im=furyJetGreenFrame(key,v,XART.get(key)),size=Math.max(e.w,e.h)*1.10;
- const pitch=S.phase==='loop'?Math.cos(S.k*TAU):1,lift=S.phase==='loop'?1+.32*Math.sin(S.k*Math.PI):1;
+ // A turning jet stays a solid authored plate. Negative Y scales made its
+ // southbound pass flip north, and the lift scale made its hull visibly pump.
+ const pitch=1,lift=1;
  e._drawW=size;e._drawH=size;
  ctx.save();ctx.imageSmoothingEnabled=false;
  const shadow=xartTint(key,'#000000',1);

@@ -1,0 +1,1886 @@
+{
+  "shield_form": [
+    {
+      "key": "hm10_shield_form_0",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/shield_form_00.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256,
+        224
+      ],
+      "sourceRect": [
+        0,
+        0,
+        314,
+        314
+      ],
+      "sourceIndex": 0,
+      "sha256": "e910fa48933839b9e3c1cdad8ee8666fd1935ac7d7ce8ba99c2cec0120a1d3e9"
+    },
+    {
+      "key": "hm10_shield_form_1",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/shield_form_01.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256,
+        224
+      ],
+      "sourceRect": [
+        314,
+        0,
+        627,
+        314
+      ],
+      "sourceIndex": 1,
+      "sha256": "046448faa59acaac7c8abc56d3f576f7f7befb50fe95e03a6be7a3ce3c9535b3"
+    },
+    {
+      "key": "hm10_shield_form_2",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/shield_form_02.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256,
+        224
+      ],
+      "sourceRect": [
+        627,
+        0,
+        940,
+        314
+      ],
+      "sourceIndex": 2,
+      "sha256": "646f9b0474a109a277a97b305efe49abd1b94492941ea219948e6fe449b27ab8"
+    },
+    {
+      "key": "hm10_shield_form_3",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/shield_form_03.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256,
+        224
+      ],
+      "sourceRect": [
+        940,
+        0,
+        1254,
+        314
+      ],
+      "sourceIndex": 3,
+      "sha256": "977ab32f2e252e18a3c38b6b42a45bfec83bf96ebeb9851d71cd2ff86c71c855"
+    },
+    {
+      "key": "hm10_shield_form_4",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/shield_form_04.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256,
+        224
+      ],
+      "sourceRect": [
+        0,
+        314,
+        314,
+        627
+      ],
+      "sourceIndex": 4,
+      "sha256": "437f34d131c5e0304299f4a25bfd78c76a43b3f6a7206a206904fd4afff8245d"
+    },
+    {
+      "key": "hm10_shield_form_5",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/shield_form_05.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256,
+        224
+      ],
+      "sourceRect": [
+        314,
+        314,
+        627,
+        627
+      ],
+      "sourceIndex": 5,
+      "sha256": "cc54e3fa27c79f4d320d759960fc3bd9cf17c4e5cffabf8f1cd8f4a36fc17223"
+    },
+    {
+      "key": "hm10_shield_form_6",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/shield_form_06.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256,
+        224
+      ],
+      "sourceRect": [
+        627,
+        314,
+        940,
+        627
+      ],
+      "sourceIndex": 6,
+      "sha256": "f88568407c527a3d608390d33daa612896c8f68ea2a5e21405dfc49fad101dbf"
+    },
+    {
+      "key": "hm10_shield_form_7",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/shield_form_07.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256,
+        224
+      ],
+      "sourceRect": [
+        940,
+        314,
+        1254,
+        627
+      ],
+      "sourceIndex": 7,
+      "sha256": "4e396651aab6eae284be2e63a122c5613fa8f23f78637061e6036bb2362d946d"
+    },
+    {
+      "key": "hm10_shield_form_8",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/shield_form_08.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256,
+        224
+      ],
+      "sourceRect": [
+        0,
+        627,
+        314,
+        940
+      ],
+      "sourceIndex": 8,
+      "sha256": "f513f5b849c5e49787e57f65a86ee07f6d452a795ada4d7d32588ab467b7198d"
+    },
+    {
+      "key": "hm10_shield_form_9",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/shield_form_09.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256,
+        224
+      ],
+      "sourceRect": [
+        314,
+        627,
+        627,
+        940
+      ],
+      "sourceIndex": 9,
+      "sha256": "29ffa15d830e12a6d17aa9fe4e33a79021982398365ce761bc9a16d0f7f079c4"
+    },
+    {
+      "key": "hm10_shield_form_10",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/shield_form_10.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256,
+        224
+      ],
+      "sourceRect": [
+        627,
+        627,
+        940,
+        940
+      ],
+      "sourceIndex": 10,
+      "sha256": "901a7c08e61e5c86c1dca9d4f27e9766fdce26bb7a762a91fb150ceac82f1098"
+    },
+    {
+      "key": "hm10_shield_form_11",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/shield_form_11.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256,
+        224
+      ],
+      "sourceRect": [
+        940,
+        627,
+        1254,
+        940
+      ],
+      "sourceIndex": 11,
+      "sha256": "c0bd5c312756d9a08e392fa8270685e6984f35e666228d6a6ffaa57a4a0a9f63"
+    },
+    {
+      "key": "hm10_shield_form_12",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/shield_form_12.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256,
+        224
+      ],
+      "sourceRect": [
+        0,
+        940,
+        314,
+        1254
+      ],
+      "sourceIndex": 12,
+      "sha256": "d64da6aa1eadf37f94cd726035c82204b26f1822a777439ff4bcf39ceec781a6"
+    },
+    {
+      "key": "hm10_shield_form_13",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/shield_form_13.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256,
+        224
+      ],
+      "sourceRect": [
+        314,
+        940,
+        627,
+        1254
+      ],
+      "sourceIndex": 13,
+      "sha256": "6176b37ab5bc5172620000bbab1fd318eb6420ea3686a7e7c7c9bf23d9ed85ea"
+    },
+    {
+      "key": "hm10_shield_form_14",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/shield_form_14.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256,
+        224
+      ],
+      "sourceRect": [
+        627,
+        940,
+        940,
+        1254
+      ],
+      "sourceIndex": 14,
+      "sha256": "2dd8b9e7d5aa0c7ac260e752648aa652497437ea71ab00a17a95ad28ab86b8ab"
+    },
+    {
+      "key": "hm10_shield_form_15",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/shield_form_15.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256,
+        224
+      ],
+      "sourceRect": [
+        940,
+        940,
+        1254,
+        1254
+      ],
+      "sourceIndex": 15,
+      "sha256": "c6e90518d36be656062e67c85c999e387ba83864d3187ecc481db6c620ba091f"
+    }
+  ],
+  "swing_right": [
+    {
+      "key": "hm10_swing_right_0",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/swing_right_00.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256,
+        224
+      ],
+      "sourceRect": [
+        0,
+        0,
+        384,
+        256
+      ],
+      "sourceIndex": 0,
+      "sha256": "ac5464baceba056728e58769f0eff157b455941630ebf8c17b05ebb833420218",
+      "tip": [
+        137,
+        350
+      ]
+    },
+    {
+      "key": "hm10_swing_right_1",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/swing_right_01.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256,
+        224
+      ],
+      "sourceRect": [
+        384,
+        0,
+        768,
+        256
+      ],
+      "sourceIndex": 1,
+      "sha256": "0f9fb4177e6b493dfab77d7dd2a02856fe5b5b03b7071c9b8b20266db8264cd2",
+      "tip": [
+        116,
+        198
+      ]
+    },
+    {
+      "key": "hm10_swing_right_2",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/swing_right_02.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256,
+        224
+      ],
+      "sourceRect": [
+        768,
+        0,
+        1152,
+        256
+      ],
+      "sourceIndex": 2,
+      "sha256": "b7e2cb5b60ab9779abe7688597fc16f452af2e40a1dc9926487cd5b926baac3a",
+      "tip": [
+        117,
+        214
+      ]
+    },
+    {
+      "key": "hm10_swing_right_3",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/swing_right_03.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256,
+        224
+      ],
+      "sourceRect": [
+        1152,
+        0,
+        1536,
+        256
+      ],
+      "sourceIndex": 3,
+      "sha256": "658c075dfa6f824b2337640de6935aa9fb5ec8ff83a6b69d28c5b3ea26547310",
+      "tip": [
+        195,
+        137
+      ]
+    },
+    {
+      "key": "hm10_swing_right_4",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/swing_right_04.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256,
+        224
+      ],
+      "sourceRect": [
+        0,
+        256,
+        384,
+        512
+      ],
+      "sourceIndex": 4,
+      "sha256": "707ebce48149d5b7b605678476262bea04118485290ade3936bf756ddb4a7f3c",
+      "tip": [
+        173,
+        157
+      ]
+    },
+    {
+      "key": "hm10_swing_right_5",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/swing_right_05.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256,
+        224
+      ],
+      "sourceRect": [
+        384,
+        256,
+        768,
+        512
+      ],
+      "sourceIndex": 5,
+      "sha256": "cdf60a012e663b783a0c9dcc4ba5a83b6b98eb557b43f98cec84b2c022826634",
+      "tip": [
+        179,
+        158
+      ]
+    },
+    {
+      "key": "hm10_swing_right_6",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/swing_right_06.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256,
+        224
+      ],
+      "sourceRect": [
+        768,
+        256,
+        1152,
+        512
+      ],
+      "sourceIndex": 6,
+      "sha256": "2b07f213acc8f8f1cb08c855899834b99c0336999bbbee980dc548eee39199cb",
+      "tip": [
+        95,
+        176
+      ]
+    },
+    {
+      "key": "hm10_swing_right_7",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/swing_right_07.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256,
+        224
+      ],
+      "sourceRect": [
+        1152,
+        256,
+        1536,
+        512
+      ],
+      "sourceIndex": 7,
+      "sha256": "7eaa4e5e7c55d157666fe633d5e57afa32c6ff984402ea2d974381612af10bf2",
+      "tip": [
+        86,
+        189
+      ]
+    },
+    {
+      "key": "hm10_swing_right_8",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/swing_right_08.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256,
+        224
+      ],
+      "sourceRect": [
+        0,
+        512,
+        384,
+        768
+      ],
+      "sourceIndex": 8,
+      "sha256": "755f749cb300d35a91c70ad37b66e5cda3c27d3c96636fa57878710b8efae6c0",
+      "tip": [
+        158,
+        226
+      ]
+    },
+    {
+      "key": "hm10_swing_right_9",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/swing_right_09.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256,
+        224
+      ],
+      "sourceRect": [
+        384,
+        512,
+        768,
+        768
+      ],
+      "sourceIndex": 9,
+      "sha256": "7047ac151a7db7ae22f4efbeabc2436f1621ad97f0baa40e620bf0a47d9863a8",
+      "tip": [
+        83,
+        238
+      ]
+    },
+    {
+      "key": "hm10_swing_right_10",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/swing_right_10.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256,
+        224
+      ],
+      "sourceRect": [
+        768,
+        512,
+        1152,
+        768
+      ],
+      "sourceIndex": 10,
+      "sha256": "65c92400545b460cd940888ccb3c5aca63d88316e04f411ef932b9dbe07a8ff2",
+      "tip": [
+        392,
+        224
+      ]
+    },
+    {
+      "key": "hm10_swing_right_11",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/swing_right_11.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256,
+        224
+      ],
+      "sourceRect": [
+        1152,
+        512,
+        1536,
+        768
+      ],
+      "sourceIndex": 11,
+      "sha256": "39317ffc1de13c22b6fc8b65dd84579db938f896bdeaa03bce582ec7741cfbea",
+      "tip": [
+        398,
+        227
+      ]
+    },
+    {
+      "key": "hm10_swing_right_12",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/swing_right_12.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256,
+        224
+      ],
+      "sourceRect": [
+        0,
+        768,
+        384,
+        1024
+      ],
+      "sourceIndex": 12,
+      "sha256": "2b39e88858c05ef21e1e6a5df1a3217654858b56d09db8a259fc8473980026ee",
+      "tip": [
+        466,
+        231
+      ]
+    },
+    {
+      "key": "hm10_swing_right_13",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/swing_right_13.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256,
+        224
+      ],
+      "sourceRect": [
+        384,
+        768,
+        768,
+        1024
+      ],
+      "sourceIndex": 13,
+      "sha256": "6ecd031682ea8a90e0224133b6cd7c12dfb68e6e6f88bf4355decf98d884ba65",
+      "tip": [
+        423,
+        228
+      ]
+    },
+    {
+      "key": "hm10_swing_right_14",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/swing_right_14.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256,
+        224
+      ],
+      "sourceRect": [
+        768,
+        768,
+        1152,
+        1024
+      ],
+      "sourceIndex": 14,
+      "sha256": "cf4a565f03a67682edb980eecb580c3817b21efced8dde16f302ef855c70815f",
+      "tip": [
+        389,
+        337
+      ]
+    },
+    {
+      "key": "hm10_swing_right_15",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/swing_right_15.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256,
+        224
+      ],
+      "sourceRect": [
+        1152,
+        768,
+        1536,
+        1024
+      ],
+      "sourceIndex": 15,
+      "sha256": "73ce043e9859199f7f4673362a87012201b868b179bc43315b8199f159432dcc",
+      "tip": [
+        124,
+        389
+      ]
+    }
+  ],
+  "swing_left": [
+    {
+      "key": "hm10_swing_left_0",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/swing_left_00.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256,
+        224
+      ],
+      "sourceRect": [
+        0,
+        0,
+        320,
+        350
+      ],
+      "sourceIndex": 0,
+      "sha256": "69cf463dbacffd8ba344fe1ae32ab45f4f1e4c2052e515000a8a1feeeef811e6",
+      "tip": [
+        151,
+        339
+      ]
+    },
+    {
+      "key": "hm10_swing_left_1",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/swing_left_01.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256,
+        224
+      ],
+      "sourceRect": [
+        320,
+        0,
+        650,
+        350
+      ],
+      "sourceIndex": 1,
+      "sha256": "a234961b5a773ba9b14e0ee6d35ddf9b2a13164fab921f995184983328f22b50",
+      "tip": [
+        357,
+        205
+      ]
+    },
+    {
+      "key": "hm10_swing_left_2",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/swing_left_02.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256,
+        224
+      ],
+      "sourceRect": [
+        650,
+        0,
+        970,
+        350
+      ],
+      "sourceIndex": 2,
+      "sha256": "df703b6b21b0f2a388962bbe5b99e50653e5e38074c499a0028685676cfc2b68",
+      "tip": [
+        327,
+        136
+      ]
+    },
+    {
+      "key": "hm10_swing_left_3",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/swing_left_03.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256,
+        224
+      ],
+      "sourceRect": [
+        970,
+        0,
+        1254,
+        350
+      ],
+      "sourceIndex": 3,
+      "sha256": "6d881f0afd6fcaf94f12b563c14f4d1e5b8b81e4656c3b59a9bba1ba3dea2dc0",
+      "tip": [
+        285,
+        89
+      ]
+    },
+    {
+      "key": "hm10_swing_left_4",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/swing_left_04.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256,
+        224
+      ],
+      "sourceRect": [
+        0,
+        350,
+        358,
+        637
+      ],
+      "sourceIndex": 4,
+      "sha256": "c69765d26d57197a5f1ae98f7c2da81fbd92462072e2d6035f519bd0c9791ab5",
+      "tip": [
+        405,
+        231
+      ]
+    },
+    {
+      "key": "hm10_swing_left_5",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/swing_left_05.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256,
+        224
+      ],
+      "sourceRect": [
+        358,
+        350,
+        660,
+        637
+      ],
+      "sourceIndex": 5,
+      "sha256": "2cc761b21acf3b46401c050aa7a52504727e9c0351ecb6ddcf1ccce475b901f3",
+      "tip": [
+        392,
+        235
+      ]
+    },
+    {
+      "key": "hm10_swing_left_6",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/swing_left_06.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256,
+        224
+      ],
+      "sourceRect": [
+        660,
+        350,
+        974,
+        637
+      ],
+      "sourceIndex": 6,
+      "sha256": "bbd45188266e274e6bf036fb888d5cf22f383fedcd3222445d3e6e593ce5721e",
+      "tip": [
+        378,
+        181
+      ]
+    },
+    {
+      "key": "hm10_swing_left_7",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/swing_left_07.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256,
+        224
+      ],
+      "sourceRect": [
+        974,
+        350,
+        1254,
+        637
+      ],
+      "sourceIndex": 7,
+      "sha256": "930126083a6d0133db0181868fdcfd0c634df00e1ce0efd21927aa2732d0f8eb",
+      "tip": [
+        371,
+        153
+      ]
+    },
+    {
+      "key": "hm10_swing_left_8",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/swing_left_08.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256,
+        224
+      ],
+      "sourceRect": [
+        613,
+        638,
+        901,
+        935
+      ],
+      "sourceIndex": 10,
+      "sha256": "5fc4aae604fd21844f104411f1981484663ba53d06847c81243af7494ea2de2b",
+      "tip": [
+        317,
+        274
+      ]
+    },
+    {
+      "key": "hm10_swing_left_9",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/swing_left_09.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256,
+        224
+      ],
+      "sourceRect": [
+        328,
+        638,
+        613,
+        935
+      ],
+      "sourceIndex": 9,
+      "sha256": "24630be4c88f4aa39143e1193322b805d429a66b847b769ad269d11b2b9b6f43",
+      "tip": [
+        301,
+        274
+      ]
+    },
+    {
+      "key": "hm10_swing_left_10",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/swing_left_10.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256,
+        224
+      ],
+      "sourceRect": [
+        0,
+        638,
+        328,
+        935
+      ],
+      "sourceIndex": 8,
+      "sha256": "f5ff88d3d81503c9a1ca694df53ff37de9007b25eff8ab0b713d55bbd253219c",
+      "tip": [
+        121,
+        178
+      ]
+    },
+    {
+      "key": "hm10_swing_left_11",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/swing_left_11.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256,
+        224
+      ],
+      "sourceRect": [
+        901,
+        638,
+        1254,
+        935
+      ],
+      "sourceIndex": 11,
+      "sha256": "68e84e2e0e13dbf4971314ab1c004dc8a4bb0670e8e24f0f4ee1ae361a1edfdb",
+      "tip": [
+        96,
+        229
+      ]
+    },
+    {
+      "key": "hm10_swing_left_12",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/swing_left_12.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256,
+        224
+      ],
+      "sourceRect": [
+        0,
+        938,
+        316,
+        1254
+      ],
+      "sourceIndex": 12,
+      "sha256": "b58a638cfb2d555188c553e21fc77900287d5d0dbb86f6c75f40421f1e358802",
+      "tip": [
+        100,
+        195
+      ]
+    },
+    {
+      "key": "hm10_swing_left_13",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/swing_left_13.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256,
+        224
+      ],
+      "sourceRect": [
+        316,
+        938,
+        634,
+        1254
+      ],
+      "sourceIndex": 13,
+      "sha256": "4145e889b88b6ca5e3ac09952876d311bcce21332ff914bdde30d01008d32520",
+      "tip": [
+        128,
+        273
+      ]
+    },
+    {
+      "key": "hm10_swing_left_14",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/swing_left_14.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256,
+        224
+      ],
+      "sourceRect": [
+        634,
+        938,
+        952,
+        1254
+      ],
+      "sourceIndex": 14,
+      "sha256": "b943dfd20bd58b12a612a53c4480f7c6dde4827da845837b3a5a130cbdd647c3",
+      "tip": [
+        125,
+        324
+      ]
+    },
+    {
+      "key": "hm10_swing_left_15",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/swing_left_15.png",
+      "w": 512,
+      "h": 512,
+      "pivot": [
+        256,
+        224
+      ],
+      "sourceRect": [
+        952,
+        938,
+        1254,
+        1254
+      ],
+      "sourceIndex": 15,
+      "sha256": "0dd031a2bbf99a427b7aebc77ed3409c4f66e60d29f618de4b3709021a4a21d9",
+      "tip": [
+        141,
+        328
+      ]
+    }
+  ],
+  "shield_wall": [
+    {
+      "key": "hm10_shield_wall_0",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/shield_wall_00.png",
+      "w": 512,
+      "h": 256,
+      "pivot": [
+        256,
+        128
+      ],
+      "sourceRect": [
+        0,
+        0,
+        444,
+        222
+      ],
+      "sourceIndex": 0,
+      "sha256": "61a00b169a6c6b315aeb1ab7cf13d2e66e5099b38e37b1986283296beda7c888"
+    },
+    {
+      "key": "hm10_shield_wall_1",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/shield_wall_01.png",
+      "w": 512,
+      "h": 256,
+      "pivot": [
+        256,
+        128
+      ],
+      "sourceRect": [
+        444,
+        0,
+        887,
+        222
+      ],
+      "sourceIndex": 1,
+      "sha256": "bde4c26cd66905d472b1f74e0bb3280459b4061af64ecdb6c64fd9eae0c72a5b"
+    },
+    {
+      "key": "hm10_shield_wall_2",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/shield_wall_02.png",
+      "w": 512,
+      "h": 256,
+      "pivot": [
+        256,
+        128
+      ],
+      "sourceRect": [
+        887,
+        0,
+        1330,
+        222
+      ],
+      "sourceIndex": 2,
+      "sha256": "9c560bbed4e861c40063410f185a5d9a2d9c1965808fa9d3e341304c890c9505"
+    },
+    {
+      "key": "hm10_shield_wall_3",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/shield_wall_03.png",
+      "w": 512,
+      "h": 256,
+      "pivot": [
+        256,
+        128
+      ],
+      "sourceRect": [
+        1330,
+        0,
+        1774,
+        222
+      ],
+      "sourceIndex": 3,
+      "sha256": "335016561cc38b95ea684b04fca8eccd2bcdceccfe85b674c0b50e8ac09566ed"
+    },
+    {
+      "key": "hm10_shield_wall_4",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/shield_wall_04.png",
+      "w": 512,
+      "h": 256,
+      "pivot": [
+        256,
+        128
+      ],
+      "sourceRect": [
+        0,
+        222,
+        444,
+        444
+      ],
+      "sourceIndex": 4,
+      "sha256": "b2a2a846ee5e8d520f9c1df994ec0d591f932196122e541c22260ec613edf2ae"
+    },
+    {
+      "key": "hm10_shield_wall_5",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/shield_wall_05.png",
+      "w": 512,
+      "h": 256,
+      "pivot": [
+        256,
+        128
+      ],
+      "sourceRect": [
+        444,
+        222,
+        887,
+        444
+      ],
+      "sourceIndex": 5,
+      "sha256": "2ca388c9fe2a16c8e3f996a7194dffbd199f8272a3c73ccc0688afc86b9b797f"
+    },
+    {
+      "key": "hm10_shield_wall_6",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/shield_wall_06.png",
+      "w": 512,
+      "h": 256,
+      "pivot": [
+        256,
+        128
+      ],
+      "sourceRect": [
+        887,
+        222,
+        1330,
+        444
+      ],
+      "sourceIndex": 6,
+      "sha256": "eecc0c9324256d378d2792ffe909161d37b5839cda45d964041350958ab4fecc"
+    },
+    {
+      "key": "hm10_shield_wall_7",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/shield_wall_07.png",
+      "w": 512,
+      "h": 256,
+      "pivot": [
+        256,
+        128
+      ],
+      "sourceRect": [
+        1330,
+        222,
+        1774,
+        444
+      ],
+      "sourceIndex": 7,
+      "sha256": "5e5e57d51b634e2be71b8cc9412fede98d2d5b8c6c74d283dae047188013b1d7"
+    },
+    {
+      "key": "hm10_shield_wall_8",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/shield_wall_08.png",
+      "w": 512,
+      "h": 256,
+      "pivot": [
+        256,
+        128
+      ],
+      "sourceRect": [
+        0,
+        444,
+        444,
+        665
+      ],
+      "sourceIndex": 8,
+      "sha256": "f705e84262c2f3e60bf2d0acd5d13ea9fddb2b2eeb2217f5c2f544584cf21681"
+    },
+    {
+      "key": "hm10_shield_wall_9",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/shield_wall_09.png",
+      "w": 512,
+      "h": 256,
+      "pivot": [
+        256,
+        128
+      ],
+      "sourceRect": [
+        444,
+        444,
+        887,
+        665
+      ],
+      "sourceIndex": 9,
+      "sha256": "81213ac674cd80805ee20d260ddca7dfb18bad64f847e86e41cf38bb4d0de4c3"
+    },
+    {
+      "key": "hm10_shield_wall_10",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/shield_wall_10.png",
+      "w": 512,
+      "h": 256,
+      "pivot": [
+        256,
+        128
+      ],
+      "sourceRect": [
+        887,
+        444,
+        1330,
+        665
+      ],
+      "sourceIndex": 10,
+      "sha256": "d2fdc4e6c88f1592acc4288b0397b8ce71474b0a3e979bf78beeae32db071100"
+    },
+    {
+      "key": "hm10_shield_wall_11",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/shield_wall_11.png",
+      "w": 512,
+      "h": 256,
+      "pivot": [
+        256,
+        128
+      ],
+      "sourceRect": [
+        1330,
+        444,
+        1774,
+        665
+      ],
+      "sourceIndex": 11,
+      "sha256": "9f1edf9e9bee5dbe45d35a3d888902c8ddf69b300e2f7b0947c326e07bb84410"
+    },
+    {
+      "key": "hm10_shield_wall_12",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/shield_wall_12.png",
+      "w": 512,
+      "h": 256,
+      "pivot": [
+        256,
+        128
+      ],
+      "sourceRect": [
+        0,
+        665,
+        444,
+        887
+      ],
+      "sourceIndex": 12,
+      "sha256": "186b8cf01e35515d79849a268ac40597b47e220a9fda429e2f3f65e92cc150f2"
+    },
+    {
+      "key": "hm10_shield_wall_13",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/shield_wall_13.png",
+      "w": 512,
+      "h": 256,
+      "pivot": [
+        256,
+        128
+      ],
+      "sourceRect": [
+        444,
+        665,
+        887,
+        887
+      ],
+      "sourceIndex": 13,
+      "sha256": "107668b8c88d7f191b210f6425ad2221a7b7748a05282d397b87ab31622cfd7a"
+    },
+    {
+      "key": "hm10_shield_wall_14",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/shield_wall_14.png",
+      "w": 512,
+      "h": 256,
+      "pivot": [
+        256,
+        128
+      ],
+      "sourceRect": [
+        887,
+        665,
+        1330,
+        887
+      ],
+      "sourceIndex": 14,
+      "sha256": "6173c3e7784d6433bb5d6b601666828caa99c223d285ef646a2ea2e7060f79ff"
+    },
+    {
+      "key": "hm10_shield_wall_15",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/shield_wall_15.png",
+      "w": 512,
+      "h": 256,
+      "pivot": [
+        256,
+        128
+      ],
+      "sourceRect": [
+        1330,
+        665,
+        1774,
+        887
+      ],
+      "sourceIndex": 15,
+      "sha256": "1dd5ed6bbbc8c965cb4e5373194fb9be0fc7a5f5fe7b8b8c3096ead4b9193e5e"
+    }
+  ],
+  "core": [
+    {
+      "key": "hm10_core_0",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/core_00.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sourceRect": [
+        0,
+        0,
+        314,
+        314
+      ],
+      "sourceIndex": 0,
+      "sha256": "1e8a0d891eb8812a4ab2723a65b4fab0b016205aadd779d3b1a59a989f924c64"
+    },
+    {
+      "key": "hm10_core_1",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/core_01.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sourceRect": [
+        314,
+        0,
+        627,
+        314
+      ],
+      "sourceIndex": 1,
+      "sha256": "0471c4b46d150769842f4b04e0c777bf961eafd90f5c9bfba50749e78ee9b985"
+    },
+    {
+      "key": "hm10_core_2",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/core_02.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sourceRect": [
+        627,
+        0,
+        940,
+        314
+      ],
+      "sourceIndex": 2,
+      "sha256": "835dc6fef4da929b8614596261be15a45256dda27a0a0458cd91122123a89c93"
+    },
+    {
+      "key": "hm10_core_3",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/core_03.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sourceRect": [
+        940,
+        0,
+        1254,
+        314
+      ],
+      "sourceIndex": 3,
+      "sha256": "024a8e1d64c7a014a04595174b7ad9f69143ca4d07f47ec49084c8b9c5227875"
+    },
+    {
+      "key": "hm10_core_4",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/core_04.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sourceRect": [
+        0,
+        314,
+        314,
+        627
+      ],
+      "sourceIndex": 4,
+      "sha256": "9d1bb68b4a3318140b494ca9d471ce526849f57e0080ed8c04535335ccfb4439"
+    },
+    {
+      "key": "hm10_core_5",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/core_05.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sourceRect": [
+        314,
+        314,
+        627,
+        627
+      ],
+      "sourceIndex": 5,
+      "sha256": "0f00c896911e3bf1a25b6de1329e89218ea842b70f70bce18f765be9a73eee4b"
+    },
+    {
+      "key": "hm10_core_6",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/core_06.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sourceRect": [
+        627,
+        314,
+        940,
+        627
+      ],
+      "sourceIndex": 6,
+      "sha256": "89a3464caac70e171d1700e889d8163975e8f6f48e15825ccf7a5c830d9be5c8"
+    },
+    {
+      "key": "hm10_core_7",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/core_07.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sourceRect": [
+        940,
+        314,
+        1254,
+        627
+      ],
+      "sourceIndex": 7,
+      "sha256": "9d1c5fdf0e83ddf4b6a87d45c64af4557bee5b419f4557b6f7d4ba91c7ae29f3"
+    },
+    {
+      "key": "hm10_core_8",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/core_08.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sourceRect": [
+        0,
+        627,
+        314,
+        940
+      ],
+      "sourceIndex": 8,
+      "sha256": "8e1d2c728fe0325ee49694ffe2b20316172e0fb92b6732c33f639283bc04c2ad"
+    },
+    {
+      "key": "hm10_core_9",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/core_09.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sourceRect": [
+        314,
+        627,
+        627,
+        940
+      ],
+      "sourceIndex": 9,
+      "sha256": "008b306f878a1ea3d2e2f5df1368665869eaa34aceda3499f24ffd77239f3080"
+    },
+    {
+      "key": "hm10_core_10",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/core_10.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sourceRect": [
+        627,
+        627,
+        940,
+        940
+      ],
+      "sourceIndex": 10,
+      "sha256": "727bcf0d4cf59a2cdddd1ba63161322812ed1ee8dc3835618b3fe520ef20af2d"
+    },
+    {
+      "key": "hm10_core_11",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/core_11.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sourceRect": [
+        940,
+        627,
+        1254,
+        940
+      ],
+      "sourceIndex": 11,
+      "sha256": "7d0cc27229f8fa9621e844eb63b7f66b9842b8c862001e67c6ce8a3e75525a75"
+    },
+    {
+      "key": "hm10_core_12",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/core_12.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sourceRect": [
+        0,
+        940,
+        314,
+        1254
+      ],
+      "sourceIndex": 12,
+      "sha256": "eb2840ff271cc5744695e0d475d3fc14b045798f86679ae0856f962f323af464"
+    },
+    {
+      "key": "hm10_core_13",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/core_13.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sourceRect": [
+        314,
+        940,
+        627,
+        1254
+      ],
+      "sourceIndex": 13,
+      "sha256": "a97548fc1fc55cd6590f51bb44af2ab607d097008dfe154b6ab484ea915f6371"
+    },
+    {
+      "key": "hm10_core_14",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/core_14.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sourceRect": [
+        627,
+        940,
+        940,
+        1254
+      ],
+      "sourceIndex": 14,
+      "sha256": "4b00a34f0e3330120c9a920c25ef08268f77f5bf429265e07d816cc519a65eb7"
+    },
+    {
+      "key": "hm10_core_15",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/core_15.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sourceRect": [
+        940,
+        940,
+        1254,
+        1254
+      ],
+      "sourceIndex": 15,
+      "sha256": "7f6d6dde18bec0dddf700ded1cf8f1318a5402c5d0acd0530de42b258fa5b544"
+    }
+  ],
+  "spike": [
+    {
+      "key": "hm10_spike_0",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/spike_00.png",
+      "w": 256,
+      "h": 512,
+      "pivot": [
+        128,
+        448
+      ],
+      "sourceRect": [
+        0,
+        0,
+        222,
+        444
+      ],
+      "sourceIndex": 0,
+      "sha256": "892a50c51e5fa866ad1db1a4d823e7fa2fcc2d7e5723656c536211e219776867",
+      "height": 39
+    },
+    {
+      "key": "hm10_spike_1",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/spike_01.png",
+      "w": 256,
+      "h": 512,
+      "pivot": [
+        128,
+        448
+      ],
+      "sourceRect": [
+        222,
+        0,
+        444,
+        444
+      ],
+      "sourceIndex": 1,
+      "sha256": "884b8fe2b4f69d67e5d69806087ad8a2ae7089b11a247594ce4d15a085954832",
+      "height": 41
+    },
+    {
+      "key": "hm10_spike_2",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/spike_02.png",
+      "w": 256,
+      "h": 512,
+      "pivot": [
+        128,
+        448
+      ],
+      "sourceRect": [
+        444,
+        0,
+        665,
+        444
+      ],
+      "sourceIndex": 2,
+      "sha256": "a1bb19a33d731cd8227214813e101e9602e64828deec723ed5ce47590ea548e6",
+      "height": 62
+    },
+    {
+      "key": "hm10_spike_3",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/spike_03.png",
+      "w": 256,
+      "h": 512,
+      "pivot": [
+        128,
+        448
+      ],
+      "sourceRect": [
+        665,
+        0,
+        887,
+        444
+      ],
+      "sourceIndex": 3,
+      "sha256": "b015911a6924a691b3c59dd6bc92f4927fe94e431614fcac9ec0aa4d9a133f7b",
+      "height": 91
+    },
+    {
+      "key": "hm10_spike_4",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/spike_04.png",
+      "w": 256,
+      "h": 512,
+      "pivot": [
+        128,
+        448
+      ],
+      "sourceRect": [
+        0,
+        444,
+        222,
+        887
+      ],
+      "sourceIndex": 4,
+      "sha256": "d87f88b768d2b6816450c136029111cc37987c4f0ad8b15a434bd41fe32e2f2f",
+      "height": 158
+    },
+    {
+      "key": "hm10_spike_5",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/spike_05.png",
+      "w": 256,
+      "h": 512,
+      "pivot": [
+        128,
+        448
+      ],
+      "sourceRect": [
+        222,
+        444,
+        444,
+        887
+      ],
+      "sourceIndex": 5,
+      "sha256": "88248fa5774bde5a21c30c0f408e3200c18af8d9b8844d08a029d3af071b23a3",
+      "height": 207
+    },
+    {
+      "key": "hm10_spike_6",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/spike_06.png",
+      "w": 256,
+      "h": 512,
+      "pivot": [
+        128,
+        448
+      ],
+      "sourceRect": [
+        444,
+        444,
+        665,
+        887
+      ],
+      "sourceIndex": 6,
+      "sha256": "898d959eb56a74a87e122cb9fc024d950340769c720ca468681fbec489e50a75",
+      "height": 285
+    },
+    {
+      "key": "hm10_spike_7",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/spike_07.png",
+      "w": 256,
+      "h": 512,
+      "pivot": [
+        128,
+        448
+      ],
+      "sourceRect": [
+        665,
+        444,
+        887,
+        887
+      ],
+      "sourceIndex": 7,
+      "sha256": "533f844b8a80407c25c650a77beb13c3c0ea9b157896ad26c68fca5525ed216b",
+      "height": 342
+    },
+    {
+      "key": "hm10_spike_8",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/spike_08.png",
+      "w": 256,
+      "h": 512,
+      "pivot": [
+        128,
+        448
+      ],
+      "sourceRect": [
+        0,
+        887,
+        222,
+        1330
+      ],
+      "sourceIndex": 8,
+      "sha256": "bceb22556ee90ffdf0b3081d96ec64a1ebce023570faaa4c3c5dee018e287be8",
+      "height": 332
+    },
+    {
+      "key": "hm10_spike_9",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/spike_09.png",
+      "w": 256,
+      "h": 512,
+      "pivot": [
+        128,
+        448
+      ],
+      "sourceRect": [
+        222,
+        887,
+        444,
+        1330
+      ],
+      "sourceIndex": 9,
+      "sha256": "8a3815cb33f65834d1b6f60e07ef575ef624c0690339a36ea4dbf56ee924daf7",
+      "height": 343
+    },
+    {
+      "key": "hm10_spike_10",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/spike_10.png",
+      "w": 256,
+      "h": 512,
+      "pivot": [
+        128,
+        448
+      ],
+      "sourceRect": [
+        444,
+        887,
+        665,
+        1330
+      ],
+      "sourceIndex": 10,
+      "sha256": "bac7949886b2e720a1facbdf5bc96751540fb63228f1551ee0cf3f3ac8a526cb",
+      "height": 354
+    },
+    {
+      "key": "hm10_spike_11",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/spike_11.png",
+      "w": 256,
+      "h": 512,
+      "pivot": [
+        128,
+        448
+      ],
+      "sourceRect": [
+        665,
+        887,
+        887,
+        1330
+      ],
+      "sourceIndex": 11,
+      "sha256": "ab402da3ec0b643a5045cef35634acd4adbea637b0bc6daf4f08f9ea38bfc4d8",
+      "height": 364
+    },
+    {
+      "key": "hm10_spike_12",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/spike_12.png",
+      "w": 256,
+      "h": 512,
+      "pivot": [
+        128,
+        448
+      ],
+      "sourceRect": [
+        0,
+        1330,
+        222,
+        1774
+      ],
+      "sourceIndex": 12,
+      "sha256": "503a07b8a229f963d1baac6da58dd2d37ecf140ce567d8f4b9c339e52cbbcbf7",
+      "height": 361
+    },
+    {
+      "key": "hm10_spike_13",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/spike_13.png",
+      "w": 256,
+      "h": 512,
+      "pivot": [
+        128,
+        448
+      ],
+      "sourceRect": [
+        222,
+        1330,
+        444,
+        1774
+      ],
+      "sourceIndex": 13,
+      "sha256": "8cb0897682c98c450ebb93b4ed1b76c831c47ccc20c9cbedfc9096efced24045",
+      "height": 342
+    },
+    {
+      "key": "hm10_spike_14",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/spike_14.png",
+      "w": 256,
+      "h": 512,
+      "pivot": [
+        128,
+        448
+      ],
+      "sourceRect": [
+        444,
+        1330,
+        665,
+        1774
+      ],
+      "sourceIndex": 14,
+      "sha256": "42abfa2af365c443352ce58cc4067a4c01020c2812e6644a85ca2aa0e1ab9ba1",
+      "height": 356
+    },
+    {
+      "key": "hm10_spike_15",
+      "path": "assets/game/levels/stage_05/boss/hammer_1010/spike_15.png",
+      "w": 256,
+      "h": 512,
+      "pivot": [
+        128,
+        448
+      ],
+      "sourceRect": [
+        665,
+        1330,
+        887,
+        1774
+      ],
+      "sourceIndex": 15,
+      "sha256": "26c4eaa44224c0c2a8f4d8bc46b32277ec4d87462ceae10fa869fde2a8a84fe0",
+      "height": 350
+    }
+  ]
+}

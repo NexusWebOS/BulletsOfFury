@@ -60,8 +60,14 @@ def run(stages, pilot, frames):
             pg.wait_for_function("() => (window.__bofFrames|0) > 4", timeout=45000)
             pg.evaluate(shoot.TRAP_RAF)
             pg.evaluate(SCENE, {'stage': n, 'pilot': pilot})
+            # A trapped RAF cannot drain the lazy loader on its own. Await its
+            # real network/decode work before spending the bounded frame run.
+            pg.wait_for_function('n=>{stageLoadTick();return stageLoadInfo(n).ready}', arg=n, polling=50, timeout=120000)
             for _ in range(frames // 10):
-                pg.evaluate(shoot.STEP, 10)
+                err = pg.evaluate(shoot.STEP, 10)
+                if err:
+                    errs.append(err)
+                    break
                 pg.wait_for_timeout(15)
             rec = pg.evaluate("()=>window.__rec")
             out[n] = {'rec': rec, 'errors': errs}

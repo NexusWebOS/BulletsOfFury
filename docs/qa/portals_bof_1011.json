@@ -1,0 +1,387 @@
+{
+  "passed": 61,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "blue_rift: 32 different drawings on one even canvas and pivot",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "blue_rift: exported checksums match owning manifest",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "blue_rift: energy stays clear of the canvas boundary",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "blue_rift: aperture registration stays within half a source pixel",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "blue_rift: black aperture retains near-opaque dark pixels",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "red_rift: 32 different drawings on one even canvas and pivot",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "red_rift: exported checksums match owning manifest",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "red_rift: energy stays clear of the canvas boundary",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "red_rift: aperture registration stays within half a source pixel",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "red_rift: black aperture retains near-opaque dark pixels",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "green_rift: 32 different drawings on one even canvas and pivot",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "green_rift: exported checksums match owning manifest",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "green_rift: energy stays clear of the canvas boundary",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "green_rift: aperture registration stays within half a source pixel",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "green_rift: black aperture retains near-opaque dark pixels",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "black_void: 32 different drawings on one even canvas and pivot",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "black_void: exported checksums match owning manifest",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "black_void: energy stays clear of the canvas boundary",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "black_void: aperture registration stays within half a source pixel",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "black_void: black aperture retains near-opaque dark pixels",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "gate_energy: 32 different drawings on one even canvas and pivot",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "gate_energy: exported checksums match owning manifest",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "gate_energy: energy stays clear of the canvas boundary",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "gate_energy: aperture registration stays within half a source pixel",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "gate_energy: black aperture retains near-opaque dark pixels",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "amethyst_gate: 32 different drawings on one even canvas and pivot",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "amethyst_gate: exported checksums match owning manifest",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "amethyst_gate: energy stays clear of the canvas boundary",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "amethyst_gate: aperture registration stays within half a source pixel",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Gate energy opening reaches between the feet without internal gaps",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "All visible armored machinery is pixel-identical in every gate frame",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Review pack has not changed the live game loadout",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "All 192 main and component frames decode through XART",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "blue_rift: all 32 poses visibly differ in the native game context",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "red_rift: all 32 poses visibly differ in the native game context",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "green_rift: all 32 poses visibly differ in the native game context",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "black_void: all 32 poses visibly differ in the native game context",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "gate_energy: all 32 poses visibly differ in the native game context",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "amethyst_gate: all 32 poses visibly differ in the native game context",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Every registered key was consumed by the game context drawImage",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Native draws preserve proportional scale and a single fixed destination anchor",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Preview loads 160 frames and respects reduced motion",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "amethyst_gate: effect selector switches the active animation",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "amethyst_gate: scrub displays all 32 different authored frames",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "black_void: effect selector switches the active animation",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "black_void: scrub displays all 32 different authored frames",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "blue_rift: effect selector switches the active animation",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "blue_rift: scrub displays all 32 different authored frames",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "red_rift: effect selector switches the active animation",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "red_rift: scrub displays all 32 different authored frames",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "green_rift: effect selector switches the active animation",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "green_rift: scrub displays all 32 different authored frames",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Onion controls compare neighbours without moving the current frame",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "checker: selected backdrop draws behind the portal",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "arena: selected backdrop draws behind the portal",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Single-step advances exactly one frame and stays paused",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Single-step can return to the previous frame",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Seam playback crosses 32 to 1 within the selected eight frames",
+      "passed": true,
+      "data": [
+        0,
+        1,
+        2,
+        3,
+        28,
+        29,
+        30,
+        31
+      ]
+    },
+    {
+      "name": "Pause holds the displayed frame",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Mobile review has no horizontal overflow and canvas remains visible",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No page, console or missing-asset errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "metrics": {
+    "blue_rift": {
+      "maxCenterError": 0.4952,
+      "sourceBorderAlphaMax": 11,
+      "seamChange": 3.2518,
+      "medianFrameChange": 2.4081,
+      "seamToMedian": 1.35
+    },
+    "red_rift": {
+      "maxCenterError": 0.49882,
+      "sourceBorderAlphaMax": 38,
+      "seamChange": 2.9141,
+      "medianFrameChange": 2.1213,
+      "seamToMedian": 1.374
+    },
+    "green_rift": {
+      "maxCenterError": 0.49468,
+      "sourceBorderAlphaMax": 79,
+      "seamChange": 3.1972,
+      "medianFrameChange": 2.2938,
+      "seamToMedian": 1.394
+    },
+    "black_void": {
+      "maxCenterError": 0.49878,
+      "sourceBorderAlphaMax": 4,
+      "seamChange": 3.3379,
+      "medianFrameChange": 2.4536,
+      "seamToMedian": 1.36
+    },
+    "gate_energy": {
+      "maxCenterError": 0.48179,
+      "sourceBorderAlphaMax": 2,
+      "seamChange": 2.7755,
+      "medianFrameChange": 3.5768,
+      "seamToMedian": 0.776
+    },
+    "amethyst_gate": {
+      "maxCenterError": 0.49731,
+      "shellFixed": true,
+      "seamChange": 1.9205,
+      "medianFrameChange": 2.9129,
+      "seamToMedian": 0.659
+    }
+  },
+  "screens": [
+    "blue_rift-native-seam.png",
+    "blue_rift-native-onion.png",
+    "red_rift-native-seam.png",
+    "red_rift-native-onion.png",
+    "green_rift-native-seam.png",
+    "green_rift-native-onion.png",
+    "black_void-native-seam.png",
+    "black_void-native-onion.png",
+    "amethyst_gate-native-seam.png",
+    "amethyst_gate-native-onion.png",
+    "amethyst_gate-preview.png",
+    "black_void-preview.png",
+    "blue_rift-preview.png",
+    "red_rift-preview.png",
+    "green_rift-preview.png",
+    "preview-onion.png",
+    "preview-checker.png",
+    "preview-arena.png",
+    "preview-mobile.png"
+  ],
+  "errors": [],
+  "scope": "BOF material redesign with emerald rift, native XART/context rendering and preview controls. No gameplay code changed."
+}

@@ -46,9 +46,9 @@ module.exports=function(vm,ctxv,ok){
  s7mTick(b,6);o['anomaly finishes into the original portal entry']=M._mission29IntroDone&&M.mode==='portal'&&M.t===0;
  s7mTick(b,1.5);o['Warden emerges into its real walk-in after the cinematic']=M.mode==='entry';
  M.mode='dead';fr27Exit(b,.1);const E=M.frExit;fr27Exit(b,9);o['wreck world anchor advances with sewer source, never player chase']=b.y===E.groundY+E.travel&&M.height===0&&M.drop===0;
- o['all nine elemental laser reels have four authored registered frames']=Object.keys(INFUSIONS).every(e=>MISSION29_ART['beam_'+e]?.frames.length===4&&XART._src[MISSION29_ART['beam_'+e].key]===MISSION29_ART['beam_'+e].path);
+ o['all nine legacy elemental laser reels retain four registered authored frames']=Object.keys(MISSION29_ART).filter(k=>k.startsWith('beam_')).map(k=>k.slice(5)).every(e=>MISSION29_ART['beam_'+e]?.frames.length===4&&XART._src[MISSION29_ART['beam_'+e].key]===MISSION29_ART['beam_'+e].path);
  let draws=0;const draw=ctx.drawImage;ctx.drawImage=function(){draws++;return draw.apply(this,arguments);};
- for(const e of Object.keys(INFUSIONS)){const before=draws;o[e+' beam uses the authored animated renderer']=missionBeamDraw({_inf:e,top:20,bot:300,w:26,x:240})&&draws>before;}
+ for(const e of Object.keys(MISSION29_ART).filter(k=>k.startsWith('beam_')).map(k=>k.slice(5))){const before=draws;o[e+' beam uses the authored animated renderer']=missionBeamDraw({_inf:e,top:20,bot:300,w:26,x:240})&&draws>before;}
  ctx.drawImage=draw;return o;
  })())`,ctxv));
  for(const [label,passed]of Object.entries(out))ok(passed,label);

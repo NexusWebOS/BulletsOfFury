@@ -1,0 +1,110 @@
+{
+  "raw": "_ART_SOURCES/hq_live_1010/background_raw.png",
+  "raw_sha256": "67ffc661f3ede6d12d3e01e548af4b61e2695d3ebaee3ad9fe0d9f6696eebc64",
+  "bank": [
+    {
+      "key": "hq10_background_00",
+      "path": "assets/game/shared/cinematics/hq_live_1010/background_00.png",
+      "w": 840,
+      "h": 472,
+      "pivot": [
+        420,
+        236
+      ],
+      "source_rect": [
+        0,
+        0,
+        836,
+        470
+      ],
+      "source_pivot": [
+        418,
+        235
+      ],
+      "translation": [
+        2,
+        1
+      ],
+      "scale": 1,
+      "sha256": "6cb0b088fc471cb4a2555b4ae3a5a5b2d16544e923502682827c8878dae2967c"
+    },
+    {
+      "key": "hq10_background_01",
+      "path": "assets/game/shared/cinematics/hq_live_1010/background_01.png",
+      "w": 840,
+      "h": 472,
+      "pivot": [
+        420,
+        236
+      ],
+      "source_rect": [
+        836,
+        0,
+        1672,
+        470
+      ],
+      "source_pivot": [
+        418,
+        235
+      ],
+      "translation": [
+        2,
+        1
+      ],
+      "scale": 1,
+      "sha256": "c0509a5bd13f581a1a1793801fb75e19b73b3deccd5515a20ecf9ee6aa4c5a6f"
+    },
+    {
+      "key": "hq10_background_02",
+      "path": "assets/game/shared/cinematics/hq_live_1010/background_02.png",
+      "w": 840,
+      "h": 472,
+      "pivot": [
+        420,
+        236
+      ],
+      "source_rect": [
+        0,
+        470,
+        836,
+        941
+      ],
+      "source_pivot": [
+        418,
+        235
+      ],
+      "translation": [
+        2,
+        1
+      ],
+      "scale": 1,
+      "sha256": "2554d523526f307855b83319e4bfdde67332714f055accf80d5b686d20a12677"
+    },
+    {
+      "key": "hq10_background_03",
+      "path": "assets/game/shared/cinematics/hq_live_1010/background_03.png",
+      "w": 840,
+      "h": 472,
+      "pivot": [
+        420,
+        236
+      ],
+      "source_rect": [
+        836,
+        470,
+        1672,
+        941
+      ],
+      "source_pivot": [
+        418,
+        235
+      ],
+      "translation": [
+        2,
+        1
+      ],
+      "scale": 1,
+      "sha256": "1e2ac73d4a589aa62d58562e11a321e2551e58b101c811cc64ae19f52335a51e"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "durationSeconds": 122.76,
+  "sampleRate": 48000,
+  "channels": 2,
+  "source": "source/BOF-O-BOSS1.wav",
+  "runtime": "BOF-O-BOSS1.mp3",
+  "sourceSha256": "9e4e7f455da681520d3bd950b9a3e3e44a75b115cd07d792a401cc443b8b8eb3",
+  "runtimeSha256": "c757d87bec7ccac4244358bd1c682da0fcd2117ef1862737a37abec8dbebc93a",
+  "conversion": "Stereo MP3 at 256 kbps; no gain, trim, fade or remix",
+  "owner": "Mike supplied BOF-O-BOSS1.wav on October 11, 2026"
+}

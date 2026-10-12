@@ -70,16 +70,13 @@ l23WarnSymbolDraw=function(owner,B){
 };
 combatWarningDraw=function(owner,q){
  if(!owner||owner.dead||!q||q.progress==null)return;
- const k=clamp(q.progress,0,1),dx=q.ex-q.x,dy=q.ey-q.y,len=Number.isFinite(q.len)?q.len:Math.hypot(dx,dy);
- if(q.laneShape==='line'&&!q.alertOnly&&len>0){
-  // Slice the authored cone's far interior into a constant-width corridor;
-  // its width is the actual collision width plus a small readability margin.
-  const key='bmfx_fov_'+l23FovPhase(k)+'_tall';if(XART.rdy(key)){
-   const im=XART.get(key),sw=im.width*.40,sx=(im.width-sw)*.5,sy=im.height*.68,sh=im.height*.16,w=Math.max(8,q.width||20);
-   ctx.save();ctx.translate(q.x,q.y);ctx.rotate(Math.atan2(dy,dx)-Math.PI/2);ctx.imageSmoothingEnabled=false;
-   ctx.globalAlpha*=(q.alpha??1)*(.34+k*.26);ctx.drawImage(im,sx,sy,sw,sh,-w*.5,0,w,len);ctx.restore();EC7.laneDraws++;
-  }
- }else if(!q.alertOnly)EC7_BASE.warn(owner,{...q,fieldOnly:true});
+ const k=clamp(q.progress,0,1);
+ if(!q.alertOnly){
+  // October 11: every enemy uses the full regular FOV, never a rectangle or a
+  // cropped strip of it. Explicit line segments retain their committed span.
+  const len=q.len??(q.laneShape==='line'?Math.hypot(q.ex-q.x,q.ey-q.y):undefined);
+  l23FovWarm();EC7_BASE.warn(owner,{...q,len,fieldOnly:true});EC7.laneDraws++;
+ }
  if(!q.fieldOnly)l23WarnSymbolDraw(owner,{t:k,warm:1,released:false,alertX:q.alertX,alertY:q.alertY,alpha:q.alpha,blinkT:owner.t??stateT});
 };
 drawWorld=function(){EC7.frame++;EC7.alerts=new WeakSet();return EC7_BASE.world.apply(this,arguments);};

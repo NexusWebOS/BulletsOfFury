@@ -1,0 +1,12 @@
+{
+  "type": "s1tankheavy",
+  "w": 103,
+  "h": 103,
+  "drawW": 103,
+  "drawH": 103,
+  "furious": {
+    "w": 186,
+    "h": 186
+  },
+  "errors": []
+}

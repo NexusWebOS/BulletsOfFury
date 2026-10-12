@@ -80,14 +80,14 @@ function ordnanceBreak1002(q){
  (ice?Audio.SFX.iceOrbImpact:Audio.SFX.missileHit)?.();Audio.SFX.expSmall?.();
 }
 
-/* 27 retina impacts, three spatial groups, staged in time. Tracking ends well
+/* 18 retina impacts, three spatial groups, staged in time. Tracking ends well
    before the red warning so the player can dodge committed positions. */
 function fb1002Meteor(b){
  const n=3,L=camLeftX(),W=viewW(),order=[0,1,2];
  for(let i=order.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[order[i],order[j]]=[order[j],order[i]];}
- for(let group=0;group<n;group++)for(let r=0;r<3;r++)for(let c=0;c<3;c++){
+ for(let group=0;group<n;group++)for(let r=0;r<2;r++)for(let c=0;c<3;c++){
   const zone=order[group],cx=L+W*(zone+.5)/3,cy=clamp(player.y-55+rnd(-42,42),PLAY.y+140,PLAY.y+PLAY.h-90);
-  const q=groundTargetingSpawn({kind:'lava',owner:b,x:cx+(c-1)*36,y:cy+(r-1)*36,warn:1.65,delay:group*1.15,active:.36,radius:16,size:46,track:false,lane:false,sound:'expBig',shake:3,onImpact:g=>explode(g.x,g.y,49,'red','fireball')});
+  const q=groundTargetingSpawn({kind:'lava',owner:b,x:cx+(c-1)*36,y:cy+(r-.5)*42,warn:1.9,delay:group*1.5,active:.36,radius:16,size:46,track:false,lane:false,sound:'expBig',shake:3,onImpact:g=>explode(g.x,g.y,49,'red','fireball')});
   q._meteor1002={group,zone,c,r,cx,cy,phase:rnd(0,TAU)};
  }
  er26Sound('bossWeaponCharge','enemyBossCannon');
@@ -103,7 +103,7 @@ groundTargetingTick=function(dt){
   const zoneL=camLeftX()+viewW()*M.zone/3,zoneR=zoneL+viewW()/3;
   const a=M.phase+q.t*2.2,px=clamp(player.x,zoneL+44,zoneR-44);
   q.x=clamp(M.cx*.72+px*.28+(M.c-1)*36+Math.cos(a)*12,zoneL+18,zoneR-18);
-  q.y=clamp(M.cy+(M.r-1)*36+Math.sin(a)*16,PLAY.y+100,PLAY.y+PLAY.h-24);
+  q.y=clamp(M.cy+(M.r-.5)*42+Math.sin(a)*10,PLAY.y+100,PLAY.y+PLAY.h-24);
  }return FB1002_BASE.groundTick(dt);
 };
 
@@ -415,14 +415,16 @@ s8MegaTick=function(e,dt){
  const n=fr27Difficulty(),row=fr27RealmRow(e),A=e._frRealmAI||(e._frRealmAI={t:0,cd:1.0+Math.random()*.65,shot:0,home:e.x,seq:0});
  A.t+=dt;A.cd-=dt;A.shot=Math.max(0,A.shot-dt);e._frBank=0;e.spin=0;
  e.x+=clamp(A.home-e.x,-75*dt,75*dt);
- if(A.seq>=2){e.y+=100*dt;if(e.y>VH+100)e.dead=true;return;}
+ if(A.seq>=(typeof eb11Profile==='function'?eb11Profile().cycles:2)){e.y+=100*dt;if(e.y>VH+100)e.dead=true;return;}
  // A charging gunship must not drift into point-blank range while its own
  // firing gate suppresses the release. Hold the pocket through the tell.
  const pocket=viewTopY()+viewH()*.39;
  if(!A.tell&&e.y<pocket)e.y+=Math.min(pocket-e.y,dt*[55,37,76,28][row]);
- if(e.y>player.y-65||e.y<viewTopY()+e.h*.5||e.x<camLeftX()+12||e.x>camRightX()-12)return;
+ const target=targetShip(e.x,e.y);
+ if(e.y>target.y-65||e.y<viewTopY()+e.h*.5||e.x<camLeftX()+12||e.x>camRightX()-12)return;
+ if(typeof eb11Ready==='function'&&!eb11Ready(e)){if(A.tell&&!A.tell.fired)A.tell=null;return;}
  const warm=diffKey==='easy'?1.25:[1.0,.85,.72][n];
- if(A.cd<=0&&!A.tell)A.tell={t:0,x:player.x,y:player.y,fired:0};
+ if(A.cd<=0&&!A.tell)A.tell={t:0,x:target.x,y:target.y,fired:0};
  if(!A.tell)return;const T=A.tell;T.t+=dt;combatWarningTick(e,'realm-'+A.seq,Math.min(T.t,warm),warm);
  if(T.t<warm)return;
  if(T.fired<3&&T.t>=warm+T.fired*.18){

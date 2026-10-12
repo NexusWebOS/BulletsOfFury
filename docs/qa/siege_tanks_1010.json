@@ -1,0 +1,43 @@
+{
+  "date": "2026-10-10",
+  "scope": "Three new modular tank designs and effects; preview only",
+  "nativeRenderer": {
+    "passed": 96,
+    "failed": 0,
+    "pageErrors": 0,
+    "consoleErrors": 0,
+    "assetErrors": 0,
+    "visibleSonicFootprint": 0.32997509057971014
+  },
+  "controlsAndVideo": {
+    "passed": 13,
+    "failed": 0,
+    "videoSeconds": 18
+  },
+  "assertionSuite": {
+    "passed": 7952,
+    "errors": 0,
+    "exitCode": 0,
+    "finalSummary": "FALVA/LIZZIE BUILD OK, 0 ERRORS"
+  },
+  "productionImportsChanged": false,
+  "frameResolution": {
+    "dimensionMultiple": 2,
+    "banks": 58,
+    "frames": 553,
+    "paddedBanks": 41,
+    "paddedFrames": 419,
+    "preservedPixelFrames": 553,
+    "oddFrames": 0,
+    "uniformBankGeometry": true,
+    "preservedPivotsAndScales": true,
+    "policy": "docs/FRAME_RESOLUTION_RULES.md",
+    "audit": "_shots/frame_resolution_1010/audit.json"
+  },
+  "preview": "docs/previews/siege_tanks_1010/index.html",
+  "assets": "_ART_SOURCES/siege_tanks_1010/",
+  "provenance": "_ART_SOURCES/siege_tanks_1010/provenance.json",
+  "proof": "_shots/siege_tanks_1010/",
+  "checkpoint": "Initial preview-only delivery before the approved playable-password integration",
+  "supersededBy": "docs/qa/siege_passwords_1010.json"
+}

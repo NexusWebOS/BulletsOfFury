@@ -1,0 +1,421 @@
+{
+  "raw_sha256": "80f99672ad3f8ff780722c97406a337b41767113010920a2e168851951785ceb",
+  "bank": [
+    {
+      "key": "ap10_consumption_00",
+      "path": "assets/game/shared/combat/audio_1010/consumption_00.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        236
+      ],
+      "source_rect": [
+        0,
+        0,
+        314,
+        314
+      ],
+      "source_pivot": [
+        155.0,
+        193.0
+      ],
+      "translation": [
+        37,
+        43
+      ],
+      "scale": 1,
+      "sha256": "2b473c917026ce4606d55df156e4c9215eedaeea156713808937a7ee49aeba27"
+    },
+    {
+      "key": "ap10_consumption_01",
+      "path": "assets/game/shared/combat/audio_1010/consumption_01.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        236
+      ],
+      "source_rect": [
+        314,
+        0,
+        627,
+        314
+      ],
+      "source_pivot": [
+        153.5,
+        192.0
+      ],
+      "translation": [
+        38,
+        44
+      ],
+      "scale": 1,
+      "sha256": "46b82aa7e1713dbc0f0a06adc823882be993d8a593f4776bbd20a5be323f7e0e"
+    },
+    {
+      "key": "ap10_consumption_02",
+      "path": "assets/game/shared/combat/audio_1010/consumption_02.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        236
+      ],
+      "source_rect": [
+        627,
+        0,
+        940,
+        314
+      ],
+      "source_pivot": [
+        156.0,
+        193.0
+      ],
+      "translation": [
+        36,
+        43
+      ],
+      "scale": 1,
+      "sha256": "3ebd70a8107af7de0663b66c202b3ef30d0362573476431ff836f1b5a00f61e0"
+    },
+    {
+      "key": "ap10_consumption_03",
+      "path": "assets/game/shared/combat/audio_1010/consumption_03.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        236
+      ],
+      "source_rect": [
+        940,
+        0,
+        1254,
+        314
+      ],
+      "source_pivot": [
+        155.0,
+        193.0
+      ],
+      "translation": [
+        37,
+        43
+      ],
+      "scale": 1,
+      "sha256": "721686356859a44ff8353a8ec02d8a821d08d19ca9e56b2facc8cf51a0546703"
+    },
+    {
+      "key": "ap10_consumption_04",
+      "path": "assets/game/shared/combat/audio_1010/consumption_04.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        236
+      ],
+      "source_rect": [
+        0,
+        314,
+        314,
+        627
+      ],
+      "source_pivot": [
+        156.0,
+        190.5
+      ],
+      "translation": [
+        36,
+        46
+      ],
+      "scale": 1,
+      "sha256": "06282e753a0727f027e77a9809ce2fe12ca61da387eb6f97126c8ac5d7f12d97"
+    },
+    {
+      "key": "ap10_consumption_05",
+      "path": "assets/game/shared/combat/audio_1010/consumption_05.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        236
+      ],
+      "source_rect": [
+        314,
+        314,
+        627,
+        627
+      ],
+      "source_pivot": [
+        156.5,
+        191.0
+      ],
+      "translation": [
+        36,
+        45
+      ],
+      "scale": 1,
+      "sha256": "bd2c951452ef67669320b7056a393f37e54a99a7c89826927ec69df5e88362d7"
+    },
+    {
+      "key": "ap10_consumption_06",
+      "path": "assets/game/shared/combat/audio_1010/consumption_06.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        236
+      ],
+      "source_rect": [
+        627,
+        314,
+        940,
+        627
+      ],
+      "source_pivot": [
+        158.0,
+        192.5
+      ],
+      "translation": [
+        34,
+        44
+      ],
+      "scale": 1,
+      "sha256": "4a29fd49159c5da46202e89b06bd392b2b923030b76c15bf4958f6d38de75166"
+    },
+    {
+      "key": "ap10_consumption_07",
+      "path": "assets/game/shared/combat/audio_1010/consumption_07.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        236
+      ],
+      "source_rect": [
+        940,
+        314,
+        1254,
+        627
+      ],
+      "source_pivot": [
+        159.0,
+        191.0
+      ],
+      "translation": [
+        33,
+        45
+      ],
+      "scale": 1,
+      "sha256": "f11ac8d75bff6867201842f8cba555799fa1e5818ea33e80b8063666d6a9c784"
+    },
+    {
+      "key": "ap10_consumption_08",
+      "path": "assets/game/shared/combat/audio_1010/consumption_08.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        236
+      ],
+      "source_rect": [
+        0,
+        627,
+        314,
+        940
+      ],
+      "source_pivot": [
+        157.0,
+        166.5
+      ],
+      "translation": [
+        35,
+        70
+      ],
+      "scale": 1,
+      "sha256": "3b85485f3cf7490b5fb5c8b0d46b3bf631a20083e0b78db89e661d24ac3692dc"
+    },
+    {
+      "key": "ap10_consumption_09",
+      "path": "assets/game/shared/combat/audio_1010/consumption_09.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        236
+      ],
+      "source_rect": [
+        314,
+        627,
+        627,
+        940
+      ],
+      "source_pivot": [
+        154.5,
+        141.0
+      ],
+      "translation": [
+        38,
+        95
+      ],
+      "scale": 1,
+      "sha256": "db91439491da649c68760380431071ea80a1e21fe445caeff7c4263127b10dc4"
+    },
+    {
+      "key": "ap10_consumption_10",
+      "path": "assets/game/shared/combat/audio_1010/consumption_10.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        236
+      ],
+      "source_rect": [
+        627,
+        627,
+        940,
+        940
+      ],
+      "source_pivot": [
+        155.0,
+        137.0
+      ],
+      "translation": [
+        37,
+        99
+      ],
+      "scale": 1,
+      "sha256": "389967f32bf0736ae81a58f04926850b5ff3e3c41d8a94182607d8a34e6cdf54"
+    },
+    {
+      "key": "ap10_consumption_11",
+      "path": "assets/game/shared/combat/audio_1010/consumption_11.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        236
+      ],
+      "source_rect": [
+        940,
+        627,
+        1254,
+        940
+      ],
+      "source_pivot": [
+        159.5,
+        138.0
+      ],
+      "translation": [
+        32,
+        98
+      ],
+      "scale": 1,
+      "sha256": "72e2145aa8f64060dea533f51c5970bdbbb66da6aafc52c2a6aadf12cc76da0b"
+    },
+    {
+      "key": "ap10_consumption_12",
+      "path": "assets/game/shared/combat/audio_1010/consumption_12.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        236
+      ],
+      "source_rect": [
+        0,
+        940,
+        314,
+        1254
+      ],
+      "source_pivot": [
+        156.0,
+        162.0
+      ],
+      "translation": [
+        36,
+        74
+      ],
+      "scale": 1,
+      "sha256": "8ec977701d654a1e5e0a2f052e8c44a3ddbc1da147574e6f0fb359098043e2ab"
+    },
+    {
+      "key": "ap10_consumption_13",
+      "path": "assets/game/shared/combat/audio_1010/consumption_13.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        236
+      ],
+      "source_rect": [
+        314,
+        940,
+        627,
+        1254
+      ],
+      "source_pivot": [
+        155.0,
+        162.5
+      ],
+      "translation": [
+        37,
+        74
+      ],
+      "scale": 1,
+      "sha256": "798bb7199e80635d01d4b5ede6446e3256642abdd6d43ca8888aae683feb0817"
+    },
+    {
+      "key": "ap10_consumption_14",
+      "path": "assets/game/shared/combat/audio_1010/consumption_14.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        236
+      ],
+      "source_rect": [
+        627,
+        940,
+        940,
+        1254
+      ],
+      "source_pivot": [
+        156.5,
+        159.5
+      ],
+      "translation": [
+        36,
+        76
+      ],
+      "scale": 1,
+      "sha256": "bfa3f2b883c3727c8d51c87dfcd858e6537f996fd5a2efe6327d26fca918c553"
+    },
+    {
+      "key": "ap10_consumption_15",
+      "path": "assets/game/shared/combat/audio_1010/consumption_15.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        236
+      ],
+      "source_rect": [
+        940,
+        940,
+        1254,
+        1254
+      ],
+      "source_pivot": [
+        155.5,
+        151.0
+      ],
+      "translation": [
+        36,
+        85
+      ],
+      "scale": 1,
+      "sha256": "f6b099f723b74daa60894d19a177d849c65fee08dcf482714be73bf81da373b5"
+    }
+  ]
+}

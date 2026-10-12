@@ -1,0 +1,135 @@
+{
+  "mode": "built-in image_gen",
+  "jobs": [
+    {
+      "id": "bullets",
+      "slot": 0,
+      "name": "Gale Slugs",
+      "mode": "generate",
+      "prompt": "Generate a production sprite animation sheet for the vertical arcade shooter Bullets of Fury. Use the attached existing weapon badges ONLY as identity, material and emerald Wind palette references. Create actual unframed combat projectile sprites, no badges. Exactly 16 genuinely drawn consecutive animation poses in a strict 4 columns by 4 rows grid, read left to right then down. Square 1024 x 1024 transparent sheet, equal 256 x 256 cells, empty transparent gutters. HD Neo Geo inspired detailed pixel art: crisp deliberate pixel clusters, bright emerald green and near-white Wind energy, dark readable outlines, preserve silver/gray metal where present. One continuous seamless 16-pose flight/held loop, not 4 separate sequences. Keep the physical projectile/core/nozzle locked at precisely the SAME coordinate and SAME scale in all cells. Only the energy curls, wind ribbons, sparks and internal lighting animate; no camera movement, no per-frame zoom, no displaced sprite. All directional sprites point straight NORTH (up), never diagonally. Complete silhouettes and contained effects, at least 16 pixels empty safety padding. No labels, frame numbers, grid lines, backgrounds, ships, tanks, UI, weapons or extra objects.\nSubject: Reference top-left badge: a SINGLE silver machine-gun bullet, upright north. The metal bullet has a rounded pointed nose, sharp gray outline, and one compact emerald corkscrew wind trail coiling down behind it. Lock the solid metal body at cell center x=128, y=104, with its lower body attachment at y=132. Body unchanged across all frames; animate a complete rotation of the emerald spiral behind it. Never draw two bullets in one cell.",
+      "refs": [
+        "C:/Users/Mdogg/Desktop/BOF-CODE/BulletsOfFury/_ART_SOURCES/wind_icons_1011/base_raw.png"
+      ],
+      "original_path": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0e3c8-265d-7731-8ffe-ee42ebb5ba3c\\exec-6faa5506-8656-438e-8aa7-c3679ff571be.png",
+      "archived_path": "C:/Users/Mdogg/Desktop/BOF-CODE/BulletsOfFury/_ART_SOURCES/wind_projectiles_1011/bullets_raw.png"
+    },
+    {
+      "id": "spread",
+      "slot": 1,
+      "name": "Gust Fan",
+      "mode": "generate",
+      "prompt": "Generate a production sprite animation sheet for the vertical arcade shooter Bullets of Fury. Use the attached existing weapon badges ONLY as identity, material and emerald Wind palette references. Create actual unframed combat projectile sprites, no badges. Exactly 16 genuinely drawn consecutive animation poses in a strict 4 columns by 4 rows grid, read left to right then down. Square 1024 x 1024 transparent sheet, equal 256 x 256 cells, empty transparent gutters. HD Neo Geo inspired detailed pixel art: crisp deliberate pixel clusters, bright emerald green and near-white Wind energy, dark readable outlines, preserve silver/gray metal where present. One continuous seamless 16-pose flight/held loop, not 4 separate sequences. Keep the physical projectile/core/nozzle locked at precisely the SAME coordinate and SAME scale in all cells. Only the energy curls, wind ribbons, sparks and internal lighting animate; no camera movement, no per-frame zoom, no displaced sprite. All directional sprites point straight NORTH (up), never diagonally. Complete silhouettes and contained effects, at least 16 pixels empty safety padding. No labels, frame numbers, grid lines, backgrounds, ships, tanks, UI, weapons or extra objects.\nSubject: Reference top-middle badge: a SINGLE slim silver spread pellet pointing north. It will be emitted in a fan by the game, so do NOT draw a multi-shot fan in any cell. Lock solid silver body centered x=128,y=100. Animate compact paired emerald pressure ribbons folding around and behind this one pellet, with sharp white-green front highlights. Smaller, narrower casing than the heavy slug; same casing in all frames.",
+      "refs": [
+        "C:/Users/Mdogg/Desktop/BOF-CODE/BulletsOfFury/_ART_SOURCES/wind_icons_1011/base_raw.png"
+      ],
+      "original_path": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0e3c8-265d-7731-8ffe-ee42ebb5ba3c\\exec-2ded08e6-34ce-47cf-8936-214ebc4a4a0b.png",
+      "archived_path": "C:/Users/Mdogg/Desktop/BOF-CODE/BulletsOfFury/_ART_SOURCES/wind_projectiles_1011/spread_raw.png"
+    },
+    {
+      "id": "missile",
+      "slot": 2,
+      "name": "Cyclone Rack",
+      "mode": "generate",
+      "prompt": "Generate a production sprite animation sheet for the vertical arcade shooter Bullets of Fury. Use the attached existing weapon badges ONLY as identity, material and emerald Wind palette references. Create actual unframed combat projectile sprites, no badges. Exactly 16 genuinely drawn consecutive animation poses in a strict 4 columns by 4 rows grid, read left to right then down. Square 1024 x 1024 transparent sheet, equal 256 x 256 cells, empty transparent gutters. HD Neo Geo inspired detailed pixel art: crisp deliberate pixel clusters, bright emerald green and near-white Wind energy, dark readable outlines, preserve silver/gray metal where present. One continuous seamless 16-pose flight/held loop, not 4 separate sequences. Keep the physical projectile/core/nozzle locked at precisely the SAME coordinate and SAME scale in all cells. Only the energy curls, wind ribbons, sparks and internal lighting animate; no camera movement, no per-frame zoom, no displaced sprite. All directional sprites point straight NORTH (up), never diagonally. Complete silhouettes and contained effects, at least 16 pixels empty safety padding. No labels, frame numbers, grid lines, backgrounds, ships, tanks, UI, weapons or extra objects.\nSubject: Reference top-right badge: a SINGLE substantial silver missile pointing exactly north, round pointed nose, two clear swept gray stabilizer fins, short dark metal engine base. Lock its metal body x=128,y=104 with engine attachment y=150. A tight spiraling emerald cyclone jet swirls down from the engine; preserve the exact hull and fins, animate only exhaust and lighting.",
+      "refs": [
+        "C:/Users/Mdogg/Desktop/BOF-CODE/BulletsOfFury/_ART_SOURCES/wind_icons_1011/base_raw.png"
+      ],
+      "original_path": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0e3c8-265d-7731-8ffe-ee42ebb5ba3c\\exec-d31a79b4-f17a-4f49-bd3b-b58f44e3bc3d.png",
+      "archived_path": "C:/Users/Mdogg/Desktop/BOF-CODE/BulletsOfFury/_ART_SOURCES/wind_projectiles_1011/missile_raw.png"
+    },
+    {
+      "id": "laser",
+      "slot": 3,
+      "name": "Wind Lance",
+      "mode": "generate",
+      "prompt": "Generate a production sprite animation sheet for the vertical arcade shooter Bullets of Fury. Use the attached existing weapon badges ONLY as identity, material and emerald Wind palette references. Create actual unframed combat projectile sprites, no badges. Exactly 16 genuinely drawn consecutive animation poses in a strict 4 columns by 4 rows grid, read left to right then down. Square 1024 x 1024 transparent sheet, equal 256 x 256 cells, empty transparent gutters. HD Neo Geo inspired detailed pixel art: crisp deliberate pixel clusters, bright emerald green and near-white Wind energy, dark readable outlines, preserve silver/gray metal where present. One continuous seamless 16-pose flight/held loop, not 4 separate sequences. Keep the physical projectile/core/nozzle locked at precisely the SAME coordinate and SAME scale in all cells. Only the energy curls, wind ribbons, sparks and internal lighting animate; no camera movement, no per-frame zoom, no displaced sprite. All directional sprites point straight NORTH (up), never diagonally. Complete silhouettes and contained effects, at least 16 pixels empty safety padding. No labels, frame numbers, grid lines, backgrounds, ships, tanks, UI, weapons or extra objects.\nSubject: Reference middle-left badge: a long straight north-directed emerald laser column, brilliant narrow white center, layered green pressure ribbons and tiny wind sparks. Lock centerline x=128 and fixed beam extent top y=28 to bottom y=224 in every cell. Draw a tapered ornate upper wind crest (never a flat cut), a straight seamless middle shaft, and a small lower emerald coil at its nozzle x=128,y=212. No metal. The 16 poses animate flowing pressure bands upward while shaft endpoints and width stay fixed.",
+      "refs": [
+        "C:/Users/Mdogg/Desktop/BOF-CODE/BulletsOfFury/_ART_SOURCES/wind_icons_1011/base_raw.png"
+      ],
+      "original_path": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0e3c8-265d-7731-8ffe-ee42ebb5ba3c\\exec-47f23487-be0c-4c8c-bc19-8be2bc5843ec.png",
+      "archived_path": "C:/Users/Mdogg/Desktop/BOF-CODE/BulletsOfFury/_ART_SOURCES/wind_projectiles_1011/laser_raw.png"
+    },
+    {
+      "id": "gust",
+      "slot": 4,
+      "name": "Gust Torrent",
+      "mode": "generate",
+      "prompt": "Generate a production sprite animation sheet for the vertical arcade shooter Bullets of Fury. Use the attached existing weapon badges ONLY as identity, material and emerald Wind palette references. Create actual unframed combat projectile sprites, no badges. Exactly 16 genuinely drawn consecutive animation poses in a strict 4 columns by 4 rows grid, read left to right then down. Square 1024 x 1024 transparent sheet, equal 256 x 256 cells, empty transparent gutters. HD Neo Geo inspired detailed pixel art: crisp deliberate pixel clusters, bright emerald green and near-white Wind energy, dark readable outlines, preserve silver/gray metal where present. One continuous seamless 16-pose flight/held loop, not 4 separate sequences. Keep the physical projectile/core/nozzle locked at precisely the SAME coordinate and SAME scale in all cells. Only the energy curls, wind ribbons, sparks and internal lighting animate; no camera movement, no per-frame zoom, no displaced sprite. All directional sprites point straight NORTH (up), never diagonally. Complete silhouettes and contained effects, at least 16 pixels empty safety padding. No labels, frame numbers, grid lines, backgrounds, ships, tanks, UI, weapons or extra objects.\nSubject: Reference center badge: sustained Wind breath/gust plume directed straight NORTH from a fixed lower nozzle x=128,y=224. Broad upward unfurling curved green-and-white pressure ribbons, leaves no debris, no fire or smoke. Plume reaches y=28; keep these extent and nozzle fixed through all 16 poses. Animate wavefronts moving upward and successive curled gust lobes breathing smoothly. Do not turn or rotate the whole plume.",
+      "refs": [
+        "C:/Users/Mdogg/Desktop/BOF-CODE/BulletsOfFury/_ART_SOURCES/wind_icons_1011/base_raw.png"
+      ],
+      "original_path": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0e3c8-265d-7731-8ffe-ee42ebb5ba3c\\exec-e844d11d-0236-4d57-a913-33ee3ec1530e.png",
+      "archived_path": "C:/Users/Mdogg/Desktop/BOF-CODE/BulletsOfFury/_ART_SOURCES/wind_projectiles_1011/gust_raw.png"
+    },
+    {
+      "id": "tornado",
+      "slot": 5,
+      "name": "Tornado Orb",
+      "mode": "generate",
+      "prompt": "Generate a production sprite animation sheet for the vertical arcade shooter Bullets of Fury. Use the attached existing weapon badges ONLY as identity, material and emerald Wind palette references. Create actual unframed combat projectile sprites, no badges. Exactly 16 genuinely drawn consecutive animation poses in a strict 4 columns by 4 rows grid, read left to right then down. Square 1024 x 1024 transparent sheet, equal 256 x 256 cells, empty transparent gutters. HD Neo Geo inspired detailed pixel art: crisp deliberate pixel clusters, bright emerald green and near-white Wind energy, dark readable outlines, preserve silver/gray metal where present. One continuous seamless 16-pose flight/held loop, not 4 separate sequences. Keep the physical projectile/core/nozzle locked at precisely the SAME coordinate and SAME scale in all cells. Only the energy curls, wind ribbons, sparks and internal lighting animate; no camera movement, no per-frame zoom, no displaced sprite. All directional sprites point straight NORTH (up), never diagonally. Complete silhouettes and contained effects, at least 16 pixels empty safety padding. No labels, frame numbers, grid lines, backgrounds, ships, tanks, UI, weapons or extra objects.\nSubject: Reference middle-right badge: a SINGLE round emerald tornado projectile with near-white spiraling bands circling a darker green translucent eye. Exact physical orb center x=128,y=128, fixed circular outer diameter 184 pixels in every cell. Draw true sequential rotating wind ribbon poses as they pass in front of and behind the fixed eye. Complete seamless 16-frame rotation; no crescent displacement, no size changes.",
+      "refs": [
+        "C:/Users/Mdogg/Desktop/BOF-CODE/BulletsOfFury/_ART_SOURCES/wind_icons_1011/base_raw.png"
+      ],
+      "original_path": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0e3c8-265d-7731-8ffe-ee42ebb5ba3c\\exec-f30b9222-37dd-488d-9aad-5ed88de93a77.png",
+      "archived_path": "C:/Users/Mdogg/Desktop/BOF-CODE/BulletsOfFury/_ART_SOURCES/wind_projectiles_1011/tornado_raw.png"
+    },
+    {
+      "id": "mist",
+      "slot": 6,
+      "name": "Storm Mist",
+      "mode": "generate",
+      "prompt": "Generate a production sprite animation sheet for the vertical arcade shooter Bullets of Fury. Use the attached existing weapon badges ONLY as identity, material and emerald Wind palette references. Create actual unframed combat projectile sprites, no badges. Exactly 16 genuinely drawn consecutive animation poses in a strict 4 columns by 4 rows grid, read left to right then down. Square 1024 x 1024 transparent sheet, equal 256 x 256 cells, empty transparent gutters. HD Neo Geo inspired detailed pixel art: crisp deliberate pixel clusters, bright emerald green and near-white Wind energy, dark readable outlines, preserve silver/gray metal where present. One continuous seamless 16-pose flight/held loop, not 4 separate sequences. Keep the physical projectile/core/nozzle locked at precisely the SAME coordinate and SAME scale in all cells. Only the energy curls, wind ribbons, sparks and internal lighting animate; no camera movement, no per-frame zoom, no displaced sprite. All directional sprites point straight NORTH (up), never diagonally. Complete silhouettes and contained effects, at least 16 pixels empty safety padding. No labels, frame numbers, grid lines, backgrounds, ships, tanks, UI, weapons or extra objects.\nSubject: Reference bottom-left badge: a SINGLE narrow piercing Wind-mist lance/needle pointing north with a white-green sharp front and misty emerald curling tail. It will be fired in a fan by game simulation, so no multiple projectiles in a cell. Lock sharp tip at x=128,y=48, solid luminous nucleus x=128,y=104. Animate small swirling mist fragments and pressure lines around the fixed spear. No gray metal, fire, ice, purple or blue.",
+      "refs": [
+        "C:/Users/Mdogg/Desktop/BOF-CODE/BulletsOfFury/_ART_SOURCES/wind_icons_1011/base_raw.png"
+      ],
+      "original_path": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0e3c8-265d-7731-8ffe-ee42ebb5ba3c\\exec-c95ea0bc-fc57-4843-8638-b06c1c32d4da.png",
+      "archived_path": "C:/Users/Mdogg/Desktop/BOF-CODE/BulletsOfFury/_ART_SOURCES/wind_projectiles_1011/mist_raw.png"
+    },
+    {
+      "id": "heavy",
+      "slot": 7,
+      "name": "Gale Gatling",
+      "mode": "generate",
+      "prompt": "Generate a production sprite animation sheet for the vertical arcade shooter Bullets of Fury. Use the attached existing weapon badges ONLY as identity, material and emerald Wind palette references. Create actual unframed combat projectile sprites, no badges. Exactly 16 genuinely drawn consecutive animation poses in a strict 4 columns by 4 rows grid, read left to right then down. Square 1024 x 1024 transparent sheet, equal 256 x 256 cells, empty transparent gutters. HD Neo Geo inspired detailed pixel art: crisp deliberate pixel clusters, bright emerald green and near-white Wind energy, dark readable outlines, preserve silver/gray metal where present. One continuous seamless 16-pose flight/held loop, not 4 separate sequences. Keep the physical projectile/core/nozzle locked at precisely the SAME coordinate and SAME scale in all cells. Only the energy curls, wind ribbons, sparks and internal lighting animate; no camera movement, no per-frame zoom, no displaced sprite. All directional sprites point straight NORTH (up), never diagonally. Complete silhouettes and contained effects, at least 16 pixels empty safety padding. No labels, frame numbers, grid lines, backgrounds, ships, tanks, UI, weapons or extra objects.\nSubject: Reference bottom-middle badge: a SINGLE heavy silver gatling slug upright north. Broad chunky dark-silver casing and a bright silver conical nose, much heavier than the small MG bullet. Lock metal body x=128,y=104, lower body at y=144. Emerald wind rings orbit the slug, a green pressure wake trails south. Preserve every metal contour and fixed scale across all frames, animate only rings and wake.",
+      "refs": [
+        "C:/Users/Mdogg/Desktop/BOF-CODE/BulletsOfFury/_ART_SOURCES/wind_icons_1011/base_raw.png"
+      ],
+      "original_path": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0e3c8-265d-7731-8ffe-ee42ebb5ba3c\\exec-7e4d3bc3-37d5-4ab2-b5ec-5d1c96bfb809.png",
+      "archived_path": "C:/Users/Mdogg/Desktop/BOF-CODE/BulletsOfFury/_ART_SOURCES/wind_projectiles_1011/heavy_raw.png"
+    },
+    {
+      "id": "electric",
+      "slot": 8,
+      "name": "Cyclone Sphere",
+      "mode": "generate",
+      "prompt": "Generate a production sprite animation sheet for the vertical arcade shooter Bullets of Fury. Use the attached existing weapon badges ONLY as identity, material and emerald Wind palette references. Create actual unframed combat projectile sprites, no badges. Exactly 16 genuinely drawn consecutive animation poses in a strict 4 columns by 4 rows grid, read left to right then down. Square 1024 x 1024 transparent sheet, equal 256 x 256 cells, empty transparent gutters. HD Neo Geo inspired detailed pixel art: crisp deliberate pixel clusters, bright emerald green and near-white Wind energy, dark readable outlines, preserve silver/gray metal where present. One continuous seamless 16-pose flight/held loop, not 4 separate sequences. Keep the physical projectile/core/nozzle locked at precisely the SAME coordinate and SAME scale in all cells. Only the energy curls, wind ribbons, sparks and internal lighting animate; no camera movement, no per-frame zoom, no displaced sprite. All directional sprites point straight NORTH (up), never diagonally. Complete silhouettes and contained effects, at least 16 pixels empty safety padding. No labels, frame numbers, grid lines, backgrounds, ships, tanks, UI, weapons or extra objects.\nSubject: Reference bottom-right badge: a SINGLE gray-silver spherical energy projectile with a near-white glowing core and emerald wind lightning crackling around it. Physical metal sphere centered exactly x=128,y=128, radius 48 pixels; fixed diameter through all 16 poses. Emerald wisps swirl while short bright green electric arcs branch and resolve with smooth sequential poses. Keep the gray globe intact, no mechanical debris.",
+      "refs": [
+        "C:/Users/Mdogg/Desktop/BOF-CODE/BulletsOfFury/_ART_SOURCES/wind_icons_1011/base_raw.png"
+      ],
+      "original_path": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0e3c8-265d-7731-8ffe-ee42ebb5ba3c\\exec-c0ee39be-c78d-485d-b26a-d62a5df60cbe.png",
+      "archived_path": "C:/Users/Mdogg/Desktop/BOF-CODE/BulletsOfFury/_ART_SOURCES/wind_projectiles_1011/electric_raw.png"
+    },
+    {
+      "id": "base_green",
+      "mode": "edit",
+      "prompt": "Edit ONLY the silver metallic outer octagonal frames and their lower Roman-numeral cartouche rims in this exact 3 by 3 nine-icon sheet. Apply a Wind emerald green palette swap to those border/rim metal pixels, matching the green Wind symbol in the second reference. Preserve original luminance, dark outlines, every original pixel shape, placement, equal margins, transparent alpha, center projectile art and colors, dark inner backing, and every white Roman I character. Silver bullet, missile and orb bodies inside the icons MUST stay silver, never tint the center projectiles. This is a localized border hue edit, not a redraw or redesign. Return this same sheet on transparent background with all nine complete icons. The SECOND image is only green border color guidance, not an edit target.",
+      "refs": [
+        "C:/Users/Mdogg/Desktop/BOF-CODE/BulletsOfFury/_ART_SOURCES/wind_icons_1011/base_raw.png",
+        "C:/Users/Mdogg/Desktop/BOF-CODE/BulletsOfFury/_ART_SOURCES/wind_icons_1011/symbol_raw.png"
+      ],
+      "original_path": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0e3c8-265d-7731-8ffe-ee42ebb5ba3c\\exec-8303e826-11d7-4afe-95f6-7498fd41a682.png",
+      "archived_path": "C:/Users/Mdogg/Desktop/BOF-CODE/BulletsOfFury/_ART_SOURCES/wind_icons_1011/base_green_raw.png"
+    },
+    {
+      "id": "tiers_green",
+      "mode": "edit",
+      "refs": [
+        "C:/Users/Mdogg/Desktop/BOF-CODE/BulletsOfFury/_ART_SOURCES/wind_icons_1011/tiers_raw.png",
+        "C:/Users/Mdogg/Desktop/BOF-CODE/BulletsOfFury/_ART_SOURCES/wind_icons_1011/symbol_raw.png"
+      ],
+      "prompt": "Edit only the outer silver metallic octagonal frames and the rims surrounding the bottom Roman-number tags of the FIRST image. Apply a Wind emerald-green palette swap to those border metal pixels, matching the emerald border of the SECOND image. This first image is a fixed 4 columns by 9 rows sheet containing exactly 36 icons. Keep ALL 36 icons and the exact original arrangement and icon silhouettes. Preserve the exact original interior projectile drawings, their silver metal hulls, center energy, gems, dark backing, transparent alpha and every WHITE Roman number: each row reads II, III, IV, V. Numerals remain white. Do not tint the bullets, rocket or spherical metal INSIDE the frames. Do not recompose, crop, resize, move or redesign any icon. This is a localized border hue swap only, with highlights/shadows and dark outlines preserved. The second image is only a green border color reference, NOT a target to include. Return the entire first sheet, all nine complete rows and four columns, transparent.",
+      "original_path": "C:\\Users\\Mdogg\\.codex\\generated_images\\01a0e3c8-265d-7731-8ffe-ee42ebb5ba3c\\exec-f525c908-f304-4b79-8887-4b80a3426747.png",
+      "archived_path": "C:/Users/Mdogg/Desktop/BOF-CODE/BulletsOfFury/_ART_SOURCES/wind_icons_1011/tiers_green_raw.png"
+    }
+  ]
+}

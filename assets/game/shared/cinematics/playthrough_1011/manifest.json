@@ -1,0 +1,34 @@
+[
+  {
+    "key": "pt11_mystery_emergence",
+    "path": "assets/game/shared/cinematics/playthrough_1011/mystery-emergence.webp",
+    "width": 1672,
+    "height": 942,
+    "sourceSize": [
+      1672,
+      941
+    ],
+    "evenPadding": [
+      0,
+      1
+    ],
+    "source": "_ART_SOURCES/playthrough_1011/returned/mystery-emergence.png",
+    "sha256": "3873347f512d479dd976a9233546e067fd960a0b300c6bbde94f2908e5bf37ab"
+  },
+  {
+    "key": "pt11_mystery_contact",
+    "path": "assets/game/shared/cinematics/playthrough_1011/mystery-contact.webp",
+    "width": 1672,
+    "height": 942,
+    "sourceSize": [
+      1672,
+      941
+    ],
+    "evenPadding": [
+      0,
+      1
+    ],
+    "source": "_ART_SOURCES/playthrough_1011/returned/mystery-contact.png",
+    "sha256": "35700ab53a1dfd09560684b8297606ef5770763da3c84aed3f0d7382b346ccac"
+  }
+]

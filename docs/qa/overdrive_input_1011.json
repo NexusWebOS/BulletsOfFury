@@ -1,0 +1,153 @@
+{
+  "date": "2026-10-11",
+  "build": "overdrive1011-input-r1",
+  "entry": "expansion/topdown/index.html",
+  "localOnly": true,
+  "summary": {
+    "input": {
+      "passed": 28,
+      "failed": 0
+    },
+    "intro": {
+      "passed": 42,
+      "failed": 0
+    },
+    "frontend": {
+      "passed": 55,
+      "failed": 0
+    }
+  },
+  "nativePassed": 125,
+  "browserErrors": [],
+  "baseSuite": {
+    "passingAssertions": 8700,
+    "errors": 0,
+    "exitCode": 0,
+    "finalSummary": "==== FALVA/LIZZIE BUILD OK, 0 ERRORS ====",
+    "log": "_shots/overdrive_input_1011/base_suite.log"
+  },
+  "scope": "Real Chromium with actual keyboard/pointer events and synthetic Gamepad reports. User saves are untouched. Physical hardware was not connected. Protected gameplay fixtures check actual shot vectors and render authored tank art.",
+  "inputChecks": [
+    {
+      "name": "keyboard drive with an idle connected pad still aims east with mouse",
+      "passed": true
+    },
+    {
+      "name": "mouse fire while keyboard drives follows the east-pointing turret",
+      "passed": true
+    },
+    {
+      "name": "controller D-pad driving does not block westward mouse fire",
+      "passed": true
+    },
+    {
+      "name": "six-button independent directional fire 0,-1",
+      "passed": true
+    },
+    {
+      "name": "six-button independent directional fire 1,-1",
+      "passed": true
+    },
+    {
+      "name": "six-button independent directional fire 1,0",
+      "passed": true
+    },
+    {
+      "name": "six-button independent directional fire 1,1",
+      "passed": true
+    },
+    {
+      "name": "six-button independent directional fire 0,1",
+      "passed": true
+    },
+    {
+      "name": "six-button independent directional fire -1,1",
+      "passed": true
+    },
+    {
+      "name": "six-button independent directional fire -1,0",
+      "passed": true
+    },
+    {
+      "name": "six-button independent directional fire -1,-1",
+      "passed": true
+    },
+    {
+      "name": "Q turret rotation remains usable while the mouse rests over the playfield",
+      "passed": true
+    },
+    {
+      "name": "real mouse movement takes aiming back after keyboard turret rotation",
+      "passed": true
+    },
+    {
+      "name": "standard-pad driving and firing can use mouse aim independently",
+      "passed": true
+    },
+    {
+      "name": "standard right stick takes over the turret and fires west",
+      "passed": true
+    },
+    {
+      "name": "a moved mouse takes aim back from a held right stick",
+      "passed": true
+    },
+    {
+      "name": "custom A binding on physical button 12 fires south without default D-pad movement",
+      "passed": true
+    },
+    {
+      "name": "custom D-pad and face bindings drive north and fire east independently",
+      "passed": true
+    },
+    {
+      "name": "rebound L shoulder cruises north while the face button fires west",
+      "passed": true
+    },
+    {
+      "name": "rebound R shoulder still activates Retina",
+      "passed": true
+    },
+    {
+      "name": "custom bindings survive controller disconnect and reconnect",
+      "passed": true
+    },
+    {
+      "name": "saved custom controller bindings survive browser reload exactly",
+      "passed": true
+    },
+    {
+      "name": "holding Retina through introduction exit cannot suppress a new eastward shot",
+      "passed": true
+    },
+    {
+      "name": "the held inspection button cannot leak a shot across the introduction boundary",
+      "passed": true
+    },
+    {
+      "name": "a new mouse press can fire while the old inspection button is still held",
+      "passed": true
+    },
+    {
+      "name": "controller northward fire resumes after release of the inspection button",
+      "passed": true
+    },
+    {
+      "name": "real rendered mixed input retains the 640x480 field",
+      "passed": true
+    },
+    {
+      "name": "browser has no page, console or asset errors",
+      "passed": true
+    }
+  ],
+  "capture": "_shots/overdrive_input_1011/mouse_aim_while_controller_drives.png",
+  "captureInspected": true,
+  "sourceFiles": [
+    "expansion/topdown/js/core.js",
+    "expansion/topdown/js/tank.js",
+    "expansion/topdown/js/main.js",
+    "expansion/topdown/js/boss_intro_1011.js"
+  ],
+  "probe": "expansion/topdown/_research/probe_input_1011.py"
+}

@@ -1,0 +1,133 @@
+{
+  "passed": 15,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "Five selectable generated concepts and five comparison cards",
+      "passed": true
+    },
+    {
+      "name": "Fury Classic: actual selector updates the labeled canvas and URL",
+      "passed": true
+    },
+    {
+      "name": "Bold Cabinet: actual selector updates the labeled canvas and URL",
+      "passed": true
+    },
+    {
+      "name": "White Interceptor: actual selector updates the labeled canvas and URL",
+      "passed": true
+    },
+    {
+      "name": "Armored Command: actual selector updates the labeled canvas and URL",
+      "passed": true
+    },
+    {
+      "name": "Neon Fury: actual selector updates the labeled canvas and URL",
+      "passed": true
+    },
+    {
+      "name": "Low-stock controls show one life and one missile",
+      "passed": true
+    },
+    {
+      "name": "Empty stocks stay explicit as zero",
+      "passed": true
+    },
+    {
+      "name": "All counters remain large and every measured field remains in its own strip",
+      "passed": true
+    },
+    {
+      "name": "The selected mockup exports as an actual PNG",
+      "passed": true
+    },
+    {
+      "name": "Enlargement control increases the on-screen canvas width",
+      "passed": true
+    },
+    {
+      "name": "Review fits the narrow viewport without horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "Review also fits 360px screens",
+      "passed": true
+    },
+    {
+      "name": "Reduced-motion mode disables smooth page scrolling",
+      "passed": true
+    },
+    {
+      "name": "No page, console or missing-image errors",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "scope": "Review-only concepts, no shipping game code or asset data changed.",
+  "generation": "Five independent built-in image_gen calls.",
+  "source_resolution": [
+    1536,
+    1024
+  ],
+  "even_display_windows": 55,
+  "art": [
+    {
+      "concept": "fury-classic",
+      "source_sha256": "35e865d215fe997ddf671ab9fa09e29830f54debac5f7cc22f82202d411017cb",
+      "mockup": "docs/previews/hud_concepts_1011/fury-classic-mockup.png",
+      "mockup_size": [
+        1152,
+        1568
+      ]
+    },
+    {
+      "concept": "bold-cabinet",
+      "source_sha256": "da91bb9caf176e102489bcd4464e872df83737078d754b66838f4b4426523d64",
+      "mockup": "docs/previews/hud_concepts_1011/bold-cabinet-mockup.png",
+      "mockup_size": [
+        1152,
+        1568
+      ]
+    },
+    {
+      "concept": "white-interceptor",
+      "source_sha256": "aedd28bf9fac039c542fe4496ee46e7b547aba51828d99e089128415f97a89ad",
+      "mockup": "docs/previews/hud_concepts_1011/white-interceptor-mockup.png",
+      "mockup_size": [
+        1152,
+        1568
+      ]
+    },
+    {
+      "concept": "armored-command",
+      "source_sha256": "22f2919f239a496c1e98d5e23ca81c64128ae15096245a79ecccbc5c3fdce5f6",
+      "mockup": "docs/previews/hud_concepts_1011/armored-command-mockup.png",
+      "mockup_size": [
+        1152,
+        1568
+      ]
+    },
+    {
+      "concept": "neon-fury",
+      "source_sha256": "0b00b2fb6b384677b76843a85687bc0e82d40f8cf4bc17e759a96fc620110c79",
+      "mockup": "docs/previews/hud_concepts_1011/neon-fury-mockup.png",
+      "mockup_size": [
+        1152,
+        1568
+      ]
+    }
+  ],
+  "visual_review": "All five full mockups, low/empty stock states and desktop review inspected. Fixed special-text overlap.",
+  "game_suite": "Not rerun; no runtime change.",
+  "limits": [
+    "Demonstration values and still captures.",
+    "Live per-pilot/co-op integration awaits Mike's selection."
+  ],
+  "initial_issues_resolved": [
+    "Chromium sandbox launch used the approved local native verification path.",
+    "Font exporter corrected to the actual -alpha.png source.",
+    "Special-title/timer overlap and crowded optional maneuver percentages fixed.",
+    "Final mockups export the1152x1568 canvas directly, avoiding fractional CSS screenshot rounding."
+  ]
+}

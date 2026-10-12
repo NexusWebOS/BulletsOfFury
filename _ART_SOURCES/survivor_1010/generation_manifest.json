@@ -1,0 +1,2841 @@
+{
+  "tool": "built-in image_gen",
+  "sources": [
+    {
+      "bank": "background",
+      "path": "_ART_SOURCES/survivor_1010/background_raw.png",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "f5be2493319c7d0f48417f86ddf4379905a0dfdb65c4407cc7a1fd2ae315d8b6"
+    },
+    {
+      "bank": "detail",
+      "path": "_ART_SOURCES/survivor_1010/detail_raw.png",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "2ee188512d485ef3d1c8eca3a3f0a5645c4b8efd947d39cb51e7daeeafd63d6b"
+    },
+    {
+      "bank": "crawl",
+      "path": "_ART_SOURCES/survivor_1010/crawl_raw.png",
+      "size": [
+        1774,
+        887
+      ],
+      "sha256": "48e1ebd6b73d5477ca165a0113b1f8464e80f4ad9ee42e80b887309d26d6ac79",
+      "grid": [
+        8,
+        4
+      ],
+      "frames": 32
+    },
+    {
+      "bank": "burst",
+      "path": "_ART_SOURCES/survivor_1010/burst_raw.png",
+      "size": [
+        1774,
+        887
+      ],
+      "sha256": "50131094924149b8917a49b59f516108352e82453a2b7e711d4cefca1b8655a3",
+      "grid": [
+        8,
+        4
+      ],
+      "frames": 32
+    },
+    {
+      "bank": "contact",
+      "path": "_ART_SOURCES/survivor_1010/contact_raw.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "842ba4f83f8b4fe2f2160642852ba87b730d26dee4830f2e019ef0ea8b2cd78a",
+      "grid": [
+        4,
+        4
+      ],
+      "frames": 16
+    }
+  ],
+  "shipping_assets": [
+    {
+      "key": "sv10_background",
+      "path": "assets/game/shared/cinematics/survivor_1010/background.png",
+      "w": 1672,
+      "h": 942,
+      "pivot": [
+        836,
+        471
+      ],
+      "content_rect": [
+        0,
+        0,
+        1672,
+        941
+      ],
+      "sha256": "8dd64ebd24b9871c8a4045c14f04dbb6358d2559ac93c0bb82ce0336bef36804",
+      "clip": "background",
+      "source_rect": [
+        0,
+        0,
+        1672,
+        941
+      ],
+      "scale": 1
+    },
+    {
+      "key": "sv10_detail",
+      "path": "assets/game/shared/cinematics/survivor_1010/detail.png",
+      "w": 1672,
+      "h": 942,
+      "pivot": [
+        836,
+        471
+      ],
+      "content_rect": [
+        0,
+        0,
+        1672,
+        941
+      ],
+      "sha256": "073a6e6da8cce2f76f437cf6faf0eb2b0eb2337d04ce5a3e10ebfac6e4b25ae2",
+      "clip": "detail",
+      "source_rect": [
+        0,
+        0,
+        1672,
+        941
+      ],
+      "scale": 1
+    },
+    {
+      "key": "sv10_crawl_00",
+      "path": "assets/game/shared/cinematics/survivor_1010/crawl_00.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "c5a62296bb76433c0cc308dcc509272c631d307e15b35d53097657086e36a938",
+      "clip": "crawl",
+      "source_rect": [
+        0,
+        0,
+        222,
+        222
+      ],
+      "source_pivot": [
+        99,
+        159
+      ],
+      "translation": [
+        93,
+        33
+      ],
+      "opaque_bounds": [
+        120,
+        120,
+        289,
+        221
+      ],
+      "scale": 1,
+      "registration": "Measured emerald core"
+    },
+    {
+      "key": "sv10_crawl_01",
+      "path": "assets/game/shared/cinematics/survivor_1010/crawl_01.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "906a12ae6ac9bc6913b7c977650de01fbd794e39377a95d478fc2dddbf002aa6",
+      "clip": "crawl",
+      "source_rect": [
+        222,
+        0,
+        444,
+        222
+      ],
+      "source_pivot": [
+        96,
+        158
+      ],
+      "translation": [
+        96,
+        34
+      ],
+      "opaque_bounds": [
+        123,
+        118,
+        291,
+        223
+      ],
+      "scale": 1,
+      "registration": "Measured emerald core"
+    },
+    {
+      "key": "sv10_crawl_02",
+      "path": "assets/game/shared/cinematics/survivor_1010/crawl_02.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "a5440fa0aeadf40b178a3a49e54d996dafada02c6a891290089933f472512263",
+      "clip": "crawl",
+      "source_rect": [
+        444,
+        0,
+        665,
+        222
+      ],
+      "source_pivot": [
+        99,
+        159
+      ],
+      "translation": [
+        93,
+        33
+      ],
+      "opaque_bounds": [
+        119,
+        112,
+        290,
+        222
+      ],
+      "scale": 1,
+      "registration": "Measured emerald core"
+    },
+    {
+      "key": "sv10_crawl_03",
+      "path": "assets/game/shared/cinematics/survivor_1010/crawl_03.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "1596b0373f75e44347a64fd61b8863bd06b3cb88a5c008ff2fcb010af34e1352",
+      "clip": "crawl",
+      "source_rect": [
+        665,
+        0,
+        887,
+        222
+      ],
+      "source_pivot": [
+        99,
+        158
+      ],
+      "translation": [
+        93,
+        34
+      ],
+      "opaque_bounds": [
+        121,
+        104,
+        291,
+        224
+      ],
+      "scale": 1,
+      "registration": "Measured emerald core"
+    },
+    {
+      "key": "sv10_crawl_04",
+      "path": "assets/game/shared/cinematics/survivor_1010/crawl_04.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "f3567037e5348c5bfccd7ab8e0bbac84e9ad30d319a4a47e5a058f2aceb1d45a",
+      "clip": "crawl",
+      "source_rect": [
+        887,
+        0,
+        1109,
+        222
+      ],
+      "source_pivot": [
+        97,
+        157
+      ],
+      "translation": [
+        95,
+        35
+      ],
+      "opaque_bounds": [
+        123,
+        102,
+        293,
+        225
+      ],
+      "scale": 1,
+      "registration": "Measured emerald core"
+    },
+    {
+      "key": "sv10_crawl_05",
+      "path": "assets/game/shared/cinematics/survivor_1010/crawl_05.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "8f14e887eec0e75c889344e2eb825d4aa1d0132f22eb539d2dac67bd8b2a6ced",
+      "clip": "crawl",
+      "source_rect": [
+        1109,
+        0,
+        1330,
+        222
+      ],
+      "source_pivot": [
+        99,
+        157
+      ],
+      "translation": [
+        93,
+        35
+      ],
+      "opaque_bounds": [
+        121,
+        102,
+        291,
+        225
+      ],
+      "scale": 1,
+      "registration": "Measured emerald core"
+    },
+    {
+      "key": "sv10_crawl_06",
+      "path": "assets/game/shared/cinematics/survivor_1010/crawl_06.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "1d6c63cb19eb04530812e685bb097d5f204722d74693a845c61631d184d2c9d4",
+      "clip": "crawl",
+      "source_rect": [
+        1330,
+        0,
+        1552,
+        222
+      ],
+      "source_pivot": [
+        98,
+        159
+      ],
+      "translation": [
+        94,
+        33
+      ],
+      "opaque_bounds": [
+        122,
+        105,
+        293,
+        223
+      ],
+      "scale": 1,
+      "registration": "Measured emerald core"
+    },
+    {
+      "key": "sv10_crawl_07",
+      "path": "assets/game/shared/cinematics/survivor_1010/crawl_07.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "b391dabb44cb271109712f4c4041028ed00a03d06656a9149b9b5532ca54806f",
+      "clip": "crawl",
+      "source_rect": [
+        1552,
+        0,
+        1774,
+        222
+      ],
+      "source_pivot": [
+        96,
+        157
+      ],
+      "translation": [
+        96,
+        35
+      ],
+      "opaque_bounds": [
+        124,
+        109,
+        293,
+        226
+      ],
+      "scale": 1,
+      "registration": "Measured emerald core"
+    },
+    {
+      "key": "sv10_crawl_08",
+      "path": "assets/game/shared/cinematics/survivor_1010/crawl_08.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "e98de606179e1116459e5bf5b8f5ad082257f659fd46fd7440c9577c50df2254",
+      "clip": "crawl",
+      "source_rect": [
+        0,
+        222,
+        222,
+        444
+      ],
+      "source_pivot": [
+        95,
+        161
+      ],
+      "translation": [
+        97,
+        31
+      ],
+      "opaque_bounds": [
+        122,
+        116,
+        291,
+        225
+      ],
+      "scale": 1,
+      "registration": "Measured emerald core"
+    },
+    {
+      "key": "sv10_crawl_09",
+      "path": "assets/game/shared/cinematics/survivor_1010/crawl_09.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "a737c3ca595e967776e1bbe292e80c3a4ad157315f5f1852a594c265e7491316",
+      "clip": "crawl",
+      "source_rect": [
+        222,
+        222,
+        444,
+        444
+      ],
+      "source_pivot": [
+        96,
+        162
+      ],
+      "translation": [
+        96,
+        30
+      ],
+      "opaque_bounds": [
+        120,
+        114,
+        291,
+        224
+      ],
+      "scale": 1,
+      "registration": "Measured emerald core"
+    },
+    {
+      "key": "sv10_crawl_10",
+      "path": "assets/game/shared/cinematics/survivor_1010/crawl_10.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "1f3012716f5dc114a6866dc34b85f950081733be2a40128dc67d3b9277e6bd7f",
+      "clip": "crawl",
+      "source_rect": [
+        444,
+        222,
+        665,
+        444
+      ],
+      "source_pivot": [
+        93,
+        163
+      ],
+      "translation": [
+        99,
+        29
+      ],
+      "opaque_bounds": [
+        121,
+        109,
+        293,
+        224
+      ],
+      "scale": 1,
+      "registration": "Measured emerald core"
+    },
+    {
+      "key": "sv10_crawl_11",
+      "path": "assets/game/shared/cinematics/survivor_1010/crawl_11.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "c04188ae0f2ffb5a8349a44d3c72534b314d1dd74173657512c8585c447ee0fb",
+      "clip": "crawl",
+      "source_rect": [
+        665,
+        222,
+        887,
+        444
+      ],
+      "source_pivot": [
+        93,
+        161
+      ],
+      "translation": [
+        99,
+        31
+      ],
+      "opaque_bounds": [
+        119,
+        110,
+        302,
+        225
+      ],
+      "scale": 1,
+      "registration": "Measured emerald core"
+    },
+    {
+      "key": "sv10_crawl_12",
+      "path": "assets/game/shared/cinematics/survivor_1010/crawl_12.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "a642ba87a4240bc5db1a4ec068f52f4a1abd1c5a22df83d0982debc4be16d782",
+      "clip": "crawl",
+      "source_rect": [
+        887,
+        222,
+        1109,
+        444
+      ],
+      "source_pivot": [
+        94,
+        162
+      ],
+      "translation": [
+        98,
+        30
+      ],
+      "opaque_bounds": [
+        118,
+        108,
+        300,
+        226
+      ],
+      "scale": 1,
+      "registration": "Measured emerald core"
+    },
+    {
+      "key": "sv10_crawl_13",
+      "path": "assets/game/shared/cinematics/survivor_1010/crawl_13.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "edca5925eda6680dfb731575a1b315ff204708375438620e0915070bb9f9075d",
+      "clip": "crawl",
+      "source_rect": [
+        1109,
+        222,
+        1330,
+        444
+      ],
+      "source_pivot": [
+        97,
+        164
+      ],
+      "translation": [
+        95,
+        28
+      ],
+      "opaque_bounds": [
+        118,
+        116,
+        296,
+        223
+      ],
+      "scale": 1,
+      "registration": "Measured emerald core"
+    },
+    {
+      "key": "sv10_crawl_14",
+      "path": "assets/game/shared/cinematics/survivor_1010/crawl_14.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "e0f5044e0690f22fa8ad78c02dcf1cb5d3b3ede7296de56134c3b5c102b0badf",
+      "clip": "crawl",
+      "source_rect": [
+        1330,
+        222,
+        1552,
+        444
+      ],
+      "source_pivot": [
+        97,
+        164
+      ],
+      "translation": [
+        95,
+        28
+      ],
+      "opaque_bounds": [
+        122,
+        121,
+        303,
+        224
+      ],
+      "scale": 1,
+      "registration": "Measured emerald core"
+    },
+    {
+      "key": "sv10_crawl_15",
+      "path": "assets/game/shared/cinematics/survivor_1010/crawl_15.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "04fb565640cab10490330ae9f70b7f64e2859d46b456a5702401a5660acb3132",
+      "clip": "crawl",
+      "source_rect": [
+        1552,
+        222,
+        1774,
+        444
+      ],
+      "source_pivot": [
+        99,
+        164
+      ],
+      "translation": [
+        93,
+        28
+      ],
+      "opaque_bounds": [
+        118,
+        121,
+        292,
+        223
+      ],
+      "scale": 1,
+      "registration": "Measured emerald core"
+    },
+    {
+      "key": "sv10_crawl_16",
+      "path": "assets/game/shared/cinematics/survivor_1010/crawl_16.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "817ea0d6dcebce3b074642c0d56baf968f692d1516b7e248dffdf4af102594f1",
+      "clip": "crawl",
+      "source_rect": [
+        0,
+        444,
+        222,
+        665
+      ],
+      "source_pivot": [
+        95,
+        163
+      ],
+      "translation": [
+        97,
+        29
+      ],
+      "opaque_bounds": [
+        121,
+        123,
+        291,
+        224
+      ],
+      "scale": 1,
+      "registration": "Measured emerald core"
+    },
+    {
+      "key": "sv10_crawl_17",
+      "path": "assets/game/shared/cinematics/survivor_1010/crawl_17.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "cb674da7a38a2424d571568327377d463dd3122ab390eb22081f03b4070d25ab",
+      "clip": "crawl",
+      "source_rect": [
+        222,
+        444,
+        444,
+        665
+      ],
+      "source_pivot": [
+        96,
+        162
+      ],
+      "translation": [
+        96,
+        30
+      ],
+      "opaque_bounds": [
+        119,
+        119,
+        291,
+        225
+      ],
+      "scale": 1,
+      "registration": "Measured emerald core"
+    },
+    {
+      "key": "sv10_crawl_18",
+      "path": "assets/game/shared/cinematics/survivor_1010/crawl_18.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "46469511a577b9cf734b5b7bcc811b2664effad12e6a0c629d826acb0a44cc64",
+      "clip": "crawl",
+      "source_rect": [
+        444,
+        444,
+        665,
+        665
+      ],
+      "source_pivot": [
+        94,
+        163
+      ],
+      "translation": [
+        98,
+        29
+      ],
+      "opaque_bounds": [
+        121,
+        113,
+        292,
+        224
+      ],
+      "scale": 1,
+      "registration": "Measured emerald core"
+    },
+    {
+      "key": "sv10_crawl_19",
+      "path": "assets/game/shared/cinematics/survivor_1010/crawl_19.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "4c2215863f20f0e5a35956d9d353eeb2182bce7dbfdbbae4bc025b7c2840b87a",
+      "clip": "crawl",
+      "source_rect": [
+        665,
+        444,
+        887,
+        665
+      ],
+      "source_pivot": [
+        97,
+        163
+      ],
+      "translation": [
+        95,
+        29
+      ],
+      "opaque_bounds": [
+        120,
+        111,
+        295,
+        224
+      ],
+      "scale": 1,
+      "registration": "Measured emerald core"
+    },
+    {
+      "key": "sv10_crawl_20",
+      "path": "assets/game/shared/cinematics/survivor_1010/crawl_20.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "8388450b327482753749200ce41b399e33224bfc4bca8faf652b32129df93638",
+      "clip": "crawl",
+      "source_rect": [
+        887,
+        444,
+        1109,
+        665
+      ],
+      "source_pivot": [
+        96,
+        163
+      ],
+      "translation": [
+        96,
+        29
+      ],
+      "opaque_bounds": [
+        120,
+        108,
+        296,
+        224
+      ],
+      "scale": 1,
+      "registration": "Measured emerald core"
+    },
+    {
+      "key": "sv10_crawl_21",
+      "path": "assets/game/shared/cinematics/survivor_1010/crawl_21.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "df938eea5f4bcb6ea29b70fe2cfb9c4ffd77ad4e0fb46c82ea822b941bf0434b",
+      "clip": "crawl",
+      "source_rect": [
+        1109,
+        444,
+        1330,
+        665
+      ],
+      "source_pivot": [
+        100,
+        163
+      ],
+      "translation": [
+        92,
+        29
+      ],
+      "opaque_bounds": [
+        118,
+        106,
+        299,
+        224
+      ],
+      "scale": 1,
+      "registration": "Measured emerald core"
+    },
+    {
+      "key": "sv10_crawl_22",
+      "path": "assets/game/shared/cinematics/survivor_1010/crawl_22.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "bd6cd816ab38e8a4fef64fba223ccb919e1f790373c320be5d1218bba11633b4",
+      "clip": "crawl",
+      "source_rect": [
+        1330,
+        444,
+        1552,
+        665
+      ],
+      "source_pivot": [
+        97,
+        163
+      ],
+      "translation": [
+        95,
+        29
+      ],
+      "opaque_bounds": [
+        120,
+        103,
+        298,
+        224
+      ],
+      "scale": 1,
+      "registration": "Measured emerald core"
+    },
+    {
+      "key": "sv10_crawl_23",
+      "path": "assets/game/shared/cinematics/survivor_1010/crawl_23.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "2da3bf11a16f9e16aa9d601ccb2c05506bf5e6fce43ef0737a0b97ab6c384f0e",
+      "clip": "crawl",
+      "source_rect": [
+        1552,
+        444,
+        1774,
+        665
+      ],
+      "source_pivot": [
+        96,
+        163
+      ],
+      "translation": [
+        96,
+        29
+      ],
+      "opaque_bounds": [
+        120,
+        114,
+        291,
+        224
+      ],
+      "scale": 1,
+      "registration": "Measured emerald core"
+    },
+    {
+      "key": "sv10_crawl_24",
+      "path": "assets/game/shared/cinematics/survivor_1010/crawl_24.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "0fcb3512a2ff74fe1071bc6da51e18d4436f6faeb57d0090d3e0c1f30b4db750",
+      "clip": "crawl",
+      "source_rect": [
+        0,
+        665,
+        222,
+        887
+      ],
+      "source_pivot": [
+        101,
+        157
+      ],
+      "translation": [
+        91,
+        35
+      ],
+      "opaque_bounds": [
+        118,
+        121,
+        289,
+        224
+      ],
+      "scale": 1,
+      "registration": "Measured emerald core"
+    },
+    {
+      "key": "sv10_crawl_25",
+      "path": "assets/game/shared/cinematics/survivor_1010/crawl_25.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "644759c709b3871f7d1184b608da8bafed53e16f6ed828c6fbfdaff999150d75",
+      "clip": "crawl",
+      "source_rect": [
+        222,
+        665,
+        444,
+        887
+      ],
+      "source_pivot": [
+        101,
+        156
+      ],
+      "translation": [
+        91,
+        36
+      ],
+      "opaque_bounds": [
+        116,
+        118,
+        290,
+        223
+      ],
+      "scale": 1,
+      "registration": "Measured emerald core"
+    },
+    {
+      "key": "sv10_crawl_26",
+      "path": "assets/game/shared/cinematics/survivor_1010/crawl_26.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "e820040c529fd33b056c412d539ecf0be52737f83c7fed848404ba30b2ba0868",
+      "clip": "crawl",
+      "source_rect": [
+        444,
+        665,
+        665,
+        887
+      ],
+      "source_pivot": [
+        101,
+        155
+      ],
+      "translation": [
+        91,
+        37
+      ],
+      "opaque_bounds": [
+        118,
+        121,
+        290,
+        225
+      ],
+      "scale": 1,
+      "registration": "Measured emerald core"
+    },
+    {
+      "key": "sv10_crawl_27",
+      "path": "assets/game/shared/cinematics/survivor_1010/crawl_27.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "9ddae23d2be9e9b4d6a922de3b19208a9728c30a03d5ee6b18a6663f6ee0df1c",
+      "clip": "crawl",
+      "source_rect": [
+        665,
+        665,
+        887,
+        887
+      ],
+      "source_pivot": [
+        100,
+        158
+      ],
+      "translation": [
+        92,
+        34
+      ],
+      "opaque_bounds": [
+        120,
+        119,
+        292,
+        223
+      ],
+      "scale": 1,
+      "registration": "Measured emerald core"
+    },
+    {
+      "key": "sv10_crawl_28",
+      "path": "assets/game/shared/cinematics/survivor_1010/crawl_28.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "91d90dafa936197d6bcd67db0026c1277607880c342081ad3f802538eb76c115",
+      "clip": "crawl",
+      "source_rect": [
+        887,
+        665,
+        1109,
+        887
+      ],
+      "source_pivot": [
+        101,
+        157
+      ],
+      "translation": [
+        91,
+        35
+      ],
+      "opaque_bounds": [
+        119,
+        118,
+        292,
+        223
+      ],
+      "scale": 1,
+      "registration": "Measured emerald core"
+    },
+    {
+      "key": "sv10_crawl_29",
+      "path": "assets/game/shared/cinematics/survivor_1010/crawl_29.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "b5b37360f730315cb912388f4a42162903b2ce363c9064f3b2fc285a2723bebf",
+      "clip": "crawl",
+      "source_rect": [
+        1109,
+        665,
+        1330,
+        887
+      ],
+      "source_pivot": [
+        100,
+        157
+      ],
+      "translation": [
+        92,
+        35
+      ],
+      "opaque_bounds": [
+        120,
+        120,
+        291,
+        223
+      ],
+      "scale": 1,
+      "registration": "Measured emerald core"
+    },
+    {
+      "key": "sv10_crawl_30",
+      "path": "assets/game/shared/cinematics/survivor_1010/crawl_30.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "5f2f241d56f17d87d9f13b16b2226785a6ab65d36832cd8ef5c299ab4291bffc",
+      "clip": "crawl",
+      "source_rect": [
+        1330,
+        665,
+        1552,
+        887
+      ],
+      "source_pivot": [
+        100,
+        158
+      ],
+      "translation": [
+        92,
+        34
+      ],
+      "opaque_bounds": [
+        119,
+        118,
+        292,
+        223
+      ],
+      "scale": 1,
+      "registration": "Measured emerald core"
+    },
+    {
+      "key": "sv10_crawl_31",
+      "path": "assets/game/shared/cinematics/survivor_1010/crawl_31.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "85f5e645e7d3271ba1fd286e61084133597051335d455dc64b6f828399b8dcb2",
+      "clip": "crawl",
+      "source_rect": [
+        1552,
+        665,
+        1774,
+        887
+      ],
+      "source_pivot": [
+        100,
+        156
+      ],
+      "translation": [
+        92,
+        36
+      ],
+      "opaque_bounds": [
+        120,
+        119,
+        293,
+        224
+      ],
+      "scale": 1,
+      "registration": "Measured emerald core"
+    },
+    {
+      "key": "sv10_burst_00",
+      "path": "assets/game/shared/cinematics/survivor_1010/burst_00.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "fb4c9fd1610a0cc4e77e97bceb6af96048c87415b3d3199c5905639da779202e",
+      "clip": "burst",
+      "source_rect": [
+        0,
+        0,
+        222,
+        222
+      ],
+      "source_pivot": [
+        111,
+        178
+      ],
+      "translation": [
+        81,
+        14
+      ],
+      "opaque_bounds": [
+        128,
+        125,
+        278,
+        219
+      ],
+      "scale": 1,
+      "registration": "Measured emerald core"
+    },
+    {
+      "key": "sv10_burst_01",
+      "path": "assets/game/shared/cinematics/survivor_1010/burst_01.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "04d6f7fca258647741e5623df650ac14d5e60e83a43e6c36d45af28a416c10ef",
+      "clip": "burst",
+      "source_rect": [
+        222,
+        0,
+        444,
+        222
+      ],
+      "source_pivot": [
+        101,
+        176
+      ],
+      "translation": [
+        91,
+        16
+      ],
+      "opaque_bounds": [
+        130,
+        122,
+        285,
+        221
+      ],
+      "scale": 1,
+      "registration": "Measured emerald core"
+    },
+    {
+      "key": "sv10_burst_02",
+      "path": "assets/game/shared/cinematics/survivor_1010/burst_02.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "9227c0612ab4a4bfb40c616d63169fb8ddc5893f6b17413d3a8679c0e86d0e40",
+      "clip": "burst",
+      "source_rect": [
+        444,
+        0,
+        665,
+        222
+      ],
+      "source_pivot": [
+        103,
+        178
+      ],
+      "translation": [
+        89,
+        14
+      ],
+      "opaque_bounds": [
+        130,
+        122,
+        281,
+        221
+      ],
+      "scale": 1,
+      "registration": "Measured emerald core"
+    },
+    {
+      "key": "sv10_burst_03",
+      "path": "assets/game/shared/cinematics/survivor_1010/burst_03.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "cfab616b53e15965d1583e7162f4f31dd276966e30661fcb991020c42adf2b9b",
+      "clip": "burst",
+      "source_rect": [
+        665,
+        0,
+        887,
+        222
+      ],
+      "source_pivot": [
+        101,
+        177
+      ],
+      "translation": [
+        91,
+        15
+      ],
+      "opaque_bounds": [
+        130,
+        127,
+        283,
+        221
+      ],
+      "scale": 1,
+      "registration": "Measured emerald core"
+    },
+    {
+      "key": "sv10_burst_04",
+      "path": "assets/game/shared/cinematics/survivor_1010/burst_04.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "920083ab14627cb4112685ddef9cd03466fbba48a00f5062f08efebc4f6c940d",
+      "clip": "burst",
+      "source_rect": [
+        887,
+        0,
+        1109,
+        222
+      ],
+      "source_pivot": [
+        103,
+        177
+      ],
+      "translation": [
+        89,
+        15
+      ],
+      "opaque_bounds": [
+        128,
+        133,
+        277,
+        221
+      ],
+      "scale": 1,
+      "registration": "Measured emerald core"
+    },
+    {
+      "key": "sv10_burst_05",
+      "path": "assets/game/shared/cinematics/survivor_1010/burst_05.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "cce6353ef5d4ee90daf5179e180ad403eac9f1fca3cc3edfe4b3fffcb06a3dbc",
+      "clip": "burst",
+      "source_rect": [
+        1109,
+        0,
+        1330,
+        222
+      ],
+      "source_pivot": [
+        97,
+        175
+      ],
+      "translation": [
+        95,
+        17
+      ],
+      "opaque_bounds": [
+        143,
+        133,
+        271,
+        226
+      ],
+      "scale": 1,
+      "registration": "Measured emerald core"
+    },
+    {
+      "key": "sv10_burst_06",
+      "path": "assets/game/shared/cinematics/survivor_1010/burst_06.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "7224aabd77d1cc089156e5f850448140626f709cd3ceb29afa4c711bf3f1abec",
+      "clip": "burst",
+      "source_rect": [
+        1330,
+        0,
+        1552,
+        222
+      ],
+      "source_pivot": [
+        96,
+        179
+      ],
+      "translation": [
+        96,
+        13
+      ],
+      "opaque_bounds": [
+        144,
+        130,
+        272,
+        222
+      ],
+      "scale": 1,
+      "registration": "Measured emerald core"
+    },
+    {
+      "key": "sv10_burst_07",
+      "path": "assets/game/shared/cinematics/survivor_1010/burst_07.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "8ad491fba8a87eb63ddeda57ae51fb9293d81890aba24e9b2c99dfa0c2211202",
+      "clip": "burst",
+      "source_rect": [
+        1552,
+        0,
+        1774,
+        222
+      ],
+      "source_pivot": [
+        95,
+        175
+      ],
+      "translation": [
+        97,
+        17
+      ],
+      "opaque_bounds": [
+        152,
+        130,
+        266,
+        227
+      ],
+      "scale": 1,
+      "registration": "Measured emerald core"
+    },
+    {
+      "key": "sv10_burst_08",
+      "path": "assets/game/shared/cinematics/survivor_1010/burst_08.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "e1f96804527d93e3723f6399af141851d328863349e90b6f56bae00e1a767d9c",
+      "clip": "burst",
+      "source_rect": [
+        0,
+        222,
+        222,
+        444
+      ],
+      "source_pivot": [
+        102,
+        170
+      ],
+      "translation": [
+        90,
+        22
+      ],
+      "opaque_bounds": [
+        148,
+        125,
+        270,
+        229
+      ],
+      "scale": 1,
+      "registration": "Measured emerald core"
+    },
+    {
+      "key": "sv10_burst_09",
+      "path": "assets/game/shared/cinematics/survivor_1010/burst_09.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "fe22415b52ed8da7c6a3018c2a90e34e45eb1cdb46f2837832598793f90f5639",
+      "clip": "burst",
+      "source_rect": [
+        222,
+        222,
+        444,
+        444
+      ],
+      "source_pivot": [
+        101,
+        171
+      ],
+      "translation": [
+        91,
+        21
+      ],
+      "opaque_bounds": [
+        149,
+        131,
+        267,
+        229
+      ],
+      "scale": 1,
+      "registration": "Measured emerald core"
+    },
+    {
+      "key": "sv10_burst_10",
+      "path": "assets/game/shared/cinematics/survivor_1010/burst_10.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "d13a8409a698924e3edacf3c7ded4a93d4f5953f556916176ed7c1607879bb6c",
+      "clip": "burst",
+      "source_rect": [
+        444,
+        222,
+        665,
+        444
+      ],
+      "source_pivot": [
+        98,
+        171
+      ],
+      "translation": [
+        94,
+        21
+      ],
+      "opaque_bounds": [
+        154,
+        135,
+        268,
+        230
+      ],
+      "scale": 1,
+      "registration": "Measured emerald core"
+    },
+    {
+      "key": "sv10_burst_11",
+      "path": "assets/game/shared/cinematics/survivor_1010/burst_11.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "b0d72b0614e7fcfdd6b1f6388ec045fd29de0154c977f4405104fdfcbbe2e856",
+      "clip": "burst",
+      "source_rect": [
+        665,
+        222,
+        887,
+        444
+      ],
+      "source_pivot": [
+        98,
+        175
+      ],
+      "translation": [
+        94,
+        17
+      ],
+      "opaque_bounds": [
+        156,
+        130,
+        264,
+        226
+      ],
+      "scale": 1,
+      "registration": "Measured emerald core"
+    },
+    {
+      "key": "sv10_burst_12",
+      "path": "assets/game/shared/cinematics/survivor_1010/burst_12.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "7a9e450806a60e85a77da2d79aa3087c21677a88fd379da0a5e666dfddfd62ae",
+      "clip": "burst",
+      "source_rect": [
+        887,
+        222,
+        1109,
+        444
+      ],
+      "source_pivot": [
+        100,
+        171
+      ],
+      "translation": [
+        92,
+        21
+      ],
+      "opaque_bounds": [
+        153,
+        135,
+        258,
+        230
+      ],
+      "scale": 1,
+      "registration": "Measured emerald core"
+    },
+    {
+      "key": "sv10_burst_13",
+      "path": "assets/game/shared/cinematics/survivor_1010/burst_13.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "4a1b22f53259e6c230757de9ae687376b66cfd8cfae1ad981c78f2419850f802",
+      "clip": "burst",
+      "source_rect": [
+        1109,
+        222,
+        1330,
+        444
+      ],
+      "source_pivot": [
+        101,
+        170
+      ],
+      "translation": [
+        91,
+        22
+      ],
+      "opaque_bounds": [
+        152,
+        136,
+        253,
+        234
+      ],
+      "scale": 1,
+      "registration": "Measured emerald core"
+    },
+    {
+      "key": "sv10_burst_14",
+      "path": "assets/game/shared/cinematics/survivor_1010/burst_14.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "fdc1b638c54f26c1aeaef0b543161406eeee3884f05e51a868f7fa6c09e64115",
+      "clip": "burst",
+      "source_rect": [
+        1330,
+        222,
+        1552,
+        444
+      ],
+      "source_pivot": [
+        98,
+        172
+      ],
+      "translation": [
+        94,
+        20
+      ],
+      "opaque_bounds": [
+        156,
+        134,
+        258,
+        230
+      ],
+      "scale": 1,
+      "registration": "Measured emerald core"
+    },
+    {
+      "key": "sv10_burst_15",
+      "path": "assets/game/shared/cinematics/survivor_1010/burst_15.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "3ff1765d1acfcb8be14b2f05df603b7832cab2d01024f2005eb633a069596ac7",
+      "clip": "burst",
+      "source_rect": [
+        1552,
+        222,
+        1774,
+        444
+      ],
+      "source_pivot": [
+        97,
+        171
+      ],
+      "translation": [
+        95,
+        21
+      ],
+      "opaque_bounds": [
+        157,
+        139,
+        255,
+        231
+      ],
+      "scale": 1,
+      "registration": "Measured emerald core"
+    },
+    {
+      "key": "sv10_burst_16",
+      "path": "assets/game/shared/cinematics/survivor_1010/burst_16.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "1e260d7f55da26b10c58795d1c2086519cb748dafc4e7aa50b5d586ce01c71ef",
+      "clip": "burst",
+      "source_rect": [
+        0,
+        444,
+        222,
+        665
+      ],
+      "source_pivot": [
+        108,
+        147
+      ],
+      "translation": [
+        84,
+        45
+      ],
+      "opaque_bounds": [
+        141,
+        139,
+        274,
+        241
+      ],
+      "scale": 1,
+      "registration": "Measured emerald core"
+    },
+    {
+      "key": "sv10_burst_17",
+      "path": "assets/game/shared/cinematics/survivor_1010/burst_17.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "2d109dfc8b5f2cfa24fb1c198ef830de154f49cddf2ea7937fd11e2085b91e2c",
+      "clip": "burst",
+      "source_rect": [
+        222,
+        444,
+        444,
+        665
+      ],
+      "source_pivot": [
+        101,
+        146
+      ],
+      "translation": [
+        91,
+        46
+      ],
+      "opaque_bounds": [
+        135,
+        135,
+        284,
+        242
+      ],
+      "scale": 1,
+      "registration": "Measured emerald core"
+    },
+    {
+      "key": "sv10_burst_18",
+      "path": "assets/game/shared/cinematics/survivor_1010/burst_18.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "650bdeca2e1e08cc2fb989704f586b50e1be418b584f8ffc15d8a13774371eac",
+      "clip": "burst",
+      "source_rect": [
+        444,
+        444,
+        665,
+        665
+      ],
+      "source_pivot": [
+        105,
+        145
+      ],
+      "translation": [
+        87,
+        47
+      ],
+      "opaque_bounds": [
+        131,
+        134,
+        283,
+        244
+      ],
+      "scale": 1,
+      "registration": "Measured emerald core"
+    },
+    {
+      "key": "sv10_burst_19",
+      "path": "assets/game/shared/cinematics/survivor_1010/burst_19.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "5e551b25506e00234267daced34725ac71be208c01cc299cbc01644577947fc8",
+      "clip": "burst",
+      "source_rect": [
+        665,
+        444,
+        887,
+        665
+      ],
+      "source_pivot": [
+        105,
+        144
+      ],
+      "translation": [
+        87,
+        48
+      ],
+      "opaque_bounds": [
+        132,
+        132,
+        282,
+        244
+      ],
+      "scale": 1,
+      "registration": "Measured emerald core"
+    },
+    {
+      "key": "sv10_burst_20",
+      "path": "assets/game/shared/cinematics/survivor_1010/burst_20.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "5f4a8db5c47adb2e6af6937d7aad50b0bda74095390ed03544ce080381b7fc1d",
+      "clip": "burst",
+      "source_rect": [
+        887,
+        444,
+        1109,
+        665
+      ],
+      "source_pivot": [
+        102,
+        143
+      ],
+      "translation": [
+        90,
+        49
+      ],
+      "opaque_bounds": [
+        131,
+        130,
+        283,
+        246
+      ],
+      "scale": 1,
+      "registration": "Measured emerald core"
+    },
+    {
+      "key": "sv10_burst_21",
+      "path": "assets/game/shared/cinematics/survivor_1010/burst_21.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "c781cd3f57439ffb21ccb42e3bd0b8be500615385b6e27886acda66fe751be99",
+      "clip": "burst",
+      "source_rect": [
+        1109,
+        444,
+        1330,
+        665
+      ],
+      "source_pivot": [
+        104,
+        143
+      ],
+      "translation": [
+        88,
+        49
+      ],
+      "opaque_bounds": [
+        128,
+        130,
+        282,
+        247
+      ],
+      "scale": 1,
+      "registration": "Measured emerald core"
+    },
+    {
+      "key": "sv10_burst_22",
+      "path": "assets/game/shared/cinematics/survivor_1010/burst_22.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "9b435bb93cfb0c8d90b2a823115e3a48b5b74e3d8c0f659745c500e7c77b9bff",
+      "clip": "burst",
+      "source_rect": [
+        1330,
+        444,
+        1552,
+        665
+      ],
+      "source_pivot": [
+        104,
+        143
+      ],
+      "translation": [
+        88,
+        49
+      ],
+      "opaque_bounds": [
+        128,
+        129,
+        286,
+        248
+      ],
+      "scale": 1,
+      "registration": "Measured emerald core"
+    },
+    {
+      "key": "sv10_burst_23",
+      "path": "assets/game/shared/cinematics/survivor_1010/burst_23.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "cc3f590311b2b3b37054608203cff570d0672ac42aad6607dedd37b20715c9a2",
+      "clip": "burst",
+      "source_rect": [
+        1552,
+        444,
+        1774,
+        665
+      ],
+      "source_pivot": [
+        96,
+        144
+      ],
+      "translation": [
+        96,
+        48
+      ],
+      "opaque_bounds": [
+        128,
+        129,
+        282,
+        247
+      ],
+      "scale": 1,
+      "registration": "Measured emerald core"
+    },
+    {
+      "key": "sv10_burst_24",
+      "path": "assets/game/shared/cinematics/survivor_1010/burst_24.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "723ded02e1c7e70cc773f29d7b2474836908f5048f98e3287160d64fe25551fa",
+      "clip": "burst",
+      "source_rect": [
+        0,
+        665,
+        222,
+        887
+      ],
+      "source_pivot": [
+        104,
+        106
+      ],
+      "translation": [
+        88,
+        86
+      ],
+      "opaque_bounds": [
+        129,
+        131,
+        286,
+        250
+      ],
+      "scale": 1,
+      "registration": "Measured emerald core"
+    },
+    {
+      "key": "sv10_burst_25",
+      "path": "assets/game/shared/cinematics/survivor_1010/burst_25.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "17ebb423fd93f072865b4b77256d1115b6837ce6a9f2a2f3cad2b4bcddb64311",
+      "clip": "burst",
+      "source_rect": [
+        222,
+        665,
+        444,
+        887
+      ],
+      "source_pivot": [
+        98,
+        107
+      ],
+      "translation": [
+        94,
+        85
+      ],
+      "opaque_bounds": [
+        130,
+        129,
+        291,
+        253
+      ],
+      "scale": 1,
+      "registration": "Measured emerald core"
+    },
+    {
+      "key": "sv10_burst_26",
+      "path": "assets/game/shared/cinematics/survivor_1010/burst_26.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "ac4bcee33264c03c6b33ca289034b28b5447cb9ce3b2b483ae65f71dfca96483",
+      "clip": "burst",
+      "source_rect": [
+        444,
+        665,
+        665,
+        887
+      ],
+      "source_pivot": [
+        98,
+        107
+      ],
+      "translation": [
+        94,
+        85
+      ],
+      "opaque_bounds": [
+        130,
+        130,
+        295,
+        254
+      ],
+      "scale": 1,
+      "registration": "Measured emerald core"
+    },
+    {
+      "key": "sv10_burst_27",
+      "path": "assets/game/shared/cinematics/survivor_1010/burst_27.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "9f31f32515760a88288e5ea7d414afb6b98f7cf5e34a666a8868b5f45d919a01",
+      "clip": "burst",
+      "source_rect": [
+        665,
+        665,
+        887,
+        887
+      ],
+      "source_pivot": [
+        104,
+        106
+      ],
+      "translation": [
+        88,
+        86
+      ],
+      "opaque_bounds": [
+        126,
+        130,
+        291,
+        255
+      ],
+      "scale": 1,
+      "registration": "Measured emerald core"
+    },
+    {
+      "key": "sv10_burst_28",
+      "path": "assets/game/shared/cinematics/survivor_1010/burst_28.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "2f338e23fcbce63bc414d4e1c158bd68d610ef0ed82c0155ea2e808c4c6219ee",
+      "clip": "burst",
+      "source_rect": [
+        887,
+        665,
+        1109,
+        887
+      ],
+      "source_pivot": [
+        101,
+        105
+      ],
+      "translation": [
+        91,
+        87
+      ],
+      "opaque_bounds": [
+        127,
+        129,
+        293,
+        255
+      ],
+      "scale": 1,
+      "registration": "Measured emerald core"
+    },
+    {
+      "key": "sv10_burst_29",
+      "path": "assets/game/shared/cinematics/survivor_1010/burst_29.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "6804975d8a8fd6a83aa9aa15e7a1211234314ef9980daa417393bd19ad45e8a4",
+      "clip": "burst",
+      "source_rect": [
+        1109,
+        665,
+        1330,
+        887
+      ],
+      "source_pivot": [
+        98,
+        105
+      ],
+      "translation": [
+        94,
+        87
+      ],
+      "opaque_bounds": [
+        130,
+        130,
+        295,
+        256
+      ],
+      "scale": 1,
+      "registration": "Measured emerald core"
+    },
+    {
+      "key": "sv10_burst_30",
+      "path": "assets/game/shared/cinematics/survivor_1010/burst_30.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "3ec88b4a070cb02a1793385e4c5ebf5502312ad26e8dc18d4ec1221e2834142c",
+      "clip": "burst",
+      "source_rect": [
+        1330,
+        665,
+        1552,
+        887
+      ],
+      "source_pivot": [
+        101,
+        106
+      ],
+      "translation": [
+        91,
+        86
+      ],
+      "opaque_bounds": [
+        128,
+        128,
+        293,
+        255
+      ],
+      "scale": 1,
+      "registration": "Measured emerald core"
+    },
+    {
+      "key": "sv10_burst_31",
+      "path": "assets/game/shared/cinematics/survivor_1010/burst_31.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "fa076bf00b358be20385d2c67c66c835713793be8dc795ebf6561b8a976b5a3a",
+      "clip": "burst",
+      "source_rect": [
+        1552,
+        665,
+        1774,
+        887
+      ],
+      "source_pivot": [
+        98,
+        105
+      ],
+      "translation": [
+        94,
+        87
+      ],
+      "opaque_bounds": [
+        128,
+        128,
+        281,
+        255
+      ],
+      "scale": 1,
+      "registration": "Measured emerald core"
+    },
+    {
+      "key": "sv10_contact_00",
+      "path": "assets/game/shared/cinematics/survivor_1010/contact_00.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "e4aacc2799a1e87e60940d681e7dfa16484aeda44dc90d3c10259ebaf0731e85",
+      "clip": "contact",
+      "source_rect": [
+        0,
+        0,
+        314,
+        314
+      ],
+      "source_pivot": [
+        157,
+        157
+      ],
+      "translation": [
+        35,
+        35
+      ],
+      "opaque_bounds": [
+        135,
+        166,
+        259,
+        257
+      ],
+      "scale": 1,
+      "registration": "Shared effect cell center"
+    },
+    {
+      "key": "sv10_contact_01",
+      "path": "assets/game/shared/cinematics/survivor_1010/contact_01.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "2f5957e562ebfe4291baacb64a3f7b0516bfd89ce3f4e8322e5df2de8631a64f",
+      "clip": "contact",
+      "source_rect": [
+        314,
+        0,
+        627,
+        314
+      ],
+      "source_pivot": [
+        156,
+        157
+      ],
+      "translation": [
+        36,
+        35
+      ],
+      "opaque_bounds": [
+        115,
+        158,
+        279,
+        272
+      ],
+      "scale": 1,
+      "registration": "Shared effect cell center"
+    },
+    {
+      "key": "sv10_contact_02",
+      "path": "assets/game/shared/cinematics/survivor_1010/contact_02.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "a1b9940c37d61fbad6f16ac7a6d620ef96f4d464d91a50d1526cec6f2c88b3e8",
+      "clip": "contact",
+      "source_rect": [
+        627,
+        0,
+        940,
+        314
+      ],
+      "source_pivot": [
+        156,
+        157
+      ],
+      "translation": [
+        36,
+        35
+      ],
+      "opaque_bounds": [
+        104,
+        153,
+        289,
+        276
+      ],
+      "scale": 1,
+      "registration": "Shared effect cell center"
+    },
+    {
+      "key": "sv10_contact_03",
+      "path": "assets/game/shared/cinematics/survivor_1010/contact_03.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "f7eda3f9dc6c301ef628fb38c463298cbed5daa84ceb3fd0fa8ad39510ef97af",
+      "clip": "contact",
+      "source_rect": [
+        940,
+        0,
+        1254,
+        314
+      ],
+      "source_pivot": [
+        157,
+        157
+      ],
+      "translation": [
+        35,
+        35
+      ],
+      "opaque_bounds": [
+        92,
+        143,
+        294,
+        282
+      ],
+      "scale": 1,
+      "registration": "Shared effect cell center"
+    },
+    {
+      "key": "sv10_contact_04",
+      "path": "assets/game/shared/cinematics/survivor_1010/contact_04.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "e17b1ed9581a4da6250e8009431b28d530cab4b5536ddd0bcb8b19fcb125064a",
+      "clip": "contact",
+      "source_rect": [
+        0,
+        314,
+        314,
+        627
+      ],
+      "source_pivot": [
+        157,
+        156
+      ],
+      "translation": [
+        35,
+        36
+      ],
+      "opaque_bounds": [
+        87,
+        125,
+        298,
+        262
+      ],
+      "scale": 1,
+      "registration": "Shared effect cell center"
+    },
+    {
+      "key": "sv10_contact_05",
+      "path": "assets/game/shared/cinematics/survivor_1010/contact_05.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "40ade4bc8c9210881bca42e3e42093d4e344bafc5e7778783bd3650cf82cf779",
+      "clip": "contact",
+      "source_rect": [
+        314,
+        314,
+        627,
+        627
+      ],
+      "source_pivot": [
+        156,
+        156
+      ],
+      "translation": [
+        36,
+        36
+      ],
+      "opaque_bounds": [
+        81,
+        119,
+        308,
+        267
+      ],
+      "scale": 1,
+      "registration": "Shared effect cell center"
+    },
+    {
+      "key": "sv10_contact_06",
+      "path": "assets/game/shared/cinematics/survivor_1010/contact_06.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "b8c88304ab14ea3195d0e8d14fe16caa5e0ad04f7a56abcc16acc575811d1696",
+      "clip": "contact",
+      "source_rect": [
+        627,
+        314,
+        940,
+        627
+      ],
+      "source_pivot": [
+        156,
+        156
+      ],
+      "translation": [
+        36,
+        36
+      ],
+      "opaque_bounds": [
+        76,
+        114,
+        310,
+        278
+      ],
+      "scale": 1,
+      "registration": "Shared effect cell center"
+    },
+    {
+      "key": "sv10_contact_07",
+      "path": "assets/game/shared/cinematics/survivor_1010/contact_07.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "7ce5192f2c9dd4cfc23e9710c21076616e13bd3813f8fe96a8af2800e2f91a1a",
+      "clip": "contact",
+      "source_rect": [
+        940,
+        314,
+        1254,
+        627
+      ],
+      "source_pivot": [
+        157,
+        156
+      ],
+      "translation": [
+        35,
+        36
+      ],
+      "opaque_bounds": [
+        69,
+        96,
+        312,
+        298
+      ],
+      "scale": 1,
+      "registration": "Shared effect cell center"
+    },
+    {
+      "key": "sv10_contact_08",
+      "path": "assets/game/shared/cinematics/survivor_1010/contact_08.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "0d10f423f1bee83e05ba470a88b2d007692e305caf4eba2187cd8deafd1f4a91",
+      "clip": "contact",
+      "source_rect": [
+        0,
+        627,
+        314,
+        940
+      ],
+      "source_pivot": [
+        157,
+        156
+      ],
+      "translation": [
+        35,
+        36
+      ],
+      "opaque_bounds": [
+        82,
+        96,
+        309,
+        290
+      ],
+      "scale": 1,
+      "registration": "Shared effect cell center"
+    },
+    {
+      "key": "sv10_contact_09",
+      "path": "assets/game/shared/cinematics/survivor_1010/contact_09.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "d367e1eef312103a18261ddfcec737834baffad320a4a0757454754733a706db",
+      "clip": "contact",
+      "source_rect": [
+        314,
+        627,
+        627,
+        940
+      ],
+      "source_pivot": [
+        156,
+        156
+      ],
+      "translation": [
+        36,
+        36
+      ],
+      "opaque_bounds": [
+        80,
+        97,
+        309,
+        287
+      ],
+      "scale": 1,
+      "registration": "Shared effect cell center"
+    },
+    {
+      "key": "sv10_contact_10",
+      "path": "assets/game/shared/cinematics/survivor_1010/contact_10.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "3f64ab535071e56083d6d786d653ccbb9e942d950b9ff9d7e84f05e53ba69a9c",
+      "clip": "contact",
+      "source_rect": [
+        627,
+        627,
+        940,
+        940
+      ],
+      "source_pivot": [
+        156,
+        156
+      ],
+      "translation": [
+        36,
+        36
+      ],
+      "opaque_bounds": [
+        76,
+        91,
+        317,
+        292
+      ],
+      "scale": 1,
+      "registration": "Shared effect cell center"
+    },
+    {
+      "key": "sv10_contact_11",
+      "path": "assets/game/shared/cinematics/survivor_1010/contact_11.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "7233cb4d9f740db3113384c9ac04d541ce925be2887c258fdac529a0b5baebd5",
+      "clip": "contact",
+      "source_rect": [
+        940,
+        627,
+        1254,
+        940
+      ],
+      "source_pivot": [
+        157,
+        156
+      ],
+      "translation": [
+        35,
+        36
+      ],
+      "opaque_bounds": [
+        75,
+        93,
+        318,
+        298
+      ],
+      "scale": 1,
+      "registration": "Shared effect cell center"
+    },
+    {
+      "key": "sv10_contact_12",
+      "path": "assets/game/shared/cinematics/survivor_1010/contact_12.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "c028a1a1b21241a77dfbe1970dda853b067ce35662eeabbd7cf58e622bb20afa",
+      "clip": "contact",
+      "source_rect": [
+        0,
+        940,
+        314,
+        1254
+      ],
+      "source_pivot": [
+        157,
+        157
+      ],
+      "translation": [
+        35,
+        35
+      ],
+      "opaque_bounds": [
+        84,
+        102,
+        307,
+        292
+      ],
+      "scale": 1,
+      "registration": "Shared effect cell center"
+    },
+    {
+      "key": "sv10_contact_13",
+      "path": "assets/game/shared/cinematics/survivor_1010/contact_13.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "12eefbc730bc40ce4986c361a2694b51e29d6b62dd801a8f261fd5b27f5b2004",
+      "clip": "contact",
+      "source_rect": [
+        314,
+        940,
+        627,
+        1254
+      ],
+      "source_pivot": [
+        156,
+        157
+      ],
+      "translation": [
+        36,
+        35
+      ],
+      "opaque_bounds": [
+        82,
+        101,
+        310,
+        286
+      ],
+      "scale": 1,
+      "registration": "Shared effect cell center"
+    },
+    {
+      "key": "sv10_contact_14",
+      "path": "assets/game/shared/cinematics/survivor_1010/contact_14.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "9bfeb48b36829f75032a47dac8cde7a0848fa09d263abd21cf730e28050a9218",
+      "clip": "contact",
+      "source_rect": [
+        627,
+        940,
+        940,
+        1254
+      ],
+      "source_pivot": [
+        156,
+        157
+      ],
+      "translation": [
+        36,
+        35
+      ],
+      "opaque_bounds": [
+        97,
+        116,
+        297,
+        263
+      ],
+      "scale": 1,
+      "registration": "Shared effect cell center"
+    },
+    {
+      "key": "sv10_contact_15",
+      "path": "assets/game/shared/cinematics/survivor_1010/contact_15.png",
+      "w": 384,
+      "h": 384,
+      "pivot": [
+        192,
+        192
+      ],
+      "sha256": "b260e7a23ae9f57878afc696e7806c5ba3e89e6a809f283c4ba076cc9ae83caf",
+      "clip": "contact",
+      "source_rect": [
+        940,
+        940,
+        1254,
+        1254
+      ],
+      "source_pivot": [
+        157,
+        157
+      ],
+      "translation": [
+        35,
+        35
+      ],
+      "opaque_bounds": [
+        110,
+        132,
+        297,
+        265
+      ],
+      "scale": 1,
+      "registration": "Shared effect cell center"
+    }
+  ],
+  "prompts": "prompts.json",
+  "generation_ids": "accepted_generations.json",
+  "native_references": "references/native-manifest.json",
+  "normalization": "One native scale per bank, integer translation to a measured emerald core, even shared transparent canvas, unchanged RGBA pixels. No repainting, per-frame fitting or interpolation."
+}

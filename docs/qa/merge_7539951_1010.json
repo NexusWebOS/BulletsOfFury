@@ -1,0 +1,130 @@
+{
+  "date": "2026-10-10",
+  "requestedCommit": "7539951cf668e2ac38b8640cf7c98f8682fd0954",
+  "beforeHead": "a0091869128013cfc56e7c27aa04301a38cbd43a",
+  "head": "7539951cf668e2ac38b8640cf7c98f8682fd0954",
+  "fastForward": true,
+  "newBranchCommit": false,
+  "pushed": false,
+  "safetyStash": "f48b4f41ea0e5e36874ae0c8ee11767c44a01324",
+  "preservation": {
+    "preExistingStagedFiles": [
+      "CLAUDE.md",
+      "HANDOFF_CODEX.md"
+    ],
+    "stagedAdditions": {
+      "CLAUDE.md": 7,
+      "HANDOFF_CODEX.md": 8
+    },
+    "preExistingUntrackedPaths": 4760,
+    "missingUntrackedPaths": 0,
+    "ownedFilesHashVerified": 1186,
+    "ownedHashMismatches": 0,
+    "gameLineEndings": "LF",
+    "testLineEndings": "CRLF"
+  },
+  "regression": {
+    "passed": 8079,
+    "errors": 0,
+    "exitCode": 0,
+    "finalSummary": "FALVA/LIZZIE BUILD OK, 0 ERRORS"
+  },
+  "nativePasswordCombat": {
+    "passed": 81,
+    "failed": [],
+    "errors": []
+  },
+  "nativeDifficultyDamage": {
+    "passed": 33,
+    "failed": [],
+    "errors": []
+  },
+  "incomingHudAndClearChecks": [
+    {
+      "name": "score strip sits above the playfield",
+      "passed": true,
+      "detail": {
+        "top": 0,
+        "bottom": 48,
+        "h": 48,
+        "vis": "visible",
+        "disp": "flex"
+      }
+    },
+    {
+      "name": "five-panel HUD sits below the playfield",
+      "passed": true,
+      "detail": {
+        "top": 772,
+        "bottom": 870,
+        "h": 98,
+        "vis": "visible",
+        "disp": "block"
+      }
+    },
+    {
+      "name": "both HUD rows are drawn",
+      "passed": true,
+      "detail": {
+        "top": 960,
+        "bottom": 941
+      }
+    },
+    {
+      "name": "control hints do not cover the HUD",
+      "passed": true,
+      "detail": {
+        "hint": {
+          "top": 872,
+          "bottom": 894,
+          "h": 22,
+          "vis": "visible",
+          "disp": "flex"
+        },
+        "hud": {
+          "top": 772,
+          "bottom": 870,
+          "h": 98,
+          "vis": "visible",
+          "disp": "block"
+        }
+      }
+    },
+    {
+      "name": "miniboss bar draws at the top of the playfield, under the score strip",
+      "passed": true,
+      "detail": 35.754285714285714
+    },
+    {
+      "name": "hud raised no page/console errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "stage clear hands over to the fly-off",
+      "passed": true,
+      "detail": "flyover"
+    },
+    {
+      "name": "the pilot cannot steer during the clear hover",
+      "passed": true,
+      "detail": {
+        "dx": 0,
+        "dy": 0,
+        "t": 1.0333333333333334,
+        "state": "flyover"
+      }
+    },
+    {
+      "name": "clear raised no page/console errors",
+      "passed": true,
+      "detail": []
+    }
+  ],
+  "previewRecaptured": true,
+  "screenshotsInspected": true,
+  "proof": "_shots/merge_7539951/",
+  "limitations": [
+    "Protected combat fixtures verify damage, scheduling and pixels; they do not establish human balance clears."
+  ]
+}

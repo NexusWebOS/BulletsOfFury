@@ -59,7 +59,7 @@ function rs1004Ball(x,y,size,t){return ra4Blit(ra4Palette('nhxsb_g_2'),x,y,size,
 function rs1004DemoDraw(R){const S=R.h3Intro?.showcase;if(!S)return;const D=S.current,q=D?.q;
  if(q&&D.kind==='helix'&&!D.released){const p=clamp(D.t/(R.h3Intro.rows[R.h3Intro.i].text.length/32),0,1);
   ra4Blit(ra4Palette('fchgc_'+Math.min(3,Math.floor(p*4))),q.x,q.y,104,135);rs1004Ball(q.x,q.y+53,28+p*76,D.t);}
- if(q&&D.kind==='cloak'&&D.t<2.4)cf1004Cell('cloak',D.t*1.35,q.x,q.y,88,118,CF1004.clock*3.2);
+ if(q&&D.kind==='cloak'&&!D.released)cf1004Cell('cloak',D.t*1.35,q.x,q.y,88,118,CF1004.clock*3.2);
  if(q&&D.kind==='slug'){
   const key=CHAINGUN_POD_KEY+(Math.floor(D.t*20)%4),im=XART.rdy(key)?XART.get(key):null;
   if(im)for(const side of [-1,1]){const h=38,w=h*im.width/im.height;ra4Blit(im,q.x+side*23,q.y+20,w,h);if(q._rsMuzzle>0)wm26Draw(ctx,'chaingun',q.x+side*23,q.y+39,Math.PI/2,1-q._rsMuzzle/.11,26);}

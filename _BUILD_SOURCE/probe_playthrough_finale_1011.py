@@ -1,0 +1,83 @@
+"""Native Furnace waves, stable ghost locks and continuous reformation."""
+from pathlib import Path
+from playwright.sync_api import sync_playwright
+import shoot,json,sys
+ROOT=Path(__file__).resolve().parents[1]
+OUT=ROOT/'_shots/playthrough_1011/finale';OUT.mkdir(parents=True,exist_ok=True)
+checks=[];errors=[]
+def check(name,passed,data=None):
+ checks.append(dict(name=name,passed=bool(passed),data=data));print(('PASS ' if passed else 'FAIL ')+name+((' '+json.dumps(data)) if not passed else ''),flush=True)
+port,stop=shoot.serve(str(ROOT))
+try:
+ with sync_playwright() as pw:
+  br=pw.chromium.launch(args=['--mute-audio','--autoplay-policy=no-user-gesture-required'])
+  p=br.new_page(viewport=dict(width=1280,height=1000));p.set_default_timeout(120000)
+  p.on('pageerror',lambda e:errors.append(str(e)))
+  p.on('console',lambda m:errors.append(m.text[:600]) if m.type=='error' or 'draw error' in m.text else None)
+  p.on('response',lambda r:errors.append('HTTP '+str(r.status)+': '+r.url) if r.status>=400 else None)
+  p.goto(f'http://127.0.0.1:{port}/index.html',timeout=120000);p.wait_for_function('window.__bofFrames>4');p.evaluate(shoot.TRAP_RAF)
+  def scene(n):
+   p.evaluate(shoot.SETUP,dict(state='PLAY',stage=n,pilot='maverick',invuln=True))
+   p.wait_for_function('n=>{stageLoadTick();return stageLoadInfo(n).ready}',arg=n,polling=50)
+   p.evaluate('''()=>{diffKey='furious';DIFF=difficultyForRun('arcade','furious');coopOn=false;BOFCinematicDirector.cancel();story=null;fb2Talk=null;s6Opening=null;H3.release=false;H3.ending=null;stagePlan=[];enemies=[];pBullets=[];eBullets=[];special=null;boss=null;bossActive=false;subBoss=null;subBossActive=false;subBossDone=true;player.invuln=1e9;camX=0;spawnBoss(curStage.boss);boss.enter=false;}''')
+  def snap(name):
+   for i in range(3):
+    p.evaluate('()=>{ctx.setTransform(SS,0,0,SS,0,0);drawWorld(0);drawHUDStrip(hudctx);fb9HudSplit();window.__bofFit();}');p.wait_for_timeout(60)
+   p.screenshot(path=str(OUT/(name+'.png')))
+  def ticks(n):
+   for i in range(0,n,15):
+    err=p.evaluate(shoot.STEP,min(15,n-i))
+    if err:errors.append(err)
+    p.wait_for_timeout(3)
+  scene(2)
+  p.wait_for_function("()=>['fzt_body_intact','fzt_head_intact','fzt_arm_flame_intact','fzt_arm_cannon_intact'].map(k=>XART.rdy(k)).every(Boolean)")
+  p.evaluate("()=>{boss.x=240;boss.y=125;boss._fz.a=0;mapScroll=18000;fb2Talk=story=null;}")
+  q=p.evaluate('''()=>{const F=boss._fz;F.phase='arms';F.attack='sweep';F.at=2;F.t=2;F.serial=7;F.pools.left=F.pools.right=2000;F.trans=0;F._pt11Emitter=0;F.beams=[];eBullets=[];fztBeam(F,240,180,0,500,25,'flame');const q=eBullets[0];fztBeam(F,240,180,0,500,25,'core');return {wave:!!q?._pt11Wave,beams:F.beams.map(b=>b.kind),hit:pt11FireWaveHit(q,{x:240,y:180},9,10),safe:!pt11FireWaveHit(q,{x:240,y:340},9,10),proof:q._weaponProof};}''')
+  check('Flame releases a travelling wave; the core beam remains continuous',q['wave'] and q['beams']==['core'],q)
+  check('Only the visible crescent hits; the space below its muzzle is safe',q['hit'] and q['safe'] and q['proof'],q)
+  p.evaluate('''()=>{boss._fz.beams=[];eBullets[0].x=240;eBullets[0].y=310;eBullets[0].t=.25;}''');snap('furnace-fire-wave')
+  scene(8)
+  p.wait_for_function('()=>{r30Warm();return Object.values(AA5_ART).flat().map(a=>XART.rdy(a.key)).every(Boolean)&&Object.values(ON5_ART).flat().map(a=>XART.rdy(a.key)).every(Boolean)&&Object.values(CWD_ART).map(a=>XART.rdy(a.key)).every(Boolean);}',polling=50)
+  p.evaluate("()=>{boss.x=240;boss.y=195;boss._r30.mode='takeover';boss._r30.t=1.6;}");snap('drone-raised-takeover')
+  check('Takeover uses the new sixteen-pose whole drone',p.evaluate('(PT11.draws.drone_raise||0)>0'))
+  p.evaluate("boss._r30.t=3.1");snap('drone-consumed')
+  p.evaluate("boss._r30.t=4.5");snap('host-mutated')
+  p.evaluate("()=>{j3Encounter(boss,0);boss._r30.mode='fight';boss.enter=false;boss._r30.seq=3;boss._r30.f6OuterSeq=5;r30Attack(boss);}")
+  check('Body phase gets enough health to show its attack book',p.evaluate('boss.maxhp===9430'))
+  ticks(66);snap('host-download-50')
+  q=p.evaluate('()=>({shield:boss._r30.shield,pct:Math.floor(boss._r30.attack.t/boss._r30.attack.tell*100),arms:r30Parts(boss).filter(v=>["left","right"].includes(v.p.id)).map(v=>v.rot)})')
+  check('Raised-arm download is visible before the shield becomes active',q['shield']==0 and 45<=q['pct']<=55 and len(q['arms'])==2 and all(abs(v)>1.8 for v in q['arms']),q)
+  ticks(72);snap('host-download-complete');check('Shield activates once the progress reaches 100 percent',p.evaluate('boss._r30.shield>0&&boss._r30.attack.downloadRaised'))
+  p.evaluate("()=>{boss._r30.shield=0;hf7Cancel(boss);boss._r30.attack=null;for(let i=0;i<20;i++){r30Attack(boss);if(boss._r30.attack?.type==='hostLance')break;}}")
+  ticks(42);snap('host-shoulder-charge');ticks(42);snap('host-shoulder-beam')
+  q=p.evaluate('''()=>({beams:S81003.beams.filter(q=>q.owner===boss).map(q=>{const p=pt11BeamEmitter(boss,q);return{palette:q._pt11Palette,gap:p?Math.hypot(p.x-q.x,p.y-q.y):999};})})''')
+  check('Host beams follow physical shoulder emitters with red energy',len(q['beams'])==2 and all(v['palette']=='#e54258' and v['gap']<2 for v in q['beams']),q)
+  p.wait_for_function("()=>XART.rdy('ship_maverick_sp0')")
+  q=p.evaluate('''()=>{S81003.beams=[];boss._r30.attack=null;boss._r30.shield=0;run.shield=1;special=null;player.invuln=0;player.dead=false;playerHit('symbiote lunge');const protectedHit=!player.dead&&!player._pt11Grab;run.shield=0;player.invuln=0;playerHit('symbiote lunge');const grabbed=!!player._pt11Grab;updateDeathSpin(.14);const held=!!player._pt11Grab&&player._spin?.t===0;updateDeathSpin(.15);return{protectedHit,grabbed,held,flung:!player._pt11Grab&&player._spin?.t>0,turns:player._spin?.turns};}''')
+  check('Claw hit respects shields, then grips and flings into the authored burning spin',q['protectedHit'] and q['grabbed'] and q['held'] and q['flung'] and 540<=q['turns']<=900,q)
+  snap('claw-fling-wreck');p.evaluate('()=>{player.dead=false;player.alive=true;player._spin=null;player.invuln=1e9;player.y=430;}')
+  p.evaluate("()=>{boss._r30.shield=0;boss._r30.attack=null;boss.enter=false;boss._lastPart=boss.parts.find(p=>p.id==='core');modularHit(boss.hp+100);}")
+  ticks(55);snap('body-burning-fall');ticks(190);snap('heart-gathering');ticks(180);snap('heart-beating')
+  q=p.evaluate('()=>({mode:boss._r30.mode,heart:PT11.draws.black_heart||0,portal:j3State(boss).pt11Portal})')
+  check('First defeated body reforms as a heart without creating a portal',q['mode']=='dr5Reform' and q['heart']>0 and not q.get('portal'),q)
+  ticks(270);snap('ghost-emerging');ticks(260)
+  q=p.evaluate('()=>({phase:j3State(boss).encounter,mode:boss._r30.mode,hp:boss.maxhp})')
+  check('Heart transition naturally reaches the playable ghost',q['phase']==1 and q['mode']=='fight' and q['hp']>10000,q)
+  q=p.evaluate('''()=>{retinaScanClear();boss._r30.attack=null;boss._r30.cd=50;const a=retinaBossTargets(boss);for(const t of a)retinaScanAdd(t);boss._r30.clock+=3.5;const b=retinaBossTargets(boss);for(let i=0;i<31;i++)retinaScanTick(1/60);return{count:a.length,stable:a.every(t=>b.includes(t)),locked:retinaScanState().marks.filter(m=>m.phase==='locked').length,unique:new Set(a.map(t=>t._retinaId)).size};}''')
+  check('Ghost locks survive orbit depth changes with one identity per physical module',q['count']>=7 and q['stable'] and q['locked']==q['count'] and q['unique']==q['count'],q)
+  snap('ghost-multilock')
+  p.evaluate("()=>{retinaScanClear();hf7Cancel(boss);boss._r30.seq=3;boss._r30.f6OuterSeq=6;r30Attack(boss);}");ticks(140);snap('ghost-code-shield')
+  check('Ghost helper downloads a visible damageable spectral barrier',p.evaluate("boss._r30.shield>0&&boss._r30.codeWall1003d==='violet'&&retinaBossTargets(boss).some(t=>t.kind==='spectral barrier')"))
+  p.evaluate("()=>{boss._r30.shield=0;boss._r30.attack=null;boss._lastPart=boss.parts.find(p=>p.id==='core');modularHit(boss.hp+100);}");ticks(270);snap('second-portal-opening');ticks(440)
+  q=p.evaluate('()=>({mode:boss._r30.mode,t:boss._r30.t,portal:j3State(boss).pt11Portal})')
+  check('Second portal carries its original clock and anchor into the arena transition',q['mode']=='voidIntro1005' and q['portal']['t']>q['t'] and q['portal']['startT']>5,q)
+  snap('portal-expanding');ticks(95);snap('arena-reveal')
+  # Every generated cell is sampled through the live context, including its pivot.
+  p.evaluate('''()=>{ctx.setTransform(SS,0,0,SS,0,0);ctx.fillStyle='#162030';ctx.fillRect(0,0,VW,VH);for(let i=0;i<16;i++)pt11Plate('black_heart',i,65+i%4*116,80+Math.floor(i/4)*114,.43);}''')
+  p.locator('#screen').screenshot(path=str(OUT/'heart-16.png'))
+  check('No page, console or asset errors',not errors,errors);br.close()
+finally:stop()
+report=dict(passed=sum(q['passed'] for q in checks),failed=sum(not q['passed'] for q in checks),checks=checks,errors=errors)
+(OUT/'report.json').write_text(json.dumps(report,indent=2),encoding='utf-8')
+print(json.dumps(dict(passed=report['passed'],failed=report['failed'],errors=errors)),flush=True)
+sys.exit(1 if report['failed'] else 0)

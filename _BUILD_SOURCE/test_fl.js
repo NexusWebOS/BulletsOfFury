@@ -182,6 +182,7 @@ run('assets/game/shared/atlases/stage_runtime_atlases.js', 'stage_runtime_atlase
 run('assets/game/levels/stage_05/enemies/stage5_runtime_atlas.js', 'stage5_runtime_atlas');
 run('assets/audio_feedback_0927.js', 'audio_feedback');
 run('assets/game.js', 'game');
+run('assets/playthrough_ui_1011.js', 'playthrough_ui');
 run('assets/combat_polish_0927b.js', 'combat_polish');
 run('assets/rival_fight_0924.js', 'rival_fight');
 // Earlier soak fixtures temporarily stub playerHit. Keep the real death pipeline for overload regression.
@@ -1949,10 +1950,10 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   }catch(err){ _crash=String(err&&err.message||err); }
   ok(_crash===null, 'stage 7 survives a full 120s headless run without throwing' + (_crash?(' -> '+_crash):''));
   ok(_peak>0, 'enemies actually spawned during the run (peak concurrent = '+_peak+')');
-  var _sewSeen=['s7lamprey','s7barge','s7pipe','s7walker','s7sampler','s7serpent','s7mine','s7canister','s7tank','s7skimmer'].filter(function(k){return _seen[k];});
+  var _sewSeen=['s7lamprey','s7barge','s7pipe','s7sampler','s7serpent','s7mine','s7canister','s7tank','s7skimmer'].filter(function(k){return _seen[k];});
   /* 0904e: ten, not eleven - s7valve was removed at Mike's instruction ("its a valve. delete it")
      and its waves field s7tank now. The count follows the roster; it does not define it. */
-  ok(_sewSeen.length===10, 'all 10 supplied toxic-sewer unit types appeared in the run (saw: '+_sewSeen.join(',')+')');
+  ok(_sewSeen.length===9 && !_seen.s7walker, 'all nine retained toxic-sewer units appeared without the retired walker (saw: '+_sewSeen.join(',')+')');
   ok(vm.runInContext("enemies.every(function(e){return isFinite(e.x)&&isFinite(e.y)&&e.x>-80&&e.x<880;})", ctxv), 'every surviving enemy is finite and inside the 800px world after the soak');
   /* NAME THE CULPRIT. "no NaN bullets" told you nothing about which round, and this fixture
      only reproduces with ~200 sections of accumulated state behind it - so a bare boolean is
@@ -12426,7 +12427,7 @@ console.log("=== 247. Campaign pilot-select input lock ===");
 // ===== 248. DECKER CARD MATCHES HIS LIVE CLOAK =====
 console.log("=== 248. Decker special identity ===");
 {
-  ok(vm.runInContext("SPECIAL_INFO.decker.name==='CLOAKING SYSTEM' && PC_SPECIAL.decker.name===SPECIAL_INFO.decker.name",ctxv),
+  ok(vm.runInContext("SPECIAL_INFO.decker.name==='CLOAKING SYSTEM' && PC_SPECIAL.decker.name===SPECIAL_INFO.decker.name+' / INCENDIARY SHOTGUN'",ctxv),
      'Decker is labelled CLOAKING SYSTEM consistently on the select metadata and pilot card');
   var _s248=fs.readFileSync(path.join(ROOT,'assets/game.js'),'utf8');
   ok(_s248.indexOf("specialActive('decker') && Math.random()<0.85")>0,
@@ -12523,7 +12524,7 @@ console.log("=== 253. weapon and special icon atlas identity ===");
      'Maverick displays HELIX BEAM on both pilot-facing surfaces');
   ok(vm.runInContext("SPECIAL_INFO.freezer.name==='TIME FREEZE + THERMOSHOCK' && PC_SPECIAL.freezer.name===SPECIAL_INFO.freezer.name",ctxv),
      'Freezer displays TIME FREEZE + THERMOSHOCK on both surfaces');
-  ok(vm.runInContext("SPECIAL_INFO.juggernaut.name==='WRECKING BALL' && PC_SPECIAL.juggernaut.name===SPECIAL_INFO.juggernaut.name",ctxv),
+  ok(vm.runInContext("SPECIAL_INFO.juggernaut.name==='WRECKING BALL' && PC_SPECIAL.juggernaut.name===SPECIAL_INFO.juggernaut.name+' / CHARGE DASH'",ctxv),
      'Juggernaut displays WRECKING BALL on both surfaces');
   ok(vm.runInContext("SPECIAL_INFO.falva.name==='ROLLER BALL' && PC_SPECIAL.falva.name===SPECIAL_INFO.falva.name",ctxv),
      'Falva remains ROLLER BALL everywhere');
@@ -12942,9 +12943,9 @@ console.log("=== 260. Velocity Void specialist and Warden AI ===");
   ok(_echo260.n.join()==='3,6,9' && _echo260.left===0,
      'the present fighter fires first, then both afterimages repeat separate delayed three-shot volleys');
 
-  var _rim260=JSON.parse(vm.runInContext("(function(){run.stage=9;curStage=STAGES[8];var e={_s9:'rim',x:300,y:120,t:0,phase:0,spin:0,_s9x0:300,_s9y0:100,_s9vx:0,_s9vy:0,_s9fire:99};s9ChaosTick(e,1/60);return JSON.stringify({x:e.x,world:worldWidth()});})()",ctxv));
-  ok(_rim260.world===680 && _rim260.x===26,
-     'a Gate Leech chooses its rim from the full 680px world, not the 480px viewport midpoint');
+  var _rim260=JSON.parse(vm.runInContext("(function(){run.stage=9;curStage=STAGES[8];var oldCam=camX;camX=100;var e={_s9:'rim',x:300,y:120,t:0,phase:0,spin:0,_s9x0:300,_s9y0:100,_s9vx:0,_s9vy:0,_s9fire:99};s9ChaosTick(e,1/60);var first=e.x;for(var i=0;i<200;i++)s9ChaosTick(e,1/60);var out={first:first,x:e.x,edge:camLeftX()+30,world:worldWidth()};camX=oldCam;return JSON.stringify(out);})()",ctxv));
+  ok(_rim260.world===680 && _rim260.first<300 && _rim260.first>295 && Math.abs(_rim260.x-_rim260.edge)<1,
+     'a Gate Leech chooses its side from the full world and flies into the visible rim without teleporting');
 
   var _split260=JSON.parse(vm.runInContext("(function(){run.stage=9;curStage=STAGES[8];enemies.length=0;var e=spawnEnemy('tsplit',240,120,{pattern:'s9chaos'});e._s9x0=e.x;e._s9y0=e.y;e._s9vy=0;e._s9fire=99;e.hp=e.maxhp*.5;s9ChaosTick(e,1/60);var once=enemies.filter(function(x){return x!==e&&x.type==='pneedle';}).length;s9ChaosTick(e,1/60);var twice=enemies.filter(function(x){return x!==e&&x.type==='pneedle';}).length;return JSON.stringify({once:once,twice:twice,latch:e._didSplit});})()",ctxv));
   ok(_split260.once===2 && _split260.twice===2 && _split260.latch===1,
@@ -13379,11 +13380,11 @@ console.log("=== 269. Stage-6 storm fleet and Doomsday mega boss ===");
      away"). ⚠ _shots266.carrier is STAGE 2 and _shots273.carrier is STAGE 8 - different units,
      both untouched. */
   var _fleet269=['s6lancer','s6cyclone','s6bomber','s6mine','s6skimmer',
-    's6buoy','s6dart','s6thunder','s6turbine','s6probe'];
+    's6dart','s6thunder','s6turbine','s6probe'];
   var _plan269=JSON.parse(vm.runInContext("(function(){run.stage=6;curStage=STAGES[5];var p=buildStagePlan(6),seen={};"
     +"for(var i=0;i<p.length;i++){enemies.length=0;p[i].fn();for(var j=0;j<enemies.length;j++)seen[enemies[j].type]=1;}return JSON.stringify(Object.keys(seen));})()",ctxv));
-  ok(_fleet269.every(function(k){return _plan269.indexOf(k)>=0;}),
-     'Stage 6 schedules all twelve supplied Heavy Turbulence airframes');
+  ok(_fleet269.every(function(k){return _plan269.indexOf(k)>=0;}) && !_plan269.includes('s6buoy'),
+     'Stage 6 schedules the retained storm fleet without the retired yellow buoy');
   /* ============================================================
      ⚠ THIS ASSERTION WAS OVERRULED BY MIKE, 0912d. IT IS INVERTED, NOT DELETED.
 
@@ -13504,9 +13505,9 @@ console.log("=== 270. Stage-7 toxic fleet and Sludge Emperor ===");
      the rosters at Mike's instruction - "do not use this as an enemy its a valve" and
      "its a 45 degree titled tank. we cant have any turned enemies like this". Their waves
      field s7tank / s9warptank now. These lists follow the roster; they do not define it. */
-var _fleet270=['s7lamprey','s7barge','s7pipe','s7walker','s7sampler','s7serpent','s7mine','s7canister','s7tank','s7skimmer'];
+var _fleet270=['s7lamprey','s7barge','s7pipe','s7sampler','s7serpent','s7mine','s7canister','s7tank','s7skimmer'];
   var _plan270=JSON.parse(vm.runInContext("(function(){run.stage=7;curStage=STAGES[6];var p=buildStagePlan(7),seen={};for(var i=0;i<p.length;i++){enemies.length=0;p[i].fn();for(var j=0;j<enemies.length;j++)seen[enemies[j].type]=1;}return JSON.stringify(Object.keys(seen));})()",ctxv));
-  ok(_fleet270.every(function(k){return _plan270.indexOf(k)>=0;}),'Stage 7 schedules all eleven supplied toxic-sewer field units');
+  ok(_fleet270.every(function(k){return _plan270.indexOf(k)>=0;}) && !_plan270.includes('s7walker'),'Stage 7 schedules the retained toxic roster without the retired humanoid');
   ok(['skimmer','sentry','crawler','shambler','maw','barge'].every(function(k){return _plan270.indexOf(k)<0;}),'the rebuilt Stage-7 plan contains none of the reused legacy sewer roster');
   var _owned270=JSON.parse(vm.runInContext("(function(){run.stage=7;curStage=STAGES[6];enemies.length=0;var o={};Object.keys(S7TOXIC).forEach(function(k){var e=spawnEnemy(k,240,-90,{});o[k]={p:e.pattern,s:e.shoots,f:e.fk,a:S7TOXIC[k].art};});return JSON.stringify(o);})()",ctxv));
   ok(_fleet270.every(function(k){return _owned270[k]&&_owned270[k].p==='s7toxic'&&!_owned270[k].s&&_owned270[k].f===null;}),'every toxic unit owns its movement and ammunition without a stacked generic shooter');
@@ -13798,10 +13799,11 @@ console.log("=== 277. pilot select: nine standing figures ===");
   /* and the block must SOLVE its pitch against the space that is left rather than assume one -
      that is the difference between the five-row case fitting and running off the frame.
      Comments stripped: a source assertion a docstring can satisfy is measuring nothing. */
-  ok(_src.indexOf('stats.length*step')>0 && _src.indexOf('specialY-19')>0,
+  var _pt11CardSource=fs.readFileSync(path.join(ROOT,'assets/playthrough_ui_1011.js'),'utf8');
+  ok(_pt11CardSource.includes('statH=stats.length*13') && _pt11CardSource.includes('infoY+infoH-specialH-statH-9'),
      'the current pilot card reserves row-counted space above the special ability');
-  ok(_src.indexOf('bioBot')>0,
-     'the blocks under the bio are placed from where it actually ENDED, not from a fixed y');
+  ok(_pt11CardSource.includes('bioBottom=statY-5') && _pt11CardSource.includes('bioTop+11*i<bioBottom'),
+     'biography rows stop before the reserved statistics and ability area');
 
   /* ---- 0906f: the SpriteCook pass. Bordered avatars, front-facing figures, faction emblems. ---- */
 
@@ -13841,8 +13843,8 @@ console.log("=== 277. pilot select: nine standing figures ===");
 
   /* the indent must be conditional: XART.rdy is false on its first call, so a fixed one would
      shunt the subtitle right with an empty gap for the frames before the badge decodes */
-  ok(_src.indexOf('const emblemReady=!!(emblem&&XART.rdy(emblem))')>0 &&
-     _src.indexOf('width-(emblemReady?28:0)')>0,
+  ok(_pt11CardSource.includes('emblemReady=!!(emblem&&XART.rdy(emblem))') &&
+     _pt11CardSource.includes('emblemSpace=emblemReady?eh+8:0'),
      'the subtitle reserves badge width only after the emblem decodes');
 }
 // ===== 278. LIZZIE'S B-42 IS AN UNLOCKABLE COSTUME, NOT DELETED ART (drop 0906g) =====
@@ -14196,7 +14198,7 @@ console.log("=== 278. lizzie B-42 alternate costume ===");
   ok(vm.runInContext("GS.OPENER==='opener' && GS.INTRO==='intro' && GS.OPENER!==GS.INTRO", ctxv),
      'the opener has its OWN state - GS.INTRO is the stage card and must not be reused');
   var _opn=JSON.parse(vm.runInContext('JSON.stringify(OPN)', ctxv));
-  ok(_opn.length===4 && _opn[3].k==='cover' && _opn[3].d>=7 && _opn.slice(0,3).every(b=>b.d>=6),
+  ok(_opn.length===5 && _opn[3].k==='roll' && _opn[3].d>=18 && _opn[4].k==='cover' && _opn[4].d>=7 && _opn.slice(0,3).every(b=>b.d>=6),
      'Fury Fighters story beats stay readable before the selected full-size Cover B');
   ok(_opn.every(function(b){return b.k!=='demo';}),
      'the prerecorded gameplay demo is absent from the opener');
@@ -15531,7 +15533,7 @@ console.log('=== 302. green pause menu and verified autosave ===');
  ok(save302.checkpoint&&save302.stage===3&&save302.pilot,'a completed stage writes one verified checkpoint at the next stage');
  ok(save302.exit&&save302.unchanged,'leaving mid-level does not autosave or advance the checkpoint');
  ok(save302.manual==='manual-save'&&save302.slots===24,'the checkpoint is separate from 24 manual slots');
- ok(save302.can&&save302.loaded,'Continue restores the completed-stage checkpoint after the session is lost');
+ ok(!save302.can&&!save302.loaded,'Continue requires the current session; saved checkpoints remain in Load');
  ok(save302.kept,'controls reset preserves the checkpoint and manual saves');
  ok(!save302.failed&&save302.fresh,'failed checkpoint writes are rejected and a fresh campaign clears only the checkpoint');
 }
@@ -15864,6 +15866,17 @@ require('./test_finale_transform_1007.cjs')(vm,ctxv,ok);
 require('./test_projectile_animation_1007.cjs')(vm,ctxv,ok);
 require('./test_maneuver_safety_1007.cjs')(vm,ctxv,ok);
 require('./test_balance_recovery_1007b.cjs')(vm,ctxv,ok);
+require('./test_siege_tanks_1010.cjs')(vm,ctxv,ok);
+require('./test_hammer_1010.cjs')(vm,ctxv,ok);
+require('./test_audio_1010.cjs')(vm,ctxv,ok);
+require('./test_stage1_ordnance_1010.cjs')(vm,ctxv,ok);
+require('./test_part2_1010.cjs')(vm,ctxv,ok);
+require('./test_signature_specials_1011.cjs')(vm,ctxv,ok);
+require('./test_wind_projectiles_1011.cjs')(vm,ctxv,ok);
+require('./test_hammer_chromium_1011.cjs')(vm,ctxv,ok);
+require('./test_enemy_behaviour_1011.cjs')(vm,ctxv,ok);
+require('./test_element_arsenal_1011.cjs')(vm,ctxv,ok);
+require('./test_playthrough_1011.cjs')(vm,ctxv,ok);
 console.log('\n============================================');
 if (errors.length) { console.log('FAILED — ' + errors.length + ' error(s):'); errors.forEach(e => console.log('  ' + e)); process.exit(1); }
 

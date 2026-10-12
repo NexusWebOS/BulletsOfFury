@@ -36,21 +36,21 @@
   function reload(p, G) {
     const gun = p.weapons[p.wi], def = TD.FOOT_GUNS[gun.id];
     if (p.reload || p.action || p.roll>0 || gun.ammo >= def.cap || !gun.reserve) return;
-    p.reload = 1.15; p.reloadGun = gun; G.say('RELOADING',p); A.play('blip');
+    p.reload = 1.15; p.reloadGun = gun; G.say('RELOADING',p); A.play('loadoutEquip', .65);
   }
   function fireFoot(p, G) {
     const gun = p.weapons[p.wi], def = TD.FOOT_GUNS[gun.id];
-    if (gun.ammo <= 0) { if (p.fireCd <= 0) { G.say(gun.reserve ? 'RELOAD' : 'OUT OF AMMO',p); p.fireCd=25; } return; }
+    if (gun.ammo <= 0) { if (p.fireCd <= 0) { G.say(gun.reserve ? 'RELOAD' : 'OUT OF AMMO',p); p.fireCd=25; A.play('error', .6); } return; }
     const lv=gun.lv||1; gun.ammo--; p.fireCd=Math.max(3,Math.round(def.cd*(1-.12*(lv-1))));
     const socket=TD.footSocket(p),x=socket.x,y=socket.y;
     // A blocked hand socket cannot shoot through a wall when pressed against cover.
-    if (W.rayBlock(p.x,p.y,x,y)) { FX.boom(p.x,p.y,18,'gfx_impact_',6); return; }
+    if (W.rayBlock(p.x,p.y,x,y)) { FX.boom(p.x,p.y,18,'gfx_impact_',6); A.play('blocked', .55); return; }
     for (const delta of def.fan || [0]) {
       const a=p.aim+delta, f=M.fwd(a);
       G.shots.push({ k:def.k,x,y,a,vx:f[0]*def.speed,vy:f[1]*def.speed,dmg:def.damage*(1+.4*(lv-1)),life:60,r:3,
         pierce:def.pierce||0,splash:def.splash,sdmg:4,lv:1,t:0,napalm:gun.id==='napalm_launcher' });
     }
-    FX.flash(x,y,p.aim,.1); A.play(def.k==='laser'?'laser':def.splash?'cannon':'mg',.55);
+    FX.flash(x,y,p.aim,.1); A.play(def.k==='laser'?'laser':gun.id==='rocket_launcher'?'missileLaunch':gun.id==='napalm_launcher'?'bombDropLegacy':'gd_soldierRifle',.65);
     TD.Stealth.noise(p.x,p.y,def.splash?270:150,.5,G.units);
   }
   TD.footTick = function(p,G,dt) {
@@ -62,8 +62,8 @@
     else if (p.manualAim>0) p.manualAim--;
     else if ((dx||dy)&&!I.down('C')) p.aim=M.angTo(0,0,dx,dy);
     if (dx||dy) p.a=M.angTo(0,0,dx,dy);
-    if (!p.action && p.roll<=0 && (I.tap('prone') || I.tap('C'))) p.stance=p.stance==='prone'?'stand':'prone';
-    if (I.tap('X') && !p.action && !p.reload && p.roll<=0) {p.roll=.5;p.rollAim=(dx||dy)?p.a:p.aim;p.rollStance=p.stance;}
+    if (!p.action && p.roll<=0 && (I.tap('prone') || I.tap('C'))) {p.stance=p.stance==='prone'?'stand':'prone';if(p.stance==='prone')A.play('gd_coverEnter');}
+    if (I.tap('X') && !p.action && !p.reload && p.roll<=0) {p.roll=.5;p.rollAim=(dx||dy)?p.a:p.aim;p.rollStance=p.stance;A.play('stylishDodge', .5);}
     const speed=p.roll>0?5.1:p.stance==='prone'?.85:2.35;
     const v=p.roll>0?M.fwd(p.rollAim):[dx/len,dy/len];
     p.vx=v[0]*speed;p.vy=v[1]*speed;p.moving=Math.hypot(p.vx,p.vy)>.1;
@@ -72,10 +72,10 @@
     p.roll=Math.max(0,p.roll-dt); p.hidden=!!W.inType(p.x,p.y,'h')||!!W.inType(p.x,p.y,'d');
     if (I.tap('reload') || I.tap('B')) reload(p,G);
     // Level 5 only (Hard Corps four slots): Tab / wheel / pad Mode+B cycles A-D. Levels 2-4 keep no swapping.
-    if (p.slots4 && (I.tap('swap')||I.state.wheel) && !p.reload && !p.action && p.weapons.length>1) p.wi=(p.wi+1)%p.weapons.length;
+    if (p.slots4 && (I.tap('swap')||I.state.wheel) && !p.reload && !p.action && p.weapons.length>1) {p.wi=(p.wi+1)%p.weapons.length;A.play('loadoutSelect');}
     if (p.reload>0 && (p.reload-=dt)<=0) {
       const w=p.reloadGun,def=TD.FOOT_GUNS[w.id],n=Math.min(def.cap-w.ammo,w.reserve);
-      w.ammo+=n;w.reserve-=n;p.reload=0;p.reloadGun=null;A.play('pick');
+      w.ammo+=n;w.reserve-=n;p.reload=0;p.reloadGun=null;A.play('gd_ammoPickup', .7);
     }
     if (I.tap('Y') && p.smoke>0 && !p.action && !p.reload && p.roll<=0) p.action={kind:'grenade',t:0,committed:false,aim:p.aim};
     if (p.action) {
@@ -83,7 +83,7 @@
       // Authored three-frame throw: release during frame 2; inventory commits once.
       if (!action.committed && action.t>=.3) {
         action.committed=true;p.smoke--; const f=M.fwd(action.aim);
-        G.footGrenades.push({x:p.x,y:p.y,tx:p.x+f[0]*115,ty:p.y+f[1]*115,t:0,done:false}); A.play('missile',.4);
+        G.footGrenades.push({x:p.x,y:p.y,tx:p.x+f[0]*115,ty:p.y+f[1]*115,t:0,done:false}); A.play('bombDrop', .45);
       }
       if(action.t>=.6)p.action=null;
     } else if (I.down('A') && p.fireCd<=0 && !p.reload && p.roll<=0) fireFoot(p,G);
@@ -125,7 +125,7 @@
   TD.footPickups=function(G,dt) {
     const p=G.player;
     for(const k of G.pickups) {
-      k.t+=dt;if(p.dead||M.dist(k.x,k.y,p.x,p.y)>22)continue;k.dead=true;A.play('pick');
+      k.t+=dt;if(p.dead||M.dist(k.x,k.y,p.x,p.y)>22)continue;k.dead=true;A.play(TD.FOOT_GUNS[k.kind]?'weaponFound':k.kind==='life'?'extraLife':k.kind==='score'?'scoreBullet1000':'gd_ammoPickup');
       const d=TD.FOOT_GUNS[k.kind];
       if(d&&p.slots4){let w=p.weapons.find(q=>q.id===k.kind);
         // Hard Corps: four carried weapons (A-D); a fifth replaces the one in hand
@@ -215,7 +215,7 @@
       hpFrac:()=>G.units.filter(q=>q.role==='sentry'&&!q.dead).length/3,
       aim:()=>G.units.find(q=>q.role==='sentry'&&!q.dead),hit:()=>false,blast:()=>{},drawUnder:()=>{},drawOver:()=>{},
       draw(ctx){frame(ctx,'of_fortress_gate_'+(this.opened?'open':'closed'),400,125,{s:1.05});},
-      tick(){if(!this.opened&&!G.units.some(q=>q.role==='sentry'&&!q.dead)){this.opened=true;W.remove(gate);G.say('GATE OPEN - NORTH EXIT',{x:400,y:200});}
+      tick(){if(!this.opened&&!G.units.some(q=>q.role==='sentry'&&!q.dead)){this.opened=true;W.remove(gate);A.play('gd_doorOpen');G.say('GATE OPEN - NORTH EXIT',{x:400,y:200});}
         if(this.opened&&G.player.y<83&&!this.dead){this.dead=true;G.bossDown();}}
     };
   };

@@ -20,42 +20,32 @@
    ============================================================================ */
 
 /* ---------------------------------------------------------------------------
-   A. NO TRIANGLES ON ENEMIES
+   A. AUTHORED DAMAGE ART AND SHARED FOV
    The triangles were two things, both procedural:
    1. drawS4/S6/S7DamageOverlay painted a lineTo() flame triangle (orange on 4/6, green on 7) plus
       canvas-circle smoke on every damaged hull. drawEnemyDamage already vents the AUTHORED smoke and
       fire reels (nsd_diss / nsd_chim / nxp_upward) on every unit from the enemy loop, so those
       overlays were a second, procedural damage system stacked on the real one (0809l warned about
       exactly that). They draw nothing now; the authored reels remain.
-   2. The FOV cone - a wedge with its apex on the gun - was still drawn off ordinary enemies (the
-      stage 3+ bomber lanes, the stage-8 realm fleet, the stage-6 assault gates). The alert sign was
-      already suppressed for them (l23WarnSymbolDraw); the cone was not. Ordinary enemies now get a
-      straight lane band in the same green / yellow / red phases. Bosses and minibosses keep the cone
-      and the alert frames, which is Mike's approved vocabulary for them.
+   2. October 11 correction: Mike wants the regular authored FOV for ALL enemies. The old straight
+      rectangle substitution is retired. Ordinary guns, assault gates and sluices use the same
+      green/yellow/red plates as bosses. The separate overhead-alert policy stays with its owner.
    --------------------------------------------------------------------------- */
 drawS4DamageOverlay=function(){};
 drawS6DamageOverlay=function(){};
 drawS7DamageOverlay=function(){};
-const S67_LANE_COL={green:'#32e891',yellow:'#ffd74b',red:'#ff4840'};
 function s67LanePhase(k){return typeof l23FovPhase==='function'?l23FovPhase(k):(k>=2/3?'red':k>=1/3?'yellow':'green');}
-/* A straight band from (x,y) toward (ex,ey): fill plus two bright edge rules, pulsing as the release
-   nears. Drawn in whatever space the caller is in (world, for every current caller). */
+/* Legacy gate/sluice call sites retain their endpoints, but paint the whole authored FOV plate. */
 function s67LaneBand(x,y,ex,ey,width,k,alphaMul,len){
-  const col=s67LanePhase(k),a=Math.atan2(ey-y,ex-x),L=Number.isFinite(len)&&len>0?len:Math.max(24,Math.hypot(ex-x,ey-y));
-  const w=Math.max(8,width||20),pl=.5+.5*Math.sin((typeof efxClock!=='undefined'?efxClock:0)*(8+k*20));
-  const base=col==='green'?.13:col==='yellow'?.17+.09*pl:.21+.14*pl,m=alphaMul==null?1:alphaMul;
-  ctx.save();ctx.translate(x,y);ctx.rotate(a);ctx.fillStyle=S67_LANE_COL[col];
-  ctx.globalAlpha=base*m;ctx.fillRect(0,-w/2,L,w);
-  ctx.globalAlpha=Math.min(1,(base*2.6)*m);ctx.fillRect(0,-w/2,L,2);ctx.fillRect(0,w/2-2,L,2);
-  ctx.restore();
+  const a=Math.atan2(ey-y,ex-x),L=Number.isFinite(len)&&len>0?len:Math.hypot(ex-x,ey-y);
+  if(![x,y,ex,ey,L].every(Number.isFinite)||L<=0)return;
+  l23FovWarm();
+  const B={family:'rime',angles:[a],t:efxClock,warm:1,released:false,len:L,alpha:alphaMul??1};
+  ctx.save();ctx.translate(x,y);ctx.rotate(a-Math.PI/2);
+  l23FovDraw(null,B,0,{x,y},clamp(k,0,1),width||20);ctx.restore();
 }
 const S67_BASE={combatWarningDraw,s6OpeningDraw,missionJetSpawn,missionBomb,furyFleetDraw,groundTargetingDraw,
   drawAtomBooms,updateAtomBooms,s6SupplyTick,warhiveInit,warhiveDamage};
-combatWarningDraw=function(owner,q){
-  if(owner&&q&&q.progress!=null&&!q.alertOnly&&typeof enemyWarningOwner==='function'&&enemyWarningOwner(owner)){
-    s67LaneBand(q.x,q.y,q.ex,q.ey,q.width,clamp(q.progress,0,1),q.alpha==null?1:Math.min(1.4,q.alpha*2.4),q.len);return;}
-  return S67_BASE.combatWarningDraw(owner,q);
-};
 
 /* ---------------------------------------------------------------------------
    B. STAGE 6 ASSAULT - bigger bombers that flash, and an atomic bomb run
@@ -100,7 +90,7 @@ missionBomb=function(e){
     y:clamp(T.y+offset*.55,viewTopY()+85,VH-48),owner:e,track:false,lane:false,warn:[1.75,1.6,1.45][n],
     radius:[32,35,38][n],size:104,active:.55,sound:'atomicDetonate',shake:12,onImpact:g=>s67AtomicImpact(g)});
   q._mission29=true;q._jetBomb={x:e.x,y:e.y};q._s67Atom=true;
-  (Audio.SFX.atomicLaunch||Audio.SFX.missile||function(){})();
+  q._pt11BombTell=q.warn;q.warn+=.55;q._pt11Released=false;
 };
 function s67AtomicImpact(g){
   s67Nukes.push({x:g.x,y:g.y,t:0,dur:1.45,w:196});
@@ -130,8 +120,9 @@ function s67NukeDraw(){
 drawAtomBooms=function(){s67NukeDraw();return S67_BASE.drawAtomBooms();};
 /* the falling atom bomb, drawn here instead of groundTargetingDraw's 24px spinning pip */
 function s67AtomBombDraw(q){
+  if(q._pt11BombTell!=null&&!q._pt11Released)return;
   if(!XART.rdy('lz_bomb'))return;const im=XART.get('lz_bomb'),J=q._s67JB||q._jetBomb;if(!J)return;
-  const u=clamp(q.t/q.warn,0,1),p=u*u,x=lerp(J.x,q.x,p),y=lerp(J.y,q.y,p)-Math.sin(u*Math.PI)*22;
+  const tell=q._pt11BombTell||0,u=clamp((q.t-tell)/(q.warn-tell),0,1),p=u*u,x=lerp(J.x,q.x,p),y=lerp(J.y,q.y,p)-Math.sin(u*Math.PI)*22;
   const h=lerp(54,30,u),w=h*(im.naturalWidth||im.width)/Math.max(1,im.naturalHeight||im.height);
   const a=Math.atan2(q.y-J.y,q.x-J.x)-Math.PI/2+Math.sin(q.t*9)*.10;
   ctx.save();ctx.translate(x,y);ctx.rotate(a);ctx.imageSmoothingEnabled=false;ctx.drawImage(im,-w/2,-h/2,w,h);ctx.restore();
@@ -142,8 +133,7 @@ groundTargetingDraw=function(){
   try{S67_BASE.groundTargetingDraw();}finally{for(const q of mine)q._jetBomb=q._s67JB;}
   for(const q of mine)s67AtomBombDraw(q);
 };
-/* The assault gates: the band alone. The 0929 draw laid the tall FOV plate into each strip, which
-   reads as a big triangle in every lane, plus a triangular alert sign at the edge. */
+/* Assault gates share the regular FOV and keep their authored approach endpoints. */
 s6OpeningDraw=function(){
   const O=s6Opening;if(O?.phase!=='assault')return S67_BASE.s6OpeningDraw();
   for(const q of O.lanes){if(q.released)continue;const side=q.direction!=='south',p=clamp(q.t/q.warn,0,1);

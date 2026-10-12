@@ -1,0 +1,32 @@
+module.exports=function(vm,c,ok){
+ console.log('=== October 10: Furious Stage 1 missile and sonic interception ===');
+ const out=JSON.parse(vm.runInContext(`JSON.stringify((()=>{
+  const o={};ht27Stop();coopOn=false;run.stage=1;curStage=STAGES[0];
+  diffKey='furious';DIFF=DIFFS.furious;player.dead=false;player.invuln=999;
+  const b={x:worldWidth()/2,y:140,w:240,h:240,_rzb:{furious:true,scale:1.5,a:0}};
+  eBullets=[];rzbMissile(b,{x:b.x,y:240},0,false);const rack=eBullets.at(-1);
+  o['Furious rack missiles launch at 4.2 pixels per frame']=Math.abs(rack.vy-4.2)<1e-8&&rack.spd===4.2;
+  o['Furious rack missiles restore interception and one-hit durability']=rack.hp===1&&rack._shootable&&!rack._weaponProof&&enemyOrdnanceCanIntercept(rack);
+  o['Furious rack missiles regain their acceleration']=rack._accel>0&&rack._maxspd>rack.spd;
+  s3kOrdnanceRules(rack);
+  o['Shared projectile updates preserve Furious missile interception']=rack._shootable&&!rack._weaponProof&&!enemyDefensiveProof(rack);
+  rzbMissile(b,{x:b.x,y:240},.22,true);const flurry=eBullets.at(-1);
+  o['Furious locked salvo launches at 5.2 pixels per frame']=Math.abs(Math.hypot(flurry.vx,flurry.vy)-5.2)<1e-8;
+  o['Furious locked salvo retains its committed heading']=flurry._committed&&flurry._rzbStraight&&flurry._accel===0&&enemyOrdnanceCanIntercept(flurry);
+  const n={...b,_rzb:{furious:false,a:0}};rzbMissile(n,{x:b.x,y:240},0,false);const normal=eBullets.at(-1);
+  o['Other Razorback difficulties retain their previous missile behavior']=Math.abs(normal.spd-rzbPxFrame(160,n))<1e-8&&normal._weaponProof&&!enemyOrdnanceCanIntercept(normal);
+  rzbShot(b,{x:b.x,y:240},0,300,22,'rzbSonic');const sonic=eBullets.at(-1);s3kOrdnanceRules(sonic);
+  o['The miniboss sonic rounds stay unshootable']=sonic._weaponProof&&!sonic._shootable&&sonic.hp==null&&!enemyOrdnanceCanIntercept(sonic);
+  const boss1={x:b.x,y:140,w:192,t:0,_pivot:0};eBullets=[];ovSonicWave(boss1,false);const wave=eBullets[0];
+  o['The Furious boss broad sonic wave cannot be intercepted']=wave._ovSonicWave&&wave._weaponProof&&wave._shootable===false&&!enemyOrdnanceCanIntercept(wave);
+  s3kOrdnanceRules(wave);
+  o['The sonic wave stays protected through shared updates']=wave._weaponProof&&!wave._shootable&&enemyDefensiveProof(wave)&&wave.hp==null;
+  o['Unshootable sonic waves still threaten the player']=ovSonicWaveHit(wave,{x:wave.x,y:wave.y},9,10)&&!ovSonicWaveHit(wave,{x:wave.x+wave.w,y:wave.y},9,10);
+  eBullets=[];ovSonicWave(boss1,true);
+  o['All three narrow boss waves are also protected']=eBullets.length===3&&eBullets.every(q=>q._weaponProof&&!q._shootable&&!enemyOrdnanceCanIntercept(q));
+  eBullets=[];ovSonicMissileVolley(boss1,0);
+  o['The boss missile volley remains shootable']=eBullets.length===4&&eBullets.every(q=>enemyOrdnanceCanIntercept(q));
+  eBullets=[];pBullets=[];beginStage(1);setState(GS.TITLE);return o;
+ })())`,c));
+ for(const [name,pass]of Object.entries(out))ok(pass,name);
+};

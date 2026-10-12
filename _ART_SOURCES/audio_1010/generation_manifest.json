@@ -1,0 +1,1587 @@
+{
+  "date": "2026-10-10",
+  "generator": "Built-in image_gen",
+  "request": "Full audio playthrough corrections",
+  "note": "Accepted native image_gen sources and exact prompts retained. Export work is crop, padding and translation at scale 1. Only accepted sources are shipped; intermediate generation prompts are archived. No SpriteCook upload occurred.",
+  "generations": [
+    {
+      "name": "hud",
+      "prompt_key": "audio1010_hud_prompt",
+      "prompt": "Edit the supplied Bullets of Fury arcade HUD reference into a new text-free shipping HUD housing. Preserve its richly shaded Neo Geo pixel-art dark steel, chrome rivets and bright amber status-light aesthetic. Redesign layout for an EXTRA WIDE shallow bottom HUD, 7:1 visible artwork width-to-height, whole width complete from left to right, no clipped edges. The two prominent angled trapezoidal counter tabs MUST stick UP above the main frame: one wide empty tab at far upper left for lives, and one wide empty tab at far upper right for missiles. Below the tabs only FOUR large adjacent empty main panels: left 22% two empty horizontal meter wells stacked vertically (roll/somersault); next 14% one large empty weapon icon recess; center 40% large title recess, thick empty long special meter well, and two small stat recesses below; right 24% one large empty targeting/lock recess. Remove the radar entirely from this bottom HUD. Every well has very dark flat navy black interiors. NO text, NO letters, NO numbers, NO icons, NO radar picture, NO filled colored meters. Thin chrome borders and vivid amber indicator bulbs, generous usable recesses, intricate authored pixel shading, crisp sharp pixel edges. One complete horizontal housing only, centered on a fully transparent canvas, tightly contained in shallow panorama with small transparent padding. Do not draw any game scene or mockup. The TOP angled lives/missile tabs must remain completely visible and easily readable at small game size.",
+      "raw": "hud_raw.png"
+    },
+    {
+      "name": "ice",
+      "prompt_key": "audio1010_ice_prompt",
+      "prompt": "Create a production Neo Geo HD pixel-art sprite sheet for Bullets of Fury, 16-frame ICE LASER animation, strict 4 columns by 4 rows equal cells. Each cell is 128 pixels wide and 512 pixels tall conceptually; tall straight vertical beam, anchored exactly at same bottom muzzle point and fixed silhouette/width in every cell, firing NORTH. Rich cobalt/cyan crystalline ice laser with bright almost-white core, dark-blue pixel outlines, glittering needle ice crystals and frosted jagged side edges, crisp 16-bit pixel shading, genuinely ice not generic cyan electricity. Frames 1-4 show icy energy gathering and initial column forming; frames 5-12 held full-length beam with frozen particles/pulses advancing upward; frames 13-16 release with brittle ice fracture and separate shards. Same bottom source anchor, no panning/no whole beam rotation/no zoom. Real transparency between and around all cells. No backgrounds, no letters/numbers/gridlines. Cells never touch or bleed, strong crisp alpha edges, arcade authored pixels without soft halos. Include proper fully drawn muzzle crown at bottom; preserve same exact position across every frame. Exactly sixteen sequential distinct frames readable row-major.",
+      "raw": "ice_laser_raw.png"
+    },
+    {
+      "name": "wind_icons",
+      "prompt_key": "audio1010_wind_icons_prompt",
+      "prompt": "Create a Bullets of Fury production weapon-icon sheet, EXACTLY nine separate icons in a strict 3 by 3 grid of equal conceptual 128 by 128 cells. Neo Geo HD 16-bit pixel art, detailed dark chrome weapons with emerald/turquoise wind turbines and sharp pale silver air ribbons, crisp outlines, real transparent background. Each weapon centrally anchored, all drawn with same scale and clean generous cell margins. Row 1: (1) twin wing-mounted wind machine-gun pods, (2) five-barrel spread-fire fan device with outward airflow, (3) twin sleek dark-chrome wind missile pods. Row 2: (4) crystalline emerald wind laser cannon, (5) turbine powered gust flamethrower/breath weapon, (6) bright teal tornado sphere enclosed by polished silver wind arcs. Row 3: (7) swirling wind mist emitter, (8) heavy paired rotary WIND CHAINGUN attachment, (9) electric wind orb with emerald cyclone core. Distinct readable shapes, deep pixel shading and bright specular highlights, no photographic metal, no blurry gradients, no explanatory labels or text, no numbers or border, no cell overlap. This is final usable game inventory artwork, not concept composition. Front/top down weapon style consistent with a vertical shooter.",
+      "raw": "wind_icons_raw.png"
+    },
+    {
+      "name": "wind_original",
+      "prompt_key": "audio1010_wind_prompt",
+      "prompt": "Production sprite sheet for Bullets of Fury, Neo Geo HD pixel-art WIND weapon effects. EXACTLY sixteen equal sprite cells in a 4 by 4 grid, fixed conceptual 256 by 256 even square canvas in every cell. Rich emerald, turquoise and pale silver airflow, dark teal sharp pixel edges and richly shaded ribbons with small leaves and cut metal dust. Frames 1-4: bright small gust muzzle plume firing straight NORTH from same exact bottom-centre mount point, energy grows but source stays locked. Frames 5-8: elongated projectile spinning wind helix, northward motion implied by streaming particles but fixed mid-cell position. Frames 9-12: a compact tornado sphere swirling aggressively, true drawn twist perspective and loose sharp dust/debris, exactly same central pivot and common size each frame. Frames 13-16: impact wind-pressure explosion expanding into broken twisting crescent gusts and dissipating fine dust in last frame. Each four-frame section is an authored sub-bank, distinct sequential smooth frames. No labels, numbers, icons, grid, background, glow rectangles or cell overlap. Real alpha transparency, no soft halos. Crisp pixel shading, arcade-quality energy art, keep WIND recognizably wind rather than generic green fire or poison. Clear common pivots and cell margins, no per-frame zoom or translating whole effect.",
+      "raw": null
+    },
+    {
+      "name": "wind_clean",
+      "prompt_key": "audio1010_wind_clean_prompt",
+      "prompt": "Edit this Wind weapon effect sheet for Bullets of Fury. Keep the excellent detailed Neo Geo arcade pixel textures, turquoise/silver wind ribbons, leaves and stone particles and precisely these 16 frames in a 4 by 4 sheet, but fix the export quality. Every frame must be completely isolated in an equal square cell with a CLEAR transparent 32 pixel safety margin on every edge. Absolutely no neon green fill blobs, cyan solid holes, background residue or border clipping; all empty regions and holes are genuinely transparent. Frame 4's entire tallest plume must fit in its cell including top safety margin. Preserve the same common proportional scale between all frames, fixed horizontal center, and bottom throat pivot for frames 1-8; the spherical frames9-16 have a centered impact pivot. Do not let art touch neighboring cells. 1-4 a wind muzzle grows upwards from its bottom throat, 5-8 looping twisting wind projectiles with identical pivot, 9-12 rotating tornado spheres with same size and center, 13-16 pressure burst breaks into wisps and leaves. No text or labels. Production sprite asset sheet, sharp pixel edges, true transparent background. Equal cells, overall square, even dimensions.",
+      "raw": null
+    },
+    {
+      "name": "wind_final",
+      "prompt_key": "audio1010_wind_final_prompt",
+      "prompt": "A clean professional Neo Geo high resolution arcade sprite effects sheet for Bullets of Fury. 16 distinct WIND effects arranged in an exact 4 by 4 grid, each cell equal 320 by 320, with transparent spacing. EVERY effect fits within the central 240 by 240 pixels, leaving forty pixels fully transparent on ALL four cell edges including the top. No effect touches a grid edge. TRUE transparent RGBA background and transparent holes. COLOR PALETTE: silver white wind ribbons, desaturated pale turquoise, dark blue gray outlines and tiny charcoal stone fragments. No leaves, no green whatsoever, no green screen, no neon solid fills, no cyan artifact holes. Crisp detailed 16 bit arcade pixels and dithered metallic highlights, physically layered curling wind ribbons. Top row frames1-4: a gust cannon plume forming northwards from an identical bottom-center throat at 160,270, becoming larger but always contained. Second row frames5-8: four distinct looping corkscrew gust projectiles, SAME height and bottom throat in all four frames, ribbons wrapping as though rotating around an invisible 3D axis. Third row9-12: four perfectly centered tornado spheres, same diameter and pivot, turbulent ring ribbons turn with front/back overlap. Fourth row13-16: a pressure shock impact centered at160,160, grows then breaks apart into drifting silver wisps and charcoal motes and ends almost empty. All cells isolated. No labels, no lettering, no frames or UI. Common proportional scale, equal cells, never stretch. Usable game asset sheet.",
+      "raw": null
+    },
+    {
+      "name": "wind_cutout",
+      "prompt_key": "audio1010_wind_cutout_prompt",
+      "prompt": "Edit the attached 16 frame 4 by 4 Wind sprite sheet. Keep the EXACT same 16 sprites, same pixel art, same positions, same size and 4x4 layout. REMOVE EVERY bright pure CYAN and pure BLUE matte spill blob from around each sprite. Those ugly cyan/blue pixels are background contamination and must become perfectly transparent. Preserve the white, gray, pale muted icy blue wind ribbons and charcoal rocks, do not add anything. All empty areas and all gaps must have alpha zero. Keep existing frame spacing. Export a clean transparent sprite sheet with natural intact pixel outlines and no colored fringes. This is a cutout cleanup, no redesign, no background, no checkerboard drawn into the image, no glow around backgrounds.",
+      "raw": "wind_raw.png"
+    },
+    {
+      "name": "fusion",
+      "prompt_key": "audio1010_fusion_prompt",
+      "prompt": "Production Neo Geo arcade pixel sprite sheet for Bullets of Fury's spaceship FUSION CANNON. Exact sixteen equally sized tall cells in 4 columns by 4 rows. Every tall cell is 256 wide and512 high; full transparent RGBA background. Keep 32 pixels transparent on all cell borders. No spaceship painted into this sheet. Detailed magenta violet and white plasma with dark plum pixel outlines. Bottom center physical emitter pivot is identical in every frame, the cannon fires NORTH upwards. Row1 frames1-4: concentrated pink fusion core charges at emitter, twin energy ribbons gather and wind into an increasingly dense sharply outlined ball; short upward tongues, never a circular placeholder glow. Rows2 and3 frames5-12: eight actual smoothly different loop frames of a powerful violet laser COLUMN, twin purple plasma lances rapidly HELIX SPIRAL around each other in clear 3D front/back alternation, white pink hot center, confined readable solid column, emitter remains fixed at bottom, visible right and left violet shrapnel filaments. Row4 frames13-16: discharge collapses from distant tip down toward emitter then the emitter vents small violet plasma sparks. Keep physical length constant in all 8 held beam frames, same width/center/common proportional scale. Strong pixel shading like Metal Slug electrical cannon, sharp outlines not blurry photoreal glow. No text, no grids, no clipped art.",
+      "raw": null
+    },
+    {
+      "name": "fusion_cutout",
+      "prompt_key": "audio1010_fusion_cutout_prompt",
+      "prompt": "Edit this 16-frame purple fusion cannon 4x4 sprite sheet by removing the whole purple gradient BACKGROUND only. The purple backdrop across all empty areas must become alpha-zero transparent. Preserve the exact 16 cannon nozzles and their purple/white electric charge, helix beams and discharge particles; keep same positions, pixel shapes, crisp outlines and 4x4 equal grid. No colored background, no haze over empty areas, no checkerboard drawn into artwork. Export actual transparent PNG. Preserve internal translucent energetic filaments. This is precise background removal only.",
+      "raw": "fusion_raw.png"
+    },
+    {
+      "name": "hq",
+      "prompt_key": "audio1010_hq_prompt",
+      "prompt": "Create four polished Bullets of Fury campaign cinematic background plates, arranged in a clean 2 by 2 grid. Equal 16:9 rectangular panels with exact straight boundaries. Neo Geo arcade artwork, very detailed sharp hand pixel textures, lush rich blue ocean and chrome military equipment, same HQ architecture as reference1. No text, no captions, no labels, no UI, no people faces. Reference2 is the CURRENT Fury spaceship: pointed dark gray silver/green hull, long central lance, two mounted side cannons, narrow swept wings. Reference3 green Cole fighter and reference4 yellow Decker fighter preserve their exact hull silhouettes; never use an old wide blue spacecraft. Top-left: three quarter bird's eye view of this giant Fury spaceship descending gently onto the headquarters runway by the ocean after returning from orbit. Top-right: the same HQ suddenly under aerial attack, distant RED and GREEN palette versions of stealth delta fighters, missile impacts on runway edges, smoke and warning beacon lights; Fury hangars and blue globe command dome intact, action readable. Bottom-left: wide HQ radar command room, luminous CRT radar panels show many hostile red contacts around coastal airspace and one ominous pulsing violet contact underground along a river; empty interior for live pilot portraits and our own dialogue overlays. Bottom-right: dramatic low aerial three quarter view of FIVE Fury fighter jets scrambling out of the hangars toward the viewer above blue coastal water, green Cole and yellow Decker among the formation, remaining jets gray with distinct red blue white markings; two defensive aircraft stay parked by HQ artillery behind them. Clear room at lower edges for dialogue. Consistent scale and architecture, proportional ships, detailed pixel sparks and atmospheric depth. Four cinematic scenes as actual artwork, no placeholder graphics.",
+      "raw": "hq_story_raw.png"
+    },
+    {
+      "name": "void",
+      "prompt_key": "audio1010_void_prompt",
+      "prompt": "Regenerate the referenced Bullets of Fury symbiote vortex as a smooth 32-frame production sprite animation. Exact 8 columns by 4 rows, 32 equally sized square cells, ordered left to right then top to bottom. Each cell has a fixed center and equal scale, with twenty percent of the cell width as fully transparent safety margin all around. True transparent alpha outside the authored vortex; the hollow central opening is genuinely BLACK, opaque black void. Detailed Neo Geo pixel artwork: glossy black biomechanical symbiote ribbons with restrained red fissures and violet chrome highlights, overlapping 3D tendrils coil inward around the black empty center, small loose symbiote droplets being pulled inward. No expanding solid circle, no procedural gradients, no green, no labels. Frames1-8: black wisps coil and open the dimensional vortex, smoothly increasing toward full diameter. Frames9-24: sixteen actual different smooth in-between poses of the fully open vortex spinning in three dimensional front/back overlap, diameter and center identical in every pose, frame24 loops exactly into frame9. Frames25-32: vortex closes inwards, tendrils retract, ends with a few isolated drops. Thin violet electrical filaments travel along the rim. Keep clear silhouettes, same sharp detailed arcade dither throughout. No art may touch cell boundaries. No duplicated cells, no shifting centers.",
+      "raw": "void_raw.png"
+    },
+    {
+      "name": "consumption",
+      "prompt_key": "audio1010_consumption_prompt",
+      "prompt": "Bullets of Fury pixel art CINEMATIC ANIMATION sprite sheet, exactly 16 sequential frames, four columns four rows of equal 512x512 cells, transparent background, every cell identical fixed camera, no text or border. References 1 and 2 show the approved gray two-armed drone and its approved final mutated version. Keep that same gray drone with ONE head/core and exactly TWO arms. Its core remains centered at the same anchor in all frames. Do not change drone design. Animate the story in small consecutive steps: frames 1-4 a large black/red symbiote portal OPENS BEHIND the intact drone, a terrifying black glossy red-eyed alien rises from it BEHIND the drone; frames 5-8 the alien reaches its tendrils around and physically consumes/engulfs the drone while the drone's core stays in place; frames 9-12 glossy black/red sinews tighten onto the unchanged gray armor, transforming into the exact mutated drone in reference 2; frames 13-16 mutated TWO-ARMED drone throws BOTH arms upward with wide claw gesture, furious green eye and a shriek, last frame settles into its approved fighting position. Exact whole drone and TWO arms visible every frame, no cropping, 32-pixel safe margin in every cell, all loose symbiote bits stay in their own cell. Detailed HD arcade pixel art, hard silver armor outlines, glossy black/red tendrils, no painted checkerboard or colored matte. This is introductory cinematic only, combat remains independently modular.",
+      "raw": "consumption_raw.png"
+    },
+    {
+      "name": "fire_shield",
+      "prompt_key": "audio1010_fire_shield_prompt",
+      "prompt": "Create a production sprite animation sheet for Bullets of Fury, a richly shaded Neo Geo HD 16-bit arcade shooter. Edit/reference the supplied existing authored flame shield: preserve its orange/red fire, brilliant cream hot cores, dark ember contours, transparent empty center. Make exactly 32 genuinely distinct animation frames in an 8-column by 4-row equal-cell grid, row-major. A circular fire barrier, same physical center throughout, no vehicles/bosses/text/labels/gridlines. Frames 0-3: shield assembles from flame tongues and links; 4-23: fully formed living fire shield loop with clockwise travel of discrete fire tongues, heat ripples in authored pixels and embers, dense but readable; frame 23 loops cleanly into 4. Frames 24-31: shield breaks violently into orange hot shards, separate fiery arc fragments, expanding shock flame splinters, ending with just loose embers. Break animation must SHATTER, no dimming/fading intact ring. Do not paint smoke inside the empty hole; entire background and center must be fully transparent. Consistent camera, same ring diameter in hold frames, fully padded with no touching neighbors. Each cell large enough for crisp rich Neo Geo pixel shading. Eight by four exactly. Do not add procedural circles, blur or a flat color overlay. Keep palette true to the reference.",
+      "raw": "fire_shield_raw.png"
+    },
+    {
+      "name": "chain",
+      "prompt_key": "audio1010_chain_prompt",
+      "prompt": "Bullets of Fury Neo Geo quality HD pixel sprite sheet: animate ONLY the supplied ornate heated gold/black chain link. Exactly 16 distinct frames, 8 columns and 2 rows of equal cells, row-major. One heavy metallic chain link per cell, straight vertical orientation, common center, same maximum height throughout. Gold chrome steel and dark black grooves preserve original palette. First eight frames: small gradual rotation around its own vertical axis from broad frontal link to narrow edge and back, with traveling hot white/orange glints. Second eight: same cycle with hot orange vibration/charge glints passing downward; NOT an entire string of chains, do not draw a vehicle. Every individual link centered and fully padded, identical physical pivot, fully transparent background including the empty hole. Dense 16-bit shaded pixels, razor edges, no labels, no text, no borders, no blur. It must tile as physical joined links in-game. Exact 8 by 2 grid.",
+      "raw": "chain_raw.png"
+    },
+    {
+      "name": "turbo",
+      "prompt_key": "audio1010_turbo_prompt",
+      "prompt": "Production transparent sprite effects for Bullets of Fury, highly polished richly shaded Neo Geo HD pixel art. Exactly 16 distinct centered frames, 4 columns by 4 rows equal cells. Animate a powerful magenta/pink TURBO CHARGE AURA for a fast rebel fighter, ONLY THE EFFECT with no plane/character. The large empty central silhouette can receive a jet drawn in-game. It is a bright four-point LASER DIAMOND field with white-hot tips, magenta zigzag streaks traveling up both sides, accumulating crackling pink energy behind the ship. Frames 0-3 begin weak, 4-11 crescendo and agitate as overdrive fully charges, 12-15 compress and snap into a south-pointing magenta lightning rocket burst. Common center and fixed maximum bounds; energy animates but whole effect does not bob. Transparent background INCLUDING center, no solid diamond, no circle swirl, no blurry fog, no UI/text/gridlines. Single coherent 4 by 4 sprite sheet, equal safe gutters.",
+      "raw": "turbo_raw.png"
+    },
+    {
+      "name": "assembly",
+      "prompt_key": "audio1010_assembly_prompt",
+      "prompt": "Create a 16-frame transparent production spaceship ASSEMBLY sprite sheet for Bullets of Fury, lavish Neo Geo HD pixel art. EXACTLY 4 columns by 4 rows of equal cells, row-major. Reference1 is the current small green-gray Cole fighter; reference2 is the APPROVED current Fury spacecraft with three slender forward pointed lances and green/cyan small accents, not a broad old spaceship. Camera top-down same as references, points UP in every frame. A fixed cockpit physical center in all sixteen frames: 0-3 small fighter held in place while silver-gray SPACE HULL MODULES slide toward it from either side and above; 4-7 those distinct modules dock around the fighter, curved electric purple arc sparks at actual attachment seams; 8-11 lock nacelles, long spear nose and engines into the precise approved Fury spacecraft silhouette; 12-15 completed Fury spacecraft with energy settling and bright cyan engine ignition. DO NOT rotate or wobble or morph the entire body; mechanical docking of pieces, not a ball. Preserve the CURRENT 3 pointed slender shape and reference colors. Same spacecraft final proportions across final four cells. Clear transparent background and clean empty margins in every cell, all pieces and sparks within cell, no opaque space sky, no labels or text. Exactly16 cells in4x4.",
+      "raw": "assembly_raw.png"
+    },
+    {
+      "name": "ending",
+      "prompt_key": "audio1010_ending_prompt",
+      "prompt": "Generate four gorgeous cinematic plates for the END OF BULLETS OF FURY, lavish high resolution Neo Geo 16-bit shaded pixel arcade illustration. Exactly2x2 four equal landscape panels, sharp pixel detail, no titles/dialogue/borders. ALWAYS use reference1's CURRENT approved slim gray Fury spacecraft: three pointed forward lances, small green/cyan accents, not the old broad spaceship. Reference2's Fury HQ architecture and coastal location remain recognizable. Panel1: camera behind/above Fury spacecraft as it exits a black red living symbiote portal into calm deep blue space, closed enemy portal behind, no intact alien boss or new enemies, peaceful escape. Panel2: wide orbit camera, blue Earth held magnificent in background with green continents and clouds; our spacecraft in the foreground heading HOME, stable with cyan engines. Panel3: low coastal camera at dawn, Fury HQ's landing runway and large headquarters hangars, spacecraft coming in above the runway, elegant sunlit sea and city shore. Panel4: wide victorious Fury HQ runway at sunrise, our CURRENT spacecraft landed center, formation of the original colored small pilot fighters around it (green, blue, yellow, gray, red) warmly welcoming it home, headquarters large in back with 'FURY HQ' physically part of the building sign. NO captions/no UI/no subtitle text, only the physical FURY HQ sign. True rich Neo Geo arcade shading, coherent designs and architecture, no generic 3D/photo style. All panels equally proportioned with panoramic cinematic composition, exact2x2.",
+      "raw": "ending_raw.png"
+    }
+  ],
+  "accepted_sources": [
+    {
+      "name": "assembly",
+      "raw": "_ART_SOURCES/audio_1010/assembly_raw.png",
+      "raw_sha256": "ea8bba65108096614e71c8e580be6229ab15f035318daa559964a829cf283aed",
+      "registration": "_ART_SOURCES/audio_1010/assembly_registration.json",
+      "cells": 16
+    },
+    {
+      "name": "chain",
+      "raw": "_ART_SOURCES/audio_1010/chain_raw.png",
+      "raw_sha256": "ea9bd867389faad1d97df0e3a92422eec9236518ab39e7bc4fbb1070c16d1699",
+      "registration": "_ART_SOURCES/audio_1010/chain_registration.json",
+      "cells": 16
+    },
+    {
+      "name": "consumption",
+      "raw": "_ART_SOURCES/audio_1010/consumption_raw.png",
+      "raw_sha256": "80f99672ad3f8ff780722c97406a337b41767113010920a2e168851951785ceb",
+      "registration": "_ART_SOURCES/audio_1010/consumption_registration.json",
+      "cells": 16
+    },
+    {
+      "name": "ending",
+      "raw": "_ART_SOURCES/audio_1010/ending_raw.png",
+      "raw_sha256": "6b7672b43c22e7d699f043083836d27699519060dd468dd67c9b1250be875457",
+      "registration": "_ART_SOURCES/audio_1010/ending_registration.json",
+      "cells": 4
+    },
+    {
+      "name": "fire_shield",
+      "raw": "_ART_SOURCES/audio_1010/fire_shield_raw.png",
+      "raw_sha256": "e6a8eef906c77210452eb143aec8913a6022cf59835164f29d917bc31e49b11c",
+      "registration": "_ART_SOURCES/audio_1010/fire_shield_registration.json",
+      "cells": 32
+    },
+    {
+      "name": "fusion",
+      "raw": "_ART_SOURCES/audio_1010/fusion_raw.png",
+      "raw_sha256": "3a09a6cecb22bbb60d432652a97cd907e066cdc25b90b25733a38ab13606b723",
+      "registration": "_ART_SOURCES/audio_1010/fusion_registration.json",
+      "cells": 16,
+      "source_row_boundaries": [
+        0,
+        344,
+        736,
+        1128,
+        1536
+      ],
+      "physical_source_muzzle_y": [
+        312,
+        706,
+        1100,
+        1487
+      ],
+      "export_muzzle": [
+        136,
+        328
+      ],
+      "note": "Measured blank gutters exclude adjacent-row pixels and fix unequal source spacing; no painting or alpha reconstruction."
+    },
+    {
+      "name": "hq_story",
+      "raw": "_ART_SOURCES/audio_1010/hq_story_raw.png",
+      "raw_sha256": "c609b68fa20b91cf7a3a69a0c9216aee203e845ffe0fafe7bc09b5cae7cf1bd1",
+      "registration": "_ART_SOURCES/audio_1010/hq_story_registration.json",
+      "cells": 4
+    },
+    {
+      "name": "hud",
+      "raw": "_ART_SOURCES/audio_1010/hud_raw.png",
+      "raw_sha256": "da2fe0fbe318feca2015be34be1dcd27777b53b184ee0aa96b2a867262a093a3",
+      "registration": "_ART_SOURCES/audio_1010/hud_registration.json",
+      "cells": 1
+    },
+    {
+      "name": "ice_laser",
+      "raw": "_ART_SOURCES/audio_1010/ice_laser_raw.png",
+      "raw_sha256": "ad1bcaf029a135efa38c8ab6a8bd1936bd90b2a191ea019c1513fb58396371b2",
+      "registration": "_ART_SOURCES/audio_1010/ice_laser_registration.json",
+      "cells": 16
+    },
+    {
+      "name": "turbo",
+      "raw": "_ART_SOURCES/audio_1010/turbo_raw.png",
+      "raw_sha256": "a3b45795886a62f1dce5750ab3c5f43d8e6854890580bb6ac9bf917d6744f12f",
+      "registration": "_ART_SOURCES/audio_1010/turbo_registration.json",
+      "cells": 16
+    },
+    {
+      "name": "void",
+      "raw": "_ART_SOURCES/audio_1010/void_raw.png",
+      "raw_sha256": "c1dc02f4c710506eb965794c2fb1e483e252232e940d9e0faf985fbe38cbd406",
+      "registration": "_ART_SOURCES/audio_1010/void_registration.json",
+      "cells": 32
+    },
+    {
+      "name": "wind_icons",
+      "raw": "_ART_SOURCES/audio_1010/wind_icons_raw.png",
+      "raw_sha256": "488581fcd6bad963933bcab2f52d27a38d90544705c528adc853feb97e53d553",
+      "registration": "_ART_SOURCES/audio_1010/wind_icons_registration.json",
+      "cells": 9
+    },
+    {
+      "name": "wind",
+      "raw": "_ART_SOURCES/audio_1010/wind_raw.png",
+      "raw_sha256": "978f6dc4d458b15d99cbf8c3a5c149016a529ea7ed1297a41b2fa79e694bd53a",
+      "registration": "_ART_SOURCES/audio_1010/wind_registration.json",
+      "cells": 16
+    }
+  ],
+  "shipping_assets": [
+    {
+      "key": "ap10_assembly_00",
+      "path": "assets/game/shared/combat/audio_1010/assembly_00.png",
+      "width": 352,
+      "height": 384,
+      "sha256": "8903867c33b63b3f3811eef1be3c0e20c812c2e607a087e53466fc528e2ae418"
+    },
+    {
+      "key": "ap10_assembly_01",
+      "path": "assets/game/shared/combat/audio_1010/assembly_01.png",
+      "width": 352,
+      "height": 384,
+      "sha256": "f2883f997510f8db6907aa0696ee8948dca196da35e778d7ce69913ae465ac4a"
+    },
+    {
+      "key": "ap10_assembly_02",
+      "path": "assets/game/shared/combat/audio_1010/assembly_02.png",
+      "width": 352,
+      "height": 384,
+      "sha256": "d516d34c0169deac709d9e51203c1c6ce235733d77ffea6449065755ea331999"
+    },
+    {
+      "key": "ap10_assembly_03",
+      "path": "assets/game/shared/combat/audio_1010/assembly_03.png",
+      "width": 352,
+      "height": 384,
+      "sha256": "e6b9df826f6c51bf2276bec11ac17ef25af2df180dcedc50fa00c1848ab799b2"
+    },
+    {
+      "key": "ap10_assembly_04",
+      "path": "assets/game/shared/combat/audio_1010/assembly_04.png",
+      "width": 352,
+      "height": 384,
+      "sha256": "f034ece16af8c50566bae47ceeb88a5eee7070c98e4df5cf1c1d6bd810245272"
+    },
+    {
+      "key": "ap10_assembly_05",
+      "path": "assets/game/shared/combat/audio_1010/assembly_05.png",
+      "width": 352,
+      "height": 384,
+      "sha256": "35326d57650f8a2ebb34128ab43f83c42ca4c909f72ff4453e26da8b396fffc7"
+    },
+    {
+      "key": "ap10_assembly_06",
+      "path": "assets/game/shared/combat/audio_1010/assembly_06.png",
+      "width": 352,
+      "height": 384,
+      "sha256": "6f2e00b08d64c6500708a76265161d0a6e7d04c07041dd131ac1a19ca4bf55ab"
+    },
+    {
+      "key": "ap10_assembly_07",
+      "path": "assets/game/shared/combat/audio_1010/assembly_07.png",
+      "width": 352,
+      "height": 384,
+      "sha256": "7cfa9381bb4c73a63fac5406dbe6220e1d8139ea6bbf470ab0d3cf8c4dfedd58"
+    },
+    {
+      "key": "ap10_assembly_08",
+      "path": "assets/game/shared/combat/audio_1010/assembly_08.png",
+      "width": 352,
+      "height": 384,
+      "sha256": "436eaab8cbf91bce1df3f6c31d478e5543bac3311dfd396c24b47f5ca226c830"
+    },
+    {
+      "key": "ap10_assembly_09",
+      "path": "assets/game/shared/combat/audio_1010/assembly_09.png",
+      "width": 352,
+      "height": 384,
+      "sha256": "8266a3ba5b7b3ab5831e385b7f58ec50d0c4605ea0d6156458b1a2c53988722f"
+    },
+    {
+      "key": "ap10_assembly_10",
+      "path": "assets/game/shared/combat/audio_1010/assembly_10.png",
+      "width": 352,
+      "height": 384,
+      "sha256": "22e0d1e7549ed36e01f82980a23d65822c3b6f846d65b5ea6dfc99970ece4b9f"
+    },
+    {
+      "key": "ap10_assembly_11",
+      "path": "assets/game/shared/combat/audio_1010/assembly_11.png",
+      "width": 352,
+      "height": 384,
+      "sha256": "b2cbf59b13e0fa8fb4ddcf1df063e8362c9712df8539464f3e3867013a21d0e8"
+    },
+    {
+      "key": "ap10_assembly_12",
+      "path": "assets/game/shared/combat/audio_1010/assembly_12.png",
+      "width": 352,
+      "height": 384,
+      "sha256": "86d18bced17d709990b95305a21ce1f6fa8698b09c180058a87bef8e040bb31b"
+    },
+    {
+      "key": "ap10_assembly_13",
+      "path": "assets/game/shared/combat/audio_1010/assembly_13.png",
+      "width": 352,
+      "height": 384,
+      "sha256": "7824c171b68281d9d6ca5585a6100ccc01d1a349fad4a9781f633061d9994a7a"
+    },
+    {
+      "key": "ap10_assembly_14",
+      "path": "assets/game/shared/combat/audio_1010/assembly_14.png",
+      "width": 352,
+      "height": 384,
+      "sha256": "f5dc990de0eb2bdda2e1d611ac2193650e31ba41e5b234de9a5f2463dd170ac5"
+    },
+    {
+      "key": "ap10_assembly_15",
+      "path": "assets/game/shared/combat/audio_1010/assembly_15.png",
+      "width": 352,
+      "height": 384,
+      "sha256": "f49f3742bf5d054414fab6f03639e9f706a35cd0e05e82fca90a381950474113"
+    },
+    {
+      "key": "ap10_chain_00",
+      "path": "assets/game/shared/combat/audio_1010/chain_00.png",
+      "width": 256,
+      "height": 400,
+      "sha256": "b78568511cb7c30f89bb1faf64ba8f488e8a6564456101d7d37619a70129f088"
+    },
+    {
+      "key": "ap10_chain_01",
+      "path": "assets/game/shared/combat/audio_1010/chain_01.png",
+      "width": 256,
+      "height": 400,
+      "sha256": "b5e91da16ea850c3038f47632e08ad4c1a84725172063410b123f4ab0790c1ae"
+    },
+    {
+      "key": "ap10_chain_02",
+      "path": "assets/game/shared/combat/audio_1010/chain_02.png",
+      "width": 256,
+      "height": 400,
+      "sha256": "c3696f034892179d333d3f632c31846b2a2f65086102bd417f7315e3c4381407"
+    },
+    {
+      "key": "ap10_chain_03",
+      "path": "assets/game/shared/combat/audio_1010/chain_03.png",
+      "width": 256,
+      "height": 400,
+      "sha256": "8f15d534317837d1154235bb9a9452d41341aa64571ce813ee6dcb5efd95cc89"
+    },
+    {
+      "key": "ap10_chain_04",
+      "path": "assets/game/shared/combat/audio_1010/chain_04.png",
+      "width": 256,
+      "height": 400,
+      "sha256": "f97401ed8965098c900363c49af05be4d51118f8012b577ba8792d79808aaa6e"
+    },
+    {
+      "key": "ap10_chain_05",
+      "path": "assets/game/shared/combat/audio_1010/chain_05.png",
+      "width": 256,
+      "height": 400,
+      "sha256": "8f004f9b2e4e9edb89dd74f3ee6debfb38b09e70bb24707776d7f94bd9b3b586"
+    },
+    {
+      "key": "ap10_chain_06",
+      "path": "assets/game/shared/combat/audio_1010/chain_06.png",
+      "width": 256,
+      "height": 400,
+      "sha256": "6ae9012f83651945862310e611359eefe48dc7cd72fa4734edc4ee770b46e33b"
+    },
+    {
+      "key": "ap10_chain_07",
+      "path": "assets/game/shared/combat/audio_1010/chain_07.png",
+      "width": 256,
+      "height": 400,
+      "sha256": "cb72a2d62ca0ba581b1c50d20cfa6e256e0e53740804be04d2122a0eec51efd5"
+    },
+    {
+      "key": "ap10_chain_08",
+      "path": "assets/game/shared/combat/audio_1010/chain_08.png",
+      "width": 256,
+      "height": 400,
+      "sha256": "e3cb997a7a98309c7f5f237b9cb1b685b77a6a76996a401b5640512f43aead3d"
+    },
+    {
+      "key": "ap10_chain_09",
+      "path": "assets/game/shared/combat/audio_1010/chain_09.png",
+      "width": 256,
+      "height": 400,
+      "sha256": "86f4f0e8f845d8f8f8341c7fcd0389da01bc1058e0b6eb797242998b3f77b5d0"
+    },
+    {
+      "key": "ap10_chain_10",
+      "path": "assets/game/shared/combat/audio_1010/chain_10.png",
+      "width": 256,
+      "height": 400,
+      "sha256": "c81ab73a16cab9ccb67d1fe7d6be261dd4b27552eab65bcfec749db79decbe1b"
+    },
+    {
+      "key": "ap10_chain_11",
+      "path": "assets/game/shared/combat/audio_1010/chain_11.png",
+      "width": 256,
+      "height": 400,
+      "sha256": "28858e06a2e60a19cdf615da7834f376bacc20cfbe3aa5322cf157eb9796d64b"
+    },
+    {
+      "key": "ap10_chain_12",
+      "path": "assets/game/shared/combat/audio_1010/chain_12.png",
+      "width": 256,
+      "height": 400,
+      "sha256": "f04563a0d18197de48351fa2c3e737929c117b0907cf8c29f4ae7546204d2e9f"
+    },
+    {
+      "key": "ap10_chain_13",
+      "path": "assets/game/shared/combat/audio_1010/chain_13.png",
+      "width": 256,
+      "height": 400,
+      "sha256": "545d88cea41a55807d40ad94603677ff92e1f4d858c8ef73cc08bbf10ca12251"
+    },
+    {
+      "key": "ap10_chain_14",
+      "path": "assets/game/shared/combat/audio_1010/chain_14.png",
+      "width": 256,
+      "height": 400,
+      "sha256": "cf6a643461a8fa3da4555919f2811fb6c15ec0a2721620894538ad04c05d210e"
+    },
+    {
+      "key": "ap10_chain_15",
+      "path": "assets/game/shared/combat/audio_1010/chain_15.png",
+      "width": 256,
+      "height": 400,
+      "sha256": "98b9236829d4ffde9c2838adb202f26592827a0172a220af8e6abd62bc1bc016"
+    },
+    {
+      "key": "ap10_consumption_00",
+      "path": "assets/game/shared/combat/audio_1010/consumption_00.png",
+      "width": 384,
+      "height": 384,
+      "sha256": "2b473c917026ce4606d55df156e4c9215eedaeea156713808937a7ee49aeba27"
+    },
+    {
+      "key": "ap10_consumption_01",
+      "path": "assets/game/shared/combat/audio_1010/consumption_01.png",
+      "width": 384,
+      "height": 384,
+      "sha256": "46b82aa7e1713dbc0f0a06adc823882be993d8a593f4776bbd20a5be323f7e0e"
+    },
+    {
+      "key": "ap10_consumption_02",
+      "path": "assets/game/shared/combat/audio_1010/consumption_02.png",
+      "width": 384,
+      "height": 384,
+      "sha256": "3ebd70a8107af7de0663b66c202b3ef30d0362573476431ff836f1b5a00f61e0"
+    },
+    {
+      "key": "ap10_consumption_03",
+      "path": "assets/game/shared/combat/audio_1010/consumption_03.png",
+      "width": 384,
+      "height": 384,
+      "sha256": "721686356859a44ff8353a8ec02d8a821d08d19ca9e56b2facc8cf51a0546703"
+    },
+    {
+      "key": "ap10_consumption_04",
+      "path": "assets/game/shared/combat/audio_1010/consumption_04.png",
+      "width": 384,
+      "height": 384,
+      "sha256": "06282e753a0727f027e77a9809ce2fe12ca61da387eb6f97126c8ac5d7f12d97"
+    },
+    {
+      "key": "ap10_consumption_05",
+      "path": "assets/game/shared/combat/audio_1010/consumption_05.png",
+      "width": 384,
+      "height": 384,
+      "sha256": "bd2c951452ef67669320b7056a393f37e54a99a7c89826927ec69df5e88362d7"
+    },
+    {
+      "key": "ap10_consumption_06",
+      "path": "assets/game/shared/combat/audio_1010/consumption_06.png",
+      "width": 384,
+      "height": 384,
+      "sha256": "4a29fd49159c5da46202e89b06bd392b2b923030b76c15bf4958f6d38de75166"
+    },
+    {
+      "key": "ap10_consumption_07",
+      "path": "assets/game/shared/combat/audio_1010/consumption_07.png",
+      "width": 384,
+      "height": 384,
+      "sha256": "f11ac8d75bff6867201842f8cba555799fa1e5818ea33e80b8063666d6a9c784"
+    },
+    {
+      "key": "ap10_consumption_08",
+      "path": "assets/game/shared/combat/audio_1010/consumption_08.png",
+      "width": 384,
+      "height": 384,
+      "sha256": "3b85485f3cf7490b5fb5c8b0d46b3bf631a20083e0b78db89e661d24ac3692dc"
+    },
+    {
+      "key": "ap10_consumption_09",
+      "path": "assets/game/shared/combat/audio_1010/consumption_09.png",
+      "width": 384,
+      "height": 384,
+      "sha256": "db91439491da649c68760380431071ea80a1e21fe445caeff7c4263127b10dc4"
+    },
+    {
+      "key": "ap10_consumption_10",
+      "path": "assets/game/shared/combat/audio_1010/consumption_10.png",
+      "width": 384,
+      "height": 384,
+      "sha256": "389967f32bf0736ae81a58f04926850b5ff3e3c41d8a94182607d8a34e6cdf54"
+    },
+    {
+      "key": "ap10_consumption_11",
+      "path": "assets/game/shared/combat/audio_1010/consumption_11.png",
+      "width": 384,
+      "height": 384,
+      "sha256": "72e2145aa8f64060dea533f51c5970bdbbb66da6aafc52c2a6aadf12cc76da0b"
+    },
+    {
+      "key": "ap10_consumption_12",
+      "path": "assets/game/shared/combat/audio_1010/consumption_12.png",
+      "width": 384,
+      "height": 384,
+      "sha256": "8ec977701d654a1e5e0a2f052e8c44a3ddbc1da147574e6f0fb359098043e2ab"
+    },
+    {
+      "key": "ap10_consumption_13",
+      "path": "assets/game/shared/combat/audio_1010/consumption_13.png",
+      "width": 384,
+      "height": 384,
+      "sha256": "798bb7199e80635d01d4b5ede6446e3256642abdd6d43ca8888aae683feb0817"
+    },
+    {
+      "key": "ap10_consumption_14",
+      "path": "assets/game/shared/combat/audio_1010/consumption_14.png",
+      "width": 384,
+      "height": 384,
+      "sha256": "bfa3f2b883c3727c8d51c87dfcd858e6537f996fd5a2efe6327d26fca918c553"
+    },
+    {
+      "key": "ap10_consumption_15",
+      "path": "assets/game/shared/combat/audio_1010/consumption_15.png",
+      "width": 384,
+      "height": 384,
+      "sha256": "f6b099f723b74daa60894d19a177d849c65fee08dcf482714be73bf81da373b5"
+    },
+    {
+      "key": "ap10_ending_00",
+      "path": "assets/game/shared/combat/audio_1010/ending_00.png",
+      "width": 840,
+      "height": 472,
+      "sha256": "b171919349e633571db1949bb535e7b061d5a1a9b3da4b8185a695f9f1d0faef"
+    },
+    {
+      "key": "ap10_ending_01",
+      "path": "assets/game/shared/combat/audio_1010/ending_01.png",
+      "width": 840,
+      "height": 472,
+      "sha256": "3b249035766e75829564ab4e72bfd3030458c46c40fa7e0f764fb2553452bcfa"
+    },
+    {
+      "key": "ap10_ending_02",
+      "path": "assets/game/shared/combat/audio_1010/ending_02.png",
+      "width": 840,
+      "height": 472,
+      "sha256": "e5eec741209df7eaee6ff74bd98a3a34d68771f129db915b0c38b59f8c049f32"
+    },
+    {
+      "key": "ap10_ending_03",
+      "path": "assets/game/shared/combat/audio_1010/ending_03.png",
+      "width": 840,
+      "height": 472,
+      "sha256": "dfa489a54104733230284a31c1de619f74f8df195d5dec89e61a854b8e8ea7e8"
+    },
+    {
+      "key": "ap10_fire_shield_00",
+      "path": "assets/game/shared/combat/audio_1010/fire_shield_00.png",
+      "width": 256,
+      "height": 256,
+      "sha256": "ce1a46e2181cbed09f9d0ded4ebecb34362fbe06719b22406c1578867e355ba4"
+    },
+    {
+      "key": "ap10_fire_shield_01",
+      "path": "assets/game/shared/combat/audio_1010/fire_shield_01.png",
+      "width": 256,
+      "height": 256,
+      "sha256": "f89fddb8d425c7e31591b11caddbdf148f0c3e4df50c0ac0546bf3f2894ec054"
+    },
+    {
+      "key": "ap10_fire_shield_02",
+      "path": "assets/game/shared/combat/audio_1010/fire_shield_02.png",
+      "width": 256,
+      "height": 256,
+      "sha256": "5b1fc731923558ea8f3b0fa8a2e8e6ccffa2191688ad2360a311c9325bb5a27b"
+    },
+    {
+      "key": "ap10_fire_shield_03",
+      "path": "assets/game/shared/combat/audio_1010/fire_shield_03.png",
+      "width": 256,
+      "height": 256,
+      "sha256": "01836d105c14f4f90cfca0dd0543a8c8c2ef946daf0b13d2392c9d3b9cb525c8"
+    },
+    {
+      "key": "ap10_fire_shield_04",
+      "path": "assets/game/shared/combat/audio_1010/fire_shield_04.png",
+      "width": 256,
+      "height": 256,
+      "sha256": "4f37ea00865383971f3f2e0e10ced25af01d35264f79e9433682cbd0744fefb5"
+    },
+    {
+      "key": "ap10_fire_shield_05",
+      "path": "assets/game/shared/combat/audio_1010/fire_shield_05.png",
+      "width": 256,
+      "height": 256,
+      "sha256": "f89411880605ba595fe0ec11237b8812df19a9112cd8df502b7e6961240fcaee"
+    },
+    {
+      "key": "ap10_fire_shield_06",
+      "path": "assets/game/shared/combat/audio_1010/fire_shield_06.png",
+      "width": 256,
+      "height": 256,
+      "sha256": "87d8b34196661d4641e986815e8e992c200103cb0b6094de8d15eeb62eac47e9"
+    },
+    {
+      "key": "ap10_fire_shield_07",
+      "path": "assets/game/shared/combat/audio_1010/fire_shield_07.png",
+      "width": 256,
+      "height": 256,
+      "sha256": "2bd0746d3f44bc2fba361537e56aa950a27de25896f53181e3081f9208c6a026"
+    },
+    {
+      "key": "ap10_fire_shield_08",
+      "path": "assets/game/shared/combat/audio_1010/fire_shield_08.png",
+      "width": 256,
+      "height": 256,
+      "sha256": "c3050438c8cc096b1e403f4d92ba6db2b1e73f8b65182d4cfd45702d885a275f"
+    },
+    {
+      "key": "ap10_fire_shield_09",
+      "path": "assets/game/shared/combat/audio_1010/fire_shield_09.png",
+      "width": 256,
+      "height": 256,
+      "sha256": "e2f3d45b471dfe57cba2bbd0bea02b38043137497cfacb70852fcfc983785d49"
+    },
+    {
+      "key": "ap10_fire_shield_10",
+      "path": "assets/game/shared/combat/audio_1010/fire_shield_10.png",
+      "width": 256,
+      "height": 256,
+      "sha256": "5a2135d0403773a48774839469614b0b5e6f99a94032a4a46ed40e582fd1527c"
+    },
+    {
+      "key": "ap10_fire_shield_11",
+      "path": "assets/game/shared/combat/audio_1010/fire_shield_11.png",
+      "width": 256,
+      "height": 256,
+      "sha256": "60294938014c3b2cd967ca90506377f5547508bb9ab45fea78ddb8d85a8e49ab"
+    },
+    {
+      "key": "ap10_fire_shield_12",
+      "path": "assets/game/shared/combat/audio_1010/fire_shield_12.png",
+      "width": 256,
+      "height": 256,
+      "sha256": "47caec630846f4edbc2820eb9a0beb69f7cc93b14c4589207e8e8e4104f82b2f"
+    },
+    {
+      "key": "ap10_fire_shield_13",
+      "path": "assets/game/shared/combat/audio_1010/fire_shield_13.png",
+      "width": 256,
+      "height": 256,
+      "sha256": "fa7a3e3419467633747f6a4010269ec331e44a12ef91799e0ce330cf4c75a0f1"
+    },
+    {
+      "key": "ap10_fire_shield_14",
+      "path": "assets/game/shared/combat/audio_1010/fire_shield_14.png",
+      "width": 256,
+      "height": 256,
+      "sha256": "f2097f53c29074e8f9940e79c63cbb89b3acaeb2b0ed0ed05f640da1fff40256"
+    },
+    {
+      "key": "ap10_fire_shield_15",
+      "path": "assets/game/shared/combat/audio_1010/fire_shield_15.png",
+      "width": 256,
+      "height": 256,
+      "sha256": "17cb3db5f099120d717e80aa0fd2046375820449e2e557387f63a4df7acd880a"
+    },
+    {
+      "key": "ap10_fire_shield_16",
+      "path": "assets/game/shared/combat/audio_1010/fire_shield_16.png",
+      "width": 256,
+      "height": 256,
+      "sha256": "e2d2b897f91fb6736b75670accb3293608ce79950b2d5aaecafb4ba264742ea1"
+    },
+    {
+      "key": "ap10_fire_shield_17",
+      "path": "assets/game/shared/combat/audio_1010/fire_shield_17.png",
+      "width": 256,
+      "height": 256,
+      "sha256": "cc3addb28a2b836d3eebff4899163f095a4639cf9d794b2aafa2933803525003"
+    },
+    {
+      "key": "ap10_fire_shield_18",
+      "path": "assets/game/shared/combat/audio_1010/fire_shield_18.png",
+      "width": 256,
+      "height": 256,
+      "sha256": "0715925ba3492e2ea587aa21c5ce0ab7a830f50c8d1ee82c701bb2aade52bf45"
+    },
+    {
+      "key": "ap10_fire_shield_19",
+      "path": "assets/game/shared/combat/audio_1010/fire_shield_19.png",
+      "width": 256,
+      "height": 256,
+      "sha256": "e6bc6c72a27a3aaac5cd78851a39418b920c42886868582358a996f6eaafd0d0"
+    },
+    {
+      "key": "ap10_fire_shield_20",
+      "path": "assets/game/shared/combat/audio_1010/fire_shield_20.png",
+      "width": 256,
+      "height": 256,
+      "sha256": "49927ccd6038719d90ce84582fc511abfb77ef4ba5fc4bec9c1c661fc2b4575a"
+    },
+    {
+      "key": "ap10_fire_shield_21",
+      "path": "assets/game/shared/combat/audio_1010/fire_shield_21.png",
+      "width": 256,
+      "height": 256,
+      "sha256": "22940cb96737d0eed19850dbd244711f270f37b4f2ebf1a8127351bbda6824bb"
+    },
+    {
+      "key": "ap10_fire_shield_22",
+      "path": "assets/game/shared/combat/audio_1010/fire_shield_22.png",
+      "width": 256,
+      "height": 256,
+      "sha256": "c5e2cf09dcebdbd710842cb03ae4b71bc2bb31ce588dd5717b25edc11fd4ea32"
+    },
+    {
+      "key": "ap10_fire_shield_23",
+      "path": "assets/game/shared/combat/audio_1010/fire_shield_23.png",
+      "width": 256,
+      "height": 256,
+      "sha256": "4cff39fa3996701b99f03139eef33fdb7faab167894e1c77a4e9e361a1ea5d65"
+    },
+    {
+      "key": "ap10_fire_shield_24",
+      "path": "assets/game/shared/combat/audio_1010/fire_shield_24.png",
+      "width": 256,
+      "height": 256,
+      "sha256": "e3f5a2b23c39720169ddd3681c1676d641bcd31b019ab267d173c25356514c61"
+    },
+    {
+      "key": "ap10_fire_shield_25",
+      "path": "assets/game/shared/combat/audio_1010/fire_shield_25.png",
+      "width": 256,
+      "height": 256,
+      "sha256": "886354a557e4d0c7df151cae2b6f3d280af35e6d9d732209c185d9667c79d8f2"
+    },
+    {
+      "key": "ap10_fire_shield_26",
+      "path": "assets/game/shared/combat/audio_1010/fire_shield_26.png",
+      "width": 256,
+      "height": 256,
+      "sha256": "4ba2c49db896631c9225867d7176a1884262505fc8571c3053466ac78e72156d"
+    },
+    {
+      "key": "ap10_fire_shield_27",
+      "path": "assets/game/shared/combat/audio_1010/fire_shield_27.png",
+      "width": 256,
+      "height": 256,
+      "sha256": "619067b4609df52ecbee9a1b264d0a67a591fa90400067bee3784194b9c7ddda"
+    },
+    {
+      "key": "ap10_fire_shield_28",
+      "path": "assets/game/shared/combat/audio_1010/fire_shield_28.png",
+      "width": 256,
+      "height": 256,
+      "sha256": "5834dd175355088533e8c7681e48931abdf9d20b3b974283d2fa8b2737163ce7"
+    },
+    {
+      "key": "ap10_fire_shield_29",
+      "path": "assets/game/shared/combat/audio_1010/fire_shield_29.png",
+      "width": 256,
+      "height": 256,
+      "sha256": "92a19fca420b050b1e613477b44e08f47a83e3cb329f4bfd962053db941733f6"
+    },
+    {
+      "key": "ap10_fire_shield_30",
+      "path": "assets/game/shared/combat/audio_1010/fire_shield_30.png",
+      "width": 256,
+      "height": 256,
+      "sha256": "d99d38fbc58d448d18688e8a12aa58e89052c14691f253c2f439b364714d2ad7"
+    },
+    {
+      "key": "ap10_fire_shield_31",
+      "path": "assets/game/shared/combat/audio_1010/fire_shield_31.png",
+      "width": 256,
+      "height": 256,
+      "sha256": "03fc4d41bbe01e65732f6aa238211b23d94b3ccc0f63870b8823d26e37556653"
+    },
+    {
+      "key": "ap10_fusion_00",
+      "path": "assets/game/shared/combat/audio_1010/fusion_00.png",
+      "width": 272,
+      "height": 400,
+      "sha256": "0c065f8be1cd09f0c11eee7a1423fbcb752ac1c80d4b0b91407f158b4aeff2b1"
+    },
+    {
+      "key": "ap10_fusion_01",
+      "path": "assets/game/shared/combat/audio_1010/fusion_01.png",
+      "width": 272,
+      "height": 400,
+      "sha256": "22c1c7c22bfe41352c7bec1ca935548e5809654a7540ee8a2f1e43098a6b1c4d"
+    },
+    {
+      "key": "ap10_fusion_02",
+      "path": "assets/game/shared/combat/audio_1010/fusion_02.png",
+      "width": 272,
+      "height": 400,
+      "sha256": "ccdcb391559ec903b4faaa8e3b325e8250ebbd1fcc4bd4820c53cb28516ee9c2"
+    },
+    {
+      "key": "ap10_fusion_03",
+      "path": "assets/game/shared/combat/audio_1010/fusion_03.png",
+      "width": 272,
+      "height": 400,
+      "sha256": "8f5013c9eaa0d6bc7a18e1b36390fdb14be97c820dd79760b4e70bb471650c15"
+    },
+    {
+      "key": "ap10_fusion_04",
+      "path": "assets/game/shared/combat/audio_1010/fusion_04.png",
+      "width": 272,
+      "height": 400,
+      "sha256": "c32a1b4aecd7db35a5f048485346b28c9fd6265c6a19095e52fe75c0e54d1098"
+    },
+    {
+      "key": "ap10_fusion_05",
+      "path": "assets/game/shared/combat/audio_1010/fusion_05.png",
+      "width": 272,
+      "height": 400,
+      "sha256": "5000486e0a677510830497ac83486abee2e20b7a474fcc10faf3956f3a2bff39"
+    },
+    {
+      "key": "ap10_fusion_06",
+      "path": "assets/game/shared/combat/audio_1010/fusion_06.png",
+      "width": 272,
+      "height": 400,
+      "sha256": "8f614432d1b9210c22cb732fffe255860fce7ac239356c773d025dd44c8faebd"
+    },
+    {
+      "key": "ap10_fusion_07",
+      "path": "assets/game/shared/combat/audio_1010/fusion_07.png",
+      "width": 272,
+      "height": 400,
+      "sha256": "88951ae69223ef729f89a754ac724a7c5966e20cac7f189e269506b19cb782bd"
+    },
+    {
+      "key": "ap10_fusion_08",
+      "path": "assets/game/shared/combat/audio_1010/fusion_08.png",
+      "width": 272,
+      "height": 400,
+      "sha256": "47c3a4e97630295e6a9a72a427ed85f173e73c8aef5194ab9bbfd5c6296719b9"
+    },
+    {
+      "key": "ap10_fusion_09",
+      "path": "assets/game/shared/combat/audio_1010/fusion_09.png",
+      "width": 272,
+      "height": 400,
+      "sha256": "9cf68e89729a304b549a7abef62daf9cfef42c2139ac448eca55bf660b3190bc"
+    },
+    {
+      "key": "ap10_fusion_10",
+      "path": "assets/game/shared/combat/audio_1010/fusion_10.png",
+      "width": 272,
+      "height": 400,
+      "sha256": "428065bad39b65670f0c19256885a19b558b635a712e3bc631af6d713bc20195"
+    },
+    {
+      "key": "ap10_fusion_11",
+      "path": "assets/game/shared/combat/audio_1010/fusion_11.png",
+      "width": 272,
+      "height": 400,
+      "sha256": "a96a1a3c297e74add11fe371a5b95a232ba9380882ab204fe32504e3f4049fd8"
+    },
+    {
+      "key": "ap10_fusion_12",
+      "path": "assets/game/shared/combat/audio_1010/fusion_12.png",
+      "width": 272,
+      "height": 400,
+      "sha256": "a690e964f4ee99e5feae8765531d7175a8cdfc9025e9bb66835586ed476cb6fb"
+    },
+    {
+      "key": "ap10_fusion_13",
+      "path": "assets/game/shared/combat/audio_1010/fusion_13.png",
+      "width": 272,
+      "height": 400,
+      "sha256": "54a76d2a55f02c0074e09b085839d9dbac721a6fd097178eeaf00bc270eb1eb6"
+    },
+    {
+      "key": "ap10_fusion_14",
+      "path": "assets/game/shared/combat/audio_1010/fusion_14.png",
+      "width": 272,
+      "height": 400,
+      "sha256": "989d68a3ed0a64e73d8d688cc836a396b521ef21e63c3fe13e74bead735014b1"
+    },
+    {
+      "key": "ap10_fusion_15",
+      "path": "assets/game/shared/combat/audio_1010/fusion_15.png",
+      "width": 272,
+      "height": 400,
+      "sha256": "940d1cf10ec2f20632344d46d427f1e1d316752179db9e018d46f7e6475d30be"
+    },
+    {
+      "key": "ap10_hq_story_0",
+      "path": "assets/game/shared/combat/audio_1010/hq_story_0.png",
+      "width": 840,
+      "height": 472,
+      "sha256": "303bbfe253e16132a7a0b3c619b8148dfc8cb31dfad456fb6ca7a976825837d3"
+    },
+    {
+      "key": "ap10_hq_story_1",
+      "path": "assets/game/shared/combat/audio_1010/hq_story_1.png",
+      "width": 840,
+      "height": 472,
+      "sha256": "6f55839e09ef2f0119b50ffd3a713b65ae019451429410d87efb8119b2de6a8e"
+    },
+    {
+      "key": "ap10_hq_story_2",
+      "path": "assets/game/shared/combat/audio_1010/hq_story_2.png",
+      "width": 840,
+      "height": 472,
+      "sha256": "dd37c806955a3c704af7beb31003dc8ef38cedbc6eedde34b9352f665d101c2c"
+    },
+    {
+      "key": "ap10_hq_story_3",
+      "path": "assets/game/shared/combat/audio_1010/hq_story_3.png",
+      "width": 840,
+      "height": 472,
+      "sha256": "648ca9c64c063ab6811e0efbdcce2f74af111749f6b6f3a2fcb9f57ea9a65131"
+    },
+    {
+      "key": "ap10_hud",
+      "path": "assets/game/shared/ui/audio_hud_1010.png",
+      "width": 2160,
+      "height": 432,
+      "sha256": "50f5003bf6485ef44688865e0bd7d5b3c4d4ad3e0c7dcc114b64c062c0428f3b"
+    },
+    {
+      "key": "ap10_ice_laser_00",
+      "path": "assets/game/shared/combat/audio_1010/ice_laser_00.png",
+      "width": 224,
+      "height": 448,
+      "sha256": "72ae25806a65fc3c9ac40c03a0537ba6f02415f860551f42cefc1705e2a92c2c"
+    },
+    {
+      "key": "ap10_ice_laser_01",
+      "path": "assets/game/shared/combat/audio_1010/ice_laser_01.png",
+      "width": 224,
+      "height": 448,
+      "sha256": "50352e18502e265b5b6954ded7b8bcf7bf0e835a9a469afaad0311cac566aaee"
+    },
+    {
+      "key": "ap10_ice_laser_02",
+      "path": "assets/game/shared/combat/audio_1010/ice_laser_02.png",
+      "width": 224,
+      "height": 448,
+      "sha256": "ca9ac94d910fa03f5172e2d1d0869214caf80c721169845618471e1239e0628f"
+    },
+    {
+      "key": "ap10_ice_laser_03",
+      "path": "assets/game/shared/combat/audio_1010/ice_laser_03.png",
+      "width": 224,
+      "height": 448,
+      "sha256": "54602bfb4bf43244227b04fe97298a7b9d9fb16916d3425a940c5ae2bff5f815"
+    },
+    {
+      "key": "ap10_ice_laser_04",
+      "path": "assets/game/shared/combat/audio_1010/ice_laser_04.png",
+      "width": 224,
+      "height": 448,
+      "sha256": "6f18df0207918debd3e1e2cd86d57783bc40a67d10a247c94891a45d58579b47"
+    },
+    {
+      "key": "ap10_ice_laser_05",
+      "path": "assets/game/shared/combat/audio_1010/ice_laser_05.png",
+      "width": 224,
+      "height": 448,
+      "sha256": "ac48ac587001e23d9cfb10b3ac1bdc4c55c1d158880a5d9b8c82466110ff873d"
+    },
+    {
+      "key": "ap10_ice_laser_06",
+      "path": "assets/game/shared/combat/audio_1010/ice_laser_06.png",
+      "width": 224,
+      "height": 448,
+      "sha256": "c8b291daa6476b21d6c219f7156f76e9af244397a366062702ed7be8c54c2cd1"
+    },
+    {
+      "key": "ap10_ice_laser_07",
+      "path": "assets/game/shared/combat/audio_1010/ice_laser_07.png",
+      "width": 224,
+      "height": 448,
+      "sha256": "b6c8fb65d61a00215e0804e08b2759ebcf88440beca118da8d0b0862a95a69ff"
+    },
+    {
+      "key": "ap10_ice_laser_08",
+      "path": "assets/game/shared/combat/audio_1010/ice_laser_08.png",
+      "width": 224,
+      "height": 448,
+      "sha256": "a747d8e0defb755062ac2e8f5c3510c47fd6b9a64820a0d8b99d244c74e2b62d"
+    },
+    {
+      "key": "ap10_ice_laser_09",
+      "path": "assets/game/shared/combat/audio_1010/ice_laser_09.png",
+      "width": 224,
+      "height": 448,
+      "sha256": "d73458cf1d4037e77308c95b9d31442974287ff4279524e6ddb841be29855a58"
+    },
+    {
+      "key": "ap10_ice_laser_10",
+      "path": "assets/game/shared/combat/audio_1010/ice_laser_10.png",
+      "width": 224,
+      "height": 448,
+      "sha256": "6335e98bcf9af971d41b872df758eed86b7c17827767a9128f5f38e6d7f2e2a0"
+    },
+    {
+      "key": "ap10_ice_laser_11",
+      "path": "assets/game/shared/combat/audio_1010/ice_laser_11.png",
+      "width": 224,
+      "height": 448,
+      "sha256": "0dd7c824389cc8794d970013a0f166f28abb6ccac688959a9cd1eece80521225"
+    },
+    {
+      "key": "ap10_ice_laser_12",
+      "path": "assets/game/shared/combat/audio_1010/ice_laser_12.png",
+      "width": 224,
+      "height": 448,
+      "sha256": "ce60c9def358d620eb8b03f2b5ef7256e2285256c0e09209bf0dac2ea2cf31de"
+    },
+    {
+      "key": "ap10_ice_laser_13",
+      "path": "assets/game/shared/combat/audio_1010/ice_laser_13.png",
+      "width": 224,
+      "height": 448,
+      "sha256": "e122100cd669d3cdee51078e98817f21859c122b550747c99b4239c9130dbb6b"
+    },
+    {
+      "key": "ap10_ice_laser_14",
+      "path": "assets/game/shared/combat/audio_1010/ice_laser_14.png",
+      "width": 224,
+      "height": 448,
+      "sha256": "e7e5c12e6d095bb73361d289946a19dd3c022c6e880fd526f7cb1d94fa5ca8d8"
+    },
+    {
+      "key": "ap10_ice_laser_15",
+      "path": "assets/game/shared/combat/audio_1010/ice_laser_15.png",
+      "width": 224,
+      "height": 448,
+      "sha256": "5fe613d31c8c21ee8d2e447a20927c5ea1de387bca8add65d0950048be842342"
+    },
+    {
+      "key": "ap10_turbo_00",
+      "path": "assets/game/shared/combat/audio_1010/turbo_00.png",
+      "width": 336,
+      "height": 336,
+      "sha256": "be8119e99eb905c364a1033fb027ea8e3c56844e9516cf3371b847c656e4ca8c"
+    },
+    {
+      "key": "ap10_turbo_01",
+      "path": "assets/game/shared/combat/audio_1010/turbo_01.png",
+      "width": 336,
+      "height": 336,
+      "sha256": "cd5a64f30fdb9bb30bf867c71c32b34e28d7b40c7218d28878c2b28e67c5dfee"
+    },
+    {
+      "key": "ap10_turbo_02",
+      "path": "assets/game/shared/combat/audio_1010/turbo_02.png",
+      "width": 336,
+      "height": 336,
+      "sha256": "4328c7e11ab685d4f8698a7c0d45df0d600b3e92a8b4c3309ab73e3299849e84"
+    },
+    {
+      "key": "ap10_turbo_03",
+      "path": "assets/game/shared/combat/audio_1010/turbo_03.png",
+      "width": 336,
+      "height": 336,
+      "sha256": "55037ded860f0622bbe232fc6ca0089827a465249ff31e94e2c0e084404029f7"
+    },
+    {
+      "key": "ap10_turbo_04",
+      "path": "assets/game/shared/combat/audio_1010/turbo_04.png",
+      "width": 336,
+      "height": 336,
+      "sha256": "d6b40149cf80c1615f03143f7b8707f4d8fe5076dd4167a84f3a5135b825ac78"
+    },
+    {
+      "key": "ap10_turbo_05",
+      "path": "assets/game/shared/combat/audio_1010/turbo_05.png",
+      "width": 336,
+      "height": 336,
+      "sha256": "928345712ba6ad9817bad37c86d18e519a946fe21e7cd879b54d0dd0b3a3cd0c"
+    },
+    {
+      "key": "ap10_turbo_06",
+      "path": "assets/game/shared/combat/audio_1010/turbo_06.png",
+      "width": 336,
+      "height": 336,
+      "sha256": "5cfa1db15ba911a84975642dfc9fec22c5350156b47d61654a8d4869b5d03d9f"
+    },
+    {
+      "key": "ap10_turbo_07",
+      "path": "assets/game/shared/combat/audio_1010/turbo_07.png",
+      "width": 336,
+      "height": 336,
+      "sha256": "16393a5d2050b610559a522338a17ec2cb3d634cec3aa4c1b28aa348138716bc"
+    },
+    {
+      "key": "ap10_turbo_08",
+      "path": "assets/game/shared/combat/audio_1010/turbo_08.png",
+      "width": 336,
+      "height": 336,
+      "sha256": "5559cdd6f5cd941687c5c8b7e3c6ef986e43120f084580a07aaf1d2c7cfceaa4"
+    },
+    {
+      "key": "ap10_turbo_09",
+      "path": "assets/game/shared/combat/audio_1010/turbo_09.png",
+      "width": 336,
+      "height": 336,
+      "sha256": "6cb8795531e11a2c081841e0302e6de96643a3fc7cc04f074c4d8f07841243c5"
+    },
+    {
+      "key": "ap10_turbo_10",
+      "path": "assets/game/shared/combat/audio_1010/turbo_10.png",
+      "width": 336,
+      "height": 336,
+      "sha256": "d05ba0636b129a67672da39fb45d2de1fa777aca2f4d3b1bea3e3777a3a1cda0"
+    },
+    {
+      "key": "ap10_turbo_11",
+      "path": "assets/game/shared/combat/audio_1010/turbo_11.png",
+      "width": 336,
+      "height": 336,
+      "sha256": "c046100b831e86f631fea9bc4807bae403f3d99c2911f472eaaf23e898727744"
+    },
+    {
+      "key": "ap10_turbo_12",
+      "path": "assets/game/shared/combat/audio_1010/turbo_12.png",
+      "width": 336,
+      "height": 336,
+      "sha256": "7f0839841231b715fee6bedd853b72c4a3aef0dfaf18dccc658f7adf1163eb4e"
+    },
+    {
+      "key": "ap10_turbo_13",
+      "path": "assets/game/shared/combat/audio_1010/turbo_13.png",
+      "width": 336,
+      "height": 336,
+      "sha256": "300cae4755796c069088142baecd7628a45c9346736106f0bc045cd96516319d"
+    },
+    {
+      "key": "ap10_turbo_14",
+      "path": "assets/game/shared/combat/audio_1010/turbo_14.png",
+      "width": 336,
+      "height": 336,
+      "sha256": "e361316b159ac97f45f8a303787e7f7cf0e09f4a62749bba5f1ed10685856563"
+    },
+    {
+      "key": "ap10_turbo_15",
+      "path": "assets/game/shared/combat/audio_1010/turbo_15.png",
+      "width": 336,
+      "height": 336,
+      "sha256": "2a68f3a2bf8d0252e9636dd3b01f9dac4270b5a9ddb3b5fa78a05b026e305393"
+    },
+    {
+      "key": "ap10_void_00",
+      "path": "assets/game/shared/combat/audio_1010/void_00.png",
+      "width": 256,
+      "height": 256,
+      "sha256": "7972bb2a764352e1c89c0d565b9a89e584f4ab8ab39337daeedefc4164bd1cdd"
+    },
+    {
+      "key": "ap10_void_01",
+      "path": "assets/game/shared/combat/audio_1010/void_01.png",
+      "width": 256,
+      "height": 256,
+      "sha256": "672a5ff16cc1184a6a2114192fa9502bb468a488bd249c21deb127ae33385e9a"
+    },
+    {
+      "key": "ap10_void_02",
+      "path": "assets/game/shared/combat/audio_1010/void_02.png",
+      "width": 256,
+      "height": 256,
+      "sha256": "07e053fe2537cbe1ac48474dcb3c455c8fde626345f3016407e0165dea108a03"
+    },
+    {
+      "key": "ap10_void_03",
+      "path": "assets/game/shared/combat/audio_1010/void_03.png",
+      "width": 256,
+      "height": 256,
+      "sha256": "6249533814f96051ae4463b7a65704aaaff6da9d80d08681d7f893e0952c9259"
+    },
+    {
+      "key": "ap10_void_04",
+      "path": "assets/game/shared/combat/audio_1010/void_04.png",
+      "width": 256,
+      "height": 256,
+      "sha256": "8abb41df9863e9f8a18c798ee584e57ef665657dd0dfd33463854b2c60528778"
+    },
+    {
+      "key": "ap10_void_05",
+      "path": "assets/game/shared/combat/audio_1010/void_05.png",
+      "width": 256,
+      "height": 256,
+      "sha256": "7324866255d57e6666c8ba5d5ae4465474cd6018a2fff16c54cb60f9d1035421"
+    },
+    {
+      "key": "ap10_void_06",
+      "path": "assets/game/shared/combat/audio_1010/void_06.png",
+      "width": 256,
+      "height": 256,
+      "sha256": "b692a5fc65115b5b322fa4022190775de523bce53566914b50758807c228b525"
+    },
+    {
+      "key": "ap10_void_07",
+      "path": "assets/game/shared/combat/audio_1010/void_07.png",
+      "width": 256,
+      "height": 256,
+      "sha256": "2a3e82c43bc75afaf82f598ef67578315b75ae80d89bd2db4ffaae3d836840a9"
+    },
+    {
+      "key": "ap10_void_08",
+      "path": "assets/game/shared/combat/audio_1010/void_08.png",
+      "width": 256,
+      "height": 256,
+      "sha256": "1d3e20dd079961c2f67c5836581eca974eb1a1a6a19b00e2ae9f2f64ea435094"
+    },
+    {
+      "key": "ap10_void_09",
+      "path": "assets/game/shared/combat/audio_1010/void_09.png",
+      "width": 256,
+      "height": 256,
+      "sha256": "f5114365e2cce3c3c2575717d30b6dbd8fb97c418c866096f2fc3e71d38f3adf"
+    },
+    {
+      "key": "ap10_void_10",
+      "path": "assets/game/shared/combat/audio_1010/void_10.png",
+      "width": 256,
+      "height": 256,
+      "sha256": "8063ee59e7af8330e10386d026c81b358ebc918c14f6858baea8c1ef23af4ce7"
+    },
+    {
+      "key": "ap10_void_11",
+      "path": "assets/game/shared/combat/audio_1010/void_11.png",
+      "width": 256,
+      "height": 256,
+      "sha256": "47011b7795b70272b62a4a472419d5c5921b475789bb295994a1d4bde6ceb096"
+    },
+    {
+      "key": "ap10_void_12",
+      "path": "assets/game/shared/combat/audio_1010/void_12.png",
+      "width": 256,
+      "height": 256,
+      "sha256": "86dc0f32523e5af5c99f73e0ef0613f9c1d5ae19287cbaede7fff256d733ffe6"
+    },
+    {
+      "key": "ap10_void_13",
+      "path": "assets/game/shared/combat/audio_1010/void_13.png",
+      "width": 256,
+      "height": 256,
+      "sha256": "7b0b59a8ed002c1c51357768f85be1c04cde9c72ce4d7ced948d5f5a971b8d5c"
+    },
+    {
+      "key": "ap10_void_14",
+      "path": "assets/game/shared/combat/audio_1010/void_14.png",
+      "width": 256,
+      "height": 256,
+      "sha256": "172ab7112f8a827b1a18cf73c2f0d6d04c9dc39f4fc4cfffee0e729229e530f0"
+    },
+    {
+      "key": "ap10_void_15",
+      "path": "assets/game/shared/combat/audio_1010/void_15.png",
+      "width": 256,
+      "height": 256,
+      "sha256": "71b1f7182f0fef594d5cf08b6c9c9c759ffb42e3b9414a3dcbd6f1795b40ef8e"
+    },
+    {
+      "key": "ap10_void_16",
+      "path": "assets/game/shared/combat/audio_1010/void_16.png",
+      "width": 256,
+      "height": 256,
+      "sha256": "aa9ad8b919858814e99a5bb12f131c4361c296cbbc00f56be86d9c4713e1191d"
+    },
+    {
+      "key": "ap10_void_17",
+      "path": "assets/game/shared/combat/audio_1010/void_17.png",
+      "width": 256,
+      "height": 256,
+      "sha256": "6bd1541c9182f3da82a6b86cc33f3a4801541ec088df3e3bcdb4ed273b4cb8c9"
+    },
+    {
+      "key": "ap10_void_18",
+      "path": "assets/game/shared/combat/audio_1010/void_18.png",
+      "width": 256,
+      "height": 256,
+      "sha256": "33fa69567a624d2c440e91494ae37938dab7937f9238e6f0c8c8273b02381fdf"
+    },
+    {
+      "key": "ap10_void_19",
+      "path": "assets/game/shared/combat/audio_1010/void_19.png",
+      "width": 256,
+      "height": 256,
+      "sha256": "6cb1dccdc7ca0d601a121f2f7a7d3384e21bd173a3159fcbd981f6572af10577"
+    },
+    {
+      "key": "ap10_void_20",
+      "path": "assets/game/shared/combat/audio_1010/void_20.png",
+      "width": 256,
+      "height": 256,
+      "sha256": "d37d2eeae875cc997f3e8b1928b316b1367031e71f97fb55e4cd92d8222f8214"
+    },
+    {
+      "key": "ap10_void_21",
+      "path": "assets/game/shared/combat/audio_1010/void_21.png",
+      "width": 256,
+      "height": 256,
+      "sha256": "1870b77b0ebe7f31ef5d63e7e965de16267c8a65e1240fcdaa0f1a9f24e509e5"
+    },
+    {
+      "key": "ap10_void_22",
+      "path": "assets/game/shared/combat/audio_1010/void_22.png",
+      "width": 256,
+      "height": 256,
+      "sha256": "f2035626226fbf37c1a3ed00ce7ac29c12309547bece557391f23aa98b99c527"
+    },
+    {
+      "key": "ap10_void_23",
+      "path": "assets/game/shared/combat/audio_1010/void_23.png",
+      "width": 256,
+      "height": 256,
+      "sha256": "5b8c1980bd916e9f723b83de3f379250c60ffc0f34771b560390a0db7a4be4c8"
+    },
+    {
+      "key": "ap10_void_24",
+      "path": "assets/game/shared/combat/audio_1010/void_24.png",
+      "width": 256,
+      "height": 256,
+      "sha256": "e0f496f637d7a4614c852493a0ef66875eabab743032b576c3157d8fd81595be"
+    },
+    {
+      "key": "ap10_void_25",
+      "path": "assets/game/shared/combat/audio_1010/void_25.png",
+      "width": 256,
+      "height": 256,
+      "sha256": "0ce189c3bb591ab5a9361a266be9792fb86a472802fdee10a26ccaa689478d7d"
+    },
+    {
+      "key": "ap10_void_26",
+      "path": "assets/game/shared/combat/audio_1010/void_26.png",
+      "width": 256,
+      "height": 256,
+      "sha256": "ca09880f8db0102ba80c69f2caf87a9578d4339771c5b03e036900b9bfb7e54a"
+    },
+    {
+      "key": "ap10_void_27",
+      "path": "assets/game/shared/combat/audio_1010/void_27.png",
+      "width": 256,
+      "height": 256,
+      "sha256": "8cf5eceb068d249f160a66be7482b8cba4941f7d18278f3088ef34ec6e8366c0"
+    },
+    {
+      "key": "ap10_void_28",
+      "path": "assets/game/shared/combat/audio_1010/void_28.png",
+      "width": 256,
+      "height": 256,
+      "sha256": "1448cf924807f326a40988b10d88d5664b89e8d45b1e821cd0033ef18776c964"
+    },
+    {
+      "key": "ap10_void_29",
+      "path": "assets/game/shared/combat/audio_1010/void_29.png",
+      "width": 256,
+      "height": 256,
+      "sha256": "60b6da0eec80da3fbd9a949ea559f86ca439489d3216b9dd44e3cbe66f7cb150"
+    },
+    {
+      "key": "ap10_void_30",
+      "path": "assets/game/shared/combat/audio_1010/void_30.png",
+      "width": 256,
+      "height": 256,
+      "sha256": "21866591f71c58cc2b4a053117219ae4c3445759d160930090cb67eba4ba16dd"
+    },
+    {
+      "key": "ap10_void_31",
+      "path": "assets/game/shared/combat/audio_1010/void_31.png",
+      "width": 256,
+      "height": 256,
+      "sha256": "42a2470ba74d4db3348e03647eb498db9c1988d1a85d1d3ba1af723f77e12e7e"
+    },
+    {
+      "key": "ap10_wind_icon_0",
+      "path": "assets/game/shared/combat/audio_1010/wind_icon_0.png",
+      "width": 432,
+      "height": 432,
+      "sha256": "e06b53f4bd4a3ebb724aa2f5b47cc0818977e8905f9826676e8e90a0cba9ba78"
+    },
+    {
+      "key": "ap10_wind_icon_1",
+      "path": "assets/game/shared/combat/audio_1010/wind_icon_1.png",
+      "width": 432,
+      "height": 432,
+      "sha256": "c8599954e87f9c5b19135c55bab09bef7c313a4e5b2d62d69e775aff90f49515"
+    },
+    {
+      "key": "ap10_wind_icon_2",
+      "path": "assets/game/shared/combat/audio_1010/wind_icon_2.png",
+      "width": 432,
+      "height": 432,
+      "sha256": "ec089a8fc016ef99901db8a7aa268edc9262a0b1c7144a6002c785fbdba756cb"
+    },
+    {
+      "key": "ap10_wind_icon_3",
+      "path": "assets/game/shared/combat/audio_1010/wind_icon_3.png",
+      "width": 432,
+      "height": 432,
+      "sha256": "9584b6478a3d97fa83b7e34ffad194f04c0c21ff0208c55270e6ff44f2f4394b"
+    },
+    {
+      "key": "ap10_wind_icon_4",
+      "path": "assets/game/shared/combat/audio_1010/wind_icon_4.png",
+      "width": 432,
+      "height": 432,
+      "sha256": "b51d8137f0063a0872f4daa367521f1c68ccf272a808f2ae86992117feb79f30"
+    },
+    {
+      "key": "ap10_wind_icon_5",
+      "path": "assets/game/shared/combat/audio_1010/wind_icon_5.png",
+      "width": 432,
+      "height": 432,
+      "sha256": "5e555aa7123c63aa01109daf539dfded342434910375bd4bd20ccf535b1c67ad"
+    },
+    {
+      "key": "ap10_wind_icon_6",
+      "path": "assets/game/shared/combat/audio_1010/wind_icon_6.png",
+      "width": 432,
+      "height": 432,
+      "sha256": "5f2c0df4bab825b310dc227bea3f55b6ed0e1a72aa0ba4f6cb7cf1522141fcca"
+    },
+    {
+      "key": "ap10_wind_icon_7",
+      "path": "assets/game/shared/combat/audio_1010/wind_icon_7.png",
+      "width": 432,
+      "height": 432,
+      "sha256": "ec914026f29c378ac221b030334b53a5e399ea8d9f6d4fa7b6069956004d5c87"
+    },
+    {
+      "key": "ap10_wind_icon_8",
+      "path": "assets/game/shared/combat/audio_1010/wind_icon_8.png",
+      "width": 432,
+      "height": 432,
+      "sha256": "3d6658761ed2769dfb0627d5ee31b7e2438dcf7afeb8dbc1bf97988eefdd153c"
+    },
+    {
+      "key": "ap10_wind_00",
+      "path": "assets/game/shared/combat/audio_1010/wind_00.png",
+      "width": 320,
+      "height": 336,
+      "sha256": "1f70dbfb6362fe5e25104fef629e5c8956da36f20c7719ac17b5694cd25466f2"
+    },
+    {
+      "key": "ap10_wind_01",
+      "path": "assets/game/shared/combat/audio_1010/wind_01.png",
+      "width": 320,
+      "height": 336,
+      "sha256": "a192f6618788cacf0e578f56e2ae63fd2046b331f657810e789a9b94018fece9"
+    },
+    {
+      "key": "ap10_wind_02",
+      "path": "assets/game/shared/combat/audio_1010/wind_02.png",
+      "width": 320,
+      "height": 336,
+      "sha256": "f715cba1b8aa0eab86252f1c3a8598aa9483cba09697d257c2615c4f0935dda1"
+    },
+    {
+      "key": "ap10_wind_03",
+      "path": "assets/game/shared/combat/audio_1010/wind_03.png",
+      "width": 320,
+      "height": 336,
+      "sha256": "b8e00386cd86d57eb0cae3d1b79cdb8d61127faf8e07ac469024bc7648a67c33"
+    },
+    {
+      "key": "ap10_wind_04",
+      "path": "assets/game/shared/combat/audio_1010/wind_04.png",
+      "width": 320,
+      "height": 336,
+      "sha256": "b2ae981865a6f3450875464218c7b133e6e5a8e02d6d83649691f16e65def58a"
+    },
+    {
+      "key": "ap10_wind_05",
+      "path": "assets/game/shared/combat/audio_1010/wind_05.png",
+      "width": 320,
+      "height": 336,
+      "sha256": "b8d50d28ca96abeb4bc57a1458be28408a8bc8afe0c1ff4d9461723a65f21504"
+    },
+    {
+      "key": "ap10_wind_06",
+      "path": "assets/game/shared/combat/audio_1010/wind_06.png",
+      "width": 320,
+      "height": 336,
+      "sha256": "40398eb443f35d7f0f7b1a1508c7f20ac3d35fb5eefc7e86cb5a091721e96d14"
+    },
+    {
+      "key": "ap10_wind_07",
+      "path": "assets/game/shared/combat/audio_1010/wind_07.png",
+      "width": 320,
+      "height": 336,
+      "sha256": "7e7afb1069aeef194daf743817708ce0e4739545fb0943568ebee0eb7849327e"
+    },
+    {
+      "key": "ap10_wind_08",
+      "path": "assets/game/shared/combat/audio_1010/wind_08.png",
+      "width": 320,
+      "height": 336,
+      "sha256": "2113ebcb6a3b95e4e90d83beb97ed3d772adacde32cc576c9dc08232f33e7149"
+    },
+    {
+      "key": "ap10_wind_09",
+      "path": "assets/game/shared/combat/audio_1010/wind_09.png",
+      "width": 320,
+      "height": 336,
+      "sha256": "412d9f9f4615f0620dbb07236af68e508e75271327545d78c53478f1899424e8"
+    },
+    {
+      "key": "ap10_wind_10",
+      "path": "assets/game/shared/combat/audio_1010/wind_10.png",
+      "width": 320,
+      "height": 336,
+      "sha256": "97b20a7e5abf56eaefe2214088097e11823e3982b33c42dce3fc9db76ba7e100"
+    },
+    {
+      "key": "ap10_wind_11",
+      "path": "assets/game/shared/combat/audio_1010/wind_11.png",
+      "width": 320,
+      "height": 336,
+      "sha256": "d87142ada21eef7429c0e68b769e8d7757c19a27162a5bbb5ef6f85403dcdd56"
+    },
+    {
+      "key": "ap10_wind_12",
+      "path": "assets/game/shared/combat/audio_1010/wind_12.png",
+      "width": 320,
+      "height": 336,
+      "sha256": "643673178c165139e21638c70d22ad6cef302ba2bda2e8078193f8d9bb0dd9ca"
+    },
+    {
+      "key": "ap10_wind_13",
+      "path": "assets/game/shared/combat/audio_1010/wind_13.png",
+      "width": 320,
+      "height": 336,
+      "sha256": "59401047521395071215a0ea8115c932ef76d91ff155b1e8ccd7b46ac98e6a29"
+    },
+    {
+      "key": "ap10_wind_14",
+      "path": "assets/game/shared/combat/audio_1010/wind_14.png",
+      "width": 320,
+      "height": 336,
+      "sha256": "7adffa533357e2309144819e8e7d1de794bed5724a5dbb1749ec114041ab162a"
+    },
+    {
+      "key": "ap10_wind_15",
+      "path": "assets/game/shared/combat/audio_1010/wind_15.png",
+      "width": 320,
+      "height": 336,
+      "sha256": "be08918fd761669347d825cfd20da80b34c58049a7bb99ff3b2c38b957c1a639"
+    }
+  ],
+  "counts": {
+    "accepted_sources": 13,
+    "animation_and_icon_cells": 193,
+    "hud_housings": 1,
+    "total": 194
+  }
+}

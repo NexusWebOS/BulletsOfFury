@@ -93,12 +93,17 @@ const BOFCinematicDirector=(()=>{
   if(stage===4)return [L(p,'The airbase is ours. Tell me that core was worth the trouble.'),...U,L(c,'It was. The last orbital frame is finally clear. This is what touched our satellite.',{location:'lab'}),
    L('FURY RECORDING','ORBITAL RELAY: FOREIGN INTELLIGENCE CONFIRMED.',{bg:'cin_war_symbiote_reveal'}),L(p,'That is what has been steering every machine down here?'),L(c,'It is the source of the transmission we traced. The Federation hull can get your fighter into orbit. We need answers before it sends anything else down.'),L(p,'Fit the space systems. I am going up.')];
   if(stage===5)return [L(p,'Cronos is down. Recover anything we can use, then disengage the Federation hull.',{bg:'bg_stage05_loop_0923'}),L(c,'His local signal is gone. That does not prove the infection on Earth is gone with it.'),...U,
-   L(c,'Fury flight is forming up for the return. Keep your new guns ready; we have lost contact with the base.'),L(p,'All pilots, stay close on reentry. Nobody flies home alone.')];
+   L(p,'Fury HQ in sight. Bringing the hull down. It is good to be home.',{bg:'hq10_background_00',duration:7}),
+   L('cole','Incoming fighters! They followed us home. Decker, keep the radar alive. Axel, cover the hangars!',{bg:'hq10_background_01',duration:7}),
+   L('decker','Red contacts everywhere! Fury flight, scramble! We cannot let them reach the command center.',{bg:'hq10_background_02',duration:15,interactive:'hq-radar'}),
+   L('cole','Decker and Axel, defend HQ. Everyone else, take the sky. Five ships on my wing!',{bg:'hq10_background_03',duration:7.5})];
   if(stage===6)return [L(p,r==='left'?'The Harrier is finished. What happened to the rebel squad?':'Rebel Fury is down. I wish they had listened.'),
    L(c,r==='left'?'They scattered toward the central core while we took the carrier. Their signals are marked on the map as Stage X contacts.':'All five rebel signals are gone. There will be no Stage X pursuit of this squad.'),
    ...(r==='left'?[L(c,'Stage X is optional. Choose a contact and two wingmen at the central core. They kept the stolen gear, so expect an upgraded fight.'),L(p,'Keep those contacts marked. First tell me what is moving beneath the city.')]:[L(c,'The other threat has not stopped. I am reading a separate signature beneath the city.')]),
    L(p,'And HotWire and Phoenix?'),L(c,'Still missing. They warned us about this squad before their mission. We have no confirmed transmission from either pilot since.'),...U,
-   L(c,'Follow the river under the iron bridge. The old sewer access leads toward that signature.',{bg:'cin_story_city_descent'}),L(p,'Taking the lower approach. Keep listening for us.',{bg:'cin_stage07_topdown'})];
+   L('decker','I traced the alien signal beneath the city. Take us down along the river, under the iron bridge.',{bg:'cin_story_city_descent'}),
+   L('decker','The code is coming from that sewer access. We never searched underground. This is where it is hiding.',{bg:'cin_story_riverbank_sewer'}),
+   L(p,'Taking the lower approach. Keep listening for us.',{bg:'cin_stage07_topdown'})];
   if(stage===7){const second=c==='decker'?'cole':'decker';return [L(c,'The portal closed behind '+p.toUpperCase()+'. No beacon, no weapons telemetry. The sewer is gone.'),L(second,'Keep the last vector on the recorder. Leave every channel open. We are not giving up on them.'),L('FURY RELAY','LAST TRANSMISSION LOST. UNKNOWN SPACE AHEAD.',{bg:'cin_stage08_approach'})];}
   if(stage===8)return [L(p,'The signal is breaking apart. Fury flight, can anyone hear me?',{bg:'cinend_deep_space'}),L(c,'We have you. Hold that channel. We are bringing you home.'),L(p,'Copy. I have had enough of other dimensions for one day.')];
   if(stage===9)return [L(p,'The detour is clear. Space systems intact.',{bg:'cin30_bonus'}),...U];
@@ -151,11 +156,13 @@ const BOFCinematicDirector=(()=>{
   // Read Start before menuConfirm, which includes Start in the shared input API.
   if(s.age>.15&&Input.menuStart()){finish();return;}
   const b=s.beats[s.i];s.readyWait+=dt;const ready=warm(b);
+  const surface=b.interactive&&typeof cinematicSurfaceInput==='function'?cinematicSurfaceInput(b,s,dt):false;
+  if(surface==='next'){advance();return;}
   const click=Input.mouse.down&&!s.md;s.md=!!Input.mouse.down;
-  if(s.age>.15&&(Input.menuConfirm()||click)){advance();return;}
+  if(s.age>.15&&!surface&&(Input.menuConfirm()||click)){advance();return;}
   if(!ready&&s.readyWait<4)return; // missing art never traps Start/A or the campaign
   s.t+=dt;const n=Math.min(b.text.length,Math.floor(s.t*38));dialogueLetterTicks(b.text,s.shown,n);s.shown=Math.max(s.shown,n);
-  if(s.t>=b.text.length/38+2.7){s.shown=b.text.length;advance();}
+  if(s.t>=Math.max(b.text.length/38+2.7,b.duration||0)){s.shown=b.text.length;advance();}
  }
  function fit(key,x,y,w,h){if(!key||!XART.rdy(key))return false;const im=XART.get(key),k=Math.min(w/im.width,h/im.height),dw=im.width*k,dh=im.height*k;ctx.drawImage(im,Math.round(x+(w-dw)/2),Math.round(y+(h-dh)/2),Math.round(dw),Math.round(dh));return true;}
  function draw(){if(!scene)return;const s=scene,b=s.beats[s.i],W=s.live?VW:cutsceneViewWidth(),H=VH,key=artFor(b);
@@ -246,7 +253,7 @@ rebelSquadTick=function(b,dt){const R=b._rebels;
 };
 // Stages 7/8 and the bonus used separate exits that bypassed hqTrigger entirely.
 const CIN30_LEAVE=scLeaveStage;
-scLeaveStage=function(R){if(run.mode==='campaign'&&[7,8,9].includes(run.stage)&&!R._cin30Done){R._cin30Done=true;if(BOFCinematicDirector.start(run.stage,()=>CIN30_LEAVE(R)))return;}return CIN30_LEAVE(R);};
+scLeaveStage=function(R){if(run.mode==='campaign'&&[7,8,9].includes(run.stage)&&!(run.stage===8&&run._trueFinaleCleared)&&!R._cin30Done){R._cin30Done=true;if(BOFCinematicDirector.start(run.stage,()=>CIN30_LEAVE(R)))return;}return CIN30_LEAVE(R);};
 // Leaving/resetting a run must not retain an encounter conversation.
 const CIN30_BEGIN=beginStage;
 beginStage=function(){BOFCinematicDirector.cancel();return CIN30_BEGIN.apply(this,arguments);};

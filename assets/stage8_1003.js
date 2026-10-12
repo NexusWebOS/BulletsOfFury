@@ -25,7 +25,7 @@ function s81003Distance(x,y,L){const dx=L.ex-L.x,dy=L.ey-L.y,d=dx*dx+dy*dy,u=d?c
 function s81003Lane(x,y,tx,ty,width=12,len=VH*1.3){const a=Math.atan2(ty-y,tx-x);return{x,y,ex:x+Math.cos(a)*len,ey:y+Math.sin(a)*len,width};}
 function s81003Fov(L,p,retina=true,owner=boss){
  // Use the original renderer at the source for every caller, including Stage 7.
- // Passing the emitter preserves ordinary enemy bands versus boss FOV art.
+ // Ordinary enemies and bosses share the same full authored FOV plate.
  combatWarningDraw(owner,{x:L.x,y:L.y,ex:L.ex,ey:L.ey,len:Math.hypot(L.ex-L.x,L.ey-L.y),
   width:L.width,progress:clamp(p,0,1),fieldOnly:true});
  if(retina&&L.tx!=null)s81003Target(L.tx,L.ty,74,p);

@@ -1,0 +1,611 @@
+{
+  "date": "2026-10-12",
+  "build": "overdrive1012-retina-r1",
+  "entry": "expansion/topdown/index.html",
+  "localOnly": true,
+  "summary": {
+    "retina": {
+      "passed": 40,
+      "failed": 0
+    },
+    "input": {
+      "passed": 28,
+      "failed": 0
+    },
+    "intro": {
+      "passed": 42,
+      "failed": 0
+    },
+    "frontend": {
+      "passed": 55,
+      "failed": 0
+    },
+    "warrior": {
+      "passed": 22,
+      "failed": 0
+    }
+  },
+  "nativePassed": 187,
+  "browserErrors": [],
+  "baseSuite": {
+    "passingAssertions": 8700,
+    "errors": 0,
+    "exitCode": 0,
+    "finalSummary": "==== FALVA/LIZZIE BUILD OK, 0 ERRORS ===="
+  },
+  "scope": "Native BOF Retina, shoulder aim, menu A and smaller Warrior regression.\n\nIsolated saves, actual keyboard/pointer events and synthetic Gamepad reports.\nProtected combat fixtures run the owning gameplay code and authored renderer.\n",
+  "checks": [
+    {
+      "name": "nonstandard printed A on browser button 5 starts the game like Start",
+      "passed": true
+    },
+    {
+      "name": "the same face button can skip the opening into the title",
+      "passed": true
+    },
+    {
+      "name": "A selects New Game from the title",
+      "passed": true
+    },
+    {
+      "name": "A selects difficulty",
+      "passed": true
+    },
+    {
+      "name": "A launches the actual pilot briefing",
+      "passed": true
+    },
+    {
+      "name": "A confirms the briefing into gameplay",
+      "passed": true
+    },
+    {
+      "name": "A selects Resume in the pause menu",
+      "passed": true
+    },
+    {
+      "name": "A selects the highlighted password keypad character",
+      "passed": true
+    },
+    {
+      "name": "A arms a binding through the exact original Options renderer",
+      "passed": true
+    },
+    {
+      "name": "B remains Back and cancels Options without selecting",
+      "passed": true
+    },
+    {
+      "name": "A completes controller setup just like Start",
+      "passed": true
+    },
+    {
+      "name": "L shoulder captures existing northward travel and D-pad aims west despite an idle mouse",
+      "passed": true
+    },
+    {
+      "name": "A fires west along shoulder-controlled turret aim while the tank still cruises north",
+      "passed": true
+    },
+    {
+      "name": "new mouse movement can still aim east while shoulder cruise continues north",
+      "passed": true
+    },
+    {
+      "name": "a fresh D-pad direction takes shoulder aim back from the mouse",
+      "passed": true
+    },
+    {
+      "name": "a saved nondefault L shoulder controls free aim and continued travel",
+      "passed": true
+    },
+    {
+      "name": "standard right-stick aim remains independent when L and drive are held together",
+      "passed": true
+    },
+    {
+      "name": "one R tap launches a travelling, shrinking BOF seeker after release",
+      "passed": true
+    },
+    {
+      "name": "actual seeker rendering uses the original retm animation master",
+      "passed": true
+    },
+    {
+      "name": "R tap acquires without keeping the shoulder held and without a forward-cone restriction",
+      "passed": true
+    },
+    {
+      "name": "actual ordinary lock rendering uses BOF retmb animation with Cole neon green",
+      "passed": true
+    },
+    {
+      "name": "a second R tap cycles to the next visible enemy",
+      "passed": true
+    },
+    {
+      "name": "a released lock expires without an automatic target replacement",
+      "passed": true
+    },
+    {
+      "name": "holding R maintains the lock window",
+      "passed": true
+    },
+    {
+      "name": "holding R and A launches a real guided tank missile at the acquired target",
+      "passed": true
+    },
+    {
+      "name": "the released BOF lock is also usable by the normal cannon binding",
+      "passed": true
+    },
+    {
+      "name": "destroying a marked target invalidates its lock",
+      "passed": true
+    },
+    {
+      "name": "solid buildings prevent Retina from selecting a concealed enemy",
+      "passed": true
+    },
+    {
+      "name": "the remapped R shoulder acquires a live lock",
+      "passed": true
+    },
+    {
+      "name": "all seventeen original BOF Retina cells decode with even dimensions",
+      "passed": true
+    },
+    {
+      "name": "real arena entry still rolls the smaller Warrior into the dossier",
+      "passed": true
+    },
+    {
+      "name": "every dossier text run is fitted and centered inside its assigned frame",
+      "passed": true
+    },
+    {
+      "name": "Continue A/Start prompts remain inside the generated outer card frame",
+      "passed": true
+    },
+    {
+      "name": "printed A selects Continue on the boss dossier exactly as Start does",
+      "passed": true
+    },
+    {
+      "name": "smaller Warrior and escape area use the existing 640x480 view at normal zoom",
+      "passed": true
+    },
+    {
+      "name": "boss parts acquire after an R tap and draw the actual BOF boss Retina",
+      "passed": true
+    },
+    {
+      "name": "smaller detached arms preserve the scaled mounted sprite, pivot and rotation",
+      "passed": true
+    },
+    {
+      "name": "the expansion pilot screen retains two rows of six within its frame",
+      "passed": true
+    },
+    {
+      "name": "Help shows the restored Retina and shoulder-fire scheme",
+      "passed": true
+    },
+    {
+      "name": "browser has no page, console, asset or audio errors",
+      "passed": true
+    }
+  ],
+  "observations": {
+    "seeker": {
+      "phase": "seek",
+      "x": 301.4814814814815,
+      "y": 2119.6296296296296,
+      "scale": 1.3555555555555556,
+      "origin": 400,
+      "target": 260
+    },
+    "cardText": [
+      {
+        "text": "THE WARRIOR",
+        "box": [
+          146,
+          74,
+          348,
+          26
+        ],
+        "size": 22,
+        "width": 171.09714285714284,
+        "center": [
+          320,
+          87
+        ]
+      },
+      {
+        "text": "OVERDRIVE / ENEMY DOSSIER",
+        "box": [
+          146,
+          57,
+          348,
+          16
+        ],
+        "size": 8,
+        "width": 137,
+        "center": [
+          320,
+          65
+        ]
+      },
+      {
+        "text": "CLASS: SUPERHEAVY / FURY TANK HUNTER",
+        "box": [
+          146,
+          101,
+          348,
+          16
+        ],
+        "size": 7,
+        "width": 172.375,
+        "center": [
+          320,
+          109
+        ]
+      },
+      {
+        "text": "HP 510",
+        "box": [
+          374,
+          138,
+          208,
+          18
+        ],
+        "size": 11,
+        "width": 42.625,
+        "center": [
+          478,
+          147
+        ]
+      },
+      {
+        "text": "HULL GUARD 82% / HELMET ACTIVE",
+        "box": [
+          374,
+          155,
+          208,
+          14
+        ],
+        "size": 7,
+        "width": 142.625,
+        "center": [
+          478,
+          162
+        ]
+      },
+      {
+        "text": "TARGETABLE PARTS",
+        "box": [
+          374,
+          169,
+          208,
+          14
+        ],
+        "size": 8,
+        "width": 93,
+        "center": [
+          478,
+          176
+        ]
+      },
+      {
+        "text": "LEFT TURRET / 85 HP",
+        "box": [
+          379,
+          184,
+          196,
+          16
+        ],
+        "size": 8,
+        "width": 102,
+        "center": [
+          477,
+          192
+        ]
+      },
+      {
+        "text": "RIGHT TURRET / 85 HP",
+        "box": [
+          379,
+          206,
+          196,
+          16
+        ],
+        "size": 8,
+        "width": 106,
+        "center": [
+          477,
+          214
+        ]
+      },
+      {
+        "text": "HEAD / HELMET / 120 HP",
+        "box": [
+          379,
+          228,
+          196,
+          16
+        ],
+        "size": 8,
+        "width": 115,
+        "center": [
+          477,
+          236
+        ]
+      },
+      {
+        "text": "BODY / HULL / 220 HP",
+        "box": [
+          379,
+          250,
+          196,
+          16
+        ],
+        "size": 8,
+        "width": 105,
+        "center": [
+          477,
+          258
+        ]
+      },
+      {
+        "text": "ATTACK PROFILE",
+        "box": [
+          374,
+          270,
+          208,
+          16
+        ],
+        "size": 8,
+        "width": 79,
+        "center": [
+          478,
+          278
+        ]
+      },
+      {
+        "text": "MACHINE-GUN BROADSIDES",
+        "box": [
+          378,
+          286,
+          200,
+          11
+        ],
+        "size": 7,
+        "width": 107.625,
+        "center": [
+          478,
+          291.5
+        ]
+      },
+      {
+        "text": "VISOR LASER VOLLEYS",
+        "box": [
+          378,
+          297,
+          200,
+          11
+        ],
+        "size": 7,
+        "width": 92.75,
+        "center": [
+          478,
+          302.5
+        ]
+      },
+      {
+        "text": "HOMING MISSILE SALVOS",
+        "box": [
+          378,
+          308,
+          200,
+          11
+        ],
+        "size": 7,
+        "width": 99.75,
+        "center": [
+          478,
+          313.5
+        ]
+      },
+      {
+        "text": "CONCRETE-SMASHING RAM",
+        "box": [
+          378,
+          319,
+          200,
+          11
+        ],
+        "size": 7,
+        "width": 104.125,
+        "center": [
+          478,
+          324.5
+        ]
+      },
+      {
+        "text": "360 VIEW / 092 DEG",
+        "box": [
+          61,
+          139,
+          291,
+          18
+        ],
+        "size": 8,
+        "width": 94,
+        "center": [
+          206.5,
+          148
+        ]
+      },
+      {
+        "text": "ROTATING ARMOR SCAN",
+        "box": [
+          61,
+          315,
+          291,
+          14
+        ],
+        "size": 7,
+        "width": 92.75,
+        "center": [
+          206.5,
+          322
+        ]
+      },
+      {
+        "text": "WARNING -",
+        "box": [
+          72,
+          361,
+          496,
+          20
+        ],
+        "size": 11,
+        "width": 64.625,
+        "center": [
+          320,
+          371
+        ]
+      },
+      {
+        "text": "\"Stings like a butterfly,",
+        "box": [
+          72,
+          379,
+          496,
+          15
+        ],
+        "size": 9,
+        "width": 148.5,
+        "center": [
+          320,
+          386.5
+        ]
+      },
+      {
+        "text": "Tramples you like a giant ass tank that it is!\"",
+        "box": [
+          72,
+          394,
+          496,
+          15
+        ],
+        "size": 9,
+        "width": 271.125,
+        "center": [
+          320,
+          401.5
+        ]
+      },
+      {
+        "text": "ROTATE / PARTS",
+        "box": [
+          83,
+          423,
+          102,
+          18
+        ],
+        "size": 7,
+        "width": 68.25,
+        "center": [
+          134,
+          432
+        ]
+      },
+      {
+        "text": "CONTINUE",
+        "box": [
+          215.5,
+          423,
+          102,
+          18
+        ],
+        "size": 7,
+        "width": 40.25,
+        "center": [
+          266.5,
+          432
+        ]
+      },
+      {
+        "text": "OVERVIEW",
+        "box": [
+          348,
+          423,
+          102,
+          18
+        ],
+        "size": 7,
+        "width": 40.25,
+        "center": [
+          399,
+          432
+        ]
+      },
+      {
+        "text": "CONTINUE",
+        "box": [
+          480.5,
+          423,
+          102,
+          18
+        ],
+        "size": 7,
+        "width": 40.25,
+        "center": [
+          531.5,
+          432
+        ]
+      }
+    ],
+    "arena": {
+      "scale": 0.85,
+      "bounds": {
+        "left": 211.63150000000002,
+        "top": 332.26,
+        "right": 583.6,
+        "bottom": 603.274
+      },
+      "cam": {
+        "x": 77.61575000000005,
+        "y": 259.93699271319286
+      },
+      "zoom": 1,
+      "view": [
+        640,
+        480
+      ]
+    }
+  },
+  "capturesInspected": [
+    "_shots/overdrive_retina_1012/retina_seeking.png",
+    "_shots/overdrive_retina_1012/retina_locked.png",
+    "_shots/overdrive_retina_1012/shoulder_aim_west.png",
+    "_shots/overdrive_retina_1012/card_centered.png",
+    "_shots/overdrive_retina_1012/warrior_arena_smaller.png",
+    "_shots/overdrive_retina_1012/warrior_bof_retina.png",
+    "_shots/overdrive_retina_1012/hotwire_text_fitted.png",
+    "_shots/overdrive_retina_1012/shoulder_help_fitted.png"
+  ],
+  "sources": [
+    "expansion/topdown/js/retina.js",
+    "expansion/topdown/js/core.js",
+    "expansion/topdown/js/art.js",
+    "expansion/topdown/js/tank.js",
+    "expansion/topdown/js/main.js",
+    "expansion/topdown/js/boss_warrior.js",
+    "expansion/topdown/js/boss_intro_1011.js",
+    "expansion/topdown/js/frontend_1011.js",
+    "expansion/topdown/_research/original_options_adapter_1011.js"
+  ],
+  "probe": "expansion/topdown/_research/probe_retina_1012.py"
+}

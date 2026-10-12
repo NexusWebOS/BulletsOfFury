@@ -23,122 +23,135 @@
 
   // Stick-free six-button controls. Movement and firing direction are independent.
   const BIND = TD.BIND = {
-    up:['arrowup','w'],down:['arrowdown','s'],left:['arrowleft','a'],right:['arrowright','d'],
+    up:['w','arrowup'],down:['s','arrowdown'],left:['a','arrowleft'],right:['d','arrowright'],
     A:['j','z'],B:['k','x'],C:['l','c','shift'],X:['h','v',' '],Y:['u'],retina:['i','n'],
     aimLeft:['q'],aimRight:['e'],back:['b','escape'],help:['f1','?'],setup:['f2'],start:['enter','p'],
-    reload:['r'],prone:['f'],tapWall:['t'],crash:['g'],exitVehicle:['o'],swap:['tab'],
+    reload:['r'],boost:['r'],cruise:['f'],prone:['f'],tapWall:['t'],crash:['g'],exitVehicle:['o'],swap:['tab'],
   };
+  const KEY_DEFAULTS=JSON.parse(JSON.stringify(BIND));
+  try{const b=JSON.parse(localStorage.getItem('bof_od_keys')||'{}');for(const k in BIND)if(Array.isArray(b[k])&&b[k].length&&b[k].every(v=>typeof v==='string'&&v!=='backspace'))BIND[k]=b[k];}catch(e){}
   const keys = {}, pointer = {active:false,x:0,y:0,buttons:{}}, screen=document.getElementById('screen');
-  root.addEventListener('keydown',e=>{const k=e.key.toLowerCase();keys[k]=true;if(k.startsWith('arrow')||[' ','f1','f2'].includes(k))e.preventDefault();TD.Audio.unlock();});
+  let aimSource=null, previousPadAim=null;
+  root.addEventListener('keydown',e=>{const k=e.key.toLowerCase();TD.Audio.unlock();if(k==='enter'&&e.altKey&&!TD.Input.rebind&&!TD.OriginalOptions?.snapshot().capture&&!TD.Frontend?.typing)return;if(TD.Input.textSink&&TD.Input.textSink(e)){e.preventDefault();return;}if(TD.Input.rebind?.kind==='key'){e.preventDefault();if(k==='escape'){TD.Input.rebind=null;return;}if(k==='backspace'||['alt','control','meta'].includes(k))return;BIND[TD.Input.rebind.action]=[k];TD.Input.saveKeys();TD.Input.rebind=null;for(const v in keys)keys[v]=false;return;}keys[k]=true;if(k.startsWith('arrow')||[' ','f1','f2','tab'].includes(k))e.preventDefault();});
   root.addEventListener('keyup',e=>{keys[e.key.toLowerCase()]=false;});
-  root.addEventListener('blur',()=>{for(const k in keys)keys[k]=false;pointer.buttons={};pointer.active=false;});
-  function locate(e){const r=screen.getBoundingClientRect();pointer.x=(e.clientX-r.left)*TD.VW/r.width;pointer.y=(e.clientY-r.top)*TD.VH/r.height;pointer.active=pointer.x>=0&&pointer.y>=0&&pointer.x<TD.VW&&pointer.y<TD.VH;}
+  root.addEventListener('blur',()=>{for(const k in keys)keys[k]=false;pointer.buttons={};pointer.active=false;aimSource=null;});
+  function locate(e){const r=screen.getBoundingClientRect(),v=TD.Display||{w:TD.VW,h:TD.VH};const x=(e.clientX-r.left)*v.w/r.width,y=(e.clientY-r.top)*v.h/r.height;const moved=Math.hypot(x-pointer.x,y-pointer.y)>.5;pointer.x=x;pointer.y=y;pointer.active=x>=0&&y>=0&&x<v.w&&y<v.h;if(pointer.active&&(moved||e.type==='pointerdown'))aimSource='mouse';}
   screen.addEventListener('pointermove',locate);
   screen.addEventListener('pointerdown',e=>{locate(e);pointer.buttons[e.button]=true;TD.Audio.unlock();e.preventDefault();});
   root.addEventListener('pointerup',e=>{delete pointer.buttons[e.button];});
   screen.addEventListener('pointerleave',()=>{pointer.active=false;});
   screen.addEventListener('contextmenu',e=>e.preventDefault());
-  const DEFAULT_PAD={A:0,B:1,C:5,X:2,Y:3,Z:4,mode:8,start:9};
-  const SETUP_STEPS=['up','down','left','right','A','B','C','X','Y','Z','mode','start'];
+  const DEFAULT_PAD={A:0,B:1,C:5,X:2,Y:3,Z:4,mode:8,start:9,L:6,R:7};
+  const STANDARD_PAD={style:'standard',A:0,B:1,X:2,Y:3,L:4,R:5,boost:6,mode:8,start:9};
+  const SETUP_STEPS=['up','down','left','right','A','B','C','X','Y','Z','mode','start','L','R'];
   let wheel=0;root.addEventListener('wheel',e=>{wheel+=Math.sign(e.deltaY);},{passive:true});
   let queuedClick=false;screen.addEventListener("pointerdown",e=>{if(e.button===0)queuedClick=true;});
-  let activePad=null, profile=DEFAULT_PAD, saved={}, previousId=null;
+  let activePad=null, profile=DEFAULT_PAD, saved={}, previousId=null,defaultStyle='six';
+  try{defaultStyle=localStorage.getItem('bof_od_pad_style')||'six';if(defaultStyle==='standard')profile=STANDARD_PAD;}catch(e){}
   try{saved=JSON.parse(localStorage.getItem('bof_td_controllers')||'{}');}catch(e){}
   const Input=TD.Input={
-    state:{},last:{},pointer,setup:null,padId:null,
-    beginSetup(){this.setup={i:0,bindings:{},neutral:false,done:false};},
+    state:{},last:{},raw:{},lastRaw:{},pointer,setup:null,padId:null,
+    rebind:null,textSink:null,combatLatch:new Set(),
+    // Only physical fire inputs held at the cutscene boundary need a release.
+    // Other buttons/devices remain usable, including a held Retina shoulder.
+    holdCombat(){this.combatLatch.clear();for(const a of ['A','B','X','Y'])for(const k of BIND[a])if(this.raw[k])this.combatLatch.add(k);for(const a of ['A','B','C','X','Y']){const b=profile[a];const k=typeof b==='number'?'pad_'+b:b&&b.axis!=null?'pad_axis'+b.axis+'_'+(b.sign<0?'neg':'pos'):null;if(k&&this.raw[k])this.combatLatch.add(k);}for(let i=0;i<3;i++)if(pointer.buttons[i])this.combatLatch.add('mouse'+i);return this.combatLatch.size>0;},
+    saveKeys(){try{localStorage.setItem('bof_od_keys',JSON.stringify(BIND));}catch(e){}},
+    resetKeys(){for(const k in BIND)BIND[k]=KEY_DEFAULTS[k].slice();this.saveKeys();},
+    keyLabel(a){return(BIND[a]||[]).map(k=>({' ':'SPACE',arrowup:'UP',arrowdown:'DOWN',arrowleft:'LEFT',arrowright:'RIGHT'}[k]||k.toUpperCase())).join(' / ');},
+    padStyle(){return profile.style==='standard'?'standard':'six';},
+    padProfile(){const p=Object.assign({},this.padStyle()==='standard'?STANDARD_PAD:DEFAULT_PAD,profile);delete p.style;return p;},
+    // BOF accepts non-Back face/shoulder buttons in menus: the printed A on
+    // a six-button controller is not necessarily browser button zero.
+    menuFaceTokens(){const token=b=>typeof b==='number'?'pad_'+b:b&&b.axis!=null?'pad_axis'+b.axis+'_'+(b.sign<0?'neg':'pos'):null;const excluded=new Set(['B','mode','start','up','down','left','right'].map(k=>token(profile[k])).filter(Boolean));return [...new Set([0,2,3,4,5,7].map(n=>'pad_'+n).concat(['A','C','X','Y','Z','L','R'].map(k=>token(profile[k]))))].filter(k=>k&&!excluded.has(k));},
+    setPadBinding(a,b){profile=Object.assign({},this.padStyle()==='standard'?STANDARD_PAD:DEFAULT_PAD,profile,{[a]:b});if(activePad){saved[activePad.id]=profile;try{localStorage.setItem('bof_td_controllers',JSON.stringify(saved));}catch(e){}}},
+    setPadStyle(style){defaultStyle=style;profile=Object.assign({},style==='standard'?STANDARD_PAD:DEFAULT_PAD);try{localStorage.setItem('bof_od_pad_style',style);}catch(e){}if(activePad){saved[activePad.id]=profile;try{localStorage.setItem('bof_td_controllers',JSON.stringify(saved));}catch(e){}}},
+    resetPad(){this.setPadStyle(this.padStyle());},
+    beginSetup(){const standard=this.padStyle()==='standard';this.setup={i:0,bindings:standard?{style:'standard'}:{},steps:standard?['up','down','left','right','A','B','X','Y','mode','start','L','R','boost']:SETUP_STEPS,neutral:false,done:false};},
     update(){
       const pads=root.navigator.getGamepads?root.navigator.getGamepads():[];
       activePad=Array.from(pads).find(p=>p&&p.connected!==false)||null;
       this.padId=activePad?activePad.id:null;
-      if(this.padId!==previousId){profile=saved[this.padId]||DEFAULT_PAD;previousId=this.padId;}
-      const held=i=>!!(activePad&&activePad.buttons[i]&&activePad.buttons[i].pressed);
-      const mapped=name=>{const b=profile[name];return typeof b==='number'?held(b):b&&b.axis!=null?((activePad.axes[b.axis]||0)*b.sign>.55):false;};
+      if(this.padId!==previousId){const stored=saved[this.padId];const style=stored?.style||defaultStyle;profile=Object.assign({},style==='standard'?STANDARD_PAD:DEFAULT_PAD,stored);previousId=this.padId;previousPadAim=null;}
+      this.lastRaw=this.raw;this.raw={...keys};
+      if(activePad){activePad.buttons.forEach((b,i)=>{this.raw['pad_'+i]=!!b.pressed||b.value>.5;});activePad.axes.forEach((v,i)=>{this.raw['pad_axis'+i+'_neg']=v<-.55&&v>=-1;this.raw['pad_axis'+i+'_pos']=v>.55&&v<=1;});}
+      for(const k of this.combatLatch)if(k.startsWith('mouse')?!pointer.buttons[+k.slice(5)]:!this.raw[k])this.combatLatch.delete(k);
+      const held=(i,combat=false)=>!!this.raw['pad_'+i]&&(!combat||!this.combatLatch.has('pad_'+i));
+      const mapped=(name,combat=false)=>{const b=profile[name];if(typeof b==='number')return held(b,combat);if(b&&b.axis!=null){const k='pad_axis'+b.axis+'_'+(b.sign<0?'neg':'pos');return!!this.raw[k]&&(!combat||!this.combatLatch.has(k));}return false;};
+      const fireMapped=name=>mapped(name,true);
       this.last=this.state;const s={};for(const a in BIND)s[a]=BIND[a].some(k=>keys[k]);
+      if(TD.game?.state==='play'&&!TD.BossIntro?.active(TD.game))for(const a of ['A','B','X','Y'])s[a]=BIND[a].some(k=>this.raw[k]&&!this.combatLatch.has(k));
+      if(this.rebind){if(s.back){this.rebind=null;this.state={};return;}const q=this.rebind;if(q.kind==='pad'&&activePad){const pressed=activePad.buttons.map((b,i)=>held(i)?i:-1).filter(i=>i>=0);if(!pressed.length)q.neutral=true;else if(q.neutral&&pressed.length===1){this.setPadBinding(q.action,pressed[0]);this.rebind=null;}}this.state={};return;}
       if(this.setup){
-        if(this.setup.done)s.start||=mapped("start");
+        if(this.setup.done){s.start||=mapped("start");s.A||=this.menuFaceTokens().some(k=>this.raw[k]);s.back||=mapped('B');}
         const q=this.setup;
+        s.click=!!pointer.buttons[0]||queuedClick;queuedClick=false;
         if(s.back){this.setup=null;this.state=s;return;}
         if(activePad&&!q.done){
-          const buttons=activePad.buttons.map((b,i)=>b.pressed?i:-1).filter(i=>i>=0);
+          const buttons=activePad.buttons.map((b,i)=>held(i)?i:-1).filter(i=>i>=0);
           const axes=activePad.axes.map((v,i)=>Math.abs(v)>.65&&Math.abs(v)<=1?{axis:i,sign:Math.sign(v)}:null).filter(Boolean);
           // Hat axes often rest at >1. Ignore those; mapped D-pad buttons remain supported.
           if(!buttons.length&&!axes.length)q.neutral=true;
           else if(q.neutral){const move=q.i<4, binding=buttons.length===1?buttons[0]:move&&axes.length===1?axes[0]:null;
-            if(binding!=null){q.bindings[SETUP_STEPS[q.i++]]=binding;q.neutral=false;
-              if(q.i===SETUP_STEPS.length){profile=q.bindings;saved[activePad.id]=profile;try{localStorage.setItem('bof_td_controllers',JSON.stringify(saved));}catch(e){}q.done=true;}
+            if(binding!=null){q.bindings[q.steps[q.i++]]=binding;q.neutral=false;
+              if(q.i===q.steps.length){profile=q.bindings;saved[activePad.id]=profile;try{localStorage.setItem('bof_td_controllers',JSON.stringify(saved));}catch(e){}q.done=true;}
             }
           }
         }
         this.state=s;return;
       }
-      const menu=!TD.game||TD.game.state!=='play',mode=mapped('mode');
+      const menu=!TD.game||TD.game.state!=='play'||TD.BossIntro?.active(TD.game),mode=mapped('mode');
       if(activePad){
-        if(activePad.buttons[12]?.pressed||mapped('up'))s.up=true;
-        if(activePad.buttons[13]?.pressed||mapped('down'))s.down=true;
-        if(activePad.buttons[14]?.pressed||mapped('left'))s.left=true;
-        if(activePad.buttons[15]?.pressed||mapped('right'))s.right=true;
-        // Default M30 X-input D-pad can emulate the left stick. Learned profiles take precedence.
-        if(profile===DEFAULT_PAD){const ax=activePad.axes[0]||0,ay=activePad.axes[1]||0;if(ax<-.35)s.left=true;if(ax>.35)s.right=true;if(ay<-.35)s.up=true;if(ay>.35)s.down=true;}
+        // A saved binding (including an intentional unbind) owns its direction.
+        // Default D-pad/stick fallbacks must not also fire reassigned buttons.
+        const ax=activePad.axes[0]||0,ay=activePad.axes[1]||0;
+        for(const [name,button,axis,sign]of [['up',12,ay,-1],['down',13,ay,1],['left',14,ax,-1],['right',15,ax,1]]){
+          const custom=Object.prototype.hasOwnProperty.call(profile,name);
+          if(custom?mapped(name):held(button)||(Math.abs(axis)<=1&&axis*sign>.35))s[name]=true;
+        }
         if(mapped('start'))s.start=true;
-        if(menu){s.A||=mapped('A');s.back||=mapped('B')||mode;s.setup||=mode&&mapped('start');}
+        if(menu){s.A||=this.menuFaceTokens().some(k=>this.raw[k]);s.back||=mapped('B')||mode;s.setup||=mode&&mapped('start');}
         else{
           const foot=TD.game.player?.onfoot;
-          if(mode){s.C=!foot||s.C;s.Y||=!foot&&mapped('Z');s.reload||=foot&&mapped('A');s.prone||=foot&&mapped('X');s.tapWall||=foot&&mapped('Y');s.swap||=foot&&mapped('B');s.crash||=foot&&mapped('C');s.exitVehicle||=!foot&&mapped('B');}
-          const dx=(mapped('B')?1:0)-(mapped('Y')?1:0),dy=(mapped('A')?1:0)-(mapped('X')?1:0);
-          if(!mode&&(dx||dy)){s.aim=[dx,dy];s.A=true;s.directionalFire=true;}
-          s.X||=mapped('C');if(!mode){if(foot)s.Y||=mapped('Z');else s.retina||=mapped('Z');}
+          s.cruise||=!foot&&mapped('L');s.retina||=!foot&&mapped('R');
+          if(this.padStyle()==='standard'){
+            s.A||=fireMapped('A');s.B||=fireMapped('B');s.X||=fireMapped('X');s.Y||=fireMapped('Y');s.C||=mode&&!foot;s.boost||=!foot&&mapped('boost');
+            if(foot&&mode){s.reload||=mapped('A');s.prone||=mapped('X');s.tapWall||=mapped('Y');s.swap||=mapped('B');s.A=s.B=s.X=s.Y=false;}
+            const ax=activePad.axes[2]||0,ay=activePad.axes[3]||0;if(Math.hypot(ax,ay)>.3)s.aim=[ax,ay];
+          }else{
+          if(mode){s.C=!foot||s.C;s.Y||=!foot&&fireMapped('Z');s.reload||=foot&&mapped('A');s.prone||=foot&&mapped('X');s.tapWall||=foot&&mapped('Y');s.swap||=foot&&mapped('B');s.crash||=foot&&mapped('C');s.exitVehicle||=!foot&&mapped('B')&&!mapped('C');}
+          const dx=(fireMapped('B')?1:0)-(fireMapped('Y')?1:0),dy=(fireMapped('A')?1:0)-(fireMapped('X')?1:0);
+          const cruiseFire=s.cruise&&fireMapped('A')&&!fireMapped('B')&&!fireMapped('X')&&!fireMapped('Y');
+          if(cruiseFire)s.A=true;
+          else if((!mode||(!foot&&mapped('C')))&&(dx||dy)){s.aim=[dx,dy];s.A=true;s.directionalFire=true;}
+          s.boost||=!foot&&mode&&mapped('C');
+          s.X||=fireMapped('C')&&(foot||!mode);if(!mode){if(foot)s.Y||=fireMapped('Z');else s.retina||=mapped('Z');}
+          }
         }
         if(Object.values(s).some(Boolean))TD.Audio.unlock();
       }
-      s.wheel=wheel;wheel=0;s.click=!!pointer.buttons[0]||queuedClick;queuedClick=false;if(pointer.buttons[0])s.A=true;
-      if(pointer.buttons[2])s.X=true;if(pointer.buttons[1])s.Y=true;
-      s.padActive=!!activePad&&(!!s.aim||!!s.up||!!s.down||!!s.left||!!s.right||mapped("Z")||mapped("C"));
+      s.wheel=wheel;wheel=0;s.click=!!pointer.buttons[0]||queuedClick;queuedClick=false;
+      if(pointer.buttons[0]&&(menu||!this.combatLatch.has('mouse0')))s.A=true;
+      if(pointer.buttons[2]&&(menu||!this.combatLatch.has('mouse2')))s.X=true;if(pointer.buttons[1]&&(menu||!this.combatLatch.has('mouse1')))s.Y=true;
+      // Movement, cruise and Retina never take aim away from the mouse.
+      // A new stick deflection takes over; an unchanged held stick cannot
+      // immediately steal aim back after an actual pointer movement.
+      if(s.aim&&(!previousPadAim||Math.hypot(s.aim[0]-previousPadAim[0],s.aim[1]-previousPadAim[1])>.12))aimSource='pad';
+      previousPadAim=s.aim?s.aim.slice():null;
+      if(s.cruise&&!menu){const dx=(s.right?1:0)-(s.left?1:0),dy=(s.down?1:0)-(s.up?1:0);if(dx||dy){s.freeAim=[dx,dy];if(!s.aim&&(!this.last.cruise||this.last.freeAim?.[0]!==dx||this.last.freeAim?.[1]!==dy))aimSource='cruise';}}
+      if(s.aimLeft||s.aimRight)aimSource='keyboard';
+      s.aimSource=aimSource;s.padActive=!!s.aim;
       this.state=s;
     },
     down(a){return !!this.state[a];},tap(a){return !!this.state[a]&&!this.last[a];},released(a){return !this.state[a]&&!!this.last[a];},
     dir(){const s=this.state;return[(s.right?1:0)-(s.left?1:0),(s.down?1:0)-(s.up?1:0)];},
-    aim(p){if(this.state.aim)return TD.M.angTo(0,0,...this.state.aim);if(pointer.active&&!this.state.padActive)return TD.M.angTo(p.x,p.y,pointer.x/TD.Cam.zoom+TD.Cam.x,pointer.y/TD.Cam.zoom+TD.Cam.y);return null;},
+    aim(p){const s=this.state;if(s.directionalFire)return TD.M.angTo(0,0,...s.aim);if(s.aimLeft||s.aimRight)return null;if(s.freeAim&&s.aimSource==='cruise')return TD.M.angTo(0,0,...s.freeAim);if(s.aim&&(s.aimSource!=='mouse'||!pointer.active))return TD.M.angTo(0,0,...s.aim);if(pointer.active&&s.aimSource==='mouse')return TD.M.angTo(p.x,p.y,pointer.x/TD.Cam.zoom+TD.Cam.x,pointer.y/TD.Cam.zoom+TD.Cam.y);return null;},
     confirm(){return this.tap('A')||this.tap('start');},
-    setupLabel(){return this.setup?.done?'SAVED - RELEASE START, THEN PRESS START':!activePad?'CONNECT YOUR CONTROLLER':('PRESS '+SETUP_STEPS[this.setup?.i||0].toUpperCase());},
+    setupLabel(){return this.setup?.done?'SAVED - RELEASE START, THEN PRESS START':!activePad?'CONNECT YOUR CONTROLLER':('PRESS '+(this.setup?.steps||SETUP_STEPS)[this.setup?.i||0].toUpperCase());},
   };
 
-  // ------------------------------------------------------------------ audio (BOF's own samples)
-  // Every key has a retrigger gate: an ungated sample fired by many units is the beeping this
-  // project has been chasing for months (0912j). HTMLAudio only - no WebAudio graph, so it plays
-  // from file:// (0918: a media element routed through WebAudio is silent there).
-  const SFX = {
-    mg: ['nsp_bof2_shot.mp3', 0.30, 0.05], cannon: ['nsp_bof2_charge_shot.mp3', 0.70, 0.08], eshot: ['enemyShoot.mp3', 0.30, 0.07],
-    hit: ['hit.mp3', 0.45, 0.04], expS: ['expSmall.mp3', 0.75, 0.04], expB: ['expBig.mp3', 0.85, 0.07], pick: ['nsp_bof2_pickup.mp3', 0.6, 0.05],
-    blip: ['nsp_console_beep.mp3', 0.45, 0.06], alert: ['nsp_alert_critical.mp3', 0.8, 1.2], warn: ['nsp_bof2_boss_warning.mp3', 0.8, 2.0],
-    laser: ['nsp_heavy_laser.mp3', 0.45, 0.12], missile: ['nsp_rocket_launch.mp3', 0.5, 0.12], lock: ['nsp_nav_lock.mp3', 0.5, 0.2],
-    charge: ['retina_charge.mp3', 0.55, 0.5], intro: ['nsp_bof2_stage_intro.mp3', 0.7, 1.0], phase: ['bossPhase.mp3', 0.8, 0.5],
-    whiteout: ['nsp_bof2_ultra_blast.mp3', 0.8, 1.0], engine: ['nsp_engine_loop.mp3', 0.0, 0],
-  };
-  const MUSIC = {
-    level2: 'assets/game/shared/audio/music/Unused1.mp3', boss2: 'assets/game/shared/audio/music/Unused11.mp3',
-    clear: 'assets/game/shared/audio/music/Password_StageClear.mp3', title: 'assets/game/shared/audio/music/Unused10.mp3',
-  };
-  const Audio = TD.Audio = {
-    on: false, vol: 0.8, mvol: 0.55, pools: {}, lastT: {}, music: null, musicKey: null,
-    unlock() { if (this.on) return; this.on = true; if (this._pending) { const k = this._pending; this._pending = null; this.playMusic(k); } },
-    play(k, gain) {
-      const d = SFX[k]; if (!d || !this.on) return;
-      const now = performance.now() / 1000; if (now - (this.lastT[k] || -9) < d[2]) return; this.lastT[k] = now;
-      let pool = this.pools[k];
-      if (!pool) { pool = this.pools[k] = []; for (let i = 0; i < 4; i++) { const a = new root.Audio(ART.BASE + 'assets/game/shared/audio/sounds/' + d[0]); a.preload = 'auto'; pool.push(a); } pool.i = 0; }
-      const a = pool[pool.i = (pool.i + 1) % pool.length];
-      try { a.currentTime = 0; a.volume = M.clamp(d[1] * (gain == null ? 1 : gain) * this.vol, 0, 1); a.play().catch(() => { }); } catch (e) { }
-    },
-    playMusic(k) {
-      if (this.musicKey === k && this.music) return;
-      if (!this.on) { this._pending = k; return; }
-      this.stopMusic(); const p = MUSIC[k]; if (!p) return;
-      const a = new root.Audio(ART.BASE + p); a.loop = k !== 'clear'; a.volume = this.mvol; a.play().catch(() => { });
-      this.music = a; this.musicKey = k;
-    },
-    stopMusic() { if (this.music) { this.music.pause(); this.music = null; this.musicKey = null; } },
-  };
+  TD.Text={fit(ctx,draw,value,box,size,col,measure){const [x,y,w,h]=box,s=String(value);ctx.save();ctx.font='bold '+size+'px BOFCommand, "Arial Black", monospace';const width=measure?measure(s,size):ctx.measureText(s).width;const fitted=Math.min(size,Math.max(1,h-4),Math.max(1,w-4)*size/Math.max(1,width));draw(s,x+w/2,y+h/2,fitted,col,'center');ctx.restore();return{text:s,box:box.slice(),size:fitted,width:width*fitted/size,center:[x+w/2,y+h/2]};}};
+
+  // Audio is owned by audio_1011.js, loaded immediately after this module.
 
   // ------------------------------------------------------------------ the solid map
   // rects: [x0,y0,x1,y1,type]   'b' building/wall: blocks movement AND sight

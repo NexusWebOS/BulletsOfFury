@@ -1,0 +1,1287 @@
+{
+  "passed": 144,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "blue_rift: three 32-cell banks on one fixed even canvas/pivot",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "blue_rift: all 96 PNG checksums match the owner manifest",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "blue_rift: formation and closure share the exact approved join pose",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "blue_rift: new close is separately drawn, not the opening reversed",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "blue_rift/form: all 32 authored cells differ",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "blue_rift/form: no exterior edge clipping",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "blue_rift/close: all 32 authored cells differ",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "blue_rift/close: no exterior edge clipping",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "blue_rift: close ends fully transparent",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "blue_rift: original loop pixels preserved inside padding",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "red_rift: three 32-cell banks on one fixed even canvas/pivot",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "red_rift: all 96 PNG checksums match the owner manifest",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "red_rift: formation and closure share the exact approved join pose",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "red_rift: new close is separately drawn, not the opening reversed",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "red_rift/form: all 32 authored cells differ",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "red_rift/form: no exterior edge clipping",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "red_rift/close: all 32 authored cells differ",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "red_rift/close: no exterior edge clipping",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "red_rift: close ends fully transparent",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "red_rift: original loop pixels preserved inside padding",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "green_rift: three 32-cell banks on one fixed even canvas/pivot",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "green_rift: all 96 PNG checksums match the owner manifest",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "green_rift: formation and closure share the exact approved join pose",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "green_rift: new close is separately drawn, not the opening reversed",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "green_rift/form: all 32 authored cells differ",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "green_rift/form: no exterior edge clipping",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "green_rift/close: all 32 authored cells differ",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "green_rift/close: no exterior edge clipping",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "green_rift: close ends fully transparent",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "green_rift: original loop pixels preserved inside padding",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "black_void: three 32-cell banks on one fixed even canvas/pivot",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "black_void: all 96 PNG checksums match the owner manifest",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "black_void: formation and closure share the exact approved join pose",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "black_void: new close is separately drawn, not the opening reversed",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "black_void/form: all 32 authored cells differ",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "black_void/form: no exterior edge clipping",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "black_void/close: all 32 authored cells differ",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "black_void/close: no exterior edge clipping",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "black_void: close ends fully transparent",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "black_void: original loop pixels preserved inside padding",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "gate_energy: three 32-cell banks on one fixed even canvas/pivot",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "gate_energy: all 96 PNG checksums match the owner manifest",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "gate_energy: formation and closure share the exact approved join pose",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "gate_energy: new close is separately drawn, not the opening reversed",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "gate_energy/form: all 32 authored cells differ",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "gate_energy/form: no exterior edge clipping",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "gate_energy/close: all 32 authored cells differ",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "gate_energy/close: no exterior edge clipping",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "gate_energy: close ends fully transparent",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "gate_energy: original loop pixels preserved inside padding",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "amethyst_gate: three 32-cell banks on one fixed even canvas/pivot",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "amethyst_gate: all 96 PNG checksums match the owner manifest",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "amethyst_gate: formation and closure share the exact approved join pose",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "amethyst_gate: new close is separately drawn, not the opening reversed",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "amethyst_gate/form: all 32 authored cells differ",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "amethyst_gate/form: no exterior edge clipping",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "amethyst_gate/close: all 32 authored cells differ",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "amethyst_gate/close: no exterior edge clipping",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Gate armor stays fixed throughout all three phases",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Gate closure leaves only its original stationary shell",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "All 576 frames and fixed gate layers load through native XART",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "blue_rift/form: all authored keys render through the game context",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "blue_rift/loop: all authored keys render through the game context",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "blue_rift/close: all authored keys render through the game context",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "blue_rift: rendered last-to-first boundary has no image reset",
+      "passed": true,
+      "data": {
+        "continuous": 0.0796984354654948,
+        "hardSwitch": 2.3453035990397137
+      }
+    },
+    {
+      "name": "blue_rift: one-shots clamp, and long idle clocks stay in the loop",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "blue_rift: circular formation is visible in rendered pixels",
+      "passed": true,
+      "data": [
+        0.6707911173502604,
+        5.691145070393881,
+        4.164441426595052,
+        5.36994374593099,
+        3.3856175740559897
+      ]
+    },
+    {
+      "name": "blue_rift: one forward turn settles at the original loop orientation",
+      "passed": true,
+      "data": {
+        "angles": [
+          0,
+          0.00023410200271664795,
+          0.0018287178191517543,
+          0.006024987147755577,
+          0.013937653564929693,
+          0.026559277729095287,
+          0.044764450584761424,
+          0.06931400656659337,
+          0.10085923680348091,
+          0.13994610232260649,
+          0.18701944725351372,
+          0.24242721203217538,
+          0.3064246466050622,
+          0.3791785236332105,
+          0.4607713516962908,
+          0.5512055884966768,
+          0.6504078540635119,
+          0.7582331439567794,
+          0.8744690424713695,
+          0.9988399358411485,
+          1.1310112254430265,
+          1.2705935410010256,
+          1.417146953790348,
+          1.5701851898414467,
+          1.729179843144089,
+          1.8935645888514292,
+          2.0627393964840763,
+          2.236074743134159,
+          2.4129158266693973,
+          2.59258677893717,
+          2.774394878968583,
+          2.9576347661825353,
+          3.141592653589793,
+          3.3255505409970505,
+          3.508790428211004,
+          3.6905985282424156,
+          3.8702694805101885,
+          4.047110564045427,
+          4.220445910695509,
+          4.389620718328156,
+          4.554005464035497,
+          4.713000117338139,
+          4.866038353389239,
+          5.012591766178561,
+          5.152174081736559,
+          5.284345371338438,
+          5.408716264708217,
+          5.524952163222807,
+          5.632777453116074,
+          5.731979718682909,
+          5.822413955483298,
+          5.904006783546376,
+          5.9767606605745245,
+          6.040758095147414,
+          6.096165859926073,
+          6.143239204856981,
+          6.182326070376111,
+          6.213871300612992,
+          6.238420856594825,
+          6.256626029450497,
+          6.269247653614657,
+          6.27716032003183,
+          6.281356589360443,
+          6.282951205176869,
+          0
+        ],
+        "loop": 0,
+        "close": 0
+      }
+    },
+    {
+      "name": "blue_rift: forming rotation meets the loop without a visible reset",
+      "passed": true,
+      "data": 0.09454574584960937
+    },
+    {
+      "name": "blue_rift: native transform keeps the aperture fixed and restores the context",
+      "passed": true,
+      "data": {
+        "center": [
+          480,
+          512
+        ],
+        "expected": [
+          480,
+          512
+        ],
+        "restored": true
+      }
+    },
+    {
+      "name": "red_rift/form: all authored keys render through the game context",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "red_rift/loop: all authored keys render through the game context",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "red_rift/close: all authored keys render through the game context",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "red_rift: rendered last-to-first boundary has no image reset",
+      "passed": true,
+      "data": {
+        "continuous": 0.07533315022786459,
+        "hardSwitch": 2.106866455078125
+      }
+    },
+    {
+      "name": "red_rift: one-shots clamp, and long idle clocks stay in the loop",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "red_rift: circular formation is visible in rendered pixels",
+      "passed": true,
+      "data": [
+        0.7821215311686198,
+        5.083011118570964,
+        4.195577494303385,
+        5.39573008219401,
+        3.2280364990234376
+      ]
+    },
+    {
+      "name": "red_rift: one forward turn settles at the original loop orientation",
+      "passed": true,
+      "data": {
+        "angles": [
+          0,
+          0.00023410200271664795,
+          0.0018287178191517543,
+          0.006024987147755577,
+          0.013937653564929693,
+          0.026559277729095287,
+          0.044764450584761424,
+          0.06931400656659337,
+          0.10085923680348091,
+          0.13994610232260649,
+          0.18701944725351372,
+          0.24242721203217538,
+          0.3064246466050622,
+          0.3791785236332105,
+          0.4607713516962908,
+          0.5512055884966768,
+          0.6504078540635119,
+          0.7582331439567794,
+          0.8744690424713695,
+          0.9988399358411485,
+          1.1310112254430265,
+          1.2705935410010256,
+          1.417146953790348,
+          1.5701851898414467,
+          1.729179843144089,
+          1.8935645888514292,
+          2.0627393964840763,
+          2.236074743134159,
+          2.4129158266693973,
+          2.59258677893717,
+          2.774394878968583,
+          2.9576347661825353,
+          3.141592653589793,
+          3.3255505409970505,
+          3.508790428211004,
+          3.6905985282424156,
+          3.8702694805101885,
+          4.047110564045427,
+          4.220445910695509,
+          4.389620718328156,
+          4.554005464035497,
+          4.713000117338139,
+          4.866038353389239,
+          5.012591766178561,
+          5.152174081736559,
+          5.284345371338438,
+          5.408716264708217,
+          5.524952163222807,
+          5.632777453116074,
+          5.731979718682909,
+          5.822413955483298,
+          5.904006783546376,
+          5.9767606605745245,
+          6.040758095147414,
+          6.096165859926073,
+          6.143239204856981,
+          6.182326070376111,
+          6.213871300612992,
+          6.238420856594825,
+          6.256626029450497,
+          6.269247653614657,
+          6.27716032003183,
+          6.281356589360443,
+          6.282951205176869,
+          0
+        ],
+        "loop": 0,
+        "close": 0
+      }
+    },
+    {
+      "name": "red_rift: forming rotation meets the loop without a visible reset",
+      "passed": true,
+      "data": 0.07453638712565104
+    },
+    {
+      "name": "red_rift: native transform keeps the aperture fixed and restores the context",
+      "passed": true,
+      "data": {
+        "center": [
+          480,
+          512
+        ],
+        "expected": [
+          480,
+          512
+        ],
+        "restored": true
+      }
+    },
+    {
+      "name": "green_rift/form: all authored keys render through the game context",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "green_rift/loop: all authored keys render through the game context",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "green_rift/close: all authored keys render through the game context",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "green_rift: rendered last-to-first boundary has no image reset",
+      "passed": true,
+      "data": {
+        "continuous": 0.08068262736002604,
+        "hardSwitch": 2.313213857014974
+      }
+    },
+    {
+      "name": "green_rift: one-shots clamp, and long idle clocks stay in the loop",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "green_rift: circular formation is visible in rendered pixels",
+      "passed": true,
+      "data": [
+        0.7747629801432292,
+        4.459465026855469,
+        4.132391866048177,
+        5.209170532226563,
+        3.11830317179362
+      ]
+    },
+    {
+      "name": "green_rift: one forward turn settles at the original loop orientation",
+      "passed": true,
+      "data": {
+        "angles": [
+          0,
+          0.00023410200271664795,
+          0.0018287178191517543,
+          0.006024987147755577,
+          0.013937653564929693,
+          0.026559277729095287,
+          0.044764450584761424,
+          0.06931400656659337,
+          0.10085923680348091,
+          0.13994610232260649,
+          0.18701944725351372,
+          0.24242721203217538,
+          0.3064246466050622,
+          0.3791785236332105,
+          0.4607713516962908,
+          0.5512055884966768,
+          0.6504078540635119,
+          0.7582331439567794,
+          0.8744690424713695,
+          0.9988399358411485,
+          1.1310112254430265,
+          1.2705935410010256,
+          1.417146953790348,
+          1.5701851898414467,
+          1.729179843144089,
+          1.8935645888514292,
+          2.0627393964840763,
+          2.236074743134159,
+          2.4129158266693973,
+          2.59258677893717,
+          2.774394878968583,
+          2.9576347661825353,
+          3.141592653589793,
+          3.3255505409970505,
+          3.508790428211004,
+          3.6905985282424156,
+          3.8702694805101885,
+          4.047110564045427,
+          4.220445910695509,
+          4.389620718328156,
+          4.554005464035497,
+          4.713000117338139,
+          4.866038353389239,
+          5.012591766178561,
+          5.152174081736559,
+          5.284345371338438,
+          5.408716264708217,
+          5.524952163222807,
+          5.632777453116074,
+          5.731979718682909,
+          5.822413955483298,
+          5.904006783546376,
+          5.9767606605745245,
+          6.040758095147414,
+          6.096165859926073,
+          6.143239204856981,
+          6.182326070376111,
+          6.213871300612992,
+          6.238420856594825,
+          6.256626029450497,
+          6.269247653614657,
+          6.27716032003183,
+          6.281356589360443,
+          6.282951205176869,
+          0
+        ],
+        "loop": 0,
+        "close": 0
+      }
+    },
+    {
+      "name": "green_rift: forming rotation meets the loop without a visible reset",
+      "passed": true,
+      "data": 0.07117487589518229
+    },
+    {
+      "name": "green_rift: native transform keeps the aperture fixed and restores the context",
+      "passed": true,
+      "data": {
+        "center": [
+          480,
+          512
+        ],
+        "expected": [
+          480,
+          512
+        ],
+        "restored": true
+      }
+    },
+    {
+      "name": "black_void/form: all authored keys render through the game context",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "black_void/loop: all authored keys render through the game context",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "black_void/close: all authored keys render through the game context",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "black_void: rendered last-to-first boundary has no image reset",
+      "passed": true,
+      "data": {
+        "continuous": 0.08872400919596354,
+        "hardSwitch": 2.4087130228678384
+      }
+    },
+    {
+      "name": "black_void: one-shots clamp, and long idle clocks stay in the loop",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "black_void: circular formation is visible in rendered pixels",
+      "passed": true,
+      "data": [
+        0.9740976969401042,
+        1.9673670450846354,
+        1.970342508951823,
+        3.611590830485026,
+        2.719287872314453
+      ]
+    },
+    {
+      "name": "black_void: one forward turn settles at the original loop orientation",
+      "passed": true,
+      "data": {
+        "angles": [
+          0,
+          0.00023410200271664795,
+          0.0018287178191517543,
+          0.00602498714775558,
+          0.013937653564929693,
+          0.026559277729095287,
+          0.044764450584761445,
+          0.06931400656659338,
+          0.10085923680348091,
+          0.13994610232260649,
+          0.18701944725351372,
+          0.24242721203217538,
+          0.3064246466050623,
+          0.3791785236332105,
+          0.46077135169629085,
+          0.5512055884966768,
+          0.6504078540635119,
+          0.7582331439567794,
+          0.8744690424713695,
+          0.9988399358411485,
+          1.1310112254430265,
+          1.2705935410010256,
+          1.417146953790348,
+          1.5701851898414467,
+          1.7291798431440895,
+          1.8935645888514296,
+          2.0627393964840763,
+          2.236074743134159,
+          2.4129158266693973,
+          2.592586778937171,
+          2.774394878968583,
+          2.9576347661825357,
+          3.141592653589793,
+          3.3255505409970505,
+          3.508790428211004,
+          3.6905985282424156,
+          3.8702694805101885,
+          4.047110564045427,
+          4.220445910695509,
+          4.389620718328156,
+          4.554005464035497,
+          4.713000117338139,
+          4.866038353389239,
+          5.012591766178559,
+          5.152174081736559,
+          5.284345371338438,
+          5.408716264708217,
+          5.524952163222807,
+          5.632777453116074,
+          5.731979718682909,
+          5.822413955483295,
+          5.904006783546376,
+          5.9767606605745245,
+          6.040758095147407,
+          6.096165859926073,
+          6.143239204856981,
+          6.182326070376105,
+          6.213871300612992,
+          6.23842085659482,
+          6.256626029450492,
+          6.269247653614657,
+          6.27716032003183,
+          6.281356589360434,
+          6.28295120517686,
+          0
+        ],
+        "loop": 0,
+        "close": 0
+      }
+    },
+    {
+      "name": "black_void: forming rotation meets the loop without a visible reset",
+      "passed": true,
+      "data": 0.061395517985026044
+    },
+    {
+      "name": "black_void: native transform keeps the aperture fixed and restores the context",
+      "passed": true,
+      "data": {
+        "center": [
+          480,
+          512
+        ],
+        "expected": [
+          480,
+          512
+        ],
+        "restored": true
+      }
+    },
+    {
+      "name": "gate_energy/form: all authored keys render through the game context",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "gate_energy/loop: all authored keys render through the game context",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "gate_energy/close: all authored keys render through the game context",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "gate_energy: rendered last-to-first boundary has no image reset",
+      "passed": true,
+      "data": {
+        "continuous": 0.09560953776041667,
+        "hardSwitch": 2.0048749287923178
+      }
+    },
+    {
+      "name": "gate_energy: one-shots clamp, and long idle clocks stay in the loop",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "amethyst_gate/form: all authored keys render through the game context",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "amethyst_gate/loop: all authored keys render through the game context",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "amethyst_gate/close: all authored keys render through the game context",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "amethyst_gate: rendered last-to-first boundary has no image reset",
+      "passed": true,
+      "data": {
+        "continuous": 0.06470591227213542,
+        "hardSwitch": 1.1288228352864584
+      }
+    },
+    {
+      "name": "amethyst_gate: one-shots clamp, and long idle clocks stay in the loop",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "amethyst_gate: circular formation is visible in rendered pixels",
+      "passed": true,
+      "data": [
+        0.9061337788899739,
+        3.130853780110677,
+        1.9231198628743489,
+        2.148510233561198,
+        1.1385513305664063
+      ]
+    },
+    {
+      "name": "amethyst_gate: one forward turn settles at the original loop orientation",
+      "passed": true,
+      "data": {
+        "angles": [
+          0,
+          0.00023410200271664795,
+          0.0018287178191517543,
+          0.006024987147755577,
+          0.013937653564929693,
+          0.026559277729095287,
+          0.044764450584761424,
+          0.06931400656659337,
+          0.10085923680348091,
+          0.13994610232260649,
+          0.18701944725351372,
+          0.24242721203217538,
+          0.3064246466050622,
+          0.3791785236332105,
+          0.4607713516962908,
+          0.5512055884966768,
+          0.6504078540635119,
+          0.7582331439567794,
+          0.8744690424713695,
+          0.9988399358411485,
+          1.1310112254430265,
+          1.2705935410010256,
+          1.417146953790348,
+          1.5701851898414467,
+          1.729179843144089,
+          1.8935645888514292,
+          2.0627393964840763,
+          2.236074743134159,
+          2.4129158266693973,
+          2.59258677893717,
+          2.774394878968583,
+          2.9576347661825353,
+          3.141592653589793,
+          3.3255505409970505,
+          3.508790428211004,
+          3.6905985282424156,
+          3.8702694805101885,
+          4.047110564045427,
+          4.220445910695509,
+          4.389620718328156,
+          4.554005464035497,
+          4.713000117338139,
+          4.866038353389239,
+          5.012591766178561,
+          5.152174081736559,
+          5.284345371338438,
+          5.408716264708217,
+          5.524952163222807,
+          5.632777453116074,
+          5.731979718682909,
+          5.822413955483298,
+          5.904006783546376,
+          5.9767606605745245,
+          6.040758095147414,
+          6.096165859926073,
+          6.143239204856981,
+          6.182326070376111,
+          6.213871300612992,
+          6.238420856594825,
+          6.256626029450497,
+          6.269247653614657,
+          6.27716032003183,
+          6.281356589360443,
+          6.282951205176869,
+          0
+        ],
+        "loop": 0,
+        "close": 0
+      }
+    },
+    {
+      "name": "amethyst_gate: forming rotation meets the loop without a visible reset",
+      "passed": true,
+      "data": 0.13071975708007813
+    },
+    {
+      "name": "amethyst_gate: native transform keeps the aperture fixed and restores the context",
+      "passed": true,
+      "data": {
+        "center": [
+          480,
+          512
+        ],
+        "expected": [
+          480,
+          512
+        ],
+        "restored": true
+      }
+    },
+    {
+      "name": "Gate shell and exterior remain pixel-stationary during the entire turn",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "All 576 registered keys reach the game context drawImage",
+      "passed": true,
+      "data": {
+        "missing": []
+      }
+    },
+    {
+      "name": "Stage 8 reformation uses the circular formation in-game",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Stage 8 phase handoff retains exact animation frame, fractional phase and anchor",
+      "passed": true,
+      "data": {
+        "before": {
+          "bank": "black_void",
+          "phase": "loop",
+          "from": 14,
+          "to": 15,
+          "mix": 0,
+          "rotation": 0,
+          "x": 240,
+          "y": 200,
+          "size": 340
+        },
+        "after": {
+          "bank": "black_void",
+          "phase": "loop",
+          "from": 14,
+          "to": 15,
+          "mix": 0,
+          "rotation": 0,
+          "x": 240,
+          "y": 200,
+          "size": 340
+        },
+        "clock": 5.5,
+        "kept": true
+      }
+    },
+    {
+      "name": "Pause does not advance the portal simulation clock",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Homeward portal forming uses the new authored phase",
+      "passed": true,
+      "data": {
+        "bank": "blue_rift",
+        "phase": "form",
+        "from": 12,
+        "to": 13,
+        "mix": 0.40000000000000036,
+        "rotation": 1.9945343439110883,
+        "x": 340,
+        "y": 196,
+        "size": 319.38926261462365
+      }
+    },
+    {
+      "name": "Homeward portal forms with a circular turn in-game",
+      "passed": true,
+      "data": {
+        "bank": "blue_rift",
+        "phase": "form",
+        "from": 12,
+        "to": 13,
+        "mix": 0.40000000000000036,
+        "rotation": 1.9945343439110883,
+        "x": 340,
+        "y": 196,
+        "size": 319.38926261462365
+      }
+    },
+    {
+      "name": "Homeward portal loop uses the new authored phase",
+      "passed": true,
+      "data": {
+        "bank": "blue_rift",
+        "phase": "loop",
+        "from": 4,
+        "to": 5,
+        "mix": 0.5714285714285765,
+        "rotation": 0,
+        "x": 340,
+        "y": 196,
+        "size": 340
+      }
+    },
+    {
+      "name": "Homeward portal closing uses the new authored phase",
+      "passed": true,
+      "data": {
+        "bank": "blue_rift",
+        "phase": "close",
+        "from": 15,
+        "to": 16,
+        "mix": 0.5000000000000036,
+        "rotation": 0,
+        "x": 340,
+        "y": 196,
+        "size": 340
+      }
+    },
+    {
+      "name": "Homeward portal closed uses the new authored phase",
+      "passed": true,
+      "data": {
+        "bank": "blue_rift",
+        "phase": "close",
+        "from": 31,
+        "to": 31,
+        "mix": 0,
+        "rotation": 0,
+        "x": 340,
+        "y": 196,
+        "size": 340
+      }
+    },
+    {
+      "name": "Review loads all 480 frames and respects reduced motion",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "amethyst_gate/form: selector and frame scrub display the requested pose",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "amethyst_gate/loop: selector and frame scrub display the requested pose",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "amethyst_gate/close: selector and frame scrub display the requested pose",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "black_void/form: selector and frame scrub display the requested pose",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "black_void/loop: selector and frame scrub display the requested pose",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "black_void/close: selector and frame scrub display the requested pose",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "blue_rift/form: selector and frame scrub display the requested pose",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "blue_rift/loop: selector and frame scrub display the requested pose",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "blue_rift/close: selector and frame scrub display the requested pose",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "red_rift/form: selector and frame scrub display the requested pose",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "red_rift/loop: selector and frame scrub display the requested pose",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "red_rift/close: selector and frame scrub display the requested pose",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "green_rift/form: selector and frame scrub display the requested pose",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "green_rift/loop: selector and frame scrub display the requested pose",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "green_rift/close: selector and frame scrub display the requested pose",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "One-shot frame step advances one authored drawing",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Full sequence finishes closed without starting again",
+      "passed": true,
+      "data": {
+        "playing": false,
+        "phase": "close",
+        "frame": 31
+      }
+    },
+    {
+      "name": "Replay restarts formation",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Onion and seam controls select the loop boundary",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Raw-frame comparison can disable continuous blending",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "Mobile controls and canvas fit the viewport",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "No page, console or missing-asset errors",
+      "passed": true,
+      "data": []
+    }
+  ],
+  "errors": [],
+  "metrics": {
+    "blue_rift": {
+      "continuousSeam": 0.0796984354654948,
+      "unblendedSeam": 2.3453035990397137,
+      "formationJoin": 0.09454574584960937
+    },
+    "red_rift": {
+      "continuousSeam": 0.07533315022786459,
+      "unblendedSeam": 2.106866455078125,
+      "formationJoin": 0.07453638712565104
+    },
+    "green_rift": {
+      "continuousSeam": 0.08068262736002604,
+      "unblendedSeam": 2.313213857014974,
+      "formationJoin": 0.07117487589518229
+    },
+    "black_void": {
+      "continuousSeam": 0.08872400919596354,
+      "unblendedSeam": 2.4087130228678384,
+      "formationJoin": 0.061395517985026044
+    },
+    "gate_energy": {
+      "continuousSeam": 0.09560953776041667,
+      "unblendedSeam": 2.0048749287923178
+    },
+    "amethyst_gate": {
+      "continuousSeam": 0.06470591227213542,
+      "unblendedSeam": 1.1288228352864584,
+      "formationJoin": 0.13071975708007813
+    }
+  }
+}

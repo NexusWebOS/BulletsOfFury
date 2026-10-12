@@ -10,7 +10,7 @@ module.exports=function(vm,ctxv,ok){
  freezerStageClearDefaults(2);o['Level 2 clear releases form lock']=!fb1002FreezerLocked()&&weaponBaseForms(4).length>=2;
  const saved=campSnapshot();run._freezerL2Cleared=false;campApply(saved);run.stage=1;o['Ice Breath unlock survives save and earlier-stage replay']=!fb1002FreezerLocked();
  reset(2,'furious');spawnSubBoss__inner('magmaward');let b=subBoss;fb1002Meteor(b);
- o['Furious rain has three groups of nine']=groundTargetingFx.length===27&&[0,1,2].every(z=>groundTargetingFx.filter(q=>q._meteor1002.zone===z).length===9);
+ o['Furious rain has three separated groups of six']=groundTargetingFx.length===18&&[0,1,2].every(z=>groundTargetingFx.filter(q=>q._meteor1002.zone===z).length===6&&groundTargetingFx.filter(q=>q._meteor1002.zone===z).every(q=>q.warn>=1.8));
  o['meteor groups are separated in time']=new Set(groundTargetingFx.map(q=>q.delay)).size===3;
  const jet=spawnEnemy('golem',worldWidth()/2,180,{});o['old golem names resolve to the generated fire jet']=jet._fireJet1002&&jet._volc==='lance';
  reset(3);run.forgeElems={fire:1,ice:1};o['Forge only offers discovered elements']=forgeDiscovered().length===2&&!forgeDiscovered().includes('dark');

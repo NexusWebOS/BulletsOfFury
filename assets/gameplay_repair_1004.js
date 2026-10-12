@@ -133,7 +133,7 @@ scLeaveStage=function(R){
  campAutoAfterClear(6,7,R.rank);campSuspend();openStageSelect(7,{unlock:7});
 };
 updatePlay=function(dt){GP4.clock+=Math.max(0,dt);gp4QuickEncounter();
- if(run.stage===6&&(fb2TalkActive()||h3RebelIntro())){enemies.length=0;powerups.length=0;}
+ // Radio safety uses the firing/input gates. The actual world stays visible.
  return GP4_BASE.update.apply(this,arguments);};
 gp4AceWarm();
 
@@ -147,7 +147,7 @@ hammerBossDamage=function(b,dmg){const h=b._hammer;
 };
 hammerBossTick=function(b,dt){const h=b._hammer;
  if(fb1002NormalHammer(b)&&!b.dead&&!b.enter){
-  if(!h.gp4FailsafeSeen&&b.hp<=b.maxhp*.08001){
+  if(!h.gp4FailsafeSeen&&b.hp<=b.maxhp*.08001&&!hammerStrikeCommitted(b)){
    h.gp4FailsafeSeen=true;h.gp4Emergency={t:0,from:b.hp};h.recovery=null;h.frRecovery=false;
    h.restorationSeen=true;h._fb2RageDone=true;h.hammerDestroyed=false;h.hammerHP=h.hammerMax;
    const A=fr27Armor(b)||fr27BeginArmor(b);if(A){A.hp=0;A.active=false;A.barrier=0;A.checkpoints=[.75,.50,.35,.15];A.rage=true;}

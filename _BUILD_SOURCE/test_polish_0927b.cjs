@@ -4,7 +4,7 @@ module.exports=function(vm,ctxv,ok){
   const out={};run.stage=2;run.pilot='maverick';run.weapon=3;run.wlevel=5;run.spaceMode=false;run.sonicT=run.dkT=0;special=null;run.forge={};run.infusion=null;run.wvars=[];pBullets=[];
   pShoot();out['bare lances remain three tier-I shots']=pBullets.length===3&&pBullets.every(q=>q.kind==='mavlaser'&&q.lv===1&&!infusionCarrier(q));
   const cadence=_weaponCadence();run.wlevel=1;out['lance cadence also stays fixed']=_weaponCadence()===cadence;
-  run.wlevels=WEAPONS.map(()=>1);applyPowerup({kind:'weapon',wtype:3,wvar:'mavhoming',x:240,y:300});pBullets=[];pShoot();out['laser pickups equip and upgrade beams instead of lances']=run._mavBeamUnlocked&&heldVariant(3)==='laserbeam'&&run.wlevel===2&&pBullets.some(q=>q.kind==='beam');run.wlevel=5;
+  run.wlevels=WEAPONS.map(()=>1);applyPowerup({kind:'weapon',wtype:3,wvar:'mavhoming',x:240,y:300});pBullets=[];pShoot();out['laser pickups preserve fixed lances and store separate beam levels']=run._mavBeamUnlocked&&heldVariant(3)==='mavhoming'&&run.wlevels[3]===2&&pBullets.length===3&&pBullets.every(q=>q.kind==='mavlaser'&&q.lv===1);run.wlevel=5;
   run.forge={3:{elem:'fire',lv:1}};run.wvars[3]='mavhoming';pBullets=[];pShoot();
   out['stale Lance pickup cannot override equipped Fire Whip']=heldVariant(3)==='firewhip'&&pBullets.length===1&&pBullets[0].kind==='firewhip';
   run.forge={3:{elem:'lightning',lv:1}};pBullets=[];pShoot();out['other laser infusions use the beam']=heldVariant(3)==='laserbeam'&&pBullets.some(q=>q.kind==='beam')&&!pBullets.some(q=>q.kind==='mavlaser');

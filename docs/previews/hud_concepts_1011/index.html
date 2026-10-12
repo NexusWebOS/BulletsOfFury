@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bullets of Fury · Five HUD Concepts</title>
+<link rel="stylesheet" href="review.css">
+<body>
+<header>
+ <a class="brand" href="../../../index.html">BULLETS OF FURY</a>
+ <div class="title"><h1>Five HUD concepts</h1><p>Big stocks beneath the score. Larger cockpit. No radar.</p></div>
+ <span class="stamp">CONCEPT REVIEW · 1011</span>
+</header>
+<main>
+ <nav id="conceptTabs" aria-label="Choose a HUD concept"></nav>
+ <div class="controls">
+  <label>Combat sample <select id="background"><option value="stage6">Stage 6 · Rebel fight</option><option value="stage1">Stage 1 · ocean</option></select></label>
+  <label>Stocks <select id="scenario"><option value="normal">Normal · 5 lives / 12 missiles</option><option value="low">Low · 1 life / 1 missile</option><option value="empty">Empty · 0 lives / 0 missiles</option></select></label>
+  <button id="enlarge" aria-pressed="false">Enlarge HUD</button>
+  <a href="#all">Compare all five ↓</a>
+ </div>
+ <div class="workspace">
+  <section class="screen-column" aria-label="HUD concept over real gameplay">
+   <canvas id="screen" width="1152" height="1568" aria-label="Loading the HUD concept"></canvas>
+   <p class="caption">Actual gameplay capture, icons and Command Alloy lettering. Demonstration values.</p>
+  </section>
+  <aside>
+   <div class="concept-heading"><span id="conceptNumber">01</span><h2 id="conceptName">Fury Classic</h2></div>
+   <p id="conceptNote"></p>
+   <dl class="readouts"><div><dt>Lives</dt><dd id="livesReadout">05</dd></div><div><dt>Missiles</dt><dd id="missilesReadout">12</dd></div></dl>
+   <p>The counters sit directly below the score. The lower cockpit keeps weapon level, special time, Roll, Somersault, Speed, Shield and retina lock.</p>
+   <p class="pick-note">My starting pick: <strong>02 · Bold Cabinet</strong> for stock visibility, or <strong>01 · Fury Classic</strong> to keep the current cockpit style.</p>
+   <div class="downloads"><button id="save">Save this mockup</button><a id="raw" href="fury-classic-frame.png" target="_blank">Generated frame ↗</a></div>
+   <details><summary>Compare the current HUD</summary><img src="gameplay-stage6.png" alt="Current game capture with small lives and missile tabs on the bottom HUD."><p>Existing HUD shown for comparison.</p></details>
+   <p class="scope">Review concepts only. Choose a number to guide the game implementation.</p>
+  </aside>
+ </div>
+ <section id="all" class="comparison"><h2>All five · same combat information</h2><p>Each preview shows both HUD strips at the same scale.</p><div id="gallery"></div></section>
+ <footer><a href="concepts.json">Layout measurements</a><a href="../../../_ART_SOURCES/hud_concepts_1011/prompts.json">Generation prompts</a><span>All source plates 1536 × 1024. Even crops. Uniform scale. Original icon proportions.</span></footer>
+</main>
+<script src="review.js"></script>
+</body>
+</html>

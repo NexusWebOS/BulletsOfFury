@@ -1,0 +1,109 @@
+{
+  "raw_sha256": "6b7672b43c22e7d699f043083836d27699519060dd468dd67c9b1250be875457",
+  "bank": [
+    {
+      "key": "ap10_ending_00",
+      "path": "assets/game/shared/combat/audio_1010/ending_00.png",
+      "w": 840,
+      "h": 472,
+      "pivot": [
+        420,
+        236
+      ],
+      "source_rect": [
+        0,
+        0,
+        833,
+        467
+      ],
+      "source_pivot": [
+        416.5,
+        233.5
+      ],
+      "translation": [
+        4,
+        2
+      ],
+      "scale": 1,
+      "sha256": "b171919349e633571db1949bb535e7b061d5a1a9b3da4b8185a695f9f1d0faef"
+    },
+    {
+      "key": "ap10_ending_01",
+      "path": "assets/game/shared/combat/audio_1010/ending_01.png",
+      "w": 840,
+      "h": 472,
+      "pivot": [
+        420,
+        236
+      ],
+      "source_rect": [
+        839,
+        0,
+        1672,
+        467
+      ],
+      "source_pivot": [
+        416.5,
+        233.5
+      ],
+      "translation": [
+        4,
+        2
+      ],
+      "scale": 1,
+      "sha256": "3b249035766e75829564ab4e72bfd3030458c46c40fa7e0f764fb2553452bcfa"
+    },
+    {
+      "key": "ap10_ending_02",
+      "path": "assets/game/shared/combat/audio_1010/ending_02.png",
+      "w": 840,
+      "h": 472,
+      "pivot": [
+        420,
+        236
+      ],
+      "source_rect": [
+        0,
+        473,
+        833,
+        941
+      ],
+      "source_pivot": [
+        416.5,
+        234.0
+      ],
+      "translation": [
+        4,
+        2
+      ],
+      "scale": 1,
+      "sha256": "e5eec741209df7eaee6ff74bd98a3a34d68771f129db915b0c38b59f8c049f32"
+    },
+    {
+      "key": "ap10_ending_03",
+      "path": "assets/game/shared/combat/audio_1010/ending_03.png",
+      "w": 840,
+      "h": 472,
+      "pivot": [
+        420,
+        236
+      ],
+      "source_rect": [
+        839,
+        473,
+        1672,
+        941
+      ],
+      "source_pivot": [
+        416.5,
+        234.0
+      ],
+      "translation": [
+        4,
+        2
+      ],
+      "scale": 1,
+      "sha256": "dfa489a54104733230284a31c1de619f74f8df195d5dec89e61a854b8e8ea7e8"
+    }
+  ]
+}

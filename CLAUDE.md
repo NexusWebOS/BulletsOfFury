@@ -1,3 +1,570 @@
+# 2026-10-12 — Overdrive GitHub publication
+
+Mike requested publishing the completed Overdrive update. This publication
+contains the restored original menus, pilot selection, options and passwords;
+new expansion UI/achievements; approved chip audio and supplied boss/startup
+recordings; the Warrior art, 640x480 arena and rotating dossier; and corrected
+controller/mouse input, BOF Retina and shoulder cruise/aim. Warrior scale is .85
+with matching collision, mounts and breakoffs. Dossier/framed text is fitted.
+Shared dependency: assets/general_achievements_1011.js.
+Native Chromium: 187 passing checks, zero page/console/asset/audio errors;
+base suite: 8,700 passing assertions, zero errors, final summary and exit 0.
+Latest build stamp overdrive1012-retina-r1. Details docs/OVERDRIVE_RETINA_1012.md
+and docs/qa/overdrive_retina_1012.json.
+
+# Standing sprite frame rules — October 10, 2026
+
+Mike requires even frame resolutions and evenly proportioned artwork. Choose
+an even width and height first; keep one fixed canvas, physical pivot and
+common proportional scale throughout each animation bank. Use transparent
+padding for odd measured crops, preserving the pixels and mounting points.
+Sheets use equal cells and even spacing. Verify actual exports and native
+rendering. Apply [the frame resolution rules](docs/FRAME_RESOLUTION_RULES.md)
+to future generations and asset revisions.
+
+# Standing weapon rule - Maverick's homing lasers
+
+Mike reaffirmed on October 11, 2026: Maverick's homing lasers are not
+upgradeable. Preserve their fixed Level I combat stats and exclude them from
+Forge/elemental upgrades, including Wind. Laser pickups upgrade his separate
+Laser Beam; existing homing-lance palette feedback does not raise combat stats.
+His charged Helix Beam special is a separate ability with its own progression.
+
+# 2026-10-12 - RELEASE: Siege Console and accumulated game updates
+
+Mike requested updating GitHub now. Publication snapshot includes the approved
+Siege Console HUD plus accumulated BOF gameplay, authored art, sound, weapons,
+bosses, cinematics and portal lifecycle passes, and current Overdrive updates.
+Origin/main fetched and reviewed at 7539951c; no incoming commits. Shipping
+assets/entrypoints included; 144 JavaScript syntax checks pass. Existing native
+QA: Siege Console 51/0, portal lifecycle 144/0, finale 14/0, Overdrive 187/0.
+Publication regression: 8,700 passing assertions, 0 failures, final summary, exit 0. Unrelated
+local projects/configuration/raw imports and ignored scratch remain local.
+Details docs/GITHUB_RELEASE_1012.md.
+
+# 2026-10-12 - LOCAL: Approved Siege Console installed
+
+Mike chose the vented Siege Console by attachment and "this looks good. continue."
+Exact plate in assets/game/shared/ui/siege_console_1012, owner
+build_siege_console_1012.py; new registry/renderer/CSS loaded by index.html.
+Live seat-aware scores, maneuvers, weapon variants, special resource, stocks,
+retina and actual-contact radar. Cloaking/pause respected. Larger native weapon
+icons, wrapped special names, fixed Level I label for Maverick homing lances.
+Full-height proportional gameplay field shared by intro/fly-in/play/pause/
+continue/gameover, with side boards; selected-art compact docks at narrow sizes.
+Co-op readouts stack outside the same field with shared high score. Menus/maps/
+authored widescreen story/results keep their owners. 8,700 regression pass/exit0,
+51 new native HUD + 14 existing finale checks pass, no browser errors; captures
+inspected. Core/test files untouched and endings preserved. Details
+docs/SIEGE_CONSOLE_1012.md and docs/qa/siege_console_1012.json. No commit/push.
+
+# 2026-10-12 - CONCEPT ONLY: Side Armored Command HUDs
+
+Superseded by Mike's selected Siege Console, now installed (see latest drop).
+
+Mike wants side instrument boxes/bars and a consistent full-height game field.
+Left score/roll/somersault/weapon; right radar/special/lives/missiles/lock.
+Five generated concepts await choice: Command Bastion, Split Batteries,
+Tactical Rails, Siege Console, Command Glass. Original RGBA sources/prompts
+_ART_SOURCES/side_hud_1012; owner build_side_hud_concepts_1012.py.
+Review docs/previews/side_hud_1012 has actual gameplay/fly-in/continue captures,
+native icons/font, fixed viewport, fullscreen, low/empty stocks and PNG export.
+16 native browser checks pass, no errors; all mockups inspected. Details
+docs/SIDE_HUD_CONCEPTS_1012.md and docs/qa/side_hud_1012.json. Live game/HUD/
+viewport/index/atlas untouched in this pass. No commit/push. Radar is requested
+again for the eventual side HUD; Mike's concept selection is still pending.
+
+# 2026-10-12 - LOCAL: Overdrive BOF Retina, shoulder aim and Warrior fit
+
+Mike requested working Retina/shoulder aim, A menu confirmation, a slightly
+smaller Warrior and centered text. BOF tap/cycle seeker, five-second released
+lock, hold-to-maintain, original retm/retmb/nbret art and pilot tint return.
+R/Z/I acquires; cannon or held Retina+A launches guided tank missiles at exact
+enemy/boss parts. L+D-pad cruises in the previous travel direction while aiming;
+A fires along that aim. Mouse handoff and standard right-stick priority remain.
+A/Start confirm menus and dossier Continue; non-Back face reports cover printed
+A arriving as button 5. Original Options renderer/binding saves retained.
+Warrior geometry/art/fragments/wrecks uniformly .85; 640x480/1:1 view retained.
+Dossier and other framed text measured/fitted/centered; prompts stay in card.
+187 native checks pass, zero browser errors; eight captures inspected. Base
+8,700/0, final summary/exit0. Physical pads simulated. Build stamp
+overdrive1012-retina-r1. See docs/OVERDRIVE_RETINA_1012.md and QA JSON.
+Local only; no commit/push.
+
+# 2026-10-11 - LOCAL: Overdrive controller and mouse input correction
+
+Mike reported broken controller bindings, mouse aim and directional fire.
+Native reproduction found movement stealing mouse aim, hardcoded D-pad buttons
+ignoring remaps, and a global post-intro fire gate blocked by held Retina.
+Saved directions now own their mappings; mouse/stick/keyboard aim can take
+control independently of driving. Eight-direction six-button fire works, and
+the intro waits only for physical fire inputs already held at its boundary.
+Boss dossier now uses menu pad controls. Saved user settings are retained.
+Build/launcher stamp overdrive1011-input-r1. Native 28 input + 55 frontend + 42
+intro = 125 checks pass, no browser errors; actual tank/shot capture inspected.
+Base 8,700/0, final summary and exit0. See docs/OVERDRIVE_INPUT_1011.md and
+docs/qa/overdrive_input_1011.json. Local only, no commit/push.
+
+# 2026-10-11 - LOCAL: Overdrive close view and Warrior introduction
+
+Mike rejected the 800x600 view and requested 640x480 fullscreen gameplay.
+Level 2 now uses that close field. The Warrior rolls from above; tracking zoom
+pulls out, then an authored dossier slides in with 16 side/rear turntable poses,
+real HP/armor, target inspection, attack profile and Mike's exact warning.
+Arcade cues/HP fills, pause/Options return, safe fire release, slide-out and
+normal camera restoration are wired; boss music begins after the sequence.
+Art: expansion/topdown/art/boss_intro_1011; builder build_boss_intro_1011.py;
+runtime boss_intro_1011.js. All 17 exports even, common pose scale/pivot.
+42 intro + 22 Warrior + 55 original frontend native checks pass, no browser
+errors; base 8,700/0 with final summary and exit0. Screenshots inspected.
+Details docs/OVERDRIVE_BOSS_INTRO_1011.md and docs/qa/overdrive_boss_intro_1011.json.
+The previous wide-view source/QA remain archived. Local only, no commit/push.
+
+# 2026-10-11 - LOCAL: Overdrive road and Warrior sizing
+
+Mike reported a tiny arena and half-visible Warrior. Native reproduction showed
+960x720 road -> 480x480 fight from integer CSS rounding and a narrow boss view.
+Level 2 now shares one 800x600 / 4:3 field from deployment through boss entry;
+continuous proportional display fit keeps tank/HUD size stable. Warrior lateral
+limits use rotated authored module bounds, preserving scales/pivots and breakoffs.
+Original Options 480x512 and other mission layouts remain. Script/launcher stamp:
+overdrive1011-sizing. 53 sizing + 22 Warrior + 55 original frontend Chromium
+checks pass, no browser errors. Required base suite: 8,700/0, final summary/exit0.
+Native captures inspected. Details docs/OVERDRIVE_SIZING_1011.md; portable QA
+in docs/qa/overdrive_sizing_1011.json. Local only, no commit/push.
+
+# 2026-10-11 - LOCAL: Portal forming, closing and continuous playback
+
+Mike approved the BOF portal redesign. All five now have separate 32-frame
+forming and closing banks alongside their approved 32-frame loop. Main 480
+cells plus 96 membrane components; rifts 384x384/pivot192,192, gate512x640/pivot256,352.
+Gate armor remains fixed. Owner build_portal_lifecycle_1011.py; sources/prompts
+_ART_SOURCES/portal_lifecycle_1011. Exact join pose, even padding, common phase
+scale, onion-corrected closing throat. Old approved loop pixels are unchanged.
+Shared portal_lifecycle_1011.js handles phase clamping and premultiplied frame
+blending across the seam. portal_encounters_1011.js applies chromium to Stage 8's
+void transition and blue to the homeward portal; original clocks/anchors/timing
+remain. Fixes the prior phase-clock multiplication and integer-frame precision.
+Preview docs/previews/portals_1011 now plays full sequences or individual phases.
+Follow-up: one eased clockwise formation turn about the fixed aperture, settling
+at the loop's original orientation. Gate membrane turns behind its fixed shell
+and original mask. Shared runtime, simulation-owned clock and onion poses;
+source art unchanged. Script stamp v=4-spin.
+Notes docs/PORTAL_LIFECYCLE_1011.md; QA docs/qa/portal_lifecycle_1011.json.
+Native portal checks 144/0, no browser errors, exit 0. Regression 8,700/0 and
+existing finale 14/0, both exit 0. No game.js/test_fl.js
+edits in this pass. Local only, no commit/push.
+
+# 2026-10-11 - LOCAL: BOF portal redesign and green rift
+
+Mike rejected the GIF-copy visual direction. New art uses actual game plasma,
+electrical corona, chrome symbiote and armor as style references. Five 32-frame
+loops: armored Fury gate, chromium singularity, blue/red/emerald rifts; separate
+32-frame gate membrane. Fixed shell, even canvases, physical aperture pivots.
+Owner build_portals_bof_1011.py, registry portal_bof_art_1011.js/pr11b_, native
+sources/prompts _ART_SOURCES/portals_bof_1011. Existing portal preview URL now
+shows this redesign. Old pack preserved. docs/PORTAL_BOF_REDESIGN_1011.md and
+docs/qa/portals_bof_1011.json: 61 native/render/preview passes, no browser errors.
+Native screenshots also caught and corrected the aperture mask between gate feet.
+Review assets only, no live encounter assignment, gameplay edit or push.
+
+# 2026-10-11 - LOCAL: Four centered portal loops
+
+Four32-pose reference-led portal loops, generated with built-in image_gen:
+amethyst gate, black tunnel, azure and crimson rifts. All fixed even canvases
+and physical aperture pivots; the gate uses one stationary stone shell and
+a separately registered32-pose membrane. Onion review corrected a focal-spark
+anchor error. Owner build_portals_1011.py registers160 cells/sheets/manifest,
+portal_art_1011.js and pr11_ taxonomy. Sources/prompts _ART_SOURCES/portals_1011.
+Review docs/previews/portals_1011/index.html; details docs/PORTAL_PACK_1011.md;
+49 native/render/preview checks pass, no browser errors, docs/qa/portals_1011.json.
+Review pack only: not assigned to live encounters. No gameplay edits or push.
+
+# 2026-10-11 - LOCAL: Phase 3 open alien void
+
+Mike's latest direction replaces the final arena's cathedral/ribs with an
+open black/crimson alien void. Sixteen authored code poses drift at three
+depths and brighten during the first four combat seconds. Proportional cover
+at both camera modes; simulation-owned animation clocks persist across boss
+copies and freeze on Pause. Boss mechanics and the portal transition retained.
+New runtime assets/void_arena_1011.js; owner build_void_arena_1011.py; sources
+and exact image_gen prompts in _ART_SOURCES/void_arena_1011. Shipping code
+frames320x320/pivot160,160; background1024x1536. Review:
+docs/previews/void_arena_1011/index.html; QA docs/qa/void_arena_1011.json.
+8,700 regression passes, exit0;20 arena+14 existing finale checks, no browser
+errors. Local only, no commit/push. Earlier environment notes are historical.
+
+# 2026-10-11 - LOCAL: Approved ColeForge chip sound pass
+
+BOF now uses Mike's 81 approved library cues, including all score bullets and
+18 ground cues. Canonical aliases share gates/pools; Forge/loadout/rewards and
+named boss releases use their approved recordings. Stage 2 firewall sound is
+stretched without pitch shift and tied to the wave's life; tank beds follow
+Razorback and SONIC/ORDOS/HARK actions. Overdrive's existing bank was verified,
+and its firewall hook now obeys Master changes. Originals and unapproved cues
+preserved. [Details/QA](docs/BOF_CHIP_AUDIO_1011.md);
+[audition](docs/previews/chip_audio_1011/index.html).
+8,700 base assertions, exit 0; 46 BOF + 44 Overdrive native checks, zero browser
+errors. Local only, no commit/push. Earlier drop notes are historical.
+
+# 2026-10-11 - LOCAL: Recording pass and Armored Command
+
+Mike selected Armored Command. Installed the authored HUD with larger top
+lives/missile stocks, live co-op inventories and no radar. Updated startup,
+credits/fullscreen control, pilot cards, actual-ship opening, cockpit radar,
+session-only Continue and launch-to-play ship consistency. At 11:26 Mike meant
+pellet TRAVEL speed: normal spread is 5.6 instead of 7.5 units/frame; cadence,
+fan and damage are unchanged. Maverick's lances remain fixed Level I.
+
+Combat/art: new six-part Stage 3 carrier; two ice-jet loops; Furnace head and
+travelling fire wave; animated independent Harrier guns; Hammer core/raise,
+brief protected recovery and immediate chaingun salvage; fixed Storm generators
+and finite final pursuit; Stage 6 bomb tell/release, facing and allies; Stage 7
+salvos; drone possession, attached claw grip/death, black-heart reformation,
+ghost locks/shield and continuous final portal. Ten sixteen-pose banks plus
+six carrier cells = 166 cells. Unequal source gutters measured and recut;
+drone padded to 320 x 320 without changing its sprite scale. Two faceless
+satellite plates preserve the mystery. Sonic pellets now use pressure waves.
+Blast Furnace has sixteen new fire poses, 22% extra reach and contact bands
+from its authored silhouette. Owning builders register all exports.
+
+Review: docs/previews/playthrough_1011/index.html (onion/scrub + native captures).
+Source requests, per-area dispositions and open work:
+docs/feedback/PLAYTHROUGH_1011.md. QA: docs/qa/playthrough_1011.json.
+Full regression final summary/exit 0: 8,700 assertions, 0 failures (baseline
+8,670/0). Native recording checks: 97; copied-form checks: 154. All 81 elemental
+combinations were rechecked (32 checks). Review-page results are in the QA
+record. Checks are protected bounded encounters
+and rendering fixtures, not a human campaign clear.
+
+OPEN: Mike clarified that 41:34-41:43 means ONLY the two small shapes shown.
+A firing trace strongly matches them to spinning loose missile-ammo drops
+(Maverick's msl_2_2), not an enemy owner. Asked whether to use clearer pickup
+icons or remove loose Stage 6 ammo drops; no broad aircraft removal.
+09:58 firing/scroll interruption remains unreproduced. Full campaign/Stage 6
+branch/final-boss balance review remains. No commit or push.
+
+# 2026-10-11 - LOCAL: Regular FOV for every enemy
+
+Mike explicitly rejected the small rectangular warning bands. All shared enemy
+warning paths now use the full authored green/yellow/red FOV plates. This
+supersedes the September 29 ordinary-enemy band rule. The old rectangle and
+cropped-strip substitutions are removed; legacy approach gates and sluices use
+the same FOV. Aim, committed spans, timing, damage and alert-only behavior stay
+with their existing owners. Radial explosions retain source charges.
+
+Owners: assets/stage67_review_0929.js, assets/engine_combat_1007.js and the queued
+tell in assets/enemy_behaviour_1011.js. No new art. Full suite: 8,670 assertions,
+zero failures, final summary/exit 0. Native Chromium: 35 checks pass, all three
+colors across nine stages, two recorded live AI examples, no browser errors.
+Review: _shots/enemy_fov_1011/review.html. Details: docs/feedback/ENEMY_FOV_1011.md;
+report: docs/qa/enemy_fov_1011.json. No commit or push.
+
+# 2026-10-11 - LOCAL: Nine elemental player arsenals
+
+Fire, Sonic, Lightning, Water, Ice, Chromium, Toxic, Dark Matter and Wind now
+share complete native coverage across all nine Forge weapon slots. Added 256
+real generated ammunition poses (16 round + 16 missile frames for each of the
+eight non-Wind elements); Wind retains its nine existing 16-pose banks. Even
+128x128 fixed cells, rigid casing anchors, proportional bank scales. Existing
+beam/cast/orb/impact reels and approved specials remain their owning art.
+
+Launch identity, mist splits, sphere discharges, automatic missile recipes,
+held co-op beams/sprays, orb fragments/clouds and Chromium splinters now keep
+the correct element/strength/pilot. Non-fire sprays do not secretly burn.
+Sonic/void effects do not dislodge mounted encounter bodies. Maverick lances
+remain fixed Level I and uninfused. Forge recipes remain single permanent
+combinations; existing reward gates and space weapons remain separate.
+
+Review: docs/previews/element_arsenal_1011/index.html. Scope/build/provenance:
+docs/feedback/ELEMENT_ARSENAL_1011.md. Final verification:
+docs/qa/element_arsenal_1011.json. 81 native live-hit cases and 81 native visual
+captures; all 32 gameplay and 83 review checks pass with no browser errors.
+Full syntax and regression suite: 8,670 assertions, zero failures, final
+summary and exit 0 (previous baseline 8,631 / zero).
+New owner assets/element_arsenal_1011.js is loaded last after Wind; its state
+is PA11, distinct from the EA11 enemy verification lab. No commit or push.
+
+# 2026-10-11 - LOCAL: Level 1-9 enemy behavior and difficulty pass
+
+Mike's full regular-enemy pass is implemented through the late owner
+assets/enemy_behaviour_1011.js. Native queues no longer consume their attacks
+behind the offscreen firing gate: visible tell, locked target where applicable,
+release, recovery and finite departure. The age-based downward shove no longer
+fights modern routes. Stage 6's actual wave-authored dash controller now fires
+before committing its dive; Stage 8's side-entry/home and doubled movement are
+fixed; Stage 9 rim leeches enter the camera edge, and staggered chaos spawns
+expire their entry delay instead of remaining permanently unable to fire.
+Boats/tanks, drones, elemental jets, rammers and queued fleets receive explicit
+Normal/Hard/Furious pressure steps. Small fire/ice kamikazes remain shieldless
+and gunless. Source charges are used for radial/fixed shots, aimed warnings only
+for the matching aimed patterns. Existing bosses, authored art and biomes remain.
+
+Final node syntax check and full suite: 8,631 assertions, zero errors, final
+summary and exit 0. Native Chromium: 139 wave/weapon/role variants x 3 ranks =
+417 cases; 80 roster checks and 11 collision/dodge/camera/co-op checks pass,
+zero page/console/asset errors. Every stage's measured delivered attack output
+increases Normal to Hard, with a larger absolute increase Hard to Furious in
+these fixtures. Nineteen recorded clips decode fully. These are bounded,
+protected observation fixtures, not human campaign clears. Earlier failed
+fixtures/assertions are superseded by the final report.
+
+Review: _shots/enemy_behaviour_1011/review.html. Implementation/method notes:
+docs/feedback/ENEMY_BEHAVIOUR_1011.md. Final checks, counts and source hashes:
+docs/qa/enemy_behaviour_1011.json. Reproduce with the enemy_behaviour and
+enemy_commitments 1011 probes under _BUILD_SOURCE. The roster lab is verification
+only and is not loaded by the game. No commit or push; existing staged,
+unstaged and untracked work is preserved.
+
+# 2026-10-11 - LOCAL: Hammer Chromium columns and anchored jump counter
+
+Mike's bottom-half beam / upper-half jump direction is implemented in
+assets/hammer_chromium_1011.js after the part-two overrides. Storm lanes now
+use the actual authored Chromium beam with intact caps, straight damage bounds
+and a ceiling at the screen midpoint. This overrides the full-height spike pass
+and bypasses its global ice-art substitution. Sixteen-pose side swings now wind
+up, jump into the background, lock one world-space target, dive and sweep the
+measured hammer head through it, then recover. The warning follows the head arc.
+Airborne/recovering body contact is harmless; damage cannot cancel the committed
+strike. Both co-op pilots can trigger the counter; dance/intro behavior stays
+with its existing owner. Existing generated art is reused; no atlas changes.
+Final checks: 8,571 gameplay assertions, 0 errors, exit 0/final
+summary; 22 native Chromium checks pass with zero browser/asset errors.
+Two eight-second native fixture clips and inspected captures are in
+_shots/hammer_chromium_1011/review.html. Play BOSS5 for the normal encounter.
+Details: docs/feedback/HAMMER_CHROMIUM_1011.md and docs/qa/hammer_chromium_1011.json.
+No commit/push. Existing staged, unstaged and untracked work is preserved.
+
+# 2026-10-11 - LOCAL: nine Wind projectile reels and green icon borders
+
+Mike's Wind follow-up is implemented locally: nine independently generated
+16-pose projectile reels at24fps,144 even256x256 cells, physical pivots and one
+common proportional scale per bank. All45 weapon badges I–V have green borders,
+white Roman numerals and retained silver projectile interiors. Stage6's Wind
+gust emblem remains its separate reward/selector image. Sources/prompts/hashes
+_ART_SOURCES/wind_projectiles_1011; green-border edits and prior sources retained
+in _ART_SOURCES/wind_icons_1011. Build through build_audio_fx_1010.py, which owns
+pixels and audio_fx_art_1010.js; no atlas edits. The shared Wind painter and late
+runtime wrapper preserve native simulation, per-round ownership and cold decode
+fallback; held columns use overlapping authored tiles and finite draw budgets.
+Review docs/previews/wind_projectiles_1011/index.html: frame/onion controls,
+nine reels,45 badges, native weapon/Stage6 captures, and link to five HUD concepts.
+Final full suite8,503/0/exit0;26 projectile plus10 badge/reward Chromium checks
+pass, zero page/console/asset errors. See docs/feedback/WIND_PROJECTILES_1011.md
+and docs/qa/wind_projectiles_1011.json. No commit/push; HUD choice still pending.
+
+# 2026-10-11 - LOCAL: five HUD concepts awaiting Mike's selection
+
+Mike requested concepts first: large lives/missiles below score, a larger lower
+cockpit with bars/text retained, and no radar. Five independent built-in imagegen
+plates: Fury Classic, Bold Cabinet, White Interceptor, Armored Command, Neon Fury.
+Review docs/previews/hud_concepts_1011/index.html; exact sources/prompts and even
+registration in _ART_SOURCES/hud_concepts_1011. Native HUD icons, Command Alloy
+letters and authored meter pixels overlay measured wells at uniform scale.
+Real Stage1/Stage6 captures, normal/low/empty stocks, enlargement and PNG export.
+15 Chromium preview checks pass, zero page/console/asset errors; screenshots
+inspected and special title/timer overlap repaired. No shipping HUD, radar,
+index.html, combat code or atlas change; full game suite not rerun for concepts.
+Read docs/feedback/HUD_CONCEPTS_1011.md and docs/qa/hud_concepts_1011.json.
+Next: Mike chooses a concept before live state/co-op integration. No commit/push.
+
+# 2026-10-11 - LOCAL: opening specials, Rebel signatures and earned Stage X Mk II
+
+Mike chose enhanced specials as Stage X's additional unlock and clarified that
+the fighters are the enemy Rebels. Read `docs/feedback/SIGNATURE_SPECIALS_1011.md`
+and `docs/qa/signature_specials_1011.json`. One authored opening supply per seat
+descends, opens through shots/contact, then delivers the actual pilot special.
+Cole receives warheads. Co-op abilities/helpers/chain tier use the seat window,
+and both timers tick once. Each Rebel's first personal supply carries its own
+signature; existing secondary patterns, warnings and difficulty caps remain.
+The actual matching Stage X boss defeat earns all-nine Signature Mk II, saved
+in the profile and campaign receipt. All windows20s, distinct ability bonuses,
+native name/icon HUD, visible map reward, existing supply rewards preserved.
+Runtime owner: `assets/signature_specials_1011.js`, loaded last. Core game.js
+untouched by this pass; test_fl.js retains CRLF. Full suite8,468/0,
+final summary, exit0; native57/0, zero browser errors. Native
+clear is accelerated real Rebel damage/deaths, not a natural human victory.
+Earlier co-op, atlas readiness and fixture/typing threshold issues are resolved.
+Review: `docs/previews/signature_specials_1011/index.html` with all9 pilots,
+all5 enemy signatures and the reward. Local only; main HEAD7539951 unchanged.
+
+# 2026-10-11 - LOCAL: corrected Wind projectile badges and reward symbol
+
+Mike rejected the Wind hardware pictures. Read `docs/feedback/WIND_ICONS_1011.md`
+and `docs/qa/wind_icons_1011.json`. Nine weapon families now have45 authored
+projectile badges with Roman I–V tags; a separate gust emblem serves Stage6's
+boss pickup, Powers Gained and Forge element selector. All46 cells128x128,
+fixed pivot64,64, even transparent margins. The tier source's actual gutters
+are measured so tags remain complete. Original pictures remain archived.
+`build_audio_fx_1010.py` invokes `wind_icon_art_1011.py`, writes pixels and
+`audio_fx_art_1010.js` together. `audio_wind_1010.js` maps slot/level explicitly
+and uses `wind_symbol` for the reward. Gameplay/recipes/rewards unchanged.
+Sources/prompts: `_ART_SOURCES/wind_icons_1011/`. Review:
+`docs/previews/wind_icons_1011/index.html`; earlier audio review updated too.
+Full suite8,416/0, final summary, exit0. Native18/0, zero browser errors.
+Initial cut/fixture/preview clock issues are resolved and documented. These
+are controlled menu/reward checks, not a natural boss clear. Preserve all
+prior work. No commit/push requested; main HEAD7539951 unchanged.
+
+# 2026-10-11 - LOCAL: drawn fighter flips, complete fire and helix palettes
+
+Read `docs/feedback/DRAWN_MOTION_1011.md` and `docs/qa/drawn_motion_1011.json`.
+This supersedes the warped fighter bank poses and mixed-source atomic reel
+below. Blue/red/green/orange heavy each have 16 actual barrel-roll and 16
+somersault views; orange retains its two gun pods. Harrier elite evasions,
+inverted posture, lateral banks and carrier launch draw those views. Explicit
+fighter roles survive the legacy bomber predicate. No affine warping.
+Furnace gains a 16-pose organic terminal crown using the same shared renderer
+in-game and in the preview. Maverick uses Jace's exact 32 sphere poses in both
+green and purple/blue overdrive palettes, preserving alpha and luminance.
+Atomic is a new coherent 32-pose source with fixed ground registration and
+fading terminal wisps. All shipping dimensions are even, pivots fixed.
+Six generated sheets contain 112 new drawings; 128 derived palette cells.
+P2 manifest: 337 registrations, 335 unique images (orange idle/damage aliases).
+Sources/prompts/audit: `_ART_SOURCES/part2_motion_1011/`. Owning art builder
+invokes `part2_motion_art_1011.py`; runtime owners are `part2_motion_1011.js`
+and `part2_fire_renderer_1011.js` alongside the existing P2 layer. Preview:
+`docs/previews/part2_1010/index.html?revision=20261011-motion`.
+Full suite: 8,414 passing assertions, final summary, zero errors. Refreshed
+Chromium checks: 67 passing, zero failures or browser errors. Initial empty
+preview selection, role override and fixture issues are resolved. Controlled
+fixtures do not establish a natural human Furious campaign clear. Local only;
+main HEAD 7539951 and all earlier staged/unstaged/untracked work preserved.
+
+# 2026-10-11 - LOCAL: onion crops, flared Furnace core and actual stealth palettes
+
+Read `docs/feedback/ANIMATION_ONION_1011.md`. This supersedes the prior atomic
+frame-count and Stage6 palette identity claims. Original atomic source is28
+poses in7 rows; corrected crops plus4 drawn inbetweens make32 distinct frames.
+Fixed384x576 ground registration prevents fragments/clipping. Furnace retains
+its large column, with32 registered textures and16 new flared-root poses.
+Red/green use the exact opening whv_ace family, preserving alpha, non-paint
+pixels and luminance. Thirty registered fighter cells include original pose
+aliases;21 are unique. Owning build_part2_art_1010.py invokes its1011 helpers.
+New source/prompts/audit under _ART_SOURCES/part2_1011. Preview has Onion,
+palette selection, fixed union-fit camera and refreshed live screenshots.
+Full suite8394/0, final summary, exit0;45 refreshed native checks, zero errors.
+Initial regression run stopped at a missing Bezier canvas stub; repaired in
+the test-local harness and rerun to completion. Main HEAD7539951 unchanged.
+All earlier local work remains preserved. No commit/push requested.
+
+# 2026-10-10 - LOCAL: gameplay/commentary part-two pass
+
+Reviewed the complete 37:46 commentary and 151 whole-recording timeline captures
+from 2026-10-10 21-25-04.mp4. Every spoken item is recorded in
+`docs/feedback/PLAYTHROUGH_PART2_1010.md`; native evidence is in
+`docs/qa/playthrough_part2_1010.json`, with the interactive art/game review at
+`docs/previews/part2_1010/index.html`.
+
+New owners: part2_combat_1010.js, part2_encounters_1010.js and
+part2_modes_1010.js, after the existing authored passes. Finite bounded beam
+rendering fixes the Harrier hang. Native core/module attack controllers,
+pellet interception, Forge scoping/earned recipes, independent shields,
+pilot dialogue/retina colors, Rebels/Harrier story ownership, single Hammer
+missile-triggered death, full-height spikes and menu fitting are verified.
+105 generated shipping cells are owned by build_part2_art_1010.py; source
+hashes, fixed pivots and prompt provenance remain in _ART_SOURCES/part2_1010.
+Full regression suite final summary: 8,383 passing assertions, zero errors,
+exit0. Native encounter/presentation reports have zero browser/asset errors.
+Protected fixtures do not establish human Furious win rate; online pairing
+and a natural full Boss Rush clear remain untested. Existing P1-biased
+co-op enemy aim is a further refinement, not new parity. No commit/push was
+requested with this video. Preserve all prior work. Neither the stale boolean
+nor password fights earn bonus modes. Git HEAD remains 7539951.
+
+# 2026-10-10 - LOCAL: original static pilot ships replace rejected jet likenesses
+
+Mike rejected the generated Cole homecoming ship and explicitly allowed static
+ship images. All nine pilots now use original ship-sheet front `ship_<pk>_so6`
+and rear `ship_<pk>_so2` images via XART and the owning BOFX trim. Front portal
+exit, rear Earth/coast/landing; fixed authored proportions, no new generation,
+recoloring or rotation. Translation/scale and the existing camera animate them.
+Approach/landing share the same image, width and position. The 432 generated
+jet cells remain archived and excluded from live ending dependencies/draws.
+Portal32, pilot exit/walk, doors, camera, infection32, code and original sounds
+remain active. No atlas/gameplay hull changes. See docs/STATIC_PILOT_SHIPS_1010.md
+and docs/qa/static_pilot_ships_1010.json for current verification. Do not treat
+the generated aircraft in the previous drop as approved likenesses. Full suite
+8,335/0, final summary, exit0; native27/0, camera32/0, preview14/0, zero browser
+errors. All18 active views pixel-match the originals; every landing seam is
+continuous. Actual43.7s film and decoded sound inspected. Local only.
+
+# 2026-10-10 - LOCAL: nine generated jet candidates and satellite code takeover
+
+Mike requested animated return-portal/straight Earth-descent shots using each
+pilot's own jet, and a living symbiote taking over the satellite and screen.
+Built-in image_gen produced 467 registered loose PNGs: 48 jet poses per pilot
+(16 front,16 rear,16 landing),32 infection poses and three environment plates.
+Flight/infection384px; landing448px; fixed pivots, untouched native crops and
+integer physical registration. Landing wing tips stay fixed through the open
+canopy, gear and boarding step; the parked scale leaves the doorway clear.
+Existing pilot exit/walk, registered doors and continuous camera push remain.
+Actual AP10 gameplay portal32 opens/swirls/closes. Satellite16.4s attaches
+successive roots to fixed hardware, reveals an aligned infected plate and
+types/scrolls full-screen green binary/code from cached authored bitmap glyphs.
+Original sound cues are live; Play initializes audio. True-ending Command42.8;
+ordinary/Arcade skips preserved. Owners: build_homecoming_1010.py, HC10_ART,
+homecoming_1010.js, survivor_1010.js and hq_landing_1010.js. Old launch/Furyship
+return art is archived. Exact prompts/references/hashes _ART_SOURCES/homecoming_1010.
+Full suite8,335/0 final summary exit0; native24/0, camera/door32/0, preview14/0,
+zero page/console/asset errors. All464 sprite cells natively pixel-compared;
+actual43.5s film with decoded audible original cues. See docs/HOMECOMING_TAKEOVER_1010.md
+and docs/qa/homecoming_takeover_1010.json. Prior staged work retained; local only.
+
+# 2026-10-10 - LOCAL: Hammer depth, commitment and Chromium
+
+Mike requested depth-safe background dives, committed jump strikes, absorptive
+Chromium and Neo Geo shield/core/spike/side swing animation. Player contact now
+uses the drawn orbital scale; early descent cannot collide before scale 1.
+Missiles no longer cancel/reflect the dive. Hammer depletion and the 8% emergency
+reserve wait for the strike; the reserve still restores 38% then resumes rage.
+Chromium body shots are absorbed with no hostile copies; the exposed healing
+hammer and break/stun windows remain. Six built-in image_gen banks add 96 actual
+frames (16 each), even fixed canvases and measured chest/hammer/foot pivots.
+Complete heads and two arms; generated wall shatter and independently animated
+reactor through hit flashes. Owning builder: _BUILD_SOURCE/build_hammer_1010.py;
+runtime: assets/hammer_1010.js, loaded after existing incoming/siege layers.
+Full suite 8,132/0, final summary, exit 0; native 129/0 including keyboard
+BOSS5, four difficulties, live contact/armor, commitment, recovery, wall shatter
+and hit-flash core. Zero page/console/asset errors. Native pixels/timed clips
+inspected; protected fixtures do not establish human-clear balance. See
+[the drop](docs/HAMMER_1010.md), [QA](docs/qa/hammer_1010.json) and
+_shots/hammer_1010/review.html. Existing staged/untracked work preserved.
+Local only; no commit/push.
+
+# 2026-10-10 - GitHub 7539951 merged with local siege tanks
+
+Mike requested the latest GitHub commit 7539951 plus the local work. Main is
+7539951cf668e2ac38b8640cf7c98f8682fd0954 after a fast-forward. Incoming orb,
+HUD, boss-bar/finale, feedback, camera/pacing and Overdrive updates are present.
+SONIC / ORDOS / HARK and all approved modular art are preserved; siege layers
+load after orbs_1010.js. Incoming ice/fire orbs hit the new modules correctly.
+The prior staged handoff paragraphs remain staged (7/8 additions); all 4,760
+old untracked paths and 1,186 measured art/source/preview hashes are preserved.
+Full suite 8,079/0, exit 0; native password/combat 81/81, four-difficulty/damage
+33/33, incoming HUD/clear 9/9, zero browser/console/asset errors. Native pixels
+and preview inspected. A tracked safety stash is retained at f48b4f41ea0e.
+See [the merge record](docs/MERGE_7539951_1010.md). No extra commit or push.
+
+# 2026-10-10 — LOCAL: playable siege tank passwords
+
+Mike approved the three modular art candidates as Level 1 miniboss fights.
+Passwords SONIC (Sonic), ORDOS (Deviator), HARK (Devastator) follow ordinary
+pilot/difficulty selection and are in the pinned password catalog. Default
+campaign Razorback remains. Owned siege_tanks_1010 runtime uses all 553 approved
+shipping cells, actual eight-part damage/Retina/finite-beam geometry, cached
+opaque lock pixels, precise ship contact, southbound pressure/plasma/missile
+patterns, original warnings, reviewed sounds and physical burning breakup.
+Sonic's charged blast retains its 33% footprint. Existing miniboss HUD/music
+and progression are used. Frames remain even, with unchanged pixels/pivots.
+Build owner: _BUILD_SOURCE/build_siege_tanks_1010.py --deploy; no atlas edits.
+Full suite: 8,079 passed, 0 errors, exit 0. Native gameplay: 69 password/weapon
+checks and 33 difficulty/actual-damage checks passed; preview: 96 passed.
+No browser/console/asset errors. Real screenshots inspected. Protected attack
+fixtures do not establish final human-clear balance. See
+[the encounter report](docs/SIEGE_TANKS_PLAYABLE_1010.md) and
+[portable QA](docs/qa/siege_passwords_1010.json). Local only; no commit/push.
+
 # 2026-10-10 — orb rework (LOCAL ONLY)
 
 Mike: orbs were the weakest weapons and some "just disappear with no effects". [Report](docs/ORBS_1010.md);
@@ -40,6 +607,18 @@ DESIGN.md's earlier SegaScope numbers. Read [docs/MUSEUM_STUDY_1009.md](docs/MUS
 Mission hooks in main.js gate everything on the mission; rect type 'd' = prone-only duct; World.navR is
 per mission (14 tanks, 9 museum). Probe 28/28 zero errors; old probes 29/29 and 23/23 via a favicon stub
 (this Chromium logs the favicon 404 without a URL). Base game untouched.
+
+# 2026-10-08 — Overdrive ground campaign publication
+
+Mike authorized publishing the standalone Overdrive ground build. Levels 2–4
+include The Warrior, fluid tank controls, destructible cover/buildings, the
+Miami infantry mission, and hostile Wren/Rolf/Chaz tanks with selectable
+Hotwire/Phoenix/Niel support. Current entry point: `expansion/topdown/index.html`.
+See [Overdrive handoff](docs/OVERDRIVE_GROUND_1008.md) and
+[controls and builders](expansion/topdown/README.md). Native checks: 23/23 Warrior
+and 29/29 campaign, zero page/console/asset errors; base suite 7,952 passes,
+zero errors and final success banner. Protected fixtures do not establish final
+difficulty balance. Unrelated local HUD work and scratch files are not included.
 
 # 2026-10-08 — GitHub publication: live player HUD and encounter bars
 
@@ -130,6 +709,13 @@ line endings are unchanged. Earlier local HUD notes are verification checkpoints
 for this publication. Unrelated expansion work and scratch remain local.
 
 # 2026-10-08 — Live player HUD and complete encounter bars (LOCAL ONLY)
+
+**Overdrive ground continuation, October 8:** see
+[OVERDRIVE_GROUND_1008.md](docs/OVERDRIVE_GROUND_1008.md) for the standalone
+Levels 2–4, original modular Warrior, destructible cover, infantry and hostile
+Machinists with Hotwire/Phoenix/Niel support. Native verification: 23/23 + 29/29,
+zero page/console/asset errors; full base suite 7,952 passes/zero errors/exit 0.
+GitHub publication authorized for the expansion; unrelated HUD work stays local. Base HUD edits remain intact.
 
 Mike requested installing the new HUD, boss bars and miniboss bars.
 [Runtime, ownership and verification](docs/PLAYER_HUD_1008.md),
@@ -6037,3 +6623,181 @@ Read docs/FEEDBACK_1002.md. Runtime layer assets/feedback_1002.js (after feedbac
 - Probe traps: ai27 holds point-blank shots (fewer rounds is intended); index-based round counting breaks when pushes are refused - tag by object.
 - Suite 6,284 ok / 0 errors (with the follow-up); probes probe_hammer_1002, probe_hammer_intro_1002, probe_stealth_1002, probe_hivewing_1002, probe_teamscene_1002, probe_turbulence_1002.
 - Follow-up: both fusion weapons draw the solid SpriteCook plasma column assets/game/fusion_1002/beam.png (helix scrolls, silhouette fixed). ICON ENGINE RULE: iconBlit fits each icon's measured INK (assets/icon_ink_1002.js, from _BUILD_SOURCE/icon_ink_1002.py --write, measured off the RAW iconBlit) to one box - ink height = request, width <= 0.93 x height, one reported box width. New icon family -> re-run the script; unmeasured keys draw as before.
+
+
+## 2026-10-10 - LOCAL: Audio playthrough corrections
+
+Processed all44:32.48 into307 speech segments and39 timestamped directions.
+Source video samples are black; spoken direction and native gameplay evidence
+are explicitly distinguished. Read docs/AUDIO_PLAYTHROUGH_1010.md and
+docs/feedback/PLAYTHROUGH_AUDIO_1010.md before continuing.
+
+Updated HUD/weapon integrity, Stage2/4 attacks, space return, Stage6 actual
+stealth palettes/four allies/rebel demonstrations, StageX arrival/core-zero
+HP gate/reward, nine Wind carriers and Prism-save migration, physical map
+navigation, portal/consumption/early final attacks, copied-form breakup and
+homecoming without extra upgrades. Existing Hammer1010/siege work remains.
+Generated193 registered loose cells plus one HUD from13 accepted image_gen
+sources; exact prompts, original RGBA, pivots and hashes in _ART_SOURCES/audio_1010.
+No atlas edits. Assembly matches aircraft height, then the intended docking
+tuck. Fusion uses measured row gutters and fixed nozzle anchors; next-row
+bleed was caught in the native preview and fixed. No SpriteCook upload occurred.
+
+Final full suite8170/0, final summary/exit0, versus8132/0 before audio work.
+Native gameplay52/0 and preview7/0; page/console/asset errors0. Game.jsLF and
+test_fl.jsCRLF retained. Five new cinematic lines use that owner's originalLF.
+Controlled fixtures/immunity are not campaign wins or a human balance verdict.
+Durable QA: docs/qa/audio_playthrough_1010.json. Local review:
+http://127.0.0.1:8794/docs/previews/audio_1010/index.html
+
+Unresolved identification: unnamed units15:50-17:44 and forms/poses40:38-42:53;
+black video cannot identify the white map artifact or exact completion effect.
+Current completion ship scale and panel aspect pass. No bespoke completion
+reel or specific unnamed remake is claimed. Human Normal/Hard/Furious balance,
+full audio mixing and hardware/gamepad checks remain.
+
+Existing user work/staging and safety stash remain. No commit/push in this pass.
+
+
+## 2026-10-10 - LOCAL: Live HQ cinematic radar and actual ship identities
+
+Mike requested the HQ command-room map to happen live with acquisition, radar
+fill, moving contacts and beeps, and actual ship references for future cinema.
+The active Stage5 bridge now uses four clean generated environments with the
+actual pilot/stealth sprites moving over them. Three radar fields,32 acquired/
+held-sweep cells and the original signal waveform animate while dialogue types.
+Fourteen hostile tracks,five real pilot tracks and an acquired alien source;
+D-pad/pointer select,A scans,B goes Back to dialogue,A then reveals/continues.
+Start retains scene skip. Clock-driven original sound cues do not duplicate
+on redraw. HQ-only narrow viewport/bitmap-text fitting prevents squeezed
+planes,radars,portraits and overflow. The default radar reading beat lasts15s.
+
+Sources and exact built-in image_gen prompts:_ART_SOURCES/hq_live_1010.
+Owner:_BUILD_SOURCE/build_hq_live_1010.py; runtime:assets/hq_live_1010.js.
+36 new even shipping cells; native RGBA and fixed pivots preserved. No atlas
+edits. Real-game reference exports and permanent guidance are documented in
+docs/CINEMATIC_SHIP_REFERENCES_1010.md and the preserved AGENTS.md guide.
+
+Full suite8174/0,final success summary/exit0,baseline8170/0; native25/0,
+review9/0. Zero page/console/asset errors; native wide/narrow pixels inspected.
+Read docs/HQ_LIVE_1010.md and docs/qa/hq_live_1010.json. Live review:
+http://127.0.0.1:8794/docs/previews/hq_live_1010/index.html
+Existing staging7/8 and all previous work preserved; old HQ art remains as
+source history. Game.jsLF/test_fl.jsCRLF unchanged. Local only; no commit/push.
+
+
+## 2026-10-10 - LOCAL: Selected-pilot Fury HQ landing and physical entry
+
+Mike requested removal of the small parked aircraft, a level/grounded current
+Furyship landing, then the selected pilot walking into Fury HQ. Implemented
+in assets/hq_landing_1010.js after the daytime live-HQ owner. Clean sunset
+runway/HQ and portal/Earth plates; all nine actual ship/body identities,
+16 landing/gear/shutdown/hatch poses and8 exit/8 walk poses per pilot. HQ doors
+open before entry and close after; craft stays fixed on its landing gear.
+328 even native-alpha PNGs, physical engine/torso/ground pivots, scale1 crop/
+pad/translation. Exact built-in image_gen prompts, inputs, source/PNG hashes
+and correction prompts:_ART_SOURCES/hq_landing_1010. Owner:build_hq_landing_1010.py.
+Axel's extra source-row body and Juggernaut's body-attached ladder were caught
+in whole-sheet inspection and regenerated; only the corrected rows ship.
+
+Ending now spends26.4s on homecoming before the original survivor stinger.
+Normal campaign reaches its card after entry; Arcade keeps its direct card.
+Timed original sound cues fire once; bounded loading never restores the old
+small aircraft. Wide/narrow proportions and caption fit are retained.
+
+Final full suite8243/0,final success banner/exit0,baseline8174/0. Syntax checks
+pass; game.jsLF/test_fl.jsCRLF retained. Real Chromium18/0; review controls8/0;
+prior HQ/live-radar probe25/0. Actual pilot pixels remain visible around the
+nose/through the doorway, tested by rendering with/without the actor. All
+nine native screenshots inspected.26.28s actual canvas recording reaches all
+seven phases,errors0; silent MP4/WebM in _shots/hq_landing_1010, live review
+plays original sounds. Notes:docs/HQ_LANDING_1010.md; QA:docs/qa/hq_landing_1010.json.
+Review:http://127.0.0.1:8794/docs/previews/hq_landing_1010/index.html
+
+Previous work/staging7/8 and safety stash preserved. No commit/push. This
+verifies cinematic art/controls, not campaign balance or hardware/gamepad.
+
+
+## October 10: Furious Level 1 missile/sonic correction (LOCAL ONLY)
+
+Mike requested faster shootable Furious miniboss missiles and unshootable boss
+sonic waves. Furious Razorback rack/flurry launch speeds are now 4.2/5.2 game
+pixels per frame before the existing difficulty multiplier; one-hit interception,
+original acceleration/Retina and committed flurry lanes are restored. Sonic
+rounds stay protected; Normal/Hard Razorback behavior stays as previously authored.
+Overlord broad/narrow waves explicitly reject interception and Juggernaut wrecking
+balls, retain player damage, and leave the separate boss missiles interceptable.
+Existing game.js/feedback_1009 owners; no new runtime layer or art. Full suite
+8,256/0, final success banner, exit 0; native Chromium 33/0, zero page/console/asset
+errors, actual travel, six weapon carriers, damage, active-defense control and
+visible missile destruction verified. Sources retain LF/CRLF as required. See
+[the correction](docs/STAGE1_ORDNANCE_1010.md) and
+[portable QA](docs/qa/stage1_ordnance_1010.json). Historical October 9 all-round
+protection expectation is superseded for Furious missiles. Protected fixtures
+are not human Furious-clear balance proof. All prior work/staging retained;
+local only, no commit/push.
+
+
+## October 10: Fury HQ door onion registration (LOCAL ONLY)
+
+Mike reported the HQ door frame shifting during the landing animation. The
+owning build now anchors one authored open doorway and slides the two closed
+panels inside its fixed aperture. All 16 opening/closing poses keep exactly
+identical pillars, lintel and threshold; 384x384 cells, fixed pivot, native
+integer crop/translate/composite. No repaint/resampling. Raw source preserved.
+Only 16 door PNGs changed; all other registered images stayed byte-identical.
+Registry and provenance rebuilt through build_hq_landing_1010.py. Renderer,
+pilot art, dialogue and timing are unchanged. Native 21/0, zero page/console/
+asset errors; zero changed fixed pixels, smooth panel reveal, actual door
+opening/closing, all nine pilots and ending continuation verified. Onion and
+native entry screenshots inspected. Full suite 8256/0, final success banner,
+exit 0; syntax checks pass. See docs/HQ_LANDING_1010.md and
+ docs/qa/hq_door_1010.json. Review:
+http://127.0.0.1:8794/docs/previews/hq_landing_1010/index.html
+Prior work/staging 7/8 and safety stash preserved. Local only, no commit/push.
+
+
+## October 10: HQ landing camera and next-scene fade (LOCAL ONLY)
+
+Mike requested dynamic zoom during landing and physical entry, then a fade to
+the next scene. assets/hq_landing_1010.js now moves one proportional camera
+from the wide approach to a 3x door close-up, following the authored pilot route.
+Continuous cubic interpolation and source bounds prevent jumps/uncovered edges;
+captions stay fixed. World roots and the stabilized doorway remain unchanged.
+After door closure, homecoming fades out 25.70-26.40s; the survivor scene fades
+in over 0.65s. Ordinary campaign final card also fades in; Arcade remains direct.
+Preview adds Doorway/Next scene controls, endpoint30.8s. All nine pilots verified.
+Full suite8256/0, final success summary/exit0; native32/0, preview9/0, zero page/
+console/asset errors.28.40s actual-clock recording reaches the next scene and
+its frame film was inspected. Media is silent; interactive review has sounds.
+No sprite/registry/game.js/test_fl.js changes. LF/CRLF and staging7/8 retained.
+See docs/HQ_LANDING_1010.md and docs/qa/hq_camera_1010.json; media/logs in
+_shots/hq_camera_1010. Review:
+http://127.0.0.1:8794/docs/previews/hq_landing_1010/index.html
+Prior work and safety stash preserved. Local only, no commit/push.
+
+
+## October 10: Generated and animated satellite survivor (LOCAL ONLY)
+
+Mike requested better generation/animation for the survivor on the damaged
+satellite dish. New wide and close plates preserve the setting;32 crawl,
+16 coil/charge,16 upper-left launch and16 emerald contact-effect poses preserve
+its black-liquid/metal-shard/emerald-core identity. All80 sprite cells are
+384x384 with a fixed192,192 physical core. Original RGBA pixels are only cropped,
+padded and translated; no per-frame fit, interpolation, rotation or drawn trails.
+Builder build_survivor_1010.py owns82 loose cells and survivor_art_1010.js.
+Runtime survivor_1010.js loads before homecoming so its fade captures the new
+victoryDish owner; clocks26.4..33.8 and later ending beats are unchanged.
+Active ending resize updates the native viewport. Preview has Symbiote/Charge/
+Launch controls and runs to34.5s;?scene=survivor opens the close-up.
+
+Full suite8,269/0,final success banner,exit0 (prior baseline8,256).
+Native17/0+preview12/0,zero page/console/asset errors; all80 animation cells,
+opaque-canvas pixel composites,subpixel core registration,all nine pilots,
+narrow layout,cues and ordinary/Arcade branches verified. An8.99s native engine
+recording and36 timed frames plus all-frame contact sheets were inspected.
+Movie is silent;interactive preview plays original sounds. Sources/exact prompts/
+accepted and rejected generations preserved in _ART_SOURCES/survivor_1010.
+Details docs/SURVIVOR_1010.md;portable evidence docs/qa/survivor_1010.json.
+game.js/test_fl.js/homecoming art unchanged;LF/CRLF retained. All previous
+work/staged7/8 and safety stash preserved. No commit/push.

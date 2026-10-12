@@ -49,15 +49,16 @@ const FB10_ORB={
  water:    {hit:13, shard:1.8, blast:14, boss:32, r:86,  pierce:false},
  lightning:{hit:6,  shard:.9,  blast:14, boss:16, r:72,  pierce:true},
  prism:    {hit:7,  shard:2.0, blast:14, boss:16, r:70,  pierce:true},
+ wind:     {hit:10, shard:1.7, blast:20, boss:28, r:84,  pierce:false},
  chrome:   {hit:8,  shard:2.2, blast:18, boss:20, r:84,  pierce:true},
  dark:     {hit:8,  shard:2.0, blast:20, boss:24, r:80,  pierce:true},
 };
 const FB10_COLOR={ice:'#bfe8ff',fireice:'#9fd8ff',fire:'#ff7331',magma:'#ff451c',toxic:'#96ec38',kinetic:'#8ab4ff',
- water:'#3fa7ff',lightning:'#ffe03a',prism:'#e0b3ff',chrome:'#d6e2ee',dark:'#b46cff'};
+ water:'#3fa7ff',lightning:'#ffe03a',prism:'#e0b3ff',wind:'#71e8c9',chrome:'#d6e2ee',dark:'#b46cff'};
 const FB10_PALETTE={ice:'blue',fireice:'blue',fire:'red',magma:'red',toxic:'green',kinetic:'blue',water:'blue',lightning:'orange',
- prism:'purple',chrome:'white',dark:'purple'};
+ prism:'purple',wind:'green',chrome:'white',dark:'purple'};
 const FB10_SHARD={ice:[1,.10],fireice:[1,.10],fire:[0,.10],magma:[0,.10],toxic:[.45,.23],lightning:[.7,.15],prism:[.65,.17],
- kinetic:[.85,.13],water:[.6,.19],chrome:[.6,.17],dark:[0,.24]};
+ kinetic:[.85,.13],wind:[.9,.12],water:[.6,.19],chrome:[.6,.17],dark:[0,.24]};
 let fb10Clouds=[];
 function fb10Lv(b){return clamp(b.lv||1,1,5);}
 function fb10K(b){return 1+.25*(fb10Lv(b)-1);}              // x1 at level 1, x1.5 at 3, x2 at 5
@@ -76,7 +77,7 @@ function fb10Init(b){
  return b._fb10={k,K,S,shard:S.shard*K*pre,blast:S.blast*K*pre,boss:S.boss*K*pre,r:S.r+fb10Lv(b)*8,last:{x:b.x,y:b.y},mirrorCd:0};
 }
 // Every damaging touch names the orb as the live round: elemental crits and forge infusions apply.
-function fb10As(b,fn){const prev=_dmgBullet;_dmgBullet=b;try{fn();}finally{_dmgBullet=prev;}}
+function fb10As(b,fn){const prev=_dmgBullet,seat=_shooter;_dmgBullet=b;shooterSet(b.seat||1);try{fn();}finally{_dmgBullet=prev;shooterSet(seat);}}
 /* Modular encounters only take damage on their live parts (the Razorback seals its centre plate
    until both gun pods break, for one). An orb is a big round, so instead of testing its centre
    point it looks for the nearest solid point anywhere inside its radius, and strikes there so
@@ -139,16 +140,20 @@ function fb10Blast(b,x,y,why){
  (k==='ice'||k==='fireice'?(S.iceOrbImpact||S.shatter):k==='lightning'?(S.lightning||S.chainShoot):
   k==='water'?(S.waterSplash||S.splash):S.enemyOrbImpact||S.expBig||S.expSmall||function(){})?.();
  // and what it leaves behind
- const shardOpt={mul:F.shard,ts:b._ts,fire:b._fire,wvar:b._wvar,el:b._el||k,forge:!!b._inf,forgeLv:b._infLv||0};
+ const shardOpt={mul:F.shard,ts:b._ts,fire:b._fire,wvar:b._wvar,el:b._el||k,forge:!!b._inf,forgeLv:b._infLv||0,seat:b.seat||1};
  if(k==='ice'||k==='fireice')iceBurst(x,y,b.shardN||7,lv,shardOpt);
  else if(k==='fire'||k==='magma')iceBurst(x,y,Math.max(9,(b.shardN||5)*2),lv,shardOpt);
  else if(k==='toxic')fb10Clouds.push({x,y,r:64+lv*6,t:0,life:2.6,tick:0,dmg:4*F.K,owner:b});
  else if(k==='water'&&typeof geyserSpawn==='function')geyserSpawn(x,y,'water');
- else if(k==='lightning'&&typeof chainZap==='function'){chainZap(x,y,2+Math.floor(lv/2),[]);chainZap(x,y,1+Math.floor(lv/3),[]);}
+ else if(k==='lightning'&&typeof chainZap==='function'){fb10As(b,()=>{chainZap(x,y,2+Math.floor(lv/2),[]);chainZap(x,y,1+Math.floor(lv/3),[]);});}
  else if(k==='prism'){const n=8+lv*2;for(let i=0;i<n;i++){const a=i*TAU/n+(b.spin||0);
   pBullets.push({kind:'spread',x,y,vx:Math.cos(a)*7.5,vy:Math.sin(a)*7.5,w:5,h:12,dmg:6*F.K,lv:1,t:0,pierce:true,_hit:[],_inf:'prism',_child:true,_split:true,_prism:true});}}
- else if(k==='chrome'&&typeof chromeMirror==='function'){chromeMirror(x,y,140+lv*20,lv);iceBurst(x,y,b.shardN||7,lv,shardOpt);}
- else if(k==='dark'){const N=9+Math.min(5,lv);for(let i=0;i<N;i++)pShard(x,y,Math.PI+(i/(N-1))*Math.PI,lv,{mul:F.shard,el:'dark',wvar:'darkorb',forge:true,forgeLv:b._infLv||1});}
+ else if(k==='wind'){
+  for(const e of enemies)if(!e.dead&&Math.hypot(e.x-x,e.y-y)<r&&typeof ap10WindPush==='function')ap10WindPush(e,x,y,lv);
+  for(let i=0;i<8;i++){const a=i*TAU/8;pBullets.push({kind:'shard',x:x+Math.cos(a)*16,y:y+Math.sin(a)*16,vx:Math.cos(a)*6.5,vy:Math.sin(a)*6.5,w:7,h:12,dmg:F.shard,lv,t:0,_inf:'wind',_infLv:b._infLv||1,_el:'wind',seat:b.seat||1,_child:true,_split:true,_ap10Wind:true});}
+ }
+ else if(k==='chrome'&&typeof chromeMirror==='function'){fb10As(b,()=>chromeMirror(x,y,140+lv*20,lv));iceBurst(x,y,b.shardN||7,lv,shardOpt);}
+ else if(k==='dark'){const N=9+Math.min(5,lv);for(let i=0;i<N;i++)pShard(x,y,Math.PI+(i/(N-1))*Math.PI,lv,{mul:F.shard,el:'dark',wvar:'darkorb',forge:true,forgeLv:b._infLv||1,seat:b.seat||1});}
  else if(k==='kinetic')iceBurst(x,y,b.shardN||7,lv,shardOpt);
 }
 // per-target riders a blast leaves on what it caught
@@ -163,7 +168,7 @@ function fb10Rider(b,k,e,lv){
 function fb10CloudTick(dt){
  for(const c of fb10Clouds){c.t+=dt;c.tick-=dt;
   if(c.tick<=0){c.tick=.25;
-   for(const e of enemies){if(e.dead||e._dyingT!=null)continue;if(Math.hypot(e.x-c.x,e.y-c.y)<c.r+(e.w||20)*.25){hitEnemy(e,c.dmg);e._poison=Math.max(e._poison||0,1.4);}}
+   fb10As(c.owner,()=>{for(const e of enemies){if(e.dead||e._dyingT!=null)continue;if(Math.hypot(e.x-c.x,e.y-c.y)<c.r+(e.w||20)*.25){hitEnemy(e,c.dmg);e._poison=Math.max(e._poison||0,1.4);}}});
    fb10HitEncounter(c.owner,c.dmg,c.x,c.y,c.r*.6);
    for(let i=0;i<5;i++)particles.push({x:c.x+rnd(-c.r,c.r)*.7,y:c.y+rnd(-c.r,c.r)*.7,vx:rnd(-.3,.3),vy:rnd(-.6,-.1),life:rnd(.4,.8),t:0,r:rnd(3,7),color:chance(.5)?'#8de23a':'#3aff5a'});
    if(c.t<.3&&typeof efxBurst==='function')efxBurst('toxic',c.x,c.y,c.r*1.4);}
@@ -216,14 +221,14 @@ playerOrbTick=function(b,dt){
  if(b.vy<0)b.vy=Math.min(-3.2,b.vy*Math.pow(.9985,dt*60));
  F.last.x=b.x;F.last.y=b.y;
  // shard spray
- const P=FB10_SHARD[k]||[1,.1],sopt={mul:F.shard,ts:b._ts,fire:b._fire,wvar:b._wvar,el:b._el||k,forge:!!b._inf,forgeLv:b._infLv||0};
+ const P=FB10_SHARD[k]||[1,.1],sopt={mul:F.shard,ts:b._ts,fire:b._fire,wvar:b._wvar,el:b._el||k,forge:!!b._inf,forgeLv:b._infLv||0,seat:b.seat||1};
  b.shardCd-=dt;
  if(b.shardCd<=0){b.shardCd=P[1];const n=Math.max(2,Math.round((b.shardN||3)*P[0]));
   if(P[0]>0)for(let i=0;i<n;i++)pShard(b.x,b.y,b.spin+i*(TAU/n),lv,sopt);
   if(k==='kinetic'||k==='magma'){b._burstBeat=(b._burstBeat||0)+1;if(b._burstBeat%2===1)efxBurst(k==='kinetic'?'kinetic':'fire',b.x,b.y,Math.min(56,b.w*1.5));}
   b.sfxCd=(b.sfxCd||0)-1;if(P[0]>0&&b.sfxCd<=0){b.sfxCd=3;if(Audio.SFX.spread)Audio.SFX.spread();}}
  // chrome: the orb's shell turns enemy rounds it passes back up the screen
- if(k==='chrome'){F.mirrorCd-=dt;if(F.mirrorCd<=0){F.mirrorCd=.18;if(typeof chromeMirror==='function'&&chromeMirror(b.x,b.y,58+lv*6,lv))particles.push({x:b.x,y:b.y,vx:0,vy:0,t:0,life:.2,r:26,flashring:true,color:'#ffffff'});}}
+ if(k==='chrome'){F.mirrorCd-=dt;if(F.mirrorCd<=0){F.mirrorCd=.18;fb10As(b,()=>{if(typeof chromeMirror==='function'&&chromeMirror(b.x,b.y,58+lv*6,lv))particles.push({x:b.x,y:b.y,vx:0,vy:0,t:0,life:.2,r:26,flashring:true,color:'#ffffff'});});}}
  // contact
  b._ht-=dt;if(b._ht<=0){b._hit.length=0;b._ht=.16;}
  fb10As(b,()=>{for(const e of enemies){if(e.dead||e._dyingT!=null)continue;

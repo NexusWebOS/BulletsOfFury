@@ -20,7 +20,7 @@ module.exports=function(vm,ctxv,ok){
   out['live Warden exit bypasses results, campaign and cutscene screens']=run.stage===8&&state===GS.WARPENTRY&&!!l78entry;
   out['direct portal keeps loadout, lives, earned rank and score']=run.weapon===7&&run.lives===4&&campaign.rank[7]&&run.score>score;
   run.stage=6;const six=forgeComboRoll().elem;run.stage=8;
-  out['Prism is Stage 6; Dark Matter is Stage 8']=six==='prism'&&forgeComboRoll().elem==='dark';
+  out['Wind is Stage 6; Dark Matter is Stage 8']=six==='wind'&&forgeComboRoll().elem==='dark';
   b=setup(8,'vileexistence');j3Encounter(b,2);b._r30.mode='fight';b.enter=false;b._r30.cd=0;const types=new Set();
   for(let i=0;i<300;i++){r30Tick(b,.05);if(b._r30.attack)types.add(b._r30.attack.type);}
   out['Dracula performs swipes, crush and flanking court before morphing']=['cf4Sweep','cf4Crush','cf4Court'].every(k=>types.has(k));

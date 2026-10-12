@@ -1,0 +1,424 @@
+{
+ "design": {
+  "name": "chip_douse",
+  "frames": 40,
+  "lfo": 0,
+  "ladder": true,
+  "fm": [],
+  "noise": {
+   "on": true,
+   "white": true,
+   "rate": 3,
+   "toneHz": 3000,
+   "toneSweepTo": 600,
+   "vol": 2,
+   "fade": 0.4,
+   "delay": 0,
+   "frames": 36
+  },
+  "tone": {
+   "on": false,
+   "hz": 880,
+   "sweepTo": 880,
+   "vol": 2,
+   "fade": 0.4,
+   "delay": 0,
+   "frames": 20,
+   "arp": [],
+   "arpFrames": 2
+  }
+ },
+ "recipe": {
+  "v": 1,
+  "name": "chip_douse",
+  "frames": 40,
+  "global": {
+   "lfo": 0,
+   "mode": 0
+  },
+  "fm": [],
+  "psg": [
+   {
+    "ch": 2,
+    "track": [
+     {
+      "f": 0,
+      "period": 37,
+      "vol": 15
+     },
+     {
+      "f": 1,
+      "period": 39,
+      "vol": 15
+     },
+     {
+      "f": 2,
+      "period": 41,
+      "vol": 15
+     },
+     {
+      "f": 3,
+      "period": 43,
+      "vol": 15
+     },
+     {
+      "f": 4,
+      "period": 45,
+      "vol": 15
+     },
+     {
+      "f": 5,
+      "period": 47,
+      "vol": 15
+     },
+     {
+      "f": 6,
+      "period": 49,
+      "vol": 15
+     },
+     {
+      "f": 7,
+      "period": 51,
+      "vol": 15
+     },
+     {
+      "f": 8,
+      "period": 53,
+      "vol": 15
+     },
+     {
+      "f": 9,
+      "period": 56,
+      "vol": 15
+     },
+     {
+      "f": 10,
+      "period": 58,
+      "vol": 15
+     },
+     {
+      "f": 11,
+      "period": 61,
+      "vol": 15
+     },
+     {
+      "f": 12,
+      "period": 64,
+      "vol": 15
+     },
+     {
+      "f": 13,
+      "period": 67,
+      "vol": 15
+     },
+     {
+      "f": 14,
+      "period": 70,
+      "vol": 15
+     },
+     {
+      "f": 15,
+      "period": 73,
+      "vol": 15
+     },
+     {
+      "f": 16,
+      "period": 76,
+      "vol": 15
+     },
+     {
+      "f": 17,
+      "period": 80,
+      "vol": 15
+     },
+     {
+      "f": 18,
+      "period": 83,
+      "vol": 15
+     },
+     {
+      "f": 19,
+      "period": 87,
+      "vol": 15
+     },
+     {
+      "f": 20,
+      "period": 91,
+      "vol": 15
+     },
+     {
+      "f": 21,
+      "period": 95,
+      "vol": 15
+     },
+     {
+      "f": 22,
+      "period": 100,
+      "vol": 15
+     },
+     {
+      "f": 23,
+      "period": 104,
+      "vol": 15
+     },
+     {
+      "f": 24,
+      "period": 109,
+      "vol": 15
+     },
+     {
+      "f": 25,
+      "period": 114,
+      "vol": 15
+     },
+     {
+      "f": 26,
+      "period": 119,
+      "vol": 15
+     },
+     {
+      "f": 27,
+      "period": 125,
+      "vol": 15
+     },
+     {
+      "f": 28,
+      "period": 130,
+      "vol": 15
+     },
+     {
+      "f": 29,
+      "period": 136,
+      "vol": 15
+     },
+     {
+      "f": 30,
+      "period": 143,
+      "vol": 15
+     },
+     {
+      "f": 31,
+      "period": 149,
+      "vol": 15
+     },
+     {
+      "f": 32,
+      "period": 156,
+      "vol": 15
+     },
+     {
+      "f": 33,
+      "period": 163,
+      "vol": 15
+     },
+     {
+      "f": 34,
+      "period": 170,
+      "vol": 15
+     },
+     {
+      "f": 35,
+      "period": 178,
+      "vol": 15
+     },
+     {
+      "f": 36,
+      "period": 186,
+      "vol": 15
+     }
+    ]
+   },
+   {
+    "ch": 3,
+    "track": [
+     {
+      "f": 0,
+      "period": 7,
+      "vol": 2
+     },
+     {
+      "f": 1,
+      "period": 7,
+      "vol": 2
+     },
+     {
+      "f": 2,
+      "period": 7,
+      "vol": 3
+     },
+     {
+      "f": 3,
+      "period": 7,
+      "vol": 3
+     },
+     {
+      "f": 4,
+      "period": 7,
+      "vol": 4
+     },
+     {
+      "f": 5,
+      "period": 7,
+      "vol": 4
+     },
+     {
+      "f": 6,
+      "period": 7,
+      "vol": 4
+     },
+     {
+      "f": 7,
+      "period": 7,
+      "vol": 5
+     },
+     {
+      "f": 8,
+      "period": 7,
+      "vol": 5
+     },
+     {
+      "f": 9,
+      "period": 7,
+      "vol": 6
+     },
+     {
+      "f": 10,
+      "period": 7,
+      "vol": 6
+     },
+     {
+      "f": 11,
+      "period": 7,
+      "vol": 6
+     },
+     {
+      "f": 12,
+      "period": 7,
+      "vol": 7
+     },
+     {
+      "f": 13,
+      "period": 7,
+      "vol": 7
+     },
+     {
+      "f": 14,
+      "period": 7,
+      "vol": 8
+     },
+     {
+      "f": 15,
+      "period": 7,
+      "vol": 8
+     },
+     {
+      "f": 16,
+      "period": 7,
+      "vol": 8
+     },
+     {
+      "f": 17,
+      "period": 7,
+      "vol": 9
+     },
+     {
+      "f": 18,
+      "period": 7,
+      "vol": 9
+     },
+     {
+      "f": 19,
+      "period": 7,
+      "vol": 10
+     },
+     {
+      "f": 20,
+      "period": 7,
+      "vol": 10
+     },
+     {
+      "f": 21,
+      "period": 7,
+      "vol": 10
+     },
+     {
+      "f": 22,
+      "period": 7,
+      "vol": 11
+     },
+     {
+      "f": 23,
+      "period": 7,
+      "vol": 11
+     },
+     {
+      "f": 24,
+      "period": 7,
+      "vol": 12
+     },
+     {
+      "f": 25,
+      "period": 7,
+      "vol": 12
+     },
+     {
+      "f": 26,
+      "period": 7,
+      "vol": 12
+     },
+     {
+      "f": 27,
+      "period": 7,
+      "vol": 13
+     },
+     {
+      "f": 28,
+      "period": 7,
+      "vol": 13
+     },
+     {
+      "f": 29,
+      "period": 7,
+      "vol": 14
+     },
+     {
+      "f": 30,
+      "period": 7,
+      "vol": 14
+     },
+     {
+      "f": 31,
+      "period": 7,
+      "vol": 14
+     },
+     {
+      "f": 32,
+      "period": 7,
+      "vol": 15
+     },
+     {
+      "f": 33,
+      "period": 7,
+      "vol": 15
+     },
+     {
+      "f": 34,
+      "period": 7,
+      "vol": 15
+     },
+     {
+      "f": 35,
+      "period": 7,
+      "vol": 15
+     },
+     {
+      "f": 36,
+      "period": 7,
+      "vol": 15
+     }
+    ]
+   }
+  ],
+  "dac": null
+ }
+}

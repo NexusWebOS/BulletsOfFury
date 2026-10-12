@@ -9,10 +9,10 @@ stageLoadBegin=function(n,keys){const bank=n===2?AC10_JET_ART.fire:n===3?AC10_JE
 function ac10Small(e){return !!AC10.small[run.stage]?.has(e.type)&&!e._af10Jet;}
 enemyShieldAutoEquip=function(e){if(ac10Small(e)){delete e._esh;return null;}return AC10.base.shield.apply(this,arguments);};
 function ac10Ram(e,dt){delete e._esh;delete e._s2Act;delete e._s3Act;e.armed=false;e.shoots=false;e.fireCd=999;
- const q=e._ac10Ram||(e._ac10Ram={phase:'entry',t:0,speed:90});q.t+=dt;e._bank=0;e.spin=0;
+ const q=e._ac10Ram||(e._ac10Ram={phase:'entry',t:0,speed:90});q.tell=diffKey==='easy'?.78:diffKey==='hard'?.55:diffKey==='furious'||diffKey==='insanity'?.48:.60;q.t+=dt;e._bank=0;e.spin=0;
  if(q.phase==='entry'){e.y+=100*dt;if(e.y>=PLAY.y+PLAY.h*.25){q.phase='tell';q.t=0;const p=targetShip(e.x,e.y);q.x=p.x;q.y=p.y;q.angle=Math.atan2(p.y-e.y,p.x-e.x);}}
- else if(q.phase==='tell'){e._chg=1;if(q.t>=.6){q.phase='ram';q.t=0;e._chg=0;Audio.SFX.turbo?.();}}
- else{q.speed=Math.min(diffKey==='furious'?350:300,q.speed+460*dt);e.x+=Math.cos(q.angle)*q.speed*dt;e.y+=Math.sin(q.angle)*q.speed*dt;
+ else if(q.phase==='tell'){e._chg=1;if(q.t>=q.tell){q.phase='ram';q.t=0;e._chg=0;Audio.SFX.turbo?.();}}
+ else{q.speed=Math.min(diffKey==='easy'?250:diffKey==='hard'?330:diffKey==='furious'||diffKey==='insanity'?390:300,q.speed+460*dt);e.x+=Math.cos(q.angle)*q.speed*dt;e.y+=Math.sin(q.angle)*q.speed*dt;
   let contact=false;for(const seat of seatList())withSeat(seat,()=>{if(player.dead||player.out)return;
    if(Math.abs(e.x-player.x)<e.w/2+(player._hx??9)-1&&Math.abs(e.y-player.y)<e.h/2+(player._hy??10)-2){contact=true;playerHit('Kamikaze impact');}});
   if(contact){e.hp=0;e.score=0;e.dropOk=false;killEnemy(e);return;}
@@ -29,12 +29,12 @@ spawnEnemy=function(type,x,y,opt){const jet=type==='ac10firejet'?'fire':type==='
 function ac10Jet(e,dt){const q=e._af10Jet;q.t+=dt;e.spin=0;
  if(e.y<PLAY.y+PLAY.h*.22){e.y+=95*dt;return;}
  e.x+=Math.sin(q.t*1.4)*32*dt;q.cd-=dt;
- if(q.phase==='entry'&&q.cd<=0){q.phase='tell';q.cd=.7;q.aim=aimPlayer(e.x,e.y);}
- else if(q.phase==='tell'&&q.cd<=0){q.phase='burst';q.cd=.16;q.left=3;}
+ if(q.phase==='entry'&&q.cd<=0){q.phase='tell';q.warm=diffKey==='easy'?.9:diffKey==='hard'?.62:diffKey==='furious'||diffKey==='insanity'?.54:.7;q.cd=q.warm;q.aim=aimPlayer(e.x,e.y);}
+ else if(q.phase==='tell'&&q.cd<=0){q.phase='burst';q.cd=.16;q.left=diffKey==='furious'||diffKey==='insanity'?5:3;}
  else if(q.phase==='burst'&&q.cd<=0){q.cd=.16;q.left--;
   for(const side of [-1,1]){const p={x:e.x+side*27,y:e.y+30};eShootT(p.x,p.y,q.aim+side*.08,q.element==='fire'?3.0:3.25,q.element==='fire'?'s2needle':'s3shard',{silent:side>0});
    if(q.element==='fire')stage2Muzzle(e,side*.32,.34,.75,.12);else stage3Muzzle(e,side*.32,.34,.75,.12);}
-  if(q.left<=0){q.phase='entry';q.cd=2.2;}}
+  if(q.left<=0){q.phase='entry';q.cd=diffKey==='easy'?2.8:diffKey==='hard'?1.95:diffKey==='furious'||diffKey==='insanity'?1.35:2.2;}}
  if(q.t>12){e.y+=145*dt;if(e.y>VH+100)e.dead=true;}
 }
 beginStage=function(n){const r=AC10.base.begin.apply(this,arguments);if(n===2||n===3){for(const at of [12,25,38])
@@ -43,10 +43,10 @@ beginStage=function(n){const r=AC10.base.begin.apply(this,arguments);if(n===2||n
 drawEnemy=function(e){const q=e._af10Jet;if(q&&!e.dead&&e._dyingT==null){const bank=AC10_JET_ART[q.element],a=bank[Math.floor((e.t||0)*16)%16];
  if(XART.rdy(a.key)){ctx.save();ctx.imageSmoothingEnabled=false;const s=140/Math.max(a.w,a.h),im=e.flash>0?xartTint(a.key,'#ffffff',1):XART.get(a.key);
  ctx.drawImage(im,e.x-a.pivot[0]*s,e.y-a.pivot[1]*s,a.w*s,a.h*s);ctx.restore();
- if(q.phase==='tell')drawBossRetina(e,e.x+Math.cos(q.aim)*160,e.y+Math.sin(q.aim)*160,q.cd/.7*TAU,1);return;}}
+ if(q.phase==='tell')drawBossRetina(e,e.x+Math.cos(q.aim)*160,e.y+Math.sin(q.aim)*160,q.cd/(q.warm||.7)*TAU,1);return;}}
  const r=AC10.base.draw.apply(this,arguments);const z=e._ac10Ram;
- if(z?.phase==='tell')drawBossRetina(e,z.x,z.y,(1-z.t/.6)*TAU,1);
- if(q?.phase==='tell')drawBossRetina(e,e.x+Math.cos(q.aim)*160,e.y+Math.sin(q.aim)*160,q.cd/.7*TAU,1);return r;};
+ if(z?.phase==='tell')drawBossRetina(e,z.x,z.y,clamp(1-z.t/(z.tell||.6),0,1)*TAU,1);
+ if(q?.phase==='tell')drawBossRetina(e,e.x+Math.cos(q.aim)*160,e.y+Math.sin(q.aim)*160,q.cd/(q.warm||.7)*TAU,1);return r;};
 /* Only mountain vents become horizontal. Player/weapon geysers retain their
    original vertical damage volumes and rendering. Upper-side launch is fixed. */
 s2VentSpawn=function(side,y){const v=AC10.base.ventSpawn.call(this,side,y??PLAY.y+PLAY.h*.20);v._ac10Side=true;v.x=side<0?camLeftX()+8:camRightX()-8;return v;};

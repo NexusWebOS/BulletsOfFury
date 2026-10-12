@@ -125,7 +125,7 @@ function mr27Over(b){
       const mat=H.active?1:clamp(n.materialize||0,0,1);if(mat<=0)continue;
       ctx.save();ctx.globalAlpha*=mat;
       mr27Blit('storm',5,{x:n.x,y:n.y,w:54,h:54},n.flash);
-      mr27CoreDraw(b,{x:n.x,y:n.y,w:15,h:34,flash:n.flash});ctx.restore();
+      mr27CoreDraw(b,{x:n.x,y:n.y,w:15,h:34,rot:(n.spin||0)/16*TAU,flash:n.flash});ctx.restore();
     }
   }
   const list=S.mini?S.drones:S.coreTurrets;for(const d of list||[])if(!d.dead&&(S.mini?d.active>.1:d.materialize>.1))mr27HelperDraw(b,d);

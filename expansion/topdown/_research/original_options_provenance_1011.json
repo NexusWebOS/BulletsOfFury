@@ -1,0 +1,89 @@
+{
+  "owner": "build_original_options_1011.py",
+  "source": "assets/game.js",
+  "sourceSha256": "21be107583b8407e97fece1413b9566c3fe6b304d521166ec3f4efcabc60f5f7",
+  "output": "expansion/topdown/js/original_options_1011.js",
+  "functions": {
+    "roundRectFill": {
+      "originalSha256": "8ee464b400137cd346534eb20c924099f778bb6925bd7ab54740ac7d6d06c348",
+      "adaptedSha256": "8ee464b400137cd346534eb20c924099f778bb6925bd7ab54740ac7d6d06c348",
+      "copiedVerbatim": true
+    },
+    "roundRect": {
+      "originalSha256": "d9d21c9b765e2f73c49b29e8efbad103c4c2597ef7e74e1fee35b4c52a2c6792",
+      "adaptedSha256": "d9d21c9b765e2f73c49b29e8efbad103c4c2597ef7e74e1fee35b4c52a2c6792",
+      "copiedVerbatim": true
+    },
+    "bofPanel": {
+      "originalSha256": "dedb94468e456ae92857733043a17c47cd3c11830c73fdc87bb3c58baab05cd1",
+      "adaptedSha256": "dedb94468e456ae92857733043a17c47cd3c11830c73fdc87bb3c58baab05cd1",
+      "copiedVerbatim": true
+    },
+    "bofTitle": {
+      "originalSha256": "60cdcf7c1157b139188047697b6e17c66df6e6366c1e8b0fe7db8d83010159c3",
+      "adaptedSha256": "60cdcf7c1157b139188047697b6e17c66df6e6366c1e8b0fe7db8d83010159c3",
+      "copiedVerbatim": true
+    },
+    "drawCanonBackdrop": {
+      "originalSha256": "c6d025b921832eda2eb82b8777c310673c25d7d2187ca95055f4836c356411de",
+      "adaptedSha256": "c6d025b921832eda2eb82b8777c310673c25d7d2187ca95055f4836c356411de",
+      "copiedVerbatim": true
+    },
+    "_selKey": {
+      "originalSha256": "9021ee50b2d6c60b12f2b487937de77829203137b86d87ee9611e85ec90d4134",
+      "adaptedSha256": "9021ee50b2d6c60b12f2b487937de77829203137b86d87ee9611e85ec90d4134",
+      "copiedVerbatim": true
+    },
+    "_selWhite": {
+      "originalSha256": "efc7e2c5aa73a3e5974bb068d2b2162615e5d5541585db892f1ecb0c1c201854",
+      "adaptedSha256": "efc7e2c5aa73a3e5974bb068d2b2162615e5d5541585db892f1ecb0c1c201854",
+      "copiedVerbatim": true
+    },
+    "drawSelArrow": {
+      "originalSha256": "28ec4176dffe1a64f5ec94fa062873ccd6e0fa43166da0894f0f6b5866426e8c",
+      "adaptedSha256": "28ec4176dffe1a64f5ec94fa062873ccd6e0fa43166da0894f0f6b5866426e8c",
+      "copiedVerbatim": true
+    },
+    "menuSelMark": {
+      "originalSha256": "c80487c759700eed619606e7985f47548bf96563af35217d8207100df59f6d21",
+      "adaptedSha256": "c80487c759700eed619606e7985f47548bf96563af35217d8207100df59f6d21",
+      "copiedVerbatim": true
+    },
+    "menuSelWhite": {
+      "originalSha256": "7f5f6f158422fd8586b472815f942c08920d65429b046eb21f9546c65a8e9045",
+      "adaptedSha256": "7f5f6f158422fd8586b472815f942c08920d65429b046eb21f9546c65a8e9045",
+      "copiedVerbatim": true
+    },
+    "keyName": {
+      "originalSha256": "3cc0338321b63c122756e762d0a27c0955457b39142dfb4b7dda0210998607a6",
+      "adaptedSha256": "3cc0338321b63c122756e762d0a27c0955457b39142dfb4b7dda0210998607a6",
+      "copiedVerbatim": true
+    },
+    "inputPromptArt": {
+      "originalSha256": "47e745438981dd8d6a17ae5e26e390d6dda0db764a0ce43eb715f5dcb69d5e8c",
+      "adaptedSha256": "47e745438981dd8d6a17ae5e26e390d6dda0db764a0ce43eb715f5dcb69d5e8c",
+      "copiedVerbatim": true
+    },
+    "helpGlyph": {
+      "originalSha256": "9a7d64e265d5621a3963cc2e99886c5d5be03ad9f678db291880cab1f0da2084",
+      "adaptedSha256": "9a7d64e265d5621a3963cc2e99886c5d5be03ad9f678db291880cab1f0da2084",
+      "copiedVerbatim": true
+    },
+    "drawOptions": {
+      "originalSha256": "c833cc2e3f41bd43bab8ebec8822decaf49d421f258c63fb09da0fc82c170f85",
+      "adaptedSha256": "a5ac78296b1b775902f1f449005536935f8913cdd6b9ce4582cb08eaa97bc662",
+      "copiedVerbatim": false
+    }
+  },
+  "adaptations": [
+    "Ground keyboard/controller row data; canonical Overdrive saves and actual hardware bindings",
+    "Controller capture says PRESS BUTTON; learn/preset actions use the original key-cap controls",
+    "Wheel scrolling follows navigation when selection changes, so the cursor does not undo pointer scrolling"
+  ],
+  "viewport": [
+    480,
+    512
+  ],
+  "fonts": "Original BOFmil / BOFCommandSignal.ttf",
+  "layout": "Original panel, 32px rows, segmented volume strips, key caps, scrollbar and CANCEL/APPLY renderer"
+}

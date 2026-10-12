@@ -1,5 +1,5 @@
 @echo off
-REM Local launch helper for the pinned GitHub Overdrive download.
+REM Local fullscreen launch helper for Bullets of Fury Overdrive.
 setlocal EnableExtensions EnableDelayedExpansion
 cd /d "%~dp0"
 title Bullets of Fury - Overdrive Ground Operations
@@ -33,13 +33,14 @@ echo   BULLETS OF FURY - OVERDRIVE GROUND OPERATIONS
 echo   ---------------------------------
 echo   Music priority mix: ON
 echo   Serving: %CD%
-echo   Game:    http://127.0.0.1:%PORT%/expansion/topdown/index.html
+echo   Fullscreen launch: ON
+echo   Game:    http://127.0.0.1:%PORT%/expansion/topdown/index.html?fullscreen=1
 echo.
 echo   Leave this window open while playing.
 echo   Close it or press Ctrl+C to stop the server.
 echo.
 
-start "" /min powershell -NoProfile -WindowStyle Hidden -Command "Start-Sleep -Milliseconds 900; Start-Process 'http://127.0.0.1:%PORT%/expansion/topdown/index.html'"
+start "" /min powershell -NoProfile -WindowStyle Hidden -Command "& %PYEXE% %PYARGS% 'expansion/topdown/_research/launch_overdrive_1011.py' %PORT%"
 %PYEXE% %PYARGS% -m http.server %PORT% --bind 127.0.0.1
 exit /b %errorlevel%
 

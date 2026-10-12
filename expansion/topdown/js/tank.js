@@ -80,7 +80,7 @@
       A.play('mg'); FX.flash(mx, my, aim, 0.14);
     } else if (w.id === 'crash') {
       shot(G.shots, { k: 'crash', x: mx, y: my, vx: fx * 5, vy: fy * 5, a: aim, dmg: 2 + lv, life: 48, r: 7, splash: 26 + lv * 12, sdmg: 1 + lv });
-      A.play('cannon', 0.55); FX.flash(mx, my, aim, 0.18);
+      A.play('crashShot', 0.55); FX.flash(mx, my, aim, 0.18);
     } else if (w.id === 'laser') {
       shot(G.shots, { k: 'laser', x: mx, y: my, vx: fx * 11, vy: fy * 11, a: aim, dmg: 2, life: 40, r: 4, pierce: lv + 1, lv });
       A.play('laser');
@@ -102,7 +102,7 @@
     shot(G.shots, { k: 'shell', x: mx, y: my, vx: fx * 15.6, vy: fy * 15.6, a: aim, dmg: big ? 14 : 6, life: 30, r: big ? 9 : 5, splash: big ? 56 : 34, sdmg: big ? 6 : 3, pierce: big ? 3 : 0, big });
     p.recoil = big ? 10 : 6; p.kickAim = aim; p.vx -= fx * (big ? 4.2 : 2.3); p.vy -= fy * (big ? 4.2 : 2.3); Cam.kick(big ? 5 : 2);
     FX.flash(mx, my, aim, big ? 0.34 : 0.24); FX.smoke(mx, my, big ? 0.22 : 0.14, 0.6, fx * 0.6, fy * 0.6); FX.casing(p.x, p.y, aim);
-    A.play('cannon', big ? 1 : 0.8);
+    A.play(big ? 'railCannon' : 'gd_tankCannon', big ? 1 : 0.8);
     TD.Stealth.noise(p.x, p.y, big ? 520 : 420, big ? 0.9 : 0.75, G.units);
     p.canCd = 45;
   }
@@ -111,6 +111,7 @@
   TD.makePlayer = (x, y) => ({
     x, y, vx: 0, vy: 0, r: 20, a: Math.PI, aim: Math.PI, manualAim: 0, hp: 12, max: 12, inv: 90, flash: 0, recoil: 0, fireCd: 0, canCd: 0, charge: 0,
     smoke: 3, missiles: 6, retina: null, weapons: [{ id: 'vulcan', lv: 1 }], wi: 0, dead: false, hidden: false, moving: false, pilot: TD.pilot || 'cole', speed: 2.7,
+    drive: 1, boostLocked: false, boosting: false,
   });
   TD.playerTick = function (p, G, dt) {
     if (p.onfoot) return TD.footTick(p, G, dt);
@@ -118,17 +119,30 @@
     if (p.dead) return;
     p.flash = Math.max(0, p.flash - dt); if (p.inv > 0) p.inv--;
     p.recoil *= 0.74; if (p.recoil < 0.05) p.recoil = 0;
-    const [dx, dy] = I.dir(), lock = I.down('C');
+    let [dx, dy] = I.dir();
+    const free=I.down('cruise'),lock=I.down('C')||free;
+    if(free&&!p.cruising){const n=Math.hypot(dx,dy),speed=Math.hypot(p.vx,p.vy);p.cruiseDir=speed>.15?(p.lastDrive||[p.vx/speed,p.vy/speed]):n?[dx/n,dy/n]:[0,0];G.cruiseAim=p.aim;G.cruiseTime=0;}
+    p.cruising=free;
+    const freeAim=free&&(dx||dy)?M.angTo(0,0,dx,dy):null;
+    if(free)[dx,dy]=p.cruiseDir||[0,0];
+    else{p.cruiseDir=null;p.lastDrive=dx||dy?[dx/(Math.hypot(dx,dy)||1),dy/(Math.hypot(dx,dy)||1)]:null;}
     const inHedge = !!W.inType(p.x, p.y, 'h');
-    const spd = p.speed * (inHedge ? 0.55 : 1);
+    if (!I.down('boost')) p.boostLocked = false;
+    p.boosting = I.down('boost') && !!(dx || dy) && !p.boostLocked && p.drive > 0;
+    if (p.boosting) {
+      p.drive = Math.max(0, p.drive - dt / 2.25);
+      if (p.drive === 0) p.boostLocked = true;
+    } else p.drive = Math.min(1, p.drive + dt / 3.4);
+    const spd = p.speed * (p.boosting ? 2.05 : 1) * (inHedge ? 0.55 : 1);
     const len = Math.hypot(dx, dy) || 1, slowdown = I.down('X') ? 0.68 : 1;
     const tx = dx / len * spd * slowdown, ty = dy / len * spd * slowdown;
-    p.vx = M.lerp(p.vx, tx, dx || dy ? 0.24 : 0.34); p.vy = M.lerp(p.vy, ty, dx || dy ? 0.24 : 0.34);
+    const accel = dx || dy ? (p.boosting ? 0.2 : 0.24) : 0.34;
+    p.vx = M.lerp(p.vx, tx, accel); p.vy = M.lerp(p.vy, ty, accel);
     if ((dx || dy) && !lock) {
       const want = M.angTo(0, 0, dx, dy), diff = Math.abs(M.wrap(want - p.a));
       if (diff < 2.65) p.a = M.turnTo(p.a, want, 0.12);
     }
-    const aim = I.aim(p);
+    const aim = I.down('aimLeft') || I.down('aimRight') ? null : I.aim(p) ?? freeAim;
     if (aim != null) { p.aim = I.state.directionalFire ? aim : M.turnTo(p.aim, aim, 0.18); p.manualAim = 30; }
     else if (I.down('aimLeft') || I.down('aimRight')) {
       p.aim += (I.down('aimRight') ? 1 : -1) * 0.07; p.manualAim = 120;
@@ -139,7 +153,13 @@
     // Charge tension gently seats the whole tank behind the bore, while firing
     // adds a larger physical impulse. The collision pass constrains both.
     if (I.down('X') && p.charge < 40) { const [fx, fy] = M.fwd(p.aim); p.x -= fx * 0.09; p.y -= fy * 0.09; }
-    if (p.moving && G.t % 10 === 0) { const [fx, fy] = M.fwd(p.a); FX.smoke(p.x - fx * 24, p.y - fy * 24, 0.07, 0.5); }
+    if (p.moving && G.t % (p.boosting ? 4 : 10) === 0) {
+      const [fx, fy] = M.fwd(p.a), [sx, sy] = M.fwd(p.a + Math.PI / 2);
+      for (const side of p.boosting ? [-1, 1] : [0])
+        FX.smoke(p.x - fx * 24 + sx * side * 17, p.y - fy * 24 + sy * side * 17,
+          p.boosting ? 0.12 : 0.07, p.boosting ? 0.7 : 0.5);
+      if (p.boosting && G.t % 24 === 0) TD.Stealth.noise(p.x, p.y, 240, 0.4, G.units);
+    }
     for (const q of G.props) if (!q.dead) pushOut(p, q);
     W.collide(p, p.r, false);
     p.hidden = !!W.inType(p.x, p.y, 'h');
@@ -147,6 +167,7 @@
     if (p.fireCd > 0) p.fireCd--; if (p.canCd > 0) p.canCd--;
     TD.Retina.tick(p, G, dt);
     if (I.down('A') && p.fireCd <= 0) firePrimary(p, G);
+    if (I.down('A') && I.down('retina') && p.retina?.locked && p.canCd <= 0) TD.Retina.fire(p, G, 0);
     if (I.tap('B') && p.canCd <= 0 && !I.down('X')) fireCannon(p, G, 0);
     if (I.down('X') && p.canCd <= 0) { if (p.charge === 0) A.play('charge'); p.charge = Math.min(72, p.charge + 1); }
     else if (p.charge > 0) { if (p.canCd <= 0) fireCannon(p, G, p.charge >= 40 ? 1 : 0); p.charge = 0; }
@@ -165,7 +186,7 @@
   TD.pushOut = pushOut;
   TD.hurtPlayer = function (G, dmg, x, y) {
     const p = G.player; if (p.dead || p.inv > 0 || G.state !== 'play') return;
-    p.hp -= p.onfoot ? p.hp : dmg; p.inv = 50; p.flash = 0.18; Cam.kick(5); A.play('hit');
+    p.hp -= p.onfoot ? p.hp : dmg*(TD.DIFFICULTIES?.[TD.difficulty||'normal']?.damage||1); p.inv = 50; p.flash = 0.18; Cam.kick(5); A.play('hit');
     if (x != null) FX.boom(x, y, 40, 'nxp_clus_');
     if (p.hp <= 0) TD.game.playerDied();
   };
@@ -206,10 +227,11 @@
     const T = ET[u.type], gun = T.gun, [fx, fy] = M.fwd(u.look), mx = u.x + fx * 24, my = u.y + fy * 24;
     const E = (o) => { o.t = 0; G.eshots.push(o); };
     if (gun === 'burst') { u.burst = 3 + (u.type === 'turret' ? 2 : 0); u.burstT = 0; return; }
-    if (gun === 'shell') { E({ k: 'shell', x: mx, y: my, vx: fx * 5.6, vy: fy * 5.6, a: u.look, dmg: 2, life: 80, r: 5 }); A.play('eshot'); }
-    if (gun === 'twin') for (const s of [-1, 1]) { const [px, py] = M.fwd(u.look + Math.PI / 2); E({ k: 'shell', x: mx + px * s * 9, y: my + py * s * 9, vx: fx * 5.2, vy: fy * 5.2, a: u.look, dmg: 2, life: 85, r: 6 }); A.play('eshot'); }
-    if (gun === 'snipe') { E({ k: 'snipe', x: mx, y: my, vx: fx * 9.5, vy: fy * 9.5, a: u.look, dmg: 3, life: 45, r: 4 }); A.play('laser', 0.7); }
+    if (gun === 'shell') { E({ k: 'shell', x: mx, y: my, vx: fx * 5.6, vy: fy * 5.6, a: u.look, dmg: 2, life: 80, r: 5 }); A.play('gd_tankCannon', .65); }
+    if (gun === 'twin') for (const s of [-1, 1]) { const [px, py] = M.fwd(u.look + Math.PI / 2); E({ k: 'shell', x: mx + px * s * 9, y: my + py * s * 9, vx: fx * 5.2, vy: fy * 5.2, a: u.look, dmg: 2, life: 85, r: 6 }); A.play('bossCannon', .7); }
+    if (gun === 'snipe') { E({ k: 'snipe', x: mx, y: my, vx: fx * 9.5, vy: fy * 9.5, a: u.look, dmg: 3, life: 45, r: 4 }); A.play(u.type === 'railTank' ? 'railCannon' : 'enemyLaser', 0.7); }
     if (gun === 'rocket') for (const d of [-0.22, 0, 0.22]) { const a = u.look + d, f = M.fwd(a); E({ k: 'missile', x: mx, y: my, vx: f[0] * 3.2, vy: f[1] * 3.2, a, dmg: 2, life: 120, r: 5, homing: 35, turn: 0.025, shootable: true }); }
+    if (gun === 'rocket') A.play('missileLaunch', .65);
     FX.flash(mx, my, u.look, 0.18);
     TD.Stealth.noise(u.x, u.y, 160, 0.2, G.units.filter(o => o !== u));
   }
@@ -222,7 +244,7 @@
     // burst fire in progress
     if (u.burst > 0 && (u.burstT -= dt) <= 0) {
       u.burst--; u.burstT = 0.09; const a = u.look + M.rnd(-0.06, 0.06), [fx, fy] = M.fwd(a);
-      G.eshots.push({ k: 'mg', x: u.x + fx * 22, y: u.y + fy * 22, vx: fx * 4.6, vy: fy * 4.6, a, dmg: 1, life: 80, r: 4, t: 0 }); A.play('eshot', 0.6);
+      G.eshots.push({ k: 'mg', x: u.x + fx * 22, y: u.y + fy * 22, vx: fx * 4.6, vy: fy * 4.6, a, dmg: 1, life: 80, r: 4, t: 0 }); A.play(T.foot ? 'gd_soldierRifle' : 'eshot', 0.6);
     }
     if (T.camera) {   // a camera only ever sweeps; spotting you is its whole job
       u.scan += dt * 0.55; u.look = u.base + Math.sin(u.scan) * 0.85;
@@ -307,7 +329,7 @@
     if (u.hp <= 0) {
       u.dead = true; G.kills++; G.score += ET[u.type].score * (sneak ? 2 : 1);
       if (ET[u.type].et) FX.boom(u.x, u.y, 150, 'gfx_destruction_', 6); else FX.boom(u.x, u.y, 110, 'nxp_dense_'); FX.debris(u.x, u.y, 0.35); FX.ring(u.x, u.y, 0.5, 'rzb_sonic_ring'); FX.smoke(u.x, u.y, 0.3, 1.6);
-      Cam.kick(5); A.play('expB');
+      Cam.kick(5); A.play(ET[u.type].foot ? 'gd_soldierDown' : 'enemyDie');
       const T = ET[u.type];
       G.wrecks.push({ x: u.x, y: u.y, a: T.foot ? -Math.PI : u.a, art: T.mod ? 'wm_tank_' + T.mod + '_wreck' : T.et ? 'et_' + T.et + '_wreck' : T.wreck || T.art, still: T.still || !!T.et || !!T.mod || !!T.foot, s: T.mod ? T.ds * 256 / 192 : T.ds });
       TD.Stealth.noise(u.x, u.y, 300, 0.5, G.units);
@@ -332,7 +354,7 @@
     if (q.kind === 'barrel') {
       FX.boom(q.x, q.y, 120, 'nxp_dense_'); FX.ring(q.x, q.y, 0.6); A.play('expB'); Cam.kick(6);
       TD.blast(G, q.x, q.y, 64, 5, true);
-    } else { FX.boom(q.x, q.y, 50, 'nxp_clus_'); FX.debris(q.x, q.y, 0.22); A.play('expS'); TD.dropPickup(G, q.x, q.y, q.drop); }
+    } else { FX.boom(q.x, q.y, 50, 'nxp_clus_'); FX.debris(q.x, q.y, 0.22); A.play('gd_crateBreak'); TD.dropPickup(G, q.x, q.y, q.drop); }
   };
   TD.drawProp = function (ctx, q) {
     const P = PROP[q.kind];
@@ -364,7 +386,7 @@
     for (const k of G.pickups) {
       k.t += dt;
       if (!p.dead && M.dist(k.x, k.y, p.x, p.y) < p.r + 14) {
-        k.dead = true; A.play('pick');
+        k.dead = true; A.play(WPN[k.kind] ? 'weaponFound' : k.kind === 'life' ? 'extraLife' : k.kind === 'score' ? 'scoreBullet1000' : 'gd_ammoPickup');
         if (WPN[k.kind]) {
           const current=p.weapons[p.wi];
           p.weapons=[{id:k.kind,lv:current.id===k.kind?Math.min(3,current.lv+1):1}];p.wi=0;
@@ -413,16 +435,16 @@
       for (const u of G.units) {
         if (u.dead || (s.hit && s.hit.has(u))) continue;
         if (M.dist(s.x, s.y, u.x, u.y) < u.r + s.r) {
-          TD.hitUnit(G, u, s.dmg, s.x, s.y); A.play('hit', 0.6); FX.boom(s.x, s.y, 26, 'nxp_clus_');
+          TD.hitUnit(G, u, s.dmg, s.x, s.y); A.impact(s, 0.6); FX.boom(s.x, s.y, 26, 'nxp_clus_');
           if (s.pierce > 0) { s.pierce--; (s.hit = s.hit || new Set()).add(u); } else { endShot(G, s); break; }
         }
       }
       if (s.dead) continue;
       for (const q of G.props) if (!q.dead && M.dist(s.x, s.y, q.x, q.y) < q.r + s.r) { TD.hitProp(G, q, s.dmg); endShot(G, s); break; }
       if (s.dead) continue;
-      if (G.boss && G.boss.alive()) { const hit = G.boss.hit(s.x, s.y, s.r, s.dmg, s); if (hit) { FX.boom(s.x, s.y, 30, 'nxp_clus_'); A.play('hit', 0.6); if (s.pierce > 0) s.pierce--; else endShot(G, s); } }
+      if (G.boss && G.boss.alive()) { const hit = G.boss.hit(s.x, s.y, s.r, s.dmg, s); if (hit) { FX.boom(s.x, s.y, 30, 'nxp_clus_'); A.impact(s, 0.6); if (s.pierce > 0) s.pierce--; else endShot(G, s); } }
       // a player round can shoot down a boss missile
-      if (!s.dead) for (const e of G.eshots) if (e.shootable && !e.dead && M.dist(s.x, s.y, e.x, e.y) < e.r + s.r + 2) { e.dead = true; FX.boom(e.x, e.y, 50, 'nxp_clus_'); A.play('expS'); G.score += 100; endShot(G, s); break; }
+      if (!s.dead) for (const e of G.eshots) if (e.shootable && !e.dead && M.dist(s.x, s.y, e.x, e.y) < e.r + s.r + 2) { e.dead = true; FX.boom(e.x, e.y, 50, 'nxp_clus_'); A.play('missileHit'); G.score += 100; endShot(G, s); break; }
     }
     G.shots = G.shots.filter(s => !s.dead);
     for (const e of G.eshots) {
@@ -431,10 +453,10 @@
       if (e.accel) { const sp = Math.min(e.max || 8, Math.hypot(e.vx, e.vy) + e.accel), [fx, fy] = M.fwd(e.a); e.vx = fx * sp; e.vy = fy * sp; if (e.t % 3 === 0) FX.smoke(e.x - fx * 12, e.y - fy * 12, 0.06, 0.4); }
       const ex = e.x, ey = e.y; e.x += e.vx; e.y += e.vy;
       if (TD.structureImpact(G, e, ex, ey, e.x, e.y)) { e.dead = true; continue; }
-      if (--e.life <= 0 || (!e.over && W.solidAt(e.x, e.y))) { e.dead = true; if (e.r > 5) FX.boom(e.x, e.y, 40, 'nxp_clus_'); continue; }
-      if (!p.dead && M.dist(e.x, e.y, p.x, p.y) < p.r * 0.75 + e.r) { e.dead = true; TD.hurtPlayer(G, e.dmg, e.x, e.y); continue; }
-      if (G.ally && !G.ally.dead && M.dist(e.x, e.y, G.ally.x, G.ally.y) < G.ally.r + e.r) { e.dead = true; TD.hurtAlly(G, e.dmg); continue; }
-      for (const q of G.props) if (!q.dead && M.dist(e.x, e.y, q.x, q.y) < q.r + e.r) { e.dead = true; TD.hitProp(G, q, e.dmg); break; }
+      if (--e.life <= 0 || (!e.over && W.solidAt(e.x, e.y))) { if (e.life > 0) A.impact(e, .55); e.dead = true; if (e.r > 5) FX.boom(e.x, e.y, 40, 'nxp_clus_'); continue; }
+      if (!p.dead && M.dist(e.x, e.y, p.x, p.y) < p.r * 0.75 + e.r) { e.dead = true; if (e.k !== 'mg') A.impact(e, .6); TD.hurtPlayer(G, e.dmg, e.x, e.y); continue; }
+      if (G.ally && !G.ally.dead && M.dist(e.x, e.y, G.ally.x, G.ally.y) < G.ally.r + e.r) { e.dead = true; if (e.k !== 'mg') A.impact(e, .6); TD.hurtAlly(G, e.dmg); continue; }
+      for (const q of G.props) if (!q.dead && M.dist(e.x, e.y, q.x, q.y) < q.r + e.r) { e.dead = true; A.impact(e, .5); TD.hitProp(G, q, e.dmg); break; }
     }
     G.eshots = G.eshots.filter(e => !e.dead);
   };
@@ -443,7 +465,7 @@
     if(s.napalm){(G.burns=G.burns||[]).push({x:s.x,y:s.y,t:0,next:.4});}
     if (s.splash) {
       FX.boom(s.x, s.y, s.big ? 140 : 70, s.big ? 'nxp_dense_' : 'nxp_clus_'); FX.boom(s.x, s.y, s.big ? 120 : 80, 'gfx_impact_', 6); if (s.big) FX.ring(s.x, s.y, 0.6);
-      A.play(s.big ? 'expB' : 'expS'); TD.blast(G, s.x, s.y, s.splash, s.sdmg || 2, false);
+      if (s.k === 'shell' || s.k === 'homing') A.impact(s); else A.play(s.big ? 'expB' : 'expS'); TD.blast(G, s.x, s.y, s.splash, s.sdmg || 2, false);
     }
   }
   const EGL = [1, 3, 4, 5, 6, 7];   // eglaser_2 is not registered

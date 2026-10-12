@@ -1,0 +1,517 @@
+{
+  "raw_sha256": "ea9bd867389faad1d97df0e3a92422eec9236518ab39e7bc4fbb1070c16d1699",
+  "bank": [
+    {
+      "key": "ap10_chain_00",
+      "path": "assets/game/shared/combat/audio_1010/chain_00.png",
+      "w": 256,
+      "h": 400,
+      "pivot": [
+        128,
+        200
+      ],
+      "ink": [
+        47,
+        44,
+        218,
+        330
+      ],
+      "source_rect": [
+        0,
+        0,
+        248,
+        396
+      ],
+      "source_pivot": [
+        132.5,
+        187.0
+      ],
+      "translation": [
+        -4,
+        13
+      ],
+      "scale": 1,
+      "sha256": "b78568511cb7c30f89bb1faf64ba8f488e8a6564456101d7d37619a70129f088"
+    },
+    {
+      "key": "ap10_chain_01",
+      "path": "assets/game/shared/combat/audio_1010/chain_01.png",
+      "w": 256,
+      "h": 400,
+      "pivot": [
+        128,
+        200
+      ],
+      "ink": [
+        56,
+        47,
+        200,
+        330
+      ],
+      "source_rect": [
+        248,
+        0,
+        496,
+        396
+      ],
+      "source_pivot": [
+        128.0,
+        188.5
+      ],
+      "translation": [
+        0,
+        12
+      ],
+      "scale": 1,
+      "sha256": "b5e91da16ea850c3038f47632e08ad4c1a84725172063410b123f4ab0790c1ae"
+    },
+    {
+      "key": "ap10_chain_02",
+      "path": "assets/game/shared/combat/audio_1010/chain_02.png",
+      "w": 256,
+      "h": 400,
+      "pivot": [
+        128,
+        200
+      ],
+      "ink": [
+        68,
+        50,
+        183,
+        331
+      ],
+      "source_rect": [
+        496,
+        0,
+        744,
+        396
+      ],
+      "source_pivot": [
+        125.5,
+        190.5
+      ],
+      "translation": [
+        2,
+        10
+      ],
+      "scale": 1,
+      "sha256": "c3696f034892179d333d3f632c31846b2a2f65086102bd417f7315e3c4381407"
+    },
+    {
+      "key": "ap10_chain_03",
+      "path": "assets/game/shared/combat/audio_1010/chain_03.png",
+      "w": 256,
+      "h": 400,
+      "pivot": [
+        128,
+        200
+      ],
+      "ink": [
+        79,
+        50,
+        169,
+        331
+      ],
+      "source_rect": [
+        744,
+        0,
+        992,
+        396
+      ],
+      "source_pivot": [
+        124.0,
+        190.5
+      ],
+      "translation": [
+        4,
+        10
+      ],
+      "scale": 1,
+      "sha256": "8f15d534317837d1154235bb9a9452d41341aa64571ce813ee6dcb5efd95cc89"
+    },
+    {
+      "key": "ap10_chain_04",
+      "path": "assets/game/shared/combat/audio_1010/chain_04.png",
+      "w": 256,
+      "h": 400,
+      "pivot": [
+        128,
+        200
+      ],
+      "ink": [
+        88,
+        56,
+        157,
+        331
+      ],
+      "source_rect": [
+        992,
+        0,
+        1239,
+        396
+      ],
+      "source_pivot": [
+        122.5,
+        193.5
+      ],
+      "translation": [
+        6,
+        6
+      ],
+      "scale": 1,
+      "sha256": "f97401ed8965098c900363c49af05be4d51118f8012b577ba8792d79808aaa6e"
+    },
+    {
+      "key": "ap10_chain_05",
+      "path": "assets/game/shared/combat/audio_1010/chain_05.png",
+      "w": 256,
+      "h": 400,
+      "pivot": [
+        128,
+        200
+      ],
+      "ink": [
+        66,
+        50,
+        179,
+        331
+      ],
+      "source_rect": [
+        1239,
+        0,
+        1487,
+        396
+      ],
+      "source_pivot": [
+        122.5,
+        190.5
+      ],
+      "translation": [
+        6,
+        10
+      ],
+      "scale": 1,
+      "sha256": "8f004f9b2e4e9edb89dd74f3ee6debfb38b09e70bb24707776d7f94bd9b3b586"
+    },
+    {
+      "key": "ap10_chain_06",
+      "path": "assets/game/shared/combat/audio_1010/chain_06.png",
+      "w": 256,
+      "h": 400,
+      "pivot": [
+        128,
+        200
+      ],
+      "ink": [
+        48,
+        49,
+        192,
+        331
+      ],
+      "source_rect": [
+        1487,
+        0,
+        1735,
+        396
+      ],
+      "source_pivot": [
+        120.0,
+        190.0
+      ],
+      "translation": [
+        8,
+        10
+      ],
+      "scale": 1,
+      "sha256": "6ae9012f83651945862310e611359eefe48dc7cd72fa4734edc4ee770b46e33b"
+    },
+    {
+      "key": "ap10_chain_07",
+      "path": "assets/game/shared/combat/audio_1010/chain_07.png",
+      "w": 256,
+      "h": 400,
+      "pivot": [
+        128,
+        200
+      ],
+      "ink": [
+        31,
+        45,
+        202,
+        331
+      ],
+      "source_rect": [
+        1735,
+        0,
+        1983,
+        396
+      ],
+      "source_pivot": [
+        116.5,
+        188.0
+      ],
+      "translation": [
+        12,
+        12
+      ],
+      "scale": 1,
+      "sha256": "cb72a2d62ca0ba581b1c50d20cfa6e256e0e53740804be04d2122a0eec51efd5"
+    },
+    {
+      "key": "ap10_chain_08",
+      "path": "assets/game/shared/combat/audio_1010/chain_08.png",
+      "w": 256,
+      "h": 400,
+      "pivot": [
+        128,
+        200
+      ],
+      "ink": [
+        46,
+        45,
+        217,
+        333
+      ],
+      "source_rect": [
+        0,
+        396,
+        248,
+        793
+      ],
+      "source_pivot": [
+        131.5,
+        189.0
+      ],
+      "translation": [
+        -4,
+        11
+      ],
+      "scale": 1,
+      "sha256": "e3cb997a7a98309c7f5f237b9cb1b685b77a6a76996a401b5640512f43aead3d"
+    },
+    {
+      "key": "ap10_chain_09",
+      "path": "assets/game/shared/combat/audio_1010/chain_09.png",
+      "w": 256,
+      "h": 400,
+      "pivot": [
+        128,
+        200
+      ],
+      "ink": [
+        56,
+        48,
+        200,
+        332
+      ],
+      "source_rect": [
+        248,
+        396,
+        496,
+        793
+      ],
+      "source_pivot": [
+        128.0,
+        190.0
+      ],
+      "translation": [
+        0,
+        10
+      ],
+      "scale": 1,
+      "sha256": "86f4f0e8f845d8f8f8341c7fcd0389da01bc1058e0b6eb797242998b3f77b5d0"
+    },
+    {
+      "key": "ap10_chain_10",
+      "path": "assets/game/shared/combat/audio_1010/chain_10.png",
+      "w": 256,
+      "h": 400,
+      "pivot": [
+        128,
+        200
+      ],
+      "ink": [
+        68,
+        50,
+        183,
+        333
+      ],
+      "source_rect": [
+        496,
+        396,
+        744,
+        793
+      ],
+      "source_pivot": [
+        125.5,
+        191.5
+      ],
+      "translation": [
+        2,
+        8
+      ],
+      "scale": 1,
+      "sha256": "c81ab73a16cab9ccb67d1fe7d6be261dd4b27552eab65bcfec749db79decbe1b"
+    },
+    {
+      "key": "ap10_chain_11",
+      "path": "assets/game/shared/combat/audio_1010/chain_11.png",
+      "w": 256,
+      "h": 400,
+      "pivot": [
+        128,
+        200
+      ],
+      "ink": [
+        79,
+        50,
+        169,
+        333
+      ],
+      "source_rect": [
+        744,
+        396,
+        992,
+        793
+      ],
+      "source_pivot": [
+        124.0,
+        191.5
+      ],
+      "translation": [
+        4,
+        8
+      ],
+      "scale": 1,
+      "sha256": "28858e06a2e60a19cdf615da7834f376bacc20cfbe3aa5322cf157eb9796d64b"
+    },
+    {
+      "key": "ap10_chain_12",
+      "path": "assets/game/shared/combat/audio_1010/chain_12.png",
+      "w": 256,
+      "h": 400,
+      "pivot": [
+        128,
+        200
+      ],
+      "ink": [
+        88,
+        56,
+        157,
+        333
+      ],
+      "source_rect": [
+        992,
+        396,
+        1239,
+        793
+      ],
+      "source_pivot": [
+        122.5,
+        194.5
+      ],
+      "translation": [
+        6,
+        6
+      ],
+      "scale": 1,
+      "sha256": "f04563a0d18197de48351fa2c3e737929c117b0907cf8c29f4ae7546204d2e9f"
+    },
+    {
+      "key": "ap10_chain_13",
+      "path": "assets/game/shared/combat/audio_1010/chain_13.png",
+      "w": 256,
+      "h": 400,
+      "pivot": [
+        128,
+        200
+      ],
+      "ink": [
+        66,
+        50,
+        179,
+        333
+      ],
+      "source_rect": [
+        1239,
+        396,
+        1487,
+        793
+      ],
+      "source_pivot": [
+        122.5,
+        191.5
+      ],
+      "translation": [
+        6,
+        8
+      ],
+      "scale": 1,
+      "sha256": "545d88cea41a55807d40ad94603677ff92e1f4d858c8ef73cc08bbf10ca12251"
+    },
+    {
+      "key": "ap10_chain_14",
+      "path": "assets/game/shared/combat/audio_1010/chain_14.png",
+      "w": 256,
+      "h": 400,
+      "pivot": [
+        128,
+        200
+      ],
+      "ink": [
+        48,
+        48,
+        192,
+        333
+      ],
+      "source_rect": [
+        1487,
+        396,
+        1735,
+        793
+      ],
+      "source_pivot": [
+        120.0,
+        190.5
+      ],
+      "translation": [
+        8,
+        10
+      ],
+      "scale": 1,
+      "sha256": "cf6a643461a8fa3da4555919f2811fb6c15ec0a2721620894538ad04c05d210e"
+    },
+    {
+      "key": "ap10_chain_15",
+      "path": "assets/game/shared/combat/audio_1010/chain_15.png",
+      "w": 256,
+      "h": 400,
+      "pivot": [
+        128,
+        200
+      ],
+      "ink": [
+        31,
+        45,
+        202,
+        333
+      ],
+      "source_rect": [
+        1735,
+        396,
+        1983,
+        793
+      ],
+      "source_pivot": [
+        116.5,
+        189.0
+      ],
+      "translation": [
+        12,
+        11
+      ],
+      "scale": 1,
+      "sha256": "98b9236829d4ffde9c2838adb202f26592827a0172a220af8e6abd62bc1bc016"
+    }
+  ]
+}

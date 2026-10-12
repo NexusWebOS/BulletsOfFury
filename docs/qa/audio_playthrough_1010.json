@@ -1,0 +1,1065 @@
+{
+  "date": "2026-10-10",
+  "source": {
+    "source": "C:\\Users\\Mdogg\\Videos\\2026-10-10 12-28-50.mp4",
+    "source_sha256": "e60c8ca8b87798d4df052b4ead2b1aa98c5b1694b0cc0916487c165778a7eeef",
+    "duration": 2672.4775,
+    "duration_after_vad": 895.4055,
+    "language": "en",
+    "engine": "faster-whisper small.en local int8 CPU"
+  },
+  "source_video_evidence": {
+    "black_sample_seconds": [
+      0,
+      600,
+      1200,
+      1800,
+      2400
+    ],
+    "claim": "Audio direction only; source video was not visually reviewed.",
+    "speech_segments": 307,
+    "directions": 39
+  },
+  "git": {
+    "head": "7539951cf668e2ac38b8640cf7c98f8682fd0954",
+    "committed": false,
+    "pushed": false
+  },
+  "regression": {
+    "command": "node _BUILD_SOURCE/test_fl.js",
+    "baseline_passed": 8132,
+    "baseline_failed": 0,
+    "passed": 8170,
+    "failed": 0,
+    "exit_code": 0,
+    "final_summary": "FALVA/LIZZIE BUILD OK, 0 ERRORS",
+    "failing_names": [],
+    "log_sha256": "2cd7a474e6bcaa36542c8fbc31c31c70401387896268c75c760f231b0b35c49f"
+  },
+  "native_gameplay": {
+    "passed": 52,
+    "failed": 0,
+    "errors": [],
+    "reports": {
+      "hud": {
+        "passed": 11,
+        "failed": 0,
+        "checks": [
+          {
+            "name": "Raised counters are above the weapon panels",
+            "passed": true,
+            "data": {
+              "life": [
+                20,
+                12,
+                66,
+                14
+              ],
+              "weapon": [
+                113,
+                30,
+                46,
+                48
+              ],
+              "missile": [
+                388,
+                12,
+                67,
+                14
+              ],
+              "radar": [
+                225,
+                100,
+                30,
+                30
+              ],
+              "row": 96,
+              "house": 192,
+              "top": 80
+            }
+          },
+          {
+            "name": "Radar lives in the top scoreboard strip",
+            "passed": true,
+            "data": null
+          },
+          {
+            "name": "Full-width housing at viewport 1920",
+            "passed": true,
+            "data": {
+              "left": 640,
+              "right": 1280,
+              "w": 640,
+              "gamew": 640,
+              "top": 742,
+              "bottom": 739
+            }
+          },
+          {
+            "name": "Full-width housing at viewport 1280",
+            "passed": true,
+            "data": {
+              "left": 320,
+              "right": 960,
+              "w": 640,
+              "gamew": 640,
+              "top": 742,
+              "bottom": 739
+            }
+          },
+          {
+            "name": "Full-width housing at viewport 820",
+            "passed": true,
+            "data": {
+              "left": 90,
+              "right": 730,
+              "w": 640,
+              "gamew": 640,
+              "top": 742,
+              "bottom": 739
+            }
+          },
+          {
+            "name": "Full-width housing at viewport 480",
+            "passed": true,
+            "data": {
+              "left": 0,
+              "right": 480,
+              "w": 480,
+              "gamew": 480,
+              "top": 665,
+              "bottom": 663
+            }
+          },
+          {
+            "name": "Level V orb remains one committed ball",
+            "passed": true,
+            "data": 1
+          },
+          {
+            "name": "Max chaingun has two wing lanes",
+            "passed": true,
+            "data": 2
+          },
+          {
+            "name": "Charging suppresses manual, automatic and space missiles without spending ammo",
+            "passed": true,
+            "data": {
+              "n": 0,
+              "ammo": 15
+            }
+          },
+          {
+            "name": "Ice boss absorbs 80% same-element damage",
+            "passed": true,
+            "data": {
+              "dmg": 20,
+              "reaction": "absorb-ice"
+            }
+          },
+          {
+            "name": "No page, console or asset errors",
+            "passed": true,
+            "data": []
+          }
+        ],
+        "errors": []
+      },
+      "encounters": {
+        "passed": 4,
+        "failed": 0,
+        "checks": [
+          {
+            "name": "Sovereign executes charge, vertical release and middle lightning burst",
+            "passed": true,
+            "data": [
+              {
+                "event": "sovereign-fusion-charge",
+                "rank": 0
+              },
+              {
+                "event": "sovereign-fusion-release",
+                "x": 340,
+                "y": 210.23662058897037
+              },
+              {
+                "event": "sovereign-fusion-midburst",
+                "count": 5,
+                "speed": 3,
+                "y": 280.6
+              }
+            ]
+          },
+          {
+            "name": "Independent core helpers fire from both physical barrels",
+            "passed": true,
+            "data": {
+              "shots": 30,
+              "barrels": {
+                "1": 15,
+                "-1": 15
+              },
+              "warnings": []
+            }
+          },
+          {
+            "name": "First final encounter actually cycles attacks in live simulation",
+            "passed": true,
+            "data": {
+              "mode": "fight",
+              "encounter": 0,
+              "attacks": [
+                "hostGuns",
+                "hostClaws",
+                "hostLance",
+                "hostOrbit",
+                "hostCross",
+                "hostRoll"
+              ],
+              "bullets": 4,
+              "beams": 0
+            }
+          },
+          {
+            "name": "No page, console or asset errors",
+            "passed": true,
+            "data": []
+          }
+        ],
+        "errors": []
+      },
+      "full": {
+        "passed": 15,
+        "failed": 0,
+        "checks": [
+          {
+            "name": "Furnace forms before its 32-frame shield and uses authored animated chains",
+            "passed": true,
+            "data": {
+              "mode": "arms",
+              "draws": {
+                "chain": 5713,
+                "fire_shield": 59
+              },
+              "barrier": {
+                "active": true,
+                "hp": 388,
+                "maxhp": 388,
+                "hit": 0,
+                "breakT": 0,
+                "rearms": 0,
+                "_ap10Age": 10.150000000000084,
+                "_ap10WasActive": true
+              }
+            }
+          },
+          {
+            "name": "Actual icy laser and muzzles render from boss hardpoints",
+            "passed": true,
+            "data": {
+              "iceMuzzle": 124,
+              "iceBeam": 124
+            }
+          },
+          {
+            "name": "Space fusion charge and moving beam use new art",
+            "passed": true,
+            "data": {
+              "iceMuzzle": 124,
+              "iceBeam": 124,
+              "fusionCharge": 1,
+              "fusionBeam": 7
+            }
+          },
+          {
+            "name": "Space frigate, gravity and station units move and actually fire",
+            "passed": true,
+            "data": {
+              "events": [
+                {
+                  "event": "space-attack",
+                  "type": "s5frigate"
+                },
+                {
+                  "event": "space-attack",
+                  "type": "s5gravity"
+                },
+                {
+                  "event": "space-attack",
+                  "type": "s5station"
+                },
+                {
+                  "event": "space-attack",
+                  "type": "s5frigate"
+                },
+                {
+                  "event": "space-attack",
+                  "type": "s5station"
+                },
+                {
+                  "event": "space-attack",
+                  "type": "s5gravity"
+                },
+                {
+                  "event": "space-attack",
+                  "type": "s5frigate"
+                },
+                {
+                  "event": "space-attack",
+                  "type": "s5station"
+                },
+                {
+                  "event": "space-attack",
+                  "type": "s5gravity"
+                },
+                {
+                  "event": "space-attack",
+                  "type": "s5frigate"
+                },
+                {
+                  "event": "space-attack",
+                  "type": "s5station"
+                },
+                {
+                  "event": "space-attack",
+                  "type": "s5frigate"
+                },
+                {
+                  "event": "space-attack",
+                  "type": "s5gravity"
+                },
+                {
+                  "event": "space-attack",
+                  "type": "s5station"
+                },
+                {
+                  "event": "space-attack",
+                  "type": "s5frigate"
+                }
+              ],
+              "moving": [
+                {
+                  "type": "s5frigate",
+                  "x": 222.4733871844559,
+                  "y": 102.38811099823894,
+                  "t": 12.000000000000176
+                },
+                {
+                  "type": "s5gravity",
+                  "x": 147.4621757216264,
+                  "y": 5.638110998238936,
+                  "t": 2.066666666666664
+                },
+                {
+                  "type": "s5station",
+                  "x": 388.9343610136521,
+                  "y": 101.54572620954228,
+                  "t": 12.000000000000176
+                }
+              ],
+              "bullets": 9
+            }
+          },
+          {
+            "name": "Four allies arrive alongside the player early in Stage 6",
+            "passed": true,
+            "data": 4
+          },
+          {
+            "name": "Red, green and blue stealth plates face south",
+            "passed": true,
+            "data": [
+              {
+                "type": "s6dart",
+                "palette": "blue",
+                "facing": "south"
+              },
+              {
+                "type": "s1jetbomber_b",
+                "palette": "red",
+                "facing": "south"
+              },
+              {
+                "type": "s1jetbomber_b",
+                "palette": "green",
+                "facing": "south"
+              }
+            ]
+          },
+          {
+            "name": "Completed dialogue releases the fire latch immediately",
+            "passed": true,
+            "data": null
+          },
+          {
+            "name": "Normal Harrier cannons commit a warned volley",
+            "passed": true,
+            "data": {
+              "seq": {
+                "side": "R",
+                "t": 0,
+                "shots": [
+                  {
+                    "at": 0.7,
+                    "off": -0.32,
+                    "sp": 2.9
+                  },
+                  {
+                    "at": 0.7,
+                    "off": 0,
+                    "sp": 2.9
+                  },
+                  {
+                    "at": 0.7,
+                    "off": 0.32,
+                    "sp": 2.9
+                  },
+                  {
+                    "at": 1.2,
+                    "off": -0.32,
+                    "sp": 2.9
+                  },
+                  {
+                    "at": 1.2,
+                    "off": 0,
+                    "sp": 2.9
+                  },
+                  {
+                    "at": 1.2,
+                    "off": 0.32,
+                    "sp": 2.9
+                  }
+                ],
+                "ap10Warm": 0.7
+              },
+              "hard": false
+            }
+          },
+          {
+            "name": "Stage X does not die at half HP when fans are destroyed",
+            "passed": true,
+            "data": {
+              "mode": "carrier",
+              "core": 1034.3999999999999,
+              "max": 2155
+            }
+          },
+          {
+            "name": "Stage X ends its hull phase only at zero core HP",
+            "passed": true,
+            "data": null
+          },
+          {
+            "name": "Consumption plate actually draws during takeover",
+            "passed": true,
+            "data": null
+          },
+          {
+            "name": "Final encounter 1 produces sustained actual attacks",
+            "passed": true,
+            "data": 52
+          },
+          {
+            "name": "Final encounter 2 produces sustained actual attacks",
+            "passed": true,
+            "data": 46
+          },
+          {
+            "name": "All nine native Wind recipes craft and select",
+            "passed": true,
+            "data": [
+              {
+                "w": 0,
+                "result": "ok",
+                "selected": "ok",
+                "form": {
+                  "elem": "wind",
+                  "lv": 1
+                },
+                "bullets": [
+                  {
+                    "kind": "mg",
+                    "elem": null
+                  },
+                  {
+                    "kind": "mg",
+                    "elem": null
+                  }
+                ]
+              },
+              {
+                "w": 1,
+                "result": "ok",
+                "selected": "ok",
+                "form": {
+                  "elem": "wind",
+                  "lv": 1
+                },
+                "bullets": [
+                  {
+                    "kind": "spread",
+                    "elem": null
+                  },
+                  {
+                    "kind": "spread",
+                    "elem": null
+                  },
+                  {
+                    "kind": "spread",
+                    "elem": null
+                  },
+                  {
+                    "kind": "spread",
+                    "elem": null
+                  },
+                  {
+                    "kind": "spread",
+                    "elem": null
+                  }
+                ]
+              },
+              {
+                "w": 2,
+                "result": "ok",
+                "selected": "ok",
+                "form": {
+                  "elem": "wind",
+                  "lv": 1
+                },
+                "bullets": [
+                  {
+                    "kind": "missile",
+                    "elem": null
+                  },
+                  {
+                    "kind": "missile",
+                    "elem": null
+                  },
+                  {
+                    "kind": "missile",
+                    "elem": null
+                  }
+                ]
+              },
+              {
+                "w": 3,
+                "result": "ok",
+                "selected": "ok",
+                "form": {
+                  "elem": "wind",
+                  "lv": 1
+                },
+                "bullets": [
+                  {
+                    "kind": "beam",
+                    "elem": null
+                  }
+                ]
+              },
+              {
+                "w": 4,
+                "result": "ok",
+                "selected": "ok",
+                "form": {
+                  "elem": "wind",
+                  "lv": 1
+                },
+                "bullets": [
+                  {
+                    "kind": "flame",
+                    "elem": "fire"
+                  }
+                ]
+              },
+              {
+                "w": 5,
+                "result": "ok",
+                "selected": "ok",
+                "form": {
+                  "elem": "wind",
+                  "lv": 1
+                },
+                "bullets": [
+                  {
+                    "kind": "orb",
+                    "elem": "wind"
+                  }
+                ]
+              },
+              {
+                "w": 6,
+                "result": "ok",
+                "selected": "ok",
+                "form": {
+                  "elem": "wind",
+                  "lv": 1
+                },
+                "bullets": [
+                  {
+                    "kind": "lasermist",
+                    "elem": null
+                  },
+                  {
+                    "kind": "lasermist",
+                    "elem": null
+                  },
+                  {
+                    "kind": "lasermist",
+                    "elem": null
+                  }
+                ]
+              },
+              {
+                "w": 7,
+                "result": "ok",
+                "selected": "ok",
+                "form": {
+                  "elem": "wind",
+                  "lv": 1
+                },
+                "bullets": [
+                  {
+                    "kind": "mg",
+                    "elem": null
+                  },
+                  {
+                    "kind": "mg",
+                    "elem": null
+                  }
+                ]
+              },
+              {
+                "w": 8,
+                "result": "ok",
+                "selected": "ok",
+                "form": {
+                  "elem": "wind",
+                  "lv": 1
+                },
+                "bullets": [
+                  {
+                    "kind": "yuriLightningOrb",
+                    "elem": null
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "No page, console or asset errors",
+            "passed": true,
+            "data": []
+          }
+        ],
+        "errors": []
+      },
+      "sequences": {
+        "passed": 15,
+        "failed": 0,
+        "checks": [
+          {
+            "name": "Freezer time-slow still launches and lands a guided missile",
+            "passed": true,
+            "data": {
+              "hp": 276,
+              "before": 300,
+              "time": 0.5,
+              "ammo": 9
+            }
+          },
+          {
+            "name": "Rebel showcase locks movement while the world clock advances",
+            "passed": true,
+            "data": {
+              "locked": true,
+              "held": false,
+              "x": 340,
+              "t": 4.19999999999999,
+              "age": 2.499999999999996,
+              "after": {
+                "x": 340,
+                "t": 4.699999999999989,
+                "age": 2.9999999999999942
+              }
+            }
+          },
+          {
+            "name": "Jace demonstrates a full-size fast southbound helix ball",
+            "passed": true,
+            "data": [
+              {
+                "vx": 0,
+                "vy": 690,
+                "w": 104
+              }
+            ]
+          },
+          {
+            "name": "Rook demonstration slugs travel fast south without collision",
+            "passed": true,
+            "data": [
+              {
+                "vx": 0,
+                "vy": 660
+              }
+            ]
+          },
+          {
+            "name": "Voss maintains 1250px/s on his return and owns the generated snap",
+            "passed": true,
+            "data": {
+              "distance": 125.00000000000014,
+              "snaps": 1
+            }
+          },
+          {
+            "name": "Cole assembly actually renders the generated docking plates during launch",
+            "passed": true,
+            "data": {
+              "phase": "charge",
+              "launch": true,
+              "draws": 1
+            }
+          },
+          {
+            "name": "Loadout preview draws the two real attached chainguns",
+            "passed": true,
+            "data": {
+              "mounts": 356,
+              "preview": null,
+              "w": 7
+            }
+          },
+          {
+            "name": "Stage X has its own protected titled five-ship arrival",
+            "passed": true,
+            "data": {
+              "intro": true,
+              "ships": 4,
+              "stageX": "left"
+            }
+          },
+          {
+            "name": "Consumption raises the arms and triggers the authored shriek",
+            "passed": true,
+            "data": null
+          },
+          {
+            "name": "A defeated copied form visibly ruptures before changing form",
+            "passed": true,
+            "data": {
+              "broken": true,
+              "events": [
+                {
+                  "event": "copy-destroyed",
+                  "form": 1
+                }
+              ],
+              "pools": [
+                3380,
+                0,
+                3885,
+                4752,
+                5808,
+                6435,
+                6734,
+                5574,
+                6435
+              ]
+            }
+          },
+          {
+            "name": "The defeated pool remains zero after the breakup",
+            "passed": true,
+            "data": {
+              "broken": false,
+              "hp": 0,
+              "other": 3885
+            }
+          },
+          {
+            "name": "All four authored homecoming plates render in the ending",
+            "passed": true,
+            "data": null
+          },
+          {
+            "name": "Map navigation cannot wrap Stage 7 or 8 to uncleared Stage 1",
+            "passed": true,
+            "data": {
+              "left7": 7,
+              "left8": 8,
+              "menu": "map",
+              "ready": true
+            }
+          },
+          {
+            "name": "The final homecoming ends without another cinematic or upgrade menu",
+            "passed": true,
+            "data": {
+              "victory": true,
+              "state": "victory",
+              "cinematic": false
+            }
+          },
+          {
+            "name": "No page, console or asset errors",
+            "passed": true,
+            "data": []
+          }
+        ],
+        "errors": []
+      },
+      "finishing": {
+        "passed": 7,
+        "failed": 0,
+        "checks": [
+          {
+            "name": "Healthy twin-turret miniboss favors charged lasers over magma bombardment",
+            "passed": true,
+            "data": {
+              "reaver": true,
+              "book": [
+                "ember-hunt",
+                "furnace-strafe",
+                "magma-rain",
+                "furnace-lance",
+                "furnace-lance",
+                "furnace-lance"
+              ],
+              "parts": 6
+            }
+          },
+          {
+            "name": "Normal twin-turret miniboss releases its widened charged beam",
+            "passed": true,
+            "data": {
+              "beam": {
+                "family": "inferno",
+                "slots": [
+                  "L",
+                  "R"
+                ],
+                "angles": [
+                  1.642721310347077,
+                  1.498871343242716
+                ],
+                "t": 3.4999999999999925,
+                "warm": 3,
+                "active": 1.7,
+                "retract": 0.24,
+                "width": 32,
+                "released": true,
+                "spin": 0,
+                "baseAngles": [
+                  1.7207963267948965,
+                  1.4207963267948966
+                ],
+                "sweepArc": [
+                  0.12,
+                  -0.12
+                ],
+                "sweepRate": 1.1,
+                "sweepPhase": 0,
+                "_arrowN": 7,
+                "_warnSfx": 1
+              },
+              "draws": {
+                "reaver": 450,
+                "muzzle": 60,
+                "beam": 60
+              }
+            }
+          },
+          {
+            "name": "Magma bombardment returns in the damaged miniboss state",
+            "passed": true,
+            "data": [
+              "ember-hunt",
+              "furnace-strafe",
+              "magma-rain",
+              "ember-mortar",
+              "furnace-lance",
+              "ember-bombard"
+            ]
+          },
+          {
+            "name": "Existing space miniboss remains modular and cycles pursuit attacks",
+            "passed": true,
+            "data": {
+              "space": true,
+              "parts": [
+                "core",
+                "engineL",
+                "engineR",
+                "laserL",
+                "laserR"
+              ],
+              "history": [
+                "entry",
+                "crossfire",
+                "hc-relocate",
+                "hc-lances",
+                "hc-recover",
+                "hc-relocate",
+                "hc-cross",
+                "hc-recover",
+                "hc-relocate",
+                "hc-strafe",
+                "hc-recover",
+                "hc-relocate"
+              ],
+              "x": 344.80000000000007,
+              "start": 248.8
+            }
+          },
+          {
+            "name": "Completion flies the real ship straight north at its normal scale",
+            "passed": true,
+            "data": {
+              "x": 340,
+              "y": -80,
+              "start": {
+                "x": 340,
+                "y": 399.36
+              },
+              "state": "stageclear"
+            }
+          },
+          {
+            "name": "Completion panel uses the authored aspect instead of stretching",
+            "passed": true,
+            "data": {
+              "art": 1.7932330827067668,
+              "view": 1.79296875
+            }
+          },
+          {
+            "name": "No page, console or asset errors",
+            "passed": true,
+            "data": []
+          }
+        ],
+        "errors": []
+      }
+    },
+    "fixture_limit": "Invulnerability and selected states; no complete campaign victories or human balance verdict."
+  },
+  "preview": {
+    "passed": 7,
+    "failed": 0,
+    "checks": [
+      {
+        "name": "All 193 authored cells load across nine animation cards, icons and story plates",
+        "passed": true,
+        "data": {
+          "cards": 9,
+          "total": 193,
+          "ready": 193,
+          "icons": 9,
+          "plates": 8
+        }
+      },
+      {
+        "name": "Pause stops every animation clock",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Clip selector, exact frame scrub and anchor overlay work",
+        "passed": true,
+        "data": {
+          "clip": 2,
+          "frame": 3,
+          "anchors": true
+        }
+      },
+      {
+        "name": "Playback and speed selection resume the clocks",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "All eight native gameplay captures resolve",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Narrow review page fits without horizontal overflow",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "No page, console or asset errors",
+        "passed": true,
+        "data": []
+      }
+    ],
+    "errors": []
+  },
+  "generated_art": {
+    "counts": {
+      "accepted_sources": 13,
+      "animation_and_icon_cells": 193,
+      "hud_housings": 1,
+      "total": 194
+    },
+    "provenance": "_ART_SOURCES/audio_1010/generation_manifest.json",
+    "source_scale": 1,
+    "frame_resolution": "Even fixed canvases; common physical pivots within each clip",
+    "fusion_registration": "Measured unequal source rows; no next-row bleed; same export muzzle136,328"
+  },
+  "pixel_review": [
+    "hud-desktop.png",
+    "stage2-miniboss-beam.png",
+    "furnace-chain.png",
+    "furnace-shatter.png",
+    "ice-laser-live.png",
+    "fusion-charge-live.png",
+    "fusion-release-live.png",
+    "fusion-registered-final.jpg",
+    "stealth-palette-detail.png",
+    "rebel-turbo-charge.png",
+    "chaingun-loadout-preview.png",
+    "fury-assembly-live.png",
+    "stagex-arrival.png",
+    "consumption-arms-raised.png",
+    "alien-phase-2-live.png",
+    "stage6-completion-panel.png",
+    "homecoming-0.png",
+    "homecoming-1.png",
+    "homecoming-2.png",
+    "homecoming-3.png",
+    "preview-desktop.png",
+    "preview-reels.png",
+    "preview-narrow.png"
+  ],
+  "unresolved": [
+    "15:50\u00e2\u20ac\u201c17:44 exact unnamed enemy/miniboss and intended specific redesign",
+    "40:38\u00e2\u20ac\u201c42:53 exact copied forms/poses mentioned",
+    "Unseen white map artifact and particular completion effect",
+    "Human Normal/Hard/Furious campaign balance, hardware and full audio mix"
+  ],
+  "runtime_sha256": {
+    "assets/game.js": "bc4742fd217ac033a67cc600278e2801f76c8273fad6d831705c579f6b83401e",
+    "assets/cinematic_director_0930.js": "c4db0440ab806f6c58a2c9f57a94547e0b0ed7fb80a159ecfe133f68c9af430e",
+    "index.html": "5d50e50db3da54198d9ced06856b676628b68b7ef1139c0f105db0422929895f",
+    "assets/audio_alien_1010.js": "6cfb97456c954c78f547a1bc17b3e66bc96926a80505ff96dc7ad735073b94be",
+    "assets/audio_cinematics_1010.js": "d01712c9b7f5853e747769e0d2dee4c8f3539fd88ec5e3fa1e3e36dcbdb250b1",
+    "assets/audio_cinematic_art_1010.js": "b51740d6e73639e49f70dcd67fd05c269c28a7e107873c18071531855f6dc759",
+    "assets/audio_encounters_1010.js": "0b686ca532db2c818fb063232dcef618bc95e2bf3d85da8183359b638d06908b",
+    "assets/audio_extra_1010.js": "65b1df10b55e1451058989d568d75ad7e47357fe62ca56bc025c75b60a4535a9",
+    "assets/audio_extra_art_1010.js": "5ad818ee0d2144bfeb41fccf86046e05fff4d85e616004203d3b696e37899547",
+    "assets/audio_feedback_1010.js": "71ad8f02c223a7356924e3fb58b172209aaef1637f431397015b1a54f82905fc",
+    "assets/audio_fire_1010.js": "43c77e1e0f37af5c19f2805420789f0627a942c68a06318489d9597457614792",
+    "assets/audio_fire_art_1010.js": "e6f9fb75232094278aedab99e8d2bd20835c3574293855732b94a9798ed1eb25",
+    "assets/audio_fleet_1010.js": "0fa5b606a0dfaf51a018e01ff98c94cd9080c534bd2b640629fa72780069a627",
+    "assets/audio_fx_1010.js": "f65dda7186e07e8b0e1903562706cec159abe2ca8d632eb98acd51d5fdee4014",
+    "assets/audio_fx_art_1010.js": "2bccc59e929e68f926451e88a88376fb74f8db57749afe04c77ffa7e5dccbc68",
+    "assets/audio_hud_1010.js": "de0f12b3032ff42ca7e7d9d01c47189e2768cab4776fc7500b662770014be573",
+    "assets/audio_hud_art_1010.js": "b7abec4f4983c3a233950cccefecc2b57f6f980750330c65dc8d9b7292b7b393",
+    "assets/audio_stagex_1010.js": "45bec25ccc6c72ed4856f3de64f329f73576c36530f2eeaf44e5c2ab14176caa",
+    "assets/audio_wind_1010.js": "b810b8fa6bd038872e03093decda188070c878014d22b6937b0c1d0dc60754d5",
+    "_BUILD_SOURCE/test_audio_1010.cjs": "2851b03eea325d922853b42eb7a77bbf92d6006234563ccb45869cc35b4557a5",
+    "_BUILD_SOURCE/test_fl.js": "179ed96a67165be7374fb9d9be9ee660ad77ad99792c219ea7832be36ea3a21f"
+  }
+}

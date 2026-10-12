@@ -1,0 +1,654 @@
+{
+  "date": "2026-10-11",
+  "build": "overdrive1011-boss-intro",
+  "entry": "expansion/topdown/index.html",
+  "localOnly": true,
+  "summary": {
+    "intro": {
+      "passed": 42,
+      "failed": 0
+    },
+    "warrior": {
+      "passed": 22,
+      "failed": 0
+    },
+    "frontend": {
+      "passed": 55,
+      "failed": 0
+    }
+  },
+  "nativePassed": 119,
+  "nativeFailed": 0,
+  "base": {
+    "passedAssertions": 8700,
+    "failedAssertions": 0,
+    "exitCode": 0,
+    "finalSummary": "==== FALVA/LIZZIE BUILD OK, 0 ERRORS ====",
+    "log": "_shots/overdrive_intro_1011/base_suite.log"
+  },
+  "intro": {
+    "checks": [
+      {
+        "name": "ordinary gameplay uses the requested close 640x480 field at 1:1 zoom",
+        "passed": true
+      },
+      {
+        "name": "fullscreen-sized canvas fills the available height proportionally",
+        "passed": true
+      },
+      {
+        "name": "all 17 generated frames decode with their even registered sizes",
+        "passed": true
+      },
+      {
+        "name": "all turntable views share one scale and grounded pivot",
+        "passed": true
+      },
+      {
+        "name": "real driving triggers a boss entering from above the map",
+        "passed": true
+      },
+      {
+        "name": "entrance captures the arriving boss with a zoom above normal",
+        "passed": true
+      },
+      {
+        "name": "movement, fire, cannon charge and incoming damage are gated during the entrance",
+        "passed": true
+      },
+      {
+        "name": "Start pauses the entrance without moving its boss or camera clock",
+        "passed": true
+      },
+      {
+        "name": "the original Options panel remains available during a paused entrance",
+        "passed": true
+      },
+      {
+        "name": "the camera follows south while pulling out as the tank gets closer",
+        "passed": true
+      },
+      {
+        "name": "entry does not resize the screen or change its 640x480 field",
+        "passed": true
+      },
+      {
+        "name": "the boss settles and opens its generated dossier",
+        "passed": true
+      },
+      {
+        "name": "dossier reports actual 510 HP and the helmet-dependent 82% hull guard",
+        "passed": true
+      },
+      {
+        "name": "the game context actually draws the generated card and yaw view",
+        "passed": true
+      },
+      {
+        "name": "the card renders all four target labels and attack descriptions",
+        "passed": true
+      },
+      {
+        "name": "the exact warning is drawn on the card",
+        "passed": true
+      },
+      {
+        "name": "all four health fills finish before the card can leave",
+        "passed": true
+      },
+      {
+        "name": "natural showcase rotation actually draws every one of its 16 yaw views",
+        "passed": true
+      },
+      {
+        "name": "a full 360-degree scan enables Continue",
+        "passed": true
+      },
+      {
+        "name": "D-pad-style keyboard navigation selects the next target and opens inspection",
+        "passed": true
+      },
+      {
+        "name": "manual rotation remains available while inspecting a part",
+        "passed": true
+      },
+      {
+        "name": "actual pointer selection inspects the head with its correct HP",
+        "passed": true
+      },
+      {
+        "name": "inspection draws the authored target reticle on the rotating model",
+        "passed": true
+      },
+      {
+        "name": "controller D-pad selects the body instead of moving the tank",
+        "passed": true
+      },
+      {
+        "name": "controller B returns to the rotating overview without firing a shell",
+        "passed": true
+      },
+      {
+        "name": "native fullscreen can change during the card without becoming Start",
+        "passed": true
+      },
+      {
+        "name": "combat HP and the stage scoring clock remain unchanged throughout inspection",
+        "passed": true
+      },
+      {
+        "name": "Continue slides the card away while combat remains gated",
+        "passed": true
+      },
+      {
+        "name": "slide-out enters the camera restoration phase",
+        "passed": true
+      },
+      {
+        "name": "restoration gradually returns the camera towards normal zoom",
+        "passed": true
+      },
+      {
+        "name": "restoration finishes with normal combat and exactly 1:1 zoom",
+        "passed": true
+      },
+      {
+        "name": "a held inspection/fire button cannot discharge on return to combat",
+        "passed": true
+      },
+      {
+        "name": "releasing and pressing Fire again restores real weapon control",
+        "passed": true
+      },
+      {
+        "name": "supplied Warrior music begins after the introduction",
+        "passed": true
+      },
+      {
+        "name": "arcade warning, scan beeps, confirmation fill and launch cues play",
+        "passed": true
+      },
+      {
+        "name": "the card armor percentage matches actual guarded hull damage",
+        "passed": true
+      },
+      {
+        "name": "breaking the displayed head target removes that hull protection",
+        "passed": true
+      },
+      {
+        "name": "1612x878: closer playfield fits proportionally without clipping the canvas",
+        "passed": true
+      },
+      {
+        "name": "1469x796: closer playfield fits proportionally without clipping the canvas",
+        "passed": true
+      },
+      {
+        "name": "520x650: closer playfield fits proportionally without clipping the canvas",
+        "passed": true
+      },
+      {
+        "name": "restart clears the old dossier and restores the close stage view",
+        "passed": true
+      },
+      {
+        "name": "no page, console, missing-file, decode or playback errors",
+        "passed": true
+      }
+    ],
+    "errors": [],
+    "observations": {
+      "profile": {
+        "name": "THE WARRIOR",
+        "cardKey": "od_warrior_card",
+        "views": [
+          "od_warrior_view_0",
+          "od_warrior_view_1",
+          "od_warrior_view_2",
+          "od_warrior_view_3",
+          "od_warrior_view_4",
+          "od_warrior_view_5",
+          "od_warrior_view_6",
+          "od_warrior_view_7",
+          "od_warrior_view_8",
+          "od_warrior_view_9",
+          "od_warrior_view_10",
+          "od_warrior_view_11",
+          "od_warrior_view_12",
+          "od_warrior_view_13",
+          "od_warrior_view_14",
+          "od_warrior_view_15"
+        ],
+        "classLabel": "CLASS: SUPERHEAVY / FURY TANK HUNTER",
+        "total": 510,
+        "armor": 82,
+        "targets": [
+          {
+            "key": "armL",
+            "name": "LEFT TURRET",
+            "hp": 85,
+            "marker": [
+              -155,
+              255,
+              90
+            ],
+            "detail": "TWIN GUNS + HOMING MISSILE RACK"
+          },
+          {
+            "key": "armR",
+            "name": "RIGHT TURRET",
+            "hp": 85,
+            "marker": [
+              155,
+              255,
+              90
+            ],
+            "detail": "TWIN GUNS + HOMING MISSILE RACK"
+          },
+          {
+            "key": "helmet",
+            "name": "HEAD / HELMET",
+            "hp": 120,
+            "marker": [
+              0,
+              270,
+              0
+            ],
+            "detail": "BREAK THE HEAD TO STRIP HULL GUARD"
+          },
+          {
+            "key": "hull",
+            "name": "BODY / HULL",
+            "hp": 220,
+            "marker": [
+              0,
+              150,
+              40
+            ],
+            "detail": "ARMORED DRIVE CHASSIS / RAM ENGINE"
+          }
+        ],
+        "attacks": [
+          "MACHINE-GUN BROADSIDES",
+          "VISOR LASER VOLLEYS",
+          "HOMING MISSILE SALVOS",
+          "CONCRETE-SMASHING RAM"
+        ]
+      },
+      "history": [
+        "arrival",
+        "card",
+        "slide",
+        "restore",
+        "combat"
+      ],
+      "camera": {
+        "early": {
+          "y": -80.0845481049561,
+          "zoom": 1.5874198250728861,
+          "cameraY": 0
+        },
+        "late": {
+          "y": 341.76139685738974,
+          "zoom": 1.2302659100089193,
+          "cameraY": 140.68161934956623
+        },
+        "normal": {
+          "x": 77.195,
+          "y": 277.34999819063046,
+          "zoom": 1
+        }
+      },
+      "armorDamage": {
+        "guardedLoss": 18,
+        "exposedLoss": 100
+      },
+      "resize": {
+        "1612x878": {
+          "x": 223.328125,
+          "y": 2,
+          "width": 1165.328125,
+          "height": 874
+        },
+        "1469x796": {
+          "x": 206.5,
+          "y": 2,
+          "width": 1056,
+          "height": 792
+        },
+        "520x650": {
+          "x": 0,
+          "y": 130,
+          "width": 520,
+          "height": 390
+        }
+      }
+    },
+    "scope": "Native Overdrive entrance/card/control/zoom QA; protected framing fixtures."
+  },
+  "warriorChecks": [
+    {
+      "name": "all six rebuilt modules decode as fixed 512x512 or 640x512 canvases",
+      "passed": true
+    },
+    {
+      "name": "hull damage and wreck share the intact mounting pivot and scale",
+      "passed": true
+    },
+    {
+      "name": "holding R produces over 1.9x measured travel with authored track dust",
+      "passed": true
+    },
+    {
+      "name": "releasing movement brakes the boosted tank promptly",
+      "passed": true
+    },
+    {
+      "name": "boost spends no energy at rest, exhausts, requires release and refills",
+      "passed": true
+    },
+    {
+      "name": "boosting sideways retains independent turret rotation and gun fire",
+      "passed": true
+    },
+    {
+      "name": "full-speed boost cannot tunnel through a four-pixel concrete wall",
+      "passed": true
+    },
+    {
+      "name": "Mode+C boosts while D-pad strafes and X fires north without cannon charge",
+      "passed": true
+    },
+    {
+      "name": "unmodified controller C still charges and releases the cannon",
+      "passed": true
+    },
+    {
+      "name": "window blur releases boost and movement safely",
+      "passed": true
+    },
+    {
+      "name": "actual Warrior entry starts Mike's decoded stereo boss track",
+      "passed": true
+    },
+    {
+      "name": "supplied track loops through its end during the active fight",
+      "passed": true
+    },
+    {
+      "name": "Warrior spans over 400 world pixels with a larger 332-pixel chassis",
+      "passed": true
+    },
+    {
+      "name": "1:1 duel camera shows both the new boss and player in the arena",
+      "passed": true
+    },
+    {
+      "name": "larger Warrior still launches physical twin-arm homing volleys",
+      "passed": true
+    },
+    {
+      "name": "real boost escapes a committed Warrior ram with collision and damage enabled",
+      "passed": true
+    },
+    {
+      "name": "rebuilt arm detaches with exact mounted art, angle, pivot and scale",
+      "passed": true
+    },
+    {
+      "name": "large arm rotates, falls and settles as an unfaded authored wreck",
+      "passed": true
+    },
+    {
+      "name": "Warrior defeat stops boss music and transitions to clear music/results",
+      "passed": true
+    },
+    {
+      "name": "mission restart restores a full tank boost meter",
+      "passed": true
+    },
+    {
+      "name": "Help still opens and retains the gameplay return path",
+      "passed": true
+    },
+    {
+      "name": "zero page, console and missing-asset errors",
+      "passed": true
+    }
+  ],
+  "frontendChecks": [
+    {
+      "name": "Overdrive loudness matches the original call within 0.1 LUFS",
+      "passed": true
+    },
+    {
+      "name": "original BOF title call remains byte-identical to the measured reference",
+      "passed": true
+    },
+    {
+      "name": "Mike's dry Overdrive WAV is preserved exactly",
+      "passed": true
+    },
+    {
+      "name": "thirteen original renderer helpers are copied verbatim; Options adapts row/input data",
+      "passed": true
+    },
+    {
+      "name": "the first call is the actual original announce.mp3",
+      "passed": true
+    },
+    {
+      "name": "saved Voice and Master gains apply to the original call",
+      "passed": true
+    },
+    {
+      "name": "title music waits while the original call plays",
+      "passed": true
+    },
+    {
+      "name": "enhanced Overdrive starts after the BOF call ends",
+      "passed": true
+    },
+    {
+      "name": "Overdrive retains natural pitch, saved gain and its added echo tail",
+      "passed": true
+    },
+    {
+      "name": "title begins only after the final echo ends",
+      "passed": true
+    },
+    {
+      "name": "B skips and stops both current and queued calls",
+      "passed": true
+    },
+    {
+      "name": "fresh Insanity is visibly locked and cannot be confirmed",
+      "passed": true
+    },
+    {
+      "name": "an Insanity password cannot bypass the completion gate",
+      "passed": true
+    },
+    {
+      "name": "direct campaign launch also enforces the Insanity gate",
+      "passed": true
+    },
+    {
+      "name": "the pilot screen contains exactly two horizontal rows of six",
+      "passed": true
+    },
+    {
+      "name": "every avatar and ship remains inside the pilot viewport",
+      "passed": true
+    },
+    {
+      "name": "vertical pilot navigation moves exactly six slots",
+      "passed": true
+    },
+    {
+      "name": "up returns to the corresponding slot in the other row",
+      "passed": true
+    },
+    {
+      "name": "clicking a lower-row ship selects its matching pilot",
+      "passed": true
+    },
+    {
+      "name": "Options uses the original 480x512 panel viewport",
+      "passed": true
+    },
+    {
+      "name": "original four volume rows replace the custom tabs",
+      "passed": true
+    },
+    {
+      "name": "original segmented Master slider changes real media gain by 10%",
+      "passed": true
+    },
+    {
+      "name": "the original volume strip supports actual pointer adjustment",
+      "passed": true
+    },
+    {
+      "name": "original Cancel restores all four volumes and returns to title",
+      "passed": true
+    },
+    {
+      "name": "original Apply persists Voice volume and returns to title",
+      "passed": true
+    },
+    {
+      "name": "the original key cap arms keyboard capture",
+      "passed": true
+    },
+    {
+      "name": "keyboard capture updates the actual movement binding",
+      "passed": true
+    },
+    {
+      "name": "Cancel restores the actual prior keyboard binding",
+      "passed": true
+    },
+    {
+      "name": "Backspace is reserved for text and leaves binding capture alone",
+      "passed": true
+    },
+    {
+      "name": "Escape cancels capture without closing Options",
+      "passed": true
+    },
+    {
+      "name": "wheel scrolling moves the original options panel",
+      "passed": true
+    },
+    {
+      "name": "the original controller key cap captures a real polled shoulder assignment",
+      "passed": true
+    },
+    {
+      "name": "Retina can be assigned independently to the other shoulder",
+      "passed": true
+    },
+    {
+      "name": "Cancel restores the previous L/R physical assignments",
+      "passed": true
+    },
+    {
+      "name": "Apply persists controller assignments through the original menu",
+      "passed": true
+    },
+    {
+      "name": "the newly bound L button activates live cruise/free aim",
+      "passed": true
+    },
+    {
+      "name": "the newly bound R button activates live Retina",
+      "passed": true
+    },
+    {
+      "name": "pause draws the generated Return to Main Menu plate",
+      "passed": true
+    },
+    {
+      "name": "the original controller menu opens full physical-button learning",
+      "passed": true
+    },
+    {
+      "name": "returning from learning preserves the Options transaction",
+      "passed": true
+    },
+    {
+      "name": "original Reset Controls restores keyboard and physical pad defaults",
+      "passed": true
+    },
+    {
+      "name": "clearing mission 0 alone does not unlock Insanity",
+      "passed": true
+    },
+    {
+      "name": "clearing mission 2 alone does not unlock Insanity",
+      "passed": true
+    },
+    {
+      "name": "completing the campaign unlocks Insanity and saves that unlock",
+      "passed": true
+    },
+    {
+      "name": "campaign unlock and applied Voice volume survive a real reload",
+      "passed": true
+    },
+    {
+      "name": "completed-game Insanity can now enter the pilot screen",
+      "passed": true
+    },
+    {
+      "name": "the two-row pilot grid fits a narrow browser pane",
+      "passed": true
+    },
+    {
+      "name": "the original Options menu fits a narrow browser pane",
+      "passed": true
+    },
+    {
+      "name": "new button cells use even registered dimensions",
+      "passed": true
+    },
+    {
+      "name": "the default fullscreen launch enters native fullscreen on Start",
+      "passed": true
+    },
+    {
+      "name": "the generated Windowed button exits native fullscreen",
+      "passed": true
+    },
+    {
+      "name": "Alt+Enter also enters fullscreen",
+      "passed": true
+    },
+    {
+      "name": "the fullscreen chord does not act as Start or skip the intro",
+      "passed": true
+    },
+    {
+      "name": "Escape exits native fullscreen without trapping the player",
+      "passed": true
+    },
+    {
+      "name": "no page, console, asset, decode or playback errors",
+      "passed": true
+    }
+  ],
+  "sourceSHA256": {
+    "expansion/topdown/js/main.js": "3d562e3e97c277c529c4f51fe2e919e72fcaafb305ddf53c1ffe74a018928c35",
+    "expansion/topdown/js/boss_warrior.js": "d9b84fc1c037a780c3a9ec1694c0a29d742d4c936bf31e1053a71c01d439c88c",
+    "expansion/topdown/js/boss_intro_1011.js": "0cb25f07e10d28f305fc29e7f740e9f946f25f22eac52f800ece32f424bc3d69",
+    "expansion/topdown/index.html": "44ba502ac779a9b097d00f2ffee66d06dea73ced5bb792a896b12162ba91f205",
+    "expansion/topdown/_research/build_boss_intro_1011.py": "136686a18a1d6999dd51902cbbfa44a3ba64c9b28c668df9b717db88350de5bb",
+    "expansion/topdown/art/boss_intro_1011/manifest.json": "9bb7f43414a1486c8b095d5da63523057700615247d6b460ad104e9d4c95822b",
+    "expansion/topdown/_research/launch_overdrive_1011.py": "8e483bb302454641331b0cc328af77c87b6918d6fd944e101d6d1e9faa61ef55"
+  },
+  "art": "expansion/topdown/art/boss_intro_1011/manifest.json",
+  "screenshots": "_shots/overdrive_intro_1011/",
+  "limitations": "Protected fixtures establish framing and encounter behavior. Keyboard arena entry, native pointer/fullscreen, and the existing real-damage boosted ram escape are checked separately. Synthetic six-button Gamepad reports verify bindings; no physical-pad or campaign-balance sign-off."
+}

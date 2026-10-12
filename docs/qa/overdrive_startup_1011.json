@@ -1,0 +1,511 @@
+{
+  "date": "2026-10-11",
+  "entry": "expansion/topdown/index.html",
+  "build": "overdrive1011-startup",
+  "scope": "Supplied recording preservation, real Chromium audio time/decode/gain, keyboard and polled test controller skips, pointer input, native logo/title pixels, existing menu regression and required base suite. Isolated browser saves; protected gameplay fixtures, not an unassisted campaign clear.",
+  "passed": 72,
+  "failed": 0,
+  "counts": {
+    "startup": 19,
+    "menu": 53
+  },
+  "browserErrors": [],
+  "recording": {
+    "durationSeconds": 2.891496598639456,
+    "sampleRate": 44100,
+    "channels": 2,
+    "sampleWidthBytes": 2,
+    "source": "source/overdrive.wav",
+    "runtime": "overdrive-startup.mp3",
+    "sourceSha256": "e1723586c20a23f5bd4ef8b1af7bca3f5e5631fd799b36c49cfccf555d0fe113",
+    "runtimeSha256": "2859558fab39719ec5faba64276d8b330da0a3fb40cdf8f48cc87c2cdfbeae9b",
+    "conversion": "MP3 at 256 kbps; original channels/rate, no gain, trim, fade or remix",
+    "owner": "Mike supplied overdrive.wav on October 11, 2026"
+  },
+  "verification": {
+    "startup": {
+      "date": "2026-10-11",
+      "entry": "expansion/topdown/index.html",
+      "build": "overdrive1011-startup",
+      "checks": [
+        {
+          "name": "preserved WAV matches the supplied original byte for byte",
+          "passed": true
+        },
+        {
+          "name": "source duration, sample rate and channels match recorded provenance",
+          "passed": true
+        },
+        {
+          "name": "boot waits for user input without autoplay or title music",
+          "passed": true
+        },
+        {
+          "name": "Start plays the actual supplied recording through decoded browser media",
+          "passed": true
+        },
+        {
+          "name": "saved Master and Voice controls set the actual recording volume",
+          "passed": true
+        },
+        {
+          "name": "intro waits for actual audio completion beyond its minimum visual timer",
+          "passed": true
+        },
+        {
+          "name": "natural completion enters title and releases the finished voice",
+          "passed": true
+        },
+        {
+          "name": "original BOF title music begins after the recording ends",
+          "passed": true
+        },
+        {
+          "name": "restarting boot stops the previous title music",
+          "passed": true
+        },
+        {
+          "name": "a replay starts a fresh recording from the beginning",
+          "passed": true
+        },
+        {
+          "name": "Start skips the intro immediately and pauses its recording",
+          "passed": true
+        },
+        {
+          "name": "a skipped voice remains stopped behind the title menu",
+          "passed": true
+        },
+        {
+          "name": "logical B skips to title and stops the startup voice",
+          "passed": true
+        },
+        {
+          "name": "a real pointer gesture starts recorded playback",
+          "passed": true
+        },
+        {
+          "name": "leaving the intro for Help stops its voice before menu music",
+          "passed": true
+        },
+        {
+          "name": "the physical controller Start button launches recorded intro",
+          "passed": true
+        },
+        {
+          "name": "the physical controller B button skips and silences the recording",
+          "passed": true
+        },
+        {
+          "name": "muted Voice still plays silently with the same completion/skip timing",
+          "passed": true
+        },
+        {
+          "name": "no page, console, HTTP, decode or playback errors",
+          "passed": true
+        }
+      ],
+      "browserErrors": [],
+      "recording": {
+        "durationSeconds": 2.891496598639456,
+        "sampleRate": 44100,
+        "channels": 2,
+        "sampleWidthBytes": 2,
+        "source": "source/overdrive.wav",
+        "runtime": "overdrive-startup.mp3",
+        "sourceSha256": "e1723586c20a23f5bd4ef8b1af7bca3f5e5631fd799b36c49cfccf555d0fe113",
+        "runtimeSha256": "2859558fab39719ec5faba64276d8b330da0a3fb40cdf8f48cc87c2cdfbeae9b",
+        "conversion": "MP3 at 256 kbps; original channels/rate, no gain, trim, fade or remix",
+        "owner": "Mike supplied overdrive.wav on October 11, 2026"
+      },
+      "observations": {
+        "playback": {
+          "src": "expansion/topdown/audio/overdrive-startup.mp3",
+          "duration": 2.891497,
+          "volume": 0.2,
+          "rate": 1,
+          "paused": false,
+          "time": 0.010933
+        }
+      },
+      "passed": 19,
+      "failed": 0
+    },
+    "menu": {
+      "checks": [
+        {
+          "name": "startup waits for input with the supplied recording and no stage picker",
+          "passed": true
+        },
+        {
+          "name": "Start enters the new Overdrive intro",
+          "passed": true
+        },
+        {
+          "name": "recorded intro reaches the original-style title menu",
+          "passed": true
+        },
+        {
+          "name": "Title uses the decoded original BOF title track",
+          "passed": true
+        },
+        {
+          "name": "New Game goes to five new difficulty plates",
+          "passed": true
+        },
+        {
+          "name": "difficulty enters the actual twelve-pilot roster",
+          "passed": true
+        },
+        {
+          "name": "pilot selection plays the original PilotSelect music",
+          "passed": true
+        },
+        {
+          "name": "all authored UI, original portraits, ships, emblems and bitmap glyphs decode",
+          "passed": true
+        },
+        {
+          "name": "every new UI frame and boss canvas has even registered dimensions",
+          "passed": true
+        },
+        {
+          "name": "pilot confirmation opens the campaign briefing",
+          "passed": true
+        },
+        {
+          "name": "briefing starts the first authored campaign mission",
+          "passed": true
+        },
+        {
+          "name": "Start pauses into Resume, Options and Help",
+          "passed": true
+        },
+        {
+          "name": "pause opens the restored Options menu",
+          "passed": true
+        },
+        {
+          "name": "sound controls change actual music gain",
+          "passed": true
+        },
+        {
+          "name": "Options Cancel restores the exact previous sound mix",
+          "passed": true
+        },
+        {
+          "name": "B resumes paused gameplay",
+          "passed": true
+        },
+        {
+          "name": "Apply persists the changed music setting",
+          "passed": true
+        },
+        {
+          "name": "keyboard capture rebinds and persists movement",
+          "passed": true
+        },
+        {
+          "name": "the rebound key actually moves the tank through native input",
+          "passed": true
+        },
+        {
+          "name": "keyboard reset restores original controls",
+          "passed": true
+        },
+        {
+          "name": "typing accepts letters and Backspace deletes without navigating Back",
+          "passed": true
+        },
+        {
+          "name": "an Overdrive password restores pilot, difficulty, partner and campaign position",
+          "passed": true
+        },
+        {
+          "name": "all 540 campaign passwords round-trip; old and corrupt codes reject",
+          "passed": true
+        },
+        {
+          "name": "invalid passwords stay on the password menu with a chip error cue",
+          "passed": true
+        },
+        {
+          "name": "L cruises in the prior direction while D-pad turns the turret and X fires",
+          "passed": true
+        },
+        {
+          "name": "releasing the cruise shoulder brakes to a stop",
+          "passed": true
+        },
+        {
+          "name": "R shoulder acquires a real Retina target",
+          "passed": true
+        },
+        {
+          "name": "releasing the cannon with R held launches a locked tank missile",
+          "passed": true
+        },
+        {
+          "name": "standard controller preset exposes both shoulders, stick aim and boost",
+          "passed": true
+        },
+        {
+          "name": "standard pad moves, boosts, aims the right stick and fires independently",
+          "passed": true
+        },
+        {
+          "name": "six-button learn records all 14 controls with neutral separation",
+          "passed": true
+        },
+        {
+          "name": "standard learn records 13 controls and persists actual shoulder buttons",
+          "passed": true
+        },
+        {
+          "name": "Help includes the actual museum infantry controls",
+          "passed": true
+        },
+        {
+          "name": "the generated Cancel plate exits controller learning through native pointer input",
+          "passed": true
+        },
+        {
+          "name": "difficulty changes real damage and total lives to 5/3/2/1/1",
+          "passed": true
+        },
+        {
+          "name": "engine reduction and its separate slider reach the actual media gain",
+          "passed": true
+        },
+        {
+          "name": "moving boost earns Full Throttle through actual play",
+          "passed": true
+        },
+        {
+          "name": "destroying six real walls earns Concrete Carnage",
+          "passed": true
+        },
+        {
+          "name": "new Warrior enters a 480-square arena at 1:1 zoom",
+          "passed": true
+        },
+        {
+          "name": "armored hull damage reaches the authored damaged chassis while modules remain mounted",
+          "passed": true
+        },
+        {
+          "name": "actual Warrior defeat awards clear, no-death, pilot and a new password",
+          "passed": true
+        },
+        {
+          "name": "rogue squad, pilot, rescue and full campaign awards use mission completion hooks",
+          "passed": true
+        },
+        {
+          "name": "Furious completion requires all three campaign missions at that difficulty",
+          "passed": true
+        },
+        {
+          "name": "ground maximum weapons feed Combined Arms without repeated saves",
+          "passed": true
+        },
+        {
+          "name": "gallery includes sixteen Overdrive and four shared general awards",
+          "passed": true
+        },
+        {
+          "name": "earned-only filter works",
+          "passed": true
+        },
+        {
+          "name": "all four general awards integrate with original completion and weapon APIs",
+          "passed": true
+        },
+        {
+          "name": "repeat reporting of the same original clear does not double-count",
+          "passed": true
+        },
+        {
+          "name": "original achievement screen includes the new four award rows",
+          "passed": true
+        },
+        {
+          "name": "new general badges decode through original XART keys",
+          "passed": true
+        },
+        {
+          "name": "settings, achievements and campaign Continue survive a real reload",
+          "passed": true
+        },
+        {
+          "name": "menus fit a narrow browser pane without cropping",
+          "passed": true
+        },
+        {
+          "name": "no browser, asset, decode or playback errors",
+          "passed": true
+        }
+      ],
+      "errors": [],
+      "observations": {
+        "passwords": {
+          "ok": true,
+          "n": 540,
+          "legacy": null,
+          "bad": null
+        },
+        "cruise": {
+          "before": {
+            "x": 335.95057602567914,
+            "y": 2200,
+            "aim": -1.5707963267948966
+          },
+          "after": {
+            "dx": 511.45000000001045,
+            "dy": 2200,
+            "angle": -3.141592653589793,
+            "cruise": true,
+            "shots": 9,
+            "award": true
+          }
+        },
+        "retina": {
+          "r": true,
+          "state": {
+            "up": false,
+            "down": false,
+            "left": false,
+            "right": false,
+            "A": false,
+            "B": false,
+            "C": false,
+            "X": false,
+            "Y": false,
+            "retina": true,
+            "aimLeft": false,
+            "aimRight": false,
+            "back": false,
+            "help": false,
+            "setup": false,
+            "start": false,
+            "reload": false,
+            "boost": false,
+            "cruise": false,
+            "prone": false,
+            "tapWall": false,
+            "crash": false,
+            "exitVehicle": false,
+            "swap": false,
+            "wheel": 0,
+            "click": false,
+            "padActive": true
+          },
+          "cam": {
+            "x": 10,
+            "y": 1995.222352705711,
+            "shake": 0,
+            "zoom": 1,
+            "minY": 0,
+            "maxY": 1000000000,
+            "minX": 0,
+            "follow": null,
+            "kick": null
+          },
+          "p": {
+            "x": 250,
+            "y": 2200,
+            "aim": 3.141592653589793
+          },
+          "target": [
+            {
+              "x": 250,
+              "y": 2070,
+              "dead": false
+            }
+          ]
+        },
+        "difficulties": [
+          {
+            "d": "easy",
+            "damage": 1.3000000000000007,
+            "want": 1.3,
+            "lives": 5
+          },
+          {
+            "d": "normal",
+            "damage": 2,
+            "want": 2,
+            "lives": 3
+          },
+          {
+            "d": "hard",
+            "damage": 2.5,
+            "want": 2.5,
+            "lives": 2
+          },
+          {
+            "d": "furious",
+            "damage": 3,
+            "want": 3,
+            "lives": 1
+          },
+          {
+            "d": "insanity",
+            "damage": 3.5999999999999996,
+            "want": 3.6,
+            "lives": 1
+          }
+        ],
+        "quietEngineVolume": 0.008320000000000001,
+        "baseIntegration": {
+          "original": 75,
+          "n": 79,
+          "awards": [
+            true,
+            true,
+            true,
+            true
+          ],
+          "dedup": true,
+          "points": 450,
+          "profile": 4
+        }
+      }
+    }
+  },
+  "baseSuite": {
+    "passed": 8700,
+    "failed": 0,
+    "exitCode": 0,
+    "finalSummary": "FALVA/LIZZIE BUILD OK, 0 ERRORS",
+    "note": "The earlier menu checkpoint had 8,696 passing assertions. Current shared checkout has 8,700; this voice pass did not edit assets/game.js or test_fl.js."
+  },
+  "syntax": {
+    "assets/game.js": {
+      "exitCode": 0
+    },
+    "expansion/topdown/js/frontend_1011.js": {
+      "exitCode": 0
+    },
+    "expansion/topdown/js/audio_1011.js": {
+      "exitCode": 0
+    }
+  },
+  "screenshotsInspected": [
+    "_shots/overdrive_startup_1011/intro.png",
+    "_shots/overdrive_startup_1011/title.png"
+  ],
+  "sha256": {
+    "expansion/topdown/index.html": "b39eb811d7fdcb87efd1911c53b6d07bfe1113385581451b5673c440292b9e6f",
+    "expansion/topdown/js/frontend_1011.js": "34128f94a9091d282f414736da50d0d3a665dd6518843b7cdf0fd0f38f5cc4b3",
+    "expansion/topdown/js/audio_1011.js": "d0a90ab0faf0feac9bc83006461933c2fc24402fe2b54b6d5039755e1edaf1bc",
+    "expansion/topdown/_research/build_startup_audio_1011.py": "5a3213a040834dcdc66e31709d5dbf4ca8ac0c3339d5e1918908778f50d07b14",
+    "expansion/topdown/_research/probe_startup_1011.py": "550841b38a4c22999bfb1b799e22aa3042de2e8ed66ff7c1261cea269e076d83",
+    "expansion/topdown/_research/probe_menu_1011.py": "4aa02321eadcb2e214c88f2fd56bb2e6c18c2357e3cf864978cf4de9ee9fcc91",
+    "expansion/topdown/audio/source/overdrive.wav": "e1723586c20a23f5bd4ef8b1af7bca3f5e5631fd799b36c49cfccf555d0fe113",
+    "expansion/topdown/audio/overdrive-startup.mp3": "2859558fab39719ec5faba64276d8b330da0a3fb40cdf8f48cc87c2cdfbeae9b",
+    "assets/game.js": "29a9b7b3fbd22b951117d0bd26988a48a5e1f2f116ebd0f98db142af9b682bc2",
+    "_BUILD_SOURCE/test_fl.js": "d733bf3862ff9716bf5c8c6ada8698244dbe77b3adc35ea81c9e573438e9c73c"
+  },
+  "publication": "Local only; no commit or push for this recording"
+}

@@ -1,0 +1,76 @@
+{
+  "mode": "built-in image_gen",
+  "sources": {
+    "core.png": {
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "50e453f6fb8bcd2f32c341e94a25052f31364eed27cb5b9e93cd23783e86ae97"
+    },
+    "shield_form.png": {
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "1a331a6a3ec6fc8abfc33e1ce84b564a68b4848fa78c58cb34ddc5a0b0d9fa5c"
+    },
+    "shield_wall.png": {
+      "size": [
+        1774,
+        887
+      ],
+      "sha256": "a9b1e50145d8bac5abf36c4e184d4e56490c3d152d4d9bd46ba01964d757d652"
+    },
+    "spike.png": {
+      "size": [
+        887,
+        1774
+      ],
+      "sha256": "43525f47d6d95f3f0cff66babac8a081b3c315440f202de3e8b193b01b454535"
+    },
+    "swing_left.png": {
+      "size": [
+        1254,
+        1254
+      ],
+      "sha256": "9c276a7ed6d16ea376072509730170f6778b3d7954dd24f5db42127b35efce00"
+    },
+    "swing_right.png": {
+      "size": [
+        1536,
+        1024
+      ],
+      "sha256": "6cb1f3c072b10e2e249df01db35835757a7857530ff43d8555dd9368d68f33b6"
+    },
+    "swing_right_raw.png": {
+      "size": [
+        1536,
+        1024
+      ],
+      "sha256": "60eb77bf0afcf1358b9673655496a36af1ab9864a6d7fcbc9e09967b2361f5bb"
+    }
+  },
+  "references": {
+    "idle.png": "e860f8c47456388fd6c343e51d7c494d2b7319e9a4f9944173aafb3c27598dbd",
+    "raised.png": "b6956b8d503a130512bc87abba30e53c96afcfa98b96020ed42be5f5663ad19f",
+    "shield_edit_canvas.png": "9e4523b9499b5936a4985a2eb6a4b0d7878406480d9d935aad8b06d8a0fe9474"
+  },
+  "prompts": "prompts.json",
+  "registration": "registration.json",
+  "builder": "_BUILD_SOURCE/build_hammer_1010.py",
+  "shipping": "assets/game/levels/stage_05/boss/hammer_1010/manifest.json",
+  "selected": [
+    "shield_form.png",
+    "swing_right.png",
+    "swing_left.png",
+    "shield_wall.png",
+    "core.png",
+    "spike.png"
+  ],
+  "retained_raw": "swing_right_raw.png",
+  "source_rejections": [
+    "First left reel faced the wrong direction; not shipped."
+  ],
+  "normalization": "Native RGBA crop/translation and one nearest-neighbor proportional scale per bank. No repaint, per-frame fitting, synthesized tweening, body mirroring or atlas changes."
+}

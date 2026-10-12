@@ -1,0 +1,496 @@
+{
+  "title": "Bullets of Fury \u2014 five HUD concepts",
+  "date": "2026-10-11",
+  "scope": "Concept review only. Shipping HUD and radar unchanged pending Mike's selection.",
+  "generatedWith": "built-in image_gen",
+  "logicalSize": [
+    576,
+    784
+  ],
+  "topHeight": 112,
+  "playfieldSize": [
+    480,
+    512
+  ],
+  "bottomHeight": 160,
+  "layouts": [
+    {
+      "key": "fury-classic",
+      "name": "Fury Classic",
+      "accent": "#ffb345",
+      "note": "Closest to the current cockpit. Bigger counters above; maneuver bars on the left and lock status on the right.",
+      "bands": [
+        [
+          16,
+          60,
+          1520,
+          344
+        ],
+        [
+          22,
+          546,
+          1512,
+          918
+        ]
+      ],
+      "wells": {
+        "score": [
+          122,
+          106,
+          598,
+          62
+        ],
+        "high": [
+          818,
+          106,
+          594,
+          62
+        ],
+        "lives": [
+          106,
+          202,
+          612,
+          88
+        ],
+        "missiles": [
+          818,
+          202,
+          612,
+          88
+        ],
+        "weapon": [
+          450,
+          602,
+          156,
+          260
+        ],
+        "special": [
+          678,
+          602,
+          464,
+          116
+        ],
+        "lock": [
+          1216,
+          602,
+          210,
+          260
+        ],
+        "roll": [
+          110,
+          602,
+          270,
+          106
+        ],
+        "somer": [
+          110,
+          738,
+          270,
+          124
+        ],
+        "speed": [
+          678,
+          774,
+          202,
+          92
+        ],
+        "shield": [
+          940,
+          774,
+          204,
+          92
+        ]
+      },
+      "number": 1,
+      "size": [
+        1536,
+        1024
+      ],
+      "sha256": "35e865d215fe997ddf671ab9fa09e29830f54debac5f7cc22f82202d411017cb",
+      "image": "fury-classic-frame.png"
+    },
+    {
+      "key": "bold-cabinet",
+      "name": "Bold Cabinet",
+      "accent": "#ff6659",
+      "note": "The boldest stock readouts. Red cabinet armor, a wide special panel, and maneuver bars in the right bay.",
+      "bands": [
+        [
+          8,
+          86,
+          1526,
+          368
+        ],
+        [
+          10,
+          530,
+          1524,
+          904
+        ]
+      ],
+      "wells": {
+        "score": [
+          116,
+          132,
+          592,
+          50
+        ],
+        "high": [
+          828,
+          132,
+          592,
+          50
+        ],
+        "lives": [
+          106,
+          218,
+          608,
+          106
+        ],
+        "missiles": [
+          822,
+          218,
+          608,
+          106
+        ],
+        "weapon": [
+          106,
+          576,
+          192,
+          148
+        ],
+        "special": [
+          398,
+          576,
+          740,
+          120
+        ],
+        "roll": [
+          1234,
+          576,
+          196,
+          144
+        ],
+        "speed": [
+          398,
+          740,
+          324,
+          122
+        ],
+        "shield": [
+          814,
+          740,
+          322,
+          122
+        ],
+        "somer": [
+          1234,
+          758,
+          196,
+          102
+        ],
+        "lock": [
+          106,
+          762,
+          192,
+          98
+        ]
+      },
+      "number": 2,
+      "size": [
+        1536,
+        1024
+      ],
+      "sha256": "da91bb9caf176e102489bcd4464e872df83737078d754b66838f4b4426523d64",
+      "image": "bold-cabinet-frame.png"
+    },
+    {
+      "key": "white-interceptor",
+      "name": "White Interceptor",
+      "accent": "#78e7ff",
+      "note": "Bright alloy edges with dark display wells. A long special bar sits above the two maneuver bars.",
+      "bands": [
+        [
+          38,
+          74,
+          1498,
+          366
+        ],
+        [
+          26,
+          562,
+          1510,
+          926
+        ]
+      ],
+      "wells": {
+        "score": [
+          156,
+          112,
+          548,
+          70
+        ],
+        "high": [
+          832,
+          112,
+          548,
+          70
+        ],
+        "lives": [
+          118,
+          218,
+          596,
+          102
+        ],
+        "missiles": [
+          820,
+          218,
+          598,
+          102
+        ],
+        "weapon": [
+          80,
+          602,
+          192,
+          280
+        ],
+        "special": [
+          350,
+          602,
+          836,
+          78
+        ],
+        "lock": [
+          1252,
+          636,
+          198,
+          218
+        ],
+        "roll": [
+          366,
+          726,
+          368,
+          100
+        ],
+        "somer": [
+          812,
+          726,
+          356,
+          100
+        ],
+        "speed": [
+          358,
+          868,
+          364,
+          34
+        ],
+        "shield": [
+          816,
+          868,
+          362,
+          34
+        ]
+      },
+      "number": 3,
+      "size": [
+        1536,
+        1024
+      ],
+      "sha256": "aedd28bf9fac039c542fe4496ee46e7b547aba51828d99e089128415f97a89ad",
+      "image": "white-interceptor-frame.png"
+    },
+    {
+      "key": "armored-command",
+      "name": "Armored Command",
+      "accent": "#ffd16a",
+      "note": "A centered weapon bay with two wide wings. Left: maneuvers. Right: special and retina lock. Brass and olive armor.",
+      "bands": [
+        [
+          18,
+          60,
+          1518,
+          344
+        ],
+        [
+          18,
+          534,
+          1518,
+          904
+        ]
+      ],
+      "wells": {
+        "score": [
+          114,
+          118,
+          598,
+          60
+        ],
+        "high": [
+          826,
+          118,
+          596,
+          58
+        ],
+        "lives": [
+          108,
+          202,
+          604,
+          82
+        ],
+        "missiles": [
+          824,
+          202,
+          604,
+          82
+        ],
+        "special": [
+          938,
+          582,
+          482,
+          86
+        ],
+        "roll": [
+          118,
+          584,
+          482,
+          84
+        ],
+        "weapon": [
+          696,
+          584,
+          144,
+          228
+        ],
+        "somer": [
+          110,
+          698,
+          498,
+          92
+        ],
+        "lock": [
+          930,
+          698,
+          496,
+          92
+        ],
+        "speed": [
+          188,
+          828,
+          408,
+          36
+        ],
+        "shield": [
+          942,
+          828,
+          406,
+          36
+        ]
+      },
+      "number": 4,
+      "size": [
+        1536,
+        1024
+      ],
+      "sha256": "22f2919f239a496c1e98d5e23ca81c64128ae15096245a79ecccbc5c3fdce5f6",
+      "image": "armored-command-frame.png"
+    },
+    {
+      "key": "neon-fury",
+      "name": "Neon Fury",
+      "accent": "#46f4e5",
+      "note": "Thin cyan rails and long horizontal meters. Weapon left; special, maneuvers, speed and shield read across the lower panel.",
+      "bands": [
+        [
+          16,
+          106,
+          1518,
+          376
+        ],
+        [
+          18,
+          538,
+          1516,
+          920
+        ]
+      ],
+      "wells": {
+        "score": [
+          108,
+          152,
+          622,
+          58
+        ],
+        "high": [
+          808,
+          154,
+          622,
+          58
+        ],
+        "lives": [
+          98,
+          248,
+          640,
+          78
+        ],
+        "missiles": [
+          802,
+          248,
+          638,
+          78
+        ],
+        "weapon": [
+          106,
+          588,
+          240,
+          284
+        ],
+        "special": [
+          416,
+          588,
+          1012,
+          88
+        ],
+        "roll": [
+          416,
+          714,
+          466,
+          70
+        ],
+        "somer": [
+          926,
+          714,
+          502,
+          72
+        ],
+        "lock": [
+          1082,
+          822,
+          352,
+          50
+        ],
+        "speed": [
+          414,
+          824,
+          266,
+          48
+        ],
+        "shield": [
+          730,
+          824,
+          302,
+          48
+        ]
+      },
+      "number": 5,
+      "size": [
+        1536,
+        1024
+      ],
+      "sha256": "0b00b2fb6b384677b76843a85687bc0e82d40f8cf4bc17e759a96fc620110c79",
+      "image": "neon-fury-frame.png"
+    }
+  ],
+  "imagePrompts": "../../../_ART_SOURCES/hud_concepts_1011/prompts.json",
+  "references": "references.json",
+  "registration": "Uniform banner fit; no nonuniform sprite scaling."
+}

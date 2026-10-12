@@ -3,7 +3,7 @@
    engine ordnance; one director owns each attack channel. Mike, 2026-09-26. */
 const ER26_STAGE={magmaward:2,frostcruiser:3,cryospear:3,olivewarden:4,stormsovereign:4};
 const ER26_PALETTES=new Map();
-function er26Owns(b){return !!(b&&ER26_STAGE[b._ship]===run.stage&&!b._scene);}
+function er26Owns(b){return !!(b&&(ER26_STAGE[b._ship]===run.stage||b._pt11LegacyFrost&&run.stage===8)&&!b._scene);}
 function er26Level(){return diffKey==='furious'?2:diffKey==='hard'?1:0;}
 function er26Sound(...names){s3ThermoSound(...names);}
 function er26Warm(){

@@ -1,0 +1,14 @@
+[
+  {
+    "name": "sonic_charge16",
+    "prompt": "Use case illustration-story. Production Neo Geo quality EFFECT spritesheet for Bullets of Fury. EXACT16 consecutive frames FOUR COLUMNS x FOUR ROWS. Same centerfixed in equal cells, progression left-to-right then nextrow, generous transparentpadding: never touch other cells or imageedge. TRUE transparent RGBA, no checkerboard/labels/background. Every cell filledwithoneeffect, consistent common scale, authentic smooth16frame charge animation, richly shadedpixelclustersanddarkcrispedges. A CYAN-WHITE HYPERSONIC CHARGE EFFECT: opposing crescent pressure ripples converge into a compressed bright-white core, finely spaced cyan interference rings and little crackling pressure sparks. Startsmall, compress/build smoothly over16 frames, peakbright atframe16. Face-on overhead raster energy, transparent between every crescent. Has an empty transparent center in earlyframes so the fork mechanism can show through. No weapon rendered, no metal. NO generic flame, no gaseous blur. Sharp detailed arcadesprite."
+  },
+  {
+    "name": "devastator_charge16",
+    "prompt": "Use case illustration-story. Production Neo Geo quality EFFECT spritesheet for Bullets of Fury. EXACT16 consecutive frames FOUR COLUMNS x FOUR ROWS. Same centerfixed in equal cells, progression left-to-right then nextrow, generous transparentpadding: never touch other cells or imageedge. TRUE transparent RGBA, no checkerboard/labels/background. Every cell filledwithoneeffect, consistent common scale, authentic smooth16frame charge animation, richly shadedpixelclustersanddarkcrispedges. A RED/ORANGE-WHITE REACTOR/PLASMA CANNON CHARGE: glowing superheated small core grows concentric segmented redcapacitor bands, white-hot sparks lean inward, brightorange plasma tongues onrim, culminates compact white-orange sphere byframe16. Emptybackgroundbetweenenergypixels, no weapon/metal. Rich hard pixelclusters, no smooth gaseousblur."
+  },
+  {
+    "name": "deviator_charge16",
+    "prompt": "Use case illustration-story. Production Neo Geo quality EFFECT spritesheet for Bullets of Fury. EXACT16 consecutive frames FOUR COLUMNS x FOUR ROWS. Same centerfixed in equal cells, progression left-to-right then nextrow, generous transparentpadding: never touch other cells or imageedge. TRUE transparent RGBA, no checkerboard/labels/background. Every cell filledwithoneeffect, consistent common scale, authentic smooth16frame charge animation, richly shadedpixelclustersanddarkcrispedges. An EMERALD/VIOLET RADAR HACK CHARGE: four/five angular emerald signal arcs and violet diamond-shaped interference glyph fragments converge into a bright green/white radar node, intermittent crisp digital sparks, final compactemerald plasma. No letters or numbers, no weapon, no scenery. Sinister crisparcadepixelart."
+  }
+]

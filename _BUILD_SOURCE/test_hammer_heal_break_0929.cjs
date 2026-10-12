@@ -23,7 +23,7 @@ module.exports=function(vm,ctxv,ok){
     const lane={x:hd.x,y:wallY,vx:0,vy:-12,w:4,h:10,dmg:3,kind:'mg'},body={x:b.x-(hd.x>b.x?60:-60),y:wallY,vx:0,vy:-12,w:4,h:10,dmg:3,kind:'mg'};
     pBullets=[lane,body];fr27Reflect(b,A,1/60);
     o[diff+': while he heals, a round aimed at the raised hammer passes the wall']=!lane.dead;
-    o[diff+': a round at his body beside it is still turned back']=!!body.dead;
+    o[diff+': a round at his body beside it is absorbed by the wall']=!!body.dead;
     pBullets=[];
     const R=h.recovery;let n=0;
     while(R.status==='charging'&&n<200){_dmgBullet={kind:'mg',x:hd.x,y:hd.y};bossHitTest(hd.x,hd.y);b._hammerModuleHit='hammer';_lastHitX=hd.x;_lastHitY=hd.y;hitBoss(3);n++;}

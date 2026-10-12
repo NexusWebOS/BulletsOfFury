@@ -1,0 +1,78 @@
+{
+  "tool": "built-in image_gen",
+  "originals_preserved": true,
+  "generations": [
+    {
+      "bank": "background",
+      "generated_original": "C:/Users/Mdogg/.codex/generated_images/01a0e3c8-265d-7731-8ffe-ee42ebb5ba3c/exec-e60075a0-2698-4a4f-8987-ec21039d3513.png",
+      "workspace_source": "_ART_SOURCES/survivor_1010/background_raw.png",
+      "accepted": true,
+      "rejection_reason": null,
+      "sha256": "f5be2493319c7d0f48417f86ddf4379905a0dfdb65c4407cc7a1fd2ae315d8b6"
+    },
+    {
+      "bank": "detail",
+      "generated_original": "C:/Users/Mdogg/.codex/generated_images/01a0e3c8-265d-7731-8ffe-ee42ebb5ba3c/exec-89fef8c8-3b97-4095-a44b-eb0a82fcf78f.png",
+      "workspace_source": "_ART_SOURCES/survivor_1010/detail_raw.png",
+      "accepted": true,
+      "rejection_reason": null,
+      "sha256": "2ee188512d485ef3d1c8eca3a3f0a5645c4b8efd947d39cb51e7daeeafd63d6b"
+    },
+    {
+      "bank": "crawl_rejected_28",
+      "generated_original": "C:/Users/Mdogg/.codex/generated_images/01a0e3c8-265d-7731-8ffe-ee42ebb5ba3c/exec-625edd4e-376e-43f3-8fa1-b0b2ada0f68b.png",
+      "workspace_source": "_ART_SOURCES/survivor_1010/crawl_rejected_28.png",
+      "accepted": false,
+      "rejection_reason": "28 sprites instead of 32",
+      "sha256": "2f270c1b6dd53b2cf31c9cb2f96c1ebbd1bf9d2a55489fe54dec7607d0621b48"
+    },
+    {
+      "bank": "crawl_rejected_overlap",
+      "generated_original": "C:/Users/Mdogg/.codex/generated_images/01a0e3c8-265d-7731-8ffe-ee42ebb5ba3c/exec-0ee6a870-67a4-4569-8fda-a0c09d417fdd.png",
+      "workspace_source": "_ART_SOURCES/survivor_1010/crawl_rejected_overlap.png",
+      "accepted": false,
+      "rejection_reason": "Neighboring poses overlap in row 2",
+      "sha256": "2f6302574f031509b16653f7135d7108d002db8b3f5c1b75b40166610f880b8c"
+    },
+    {
+      "bank": "crawl",
+      "generated_original": "C:/Users/Mdogg/.codex/generated_images/01a0e3c8-265d-7731-8ffe-ee42ebb5ba3c/exec-b5999683-e59e-41d4-bc3f-89a82f494174.png",
+      "workspace_source": "_ART_SOURCES/survivor_1010/crawl_raw.png",
+      "accepted": true,
+      "rejection_reason": null,
+      "sha256": "48e1ebd6b73d5477ca165a0113b1f8464e80f4ad9ee42e80b887309d26d6ac79"
+    },
+    {
+      "bank": "burst_rejected_overlap",
+      "generated_original": "C:/Users/Mdogg/.codex/generated_images/01a0e3c8-265d-7731-8ffe-ee42ebb5ba3c/exec-5c0be0f9-e69c-4290-9c2e-68989e7bcefe.png",
+      "workspace_source": "_ART_SOURCES/survivor_1010/burst_rejected_overlap.png",
+      "accepted": false,
+      "rejection_reason": "Elongated final-row tails cross cell boundaries",
+      "sha256": "c8b7cf2aa6b30f8412d72ef26f52e4ff7e5a3ce70eca3ac71077edb142fcbbe1"
+    },
+    {
+      "bank": "burst",
+      "generated_original": "C:/Users/Mdogg/.codex/generated_images/01a0e3c8-265d-7731-8ffe-ee42ebb5ba3c/exec-7f161f90-b39b-45a0-8027-3b26134c374d.png",
+      "workspace_source": "_ART_SOURCES/survivor_1010/burst_raw.png",
+      "accepted": true,
+      "rejection_reason": null,
+      "sha256": "50131094924149b8917a49b59f516108352e82453a2b7e711d4cefca1b8655a3"
+    },
+    {
+      "bank": "contact_rejected_overlap",
+      "generated_original": "C:/Users/Mdogg/.codex/generated_images/01a0e3c8-265d-7731-8ffe-ee42ebb5ba3c/exec-93eef10c-690e-47ca-829e-96d4aad93153.png",
+      "workspace_source": "_ART_SOURCES/survivor_1010/contact_rejected_overlap.png",
+      "accepted": false,
+      "rejection_reason": "Large middle effects have insufficient transparent gutters",
+      "sha256": "03400a948bffdbd4dd3d332528d80eeafd924ab7d6e7d3f38a298d0adf3be655"
+    },
+    {
+      "bank": "contact",
+      "generated_original": "C:/Users/Mdogg/.codex/generated_images/01a0e3c8-265d-7731-8ffe-ee42ebb5ba3c/exec-154e71fc-b94b-4ce8-aaa2-0f0bdbde13ef.png",
+      "workspace_source": "_ART_SOURCES/survivor_1010/contact_raw.png",
+      "accepted": true,
+      "rejection_reason": null,
+      "sha256": "842ba4f83f8b4fe2f2160642852ba87b730d26dee4830f2e019ef0ea8b2cd78a"
+    }
+  ]
+}

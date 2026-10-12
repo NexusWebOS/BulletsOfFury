@@ -23,7 +23,7 @@
     function muzzle(u,offset){const m=ART_META.tanks[u.crew].muzzle;return world(u,offset||0,(m[1]-151)*SCALE,u.look+Math.PI);}
     function clear(u,part){G.eshots=G.eshots.filter(s=>s.owner!==u||(part&&s.part!==part&&!(s.requires||[]).includes(part)));}
     function detach(u,part){
-      if(u.parts[part]<=0)return;const key=TD.modPartKey(u,u.crew,part);u.parts[part]=0;clear(u,part);
+      if(u.parts[part]<=0)return;const key=TD.modPartKey(u,u.crew,part);u.parts[part]=0;clear(u,part);if(u.crew==='wren'&&part==='special_module')A.play('shieldBreak');
       const angle=(part==='turret'?u.look:u.a)+Math.PI;
       FX.fragment(key,u.x,u.y,angle,SCALE,
         part==='left_track'?-80:part==='right_track'?80:30,-35,[128,151]);
@@ -32,8 +32,9 @@
     }
     function damage(u,part,dmg){
       if(u.dead||u.parts[part]<=0||squad.state==='enter')return;
+      const heavyImpact=dmg>=6;
       if(part==='hull'&&u.parts.turret>0)dmg*=.28;
-      if(u.crew==='wren'&&u.parts.special_module>0&&u.t%9<3&&part!=='special_module')dmg*=.65;
+      if(u.crew==='wren'&&u.parts.special_module>0&&u.t%9<3&&part!=='special_module'){A.play(heavyImpact?'shieldImpactHeavy':'shieldImpact', .75);dmg*=.65;}
       u.flash=.1;u.parts[part]-=dmg;u.hp=100*Object.values(u.parts).reduce((n,v)=>n+Math.max(0,v),0)/202;G.score+=Math.round(dmg*5);
       if(u.parts[part]<=0){u.parts[part]=1;detach(u,part);}
       if(u.parts.hull<=0){
@@ -51,7 +52,7 @@
       if(u.parts[part]<=0||u.dead||u.recover>0)return;
       const p=muzzle(u,offset),f=M.fwd(a),speed=k==='laser'?5.4:k==='missile'?3.2:4;
       G.eshots.push(Object.assign({k,x:p.x,y:p.y,a,vx:f[0]*speed,vy:f[1]*speed,dmg:k==='mg'?1:2,life:145,r:4,t:0,owner:u,part,target:target(u)},extra));
-      u.shots++;u.recoil=4;FX.boom(p.x,p.y,50,'wm_'+u.crew+'_muzzle_',3);A.play(k==='missile'?'missile':k==='laser'?'laser':'eshot',.5);
+      u.shots++;u.recoil=4;FX.boom(p.x,p.y,50,'wm_'+u.crew+'_muzzle_',3);A.play(k==='missile'?'missileLaunch':k==='laser'?'enemyHeavyLaser':'quadFire',.65);
     }
     squad.alive=()=>!squad.dead&&squad.state!=='enter';
     squad.retinaTargets=()=>squad.tanks.filter(u=>!u.dead).flatMap(u=>Object.keys(u.parts).filter(p=>u.parts[p]>0).map(p=>({id:u.crew+':'+p,point:()=>geo(u,p),valid:()=>squad.alive()&&!u.dead&&u.parts[p]>0})));

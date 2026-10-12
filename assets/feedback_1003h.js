@@ -206,7 +206,7 @@ function h3EndingDraw(){
  }else{
   // Existing authored space background, then the generated Earth and CURRENT Furyship.
   ctx.save();ctx.translate(-camX,0);drawBG(0);ctx.restore();
-  const u=clamp(e.descent/8,0,1),smooth=u*u*(3-2*u),planetSize=VW*(.78+.08*smooth),py=VH*.60;
+  const u=clamp(e.descent/8,0,1),smooth=u*u*(3-2*u),planetSize=VW*.78,py=VH*.60;
   if(XART.rdy('h3_earth'))ctx.drawImage(XART.get('h3_earth'),VW/2-planetSize/2,py-planetSize/2,planetSize,planetSize);
   const size=lerp(SPACE_SHIP_SIZE*1.5,4,smooth),y=lerp(VH*.21,py+.025*VH,smooth);
   ctx.save();ctx.translate(VW/2,y);ctx.rotate(Math.PI);furyShipDrawFlight(0,0,size,_pilotKey(),{key:'base'},e.t);ctx.restore();

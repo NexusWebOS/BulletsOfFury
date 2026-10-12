@@ -1,0 +1,430 @@
+{
+  "date": "2026-10-10",
+  "request": "Live interactive HQ cinematic radar, original beeps and actual ship identities",
+  "git": {
+    "head": "7539951cf668e2ac38b8640cf7c98f8682fd0954",
+    "committed": false,
+    "pushed": false,
+    "staged_guide_additions_preserved": {
+      "CLAUDE.md": 7,
+      "HANDOFF_CODEX.md": 8
+    },
+    "index_prior_bytes_preserved_except_new_script_tags": true
+  },
+  "regression": {
+    "command": "node _BUILD_SOURCE/test_fl.js",
+    "baseline_passed": 8170,
+    "baseline_failed": 0,
+    "passed": 8174,
+    "failed": 0,
+    "exit_code": 0,
+    "final_banner": "FALVA/LIZZIE BUILD OK, 0 ERRORS",
+    "log_sha256": "e54e4d5ca95baa265841428e72da6d57cfdc8945d78553e771fd007294b42447"
+  },
+  "native": {
+    "passed": 25,
+    "failed": 0,
+    "checks": [
+      {
+        "name": "HQ arrival draws the actual authored Cole ship",
+        "passed": true,
+        "data": {
+          "key": "hq10_background_00",
+          "ships": 51,
+          "rect": {
+            "x": 45.08474576271192,
+            "y": 0,
+            "w": 637.8305084745762,
+            "h": 358.4
+          }
+        }
+      },
+      {
+        "name": "Landing advances on the live cinematic clock",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "HQ attack uses the actual red and green stealth fighter plates",
+        "passed": true,
+        "data": {
+          "red": 730,
+          "green": 292
+        }
+      },
+      {
+        "name": "Radar fills progressively before entering the held sweep",
+        "passed": true,
+        "data": {
+          "time": 0.8500000000000046,
+          "seen": 4,
+          "radar": 153
+        }
+      },
+      {
+        "name": "Held radar discovers moving tracks and plays authored contact beeps",
+        "passed": true,
+        "data": {
+          "seen": 18,
+          "contacts": 18,
+          "sounds": [
+            {
+              "event": "sound",
+              "cue": "contact",
+              "name": "retinaLockBeep",
+              "available": true
+            },
+            {
+              "event": "sound",
+              "cue": "contact",
+              "name": "retinaLockBeep",
+              "available": true
+            },
+            {
+              "event": "sound",
+              "cue": "contact",
+              "name": "retinaLockBeep",
+              "available": true
+            },
+            {
+              "event": "sound",
+              "cue": "contact",
+              "name": "retinaLockBeep",
+              "available": true
+            },
+            {
+              "event": "sound",
+              "cue": "contact",
+              "name": "retinaLockBeep",
+              "available": true
+            },
+            {
+              "event": "sound",
+              "cue": "contact",
+              "name": "retinaLockBeep",
+              "available": true
+            }
+          ]
+        }
+      },
+      {
+        "name": "Both lower signal instruments render the authored animated waveform",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Map ships change geographic position between native frames",
+        "passed": true,
+        "data": 0.024697989997772177
+      },
+      {
+        "name": "Directional input selects a contact without advancing dialogue",
+        "passed": true,
+        "data": {
+          "selected": 17,
+          "beat": 2
+        }
+      },
+      {
+        "name": "A begins a real acquisition scan instead of skipping the map",
+        "passed": true,
+        "data": {
+          "beat": 2,
+          "scan": {
+            "index": 17,
+            "t": 0
+          }
+        }
+      },
+      {
+        "name": "Scan completion marks the selected contact and ends the progress phase",
+        "passed": true,
+        "data": {
+          "confirmed": true,
+          "scan": null,
+          "events": [
+            {
+              "event": "scan-complete",
+              "id": "maverick"
+            }
+          ]
+        }
+      },
+      {
+        "name": "Alien interference becomes a separate discovered signal",
+        "passed": true,
+        "data": {
+          "signal": true,
+          "t": 8.133333333333008
+        }
+      },
+      {
+        "name": "Pointer hit testing uses the full cinematic viewport and scans its contact",
+        "passed": true,
+        "data": {
+          "selected": 14,
+          "scan": {
+            "index": 14,
+            "t": 0.01666666666666606
+          },
+          "beat": 2
+        }
+      },
+      {
+        "name": "Drawing the map again cannot duplicate sounds",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "B returns from radar inspection to dialogue without skipping the beat",
+        "passed": true,
+        "data": {
+          "beat": 2,
+          "controls": false,
+          "scan": null
+        }
+      },
+      {
+        "name": "A resumes the ordinary cinematic continuation after Back",
+        "passed": true,
+        "data": {
+          "beat": 3,
+          "background": "hq10_background_03"
+        }
+      },
+      {
+        "name": "Scramble renders five unique actual pilot ships",
+        "passed": true,
+        "data": {
+          "formation": [
+            "cole",
+            "axel",
+            "yuri",
+            "maverick",
+            "lizzie"
+          ],
+          "draws": {
+            "ship_cole": 952,
+            "background": 1122,
+            "fb2_stealth_red": 4173,
+            "fb2_stealth_green": 2277,
+            "radar": 1578,
+            "signal": 988,
+            "map": 494,
+            "ship_lizzie": 654,
+            "ship_axel": 624,
+            "ship_yuri": 594,
+            "ship_maverick": 564
+          }
+        }
+      },
+      {
+        "name": "Start still skips the scene and calls its continuation exactly once",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Radar remains active for its specified reading interval",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Radar progresses automatically into the scramble",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "All nine landing variants draw their own exact authored airframes",
+        "passed": true,
+        "data": {
+          "ship_cole": 1945,
+          "background": 2888,
+          "fb2_stealth_red": 11265,
+          "fb2_stealth_green": 6289,
+          "radar": 4338,
+          "signal": 2828,
+          "map": 1414,
+          "ship_lizzie": 1680,
+          "ship_axel": 1588,
+          "ship_yuri": 1519,
+          "ship_maverick": 1469,
+          "ship_freezer": 91,
+          "ship_falva": 91,
+          "ship_decker": 91,
+          "ship_juggernaut": 91
+        }
+      },
+      {
+        "name": "Narrow viewport keeps the full radar housing above the dialogue",
+        "passed": true,
+        "data": {
+          "W": 273,
+          "rect": {
+            "x": 0,
+            "y": 102.49999999999999,
+            "w": 273,
+            "h": 153.4
+          },
+          "map": {
+            "x": 52.962,
+            "y": 119.68079999999999,
+            "w": 161.07,
+            "h": 77.0068
+          },
+          "H": 512
+        }
+      },
+      {
+        "name": "Narrow cinematic preserves ship, radar and portrait proportions in actual CSS pixels",
+        "passed": true,
+        "data": {
+          "x": 1.7582417582417582,
+          "y": 1.7578125
+        }
+      },
+      {
+        "name": "Narrow-view pointer still selects the intended ship",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "All requested radar sounds exist in the actual audio bank",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "No page, console or asset errors",
+        "passed": true,
+        "data": []
+      }
+    ],
+    "errors": []
+  },
+  "preview": {
+    "passed": 9,
+    "failed": 0,
+    "checks": [
+      {
+        "name": "Preview embeds the actual live interactive radar",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Play button runs the full four-shot cinematic",
+        "passed": true,
+        "data": {
+          "beats": 4,
+          "first": "hq10_background_00"
+        }
+      },
+      {
+        "name": "Preview transfers keyboard focus into the real radar controls",
+        "passed": true,
+        "data": {
+          "selected": 17,
+          "scan": {
+            "index": 17,
+            "t": 0
+          }
+        }
+      },
+      {
+        "name": "Pilot selector uses the actual selected ship in the landing",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Attack button opens its real authored cinematic shot",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Scramble button opens its real authored cinematic shot",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Narrow review controls fit without horizontal overflow",
+        "passed": true,
+        "data": {
+          "width": 480,
+          "scroll": 480
+        }
+      },
+      {
+        "name": "Narrow embedded cinematic preserves physical proportions",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "No page, console or asset errors",
+        "passed": true,
+        "data": []
+      }
+    ],
+    "errors": []
+  },
+  "generated_art": {
+    "tool": "built-in image_gen",
+    "sources": 2,
+    "shipping_assets": 36,
+    "manifest": "_ART_SOURCES/hq_live_1010/generation_manifest.json",
+    "manifest_sha256": "aeba4c1586b4d0681ecb9b25d08d7f0493812aef7bec1e579d72540116d846e3",
+    "background_canvas": [
+      840,
+      472
+    ],
+    "radar_canvas": [
+      256,
+      256
+    ],
+    "pivot": [
+      128,
+      128
+    ],
+    "normalize": "Measured physical origin, fixed proportional scale, crop/pad/translate only; source RGBA preserved"
+  },
+  "runtime_sha256": {
+    "assets/game.js": "bc4742fd217ac033a67cc600278e2801f76c8273fad6d831705c579f6b83401e",
+    "assets/cinematic_director_0930.js": "4c8e7765ae0256ff72f51c8f89613d4987776e23ab22bff8719aea4671e4c290",
+    "assets/campaign_story_0924.js": "b02feab6791845763432f3fc9dc2ae0dcbc0cc98776d216c0b9e2675cf8aa0bd",
+    "assets/hq_live_1010.js": "d5f1e11c11121015ce505d7029de90337cbaeee4fc4c6837f34d58b81da3e8ad",
+    "assets/hq_live_art_1010.js": "4fb714f6092f67ea8c3f62d0f49905bf8aecdae09eaedf6292ef891af5c60171",
+    "index.html": "cb9c582d73f319a488bd19092508e4ce8e8930e4115fca6ff17ddc494e90470d",
+    "_BUILD_SOURCE/test_fl.js": "179ed96a67165be7374fb9d9be9ee660ad77ad99792c219ea7832be36ea3a21f",
+    "_BUILD_SOURCE/test_audio_1010.cjs": "82ad98a871385cda708f0bc337754e1b1fdcef6d717c6f1b15144b0c6acdbd60",
+    "_BUILD_SOURCE/build_hq_live_1010.py": "aab52d706969145ae88c0ae2ffcde6574fb2b719f7a76d9a2ad7349ab2f69c2c",
+    "_BUILD_SOURCE/probe_hq_live_1010.py": "51bed4cf004eddb964a2848b5f12e9c1db3169357b098efca3a40c1ca18619c0",
+    "_BUILD_SOURCE/probe_hq_preview_1010.py": "7745a532fa822ee79a59a1c6c4e7d2f2a6e0df75e3bbc7cae6b6734cce4e2186"
+  },
+  "pixel_review": [
+    "arrival-early.png",
+    "arrival-landed.png",
+    "attack-live.png",
+    "map-acquisition.png",
+    "map-live.png",
+    "map-selected-scanning.png",
+    "map-alien-discovered.png",
+    "scramble-live.png",
+    "map-narrow.png",
+    "preview-desktop.png",
+    "preview-narrow.png"
+  ],
+  "limitations": [
+    "Sound functions and timing verified in the real browser; final subjective audio mix remains a human check.",
+    "This cinematic pass does not establish campaign balance."
+  ],
+  "diff_check": {
+    "new_runtime_and_guide_changes": "clean",
+    "index_existing_warning": "Pre-existing CRLF siege script line is reported as trailing whitespace; prior index hash preserved after removing only the two new HQ script tags."
+  },
+  "controls": {
+    "direction": "Select contact",
+    "A_inspection": "Scan contact",
+    "B": "Back to ordinary dialogue",
+    "A_dialogue": "Reveal / next",
+    "Start": "Skip scene"
+  },
+  "preview_url": "http://127.0.0.1:8794/docs/previews/hq_live_1010/index.html",
+  "preview_http_status": 200
+}

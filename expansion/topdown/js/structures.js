@@ -27,7 +27,7 @@
       FX.fragment(s.type.fragment, s.x + Math.cos(a) * 14, s.y + Math.sin(a) * 10, a,
         wall ? 0.12 : 0.13, Math.cos(a) * speed, Math.sin(a) * speed);
     }
-    TD.Audio.play(wall ? 'expS' : 'expB', wall ? 0.65 : 0.85); TD.Cam.kick(wall ? 3 : 5);
+    TD.Audio.play(wall ? 'gd_wallBreak' : 'gd_buildingCollapse', wall ? 0.85 : 1); TD.Cam.kick(wall ? 3 : 5);
     TD.Stealth.noise(s.x, s.y, 320, 0.6, G.units);
     G.score += wall ? 150 : 650;
     if (s.drop) TD.dropPickup(G, s.x, s.y, s.drop);
@@ -56,7 +56,7 @@
     if (!nearest) return false;
     s.x = M.lerp(ax, bx, best); s.y = M.lerp(ay, by, best);
     TD.hitStructure(G, nearest, s.dmg);
-    FX.concrete(s.x, s.y, 30);
+    FX.concrete(s.x, s.y, 30); TD.Audio.impact(s, .65);
     return true;
   };
   TD.ramStructures = function (G, ax, ay, bx, by, radius) {

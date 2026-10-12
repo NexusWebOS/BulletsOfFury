@@ -1,0 +1,255 @@
+{
+  "checks": [
+    {
+      "name": "All authored Chromium and intact side-swing frames decode",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "Native screen midpoint converts through the actual world zoom",
+      "pass": true,
+      "data": {
+        "top": 0,
+        "mid": 256,
+        "floor": 500,
+        "zoom": 1
+      }
+    },
+    {
+      "name": "easy: columns have a straight hit area bounded by the exact halfway line",
+      "pass": true,
+      "data": {
+        "lanes": 8,
+        "ceiling": true,
+        "hits": true,
+        "safe": true
+      }
+    },
+    {
+      "name": "easy edge -1: background jump, fixed head anchor and recovery",
+      "pass": true,
+      "data": {
+        "background": true,
+        "side": -1,
+        "rotation": 0.7375535551038599,
+        "anchored": true,
+        "committed": true,
+        "done": true
+      }
+    },
+    {
+      "name": "easy edge 1: background jump, fixed head anchor and recovery",
+      "pass": true,
+      "data": {
+        "background": true,
+        "side": 1,
+        "rotation": -0.8416421325945419,
+        "anchored": true,
+        "committed": true,
+        "done": true
+      }
+    },
+    {
+      "name": "normal: columns have a straight hit area bounded by the exact halfway line",
+      "pass": true,
+      "data": {
+        "lanes": 8,
+        "ceiling": true,
+        "hits": true,
+        "safe": true
+      }
+    },
+    {
+      "name": "normal edge -1: background jump, fixed head anchor and recovery",
+      "pass": true,
+      "data": {
+        "background": true,
+        "side": -1,
+        "rotation": 0.7375535551038599,
+        "anchored": true,
+        "committed": true,
+        "done": true
+      }
+    },
+    {
+      "name": "normal edge 1: background jump, fixed head anchor and recovery",
+      "pass": true,
+      "data": {
+        "background": true,
+        "side": 1,
+        "rotation": -0.8416421325945419,
+        "anchored": true,
+        "committed": true,
+        "done": true
+      }
+    },
+    {
+      "name": "hard: columns have a straight hit area bounded by the exact halfway line",
+      "pass": true,
+      "data": {
+        "lanes": 8,
+        "ceiling": true,
+        "hits": true,
+        "safe": true
+      }
+    },
+    {
+      "name": "hard edge -1: background jump, fixed head anchor and recovery",
+      "pass": true,
+      "data": {
+        "background": true,
+        "side": -1,
+        "rotation": 0.7375535551038599,
+        "anchored": true,
+        "committed": true,
+        "done": true
+      }
+    },
+    {
+      "name": "hard edge 1: background jump, fixed head anchor and recovery",
+      "pass": true,
+      "data": {
+        "background": true,
+        "side": 1,
+        "rotation": -0.8416421325945419,
+        "anchored": true,
+        "committed": true,
+        "done": true
+      }
+    },
+    {
+      "name": "furious: columns have a straight hit area bounded by the exact halfway line",
+      "pass": true,
+      "data": {
+        "lanes": 8,
+        "ceiling": true,
+        "hits": true,
+        "safe": true
+      }
+    },
+    {
+      "name": "furious edge -1: background jump, fixed head anchor and recovery",
+      "pass": true,
+      "data": {
+        "background": true,
+        "side": -1,
+        "rotation": 0.7375535551038599,
+        "anchored": true,
+        "committed": true,
+        "done": true
+      }
+    },
+    {
+      "name": "furious edge 1: background jump, fixed head anchor and recovery",
+      "pass": true,
+      "data": {
+        "background": true,
+        "side": 1,
+        "rotation": -0.8416421325945419,
+        "anchored": true,
+        "committed": true,
+        "done": true
+      }
+    },
+    {
+      "name": "Native beam paints Chromium authored pixels with none beyond either endpoint",
+      "pass": true,
+      "data": {
+        "ink": 16931,
+        "above": 0,
+        "below": 0,
+        "keys": [
+          "arch_chromium_beam_0926"
+        ],
+        "top": 256,
+        "bottom": 500
+      }
+    },
+    {
+      "name": "Real playerHit waits through the warning, then punishes remaining at the anchor",
+      "pass": true,
+      "data": {
+        "safe": true,
+        "hit": true,
+        "source": "anchored-hammer-impact"
+      }
+    },
+    {
+      "name": "The upper-half trigger also detects the second co-op pilot",
+      "pass": true,
+      "data": {
+        "x": 410,
+        "y": 231,
+        "seat": 2
+      }
+    },
+    {
+      "name": "Musical dance remains outside the jump counter",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "Musical intro remains outside the jump counter",
+      "pass": true,
+      "data": null
+    },
+    {
+      "name": "bottom-half-columns uses live beam and counter draw routes",
+      "pass": true,
+      "data": {
+        "beam": 189,
+        "counter": 10
+      }
+    },
+    {
+      "name": "upper-half-jump-counter uses live beam and counter draw routes",
+      "pass": true,
+      "data": {
+        "beam": 373,
+        "counter": 68
+      }
+    },
+    {
+      "name": "No page, console or asset errors",
+      "pass": true,
+      "data": []
+    }
+  ],
+  "errors": [],
+  "screenshots": [
+    "native-column-pixels.png",
+    "chromium-mid-screen.png",
+    "left-backswing.png",
+    "left-background-lock.png",
+    "left-dive.png",
+    "left-strike.png",
+    "left-recovery.png",
+    "right-backswing.png",
+    "right-background-lock.png",
+    "right-dive.png",
+    "right-strike.png",
+    "right-recovery.png",
+    "bottom-half-columns-20.png",
+    "bottom-half-columns-40.png",
+    "bottom-half-columns-58.png",
+    "bottom-half-columns-78.png",
+    "bottom-half-columns-100.png",
+    "upper-half-jump-counter-20.png",
+    "upper-half-jump-counter-40.png",
+    "upper-half-jump-counter-58.png",
+    "upper-half-jump-counter-78.png",
+    "upper-half-jump-counter-100.png"
+  ],
+  "videos": [
+    "bottom-half-columns.mp4",
+    "upper-half-jump-counter.mp4"
+  ],
+  "pass": 22,
+  "fail": 0,
+  "gameplay_assertions": 8571,
+  "gameplay_suite_exit": 0,
+  "gameplay_summary_reached": true,
+  "source": "_BUILD_SOURCE/probe_hammer_chromium_1011.py",
+  "review": "_shots/hammer_chromium_1011/review.html",
+  "authored_assets": "Existing Chromium beam and sixteen-pose side-swing banks; no generated pixels or atlas changes."
+}
