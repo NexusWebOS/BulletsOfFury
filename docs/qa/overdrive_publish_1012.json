@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-12",
+  "repository": "https://github.com/NexusWebOS/BulletsOfFury",
+  "branch": "main",
+  "build": "overdrive1012-retina-r1",
+  "scope": "Overdrive expansion publication, launcher, generated media and shared general-achievement dependency. Runtime verified using Git blobs, with no working-tree fallback.",
+  "verification": {
+    "testedTree": "e68a984b8e963485bac715b0575e33425d1b3e04",
+    "nativeChecks": 40,
+    "failed": 0,
+    "browserErrors": [],
+    "requestedTrackedFiles": 1531,
+    "missingFiles": [],
+    "runtimeEvidence": "docs/qa/overdrive_retina_1012.json",
+    "priorNativeChecks": 187,
+    "baseSuite": {
+      "passingAssertions": 8700,
+      "errors": 0,
+      "exitCode": 0
+    }
+  },
+  "sourceMedia": "Original generated source plates, Mike supplied WAVs, exported sprites and approved chip recipes are retained.",
+  "staging": "An isolated Git index selects publication files; unrelated local work is retained."
+}
