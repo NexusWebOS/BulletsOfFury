@@ -1,3 +1,68 @@
+# 2026-10-13 — RELEASE: Overdrive fortress, pursuit and Yuri motion
+
+Mike requested publishing the completed Overdrive update to GitHub. Release
+build: overdrive1013-yuri-motion-r1. Includes Dead Signal fortress / Gosfer,
+Night Run's 150-second truck pursuit, four enemy tank families, and the latest
+316-frame Yuri walk / run-and-fire / crawl revision. Art sources, owning build
+scripts, animation viewer, probes and portable QA evidence are included.
+Origin/main fetched and reviewed at 4c3f7b26; no incoming commits.
+Latest native Chromium checks: 26 motion + 38 assault, all passing, zero
+page/console/asset errors. Required base suite: 8,700 passes, zero errors,
+final summary and exit 0. Earlier route/controller checks remain documented.
+Details: docs/GITHUB_RELEASE_1013.md and docs/OVERDRIVE_ASSAULT_1013.md.
+The LOCAL entries below record implementation and verification before release.
+
+# 2026-10-13 — LOCAL: Yuri walk / crawl motion follow-up
+
+Mike requested clearer walk/crawl frames and smoother animation after playing.
+Build: overdrive1013-yuri-motion-r1. Added 316 authored frames in 24 directional
+walk, run-and-fire and crawl banks (12–16 distinct drawings per bank). Common
+320x320 transparent canvases / pivot160,256; fixed bank scale, source/crop audit.
+Built-in imagegen sources and exact prompts: art/yuri_motion_1013/source under
+expansion/topdown; owner _research/build_yuri_motion_1013.py.
+
+Animation uses actual post-collision distance, a shorter crawl stride, shared
+walk/fire phase, reverse backpedal and an 80ms planted-foot settle. Facing
+boundary hysteresis removes small aim flicker without changing weapon aim.
+Speeds remain 165px/s standing and 63px/s prone. Crawl measured 15 changes/s,
+versus previous ~3.8fps. Boss-entry scripted walking advances the new cycle.
+Review now supports all frame counts, old/new comparison and half speed.
+
+Native Chromium: 26 motion/art/viewer + 38 existing assault checks = 64/64,
+zero page/console/asset errors; all 316 new frames visually inspected in ART.
+Required base suite: 8,700 passes / 0 errors, final summary and exit0. Syntax
+and git diff --check pass. QA docs/qa/overdrive_yuri_motion_1013.json; details
+in docs/OVERDRIVE_ASSAULT_1013.md. Local only; no commit or push.
+
+# 2026-10-13 — LOCAL: Overdrive Yuri / fortress / night pursuit
+
+Mike requested large Mercs / Demolition Man style infantry, starting with Yuri,
+fortress cover combat, Gosfer, more tank enemies and a Silverado turret pursuit.
+Current local build: overdrive1013-assault-r1. No commit or push this turn.
+
+518 authored exports / 86 banks under expansion/topdown/art/assault_1013.
+Yuri has 384 core frames in eight directions plus south-facing grenade/death
+sequences. Other pilots retain their existing infantry art. All exported frames
+are even, with bank scales/anchors and source crop audit; no atlas edits.
+Owner: expansion/topdown/_research/build_assault_1013.py; raw art/prompts retained.
+
+Level 3 restored as Fortress / Dead Signal: three destructible relays, real
+cover and wall peeks, on-foot BOF Retina, unlimited rifle/finite upgrades,
+Gosfer laser/reflex fight. Four authored tank families join Levels 2/4.
+Level 6 Night Run: Hotwire drives green Silverado; 7.5s searchlight introduction,
+150s turret pursuit, rockets/trucks/robots, late red elites, 100 HULL and full
+restart on destruction, no boss. Campaign 2 -> 3 -> 4 -> 5 -> 6; existing title
+and original Options retained. New passwords decode old four-slot saves too.
+
+Chromium: 38 assault + 20 input-driven route + 40 original controller/Retina/
+Warrior checks = 98/98, zero browser/asset errors. Normal-hull pursuit bot ends
+with 23 HP, 63 kills, 28 intercepted rockets, zero restarts. Gosfer defeated by
+actual rifle shots in a protected fixture. All 384 core frames inspected in
+native ART rendering. Base suite 8,700/0, final summary/exit 0. 27 expansion
+modules plus assets/game.js pass syntax. No physical-controller/human-balance
+claim. See docs/OVERDRIVE_ASSAULT_1013.md and docs/qa/overdrive_assault_1013.json.
+Yuri/Normal passwords: fortress OD-237B-5JXM; truck OD-237E-5JXQ.
+
 # 2026-10-12 — Overdrive GitHub publication
 
 Mike requested publishing the completed Overdrive update. This publication

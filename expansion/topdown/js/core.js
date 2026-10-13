@@ -112,7 +112,7 @@
         if(menu){s.A||=this.menuFaceTokens().some(k=>this.raw[k]);s.back||=mapped('B')||mode;s.setup||=mode&&mapped('start');}
         else{
           const foot=TD.game.player?.onfoot;
-          s.cruise||=!foot&&mapped('L');s.retina||=!foot&&mapped('R');
+          s.cruise||=!foot&&mapped('L');s.retina||=mapped('R');s.cover||=foot&&mapped('L');
           if(this.padStyle()==='standard'){
             s.A||=fireMapped('A');s.B||=fireMapped('B');s.X||=fireMapped('X');s.Y||=fireMapped('Y');s.C||=mode&&!foot;s.boost||=!foot&&mapped('boost');
             if(foot&&mode){s.reload||=mapped('A');s.prone||=mapped('X');s.tapWall||=mapped('Y');s.swap||=mapped('B');s.A=s.B=s.X=s.Y=false;}

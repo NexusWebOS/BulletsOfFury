@@ -14,7 +14,8 @@
     const q=target.point(),c=TD.Cam,z=c.zoom||1;
     // Like BOF, visible hostiles are selectable across the whole playfield.
     // The ground stage still requires a clear route past solid cover.
-    return q.x>=c.x&&q.x<=c.x+TD.VW/z&&q.y>=c.y+45/z&&q.y<=c.y+(TD.VH-25)/z&&!W.rayBlock(p.x,p.y,q.x,q.y);
+    const origin=p.onfoot&&p.cover?TD.footSightOrigin(p,q):p;
+    return q.x>=c.x&&q.x<=c.x+TD.VW/z&&q.y>=c.y+45/z&&q.y<=c.y+(TD.VH-25)/z&&!W.rayBlock(origin.x,origin.y,q.x,q.y);
   }
   function clear(r){r.target=null;r.phase=null;r.t=0;r.locked=false;r.lockT=0;}
   TD.Retina={targets,visible,
@@ -22,7 +23,7 @@
     warm:[...Array.from({length:4},(_,i)=>['retm_'+i,'retmb_'+i]).flat(),...Object.keys(COLORS).filter(p=>!['hotwire','phoenix','niel'].includes(p)).map(p=>'nbret_'+p)],
     cycle(p,G){
       const r=p.retina||(p.retina={target:null,t:0,locked:false});
-      if(p.missiles<=0){clear(r);G.say('NO MISSILES',p);A.play('error');return false;}
+      if(!p.onfoot&&!p.convoy&&p.missiles<=0){clear(r);G.say('NO MISSILES',p);A.play('error');return false;}
       const candidates=targets(G).filter(t=>visible(p,t)).sort((a,b)=>{const x=a.point(),y=b.point();return M.dist(p.x,p.y,x.x,x.y)-M.dist(p.x,p.y,y.x,y.y);});
       if(!candidates.length){clear(r);return false;}
       const at=candidates.findIndex(t=>t.id===r.target?.id),target=candidates[(at+1)%candidates.length];
@@ -32,9 +33,9 @@
     },
     tick(p,G,dt){
       const r=p.retina||(p.retina={target:null,t:0,locked:false});r.animT=(r.animT||0)+dt;
-      if(p.dead||p.onfoot){clear(r);return;}
+      if(p.dead){clear(r);return;}
       if(r.target&&!visible(p,r.target))clear(r);
-      if(I.tap('retina')||(!r.target&&I.down('retina')&&p.missiles>0))this.cycle(p,G);
+      if(I.tap('retina')||(!r.target&&I.down('retina')&&(p.onfoot||p.convoy||p.missiles>0)))this.cycle(p,G);
       if(!r.target)return;
       const q=r.target.point();
       if(r.phase==='seek'){
@@ -64,7 +65,7 @@
       const g=ART.get(key);if(!g)return;
       const size=boss?58:seek?32*r.scale:34;
       ctx.save();ctx.shadowColor=col;ctx.shadowBlur=flashing?16:seek?10:8;
-      ART.draw(ctx,key,r.x,r.y,{s:size/g.sw,a:(r.spin||0)*(boss?.35:1),alpha:flashing?.95:.9,palette:boss?null:col});
+      ART.draw(ctx,key,r.x,r.y-(p.onfoot?32:0),{s:size/g.sw,a:(r.spin||0)*(boss?.35:1),alpha:flashing?.95:.9,palette:boss?null:col});
       ctx.restore();
     },
   };

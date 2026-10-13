@@ -18,8 +18,20 @@ Open [Ground Operations](http://127.0.0.1:8778/expansion/topdown/index.html).
 Start opens the BOF/Overdrive intro and the original-style title menu. New Game
 then opens difficulty, the original pilot screen with **two rows of six pilots**,
 and the first campaign briefing. Continue and the new Overdrive password menu
-restore campaign progress. The campaign advances Level 2 → Level 4 → Level 5;
-the shelved Level 3 stays hidden. There is no mission picker at startup.
+restore campaign progress. The campaign advances **Level 2 → Level 3 → Level 4
+→ Level 5 → Level 6**. There is no mission picker at startup.
+
+Current build: **`overdrive1013-yuri-motion-r1`**. Yuri has new large infantry art,
+the fortress now leads to Gosfer, four new enemy tank families join the tank
+stages, and Hotwire drives the new Silverado turret pursuit. See
+[the October 13 guide, controls and passwords](../../docs/OVERDRIVE_ASSAULT_1013.md)
+and [Yuri's animation viewer](art/assault_1013/review.html).
+
+Yuri's movement revision adds 316 authored walk, run-and-fire and crawl frames
+across eight directions. Distance drives the animation, firing preserves the
+step phase, and blocked movement settles the feet. The viewer compares the old
+and new loops at actual game speed. Native checks: 26 movement/art plus 38
+existing assault checks pass; base regression: 8,700 passes, zero errors.
 
 Insanity unlocks after completing the Overdrive campaign and stays unlocked.
 Options reuses the original BOF panel, four volume strips, key caps, scrolling,
@@ -44,9 +56,13 @@ then. See [the introduction and verification](../../docs/OVERDRIVE_BOSS_INTRO_10
 | Mission | Playable content |
 | --- | --- |
 | Level 2 — Iron Infiltration | Smooth Fury tank movement, independent turret aim, sideways strafe, destructible buildings, concrete cover, charged cannon recoil, tank homing missiles. **The Warrior** has an original helmet/torso, two arms and a chassis, lateral broadside movement, bullet/laser/missile volleys and a warned cover-breaking ram. No boss charge orbs. |
-| Level 3 — Boots on the Ground *(hidden from the menu since 2026-10-09; kept intact)* | Authored Miami beach → palm park → fortress route. One damaging hit consumes a life. Six guns with finite magazines/reserves, manual reload, prone/crawl, vulnerable roll, committed grenade throw, stealth, tall-stack occlusion and fixed weapon-box drops. Defeat three sentries, then walk through the opened north gate. |
+| Level 3 — Fortress / Dead Signal | Large Yuri in eight directions, independent aim, jump/roll/crouch/prone, destructible cover and physical wall peeking. Unlimited assault rifle with finite upgrade guns. Destroy three red relays and enter the AI data center to face **Gosfer**, an alien rifleman with laser volleys and reflex dodges. |
 | Level 4 — Machinists: Rebel Siege | New coastal rail/factory battlefield and rocket, rail and siege tank roles. Wren/Foundry, Rolf/Vector and Chaz/Redline are hostile tanks. Select **Hotwire, Phoenix or Niel** as your teammate. The squad attacks both of you; your teammate follows, fires and regroups after being disabled. |
 | Level 5 — Museum of Violence | Mercs × Demolition Man × Contra Hard Corps × MGS on foot. Push-scroll that never scrolls back; A+B / G Mega Crash (3 bombs); POW; a boardable exhibit Fury tank that ejects you alive. Smash-TV Hall of Arms that locks for three waves; 31 shootable exhibits (23 with fixed contents); five hostages (do not shoot them). Four A–D gun slots, death loses only the gun in hand. Three routes: stealth gallery (laser tripwires, cameras), prone-only duct, armour hall. CQC from behind, found bodies, alarm panels as the only reinforcement source. Boss THE EXHIBIT: three Hard Corps forms. See [docs/MUSEUM_STUDY_1009.md](../../docs/MUSEUM_STUDY_1009.md). |
+| Level 6 — Night Run / Hull Zero | Hotwire drives a green Silverado through night hills. Freely aim its bed turret through a 150-second pursuit after jet searchlights expose it. Intercept rockets and destroy jets, gun trucks and running robots; red elites arrive late. 100-point HULL bar, whole-run restart on destruction, no boss/miniboss. |
+
+Level 5 shares the new rifle/fallback rules and Yuri's new animation bank.
+Levels 2 and 4 now include **Jackal, Lancer, Manticore and Bastion** armor.
 
 Machinist tracks, hulls, turrets and rear modules use the existing calibrated
 layer canvases. Track phases follow travel distance. Breaking a part cancels its
@@ -62,7 +78,9 @@ confirm menus and dossier Continue. The Warrior is 15% smaller, with matching
 mounts/collisions/breakoffs, and framed text fits its boxes. **187 native checks
 pass; base suite 8,700/0, exit 0.** See
 [Retina and shoulder correction](../../docs/OVERDRIVE_RETINA_1012.md).
-Current build: `overdrive1012-retina-r1`.
+That published build was `overdrive1012-retina-r1`. The October 13 build adds
+**38 assault + 20 route + 40 existing Retina/controller checks = 98/98**, with
+zero browser errors. The required base suite passes **8,700/0, exit 0**.
 
 October 11 input correction: saved D-pad bindings now override defaults, mouse
 aim works while a keyboard/controller drives, and holding Retina after the boss
@@ -90,8 +108,9 @@ changes are uncommitted and unpushed.
 
 Boss fights keep the normal **1:1 camera scale**, with the camera following the
 player throughout. The Warrior camera also frames its large authored modules
-while keeping the player's escape route visible. Weapon pickups equip immediately and replace the current gun;
-there is no stored weapon inventory or manual swap button, including mouse wheel.
+while keeping the player's escape route visible. Tank weapon pickups equip
+immediately and replace the current gun. On foot, the rifle remains available
+and up to three upgrade guns can be cycled with Tab / wheel / Mode+B.
 
 | Input | Tank | On foot |
 | --- | --- | --- |
@@ -99,13 +118,14 @@ there is no stored weapon inventory or manual swap button, including mouse wheel
 | Mouse / Q-E | Aim independently | Aim independently |
 | Left mouse / J | Fire | Fire |
 | Right mouse / H / Space | Hold charge, release cannon | Roll |
-| K | Uncharged cannon | Reload |
-| Shift / L | Hull lock / strafe | Toggle prone |
-| R | Hold speed boost | Reload |
+| K | Uncharged cannon | Jump |
+| Shift / L | Hull lock / strafe | Hold crouch / cover |
+| R | Hold speed boost | Jump |
 | F | Cruise / free turret aim | Toggle prone |
-| Controller L / R shoulder | Hold cruise + D-pad aim / tap-cycle Retina | No tank shoulder action |
+| Controller L / R shoulder | Hold cruise + D-pad aim / tap-cycle Retina | Hold cover / tap-cycle Retina |
 | U | Smoke | Grenade |
-| I | Tap-cycle Retina; hold to maintain | No weapon swap |
+| I | Tap-cycle Retina; hold to maintain | Tap-cycle Retina |
+| Tab / wheel | No weapon swap | Cycle rifle / upgrade guns |
 | Enter / Start | Pause / confirm | Pause / confirm |
 | B / Escape in menus | Back | Back |
 
@@ -118,7 +138,7 @@ Six-button controller layout follows the physical two rows:
 The D-pad moves independently of fire direction. Hold two adjacent firing buttons
 for diagonals. Opposing directions cancel. No analog stick is required.
 Tank **Mode** holds the hull for strafe; **Mode + Z** throws smoke. On foot,
-**Mode + A** reloads, **Mode + X** toggles prone, **Mode + Y** taps a wall.
+**Mode + A** jumps, **Mode + X** toggles prone, **Mode + Y** taps a wall.
 In menus A/Start confirms and B/Mode goes back. F1 opens Help.
 
 Tank **Mode + C** holds the speed boost. While holding that combination, the
@@ -138,6 +158,10 @@ select the controller's X-input / D-pad-as-left-stick mode. See the official
 
 ### Retina
 
+On foot, R shoulder / I locks without requiring missiles. The selected rifle or
+upgrade gun shoots the acquired target. Cover locks use its available peek lane.
+The following missile behavior applies to tanks:
+
 Tap I / controller Z or R shoulder to acquire a visible hostile; tap again to
 cycle targets. The original BOF seeker travels and shrinks over 0.45 seconds.
 Locks last five seconds after release; holding Retina maintains them. Targets
@@ -151,7 +175,15 @@ their locks. Launched missiles never retarget other enemies.
 
 ## Art ownership and rebuilding
 
-### October 11 — new Warrior, menus, supplied music and tank boost
+### October 13 — infantry, fortress and night pursuit
+
+`_research/build_assault_1013.py` owns 518 even-sized exports and their loose
+manifests. Original generated sources, exact prompts, crop/scale audit and
+Yuri identity references are preserved in `art/assault_1013/`. See the
+[implementation guide](../../docs/OVERDRIVE_ASSAULT_1013.md) for all current
+controls, art ownership, test fixtures and gameplay reference videos.
+
+### October 11 — new Warrior, menus, supplied music and tank boost (historical)
 
 The active navy/silver HK-inspired Warrior uses `art/warrior_mk2_1011/`:
 640 × 512 hull/damage/wreck canvases and 512 × 512 torso/arm canvases. All have

@@ -1,0 +1,6 @@
+FRAME FORMAT: 1536x1536 transparent PNG, exact4columns x4rows each384square, centralhullanchor192,216; sameproportionalscale allframes in eachrow;30pxalphamargins. ProductiontopdownBOF Overdrive enemy tank sprites, straightoverhead75degrees, allnosesnorth/up. Thickcrisp darkedges, richlyshaded arcade pixelclusters, olive/browngunmetal armor, orangeheatvents; human-sizedplayer wouldbe60pxhighwhen tanksrenderabout100px.
+ROW1: JACKAL light fast scouttank, sloped narrow olivechassis and twinlinkedbulletguns, shortwidecaterpillartracks. Col1idle,Col2distinct moving treadphase,Col3firinggunrecoil(noeffect),Col4burned wreck.
+ROW2: LANCER antiarmor railtank, lowdarkblue sixtrack chassis with ONE verylong centralrailsniperbarrel, yellowhazard nose. Same4states idle,treadmotion,firerecoil,wreck.
+ROW3: MANTICORE missilecarrier tank, heavyrusted bronzequadtrackbody, two imposing boxmissilepods eachfourlaunchcells, shortdefensegun. Same4states idle,treadmotion,podlaunchready,wreck.
+ROW4: BASTION bunkerbreaker heavy tank, broadgunmetalroundedwedgefrontalshield, two orangevent cannons, distinctive fourindependenttrackblocks. Same4states idle,treadmotion,cannonrecoil,wreck.
+Each typeunique silhouette. Nocharges, noenergyorbs, nopropellers, nobackground/text. Neveranotherboss, these regularenemyarmoredvehicles. Stablemounts andcommoncanvases.

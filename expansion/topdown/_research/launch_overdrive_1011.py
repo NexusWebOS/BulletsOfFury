@@ -12,7 +12,7 @@ def browser_path():
 
 def command(port):
     assert 1<=port<=65535
-    url=f'http://127.0.0.1:{port}/expansion/topdown/index.html?fullscreen=1&build=overdrive1012-retina-r1'
+    url=f'http://127.0.0.1:{port}/expansion/topdown/index.html?fullscreen=1&build=overdrive1013-yuri-motion-r1'
     browser=browser_path()
     return ([browser,'--new-window','--start-fullscreen',url] if browser else None),url
 

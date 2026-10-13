@@ -12,7 +12,7 @@
   function fit() {
     // A close 640x480 field fills the window proportionally. The cinematic
     // zoom changes the camera only; boss entry never resizes the canvas.
-    const wide = TD.game?.mission === 2;
+    const wide = [2,3,6].includes(TD.game?.mission);
     TD.VW = VW = wide ? 640 : 480; TD.VH = VH = wide ? 480 : 360;
     const menu=TD.Frontend?.isMenu(TD.game?.state),view=TD.Frontend?.viewport(TD.game?.state),w=menu?view.w:VW,h=menu?view.h:VH;
     document.body.classList.toggle('playing',TD.game?.state==='play');
@@ -39,6 +39,7 @@
   WARM.push(...Object.keys(root.TD_WARRIOR_ART.assets));
   WARM.push(...TD.BossIntro.warm);
   WARM.push(...TD.Retina.warm);
+  WARM.push(...Object.keys(root.TD_ASSAULT_ART.assets));
   TD.pilot = 'cole';
   try { const s = localStorage.getItem('bof_td_pilot'); if (s && TD.PILOTS.includes(s)) TD.pilot = s; } catch (e) {}
 
@@ -55,7 +56,7 @@
     bossDown() { this.bossDeadT = 0; this.score += 30000; A.play('expBoss'); },
   };
 
-  // Selectable missions skip any marked hidden (Level 3, shelved 1009); G.sel stays an index into TD.MISSIONS.
+  // G.sel remains an index into TD.MISSIONS; campaign progression skips hidden entries.
   function stepMission(from, d) { const n = TD.MISSIONS.length; let i = from; for (let k = 0; k < n; k++) { i = (i + d + n) % n; if (!TD.MISSIONS[i].hidden) return i; } return from; }
   TD.stepMission = stepMission;
   function start() {
@@ -66,7 +67,7 @@
     S.reset(); S.alerts = 0;
     Object.assign(G, { units: [], shots: [], eshots: [], props: [], structures: [], pickups: [], wrecks: [], grenades: [], msgs: [], boss: null, bossDeadT: null,
       score: 0, kills: 0, deaths: 0, lives: TD.DIFFICULTIES[TD.difficulty||'normal'].lives, time: 0, extra: 0, reinfT: 0, structuresBroken: 0, ally: null, footGrenades: [], burns: [], mission: MISSION.id,boostTime:0,cruiseTime:0,cruiseAim:null,cqcKills:0 });
-    G.bossIntro = null; G.introFireLatch = false; I.combatLatch.clear();
+    G.bossIntro = null; G.fortress = null; G.convoy = null; G.introFireLatch = false; I.combatLatch.clear();
     fit();
     FX.list = []; Cam.zoom = 1;
     G.player = (MISSION.mode === 'foot' ? TD.makeFootPlayer : TD.makePlayer)(DATA.start.x, DATA.start.y); G.player.a = DATA.start.a;
@@ -135,6 +136,7 @@
     if (TD.BossIntro.active(G)) { TD.BossIntro.update(G, dt); return; }
 
     // ---- play
+    if(MISSION.exclusiveStep){if(MISSION.exclusiveStep(G,dt)==='clear'){setState('clear');A.playMusic('clear');finishScore();}return;}
     G.time += dt;
     if (MISSION.pre) MISSION.pre(G, dt);
     const p = G.player;
@@ -186,7 +188,7 @@
       }
     }
     // the boss
-    if (!G.boss && p.y < DATA.bossLine && !p.dead) {
+    if (MISSION.boss && !G.boss && p.y < DATA.bossLine && !p.dead && (!MISSION.canSpawnBoss||MISSION.canSpawnBoss(G))) {
       G.boss = MISSION.boss(G, DATA.boss.x, DATA.boss.y); Cam.maxY = MISSION.id===3||MISSION.pushScroll?MAP.h:795; A.stopMusic(); A.play('warn');
       fit();
       if (MISSION.id === 2) TD.BossIntro.start(G, G.boss.introProfile());
@@ -199,9 +201,10 @@
     for (const m of G.msgs) m.t += dt; G.msgs = G.msgs.filter(m => m.t < 1.6);
     const [fx, fy] = M.fwd(p.aim);
     Cam.zoom = 1;
-    if (MISSION.id === 2 && G.boss && !G.boss.wrecked) G.boss.followCamera(p);
+    if (MISSION.cameraOwns) MISSION.cam(G);
+    else if (MISSION.id === 2 && G.boss && !G.boss.wrecked) G.boss.followCamera(p);
     else Cam.follow(p.x + fx * 24 + p.vx * 12, p.y + fy * 24 + p.vy * 12, 0.12);
-    if (MISSION.cam) MISSION.cam(G);
+    if(MISSION.cam&&!MISSION.cameraOwns)MISSION.cam(G);
     Cam.shake *= 0.86; A.scene(G, dt);TD.Achievements.tick(G,dt);
   }
   function finishScore() {
@@ -222,6 +225,7 @@
     ctx.fillStyle = col || '#fff'; ctx.fillText(s, x, y);
   }
   function drawWorld() {
+    if(MISSION.drawWorld){MISSION.drawWorld(ctx,G);return;}
     const shx = Cam.shake > 0.3 ? M.rnd(-Cam.shake, Cam.shake) : 0, shy = Cam.shake > 0.3 ? M.rnd(-Cam.shake, Cam.shake) : 0;
     ctx.save(); ctx.scale(Cam.zoom, Cam.zoom); ctx.translate(-Math.round(Cam.x + shx), -Math.round(Cam.y + shy));
     ctx.fillStyle = '#0b100c'; ctx.fillRect(Cam.x - 20, Cam.y - 20, VW / Cam.zoom + 40, VH / Cam.zoom + 40);
@@ -233,8 +237,8 @@
       else ART.draw(ctx, w.art + '_crit_' + ['s', 'w', 'n', 'e'][((Math.round(w.a / (Math.PI / 2)) % 4) + 4) % 4], w.x, w.y, { a: 0, s: 0.5, tint: '#1b1714', alpha: 0.75 });
     }
     // the cones lie on the ground, under everything that stands on it
-    if(G.player?.onfoot)S.drawGroundCones(ctx,G.units.filter(u=>onScreen(u,240)),G.t/60);
-    else for (const u of G.units) if (onScreen(u, 240)) S.drawCone(ctx, u, G.t / 60);
+    if(!MISSION.arcadeAssault){if(G.player?.onfoot)S.drawGroundCones(ctx,G.units.filter(u=>onScreen(u,240)),G.t/60);
+    else for (const u of G.units) if (onScreen(u, 240)) S.drawCone(ctx, u, G.t / 60);}
     if (G.boss) G.boss.drawUnder(ctx);
     FX.draw(ctx, 0);
     TD.drawStructures(ctx, G);
@@ -252,7 +256,7 @@
       if (p.charge > 0) { const [fx, fy] = M.fwd(p.aim), key = 'tank_charge_' + Math.min(3, Math.floor(p.charge / 18));
         ART.draw(ctx, key, p.x + fx * (TD.muzzleDist(p) - p.charge / 72 * 3), p.y + fy * (TD.muzzleDist(p) - p.charge / 72 * 3), { s: 0.3, a: G.t * 0.06 }); }
     }
-    if(p&&!p.dead&&!p.onfoot)TD.Retina.draw(ctx,p);
+    if(p&&!p.dead)TD.Retina.draw(ctx,p);
     TD.campaignDraw(ctx,G);
     TD.drawFootCover(ctx,G);
     for (const g of G.grenades) { const q = Math.min(1, g.t / 0.45); ART.draw(ctx, 'ndk_shell_2', M.lerp(g.x, g.tx, q), M.lerp(g.y, g.ty, q) - Math.sin(q * Math.PI) * 30, { a: g.t * 14, s: 0.5 }); }
@@ -263,7 +267,7 @@
       const grow = Math.min(1, s.t / 0.6), fade = Math.min(1, (s.life - s.t) / 1.2);
       for (let i = 0; i < 6; i++) { const a = i * 1.05 + s.t * 0.15; ART.draw(ctx, 'rzb_dust', s.x + Math.cos(a) * s.r * 0.45 * grow, s.y + Math.sin(a) * s.r * 0.45 * grow, { s: 0.42 * grow, a: a, alpha: 0.8 * fade }); }
     }
-    for (const u of G.units) if (onScreen(u, 60)) S.drawMark(ctx, u, G.t / 60);
+    if(!MISSION.arcadeAssault)for (const u of G.units) if (onScreen(u, 60)) S.drawMark(ctx, u, G.t / 60);
     if (G.boss) G.boss.drawOver(ctx, G.t / 60);
     if (MISSION.drawOver) MISSION.drawOver(ctx, G);
     for (const m of G.msgs) { const a = 1 - Math.max(0, m.t - 1.1) / 0.5; ctx.globalAlpha = a; text(m.text, m.x, m.y - m.t * 22, 11, '#ffe066', 'center'); ctx.globalAlpha = 1; }
@@ -326,16 +330,17 @@
     TD.Text.fit(ctx,text,DATA.title,[20,24,440,20],12,'#9fe0ff');TD.Text.fit(ctx,text,DATA.name,[20,42,440,28],20,'#ffd060');
     const pk=G.player.pilot,fam=TD.familyOf(pk),t=G.t/60;
     ART.draw(ctx,'pav_'+pk,VW/2-70,104,{s:.25});
-    if(G.player.onfoot)TD.drawFoot(ctx,Object.assign({},G.player,{x:VW/2+60,y:108,moving:true,footTime:t}));
+    if(MISSION.briefSprite)MISSION.briefSprite(ctx,G,VW/2+60,108);
+    else if(G.player.onfoot)TD.drawFoot(ctx,Object.assign({},G.player,{x:VW/2+60,y:150,aim:0,moving:true,footTime:t,walkT:t,gaitPhase:(t*165/96)%1}));
     else TD.drawPlayerTank(ctx,{pilot:pk,x:VW/2+60,y:108,a:Math.PI,hp:1,max:1});
-    text(pk.toUpperCase(),VW/2+60,146,11,'#fff','center');
+    text(pk.toUpperCase(),VW/2+60,G.player.onfoot?168:146,11,'#fff','center');
     if(MISSION.id===4){ART.draw(ctx,'pad_dpad',168,248,{s:.07});text('PARTNER: '+TD.companion.toUpperCase(),VW/2+10,248,10,'#7deacc','center');}
     const typed = Math.floor(G.stateT * 40);
     let n = 0;
     DATA.brief.forEach((line,i)=>{const s=line.slice(0,Math.max(0,typed-n));n+=line.length;TD.Text.fit(ctx,text,s,[20,190+i*15,440,16],10,'#e8efe8');});
-    const keys=MISSION.keys?MISSION.keys:G.player.onfoot?[['x','FIRE NORTH'],['y','FIRE WEST'],['z','GRENADE'],['a','FIRE SOUTH'],['b','FIRE EAST'],['c','ROLL']]:[['x','FIRE NORTH'],['y','FIRE WEST'],['z','RETINA'],['a','FIRE SOUTH'],['b','FIRE EAST'],['c','CHARGE']];
+    const keys=typeof MISSION.keys==='function'?MISSION.keys():MISSION.keys|| (G.player.onfoot?TD.footBriefKeys():[['x','FIRE NORTH'],['y','FIRE WEST'],['z','RETINA'],['a','FIRE SOUTH'],['b','FIRE EAST'],['c','CHARGE']]);
     keys.forEach((k,i)=>{const x=44+(i%3)*148,y=273+Math.floor(i/3)*24;ART.draw(ctx,'pad_'+k[0],x,y,{s:.1});text(k[1],x+13,y,9,'#c8d2c8');});
-    text('D-PAD: MOVE   MODE + START: CONTROLLER SETUP',VW/2,318,8,'#9fe0ff','center');
+    text(G.player.onfoot?'L: COVER  R: RETINA  MODE+A: JUMP  MODE+X: PRONE':G.player.convoy?'D-PAD / RIGHT STICK: AIM   R: RETINA':'D-PAD: MOVE   MODE + START: CONTROLLER SETUP',VW/2,318,8,'#9fe0ff','center');
     if (G.stateT > 0.6 && Math.floor(G.t / 30) % 2) ART.draw(ctx, 'pad_start', VW / 2, 338, { s: 0.16 });
     ctx.restore();
   }

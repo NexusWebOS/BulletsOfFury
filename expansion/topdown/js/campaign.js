@@ -236,7 +236,7 @@
     for(const g of G.footGrenades){const q=Math.min(1,g.t/.65),x=M.lerp(g.x,g.tx,q),y=M.lerp(g.y,g.ty,q);frame(ctx,'of_grenade',x,y-Math.sin(q*Math.PI)*32,{s:.28,a:g.t*14});}
   };
   TD.drawFootCover=function(ctx,G){
-    if(!G.player.onfoot||G.mission!==3)return;const plate=ART.get('miami_ground');if(!plate)return;
+    if(!G.player.onfoot||G.mission!==3||G.fortress)return;const plate=ART.get('miami_ground');if(!plate)return;
     const actors=[G.player,...G.units.filter(u=>!u.dead)];
     for(const [x0,y0,x1,y1] of MIAMI_COVER)if(actors.some(p=>p.x+p.r>x0&&p.x-p.r<x1&&p.y>y0-18&&p.y<y1-18)){
       // Redraw the exact authored tall-stack pixels above a pilot behind its base.
