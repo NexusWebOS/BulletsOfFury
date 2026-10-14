@@ -1,0 +1,1230 @@
+{
+  "overdrive-enemy-scout": {
+    "attacks": [
+      {
+        "id": "burst",
+        "name": "Machine-gun burst",
+        "description": "Tracks a visible target, then fires three quick machine-gun shots with slight spread. Move across the aim line between bursts.",
+        "source": {
+          "file": "expansion/topdown/js/tank.js",
+          "line": 226,
+          "symbol": "enemyFire"
+        }
+      }
+    ],
+    "projectileKinds": [
+      "mg"
+    ],
+    "attackCount": 1,
+    "artKeys": [
+      "tk0"
+    ],
+    "art": [
+      {
+        "key": "tk0"
+      }
+    ]
+  },
+  "overdrive-enemy-rifle": {
+    "attacks": [
+      {
+        "id": "shell",
+        "name": "Aimed cannon shell",
+        "description": "Tracks the target and fires a fast single cannon shell down the barrel line. Step across the line after it commits.",
+        "source": {
+          "file": "expansion/topdown/js/tank.js",
+          "line": 226,
+          "symbol": "enemyFire"
+        }
+      }
+    ],
+    "projectileKinds": [
+      "shell"
+    ],
+    "attackCount": 1,
+    "artKeys": [
+      "tk1"
+    ],
+    "art": [
+      {
+        "key": "tk1"
+      }
+    ]
+  },
+  "overdrive-enemy-heavy": {
+    "attacks": [
+      {
+        "id": "twin",
+        "name": "Twin cannon shells",
+        "description": "Fires two parallel cannon shells from offset muzzles. Clear the paired lane rather than trying to squeeze through its center.",
+        "source": {
+          "file": "expansion/topdown/js/tank.js",
+          "line": 226,
+          "symbol": "enemyFire"
+        }
+      }
+    ],
+    "projectileKinds": [
+      "shell"
+    ],
+    "attackCount": 1,
+    "artKeys": [
+      "tk2"
+    ],
+    "art": [
+      {
+        "key": "tk2"
+      }
+    ]
+  },
+  "overdrive-enemy-sniper": {
+    "attacks": [
+      {
+        "id": "snipe",
+        "name": "Rail shot",
+        "description": "Holds a longer preferred range and fires a very fast, narrow shot. Reposition during its warning and cooldown.",
+        "source": {
+          "file": "expansion/topdown/js/tank.js",
+          "line": 226,
+          "symbol": "enemyFire"
+        }
+      }
+    ],
+    "projectileKinds": [
+      "snipe"
+    ],
+    "attackCount": 1,
+    "artKeys": [
+      "tk4"
+    ],
+    "art": [
+      {
+        "key": "tk4"
+      }
+    ]
+  },
+  "overdrive-enemy-turret": {
+    "attacks": [
+      {
+        "id": "burst",
+        "name": "Machine-gun burst",
+        "description": "Sweeps while calm, then tracks visible targets and fires five-shot machine-gun bursts. Its base stays still.",
+        "source": {
+          "file": "expansion/topdown/js/tank.js",
+          "line": 226,
+          "symbol": "enemyFire"
+        }
+      }
+    ],
+    "projectileKinds": [
+      "mg"
+    ],
+    "attackCount": 1,
+    "artKeys": [
+      "oft_north"
+    ],
+    "art": [
+      {
+        "key": "oft_north"
+      }
+    ]
+  },
+  "overdrive-enemy-camera": {
+    "attacks": [
+      {
+        "id": "scan",
+        "name": "Sweeping surveillance",
+        "description": "Sweeps its field of view and raises awareness when it spots the player. This device does not fire projectiles.",
+        "source": {
+          "file": "expansion/topdown/js/tank.js",
+          "line": 247,
+          "symbol": "TD.unitTick"
+        }
+      }
+    ],
+    "projectileKinds": [],
+    "attackCount": 1,
+    "artKeys": [
+      "oft_base"
+    ],
+    "art": [
+      {
+        "key": "oft_base"
+      }
+    ]
+  },
+  "overdrive-enemy-robotScout": {
+    "attacks": [
+      {
+        "id": "burst",
+        "name": "Machine-gun burst",
+        "description": "Tracks a visible target, then fires three quick machine-gun shots with slight spread. Move across the aim line between bursts.",
+        "source": {
+          "file": "expansion/topdown/js/tank.js",
+          "line": 226,
+          "symbol": "enemyFire"
+        }
+      }
+    ],
+    "projectileKinds": [
+      "mg"
+    ],
+    "attackCount": 1,
+    "artKeys": [
+      "of_scout_south"
+    ],
+    "art": [
+      {
+        "key": "of_scout_south"
+      }
+    ]
+  },
+  "overdrive-enemy-robotHeavy": {
+    "attacks": [
+      {
+        "id": "twin",
+        "name": "Twin cannon shells",
+        "description": "Fires two parallel cannon shells from offset muzzles. Clear the paired lane rather than trying to squeeze through its center.",
+        "source": {
+          "file": "expansion/topdown/js/tank.js",
+          "line": 226,
+          "symbol": "enemyFire"
+        }
+      }
+    ],
+    "projectileKinds": [
+      "shell"
+    ],
+    "attackCount": 1,
+    "artKeys": [
+      "of_heavy_robot_south"
+    ],
+    "art": [
+      {
+        "key": "of_heavy_robot_south"
+      }
+    ]
+  },
+  "overdrive-enemy-rocketTank": {
+    "attacks": [
+      {
+        "id": "rocket",
+        "name": "Three-way rocket volley",
+        "description": "Launches a three-way spread of briefly homing missiles. The missiles can be shot down; keep moving away from their turn.",
+        "source": {
+          "file": "expansion/topdown/js/tank.js",
+          "line": 226,
+          "symbol": "enemyFire"
+        }
+      }
+    ],
+    "projectileKinds": [
+      "missile"
+    ],
+    "attackCount": 1,
+    "artKeys": [
+      "wm_tank_chaz_assembled"
+    ],
+    "art": [
+      {
+        "key": "wm_tank_chaz_assembled"
+      }
+    ]
+  },
+  "overdrive-enemy-railTank": {
+    "attacks": [
+      {
+        "id": "snipe",
+        "name": "Rail shot",
+        "description": "Holds a longer preferred range and fires a very fast, narrow shot. Reposition during its warning and cooldown.",
+        "source": {
+          "file": "expansion/topdown/js/tank.js",
+          "line": 226,
+          "symbol": "enemyFire"
+        }
+      }
+    ],
+    "projectileKinds": [
+      "snipe"
+    ],
+    "attackCount": 1,
+    "artKeys": [
+      "wm_tank_rolf_assembled"
+    ],
+    "art": [
+      {
+        "key": "wm_tank_rolf_assembled"
+      }
+    ]
+  },
+  "overdrive-enemy-siegeTank": {
+    "attacks": [
+      {
+        "id": "twin",
+        "name": "Twin cannon shells",
+        "description": "Fires two parallel cannon shells from offset muzzles. Clear the paired lane rather than trying to squeeze through its center.",
+        "source": {
+          "file": "expansion/topdown/js/tank.js",
+          "line": 226,
+          "symbol": "enemyFire"
+        }
+      }
+    ],
+    "projectileKinds": [
+      "shell"
+    ],
+    "attackCount": 1,
+    "artKeys": [
+      "wm_tank_wren_assembled"
+    ],
+    "art": [
+      {
+        "key": "wm_tank_wren_assembled"
+      }
+    ]
+  },
+  "overdrive-enemy-jackal": {
+    "attacks": [
+      {
+        "id": "burst",
+        "name": "Machine-gun burst",
+        "description": "Tracks a visible target, then fires three quick machine-gun shots with slight spread. Move across the aim line between bursts.",
+        "source": {
+          "file": "expansion/topdown/js/tank.js",
+          "line": 226,
+          "symbol": "enemyFire"
+        }
+      }
+    ],
+    "projectileKinds": [
+      "mg"
+    ],
+    "attackCount": 1,
+    "artKeys": [
+      "od_jackal_0"
+    ],
+    "art": [
+      {
+        "key": "od_jackal_0"
+      }
+    ]
+  },
+  "overdrive-enemy-lancer": {
+    "attacks": [
+      {
+        "id": "snipe",
+        "name": "Rail shot",
+        "description": "Holds a longer preferred range and fires a very fast, narrow shot. Reposition during its warning and cooldown.",
+        "source": {
+          "file": "expansion/topdown/js/tank.js",
+          "line": 226,
+          "symbol": "enemyFire"
+        }
+      }
+    ],
+    "projectileKinds": [
+      "snipe"
+    ],
+    "attackCount": 1,
+    "artKeys": [
+      "od_lancer_0"
+    ],
+    "art": [
+      {
+        "key": "od_lancer_0"
+      }
+    ]
+  },
+  "overdrive-enemy-manticore": {
+    "attacks": [
+      {
+        "id": "rocket",
+        "name": "Three-way rocket volley",
+        "description": "Launches a three-way spread of briefly homing missiles. The missiles can be shot down; keep moving away from their turn.",
+        "source": {
+          "file": "expansion/topdown/js/tank.js",
+          "line": 226,
+          "symbol": "enemyFire"
+        }
+      }
+    ],
+    "projectileKinds": [
+      "missile"
+    ],
+    "attackCount": 1,
+    "artKeys": [
+      "od_manticore_0"
+    ],
+    "art": [
+      {
+        "key": "od_manticore_0"
+      }
+    ]
+  },
+  "overdrive-enemy-bastion": {
+    "attacks": [
+      {
+        "id": "twin",
+        "name": "Twin cannon shells",
+        "description": "Fires two parallel cannon shells from offset muzzles. Clear the paired lane rather than trying to squeeze through its center.",
+        "source": {
+          "file": "expansion/topdown/js/tank.js",
+          "line": 226,
+          "symbol": "enemyFire"
+        }
+      }
+    ],
+    "projectileKinds": [
+      "shell"
+    ],
+    "attackCount": 1,
+    "artKeys": [
+      "od_bastion_0"
+    ],
+    "art": [
+      {
+        "key": "od_bastion_0"
+      }
+    ]
+  },
+  "overdrive-enemy-odRobot": {
+    "attacks": [
+      {
+        "id": "assault-rifle",
+        "name": "Assault rifle",
+        "description": "Closes around cover, stops at firing distance, and sends aimed rifle rounds toward the exposed player.",
+        "source": {
+          "file": "expansion/topdown/js/fortress_1013.js",
+          "line": 35,
+          "symbol": "TD.unitTick"
+        }
+      }
+    ],
+    "projectileKinds": [
+      "mg"
+    ],
+    "attackCount": 1,
+    "artKeys": [
+      "od_robot_south_0"
+    ],
+    "art": [
+      {
+        "key": "od_robot_south_0"
+      }
+    ],
+    "stages": [
+      3
+    ],
+    "animationBanks": [
+      "robot_south"
+    ]
+  },
+  "overdrive-enemy-odElite": {
+    "attacks": [
+      {
+        "id": "elite-laser-fan",
+        "name": "Three-way laser fan",
+        "description": "Advances around cover until it has sight, then releases a three-way laser fan. The center and both side bolts are real projectiles.",
+        "source": {
+          "file": "expansion/topdown/js/fortress_1013.js",
+          "line": 35,
+          "symbol": "TD.unitTick"
+        }
+      }
+    ],
+    "projectileKinds": [
+      "laser"
+    ],
+    "attackCount": 1,
+    "artKeys": [
+      "od_elite_south_0"
+    ],
+    "art": [
+      {
+        "key": "od_elite_south_0"
+      }
+    ],
+    "stages": [
+      3
+    ],
+    "animationBanks": [
+      "elite_south"
+    ]
+  },
+  "overdrive-enemy-convoyJet": {
+    "attacks": [
+      {
+        "id": "convoyJet",
+        "name": "Hunter missile pass",
+        "description": "Sways across the road while flying downscreen, launching aimed, shootable missiles every two seconds. Intercept the rockets before they reach the truck.",
+        "source": {
+          "file": "expansion/topdown/js/convoy_1013.js",
+          "line": 48,
+          "symbol": "step"
+        }
+      }
+    ],
+    "projectileKinds": [
+      "missile"
+    ],
+    "attackCount": 1,
+    "artKeys": [
+      "od_hunter_jet_0"
+    ],
+    "art": [
+      {
+        "key": "od_hunter_jet_0"
+      }
+    ],
+    "stages": [
+      6
+    ]
+  },
+  "overdrive-enemy-convoyTruck": {
+    "attacks": [
+      {
+        "id": "convoyTruck",
+        "name": "Gun-truck pursuit",
+        "description": "Pulls alongside the chase and sways while firing aimed machine-gun rounds. Close contact also damages the player truck.",
+        "source": {
+          "file": "expansion/topdown/js/convoy_1013.js",
+          "line": 48,
+          "symbol": "step"
+        }
+      }
+    ],
+    "projectileKinds": [
+      "mg"
+    ],
+    "attackCount": 1,
+    "artKeys": [
+      "od_guntruck_0"
+    ],
+    "art": [
+      {
+        "key": "od_guntruck_0"
+      }
+    ],
+    "stages": [
+      6
+    ]
+  },
+  "overdrive-enemy-convoyRunner": {
+    "attacks": [
+      {
+        "id": "convoyRunner",
+        "name": "Running rifle pursuit",
+        "description": "Runs up the road toward the truck, gradually closing sideways and firing aimed rifle shots. Reaching the truck causes a collision hit.",
+        "source": {
+          "file": "expansion/topdown/js/convoy_1013.js",
+          "line": 48,
+          "symbol": "step"
+        }
+      }
+    ],
+    "projectileKinds": [
+      "mg"
+    ],
+    "attackCount": 1,
+    "artKeys": [
+      "od_robot_north_0"
+    ],
+    "art": [
+      {
+        "key": "od_robot_north_0"
+      }
+    ],
+    "stages": [
+      6
+    ]
+  },
+  "overdrive-enemy-convoyElite": {
+    "attacks": [
+      {
+        "id": "convoyElite",
+        "name": "Elite road pursuit",
+        "description": "Runs faster than standard pursuers and fires a laser bolt every 1.5 seconds. Avoid letting it reach the truck.",
+        "source": {
+          "file": "expansion/topdown/js/convoy_1013.js",
+          "line": 48,
+          "symbol": "step"
+        }
+      }
+    ],
+    "projectileKinds": [
+      "laser"
+    ],
+    "attackCount": 1,
+    "artKeys": [
+      "od_elite_north_0"
+    ],
+    "art": [
+      {
+        "key": "od_elite_north_0"
+      }
+    ],
+    "stages": [
+      6
+    ]
+  },
+  "overdrive-boss-warrior": {
+    "attacks": [
+      {
+        "id": "broadside",
+        "name": "Moving broadside",
+        "description": "Traverses the arena while both surviving arm guns fire repeated machine-gun volleys. Destroying an arm removes its shots.",
+        "source": {
+          "file": "expansion/topdown/js/boss_warrior.js",
+          "line": 174,
+          "symbol": "B.tick"
+        }
+      },
+      {
+        "id": "laser",
+        "name": "Visor volley",
+        "description": "Commits its aim, then releases six alternating visor volleys with a small angular sweep. It recovers before choosing another attack.",
+        "source": {
+          "file": "expansion/topdown/js/boss_warrior.js",
+          "line": 181,
+          "symbol": "B.tick"
+        }
+      },
+      {
+        "id": "rack",
+        "name": "Homing missile salvo",
+        "description": "Fires four paired salvos from surviving arm racks. Missiles turn briefly, accelerate, and can be shot down.",
+        "source": {
+          "file": "expansion/topdown/js/boss_warrior.js",
+          "line": 190,
+          "symbol": "B.tick"
+        }
+      },
+      {
+        "id": "ram",
+        "name": "Committed ram",
+        "description": "Marks the lane green, yellow, then red with its direction locked from the start. Move out of that lane and punish its recovery.",
+        "source": {
+          "file": "expansion/topdown/js/boss_warrior.js",
+          "line": 195,
+          "symbol": "B.tick"
+        }
+      }
+    ],
+    "projectileKinds": [
+      "mg",
+      "laser",
+      "missile"
+    ],
+    "attackCount": 4,
+    "artKeys": [
+      "warrior_hull",
+      "warrior_helmet",
+      "warrior_arm_l",
+      "warrior_arm_r"
+    ],
+    "art": [
+      {
+        "key": "warrior_hull"
+      },
+      {
+        "key": "warrior_helmet"
+      },
+      {
+        "key": "warrior_arm_l"
+      },
+      {
+        "key": "warrior_arm_r"
+      }
+    ],
+    "name": "THE WARRIOR",
+    "stages": [
+      2
+    ]
+  },
+  "overdrive-boss-fortress": {
+    "attacks": [
+      {
+        "id": "sentries",
+        "name": "Three gate sentries",
+        "description": "Three heavy robot sentries defend a closed gate with twin cannon shots. Destroy all three to open the gate. This is the retained earlier Fortress encounter; the current mission ends with Gosfer.",
+        "source": {
+          "file": "expansion/topdown/js/campaign.js",
+          "line": 212,
+          "symbol": "TD.makeFortress"
+        }
+      }
+    ],
+    "projectileKinds": [
+      "shell"
+    ],
+    "attackCount": 1,
+    "artKeys": [
+      "of_fortress_gate_closed",
+      "of_fortress_gate_open",
+      "of_heavy_robot_south"
+    ],
+    "art": [
+      {
+        "key": "of_fortress_gate_closed"
+      },
+      {
+        "key": "of_fortress_gate_open"
+      },
+      {
+        "key": "of_heavy_robot_south"
+      }
+    ],
+    "name": "FORTRESS SENTRIES",
+    "status": "legacy-spawnable",
+    "stages": [
+      3
+    ]
+  },
+  "overdrive-rebel-wren": {
+    "attacks": [
+      {
+        "id": "wren-volley",
+        "name": "Foundry twin-gun spread",
+        "description": "Fires six machine-gun rounds from two muzzles in a three-way spread. Destroying the turret stops the volley.",
+        "source": {
+          "file": "expansion/topdown/js/boss_machinists.js",
+          "line": 92,
+          "symbol": "squad.tick"
+        }
+      },
+      {
+        "id": "wren-shield",
+        "name": "Bastion shield",
+        "description": "For three seconds of each nine-second cycle, its surviving special module reduces incoming damage to the other pieces. The shield does not reflect shots.",
+        "source": {
+          "file": "expansion/topdown/js/boss_machinists.js",
+          "line": 37,
+          "symbol": "damage"
+        }
+      }
+    ],
+    "projectileKinds": [
+      "mg"
+    ],
+    "attackCount": 2,
+    "artKeys": [
+      "wm_tank_wren_assembled"
+    ],
+    "art": [
+      {
+        "key": "wm_tank_wren_assembled"
+      }
+    ],
+    "name": "WREN / FOUNDRY"
+  },
+  "overdrive-rebel-rolf": {
+    "attacks": [
+      {
+        "id": "rolf-splitter",
+        "name": "Vector laser splitter",
+        "description": "Fires three laser bolts while its special module survives; destroying that module removes the side bolts and leaves one center shot.",
+        "source": {
+          "file": "expansion/topdown/js/boss_machinists.js",
+          "line": 93,
+          "symbol": "squad.tick"
+        }
+      }
+    ],
+    "projectileKinds": [
+      "laser"
+    ],
+    "attackCount": 1,
+    "artKeys": [
+      "wm_tank_rolf_assembled"
+    ],
+    "art": [
+      {
+        "key": "wm_tank_rolf_assembled"
+      }
+    ],
+    "name": "ROLF / VECTOR"
+  },
+  "overdrive-rebel-chaz": {
+    "attacks": [
+      {
+        "id": "chaz-rockets",
+        "name": "Redline rocket spread",
+        "description": "Fires three briefly homing, shootable missiles. Destroying the special module removes the side missiles.",
+        "source": {
+          "file": "expansion/topdown/js/boss_machinists.js",
+          "line": 94,
+          "symbol": "squad.tick"
+        }
+      },
+      {
+        "id": "chaz-breach",
+        "name": "Redline breach",
+        "description": "In the final two seconds of its seven-second cycle, the intact tank speeds toward the player and rams cover. Destroy a track or special module to prevent the breach.",
+        "source": {
+          "file": "expansion/topdown/js/boss_machinists.js",
+          "line": 79,
+          "symbol": "squad.tick"
+        }
+      }
+    ],
+    "projectileKinds": [
+      "missile"
+    ],
+    "attackCount": 2,
+    "artKeys": [
+      "wm_tank_chaz_assembled"
+    ],
+    "art": [
+      {
+        "key": "wm_tank_chaz_assembled"
+      }
+    ],
+    "name": "CHAZ / REDLINE"
+  },
+  "overdrive-boss-machinists": {
+    "attacks": [
+      {
+        "id": "wren-volley",
+        "name": "Foundry twin-gun spread",
+        "description": "Fires six machine-gun rounds from two muzzles in a three-way spread. Destroying the turret stops the volley.",
+        "source": {
+          "file": "expansion/topdown/js/boss_machinists.js",
+          "line": 92,
+          "symbol": "squad.tick"
+        }
+      },
+      {
+        "id": "wren-shield",
+        "name": "Bastion shield",
+        "description": "For three seconds of each nine-second cycle, its surviving special module reduces incoming damage to the other pieces. The shield does not reflect shots.",
+        "source": {
+          "file": "expansion/topdown/js/boss_machinists.js",
+          "line": 37,
+          "symbol": "damage"
+        }
+      },
+      {
+        "id": "rolf-splitter",
+        "name": "Vector laser splitter",
+        "description": "Fires three laser bolts while its special module survives; destroying that module removes the side bolts and leaves one center shot.",
+        "source": {
+          "file": "expansion/topdown/js/boss_machinists.js",
+          "line": 93,
+          "symbol": "squad.tick"
+        }
+      },
+      {
+        "id": "chaz-rockets",
+        "name": "Redline rocket spread",
+        "description": "Fires three briefly homing, shootable missiles. Destroying the special module removes the side missiles.",
+        "source": {
+          "file": "expansion/topdown/js/boss_machinists.js",
+          "line": 94,
+          "symbol": "squad.tick"
+        }
+      },
+      {
+        "id": "chaz-breach",
+        "name": "Redline breach",
+        "description": "In the final two seconds of its seven-second cycle, the intact tank speeds toward the player and rams cover. Destroy a track or special module to prevent the breach.",
+        "source": {
+          "file": "expansion/topdown/js/boss_machinists.js",
+          "line": 79,
+          "symbol": "squad.tick"
+        }
+      }
+    ],
+    "projectileKinds": [
+      "mg",
+      "laser",
+      "missile"
+    ],
+    "attackCount": 5,
+    "artKeys": [
+      "wm_tank_wren_assembled",
+      "wm_tank_rolf_assembled",
+      "wm_tank_chaz_assembled"
+    ],
+    "art": [
+      {
+        "key": "wm_tank_wren_assembled"
+      },
+      {
+        "key": "wm_tank_rolf_assembled"
+      },
+      {
+        "key": "wm_tank_chaz_assembled"
+      }
+    ],
+    "name": "THE MACHINISTS",
+    "stages": [
+      4
+    ]
+  },
+  "overdrive-boss-exhibit": {
+    "attacks": [
+      {
+        "id": "guns",
+        "name": "Independent machine guns",
+        "description": "Each surviving side gun tracks the player and fires a short three-round burst. Destroy each gun to remove that stream.",
+        "source": {
+          "file": "expansion/topdown/js/boss_exhibit.js",
+          "line": 103,
+          "symbol": "gunsTick"
+        }
+      },
+      {
+        "id": "cannon",
+        "name": "Warned cannon spread",
+        "description": "A yellow aiming cone turns red as the turret commits, followed by three heavy shells and a recoil recovery.",
+        "source": {
+          "file": "expansion/topdown/js/boss_exhibit.js",
+          "line": 145,
+          "symbol": "R.tick"
+        }
+      },
+      {
+        "id": "rack",
+        "name": "Six-missile rack",
+        "description": "A lock-on warning precedes six missiles from surviving pods. These missiles home briefly, accelerate, and can be shot down.",
+        "source": {
+          "file": "expansion/topdown/js/boss_exhibit.js",
+          "line": 156,
+          "symbol": "R.tick"
+        }
+      },
+      {
+        "id": "ram",
+        "name": "Cover-smashing ram",
+        "description": "Tracks during green, locks through yellow and red, then charges in a straight line. A wall impact stalls it and exposes the hull.",
+        "source": {
+          "file": "expansion/topdown/js/boss_exhibit.js",
+          "line": 189,
+          "symbol": "R.tick"
+        }
+      },
+      {
+        "id": "nova",
+        "name": "Sonic nova",
+        "description": "Charges, then releases a circular sonic burst with three adjacent positions omitted as a usable opening. The next nova changes the gap.",
+        "source": {
+          "file": "expansion/topdown/js/boss_exhibit.js",
+          "line": 168,
+          "symbol": "R.tick"
+        }
+      },
+      {
+        "id": "wave",
+        "name": "Sonic wall crossing",
+        "description": "Marks a safe crossing lane before releasing a horizontal wall of downward sonic waves. Move into the marked opening before release.",
+        "source": {
+          "file": "expansion/topdown/js/boss_exhibit.js",
+          "line": 180,
+          "symbol": "R.tick"
+        }
+      }
+    ],
+    "projectileKinds": [
+      "mg",
+      "shell",
+      "missile",
+      "sonic",
+      "wave"
+    ],
+    "attackCount": 6,
+    "artKeys": [
+      "rzb_hull_0",
+      "rzb_turret",
+      "rzb_machinegun",
+      "rzb_missile_pod"
+    ],
+    "art": [
+      {
+        "key": "rzb_hull_0"
+      },
+      {
+        "key": "rzb_turret"
+      },
+      {
+        "key": "rzb_machinegun"
+      },
+      {
+        "key": "rzb_missile_pod"
+      }
+    ],
+    "name": "THE EXHIBIT",
+    "stages": [
+      5
+    ]
+  },
+  "overdrive-form-exhibit-1": {
+    "attacks": [
+      {
+        "id": "guns",
+        "name": "Independent machine guns",
+        "description": "Each surviving side gun tracks the player and fires a short three-round burst. Destroy each gun to remove that stream.",
+        "source": {
+          "file": "expansion/topdown/js/boss_exhibit.js",
+          "line": 103,
+          "symbol": "gunsTick"
+        }
+      },
+      {
+        "id": "cannon",
+        "name": "Warned cannon spread",
+        "description": "A yellow aiming cone turns red as the turret commits, followed by three heavy shells and a recoil recovery.",
+        "source": {
+          "file": "expansion/topdown/js/boss_exhibit.js",
+          "line": 145,
+          "symbol": "R.tick"
+        }
+      },
+      {
+        "id": "rack",
+        "name": "Six-missile rack",
+        "description": "A lock-on warning precedes six missiles from surviving pods. These missiles home briefly, accelerate, and can be shot down.",
+        "source": {
+          "file": "expansion/topdown/js/boss_exhibit.js",
+          "line": 156,
+          "symbol": "R.tick"
+        }
+      }
+    ],
+    "projectileKinds": [
+      "mg",
+      "shell",
+      "missile"
+    ],
+    "attackCount": 3,
+    "artKeys": [
+      "rzb_hull_0",
+      "rzb_turret",
+      "rzb_machinegun",
+      "rzb_missile_pod"
+    ],
+    "art": [
+      {
+        "key": "rzb_hull_0"
+      },
+      {
+        "key": "rzb_turret"
+      },
+      {
+        "key": "rzb_machinegun"
+      },
+      {
+        "key": "rzb_missile_pod"
+      }
+    ],
+    "name": "THE EXHIBIT / ON DISPLAY",
+    "stages": [
+      5
+    ]
+  },
+  "overdrive-form-exhibit-2": {
+    "attacks": [
+      {
+        "id": "guns",
+        "name": "Independent machine guns",
+        "description": "Each surviving side gun tracks the player and fires a short three-round burst. Destroy each gun to remove that stream.",
+        "source": {
+          "file": "expansion/topdown/js/boss_exhibit.js",
+          "line": 103,
+          "symbol": "gunsTick"
+        }
+      },
+      {
+        "id": "cannon",
+        "name": "Warned cannon spread",
+        "description": "A yellow aiming cone turns red as the turret commits, followed by three heavy shells and a recoil recovery.",
+        "source": {
+          "file": "expansion/topdown/js/boss_exhibit.js",
+          "line": 145,
+          "symbol": "R.tick"
+        }
+      },
+      {
+        "id": "rack",
+        "name": "Six-missile rack",
+        "description": "A lock-on warning precedes six missiles from surviving pods. These missiles home briefly, accelerate, and can be shot down.",
+        "source": {
+          "file": "expansion/topdown/js/boss_exhibit.js",
+          "line": 156,
+          "symbol": "R.tick"
+        }
+      },
+      {
+        "id": "ram",
+        "name": "Cover-smashing ram",
+        "description": "Tracks during green, locks through yellow and red, then charges in a straight line. A wall impact stalls it and exposes the hull.",
+        "source": {
+          "file": "expansion/topdown/js/boss_exhibit.js",
+          "line": 189,
+          "symbol": "R.tick"
+        }
+      }
+    ],
+    "projectileKinds": [
+      "mg",
+      "shell",
+      "missile"
+    ],
+    "attackCount": 4,
+    "artKeys": [
+      "rzb_hull_0",
+      "rzb_turret",
+      "rzb_machinegun",
+      "rzb_missile_pod"
+    ],
+    "art": [
+      {
+        "key": "rzb_hull_0"
+      },
+      {
+        "key": "rzb_turret"
+      },
+      {
+        "key": "rzb_machinegun"
+      },
+      {
+        "key": "rzb_missile_pod"
+      }
+    ],
+    "name": "THE EXHIBIT / BREAKOUT",
+    "stages": [
+      5
+    ]
+  },
+  "overdrive-form-exhibit-3": {
+    "attacks": [
+      {
+        "id": "guns",
+        "name": "Independent machine guns",
+        "description": "Each surviving side gun tracks the player and fires a short three-round burst. Destroy each gun to remove that stream.",
+        "source": {
+          "file": "expansion/topdown/js/boss_exhibit.js",
+          "line": 103,
+          "symbol": "gunsTick"
+        }
+      },
+      {
+        "id": "nova",
+        "name": "Sonic nova",
+        "description": "Charges, then releases a circular sonic burst with three adjacent positions omitted as a usable opening. The next nova changes the gap.",
+        "source": {
+          "file": "expansion/topdown/js/boss_exhibit.js",
+          "line": 168,
+          "symbol": "R.tick"
+        }
+      },
+      {
+        "id": "wave",
+        "name": "Sonic wall crossing",
+        "description": "Marks a safe crossing lane before releasing a horizontal wall of downward sonic waves. Move into the marked opening before release.",
+        "source": {
+          "file": "expansion/topdown/js/boss_exhibit.js",
+          "line": 180,
+          "symbol": "R.tick"
+        }
+      },
+      {
+        "id": "ram",
+        "name": "Cover-smashing ram",
+        "description": "Tracks during green, locks through yellow and red, then charges in a straight line. A wall impact stalls it and exposes the hull.",
+        "source": {
+          "file": "expansion/topdown/js/boss_exhibit.js",
+          "line": 189,
+          "symbol": "R.tick"
+        }
+      }
+    ],
+    "projectileKinds": [
+      "mg",
+      "sonic",
+      "wave"
+    ],
+    "attackCount": 4,
+    "artKeys": [
+      "rzb_hull_0",
+      "rzb_turret",
+      "rzb_machinegun",
+      "rzb_missile_pod"
+    ],
+    "art": [
+      {
+        "key": "rzb_hull_0"
+      },
+      {
+        "key": "rzb_turret"
+      },
+      {
+        "key": "rzb_machinegun"
+      },
+      {
+        "key": "rzb_missile_pod"
+      }
+    ],
+    "name": "THE EXHIBIT / OVERDRIVE",
+    "stages": [
+      5
+    ]
+  },
+  "overdrive-boss-gosfer": {
+    "attacks": [
+      {
+        "id": "laser-burst",
+        "name": "40-watt laser burst",
+        "description": "Locks the aim for each burst and releases four quick laser bolts with a small oscillating spread. Keep moving sideways after the first bolt.",
+        "source": {
+          "file": "expansion/topdown/js/fortress_1013.js",
+          "line": 58,
+          "symbol": "b.tick"
+        }
+      },
+      {
+        "id": "laser-fan",
+        "name": "Seven-bolt laser sweep",
+        "description": "Every third movement phase uses a seven-bolt fan with a wider spread and a longer pause before the next burst.",
+        "source": {
+          "file": "expansion/topdown/js/fortress_1013.js",
+          "line": 59,
+          "symbol": "b.tick"
+        }
+      },
+      {
+        "id": "reflex-dodge",
+        "name": "Reflex sidestep",
+        "description": "Detects nearby player shots and makes a short sideways dodge, then resumes its firing cycle. Its dodge has a cooldown.",
+        "source": {
+          "file": "expansion/topdown/js/fortress_1013.js",
+          "line": 54,
+          "symbol": "b.tick"
+        }
+      }
+    ],
+    "projectileKinds": [
+      "laser"
+    ],
+    "attackCount": 3,
+    "artKeys": [
+      "od_gosfer_south_1",
+      "od_gosfer_south_3",
+      "od_gosfer_south_4"
+    ],
+    "art": [
+      {
+        "key": "od_gosfer_south_1"
+      },
+      {
+        "key": "od_gosfer_south_3"
+      },
+      {
+        "key": "od_gosfer_south_4"
+      }
+    ],
+    "name": "GOSFER",
+    "stages": [
+      3
+    ]
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "id": "pmine",
+  "name": "Prism Mine",
+  "stage": 9,
+  "stages": [
+    9
+  ],
+  "aliases": [
+    "pmine"
+  ],
+  "folder": "assets/game/levels/stage_09/enemies/air_motion_1013/prism_mine",
+  "rebel": false,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s9_pmine_heading",
+    "path": "assets/game/levels/stage_09/enemies/air_motion_1013/prism_mine/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "467624a00de0dbb676a0c7a350ffda90ea06c846c83c83039ea35c2c2791e312"
+  },
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s9_pmine_roll",
+    "path": "assets/game/levels/stage_09/enemies/air_motion_1013/prism_mine/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "1642f59c804d654933e64967f4426c4f31b31ad7f472ca2c69df87da0f239283"
+  },
+  "nativeRatios": {
+    "pmine": 1.7894736842105263
+  },
+  "sourceKeys": {
+    "pmine": "ns9e_pmine_idle"
+  }
+}

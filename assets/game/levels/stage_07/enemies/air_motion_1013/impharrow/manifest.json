@@ -1,0 +1,50 @@
+{
+  "id": "mm1003_impharrow",
+  "name": "Impharrow",
+  "stage": 7,
+  "stages": [
+    7,
+    8
+  ],
+  "aliases": [
+    "mm1003_impharrow"
+  ],
+  "folder": "assets/game/levels/stage_07/enemies/air_motion_1013/impharrow",
+  "rebel": false,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s7_mm1003_impharrow_heading",
+    "path": "assets/game/levels/stage_07/enemies/air_motion_1013/impharrow/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "6a7fe65be6258427417257679f4f26b525ef821bfee0b0078c0bde85e2ee5d98"
+  },
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s7_mm1003_impharrow_roll",
+    "path": "assets/game/levels/stage_07/enemies/air_motion_1013/impharrow/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "cba5273fe5c19467232aef14499b40a8c6c946d5c968c2c82b542dc0548a7aa9"
+  },
+  "nativeRatios": {
+    "mm1003_impharrow": 1.0
+  },
+  "sourceKeys": {
+    "mm1003_impharrow": "mm1003_impharrow"
+  }
+}

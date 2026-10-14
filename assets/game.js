@@ -5186,8 +5186,9 @@ function drawLevelMaster(dt){
      replace the level", which is the BOSS's alone — see the long note at the arena block below,
      and Mike's "it teleports me to a animated lava tileset section from where i was". */
   const _realBossRun = (typeof bossActive!=='undefined' && bossActive && boss && !boss.dead);
-  const _directorRun = (typeof _s1GroundHold!=='undefined' && _s1GroundHold && run.stage===1);
-  const _bossRun = _realBossRun || _sbRun || _directorRun;
+  // A queued ground wave waits for pressure capacity while the stage keeps moving.
+  // Only actual encounters own a terrain hold; passing fighters never anchor it.
+  const _bossRun = _realBossRun || _sbRun;
   /* The arena re-entry belongs to ONE boss run. Cleared the moment the run ends so a retry, a
      continue or the next stage cannot inherit a part-finished slide — and so the beat plays again
      if the player dies and fights him a second time. */
@@ -6849,14 +6850,14 @@ function drawHUDFramed(){
   for(let i=0;i<slots.length;i++){ if(slots[i]&&ASSETS.has(slots[i])) ASSETS.blit(slots[i],sx[i],460,30,30); }
 }
 
-/* Start in the authored supersampled mode.  If PLAY sustains frames slower than 19ms for more than a short
-   spike, the governor drops the backing store to native 480x512 (CSS remains pixel-perfect).
-   That removes 75% of canvas fill work on a laptop without changing simulation speed, hitboxes,
-   timing or layout. `?quality=high` locks SS=2; `?quality=performance` starts native. */
+/* Native 480x512 backing prioritizes laptop/browser performance and preserves authored pixel-art edges.
+   CSS still fills the same playfield. ?quality=high opts into the 2x backing; ?quality=performance
+   explicitly selects native. The governor also protects callers that later increase auto backing. */
 let _renderQuality='auto';
 try{_renderQuality=(new URLSearchParams(location.search).get('quality')||'auto').toLowerCase();}catch(_rq){}
 let _lowMemoryDevice=false;try{_lowMemoryDevice=(navigator.deviceMemory>0&&navigator.deviceMemory<=4)||(navigator.hardwareConcurrency>0&&navigator.hardwareConcurrency<=4);}catch(_hw){}
-let SS = _renderQuality==='performance'||(_renderQuality==='auto'&&_lowMemoryDevice)?1:2;
+/* Native pixel-art backing is the default across browsers. Supersampling is an explicit high-quality opt-in; gameplay and CSS sizing remain identical. */
+let SS = _renderQuality==='high'?2:1;
 let _renderSlowT=0,_renderScaleChanged=SS===1;
 function setRenderScale(scale){
   scale=scale<=1?1:2;if(scale===SS)return;
@@ -13891,7 +13892,7 @@ function buildStagePlan(stageNum){
 
     /* A map wave can be due on the clock but not yet at its source row after pressure/holds. It
        gives its director slot back and tries again on the next beat. Ground markers also publish
-       the existing pressure contract so the camera cannot outrun a tank formation. */
+       the existing pressure contract so the director reserves room for a tank formation. */
     const atMap=(mapY,fn,opt={})=>{
       const target=scrollForMapY(mapY);
       const wrapped=function _s1MappedWave(){
@@ -35226,9 +35227,9 @@ function updatePlay(dt){
     const _dispatchAt=_liveCap-_nextPressure;
     const _s1GroundDue=!!(run.stage===1 && _nextStageWave && _nextStageWave.fn &&
                           _nextStageWave.fn._s1Ground && stageTimer>=_nextStageWave.t);
-    /* Ground armour has a finite terrain window. If normal fighter pressure blocks a due
-       shore wave, hold position while that pressure clears; never discard the tanks merely
-       because the clock continued beyond the beach. */
+    /* Keep mapped ground waves queued while pressure clears. This flag describes a
+       pending dispatch only; it must never stop terrain scrolling. The map wrapper
+       still checks land before placing armour, and does not discard late ground waves. */
     _s1GroundHold=!!(_s1GroundDue && (_waveGap>0 || _liveN>_dispatchAt));
     if(_nextStageWave && stageTimer>=_nextStageWave.t && _waveGap<=0 && _liveN<=_dispatchAt){
       stagePlan[waveIdx].fn();
@@ -39167,10 +39168,10 @@ function hammerCombatTick(b,dt){
     if(h.t>=1.6)hammerState(b,'nova_release');return true;
   }
   if(s==='nova_release'){
-    const count=hammerFurious()?3:1;
+    const count=hammerFurious()?3:2;
     while(h.novaShots<count&&h.t>=h.novaShots*.55){
-      const offset=h.novaShots*Math.PI/32;for(let i=0;i<32;i++){
-        hammerLaser(b.x,b.y,TAU*i/32+offset,hammerFurious()?4.8:4.0,true);
+      const rays=hammerFurious()?24:32,offset=h.novaShots*Math.PI/rays;for(let i=0;i<rays;i++){
+        hammerLaser(b.x,b.y,TAU*i/rays+offset,hammerFurious()?4.8:4.0,true);
         const q=eBullets[eBullets.length-1];q._hammerNova=true;
       }
       h.novaShots++;shake=Math.max(shake,6);if(Audio.SFX.quadFire)Audio.SFX.quadFire();
@@ -39384,7 +39385,7 @@ function hammerBossTick(b,dt){
       if(hammerHard()&&h.t>=6){h.vx=Math.sign(h.vx||1)*(h.ballBounces%2?170:130);h.vy=Math.sign(h.vy||1)*(h.ballBounces%2?210:250);}}
     if(h.rage>0&&h.shotCd<=0){h.shotCd=.62;for(let i=0;i<8;i++)hammerEnergyBomb(b.x,b.y,TAU*i/8,4.5);}if(h.t>=15)hammerState(b,'uncurl');
   }
-  else if(h.state==='uncurl'){if(h.t>1.25){if(hammerHard()){h.novaShots=0;hammerState(b,'nova_charge');if(Audio.SFX.warshipCoreCharge)Audio.SFX.warshipCoreCharge();}else{h.attackCycle++;hammerState(b,'hammer');}}}
+  else if(h.state==='uncurl'){if(h.t>1.25){h.novaShots=0;hammerState(b,'nova_charge');if(Audio.SFX.warshipCoreCharge)Audio.SFX.warshipCoreCharge();}}
   else if(h.state==='chaingun_draw'){b.x+=clamp(homeX-b.x,-140*dt,140*dt);b.y+=clamp(homeY-b.y,-140*dt,140*dt);if(h.t>2)hammerChainStart(b);}
   else if(h.state==='chain_warn'){
     const warm=fur?.65:hammerHard()?.75:.85,p=clamp(h.t/warm,0,1),e=p*p*(3-2*p);
@@ -52454,6 +52455,9 @@ function _drawEffectsInner(){
     ctx.fillStyle=inner; circle(ex.x,ex.y,r*0.34);
     ctx.globalAlpha=1;
   }
+  // Resolve shared particle plates/tints once per frame, not once per spark.
+  // Image decode cannot complete midway through this synchronous draw.
+  const particlePlates=new Map();
   // particles
   for(const p of particles){
     if(p._dbrKey)continue; // authored hull fragments have their own drawDeathDebris pass
@@ -52548,14 +52552,19 @@ function _drawEffectsInner(){
               : ( p.flashring ? ('nx_small_'+Math.min(7,Math.floor((p.t/p.life)*8)))
                 : p.chunk     ? (SMOKE_FAM+'_'+Math.min(7,Math.floor((p.t/p.life)*8)))
                 :               ('nx_small_'+Math.min(7,Math.floor((p.t/p.life)*8))) );
-    const _pim = (typeof XART!=='undefined' && XART.rdy(_pk)) ? XART.get(_pk) : null;
-    if(_pim){
+    const _plateKey=_pk+'|'+(p.color||'');
+    let _plate=particlePlates.get(_plateKey);
+    if(_plate===undefined){
+      const _pim=(typeof XART!=='undefined'&&XART.rdy(_pk))?XART.get(_pk):null;
+      _plate=(_pim&&typeof xartTint==='function'&&p.color?xartTint(_pk,p.color,0.62):null)||_pim;
+      particlePlates.set(_plateKey,_plate);
+    }
+    if(_plate){
       const _d = p.flashring ? p.r*2.4*(0.4+0.6*(p.t/p.life))
                : p.chunk     ? Math.max(p.sw,p.sh)*3.0
                :               Math.max(6,p.r*4.2);
-      const _tc = (typeof xartTint==='function' && p.color) ? xartTint(_pk, p.color, 0.62) : null;
       ctx.save(); ctx.globalCompositeOperation='lighter'; ctx.globalAlpha=a*0.92;
-      ctx.drawImage(_tc||_pim, p.x-_d/2, p.y-_d/2, _d, _d);
+      ctx.drawImage(_plate, p.x-_d/2, p.y-_d/2, _d, _d);
       ctx.restore();
     }
     /* THE FAKE DECALS ARE GONE (drop 0801de). Mike: "when enemies dies, Ive
@@ -79069,7 +79078,7 @@ function loop(now){
   catch(_selErr){ try{ console.error('selFlash tick error', _selErr); }catch(_){} }
   try{ if(typeof selFlashDraw==='function') selFlashDraw(); }
   catch(_selErr2){ try{ console.error('selFlash draw error', _selErr2); }catch(_){} }
-  if(hudctx){ hudctx.clearRect(0,0,hudcv.width,hudcv.height); if(state===GS.PLAY||state==='paused'){ hudctx.save();hudctx.globalAlpha*=s6OpeningHudAlpha();if(typeof drawHUDStrip==='function') drawHUDStrip(hudctx);hudctx.restore(); } }
+  if(hudctx&&(!window.__bofSideHudOwnsLayout||debugRecActive())){ hudctx.clearRect(0,0,hudcv.width,hudcv.height); if(state===GS.PLAY||state==='paused'){ hudctx.save();hudctx.globalAlpha*=s6OpeningHudAlpha();if(typeof drawHUDStrip==='function') drawHUDStrip(hudctx);hudctx.restore(); } }
   try{ debugRecFrame(); }catch(_recFrame){}   // the clip takes hud + equip + play, in that order (0910d)
   /* SUSTAINED SFX BEDS (drop 0730a). Held weapons keep their loop alive by calling loopOn every
      time they fire; this is what fades one out once they stop. It has to run OUTSIDE the play

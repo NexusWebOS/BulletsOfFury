@@ -124,13 +124,43 @@ const SC12 = (() => {
   v.weaponFixed=!spaceWeaponsActive()&&v.pilot==='maverick'&&run.weapon===3&&variant==='mavhoming';
   if(v.weaponFixed)v.weapon={...v.weapon,lv:1};return v;
  });}
+ // Keep the authored housing on its surface. Redraw only wells whose visible
+ // values changed; the radar/animated weapon still advance on every frame.
+ const columnState=[{},{}];
+ function signature(key,v,bar){
+  const iconReady=k=>{if(!k)return false;const t=BOFX.icons?.[specialArtKey(k)];return XART.rdy(t?(t[4]||'nia_icons'):specialArtKey(k));};
+  const pixel=(frac,r)=>Math.round(clamp(Number(frac)||0,0,1)*Math.max(0,r?r[2]-4:0));
+  let fields;
+  if(key==='scores')fields=[v.pilot,v.seat,v.score,api.highScore,valuesRows];
+  else if(key==='roll'||key==='somer')fields=[v[key+'Available'],Math.round(v[key]*100),v[key]>=.999,pixel(v[key],bar)];
+  else if(key==='weapon')fields=[v.weapon,v.weaponName,v.weaponFixed,v.loans.map(q=>[q.icon,q.frac,iconReady(q.icon)]),iconReady(v.weapon.key),v.weapon.reel?CF1004.clock:0];
+  else if(key==='special')fields=[v.name,v.detail,v.dead,pixel(v.resource,bar),iconReady(specialArtKey('spicon_'+v.pilot))];
+  else if(key==='radar')fields=[api.clock,api.contacts];
+  else if(key==='lives'||key==='missiles'){const pk={yuri:0,falva:1,cole:2,maverick:3,axel:4,juggernaut:5,lizzie:6,decker:7,freezer:8}[v.pilot]??0;fields=[v.pilot,v[key],iconReady((key==='lives'?'nli_':'nmi_')+pk)];}
+  else if(key==='pilot')fields=[v.pilot,v.dead,run.stage,run._gp4StageX,valuesRows,iconReady('nli_'+({yuri:0,falva:1,cole:2,maverick:3,axel:4,juggernaut:5,lizzie:6,decker:7,freezer:8}[v.pilot]??0))];
+  else fields=[v.pilot,v[key],key==='lock'?iconReady('retm_0'):true];
+  return JSON.stringify([ph8Theme(),...fields]);
+ }
+ let valuesRows=1;
  function drawColumns(source,values){
+  valuesRows=values.length;
   for(const [side,canvas] of panels.entries()){
-   const targetH=1536*values.length;if(canvas.height!==targetH)canvas.height=targetH;
-   const g=canvas.getContext('2d');g.clearRect(0,0,512,targetH);g.imageSmoothingEnabled=false;
-   for(const v of values)withSeat(v.seat,()=>{g.save();g.translate(0,(v.seat-1)*1536);g.drawImage(source,side*512,0,512,1536,0,0,512,1536);
+   const targetH=1536*values.length,C=columnState[side];
+   const reset=canvas.height!==targetH||C.source!==source||C.rows!==values.length;
+   if(canvas.height!==targetH)canvas.height=targetH;
+   const g=canvas.getContext('2d');g.imageSmoothingEnabled=false;
+   if(reset){g.clearRect(0,0,512,targetH);C.source=source;C.rows=values.length;C.keys=new Map();
+    for(let i=0;i<values.length;i++)g.drawImage(source,side*512,0,512,1536,0,i*1536,512,1536);}
+   for(const v of values)withSeat(v.seat,()=>{g.save();g.translate(0,(v.seat-1)*1536);
     const rect=key=>{const r=art.wells[key];return [r[0]-side*512,r[1],r[2],r[3]];};
-    for(const key of side?['radar','special','lives','missiles','lock']:['scores','roll','somer','weapon','speed','shield','pilot'])widget(g,key,rect(key),v,['roll','somer','special'].includes(key)?rect(key+'Bar'):null);
+    for(const key of side?['radar','special','lives','missiles','lock']:['scores','roll','somer','weapon','speed','shield','pilot']){
+     const r=rect(key),bar=['roll','somer','special'].includes(key)?rect(key+'Bar'):null,id=v.seat+':'+key,sig=signature(key,v,bar);
+     if(C.keys.get(id)===sig){api.widgetsSkipped=(api.widgetsSkipped||0)+1;continue;}
+     const x=Math.floor(Math.min(r[0],bar?bar[0]:r[0])-1),y=Math.floor(Math.min(r[1],bar?bar[1]:r[1])-1);
+     const w=Math.ceil(Math.max(r[0]+r[2],bar?bar[0]+bar[2]:r[0]+r[2])+1)-x,h=Math.ceil(Math.max(r[1]+r[3],bar?bar[1]+bar[3]:r[1]+r[3])+1)-y;
+     g.clearRect(x,y,w,h);g.drawImage(source,x+side*512,y,w,h,x,y,w,h);
+     widget(g,key,r,v,bar);C.keys.set(id,sig);api.widgetsPainted=(api.widgetsPainted||0)+1;
+    }
     g.restore();});
   }
  }
@@ -156,11 +186,11 @@ const SC12 = (() => {
   if(api.mode==='sides')drawColumns(source,values);else drawCompact(source,values);
   api.last=values;api.draws++;
   const paused=state==='paused',filter=paused?'grayscale(.8) brightness(.88)':'';
-  for(const c of [...panels,compact])c.style.filter=filter;
+  for(const c of [...panels,compact])if(c.style.filter!==filter)c.style.filter=filter;
  }
  setState=function(){const r=base.state.apply(this,arguments);if(window.__bofFit)window.__bofFit();refresh();return r;};
  debugRecFrame=function(){refresh();return base.rec.apply(this,arguments);};
- Object.assign(api,{fit,active:isActive,refresh});return api;
+ Object.assign(api,{fit,active:isActive,refresh,invalidate:()=>{for(const c of columnState)c.source=null;}});return api;
 })();
 window.BOFSideHUD=SC12;
 window.__bofFit();

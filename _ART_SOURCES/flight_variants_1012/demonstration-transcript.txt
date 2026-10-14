@@ -1,0 +1,34 @@
+0.1–5.0:  Okay, so, this is where the player would start.
+5.0–9.1:  Let's just say, you know, this is the bottom of the screen.
+9.1–12.1:  Players at the very bottom of the screen right here.
+12.1–13.1:  Right?
+13.1–18.1:  What we want is we want, you know, not just the predictability of the enemies coming down,
+18.1–24.1:  but I've seen in games like Galaga, like enemies will literally be like, you know, like,
+24.1–32.0:  one, two, three, four, five, six, seven, eight, nine, you know, or like, you know,
+32.0–34.0:  a large flurry of enemies.
+34.0–39.0:  And what they'll do is they'll all travel like orbit and anchor each other and basically
+39.0–41.0:  do like the circular pattern.
+41.0–49.0:  And then, you know, crisscross and try to orbit to where you are.
+50.0–56.0:  Another thing is you can have the enemies like scaled, like, up like they appear large,
+56.0–58.0:  like they're coming in with shadows.
+58.0–66.3:  So you could have it be like, you know, coming out of the corners like, and they do a little
+66.3–71.3:  twist term and they're scaling down and then there's coming straight at the player or
+71.3–74.3:  you're shooting bullets along the way.
+74.3–79.3:  Another thing you can do is you can have them like come on the side of the screen and
+79.3–84.3:  like as they're coming across really fast, like they're doing like barrels and dropping
+84.3–89.3:  bombs, same deal on like this side of the screen going across.
+89.3–94.3:  Another thing you can do is just have them come in like south and kind of like crisscrossing
+94.3–100.3:  over and around and just flying all around like that.
+100.3–104.3:  And you want to generate all the rotational frame to the playing.
+104.3–109.3:  So if you do it with HTML code, it's going to look weird, it's not going to look right.
+109.3–116.3:  You know, in addition to, I know we have a wave where they go like one, two, three, four,
+116.3–118.3:  coming down, but that's very predictable.
+118.3–122.3:  And with the weaponry, bullets of fury, it's too easy, right?
+122.3–125.3:  So we got to like throw the player off.
+125.3–129.3:  Maybe do right one this way, one that way, one down, one down.
+129.3–134.3:  And then all of a sudden like, you know, one's coming like this and like doing like a spiral
+134.3–139.3:  down, another one's coming like this and you want to spiral down, right?
+139.3–148.3:  And then you're going to have another pattern where the kavikaze enemies, you know, they're
+148.3–151.3:  literally just, you know, from the start of us seeing them on the screen.
+151.3–156.3:  They're literally like charging up with like animation or fire or something.
+156.3–159.3:  And they're just, you know, like cool.

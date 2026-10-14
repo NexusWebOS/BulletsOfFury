@@ -1,0 +1,49 @@
+{
+  "id": "s8hunter",
+  "name": "Void Hunter",
+  "stage": 8,
+  "stages": [
+    8
+  ],
+  "aliases": [
+    "s8hunter"
+  ],
+  "folder": "assets/game/levels/stage_08/enemies/air_motion_1013/void_hunter",
+  "rebel": false,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s8_s8hunter_heading",
+    "path": "assets/game/levels/stage_08/enemies/air_motion_1013/void_hunter/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "ba5c44aa3b85f48599d086d6442a767c4972acd4300ad251cd287d3c49538aaf"
+  },
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s8_s8hunter_roll",
+    "path": "assets/game/levels/stage_08/enemies/air_motion_1013/void_hunter/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "f43e6b38dc4a8fc0af4f070572d1b1cfc9aa709be119ce52bceb00101d10fb9f"
+  },
+  "nativeRatios": {
+    "s8hunter": 1.1339285714285714
+  },
+  "sourceKeys": {
+    "s8hunter": "sm10_alien_stalker_0"
+  }
+}

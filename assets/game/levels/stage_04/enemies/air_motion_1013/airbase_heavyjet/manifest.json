@@ -1,0 +1,49 @@
+{
+  "id": "s4heavyjet",
+  "name": "Airbase Heavyjet",
+  "stage": 4,
+  "stages": [
+    4
+  ],
+  "aliases": [
+    "s4heavyjet"
+  ],
+  "folder": "assets/game/levels/stage_04/enemies/air_motion_1013/airbase_heavyjet",
+  "rebel": false,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s4_s4heavyjet_heading",
+    "path": "assets/game/levels/stage_04/enemies/air_motion_1013/airbase_heavyjet/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "1fd427b7773f6bd05401ac6a5fa42c90ecbf775331e12dc227c746ce75e18c8d"
+  },
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s4_s4heavyjet_roll",
+    "path": "assets/game/levels/stage_04/enemies/air_motion_1013/airbase_heavyjet/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "8b694c962e7ad3b624edf55fa26a9fa7ca2698f6dad85be7645d740f92424274"
+  },
+  "nativeRatios": {
+    "s4heavyjet": 1.2087912087912087
+  },
+  "sourceKeys": {
+    "s4heavyjet": null
+  }
+}

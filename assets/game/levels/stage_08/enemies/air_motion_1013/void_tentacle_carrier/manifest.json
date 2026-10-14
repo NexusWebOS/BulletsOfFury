@@ -1,0 +1,52 @@
+{
+  "id": "s8tentacle",
+  "name": "Void Tentacle Carrier",
+  "stage": 8,
+  "stages": [
+    8
+  ],
+  "aliases": [
+    "s8tentacle",
+    "s8carrier"
+  ],
+  "folder": "assets/game/levels/stage_08/enemies/air_motion_1013/void_tentacle_carrier",
+  "rebel": false,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s8_s8tentacle_heading",
+    "path": "assets/game/levels/stage_08/enemies/air_motion_1013/void_tentacle_carrier/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "80214df099dc1d6442ae5479b88ddb248a39b0ac04dbc0bc89d14f290d11269d"
+  },
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s8_s8tentacle_roll",
+    "path": "assets/game/levels/stage_08/enemies/air_motion_1013/void_tentacle_carrier/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "92fb77c95f533b4ad6663ed3de7bde09a40c3145deb4f3ffa93f39451034ea15"
+  },
+  "nativeRatios": {
+    "s8tentacle": 1.0666666666666667,
+    "s8carrier": 0.975609756097561
+  },
+  "sourceKeys": {
+    "s8tentacle": "fr27_realm_fleet",
+    "s8carrier": "fr27_realm_fleet"
+  }
+}

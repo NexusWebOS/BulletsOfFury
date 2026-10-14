@@ -1,0 +1,47 @@
+{
+  "id": "voss",
+  "name": "Voss / Iron Vulture",
+  "stage": 6,
+  "stages": [
+    6,
+    10
+  ],
+  "aliases": [
+    "voss"
+  ],
+  "folder": "assets/game/levels/stage_06/boss/air_motion_1013/voss",
+  "rebel": true,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s6_voss_heading",
+    "path": "assets/game/levels/stage_06/boss/air_motion_1013/voss/headings.webp",
+    "frames": 8,
+    "cell": 192,
+    "pivot": [
+      96,
+      96
+    ],
+    "span": 128,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "284febc6e7704285ecfd56896d7358d28fa5d1f28a1929edfad14be73d1a1005"
+  },
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s6_voss_roll",
+    "path": "assets/game/levels/stage_06/boss/air_motion_1013/voss/roll.webp",
+    "frames": 16,
+    "cell": 192,
+    "pivot": [
+      96,
+      96
+    ],
+    "span": 128,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "77a4269e0be05b362069c466cff46bdfb3b2fb5a4c6e43a1a5d6419cd62a9d5b"
+  },
+  "referenceRatio": 0.8806818181818182,
+  "nativeRatios": {},
+  "sourceKeys": {}
+}

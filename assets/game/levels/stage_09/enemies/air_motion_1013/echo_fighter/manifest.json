@@ -1,0 +1,49 @@
+{
+  "id": "echof",
+  "name": "Echo Fighter",
+  "stage": 9,
+  "stages": [
+    9
+  ],
+  "aliases": [
+    "echof"
+  ],
+  "folder": "assets/game/levels/stage_09/enemies/air_motion_1013/echo_fighter",
+  "rebel": false,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s9_echof_heading",
+    "path": "assets/game/levels/stage_09/enemies/air_motion_1013/echo_fighter/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "85d5a4b7248bc5021ab72460284bcd7cbbf14e2b431ff5f2be68679e8fa0ad71"
+  },
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s9_echof_roll",
+    "path": "assets/game/levels/stage_09/enemies/air_motion_1013/echo_fighter/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "a8659ccd61a7898346a4f2f9a420e0cdb2f772651185b3178b308aced2108e5b"
+  },
+  "nativeRatios": {
+    "echof": 1.5909090909090908
+  },
+  "sourceKeys": {
+    "echof": "ns9e_echof_idle"
+  }
+}

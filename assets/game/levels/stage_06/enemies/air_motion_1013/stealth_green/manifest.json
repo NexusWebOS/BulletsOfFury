@@ -1,0 +1,110 @@
+{
+  "id": "stealth_green",
+  "name": "Green stealth fighter",
+  "stage": 6,
+  "stages": [
+    6
+  ],
+  "aliases": [
+    "stealth_green"
+  ],
+  "folder": "assets/game/levels/stage_06/enemies/air_motion_1013/stealth_green",
+  "rebel": false,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s6_stealth_green_heading",
+    "path": "assets/game/levels/stage_06/enemies/air_motion_1013/stealth_green/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "31a324cba0cacc698016868a5178f84ca2db0d3a283c076a29337d14d7cf0952"
+  },
+  "roll": {
+    "kind": "files",
+    "refs": [
+      {
+        "key": "p2_stealth_roll_green_00",
+        "path": "assets/game/shared/combat/part2_1010/stealth_roll_green_00.png"
+      },
+      {
+        "key": "p2_stealth_roll_green_01",
+        "path": "assets/game/shared/combat/part2_1010/stealth_roll_green_01.png"
+      },
+      {
+        "key": "p2_stealth_roll_green_02",
+        "path": "assets/game/shared/combat/part2_1010/stealth_roll_green_02.png"
+      },
+      {
+        "key": "p2_stealth_roll_green_03",
+        "path": "assets/game/shared/combat/part2_1010/stealth_roll_green_03.png"
+      },
+      {
+        "key": "p2_stealth_roll_green_04",
+        "path": "assets/game/shared/combat/part2_1010/stealth_roll_green_04.png"
+      },
+      {
+        "key": "p2_stealth_roll_green_05",
+        "path": "assets/game/shared/combat/part2_1010/stealth_roll_green_05.png"
+      },
+      {
+        "key": "p2_stealth_roll_green_06",
+        "path": "assets/game/shared/combat/part2_1010/stealth_roll_green_06.png"
+      },
+      {
+        "key": "p2_stealth_roll_green_07",
+        "path": "assets/game/shared/combat/part2_1010/stealth_roll_green_07.png"
+      },
+      {
+        "key": "p2_stealth_roll_green_08",
+        "path": "assets/game/shared/combat/part2_1010/stealth_roll_green_08.png"
+      },
+      {
+        "key": "p2_stealth_roll_green_09",
+        "path": "assets/game/shared/combat/part2_1010/stealth_roll_green_09.png"
+      },
+      {
+        "key": "p2_stealth_roll_green_10",
+        "path": "assets/game/shared/combat/part2_1010/stealth_roll_green_10.png"
+      },
+      {
+        "key": "p2_stealth_roll_green_11",
+        "path": "assets/game/shared/combat/part2_1010/stealth_roll_green_11.png"
+      },
+      {
+        "key": "p2_stealth_roll_green_12",
+        "path": "assets/game/shared/combat/part2_1010/stealth_roll_green_12.png"
+      },
+      {
+        "key": "p2_stealth_roll_green_13",
+        "path": "assets/game/shared/combat/part2_1010/stealth_roll_green_13.png"
+      },
+      {
+        "key": "p2_stealth_roll_green_14",
+        "path": "assets/game/shared/combat/part2_1010/stealth_roll_green_14.png"
+      },
+      {
+        "key": "p2_stealth_roll_green_15",
+        "path": "assets/game/shared/combat/part2_1010/stealth_roll_green_15.png"
+      }
+    ],
+    "frames": 16,
+    "cell": 256,
+    "pivot": [
+      128,
+      128
+    ],
+    "span": 196,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "reused": true
+  },
+  "referenceRatio": 0.7734375,
+  "nativeRatios": {},
+  "sourceKeys": {}
+}

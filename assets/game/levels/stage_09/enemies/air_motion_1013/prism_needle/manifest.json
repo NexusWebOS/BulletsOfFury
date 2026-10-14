@@ -1,0 +1,49 @@
+{
+  "id": "pneedle",
+  "name": "Prism Needle",
+  "stage": 9,
+  "stages": [
+    9
+  ],
+  "aliases": [
+    "pneedle"
+  ],
+  "folder": "assets/game/levels/stage_09/enemies/air_motion_1013/prism_needle",
+  "rebel": false,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s9_pneedle_heading",
+    "path": "assets/game/levels/stage_09/enemies/air_motion_1013/prism_needle/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "6d64f7515156464c7af0d5bd6f579111910fb4ae23a522df774adb2b16416415"
+  },
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s9_pneedle_roll",
+    "path": "assets/game/levels/stage_09/enemies/air_motion_1013/prism_needle/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "87e7764e94422feeba3a9f23a2307004a68bbeef7daa5d67c95664e96a18a518"
+  },
+  "nativeRatios": {
+    "pneedle": 1.55
+  },
+  "sourceKeys": {
+    "pneedle": "ns9e_pneedle_idle"
+  }
+}

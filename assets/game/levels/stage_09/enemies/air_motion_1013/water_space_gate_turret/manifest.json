@@ -1,0 +1,49 @@
+{
+  "id": "s9gateturret",
+  "name": "Water Space Gate Turret",
+  "stage": 9,
+  "stages": [
+    9
+  ],
+  "aliases": [
+    "s9gateturret"
+  ],
+  "folder": "assets/game/levels/stage_09/enemies/air_motion_1013/water_space_gate_turret",
+  "rebel": false,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s9_s9gateturret_heading",
+    "path": "assets/game/levels/stage_09/enemies/air_motion_1013/water_space_gate_turret/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "68672569732007c014f886cea70495e8a051b20084b74f12b4307f83d22221b0"
+  },
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s9_s9gateturret_roll",
+    "path": "assets/game/levels/stage_09/enemies/air_motion_1013/water_space_gate_turret/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "04e6c61e7439f6ea98848557d0791fdd3274c5c65f46410f9a6a5ea9953eb7b0"
+  },
+  "nativeRatios": {
+    "s9gateturret": 1.1868131868131868
+  },
+  "sourceKeys": {
+    "s9gateturret": "s9atk_gate_turret_0"
+  }
+}

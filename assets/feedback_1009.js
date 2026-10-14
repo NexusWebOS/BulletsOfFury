@@ -98,6 +98,7 @@ const FB9_HUD={rec:debugRecFrame,top:document.getElementById('hud-top'),bot:docu
  row:document.getElementById('hud-row'),div:document.getElementById('hud-div'),
  brow:document.getElementById('hud-bottom'),bdiv:document.getElementById('hud-div2'),ROW:104,HOUSE:70};
 function fb9HudSplit(){
+ if(window.__bofSideHudOwnsLayout&&!debugRecActive())return;
  const src=hudcv,T=FB9_HUD.top,B=FB9_HUD.bot;if(!src||!T||!B)return;
  const rows=Math.max(1,Math.round(src.height/(FB9_HUD.ROW*(src.width/VW)))),k=src.height/(FB9_HUD.ROW*rows);
  const strip=(FB9_HUD.ROW-FB9_HUD.HOUSE)*k,house=FB9_HUD.HOUSE*k,w=src.width;

@@ -1,0 +1,141 @@
+{
+  "checks": [
+    {
+      "sheets": [
+        {
+          "key": "vp12_heading_1",
+          "stage": 1,
+          "width": 768,
+          "height": 96,
+          "alpha": true,
+          "changed": 7365,
+          "solid": 12312,
+          "stable": true
+        },
+        {
+          "key": "vp12_roll_1",
+          "stage": 1,
+          "width": 768,
+          "height": 96,
+          "alpha": true,
+          "changed": 5154,
+          "solid": 14430,
+          "stable": true
+        },
+        {
+          "key": "air13_s1_flight_variant_1_heading",
+          "stage": 1,
+          "width": 1024,
+          "height": 128,
+          "alpha": true,
+          "changed": 15065,
+          "solid": 29175,
+          "stable": true
+        },
+        {
+          "key": "air13_s1_flight_variant_1_roll",
+          "stage": 1,
+          "width": 2048,
+          "height": 128,
+          "alpha": true,
+          "changed": 23558,
+          "solid": 43100,
+          "stable": true
+        }
+      ],
+      "bytes": 2162688
+    },
+    {
+      "sheets": [
+        {
+          "key": "vp12_heading_4",
+          "stage": 4,
+          "width": 768,
+          "height": 96,
+          "alpha": true,
+          "changed": 10838,
+          "solid": 17123,
+          "stable": true
+        },
+        {
+          "key": "vp12_roll_4",
+          "stage": 4,
+          "width": 768,
+          "height": 96,
+          "alpha": true,
+          "changed": 9472,
+          "solid": 15653,
+          "stable": true
+        },
+        {
+          "key": "air13_s4_flight_variant_4_heading",
+          "stage": 4,
+          "width": 1024,
+          "height": 128,
+          "alpha": true,
+          "changed": 21265,
+          "solid": 34407,
+          "stable": true
+        },
+        {
+          "key": "air13_s4_flight_variant_4_roll",
+          "stage": 4,
+          "width": 2048,
+          "height": 128,
+          "alpha": true,
+          "changed": 30639,
+          "solid": 59048,
+          "stable": true
+        }
+      ],
+      "bytes": 2162688
+    },
+    {
+      "sheets": [
+        {
+          "key": "vp12_heading_6",
+          "stage": 6,
+          "width": 768,
+          "height": 96,
+          "alpha": true,
+          "changed": 8369,
+          "solid": 17112,
+          "stable": true
+        },
+        {
+          "key": "vp12_roll_6",
+          "stage": 6,
+          "width": 768,
+          "height": 96,
+          "alpha": true,
+          "changed": 9185,
+          "solid": 18197,
+          "stable": true
+        },
+        {
+          "key": "air13_s6_flight_variant_6_heading",
+          "stage": 6,
+          "width": 1024,
+          "height": 128,
+          "alpha": true,
+          "changed": 24901,
+          "solid": 30701,
+          "stable": true
+        },
+        {
+          "key": "air13_s6_flight_variant_6_roll",
+          "stage": 6,
+          "width": 2048,
+          "height": 128,
+          "alpha": true,
+          "changed": 36010,
+          "solid": 47160,
+          "stable": true
+        }
+      ],
+      "bytes": 2162688
+    }
+  ],
+  "errors": [],
+  "scope": "12 authored heading/roll/fallback sheets; native stages1/4/6; exact alpha, even geometry, cache reuse and retirement"
+}

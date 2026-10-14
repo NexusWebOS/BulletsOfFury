@@ -1,0 +1,89 @@
+{
+  "name": "Warhive Siege Carrier",
+  "frameRules": {
+    "uniformScale": true,
+    "transparentMargins": true
+  },
+  "hull": {
+    "file": "hull.png",
+    "size": [
+      1024,
+      512
+    ],
+    "pivot": [
+      512,
+      256
+    ],
+    "source": "_ART_SOURCES/stage6_carrier_1013/exec-3a8b6129-9415-4cc7-a171-16fb474e0039.png",
+    "scale": 0.5591882750845547,
+    "sockets": [
+      [
+        269,
+        366
+      ],
+      [
+        347,
+        366
+      ],
+      [
+        426,
+        366
+      ],
+      [
+        600,
+        366
+      ],
+      [
+        679,
+        366
+      ],
+      [
+        759,
+        366
+      ]
+    ],
+    "sourceSHA256": "dd486f9760ce3cacc941f4ed99bf5007f373f474daeec5c9f7619f68c263cc8d"
+  },
+  "turrets": {
+    "file": "turrets.png",
+    "frame": [
+      128,
+      160
+    ],
+    "pivot": [
+      64,
+      60
+    ],
+    "muzzle": [
+      64,
+      144
+    ],
+    "frames": [
+      "idle",
+      "charging",
+      "firing",
+      "wreck"
+    ],
+    "source": "_ART_SOURCES/stage6_carrier_1013/exec-3855b3e4-8ddd-434d-b980-1dd5d7747061.png",
+    "scale": 0.19889502762430938,
+    "sourceSHA256": "304f6175ed0853e61b8688c475fb9b02776661d3c148fbe30f673bdba239bab9"
+  },
+  "hullChecks": {
+    "size": [
+      1024,
+      512
+    ],
+    "sha256": "9477d4bb033098c697bb8b6b36b0432dd24760fee5dd5261ed75d476e524f33a",
+    "bytes": 496129,
+    "transparentCorners": true
+  },
+  "turretsChecks": {
+    "size": [
+      512,
+      160
+    ],
+    "sha256": "d4a43a51782a9e3975b8fa0ae4d2f520e63452fb485f807473b3db5d30d0a776",
+    "bytes": 68598,
+    "transparentCorners": true
+  }
+}

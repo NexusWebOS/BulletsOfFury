@@ -114,7 +114,8 @@ function ra7NyxSpiral(q,front=false){const A=q.rg4?.act,active=q.frCloak>0||q._r
  ra7Cell(4+i,q.x,q.y,w,h,0,(front?.94:.65)*(1-blend)*fade);ra7Cell(4+(i+1)%8,q.x,q.y,w,h,0,(front?.94:.65)*blend*fade);ctx.restore();
  RA7.draws[front?'nyxFront':'nyxBack']=(RA7.draws[front?'nyxFront':'nyxBack']||0)+1;
 }
-function ra7Nyx(q){if(q.dead)return;ra7NyxSpiral(q,false);const f=q.evadeT>0?Math.min(7,Math.floor((1-q.evadeT/.38)*8)):0;
+function ra7Nyx(q){if(q.dead)return;ra7NyxSpiral(q,false);
+ if(typeof air13DrawRebel==="function"&&air13DrawRebel(q,{alpha:q.frCloak>0?.14:1})){ra7NyxSpiral(q,true);if(q.rg4?.act)rg4Warning(q,q.rg4.act);return;}const f=q.evadeT>0?Math.min(7,Math.floor((1-q.evadeT/.38)*8)):0;
  const roll='rr_roll_'+REBEL_SHIPS[q.i]+'_'+f,k=XART.rdy(roll)?roll:'rr_ship_'+REBEL_SHIPS[q.i];if(XART.rdy(k)){
   const im=XART.get(k),w=SHIP_DRAW_H*1.5,h=w*im.height/im.width;ra4Blit(im,q.x,q.y,w,h,0,q.frCloak>0?.14:1);
   if(q.flash>0)ra4Blit(xartTint(k,'#ffffff',1),q.x,q.y,w,h,0,Math.min(1,q.flash*9));
@@ -133,7 +134,8 @@ function ra7DeathTick(D,dt){const q=D.q;D.t+=dt;if(D.t<D.dur){q.x=clamp(q.x+D.vx
  }else if(!D.crashed){D.crashed=true;D.anchor=[];fxBurst(q.x,q.y,66,{color:'#7fd4ff',rings:2});for(let i=0;i<7;i++)explode(q.x+rnd(-18,18),q.y+rnd(-15,15),rnd(28,54),'red');Audio.SFX.death?.();shake=Math.max(shake,10);ra7Log('deathCrash',{pilot:q.key||'ace',at:D.t});}
  D.anchor=D.anchor.filter(a=>a.e&&a.e.t<a.e.dur);for(const a of D.anchor){a.e.x=q.x+a.ox;a.e.y=q.y+a.oy;}
 }
-function ra7DeathDraw(D){if(D.crashed)return;const q=D.q,f=((Math.round(clamp(D.t/D.dur,0,1)*D.turns*D.dir/45)%8)+8)%8,k='rr_roll_'+REBEL_SHIPS[q.i]+'_'+f;
+function ra7DeathDraw(D){if(D.crashed)return;
+ if(typeof air13DrawRebel==="function"&&air13DrawRebel(D.q,{forceRoll:D.t/D.dur*D.turns/360*D.dir,allowDead:true,alpha:1})){RA7.draws.death=(RA7.draws.death||0)+1;return;}const q=D.q,f=((Math.round(clamp(D.t/D.dur,0,1)*D.turns*D.dir/45)%8)+8)%8,k='rr_roll_'+REBEL_SHIPS[q.i]+'_'+f;
  if(XART.rdy(k)){const im=XART.get(k),w=SHIP_DRAW_H*1.5,h=w*im.height/im.width;ra4Blit(im,q.x,q.y,w,h,0,1);}RA7.draws.death=(RA7.draws.death||0)+1;}
 rebelSquadDamage=function(b,dmg){const R=b._rebels,q=R?.ships[R.hit],alive=q&&!q.dead,hook=q?.rg4?.act,ne=explosions.length;const result=RA7_BASE.damage.apply(this,arguments);
  if(alive&&q.dead){explosions.splice(ne);if(hook?.kind==='rookhook')ra7Release(q,hook,'owner');if(q.rg4)q.rg4.act=null;

@@ -1,3 +1,188 @@
+# 2026-10-13 — RELEASE: main-game combat repairs and animated enemy atlas
+
+Mike requested the GitHub update. This main-game snapshot includes the completed
+performance/Field Manual, combat pressure, authored airborne motion, new enemy
+patterns and carrier, formation balance, Stage 4/6 repairs and animated atlas.
+Latest native checks332/0, palette sheets12; full test_fl8700/0, finalBUILDOK/exit0.
+Required assets, probes and source provenance included. Separate ongoing
+Overdrive work remains local; only its three atlas hooks are in this snapshot.
+Details: docs/GITHUB_MAIN_RELEASE_1013.md. Older LOCAL notes document the work
+before publication. Preserve remaining unrelated working changes.
+
+# 2026-10-13 — LOCAL: Bastion quick-side fire, elite guns and room breaches
+
+Build overdrive1013-bastion17-r1. Level7 now uses physical B + left/right for
+immediate profile side shots; B alone finds a near-side attacker, release restores
+the prior Retina cursor. Retina speed480x/420y px/s. Raw M30 B is mapped in core.
+Guards enter by the rear door and use destructible crate/wall cover with hide/peek
+cycles. Selected rifle rushers still vault. Elites launch collected shotgun/laser/
+minigun capsules; finite ammo returns to rifle, no swap input. Last drops arrive
+before breach. Added full rear-wall blast, perspective walk/cross, next-room view
+through the opening and authored jump entry with fresh cover. Combat zoom stays1.
+Fixed hidden feet below enemy barricades and side-fire death/revive pose priority.
+
+New art109assets/25banks: bastion17_yuri24, bastion17_enemies60,
+bastion17_environment25. Original sources, exact prompts, corrected elitefire
+source, builders and geometry/muzzle metadata retained. Index merges16+17packs.
+README, combat guide, Help and launcher updated. Final QA43mechanics/20M30/8art
+checks pass, all109nativeart keys ready; environment audit27/27. Normal full mouse
+and D-pad routes clear110.817s/113.833s with0deaths/0damage/0errors and all3guns used.
+Six breach transitions complete. Synthetic controller input, not hardware play.
+Base suite completed BUILD OK /0ERRORS/exit0; count not asserted this run.
+Live8781 coldboot6.031s, allnewart6.112s. Combined report:
+docs/qa/overdrive_bastion17_1013.json. Native captures _shots/bastion17_1013/.
+Password Level7 Yuri/Normal/Hotwire remains OD-237F-5JXR, pinned in Passwords.
+Local only, no commit/push. Preserve concurrent base-flight changes and all
+previous expansion work; assets/game.js was not modified by this pass.
+
+# 2026-10-13 — LOCAL: Stage 4 core access, Stage 6 sequence and Rebel repairs
+
+Storm cores follow the hull so camera movement cannot overlap them; helpers sit
+between sockets. Electrical attacks/impacts now use the authored lightning reels.
+Stage 6 locked scenes suppress ordinary waves/hostile shots and outgoing effects;
+scene-only visual clocks preserve Cole's demo and retire its shots at beat end.
+Tempest miniboss suspends all wing assistance; survivors return after defeat.
+Rebel audio warms cues, resumes interrupted transport/context without resetting
+the song, and drops stale cold transients. Voss keeps his wake through a continuous
+outside return and visible top entry; intro wake/ship positions agree.
+Mini-aircraft palettes: silver Stage 1, camo green Stage 4, black/blue Stage 6;
+cached RGB-only canvases cover all authored headings/rolls and fallback sheets.
+
+332 native checks pass (S4 121, sequence 86, Rebel/audio 125), all difficulties
+plus focused Chrome/Firefox. Twelve palette sheets preserve alpha/geometry and
+reuse/retire caches. Screenshots inspected. Final full test_fl.js BUILD OK,
+0 ERRORS/exit0; syntax and scoped whitespace checks pass. These are native
+controlled fixtures, not a complete human campaign or laptop speaker test.
+Details: docs/STAGE_REPAIRS_1013.md; docs/qa/stage_repairs_1013.json.
+No commit/push. Preserve concurrent Overdrive and previous base-game changes.
+
+# 2026-10-13 — LOCAL: 16-bit Prism Bastion cover rebuild
+
+Build overdrive1013-bastion16-r1. Reviewed Mike's Contra Base1 video in browser.
+Level7 now has six clear-gated lines, fresh52HP segmented cover each line,
+four damage states, advancing/forward-firing enemies, later wall vaults and
+near-side attacks, explosive barrel chains, five-direction Yuri aiming and
+overhead blindfire, crouch sidesteps, rearward advance/fall/revive.
+Retina uses the new16px reticle. M30 A/Y/Z/Mode mappings retained.
+Modern wall bottom440/lip358, Yuri rearfeet448; camera->Yuri->wall->enemies.
+No boss zoom. PrismHeart/Helios and double-fill bar remain with new pixel-art
+boss/effects/corridor/turrets/doors.
+
+Added285assets/58banks: bastion16_yuri108, bastion16_enemies112,
+bastion16_environment65. Sources/prompts and crop/pivot/scale/muzzle provenance
+retained; each package has an owning builder and manifest. Index merges these
+before runtime; Help, README and launcher build updated.
+Native art11/11, cover18/18, M3018/18; pointer/controller Normal routes clear
+94.95s/111.73s with0deaths/0errors. Controller took1damage. Required base suite
+8700passes/0errors, finalBUILDOK/exit0. Simulated pad reports, not manualhardware.
+Combined QA docs/qa/overdrive_bastion16_1013.json; guide docs/OVERDRIVE_COMBAT_1013.md.
+Local server verified127.0.0.1:8781. Local only; no commit/push.
+Preserve concurrent base-game flight changes and previous expansion work.
+
+# 2026-10-13 — LOCAL: fragile formations and continuous stage scrolling
+
+Mike requested lower small-aircraft HP, regular-family HP for depth entrants,
+faster formation attacks, and continuous scrolling during ordinary waves.
+CP12 removes the 50/90 HP override. VP12 corner depth entrants match the authored
+family's native health; small craft now have 2–12 HP in solo baseline fixtures.
+First missile releases are earlier and repeat-volley gaps shorter, with warning
+lengths preserved. Removed an invisible inherited drone cannon from formations.
+Stage 1 no longer treats a queued ground wave as a boss terrain hold; density
+limits and later mapped tank dispatch still work. Boss/miniboss holds remain.
+
+Native Edge: CP12 202 checks; VP12 112 formation fixtures plus16 health/damage
+comparisons; scrolling38 checks across five stages/all four difficulties.
+Zero browser errors; rendered screenshots inspected. Three changed JS files
+pass syntax. Required test_fl.js ends BUILD OK / 0 ERRORS, exit0.
+Details: docs/FLIGHT_BALANCE_1013.md and its three linked QA/probe families.
+Local only, no commit/push. Preserve unrelated Overdrive and base-game work.
+
+# 2026-10-13 — LOCAL: M30 receiver buttons and independent truck steering
+
+Build overdrive1013-m30-controls-r1. Windows reports the connected receiver as
+VID_0CA3/PID_0024, matching M30 2.4g Genesis raw HID. Physical A=2 and Y=0;
+the old generic preset incorrectly expected A=0. core.js now recognizes the
+raw receiver, maps A/B/C/X/Y/Z=2/1/5/3/0/4, and keeps browser-standardized
+reports separate. Both six-button and standard gameplay schemes resolve the
+printed M30 letters correctly. Only untouched legacy generic presets migrate;
+custom bindings/unbinds persist. Learned profiles now save explicit style and
+custom ownership. Mode changes do not carry the built-in raw map into XInput.
+
+Night Run: D-pad steers the truck with smooth bounded movement; forward road
+speed stays automatic. Removed bare movement-to-turret aim fallback. Face
+directions, mouse, Retina and L+D-pad free aim remain independent. The rotating
+truck-bed mount owns gunner art, shot origin, mouse aim and Retina bearing.
+Briefing/footer now describe steering and explicit aim controls.
+
+Verification: M30 report fixtures18/18; truck18/18; existing input28/28;
+restored frontend58/58; Bastion27/27. Zero browser errors. Full normal truck
+pursuit clears at150 seconds with81 hull,65 kills,0 restarts. Required base
+syntax and8,700 assertions pass,0errors,exit0. Physical receiver identification
+was read from Windows; button tests use simulated Gamepad reports, not human
+hardware input. Frontend probe initially failed3 unlock checks because its
+fixture cleared only3 historical missions. Fixed fixture to clear all visible
+missions, retaining assertions and adding every incomplete-prefix check.
+Initial failure log preserved in _shots/m30_controls_1013.
+
+Evidence: docs/qa/overdrive_m30_controls_1013.json and
+docs/qa/overdrive_convoy_controls_1013.json. No commit/push; other work preserved.
+
+# 2026-10-13 — LOCAL: Level 7 cover side corrected
+
+Mike clarified Yuri was still on the wrong side. Build is now
+overdrive1013-cover-side-r3. The prior r2 occlusion fix misunderstood cover
+relative to the enemy: it placed the wall between the camera and Yuri.
+The scene now reads camera -> Yuri -> wall -> enemies. Four authored wall
+sections at y=432, scale .52 render before the full rear-view player at y=448.
+Standing rifles clear the lip; crouching stays below it; knockdown remains
+on the same protected side. No input, damage, encounter or boss logic changed.
+Fresh Chromium screenshots and an independent visual review confirm all three
+poses. Existing Bastion checks 27/27, browser errors 0. Required base syntax
+check passed; full suite 8,700 assertions, 0 errors, exit 0. Evidence:
+docs/qa/overdrive_cover_side_1013.json. Local only, no commit/push.
+The older r2 note below is retained as superseded history, not current behavior.
+
+# 2026-10-13 — LOCAL: Level 7 stays behind cover
+
+Mike corrected the prior presentation: Yuri must stay behind the wall. Build
+is now overdrive1013-cover-depth-r2. Prism Bastion draws every Yuri pose once
+before the foreground wall; removed the death-only front redraw and camera-side
+position offset. The fall is correctly occluded as Yuri drops behind cover.
+Six standing/duck/hit/fall captures verify zero player pixels over the wall
+face and a fixed y=448 anchor. Independent review found no other gameplay path
+that moves/redraws him in front. Existing Bastion checks27/27; browser errors0.
+Required base suite completes8,700 passes,0errors,exit0. Evidence:
+docs/qa/overdrive_cover_depth_1013.json. Local only; existing work preserved.
+
+# 2026-10-13 — LOCAL: smoother combat, Desert Breaker and Prism Bastion
+
+Build: overdrive1013-combat-overhaul-r1. Completed Mike's vehicle/infantry/boss
+motion, cover/animation, desert-replacement and new pseudo-3D base request.
+Fixed cadence speedups with fixed ticks and interpolated rendering; normalized
+fortress path vectors. Added 55 authored cover/strafe/rear-fall frames, solid
+bunkers, anchored peeks, registered blindfire and Gosfer's filling health bar.
+Vehicles steer/accelerate, have larger mounted crews, warned committed rams,
+projected swept hitboxes and north-edge reinforcements. Level 5 Desert Breaker
+replaces Museum in the active campaign (source art preserved). New Level 7
+Prism Bastion has two defense rooms, four troop roles, turrets, glowing cores,
+white-flash Helios transformation, orange/red health layers, offscreen runs,
+volleys, lightning and warned jump/geyser. Current boss-form checkpoints retain
+time and score. Rifle barrels and Helios hits follow displayed frame metadata.
+
+Prone: F / Mode+X; Genesis Mode+Z blindfires at attached cover. Base: Z+D-pad
+aims, A fires, Mode/C ducks, Y grenades. All six passwords are pinned; Level 5
+OD-237D-5JXP, Level 7 OD-237F-5JXR (Yuri/Normal/Hotwire). See the complete guide
+and all codes in docs/OVERDRIVE_COMBAT_1013.md. Sources, builders, contacts,
+onions and native probes are retained in expansion/topdown and _shots.
+
+Verification: 181 native checks, zero browser/asset errors. Normal input bots
+clear with mouse and rate-limited directional Retina, live damage enabled;
+physical 8BitDo hardware not tested. Required base suite: 8,700 passes, final
+BUILD OK / 0 ERRORS banner, exit 0. Exact results and playthrough metrics:
+docs/qa/overdrive_combat_overhaul_1013.json. Preview remains on127.0.0.1:8781
+at expansion/topdown/index.html?fullscreen=0&build=overdrive1013-combat-overhaul-r1.
+No commit/push. Preserve unrelated base edits and earlier handoff content.
+
 # 2026-10-13 — RELEASE: Overdrive fortress, pursuit and Yuri motion
 
 Mike requested publishing the completed Overdrive update to GitHub. Release
@@ -62,6 +247,28 @@ native ART rendering. Base suite 8,700/0, final summary/exit 0. 27 expansion
 modules plus assets/game.js pass syntax. No physical-controller/human-balance
 claim. See docs/OVERDRIVE_ASSAULT_1013.md and docs/qa/overdrive_assault_1013.json.
 Yuri/Normal passwords: fortress OD-237B-5JXM; truck OD-237E-5JXQ.
+
+## October12 filmed flight trial (local)
+Stages1,4,6,8: orbit/corner/banking/south/spiral/kamikaze/mixed formations; stage-specific authored eight-direction/bank sprites. See docs/FLIGHT_VARIANTS_1012.md for source review, test scope and animation limits.28native fixtures and full base pass. No push.
+
+## October 12 combat pressure (local)
+Hammer absorbing Chromium, recharge SHOOT cue/captions, 2/3 nova rounds; ten normalized Spread banks; wave-owned modified flamethrower audio; bounded Stage1–2 rear/side ambushes. See docs/COMBAT_PRESSURE_1012.md and docs/qa/combat_pressure_1012.json. Full base regression passed. No push.
+
+## October 12 browser performance + Field Manual (local)
+Native pixel-art backing default; high quality opt-in preserved. Offline 58-dossier MV3 strategy extension in extensions/bof-field-manual. See docs/BROWSER_PERFORMANCE_AND_MANUAL_1012.md for measured limits and QA. No commit/push.
+
+# 2026-10-12 — Edge laptop performance (LOCAL ONLY)
+
+Mike reported unplugged Ryzen 7/Radeon stutter in Edge during live combat.
+Persistent Siege Console wells replace full-panel repaint; hidden legacy HUD
+draw/copy is skipped unless recording. Sprite cache retirement resets byte
+accounting. Explosion particle lookup batches share exact sprite/tint results.
+Reference/QA: docs/EDGE_PERFORMANCE_1012.md, docs/qa/performance_1012.json.
+Paired Edge HUD cost falls about 54-58%; 224 particle tint calls become two with
+identical pixels. Final HUD 51/51; full base exit 0/final zero-error banner;
+live movement/firing/explosion captures inspected. The actual laptop/battery
+is unmeasured; no whole-campaign 60 FPS guarantee. No combat/art changes.
+Runtime stamps updated. Local only; no commit/push.
 
 # 2026-10-12 — Overdrive GitHub publication
 

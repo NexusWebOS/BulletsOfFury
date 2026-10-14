@@ -1,0 +1,154 @@
+{
+  "date": "2026-10-12",
+  "baseline_commit": "4c3f7b269ca72e098c1dc6377683b9f67f6c49f7",
+  "edge_paired": {
+    "measurements": [
+      {
+        "version": "before",
+        "rate": 1,
+        "mean": 1.0253846150178176,
+        "p95": 1.5999999940395355,
+        "painted": null,
+        "skipped": null
+      },
+      {
+        "version": "before",
+        "rate": 4,
+        "mean": 3.666923078206869,
+        "p95": 4.300000011920929,
+        "painted": null,
+        "skipped": null
+      },
+      {
+        "version": "after",
+        "rate": 1,
+        "mean": 0.4323076938207333,
+        "p95": 0.699999988079071,
+        "painted": 163,
+        "skipped": 1649
+      },
+      {
+        "version": "after",
+        "rate": 4,
+        "mean": 1.6923076895567086,
+        "p95": 2.5,
+        "painted": 313,
+        "skipped": 3299
+      }
+    ],
+    "checks": [
+      {
+        "name": "Dirty and complete HUD repaint match within premultiplied canvas rounding",
+        "passed": true,
+        "data": {
+          "changed": 1497,
+          "maxVisibleDelta": 0.9882352941176578
+        }
+      },
+      {
+        "name": "Stage cache retirement resets both sprite plates and byte accounting",
+        "passed": true,
+        "data": [
+          {
+            "count": 0,
+            "bytes": 0
+          },
+          {
+            "count": 0,
+            "bytes": 0
+          },
+          {
+            "count": 0,
+            "bytes": 0
+          },
+          {
+            "count": 0,
+            "bytes": 0
+          },
+          {
+            "count": 0,
+            "bytes": 0
+          }
+        ]
+      },
+      {
+        "name": "Native loop skips the hidden legacy HUD under the side console",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Side HUD still refreshes after a menu round trip",
+        "passed": true,
+        "data": null
+      },
+      {
+        "name": "Explosion-particle batching preserves the complete rendered pixels",
+        "passed": true,
+        "data": {
+          "oldCalls": 224,
+          "newCalls": 2,
+          "pixelChanges": 0,
+          "particles": 224
+        }
+      },
+      {
+        "name": "Explosion particles reuse sprite/tint lookups instead of resolving every spark",
+        "passed": true,
+        "data": {
+          "oldCalls": 224,
+          "newCalls": 2,
+          "pixelChanges": 0,
+          "particles": 224
+        }
+      },
+      {
+        "name": "No page or console errors",
+        "passed": true,
+        "data": []
+      }
+    ],
+    "errors": []
+  },
+  "edge_live": {
+    "results": [
+      {
+        "stage": 1,
+        "frames": 240,
+        "averageSubmissionMs": 5.3968181818723675,
+        "p95SubmissionMs": 6.799999982118607,
+        "rafFps": 55.230587703662806,
+        "peakPlayerShots": 83,
+        "peakEnemyShots": 0,
+        "peakEffects": 714,
+        "renderScale": 2,
+        "state": "play",
+        "finite": true
+      },
+      {
+        "stage": 6,
+        "frames": 240,
+        "averageSubmissionMs": 3.431818182089112,
+        "p95SubmissionMs": 4.699999988079071,
+        "rafFps": 59.729047321695205,
+        "peakPlayerShots": 12,
+        "peakEnemyShots": 4,
+        "peakEffects": 364,
+        "renderScale": 2,
+        "state": "play",
+        "finite": true
+      }
+    ],
+    "errors": []
+  },
+  "siege_console_checks": 51,
+  "regression": {
+    "exit_code": 0,
+    "final_banner": "FALVA/LIZZIE BUILD OK, 0 ERRORS"
+  },
+  "limitations": [
+    "Headless Edge on this host, not Mike's Ryzen laptop.",
+    "4x CPU throttling is a stress proxy, not a battery-mode benchmark.",
+    "Live runs are short protected fixtures, not a whole-campaign FPS guarantee.",
+    "Early mixed combat profiles were contaminated by concurrent QA and first-use effects; no overall FPS speedup is claimed."
+  ]
+}

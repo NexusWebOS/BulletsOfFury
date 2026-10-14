@@ -1,0 +1,46 @@
+{
+  "id": "flight_variant_8",
+  "name": "Void Maneuver Fighter",
+  "stage": 8,
+  "stages": [
+    8
+  ],
+  "aliases": [
+    "flight_variant_8"
+  ],
+  "folder": "assets/game/levels/stage_08/enemies/air_motion_1013/void_maneuver_fighter",
+  "rebel": false,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s8_flight_variant_8_heading",
+    "path": "assets/game/levels/stage_08/enemies/air_motion_1013/void_maneuver_fighter/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "east",
+    "startAngle": 0,
+    "sha256": "84017bfa863d74f1ebc29a70a7868ffd288cda13d5f8e8f7ddfbb514d8137b8f"
+  },
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s8_flight_variant_8_roll",
+    "path": "assets/game/levels/stage_08/enemies/air_motion_1013/void_maneuver_fighter/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "east",
+    "startAngle": 0,
+    "sha256": "fc02c05e337357482cf83992eec1b92495ef9e73ece719c7380cb8158b6a34ae"
+  },
+  "referenceRatio": 0.5625,
+  "nativeRatios": {},
+  "sourceKeys": {}
+}

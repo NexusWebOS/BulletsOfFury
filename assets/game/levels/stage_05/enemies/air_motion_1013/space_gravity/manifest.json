@@ -1,0 +1,49 @@
+{
+  "id": "s5gravity",
+  "name": "Space Gravity",
+  "stage": 5,
+  "stages": [
+    5
+  ],
+  "aliases": [
+    "s5gravity"
+  ],
+  "folder": "assets/game/levels/stage_05/enemies/air_motion_1013/space_gravity",
+  "rebel": false,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s5_s5gravity_heading",
+    "path": "assets/game/levels/stage_05/enemies/air_motion_1013/space_gravity/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "162909f2f4e3e69c3ff4e5f1aab9d5856cab50eeac79ea2d02d63f2bf4159721"
+  },
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s5_s5gravity_roll",
+    "path": "assets/game/levels/stage_05/enemies/air_motion_1013/space_gravity/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "cc88565d6927a45630a85e1c76036c30be81cdbe8aabb054a5a63fbfd8ca16a7"
+  },
+  "nativeRatios": {
+    "s5gravity": 1.1914893617021276
+  },
+  "sourceKeys": {
+    "s5gravity": "s5atk_gravity_orb_0"
+  }
+}

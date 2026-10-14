@@ -1,0 +1,49 @@
+{
+  "id": "mm1003_hellram",
+  "name": "Hell Ram",
+  "stage": 7,
+  "stages": [
+    7
+  ],
+  "aliases": [
+    "mm1003_hellram"
+  ],
+  "folder": "assets/game/levels/stage_07/enemies/air_motion_1013/hell_ram",
+  "rebel": false,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s7_mm1003_hellram_heading",
+    "path": "assets/game/levels/stage_07/enemies/air_motion_1013/hell_ram/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "565cb6b4d1abee3da0821a2986fb51acd2731a0e633f7c6f61f32f0b71e47eaf"
+  },
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s7_mm1003_hellram_roll",
+    "path": "assets/game/levels/stage_07/enemies/air_motion_1013/hell_ram/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "7df4821b1564eaa3f14389e108ed23d9812f8d8737dea48153a6767c6d045537"
+  },
+  "nativeRatios": {
+    "mm1003_hellram": 1.0
+  },
+  "sourceKeys": {
+    "mm1003_hellram": "mm1003_hellram"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "id": "l6v_b0",
+  "name": "Black Ice Lancer",
+  "stage": 6,
+  "stages": [
+    6
+  ],
+  "aliases": [
+    "l6v_b0"
+  ],
+  "folder": "assets/game/levels/stage_06/enemies/air_motion_1013/black_ice_lancer",
+  "rebel": false,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s6_l6v_b0_heading",
+    "path": "assets/game/levels/stage_06/enemies/air_motion_1013/black_ice_lancer/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "4c0ed82946679d4b33ca007ae2f8ae5962209c48d0232de5ea199f1d52c3f4aa"
+  },
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s6_l6v_b0_roll",
+    "path": "assets/game/levels/stage_06/enemies/air_motion_1013/black_ice_lancer/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "38e0e9d786a0cfd31688d76d4387cab8c7d76716c9d97025010d1a52d495e2fe"
+  },
+  "nativeRatios": {
+    "l6v_b0": 2.274193548387097
+  },
+  "sourceKeys": {
+    "l6v_b0": "n6v0_blackice_intact_c"
+  }
+}

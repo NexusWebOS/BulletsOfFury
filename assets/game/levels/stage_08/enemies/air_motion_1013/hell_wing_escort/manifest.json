@@ -1,0 +1,49 @@
+{
+  "id": "hell",
+  "name": "Hell Wing Escort",
+  "stage": 8,
+  "stages": [
+    8
+  ],
+  "aliases": [
+    "hell"
+  ],
+  "folder": "assets/game/levels/stage_08/enemies/air_motion_1013/hell_wing_escort",
+  "rebel": false,
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s8_hell_roll",
+    "path": "assets/game/levels/stage_08/enemies/air_motion_1013/hell_wing_escort/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "85197d31ce1d140d490b4e0783337a7289c85f7288fc5150abe2fbb820f4031c"
+  },
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s8_hell_heading",
+    "path": "assets/game/levels/stage_08/enemies/air_motion_1013/hell_wing_escort/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "82faf2e3be981a380b206b8ecee28e295a555e59c4982c48274e51939b3cbfbb"
+  },
+  "nativeRatios": {
+    "hell": 1.2307692307692308
+  },
+  "sourceKeys": {
+    "hell": "nel_hell_0"
+  }
+}

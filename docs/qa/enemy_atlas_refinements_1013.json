@@ -1,0 +1,60 @@
+{
+  "checks": [
+    [
+      "ephemeral clear",
+      true
+    ],
+    [
+      "automatic replay loaded",
+      true
+    ],
+    [
+      "replay retains sound",
+      true
+    ],
+    [
+      "replay restarted native unit",
+      true
+    ],
+    [
+      "module health labelled",
+      true
+    ],
+    [
+      "paused native frame remains fixed",
+      true
+    ],
+    [
+      "step one native frame",
+      true
+    ]
+  ],
+  "pageErrors": [],
+  "replay": {
+    "ready": true,
+    "entry": "guide-replay",
+    "error": null,
+    "elapsed": 3.0205000000000006,
+    "frames": 438,
+    "paused": false,
+    "speed": 1,
+    "muted": false,
+    "healthControl": true,
+    "actor": {
+      "type": "s1jetdelta",
+      "hp": 6,
+      "maxhp": 6,
+      "dead": false,
+      "x": 340,
+      "y": 519.5000000000014,
+      "phase": null,
+      "pattern": null
+    },
+    "projectiles": [
+      "s1bullet"
+    ],
+    "liveProjectiles": 0,
+    "activeBeams": 0,
+    "stage": 1
+  }
+}

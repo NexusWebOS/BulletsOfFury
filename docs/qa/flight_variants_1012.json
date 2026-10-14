@@ -1,0 +1,2815 @@
+{
+  "results": [
+    {
+      "stage": 1,
+      "events": [
+        {
+          "event": "formation",
+          "stage": 1,
+          "type": "orbit",
+          "count": 9
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "orbit"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "orbit"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "orbit"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "orbit"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "orbit"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "orbit"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "orbit"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "orbit"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "orbit"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "orbit"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "orbit"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "orbit"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "orbit"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "orbit"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "orbit"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "orbit"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "orbit"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "orbit"
+        }
+      ],
+      "live": 9,
+      "finite": true,
+      "state": "play",
+      "pattern": "orbit",
+      "peakShots": 48
+    },
+    {
+      "stage": 1,
+      "events": [
+        {
+          "event": "formation",
+          "stage": 1,
+          "type": "corner",
+          "count": 9
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "corner"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "corner"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "corner"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "corner"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "corner"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "corner"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "corner"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "corner"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "corner"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "corner"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "corner"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "corner"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "corner"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "corner"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "corner"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "corner"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "corner"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "corner"
+        }
+      ],
+      "live": 9,
+      "finite": true,
+      "state": "play",
+      "pattern": "corner",
+      "peakShots": 46
+    },
+    {
+      "stage": 1,
+      "events": [
+        {
+          "event": "formation",
+          "stage": 1,
+          "type": "barrel",
+          "count": 9
+        },
+        {
+          "event": "bomb-drop",
+          "stage": 1,
+          "type": "barrel"
+        },
+        {
+          "event": "bomb-drop",
+          "stage": 1,
+          "type": "barrel"
+        },
+        {
+          "event": "bomb-drop",
+          "stage": 1,
+          "type": "barrel"
+        },
+        {
+          "event": "bomb-drop",
+          "stage": 1,
+          "type": "barrel"
+        },
+        {
+          "event": "bomb-drop",
+          "stage": 1,
+          "type": "barrel"
+        },
+        {
+          "event": "bomb-drop",
+          "stage": 1,
+          "type": "barrel"
+        },
+        {
+          "event": "bomb-drop",
+          "stage": 1,
+          "type": "barrel"
+        },
+        {
+          "event": "bomb-drop",
+          "stage": 1,
+          "type": "barrel"
+        },
+        {
+          "event": "bomb-drop",
+          "stage": 1,
+          "type": "barrel"
+        },
+        {
+          "event": "bomb-drop",
+          "stage": 1,
+          "type": "barrel"
+        },
+        {
+          "event": "bomb-drop",
+          "stage": 1,
+          "type": "barrel"
+        },
+        {
+          "event": "bomb-drop",
+          "stage": 1,
+          "type": "barrel"
+        },
+        {
+          "event": "bomb-drop",
+          "stage": 1,
+          "type": "barrel"
+        },
+        {
+          "event": "bomb-drop",
+          "stage": 1,
+          "type": "barrel"
+        },
+        {
+          "event": "bomb-drop",
+          "stage": 1,
+          "type": "barrel"
+        },
+        {
+          "event": "bomb-drop",
+          "stage": 1,
+          "type": "barrel"
+        },
+        {
+          "event": "bomb-drop",
+          "stage": 1,
+          "type": "barrel"
+        },
+        {
+          "event": "bomb-drop",
+          "stage": 1,
+          "type": "barrel"
+        }
+      ],
+      "live": 0,
+      "finite": true,
+      "state": "play",
+      "pattern": "barrel",
+      "peakShots": 15
+    },
+    {
+      "stage": 1,
+      "events": [
+        {
+          "event": "formation",
+          "stage": 1,
+          "type": "south",
+          "count": 9
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "south"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "south"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "south"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "south"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "south"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "south"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "south"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "south"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "south"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "south"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "south"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "south"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "south"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "south"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "south"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "south"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "south"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "south"
+        }
+      ],
+      "live": 9,
+      "finite": true,
+      "state": "play",
+      "pattern": "south",
+      "peakShots": 54
+    },
+    {
+      "stage": 1,
+      "events": [
+        {
+          "event": "formation",
+          "stage": 1,
+          "type": "spiral",
+          "count": 9
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "spiral"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "spiral"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "spiral"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "spiral"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "spiral"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "spiral"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "spiral"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "spiral"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "spiral"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "spiral"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "spiral"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "spiral"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "spiral"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "spiral"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "spiral"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "spiral"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "spiral"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "spiral"
+        }
+      ],
+      "live": 9,
+      "finite": true,
+      "state": "play",
+      "pattern": "spiral",
+      "peakShots": 46
+    },
+    {
+      "stage": 1,
+      "events": [
+        {
+          "event": "formation",
+          "stage": 1,
+          "type": "kamikaze",
+          "count": 9
+        }
+      ],
+      "live": 0,
+      "finite": true,
+      "state": "play",
+      "pattern": "kamikaze",
+      "peakShots": 0
+    },
+    {
+      "stage": 1,
+      "events": [
+        {
+          "event": "formation",
+          "stage": 1,
+          "type": "mixed",
+          "count": 9
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "mixed"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "mixed"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "mixed"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "mixed"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "mixed"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "mixed"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "mixed"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "mixed"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "mixed"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "mixed"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "mixed"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "mixed"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "mixed"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "mixed"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "mixed"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "mixed"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "mixed"
+        },
+        {
+          "event": "volley",
+          "stage": 1,
+          "type": "mixed"
+        }
+      ],
+      "live": 9,
+      "finite": true,
+      "state": "play",
+      "pattern": "mixed",
+      "peakShots": 45
+    },
+    {
+      "stage": 4,
+      "events": [
+        {
+          "event": "formation",
+          "stage": 4,
+          "type": "orbit",
+          "count": 9
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "orbit"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "orbit"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "orbit"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "orbit"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "orbit"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "orbit"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "orbit"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "orbit"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "orbit"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "orbit"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "orbit"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "orbit"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "orbit"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "orbit"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "orbit"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "orbit"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "orbit"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "orbit"
+        }
+      ],
+      "live": 9,
+      "finite": true,
+      "state": "play",
+      "pattern": "orbit",
+      "peakShots": 47
+    },
+    {
+      "stage": 4,
+      "events": [
+        {
+          "event": "formation",
+          "stage": 4,
+          "type": "corner",
+          "count": 9
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "corner"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "corner"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "corner"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "corner"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "corner"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "corner"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "corner"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "corner"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "corner"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "corner"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "corner"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "corner"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "corner"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "corner"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "corner"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "corner"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "corner"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "corner"
+        }
+      ],
+      "live": 9,
+      "finite": true,
+      "state": "play",
+      "pattern": "corner",
+      "peakShots": 46
+    },
+    {
+      "stage": 4,
+      "events": [
+        {
+          "event": "formation",
+          "stage": 4,
+          "type": "barrel",
+          "count": 9
+        },
+        {
+          "event": "bomb-drop",
+          "stage": 4,
+          "type": "barrel"
+        },
+        {
+          "event": "bomb-drop",
+          "stage": 4,
+          "type": "barrel"
+        },
+        {
+          "event": "bomb-drop",
+          "stage": 4,
+          "type": "barrel"
+        },
+        {
+          "event": "bomb-drop",
+          "stage": 4,
+          "type": "barrel"
+        },
+        {
+          "event": "bomb-drop",
+          "stage": 4,
+          "type": "barrel"
+        },
+        {
+          "event": "bomb-drop",
+          "stage": 4,
+          "type": "barrel"
+        },
+        {
+          "event": "bomb-drop",
+          "stage": 4,
+          "type": "barrel"
+        },
+        {
+          "event": "bomb-drop",
+          "stage": 4,
+          "type": "barrel"
+        },
+        {
+          "event": "bomb-drop",
+          "stage": 4,
+          "type": "barrel"
+        },
+        {
+          "event": "bomb-drop",
+          "stage": 4,
+          "type": "barrel"
+        },
+        {
+          "event": "bomb-drop",
+          "stage": 4,
+          "type": "barrel"
+        },
+        {
+          "event": "bomb-drop",
+          "stage": 4,
+          "type": "barrel"
+        },
+        {
+          "event": "bomb-drop",
+          "stage": 4,
+          "type": "barrel"
+        },
+        {
+          "event": "bomb-drop",
+          "stage": 4,
+          "type": "barrel"
+        },
+        {
+          "event": "bomb-drop",
+          "stage": 4,
+          "type": "barrel"
+        },
+        {
+          "event": "bomb-drop",
+          "stage": 4,
+          "type": "barrel"
+        },
+        {
+          "event": "bomb-drop",
+          "stage": 4,
+          "type": "barrel"
+        },
+        {
+          "event": "bomb-drop",
+          "stage": 4,
+          "type": "barrel"
+        }
+      ],
+      "live": 0,
+      "finite": true,
+      "state": "play",
+      "pattern": "barrel",
+      "peakShots": 15
+    },
+    {
+      "stage": 4,
+      "events": [
+        {
+          "event": "formation",
+          "stage": 4,
+          "type": "south",
+          "count": 9
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "south"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "south"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "south"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "south"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "south"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "south"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "south"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "south"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "south"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "south"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "south"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "south"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "south"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "south"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "south"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "south"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "south"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "south"
+        }
+      ],
+      "live": 9,
+      "finite": true,
+      "state": "play",
+      "pattern": "south",
+      "peakShots": 54
+    },
+    {
+      "stage": 4,
+      "events": [
+        {
+          "event": "formation",
+          "stage": 4,
+          "type": "spiral",
+          "count": 9
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "spiral"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "spiral"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "spiral"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "spiral"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "spiral"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "spiral"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "spiral"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "spiral"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "spiral"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "spiral"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "spiral"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "spiral"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "spiral"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "spiral"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "spiral"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "spiral"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "spiral"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "spiral"
+        }
+      ],
+      "live": 9,
+      "finite": true,
+      "state": "play",
+      "pattern": "spiral",
+      "peakShots": 46
+    },
+    {
+      "stage": 4,
+      "events": [
+        {
+          "event": "formation",
+          "stage": 4,
+          "type": "kamikaze",
+          "count": 9
+        }
+      ],
+      "live": 0,
+      "finite": true,
+      "state": "play",
+      "pattern": "kamikaze",
+      "peakShots": 0
+    },
+    {
+      "stage": 4,
+      "events": [
+        {
+          "event": "formation",
+          "stage": 4,
+          "type": "mixed",
+          "count": 9
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "mixed"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "mixed"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "mixed"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "mixed"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "mixed"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "mixed"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "mixed"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "mixed"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "mixed"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "mixed"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "mixed"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "mixed"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "mixed"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "mixed"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "mixed"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "mixed"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "mixed"
+        },
+        {
+          "event": "volley",
+          "stage": 4,
+          "type": "mixed"
+        }
+      ],
+      "live": 9,
+      "finite": true,
+      "state": "play",
+      "pattern": "mixed",
+      "peakShots": 45
+    },
+    {
+      "stage": 6,
+      "events": [
+        {
+          "event": "formation",
+          "stage": 6,
+          "type": "orbit",
+          "count": 9
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "orbit"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "orbit"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "orbit"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "orbit"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "orbit"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "orbit"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "orbit"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "orbit"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "orbit"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "orbit"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "orbit"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "orbit"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "orbit"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "orbit"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "orbit"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "orbit"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "orbit"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "orbit"
+        }
+      ],
+      "live": 9,
+      "finite": true,
+      "state": "play",
+      "pattern": "orbit",
+      "peakShots": 47
+    },
+    {
+      "stage": 6,
+      "events": [
+        {
+          "event": "formation",
+          "stage": 6,
+          "type": "corner",
+          "count": 9
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "corner"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "corner"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "corner"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "corner"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "corner"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "corner"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "corner"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "corner"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "corner"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "corner"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "corner"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "corner"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "corner"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "corner"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "corner"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "corner"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "corner"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "corner"
+        }
+      ],
+      "live": 9,
+      "finite": true,
+      "state": "play",
+      "pattern": "corner",
+      "peakShots": 46
+    },
+    {
+      "stage": 6,
+      "events": [
+        {
+          "event": "formation",
+          "stage": 6,
+          "type": "barrel",
+          "count": 9
+        },
+        {
+          "event": "bomb-drop",
+          "stage": 6,
+          "type": "barrel"
+        },
+        {
+          "event": "bomb-drop",
+          "stage": 6,
+          "type": "barrel"
+        },
+        {
+          "event": "bomb-drop",
+          "stage": 6,
+          "type": "barrel"
+        },
+        {
+          "event": "bomb-drop",
+          "stage": 6,
+          "type": "barrel"
+        },
+        {
+          "event": "bomb-drop",
+          "stage": 6,
+          "type": "barrel"
+        },
+        {
+          "event": "bomb-drop",
+          "stage": 6,
+          "type": "barrel"
+        },
+        {
+          "event": "bomb-drop",
+          "stage": 6,
+          "type": "barrel"
+        },
+        {
+          "event": "bomb-drop",
+          "stage": 6,
+          "type": "barrel"
+        },
+        {
+          "event": "bomb-drop",
+          "stage": 6,
+          "type": "barrel"
+        },
+        {
+          "event": "bomb-drop",
+          "stage": 6,
+          "type": "barrel"
+        },
+        {
+          "event": "bomb-drop",
+          "stage": 6,
+          "type": "barrel"
+        },
+        {
+          "event": "bomb-drop",
+          "stage": 6,
+          "type": "barrel"
+        },
+        {
+          "event": "bomb-drop",
+          "stage": 6,
+          "type": "barrel"
+        },
+        {
+          "event": "bomb-drop",
+          "stage": 6,
+          "type": "barrel"
+        },
+        {
+          "event": "bomb-drop",
+          "stage": 6,
+          "type": "barrel"
+        },
+        {
+          "event": "bomb-drop",
+          "stage": 6,
+          "type": "barrel"
+        },
+        {
+          "event": "bomb-drop",
+          "stage": 6,
+          "type": "barrel"
+        },
+        {
+          "event": "bomb-drop",
+          "stage": 6,
+          "type": "barrel"
+        }
+      ],
+      "live": 0,
+      "finite": true,
+      "state": "play",
+      "pattern": "barrel",
+      "peakShots": 15
+    },
+    {
+      "stage": 6,
+      "events": [
+        {
+          "event": "formation",
+          "stage": 6,
+          "type": "south",
+          "count": 9
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "south"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "south"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "south"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "south"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "south"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "south"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "south"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "south"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "south"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "south"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "south"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "south"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "south"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "south"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "south"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "south"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "south"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "south"
+        }
+      ],
+      "live": 9,
+      "finite": true,
+      "state": "play",
+      "pattern": "south",
+      "peakShots": 54
+    },
+    {
+      "stage": 6,
+      "events": [
+        {
+          "event": "formation",
+          "stage": 6,
+          "type": "spiral",
+          "count": 9
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "spiral"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "spiral"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "spiral"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "spiral"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "spiral"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "spiral"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "spiral"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "spiral"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "spiral"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "spiral"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "spiral"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "spiral"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "spiral"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "spiral"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "spiral"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "spiral"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "spiral"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "spiral"
+        }
+      ],
+      "live": 9,
+      "finite": true,
+      "state": "play",
+      "pattern": "spiral",
+      "peakShots": 46
+    },
+    {
+      "stage": 6,
+      "events": [
+        {
+          "event": "formation",
+          "stage": 6,
+          "type": "kamikaze",
+          "count": 9
+        }
+      ],
+      "live": 0,
+      "finite": true,
+      "state": "play",
+      "pattern": "kamikaze",
+      "peakShots": 0
+    },
+    {
+      "stage": 6,
+      "events": [
+        {
+          "event": "formation",
+          "stage": 6,
+          "type": "mixed",
+          "count": 9
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "mixed"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "mixed"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "mixed"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "mixed"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "mixed"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "mixed"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "mixed"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "mixed"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "mixed"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "mixed"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "mixed"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "mixed"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "mixed"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "mixed"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "mixed"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "mixed"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "mixed"
+        },
+        {
+          "event": "volley",
+          "stage": 6,
+          "type": "mixed"
+        }
+      ],
+      "live": 9,
+      "finite": true,
+      "state": "play",
+      "pattern": "mixed",
+      "peakShots": 45
+    },
+    {
+      "stage": 8,
+      "events": [
+        {
+          "event": "formation",
+          "stage": 8,
+          "type": "orbit",
+          "count": 9
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "orbit"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "orbit"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "orbit"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "orbit"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "orbit"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "orbit"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "orbit"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "orbit"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "orbit"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "orbit"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "orbit"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "orbit"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "orbit"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "orbit"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "orbit"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "orbit"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "orbit"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "orbit"
+        }
+      ],
+      "live": 9,
+      "finite": true,
+      "state": "play",
+      "pattern": "orbit",
+      "peakShots": 47
+    },
+    {
+      "stage": 8,
+      "events": [
+        {
+          "event": "formation",
+          "stage": 8,
+          "type": "corner",
+          "count": 9
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "corner"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "corner"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "corner"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "corner"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "corner"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "corner"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "corner"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "corner"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "corner"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "corner"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "corner"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "corner"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "corner"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "corner"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "corner"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "corner"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "corner"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "corner"
+        }
+      ],
+      "live": 9,
+      "finite": true,
+      "state": "play",
+      "pattern": "corner",
+      "peakShots": 46
+    },
+    {
+      "stage": 8,
+      "events": [
+        {
+          "event": "formation",
+          "stage": 8,
+          "type": "barrel",
+          "count": 9
+        },
+        {
+          "event": "bomb-drop",
+          "stage": 8,
+          "type": "barrel"
+        },
+        {
+          "event": "bomb-drop",
+          "stage": 8,
+          "type": "barrel"
+        },
+        {
+          "event": "bomb-drop",
+          "stage": 8,
+          "type": "barrel"
+        },
+        {
+          "event": "bomb-drop",
+          "stage": 8,
+          "type": "barrel"
+        },
+        {
+          "event": "bomb-drop",
+          "stage": 8,
+          "type": "barrel"
+        },
+        {
+          "event": "bomb-drop",
+          "stage": 8,
+          "type": "barrel"
+        },
+        {
+          "event": "bomb-drop",
+          "stage": 8,
+          "type": "barrel"
+        },
+        {
+          "event": "bomb-drop",
+          "stage": 8,
+          "type": "barrel"
+        },
+        {
+          "event": "bomb-drop",
+          "stage": 8,
+          "type": "barrel"
+        },
+        {
+          "event": "bomb-drop",
+          "stage": 8,
+          "type": "barrel"
+        },
+        {
+          "event": "bomb-drop",
+          "stage": 8,
+          "type": "barrel"
+        },
+        {
+          "event": "bomb-drop",
+          "stage": 8,
+          "type": "barrel"
+        },
+        {
+          "event": "bomb-drop",
+          "stage": 8,
+          "type": "barrel"
+        },
+        {
+          "event": "bomb-drop",
+          "stage": 8,
+          "type": "barrel"
+        },
+        {
+          "event": "bomb-drop",
+          "stage": 8,
+          "type": "barrel"
+        },
+        {
+          "event": "bomb-drop",
+          "stage": 8,
+          "type": "barrel"
+        },
+        {
+          "event": "bomb-drop",
+          "stage": 8,
+          "type": "barrel"
+        },
+        {
+          "event": "bomb-drop",
+          "stage": 8,
+          "type": "barrel"
+        }
+      ],
+      "live": 0,
+      "finite": true,
+      "state": "play",
+      "pattern": "barrel",
+      "peakShots": 15
+    },
+    {
+      "stage": 8,
+      "events": [
+        {
+          "event": "formation",
+          "stage": 8,
+          "type": "south",
+          "count": 9
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "south"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "south"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "south"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "south"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "south"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "south"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "south"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "south"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "south"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "south"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "south"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "south"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "south"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "south"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "south"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "south"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "south"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "south"
+        }
+      ],
+      "live": 9,
+      "finite": true,
+      "state": "play",
+      "pattern": "south",
+      "peakShots": 54
+    },
+    {
+      "stage": 8,
+      "events": [
+        {
+          "event": "formation",
+          "stage": 8,
+          "type": "spiral",
+          "count": 9
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "spiral"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "spiral"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "spiral"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "spiral"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "spiral"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "spiral"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "spiral"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "spiral"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "spiral"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "spiral"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "spiral"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "spiral"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "spiral"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "spiral"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "spiral"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "spiral"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "spiral"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "spiral"
+        }
+      ],
+      "live": 9,
+      "finite": true,
+      "state": "play",
+      "pattern": "spiral",
+      "peakShots": 46
+    },
+    {
+      "stage": 8,
+      "events": [
+        {
+          "event": "formation",
+          "stage": 8,
+          "type": "kamikaze",
+          "count": 9
+        }
+      ],
+      "live": 0,
+      "finite": true,
+      "state": "play",
+      "pattern": "kamikaze",
+      "peakShots": 0
+    },
+    {
+      "stage": 8,
+      "events": [
+        {
+          "event": "formation",
+          "stage": 8,
+          "type": "mixed",
+          "count": 9
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "mixed"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "mixed"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "mixed"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "mixed"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "mixed"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "mixed"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "mixed"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "mixed"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "mixed"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "mixed"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "mixed"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "mixed"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "mixed"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "mixed"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "mixed"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "mixed"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "mixed"
+        },
+        {
+          "event": "volley",
+          "stage": 8,
+          "type": "mixed"
+        }
+      ],
+      "live": 9,
+      "finite": true,
+      "state": "play",
+      "pattern": "mixed",
+      "peakShots": 45
+    }
+  ],
+  "errors": [],
+  "live": {
+    "results": [
+      {
+        "stage": 1,
+        "state": "play",
+        "elapsedStageTime": 24.03333333333325,
+        "lives": 1,
+        "shield": 0,
+        "formations": [
+          {
+            "event": "formation",
+            "stage": 1,
+            "type": "orbit",
+            "count": 9
+          },
+          {
+            "event": "formation",
+            "stage": 1,
+            "type": "corner",
+            "count": 9
+          }
+        ],
+        "shots": 18,
+        "finite": true
+      },
+      {
+        "stage": 4,
+        "state": "play",
+        "elapsedStageTime": 23.99999999999992,
+        "lives": 1,
+        "shield": 0,
+        "formations": [
+          {
+            "event": "formation",
+            "stage": 4,
+            "type": "barrel",
+            "count": 9
+          }
+        ],
+        "shots": 18,
+        "finite": true
+      },
+      {
+        "stage": 6,
+        "state": "play",
+        "elapsedStageTime": 23.99999999999992,
+        "lives": 1,
+        "shield": 0,
+        "formations": [
+          {
+            "event": "formation",
+            "stage": 6,
+            "type": "south",
+            "count": 9
+          }
+        ],
+        "shots": 18,
+        "finite": true
+      },
+      {
+        "stage": 8,
+        "state": "play",
+        "elapsedStageTime": 23.99999999999992,
+        "lives": 1,
+        "shield": 0,
+        "formations": [
+          {
+            "event": "formation",
+            "stage": 8,
+            "type": "spiral",
+            "count": 9
+          }
+        ],
+        "shots": 18,
+        "finite": true
+      }
+    ],
+    "errors": []
+  },
+  "scope": "28 protected native visual fixtures on Furious; formation counts on Easy/Normal/Hard/Furious. Four24second post-opening held-fire/lateral-input trials without invulnerability. Not campaign clears or human survival certification.",
+  "art": [
+    {
+      "stage": 1,
+      "bank": "headings",
+      "size": [
+        768,
+        96
+      ],
+      "frames": 8,
+      "pivot": [
+        48,
+        48
+      ],
+      "even": true,
+      "clipping": false
+    },
+    {
+      "stage": 1,
+      "bank": "roll",
+      "size": [
+        768,
+        96
+      ],
+      "frames": 8,
+      "pivot": [
+        48,
+        48
+      ],
+      "even": true,
+      "clipping": false
+    },
+    {
+      "stage": 4,
+      "bank": "headings",
+      "size": [
+        768,
+        96
+      ],
+      "frames": 8,
+      "pivot": [
+        48,
+        48
+      ],
+      "even": true,
+      "clipping": false
+    },
+    {
+      "stage": 4,
+      "bank": "roll",
+      "size": [
+        768,
+        96
+      ],
+      "frames": 8,
+      "pivot": [
+        48,
+        48
+      ],
+      "even": true,
+      "clipping": false
+    },
+    {
+      "stage": 6,
+      "bank": "headings",
+      "size": [
+        768,
+        96
+      ],
+      "frames": 8,
+      "pivot": [
+        48,
+        48
+      ],
+      "even": true,
+      "clipping": false
+    },
+    {
+      "stage": 6,
+      "bank": "roll",
+      "size": [
+        768,
+        96
+      ],
+      "frames": 8,
+      "pivot": [
+        48,
+        48
+      ],
+      "even": true,
+      "clipping": false
+    },
+    {
+      "stage": 8,
+      "bank": "headings",
+      "size": [
+        768,
+        96
+      ],
+      "frames": 8,
+      "pivot": [
+        48,
+        48
+      ],
+      "even": true,
+      "clipping": false
+    },
+    {
+      "stage": 8,
+      "bank": "roll",
+      "size": [
+        768,
+        96
+      ],
+      "frames": 8,
+      "pivot": [
+        48,
+        48
+      ],
+      "even": true,
+      "clipping": false
+    }
+  ]
+}

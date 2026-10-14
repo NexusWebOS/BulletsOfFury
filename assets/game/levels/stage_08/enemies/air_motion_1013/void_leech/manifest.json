@@ -1,0 +1,49 @@
+{
+  "id": "s8leech",
+  "name": "Void Leech",
+  "stage": 8,
+  "stages": [
+    8
+  ],
+  "aliases": [
+    "s8leech"
+  ],
+  "folder": "assets/game/levels/stage_08/enemies/air_motion_1013/void_leech",
+  "rebel": false,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s8_s8leech_heading",
+    "path": "assets/game/levels/stage_08/enemies/air_motion_1013/void_leech/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "eb8922bde84daa1874cf36b06b8fd920cb28d4c0d134db3b32a26e571778c7b4"
+  },
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s8_s8leech_roll",
+    "path": "assets/game/levels/stage_08/enemies/air_motion_1013/void_leech/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "7a3d7bcbcd31d4dd041be2d3d36f96c13521cb9beba9a4eba37960825d666f41"
+  },
+  "nativeRatios": {
+    "s8leech": 1.1018518518518519
+  },
+  "sourceKeys": {
+    "s8leech": "s81003_gravity"
+  }
+}

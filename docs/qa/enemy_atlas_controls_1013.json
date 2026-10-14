@@ -1,0 +1,131 @@
+[
+  {
+    "browser": "chrome",
+    "checks": [
+      [
+        "initial live",
+        true
+      ],
+      [
+        "pause",
+        true
+      ],
+      [
+        "single frame",
+        true
+      ],
+      [
+        "slow motion",
+        true
+      ],
+      [
+        "carrier actor",
+        true
+      ],
+      [
+        "overdrive switch",
+        true
+      ],
+      [
+        "return to BOF",
+        true
+      ],
+      [
+        "progress untouched",
+        true
+      ],
+      [
+        "mobile no horizontal scroll",
+        true
+      ]
+    ],
+    "pageErrors": [],
+    "console": []
+  },
+  {
+    "browser": "edge",
+    "checks": [
+      [
+        "initial live",
+        true
+      ],
+      [
+        "pause",
+        true
+      ],
+      [
+        "single frame",
+        true
+      ],
+      [
+        "slow motion",
+        true
+      ],
+      [
+        "carrier actor",
+        true
+      ],
+      [
+        "overdrive switch",
+        true
+      ],
+      [
+        "return to BOF",
+        true
+      ],
+      [
+        "progress untouched",
+        true
+      ],
+      [
+        "mobile no horizontal scroll",
+        true
+      ]
+    ],
+    "pageErrors": [],
+    "console": []
+  },
+  {
+    "browser": "firefox",
+    "checks": [
+      [
+        "initial live",
+        true
+      ],
+      [
+        "pause",
+        true
+      ],
+      [
+        "single frame",
+        true
+      ],
+      [
+        "slow motion",
+        true
+      ],
+      [
+        "carrier actor",
+        true
+      ],
+      [
+        "overdrive switch",
+        true
+      ],
+      [
+        "return to BOF",
+        true
+      ],
+      [
+        "progress untouched",
+        true
+      ],
+      [
+        "mobile no horizontal scroll",
+        true
+      ]
+    ],
+    "pageErrors": [],
+    "console": []
+  }
+]

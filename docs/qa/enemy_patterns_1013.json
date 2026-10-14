@@ -1,0 +1,3006 @@
+{
+  "native": {
+    "fixtures": [
+      {
+        "events": [
+          {
+            "event": "start",
+            "stage": 5,
+            "type": "s5frigate",
+            "time": 10,
+            "kind": "sweep",
+            "warning": 1.3,
+            "gapRadians": 1.52
+          },
+          {
+            "event": "release",
+            "stage": 5,
+            "type": "s5frigate",
+            "time": 11.300000000000065,
+            "kind": "sweep",
+            "angle": 1.5316422675057435
+          }
+        ],
+        "finite": true,
+        "state": "play",
+        "beamGone": true,
+        "owner": true,
+        "frameT": 3.983333333333324,
+        "stage": 5,
+        "difficulty": "easy",
+        "pattern": "sweep",
+        "peakProjectiles": 0,
+        "meanStepMs": 1.8384662505316858
+      },
+      {
+        "events": [
+          {
+            "event": "start",
+            "stage": 5,
+            "type": "s5frigate",
+            "time": 10,
+            "kind": "sweep",
+            "warning": 1.12,
+            "gapRadians": 1.38
+          },
+          {
+            "event": "release",
+            "stage": 5,
+            "type": "s5frigate",
+            "time": 11.13333333333339,
+            "kind": "sweep",
+            "angle": 1.5316422675057435
+          },
+          {
+            "event": "end",
+            "stage": 5,
+            "type": "s5frigate",
+            "time": 13.833333333333524,
+            "reason": "recovered"
+          }
+        ],
+        "finite": true,
+        "state": "play",
+        "beamGone": true,
+        "owner": false,
+        "frameT": null,
+        "stage": 5,
+        "difficulty": "normal",
+        "pattern": "sweep",
+        "peakProjectiles": 0,
+        "meanStepMs": 0.6108937498841744
+      },
+      {
+        "events": [
+          {
+            "event": "start",
+            "stage": 5,
+            "type": "s5frigate",
+            "time": 10,
+            "kind": "sweep",
+            "warning": 1,
+            "gapRadians": 1.24
+          },
+          {
+            "event": "release",
+            "stage": 5,
+            "type": "s5frigate",
+            "time": 11.00000000000005,
+            "kind": "sweep",
+            "angle": 1.5316422675057435
+          },
+          {
+            "event": "end",
+            "stage": 5,
+            "type": "s5frigate",
+            "time": 13.766666666666854,
+            "reason": "recovered"
+          }
+        ],
+        "finite": true,
+        "state": "play",
+        "beamGone": true,
+        "owner": false,
+        "frameT": null,
+        "stage": 5,
+        "difficulty": "hard",
+        "pattern": "sweep",
+        "peakProjectiles": 0,
+        "meanStepMs": 1.0942329167543599
+      },
+      {
+        "events": [
+          {
+            "event": "start",
+            "stage": 5,
+            "type": "s5frigate",
+            "time": 10,
+            "kind": "sweep",
+            "warning": 0.9,
+            "gapRadians": 1.12
+          },
+          {
+            "event": "release",
+            "stage": 5,
+            "type": "s5frigate",
+            "time": 10.900000000000045,
+            "kind": "sweep",
+            "angle": 1.5316422675057435
+          },
+          {
+            "event": "end",
+            "stage": 5,
+            "type": "s5frigate",
+            "time": 13.716666666666852,
+            "reason": "recovered"
+          }
+        ],
+        "finite": true,
+        "state": "play",
+        "beamGone": true,
+        "owner": false,
+        "frameT": null,
+        "stage": 5,
+        "difficulty": "furious",
+        "pattern": "sweep",
+        "peakProjectiles": 0,
+        "meanStepMs": 0.8905545835053393
+      },
+      {
+        "events": [
+          {
+            "event": "start",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 10,
+            "kind": "rifle",
+            "warning": 1.3,
+            "gapRadians": 1.52
+          },
+          {
+            "event": "release",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 11.300000000000065,
+            "kind": "rifle",
+            "angle": 1.3354061149067178
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 11.300000000000065,
+            "gun": "gun0",
+            "angle": 1.3354061149067178
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 11.483333333333407,
+            "gun": "gun1",
+            "angle": 1.7201154359283037
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 11.66666666666675,
+            "gun": "gun0",
+            "angle": 1.3354061149067178
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 11.850000000000092,
+            "gun": "gun1",
+            "angle": 1.7201154359283037
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 12.033333333333434,
+            "gun": "gun0",
+            "angle": 1.3354061149067178
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 12.216666666666777,
+            "gun": "gun1",
+            "angle": 1.7201154359283037
+          },
+          {
+            "event": "end",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 13.700000000000184,
+            "reason": "recovered"
+          }
+        ],
+        "finite": true,
+        "state": "play",
+        "beamGone": true,
+        "owner": false,
+        "frameT": null,
+        "stage": 7,
+        "difficulty": "easy",
+        "pattern": "rifle",
+        "peakProjectiles": 6,
+        "meanStepMs": 1.3055075001223788
+      },
+      {
+        "events": [
+          {
+            "event": "start",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 10,
+            "kind": "rifle",
+            "warning": 1.12,
+            "gapRadians": 1.38
+          },
+          {
+            "event": "release",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 11.13333333333339,
+            "kind": "rifle",
+            "angle": 1.3354061149067178
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 11.13333333333339,
+            "gun": "gun0",
+            "angle": 1.3354061149067178
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 11.283333333333397,
+            "gun": "gun1",
+            "angle": 1.7201154359283037
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 11.450000000000072,
+            "gun": "gun0",
+            "angle": 1.3354061149067178
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 11.616666666666747,
+            "gun": "gun1",
+            "angle": 1.7201154359283037
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 11.766666666666755,
+            "gun": "gun0",
+            "angle": 1.3354061149067178
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 11.93333333333343,
+            "gun": "gun1",
+            "angle": 1.7201154359283037
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 12.083333333333437,
+            "gun": "gun0",
+            "angle": 1.3354061149067178
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 12.250000000000112,
+            "gun": "gun1",
+            "angle": 1.7201154359283037
+          },
+          {
+            "event": "end",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 13.583333333333512,
+            "reason": "recovered"
+          }
+        ],
+        "finite": true,
+        "state": "play",
+        "beamGone": true,
+        "owner": false,
+        "frameT": null,
+        "stage": 7,
+        "difficulty": "normal",
+        "pattern": "rifle",
+        "peakProjectiles": 6,
+        "meanStepMs": 0.6491350005186785
+      },
+      {
+        "events": [
+          {
+            "event": "start",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 10,
+            "kind": "rifle",
+            "warning": 1,
+            "gapRadians": 1.24
+          },
+          {
+            "event": "release",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 11.00000000000005,
+            "kind": "rifle",
+            "angle": 1.3354061149067178
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 11.00000000000005,
+            "gun": "gun0",
+            "angle": 1.3354061149067178
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 11.150000000000057,
+            "gun": "gun1",
+            "angle": 1.7201154359283037
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 11.300000000000065,
+            "gun": "gun0",
+            "angle": 1.3354061149067178
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 11.46666666666674,
+            "gun": "gun1",
+            "angle": 1.7201154359283037
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 11.616666666666747,
+            "gun": "gun0",
+            "angle": 1.3354061149067178
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 11.766666666666755,
+            "gun": "gun1",
+            "angle": 1.7201154359283037
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 11.916666666666762,
+            "gun": "gun0",
+            "angle": 1.3354061149067178
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 12.06666666666677,
+            "gun": "gun1",
+            "angle": 1.7201154359283037
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 12.216666666666777,
+            "gun": "gun0",
+            "angle": 1.3354061149067178
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 12.366666666666784,
+            "gun": "gun1",
+            "angle": 1.7201154359283037
+          },
+          {
+            "event": "end",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 13.600000000000179,
+            "reason": "recovered"
+          }
+        ],
+        "finite": true,
+        "state": "play",
+        "beamGone": true,
+        "owner": false,
+        "frameT": null,
+        "stage": 7,
+        "difficulty": "hard",
+        "pattern": "rifle",
+        "peakProjectiles": 5,
+        "meanStepMs": 0.6943412501035102
+      },
+      {
+        "events": [
+          {
+            "event": "start",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 10,
+            "kind": "rifle",
+            "warning": 0.9,
+            "gapRadians": 1.12
+          },
+          {
+            "event": "release",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 10.900000000000045,
+            "kind": "rifle",
+            "angle": 1.3354061149067178
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 10.900000000000045,
+            "gun": "gun0",
+            "angle": 1.3354061149067178
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 11.050000000000052,
+            "gun": "gun1",
+            "angle": 1.7201154359283037
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 11.183333333333392,
+            "gun": "gun0",
+            "angle": 1.3354061149067178
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 11.3333333333334,
+            "gun": "gun1",
+            "angle": 1.7201154359283037
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 11.46666666666674,
+            "gun": "gun0",
+            "angle": 1.3354061149067178
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 11.616666666666747,
+            "gun": "gun1",
+            "angle": 1.7201154359283037
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 11.750000000000087,
+            "gun": "gun0",
+            "angle": 1.3354061149067178
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 11.883333333333427,
+            "gun": "gun1",
+            "angle": 1.7201154359283037
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 12.033333333333434,
+            "gun": "gun0",
+            "angle": 1.3354061149067178
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 12.166666666666774,
+            "gun": "gun1",
+            "angle": 1.7201154359283037
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 12.316666666666782,
+            "gun": "gun0",
+            "angle": 1.3354061149067178
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 12.450000000000122,
+            "gun": "gun1",
+            "angle": 1.7201154359283037
+          },
+          {
+            "event": "end",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 13.583333333333512,
+            "reason": "recovered"
+          }
+        ],
+        "finite": true,
+        "state": "play",
+        "beamGone": true,
+        "owner": false,
+        "frameT": null,
+        "stage": 7,
+        "difficulty": "furious",
+        "pattern": "rifle",
+        "peakProjectiles": 4,
+        "meanStepMs": 0.8916208328931438
+      },
+      {
+        "events": [
+          {
+            "event": "start",
+            "stage": 8,
+            "type": "s8deathorb",
+            "time": 10,
+            "kind": "ring",
+            "warning": 1.3,
+            "gapRadians": 1.52
+          },
+          {
+            "event": "release",
+            "stage": 8,
+            "type": "s8deathorb",
+            "time": 11.300000000000065,
+            "kind": "ring",
+            "angle": 1.5297059779380204
+          },
+          {
+            "event": "ring",
+            "stage": 8,
+            "type": "s8deathorb",
+            "time": 11.300000000000065,
+            "count": 9,
+            "gap": 1.5297059779380204,
+            "gapRadians": 1.52
+          },
+          {
+            "event": "end",
+            "stage": 8,
+            "type": "s8deathorb",
+            "time": 12.80000000000014,
+            "reason": "recovered"
+          }
+        ],
+        "finite": true,
+        "state": "play",
+        "beamGone": true,
+        "owner": false,
+        "frameT": null,
+        "stage": 8,
+        "difficulty": "easy",
+        "pattern": "ring",
+        "peakProjectiles": 9,
+        "meanStepMs": 1.2830941668653395
+      },
+      {
+        "events": [
+          {
+            "event": "start",
+            "stage": 8,
+            "type": "s8deathorb",
+            "time": 10,
+            "kind": "ring",
+            "warning": 1.12,
+            "gapRadians": 1.38
+          },
+          {
+            "event": "release",
+            "stage": 8,
+            "type": "s8deathorb",
+            "time": 11.13333333333339,
+            "kind": "ring",
+            "angle": 1.5297059779380204
+          },
+          {
+            "event": "ring",
+            "stage": 8,
+            "type": "s8deathorb",
+            "time": 11.13333333333339,
+            "count": 13,
+            "gap": 1.5297059779380204,
+            "gapRadians": 1.38
+          },
+          {
+            "event": "ring",
+            "stage": 8,
+            "type": "s8deathorb",
+            "time": 11.516666666666742,
+            "count": 12,
+            "gap": 1.5297059779380204,
+            "gapRadians": 1.38
+          },
+          {
+            "event": "end",
+            "stage": 8,
+            "type": "s8deathorb",
+            "time": 12.850000000000142,
+            "reason": "recovered"
+          }
+        ],
+        "finite": true,
+        "state": "play",
+        "beamGone": true,
+        "owner": false,
+        "frameT": null,
+        "stage": 8,
+        "difficulty": "normal",
+        "pattern": "ring",
+        "peakProjectiles": 25,
+        "meanStepMs": 0.8649212502253553
+      },
+      {
+        "events": [
+          {
+            "event": "start",
+            "stage": 8,
+            "type": "s8deathorb",
+            "time": 10,
+            "kind": "ring",
+            "warning": 1,
+            "gapRadians": 1.24
+          },
+          {
+            "event": "release",
+            "stage": 8,
+            "type": "s8deathorb",
+            "time": 11.00000000000005,
+            "kind": "ring",
+            "angle": 1.5297059779380204
+          },
+          {
+            "event": "ring",
+            "stage": 8,
+            "type": "s8deathorb",
+            "time": 11.00000000000005,
+            "count": 16,
+            "gap": 1.5297059779380204,
+            "gapRadians": 1.24
+          },
+          {
+            "event": "ring",
+            "stage": 8,
+            "type": "s8deathorb",
+            "time": 11.383333333333402,
+            "count": 16,
+            "gap": 1.5297059779380204,
+            "gapRadians": 1.24
+          },
+          {
+            "event": "end",
+            "stage": 8,
+            "type": "s8deathorb",
+            "time": 12.633333333333464,
+            "reason": "recovered"
+          }
+        ],
+        "finite": true,
+        "state": "play",
+        "beamGone": true,
+        "owner": false,
+        "frameT": null,
+        "stage": 8,
+        "difficulty": "hard",
+        "pattern": "ring",
+        "peakProjectiles": 32,
+        "meanStepMs": 0.6903058332682122
+      },
+      {
+        "events": [
+          {
+            "event": "start",
+            "stage": 8,
+            "type": "s8deathorb",
+            "time": 10,
+            "kind": "ring",
+            "warning": 0.9,
+            "gapRadians": 1.12
+          },
+          {
+            "event": "release",
+            "stage": 8,
+            "type": "s8deathorb",
+            "time": 10.900000000000045,
+            "kind": "ring",
+            "angle": 1.5297059779380204
+          },
+          {
+            "event": "ring",
+            "stage": 8,
+            "type": "s8deathorb",
+            "time": 10.900000000000045,
+            "count": 20,
+            "gap": 1.5297059779380204,
+            "gapRadians": 1.12
+          },
+          {
+            "event": "ring",
+            "stage": 8,
+            "type": "s8deathorb",
+            "time": 11.283333333333397,
+            "count": 20,
+            "gap": 1.5297059779380204,
+            "gapRadians": 1.12
+          },
+          {
+            "event": "ring",
+            "stage": 8,
+            "type": "s8deathorb",
+            "time": 11.66666666666675,
+            "count": 20,
+            "gap": 1.5297059779380204,
+            "gapRadians": 1.12
+          },
+          {
+            "event": "end",
+            "stage": 8,
+            "type": "s8deathorb",
+            "time": 12.816666666666807,
+            "reason": "recovered"
+          }
+        ],
+        "finite": true,
+        "state": "play",
+        "beamGone": true,
+        "owner": false,
+        "frameT": null,
+        "stage": 8,
+        "difficulty": "furious",
+        "pattern": "ring",
+        "peakProjectiles": 52,
+        "meanStepMs": 1.382333749885826
+      },
+      {
+        "events": [
+          {
+            "event": "start",
+            "stage": 9,
+            "type": "s9beacon",
+            "time": 10,
+            "kind": "shards",
+            "warning": 1.3,
+            "gapRadians": 1.52
+          },
+          {
+            "event": "release",
+            "stage": 9,
+            "type": "s9beacon",
+            "time": 11.300000000000065,
+            "kind": "shards",
+            "angle": 1.5322797394377476
+          },
+          {
+            "event": "shards",
+            "stage": 9,
+            "type": "s9beacon",
+            "time": 11.300000000000065,
+            "count": 9,
+            "gap": 1.5322797394377476,
+            "gapRadians": 1.52
+          },
+          {
+            "event": "end",
+            "stage": 9,
+            "type": "s9beacon",
+            "time": 12.80000000000014,
+            "reason": "recovered"
+          }
+        ],
+        "finite": true,
+        "state": "play",
+        "beamGone": true,
+        "owner": false,
+        "frameT": null,
+        "stage": 9,
+        "difficulty": "easy",
+        "pattern": "shards",
+        "peakProjectiles": 9,
+        "meanStepMs": 1.41804583351283
+      },
+      {
+        "events": [
+          {
+            "event": "start",
+            "stage": 9,
+            "type": "s9beacon",
+            "time": 10,
+            "kind": "shards",
+            "warning": 1.12,
+            "gapRadians": 1.38
+          },
+          {
+            "event": "release",
+            "stage": 9,
+            "type": "s9beacon",
+            "time": 11.13333333333339,
+            "kind": "shards",
+            "angle": 1.5322797394377476
+          },
+          {
+            "event": "shards",
+            "stage": 9,
+            "type": "s9beacon",
+            "time": 11.13333333333339,
+            "count": 13,
+            "gap": 1.5322797394377476,
+            "gapRadians": 1.38
+          },
+          {
+            "event": "shards",
+            "stage": 9,
+            "type": "s9beacon",
+            "time": 11.516666666666742,
+            "count": 12,
+            "gap": 1.5322797394377476,
+            "gapRadians": 1.38
+          },
+          {
+            "event": "end",
+            "stage": 9,
+            "type": "s9beacon",
+            "time": 12.850000000000142,
+            "reason": "recovered"
+          }
+        ],
+        "finite": true,
+        "state": "play",
+        "beamGone": true,
+        "owner": false,
+        "frameT": null,
+        "stage": 9,
+        "difficulty": "normal",
+        "pattern": "shards",
+        "peakProjectiles": 25,
+        "meanStepMs": 1.0465054173740405
+      },
+      {
+        "events": [
+          {
+            "event": "start",
+            "stage": 9,
+            "type": "s9beacon",
+            "time": 10,
+            "kind": "shards",
+            "warning": 1,
+            "gapRadians": 1.24
+          },
+          {
+            "event": "release",
+            "stage": 9,
+            "type": "s9beacon",
+            "time": 11.00000000000005,
+            "kind": "shards",
+            "angle": 1.5322797394377476
+          },
+          {
+            "event": "shards",
+            "stage": 9,
+            "type": "s9beacon",
+            "time": 11.00000000000005,
+            "count": 16,
+            "gap": 1.5322797394377476,
+            "gapRadians": 1.24
+          },
+          {
+            "event": "shards",
+            "stage": 9,
+            "type": "s9beacon",
+            "time": 11.383333333333402,
+            "count": 16,
+            "gap": 1.5322797394377476,
+            "gapRadians": 1.24
+          },
+          {
+            "event": "end",
+            "stage": 9,
+            "type": "s9beacon",
+            "time": 12.633333333333464,
+            "reason": "recovered"
+          }
+        ],
+        "finite": true,
+        "state": "play",
+        "beamGone": true,
+        "owner": false,
+        "frameT": null,
+        "stage": 9,
+        "difficulty": "hard",
+        "pattern": "shards",
+        "peakProjectiles": 32,
+        "meanStepMs": 1.1700962500375076
+      },
+      {
+        "events": [
+          {
+            "event": "start",
+            "stage": 9,
+            "type": "s9beacon",
+            "time": 10,
+            "kind": "shards",
+            "warning": 0.9,
+            "gapRadians": 1.12
+          },
+          {
+            "event": "release",
+            "stage": 9,
+            "type": "s9beacon",
+            "time": 10.900000000000045,
+            "kind": "shards",
+            "angle": 1.5322797394377476
+          },
+          {
+            "event": "shards",
+            "stage": 9,
+            "type": "s9beacon",
+            "time": 10.900000000000045,
+            "count": 20,
+            "gap": 1.5322797394377476,
+            "gapRadians": 1.12
+          },
+          {
+            "event": "shards",
+            "stage": 9,
+            "type": "s9beacon",
+            "time": 11.283333333333397,
+            "count": 20,
+            "gap": 1.5322797394377476,
+            "gapRadians": 1.12
+          },
+          {
+            "event": "shards",
+            "stage": 9,
+            "type": "s9beacon",
+            "time": 11.66666666666675,
+            "count": 20,
+            "gap": 1.5322797394377476,
+            "gapRadians": 1.12
+          },
+          {
+            "event": "end",
+            "stage": 9,
+            "type": "s9beacon",
+            "time": 12.816666666666807,
+            "reason": "recovered"
+          }
+        ],
+        "finite": true,
+        "state": "play",
+        "beamGone": true,
+        "owner": false,
+        "frameT": null,
+        "stage": 9,
+        "difficulty": "furious",
+        "pattern": "shards",
+        "peakProjectiles": 46,
+        "meanStepMs": 1.7824012502387632
+      }
+    ],
+    "coverage": [
+      {
+        "requested": "s5frigate",
+        "actual": "s5frigate",
+        "pattern": "s5space",
+        "eligible": true,
+        "ground": false,
+        "dead": false
+      },
+      {
+        "requested": "s5station",
+        "actual": "s5station",
+        "pattern": "s5space",
+        "eligible": true,
+        "ground": false,
+        "dead": false
+      },
+      {
+        "requested": "s5gravity",
+        "actual": "s5gravity",
+        "pattern": "s5space",
+        "eligible": true,
+        "ground": false,
+        "dead": false
+      },
+      {
+        "requested": "s5satellite",
+        "actual": "s5satellite",
+        "pattern": "s5space",
+        "eligible": true,
+        "ground": false,
+        "dead": false
+      },
+      {
+        "requested": "s7skimmer",
+        "actual": "s7skimmer",
+        "pattern": "s7toxic",
+        "eligible": true,
+        "ground": false,
+        "dead": false
+      },
+      {
+        "requested": "mm1003_hexpyre",
+        "actual": "mm1003_hexpyre",
+        "pattern": "mutator1003",
+        "eligible": true,
+        "ground": false,
+        "dead": false
+      },
+      {
+        "requested": "mm1003_impharrow",
+        "actual": "mm1003_impharrow",
+        "pattern": "mutator1003",
+        "eligible": true,
+        "ground": false,
+        "dead": false
+      },
+      {
+        "requested": "mm1003_riflelocust",
+        "actual": "mm1003_riflelocust",
+        "pattern": "mutator1003",
+        "eligible": true,
+        "ground": false,
+        "dead": false
+      },
+      {
+        "requested": "s8solar",
+        "actual": "s8solar",
+        "pattern": "s8mega",
+        "eligible": true,
+        "ground": false,
+        "dead": false
+      },
+      {
+        "requested": "s8deathorb",
+        "actual": "s8deathorb",
+        "pattern": "s8mega",
+        "eligible": true,
+        "ground": false,
+        "dead": false
+      },
+      {
+        "requested": "s8hunter",
+        "actual": "s8hunter",
+        "pattern": "s8mega",
+        "eligible": true,
+        "ground": false,
+        "dead": false
+      },
+      {
+        "requested": "mm1003_hexpyre",
+        "actual": "mm1003_hexpyre",
+        "pattern": "mutator1003",
+        "eligible": true,
+        "ground": false,
+        "dead": false
+      },
+      {
+        "requested": "mm1003_furnacemaw",
+        "actual": "mm1003_furnacemaw",
+        "pattern": "mutator1003",
+        "eligible": true,
+        "ground": false,
+        "dead": false
+      },
+      {
+        "requested": "s9gunship",
+        "actual": "s9gunship",
+        "pattern": "s9void",
+        "eligible": true,
+        "ground": false,
+        "dead": false
+      },
+      {
+        "requested": "s9prism",
+        "actual": "s9prism",
+        "pattern": "s9void",
+        "eligible": true,
+        "ground": false,
+        "dead": false
+      },
+      {
+        "requested": "s9ring",
+        "actual": "s9ring",
+        "pattern": "s9void",
+        "eligible": true,
+        "ground": false,
+        "dead": false
+      },
+      {
+        "requested": "s9beacon",
+        "actual": "s9beacon",
+        "pattern": "s9void",
+        "eligible": true,
+        "ground": false,
+        "dead": false
+      },
+      {
+        "requested": "horizon",
+        "actual": "horizon",
+        "pattern": "s9chaos",
+        "eligible": true,
+        "ground": false,
+        "dead": false
+      },
+      {
+        "requested": "dreadv",
+        "actual": "dreadv",
+        "pattern": "s9chaos",
+        "eligible": true,
+        "ground": false,
+        "dead": false
+      }
+    ],
+    "geometry": [
+      {
+        "difficulty": "easy",
+        "ringClear": true,
+        "minPassage": 113.78428902211027,
+        "sweepSpeed": 45,
+        "warning": 1.3,
+        "missileFanWidth": 0.44
+      },
+      {
+        "difficulty": "normal",
+        "ringClear": true,
+        "minPassage": 103.30743644439357,
+        "sweepSpeed": 55,
+        "warning": 1.12,
+        "missileFanWidth": 0.44
+      },
+      {
+        "difficulty": "hard",
+        "ringClear": true,
+        "minPassage": 92.20703210746102,
+        "sweepSpeed": 65,
+        "warning": 1,
+        "missileFanWidth": 0.88
+      },
+      {
+        "difficulty": "furious",
+        "ringClear": true,
+        "minPassage": 82.23723958417668,
+        "sweepSpeed": 74,
+        "warning": 0.9,
+        "missileFanWidth": 0.88
+      }
+    ],
+    "errors": []
+  },
+  "scheduledWaves": {
+    "rows": [
+      {
+        "stage": 5,
+        "difficulty": "normal",
+        "elapsed": 30.03333333333291,
+        "events": [
+          {
+            "event": "start",
+            "stage": 5,
+            "type": "s5frigate",
+            "time": 5.399999999999986,
+            "kind": "sweep",
+            "warning": 1.12,
+            "gapRadians": 1.38
+          },
+          {
+            "event": "release",
+            "stage": 5,
+            "type": "s5frigate",
+            "time": 6.516666666666649,
+            "kind": "sweep",
+            "angle": 1.1268969941316427
+          },
+          {
+            "event": "end",
+            "stage": 5,
+            "type": "s5frigate",
+            "time": 9.216666666666704,
+            "reason": "recovered"
+          },
+          {
+            "event": "start",
+            "stage": 5,
+            "type": "s5gravity",
+            "time": 16.75000000000033,
+            "kind": "ring",
+            "warning": 1.12,
+            "gapRadians": 1.38
+          },
+          {
+            "event": "release",
+            "stage": 5,
+            "type": "s5gravity",
+            "time": 17.866666666666934,
+            "kind": "ring",
+            "angle": 1.6206812233662085
+          },
+          {
+            "event": "ring",
+            "stage": 5,
+            "type": "s5gravity",
+            "time": 17.866666666666934,
+            "count": 13,
+            "gap": 1.6206812233662085,
+            "gapRadians": 1.38
+          },
+          {
+            "event": "ring",
+            "stage": 5,
+            "type": "s5gravity",
+            "time": 18.250000000000245,
+            "count": 12,
+            "gap": 1.6206812233662085,
+            "gapRadians": 1.38
+          },
+          {
+            "event": "end",
+            "stage": 5,
+            "type": "s5gravity",
+            "time": 19.583333333333503,
+            "reason": "recovered"
+          },
+          {
+            "event": "start",
+            "stage": 5,
+            "type": "s5satellite",
+            "time": 22.849999999999984,
+            "kind": "missile",
+            "warning": 1.12,
+            "gapRadians": 1.38
+          },
+          {
+            "event": "release",
+            "stage": 5,
+            "type": "s5satellite",
+            "time": 23.966666666666587,
+            "kind": "missile",
+            "angle": 2.154245235885791
+          },
+          {
+            "event": "missile",
+            "stage": 5,
+            "type": "s5satellite",
+            "time": 23.966666666666587,
+            "count": 3,
+            "angle": 2.154245235885791
+          },
+          {
+            "event": "missile",
+            "stage": 5,
+            "type": "s5satellite",
+            "time": 24.3499999999999,
+            "count": 3,
+            "angle": 2.154245235885791
+          },
+          {
+            "event": "end",
+            "stage": 5,
+            "type": "s5satellite",
+            "time": 25.683333333333156,
+            "reason": "recovered"
+          },
+          {
+            "event": "start",
+            "stage": 5,
+            "type": "s5frigate",
+            "time": 28.93333333333297,
+            "kind": "sweep",
+            "warning": 1.12,
+            "gapRadians": 1.38
+          }
+        ],
+        "finite": true,
+        "state": "play",
+        "peakBullets": 33,
+        "meanFrameMs": 2.9522996667785466
+      },
+      {
+        "stage": 5,
+        "difficulty": "furious",
+        "elapsed": 29.999999999999577,
+        "events": [
+          {
+            "event": "start",
+            "stage": 5,
+            "type": "s5frigate",
+            "time": 4.149999999999991,
+            "kind": "sweep",
+            "warning": 0.9,
+            "gapRadians": 1.12
+          },
+          {
+            "event": "release",
+            "stage": 5,
+            "type": "s5frigate",
+            "time": 5.033333333333321,
+            "kind": "sweep",
+            "angle": 1.1804763757387926
+          },
+          {
+            "event": "end",
+            "stage": 5,
+            "type": "s5frigate",
+            "time": 7.849999999999977,
+            "reason": "recovered"
+          },
+          {
+            "event": "start",
+            "stage": 5,
+            "type": "s5gravity",
+            "time": 15.283333333333672,
+            "kind": "ring",
+            "warning": 0.9,
+            "gapRadians": 1.12
+          },
+          {
+            "event": "release",
+            "stage": 5,
+            "type": "s5gravity",
+            "time": 16.16666666666703,
+            "kind": "ring",
+            "angle": 1.825365250349759
+          },
+          {
+            "event": "ring",
+            "stage": 5,
+            "type": "s5gravity",
+            "time": 16.16666666666703,
+            "count": 19,
+            "gap": 1.825365250349759,
+            "gapRadians": 1.12
+          },
+          {
+            "event": "ring",
+            "stage": 5,
+            "type": "s5gravity",
+            "time": 16.55000000000034,
+            "count": 20,
+            "gap": 1.825365250349759,
+            "gapRadians": 1.12
+          },
+          {
+            "event": "ring",
+            "stage": 5,
+            "type": "s5gravity",
+            "time": 16.933333333333653,
+            "count": 19,
+            "gap": 1.825365250349759,
+            "gapRadians": 1.12
+          },
+          {
+            "event": "end",
+            "stage": 5,
+            "type": "s5gravity",
+            "time": 18.083333333333588,
+            "reason": "recovered"
+          },
+          {
+            "event": "start",
+            "stage": 5,
+            "type": "s5satellite",
+            "time": 22.116666666666692,
+            "kind": "missile",
+            "warning": 0.9,
+            "gapRadians": 1.12
+          },
+          {
+            "event": "release",
+            "stage": 5,
+            "type": "s5satellite",
+            "time": 22.999999999999975,
+            "kind": "missile",
+            "angle": 2.2163746075634156
+          },
+          {
+            "event": "missile",
+            "stage": 5,
+            "type": "s5satellite",
+            "time": 22.999999999999975,
+            "count": 5,
+            "angle": 2.2163746075634156
+          },
+          {
+            "event": "missile",
+            "stage": 5,
+            "type": "s5satellite",
+            "time": 23.383333333333287,
+            "count": 5,
+            "angle": 2.2163746075634156
+          },
+          {
+            "event": "missile",
+            "stage": 5,
+            "type": "s5satellite",
+            "time": 23.766666666666598,
+            "count": 5,
+            "angle": 2.2163746075634156
+          },
+          {
+            "event": "end",
+            "stage": 5,
+            "type": "s5satellite",
+            "time": 24.916666666666533,
+            "reason": "recovered"
+          },
+          {
+            "event": "start",
+            "stage": 5,
+            "type": "s5frigate",
+            "time": 27.449999999999722,
+            "kind": "sweep",
+            "warning": 0.9,
+            "gapRadians": 1.12
+          },
+          {
+            "event": "release",
+            "stage": 5,
+            "type": "s5frigate",
+            "time": 28.333333333333005,
+            "kind": "sweep",
+            "angle": 0.9114027740368035
+          }
+        ],
+        "finite": true,
+        "state": "play",
+        "peakBullets": 44,
+        "meanFrameMs": 1.623513944440573
+      },
+      {
+        "stage": 7,
+        "difficulty": "normal",
+        "elapsed": 29.999999999999577,
+        "events": [
+          {
+            "event": "start",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 4.416666666666656,
+            "kind": "rifle",
+            "warning": 1.12,
+            "gapRadians": 1.38
+          },
+          {
+            "event": "release",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 5.533333333333319,
+            "kind": "rifle",
+            "angle": 0.7649429231906933
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 5.533333333333319,
+            "gun": "gun0",
+            "angle": 0.7649429231906933
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 5.6833333333333185,
+            "gun": "gun1",
+            "angle": 1.0869645152927974
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 5.8499999999999845,
+            "gun": "gun0",
+            "angle": 0.7649429231906933
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 6.016666666666651,
+            "gun": "gun1",
+            "angle": 1.0869645152927974
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 6.16666666666665,
+            "gun": "gun0",
+            "angle": 0.7649429231906933
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 6.333333333333316,
+            "gun": "gun1",
+            "angle": 1.0869645152927974
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 6.483333333333316,
+            "gun": "gun0",
+            "angle": 0.7649429231906933
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 6.649999999999982,
+            "gun": "gun1",
+            "angle": 1.0869645152927974
+          },
+          {
+            "event": "end",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 7.98333333333331,
+            "reason": "recovered"
+          },
+          {
+            "event": "start",
+            "stage": 7,
+            "type": "s7skimmer",
+            "time": 14.96666666666699,
+            "kind": "sweep",
+            "warning": 1.12,
+            "gapRadians": 1.38
+          },
+          {
+            "event": "release",
+            "stage": 7,
+            "type": "s7skimmer",
+            "time": 16.0833333333337,
+            "kind": "sweep",
+            "angle": 0.9714710154959352
+          },
+          {
+            "event": "end",
+            "stage": 7,
+            "type": "s7skimmer",
+            "time": 18.783333333333548,
+            "reason": "recovered"
+          },
+          {
+            "event": "start",
+            "stage": 7,
+            "type": "mm1003_impharrow",
+            "time": 21.950000000000035,
+            "kind": "missile",
+            "warning": 1.12,
+            "gapRadians": 1.38
+          },
+          {
+            "event": "release",
+            "stage": 7,
+            "type": "mm1003_impharrow",
+            "time": 23.066666666666638,
+            "kind": "missile",
+            "angle": 1.5707963267948966
+          },
+          {
+            "event": "missile",
+            "stage": 7,
+            "type": "mm1003_impharrow",
+            "time": 23.066666666666638,
+            "count": 3,
+            "angle": 1.5707963267948966
+          },
+          {
+            "event": "missile",
+            "stage": 7,
+            "type": "mm1003_impharrow",
+            "time": 23.44999999999995,
+            "count": 3,
+            "angle": 1.5707963267948966
+          },
+          {
+            "event": "end",
+            "stage": 7,
+            "type": "mm1003_impharrow",
+            "time": 24.783333333333207,
+            "reason": "recovered"
+          },
+          {
+            "event": "start",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 27.916666666666362,
+            "kind": "rifle",
+            "warning": 1.12,
+            "gapRadians": 1.38
+          },
+          {
+            "event": "release",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 29.033333333332966,
+            "kind": "rifle",
+            "angle": 0.9530470608574346
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 29.033333333332966,
+            "gun": "gun0",
+            "angle": 0.9530470608574346
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 29.183333333332957,
+            "gun": "gun1",
+            "angle": 1.3463189599803673
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 29.349999999999614,
+            "gun": "gun0",
+            "angle": 0.9530470608574346
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 29.51666666666627,
+            "gun": "gun1",
+            "angle": 1.3463189599803673
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 29.666666666666263,
+            "gun": "gun0",
+            "angle": 0.9530470608574346
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 29.83333333333292,
+            "gun": "gun1",
+            "angle": 1.3463189599803673
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 29.98333333333291,
+            "gun": "gun0",
+            "angle": 0.9530470608574346
+          }
+        ],
+        "finite": true,
+        "state": "play",
+        "peakBullets": 20,
+        "meanFrameMs": 1.6919818333958068
+      },
+      {
+        "stage": 7,
+        "difficulty": "furious",
+        "elapsed": 29.999999999999577,
+        "events": [
+          {
+            "event": "start",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 4.549999999999989,
+            "kind": "rifle",
+            "warning": 0.9,
+            "gapRadians": 1.12
+          },
+          {
+            "event": "release",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 5.433333333333319,
+            "kind": "rifle",
+            "angle": 0.7668417813860445
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 5.433333333333319,
+            "gun": "gun0",
+            "angle": 0.7668417813860445
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 5.583333333333319,
+            "gun": "gun1",
+            "angle": 1.0881821703794736
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 5.716666666666652,
+            "gun": "gun0",
+            "angle": 0.7668417813860445
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 5.866666666666651,
+            "gun": "gun1",
+            "angle": 1.0881821703794736
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 5.999999999999984,
+            "gun": "gun0",
+            "angle": 0.7668417813860445
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 6.1499999999999835,
+            "gun": "gun1",
+            "angle": 1.0881821703794736
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 6.283333333333316,
+            "gun": "gun0",
+            "angle": 0.7668417813860445
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 6.416666666666649,
+            "gun": "gun1",
+            "angle": 1.0881821703794736
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 6.566666666666649,
+            "gun": "gun0",
+            "angle": 0.7668417813860445
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 6.6999999999999815,
+            "gun": "gun1",
+            "angle": 1.0881821703794736
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 6.849999999999981,
+            "gun": "gun0",
+            "angle": 0.7668417813860445
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 6.983333333333314,
+            "gun": "gun1",
+            "angle": 1.0881821703794736
+          },
+          {
+            "event": "end",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 8.11666666666665,
+            "reason": "recovered"
+          },
+          {
+            "event": "start",
+            "stage": 7,
+            "type": "s7skimmer",
+            "time": 14.583333333333638,
+            "kind": "sweep",
+            "warning": 0.9,
+            "gapRadians": 1.12
+          },
+          {
+            "event": "release",
+            "stage": 7,
+            "type": "s7skimmer",
+            "time": 15.466666666667015,
+            "kind": "sweep",
+            "angle": 1.3929473253311406
+          },
+          {
+            "event": "end",
+            "stage": 7,
+            "type": "s7skimmer",
+            "time": 18.283333333333577,
+            "reason": "recovered"
+          },
+          {
+            "event": "start",
+            "stage": 7,
+            "type": "mm1003_impharrow",
+            "time": 21.93333333333337,
+            "kind": "missile",
+            "warning": 0.9,
+            "gapRadians": 1.12
+          },
+          {
+            "event": "release",
+            "stage": 7,
+            "type": "mm1003_impharrow",
+            "time": 22.816666666666652,
+            "kind": "missile",
+            "angle": 1.5707963267948966
+          },
+          {
+            "event": "missile",
+            "stage": 7,
+            "type": "mm1003_impharrow",
+            "time": 22.816666666666652,
+            "count": 5,
+            "angle": 1.5707963267948966
+          },
+          {
+            "event": "missile",
+            "stage": 7,
+            "type": "mm1003_impharrow",
+            "time": 23.199999999999964,
+            "count": 5,
+            "angle": 1.5707963267948966
+          },
+          {
+            "event": "missile",
+            "stage": 7,
+            "type": "mm1003_impharrow",
+            "time": 23.583333333333275,
+            "count": 5,
+            "angle": 1.5707963267948966
+          },
+          {
+            "event": "end",
+            "stage": 7,
+            "type": "mm1003_impharrow",
+            "time": 24.73333333333321,
+            "reason": "recovered"
+          },
+          {
+            "event": "start",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 26.24999999999979,
+            "kind": "rifle",
+            "warning": 0.9,
+            "gapRadians": 1.12
+          },
+          {
+            "event": "release",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 27.133333333333074,
+            "kind": "rifle",
+            "angle": 0.9036320707741996
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 27.133333333333074,
+            "gun": "gun0",
+            "angle": 0.9036320707741996
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 27.283333333333065,
+            "gun": "gun1",
+            "angle": 1.3332503663401518
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 27.41666666666639,
+            "gun": "gun0",
+            "angle": 0.9036320707741996
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 27.566666666666382,
+            "gun": "gun1",
+            "angle": 1.3332503663401518
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 27.699999999999708,
+            "gun": "gun0",
+            "angle": 0.9036320707741996
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 27.8499999999997,
+            "gun": "gun1",
+            "angle": 1.3332503663401518
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 27.983333333333025,
+            "gun": "gun0",
+            "angle": 0.9036320707741996
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 28.11666666666635,
+            "gun": "gun1",
+            "angle": 1.3332503663401518
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 28.266666666666342,
+            "gun": "gun0",
+            "angle": 0.9036320707741996
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 28.399999999999668,
+            "gun": "gun1",
+            "angle": 1.3332503663401518
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 28.54999999999966,
+            "gun": "gun0",
+            "angle": 0.9036320707741996
+          },
+          {
+            "event": "rifle",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 28.683333333332985,
+            "gun": "gun1",
+            "angle": 1.3332503663401518
+          },
+          {
+            "event": "end",
+            "stage": 7,
+            "type": "mm1003_riflelocust",
+            "time": 29.816666666666254,
+            "reason": "recovered"
+          }
+        ],
+        "finite": true,
+        "state": "play",
+        "peakBullets": 20,
+        "meanFrameMs": 1.7002453333245486
+      },
+      {
+        "stage": 8,
+        "difficulty": "normal",
+        "elapsed": 29.999999999999577,
+        "events": [
+          {
+            "event": "start",
+            "stage": 8,
+            "type": "mm1003_hexpyre",
+            "time": 25.133333333333187,
+            "kind": "ring",
+            "warning": 1.12,
+            "gapRadians": 1.38
+          },
+          {
+            "event": "release",
+            "stage": 8,
+            "type": "mm1003_hexpyre",
+            "time": 26.24999999999979,
+            "kind": "ring",
+            "angle": 0.8948763182142578
+          },
+          {
+            "event": "ring",
+            "stage": 8,
+            "type": "mm1003_hexpyre",
+            "time": 26.24999999999979,
+            "count": 12,
+            "gap": 0.8948763182142578,
+            "gapRadians": 1.38
+          },
+          {
+            "event": "ring",
+            "stage": 8,
+            "type": "mm1003_hexpyre",
+            "time": 26.633333333333102,
+            "count": 13,
+            "gap": 0.8948763182142578,
+            "gapRadians": 1.38
+          },
+          {
+            "event": "end",
+            "stage": 8,
+            "type": "mm1003_hexpyre",
+            "time": 27.96666666666636,
+            "reason": "recovered"
+          }
+        ],
+        "finite": true,
+        "state": "play",
+        "peakBullets": 45,
+        "meanFrameMs": 1.1184505555300146
+      },
+      {
+        "stage": 8,
+        "difficulty": "furious",
+        "elapsed": 29.999999999999577,
+        "events": [
+          {
+            "event": "start",
+            "stage": 8,
+            "type": "mm1003_hexpyre",
+            "time": 7.683333333333311,
+            "kind": "ring",
+            "warning": 0.9,
+            "gapRadians": 1.12
+          },
+          {
+            "event": "release",
+            "stage": 8,
+            "type": "mm1003_hexpyre",
+            "time": 8.566666666666672,
+            "kind": "ring",
+            "angle": 0.8908173734273513
+          },
+          {
+            "event": "ring",
+            "stage": 8,
+            "type": "mm1003_hexpyre",
+            "time": 8.566666666666672,
+            "count": 20,
+            "gap": 0.8908173734273513,
+            "gapRadians": 1.12
+          },
+          {
+            "event": "ring",
+            "stage": 8,
+            "type": "mm1003_hexpyre",
+            "time": 8.950000000000024,
+            "count": 19,
+            "gap": 0.8908173734273513,
+            "gapRadians": 1.12
+          },
+          {
+            "event": "ring",
+            "stage": 8,
+            "type": "mm1003_hexpyre",
+            "time": 9.333333333333377,
+            "count": 20,
+            "gap": 0.8908173734273513,
+            "gapRadians": 1.12
+          },
+          {
+            "event": "end",
+            "stage": 8,
+            "type": "mm1003_hexpyre",
+            "time": 10.483333333333434,
+            "reason": "recovered"
+          },
+          {
+            "event": "start",
+            "stage": 8,
+            "type": "mm1003_hexpyre",
+            "time": 19.450000000000177,
+            "kind": "ring",
+            "warning": 0.9,
+            "gapRadians": 1.12
+          },
+          {
+            "event": "release",
+            "stage": 8,
+            "type": "mm1003_hexpyre",
+            "time": 20.33333333333346,
+            "kind": "ring",
+            "angle": 0.7036213627536626
+          },
+          {
+            "event": "ring",
+            "stage": 8,
+            "type": "mm1003_hexpyre",
+            "time": 20.33333333333346,
+            "count": 20,
+            "gap": 0.7036213627536626,
+            "gapRadians": 1.12
+          },
+          {
+            "event": "ring",
+            "stage": 8,
+            "type": "mm1003_hexpyre",
+            "time": 20.71666666666677,
+            "count": 20,
+            "gap": 0.7036213627536626,
+            "gapRadians": 1.12
+          },
+          {
+            "event": "ring",
+            "stage": 8,
+            "type": "mm1003_hexpyre",
+            "time": 21.100000000000083,
+            "count": 20,
+            "gap": 0.7036213627536626,
+            "gapRadians": 1.12
+          },
+          {
+            "event": "end",
+            "stage": 8,
+            "type": "mm1003_hexpyre",
+            "time": 22.250000000000018,
+            "reason": "recovered"
+          }
+        ],
+        "finite": true,
+        "state": "play",
+        "peakBullets": 82,
+        "meanFrameMs": 2.0300598888166457
+      },
+      {
+        "stage": 9,
+        "difficulty": "normal",
+        "elapsed": 29.999999999999577,
+        "events": [
+          {
+            "event": "start",
+            "stage": 9,
+            "type": "s9beacon",
+            "time": 6.583333333333315,
+            "kind": "shards",
+            "warning": 1.12,
+            "gapRadians": 1.38
+          },
+          {
+            "event": "release",
+            "stage": 9,
+            "type": "s9beacon",
+            "time": 7.699999999999978,
+            "kind": "shards",
+            "angle": 1.5707963267948961
+          },
+          {
+            "event": "shards",
+            "stage": 9,
+            "type": "s9beacon",
+            "time": 7.699999999999978,
+            "count": 13,
+            "gap": 1.5707963267948961,
+            "gapRadians": 1.38
+          },
+          {
+            "event": "shards",
+            "stage": 9,
+            "type": "s9beacon",
+            "time": 8.083333333333314,
+            "count": 12,
+            "gap": 1.5707963267948961,
+            "gapRadians": 1.38
+          },
+          {
+            "event": "end",
+            "stage": 9,
+            "type": "s9beacon",
+            "time": 9.416666666666714,
+            "reason": "recovered"
+          },
+          {
+            "event": "start",
+            "stage": 9,
+            "type": "s9ring",
+            "time": 11.316666666666809,
+            "kind": "ring",
+            "warning": 1.12,
+            "gapRadians": 1.38
+          },
+          {
+            "event": "release",
+            "stage": 9,
+            "type": "s9ring",
+            "time": 12.43333333333353,
+            "kind": "ring",
+            "angle": 2.074598692170806
+          },
+          {
+            "event": "ring",
+            "stage": 9,
+            "type": "s9ring",
+            "time": 12.43333333333353,
+            "count": 12,
+            "gap": 2.074598692170806,
+            "gapRadians": 1.38
+          },
+          {
+            "event": "ring",
+            "stage": 9,
+            "type": "s9ring",
+            "time": 12.816666666666883,
+            "count": 13,
+            "gap": 2.074598692170806,
+            "gapRadians": 1.38
+          },
+          {
+            "event": "end",
+            "stage": 9,
+            "type": "s9ring",
+            "time": 14.150000000000283,
+            "reason": "recovered"
+          },
+          {
+            "event": "start",
+            "stage": 9,
+            "type": "s9ring",
+            "time": 17.733333333333608,
+            "kind": "ring",
+            "warning": 1.12,
+            "gapRadians": 1.38
+          },
+          {
+            "event": "release",
+            "stage": 9,
+            "type": "s9ring",
+            "time": 18.85000000000021,
+            "kind": "ring",
+            "angle": 1.0926545398511842
+          },
+          {
+            "event": "ring",
+            "stage": 9,
+            "type": "s9ring",
+            "time": 18.85000000000021,
+            "count": 13,
+            "gap": 1.0926545398511842,
+            "gapRadians": 1.38
+          },
+          {
+            "event": "ring",
+            "stage": 9,
+            "type": "s9ring",
+            "time": 19.233333333333523,
+            "count": 12,
+            "gap": 1.0926545398511842,
+            "gapRadians": 1.38
+          },
+          {
+            "event": "end",
+            "stage": 9,
+            "type": "s9ring",
+            "time": 20.56666666666678,
+            "reason": "recovered"
+          },
+          {
+            "event": "start",
+            "stage": 9,
+            "type": "s9ring",
+            "time": 25.849999999999813,
+            "kind": "ring",
+            "warning": 1.12,
+            "gapRadians": 1.38
+          },
+          {
+            "event": "release",
+            "stage": 9,
+            "type": "s9ring",
+            "time": 26.966666666666416,
+            "kind": "ring",
+            "angle": 2.1783263261006742
+          },
+          {
+            "event": "ring",
+            "stage": 9,
+            "type": "s9ring",
+            "time": 26.966666666666416,
+            "count": 12,
+            "gap": 2.1783263261006742,
+            "gapRadians": 1.38
+          },
+          {
+            "event": "ring",
+            "stage": 9,
+            "type": "s9ring",
+            "time": 27.349999999999728,
+            "count": 13,
+            "gap": 2.1783263261006742,
+            "gapRadians": 1.38
+          },
+          {
+            "event": "end",
+            "stage": 9,
+            "type": "s9ring",
+            "time": 28.683333333332985,
+            "reason": "recovered"
+          }
+        ],
+        "finite": true,
+        "state": "play",
+        "peakBullets": 35,
+        "meanFrameMs": 1.690273888848929
+      },
+      {
+        "stage": 9,
+        "difficulty": "furious",
+        "elapsed": 29.999999999999577,
+        "events": [
+          {
+            "event": "start",
+            "stage": 9,
+            "type": "s9beacon",
+            "time": 6.433333333333316,
+            "kind": "shards",
+            "warning": 0.9,
+            "gapRadians": 1.12
+          },
+          {
+            "event": "release",
+            "stage": 9,
+            "type": "s9beacon",
+            "time": 7.316666666666646,
+            "kind": "shards",
+            "angle": 1.570796326794896
+          },
+          {
+            "event": "shards",
+            "stage": 9,
+            "type": "s9beacon",
+            "time": 7.316666666666646,
+            "count": 19,
+            "gap": 1.570796326794896,
+            "gapRadians": 1.12
+          },
+          {
+            "event": "shards",
+            "stage": 9,
+            "type": "s9beacon",
+            "time": 7.699999999999978,
+            "count": 20,
+            "gap": 1.570796326794896,
+            "gapRadians": 1.12
+          },
+          {
+            "event": "shards",
+            "stage": 9,
+            "type": "s9beacon",
+            "time": 8.083333333333314,
+            "count": 19,
+            "gap": 1.570796326794896,
+            "gapRadians": 1.12
+          },
+          {
+            "event": "end",
+            "stage": 9,
+            "type": "s9beacon",
+            "time": 9.233333333333372,
+            "reason": "recovered"
+          },
+          {
+            "event": "start",
+            "stage": 9,
+            "type": "s9ring",
+            "time": 10.733333333333446,
+            "kind": "ring",
+            "warning": 0.9,
+            "gapRadians": 1.12
+          },
+          {
+            "event": "release",
+            "stage": 9,
+            "type": "s9ring",
+            "time": 11.616666666666823,
+            "kind": "ring",
+            "angle": 2.1323585674877377
+          },
+          {
+            "event": "ring",
+            "stage": 9,
+            "type": "s9ring",
+            "time": 11.616666666666823,
+            "count": 20,
+            "gap": 2.1323585674877377,
+            "gapRadians": 1.12
+          },
+          {
+            "event": "ring",
+            "stage": 9,
+            "type": "s9ring",
+            "time": 12.000000000000176,
+            "count": 20,
+            "gap": 2.1323585674877377,
+            "gapRadians": 1.12
+          },
+          {
+            "event": "ring",
+            "stage": 9,
+            "type": "s9ring",
+            "time": 12.383333333333528,
+            "count": 20,
+            "gap": 2.1323585674877377,
+            "gapRadians": 1.12
+          },
+          {
+            "event": "end",
+            "stage": 9,
+            "type": "s9ring",
+            "time": 13.533333333333585,
+            "reason": "recovered"
+          },
+          {
+            "event": "start",
+            "stage": 9,
+            "type": "s9ring",
+            "time": 15.50000000000035,
+            "kind": "ring",
+            "warning": 0.9,
+            "gapRadians": 1.12
+          },
+          {
+            "event": "release",
+            "stage": 9,
+            "type": "s9ring",
+            "time": 16.383333333333685,
+            "kind": "ring",
+            "angle": 1.1988803338864513
+          },
+          {
+            "event": "ring",
+            "stage": 9,
+            "type": "s9ring",
+            "time": 16.383333333333685,
+            "count": 20,
+            "gap": 1.1988803338864513,
+            "gapRadians": 1.12
+          },
+          {
+            "event": "ring",
+            "stage": 9,
+            "type": "s9ring",
+            "time": 16.766666666666996,
+            "count": 19,
+            "gap": 1.1988803338864513,
+            "gapRadians": 1.12
+          },
+          {
+            "event": "ring",
+            "stage": 9,
+            "type": "s9ring",
+            "time": 17.150000000000308,
+            "count": 20,
+            "gap": 1.1988803338864513,
+            "gapRadians": 1.12
+          },
+          {
+            "event": "end",
+            "stage": 9,
+            "type": "s9ring",
+            "time": 18.300000000000242,
+            "reason": "recovered"
+          },
+          {
+            "event": "start",
+            "stage": 9,
+            "type": "s9gunship",
+            "time": 20.53333333333345,
+            "kind": "sweep",
+            "warning": 0.9,
+            "gapRadians": 1.12
+          },
+          {
+            "event": "release",
+            "stage": 9,
+            "type": "s9gunship",
+            "time": 21.416666666666732,
+            "kind": "sweep",
+            "angle": 1.972162270840964
+          },
+          {
+            "event": "end",
+            "stage": 9,
+            "type": "s9gunship",
+            "time": 24.23333333333324,
+            "reason": "recovered"
+          },
+          {
+            "event": "start",
+            "stage": 9,
+            "type": "s9beacon",
+            "time": 25.74999999999982,
+            "kind": "shards",
+            "warning": 0.9,
+            "gapRadians": 1.12
+          },
+          {
+            "event": "release",
+            "stage": 9,
+            "type": "s9beacon",
+            "time": 26.633333333333102,
+            "kind": "shards",
+            "angle": 1.219297607697687
+          },
+          {
+            "event": "shards",
+            "stage": 9,
+            "type": "s9beacon",
+            "time": 26.633333333333102,
+            "count": 20,
+            "gap": 1.219297607697687,
+            "gapRadians": 1.12
+          },
+          {
+            "event": "shards",
+            "stage": 9,
+            "type": "s9beacon",
+            "time": 27.016666666666413,
+            "count": 20,
+            "gap": 1.219297607697687,
+            "gapRadians": 1.12
+          },
+          {
+            "event": "shards",
+            "stage": 9,
+            "type": "s9beacon",
+            "time": 27.399999999999725,
+            "count": 20,
+            "gap": 1.219297607697687,
+            "gapRadians": 1.12
+          },
+          {
+            "event": "end",
+            "stage": 9,
+            "type": "s9beacon",
+            "time": 28.54999999999966,
+            "reason": "recovered"
+          }
+        ],
+        "finite": true,
+        "state": "play",
+        "peakBullets": 54,
+        "meanFrameMs": 1.4797449999928682
+      }
+    ],
+    "checks": {
+      "armed": true,
+      "destroyedEmitterSilent": true,
+      "cancelled": true,
+      "shootsRestored": true,
+      "recovered": true,
+      "nativeResumed": true,
+      "p2HitOnly": true,
+      "invulnRespected": true,
+      "seatRestored": true,
+      "transitionSilent": true
+    },
+    "errors": []
+  },
+  "isolatedEscapes": {
+    "escapes": [
+      {
+        "alive": true,
+        "lives": 3,
+        "shield": 0,
+        "released": true,
+        "x": 59.20000000000046,
+        "y": 427.79999999999995,
+        "browser": "msedge",
+        "difficulty": "easy",
+        "pattern": "sweep"
+      },
+      {
+        "alive": true,
+        "lives": 3,
+        "shield": 0,
+        "released": true,
+        "x": 59.20000000000046,
+        "y": 427.79999999999995,
+        "browser": "msedge",
+        "difficulty": "easy",
+        "pattern": "charge"
+      },
+      {
+        "alive": true,
+        "lives": 3,
+        "shield": 0,
+        "released": true,
+        "x": 340,
+        "y": 427.79999999999995,
+        "browser": "msedge",
+        "difficulty": "easy",
+        "pattern": "ring"
+      },
+      {
+        "alive": true,
+        "lives": 3,
+        "shield": 0,
+        "released": true,
+        "x": 59.20000000000046,
+        "y": 427.79999999999995,
+        "browser": "msedge",
+        "difficulty": "easy",
+        "pattern": "missile"
+      },
+      {
+        "alive": true,
+        "lives": 3,
+        "shield": 0,
+        "released": true,
+        "x": 59.20000000000046,
+        "y": 427.79999999999995,
+        "browser": "msedge",
+        "difficulty": "normal",
+        "pattern": "sweep"
+      },
+      {
+        "alive": true,
+        "lives": 3,
+        "shield": 0,
+        "released": true,
+        "x": 59.20000000000046,
+        "y": 427.79999999999995,
+        "browser": "msedge",
+        "difficulty": "normal",
+        "pattern": "charge"
+      },
+      {
+        "alive": true,
+        "lives": 3,
+        "shield": 0,
+        "released": true,
+        "x": 340,
+        "y": 427.79999999999995,
+        "browser": "msedge",
+        "difficulty": "normal",
+        "pattern": "ring"
+      },
+      {
+        "alive": true,
+        "lives": 3,
+        "shield": 0,
+        "released": true,
+        "x": 59.20000000000046,
+        "y": 427.79999999999995,
+        "browser": "msedge",
+        "difficulty": "normal",
+        "pattern": "missile"
+      },
+      {
+        "alive": true,
+        "lives": 3,
+        "shield": 0,
+        "released": true,
+        "x": 59.20000000000046,
+        "y": 427.79999999999995,
+        "browser": "msedge",
+        "difficulty": "hard",
+        "pattern": "sweep"
+      },
+      {
+        "alive": true,
+        "lives": 3,
+        "shield": 0,
+        "released": true,
+        "x": 59.20000000000046,
+        "y": 427.79999999999995,
+        "browser": "msedge",
+        "difficulty": "hard",
+        "pattern": "charge"
+      },
+      {
+        "alive": true,
+        "lives": 3,
+        "shield": 0,
+        "released": true,
+        "x": 340,
+        "y": 427.79999999999995,
+        "browser": "msedge",
+        "difficulty": "hard",
+        "pattern": "ring"
+      },
+      {
+        "alive": true,
+        "lives": 3,
+        "shield": 0,
+        "released": true,
+        "x": 59.20000000000046,
+        "y": 427.79999999999995,
+        "browser": "msedge",
+        "difficulty": "hard",
+        "pattern": "missile"
+      },
+      {
+        "alive": true,
+        "lives": 3,
+        "shield": 0,
+        "released": true,
+        "x": 59.20000000000046,
+        "y": 427.79999999999995,
+        "browser": "msedge",
+        "difficulty": "furious",
+        "pattern": "sweep"
+      },
+      {
+        "alive": true,
+        "lives": 3,
+        "shield": 0,
+        "released": true,
+        "x": 59.20000000000046,
+        "y": 427.79999999999995,
+        "browser": "msedge",
+        "difficulty": "furious",
+        "pattern": "charge"
+      },
+      {
+        "alive": true,
+        "lives": 3,
+        "shield": 0,
+        "released": true,
+        "x": 340,
+        "y": 427.79999999999995,
+        "browser": "msedge",
+        "difficulty": "furious",
+        "pattern": "ring"
+      },
+      {
+        "alive": true,
+        "lives": 3,
+        "shield": 0,
+        "released": true,
+        "x": 59.20000000000046,
+        "y": 427.79999999999995,
+        "browser": "msedge",
+        "difficulty": "furious",
+        "pattern": "missile"
+      },
+      {
+        "alive": true,
+        "lives": 3,
+        "shield": 0,
+        "released": true,
+        "x": 59.20000000000046,
+        "y": 427.79999999999995,
+        "browser": "chrome",
+        "difficulty": "furious",
+        "pattern": "sweep"
+      },
+      {
+        "alive": true,
+        "lives": 3,
+        "shield": 0,
+        "released": true,
+        "x": 59.20000000000046,
+        "y": 427.79999999999995,
+        "browser": "chrome",
+        "difficulty": "furious",
+        "pattern": "charge"
+      },
+      {
+        "alive": true,
+        "lives": 3,
+        "shield": 0,
+        "released": true,
+        "x": 340,
+        "y": 427.79999999999995,
+        "browser": "chrome",
+        "difficulty": "furious",
+        "pattern": "ring"
+      },
+      {
+        "alive": true,
+        "lives": 3,
+        "shield": 0,
+        "released": true,
+        "x": 59.20000000000046,
+        "y": 427.79999999999995,
+        "browser": "chrome",
+        "difficulty": "furious",
+        "pattern": "missile"
+      },
+      {
+        "alive": true,
+        "lives": 3,
+        "shield": 0,
+        "released": true,
+        "x": 59.20000000000046,
+        "y": 427.79999999999995,
+        "browser": "firefox",
+        "difficulty": "furious",
+        "pattern": "sweep"
+      },
+      {
+        "alive": true,
+        "lives": 3,
+        "shield": 0,
+        "released": true,
+        "x": 59.20000000000046,
+        "y": 427.79999999999995,
+        "browser": "firefox",
+        "difficulty": "furious",
+        "pattern": "charge"
+      },
+      {
+        "alive": true,
+        "lives": 3,
+        "shield": 0,
+        "released": true,
+        "x": 340,
+        "y": 427.79999999999995,
+        "browser": "firefox",
+        "difficulty": "furious",
+        "pattern": "ring"
+      },
+      {
+        "alive": true,
+        "lives": 3,
+        "shield": 0,
+        "released": true,
+        "x": 59.20000000000046,
+        "y": 427.79999999999995,
+        "browser": "firefox",
+        "difficulty": "furious",
+        "pattern": "missile"
+      }
+    ],
+    "shieldStun": [
+      {
+        "wouldHit": true,
+        "harmless": true,
+        "immediateNoHit": true,
+        "globalCancelled": true,
+        "stillNoHit": true,
+        "cannotRestart": true,
+        "browser": "msedge"
+      },
+      {
+        "wouldHit": true,
+        "harmless": true,
+        "immediateNoHit": true,
+        "globalCancelled": true,
+        "stillNoHit": true,
+        "cannotRestart": true,
+        "browser": "chrome"
+      },
+      {
+        "wouldHit": true,
+        "harmless": true,
+        "immediateNoHit": true,
+        "globalCancelled": true,
+        "stillNoHit": true,
+        "cannotRestart": true,
+        "browser": "firefox"
+      }
+    ],
+    "errors": []
+  },
+  "survivingCoop": {
+    "checks": {
+      "p1Dead": true,
+      "p2Alive": true,
+      "eligible": true,
+      "started": true,
+      "continued": true,
+      "allDeadCancels": true,
+      "seatRestored": true
+    },
+    "errors": []
+  },
+  "summary": {
+    "stageTypeSlots": 19,
+    "distinctEnemyTypes": 18,
+    "difficultyFixtures": 16,
+    "scheduledWaveScenarios": 8,
+    "unshieldedEscapeFixtures": 24,
+    "browsers": [
+      "Edge",
+      "Chrome",
+      "Firefox"
+    ],
+    "newRuntimeBytes": 14737,
+    "newRasterBytes": 0,
+    "scope": "Isolated attack escape tests are not population survival rates or full-campaign safety guarantees."
+  },
+  "weaponIdentityCorrection": {
+    "supersedes": "Rifle Locust charge and Beacon missile fixture results; six attack roles now exist",
+    "qa": "enemy_weapon_identity_1013.json",
+    "nativePatternRuns": 12,
+    "nativeControllerRuns": 6,
+    "interruptionChecks": 15,
+    "unshieldedBaseSpeedEscapes": 8,
+    "browsers": [
+      "Edge",
+      "Chrome",
+      "Firefox"
+    ],
+    "newRasterBytes": 0,
+    "errors": [],
+    "currentGeneralProbes": "Re-ran updated 16 difficulty fixtures, 19 ownership slots, eight 30-second scheduled-wave scenarios and native recovery/co-op checks successfully"
+  }
+}

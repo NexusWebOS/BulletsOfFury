@@ -23,8 +23,23 @@ rs1004DemoTick=function(R,I,dt){const before=new Set(I.showcase?.fx||[]),r=AP10_
  for(const f of S?.fx||[])if(!before.has(f)&&(f.kind==='ball'||f.kind==='slug')){f.vx=0;f.vy=f.kind==='ball'?690:660;}
  if(q&&D.kind==='turbo'&&D.released){const warm=Math.max(1.25,I.rows[I.i].text.length/32+.12),t=D.t-warm;
   if(!D.ap10Snap){D.ap10Snap=true;S.fx.push({kind:'ap10-turbo-snap',x:D.ox,y:D.oy,t:0,life:.20});}
-  if(t>=1.25){const x=camRightX()+90,y=PLAY.y+110,d=Math.hypot(D.ox-x,D.oy-y),u=clamp((t-1.25)*1250/Math.max(1,d),0,1);
-   q.x=lerp(x,D.ox,u);q.y=lerp(y,D.oy,u);q.rfHeading=u<1?Math.atan2(D.oy-y,D.ox-x):null;}
+  if(!D.ap10Path){const left=camLeftX()-110,right=camRightX()+110,top=PLAY.y-110;
+   D.ap10Path=[{x:D.ox,y:D.oy},{x:right,y:D.oy-Math.tan(.42)*(right-D.ox)},
+    {x:right,y:top},{x:left,y:top},{x:left,y:PLAY.y+110},{x:right,y:PLAY.y+110},
+    {x:right,y:top},{x:D.ox,y:top},{x:D.ox,y:D.oy}];
+   D.ap10Length=D.ap10Path.slice(1).reduce((sum,p,i)=>sum+Math.hypot(p.x-D.ap10Path[i].x,p.y-D.ap10Path[i].y),0);
+  }
+  // Complete the exhibition before the final radio line releases combat. Every
+  // segment is physical; repositioning stays beyond the visible screen edges.
+  let travel=Math.max(0,t)*Math.max(1250,D.ap10Length/2.4),moving=false;
+  for(let i=1;i<D.ap10Path.length;i++){const a=D.ap10Path[i-1],b=D.ap10Path[i],d=Math.hypot(b.x-a.x,b.y-a.y);
+   if(travel<d){const u=travel/Math.max(1,d);q.x=lerp(a.x,b.x,u);q.y=lerp(a.y,b.y,u);q.rfHeading=Math.atan2(b.y-a.y,b.x-a.x);moving=true;break;}travel-=d;
+  }
+  if(!moving){q.x=D.ox;q.y=D.oy;q.rfHeading=null;}
+  // The underlying demonstration used to append a wake before this override
+  // moved the ship elsewhere. Keep the effect attached to the final live pose.
+  S.fx=S.fx.filter(f=>before.has(f)||f.kind!=='dash');
+  if(moving)S.fx.push({kind:'dash',x:q.x,y:q.y,t:0,life:.16,w:120,h:32,a:q.rfHeading});
  }return r;};
 furyPartPose=function(){const p=AP10_EXTRA.part.apply(this,arguments);if(p)p.rotation=0;return p;};
 furyShipDrawPhase=function(G,x,y,size,planeH,pilot){

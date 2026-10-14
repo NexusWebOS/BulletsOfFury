@@ -1,0 +1,3517 @@
+{
+  "scope": "Stage 1/2 CP12 scale-in ambushes, same-family health, native arrival/volleys and destroyed-owner cancellation",
+  "browser": "Microsoft Edge (real Chromium, native index.html and shoot.py deterministic loop)",
+  "summary": {
+    "checks": 202,
+    "passed": 202,
+    "fixtures": 48,
+    "interruptions": 32
+  },
+  "checks": [
+    {
+      "name": "stage1-easy-solo-side0 family HP",
+      "passed": true
+    },
+    {
+      "name": "stage1-easy-solo-side0 native frame batches completed",
+      "passed": true
+    },
+    {
+      "name": "stage1-easy-solo-side0 depth settles at normal scale",
+      "passed": true
+    },
+    {
+      "name": "stage1-easy-solo-side0 visible before launch",
+      "passed": true
+    },
+    {
+      "name": "stage1-easy-solo-side0 native rendered",
+      "passed": true
+    },
+    {
+      "name": "stage1-easy-solo-side0 full missile volleys",
+      "passed": true
+    },
+    {
+      "name": "stage1-easy-solo-side1 family HP",
+      "passed": true
+    },
+    {
+      "name": "stage1-easy-solo-side1 native frame batches completed",
+      "passed": true
+    },
+    {
+      "name": "stage1-easy-solo-side1 depth settles at normal scale",
+      "passed": true
+    },
+    {
+      "name": "stage1-easy-solo-side1 visible before launch",
+      "passed": true
+    },
+    {
+      "name": "stage1-easy-solo-side1 native rendered",
+      "passed": true
+    },
+    {
+      "name": "stage1-easy-solo-side1 full missile volleys",
+      "passed": true
+    },
+    {
+      "name": "stage1-easy-solo-side2 family HP",
+      "passed": true
+    },
+    {
+      "name": "stage1-easy-solo-side2 native frame batches completed",
+      "passed": true
+    },
+    {
+      "name": "stage1-easy-solo-side2 depth settles at normal scale",
+      "passed": true
+    },
+    {
+      "name": "stage1-easy-solo-side2 visible before launch",
+      "passed": true
+    },
+    {
+      "name": "stage1-easy-solo-side2 native rendered",
+      "passed": true
+    },
+    {
+      "name": "stage1-easy-solo-side2 full missile volleys",
+      "passed": true
+    },
+    {
+      "name": "stage1-easy-coop-side0 family HP",
+      "passed": true
+    },
+    {
+      "name": "stage1-easy-coop-side1 family HP",
+      "passed": true
+    },
+    {
+      "name": "stage1-easy-coop-side2 family HP",
+      "passed": true
+    },
+    {
+      "name": "1-easy-dead-before no ghost volley",
+      "passed": true
+    },
+    {
+      "name": "1-easy-dying-before no ghost volley",
+      "passed": true
+    },
+    {
+      "name": "1-easy-dead-after no ghost volley",
+      "passed": true
+    },
+    {
+      "name": "1-easy-dying-after no ghost volley",
+      "passed": true
+    },
+    {
+      "name": "stage1-normal-solo-side0 family HP",
+      "passed": true
+    },
+    {
+      "name": "stage1-normal-solo-side0 native frame batches completed",
+      "passed": true
+    },
+    {
+      "name": "stage1-normal-solo-side0 depth settles at normal scale",
+      "passed": true
+    },
+    {
+      "name": "stage1-normal-solo-side0 visible before launch",
+      "passed": true
+    },
+    {
+      "name": "stage1-normal-solo-side0 native rendered",
+      "passed": true
+    },
+    {
+      "name": "stage1-normal-solo-side0 full missile volleys",
+      "passed": true
+    },
+    {
+      "name": "stage1-normal-solo-side1 family HP",
+      "passed": true
+    },
+    {
+      "name": "stage1-normal-solo-side1 native frame batches completed",
+      "passed": true
+    },
+    {
+      "name": "stage1-normal-solo-side1 depth settles at normal scale",
+      "passed": true
+    },
+    {
+      "name": "stage1-normal-solo-side1 visible before launch",
+      "passed": true
+    },
+    {
+      "name": "stage1-normal-solo-side1 native rendered",
+      "passed": true
+    },
+    {
+      "name": "stage1-normal-solo-side1 full missile volleys",
+      "passed": true
+    },
+    {
+      "name": "stage1-normal-solo-side2 family HP",
+      "passed": true
+    },
+    {
+      "name": "stage1-normal-solo-side2 native frame batches completed",
+      "passed": true
+    },
+    {
+      "name": "stage1-normal-solo-side2 depth settles at normal scale",
+      "passed": true
+    },
+    {
+      "name": "stage1-normal-solo-side2 visible before launch",
+      "passed": true
+    },
+    {
+      "name": "stage1-normal-solo-side2 native rendered",
+      "passed": true
+    },
+    {
+      "name": "stage1-normal-solo-side2 full missile volleys",
+      "passed": true
+    },
+    {
+      "name": "stage1-normal-coop-side0 family HP",
+      "passed": true
+    },
+    {
+      "name": "stage1-normal-coop-side1 family HP",
+      "passed": true
+    },
+    {
+      "name": "stage1-normal-coop-side2 family HP",
+      "passed": true
+    },
+    {
+      "name": "1-normal-dead-before no ghost volley",
+      "passed": true
+    },
+    {
+      "name": "1-normal-dying-before no ghost volley",
+      "passed": true
+    },
+    {
+      "name": "1-normal-dead-after no ghost volley",
+      "passed": true
+    },
+    {
+      "name": "1-normal-dying-after no ghost volley",
+      "passed": true
+    },
+    {
+      "name": "stage1-hard-solo-side0 family HP",
+      "passed": true
+    },
+    {
+      "name": "stage1-hard-solo-side0 native frame batches completed",
+      "passed": true
+    },
+    {
+      "name": "stage1-hard-solo-side0 depth settles at normal scale",
+      "passed": true
+    },
+    {
+      "name": "stage1-hard-solo-side0 visible before launch",
+      "passed": true
+    },
+    {
+      "name": "stage1-hard-solo-side0 native rendered",
+      "passed": true
+    },
+    {
+      "name": "stage1-hard-solo-side0 full missile volleys",
+      "passed": true
+    },
+    {
+      "name": "stage1-hard-solo-side1 family HP",
+      "passed": true
+    },
+    {
+      "name": "stage1-hard-solo-side1 native frame batches completed",
+      "passed": true
+    },
+    {
+      "name": "stage1-hard-solo-side1 depth settles at normal scale",
+      "passed": true
+    },
+    {
+      "name": "stage1-hard-solo-side1 visible before launch",
+      "passed": true
+    },
+    {
+      "name": "stage1-hard-solo-side1 native rendered",
+      "passed": true
+    },
+    {
+      "name": "stage1-hard-solo-side1 full missile volleys",
+      "passed": true
+    },
+    {
+      "name": "stage1-hard-solo-side2 family HP",
+      "passed": true
+    },
+    {
+      "name": "stage1-hard-solo-side2 native frame batches completed",
+      "passed": true
+    },
+    {
+      "name": "stage1-hard-solo-side2 depth settles at normal scale",
+      "passed": true
+    },
+    {
+      "name": "stage1-hard-solo-side2 visible before launch",
+      "passed": true
+    },
+    {
+      "name": "stage1-hard-solo-side2 native rendered",
+      "passed": true
+    },
+    {
+      "name": "stage1-hard-solo-side2 full missile volleys",
+      "passed": true
+    },
+    {
+      "name": "stage1-hard-coop-side0 family HP",
+      "passed": true
+    },
+    {
+      "name": "stage1-hard-coop-side1 family HP",
+      "passed": true
+    },
+    {
+      "name": "stage1-hard-coop-side2 family HP",
+      "passed": true
+    },
+    {
+      "name": "1-hard-dead-before no ghost volley",
+      "passed": true
+    },
+    {
+      "name": "1-hard-dying-before no ghost volley",
+      "passed": true
+    },
+    {
+      "name": "1-hard-dead-after no ghost volley",
+      "passed": true
+    },
+    {
+      "name": "1-hard-dying-after no ghost volley",
+      "passed": true
+    },
+    {
+      "name": "stage1-furious-solo-side0 family HP",
+      "passed": true
+    },
+    {
+      "name": "stage1-furious-solo-side0 native frame batches completed",
+      "passed": true
+    },
+    {
+      "name": "stage1-furious-solo-side0 depth settles at normal scale",
+      "passed": true
+    },
+    {
+      "name": "stage1-furious-solo-side0 visible before launch",
+      "passed": true
+    },
+    {
+      "name": "stage1-furious-solo-side0 native rendered",
+      "passed": true
+    },
+    {
+      "name": "stage1-furious-solo-side0 full missile volleys",
+      "passed": true
+    },
+    {
+      "name": "stage1-furious-solo-side1 family HP",
+      "passed": true
+    },
+    {
+      "name": "stage1-furious-solo-side1 native frame batches completed",
+      "passed": true
+    },
+    {
+      "name": "stage1-furious-solo-side1 depth settles at normal scale",
+      "passed": true
+    },
+    {
+      "name": "stage1-furious-solo-side1 visible before launch",
+      "passed": true
+    },
+    {
+      "name": "stage1-furious-solo-side1 native rendered",
+      "passed": true
+    },
+    {
+      "name": "stage1-furious-solo-side1 full missile volleys",
+      "passed": true
+    },
+    {
+      "name": "stage1-furious-solo-side2 family HP",
+      "passed": true
+    },
+    {
+      "name": "stage1-furious-solo-side2 native frame batches completed",
+      "passed": true
+    },
+    {
+      "name": "stage1-furious-solo-side2 depth settles at normal scale",
+      "passed": true
+    },
+    {
+      "name": "stage1-furious-solo-side2 visible before launch",
+      "passed": true
+    },
+    {
+      "name": "stage1-furious-solo-side2 native rendered",
+      "passed": true
+    },
+    {
+      "name": "stage1-furious-solo-side2 full missile volleys",
+      "passed": true
+    },
+    {
+      "name": "stage1-furious-coop-side0 family HP",
+      "passed": true
+    },
+    {
+      "name": "stage1-furious-coop-side1 family HP",
+      "passed": true
+    },
+    {
+      "name": "stage1-furious-coop-side2 family HP",
+      "passed": true
+    },
+    {
+      "name": "1-furious-dead-before no ghost volley",
+      "passed": true
+    },
+    {
+      "name": "1-furious-dying-before no ghost volley",
+      "passed": true
+    },
+    {
+      "name": "1-furious-dead-after no ghost volley",
+      "passed": true
+    },
+    {
+      "name": "1-furious-dying-after no ghost volley",
+      "passed": true
+    },
+    {
+      "name": "stage2-easy-solo-side0 family HP",
+      "passed": true
+    },
+    {
+      "name": "stage2-easy-solo-side0 native frame batches completed",
+      "passed": true
+    },
+    {
+      "name": "stage2-easy-solo-side0 depth settles at normal scale",
+      "passed": true
+    },
+    {
+      "name": "stage2-easy-solo-side0 visible before launch",
+      "passed": true
+    },
+    {
+      "name": "stage2-easy-solo-side0 native rendered",
+      "passed": true
+    },
+    {
+      "name": "stage2-easy-solo-side0 full missile volleys",
+      "passed": true
+    },
+    {
+      "name": "stage2-easy-solo-side1 family HP",
+      "passed": true
+    },
+    {
+      "name": "stage2-easy-solo-side1 native frame batches completed",
+      "passed": true
+    },
+    {
+      "name": "stage2-easy-solo-side1 depth settles at normal scale",
+      "passed": true
+    },
+    {
+      "name": "stage2-easy-solo-side1 visible before launch",
+      "passed": true
+    },
+    {
+      "name": "stage2-easy-solo-side1 native rendered",
+      "passed": true
+    },
+    {
+      "name": "stage2-easy-solo-side1 full missile volleys",
+      "passed": true
+    },
+    {
+      "name": "stage2-easy-solo-side2 family HP",
+      "passed": true
+    },
+    {
+      "name": "stage2-easy-solo-side2 native frame batches completed",
+      "passed": true
+    },
+    {
+      "name": "stage2-easy-solo-side2 depth settles at normal scale",
+      "passed": true
+    },
+    {
+      "name": "stage2-easy-solo-side2 visible before launch",
+      "passed": true
+    },
+    {
+      "name": "stage2-easy-solo-side2 native rendered",
+      "passed": true
+    },
+    {
+      "name": "stage2-easy-solo-side2 full missile volleys",
+      "passed": true
+    },
+    {
+      "name": "stage2-easy-coop-side0 family HP",
+      "passed": true
+    },
+    {
+      "name": "stage2-easy-coop-side1 family HP",
+      "passed": true
+    },
+    {
+      "name": "stage2-easy-coop-side2 family HP",
+      "passed": true
+    },
+    {
+      "name": "2-easy-dead-before no ghost volley",
+      "passed": true
+    },
+    {
+      "name": "2-easy-dying-before no ghost volley",
+      "passed": true
+    },
+    {
+      "name": "2-easy-dead-after no ghost volley",
+      "passed": true
+    },
+    {
+      "name": "2-easy-dying-after no ghost volley",
+      "passed": true
+    },
+    {
+      "name": "stage2-normal-solo-side0 family HP",
+      "passed": true
+    },
+    {
+      "name": "stage2-normal-solo-side0 native frame batches completed",
+      "passed": true
+    },
+    {
+      "name": "stage2-normal-solo-side0 depth settles at normal scale",
+      "passed": true
+    },
+    {
+      "name": "stage2-normal-solo-side0 visible before launch",
+      "passed": true
+    },
+    {
+      "name": "stage2-normal-solo-side0 native rendered",
+      "passed": true
+    },
+    {
+      "name": "stage2-normal-solo-side0 full missile volleys",
+      "passed": true
+    },
+    {
+      "name": "stage2-normal-solo-side1 family HP",
+      "passed": true
+    },
+    {
+      "name": "stage2-normal-solo-side1 native frame batches completed",
+      "passed": true
+    },
+    {
+      "name": "stage2-normal-solo-side1 depth settles at normal scale",
+      "passed": true
+    },
+    {
+      "name": "stage2-normal-solo-side1 visible before launch",
+      "passed": true
+    },
+    {
+      "name": "stage2-normal-solo-side1 native rendered",
+      "passed": true
+    },
+    {
+      "name": "stage2-normal-solo-side1 full missile volleys",
+      "passed": true
+    },
+    {
+      "name": "stage2-normal-solo-side2 family HP",
+      "passed": true
+    },
+    {
+      "name": "stage2-normal-solo-side2 native frame batches completed",
+      "passed": true
+    },
+    {
+      "name": "stage2-normal-solo-side2 depth settles at normal scale",
+      "passed": true
+    },
+    {
+      "name": "stage2-normal-solo-side2 visible before launch",
+      "passed": true
+    },
+    {
+      "name": "stage2-normal-solo-side2 native rendered",
+      "passed": true
+    },
+    {
+      "name": "stage2-normal-solo-side2 full missile volleys",
+      "passed": true
+    },
+    {
+      "name": "stage2-normal-coop-side0 family HP",
+      "passed": true
+    },
+    {
+      "name": "stage2-normal-coop-side1 family HP",
+      "passed": true
+    },
+    {
+      "name": "stage2-normal-coop-side2 family HP",
+      "passed": true
+    },
+    {
+      "name": "2-normal-dead-before no ghost volley",
+      "passed": true
+    },
+    {
+      "name": "2-normal-dying-before no ghost volley",
+      "passed": true
+    },
+    {
+      "name": "2-normal-dead-after no ghost volley",
+      "passed": true
+    },
+    {
+      "name": "2-normal-dying-after no ghost volley",
+      "passed": true
+    },
+    {
+      "name": "stage2-hard-solo-side0 family HP",
+      "passed": true
+    },
+    {
+      "name": "stage2-hard-solo-side0 native frame batches completed",
+      "passed": true
+    },
+    {
+      "name": "stage2-hard-solo-side0 depth settles at normal scale",
+      "passed": true
+    },
+    {
+      "name": "stage2-hard-solo-side0 visible before launch",
+      "passed": true
+    },
+    {
+      "name": "stage2-hard-solo-side0 native rendered",
+      "passed": true
+    },
+    {
+      "name": "stage2-hard-solo-side0 full missile volleys",
+      "passed": true
+    },
+    {
+      "name": "stage2-hard-solo-side1 family HP",
+      "passed": true
+    },
+    {
+      "name": "stage2-hard-solo-side1 native frame batches completed",
+      "passed": true
+    },
+    {
+      "name": "stage2-hard-solo-side1 depth settles at normal scale",
+      "passed": true
+    },
+    {
+      "name": "stage2-hard-solo-side1 visible before launch",
+      "passed": true
+    },
+    {
+      "name": "stage2-hard-solo-side1 native rendered",
+      "passed": true
+    },
+    {
+      "name": "stage2-hard-solo-side1 full missile volleys",
+      "passed": true
+    },
+    {
+      "name": "stage2-hard-solo-side2 family HP",
+      "passed": true
+    },
+    {
+      "name": "stage2-hard-solo-side2 native frame batches completed",
+      "passed": true
+    },
+    {
+      "name": "stage2-hard-solo-side2 depth settles at normal scale",
+      "passed": true
+    },
+    {
+      "name": "stage2-hard-solo-side2 visible before launch",
+      "passed": true
+    },
+    {
+      "name": "stage2-hard-solo-side2 native rendered",
+      "passed": true
+    },
+    {
+      "name": "stage2-hard-solo-side2 full missile volleys",
+      "passed": true
+    },
+    {
+      "name": "stage2-hard-coop-side0 family HP",
+      "passed": true
+    },
+    {
+      "name": "stage2-hard-coop-side1 family HP",
+      "passed": true
+    },
+    {
+      "name": "stage2-hard-coop-side2 family HP",
+      "passed": true
+    },
+    {
+      "name": "2-hard-dead-before no ghost volley",
+      "passed": true
+    },
+    {
+      "name": "2-hard-dying-before no ghost volley",
+      "passed": true
+    },
+    {
+      "name": "2-hard-dead-after no ghost volley",
+      "passed": true
+    },
+    {
+      "name": "2-hard-dying-after no ghost volley",
+      "passed": true
+    },
+    {
+      "name": "stage2-furious-solo-side0 family HP",
+      "passed": true
+    },
+    {
+      "name": "stage2-furious-solo-side0 native frame batches completed",
+      "passed": true
+    },
+    {
+      "name": "stage2-furious-solo-side0 depth settles at normal scale",
+      "passed": true
+    },
+    {
+      "name": "stage2-furious-solo-side0 visible before launch",
+      "passed": true
+    },
+    {
+      "name": "stage2-furious-solo-side0 native rendered",
+      "passed": true
+    },
+    {
+      "name": "stage2-furious-solo-side0 full missile volleys",
+      "passed": true
+    },
+    {
+      "name": "stage2-furious-solo-side1 family HP",
+      "passed": true
+    },
+    {
+      "name": "stage2-furious-solo-side1 native frame batches completed",
+      "passed": true
+    },
+    {
+      "name": "stage2-furious-solo-side1 depth settles at normal scale",
+      "passed": true
+    },
+    {
+      "name": "stage2-furious-solo-side1 visible before launch",
+      "passed": true
+    },
+    {
+      "name": "stage2-furious-solo-side1 native rendered",
+      "passed": true
+    },
+    {
+      "name": "stage2-furious-solo-side1 full missile volleys",
+      "passed": true
+    },
+    {
+      "name": "stage2-furious-solo-side2 family HP",
+      "passed": true
+    },
+    {
+      "name": "stage2-furious-solo-side2 native frame batches completed",
+      "passed": true
+    },
+    {
+      "name": "stage2-furious-solo-side2 depth settles at normal scale",
+      "passed": true
+    },
+    {
+      "name": "stage2-furious-solo-side2 visible before launch",
+      "passed": true
+    },
+    {
+      "name": "stage2-furious-solo-side2 native rendered",
+      "passed": true
+    },
+    {
+      "name": "stage2-furious-solo-side2 full missile volleys",
+      "passed": true
+    },
+    {
+      "name": "stage2-furious-coop-side0 family HP",
+      "passed": true
+    },
+    {
+      "name": "stage2-furious-coop-side1 family HP",
+      "passed": true
+    },
+    {
+      "name": "stage2-furious-coop-side2 family HP",
+      "passed": true
+    },
+    {
+      "name": "2-furious-dead-before no ghost volley",
+      "passed": true
+    },
+    {
+      "name": "2-furious-dying-before no ghost volley",
+      "passed": true
+    },
+    {
+      "name": "2-furious-dead-after no ghost volley",
+      "passed": true
+    },
+    {
+      "name": "2-furious-dying-after no ghost volley",
+      "passed": true
+    },
+    {
+      "name": "page errors",
+      "passed": true
+    },
+    {
+      "name": "console errors",
+      "passed": true
+    }
+  ],
+  "fixtures": [
+    {
+      "stage": 1,
+      "d": "easy",
+      "coop": false,
+      "side": 0,
+      "ordinary": {
+        "hp": 4,
+        "maxhp": 4,
+        "type": "s1jetDelta"
+      },
+      "ambush": {
+        "hp": 4,
+        "maxhp": 4,
+        "type": "s1jetDelta"
+      },
+      "events": [
+        {
+          "event": "ambush",
+          "stage": 1,
+          "side": 0
+        },
+        {
+          "event": "rocket-volley",
+          "stage": 1,
+          "round": 1
+        },
+        {
+          "event": "rocket-volley",
+          "stage": 1,
+          "round": 2
+        }
+      ],
+      "draws": 228,
+      "seen": 6,
+      "round": 2,
+      "scale": 1,
+      "enemyDead": false,
+      "enemyDying": null,
+      "blocked": {
+        "bossActive": false,
+        "subBossActive": false,
+        "warnT": 0,
+        "playerDead": false,
+        "debugFight": null,
+        "wfx": false
+      },
+      "arrival": {
+        "t": 0.5166666666666666,
+        "scale": 1.3304347826086957,
+        "round": 0,
+        "visible": true,
+        "dead": false,
+        "dying": false,
+        "seen": 0,
+        "hp": 4
+      },
+      "beforeFire": {
+        "t": 1.7166666666666655,
+        "scale": 1,
+        "round": 0,
+        "visible": true,
+        "dead": false,
+        "dying": false,
+        "seen": 0,
+        "hp": 4
+      },
+      "firing": {
+        "t": 2.583333333333329,
+        "scale": 1,
+        "round": 2,
+        "visible": true,
+        "dead": false,
+        "dying": false,
+        "seen": 6,
+        "hp": 4
+      }
+    },
+    {
+      "stage": 1,
+      "d": "easy",
+      "coop": false,
+      "side": 1,
+      "ordinary": {
+        "hp": 4,
+        "maxhp": 4,
+        "type": "s1jetDelta"
+      },
+      "ambush": {
+        "hp": 4,
+        "maxhp": 4,
+        "type": "s1jetDelta"
+      },
+      "events": [
+        {
+          "event": "ambush",
+          "stage": 1,
+          "side": 1
+        },
+        {
+          "event": "rocket-volley",
+          "stage": 1,
+          "round": 1
+        },
+        {
+          "event": "rocket-volley",
+          "stage": 1,
+          "round": 2
+        }
+      ],
+      "draws": 228,
+      "seen": 6,
+      "round": 2,
+      "scale": 1,
+      "enemyDead": false,
+      "enemyDying": null,
+      "blocked": {
+        "bossActive": false,
+        "subBossActive": false,
+        "warnT": 0,
+        "playerDead": false,
+        "debugFight": null,
+        "wfx": false
+      },
+      "arrival": {
+        "t": 0.5333333333333333,
+        "scale": 1.3217391304347825,
+        "round": 0,
+        "visible": true,
+        "dead": false,
+        "dying": false,
+        "seen": 0,
+        "hp": 4
+      },
+      "beforeFire": {
+        "t": 1.733333333333332,
+        "scale": 1,
+        "round": 0,
+        "visible": true,
+        "dead": false,
+        "dying": false,
+        "seen": 0,
+        "hp": 4
+      },
+      "firing": {
+        "t": 2.5999999999999956,
+        "scale": 1,
+        "round": 2,
+        "visible": true,
+        "dead": false,
+        "dying": false,
+        "seen": 6,
+        "hp": 4
+      }
+    },
+    {
+      "stage": 1,
+      "d": "easy",
+      "coop": false,
+      "side": 2,
+      "ordinary": {
+        "hp": 4,
+        "maxhp": 4,
+        "type": "s1jetDelta"
+      },
+      "ambush": {
+        "hp": 4,
+        "maxhp": 4,
+        "type": "s1jetDelta"
+      },
+      "events": [
+        {
+          "event": "ambush",
+          "stage": 1,
+          "side": 2
+        },
+        {
+          "event": "rocket-volley",
+          "stage": 1,
+          "round": 1
+        },
+        {
+          "event": "rocket-volley",
+          "stage": 1,
+          "round": 2
+        }
+      ],
+      "draws": 228,
+      "seen": 6,
+      "round": 2,
+      "scale": 1,
+      "enemyDead": false,
+      "enemyDying": null,
+      "blocked": {
+        "bossActive": false,
+        "subBossActive": false,
+        "warnT": 0,
+        "playerDead": false,
+        "debugFight": null,
+        "wfx": false
+      },
+      "arrival": {
+        "t": 0.5333333333333333,
+        "scale": 1.3217391304347825,
+        "round": 0,
+        "visible": true,
+        "dead": false,
+        "dying": false,
+        "seen": 0,
+        "hp": 4
+      },
+      "beforeFire": {
+        "t": 1.733333333333332,
+        "scale": 1,
+        "round": 0,
+        "visible": true,
+        "dead": false,
+        "dying": false,
+        "seen": 0,
+        "hp": 4
+      },
+      "firing": {
+        "t": 2.5999999999999956,
+        "scale": 1,
+        "round": 2,
+        "visible": true,
+        "dead": false,
+        "dying": false,
+        "seen": 6,
+        "hp": 4
+      }
+    },
+    {
+      "stage": 1,
+      "d": "easy",
+      "coop": true,
+      "side": 0,
+      "ordinary": {
+        "hp": 5,
+        "maxhp": 5,
+        "type": "s1jetDelta"
+      },
+      "ambush": {
+        "hp": 5,
+        "maxhp": 5,
+        "type": "s1jetDelta"
+      }
+    },
+    {
+      "stage": 1,
+      "d": "easy",
+      "coop": true,
+      "side": 1,
+      "ordinary": {
+        "hp": 5,
+        "maxhp": 5,
+        "type": "s1jetDelta"
+      },
+      "ambush": {
+        "hp": 5,
+        "maxhp": 5,
+        "type": "s1jetDelta"
+      }
+    },
+    {
+      "stage": 1,
+      "d": "easy",
+      "coop": true,
+      "side": 2,
+      "ordinary": {
+        "hp": 5,
+        "maxhp": 5,
+        "type": "s1jetDelta"
+      },
+      "ambush": {
+        "hp": 5,
+        "maxhp": 5,
+        "type": "s1jetDelta"
+      }
+    },
+    {
+      "stage": 1,
+      "d": "normal",
+      "coop": false,
+      "side": 0,
+      "ordinary": {
+        "hp": 6,
+        "maxhp": 6,
+        "type": "s1jetDelta"
+      },
+      "ambush": {
+        "hp": 6,
+        "maxhp": 6,
+        "type": "s1jetDelta"
+      },
+      "events": [
+        {
+          "event": "ambush",
+          "stage": 1,
+          "side": 0
+        },
+        {
+          "event": "rocket-volley",
+          "stage": 1,
+          "round": 1
+        },
+        {
+          "event": "rocket-volley",
+          "stage": 1,
+          "round": 2
+        }
+      ],
+      "draws": 228,
+      "seen": 6,
+      "round": 2,
+      "scale": 1,
+      "enemyDead": false,
+      "enemyDying": null,
+      "blocked": {
+        "bossActive": false,
+        "subBossActive": false,
+        "warnT": 0,
+        "playerDead": false,
+        "debugFight": null,
+        "wfx": false
+      },
+      "arrival": {
+        "t": 0.5333333333333333,
+        "scale": 1.3217391304347825,
+        "round": 0,
+        "visible": true,
+        "dead": false,
+        "dying": false,
+        "seen": 0,
+        "hp": 6
+      },
+      "beforeFire": {
+        "t": 1.733333333333332,
+        "scale": 1,
+        "round": 0,
+        "visible": true,
+        "dead": false,
+        "dying": false,
+        "seen": 0,
+        "hp": 6
+      },
+      "firing": {
+        "t": 2.5999999999999956,
+        "scale": 1,
+        "round": 2,
+        "visible": true,
+        "dead": false,
+        "dying": false,
+        "seen": 6,
+        "hp": 6
+      }
+    },
+    {
+      "stage": 1,
+      "d": "normal",
+      "coop": false,
+      "side": 1,
+      "ordinary": {
+        "hp": 6,
+        "maxhp": 6,
+        "type": "s1jetDelta"
+      },
+      "ambush": {
+        "hp": 6,
+        "maxhp": 6,
+        "type": "s1jetDelta"
+      },
+      "events": [
+        {
+          "event": "ambush",
+          "stage": 1,
+          "side": 1
+        },
+        {
+          "event": "rocket-volley",
+          "stage": 1,
+          "round": 1
+        },
+        {
+          "event": "rocket-volley",
+          "stage": 1,
+          "round": 2
+        }
+      ],
+      "draws": 228,
+      "seen": 6,
+      "round": 2,
+      "scale": 1,
+      "enemyDead": false,
+      "enemyDying": null,
+      "blocked": {
+        "bossActive": false,
+        "subBossActive": false,
+        "warnT": 0,
+        "playerDead": false,
+        "debugFight": null,
+        "wfx": false
+      },
+      "arrival": {
+        "t": 0.5333333333333333,
+        "scale": 1.3217391304347825,
+        "round": 0,
+        "visible": true,
+        "dead": false,
+        "dying": false,
+        "seen": 0,
+        "hp": 6
+      },
+      "beforeFire": {
+        "t": 1.733333333333332,
+        "scale": 1,
+        "round": 0,
+        "visible": true,
+        "dead": false,
+        "dying": false,
+        "seen": 0,
+        "hp": 6
+      },
+      "firing": {
+        "t": 2.5999999999999956,
+        "scale": 1,
+        "round": 2,
+        "visible": true,
+        "dead": false,
+        "dying": false,
+        "seen": 6,
+        "hp": 6
+      }
+    },
+    {
+      "stage": 1,
+      "d": "normal",
+      "coop": false,
+      "side": 2,
+      "ordinary": {
+        "hp": 6,
+        "maxhp": 6,
+        "type": "s1jetDelta"
+      },
+      "ambush": {
+        "hp": 6,
+        "maxhp": 6,
+        "type": "s1jetDelta"
+      },
+      "events": [
+        {
+          "event": "ambush",
+          "stage": 1,
+          "side": 2
+        },
+        {
+          "event": "rocket-volley",
+          "stage": 1,
+          "round": 1
+        },
+        {
+          "event": "rocket-volley",
+          "stage": 1,
+          "round": 2
+        }
+      ],
+      "draws": 228,
+      "seen": 6,
+      "round": 2,
+      "scale": 1,
+      "enemyDead": false,
+      "enemyDying": null,
+      "blocked": {
+        "bossActive": false,
+        "subBossActive": false,
+        "warnT": 0,
+        "playerDead": false,
+        "debugFight": null,
+        "wfx": false
+      },
+      "arrival": {
+        "t": 0.5333333333333333,
+        "scale": 1.3217391304347825,
+        "round": 0,
+        "visible": true,
+        "dead": false,
+        "dying": false,
+        "seen": 0,
+        "hp": 6
+      },
+      "beforeFire": {
+        "t": 1.733333333333332,
+        "scale": 1,
+        "round": 0,
+        "visible": true,
+        "dead": false,
+        "dying": false,
+        "seen": 0,
+        "hp": 6
+      },
+      "firing": {
+        "t": 2.5999999999999956,
+        "scale": 1,
+        "round": 2,
+        "visible": true,
+        "dead": false,
+        "dying": false,
+        "seen": 6,
+        "hp": 6
+      }
+    },
+    {
+      "stage": 1,
+      "d": "normal",
+      "coop": true,
+      "side": 0,
+      "ordinary": {
+        "hp": 8,
+        "maxhp": 8,
+        "type": "s1jetDelta"
+      },
+      "ambush": {
+        "hp": 8,
+        "maxhp": 8,
+        "type": "s1jetDelta"
+      }
+    },
+    {
+      "stage": 1,
+      "d": "normal",
+      "coop": true,
+      "side": 1,
+      "ordinary": {
+        "hp": 8,
+        "maxhp": 8,
+        "type": "s1jetDelta"
+      },
+      "ambush": {
+        "hp": 8,
+        "maxhp": 8,
+        "type": "s1jetDelta"
+      }
+    },
+    {
+      "stage": 1,
+      "d": "normal",
+      "coop": true,
+      "side": 2,
+      "ordinary": {
+        "hp": 8,
+        "maxhp": 8,
+        "type": "s1jetDelta"
+      },
+      "ambush": {
+        "hp": 8,
+        "maxhp": 8,
+        "type": "s1jetDelta"
+      }
+    },
+    {
+      "stage": 1,
+      "d": "hard",
+      "coop": false,
+      "side": 0,
+      "ordinary": {
+        "hp": 6,
+        "maxhp": 6,
+        "type": "s1jetDelta"
+      },
+      "ambush": {
+        "hp": 6,
+        "maxhp": 6,
+        "type": "s1jetDelta"
+      },
+      "events": [
+        {
+          "event": "ambush",
+          "stage": 1,
+          "side": 0
+        },
+        {
+          "event": "rocket-volley",
+          "stage": 1,
+          "round": 1
+        },
+        {
+          "event": "rocket-volley",
+          "stage": 1,
+          "round": 2
+        }
+      ],
+      "draws": 228,
+      "seen": 6,
+      "round": 2,
+      "scale": 1,
+      "enemyDead": false,
+      "enemyDying": null,
+      "blocked": {
+        "bossActive": false,
+        "subBossActive": false,
+        "warnT": 0,
+        "playerDead": false,
+        "debugFight": null,
+        "wfx": false
+      },
+      "arrival": {
+        "t": 0.5333333333333333,
+        "scale": 1.3217391304347825,
+        "round": 0,
+        "visible": true,
+        "dead": false,
+        "dying": false,
+        "seen": 0,
+        "hp": 6
+      },
+      "beforeFire": {
+        "t": 1.733333333333332,
+        "scale": 1,
+        "round": 0,
+        "visible": true,
+        "dead": false,
+        "dying": false,
+        "seen": 0,
+        "hp": 6
+      },
+      "firing": {
+        "t": 2.5999999999999956,
+        "scale": 1,
+        "round": 2,
+        "visible": true,
+        "dead": false,
+        "dying": false,
+        "seen": 6,
+        "hp": 6
+      }
+    },
+    {
+      "stage": 1,
+      "d": "hard",
+      "coop": false,
+      "side": 1,
+      "ordinary": {
+        "hp": 6,
+        "maxhp": 6,
+        "type": "s1jetDelta"
+      },
+      "ambush": {
+        "hp": 6,
+        "maxhp": 6,
+        "type": "s1jetDelta"
+      },
+      "events": [
+        {
+          "event": "ambush",
+          "stage": 1,
+          "side": 1
+        },
+        {
+          "event": "rocket-volley",
+          "stage": 1,
+          "round": 1
+        },
+        {
+          "event": "rocket-volley",
+          "stage": 1,
+          "round": 2
+        }
+      ],
+      "draws": 228,
+      "seen": 6,
+      "round": 2,
+      "scale": 1,
+      "enemyDead": false,
+      "enemyDying": null,
+      "blocked": {
+        "bossActive": false,
+        "subBossActive": false,
+        "warnT": 0,
+        "playerDead": false,
+        "debugFight": null,
+        "wfx": false
+      },
+      "arrival": {
+        "t": 0.5333333333333333,
+        "scale": 1.3217391304347825,
+        "round": 0,
+        "visible": true,
+        "dead": false,
+        "dying": false,
+        "seen": 0,
+        "hp": 6
+      },
+      "beforeFire": {
+        "t": 1.733333333333332,
+        "scale": 1,
+        "round": 0,
+        "visible": true,
+        "dead": false,
+        "dying": false,
+        "seen": 0,
+        "hp": 6
+      },
+      "firing": {
+        "t": 2.5999999999999956,
+        "scale": 1,
+        "round": 2,
+        "visible": true,
+        "dead": false,
+        "dying": false,
+        "seen": 6,
+        "hp": 6
+      }
+    },
+    {
+      "stage": 1,
+      "d": "hard",
+      "coop": false,
+      "side": 2,
+      "ordinary": {
+        "hp": 6,
+        "maxhp": 6,
+        "type": "s1jetDelta"
+      },
+      "ambush": {
+        "hp": 6,
+        "maxhp": 6,
+        "type": "s1jetDelta"
+      },
+      "events": [
+        {
+          "event": "ambush",
+          "stage": 1,
+          "side": 2
+        },
+        {
+          "event": "rocket-volley",
+          "stage": 1,
+          "round": 1
+        },
+        {
+          "event": "rocket-volley",
+          "stage": 1,
+          "round": 2
+        }
+      ],
+      "draws": 228,
+      "seen": 6,
+      "round": 2,
+      "scale": 1,
+      "enemyDead": false,
+      "enemyDying": null,
+      "blocked": {
+        "bossActive": false,
+        "subBossActive": false,
+        "warnT": 0,
+        "playerDead": false,
+        "debugFight": null,
+        "wfx": false
+      },
+      "arrival": {
+        "t": 0.5333333333333333,
+        "scale": 1.3217391304347825,
+        "round": 0,
+        "visible": true,
+        "dead": false,
+        "dying": false,
+        "seen": 0,
+        "hp": 6
+      },
+      "beforeFire": {
+        "t": 1.733333333333332,
+        "scale": 1,
+        "round": 0,
+        "visible": true,
+        "dead": false,
+        "dying": false,
+        "seen": 0,
+        "hp": 6
+      },
+      "firing": {
+        "t": 2.5999999999999956,
+        "scale": 1,
+        "round": 2,
+        "visible": true,
+        "dead": false,
+        "dying": false,
+        "seen": 6,
+        "hp": 6
+      }
+    },
+    {
+      "stage": 1,
+      "d": "hard",
+      "coop": true,
+      "side": 0,
+      "ordinary": {
+        "hp": 8,
+        "maxhp": 8,
+        "type": "s1jetDelta"
+      },
+      "ambush": {
+        "hp": 8,
+        "maxhp": 8,
+        "type": "s1jetDelta"
+      }
+    },
+    {
+      "stage": 1,
+      "d": "hard",
+      "coop": true,
+      "side": 1,
+      "ordinary": {
+        "hp": 8,
+        "maxhp": 8,
+        "type": "s1jetDelta"
+      },
+      "ambush": {
+        "hp": 8,
+        "maxhp": 8,
+        "type": "s1jetDelta"
+      }
+    },
+    {
+      "stage": 1,
+      "d": "hard",
+      "coop": true,
+      "side": 2,
+      "ordinary": {
+        "hp": 8,
+        "maxhp": 8,
+        "type": "s1jetDelta"
+      },
+      "ambush": {
+        "hp": 8,
+        "maxhp": 8,
+        "type": "s1jetDelta"
+      }
+    },
+    {
+      "stage": 1,
+      "d": "furious",
+      "coop": false,
+      "side": 0,
+      "ordinary": {
+        "hp": 11,
+        "maxhp": 11,
+        "type": "s1jetDelta"
+      },
+      "ambush": {
+        "hp": 11,
+        "maxhp": 11,
+        "type": "s1jetDelta"
+      },
+      "events": [
+        {
+          "event": "ambush",
+          "stage": 1,
+          "side": 0
+        },
+        {
+          "event": "rocket-volley",
+          "stage": 1,
+          "round": 1
+        },
+        {
+          "event": "rocket-volley",
+          "stage": 1,
+          "round": 2
+        },
+        {
+          "event": "rocket-volley",
+          "stage": 1,
+          "round": 3
+        }
+      ],
+      "draws": 228,
+      "seen": 9,
+      "round": 3,
+      "scale": 1,
+      "enemyDead": false,
+      "enemyDying": null,
+      "blocked": {
+        "bossActive": false,
+        "subBossActive": false,
+        "warnT": 0,
+        "playerDead": false,
+        "debugFight": null,
+        "wfx": false
+      },
+      "arrival": {
+        "t": 0.5333333333333333,
+        "scale": 1.3217391304347825,
+        "round": 0,
+        "visible": true,
+        "dead": false,
+        "dying": false,
+        "seen": 0,
+        "hp": 11
+      },
+      "beforeFire": {
+        "t": 1.733333333333332,
+        "scale": 1,
+        "round": 0,
+        "visible": true,
+        "dead": false,
+        "dying": false,
+        "seen": 0,
+        "hp": 11
+      },
+      "firing": {
+        "t": 2.5999999999999956,
+        "scale": 1,
+        "round": 2,
+        "visible": true,
+        "dead": false,
+        "dying": false,
+        "seen": 6,
+        "hp": 11
+      }
+    },
+    {
+      "stage": 1,
+      "d": "furious",
+      "coop": false,
+      "side": 1,
+      "ordinary": {
+        "hp": 11,
+        "maxhp": 11,
+        "type": "s1jetDelta"
+      },
+      "ambush": {
+        "hp": 11,
+        "maxhp": 11,
+        "type": "s1jetDelta"
+      },
+      "events": [
+        {
+          "event": "ambush",
+          "stage": 1,
+          "side": 1
+        },
+        {
+          "event": "rocket-volley",
+          "stage": 1,
+          "round": 1
+        },
+        {
+          "event": "rocket-volley",
+          "stage": 1,
+          "round": 2
+        },
+        {
+          "event": "rocket-volley",
+          "stage": 1,
+          "round": 3
+        }
+      ],
+      "draws": 228,
+      "seen": 9,
+      "round": 3,
+      "scale": 1,
+      "enemyDead": false,
+      "enemyDying": null,
+      "blocked": {
+        "bossActive": false,
+        "subBossActive": false,
+        "warnT": 0,
+        "playerDead": false,
+        "debugFight": null,
+        "wfx": false
+      },
+      "arrival": {
+        "t": 0.5333333333333333,
+        "scale": 1.3217391304347825,
+        "round": 0,
+        "visible": true,
+        "dead": false,
+        "dying": false,
+        "seen": 0,
+        "hp": 11
+      },
+      "beforeFire": {
+        "t": 1.733333333333332,
+        "scale": 1,
+        "round": 0,
+        "visible": true,
+        "dead": false,
+        "dying": false,
+        "seen": 0,
+        "hp": 11
+      },
+      "firing": {
+        "t": 2.5999999999999956,
+        "scale": 1,
+        "round": 2,
+        "visible": true,
+        "dead": false,
+        "dying": false,
+        "seen": 6,
+        "hp": 11
+      }
+    },
+    {
+      "stage": 1,
+      "d": "furious",
+      "coop": false,
+      "side": 2,
+      "ordinary": {
+        "hp": 11,
+        "maxhp": 11,
+        "type": "s1jetDelta"
+      },
+      "ambush": {
+        "hp": 11,
+        "maxhp": 11,
+        "type": "s1jetDelta"
+      },
+      "events": [
+        {
+          "event": "ambush",
+          "stage": 1,
+          "side": 2
+        },
+        {
+          "event": "rocket-volley",
+          "stage": 1,
+          "round": 1
+        },
+        {
+          "event": "rocket-volley",
+          "stage": 1,
+          "round": 2
+        },
+        {
+          "event": "rocket-volley",
+          "stage": 1,
+          "round": 3
+        }
+      ],
+      "draws": 228,
+      "seen": 9,
+      "round": 3,
+      "scale": 1,
+      "enemyDead": false,
+      "enemyDying": null,
+      "blocked": {
+        "bossActive": false,
+        "subBossActive": false,
+        "warnT": 0,
+        "playerDead": false,
+        "debugFight": null,
+        "wfx": false
+      },
+      "arrival": {
+        "t": 0.5333333333333333,
+        "scale": 1.3217391304347825,
+        "round": 0,
+        "visible": true,
+        "dead": false,
+        "dying": false,
+        "seen": 0,
+        "hp": 11
+      },
+      "beforeFire": {
+        "t": 1.733333333333332,
+        "scale": 1,
+        "round": 0,
+        "visible": true,
+        "dead": false,
+        "dying": false,
+        "seen": 0,
+        "hp": 11
+      },
+      "firing": {
+        "t": 2.5999999999999956,
+        "scale": 1,
+        "round": 2,
+        "visible": true,
+        "dead": false,
+        "dying": false,
+        "seen": 6,
+        "hp": 11
+      }
+    },
+    {
+      "stage": 1,
+      "d": "furious",
+      "coop": true,
+      "side": 0,
+      "ordinary": {
+        "hp": 13,
+        "maxhp": 13,
+        "type": "s1jetDelta"
+      },
+      "ambush": {
+        "hp": 13,
+        "maxhp": 13,
+        "type": "s1jetDelta"
+      }
+    },
+    {
+      "stage": 1,
+      "d": "furious",
+      "coop": true,
+      "side": 1,
+      "ordinary": {
+        "hp": 13,
+        "maxhp": 13,
+        "type": "s1jetDelta"
+      },
+      "ambush": {
+        "hp": 13,
+        "maxhp": 13,
+        "type": "s1jetDelta"
+      }
+    },
+    {
+      "stage": 1,
+      "d": "furious",
+      "coop": true,
+      "side": 2,
+      "ordinary": {
+        "hp": 13,
+        "maxhp": 13,
+        "type": "s1jetDelta"
+      },
+      "ambush": {
+        "hp": 13,
+        "maxhp": 13,
+        "type": "s1jetDelta"
+      }
+    },
+    {
+      "stage": 2,
+      "d": "easy",
+      "coop": false,
+      "side": 0,
+      "ordinary": {
+        "hp": 2,
+        "maxhp": 2,
+        "type": "ash"
+      },
+      "ambush": {
+        "hp": 2,
+        "maxhp": 2,
+        "type": "ash"
+      },
+      "events": [
+        {
+          "event": "ambush",
+          "stage": 2,
+          "side": 0
+        },
+        {
+          "event": "rocket-volley",
+          "stage": 2,
+          "round": 1
+        },
+        {
+          "event": "rocket-volley",
+          "stage": 2,
+          "round": 2
+        }
+      ],
+      "draws": 228,
+      "seen": 6,
+      "round": 2,
+      "scale": 1,
+      "enemyDead": false,
+      "enemyDying": null,
+      "blocked": {
+        "bossActive": false,
+        "subBossActive": false,
+        "warnT": 0,
+        "playerDead": false,
+        "debugFight": null,
+        "wfx": false
+      },
+      "arrival": {
+        "t": 0.5333333333333333,
+        "scale": 1.3217391304347825,
+        "round": 0,
+        "visible": true,
+        "dead": false,
+        "dying": false,
+        "seen": 0,
+        "hp": 2
+      },
+      "beforeFire": {
+        "t": 1.733333333333332,
+        "scale": 1,
+        "round": 0,
+        "visible": true,
+        "dead": false,
+        "dying": false,
+        "seen": 0,
+        "hp": 2
+      },
+      "firing": {
+        "t": 2.5999999999999956,
+        "scale": 1,
+        "round": 2,
+        "visible": true,
+        "dead": false,
+        "dying": false,
+        "seen": 6,
+        "hp": 2
+      }
+    },
+    {
+      "stage": 2,
+      "d": "easy",
+      "coop": false,
+      "side": 1,
+      "ordinary": {
+        "hp": 2,
+        "maxhp": 2,
+        "type": "ash"
+      },
+      "ambush": {
+        "hp": 2,
+        "maxhp": 2,
+        "type": "ash"
+      },
+      "events": [
+        {
+          "event": "ambush",
+          "stage": 2,
+          "side": 1
+        },
+        {
+          "event": "rocket-volley",
+          "stage": 2,
+          "round": 1
+        },
+        {
+          "event": "rocket-volley",
+          "stage": 2,
+          "round": 2
+        }
+      ],
+      "draws": 228,
+      "seen": 6,
+      "round": 2,
+      "scale": 1,
+      "enemyDead": false,
+      "enemyDying": null,
+      "blocked": {
+        "bossActive": false,
+        "subBossActive": false,
+        "warnT": 0,
+        "playerDead": false,
+        "debugFight": null,
+        "wfx": false
+      },
+      "arrival": {
+        "t": 0.5333333333333333,
+        "scale": 1.3217391304347825,
+        "round": 0,
+        "visible": true,
+        "dead": false,
+        "dying": false,
+        "seen": 0,
+        "hp": 2
+      },
+      "beforeFire": {
+        "t": 1.733333333333332,
+        "scale": 1,
+        "round": 0,
+        "visible": true,
+        "dead": false,
+        "dying": false,
+        "seen": 0,
+        "hp": 2
+      },
+      "firing": {
+        "t": 2.5999999999999956,
+        "scale": 1,
+        "round": 2,
+        "visible": true,
+        "dead": false,
+        "dying": false,
+        "seen": 6,
+        "hp": 2
+      }
+    },
+    {
+      "stage": 2,
+      "d": "easy",
+      "coop": false,
+      "side": 2,
+      "ordinary": {
+        "hp": 2,
+        "maxhp": 2,
+        "type": "ash"
+      },
+      "ambush": {
+        "hp": 2,
+        "maxhp": 2,
+        "type": "ash"
+      },
+      "events": [
+        {
+          "event": "ambush",
+          "stage": 2,
+          "side": 2
+        },
+        {
+          "event": "rocket-volley",
+          "stage": 2,
+          "round": 1
+        },
+        {
+          "event": "rocket-volley",
+          "stage": 2,
+          "round": 2
+        }
+      ],
+      "draws": 228,
+      "seen": 6,
+      "round": 2,
+      "scale": 1,
+      "enemyDead": false,
+      "enemyDying": null,
+      "blocked": {
+        "bossActive": false,
+        "subBossActive": false,
+        "warnT": 0,
+        "playerDead": false,
+        "debugFight": null,
+        "wfx": false
+      },
+      "arrival": {
+        "t": 0.5333333333333333,
+        "scale": 1.3217391304347825,
+        "round": 0,
+        "visible": true,
+        "dead": false,
+        "dying": false,
+        "seen": 0,
+        "hp": 2
+      },
+      "beforeFire": {
+        "t": 1.733333333333332,
+        "scale": 1,
+        "round": 0,
+        "visible": true,
+        "dead": false,
+        "dying": false,
+        "seen": 0,
+        "hp": 2
+      },
+      "firing": {
+        "t": 2.5999999999999956,
+        "scale": 1,
+        "round": 2,
+        "visible": true,
+        "dead": false,
+        "dying": false,
+        "seen": 6,
+        "hp": 2
+      }
+    },
+    {
+      "stage": 2,
+      "d": "easy",
+      "coop": true,
+      "side": 0,
+      "ordinary": {
+        "hp": 3,
+        "maxhp": 3,
+        "type": "ash"
+      },
+      "ambush": {
+        "hp": 3,
+        "maxhp": 3,
+        "type": "ash"
+      }
+    },
+    {
+      "stage": 2,
+      "d": "easy",
+      "coop": true,
+      "side": 1,
+      "ordinary": {
+        "hp": 3,
+        "maxhp": 3,
+        "type": "ash"
+      },
+      "ambush": {
+        "hp": 3,
+        "maxhp": 3,
+        "type": "ash"
+      }
+    },
+    {
+      "stage": 2,
+      "d": "easy",
+      "coop": true,
+      "side": 2,
+      "ordinary": {
+        "hp": 3,
+        "maxhp": 3,
+        "type": "ash"
+      },
+      "ambush": {
+        "hp": 3,
+        "maxhp": 3,
+        "type": "ash"
+      }
+    },
+    {
+      "stage": 2,
+      "d": "normal",
+      "coop": false,
+      "side": 0,
+      "ordinary": {
+        "hp": 4,
+        "maxhp": 4,
+        "type": "ash"
+      },
+      "ambush": {
+        "hp": 4,
+        "maxhp": 4,
+        "type": "ash"
+      },
+      "events": [
+        {
+          "event": "ambush",
+          "stage": 2,
+          "side": 0
+        },
+        {
+          "event": "rocket-volley",
+          "stage": 2,
+          "round": 1
+        },
+        {
+          "event": "rocket-volley",
+          "stage": 2,
+          "round": 2
+        }
+      ],
+      "draws": 228,
+      "seen": 6,
+      "round": 2,
+      "scale": 1,
+      "enemyDead": false,
+      "enemyDying": null,
+      "blocked": {
+        "bossActive": false,
+        "subBossActive": false,
+        "warnT": 0,
+        "playerDead": false,
+        "debugFight": null,
+        "wfx": false
+      },
+      "arrival": {
+        "t": 0.5333333333333333,
+        "scale": 1.3217391304347825,
+        "round": 0,
+        "visible": true,
+        "dead": false,
+        "dying": false,
+        "seen": 0,
+        "hp": 4
+      },
+      "beforeFire": {
+        "t": 1.733333333333332,
+        "scale": 1,
+        "round": 0,
+        "visible": true,
+        "dead": false,
+        "dying": false,
+        "seen": 0,
+        "hp": 4
+      },
+      "firing": {
+        "t": 2.5999999999999956,
+        "scale": 1,
+        "round": 2,
+        "visible": true,
+        "dead": false,
+        "dying": false,
+        "seen": 6,
+        "hp": 4
+      }
+    },
+    {
+      "stage": 2,
+      "d": "normal",
+      "coop": false,
+      "side": 1,
+      "ordinary": {
+        "hp": 4,
+        "maxhp": 4,
+        "type": "ash"
+      },
+      "ambush": {
+        "hp": 4,
+        "maxhp": 4,
+        "type": "ash"
+      },
+      "events": [
+        {
+          "event": "ambush",
+          "stage": 2,
+          "side": 1
+        },
+        {
+          "event": "rocket-volley",
+          "stage": 2,
+          "round": 1
+        },
+        {
+          "event": "rocket-volley",
+          "stage": 2,
+          "round": 2
+        }
+      ],
+      "draws": 228,
+      "seen": 6,
+      "round": 2,
+      "scale": 1,
+      "enemyDead": false,
+      "enemyDying": null,
+      "blocked": {
+        "bossActive": false,
+        "subBossActive": false,
+        "warnT": 0,
+        "playerDead": false,
+        "debugFight": null,
+        "wfx": false
+      },
+      "arrival": {
+        "t": 0.5333333333333333,
+        "scale": 1.3217391304347825,
+        "round": 0,
+        "visible": true,
+        "dead": false,
+        "dying": false,
+        "seen": 0,
+        "hp": 4
+      },
+      "beforeFire": {
+        "t": 1.733333333333332,
+        "scale": 1,
+        "round": 0,
+        "visible": true,
+        "dead": false,
+        "dying": false,
+        "seen": 0,
+        "hp": 4
+      },
+      "firing": {
+        "t": 2.5999999999999956,
+        "scale": 1,
+        "round": 2,
+        "visible": true,
+        "dead": false,
+        "dying": false,
+        "seen": 6,
+        "hp": 4
+      }
+    },
+    {
+      "stage": 2,
+      "d": "normal",
+      "coop": false,
+      "side": 2,
+      "ordinary": {
+        "hp": 4,
+        "maxhp": 4,
+        "type": "ash"
+      },
+      "ambush": {
+        "hp": 4,
+        "maxhp": 4,
+        "type": "ash"
+      },
+      "events": [
+        {
+          "event": "ambush",
+          "stage": 2,
+          "side": 2
+        },
+        {
+          "event": "rocket-volley",
+          "stage": 2,
+          "round": 1
+        },
+        {
+          "event": "rocket-volley",
+          "stage": 2,
+          "round": 2
+        }
+      ],
+      "draws": 228,
+      "seen": 6,
+      "round": 2,
+      "scale": 1,
+      "enemyDead": false,
+      "enemyDying": null,
+      "blocked": {
+        "bossActive": false,
+        "subBossActive": false,
+        "warnT": 0,
+        "playerDead": false,
+        "debugFight": null,
+        "wfx": false
+      },
+      "arrival": {
+        "t": 0.5333333333333333,
+        "scale": 1.3217391304347825,
+        "round": 0,
+        "visible": true,
+        "dead": false,
+        "dying": false,
+        "seen": 0,
+        "hp": 4
+      },
+      "beforeFire": {
+        "t": 1.733333333333332,
+        "scale": 1,
+        "round": 0,
+        "visible": true,
+        "dead": false,
+        "dying": false,
+        "seen": 0,
+        "hp": 4
+      },
+      "firing": {
+        "t": 2.5999999999999956,
+        "scale": 1,
+        "round": 2,
+        "visible": true,
+        "dead": false,
+        "dying": false,
+        "seen": 6,
+        "hp": 4
+      }
+    },
+    {
+      "stage": 2,
+      "d": "normal",
+      "coop": true,
+      "side": 0,
+      "ordinary": {
+        "hp": 5,
+        "maxhp": 5,
+        "type": "ash"
+      },
+      "ambush": {
+        "hp": 5,
+        "maxhp": 5,
+        "type": "ash"
+      }
+    },
+    {
+      "stage": 2,
+      "d": "normal",
+      "coop": true,
+      "side": 1,
+      "ordinary": {
+        "hp": 5,
+        "maxhp": 5,
+        "type": "ash"
+      },
+      "ambush": {
+        "hp": 5,
+        "maxhp": 5,
+        "type": "ash"
+      }
+    },
+    {
+      "stage": 2,
+      "d": "normal",
+      "coop": true,
+      "side": 2,
+      "ordinary": {
+        "hp": 5,
+        "maxhp": 5,
+        "type": "ash"
+      },
+      "ambush": {
+        "hp": 5,
+        "maxhp": 5,
+        "type": "ash"
+      }
+    },
+    {
+      "stage": 2,
+      "d": "hard",
+      "coop": false,
+      "side": 0,
+      "ordinary": {
+        "hp": 6,
+        "maxhp": 6,
+        "type": "ash"
+      },
+      "ambush": {
+        "hp": 6,
+        "maxhp": 6,
+        "type": "ash"
+      },
+      "events": [
+        {
+          "event": "ambush",
+          "stage": 2,
+          "side": 0
+        },
+        {
+          "event": "rocket-volley",
+          "stage": 2,
+          "round": 1
+        },
+        {
+          "event": "rocket-volley",
+          "stage": 2,
+          "round": 2
+        }
+      ],
+      "draws": 228,
+      "seen": 6,
+      "round": 2,
+      "scale": 1,
+      "enemyDead": false,
+      "enemyDying": null,
+      "blocked": {
+        "bossActive": false,
+        "subBossActive": false,
+        "warnT": 0,
+        "playerDead": false,
+        "debugFight": null,
+        "wfx": false
+      },
+      "arrival": {
+        "t": 0.5333333333333333,
+        "scale": 1.3217391304347825,
+        "round": 0,
+        "visible": true,
+        "dead": false,
+        "dying": false,
+        "seen": 0,
+        "hp": 6
+      },
+      "beforeFire": {
+        "t": 1.733333333333332,
+        "scale": 1,
+        "round": 0,
+        "visible": true,
+        "dead": false,
+        "dying": false,
+        "seen": 0,
+        "hp": 6
+      },
+      "firing": {
+        "t": 2.5999999999999956,
+        "scale": 1,
+        "round": 2,
+        "visible": true,
+        "dead": false,
+        "dying": false,
+        "seen": 6,
+        "hp": 6
+      }
+    },
+    {
+      "stage": 2,
+      "d": "hard",
+      "coop": false,
+      "side": 1,
+      "ordinary": {
+        "hp": 6,
+        "maxhp": 6,
+        "type": "ash"
+      },
+      "ambush": {
+        "hp": 6,
+        "maxhp": 6,
+        "type": "ash"
+      },
+      "events": [
+        {
+          "event": "ambush",
+          "stage": 2,
+          "side": 1
+        },
+        {
+          "event": "rocket-volley",
+          "stage": 2,
+          "round": 1
+        },
+        {
+          "event": "rocket-volley",
+          "stage": 2,
+          "round": 2
+        }
+      ],
+      "draws": 228,
+      "seen": 6,
+      "round": 2,
+      "scale": 1,
+      "enemyDead": false,
+      "enemyDying": null,
+      "blocked": {
+        "bossActive": false,
+        "subBossActive": false,
+        "warnT": 0,
+        "playerDead": false,
+        "debugFight": null,
+        "wfx": false
+      },
+      "arrival": {
+        "t": 0.5333333333333333,
+        "scale": 1.3217391304347825,
+        "round": 0,
+        "visible": true,
+        "dead": false,
+        "dying": false,
+        "seen": 0,
+        "hp": 6
+      },
+      "beforeFire": {
+        "t": 1.733333333333332,
+        "scale": 1,
+        "round": 0,
+        "visible": true,
+        "dead": false,
+        "dying": false,
+        "seen": 0,
+        "hp": 6
+      },
+      "firing": {
+        "t": 2.5999999999999956,
+        "scale": 1,
+        "round": 2,
+        "visible": true,
+        "dead": false,
+        "dying": false,
+        "seen": 6,
+        "hp": 6
+      }
+    },
+    {
+      "stage": 2,
+      "d": "hard",
+      "coop": false,
+      "side": 2,
+      "ordinary": {
+        "hp": 6,
+        "maxhp": 6,
+        "type": "ash"
+      },
+      "ambush": {
+        "hp": 6,
+        "maxhp": 6,
+        "type": "ash"
+      },
+      "events": [
+        {
+          "event": "ambush",
+          "stage": 2,
+          "side": 2
+        },
+        {
+          "event": "rocket-volley",
+          "stage": 2,
+          "round": 1
+        },
+        {
+          "event": "rocket-volley",
+          "stage": 2,
+          "round": 2
+        }
+      ],
+      "draws": 228,
+      "seen": 6,
+      "round": 2,
+      "scale": 1,
+      "enemyDead": false,
+      "enemyDying": null,
+      "blocked": {
+        "bossActive": false,
+        "subBossActive": false,
+        "warnT": 0,
+        "playerDead": false,
+        "debugFight": null,
+        "wfx": false
+      },
+      "arrival": {
+        "t": 0.5333333333333333,
+        "scale": 1.3217391304347825,
+        "round": 0,
+        "visible": true,
+        "dead": false,
+        "dying": false,
+        "seen": 0,
+        "hp": 6
+      },
+      "beforeFire": {
+        "t": 1.733333333333332,
+        "scale": 1,
+        "round": 0,
+        "visible": true,
+        "dead": false,
+        "dying": false,
+        "seen": 0,
+        "hp": 6
+      },
+      "firing": {
+        "t": 2.5999999999999956,
+        "scale": 1,
+        "round": 2,
+        "visible": true,
+        "dead": false,
+        "dying": false,
+        "seen": 6,
+        "hp": 6
+      }
+    },
+    {
+      "stage": 2,
+      "d": "hard",
+      "coop": true,
+      "side": 0,
+      "ordinary": {
+        "hp": 8,
+        "maxhp": 8,
+        "type": "ash"
+      },
+      "ambush": {
+        "hp": 8,
+        "maxhp": 8,
+        "type": "ash"
+      }
+    },
+    {
+      "stage": 2,
+      "d": "hard",
+      "coop": true,
+      "side": 1,
+      "ordinary": {
+        "hp": 8,
+        "maxhp": 8,
+        "type": "ash"
+      },
+      "ambush": {
+        "hp": 8,
+        "maxhp": 8,
+        "type": "ash"
+      }
+    },
+    {
+      "stage": 2,
+      "d": "hard",
+      "coop": true,
+      "side": 2,
+      "ordinary": {
+        "hp": 8,
+        "maxhp": 8,
+        "type": "ash"
+      },
+      "ambush": {
+        "hp": 8,
+        "maxhp": 8,
+        "type": "ash"
+      }
+    },
+    {
+      "stage": 2,
+      "d": "furious",
+      "coop": false,
+      "side": 0,
+      "ordinary": {
+        "hp": 9,
+        "maxhp": 9,
+        "type": "ash"
+      },
+      "ambush": {
+        "hp": 9,
+        "maxhp": 9,
+        "type": "ash"
+      },
+      "events": [
+        {
+          "event": "ambush",
+          "stage": 2,
+          "side": 0
+        },
+        {
+          "event": "rocket-volley",
+          "stage": 2,
+          "round": 1
+        },
+        {
+          "event": "rocket-volley",
+          "stage": 2,
+          "round": 2
+        },
+        {
+          "event": "rocket-volley",
+          "stage": 2,
+          "round": 3
+        }
+      ],
+      "draws": 228,
+      "seen": 9,
+      "round": 3,
+      "scale": 1,
+      "enemyDead": false,
+      "enemyDying": null,
+      "blocked": {
+        "bossActive": false,
+        "subBossActive": false,
+        "warnT": 0,
+        "playerDead": false,
+        "debugFight": null,
+        "wfx": false
+      },
+      "arrival": {
+        "t": 0.5333333333333333,
+        "scale": 1.3217391304347825,
+        "round": 0,
+        "visible": true,
+        "dead": false,
+        "dying": false,
+        "seen": 0,
+        "hp": 9
+      },
+      "beforeFire": {
+        "t": 1.733333333333332,
+        "scale": 1,
+        "round": 0,
+        "visible": true,
+        "dead": false,
+        "dying": false,
+        "seen": 0,
+        "hp": 9
+      },
+      "firing": {
+        "t": 2.5999999999999956,
+        "scale": 1,
+        "round": 2,
+        "visible": true,
+        "dead": false,
+        "dying": false,
+        "seen": 6,
+        "hp": 9
+      }
+    },
+    {
+      "stage": 2,
+      "d": "furious",
+      "coop": false,
+      "side": 1,
+      "ordinary": {
+        "hp": 9,
+        "maxhp": 9,
+        "type": "ash"
+      },
+      "ambush": {
+        "hp": 9,
+        "maxhp": 9,
+        "type": "ash"
+      },
+      "events": [
+        {
+          "event": "ambush",
+          "stage": 2,
+          "side": 1
+        },
+        {
+          "event": "rocket-volley",
+          "stage": 2,
+          "round": 1
+        },
+        {
+          "event": "rocket-volley",
+          "stage": 2,
+          "round": 2
+        },
+        {
+          "event": "rocket-volley",
+          "stage": 2,
+          "round": 3
+        }
+      ],
+      "draws": 228,
+      "seen": 9,
+      "round": 3,
+      "scale": 1,
+      "enemyDead": false,
+      "enemyDying": null,
+      "blocked": {
+        "bossActive": false,
+        "subBossActive": false,
+        "warnT": 0,
+        "playerDead": false,
+        "debugFight": null,
+        "wfx": false
+      },
+      "arrival": {
+        "t": 0.5333333333333333,
+        "scale": 1.3217391304347825,
+        "round": 0,
+        "visible": true,
+        "dead": false,
+        "dying": false,
+        "seen": 0,
+        "hp": 9
+      },
+      "beforeFire": {
+        "t": 1.733333333333332,
+        "scale": 1,
+        "round": 0,
+        "visible": true,
+        "dead": false,
+        "dying": false,
+        "seen": 0,
+        "hp": 9
+      },
+      "firing": {
+        "t": 2.5999999999999956,
+        "scale": 1,
+        "round": 2,
+        "visible": true,
+        "dead": false,
+        "dying": false,
+        "seen": 6,
+        "hp": 9
+      }
+    },
+    {
+      "stage": 2,
+      "d": "furious",
+      "coop": false,
+      "side": 2,
+      "ordinary": {
+        "hp": 9,
+        "maxhp": 9,
+        "type": "ash"
+      },
+      "ambush": {
+        "hp": 9,
+        "maxhp": 9,
+        "type": "ash"
+      },
+      "events": [
+        {
+          "event": "ambush",
+          "stage": 2,
+          "side": 2
+        },
+        {
+          "event": "rocket-volley",
+          "stage": 2,
+          "round": 1
+        },
+        {
+          "event": "rocket-volley",
+          "stage": 2,
+          "round": 2
+        },
+        {
+          "event": "rocket-volley",
+          "stage": 2,
+          "round": 3
+        }
+      ],
+      "draws": 228,
+      "seen": 9,
+      "round": 3,
+      "scale": 1,
+      "enemyDead": false,
+      "enemyDying": null,
+      "blocked": {
+        "bossActive": false,
+        "subBossActive": false,
+        "warnT": 0,
+        "playerDead": false,
+        "debugFight": null,
+        "wfx": false
+      },
+      "arrival": {
+        "t": 0.5333333333333333,
+        "scale": 1.3217391304347825,
+        "round": 0,
+        "visible": true,
+        "dead": false,
+        "dying": false,
+        "seen": 0,
+        "hp": 9
+      },
+      "beforeFire": {
+        "t": 1.733333333333332,
+        "scale": 1,
+        "round": 0,
+        "visible": true,
+        "dead": false,
+        "dying": false,
+        "seen": 0,
+        "hp": 9
+      },
+      "firing": {
+        "t": 2.5999999999999956,
+        "scale": 1,
+        "round": 2,
+        "visible": true,
+        "dead": false,
+        "dying": false,
+        "seen": 6,
+        "hp": 9
+      }
+    },
+    {
+      "stage": 2,
+      "d": "furious",
+      "coop": true,
+      "side": 0,
+      "ordinary": {
+        "hp": 11,
+        "maxhp": 11,
+        "type": "ash"
+      },
+      "ambush": {
+        "hp": 11,
+        "maxhp": 11,
+        "type": "ash"
+      }
+    },
+    {
+      "stage": 2,
+      "d": "furious",
+      "coop": true,
+      "side": 1,
+      "ordinary": {
+        "hp": 11,
+        "maxhp": 11,
+        "type": "ash"
+      },
+      "ambush": {
+        "hp": 11,
+        "maxhp": 11,
+        "type": "ash"
+      }
+    },
+    {
+      "stage": 2,
+      "d": "furious",
+      "coop": true,
+      "side": 2,
+      "ordinary": {
+        "hp": 11,
+        "maxhp": 11,
+        "type": "ash"
+      },
+      "ambush": {
+        "hp": 11,
+        "maxhp": 11,
+        "type": "ash"
+      }
+    }
+  ],
+  "interruptions": [
+    {
+      "stage": 1,
+      "difficulty": "easy",
+      "mode": "dead-before",
+      "before": {
+        "round": 0,
+        "count": 0
+      },
+      "after": {
+        "round": 0,
+        "count": 0
+      }
+    },
+    {
+      "stage": 1,
+      "difficulty": "easy",
+      "mode": "dying-before",
+      "before": {
+        "round": 0,
+        "count": 0
+      },
+      "after": {
+        "round": 0,
+        "count": 0
+      }
+    },
+    {
+      "stage": 1,
+      "difficulty": "easy",
+      "mode": "dead-after",
+      "before": {
+        "round": 1,
+        "count": 1
+      },
+      "after": {
+        "round": 1,
+        "count": 1
+      }
+    },
+    {
+      "stage": 1,
+      "difficulty": "easy",
+      "mode": "dying-after",
+      "before": {
+        "round": 1,
+        "count": 1
+      },
+      "after": {
+        "round": 1,
+        "count": 1
+      }
+    },
+    {
+      "stage": 1,
+      "difficulty": "normal",
+      "mode": "dead-before",
+      "before": {
+        "round": 0,
+        "count": 0
+      },
+      "after": {
+        "round": 0,
+        "count": 0
+      }
+    },
+    {
+      "stage": 1,
+      "difficulty": "normal",
+      "mode": "dying-before",
+      "before": {
+        "round": 0,
+        "count": 0
+      },
+      "after": {
+        "round": 0,
+        "count": 0
+      }
+    },
+    {
+      "stage": 1,
+      "difficulty": "normal",
+      "mode": "dead-after",
+      "before": {
+        "round": 1,
+        "count": 1
+      },
+      "after": {
+        "round": 1,
+        "count": 1
+      }
+    },
+    {
+      "stage": 1,
+      "difficulty": "normal",
+      "mode": "dying-after",
+      "before": {
+        "round": 1,
+        "count": 1
+      },
+      "after": {
+        "round": 1,
+        "count": 1
+      }
+    },
+    {
+      "stage": 1,
+      "difficulty": "hard",
+      "mode": "dead-before",
+      "before": {
+        "round": 0,
+        "count": 0
+      },
+      "after": {
+        "round": 0,
+        "count": 0
+      }
+    },
+    {
+      "stage": 1,
+      "difficulty": "hard",
+      "mode": "dying-before",
+      "before": {
+        "round": 0,
+        "count": 0
+      },
+      "after": {
+        "round": 0,
+        "count": 0
+      }
+    },
+    {
+      "stage": 1,
+      "difficulty": "hard",
+      "mode": "dead-after",
+      "before": {
+        "round": 1,
+        "count": 1
+      },
+      "after": {
+        "round": 1,
+        "count": 1
+      }
+    },
+    {
+      "stage": 1,
+      "difficulty": "hard",
+      "mode": "dying-after",
+      "before": {
+        "round": 1,
+        "count": 1
+      },
+      "after": {
+        "round": 1,
+        "count": 1
+      }
+    },
+    {
+      "stage": 1,
+      "difficulty": "furious",
+      "mode": "dead-before",
+      "before": {
+        "round": 0,
+        "count": 0
+      },
+      "after": {
+        "round": 0,
+        "count": 0
+      }
+    },
+    {
+      "stage": 1,
+      "difficulty": "furious",
+      "mode": "dying-before",
+      "before": {
+        "round": 0,
+        "count": 0
+      },
+      "after": {
+        "round": 0,
+        "count": 0
+      }
+    },
+    {
+      "stage": 1,
+      "difficulty": "furious",
+      "mode": "dead-after",
+      "before": {
+        "round": 1,
+        "count": 1
+      },
+      "after": {
+        "round": 1,
+        "count": 1
+      }
+    },
+    {
+      "stage": 1,
+      "difficulty": "furious",
+      "mode": "dying-after",
+      "before": {
+        "round": 1,
+        "count": 1
+      },
+      "after": {
+        "round": 1,
+        "count": 1
+      }
+    },
+    {
+      "stage": 2,
+      "difficulty": "easy",
+      "mode": "dead-before",
+      "before": {
+        "round": 0,
+        "count": 0
+      },
+      "after": {
+        "round": 0,
+        "count": 0
+      }
+    },
+    {
+      "stage": 2,
+      "difficulty": "easy",
+      "mode": "dying-before",
+      "before": {
+        "round": 0,
+        "count": 0
+      },
+      "after": {
+        "round": 0,
+        "count": 0
+      }
+    },
+    {
+      "stage": 2,
+      "difficulty": "easy",
+      "mode": "dead-after",
+      "before": {
+        "round": 1,
+        "count": 1
+      },
+      "after": {
+        "round": 1,
+        "count": 1
+      }
+    },
+    {
+      "stage": 2,
+      "difficulty": "easy",
+      "mode": "dying-after",
+      "before": {
+        "round": 1,
+        "count": 1
+      },
+      "after": {
+        "round": 1,
+        "count": 1
+      }
+    },
+    {
+      "stage": 2,
+      "difficulty": "normal",
+      "mode": "dead-before",
+      "before": {
+        "round": 0,
+        "count": 0
+      },
+      "after": {
+        "round": 0,
+        "count": 0
+      }
+    },
+    {
+      "stage": 2,
+      "difficulty": "normal",
+      "mode": "dying-before",
+      "before": {
+        "round": 0,
+        "count": 0
+      },
+      "after": {
+        "round": 0,
+        "count": 0
+      }
+    },
+    {
+      "stage": 2,
+      "difficulty": "normal",
+      "mode": "dead-after",
+      "before": {
+        "round": 1,
+        "count": 1
+      },
+      "after": {
+        "round": 1,
+        "count": 1
+      }
+    },
+    {
+      "stage": 2,
+      "difficulty": "normal",
+      "mode": "dying-after",
+      "before": {
+        "round": 1,
+        "count": 1
+      },
+      "after": {
+        "round": 1,
+        "count": 1
+      }
+    },
+    {
+      "stage": 2,
+      "difficulty": "hard",
+      "mode": "dead-before",
+      "before": {
+        "round": 0,
+        "count": 0
+      },
+      "after": {
+        "round": 0,
+        "count": 0
+      }
+    },
+    {
+      "stage": 2,
+      "difficulty": "hard",
+      "mode": "dying-before",
+      "before": {
+        "round": 0,
+        "count": 0
+      },
+      "after": {
+        "round": 0,
+        "count": 0
+      }
+    },
+    {
+      "stage": 2,
+      "difficulty": "hard",
+      "mode": "dead-after",
+      "before": {
+        "round": 1,
+        "count": 1
+      },
+      "after": {
+        "round": 1,
+        "count": 1
+      }
+    },
+    {
+      "stage": 2,
+      "difficulty": "hard",
+      "mode": "dying-after",
+      "before": {
+        "round": 1,
+        "count": 1
+      },
+      "after": {
+        "round": 1,
+        "count": 1
+      }
+    },
+    {
+      "stage": 2,
+      "difficulty": "furious",
+      "mode": "dead-before",
+      "before": {
+        "round": 0,
+        "count": 0
+      },
+      "after": {
+        "round": 0,
+        "count": 0
+      }
+    },
+    {
+      "stage": 2,
+      "difficulty": "furious",
+      "mode": "dying-before",
+      "before": {
+        "round": 0,
+        "count": 0
+      },
+      "after": {
+        "round": 0,
+        "count": 0
+      }
+    },
+    {
+      "stage": 2,
+      "difficulty": "furious",
+      "mode": "dead-after",
+      "before": {
+        "round": 1,
+        "count": 1
+      },
+      "after": {
+        "round": 1,
+        "count": 1
+      }
+    },
+    {
+      "stage": 2,
+      "difficulty": "furious",
+      "mode": "dying-after",
+      "before": {
+        "round": 1,
+        "count": 1
+      },
+      "after": {
+        "round": 1,
+        "count": 1
+      }
+    }
+  ],
+  "pageErrors": [],
+  "consoleErrors": [],
+  "fixtureNotes": [
+    "Campaign wave schedules and unrelated formation schedules are suppressed for isolated CP12 shots. Native game update/draw, enemy factory, and missiles remain in use.",
+    "Co-op cases verify native constructor health parity; the attack-motion fixtures are solo.",
+    "Initial Stage 2 fixture left the independent firewall cooldown running. The native firewall correctly suppressed an ambush volley. Probe isolation now resets that cooldown; initial diagnostic retained under _shots/cp12_health_1013/fixture_firewall_overlap_initial.json. No gameplay change was made for this fixture issue."
+  ],
+  "screenshots": [
+    "_shots/cp12_health_1013/stage1-normal-solo-side0-7.png",
+    "_shots/cp12_health_1013/stage1-normal-solo-side0-25.png",
+    "_shots/cp12_health_1013/stage1-normal-solo-side0-38.png",
+    "_shots/cp12_health_1013/stage2-normal-solo-side0-7.png",
+    "_shots/cp12_health_1013/stage2-normal-solo-side0-25.png",
+    "_shots/cp12_health_1013/stage2-normal-solo-side0-38.png"
+  ]
+}

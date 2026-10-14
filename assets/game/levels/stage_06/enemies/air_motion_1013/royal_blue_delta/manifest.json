@@ -1,0 +1,49 @@
+{
+  "id": "l6v_r2",
+  "name": "Royal Blue Delta",
+  "stage": 6,
+  "stages": [
+    6
+  ],
+  "aliases": [
+    "l6v_r2"
+  ],
+  "folder": "assets/game/levels/stage_06/enemies/air_motion_1013/royal_blue_delta",
+  "rebel": false,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s6_l6v_r2_heading",
+    "path": "assets/game/levels/stage_06/enemies/air_motion_1013/royal_blue_delta/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "283ca7dfdd8b00f7521e18a89c13a0580418860b34588e49df3bb7e39a551fbb"
+  },
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s6_l6v_r2_roll",
+    "path": "assets/game/levels/stage_06/enemies/air_motion_1013/royal_blue_delta/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "7964971ccfb9452749264f7a45a57174ead60d8ed536d7756afbbd426bcaa77d"
+  },
+  "nativeRatios": {
+    "l6v_r2": 2.1538461538461537
+  },
+  "sourceKeys": {
+    "l6v_r2": "n6v2_royal_intact_c"
+  }
+}

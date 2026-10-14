@@ -1,0 +1,130 @@
+{
+  "id": "s6dart",
+  "name": "Blue stealth fighter",
+  "stage": 6,
+  "stages": [
+    6
+  ],
+  "aliases": [
+    "s6dart",
+    "s6mine",
+    "s6lancer",
+    "s6skimmer",
+    "s6thunder",
+    "s6cyclone",
+    "stealth_blue"
+  ],
+  "folder": "assets/game/levels/stage_06/enemies/air_motion_1013/blue_stealth_fighter",
+  "rebel": false,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s6_s6dart_heading",
+    "path": "assets/game/levels/stage_06/enemies/air_motion_1013/blue_stealth_fighter/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "7d156de25969520f39de6f52262827f8b2b1a03b84cc435b8212256ce564410a"
+  },
+  "roll": {
+    "kind": "files",
+    "refs": [
+      {
+        "key": "p2_stealth_roll_blue_00",
+        "path": "assets/game/shared/combat/part2_1010/stealth_roll_blue_00.png"
+      },
+      {
+        "key": "p2_stealth_roll_blue_01",
+        "path": "assets/game/shared/combat/part2_1010/stealth_roll_blue_01.png"
+      },
+      {
+        "key": "p2_stealth_roll_blue_02",
+        "path": "assets/game/shared/combat/part2_1010/stealth_roll_blue_02.png"
+      },
+      {
+        "key": "p2_stealth_roll_blue_03",
+        "path": "assets/game/shared/combat/part2_1010/stealth_roll_blue_03.png"
+      },
+      {
+        "key": "p2_stealth_roll_blue_04",
+        "path": "assets/game/shared/combat/part2_1010/stealth_roll_blue_04.png"
+      },
+      {
+        "key": "p2_stealth_roll_blue_05",
+        "path": "assets/game/shared/combat/part2_1010/stealth_roll_blue_05.png"
+      },
+      {
+        "key": "p2_stealth_roll_blue_06",
+        "path": "assets/game/shared/combat/part2_1010/stealth_roll_blue_06.png"
+      },
+      {
+        "key": "p2_stealth_roll_blue_07",
+        "path": "assets/game/shared/combat/part2_1010/stealth_roll_blue_07.png"
+      },
+      {
+        "key": "p2_stealth_roll_blue_08",
+        "path": "assets/game/shared/combat/part2_1010/stealth_roll_blue_08.png"
+      },
+      {
+        "key": "p2_stealth_roll_blue_09",
+        "path": "assets/game/shared/combat/part2_1010/stealth_roll_blue_09.png"
+      },
+      {
+        "key": "p2_stealth_roll_blue_10",
+        "path": "assets/game/shared/combat/part2_1010/stealth_roll_blue_10.png"
+      },
+      {
+        "key": "p2_stealth_roll_blue_11",
+        "path": "assets/game/shared/combat/part2_1010/stealth_roll_blue_11.png"
+      },
+      {
+        "key": "p2_stealth_roll_blue_12",
+        "path": "assets/game/shared/combat/part2_1010/stealth_roll_blue_12.png"
+      },
+      {
+        "key": "p2_stealth_roll_blue_13",
+        "path": "assets/game/shared/combat/part2_1010/stealth_roll_blue_13.png"
+      },
+      {
+        "key": "p2_stealth_roll_blue_14",
+        "path": "assets/game/shared/combat/part2_1010/stealth_roll_blue_14.png"
+      },
+      {
+        "key": "p2_stealth_roll_blue_15",
+        "path": "assets/game/shared/combat/part2_1010/stealth_roll_blue_15.png"
+      }
+    ],
+    "frames": 16,
+    "cell": 256,
+    "pivot": [
+      128,
+      128
+    ],
+    "span": 196,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "reused": true
+  },
+  "referenceRatio": 0.7734375,
+  "nativeRatios": {
+    "s6dart": 0.72,
+    "s6mine": 0.7714285714285715,
+    "s6lancer": 0.7727272727272727,
+    "s6skimmer": 0.7727272727272727,
+    "s6thunder": 0.7674418604651163,
+    "s6cyclone": 0.7654320987654321
+  },
+  "sourceKeys": {
+    "s6dart": "p2_stealth_blue_idle",
+    "s6mine": "p2_stealth_blue_idle",
+    "s6lancer": "p2_stealth_blue_idle",
+    "s6skimmer": "p2_stealth_blue_idle",
+    "s6thunder": "p2_stealth_blue_idle",
+    "s6cyclone": "p2_stealth_blue_idle"
+  }
+}

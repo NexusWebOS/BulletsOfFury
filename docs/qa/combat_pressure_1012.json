@@ -1,0 +1,184 @@
+{
+  "results": [
+    {
+      "volleys": 2,
+      "rigs": [
+        {
+          "dead": false,
+          "y": 246.1666666666687,
+          "t": 4.483333333333323,
+          "round": 2
+        }
+      ]
+    },
+    {
+      "difficulty": "easy",
+      "rounds": 2,
+      "shots": 64
+    },
+    {
+      "difficulty": "normal",
+      "rounds": 2,
+      "shots": 64
+    },
+    {
+      "difficulty": "hard",
+      "rounds": 2,
+      "shots": 64
+    },
+    {
+      "difficulty": "furious",
+      "rounds": 3,
+      "shots": 72
+    },
+    {
+      "damage": 0,
+      "absorbed": true,
+      "enemyShotDelta": 0,
+      "hpUnchanged": false
+    },
+    {
+      "absorbed": true,
+      "reflections": 0
+    }
+  ],
+  "errors": [],
+  "artAudio": {
+    "audio": {
+      "url": "http://localhost:56106/assets/game/shared/audio/sounds/firewall_flamethrower_1012.mp3",
+      "loop": true
+    },
+    "spread": [
+      {
+        "name": "base",
+        "even": true,
+        "frames": 4,
+        "consistent": true
+      },
+      {
+        "name": "fire",
+        "even": true,
+        "frames": 4,
+        "consistent": true
+      },
+      {
+        "name": "ice",
+        "even": true,
+        "frames": 4,
+        "consistent": true
+      },
+      {
+        "name": "lightning",
+        "even": true,
+        "frames": 4,
+        "consistent": true
+      },
+      {
+        "name": "kinetic",
+        "even": true,
+        "frames": 4,
+        "consistent": true
+      },
+      {
+        "name": "chrome",
+        "even": true,
+        "frames": 4,
+        "consistent": true
+      },
+      {
+        "name": "dark",
+        "even": true,
+        "frames": 4,
+        "consistent": true
+      },
+      {
+        "name": "toxic",
+        "even": true,
+        "frames": 4,
+        "consistent": true
+      },
+      {
+        "name": "prism",
+        "even": true,
+        "frames": 4,
+        "consistent": true
+      },
+      {
+        "name": "water",
+        "even": true,
+        "frames": 4,
+        "consistent": true
+      }
+    ],
+    "errors": []
+  },
+  "stageStressRun": {
+    "source": "Final sequential Edge probe stdout, protected upgrades but no player invulnerability. Hold fire, stationary Axel, Spread Fire L5, starting shield5/speed5. Stage1 sampled35sec; stage2 reached miniboss gate24sec. Not full clears or measured human survival probability.",
+    "results": [
+      {
+        "stage": 1,
+        "difficulty": "easy",
+        "lives": 3,
+        "shield": 5,
+        "ambushes": 2,
+        "volleys": 0
+      },
+      {
+        "stage": 1,
+        "difficulty": "normal",
+        "lives": 3,
+        "shield": 5,
+        "ambushes": 2,
+        "volleys": 0
+      },
+      {
+        "stage": 1,
+        "difficulty": "hard",
+        "lives": 3,
+        "shield": 5,
+        "ambushes": 2,
+        "volleys": 0
+      },
+      {
+        "stage": 1,
+        "difficulty": "furious",
+        "lives": 3,
+        "shield": 1,
+        "ambushes": 3,
+        "volleys": 2
+      },
+      {
+        "stage": 2,
+        "difficulty": "easy",
+        "lives": 3,
+        "shield": 1,
+        "ambushes": 1,
+        "volleys": 2
+      },
+      {
+        "stage": 2,
+        "difficulty": "normal",
+        "lives": 3,
+        "shield": 1,
+        "ambushes": 1,
+        "volleys": 0
+      },
+      {
+        "stage": 2,
+        "difficulty": "hard",
+        "lives": 3,
+        "shield": 1,
+        "ambushes": 1,
+        "volleys": 0
+      },
+      {
+        "stage": 2,
+        "difficulty": "furious",
+        "lives": 3,
+        "shield": 3,
+        "ambushes": 2,
+        "volleys": 3
+      }
+    ]
+  }
+}

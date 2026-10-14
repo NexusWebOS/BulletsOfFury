@@ -1,0 +1,49 @@
+{
+  "id": "s4interceptor",
+  "name": "Airbase Interceptor",
+  "stage": 4,
+  "stages": [
+    4
+  ],
+  "aliases": [
+    "s4interceptor"
+  ],
+  "folder": "assets/game/levels/stage_04/enemies/air_motion_1013/airbase_interceptor",
+  "rebel": false,
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s4_s4interceptor_roll",
+    "path": "assets/game/levels/stage_04/enemies/air_motion_1013/airbase_interceptor/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "3b9f074fd5574f3088328424223efdb1972189dbc37ffc9e054a2fe1e0a0cd5d"
+  },
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s4_s4interceptor_heading",
+    "path": "assets/game/levels/stage_04/enemies/air_motion_1013/airbase_interceptor/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "3df5fb92134e934e559f9fb85e8328c7e58c190217526612c8ea68b7c4ce1456"
+  },
+  "nativeRatios": {
+    "s4interceptor": 1.2
+  },
+  "sourceKeys": {
+    "s4interceptor": "enc30_jet"
+  }
+}

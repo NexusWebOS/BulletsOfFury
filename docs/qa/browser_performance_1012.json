@@ -1,0 +1,100 @@
+{
+  "edition": "2026-10-12",
+  "renderDefault": "native 480x512; high opt-in 960x1024",
+  "scope": "Main game; stages 1 and 6; 240 real requestAnimationFrame callbacks each; movement, firing, repeated explosions; protected player; headless browsers. Not full-campaign or unplugged laptop certification.",
+  "results": {
+    "Edge": {
+      "results": [
+        {
+          "stage": 1,
+          "frames": 240,
+          "averageSubmissionMs": 9.460909091207114,
+          "p95SubmissionMs": 13.600000023841858,
+          "rafFps": 47.482355988172564,
+          "peakPlayerShots": 83,
+          "peakEnemyShots": 0,
+          "peakEffects": 752,
+          "renderScale": 1,
+          "state": "play",
+          "finite": true
+        },
+        {
+          "stage": 6,
+          "frames": 240,
+          "averageSubmissionMs": 6.531363636390729,
+          "p95SubmissionMs": 9.599999994039536,
+          "rafFps": 52.80211208448338,
+          "peakPlayerShots": 12,
+          "peakEnemyShots": 0,
+          "peakEffects": 326,
+          "renderScale": 1,
+          "state": "play",
+          "finite": true
+        }
+      ],
+      "errors": []
+    },
+    "Chrome": {
+      "results": [
+        {
+          "stage": 1,
+          "frames": 240,
+          "averageSubmissionMs": 9.373636364394969,
+          "p95SubmissionMs": 13,
+          "rafFps": 48.53083914232771,
+          "peakPlayerShots": 81,
+          "peakEnemyShots": 0,
+          "peakEffects": 769,
+          "renderScale": 1,
+          "state": "play",
+          "finite": true
+        },
+        {
+          "stage": 6,
+          "frames": 240,
+          "averageSubmissionMs": 5.340000000189651,
+          "p95SubmissionMs": 8.900000005960464,
+          "rafFps": 60.00272739669988,
+          "peakPlayerShots": 12,
+          "peakEnemyShots": 0,
+          "peakEffects": 343,
+          "renderScale": 1,
+          "state": "play",
+          "finite": true
+        }
+      ],
+      "errors": []
+    },
+    "Firefox": {
+      "results": [
+        {
+          "stage": 1,
+          "frames": 240,
+          "averageSubmissionMs": 23.331818181818182,
+          "p95SubmissionMs": 35,
+          "rafFps": 39.40378491264898,
+          "peakPlayerShots": 81,
+          "peakEnemyShots": 0,
+          "peakEffects": 748,
+          "renderScale": 1,
+          "state": "play",
+          "finite": true
+        },
+        {
+          "stage": 6,
+          "frames": 240,
+          "averageSubmissionMs": 20.586363636363636,
+          "p95SubmissionMs": 27,
+          "rafFps": 44.00105602534461,
+          "peakPlayerShots": 12,
+          "peakEnemyShots": 4,
+          "peakEffects": 342,
+          "renderScale": 1,
+          "state": "play",
+          "finite": true
+        }
+      ],
+      "errors": []
+    }
+  }
+}

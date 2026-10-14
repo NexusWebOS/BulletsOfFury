@@ -1,0 +1,49 @@
+{
+  "id": "l6v_r0",
+  "name": "Royal Blue Lancer",
+  "stage": 6,
+  "stages": [
+    6
+  ],
+  "aliases": [
+    "l6v_r0"
+  ],
+  "folder": "assets/game/levels/stage_06/enemies/air_motion_1013/royal_blue_lancer",
+  "rebel": false,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s6_l6v_r0_heading",
+    "path": "assets/game/levels/stage_06/enemies/air_motion_1013/royal_blue_lancer/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "479098e78a7b86cb84c02d6a5fec11c870a3496907f019cccb88460398b820af"
+  },
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s6_l6v_r0_roll",
+    "path": "assets/game/levels/stage_06/enemies/air_motion_1013/royal_blue_lancer/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "93eac48f36d1dd8dc60c4842d9b0deb5ca646c52e6c0e8bcf91e661eee087a8e"
+  },
+  "nativeRatios": {
+    "l6v_r0": 2.274193548387097
+  },
+  "sourceKeys": {
+    "l6v_r0": "n6v0_royal_intact_c"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "id": "mm1003_riflelocust",
+  "name": "Rifle Locust",
+  "stage": 7,
+  "stages": [
+    7
+  ],
+  "aliases": [
+    "mm1003_riflelocust"
+  ],
+  "folder": "assets/game/levels/stage_07/enemies/air_motion_1013/rifle_locust",
+  "rebel": false,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s7_mm1003_riflelocust_heading",
+    "path": "assets/game/levels/stage_07/enemies/air_motion_1013/rifle_locust/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "8da98cc24c108b8017e0faf0eb7868232a1a3d52a57677b47d0c183757305f37"
+  },
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s7_mm1003_riflelocust_roll",
+    "path": "assets/game/levels/stage_07/enemies/air_motion_1013/rifle_locust/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "73d22dbd552617ed1a441cd59a76388909ea802d22db2e6efb1ecbed9defe20b"
+  },
+  "nativeRatios": {
+    "mm1003_riflelocust": 1.0689655172413792
+  },
+  "sourceKeys": {
+    "mm1003_riflelocust": "mm1003_riflelocust_parts"
+  }
+}

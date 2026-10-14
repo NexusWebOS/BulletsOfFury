@@ -1,0 +1,49 @@
+{
+  "id": "s5frigate",
+  "name": "Space Frigate",
+  "stage": 5,
+  "stages": [
+    5
+  ],
+  "aliases": [
+    "s5frigate"
+  ],
+  "folder": "assets/game/levels/stage_05/enemies/air_motion_1013/space_frigate",
+  "rebel": false,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s5_s5frigate_heading",
+    "path": "assets/game/levels/stage_05/enemies/air_motion_1013/space_frigate/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "8c8397332f23276355d671dbe6ee5d501b6714fdd6ae6264fb6e07ceaee6f297"
+  },
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s5_s5frigate_roll",
+    "path": "assets/game/levels/stage_05/enemies/air_motion_1013/space_frigate/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "b12135fc2bc54b11153358a7b2b47892f978d1a582d08db726e2252f8efc58f5"
+  },
+  "nativeRatios": {
+    "s5frigate": 1.0101010101010102
+  },
+  "sourceKeys": {
+    "s5frigate": "sm10_orbital_frigate_0"
+  }
+}

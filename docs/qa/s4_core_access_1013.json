@@ -1,0 +1,1559 @@
+{
+  "checks": [
+    {
+      "ok": true,
+      "name": "easy pan80: every core outside hull and field approach"
+    },
+    {
+      "ok": true,
+      "name": "easy pan80: all four native Retina/point targets resolve to their core"
+    },
+    {
+      "ok": true,
+      "name": "easy pan80: settled formation fully visible"
+    },
+    {
+      "ok": true,
+      "name": "easy pan80: real bullets damage each core, never hull/middle weapon"
+    },
+    {
+      "ok": true,
+      "name": "easy pan340: every core outside hull and field approach"
+    },
+    {
+      "ok": true,
+      "name": "easy pan340: all four native Retina/point targets resolve to their core"
+    },
+    {
+      "ok": true,
+      "name": "easy pan340: settled formation fully visible"
+    },
+    {
+      "ok": true,
+      "name": "easy pan340: real bullets damage each core, never hull/middle weapon"
+    },
+    {
+      "ok": true,
+      "name": "easy pan600: every core outside hull and field approach"
+    },
+    {
+      "ok": true,
+      "name": "easy pan600: all four native Retina/point targets resolve to their core"
+    },
+    {
+      "ok": true,
+      "name": "easy pan600: settled formation fully visible"
+    },
+    {
+      "ok": true,
+      "name": "easy pan600: real bullets damage each core, never hull/middle weapon"
+    },
+    {
+      "ok": true,
+      "name": "easy continuous native 12-second camera sweep preserves every core lane and target"
+    },
+    {
+      "ok": true,
+      "name": "easy live generator motion remains smooth without target teleports"
+    },
+    {
+      "ok": true,
+      "name": "easy launched curved Retina missile reaches an upper core"
+    },
+    {
+      "ok": true,
+      "name": "easy helpers cannot mask a core collider"
+    },
+    {
+      "ok": true,
+      "name": "easy helper hulls sit in the gap between core images"
+    },
+    {
+      "ok": true,
+      "name": "easy native beam destroys both selected-column cores only"
+    },
+    {
+      "ok": true,
+      "name": "easy destroyed core rejects stale locks and damage"
+    },
+    {
+      "ok": true,
+      "name": "easy 0.75 rearm has no premature core targets"
+    },
+    {
+      "ok": true,
+      "name": "easy 0.75 rearm restores four real visible targets"
+    },
+    {
+      "ok": true,
+      "name": "easy 0.5 rearm has no premature core targets"
+    },
+    {
+      "ok": true,
+      "name": "easy 0.5 rearm restores four real visible targets"
+    },
+    {
+      "ok": true,
+      "name": "easy p2-core-balls: actual electrical balls finite and interceptable"
+    },
+    {
+      "ok": true,
+      "name": "easy p2-core-balls: native draw uses electric reel, never magma"
+    },
+    {
+      "ok": true,
+      "name": "easy ap10-stormburst: actual electrical balls finite and interceptable"
+    },
+    {
+      "ok": true,
+      "name": "easy ap10-stormburst: native draw uses electric reel, never magma"
+    },
+    {
+      "ok": true,
+      "name": "easy pt11-chase: actual electrical balls finite and interceptable"
+    },
+    {
+      "ok": true,
+      "name": "easy pt11-chase: native draw uses electric reel, never magma"
+    },
+    {
+      "ok": true,
+      "name": "easy intercepted ball uses authored lightning impact"
+    },
+    {
+      "ok": true,
+      "name": "normal pan80: every core outside hull and field approach"
+    },
+    {
+      "ok": true,
+      "name": "normal pan80: all four native Retina/point targets resolve to their core"
+    },
+    {
+      "ok": true,
+      "name": "normal pan80: settled formation fully visible"
+    },
+    {
+      "ok": true,
+      "name": "normal pan80: real bullets damage each core, never hull/middle weapon"
+    },
+    {
+      "ok": true,
+      "name": "normal pan340: every core outside hull and field approach"
+    },
+    {
+      "ok": true,
+      "name": "normal pan340: all four native Retina/point targets resolve to their core"
+    },
+    {
+      "ok": true,
+      "name": "normal pan340: settled formation fully visible"
+    },
+    {
+      "ok": true,
+      "name": "normal pan340: real bullets damage each core, never hull/middle weapon"
+    },
+    {
+      "ok": true,
+      "name": "normal pan600: every core outside hull and field approach"
+    },
+    {
+      "ok": true,
+      "name": "normal pan600: all four native Retina/point targets resolve to their core"
+    },
+    {
+      "ok": true,
+      "name": "normal pan600: settled formation fully visible"
+    },
+    {
+      "ok": true,
+      "name": "normal pan600: real bullets damage each core, never hull/middle weapon"
+    },
+    {
+      "ok": true,
+      "name": "normal continuous native 12-second camera sweep preserves every core lane and target"
+    },
+    {
+      "ok": true,
+      "name": "normal live generator motion remains smooth without target teleports"
+    },
+    {
+      "ok": true,
+      "name": "normal launched curved Retina missile reaches an upper core"
+    },
+    {
+      "ok": true,
+      "name": "normal helpers cannot mask a core collider"
+    },
+    {
+      "ok": true,
+      "name": "normal helper hulls sit in the gap between core images"
+    },
+    {
+      "ok": true,
+      "name": "normal native beam destroys both selected-column cores only"
+    },
+    {
+      "ok": true,
+      "name": "normal destroyed core rejects stale locks and damage"
+    },
+    {
+      "ok": true,
+      "name": "normal 0.75 rearm has no premature core targets"
+    },
+    {
+      "ok": true,
+      "name": "normal 0.75 rearm restores four real visible targets"
+    },
+    {
+      "ok": true,
+      "name": "normal 0.5 rearm has no premature core targets"
+    },
+    {
+      "ok": true,
+      "name": "normal 0.5 rearm restores four real visible targets"
+    },
+    {
+      "ok": true,
+      "name": "normal p2-core-balls: actual electrical balls finite and interceptable"
+    },
+    {
+      "ok": true,
+      "name": "normal p2-core-balls: native draw uses electric reel, never magma"
+    },
+    {
+      "ok": true,
+      "name": "normal ap10-stormburst: actual electrical balls finite and interceptable"
+    },
+    {
+      "ok": true,
+      "name": "normal ap10-stormburst: native draw uses electric reel, never magma"
+    },
+    {
+      "ok": true,
+      "name": "normal pt11-chase: actual electrical balls finite and interceptable"
+    },
+    {
+      "ok": true,
+      "name": "normal pt11-chase: native draw uses electric reel, never magma"
+    },
+    {
+      "ok": true,
+      "name": "normal intercepted ball uses authored lightning impact"
+    },
+    {
+      "ok": true,
+      "name": "hard pan80: every core outside hull and field approach"
+    },
+    {
+      "ok": true,
+      "name": "hard pan80: all four native Retina/point targets resolve to their core"
+    },
+    {
+      "ok": true,
+      "name": "hard pan80: settled formation fully visible"
+    },
+    {
+      "ok": true,
+      "name": "hard pan80: real bullets damage each core, never hull/middle weapon"
+    },
+    {
+      "ok": true,
+      "name": "hard pan340: every core outside hull and field approach"
+    },
+    {
+      "ok": true,
+      "name": "hard pan340: all four native Retina/point targets resolve to their core"
+    },
+    {
+      "ok": true,
+      "name": "hard pan340: settled formation fully visible"
+    },
+    {
+      "ok": true,
+      "name": "hard pan340: real bullets damage each core, never hull/middle weapon"
+    },
+    {
+      "ok": true,
+      "name": "hard pan600: every core outside hull and field approach"
+    },
+    {
+      "ok": true,
+      "name": "hard pan600: all four native Retina/point targets resolve to their core"
+    },
+    {
+      "ok": true,
+      "name": "hard pan600: settled formation fully visible"
+    },
+    {
+      "ok": true,
+      "name": "hard pan600: real bullets damage each core, never hull/middle weapon"
+    },
+    {
+      "ok": true,
+      "name": "hard continuous native 12-second camera sweep preserves every core lane and target"
+    },
+    {
+      "ok": true,
+      "name": "hard live generator motion remains smooth without target teleports"
+    },
+    {
+      "ok": true,
+      "name": "hard launched curved Retina missile reaches an upper core"
+    },
+    {
+      "ok": true,
+      "name": "hard helpers cannot mask a core collider"
+    },
+    {
+      "ok": true,
+      "name": "hard helper hulls sit in the gap between core images"
+    },
+    {
+      "ok": true,
+      "name": "hard native beam destroys both selected-column cores only"
+    },
+    {
+      "ok": true,
+      "name": "hard destroyed core rejects stale locks and damage"
+    },
+    {
+      "ok": true,
+      "name": "hard 0.75 rearm has no premature core targets"
+    },
+    {
+      "ok": true,
+      "name": "hard 0.75 rearm restores four real visible targets"
+    },
+    {
+      "ok": true,
+      "name": "hard 0.5 rearm has no premature core targets"
+    },
+    {
+      "ok": true,
+      "name": "hard 0.5 rearm restores four real visible targets"
+    },
+    {
+      "ok": true,
+      "name": "hard p2-core-balls: actual electrical balls finite and interceptable"
+    },
+    {
+      "ok": true,
+      "name": "hard p2-core-balls: native draw uses electric reel, never magma"
+    },
+    {
+      "ok": true,
+      "name": "hard ap10-stormburst: actual electrical balls finite and interceptable"
+    },
+    {
+      "ok": true,
+      "name": "hard ap10-stormburst: native draw uses electric reel, never magma"
+    },
+    {
+      "ok": true,
+      "name": "hard pt11-chase: actual electrical balls finite and interceptable"
+    },
+    {
+      "ok": true,
+      "name": "hard pt11-chase: native draw uses electric reel, never magma"
+    },
+    {
+      "ok": true,
+      "name": "hard intercepted ball uses authored lightning impact"
+    },
+    {
+      "ok": true,
+      "name": "furious pan80: every core outside hull and field approach"
+    },
+    {
+      "ok": true,
+      "name": "furious pan80: all four native Retina/point targets resolve to their core"
+    },
+    {
+      "ok": true,
+      "name": "furious pan80: settled formation fully visible"
+    },
+    {
+      "ok": true,
+      "name": "furious pan80: real bullets damage each core, never hull/middle weapon"
+    },
+    {
+      "ok": true,
+      "name": "furious pan340: every core outside hull and field approach"
+    },
+    {
+      "ok": true,
+      "name": "furious pan340: all four native Retina/point targets resolve to their core"
+    },
+    {
+      "ok": true,
+      "name": "furious pan340: settled formation fully visible"
+    },
+    {
+      "ok": true,
+      "name": "furious pan340: real bullets damage each core, never hull/middle weapon"
+    },
+    {
+      "ok": true,
+      "name": "furious pan600: every core outside hull and field approach"
+    },
+    {
+      "ok": true,
+      "name": "furious pan600: all four native Retina/point targets resolve to their core"
+    },
+    {
+      "ok": true,
+      "name": "furious pan600: settled formation fully visible"
+    },
+    {
+      "ok": true,
+      "name": "furious pan600: real bullets damage each core, never hull/middle weapon"
+    },
+    {
+      "ok": true,
+      "name": "furious continuous native 12-second camera sweep preserves every core lane and target"
+    },
+    {
+      "ok": true,
+      "name": "furious live generator motion remains smooth without target teleports"
+    },
+    {
+      "ok": true,
+      "name": "furious launched curved Retina missile reaches an upper core"
+    },
+    {
+      "ok": true,
+      "name": "furious helpers cannot mask a core collider"
+    },
+    {
+      "ok": true,
+      "name": "furious helper hulls sit in the gap between core images"
+    },
+    {
+      "ok": true,
+      "name": "furious native beam destroys both selected-column cores only"
+    },
+    {
+      "ok": true,
+      "name": "furious destroyed core rejects stale locks and damage"
+    },
+    {
+      "ok": true,
+      "name": "furious 0.75 rearm has no premature core targets"
+    },
+    {
+      "ok": true,
+      "name": "furious 0.75 rearm restores four real visible targets"
+    },
+    {
+      "ok": true,
+      "name": "furious 0.5 rearm has no premature core targets"
+    },
+    {
+      "ok": true,
+      "name": "furious 0.5 rearm restores four real visible targets"
+    },
+    {
+      "ok": true,
+      "name": "furious p2-core-balls: actual electrical balls finite and interceptable"
+    },
+    {
+      "ok": true,
+      "name": "furious p2-core-balls: native draw uses electric reel, never magma"
+    },
+    {
+      "ok": true,
+      "name": "furious ap10-stormburst: actual electrical balls finite and interceptable"
+    },
+    {
+      "ok": true,
+      "name": "furious ap10-stormburst: native draw uses electric reel, never magma"
+    },
+    {
+      "ok": true,
+      "name": "furious pt11-chase: actual electrical balls finite and interceptable"
+    },
+    {
+      "ok": true,
+      "name": "furious pt11-chase: native draw uses electric reel, never magma"
+    },
+    {
+      "ok": true,
+      "name": "furious intercepted ball uses authored lightning impact"
+    },
+    {
+      "ok": true,
+      "name": "zero browser errors"
+    }
+  ],
+  "cameraSamples": [
+    {
+      "difficulty": "easy",
+      "x": 80,
+      "view": [
+        4.7406873680230076e-12,
+        480.0000000000047
+      ],
+      "boss": [
+        242.0416440226936,
+        171.97571080784508
+      ],
+      "nodes": [
+        {
+          "x": 38.04164402269359,
+          "y": 139.97571080784508,
+          "dx": 204,
+          "valid": true,
+          "point": true
+        },
+        {
+          "x": 446.0416440226936,
+          "y": 139.97571080784508,
+          "dx": 204.00000000000003,
+          "valid": true,
+          "point": true
+        },
+        {
+          "x": 38.04164402269359,
+          "y": 295.9757108078451,
+          "dx": 204,
+          "valid": true,
+          "point": true
+        },
+        {
+          "x": 446.0416440226936,
+          "y": 295.9757108078451,
+          "dx": 204.00000000000003,
+          "valid": true,
+          "point": true
+        }
+      ],
+      "shieldR": 176.88000000000002
+    },
+    {
+      "difficulty": "easy",
+      "x": 340,
+      "view": [
+        99.99999999999525,
+        579.9999999999952
+      ],
+      "boss": [
+        339.5750068416361,
+        172
+      ],
+      "nodes": [
+        {
+          "x": 135.57500684163608,
+          "y": 140,
+          "dx": 204,
+          "valid": true,
+          "point": true
+        },
+        {
+          "x": 543.5750068416361,
+          "y": 140,
+          "dx": 204,
+          "valid": true,
+          "point": true
+        },
+        {
+          "x": 135.57500684163608,
+          "y": 296,
+          "dx": 204,
+          "valid": true,
+          "point": true
+        },
+        {
+          "x": 543.5750068416361,
+          "y": 296,
+          "dx": 204,
+          "valid": true,
+          "point": true
+        }
+      ],
+      "shieldR": 176.88000000000002
+    },
+    {
+      "difficulty": "easy",
+      "x": 600,
+      "view": [
+        199.99999999999525,
+        679.9999999999952
+      ],
+      "boss": [
+        439.9996926654703,
+        172
+      ],
+      "nodes": [
+        {
+          "x": 235.99969266547032,
+          "y": 140,
+          "dx": 204,
+          "valid": true,
+          "point": true
+        },
+        {
+          "x": 643.9996926654703,
+          "y": 140,
+          "dx": 204,
+          "valid": true,
+          "point": true
+        },
+        {
+          "x": 235.99969266547032,
+          "y": 296,
+          "dx": 204,
+          "valid": true,
+          "point": true
+        },
+        {
+          "x": 643.9996926654703,
+          "y": 296,
+          "dx": 204,
+          "valid": true,
+          "point": true
+        }
+      ],
+      "shieldR": 176.88000000000002
+    },
+    {
+      "difficulty": "normal",
+      "x": 80,
+      "view": [
+        4.7406873680230076e-12,
+        480.0000000000047
+      ],
+      "boss": [
+        242.0416440226936,
+        171.97571080784508
+      ],
+      "nodes": [
+        {
+          "x": 38.04164402269359,
+          "y": 139.97571080784508,
+          "dx": 204,
+          "valid": true,
+          "point": true
+        },
+        {
+          "x": 446.0416440226936,
+          "y": 139.97571080784508,
+          "dx": 204.00000000000003,
+          "valid": true,
+          "point": true
+        },
+        {
+          "x": 38.04164402269359,
+          "y": 295.9757108078451,
+          "dx": 204,
+          "valid": true,
+          "point": true
+        },
+        {
+          "x": 446.0416440226936,
+          "y": 295.9757108078451,
+          "dx": 204.00000000000003,
+          "valid": true,
+          "point": true
+        }
+      ],
+      "shieldR": 176.88000000000002
+    },
+    {
+      "difficulty": "normal",
+      "x": 340,
+      "view": [
+        99.99999999999525,
+        579.9999999999952
+      ],
+      "boss": [
+        338.4051373290362,
+        172
+      ],
+      "nodes": [
+        {
+          "x": 134.40513732903622,
+          "y": 140,
+          "dx": 204,
+          "valid": true,
+          "point": true
+        },
+        {
+          "x": 542.4051373290363,
+          "y": 140,
+          "dx": 204.00000000000006,
+          "valid": true,
+          "point": true
+        },
+        {
+          "x": 134.40513732903622,
+          "y": 296,
+          "dx": 204,
+          "valid": true,
+          "point": true
+        },
+        {
+          "x": 542.4051373290363,
+          "y": 296,
+          "dx": 204.00000000000006,
+          "valid": true,
+          "point": true
+        }
+      ],
+      "shieldR": 176.88000000000002
+    },
+    {
+      "difficulty": "normal",
+      "x": 600,
+      "view": [
+        199.99999999999525,
+        679.9999999999952
+      ],
+      "boss": [
+        439.9361842676029,
+        172
+      ],
+      "nodes": [
+        {
+          "x": 235.93618426760293,
+          "y": 140,
+          "dx": 204,
+          "valid": true,
+          "point": true
+        },
+        {
+          "x": 643.9361842676029,
+          "y": 140,
+          "dx": 204,
+          "valid": true,
+          "point": true
+        },
+        {
+          "x": 235.93618426760293,
+          "y": 296,
+          "dx": 204,
+          "valid": true,
+          "point": true
+        },
+        {
+          "x": 643.9361842676029,
+          "y": 296,
+          "dx": 204,
+          "valid": true,
+          "point": true
+        }
+      ],
+      "shieldR": 176.88000000000002
+    },
+    {
+      "difficulty": "hard",
+      "x": 80,
+      "view": [
+        4.7406873680230076e-12,
+        480.0000000000047
+      ],
+      "boss": [
+        242.0416440226936,
+        171.97571080784508
+      ],
+      "nodes": [
+        {
+          "x": 38.04164402269359,
+          "y": 139.97571080784508,
+          "dx": 204,
+          "valid": true,
+          "point": true
+        },
+        {
+          "x": 446.0416440226936,
+          "y": 139.97571080784508,
+          "dx": 204.00000000000003,
+          "valid": true,
+          "point": true
+        },
+        {
+          "x": 38.04164402269359,
+          "y": 295.9757108078451,
+          "dx": 204,
+          "valid": true,
+          "point": true
+        },
+        {
+          "x": 446.0416440226936,
+          "y": 295.9757108078451,
+          "dx": 204.00000000000003,
+          "valid": true,
+          "point": true
+        }
+      ],
+      "shieldR": 176.88000000000002
+    },
+    {
+      "difficulty": "hard",
+      "x": 340,
+      "view": [
+        99.99999999999525,
+        579.9999999999952
+      ],
+      "boss": [
+        338.4051373290362,
+        172
+      ],
+      "nodes": [
+        {
+          "x": 134.40513732903622,
+          "y": 140,
+          "dx": 204,
+          "valid": true,
+          "point": true
+        },
+        {
+          "x": 542.4051373290363,
+          "y": 140,
+          "dx": 204.00000000000006,
+          "valid": true,
+          "point": true
+        },
+        {
+          "x": 134.40513732903622,
+          "y": 296,
+          "dx": 204,
+          "valid": true,
+          "point": true
+        },
+        {
+          "x": 542.4051373290363,
+          "y": 296,
+          "dx": 204.00000000000006,
+          "valid": true,
+          "point": true
+        }
+      ],
+      "shieldR": 176.88000000000002
+    },
+    {
+      "difficulty": "hard",
+      "x": 600,
+      "view": [
+        199.99999999999525,
+        679.9999999999952
+      ],
+      "boss": [
+        439.9361842676029,
+        172
+      ],
+      "nodes": [
+        {
+          "x": 235.93618426760293,
+          "y": 140,
+          "dx": 204,
+          "valid": true,
+          "point": true
+        },
+        {
+          "x": 643.9361842676029,
+          "y": 140,
+          "dx": 204,
+          "valid": true,
+          "point": true
+        },
+        {
+          "x": 235.93618426760293,
+          "y": 296,
+          "dx": 204,
+          "valid": true,
+          "point": true
+        },
+        {
+          "x": 643.9361842676029,
+          "y": 296,
+          "dx": 204,
+          "valid": true,
+          "point": true
+        }
+      ],
+      "shieldR": 176.88000000000002
+    },
+    {
+      "difficulty": "furious",
+      "x": 80,
+      "view": [
+        4.7406873680230076e-12,
+        480.0000000000047
+      ],
+      "boss": [
+        242.2426725071028,
+        171.97179026395034
+      ],
+      "nodes": [
+        {
+          "x": 38.24267250710281,
+          "y": 139.97179026395034,
+          "dx": 204,
+          "valid": true,
+          "point": true
+        },
+        {
+          "x": 446.24267250710284,
+          "y": 139.97179026395034,
+          "dx": 204.00000000000003,
+          "valid": true,
+          "point": true
+        },
+        {
+          "x": 38.24267250710281,
+          "y": 295.9717902639503,
+          "dx": 204,
+          "valid": true,
+          "point": true
+        },
+        {
+          "x": 446.24267250710284,
+          "y": 295.9717902639503,
+          "dx": 204.00000000000003,
+          "valid": true,
+          "point": true
+        }
+      ],
+      "shieldR": 176.88000000000002
+    },
+    {
+      "difficulty": "furious",
+      "x": 340,
+      "view": [
+        99.99999999999525,
+        579.9999999999952
+      ],
+      "boss": [
+        338.4626641837183,
+        172
+      ],
+      "nodes": [
+        {
+          "x": 134.4626641837183,
+          "y": 140,
+          "dx": 204,
+          "valid": true,
+          "point": true
+        },
+        {
+          "x": 542.4626641837183,
+          "y": 140,
+          "dx": 204,
+          "valid": true,
+          "point": true
+        },
+        {
+          "x": 134.4626641837183,
+          "y": 296,
+          "dx": 204,
+          "valid": true,
+          "point": true
+        },
+        {
+          "x": 542.4626641837183,
+          "y": 296,
+          "dx": 204,
+          "valid": true,
+          "point": true
+        }
+      ],
+      "shieldR": 176.88000000000002
+    },
+    {
+      "difficulty": "furious",
+      "x": 600,
+      "view": [
+        199.99999999999525,
+        679.9999999999952
+      ],
+      "boss": [
+        439.82102336895144,
+        172
+      ],
+      "nodes": [
+        {
+          "x": 235.82102336895144,
+          "y": 140,
+          "dx": 204,
+          "valid": true,
+          "point": true
+        },
+        {
+          "x": 643.8210233689515,
+          "y": 140,
+          "dx": 204.00000000000006,
+          "valid": true,
+          "point": true
+        },
+        {
+          "x": 235.82102336895144,
+          "y": 296,
+          "dx": 204,
+          "valid": true,
+          "point": true
+        },
+        {
+          "x": 643.8210233689515,
+          "y": 296,
+          "dx": 204.00000000000006,
+          "valid": true,
+          "point": true
+        }
+      ],
+      "shieldR": 176.88000000000002
+    }
+  ],
+  "attacks": [
+    {
+      "difficulty": "easy",
+      "mode": "p2-core-balls",
+      "count": 3,
+      "kinds": [
+        "s4bomb"
+      ],
+      "elements": [
+        "lightning"
+      ],
+      "keys": [
+        "s4w_lightning_ball_0",
+        "s4w_lightning_ball_1",
+        "s4w_lightning_ball_2",
+        "s4w_lightning_ball_3",
+        "s4w_lightning_ball_4",
+        "s4w_lightning_ball_5",
+        "s4w_lightning_ball_6",
+        "s4w_lightning_ball_7",
+        "s4w_lightning_ball_8",
+        "s4w_lightning_ball_9",
+        "s4w_lightning_ball_10",
+        "s4w_lightning_ball_11",
+        "s4w_lightning_ball_12",
+        "s4w_lightning_ball_13",
+        "s4w_lightning_ball_14",
+        "s4w_lightning_ball_15"
+      ],
+      "finite": true,
+      "shootable": true
+    },
+    {
+      "difficulty": "easy",
+      "mode": "ap10-stormburst",
+      "count": 3,
+      "kinds": [
+        "s4bomb"
+      ],
+      "elements": [
+        "lightning"
+      ],
+      "keys": [
+        "s4w_lightning_ball_0",
+        "s4w_lightning_ball_1",
+        "s4w_lightning_ball_2",
+        "s4w_lightning_ball_3",
+        "s4w_lightning_ball_4",
+        "s4w_lightning_ball_5",
+        "s4w_lightning_ball_6",
+        "s4w_lightning_ball_7",
+        "s4w_lightning_ball_8",
+        "s4w_lightning_ball_9",
+        "s4w_lightning_ball_10",
+        "s4w_lightning_ball_11",
+        "s4w_lightning_ball_12",
+        "s4w_lightning_ball_13",
+        "s4w_lightning_ball_14",
+        "s4w_lightning_ball_15"
+      ],
+      "finite": true,
+      "shootable": true
+    },
+    {
+      "difficulty": "easy",
+      "mode": "pt11-chase",
+      "count": 12,
+      "kinds": [
+        "s4bomb"
+      ],
+      "elements": [
+        "lightning"
+      ],
+      "keys": [
+        "s4w_lightning_ball_0",
+        "s4w_lightning_ball_1",
+        "s4w_lightning_ball_2",
+        "s4w_lightning_ball_3",
+        "s4w_lightning_ball_4",
+        "s4w_lightning_ball_5",
+        "s4w_lightning_ball_6",
+        "s4w_lightning_ball_7",
+        "s4w_lightning_ball_8",
+        "s4w_lightning_ball_9",
+        "s4w_lightning_ball_10",
+        "s4w_lightning_ball_11",
+        "s4w_lightning_ball_12",
+        "s4w_lightning_ball_13",
+        "s4w_lightning_ball_14",
+        "s4w_lightning_ball_15"
+      ],
+      "finite": true,
+      "shootable": true
+    },
+    {
+      "difficulty": "normal",
+      "mode": "p2-core-balls",
+      "count": 3,
+      "kinds": [
+        "s4bomb"
+      ],
+      "elements": [
+        "lightning"
+      ],
+      "keys": [
+        "s4w_lightning_ball_0",
+        "s4w_lightning_ball_1",
+        "s4w_lightning_ball_2",
+        "s4w_lightning_ball_3",
+        "s4w_lightning_ball_4",
+        "s4w_lightning_ball_5",
+        "s4w_lightning_ball_6",
+        "s4w_lightning_ball_7",
+        "s4w_lightning_ball_8",
+        "s4w_lightning_ball_9",
+        "s4w_lightning_ball_10",
+        "s4w_lightning_ball_11",
+        "s4w_lightning_ball_12",
+        "s4w_lightning_ball_13",
+        "s4w_lightning_ball_14",
+        "s4w_lightning_ball_15"
+      ],
+      "finite": true,
+      "shootable": true
+    },
+    {
+      "difficulty": "normal",
+      "mode": "ap10-stormburst",
+      "count": 5,
+      "kinds": [
+        "s4bomb"
+      ],
+      "elements": [
+        "lightning"
+      ],
+      "keys": [
+        "s4w_lightning_ball_0",
+        "s4w_lightning_ball_1",
+        "s4w_lightning_ball_2",
+        "s4w_lightning_ball_3",
+        "s4w_lightning_ball_4",
+        "s4w_lightning_ball_5",
+        "s4w_lightning_ball_6",
+        "s4w_lightning_ball_7",
+        "s4w_lightning_ball_8",
+        "s4w_lightning_ball_9",
+        "s4w_lightning_ball_10",
+        "s4w_lightning_ball_11",
+        "s4w_lightning_ball_12",
+        "s4w_lightning_ball_13",
+        "s4w_lightning_ball_14",
+        "s4w_lightning_ball_15"
+      ],
+      "finite": true,
+      "shootable": true
+    },
+    {
+      "difficulty": "normal",
+      "mode": "pt11-chase",
+      "count": 25,
+      "kinds": [
+        "s4bomb"
+      ],
+      "elements": [
+        "lightning"
+      ],
+      "keys": [
+        "s4w_lightning_ball_0",
+        "s4w_lightning_ball_1",
+        "s4w_lightning_ball_2",
+        "s4w_lightning_ball_3",
+        "s4w_lightning_ball_4",
+        "s4w_lightning_ball_5",
+        "s4w_lightning_ball_6",
+        "s4w_lightning_ball_7",
+        "s4w_lightning_ball_8",
+        "s4w_lightning_ball_9",
+        "s4w_lightning_ball_10",
+        "s4w_lightning_ball_11",
+        "s4w_lightning_ball_12",
+        "s4w_lightning_ball_13",
+        "s4w_lightning_ball_14",
+        "s4w_lightning_ball_15"
+      ],
+      "finite": true,
+      "shootable": true
+    },
+    {
+      "difficulty": "hard",
+      "mode": "p2-core-balls",
+      "count": 9,
+      "kinds": [
+        "s4bomb"
+      ],
+      "elements": [
+        "lightning"
+      ],
+      "keys": [
+        "s4w_lightning_ball_0",
+        "s4w_lightning_ball_1",
+        "s4w_lightning_ball_2",
+        "s4w_lightning_ball_3",
+        "s4w_lightning_ball_4",
+        "s4w_lightning_ball_5",
+        "s4w_lightning_ball_6",
+        "s4w_lightning_ball_7",
+        "s4w_lightning_ball_8",
+        "s4w_lightning_ball_9",
+        "s4w_lightning_ball_10",
+        "s4w_lightning_ball_11",
+        "s4w_lightning_ball_12",
+        "s4w_lightning_ball_13",
+        "s4w_lightning_ball_14",
+        "s4w_lightning_ball_15"
+      ],
+      "finite": true,
+      "shootable": true
+    },
+    {
+      "difficulty": "hard",
+      "mode": "ap10-stormburst",
+      "count": 7,
+      "kinds": [
+        "s4bomb"
+      ],
+      "elements": [
+        "lightning"
+      ],
+      "keys": [
+        "s4w_lightning_ball_0",
+        "s4w_lightning_ball_1",
+        "s4w_lightning_ball_2",
+        "s4w_lightning_ball_3",
+        "s4w_lightning_ball_4",
+        "s4w_lightning_ball_5",
+        "s4w_lightning_ball_6",
+        "s4w_lightning_ball_7",
+        "s4w_lightning_ball_8",
+        "s4w_lightning_ball_9",
+        "s4w_lightning_ball_10",
+        "s4w_lightning_ball_11",
+        "s4w_lightning_ball_12",
+        "s4w_lightning_ball_13",
+        "s4w_lightning_ball_14",
+        "s4w_lightning_ball_15"
+      ],
+      "finite": true,
+      "shootable": true
+    },
+    {
+      "difficulty": "hard",
+      "mode": "pt11-chase",
+      "count": 42,
+      "kinds": [
+        "s4bomb"
+      ],
+      "elements": [
+        "lightning"
+      ],
+      "keys": [
+        "s4w_lightning_ball_0",
+        "s4w_lightning_ball_1",
+        "s4w_lightning_ball_2",
+        "s4w_lightning_ball_3",
+        "s4w_lightning_ball_4",
+        "s4w_lightning_ball_5",
+        "s4w_lightning_ball_6",
+        "s4w_lightning_ball_7",
+        "s4w_lightning_ball_8",
+        "s4w_lightning_ball_9",
+        "s4w_lightning_ball_10",
+        "s4w_lightning_ball_11",
+        "s4w_lightning_ball_12",
+        "s4w_lightning_ball_13",
+        "s4w_lightning_ball_14",
+        "s4w_lightning_ball_15"
+      ],
+      "finite": true,
+      "shootable": true
+    },
+    {
+      "difficulty": "furious",
+      "mode": "p2-core-balls",
+      "count": 9,
+      "kinds": [
+        "s4bomb"
+      ],
+      "elements": [
+        "lightning"
+      ],
+      "keys": [
+        "s4w_lightning_ball_0",
+        "s4w_lightning_ball_1",
+        "s4w_lightning_ball_2",
+        "s4w_lightning_ball_3",
+        "s4w_lightning_ball_4",
+        "s4w_lightning_ball_5",
+        "s4w_lightning_ball_6",
+        "s4w_lightning_ball_7",
+        "s4w_lightning_ball_8",
+        "s4w_lightning_ball_9",
+        "s4w_lightning_ball_10",
+        "s4w_lightning_ball_11",
+        "s4w_lightning_ball_12",
+        "s4w_lightning_ball_13",
+        "s4w_lightning_ball_14",
+        "s4w_lightning_ball_15"
+      ],
+      "finite": true,
+      "shootable": true
+    },
+    {
+      "difficulty": "furious",
+      "mode": "ap10-stormburst",
+      "count": 9,
+      "kinds": [
+        "s4bomb"
+      ],
+      "elements": [
+        "lightning"
+      ],
+      "keys": [
+        "s4w_lightning_ball_0",
+        "s4w_lightning_ball_1",
+        "s4w_lightning_ball_2",
+        "s4w_lightning_ball_3",
+        "s4w_lightning_ball_4",
+        "s4w_lightning_ball_5",
+        "s4w_lightning_ball_6",
+        "s4w_lightning_ball_7",
+        "s4w_lightning_ball_8",
+        "s4w_lightning_ball_9",
+        "s4w_lightning_ball_10",
+        "s4w_lightning_ball_11",
+        "s4w_lightning_ball_12",
+        "s4w_lightning_ball_13",
+        "s4w_lightning_ball_14",
+        "s4w_lightning_ball_15"
+      ],
+      "finite": true,
+      "shootable": true
+    },
+    {
+      "difficulty": "furious",
+      "mode": "pt11-chase",
+      "count": 63,
+      "kinds": [
+        "s4bomb"
+      ],
+      "elements": [
+        "lightning"
+      ],
+      "keys": [
+        "s4w_lightning_ball_0",
+        "s4w_lightning_ball_1",
+        "s4w_lightning_ball_2",
+        "s4w_lightning_ball_3",
+        "s4w_lightning_ball_4",
+        "s4w_lightning_ball_5",
+        "s4w_lightning_ball_6",
+        "s4w_lightning_ball_7",
+        "s4w_lightning_ball_8",
+        "s4w_lightning_ball_9",
+        "s4w_lightning_ball_10",
+        "s4w_lightning_ball_11",
+        "s4w_lightning_ball_12",
+        "s4w_lightning_ball_13",
+        "s4w_lightning_ball_14",
+        "s4w_lightning_ball_15"
+      ],
+      "finite": true,
+      "shootable": true
+    }
+  ],
+  "browser": "msedge",
+  "scope": "Protected native fixtures across four difficulties, not complete human fight clears.",
+  "continuousMotion": [
+    {
+      "difficulty": "easy",
+      "minimum": 27.119999999999976,
+      "valid": true,
+      "point": true,
+      "maxStep": 0.26666666666667993
+    },
+    {
+      "difficulty": "normal",
+      "minimum": 27.119999999999976,
+      "valid": true,
+      "point": true,
+      "maxStep": 0.26666666666667993
+    },
+    {
+      "difficulty": "hard",
+      "minimum": 27.119999999999976,
+      "valid": true,
+      "point": true,
+      "maxStep": 0.26666666666667993
+    },
+    {
+      "difficulty": "furious",
+      "minimum": 27.119999999999976,
+      "valid": true,
+      "point": true,
+      "maxStep": 0.26666666666667993
+    }
+  ],
+  "beam": [
+    {
+      "diff": "easy",
+      "ok": true,
+      "nodes": [
+        {
+          "hp": 0,
+          "dead": true,
+          "x": 136,
+          "y": 139.99500774712413
+        },
+        {
+          "hp": 70,
+          "dead": false,
+          "x": 544,
+          "y": 139.99500774712413
+        },
+        {
+          "hp": 0,
+          "dead": true,
+          "x": 136,
+          "y": 295.99500774712413
+        },
+        {
+          "hp": 70,
+          "dead": false,
+          "x": 544,
+          "y": 295.99500774712413
+        }
+      ],
+      "bx": 340,
+      "px": 136,
+      "boss": 2112,
+      "h": 2112,
+      "light": 190.07999999999998,
+      "beforeLight": 190.07999999999998
+    },
+    {
+      "diff": "normal",
+      "ok": true,
+      "nodes": [
+        {
+          "hp": 0,
+          "dead": true,
+          "x": 136,
+          "y": 139.99500774712413
+        },
+        {
+          "hp": 70,
+          "dead": false,
+          "x": 544,
+          "y": 139.99500774712413
+        },
+        {
+          "hp": 0,
+          "dead": true,
+          "x": 136,
+          "y": 295.99500774712413
+        },
+        {
+          "hp": 70,
+          "dead": false,
+          "x": 544,
+          "y": 295.99500774712413
+        }
+      ],
+      "bx": 340,
+      "px": 136,
+      "boss": 2943,
+      "h": 2943,
+      "light": 265,
+      "beforeLight": 265
+    },
+    {
+      "diff": "hard",
+      "ok": true,
+      "nodes": [
+        {
+          "hp": 0,
+          "dead": true,
+          "x": 136,
+          "y": 139.99500774712413
+        },
+        {
+          "hp": 70,
+          "dead": false,
+          "x": 544,
+          "y": 139.99500774712413
+        },
+        {
+          "hp": 0,
+          "dead": true,
+          "x": 136,
+          "y": 295.99500774712413
+        },
+        {
+          "hp": 70,
+          "dead": false,
+          "x": 544,
+          "y": 295.99500774712413
+        }
+      ],
+      "bx": 340,
+      "px": 136,
+      "boss": 3678,
+      "h": 3678,
+      "light": 331,
+      "beforeLight": 331
+    },
+    {
+      "diff": "furious",
+      "ok": true,
+      "nodes": [
+        {
+          "hp": 0,
+          "dead": true,
+          "x": 136,
+          "y": 139.99500774712413
+        },
+        {
+          "hp": 75,
+          "dead": false,
+          "x": 544,
+          "y": 139.99500774712413
+        },
+        {
+          "hp": 0,
+          "dead": true,
+          "x": 136,
+          "y": 295.99500774712413
+        },
+        {
+          "hp": 75,
+          "dead": false,
+          "x": 544,
+          "y": 295.99500774712413
+        }
+      ],
+      "bx": 340,
+      "px": 136,
+      "boss": 4576,
+      "h": 4576,
+      "light": 412,
+      "beforeLight": 412
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,46 @@
+{
+  "id": "flight_variant_6",
+  "name": "Storm Maneuver Fighter",
+  "stage": 6,
+  "stages": [
+    6
+  ],
+  "aliases": [
+    "flight_variant_6"
+  ],
+  "folder": "assets/game/levels/stage_06/enemies/air_motion_1013/storm_maneuver_fighter",
+  "rebel": false,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s6_flight_variant_6_heading",
+    "path": "assets/game/levels/stage_06/enemies/air_motion_1013/storm_maneuver_fighter/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "east",
+    "startAngle": 0,
+    "sha256": "64ec53bef8ab7ce84f52df80e257314eb687d0e83e51efcd27cb58edc4a5fc9c"
+  },
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s6_flight_variant_6_roll",
+    "path": "assets/game/levels/stage_06/enemies/air_motion_1013/storm_maneuver_fighter/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "east",
+    "startAngle": 0,
+    "sha256": "63fa4c006d585ca24c6f87475549e4bda309090ef0f2becc6c4e228563fba285"
+  },
+  "referenceRatio": 0.4791666666666667,
+  "nativeRatios": {},
+  "sourceKeys": {}
+}

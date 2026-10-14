@@ -1,0 +1,49 @@
+{
+  "id": "s9ring",
+  "name": "Water Space Ring",
+  "stage": 9,
+  "stages": [
+    9
+  ],
+  "aliases": [
+    "s9ring"
+  ],
+  "folder": "assets/game/levels/stage_09/enemies/air_motion_1013/water_space_ring",
+  "rebel": false,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s9_s9ring_heading",
+    "path": "assets/game/levels/stage_09/enemies/air_motion_1013/water_space_ring/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "f31959551347f42aac50bbdb6e27c8a931889c47edc074945e03476b6f286c21"
+  },
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s9_s9ring_roll",
+    "path": "assets/game/levels/stage_09/enemies/air_motion_1013/water_space_ring/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "627f6aaed6531d46f75f2bb140cbea597897978e0aac01269aff6798a7bc5dab"
+  },
+  "nativeRatios": {
+    "s9ring": 1.0963855421686748
+  },
+  "sourceKeys": {
+    "s9ring": "overhaul_stage9_water_drone_01"
+  }
+}

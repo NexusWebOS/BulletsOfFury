@@ -1,0 +1,49 @@
+{
+  "id": "l6v_b2",
+  "name": "Black Ice Delta",
+  "stage": 6,
+  "stages": [
+    6
+  ],
+  "aliases": [
+    "l6v_b2"
+  ],
+  "folder": "assets/game/levels/stage_06/enemies/air_motion_1013/black_ice_delta",
+  "rebel": false,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s6_l6v_b2_heading",
+    "path": "assets/game/levels/stage_06/enemies/air_motion_1013/black_ice_delta/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "495fca3e326d9355235dfb77ad939449a54fa823637eba88e6b3692861efe70a"
+  },
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s6_l6v_b2_roll",
+    "path": "assets/game/levels/stage_06/enemies/air_motion_1013/black_ice_delta/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "2ee4fec5cebe6806dab801bfbe1a944ff3a6cdda151878e8e9ccbba6ca164bc2"
+  },
+  "nativeRatios": {
+    "l6v_b2": 2.1538461538461537
+  },
+  "sourceKeys": {
+    "l6v_b2": "n6v2_blackice_intact_c"
+  }
+}

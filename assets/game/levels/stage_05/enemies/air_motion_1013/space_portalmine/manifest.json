@@ -1,0 +1,49 @@
+{
+  "id": "s5portalmine",
+  "name": "Space Portalmine",
+  "stage": 5,
+  "stages": [
+    5
+  ],
+  "aliases": [
+    "s5portalmine"
+  ],
+  "folder": "assets/game/levels/stage_05/enemies/air_motion_1013/space_portalmine",
+  "rebel": false,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s5_s5portalmine_heading",
+    "path": "assets/game/levels/stage_05/enemies/air_motion_1013/space_portalmine/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "c6dcceb511454d0be15c66f3fb15226bcc47fdbae22824c19dae2c7ebf7106bd"
+  },
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s5_s5portalmine_roll",
+    "path": "assets/game/levels/stage_05/enemies/air_motion_1013/space_portalmine/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "41959b9ee3c4442fa9c3f438e87ac25c7ed24e6d30e55957c048f2fc8a7fa5af"
+  },
+  "nativeRatios": {
+    "s5portalmine": 1.1744186046511629
+  },
+  "sourceKeys": {
+    "s5portalmine": "s5atk_portal_mine_0"
+  }
+}

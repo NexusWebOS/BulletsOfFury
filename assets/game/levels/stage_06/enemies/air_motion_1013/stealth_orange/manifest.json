@@ -1,0 +1,110 @@
+{
+  "id": "stealth_orange",
+  "name": "Orange stealth fighter",
+  "stage": 6,
+  "stages": [
+    6
+  ],
+  "aliases": [
+    "stealth_orange"
+  ],
+  "folder": "assets/game/levels/stage_06/enemies/air_motion_1013/stealth_orange",
+  "rebel": false,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s6_stealth_orange_heading",
+    "path": "assets/game/levels/stage_06/enemies/air_motion_1013/stealth_orange/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "dd466054efbda7c00171c61351d2613da01d29ef7a90bfb89aa9239b866fc555"
+  },
+  "roll": {
+    "kind": "files",
+    "refs": [
+      {
+        "key": "p2_stealth_roll_orange_00",
+        "path": "assets/game/shared/combat/part2_1010/stealth_roll_orange_00.png"
+      },
+      {
+        "key": "p2_stealth_roll_orange_01",
+        "path": "assets/game/shared/combat/part2_1010/stealth_roll_orange_01.png"
+      },
+      {
+        "key": "p2_stealth_roll_orange_02",
+        "path": "assets/game/shared/combat/part2_1010/stealth_roll_orange_02.png"
+      },
+      {
+        "key": "p2_stealth_roll_orange_03",
+        "path": "assets/game/shared/combat/part2_1010/stealth_roll_orange_03.png"
+      },
+      {
+        "key": "p2_stealth_roll_orange_04",
+        "path": "assets/game/shared/combat/part2_1010/stealth_roll_orange_04.png"
+      },
+      {
+        "key": "p2_stealth_roll_orange_05",
+        "path": "assets/game/shared/combat/part2_1010/stealth_roll_orange_05.png"
+      },
+      {
+        "key": "p2_stealth_roll_orange_06",
+        "path": "assets/game/shared/combat/part2_1010/stealth_roll_orange_06.png"
+      },
+      {
+        "key": "p2_stealth_roll_orange_07",
+        "path": "assets/game/shared/combat/part2_1010/stealth_roll_orange_07.png"
+      },
+      {
+        "key": "p2_stealth_roll_orange_08",
+        "path": "assets/game/shared/combat/part2_1010/stealth_roll_orange_08.png"
+      },
+      {
+        "key": "p2_stealth_roll_orange_09",
+        "path": "assets/game/shared/combat/part2_1010/stealth_roll_orange_09.png"
+      },
+      {
+        "key": "p2_stealth_roll_orange_10",
+        "path": "assets/game/shared/combat/part2_1010/stealth_roll_orange_10.png"
+      },
+      {
+        "key": "p2_stealth_roll_orange_11",
+        "path": "assets/game/shared/combat/part2_1010/stealth_roll_orange_11.png"
+      },
+      {
+        "key": "p2_stealth_roll_orange_12",
+        "path": "assets/game/shared/combat/part2_1010/stealth_roll_orange_12.png"
+      },
+      {
+        "key": "p2_stealth_roll_orange_13",
+        "path": "assets/game/shared/combat/part2_1010/stealth_roll_orange_13.png"
+      },
+      {
+        "key": "p2_stealth_roll_orange_14",
+        "path": "assets/game/shared/combat/part2_1010/stealth_roll_orange_14.png"
+      },
+      {
+        "key": "p2_stealth_roll_orange_15",
+        "path": "assets/game/shared/combat/part2_1010/stealth_roll_orange_15.png"
+      }
+    ],
+    "frames": 16,
+    "cell": 256,
+    "pivot": [
+      128,
+      128
+    ],
+    "span": 193,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "reused": true
+  },
+  "referenceRatio": 0.75390625,
+  "nativeRatios": {},
+  "sourceKeys": {}
+}

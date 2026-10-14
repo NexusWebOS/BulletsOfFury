@@ -1,0 +1,49 @@
+{
+  "id": "s1jetdelta",
+  "name": "Jungle Camo Attack Jet",
+  "stage": 1,
+  "stages": [
+    1
+  ],
+  "aliases": [
+    "s1jetdelta"
+  ],
+  "folder": "assets/game/levels/stage_01/enemies/air_motion_1013/jungle_camo_attack_jet",
+  "rebel": false,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s1_s1jetdelta_heading",
+    "path": "assets/game/levels/stage_01/enemies/air_motion_1013/jungle_camo_attack_jet/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "6b7b0070b5b5878df64e72ff4a22e02150c48444e0b8077a5167c63e5d4f4a95"
+  },
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s1_s1jetdelta_roll",
+    "path": "assets/game/levels/stage_01/enemies/air_motion_1013/jungle_camo_attack_jet/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "b2867e50732dcb962c82dba3a799950bcd88cbc824ce73d6e2af458e0b524b73"
+  },
+  "nativeRatios": {
+    "s1jetdelta": 1.2190476190476192
+  },
+  "sourceKeys": {
+    "s1jetdelta": "furyjet_0_bank_0"
+  }
+}

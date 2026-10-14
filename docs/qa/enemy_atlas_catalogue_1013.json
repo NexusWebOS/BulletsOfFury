@@ -1,0 +1,28 @@
+{
+  "catalogueSha256": "0be7f8dcb823ea2de7bf0a3da3103747753b5101ab0afe7e065dd4d5673e7a01",
+  "entries": 393,
+  "counts": {
+    "all": 393,
+    "bof": 361,
+    "overdrive": 32,
+    "current": 185,
+    "emptyCurrentAttackLists": 0,
+    "missingCurrentAttackDescriptions": 0
+  },
+  "statuses": {
+    "current": 185,
+    "legacy-spawnable": 100,
+    "replaced": 19,
+    "culled": 1,
+    "expansion": 31,
+    "legacy-unverified": 57
+  },
+  "checks": {
+    "uniqueIds": true,
+    "currentAttackLists": true,
+    "currentAttackDescriptions": true,
+    "currentPrimaryArtFiles": true,
+    "nativeExportErrors": [],
+    "stagePlanFaults": []
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "date": "2026-10-13",
+  "base": "eb182add89479cbf857244f22066b9b956c00d40",
+  "scope": "Completed BOF main-game release; only three Overdrive atlas integration additions",
+  "dependencyAudit": {
+    "dynamicOverdriveModules": 26,
+    "missing": 0,
+    "staticReferences": 920
+  },
+  "publicationSnapshot": {
+    "failures": 0,
+    "overdriveNativeChecks": 139,
+    "mainBoot": true,
+    "browserErrors": 0,
+    "atlasBoot": true,
+    "filesRestrictedToIndex": true,
+    "unstagedTrackedFilesServedFromIndex": 18
+  },
+  "gameplayRegression": {
+    "failures": 0,
+    "passes": 8700,
+    "exit": 0
+  },
+  "latestNativeRepairs": {
+    "failures": 0,
+    "paletteSheets": 12,
+    "checks": 332
+  },
+  "excluded": "Concurrent Overdrive gameplay/art and old Contra prototype scratch remain local"
+}

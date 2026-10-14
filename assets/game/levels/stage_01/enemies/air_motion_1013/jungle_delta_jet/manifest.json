@@ -1,0 +1,49 @@
+{
+  "id": "s1jetdelta_b",
+  "name": "Jungle Delta Jet",
+  "stage": 1,
+  "stages": [
+    1
+  ],
+  "aliases": [
+    "s1jetdelta_b"
+  ],
+  "folder": "assets/game/levels/stage_01/enemies/air_motion_1013/jungle_delta_jet",
+  "rebel": false,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s1_s1jetdelta_b_heading",
+    "path": "assets/game/levels/stage_01/enemies/air_motion_1013/jungle_delta_jet/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "730450a5be4251e0c4078b380426fa1bb544c07b98fd61adad8d2512a6bcfed8"
+  },
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s1_s1jetdelta_b_roll",
+    "path": "assets/game/levels/stage_01/enemies/air_motion_1013/jungle_delta_jet/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "4e568f3d6294d1acf356dd62ce281896d1cfba9ce8c83a379a72c9293190a545"
+  },
+  "nativeRatios": {
+    "s1jetdelta_b": 1.1714285714285715
+  },
+  "sourceKeys": {
+    "s1jetdelta_b": "furyjet_2_bank_0"
+  }
+}

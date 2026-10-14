@@ -1,0 +1,49 @@
+{
+  "id": "l6v_s0",
+  "name": "Steel Lancer",
+  "stage": 6,
+  "stages": [
+    6
+  ],
+  "aliases": [
+    "l6v_s0"
+  ],
+  "folder": "assets/game/levels/stage_06/enemies/air_motion_1013/steel_lancer",
+  "rebel": false,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s6_l6v_s0_heading",
+    "path": "assets/game/levels/stage_06/enemies/air_motion_1013/steel_lancer/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "7cf619352f02b955a1a6440fafae6f5396f0a71f28b6596a8880478da55e18f0"
+  },
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s6_l6v_s0_roll",
+    "path": "assets/game/levels/stage_06/enemies/air_motion_1013/steel_lancer/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "d70c57710bfc8291cbc1adea62b91bf98aa5a41b8caa248ac11610d408a8eaf0"
+  },
+  "nativeRatios": {
+    "l6v_s0": 2.274193548387097
+  },
+  "sourceKeys": {
+    "l6v_s0": "n6v0_steel_intact_c"
+  }
+}

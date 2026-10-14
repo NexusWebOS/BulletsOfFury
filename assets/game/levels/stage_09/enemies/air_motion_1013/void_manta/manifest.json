@@ -1,0 +1,49 @@
+{
+  "id": "vmanta",
+  "name": "Void Manta",
+  "stage": 9,
+  "stages": [
+    9
+  ],
+  "aliases": [
+    "vmanta"
+  ],
+  "folder": "assets/game/levels/stage_09/enemies/air_motion_1013/void_manta",
+  "rebel": false,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s9_vmanta_heading",
+    "path": "assets/game/levels/stage_09/enemies/air_motion_1013/void_manta/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "65ed1f4ee397d269f27b0394ab5a08295f4d2f47ad2dfdde568044d9ccfaa577"
+  },
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s9_vmanta_roll",
+    "path": "assets/game/levels/stage_09/enemies/air_motion_1013/void_manta/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "9776599586160dd88ac8bbcff41b4d51752714376cb311a46462a3dedecf60af"
+  },
+  "nativeRatios": {
+    "vmanta": 1.7692307692307692
+  },
+  "sourceKeys": {
+    "vmanta": "ns9e_vmanta_idle"
+  }
+}

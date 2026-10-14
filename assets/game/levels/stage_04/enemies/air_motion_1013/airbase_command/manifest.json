@@ -1,0 +1,49 @@
+{
+  "id": "s4command",
+  "name": "Airbase Command",
+  "stage": 4,
+  "stages": [
+    4
+  ],
+  "aliases": [
+    "s4command"
+  ],
+  "folder": "assets/game/levels/stage_04/enemies/air_motion_1013/airbase_command",
+  "rebel": false,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s4_s4command_heading",
+    "path": "assets/game/levels/stage_04/enemies/air_motion_1013/airbase_command/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "4bf3546853b92379a4abe1186b0bc5fe9eda617d936e8c7efcb7f3cc8e482004"
+  },
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s4_s4command_roll",
+    "path": "assets/game/levels/stage_04/enemies/air_motion_1013/airbase_command/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "dace0c011c1ebef413413bb34531100ea226a372bbd44ed69d7f14f7dc9505d9"
+  },
+  "nativeRatios": {
+    "s4command": 1.197674418604651
+  },
+  "sourceKeys": {
+    "s4command": null
+  }
+}

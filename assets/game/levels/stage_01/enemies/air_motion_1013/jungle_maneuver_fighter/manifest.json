@@ -1,0 +1,46 @@
+{
+  "id": "flight_variant_1",
+  "name": "Jungle Maneuver Fighter",
+  "stage": 1,
+  "stages": [
+    1
+  ],
+  "aliases": [
+    "flight_variant_1"
+  ],
+  "folder": "assets/game/levels/stage_01/enemies/air_motion_1013/jungle_maneuver_fighter",
+  "rebel": false,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s1_flight_variant_1_heading",
+    "path": "assets/game/levels/stage_01/enemies/air_motion_1013/jungle_maneuver_fighter/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "east",
+    "startAngle": 0,
+    "sha256": "8a1f875ccd1e8227ee0a7536b47f16d4d7aa731522b69b7f1907313b37cba4f8"
+  },
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s1_flight_variant_1_roll",
+    "path": "assets/game/levels/stage_01/enemies/air_motion_1013/jungle_maneuver_fighter/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "east",
+    "startAngle": 0,
+    "sha256": "2c33b2b3a15c744443bd30000caf0e847f719b92c5e30b37f5053186c3a2db8c"
+  },
+  "referenceRatio": 0.5729166666666666,
+  "nativeRatios": {},
+  "sourceKeys": {}
+}

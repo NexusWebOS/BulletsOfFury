@@ -1,0 +1,49 @@
+{
+  "id": "s6probe",
+  "name": "Storm Probe",
+  "stage": 6,
+  "stages": [
+    6
+  ],
+  "aliases": [
+    "s6probe"
+  ],
+  "folder": "assets/game/levels/stage_06/enemies/air_motion_1013/storm_probe",
+  "rebel": false,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s6_s6probe_heading",
+    "path": "assets/game/levels/stage_06/enemies/air_motion_1013/storm_probe/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "051be7fe01cffbb2d532018490a954cfeebb0f15b2440072bab9d2fdd33b28c3"
+  },
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s6_s6probe_roll",
+    "path": "assets/game/levels/stage_06/enemies/air_motion_1013/storm_probe/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "28d9134efa599177ea7c149b539c909ba2f830e38ac99516af49172e2f7c6569"
+  },
+  "nativeRatios": {
+    "s6probe": 1.3285714285714285
+  },
+  "sourceKeys": {
+    "s6probe": "overhaul_stage6_storm_drone_01"
+  }
+}

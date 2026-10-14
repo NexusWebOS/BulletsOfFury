@@ -1,0 +1,49 @@
+{
+  "id": "s5satellite",
+  "name": "Space Satellite",
+  "stage": 5,
+  "stages": [
+    5
+  ],
+  "aliases": [
+    "s5satellite"
+  ],
+  "folder": "assets/game/levels/stage_05/enemies/air_motion_1013/space_satellite",
+  "rebel": false,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s5_s5satellite_heading",
+    "path": "assets/game/levels/stage_05/enemies/air_motion_1013/space_satellite/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "af1ddfce5f68e1c835f999644871603248dc7e71f0b3dbc4995c9cfbab367796"
+  },
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s5_s5satellite_roll",
+    "path": "assets/game/levels/stage_05/enemies/air_motion_1013/space_satellite/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "265d7d098ac17d68ff7aec36f311932763cfe2b9e0566597f3184d4ddab5a665"
+  },
+  "nativeRatios": {
+    "s5satellite": 1.1818181818181819
+  },
+  "sourceKeys": {
+    "s5satellite": "s5atk_missile_satellite_0"
+  }
+}

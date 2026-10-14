@@ -1,0 +1,1889 @@
+{
+  "date": "2026-10-13",
+  "scope": "Overdrive native enemy atlas adapter",
+  "native": {
+    "checks": [
+      {
+        "name": "spawn overdrive-enemy-scout",
+        "pass": true
+      },
+      {
+        "name": "native animation overdrive-enemy-scout",
+        "pass": true
+      },
+      {
+        "name": "native attacks observed overdrive-enemy-scout",
+        "pass": true
+      },
+      {
+        "name": "isolated protected target overdrive-enemy-scout",
+        "pass": true
+      },
+      {
+        "name": "spawn overdrive-enemy-rifle",
+        "pass": true
+      },
+      {
+        "name": "native animation overdrive-enemy-rifle",
+        "pass": true
+      },
+      {
+        "name": "native attacks observed overdrive-enemy-rifle",
+        "pass": true
+      },
+      {
+        "name": "isolated protected target overdrive-enemy-rifle",
+        "pass": true
+      },
+      {
+        "name": "spawn overdrive-enemy-heavy",
+        "pass": true
+      },
+      {
+        "name": "native animation overdrive-enemy-heavy",
+        "pass": true
+      },
+      {
+        "name": "native attacks observed overdrive-enemy-heavy",
+        "pass": true
+      },
+      {
+        "name": "isolated protected target overdrive-enemy-heavy",
+        "pass": true
+      },
+      {
+        "name": "spawn overdrive-enemy-sniper",
+        "pass": true
+      },
+      {
+        "name": "native animation overdrive-enemy-sniper",
+        "pass": true
+      },
+      {
+        "name": "native attacks observed overdrive-enemy-sniper",
+        "pass": true
+      },
+      {
+        "name": "isolated protected target overdrive-enemy-sniper",
+        "pass": true
+      },
+      {
+        "name": "spawn overdrive-enemy-turret",
+        "pass": true
+      },
+      {
+        "name": "native animation overdrive-enemy-turret",
+        "pass": true
+      },
+      {
+        "name": "native attacks observed overdrive-enemy-turret",
+        "pass": true
+      },
+      {
+        "name": "isolated protected target overdrive-enemy-turret",
+        "pass": true
+      },
+      {
+        "name": "spawn overdrive-enemy-camera",
+        "pass": true
+      },
+      {
+        "name": "native animation overdrive-enemy-camera",
+        "pass": true
+      },
+      {
+        "name": "isolated protected target overdrive-enemy-camera",
+        "pass": true
+      },
+      {
+        "name": "spawn overdrive-enemy-robotScout",
+        "pass": true
+      },
+      {
+        "name": "native animation overdrive-enemy-robotScout",
+        "pass": true
+      },
+      {
+        "name": "native attacks observed overdrive-enemy-robotScout",
+        "pass": true
+      },
+      {
+        "name": "isolated protected target overdrive-enemy-robotScout",
+        "pass": true
+      },
+      {
+        "name": "spawn overdrive-enemy-robotHeavy",
+        "pass": true
+      },
+      {
+        "name": "native animation overdrive-enemy-robotHeavy",
+        "pass": true
+      },
+      {
+        "name": "native attacks observed overdrive-enemy-robotHeavy",
+        "pass": true
+      },
+      {
+        "name": "isolated protected target overdrive-enemy-robotHeavy",
+        "pass": true
+      },
+      {
+        "name": "spawn overdrive-enemy-rocketTank",
+        "pass": true
+      },
+      {
+        "name": "native animation overdrive-enemy-rocketTank",
+        "pass": true
+      },
+      {
+        "name": "native attacks observed overdrive-enemy-rocketTank",
+        "pass": true
+      },
+      {
+        "name": "isolated protected target overdrive-enemy-rocketTank",
+        "pass": true
+      },
+      {
+        "name": "spawn overdrive-enemy-railTank",
+        "pass": true
+      },
+      {
+        "name": "native animation overdrive-enemy-railTank",
+        "pass": true
+      },
+      {
+        "name": "native attacks observed overdrive-enemy-railTank",
+        "pass": true
+      },
+      {
+        "name": "isolated protected target overdrive-enemy-railTank",
+        "pass": true
+      },
+      {
+        "name": "spawn overdrive-enemy-siegeTank",
+        "pass": true
+      },
+      {
+        "name": "native animation overdrive-enemy-siegeTank",
+        "pass": true
+      },
+      {
+        "name": "native attacks observed overdrive-enemy-siegeTank",
+        "pass": true
+      },
+      {
+        "name": "isolated protected target overdrive-enemy-siegeTank",
+        "pass": true
+      },
+      {
+        "name": "spawn overdrive-enemy-jackal",
+        "pass": true
+      },
+      {
+        "name": "native animation overdrive-enemy-jackal",
+        "pass": true
+      },
+      {
+        "name": "native attacks observed overdrive-enemy-jackal",
+        "pass": true
+      },
+      {
+        "name": "isolated protected target overdrive-enemy-jackal",
+        "pass": true
+      },
+      {
+        "name": "spawn overdrive-enemy-lancer",
+        "pass": true
+      },
+      {
+        "name": "native animation overdrive-enemy-lancer",
+        "pass": true
+      },
+      {
+        "name": "native attacks observed overdrive-enemy-lancer",
+        "pass": true
+      },
+      {
+        "name": "isolated protected target overdrive-enemy-lancer",
+        "pass": true
+      },
+      {
+        "name": "spawn overdrive-enemy-manticore",
+        "pass": true
+      },
+      {
+        "name": "native animation overdrive-enemy-manticore",
+        "pass": true
+      },
+      {
+        "name": "native attacks observed overdrive-enemy-manticore",
+        "pass": true
+      },
+      {
+        "name": "isolated protected target overdrive-enemy-manticore",
+        "pass": true
+      },
+      {
+        "name": "spawn overdrive-enemy-bastion",
+        "pass": true
+      },
+      {
+        "name": "native animation overdrive-enemy-bastion",
+        "pass": true
+      },
+      {
+        "name": "native attacks observed overdrive-enemy-bastion",
+        "pass": true
+      },
+      {
+        "name": "isolated protected target overdrive-enemy-bastion",
+        "pass": true
+      },
+      {
+        "name": "spawn overdrive-enemy-odRobot",
+        "pass": true
+      },
+      {
+        "name": "native animation overdrive-enemy-odRobot",
+        "pass": true
+      },
+      {
+        "name": "native attacks observed overdrive-enemy-odRobot",
+        "pass": true
+      },
+      {
+        "name": "isolated protected target overdrive-enemy-odRobot",
+        "pass": true
+      },
+      {
+        "name": "spawn overdrive-enemy-odElite",
+        "pass": true
+      },
+      {
+        "name": "native animation overdrive-enemy-odElite",
+        "pass": true
+      },
+      {
+        "name": "native attacks observed overdrive-enemy-odElite",
+        "pass": true
+      },
+      {
+        "name": "isolated protected target overdrive-enemy-odElite",
+        "pass": true
+      },
+      {
+        "name": "spawn overdrive-enemy-convoyJet",
+        "pass": true
+      },
+      {
+        "name": "native animation overdrive-enemy-convoyJet",
+        "pass": true
+      },
+      {
+        "name": "native attacks observed overdrive-enemy-convoyJet",
+        "pass": true
+      },
+      {
+        "name": "isolated protected target overdrive-enemy-convoyJet",
+        "pass": true
+      },
+      {
+        "name": "spawn overdrive-enemy-convoyTruck",
+        "pass": true
+      },
+      {
+        "name": "native animation overdrive-enemy-convoyTruck",
+        "pass": true
+      },
+      {
+        "name": "native attacks observed overdrive-enemy-convoyTruck",
+        "pass": true
+      },
+      {
+        "name": "isolated protected target overdrive-enemy-convoyTruck",
+        "pass": true
+      },
+      {
+        "name": "spawn overdrive-enemy-convoyRunner",
+        "pass": true
+      },
+      {
+        "name": "native animation overdrive-enemy-convoyRunner",
+        "pass": true
+      },
+      {
+        "name": "native attacks observed overdrive-enemy-convoyRunner",
+        "pass": true
+      },
+      {
+        "name": "isolated protected target overdrive-enemy-convoyRunner",
+        "pass": true
+      },
+      {
+        "name": "spawn overdrive-enemy-convoyElite",
+        "pass": true
+      },
+      {
+        "name": "native animation overdrive-enemy-convoyElite",
+        "pass": true
+      },
+      {
+        "name": "native attacks observed overdrive-enemy-convoyElite",
+        "pass": true
+      },
+      {
+        "name": "isolated protected target overdrive-enemy-convoyElite",
+        "pass": true
+      },
+      {
+        "name": "spawn overdrive-boss-warrior",
+        "pass": true
+      },
+      {
+        "name": "native animation overdrive-boss-warrior",
+        "pass": true
+      },
+      {
+        "name": "isolated protected target overdrive-boss-warrior",
+        "pass": true
+      },
+      {
+        "name": "spawn overdrive-boss-fortress",
+        "pass": true
+      },
+      {
+        "name": "native animation overdrive-boss-fortress",
+        "pass": true
+      },
+      {
+        "name": "isolated protected target overdrive-boss-fortress",
+        "pass": true
+      },
+      {
+        "name": "spawn overdrive-boss-machinists",
+        "pass": true
+      },
+      {
+        "name": "native animation overdrive-boss-machinists",
+        "pass": true
+      },
+      {
+        "name": "isolated protected target overdrive-boss-machinists",
+        "pass": true
+      },
+      {
+        "name": "spawn overdrive-boss-exhibit",
+        "pass": true
+      },
+      {
+        "name": "native animation overdrive-boss-exhibit",
+        "pass": true
+      },
+      {
+        "name": "isolated protected target overdrive-boss-exhibit",
+        "pass": true
+      },
+      {
+        "name": "spawn overdrive-boss-gosfer",
+        "pass": true
+      },
+      {
+        "name": "native animation overdrive-boss-gosfer",
+        "pass": true
+      },
+      {
+        "name": "isolated protected target overdrive-boss-gosfer",
+        "pass": true
+      },
+      {
+        "name": "spawn overdrive-form-exhibit-1",
+        "pass": true
+      },
+      {
+        "name": "native animation overdrive-form-exhibit-1",
+        "pass": true
+      },
+      {
+        "name": "isolated protected target overdrive-form-exhibit-1",
+        "pass": true
+      },
+      {
+        "name": "selected Exhibit form 1",
+        "pass": true
+      },
+      {
+        "name": "spawn overdrive-form-exhibit-2",
+        "pass": true
+      },
+      {
+        "name": "native animation overdrive-form-exhibit-2",
+        "pass": true
+      },
+      {
+        "name": "isolated protected target overdrive-form-exhibit-2",
+        "pass": true
+      },
+      {
+        "name": "selected Exhibit form 2",
+        "pass": true
+      },
+      {
+        "name": "spawn overdrive-form-exhibit-3",
+        "pass": true
+      },
+      {
+        "name": "native animation overdrive-form-exhibit-3",
+        "pass": true
+      },
+      {
+        "name": "isolated protected target overdrive-form-exhibit-3",
+        "pass": true
+      },
+      {
+        "name": "selected Exhibit form 3",
+        "pass": true
+      },
+      {
+        "name": "spawn overdrive-rebel-wren",
+        "pass": true
+      },
+      {
+        "name": "native animation overdrive-rebel-wren",
+        "pass": true
+      },
+      {
+        "name": "isolated protected target overdrive-rebel-wren",
+        "pass": true
+      },
+      {
+        "name": "selected Machinist wren",
+        "pass": true
+      },
+      {
+        "name": "spawn overdrive-rebel-rolf",
+        "pass": true
+      },
+      {
+        "name": "native animation overdrive-rebel-rolf",
+        "pass": true
+      },
+      {
+        "name": "isolated protected target overdrive-rebel-rolf",
+        "pass": true
+      },
+      {
+        "name": "selected Machinist rolf",
+        "pass": true
+      },
+      {
+        "name": "spawn overdrive-rebel-chaz",
+        "pass": true
+      },
+      {
+        "name": "native animation overdrive-rebel-chaz",
+        "pass": true
+      },
+      {
+        "name": "isolated protected target overdrive-rebel-chaz",
+        "pass": true
+      },
+      {
+        "name": "selected Machinist chaz",
+        "pass": true
+      },
+      {
+        "name": "easy native difficulty overdrive-enemy-odElite",
+        "pass": true
+      },
+      {
+        "name": "easy native difficulty overdrive-boss-warrior",
+        "pass": true
+      },
+      {
+        "name": "normal native difficulty overdrive-enemy-odElite",
+        "pass": true
+      },
+      {
+        "name": "normal native difficulty overdrive-boss-warrior",
+        "pass": true
+      },
+      {
+        "name": "hard native difficulty overdrive-enemy-odElite",
+        "pass": true
+      },
+      {
+        "name": "hard native difficulty overdrive-boss-warrior",
+        "pass": true
+      },
+      {
+        "name": "furious native difficulty overdrive-enemy-odElite",
+        "pass": true
+      },
+      {
+        "name": "furious native difficulty overdrive-boss-warrior",
+        "pass": true
+      },
+      {
+        "name": "target reposition control",
+        "pass": true
+      },
+      {
+        "name": "pause freezes native clock",
+        "pass": true
+      },
+      {
+        "name": "single step advances exactly one native update",
+        "pass": true
+      },
+      {
+        "name": "speed control",
+        "pass": true
+      },
+      {
+        "name": "health control",
+        "pass": true
+      },
+      {
+        "name": "progress writes remain ephemeral",
+        "pass": true
+      },
+      {
+        "name": "projectile tile renders native pixels",
+        "pass": true
+      },
+      {
+        "name": "normal Overdrive has no guide bridge or RAF hook",
+        "pass": true
+      },
+      {
+        "name": "no browser errors",
+        "pass": true
+      }
+    ],
+    "entries": [
+      {
+        "id": "overdrive-enemy-scout",
+        "seen": [
+          "mg"
+        ],
+        "peak": 3,
+        "snapshot": {
+          "ready": true,
+          "game": "overdrive",
+          "entry": "overdrive-enemy-scout",
+          "error": null,
+          "elapsed": 8.016666666666644,
+          "frames": 214,
+          "paused": true,
+          "speed": 1,
+          "stage": 2,
+          "difficulty": "normal",
+          "actor": {
+            "type": "scout",
+            "hp": 4,
+            "maxhp": 4,
+            "dead": false,
+            "x": 400,
+            "y": 280,
+            "phase": null,
+            "pattern": "alert",
+            "health": 1
+          },
+          "projectiles": [
+            "mg"
+          ],
+          "liveProjectiles": 0,
+          "unitCount": 1,
+          "target": {
+            "x": 400,
+            "y": 430
+          },
+          "protectedTarget": true
+        }
+      },
+      {
+        "id": "overdrive-enemy-rifle",
+        "seen": [
+          "shell"
+        ],
+        "peak": 1,
+        "snapshot": {
+          "ready": true,
+          "game": "overdrive",
+          "entry": "overdrive-enemy-rifle",
+          "error": null,
+          "elapsed": 7.999999999999977,
+          "frames": 214,
+          "paused": true,
+          "speed": 1,
+          "stage": 2,
+          "difficulty": "normal",
+          "actor": {
+            "type": "rifle",
+            "hp": 7,
+            "maxhp": 7,
+            "dead": false,
+            "x": 400,
+            "y": 280,
+            "phase": null,
+            "pattern": "alert",
+            "health": 1
+          },
+          "projectiles": [
+            "shell"
+          ],
+          "liveProjectiles": 0,
+          "unitCount": 1,
+          "target": {
+            "x": 400,
+            "y": 470
+          },
+          "protectedTarget": true
+        }
+      },
+      {
+        "id": "overdrive-enemy-heavy",
+        "seen": [
+          "shell"
+        ],
+        "peak": 2,
+        "snapshot": {
+          "ready": true,
+          "game": "overdrive",
+          "entry": "overdrive-enemy-heavy",
+          "error": null,
+          "elapsed": 8.016666666666644,
+          "frames": 215,
+          "paused": true,
+          "speed": 1,
+          "stage": 2,
+          "difficulty": "normal",
+          "actor": {
+            "type": "heavy",
+            "hp": 15,
+            "maxhp": 15,
+            "dead": false,
+            "x": 400,
+            "y": 280,
+            "phase": null,
+            "pattern": "alert",
+            "health": 1
+          },
+          "projectiles": [
+            "shell"
+          ],
+          "liveProjectiles": 2,
+          "unitCount": 1,
+          "target": {
+            "x": 400,
+            "y": 455
+          },
+          "protectedTarget": true
+        }
+      },
+      {
+        "id": "overdrive-enemy-sniper",
+        "seen": [
+          "snipe"
+        ],
+        "peak": 1,
+        "snapshot": {
+          "ready": true,
+          "game": "overdrive",
+          "entry": "overdrive-enemy-sniper",
+          "error": null,
+          "elapsed": 7.999999999999977,
+          "frames": 215,
+          "paused": true,
+          "speed": 1,
+          "stage": 2,
+          "difficulty": "normal",
+          "actor": {
+            "type": "sniper",
+            "hp": 6,
+            "maxhp": 6,
+            "dead": false,
+            "x": 400.02973760571604,
+            "y": 274.65169235558517,
+            "phase": null,
+            "pattern": "alert",
+            "health": 1
+          },
+          "projectiles": [
+            "snipe"
+          ],
+          "liveProjectiles": 0,
+          "unitCount": 1,
+          "target": {
+            "x": 400,
+            "y": 505
+          },
+          "protectedTarget": true
+        }
+      },
+      {
+        "id": "overdrive-enemy-turret",
+        "seen": [
+          "mg"
+        ],
+        "peak": 5,
+        "snapshot": {
+          "ready": true,
+          "game": "overdrive",
+          "entry": "overdrive-enemy-turret",
+          "error": null,
+          "elapsed": 8.016666666666644,
+          "frames": 216,
+          "paused": true,
+          "speed": 1,
+          "stage": 2,
+          "difficulty": "normal",
+          "actor": {
+            "type": "turret",
+            "hp": 10,
+            "maxhp": 10,
+            "dead": false,
+            "x": 400,
+            "y": 280,
+            "phase": null,
+            "pattern": "alert",
+            "health": 1
+          },
+          "projectiles": [
+            "mg"
+          ],
+          "liveProjectiles": 0,
+          "unitCount": 1,
+          "target": {
+            "x": 400,
+            "y": 450
+          },
+          "protectedTarget": true
+        }
+      },
+      {
+        "id": "overdrive-enemy-camera",
+        "seen": [],
+        "peak": 0,
+        "snapshot": {
+          "ready": true,
+          "game": "overdrive",
+          "entry": "overdrive-enemy-camera",
+          "error": null,
+          "elapsed": 7.999999999999977,
+          "frames": 216,
+          "paused": true,
+          "speed": 1,
+          "stage": 2,
+          "difficulty": "normal",
+          "actor": {
+            "type": "camera",
+            "hp": 3,
+            "maxhp": 3,
+            "dead": false,
+            "x": 400,
+            "y": 280,
+            "phase": null,
+            "pattern": "search",
+            "health": 1
+          },
+          "projectiles": [],
+          "liveProjectiles": 0,
+          "unitCount": 1,
+          "target": {
+            "x": 400,
+            "y": 450
+          },
+          "protectedTarget": true
+        }
+      },
+      {
+        "id": "overdrive-enemy-robotScout",
+        "seen": [
+          "mg"
+        ],
+        "peak": 3,
+        "snapshot": {
+          "ready": true,
+          "game": "overdrive",
+          "entry": "overdrive-enemy-robotScout",
+          "error": null,
+          "elapsed": 8.04999999999998,
+          "frames": 219,
+          "paused": true,
+          "speed": 1,
+          "stage": 5,
+          "difficulty": "normal",
+          "actor": {
+            "type": "robotScout",
+            "hp": 4,
+            "maxhp": 4,
+            "dead": false,
+            "x": 400,
+            "y": 280,
+            "phase": null,
+            "pattern": "alert",
+            "health": 1
+          },
+          "projectiles": [
+            "mg"
+          ],
+          "liveProjectiles": 0,
+          "unitCount": 1,
+          "target": {
+            "x": 400,
+            "y": 417.5
+          },
+          "protectedTarget": true
+        }
+      },
+      {
+        "id": "overdrive-enemy-robotHeavy",
+        "seen": [
+          "shell"
+        ],
+        "peak": 2,
+        "snapshot": {
+          "ready": true,
+          "game": "overdrive",
+          "entry": "overdrive-enemy-robotHeavy",
+          "error": null,
+          "elapsed": 8.033333333333312,
+          "frames": 221,
+          "paused": true,
+          "speed": 1,
+          "stage": 5,
+          "difficulty": "normal",
+          "actor": {
+            "type": "robotHeavy",
+            "hp": 10,
+            "maxhp": 10,
+            "dead": false,
+            "x": 400,
+            "y": 280,
+            "phase": null,
+            "pattern": "alert",
+            "health": 1
+          },
+          "projectiles": [
+            "shell"
+          ],
+          "liveProjectiles": 0,
+          "unitCount": 1,
+          "target": {
+            "x": 400,
+            "y": 417.5
+          },
+          "protectedTarget": true
+        }
+      },
+      {
+        "id": "overdrive-enemy-rocketTank",
+        "seen": [
+          "missile"
+        ],
+        "peak": 3,
+        "snapshot": {
+          "ready": true,
+          "game": "overdrive",
+          "entry": "overdrive-enemy-rocketTank",
+          "error": null,
+          "elapsed": 7.999999999999977,
+          "frames": 221,
+          "paused": true,
+          "speed": 1,
+          "stage": 4,
+          "difficulty": "normal",
+          "actor": {
+            "type": "rocketTank",
+            "hp": 16,
+            "maxhp": 16,
+            "dead": false,
+            "x": 400,
+            "y": 280,
+            "phase": null,
+            "pattern": "alert",
+            "health": 1
+          },
+          "projectiles": [
+            "missile"
+          ],
+          "liveProjectiles": 3,
+          "unitCount": 1,
+          "target": {
+            "x": 400,
+            "y": 495
+          },
+          "protectedTarget": true
+        }
+      },
+      {
+        "id": "overdrive-enemy-railTank",
+        "seen": [
+          "snipe"
+        ],
+        "peak": 1,
+        "snapshot": {
+          "ready": true,
+          "game": "overdrive",
+          "entry": "overdrive-enemy-railTank",
+          "error": null,
+          "elapsed": 7.999999999999977,
+          "frames": 221,
+          "paused": true,
+          "speed": 1,
+          "stage": 4,
+          "difficulty": "normal",
+          "actor": {
+            "type": "railTank",
+            "hp": 13,
+            "maxhp": 13,
+            "dead": false,
+            "x": 400,
+            "y": 280,
+            "phase": null,
+            "pattern": "alert",
+            "health": 1
+          },
+          "projectiles": [
+            "snipe"
+          ],
+          "liveProjectiles": 0,
+          "unitCount": 1,
+          "target": {
+            "x": 400,
+            "y": 505
+          },
+          "protectedTarget": true
+        }
+      },
+      {
+        "id": "overdrive-enemy-siegeTank",
+        "seen": [
+          "shell"
+        ],
+        "peak": 2,
+        "snapshot": {
+          "ready": true,
+          "game": "overdrive",
+          "entry": "overdrive-enemy-siegeTank",
+          "error": null,
+          "elapsed": 7.999999999999977,
+          "frames": 221,
+          "paused": true,
+          "speed": 1,
+          "stage": 4,
+          "difficulty": "normal",
+          "actor": {
+            "type": "siegeTank",
+            "hp": 24,
+            "maxhp": 24,
+            "dead": false,
+            "x": 400,
+            "y": 280,
+            "phase": null,
+            "pattern": "alert",
+            "health": 1
+          },
+          "projectiles": [
+            "shell"
+          ],
+          "liveProjectiles": 0,
+          "unitCount": 1,
+          "target": {
+            "x": 400,
+            "y": 460
+          },
+          "protectedTarget": true
+        }
+      },
+      {
+        "id": "overdrive-enemy-jackal",
+        "seen": [
+          "mg"
+        ],
+        "peak": 3,
+        "snapshot": {
+          "ready": true,
+          "game": "overdrive",
+          "entry": "overdrive-enemy-jackal",
+          "error": null,
+          "elapsed": 8.016666666666644,
+          "frames": 222,
+          "paused": true,
+          "speed": 1,
+          "stage": 2,
+          "difficulty": "normal",
+          "actor": {
+            "type": "jackal",
+            "hp": 10,
+            "maxhp": 10,
+            "dead": false,
+            "x": 400,
+            "y": 280,
+            "phase": null,
+            "pattern": "alert",
+            "health": 1
+          },
+          "projectiles": [
+            "mg"
+          ],
+          "liveProjectiles": 0,
+          "unitCount": 1,
+          "target": {
+            "x": 400,
+            "y": 440
+          },
+          "protectedTarget": true
+        }
+      },
+      {
+        "id": "overdrive-enemy-lancer",
+        "seen": [
+          "snipe"
+        ],
+        "peak": 1,
+        "snapshot": {
+          "ready": true,
+          "game": "overdrive",
+          "entry": "overdrive-enemy-lancer",
+          "error": null,
+          "elapsed": 8.016666666666644,
+          "frames": 223,
+          "paused": true,
+          "speed": 1,
+          "stage": 2,
+          "difficulty": "normal",
+          "actor": {
+            "type": "lancer",
+            "hp": 17,
+            "maxhp": 17,
+            "dead": false,
+            "x": 400,
+            "y": 280,
+            "phase": null,
+            "pattern": "alert",
+            "health": 1
+          },
+          "projectiles": [
+            "snipe"
+          ],
+          "liveProjectiles": 1,
+          "unitCount": 1,
+          "target": {
+            "x": 400,
+            "y": 505
+          },
+          "protectedTarget": true
+        }
+      },
+      {
+        "id": "overdrive-enemy-manticore",
+        "seen": [
+          "missile"
+        ],
+        "peak": 3,
+        "snapshot": {
+          "ready": true,
+          "game": "overdrive",
+          "entry": "overdrive-enemy-manticore",
+          "error": null,
+          "elapsed": 8.016666666666644,
+          "frames": 224,
+          "paused": true,
+          "speed": 1,
+          "stage": 2,
+          "difficulty": "normal",
+          "actor": {
+            "type": "manticore",
+            "hp": 23,
+            "maxhp": 23,
+            "dead": false,
+            "x": 400,
+            "y": 280,
+            "phase": null,
+            "pattern": "alert",
+            "health": 1
+          },
+          "projectiles": [
+            "missile"
+          ],
+          "liveProjectiles": 0,
+          "unitCount": 1,
+          "target": {
+            "x": 400,
+            "y": 505
+          },
+          "protectedTarget": true
+        }
+      },
+      {
+        "id": "overdrive-enemy-bastion",
+        "seen": [
+          "shell"
+        ],
+        "peak": 2,
+        "snapshot": {
+          "ready": true,
+          "game": "overdrive",
+          "entry": "overdrive-enemy-bastion",
+          "error": null,
+          "elapsed": 7.999999999999977,
+          "frames": 224,
+          "paused": true,
+          "speed": 1,
+          "stage": 2,
+          "difficulty": "normal",
+          "actor": {
+            "type": "bastion",
+            "hp": 38,
+            "maxhp": 38,
+            "dead": false,
+            "x": 400,
+            "y": 280,
+            "phase": null,
+            "pattern": "alert",
+            "health": 1
+          },
+          "projectiles": [
+            "shell"
+          ],
+          "liveProjectiles": 2,
+          "unitCount": 1,
+          "target": {
+            "x": 400,
+            "y": 460
+          },
+          "protectedTarget": true
+        }
+      },
+      {
+        "id": "overdrive-enemy-odRobot",
+        "seen": [
+          "mg"
+        ],
+        "peak": 1,
+        "snapshot": {
+          "ready": true,
+          "game": "overdrive",
+          "entry": "overdrive-enemy-odRobot",
+          "error": null,
+          "elapsed": 7.999999999999977,
+          "frames": 224,
+          "paused": true,
+          "speed": 1,
+          "stage": 3,
+          "difficulty": "normal",
+          "actor": {
+            "type": "odRobot",
+            "hp": 6,
+            "maxhp": 6,
+            "dead": false,
+            "x": 400,
+            "y": 300,
+            "phase": null,
+            "pattern": "alert",
+            "health": 1
+          },
+          "projectiles": [
+            "mg"
+          ],
+          "liveProjectiles": 0,
+          "unitCount": 1,
+          "target": {
+            "x": 400,
+            "y": 445
+          },
+          "protectedTarget": true
+        }
+      },
+      {
+        "id": "overdrive-enemy-odElite",
+        "seen": [
+          "laser"
+        ],
+        "peak": 5,
+        "snapshot": {
+          "ready": true,
+          "game": "overdrive",
+          "entry": "overdrive-enemy-odElite",
+          "error": null,
+          "elapsed": 8.016666666666644,
+          "frames": 225,
+          "paused": true,
+          "speed": 1,
+          "stage": 3,
+          "difficulty": "normal",
+          "actor": {
+            "type": "odElite",
+            "hp": 18,
+            "maxhp": 18,
+            "dead": false,
+            "x": 400,
+            "y": 326.19999999999936,
+            "phase": null,
+            "pattern": "alert",
+            "health": 1
+          },
+          "projectiles": [
+            "laser"
+          ],
+          "liveProjectiles": 0,
+          "unitCount": 1,
+          "target": {
+            "x": 400,
+            "y": 470
+          },
+          "protectedTarget": true
+        }
+      },
+      {
+        "id": "overdrive-enemy-convoyJet",
+        "seen": [
+          "missile"
+        ],
+        "peak": 1,
+        "snapshot": {
+          "ready": true,
+          "game": "overdrive",
+          "entry": "overdrive-enemy-convoyJet",
+          "error": null,
+          "elapsed": 7.999999999999977,
+          "frames": 225,
+          "paused": true,
+          "speed": 1,
+          "stage": 6,
+          "difficulty": "normal",
+          "actor": {
+            "type": "convoyJet",
+            "hp": 12,
+            "maxhp": 12,
+            "dead": false,
+            "x": 384.0542324492499,
+            "y": 140.0000000000001,
+            "phase": null,
+            "pattern": "alert",
+            "health": 1
+          },
+          "projectiles": [
+            "missile"
+          ],
+          "liveProjectiles": 0,
+          "unitCount": 1,
+          "target": {
+            "x": 298.6181324731601,
+            "y": 343.49802550645677
+          },
+          "protectedTarget": true
+        }
+      },
+      {
+        "id": "overdrive-enemy-convoyTruck",
+        "seen": [
+          "mg"
+        ],
+        "peak": 1,
+        "snapshot": {
+          "ready": true,
+          "game": "overdrive",
+          "entry": "overdrive-enemy-convoyTruck",
+          "error": null,
+          "elapsed": 8.016666666666644,
+          "frames": 226,
+          "paused": true,
+          "speed": 1,
+          "stage": 6,
+          "difficulty": "normal",
+          "actor": {
+            "type": "convoyTruck",
+            "hp": 18,
+            "maxhp": 18,
+            "dead": false,
+            "x": 166.31213649561874,
+            "y": 285.9931948537641,
+            "phase": null,
+            "pattern": "alert",
+            "health": 1
+          },
+          "projectiles": [
+            "mg"
+          ],
+          "liveProjectiles": 0,
+          "unitCount": 1,
+          "target": {
+            "x": 332.7040694714208,
+            "y": 346.15784531511997
+          },
+          "protectedTarget": true
+        }
+      },
+      {
+        "id": "overdrive-enemy-convoyRunner",
+        "seen": [
+          "mg"
+        ],
+        "peak": 1,
+        "snapshot": {
+          "ready": true,
+          "game": "overdrive",
+          "entry": "overdrive-enemy-convoyRunner",
+          "error": null,
+          "elapsed": 7.999999999999977,
+          "frames": 226,
+          "paused": true,
+          "speed": 1,
+          "stage": 6,
+          "difficulty": "normal",
+          "actor": {
+            "type": "convoyRunner",
+            "hp": 6,
+            "maxhp": 6,
+            "dead": false,
+            "x": 275.99999999999454,
+            "y": 24.000000000003926,
+            "phase": null,
+            "pattern": "alert",
+            "health": 1
+          },
+          "projectiles": [
+            "mg"
+          ],
+          "liveProjectiles": 1,
+          "unitCount": 1,
+          "target": {
+            "x": 332.86817824361486,
+            "y": 346.1028533624847
+          },
+          "protectedTarget": true
+        }
+      },
+      {
+        "id": "overdrive-enemy-convoyElite",
+        "seen": [
+          "laser"
+        ],
+        "peak": 1,
+        "snapshot": {
+          "ready": true,
+          "game": "overdrive",
+          "entry": "overdrive-enemy-convoyElite",
+          "error": null,
+          "elapsed": 8.016666666666644,
+          "frames": 227,
+          "paused": true,
+          "speed": 1,
+          "stage": 6,
+          "difficulty": "normal",
+          "actor": {
+            "type": "convoyElite",
+            "hp": 20,
+            "maxhp": 20,
+            "dead": false,
+            "x": 276.19999999999453,
+            "y": -73.14999999999647,
+            "phase": null,
+            "pattern": "alert",
+            "health": 1
+          },
+          "projectiles": [
+            "laser"
+          ],
+          "liveProjectiles": 0,
+          "unitCount": 1,
+          "target": {
+            "x": 332.7040694714208,
+            "y": 346.15784531511997
+          },
+          "protectedTarget": true
+        }
+      },
+      {
+        "id": "overdrive-boss-warrior",
+        "seen": [
+          "mg",
+          "laser"
+        ],
+        "peak": 22,
+        "snapshot": {
+          "ready": true,
+          "game": "overdrive",
+          "entry": "overdrive-boss-warrior",
+          "error": null,
+          "elapsed": 7.999999999999977,
+          "frames": 227,
+          "paused": true,
+          "speed": 1,
+          "stage": 2,
+          "difficulty": "normal",
+          "actor": {
+            "type": "warrior",
+            "hp": 100,
+            "maxhp": 100,
+            "dead": false,
+            "x": 563.2000000000006,
+            "y": 472,
+            "phase": "laser",
+            "pattern": "laser",
+            "health": 1
+          },
+          "projectiles": [
+            "mg",
+            "laser"
+          ],
+          "liveProjectiles": 5,
+          "unitCount": 0,
+          "target": {
+            "x": 400,
+            "y": 635
+          },
+          "protectedTarget": true
+        }
+      },
+      {
+        "id": "overdrive-boss-fortress",
+        "seen": [
+          "shell"
+        ],
+        "peak": 6,
+        "snapshot": {
+          "ready": true,
+          "game": "overdrive",
+          "entry": "overdrive-boss-fortress",
+          "error": null,
+          "elapsed": 7.999999999999977,
+          "frames": 227,
+          "paused": true,
+          "speed": 1,
+          "stage": 3,
+          "difficulty": "normal",
+          "actor": {
+            "type": "fortress",
+            "hp": 100,
+            "maxhp": 100,
+            "dead": false,
+            "x": 400,
+            "y": 195,
+            "phase": "fight",
+            "pattern": "fight",
+            "health": 1
+          },
+          "projectiles": [
+            "shell"
+          ],
+          "liveProjectiles": 0,
+          "unitCount": 3,
+          "target": {
+            "x": 400,
+            "y": 445
+          },
+          "protectedTarget": true
+        }
+      },
+      {
+        "id": "overdrive-boss-machinists",
+        "seen": [
+          "mg",
+          "laser",
+          "missile"
+        ],
+        "peak": 13,
+        "snapshot": {
+          "ready": true,
+          "game": "overdrive",
+          "entry": "overdrive-boss-machinists",
+          "error": null,
+          "elapsed": 7.999999999999977,
+          "frames": 227,
+          "paused": true,
+          "speed": 1,
+          "stage": 4,
+          "difficulty": "normal",
+          "actor": {
+            "type": "machinists",
+            "hp": 100,
+            "maxhp": 100,
+            "dead": false,
+            "x": 302.4746243017342,
+            "y": 362.4685487931609,
+            "phase": "fight",
+            "pattern": "fight",
+            "health": 1
+          },
+          "projectiles": [
+            "mg",
+            "laser",
+            "missile"
+          ],
+          "liveProjectiles": 10,
+          "unitCount": 0,
+          "target": {
+            "x": 400,
+            "y": 570
+          },
+          "protectedTarget": true
+        }
+      },
+      {
+        "id": "overdrive-boss-exhibit",
+        "seen": [
+          "mg",
+          "shell",
+          "missile"
+        ],
+        "peak": 6,
+        "snapshot": {
+          "ready": true,
+          "game": "overdrive",
+          "entry": "overdrive-boss-exhibit",
+          "error": null,
+          "elapsed": 7.999999999999977,
+          "frames": 227,
+          "paused": true,
+          "speed": 1,
+          "stage": 5,
+          "difficulty": "normal",
+          "actor": {
+            "type": "exhibit",
+            "hp": 100,
+            "maxhp": 100,
+            "dead": false,
+            "x": 400,
+            "y": 150,
+            "phase": 1,
+            "pattern": "recover",
+            "health": 1
+          },
+          "projectiles": [
+            "mg",
+            "shell",
+            "missile"
+          ],
+          "liveProjectiles": 2,
+          "unitCount": 0,
+          "target": {
+            "x": 400,
+            "y": 310
+          },
+          "protectedTarget": true
+        }
+      },
+      {
+        "id": "overdrive-boss-gosfer",
+        "seen": [
+          "laser"
+        ],
+        "peak": 4,
+        "snapshot": {
+          "ready": true,
+          "game": "overdrive",
+          "entry": "overdrive-boss-gosfer",
+          "error": null,
+          "elapsed": 7.999999999999977,
+          "frames": 227,
+          "paused": true,
+          "speed": 1,
+          "stage": 3,
+          "difficulty": "normal",
+          "actor": {
+            "type": "gosfer",
+            "hp": 260,
+            "maxhp": 260,
+            "dead": false,
+            "x": 298.1481167149622,
+            "y": 153.31007167058067,
+            "phase": 1,
+            "pattern": "fight",
+            "health": 1
+          },
+          "projectiles": [
+            "laser"
+          ],
+          "liveProjectiles": 4,
+          "unitCount": 0,
+          "target": {
+            "x": 400,
+            "y": 428
+          },
+          "protectedTarget": true
+        }
+      },
+      {
+        "id": "overdrive-form-exhibit-1",
+        "seen": [
+          "mg",
+          "shell"
+        ],
+        "peak": 6,
+        "snapshot": {
+          "ready": true,
+          "game": "overdrive",
+          "entry": "overdrive-form-exhibit-1",
+          "error": null,
+          "elapsed": 7.999999999999977,
+          "frames": 227,
+          "paused": true,
+          "speed": 1,
+          "stage": 5,
+          "difficulty": "normal",
+          "actor": {
+            "type": "exhibit",
+            "hp": 100,
+            "maxhp": 100,
+            "dead": false,
+            "x": 400,
+            "y": 150,
+            "phase": 1,
+            "pattern": "rack",
+            "health": 1
+          },
+          "projectiles": [
+            "mg",
+            "shell"
+          ],
+          "liveProjectiles": 0,
+          "unitCount": 0,
+          "target": {
+            "x": 400,
+            "y": 310
+          },
+          "protectedTarget": true
+        }
+      },
+      {
+        "id": "overdrive-form-exhibit-2",
+        "seen": [
+          "shell"
+        ],
+        "peak": 3,
+        "snapshot": {
+          "ready": true,
+          "game": "overdrive",
+          "entry": "overdrive-form-exhibit-2",
+          "error": null,
+          "elapsed": 8.016666666666644,
+          "frames": 228,
+          "paused": true,
+          "speed": 1,
+          "stage": 5,
+          "difficulty": "normal",
+          "actor": {
+            "type": "exhibit",
+            "hp": 87.77292576419214,
+            "maxhp": 100,
+            "dead": false,
+            "x": 400,
+            "y": 310,
+            "phase": 2,
+            "pattern": "ram",
+            "health": 0.8777292576419214
+          },
+          "projectiles": [
+            "shell"
+          ],
+          "liveProjectiles": 0,
+          "unitCount": 0,
+          "target": {
+            "x": 400,
+            "y": 310
+          },
+          "protectedTarget": true
+        }
+      },
+      {
+        "id": "overdrive-form-exhibit-3",
+        "seen": [
+          "mg",
+          "sonic",
+          "wave"
+        ],
+        "peak": 32,
+        "snapshot": {
+          "ready": true,
+          "game": "overdrive",
+          "entry": "overdrive-form-exhibit-3",
+          "error": null,
+          "elapsed": 8.016666666666644,
+          "frames": 229,
+          "paused": true,
+          "speed": 1,
+          "stage": 5,
+          "difficulty": "normal",
+          "actor": {
+            "type": "exhibit",
+            "hp": 63.75545851528385,
+            "maxhp": 100,
+            "dead": false,
+            "x": 400,
+            "y": 310,
+            "phase": 3,
+            "pattern": "recover",
+            "health": 0.6375545851528385
+          },
+          "projectiles": [
+            "mg",
+            "wave",
+            "sonic"
+          ],
+          "liveProjectiles": 0,
+          "unitCount": 0,
+          "target": {
+            "x": 400,
+            "y": 310
+          },
+          "protectedTarget": true
+        }
+      },
+      {
+        "id": "overdrive-rebel-wren",
+        "seen": [
+          "mg"
+        ],
+        "peak": 8,
+        "snapshot": {
+          "ready": true,
+          "game": "overdrive",
+          "entry": "overdrive-rebel-wren",
+          "error": null,
+          "elapsed": 8.016666666666644,
+          "frames": 230,
+          "paused": true,
+          "speed": 1,
+          "stage": 4,
+          "difficulty": "normal",
+          "actor": {
+            "type": "machinists",
+            "hp": 33.33333333333333,
+            "maxhp": 100,
+            "dead": false,
+            "x": 153.80354292235353,
+            "y": 311.6788209038962,
+            "phase": "fight",
+            "pattern": "fight",
+            "health": 0.3333333333333333
+          },
+          "projectiles": [
+            "mg"
+          ],
+          "liveProjectiles": 8,
+          "unitCount": 0,
+          "target": {
+            "x": 400,
+            "y": 570
+          },
+          "protectedTarget": true
+        }
+      },
+      {
+        "id": "overdrive-rebel-rolf",
+        "seen": [
+          "laser"
+        ],
+        "peak": 3,
+        "snapshot": {
+          "ready": true,
+          "game": "overdrive",
+          "entry": "overdrive-rebel-rolf",
+          "error": null,
+          "elapsed": 7.999999999999977,
+          "frames": 230,
+          "paused": true,
+          "speed": 1,
+          "stage": 4,
+          "difficulty": "normal",
+          "actor": {
+            "type": "machinists",
+            "hp": 33.33333333333333,
+            "maxhp": 100,
+            "dead": false,
+            "x": 320.7572510873241,
+            "y": 302.014285797396,
+            "phase": "fight",
+            "pattern": "fight",
+            "health": 0.3333333333333333
+          },
+          "projectiles": [
+            "laser"
+          ],
+          "liveProjectiles": 2,
+          "unitCount": 0,
+          "target": {
+            "x": 400,
+            "y": 570
+          },
+          "protectedTarget": true
+        }
+      },
+      {
+        "id": "overdrive-rebel-chaz",
+        "seen": [
+          "missile"
+        ],
+        "peak": 3,
+        "snapshot": {
+          "ready": true,
+          "game": "overdrive",
+          "entry": "overdrive-rebel-chaz",
+          "error": null,
+          "elapsed": 7.999999999999977,
+          "frames": 230,
+          "paused": true,
+          "speed": 1,
+          "stage": 4,
+          "difficulty": "normal",
+          "actor": {
+            "type": "machinists",
+            "hp": 33.33333333333333,
+            "maxhp": 100,
+            "dead": false,
+            "x": 433.69028869895453,
+            "y": 473.3579639583365,
+            "phase": "fight",
+            "pattern": "fight",
+            "health": 0.3333333333333333
+          },
+          "projectiles": [
+            "missile"
+          ],
+          "liveProjectiles": 0,
+          "unitCount": 0,
+          "target": {
+            "x": 400,
+            "y": 570
+          },
+          "protectedTarget": true
+        }
+      }
+    ],
+    "errors": []
+  },
+  "guideUI": {
+    "checks": [
+      {
+        "name": "guide embeds native Overdrive",
+        "pass": true
+      },
+      {
+        "name": "guide pause reaches native adapter",
+        "pass": true
+      },
+      {
+        "name": "guide playback speed reaches native adapter",
+        "pass": true
+      },
+      {
+        "name": "guide difficulty reaches native adapter",
+        "pass": true
+      },
+      {
+        "name": "no UI or child browser errors",
+        "pass": true
+      }
+    ],
+    "errors": []
+  },
+  "checks": 144,
+  "limitations": [
+    "This supplements the parent cross-browser guide audit; all32 exhaustive native entries ran in Chrome.",
+    "The observation target is protected and automatic campaign spawns are suppressed only inside enemyAtlas=1."
+  ]
+}

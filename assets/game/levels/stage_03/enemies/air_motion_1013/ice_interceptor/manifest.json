@@ -1,0 +1,49 @@
+{
+  "id": "ac10icejet",
+  "name": "Ice Interceptor",
+  "stage": 3,
+  "stages": [
+    3
+  ],
+  "aliases": [
+    "ac10icejet"
+  ],
+  "folder": "assets/game/levels/stage_03/enemies/air_motion_1013/ice_interceptor",
+  "rebel": false,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s3_ac10icejet_heading",
+    "path": "assets/game/levels/stage_03/enemies/air_motion_1013/ice_interceptor/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "6ab8a91f92e56e78f7f7ecbaf001e26fc920265006d0d3e3ac99eeb02e7c38f6"
+  },
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s3_ac10icejet_roll",
+    "path": "assets/game/levels/stage_03/enemies/air_motion_1013/ice_interceptor/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "770d607898384f0b680c2a633f5ca14d64008d0260b1a7fe57e57cc2597d6c3b"
+  },
+  "nativeRatios": {
+    "ac10icejet": 0.9090909090909091
+  },
+  "sourceKeys": {
+    "ac10icejet": "ac10_ice_jet_0"
+  }
+}

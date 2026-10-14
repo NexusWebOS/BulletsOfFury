@@ -1,0 +1,5306 @@
+{
+  "patterns": [
+    {
+      "kind": null,
+      "shots": [
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 298.09007413863344,
+          "y": 208.42883726974736,
+          "a": 1.3820252711482048,
+          "gun": "gun0",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 381.90992586136656,
+          "y": 208.42883726974736,
+          "a": 1.7595673824415883,
+          "gun": "gun1",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 298.09007413863344,
+          "y": 208.42883726974736,
+          "a": 1.3820252711482048,
+          "gun": "gun0",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 381.90992586136656,
+          "y": 208.42883726974736,
+          "a": 1.7595673824415883,
+          "gun": "gun1",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 298.09007413863344,
+          "y": 208.42883726974736,
+          "a": 1.3820252711482048,
+          "gun": "gun0",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 381.90992586136656,
+          "y": 208.42883726974736,
+          "a": 1.7595673824415883,
+          "gun": "gun1",
+          "mountError": 0,
+          "boss": false
+        }
+      ],
+      "muzzles": {
+        "mg": 46
+      },
+      "shardDraws": 0,
+      "beamFrames": 0,
+      "events": [
+        {
+          "event": "start",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 10,
+          "kind": "rifle",
+          "warning": 1.3,
+          "gapRadians": 1.52
+        },
+        {
+          "event": "release",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 11.300000000000065,
+          "kind": "rifle",
+          "angle": 1.3820252711482048
+        },
+        {
+          "event": "rifle",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 11.300000000000065,
+          "gun": "gun0",
+          "angle": 1.3820252711482048
+        },
+        {
+          "event": "rifle",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 11.483333333333407,
+          "gun": "gun1",
+          "angle": 1.7595673824415883
+        },
+        {
+          "event": "rifle",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 11.66666666666675,
+          "gun": "gun0",
+          "angle": 1.3820252711482048
+        },
+        {
+          "event": "rifle",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 11.850000000000092,
+          "gun": "gun1",
+          "angle": 1.7595673824415883
+        },
+        {
+          "event": "rifle",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 12.033333333333434,
+          "gun": "gun0",
+          "angle": 1.3820252711482048
+        },
+        {
+          "event": "rifle",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 12.216666666666777,
+          "gun": "gun1",
+          "angle": 1.7595673824415883
+        },
+        {
+          "event": "end",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 13.700000000000184,
+          "reason": "recovered"
+        }
+      ],
+      "flagRestored": true,
+      "ownerGone": true,
+      "browser": "msedge",
+      "difficulty": "easy",
+      "type": "mm1003_riflelocust"
+    },
+    {
+      "kind": null,
+      "shots": [
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 298.09007413863344,
+          "y": 208.42883726974736,
+          "a": 1.3820252711482048,
+          "gun": "gun0",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 381.90992586136656,
+          "y": 208.42883726974736,
+          "a": 1.7595673824415883,
+          "gun": "gun1",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 298.09007413863344,
+          "y": 208.42883726974736,
+          "a": 1.3820252711482048,
+          "gun": "gun0",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 381.90992586136656,
+          "y": 208.42883726974736,
+          "a": 1.7595673824415883,
+          "gun": "gun1",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 298.09007413863344,
+          "y": 208.42883726974736,
+          "a": 1.3820252711482048,
+          "gun": "gun0",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 381.90992586136656,
+          "y": 208.42883726974736,
+          "a": 1.7595673824415883,
+          "gun": "gun1",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 298.09007413863344,
+          "y": 208.42883726974736,
+          "a": 1.3820252711482048,
+          "gun": "gun0",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 381.90992586136656,
+          "y": 208.42883726974736,
+          "a": 1.7595673824415883,
+          "gun": "gun1",
+          "mountError": 0,
+          "boss": false
+        }
+      ],
+      "muzzles": {
+        "mg": 64
+      },
+      "shardDraws": 0,
+      "beamFrames": 0,
+      "events": [
+        {
+          "event": "start",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 10,
+          "kind": "rifle",
+          "warning": 1.12,
+          "gapRadians": 1.38
+        },
+        {
+          "event": "release",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 11.13333333333339,
+          "kind": "rifle",
+          "angle": 1.3820252711482048
+        },
+        {
+          "event": "rifle",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 11.13333333333339,
+          "gun": "gun0",
+          "angle": 1.3820252711482048
+        },
+        {
+          "event": "rifle",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 11.283333333333397,
+          "gun": "gun1",
+          "angle": 1.7595673824415883
+        },
+        {
+          "event": "rifle",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 11.450000000000072,
+          "gun": "gun0",
+          "angle": 1.3820252711482048
+        },
+        {
+          "event": "rifle",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 11.616666666666747,
+          "gun": "gun1",
+          "angle": 1.7595673824415883
+        },
+        {
+          "event": "rifle",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 11.766666666666755,
+          "gun": "gun0",
+          "angle": 1.3820252711482048
+        },
+        {
+          "event": "rifle",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 11.93333333333343,
+          "gun": "gun1",
+          "angle": 1.7595673824415883
+        },
+        {
+          "event": "rifle",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 12.083333333333437,
+          "gun": "gun0",
+          "angle": 1.3820252711482048
+        },
+        {
+          "event": "rifle",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 12.250000000000112,
+          "gun": "gun1",
+          "angle": 1.7595673824415883
+        },
+        {
+          "event": "end",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 13.583333333333512,
+          "reason": "recovered"
+        }
+      ],
+      "flagRestored": true,
+      "ownerGone": true,
+      "browser": "msedge",
+      "difficulty": "normal",
+      "type": "mm1003_riflelocust"
+    },
+    {
+      "kind": null,
+      "shots": [
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 298.09007413863344,
+          "y": 208.42883726974736,
+          "a": 1.3820252711482048,
+          "gun": "gun0",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 381.90992586136656,
+          "y": 208.42883726974736,
+          "a": 1.7595673824415883,
+          "gun": "gun1",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 298.09007413863344,
+          "y": 208.42883726974736,
+          "a": 1.3820252711482048,
+          "gun": "gun0",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 381.90992586136656,
+          "y": 208.42883726974736,
+          "a": 1.7595673824415883,
+          "gun": "gun1",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 298.09007413863344,
+          "y": 208.42883726974736,
+          "a": 1.3820252711482048,
+          "gun": "gun0",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 381.90992586136656,
+          "y": 208.42883726974736,
+          "a": 1.7595673824415883,
+          "gun": "gun1",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 298.09007413863344,
+          "y": 208.42883726974736,
+          "a": 1.3820252711482048,
+          "gun": "gun0",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 381.90992586136656,
+          "y": 208.42883726974736,
+          "a": 1.7595673824415883,
+          "gun": "gun1",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 298.09007413863344,
+          "y": 208.42883726974736,
+          "a": 1.3820252711482048,
+          "gun": "gun0",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 381.90992586136656,
+          "y": 208.42883726974736,
+          "a": 1.7595673824415883,
+          "gun": "gun1",
+          "mountError": 0,
+          "boss": false
+        }
+      ],
+      "muzzles": {
+        "mg": 80
+      },
+      "shardDraws": 0,
+      "beamFrames": 0,
+      "events": [
+        {
+          "event": "start",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 10,
+          "kind": "rifle",
+          "warning": 1,
+          "gapRadians": 1.24
+        },
+        {
+          "event": "release",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 11.00000000000005,
+          "kind": "rifle",
+          "angle": 1.3820252711482048
+        },
+        {
+          "event": "rifle",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 11.00000000000005,
+          "gun": "gun0",
+          "angle": 1.3820252711482048
+        },
+        {
+          "event": "rifle",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 11.150000000000057,
+          "gun": "gun1",
+          "angle": 1.7595673824415883
+        },
+        {
+          "event": "rifle",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 11.300000000000065,
+          "gun": "gun0",
+          "angle": 1.3820252711482048
+        },
+        {
+          "event": "rifle",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 11.46666666666674,
+          "gun": "gun1",
+          "angle": 1.7595673824415883
+        },
+        {
+          "event": "rifle",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 11.616666666666747,
+          "gun": "gun0",
+          "angle": 1.3820252711482048
+        },
+        {
+          "event": "rifle",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 11.766666666666755,
+          "gun": "gun1",
+          "angle": 1.7595673824415883
+        },
+        {
+          "event": "rifle",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 11.916666666666762,
+          "gun": "gun0",
+          "angle": 1.3820252711482048
+        },
+        {
+          "event": "rifle",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 12.06666666666677,
+          "gun": "gun1",
+          "angle": 1.7595673824415883
+        },
+        {
+          "event": "rifle",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 12.216666666666777,
+          "gun": "gun0",
+          "angle": 1.3820252711482048
+        },
+        {
+          "event": "rifle",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 12.366666666666784,
+          "gun": "gun1",
+          "angle": 1.7595673824415883
+        },
+        {
+          "event": "end",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 13.600000000000179,
+          "reason": "recovered"
+        }
+      ],
+      "flagRestored": true,
+      "ownerGone": true,
+      "browser": "msedge",
+      "difficulty": "hard",
+      "type": "mm1003_riflelocust"
+    },
+    {
+      "kind": null,
+      "shots": [
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 298.09007413863344,
+          "y": 208.42883726974736,
+          "a": 1.3820252711482048,
+          "gun": "gun0",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 381.90992586136656,
+          "y": 208.42883726974736,
+          "a": 1.7595673824415883,
+          "gun": "gun1",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 298.09007413863344,
+          "y": 208.42883726974736,
+          "a": 1.3820252711482048,
+          "gun": "gun0",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 381.90992586136656,
+          "y": 208.42883726974736,
+          "a": 1.7595673824415883,
+          "gun": "gun1",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 298.09007413863344,
+          "y": 208.42883726974736,
+          "a": 1.3820252711482048,
+          "gun": "gun0",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 381.90992586136656,
+          "y": 208.42883726974736,
+          "a": 1.7595673824415883,
+          "gun": "gun1",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 298.09007413863344,
+          "y": 208.42883726974736,
+          "a": 1.3820252711482048,
+          "gun": "gun0",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 381.90992586136656,
+          "y": 208.42883726974736,
+          "a": 1.7595673824415883,
+          "gun": "gun1",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 298.09007413863344,
+          "y": 208.42883726974736,
+          "a": 1.3820252711482048,
+          "gun": "gun0",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 381.90992586136656,
+          "y": 208.42883726974736,
+          "a": 1.7595673824415883,
+          "gun": "gun1",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 298.09007413863344,
+          "y": 208.42883726974736,
+          "a": 1.3820252711482048,
+          "gun": "gun0",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 381.90992586136656,
+          "y": 208.42883726974736,
+          "a": 1.7595673824415883,
+          "gun": "gun1",
+          "mountError": 0,
+          "boss": false
+        }
+      ],
+      "muzzles": {
+        "mg": 96
+      },
+      "shardDraws": 0,
+      "beamFrames": 0,
+      "events": [
+        {
+          "event": "start",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 10,
+          "kind": "rifle",
+          "warning": 0.9,
+          "gapRadians": 1.12
+        },
+        {
+          "event": "release",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 10.900000000000045,
+          "kind": "rifle",
+          "angle": 1.3820252711482048
+        },
+        {
+          "event": "rifle",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 10.900000000000045,
+          "gun": "gun0",
+          "angle": 1.3820252711482048
+        },
+        {
+          "event": "rifle",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 11.050000000000052,
+          "gun": "gun1",
+          "angle": 1.7595673824415883
+        },
+        {
+          "event": "rifle",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 11.183333333333392,
+          "gun": "gun0",
+          "angle": 1.3820252711482048
+        },
+        {
+          "event": "rifle",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 11.3333333333334,
+          "gun": "gun1",
+          "angle": 1.7595673824415883
+        },
+        {
+          "event": "rifle",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 11.46666666666674,
+          "gun": "gun0",
+          "angle": 1.3820252711482048
+        },
+        {
+          "event": "rifle",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 11.616666666666747,
+          "gun": "gun1",
+          "angle": 1.7595673824415883
+        },
+        {
+          "event": "rifle",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 11.750000000000087,
+          "gun": "gun0",
+          "angle": 1.3820252711482048
+        },
+        {
+          "event": "rifle",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 11.883333333333427,
+          "gun": "gun1",
+          "angle": 1.7595673824415883
+        },
+        {
+          "event": "rifle",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 12.033333333333434,
+          "gun": "gun0",
+          "angle": 1.3820252711482048
+        },
+        {
+          "event": "rifle",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 12.166666666666774,
+          "gun": "gun1",
+          "angle": 1.7595673824415883
+        },
+        {
+          "event": "rifle",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 12.316666666666782,
+          "gun": "gun0",
+          "angle": 1.3820252711482048
+        },
+        {
+          "event": "rifle",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 12.450000000000122,
+          "gun": "gun1",
+          "angle": 1.7595673824415883
+        },
+        {
+          "event": "end",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 13.583333333333512,
+          "reason": "recovered"
+        }
+      ],
+      "flagRestored": true,
+      "ownerGone": true,
+      "browser": "msedge",
+      "difficulty": "furious",
+      "type": "mm1003_riflelocust"
+    },
+    {
+      "kind": null,
+      "shots": [
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 0,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 0.5235987755982988,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 2.6179938779914944,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 3.141592653589793,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 3.665191429188092,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 4.1887902047863905,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 4.71238898038469,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 5.235987755982989,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 5.759586531581287,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        }
+      ],
+      "muzzles": {
+        "crystal": 88
+      },
+      "shardDraws": 1388,
+      "beamFrames": 0,
+      "events": [
+        {
+          "event": "start",
+          "stage": 9,
+          "type": "s9beacon",
+          "time": 10,
+          "kind": "shards",
+          "warning": 1.3,
+          "gapRadians": 1.52
+        },
+        {
+          "event": "release",
+          "stage": 9,
+          "type": "s9beacon",
+          "time": 11.300000000000065,
+          "kind": "shards",
+          "angle": 1.5707963267948966
+        },
+        {
+          "event": "shards",
+          "stage": 9,
+          "type": "s9beacon",
+          "time": 11.300000000000065,
+          "count": 9,
+          "gap": 1.5707963267948966,
+          "gapRadians": 1.52
+        },
+        {
+          "event": "end",
+          "stage": 9,
+          "type": "s9beacon",
+          "time": 12.80000000000014,
+          "reason": "recovered"
+        }
+      ],
+      "flagRestored": true,
+      "ownerGone": true,
+      "browser": "msedge",
+      "difficulty": "easy",
+      "type": "s9beacon"
+    },
+    {
+      "kind": null,
+      "shots": [
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 0,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 0.39269908169872414,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 0.7853981633974483,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 2.356194490192345,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 2.748893571891069,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 3.141592653589793,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 3.5342917352885173,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 3.9269908169872414,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 4.319689898685965,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 4.71238898038469,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 5.105088062083414,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 5.497787143782138,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 5.890486225480862,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 0.19634954084936207,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 0.5890486225480862,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 2.552544031041707,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 2.945243112740431,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 3.3379421944391554,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 3.730641276137879,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 4.123340357836604,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 4.516039439535327,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 4.908738521234052,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 5.3014376029327765,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 5.6941366846315,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 6.086835766330224,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        }
+      ],
+      "muzzles": {
+        "crystal": 89
+      },
+      "shardDraws": 2808,
+      "beamFrames": 0,
+      "events": [
+        {
+          "event": "start",
+          "stage": 9,
+          "type": "s9beacon",
+          "time": 10,
+          "kind": "shards",
+          "warning": 1.12,
+          "gapRadians": 1.38
+        },
+        {
+          "event": "release",
+          "stage": 9,
+          "type": "s9beacon",
+          "time": 11.13333333333339,
+          "kind": "shards",
+          "angle": 1.5707963267948966
+        },
+        {
+          "event": "shards",
+          "stage": 9,
+          "type": "s9beacon",
+          "time": 11.13333333333339,
+          "count": 13,
+          "gap": 1.5707963267948966,
+          "gapRadians": 1.38
+        },
+        {
+          "event": "shards",
+          "stage": 9,
+          "type": "s9beacon",
+          "time": 11.516666666666742,
+          "count": 12,
+          "gap": 1.5707963267948966,
+          "gapRadians": 1.38
+        },
+        {
+          "event": "end",
+          "stage": 9,
+          "type": "s9beacon",
+          "time": 12.850000000000142,
+          "reason": "recovered"
+        }
+      ],
+      "flagRestored": true,
+      "ownerGone": true,
+      "browser": "msedge",
+      "difficulty": "normal",
+      "type": "s9beacon"
+    },
+    {
+      "kind": null,
+      "shots": [
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 0,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 0.3141592653589793,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 0.6283185307179586,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 0.9424777960769379,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 2.199114857512855,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 2.5132741228718345,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 2.827433388230814,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 3.141592653589793,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 3.455751918948772,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 3.7699111843077517,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 4.084070449666731,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 4.39822971502571,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 4.71238898038469,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 5.026548245743669,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 5.340707511102648,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 5.654866776461628,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 5.969026041820607,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 0.15707963267948966,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 0.47123889803846897,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 0.7853981633974483,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 2.356194490192345,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 2.670353755551324,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 2.9845130209103035,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 3.2986722862692828,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 3.6128315516282616,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 3.9269908169872414,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 4.241150082346221,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 4.5553093477052,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 4.869468613064179,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 5.183627878423159,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 5.497787143782138,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 5.811946409141117,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 6.126105674500097,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        }
+      ],
+      "muzzles": {
+        "crystal": 81
+      },
+      "shardDraws": 2745,
+      "beamFrames": 0,
+      "events": [
+        {
+          "event": "start",
+          "stage": 9,
+          "type": "s9beacon",
+          "time": 10,
+          "kind": "shards",
+          "warning": 1,
+          "gapRadians": 1.24
+        },
+        {
+          "event": "release",
+          "stage": 9,
+          "type": "s9beacon",
+          "time": 11.00000000000005,
+          "kind": "shards",
+          "angle": 1.5707963267948966
+        },
+        {
+          "event": "shards",
+          "stage": 9,
+          "type": "s9beacon",
+          "time": 11.00000000000005,
+          "count": 17,
+          "gap": 1.5707963267948966,
+          "gapRadians": 1.24
+        },
+        {
+          "event": "shards",
+          "stage": 9,
+          "type": "s9beacon",
+          "time": 11.383333333333402,
+          "count": 16,
+          "gap": 1.5707963267948966,
+          "gapRadians": 1.24
+        },
+        {
+          "event": "end",
+          "stage": 9,
+          "type": "s9beacon",
+          "time": 12.633333333333464,
+          "reason": "recovered"
+        }
+      ],
+      "flagRestored": true,
+      "ownerGone": true,
+      "browser": "msedge",
+      "difficulty": "hard",
+      "type": "s9beacon"
+    },
+    {
+      "kind": null,
+      "shots": [
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 0,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 0.2617993877991494,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 0.5235987755982988,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 0.7853981633974483,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 2.356194490192345,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 2.6179938779914944,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 2.8797932657906435,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 3.141592653589793,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 3.4033920413889427,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 3.665191429188092,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 3.926990816987241,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 4.1887902047863905,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 4.4505895925855405,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 4.71238898038469,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 4.974188368183839,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 5.235987755982989,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 5.497787143782138,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 5.759586531581287,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 6.021385919380436,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 0.1308996938995747,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 0.39269908169872414,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 0.6544984694978735,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 0.916297857297023,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 2.22529479629277,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 2.4870941840919194,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 2.748893571891069,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 3.010692959690218,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 3.2724923474893677,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 3.5342917352885173,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 3.7960911230876664,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 4.057890510886816,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 4.319689898685965,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 4.581489286485115,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 4.843288674284264,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 5.105088062083413,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 5.366887449882563,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 5.6286868376817125,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 5.890486225480862,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 6.152285613280011,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 0,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 0.2617993877991494,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 0.5235987755982988,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 0.7853981633974483,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 2.356194490192345,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 2.6179938779914944,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 2.8797932657906435,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 3.141592653589793,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 3.4033920413889427,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 3.665191429188092,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 3.926990816987241,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 4.1887902047863905,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 4.4505895925855405,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 4.71238898038469,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 4.974188368183839,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 5.235987755982989,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 5.497787143782138,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 5.759586531581287,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 6.021385919380436,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        }
+      ],
+      "muzzles": {
+        "crystal": 86
+      },
+      "shardDraws": 3893,
+      "beamFrames": 0,
+      "events": [
+        {
+          "event": "start",
+          "stage": 9,
+          "type": "s9beacon",
+          "time": 10,
+          "kind": "shards",
+          "warning": 0.9,
+          "gapRadians": 1.12
+        },
+        {
+          "event": "release",
+          "stage": 9,
+          "type": "s9beacon",
+          "time": 10.900000000000045,
+          "kind": "shards",
+          "angle": 1.5707963267948966
+        },
+        {
+          "event": "shards",
+          "stage": 9,
+          "type": "s9beacon",
+          "time": 10.900000000000045,
+          "count": 19,
+          "gap": 1.5707963267948966,
+          "gapRadians": 1.12
+        },
+        {
+          "event": "shards",
+          "stage": 9,
+          "type": "s9beacon",
+          "time": 11.283333333333397,
+          "count": 20,
+          "gap": 1.5707963267948966,
+          "gapRadians": 1.12
+        },
+        {
+          "event": "shards",
+          "stage": 9,
+          "type": "s9beacon",
+          "time": 11.66666666666675,
+          "count": 19,
+          "gap": 1.5707963267948966,
+          "gapRadians": 1.12
+        },
+        {
+          "event": "end",
+          "stage": 9,
+          "type": "s9beacon",
+          "time": 12.816666666666807,
+          "reason": "recovered"
+        }
+      ],
+      "flagRestored": true,
+      "ownerGone": true,
+      "browser": "msedge",
+      "difficulty": "furious",
+      "type": "s9beacon"
+    },
+    {
+      "kind": null,
+      "shots": [
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 298.09007413863344,
+          "y": 208.42883726974736,
+          "a": 1.3820252711482048,
+          "gun": "gun0",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 381.90992586136656,
+          "y": 208.42883726974736,
+          "a": 1.7595673824415883,
+          "gun": "gun1",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 298.09007413863344,
+          "y": 208.42883726974736,
+          "a": 1.3820252711482048,
+          "gun": "gun0",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 381.90992586136656,
+          "y": 208.42883726974736,
+          "a": 1.7595673824415883,
+          "gun": "gun1",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 298.09007413863344,
+          "y": 208.42883726974736,
+          "a": 1.3820252711482048,
+          "gun": "gun0",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 381.90992586136656,
+          "y": 208.42883726974736,
+          "a": 1.7595673824415883,
+          "gun": "gun1",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 298.09007413863344,
+          "y": 208.42883726974736,
+          "a": 1.3820252711482048,
+          "gun": "gun0",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 381.90992586136656,
+          "y": 208.42883726974736,
+          "a": 1.7595673824415883,
+          "gun": "gun1",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 298.09007413863344,
+          "y": 208.42883726974736,
+          "a": 1.3820252711482048,
+          "gun": "gun0",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 381.90992586136656,
+          "y": 208.42883726974736,
+          "a": 1.7595673824415883,
+          "gun": "gun1",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 298.09007413863344,
+          "y": 208.42883726974736,
+          "a": 1.3820252711482048,
+          "gun": "gun0",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 381.90992586136656,
+          "y": 208.42883726974736,
+          "a": 1.7595673824415883,
+          "gun": "gun1",
+          "mountError": 0,
+          "boss": false
+        }
+      ],
+      "muzzles": {
+        "mg": 94
+      },
+      "shardDraws": 0,
+      "beamFrames": 0,
+      "events": [
+        {
+          "event": "start",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 10,
+          "kind": "rifle",
+          "warning": 0.9,
+          "gapRadians": 1.12
+        },
+        {
+          "event": "release",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 10.900000000000045,
+          "kind": "rifle",
+          "angle": 1.3820252711482048
+        },
+        {
+          "event": "rifle",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 10.900000000000045,
+          "gun": "gun0",
+          "angle": 1.3820252711482048
+        },
+        {
+          "event": "rifle",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 11.050000000000052,
+          "gun": "gun1",
+          "angle": 1.7595673824415883
+        },
+        {
+          "event": "rifle",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 11.183333333333392,
+          "gun": "gun0",
+          "angle": 1.3820252711482048
+        },
+        {
+          "event": "rifle",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 11.3333333333334,
+          "gun": "gun1",
+          "angle": 1.7595673824415883
+        },
+        {
+          "event": "rifle",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 11.46666666666674,
+          "gun": "gun0",
+          "angle": 1.3820252711482048
+        },
+        {
+          "event": "rifle",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 11.616666666666747,
+          "gun": "gun1",
+          "angle": 1.7595673824415883
+        },
+        {
+          "event": "rifle",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 11.750000000000087,
+          "gun": "gun0",
+          "angle": 1.3820252711482048
+        },
+        {
+          "event": "rifle",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 11.883333333333427,
+          "gun": "gun1",
+          "angle": 1.7595673824415883
+        },
+        {
+          "event": "rifle",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 12.033333333333434,
+          "gun": "gun0",
+          "angle": 1.3820252711482048
+        },
+        {
+          "event": "rifle",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 12.166666666666774,
+          "gun": "gun1",
+          "angle": 1.7595673824415883
+        },
+        {
+          "event": "rifle",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 12.316666666666782,
+          "gun": "gun0",
+          "angle": 1.3820252711482048
+        },
+        {
+          "event": "rifle",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 12.450000000000122,
+          "gun": "gun1",
+          "angle": 1.7595673824415883
+        },
+        {
+          "event": "end",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 13.583333333333512,
+          "reason": "recovered"
+        }
+      ],
+      "flagRestored": true,
+      "ownerGone": true,
+      "browser": "chrome",
+      "difficulty": "furious",
+      "type": "mm1003_riflelocust"
+    },
+    {
+      "kind": null,
+      "shots": [
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 0,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 0.2617993877991494,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 0.5235987755982988,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 0.7853981633974483,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 2.356194490192345,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 2.6179938779914944,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 2.8797932657906435,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 3.141592653589793,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 3.4033920413889427,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 3.665191429188092,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 3.926990816987241,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 4.1887902047863905,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 4.4505895925855405,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 4.71238898038469,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 4.974188368183839,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 5.235987755982989,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 5.497787143782138,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 5.759586531581287,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 6.021385919380436,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 0.1308996938995747,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 0.39269908169872414,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 0.6544984694978735,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 0.916297857297023,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 2.22529479629277,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 2.4870941840919194,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 2.748893571891069,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 3.010692959690218,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 3.2724923474893677,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 3.5342917352885173,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 3.7960911230876664,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 4.057890510886816,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 4.319689898685965,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 4.581489286485115,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 4.843288674284264,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 5.105088062083413,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 5.366887449882563,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 5.6286868376817125,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 5.890486225480862,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 6.152285613280011,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 0,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 0.2617993877991494,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 0.5235987755982988,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 0.7853981633974483,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 2.356194490192345,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 2.6179938779914944,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 2.8797932657906435,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 3.141592653589793,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 3.4033920413889427,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 3.665191429188092,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 3.926990816987241,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 4.1887902047863905,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 4.4505895925855405,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 4.71238898038469,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 4.974188368183839,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 5.235987755982989,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 5.497787143782138,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 5.759586531581287,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 6.021385919380436,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        }
+      ],
+      "muzzles": {
+        "crystal": 86
+      },
+      "shardDraws": 3893,
+      "beamFrames": 0,
+      "events": [
+        {
+          "event": "start",
+          "stage": 9,
+          "type": "s9beacon",
+          "time": 10,
+          "kind": "shards",
+          "warning": 0.9,
+          "gapRadians": 1.12
+        },
+        {
+          "event": "release",
+          "stage": 9,
+          "type": "s9beacon",
+          "time": 10.900000000000045,
+          "kind": "shards",
+          "angle": 1.5707963267948966
+        },
+        {
+          "event": "shards",
+          "stage": 9,
+          "type": "s9beacon",
+          "time": 10.900000000000045,
+          "count": 19,
+          "gap": 1.5707963267948966,
+          "gapRadians": 1.12
+        },
+        {
+          "event": "shards",
+          "stage": 9,
+          "type": "s9beacon",
+          "time": 11.283333333333397,
+          "count": 20,
+          "gap": 1.5707963267948966,
+          "gapRadians": 1.12
+        },
+        {
+          "event": "shards",
+          "stage": 9,
+          "type": "s9beacon",
+          "time": 11.66666666666675,
+          "count": 19,
+          "gap": 1.5707963267948966,
+          "gapRadians": 1.12
+        },
+        {
+          "event": "end",
+          "stage": 9,
+          "type": "s9beacon",
+          "time": 12.816666666666807,
+          "reason": "recovered"
+        }
+      ],
+      "flagRestored": true,
+      "ownerGone": true,
+      "browser": "chrome",
+      "difficulty": "furious",
+      "type": "s9beacon"
+    },
+    {
+      "kind": null,
+      "shots": [
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 298.09007413863344,
+          "y": 208.42883726974736,
+          "a": 1.3820252711482048,
+          "gun": "gun0",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 381.90992586136656,
+          "y": 208.42883726974736,
+          "a": 1.7595673824415885,
+          "gun": "gun1",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 298.09007413863344,
+          "y": 208.42883726974736,
+          "a": 1.3820252711482048,
+          "gun": "gun0",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 381.90992586136656,
+          "y": 208.42883726974736,
+          "a": 1.7595673824415885,
+          "gun": "gun1",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 298.09007413863344,
+          "y": 208.42883726974736,
+          "a": 1.3820252711482048,
+          "gun": "gun0",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 381.90992586136656,
+          "y": 208.42883726974736,
+          "a": 1.7595673824415885,
+          "gun": "gun1",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 298.09007413863344,
+          "y": 208.42883726974736,
+          "a": 1.3820252711482048,
+          "gun": "gun0",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 381.90992586136656,
+          "y": 208.42883726974736,
+          "a": 1.7595673824415885,
+          "gun": "gun1",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 298.09007413863344,
+          "y": 208.42883726974736,
+          "a": 1.3820252711482048,
+          "gun": "gun0",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 381.90992586136656,
+          "y": 208.42883726974736,
+          "a": 1.7595673824415885,
+          "gun": "gun1",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 298.09007413863344,
+          "y": 208.42883726974736,
+          "a": 1.3820252711482048,
+          "gun": "gun0",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 381.90992586136656,
+          "y": 208.42883726974736,
+          "a": 1.7595673824415885,
+          "gun": "gun1",
+          "mountError": 0,
+          "boss": false
+        }
+      ],
+      "muzzles": {
+        "mg": 87
+      },
+      "shardDraws": 0,
+      "beamFrames": 0,
+      "events": [
+        {
+          "event": "start",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 10,
+          "kind": "rifle",
+          "warning": 0.9,
+          "gapRadians": 1.12
+        },
+        {
+          "event": "release",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 10.900000000000045,
+          "kind": "rifle",
+          "angle": 1.3820252711482048
+        },
+        {
+          "event": "rifle",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 10.900000000000045,
+          "gun": "gun0",
+          "angle": 1.3820252711482048
+        },
+        {
+          "event": "rifle",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 11.050000000000052,
+          "gun": "gun1",
+          "angle": 1.7595673824415885
+        },
+        {
+          "event": "rifle",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 11.183333333333392,
+          "gun": "gun0",
+          "angle": 1.3820252711482048
+        },
+        {
+          "event": "rifle",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 11.3333333333334,
+          "gun": "gun1",
+          "angle": 1.7595673824415885
+        },
+        {
+          "event": "rifle",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 11.46666666666674,
+          "gun": "gun0",
+          "angle": 1.3820252711482048
+        },
+        {
+          "event": "rifle",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 11.616666666666747,
+          "gun": "gun1",
+          "angle": 1.7595673824415885
+        },
+        {
+          "event": "rifle",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 11.750000000000087,
+          "gun": "gun0",
+          "angle": 1.3820252711482048
+        },
+        {
+          "event": "rifle",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 11.883333333333427,
+          "gun": "gun1",
+          "angle": 1.7595673824415885
+        },
+        {
+          "event": "rifle",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 12.033333333333434,
+          "gun": "gun0",
+          "angle": 1.3820252711482048
+        },
+        {
+          "event": "rifle",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 12.166666666666774,
+          "gun": "gun1",
+          "angle": 1.7595673824415885
+        },
+        {
+          "event": "rifle",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 12.316666666666782,
+          "gun": "gun0",
+          "angle": 1.3820252711482048
+        },
+        {
+          "event": "rifle",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 12.450000000000122,
+          "gun": "gun1",
+          "angle": 1.7595673824415885
+        },
+        {
+          "event": "end",
+          "stage": 7,
+          "type": "mm1003_riflelocust",
+          "time": 13.583333333333512,
+          "reason": "recovered"
+        }
+      ],
+      "flagRestored": true,
+      "ownerGone": true,
+      "browser": "firefox",
+      "difficulty": "furious",
+      "type": "mm1003_riflelocust"
+    },
+    {
+      "kind": null,
+      "shots": [
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 0,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 0.2617993877991494,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 0.5235987755982988,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 0.7853981633974483,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 2.356194490192345,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 2.6179938779914944,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 2.8797932657906435,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 3.141592653589793,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 3.4033920413889427,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 3.665191429188092,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 3.926990816987241,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 4.1887902047863905,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 4.4505895925855405,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 4.71238898038469,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 4.974188368183839,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 5.235987755982989,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 5.497787143782138,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 5.759586531581287,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 6.021385919380436,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 0.1308996938995747,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 0.39269908169872414,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 0.6544984694978735,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 0.916297857297023,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 2.22529479629277,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 2.4870941840919194,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 2.748893571891069,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 3.010692959690218,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 3.2724923474893677,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 3.5342917352885173,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 3.7960911230876664,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 4.057890510886816,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 4.319689898685965,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 4.581489286485115,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 4.843288674284264,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 5.105088062083413,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 5.366887449882563,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 5.6286868376817125,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 5.890486225480862,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 6.152285613280011,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 0,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 0.2617993877991494,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 0.5235987755982988,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 0.7853981633974483,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 2.356194490192345,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 2.6179938779914944,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 2.8797932657906435,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 3.141592653589793,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 3.4033920413889427,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 3.665191429188092,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 3.926990816987241,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 4.1887902047863905,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 4.4505895925855405,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 4.71238898038469,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 4.974188368183839,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 5.235987755982989,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 5.497787143782138,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 5.759586531581287,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 174.07999999999998,
+          "a": 6.021385919380436,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        }
+      ],
+      "muzzles": {
+        "crystal": 86
+      },
+      "shardDraws": 3893,
+      "beamFrames": 0,
+      "events": [
+        {
+          "event": "start",
+          "stage": 9,
+          "type": "s9beacon",
+          "time": 10,
+          "kind": "shards",
+          "warning": 0.9,
+          "gapRadians": 1.12
+        },
+        {
+          "event": "release",
+          "stage": 9,
+          "type": "s9beacon",
+          "time": 10.900000000000045,
+          "kind": "shards",
+          "angle": 1.5707963267948966
+        },
+        {
+          "event": "shards",
+          "stage": 9,
+          "type": "s9beacon",
+          "time": 10.900000000000045,
+          "count": 19,
+          "gap": 1.5707963267948966,
+          "gapRadians": 1.12
+        },
+        {
+          "event": "shards",
+          "stage": 9,
+          "type": "s9beacon",
+          "time": 11.283333333333397,
+          "count": 20,
+          "gap": 1.5707963267948966,
+          "gapRadians": 1.12
+        },
+        {
+          "event": "shards",
+          "stage": 9,
+          "type": "s9beacon",
+          "time": 11.66666666666675,
+          "count": 19,
+          "gap": 1.5707963267948966,
+          "gapRadians": 1.12
+        },
+        {
+          "event": "end",
+          "stage": 9,
+          "type": "s9beacon",
+          "time": 12.816666666666807,
+          "reason": "recovered"
+        }
+      ],
+      "flagRestored": true,
+      "ownerGone": true,
+      "browser": "firefox",
+      "difficulty": "furious",
+      "type": "s9beacon"
+    }
+  ],
+  "nativeControllers": [
+    {
+      "shots": [
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 298.09007413863344,
+          "y": 210.09550393641405,
+          "a": 1.38061457756693,
+          "gun": "gun0",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 381.90992586136656,
+          "y": 210.09550393641405,
+          "a": 1.7609780760228633,
+          "gun": "gun1",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 298.09007413863344,
+          "y": 210.09550393641405,
+          "a": 1.38061457756693,
+          "gun": "gun0",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 381.90992586136656,
+          "y": 210.09550393641405,
+          "a": 1.7609780760228633,
+          "gun": "gun1",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 298.09007413863344,
+          "y": 210.09550393641405,
+          "a": 1.38061457756693,
+          "gun": "gun0",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 381.90992586136656,
+          "y": 210.09550393641405,
+          "a": 1.7609780760228633,
+          "gun": "gun1",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 334.09007413863344,
+          "y": 250.66883726974737,
+          "a": 1.5374440117491341,
+          "gun": "gun0",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 417.90992586136656,
+          "y": 250.66883726974737,
+          "a": 1.9851717717468227,
+          "gun": "gun1",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 334.09007413863344,
+          "y": 250.66883726974737,
+          "a": 1.5374440117491341,
+          "gun": "gun0",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 417.90992586136656,
+          "y": 250.66883726974737,
+          "a": 1.9851717717468227,
+          "gun": "gun1",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 334.09007413863344,
+          "y": 250.66883726974737,
+          "a": 1.5374440117491341,
+          "gun": "gun0",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 417.90992586136656,
+          "y": 256.2688372697473,
+          "a": 1.9971397611833295,
+          "gun": "gun1",
+          "mountError": 0,
+          "boss": false
+        }
+      ],
+      "muzzles": {
+        "mg": 96
+      },
+      "shardDraws": 0,
+      "beamFrames": 0,
+      "wrongMuzzles": [],
+      "browser": "msedge",
+      "type": "mm1003_riflelocust"
+    },
+    {
+      "shots": [
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 128.40944157515568,
+          "a": 0.3250000000000002,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 128.40944157515568,
+          "a": 1.1103981633974485,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 128.40944157515568,
+          "a": 2.681194490192345,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 128.40944157515568,
+          "a": 3.4665926535897933,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 128.40944157515568,
+          "a": 4.251990816987242,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 128.40944157515568,
+          "a": 5.822787143782138,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 123.73109676197305,
+          "a": 1.7833333333333294,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 123.73109676197305,
+          "a": 2.568731496730778,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 123.73109676197305,
+          "a": 4.1395278235256745,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 123.73109676197305,
+          "a": 4.924925986923123,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 123.73109676197305,
+          "a": 5.710324150320571,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 123.73109676197305,
+          "a": 7.281120477115468,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340.17923312867333,
+          "y": 130.04340272532733,
+          "a": 3.1166666666666583,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340.17923312867333,
+          "y": 130.04340272532733,
+          "a": 3.9020648300641065,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340.17923312867333,
+          "y": 130.04340272532733,
+          "a": 5.472861156859003,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340.17923312867333,
+          "y": 130.04340272532733,
+          "a": 6.258259320256451,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340.17923312867333,
+          "y": 130.04340272532733,
+          "a": 7.0436574836539,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340.17923312867333,
+          "y": 130.04340272532733,
+          "a": 8.614453810448797,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        }
+      ],
+      "muzzles": {
+        "crystal": 33,
+        "mg": 2
+      },
+      "shardDraws": 1435,
+      "beamFrames": 0,
+      "wrongMuzzles": [],
+      "browser": "msedge",
+      "type": "s9beacon"
+    },
+    {
+      "shots": [
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 298.09007413863344,
+          "y": 256.2955039364133,
+          "a": 1.3311269206019738,
+          "gun": "gun0",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 381.90992586136656,
+          "y": 262.5955039364132,
+          "a": 1.81924033916856,
+          "gun": "gun1",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 298.09007413863344,
+          "y": 269.5955039364131,
+          "a": 1.311834853246695,
+          "gun": "gun0",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 381.90992586136656,
+          "y": 275.895503936413,
+          "a": 1.8399958586391632,
+          "gun": "gun1",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 298.09007413863344,
+          "y": 282.89550393641287,
+          "a": 1.2892544220738396,
+          "gun": "gun0",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 381.90992586136656,
+          "y": 289.19550393641276,
+          "a": 1.864426570243679,
+          "gun": "gun1",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 334.09007413863344,
+          "y": 301.76883726974654,
+          "a": 1.5239380765491872,
+          "gun": "gun0",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 417.90992586136656,
+          "y": 308.06883726974644,
+          "a": 2.1476685173947856,
+          "gun": "gun1",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 334.09007413863344,
+          "y": 315.0688372697463,
+          "a": 1.5184193229836824,
+          "gun": "gun0",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 417.90992586136656,
+          "y": 321.3688372697462,
+          "a": 2.2026917191425968,
+          "gun": "gun1",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 334.09007413863344,
+          "y": 328.3688372697461,
+          "a": 1.5114288117645245,
+          "gun": "gun0",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 417.90992586136656,
+          "y": 334.668837269746,
+          "a": 2.2674366062792806,
+          "gun": "gun1",
+          "mountError": 0,
+          "boss": false
+        }
+      ],
+      "muzzles": {
+        "mg": 96
+      },
+      "shardDraws": 0,
+      "beamFrames": 0,
+      "wrongMuzzles": [],
+      "browser": "chrome",
+      "type": "mm1003_riflelocust"
+    },
+    {
+      "shots": [
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 128.40944157515568,
+          "a": 0.3250000000000002,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 128.40944157515568,
+          "a": 1.1103981633974485,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 128.40944157515568,
+          "a": 2.681194490192345,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 128.40944157515568,
+          "a": 3.4665926535897933,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 128.40944157515568,
+          "a": 4.251990816987242,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 128.40944157515568,
+          "a": 5.822787143782138,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 122.01382260178195,
+          "a": 1.7499999999999962,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 122.01382260178195,
+          "a": 2.5353981633974447,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 122.01382260178195,
+          "a": 4.106194490192341,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 122.01382260178195,
+          "a": 4.89159265358979,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 122.01382260178195,
+          "a": 5.676990816987238,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 122.01382260178195,
+          "a": 7.247787143782134,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340.17923312867333,
+          "y": 130.1528770005786,
+          "a": 3.049999999999992,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340.17923312867333,
+          "y": 130.1528770005786,
+          "a": 3.83539816339744,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340.17923312867333,
+          "y": 130.1528770005786,
+          "a": 5.406194490192337,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340.17923312867333,
+          "y": 130.1528770005786,
+          "a": 6.191592653589785,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340.17923312867333,
+          "y": 130.1528770005786,
+          "a": 6.976990816987233,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340.17923312867333,
+          "y": 130.1528770005786,
+          "a": 8.54778714378213,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        }
+      ],
+      "muzzles": {
+        "crystal": 33,
+        "mg": 2
+      },
+      "shardDraws": 1449,
+      "beamFrames": 0,
+      "wrongMuzzles": [],
+      "browser": "chrome",
+      "type": "s9beacon"
+    },
+    {
+      "shots": [
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 298.09007413863344,
+          "y": 210.09550393641405,
+          "a": 1.38061457756693,
+          "gun": "gun0",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 381.90992586136656,
+          "y": 210.09550393641405,
+          "a": 1.7609780760228633,
+          "gun": "gun1",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 298.09007413863344,
+          "y": 210.09550393641405,
+          "a": 1.38061457756693,
+          "gun": "gun0",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 381.90992586136656,
+          "y": 210.09550393641405,
+          "a": 1.7609780760228633,
+          "gun": "gun1",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 298.09007413863344,
+          "y": 210.09550393641405,
+          "a": 1.38061457756693,
+          "gun": "gun0",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 381.90992586136656,
+          "y": 210.09550393641405,
+          "a": 1.7609780760228633,
+          "gun": "gun1",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 334.09007413863344,
+          "y": 280.0688372697469,
+          "a": 1.5308130484479796,
+          "gun": "gun0",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 417.90992586136656,
+          "y": 286.3688372697468,
+          "a": 2.07430583499242,
+          "gun": "gun1",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 334.09007413863344,
+          "y": 293.3688372697467,
+          "a": 1.5268621467897474,
+          "gun": "gun0",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 417.90992586136656,
+          "y": 299.6688372697466,
+          "a": 2.1171126320951754,
+          "gun": "gun1",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 334.09007413863344,
+          "y": 306.66883726974646,
+          "a": 1.5220455094173655,
+          "gun": "gun0",
+          "mountError": 0,
+          "boss": false
+        },
+        {
+          "kind": "mg",
+          "s9a": null,
+          "x": 417.90992586136656,
+          "y": 312.96883726974636,
+          "a": 2.166928560699161,
+          "gun": "gun1",
+          "mountError": 0,
+          "boss": false
+        }
+      ],
+      "muzzles": {
+        "mg": 96
+      },
+      "shardDraws": 0,
+      "beamFrames": 0,
+      "wrongMuzzles": [],
+      "browser": "firefox",
+      "type": "mm1003_riflelocust"
+    },
+    {
+      "shots": [
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 128.40944157515568,
+          "a": 0.3250000000000002,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 128.40944157515568,
+          "a": 1.1103981633974485,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 128.40944157515568,
+          "a": 2.681194490192345,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 128.40944157515568,
+          "a": 3.4665926535897933,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 128.40944157515568,
+          "a": 4.251990816987242,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 128.40944157515568,
+          "a": 5.822787143782138,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 122.25812393845607,
+          "a": 1.6833333333333298,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 122.25812393845607,
+          "a": 2.4687314967307783,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 122.25812393845607,
+          "a": 4.039527823525675,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 122.25812393845607,
+          "a": 4.824925986923123,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 122.25812393845607,
+          "a": 5.610324150320571,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340,
+          "y": 122.25812393845607,
+          "a": 7.181120477115468,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340.17923312867333,
+          "y": 129.9882382383217,
+          "a": 3.133333333333325,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340.17923312867333,
+          "y": 129.9882382383217,
+          "a": 3.918731496730773,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340.17923312867333,
+          "y": 129.9882382383217,
+          "a": 5.48952782352567,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340.17923312867333,
+          "y": 129.9882382383217,
+          "a": 6.274925986923118,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340.17923312867333,
+          "y": 129.9882382383217,
+          "a": 7.060324150320566,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        },
+        {
+          "kind": "warpshard",
+          "s9a": "warpshard",
+          "x": 340.17923312867333,
+          "y": 129.9882382383217,
+          "a": 8.631120477115463,
+          "gun": null,
+          "mountError": null,
+          "boss": false
+        }
+      ],
+      "muzzles": {
+        "crystal": 33,
+        "mg": 2
+      },
+      "shardDraws": 1437,
+      "beamFrames": 0,
+      "wrongMuzzles": [],
+      "browser": "firefox",
+      "type": "s9beacon"
+    }
+  ],
+  "interruptions": [
+    {
+      "browser": "msedge",
+      "test": "single surviving gun",
+      "sideDestroyed": -1,
+      "shots": 12
+    },
+    {
+      "browser": "msedge",
+      "test": "single surviving gun",
+      "sideDestroyed": 1,
+      "shots": 12
+    },
+    {
+      "browser": "msedge",
+      "test": "both barrels destroyed",
+      "cancelled": true,
+      "noShots": true
+    },
+    {
+      "browser": "msedge",
+      "type": "mm1003_riflelocust",
+      "test": "shield break cancels weapon",
+      "released": true,
+      "cancelled": true,
+      "noNewShots": true,
+      "muzzlesHidden": true
+    },
+    {
+      "browser": "msedge",
+      "type": "s9beacon",
+      "test": "shield break cancels weapon",
+      "released": true,
+      "cancelled": true,
+      "noNewShots": true,
+      "muzzlesHidden": true
+    },
+    {
+      "browser": "chrome",
+      "test": "single surviving gun",
+      "sideDestroyed": -1,
+      "shots": 12
+    },
+    {
+      "browser": "chrome",
+      "test": "single surviving gun",
+      "sideDestroyed": 1,
+      "shots": 12
+    },
+    {
+      "browser": "chrome",
+      "test": "both barrels destroyed",
+      "cancelled": true,
+      "noShots": true
+    },
+    {
+      "browser": "chrome",
+      "type": "mm1003_riflelocust",
+      "test": "shield break cancels weapon",
+      "released": true,
+      "cancelled": true,
+      "noNewShots": true,
+      "muzzlesHidden": true
+    },
+    {
+      "browser": "chrome",
+      "type": "s9beacon",
+      "test": "shield break cancels weapon",
+      "released": true,
+      "cancelled": true,
+      "noNewShots": true,
+      "muzzlesHidden": true
+    },
+    {
+      "browser": "firefox",
+      "test": "single surviving gun",
+      "sideDestroyed": -1,
+      "shots": 12
+    },
+    {
+      "browser": "firefox",
+      "test": "single surviving gun",
+      "sideDestroyed": 1,
+      "shots": 12
+    },
+    {
+      "browser": "firefox",
+      "test": "both barrels destroyed",
+      "cancelled": true,
+      "noShots": true
+    },
+    {
+      "browser": "firefox",
+      "type": "mm1003_riflelocust",
+      "test": "shield break cancels weapon",
+      "released": true,
+      "cancelled": true,
+      "noNewShots": true,
+      "muzzlesHidden": true
+    },
+    {
+      "browser": "firefox",
+      "type": "s9beacon",
+      "test": "shield break cancels weapon",
+      "released": true,
+      "cancelled": true,
+      "noNewShots": true,
+      "muzzlesHidden": true
+    }
+  ],
+  "errors": [],
+  "movement": {
+    "escapes": [
+      {
+        "alive": true,
+        "lives": 3,
+        "shield": 0,
+        "release": true,
+        "x": 59.20000000000046,
+        "y": 427.79999999999995,
+        "stage": 7,
+        "difficulty": "easy",
+        "type": "mm1003_riflelocust"
+      },
+      {
+        "alive": true,
+        "lives": 3,
+        "shield": 0,
+        "release": true,
+        "x": 59.20000000000046,
+        "y": 427.79999999999995,
+        "stage": 7,
+        "difficulty": "normal",
+        "type": "mm1003_riflelocust"
+      },
+      {
+        "alive": true,
+        "lives": 3,
+        "shield": 0,
+        "release": true,
+        "x": 59.20000000000046,
+        "y": 427.79999999999995,
+        "stage": 7,
+        "difficulty": "hard",
+        "type": "mm1003_riflelocust"
+      },
+      {
+        "alive": true,
+        "lives": 3,
+        "shield": 0,
+        "release": true,
+        "x": 59.20000000000046,
+        "y": 427.79999999999995,
+        "stage": 7,
+        "difficulty": "furious",
+        "type": "mm1003_riflelocust"
+      },
+      {
+        "alive": true,
+        "lives": 3,
+        "shield": 0,
+        "release": true,
+        "x": 340,
+        "y": 427.79999999999995,
+        "stage": 9,
+        "difficulty": "easy",
+        "type": "s9beacon"
+      },
+      {
+        "alive": true,
+        "lives": 3,
+        "shield": 0,
+        "release": true,
+        "x": 340,
+        "y": 427.79999999999995,
+        "stage": 9,
+        "difficulty": "normal",
+        "type": "s9beacon"
+      },
+      {
+        "alive": true,
+        "lives": 3,
+        "shield": 0,
+        "release": true,
+        "x": 340,
+        "y": 427.79999999999995,
+        "stage": 9,
+        "difficulty": "hard",
+        "type": "s9beacon"
+      },
+      {
+        "alive": true,
+        "lives": 3,
+        "shield": 0,
+        "release": true,
+        "x": 340,
+        "y": 427.79999999999995,
+        "stage": 9,
+        "difficulty": "furious",
+        "type": "s9beacon"
+      }
+    ],
+    "errors": []
+  },
+  "summary": {
+    "nativePatternRuns": 12,
+    "nativeControllerRuns": 6,
+    "interruptionChecks": 15,
+    "unshieldedBaseSpeedEscapes": 8,
+    "browsers": [
+      "Edge",
+      "Chrome",
+      "Firefox"
+    ],
+    "newRasterBytes": 0,
+    "errors": []
+  }
+}

@@ -66,7 +66,7 @@ function ht27LockStart(b,d){
   if(ht27CombatSequence(b))return;
  d.mode='break';d.t=0;d.locked=true;d.shield=true;d.savedSpecial=special;special=null;
  d.savedSpeed=timeScale;timeScale=1;{const m=ht27Song();if(m){m.playbackRate=1;m.preservesPitch=true;}}
- d.reflections=pBullets.filter(q=>!q.dead).slice(0,16).map((q,i)=>({x:q.x,y:Math.min(q.y,b.y+100),vx:(i%2?1:-1)*(130+i*3),vy:75,t:0,w:8,h:20,kind:'eglaser',_hammerLaser:true}));
+ d.reflections=[]; // Chromium absorbs; it never returns hostile copies.
  ht27ClearAttacks();hammerState(b,'hammer');b._noHit=false;b.enter=false;
  for(const p of [player,player2])if(p){p.roll=null;p.somer=null;p._thrustPower=0;}
  d.homeX=(camLeftX()+camRightX())/2;d.homeY=VH*.34;d.from={x:b.x,y:b.y};

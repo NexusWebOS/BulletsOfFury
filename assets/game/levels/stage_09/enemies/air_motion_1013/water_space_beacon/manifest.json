@@ -1,0 +1,49 @@
+{
+  "id": "s9beacon",
+  "name": "Water Space Beacon",
+  "stage": 9,
+  "stages": [
+    9
+  ],
+  "aliases": [
+    "s9beacon"
+  ],
+  "folder": "assets/game/levels/stage_09/enemies/air_motion_1013/water_space_beacon",
+  "rebel": false,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s9_s9beacon_heading",
+    "path": "assets/game/levels/stage_09/enemies/air_motion_1013/water_space_beacon/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "948236da16b8285eb14adbd3edba47bf1d7ae75c899bc6560f71f1aa7651b443"
+  },
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s9_s9beacon_roll",
+    "path": "assets/game/levels/stage_09/enemies/air_motion_1013/water_space_beacon/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "1796b023079677ff7eecaceb4c584ca000bafcba2558b047711bbbebe06012bf"
+  },
+  "nativeRatios": {
+    "s9beacon": 1.1354166666666667
+  },
+  "sourceKeys": {
+    "s9beacon": "s9atk_alien_beacon_0"
+  }
+}

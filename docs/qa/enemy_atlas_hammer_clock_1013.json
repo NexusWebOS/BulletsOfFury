@@ -1,0 +1,286 @@
+{
+  "rows": [
+    {
+      "code": "HAMMER",
+      "autoplayRejected": false,
+      "start": {
+        "ready": true,
+        "entry": "bof-password-HAMMER",
+        "error": null,
+        "elapsed": 0,
+        "frames": 71,
+        "paused": false,
+        "speed": 1,
+        "muted": true,
+        "healthControl": true,
+        "actor": {
+          "type": "chromehammer",
+          "hp": 6800,
+          "maxhp": 6800,
+          "dead": false,
+          "x": 340,
+          "y": 562,
+          "phase": 0,
+          "pattern": "hammer"
+        },
+        "projectiles": [],
+        "liveProjectiles": 0,
+        "activeBeams": 0,
+        "stage": 5
+      },
+      "paused": {
+        "clock": 0.11666666666666665,
+        "mode": "intro",
+        "state": "hammer",
+        "t": 0.30350000000000005,
+        "x": 340,
+        "y": 497.9970163425926,
+        "frames": 85,
+        "paused": true,
+        "soundPaused": true,
+        "soundTime": 0,
+        "soundRate": 1,
+        "locked": true
+      },
+      "stepped": {
+        "clock": 0.13333333333333333,
+        "mode": "intro",
+        "state": "hammer",
+        "t": 0.32016666666666677,
+        "x": 340,
+        "y": 489.47332740740745,
+        "frames": 86,
+        "paused": true,
+        "soundPaused": true,
+        "soundTime": 0,
+        "soundRate": 1,
+        "locked": true
+      },
+      "normal": {
+        "delta": 0.4,
+        "wall": 0.39589999997615816,
+        "frames": 24,
+        "soundRate": 1
+      },
+      "fast": {
+        "delta": 0.8000000000000002,
+        "wall": 0.4065,
+        "frames": 24,
+        "soundRate": 1
+      },
+      "speedRatio": 1.947847478357482,
+      "audioRate": 2,
+      "simulatedStart": {
+        "clock": 2.1333333333333306,
+        "mode": "intro",
+        "state": "hammer",
+        "t": 2.320066666666666,
+        "x": 340,
+        "y": 174.08,
+        "frames": 158,
+        "paused": true,
+        "soundPaused": true,
+        "soundTime": 0,
+        "soundRate": 2,
+        "locked": true
+      },
+      "final": {
+        "clock": 42.133333333332224,
+        "mode": "attack",
+        "state": "whirlwind",
+        "t": 42.320066666668026,
+        "x": 246.9366666666667,
+        "y": 351,
+        "frames": 158,
+        "paused": true,
+        "soundPaused": true,
+        "soundTime": 0,
+        "soundRate": 1,
+        "locked": false
+      },
+      "combat": {
+        "modes": [
+          "hammer",
+          "warn",
+          "fr_activation",
+          "spin",
+          "throw",
+          "hammer_catch",
+          "whirl_warn",
+          "whirlwind",
+          "whirl_turn"
+        ],
+        "kinds": [],
+        "physicalFrames": 381,
+        "paintCalls": 2400,
+        "radio": false,
+        "snapshot": {
+          "ready": true,
+          "entry": "bof-password-HAMMER",
+          "error": null,
+          "elapsed": 42.30326666666802,
+          "frames": 158,
+          "paused": true,
+          "speed": 1,
+          "muted": true,
+          "healthControl": true,
+          "actor": {
+            "type": "chromehammer",
+            "hp": 6800,
+            "maxhp": 6800,
+            "dead": false,
+            "x": 246.9366666666667,
+            "y": 351,
+            "phase": 0,
+            "pattern": "whirlwind"
+          },
+          "projectiles": [],
+          "liveProjectiles": 0,
+          "activeBeams": 0,
+          "stage": 5
+        }
+      }
+    },
+    {
+      "code": "HAMA",
+      "autoplayRejected": true,
+      "start": {
+        "ready": true,
+        "entry": "bof-password-HAMA",
+        "error": null,
+        "elapsed": 0,
+        "frames": 132,
+        "paused": false,
+        "speed": 1,
+        "muted": true,
+        "healthControl": true,
+        "actor": {
+          "type": "chromehammer",
+          "hp": 6800,
+          "maxhp": 6800,
+          "dead": false,
+          "x": 340,
+          "y": 562,
+          "phase": 0,
+          "pattern": "hammer"
+        },
+        "projectiles": [],
+        "liveProjectiles": 0,
+        "activeBeams": 0,
+        "stage": 5
+      },
+      "paused": {
+        "clock": 0.11666666666666665,
+        "mode": "intro",
+        "state": "hammer",
+        "t": 0.32660000000000045,
+        "x": 340,
+        "y": 497.9970163425926,
+        "frames": 146,
+        "paused": true,
+        "soundPaused": true,
+        "soundTime": 0,
+        "soundRate": 1,
+        "locked": true
+      },
+      "stepped": {
+        "clock": 0.13333333333333333,
+        "mode": "intro",
+        "state": "hammer",
+        "t": 0.34326666666666694,
+        "x": 340,
+        "y": 489.47332740740745,
+        "frames": 147,
+        "paused": true,
+        "soundPaused": true,
+        "soundTime": 0,
+        "soundRate": 1,
+        "locked": true
+      },
+      "normal": {
+        "delta": 0.4,
+        "wall": 0.39620000004768374,
+        "frames": 24,
+        "soundRate": 1
+      },
+      "fast": {
+        "delta": 0.8000000000000002,
+        "wall": 0.397,
+        "frames": 24,
+        "soundRate": 1
+      },
+      "speedRatio": 1.995969773539969,
+      "audioRate": 2,
+      "simulatedStart": {
+        "clock": 2.1333333333333306,
+        "mode": "intro",
+        "state": "hammer",
+        "t": 2.3432666666666675,
+        "x": 340,
+        "y": 174.08,
+        "frames": 219,
+        "paused": true,
+        "soundPaused": true,
+        "soundTime": 0,
+        "soundRate": 2,
+        "locked": true
+      },
+      "final": {
+        "clock": 42.133333333332224,
+        "mode": "attack",
+        "state": "whirlwind",
+        "t": 42.34326666666787,
+        "x": 83.57333333333332,
+        "y": 351,
+        "frames": 219,
+        "paused": true,
+        "soundPaused": true,
+        "soundTime": 0,
+        "soundRate": 2,
+        "locked": false
+      },
+      "combat": {
+        "modes": [
+          "hammer",
+          "warn",
+          "fr_activation",
+          "spin",
+          "throw",
+          "hammer_catch",
+          "whirl_warn",
+          "whirlwind"
+        ],
+        "kinds": [],
+        "physicalFrames": 197,
+        "paintCalls": 2400,
+        "radio": false,
+        "snapshot": {
+          "ready": true,
+          "entry": "bof-password-HAMA",
+          "error": null,
+          "elapsed": 42.303266666667874,
+          "frames": 219,
+          "paused": true,
+          "speed": 1,
+          "muted": true,
+          "healthControl": true,
+          "actor": {
+            "type": "chromehammer",
+            "hp": 6800,
+            "maxhp": 6800,
+            "dead": false,
+            "x": 83.57333333333332,
+            "y": 351,
+            "phase": 0,
+            "pattern": "whirlwind"
+          },
+          "projectiles": [],
+          "liveProjectiles": 0,
+          "activeBeams": 0,
+          "stage": 5
+        }
+      }
+    }
+  ],
+  "errors": []
+}

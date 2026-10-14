@@ -1,0 +1,49 @@
+{
+  "id": "gleech",
+  "name": "Gate Leech",
+  "stage": 9,
+  "stages": [
+    9
+  ],
+  "aliases": [
+    "gleech"
+  ],
+  "folder": "assets/game/levels/stage_09/enemies/air_motion_1013/gate_leech",
+  "rebel": false,
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s9_gleech_roll",
+    "path": "assets/game/levels/stage_09/enemies/air_motion_1013/gate_leech/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "bbcc47e53abd776d0174cae2159ae6af7817b6bc2d2815c44e8d19b924ef2b59"
+  },
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s9_gleech_heading",
+    "path": "assets/game/levels/stage_09/enemies/air_motion_1013/gate_leech/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "d93708b695fdfee50fe3ef6f910b8a9c029d3807687d10c70feafb3369ad4628"
+  },
+  "nativeRatios": {
+    "gleech": 1.8
+  },
+  "sourceKeys": {
+    "gleech": "ns9e_gleech_idle"
+  }
+}

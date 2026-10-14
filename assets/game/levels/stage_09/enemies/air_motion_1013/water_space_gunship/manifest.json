@@ -1,0 +1,49 @@
+{
+  "id": "s9gunship",
+  "name": "Water Space Gunship",
+  "stage": 9,
+  "stages": [
+    9
+  ],
+  "aliases": [
+    "s9gunship"
+  ],
+  "folder": "assets/game/levels/stage_09/enemies/air_motion_1013/water_space_gunship",
+  "rebel": false,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s9_s9gunship_heading",
+    "path": "assets/game/levels/stage_09/enemies/air_motion_1013/water_space_gunship/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "93677e84e8a836c8bcc3f8f81d72ba8c9ddfe1cd621ab72a92dc0bf911382aa3"
+  },
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s9_s9gunship_roll",
+    "path": "assets/game/levels/stage_09/enemies/air_motion_1013/water_space_gunship/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "abf99906d228c4caf28427c962ff971a118452dc90ce1ecddf6a85874d3428cf"
+  },
+  "nativeRatios": {
+    "s9gunship": 1.1401869158878504
+  },
+  "sourceKeys": {
+    "s9gunship": "overhaul_stage9_water_alien_01"
+  }
+}

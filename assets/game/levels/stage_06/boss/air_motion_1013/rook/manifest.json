@@ -1,0 +1,47 @@
+{
+  "id": "rook",
+  "name": "Rook / Breachhammer",
+  "stage": 6,
+  "stages": [
+    6,
+    10
+  ],
+  "aliases": [
+    "rook"
+  ],
+  "folder": "assets/game/levels/stage_06/boss/air_motion_1013/rook",
+  "rebel": true,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s6_rook_heading",
+    "path": "assets/game/levels/stage_06/boss/air_motion_1013/rook/headings.webp",
+    "frames": 8,
+    "cell": 192,
+    "pivot": [
+      96,
+      96
+    ],
+    "span": 128,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "b02961229f0710bc8e525b69bb156de64a7e614568049caf9b60bcac733863d8"
+  },
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s6_rook_roll",
+    "path": "assets/game/levels/stage_06/boss/air_motion_1013/rook/roll.webp",
+    "frames": 16,
+    "cell": 192,
+    "pivot": [
+      96,
+      96
+    ],
+    "span": 128,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "0a6523dad7623a18238866b2d5290b605a307397b5f45114a6129406f231201e"
+  },
+  "referenceRatio": 0.7954545454545454,
+  "nativeRatios": {},
+  "sourceKeys": {}
+}

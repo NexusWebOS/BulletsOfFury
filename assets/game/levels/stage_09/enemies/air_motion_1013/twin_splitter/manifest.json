@@ -1,0 +1,49 @@
+{
+  "id": "tsplit",
+  "name": "Twin Splitter",
+  "stage": 9,
+  "stages": [
+    9
+  ],
+  "aliases": [
+    "tsplit"
+  ],
+  "folder": "assets/game/levels/stage_09/enemies/air_motion_1013/twin_splitter",
+  "rebel": false,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s9_tsplit_heading",
+    "path": "assets/game/levels/stage_09/enemies/air_motion_1013/twin_splitter/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "63a42b20f5b386a1c17905f7064b4511d7568f1f1b6c8755ac0e39182e7c0c85"
+  },
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s9_tsplit_roll",
+    "path": "assets/game/levels/stage_09/enemies/air_motion_1013/twin_splitter/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "b7c908f076ad39c5a093e400387d47abd7b66b275e6da65cab9fd71e0b4a25dc"
+  },
+  "nativeRatios": {
+    "tsplit": 1.8043478260869565
+  },
+  "sourceKeys": {
+    "tsplit": "ns9e_tsplit_idle"
+  }
+}

@@ -1,3 +1,14 @@
+# 2026-10-13 — RELEASE: main-game combat repairs and animated enemy atlas
+
+Mike requested the GitHub update. This main-game snapshot includes the completed
+performance/Field Manual, combat pressure, authored airborne motion, new enemy
+patterns and carrier, formation balance, Stage 4/6 repairs and animated atlas.
+Latest native checks332/0, palette sheets12; full test_fl8700/0, finalBUILDOK/exit0.
+Required assets, probes and source provenance included. Separate ongoing
+Overdrive work remains local; only its three atlas hooks are in this snapshot.
+Details: docs/GITHUB_MAIN_RELEASE_1013.md. Older LOCAL notes document the work
+before publication. Preserve remaining unrelated working changes.
+
 # 2026-10-13 — RELEASE: Overdrive fortress, pursuit and Yuri motion
 
 Mike requested publishing the completed Overdrive update to GitHub. Release
@@ -62,6 +73,28 @@ native ART rendering. Base suite 8,700/0, final summary/exit 0. 27 expansion
 modules plus assets/game.js pass syntax. No physical-controller/human-balance
 claim. See docs/OVERDRIVE_ASSAULT_1013.md and docs/qa/overdrive_assault_1013.json.
 Yuri/Normal passwords: fortress OD-237B-5JXM; truck OD-237E-5JXQ.
+
+## October12 filmed flight trial (local)
+Stages1,4,6,8: orbit/corner/banking/south/spiral/kamikaze/mixed formations; stage-specific authored eight-direction/bank sprites. See docs/FLIGHT_VARIANTS_1012.md for source review, test scope and animation limits.28native fixtures and full base pass. No push.
+
+## October 12 combat pressure (local)
+Hammer absorbing Chromium, recharge SHOOT cue/captions, 2/3 nova rounds; ten normalized Spread banks; wave-owned modified flamethrower audio; bounded Stage1–2 rear/side ambushes. See docs/COMBAT_PRESSURE_1012.md and docs/qa/combat_pressure_1012.json. Full base regression passed. No push.
+
+## October 12 browser performance + Field Manual (local)
+Native pixel-art backing default; high quality opt-in preserved. Offline 58-dossier MV3 strategy extension in extensions/bof-field-manual. See docs/BROWSER_PERFORMANCE_AND_MANUAL_1012.md for measured limits and QA. No commit/push.
+
+# 2026-10-12 — Edge laptop performance (LOCAL ONLY)
+
+Mike reported unplugged Ryzen 7/Radeon stutter in Edge during live combat.
+Persistent Siege Console wells replace full-panel repaint; hidden legacy HUD
+draw/copy is skipped unless recording. Sprite cache retirement resets byte
+accounting. Explosion particle lookup batches share exact sprite/tint results.
+Reference/QA: docs/EDGE_PERFORMANCE_1012.md, docs/qa/performance_1012.json.
+Paired Edge HUD cost falls about 54-58%; 224 particle tint calls become two with
+identical pixels. Final HUD 51/51; full base exit 0/final zero-error banner;
+live movement/firing/explosion captures inspected. The actual laptop/battery
+is unmeasured; no whole-campaign 60 FPS guarantee. No combat/art changes.
+Runtime stamps updated. Local only; no commit/push.
 
 # 2026-10-12 — Overdrive GitHub publication
 

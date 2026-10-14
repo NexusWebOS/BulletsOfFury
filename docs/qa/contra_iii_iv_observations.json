@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-13",
+  "method": "Direct visual inspection of selected playback frames through the browser; UI frame stepping used for the Contra III airship orb-to-column transition. Not a claim to have watched either entire game.",
+  "sources": [
+    {
+      "title": "Contra III: The Alien Wars - All Bosses & Ending",
+      "url": "https://www.youtube.com/watch?v=5tg771rvU2M",
+      "observations": [
+        {"interval": "6:01–6:21", "url": "https://www.youtube.com/watch?v=5tg771rvU2M&t=360s", "observed": "A giant green battleship fills the upper edge and scrolls its underside past the player. Retractable vertical cannon modules occur at separated horizontal positions. A 6:06 frame shows a white-blue orb at one muzzle while the next visible cannon has no orb. Subsequent frames show an electrical column from one cannon while another cannon is in an orb state. A larger underbelly assembly is exposed around 6:21.", "translation": "Stage 6 container carrier with separately owned underside laser turrets. Stagger charge, active and cooling phases so the player moves between lanes and can remove dangerous modules. Let the hull reveal modules through its motion."},
+        {"interval": "6:11.16–6:11.56", "url": "https://www.youtube.com/watch?v=5tg771rvU2M&t=371s", "observed": "Paused and frame-stepped: approximately 371.16 seconds has white-blue orb touching cannon mouth; 371.36 has orb descending beneath it; 371.56 has blue-white zigzag column connecting cannon to sparking road. Player is well left of strike lane. Cannon is attached to scrolling hull.", "timing_limit": "The measured ~0.4 seconds is the sampled orb descent/impact transition, not a measured full windup duration.", "translation": "Distinct visible charge core, committed lane, beam body and impact. Beam follows its emitter as carrier drifts; no player tracking after commitment. Use a longer BOF warning appropriate to ship speed and lateral travel requirement."},
+        {"interval": "1:42 and 2:35.8 sampled", "url": "https://www.youtube.com/watch?v=5tg771rvU2M&t=102s", "observed": "Rotating Gun encounter uses a spiked mechanical central body and long physical segmented appendages. Player movement changes from hanging on an overhead rail to climbing a side wall. At the latter sample the appendages frame an opening near the player.", "translation": "Use a legible rotating structure to shape a temporary navigable opening; do not represent every threat with similar bullets. This is physical-geometry evidence, not proof of a rotating laser attack."}
+      ]
+    },
+    {
+      "title": "Contra 4 (DS) All Bosses (No Damage)",
+      "url": "https://www.youtube.com/watch?v=xWh--t4pivo",
+      "observations": [
+        {"interval": "3:28.8, 3:39.2, 3:47.5 sampled", "url": "https://www.youtube.com/watch?v=xWh--t4pivo&t=196s", "observed": "A giant green robot dominates the upper field. At 3:39.2 a detached rocket-propelled fist crosses the lower part of the scene; visible arm damage changes its silhouette. Later samples expose damaged or missing arm sections.", "translation": "Give threatening enemies discrete modules and attack states, with readable state changes and destructible attack sources. A launcher may charge, detach its large projectile, then visibly recover.", "attribution_caution": "Red pellet fans in this video may be the player's Spread weapon. They were not accepted as evidence of enemy radial fire."}
+      ]
+    },
+    {
+      "title": "Contra 4 (DS) Playthrough (No Damage)",
+      "url": "https://www.youtube.com/watch?v=yWCf8UmWq74",
+      "uploader_description": "Hard, No Power Ups",
+      "observations": [
+        {"interval": "27:26.2", "url": "https://www.youtube.com/watch?v=yWCf8UmWq74&t=1646s", "observed": "Player fires small yellow rounds to the right. Blue armored infantry are running in from the left/rear; another waits on a roof above. A distinct blue pellet occupies the space behind the player.", "translation": "Add occasional rear or low-edge aircraft arrivals while the main wave holds a forward threat. Give rear arrivals a visible entry and a committed firing direction so changing target priority has an answer."},
+        {"interval": "27:36.0", "url": "https://www.youtube.com/watch?v=yWCf8UmWq74&t=1656s", "observed": "Two elevated rifle sentries occupy the rooftop above the street-running player, with a separated blue projectile in the lower lane. The scene distributes threats over distinct heights rather than filling the entire view uniformly.", "translation": "A top-down BOF wave can distribute one aimed shooter and one lane-denial craft across different lateral bands; synchronize their release so a corridor remains traversable."},
+        {"interval": "27:57.8–28:21 sampled", "url": "https://www.youtube.com/watch?v=yWCf8UmWq74&t=1677s", "observed": "A large tank faces the player with a long horizontal barrel occupying the street lane. A hovering escort sits above and ahead of it, and a rooftop soldier is above the player. Player is shown aiming upward before the tank is destroyed in the later sample.", "translation": "Pair a durable directional emitter with a lighter escort. Make the player choose between opening the safe lane by killing the emitter or suppressing the escort. Reward accurate target removal by reducing subsequent pressure."}
+      ]
+    }
+  ],
+  "bof_design_proposals_not_measured_contra_values": {
+    "later_enemy_families": [
+      "Horizontal patrol laser craft: entry, stationary charge cue, committed vertical beam while drifting laterally, cooling gap, reverse. Its travel should stop short of trapping player against edge.",
+      "Radial emitter: visible expanding core, evenly spaced pellet ring with a deliberate wedge removed, second ring phase-offset only after first opens enough travel space.",
+      "Missile carrier: ports light in sequence, a small launch volley locks target once, missiles leave a tail lane that can be crossed after they pass.",
+      "Side/rear raider: clear offscreen edge warning, approach with firing disabled, one committed attack, then exit. Avoid tracking the player through the entire attack."
+    ],
+    "container_carrier": "Several independent underside batteries, sequential charge/beam/cool cycles; at least one broad crossing corridor; breakable battery modules reduce attacks; a vulnerable reactor opens between sequences. Large hull remains visually solid when modules die.",
+    "fairness": "Aimed shot locks at charge completion; no after-the-fact retargeting. Difficulty varies charge duration, recovery and secondary shot density while preserving the escape corridor. Do not let a new back attack close the only exit during an active beam sweep.",
+    "effects": "Bright compact charge core and rings; high-contrast narrow beam core with limited outer glow; distinct beam impact sparks; missile port ignition and short trails; crisp pellet rim/internal highlight; visible turret cooling and broken socket. Avoid obscuring safe gaps with bloom.",
+    "scope_limit": "Hard Corps and the Facebook reel were assigned to the parent agent. This report does not claim review of those sources."
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "id": "xelite_glacierlance",
+  "name": "Elite Glacier Lance",
+  "stage": 6,
+  "stages": [
+    6
+  ],
+  "aliases": [
+    "xelite_glacierlance"
+  ],
+  "folder": "assets/game/levels/stage_06/enemies/air_motion_1013/elite_glacier_lance",
+  "rebel": false,
+  "heading": {
+    "kind": "strip",
+    "key": "air13_s6_xelite_glacierlance_heading",
+    "path": "assets/game/levels/stage_06/enemies/air_motion_1013/elite_glacier_lance/headings.webp",
+    "frames": 8,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "0a09dcade3c4d91d59832f597aa1aff68705cec37b3be88647ce77dbe7dd5542"
+  },
+  "roll": {
+    "kind": "strip",
+    "key": "air13_s6_xelite_glacierlance_roll",
+    "path": "assets/game/levels/stage_06/enemies/air_motion_1013/elite_glacier_lance/roll.webp",
+    "frames": 16,
+    "cell": 128,
+    "pivot": [
+      64,
+      64
+    ],
+    "span": 86,
+    "facing": "south",
+    "startAngle": 1.5707963267948966,
+    "sha256": "4af83a8bc8fd070bc136d35c3075f09722c5fe8e021074440c649cf84bfb7687"
+  },
+  "nativeRatios": {
+    "xelite_glacierlance": 0.84
+  },
+  "sourceKeys": {
+    "xelite_glacierlance": "xelite_glacierlance_idle"
+  }
+}

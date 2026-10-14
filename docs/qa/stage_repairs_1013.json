@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-13",
+  "scope": "Stage 4 cores, Stage 6 cinematics/solo miniboss, Rebel audio and Voss turbo, formation palettes",
+  "nativeChecks": 332,
+  "nativeFailures": 0,
+  "browserErrors": 0,
+  "paletteSheets": 12,
+  "regressionPasses": 8700,
+  "regressionErrors": 0,
+  "regressionExit": 0,
+  "regressionLog": "_shots/stage_fixes_1013/test_fl-final.log",
+  "reports": [
+    "s4_core_access_1013.json",
+    "stage6_sequence_1013.json",
+    "rebel_audio_turbo_1013.json",
+    "formation_palettes_1013.json"
+  ],
+  "limitations": "Controlled native encounter fixtures; not a complete human campaign playthrough or laptop speaker test."
+}
