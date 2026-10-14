@@ -4,8 +4,8 @@ Mike asked for a strong Furious bot that wins without cheating, and a Steam trai
 ending on STOP! HAMMERTIME?!. Bot: _BUILD_SOURCE/bot/furybot.js + furybot.py, docs/FURYBOT_1014.md. It
 only presses keys (Input.keys / injectTap) and never writes lives, i-frames, weapons or state. Results:
 stages 1-7 cleared with 0 deaths on two full runs; the final boss beat it until its Warhive-copy rounds,
-chromium rift (core, pull, forked lanes) and same-frame hull contact were added; then a fresh Stage-8 run
-reached VICTORY with 0 deaths and a second did not. Trailer: _BUILD_SOURCE/trailer_v11/README.md; takes are
+chromium rift (core, pull, forked lanes) and same-frame hull contact were added; then a full Stage-1
+run reached VICTORY with 0 deaths (and one of two fresh Stage-8 runs did). Trailer: _BUILD_SOURCE/trailer_v11/README.md; takes are
 flown by the bot with the real playerHit. Outputs in _shots/trailer_v11 (gitignored).
 Traps: bossHitTest writes hit-routing notes (_s4CoreHit, _lastPart...) - save/restore around any probe of
 it (FB.playSafe). Canvas2D cost lands on whichever call flushes; a hazard the game owns in its own list

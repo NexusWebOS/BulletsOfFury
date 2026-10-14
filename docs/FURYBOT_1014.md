@@ -59,7 +59,8 @@ next real round hits.
 - Follow-up, same day, with those hazards added: two stage-8 runs started fresh on Stage 8 (base weapons,
   3 lives). **f8a reached the game's own VICTORY state with 0 deaths** (11 hits taken on shields, 905 s
   wall). f8b lost all lives (enemy rounds and miniboss contact). So the bot can win the final stage, but
-  not every time yet. A full stage-1-to-victory run (fullA4) was in progress at commit time.
+  not every time yet. **fullA4, a full run from Stage 1, reached VICTORY with 0 deaths** - all 8 campaign stages cleared,
+  3 lives left, 20 hits taken on shields, 1,897 s wall. Per stage, hits 0/2/0/1/4/0/1/12.
 
 <!-- FOLLOWUP -->
 
