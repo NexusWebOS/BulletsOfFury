@@ -1,3 +1,16 @@
+# 2026-10-14 - FURYBOT (Furious autopilot) and trailer v11
+
+Mike asked for a strong Furious bot that wins without cheating, and a Steam trailer on the gasline track
+ending on STOP! HAMMERTIME?!. Bot: _BUILD_SOURCE/bot/furybot.js + furybot.py, docs/FURYBOT_1014.md. It
+only presses keys (Input.keys / injectTap) and never writes lives, i-frames, weapons or state. Results:
+stages 1-7 cleared with 0 deaths on two full runs; the final boss beat it until its Warhive-copy rounds,
+chromium rift (core, pull, forked lanes) and same-frame hull contact were added; then a fresh Stage-8 run
+reached VICTORY with 0 deaths and a second did not. Trailer: _BUILD_SOURCE/trailer_v11/README.md; takes are
+flown by the bot with the real playerHit. Outputs in _shots/trailer_v11 (gitignored).
+Traps: bossHitTest writes hit-routing notes (_s4CoreHit, _lastPart...) - save/restore around any probe of
+it (FB.playSafe). Canvas2D cost lands on whichever call flushes; a hazard the game owns in its own list
+(W.shots, hc7Rift) is invisible to a bot that only reads eBullets - read the stack of each fatal playerHit.
+
 # 2026-10-14 — Stage 3/4 playthrough and Yuri Storm pass
 
 Yuri retains his earned Stage-4 Storm through Stage 5 and subsequent entries,
