@@ -34265,7 +34265,7 @@ function beginStage(num){
   }catch(_fap){}
   thaw=null; if(num===3 && typeof thawStart==='function') thawStart();   // the stage-3 thaw (0806d)
   run.sonicT=0; run._sonicCd=0; run._lzCd=0;player._retinaScan=null;player2._retinaScan=null;
-  run._mavBeamUnlocked=false;run._thunderStormUnlocked=false;run._thunderCeremonyShown=false;thunderStorm=null;          // pickup weapons do not ride between stages
+  run._mavBeamUnlocked=false;run._thunderStormUnlocked=run.pilot==='yuri'&&!!(run._earnedUnlocks?.lightningOrb||run._earnedUnlocks?.thunderStorm);run._chainLightningLevel=run._thunderStormUnlocked?Math.max(2,run._chainLightningLevel||1):1;run._thunderCeremonyShown=false;thunderStorm=null; // Clear transients; retain Yuri's earned Stage-4 special.
   if(typeof sonicTrail!=='undefined') sonicTrail.length=0;
   if(typeof lzMount!=='undefined') lzMount=null;
   /* ⚠ AND DECKER'S SHOTGUN, WHICH THIS LINE HAD BEEN PROMISING SINCE 0805w (drop 0810b).

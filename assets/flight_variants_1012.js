@@ -1,7 +1,7 @@
 "use strict";
 /* Mike's October12 filmed demonstration: orbit files, depth curls, bomb rolls,
    southern crossings, spirals and visibly charged kamikazes. Authored poses only. */
-const VP12={units:[],groups:[],events:[],stage:0,age:0,next:10,serial:0,base:{update:updatePlay,draw:drawEnemy,begin:beginStage},types:['orbit','corner','barrel','south','spiral','kamikaze','mixed']};
+const VP12={units:[],groups:[],events:[],stage:0,age:0,next:10,serial:0,base:{update:updatePlay,draw:drawEnemy,begin:beginStage},types:['orbit','corner','barrel','south','spiral','kamikaze','mixed','bowling','crisscross','peel-bomb']};
 for(const d of Object.values(VP12_ART)){XART._src[d.key]=d.path;if(d.rollKey)XART._src[d.rollKey]=d.rollPath;}
 const vp12Load=stageLoadBegin;stageLoadBegin=function(n,keys){const a=VP12_ART[n];return vp12Load.call(this,n,[...(keys||[]),...(a?[a.key,a.rollKey,'lz_bomb']:[])]);};
 const vp12FireDraw=drawFireType;drawFireType=function(b){if(!b._vpBomb)return vp12FireDraw.apply(this,arguments);if(!XART.rdy('lz_bomb'))return false;const im=XART.get('lz_bomb'),h=24,w=h*im.width/im.height;ctx.drawImage(im,b.x-w/2,b.y-h/2,w,h);return true;};
@@ -16,8 +16,8 @@ function vp12FamilyHealth(stage){
  // enc30's modular desert jet receives this same hull reinforcement after EHP.
  const hp=EHP(row.hp)*(stage===4?1.12:1);return{family,hp};
 }
-function vp12FireTiming(g,q){return{tell:g.type==='barrel'?.75:1.15,
- release:(g.type==='barrel'?1.1:[1.9,1.75,1.6,1.5][g.tier])+q.slot*.08,
+function vp12FireTiming(g,q){return{tell:(g.type==='barrel'||g.type==='peel-bomb')?.75:1.15,
+ release:((g.type==='barrel'||g.type==='peel-bomb')?1.1:[1.9,1.75,1.6,1.5][g.tier])+q.slot*.08,
  gap:[.48,.42,.36,.30][g.tier]};}
 function vp12Blocked(){return state!==GS.PLAY||player.dead||bossActive||subBossActive||warnT>0||story||debugFight||wfx?.fseq||s6Opening||(typeof h3Locked==='function'&&h3Locked())||(typeof BOFCinematicDirector!=='undefined'&&BOFCinematicDirector.live);}
 function vp12Point(g,q,t){const k=clamp(t,0,1),s=q.side,delay=q.slot*.015,u=clamp((k-delay)/(1-delay),0,1),w=g.right-g.left,h=PLAY.h;
@@ -28,6 +28,9 @@ function vp12Point(g,q,t){const k=clamp(t,0,1),s=q.side,delay=q.slot*.015,u=clam
  if(g.type==='barrel')return{x:lerp(s<0?g.left-60:g.right+60,s<0?g.right+70:g.left-70,u),y:PLAY.y+h*(.28+(q.slot%3)*.14)+Math.sin(u*TAU)*25};
  if(g.type==='south'){const a=u*Math.PI;return{x:g.left+w*.5+s*Math.cos(a)*w*.35,y:lerp(PLAY.y+h+50,PLAY.y-80,u)+Math.sin(a)*h*.22};}
  if(g.type==='spiral'){const a=-Math.PI/2+s*u*TAU*1.3,r=w*(.28-.15*u);return{x:g.left+w*.5+s*w*.16+Math.cos(a)*r,y:PLAY.y-45+u*(h+140)+Math.sin(a)*r*.45};}
+ if(g.type==='bowling'){const v=clamp((g.age-q.slot*.11)/5.0,0,1),spread=(q.slot-(g.count-1)/2)*18,peel=clamp((v-.55)/.45,0,1);return{x:g.left+w*.5+spread*(1-peel)+s*w*.48*peel,y:PLAY.y-60+v*(h+150)-Math.sin(peel*Math.PI)*h*.18};}
+ if(g.type==='crisscross'){const v=clamp((g.age-q.slot*.13)/5.3,0,1);return{x:lerp(s<0?g.left-65:g.right+65,s<0?g.right+65:g.left-65,v),y:PLAY.y+h*(.22+(q.slot%3)*.16)+Math.sin(v*Math.PI)*h*.17};}
+ if(g.type==='peel-bomb'){const wait=1.65+q.slot*.34,origin={x:g.left+w*(.28+.44*q.slot/Math.max(1,g.count-1)),y:PLAY.y+h*.27};if(g.age<wait)return{x:origin.x,y:lerp(PLAY.y-75-q.slot*12,origin.y,clamp(g.age/1.45,0,1))};const v=g.age-wait,angle=Math.PI/2+(q.slot-(g.count-1)/2)*.37;return{x:origin.x+Math.cos(angle)*105*v,y:origin.y+Math.sin(angle)*105*v};}
  const charge=1.25+(.18*(3-g.tier));if(g.age<charge)return{x:g.left+w*(.12+.76*(q.slot+.5)/g.count),y:PLAY.y+58+Math.sin(g.age*10+q.slot)*2};
  const v=clamp((g.age-charge-q.slot*.13)/[2.4,2,1.8,1.6][g.tier],0,1),a=Math.atan2(g.target.y-q.oy,g.target.x-q.ox);return{x:q.ox+Math.cos(a)*600*v,y:q.oy+Math.sin(a)*600*v};
 }
@@ -50,17 +53,17 @@ updatePlay=function(dt){const blocked=vp12Blocked();if(!blocked)for(const g of V
   if(g.type==='kamikaze'){const warm=1.25+.18*(3-g.tier);if(g.age<warm)combatWarningTick(e,'vp12-charge',g.age,warm);continue;}
   const {tell,release,gap}=vp12FireTiming(g,q);
   if(g.age>=release-tell&&g.age<release)combatWarningTick(e,'vp12-pass',g.age-(release-tell),tell);
-  const max=g.type==='barrel'?2:g.tier===3?2:1;
-  if(q.shot<max&&g.age>=release+q.shot*gap&&e.y>PLAY.y+10&&e.y<PLAY.y+PLAY.h-22){const aim=Math.atan2(g.target.y-e.y,g.target.x-e.x),n=g.type==='barrel'?1:g.tier>=2?3:1;
-   for(let i=0;i<n;i++){eShoot(e.x,e.y,g.type==='barrel'?Math.PI/2:aim+(i-(n-1)/2)*.18,g.type==='barrel'?2:2.8+g.tier*.25,g.type==='barrel'?'flare':'missile');const b=eBullets[eBullets.length-1];if(b){b._vp12=true;b._vp12Group=g.id;if(g.type==='barrel'){b._vpBomb=true;b.w=b.h=16;}}}
-   q.shot++;Audio.SFX.enemyMissile?.();vp12Log(g.type==='barrel'?'bomb-drop':'volley',{stage:run.stage,type:g.type});}
+  const max=(g.type==='barrel'||g.type==='peel-bomb')?2:g.tier===3?2:1;
+  if(q.shot<max&&g.age>=release+q.shot*gap&&e.y>PLAY.y+10&&e.y<PLAY.y+PLAY.h-22){const aim=Math.atan2(g.target.y-e.y,g.target.x-e.x),n=(g.type==='barrel'||g.type==='peel-bomb')?1:g.tier>=2?3:1;
+   for(let i=0;i<n;i++){eShoot(e.x,e.y,(g.type==='barrel'||g.type==='peel-bomb')?Math.PI/2:aim+(i-(n-1)/2)*.18,(g.type==='barrel'||g.type==='peel-bomb')?2:2.8+g.tier*.25,(g.type==='barrel'||g.type==='peel-bomb')?'flare':'missile');const b=eBullets[eBullets.length-1];if(b){b._vp12=true;b._vp12Group=g.id;if((g.type==='barrel'||g.type==='peel-bomb')){b._vpBomb=true;b.w=b.h=16;}}}
+   q.shot++;Audio.SFX.enemyMissile?.();vp12Log((g.type==='barrel'||g.type==='peel-bomb')?'bomb-drop':'volley',{stage:run.stage,type:g.type});}
  }return r;
 };
 drawEnemy=function(e){if(!e._vp12)return VP12.base.draw.apply(this,arguments);if(e.dead||e._dyingT!=null)return;const {g,q}=e._vp12,A=VP12_ART[g.stage];if(!A||!XART.rdy(A.key))return;
- const heading=(Math.round(((q.angle+TAU)%TAU)/TAU*8)%8),roll=g.type==='barrel'&&q.side<0&&A.rollKey&&XART.rdy(A.rollKey),frame=roll?Math.floor(g.age*10)%8:heading,key=roll?A.rollKey:A.key,size=64*q.scale;
+ const heading=(Math.round(((q.angle+TAU)%TAU)/TAU*8)%8),roll=(g.type==='barrel'||g.type==='peel-bomb')&&q.side<0&&A.rollKey&&XART.rdy(A.rollKey),frame=roll?Math.floor(g.age*10)%8:heading,key=roll?A.rollKey:A.key,size=64*q.scale;
  if(typeof air13DrawFlight!=="function"||!air13DrawFlight(e,g,q)){drawUnitShadow(e.x,e.y,size,size,.24,e);const im=e.flash>0?xartTint(key,hitFlashColor(e,'#ffffff'),.8):XART.get(key);
  ctx.save();ctx.imageSmoothingEnabled=false;ctx.drawImage(im,frame*96,0,96,96,e.x-size/2,e.y-size/2,size,size);ctx.restore();}
  const warm=1.25+.18*(3-g.tier),{release,tell}=vp12FireTiming(g,q);
  if(g.type==='kamikaze'&&g.age<warm){const flame='t_muz'+(Math.floor(g.age*16)%2);if(ASSETS.has(flame))ASSETS.blit(flame,e.x,e.y,28+g.age/warm*22,28+g.age/warm*22);ph8Icon(ctx,'retm_0',e.x,e.y,42);combatWarningDraw(e,{x:e.x,y:e.y,ex:g.target.x,ey:g.target.y,progress:g.age/warm,width:26,laneShape:'line'});}
- else{if(g.age>release-tell&&g.age<release)combatWarningDraw(e,{x:e.x,y:e.y,ex:g.type==='barrel'?e.x:g.target.x,ey:g.type==='barrel'?PLAY.y+PLAY.h:g.target.y,progress:(g.age-release+tell)/tell,width:18,laneShape:'line'});}
+ else{if(g.age>release-tell&&g.age<release)combatWarningDraw(e,{x:e.x,y:e.y,ex:(g.type==='barrel'||g.type==='peel-bomb')?e.x:g.target.x,ey:(g.type==='barrel'||g.type==='peel-bomb')?PLAY.y+PLAY.h:g.target.y,progress:(g.age-release+tell)/tell,width:18,laneShape:'line'});}
 };

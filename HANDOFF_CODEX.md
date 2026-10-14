@@ -1,3 +1,21 @@
+# 2026-10-14 — Stage 3/4 playthrough and Yuri Storm pass
+
+Yuri retains his earned Stage-4 Storm through Stage 5 and subsequent entries,
+with the correct reward/HUD name and icon. Stage 3 miniboss stays ice without
+nuclear replacement; the boss uses rapid slugs, missiles, and right-stepping
+charged ice volleys with blue/white hull glow, scenery dim, lightning and FOV.
+Stage 4 Warden gets rapid guns, missiles, and south-origin depth/twisting MG
+helpers. Sovereign gains rev/shake/supported haptics, moving registered cores,
+upper-half Retina/beep/missile trap, protected lightning balls, charged storms,
+and south exit -> safe enlarged overhead return -> northbound rear-orb pursuit.
+Bowling, crisscross and bomb peel formations use existing authored aircraft;
+primary/fallback hits retain palette. Modular HP/mounts and other-stage owners
+are preserved. Runtime stage34_assault_1014.js; doc STAGE34_ASSAULT_1014.md.
+Required base suite 8,700/0, final summary/exit0; native 60 + 13 checks pass,
+no browser errors; actual captures inspected. Haptics simulated, not hardware
+play; no full human campaign claim. Existing unrelated work and LF/CRLF retained.
+Mike's standing request is to upload the completed game pass to GitHub.
+
 # 2026-10-13 — RELEASE: main-game combat repairs and animated enemy atlas
 
 Mike requested the GitHub update. This main-game snapshot includes the completed
