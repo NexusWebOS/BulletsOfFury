@@ -136,12 +136,16 @@ try:
   y=q['y'];frames(36);check(page.evaluate('B.y')<y,'The chase hull keeps travelling north')
 
   setup(4,'olivewarden',mini=True)
-  frames(450)
-  check(page.evaluate('enemies.some(e=>e._sa14Escort)&&SA14.events.some(q=>q.event==="gun-shot")'), 'Warden gun turn precedes its genuine south-origin helpers')
+  for _ in range(120):
+   frames(6)
+   if page.evaluate('enemies.some(e=>e._sa14Escort?.phase==="arrive")'):break
+  check(page.evaluate('enemies.some(e=>e._sa14Escort)&&SA14.events.some(q=>q.event==="gun-shot")'), 'Warden fires and independently deploys genuine south-origin helpers')
   escort=page.evaluate('enemies.filter(e=>e._sa14Escort).map(e=>({y:e.y,scale:e._sa14Escort.scale,hp:e.hp,w:e.w}))')
   check(len(escort)>0 and any(q['scale']>1 and q['w']==96 for q in escort), 'Larger helper entry scales down from an enlarged south fly-in',escort)
   snap('warden-south-helpers')
-  frames(180)
+  for _ in range(80):
+   frames(3)
+   if page.evaluate('enemies.some(e=>e._sa14Escort?.shots>0)'):break
   check(page.evaluate('SA14.events.some(q=>q.event==="escort-shot")&&enemies.some(e=>e._sa14Escort?.shots>0)'), 'Warned helpers fire real MG projectiles after reaching the combat plane')
   check(page.evaluate('!B._l23Beam&&!eBullets.some(q=>q._beam||q.kind==="beam")'), 'Warden does not fall back to a core laser')
   page.evaluate('()=>{for(const e of enemies)if(e._sa14Escort)e.flash=.2;}');snap('warden-hit-feedback')

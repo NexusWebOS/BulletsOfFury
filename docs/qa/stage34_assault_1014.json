@@ -641,7 +641,7 @@
     },
     {
       "passed": true,
-      "name": "Warden gun turn precedes its genuine south-origin helpers",
+      "name": "Warden fires and independently deploys genuine south-origin helpers",
       "data": null
     },
     {
@@ -649,14 +649,14 @@
       "name": "Larger helper entry scales down from an enlarged south fly-in",
       "data": [
         {
-          "y": 491.618359907616,
-          "scale": 1.5461195981857137,
+          "y": 577,
+          "scale": 1.7,
           "hp": 10.080000000000002,
           "w": 96
         },
         {
-          "y": 491.618359907616,
-          "scale": 1.5461195981857137,
+          "y": 577,
+          "scale": 1.7,
           "hp": 10.080000000000002,
           "w": 96
         }

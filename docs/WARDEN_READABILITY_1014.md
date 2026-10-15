@@ -1,5 +1,9 @@
 # Stage 4 Warden feedback and readability — October 14, 2026
 
+Historical October 14 tuning: the separate attack turns and slow helper timing below
+were superseded by Mike's October 15 request. See [Stage 4 pressure repair](STAGE4_PRESSURE_1015.md)
+and `_BUILD_SOURCE/probe_stage4_pressure_1015.py` for current behavior and verification.
+
 Mike reported missing hit flashes, excessive/unpredictable pressure, small
 helpers and missing attack sounds after the Stage 3–4 encounter update.
 

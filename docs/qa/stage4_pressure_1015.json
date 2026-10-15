@@ -1,0 +1,918 @@
+{
+  "passed": 50,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "easy miniboss and jets fire in shared half-second windows",
+      "passed": true,
+      "data": {
+        "overlapping_windows": 2,
+        "miniboss": 42,
+        "escorts": 12
+      }
+    },
+    {
+      "name": "easy miniboss clock advances throughout helper waves",
+      "passed": true,
+      "data": {
+        "observed": 670,
+        "stalls": 0
+      }
+    },
+    {
+      "name": "easy aircraft arrive on combat plane within 1.4 seconds",
+      "passed": true,
+      "data": {
+        "1": 1.2500000000000004,
+        "3": 1.2500000000000004
+      }
+    },
+    {
+      "name": "easy aircraft turn into firing heading within half a second",
+      "passed": true,
+      "data": {
+        "1": 0.19999999999999973,
+        "3": 0.19999999999999973
+      }
+    },
+    {
+      "name": "easy aircraft fire while travelling through the field",
+      "passed": true,
+      "data": {
+        "1": 31.415799470743792,
+        "3": 30.621869678488004
+      }
+    },
+    {
+      "name": "easy depth entry remains harmless and all projectiles move",
+      "passed": true,
+      "data": {
+        "early": 0,
+        "shots": 12
+      }
+    },
+    {
+      "name": "easy real authored aircraft headings animate visibly",
+      "passed": true,
+      "data": {
+        "draws": 92,
+        "headings": {
+          "1": [
+            6,
+            0,
+            1,
+            7,
+            5
+          ],
+          "3": [
+            6,
+            7,
+            0,
+            1,
+            5
+          ]
+        }
+      }
+    },
+    {
+      "name": "easy warnings and muzzle reels reach native drawImage",
+      "passed": true,
+      "data": {
+        "warnings": 687,
+        "muzzles": 72
+      }
+    },
+    {
+      "name": "normal miniboss and jets fire in shared half-second windows",
+      "passed": true,
+      "data": {
+        "overlapping_windows": 5,
+        "miniboss": 85,
+        "escorts": 40
+      }
+    },
+    {
+      "name": "normal miniboss clock advances throughout helper waves",
+      "passed": true,
+      "data": {
+        "observed": 906,
+        "stalls": 0
+      }
+    },
+    {
+      "name": "normal aircraft arrive on combat plane within 1.4 seconds",
+      "passed": true,
+      "data": {
+        "6": 1.1500000000000008,
+        "7": 1.1500000000000008,
+        "9": 1.1500000000000008,
+        "10": 1.1500000000000008,
+        "12": 1.1500000000000008,
+        "13": 1.1500000000000008
+      }
+    },
+    {
+      "name": "normal aircraft turn into firing heading within half a second",
+      "passed": true,
+      "data": {
+        "6": 0.20000000000000018,
+        "7": 0.2133333333333327,
+        "9": 0.20000000000000018,
+        "10": 0.2133333333333327,
+        "12": 0.20000000000000018,
+        "13": 0.2133333333333327
+      }
+    },
+    {
+      "name": "normal aircraft fire while travelling through the field",
+      "passed": true,
+      "data": {
+        "6": 41.22351754884735,
+        "7": 38.52597969047766,
+        "9": 42.54409477236524,
+        "10": 38.27668087689911,
+        "12": 24.40266574567608,
+        "13": 14.634247304247094
+      }
+    },
+    {
+      "name": "normal depth entry remains harmless and all projectiles move",
+      "passed": true,
+      "data": {
+        "early": 0,
+        "shots": 40
+      }
+    },
+    {
+      "name": "normal real authored aircraft headings animate visibly",
+      "passed": true,
+      "data": {
+        "draws": 243,
+        "headings": {
+          "6": [
+            6,
+            7,
+            0,
+            1,
+            5
+          ],
+          "7": [
+            6,
+            5,
+            4,
+            3,
+            7
+          ],
+          "9": [
+            6,
+            7,
+            1,
+            0,
+            5
+          ],
+          "10": [
+            6,
+            5,
+            4,
+            3,
+            7
+          ],
+          "12": [
+            6,
+            7,
+            0,
+            1
+          ],
+          "13": [
+            6,
+            5,
+            3
+          ]
+        }
+      }
+    },
+    {
+      "name": "normal warnings and muzzle reels reach native drawImage",
+      "passed": true,
+      "data": {
+        "warnings": 849,
+        "muzzles": 140
+      }
+    },
+    {
+      "name": "hard miniboss and jets fire in shared half-second windows",
+      "passed": true,
+      "data": {
+        "overlapping_windows": 6,
+        "miniboss": 128,
+        "escorts": 60
+      }
+    },
+    {
+      "name": "hard miniboss clock advances throughout helper waves",
+      "passed": true,
+      "data": {
+        "observed": 1009,
+        "stalls": 0
+      }
+    },
+    {
+      "name": "hard aircraft arrive on combat plane within 1.4 seconds",
+      "passed": true,
+      "data": {
+        "15": 1.0500000000000012,
+        "16": 1.0500000000000012,
+        "18": 1.0500000000000012,
+        "19": 1.0500000000000012,
+        "21": 1.0500000000000012,
+        "22": 1.0500000000000012
+      }
+    },
+    {
+      "name": "hard aircraft turn into firing heading within half a second",
+      "passed": true,
+      "data": {
+        "15": 0.2000000000000004,
+        "16": 0.21333333333333293,
+        "18": 0.2000000000000004,
+        "19": 0.21333333333333293,
+        "21": 0.2000000000000004,
+        "22": 0.21333333333333293
+      }
+    },
+    {
+      "name": "hard aircraft fire while travelling through the field",
+      "passed": true,
+      "data": {
+        "15": 44.47117029223502,
+        "16": 47.94699570354356,
+        "18": 47.8817112622222,
+        "19": 46.604405113679775,
+        "21": 47.807203083013775,
+        "22": 45.545475703055246
+      }
+    },
+    {
+      "name": "hard depth entry remains harmless and all projectiles move",
+      "passed": true,
+      "data": {
+        "early": 0,
+        "shots": 60
+      }
+    },
+    {
+      "name": "hard real authored aircraft headings animate visibly",
+      "passed": true,
+      "data": {
+        "draws": 278,
+        "headings": {
+          "15": [
+            6,
+            7,
+            0,
+            1,
+            5
+          ],
+          "16": [
+            6,
+            5,
+            4,
+            3,
+            7
+          ],
+          "18": [
+            6,
+            7,
+            1,
+            0,
+            5
+          ],
+          "19": [
+            6,
+            5,
+            4,
+            3,
+            7
+          ],
+          "21": [
+            6,
+            7,
+            1,
+            0,
+            5
+          ],
+          "22": [
+            6,
+            5,
+            4,
+            3,
+            7
+          ]
+        }
+      }
+    },
+    {
+      "name": "hard warnings and muzzle reels reach native drawImage",
+      "passed": true,
+      "data": {
+        "warnings": 763,
+        "muzzles": 206
+      }
+    },
+    {
+      "name": "furious miniboss and jets fire in shared half-second windows",
+      "passed": true,
+      "data": {
+        "overlapping_windows": 8,
+        "miniboss": 172,
+        "escorts": 72
+      }
+    },
+    {
+      "name": "furious miniboss clock advances throughout helper waves",
+      "passed": true,
+      "data": {
+        "observed": 987,
+        "stalls": 0
+      }
+    },
+    {
+      "name": "furious aircraft arrive on combat plane within 1.4 seconds",
+      "passed": true,
+      "data": {
+        "24": 0.9500000000000013,
+        "25": 0.9500000000000013,
+        "27": 0.9500000000000013,
+        "28": 0.9500000000000013,
+        "30": 0.9500000000000013,
+        "31": 0.9500000000000013
+      }
+    },
+    {
+      "name": "furious aircraft turn into firing heading within half a second",
+      "passed": true,
+      "data": {
+        "24": 0.20000000000000084,
+        "25": 0.21333333333333337,
+        "27": 0.20000000000000084,
+        "28": 0.21333333333333337,
+        "30": 0.20000000000000084,
+        "31": 0.21333333333333337
+      }
+    },
+    {
+      "name": "furious aircraft fire while travelling through the field",
+      "passed": true,
+      "data": {
+        "24": 48.9735671334829,
+        "25": 57.20880526651974,
+        "27": 52.23100950372085,
+        "28": 59.055334221389174,
+        "30": 55.38958621072214,
+        "31": 51.60319971420738
+      }
+    },
+    {
+      "name": "furious depth entry remains harmless and all projectiles move",
+      "passed": true,
+      "data": {
+        "early": 0,
+        "shots": 72
+      }
+    },
+    {
+      "name": "furious real authored aircraft headings animate visibly",
+      "passed": true,
+      "data": {
+        "draws": 269,
+        "headings": {
+          "24": [
+            6,
+            7,
+            0,
+            1,
+            5
+          ],
+          "25": [
+            6,
+            5,
+            4,
+            3,
+            7
+          ],
+          "27": [
+            6,
+            7,
+            1,
+            0,
+            5
+          ],
+          "28": [
+            6,
+            5,
+            4,
+            3,
+            7
+          ],
+          "30": [
+            6,
+            7,
+            0,
+            1,
+            5
+          ],
+          "31": [
+            6,
+            5,
+            3,
+            4,
+            7
+          ]
+        }
+      }
+    },
+    {
+      "name": "furious warnings and muzzle reels reach native drawImage",
+      "passed": true,
+      "data": {
+        "warnings": 749,
+        "muzzles": 273
+      }
+    },
+    {
+      "name": "native damage flashes Warden hull, gun module and aircraft pixels",
+      "passed": true,
+      "data": {
+        "hull": 44182,
+        "module": 44182,
+        "plane": 1936,
+        "hullTimer": 0.18,
+        "partTimer": 0.2,
+        "planeTimer": 0.12,
+        "hpLost": 1
+      }
+    },
+    {
+      "name": "damage flash timers expire through normal update",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "destroyed aircraft cannot keep firing",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "generator offsets stay fixed during 90/180-degree hull turns",
+      "passed": true,
+      "data": [
+        {
+          "angle": 0,
+          "nodes": [
+            {
+              "x": -255,
+              "y": -40
+            },
+            {
+              "x": 255,
+              "y": -40
+            },
+            {
+              "x": -255,
+              "y": 155
+            },
+            {
+              "x": 255,
+              "y": 155
+            }
+          ],
+          "draws": [
+            {
+              "x": 103,
+              "y": 140,
+              "rot": 0,
+              "w": 67.5,
+              "pixels": true
+            },
+            {
+              "x": 613,
+              "y": 140,
+              "rot": 0,
+              "w": 67.5,
+              "pixels": true
+            },
+            {
+              "x": 103,
+              "y": 335,
+              "rot": 0,
+              "w": 67.5,
+              "pixels": true
+            },
+            {
+              "x": 613,
+              "y": 335,
+              "rot": 0,
+              "w": 67.5,
+              "pixels": true
+            }
+          ]
+        },
+        {
+          "angle": 1.5707963267948966,
+          "nodes": [
+            {
+              "x": -255,
+              "y": -40
+            },
+            {
+              "x": 255,
+              "y": -40
+            },
+            {
+              "x": -255,
+              "y": 155
+            },
+            {
+              "x": 255,
+              "y": 155
+            }
+          ],
+          "draws": [
+            {
+              "x": 103,
+              "y": 140,
+              "rot": 0,
+              "w": 67.5,
+              "pixels": true
+            },
+            {
+              "x": 613,
+              "y": 140,
+              "rot": 0,
+              "w": 67.5,
+              "pixels": true
+            },
+            {
+              "x": 103,
+              "y": 335,
+              "rot": 0,
+              "w": 67.5,
+              "pixels": true
+            },
+            {
+              "x": 613,
+              "y": 335,
+              "rot": 0,
+              "w": 67.5,
+              "pixels": true
+            }
+          ]
+        },
+        {
+          "angle": 3.141592653589793,
+          "nodes": [
+            {
+              "x": -255,
+              "y": -40
+            },
+            {
+              "x": 255,
+              "y": -40
+            },
+            {
+              "x": -255,
+              "y": 155
+            },
+            {
+              "x": 255,
+              "y": 155
+            }
+          ],
+          "draws": [
+            {
+              "x": 103,
+              "y": 140,
+              "rot": 0,
+              "w": 67.5,
+              "pixels": true
+            },
+            {
+              "x": 613,
+              "y": 140,
+              "rot": 0,
+              "w": 67.5,
+              "pixels": true
+            },
+            {
+              "x": 103,
+              "y": 335,
+              "rot": 0,
+              "w": 67.5,
+              "pixels": true
+            },
+            {
+              "x": 613,
+              "y": 335,
+              "rot": 0,
+              "w": 67.5,
+              "pixels": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "all four generator plates render upright through hull turns",
+      "passed": true,
+      "data": [
+        {
+          "angle": 0,
+          "nodes": [
+            {
+              "x": -255,
+              "y": -40
+            },
+            {
+              "x": 255,
+              "y": -40
+            },
+            {
+              "x": -255,
+              "y": 155
+            },
+            {
+              "x": 255,
+              "y": 155
+            }
+          ],
+          "draws": [
+            {
+              "x": 103,
+              "y": 140,
+              "rot": 0,
+              "w": 67.5,
+              "pixels": true
+            },
+            {
+              "x": 613,
+              "y": 140,
+              "rot": 0,
+              "w": 67.5,
+              "pixels": true
+            },
+            {
+              "x": 103,
+              "y": 335,
+              "rot": 0,
+              "w": 67.5,
+              "pixels": true
+            },
+            {
+              "x": 613,
+              "y": 335,
+              "rot": 0,
+              "w": 67.5,
+              "pixels": true
+            }
+          ]
+        },
+        {
+          "angle": 1.5707963267948966,
+          "nodes": [
+            {
+              "x": -255,
+              "y": -40
+            },
+            {
+              "x": 255,
+              "y": -40
+            },
+            {
+              "x": -255,
+              "y": 155
+            },
+            {
+              "x": 255,
+              "y": 155
+            }
+          ],
+          "draws": [
+            {
+              "x": 103,
+              "y": 140,
+              "rot": 0,
+              "w": 67.5,
+              "pixels": true
+            },
+            {
+              "x": 613,
+              "y": 140,
+              "rot": 0,
+              "w": 67.5,
+              "pixels": true
+            },
+            {
+              "x": 103,
+              "y": 335,
+              "rot": 0,
+              "w": 67.5,
+              "pixels": true
+            },
+            {
+              "x": 613,
+              "y": 335,
+              "rot": 0,
+              "w": 67.5,
+              "pixels": true
+            }
+          ]
+        },
+        {
+          "angle": 3.141592653589793,
+          "nodes": [
+            {
+              "x": -255,
+              "y": -40
+            },
+            {
+              "x": 255,
+              "y": -40
+            },
+            {
+              "x": -255,
+              "y": 155
+            },
+            {
+              "x": 255,
+              "y": 155
+            }
+          ],
+          "draws": [
+            {
+              "x": 103,
+              "y": 140,
+              "rot": 0,
+              "w": 67.5,
+              "pixels": true
+            },
+            {
+              "x": 613,
+              "y": 140,
+              "rot": 0,
+              "w": 67.5,
+              "pixels": true
+            },
+            {
+              "x": 103,
+              "y": 335,
+              "rot": 0,
+              "w": 67.5,
+              "pixels": true
+            },
+            {
+              "x": 613,
+              "y": 335,
+              "rot": 0,
+              "w": 67.5,
+              "pixels": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "normal both Sovereign helpers release moving projectiles",
+      "passed": true,
+      "data": {
+        "left": 80,
+        "right": 80
+      }
+    },
+    {
+      "name": "normal both helpers show real muzzle artwork",
+      "passed": true,
+      "data": {
+        "1": 81,
+        "-1": 81
+      }
+    },
+    {
+      "name": "hard both Sovereign helpers release moving projectiles",
+      "passed": true,
+      "data": {
+        "left": 103,
+        "right": 103
+      }
+    },
+    {
+      "name": "hard both helpers show real muzzle artwork",
+      "passed": true,
+      "data": {
+        "1": 103,
+        "-1": 103
+      }
+    },
+    {
+      "name": "furious both Sovereign helpers release moving projectiles",
+      "passed": true,
+      "data": {
+        "left": 166,
+        "right": 166
+      }
+    },
+    {
+      "name": "furious both helpers show real muzzle artwork",
+      "passed": true,
+      "data": {
+        "1": 165,
+        "-1": 165
+      }
+    },
+    {
+      "name": "Sovereign helper warning artwork reaches native renderer",
+      "passed": true,
+      "data": null
+    },
+    {
+      "name": "depth return begins a fresh helper tell before shooting",
+      "passed": true,
+      "data": {
+        "hidden": 0,
+        "first": 0,
+        "phase": "ready",
+        "t": 0
+      }
+    },
+    {
+      "name": "offscreen helpers produce no hidden shots and re-enter with a tell",
+      "passed": true,
+      "data": {
+        "hidden": 0,
+        "first": 0,
+        "phases": [
+          "ready",
+          "ready"
+        ]
+      }
+    },
+    {
+      "name": "destroying a helper gun stops its own fire while the other fights",
+      "passed": true,
+      "data": {
+        "dead": true,
+        "left": 0,
+        "other": 22
+      }
+    },
+    {
+      "name": "Sovereign helper hull and gun damage produces visible native flash",
+      "passed": true,
+      "data": {
+        "pixels": 4205,
+        "hpLost": 1.25,
+        "flash": 0.15,
+        "gunFlash": 0.18,
+        "expired": true,
+        "dead": true,
+        "deadShots": 0
+      }
+    },
+    {
+      "name": "helper hit flash expires and destroyed helper releases no further shots",
+      "passed": true,
+      "data": {
+        "pixels": 4205,
+        "hpLost": 1.25,
+        "flash": 0.15,
+        "gunFlash": 0.18,
+        "expired": true,
+        "dead": true,
+        "deadShots": 0
+      }
+    },
+    {
+      "name": "Sovereign helper fire plays decoded nonzero enemy audio",
+      "passed": true,
+      "data": {
+        "playing": true,
+        "peak": 0.19663622975349426,
+        "volume": 0.23199999999999998,
+        "muted": false
+      }
+    }
+  ],
+  "errors": [],
+  "scenes": [
+    "warden-easy-concurrent-fire",
+    "warden-normal-concurrent-fire",
+    "warden-hard-concurrent-fire",
+    "warden-furious-concurrent-fire",
+    "warden-native-hit-feedback",
+    "sovereign-upright-cores-turned-hull",
+    "sovereign-helpers-live-fire",
+    "sovereign-helper-lane-warnings",
+    "sovereign-destroyed-helper-gun"
+  ],
+  "runtime_sha256": "4b83b09caa6d675124dd68021a86bab758a8ef88a59baef2f1405b162ac81b46",
+  "scope": "Native controlled fixtures: 30-second overlapping-combat observations, native artwork and damaged pixels, real audio. Not a full human campaign clear."
+}

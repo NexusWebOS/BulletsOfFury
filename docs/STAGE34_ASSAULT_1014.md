@@ -34,8 +34,9 @@ separate mounted weapons, health, destruction and hit-target systems.
   draws retain their camo palette.
 - **Stage 4 boss:** a visible committed charge with screen shake, supported
   controller rumble and the approved chip engine bed revving in pitch. All four
-  generators translate/rotate/scale with the hull. Their native point damage
-  and Retina targets share those same positions.
+  generators translate/scale with the hull; October 15 keeps their formation
+  upright through turns. Their native point damage and Retina targets share
+  those same positions.
 - Crossing above mid-screen starts the alert and an orbiting Retina. The
   repeated lock beeps lead into a committed volley from the shaking missile
   boxes. Retreat south before release cancels the trap. Once released, those

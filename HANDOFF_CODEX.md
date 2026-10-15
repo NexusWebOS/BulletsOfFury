@@ -1,3 +1,20 @@
+# 2026-10-15 — Stage 4 simultaneous pressure and active Sovereign helpers
+
+Mike requested immediate restoration of overlapping miniboss/jet attacks and
+faster firing fly-ins. Warden no longer pauses/resets its main attack clock for
+helpers. Faster tiered gun/missile bursts, shorter entry/turns, moving jet fire
+and visible south-side attack paths replace the prior separate-turn tuning.
+Sovereign generators translate/scale but remain upright when the hull turns.
+Its helpers now own real independent warning/fire/cooling clocks, barrel shots,
+muzzle art and enemy audio; destroyed modules and hidden/depth entries remain
+properly gated, and return requires a fresh tell. Native hit feedback retained.
+Native50/50, existing Stage34 gameplay60/60 + visuals13/13; no browser errors.
+Final fullsuite8,700/0, BUILD OK/exit0. Captures inspected.
+Details and verification: docs/STAGE4_PRESSURE_1015.md and its linked QA records.
+Owner assets/stage34_assault_1014.js; cache version stage4-pressure-1015.
+This supersedes the October 14 separate-turn behavior below. Preserve unrelated
+local Training Flight/tutorial and project files when publishing this repair.
+
 # 2026-10-15 — RELEASE: Warden warnings, larger helpers and hit feedback
 
 Mike requested publishing the completed Warden repair. Native hit flashes are
