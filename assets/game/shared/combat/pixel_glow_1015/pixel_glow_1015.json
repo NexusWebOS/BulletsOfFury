@@ -1,0 +1,262 @@
+[
+ {
+  "key": "arch_orbital_sweep_0926",
+  "loose": false,
+  "glow": "assets/game/shared/combat/pixel_glow_1015/arch_orbital_sweep_0926_glow.png",
+  "core": "assets/game/shared/combat/pixel_glow_1015/arch_orbital_sweep_0926_core.png",
+  "size": [
+   1448,
+   1086
+  ],
+  "emissive_px": 46083,
+  "core_px": 4358,
+  "opaque_px": 342425
+ },
+ {
+  "key": "arch_chaingun_break_enrage",
+  "loose": false,
+  "glow": "assets/game/shared/combat/pixel_glow_1015/arch_chaingun_break_enrage_glow.png",
+  "core": "assets/game/shared/combat/pixel_glow_1015/arch_chaingun_break_enrage_core.png",
+  "size": [
+   3296,
+   206
+  ],
+  "emissive_px": 1449,
+  "core_px": 1253,
+  "opaque_px": 167859
+ },
+ {
+  "key": "arch_leap_strike_0922",
+  "loose": false,
+  "glow": "assets/game/shared/combat/pixel_glow_1015/arch_leap_strike_0922_glow.png",
+  "core": "assets/game/shared/combat/pixel_glow_1015/arch_leap_strike_0922_core.png",
+  "size": [
+   2560,
+   384
+  ],
+  "emissive_px": 14280,
+  "core_px": 2809,
+  "opaque_px": 138735
+ },
+ {
+  "key": "arch_spell_raise",
+  "loose": false,
+  "glow": "assets/game/shared/combat/pixel_glow_1015/arch_spell_raise_glow.png",
+  "core": "assets/game/shared/combat/pixel_glow_1015/arch_spell_raise_core.png",
+  "size": [
+   2472,
+   206
+  ],
+  "emissive_px": 15930,
+  "core_px": 4192,
+  "opaque_px": 136622
+ },
+ {
+  "key": "pt11_hammer_core_0",
+  "loose": true,
+  "glow": "assets/game/shared/combat/pixel_glow_1015/pt11_hammer_core_0_glow.png",
+  "core": "assets/game/shared/combat/pixel_glow_1015/pt11_hammer_core_0_core.png",
+  "size": [
+   512,
+   512
+  ],
+  "emissive_px": 7090,
+  "core_px": 499,
+  "opaque_px": 51144
+ },
+ {
+  "key": "pt11_hammer_core_1",
+  "loose": true,
+  "glow": "assets/game/shared/combat/pixel_glow_1015/pt11_hammer_core_1_glow.png",
+  "core": "assets/game/shared/combat/pixel_glow_1015/pt11_hammer_core_1_core.png",
+  "size": [
+   512,
+   512
+  ],
+  "emissive_px": 7685,
+  "core_px": 1353,
+  "opaque_px": 51088
+ },
+ {
+  "key": "pt11_hammer_core_2",
+  "loose": true,
+  "glow": "assets/game/shared/combat/pixel_glow_1015/pt11_hammer_core_2_glow.png",
+  "core": "assets/game/shared/combat/pixel_glow_1015/pt11_hammer_core_2_core.png",
+  "size": [
+   512,
+   512
+  ],
+  "emissive_px": 8061,
+  "core_px": 1740,
+  "opaque_px": 51081
+ },
+ {
+  "key": "pt11_hammer_core_3",
+  "loose": true,
+  "glow": "assets/game/shared/combat/pixel_glow_1015/pt11_hammer_core_3_glow.png",
+  "core": "assets/game/shared/combat/pixel_glow_1015/pt11_hammer_core_3_core.png",
+  "size": [
+   512,
+   512
+  ],
+  "emissive_px": 8454,
+  "core_px": 2014,
+  "opaque_px": 51085
+ },
+ {
+  "key": "pt11_hammer_core_4",
+  "loose": true,
+  "glow": "assets/game/shared/combat/pixel_glow_1015/pt11_hammer_core_4_glow.png",
+  "core": "assets/game/shared/combat/pixel_glow_1015/pt11_hammer_core_4_core.png",
+  "size": [
+   512,
+   512
+  ],
+  "emissive_px": 8209,
+  "core_px": 1859,
+  "opaque_px": 51032
+ },
+ {
+  "key": "pt11_hammer_core_5",
+  "loose": true,
+  "glow": "assets/game/shared/combat/pixel_glow_1015/pt11_hammer_core_5_glow.png",
+  "core": "assets/game/shared/combat/pixel_glow_1015/pt11_hammer_core_5_core.png",
+  "size": [
+   512,
+   512
+  ],
+  "emissive_px": 7856,
+  "core_px": 1606,
+  "opaque_px": 51087
+ },
+ {
+  "key": "pt11_hammer_core_6",
+  "loose": true,
+  "glow": "assets/game/shared/combat/pixel_glow_1015/pt11_hammer_core_6_glow.png",
+  "core": "assets/game/shared/combat/pixel_glow_1015/pt11_hammer_core_6_core.png",
+  "size": [
+   512,
+   512
+  ],
+  "emissive_px": 7343,
+  "core_px": 1079,
+  "opaque_px": 50973
+ },
+ {
+  "key": "pt11_hammer_core_7",
+  "loose": true,
+  "glow": "assets/game/shared/combat/pixel_glow_1015/pt11_hammer_core_7_glow.png",
+  "core": "assets/game/shared/combat/pixel_glow_1015/pt11_hammer_core_7_core.png",
+  "size": [
+   512,
+   512
+  ],
+  "emissive_px": 6991,
+  "core_px": 563,
+  "opaque_px": 50951
+ },
+ {
+  "key": "pt11_hammer_core_8",
+  "loose": true,
+  "glow": "assets/game/shared/combat/pixel_glow_1015/pt11_hammer_core_8_glow.png",
+  "core": "assets/game/shared/combat/pixel_glow_1015/pt11_hammer_core_8_core.png",
+  "size": [
+   512,
+   512
+  ],
+  "emissive_px": 7931,
+  "core_px": 1194,
+  "opaque_px": 51347
+ },
+ {
+  "key": "pt11_hammer_core_9",
+  "loose": true,
+  "glow": "assets/game/shared/combat/pixel_glow_1015/pt11_hammer_core_9_glow.png",
+  "core": "assets/game/shared/combat/pixel_glow_1015/pt11_hammer_core_9_core.png",
+  "size": [
+   512,
+   512
+  ],
+  "emissive_px": 8567,
+  "core_px": 1659,
+  "opaque_px": 55084
+ },
+ {
+  "key": "pt11_hammer_core_10",
+  "loose": true,
+  "glow": "assets/game/shared/combat/pixel_glow_1015/pt11_hammer_core_10_glow.png",
+  "core": "assets/game/shared/combat/pixel_glow_1015/pt11_hammer_core_10_core.png",
+  "size": [
+   512,
+   512
+  ],
+  "emissive_px": 7885,
+  "core_px": 1584,
+  "opaque_px": 53545
+ },
+ {
+  "key": "pt11_hammer_core_11",
+  "loose": true,
+  "glow": "assets/game/shared/combat/pixel_glow_1015/pt11_hammer_core_11_glow.png",
+  "core": "assets/game/shared/combat/pixel_glow_1015/pt11_hammer_core_11_core.png",
+  "size": [
+   512,
+   512
+  ],
+  "emissive_px": 5991,
+  "core_px": 18,
+  "opaque_px": 50194
+ },
+ {
+  "key": "pt11_hammer_core_12",
+  "loose": true,
+  "glow": "assets/game/shared/combat/pixel_glow_1015/pt11_hammer_core_12_glow.png",
+  "core": "assets/game/shared/combat/pixel_glow_1015/pt11_hammer_core_12_core.png",
+  "size": [
+   512,
+   512
+  ],
+  "emissive_px": 7032,
+  "core_px": 118,
+  "opaque_px": 51706
+ },
+ {
+  "key": "pt11_hammer_core_13",
+  "loose": true,
+  "glow": "assets/game/shared/combat/pixel_glow_1015/pt11_hammer_core_13_glow.png",
+  "core": "assets/game/shared/combat/pixel_glow_1015/pt11_hammer_core_13_core.png",
+  "size": [
+   512,
+   512
+  ],
+  "emissive_px": 7410,
+  "core_px": 106,
+  "opaque_px": 52391
+ },
+ {
+  "key": "pt11_hammer_core_14",
+  "loose": true,
+  "glow": "assets/game/shared/combat/pixel_glow_1015/pt11_hammer_core_14_glow.png",
+  "core": "assets/game/shared/combat/pixel_glow_1015/pt11_hammer_core_14_core.png",
+  "size": [
+   512,
+   512
+  ],
+  "emissive_px": 7726,
+  "core_px": 107,
+  "opaque_px": 52600
+ },
+ {
+  "key": "pt11_hammer_core_15",
+  "loose": true,
+  "glow": "assets/game/shared/combat/pixel_glow_1015/pt11_hammer_core_15_glow.png",
+  "core": "assets/game/shared/combat/pixel_glow_1015/pt11_hammer_core_15_core.png",
+  "size": [
+   512,
+   512
+  ],
+  "emissive_px": 7871,
+  "core_px": 104,
+  "opaque_px": 52596
+ }
+]

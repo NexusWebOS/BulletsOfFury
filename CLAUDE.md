@@ -1,3 +1,7 @@
+# 2026-10-15 — pixel glow pass, part 1: the Stage 5 Chrome Hammer core
+
+Mike: pixel glow instead of overlaid graphics, starting with the Stage 5 boss's middle core. The `core_orbit` phase pasted effect cell 6 over his chest; it is suppressed and the chest ring now lights from its own pixels. `_BUILD_SOURCE/pixel_glow_1015.py` bakes same-size `_glow`/`_core` companions (added light + hard 1-4 px rings, no blur); `assets/pixel_glow_1015.js` redraws them under 'lighter' with the SAME rects whenever a registered sheet is blitted inside a driver window (sheet by unique size, loose plate by XART.get key tag, tinted frame by hammerArchFrame tag). Six fixed brightness steps on the game clock. Probe 20/20, zero errors. Read [docs/PIXEL_GLOW_1015.md](docs/PIXEL_GLOW_1015.md) - it lists the next sites (230 shadowBlur halos, 23 radial discs). Never push the companion toward white: it flattens the core into a sticker.
+
 # 2026-10-14 — Stage 3/4 playthrough and Yuri Storm pass
 
 Yuri retains his earned Stage-4 Storm through Stage 5 and subsequent entries,
