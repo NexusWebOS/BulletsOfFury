@@ -1,0 +1,830 @@
+{
+  "checks": [
+    {
+      "name": "easy long visible tell precedes miniboss fire",
+      "pass_": true,
+      "data": {
+        "warm": 2.4,
+        "t": 1.0833333333333344,
+        "shots": 0,
+        "warnings": 2,
+        "aim": {
+          "x": 340,
+          "y": 402
+        },
+        "old": {
+          "x": 340,
+          "y": 402
+        }
+      }
+    },
+    {
+      "name": "easy warning target does not follow a dodging player",
+      "pass_": true,
+      "data": null
+    },
+    {
+      "name": "easy finite machine-gun burst respects cap",
+      "pass_": true,
+      "data": 4
+    },
+    {
+      "name": "easy bounded missile waves",
+      "pass_": true,
+      "data": [
+        2
+      ]
+    },
+    {
+      "name": "easy helper arrival has a warning before any ship spawns",
+      "pass_": true,
+      "data": null
+    },
+    {
+      "name": "easy helpers use enlarged 96px combat hulls",
+      "pass_": true,
+      "data": null
+    },
+    {
+      "name": "easy helpers and miniboss never release overlapping attacks",
+      "pass_": true,
+      "data": {
+        "overlaps": 0,
+        "maxHelpers": 1,
+        "shots": 3,
+        "aimChanges": 0,
+        "earlyShots": 0,
+        "arrivals": 133,
+        "frames": 943
+      }
+    },
+    {
+      "name": "easy helper population is bounded",
+      "pass_": true,
+      "data": {
+        "overlaps": 0,
+        "maxHelpers": 1,
+        "shots": 3,
+        "aimChanges": 0,
+        "earlyShots": 0,
+        "arrivals": 133,
+        "frames": 943
+      }
+    },
+    {
+      "name": "easy helpers never fire during depth entry or re-aim mid burst",
+      "pass_": true,
+      "data": {
+        "overlaps": 0,
+        "maxHelpers": 1,
+        "shots": 3,
+        "aimChanges": 0,
+        "earlyShots": 0,
+        "arrivals": 133,
+        "frames": 943
+      }
+    },
+    {
+      "name": "easy helper turn completes with a recovery",
+      "pass_": true,
+      "data": [
+        {
+          "phase": "leave",
+          "t": 5.649999999999985,
+          "shots": 3,
+          "aim": {
+            "x": 340,
+            "y": 402
+          }
+        },
+        {
+          "phase": "leave",
+          "t": 6.1499999999999835,
+          "shots": 3,
+          "aim": {
+            "x": 340,
+            "y": 402
+          }
+        }
+      ]
+    },
+    {
+      "name": "easy helpers expose genuine lane warnings",
+      "pass_": true,
+      "data": null
+    },
+    {
+      "name": "normal long visible tell precedes miniboss fire",
+      "pass_": true,
+      "data": {
+        "warm": 2.15,
+        "t": 1.0833333333333344,
+        "shots": 0,
+        "warnings": 2,
+        "aim": {
+          "x": 340,
+          "y": 402
+        },
+        "old": {
+          "x": 340,
+          "y": 402
+        }
+      }
+    },
+    {
+      "name": "normal warning target does not follow a dodging player",
+      "pass_": true,
+      "data": null
+    },
+    {
+      "name": "normal finite machine-gun burst respects cap",
+      "pass_": true,
+      "data": 6
+    },
+    {
+      "name": "normal bounded missile waves",
+      "pass_": true,
+      "data": [
+        4
+      ]
+    },
+    {
+      "name": "normal helper arrival has a warning before any ship spawns",
+      "pass_": true,
+      "data": null
+    },
+    {
+      "name": "normal helpers use enlarged 96px combat hulls",
+      "pass_": true,
+      "data": null
+    },
+    {
+      "name": "actual miniboss hull hit changes visible pixels",
+      "pass_": true,
+      "data": {
+        "body": {
+          "n": 44177,
+          "light": 8140738
+        },
+        "module": {
+          "n": 44177,
+          "light": 8140738
+        },
+        "helper": {
+          "n": 1892,
+          "light": 767668
+        },
+        "hullTimer": 0.18,
+        "partTimer": 0.2,
+        "helperTimer": 0.12,
+        "hpLost": 2,
+        "partLost": 1,
+        "helperLost": 1
+      }
+    },
+    {
+      "name": "actual modular hit flashes its mounted part",
+      "pass_": true,
+      "data": {
+        "body": {
+          "n": 44177,
+          "light": 8140738
+        },
+        "module": {
+          "n": 44177,
+          "light": 8140738
+        },
+        "helper": {
+          "n": 1892,
+          "light": 767668
+        },
+        "hullTimer": 0.18,
+        "partTimer": 0.2,
+        "helperTimer": 0.12,
+        "hpLost": 2,
+        "partLost": 1,
+        "helperLost": 1
+      }
+    },
+    {
+      "name": "actual helper hit flashes authored aircraft pixels",
+      "pass_": true,
+      "data": {
+        "body": {
+          "n": 44177,
+          "light": 8140738
+        },
+        "module": {
+          "n": 44177,
+          "light": 8140738
+        },
+        "helper": {
+          "n": 1892,
+          "light": 767668
+        },
+        "hullTimer": 0.18,
+        "partTimer": 0.2,
+        "helperTimer": 0.12,
+        "hpLost": 2,
+        "partLost": 1,
+        "helperLost": 1
+      }
+    },
+    {
+      "name": "normal helpers and miniboss never release overlapping attacks",
+      "pass_": true,
+      "data": {
+        "overlaps": 0,
+        "maxHelpers": 2,
+        "shots": 8,
+        "aimChanges": 0,
+        "earlyShots": 0,
+        "arrivals": 266,
+        "frames": 943
+      }
+    },
+    {
+      "name": "normal helper population is bounded",
+      "pass_": true,
+      "data": {
+        "overlaps": 0,
+        "maxHelpers": 2,
+        "shots": 8,
+        "aimChanges": 0,
+        "earlyShots": 0,
+        "arrivals": 266,
+        "frames": 943
+      }
+    },
+    {
+      "name": "normal helpers never fire during depth entry or re-aim mid burst",
+      "pass_": true,
+      "data": {
+        "overlaps": 0,
+        "maxHelpers": 2,
+        "shots": 8,
+        "aimChanges": 0,
+        "earlyShots": 0,
+        "arrivals": 266,
+        "frames": 943
+      }
+    },
+    {
+      "name": "normal helper turn completes with a recovery",
+      "pass_": true,
+      "data": [
+        {
+          "phase": "leave",
+          "t": 8.65000000000001,
+          "shots": 4,
+          "aim": {
+            "x": 340,
+            "y": 402
+          }
+        },
+        {
+          "phase": "leave",
+          "t": 9.150000000000034,
+          "shots": 4,
+          "aim": {
+            "x": 340,
+            "y": 402
+          }
+        }
+      ]
+    },
+    {
+      "name": "normal helpers expose genuine lane warnings",
+      "pass_": true,
+      "data": null
+    },
+    {
+      "name": "hull and module flash timers expire naturally",
+      "pass_": true,
+      "data": null
+    },
+    {
+      "name": "hard long visible tell precedes miniboss fire",
+      "pass_": true,
+      "data": {
+        "warm": 1.95,
+        "t": 1.0833333333333344,
+        "shots": 0,
+        "warnings": 2,
+        "aim": {
+          "x": 340,
+          "y": 402
+        },
+        "old": {
+          "x": 340,
+          "y": 402
+        }
+      }
+    },
+    {
+      "name": "hard warning target does not follow a dodging player",
+      "pass_": true,
+      "data": null
+    },
+    {
+      "name": "hard finite machine-gun burst respects cap",
+      "pass_": true,
+      "data": 8
+    },
+    {
+      "name": "hard bounded missile waves",
+      "pass_": true,
+      "data": [
+        4,
+        4
+      ]
+    },
+    {
+      "name": "hard helper arrival has a warning before any ship spawns",
+      "pass_": true,
+      "data": null
+    },
+    {
+      "name": "hard helpers use enlarged 96px combat hulls",
+      "pass_": true,
+      "data": null
+    },
+    {
+      "name": "hard helpers and miniboss never release overlapping attacks",
+      "pass_": true,
+      "data": {
+        "overlaps": 0,
+        "maxHelpers": 2,
+        "shots": 10,
+        "aimChanges": 0,
+        "earlyShots": 0,
+        "arrivals": 266,
+        "frames": 943
+      }
+    },
+    {
+      "name": "hard helper population is bounded",
+      "pass_": true,
+      "data": {
+        "overlaps": 0,
+        "maxHelpers": 2,
+        "shots": 10,
+        "aimChanges": 0,
+        "earlyShots": 0,
+        "arrivals": 266,
+        "frames": 943
+      }
+    },
+    {
+      "name": "hard helpers never fire during depth entry or re-aim mid burst",
+      "pass_": true,
+      "data": {
+        "overlaps": 0,
+        "maxHelpers": 2,
+        "shots": 10,
+        "aimChanges": 0,
+        "earlyShots": 0,
+        "arrivals": 266,
+        "frames": 943
+      }
+    },
+    {
+      "name": "hard helper turn completes with a recovery",
+      "pass_": true,
+      "data": [
+        {
+          "phase": "leave",
+          "t": 8.149999999999984,
+          "shots": 5,
+          "aim": {
+            "x": 340,
+            "y": 402
+          }
+        },
+        {
+          "phase": "leave",
+          "t": 8.65000000000001,
+          "shots": 5,
+          "aim": {
+            "x": 340,
+            "y": 402
+          }
+        }
+      ]
+    },
+    {
+      "name": "hard helpers expose genuine lane warnings",
+      "pass_": true,
+      "data": null
+    },
+    {
+      "name": "furious long visible tell precedes miniboss fire",
+      "pass_": true,
+      "data": {
+        "warm": 1.8,
+        "t": 1.0833333333333344,
+        "shots": 0,
+        "warnings": 2,
+        "aim": {
+          "x": 340,
+          "y": 402
+        },
+        "old": {
+          "x": 340,
+          "y": 402
+        }
+      }
+    },
+    {
+      "name": "furious warning target does not follow a dodging player",
+      "pass_": true,
+      "data": null
+    },
+    {
+      "name": "furious finite machine-gun burst respects cap",
+      "pass_": true,
+      "data": 10
+    },
+    {
+      "name": "furious bounded missile waves",
+      "pass_": true,
+      "data": [
+        4,
+        4
+      ]
+    },
+    {
+      "name": "furious helper arrival has a warning before any ship spawns",
+      "pass_": true,
+      "data": null
+    },
+    {
+      "name": "furious helpers use enlarged 96px combat hulls",
+      "pass_": true,
+      "data": null
+    },
+    {
+      "name": "furious helpers and miniboss never release overlapping attacks",
+      "pass_": true,
+      "data": {
+        "overlaps": 0,
+        "maxHelpers": 2,
+        "shots": 12,
+        "aimChanges": 0,
+        "earlyShots": 0,
+        "arrivals": 266,
+        "frames": 943
+      }
+    },
+    {
+      "name": "furious helper population is bounded",
+      "pass_": true,
+      "data": {
+        "overlaps": 0,
+        "maxHelpers": 2,
+        "shots": 12,
+        "aimChanges": 0,
+        "earlyShots": 0,
+        "arrivals": 266,
+        "frames": 943
+      }
+    },
+    {
+      "name": "furious helpers never fire during depth entry or re-aim mid burst",
+      "pass_": true,
+      "data": {
+        "overlaps": 0,
+        "maxHelpers": 2,
+        "shots": 12,
+        "aimChanges": 0,
+        "earlyShots": 0,
+        "arrivals": 266,
+        "frames": 943
+      }
+    },
+    {
+      "name": "furious helper turn completes with a recovery",
+      "pass_": true,
+      "data": [
+        {
+          "phase": "leave",
+          "t": 8.149999999999984,
+          "shots": 6,
+          "aim": {
+            "x": 340,
+            "y": 402
+          }
+        },
+        {
+          "phase": "leave",
+          "t": 8.65000000000001,
+          "shots": 6,
+          "aim": {
+            "x": 340,
+            "y": 402
+          }
+        }
+      ]
+    },
+    {
+      "name": "furious helpers expose genuine lane warnings",
+      "pass_": true,
+      "data": null
+    },
+    {
+      "name": "enemyMachineGunHeavy has real advancing, nonzero enemy audio",
+      "pass_": true,
+      "data": {
+        "key": "enemyMachineGunHeavy",
+        "playing": true,
+        "peak": 0.19698494672775269,
+        "volume": 0.23199999999999998,
+        "muted": false,
+        "node": true,
+        "duration": 0.56,
+        "source": "http://127.0.0.1:59710/assets/game/shared/audio/sounds/reviewed_enemy_heavy_mg.mp3"
+      }
+    },
+    {
+      "name": "missile has real advancing, nonzero enemy audio",
+      "pass_": true,
+      "data": {
+        "key": "missile",
+        "playing": true,
+        "peak": 0.6828057765960693,
+        "volume": 0.23199999999999998,
+        "muted": false,
+        "node": false,
+        "duration": 0.438458,
+        "source": "http://127.0.0.1:59710/assets/game/shared/audio/chip_1011/chip_missileLaunch.mp3"
+      }
+    },
+    {
+      "name": "enemyMachineGunLight has real advancing, nonzero enemy audio",
+      "pass_": true,
+      "data": {
+        "key": "enemyMachineGunLight",
+        "playing": true,
+        "peak": 0.10147407650947571,
+        "volume": 0.20800000000000002,
+        "muted": false,
+        "node": true,
+        "duration": 0.144989,
+        "source": "http://127.0.0.1:59710/assets/game/shared/audio/sounds/enemy_machine_shot_light.mp3"
+      }
+    },
+    {
+      "name": "easy ordinary keyboard movement has surviving samples",
+      "pass_": true,
+      "data": [
+        {
+          "diff": "easy",
+          "hits": 1,
+          "lives": 2,
+          "dead": false,
+          "x": 670,
+          "start": 460,
+          "seconds": 30
+        },
+        {
+          "diff": "easy",
+          "hits": 0,
+          "lives": 3,
+          "dead": false,
+          "x": 431.19999999999936,
+          "start": 220,
+          "seconds": 30
+        },
+        {
+          "diff": "easy",
+          "hits": 2,
+          "lives": 1,
+          "dead": false,
+          "x": 459.40000000000055,
+          "start": 460,
+          "seconds": 30
+        }
+      ]
+    },
+    {
+      "name": "normal ordinary keyboard movement has surviving samples",
+      "pass_": true,
+      "data": [
+        {
+          "diff": "normal",
+          "hits": 1,
+          "lives": 2,
+          "dead": false,
+          "x": 536.4999999999991,
+          "start": 460,
+          "seconds": 30
+        },
+        {
+          "diff": "normal",
+          "hits": 0,
+          "lives": 3,
+          "dead": false,
+          "x": 431.19999999999936,
+          "start": 220,
+          "seconds": 30
+        },
+        {
+          "diff": "normal",
+          "hits": 0,
+          "lives": 3,
+          "dead": false,
+          "x": 459.40000000000055,
+          "start": 460,
+          "seconds": 30
+        }
+      ]
+    },
+    {
+      "name": "hard ordinary keyboard movement has surviving samples",
+      "pass_": true,
+      "data": [
+        {
+          "diff": "hard",
+          "hits": 0,
+          "lives": 3,
+          "dead": false,
+          "x": 536.4999999999991,
+          "start": 460,
+          "seconds": 30
+        },
+        {
+          "diff": "hard",
+          "hits": 2,
+          "lives": 1,
+          "dead": false,
+          "x": 129.3400000000001,
+          "start": 220,
+          "seconds": 30
+        },
+        {
+          "diff": "hard",
+          "hits": 1,
+          "lives": 2,
+          "dead": false,
+          "x": 459.40000000000055,
+          "start": 460,
+          "seconds": 30
+        }
+      ]
+    },
+    {
+      "name": "furious ordinary keyboard movement has surviving samples",
+      "pass_": true,
+      "data": [
+        {
+          "diff": "furious",
+          "hits": 1,
+          "lives": 2,
+          "dead": false,
+          "x": 670,
+          "start": 460,
+          "seconds": 30
+        },
+        {
+          "diff": "furious",
+          "hits": 0,
+          "lives": 3,
+          "dead": false,
+          "x": 431.19999999999936,
+          "start": 220,
+          "seconds": 30
+        },
+        {
+          "diff": "furious",
+          "hits": 1,
+          "lives": 2,
+          "dead": false,
+          "x": 434.8300000000006,
+          "start": 460,
+          "seconds": 30
+        }
+      ]
+    }
+  ],
+  "passed": 55,
+  "failed": 0,
+  "errors": [],
+  "survival": [
+    {
+      "diff": "easy",
+      "hits": 1,
+      "lives": 2,
+      "dead": false,
+      "x": 670,
+      "start": 460,
+      "seconds": 30
+    },
+    {
+      "diff": "easy",
+      "hits": 0,
+      "lives": 3,
+      "dead": false,
+      "x": 431.19999999999936,
+      "start": 220,
+      "seconds": 30
+    },
+    {
+      "diff": "easy",
+      "hits": 2,
+      "lives": 1,
+      "dead": false,
+      "x": 459.40000000000055,
+      "start": 460,
+      "seconds": 30
+    },
+    {
+      "diff": "normal",
+      "hits": 1,
+      "lives": 2,
+      "dead": false,
+      "x": 536.4999999999991,
+      "start": 460,
+      "seconds": 30
+    },
+    {
+      "diff": "normal",
+      "hits": 0,
+      "lives": 3,
+      "dead": false,
+      "x": 431.19999999999936,
+      "start": 220,
+      "seconds": 30
+    },
+    {
+      "diff": "normal",
+      "hits": 0,
+      "lives": 3,
+      "dead": false,
+      "x": 459.40000000000055,
+      "start": 460,
+      "seconds": 30
+    },
+    {
+      "diff": "hard",
+      "hits": 0,
+      "lives": 3,
+      "dead": false,
+      "x": 536.4999999999991,
+      "start": 460,
+      "seconds": 30
+    },
+    {
+      "diff": "hard",
+      "hits": 2,
+      "lives": 1,
+      "dead": false,
+      "x": 129.3400000000001,
+      "start": 220,
+      "seconds": 30
+    },
+    {
+      "diff": "hard",
+      "hits": 1,
+      "lives": 2,
+      "dead": false,
+      "x": 459.40000000000055,
+      "start": 460,
+      "seconds": 30
+    },
+    {
+      "diff": "furious",
+      "hits": 1,
+      "lives": 2,
+      "dead": false,
+      "x": 670,
+      "start": 460,
+      "seconds": 30
+    },
+    {
+      "diff": "furious",
+      "hits": 0,
+      "lives": 3,
+      "dead": false,
+      "x": 431.19999999999936,
+      "start": 220,
+      "seconds": 30
+    },
+    {
+      "diff": "furious",
+      "hits": 1,
+      "lives": 2,
+      "dead": false,
+      "x": 434.8300000000006,
+      "start": 460,
+      "seconds": 30
+    }
+  ],
+  "scope": "Native fixtures, actual hit routers/rendering and decoded audio. Simple movement survival samples are not human campaign balance proof.",
+  "regression": {
+    "passed": 8700,
+    "errors": 0,
+    "exit": 0,
+    "log": "_shots/warden_readability_1014/regression-final.log"
+  },
+  "moduleSha256": "0205D03105E6278747A02B3EFB4E9B97D86B71499545E04379E1F0CAD7596EE7"
+}

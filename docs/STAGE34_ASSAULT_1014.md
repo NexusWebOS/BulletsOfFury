@@ -6,6 +6,13 @@ The live HUD and Stage-4 reward panel identify Thunder Storm using the existing
 Storm icon. The held-trigger/release ability works in Stage 5; later entries,
 co-op ownership and an unearned fresh run are also checked.
 
+## Warden follow-up
+
+The Stage 4 miniboss now uses longer committed warnings, finite bursts, separate
+helper turns, larger camo helpers and restored native hit flashes. This replaces
+the earlier Warden timing described below. See [Warden readability](WARDEN_READABILITY_1014.md)
+for the four difficulty tables and decoded-audio/native-pixel verification.
+
 ## Encounters
 
 The new runtime owner is `assets/stage34_assault_1014.js`. Its boss behavior is
@@ -54,8 +61,8 @@ rolling and somersaulting retain their native invulnerability rules.
 staggered individual bomb peel-offs to the existing route rotation. They retain
 native formation health, difficulty counts, warned releases, authored falling
 bombs, encounter gates and death cancellation. Authored heading/roll banks are
-used across the supported stages. Primary and fallback hit renders preserve
-the aircraft's palette and leave the real damage timer intact.
+used across the supported stages. Primary and fallback renderers show native hit flashes without consuming
+the real damage timer; the authored palette returns between hits.
 
 No atlas, boss art, frame canvas, ship reference or weapon-upgrade family was
 replaced. Uniform scale is used for depth; the whole authored plates and mounted

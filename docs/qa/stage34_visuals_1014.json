@@ -7,9 +7,9 @@
       "name": "Stage 3: actual background pixels darken during charge",
       "data": {
         "glow": 0.9,
-        "plain": 114.3470486111111,
-        "dim": 45.34638400607639,
-        "ratio": 0.39656803176702266,
+        "plain": 116.43097466362848,
+        "dim": 46.07658284505208,
+        "ratio": 0.3957416226924862,
         "warnings": 7
       }
     },
@@ -18,9 +18,9 @@
       "name": "Stage 3: authored FOV excludes the two safe salvo lanes",
       "data": {
         "glow": 0.9,
-        "plain": 114.3470486111111,
-        "dim": 45.34638400607639,
-        "ratio": 0.39656803176702266,
+        "plain": 116.43097466362848,
+        "dim": 46.07658284505208,
+        "ratio": 0.3957416226924862,
         "warnings": 7
       }
     },
@@ -127,18 +127,18 @@
     },
     {
       "passed": true,
-      "name": "Primary authored mini-aircraft hit draw preserves palette and damage timer",
+      "name": "Primary aircraft visibly flashes without consuming its damage timer",
       "data": {
-        "recolors": 0,
+        "recolors": 1,
         "draws": 1,
         "flash": 0.2
       }
     },
     {
       "passed": true,
-      "name": "Fallback authored mini-aircraft hit draw preserves palette and damage timer",
+      "name": "Fallback aircraft visibly flashes without consuming its damage timer",
       "data": {
-        "recolors": 0,
+        "recolors": 1,
         "draws": 1,
         "flash": 0.2
       }

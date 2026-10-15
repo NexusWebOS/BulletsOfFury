@@ -12,6 +12,15 @@ const SA14_CFG={easy:{warm:1.55,lock:2.10,mg:.18,speed:4.5,waves:3,gap:.48},
  normal:{warm:1.35,lock:1.85,mg:.115,speed:5.2,waves:4,gap:.38},
  hard:{warm:1.18,lock:1.65,mg:.085,speed:5.7,waves:5,gap:.31},
  furious:{warm:1.06,lock:1.48,mg:.065,speed:6.2,waves:6,gap:.26}};
+// Warden pressure is bounded separately from the later Sovereign/ice fights.
+const SA14_MINI_CFG={
+ easy:{warm:2.40,recover:1.90,mg:.24,speed:3.0,rounds:4,waves:1,gap:.90,helpers:1,tell:1.35,helperRounds:3,helperGap:.26,helperSpeed:3.0},
+ normal:{warm:2.15,recover:1.70,mg:.21,speed:3.4,rounds:6,waves:1,gap:.85,helpers:2,tell:1.20,helperRounds:4,helperGap:.23,helperSpeed:3.3},
+ hard:{warm:1.95,recover:1.50,mg:.18,speed:3.8,rounds:8,waves:2,gap:.80,helpers:2,tell:1.05,helperRounds:5,helperGap:.20,helperSpeed:3.6},
+ furious:{warm:1.80,recover:1.35,mg:.15,speed:4.2,rounds:10,waves:2,gap:.75,helpers:2,tell:.95,helperRounds:6,helperGap:.18,helperSpeed:3.9}
+};
+function sa14Mini(b){return run.stage===4&&b?._ship==='olivewarden';}
+function sa14MiniCfg(){return SA14_MINI_CFG[diffKey==='insanity'?'furious':diffKey]||SA14_MINI_CFG.normal;}
 function sa14Cfg(){return SA14_CFG[diffKey==='insanity'?'furious':diffKey]||SA14_CFG.normal;}
 function sa14Owns(b){return sa14Cold(b)||(run.stage===4&&!!b&&['olivewarden','stormsovereign'].includes(b._ship));}
 function sa14Storm(b){return run.stage===4&&b?._ship==='stormsovereign';}
@@ -34,7 +43,8 @@ stageLoadBegin=function(n,keys){const extra=[];
   for(let i=0;i<4;i++)extra.push('retm_'+i,'retmb_'+i);
   extra.push('cfx_stage4_chain_lightning','mr27_corefx','efx_burst_lightning');
   if(n===4)extra.push(AM13_ART.flight_variant_4.heading.key,AM13_ART.flight_variant_4.roll.key);
-  Snd.prepare?.(['lockon','chargeDash','geyserLightning','missileLaunch','expIce','gd_tankEngineLoop']);
+  Snd.prepare?.(['lockon','chargeDash','geyserLightning','missile','expIce','gd_tankEngineLoop',
+   'enemyMachineGunHeavy','enemyMachineGunLight','tlvJetThrust','tlvJetReady','av3_target_acquire']);
  }return SA14.base.load.call(this,n,[...(keys||[]),...extra]);};
 function sa14Freeze(b){if(!sa14Cold(b))return;
  // No nuclear replacement of the ice miniboss. Its authored hull/parts survive.
@@ -59,6 +69,7 @@ er26Set=function(b,mode){
  const result=SA14.base.set.call(this,b,mode);if(!sa14Owns(b))return result;
  const A=sa14State(b),R=b._er26,c=sa14Cfg();sa14Stop(b);A.glow=0;A.depth=false;
  A.fromAngle=A.angle;A.fromScale=A.scale;
+ if(sa14Mini(b)&&mode==='recover')R.dur=sa14MiniCfg().recover;
  if(!mode.startsWith('sa14-'))return result;
  R._sa14={aim:{x:player.x,y:player.y},from:{x:b.x,y:b.y},shot:0,wave:0,
   beep:0,thunder:0,released:false,moveTo:b.x,seek:null};
@@ -66,6 +77,7 @@ er26Set=function(b,mode){
  R.live=mode==='sa14-mg'?2.6:mode==='sa14-rockets'?c.waves*c.gap+.5:mode==='sa14-ice'||mode==='sa14-storm'?3.6:1.8;
  R.dur=R.warm+R.live;R.warnings=[];b._l23Beam=null;b._ap10Storm=null;
  if(b._mr27)b._mr27.ram1002=null;
+ if(sa14Mini(b)){const m=sa14MiniCfg();R.warm=m.warm;R.live=mode==='sa14-mg'?(m.rounds-1)*m.mg+.40:(m.waves-1)*m.gap+.45;R.dur=R.warm+R.live;}
  if(mode==='sa14-overflight')R.dur=10.5;
  if(mode==='sa14-lock')A.lockCd=5.2;
  sa14Log('attack',b,{mode,warm:R.warm});return result;
@@ -106,20 +118,21 @@ function sa14FanWarning(b,progress){const T=b._er26._sa14,count=7+vp12Tier()*2,g
  }}
 function sa14Slug(b,slot,target,spread=0){if(!mr27CanFire(b,slot))return;
  const mount=shipBossMount(b,slot),angle=Math.atan2(target.y-mount.y,target.x-mount.x)+spread;
- mr27Fire(b,slot,angle);const p=shipBossMount(b,slot),q=eShootT(p.x,p.y,angle,sa14Cfg().speed,'mg',{w:7,h:17,silent:true});
+ mr27Fire(b,slot,angle);const p=shipBossMount(b,slot),q=eShootT(p.x,p.y,angle,(sa14Mini(b)?sa14MiniCfg():sa14Cfg()).speed,'mg',{w:7,h:17,silent:true});
  Object.assign(q,{_boss:true,_noArsenal:true,_weaponProof:true,_shootable:false,mg:true,_coldTracer1002:true,_er26Source:b._ship,_sa14Slug:true});
- shipBossMuzzleStart(b,[slot],{fam:'mg',life:.08,hpx:30});Audio.SFX.machineGun?.();b._er26.shots++;
+ shipBossMuzzleStart(b,[slot],{fam:'mg',life:.10,hpx:34});Audio.SFX.enemyMachineGunHeavy?.();b._er26.shots++;
+ sa14Log('gun-shot',b,{slot,target:{...target}});
 }
 function sa14Missiles(b,target,lock=false){let count=0;
  for(const slot of ['ROCKET_L','ROCKET_R']){if(!mr27CanFire(b,slot))continue;
   const initial=shipBossMount(b,slot),angle=Math.atan2(target.y-initial.y,target.x-initial.x);mr27Fire(b,slot,angle);
   const p=shipBossMount(b,slot);
-  for(const off of (lock?[-.10,0,.10]:[-.055,.055])){
-   const q=eShootT(p.x,p.y,angle+off,3.5+vp12Tier()*.45,'emissile',{w:12,h:24,silent:true});
+  for(const off of (sa14Mini(b)?(vp12Tier()===0?[0]:[-.045,.045]):lock?[-.10,0,.10]:[-.055,.055])){
+   const q=eShootT(p.x,p.y,angle+off,sa14Mini(b)?2.6+vp12Tier()*.30:3.5+vp12Tier()*.45,'emissile',{w:12,h:24,silent:true});
    Object.assign(q,{_boss:true,_noArsenal:true,_shootable:true,_weaponProof:false,hp:2,homing:false,
     _er26Source:b._ship,_sa14Missile:true,_sa14Target:{...target}});count++;
   }shipBossMuzzleStart(b,[slot],{fam:'missile',life:.18,hpx:34});
- }if(count){Audio.SFX.missileLaunch?.();sa14Log('missile-volley',b,{count,lock,target:{...target}});}return count;
+ }if(count){Audio.SFX.missile?.();sa14Log('missile-volley',b,{count,lock,target:{...target}});}return count;
 }
 function sa14Balls(b,ice,behind=false){const R=b._er26,T=R._sa14,c=sa14Cfg(),count=7+vp12Tier()*2;
  const gap=(T.wave%3)+2,angles=[];
@@ -140,6 +153,7 @@ function sa14Upper(){let chosen=null;for(const seat of seatList())withSeat(seat,
 });return chosen;}
 function sa14Attack(b,dt){const R=b._er26,A=sa14State(b),T=R._sa14,c=sa14Cfg(),mode=R.mode;
  if(!T)return false;R.warnings=[];
+ if(sa14Mini(b))return sa14MiniAttack(b,dt);
  if(mode==='sa14-overflight')return sa14Overflight(b,dt);
  A.angle=0;A.scale=1;A.depth=false;b._s4Airborne=false;
  if(mode==='sa14-lock'){
@@ -213,7 +227,11 @@ er26WarTick=function(b,dt){if(!sa14Owns(b)||!['olivewarden','stormsovereign'].in
   if(R.wasRearming){R.wasRearming=false;er26Set(b,'recover');}
   if(S._pt11Chase&&!S._pt11Chase.done){S._pt11Chase.done=true;er26Set(b,'sa14-overflight');}
   if(A.lockCd<=0&&sa14Upper()&&(mr27CanFire(b,'ROCKET_L')||mr27CanFire(b,'ROCKET_R'))&&!['sa14-lock','sa14-drive','sa14-overflight'].includes(R.mode))er26Set(b,'sa14-lock');
- }else sa14Escorts(b,dt);
+ }else if(sa14Escorts(b,dt)){
+  // The helper turn and the Warden's guns never fire on top of one another.
+  R.t=0;R.warnings=[];b.x+=clamp(er26Station(b,0)-b.x,-45*dt,45*dt);
+  b.y+=clamp(R.home-b.y,-45*dt,45*dt);b._drawY=b.y;return true;
+ }
  if(R.mode==='recover'){A.depth=false;b._noHit=false;b._s4Airborne=false;A.angle=(A.fromAngle||0)*(1-clamp(R.t/R.dur,0,1));A.scale=1;R.warnings=[];
   er26Move(b,R,R.t/R.dur);if(R.t>=R.dur)er26Next(b);
  }else if(!R.mode.startsWith('sa14-'))er26Set(b,'recover');else sa14Attack(b,dt);
@@ -223,40 +241,98 @@ er26WarTick=function(b,dt){if(!sa14Owns(b)||!['olivewarden','stormsovereign'].in
 };
 er26Tick=function(b,dt){if(sa14Owns(b)){sa14State(b).age+=dt;sa14Freeze(b);b._l23Beam=null;}
  const r=SA14.base.tick.apply(this,arguments);if(sa14Storm(b)){b._drawY=b.y;stage4ShieldSyncNodes(b);}return r;};
-// South-origin escorts own their movement and real MG shots, without a hidden
-// second cannon controller. The renderer uses the actual authored camo bank.
-function sa14Escorts(b,dt){const A=sa14State(b);A.escortCd-=dt;if(A.escortCd>0||b.dead)return;
- const live=enemies.filter(e=>e._sa14Escort?.owner===b&&!e.dead&&e._dyingT==null),limit=diffKey==='easy'?2:vp12Tier()+2;
- if(live.length<limit)for(const side of [-1,1]){
-  if(live.length>=limit)break;const e=spawnEnemy('drone',camLeftX()+viewW()*(side<0?.22:.78),VH+65,{pattern:'sa14-escort',shoots:false,hp:Math.max(8,vp12FamilyHealth(4).hp),w:64});
-  if(!e)continue;delete e._cn;e.shoots=false;e._mini=true;e._noSep=true;e._bodShadow=true;e.w=e.h=64;
-  e._sa14Escort={owner:b,t:0,side,scale:1.95,angle:-Math.PI/2,shot:.3,shots:0,serial:SA14.serial++};live.push(e);
- }A.escortCd=[9,7,6,5][vp12Tier()];A.escortWave++;sa14Log('south-escorts',b,{count:live.length});}
-function sa14EscortTick(e,dt){const A=e._sa14Escort;if(!A)return;if(A.owner.dead||A.owner.dying||run.stage!==4){e.dead=true;return;}
- A.t+=dt;const t=A.t,L=camLeftX(),W=viewW();A.scale=lerp(1.95,1,clamp(t/1.6,0,1));
- const x=L+W*(A.side<0?.22:.78)+A.side*Math.sin(t*2.0)*W*.18,y=t<1.6?lerp(VH+65,PLAY.y+PLAY.h*.34,t/1.6):PLAY.y+PLAY.h*.34+Math.sin((t-1.6)*1.7)*PLAY.h*.20;
- if(t<1.6)A.angle=Math.atan2(y-e.y,x-e.x);
- else{const target=targetShip(x,y),wanted=Math.atan2(target.y-y,target.x-x);A.angle+=clamp(stage4AngleDelta(A.angle,wanted),-5*dt,5*dt);}
- e.x=x;e.y=y;e._noHit=t<1.6;e.fireCd=999;e.vx=e.vy=0;
- if(t>1.7&&t<7.5){A.shot-=dt;if(A.shot<=0){const target=targetShip(e.x,e.y),a=Math.atan2(target.y-e.y,target.x-e.x),p={x:e.x+Math.cos(a)*24,y:e.y+Math.sin(a)*24};
-  if(Math.abs(stage4AngleDelta(A.angle,a))>.7)return;
-  const q=eShootT(p.x,p.y,a,4.8+vp12Tier()*.25,'mg',{w:6,h:14,silent:true});Object.assign(q,{_sa14EscortShot:true,_sa14EscortOwner:e,mg:true,_weaponProof:true,_shootable:false});
-  A.shots++;A.shot=A.shots%6===0?.65:sa14Cfg().mg;Audio.SFX.machineGun?.();
- }}if(t>7.5){e.y-=Math.min(1,(t-7.5)/1.4)*220;A.angle=-Math.PI/2;}if(t>9)e.dead=true;
+// Readable Warden turns: fixed target, visible preparation, finite release,
+// then a real recovery. Every lane has been shown before it can hurt the pilot.
+function sa14MiniAttack(b,dt){
+ const R=b._er26,T=R._sa14,c=sa14MiniCfg();R.warnings=[];
+ if(!['sa14-mg','sa14-rockets'].includes(R.mode)){er26Set(b,'recover');return true;}
+ if(R.t<R.warm){
+  const slots=R.mode==='sa14-mg'?['L','R']:['ROCKET_L','ROCKET_R'];
+  for(const slot of slots)if(mr27CanFire(b,slot)){
+   const p=shipBossMount(b,slot),a=Math.atan2(T.aim.y-p.y,T.aim.x-p.x);
+   for(const off of R.mode==='sa14-rockets'&&vp12Tier()>0?[-.045,.045]:[0])
+    sa14Warning(b,p,{x:p.x+Math.cos(a+off)*VH,y:p.y+Math.sin(a+off)*VH},R.mode==='sa14-mg'?34:20,R.t/R.warm);
+  }
+  combatWarningTick(b,'warden-'+R.serial,R.t,R.warm);return true;
+ }
+ T.shot-=dt;
+ if(T.shot<=0){
+  if(R.mode==='sa14-mg'&&T.wave<c.rounds){sa14Slug(b,T.wave%2?'R':'L',T.aim);T.wave++;T.shot=c.mg;}
+  else if(R.mode==='sa14-rockets'&&T.wave<c.waves){sa14Missiles(b,T.aim);T.wave++;T.shot=c.gap;}
+ }
+ if(R.t>=R.dur)er26Set(b,'recover');return true;
+}
+function sa14EscortSpawn(b,turn){
+ const c=sa14MiniCfg();turn.spawned=true;Audio.SFX.tlvJetThrust?.();
+ for(let slot=0;slot<c.helpers;slot++){
+  const side=slot%2?1:-1,x=camLeftX()+viewW()*(side<0?.12:.88);
+  const e=spawnEnemy('drone',x,VH+65,{pattern:'sa14-escort',shoots:false,hp:vp12FamilyHealth(4).hp,w:96});
+  if(!e)continue;delete e._cn;e.shoots=false;e._mini=true;e._noSep=true;e._bodShadow=true;e.w=e.h=96;e.vx=e.vy=0;
+  const fireAt=2.45+slot*(c.tell+(c.helperRounds-1)*c.helperGap+.65);
+  e._sa14Escort={owner:b,t:0,side,slot,scale:1.7,angle:-Math.PI/2,phase:'arrive',
+   x,y:PLAY.y+PLAY.h*.31,fireAt,shot:0,shots:0,serial:SA14.serial++};
+ }
+ sa14Log('south-escorts',b,{count:c.helpers});
+}
+function sa14Escorts(b,dt){
+ const A=sa14State(b),R=b._er26;let turn=A.escortTurn;
+ if(!turn){
+  A.escortCd-=dt;
+  // Spawn only in a recovery, after the miniboss's preceding burst has ended.
+  if(A.escortCd>0||R.mode!=='recover'||R.t<.25||b.dead)return false;
+  turn=A.escortTurn={age:0,spawned:false,serial:SA14.serial++};er26Set(b,'recover');
+  sa14Log('escort-warning',b,{warm:1.8});
+ }
+ turn.age+=dt;
+ if(turn.age<1.8){combatWarningTick(b,'escort-entry-'+turn.serial,turn.age,1.8);return true;}
+ if(!turn.spawned)sa14EscortSpawn(b,turn);
+ const live=enemies.some(e=>e._sa14Escort?.owner===b&&!e.dead&&e._dyingT==null);
+ if(!live||turn.age>14){
+  for(const e of enemies)if(e._sa14Escort?.owner===b)e.dead=true;
+  A.escortTurn=null;A.escortCd=[14,12,11,10][vp12Tier()];er26Set(b,'recover');
+  sa14Log('escort-turn-end',b);return true;
+ }return true;
+}
+function sa14EscortTick(e,dt){
+ const A=e._sa14Escort;if(!A)return;
+ if(A.owner.dead||A.owner.dying||run.stage!==4){e.dead=true;return;}
+ const c=sa14MiniCfg();A.t+=dt;const t=A.t,u=clamp(t/2.2,0,1),k=u*u*(3-2*u);
+ A.scale=lerp(1.7,1,k);e.x=A.x;e.y=lerp(VH+65,A.y,k);e._noHit=t<2.2;e.fireCd=999;e.vx=e.vy=0;
+ if(t<2.2){A.phase='arrive';A.angle=-Math.PI/2;return;}
+ if(t<A.fireAt){A.phase='wait';return;}
+ // A camera pan cannot turn an offscreen helper into an unseen shooter.
+ if(A.cancelled||e.x<camLeftX()+40||e.x>camRightX()-40){A.exitAt??=t;A.cancelled=true;A.phase='leave';
+  e.y=A.y-(t-A.exitAt)*160;A.angle=-Math.PI/2;if(e.y<-80)e.dead=true;return;}
+ if(!A.aim){const target=targetShip(e.x,e.y);A.aim={x:target.x,y:target.y};A.fireAngle=Math.atan2(A.aim.y-e.y,A.aim.x-e.x);
+  sa14Log('escort-aim',A.owner,{serial:A.serial,target:{...A.aim},tell:c.tell});}
+ A.angle+=clamp(stage4AngleDelta(A.angle,A.fireAngle),-4*dt,4*dt);
+ const firing=t-A.fireAt-c.tell;
+ if(firing<0){A.phase='warn';combatWarningTick(e,'escort-fire-'+A.serial,t-A.fireAt,c.tell);return;}
+ if(A.shots<c.helperRounds){
+  A.phase='fire';A.shot-=dt;if(A.shot<=0){
+   const a=A.fireAngle,p={x:e.x+Math.cos(a)*35,y:e.y+Math.sin(a)*35};
+   const q=eShootT(p.x,p.y,a,c.helperSpeed,'mg',{w:6,h:14,silent:true});
+   Object.assign(q,{_sa14EscortShot:true,_sa14EscortOwner:e,_sa14Target:{...A.aim},mg:true,_weaponProof:true,_shootable:false});
+   wm26Emit(e,p.x,p.y,a,'mg',null,{size:34,life:.12});Audio.SFX.enemyMachineGunLight?.();
+   A.shots++;A.shot=c.helperGap;sa14Log('escort-shot',A.owner,{serial:A.serial,target:{...A.aim}});
+  }return;
+ }
+ A.phase='leave';const leave=Math.max(0,firing-(c.helperRounds-1)*c.helperGap-.3);
+ e.y=A.y-leave*160;A.angle=-Math.PI/2;if(leave>2.0)e.dead=true;
 }
 updatePlay=function(dt){sa14YuriSync();for(const e of enemies)if(e._sa14Escort&&!e.dead&&e._dyingT==null)sa14EscortTick(e,dt);
  const r=SA14.base.update.apply(this,arguments);for(const b of [boss,subBoss])if(b?._sa14&&(b.dead||b.dying))sa14Stop(b);return r;};
-drawEnemy=function(e){if(!e._sa14Escort){const flash=e.flash;if(e._vp12)e.flash=0;
- try{return SA14.base.enemy.apply(this,arguments);}finally{e.flash=flash;}}
+drawEnemy=function(e){if(!e._sa14Escort)return SA14.base.enemy.apply(this,arguments);
  if(e.dead)return;
  const A=e._sa14Escort,p=air13Pose('flight_variant_4','heading',A.angle);if(!p)return;
- drawUnitShadow(e.x,e.y+18,64*A.scale,64*A.scale,.34,e);air13Blit(p,e.x,e.y,64*A.scale*p.d.referenceRatio,1,null);
+ drawUnitShadow(e.x,e.y+18,96*A.scale,96*A.scale,.34,e);
+ air13Blit(p,e.x,e.y,96*A.scale*p.d.referenceRatio,1,e.flash>0?hitFlashColor(e,'#ffffff'):null);
+ if(A.phase==='warn'){const progress=clamp((A.t-A.fireAt)/sa14MiniCfg().tell,0,1);
+  combatWarningDraw(e,{x:e.x,y:e.y,ex:A.aim.x,ey:A.aim.y,width:36,progress,alertX:e.x,alertY:e.y-58});}
  e._air13RenderedKey=p.key;e._air13Frame=p.f;
 };
-air13DrawFlight=function(e){const flash=e.flash;if(e._vp12)e.flash=0;
- try{return SA14.base.flight.apply(this,arguments);}finally{e.flash=flash;}};
 mr27Blit=function(skin,cell,p,flash,form,owner){
- const A=owner?._sa14,r=SA14.base.blit.call(this,skin,cell,p,owner?._ship==='olivewarden'?0:flash,form,owner);
+ const A=owner?._sa14,r=SA14.base.blit.call(this,skin,cell,p,flash,form,owner);
  if(r&&A&&A.glow>.50){const color=Math.floor(A.age*22)%2?'#83d9ff':'#ffffff',im=mr27Cell(skin,cell,color);
   if(im){ctx.save();ctx.globalAlpha=(A.glow-.50)*.95;ctx.translate(p.x,p.y);ctx.rotate(p.rot||0);ctx.drawImage(im,-p.w/2,-p.h/2,p.w,p.h);ctx.restore();}}
  return r;
@@ -281,6 +357,10 @@ function sa14BlueArc(x,y,angle,length,clock,alpha){if(!XART.rdy('cfx_stage4_chai
  ctx.drawImage(im,(f%4)*256,Math.floor(f/4)*384,256,384,-w/2,0,w,length);ctx.restore();
 }
 function sa14Draw(b){const R=b._er26,A=b._sa14;if(!A||b.dead||b.enter)return;
+ const turn=A.escortTurn;
+ if(sa14Mini(b)&&turn&&!turn.spawned){for(let i=0;i<sa14MiniCfg().helpers;i++){
+  const x=camLeftX()+viewW()*(i%2?.88:.12);combatWarningDraw(b,{x,y:VH-12,ex:x,ey:PLAY.y+PLAY.h*.31,
+   width:96,progress:clamp(turn.age/1.8,0,1),alertX:x,alertY:VH-48});}}
  if(R.mode.startsWith('sa14-')){
   for(const w of R.warnings){const p={x:w.x,y:w.y};combatWarningDraw(b,{...p,ex:p.x+Math.cos(w.angle)*VH,ey:p.y+Math.sin(w.angle)*VH,
    width:w.width,progress:w.progress,fieldOnly:true});}

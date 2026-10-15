@@ -1,3 +1,16 @@
+# 2026-10-15 — RELEASE: Warden warnings, larger helpers and hit feedback
+
+Mike requested publishing the completed Warden repair. Native hit flashes are
+restored for hull, modules, helpers and formation aircraft, with the standing
+rule recorded in AGENTS. Warden/helper turns have longer warnings, committed
+aims, bounded bursts and recovery; helpers are50%larger, capped1Easy/2otherwise,
+and use regular-familyHP. Enemy gun, missile, entry and warning audio is wired.
+Native55/55 all4difficulties, existing Stage34 probes60+13, fullsuite8700/0 with
+finalBUILDOK/exit0. Module hash still matches the passing evidence. Incoming
+FURYBOT/trailer commits were reviewed and fast-forwarded before publication.
+Separate local Overdrive work remains unpublished. Details:
+docs/GITHUB_WARDEN_RELEASE_1015.md and docs/WARDEN_READABILITY_1014.md.
+
 # 2026-10-14 - FURYBOT (Furious autopilot) and trailer v11
 
 Mike asked for a strong Furious bot that wins without cheating, and a Steam trailer on the gasline track

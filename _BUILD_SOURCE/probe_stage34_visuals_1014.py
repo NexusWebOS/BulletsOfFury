@@ -59,7 +59,7 @@ try:
     ctx.drawImage=function(){draws++;return draw.apply(this,arguments)};if(fallback)air13Pose=()=>null;
     try{drawEnemy(colorJet);}finally{xartTint=tint;air13Tint=airTint;air13Pose=pose;ctx.drawImage=draw;}
     return{recolors,draws,flash:colorJet.flash};}''',fallback)
-   check(color['recolors']==0 and color['draws']>0 and color['flash']==.2,('Fallback' if fallback else 'Primary')+' authored mini-aircraft hit draw preserves palette and damage timer',color)
+   check(color['recolors']>0 and color['draws']>0 and color['flash']==.2,('Fallback' if fallback else 'Primary')+' aircraft visibly flashes without consuming its damage timer',color)
   scope=p.evaluate('''()=>{const stage=run.stage;try{run.stage=8;return ['cryospear','olivewarden','stormsovereign'].every(ship=>{const q={_ship:ship,_er26:{level:1},_mr27:null};return !sa14Owns(q)&&JSON.stringify(er26Book(q))===JSON.stringify(SA14.base.book(q));});}finally{run.stage=stage;}}''')
   check(scope,'Reused late-stage hulls retain their existing encounter controllers')
   browser.close()
